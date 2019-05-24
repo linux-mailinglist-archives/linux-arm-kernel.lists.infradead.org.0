@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CD0629CC6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:19:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2722F29CF4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:25:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iWIqynzqycJJM5faaiboILR39qiEbYM7Y3ohUNXG87Q=; b=CvsqDhQI3V/pdK
-	mffhwo3jOxHEmYFUWGTXSfgc7QjMbZy5FR5dmjufx1/k+SgCBb+oQir3h6Ln+wVWBtIDBTo03ye4K
-	I4UjJFf/WMtVsgTqBOzX2B45gIqgBmH+CSrV8Nuo5RqXGVrRwEQFtkYuwjp3go6buV78qKX0MEUo+
-	6qkmntG6U/y+Ys4uGEaW+NfJhDWtu9r4zdPUYnEdIYZmj1NnhroyGH0bY4AWaoOj83YoJehWq9p0f
-	BO0eusePD/r9mPvdRBlImp95FYS2D7f6AB/VYy5vuFwN+myZINKPB7ECKyPZNma7v69uxWCqL9jsT
-	wopjbd5QVTmaxdId3JWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=m/ZLF5Um4fQJEs/eGrQM/Jt0xEYiky3w0iWyGjtHfXo=; b=U1WhvpQucZg6haXPwq08VbcLa
+	w2AUtk4ALut+GGOIJ/4rBhgv42m2KZvqBSUcr+4jhPAOJf+BQkIO4Hqf1esW0mCN3wEUNkUq3E6gg
+	xrqqNb9wT9LbE15haFseJp+Ltnog/1a/3fm6aHgRy6npWnP2T8DZ7IZLtWk0bgv9AQ3SEP86A2VHq
+	ykAZXZZCdb4DIuy6u1064zbxenPhVMj+YUT7N63kFA/aUhMvrVwPn69FynRjFH1dIVCzriTToF0If
+	6jhG8g1NFOa150BL15dRbs1QwYNlPhbeF0Dpx+tdEMM885+WPll+kvhJ8+RKFgSh6UXZLYgK0D//E
+	umBeFv+cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUDqo-0002Wx-OE; Fri, 24 May 2019 17:19:26 +0000
+	id 1hUDwu-0005UM-SV; Fri, 24 May 2019 17:25:44 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUDqh-0002W4-K9
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:19:21 +0000
+ id 1hUDwm-0005TX-Np
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:25:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 053E780D;
- Fri, 24 May 2019 10:19:18 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 784923F703;
- Fri, 24 May 2019 10:19:15 -0700 (PDT)
-Date: Fri, 24 May 2019 18:19:10 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH 4/8] arm64: Basic Branch Target Identification support
-Message-ID: <20190524171908.GA18057@lakrids.cambridge.arm.com>
-References: <1558693533-13465-1-git-send-email-Dave.Martin@arm.com>
- <1558693533-13465-5-git-send-email-Dave.Martin@arm.com>
- <20190524130217.GA15566@lakrids.cambridge.arm.com>
- <20190524145306.GZ28398@e103592.cambridge.arm.com>
- <20190524153847.GE15566@lakrids.cambridge.arm.com>
- <20190524161239.GA28398@e103592.cambridge.arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D0AE80D;
+ Fri, 24 May 2019 10:25:34 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB1173F703;
+ Fri, 24 May 2019 10:25:31 -0700 (PDT)
+Subject: Re: [PATCH v6 0/6] Allwinner H6 Mali GPU support
+To: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, Will Deacon
+ <will.deacon@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ Neil Armstrong <narmstrong@baylibre.com>, Steven Price <steven.price@arm.com>
+References: <20190521161102.29620-1-peron.clem@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <61088426-43cd-338b-ca77-50c00fcb7c5e@arm.com>
+Date: Fri, 24 May 2019 18:25:30 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190524161239.GA28398@e103592.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190521161102.29620-1-peron.clem@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_101919_676714_752E43B4 
-X-CRM114-Status: GOOD (  45.62  )
+X-CRM114-CacheID: sfid-20190524_102538_366588_2A1D0F93 
+X-CRM114-Status: GOOD (  28.08  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -69,202 +70,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, "H.J. Lu" <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Paul Elliott <paul.elliott@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Andrew Jones <drjones@redhat.com>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- linux-kernel@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Sudakshina Das <sudi.das@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 24, 2019 at 05:12:40PM +0100, Dave Martin wrote:
-> On Fri, May 24, 2019 at 04:38:48PM +0100, Mark Rutland wrote:
-> > On Fri, May 24, 2019 at 03:53:06PM +0100, Dave Martin wrote:
-> > > On Fri, May 24, 2019 at 02:02:17PM +0100, Mark Rutland wrote:
-> > > > On Fri, May 24, 2019 at 11:25:29AM +0100, Dave Martin wrote:
-> > > > >  /* Additional SPSR bits not exposed in the UABI */
-> > > > >  #define PSR_IL_BIT		(1 << 20)
-> > > > > +#define PSR_BTYPE_CALL		(2 << 10)
-> > > > 
-> > > > I thought BTYPE was a 2-bit field, so isn't there at leat one other
-> > > > value to have a mnemonic for?
-> > > > 
-> > > > Is it an enumeration or a bitmask?
-> > > 
-> > > It's a 2-bit enumeration, and for now this is the only value that the
-> > > kernel uses: this determines the types of BTI landing pad permitted at
-> > > signal handler entry points in BTI guarded pages.
-> > > 
-> > > Possibly it would be clearer to write it
-> > > 
-> > > #define PSR_BTYPE_CALL		(0b10 << 10)
-> > > 
-> > > but we don't write other ptrace.h constants this way.  In UAPI headers
-> > > we should avoid GCC-isms, but here it's OK since we already rely on this
-> > > syntax internally.
-> > > 
-> > > I can change it if you prefer, though my preference is to leave it.
-> > 
-> > I have no issue with the (2 << 10) form, but could we add mnemonics for
-> > the other values now, even if we're not using them at this instant?
-> 
-> Can do.  How about.
-> 
-> 	PSR_BTYPE_NONE	(0 << 10)
-> 	PSR_BTYPE_JC	(1 << 10)
-> 	PSR_BTYPE_C	(2 << 10)
-> 	PSR_BTYPE_J	(3 << 10)
-> 
-> That matches the way I decode PSTATE for splats.
-> 
-> The architecture does not define mnemonics so these are my invention,
-> but anyway this is just for the kernel.
-
-That looks good to me!
-
-[...]
-
-> > > > > @@ -741,6 +741,11 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
-> > > > >  	regs->regs[29] = (unsigned long)&user->next_frame->fp;
-> > > > >  	regs->pc = (unsigned long)ka->sa.sa_handler;
-> > > > >  
-> > > > > +	if (system_supports_bti()) {
-> > > > > +		regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
-> > > > 
-> > > > Nit: that can be:
-> > > > 
-> > > > 		regs->pstate &= ~PSR_BTYPE_MASK;
-> > > 
-> > > x & ~y is sensitive to the type of y and can clobber high bits, so I
-> > > prefer not to write it.  GCC generates the same code either way.
-> > 
-> > Ah, I thought this might befor type promotion.
-> > 
-> > > However, this will also trip us up elsewhere when the time comes, so
-> > > maybe it's a waste of time working around it here.
-> > > 
-> > > If you feel strongly, I'm happy to change it.
-> > 
-> > I'd rather we followed the same pattern as elsewhere, as having this
-> > special case is confusing, and we'd still have the same bug elsewhere.
-> > 
-> > My concern here is consistency, so if you want to fix up all instances
-> > to preserve the upper 32 bits of regs->pstate, I'd be happy. :)
-> > 
-> > I also think there are nicer/clearer ways to fix the type promotion
-> > issue, like using UL in the field definitions, using explicit casts, or
-> > adding helpers to set/clear bits with appropriate promotion.
-> 
-> Sure, I change it to be more consistent.
-> 
-> Wrapping this idiom up in a clear_bits() wrapper might be an idea, 
-> but in advance of that it makes little sense to do it just in this one
-> place.
-> 
-> I don't really like annotating header #defines with arbitrary types
-> until it's really necessary, so I'll leave it for now.
-
-Sure, that's fine by me.
-
-[...]
-
-> > > > > diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
-> > > > > index 5610ac0..85b456b 100644
-> > > > > --- a/arch/arm64/kernel/syscall.c
-> > > > > +++ b/arch/arm64/kernel/syscall.c
-> > > > > @@ -66,6 +66,7 @@ static void el0_svc_common(struct pt_regs *regs, int scno, int sc_nr,
-> > > > >  	unsigned long flags = current_thread_info()->flags;
-> > > > >  
-> > > > >  	regs->orig_x0 = regs->regs[0];
-> > > > > +	regs->pstate &= ~(regs->pstate & PSR_BTYPE_MASK);
-> > > > 
-> > > > Likewise:
-> > > > 
-> > > > 	regs->pstate &= ~PSR_BTYPE_MASK;
-> > > > 
-> > > > ... though I don't understand why that would matter to syscalls, nor how
-> > > > those bits could ever be set given we had to execute an SVC to get here.
-> > > > 
-> > > > What am I missing?
-> > > 
-> > > The behaviour is counterintuivite here.  The architecture guarantees to
-> > > preserve BTYPE for traps, faults and asynchronous exceptions, but for a
-> > > synchronous execption from normal architectural execution of an
-> > > exception-generating instruction (SVC/HVC/SMC) the architecture leaves
-> > > it IMP DEF whether BTYPE is preserved or zeroed in SPSR.
-> > 
-> > I'm still missing something here. IIUC were BTYPE was non-zero, we
-> > should take the BTI trap before executing the SVC/HVC/SMC, right?
-> > 
-> > Otherwise, it would be possible to erroneously branch to an SVC/HVC/SMC,
-> > which would logically violate the BTI protection.
-> 
-> Only if the SVC (etc.) is in a BTI guarded page.  Otherwise, we could
-> have legitimately branched to the SVC insn directly and BTYPE would
-> be nonzero, but no trap would occur.
-
-I agree that would be the case immediately before we execute the SVC,
-but I think there's a subtlety here w.r.t. what exactly happens as an
-SVC is executed.
-
-My understanding was that even for unguarded pages, the execution of any
-(non branch/eret) instruction would zero PSTATE.BTYPE.
-
-For SVC it's not clear to me whether generating the SVC exception is
-considered to be an effect of completing the execution of an SVC,
-whether it's considered as preempting the execution of the SVC, or
-whether that's IMPLEMENTATION DEFINED.
-
-Consequently it's not clear to me whether or not executing an SVC clears
-PSTATE.BTYPE before the act of taking the exception samples PSTATE. I
-would hope that it does, as this would be in keeping with the way the
-ELR is updated.
-
-I think that we should try to clarify that before we commit ourselves to
-the most painful interpretation here. Especially as similar would apply
-to HVC and SMC, and I strongly suspect firmware in general is unlikely
-to fix up the PSTATE.BTYPE of a caller.
-
-> We should still logically zero BTYPE across SVC in that case, because 
-> the SVC may itself branch:  a signal could be delivered on return and
-> we want the prevailing BTYPE then to be 0 for capture in the signal
-> frame.  Doing this zeroing in signal delivery because if the signal
-> is not delivered in SVE then a nonzero BTYPE might be live, and we
-> must then restore it properly on sigreturn.
-
-I'm not sure I follow this.
-
-If we deliver a signal, the kernel generates a pristine PSTATE for the
-signal handler, and the interrupted context doesn't matter.
-
-Saving/restoring the state of the interrupted context is identical to
-returning without delivering the signal, and we'd have a problem
-regardless.
-
-> As you observe, this scenario should be impossible if the SVC insn
-> is in a guarded page, unless userspace does something foolhardy like
-> catching the SIGILL and fudging BTYPE or the return address.
-
-I think userspace gets to pick up the pieces in this case. Much like
-signal delivery, it would need to generate a sensible PSTATE itself.
-
-[...]
-
-> (Now I come to think of it I also need to look at rseq etc., which is
-> another magic kernel-mediated branch mechanism.)
-
-Fun. ;)
-
-Thanks,
-Mark.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjEvMDUvMjAxOSAxNzoxMCwgQ2zDqW1lbnQgUMOpcm9uIHdyb3RlOgo+IEhpLAo+IAo+IFRo
+ZSBBbGx3aW5uZXIgSDYgaGFzIGEgTWFsaS1UNzIwIE1QMiB3aGljaCBzaG91bGQgYmUgc3VwcG9y
+dGVkIGJ5Cj4gdGhlIG5ldyBwYW5mcm9zdCBkcml2ZXIuIFRoaXMgc2VyaWVzIGZpeCB0d28gaXNz
+dWVzIGFuZCBpbnRyb2R1Y2UgdGhlCj4gZHQtYmluZGluZ3MgYnV0IGEgc2ltcGxlIGJlbmNobWFy
+ayBzaG93IHRoYXQgaXQncyBzdGlsbCBOT1QgV09SS0lORy4KPiAKPiBJJ20gcHVzaGluZyBpdCBp
+biBjYXNlIHNvbWVvbmUgd2FudCB0byBjb250aW51ZSB0aGUgd29yay4KPiAKPiBUaGlzIGhhcyBi
+ZWVuIHRlc3RlZCB3aXRoIE1lc2EzRCAxOS4xLjAtUkMyIGFuZCBhIEdQVSBiaXRuZXNzIHBhdGNo
+WzFdLgo+IAo+IE9uZSBwYXRjaCBpcyBmcm9tIEljZW5vd3kgWmhlbmcgd2hlcmUgSSBjaGFuZ2Vk
+IHRoZSBvcmRlciBhcyByZXF1aXJlZAo+IGJ5IFJvYiBIZXJyaW5nWzJdLgo+IAo+IFRoYW5rcywK
+PiBDbGVtZW50Cj4gCj4gWzFdIGh0dHBzOi8vZ2l0bGFiLmZyZWVkZXNrdG9wLm9yZy9rc3phcS9t
+ZXNhL3RyZWUvcGFuZnJvc3RfNjRfMzIKPiBbMl0gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9y
+Zy9wYXRjaC8xMDY5OTgyOS8KPiAKPiAKPiBbICAzNDUuMjA0ODEzXSBwYW5mcm9zdCAxODAwMDAw
+LmdwdTogbW11IGlycSBzdGF0dXM9MQo+IFsgIDM0NS4yMDk2MTddIHBhbmZyb3N0IDE4MDAwMDAu
+Z3B1OiBVbmhhbmRsZWQgUGFnZSBmYXVsdCBpbiBBUzAgYXQgVkEKPiAweDAwMDAwMDAwMDI0MDA0
+MDAKPiBbICAzNDUuMjA5NjE3XSBSZWFzb246IFRPRE8KPiBbICAzNDUuMjA5NjE3XSByYXcgZmF1
+bHQgc3RhdHVzOiAweDgwMDAwMkMxCj4gWyAgMzQ1LjIwOTYxN10gZGVjb2RlZCBmYXVsdCBzdGF0
+dXM6IFNMQVZFIEZBVUxUCj4gWyAgMzQ1LjIwOTYxN10gZXhjZXB0aW9uIHR5cGUgMHhDMTogVFJB
+TlNMQVRJT05fRkFVTFRfTEVWRUwxCj4gWyAgMzQ1LjIwOTYxN10gYWNjZXNzIHR5cGUgMHgyOiBS
+RUFECj4gWyAgMzQ1LjIwOTYxN10gc291cmNlIGlkIDB4ODAwMAo+IFsgIDM0NS43Mjk5NTddIHBh
+bmZyb3N0IDE4MDAwMDAuZ3B1OiBncHUgc2NoZWQgdGltZW91dCwganM9MCwKPiBzdGF0dXM9MHg4
+LCBoZWFkPTB4MjQwMDQwMCwgdGFpbD0weDI0MDA0MDAsIHNjaGVkX2pvYj0wMDAwMDAwMDllMjA0
+ZGU5Cj4gWyAgMzQ2LjA1NTg3Nl0gcGFuZnJvc3QgMTgwMDAwMC5ncHU6IG1tdSBpcnEgc3RhdHVz
+PTEKPiBbICAzNDYuMDYwNjgwXSBwYW5mcm9zdCAxODAwMDAwLmdwdTogVW5oYW5kbGVkIFBhZ2Ug
+ZmF1bHQgaW4gQVMwIGF0IFZBCj4gMHgwMDAwMDAwMDAyQzAwQTAwCj4gWyAgMzQ2LjA2MDY4MF0g
+UmVhc29uOiBUT0RPCj4gWyAgMzQ2LjA2MDY4MF0gcmF3IGZhdWx0IHN0YXR1czogMHg4MTAwMDJD
+MQo+IFsgIDM0Ni4wNjA2ODBdIGRlY29kZWQgZmF1bHQgc3RhdHVzOiBTTEFWRSBGQVVMVAo+IFsg
+IDM0Ni4wNjA2ODBdIGV4Y2VwdGlvbiB0eXBlIDB4QzE6IFRSQU5TTEFUSU9OX0ZBVUxUX0xFVkVM
+MQo+IFsgIDM0Ni4wNjA2ODBdIGFjY2VzcyB0eXBlIDB4MjogUkVBRAo+IFsgIDM0Ni4wNjA2ODBd
+IHNvdXJjZSBpZCAweDgxMDAKPiBbICAzNDYuNTYxOTU1XSBwYW5mcm9zdCAxODAwMDAwLmdwdTog
+Z3B1IHNjaGVkIHRpbWVvdXQsIGpzPTEsCj4gc3RhdHVzPTB4OCwgaGVhZD0weDJjMDBhMDAsIHRh
+aWw9MHgyYzAwYTAwLCBzY2hlZF9qb2I9MDAwMDAwMDBiNTVhOWE4NQo+IFsgIDM0Ni41NzM5MTNd
+IHBhbmZyb3N0IDE4MDAwMDAuZ3B1OiBtbXUgaXJxIHN0YXR1cz0xCj4gWyAgMzQ2LjU3ODcwN10g
+cGFuZnJvc3QgMTgwMDAwMC5ncHU6IFVuaGFuZGxlZCBQYWdlIGZhdWx0IGluIEFTMCBhdCBWQQo+
+IDB4MDAwMDAwMDAwMkMwMEI4MAoKRldJVyBJIHNlZW0gdG8gaGF2ZSByZXByb2R1Y2VkIHRoZSBz
+YW1lIGJlaGF2aW91ciBvbiBhIGRpZmZlcmVudCBUNzIwIApzZXR1cCwgc28gdGhpcyBtYXkgd2Vs
+bCBiZSBtb3JlIGFib3V0IHRoZSBHUFUgdGhhbiB0aGUgcGxhdGZvcm0uIFRoZXJlIApkb2Vzbid0
+IGxvb2sgdG8gYmUgYW55dGhpbmcgb2J2aW91c2x5IHdyb25nIHdpdGggdGhlIHBhZ2V0YWJsZXMs
+IGJ1dCBpZiAKSSBjYW4gZmluZCBzb21lIG1vcmUgZnJlZSB0aW1lIEkgbWF5IGhhdmUgYSBiaXQg
+bW9yZSBvZiBhIHBva2UgYXJvdW5kLgoKUm9iaW4uCgo+IAo+IENoYW5nZSBpbiB2NToKPiAgIC0g
+UmVtb3ZlIGZpeCBpbmRlbnQKPiAKPiBDaGFuZ2VzIGluIHY0Ogo+ICAgLSBBZGQgYnVzX2Nsb2Nr
+IHByb2JlCj4gICAtIEZpeCBzYW5pdHkgY2hlY2sgaW4gaW8tcGd0YWJsZQo+ICAgLSBBZGQgdnJh
+bXAtZGVsYXkKPiAgIC0gTWVyZ2UgYWxsIGJvYXJkcyBpbnRvIG9uZSBwYXRjaAo+ICAgLSBSZW1v
+dmUgdXBzdHJlYW1lZCBOZWlsIEEuIHBhdGNoCj4gCj4gQ2hhbmdlIGluIHYzIChUaGFua3MgdG8g
+TWF4aW1lIFJpcGFyZCk6Cj4gICAtIFJlYXV0aG9yIEljZW5vd3kgZm9yIGhlciBwYXRoCj4gCj4g
+Q2hhbmdlcyBpbiB2MiAoVGhhbmtzIHRvIE1heGltZSBSaXBhcmQpOgo+ICAgLSBEcm9wIEdQVSBP
+UFAgVGFibGUKPiAgIC0gQWRkIGNsb2NrcyBhbmQgY2xvY2stbmFtZXMgaW4gcmVxdWlyZWQKPiAK
+PiBDbMOpbWVudCBQw6lyb24gKDUpOgo+ICAgIGRybTogcGFuZnJvc3Q6IGFkZCBvcHRpb25hbCBi
+dXNfY2xvY2sKPiAgICBpb21tdTogaW8tcGd0YWJsZTogZml4IHNhbml0eSBjaGVjayBmb3Igbm9u
+IDQ4LWJpdCBtYWxpIGlvbW11Cj4gICAgZHQtYmluZGluZ3M6IGdwdTogbWFsaS1taWRnYXJkOiBB
+ZGQgSDYgbWFsaSBncHUgY29tcGF0aWJsZQo+ICAgIGFybTY0OiBkdHM6IGFsbHdpbm5lcjogQWRk
+IEFSTSBNYWxpIEdQVSBub2RlIGZvciBINgo+ICAgIGFybTY0OiBkdHM6IGFsbHdpbm5lcjogQWRk
+IG1hbGkgR1BVIHN1cHBseSBmb3IgSDYgYm9hcmRzCj4gCj4gSWNlbm93eSBaaGVuZyAoMSk6Cj4g
+ICAgZHQtYmluZGluZ3M6IGdwdTogYWRkIGJ1cyBjbG9jayBmb3IgTWFsaSBNaWRnYXJkIEdQVXMK
+PiAKPiAgIC4uLi9iaW5kaW5ncy9ncHUvYXJtLG1hbGktbWlkZ2FyZC50eHQgICAgICAgICB8IDE1
+ICsrKysrKysrKysrKy0KPiAgIC4uLi9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi1iZWVsaW5rLWdz
+MS5kdHMgICB8ICA2ICsrKysrCj4gICAuLi4vZHRzL2FsbHdpbm5lci9zdW41MGktaDYtb3Jhbmdl
+cGktMy5kdHMgICAgfCAgNiArKysrKwo+ICAgLi4uL2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LW9y
+YW5nZXBpLmR0c2kgICAgIHwgIDYgKysrKysKPiAgIC4uLi9ib290L2R0cy9hbGx3aW5uZXIvc3Vu
+NTBpLWg2LXBpbmUtaDY0LmR0cyB8ICA2ICsrKysrCj4gICBhcmNoL2FybTY0L2Jvb3QvZHRzL2Fs
+bHdpbm5lci9zdW41MGktaDYuZHRzaSAgfCAxNCArKysrKysrKysrKysKPiAgIGRyaXZlcnMvZ3B1
+L2RybS9wYW5mcm9zdC9wYW5mcm9zdF9kZXZpY2UuYyAgICB8IDIyICsrKysrKysrKysrKysrKysr
+KysKPiAgIGRyaXZlcnMvZ3B1L2RybS9wYW5mcm9zdC9wYW5mcm9zdF9kZXZpY2UuaCAgICB8ICAx
+ICsKPiAgIGRyaXZlcnMvaW9tbXUvaW8tcGd0YWJsZS1hcm0uYyAgICAgICAgICAgICAgICB8ICAy
+ICstCj4gICA5IGZpbGVzIGNoYW5nZWQsIDc2IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0p
+Cj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
