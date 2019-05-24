@@ -2,64 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 813F129BA5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:00:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF4B929BB3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 18:02:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zmOR0xbsfjLHOxee1s6HENDtRSp33O5+htkyY6etnKM=; b=dH40F2NrE38s12
-	pP7muayrvYU316E1V1zmuhPUWG+VZnKfMq2wqtFWhbUIsRNRNL3PdrsfxQ2t5qQ4AL74TQZChHTcs
-	4gddGvWuJ/anst2E0Zuhlubn1nJL7+N8nilyHDsGs/S0fc1VofMGGj2UPAOoN8Qxlo238xcHdsmh3
-	5po0XJQcR1/rB2myD59l51bygHYnnU17MtQmJvltma5A/RsMTbL7PjaQPTK8z8EXK7IxkbmQ3yMdT
-	xeII9zT4+kMUA5xYH22nqyj/HF3tvPvyLLWaw478H1hhwAuKGIC+IlrMeVn/0GB4HKikto1li/MP/
-	jZNAkp8ims3vmA+KI+FQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z/Tfs8aGwZ6VG6BSUT04qi6wpvDHXsRWzusDSXwiRqc=; b=J2GQ2SoF/j0oQx
+	p/tJtpPH+/6a5xezylrujLbcjEGOtHU0nVnm01tY+KI+zA/MYF3OFrhz4My6VLL4rIuX/z/wwtS/D
+	RKNCERTCzA5Pi+3ksji7u4lEkxnH+3pJOXJuWbkiKPSR5/t5o2vtBZMEfnL4TidMRlWPdjudGBs3M
+	RWbTPSYoXu2DiI/pPI8fbSoRXYnrhYyjQzSeraT10r+uuRkdk2SHOPkaEvObZN6M/S7IlThPw1L1i
+	LqmGx5DLfv0NmRrBuJX08f0+tL2etYAHnyLkmNaeNABZUj6hmvGVlNqJBOISsAzzTgUJsKXrVg7R+
+	rxSYkVOXUN6SbKgXVK0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUCbx-0006aM-8i; Fri, 24 May 2019 16:00:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hUCeb-0008ME-Al; Fri, 24 May 2019 16:02:45 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUCbW-0006Pz-H5
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 15:59:35 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B80D8217D7;
- Fri, 24 May 2019 15:59:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558713574;
- bh=4+rchS067k+etnZl+afwYNLkDhPgxJ39VqZ3BVzy4O0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mSfPGbwLqyhe/N9Idd75C4ptW6jS6o+WpY64OZ6Y6bHR3u5+LT5n+jBUcTn6GeG8X
- 6iEJBw7BahotV0mjYyYdrSq3Z4hg7eGRM2uh8LfrvpM/N1JRgipYhFCc8Z12/jHYlC
- 0l4KrrrjgM8cwFT1dxdxsfuxMGatCvCekuPsaBDE=
-Date: Fri, 24 May 2019 17:59:32 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Vijay Khemka <vijaykhemka@fb.com>
-Subject: Re: [PATCH v2] misc: aspeed-lpc-ctrl: Correct return values
-Message-ID: <20190524155932.GB7516@kroah.com>
-References: <20190503181336.579877-1-vijaykhemka@fb.com>
+ id 1hUCeT-0008Lp-P9
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 16:02:39 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4OG2N36065251;
+ Fri, 24 May 2019 11:02:23 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1558713743;
+ bh=82zkqOODzgXEEfhiAtp0BSNOoGMWl3VWrMQOdMYRK6U=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=a1QoxT9HOVb0yKW/r/Z18wbv7GGr4dP3coCINnIzlQLAN0T3Y2O0X/EMQaLSnGc9O
+ +y+hwl21RjJuf9ktK/lW4hk49OV/UQ4dS3QyUDxwoimujA06OpUgYabXlrRzA8lITO
+ Js4SrKIH2CLNRU/uOzrQttmE1xq4ReAj+43IW4Tc=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4OG2NBY019968
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 24 May 2019 11:02:23 -0500
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 24
+ May 2019 11:02:23 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 24 May 2019 11:02:23 -0500
+Received: from [172.24.190.233] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4OG2GWg025692;
+ Fri, 24 May 2019 11:02:17 -0500
+Subject: Re: [PATCH v11 2/2] phy: Add driver for mixel mipi dphy found on
+ NXP's i.MX8 SoCs
+To: Fabio Estevam <festevam@gmail.com>, =?UTF-8?Q?Guido_G=c3=bcnther?=
+ <agx@sigxcpu.org>
+References: <cover.1557657814.git.agx@sigxcpu.org>
+ <2000bc4564175abd7966207a5e9fbb9bb7d82059.1557657814.git.agx@sigxcpu.org>
+ <CAOMZO5BaFYJxh1v46n2mdPyc+-jg6LgvoGR1rTE+yHZg_0Z8PA@mail.gmail.com>
+From: Kishon Vijay Abraham I <kishon@ti.com>
+Message-ID: <69fcb327-8b51-df9e-12d9-d75751974bce@ti.com>
+Date: Fri, 24 May 2019 21:31:02 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190503181336.579877-1-vijaykhemka@fb.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <CAOMZO5BaFYJxh1v46n2mdPyc+-jg6LgvoGR1rTE+yHZg_0Z8PA@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_085934_646695_DDA5104C 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190524_090237_938781_653AA1EE 
+X-CRM114-Status: GOOD (  18.67  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
@@ -74,27 +95,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sdasari@fb.com, Arnd Bergmann <arnd@arndb.de>,
- linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- linux-kernel@vger.kernel.org, Joel Stanley <joel@jms.id.au>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>, Li Jun <jun.li@nxp.com>,
+ Heiko Stuebner <heiko@sntech.de>, Sam Ravnborg <sam@ravnborg.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Johan Hovold <johan@kernel.org>,
+ DRI mailing list <dri-devel@lists.freedesktop.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Robert Chiras <robert.chiras@nxp.com>, Thierry Reding <treding@nvidia.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
+ "moderated list:ARM/FREESCALE
+ IMX / MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 03, 2019 at 11:13:36AM -0700, Vijay Khemka wrote:
-> Corrected some of return values with appropriate meanings and reported
-> relevant messages as debug information.
-> 
-> Signed-off-by: Vijay Khemka <vijaykhemka@fb.com>
-> ---
->  drivers/misc/aspeed-lpc-ctrl.c | 14 +++++++-------
->  1 file changed, 7 insertions(+), 7 deletions(-)
-
-File is no longer here :(
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiAyNC8wNS8xOSA1OjUzIFBNLCBGYWJpbyBFc3RldmFtIHdyb3RlOgo+IEhpIEtpc2hv
+biwKPiAKPiBPbiBTdW4sIE1heSAxMiwgMjAxOSBhdCA3OjQ5IEFNIEd1aWRvIEfDvG50aGVyIDxh
+Z3hAc2lneGNwdS5vcmc+IHdyb3RlOgo+Pgo+PiBUaGlzIGFkZHMgc3VwcG9ydCBmb3IgdGhlIE1p
+eGVsIERQSFkgYXMgZm91bmQgb24gaS5NWDggQ1BVcyBidXQgc2luY2UKPj4gdGhpcyBpcyBhbiBJ
+UCBjb3JlIGl0IHdpbGwgbGlrZWx5IGJlIGZvdW5kIG9uIG90aGVycyBpbiB0aGUgZnV0dXJlLiBT
+bwo+PiBpbnN0ZWFkIG9mIGFkZGluZyB0aGlzIHRvIHRoZSBud2wgaG9zdCBkcml2ZXIgbWFrZSBp
+dCBhIGdlbmVyaWMgUEhZCj4+IGRyaXZlci4KPj4KPj4gVGhlIGRyaXZlciBzdXBwb3J0cyB0aGUg
+aS5NWDhNUS4gU3VwcG9ydCBmb3IgaS5NWDhRTSBhbmQgaS5NWDhRWFAgY2FuIGJlCj4+IGFkZGVk
+IG9uY2UgdGhlIG5lY2Vzc2FyeSBzeXN0ZW0gY29udHJvbGxlciBiaXRzIGFyZSBpbiB2aWEKPj4g
+bWl4ZWxfZHBoeV9kZXZkYXRhLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBHdWlkbyBHw7xudGhlciA8
+YWd4QHNpZ3hjcHUub3JnPgo+PiBDby1kZXZlbG9wZWQtYnk6IFJvYmVydCBDaGlyYXMgPHJvYmVy
+dC5jaGlyYXNAbnhwLmNvbT4KPj4gU2lnbmVkLW9mZi1ieTogUm9iZXJ0IENoaXJhcyA8cm9iZXJ0
+LmNoaXJhc0BueHAuY29tPgo+PiBSZXZpZXdlZC1ieTogRmFiaW8gRXN0ZXZhbSA8ZmVzdGV2YW1A
+Z21haWwuY29tPgo+PiBSZXZpZXdlZC1ieTogU2FtIFJhdm5ib3JnIDxzYW1AcmF2bmJvcmcub3Jn
+Pgo+IAo+IFdvdWxkIHlvdSBoYXZlIGFueSBjb21tZW50cyBvbiB0aGlzIHNlcmllcywgcGxlYXNl
+PwoKSSBkb24ndCBoYXZlIGFueSBjb21tZW50cy4gSSdsbCBxdWV1ZSB0aGlzIG9uY2UgSSBzdGFy
+dCBxdWV1aW5nIHBhdGNoZXMgZm9yIHRoZQpuZXh0IG1lcmdlIHdpbmRvdy4KClRoYW5rcwpLaXNo
+b24KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
