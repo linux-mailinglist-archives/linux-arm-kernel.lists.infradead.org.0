@@ -2,133 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCF4B29F0F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 21:25:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA30C29F3C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 21:42:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5xeka3thVtgvglK3tTH97RGIqnu+DZH55JuE8tMv/bw=; b=r4lP6yVjIs64lH
-	TWLqp7ztzps1uVODsIhfwNumfqaCQNZIAmem94GOrlM6JyY+vARqIT5/849enuKxhHBQz5iTgMR5y
-	F/pSfknBohcYh+Bh22neJc7VU/mg/z/37jc0PM6BcT3mEXXnItvrlyimJvNuIc3cqBJfyKbckVFvl
-	CZ/MpF7TZdKDscdNzahHxgeXrOz03eNy0ZM28aRnUEerqDUZxRjT+89J8j4nzQWX/Rx+S+Bcxdn4Q
-	0Oe8YU1rT8oL0ft1on0qWhDvRyNu8y0T9zg6KvanjLvWDpfU8kBIzYVx3dz9akt2cjX2wWgyaotoB
-	AY62urXfBxE7CqnNoSGQ==;
+	List-Owner; bh=5Ge6CHcVZkLfYrMEH2c3MbEp60Zaz+tDreYlVsgrCrY=; b=SIXsTfbhtooFzA
+	Ka1ebtWmVfR+DO1hCOZH5mvcrQGGV+BEyBee6OOjqIoi5toqVvAyZvEb8tGWqky2NlriHHGTiXB5C
+	kY0klh2sk+SnyIvx28NjWRaOHs+qmS4LSDNgNogSqieDFgtYZ4ykrxpYckDGL0GyD6byr9c9G+Dsv
+	6Wo8rFYaob2wRVyJPZaCwjGOEarry20YxqgjQyrpjMliucGXXoOvsfoqET0f40FMfAcYxYqJ9Cq0z
+	PQqUbMxjlaDP0r7yr9ZrmH+A0csy7YPXx36jBFw0sGzExdpMyCQDR/e7d+/wVBn4rXGDafOIvELmg
+	dbxPZLckXogdDmBdYQbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUFp1-0003GF-3E; Fri, 24 May 2019 19:25:43 +0000
-Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
- helo=mx0b-0016f401.pphosted.com)
+	id 1hUG5B-0008Bb-BQ; Fri, 24 May 2019 19:42:25 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUFoe-0003FR-Vs
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 19:25:22 +0000
-Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
- by mx0a-0016f401.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4OJP5Hl028312; Fri, 24 May 2019 12:25:05 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=+gNQTDIKHly1DzzY6EQH7ChEagtnUyGBGI93erMBQTE=;
- b=LlWWv6uqzeqI713GzO0pg0u/JsHLhLCmT2URCtXaJbCQxMpGPwWj+7lHUn0UxMLbfe9w
- gz10XznJGWME6mEZ9x6SiZIgG6MjN7ktVKRT3mjr2K8HG3CjnoAv5mZ3ZHPjBoQtRDyB
- U9f8C1iClDkfK4ClCyoD61tk1k8hoC0Y/8JDFaAD2ork5rRpC4UPqd8wL6ZJo2Wn7Dx8
- cjsKT/ibWMWJztxiF+M8QbiFDKjhfTKZz1CVrtn3PzGXnTtbIrNRG8XovBYt/bDgA3AC
- GbuYUz6XCpgE5/Q0OYbOsSKxfeQUjKbIDCLu/ydz/n3YM2Pog/zNGET1kqvuBeZYigrp qQ== 
-Received: from sc-exch03.marvell.com ([199.233.58.183])
- by mx0a-0016f401.pphosted.com with ESMTP id 2spmjcrkrv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Fri, 24 May 2019 12:25:00 -0700
-Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH03.marvell.com
- (10.93.176.83) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Fri, 24 May
- 2019 12:24:59 -0700
-Received: from NAM05-BY2-obe.outbound.protection.outlook.com (104.47.50.51) by
- SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server
- (TLS) id
- 15.0.1367.3 via Frontend Transport; Fri, 24 May 2019 12:24:59 -0700
+ id 1hUG52-0008Ad-4k
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 19:42:18 +0000
+Received: by mail-pl1-x644.google.com with SMTP id gn7so4531290plb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 May 2019 12:42:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+gNQTDIKHly1DzzY6EQH7ChEagtnUyGBGI93erMBQTE=;
- b=X/AWA2rWOA79UT94L4RplImjjZCeRcEZOwe1sQ0HGhKJfdXTH7qgVJLO+ZgyCFb8VCOtTVKk2kOEzWslQ7H4M3I+l+/EX+SBDoMFQH7Kj9iAgzqa4tIszZaU6hSV+jlAfMpTNj2zR+VDTtYAjdlYJiabNuW8fvL+5n5jSTeb0m4=
-Received: from CY4PR1801MB1942.namprd18.prod.outlook.com (10.171.255.33) by
- CY4PR1801MB1880.namprd18.prod.outlook.com (10.171.255.19) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.15; Fri, 24 May 2019 19:24:55 +0000
-Received: from CY4PR1801MB1942.namprd18.prod.outlook.com
- ([fe80::f4b5:9677:2811:41f4]) by CY4PR1801MB1942.namprd18.prod.outlook.com
- ([fe80::f4b5:9677:2811:41f4%7]) with mapi id 15.20.1922.018; Fri, 24 May 2019
- 19:24:55 +0000
-From: Jayachandran Chandrasekharan Nair <jnair@marvell.com>
-To: Aaro Koskinen <aaro.koskinen@iki.fi>
-Subject: Re: [EXT] Re: [PATCH] arm64: Improve parking of stopped CPUs
-Thread-Topic: [EXT] Re: [PATCH] arm64: Improve parking of stopped CPUs
-Thread-Index: AQHVDcfCkz9GqQa430G2XsGiHVdW86ZxgtYAgAkuTgA=
-Date: Fri, 24 May 2019 19:24:55 +0000
-Message-ID: <20190524192446.GA29866@dc5-eodlnx05.marvell.com>
-References: <1485942532-2643-1-git-send-email-jnair@caviumnetworks.com>
- <20190516184452.GE10985@darkstar.musicnaut.iki.fi>
- <20190518221929.GA6135@dc5-eodlnx05.marvell.com>
- <20190518231244.GC3713@t60.musicnaut.iki.fi>
-In-Reply-To: <20190518231244.GC3713@t60.musicnaut.iki.fi>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BY5PR04CA0012.namprd04.prod.outlook.com
- (2603:10b6:a03:1d0::22) To CY4PR1801MB1942.namprd18.prod.outlook.com
- (2603:10b6:910:7a::33)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [199.233.59.128]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8472dd07-da42-493a-343f-08d6e07d8083
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:CY4PR1801MB1880; 
-x-ms-traffictypediagnostic: CY4PR1801MB1880:
-x-microsoft-antispam-prvs: <CY4PR1801MB1880F066E473524E1FED40BCA6020@CY4PR1801MB1880.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 0047BC5ADE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(346002)(39850400004)(136003)(366004)(396003)(54094003)(43544003)(199004)(189003)(229853002)(476003)(33656002)(6486002)(6436002)(486006)(66066001)(6512007)(316002)(11346002)(446003)(71190400001)(71200400001)(73956011)(66946007)(66476007)(66556008)(64756008)(66446008)(256004)(14444005)(305945005)(99286004)(6916009)(54906003)(102836004)(76176011)(7736002)(52116002)(6506007)(8676002)(81156014)(81166006)(8936002)(386003)(68736007)(6116002)(3846002)(6246003)(4326008)(186003)(53936002)(26005)(25786009)(14454004)(478600001)(86362001)(2906002)(5660300002)(1076003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CY4PR1801MB1880;
- H:CY4PR1801MB1942.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: marvell.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: QzdzOVN/fn5zEi3jB9jerhYDS+JwVcfheS+1Fs48uMpSY9I50R3egvyPCJUrDCo86Y3fmJfhtmGOywzemyCs470WY0Xm1JMwIk76Q9IBRQc6iTfIg3vpttKIKdUJh0DmjqNlPUdf+vFnh0t3/u3wHxPo+ArvVId3FN4sOLE/CzUa9jbfLzwR0kM2Y3z8Dtg8FSEmPGLbiTeQIsHO7UnSz5Kfom5Gl0Vq265Cw9yIGQsZWY8GLNVcRw+JgY4IGPWNZTEpd2baa+4aQ/Za+oY0gFMw/uvlvy6+O/3g8VuK9eAhGy4hMXNuUTe2TSnOqByh/Uf9xWsy33a0pI8WvN5+jH9a3zqpdY2cXkIAcycqHwQHP1cr9RYtHW31VUz/fpuGpdX6V/Z8gzT6xarJugfhis2dqIYqrVVdVT9Wv4yGCk8=
-Content-ID: <B4B77EEF55D41D4785FA3ED079E57D46@namprd18.prod.outlook.com>
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=2dfVnj0z8UOLBg4J0DLOYq1772RUeCwK2zOSGh4/SWE=;
+ b=vZaagkluwNiMRjWKl9RSzMjTzb/+1YkoKYezoNgxeEzDWoAOHNJVRD9hB1opBDxErw
+ 9xr5lV+VyFR9BaG556Xbp/vjkxeWkT+Hp4S7UOU7UZYUdMd77t6LqmAH/7oIpxRYyGTw
+ rq1osS6x3GG1knr0FPHct2FPZQRdXEBjgnwzbFgO/Fm6od5VxJolEgong3iGe/q33LPY
+ PECMT6loq99WvXs7EO+G3X2PFC9BhkDxc1L/lWQXJcJ7vUN8vOxDDwzC2YRTmBDjKJpP
+ U9YYNomVlkkz70eP704r5h0sK8Zkwn0b6KBYbXBLGrkine52vJuXr20svFAgfonrwn3I
+ Zkpw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=2dfVnj0z8UOLBg4J0DLOYq1772RUeCwK2zOSGh4/SWE=;
+ b=t8LOqWnMQnYg2b6VCV/kVh497w+87tyVFvjeRyzK2A0r/NQJfe6/mleNwC5+tx2Ptf
+ RLj7tsJeh5cmzAhwoXgD6z+eJ5HSUngt8HPziEjH9SokogTER9qffJQG+XzMbmwwIdeT
+ lb2e5ShPjovhiY8yFD8pf4nrfQ4h5mncttYfptOWPxKebmsWzxPg/Xb0ifnfnoEOvXR0
+ eO8ddkdiGgQN1ZOPVEBlftKwrWflvQohDpgrb4m7LzxXHuZpS1SIqmkYr4hAPfouPtW2
+ M+dyslXmquCxVrzHDn0qtj47N/6bjL89kLzdWLkpo5ggqSsa2VPoU49ATdNv+RSgqN7O
+ Osug==
+X-Gm-Message-State: APjAAAVSm9+EOWD/NOESub4AdaX79ciDO6fh0suijkg3ZPl/Jii3SI5J
+ Xfoa4Pbl5mjN3cipAuNR2ir5ZA==
+X-Google-Smtp-Source: APXvYqyVtWnRm6ZPuzBDAHjyTx+TyF/ONuADCQywreRoi5SrfW3rQzlo+xq+gy2RDJoIMj5p7saM+A==
+X-Received: by 2002:a17:902:1347:: with SMTP id
+ r7mr64611826ple.45.1558726935160; 
+ Fri, 24 May 2019 12:42:15 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:ed4f:2717:3604:bb3f])
+ by smtp.googlemail.com with ESMTPSA id r71sm8643926pjb.2.2019.05.24.12.42.14
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 24 May 2019 12:42:14 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH 0/1] ARM: meson8b-mxq: better support for the TRONFY MXQ
+In-Reply-To: <20190524181936.29470-1-martin.blumenstingl@googlemail.com>
+References: <20190524181936.29470-1-martin.blumenstingl@googlemail.com>
+Date: Fri, 24 May 2019 12:42:13 -0700
+Message-ID: <7hblzr1vxm.fsf@baylibre.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8472dd07-da42-493a-343f-08d6e07d8083
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 May 2019 19:24:55.4038 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jnair@marvell.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR1801MB1880
-X-OriginatorOrg: marvell.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-24_07:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_122521_205152_2E14844C 
-X-CRM114-Status: GOOD (  27.72  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190524_124216_300977_01038886 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.148.174 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -142,54 +94,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, Jayachandran C <jnair@caviumnetworks.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ hexdump0815@googlemail.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 19, 2019 at 02:12:44AM +0300, Aaro Koskinen wrote:
-> Hi,
-> 
-> On Sat, May 18, 2019 at 10:19:39PM +0000, Jayachandran Chandrasekharan Nair wrote:
-> > On Thu, May 16, 2019 at 09:44:53PM +0300, Aaro Koskinen wrote:
-> > > On Wed, Feb 01, 2017 at 09:48:52AM +0000, Jayachandran C wrote:
-> > > > The current code puts the stopped cpus in an 'yield' instruction loop.
-> > > > Using a busy loop here is unnecessary, we can use the cpu_park_loop()
-> > > > function here to do a wfi/wfe.
-> > > > 
-> > > > Signed-off-by: Jayachandran C <jnair@caviumnetworks.com>
-> > > 
-> > > Looks like this patch has been forgotten?
-> > > 
-> > > I have a system where CPUs need to be put in wfi/wfe for the warm reset
-> > > to work, and using cpu_park_loop() would solve this.
-> > 
-> > If I remember correctly (it has been a while), in my testing I saw that
-> > the wfi does not block after a while since interrupts are pending.
-> > Most likely that timer interrupts will still be enabled.
-> 
-> Right, this is correct; I also observed the same in my testing.
-> 
-> > We might need some code to reset/disable the GIC interface for the CPU
-> > before parking.
-> 
-> I solved this by doing the global GIC disable in the firmware PSCI reset
-> function code. So from Linux side cpu_park_loop() is enough, and already
-> this patch is an improvement.
+Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
 
-Ideally, I think the GIC driver has to be updated to turn off the interrupts
-to the CPU before we get to this point in the code. There are some power
-management and hotplug notifiers already in the GIC driver, I wonder if
-it is possible to take care of this too.
+> A while ago a user asked on #linux-amlogic about the state of the
+> TRONFY MXQ in mainline. I did some research (mainly downloading an
+> Android firmware image for that device and looking at the .dtb) and
+> updated the mainline .dts accordingly.
+>
+> I kept this patch in my tree but didn't hear back from anyone with one
+> of these boards (who could actually test my patch). That was until
+> today where I got the following message on IRC:
+>   any plans to submit your latest own version of the meson8b mxq dtb
+>   to mainline? it works really well for me and the one in mainline is
+>   too simple to be usedful ...
 
-Since Linux turns on the interrupts, it would be better if Linux turns
-them off too, rather than relying on the platform to do it.
+Any chance of getting a Tested-by: from that IRC user on the patch?
 
-JC
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
