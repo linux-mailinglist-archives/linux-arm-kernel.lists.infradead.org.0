@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54FF12908B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 07:52:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF40929096
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 07:53:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ekY5hw4AZmoJR+xyaXW9TnU9+WKTZ3L6A1XyABAImBI=; b=FMheNLLS+pLboT
-	HD7Bg3CyHuBo97ULXbTDEaueI28FUmgYMcq+shYf8p5SC86bb2O78OQ0eIef2Qy5bJA+c8KsUtJPS
-	+fTNGk1+EbTM5Uk4S7U7z4f1XnaGrOhysDgPLJ+tmA2wqC8i0USg/w+gLn3gO023+UCPwXParIeCK
-	7vyL4UyMydEKTQrk03QUrFp6mCBB2ACafVPmpT/fTUtJ9US1lelw4TYRYHG9suGnSnTc/miBrvO/Z
-	W1OHMaMTXecbiSzQIFu5y1HqDX95qYS87pHDvgTYOSnLsLkMwt3nJbYAnuTSIMmyfYS1Wi704moSD
-	cGQUiVJlEEYkpVQsYrTA==;
+	List-Owner; bh=sTcwZ3fYxLZD1lCjM4qP574x6ErdOwi+4P7yhFyLSfU=; b=gO7ziq/MQABPjD
+	YvREjSvtv7JGws+xxKuNiXHy62QI+nUS2/HwdmY75Q3CVFkFmr+QKKG4BW7pgrXFcHPZ0Bg20pAEd
+	XYvBMdf9+YOH00zJ274cT0ONNbdv7EoGziQR4K+UeSEks4IeyO4q7qGHn4BEZzvahOVdfD7DfRr9H
+	hH5AmB6m55LFhUzFBUOCPPkdxXKvU6+HmZKiACzgSeRN34vlmSvaD10oFktypnPOIUqypfRxPkvoV
+	h3zT5lrRbnMoPBNz0SsgxQfJpI5CNdsyMA+jbAW33x8qtrUZdUwLCS5oijpH+y4v28Fl2Kk53hUY0
+	2yFuVx257C2DlO61Rnrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU38D-0004uh-5Z; Fri, 24 May 2019 05:52:41 +0000
-Received: from mail-eopbgr00059.outbound.protection.outlook.com ([40.107.0.59]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hU39E-0005HH-Gt; Fri, 24 May 2019 05:53:44 +0000
+Received: from mail-eopbgr80053.outbound.protection.outlook.com ([40.107.8.53]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU380-0004mN-Pu
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 05:52:33 +0000
+ id 1hU397-0005Gt-NU
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 05:53:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eKwEL0hsIp12CnwV2oHYus+JsvYqct60cA6cWG8I7AY=;
- b=ZR073CzpG6/dmkwaQ1/vCkOOLBPW/0S+1H84bIjQ65jR5+4MRw7DHI9d1/uEsSlgBcnfYE/XcxLVlSqUIYJloas+sFBYaR6oeiEvAPWJmjMc4aRmZuqq19jmZ9YrIk+Bn0iQKqFWAvlVhDNncCJozAGjdb+AA6/CDvVP0DzTFj0=
+ bh=R3jNrJbSE+OLLbjY/ZhGMPVrdaaXS8U8WtMRqD0FeTw=;
+ b=L3QA65NQL00ZRideaw6x8NbkSNUuobOwvN7BX7JcXPG2MLaVdPMYUzQfgpgf2uqB0Zh0Y2/SN7fOPiJ/5Eji5eog/nkifTXXHd3u0FhpKjVb23xS2rErQWm6yoMUwqVEgyl9sfCWpGvSFtw1769wdAWdHjG+RwLOVcEtN1zPMzg=
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3721.eurprd04.prod.outlook.com (52.134.67.141) with Microsoft SMTP
+ DB3PR0402MB3882.eurprd04.prod.outlook.com (52.134.72.33) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.16; Fri, 24 May 2019 05:52:21 +0000
+ 15.20.1922.18; Fri, 24 May 2019 05:53:33 +0000
 Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
  ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1922.017; Fri, 24 May 2019
- 05:52:21 +0000
+ 05:53:33 +0000
 From: Anson Huang <anson.huang@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH 3/3] arm64: dts: imx8mq: add clock for SNVS RTC node
-Thread-Topic: [PATCH 3/3] arm64: dts: imx8mq: add clock for SNVS RTC node
-Thread-Index: AQHVCrrcUP74CkLHLE+NNE1EMv+PBqZ38P8AgAHi6yA=
-Date: Fri, 24 May 2019 05:52:21 +0000
-Message-ID: <DB3PR0402MB391655657A8BE5E812F01C8FF5020@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1557882259-3353-1-git-send-email-Anson.Huang@nxp.com>
- <1557882259-3353-3-git-send-email-Anson.Huang@nxp.com>
- <20190523010243.GD16359@dragon>
-In-Reply-To: <20190523010243.GD16359@dragon>
+Subject: RE: [PATCH 1/2] soc: imx: soc-imx8: Avoid unnecessary of_node_put()
+ in error handling
+Thread-Topic: [PATCH 1/2] soc: imx: soc-imx8: Avoid unnecessary of_node_put()
+ in error handling
+Thread-Index: AQHVD7YvdNtmZ2uz6UeyYdwfC+FzEKZ4qg6AgAEgPbA=
+Date: Fri, 24 May 2019 05:53:33 +0000
+Message-ID: <DB3PR0402MB3916A92814AC8B5E66DA2C3CF5020@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1558430013-18346-1-git-send-email-Anson.Huang@nxp.com>
+ <20190523124044.GT9261@dragon>
+In-Reply-To: <20190523124044.GT9261@dragon>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -55,44 +56,44 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=anson.huang@nxp.com; 
 x-originating-ip: [119.31.174.68]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: baa9a513-5da4-45ac-0c7f-08d6e00bfced
+x-ms-office365-filtering-correlation-id: 5214ef71-8460-48f9-321c-08d6e00c2812
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3721; 
-x-ms-traffictypediagnostic: DB3PR0402MB3721:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <DB3PR0402MB3721E06CBBF74329AE5F7860F5020@DB3PR0402MB3721.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:483;
+ SRVR:DB3PR0402MB3882; 
+x-ms-traffictypediagnostic: DB3PR0402MB3882:
+x-ms-exchange-purlcount: 2
+x-microsoft-antispam-prvs: <DB3PR0402MB388207AF674DF4ACAE9D22D6F5020@DB3PR0402MB3882.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
 x-forefront-prvs: 0047BC5ADE
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(396003)(346002)(39860400002)(366004)(136003)(13464003)(199004)(189003)(6436002)(76116006)(8676002)(6306002)(44832011)(73956011)(55016002)(68736007)(486006)(7736002)(9686003)(305945005)(7416002)(476003)(33656002)(74316002)(25786009)(81166006)(81156014)(2906002)(8936002)(14454004)(66476007)(446003)(66446008)(64756008)(66556008)(256004)(52536014)(54906003)(71190400001)(71200400001)(66066001)(66946007)(316002)(26005)(4326008)(53546011)(478600001)(6506007)(86362001)(102836004)(966005)(3846002)(6916009)(99286004)(229853002)(11346002)(7696005)(53936002)(6116002)(5660300002)(6246003)(186003)(76176011)(32563001)(299355004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3721;
+ SFS:(10009020)(396003)(366004)(39860400002)(136003)(346002)(376002)(13464003)(189003)(199004)(6306002)(4326008)(102836004)(6506007)(316002)(6246003)(9686003)(7736002)(53546011)(8936002)(6916009)(229853002)(478600001)(76116006)(33656002)(55016002)(64756008)(25786009)(66066001)(66946007)(73956011)(8676002)(66556008)(66446008)(66476007)(81166006)(476003)(446003)(81156014)(6436002)(11346002)(14454004)(5660300002)(74316002)(2906002)(44832011)(54906003)(68736007)(486006)(86362001)(3846002)(76176011)(7696005)(256004)(26005)(52536014)(6116002)(186003)(966005)(99286004)(71190400001)(71200400001)(53936002)(305945005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3882;
  H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 1Hl5vOWHTPitA7aKByeNvRap739atBwDilrfWyJzQluuznZoYCmY96DgI+fep+9ZVkW5OWAIS7yyiBBWqV72t3qBBAFGQsud/oYNDJVUxm6VyMBW/MHUbx2FauREX9N5DJ/QTOVTA+Gkurwx9NTRNI6rvQQERWHtMmnuIXFfLBBz/qPF+1sr4CbRWVsnlFTgKDwXYSUVTw6ocbaxxzFTlTYrN7nd+4DzC6xOYZG0RgA5bCKfKm9zS/rt9Jvm/2ceRcZ9NY5LIzQsSnUXYKX9IpcP2GRsotFv5tBsd9J/BiJSItmK6YHqYC0SKCyp7jDhVzmSd+k8NppAf0GQeEbkI/MkWCdbBJsBSgIOHryjyquy927FjK97gzM2R7Dhs6seNefyTUtJYRQqQmO7X4C2B1kNZwiGfdhjrzb4kB2Gqdc=
+x-microsoft-antispam-message-info: 6w3ZCUflHoT3YNMuO7+Y4xHTWhSb/MWLl81gBV0awS/AknieNqI7zYToksg1a5SW01Ont+rhrwLU0BQ8dOKPTg9/JolA3XqfGGkKyjVf4JKwf0gW9t12JWfwCrHZtzEO//5Nme+z4PkoPDOxM08zyFx07t0YIbqOxJLe0hV5LLvIzkMRaC1kUh54O2ne/m1d8xH3jFMn6sCmzamaUidwEBgPcuxXxZ4RNhp3Up52iq553wmOknJUE9Cz8AFf0ZGrTLVLEXKiGwg0I/te2Inip0Ncn11jVB1dtXULH4MRnms4NxOCQVYYIJJiP9OGRv2SD50I/yFwZ+D0ELXUEQwaz8LrrU1ahtNLElmejJq8IBmAVNSrIeK+xs06PUid/tm0BeLEXPZHOPbo1++mvqdXB8GNn238Phz/6BUxPnCI8UI=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: baa9a513-5da4-45ac-0c7f-08d6e00bfced
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 May 2019 05:52:21.0900 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5214ef71-8460-48f9-321c-08d6e00c2812
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 May 2019 05:53:33.4075 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3721
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3882
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_225228_958402_37AD3559 
-X-CRM114-Status: GOOD (  17.22  )
+X-CRM114-CacheID: sfid-20190523_225337_765842_A5D1015E 
+X-CRM114-Status: GOOD (  20.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.59 listed in list.dnswl.org]
+ no trust [40.107.8.53 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -113,22 +114,15 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "agx@sigxcpu.org" <agx@sigxcpu.org>, Abel Vesa <abel.vesa@nxp.com>,
- "ccaione@baylibre.com" <ccaione@baylibre.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
+Cc: Abel Vesa <abel.vesa@nxp.com>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "angus@akkea.ca" <angus@akkea.ca>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
  "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -138,52 +132,66 @@ Hi, Shawn
 
 > -----Original Message-----
 > From: Shawn Guo [mailto:shawnguo@kernel.org]
-> Sent: Thursday, May 23, 2019 9:03 AM
+> Sent: Thursday, May 23, 2019 8:41 PM
 > To: Anson Huang <anson.huang@nxp.com>
-> Cc: robh+dt@kernel.org; mark.rutland@arm.com; s.hauer@pengutronix.de;
-> kernel@pengutronix.de; festevam@gmail.com; mturquette@baylibre.com;
-> sboyd@kernel.org; l.stach@pengutronix.de; Abel Vesa
-> <abel.vesa@nxp.com>; andrew.smirnov@gmail.com; ccaione@baylibre.com;
-> angus@akkea.ca; agx@sigxcpu.org; devicetree@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; linux-
-> clk@vger.kernel.org; dl-linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH 3/3] arm64: dts: imx8mq: add clock for SNVS RTC node
+> Cc: s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
+> Leonard Crestez <leonard.crestez@nxp.com>; Abel Vesa
+> <abel.vesa@nxp.com>; viresh.kumar@linaro.org; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; dl-linux-imx
+> <linux-imx@nxp.com>
+> Subject: Re: [PATCH 1/2] soc: imx: soc-imx8: Avoid unnecessary
+> of_node_put() in error handling
 > 
-> On Wed, May 15, 2019 at 01:09:36AM +0000, Anson Huang wrote:
-> > i.MX8MQ has clock gate for SNVS module, add clock info to SNVS RTC
-> > node for clock management.
+> On Tue, May 21, 2019 at 09:18:43AM +0000, Anson Huang wrote:
+> > of_node_put() is called after of_match_node() successfully called,
+> > then in the following error handling, of_node_put() is called again
+> > which is unnecessary, this patch adjusts the location of of_node_put()
+> > to avoid such scenario.
 > >
 > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > 
-> This one still has problem with encoding and thus cannot be applied.
-> Here is what I get, and there is '=20' in the patch content.
+> Again, there are '=20' in the patch content and I cannot apply it.
 
-We switch to another server which has no such issue, I resent the patch,
-Please pick up this one, sorry for the inconvenience.
+I resent the patch set, please pick them up, thanks.
 
-https://patchwork.kernel.org/patch/10959097/
+https://patchwork.kernel.org/patch/10959101/
+https://patchwork.kernel.org/patch/10959099/
 
-thanks,
 Anson.
 
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> b/arch/arm64/boot/dt= s/freescale/imx8mq.dtsi index e5f3133..b706de8
-> 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -438,6 +438,8 @@
->                                         offset =3D <0x34>;
->                                         interrupts =3D <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
->                                                 <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
-> +                                       clocks =3D <&clk IMX8MQ_CLK_SNVS_ROOT>;
-> +                                       clock-names =3D "snvs-rtc";
->                                 };
->                         };
-> =20
-> --=20
-> 2.7.4
-
+> Shawn
+> 
+> > ---
+> >  drivers/soc/imx/soc-imx8.c | 4 ++--
+> >  1 file changed, 2 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+> > index b1bd8e2..944add2 100644
+> > --- a/drivers/soc/imx/soc-imx8.c
+> > +++ b/drivers/soc/imx/soc-imx8.c
+> > @@ -86,8 +86,6 @@ static int __init imx8_soc_init(void)
+> >  	if (!id)
+> >  		goto free_soc;
+> >
+> > -	of_node_put(root);
+> > -
+> >  	data = id->data;
+> >  	if (data) {
+> >  		soc_dev_attr->soc_id = data->name;
+> > @@ -106,6 +104,8 @@ static int __init imx8_soc_init(void)
+> >  	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
+> >  		platform_device_register_simple("imx-cpufreq-dt", -1, NULL,
+> 0);
+> >
+> > +	of_node_put(root);
+> > +
+> >  	return 0;
+> >
+> >  free_rev:
+> > --
+> > 2.7.4
+> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
