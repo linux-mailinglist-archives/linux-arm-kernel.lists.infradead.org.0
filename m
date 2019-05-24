@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBB5F297F5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 14:23:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95C68297FE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 14:26:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BqPvC/i/ch8xbDla0qZ/S1IAVwK3APKWTAcZWHPn4HQ=; b=FM/N9hlOk/vmYi
-	ap7Xr2q6XYaWt713FO2t0zrc83hld6ZK86fqgsKdkh2fahzMMLFNsfsRjQt9KXFN3nFkZ2PDnsUiF
-	2Jsp0+Afs+RPiiF9yTwcnw+7U79ZpwxzTjD450NU7HGqdSyFMh5/BaB77rbwbhSptFhjEMX/ascGx
-	pHZxgWfgQL7lvmKSReEp3Rh2M57c2bDz2SHmj6plKXnP1Sf5R/JcQeHnlooW/d8ixWv8aBo1bT3Lu
-	e6UNqkkYzvBiI/zGMmVB+JA6T0KH8cfd0H30xDAXSQXBHZ+mMDvOyv1IqndByGxbJzYR3hWPlfgSX
-	NP0m0rNTVr2HrN3AZicQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=m/Cs8Ov55+gPjN7YT+1DVqbxxTufUuRaI3ootpd+9ew=; b=nD1W0Za6HDpdrGw13uWQLjq4S
+	3s3MK/l3iitCslYGLPtwd3/FZu6+bgE/UE2Iy+dGwh4l/RZ0gIicin+0YrqRmqwXQ9/I3HWyQbvZK
+	+GBjUGBGpZeumaPoFE+WI4z+RbPyA1rkvStcBvXP+txTL5jBWZj4CX7SSl/bfvlRHIDLBl1m1Pvz+
+	3coN1cT6xDuMpS9K+w0xs4+bbY3pbPArgmUvYZLxZg5umKzPtQPe4lgeB6ECobnwPhWXQ3FIPmc0A
+	MjqSxxCtFLH6htCKgwzjySQmfK0Wad++K92ucn4zB1F72s1jvKYxj8MZKgbVkLoIprVuDnQiNgAkJ
+	Ywe3+kGUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU9Eb-0006gH-3B; Fri, 24 May 2019 12:23:41 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hU9HO-0000LN-76; Fri, 24 May 2019 12:26:34 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU9ET-0006ft-S4
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 12:23:35 +0000
-Received: by mail-lf1-x143.google.com with SMTP id x132so7021432lfd.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 05:23:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=C+myfdGRYFPLLSybMtkNtVx2Tt/XQimBNXiCQ/VdObg=;
- b=hZ0bD/CUdsrgatmNXy5higdZbx3OSCJT8sw3LgkqkYgqbLtDn/gLs9c3g8mirUEDrG
- l+4o7a9TAxKLDBrPxE1t79fM9XPEqezMkBejfXLFW1INWkfF6OniubiwX8l6JtdYRW5M
- tFXRga1iZyPaMA5IfgLcUNsVq0/n8CPAA7ngiZ2vlfacytZlLloQGm7izI50MYXleqvm
- ISGNwOfcAGX8Xe6oTUH7CHfM9HQ/3MXe5c0F3fumRQ20D6mMK9Uiok4uhyMArRoFFH+q
- u4G3Opyv18dM583Kp0bxWnPFYDg/9AdqBdoV4pWXcATSuvokXHnSxlg9lkFRrlKRVbRQ
- 1utQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=C+myfdGRYFPLLSybMtkNtVx2Tt/XQimBNXiCQ/VdObg=;
- b=BYNWrM/ZtFhALCgRszOd8lkJTcMl3L4PUhGHandr+698Aj4frlrnpKwMKo56RwUPAj
- 83AbMQEMDdxRIXBr8j3KuwNMXUN0klOWzMmmgoBkYscF9KDIWS7tpUWhuj72i6/Mwejb
- 2OWpxo0g5iMpw/LSQrrr68Bl2X2Y9vUU5WwlAveEYzI5F6M4Ub11jys9oApP7R8SFEo0
- OMTFpsnI4Rek6Zl6nIhp4yVX13IzbyjdO7/IZOgz1qMHsW0kDxxGg1ZkCa0nssGljfg8
- TSQ/j9Oke/n5COLtCLcqx78fx1fanu3X3WJ+N6Or/HuTJA4ZzIlrQrxtgGqfXFObX/m+
- ORDg==
-X-Gm-Message-State: APjAAAU9vpLbiFQQAyWXMa8Hqd+0Bldj2D9zT4iAHxW+JDCFhjO0CCTN
- sRUS8QSjI3aLAdRgv5P6Bo/n2C11goNA45nOGRA=
-X-Google-Smtp-Source: APXvYqzNQQPTSEiT9TgbJ91HH92JPe3O9NL20r1waVsd3eYrkSbkO8SrKpooDjZEBXWcbK0tw4yY2uokVzdzBVZa5zc=
-X-Received: by 2002:ac2:4428:: with SMTP id w8mr46274166lfl.99.1558700610795; 
- Fri, 24 May 2019 05:23:30 -0700 (PDT)
+ id 1hU9HG-0000Kw-V4
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 12:26:28 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4OCJ6Hq021165; Fri, 24 May 2019 14:26:21 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=MRkkLHdMQA+fa243SgLqmgSMuMqZksxq6zRTMMLwqTI=;
+ b=UBkDOjp+86RcHTz7CrpA0k7LNC39DmwaTk3HVvoWoQGecrJtUjcvL29dWEKfb/b/sJgW
+ qXPr18nlCniLI3rhEv4fCjUGz/9rNmlf6HeEwh3gEwxrNcSSJVcSSueBDcH1JVgmmFCT
+ VWhdz34tvJpQLziQRDBJXlzWz3Q7g0D5ZMbAhL9v3MVnqAdC/IBzGyHRO/hoJmYsmO9b
+ pgsVSILuEZvytnIPiBXjxUhdLNqkUxIxxkyLJLNcvbaPB7+U9nHiZKgwLf43Ialw9uJP
+ QeOUiNJBLqyWdvOfSzReKN7Hsgd/oo9z9p4262dpW1KPVXLUSsAiRoaOHxGAJtJuCOlK BA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2sj774nmu5-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 24 May 2019 14:26:21 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 23DA034;
+ Fri, 24 May 2019 12:26:21 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EEDDD2BCC;
+ Fri, 24 May 2019 12:26:20 +0000 (GMT)
+Received: from [10.48.0.204] (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 24 May
+ 2019 14:26:20 +0200
+Subject: Re: [PATCH 0/2] pinctrl: stm32: add suspend/resume management
+To: Linus Walleij <linus.walleij@linaro.org>, Benjamin Gaignard
+ <benjamin.gaignard@st.com>
+References: <1557474150-19618-1-git-send-email-alexandre.torgue@st.com>
+ <CACRpkdYgTbTa6RmM3y-myk31ZxLGZ+8KvLof1XHkockrX4tofA@mail.gmail.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <4a35e070-b18a-e0f5-76b6-72054eb98b43@st.com>
+Date: Fri, 24 May 2019 14:26:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <cover.1557657814.git.agx@sigxcpu.org>
- <2000bc4564175abd7966207a5e9fbb9bb7d82059.1557657814.git.agx@sigxcpu.org>
-In-Reply-To: <2000bc4564175abd7966207a5e9fbb9bb7d82059.1557657814.git.agx@sigxcpu.org>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Fri, 24 May 2019 09:23:30 -0300
-Message-ID: <CAOMZO5BaFYJxh1v46n2mdPyc+-jg6LgvoGR1rTE+yHZg_0Z8PA@mail.gmail.com>
-Subject: Re: [PATCH v11 2/2] phy: Add driver for mixel mipi dphy found on
- NXP's i.MX8 SoCs
-To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>, 
- Kishon Vijay Abraham I <kishon@ti.com>
+In-Reply-To: <CACRpkdYgTbTa6RmM3y-myk31ZxLGZ+8KvLof1XHkockrX4tofA@mail.gmail.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG5NODE2.st.com (10.75.127.14) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-24_05:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_052333_934013_72D380D0 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190524_052627_482103_82D44F07 
+X-CRM114-Status: GOOD (  16.15  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,42 +98,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Li Jun <jun.li@nxp.com>,
- Heiko Stuebner <heiko@sntech.de>, Sam Ravnborg <sam@ravnborg.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Johan Hovold <johan@kernel.org>,
- DRI mailing list <dri-devel@lists.freedesktop.org>,
- Abel Vesa <abel.vesa@nxp.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Robert Chiras <robert.chiras@nxp.com>, Thierry Reding <treding@nvidia.com>,
- Shawn Guo <shawnguo@kernel.org>,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>, "open
+ list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgS2lzaG9uLAoKT24gU3VuLCBNYXkgMTIsIDIwMTkgYXQgNzo0OSBBTSBHdWlkbyBHw7xudGhl
-ciA8YWd4QHNpZ3hjcHUub3JnPiB3cm90ZToKPgo+IFRoaXMgYWRkcyBzdXBwb3J0IGZvciB0aGUg
-TWl4ZWwgRFBIWSBhcyBmb3VuZCBvbiBpLk1YOCBDUFVzIGJ1dCBzaW5jZQo+IHRoaXMgaXMgYW4g
-SVAgY29yZSBpdCB3aWxsIGxpa2VseSBiZSBmb3VuZCBvbiBvdGhlcnMgaW4gdGhlIGZ1dHVyZS4g
-U28KPiBpbnN0ZWFkIG9mIGFkZGluZyB0aGlzIHRvIHRoZSBud2wgaG9zdCBkcml2ZXIgbWFrZSBp
-dCBhIGdlbmVyaWMgUEhZCj4gZHJpdmVyLgo+Cj4gVGhlIGRyaXZlciBzdXBwb3J0cyB0aGUgaS5N
-WDhNUS4gU3VwcG9ydCBmb3IgaS5NWDhRTSBhbmQgaS5NWDhRWFAgY2FuIGJlCj4gYWRkZWQgb25j
-ZSB0aGUgbmVjZXNzYXJ5IHN5c3RlbSBjb250cm9sbGVyIGJpdHMgYXJlIGluIHZpYQo+IG1peGVs
-X2RwaHlfZGV2ZGF0YS4KPgo+IFNpZ25lZC1vZmYtYnk6IEd1aWRvIEfDvG50aGVyIDxhZ3hAc2ln
-eGNwdS5vcmc+Cj4gQ28tZGV2ZWxvcGVkLWJ5OiBSb2JlcnQgQ2hpcmFzIDxyb2JlcnQuY2hpcmFz
-QG54cC5jb20+Cj4gU2lnbmVkLW9mZi1ieTogUm9iZXJ0IENoaXJhcyA8cm9iZXJ0LmNoaXJhc0Bu
-eHAuY29tPgo+IFJldmlld2VkLWJ5OiBGYWJpbyBFc3RldmFtIDxmZXN0ZXZhbUBnbWFpbC5jb20+
-Cj4gUmV2aWV3ZWQtYnk6IFNhbSBSYXZuYm9yZyA8c2FtQHJhdm5ib3JnLm9yZz4KCldvdWxkIHlv
-dSBoYXZlIGFueSBjb21tZW50cyBvbiB0aGlzIHNlcmllcywgcGxlYXNlPwoKVGhhbmtzCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+
+
+On 5/24/19 1:24 PM, Linus Walleij wrote:
+> On Fri, May 10, 2019 at 9:42 AM Alexandre Torgue
+> <alexandre.torgue@st.com> wrote:
+> 
+>> During power sequence, GPIO hardware registers could be lost if the power
+>> supply is switched off. Each device using pinctrl API is in charge of
+>> managing pins during suspend/resume sequences. But for pins used as gpio or
+>> irq stm32 pinctrl driver has to save the hardware configuration.
+>> Each register will be saved at runtime and restored during resume sequence.
+> 
+> Both patches applied.
+> 
+> On the same pinctrl devel branch is also Benjamin's patches to support
+> the "link_consumers" property on the pin controller descriptor to
+> enable links from pin control consumers back to their pin controller
+> suppliers, especially important for STMFX.
+> 
+> Would you please check if it work fine if you turn on this feature
+> for the SoC STM32 pin controller?
+> 
+
+Sure. Either today or next Monday.
+
+I let you know.
+
+regards
+Alex
+
+> I am working a bit on refining the patches, so I want to enable testing
+> with some SoC pin controllers as well and possibly make the
+> behavior default.
+> 
+> Yours,
+> Linus Walleij
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
