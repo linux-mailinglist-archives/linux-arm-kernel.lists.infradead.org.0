@@ -2,101 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAEBA29923
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 15:39:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66D8629942
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 15:50:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kh7Q9Jj/JQ8a6U1ANWjIOniyzOEC/5bjGMha6+IW9Is=; b=Qo85HVEF6C33gN
-	59g2sxyt1QzBkecvUtem6bWx9SrhRjAJ20m7VI/+Hj7/NC5pddGCNDsSyhlyCjrHPI9gJmZkFrQD5
-	bfImkpSSjBSMrZA6B5cd4rgecRsGdgvpHdayni2GeDmLFlvZMZaeB/iAbHXvOo4q+opl2GC1ZOEPN
-	JcGIYzwYdipLD8QB+X3qNv7KJqfBL2CG2oWDlpVwuSleZDfTJcD+kbs/DMpxiE9xzs2eUMFu7DM/Q
-	46ALMs2XQfvKB5BPe+bALr4SWPx257y4NNUkTjox1/x813Z84RiH6lH0tycmig4Wua+kPu6XzaZl9
-	vWYpgzhb6QKAxpTQ4Oyw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8aRSYSJrDlkaQvJm0bPr60hopSy6ebl/J/3n0thY5dQ=; b=RVqlzO+dxUqPsY
+	uwk/rGl0RvN7NIGTZMYLJeDnufggwJmkloyfEXv2uNitzWPZ8WYnLUjB5aUtYqUiJJsTB7VfDB4Qt
+	KLsodK7Q1cJ1SiwuBdwNEaxsvxQzYtdOv8cpeUXG8KtP39ZGlAZ/pTI8AxwiRVNu5wlsQaBTfyZYg
+	zgCU9CfphmfwWg25kDkK/N2eEaY6I1shumVmGXkyM0jInwnm2wd3CkyEH7Fdy1r0DAMW25nny4LSh
+	IkqTTb3kpuSoCba8pyaeciIQxb9b8W+20U+oEQcy9wMFjXZXJGd5fhECR2RWn0kqV1Wp2k8d4/9Em
+	dMCf0jtWbHgwaHnJQcCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUAPg-0005NP-Gg; Fri, 24 May 2019 13:39:12 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUAPY-0005N5-Pd
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 13:39:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37B74A78;
- Fri, 24 May 2019 06:39:04 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 65D183F5AF; Fri, 24 May 2019 06:38:59 -0700 (PDT)
-Subject: Re: [PATCH] arm64: Kconfig: Make ARM64_PSEUDO_NMI depend on BROKEN
- for now
-To: Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20190524132735.6592-1-will.deacon@arm.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <8f853543-b692-cb47-ada3-e5996029fd1f@arm.com>
-Date: Fri, 24 May 2019 14:38:56 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hUAab-0001ad-DQ; Fri, 24 May 2019 13:50:29 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hUAaU-0001ZS-1H
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 13:50:24 +0000
+Received: by mail-pl1-x644.google.com with SMTP id p15so4219340pll.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 May 2019 06:50:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=mfjGRiMHKLKe40QcPzGgiXQKqFosuxoiydIUgFnM900=;
+ b=hEqELOMjryeiq/Lz0j9sXaizVrFc6bSfFOPrXONo19/tKBN7s3fxW+KghW5RryeTIF
+ H4mhqxlbjBImKESJHTVUZWQ8tcdwfqfHaaOBK/Z6lxTMKaTRztgUhKJ0F1A5k6RtXUfW
+ gjk/ADbWI3Z6HeOupBvKaf0MxJhbqVirqA6CQiQGxn+pXTFPsYCljQoEW3t0VGO1oCGX
+ QIJ9h149YB3yPIZgVgQqLEvH4JNMPFy+hEPqh46tGhlBb/uCVbMqFXh9Dy4JQmoZnBTa
+ dJI29pKUP74aWLR015xqFhcHMR1lyKfox9scN8JcJ2PAqM928cFBcvQDxTd2pibUH7Gn
+ Rcxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=mfjGRiMHKLKe40QcPzGgiXQKqFosuxoiydIUgFnM900=;
+ b=bOXCp7U30K4uc6TtRsduqR4pgVICJuotSoz6O1O/OeJuop3mkmqv3TnvQNmKRvn1pt
+ r87vsbVH022N1HwUcKkYHnwmU8n4nUZk1ZCnfF2HYmOE13UKvt077JKuylwGYtDVyr1h
+ M1WI8rQPHhFY+RjKwkTdRUCytBx+gJNsCUTjE8DR7L729UGbUDopyyDj7truapY4GFCd
+ pgJe79SUe5/4eHICdFHqeLunevT4SCHsDaC3FqerAAMVXTUBP1GWvBLGOtldKM/21Gqg
+ MSwK8T7A8lDtsUS1/i1ajGNYXMJUKVR4IRIGcITS/uEs2yVw96egdy1CKRbnO1mscUX9
+ s1Bw==
+X-Gm-Message-State: APjAAAV8H03+8Hday/NTt4G55LjAhEPZw7pNxI4UYPI+70jkV11lYqmh
+ jHNOdik/1RZkeVvkfJUHm1/SXQ==
+X-Google-Smtp-Source: APXvYqx50QVTouTpwq7kMvsDqLVK19AQ+I3Ki7CVWSIIkSQ5uiFK6uhw/4n9Kco9j2EHKt32XLCrWQ==
+X-Received: by 2002:a17:902:3183:: with SMTP id
+ x3mr3353568plb.321.1558705820424; 
+ Fri, 24 May 2019 06:50:20 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:ed4f:2717:3604:bb3f])
+ by smtp.googlemail.com with ESMTPSA id a9sm2551220pgw.72.2019.05.24.06.50.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 24 May 2019 06:50:19 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: "kernelci.org bot" <bot@kernelci.org>, tomeu.vizoso@collabora.com,
+ guillaume.tucker@collabora.com, mgalka@collabora.com,
+ Neil Armstrong <narmstrong@baylibre.com>, broonie@kernel.org,
+ matthew.hart@linaro.org, enric.balletbo@collabora.com,
+ Jerome Brunet <jbrunet@baylibre.com>
+Subject: Re: mainline/master boot bisection: v5.2-rc1-172-g4dde821e4296 on
+ meson-g12a-x96-max
+In-Reply-To: <5ce78689.1c69fb81.58097.eacf@mx.google.com>
+References: <5ce78689.1c69fb81.58097.eacf@mx.google.com>
+Date: Fri, 24 May 2019 06:50:18 -0700
+Message-ID: <7hmujc0xnp.fsf@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <20190524132735.6592-1-will.deacon@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_063904_848807_59EF6062 
-X-CRM114-Status: GOOD (  17.15  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190524_065022_080935_10982A39 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,52 +98,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, "# 5 . 1" <stable@vger.kernel.org>,
- Julien Thierry <julien.thierry@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 24/05/2019 14:27, Will Deacon wrote:
-> Although we merged support for pseudo-nmi using interrupt priority
-> masking in 5.1, we've since uncovered a number of non-trivial issues
-> with the implementation. Although there are patches pending to address
-> these problems, we're facing issues that prevent us from merging them at
-> this current time:
-> 
->   https://lkml.kernel.org/r/1556553607-46531-1-git-send-email-julien.thierry@arm.com
-> 
-> For now, simply mark this optional feature as BROKEN in the hope that we
-> can fix things properly in the near future.
-> 
-> Cc: <stable@vger.kernel.org> # 5.1
-> Cc: Marc Zyngier <marc.zyngier@arm.com>
-> Cc: Julien Thierry <julien.thierry@arm.com>
-> Signed-off-by: Will Deacon <will.deacon@arm.com>
-> ---
->  arch/arm64/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 6a9544606da3..f6275c265d41 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -1422,6 +1422,7 @@ config ARM64_MODULE_PLTS
->  
->  config ARM64_PSEUDO_NMI
->  	bool "Support for NMI-like interrupts"
-> +	depends on BROKEN # 1556553607-46531-1-git-send-email-julien.thierry@arm.com
->  	select CONFIG_ARM_GIC_V3
->  	help
->  	  Adds support for mimicking Non-Maskable Interrupts through the use of
-> 
+"kernelci.org bot" <bot@kernelci.org> writes:
 
-Acked-by: Marc Zyngier <marc.zyngier@arm.com>
+> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+> * This automated bisection report was sent to you on the basis  *
+> * that you may be involved with the breaking commit it has      *
+> * found.  No manual investigation has been done to verify it,   *
+> * and the root cause of the problem may be somewhere else.      *
+> * Hope this helps!                                              *
+> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+>
+> mainline/master boot bisection: v5.2-rc1-172-g4dde821e4296 on meson-g12a-x96-max
+>
+> Summary:
+>   Start:      4dde821e4296 Merge tag 'xfs-5.2-fixes-1' of git://git.kernel.org/pub/scm/fs/xfs/xfs-linux
+>   Details:    https://kernelci.org/boot/id/5ce72c6259b514ed817a3640
+>   Plain log:  https://storage.kernelci.org//mainline/master/v5.2-rc1-172-g4dde821e4296/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.txt
+>   HTML log:   https://storage.kernelci.org//mainline/master/v5.2-rc1-172-g4dde821e4296/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.html
+>   Result:     11a7bea17c9e arm64: dts: meson: g12a: add pinctrl support controllers
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+False alarm.
+
+This one is failing in one lab but passing in another:
+https://kernelci.org/boot/all/job/mainline/branch/master/kernel/v5.2-rc1-172-g4dde821e4296/
+
+I'll look into what's the difference between labs.
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
