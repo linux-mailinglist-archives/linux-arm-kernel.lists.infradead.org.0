@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8739929D25
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:36:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60A2129D29
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 19:36:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Vh5xFrgAAaFKLTAxFyvuP+VoZ3yWJmhHEJaPktLHTYE=; b=BCxY+4rsUFsqB7OxZ0iZmZ1HUN
-	OXmPW+Y6K1FbCx8ClsEjD/qvCBzlzKGETQlz8NAWbOV5uWkIQ5dbEJE+uHCjv30uCOUhV3/9/+Krt
-	s8QeLODnOM4NI1d4/jH+QGioVGcWyYQe+hlHUYKfz8WW+tpd6ElYQFOz7W/qkztL4MvnG0p7EkqR9
-	Wa4D1gReIYg8jACiUHa0G7I2td0g9l4okv9zHYYaEHmtwJb5ZS4vE+c9xibOyeJ4GrbIOMsn+69P+
-	hh6/D5Pvze3mQNfwmeYLV6+FfwKThJLkP9jKQjtNXnbRqlnnbLkhbQxXPciswTdsWD2eSw3eCPHtG
-	Rs43+vTQ==;
+	bh=G6OTU2K0j3et6vLlhNKuqya6Gr8lE2viOMbdn7t98nQ=; b=Zl12ln8i+FKuWtWaaR/5FNjLVb
+	eqHRqc5z11Rcmn6L87hQ5yogq4oEWJ9uHM9jJgYkS2qxltgfzfqaSNMYCCcKwNrsfcvBUpdeoq1B8
+	EU0d/P2qMDVugbp+5uCUce8jTRHjNnGjeuTN7FzFcELMC9TCOWhXHWWN2l8lQcobyZ6dtb3yJjveb
+	UFSMWyOka5XtPeGRoy0XvTPZ/7brewE6YzpvEPTRnL6BfmwJhMbsj4jHLQa4p/CW8VX0Xdm8rUoKZ
+	zSCnHO59WADx3oukVV1JSJPm2ygUHdiLRonKLO5NEKtrhXo+JJqBXy6ADPSaTtOY7tHQtfiGjZ1lL
+	anpFawmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUE75-0001p2-Vq; Fri, 24 May 2019 17:36:16 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hUE7I-00024U-6D; Fri, 24 May 2019 17:36:28 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUE67-0000oT-KD
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:35:18 +0000
-Received: by mail-pl1-x641.google.com with SMTP id a5so4427018pls.12
+ id 1hUE68-0000pP-LN
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 17:35:20 +0000
+Received: by mail-pg1-x541.google.com with SMTP id h17so5434733pgv.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 10:35:15 -0700 (PDT)
+ Fri, 24 May 2019 10:35:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=bHfFo/ORpsa03SvyTpjVHtc4WYRwtr5BeZCOvFgzYZo=;
- b=hSBPmd0yHRq5YPvvnYa5Gx0AuXkJSH3B/lf9UvmmoD/BV8lpht4l4I20wq2uLPOEPs
- u7ufCc6pRQ3OIj5ikzw7wj6tCJb8XA05l+3Ag8o3CxvMzdRYsLnd4zvezjzSjKixKYF9
- tCi1s+z/0fQW6n6IyymDffRnqsMm0576GcSIFZko3qMfIcB7H2Yn1EIFnLBxojtntpDI
- up25DcEbYTZjo+CzyW8v3n6/ZyYz/e/SGmtK8MXqs7PkzM0602OyS2k2oNGTq/ntRLDa
- 9thUJP0L0kIiwr1tfYWkIzSUvthKBLIhli1z9zahMaCO5znW4HJDhWd/ywN2Z6EnDT0n
- do3g==
+ bh=jTlQzYqrjzzW1MYnyuDkipJisTZbubvkU14bVoe0t14=;
+ b=MC93AIIpGvqvxr8KRwqE/rWvPO816+lg1ETrCvK8D6sHxJvYJ7kjPT01pyAH/9YLHW
+ rKBhBxiBcCRxSMwlhyztMxeq546Q44yGeKEORvrc/Z1TcGFvOlAwvRLLfqhNc8bSnfrM
+ IBDJWi+NIUGrO2UtFv9kqJiTeF32OiaBBsmmFhiUjd5PkXdHYmEjRE6G+RJ8mjJQLnCP
+ 142m+uRG7sJQcCztbeuvD4QrM7baoBZOVVq7YYf88ndLv1TsuRyouvxttcIK8BWn6Vtj
+ Vtsea2KMHWfQPN7Hzv+8Y0oC1WGILNqZcTcekCR6Bo1vJ3hC1zi5d5X5XL1O4rQN2ywf
+ OPzw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=bHfFo/ORpsa03SvyTpjVHtc4WYRwtr5BeZCOvFgzYZo=;
- b=H3epmvIAy6L2TrbWNKIWT5h4BQ9d31BoRGENV4SkO7Sc7kgZ3bISFtLpraf2oIcUVa
- AR+PeCbXj4u8I7a5M5Dpvpeq+f/am6iqfY9QF/aeeCJQO852cl9KmnPsK2wM0+IpYmYZ
- PnY0XSYIXiCxXJ7L9BxYu24kqDF7qJFNHD4zQ7WdMskyIi4z+qc1imR9sFvNP+MGW4wV
- huLoO8GdqEnlyNAWmevK0yCexZKti0HZYiZzhP0hOK9x7CgzJ8rAIpPrdL/p5wq/1ngS
- J1Cj2ErsyZvdOSpI+GYp5a6M9tP8I/J7B6qX3+GAOCrk4Fq0nlZLPOnkMAHiFkWYMwKe
- W0dQ==
-X-Gm-Message-State: APjAAAVqNQG33XLjpEJOFB02flb27NFljyE3Rf8ZC+tcgf9ktunfsnqJ
- dxsBU5geJSh9rw5he37njPfEbA==
-X-Google-Smtp-Source: APXvYqw3jFqGsxy+JmYpU6cE0TmMJET0MNIbWGdNxRz1i1yMAvwnbNIlpfoAHYWR6fWUT4Gq5Oe/rw==
-X-Received: by 2002:a17:902:2e81:: with SMTP id
- r1mr91812796plb.0.1558719314882; 
- Fri, 24 May 2019 10:35:14 -0700 (PDT)
+ bh=jTlQzYqrjzzW1MYnyuDkipJisTZbubvkU14bVoe0t14=;
+ b=DUcLlwcyv8W7MkZ1j75J7byhIh8E3EAGlnn30Tr1WUFTrh4gzxWLmiQSYRi8l+GIRd
+ 6GfVV6ci4HukIQ4GktjwedSQrLR2OPARc2mPoxzjLKdimTDCsAPmPZSA9Hor7WHA94hY
+ U0XFNdSQQrhIpkdkwwSgbPjsn20qgeTnGH66Mfaj/JGogpNXeMzf65RDevbW8xNYwcY8
+ YfaP7yK2UGxwBTsjm3xaD2EPYPL2t3SoYqHBgSAfSBj1Q0au8/TdieI0RxH7+53VdCix
+ EbMR1q1AHEQh9NVQnnZeD5FBcW6ubY/1YdCDizUP5coyep4Pjza1nIIrbMNFB1aFvCtx
+ P/aQ==
+X-Gm-Message-State: APjAAAX/Mqhk6gYwhPBdVbmE5o7Y7RhToYQ+rqKhRGfu1PAMK6uBXjqK
+ tdocHsKldlt4xPzk0VZ6ExM8HQ==
+X-Google-Smtp-Source: APXvYqzaqJ7TrV3X6jpeNwx5Rrn55gZe2XCC7/rB2jq8eJJMyNiIIb9qunK7UjUXrP/aeNGx+CLx3w==
+X-Received: by 2002:a65:494a:: with SMTP id q10mr12264479pgs.201.1558719316187; 
+ Fri, 24 May 2019 10:35:16 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k13sm2809575pgr.90.2019.05.24.10.35.13
+ by smtp.gmail.com with ESMTPSA id k13sm2809575pgr.90.2019.05.24.10.35.14
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 May 2019 10:35:14 -0700 (PDT)
+ Fri, 24 May 2019 10:35:15 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: acme@kernel.org
-Subject: [PATCH v2 04/17] perf tools: Add handling of itrace start events
-Date: Fri, 24 May 2019 11:34:55 -0600
-Message-Id: <20190524173508.29044-5-mathieu.poirier@linaro.org>
+Subject: [PATCH v2 05/17] perf tools: Add handling of switch-CPU-wide events
+Date: Fri, 24 May 2019 11:34:56 -0600
+Message-Id: <20190524173508.29044-6-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190524173508.29044-1-mathieu.poirier@linaro.org>
 References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_103515_765128_1461D7B7 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20190524_103516_949137_B1E85E66 
+X-CRM114-Status: GOOD (  13.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,29 +106,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add handling of ITRACE events in order to add the tid/pid of the executing
-process to the perf tools machine infrastructure.  This information is
-later retrieved when a contextID packet is found in the trace stream.
+Add handling of SWITCH-CPU-WIDE events in order to add the tid/pid of the
+incoming process to the perf tools machine infrastructure.  This
+information is later retrieved when a contextID packet is found in the
+trace stream.
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 26 ++++++++++++++++++++++++++
- 1 file changed, 26 insertions(+)
+ tools/perf/util/cs-etm.c | 38 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index de488b43f440..0742c50fce46 100644
+index 0742c50fce46..5322dcaaf654 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -1657,6 +1657,29 @@ static int cs_etm__process_timeless_queues(struct cs_etm_auxtrace *etm,
+@@ -1680,6 +1680,42 @@ static int cs_etm__process_itrace_start(struct cs_etm_auxtrace *etm,
  	return 0;
  }
  
-+static int cs_etm__process_itrace_start(struct cs_etm_auxtrace *etm,
-+					union perf_event *event)
++static int cs_etm__process_switch_cpu_wide(struct cs_etm_auxtrace *etm,
++					   union perf_event *event)
 +{
 +	struct thread *th;
++	bool out = event->header.misc & PERF_RECORD_MISC_SWITCH_OUT;
 +
++	/*
++	 * Context switch in per-thread mode are irrelevant since perf
++	 * will start/stop tracing as the process is scheduled.
++	 */
 +	if (etm->timeless_decoding)
++		return 0;
++
++	/*
++	 * SWITCH_IN events carry the next process to be switched out while
++	 * SWITCH_OUT events carry the process to be switched in.  As such
++	 * we don't care about IN events.
++	 */
++	if (!out)
 +		return 0;
 +
 +	/*
@@ -137,8 +150,8 @@ index de488b43f440..0742c50fce46 100644
 +	 * we get a contextID from the decoder.
 +	 */
 +	th = machine__findnew_thread(etm->machine,
-+				     event->itrace_start.pid,
-+				     event->itrace_start.tid);
++				     event->context_switch.next_prev_pid,
++				     event->context_switch.next_prev_tid);
 +	if (!th)
 +		return -ENOMEM;
 +
@@ -150,16 +163,15 @@ index de488b43f440..0742c50fce46 100644
  static int cs_etm__process_event(struct perf_session *session,
  				 union perf_event *event,
  				 struct perf_sample *sample,
-@@ -1694,6 +1717,9 @@ static int cs_etm__process_event(struct perf_session *session,
- 		return cs_etm__process_timeless_queues(etm,
- 						       event->fork.tid);
+@@ -1719,6 +1755,8 @@ static int cs_etm__process_event(struct perf_session *session,
  
-+	if (event->header.type == PERF_RECORD_ITRACE_START)
-+		return cs_etm__process_itrace_start(etm, event);
-+
+ 	if (event->header.type == PERF_RECORD_ITRACE_START)
+ 		return cs_etm__process_itrace_start(etm, event);
++	else if (event->header.type == PERF_RECORD_SWITCH_CPU_WIDE)
++		return cs_etm__process_switch_cpu_wide(etm, event);
+ 
  	return 0;
  }
- 
 -- 
 2.17.1
 
