@@ -2,72 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6255429286
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 10:11:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52B002928F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 10:12:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gwz4DBSUacX4vlPqTiadzxLPclhwOx5PWS1XQyfFaDE=; b=bvfG2xWRolCKpx+3GwP0+1QKo
-	qFpBe3GFvUDDRYOsogPVJEfpcTaPj3Gj7qegSR519UWlKe3jXd12lvJIZ8yErYMLcJQroboz20s1h
-	zhXnCcxWO7YT30SP0Ghh3H75Ssi6GX+i8T2HaHcc315sJ2N+oA6RZMzhq4Hbq9sO9Nx+1kAF8nWo0
-	/Fzfq9OO6Q236CS4iJ7Co6UBF69LLeacXKknFZzHeVMWujxzYRHyFWrMgzUWdC3kREOwTTMQdhfK+
-	duTpmurgVT40aoaXkoOGSpzjP4PxCcNE1P0efvy97d1uZ9FgA106nt8D30j3HUQXsCzKZkklMOidp
-	k+HwYXKAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4YJcU+T64h36AkifP4ziFclnDOAO6SEgSxx96AyfJ1M=; b=ISP
+	eIXINpYD/bbaAUv6IVqrc57AdmeZyXYM14fD92zxitJwQUatGSz2MlUE2/+Xh3LnKJIs0KQsEc4UF
+	B7fDqdjHB9Pl2gfbLjp/usreHeFnN76ylaN6i84Y4pjWS3rrPy+HhNVdpAvfg/MJr6TKeV0uFf1rj
+	sTGGPVnj+mgoKaWYGq5xOi2qmoy0yidn6pZeUMXlP53jsFK/oLoHcSF4vndu3vscNA+5rDiMUzhCD
+	tPQULTD94lJ+OKur7lLKE7W/urgP215gF8U+wdWepXbghtXDrsLMqrTEbxB0XsM7Y4y+zwbp1jhaN
+	A40FWImU3vR4TLLff/xLYlZWuAI6AaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU5Il-00081m-JN; Fri, 24 May 2019 08:11:43 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hU5Ji-0000C1-8Y; Fri, 24 May 2019 08:12:42 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU5If-00081T-Vp
- for linux-arm-kernel@bombadil.infradead.org; Fri, 24 May 2019 08:11:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=zlLeKiovPop+kHi4verhD5Tne6OSVE40TkA+5qhACB4=; b=YOvsxpfvyNC2ZmUCAOUj5i9fO
- EPtwKOznC5EpmBgducDehOKkp02Vf2/Ox4FujbkCLrXeHsEi1SVEK4bhpD+CMDTlZENwq85a5eUMY
- LSibjAyXRfjyvmMGI3J5M6zn37j31qjCSragxNRCtfa84n79T/m84y07Hponw4fGEaI3C/NTDqAdi
- M5hudXTRLnuyC7huclCBnecONQRD0YJNcuW9c5O5Hh8UYdl4OSBAvGrzKR/DUyVvDibxdOnzzO1vI
- b06aYOgUA4jqWW5BWnHw5YV2x8MbpvWP86Iydle3ssj7tGGl9ATJMmPI/4k34r40SUiffGcjJRqiz
- /rdEN4wHA==;
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU5Ia-0002kr-V5
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 08:11:35 +0000
-X-Originating-IP: 90.88.147.134
-Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
- [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 2CBD3FF80B;
- Fri, 24 May 2019 08:10:50 +0000 (UTC)
-Date: Fri, 24 May 2019 10:10:49 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH 2/8] dt-bindings: net: Add a YAML schemas for the generic
- PHY options
-Message-ID: <20190524081049.6obsqdeywmx4io4k@flea>
-References: <74d98cc3c744d53710c841381efd41cf5f15e656.1558605170.git-series.maxime.ripard@bootlin.com>
- <aa5ec90854429c2d9e2c565604243e1b10cfd94b.1558605170.git-series.maxime.ripard@bootlin.com>
- <e39b7a35-3235-6040-b3c1-648897fabc70@gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <e39b7a35-3235-6040-b3c1-648897fabc70@gmail.com>
-User-Agent: NeoMutt/20180716
+ id 1hU5JZ-0000BC-JX
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 08:12:35 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 5C814307D851;
+ Fri, 24 May 2019 08:12:31 +0000 (UTC)
+Received: from hp-dl380pg8-01.lab.eng.pek2.redhat.com
+ (hp-dl380pg8-01.lab.eng.pek2.redhat.com [10.73.8.10])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 3C7ED19C4F;
+ Fri, 24 May 2019 08:12:20 +0000 (UTC)
+From: Jason Wang <jasowang@redhat.com>
+To: mst@redhat.com, jasowang@redhat.com, kvm@vger.kernel.org,
+ virtualization@lists.linux-foundation.org, netdev@vger.kernel.org
+Subject: [PATCH net-next 0/6] vhost: accelerate metadata access
+Date: Fri, 24 May 2019 04:12:12 -0400
+Message-Id: <20190524081218.2502-1-jasowang@redhat.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.48]); Fri, 24 May 2019 08:12:31 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_091133_120868_0156D7A4 
-X-CRM114-Status: GOOD (  16.07  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190524_011233_717965_FB573306 
+X-CRM114-Status: GOOD (  10.89  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,79 +65,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Antoine =?utf-8?Q?T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1594221829129737975=="
+Cc: hch@infradead.org, christophe.de.dinechin@gmail.com,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org, peterx@redhat.com,
+ James.Bottomley@hansenpartnership.com, linux-mm@kvack.org, jglisse@redhat.com,
+ jrdr.linux@gmail.com, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi:
 
---===============1594221829129737975==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="nhmqncggqckfikyo"
-Content-Disposition: inline
+This series tries to access virtqueue metadata through kernel virtual
+address instead of copy_user() friends since they had too much
+overheads like checks, spec barriers or even hardware feature
+toggling like SMAP. This is done through setup kernel address through
+direct mapping and co-opreate VM management with MMU notifiers.
 
+Test shows about 23% improvement on TX PPS. TCP_STREAM doesn't see
+obvious improvement.
 
---nhmqncggqckfikyo
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Thanks
 
-Hi Florian,
+Changes from RFC V3:
+- rebase to net-next
+- Tweak on the comments
+Changes from RFC V2:
+- switch to use direct mapping instead of vmap()
+- switch to use spinlock + RCU to synchronize MMU notifier and vhost
+  data/control path
+- set dirty pages in the invalidation callbacks
+- always use copy_to/from_users() friends for the archs that may need
+  flush_dcache_pages()
+- various minor fixes
+Changes from V4:
+- use invalidate_range() instead of invalidate_range_start()
+- track dirty pages
+Changes from V3:
+- don't try to use vmap for file backed pages
+- rebase to master
+Changes from V2:
+- fix buggy range overlapping check
+- tear down MMU notifier during vhost ioctl to make sure
+  invalidation request can read metadata userspace address and vq size
+  without holding vq mutex.
+Changes from V1:
+- instead of pinning pages, use MMU notifier to invalidate vmaps
+  and remap duing metadata prefetch
+- fix build warning on MIPS
 
-On Thu, May 23, 2019 at 11:16:55AM -0700, Florian Fainelli wrote:
-> On 5/23/19 2:56 AM, Maxime Ripard wrote:
-> > The networking PHYs have a number of available device tree properties that
-> > can be used in their device tree node. Add a YAML schemas for those.
-> >
-> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> > ---
-> >  Documentation/devicetree/bindings/net/ethernet-phy.yaml | 148 +++++++++-
-> >  Documentation/devicetree/bindings/net/phy.txt           |  80 +-----
-> >  2 files changed, 149 insertions(+), 79 deletions(-)
-> >  create mode 100644 Documentation/devicetree/bindings/net/ethernet-phy.yaml
->
-> Updating the PHY Library section of the MAINTAINERS file to include that
-> binding document (not sure why it was not there) would be nice.
+Jason Wang (6):
+  vhost: generalize adding used elem
+  vhost: fine grain userspace memory accessors
+  vhost: rename vq_iotlb_prefetch() to vq_meta_prefetch()
+  vhost: introduce helpers to get the size of metadata area
+  vhost: factor out setting vring addr and num
+  vhost: access vq metadata through kernel virtual address
 
-Sure, I'll do it, thanks!
-Maxime
+ drivers/vhost/net.c   |   4 +-
+ drivers/vhost/vhost.c | 850 ++++++++++++++++++++++++++++++++++++------
+ drivers/vhost/vhost.h |  38 +-
+ 3 files changed, 766 insertions(+), 126 deletions(-)
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+-- 
+2.18.1
 
---nhmqncggqckfikyo
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOenCQAKCRDj7w1vZxhR
-xUgbAP9wwE5sdteTuWzmvFDeY+ZJM3sYeePKoRl395ve/Qr3oAD9F9BoZLzYs5Ni
-OuDix3LenJQC4xZN88XtLfwtItIvAgA=
-=k8+g
------END PGP SIGNATURE-----
-
---nhmqncggqckfikyo--
-
-
---===============1594221829129737975==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1594221829129737975==--
-
