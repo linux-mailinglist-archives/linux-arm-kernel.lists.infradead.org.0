@@ -2,84 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 118ED2909B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 07:54:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB257290BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 May 2019 08:06:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m73yWE+UMbtUZyJ1F6vvhGlzBPydvd4hTyYnZ5QnPhM=; b=IJ6Q0CeFbB/nBz
-	UmChGp5FQHyDkLfQuvpPRldzmpSEpTbP6ME929wHijTJx+KfSbCMKuk5unnyBFDeAplI/2TH9egJL
-	GHTX7cM7JS1KRI+ftAvLKQN7STr51GcGFybJHk8Q5b/6dwU6bXC3M2cGmHG37+tT9lcHxxp0x2lfA
-	U2vXLouM31TXTs3QjBE6ck8Hns1pX9/8y+NR77kwDUdAxv0OI3neLXvOhcTgAC64JhyAvVokEWdbA
-	lMPtLEVa5Vi1c60w0x9cU2kIr1fE0qadsJLwU3eF5FurPARdTnZH0u4OmTO+967y8azoOWB4FMHUo
-	soOmNXKBAjvSU9gk4Aiw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F49a5QeJn39mce51l+gq+zUaXvBpDxzQbiAhp1AuFZI=; b=hgmbi5llXk7w9o
+	q3ILXDLcKE6KeS+AT+7a2XWlmAsfTqTfrmdQkzD5vegrT4hln/vCabbPeUdR/+uLU+qNpQ4DJEp0+
+	ab5uD3QxfCjh6R/Xz8+x2oLL/GsNrWfqVZc+dMjIHt7iL6F2CxB8Bu9gpylCwDMuaWcMxNw1aApEb
+	ICVV4OgSA6LlEXEILGarbv+Cz8mEjqa3ViddAa/yvermkeyNMQHg6wytEwH1K8ezIUPl8IZ8goUXQ
+	MricX2uJCi9MiFKIOkXZgSW9YMvLZszyL04+rxsIrdFIDMcRggKG8onygGcVru/uvuYUj/Wq39TLq
+	heWoqvpfIqJrG6KAjTcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hU39w-0005jG-CS; Fri, 24 May 2019 05:54:28 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hU39o-0005iP-LZ; Fri, 24 May 2019 05:54:21 +0000
-Received: by mail-oi1-x244.google.com with SMTP id 203so6154746oid.13;
- Thu, 23 May 2019 22:54:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7Ebgv3UeXA0WytHreGCVh/7DQkPpVomBIGZeLwu/7es=;
- b=WzxkgAyRBYozpQ9xwmo4jx8O4OFRtPU6J0nptXrnuf+XflBtgcZgTRHwcpnbhEmVAv
- usBq5i6iGIoTGhH3T4ughQUWoLxun4lJZmnw1D8s4AkM/5A9zCYhUuMJBwBaLG+74xd9
- cAJfKD65CbgSvqMGfCS9b1xHDIkd6gZI3ar5Z0XvUqUhAaBYVGsX6H7b5uccDJt4eySU
- MYSo6jGHbKD9L9dnKS05g0Qm1ycdhH2tguBQh9rWV2gyIdEYwANqfWndBfUxBDYMSXb/
- AzwcI7cP0mhIZnAUnajbr1n0shjsHYdDtiW7moPVVpFA5DhZpV4qTI20AA2LFMx70I7h
- zf0A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7Ebgv3UeXA0WytHreGCVh/7DQkPpVomBIGZeLwu/7es=;
- b=K5BjsbGTpmnkW6l+qBi391Kty4QpPnecjBAn+ejGNE1R9fqixjt7jEp3omOcncimo/
- awFPeDwlWLLQlFH5yb/uiZDMqGLHx/IS30IfCtMS23sjd5Cul60nOF26xIc9XF1fJHZe
- rucUNL+ulSaO6Zd0wyEcYMTZZh97c2jR8C9sI602w91IQIQkabrKFFh7aWSzV24mDxGq
- iNfV/Inem0wyc0t3ZDbyRA/U933GvtNl9i1uuQdhiW9OZdb+BL4N2ujIj0bAAY0ryNyy
- nzB161t3L2mKZH2tsj+1gkVd7vbKbrVOjg9pPqvfSQ3v0bxvlyKuUe2+fUVesP0AjhLL
- EFeA==
-X-Gm-Message-State: APjAAAWJgwyPO6g2Fa4IkP2vawOPkkKJ2QrnMojOxFEXEDHnGRcrDzDv
- 3POKmTOXnbSyas/GheaTCumNA02YHAlp1Iv9zck=
-X-Google-Smtp-Source: APXvYqxMC+I6BinOmBqmotSjJts4Ix18CeAG/RSOJyQ2f/Fct4fsBMOH+wWVl8C6cc2AOAkKi/k7adx3Cjy6I0Xu97w=
-X-Received: by 2002:aca:3c85:: with SMTP id j127mr5285364oia.29.1558677259014; 
- Thu, 23 May 2019 22:54:19 -0700 (PDT)
+	id 1hU3Li-0001sS-OE; Fri, 24 May 2019 06:06:38 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hU3Lb-0001rt-GU
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 06:06:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8DCD5374;
+ Thu, 23 May 2019 23:06:30 -0700 (PDT)
+Received: from [10.162.42.134] (p8cg001049571a15.blr.arm.com [10.162.42.134])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ AB13C3F5AF; Thu, 23 May 2019 23:06:24 -0700 (PDT)
+Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
+ for kernel page table dump
+To: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@kernel.org>
+References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
+ <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
+ <20190515165847.GH16651@dhcp22.suse.cz>
+ <20190516102354.GB40960@lakrids.cambridge.arm.com>
+ <20190516110529.GQ16651@dhcp22.suse.cz>
+ <20190522164212.GD23592@lakrids.cambridge.arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <c3be0539-2ffe-07b6-f106-12ccb93bbe2f@arm.com>
+Date: Fri, 24 May 2019 11:36:35 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <20190523183510.GA12942@hari-Inspiron-1545>
-In-Reply-To: <20190523183510.GA12942@hari-Inspiron-1545>
-From: Sergio Paracuellos <sergio.paracuellos@gmail.com>
-Date: Fri, 24 May 2019 07:54:08 +0200
-Message-ID: <CAMhs-H9222OXrqWh4W-D7pFV6FXbhLVVGXz-29gO-Qo0eQaTvQ@mail.gmail.com>
-Subject: Re: [PATCH] staging: mt7621-pci: pci-mt7621: Remove unneeded variable
- err
-To: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+In-Reply-To: <20190522164212.GD23592@lakrids.cambridge.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_225420_700479_A976B5E1 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190523_230631_558163_F32C0BA2 
+X-CRM114-Status: GOOD (  30.08  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sergio.paracuellos[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,64 +69,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, reg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Mamta Shukla <mamtashukla555@gmail.com>, NeilBrown <neil@brown.name>,
- Peter Vernia <peter.vernia@gmail.com>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: cai@lca.pw, ira.weiny@intel.com, david@redhat.com, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, logang@deltatee.com,
+ james.morse@arm.com, cpandya@codeaurora.org, arunks@codeaurora.org,
+ akpm@linux-foundation.org, osalvador@suse.de, mgorman@techsingularity.net,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
+ robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hariprasad,
 
 
-On Thu, May 23, 2019 at 8:35 PM Hariprasad Kelam
-<hariprasad.kelam@gmail.com> wrote:
->
-> devm_request_pci_bus_resources function will return -EBUSY/-ENOMEM
-> in fail case and returns 0 on success.
->
-> So no need to store return value in err variable.
->
-> Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
-> ---
->  drivers/staging/mt7621-pci/pci-mt7621.c | 7 +------
->  1 file changed, 1 insertion(+), 6 deletions(-)
->
-> diff --git a/drivers/staging/mt7621-pci/pci-mt7621.c b/drivers/staging/mt7621-pci/pci-mt7621.c
-> index 03d919a..bc2a3d1 100644
-> --- a/drivers/staging/mt7621-pci/pci-mt7621.c
-> +++ b/drivers/staging/mt7621-pci/pci-mt7621.c
-> @@ -596,17 +596,12 @@ static int mt7621_pcie_request_resources(struct mt7621_pcie *pcie,
->                                          struct list_head *res)
->  {
->         struct device *dev = pcie->dev;
-> -       int err;
->
->         pci_add_resource_offset(res, &pcie->io, pcie->offset.io);
->         pci_add_resource_offset(res, &pcie->mem, pcie->offset.mem);
->         pci_add_resource(res, &pcie->busn);
->
-> -       err = devm_request_pci_bus_resources(dev, res);
-> -       if (err < 0)
-> -               return err;
-> -
-> -       return 0;
-> +       return devm_request_pci_bus_resources(dev, res);
->  }
->
+On 05/22/2019 10:12 PM, Mark Rutland wrote:
+> On Thu, May 16, 2019 at 01:05:29PM +0200, Michal Hocko wrote:
+>> On Thu 16-05-19 11:23:54, Mark Rutland wrote:
+>>> Hi Michal,
+>>>
+>>> On Wed, May 15, 2019 at 06:58:47PM +0200, Michal Hocko wrote:
+>>>> On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
+>>>>> The arm64 pagetable dump code can race with concurrent modification of the
+>>>>> kernel page tables. When a leaf entries are modified concurrently, the dump
+>>>>> code may log stale or inconsistent information for a VA range, but this is
+>>>>> otherwise not harmful.
+>>>>>
+>>>>> When intermediate levels of table are freed, the dump code will continue to
+>>>>> use memory which has been freed and potentially reallocated for another
+>>>>> purpose. In such cases, the dump code may dereference bogus addressses,
+>>>>> leading to a number of potential problems.
+>>>>>
+>>>>> Intermediate levels of table may by freed during memory hot-remove, or when
+>>>>> installing a huge mapping in the vmalloc region. To avoid racing with these
+>>>>> cases, take the memory hotplug lock when walking the kernel page table.
+>>>>
+>>>> Why is this a problem only on arm64 
+>>>
+>>> It looks like it's not -- I think we're just the first to realise this.
+>>>
+>>> AFAICT x86's debugfs ptdump has the same issue if run conccurently with
+>>> memory hot remove. If 32-bit arm supported hot-remove, its ptdump code
+>>> would have the same issue.
+>>>
+>>>> and why do we even care for debugfs? Does anybody rely on this thing
+>>>> to be reliable? Do we even need it? Who is using the file?
+>>>
+>>> The debugfs part is used intermittently by a few people working on the
+>>> arm64 kernel page tables. We use that both to sanity-check that kernel
+>>> page tables are created/updated correctly after changes to the arm64 mmu
+>>> code, and also to debug issues if/when we encounter issues that appear
+>>> to be the result of kernel page table corruption.
+>>
+>> OK, I see. Thanks for the clarification.
+>>
+>>> So while it's rare to need it, it's really useful to have when we do
+>>> need it, and I'd rather not remove it. I'd also rather that it didn't
+>>> have latent issues where we can accidentally crash the kernel when using
+>>> it, which is what this patch is addressing.
+>>
+>> While I agree, do we rather want to document that you shouldn't be using
+>> the debugging tool while the hotplug is ongoing because you might get a
+>> garbage or crash the kernel in the worst case? In other words is the
+>> absolute correctness worth the additional maint. burden wrt. to future
+>> hotplug changes?
+> 
+> I don't think that it's reasonable for this code to bring down the
+> kernel unless the kernel page tables are already corrupt. I agree we
+> should minimize the impact on other code, and I'm happy to penalize
+> ptdump so long as it's functional and safe.
+> 
+> I would like it to be possible to use the ptdump code to debug
+> hot-remove, so I'd rather not make the two mutually exclusive. I'd also
+> like it to be possible to use this in-the-field, and for that asking an
+> admin to potentially crash their system isn't likely to fly.
+> 
+>>>> I am asking because I would really love to make mem hotplug locking less
+>>>> scattered outside of the core MM than more. Most users simply shouldn't
+>>>> care. Pfn walkers should rely on pfn_to_online_page.
+> 
+> Jut to check, is your plan to limit access to the hotplug lock, or to
+> redesign the locking scheme?
+> 
+>>> I'm not sure if that would help us here; IIUC pfn_to_online_page() alone
+>>> doesn't ensure that the page remains online. Is there a way to achieve
+>>> that other than get_online_mems()?
+>>
+>> You have to pin the page to make sure the hotplug is not going to
+>> offline it.
+> 
+> I'm not exactly sure how pinning works -- is there a particular set of
+> functions I should look at for that?
+> 
+> I guess that if/when we allocate the vmemmap from hotpluggable memory
+> that will require the pinning code to take the hotplug lock internally
+> to ensure that the struct page is accessible while we attempt to pin it?
 
-In the patch title, the "mt7621-pci" is repeated twice. With that changed:
+I am bit confused here.
 
-Reviewed-by: Sergio Paracuellos <sergio.paracuellos@gmail.com>
+Which pages are we trying to pin ?
 
->  static int mt7621_pcie_register_host(struct pci_host_bridge *host,
-> --
-> 2.7.4
->
+1) init_mm page table pages (vmemmap + linear) for the range to be hot-removed
+2) struct pages for the PFN range to be hot-removed
+
+We need hot-remove process to be blocked enough not to free the intermediate
+level page table pages which will ensure kernel does not crash during ptdump.
+
+AFAICT
+
+1) Holding reference on (1) prevent freeing of pgtable pages during hot-remove
+2) Holding reference on (2) prevent range PFN from being hot removed which in
+   turn can prevent forward progress for hot-remove process and hence possibly
+   prevent freeing of intermediate level pgtable pages.
+
+But both the above solutions are bit complex and will consume more cycles as
+compared to just take a memory_hotplug_lock. In case of (1) it is bit tricker
+as ptdump code has to first walk init_mm to get to all the pgtable pages for
+taking a reference/lock on them. Just wondering if it is worth the trouble.
 
 _______________________________________________
 linux-arm-kernel mailing list
