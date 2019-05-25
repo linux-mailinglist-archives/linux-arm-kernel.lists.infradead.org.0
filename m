@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A55F92A6B0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 21:02:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A83012A6B8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 21:03:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Vf1MEPDNLtWM7kV5UUcuUAkFQCOQUYveO5P1Ai6EwU=; b=jzb7Fm68zBVBbA
-	oGDbq/3R9f5xM9XtN2CehLh/j2gHR7czzDNMguYRzVmC7h1d3fAv3svt4m4/XgXH3SCZC6X+orKUp
-	l0aVYB+QlMT5s+Swh3bf0DWCNPS0Ot6YWBi9U7Le90Efz4QNh5nZTnH4fD65JYvVMqT/LJyDNV5G8
-	ayrRWYm0I0MZU6PfqqG//JnqyCx9rdR0U3xhkSc2gXw9k0NC4Ma4PHXcYsUN8noH8b0lfINmKzD9p
-	S84iVnhNNIL7KZbPUyk/knaLCPWrbG+mOAMobB4qUcX+OqjrvNI1Rzmr2W77hXEHiL4dCE4G/hh7j
-	18UAt9qIMDiA0MYyo/AA==;
+	List-Owner; bh=VrpOejEvpGLK5ao3y5aGSujIGKGuELabt5DMrzz4hNg=; b=r5Q3/VpykL+0Pa
+	KsOF86te/xB9lCt54dk8YQquHbnfq+oKQp0pcDlgGgpuZMLDwGjmsgWtvR4yI8CDstP8CdiZKPcRl
+	fK9DcWMnBWQVThGIvutEl4hfMI0NcEf52utV7ACZCYcC0PRWgMFHcP6Mino0PiomPBxhAoQp30ulC
+	56YykRAokvgcXaYgp7xQnEtEbgMXrGlB3qWgWPQ8P+6sLJzyLwTAuZYYNUWdPL4FMHkCXO7QiO4Ub
+	NrzOivmry/ENs26br/FVJZOonrptJoIFApvAopxxLdt+yHek6zvwUqQjvquICszljDHNZR2YU3/ju
+	JfclMghMaRaOIkn5fZ1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUbwR-0002Ci-RE; Sat, 25 May 2019 19:02:51 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hUbwr-0002dS-8k; Sat, 25 May 2019 19:03:17 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUbvq-0001Vw-OI; Sat, 25 May 2019 19:02:16 +0000
-Received: by mail-wm1-x343.google.com with SMTP id i3so12384034wml.4;
- Sat, 25 May 2019 12:02:14 -0700 (PDT)
+ id 1hUbvr-0001WV-MI; Sat, 25 May 2019 19:02:17 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b18so12985391wrq.12;
+ Sat, 25 May 2019 12:02:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=hY4EIUIoxiYvaBszmOR28DF6dFcPx/awzYZQzheAKOs=;
- b=DFZwmXQ/WZsUQ8790l/6LLAUvVGJsQLtKP+hM/Tx6KqV4CvLbK0CftcSe3GvzigTpv
- qYDRqflxgNvukMWNLI9E+gp9qdoy8kuo2DgpBv6cJT+kfQTCgksyj25VtKWsFnEC64R9
- TIoZFTYPmUbZ2eDirtgK8RdeDQ1XLxitqvXKWS7z817uW+x5stjJpaQuHF3tBt6fgovj
- DnMXNCz7Y8YovDM+vmJA1EGss2MleIi8qPTPhL8oFsQKvQkW3+ycu21EgY3lswrtmz9u
- ngBHsDAYK+/6XqLjEOZtKqpT1z3LWF+2Uc+K9H/LJirb06BPJ4cVkhq0JF962OjwoHyp
- rLtA==
+ bh=wwuYv3aJc+Jn6CC+ws46Y8JvxBizBD22MAUJcAPoAWs=;
+ b=athd6wnvzMFvUabNQ5m23SBnvwwo2uiQkJ3YFUL8HHiVgS4lEYg6Ehj1l7FuqSYAIy
+ o98L0uICFvssWTZYMTW/Doe9uC+xur1WNzSrjeEQHUmG/d1v6jTGYFink/Xl3TR3U/iw
+ lF4ZleVNnzs6AlkJGWSjMCpo+YG+U8pxgBmuwel5k8rVrgRYmyv9DJ34SRLmcXKksFUk
+ fmr+ka5pylHD/8r+x1yyl6fzKXZa9r/E6bZ7L/CmXtMj2mUjtNP5Sa9Jtu0v3EwyqW4H
+ dTCjunvDz/QeyqxwI+vYuE3dXHKPWRhTnPJ1pYBkwrAumt7SwU00e3qP6qEpAahTC5qS
+ h9aQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hY4EIUIoxiYvaBszmOR28DF6dFcPx/awzYZQzheAKOs=;
- b=Fp2TyxfvcjuT2rlYxJLsgRBrwMJkNGNVlENIBv/F1a4lAYRUCpqcIcBJyze4KHlow3
- +BiXtnivFGKdI/KYVxa6RGQKP5B+0rrzpKYlkbMDH3WDV1B0+9NAu1wDtMsuh8DSYmbo
- k0c8B2eIDqq0qeKzkfT/neQcebybPQNs5Pnr6gVRXz4nt1Q47ZSztet98eiLV1EGoRoL
- 1Q3dTFxyLdu8gz2OfJ2qZsUcoN54EJj9TdgzwTWIMk0SJ5MLhy64m7RcB8E07tIfUlPG
- P4dfk3eO6HBv9bDShWlMgvGG7MCwOEg8xYye1sdvQzXj18JDyU3wKMcF8MNGSo0Sia22
- ylhg==
-X-Gm-Message-State: APjAAAUAQF6EW8aseZU00qpXPO6Hh7l32w8GxcEXS+0nBaSyxOfhS/vA
- UB1X5vVg/8IWUtj9sIKzAqQTsfHa
-X-Google-Smtp-Source: APXvYqzmjBfdzJH/hUQysMgtf43ZkY9RhyN22HEKGjOHDwOy9AMBulBsqjRe0cWrYmkC5ZBKrC4zmg==
-X-Received: by 2002:a1c:3287:: with SMTP id y129mr4303123wmy.153.1558810933099; 
- Sat, 25 May 2019 12:02:13 -0700 (PDT)
+ bh=wwuYv3aJc+Jn6CC+ws46Y8JvxBizBD22MAUJcAPoAWs=;
+ b=omK2Gp3q/uK30MK8bjaDNAI2ms8qChw3baLP70N/23Mx4dnj9eKtkJLFVH7uBVZuHt
+ 1X4MKW+l5+HwrtxB3AZ6zaDgDIqRBjYQ1ctZEpmvgoIKm2kjAEd7FP4KPNngXofFxB6a
+ 2auHI80h8VllW26mOrrNxKd+nzeYPCpKrRcZQuL4DZ7Q17+oGLn0EJ3aMeFNIntfSCqx
+ G6HTq0VWr3zUzBFO+CFdA3pI/iy0vwlxRAZA0rnZsc3ebC901OkQB06Y/hQotvxE1kY9
+ DYOq3d1dHwTktF+gZSAaG6nbXVu3jl/JbwFc2iDAyNu6+xpLL/yujoU8qnfZtWzlUCOs
+ 12ag==
+X-Gm-Message-State: APjAAAVplElzHHJdsm18Nlx8HOwI+woXn8LJ3/X06eHKn99it/cFLKjX
+ LgzWtVz9mxcHx/4sgXM9Ej2Ksm6k
+X-Google-Smtp-Source: APXvYqy52Xb3yRcwFLGBRb8J5DjY31vTTOpWN18I1HEqnnydCPU1mcr8g4nguQ6yCFdL8ZnffvoBmA==
+X-Received: by 2002:adf:9c8e:: with SMTP id d14mr15880942wre.215.1558810934037; 
+ Sat, 25 May 2019 12:02:14 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133DDA4007CB8841254CD64FD.dip0.t-ipconnect.de.
  [2003:f1:33dd:a400:7cb8:8412:54cd:64fd])
- by smtp.googlemail.com with ESMTPSA id f2sm6870426wme.12.2019.05.25.12.02.12
+ by smtp.googlemail.com with ESMTPSA id f2sm6870426wme.12.2019.05.25.12.02.13
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 May 2019 12:02:12 -0700 (PDT)
+ Sat, 25 May 2019 12:02:13 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org,
 	khilman@baylibre.com
-Subject: [PATCH 3/4] ARM: dts: meson8b: odroidc1: add the VDDEE regulator
-Date: Sat, 25 May 2019 21:02:03 +0200
-Message-Id: <20190525190204.7897-4-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 4/4] ARM: dts: meson8b: mxq: add the VDDEE regulator
+Date: Sat, 25 May 2019 21:02:04 +0200
+Message-Id: <20190525190204.7897-5-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
 References: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190525_120214_788178_DE5B82E5 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20190525_120215_724458_C26C3044 
+X-CRM114-Status: GOOD (  12.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -115,39 +115,38 @@ Add the VDDEE PWM regulator and make it the supply of the Mali GPU.
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- arch/arm/boot/dts/meson8b-odroidc1.dts | 27 +++++++++++++++++++++++---
- 1 file changed, 24 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/meson8b-mxq.dts | 26 +++++++++++++++++++++++---
+ 1 file changed, 23 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/boot/dts/meson8b-odroidc1.dts b/arch/arm/boot/dts/meson8b-odroidc1.dts
-index f3ad9397f670..893a3aa5ec36 100644
---- a/arch/arm/boot/dts/meson8b-odroidc1.dts
-+++ b/arch/arm/boot/dts/meson8b-odroidc1.dts
-@@ -194,6 +194,23 @@
- 		vin-supply = <&p5v0>;
+diff --git a/arch/arm/boot/dts/meson8b-mxq.dts b/arch/arm/boot/dts/meson8b-mxq.dts
+index 07f1cc513f8a..8f7a02c1e27b 100644
+--- a/arch/arm/boot/dts/meson8b-mxq.dts
++++ b/arch/arm/boot/dts/meson8b-mxq.dts
+@@ -116,6 +116,22 @@
+ 		regulator-boot-on;
+ 		regulator-always-on;
  	};
- 
-+	vddee: regulator-vcck {
-+		/* Monolithic Power Systems MP2161 */
++
++	vddee: regulator-vddee {
 +		compatible = "pwm-regulator";
 +
 +		regulator-name = "VDDEE";
 +		regulator-min-microvolt = <860000>;
 +		regulator-max-microvolt = <1140000>;
 +
-+		vin-supply = <&p5v0>;
++		vin-supply = <&vcc_5v>;
 +
-+		pwms = <&pwm_cd 1 12218 0>;
-+		pwm-dutycycle-range = <91 0>;
++		pwms = <&pwm_cd 1 1148 0>;
++		pwm-dutycycle-range = <100 0>;
 +
 +		regulator-boot-on;
 +		regulator-always-on;
 +	};
-+
- 	vdd_rtc: regulator-vdd-rtc {
- 		/*
- 		 * Torex Semiconductor XC6215 configured for a fixed output of
-@@ -315,6 +332,10 @@
- 	pinctrl-names = "default";
+ };
+ 
+ &cpu0 {
+@@ -151,6 +167,10 @@
+ 	};
  };
  
 +&mali {
@@ -157,7 +156,7 @@ index f3ad9397f670..893a3aa5ec36 100644
  &saradc {
  	status = "okay";
  	vref-supply = <&vcc_1v8>;
-@@ -347,10 +368,10 @@
+@@ -182,10 +202,10 @@
  
  &pwm_cd {
  	status = "okay";
@@ -170,7 +169,7 @@ index f3ad9397f670..893a3aa5ec36 100644
 +	clock-names = "clkin0", "clkin1";
  };
  
- &rtc {
+ &uart_AO {
 -- 
 2.21.0
 
