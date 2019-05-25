@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB6662A6AB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 21:02:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2146B2A6AD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 21:02:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uW0ooDVe4vYwaL5yS/n+doulGkgs62Z+NMbQU379hWw=; b=YphXZo8Uomoc8p
-	Cznito1lJmRU0pgg6mgWV1wh4pBEY3JVZ75emPSodsnnEPQLvZN7p6xf29leQqCr8pcsTPfhFnmb5
-	bH8TO3QtuVxcGK+tZzPH8OefrtjutE7NFrvc5yBCPgjwFsuzZhHA3SHWEJZXQg/TXiDKWI6u6FrIG
-	4C7Rz3XI7koTw5mMoBgAJGCP7hqBDF78UnO7hoHLDgNzWSq6hfmPqXpwNUJvI/27hYMp2A21bplBH
-	vZwiE2ZSJGB9Bs9jqwEiFY1dgPVwucfDlHd1jU+b5LmQ0EsgDYWD/TDjbBLflADhLBAzEQy826ALf
-	ib+0XputMetb6cKnIDfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wgxkg/rooSQuIErlR1v8GpiwX8RURWOpaGj5ITkKjyE=; b=kc1Esr7qb2ZOaL
+	mOUiBUFQgn2MIrUPlf5KACmGbAn5Ir71Cd+F4avaELp2qHv+zCvm8XBnI/LW9olt8F+VSSPdMKw8D
+	3DB8Y/NHwGQ0I8Ctdg7r5LZBlJdVmmUSoScUB+nhSaX1/DUozUo0K6wxEw+chZFzgBqmJEAwM0hGv
+	P47K/l10f0U8GFwoggGuu19f0sdIl9a8qGGJWg27T8oealcLZmXUVqtLL5vCB0KIAeSjnHko2+lZL
+	fVgoyQr9I9wqtb2gUk9i27OItO53yltq8HwWBqgURTUHhkgipdIL+6pkaVVAd0h/LaftCFz6xqTZe
+	9jtT+UVSTQyJvmoRkgXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUbvz-0001Xo-Af; Sat, 25 May 2019 19:02:23 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hUbwC-0001lY-Ge; Sat, 25 May 2019 19:02:36 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUbvn-0001Uu-QU; Sat, 25 May 2019 19:02:13 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z23so8063600wma.4;
- Sat, 25 May 2019 12:02:11 -0700 (PDT)
+ id 1hUbvo-0001V7-Tj; Sat, 25 May 2019 19:02:14 +0000
+Received: by mail-wr1-x443.google.com with SMTP id e15so13028879wrs.4;
+ Sat, 25 May 2019 12:02:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=FMgRwBoum0Ejn339EXDQoU9BYTUMpQqabDlvOkJFkRA=;
- b=LI/UOUKEetrDqZGCWdjAdtJcMs/WfNEF/yvH0JEZyz9Bs4zcUNdVEcw5EX9KDVAK0I
- Hmp8mN3pH1u6IKYCMkFQ7FNhBx5xhAiVUB8KjboEdh2NsZG8eKLdtzRkltjRKiTp/Cs1
- Y6dncQe7+lN/1Ia9pYnByRlCp1sPe1IkVhKzUczHmlHn0z84O7RHWJGRI0qzG0ZNBiK9
- LGm8sDARfU4nAVttZAXUXxABSceTuj7pflgl8fUWEJnekuRma/b4GXocdaHFk7pHqtIH
- zK6w+le3nOIyHZwlCNRD7y9FPQhbo3Ogv5/0TG7O6tg1+A2zdEtizmI9k90fIgYW67tD
- PmDA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=k5Z2vQv4+mxGzq5NHJL9r7H2SeVLz0dEkeMxRxdzaQM=;
+ b=LatV4qLlhA99QGCSC93FdD3vXhWw1oZ4jMNYbv9CKXMa2MEB4+SNZw2Xt4yL9WmQmJ
+ fzUAqfCI9q1T1AIel5zAR4EkK5N9r7M7yhsbIe8aQgCmpi3HF5cXdEahz44Le58++7vM
+ j79awfduRMUSB42icd6Zx2p338TtnPdE8Rst+fygwzXKcET9izH8MNHoLsWfxUiior9N
+ 2VtroBaHIFHu+iZ+GrCnsyo5JZSzhO95CM3YDRd69Yi1x41gkeIc834JJdXm4XgP28or
+ PDLum5OcJ79A6LN0AEnncI7cnhE/7EbN0YMMtQk4xQnX++9srhxAQ6iq+ZVGeubQ+oWa
+ uSSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=FMgRwBoum0Ejn339EXDQoU9BYTUMpQqabDlvOkJFkRA=;
- b=Gyg1UV14e6tBSbJqBUN/872neoa0sNPqPW6cblXFuGIK0QoxABbIVd3SylFGXSEZJQ
- c7/VPrXN7B5GWvdbygpzTi8j9l/Fk54kswtJvP4tq6NGLWVW2HTeEwSfetcTgJSXx14D
- n7spkdnj14diilEacZtYHe4Jt3FKoucNyvqkHMPmXevsvGdmgiC/u7bLwdmJaA3Bi639
- 505CG9cU0cnP8eq6b70pkyME1Gn2B+LmDY+AQGxNKIi+2oVTqrEkWUQukSpBkMqZTULh
- SX1UZgamL9dRkpgU1CFtWOuMpiRiy0SExNTwYwtKnJnFqC1v9M0tDpqbN/xb/WCEJO9X
- U6OA==
-X-Gm-Message-State: APjAAAXz75N5+bFdQ+VQe4jdtKVnUig+pcjS1t7G9MB52H8odTgNRBD8
- 1U4L8fp5gGuNeqOgBG7glgk2fD7B
-X-Google-Smtp-Source: APXvYqzsGZFaNFf0zprRY/s7WMFdZxHwCQ2PrEP35RUVc95UKMBki5ybO45bWRmlM2Em8nC8+Ua8Fw==
-X-Received: by 2002:a1c:2dcd:: with SMTP id
- t196mr20662035wmt.141.1558810929981; 
- Sat, 25 May 2019 12:02:09 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=k5Z2vQv4+mxGzq5NHJL9r7H2SeVLz0dEkeMxRxdzaQM=;
+ b=EyDOm3IGv3orunSN1rAaSakGHCD/7b3pSkP99mmUB5jsmnR1N6MUupwyAJNNTgsMU4
+ 1zMWD38mQ4aDv1FEkLaTI0UKd9PtUFUkCWNWiIl8EbTO3nx9Zh+HKR8J3qpQrhjyyg/m
+ Rsr+r72tlBWiS/ubIG1GJPKeKd+ZwUQ73OHtZWXQm+qHMlzWLXBTIsFtqS5fiBX+dWzf
+ GT5+12ZT8qfyGpuMRmpRP6DiZGpZusnBp8gpPonPIUOsrpHjuwADytpR+LnzR3NuRmU3
+ se4Sw3TU2BrKo47sLkbUSt+sOQvcJhx2e+46pAr0YzFpBYxzsBzVjytwnh9t0YRwodHx
+ toaw==
+X-Gm-Message-State: APjAAAWr65B0abFGB4qs7nwoh3qNGHGvbGRTHrt4xBVnIjvU+mZWnVAb
+ lJdhg2ulKCUhvuq08TqKtuHySKMh
+X-Google-Smtp-Source: APXvYqwV7IWvw17HEtCRwyYsrkLC7Sb0QOduLY0RyH85vGGlo3rUBqkxmVfQ/w0LMwquK+19YhgJtA==
+X-Received: by 2002:a5d:6189:: with SMTP id j9mr3642872wru.151.1558810930972; 
+ Sat, 25 May 2019 12:02:10 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133DDA4007CB8841254CD64FD.dip0.t-ipconnect.de.
  [2003:f1:33dd:a400:7cb8:8412:54cd:64fd])
- by smtp.googlemail.com with ESMTPSA id f2sm6870426wme.12.2019.05.25.12.02.09
+ by smtp.googlemail.com with ESMTPSA id f2sm6870426wme.12.2019.05.25.12.02.10
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 May 2019 12:02:09 -0700 (PDT)
+ Sat, 25 May 2019 12:02:10 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org,
 	khilman@baylibre.com
-Subject: [PATCH 0/4] ARM: dts: meson8b: add VDDEE / mali-supply
-Date: Sat, 25 May 2019 21:02:00 +0200
-Message-Id: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 1/4] ARM: dts: meson8b: add the PWM_D output pin
+Date: Sat, 25 May 2019 21:02:01 +0200
+Message-Id: <20190525190204.7897-2-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
+References: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190525_120211_878113_0D82144C 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20190525_120212_954029_BF646EE1 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,40 +107,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-EC-100 and Odroid-C1 use a "copy" of the VCCK regulator as "VDDEE"
-regulator. VDDEE supplies the Mali GPU and various other bits within
-the SoC.
+The PWM_D output is used for the VDDEE PWM regulator which supplies for
+example the Mali GPU on the EC-100 and Odroid-C1 boards. Add the output
+pin the VDDEE regulators can be added.
 
-The VDDEE regulator is not exclusive to the Mali GPU so it must not
-change it's voltage. The GPU OPP table has a fixed voltage for all
-frequencies of 1.10V. This matches with what u-boot sets on my EC-100
-and Odroid-C1.
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ arch/arm/boot/dts/meson8b.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-Dependencies:
-- compile time: patch #4 depends on my other patch "ARM: meson8b-mxq:
-  better support for the TRONFY MXQ" from [0]
-- runtime: we don't want the kernel to change the output of the VDDEE
-  regulator to the maximum value. Thus the PWM driver has to be able
-  to read the PWM period and duty cycle from u-boot. This is supported
-  with my series called "pwm-meson: cleanups and improvements" from [1]
-
-
-[0] https://patchwork.kernel.org/patch/10960283/
-[1] https://patchwork.kernel.org/cover/10961073/
-
-
-Martin Blumenstingl (4):
-  ARM: dts: meson8b: add the PWM_D output pin
-  ARM: dts: meson8b: ec100: add the VDDEE regulator
-  ARM: dts: meson8b: odroidc1: add the VDDEE regulator
-  ARM: dts: meson8b: mxq: add the VDDEE regulator
-
- arch/arm/boot/dts/meson8b-ec100.dts    | 31 +++++++++++++++++++++++---
- arch/arm/boot/dts/meson8b-mxq.dts      | 26 ++++++++++++++++++---
- arch/arm/boot/dts/meson8b-odroidc1.dts | 27 +++++++++++++++++++---
- arch/arm/boot/dts/meson8b.dtsi         |  8 +++++++
- 4 files changed, 83 insertions(+), 9 deletions(-)
-
+diff --git a/arch/arm/boot/dts/meson8b.dtsi b/arch/arm/boot/dts/meson8b.dtsi
+index e4134c63a48c..1b0106fbb0ac 100644
+--- a/arch/arm/boot/dts/meson8b.dtsi
++++ b/arch/arm/boot/dts/meson8b.dtsi
+@@ -401,6 +401,14 @@
+ 			};
+ 		};
+ 
++		pwm_d_pins: pwm-d {
++			mux {
++				groups = "pwm_d";
++				function = "pwm_d";
++				bias-disable;
++			};
++		};
++
+ 		uart_b0_pins: uart-b0 {
+ 			mux {
+ 				groups = "uart_tx_b0",
 -- 
 2.21.0
 
