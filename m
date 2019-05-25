@@ -2,90 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A1992A684
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 20:29:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C05382A681
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 20:29:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9We/Y/jKrqNH0kzwTKh9Q50JKCN7pj6htW7/hKlrGp8=; b=CmDD0O1WGAV/PF
-	tbY87hlZZEKxMaY87BBw2AsV87P/K1OgEBeUoPB1STb0akwbtoWaauZnCqgWTCt14MJsxWfF5T1KK
-	XsZS5jBR7FOp028aGmOC+LemJQhEnJDufQBvooEBjeIkAMEDfIEMNDyo4KQergWwZaOE+EOaNXnef
-	plhOKR77wnCegXizL83ICa2gokpEDH4rwaZinorDV3wDCsGRBT1q/+/4NOdg48pUGvjGpy4W3oVbs
-	GbIxeXyXf76nEunynEPhR2NtDuQ9JJeKX8sFNAZcAwkTeD0wHSFlb+cSf2b+ixq7LUSfbp/Z8MKHM
-	+3sqHvmi2wPwAwMV1G3A==;
+	List-Owner; bh=iOCj6/H3dQzbyNjyV0UHaKowh3j31FHd9rOIUxKTUWw=; b=XmPy2BDXG+YMdW
+	vCspLPT6EKk8j+WjiwVqIuyULsDdcLELBzGBTpLwETfG1SyE4j8yQ/emW27B4VM4Qr0MPt54lanmR
+	Eae7t7Lv7dofQ+6jgJTI8rPVFWXKmSuS1VoeWaqHFuiR4FPml927/AOAPP7KuS7t3tWqLkTt3lOKS
+	KGn9/UHhmCAV4SzuZMInboU2Ic28ZkwMvT8u7bixCLfF1i9qe25GeqNG4ou6yfC83GePfRYFuQzY2
+	d2690SMeKxoiXPHU4bzm+9EE2Ur0NeSeDhg9BoUoxrqmqB6Y3oINpr0O3+UbCx+4XzWGvS/eQRsGS
+	POx4uxQrBPhaQ2595pXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUbQV-0004Vb-Pg; Sat, 25 May 2019 18:29:51 +0000
+	id 1hUbQG-00049u-8F; Sat, 25 May 2019 18:29:36 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUbQ8-0003xz-6H; Sat, 25 May 2019 18:29:28 +0000
+ id 1hUbQ7-0003yY-E5; Sat, 25 May 2019 18:29:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=n+PNcF82aHvSsVWjJ6xxGU5P+zv9rDQAJYSA2FkuCyI=; b=BiOXZrxutnRNq3BIucJLphmMI/
- pZaiyAS5FyzO5tWZx9iN9YFqK1spn4b0I/TxhYYqmOf5kt5Ocyx2KHHmR68hN8zsl9HE7C9ey4XrM
- 4HGG1sa/vNnSTgGara7VPdsWq8STF6WhZDgCYuws0dHPrPYpiD6cHmrmsl2dEOYWKhjW7m38oV9KN
- UPx/qKYuQja/0QsZRi6FAXFknRMdsj9mHF2dfz1pgKJRZbYWCU7OlDHjlz6tvt4L6GNM+Hk4xCU5L
- EJWt0eqJ+P2u42mTeTpA+aMcENVVKs6sINdTbFahx+krHi0NhLbfU7mYXLwhIz+ygBlpeC4wfw1gf
- zgoGgE9w==;
+ bh=NTuYf2SN++XrzgOo/LowMD7xHt6KeFYnBiXdbjNn1Mc=; b=Wkvro0PLpZh/p9yhKXmTh5nYHH
+ 2W2Id/f8Ak68LQwdtPEouQDetvEF3qsirUMbdv1mvdof2lqD99oPVvg1ibh2h/ClAT2JsB1yKUi5s
+ 1il9AfTR1dJfPvIjN1SBqBIxT6GNoKIQprWQkK1xRx4ipKGgGlBDVdkE+SzVLwDkdSqDb51qEZvq9
+ qGA4ic74LpsYQcucFm1uTlN88eaMz/QPaITZOb0bVxxQ5IQx7zS6U+MLM/aj/dvQOB1ysr2QMchCP
+ NCgHQp1Y41Xopl7NO1IF7N+sIlhOscGa1SyY6gt0ogEDjpl+8HgyPw4Him2/bCoCV/e4pBmk4Rpow
+ wXB5FfGw==;
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUb93-00025W-He; Sat, 25 May 2019 18:11:51 +0000
-Received: by mail-wm1-x341.google.com with SMTP id e19so4164338wme.1;
+ id 1hUb93-00025u-Rv; Sat, 25 May 2019 18:11:53 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 7so12065954wmo.2;
  Sat, 25 May 2019 11:11:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=n+PNcF82aHvSsVWjJ6xxGU5P+zv9rDQAJYSA2FkuCyI=;
- b=HOmH0HDkOr7SXnhIcKjEbMv5hPMaXwl9juWT/B/W2aqGGjOVQIs7AHYGMWCPwm/t4e
- Y9sFFjPKvWUkZvJs9lBPO5VekrHnjKFfFYeVP/x87C9QTOtgKpc3iSgm0lbbQVFazFWh
- YTvBXhbKt3wpBTV6JUp+0QMqVAOTiQeHQh1DUiSASdV5iLuuDjO5x3IoBXRBowoZ1gm0
- Ab+rr6jnRMxNrVPd5gfDG9V9RrQTDjfUiUO8spS2+HSu+89X0Kr4sQGBnC8VsoZ5UI+2
- wNxBUUSFXZCqPQfH61jVjEN7AKzhyzw1XmvSIfkW2lnTwukcYpWUgZFex6esZi28j4Xy
- XERA==
+ bh=NTuYf2SN++XrzgOo/LowMD7xHt6KeFYnBiXdbjNn1Mc=;
+ b=VnKfwh0bGoV85geiehf3lF7Ro/8ZshaPwzuqppSHFpjUxlW8nxcaz1HWoxyvGuTRHz
+ 8obIqVm7h0WsDAyI+PoOHI1yEHv+a7fGSkrf5sUrJhHMhyjVZtFCB2VVfe7dg6cEofUR
+ dF3Yp4zbu3MiZn2VSAbwd77ukSrzUO/HqTAvT+lLvwLrqfIQbXDT91zKKyBLxuKgXCgK
+ bbaGpLyRRMeYKs3Vm9/fMUZs+8EP+AKTGTAGqrh8Wj6NObw8RVZWCVpuoQZDIuJJsLRa
+ kiK7rS/YY0lojeU0Pe3Kps2/+Oxqbt+LcAy7z44txeLaCTs7d72Dhg8lTx2lWyCosVIX
+ XHLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=n+PNcF82aHvSsVWjJ6xxGU5P+zv9rDQAJYSA2FkuCyI=;
- b=PMpYvQCaleoocLOhngdekmGyk32vFHI7Y8PMFLlxHeNFVoXTiu2CVGrsQUWYN1sCXy
- DH6nkTRkl2n2zlQvGbs+/zd0tLJxUqnhKIe6ccE8ktyzv4rw5ETcpxwlUEPYB8/g5m2M
- HwLKclfivpZMUrvKkiKhdfxslPQjmgZldlWGgGasC7pEgjIdR3jsi1tREWbrohC/myls
- y1xVgHQr8ZNxZ4e1oAf9CmIRc0mu4E+ovpOY/kA7zTbqLE9GM6w3oAW/qmga3jlkvW0o
- 64tFFu8rgZwEiep4UJGM8FSZ+F1ioW5JjXvTZI4L8vN6b/xjXCcSPD9HOfDq5tYgnahl
- 6YJQ==
-X-Gm-Message-State: APjAAAXDJTx2GcScOGJbUb/l6+N5tNJrQhKftvH7M1gE9Py5hlFRGTes
- BsvQhDxLcLPmJYb+McHb8m4lbr19
-X-Google-Smtp-Source: APXvYqxoBz1yNBbK0nsIKKxkJ6BPRwZafE9Jtj2RJXjDTEjHPteUwQIKRJc58Tq/sxZidVq4F1k8eA==
-X-Received: by 2002:a1c:cfc9:: with SMTP id f192mr7147926wmg.19.1558807907359; 
- Sat, 25 May 2019 11:11:47 -0700 (PDT)
+ bh=NTuYf2SN++XrzgOo/LowMD7xHt6KeFYnBiXdbjNn1Mc=;
+ b=iJh3Nb4qmj41dGSAbhjvbzaqkyziCnDsgRAPSQUluYkdopBG70qIgqhbh2suD7xeM5
+ D7X1kMd9nKtij81+mER6KTej+lfDr1k6lVkijONgGVEHi1tmR+vKAjvgfeL4/kkHmAuJ
+ FOdO+QCzBdor2tITUsOExUxNT5n7xEFNWnwK+Lo6iBtJTSnUWy7bWhUDFDyGNCGUqltq
+ xKBV5LMLFkf6C6qJN9LKTwQL93/Ihj6gSPZZ1+Uem7J550CgECqxI7WrKyljpn9EW2HN
+ meRM/eraRWFbgyuV4isfZI83MEt5oBmagblqGPnBmXdgP3UmaqAkj4pvmTMZJasZZhWY
+ S8wQ==
+X-Gm-Message-State: APjAAAU6BzKL07yDwqwEu7K4fKpi/YB0qRy5GI9kZrGUw+5vADwJ/u0L
+ 6oL6p8NbOmEX3OhALngadVuboKQl
+X-Google-Smtp-Source: APXvYqxzNHr1KHGccEbFz4UmNfvsgrRoH6NuLmip3pRZHRxdOtQ8QuPVBMnJaq2uWniu0zSEdRHOgA==
+X-Received: by 2002:a1c:e009:: with SMTP id x9mr4094446wmg.117.1558807908370; 
+ Sat, 25 May 2019 11:11:48 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133DDA4007CB8841254CD64FD.dip0.t-ipconnect.de.
  [2003:f1:33dd:a400:7cb8:8412:54cd:64fd])
- by smtp.googlemail.com with ESMTPSA id o8sm12794540wra.4.2019.05.25.11.11.46
+ by smtp.googlemail.com with ESMTPSA id o8sm12794540wra.4.2019.05.25.11.11.47
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 May 2019 11:11:46 -0700 (PDT)
+ Sat, 25 May 2019 11:11:47 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org, linux-pwm@vger.kernel.org,
  thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de
-Subject: [PATCH 03/14] pwm: meson: use GENMASK and FIELD_PREP for the lo and
- hi values
-Date: Sat, 25 May 2019 20:11:22 +0200
-Message-Id: <20190525181133.4875-4-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 04/14] pwm: meson: change MISC_CLK_SEL_WIDTH to
+ MISC_CLK_SEL_MASK
+Date: Sat, 25 May 2019 20:11:23 +0200
+Message-Id: <20190525181133.4875-5-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190525181133.4875-1-martin.blumenstingl@googlemail.com>
 References: <20190525181133.4875-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190525_191149_667103_50ED4351 
-X-CRM114-Status: GOOD (  14.22  )
+X-CRM114-CacheID: sfid-20190525_191150_000037_9C4C555D 
+X-CRM114-Status: GOOD (  13.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-0.2 points, 5.0 required)
@@ -123,55 +123,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-meson_pwm_calc() ensures that "lo" is always less than 16 bits wide
-(otherwise it would overflow into the "hi" part of the REG_PWM_{A,B}
-register).
-Use GENMASK and FIELD_PREP for the lo and hi values to make it easier to
-spot how wide these are internally. Additionally this is a preparation
-step for the .get_state() implementation where the GENMASK() for lo and
-hi becomes handy because it can be used with FIELD_GET() to extract the
-values from the register REG_PWM_{A,B} register.
-
-No functional changes intended.
+MISC_CLK_SEL_WIDTH is only used in one place where it's converted into
+a bit-mask. Rename and change the macro to be a bit-mask so that
+conversion is not needed anymore. No functional changes intended.
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/pwm/pwm-meson.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ drivers/pwm/pwm-meson.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
-index 35b38c7201c3..c62a3ac924d0 100644
+index c62a3ac924d0..84b28ba0f903 100644
 --- a/drivers/pwm/pwm-meson.c
 +++ b/drivers/pwm/pwm-meson.c
-@@ -5,6 +5,8 @@
-  * Copyright (C) 2014 Amlogic, Inc.
-  */
+@@ -33,7 +33,7 @@
+ #define MISC_A_CLK_DIV_SHIFT	8
+ #define MISC_B_CLK_SEL_SHIFT	6
+ #define MISC_A_CLK_SEL_SHIFT	4
+-#define MISC_CLK_SEL_WIDTH	2
++#define MISC_CLK_SEL_MASK	0x3
+ #define MISC_B_EN		BIT(1)
+ #define MISC_A_EN		BIT(0)
  
-+#include <linux/bitfield.h>
-+#include <linux/bits.h>
- #include <linux/clk.h>
- #include <linux/clk-provider.h>
- #include <linux/err.h>
-@@ -20,7 +22,8 @@
+@@ -463,7 +463,7 @@ static int meson_pwm_init_channels(struct meson_pwm *meson,
  
- #define REG_PWM_A		0x0
- #define REG_PWM_B		0x4
--#define PWM_HIGH_SHIFT		16
-+#define PWM_LOW_MASK		GENMASK(15, 0)
-+#define PWM_HIGH_MASK		GENMASK(31, 16)
- 
- #define REG_MISC_AB		0x8
- #define MISC_B_CLK_EN		BIT(23)
-@@ -217,7 +220,8 @@ static void meson_pwm_enable(struct meson_pwm *meson, struct pwm_device *pwm)
- 	value |= clk_enable;
- 	writel(value, meson->base + REG_MISC_AB);
- 
--	value = (channel->hi << PWM_HIGH_SHIFT) | channel->lo;
-+	value = FIELD_PREP(PWM_HIGH_MASK, channel->hi) |
-+		FIELD_PREP(PWM_LOW_MASK, channel->lo);
- 	writel(value, meson->base + offset);
- 
- 	value = readl(meson->base + REG_MISC_AB);
+ 		channel->mux.reg = meson->base + REG_MISC_AB;
+ 		channel->mux.shift = mux_reg_shifts[i];
+-		channel->mux.mask = BIT(MISC_CLK_SEL_WIDTH) - 1;
++		channel->mux.mask = MISC_CLK_SEL_MASK;
+ 		channel->mux.flags = 0;
+ 		channel->mux.lock = &meson->lock;
+ 		channel->mux.table = NULL;
 -- 
 2.21.0
 
