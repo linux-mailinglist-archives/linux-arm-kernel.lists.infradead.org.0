@@ -2,88 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECAF32A1A0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 01:34:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEEF32A238
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 03:00:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jTqjE4ndHLW4uLBYDjqjJKkkwETbWsPXgXFpJIp/0eM=; b=CiyGlrErSeHD8y
-	oPXWEDaya7a0H11RDoMSZwSvf7In1TAN7M85cgHhfzWryRXu7hd7yPaKDtEbBMYwH3LuERnyFjpBe
-	6eWwW7hSAY3L60oxRa6ygqGF2P6h0idN0UtxQz+mcwMmxodOJjjaupdRuQnPgQ4IIe4wl+Oz1rwWz
-	vcRubEg7eB35Q4z/ldOoxVZ3enfJPU7niWCOEz+QtcGhnFLStyLYzDBLsROM+CowNe/cxRNP7xFBp
-	Q5UF2Tt7vn6zZMcPRe6YjO2vNbuApSk8iPKplfxSNWbfm3HAgwHC3fbBCF9vRBrULrDhD9aoLeo5L
-	7v/25A88xAxrupkOuJMQ==;
+	List-Owner; bh=/Fsysx4n6lDD8Wxcf7ibnm22GzacQ4XHA8mCuLDrqfs=; b=SCQes9yp7DicCe
+	2x0wpRqUk7wtoofoXPmYsawo9T53Rm7PfRN4g81JCuRD+Kk/W58cQzSRKjv+1nD6GNY89QbdNP9K8
+	/v6/k623qlk5eNCZJBTBkMF9/k4bB+vc3a6+GBVEgvlmc2qJdOjBv3kP540Tt+IHuDGH9WJt17KfF
+	6eap40nlOus3JMk4mYH+7joaQUQSI8B1VcvnUQueahsDcYMOfhcrvCDWw/YWO12TXvuyIeCaXkyUq
+	wXvviWQAsYV64qobmqAaMiF1W0HvlwWDpFrRx/mvBhezdHu3KOam0fu7MUBKoQS4Sz4SoaO0xNbUf
+	89SWxnpffyyOO3tocCGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUJhF-0002MN-76; Fri, 24 May 2019 23:33:57 +0000
-Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1hUL2p-00005L-Jm; Sat, 25 May 2019 01:00:19 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUJh6-0002LF-6a
- for linux-arm-kernel@lists.infradead.org; Fri, 24 May 2019 23:33:50 +0000
-Received: by mail-it1-x141.google.com with SMTP id i63so16112411ita.3
+ id 1hUL2g-0008VB-MN
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 May 2019 01:00:12 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 15so10732181wmg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 May 2019 16:33:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rsJAxdyQb1fSKmPFjHxXfvpb54VJb++Sfbj2FzY/Spg=;
- b=Bk8w5CLRpDX5qI44NFPAOJkiTdSB1PfhAApQn8PRwtVeP7F4nLhQmsMKZwaJPEclOu
- dz7WBd6L75ePt7QJiehHndTnGL1nDXKUHrTqj4BVrnZIGNAFdNsmxDzmV/dqFELcAzOn
- AnguU1IAPT7FI6TTldutxaWWwQR5FVK0XzCVc=
+ Fri, 24 May 2019 18:00:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from:cc; bh=mOz/uzoZ8Qq/01C38MyE2pll+zK9QQHgk5S4tOoKkeM=;
+ b=I0Go90WH2ayMMN403h5jEjNJssF9yIo9WmYHlS85dA3rNDOu6qzN4V5iBjqwwGq3HS
+ jead8J+QAD2i06izMX5BXqXKHoJAu1mM5XcNsFmxHKUsFvABKIAiL4dPumEsjKLJbqMh
+ XGvj+hN8LzZevfr98yQ8tV9LaX2pY5Y9fGjtEVoFDs6w78hu32wTH5TfjLc6B3+AUph5
+ TXkFxkRam/AE8KCZ23Ru7Q37hbrDu12SYZn3jGW5nevPOg2ip9Tp1F1YF7537fw1A5CM
+ wpv5KQSD50MFYOUJ86n1v+Ek1HaBsvdOLbHURsaGX+TwRzuNofuBo1WNzj9ykbdCB1L+
+ ebCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rsJAxdyQb1fSKmPFjHxXfvpb54VJb++Sfbj2FzY/Spg=;
- b=Oer0LVlETu+nr4MwGMFmAVFT328+cxJQO6hN0uzDtIo6OzMShIEOzZ2ZKsfecGJER3
- G9lIMtjbt/c+5mtRNYeOAM2hFpORDfMa+8SRiNBMcn5+oBGYmF8dH5YCUppHwT/E5dnk
- DJNJBvRVeKplyYZp1R05FxYlhR/CgG1ovFlYfl2ntmEdR3hebl3i/7KcT1ucbfm5XcVn
- gzw2JuDsAHafHfW+dE2g4GnYfVlLcVgx6IM7ZRvyNvCtSU7cIsy/R3ix1uiZpr8NfKgP
- 4eZzaxagwCRMZf1srmbQc0d8UynXKXO8pYSuACBZ21OgSqD9RkTZWfdfOf7yktEOLsC6
- 71cQ==
-X-Gm-Message-State: APjAAAWBiW5AQs7bVhiRn1S02rKSsJTezA0UM2zeWdhUHy6W23XGmhtb
- FgEFOZJ5qKgNyjIGcTzvXlIFqQ==
-X-Google-Smtp-Source: APXvYqwVFa87joPVWSn35JxrmqMHmyBufLK2xSqhjXJKfr9PLGyPjrLB6P95EwaiA6AODlHgrYJlNA==
-X-Received: by 2002:a24:28c1:: with SMTP id
- h184mr21936877ith.105.1558740826457; 
- Fri, 24 May 2019 16:33:46 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id k139sm3514574itb.0.2019.05.24.16.33.44
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from:cc;
+ bh=mOz/uzoZ8Qq/01C38MyE2pll+zK9QQHgk5S4tOoKkeM=;
+ b=c6zY8BNBaJnG6l2nBL+8Rjou4ZRVYhynPOMhwi5au5NyKBrWiaKH7KKBASywMTkRc1
+ wIGfKb1S8mtWa3UIQgDArWP9sVL5Cp4zL263IfEywi2RJxCjGzTe8pYOM+m3PQ18ulJc
+ 79YCavDKdmatjN2ItmkLfO5Dw/ycZSnO3VWE/BIaCPXwxasHc97DZA+I7lWzGqrBpdL3
+ 712aUiXmpoVFElKaG5oSEGzaswtGBnJxVDUUYmcNkJlWCVU6nh9Vh/Y8Rs9lajKBBIW4
+ aIsbhmTrkeuvQrJXO/lkk8Db7NBa7VWaTww/jC5F92iSSV8L+pWvHRp6TU/ClNLuXgst
+ K2Zw==
+X-Gm-Message-State: APjAAAXPgpkHS+Te4lGfK5npcGDVEyB6I0yC9+QqQ/sQATZC7iZGA1Y+
+ vjptshzHVqFEDk3ap1rDIxt2ww==
+X-Google-Smtp-Source: APXvYqz+d5B1uhbeZFmzCKr8tLpKRfnQnchVdM5lugUMtvpcsjrJqEChi+nfW/oijKLRaXuyKzf0EQ==
+X-Received: by 2002:a7b:ca44:: with SMTP id m4mr1572416wml.160.1558746006753; 
+ Fri, 24 May 2019 18:00:06 -0700 (PDT)
+Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
+ by smtp.gmail.com with ESMTPSA id h14sm3343469wrt.11.2019.05.24.18.00.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 May 2019 16:33:45 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH] ARM: dts: rockchip: Add pin names for rk3288-veyron jaq,
- mickey, speedy
-Date: Fri, 24 May 2019 16:33:09 -0700
-Message-Id: <20190524233309.45420-1-dianders@chromium.org>
-X-Mailer: git-send-email 2.22.0.rc1.257.g3120a18244-goog
+ Fri, 24 May 2019 18:00:06 -0700 (PDT)
+Message-ID: <5ce89396.1c69fb81.16e3d.2c5c@mx.google.com>
+Date: Fri, 24 May 2019 18:00:06 -0700 (PDT)
 MIME-Version: 1.0
+X-Kernelci-Report-Type: bisect
+X-Kernelci-Tree: clk
+X-Kernelci-Lab-Name: lab-baylibre
+X-Kernelci-Branch: clk-next
+X-Kernelci-Kernel: v5.2-rc1-4-gf191a146bcee
+Subject: clk/clk-next boot bisection: v5.2-rc1-4-gf191a146bcee on
+ meson-g12a-x96-max
+To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
+ mgalka@collabora.com, Kevin Hilman <khilman@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, broonie@kernel.org,
+ matthew.hart@linaro.org, khilman@baylibre.com, enric.balletbo@collabora.com,
+ Jerome Brunet <jbrunet@baylibre.com>
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_163348_270985_195A91CC 
-X-CRM114-Status: GOOD (  14.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190524_180010_735967_15110413 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,645 +101,159 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- briannorris@chromium.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Douglas Anderson <dianders@chromium.org>,
- linux-rockchip@lists.infradead.org, mka@chromium.org, ryandcase@chromium.org,
- linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is like commit 0ca87bd5baa6 ("ARM: dts: rockchip: Add pin names
-for rk3288-veyron-jerry") and commit ca3516b32cd9 ("ARM: dts:
-rockchip: Add pin names for rk3288-veyron-minnie") but for 3 more
-veyron boards.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* This automated bisection report was sent to you on the basis  *
+* that you may be involved with the breaking commit it has      *
+* found.  No manual investigation has been done to verify it,   *
+* and the root cause of the problem may be somewhere else.      *
+* Hope this helps!                                              *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-A few notes:
-- While there is most certainly duplication between all the veyron
-  boards, it still feels like it is sane to just have each board have
-  a full list of its pin names.  The format of "gpio-line-names" does
-  not lend itself to one-off overriding and besides it seems sane to
-  more fully match schematic names.  Also note that the extra
-  duplication here is only in source code and is unlikely to ever
-  change (since these boards are shipped).  Duplication in the .dtb
-  files is unavoidable.
-- veyron-jaq and veyron-mighty are very closely related and so I have
-  shared a single list for them both with comments on how they are
-  different.  This is just a typo fix on one of the boards, a possible
-  missing signal on one of the boards (or perhaps I was never given
-  the most recent schematics?) and dealing with the fact that one of
-  the two boards has full sized SD.
+clk/clk-next boot bisection: v5.2-rc1-4-gf191a146bcee on meson-g12a-x96-max
 
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
----
+Summary:
+  Start:      f191a146bcee Merge branch 'clk-fixes' into clk-next
+  Details:    https://kernelci.org/boot/id/5ce8391259b514c80a7a362c
+  Plain log:  https://storage.kernelci.org//clk/clk-next/v5.2-rc1-4-gf191a146bcee/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.txt
+  HTML log:   https://storage.kernelci.org//clk/clk-next/v5.2-rc1-4-gf191a146bcee/arm64/defconfig+CONFIG_RANDOMIZE_BASE=y/gcc-8/lab-baylibre/boot-meson-g12a-x96-max.html
+  Result:     11a7bea17c9e arm64: dts: meson: g12a: add pinctrl support controllers
 
- arch/arm/boot/dts/rk3288-veyron-jaq.dts    | 207 +++++++++++++++++++++
- arch/arm/boot/dts/rk3288-veyron-mickey.dts | 151 +++++++++++++++
- arch/arm/boot/dts/rk3288-veyron-speedy.dts | 207 +++++++++++++++++++++
- 3 files changed, 565 insertions(+)
+Checks:
+  revert:     PASS
+  verify:     PASS
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-jaq.dts b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-index e248f55ee8d2..fcd119168cb6 100644
---- a/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-jaq.dts
-@@ -135,6 +135,213 @@
- 	pinctrl-0 = <&vcc50_hdmi_en>;
- };
+Parameters:
+  Tree:       clk
+  URL:        https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git
+  Branch:     clk-next
+  Target:     meson-g12a-x96-max
+  CPU arch:   arm64
+  Lab:        lab-baylibre
+  Compiler:   gcc-8
+  Config:     defconfig+CONFIG_RANDOMIZE_BASE=y
+  Test suite: boot
+
+Breaking commit found:
+
+-------------------------------------------------------------------------------
+commit 11a7bea17c9e0a36daab934d83e15a760f402147
+Author: Jerome Brunet <jbrunet@baylibre.com>
+Date:   Mon Mar 18 10:58:45 2019 +0100
+
+    arm64: dts: meson: g12a: add pinctrl support controllers
+    
+    Add the peripheral and always-on pinctrl controllers to the g12a soc.
+    
+    Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
+    Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+    Signed-off-by: Kevin Hilman <khilman@baylibre.com>
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+index abfa167751af..5e07e4ca3f4b 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+@@ -104,6 +104,29 @@
+ 				#address-cells = <2>;
+ 				#size-cells = <2>;
+ 				ranges = <0x0 0x0 0x0 0x34400 0x0 0x400>;
++
++				periphs_pinctrl: pinctrl@40 {
++					compatible = "amlogic,meson-g12a-periphs-pinctrl";
++					#address-cells = <2>;
++					#size-cells = <2>;
++					ranges;
++
++					gpio: bank@40 {
++						reg = <0x0 0x40  0x0 0x4c>,
++						      <0x0 0xe8  0x0 0x18>,
++						      <0x0 0x120 0x0 0x18>,
++						      <0x0 0x2c0 0x0 0x40>,
++						      <0x0 0x340 0x0 0x1c>;
++						reg-names = "gpio",
++							    "pull",
++							    "pull-enable",
++							    "mux",
++							    "ds";
++						gpio-controller;
++						#gpio-cells = <2>;
++						gpio-ranges = <&periphs_pinctrl 0 0 86>;
++					};
++				};
+ 			};
  
-+&gpio0 {
-+	gpio-line-names = "PMIC_SLEEP_AP",
-+			  "DDRIO_PWROFF",
-+			  "DDRIO_RETEN",
-+			  "TS3A227E_INT_L",
-+			  "PMIC_INT_L",
-+			  "PWR_KEY_L",
-+			  "AP_LID_INT_L",
-+			  "EC_IN_RW",
+ 			hiu: bus@3c000 {
+@@ -150,6 +173,25 @@
+ 					clocks = <&xtal>, <&clkc CLKID_CLK81>;
+ 					clock-names = "xtal", "mpeg-clk";
+ 				};
 +
-+			  "AC_PRESENT_AP",
-+			  /*
-+			   * RECOVERY_SW_L is Chrome OS ABI.  Schematics call
-+			   * it REC_MODE_L.
-+			   */
-+			  "RECOVERY_SW_L",
-+			  "OTP_OUT",
-+			  "HOST1_PWR_EN",
-+			  "USBOTG_PWREN_H",
-+			  "AP_WARM_RESET_H",
-+			  "nFALUT2",
-+			  "I2C0_SDA_PMIC",
++				ao_pinctrl: pinctrl@14 {
++					compatible = "amlogic,meson-g12a-aobus-pinctrl";
++					#address-cells = <2>;
++					#size-cells = <2>;
++					ranges;
 +
-+			  "I2C0_SCL_PMIC",
-+			  "SUSPEND_L",
-+			  "USB_INT";
-+};
-+
-+&gpio2 {
-+	gpio-line-names = "CONFIG0",
-+			  "CONFIG1",
-+			  "CONFIG2",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "CONFIG3",
-+
-+			  "",
-+			  "EMMC_RST_L",
-+			  "",
-+			  "",
-+			  "BL_PWR_EN",
-+			  "AVDD_1V8_DISP_EN";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "FLASH0_D0",
-+			  "FLASH0_D1",
-+			  "FLASH0_D2",
-+			  "FLASH0_D3",
-+			  "FLASH0_D4",
-+			  "FLASH0_D5",
-+			  "FLASH0_D6",
-+			  "FLASH0_D7",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "FLASH0_CS2/EMMC_CMD",
-+			  "",
-+			  "FLASH0_DQS/EMMC_CLKO";
-+};
-+
-+&gpio4 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "UART0_RXD",
-+			  "UART0_TXD",
-+			  "UART0_CTS",
-+			  "UART0_RTS",
-+			  "SDIO0_D0",
-+			  "SDIO0_D1",
-+			  "SDIO0_D2",
-+			  "SDIO0_D3",
-+
-+			  "SDIO0_CMD",
-+			  "SDIO0_CLK",
-+			  "BT_DEV_WAKE",	/* Maybe missing from mighty? */
-+			  "",
-+			  "WIFI_ENABLE_H",
-+			  "BT_ENABLE_L",
-+			  "WIFI_HOST_WAKE",
-+			  "BT_HOST_WAKE";
-+};
-+
-+&gpio5 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "SPI0_CLK",
-+			  "SPI0_CS0",
-+			  "SPI0_TXD",
-+			  "SPI0_RXD",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "VCC50_HDMI_EN";
-+};
-+
-+&gpio6 {
-+	gpio-line-names = "I2S0_SCLK",
-+			  "I2S0_LRCK_RX",
-+			  "I2S0_LRCK_TX",
-+			  "I2S0_SDI",
-+			  "I2S0_SDO0",
-+			  "HP_DET_H",
-+			  "ALS_INT",
-+			  "INT_CODEC",
-+
-+			  "I2S0_CLK",
-+			  "I2C2_SDA",
-+			  "I2C2_SCL",
-+			  "MICDET",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "SDMMC_D0",
-+			  "SDMMC_D1",
-+			  "SDMMC_D2",
-+			  "SDMMC_D3",
-+			  "SDMMC_CLK",
-+			  "SDMMC_CMD";
-+};
-+
-+&gpio7 {
-+	gpio-line-names = "LCDC_BL",
-+			  "PWM_LOG",
-+			  "BL_EN",
-+			  "TRACKPAD_INT",
-+			  "TPM_INT_H",
-+			  "SDMMC_DET_L",
-+			  /*
-+			   * AP_FLASH_WP_L is Chrome OS ABI.  Schematics call
-+			   * it FW_WP_AP.
-+			   */
-+			  "AP_FLASH_WP_L",
-+			  "EC_INT",
-+
-+			  "CPU_NMI",
-+			  "DVSOK",
-+			  "SDMMC_WP",		/* mighty only */
-+			  "EDP_HPD",
-+			  "DVS1",
-+			  "nFALUT1",		/* nFAULT1 on jaq */
-+			  "LCD_EN",
-+			  "DVS2",
-+
-+			  "VCC5V_GOOD_H",
-+			  "I2C4_SDA_TP",
-+			  "I2C4_SCL_TP",
-+			  "I2C5_SDA_HDMI",
-+			  "I2C5_SCL_HDMI",
-+			  "5V_DRV",
-+			  "UART2_RXD",
-+			  "UART2_TXD";
-+};
-+
-+&gpio8 {
-+	gpio-line-names = "RAM_ID0",
-+			  "RAM_ID1",
-+			  "RAM_ID2",
-+			  "RAM_ID3",
-+			  "I2C1_SDA_TPM",
-+			  "I2C1_SCL_TPM",
-+			  "SPI2_CLK",
-+			  "SPI2_CS0",
-+
-+			  "SPI2_RXD",
-+			  "SPI2_TXD";
-+};
-+
- &pinctrl {
- 	backlight {
- 		bl_pwr_en: bl_pwr_en {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-mickey.dts b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-index 945e80801292..aa352d40c991 100644
---- a/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-mickey.dts
-@@ -252,6 +252,157 @@
- 	};
- };
++					gpio_ao: bank@14 {
++						reg = <0x0 0x14 0x0 0x8>,
++						      <0x0 0x1c 0x0 0x8>,
++						      <0x0 0x24 0x0 0x14>;
++						reg-names = "mux",
++							    "ds",
++							    "gpio";
++						gpio-controller;
++						#gpio-cells = <2>;
++						gpio-ranges = <&ao_pinctrl 0 0 15>;
++					};
++				};
+ 			};
  
-+&gpio0 {
-+	gpio-line-names = "PMIC_SLEEP_AP",
-+			  "",
-+			  "",
-+			  "",
-+			  "PMIC_INT_L",
-+			  "POWER_BUTTON_L",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  /*
-+			   * RECOVERY_SW_L is Chrome OS ABI.  Schematics call
-+			   * it REC_MODE_L.
-+			   */
-+			  "RECOVERY_SW_L",
-+			  "OT_RESET",
-+			  "",
-+			  "",
-+			  "AP_WARM_RESET_H",
-+			  "",
-+			  "I2C0_SDA_PMIC",
-+
-+			  "I2C0_SCL_PMIC",
-+			  "",
-+			  "nFALUT";
-+};
-+
-+&gpio2 {
-+	gpio-line-names = "CONFIG0",
-+			  "CONFIG1",
-+			  "CONFIG2",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "CONFIG3",
-+
-+			  "",
-+			  "EMMC_RST_L";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "FLASH0_D0",
-+			  "FLASH0_D1",
-+			  "FLASH0_D2",
-+			  "FLASH0_D3",
-+			  "FLASH0_D4",
-+			  "FLASH0_D5",
-+			  "FLASH0_D6",
-+			  "FLASH0_D7",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "FLASH0_CS2/EMMC_CMD",
-+			  "",
-+			  "FLASH0_DQS/EMMC_CLKO";
-+};
-+
-+&gpio4 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "UART0_RXD",
-+			  "UART0_TXD",
-+			  "UART0_CTS_L",
-+			  "UART0_RTS_L",
-+			  "SDIO0_D0",
-+			  "SDIO0_D1",
-+			  "SDIO0_D2",
-+			  "SDIO0_D3",
-+
-+			  "SDIO0_CMD",
-+			  "SDIO0_CLK",
-+			  "BT_DEV_WAKE",
-+			  "",
-+			  "WIFI_ENABLE_H",
-+			  "BT_ENABLE_L",
-+			  "WIFI_HOST_WAKE",
-+			  "BT_HOST_WAKE";
-+};
-+
-+&gpio7 {
-+	gpio-line-names = "",
-+			  "PWM_LOG",
-+			  "",
-+			  "",
-+			  "TPM_INT_H",
-+			  "SDMMC_DET_L",
-+			  /*
-+			   * AP_FLASH_WP_L is Chrome OS ABI.  Schematics call
-+			   * it FW_WP_AP.
-+			   */
-+			  "AP_FLASH_WP_L",
-+			  "",
-+
-+			  "CPU_NMI",
-+			  "DVSOK",
-+			  "HDMI_WAKE",
-+			  "POWER_HDMI_ON",
-+			  "DVS1",
-+			  "",
-+			  "",
-+			  "DVS2",
-+
-+			  "HDMI_CEC",
-+			  "",
-+			  "",
-+			  "I2C5_SDA_HDMI",
-+			  "I2C5_SCL_HDMI",
-+			  "",
-+			  "UART2_RXD",
-+			  "UART2_TXD";
-+};
-+
-+&gpio8 {
-+	gpio-line-names = "RAM_ID0",
-+			  "RAM_ID1",
-+			  "RAM_ID2",
-+			  "RAM_ID3",
-+			  "I2C1_SDA_TPM",
-+			  "I2C1_SCL_TPM",
-+			  "SPI2_CLK",
-+			  "SPI2_CS0",
-+
-+			  "SPI2_RXD",
-+			  "SPI2_TXD";
-+};
-+
- &pinctrl {
- 	hdmi {
- 		power_hdmi_on: power-hdmi-on {
-diff --git a/arch/arm/boot/dts/rk3288-veyron-speedy.dts b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-index 9a87017347ea..9b140db04456 100644
---- a/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-+++ b/arch/arm/boot/dts/rk3288-veyron-speedy.dts
-@@ -113,6 +113,213 @@
- 	pinctrl-0 = <&vcc50_hdmi_en>;
- };
- 
-+&gpio0 {
-+	gpio-line-names = "PMIC_SLEEP_AP",
-+			  "DDRIO_PWROFF",
-+			  "DDRIO_RETEN",
-+			  "TS3A227E_INT_L",
-+			  "PMIC_INT_L",
-+			  "PWR_KEY_L",
-+			  "AP_LID_INT_L",
-+			  "EC_IN_RW",
-+
-+			  "AC_PRESENT_AP",
-+			  /*
-+			   * RECOVERY_SW_L is Chrome OS ABI.  Schematics call
-+			   * it REC_MODE_L.
-+			   */
-+			  "RECOVERY_SW_L",
-+			  "OTP_OUT",
-+			  "HOST1_PWR_EN",
-+			  "USBOTG_PWREN_H",
-+			  "AP_WARM_RESET_H",
-+			  "nFALUT2",
-+			  "I2C0_SDA_PMIC",
-+
-+			  "I2C0_SCL_PMIC",
-+			  "SUSPEND_L",
-+			  "USB_INT";
-+};
-+
-+&gpio2 {
-+	gpio-line-names = "CONFIG0",
-+			  "CONFIG1",
-+			  "CONFIG2",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "CONFIG3",
-+
-+			  "PWRLIMIT#_CPU",
-+			  "EMMC_RST_L",
-+			  "",
-+			  "",
-+			  "BL_PWR_EN",
-+			  "AVDD_1V8_DISP_EN";
-+};
-+
-+&gpio3 {
-+	gpio-line-names = "FLASH0_D0",
-+			  "FLASH0_D1",
-+			  "FLASH0_D2",
-+			  "FLASH0_D3",
-+			  "FLASH0_D4",
-+			  "FLASH0_D5",
-+			  "FLASH0_D6",
-+			  "FLASH0_D7",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "FLASH0_CS2/EMMC_CMD",
-+			  "",
-+			  "FLASH0_DQS/EMMC_CLKO";
-+};
-+
-+&gpio4 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "UART0_RXD",
-+			  "UART0_TXD",
-+			  "UART0_CTS",
-+			  "UART0_RTS",
-+			  "SDIO0_D0",
-+			  "SDIO0_D1",
-+			  "SDIO0_D2",
-+			  "SDIO0_D3",
-+
-+			  "SDIO0_CMD",
-+			  "SDIO0_CLK",
-+			  "BT_DEV_WAKE",
-+			  "",
-+			  "WIFI_ENABLE_H",
-+			  "BT_ENABLE_L",
-+			  "WIFI_HOST_WAKE",
-+			  "BT_HOST_WAKE";
-+};
-+
-+&gpio5 {
-+	gpio-line-names = "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+			  "SPI0_CLK",
-+			  "SPI0_CS0",
-+			  "SPI0_TXD",
-+			  "SPI0_RXD",
-+
-+			  "",
-+			  "",
-+			  "",
-+			  "VCC50_HDMI_EN";
-+};
-+
-+&gpio6 {
-+	gpio-line-names = "I2S0_SCLK",
-+			  "I2S0_LRCK_RX",
-+			  "I2S0_LRCK_TX",
-+			  "I2S0_SDI",
-+			  "I2S0_SDO0",
-+			  "HP_DET_H",
-+			  "ALS_INT",		/* not connected */
-+			  "INT_CODEC",
-+
-+			  "I2S0_CLK",
-+			  "I2C2_SDA",
-+			  "I2C2_SCL",
-+			  "MICDET",
-+			  "",
-+			  "",
-+			  "",
-+			  "",
-+
-+			  "SDMMC_D0",
-+			  "SDMMC_D1",
-+			  "SDMMC_D2",
-+			  "SDMMC_D3",
-+			  "SDMMC_CLK",
-+			  "SDMMC_CMD";
-+};
-+
-+&gpio7 {
-+	gpio-line-names = "LCDC_BL",
-+			  "PWM_LOG",
-+			  "BL_EN",
-+			  "TRACKPAD_INT",
-+			  "TPM_INT_H",
-+			  "SDMMC_DET_L",
-+			  /*
-+			   * AP_FLASH_WP_L is Chrome OS ABI.  Schematics call
-+			   * it FW_WP_AP.
-+			   */
-+			  "AP_FLASH_WP_L",
-+			  "EC_INT",
-+
-+			  "CPU_NMI",
-+			  "DVS_OK",
-+			  "",
-+			  "EDP_HOTPLUG",
-+			  "DVS1",
-+			  "nFALUT1",
-+			  "LCD_EN",
-+			  "DVS2",
-+
-+			  "VCC5V_GOOD_H",
-+			  "I2C4_SDA_TP",
-+			  "I2C4_SCL_TP",
-+			  "I2C5_SDA_HDMI",
-+			  "I2C5_SCL_HDMI",
-+			  "5V_DRV",
-+			  "UART2_RXD",
-+			  "UART2_TXD";
-+};
-+
-+&gpio8 {
-+	gpio-line-names = "RAM_ID0",
-+			  "RAM_ID1",
-+			  "RAM_ID2",
-+			  "RAM_ID3",
-+			  "I2C1_SDA_TPM",
-+			  "I2C1_SCL_TPM",
-+			  "SPI2_CLK",
-+			  "SPI2_CS0",
-+
-+			  "SPI2_RXD",
-+			  "SPI2_TXD";
-+};
-+
- &pinctrl {
- 	backlight {
- 		bl_pwr_en: bl_pwr_en {
--- 
-2.22.0.rc1.257.g3120a18244-goog
+ 			sec_AO: ao-secure@140 {
+-------------------------------------------------------------------------------
 
+
+Git bisection log:
+
+-------------------------------------------------------------------------------
+git bisect start
+# good: [62e59c4e69b3cdbad67e3c2d49e4df4cfe1679e3] clk: Remove io.h from clk-provider.h
+git bisect good 62e59c4e69b3cdbad67e3c2d49e4df4cfe1679e3
+# bad: [f191a146bcee3dfd62a501432d22a55ef67858b4] Merge branch 'clk-fixes' into clk-next
+git bisect bad f191a146bcee3dfd62a501432d22a55ef67858b4
+# good: [e7a1414f9dc3498c4c35b9ca266d539e8bccab53] Merge tag 'media/v5.1-2' of git://git.kernel.org/pub/scm/linux/kernel/git/mchehab/linux-media
+git bisect good e7a1414f9dc3498c4c35b9ca266d539e8bccab53
+# good: [cccd559e98c05b669bdc37b01802f920cff1d6dd] Merge tag 'fbdev-v5.2' of git://github.com/bzolnier/linux
+git bisect good cccd559e98c05b669bdc37b01802f920cff1d6dd
+# good: [a455eda33faafcaac1effb31d682765b14ef868c] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/evalenti/linux-soc-thermal
+git bisect good a455eda33faafcaac1effb31d682765b14ef868c
+# bad: [e8a1d70117116c8d96c266f0b99e931717670eaf] Merge tag 'armsoc-dt' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc
+git bisect bad e8a1d70117116c8d96c266f0b99e931717670eaf
+# bad: [64f32d9d30063149eb10d7be3a23b5e1f44247c8] Merge tag 'renesas-arm64-dt2-for-v5.2' of https://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas into arm/dt
+git bisect bad 64f32d9d30063149eb10d7be3a23b5e1f44247c8
+# bad: [da9a4c3d32eb699db68dd8f3e633ec035879d818] Merge tag 'omap-for-v5.2/dt-ti-sysc-signed' of git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap into arm/dt
+git bisect bad da9a4c3d32eb699db68dd8f3e633ec035879d818
+# bad: [bbf7499dc033831ae91125a88a062910cdc62cf2] Merge tag 'aspeed-5.2-devicetree' of git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed into arm/dt
+git bisect bad bbf7499dc033831ae91125a88a062910cdc62cf2
+# bad: [f6f9683c5aedff214433fa130e67a79f08a47fdb] Merge tag 'v5.2-rockchip-dts32-1' of git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip into arm/dt
+git bisect bad f6f9683c5aedff214433fa130e67a79f08a47fdb
+# bad: [e2cffeb398f4830b004774444809ee256b9bc653] arm64: dts: meson-g12a: Add CMA reserved memory
+git bisect bad e2cffeb398f4830b004774444809ee256b9bc653
+# bad: [11a7bea17c9e0a36daab934d83e15a760f402147] arm64: dts: meson: g12a: add pinctrl support controllers
+git bisect bad 11a7bea17c9e0a36daab934d83e15a760f402147
+# good: [7e09092aee006b21d830b99f8498b5640b8711f6] arm64: dts: meson-gxl-s905d-phicomm-n1: add status LED
+git bisect good 7e09092aee006b21d830b99f8498b5640b8711f6
+# good: [965c827ac37e71f76d3ac55c75ac08909f2a4eed] arm64: dts: meson: g12a: add efuse
+git bisect good 965c827ac37e71f76d3ac55c75ac08909f2a4eed
+# good: [b019f4a4199f865b054262ff78f606ca70f7b981] arm64: dts: meson: g12a: Add AO Clock + Reset Controller support
+git bisect good b019f4a4199f865b054262ff78f606ca70f7b981
+# first bad commit: [11a7bea17c9e0a36daab934d83e15a760f402147] arm64: dts: meson: g12a: add pinctrl support controllers
+-------------------------------------------------------------------------------
 
 _______________________________________________
 linux-arm-kernel mailing list
