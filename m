@@ -2,119 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C83B22A42B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 13:39:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDD532A434
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 13:43:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7x3DqsPYeJ35IRkOGJh5aLJXlwY6TgAqETXKdZVe0ao=; b=PLv2XWYeKPq80J
-	z0vzCgBt9y0wZUz+rhqh89udT8NvI8csqTs7vgCifV0shb1F9YnVatASD/OcU2Okvj2gCBqzzW5XT
-	ACL0i5hyeWJhpgyxKEQ5McRb33ZJ39kBoMl6fYhkaLSgQ8XT6gnSGGsfmfpq7Obvvpk9gASjBkSiM
-	l620l4z8uCNDEJ0vS78PtlMwpZ/Ts/EzrftvE8nVHX03LtAZmYjIThUgWP5mBv7E7uhFxxJEiYKtm
-	O8SiJqdhElNnetjSQoGHM6jfz9WF64ZEEBmaSpd2jSpXvQ3WRQVX2ABhG4ZmT7GqwFMI2hDan67DP
-	jI5WJgJLg0qHVmVBZfTQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YooX8pD1lpqLDU0yDhFvIBdWLc7gG1vzFTPhRKRlgFk=; b=G6lTHpHdtuYDGJ
+	B5h+plKFcczEhlCI0EhlIQhMDQA3p+mFChDiHBg87EEyMUZq+PlRuR/IbbAQVtU1T1wn3s9mWEipO
+	kTFkOyuxMBsFTpyb0H/ARm4A/q6ceZlSCuTpdrRNQbZLkeE2wi8ICUwYDgmix7Zs3NMQ89T0lwDS7
+	7nARbDP0K7wZ14JmADrtNUT/VFJKoZe30zuJRfGM1Pok1oqsByo9bNvUfhVHtCN6R3mKMoTkh8G2E
+	NrRwhn28sLBX936DPLyoHjAnaxwEhp/e/1lQ5cUWKWJjlm3FT4eO5Jmrv8vcL6UJ2cBO8wEDKU1kU
+	ZSAGHcUMwzT+GsKw9NbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUV1k-0003zj-W6; Sat, 25 May 2019 11:39:53 +0000
-Received: from mail-eopbgr710064.outbound.protection.outlook.com
- ([40.107.71.64] helo=NAM05-BY2-obe.outbound.protection.outlook.com)
+	id 1hUV5Y-0006MQ-Mn; Sat, 25 May 2019 11:43:48 +0000
+Received: from lb1-smtp-cloud9.xs4all.net ([194.109.24.22])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUUzr-0001Up-8I
- for linux-arm-kernel@lists.infradead.org; Sat, 25 May 2019 11:38:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4hjqJyf9U47Y9Mq3PANrHJbeTaLRGGAiKMEfWT1UBvM=;
- b=o6lz4sv15RmAw/9GoAfqcReqUQzpjCpapx2j9pwf0Sj5M1lBbEv3pW/ERAYtbq/B5gVL8Sws2JMy0FGqjJDF/E7bURD+VLKG7Vks3LGaQfzlRN+o9qh4zIKDU7b09Y8Tjbb73Z5LrekejcYGhiX5cZA80QVudZxenCYfCJ4e14c=
-Received: from CY4PR02CA0002.namprd02.prod.outlook.com (2603:10b6:903:18::12)
- by BN6PR02MB2673.namprd02.prod.outlook.com (2603:10b6:404:fd::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1922.16; Sat, 25 May
- 2019 11:37:48 +0000
-Received: from SN1NAM02FT047.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::202) by CY4PR02CA0002.outlook.office365.com
- (2603:10b6:903:18::12) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1922.17 via Frontend
- Transport; Sat, 25 May 2019 11:37:47 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.80.198)
- smtp.mailfrom=xilinx.com; arndb.de; dkim=none (message not signed)
- header.d=none;arndb.de; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.80.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.80.198; helo=xir-pvapexch01.xlnx.xilinx.com;
-Received: from xir-pvapexch01.xlnx.xilinx.com (149.199.80.198) by
- SN1NAM02FT047.mail.protection.outlook.com (10.152.72.201) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.1922.16 via Frontend Transport; Sat, 25 May 2019 11:37:47 +0000
-Received: from xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) by
- xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1531.3; Sat, 25 May 2019 12:37:34 +0100
-Received: from smtp.xilinx.com (172.21.105.198) by
- xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) with Microsoft SMTP Server id
- 15.1.1531.3 via Frontend Transport; Sat, 25 May 2019 12:37:34 +0100
-Received: from [149.199.110.15] (port=57194 helo=xirdraganc40.xilinx.com)
- by smtp.xilinx.com with esmtp (Exim 4.90)
- (envelope-from <dragan.cvetic@xilinx.com>)
- id 1hUUzW-00058U-S8; Sat, 25 May 2019 12:37:34 +0100
-From: Dragan Cvetic <dragan.cvetic@xilinx.com>
-To: <arnd@arndb.de>, <gregkh@linuxfoundation.org>, <michal.simek@xilinx.com>, 
- <linux-arm-kernel@lists.infradead.org>, <robh+dt@kernel.org>,
- <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
-Subject: [PATCH V4 12/12] MAINTAINERS: add maintainer for SD-FEC
-Date: Sat, 25 May 2019 12:37:25 +0100
-Message-ID: <1558784245-108751-13-git-send-email-dragan.cvetic@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1558784245-108751-1-git-send-email-dragan.cvetic@xilinx.com>
-References: <1558784245-108751-1-git-send-email-dragan.cvetic@xilinx.com>
+ id 1hUV5R-0006M5-35
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 May 2019 11:43:42 +0000
+Received: from [IPv6:2001:983:e9a7:1:6081:f7d7:b93c:24af]
+ ([IPv6:2001:983:e9a7:1:6081:f7d7:b93c:24af])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id UV5NhPEgNsDWyUV5PhUGPC; Sat, 25 May 2019 13:43:39 +0200
+Subject: Re: [PATCH v5 1/4] media: v4l: Add definitions for the HEVC slice
+ controls
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-media@vger.kernel.org, linux-kernel@vger.kernel.org,
+ devel@driverdev.osuosl.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@googlegroups.com
+References: <20190524093635.1832-1-paul.kocialkowski@bootlin.com>
+ <20190524093635.1832-2-paul.kocialkowski@bootlin.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <3efd681a-e410-9816-60c0-968ed6fff6c3@xs4all.nl>
+Date: Sat, 25 May 2019 13:43:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.80.198; IPV:CAL; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(1496009)(136003)(39860400002)(376002)(346002)(396003)(2980300002)(199004)(189003)(36756003)(50226002)(486006)(50466002)(28376004)(7696005)(9786002)(51416003)(356004)(76176011)(8676002)(54906003)(2906002)(36906005)(106002)(16586007)(4326008)(76130400001)(8936002)(110136005)(316002)(6666004)(26826003)(478600001)(5660300002)(4744005)(70206006)(107886003)(26005)(44832011)(246002)(336012)(2201001)(60926002)(71366001)(126002)(186003)(7636002)(956004)(446003)(48376002)(70586007)(476003)(426003)(305945005)(11346002)(47776003)(2616005)(102446001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN6PR02MB2673; H:xir-pvapexch01.xlnx.xilinx.com;
- FPR:; SPF:Pass; LANG:en; PTR:unknown-80-198.xilinx.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: a833c740-0cc2-4f7a-911e-08d6e105694b
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(4709054)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328);
- SRVR:BN6PR02MB2673; 
-X-MS-TrafficTypeDiagnostic: BN6PR02MB2673:
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-Microsoft-Antispam-PRVS: <BN6PR02MB2673A287139FE155DA2DD7CCCB030@BN6PR02MB2673.namprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1079;
-X-Forefront-PRVS: 0048BCF4DA
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: 1CCc9GSr/WXwhCM2gfGORLl6Srzz0Z7pO3GiQEt+O3OxSkWECC/U46iPv2Muu+0Q4JLwY8vzWK+YQ4kOmXv3OvYDf/qi/ikkEiZQMkWJ7P+HSllvgkVY3+gZ19Kn8j6OiBCsRfSGSZvrYeruGyCOAM9tz7EcZ1SuG9IbTxlXN5JW+N7UQvgqDc4qI2N5h9h+ff8fGb0E5LkZ1AHgMKo8Yeky2uwHbwu8GV6hYWWFHR67Qnl2/ivZNygtH7rAJgMs1LlMtoWMuohCB6GPk/cJCgCBEXLzuWXoYCFJd1pQTcv2kCplN0Ncf3zzZzSZdQHqqbaASsQUVren+vLiGiX3Q6+NPMkV4hnAsYXwH3wTFPVPK6AiAbbTv7wmLZx6l6wEqnUDd91eGmIoJnSYLh/TPkc55ZGyunYvsXPypvxZOxU=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2019 11:37:47.3415 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: a833c740-0cc2-4f7a-911e-08d6e105694b
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.80.198];
- Helo=[xir-pvapexch01.xlnx.xilinx.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2673
+In-Reply-To: <20190524093635.1832-2-paul.kocialkowski@bootlin.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfM6qSJnOp2+LEL+1D3ZlviPJXX6EldDs4P5KlqisS9L8ERjUWP53/T3EkwQ/KqT/jIbEvf2/crJvaDTsv9QB/1zzjsQ/SVG7/7cHr966QcCVW1UoxezS
+ C4FWx8PZRG/LvLskEgLghqy8qv5rIrflPaG7gQyZWQJK61wnVkG7eQLUhLEajejHmOwyG7h0I7b1hHp1BNHUOzqKSVhr85kEYR7kD73/GXJZG+R2h7Lg2TJf
+ 07VX+zQAaSEWxaFSKxQE2z+uhUEoyH9kLjWyHPFhOC9xMFw+hPK7rKxBM+i4aW3TbdLM9StZjMD2EAY4O9IJIFQsWQtOvSqX335xlVyta/jsTQtNcv/dnMa0
+ nXH84tU8s5zv0JD7QxQUJzjnclI4rDNC4Ik2isXw/sbXRSrOR7j2FR02NRvTR+IuJJuY5+TWj8nZ9dDGV570SWQhULrRhLCe04xGkcWDJYNsM3TJchxlOAnY
+ yRytcB19jHhepHVPrwK/VoDkgudE5Ahnp7g5ZolZTD6ba9t1AfTZaja5VAffVdmMFhvW2N39ytpjCo+g0UYxiGMH/KcugggkhF5fgXqDdC/yFrcJAbTmNaWw
+ YseBQ0ROoGK6LbmggOt4ys2Zj6YCZ2ZkXF1BNcSQlC5oO/98FPk+UcPazMZXerkp9qV3jNU3IGHoSBMyoTi8lQYyASlw0mdzYXKrwXGUa59BVyLL9enz4x4f
+ f6vOEy4RvDcrciXxS/dlU5nUmat5EpcPqBe2hFTqzLoaEytp9P86G4pj9J+UUcRAjP4sfD5cSpPpaCScpaAxQgWos4LFtGl/dRsuhkwdxG5KoU71WjuKuy0i
+ /VVCVa6tQuNrttZIU4gmpfjVGoFWkteX2LcOh7xlVD2mZP7CX+/BMI+2i86LeQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190525_043756_045353_3455CD22 
-X-CRM114-Status: UNSURE (   5.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190525_044341_298184_91D38E73 
+X-CRM114-Status: GOOD (  25.48  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.71.64 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.22 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,49 +74,293 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dragan Cvetic <dragan.cvetic@xilinx.com>,
- Derek Kiernan <derek.kiernan@xilinx.com>, linux-kernel@vger.kernel.org
+Cc: Nicolas Dufresne <nicolas@ndufresne.ca>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Alexandre Courbot <acourbot@chromium.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Tomasz Figa <tfiga@chromium.org>, Chen-Yu Tsai <wens@csie.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Ezequiel Garcia <ezequiel@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-support
+Hi Paul,
 
-Add maintainer entry for Xilinx SD-FEC driver support.
+Besides the missing SoB I have two more comments:
 
-Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
-Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
----
- MAINTAINERS | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+On 5/24/19 11:36 AM, Paul Kocialkowski wrote:
+> This introduces the required definitions for HEVC decoding support with
+> stateless VPUs. The controls associated to the HEVC slice format provide
+> the required meta-data for decoding slices extracted from the bitstream.
+> 
+> They are not exported to the public V4L2 API since reworking this API
+> will be needed for covering various use-cases and new hardware.
+> 
+> The interface comes with the following limitations:
+> * No custom quantization matrices (scaling lists);
+> * Support for a single temporal layer only;
+> * No slice entry point offsets support;
+> * No conformance window support;
+> * No VUI parameters support;
+> * No support for SPS extensions: range, multilayer, 3d, scc, 4 bits;
+> * No support for PPS extensions: range, multilayer, 3d, scc, 4 bits.
+> ---
+>  Documentation/media/uapi/v4l/biblio.rst       |   9 +
+>  .../media/uapi/v4l/ext-ctrls-codec.rst        | 429 +++++++++++++++++-
+>  .../media/uapi/v4l/vidioc-queryctrl.rst       |  18 +
+>  .../media/videodev2.h.rst.exceptions          |   3 +
+>  drivers/media/v4l2-core/v4l2-ctrls.c          |  26 ++
+>  drivers/media/v4l2-core/v4l2-ioctl.c          |   1 +
+>  include/media/hevc-ctrls.h                    | 182 ++++++++
+>  include/media/v4l2-ctrls.h                    |   7 +
+>  8 files changed, 672 insertions(+), 3 deletions(-)
+>  create mode 100644 include/media/hevc-ctrls.h
+> 
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 5cfbea4..6e558ae 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -17345,6 +17345,18 @@ S:	Supported
- F:	Documentation/filesystems/xfs.txt
- F:	fs/xfs/
- 
-+XILINX SD-FEC IP CORES
-+M:	Derek Kiernan <derek.kiernan@xilinx.com>
-+M:	Dragan Cvetic <dragan.cvetic@xilinx.com>
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
-+F:	Documentation/misc-devices/xilinx_sdfec.rst
-+F:	Documentation/misc-devices/index.rst
-+F:	drivers/misc/xilinx_sdfec.c
-+F:	drivers/misc/Kconfig
-+F:	drivers/misc/Makefile
-+F:	include/uapi/misc/xilinx_sdfec.h
-+
- XILINX AXI ETHERNET DRIVER
- M:	Anirudha Sarangi <anirudh@xilinx.com>
- M:	John Linn <John.Linn@xilinx.com>
--- 
-2.7.4
+<snip>
 
+> diff --git a/include/media/hevc-ctrls.h b/include/media/hevc-ctrls.h
+> new file mode 100644
+> index 000000000000..9ea013c88afc
+> --- /dev/null
+> +++ b/include/media/hevc-ctrls.h
+> @@ -0,0 +1,182 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * These are the HEVC state controls for use with stateless HEVC
+> + * codec drivers.
+> + *
+> + * It turns out that these structs are not stable yet and will undergo
+> + * more changes. So keep them private until they are stable and ready to
+> + * become part of the official public API.
+> + */
+> +
+> +#ifndef _HEVC_CTRLS_H_
+> +#define _HEVC_CTRLS_H_
+> +
+> +#define V4L2_CID_MPEG_VIDEO_HEVC_SPS		(V4L2_CID_MPEG_BASE + 1008)
+> +#define V4L2_CID_MPEG_VIDEO_HEVC_PPS		(V4L2_CID_MPEG_BASE + 1009)
+> +#define V4L2_CID_MPEG_VIDEO_HEVC_SLICE_PARAMS	(V4L2_CID_MPEG_BASE + 1010)
+> +
+> +/* enum v4l2_ctrl_type type values */
+> +#define V4L2_CTRL_TYPE_HEVC_SPS 0x0120
+> +#define V4L2_CTRL_TYPE_HEVC_PPS 0x0121
+> +#define V4L2_CTRL_TYPE_HEVC_SLICE_PARAMS 0x0122
+> +
+> +#define V4L2_HEVC_SLICE_TYPE_B	0
+> +#define V4L2_HEVC_SLICE_TYPE_P	1
+> +#define V4L2_HEVC_SLICE_TYPE_I	2
+> +
+> +/* The controls are not stable at the moment and will likely be reworked. */
+> +struct v4l2_ctrl_hevc_sps {
+> +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: Sequence parameter set */
+> +	__u8	chroma_format_idc;
+> +	__u8	separate_colour_plane_flag;
+> +	__u16	pic_width_in_luma_samples;
+> +	__u16	pic_height_in_luma_samples;
+> +	__u8	bit_depth_luma_minus8;
+> +	__u8	bit_depth_chroma_minus8;
+> +	__u8	log2_max_pic_order_cnt_lsb_minus4;
+> +	__u8	sps_max_dec_pic_buffering_minus1;
+> +	__u8	sps_max_num_reorder_pics;
+> +	__u8	sps_max_latency_increase_plus1;
+> +	__u8	log2_min_luma_coding_block_size_minus3;
+> +	__u8	log2_diff_max_min_luma_coding_block_size;
+> +	__u8	log2_min_luma_transform_block_size_minus2;
+> +	__u8	log2_diff_max_min_luma_transform_block_size;
+> +	__u8	max_transform_hierarchy_depth_inter;
+> +	__u8	max_transform_hierarchy_depth_intra;
+> +	__u8	scaling_list_enabled_flag;
+> +	__u8	amp_enabled_flag;
+> +	__u8	sample_adaptive_offset_enabled_flag;
+> +	__u8	pcm_enabled_flag;
+> +	__u8	pcm_sample_bit_depth_luma_minus1;
+> +	__u8	pcm_sample_bit_depth_chroma_minus1;
+> +	__u8	log2_min_pcm_luma_coding_block_size_minus3;
+> +	__u8	log2_diff_max_min_pcm_luma_coding_block_size;
+> +	__u8	pcm_loop_filter_disabled_flag;
+> +	__u8	num_short_term_ref_pic_sets;
+> +	__u8	long_term_ref_pics_present_flag;
+> +	__u8	num_long_term_ref_pics_sps;
+> +	__u8	sps_temporal_mvp_enabled_flag;
+> +	__u8	strong_intra_smoothing_enabled_flag;
+> +};
+> +
+> +struct v4l2_ctrl_hevc_pps {
+> +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: Picture parameter set */
+> +	__u8	dependent_slice_segment_flag;
+> +	__u8	output_flag_present_flag;
+> +	__u8	num_extra_slice_header_bits;
+> +	__u8	sign_data_hiding_enabled_flag;
+> +	__u8	cabac_init_present_flag;
+> +	__s8	init_qp_minus26;
+> +	__u8	constrained_intra_pred_flag;
+> +	__u8	transform_skip_enabled_flag;
+> +	__u8	cu_qp_delta_enabled_flag;
+> +	__u8	diff_cu_qp_delta_depth;
+> +	__s8	pps_cb_qp_offset;
+> +	__s8	pps_cr_qp_offset;
+> +	__u8	pps_slice_chroma_qp_offsets_present_flag;
+> +	__u8	weighted_pred_flag;
+> +	__u8	weighted_bipred_flag;
+> +	__u8	transquant_bypass_enabled_flag;
+> +	__u8	tiles_enabled_flag;
+> +	__u8	entropy_coding_sync_enabled_flag;
+> +	__u8	num_tile_columns_minus1;
+> +	__u8	num_tile_rows_minus1;
+> +	__u8	column_width_minus1[20];
+> +	__u8	row_height_minus1[22];
+> +	__u8	loop_filter_across_tiles_enabled_flag;
+> +	__u8	pps_loop_filter_across_slices_enabled_flag;
+> +	__u8	deblocking_filter_override_enabled_flag;
+> +	__u8	pps_disable_deblocking_filter_flag;
+> +	__s8	pps_beta_offset_div2;
+> +	__s8	pps_tc_offset_div2;
+> +	__u8	lists_modification_present_flag;
+> +	__u8	log2_parallel_merge_level_minus2;
+> +	__u8	slice_segment_header_extension_present_flag;
+> +	__u8	padding;
+
+I really don't like the padding. I noticed that I commented on that in v3,
+but apparently forgot to reply to your reply.
+
+So yes, I prefer that we should convert to using flags in order to avoid
+padding.
+
+> +};
+> +
+> +#define V4L2_HEVC_DPB_ENTRY_RPS_ST_CURR_BEFORE	0x01
+> +#define V4L2_HEVC_DPB_ENTRY_RPS_ST_CURR_AFTER	0x02
+> +#define V4L2_HEVC_DPB_ENTRY_RPS_LT_CURR		0x03
+> +
+> +#define V4L2_HEVC_DPB_ENTRIES_NUM_MAX		16
+> +
+> +struct v4l2_hevc_dpb_entry {
+> +	__u64	timestamp;
+> +	__u8	rps;
+> +	__u8	field_pic;
+> +	__u16	pic_order_cnt[2];
+> +	__u8	padding[2];
+> +};
+> +
+> +struct v4l2_hevc_pred_weight_table {
+> +	__u8	luma_log2_weight_denom;
+> +	__s8	delta_chroma_log2_weight_denom;
+> +
+> +	__s8	delta_luma_weight_l0[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> +	__s8	luma_offset_l0[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> +	__s8	delta_chroma_weight_l0[V4L2_HEVC_DPB_ENTRIES_NUM_MAX][2];
+> +	__s8	chroma_offset_l0[V4L2_HEVC_DPB_ENTRIES_NUM_MAX][2];
+> +
+> +	__s8	delta_luma_weight_l1[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> +	__s8	luma_offset_l1[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> +	__s8	delta_chroma_weight_l1[V4L2_HEVC_DPB_ENTRIES_NUM_MAX][2];
+> +	__s8	chroma_offset_l1[V4L2_HEVC_DPB_ENTRIES_NUM_MAX][2];
+> +
+> +	__u8	padding[2];
+> +};
+> +
+> +struct v4l2_ctrl_hevc_slice_params {
+> +	__u32	bit_size;
+> +	__u32	data_bit_offset;
+> +
+> +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: NAL unit header */
+> +	__u8	nal_unit_type;
+> +	__u8	nuh_temporal_id_plus1;
+> +
+> +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header */
+> +	__u8	slice_type;
+> +	__u8	colour_plane_id;
+> +	__u16	slice_pic_order_cnt;
+> +	__u8	slice_sao_luma_flag;
+> +	__u8	slice_sao_chroma_flag;
+> +	__u8	slice_temporal_mvp_enabled_flag;
+> +	__u8	num_ref_idx_l0_active_minus1;
+> +	__u8	num_ref_idx_l1_active_minus1;
+> +	__u8	mvd_l1_zero_flag;
+> +	__u8	cabac_init_flag;
+> +	__u8	collocated_from_l0_flag;
+> +	__u8	collocated_ref_idx;
+> +	__u8	five_minus_max_num_merge_cand;
+> +	__u8	use_integer_mv_flag;
+> +	__s8	slice_qp_delta;
+> +	__s8	slice_cb_qp_offset;
+> +	__s8	slice_cr_qp_offset;
+> +	__s8	slice_act_y_qp_offset;
+> +	__s8	slice_act_cb_qp_offset;
+> +	__s8	slice_act_cr_qp_offset;
+> +	__u8	slice_deblocking_filter_disabled_flag;
+> +	__s8	slice_beta_offset_div2;
+> +	__s8	slice_tc_offset_div2;
+> +	__u8	slice_loop_filter_across_slices_enabled_flag;
+> +
+> +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: Picture timing SEI message */
+> +	__u8	pic_struct;
+> +
+> +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header */
+> +	struct v4l2_hevc_dpb_entry dpb[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> +	__u8	num_active_dpb_entries;
+> +	__u8	ref_idx_l0[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> +	__u8	ref_idx_l1[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+> +
+> +	__u8	num_rps_poc_st_curr_before;
+> +	__u8	num_rps_poc_st_curr_after;
+> +	__u8	num_rps_poc_lt_curr;
+> +
+> +	/* ISO/IEC 23008-2, ITU-T Rec. H.265: Weighted prediction parameter */
+> +	struct v4l2_hevc_pred_weight_table pred_weight_table;
+> +
+> +	__u8	padding[2];
+> +};
+> +
+> +#endif
+> diff --git a/include/media/v4l2-ctrls.h b/include/media/v4l2-ctrls.h
+> index a8aede26491e..630083e1936d 100644
+> --- a/include/media/v4l2-ctrls.h
+> +++ b/include/media/v4l2-ctrls.h
+> @@ -29,6 +29,7 @@
+>  #include <media/mpeg2-ctrls.h>
+>  #include <media/fwht-ctrls.h>
+>  #include <media/h264-ctrls.h>
+> +#include <media/hevc-ctrls.h>
+>  
+>  /* forward references */
+>  struct file;
+> @@ -57,6 +58,9 @@ struct poll_table_struct;
+>   * @p_h264_scaling_matrix:	Pointer to a struct v4l2_ctrl_h264_scaling_matrix.
+>   * @p_h264_slice_params:	Pointer to a struct v4l2_ctrl_h264_slice_params.
+>   * @p_h264_decode_params:	Pointer to a struct v4l2_ctrl_h264_decode_params.
+> + * @p_hevc_sps:			Pointer to an HEVC sequence parameter set structure.
+> + * @p_hevc_pps:			Pointer to an HEVC picture parameter set structure.
+> + * @p_hevc_slice_params		Pointer to an HEVC slice parameters structure.
+
+Missing colon after @p_hevc_slice_params.
+
+>   * @p:				Pointer to a compound value.
+>   */
+>  union v4l2_ctrl_ptr {
+> @@ -74,6 +78,9 @@ union v4l2_ctrl_ptr {
+>  	struct v4l2_ctrl_h264_scaling_matrix *p_h264_scaling_matrix;
+>  	struct v4l2_ctrl_h264_slice_params *p_h264_slice_params;
+>  	struct v4l2_ctrl_h264_decode_params *p_h264_decode_params;
+> +	struct v4l2_ctrl_hevc_sps *p_hevc_sps;
+> +	struct v4l2_ctrl_hevc_pps *p_hevc_pps;
+> +	struct v4l2_ctrl_hevc_slice_params *p_hevc_slice_params;
+>  	void *p;
+>  };
+>  
+> 
+
+So I need a v6. Otherwise it all looks good to me.
+
+Regards,
+
+	Hans
 
 _______________________________________________
 linux-arm-kernel mailing list
