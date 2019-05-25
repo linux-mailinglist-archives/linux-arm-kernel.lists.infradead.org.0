@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2146B2A6AD
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 21:02:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FF772A6B7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 May 2019 21:03:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wgxkg/rooSQuIErlR1v8GpiwX8RURWOpaGj5ITkKjyE=; b=kc1Esr7qb2ZOaL
-	mOUiBUFQgn2MIrUPlf5KACmGbAn5Ir71Cd+F4avaELp2qHv+zCvm8XBnI/LW9olt8F+VSSPdMKw8D
-	3DB8Y/NHwGQ0I8Ctdg7r5LZBlJdVmmUSoScUB+nhSaX1/DUozUo0K6wxEw+chZFzgBqmJEAwM0hGv
-	P47K/l10f0U8GFwoggGuu19f0sdIl9a8qGGJWg27T8oealcLZmXUVqtLL5vCB0KIAeSjnHko2+lZL
-	fVgoyQr9I9wqtb2gUk9i27OItO53yltq8HwWBqgURTUHhkgipdIL+6pkaVVAd0h/LaftCFz6xqTZe
-	9jtT+UVSTQyJvmoRkgXQ==;
+	List-Owner; bh=NvjbgrVAo7tFqmb3jTuF/Pjt/qW6P8ZBMLpAyRSAxuE=; b=ODwBQJNx0QIJ43
+	GeTqJDAEHJ636GoNxW4Q6a5/cMPPNwukdmDWjZiVxS2C+/OnIbo+uTh8MR6fdS+IrPxZKK7MWq03m
+	/F5jqJIZw9AsK13RTLWlHt2aP4ePn8JzeiWw8sAdnBuHRsiNc2ez51IFJ0DjmmESKwdCVDkn7Oo+W
+	/gTtTe2G/IdzW1c08naBWvuQWE7Mm5ZtYsrN+YXrrn1ddkqLRQtxQDLc6KHjyE1xDkiRGqy8C+kba
+	Pisp51BNN1rhzmIBYADFtg1Sl49Q3Eza3+bDVk/kKr+i5bpeC4YD4RnEtL7n3hZNTZpsJvd1q6bHR
+	Q+BoUBg0U8vsyapLFMmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUbwC-0001lY-Ge; Sat, 25 May 2019 19:02:36 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hUbwh-0002VP-1o; Sat, 25 May 2019 19:03:07 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUbvo-0001V7-Tj; Sat, 25 May 2019 19:02:14 +0000
-Received: by mail-wr1-x443.google.com with SMTP id e15so13028879wrs.4;
- Sat, 25 May 2019 12:02:12 -0700 (PDT)
+ id 1hUbvp-0001VS-Uw; Sat, 25 May 2019 19:02:15 +0000
+Received: by mail-wr1-x444.google.com with SMTP id r7so12993825wrr.13;
+ Sat, 25 May 2019 12:02:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=k5Z2vQv4+mxGzq5NHJL9r7H2SeVLz0dEkeMxRxdzaQM=;
- b=LatV4qLlhA99QGCSC93FdD3vXhWw1oZ4jMNYbv9CKXMa2MEB4+SNZw2Xt4yL9WmQmJ
- fzUAqfCI9q1T1AIel5zAR4EkK5N9r7M7yhsbIe8aQgCmpi3HF5cXdEahz44Le58++7vM
- j79awfduRMUSB42icd6Zx2p338TtnPdE8Rst+fygwzXKcET9izH8MNHoLsWfxUiior9N
- 2VtroBaHIFHu+iZ+GrCnsyo5JZSzhO95CM3YDRd69Yi1x41gkeIc834JJdXm4XgP28or
- PDLum5OcJ79A6LN0AEnncI7cnhE/7EbN0YMMtQk4xQnX++9srhxAQ6iq+ZVGeubQ+oWa
- uSSg==
+ bh=Hkt/Np1IRlTONH5ji7tqTfAwm8WEpSqR1gunLTp9R3E=;
+ b=KMnJSlAfrtHVE6bAvSaTeQUHkXq8tF6jYakZK4zjQScDZc3QKks15L7mb+Ns/SVAka
+ YkrjQkupgUS9S3Uzkz0KAuMAASnIINJS/CCnVociy3kPErHETBV2AE8suTQijp9hc/Lg
+ BDBMWIUtrxBCHHbrCXuW5kSysGkh61CnuWpIG4zTY5cnviL0TveHQA3Xo21v8P//dxDi
+ sDZ8H1DC72sGCh/J6bjE7xQPsBd3h+JmvgNt0fEzYaM2pOQ7DHwm/JoA6E9o9tfXvF7n
+ 5W8Cgt75fi0ux4rDNdbFg/E+Q5PrSMdzPiv5Nrif1L4FLAwT49Bdo0uPLFyV4+PlZVcA
+ dwzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=k5Z2vQv4+mxGzq5NHJL9r7H2SeVLz0dEkeMxRxdzaQM=;
- b=EyDOm3IGv3orunSN1rAaSakGHCD/7b3pSkP99mmUB5jsmnR1N6MUupwyAJNNTgsMU4
- 1zMWD38mQ4aDv1FEkLaTI0UKd9PtUFUkCWNWiIl8EbTO3nx9Zh+HKR8J3qpQrhjyyg/m
- Rsr+r72tlBWiS/ubIG1GJPKeKd+ZwUQ73OHtZWXQm+qHMlzWLXBTIsFtqS5fiBX+dWzf
- GT5+12ZT8qfyGpuMRmpRP6DiZGpZusnBp8gpPonPIUOsrpHjuwADytpR+LnzR3NuRmU3
- se4Sw3TU2BrKo47sLkbUSt+sOQvcJhx2e+46pAr0YzFpBYxzsBzVjytwnh9t0YRwodHx
- toaw==
-X-Gm-Message-State: APjAAAWr65B0abFGB4qs7nwoh3qNGHGvbGRTHrt4xBVnIjvU+mZWnVAb
- lJdhg2ulKCUhvuq08TqKtuHySKMh
-X-Google-Smtp-Source: APXvYqwV7IWvw17HEtCRwyYsrkLC7Sb0QOduLY0RyH85vGGlo3rUBqkxmVfQ/w0LMwquK+19YhgJtA==
-X-Received: by 2002:a5d:6189:: with SMTP id j9mr3642872wru.151.1558810930972; 
- Sat, 25 May 2019 12:02:10 -0700 (PDT)
+ bh=Hkt/Np1IRlTONH5ji7tqTfAwm8WEpSqR1gunLTp9R3E=;
+ b=mnUNzEYGsb5k89xqxGFv+GJpsqGt1bE5MZ58Wbhw8Au+oE0S6mIj1S97zpTdOjkS1n
+ mg7Gc1YFPcAO1t3Yy7rzAoMY9vgvZtwReC9m3cxdl13nUZ2+Q/277DhiKSAWJDglLERA
+ YB5J9zx2oAEz5YREyP7ym78s31bF6OKdk7ZRAVOCwIiO93Bj3sb/DPvHzQMdD6Ts4ZSC
+ NJrHMqgB4D4UK7aHY0K8dfy7VpTQWwIKDu6DGTTYHHrFU/sZ8pRvL4lCZj3kjjbS4yIj
+ Vrw5xupCZYxHchZkDtKpiLE3/UJ23hjaWKqdzn8jHSuQwrxrJmUjk6naCoUiINlvfMy3
+ 9Xfg==
+X-Gm-Message-State: APjAAAUtV4QkFkipICLhJYIhWBNy9VA/CTLoOKxjxV4+lHPP8CfJmNqh
+ Dzlibll91BasgoKZoF6GOazdCR7z
+X-Google-Smtp-Source: APXvYqw/Y4OHw3xenTNmXBR12kuloK8/8HdBN0u9xdKRZykPGp047t6EkSAFYhXJLYS+ZGKxiJpo0Q==
+X-Received: by 2002:a5d:4e46:: with SMTP id r6mr68767055wrt.290.1558810932149; 
+ Sat, 25 May 2019 12:02:12 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133DDA4007CB8841254CD64FD.dip0.t-ipconnect.de.
  [2003:f1:33dd:a400:7cb8:8412:54cd:64fd])
- by smtp.googlemail.com with ESMTPSA id f2sm6870426wme.12.2019.05.25.12.02.10
+ by smtp.googlemail.com with ESMTPSA id f2sm6870426wme.12.2019.05.25.12.02.11
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 25 May 2019 12:02:10 -0700 (PDT)
+ Sat, 25 May 2019 12:02:11 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org,
 	khilman@baylibre.com
-Subject: [PATCH 1/4] ARM: dts: meson8b: add the PWM_D output pin
-Date: Sat, 25 May 2019 21:02:01 +0200
-Message-Id: <20190525190204.7897-2-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 2/4] ARM: dts: meson8b: ec100: add the VDDEE regulator
+Date: Sat, 25 May 2019 21:02:02 +0200
+Message-Id: <20190525190204.7897-3-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
 References: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190525_120212_954029_BF646EE1 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20190525_120213_992130_13CB9E15 
+X-CRM114-Status: GOOD (  13.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,34 +107,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PWM_D output is used for the VDDEE PWM regulator which supplies for
-example the Mali GPU on the EC-100 and Odroid-C1 boards. Add the output
-pin the VDDEE regulators can be added.
+The VDDEE regulator is basically a copy of the VCCK regulator. VDDEE
+supplies for example the Mali GPU and is controlled by PWM_D instead of
+PWM_C.
+
+Add the VDDEE PWM regulator and make it the supply of the Mali GPU.
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- arch/arm/boot/dts/meson8b.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm/boot/dts/meson8b-ec100.dts | 31 ++++++++++++++++++++++++++---
+ 1 file changed, 28 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/boot/dts/meson8b.dtsi b/arch/arm/boot/dts/meson8b.dtsi
-index e4134c63a48c..1b0106fbb0ac 100644
---- a/arch/arm/boot/dts/meson8b.dtsi
-+++ b/arch/arm/boot/dts/meson8b.dtsi
-@@ -401,6 +401,14 @@
- 			};
- 		};
- 
-+		pwm_d_pins: pwm-d {
-+			mux {
-+				groups = "pwm_d";
-+				function = "pwm_d";
-+				bias-disable;
-+			};
-+		};
+diff --git a/arch/arm/boot/dts/meson8b-ec100.dts b/arch/arm/boot/dts/meson8b-ec100.dts
+index 9bf4249cb60d..61a1265064dc 100644
+--- a/arch/arm/boot/dts/meson8b-ec100.dts
++++ b/arch/arm/boot/dts/meson8b-ec100.dts
+@@ -219,6 +219,27 @@
+ 		 */
+ 		vin-supply = <&vcc_3v3>;
+ 	};
 +
- 		uart_b0_pins: uart-b0 {
- 			mux {
- 				groups = "uart_tx_b0",
++	vddee: regulator-vddee {
++		/*
++		 * Silergy SY8089AAC-GP 2A continuous, 3A peak, 1MHz
++		 * Synchronous Step Down Regulator. Also called VDDAO
++		 * in a part of the schematics.
++		 */
++		compatible = "pwm-regulator";
++
++		regulator-name = "VDDEE";
++		regulator-min-microvolt = <860000>;
++		regulator-max-microvolt = <1140000>;
++
++		vin-supply = <&vcc_5v>;
++
++		pwms = <&pwm_cd 1 1148 0>;
++		pwm-dutycycle-range = <100 0>;
++
++		regulator-boot-on;
++		regulator-always-on;
++	};
+ };
+ 
+ &cpu0 {
+@@ -268,6 +289,10 @@
+ 	};
+ };
+ 
++&mali {
++	mali-supply = <&vddee>;
++};
++
+ &saradc {
+ 	status = "okay";
+ 	vref-supply = <&vcc_1v8>;
+@@ -349,10 +374,10 @@
+ 
+ &pwm_cd {
+ 	status = "okay";
+-	pinctrl-0 = <&pwm_c1_pins>;
++	pinctrl-0 = <&pwm_c1_pins>, <&pwm_d_pins>;
+ 	pinctrl-names = "default";
+-	clocks = <&clkc CLKID_XTAL>;
+-	clock-names = "clkin0";
++	clocks = <&clkc CLKID_XTAL>, <&clkc CLKID_XTAL>;
++	clock-names = "clkin0", "clkin1";
+ };
+ 
+ &rtc {
 -- 
 2.21.0
 
