@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C8072A836
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 06:39:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6E362A837
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 06:39:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1562FAD+q426i5xA78ImULKT76MVue18Tigx0WPFwL0=; b=EXuyn94EvOnQoO
-	0r6TuoR4NygLPVBA+K9YLeKTWaYrny3bcvjMJfH1xN5iOf3Zx5uvpgedmpNDGp4Lzxkv38uBYW2VT
-	hidE3I83vX3HPQ4aGRowUu+Ml/6irlw6qD46pSUAvlQ/zsqFossMLkEe3eEdKh5L2C55kfUqctdtu
-	ndt/MPkeVAVHn1kD0JH0G2oRwoZ6TlkF8ChYUr8FKlKUX5kNaq1l4GKBVySJc2RpQfVB3a3hZ8ry3
-	WiWRhSoaIqN3ojIs6m0XDy82ZKTsXCQY3HRp2DGsOA9cXiAblyR3KNdwsMRyv6VCD1o+oum7XJFra
-	RBlng6B1jdlt0Ic7FYlA==;
+	List-Owner; bh=oiGo0YkOGVSlOdX7YTw0Hla1j68oMgF8UPAMSPcgbrA=; b=FRc2dp6OAQSxRj
+	LRTcFCS+hT+NZwgzLh/BMSKWtNUoNGWd/3FwqnGNSOTHd8gAyHtA48j7c7nz9TMposXhsDidY8OKI
+	HvY3Wl2iYGQXqrgpXxfdH11RF7x+XK93JhXsdHEIneFFt/PfOfghLHK649L3UiufN436PhoHrr2jB
+	0oUGG8fvO46X+PUAY0FkrsMTywEs4qZY+GBPa2cn9B6Y497rz4QUmRRlYsezvKRfY0/xb3MiFhFjO
+	cQfLzg/RMJhJC1nnDBSQMcj7IaCqEooyt8iyLkHPdy6RHVD1cOIYAdU+USSFCearYW5ufuuaO7Bam
+	T9P8n4TYO8X1RX16O6BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUkwa-0000Zl-Nt; Sun, 26 May 2019 04:39:36 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1hUkwl-0000oV-FG; Sun, 26 May 2019 04:39:47 +0000
+Received: from hqemgate15.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUkvt-0008PJ-1t
- for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 04:39:05 +0000
+ id 1hUkw0-00006N-JH
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 04:39:07 +0000
 Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5cea185c0000>; Sat, 25 May 2019 21:38:52 -0700
+ hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cea185d0001>; Sat, 25 May 2019 21:38:54 -0700
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate102.nvidia.com (PGP Universal service);
- Sat, 25 May 2019 21:38:52 -0700
+ Sat, 25 May 2019 21:39:00 -0700
 X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Sat, 25 May 2019 21:38:52 -0700
-Received: from HQMAIL107.nvidia.com (172.20.187.13) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Sun, 26 May
- 2019 04:38:52 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Sun, 26 May 2019 04:38:51 +0000
+ by hqpgpgate102.nvidia.com on Sat, 25 May 2019 21:39:00 -0700
+Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL104.nvidia.com
+ (172.18.146.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Sun, 26 May
+ 2019 04:39:00 +0000
+Received: from HQMAIL106.nvidia.com (172.18.146.12) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Sun, 26 May
+ 2019 04:38:59 +0000
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL106.nvidia.com
+ (172.18.146.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Sun, 26 May 2019 04:38:59 +0000
 Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
  hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5cea18570000>; Sat, 25 May 2019 21:38:51 -0700
+ id <B5cea185e0000>; Sat, 25 May 2019 21:38:59 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
  <mark.rutland@arm.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <kishon@ti.com>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
  <jingoohan1@gmail.com>, <gustavo.pimentel@synopsys.com>
-Subject: [PATCH V8 06/15] dt-bindings: PCI: designware: Add binding for CDM
- register check
-Date: Sun, 26 May 2019 10:07:42 +0530
-Message-ID: <20190526043751.12729-7-vidyas@nvidia.com>
+Subject: [PATCH V8 07/15] PCI: dwc: Add support to enable CDM register check
+Date: Sun, 26 May 2019 10:07:43 +0530
+Message-ID: <20190526043751.12729-8-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190526043751.12729-1-vidyas@nvidia.com>
 References: <20190526043751.12729-1-vidyas@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1558845533; bh=OURhwcaIZfY+DI7e2SLGbFKlF/ePgdJ+xLnLki7AXdM=;
+ t=1558845534; bh=RLcmDqVRXTgf8DtjOgk+DI+wuNTfzDCN01dAc1bhWe8=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
  In-Reply-To:References:X-NVConfidentiality:MIME-Version:
  Content-Type;
- b=FftCXh5ixxZMrRRVY+qEiSa5Rcc1UZiaCkUfvo7bJxfR+VHJ3GKhhp+jelAT50J34
- /yRIKnx0hfbbtsgD4Rnx+BqrqaGb5cvEsFjBnETElkkKLpAWalNKQJkN9XuaoPK3Ov
- 3bwmo/ZFxXSwvVj2QyGTkw6dc1bc5a1oDV2Jw6mTfC6yUdQSJYjJcR/m0KFYl7SAHZ
- rAOV+OKiofpUjNuYFkj7QCysGqlkg5T9n7VIbmZyZm52BNwah9tTzs3C5OB/Qh3K1b
- cBTztHCsyGmrYC3lUkMQ6VmAD6AV0hAA9Svajw+b+J1JuXGhIj+QBZVToKvJMvBDsk
- 5IurYzBVYNpIA==
+ b=TlG0jgG90NFE38HirChiG0FoEntkUSgsQxosYJMkF+1kxY1B6LA1lsCHk8gfkAAlP
+ PZHL/69KD1yb8vtgRKfhGEUKt7eaadtrbxbuoLbdBoym6tgRoOMT+fxVY0p0Bwvthg
+ gcEOiUn0pW6qpQO4MQzkVOrbZIIZeqYgpFUD3U1kG1t/IhawzFlKUkZmmvsnVNtqH5
+ T9Ikc/g/1OackmJXQmLkZD9G3kER1uiMPZEdwGbehxtYqggkDPQTjmAfxnubIk2re7
+ bC5NANy3ULQLS/kIw+xgmIICFghdwGPjLiYygCxEY91eyv0ZCqf7zLZI9XeN1gvBPm
+ 5bebPCHzylHGg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190525_213853_328238_8B44D386 
-X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-CacheID: sfid-20190525_213900_707184_3F3A5A14 
+X-CRM114-Status: UNSURE (   7.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -106,15 +108,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support to enable CDM (Configuration Dependent Module) registers check
-for any data corruption. CDM registers include standard PCIe configuration
-space registers, Port Logic registers and iATU and DMA registers.
-Refer Section S.4 of Synopsys DesignWare Cores PCI Express Controller Databook
-Version 4.90a
+Add support to enable CDM (Configuration Dependent Module) register check
+for any data corruption based on the device-tree flag 'snps,enable-cdm-check'.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Reviewed-by: Thierry Reding <treding@nvidia.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
 Changes since [v7]:
 * None
@@ -132,31 +131,52 @@ Changes since [v3]:
 * None
 
 Changes since [v2]:
-* Changed flag name from 'cdm-check' to 'enable-cdm-check'
-* Added info about Port Logic and DMA registers being part of CDM
+* Changed code and commit description to reflect change in flag from
+  'cdm-check' to 'enable-cdm-check'
 
 Changes since [v1]:
 * This is a new patch in v2 series
 
- Documentation/devicetree/bindings/pci/designware-pcie.txt | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/pci/controller/dwc/pcie-designware.c | 7 +++++++
+ drivers/pci/controller/dwc/pcie-designware.h | 9 +++++++++
+ 2 files changed, 16 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/pci/designware-pcie.txt b/Documentation/devicetree/bindings/pci/designware-pcie.txt
-index 5561a1c060d0..3fba04da6a59 100644
---- a/Documentation/devicetree/bindings/pci/designware-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/designware-pcie.txt
-@@ -34,6 +34,11 @@ Optional properties:
- - clock-names: Must include the following entries:
- 	- "pcie"
- 	- "pcie_bus"
-+- snps,enable-cdm-check: This is a boolean property and if present enables
-+   automatic checking of CDM (Configuration Dependent Module) registers
-+   for data corruption. CDM registers include standard PCIe configuration
-+   space registers, Port Logic registers, DMA and iATU (internal Address
-+   Translation Unit) registers.
- RC mode:
- - num-viewport: number of view ports configured in hardware. If a platform
-   does not specify it, the driver assumes 2.
+diff --git a/drivers/pci/controller/dwc/pcie-designware.c b/drivers/pci/controller/dwc/pcie-designware.c
+index d8be6c3339fa..e9a059163034 100644
+--- a/drivers/pci/controller/dwc/pcie-designware.c
++++ b/drivers/pci/controller/dwc/pcie-designware.c
+@@ -521,4 +521,11 @@ void dw_pcie_setup(struct dw_pcie *pci)
+ 		break;
+ 	}
+ 	dw_pcie_writel_dbi(pci, PCIE_LINK_WIDTH_SPEED_CONTROL, val);
++
++	if (of_property_read_bool(np, "snps,enable-cdm-check")) {
++		val = dw_pcie_readl_dbi(pci, PCIE_PL_CHK_REG_CONTROL_STATUS);
++		val |= PCIE_PL_CHK_REG_CHK_REG_CONTINUOUS |
++		       PCIE_PL_CHK_REG_CHK_REG_START;
++		dw_pcie_writel_dbi(pci, PCIE_PL_CHK_REG_CONTROL_STATUS, val);
++	}
+ }
+diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
+index 45cd7c88d28a..6f555025caf9 100644
+--- a/drivers/pci/controller/dwc/pcie-designware.h
++++ b/drivers/pci/controller/dwc/pcie-designware.h
+@@ -86,6 +86,15 @@
+ #define PCIE_MISC_CONTROL_1_OFF		0x8BC
+ #define PCIE_DBI_RO_WR_EN		BIT(0)
+ 
++#define PCIE_PL_CHK_REG_CONTROL_STATUS			0xB20
++#define PCIE_PL_CHK_REG_CHK_REG_START			BIT(0)
++#define PCIE_PL_CHK_REG_CHK_REG_CONTINUOUS		BIT(1)
++#define PCIE_PL_CHK_REG_CHK_REG_COMPARISON_ERROR	BIT(16)
++#define PCIE_PL_CHK_REG_CHK_REG_LOGIC_ERROR		BIT(17)
++#define PCIE_PL_CHK_REG_CHK_REG_COMPLETE		BIT(18)
++
++#define PCIE_PL_CHK_REG_ERR_ADDR			0xB28
++
+ /*
+  * iATU Unroll-specific register definitions
+  * From 4.80 core version the address translation will be made by unroll
 -- 
 2.17.1
 
