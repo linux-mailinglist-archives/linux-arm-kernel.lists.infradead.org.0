@@ -2,93 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39F042AC82
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 00:27:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB2E62ACA7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 02:00:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WXSXY7ervhPH56yOCG0PP2PCXUnb4YuMVNAOtpbJVIk=; b=lhLTXpJgw9frzd
-	apEwLvJCvxIIrZPo85I/CDGEgbyQqcw+N6/ihaI9tIXg7HCGnHQu39RIcwcU4RRGTCwZO2pwiHGuA
-	AQV5tOw54ctNOACDsQs8ivJa4Fei45c74K9gekejrEJWaXmqH59+XgSyoN4dDC7RgBohvktVGbwtX
-	oWNDb90mQm7mKV5h7+uTvVnUqMhg/ZyWwGqjASuZKw3DYumup8Z/go8jqMQMuOFwQSz4su3r1QXFo
-	0i7mC6G+nUY7+dGr1rWzlwtE4bK1thyA9C2s5W1ymyfDjYYs7cJi8Z2QIny/qlgmJB3b3HyqQvGjl
-	jR6Cjyzr1Af2Ncq9Mfkw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jGW06R0C0Q7KXWYcW+K/aXeL80dBfqRbA14sb6YVjMo=; b=KgQzx1XecYWL6N
+	yeVpZtw9N1S7q1c0ePeMNWkrGLGBHr5axUbdfALS/672UCAgF2ogECP/i5inYQQjexu2sl/26bOgg
+	tnnex8f8Fh8F8LHdcnQDH8jfe9m2B6mDeTiesPY7FIoN4zGHQ8AwSuevRghJx/70VGMEdn2AbBfTM
+	HFfNIhUyfMqYd5YSNAi/YD6aA0wSPybbW6cUVSMcN3r4F0sw1HIUFJzFk762JXlkmik13wqXbsCfb
+	LX4KDRghf9ltsxKj2WWkGgaFZdn8qUS8dGUYFsfIJ3sqB+peHvg2zTJqQR9gXnPcHLfT4t8zNo1qs
+	Yby4zVBM8iHVe1xLSf4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV1c9-0005mP-Ee; Sun, 26 May 2019 22:27:37 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV1aW-0003op-2S
- for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 22:25:58 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 7so13953456wmo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 May 2019 15:25:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Ky+CVe/5shquKmn2x9Mkd4t0sluqJy1OgxXU5TLlF8Y=;
- b=sPUyp9v+8Z9vQEkItY8c65gc4hEJo1CCryJxXjEdBdgRfT2MwtaViFBfAqvbTOfAJA
- /JfCsjccRQ8bYTwKOTfczCXgDfnCYj21+5+IVPeLjjZkPeezZNCwdoE00b6q9I1MzKhT
- bp4TYVKCMu+GBI28ErZcklCjb8AS2W7bnrxiRuVT4yGJZKCU8g+QxOhnXTFcBEwmXyPU
- c26Y6DzSLlLy+MePCkuTLC45BYWSRRsjnXKtqnvcyGwF05vRABib42Fd+DzUfk1u/CZ0
- IE5YiyYxBy5pkFuAuNo5wHhq25SVIe58MP5Ry62abf1ZZD8BsWwN/S9Dst3L+A/teMPG
- AMOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Ky+CVe/5shquKmn2x9Mkd4t0sluqJy1OgxXU5TLlF8Y=;
- b=D8Oa30r6OJWgD4BNl2NAw5Zb1o4/gwJzHODykNxpU8v7fmh1G1+IqxnXPqAkz5Z4RO
- QYzZiK0943jegBRETSUneIjV5yPuoSkx/sJNyFg45lNRAx8XCaTeMaX6e8OE7vPMf4vv
- abQIh+aBnl9koPWYMRuXOysXj/02dXvVvJdmj/eaWrBGRPyj+I7uQx1iaqQEMRHqo5jW
- I6nmKcQXdzW7RLgpmXChRT1tWVkP3G7TU1EDP+Ou4yLr+qczCKgvhAYFk5dgKExuf0kr
- E5lNQoxznEOGkihkf2dtkddYyw37Doxs9iPFXBP8HM54Wul+OLdfuzUH9Agi10S3eO3m
- aITQ==
-X-Gm-Message-State: APjAAAXG22IwRdiToehZcKFu8iBQ/DicEUf7yoxS/Z6mNlUyhevE2ONn
- EQz62tjFr/4P74dtZQblIN8=
-X-Google-Smtp-Source: APXvYqyyd3PZUV8lPG0zWsqVsz5SNpdDjh7xV3aWAQkNiuXXvaMocqOTw1pYCTR4qThphBMnLW2HcQ==
-X-Received: by 2002:a1c:f413:: with SMTP id z19mr2205565wma.145.1558909554617; 
- Sun, 26 May 2019 15:25:54 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e0a:1f1:d0f0::4e2b:d7ca])
- by smtp.gmail.com with ESMTPSA id o20sm10368398wro.2.2019.05.26.15.25.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 26 May 2019 15:25:53 -0700 (PDT)
-From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
-To: Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH v2 10/10] arm64: defconfig: enable IR SUNXI option
-Date: Mon, 27 May 2019 00:25:36 +0200
-Message-Id: <20190526222536.10917-11-peron.clem@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190526222536.10917-1-peron.clem@gmail.com>
-References: <20190526222536.10917-1-peron.clem@gmail.com>
+	id 1hV33W-0000gC-L4; Sun, 26 May 2019 23:59:58 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hV33P-0000fJ-2e
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 23:59:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 110AC374;
+ Sun, 26 May 2019 16:59:48 -0700 (PDT)
+Received: from [192.168.3.111] (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B67E63F5AF;
+ Sun, 26 May 2019 16:59:45 -0700 (PDT)
+Subject: Re: [PATCH 0/2] mailbox: arm: introduce smc triggered mailbox
+To: Sudeep Holla <sudeep.holla@arm.com>,
+ Florian Fainelli <f.fainelli@gmail.com>
+References: <20190523060437.11059-1-peng.fan@nxp.com>
+ <4ba2b243-5622-bb27-6fc3-cd9457430e54@gmail.com>
+ <20190524175658.GA5045@e107155-lin>
+From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ i4aIXCH3Wv6K
+Organization: ARM Ltd.
+Message-ID: <d0800650-b79b-4698-3a3e-60e83c85f2d1@arm.com>
+Date: Mon, 27 May 2019 00:59:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190524175658.GA5045@e107155-lin>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_152556_668058_AF2F16B2 
-X-CRM114-Status: GOOD (  12.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190526_165951_132186_28BAF37C 
+X-CRM114-Status: GOOD (  21.26  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,27 +111,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-sunxi@googlegroups.com,
- =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RW5hYmxlIENPTkZJR19JUl9TVU5YSSBvcHRpb24gZm9yIEFSTTY0LCBzbyB0aGF0IEFsbHdpbm5l
-ciBBNjQvSDYgU29DcwpjYW4gdXNlIHRoZWlyIElSIHJlY2VpdmVyIGNvbnRyb2xsZXIuCgpTaWdu
-ZWQtb2ZmLWJ5OiBDbMOpbWVudCBQw6lyb24gPHBlcm9uLmNsZW1AZ21haWwuY29tPgotLS0KIGFy
-Y2gvYXJtNjQvY29uZmlncy9kZWZjb25maWcgfCAxICsKIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2Vy
-dGlvbigrKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvY29uZmlncy9kZWZjb25maWcgYi9hcmNo
-L2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCmluZGV4IDRkNTgzNTE0MjU4Yy4uNTEyODAyOTEwMGQy
-IDEwMDY0NAotLS0gYS9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCisrKyBiL2FyY2gvYXJt
-NjQvY29uZmlncy9kZWZjb25maWcKQEAgLTQ2MCw2ICs0NjAsNyBAQCBDT05GSUdfUkNfQ09SRT1t
-CiBDT05GSUdfUkNfREVDT0RFUlM9eQogQ09ORklHX1JDX0RFVklDRVM9eQogQ09ORklHX0lSX01F
-U09OPW0KK0NPTkZJR19JUl9TVU5YST1tCiBDT05GSUdfTUVESUFfU1VQUE9SVD1tCiBDT05GSUdf
-TUVESUFfQ0FNRVJBX1NVUFBPUlQ9eQogQ09ORklHX01FRElBX0FOQUxPR19UVl9TVVBQT1JUPXkK
-LS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+On 24/05/2019 18:56, Sudeep Holla wrote:
+> On Thu, May 23, 2019 at 10:30:50AM -0700, Florian Fainelli wrote:
+
+Hi,
+
+>> On 5/22/19 10:50 PM, Peng Fan wrote:
+>>> This is a modified version from Andre Przywara's patch series
+>>> https://lore.kernel.org/patchwork/cover/812997/.
+>>> [1] is a draft implementation of i.MX8MM SCMI ATF implementation that
+>>> use smc as mailbox, power/clk is included, but only part of clk has been
+>>> implemented to work with hardware, power domain only supports get name
+>>> for now.
+>>>
+>>> The traditional Linux mailbox mechanism uses some kind of dedicated hardware
+>>> IP to signal a condition to some other processing unit, typically a dedicated
+>>> management processor.
+>>> This mailbox feature is used for instance by the SCMI protocol to signal a
+>>> request for some action to be taken by the management processor.
+>>> However some SoCs does not have a dedicated management core to provide
+>>> those services. In order to service TEE and to avoid linux shutdown
+>>> power and clock that used by TEE, need let firmware to handle power
+>>> and clock, the firmware here is ARM Trusted Firmware that could also
+>>> run SCMI service.
+>>>
+>>> The existing SCMI implementation uses a rather flexible shared memory
+>>> region to communicate commands and their parameters, it still requires a
+>>> mailbox to actually trigger the action.
+>>
+>> We have had something similar done internally with a couple of minor
+>> differences:
+>>
+>> - a SGI is used to send SCMI notifications/delayed replies to support
+>> asynchronism (patches are in the works to actually add that to the Linux
+>> SCMI framework). There is no good support for SGI in the kernel right
+>> now so we hacked up something from the existing SMP code and adding the
+>> ability to register our own IPI handlers (SHAME!). Using a PPI should
+>> work and should allow for using request_irq() AFAICT.
+>>
+> 
+> We have been thinking this since we were asked if SMC can be transport.
+> Generally out of 16 SGIs, 8 are reserved for secure side and non-secure
+> has 8. Of these 8, IIUC 7 is already being used by kernel. So unless we
+> manage to get the last one reserved exclusive to SCMI, it makes it
+> difficult to add SGI support in SCMI.
+> 
+> We have been telling partners/vendors about this limitation if they
+> use SMC as transport and need to have dedicated h/w interrupt for the
+> notifications.
+> 
+> Another issue could be with virtualisation(using HVC) and EL handling
+> so called SCMI SGI. We need to think about those too. I will try to get
+> more info on this and come back on this.
+
+I think regardless of the *current* feasibility of using SGIs in *Linux*
+we should at least specify an "interrupts" property in the binding, to
+allow for future usage. We might copy the pmuv3 way [1] of allowing to
+specify multiple SPI interrupts as well, to give more flexibility.
+After all an implementation could offload the asynchronous notification
+to a separate core, and that could use SPIs, for instance.
+
+Cheers,
+Andre.
+
+[1] Documentation/devicetree/bindings/arm/pmu.yaml:45
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
