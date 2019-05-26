@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43C562A792
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 03:25:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CD792A808
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 06:38:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bjf0oYRWaKSMR8ZW1RmuAiU57Z0X/UDH2ySHyPel+WE=; b=p4GEZy7mxORndq
-	94C2TDUsAk97ennHBG8tJfd5FMTw0D6CQIZ77r2NmCf5oQjAK0w93jzU4UdzmGARH9uGK+6UobgyH
-	FMAc+ZjkUc5PCQfUcSYg1TySf048auzy9xZLRfxRJ0hU0OchTOaWVB34sQmQnrboFkRYmJl8WcwOs
-	kbnuZ7S1MPzzzO9ZGamL3pA89yg1j3eV6RKDwEKM4siSgMTbQRDVzRga+rOby8H7FKeq26hpLxlnW
-	a3qhsUzHsEBG3WK/vkdoQd8SxqhItiu6HFsyaMCvfBUaoB1AZITC2+S0J5S54C59Jy9sUWJhYmwic
-	umqlA1gHfFOlGklFztjw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oAk/ewKiUStrbUTeuFr/JmJ8CamGElidUPah0E/i+8w=; b=fO8J587AIHsyx7
+	U5NXhPxXHAZ775SAu9i1aHuiB1N5mZVeGe/R6qSnZTFuTXx9//Yhbw718heYMT+KRMyBgG83k3OJB
+	dDr/ud2UmGE970Ry2r8QxFZdfaCewO7z7e9ENc7r34bqTSrWp4191Jk25CnY7SLm+gWP8MlqKX+kp
+	cu/gukwaQ1ETyyVMJVSK1OsBhnE3Nbs93uDYMom+1zgHsYeYuyRWAOxJBV5Hf5DQaLw5N081KKw6h
+	tfHhan3JIqzyz2OLv9ojgLD05VgRUWzygJGKiaXvGW3YuNV4yyvysefqZ9KFR+I5XEmLQBsIS/VgS
+	GMFuvPpDLVpulhq5NAYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUhuO-0007Qg-4a; Sun, 26 May 2019 01:25:08 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1hUkvD-0007Ut-Lr; Sun, 26 May 2019 04:38:11 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUhuC-0007Pj-3L
- for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 01:24:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1558833885; bh=vvKWkGbp9K2vIliSPzvDEraQISpPMpRwGfH6Zi4LJd4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Oxb0w8/z/TFyS6ZmcEarY5+TIxaVwuNA6TUXSEQ3SiFSPdI/nMZGijsppYnTUG/M/
- lJ2b9JECtdxy4o8UojXPuIIlNXC6gmmHHJ+vdmvGbF86+mefO7jPQKGGlcyjWBodep
- cXx0Gle207O0oDNP0DPNyf+RzVduWqxpfr9U+FJI=
-Date: Sun, 26 May 2019 03:24:44 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Frank Lee <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 2/3] thermal: sun50i: add thermal driver for h6
-Message-ID: <20190526012444.yrcellg3xdrt3bo5@core.my.home>
-Mail-Followup-To: Frank Lee <tiny.windzz@gmail.com>, rui.zhang@intel.com,
- Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, robh+dt@kernel.org,
- Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, catalin.marinas@arm.com,
- will.deacon@arm.com, David Miller <davem@davemloft.net>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jonathan.Cameron@huawei.com,
- Nicolas Ferre <nicolas.ferre@microchip.com>, paulmck@linux.ibm.com,
- Andy Gross <andy.gross@linaro.org>, olof@lixom.net,
- bjorn.andersson@linaro.org, Jagan Teki <jagan@amarulasolutions.com>,
- marc.w.gonzalez@free.fr, stefan.wahren@i2se.com,
- enric.balletbo@collabora.com, devicetree@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux PM <linux-pm@vger.kernel.org>
-References: <20190512082614.9045-1-tiny.windzz@gmail.com>
- <20190512082614.9045-3-tiny.windzz@gmail.com>
- <20190512221612.ubmknvim4utnqpl4@core.my.home>
- <CAEExFWv5A5mhpV7afQT=AaYx2ko5QnfbM6HvfuTgT1Na=ssOcw@mail.gmail.com>
- <20190516182936.h6xdzp3gtg4ikave@core.my.home>
- <CAEExFWvDO3wJd6wp1hFudf3EGF0NixgKAwAd5-b1=VLF+7-jCw@mail.gmail.com>
- <20190519142239.eolisexp5mrdyafz@core.my.home>
- <CAEExFWsc_YB8NORW4ULfuoicL=xr_oAdtHSaxz4ELv53qvCAsQ@mail.gmail.com>
+ id 1hUkv5-0007UD-5O
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 04:38:05 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cea18270001>; Sat, 25 May 2019 21:38:00 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Sat, 25 May 2019 21:38:00 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Sat, 25 May 2019 21:38:00 -0700
+Received: from HQMAIL107.nvidia.com (172.20.187.13) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Sun, 26 May
+ 2019 04:37:59 +0000
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Sun, 26 May 2019 04:37:59 +0000
+Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
+ hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5cea18220001>; Sat, 25 May 2019 21:37:59 -0700
+From: Vidya Sagar <vidyas@nvidia.com>
+To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
+ <mark.rutland@arm.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
+ <kishon@ti.com>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
+ <jingoohan1@gmail.com>, <gustavo.pimentel@synopsys.com>
+Subject: [PATCH V8 00/15] Add Tegra194 PCIe support
+Date: Sun, 26 May 2019 10:07:36 +0530
+Message-ID: <20190526043751.12729-1-vidyas@nvidia.com>
+X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAEExFWsc_YB8NORW4ULfuoicL=xr_oAdtHSaxz4ELv53qvCAsQ@mail.gmail.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1558845480; bh=VkdO8kQBKEDIbyVWkA1+CcUOpe0ZgcnulvRz1Y9ibz0=;
+ h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+ X-NVConfidentiality:MIME-Version:Content-Type;
+ b=ncOj7R3+lgbpnNWPYCKNdW/i0MYa5Pskf+4i5PFXTq0jNtXy4eyNdzNsXEhUQ45sC
+ Q4Vr2koZKbjSwf3D97nK5R1KAfaxp8V6aRZAm0riU9pQh0Q0dM8CvARDxt4T8cUkDf
+ G4kFrIo08VA80i1zWiv+EMsTRbIrUwHttOhIl+/AhaNOx0PLQhaE10ulXoVQ5llbpW
+ A4C22/OezPNNiwiqeRr83jxCpsfVE4/N1p/1x7pS7rSss/dcbyZrv4rTRO1/wYqSBV
+ VQwb9ISAMp2964r6/H3LTxuvP2rqihYSqk92wzOPSR50EOTKqTHe0ficzEpT+OxcPe
+ bUkgz7egGxM1Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190525_182456_480227_7E7F7A12 
-X-CRM114-Status: GOOD (  20.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190525_213803_223067_09363039 
+X-CRM114-Status: GOOD (  12.37  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,67 +92,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, bjorn.andersson@linaro.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, paulmck@linux.ibm.com,
- stefan.wahren@i2se.com, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Andy Gross <andy.gross@linaro.org>, rui.zhang@intel.com,
- devicetree@vger.kernel.org, marc.w.gonzalez@free.fr,
- Eduardo Valentin <edubezval@gmail.com>, olof@lixom.net, robh+dt@kernel.org,
- Jonathan.Cameron@huawei.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux PM <linux-pm@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- enric.balletbo@collabora.com, David Miller <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, mperttunen@nvidia.com,
+ linux-tegra@vger.kernel.org, vidyas@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gWWFuZ3RhbywKCk9uIFN1biwgTWF5IDI2LCAyMDE5IGF0IDAyOjQ4OjEzQU0gKzA4MDAs
-IEZyYW5rIExlZSB3cm90ZToKPiBPbiBTdW4sIE1heSAxOSwgMjAxOSBhdCAxMDoyMiBQTSBPbmTF
-mWVqIEppcm1hbiA8bWVnb3VzQG1lZ291cy5jb20+IHdyb3RlOgo+ID4KPiA+IEkga25vdywgSSBk
-b24ndCB0aGluayBpdCBuZWVkcyB0byBiZSBwZXItc29jLiBUaGVzZSBhY3Rpb25zIGFyZSBhbGwg
-c2hhcmVkIGJ5Cj4gPiBhbGwgU29Dcy4gTWF5YmUgd2l0aCBhbiBleGNlcHRpb24gdGhhdCBzb21l
-IFNvQ3MgbWF5IG5lZWQgb25lIG1vcmUgY2xvY2ssIGJ1dAo+ID4gdGhhdCBjYW4gYmUgbWFkZSBv
-cHRpb25hbGx5LXJlcXVpcmVkIGJ5IHNvbWUgZmxhZyBpbiBzdHJ1Y3Qgc3VueGlfdGhlcm1hbF9j
-aGlwLgo+ID4KPiA+IE9ubHkgaGlnaGx5IFNvQyBzcGVjaWZpYyB0aGluZyBpcyBjb25maWd1cmlu
-ZyB0aGUgVEhTIHJlZ2lzdGVycyBmb3Igc2FtcGxpbmcKPiA+IGZyZXF1ZW5jeS9hdmVyYWdpbmcv
-ZW5hYmxpbmcgaW50ZXJydXB0cy4gVGhlIHJlc2V0L2Nsb2NrIGVuYWJsZSBpcyBnZW5lcmljLCBh
-bmQKPiA+IGFscmVhZHkgYWJzdHJhY3RlZCBieSB0aGUgY2xvY2svcmVzZXQgZnJhbWV3b3JrLgo+
-ID4KPiA+IFNvIHdoYXQgSSBzdWdnZXN0IGlzIGhhdmluZzoKPiA+Cj4gPiBzdW54aV90aHNfZW5h
-YmxlKCkKPiA+ICAgICAgICAgcmVzZXQgZGVhc3NlcnQKPiA+ICAgICAgICAgYnVzIGNsb2NrIHBy
-ZXBhcmUgZW5hYmxlCj4gPiAgICAgICAgIG9wdGlvbmFsbHkgbW9kdWxlIGNsb2NrIHByZXBhcmUg
-ZW5hYmxlIChpbiB0aGUgZnV0dXJlKQo+ID4gICAgICAgICBjYWxsIHBlci1zb2MgY2FsaWJyYXRp
-b24KPiA+ICAgICAgICAgY2FsbCBwZXItc29jIHNldHVwIGNhbGxiYWNrCj4gPgo+ID4gc3VueGlf
-dGhzX2Rpc2FibGUoKQo+ID4gICAgICAgICByZXNldCBhc3NlcnQKPiA+ICAgICAgICAgYnVzIGNs
-b2NrIHVucHJlcGFyZSBkaXNhYmxlCj4gPiAgICAgICAgIG9wdGlvbmFsbHkgbW9kdWxlIGNsb2Nr
-IHVucHJlcGFyZSBkaXNhYmxlCj4gPgo+ID4gQW5kIGlmIHlvdSBjb3VsZCBtb3ZlIGRldm1fbnZt
-ZW1fY2VsbF9nZXQgdG8gcHJvYmUgdGhhdCBzaG91bGQgbWFrZSBwZXItU29DCj4gPiBjYWxpYnJh
-dGlvbiBjYWxsYmFjayBhbHNvIGxlc3MgcmVwZXRpdGl2ZSBhbmQgY291bGQgYXZvaWQgdW5kb2lu
-ZyB0aGUgZW5hYmxlCj4gPiBpbiBjYXNlIGl0IHJldHVybnMgRVBST0JFX0RFRkVSICh3aGljaCBp
-cyBwb3NzaWJsZSkuCj4gPgo+ID4gQWxsIHRoaXMgc2hvdWxkIG1ha2UgaXQgZWFzaWVyIHRvIHN1
-cHBvcnQgUE0gaW4gdGhlIGZ1dHVyZSBhbmQgYWRkIGxlc3MKPiA+IGN1bWJlcnNvbWUgdG8gYWRk
-IHN1cHBvcnQgZm9yIEE4M1QgYW5kIEgzL0g1Lgo+ID4KPiA+IEJUVywgd2hhdCBhcmUgeW91ciBw
-bGFucyBmb3IgbW9yZSBTb0Mgc3VwcG9ydD8gSSdkIGxpa2UgdG8gYWRkIHN1cHBvcnQgZm9yCj4g
-PiBBODNUIGFuZCBIMy9INSwgbWF5YmUgZXZlbiBkdXJpbmcgdGhlIDUuMyBjeWNsZSBpZiB0aGlz
-IGRyaXZlciBoYXBwZW5zIHRvIGxhbmQKPiA+IGVhcmx5IGVub3VnaC4gSWYgeW91IGRvbid0IGhh
-dmUgYW55IHBsYW5zIEknbGwgdGFrZSBpdCBvbi4KPiA+Cj4gCj4gSSBwbGFuIHRvIHN1cHBvcnQg
-aDMgYW5kIGEzMyBsYXRlci4KPiBDYW4geW91IHN1cHBvcnQgb3RoZXIgcGxhdGZvcm1zPwoKWWVz
-LCBJIGNhbiBkbyBBODNULiBINSBpcyBzaW1pbGFyICh0aGUgc2FtZT8pIGFzIEgzLgoKdGhhbmsg
-eW91IGFuZCByZWdhcmRzLAoJby4KCj4gQ2hlZXJzLAo+IFlhbmd0YW8KPiAKPiA+IHRoYW5rIHlv
-dSBhbmQgcmVnYXJkcywKPiA+ICAgICAgICAgby4KPiA+Cj4gPiA+ID4KPiA+ID4gPiB0aGFuayB5
-b3UgYW5kIHJlZ2FyZHMsCj4gPiA+ID4gICAgICAgICBvLgo+ID4gPiA+Cj4gPiA+ID4gPiBSZWdh
-cmRzLAo+ID4gPiA+ID4gWWFuZ3Rhbwo+ID4gPgo+ID4gPiBfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4gPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdAo+ID4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPiA+ID4gaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBs
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Tegra194 has six PCIe controllers based on Synopsys DesignWare core.
+There are two Universal PHY (UPHY) blocks with each supporting 12(HSIO:
+Hisg Speed IO) and 8(NVHS: NVIDIA High Speed) lanes respectively.
+Controllers:0~4 use UPHY lanes from HSIO brick whereas Controller:5 uses
+UPHY lanes from NVHS brick. Lane mapping in HSIO UPHY brick to each PCIe
+controller (0~4) is controlled in XBAR module by BPMP-FW. Since PCIe
+core has PIPE interface, a glue module called PIPE-to-UPHY (P2U) is used
+to connect each UPHY lane (applicable to both HSIO and NVHS UPHY bricks)
+to PCIe controller
+This patch series
+- Adds support for P2U PHY driver
+- Adds support for PCIe host controller
+- Adds device tree nodes each PCIe controllers
+- Enables nodes applicable to p2972-0000 platform
+- Adds helper APIs in Designware core driver to get capability regs offset
+- Adds defines for new feature registers of PCIe spec revision 4
+- Makes changes in DesignWare core driver to get Tegra194 PCIe working
+
+Testing done on P2972-0000 platform
+- Able to get PCIe link up with on-board Marvel eSATA controller
+- Able to get PCIe link up with NVMe cards connected to M.2 Key-M slot
+- Able to do data transfers with both SATA drives and NVMe cards
+
+Note
+- Enabling x8 slot on P2972-0000 platform requires pinmux driver for Tegra194.
+  It is being worked on currently and hence Controller:5 (i.e. x8 slot) is
+  disabled in this patch series. A future patch series would enable this.
+- This series is based on top of the following series
+  Jisheng's patches to add support to .remove() in Designware sub-system
+  https://patchwork.kernel.org/project/linux-pci/list/?series=98559
+  (Jisheng's patches are now accepted and applied for v5.2)
+  My patches made on top of Jisheng's patches to export various symbols
+  https://patchwork.kernel.org/project/linux-pci/list/?series=101259
+
+Changes since [v7]:
+* Changed P2U driver file name from pcie-p2u-tegra194.c to phy-tegra194-p2u.c
+* Addressed review comments from Thierry and Rob
+
+Changes since [v6]:
+* Took care of review comments from Rob
+* Added a quirk to disable MSI for root ports
+* Removed using pcie_pme_disable_msi() API in host controller driver
+
+Changes since [v5]:
+* Removed patch that exports pcie_bus_config symbol
+* Took care of review comments from Thierry and Rob
+
+Changes since [v4]:
+* Removed redundant APIs in pcie-designware-ep.c file after moving them
+  to pcie-designware.c file based on Bjorn's review comments
+
+Changes since [v3]:
+* Rebased on top of linux-next top of the tree
+* Addressed Gustavo's comments and added his Ack for some of the changes.
+
+Changes since [v2]:
+* Addressed review comments from Thierry
+
+Changes since [v1]:
+* Addressed review comments from Bjorn, Thierry, Jonathan, Rob & Kishon
+* Added more patches in v2 series
+
+Vidya Sagar (15):
+  PCI: Add #defines for some of PCIe spec r4.0 features
+  PCI: Disable MSI for Tegra194 root port
+  PCI: dwc: Perform dbi regs write lock towards the end
+  PCI: dwc: Move config space capability search API
+  PCI: dwc: Add ext config space capability search API
+  dt-bindings: PCI: designware: Add binding for CDM register check
+  PCI: dwc: Add support to enable CDM register check
+  dt-bindings: Add PCIe supports-clkreq property
+  dt-bindings: PCI: tegra: Add device tree support for Tegra194
+  dt-bindings: PHY: P2U: Add Tegra194 P2U block
+  arm64: tegra: Add P2U and PCIe controller nodes to Tegra194 DT
+  arm64: tegra: Enable PCIe slots in P2972-0000 board
+  phy: tegra: Add PCIe PIPE2UPHY support
+  PCI: tegra: Add Tegra194 PCIe support
+  arm64: Add Tegra194 PCIe driver to defconfig
+
+ .../bindings/pci/designware-pcie.txt          |    5 +
+ .../bindings/pci/nvidia,tegra194-pcie.txt     |  155 ++
+ Documentation/devicetree/bindings/pci/pci.txt |    5 +
+ .../bindings/phy/phy-tegra194-p2u.txt         |   28 +
+ .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |    2 +-
+ .../boot/dts/nvidia/tegra194-p2972-0000.dts   |   41 +
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  437 +++++
+ arch/arm64/configs/defconfig                  |    1 +
+ drivers/pci/controller/dwc/Kconfig            |   10 +
+ drivers/pci/controller/dwc/Makefile           |    1 +
+ .../pci/controller/dwc/pcie-designware-ep.c   |   37 +-
+ .../pci/controller/dwc/pcie-designware-host.c |   14 +-
+ drivers/pci/controller/dwc/pcie-designware.c  |   87 +
+ drivers/pci/controller/dwc/pcie-designware.h  |   12 +
+ drivers/pci/controller/dwc/pcie-tegra194.c    | 1621 +++++++++++++++++
+ drivers/pci/quirks.c                          |   23 +
+ drivers/phy/tegra/Kconfig                     |    7 +
+ drivers/phy/tegra/Makefile                    |    1 +
+ drivers/phy/tegra/phy-tegra194-p2u.c          |  109 ++
+ include/uapi/linux/pci_regs.h                 |   22 +-
+ 20 files changed, 2575 insertions(+), 43 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/phy-tegra194-p2u.txt
+ create mode 100644 drivers/pci/controller/dwc/pcie-tegra194.c
+ create mode 100644 drivers/phy/tegra/phy-tegra194-p2u.c
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
