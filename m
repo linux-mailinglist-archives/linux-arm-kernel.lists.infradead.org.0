@@ -2,62 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B731E2A937
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 11:48:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD7E92A93C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 12:11:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UfuU65tIVwZgzA9k/ksZpQ3BDB/JLt7JSDvDA9QK4Hg=; b=EIeSThdZtO/8zg
-	6Obs5mgVVC2mRExV/0K/v3Tc/oM3YusnG7S9HhhwkGcuG8Fns9B0zv0+dZgF5xLqSi1ouAEV490D+
-	cBrH4r6+a2keWvGH87hMnQfNyoZHw1ueLhIIJccB/8+XHuRHOrUXXnkgPHbuhr3Ziu8RFBrz90fzA
-	qSW2HJkTrh02d8VAOVFkj44rFsPbrdNzuheFlz/1kY4FLXcZjshtQhOgGVwlSYoK3+6o5qssgG84G
-	wzUqLEY6pF63jIKNoRlIEyrLIIRIilMyS7DQhkc7GYcuAzJxKWrDoI5Blyy3YuZhydhGRK1ImmcIl
-	YU/8IdVfjiQ9CJvg4tkQ==;
+	List-Owner; bh=pGtI+S/OZDlTsJqf09mH1Z6fr1LshPcpdRGUUl7DbPY=; b=GSihn1ebNKkMtt
+	r7P5mkz8su9UpQwYw2kGPXOJCZiRqVgZmHQTClU6eZjXx7af3eXr8T8qwJBS2l7ojTLHj6ttk2Dxx
+	neq2YgROzj+Z4NiTI6VXjjmf32uf9347j0Z0SdguFyQFgp9nFPV1596JV4t0OWCIdF5HruS5fsaAF
+	cvfChEOnq37mMVXLSFNoMHM+ckPQyJCK/+uIm6u/RslPmOCAkgG8nllFtqKljG7gIBcpJMlhrDeHe
+	M30RFBMdD5gfW4V7MlI1Ld6ABrN8278m0JpCrubEuiwAXDrxopcw0v54gzJg75xCxtRvDopNh414L
+	yBAAcZg66cR8u21+lDcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUplT-0000iI-Sm; Sun, 26 May 2019 09:48:27 +0000
-Received: from mx1.riseup.net ([198.252.153.129])
+	id 1hUq87-0000bc-Rk; Sun, 26 May 2019 10:11:51 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUplK-0000ho-Gj
- for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 09:48:20 +0000
-Received: from capuchin.riseup.net (capuchin-pn.riseup.net [10.0.1.176])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (Client CN "*.riseup.net",
- Issuer "COMODO RSA Domain Validation Secure Server CA" (verified OK))
- by mx1.riseup.net (Postfix) with ESMTPS id EB5721A0CAF;
- Sun, 26 May 2019 02:48:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=riseup.net; s=squak;
- t=1558864095; bh=8OaqU8bvZuIXA7nF3gCJ4vUP6PXw6ku0VUrbHfqjHAQ=;
- h=From:To:Cc:Subject:Date:From;
- b=AbJFSzTpy+q0/Tly14xp4E0gE66+KV+sX4Pv4MNcTkczonBjKea1eclojC481a33W
- QOsKILLMLBykNx9COt9boiw+h1qp6Gtwjv8cCxpRQn8dWlrHhQNkMUsxetjKuWqGq+
- GNNatU64LAdFB/pti6KAlFD1dEXZXTG/Ytl2Magc=
-X-Riseup-User-ID: F570A3085F3311A36801C4EC41F2616F67BF4FC43DF8360ACC0A436D2EF42768
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- by capuchin.riseup.net (Postfix) with ESMTPSA id 4C351120896;
- Sun, 26 May 2019 02:48:11 -0700 (PDT)
-From: Yegor Timoshenko <yegortimoshenko@riseup.net>
-To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: dts: allwinner: a64: bananapi-m64: enable UART2
-Date: Sun, 26 May 2019 12:47:15 +0300
-Message-Id: <20190526094715.12289-1-yegortimoshenko@riseup.net>
+ id 1hUq80-0000bJ-L0
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 10:11:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1558865489;
+ bh=RsZzmmSplgdO28RoGwyrViaNFl/kTmVpO3gWicYofcQ=;
+ h=X-UI-Sender-Class:To:Cc:From:Subject:Date;
+ b=eZteg3NakwWwjquYjLdxx92cKYsyjV7TRjaZsZFAs/4aRWwxILuiunOaQaHL4DXs2
+ AtpQ9LO+4Z83T1ePgQmNvpS2LTIgwhFYbKhD6QXXmxr1fsbWsRRUXk9nbVREcIVlMF
+ JDHUTQv60oCznt6GfmBoWidcNSIZQzUZ3jFZWk7g=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.166] ([37.4.249.160]) by mail.gmx.com (mrgmx001
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0MIMUZ-1hTT5C20TP-0047nm; Sun, 26
+ May 2019 12:11:29 +0200
+To: =?UTF-8?B?QW50dGkgU2VwcMOkbMOk?= <a.seppala@gmail.com>,
+ Minas Harutyunyan <hminas@synopsys.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
+From: Stefan Wahren <wahrenst@gmx.net>
+Subject: usb: dwc2: RODATA_FULL_DEFAULT_ENABLED causes kernel oops
+Message-ID: <0ae6261e-96b3-cf8b-d523-a6b8851c951b@gmx.net>
+Date: Sun, 26 May 2019 12:11:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+Content-Language: en-US
+X-Provags-ID: V03:K1:1dhw3hl/QquHu4b0qlpUUv5UepZ1XfJqfyDw1LRXaSoxGWxpLFt
+ c6IzWcCrmkQNkaOsBZaov9zx2QvyKyO9jpCnfUPabUJZWNC4ZhmAoLyZhZkD327VwXvGZA3
+ YfLDzg1Rxv+2VqoGkNhMXEItWkTjHb+rQWly0+hZegqZO7PYyhOWRmzR0y0QybQEQq56E7X
+ qvfs9yYSC65sCOtu92x3g==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:yTAV9FBPStY=:+GhH0LwmaG47T8JvhAc0Y3
+ azIx7ioiRhcYzrkSP9I/wY1l/qQ1Nu4BBav857JgQUaWe36fksVAcgBHjqHOWr6sAGr99B+hL
+ rAK3K7XuxHBeVmps9C5aK6d6OX8/RQAAoj3iijdgHL3Jsn+YbR1EKQ/0OPihBAIvgTm+1gBTm
+ Xclj8gUAjqfxnqG0pQqeWKyhOzWwm41EmGubDcg3CJcAKuRdTwkAr4N/ySSiw8rxqmBzPpwMr
+ A79m5x4t6pc0uFbYtvaq3Ocq/AhqqwKgLZWPLW5BUPK4Wox7LDGJJJZuNlQQ7mZiHEVsZDawF
+ tnpnxSFOQPw5OEDYoQfEg1gTlvPtZ5wZdRbAvHRdeFwSFJhgSVxEOep19h7D/4sxfaQ6lJWrU
+ k6XI9HbB6TSXJBKCKsJD4LlS4YxiX0j6BKE4I9dVQNOXXwHZTWN3+/OvLoAnUubRL1ruR1eqA
+ atufEAjsZBrm+PwcwHLEF+GtbJvfp3NWifzuCKop7/Sly3XbvOC1qeWgAZ9Z5fbLnb4vpqHF8
+ 5cVe6sFLt9m8Uecajip33TE4dLBehZLSd1F1OJsS4NXJMWQm7ntZrf17p49hhqliQf8ZAcopC
+ BJn2jnBBYLQ5k43qJqR9rNW3TFV6guU8LU5l1kpTkOL0S9PcgZgywTNsf7OK4JMygCL16jwrP
+ TaJbys5B6XdegzcN/9LeZLI7Gwjl2z5M8j5NF2LESCBxkWvPZv+M2qmCCQZQJojZ5SIn22D1M
+ ozRFhreTthkC7BeEcRcbqQAiwPsNmZb4V/WGOiTOYn6pSK1eY+yv+IOJ7tqNZYhu7zKKxDKWT
+ o7bR6ZElY3QAW4vmjZci13gytUpKfy03+H5SliTN8LVt2TFPwlqShLEQDRWEHOnTLE/SSIzE7
+ vwSc1Hjk2aXBAUL6G8+Q13FrapMMj+KaLy+iZLgdgt0Zywgp/WMXinlEeQf5Cuss3p6OdofPZ
+ z1qdC5tbqww2jvvQGaduOb0n7fV9nVUfhF8fcINkd0gyQob9SN56R
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_024818_598602_D5BFE7BD 
-X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-CacheID: sfid-20190526_031145_029040_753C11C0 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.15 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -66,8 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [198.252.153.129 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,50 +98,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yegor Timoshenko <yegortimoshenko@riseup.net>
+Cc: Artur Petrosyan <Arthur.Petrosyan@synopsys.com>,
+ Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BananaPi M64 exposes UART2 interface that is supposed to be enabled
-by default (see "Default Function" in the pin definition table from
-the manufacturer [1]).
+Hi,
 
-[1]: https://bananapi.gitbooks.io/bpi-m64/en/bpi-m64gpiopindefine.html
+i want to remind about an issue which was originally reported by Wayne
+Piekarski [1]. I'm able to reproduce this oops with Mainline Linux 5.0.2
+on a Raspberry Pi 3B+ (arm64/defconfig) and according to Jan Kratochvil
+[2] this applies to 5.1.0 and 5.2.0.
 
-Signed-off-by: Yegor Timoshenko <yegortimoshenko@riseup.net>
----
- arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts | 7 +++++++
- 1 file changed, 7 insertions(+)
+The crash is reproducible since commit c55191e96ca ("arm64: mm: apply
+r/o permissions of VM areas to its linear alias as well"), but the root
+cause of the crash was introduced much earlier with commit 56406e017a88
+("usb: dwc2: Fix DMA alignment to start at allocated boundary").
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-index 094cfed13df9..100d1a8fd292 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-@@ -54,6 +54,7 @@
- 		ethernet0 = &emac;
- 		serial0 = &uart0;
- 		serial1 = &uart1;
-+		serial2 = &uart2;
- 	};
- 
- 	chosen {
-@@ -312,6 +313,12 @@
- 	status = "okay";
- };
- 
-+&uart2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart2_pins>;
-+	status = "okay";
-+};
-+
- &usb_otg {
- 	dr_mode = "otg";
- 	status = "okay";
--- 
-2.20.1
+I tested successfully the following workarounds with the RPi 3B+:
+
+1) Disable RODATA_FULL_DEFAULT_ENABLED
+
+2) revert commit 56406e017a88 ("usb: dwc2: Fix DMA alignment to start at
+allocated boundary")
+
+It would be nice if someone can come up with a proper solution.
+
+Regards
+Stefan
+
+[1] - https://marc.info/?l=linux-usb&m=155440243702650&w=2
+[2] - https://bugzilla.kernel.org/show_bug.cgi?id=203149
 
 
 _______________________________________________
