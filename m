@@ -2,63 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C1092ABF5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 21:41:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC3762ABF7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 May 2019 21:58:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ONpVJf22atEnu9x0+Tq5STN/1kqgDGaXVvcC7/OEHn8=; b=jg814jFssjEUiQ
-	G358Klj6QlNol/iIqtBPAIrncI8PmhjDoUKrbElSPD1AW+7z39qXSPFOJxBb6lT6NRfu1Cb72P5XI
-	scARs5e0xxw2Uy0oe3h4OroBYN/Rocqc7xmKDEJsS0dGTm8M8w12OoyhcVwII07n+erJDp/61vxeT
-	VKcKW03h7gDd8uQS7p8TlMO3k25F/rhvY2fjCLWYn0cTaZrvUOrlGCp85z706mJICxe0KUiK3ximk
-	95DwqwOtwfL8mFeMOHkhTFmEia+6dLca7WxJ736D/FSgPR76wCw3OOJIzIIJbv+rzhVRnZVwc8EHZ
-	lpfEYMFXlhmXeMlHReKw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gnzXQcYRfKGCl3f8m5AD0BbBtkWbzZ1y626kpSIy508=; b=ZJOFmKCzQ1NBrT
+	Yr+sLdT70DuW1EdBgjdwbSBkOBti7XSg4sxpMAUAtd6l5QcuW2gQY7BiWa1nDrivb0de8XGJ0FfeD
+	hfLdYRfVZfYdA6hFBRVdx3fXHIn67GAQFbCQM5/9wsl5O91d4jQbw4eEUJM2ge6CL8ySHKWZWk4g2
+	VbmS/lc24AaHAr0YEr7q6TcG4f9aTBJkc3XnvWIWPhf9Bnfi8yCgb/9iclNcjuFQ2hygekCvK0yCk
+	Lc2lBbaRyzEzQjliyiNGbNUtxh6dyOXgnjqllchSRi7g+GeVYDVyKWZJE3YDgseJg8zLsi1naprOO
+	K5G+TtHtkG8jP0AYXu4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUz1X-0002If-5Y; Sun, 26 May 2019 19:41:39 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hUzHp-00078W-Jm; Sun, 26 May 2019 19:58:29 +0000
+Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUz1N-0002HC-AD
- for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 19:41:31 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hUz1F-0004BC-5J; Sun, 26 May 2019 21:41:21 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hUz1E-00018L-9V; Sun, 26 May 2019 21:41:20 +0200
-Date: Sun, 26 May 2019 21:41:20 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH 10/14] pwm: meson: simplify the calculation of the
- pre-divider and count
-Message-ID: <20190526194120.uzuq6ncz5l2z4hfm@pengutronix.de>
-References: <20190525181133.4875-1-martin.blumenstingl@googlemail.com>
- <20190525181133.4875-11-martin.blumenstingl@googlemail.com>
+ id 1hUzHg-000781-Ve
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 May 2019 19:58:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1558900687;
+ bh=am2sDsv9uOcqdQaJtN8eIr6k8922gt0ZSOykwadeZ9E=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=hAUG/zA1PqRNYSl6Bu5ifC0UGtcFER2z/GorSmrglbU3yiOdm4+q5zoBOOGE5G8Wk
+ 28Rm1TxA3txhaBJd0d91h0vVxCXcu0AzhoaVjOGupNpx40N/sF3AmfQDvmcuA2rVTB
+ zX57ayEcLG0G0BNf7nLy/016Y1TVx2+Nm3httMpo=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.166] ([37.4.249.160]) by mail.gmx.com (mrgmx103
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 0MXIGf-1hAGwk189l-00WFy9; Sun, 26
+ May 2019 21:58:07 +0200
+Subject: Re: usb: dwc2: RODATA_FULL_DEFAULT_ENABLED causes kernel oops
+To: =?UTF-8?B?QW50dGkgU2VwcMOkbMOk?= <a.seppala@gmail.com>
+References: <0ae6261e-96b3-cf8b-d523-a6b8851c951b@gmx.net>
+ <CAKv9HNaJg3OB3DrC_aJe0M97dFP9A0_Jew_wFqReHvzDoFF+sg@mail.gmail.com>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <a908bca3-b410-d58f-1011-4f47eca85da4@gmx.net>
+Date: Sun, 26 May 2019 21:58:05 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190525181133.4875-11-martin.blumenstingl@googlemail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <CAKv9HNaJg3OB3DrC_aJe0M97dFP9A0_Jew_wFqReHvzDoFF+sg@mail.gmail.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:9ix+/bY/JzTOYzR3GDsGCCwWhFWhLO78OhReIP7eZqWBQa7v0rX
+ /MF0Qwd2zWX3FjwbaGV9psQMoLLzBGA1gPT856+byeMT/ZEVdYEPCXWT1L1Kud72QAx9K4b
+ LiYNdHF1RS8ymnEHTXw+EjrWWkA1EHU7Z84Oz449Sr2ylifugRfmY0o06Z4dUMGaBA/AxsK
+ xbNbBWIIC9/DeWgZ8jRZA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:sp67KIgS0PE=:UPMt4Rk3/vnCz1h5AlWWz4
+ tkHQXu/Ngd6DUY4BLVPNhq4sC2bCrQnxM8BZToi+g8TXtA7Yj+XQHB2aKGe51rYVTu1zuABoD
+ A7JBbCxCvh/CL6Ni0vE1aQqaLwWRdqGN67d+NaZo/VLVputc7plP5M0IbU4ImjFXRz4sMt3Re
+ fpGpjszJ1z5kIhU0bh8349ao/iupSMWz1jBe4P+xa7AZ1BDQ3Ef3DW+qOKL4FSnTH6bnyhIit
+ ebOgBtWx0elBBFiRk8sVlh+jPoiQ2KLUJSefwVrgrwlQu1V7Ch161JTBiny6C7lHRTMaXLRre
+ zaopkZj6xukEwWF0OAPcJEO2rbx4IHubPLIFShp5zPUbMs0eI518FYansraJLAyx0BsIb9Gbt
+ FCsf/wzZv2GeAWdXuXzs61G8qXnkhGem6CZKXQoP5BwAO/7X5sqlrbmbVEvtNb/T5uvFhfy44
+ OJfhKAqNu6sTjR6/DTCTlnunByussAsfD2H6JQ11/RuvRpo9ESE16kAIFTMR1yvtzidOQVyh6
+ IPJvbl5rVDFHYOF7u2xk69HoT4eobKVGTObWL0erkYEbsd7YkmOPiXo6oDITIXHGSiV8nGrlY
+ 1NPltx9PNFAbjKcluPGHJRsRghhpyEojrjU4GVPFZ8bk9ENF7ynN8IgwPo5hapoILw2F6BqVI
+ D5pZS+tye3QYICScc5liQ9fCkEkFzO2LcJgM3rypTa5ZTaU2OjJ14ahr+vF0B/cam4dmFXrk3
+ tjmYMzMuCalVbBM+d9x2BsWiTKG8DhO7sVJBSZ3245vlPhn4L5an/K43rwtj4NZQtzm/VeUyI
+ QexPKCbi4NRBPyYt+d4OvWfXNrgxGU3kYaWxeU8jc/LD8XbAPhv42y8TlyG+POiykyftnDgAa
+ agOxY+jbetB841j1tPcUuJCyTiwdSZw4msDFmmLcD3jXl9RmX4M55WRzpyshubIVvFYKbX35n
+ prDScIqX5pnV0hapEFveFHY5l4xtc60oepND9XAiLaY9fmw4Ypi4i
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_124129_506408_D32D16BB 
-X-CRM114-Status: GOOD (  23.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190526_125821_360457_EAD27247 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.22 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,155 +98,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@pengutronix.de, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pwm@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Artur Petrosyan <Arthur.Petrosyan@synopsys.com>,
+ Martin Schiller <ms@dev.tdt.de>, Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ Will Deacon <will.deacon@arm.com>, Minas Harutyunyan <hminas@synopsys.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 25, 2019 at 08:11:29PM +0200, Martin Blumenstingl wrote:
-> Replace the loop to calculate the pre-divider and count with two
-> separate div64_u64() calculations. This makes the code easier to read
-> and improves the precision.
-> =
-
-> Two example cases:
-> 1) 32.768kHz LPO clock for the SDIO wifi chip on Khadas VIM
->    clock input: 500MHz (FCLK_DIV4)
->    period: 30518ns
->    duty cycle: 15259ns
-> old algorithm: pre_div=3D0, cnt=3D15259
-> new algorithm: pre_div=3D0, cnt=3D15259
-> (no difference in calculated values)
-> =
-
-> 2) PWM LED on Khadas VIM
->    clock input: 24MHz (XTAL)
->    period: 7812500ns
->    duty cycle: 7812500ns
-> old algorithm: pre_div=3D2, cnt=3D62004
-> new algorithm: pre_div=3D2, cnt=3D62500
-> Using a scope (24MHz sampling rate) shows the actual difference:
-> - old: 7753000ns, off by -59500ns (0.7616%)
-> - new: 7815000ns, off by +2500ns (0.032%)
-> =
-
-> Suggested-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->  drivers/pwm/pwm-meson.c | 25 ++++++++++---------------
->  1 file changed, 10 insertions(+), 15 deletions(-)
-> =
-
-> diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
-> index 27915d6475e3..9afa1e5aaebf 100644
-> --- a/drivers/pwm/pwm-meson.c
-> +++ b/drivers/pwm/pwm-meson.c
-> @@ -12,6 +12,7 @@
->  #include <linux/err.h>
->  #include <linux/io.h>
->  #include <linux/kernel.h>
-> +#include <linux/math64.h>
->  #include <linux/module.h>
->  #include <linux/of.h>
->  #include <linux/of_device.h>
-> @@ -145,7 +146,6 @@ static int meson_pwm_calc(struct meson_pwm *meson, st=
-ruct pwm_device *pwm,
->  	struct meson_pwm_channel *channel =3D pwm_get_chip_data(pwm);
->  	unsigned int duty, period, pre_div, cnt, duty_cnt;
->  	unsigned long fin_freq =3D -1;
-> -	u64 fin_ps;
->  =
-
->  	duty =3D state->duty_cycle;
->  	period =3D state->period;
-> @@ -164,24 +164,19 @@ static int meson_pwm_calc(struct meson_pwm *meson, =
-struct pwm_device *pwm,
->  	}
->  =
-
->  	dev_dbg(meson->chip.dev, "fin_freq: %lu Hz\n", fin_freq);
-> -	fin_ps =3D (u64)NSEC_PER_SEC * 1000;
-> -	do_div(fin_ps, fin_freq);
-> -
-> -	/* Calc pre_div with the period */
-> -	for (pre_div =3D 0; pre_div <=3D MISC_CLK_DIV_MASK; pre_div++) {
-> -		cnt =3D DIV_ROUND_CLOSEST_ULL((u64)period * 1000,
-> -					    fin_ps * (pre_div + 1));
-> -		dev_dbg(meson->chip.dev, "fin_ps=3D%llu pre_div=3D%u cnt=3D%u\n",
-> -			fin_ps, pre_div, cnt);
-> -		if (cnt <=3D 0xffff)
-> -			break;
-> -	}
->  =
-
-> +	pre_div =3D div64_u64(fin_freq * (u64)period, NSEC_PER_SEC * 0xffffLL);
->  	if (pre_div > MISC_CLK_DIV_MASK) {
->  		dev_err(meson->chip.dev, "unable to get period pre_div\n");
->  		return -EINVAL;
->  	}
->  =
-
-> +	cnt =3D div64_u64(fin_freq * (u64)period, NSEC_PER_SEC * (pre_div + 1));
-> +	if (cnt > 0xffff) {
-> +		dev_err(meson->chip.dev, "unable to get period cnt\n");
-> +		return -EINVAL;
-> +	}
-> +
-
-There is a slight modification in the calculation of pre_div that isn't
-catched by the examples above.
-
-Before this patch we had:
-
-	pick smallest pre_div such that
-		round_closest(period * 1000 / (round_down(1e12 / fin_freq) * (pre_div + 1=
-)) <=3D 0xffff
-
-New approach is:
-
-	pre_div =3D round_down(fin_freq * period / (1e9 * 0xffff))
-
-An advantage of the new approach is better as it rounds only once and is
-easier.
-
-Consider fin_freq =3D 99990001 and period =3D 655355, then the old algorithm
-picks pre_div =3D 1 while the new picks pre_div =3D 0.
-
-I didn't continue here to check which are the resulting waveforms, I
-assume they are different though.
-
-As there is currently no definition what is a "better" approximation for
-a given requested pair (duty_cycle, period) I cannot say if these
-changes are good or not.
-
-And that's a pity, so I still think there should be a documented
-definition that lays down how a lowlevel driver should round. Without
-that a consumer that cares about fine differences can not rely an the
-abstraction provided by the PWM framework because each low-level driver
-might behave differently.
-
-@Thierry: So can you please continue the discussion about this topic.
-The longer this is delayed the more patches are created and submitted
-that eventually might be wrong which is a waste of developer and
-reviewer time.
-
-Assuming the people who care about meson don't object after reading this
-I wouldn't want to stop this patch going in though. So:
-
-	Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpBbSAyNi4wNS4xOSB1bSAxMjo0NCBzY2hyaWViIEFudHRpIFNlcHDDpGzDpDoKPgo+IEhl
+bGxvLgo+Cj4gVGhpcyBpcyBqdXN0IGEgc2hvdCBpbiB0aGUgZGFyayBidXQgaGF2ZSB5b3UgdHJp
+ZWQgdG8gYXBwbHkgRE1BIGNhY2hlCj4gYWxpZ25tZW50IGlzc3VlIGZpeCBbMV0gYXMgYSB0aGly
+ZCB3b3JrYXJvdW5kIGFsdGVybmF0aXZlPwo+IElmIGl0IGhlbHBzIHRoZSBmaXggc2hvdWxkIGJl
+IG1lcmdlZCB1cHN0cmVhbS4KCnllcy4gQWZ0ZXIgYXBwbHlpbmcgTWFydGluJ3MgcGF0Y2gsIGkg
+d2Fzbid0IGFibGUgdG8gcmVwcm9kdWNlIHRoaXMKa2VybmVsIG9vcHMuCgpUaGFua3MgdG8gYWxs
+Cgo+Cj4gWzFdIC0gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wYXRjaC8xMDgxNzM3Ny8K
+Pgo+IEJyLAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
