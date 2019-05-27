@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9D182AD2F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 05:05:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 506EF2AD31
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 05:05:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mrQoJyb/2NrgX9VQDisoGaoajmlXEqiOxzHiYyh/HMY=; b=QaqPzbBWwh8U+a
-	HBOJdbpQ3zmFA//uADdUISSu6EmuW7RWuW8i/9SWXf8PDbK8EFPKM4VDKYP1/ppupZ5LHAtmiwPXr
-	M1OU8y5rdX8cv00rmV7+gW1IJ2svHiWxrzgSMS7Olf5ryAkzclMgh1HMJt9obV5vxtZE4R+SqqOtI
-	ukbwNFU5wc2TUvoVOkzlI7nJG46aCdsvS2hdHzZS7wgmtqEWm/dc6QqPP1eWP978QFXOAsdtAVfVV
-	c+N5swZAy0UNHvY1jwE8HbO8zKNvWCT2pM/A6LW5ta53B9jFQ8qi7IVmVleMYnXIwfOeNe7xTCugZ
-	dvu3QxEpzrQUyRIZxxVw==;
+	List-Owner; bh=UXNV6h8NGHTvPqJLH1xIOeGx2TBChiRZeJnkLA6+qdE=; b=REt1urh2154coS
+	oM/nmCZgaD+58hI0J8Lbk7rqcRhSUP40EPk6WQSw5lvLsi4Fymljt/aanFEUdZkXzYGQ+0hECbn7P
+	Lvz0Tc0mHDUA32sLujGgTT102O77ZZAmeEaoTGRoKssDKIyVzOZgZp/NYT46igB1RhMMIlBlUMhrl
+	ViFmgL2kgdLydCs+vWQ9CdDAE1XnvOTHuauuV5ZUivNexTdq96RGQ5oyn0vG6PVw89bWSOaW6Aeju
+	VPLUel37OBDGEnahUIJnkcGrZAs4RGRApfIX5cAzW/k/LhSV6wMxcioBOrUBOFHMZpf63m5U5Ae7r
+	8sw93lyayuH76Wa85qxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV5wq-0000tf-GN; Mon, 27 May 2019 03:05:16 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hV5xA-0002Ys-9g; Mon, 27 May 2019 03:05:36 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV5wH-0000V0-8j
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 03:04:44 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 104242001F2;
- Mon, 27 May 2019 05:04:40 +0200 (CEST)
+ id 1hV5wI-0000X1-K0
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 03:04:47 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5447F1A0AA8;
+ Mon, 27 May 2019 05:04:41 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id BB52420023A;
- Mon, 27 May 2019 05:04:34 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0B2A01A01AC;
+ Mon, 27 May 2019 05:04:36 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DEB02402B5;
- Mon, 27 May 2019 11:04:27 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2F7D0402FB;
+ Mon, 27 May 2019 11:04:29 +0800 (SGT)
 From: Peter Chen <peter.chen@nxp.com>
 To: balbi@kernel.org,
 	shawnguo@kernel.org
-Subject: [PATCH v3 3/8] doc: dt-binding: ci-hdrc-usb2: add compatible string
+Subject: [PATCH v3 4/8] doc: dt-binding: usbmisc-imx: add compatible string
  for imx7ulp
-Date: Mon, 27 May 2019 11:06:11 +0800
-Message-Id: <20190527030616.44397-4-peter.chen@nxp.com>
+Date: Mon, 27 May 2019 11:06:12 +0800
+Message-Id: <20190527030616.44397-5-peter.chen@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190527030616.44397-1-peter.chen@nxp.com>
 References: <20190527030616.44397-1-peter.chen@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_200441_684310_A92D5E03 
-X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-CacheID: sfid-20190526_200443_464997_50F4B5C6 
+X-CRM114-Status: UNSURE (   7.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -55,7 +55,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,26 +79,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add compatible string for imx7ulp.
+Add compatible string for imx7ulp
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Peter Chen <peter.chen@nxp.com>
 ---
- Documentation/devicetree/bindings/usb/ci-hdrc-usb2.txt | 1 +
+ Documentation/devicetree/bindings/usb/usbmisc-imx.txt | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/ci-hdrc-usb2.txt b/Documentation/devicetree/bindings/usb/ci-hdrc-usb2.txt
-index a254386a91ad..cfc9f40ab641 100644
---- a/Documentation/devicetree/bindings/usb/ci-hdrc-usb2.txt
-+++ b/Documentation/devicetree/bindings/usb/ci-hdrc-usb2.txt
-@@ -10,6 +10,7 @@ Required properties:
- 	"fsl,imx6sx-usb"
- 	"fsl,imx6ul-usb"
- 	"fsl,imx7d-usb"
-+	"fsl,imx7ulp-usb"
- 	"lsi,zevio-usb"
- 	"qcom,ci-hdrc"
- 	"chipidea,usb2"
+diff --git a/Documentation/devicetree/bindings/usb/usbmisc-imx.txt b/Documentation/devicetree/bindings/usb/usbmisc-imx.txt
+index a85a631ec434..b353b9816487 100644
+--- a/Documentation/devicetree/bindings/usb/usbmisc-imx.txt
++++ b/Documentation/devicetree/bindings/usb/usbmisc-imx.txt
+@@ -7,6 +7,7 @@ Required properties:
+ 	"fsl,vf610-usbmisc" for Vybrid vf610
+ 	"fsl,imx6sx-usbmisc" for imx6sx
+ 	"fsl,imx7d-usbmisc" for imx7d
++	"fsl,imx7ulp-usbmisc" for imx7ulp
+ - reg: Should contain registers location and length
+ 
+ Examples:
 -- 
 2.14.1
 
