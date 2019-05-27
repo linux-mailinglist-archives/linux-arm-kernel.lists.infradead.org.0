@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 495102B489
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:14:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DFFD2B48E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:14:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aPpAJQtHCc9TinLySt7ihC9EODre0MyN7vgfaqxNiOE=; b=BXRX7Aulg/g5aR
-	abUdQdFnFTejqiYrVJLrDxR6td7/B7Stwz80uRlXcTk9yv0k6MC0AXEkHk+zuCr1eTa/5ODQ+hcOe
-	asCBQHheYtgA574oba3ryJp69NqKG/iEPiOoOTpRFl+Bu7wpsKodnwoyIHMuK2BTWwi1dc92H1tM8
-	F9iDpB1AP5vDkqc7YoiW7buoqnznO5am9gsUX5nCIGb2bY25Z/rLnkr0qub7hdp2LiYW7MgGmeQtQ
-	iC+ATKy5IGa1dJw1hXE32/iK8oOdGMK5Q4NWKcgWBMFzml+AbQmLiAVKP0RQifPf2nc5h42xPZWP8
-	jn1m8Y0HweCBG8YlKKSw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lDjIr76FtyCSD/0rbI3IZjBi4pFCQlTY/bv9TC4N/og=; b=ezHutsPSRluZ7P
+	MCCRNjCgtBpz1bp1+lbImiNs8zF5U6OclAPgt6OW5kSIjH+PQMy3BTO6/6N6F0lmRKbKJT2ZmlxOP
+	konPsExF8cmIDiqeD5fb4JWUFVGI3CHXiwCNMiSvgTgUn6gz0xUdvuu3iAUtVQeyzuNQzhzJds1rG
+	rj6aRERzdYW7P2SSdukpIaYGDtdbWs6wXsXE6WVrYE9hQGXg4zTrwAfXb/HlcAI0T8dpTjZGpBZvU
+	iN+DcAKTcXxJjGn5CVQS6MvWFLd6tDfxOpf9W80iRhDTJyph2WMB2PWsxh7021hSl+gyphCaiqQ+K
+	+8sdAozeXacm0MYGJBiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVEW9-0001sx-4m; Mon, 27 May 2019 12:14:17 +0000
+	id 1hVEWO-0002GW-C8; Mon, 27 May 2019 12:14:32 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEW1-0001rq-7U
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:14:10 +0000
+ id 1hVEW2-0001s7-IV
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:14:11 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 79BD780F3;
- Mon, 27 May 2019 12:14:27 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 5AD878123;
+ Mon, 27 May 2019 12:14:29 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 00/12] ti-sysc driver changes to drop custom hwmods property
-Date: Mon, 27 May 2019 05:13:36 -0700
-Message-Id: <20190527121348.45251-1-tony@atomide.com>
+Subject: [PATCH 01/12] bus: ti-sysc: Support 16-bit writes too
+Date: Mon, 27 May 2019 05:13:37 -0700
+Message-Id: <20190527121348.45251-2-tony@atomide.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190527121348.45251-1-tony@atomide.com>
+References: <20190527121348.45251-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_051409_305092_A176C16E 
-X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-CacheID: sfid-20190527_051410_642944_E6ACC58F 
+X-CRM114-Status: UNSURE (   7.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,41 +71,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+We need to also support 16-bit writes for i2c in addition to the reads
+when we start configuring the sysconfig register for reset and idle modes.
 
-Here are changes to improve ti-sysc driver to the point where we can
-finally drop the custom hwmods property for most cases. This series
-drops hwmods property only for omap4 UART and MMC as those can be
-tested with core retention idle.
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ drivers/bus/ti-sysc.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-I'll be posting more patches for dropping hwmods properties as they
-get tested.
-
-Regards,
-
-Tony
-
-
-Tony Lindgren (12):
-  bus: ti-sysc: Support 16-bit writes too
-  bus: ti-sysc: Make OCP reset work for sysstatus and sysconfig reset
-    bits
-  bus: ti-sysc: Allow QUIRK_LEGACY_IDLE even if legacy_mode is not set
-  bus: ti-sysc: Enable interconnect target module autoidle bit on enable
-  bus: ti-sysc: Handle clockactivity for enable and disable
-  bus: ti-sysc: Handle swsup idle mode quirks
-  bus: ti-sysc: Set ENAWAKEUP if available
-  bus: ti-sysc: Add support for disabling module without legacy mode
-  bus: ti-sysc: Do rstctrl reset handling in two phases
-  bus: ti-sysc: Detect uarts also on omap34xx
-  ARM: dts: Drop legacy custom hwmods property for omap4 uart
-  ARM: dts: Drop legacy custom hwmods property for omap4 mmc
-
- arch/arm/boot/dts/omap4-l4.dtsi       |   9 --
- drivers/bus/ti-sysc.c                 | 182 ++++++++++++++++++++------
- include/linux/platform_data/ti-sysc.h |   1 +
- 3 files changed, 140 insertions(+), 52 deletions(-)
-
+diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+--- a/drivers/bus/ti-sysc.c
++++ b/drivers/bus/ti-sysc.c
+@@ -100,6 +100,13 @@ static void sysc_parse_dts_quirks(struct sysc *ddata, struct device_node *np,
+ 
+ static void sysc_write(struct sysc *ddata, int offset, u32 value)
+ {
++	if (ddata->cfg.quirks & SYSC_QUIRK_16BIT) {
++		writew_relaxed(value & 0xffff, ddata->module_va + offset);
++		writew_relaxed(value >> 16, ddata->module_va + offset + 4);
++
++		return;
++	}
++
+ 	writel_relaxed(value, ddata->module_va + offset);
+ }
+ 
 -- 
 2.21.0
 
