@@ -2,49 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49CC12B891
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 17:45:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E61472B887
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 17:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wfHvchS2R+ILZCr5vMWujCoabvbwkHwtOS1JsXSiGRk=; b=JNOwoX2HBd4pQA
-	FoeNv7PDosJF4vjgImmAKHwPbtsHe0GjTKzf9YO+w0W8zm2iyqC0S2xBxCjtDLhhnYLPO0Z1kCt9w
-	rKbls0V5fW5HxhqpeFs8WBbln2Vuq9f3j7Mq93iIcfUtnwKaOLPzhTCuNuT+umwED+KiRLPcfWKRj
-	7RTR/7ygM80b5EA6E97NCW4Pv1JmR67vq5SIcS2AntMVZLGygLuUMQF0mypRqLs7Ne+pfgerIPqxR
-	+nS7oLROE2CkU8UYbeTVb5XcNhN4V2uXffeQ23kMY4aVDiBryFJIt6CvIoDrqLFaTzxM9BfYhXoKf
-	fiVcDeZA4kjrSwECGbfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=o/icpkvQUuJumebpPwqXFhG/d2FjVR9W2GvfHt8SdO0=; b=jdzKnc9KHNvvhi
+	aBME+fMkwDygBT+LKxoJfH+/TBErBEaFoOhyxMGUX5xVlabLHkY+OTC4c4Izwca911k2QsrDGrh4B
+	5C/9S7pVaiQT5Xk4efGLYlon2J4Hplx53Xrx77Qo9FM+DnZP2+mBrL2Whajrn2QZc5Ry3f7EYwLo8
+	yIRknZyu3F0SfCmuB0Oy8Rx6VF/yBV/BKEEQFqqUSkVZWCEs4+yZBypiEX0uXS5JZEfHA/LL3d3Sp
+	gOyJvivpy2ktBKD1ViYVWn5RYYcp3P0zXnCMOdgIV1aOM96kHBB4VoqZK5NsV4HGovjZP3uYyY8VV
+	s0ujGiuu1pEZRIRsHaBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVHoH-00060o-E4; Mon, 27 May 2019 15:45:13 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1hVHmc-0004Mf-U9; Mon, 27 May 2019 15:43:30 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVHoA-0005Gc-P1
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 15:45:08 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id C7FCC244; Mon, 27 May 2019 17:45:04 +0200 (CEST)
-Date: Mon, 27 May 2019 17:45:03 +0200
-From: Joerg Roedel <joro@8bytes.org>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: implement generic dma_map_ops for IOMMUs v5
-Message-ID: <20190527154503.GH12745@8bytes.org>
-References: <20190520072948.11412-1-hch@lst.de>
- <20190527153751.GF12745@8bytes.org> <20190527153829.GA31620@lst.de>
+ id 1hVHmW-0004MI-Ee
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 15:43:26 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 09FBBD7F50AFF74571AC
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 May 2019 23:43:19 +0800 (CST)
+Received: from localhost.localdomain.localdomain (10.175.113.25) by
+ DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
+ 14.3.439.0; Mon, 27 May 2019 23:43:10 +0800
+From: Kefeng Wang <wangkefeng.wang@huawei.com>
+To: Wei Xu <xuwei5@hisilicon.com>
+Subject: [PATCH] ARM: hisi: drop useless depend on ARCH_MULTI_V7
+Date: Mon, 27 May 2019 23:51:28 +0800
+Message-ID: <20190527155128.192006-1-wangkefeng.wang@huawei.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190527153829.GA31620@lst.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.175.113.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_084506_969881_03BDDBEC 
-X-CRM114-Status: GOOD (  11.94  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190527_084324_824046_98C9A4AB 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -58,28 +63,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tom Murphy <tmurphy@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
+Cc: Kefeng Wang <wangkefeng.wang@huawei.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 05:38:29PM +0200, Christoph Hellwig wrote:
-> On Mon, May 27, 2019 at 05:37:51PM +0200, Joerg Roedel wrote:
-> > I applied this series to a new generic-dma-ops branch in the iommu
-> > tree and plan to send it upstream in the next merge window.
-> 
-> Thanks!  Can you push the branch out ASAP, as I'll need to pull it
-> into the dma-mapping tree to avoid creating nasty conflicts for the
-> pending rework of the DMA CMA and contigous allocators?
+The ARCH_HISI depends on ARCH_MULTI_V7, no need to add this depend
+to each sub-menu config, and use tabs where possible.
 
-Done, pushed this one branch. Have a lot of fun!
+Signed-off-by: Kefeng Wang <wangkefeng.wang@huawei.com>
+---
+ arch/arm/mach-hisi/Kconfig | 16 ++++++----------
+ 1 file changed, 6 insertions(+), 10 deletions(-)
 
+diff --git a/arch/arm/mach-hisi/Kconfig b/arch/arm/mach-hisi/Kconfig
+index 98338a489921..3b010fe7c0e9 100644
+--- a/arch/arm/mach-hisi/Kconfig
++++ b/arch/arm/mach-hisi/Kconfig
+@@ -15,7 +15,6 @@ menu "Hisilicon platform type"
+ 
+ config ARCH_HI3xxx
+ 	bool "Hisilicon Hi36xx family"
+-	depends on ARCH_MULTI_V7
+ 	select CACHE_L2X0
+ 	select HAVE_ARM_SCU if SMP
+ 	select HAVE_ARM_TWD if SMP
+@@ -25,17 +24,15 @@ config ARCH_HI3xxx
+ 	  Support for Hisilicon Hi36xx SoC family
+ 
+ config ARCH_HIP01
+-       bool "Hisilicon HIP01 family"
+-       depends on ARCH_MULTI_V7
+-       select HAVE_ARM_SCU if SMP
+-       select HAVE_ARM_TWD if SMP
+-       select ARM_GLOBAL_TIMER
+-       help
+-         Support for Hisilicon HIP01 SoC family
++	bool "Hisilicon HIP01 family"
++	select HAVE_ARM_SCU if SMP
++	select HAVE_ARM_TWD if SMP
++	select ARM_GLOBAL_TIMER
++	help
++	  Support for Hisilicon HIP01 SoC family
+ 
+ config ARCH_HIP04
+ 	bool "Hisilicon HiP04 Cortex A15 family"
+-	depends on ARCH_MULTI_V7
+ 	select ARM_ERRATA_798181 if SMP
+ 	select HAVE_ARM_ARCH_TIMER
+ 	select MCPM if SMP
+@@ -46,7 +43,6 @@ config ARCH_HIP04
+ 
+ config ARCH_HIX5HD2
+ 	bool "Hisilicon X5HD2 family"
+-	depends on ARCH_MULTI_V7
+ 	select CACHE_L2X0
+ 	select HAVE_ARM_SCU if SMP
+ 	select HAVE_ARM_TWD if SMP
+-- 
+2.20.1
 
-	Joerg
 
 _______________________________________________
 linux-arm-kernel mailing list
