@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF3982ADC8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 06:51:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC73A2ADCC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 06:51:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HQutQMRRBYLYx8XyKUvt3qhmLMg76cZAcQU7/PGyY34=; b=oWxGt48kvpULUu
-	MIx2RLpVxm2N0odPZcHNKezPdq/i+EOq6qkOJTdkJ7XRyCwDyiYKnrqxa9s+RQZa/Xuq0q7WTNbtg
-	M2JLm5SoR08GbW43ROX29ScFEGe1ZrF32gSz7ScHyc3upYbdIgXYraMoHvFHOAwfCF7ckXrg7SOGa
-	xYTPNn1Q89DW1xMimaPDVGVTERaq0wza1Bb5EcCgmM/EUjugnaC2fQXIUmVy/X7FTX5M0YHa+LmP/
-	GjsKu6zsLYKEznsWCs9f1GzJd6tf4LhgKawnneu5NMfCdeH0RtFuskf/9WTPG6IprESxIvQCKNSiS
-	Gl2yfmoiBQ+vIpF678iw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6kqWx4Yctn8rABzAUXmigvERmLe3xiJOeJ4OGVTuAa0=; b=c8d8c6QBuEND19
+	tI0WJDLvsR4SJp8iXaupEogwRGGK8/ugkayeEgrxtYHdY+Qk+SABtWVbbGBKRSyXEAQOePl08blVf
+	ANqc1KXdCM3FiUvlP/jA41BnxeItCc0euFxbKGtnsNVFfTO83j4Lgudf5E2A9tJMLM5rEk8XpYbx2
+	uZ34KA3u9qYYYzq8oxlTcTspFy0qIeDeiEchCJVMGbkhWbKEI6+leJZ7k1mnXNgR//OP2eeiCjYla
+	vL8DDzRtkrh+tFzWQht4EF2bC3JtR1iiFHqca0dC+OlcN5L/PZHj1mFi9SWCOSR+5hlETistKgTYh
+	4N4kc+MBDwPbW0GM8Uag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV7bi-0007fK-9N; Mon, 27 May 2019 04:51:34 +0000
-Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
+	id 1hV7by-0007xp-BA; Mon, 27 May 2019 04:51:50 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV7ba-0007eH-Rk
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 04:51:28 +0000
-Received: by mail-pg1-x535.google.com with SMTP id h17so8396491pgv.0
+ id 1hV7bg-0007i4-9p
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 04:51:36 +0000
+Received: by mail-pl1-x641.google.com with SMTP id go2so6534852plb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 May 2019 21:51:26 -0700 (PDT)
+ Sun, 26 May 2019 21:51:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+pghJ3QtYkbMJ3TCzTPXHLJ/5p1F8C3Os/Bvo/JdKfg=;
- b=SEIZZEXrBAFGXzBgVAyoamK5sJIK5UZGppPItkKO+xGbuTud9szjLsxir/q5ZtHRrY
- A6F0w/RQHS5wiv/Nho1yKYDHxKHYaA5JpGEmYIpfAcbYpjfIzRVJNrpN6iaLC2IHuAsV
- aCbVQcAzDSmQyKMwyqZftwxAW5d/ld3/Cj9C4=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=lqtXYGK6k+BsF6lFW0Ln3+MfttYOEkXamBERmqOmC5Y=;
+ b=HF/zJF0QdICLy7NJ4bW6FA9TCLsUv3ADJGYPEPuA3By1u7Y8V2Rl/zlVDy2sdKk81o
+ IbxnGSFNNx2FgwLaedCVxPoaF9ANY3vK9P0MF5dAYMhvATfvsyTjwFBSMA0sEktklVak
+ GoJSPLBV+x21zj7b9LVfsAHc8PGNEre2C1GFU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+pghJ3QtYkbMJ3TCzTPXHLJ/5p1F8C3Os/Bvo/JdKfg=;
- b=i2wiqJ+u8iDrEgylgT5ENW+LCQv4nwLl7FUezaL/yD151d2VaO4IMY/7xVD2beYmoE
- CcrXsl+15Shf9Gc105kr7NuySh5nq+PSSvHDx5S6l8ue6OMDLsLWM3zkEv5mAGuU4kc3
- ycPqHLMV3TsG9jPvRQKrZa9ciXTTbZatd1uGyr88Qd+FvhUC2bAdZyZG5AXFyB/FhJLK
- nU4yzHLVIPvs3Gun6c4n7XxSd3vV2m42bnpVyZWS3yY6bEGEOFPAAlNl1OQyETjLW3nd
- d+ffu2Nrtt5cdHCRbf7iHWGWHsOtK+fkvZ00VfCASYstXof6xO4KAXdxc3c0vbTnGCHb
- QylA==
-X-Gm-Message-State: APjAAAW2BcRa9WuLvZMGm1HEo2ZU9Acl8cjs2a2sIWzGhhMXM9AG/KQc
- xbfvkVOLUF80bgD8Fpcmkdt4TL7y13voxw==
-X-Google-Smtp-Source: APXvYqwh/5/rhXpwbURGFIHVfZLO0fYXK7K8Mlv98GJtnZi4raWyoWkb3AtxYitbz76kcJUga2aqBw==
-X-Received: by 2002:a17:90a:2e89:: with SMTP id
- r9mr28510768pjd.117.1558932685483; 
- Sun, 26 May 2019 21:51:25 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=lqtXYGK6k+BsF6lFW0Ln3+MfttYOEkXamBERmqOmC5Y=;
+ b=R/+RVOc5QlbFHjInVugAruQNCOHV8kXKAl3BXcYO2ACPb1etdCJLAfOP/Y8d785B0U
+ Y4QtQmjKMiT5Qb0QiaIQ1wbxX0kFwf8Yh3+zbSVSv8A0fMUpsOLWD2m5vilnSbRYqKsZ
+ OZOnT0fZLY0iEYJhG31jz2UlDXX+DLW1he4fS46NYWp2Is3k/JyE8D/jV+V4+swmAyP2
+ iWegnC9AaLUVzvqlDqsq+/DcsZz66ii1xeaoTRkk1MVmxEiOVt7eiiV+VurUPisceT9b
+ fxZ9EorK332iBQ7dXiqDLJrm/geslQh+QBSrJ58kNg3EvgxrJNPCochogOOPuECFfqHP
+ eL0Q==
+X-Gm-Message-State: APjAAAWdWAv1XKLOMUKmIuHO3dN98y4ipXCoW5ZMQYLd1sOSBwvDt9wC
+ dXmFDKxQo9TIBOwXmFr728aCqcqYL9VV8w==
+X-Google-Smtp-Source: APXvYqx3i22O/tAoY6zgk8Ct9ltJx/aRFrpHG2CUs0/G8ATOoqFQULNscuyQ9TI0cY5+0fUmhDePyw==
+X-Received: by 2002:a17:902:8303:: with SMTP id
+ bd3mr77262990plb.240.1558932691335; 
+ Sun, 26 May 2019 21:51:31 -0700 (PDT)
 Received: from hsinyi-z840.tpe.corp.google.com
  ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id t18sm8082745pgm.69.2019.05.26.21.51.23
+ by smtp.gmail.com with ESMTPSA id t18sm8082745pgm.69.2019.05.26.21.51.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Sun, 26 May 2019 21:51:25 -0700 (PDT)
+ Sun, 26 May 2019 21:51:30 -0700 (PDT)
 From: Hsin-Yi Wang <hsinyi@chromium.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/3] fix mediatek drm, dis, and disp-* unbind/bind
-Date: Mon, 27 May 2019 12:50:51 +0800
-Message-Id: <20190527045054.113259-1-hsinyi@chromium.org>
+Subject: [PATCH 1/3] drm: mediatek: fix unbind functions
+Date: Mon, 27 May 2019 12:50:52 +0800
+Message-Id: <20190527045054.113259-2-hsinyi@chromium.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190527045054.113259-1-hsinyi@chromium.org>
+References: <20190527045054.113259-1-hsinyi@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_215126_892256_C18AC258 
-X-CRM114-Status: UNSURE (   8.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190526_215132_784881_5FCEC2C4 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:535 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,19 +105,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are some errors when unbinding and rebinding mediatek drm, dsi,
-and disp-* drivers. This series is to fix those errors and warnings.
+move mipi_dsi_host_unregister() to .remove since mipi_dsi_host_register()
+is called in .probe.
 
-Hsin-Yi Wang (3):
-  drm: mediatek: fix unbind functions
-  drm: mediatek: remove clk_unprepare() in mtk_drm_crtc_destroy()
-  drm: mediatek: unbind components in mtk_drm_unbind()
+detatch panel in mtk_dsi_destroy_conn_enc(), since .bind will try to
+attach it again.
 
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 4 ----
- drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 8 +++-----
- drivers/gpu/drm/mediatek/mtk_dsi.c      | 4 +++-
- 3 files changed, 6 insertions(+), 10 deletions(-)
+Fixes: 2e54c14e310f ("drm/mediatek: Add DSI sub driver")
+Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+---
+ drivers/gpu/drm/mediatek/mtk_dsi.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+index b00eb2d2e086..c9b6d3a68c8b 100644
+--- a/drivers/gpu/drm/mediatek/mtk_dsi.c
++++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+@@ -844,6 +844,8 @@ static void mtk_dsi_destroy_conn_enc(struct mtk_dsi *dsi)
+ 	/* Skip connector cleanup if creation was delegated to the bridge */
+ 	if (dsi->conn.dev)
+ 		drm_connector_cleanup(&dsi->conn);
++	if (dsi->panel)
++		drm_panel_detach(dsi->panel);
+ }
+ 
+ static void mtk_dsi_ddp_start(struct mtk_ddp_comp *comp)
+@@ -1073,7 +1075,6 @@ static void mtk_dsi_unbind(struct device *dev, struct device *master,
+ 	struct mtk_dsi *dsi = dev_get_drvdata(dev);
+ 
+ 	mtk_dsi_destroy_conn_enc(dsi);
+-	mipi_dsi_host_unregister(&dsi->host);
+ 	mtk_ddp_comp_unregister(drm, &dsi->ddp_comp);
+ }
+ 
+@@ -1179,6 +1180,7 @@ static int mtk_dsi_remove(struct platform_device *pdev)
+ 
+ 	mtk_output_dsi_disable(dsi);
+ 	component_del(&pdev->dev, &mtk_dsi_component_ops);
++	mipi_dsi_host_unregister(&dsi->host);
+ 
+ 	return 0;
+ }
 -- 
 2.20.1
 
