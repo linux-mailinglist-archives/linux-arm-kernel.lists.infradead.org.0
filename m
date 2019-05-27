@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC4E52AED3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 08:39:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 434A22AED9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 08:40:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hkC1vdR0n9QZNi0mQuuZbOfVd8x9pHxopwMHsVzEAIM=; b=ufHv0ouwGADSHm
-	D6+m/lCL8kO5OYIKtvxWYy7Jcl9SQBAu8erOzSyafVt740fJ0anev/6EUZCDTXzUlenshvLXiaGoC
-	9TcaWNSQ7I9/XmERSOtYsrhLYjskP+pbf1kAI5RA/62C0g1xMs1jHrt37rZkinzNaiHUMft5SWHjp
-	22A3/GK5nx27DDmu6m4x7nJLs7EbMwL1FVqiKNFgz6iIu1Mi9PmlAeXwWwfgN+5M5VicOOtl1W0iZ
-	ZUQT34qLnBbzij04mAX4nI/ZcMaArUFckedbTSr6XuLcg73diC3WrZeC+gBJWZc//BgTL86MS6xcp
-	JngXIW8iPGl9TFLlFXTw==;
+	List-Owner; bh=kJgLkmqfHGRccqWw7B9mLfV70pqNtvR1ITTXt+8XI50=; b=SCpx8grqJFETpi
+	GrO0/yPtuWbkURYrL+kcSHOGL0PYaoEafp58mPfO4TQygPaN/EEvNOcvaZ19ly3RlJ3xTX3tc0mzW
+	XPdBpDBPCTmVh4ViRMy1/zjAZQu5xUYBVa3xuXrTT1prSHdQu+j9yIow4HH6hYj3jTO/uLCPm6kGc
+	WQ/IwozdzwnO56GwF3z9akorhM6pXclMR5zmbCJ3RNN5+baWKXuo589mEBPvv4q81mHVhldvTE1gK
+	MvuQJKNww6Nxgg6joWPkIH058k1wqWe1j+wN6fSrsKvkYKkfDdWlWzZJ6B68VnE6/T38BXfjvDPaR
+	pk2Od/1pS1Q3o0FotZYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV9IO-0002J0-U2; Mon, 27 May 2019 06:39:44 +0000
+	id 1hV9JG-0003mz-QF; Mon, 27 May 2019 06:40:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV9IH-0002IW-4r
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 06:39:38 +0000
+ id 1hV9JA-0003mb-9Z; Mon, 27 May 2019 06:40:33 +0000
 Received: from localhost (unknown [171.61.91.186])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BCD6A2054F;
- Mon, 27 May 2019 06:39:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1584E2054F;
+ Mon, 27 May 2019 06:40:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558939176;
- bh=JT4KTsrIWgsbKhkPbSLThrwY2+w4AOrCa0jWApt18+k=;
+ s=default; t=1558939232;
+ bh=BHfKzP74YWA7kcBQ/qwfq+fqK1Y003G+3r317SLetK8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xP5ZOf0b4QiCw7NzBzQbzedrrWapYQKtZu//RoV7n6FD1I16KTQuswyZBWZHiHBHT
- I/lzbXFeC9Gg60JZUSxntpdJbi/m5DTKF71SwHwsE6GxgHiwQ0EADV5P8TMPINwCub
- zrbrDDzMTqbdN5dpVnFhfGWQ6DH6rrEbfQi4B2p0=
-Date: Mon, 27 May 2019 12:09:32 +0530
+ b=FSaudunkYFzawMqo1bzztysqx2NNsUUvjh1TBGur6O9QjaRii8o8ti25T/Q2JX1Is
+ mXG+tG1y/ASmhHkD4rE37rzWOfrT9wpOWmNIa2fFc5+x7cij7S+r7CUwJsR/CcQnXq
+ jKUNd0SzyCA9X6F5yfStF6RmE+Q/ri5MzjQR+fsI=
+Date: Mon, 27 May 2019 12:10:28 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v3 0/2] dmaengine: ti: edma: Polled completion support
-Message-ID: <20190527063932.GE15118@vkoul-mobl>
-References: <20190521093646.21836-1-peter.ujfalusi@ti.com>
- <19b0d346-5249-e832-8eea-685c8e7706e2@ti.com>
+To: Long Cheng <long.cheng@mediatek.com>
+Subject: Re: [PATCH 2/2] serial: 8250-mtk: modify uart DMA rx
+Message-ID: <20190527064028.GF15118@vkoul-mobl>
+References: <1558596909-14084-1-git-send-email-long.cheng@mediatek.com>
+ <1558596909-14084-3-git-send-email-long.cheng@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <19b0d346-5249-e832-8eea-685c8e7706e2@ti.com>
+In-Reply-To: <1558596909-14084-3-git-send-email-long.cheng@mediatek.com>
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_233937_207317_5A9069D2 
-X-CRM114-Status: GOOD (  15.71  )
+X-CRM114-CacheID: sfid-20190526_234032_352270_90CC2813 
+X-CRM114-Status: UNSURE (   6.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,43 +77,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ Zhenbao Liu <zhenbao.liu@mediatek.com>, linux-serial@vger.kernel.org,
+ srv_heupstream@mediatek.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Sean Wang <sean.wang@kernel.org>,
+ YT Shen <yt.shen@mediatek.com>, dmaengine@vger.kernel.org,
+ Ryder Lee <ryder.lee@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Sean Wang <sean.wang@mediatek.com>, Jiri Slaby <jslaby@suse.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23-05-19, 13:57, Peter Ujfalusi wrote:
-> Vinod,
-> 
-> On 21/05/2019 12.36, Peter Ujfalusi wrote:
-> > Hi,
-> > 
-> > Changes since v2:
-> > - Fix typo in the comment for patch 0
-> > 
-> > Changes since v1:
-> > - Cleanup patch for the array register handling
-> > - typo fixed in patch2 commit message
-> > 
-> > The code around the array register access was pretty confusing for the first
-> > look, so clean them up first then use the cleaner way in the polled handling.
-> > 
-> > When a DMA client driver decides that it is not providing callback for
-> > completion of a transfer (and/or does not set the DMA_PREP_INTERRUPT) but
-> > it will poll the status of the transfer (in case of short memcpy for
-> > example) we will not get interrupt for the completion of the transfer and
-> > will not mark the transaction as done.
-> > 
-> > Check the event registers (ER and EER) and if the channel is inactive then
-> > return wioth DMA_COMPLETE to let the client know that the transfer is
-> > completed.
-> 
-> Please do not pick this up yet, I got report that it might cause side
-> effect which I need to debug to understand.
+On 23-05-19, 15:35, Long Cheng wrote:
+> Modify uart rx and complete for DMA
 
-OK dropped for queue
+Reviewed-by: Vinod Koul <vkoul@kernel.org>
 
 -- 
 ~Vinod
