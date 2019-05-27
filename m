@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CB7D2B2E2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:12:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80A382B2E6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:13:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OWNaDffUEOrg9otOqSO9aqxCJV9fmzMhh1ek7buJn0o=; b=pdwlVQT5ZH9qgU
-	poIZtfQOXOO+srlUNTfbAbJjiNatUO2/J3kYJRl1K+9D6FG8YXzp7XtW2F4BXGM16sCMMG5qKUmvu
-	sMpV9vaSKBOnyDa0gJgvV22RPNpVq087Puo+e8UMKLKWArokKkZrKk+seTRGiKpOLYwzHyHfcgMNs
-	s2TplAai4ztbq2YDQuRTeqlMYo7t88DYhRPjd6xPeOLi50gn0r1nBAVmuC67fpJ2FW+UxKsi9oMJX
-	0SnIhZ9xH9fhX3YENvyOf5KWFbFk0p/yw6koGAOUlqBwfr8ihD7xvKcTwNujnZ4F25XGtJGOJaVK5
-	gRwS9xQYJI7ccbmSnZdQ==;
+	List-Owner; bh=BNY+Ew97DC3D5aa0okulbr4gmyQUmFs3FMDAnfLqyUE=; b=TqVfH3yBzwV2dX
+	ek4qNtsatOc0fnNbOamiWWzJG4TEuVXBqtjK9pFww/HIjobhW2J3SYrAZqVQltUs1hBbXxxWtWKlW
+	AGtBkE4nTqifn1DOvDHKKXMvpmDlddxszSqlUfKEbTdzskknZjzOMLepT52SPpncjwyKXqz2nolf6
+	IUFBIUEAJFjIsw5si0W3EmDFE9Pj2lLGdU5u1EGp/Lenu8NPTjCFKnRcwmnqMBiPruODoJWl/ZY8r
+	G6xQTGs47lKWJ2GDmPuUpX5YPfA/is9CorDl4PyNnDGMBGFruwWb6KZqmHc/B6xSpMjPJixjBK7nE
+	fYDEagu1d5oq9pwEe7Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVDYZ-0007zV-ST; Mon, 27 May 2019 11:12:43 +0000
+	id 1hVDYw-0008Nl-5A; Mon, 27 May 2019 11:13:06 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVDYC-0007hI-Dh
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:12:22 +0000
+ id 1hVDYG-0007mS-72
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:12:25 +0000
 Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
  [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id BE4F43082B4D;
- Mon, 27 May 2019 11:12:19 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 61EDA5D60F;
+ Mon, 27 May 2019 11:12:23 +0000 (UTC)
 Received: from t460s.redhat.com (ovpn-117-89.ams2.redhat.com [10.36.117.89])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 2A88F19C7F;
- Mon, 27 May 2019 11:12:14 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 200CD19C7F;
+ Mon, 27 May 2019 11:12:19 +0000 (UTC)
 From: David Hildenbrand <david@redhat.com>
 To: linux-mm@kvack.org
-Subject: [PATCH v3 02/11] s390x/mm: Fail when an altmap is used for
- arch_add_memory()
-Date: Mon, 27 May 2019 13:11:43 +0200
-Message-Id: <20190527111152.16324-3-david@redhat.com>
+Subject: [PATCH v3 03/11] s390x/mm: Implement arch_remove_memory()
+Date: Mon, 27 May 2019 13:11:44 +0200
+Message-Id: <20190527111152.16324-4-david@redhat.com>
 In-Reply-To: <20190527111152.16324-1-david@redhat.com>
 References: <20190527111152.16324-1-david@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.45]); Mon, 27 May 2019 11:12:20 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.39]); Mon, 27 May 2019 11:12:23 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_041220_814059_B5C0C6B1 
-X-CRM114-Status: GOOD (  13.09  )
+X-CRM114-CacheID: sfid-20190527_041224_293091_D507477D 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -82,9 +81,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ZONE_DEVICE is not yet supported, fail if an altmap is passed, so we
-don't forget arch_add_memory()/arch_remove_memory() when unlocking
-support.
+Will come in handy when wanting to handle errors after
+arch_add_memory().
 
 Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
 Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
@@ -94,26 +92,35 @@ Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
 Cc: David Hildenbrand <david@redhat.com>
 Cc: Vasily Gorbik <gor@linux.ibm.com>
 Cc: Oscar Salvador <osalvador@suse.com>
-Suggested-by: Dan Williams <dan.j.williams@intel.com>
 Signed-off-by: David Hildenbrand <david@redhat.com>
 ---
- arch/s390/mm/init.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/s390/mm/init.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
 diff --git a/arch/s390/mm/init.c b/arch/s390/mm/init.c
-index 14d1eae9fe43..d552e330fbcc 100644
+index d552e330fbcc..14955e0a9fcf 100644
 --- a/arch/s390/mm/init.c
 +++ b/arch/s390/mm/init.c
-@@ -226,6 +226,9 @@ int arch_add_memory(int nid, u64 start, u64 size,
- 	unsigned long size_pages = PFN_DOWN(size);
- 	int rc;
- 
-+	if (WARN_ON_ONCE(restrictions->altmap))
-+		return -EINVAL;
+@@ -243,12 +243,13 @@ int arch_add_memory(int nid, u64 start, u64 size,
+ void arch_remove_memory(int nid, u64 start, u64 size,
+ 			struct vmem_altmap *altmap)
+ {
+-	/*
+-	 * There is no hardware or firmware interface which could trigger a
+-	 * hot memory remove on s390. So there is nothing that needs to be
+-	 * implemented.
+-	 */
+-	BUG();
++	unsigned long start_pfn = start >> PAGE_SHIFT;
++	unsigned long nr_pages = size >> PAGE_SHIFT;
++	struct zone *zone;
 +
- 	rc = vmem_add_mapping(start, size);
- 	if (rc)
- 		return rc;
++	zone = page_zone(pfn_to_page(start_pfn));
++	__remove_pages(zone, start_pfn, nr_pages, altmap);
++	vmem_remove_mapping(start, size);
+ }
+ #endif
+ #endif /* CONFIG_MEMORY_HOTPLUG */
 -- 
 2.20.1
 
