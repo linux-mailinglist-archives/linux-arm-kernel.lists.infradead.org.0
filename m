@@ -2,58 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07E1E2B7AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:37:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC6D82B7BD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:39:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LdHnWy5WVQ/asbz8rO3IQqYg3BX09lzf1GY00uV9LHY=; b=ZNIrrlsnOIr6XM
-	NC7lTOlHfCzhycLRcksXvBw2DKsBmwC6eRfiSFqrIRGqc01nkRK9Oe6RPOYq+djSrOvvgohSavViH
-	Z7fS0wsepnMm3PONHHoJBDRfYa4nV8kkWr8pNz345EFWOY53zwcJsKQvZUfbUGXis5i4hGqRj2qxJ
-	dGzlDO/F4kw5K9B9DWWRy5Mpjc6m0EuUE7ixrC6CpFDDzKOfzp1zZ6l8yDo2X9AWDJjjEmRpIq9/W
-	zkJxlNoa4JwfMmbuk++kn0yzan3Q21L7tEbxypt0U8Djt5mV13kesl+ZeXflLTWqViEkcyqHBp191
-	IIKBXTcW45yLxZO9Nh+g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=w73jFOodj9sjFvQQpL/two+0FaWIGkblmd/v4ObVUWs=; b=aIHuV1yux43JgrUWPRlp53uZN8
+	z0SOTUusah9qS7C7T5VkNDt87ALZfNIiKhnScp8WOz18WpnLTNe0zEN6Kn3O4we9jukeoAHaK23OH
+	mCdKTQ0rWTWF0uv7PUg+9R+pf0NMY041T+EK0yTVaLsx/5lEGVCUEd4jZIDA+iDdlLXG1dNYBpNqO
+	6gMMj2qwM//eNl3nyHornvLOn2IjoLou6JX2S/XpJ3CRUTBJNH5/kZ7rezGORU+N1XJFTObDu5CHt
+	MTgbVS54h/p3Vx3oXGk3QU5p3VNp7Iiaq/nXGfvI3DeWULkv3vmDAm/m7n6m2Fy5/Er28YKhVBiz5
+	EJCxRt4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVGku-0005M1-4Y; Mon, 27 May 2019 14:37:40 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVGkm-0005Kd-I3
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 14:37:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5825FA78;
- Mon, 27 May 2019 07:37:29 -0700 (PDT)
-Received: from MBP.local (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 765183F59C;
- Mon, 27 May 2019 07:37:23 -0700 (PDT)
-Date: Mon, 27 May 2019 15:37:20 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190527143719.GA59948@MBP.local>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
-User-Agent: Mutt/1.11.2 (2019-01-07)
+	id 1hVGml-00068M-1T; Mon, 27 May 2019 14:39:35 +0000
+Received: from conuserg-07.nifty.com ([210.131.2.74])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVGmd-00067g-Ni; Mon, 27 May 2019 14:39:29 +0000
+Received: from grover.flets-west.jp (softbank126125154139.bbtec.net
+ [126.125.154.139]) (authenticated)
+ by conuserg-07.nifty.com with ESMTP id x4REc8hp015915;
+ Mon, 27 May 2019 23:38:10 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-07.nifty.com x4REc8hp015915
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1558967891;
+ bh=aMC7wmc6MMrYj/SHWn59QiqWoFmT1b06tH2CVxBYQ/k=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=OKUBRFm8XZeO61bzi1Dt9OL9aFjL/GMFhjLgL9UsMdBmtaKiMZhsQ+ax4GKFt48Cn
+ QXnq5+/DwPeKbyfSh+X5hpA4lMmO3AfHt3HO5+8MzEDoOJnnm1DgbJv2P4HY6KZOMB
+ 8uBa9R/Z6424lD+ZwCQdB/+QXNkW9F9pbLIrZIHedwIqSFoPsQQmTYbGVnBHOfeMtp
+ 1G87BxhCj+OMqnMfu6o5d3iVOARn4eDMu7DllObLccIp3d3LGqZ3EDl6yeVVkcm9p4
+ WieBNMO7gyMrM4TyG5JnuaJWofywUCzfq+PQD9CH2lNwzCVA3NZjH1KsDoC5efuVGv
+ NffcJi2LM4IdQ==
+X-Nifty-SrcIP: [126.125.154.139]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: linux-kbuild@vger.kernel.org
+Subject: [PATCH 4/5] kconfig: make arch/*/configs/defconfig the default of
+ KBUILD_DEFCONFIG
+Date: Mon, 27 May 2019 23:37:24 +0900
+Message-Id: <20190527143725.12542-4-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190527143725.12542-1-yamada.masahiro@socionext.com>
+References: <20190527143725.12542-1-yamada.masahiro@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_073732_604590_95B16735 
-X-CRM114-Status: GOOD (  15.31  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190527_073927_987814_074414DC 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.74 listed in list.dnswl.org]
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.74 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,55 +77,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: linux-s390@vger.kernel.org, Paul Walmsley <paul@pwsan.com>,
+ Albert Ou <aou@eecs.berkeley.edu>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
+ Ivan Kokshaysky <ink@jurassic.park.msu.ru>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Firoz Khan <firoz.khan@linaro.org>, Greentime Hu <green.hu@gmail.com>,
+ linux-alpha@vger.kernel.org, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Guo Ren <guoren@kernel.org>, Matt Turner <mattst88@gmail.com>,
+ Vincent Chen <deanbo422@gmail.com>, linux-riscv@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Richard Henderson <rth@twiddle.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 06:30:51PM +0200, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
-> 
-> This patch allows tagged pointers to be passed to the following memory
-> syscalls: brk, get_mempolicy, madvise, mbind, mincore, mlock, mlock2,
-> mmap, mmap_pgoff, mprotect, mremap, msync, munlock, munmap,
-> remap_file_pages, shmat and shmdt.
-> 
-> This is done by untagging pointers passed to these syscalls in the
-> prologues of their handlers.
-> 
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+Until recently, if KBUILD_DEFCONFIG was not set by the arch Makefile,
+the default path arch/*/defconfig was used.
 
-Actually, I don't think any of these wrappers get called (have you
-tested this patch?). Following commit 4378a7d4be30 ("arm64: implement
-syscall wrappers"), I think we have other macro names for overriding the
-sys_* ones.
+The last users of the default are gone by the following commits:
 
+- Commit f3e20ad67b4c ("s390: move arch/s390/defconfig to
+  arch/s390/configs/defconfig")
+
+- Commit 986a13769c4b ("alpha: move arch/alpha/defconfig to
+  arch/alpha/configs/defconfig")
+
+Let's set arch/*/configs/defconfig as a new default. This saves
+KBUILD_DEFCONFIG for some architectures.
+
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
+
+ arch/alpha/Makefile      | 2 --
+ arch/arm64/Makefile      | 2 --
+ arch/csky/Makefile       | 1 -
+ arch/nds32/Makefile      | 2 --
+ arch/riscv/Makefile      | 2 --
+ arch/s390/Makefile       | 2 --
+ scripts/kconfig/Makefile | 4 ++++
+ 7 files changed, 4 insertions(+), 11 deletions(-)
+
+diff --git a/arch/alpha/Makefile b/arch/alpha/Makefile
+index b3314e0dcb6f..12dee59b011c 100644
+--- a/arch/alpha/Makefile
++++ b/arch/alpha/Makefile
+@@ -8,8 +8,6 @@
+ # Copyright (C) 1994 by Linus Torvalds
+ #
+ 
+-KBUILD_DEFCONFIG := defconfig
+-
+ NM := $(NM) -B
+ 
+ LDFLAGS_vmlinux	:= -static -N #-relax
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index b025304bde46..970c41a30ed3 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -30,8 +30,6 @@ LDFLAGS_vmlinux	+= --fix-cortex-a53-843419
+   endif
+ endif
+ 
+-KBUILD_DEFCONFIG := defconfig
+-
+ # Check for binutils support for specific extensions
+ lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
+ 
+diff --git a/arch/csky/Makefile b/arch/csky/Makefile
+index f9aab9157c4a..fb1bbbd91954 100644
+--- a/arch/csky/Makefile
++++ b/arch/csky/Makefile
+@@ -1,7 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ OBJCOPYFLAGS		:=-O binary
+ GZFLAGS			:=-9
+-KBUILD_DEFCONFIG	:= defconfig
+ 
+ ifdef CONFIG_CPU_HAS_FPU
+ FPUEXT = f
+diff --git a/arch/nds32/Makefile b/arch/nds32/Makefile
+index 14dab5ad88ef..ccdca7142020 100644
+--- a/arch/nds32/Makefile
++++ b/arch/nds32/Makefile
+@@ -2,8 +2,6 @@
+ LDFLAGS_vmlinux	:= --no-undefined -X
+ OBJCOPYFLAGS	:= -O binary -R .note -R .note.gnu.build-id -R .comment -S
+ 
+-KBUILD_DEFCONFIG := defconfig
+-
+ ifdef CONFIG_FUNCTION_TRACER
+ arch-y += -malways-save-lp -mno-relax
+ endif
+diff --git a/arch/riscv/Makefile b/arch/riscv/Makefile
+index 03e760267657..7a117be8297c 100644
+--- a/arch/riscv/Makefile
++++ b/arch/riscv/Makefile
+@@ -16,8 +16,6 @@ endif
+ KBUILD_AFLAGS_MODULE += -fPIC
+ KBUILD_CFLAGS_MODULE += -fPIC
+ 
+-KBUILD_DEFCONFIG = defconfig
+-
+ export BITS
+ ifeq ($(CONFIG_ARCH_RV64I),y)
+ 	BITS := 64
+diff --git a/arch/s390/Makefile b/arch/s390/Makefile
+index de8521fc9de5..df1d6a150f30 100644
+--- a/arch/s390/Makefile
++++ b/arch/s390/Makefile
+@@ -10,8 +10,6 @@
+ # Copyright (C) 1994 by Linus Torvalds
+ #
+ 
+-KBUILD_DEFCONFIG := defconfig
+-
+ LD_BFD		:= elf64-s390
+ KBUILD_LDFLAGS	:= -m elf64_s390
+ KBUILD_AFLAGS_MODULE += -fPIC
+diff --git a/scripts/kconfig/Makefile b/scripts/kconfig/Makefile
+index 059642bd6584..ab30fe724c43 100644
+--- a/scripts/kconfig/Makefile
++++ b/scripts/kconfig/Makefile
+@@ -12,6 +12,10 @@ else
+ Kconfig := Kconfig
+ endif
+ 
++ifndef KBUILD_DEFCONFIG
++KBUILD_DEFCONFIG := defconfig
++endif
++
+ ifeq ($(quiet),silent_)
+ silent := -s
+ endif
 -- 
-Catalin
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
