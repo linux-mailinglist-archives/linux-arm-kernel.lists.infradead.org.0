@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB7442B6AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:41:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E99C22B6B0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:41:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xeqXVHqk6zCJL8pIE188UD8PYd0Y1Qpze8V2f+3mm3g=; b=metB9Xrn2y5W69
-	tPgaLDGUjvzPqwSAIM7Cs+/gZXUekUZ7xFmVVT1x3qij2dLy1Sf45alIfZAXo7bEzibYrt3xkNvIK
-	TnSIQ9jZO7M8u7Q6rokcYcosE1RQw81KqBPGGQfWsqooR/Oalbj6n9EppkZQTjiGNO/WlSXVfx3tV
-	DhKhHN0kRseMNwnYAK0QaGqP3qT4KqpR5Xy6eWNAlJorIIHjHwNZibz7kghAvA3EXojVdjGMLvloK
-	SIp7+l0VMQ9/rPh7kzN09y89wyeSw+rmbBu5EIt4B+5xsdFdjlj3AjO6bUObBLyPKS8IqPV0I2biv
-	4XyFVcYmKg2Lvre3jMgQ==;
+	List-Owner; bh=7Doe80rgwi65noa0UtCLr0MuI7+GOdpQM/g07/5dsss=; b=pw3OstSAh0IiRn
+	7wvjqzp8B6YppsDbGB9zU8XedCPTIBuhxgkDDKmBHOsVAJEQqYRuxGQzHHV0e9XGUFXNNZxujjMZ7
+	DSlqOFPzDv5xiZuy7A0DFXEyH2MHPbSbNSmDM49e+xHg49KbWAdiJb7BP6IOJDsfPN5ggTSexHtfX
+	NxaLL/Vbt54iLtaj681xb3bdAd9VoUMKLN+GRoQ6PTz517UNJ9V1+6mLdn5bjo79/O+aDPxN/o44j
+	I/Dxf8dhm9/89B9+oEohtP+gfiSN1WRCl/gVV/yiY+w6eXcNkBFP4So9N93MpW3ktS2+p9My0hT3Y
+	16GQHZHWxr4yrvY4VdGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVFsn-00067a-2O; Mon, 27 May 2019 13:41:45 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hVFsy-0006R7-7L; Mon, 27 May 2019 13:41:56 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVFqJ-0002Ry-V6
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 13:39:17 +0000
-Received: by mail-wr1-x443.google.com with SMTP id f8so17004956wrt.1
+ id 1hVFqK-0002TA-Sb
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 13:39:18 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f204so16218544wme.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 06:39:11 -0700 (PDT)
+ Mon, 27 May 2019 06:39:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=6ultmkYjgWhJ/xZHGxkX6N7CA7j/pBGMWJYUycDlyOs=;
- b=ZWCIeJeJ5bbe3QYU5MHYCmvgdOx1CvzmjJ1SIJ+/EfRaQthknG2V3UFeEgwDV42KiD
- ff4floiGIvqL50CVQGqrsv3olYmlrE9/51PBX7UYPNLMjIM3NJ+qWUXUi5LsohTIg6Z+
- yGUKXHKhJw9prtsh8Ke1/bKpxWKdakHKTN+iwno6zEjcmCk/Lrd+Xvme8n/xqqlfNxfp
- ISAAWiimOCHcv1UCmcsfiLCfUMQUZu/vGC14lsyF6Jpgy72LnNb3XrNDIdUbXvkv89S8
- 9YbS2dWln5pw869bY5Jeb0YsttYTTBw9ejIyQDiajuEiwQP4lj4nSXvXndViRYBY6PYx
- bXRw==
+ bh=dvB2+EbZJAEiPxI5LMXTznof0qGaQVfAy18zyWtxPt0=;
+ b=WtFYkrtFYIRoQD5BySh2Q4euh/1w/73nMtXzlp6fOr4QdtCp67NecdupuFYep2yx+o
+ bXdszZLxCNU0cXnVp5weVpCI+5Webe1BRaI8zeO2VS5lFgBDHc5HugKN/h5oa/+rr13j
+ l0p5hkbf7W02oisR6u47h+JmtThsqB2DcRyw5fePoD+/UK0sP5PzTpT7DP+TzwhF7Hzr
+ fLlphusxj+e4iY5eMC82Iab9unBz3wTBbrYvHB8cRilF0YwYYBxGdZK9TkP+EmtG4obw
+ A0oakQ1AsejJ5bZlLAXZ/Sxhc5qsO3A15kFhtQH1KUxLTIFxGjnnq6xN/Bzr8o3/n4Q7
+ i+kQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=6ultmkYjgWhJ/xZHGxkX6N7CA7j/pBGMWJYUycDlyOs=;
- b=V3YmeAlan9m5R5rOE67BCL3pXws1excPXh6TT1fg+G3PmV4Y0WZv4YbcArfVdcY66h
- qZD9jhwy9+aU9baUMk45h4Gxy8Hhx8qpEFjsHIAb644/n/MdmqlQvyfUSVCM0q7oFxNF
- 8xRGVrWRAJ1ybuJzIok6dZ3XrsgMddQ8pom1TlN2ISrMoLpIPDm3SKnSl4zcM9zbrXhU
- TQ7hNrpWU9c4xJNWV8QtWEmSSasl9eNe9G81IcWpLX3ktatShfgYjsBwRng12ahoWoef
- XCNlr8WzSvsrLlytbEM1KwoHdVlkDca7w8JDYOOvnraKKKa75nFqte/mxXntO4r+d3sL
- uR9g==
-X-Gm-Message-State: APjAAAV1IQj4EVXZkMBF047cSh4f84wwHzSM4o8v/HIb+2WEKXsieiAh
- LHixW6wcS4y3w57/H2cKkUKHTYTxoZp2og==
-X-Google-Smtp-Source: APXvYqx24uqW1qXuZFPiiToIbx1locFeLMf7EvNsEfe3TjVzFZkOove/54wDfLTO4gRyDSMZlztdgA==
-X-Received: by 2002:adf:e301:: with SMTP id b1mr10932162wrj.304.1558964350293; 
- Mon, 27 May 2019 06:39:10 -0700 (PDT)
+ bh=dvB2+EbZJAEiPxI5LMXTznof0qGaQVfAy18zyWtxPt0=;
+ b=ByXHZBrBaDQzLBH6539WgiymMQuc94hqz9sDUOPiTedUOPzay1EpPA6ppp6RaR1PLJ
+ 6Va7MDo5FLgp1qnU8RyKX6EfsjZKED3dLy9FjNT8N7GSFK0nt8KAmryN5KUWNuDGJWDm
+ 577yzhcxzuEVeVCJ5FCJfCJemen69nCjjfBW1g7kj1PNs7kCv/HB+4D3xH7ydbWHKYC0
+ uCfBPlfpS13LFLcO9sZoRcRqYmHP9VUQcMl5wpyux+XI4JpJMbC+bnEoUzfobsU/F/Q5
+ ZCvXlfYQcWMdpAkkX6LWwWfgq//jfBzRYa3VLb6qxMybjsrjeSPKNtAnaPLnxcxOcVAe
+ ssdA==
+X-Gm-Message-State: APjAAAXD7p0Fz1Kg8zoN/otQnKOdLH9pj5Qqzbphh006tU51/aUenQw4
+ JJAe9dLxXtOnSArEYDO2aeZCLg==
+X-Google-Smtp-Source: APXvYqzKBKq2uRyEn9/t3GONp1WVHuQyd/kWy1EzaqK5fAviCM453t6ahqnjUeVYqdyG5IZiryic+w==
+X-Received: by 2002:a7b:c8c1:: with SMTP id f1mr6568223wml.164.1558964351405; 
+ Mon, 27 May 2019 06:39:11 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id a124sm7838335wmh.3.2019.05.27.06.39.09
+ by smtp.gmail.com with ESMTPSA id a124sm7838335wmh.3.2019.05.27.06.39.10
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 27 May 2019 06:39:09 -0700 (PDT)
+ Mon, 27 May 2019 06:39:10 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH v2 09/10] ARM: debug: meson.S: update with SPDX Licence
- identifier
-Date: Mon, 27 May 2019 15:38:56 +0200
-Message-Id: <20190527133857.30108-10-narmstrong@baylibre.com>
+Subject: [PATCH v2 10/10] ARM: mach-meson: update with SPDX Licence identifier
+Date: Mon, 27 May 2019 15:38:57 +0200
+Message-Id: <20190527133857.30108-11-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190527133857.30108-1-narmstrong@baylibre.com>
 References: <20190527133857.30108-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_063912_174327_97FB619A 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20190527_063912_948610_99D12BC2 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,25 +103,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm/include/debug/meson.S | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ arch/arm/mach-meson/meson.c | 12 +-----------
+ 1 file changed, 1 insertion(+), 11 deletions(-)
 
-diff --git a/arch/arm/include/debug/meson.S b/arch/arm/include/debug/meson.S
-index 1bae99bf6f11..df158693a327 100644
---- a/arch/arm/include/debug/meson.S
-+++ b/arch/arm/include/debug/meson.S
-@@ -1,10 +1,7 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
+diff --git a/arch/arm/mach-meson/meson.c b/arch/arm/mach-meson/meson.c
+index c8d99df32f9b..04ae414d88c9 100644
+--- a/arch/arm/mach-meson/meson.c
++++ b/arch/arm/mach-meson/meson.c
+@@ -1,16 +1,6 @@
++// SPDX-License-Identifier: GPL-2.0+
  /*
-  * Copyright (C) 2014 Carlo Caione
-  * Carlo Caione <carlo@caione.org>
+  * Copyright (C) 2014 Carlo Caione <carlo@caione.org>
 - *
 - * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
+- * it under the terms of the GNU General Public License as published by
+- * the Free Software Foundation; either version 2 of the License, or
+- * (at your option) any later version.
+- *
+- * This program is distributed in the hope that it will be useful, but WITHOUT
+- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+- * more details.
+- *
   */
  
- #define MESON_AO_UART_WFIFO		0x0
+ #include <linux/of_platform.h>
 -- 
 2.21.0
 
