@@ -2,87 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E31252B623
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:17:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A15722B639
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:22:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ThiRB1npSMxH+T87+1q4U8OjIo2k+g8XghIaTT1D39g=; b=ivgdaNCZBMWsJP
-	OEypJz7Nlf5k/oZtCnYzJWdlkXHCv4+1QWiIobrnT3hxf9AMYyRZx1ySZjNvFioyeE8ylnTJaVAK9
-	U3u1aeiZIHIsNy71A70rhPng7p0f1ipuW5ytgGMZqNEMVfn3JJ1khCvwdpdXQnCkRBR2we706pYYl
-	C9aoBVQMjs6X+mLsxfwT9xu1/B0GZzkFgA7ze8xVvYuFFXIiTyjPJzfvnHkqy7o8H1BL3pWGz5jhq
-	3LVUqdmoBcYN0i2702a+NTlFj8lovxVUbT/T+rMBQ1goIOjrvnhbqPE5Q3HG+0PBwaimuWltvNP1d
-	Hc/uzcsk/fUQcYBq4Upw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=S3uSOoDsZOJgBFS4AvO9FHIPcRNPUQ7Q5UUhzzMLdM8=; b=HOnFCQiCjucrA/
+	/OFj6P05/EVhGAq3rqCJWv5VkxhNjIX8Aa8cWCNG8iDFpt8ROxo/xuiq/yKYQ1fuizwPlBkfIleVM
+	u6jVT20iwDkcpcur7GGjrVNVUTLVH5L8gh7IbG9FdNJtZL8MCeGb7ajjkKFi2SOclONpRWrBEDUov
+	GdnbwpbJKYTlXx4B6KOrT2DO8279tT1beZnMVK71JG7DRiBJ3oWJsWDxgtxClOJ0aPOm44pKYwktV
+	EBDXj9dOwlqgykO3XYBc8d93XDNdoplRSHKOwThqDy1JYc7gwuI7gCIm5UzUhM7KpTYAiH6Z/4l0x
+	btrsVmLrJAXY3DUSG1aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVFVg-0000GG-Up; Mon, 27 May 2019 13:17:52 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hVFa7-0002NT-RH; Mon, 27 May 2019 13:22:27 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVFVX-0000DK-2R; Mon, 27 May 2019 13:17:44 +0000
-Received: by mail-wr1-x441.google.com with SMTP id h1so2774754wro.4;
- Mon, 27 May 2019 06:17:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3CdhkKFfggu7RKyEGJPDR3uKtKfRfN9PzQkEoRGpys0=;
- b=RbFHF85ICbSpB/QDeuBoxpPshiJs01zY4pu/8n9Lf3BNzE4SFyL/GyytRGewLvfrPo
- 2SDaDIMtzrrdACNFufY1J9BG5RMntHYFdQZ9KdGNiSpf5Ii+VdlPrRo2G7fsVxBRTNLN
- J1iKR6bK3sZ4mw3u79gezUI2/eCWN45qwQ5RubnV6Zw6OQFLOJjrYcLr1erCTdw+iRac
- CNbXnm+xzAIGSw5+CSghe/JflH4LpDc3NJzcQuBXR1X4Uv4W0o3pIxwV0zL0746Q6N7r
- VifVZCTVWUSX+uChCR7uBMMOnUW+VjxnHyXA3VW+Dq5T8FXYBqg+DNAl0h7762vib/5/
- oKvQ==
+ id 1hVFZk-00028N-F6
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 13:22:06 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id t4so8653773wrx.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 May 2019 06:22:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ceESg/eKh3AFRTY/CoikatuHiURoMtYj1sjsEX9yO6U=;
+ b=pL7P5sxdTymgRwuekufB2BnC0rYT3DA5TwwbEf7Pj1MjS8ySUQGGlE+2IdmRDj8R+K
+ yBpY4NqNt+3Msd+CgPPjrf7Q1oLbHCckxKoh4q1jv7KwA4xkzZPaFtiYEYOt7My2ftZf
+ /TUv+SjqfUwVOJcarvVJdCVI1IB6+UI5pe8Wak7Omns6Tx71a4PgnenCCuDZpuvkcPV2
+ V+LBUzlwnv/Ax0WpMBhdda9KiIU0j8ojL87E4Vxvlk1aY6baJZXCeP2TTO7iMFsjg6MT
+ GaLKGYJzenfzBUfJnsIuyeerxlrD5W120cwDGpwaoo9HU9ljDDH+6p3UPSaqeApeCSTU
+ kMNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3CdhkKFfggu7RKyEGJPDR3uKtKfRfN9PzQkEoRGpys0=;
- b=eayfGQAkPFbyiJ7e50FYVOFJ1q/tGgMpy5a5TQiihMPb6uYrlXz504R0hAicey+KxR
- ZlsO97R2z/mSMAa7sC1KVnlJ85vZPKJ2qfkTioeDAknDzxdKzadj9LIgZ2IQGbhPRlFI
- MSj/CQHMRgVW9xdt+jlw2iupdLISnMxzoGgGXq60LaN2p/qf6bChmizrnLnv+2oZjFyV
- h/06dGLYdz09CkcJcKAtEES9IvCxkSvjVO6x/Tj4tQczEjdTuLtmhqhgNt1Y93XxUxuM
- i/4TJAQVcEufT12EfqKX79IoZ+S2ambXhIbOLNuK6eMNJJWUjb7xlWFqxX/UC0aJV5P0
- X3QQ==
-X-Gm-Message-State: APjAAAUP783G6gtjHKBgkc+gQyBsDpMMIyVcDhUJT25fT3idUiDpXRFg
- 3GHsarjtHxaeraG+EwplLX6X3O4ytm8wZydj4Iw=
-X-Google-Smtp-Source: APXvYqxwsgyqKq3v6r0+iHi/zVPWhJzn/oWLFri6jGvIXh+zaY6enrZ38Uj3PrCQ1+XWh5tnUc1T76NEJbrPh7coDvQ=
-X-Received: by 2002:a5d:5406:: with SMTP id g6mr9664403wrv.286.1558963061338; 
- Mon, 27 May 2019 06:17:41 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ceESg/eKh3AFRTY/CoikatuHiURoMtYj1sjsEX9yO6U=;
+ b=r+LYgdwqNuL5b3e282zLD21FUtuikzW5ieyjcTAXNEWc+m3BBRMNWAc+/3shNQtUHx
+ 39uRIehWBnZBsfHdyipCU1p2+Cns5UZRyqznaDpgg+dqD/KpDefm8A1tnMMSNxsFs4v2
+ HTfBunbp/gDQSVimktMXnLm4HHPvGlAkgu2qilj5gvgT0G0jAStNUYXiZiwo4Qk+eRr6
+ tBwgOmF42v8h56uzh99ceOcqH+Ks07uShV2/8AyitYjPP46Ki12yIpwTmpZTZ3Rpn01B
+ WfUP7dF4GPdHlUQEjJ4VkxgnY4L7Yyw0bmzldKgkLmLuaoVWvhVBnHkdsYb0Xn51JSdV
+ WakQ==
+X-Gm-Message-State: APjAAAXLRtsfKfSaxjKwg94QLtD+ICN7j7Zyml47fQepyzYRMA0g6NOY
+ br5felgfqtsiXQSIAO5Ji2tCAg==
+X-Google-Smtp-Source: APXvYqw8//NOue/uv53owng3Us+VdU/FIm6rd0GP8DuDacGdnKIg8lOUGR+mFyaTqXKuPGWsHwvI0w==
+X-Received: by 2002:adf:cd06:: with SMTP id w6mr2479722wrm.353.1558963322561; 
+ Mon, 27 May 2019 06:22:02 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id l12sm7019836wmj.22.2019.05.27.06.22.01
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 27 May 2019 06:22:02 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH 00/10] arm64: meson-gx: misc fixes
+Date: Mon, 27 May 2019 15:21:50 +0200
+Message-Id: <20190527132200.17377-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190524181936.29470-1-martin.blumenstingl@googlemail.com>
- <20190524181936.29470-2-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20190524181936.29470-2-martin.blumenstingl@googlemail.com>
-From: hex dump <hexdump0815@gmail.com>
-Date: Mon, 27 May 2019 15:17:47 +0200
-Message-ID: <CAKTihDV-zee+rodgg=h1xgBnyiq2oSg4UcaURtCcGCN-Qa4rsw@mail.gmail.com>
-Subject: Re: [PATCH 1/1] ARM: dts: meson8b: mxq: improve support for the
- TRONFY MXQ S805
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_061743_140952_D8D566A1 
-X-CRM114-Status: GOOD (  12.66  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190527_062204_555547_A3FE8810 
+X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:42d listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hexdump0815[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hexdump0815[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,51 +94,42 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Kevin Hilman <khilman@baylibre.com>
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 24, 2019 at 8:19 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> The TRONFY MXQ comes with either 1GB or 2GB RAM.
->
-> Both variants share (like most boards based on Amlogic reference
-> designs):
-> - 10/100 PHY (IC Plus IP101GR) with GPIOH_4 being the reset line and
->   GPIOH_3 the interrupt line
-> - SD card slot with the card detection GPIO at CARD_6
-> - VCCK is generated by PWM_C with a period of 1148ns and XTAL as input
->   clock
-> - USB OTG exposed on one of the USB-A connectors
-> - 4-port USB hub with 3 ports exposed to the outside
->
-> There seem the multiple board revision out there according to various
-> forum posts:
-> - storage: eMMC or NAND flash
-> - wifi: Ampak AP6210 or Realtek 8189
->
-> Add support for the following functionality:
-> - SoC temperature (hwmon)
-> - changing the CPU voltage
-> - Ethernet connectivity
-> - SD card
-> - USB
->
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Tested-by: hexdump <hexdump0815@googlemail.com>
+This patchset :
+- Fixes GPIO key DT on Khadas VIM2 board
+- Fixes regulator naming on Vega S95 board
+- Enable SARADC on Wetek and Vega S95 boards
+- Enable/Fix Bluetooth on VIM2, Wetek and Vega S95 boards
+- Enable CEC & HDMI on Vega S95 board
+- Adds ethernet PHY interrupt on Vega S95 board
 
-BEFORE (no patches from this series applied):
-the mxq device was not really useable with the old mainline dtb as
-most peripeherals were not supported
+Christian Hewitt (4):
+  arm64: dts: meson-gxm-khadas-vim2: fix gpio-keys-polled node
+  arm64: dts: meson-gxm-khadas-vim2: fix Bluetooth support
+  arm64: dts: meson-gxbb-wetek: enable SARADC
+  arm64: dts: meson-gxbb-wetek: enable bluetooth
 
-AFTER (the patch applied):
-the rresulting dtb works perfectly fine with my mxq device and all
-mentioned supported functions work as expected
+Neil Armstrong (6):
+  arm64: dts: meson-gxbb-vega-s95: fix regulators
+  arm64: dts: meson-gxbb-vega-s95: add HDMI nodes
+  arm64: dts: meson-gxbb-vega-s95: enable CEC
+  arm64: dts: meson-gxbb-vega-s95: enable SARADC
+  arm64: dts: meson-gxbb-vega-s95: fix WiFi/BT module support
+  arm64: dts: meson-gxbb-vega-s95: add ethernet PHY interrupt
 
-best wishes - hexdump
+ .../boot/dts/amlogic/meson-gxbb-vega-s95.dtsi | 93 ++++++++++++++++---
+ .../boot/dts/amlogic/meson-gxbb-wetek.dtsi    | 25 +++++
+ .../dts/amlogic/meson-gxm-khadas-vim2.dts     | 13 ++-
+ 3 files changed, 112 insertions(+), 19 deletions(-)
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
