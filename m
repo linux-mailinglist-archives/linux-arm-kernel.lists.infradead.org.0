@@ -2,82 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABE352B8D1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:17:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B8E52B8F1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:23:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ds7UVT+jvaspBPptZ4bgnBfWguBCWyh6xIt1biml0iw=; b=qjwpgbei99JozXTJ2AuLO1fuK
-	frF9KJdUf/2A+Kj+NeM3Ka9ni/VAwiGNYSfUQiAG73UXB+M0Oc9u0bIN92mb7ovshcc3fgJP1oAIV
-	KYrpG/0fpmclp6TiIHzXarr5n2Of/DQQA/woFlJA9OILAfAngnaQuWTXnjUJxdT6bc7Fj5rQ8A2Tk
-	pWlLMZVm5KSLUsUn3R8ujCDD8JlbDXh4pMbp0fpkg/a+sjpqnQ7Eh2JFTQO4a2FxHgS23e6Ow9Ypu
-	NuzzX9S0xa4iR7Z90ojc6/eOkZbvbrQcdmjRHx0MbzXZeLOPY4fIyRrKEjgprlZDIHUnvq5SO9eKj
-	grOGzgekg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ddJ9FYvBaHez0XPW+M32qbpRUH3OBA+DRgPD8JLtKMI=; b=WKoFRM9A/S0J7l
+	BTU1JEbzqm6eZUFHG7SoU03ri+mmmm7nlDPSmcb2JRZmSCkGc+a/8Zst1SFgbRq1hHqx1a7WXBC1K
+	+rUau9FyDypU7Fv/YYoVbmwVbD/q8dN6JhBuzCVpfciIkrEqS+mb0Vj4/AeHOeb6f1R+jjYorQEni
+	bGE3glSR2qSxKoIEN0FKH9bQF59bWf2hDKuVT2kz1tsgB5adE8EFElucLrxAvGbSo+eWpMR/HQBOL
+	ojc0k86yzc9jchq2jPykegAIsgPjFuNmkWgWB12CfRAaGSLWLhN0dBUH5cqeAwDxkhzN2kiestezd
+	VkXroS0lRk4czaaVA6WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVIJh-0000Lm-UT; Mon, 27 May 2019 16:17:41 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hVIOw-0002JM-8G; Mon, 27 May 2019 16:23:06 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVIJU-00007l-GS
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 16:17:33 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4RGGj9F003553; Mon, 27 May 2019 18:17:22 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=8ub46LPrPqf6PivEatMxnOo+wOKNgOZwMhOATPEAYDc=;
- b=syGD5pLwRFIXk0Tl+AIThayna8PwIFezSNCwIIZOt0mX9lodsFkGdt+orN5H+UZVnOSk
- qe/pkZrdWPB0m3JmrfOZ0cZ4/WmXpU29D0Xx3AVIy3ECUCR6CB1dXazEh7rq269VvKTQ
- PggH4NMGxYxUfGN3IwLSatIuGh1y3Gc8hb9ZgpwjaKmziaFV+q0KlsSD2KypkeodSsh5
- S6qqftIpJfpzRd2APAvp7H+/QmP+B6l0AfMacZkanppKGnmrReV9ihQSvjFySiBcZ9zj
- JtzbcdbzljWxPw3nhEFVBmfp45rzjj+1+lwEnCnOPvdBbQgqpoNt4WYrwPF+U5Aqzxj4 /A== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2sptu9m574-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 27 May 2019 18:17:22 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AF83534;
- Mon, 27 May 2019 16:17:21 +0000 (GMT)
-Received: from Webmail-eu.st.com (gpxdag3node5.st.com [10.75.127.72])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8E8334F30;
- Mon, 27 May 2019 16:17:21 +0000 (GMT)
-Received: from [10.48.0.204] (10.75.127.50) by GPXDAG3NODE5.st.com
- (10.75.127.72) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 27 May
- 2019 18:17:20 +0200
-Subject: Re: [PATCH 0/2] pinctrl: stm32: add suspend/resume management
-To: Linus Walleij <linus.walleij@linaro.org>, Benjamin Gaignard
- <benjamin.gaignard@st.com>
-References: <1557474150-19618-1-git-send-email-alexandre.torgue@st.com>
- <CACRpkdYgTbTa6RmM3y-myk31ZxLGZ+8KvLof1XHkockrX4tofA@mail.gmail.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <7c83e2e1-d5bc-0190-4795-a324a000a5c3@st.com>
-Date: Mon, 27 May 2019 18:17:20 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hVIOX-00029q-PL
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 16:22:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1558974159; bh=FM58/rXvCC2ZgZffUU7onMDJbM92qEgy2B6jGSR8HVY=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Xdft0VjQJLDFdsHDfR8tZLN6fxztVyrUorgQGnz3MKfpMxAEbiEzmPZgVEavKPxfj
+ CMbljdxjMqhndLSL/H4aZMamrHaHyRRUf9+d8qcffGKIJe/Af4lMYNU1EO6mfKFBRH
+ XIlzLrw85EWcuan0YuVNJG5zxBh99HsmuDq6iB/Y=
+From: megous@megous.com
+To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v6 0/6] Add support for Orange Pi 3
+Date: Mon, 27 May 2019 18:22:31 +0200
+Message-Id: <20190527162237.18495-1-megous@megous.com>
 MIME-Version: 1.0
-In-Reply-To: <CACRpkdYgTbTa6RmM3y-myk31ZxLGZ+8KvLof1XHkockrX4tofA@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG1NODE2.st.com (10.75.127.2) To GPXDAG3NODE5.st.com
- (10.75.127.72)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-27_08:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_091729_653992_C98AECD0 
-X-CRM114-Status: GOOD (  17.76  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190527_092242_161494_7591677C 
+X-CRM114-Status: GOOD (  13.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,53 +64,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>, "open
- list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com
+Cc: Ondrej Jirman <megous@megous.com>, Mark Rutland <mark.rutland@arm.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-stm32@st-md-mailman.stormreply.com, Jose Abreu <joabreu@synopsys.com>,
+ linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus
+From: Ondrej Jirman <megous@megous.com>
 
-On 5/24/19 1:24 PM, Linus Walleij wrote:
-> On Fri, May 10, 2019 at 9:42 AM Alexandre Torgue
-> <alexandre.torgue@st.com> wrote:
-> 
->> During power sequence, GPIO hardware registers could be lost if the power
->> supply is switched off. Each device using pinctrl API is in charge of
->> managing pins during suspend/resume sequences. But for pins used as gpio or
->> irq stm32 pinctrl driver has to save the hardware configuration.
->> Each register will be saved at runtime and restored during resume sequence.
-> 
-> Both patches applied.
-> 
-> On the same pinctrl devel branch is also Benjamin's patches to support
-> the "link_consumers" property on the pin controller descriptor to
-> enable links from pin control consumers back to their pin controller
-> suppliers, especially important for STMFX.
-> 
-> Would you please check if it work fine if you turn on this feature
-> for the SoC STM32 pin controller?
+This series implements support for Xunlong Orange Pi 3 board.
 
-I just tested with Benjamin's patches and set "link_consumers" property 
-for STM32 pinctrl. No changes on boot (except extra logs for each probe) 
-and no changes on power tests too.
+Unfortunately, this board needs some small driver patches, so I have
+split the boards DT patch into chunks that require patches for drivers
+in various subsystems.
 
-regards
-alex
+Suggested merging plan/dependencies:
 
-> 
-> I am working a bit on refining the patches, so I want to enable testing
-> with some SoC pin controllers as well and possibly make the
-> behavior default.
-> 
-> Yours,
-> Linus Walleij
-> 
+- stmmac patches are needed for ethernet support (patches 1-3)
+  - these should be ready now
+- HDMI support (patches 4-6)
+  - should be ready
+
+Changes in v2:
+- added dt-bindings documentation for the board's compatible string
+  (suggested by Clement)
+- addressed checkpatch warnings and code formatting issues (on Maxime's
+  suggestions)
+- stmmac: dropped useless parenthesis, reworded description of the patch
+  (suggested by Sergei)
+- drop useles dev_info() about the selected io bias voltage
+- docummented io voltage bias selection variant macros
+- wifi: marked WiFi DTS patch and realted mmc1_pins as "DO NOT MERGE",
+  because wifi depends on H6 RTC support that's not merged yet (suggested
+  by Clement)
+- added missing signed-of-bys
+- changed &usb2otg dr_mode to otg, and added a note about VBUS
+- improved wording of HDMI driver's DDC power supply patch
+
+Changes in v3:
+- dropped already applied patches
+- changed pinctrl I/O bias selection constants to enum and renamed
+- added /omit-if-no-ref/ to mmc1_pins
+- made mmc1_pins default pinconf for mmc1 in H6 dtsi
+- move ddc-supply to HDMI connector node, updated patch descriptions,
+  changed dt-bindings docs
+
+Changes in v4:
+- fix checkpatch warnings/style issues
+- use enum in struct sunxi_desc_function for io_bias_cfg_variant
+- collected acked-by's
+- fix compile error in drivers/pinctrl/sunxi/pinctrl-sun9i-a80-r.c:156
+  caused by missing conversion from has_io_bias_cfg struct member
+  (I've kept the acked-by, because it's a trivial change, but feel free
+  to object.) (reported by Martin A. on github)
+  I did not have A80 pinctrl enabled for some reason, so I did not catch
+  this sooner.
+- dropped brcm firmware patch (was already applied)
+- dropped the wifi dts patch (will re-send after H6 RTC gets merged,
+  along with bluetooth support, in a separate series)
+
+Changes in v5:
+- dropped already applied patches (pinctrl patches, mmc1 pinconf patch)
+- rename GMAC-3V3 -> GMAC-3V to match the schematic (Jagan)
+- changed hdmi-connector's ddc-supply property to ddc-en-gpios
+  (Rob Herring)
+
+Changes in v6:
+- added dt-bindings reviewed-by tag
+- fix wording in stmmac commit (as suggested by Sergei)
+
+Please take a look.
+
+thank you and regards,
+  Ondrej Jirman
+
+Icenowy Zheng (2):
+  net: stmmac: sun8i: add support for Allwinner H6 EMAC
+  net: stmmac: sun8i: force select external PHY when no internal one
+
+Ondrej Jirman (4):
+  arm64: dts: allwinner: orange-pi-3: Enable ethernet
+  dt-bindings: display: hdmi-connector: Support DDC bus enable
+  drm: sun4i: Add support for enabling DDC I2C bus to sun8i_dw_hdmi glue
+  arm64: dts: allwinner: orange-pi-3: Enable HDMI output
+
+ .../display/connector/hdmi-connector.txt      |  1 +
+ .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 70 +++++++++++++++++++
+ drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c         | 55 ++++++++++++++-
+ drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h         |  3 +
+ .../net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 21 ++++++
+ 5 files changed, 147 insertions(+), 3 deletions(-)
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
