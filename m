@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 083652B200
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 12:21:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AAD42B203
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 12:22:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1NWtn3XnUoT9BdnIRpQ2If2jQ45SFCSRENm6h0B+Gjs=; b=rTO5JnGT5aT6lO
-	4Fb/ka1qxLvoJdm66EW8813WmYw/WaJ1MMRnlFNQyt8xv2lUULeJI4oCTNnrI2KurgbTX/C2DgVQn
-	jZByma5RohMElqQ405UImAsdJLRiN545rfUAqzhi9XtWN68ALnuVP586kBg8Dv2qT+pF9DQXZ7hun
-	6awdbima16hLrqNliWSdgth8EhtmvhPrtSLfF4MIBgKtKSuAoHkQcJKNLBNuU/nxbi0/XTnoY4HTw
-	EmcC+dTG3+Ditugoh4V9w7zMcoYILiNlGtmrC/Ktg++Zc+CozvUWR6Fu8fVo1p9kxsJYVO7KFK09W
-	dwuieURxv13EaDBvui8A==;
+	List-Owner; bh=1NWtn3XnUoT9BdnIRpQ2If2jQ45SFCSRENm6h0B+Gjs=; b=EGK9l9FSmklwtw
+	nym0FB4A7vLW0G2/nRPI/2lJED7GcenU2r1NIIoAQt63OeJojwbtgkrgbNsyXgt7+ZTSuB73rpNUx
+	afGeXuA8jk7ZsbVYlTN5P2jNFR6+ThEQAM0IkCT+pMmKu0QRP/7rp4rJXJAo24kdW3Chw+rdneI+v
+	yGCNYr9+0ygGwNXQqANPCHBfmjD6ocqSwx4n/RAuDa/NLdIf3oh1K7PMTJDLK5LbDOvBUsHCev+lU
+	CaypBwjyulErQuSEuQp0PRaWKT0/cErAkTTDWpI80iovKDsfXGxo27PVPGfVK6QWTwOb7D1uRluZN
+	895NYAPfkSu3o+ltsZfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVClK-0005zo-04; Mon, 27 May 2019 10:21:50 +0000
+	id 1hVClT-00066j-CJ; Mon, 27 May 2019 10:21:59 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVClC-0005z5-1a
+ id 1hVClC-0005z4-1R
  for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 10:21:43 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 20FE9307D869;
- Mon, 27 May 2019 10:21:36 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id B950D30832F4;
+ Mon, 27 May 2019 10:21:37 +0000 (UTC)
 Received: from [10.36.117.89] (ovpn-117-89.ams2.redhat.com [10.36.117.89])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 89C595D9CA;
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A771D19C58;
  Mon, 27 May 2019 10:21:24 +0000 (UTC)
 Subject: Re: [PATCH V4 4/4] arm64/mm: Enable memory hot remove
 To: Anshuman Khandual <anshuman.khandual@arm.com>,
@@ -86,19 +86,19 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  +8Umfre0Xt4713VxMygW0PnQt5aSQdMD58jHFxTk092mU+yIHj5LeYgvwSgZN4airXk5yRXl
  SE+xAvmumFBY
 Organization: Red Hat GmbH
-Message-ID: <88b9d9ec-36c0-b9f3-0b9d-e3d100dc5333@redhat.com>
+Message-ID: <f122457b-b87d-7717-d983-b1a734ee037e@redhat.com>
 Date: Mon, 27 May 2019 12:21:23 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
 In-Reply-To: <b226746e-fed1-ea18-f100-0a2c6c561d1f@arm.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.48]); Mon, 27 May 2019 10:21:41 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.44]); Mon, 27 May 2019 10:21:41 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_032142_184482_2130B088 
-X-CRM114-Status: GOOD (  28.18  )
+X-CRM114-CacheID: sfid-20190527_032142_125905_2C583DA4 
+X-CRM114-Status: GOOD (  28.20  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
