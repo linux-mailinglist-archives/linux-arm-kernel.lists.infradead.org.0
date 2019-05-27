@@ -2,62 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6ADB22B7F0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:54:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F38642B7F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:59:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oa9asXUILX0Py9Kj60mla3Pzxa79FO7poSxKgRigeXI=; b=o2py0qIwN5woyP
-	D/Ltoqe1S+ygrAzsruWTSH+qpoja8NP0EkPD8Rr3KFgaoCUr5+lxE5V25mhpCa98RxNsAOg+uUyIy
-	/7ds4bLkZW9GPlZKXHoYWCheYziGxf6J72TOKm50zocWySBBOhgDPblSr8KOoEwYZ3akgo6yd8LmU
-	HAJK3/QVSa8K+QQoe0no8mlQeAbo2zkItxLvkzkzXRkwFUjFbSgYyPJO2+h9Qsf5ujA9vYczPvi/H
-	t8sYuEAmFOWFTW2kwLoGaKwF/S5MxDnlYF4WMSZygn5IYKUBJQRJshgNzDpgUIeyb1ADFfseZcyyx
-	9yZk42g04VTjA9H7Brwg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WJVRmvD+JSbEttkUTw/R2+G67lCZLo9A8sxoDFPTj0Y=; b=AshbpTo2OLOIFh
+	ljY1WGUxehVxRmO6D34B0EhpxofXyF5+9nCOZDhTdoJ69QgahdnsbSDLSGBuDcf6EFsMg8PCk3GWR
+	n2wxQxrQsq/eI9BCQvl13TnKI3EcerMmezuiqra0amEgcVa1J1wifUXUsYnHaZBNV8CCgKGS9ZTvn
+	mw6dNhAg+27wMCuZ903N5Lam67Uq4kAyMd1KUnfR6Gv0LTdO0R4doQyvePJ/nIhqbb2MqmyC1k8wN
+	5hQwo6+9BThN7lxgY5EkiRkFh411DZZEVJ/Pcxuhij/y1DIByK4HBj52OTLMXeej3dZn/8hssrb0W
+	ynjrsyjCSSH4SavTgP/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVH1O-0002y7-Ei; Mon, 27 May 2019 14:54:42 +0000
-Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
+	id 1hVH5q-0004d1-Ks; Mon, 27 May 2019 14:59:18 +0000
+Received: from mail-eopbgr690122.outbound.protection.outlook.com
+ ([40.107.69.122] helo=NAM04-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVH1F-0002wP-9B; Mon, 27 May 2019 14:54:35 +0000
-Received: from [IPv6:2001:983:e9a7:1:10b2:2e62:e4b1:bd13]
- ([IPv6:2001:983:e9a7:1:10b2:2e62:e4b1:bd13])
- by smtp-cloud7.xs4all.net with ESMTPA
- id VH14hbq0b3qlsVH15hdFCw; Mon, 27 May 2019 16:54:27 +0200
-Subject: Re: [PATCH v6 3/4] media: meson: add v4l2 m2m video decoder driver
-To: Maxime Jourdan <mjourdan@baylibre.com>
-References: <20190514135612.30822-1-mjourdan@baylibre.com>
- <20190514135612.30822-4-mjourdan@baylibre.com>
- <07af1a22-d57c-aff6-b476-98fbf72135c1@xs4all.nl>
- <CAMO6naz-cG3F_h70Chjt+GprGWe2EShsMjrietu_JBAdLrPbpQ@mail.gmail.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <0821bfd9-58e4-5df3-4528-189476d35d89@xs4all.nl>
-Date: Mon, 27 May 2019 16:54:22 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <CAMO6naz-cG3F_h70Chjt+GprGWe2EShsMjrietu_JBAdLrPbpQ@mail.gmail.com>
+ id 1hVH5i-0004cW-O7
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 14:59:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=testarcselector01; d=microsoft.com; cv=none;
+ b=K7bk6mjGHdPEs9sk/AJliDTjXH3m7JXEhGjnRoesizLWVs/qPtjN6GUum+ckfFZCylDtW6lbboZ4F8Kq2EDGkbksjD99MxI1q13vFb2Yd6/LzXJtc0IImkgHQ64wDVjXbnDWk9MTlZCsOOav6saREntxhokrlZXEUFpGfdyRYzs=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=testarcselector01;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dx1McZV10Dbv50irNymIpxFfBXCU9xkf8rQKB2clnuw=;
+ b=vzqb+9xlp9VLtz7qWvq9OP8bqpSIpyMiipnuqST+e7/04pV6gjwdYKPdy6c3gKx9H0v+LTYACVITTAqmOIHagjUBjGmVK8WMp82BEtvi6i7CX3fwTOHyMkU3B/t6Eg2YW7D/sa7sp+K6dXA+4FhveDZ3b3dNdlgmBEJE85lfp1g=
+ARC-Authentication-Results: i=1; test.office365.com 1;spf=none;dmarc=none
+ action=none header.from=microsoft.com; dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dx1McZV10Dbv50irNymIpxFfBXCU9xkf8rQKB2clnuw=;
+ b=g7AG4hW+cx4OLFS4fu22qFJspCKsIcPvak5ZJeoDV3gNgeSQknJMtfnRytymiEEAJajU8Cc0JbL7Ikrj0BjWCHxdl1TwhSElngTZmzxP+oXoLQwfDJ0+q1nbx2mcjnfhb15TRgtdSPGRQY6vvq1QWJbdb7VGULDaVzjR9ynmMq4=
+Received: from DM6PR21MB1340.namprd21.prod.outlook.com (2603:10b6:5:175::19)
+ by DM6PR21MB1339.namprd21.prod.outlook.com (2603:10b6:5:175::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1878.9; Mon, 27 May
+ 2019 14:59:07 +0000
+Received: from DM6PR21MB1340.namprd21.prod.outlook.com
+ ([fe80::5057:9e3c:bcc5:9470]) by DM6PR21MB1340.namprd21.prod.outlook.com
+ ([fe80::5057:9e3c:bcc5:9470%3]) with mapi id 15.20.1943.006; Mon, 27 May 2019
+ 14:59:07 +0000
+From: Michael Kelley <mikelley@microsoft.com>
+To: "will.deacon@arm.com" <will.deacon@arm.com>, "marc.zyngier@arm.com"
+ <marc.zyngier@arm.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "gregkh@linuxfoundation.org"
+ <gregkh@linuxfoundation.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-hyperv@vger.kernel.org"
+ <linux-hyperv@vger.kernel.org>, "olaf@aepfle.de" <olaf@aepfle.de>,
+ "apw@canonical.com" <apw@canonical.com>, vkuznets <vkuznets@redhat.com>,
+ "jasowang@redhat.com" <jasowang@redhat.com>, "marcelo.cerri@canonical.com"
+ <marcelo.cerri@canonical.com>, Sunil Muthuswamy <sunilmut@microsoft.com>, KY
+ Srinivasan <kys@microsoft.com>
+Subject: [PATCH v3 0/2] Drivers: hv: Move Hyper-V clock/timer code to separate
+ clocksource driver
+Thread-Topic: [PATCH v3 0/2] Drivers: hv: Move Hyper-V clock/timer code to
+ separate clocksource driver
+Thread-Index: AQHVFJy7sYXmZFrIlU+IOwEBipERmQ==
+Date: Mon, 27 May 2019 14:59:07 +0000
+Message-ID: <1558969089-13204-1-git-send-email-mikelley@microsoft.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-CMAE-Envelope: MS4wfC14XOgAejGHDD7XoN677Jj5C7F2ltQrMEguCsVq4TGpM8oUGIcHqhP/Nu0qacv9r4OPXnJCenc9GmvcJxP92PDW8dWI3KiMLUxZm8LnCwQ5j7zx8VOO
- EGb/clJo/8WMmkajPa50FhHZgaXXDGh29g/xHugmlJKsqCZ+LfnvAUVIcrPVcf99X/vK3f7dqVghUTp020T5jo32dlGfj07vT8KnHqG4bqc+/ry9KxXV1bDW
- ynjOowxWW/yQQRd8K0VHu11ct4nm/1H25zRQhlxxLGsfx29GchaKkWISs8oIw2UwsEc+W8lxnSDJpJW/X4gHSKPH6I+0l9HKMzFrlhg+WJ3ngwOxVbL5hT5W
- cWoJwNLoajI4lYSBnZb0Rgyx2ZWB2jn/p+et0R8CJV/uls2oCp8L+v8yb0Upr0riCIxPBbll6vHdl09BYynDda5bXhuiZNazwCuVNJa0rGR6QD0QFYpM8ZT/
- aHlY+4rye/nF3+iXPdRsc9CY2YqTEa5SVxgH1iDn87ORIcJQFw+p2LFnmSgcnj+chKPghKh+Ap6kPpsnu5R7iHDKwl3RMBtLROX2CwYN940KmT9XnZTZbB6l
- ghGbP5jjNibaIXQ0pwyCOfNnmUHUD0HGJfsCNnE9eVJw3Ip5v6ASSFWGvUTm0pFI9KK5DRBH9eMRcv7QyI1SG0dY
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: MWHPR12CA0056.namprd12.prod.outlook.com
+ (2603:10b6:300:103::18) To DM6PR21MB1340.namprd21.prod.outlook.com
+ (2603:10b6:5:175::19)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=mikelley@microsoft.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 1.8.3.1
+x-originating-ip: [167.220.2.136]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 08501eb8-cf98-4489-1bb8-08d6e2b3ddd8
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DM6PR21MB1339; 
+x-ms-traffictypediagnostic: DM6PR21MB1339:
+x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
+x-microsoft-antispam-prvs: <DM6PR21MB1339947EECA183DFC1B9CE89D71D0@DM6PR21MB1339.namprd21.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2399;
+x-forefront-prvs: 0050CEFE70
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(39860400002)(376002)(136003)(346002)(396003)(199004)(189003)(52116002)(7416002)(52396003)(64756008)(81166006)(14454004)(99286004)(6512007)(6436002)(2616005)(6636002)(71190400001)(256004)(53936002)(71200400001)(476003)(26005)(73956011)(66476007)(66446008)(6486002)(68736007)(8936002)(4720700003)(478600001)(1511001)(7736002)(66946007)(386003)(66066001)(66556008)(2501003)(2201001)(50226002)(54906003)(102836004)(22452003)(81156014)(305945005)(486006)(10090500001)(8676002)(186003)(316002)(25786009)(14444005)(3846002)(36756003)(4326008)(10290500003)(5660300002)(86362001)(110136005)(6116002)(86612001)(6506007)(2906002)(921003)(1121003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DM6PR21MB1339;
+ H:DM6PR21MB1340.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microsoft.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: IG8cHeuFOe9Ty+IxWia9UPO0WOEupln0lvINV3Rs9K8AUzTUpQUknvmCEUm8j0Ee0iWEbAab/xbsmnqcL4kHe8xrN/rrDJ4j/obvVBOIyUFqY6tfbJOSppVjWSa6LryIBjeKjWHq1OL7H3oKE1u6boElIXGL18jMhCjiOOvnzgXoJGAxg4nu0j8B/tqovLX0R02le4HcEJNICZAuIYbBFheFaDVPVZMo5fVHA1lwfmcJEvH767fxH0SWpaSXHz0Q8nm1ku76xyL4OK9KDj38f0YsFr0bbJqSxNV3daQwdqOcLyVZR7wOxR/R4kbE9CVbwQMATN30qjZa4O43KXUIy71hzGDhKK6XdRgPRIOJTWlUIG2CkVpQrM2H4LP1csjPO4Wvd+vPpiPQyMolH+LY6aSgLvW+tcxzav0mOi+l73Y=
+MIME-Version: 1.0
+X-OriginatorOrg: microsoft.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 08501eb8-cf98-4489-1bb8-08d6e2b3ddd8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2019 14:59:07.1266 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR21MB1339
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_075433_487442_51FCA005 
-X-CRM114-Status: GOOD (  32.31  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190527_075910_901395_CC9E6F42 
+X-CRM114-Status: GOOD (  16.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.31 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.69.122 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,231 +136,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-media@vger.kernel.org,
- linux-kernel@vger.kernel.org, Hans Verkuil <hans.verkuil@cisco.com>,
- linux-amlogic@lists.infradead.org, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Michael Kelley <mikelley@microsoft.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/27/19 4:44 PM, Maxime Jourdan wrote:
-> Hi Hans,
-> On Mon, May 27, 2019 at 12:04 PM Hans Verkuil <hverkuil@xs4all.nl> wrote:
->>
->> Hi Maxime,
->>
->> First a high-level comment: I think this driver should go to staging.
->> Once we finalize the stateful decoder spec, and we've updated the
->> v4l2-compliance test, then this needs to be tested against that and
->> only if it passes can it be moved out of staging.
->>
-> 
-> I chose to send the driver supporting only MPEG2 for now as it keeps
-> it "to the point", but as it turns out it's one of the few formats on
-> Amlogic that can't fully respect the spec at the moment because of the
-> lack of support for V4L2_EVENT_SOURCE_CHANGE, thus the patch in the
-> series that adds a new flag V4L2_FMT_FLAG_FIXED_RESOLUTION. It
-> basically requires userspace to set the format (i.e coded resolution)
-> since the driver/fw can't probe it.
-> At the moment, this is described in the v3 spec like this:
-> 
->>
->> 1. Set the coded format on ``OUTPUT`` via :c:func:`VIDIOC_S_FMT`
->>
->>   * **Required fields:**
->>
->>     ``type``
->>         a ``V4L2_BUF_TYPE_*`` enum appropriate for ``OUTPUT``
->>
->>     ``pixelformat``
->>         a coded pixel format
->>
->>     ``width``, ``height``
->>         required only if cannot be parsed from the stream for the given
->>         coded format; optional otherwise - set to zero to ignore
->>
-> 
-> But MPEG2 being a format where the coded resolution is inside the
-> bitstream, this is purely an Amlogic issue where the firmware doesn't
-> extend the capability to do this.
-> 
-> Here's a proposal: if I were to resend the driver supporting only H264
-> and conforming to the spec, would you be considering it for inclusion
-> in the main tree ? Does your current iteration of v4l2-compliance
-> support testing stateful decoders with H264 bitstreams ?
+This patch series moves Hyper-V clock/timer code to a separate Hyper-V
+clocksource driver. Previously, Hyper-V clock/timer code and data
+structures were mixed in with other Hyper-V code in the ISA independent
+drivers/hv code as well as in arch dependent code. The new Hyper-V
+clocksource driver is ISA independent, with a just few dependencies on
+arch specific functions. The patch series does not change any behavior
+or functionality -- it only reorganizes the existing code and fixes up
+the linkages. A few places outside of Hyper-V code are fixed up to use
+the new #include file structure.
 
-The core problem is that the spec isn't finalized yet. The v3 spec you
-refer to above is old already since there are various changes planned.
+This restructuring is in response to Marc Zyngier's review comments
+on supporting Hyper-V running on ARM64, and is a good idea in general.
+It increases the amount of code shared between the x86 and ARM64
+architectures, and reduces the size of the new code for supporting
+Hyper-V on ARM64. A new version of the Hyper-V on ARM64 patches will
+follow once this clocksource restructuring is accepted.
 
-If you want to test your driver with a v4l2-compliance that is likely
-to be close to the final version of the spec, then you can use this
-branch:
+The code is diff'ed against Linux 5.2.0-rc1-next-20190524.
 
-https://git.linuxtv.org/hverkuil/v4l-utils.git/log/?h=vicodec
+Changes in v3:
+* Removed boolean argument to hv_init_clocksource(). Always call
+sched_clock_register, which is needed on ARM64 but a no-op on x86.
+* Removed separate cpuhp setup in hv_stimer_alloc() and instead
+directly call hv_stimer_init() and hv_stimer_cleanup() from
+corresponding VMbus functions.  This more closely matches original
+code and avoids clocksource stop/restart problems on ARM64 when
+VMbus code denies CPU offlining request.
 
-You can test with:
+Changes in v2:
+* Revised commit short descriptions so the distinction between
+the first and second patches is clearer [GregKH]
+* Renamed new clocksource driver files and functions to use
+existing "timer" and "stimer" names instead of introducing
+"syntimer". [Vitaly Kuznetsov]
+* Introduced CONFIG_HYPER_TIMER to fix build problem when
+CONFIG_HYPERV=m [Vitaly Kuznetsov]
+* Added "Suggested-by: Marc Zyngier"
 
-v4l2-compliance -s --stream-from <file>
+Michael Kelley (2):
+  Drivers: hv: Create Hyper-V clocksource driver from existing
+    clockevents code
+  Drivers: hv: Move Hyper-V clocksource code to new clocksource driver
 
-I wouldn't be too worried about keeping it in staging. Having it there
-will already be very nice indeed. Just add a TODO file that states that
-you are waiting for the final version of the stateful decoder spec and
-the corresponding compliance tests.
+ MAINTAINERS                          |   2 +
+ arch/x86/entry/vdso/vclock_gettime.c |   1 +
+ arch/x86/entry/vdso/vma.c            |   2 +-
+ arch/x86/hyperv/hv_init.c            |  91 +---------
+ arch/x86/include/asm/hyperv-tlfs.h   |   6 +
+ arch/x86/include/asm/mshyperv.h      |  81 ++-------
+ arch/x86/kernel/cpu/mshyperv.c       |   2 +
+ arch/x86/kvm/x86.c                   |   1 +
+ drivers/clocksource/Makefile         |   1 +
+ drivers/clocksource/hyperv_timer.c   | 321 +++++++++++++++++++++++++++++++++++
+ drivers/hv/Kconfig                   |   3 +
+ drivers/hv/hv.c                      | 156 +----------------
+ drivers/hv/hv_util.c                 |   1 +
+ drivers/hv/hyperv_vmbus.h            |   3 -
+ drivers/hv/vmbus_drv.c               |  42 ++---
+ include/clocksource/hyperv_timer.h   | 105 ++++++++++++
+ 16 files changed, 484 insertions(+), 334 deletions(-)
+ create mode 100644 drivers/clocksource/hyperv_timer.c
+ create mode 100644 include/clocksource/hyperv_timer.h
 
-The V4L2_FMT_FLAG_FIXED_RESOLUTION isn't a blocker. That flag makes sense,
-and so it has nothing to do with keeping this driver in staging.
-
-Regards,
-
-	Hans
-
-> 
->> It is just a bit too soon to have this in mainline at this time.
->>
->> One other comment below:
->>
->> On 5/14/19 3:56 PM, Maxime Jourdan wrote:
->>> Amlogic SoCs feature a powerful video decoder unit able to
->>> decode many formats, with a performance of usually up to 4k60.
->>>
->>> This is a driver for this IP that is based around the v4l2 m2m framework.
->>>
->>> It features decoding for:
->>> - MPEG 1
->>> - MPEG 2
->>>
->>> Supported SoCs are: GXBB (S905), GXL (S905X/W/D), GXM (S912)
->>>
->>> There is also a hardware bitstream parser (ESPARSER) that is handled here.
->>>
->>> Tested-by: Neil Armstrong <narmstrong@baylibre.com>
->>> Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
->>> ---
->>>  drivers/media/platform/Kconfig                |   10 +
->>>  drivers/media/platform/meson/Makefile         |    1 +
->>>  drivers/media/platform/meson/vdec/Makefile    |    8 +
->>>  .../media/platform/meson/vdec/codec_mpeg12.c  |  209 ++++
->>>  .../media/platform/meson/vdec/codec_mpeg12.h  |   14 +
->>>  drivers/media/platform/meson/vdec/dos_regs.h  |   98 ++
->>>  drivers/media/platform/meson/vdec/esparser.c  |  323 +++++
->>>  drivers/media/platform/meson/vdec/esparser.h  |   32 +
->>>  drivers/media/platform/meson/vdec/vdec.c      | 1071 +++++++++++++++++
->>>  drivers/media/platform/meson/vdec/vdec.h      |  265 ++++
->>>  drivers/media/platform/meson/vdec/vdec_1.c    |  229 ++++
->>>  drivers/media/platform/meson/vdec/vdec_1.h    |   14 +
->>>  .../media/platform/meson/vdec/vdec_ctrls.c    |   51 +
->>>  .../media/platform/meson/vdec/vdec_ctrls.h    |   14 +
->>>  .../media/platform/meson/vdec/vdec_helpers.c  |  441 +++++++
->>>  .../media/platform/meson/vdec/vdec_helpers.h  |   80 ++
->>>  .../media/platform/meson/vdec/vdec_platform.c |  107 ++
->>>  .../media/platform/meson/vdec/vdec_platform.h |   30 +
->>>  18 files changed, 2997 insertions(+)
->>>  create mode 100644 drivers/media/platform/meson/vdec/Makefile
->>>  create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.c
->>>  create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.h
->>>  create mode 100644 drivers/media/platform/meson/vdec/dos_regs.h
->>>  create mode 100644 drivers/media/platform/meson/vdec/esparser.c
->>>  create mode 100644 drivers/media/platform/meson/vdec/esparser.h
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec.c
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec.h
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_1.c
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_1.h
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.c
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.h
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.c
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.h
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.c
->>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.h
->>>
->>
->> <snip>
->>
->>> diff --git a/drivers/media/platform/meson/vdec/vdec_ctrls.c b/drivers/media/platform/meson/vdec/vdec_ctrls.c
->>> new file mode 100644
->>> index 000000000000..d5d6b1b97aa5
->>> --- /dev/null
->>> +++ b/drivers/media/platform/meson/vdec/vdec_ctrls.c
->>> @@ -0,0 +1,51 @@
->>> +// SPDX-License-Identifier: GPL-2.0+
->>> +/*
->>> + * Copyright (C) 2018 BayLibre, SAS
->>> + * Author: Maxime Jourdan <mjourdan@baylibre.com>
->>> + */
->>> +
->>> +#include "vdec_ctrls.h"
->>> +
->>> +static int vdec_op_g_volatile_ctrl(struct v4l2_ctrl *ctrl)
->>> +{
->>> +     struct amvdec_session *sess =
->>> +           container_of(ctrl->handler, struct amvdec_session, ctrl_handler);
->>> +
->>> +     switch (ctrl->id) {
->>> +     case V4L2_CID_MIN_BUFFERS_FOR_CAPTURE:
->>> +             ctrl->val = sess->dpb_size;
->>> +             break;
->>> +     default:
->>> +             return -EINVAL;
->>> +     };
->>> +
->>> +     return 0;
->>> +}
->>> +
->>> +static const struct v4l2_ctrl_ops vdec_ctrl_ops = {
->>> +     .g_volatile_ctrl = vdec_op_g_volatile_ctrl,
->>> +};
->>> +
->>> +int amvdec_init_ctrls(struct v4l2_ctrl_handler *ctrl_handler)
->>> +{
->>> +     int ret;
->>> +     struct v4l2_ctrl *ctrl;
->>> +
->>> +     ret = v4l2_ctrl_handler_init(ctrl_handler, 1);
->>> +     if (ret)
->>> +             return ret;
->>> +
->>> +     ctrl = v4l2_ctrl_new_std(ctrl_handler, &vdec_ctrl_ops,
->>> +             V4L2_CID_MIN_BUFFERS_FOR_CAPTURE, 1, 32, 1, 1);
->>> +     if (ctrl)
->>> +             ctrl->flags |= V4L2_CTRL_FLAG_VOLATILE;
->>
->> Why is this volatile? That makes little sense.
->>
-> 
-> I copied this over from other stateful decoders, they all used
-> volatile so it didn't cross my mind too much.
-> 
-> It seems that there are 2 cases:
->  - the control is actually volatile, e.g its value is read from firmware.
->  - the control is not really volatile, e.g its value is set by the driver
-> 
-> My driver falls in the second case. Is the correct way to deal with
-> that to use v4l2_ctrl_s_ctrl() and remove the volatile flag ?
-> 
-> Regards,
-> Maxime
-> 
-> 
->>> +
->>> +     ret = ctrl_handler->error;
->>> +     if (ret) {
->>> +             v4l2_ctrl_handler_free(ctrl_handler);
->>> +             return ret;
->>> +     }
->>> +
->>> +     return 0;
->>> +}
->>> +EXPORT_SYMBOL_GPL(amvdec_init_ctrls);
->>
->> <snip>
->>
->> Regards,
->>
->>         Hans
-
+-- 
+1.8.3.1
 
 _______________________________________________
 linux-arm-kernel mailing list
