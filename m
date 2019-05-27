@@ -2,74 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 935372BBEE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 00:17:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3019C2BC18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 00:41:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y5XjiQoU3pUrYTFPxxJ4ixk2s+/xelqGLi8z6EscCIA=; b=f4ZDtgJsG17AwD
-	w0C0Ii8iFOeAQ7KK/csJPXXdETnIE9BeJBnmQ76hN3/fHRtyUsxKrXyef2hJzKqgs1DuYCWhjrfl5
-	DFBdkhL1PqYpzImyWQtePQ0gH9BBl4VEg7s0imZtSGGfYWX5SwoHnB2wsWvMwQSRoJLwsmfPqjeQY
-	s/cLxmCSFIz3GDvBAFUg/jcrycGIQvL8WeQiBha22AYd8DbugfWaU+g2+snA/p6QXyo/NWgkQGjKY
-	Ux3uPfW6dn89xl9vLEbEz/rFdTzKcH5s+Y9jbni1P/L/QH2ZhVr1WtYUJeFc3XXXg+PnWUUaSI3FH
-	P53gVVJHiTNin0S+fnkw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1UMABxPMbT6OoZOD/rYBQYqFtwSU6C3lz+QbC33gyrw=; b=MVnD+9TNHo4NgT
+	XucRNy+JOA4Z8H6B5bz1p5vaiGNbqr2BupT+RGOZ3j6E7rSwVaFraeoMhVNvpr9DMxYJMDDZc2D3N
+	eimWw2ajHQA5bMAhd2vKkXTXcMcYcI3BoXMFBl3051L4+P0texqgCXZ3ytAkqLksFDzJq6j7Y2E/o
+	7H4t3ePu7qp9K+18skfOdWU+DAodJbA/d+2wgsP45GLm36kORGl/0VYcONrhxkCzyuVeDowauUP3T
+	BTw0Pe5n5xs4eA2QqRpkMRqUYmWeXJA5o2iMlknjtB+uSY1Zvddx9AzJMVhmXWAh6GAwMpd0niOJA
+	/ap+dVIopq4ubb/aG4eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVNvf-0005pn-Ay; Mon, 27 May 2019 22:17:15 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1hVOJ5-0005x7-Db; Mon, 27 May 2019 22:41:27 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVNvX-0005pC-T8; Mon, 27 May 2019 22:17:09 +0000
-Received: from excalibur.cnev.de ([194.8.209.98]) by mrelayeu.kundenserver.de
- (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MhlCa-1h0jzV2GtE-00dknW; Tue, 28 May 2019 00:16:25 +0200
-Received: from karsten by excalibur.cnev.de with local (Exim 4.89)
- (envelope-from <merker@debian.org>)
- id 1hVNul-0000rz-WA; Tue, 28 May 2019 00:16:20 +0200
-Date: Tue, 28 May 2019 00:16:19 +0200
-From: Karsten Merker <merker@debian.org>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [v4 PATCH] RISC-V: Add an Image header that boot loader can parse.
-Message-ID: <20190527221619.fkxtzk4jpeyfoptf@excalibur.cnev.de>
-References: <20190524041814.7497-1-atish.patra@wdc.com>
- <CAKv+Gu9U56b50TrfriBfRFed_1aoXg2Y624tu7v5m2y+6DVq5w@mail.gmail.com>
+ id 1hVOIm-0005k2-Tx
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 22:41:11 +0000
+Received: from zyt.lan (unknown [IPv6:2a02:169:3c0a::564])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id E9C155C0104;
+ Tue, 28 May 2019 00:40:59 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1558996860;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:
+ content-transfer-encoding:content-transfer-encoding:in-reply-to:
+ references; bh=RAept5Q5fVmuZ++ThCZbA37evns015LjBoUehasT/og=;
+ b=jCk6OtNrXck/LIzjSb18suAI3aialfD3oiTaItrudx/eaOX7FEdiT944EFpBD1wT/RQhUo
+ 7JRRZ28/icNKcV51vJzREifORHjqWTqMfqOwxLF7y3hdGO4ZWiv/rjn5l5uyBIPF8Pmw6K
+ fvAoLLr794AEOmRxb7dD0k+pDqqPGGQ=
+From: Stefan Agner <stefan@agner.ch>
+To: arm@kernel.org,
+	olof@lixom.net
+Subject: [PATCH v4 1/2] ARM: use arch_extension directive instead of arch
+ argument
+Date: Tue, 28 May 2019 00:40:50 +0200
+Message-Id: <c0ca465daa7c7663c19b0bcb848c70e8da22baff.1558996564.git.stefan@agner.ch>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKv+Gu9U56b50TrfriBfRFed_1aoXg2Y624tu7v5m2y+6DVq5w@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-Provags-ID: V03:K1:IggtGFZrbp9GZe50tguh26rLf9NXZcqGQm/DxENZxO6zmFTT7ar
- xrlreaf7E2MLlnT/NZ5xFEoQDP+tlltS3BsFa2S0/HZg/8G0NkmtrqFET36hPHZsHh/TnaG
- fQx3pSKdqVTG2GdS2HHMt9yleoggHD7BUyP8DqxizgvAb9A0gxVC9+Uhxs0p+PD4DgwJc1O
- rFR0o7Ab0r+BhUlhU7A6Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Zgr8CE5oZTc=:mCiXxlktW4T3elxbJzmy9h
- ucPcOpiaHc/ZVs8XcLqtTBDU4ftCJUM7te/CIgMrHrzALY7QwXoKjVrRZf/7uTWQYMEVKeS+B
- sT2AUUgEk5oATbyNHxOJvKOcu1Wv/mkOndeot2LBPno0YmYZPNQ0Ssw/h0Dy8GHKVoU+hibVP
- jJbNDIJW7Y7iwbmRDTE25tPMU5LZYSezxn1LwvpgIYMcnBfudy05fqYF/c0hk7Sz3HMlAjlXV
- Hyw9Rfgfum3p2rhOa024YmRdzr7XvC4Wu1192B9iU7SPaWkk1oNtCAMcP/n14ymVmrdr5Sdtp
- EZo/ToGaQU+YfRxS9WnVddpRPO4w4er0Cs/XKefQhPNw6mmHhRuWm+bsnKT9tEApZ6KZMBxbO
- nIBGw35tpBjvCmjYYWHlFxeaSplSeVyK0eW05IBRrqvNZSNPMZCP+8hYvQFssEbVcg8DtK8sx
- WqR3vNrG6goAI6AJWmm5NKXcsqjl7psS5r4BAa/VghXBYDFJZDxpn6zpWokcUg96KP+fyauQd
- +WRZxUy6lj060T4UBwydhr8qhz/HlZ7NEnWsmyphs7ecalmlxZVAuAOmD5UwMxUniArxo3j7n
- V8dY5kdr8nkNwVGk3DKny0jI6xfnWEs+YzKQx24n9ddg8FDoOQJNSdZvKx7AV/Z1xisFHTIE7
- /8wZiY9YemXFqAjlRb/jfbCiLtarGRyMdNkhV2fstxXQclS6dBmXmmrZ3ewpU97eE/KvvKtnd
- MTuk3Rf3QPxWIQ2kC4aanwsguVF2VwIH4qYUTw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_151708_242050_AD19E658 
-X-CRM114-Status: GOOD (  24.51  )
-X-Spam-Score: -0.3 (/)
+X-CRM114-CacheID: sfid-20190527_154109_258647_42307EA9 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,104 +72,337 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Anup Patel <Anup.Patel@wdc.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Zong Li <zong@andestech.com>, Atish Patra <atish.patra@wdc.com>,
- Nick Kossifidis <mick@ics.forth.gr>, Palmer Dabbelt <palmer@sifive.com>,
- "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
- Karsten Merker <merker@debian.org>, linux-riscv@lists.infradead.org,
- "marek.vasut@gmail.com" <marek.vasut@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: andrew@lunn.ch, mans@mansr.com, tony@atomide.com,
+ Stefan Agner <stefan@agner.ch>, robh@kernel.org, f.fainelli@gmail.com,
+ gregory.clement@bootlin.com, linux@armlinux.org.uk, krzk@kernel.org,
+ kgene@kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ sebastian.hesselbarth@gmail.com, jason@lakedaemon.net, arnd@arndb.de,
+ marc.w.gonzalez@free.fr, rjui@broadcom.com, ssantosh@kernel.org,
+ linux-arm-kernel@lists.infradead.org, sbranden@broadcom.com, nico@fluxnic.net,
+ ard.biesheuvel@linaro.org, ndesaulniers@google.com,
+ linux-kernel@vger.kernel.org, robin.murphy@arm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBNYXkgMjcsIDIwMTkgYXQgMDQ6MzQ6NTdQTSArMDIwMCwgQXJkIEJpZXNoZXV2ZWwg
-d3JvdGU6Cj4gT24gRnJpLCAyNCBNYXkgMjAxOSBhdCAwNjoxOCwgQXRpc2ggUGF0cmEgPGF0aXNo
-LnBhdHJhQHdkYy5jb20+IHdyb3RlOgo+ID4gQ3VycmVudGx5LCB0aGUgbGFzdCBzdGFnZSBib290
-IGxvYWRlcnMgc3VjaCBhcyBVLUJvb3QgY2FuIGFjY2VwdCBvbmx5Cj4gPiB1SW1hZ2Ugd2hpY2gg
-aXMgYW4gdW5uZWNlc3NhcnkgYWRkaXRpb25hbCBzdGVwIGluIGF1dG9tYXRpbmcgYm9vdAo+ID4g
-cHJvY2Vzcy4KPiA+Cj4gPiBBZGQgYW4gaW1hZ2UgaGVhZGVyIHRoYXQgYm9vdCBsb2FkZXIgdW5k
-ZXJzdGFuZHMgYW5kIGJvb3QgTGludXggZnJvbQo+ID4gZmxhdCBJbWFnZSBkaXJlY3RseS4KPiA+
-Cj4gPiBUaGlzIGhlYWRlciBpcyBiYXNlZCBvbiBBUk02NCBib290IGltYWdlIGhlYWRlciBhbmQg
-cHJvdmlkZXMgYW4KPiA+IG9wcG9ydHVuaXR5IHRvIGNvbWJpbmUgYm90aCBBUk02NCAmIFJJU0Mt
-ViBpbWFnZSBoZWFkZXJzIGluIGZ1dHVyZS4KPiA+Cj4gPiBBbHNvIG1ha2Ugc3VyZSB0aGF0IFBF
-L0NPRkYgaGVhZGVyIGNhbiBjby1leGlzdCBpbiB0aGUgc2FtZSBpbWFnZSBzbwo+ID4gdGhhdCBF
-Rkkgc3R1YiBjYW4gYmUgc3VwcG9ydGVkIGZvciBSSVNDLVYgaW4gZnV0dXJlLiBFRkkgc3BlY2lm
-aWNhdGlvbgo+ID4gbmVlZHMgUEUvQ09GRiBpbWFnZSBoZWFkZXIgaW4gdGhlIGJlZ2lubmluZyBv
-ZiB0aGUga2VybmVsIGltYWdlIGluIG9yZGVyCj4gPiB0byBsb2FkIGl0IGFzIGFuIEVGSSBhcHBs
-aWNhdGlvbi4gSW4gb3JkZXIgdG8gc3VwcG9ydCBFRkkgc3R1YiwgY29kZTAKPiA+IHNob3VsZCBi
-ZSByZXBsYWNlZCB3aXRoICJNWiIgbWFnaWMgc3RyaW5nIGFuZCByZXM0KGF0IG9mZnNldCAweDNj
-KQo+ID4gc2hvdWxkIHBvaW50IHRvIHRoZSByZXN0IG9mIHRoZSBQRS9DT0ZGIGhlYWRlciAod2hp
-Y2ggd2lsbCBiZSBhZGRlZAo+ID4gZHVyaW5nIEVGSSBzdXBwb3J0KS4KWy4uLl0KPiA+ICBEb2N1
-bWVudGF0aW9uL3Jpc2N2L2Jvb3QtaW1hZ2UtaGVhZGVyLnR4dCB8IDUwICsrKysrKysrKysrKysr
-KysrKwo+ID4gIGFyY2gvcmlzY3YvaW5jbHVkZS9hc20vaW1hZ2UuaCAgICAgICAgICAgIHwgNjQg
-KysrKysrKysrKysrKysrKysrKysrKysKPiA+ICBhcmNoL3Jpc2N2L2tlcm5lbC9oZWFkLlMgICAg
-ICAgICAgICAgICAgICB8IDMyICsrKysrKysrKysrKwo+ID4gIDMgZmlsZXMgY2hhbmdlZCwgMTQ2
-IGluc2VydGlvbnMoKykKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9yaXNj
-di9ib290LWltYWdlLWhlYWRlci50eHQKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9yaXNj
-di9pbmNsdWRlL2FzbS9pbWFnZS5oCj4gPgo+ID4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24v
-cmlzY3YvYm9vdC1pbWFnZS1oZWFkZXIudHh0IGIvRG9jdW1lbnRhdGlvbi9yaXNjdi9ib290LWlt
-YWdlLWhlYWRlci50eHQKPiA+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiBpbmRleCAwMDAwMDAw
-MDAwMDAuLjY4YWJjMjM1M2NlYwo+ID4gLS0tIC9kZXYvbnVsbAo+ID4gKysrIGIvRG9jdW1lbnRh
-dGlvbi9yaXNjdi9ib290LWltYWdlLWhlYWRlci50eHQKPiA+IEBAIC0wLDAgKzEsNTAgQEAKPiA+
-ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgQm9vdCBpbWFnZSBoZWFkZXIgaW4gUklT
-Qy1WIExpbnV4Cj4gPiArICAgICAgICAgICAgICAgICAgICAgICA9PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT0KPiA+ICsKPiA+ICtBdXRob3I6IEF0aXNoIFBhdHJh
-IDxhdGlzaC5wYXRyYUB3ZGMuY29tPgo+ID4gK0RhdGUgIDogMjAgTWF5IDIwMTkKPiA+ICsKPiA+
-ICtUaGlzIGRvY3VtZW50IG9ubHkgZGVzY3JpYmVzIHRoZSBib290IGltYWdlIGhlYWRlciBkZXRh
-aWxzIGZvciBSSVNDLVYgTGludXguCj4gPiArVGhlIGNvbXBsZXRlIGJvb3RpbmcgZ3VpZGUgd2ls
-bCBiZSBhdmFpbGFibGUgYXQgRG9jdW1lbnRhdGlvbi9yaXNjdi9ib290aW5nLnR4dC4KPiA+ICsK
-PiA+ICtUaGUgZm9sbG93aW5nIDY0LWJ5dGUgaGVhZGVyIGlzIHByZXNlbnQgaW4gZGVjb21wcmVz
-c2VkIExpbnV4IGtlcm5lbCBpbWFnZS4KPiA+ICsKPiA+ICsgICAgICAgdTMyIGNvZGUwOyAgICAg
-ICAgICAgICAgICAvKiBFeGVjdXRhYmxlIGNvZGUgKi8KPiA+ICsgICAgICAgdTMyIGNvZGUxOyAg
-ICAgICAgICAgICAgICAvKiBFeGVjdXRhYmxlIGNvZGUgKi8KPiAKPiBBcG9sb2dpZXMgZm9yIG5v
-dCBtZW50aW9uaW5nIHRoaXMgaW4gbXkgcHJldmlvdXMgcmVwbHksIGJ1dCBnaXZlbiB0aGF0Cj4g
-eW91IGFscmVhZHkga25vdyB0aGF0IHlvdSB3aWxsIG5lZWQgdG8gcHV0IHRoZSBtYWdpYyBzdHJp
-bmcgTVogYXQKPiBvZmZzZXQgMHgwLCBpdCBtYWtlcyBtb3JlIHNlbnNlIHRvIG5vdCBwdXQgYW55
-IGNvZGUgdGhlcmUgYXQgYWxsLCBidXQKPiBlZHVjYXRlIHRoZSBib290bG9hZGVyIHRoYXQgdGhl
-IGZpcnN0IGV4ZWN1dGFibGUgaW5zdHJ1Y3Rpb24gaXMgYXQKPiBvZmZzZXQgMHgyMCwgYW5kIHB1
-dCB0aGUgc3BhcmUgZmllbGRzIHJpZ2h0IGFmdGVyIGl0IGluIGNhc2UgeW91IGV2ZXIKPiBuZWVk
-IG1vcmUgdGhhbiAyIHNsb3RzLiAoT24gYXJtNjQsIHdlIHdlcmUgbHVja3kgdG8gYmUgYWJsZSB0
-byBmaW5kIGFuCj4gb3Bjb2RlIHRoYXQgaGFwcGVuZWQgdG8gY29udGFpbiB0aGUgTVogYml0IHBh
-dHRlcm4gYW5kIGFjdCBhbG1vc3QgbGlrZQo+IGEgTk9QLCBidXQgaXQgc2VlbXMgc2lsbHkgdG8g
-cmVseSBvbiB0aGF0IGZvciBSSVNDLVYgYXMgd2VsbCkKPiAKPiBTbyBzb21ldGhpbmcgbGlrZQo+
-IAo+IHUxNiBwZV9yZXMxOyAgLyogTVogZm9yIEVGSSBib290YWJsZSBpbWFnZXMsIGRvbid0IGNh
-cmUgb3RoZXJ3aXNlICovCj4gdTggbWFnaWNbNl07ICAgIC8qICJSSVNDVlwwIgo+IAo+IHU2NCB0
-ZXh0X29mZnNldDsgICAgICAgICAgLyogSW1hZ2UgbG9hZCBvZmZzZXQsIGxpdHRsZSBlbmRpYW4g
-Ki8KPiB1NjQgaW1hZ2Vfc2l6ZTsgICAgICAgICAgIC8qIEVmZmVjdGl2ZSBJbWFnZSBzaXplLCBs
-aXR0bGUgZW5kaWFuICovCj4gdTY0IGZsYWdzOyAgICAgICAgICAgICAgICAvKiBrZXJuZWwgZmxh
-Z3MsIGxpdHRsZSBlbmRpYW4gKi8KPiAKPiB1MzIgY29kZTA7ICAgICAgICAgICAgICAgIC8qIEV4
-ZWN1dGFibGUgY29kZSAqLwo+IHUzMiBjb2RlMTsgICAgICAgICAgICAgICAgLyogRXhlY3V0YWJs
-ZSBjb2RlICovCj4gCj4gdTY0IHJlc2VydmVkWzJdOyAgICAgLyogcmVzZXJ2ZWQgZm9yIGZ1dHVy
-ZSB1c2UgKi8KPiAKPiB1MzIgdmVyc2lvbjsgICAgICAgICAgICAgIC8qIFZlcnNpb24gb2YgdGhp
-cyBoZWFkZXIgKi8KPiB1MzIgcGVfcmVzMjsgICAgICAgICAgICAgICAgIC8qIFJlc2VydmVkIGZv
-ciBQRSBDT0ZGIG9mZnNldCAqLwoKSGVsbG8sCgp3b3VsZG4ndCB0aGF0IGltbWVkaWF0ZWx5IGJy
-ZWFrIGV4aXN0aW5nIHN5c3RlbXMgKGluY2x1ZGluZyBxZW11CndoZW4gbG9hZGluZyBrZXJuZWxz
-IHdpdGggdGhlICIta2VybmVsIiBvcHRpb24pIHRoYXQgcmVseSBvbiB0aGUKZmFjdCB0aGF0IHRo
-ZSBrZXJuZWwgZW50cnkgcG9pbnQgaXMgYWx3YXlzIGF0IHRoZSBrZXJuZWwgbG9hZAphZGRyZXNz
-PyAgVGhlIEFSTTY0IGhlYWRlciBhbmQgQXRpc2gncyBvcmlnaW5hbCBSSVNDLVYgcHJvcG9zYWwK
-YmFzZWQgb24gdGhlIEFSTTY0IGhlYWRlciBrZWVwIHRoZSBwcm9wZXJ0eSB0aGF0IGp1bXBpbmcg
-dG8gdGhlCmtlcm5lbCBsb2FkIGFkZHJlc3MgYWx3YXlzIHdvcmtzLCByZWdhcmRsZXNzIG9mIHdo
-YXQgdGhlCnBhcnRpY3VsYXIgaGVhZGVyIGxvb2tzIGxpa2UgYW5kIHdoaWNoIHBvdGVudGlhbCBm
-dXR1cmUKZXh0ZW5zaW9ucyBpdCBpbmNsdWRlcywgYnV0IHRoZSBwcm9wb3NlZCBjaGFuZ2UgYWJv
-dmUgd291bGRuJ3QgZG8KdGhhdC4KCkFsdGhvdWdoIEkgYWdyZWUgdGhhdCBoYXZpbmcgdG8gaW50
-ZWdyYXRlIHRoZSAiTVoiIHN0cmluZyBhcyBhbgppbnN0cnVjdGlvbiBpc24ndCBwYXJ0aWN1bGFy
-bHkgbmljZSwgSSBkb24ndCB0aGluayB0aGF0IHRoaXMgaXMgYQpzdWZmaWNpZW50IGp1c3RpZmlj
-YXRpb24gZm9yIGJyZWFraW5nIGNvbXBhdGliaWxpdHkgd2l0aCBwcmlvcgprZXJuZWwgcmVsZWFz
-ZXMgYW5kL29yIGV4aXN0aW5nIGJvb3QgZmlybXdhcmUuICBPbiBSSVNDLVYsIHRoZQoiTVoiIHN0
-cmluZyBpcyBhIGNvbXByZXNzZWQgbG9hZCBpbW1lZGlhdGUgdG8geDIwL3M0LCBpLmUuIGFuCmlu
-c3RydWN0aW9uIHRoYXQgc2hvdWxkIGJlICJoYXJtbGVzcyIgYXMgZmFyIGFzIHRoZSBrZXJuZWwg
-Ym9vdApmbG93IGlzIGNvbmNlcm5lZCBhcyB0aGUgeDIwL3M0IHJlZ2lzdGVyIEFGQUlLIGRvZXNu
-J3QgY29udGFpbiBhbnkKaW5mb3JtYXRpb24gdGhhdCB0aGUga2VybmVsIHdvdWxkIHVzZS4KClJl
-Z2FyZHMsCkthcnN0ZW4KLS0gCkljaCB3aWRlcnNwcmVjaGUgaGllcm1pdCBhdXNkcsO8Y2tsaWNo
-IGRlciBOdXR6dW5nIHNvd2llIGRlcgpXZWl0ZXJnYWJlIG1laW5lciBwZXJzb25lbmJlem9nZW5l
-biBEYXRlbiBmw7xyIFp3ZWNrZSBkZXIgV2VyYnVuZwpzb3dpZSBkZXIgTWFya3QtIG9kZXIgTWVp
-bnVuZ3Nmb3JzY2h1bmcuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+The LLVM Target parser currently does not allow to specify the security
+extension as part of -march (see also LLVM Bug 40186 [0]). When trying
+to use Clang with LLVM's integrated assembler, this leads to build
+errors such as this:
+  clang-8: error: the clang compiler does not support '-Wa,-march=armv7-a+sec'
+
+Use ".arch_extension sec" to enable the security extension in a more
+portable fasion. Also make sure to use ".arch armv7-a" in case a v6/v7
+multi-platform kernel is being built.
+
+Note that this is technically not exactly the same as the old code
+checked for availabilty of the security extension by calling as-instr.
+However, there are already other sites which use ".arch_extension sec"
+unconditionally, hence de-facto we need an assembler capable of
+".arch_extension sec" already today (arch/arm/mm/proc-v7.S). The
+arch extension "sec" is available since binutils 2.21 according to
+its documentation [1].
+
+[0] https://bugs.llvm.org/show_bug.cgi?id=40186
+[1] https://sourceware.org/binutils/docs-2.21/as/ARM-Options.html
+
+Signed-off-by: Stefan Agner <stefan@agner.ch>
+Acked-by: Mans Rullgard <mans@mansr.com>
+Acked-by: Arnd Bergmann <arnd@arndb.de>
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+Changes since v1:
+- Explicitly specify assembler architecture as armv7-a to avoid
+  build issues when bulding v6/v7 multi arch kernel.
+
+Changes since v2:
+- Add armv7-a also in mach-tango
+- Move .arch armv7-a outside of ifdef'ed area in sleep44xx.S
+  to make the kernel compile also without CONFIG_SMP/PM.
+
+Changes since v3:
+- Rebase on top of v5.2-rc2
+
+ arch/arm/mach-bcm/Makefile         | 3 ---
+ arch/arm/mach-bcm/bcm_kona_smc.c   | 2 --
+ arch/arm/mach-exynos/Makefile      | 4 ----
+ arch/arm/mach-exynos/exynos-smc.S  | 3 ++-
+ arch/arm/mach-exynos/sleep.S       | 3 ++-
+ arch/arm/mach-highbank/Makefile    | 3 ---
+ arch/arm/mach-highbank/smc.S       | 3 ++-
+ arch/arm/mach-keystone/Makefile    | 3 ---
+ arch/arm/mach-keystone/smc.S       | 1 +
+ arch/arm/mach-omap2/Makefile       | 8 --------
+ arch/arm/mach-omap2/omap-headsmp.S | 2 ++
+ arch/arm/mach-omap2/omap-smc.S     | 3 ++-
+ arch/arm/mach-omap2/sleep33xx.S    | 1 +
+ arch/arm/mach-omap2/sleep34xx.S    | 2 ++
+ arch/arm/mach-omap2/sleep43xx.S    | 2 ++
+ arch/arm/mach-omap2/sleep44xx.S    | 3 +++
+ arch/arm/mach-tango/Makefile       | 3 ---
+ arch/arm/mach-tango/smc.S          | 2 ++
+ 18 files changed, 21 insertions(+), 30 deletions(-)
+
+diff --git a/arch/arm/mach-bcm/Makefile b/arch/arm/mach-bcm/Makefile
+index 8fd23b263c60..b59c813b1af4 100644
+--- a/arch/arm/mach-bcm/Makefile
++++ b/arch/arm/mach-bcm/Makefile
+@@ -40,9 +40,6 @@ obj-$(CONFIG_ARCH_BCM_MOBILE_L2_CACHE) += kona_l2_cache.o
+ 
+ # Support for secure monitor traps
+ obj-$(CONFIG_ARCH_BCM_MOBILE_SMC) += bcm_kona_smc.o
+-ifeq ($(call as-instr,.arch_extension sec,as_has_sec),as_has_sec)
+-CFLAGS_bcm_kona_smc.o		+= -Wa,-march=armv7-a+sec -DREQUIRES_SEC
+-endif
+ 
+ # BCM2835
+ obj-$(CONFIG_ARCH_BCM2835)	+= board_bcm2835.o
+diff --git a/arch/arm/mach-bcm/bcm_kona_smc.c b/arch/arm/mach-bcm/bcm_kona_smc.c
+index a55a7ecf146a..541e850a736c 100644
+--- a/arch/arm/mach-bcm/bcm_kona_smc.c
++++ b/arch/arm/mach-bcm/bcm_kona_smc.c
+@@ -125,9 +125,7 @@ static int bcm_kona_do_smc(u32 service_id, u32 buffer_phys)
+ 		__asmeq("%2", "r4")
+ 		__asmeq("%3", "r5")
+ 		__asmeq("%4", "r6")
+-#ifdef REQUIRES_SEC
+ 		".arch_extension sec\n"
+-#endif
+ 		"	smc    #0\n"
+ 		: "=r" (ip), "=r" (r0)
+ 		: "r" (r4), "r" (r5), "r" (r6)
+diff --git a/arch/arm/mach-exynos/Makefile b/arch/arm/mach-exynos/Makefile
+index 264dbaa89c3d..5ccf9d7e58d4 100644
+--- a/arch/arm/mach-exynos/Makefile
++++ b/arch/arm/mach-exynos/Makefile
+@@ -14,9 +14,5 @@ obj-$(CONFIG_PM_SLEEP)		+= suspend.o
+ 
+ obj-$(CONFIG_SMP)		+= platsmp.o headsmp.o
+ 
+-plus_sec := $(call as-instr,.arch_extension sec,+sec)
+-AFLAGS_exynos-smc.o		:=-Wa,-march=armv7-a$(plus_sec)
+-AFLAGS_sleep.o			:=-Wa,-march=armv7-a$(plus_sec)
+-
+ obj-$(CONFIG_MCPM)		+= mcpm-exynos.o
+ CFLAGS_mcpm-exynos.o		+= -march=armv7-a
+diff --git a/arch/arm/mach-exynos/exynos-smc.S b/arch/arm/mach-exynos/exynos-smc.S
+index d259532ba937..6da31e6a7acb 100644
+--- a/arch/arm/mach-exynos/exynos-smc.S
++++ b/arch/arm/mach-exynos/exynos-smc.S
+@@ -10,7 +10,8 @@
+ /*
+  * Function signature: void exynos_smc(u32 cmd, u32 arg1, u32 arg2, u32 arg3)
+  */
+-
++	.arch armv7-a
++	.arch_extension sec
+ ENTRY(exynos_smc)
+ 	stmfd	sp!, {r4-r11, lr}
+ 	dsb
+diff --git a/arch/arm/mach-exynos/sleep.S b/arch/arm/mach-exynos/sleep.S
+index 2783c3a0c06a..ed93f91853b8 100644
+--- a/arch/arm/mach-exynos/sleep.S
++++ b/arch/arm/mach-exynos/sleep.S
+@@ -44,7 +44,8 @@ ENTRY(exynos_cpu_resume)
+ ENDPROC(exynos_cpu_resume)
+ 
+ 	.align
+-
++	.arch armv7-a
++	.arch_extension sec
+ ENTRY(exynos_cpu_resume_ns)
+ 	mrc	p15, 0, r0, c0, c0, 0
+ 	ldr	r1, =CPU_MASK
+diff --git a/arch/arm/mach-highbank/Makefile b/arch/arm/mach-highbank/Makefile
+index 7e6732c16862..71cc68041d92 100644
+--- a/arch/arm/mach-highbank/Makefile
++++ b/arch/arm/mach-highbank/Makefile
+@@ -1,7 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-y					:= highbank.o system.o smc.o
+ 
+-plus_sec := $(call as-instr,.arch_extension sec,+sec)
+-AFLAGS_smc.o				:=-Wa,-march=armv7-a$(plus_sec)
+-
+ obj-$(CONFIG_PM_SLEEP)			+= pm.o
+diff --git a/arch/arm/mach-highbank/smc.S b/arch/arm/mach-highbank/smc.S
+index 407d17baaaa9..860a79135b7b 100644
+--- a/arch/arm/mach-highbank/smc.S
++++ b/arch/arm/mach-highbank/smc.S
+@@ -16,7 +16,8 @@
+  * the monitor API number.
+  * Function signature : void highbank_smc1(u32 fn, u32 arg)
+  */
+-
++	.arch armv7-a
++	.arch_extension sec
+ ENTRY(highbank_smc1)
+ 	stmfd   sp!, {r4-r11, lr}
+ 	mov	r12, r0
+diff --git a/arch/arm/mach-keystone/Makefile b/arch/arm/mach-keystone/Makefile
+index f8b0dccac8dc..739b38be5696 100644
+--- a/arch/arm/mach-keystone/Makefile
++++ b/arch/arm/mach-keystone/Makefile
+@@ -1,9 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
+ obj-y					:= keystone.o smc.o
+ 
+-plus_sec := $(call as-instr,.arch_extension sec,+sec)
+-AFLAGS_smc.o				:=-Wa,-march=armv7-a$(plus_sec)
+-
+ obj-$(CONFIG_SMP)			+= platsmp.o
+ 
+ # PM domain driver for Keystone SOCs
+diff --git a/arch/arm/mach-keystone/smc.S b/arch/arm/mach-keystone/smc.S
+index d15de8179fab..ec03dc499270 100644
+--- a/arch/arm/mach-keystone/smc.S
++++ b/arch/arm/mach-keystone/smc.S
+@@ -21,6 +21,7 @@
+  *
+  * Return: Non zero value on failure
+  */
++	.arch_extension sec
+ ENTRY(keystone_cpu_smc)
+ 	stmfd   sp!, {r4-r11, lr}
+ 	smc	#0
+diff --git a/arch/arm/mach-omap2/Makefile b/arch/arm/mach-omap2/Makefile
+index 85d1b13c9215..f1d283995b31 100644
+--- a/arch/arm/mach-omap2/Makefile
++++ b/arch/arm/mach-omap2/Makefile
+@@ -41,11 +41,6 @@ obj-$(CONFIG_SOC_OMAP5)			+= $(omap-4-5-common) $(smp-y) sleep44xx.o
+ obj-$(CONFIG_SOC_AM43XX)		+= $(omap-4-5-common)
+ obj-$(CONFIG_SOC_DRA7XX)		+= $(omap-4-5-common) $(smp-y) sleep44xx.o
+ 
+-plus_sec := $(call as-instr,.arch_extension sec,+sec)
+-AFLAGS_omap-headsmp.o			:=-Wa,-march=armv7-a$(plus_sec)
+-AFLAGS_omap-smc.o			:=-Wa,-march=armv7-a$(plus_sec)
+-AFLAGS_sleep44xx.o			:=-Wa,-march=armv7-a$(plus_sec)
+-
+ # Functions loaded to SRAM
+ obj-$(CONFIG_SOC_OMAP2420)		+= sram242x.o
+ obj-$(CONFIG_SOC_OMAP2430)		+= sram243x.o
+@@ -95,9 +90,6 @@ obj-$(CONFIG_POWER_AVS_OMAP)		+= sr_device.o
+ obj-$(CONFIG_POWER_AVS_OMAP_CLASS3)    += smartreflex-class3.o
+ 
+ AFLAGS_sleep24xx.o			:=-Wa,-march=armv6
+-AFLAGS_sleep34xx.o			:=-Wa,-march=armv7-a$(plus_sec)
+-AFLAGS_sleep33xx.o			:=-Wa,-march=armv7-a$(plus_sec)
+-AFLAGS_sleep43xx.o			:=-Wa,-march=armv7-a$(plus_sec)
+ 
+ endif
+ 
+diff --git a/arch/arm/mach-omap2/omap-headsmp.S b/arch/arm/mach-omap2/omap-headsmp.S
+index 4c6f14cf92a8..b26c0daaa3c1 100644
+--- a/arch/arm/mach-omap2/omap-headsmp.S
++++ b/arch/arm/mach-omap2/omap-headsmp.S
+@@ -58,6 +58,8 @@ ENDPROC(omap5_secondary_startup)
+  * omap5_secondary_startup if the primary CPU was put into HYP mode by
+  * the boot loader.
+  */
++	.arch armv7-a
++	.arch_extension sec
+ ENTRY(omap5_secondary_hyp_startup)
+ wait_2:	ldr	r2, =AUX_CORE_BOOT0_PA	@ read from AuxCoreBoot0
+ 	ldr	r0, [r2]
+diff --git a/arch/arm/mach-omap2/omap-smc.S b/arch/arm/mach-omap2/omap-smc.S
+index 72506e6cf9e7..a14aee5e81d1 100644
+--- a/arch/arm/mach-omap2/omap-smc.S
++++ b/arch/arm/mach-omap2/omap-smc.S
+@@ -23,7 +23,8 @@
+  * link register "lr".
+  * Function signature : void omap_smc1(u32 fn, u32 arg)
+  */
+-
++	.arch armv7-a
++	.arch_extension sec
+ ENTRY(omap_smc1)
+ 	stmfd   sp!, {r2-r12, lr}
+ 	mov	r12, r0
+diff --git a/arch/arm/mach-omap2/sleep33xx.S b/arch/arm/mach-omap2/sleep33xx.S
+index 47a816468cdb..68fee339d3f1 100644
+--- a/arch/arm/mach-omap2/sleep33xx.S
++++ b/arch/arm/mach-omap2/sleep33xx.S
+@@ -24,6 +24,7 @@
+ #define BIT(nr)			(1 << (nr))
+ 
+ 	.arm
++	.arch armv7-a
+ 	.align 3
+ 
+ ENTRY(am33xx_do_wfi)
+diff --git a/arch/arm/mach-omap2/sleep34xx.S b/arch/arm/mach-omap2/sleep34xx.S
+index 22daf4efed68..4927304b5902 100644
+--- a/arch/arm/mach-omap2/sleep34xx.S
++++ b/arch/arm/mach-omap2/sleep34xx.S
+@@ -97,6 +97,8 @@ ENDPROC(enable_omap3630_toggle_l2_on_restore)
+  *
+  * r0 = physical address of the parameters
+  */
++	.arch armv7-a
++	.arch_extension sec
+ ENTRY(save_secure_ram_context)
+ 	stmfd	sp!, {r4 - r11, lr}	@ save registers on stack
+ 	mov	r3, r0			@ physical address of parameters
+diff --git a/arch/arm/mach-omap2/sleep43xx.S b/arch/arm/mach-omap2/sleep43xx.S
+index 0c1031442571..c1f4e4852644 100644
+--- a/arch/arm/mach-omap2/sleep43xx.S
++++ b/arch/arm/mach-omap2/sleep43xx.S
+@@ -56,6 +56,8 @@
+ #define RTC_PMIC_EXT_WAKEUP_EN				BIT(0)
+ 
+ 	.arm
++	.arch armv7-a
++	.arch_extension sec
+ 	.align 3
+ 
+ ENTRY(am43xx_do_wfi)
+diff --git a/arch/arm/mach-omap2/sleep44xx.S b/arch/arm/mach-omap2/sleep44xx.S
+index 0cae3b070208..fb559d3de1f2 100644
+--- a/arch/arm/mach-omap2/sleep44xx.S
++++ b/arch/arm/mach-omap2/sleep44xx.S
+@@ -21,8 +21,11 @@
+ #include "omap44xx.h"
+ #include "omap4-sar-layout.h"
+ 
++	.arch armv7-a
++
+ #if defined(CONFIG_SMP) && defined(CONFIG_PM)
+ 
++	.arch_extension sec
+ .macro	DO_SMC
+ 	dsb
+ 	smc	#0
+diff --git a/arch/arm/mach-tango/Makefile b/arch/arm/mach-tango/Makefile
+index da6c633d3cc0..97cd04508fa1 100644
+--- a/arch/arm/mach-tango/Makefile
++++ b/arch/arm/mach-tango/Makefile
+@@ -1,7 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
+-plus_sec := $(call as-instr,.arch_extension sec,+sec)
+-AFLAGS_smc.o := -Wa,-march=armv7-a$(plus_sec)
+-
+ obj-y += setup.o smc.o
+ obj-$(CONFIG_SMP) += platsmp.o
+ obj-$(CONFIG_SUSPEND) += pm.o
+diff --git a/arch/arm/mach-tango/smc.S b/arch/arm/mach-tango/smc.S
+index 361a8dc89804..b1752aaa72bc 100644
+--- a/arch/arm/mach-tango/smc.S
++++ b/arch/arm/mach-tango/smc.S
+@@ -1,6 +1,8 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
+ #include <linux/linkage.h>
+ 
++	.arch armv7-a
++	.arch_extension sec
+ ENTRY(tango_smc)
+ 	push	{lr}
+ 	mov	ip, r1
+-- 
+2.21.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
