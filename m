@@ -2,61 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90F752AEC2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 08:34:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A28F2AECA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 08:37:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZKG9jq8Cf4zsJgxi8i0YDzVImwjMd57l8qgHznkiyM0=; b=OYhY/nrU8S++zy
-	WQ4RG0Csx5HtT8d0myiNYcU9CjobIn/CmGdBxo7/zuKdGJcwb2RfNEAv3E042oqVbL8UTLQt0aV8T
-	4CzEp0xUorydmn8lkmIiHRWWCeDSume4btOGhl+RBfGey9/BIiowaTqvxT6MfLppgQUbym+SvJXsa
-	hHIqhasKuYsNSEHpv3Hlk9W9akQQD7A9d38QbDgR69Mg97BPoAfSXF397cV1FlFSs/rUniqn8F/hX
-	751QDYSVBoOhNFSYtj3VG0kBJX8XhODG7Kf+YRFEnQ03hiaPhTdalhk0eLtRwMb1rULQ+Q8VPcyfD
-	KC7+d9Isu/QDMUf1Xvuw==;
+	List-Owner; bh=Kxco3MazsOWImgmWMXlB/CI+Sz4/rnet4FMY5bpTVAs=; b=cXBanIDeJQ7P0z
+	hG8jrYLWUx2PQ+/+1CCinoAPnUYhBLmCmKPreYnYdowmDnUy/eSMNeqTyw2S7WtVw7Vs7TUfCqgjK
+	FpmX9YMyBG+/2OrSQ5Di0053BqjpvqwElpJmItLO4u/2NinOsF6smTloMZ4OguOiTzdfl9Kw/gc0F
+	RnQWHcGgupkGBg4oZ0MuRbhjGzOA16d+nfFudqyE8JUa9Jcphjzl8S+ri+tNzkE94l20xoGPhWkyB
+	V+zVW+M80Mt6q/UZvuEVPnDCmCP6T5XDQbLhzou+Q8tT53rBRwvkpvmORYiqpTD4cOrBgtGY/4/9E
+	kLqNe0RngIvh6VMrHNoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV9DZ-0000DH-0A; Mon, 27 May 2019 06:34:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hV9G5-0001z5-Df; Mon, 27 May 2019 06:37:21 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV9DQ-0000Cc-Sb
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 06:34:38 +0000
-Received: from localhost (unknown [171.61.91.186])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 752572070D;
- Mon, 27 May 2019 06:34:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558938876;
- bh=/sC9zHW3LYGVcmoxuL0w3UerOo+Ooz0R9DrcIepPkcY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=YvnYn5Pkdq6U2yCI6yFr4GrkcpAvO8RHbZ6Bf4J+iqww2PlKYy9YxGTVgQaq0yiQM
- DjpZwMHLealrZRd4O5ScKTHzDCX4Dp9xltoZAHyi4ACk8pMf3bZEDnhMmnc+oLmIAc
- csrbKu3Kx5oRVlqq51FwT8m1ahBDh3OZRkMX9FlI=
-Date: Mon, 27 May 2019 12:04:31 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v1 4/6] dmaengine: fsl-edma: add i.mx7ulp edma2 version
- support
-Message-ID: <20190527063431.GC15118@vkoul-mobl>
-References: <1557512248-8440-1-git-send-email-yibin.gong@nxp.com>
- <1557512248-8440-5-git-send-email-yibin.gong@nxp.com>
+ id 1hV9Fx-0001yf-Cj
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 06:37:14 +0000
+Received: by mail-io1-xd43.google.com with SMTP id g16so12390431iom.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 26 May 2019 23:37:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=cz7k1/aeSQ6lJUhf4TTaRHWZVKKDJPrc6XkqBmFtX7k=;
+ b=V6C39yJsgqp/vjEMFFVpBIYO4PxHfZocoyIdPwbRZ0a0w5U+7nPxv26SGypFYPKA1I
+ c4XyGHAwj53O81+eGxtSc0y0Dp5C4fWKpzSy3041fX5p/KygS0WlDwSg2sEy76973qO2
+ 3R61loH1NA7IrnRzHFw8DMTB7A1ReXdoDoJDu0fzeTDD5bbLApUFddm16iEEXA0izpAE
+ Ji2HlIfo7zURW3MzEyA8Qjid9v+PeXSKCRRy0wcyijJJ2gpoAiBPcXZVphnm4r/YFZht
+ 8GwWGfSqdiqDpV5cS0I6QPneIHoHUrL0eY8LT6I2Dd5d0tW328A1+C1zLyr/TI7tZdLv
+ IeXA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=cz7k1/aeSQ6lJUhf4TTaRHWZVKKDJPrc6XkqBmFtX7k=;
+ b=FsUx7/5X2DdxOYUiHrPYC4K3ImyDOE986uvWtOpQk0IljMwgLqaHo5af02RJXjvEVD
+ tl+zg5kBZom11YMrjo9C/i4aua9yrdRDX4Vly8VsN+tzeQ0thQzVvTSwA56mIt3NpVYa
+ HQZN+Tju+BVkZbzZtypnrFIf1nNMHpc3dmqAsGjLgCpHza7HU16on9PhQBvoaG9VXBrW
+ 8jiBVWqTqOUNOFizIDOleyAgkmtia59K1+df3oOdOx0AoNuuhQW7Galr4LbHjMJoIEqb
+ H6IRYf2sMFFWK/3uIRPHnCXGMDw1QinGuOQhbgCFTU7ePWfFN5liELO398Arcd0JwX6v
+ JTZw==
+X-Gm-Message-State: APjAAAVC6yk+Zj22de61kK6OE4QTWK8oldlONzvxi/1OMGQ0z7LRs+h4
+ XX9LtOdq5Ps4mXObayL4bnop4af5hvwtv/sGRrHg/w==
+X-Google-Smtp-Source: APXvYqw2S0/3fnhssdZXUSPEvVyN98EsCdtKhEBQcJ6SoNNMaQ/TvElmw7BkQdY8sm55Mo53z3sVsDO2+OyUclDLg0s=
+X-Received: by 2002:a5d:968e:: with SMTP id m14mr34583348ion.49.1558939032282; 
+ Sun, 26 May 2019 23:37:12 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1557512248-8440-5-git-send-email-yibin.gong@nxp.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
+References: <1558929734-20051-1-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1558929734-20051-1-git-send-email-anshuman.khandual@arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Mon, 27 May 2019 08:37:00 +0200
+Message-ID: <CAKv+Gu-OSkPWUACCt=hzQJbbNArjYzt_nyYXit-oMOZy8t3fTQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64/mm: Drop BUG_ON() from [pmd|pud]_set_huge()
+To: Anshuman Khandual <anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_233436_962319_FDDDC0BA 
-X-CRM114-Status: GOOD (  25.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190526_233713_429042_255C0C4B 
+X-CRM114-Status: GOOD (  15.33  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -66,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,220 +90,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "robh@kernel.org" <robh@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10-05-19, 10:14, Robin Gong wrote:
->   Add edma2 for i.mx7ulp by version v3, since v2 has already
-> been used by mcf-edma.
-> The big changes based on v1 are belows:
->   1. only one dmamux.
->   2. another clock dma_clk except dmamux clk.
->   3. 16 independent interrupts instead of only one interrupt for
-> all channels.
-> 
-> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+On Mon, 27 May 2019 at 06:02, Anshuman Khandual
+<anshuman.khandual@arm.com> wrote:
+>
+> There are no callers for the functions which will pass unaligned physical
+> addresses. Hence just drop these BUG_ON() checks which are not required.
+>
+
+This might change in the future, right? Should we perhaps switch to
+VM_BUG_ON() instead so they get compiled out unless CONFIG_VM_DEBUG is
+enabled?
+
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
 > ---
->  drivers/dma/fsl-edma-common.c | 18 ++++++++++-
->  drivers/dma/fsl-edma-common.h |  3 ++
->  drivers/dma/fsl-edma.c        | 69 ++++++++++++++++++++++++++++++++++++++++++-
->  3 files changed, 88 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/dma/fsl-edma-common.c b/drivers/dma/fsl-edma-common.c
-> index bb24251..64e822e 100644
-> --- a/drivers/dma/fsl-edma-common.c
-> +++ b/drivers/dma/fsl-edma-common.c
-> @@ -90,6 +90,19 @@ static void mux_configure8(struct fsl_edma_chan *fsl_chan, void __iomem *addr,
->  	iowrite8(val8, addr + off);
+>  arch/arm64/mm/mmu.c | 2 --
+>  1 file changed, 2 deletions(-)
+>
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index 22c2e4f0768f..629011c6238d 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -978,7 +978,6 @@ int pud_set_huge(pud_t *pudp, phys_addr_t phys, pgprot_t prot)
+>                                    pud_val(new_pud)))
+>                 return 0;
+>
+> -       BUG_ON(phys & ~PUD_MASK);
+>         set_pud(pudp, new_pud);
+>         return 1;
 >  }
->  
-> +void mux_configure32(struct fsl_edma_chan *fsl_chan, void __iomem *addr,
-> +		     u32 off, u32 slot, bool enable)
-> +{
-> +	u32 val;
-> +
-> +	if (enable)
-> +		val = EDMAMUX_CHCFG_ENBL << 24 | slot;
-> +	else
-> +		val = EDMAMUX_CHCFG_DIS;
-> +
-> +	iowrite32(val, addr + off * 4);
-> +}
-> +
->  void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
->  			unsigned int slot, bool enable)
->  {
-> @@ -102,7 +115,10 @@ void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
->  	muxaddr = fsl_chan->edma->muxbase[ch / chans_per_mux];
->  	slot = EDMAMUX_CHCFG_SOURCE(slot);
->  
-> -	mux_configure8(fsl_chan, muxaddr, ch_off, slot, enable);
-> +	if (fsl_chan->edma->version == v3)
-> +		mux_configure32(fsl_chan, muxaddr, ch_off, slot, enable);
-> +	else
-> +		mux_configure8(fsl_chan, muxaddr, ch_off, slot, enable);
+> @@ -992,7 +991,6 @@ int pmd_set_huge(pmd_t *pmdp, phys_addr_t phys, pgprot_t prot)
+>                                    pmd_val(new_pmd)))
+>                 return 0;
+>
+> -       BUG_ON(phys & ~PMD_MASK);
+>         set_pmd(pmdp, new_pmd);
+>         return 1;
 >  }
->  EXPORT_SYMBOL_GPL(fsl_edma_chan_mux);
->  
-> diff --git a/drivers/dma/fsl-edma-common.h b/drivers/dma/fsl-edma-common.h
-> index 21a9cfd..2b0cc8e 100644
-> --- a/drivers/dma/fsl-edma-common.h
-> +++ b/drivers/dma/fsl-edma-common.h
-> @@ -124,6 +124,7 @@ struct fsl_edma_chan {
->  	dma_addr_t			dma_dev_addr;
->  	u32				dma_dev_size;
->  	enum dma_data_direction		dma_dir;
-> +	char				chan_name[16];
->  };
->  
->  struct fsl_edma_desc {
-> @@ -138,6 +139,7 @@ struct fsl_edma_desc {
->  enum edma_version {
->  	v1, /* 32ch, Vybrid, mpc57x, etc */
->  	v2, /* 64ch Coldfire */
-> +	v3, /* 32ch, i.mx7ulp */
->  };
->  
->  struct fsl_edma_engine {
-> @@ -145,6 +147,7 @@ struct fsl_edma_engine {
->  	void __iomem		*membase;
->  	void __iomem		*muxbase[DMAMUX_NR];
->  	struct clk		*muxclk[DMAMUX_NR];
-> +	struct clk		*dmaclk;
->  	u32			dmamux_nr;
->  	struct mutex		fsl_edma_mutex;
->  	u32			n_chans;
-> diff --git a/drivers/dma/fsl-edma.c b/drivers/dma/fsl-edma.c
-> index 7b65ef4..1568070 100644
-> --- a/drivers/dma/fsl-edma.c
-> +++ b/drivers/dma/fsl-edma.c
-> @@ -165,6 +165,51 @@ fsl_edma_irq_init(struct platform_device *pdev, struct fsl_edma_engine *fsl_edma
->  	return 0;
->  }
->  
-> +static int
-> +fsl_edma2_irq_init(struct platform_device *pdev,
-> +		   struct fsl_edma_engine *fsl_edma)
-> +{
-> +	struct device_node *np = pdev->dev.of_node;
-> +	int i, ret, irq;
-> +	int count = 0;
-> +
-> +	count = of_irq_count(np);
-> +	dev_info(&pdev->dev, "%s Found %d interrupts\r\n", __func__, count);
-> +	if (count <= 2) {
-> +		dev_err(&pdev->dev, "Interrupts in DTS not correct.\n");
-> +		return -EINVAL;
-> +	}
-> +	/*
-> +	 * 16 channel independent interrupts + 1 error interrupt on i.mx7ulp.
-> +	 * 2 channel share one interrupt, for example, ch0/ch16, ch1/ch17...
-> +	 * For now, just simply request irq without IRQF_SHARED flag, since 16
-> +	 * channels are enough on i.mx7ulp whose M4 domain own some peripherals.
-> +	 */
-> +	for (i = 0; i < count; i++) {
-> +		irq = platform_get_irq(pdev, i);
-> +		if (irq < 0)
-> +			return -ENXIO;
-> +
-> +		sprintf(fsl_edma->chans[i].chan_name, "eDMA2-CH%02d", i);
-> +
-> +		/* The last IRQ is for eDMA err */
-> +		if (i == count - 1)
-> +			ret = devm_request_irq(&pdev->dev, irq,
-> +						fsl_edma_err_handler,
-> +						0, "eDMA2-ERR", fsl_edma);
-> +		else
-> +
-> +			ret = devm_request_irq(&pdev->dev, irq,
-> +						fsl_edma_tx_handler, 0,
-> +						fsl_edma->chans[i].chan_name,
-> +						fsl_edma);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static void fsl_edma_irq_exit(
->  		struct platform_device *pdev, struct fsl_edma_engine *fsl_edma)
->  {
-> @@ -218,6 +263,23 @@ static int fsl_edma_probe(struct platform_device *pdev)
->  	fsl_edma_setup_regs(fsl_edma);
->  	regs = &fsl_edma->regs;
->  
-> +	if (of_device_is_compatible(np, "fsl,imx7ulp-edma")) {
-> +		fsl_edma->dmamux_nr = 1;
-> +		fsl_edma->version = v3;
-
-well this is not really scalable, we will keep adding versions and
-compatible and expanding this check. So it would make sense to create a
-driver data table which can be set for compatible and we use those
-values and avoid these runtime checks for compatible.
-
-Btw the binding documentation should precede the code usage, so this
-patch should come after that
-
-
-> +
-> +		fsl_edma->dmaclk = devm_clk_get(&pdev->dev, "dma");
-> +		if (IS_ERR(fsl_edma->dmaclk)) {
-> +			dev_err(&pdev->dev, "Missing DMA block clock.\n");
-> +			return PTR_ERR(fsl_edma->dmaclk);
-> +		}
-> +
-> +		ret = clk_prepare_enable(fsl_edma->dmaclk);
-> +		if (ret) {
-> +			dev_err(&pdev->dev, "DMA clk block failed.\n");
-> +			return ret;
-> +		}
-> +	}
-> +
->  	for (i = 0; i < fsl_edma->dmamux_nr; i++) {
->  		char clkname[32];
->  
-> @@ -264,7 +326,11 @@ static int fsl_edma_probe(struct platform_device *pdev)
->  	}
->  
->  	edma_writel(fsl_edma, ~0, regs->intl);
-> -	ret = fsl_edma_irq_init(pdev, fsl_edma);
-> +
-> +	if (fsl_edma->version == v3)
-> +		ret = fsl_edma2_irq_init(pdev, fsl_edma);
-> +	else
-> +		ret = fsl_edma_irq_init(pdev, fsl_edma);
->  	if (ret)
->  		return ret;
->  
-> @@ -385,6 +451,7 @@ static const struct dev_pm_ops fsl_edma_pm_ops = {
->  
->  static const struct of_device_id fsl_edma_dt_ids[] = {
->  	{ .compatible = "fsl,vf610-edma", },
-> +	{ .compatible = "fsl,imx7ulp-edma", },
->  	{ /* sentinel */ }
->  };
->  MODULE_DEVICE_TABLE(of, fsl_edma_dt_ids);
-> -- 
-> 2.7.4
-> 
-
--- 
-~Vinod
+> --
+> 2.20.1
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
