@@ -2,66 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE7322AD15
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 04:56:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 134D12AD27
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 05:04:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5UHdkGxncEfRIC2l6LVz89RcKkCnheLgZGlcXEhcsAU=; b=e6zP5ORUctEkoH
-	7RlQxGtTOjqPMMQao1cp1BQFyE3xdGadUv4su11of8bssaRAtfReXC7M2Pud9Zr57/P91rEvo0UX2
-	bFhJLOa81fJVPaK4pyNS5mfZlbM4L4/W3Pp48e9eDcZ/KUi2mHHdvQgSmGbk9wMfU0ifTuO+QRIhG
-	GHw3HdDxGXTRmWaAu6KYrPFIdsMFMA344gQGC8w2hsTt4YqFYfPlXNbRkhKL8w87viWtEmtZ3E49Q
-	uyGdDrqo61Q8XnkAsjRLd7v2lf/P8LPaObw3U7j3UylYJ9TmW7yoOMv5aiUT7gzume5SS+IjMdIk1
-	UXjWL49YfO016tq21RIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eRB7Gu6LkSbv3gOGl2yFM8sCpq90SziXB9xZC7BHhRM=; b=h1SwkRwQgXHvvw
+	wCsC8btYRXBbm+oOtxHt7vssVUpLHHMgV1nekTeIqCiXsUtwB9fSL/pBVIng2/4zm+rWUoq/+/FH1
+	zuWygVmK4G8sq79p7JBJ/huAGBY56qZGj2HO0059l/VbA51jbnHMQ6LrcgdXHNTJLI0IjdAdiDYGT
+	rQiSXvkv2ErQotNUqRAB4EDYqMJ6fFUGh6qVrq1iClQcjCoTi6O6FQUQPQ0pEBlzgryd/91dF6LU9
+	NtwzXfQdwNkDQg4754Z92tuY12VmNSfXo14vY6LiN+g6hnSi4lt0EquD4FBZa0ZP3jhiF281keClQ
+	od3Qu0GZTwrIVbmw7GiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV5og-0006xA-So; Mon, 27 May 2019 02:56:50 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hV5wK-0000TJ-Bp; Mon, 27 May 2019 03:04:44 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV5oY-0006wA-F8; Mon, 27 May 2019 02:56:45 +0000
-X-UUID: 021ceea84b7d41559104f28f6569b08f-20190526
-X-UUID: 021ceea84b7d41559104f28f6569b08f-20190526
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1502356481; Sun, 26 May 2019 18:56:26 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 26 May 2019 19:56:25 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Mon, 27 May 2019 10:56:22 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 27 May 2019 10:56:22 +0800
-Message-ID: <1558925782.10179.429.camel@mhfsdcap03>
-Subject: Re: [RESEND PATCH] usb: mtu3: fix up undefined reference to
- usb_debug_root
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Date: Mon, 27 May 2019 10:56:22 +0800
-In-Reply-To: <20190524113322.GA32094@kroah.com>
-References: <ee71197a681165aa72cb73c7f6cb402953351805.1558678075.git.chunfeng.yun@mediatek.com>
- <20190524074552.GA1080@kroah.com> <1558689951.10179.422.camel@mhfsdcap03>
- <20190524113322.GA32094@kroah.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hV5wD-0000SZ-0g
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 03:04:38 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 45A5620002A;
+ Mon, 27 May 2019 05:04:33 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id EEAF9200A4C;
+ Mon, 27 May 2019 05:04:27 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2DBBC402D6;
+ Mon, 27 May 2019 11:04:21 +0800 (SGT)
+From: Peter Chen <peter.chen@nxp.com>
+To: balbi@kernel.org,
+	shawnguo@kernel.org
+Subject: [PATCH v3 0/8] Add imx7ulp USBOTG1 support
+Date: Mon, 27 May 2019 11:06:08 +0800
+Message-Id: <20190527030616.44397-1-peter.chen@nxp.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-X-MTK: N
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_195642_511751_28F1E6BE 
-X-CRM114-Status: GOOD (  23.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190526_200437_195009_2F52C238 
+X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,77 +66,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, Randy Dunlap <rdunlap@infradead.org>,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: aisheng.dong@nxp.com, devicetree@vger.kernel.org,
+ Peter Chen <peter.chen@nxp.com>, linux-usb@vger.kernel.org,
+ chunfeng.yun@mediatek.com, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, fabio.estevam@nxp.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-05-24 at 13:33 +0200, Greg Kroah-Hartman wrote:
-> On Fri, May 24, 2019 at 05:25:51PM +0800, Chunfeng Yun wrote:
-> > On Fri, 2019-05-24 at 09:45 +0200, Greg Kroah-Hartman wrote:
-> > > On Fri, May 24, 2019 at 02:11:33PM +0800, Chunfeng Yun wrote:
-> > > > When CONFIG_USB is not set, and CONFIG_USB_GADGET is set,
-> > > > there is an issue:
-> > > > 
-> > > > ld:
-> > > > drivers/usb/mtu3/mtu3_debugfs.o: in function 'ssusb_debugfs_create_root':
-> > > > mtu3_debugfs.c:(.text+0xba3): undefined reference to 'usb_debug_root'
-> > > > 
-> > > > usb_debug_root is only built when CONFIG_USB is enabled, so here drop it
-> > > > and use NULL instead.
-> > > > 
-> > > > Reported-by: Randy Dunlap <rdunlap@infradead.org>
-> > > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > > Acked-by: Randy Dunlap <rdunlap@infradead.org>
-> > > > ---
-> > > >  drivers/usb/mtu3/mtu3_debugfs.c | 3 +--
-> > > >  1 file changed, 1 insertion(+), 2 deletions(-)
-> > > 
-> > > Why resend?
-> > Sorry, I should send it out as v2 due to acked-by is added.
-> 
-> Then please document that below the --- line, otherwise I have no idea :(
-Ok
-> 
-> > > > diff --git a/drivers/usb/mtu3/mtu3_debugfs.c b/drivers/usb/mtu3/mtu3_debugfs.c
-> > > > index 62c57ddc554e..b7c86ccd50b4 100644
-> > > > --- a/drivers/usb/mtu3/mtu3_debugfs.c
-> > > > +++ b/drivers/usb/mtu3/mtu3_debugfs.c
-> > > > @@ -528,8 +528,7 @@ void ssusb_dr_debugfs_init(struct ssusb_mtk *ssusb)
-> > > >  
-> > > >  void ssusb_debugfs_create_root(struct ssusb_mtk *ssusb)
-> > > >  {
-> > > > -	ssusb->dbgfs_root =
-> > > > -		debugfs_create_dir(dev_name(ssusb->dev), usb_debug_root);
-> > > > +	ssusb->dbgfs_root = debugfs_create_dir(dev_name(ssusb->dev), NULL);
-> > > 
-> > > This moves the directory to a new location no matter what the
-> > > configuration is. What's wrong with where it is today?  
-> > it seems usb_debug_root is only for host, but not for gadget only, it's
-> > defined and created in usb/core/usb.c
-> 
-> True, but you just moved the root if usb core is present too.
-It's an easy way, and other dual-role driver also uses NULL
+Changes for v3:
+- Using readl_poll_timeout to replace private function. [Patch 2/8]
+- Add more commit log for new flag CI_HDRC_PMQOS. [Patch 5/8]
+- Move 'compatible' at the beginning of propeties. [Patch 6/8]
 
-> 
-> > > And shoudn't we
-> > > create the usb root directory if only gadget is enabled?
-> > Yes, need modify udc/core.c, it's better if support it, do you want me
-> > to send a patch for it?
-> 
-> Yes please, let's see what that looks like.
-I'll do it.
+Changes for v2:
+- Use common 'phys' property [Patch 6/8]
+- Add the last patch that "fsl,usbphy" phandle is not mandatory now
+[Patch 8/8]
+- Add Reviewed-by from Rob.
 
-Thanks
-> 
-> thanks,
-> 
-> greg k-h
 
+There is a dual-role USB controller at imx7ulp, we add support for it
+in this patch set, and the dual-role function is tested at imx7ulp-evk
+board.
+
+Thanks.
+
+Peter Chen (8):
+  doc: dt-binding: mxs-usb-phy: add compatible for 7ulp
+  usb: phy: phy-mxs-usb: add imx7ulp support
+  doc: dt-binding: ci-hdrc-usb2: add compatible string for imx7ulp
+  doc: dt-binding: usbmisc-imx: add compatible string for imx7ulp
+  usb: chipidea: imx: add imx7ulp support
+  ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
+  ARM: dts: imx7ulp-evk: enable USBOTG1 support
+  usb: chipidea: imx: "fsl,usbphy" phandle is not mandatory now
+
+ .../devicetree/bindings/phy/mxs-usb-phy.txt        |  1 +
+ .../devicetree/bindings/usb/ci-hdrc-usb2.txt       |  1 +
+ .../devicetree/bindings/usb/usbmisc-imx.txt        |  1 +
+ arch/arm/boot/dts/imx7ulp-evk.dts                  | 35 +++++++++++
+ arch/arm/boot/dts/imx7ulp.dtsi                     | 31 ++++++++++
+ drivers/usb/chipidea/ci_hdrc_imx.c                 | 33 ++++++++++-
+ drivers/usb/chipidea/usbmisc_imx.c                 |  4 ++
+ drivers/usb/phy/phy-mxs-usb.c                      | 67 +++++++++++++++++++++-
+ include/linux/usb/chipidea.h                       |  1 +
+ 9 files changed, 170 insertions(+), 4 deletions(-)
+
+-- 
+2.14.1
 
 
 _______________________________________________
