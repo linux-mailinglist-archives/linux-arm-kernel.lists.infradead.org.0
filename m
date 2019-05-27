@@ -2,58 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EA3B2B0FC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 11:08:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFCFA2B0F6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 11:06:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zz9Pi1qvkbT9RpL+YJpFX4WNJBeoR4n/oay6EdzzDY0=; b=FOkOVUTUMSzJeR
-	rn9p6YTekwAwxSBl/PaXXj3V2gEOs4/Lvs0T2ZqRUjthr9yKkXHGInRrzc7JMtOPQOLnKbqefehFz
-	4Sx54GLaxq8UZ2jL/MwQt5sxGoFFbp83RABoKXZWJVriRpU3e9tm976z44yLresYYttR7EOAuDuR8
-	stDX5sMWBns9WNZCshgnwsnkJuiIXlKpEWKk0E/vC4ttwmdshQ7VAtiJIg89XJUWvtbdX8XvXJcVj
-	1h6CkaqZ9y5y7KxzRHxzNq/mZLfbKAQsjAWTMnwR9FH48u4bnhfVnnfUV03/Ursm/yWkPsW+8gipc
-	I2fhzdqzA+91skPgFrMA==;
+	List-Owner; bh=gQghVFojpMlYHM2LHSeyR7FPyqRfdhf0QF65oT9dLas=; b=RKnEIxm7rPrmMX
+	qZCddM0veV7gCLCrAzLxnjC+FkJcqnROat/lrU6/ubqW8t7HapjnNLNk8LCmvdVPZHNRTOzljoj0u
+	YqIl5ARs+KRG/t8M15iGzHFt0wjNBRMB4ETOsRrxLHIxIVLQb5fKfBFIDKuEBJPEg0N+J6Ycb0OXk
+	epPAfMrsgqqaQX73uCq9Q2qYilvm4sK65IfCkDpMp9a82LBt1Jbsno/As0/UJWK4yj4tMKWDjtyM5
+	atSVvZDJNZ2Aide8v7KHN0zrphG3OlQWlN4HdN+ugjkO22ZlS/Gl1bE2YyTqlQvSgdMmwgWtQPsfq
+	OfLr5RmqW0BDE6krNqJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVBc2-0008Fl-Pn; Mon, 27 May 2019 09:08:10 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hVBaC-0007aZ-S4; Mon, 27 May 2019 09:06:16 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVBbl-00087Y-OZ; Mon, 27 May 2019 09:07:56 +0000
-X-UUID: a9ed5120dfef4098ac5c44156b631241-20190527
-X-UUID: a9ed5120dfef4098ac5c44156b631241-20190527
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <erin.lo@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1451335824; Mon, 27 May 2019 01:05:33 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 27 May 2019 02:05:22 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 27 May 2019 17:05:20 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 27 May 2019 17:05:20 +0800
-From: Erin Lo <erin.lo@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v11 6/6] arm64: dts: mt8183: add efuse and Mediatek Chip id
- node to read
-Date: Mon, 27 May 2019 17:04:47 +0800
-Message-ID: <1558947887-31084-7-git-send-email-erin.lo@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1558947887-31084-1-git-send-email-erin.lo@mediatek.com>
-References: <1558947887-31084-1-git-send-email-erin.lo@mediatek.com>
+ id 1hVBa3-0007YY-TZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 09:06:11 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hVBZr-0004GD-6D; Mon, 27 May 2019 11:05:55 +0200
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <sha@pengutronix.de>)
+ id 1hVBZp-0001YR-Ic; Mon, 27 May 2019 11:05:53 +0200
+Date: Mon, 27 May 2019 11:05:53 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: yibin.gong@nxp.com
+Subject: Re: [PATCH v2 6/7] dmaengine: fsl-edma: add i.mx7ulp edma2 version
+ support
+Message-ID: <20190527090553.lek7tm3lyst3bhrd@pengutronix.de>
+References: <20190527085118.40423-1-yibin.gong@nxp.com>
+ <20190527085118.40423-7-yibin.gong@nxp.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: BC6772C244BE5BC8E09530FE258C73FF60A08144B109D9253A4ADFC41D8847CA2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20190527085118.40423-7-yibin.gong@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 11:01:40 up 9 days, 15:19, 72 users, load average: 0.51, 0.30, 0.17
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_020754_608966_F02F5A64 
-X-CRM114-Status: UNSURE (   8.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190527_020608_273459_C7868B0B 
+X-CRM114-Status: GOOD (  13.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,8 +64,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,65 +75,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream <srv_heupstream@mediatek.com>,
- erin.lo@mediatek.com, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-serial@vger.kernel.org,
- mars.cheng@mediatek.com, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Michael Mei <michael.mei@mediatek.com>
+Cc: mark.rutland@arm.com, robh@kernel.org, devicetree@vger.kernel.org,
+ festevam@gmail.com, linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Michael Mei <michael.mei@mediatek.com>
+On Mon, May 27, 2019 at 04:51:17PM +0800, yibin.gong@nxp.com wrote:
+> From: Robin Gong <yibin.gong@nxp.com>
+> 
+> +static const struct of_device_id fsl_edma_dt_ids[] = {
+> +	{ .compatible = "fsl,vf610-edma", .data = (void *)v1 },
+> +	{ .compatible = "fsl,imx7ulp-edma", .data = (void *)v3 },
+> +	{ /* sentinel */ }
 
-support for reading chip ID and efuse
+Please put a struct type behind the .data pointer so that you can
+configure...
 
-Signed-off-by: Michael Mei <michael.mei@mediatek.com>
-Signed-off-by: Erin Lo <erin.lo@mediatek.com>
----
-This patch is based on this patch:
-https://patchwork.kernel.org/patch/10953029/
----
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+> +};
+> +MODULE_DEVICE_TABLE(of, fsl_edma_dt_ids);
+> +
+> @@ -218,6 +272,22 @@ static int fsl_edma_probe(struct platform_device *pdev)
+>  	fsl_edma_setup_regs(fsl_edma);
+>  	regs = &fsl_edma->regs;
+>  
+> +	if (fsl_edma->version == v3) {
+> +		fsl_edma->dmamux_nr = 1;
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 2e3063f..c2749c4 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -156,6 +156,15 @@
- 		compatible = "simple-bus";
- 		ranges;
- 
-+		soc_data: soc_data@8000000 {
-+			compatible = "mediatek,mt8183-efuse",
-+				     "mediatek,efuse";
-+			reg = <0 0x08000000 0 0x0010>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			status = "disabled";
-+		};
-+
- 		gic: interrupt-controller@c000000 {
- 			compatible = "arm,gic-v3";
- 			#interrupt-cells = <4>;
-@@ -369,6 +378,12 @@
- 			#clock-cells = <1>;
- 		};
- 
-+		efuse: efuse@11f10000 {
-+			compatible = "mediatek,mt8183-efuse",
-+				     "mediatek,efuse";
-+			reg = <0 0x11f10000 0 0x1000>;
-+		};
-+
- 		mfgcfg: syscon@13000000 {
- 			compatible = "mediatek,mt8183-mfgcfg", "syscon";
- 			reg = <0 0x13000000 0 0x1000>;
+...things like this...
+
+> @@ -264,7 +334,11 @@ static int fsl_edma_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	edma_writel(fsl_edma, ~0, regs->intl);
+> -	ret = fsl_edma_irq_init(pdev, fsl_edma);
+> +
+> +	if (fsl_edma->version == v3)
+> +		ret = fsl_edma2_irq_init(pdev, fsl_edma);
+> +	else
+> +		ret = fsl_edma_irq_init(pdev, fsl_edma);
+
+...and this one in that struct rather than littering the code more and
+more with such version tests.
+
+Sascha
+
 -- 
-1.8.1.1.dirty
-
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
