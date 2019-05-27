@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 982B12B0FB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 11:08:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A1D12B0F8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 11:07:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3MzbnrZ6FUIMG8oy/NjqJ1xNKHQYff7btkNWmc890H8=; b=JlwBwwGqmwAjrp
-	qk5npXIV0I0B60XrqpJ0ICYvn1FxZ8FvJv11KJaNoNX5hAoIv6ZtQKQLGMcH33XGsN/TL0Mc+cns9
-	hYirpzjsYl+QpHmMyMxQ1wDvgpkQjeWNqC6WexqHEiWyiQlQoXZFu6J1NIjLESMY1quWnvhV7rGL2
-	83+WvMDwjmgxlsY0zlrizp0qbLAmI37g0CDYATBC9j3/jpPfEEwlRSSNMCK+3mTLH4UQuRFXwLpdH
-	Ovhe4U/HbecBNdIkcOIJg02REIPXiOJ4+bt/PjyEoUmML1VVhZa8u0JAgA7saDp06GjsM77grSS2h
-	FlOMHNxyanoJY1653Hbw==;
+	List-Owner; bh=0xOQsNHl30CcUml9FeHcb+RueOWfuS2JJWM2Tj12co4=; b=qr3D3cmhgqEaZQ
+	TCc+d5+s99NaBCbFo96j/8x4BGeapywIT+kHr2mZvGZ/3xotgS2UtKtCg2ZbNYJYKitPRgl6chG6k
+	KwjICGhDVeTlKtc2iRakzjwUkZ/YTh0Gflm073+7yKgParxc48PaiIgOwBt+hFnUUa+P1PlxWgYKC
+	A0JWpbcfFs3st2kJ94ewOcTZsavjH6+ueieDuGQjNlVOmujVI6w2Ns5q2KhWuV1N1xLJ+3SgPNj6R
+	2SZOmwgqz6UfzG1I9l6OKBo9tuPYdOAUM4B+vmaE1ipPmyAKurxMTOMEGYEel6JBh9C8nhBeUmtE8
+	XEwxmy27xwzCK3emAnVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVBbu-00088s-9g; Mon, 27 May 2019 09:08:02 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hVBbC-0007pv-SG; Mon, 27 May 2019 09:07:18 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVBbm-00087l-NT; Mon, 27 May 2019 09:07:56 +0000
-X-UUID: a8466893b77344538219f7535ce8a35f-20190527
-X-UUID: a8466893b77344538219f7535ce8a35f-20190527
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1hVBb4-0007pS-Cy; Mon, 27 May 2019 09:07:11 +0000
+X-UUID: 18607ee3cc5d4b7faa376414a9eb152d-20190527
+X-UUID: 18607ee3cc5d4b7faa376414a9eb152d-20190527
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <erin.lo@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 746840474; Mon, 27 May 2019 01:05:35 -0800
-Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
+ with ESMTP id 1430786797; Mon, 27 May 2019 01:05:19 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 27 May 2019 02:05:33 -0700
+ 15.0.1395.4; Mon, 27 May 2019 02:05:18 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 27 May 2019 17:05:13 +0800
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 27 May 2019 17:05:16 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 27 May 2019 17:05:13 +0800
+ Frontend Transport; Mon, 27 May 2019 17:05:16 +0800
 From: Erin Lo <erin.lo@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring
  <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v11 3/6] arm64: dts: mt8183: add pinctrl device node
-Date: Mon, 27 May 2019 17:04:44 +0800
-Message-ID: <1558947887-31084-4-git-send-email-erin.lo@mediatek.com>
+Subject: [PATCH v11 4/6] arm64: dts: mt8183: Add auxadc device node
+Date: Mon, 27 May 2019 17:04:45 +0800
+Message-ID: <1558947887-31084-5-git-send-email-erin.lo@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1558947887-31084-1-git-send-email-erin.lo@mediatek.com>
 References: <1558947887-31084-1-git-send-email-erin.lo@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 593806662260989B755519F8DD18FF0AFE68C3D77410E5BF232021706BEF43ED2000:8
+X-TM-SNTS-SMTP: 86344F063E3902451D494428EC4852C3D770CB4FF77B6F9EFE88C0BD1F55C02B2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_020754_764638_9149E3A3 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20190527_020710_445856_DE1FC3BE 
+X-CRM114-Status: UNSURE (   9.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,57 +85,53 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Zhiyong Tao <zhiyong.tao@mediatek.com>
 
-The commit adds pinctrl device node for mt8183
+Add auxadc device node for MT8183
 
 Signed-off-by: Zhiyong Tao <zhiyong.tao@mediatek.com>
 Signed-off-by: Erin Lo <erin.lo@mediatek.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+This patch is based on patch "https://patchwork.kernel.org/patch/10913941/".
+---
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts |  4 ++++
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi    | 10 ++++++++++
+ 2 files changed, 14 insertions(+)
 
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
+index 9b52559..49909ac 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
+@@ -26,6 +26,10 @@
+ 	};
+ };
+ 
++&auxadc {
++	status = "okay";
++};
++
+ &uart0 {
+ 	status = "okay";
+ };
 diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 5b34ec6..e74ea21 100644
+index e74ea21..5672c18 100644
 --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
 +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/clock/mt8183-clk.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/interrupt-controller/irq.h>
-+#include "mt8183-pinfunc.h"
- 
- / {
- 	compatible = "mediatek,mt8183";
-@@ -204,6 +205,30 @@
- 			#clock-cells = <1>;
+@@ -245,6 +245,16 @@
+ 			clock-names = "spi", "wrap";
  		};
  
-+		pio: pinctrl@10005000 {
-+			compatible = "mediatek,mt8183-pinctrl";
-+			reg = <0 0x10005000 0 0x1000>,
-+			      <0 0x11f20000 0 0x1000>,
-+			      <0 0x11e80000 0 0x1000>,
-+			      <0 0x11e70000 0 0x1000>,
-+			      <0 0x11e90000 0 0x1000>,
-+			      <0 0x11d30000 0 0x1000>,
-+			      <0 0x11d20000 0 0x1000>,
-+			      <0 0x11c50000 0 0x1000>,
-+			      <0 0x11f30000 0 0x1000>,
-+			      <0 0x1000b000 0 0x1000>;
-+			reg-names = "iocfg0", "iocfg1", "iocfg2",
-+				    "iocfg3", "iocfg4", "iocfg5",
-+				    "iocfg6", "iocfg7", "iocfg8",
-+				    "eint";
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			gpio-ranges = <&pio 0 0 192>;
-+			interrupt-controller;
-+			interrupts = <GIC_SPI 177 IRQ_TYPE_LEVEL_HIGH>;
-+			#interrupt-cells = <2>;
++		auxadc: auxadc@11001000 {
++			compatible = "mediatek,mt8183-auxadc",
++				     "mediatek,mt8173-auxadc";
++			reg = <0 0x11001000 0 0x1000>;
++			clocks = <&infracfg CLK_INFRA_AUXADC>;
++			clock-names = "main";
++			#io-channel-cells = <1>;
++			status = "disabled";
 +		};
 +
- 		apmixedsys: syscon@1000c000 {
- 			compatible = "mediatek,mt8183-apmixedsys", "syscon";
- 			reg = <0 0x1000c000 0 0x1000>;
+ 		uart0: serial@11002000 {
+ 			compatible = "mediatek,mt8183-uart",
+ 				     "mediatek,mt6577-uart";
 -- 
 1.8.1.1.dirty
 
