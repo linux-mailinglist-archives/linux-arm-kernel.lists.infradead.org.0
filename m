@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 783582B9E2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 20:08:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFC252B9ED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 20:12:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jq4lpMKBzFl8Z0uZyzPZ189Lscc78Kkic/nK7LqKuQY=; b=GwrEVtjhKYhjE6
-	2Pe0TXSIvPbsSgpq3zKRWh7tR1dFtdOD03gwy/NDM4y+NGV7vOQ6DDu+AqCZ/zFbZp77VD0GDuMfK
-	HNeDCstw3lYMvo+mNJTosKJRe4OA9VvowAzdlhdXrzTSvbYJLZrQxvVljYtGPglpUIWrBGoG6eeYt
-	rKDseiLxoX1cjuPr2pMYtsrTB70IHFHA4UrKW/9973FeN8FeoDGNhoCFW9vb6dhLp4c/btRVjoIsX
-	izDM/Ts4Ktzf4XpaSlCtEc1ezkWO4wO3ckjW0t3NQB/6CWAceZsRKyKsqqTZv2t6+eBWMWwFklLPZ
-	BdBXL30iSoUdC0PjgsNA==;
+	List-Owner; bh=Tmmrt2nTxSM7wbvBS23fgzrykshO08zTprPEZjlztNQ=; b=qsNFdEpJBw9W4Z
+	CUswfaSv8slaKR49TJBkQ+bMved0nrWMrHrjIJmYkDHepTnTdCztBVs3INHLhutkMmgvxRxwrz8oa
+	TPzfjnujPLxeA2bNwY9offs1IWmtR9UIWSJxHsGLiEhHtG7rdb+++e6HAFNSvW/f1MISq52SDfC6Y
+	tyW72Xlfzcn1OvaKlduonJuT+ITIIoMe5eLSkVLYfvTmOBa/u4ZKPgfcEXwysr2iCiZkYOh1W+Oi/
+	nJ4YQbQ6VWDQ8Tt3tBqkt9ID5SfpdiE/lIoglLvTrrSSuu9/5kvPguRG+TFCz7IlxRj631cHLuoT8
+	zZW7tqPukF3Fo/myB6SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVK2x-0005ya-G7; Mon, 27 May 2019 18:08:31 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hVK7B-0008Lx-N9; Mon, 27 May 2019 18:12:53 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVK2W-0005WA-5E; Mon, 27 May 2019 18:08:06 +0000
-Received: by mail-ot1-x342.google.com with SMTP id l25so15476114otp.8;
- Mon, 27 May 2019 11:08:04 -0700 (PDT)
+ id 1hVK73-0008Kf-30; Mon, 27 May 2019 18:12:46 +0000
+Received: by mail-oi1-x242.google.com with SMTP id v2so12442215oie.6;
+ Mon, 27 May 2019 11:12:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5Z8u+Mb6Dq9130guFLmfDlxiV/OSJhxaQytulTManxM=;
- b=Md1/iNe3wpFg7pJRiiTPYACJft0AqPYLSVHS86cINONlNtBMoS6cwZSCdTtBdoIdm3
- 565psYs4LGlFtaqtO4X10qXVS+90VoiFiw49WiVbulPp1zyKccOaMC//TjCYszO7YshT
- J8RmIhICklmIIASLuxIvS0m4qoT7WuLRhr7q0jKK/FIO3vRGmiMMNGz9iizEuPlmN7eg
- LnJ7T3YvtS/R7phhUfIOWg1TgkLpecleLlJYMiPQYj63M/cdb1DX7ukZJG1PGDTaZe90
- bXncpZ0Cq3feoQ6jOB7cghvn2/6dEhWqb8hCCMLRNm92CdyXdEew7H5rcIO9HxJBX9Vp
- qyTQ==
+ :cc; bh=fdEdzKwrwwR+hZrRuekbTm4BMx8O7NzP4YL8a4f6Xyw=;
+ b=TCX5m6h3kSNswGNfH9xVf7MNEte1kWLAUZV2H9MaftkLrqoChQpWF9viqrvYi6oyn6
+ tMkNsoSpUVfYD/CCZosnrlppsI84qiMpucB5XKAzOQplFzM2KPYLEDMwfKyXFaG5RbO1
+ LjeZRTQ8cjEpmhm1Sy8uCqpD+io3/Cm0qwA84eSxw6osWF7EkPE/L2BoZPLI2SGA7aO3
+ NDcaBI3XhU0VFHOXVHwWcRXnr6l1uoOT6AIbk/0g1XMUq30s8F24O3na6AC+dtrGROBE
+ vqmZzoO6VI9MfrcgmrmHYS6/pPyFeezktzDMd7Bt7FZa2WF/szO/NCiryKq/lKy0KOeV
+ ErkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=5Z8u+Mb6Dq9130guFLmfDlxiV/OSJhxaQytulTManxM=;
- b=nWXUujcE7WFUM+56BbEFy2q21a4Pj6TlmiynvK+zb3GVpR4bL6T6yLABafo3Ddb6mT
- tJH/qDVZD6BOF/kSwyNmsns8aRf8wFUoaD6C2WjmFaSiDWOIKrhpvGWGAU72vJsYgcWo
- AMxnqTzrOnOHDngZa4OqXGGoAQJRnYw2Y62wQLy0dntVOME/L+8x6SqoJ82OMKLUV33Z
- SzvZu3B2rHAJobf7BRycxDR2KW6XJcOsjzzIhjnzZNKsnc/A72YIp//4FbFUqPmNpCcz
- 5cLDHwwC92TyKmttt2yQeR55Ise/GBAEuMsu2hgeLyOdw1n1HEr5A+N8U1DKNQazdvQA
- wgng==
-X-Gm-Message-State: APjAAAVPqddWHEkFe8IFTkyUoozymqM/HfnGf3/i2QdOlJV8Sjrpgfqk
- 2sYt7zH5/90u0G88wkzTMDVinWNmHO9hSclutDQ=
-X-Google-Smtp-Source: APXvYqw1KCJR0ykK+JZRq5RQEXEcYYqCwA42UGA6D3HXVktBN7+YLknn2jRyumOKZM/ijc37rS9VkNSx4uS8BgfiZng=
-X-Received: by 2002:a9d:744d:: with SMTP id p13mr50955091otk.96.1558980483396; 
- Mon, 27 May 2019 11:08:03 -0700 (PDT)
+ bh=fdEdzKwrwwR+hZrRuekbTm4BMx8O7NzP4YL8a4f6Xyw=;
+ b=nUgkmH/h/NNWy7WnV6zZDA8lH/8BY/zJdDXQsqh+GGXilpQ5/EXvUxgrmlKFsLqrBU
+ aTF8z+el9mNnHxW1a9zHP/oXQPMCErZNUrGtKmhw/Lq0vFxe3eKZYyi388mklav027Te
+ e+0oiM2eABNoVBDPKeWgcpxkpJ/l67Z/Acnkj+xV+NJC6v6WQYPbRWYaafK9RsI4RxzC
+ NY910x6hJDLJYsDSVIBqwoU2tjEP/m/h295Z1UP1FyaWkivKRkG8rnearrYB5U8pMunb
+ 7wPZxULfXhvocN5ZcxiKTIWYjJWsNprzSSOu5uqkqEm5lPJ66wJvv51dVwKkFL6sW2Zs
+ KR9w==
+X-Gm-Message-State: APjAAAWD2gu43BUyHajR0VTsxK5LskPOitfUluszOWsOVcqm70MvRyym
+ 7rzJgJSpBTJ0R6LYqsjy1IuPOjSAdGyTagRLICU=
+X-Google-Smtp-Source: APXvYqwmz7MYBR3RPfckjQ+bn80jPUguVMJFtd+LUXLXHyBI+ktAg+X8jo5YLRokDHP1QncBkXrVu3K0ewCBCk+mFp0=
+X-Received: by 2002:aca:4341:: with SMTP id q62mr175063oia.140.1558980764213; 
+ Mon, 27 May 2019 11:12:44 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190527133857.30108-1-narmstrong@baylibre.com>
- <20190527133857.30108-11-narmstrong@baylibre.com>
-In-Reply-To: <20190527133857.30108-11-narmstrong@baylibre.com>
+References: <20190527140206.30392-1-narmstrong@baylibre.com>
+ <20190527140206.30392-4-narmstrong@baylibre.com>
+In-Reply-To: <20190527140206.30392-4-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 27 May 2019 20:07:52 +0200
-Message-ID: <CAFBinCD-rkB9_LDHAUL3oSD2iSmKHYctUY3_ZYdFNgfh3X4_NA@mail.gmail.com>
-Subject: Re: [PATCH v2 10/10] ARM: mach-meson: update with SPDX Licence
- identifier
+Date: Mon, 27 May 2019 20:12:33 +0200
+Message-ID: <CAFBinCC+QrMhEErnt28ACe7x_VM65_envvOw7kFWAir53B=_nQ@mail.gmail.com>
+Subject: Re: [PATCH v4 3/3] arm64: dts: meson: Add minimal support for
+ Odroid-N2
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_110804_382885_042CDE6E 
-X-CRM114-Status: UNSURE (   6.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190527_111245_152162_819E4A5E 
+X-CRM114-Status: GOOD (  12.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,10 +100,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 3:41 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Mon, May 27, 2019 at 4:03 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> This patch adds basic support for :
+> - Amlogic G12B, which is very similar to G12A
+> - The HardKernel Odroid-N2 based on the S922X SoC
+>
+> The Amlogic G12B SoC is very similar with the G12A SoC, sharing
+> most of the features and architecture, but with these differences :
+> - The first CPU cluster only has 2xCortex-A53 instead of 4
+> - G12B has a second cluster of 4xCortex-A73
+> - Both cluster can achieve 2GHz instead of 1,8GHz for G12A
+> - CPU Clock architecture is difference, thus needing a different
+>   compatible to handle this slight difference
+> - Supports a MIPI CSI input
+> - Embeds a Mali-G52 instead of a Mali-G31, but integration is the same
+>
+> Actual support is done in the same way as for the GXM support, including
+> the G12A dtsi and redefining the CPU clusters.
+> Unlike GXM, the first cluster is different, thus needing to remove
+> the last 2 cpu nodes of the first cluster.
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
