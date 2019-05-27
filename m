@@ -2,85 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3BF52B496
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:14:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33B092B4CD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:17:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I0ruloNq4RUqfYT+TleXYN24AvMAM91EyPWCwTp1wFc=; b=gSDCJYA9roUMZ1
-	7WDUHbHRQAgg7VkcAeXE3vPnN4MDA8aS3fz9znsio67kd+hM6/+m1ESg/wTQvtZz+lS7CATtvS12F
-	yARAbFQICgMd7k950D3M/CkPkhQsgl50Qp8/k2MpG+bJvQDaBh9KzFXShEFgXSj97EiAg1Ug3xuSV
-	UeK+wdEtK/6UkFJ8g+JNb80vLraeGcpu+e5VBo5NrzjLcQ4Xo0cGhzCroNCGkCrO30mOKGeslppkt
-	fdXvlkoH5XNNAIYdmhTzPxwUOD8TxFUpqepG/Br3LeHFwE5FP2LAlJ/waCywBszudJAwlEusrMkP4
-	I67LkFrvK+hxNNdcweRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IDGfvdb4Gh1boAApT7ZLukLZCyJUugGckXj106AzWGM=; b=j+qrudXB8hrRLf39tghcZUtIJ
+	cQ1NVAxtNKRCgMXQIlyKH4k5+MQgZ/X2Riw1Xd9BzLOvS5MHO1TVTX2VNpHVYkeSoC/Hw1fLDwvqT
+	rdqlCWgDYhVFT36B99Unsv4+VU6SWtnmIanctJFSW4xToNF+9bN1SnVDx/EkBV65sepwT3i6kfwjM
+	L50NXKOlvC/lWlETJOg2Chbuhq4kfKISCdA7GR3ze1N1zoCeWS1jt1a45jEk/BRfnyFyLFtXG40m0
+	lOt4X+Y7ztVyb+LgDXYL5WEbKy0F5QgMLYhBvW4YrBYv/2/uE3sduXs76U4SMLJHYb6LvtkI1PHJU
+	pXLR+C/3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVEWZ-0002Se-F1; Mon, 27 May 2019 12:14:43 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hVEZe-0007FB-9I; Mon, 27 May 2019 12:17:54 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEW3-0001s5-4L
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:14:13 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l17so8315617wrm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 05:14:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=PE2qyWliumUSN347T63t3e5/xkurT9iBkthy1WXizA0=;
- b=dhTS4Lyo6SbCjSE0fCEMltNu8hrg3FYreV6ihgKD/j5WlQmZ59l/hIEGDAS2WqhZmZ
- MD+K9RIb5EUi9NdZnsBB3RTdFvv4BgR1o/M2VaiYcGnxPZEcgJcTCF9IUrDkLGxtLojN
- uiryJJNMocYQifyuTO8UEQZjULzzqORfdm8GxBBLX7uhR4stQ1mR+LqM8oiICIgkfz5s
- cHXU/cRd1XfmnM3TKS1ytiOTb3u+HjbphRNTHLKIwz0oiJAdPz9ZIz0+D+G22dSc/JaX
- ZNcY9gexJzXKUMB5eD81sX/W4TlJUe0+ePBN5RUe05uuQ6F7tQd7qvgiphGssOwjBpjg
- oN0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=PE2qyWliumUSN347T63t3e5/xkurT9iBkthy1WXizA0=;
- b=pK/vp9pca3iYLBHQ7mWvw/f6K0+e+UlO1zwQl+TcLbNx/Y4HWf9minTyrizOxzttGn
- O8MAl9V4k6pmR8ArGhIULRfQnUy8dYQvILHYV0pCxRyFA8DCMzUgzv2YozwZye55MsAG
- WsN9d4thtRPvjXmAk0274y6SyRa5TpFcFtsPeEUVKsBNAnVW5Fj9e7kscTeJOFDMAg2c
- 7KPYyyCmipCT3dlrVyGgYunDmifCfCXF91zhOng5tA+RBumdYzL4FmOh8Loi7R8qPM5F
- 9IwRMz8065dIj52Lptl+rWZeS946OfBnaSP/sMetAsCQVNrzhJkXHr0ofQybJkVliDXS
- nYXQ==
-X-Gm-Message-State: APjAAAWTPwkmMEYq8gONUyLATX/R+zyba42IA0GaDR1/OsJrpbNxnW+1
- nqVixJqewg4AOJ+IFD7GHsXGmQ==
-X-Google-Smtp-Source: APXvYqxFIeIFAETZTduZaUtWDN1ZmmLNb6kXNXnGerFOHnX/KETZawLZ46jctX7F/liDIJ5DEWDDew==
-X-Received: by 2002:adf:ee0c:: with SMTP id y12mr50236022wrn.34.1558959249250; 
- Mon, 27 May 2019 05:14:09 -0700 (PDT)
-Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id t7sm10699918wrq.76.2019.05.27.05.14.08
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 05:14:08 -0700 (PDT)
-From: Loys Ollivier <lollivier@baylibre.com>
-To: Atish Patra <atish.patra@wdc.com>, linux-kernel@vger.kernel.org
-Subject: Re: [v4 PATCH] RISC-V: Add an Image header that boot loader can parse.
-In-Reply-To: <20190524041814.7497-1-atish.patra@wdc.com>
-References: <20190524041814.7497-1-atish.patra@wdc.com>
-Date: Mon, 27 May 2019 14:14:03 +0200
-Message-ID: <86zhn8p01g.fsf@baylibre.com>
+ id 1hVEYK-0005mT-3K
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:16:33 +0000
+Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
+ [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 17976240018;
+ Mon, 27 May 2019 12:16:24 +0000 (UTC)
+Date: Mon, 27 May 2019 14:16:24 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH v3 2/3] dt-bindings: thermal: add binding document for h6
+ thermal controller
+Message-ID: <20190527121624.5qwrrzc4whrddbbe@flea>
+References: <20190525181329.18657-1-tiny.windzz@gmail.com>
+ <20190525181329.18657-3-tiny.windzz@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <20190525181329.18657-3-tiny.windzz@gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_051411_224999_F787B602 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190527_051632_437866_4245E2E8 
+X-CRM114-Status: GOOD (  16.82  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,54 +61,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Jonathan Corbet <corbet@lwn.net>,
- Albert Ou <aou@eecs.berkeley.edu>, linux-doc@vger.kernel.org,
- catalin.marinas@arm.com, ard.biesheuvel@linaro.org,
- Zong Li <zong@andestech.com>, Atish Patra <atish.patra@wdc.com>,
- Anup Patel <Anup.Patel@wdc.com>, Palmer Dabbelt <palmer@sifive.com>,
- "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
- Nick Kossifidis <mick@ics.forth.gr>, linux-riscv@lists.infradead.org,
- "marek.vasut@gmail.com" <marek.vasut@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Karsten Merker <merker@debian.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ gregkh@linuxfoundation.org, linus.walleij@linaro.org,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ wens@csie.org, robh+dt@kernel.org, mchehab+samsung@kernel.org,
+ rui.zhang@intel.com, paulmck@linux.ibm.com, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5917613933172409772=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 23 May 2019 at 21:18, Atish Patra <atish.patra@wdc.com> wrote:
 
-> Currently, the last stage boot loaders such as U-Boot can accept only
-> uImage which is an unnecessary additional step in automating boot
-> process.
->
-> Add an image header that boot loader understands and boot Linux from
-> flat Image directly.
->
-> This header is based on ARM64 boot image header and provides an
-> opportunity to combine both ARM64 & RISC-V image headers in future.
->
-> Also make sure that PE/COFF header can co-exist in the same image so
-> that EFI stub can be supported for RISC-V in future. EFI specification
-> needs PE/COFF image header in the beginning of the kernel image in order
-> to load it as an EFI application. In order to support EFI stub, code0
-> should be replaced with "MZ" magic string and res4(at offset 0x3c)
-> should point to the rest of the PE/COFF header (which will be added
-> during EFI support).
->
-> Tested on both QEMU and HiFive Unleashed using OpenSBI + U-Boot + Linux.
+--===============5917613933172409772==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="5l3rwiguuszwblyx"
+Content-Disposition: inline
 
-Thanks Atish, happy to have this support that makes the boot process
-more straightforward.
-Tested on HiFive Unleashed using OpenSBI + U-Boot v2019.07-rc2 + Linux.
 
+--5l3rwiguuszwblyx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+Thanks for working on this!
+
+On Sat, May 25, 2019 at 02:13:28PM -0400, Yangtao Li wrote:
+> This patch adds binding document for allwinner h6 thermal controller.
 >
-> Signed-off-by: Atish Patra <atish.patra@wdc.com>
-> Reviewed-by: Karsten Merker <merker@debian.org>
-> Tested-by: Karsten Merker <merker@debian.org> (QEMU+OpenSBI+U-Boot)
-Tested-by: Loys Ollivier <lollivier@baylibre.com>
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+>  .../bindings/thermal/sun8i-thermal.yaml       | 71 +++++++++++++++++++
+>
+>  1 file changed, 71 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+> new file mode 100644
+> index 000000000000..54cf1277870e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+> @@ -0,0 +1,71 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/thermal/sun8i-thermal.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner SUN8I Thermal Controller Device Tree Bindings
+> +
+> +maintainers:
+> +  - Yangtao Li <tiny.windzz@gmail.com>
+> +
+> +description: |-
+> +  This describes the device tree binding for the Allwinner thermal
+> +  controller which measures the on-SoC temperatures.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - allwinner,sun50i-h6-ths
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: ths bus clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: bus
+
+You don't need the items here, you can just do:
+
+clocks:
+  maxItems: 1
+  description:
+    Bus clock
+
+clock-names:
+  const: bus
+
+> +  "#thermal-sensor-cells":
+> +    enum: [ 0, 1 ]
+
+You should document when you would need one or the other.
+
+My guess is that you did it that way to deal with the A33? If so, we
+can just request the cell size to be 1 for now, and then expand it to
+an enum later on when we'll support the A33.
+
+> +  nvmem-cells:
+> +    items:
+> +      - description: ths calibrate data
+> +
+> +  nvmem-cell-names:
+> +    items:
+> +      - const: calib
+
+Same remark than for the clocks
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - reset
+> +  - clocks
+> +  - clock-names
+
+I guess you'd need #thermal-sensor-cells too?
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--5l3rwiguuszwblyx
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOvVGAAKCRDj7w1vZxhR
+xYJvAQDS6LCy+f//B51XcJuEuSglOnKVFXxiNHV/4yLfVTR9lQD+Ory2sL/zzJ11
+NK/Cfa5T1w6p+sdl9MDDkpaVkRt9GQ8=
+=mlQq
+-----END PGP SIGNATURE-----
+
+--5l3rwiguuszwblyx--
+
+
+--===============5917613933172409772==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5917613933172409772==--
+
