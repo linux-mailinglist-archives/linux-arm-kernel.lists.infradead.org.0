@@ -2,59 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84A3E2AF54
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 09:20:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F1A92AF65
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 09:31:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IiFvJ12vO46vXBmhkPESUEmspSx1rHdpIsn2pmXeDjM=; b=bKk7+oLBL1QfY4
-	0awHO4Xz5hudBGGj/xWnN8tadn0QKWJ6gLv2gcc9KS2bYOSyJ4BPWPjz+RzyffAOdrVbgIjQKdvHc
-	GFAI03Bwwm0+H7QUoPUa2OQnQ/WEQvt+2M4Ilbki2TqWtGqDPu63wVePdnn+TM0d+mNaYZu0iT+tg
-	6ek2nCneJqxTBZiuK4WCtDkpdyMGjVWzeqvDjO410n8mBlSCkdMEgHv7enRz4fdQJYDqx7SrmTICI
-	kd3w4hNGrYTU0C0Uc2JfZsEYRL7Wmlr/xCN0nlGlZul+9wGcjSwnP1xd9VMYNZZusumdw8ZQnbhK5
-	vnPCAUl6agOp6RkfTjvw==;
+	List-Owner; bh=tKTedTbo6mEhU7k/SUOym00xFs507RZggaD6TlLqvTo=; b=JK4BgeiAtpcycV
+	JGOdfnUJabjX35qCz6DNXNLjXjfKJKjWQ/izRsaMNXr9v9b54p8O/PpDCijOKB76tAYGvT9wNChRB
+	C2ZRDzED6YrAFLqG1LhWjmMMO4qjuZ00cq8mrRBZqMiGqgm4jEmmSztCBVTXkP8Pu5iywCAunyYTE
+	itZ40LQawGmWZjHZ5X7gZfESe72kkciaBZLQ8647pOKVeMwFxTd/mn7oEa3xuiSgClxmo3rNjkeke
+	26W4rHvhwnLyFxuNOeZV628yLwa78vvu0UEbuUCpjAIQ1oDxTYS0XXQZVq/lGY+iraPg72KPB570X
+	USUt+MngC5mJNQpkd2EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV9vZ-0004SG-Bn; Mon, 27 May 2019 07:20:13 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hVA6E-000864-IS; Mon, 27 May 2019 07:31:14 +0000
+Received: from mail-eopbgr30077.outbound.protection.outlook.com ([40.107.3.77]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV9vR-0003Yk-7m
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 07:20:07 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 8AE6EAEEA;
- Mon, 27 May 2019 07:20:02 +0000 (UTC)
-Date: Mon, 27 May 2019 09:20:01 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
- for kernel page table dump
-Message-ID: <20190527072001.GB1658@dhcp22.suse.cz>
-References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
- <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
- <20190515165847.GH16651@dhcp22.suse.cz>
- <20190516102354.GB40960@lakrids.cambridge.arm.com>
- <20190516110529.GQ16651@dhcp22.suse.cz>
- <20190522164212.GD23592@lakrids.cambridge.arm.com>
+ id 1hVA67-00085Y-DB
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 07:31:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=79ZjyipAqebJuZXJXJz7EtcewtV9LhALiwRnr28aT5U=;
+ b=KOFBijN4t3ebtlVA0HuyOLXWruv5+ska5nzSTGyEsm5RpCekX6r7LRqQsh8Hk5J0ygDpks0Wvr+Xzk5WppTpXvsiDGyjf5AcoQXzRH1Xlq2IbDqLZeTKz6tJd5iN6pFMbgq1KuMA5ZHqF8KQuRWcwlNaXdMo/FN46p78w0ErAd8=
+Received: from VI1PR04MB4543.eurprd04.prod.outlook.com (20.177.55.90) by
+ VI1PR04MB3246.eurprd04.prod.outlook.com (10.170.229.33) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.19; Mon, 27 May 2019 07:31:01 +0000
+Received: from VI1PR04MB4543.eurprd04.prod.outlook.com
+ ([fe80::5062:df97:a70b:93f8]) by VI1PR04MB4543.eurprd04.prod.outlook.com
+ ([fe80::5062:df97:a70b:93f8%7]) with mapi id 15.20.1922.021; Mon, 27 May 2019
+ 07:31:01 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: "vkoul@kernel.org" <vkoul@kernel.org>
+Subject: Re: [PATCH v1 4/6] dmaengine: fsl-edma: add i.mx7ulp edma2 version
+ support
+Thread-Topic: [PATCH v1 4/6] dmaengine: fsl-edma: add i.mx7ulp edma2 version
+ support
+Thread-Index: AQHVBxkiWq7ELKRpKk+QnDmvsVTzcqZ+nkiAgACW+IA=
+Date: Mon, 27 May 2019 07:31:01 +0000
+Message-ID: <1558971291.19282.3.camel@nxp.com>
+References: <1557512248-8440-1-git-send-email-yibin.gong@nxp.com>
+ <1557512248-8440-5-git-send-email-yibin.gong@nxp.com>
+ <20190527063431.GC15118@vkoul-mobl>
+In-Reply-To: <20190527063431.GC15118@vkoul-mobl>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.18.5.2-0ubuntu3.2 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 09b42a95-d862-45b3-3036-08d6e27544e9
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB3246; 
+x-ms-traffictypediagnostic: VI1PR04MB3246:
+x-microsoft-antispam-prvs: <VI1PR04MB324607F1CDA7C6106DD4B93F891D0@VI1PR04MB3246.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0050CEFE70
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(979002)(376002)(136003)(39860400002)(366004)(346002)(396003)(199004)(189003)(6246003)(2906002)(229853002)(5640700003)(81166006)(91956017)(8676002)(7416002)(81156014)(1730700003)(66066001)(53936002)(6116002)(3846002)(36756003)(486006)(14444005)(256004)(4326008)(25786009)(6436002)(6916009)(478600001)(6486002)(6512007)(14454004)(2616005)(476003)(11346002)(64756008)(186003)(54906003)(446003)(26005)(99286004)(68736007)(71190400001)(53546011)(71200400001)(6506007)(102836004)(86362001)(76176011)(305945005)(7736002)(76116006)(2351001)(4744005)(66556008)(103116003)(316002)(66446008)(66946007)(73956011)(66476007)(8936002)(2501003)(50226002)(5660300002)(99106002)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3246;
+ H:VI1PR04MB4543.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: sV2iTP617LRhCsZGbR4LQIRUFeEQ+78B+bWWXATWplo5BjX/5Pyj8ds0InC5msq0IKEHwDx7+jeyXUA/CAK211HzYvX0lmacIKcZ3SgKfkJYcRTr/F+wVRsMpdE9y7/AZv9W7IXP5EnK+wGWCcTqA3D8ct4x9PaesKr4iYdyW8kakrM1dNCFl3fGG+SA9I6zPvZ6/1bqkmPSXnVQzeZHCn6T+X/JMOfCs/jYGMVhtuitqucv62nB3Nixbwh2/pYFsnFdEMUOJRO3j7pU3iQpXGSkFDphOZX3BlS+wiuJPk/tv/4tCjWf4e9QKY44ha5Ln6Hpj75RreoiQY0WvGm6OqiLgPsSK7FMBq2gvgCBpOZz5Fpk6XAh2J5q1Mvwl0b8kgvuaHEF16fJcXbjkDczxu7NKbC4oMmxGkXgYd/uRV4=
+Content-ID: <25F6E151E044984DB1AEB174A2075C0B@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190522164212.GD23592@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 09b42a95-d862-45b3-3036-08d6e27544e9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2019 07:31:01.3618 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: yibin.gong@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3246
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_002005_591160_D7294A0A 
-X-CRM114-Status: GOOD (  34.94  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190527_003107_468543_2CBE40EA 
+X-CRM114-Status: GOOD (  12.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.3.77 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,115 +116,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: cai@lca.pw, ira.weiny@intel.com,
- Anshuman Khandual <anshuman.khandual@arm.com>, catalin.marinas@arm.com,
- david@redhat.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- logang@deltatee.com, james.morse@arm.com, cpandya@codeaurora.org,
- arunks@codeaurora.org, akpm@linux-foundation.org, osalvador@suse.de,
- mgorman@techsingularity.net, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "robh@kernel.org" <robh@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 22-05-19 17:42:13, Mark Rutland wrote:
-> On Thu, May 16, 2019 at 01:05:29PM +0200, Michal Hocko wrote:
-> > On Thu 16-05-19 11:23:54, Mark Rutland wrote:
-> > > Hi Michal,
-> > > 
-> > > On Wed, May 15, 2019 at 06:58:47PM +0200, Michal Hocko wrote:
-> > > > On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
-> > > > > The arm64 pagetable dump code can race with concurrent modification of the
-> > > > > kernel page tables. When a leaf entries are modified concurrently, the dump
-> > > > > code may log stale or inconsistent information for a VA range, but this is
-> > > > > otherwise not harmful.
-> > > > > 
-> > > > > When intermediate levels of table are freed, the dump code will continue to
-> > > > > use memory which has been freed and potentially reallocated for another
-> > > > > purpose. In such cases, the dump code may dereference bogus addressses,
-> > > > > leading to a number of potential problems.
-> > > > > 
-> > > > > Intermediate levels of table may by freed during memory hot-remove, or when
-> > > > > installing a huge mapping in the vmalloc region. To avoid racing with these
-> > > > > cases, take the memory hotplug lock when walking the kernel page table.
-> > > > 
-> > > > Why is this a problem only on arm64 
-> > > 
-> > > It looks like it's not -- I think we're just the first to realise this.
-> > > 
-> > > AFAICT x86's debugfs ptdump has the same issue if run conccurently with
-> > > memory hot remove. If 32-bit arm supported hot-remove, its ptdump code
-> > > would have the same issue.
-> > > 
-> > > > and why do we even care for debugfs? Does anybody rely on this thing
-> > > > to be reliable? Do we even need it? Who is using the file?
-> > > 
-> > > The debugfs part is used intermittently by a few people working on the
-> > > arm64 kernel page tables. We use that both to sanity-check that kernel
-> > > page tables are created/updated correctly after changes to the arm64 mmu
-> > > code, and also to debug issues if/when we encounter issues that appear
-> > > to be the result of kernel page table corruption.
-> > 
-> > OK, I see. Thanks for the clarification.
-> > 
-> > > So while it's rare to need it, it's really useful to have when we do
-> > > need it, and I'd rather not remove it. I'd also rather that it didn't
-> > > have latent issues where we can accidentally crash the kernel when using
-> > > it, which is what this patch is addressing.
-> > 
-> > While I agree, do we rather want to document that you shouldn't be using
-> > the debugging tool while the hotplug is ongoing because you might get a
-> > garbage or crash the kernel in the worst case? In other words is the
-> > absolute correctness worth the additional maint. burden wrt. to future
-> > hotplug changes?
-> 
-> I don't think that it's reasonable for this code to bring down the
-> kernel unless the kernel page tables are already corrupt. I agree we
-> should minimize the impact on other code, and I'm happy to penalize
-> ptdump so long as it's functional and safe.
-> 
-> I would like it to be possible to use the ptdump code to debug
-> hot-remove, so I'd rather not make the two mutually exclusive. I'd also
-> like it to be possible to use this in-the-field, and for that asking an
-> admin to potentially crash their system isn't likely to fly.
-
-OK, fair enough.
-
-> > > > I am asking because I would really love to make mem hotplug locking less
-> > > > scattered outside of the core MM than more. Most users simply shouldn't
-> > > > care. Pfn walkers should rely on pfn_to_online_page.
-> 
-> Jut to check, is your plan to limit access to the hotplug lock, or to
-> redesign the locking scheme?
-
-To change the locking to lock hotpluged ranges rather than having a
-global lock as the operation is inherently pfn range scoped.
-
-> > > I'm not sure if that would help us here; IIUC pfn_to_online_page() alone
-> > > doesn't ensure that the page remains online. Is there a way to achieve
-> > > that other than get_online_mems()?
-> > 
-> > You have to pin the page to make sure the hotplug is not going to
-> > offline it.
-> 
-> I'm not exactly sure how pinning works -- is there a particular set of
-> functions I should look at for that?
-
-Pinning (get_page) on any page of the range will deffer the hotremove
-operation and therefore the page tables cannot go away as well.
-
-That being said, I thought the API is mostly for debugging and "you
-should better know what you are doing" kinda thing (based on debugfs
-being used here). If this is really useful in its current form and
-should be used also while the hotremove is in progress then ok.
-Once we actually get to rework the locking then we will have another
-spot to handle but that's the life.
--- 
-Michal Hocko
-SUSE Labs
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAxOS0wNS0yNyBhdCAwNjozNCArMDAwMCwgVmlub2QgS291bCB3cm90ZToNCj4gT24gMTAt
+MDUtMTksIDEwOjE0LCBSb2JpbiBHb25nIHdyb3RlOg0KPiA+IA0KPiA+IMKgDQo+ID4gKwlpZiAo
+b2ZfZGV2aWNlX2lzX2NvbXBhdGlibGUobnAsICJmc2wsaW14N3VscC1lZG1hIikpIHsNCj4gPiAr
+CQlmc2xfZWRtYS0+ZG1hbXV4X25yID0gMTsNCj4gPiArCQlmc2xfZWRtYS0+dmVyc2lvbiA9IHYz
+Ow0KPiB3ZWxsIHRoaXMgaXMgbm90IHJlYWxseSBzY2FsYWJsZSwgd2Ugd2lsbCBrZWVwIGFkZGlu
+ZyB2ZXJzaW9ucyBhbmQNCj4gY29tcGF0aWJsZSBhbmQgZXhwYW5kaW5nIHRoaXMgY2hlY2suIFNv
+IGl0IHdvdWxkIG1ha2Ugc2Vuc2UgdG8gY3JlYXRlDQo+IGENCj4gZHJpdmVyIGRhdGEgdGFibGUg
+d2hpY2ggY2FuIGJlIHNldCBmb3IgY29tcGF0aWJsZSBhbmQgd2UgdXNlIHRob3NlDQo+IHZhbHVl
+cyBhbmQgYXZvaWQgdGhlc2UgcnVudGltZSBjaGVja3MgZm9yIGNvbXBhdGlibGUuDQo+IA0KPiBC
+dHcgdGhlIGJpbmRpbmcgZG9jdW1lbnRhdGlvbiBzaG91bGQgcHJlY2VkZSB0aGUgY29kZSB1c2Fn
+ZSwgc28gdGhpcw0KPiBwYXRjaCBzaG91bGQgY29tZSBhZnRlciB0aGF0DQo+IA0KT2theSwgd2ls
+bCB1cGRhdGUgaW4gdjIuCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
