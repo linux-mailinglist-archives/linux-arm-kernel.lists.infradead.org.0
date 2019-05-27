@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEF892B33A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:27:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0F402B33B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:27:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wpIvA0B4Ly4J4QlzoyaUXdxwEGveVcOHASeIXmhXud0=; b=QKDOa8le5Z9Pa5
-	YEPrKFP6IrOrJN0wBobo71a8Pt9QUg5hvDRpJH2YOtjgqyQ5tGcNIE4kaA+TMQJ3c266+J48kAwmi
-	muKyKOzFGEwxcD7l8YaKJJg7nCcDWMelTqRb13LkBoyFgRhnlS+JrNHwnohGQ3KKpPYtKeL/hZBHq
-	uUmtYfP7gT5GwpSQrV1Of7EczW/QcPMVDJGknDZAsw1d+/+kL3Gn6vSXPAkdAci9AkvkK8mokcYau
-	jRChgZOwzrRK5FPSRCShVGtWzOypPQc9VMyNpgJgX1y9wgYq2iWBuobddZJDo/jmERJLtO8G04SYN
-	TNAaUPlV9Mjf7Cj6WYYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UcZ61ooioCsEOEFuXpME2wA4QPdp+vX386FOl4BHeAg=; b=C/eOq/0tKaQuzz
+	QLdKq5BLckxfK35e+QfHawWDVgWGInoUi1F5aukVaGIAvPM/EPoHy05hWPBZMbSqL/fVOPoPTeSSC
+	7MryYSPJdLPBt7CJNkJT9Z9edEH9rG41CSSsyxyyINclvs/7yRPPhwnR/vyVRhMvEvRqE3RA9bX7A
+	nBvg0MVNtDgTUGBDIJOtIyCZiA4C2PuWe83arpIEAP2bY/YzpRDoFphCu02qugRcAdf4jiilr6ek4
+	DZmrIEuXgyYI1Z6qprnIYr90ga1OgBOsLeTdPvFd+VU95f2zhibAPCItaUQaeXj4sPOiPZSaVJUJd
+	FabiIbAUqFwTJpS04UUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVDmw-0006v1-Mw; Mon, 27 May 2019 11:27:34 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hVDn9-00077Y-Um; Mon, 27 May 2019 11:27:47 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVDmp-0006uI-2z
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:27:28 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f8so16599956wrt.1
+ id 1hVDmq-0006uW-Mm
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:27:30 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t4so8300578wrx.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 04:27:26 -0700 (PDT)
+ Mon, 27 May 2019 04:27:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9y/IH+JG6Qynh8FmtZUM9JghLzxsBV1mtWL7v5H2a4Q=;
- b=cHbav5PPQ68d4UGIDc+xzZrqmq4aIerkhnu8xmIvRGjKdNlVQUIz0jJdiPXHgVriId
- OcKZDQ+9FZJVo2826Wh7U2dJ7lrJ+4AUuddSxYw6fVe5Zp1wvzjsVw0DXONQ9+SIqPfp
- e9HK86zx6MtksU20+2u3ZEukWQQya3JLMLKuY9/tqjRKM3gdFbF+Gnl1/HiHj45XaQLp
- FgSlBgt4CPbP+769bkjaHXbdh6OuMxAqRhYz5Dt+1gsSRsV2rDfo404xPOPDEUDHMcKk
- jrGAV4/6WYF8pygNm/Q3Io2X33ESyDIfXArcPPWkAUkuu7SSToh7PZ97HXOnRaZMZPT5
- Fjgg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=e4u6FsMjt7h1mCBbzF7v4CGj5ydrGz7m3OWmqqT2YeQ=;
+ b=I9mAK54lsjfxBtfVgVx+UfCZ5AuAj4rEdu91KUk/42mbkyOYaJRKTY+IcGjZ0wIFAm
+ Bn10OFQ9b3dXWOnNG5ohdDY/Dy5wSjvON2EsYDp4deuNhfh1tghQ2gMuIUWsL6wEUS69
+ 2cqOMV4tgfEbrGN+Znr3aHUr3nmrRGcTvJt+P8IkMQlQUDdD6gFdgyToEtEe3wfARh9J
+ gh1NCsHs2kZ04wnKApvp81FDuCfdSPEUTSfimaCXW0wykCXioIQrVyfhzoXFEfzDXh5V
+ ej+hCnIV3Q2y4FYUxQ9uHHWef7TfQvOWcTHCKhcD7KBPYV+o/1DaxMrxZcuAzSNjpTfg
+ NF6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9y/IH+JG6Qynh8FmtZUM9JghLzxsBV1mtWL7v5H2a4Q=;
- b=XN/Qz7bHzZBuJU2sIW4fyb4mEP05SGN0kDPtvRss+otQqj7ZFuLNRzGIJz3SXpUUu4
- NVnwK8ERfJ++48aU6zN/4FXCRTpZwFGXSkvc8qMLtU1LpC/ZWatMRwh68cfR4tqCFUHh
- XaXG5iKIZJV97JR9quPSbynObloUnhq85y6ilSi0dKfsaDg2omlO5Pn1Alqc42R5dNFf
- ZJBdEjR9qQsysf4tZNnfF9JFuds49ELcoc2O1uzmn7nKPFY6JI9V3bwD3qbskOuABnCv
- rBQI5gHVPZYfdiw2/Pmkekw2ZuQ9DRE9JHRfbUOzgSvxSEThqh9c77OOXLZBaB6ul9f9
- f6EA==
-X-Gm-Message-State: APjAAAX+14RcEPOPBVOYKlxdM+KZPYMtPC3M0EqXKh6TjZeegPGzQaPh
- Pk1znO01uXJIV0fX/8qr0CjBynsGqOgbsIBE
-X-Google-Smtp-Source: APXvYqw6Q/+9wUrVhaGxUO4Y2xHThdWFzl7gnG7lKlZuiOqW5LExAjRfDNU8mFsL9VLv3EzN750x8w==
-X-Received: by 2002:adf:a749:: with SMTP id e9mr5294854wrd.64.1558956445366;
- Mon, 27 May 2019 04:27:25 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=e4u6FsMjt7h1mCBbzF7v4CGj5ydrGz7m3OWmqqT2YeQ=;
+ b=SQog5oYwxJIGBUk32zzRIqUSCIKpG3K8l9p9R4XqB6rbQbhXNJh+vncdHeBtsA+rNW
+ qnTJdGufT3AV2Qta61w5U53dPWUn/O70KQYi3lNE/myIZgLkaQ2klg3cQx4oi947Mvd1
+ htAXCD6Zu3dV3bwMqbdodSeePtXdmSINDI73D9ni2wkrHvyxd/Zauk+j9HYLnBXSPT/r
+ LSMtUXR7WvloQXgcGf5v3SZOqJTqJmArgT2ZXFnXoi3OeyOEjSJfIg2bXJ7knGfjb5ND
+ HxN6bRRywqo4y/+svntZdiDppZ3j0DNCMV24OX/5uvVbdICwc89gIdbMY38vFPb6iGBb
+ yfeQ==
+X-Gm-Message-State: APjAAAUiFZ7nlYouZLfQVoVAnVq3ZCvJUDxEois5pG8bRjgjbmRsvxlH
+ fAleYR8R/zBI2SpYvKkJaIBZWvFbWq3v0C37
+X-Google-Smtp-Source: APXvYqwnB2Gk0QqWOibtkylqFHxJGe0tfUyzEORIvpkrV+qc60/5I4wSEzsHkwdlyHFZyLeCi1AWaQ==
+X-Received: by 2002:adf:ce03:: with SMTP id p3mr6636532wrn.94.1558956446659;
+ Mon, 27 May 2019 04:27:26 -0700 (PDT)
 Received: from sudo.home ([2a01:cb1d:112:6f00:ccdd:dadc:1517:f416])
- by smtp.gmail.com with ESMTPSA id l6sm9677747wmi.24.2019.05.27.04.27.24
+ by smtp.gmail.com with ESMTPSA id l6sm9677747wmi.24.2019.05.27.04.27.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 04:27:24 -0700 (PDT)
+ Mon, 27 May 2019 04:27:25 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 0/4] synquacer: implement ACPI gpio/interrupt support
-Date: Mon, 27 May 2019 13:27:16 +0200
-Message-Id: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
+Subject: [PATCH v3 1/4] acpi/irq: implement helper to create hierachical
+ domains
+Date: Mon, 27 May 2019 13:27:17 +0200
+Message-Id: <20190527112720.2266-2-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
+References: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_042727_191981_C69B0B19 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20190527_042728_744537_CDDA1611 
+X-CRM114-Status: GOOD (  15.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -83,6 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,48 +111,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Wire up the existing GPIO and interrupt controller drivers to the ACPI
-subsystem so they can be used on ACPI systems for ACPI event (power
-button, hardware error notification etc)
+ACPI permits arbitrary producer->consumer interrupt links to be
+described in AML, which means a topology such as the following
+is perfectly legal:
 
-Changes since v2:
-- use helper to create hierarchical IRQ domains under ACPI instead of exposing
-  the GSI domain's irqdomain pointer directly (#1)
-- use has_acpi_companion() instead of ACPI_COMPANION() where possible (#4)
-- add Mika's ack to #4
+  Device (EXIU) {
+    Name (_HID, "SCX0008")
+    Name (_UID, Zero)
+    Name (_CRS, ResourceTemplate () {
+      ...
+    })
+  }
 
-Changes since v1:
-- Describe the EXIU controller as a separate device, which is a more accurate
-  depiction of reality, and untangles the code a bit as well. Note that this
-  requires the GPIO AML device to describe the EXIU interrupts explicitly.
-- Add a patch to obtain the ACPI GSI irqdomain. The EXIU driver needs this
-  to obtain the default parent domain, since the GIC is not modeled as an
-  ACPI object in the namespace, and so the parent<->child link cannot be
-  expressed in AML.
-- Drop the Kconfig symbol for the GPIO controller. Just include the ACPI part
-  when CONFIG_ACPI is defined.
+  Device (GPIO) {
+    Name (_HID, "SCX0007")
+    Name (_UID, Zero)
+    Name (_CRS, ResourceTemplate () {
+      Memory32Fixed (ReadWrite, SYNQUACER_GPIO_BASE, SYNQUACER_GPIO_SIZE)
+      Interrupt (ResourceConsumer, Edge, ActiveHigh, ExclusiveAndWake, 0, "\\_SB.EXIU") {
+        7,
+      }
+    })
+    ...
+  }
 
-Cc: Masahisa Kojima <masahisa.kojima@linaro.org>
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Marc Zyngier <marc.zyngier@arm.com>
-Cc: Graeme Gregory <graeme.gregory@linaro.org>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Mika Westerberg <mika.westerberg@linux.intel.com>
-Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-Cc: Len Brown <lenb@kernel.org>
+The EXIU in this example is the external interrupt unit as can be found
+on Socionext SynQuacer based platforms, which converts a block of 32 SPIs
+from arbitrary polarity/trigger into level-high, with a separate set
+of config/mask/unmask/clear controls.
 
-Ard Biesheuvel (4):
-  acpi/irq: implement helper to create hierachical domains
-  irqchip/exiu: preparatory refactor for ACPI support
-  irqchip/exiu: implement ACPI support
-  gpio: mb86s7x: enable ACPI support
+The existing DT based driver in drivers/irqchip/irq-sni-exiu.c models
+this as a hierarchical domain stacked on top of the GIC's irqdomain.
+Since the GIC is modeled as a DT node as well, obtaining a reference
+to this irqdomain is easily done by going through the parent link.
 
- drivers/acpi/irq.c             |  20 +++
- drivers/gpio/gpio-mb86s7x.c    |  51 ++++++-
- drivers/irqchip/irq-sni-exiu.c | 142 +++++++++++++++-----
- include/linux/acpi.h           |   7 +
- 4 files changed, 182 insertions(+), 38 deletions(-)
+On ACPI systems, however, the GIC is not modeled as an object in the
+namespace, and so device objects cannot refer to it directly. So in
+order to obtain the irqdomain reference when driving the EXIU in ACPI
+mode, we need a helper that implicitly grabs the default domain for
+unqualified interrupts as the parent of the hierarchy.
 
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+---
+ drivers/acpi/irq.c   | 20 ++++++++++++++++++++
+ include/linux/acpi.h |  7 +++++++
+ 2 files changed, 27 insertions(+)
+
+diff --git a/drivers/acpi/irq.c b/drivers/acpi/irq.c
+index c3b2222e2129..39824a6bbcd5 100644
+--- a/drivers/acpi/irq.c
++++ b/drivers/acpi/irq.c
+@@ -295,3 +295,23 @@ void __init acpi_set_irq_model(enum acpi_irq_model_id model,
+ 	acpi_irq_model = model;
+ 	acpi_gsi_domain_id = fwnode;
+ }
++
++/**
++ * acpi_irq_create_hierarchy - Create a hierarchical IRQ domain with the default
++ *                             GSI domain as its parent.
++ */
++struct irq_domain *acpi_irq_create_hierarchy(unsigned int flags,
++					     unsigned int size,
++					     struct fwnode_handle *fwnode,
++					     const struct irq_domain_ops *ops,
++					     void *host_data)
++{
++	struct irq_domain *d = irq_find_matching_fwnode(acpi_gsi_domain_id,
++							DOMAIN_BUS_ANY);
++
++	if (!d)
++		return NULL;
++
++	return irq_domain_create_hierarchy(d, flags, size, fwnode, ops,
++					   host_data);
++}
+diff --git a/include/linux/acpi.h b/include/linux/acpi.h
+index 98440df7fe42..70de4bc30cea 100644
+--- a/include/linux/acpi.h
++++ b/include/linux/acpi.h
+@@ -23,6 +23,7 @@
+ 
+ #include <linux/errno.h>
+ #include <linux/ioport.h>	/* for struct resource */
++#include <linux/irqdomain.h>
+ #include <linux/resource_ext.h>
+ #include <linux/device.h>
+ #include <linux/property.h>
+@@ -327,6 +328,12 @@ int acpi_isa_irq_to_gsi (unsigned isa_irq, u32 *gsi);
+ void acpi_set_irq_model(enum acpi_irq_model_id model,
+ 			struct fwnode_handle *fwnode);
+ 
++struct irq_domain *acpi_irq_create_hierarchy(unsigned int flags,
++					     unsigned int size,
++					     struct fwnode_handle *fwnode,
++					     const struct irq_domain_ops *ops,
++					     void *host_data);
++
+ #ifdef CONFIG_X86_IO_APIC
+ extern int acpi_get_override_irq(u32 gsi, int *trigger, int *polarity);
+ #else
 -- 
 2.20.1
 
