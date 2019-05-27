@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 109CF2B8F0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:22:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 694B22B908
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:23:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3nXaLEYzzg0EEiF1MiiXgfF9bD99kwzSj24f+YOqT3k=; b=Boi4VXCJEcQJF+
-	U4Pqc0IIjZ/j/cViYzOhmAW3uBiwAkytpi0Yf9O5e2o36pe2g0b1B7nXUVtOTfguih/hFxgjb0Zg/
-	Z8B9DnG9t24ElCGGLjXsRHG65qQ1M4ZwjSztZv768WTjWGG7QqyrVwNQU5pK+7mIPo1KFDqk4fnRa
-	V13ejWBeryJVEV/ni4lvPKnJ9m4S8eptokbA2VgD5FWu0cCYanHm02RY78Q1n93xUfn5SVzNYGOo/
-	1RrRXt6hxd0Gwa4ARgYjXnyV4EoHDIei9VhwPur5jIJA3HlOYbXYFSAzdSPaowG/PY7zp9pXqb++H
-	fYOrTtLbGNUj94R4xhaA==;
+	List-Owner; bh=qa37d0LWBJFvbqOUvHSe1qZT3rSk2frMpUqMSFXAwUc=; b=UGhq+2gxw9HMI1
+	OZW7gzhnSBpXque0dep92oxq1myTn2/oxz05+IsQFqJKsYphLt5dcXv94zb1+eImjpeUYFD/QKyT1
+	RMIDpO1acAfgdcdYiQwl3Ue0s+a1478KvLdzZX3qhvHdsd1bLMGt13QUTLFS+K2YEoK/rCDzwrKaV
+	cyCEGT9HWONragyIiixQOzs85qnzVlWenazf1Ey1n/Jzpnmr/002vJ8do/yFddOkvh0jq/ycwgCKn
+	xdaIRnCKdJNvkFze/JmTsdkyz1zsWR9Nmel0CNnq2hERYJcXkuIMxILbkcmgyluIg7IS2kqLvnBn0
+	Ep6ccRJNW7UC6BxfBcoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVIOg-0002BR-T2; Mon, 27 May 2019 16:22:50 +0000
+	id 1hVIPK-0002qL-9M; Mon, 27 May 2019 16:23:30 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVIOX-00029s-Sv
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 16:22:44 +0000
+ id 1hVIOY-00029t-8V
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 16:22:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1558974160; bh=lmN/vA2/QcSdUuzR1xKNkZ8E+T7fPttQ3k8QpH5igsQ=;
+ t=1558974160; bh=nngIr0xvxUzPFucWAhkm6BkX4oH0a0zOi33I9wUZi5w=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EYsVsboervze6upedsAPLR+GOaPKFvlKo3JG/PI/hqI84VUAnvT9ybln/p3V+NFZS
- 81fDswQzxTJ/I0DWHSCXPIMeUnyd7TZsin/ihijloxLSEWH25lKb/NGNNRNCyBY9yb
- 2hxLz66YbfKgV7woPcPgnQTukC3lcMATrwlec8xQ=
+ b=cQyrKuueeB+WVAEMvYTzh1ZQzRGSjXkA2vn1vFnjbas7ys8YHOyucByJv/ZYO1si/
+ dLMZWBpaCtXBWdZEYZd9m1Kf3d6gVRzObfX21aIUMYFPpadVhe0dOy01xlEjawxKl4
+ 9AWEEKXZF45HMJfhctOpZoF9YmjC0d29THiuKt0k=
 From: megous@megous.com
 To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v6 2/6] net: stmmac: sun8i: force select external PHY when no
- internal one
-Date: Mon, 27 May 2019 18:22:33 +0200
-Message-Id: <20190527162237.18495-3-megous@megous.com>
+Subject: [PATCH v6 3/6] arm64: dts: allwinner: orange-pi-3: Enable ethernet
+Date: Mon, 27 May 2019 18:22:34 +0200
+Message-Id: <20190527162237.18495-4-megous@megous.com>
 In-Reply-To: <20190527162237.18495-1-megous@megous.com>
 References: <20190527162237.18495-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_092242_162264_9E1ED5DF 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20190527_092242_463936_3875F7CE 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -67,55 +66,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Ondrej Jirman <megous@megous.com>,
+Cc: Ondrej Jirman <megous@megous.com>, Mark Rutland <mark.rutland@arm.com>,
  Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
  David Airlie <airlied@linux.ie>, netdev@vger.kernel.org,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
  linux-stm32@st-md-mailman.stormreply.com, Jose Abreu <joabreu@synopsys.com>,
- Daniel Vetter <daniel@ffwll.ch>, Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
+ linux-arm-kernel@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Icenowy Zheng <icenowy@aosc.io>
+From: Ondrej Jirman <megous@megous.com>
 
-The PHY selection bit also exists on SoCs without an internal PHY; if it's
-set to 1 (internal PHY, default value) then the MAC will not make use of
-any PHY such SoCs.
+Orange Pi 3 has two regulators that power the Realtek RTL8211E. According
+to the phy datasheet, both regulators need to be enabled at the same time,
+but we can only specify a single phy-supply in the DT.
 
-This problem appears when adapting for H6, which has no real internal PHY
-(the "internal PHY" on H6 is not on-die, but on a co-packaged AC200 chip,
-connected via RMII interface at GPIO bank A).
+This can be achieved by making one regulator depedning on the other via
+vin-supply. While it's not a technically correct description of the
+hardware, it achieves the purpose.
 
-Force the PHY selection bit to 0 when the SOC doesn't have an internal PHY,
-to address the problem of a wrong default value.
+All values of RX/TX delay were tested exhaustively and a middle one of the
+working values was chosen.
 
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 44 +++++++++++++++++++
+ 1 file changed, 44 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
-index 3258dec84d55..0484c289f328 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
-@@ -907,6 +907,11 @@ static int sun8i_dwmac_set_syscon(struct stmmac_priv *priv)
- 		 * address. No need to mask it again.
- 		 */
- 		reg |= 1 << H3_EPHY_ADDR_SHIFT;
-+	} else {
-+		/* For SoCs without internal PHY the PHY selection bit should be
-+		 * set to 0 (external PHY).
-+		 */
-+		reg &= ~H3_EPHY_SELECT;
- 	}
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+index 17d496990108..2c6807b74ff6 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+@@ -15,6 +15,7 @@
  
- 	if (!of_property_read_u32(node, "allwinner,tx-delay-ps", &val)) {
+ 	aliases {
+ 		serial0 = &uart0;
++		ethernet0 = &emac;
+ 	};
+ 
+ 	chosen {
+@@ -44,6 +45,27 @@
+ 		regulator-max-microvolt = <5000000>;
+ 		regulator-always-on;
+ 	};
++
++	/*
++	 * The board uses 2.5V RGMII signalling. Power sequence to enable
++	 * the phy is to enable GMAC-2V5 and GMAC-3V (aldo2) power rails
++	 * at the same time and to wait 100ms.
++	 */
++	reg_gmac_2v5: gmac-2v5 {
++		compatible = "regulator-fixed";
++		regulator-name = "gmac-2v5";
++		regulator-min-microvolt = <2500000>;
++		regulator-max-microvolt = <2500000>;
++		startup-delay-us = <100000>;
++		enable-active-high;
++		gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
++
++		/* The real parent of gmac-2v5 is reg_vcc5v, but we need to
++		 * enable two regulators to power the phy. This is one way
++		 * to achieve that.
++		 */
++		vin-supply = <&reg_aldo2>; /* GMAC-3V */
++	};
+ };
+ 
+ &cpu0 {
+@@ -58,6 +80,28 @@
+ 	status = "okay";
+ };
+ 
++&emac {
++	pinctrl-names = "default";
++	pinctrl-0 = <&ext_rgmii_pins>;
++	phy-mode = "rgmii";
++	phy-handle = <&ext_rgmii_phy>;
++	phy-supply = <&reg_gmac_2v5>;
++	allwinner,rx-delay-ps = <1500>;
++	allwinner,tx-delay-ps = <700>;
++	status = "okay";
++};
++
++&mdio {
++	ext_rgmii_phy: ethernet-phy@1 {
++		compatible = "ethernet-phy-ieee802.3-c22";
++		reg = <1>;
++
++		reset-gpios = <&pio 3 14 GPIO_ACTIVE_LOW>; /* PD14 */
++		reset-assert-us = <15000>;
++		reset-deassert-us = <40000>;
++	};
++};
++
+ &mmc0 {
+ 	vmmc-supply = <&reg_cldo1>;
+ 	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
 -- 
 2.21.0
 
