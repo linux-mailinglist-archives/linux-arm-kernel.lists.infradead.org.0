@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32B22B33D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:28:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 368CE2B33F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:28:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5R00WQ6ZLeET/idphi/N+zbMP9VrBdPMgMl1nK9SGJI=; b=CoCfqua3N6n5pp
-	z+RWsBFeGcvzemD8OS6nNHm41JadHWns5OhLdWtL63Nh1nqgLqrmk7RtULyG3WGHbh3KHVmApUKGX
-	yx1hyDBso9r8kOG03l7PsVXifvWXVmLVdRAgQU7eEiiB16u4289u00JvyKAEp7Ttnu6T9AjZD2FjG
-	3rNMtYxIdKDKm1lbCV8FrSx0s0i01FXmI3pmws3g1GJrImP/ZWO6ELgl4LepIxaqNUDV2JBCN8/jq
-	rTX3JrSpFNgMQe6/uYVlOY6U7NSMLc8gDyguXj1QW8pyizNt746JBEv6YhtKycBKOpWZ7aTerWoLE
-	JAysUwQMgv1zhiOUD6Rw==;
+	List-Owner; bh=5fVbUrZxwMKN80PxpHu+ZeaXNByCseyUZwj8VVta1tc=; b=Wd1Vxh32vzQnDI
+	x2ysIo8r7dYdAjs71AV0Ye03kGSEoTDGmRwb+thm85lyGqnaFVBNiWSWxv1B9r/Y+2K/oN5DVBEE0
+	6P7LOuiT3eZPBETMuMo6MjYS85KURFe8XpOuSW57AaoDuC+oLlq2wF8swnIxByIR27KHmg3/rZ9JL
+	DQ/amMRGuWcutmIhHzW/OIYhS0lhxd2jMhz/o/DLUCUKzU9Xb5McQIF0DT4lLVDyuSWN3ZIF74g6F
+	EZMVjI500TPCGwPQwYMWtsJoiuCKRxkI9hX+w0ZMlKGGYxPwzmwq4hXJ+jgTLTl+cC7bXPrmsabm/
+	63uMhKBj/9tXpXtSAbpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVDnU-0007VO-Tr; Mon, 27 May 2019 11:28:08 +0000
+	id 1hVDng-0007jn-Iv; Mon, 27 May 2019 11:28:20 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVDms-0006vN-R8
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:27:33 +0000
-Received: by mail-wr1-x444.google.com with SMTP id c2so1372432wrm.8
+ id 1hVDmu-0006wy-It
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:27:37 +0000
+Received: by mail-wr1-x444.google.com with SMTP id r7so16554025wrr.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 04:27:30 -0700 (PDT)
+ Mon, 27 May 2019 04:27:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=9EPMw9ZDt6r9OnVuoXUM9uuIE5EfX0cbi1r9IY8+97M=;
- b=QwirmDGBiji1JuzbW6wei+YUkJRNV7UyseHQtII77EPKytrbdGHXVZVF5OqKoqqXR8
- FcunUebz7zm7cad7SWqWjao8rKXcRbRL7lLb0YymFhJBvdwHRuEz6MNcp3/sFDchwtdX
- b3hzKBrBeeqH1cSC39RhONf4Jo+xAIJXEnDVVuE/W6Vmjnm2NISvQ2K04Yk1uws/O/CA
- a9MYK4Rvj2o/EYDvY/Usu2nn7U7SjpMVON931OxVcB1kfM/Zrt08+liOEFb3qPupgU7X
- 0HuIbbM4c08DaOq09GcdTASL6t1b8uoVK7uYJcTA3lDW4e9cG2M/y2iNDXNY4Sgq8mCs
- G5Ig==
+ bh=e9zX2z3pSYijNeNpg5u5hKyLCBvOSleyi01zr0ij8D4=;
+ b=o+5ppKL9dNkBIcyZZcUftTzeWppQdogCl1qYHsBuVV/XyuGMt/AlB5fOZri5jHhd34
+ qFz6Ux0nSgvLtFsGO9gPPLnZtwzPJi02TaZfT7BetkEDPrm24fJgBtnk7Q/rU/IPwrms
+ NWJHi8PAibeQnNHhruEHAONTPvPr3xwJIZmNYnoBoAzc045kPA3Y/Uoa0jMQaWuOUicz
+ uJCS9Z0f3A5YvhTO5sEdJPwJspoSpk3aiG9KRhSv2O0LzRERXUQfPKlXwyGXnL0NrgeY
+ eBrlw7/VCwwCND+dGC4gbezqpoq43aAIvTmn+HgKUgppwm0m3h/rid57HNCUPf4eoT1/
+ O/jQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=9EPMw9ZDt6r9OnVuoXUM9uuIE5EfX0cbi1r9IY8+97M=;
- b=TxSMqnGKLLNC1fXleQgsQhA+mOJz3O2emoCGi9xH8LEzGwINVag+s00BK2n7T5XQNh
- mH74AOJncI3e40Yfg4SUfZJjtoIZB/0V2UeMRKJFvA6CbXWmQjguUfT1dkrXB6fNf7mD
- P6OYPIbHu3E2zM0E7hHGqECW+xYFMK21MpotZncYw8/d9kAGdubja4jQQj4b8EZRDOeq
- U90xI74yyyVLLFvswbjmXnSOlb89rXiXAp+Loe/uaMiM/uFtKq6vH1tvdfOx6Zc+qbu/
- ONYo2WJw2LzZ4/m7sGp1wpEyOmnBH70oM0AjWz3phnezWkvUJhDRC1bWQQyrUcxhEMFV
- wo7w==
-X-Gm-Message-State: APjAAAUvgOxggL5mGi5susMiZur7gFEeIaiXGETVlH/Szq/2lfVkgBed
- qa83h+g+7P/VkHm6307LP2ihohUL330RFKqj
-X-Google-Smtp-Source: APXvYqzTfClU/CiJaI98gbBQk9qFq+qk2vEqBO1yGu7b5coS9RX+IzQBWrCPVrrfSDCMo91F/Ygomg==
-X-Received: by 2002:a5d:6807:: with SMTP id w7mr7222991wru.336.1558956449254; 
- Mon, 27 May 2019 04:27:29 -0700 (PDT)
+ bh=e9zX2z3pSYijNeNpg5u5hKyLCBvOSleyi01zr0ij8D4=;
+ b=cZpxNT8JAagpYGb0oAg5YEh3iEMSCZ2OLvVpcP2aSAAU1/5J15B9yvyqgMr3vvM63l
+ j1jvrjgT5ARJi8QX1TxxNASi5vYJPoB6NM6PtcJKV7g8ZoKD5ck2AsoTMCaYHq3qZACe
+ uJHjV17YRGboNyfsIT+76WMowsaPiwdqzCqkCMs9tKFGBAivzkCnYdCIh/1OM3o+3xZX
+ 9CsbDFyb6wTBvjouUtwcMRi8CfrXSwItbnf4Ie3yE9W8+Z6xaBKVj3WDOk5U1gyO6eKW
+ fuvvw1ZbKIqN1uxxf9XX9XzEJlDaTGCo9jiRam87zF3c62TzapD4ylLpXSKV0ZVeB94z
+ xgYw==
+X-Gm-Message-State: APjAAAXonQQIVJdivHtCwv7gCBQ8Rbj6QEN2YnMnlontl0Whb7h++ZC/
+ 75HZOgkqApjK8EJxyLRN1Z82t/Wo6zHUYBIC
+X-Google-Smtp-Source: APXvYqxN/Jdd3x8rG3kSzj6Bl44tI1FDNTwzVb4CqQXtbJioOQeKqfOdDM37wYuzii6qz6ltvOtbXA==
+X-Received: by 2002:adf:e544:: with SMTP id z4mr5023149wrm.295.1558956450699; 
+ Mon, 27 May 2019 04:27:30 -0700 (PDT)
 Received: from sudo.home ([2a01:cb1d:112:6f00:ccdd:dadc:1517:f416])
- by smtp.gmail.com with ESMTPSA id l6sm9677747wmi.24.2019.05.27.04.27.28
+ by smtp.gmail.com with ESMTPSA id l6sm9677747wmi.24.2019.05.27.04.27.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 04:27:28 -0700 (PDT)
+ Mon, 27 May 2019 04:27:29 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 3/4] irqchip/exiu: implement ACPI support
-Date: Mon, 27 May 2019 13:27:19 +0200
-Message-Id: <20190527112720.2266-4-ard.biesheuvel@linaro.org>
+Subject: [PATCH v3 4/4] gpio: mb86s7x: enable ACPI support
+Date: Mon, 27 May 2019 13:27:20 +0200
+Message-Id: <20190527112720.2266-5-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
 References: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_042731_096932_A863DC3A 
-X-CRM114-Status: GOOD (  17.21  )
+X-CRM114-CacheID: sfid-20190527_042733_236040_AC02F60C 
+X-CRM114-Status: GOOD (  16.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,126 +108,130 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Expose the existing EXIU hierarchical irqchip domain code to permit
-the interrupt controller to be used as the irqchip component of a
-GPIO controller on ACPI systems, or as the target of ordinary
-interrupt resources.
+Make the mb86s7x GPIO block discoverable via ACPI. In addition, add
+support for ACPI GPIO interrupts routed via platform interrupts, by
+wiring the two together via the to_irq() gpiochip callback.
 
+Reviewed-by: Mika Westerberg <mika.westerberg@linux.intel.com>
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- drivers/irqchip/irq-sni-exiu.c | 76 +++++++++++++++++---
- 1 file changed, 68 insertions(+), 8 deletions(-)
+ drivers/gpio/gpio-mb86s7x.c | 51 +++++++++++++++++---
+ 1 file changed, 44 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/irqchip/irq-sni-exiu.c b/drivers/irqchip/irq-sni-exiu.c
-index fef7c2437dfb..30a323a2b332 100644
---- a/drivers/irqchip/irq-sni-exiu.c
-+++ b/drivers/irqchip/irq-sni-exiu.c
-@@ -20,6 +20,7 @@
- #include <linux/of.h>
- #include <linux/of_address.h>
- #include <linux/of_irq.h>
-+#include <linux/platform_device.h>
+diff --git a/drivers/gpio/gpio-mb86s7x.c b/drivers/gpio/gpio-mb86s7x.c
+index 9308081e0a4a..64027f57a8aa 100644
+--- a/drivers/gpio/gpio-mb86s7x.c
++++ b/drivers/gpio/gpio-mb86s7x.c
+@@ -14,6 +14,7 @@
+  *  GNU General Public License for more details.
+  */
  
- #include <dt-bindings/interrupt-controller/arm-gic.h>
++#include <linux/acpi.h>
+ #include <linux/io.h>
+ #include <linux/init.h>
+ #include <linux/clk.h>
+@@ -27,6 +28,8 @@
+ #include <linux/spinlock.h>
+ #include <linux/slab.h>
  
-@@ -134,9 +135,13 @@ static int exiu_domain_translate(struct irq_domain *domain,
- 
- 		*hwirq = fwspec->param[1] - info->spi_base;
- 		*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
--		return 0;
-+	} else {
-+		if (fwspec->param_count != 2)
-+			return -EINVAL;
-+		*hwirq = fwspec->param[0];
-+		*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
- 	}
--	return -EINVAL;
-+	return 0;
- }
- 
- static int exiu_domain_alloc(struct irq_domain *dom, unsigned int virq,
-@@ -147,16 +152,21 @@ static int exiu_domain_alloc(struct irq_domain *dom, unsigned int virq,
- 	struct exiu_irq_data *info = dom->host_data;
- 	irq_hw_number_t hwirq;
- 
--	if (fwspec->param_count != 3)
--		return -EINVAL;	/* Not GIC compliant */
--	if (fwspec->param[0] != GIC_SPI)
--		return -EINVAL;	/* No PPI should point to this domain */
-+	parent_fwspec = *fwspec;
-+	if (is_of_node(dom->parent->fwnode)) {
-+		if (fwspec->param_count != 3)
-+			return -EINVAL;	/* Not GIC compliant */
-+		if (fwspec->param[0] != GIC_SPI)
-+			return -EINVAL;	/* No PPI should point to this domain */
- 
-+		hwirq = fwspec->param[1] - info->spi_base;
-+	} else {
-+		hwirq = fwspec->param[0];
-+		parent_fwspec.param[0] = hwirq + info->spi_base + 32;
-+	}
- 	WARN_ON(nr_irqs != 1);
--	hwirq = fwspec->param[1] - info->spi_base;
- 	irq_domain_set_hwirq_and_chip(dom, virq, hwirq, &exiu_irq_chip, info);
- 
--	parent_fwspec = *fwspec;
- 	parent_fwspec.fwnode = dom->parent->fwnode;
- 	return irq_domain_alloc_irqs_parent(dom, virq, nr_irqs, &parent_fwspec);
- }
-@@ -245,3 +255,53 @@ static int __init exiu_dt_init(struct device_node *node,
- 	return -ENOMEM;
- }
- IRQCHIP_DECLARE(exiu, "socionext,synquacer-exiu", exiu_dt_init);
++#include "gpiolib.h"
 +
-+#ifdef CONFIG_ACPI
-+static int exiu_acpi_probe(struct platform_device *pdev)
+ /*
+  * Only first 8bits of a register correspond to each pin,
+  * so there are 4 registers for 32 pins.
+@@ -143,6 +146,20 @@ static void mb86s70_gpio_set(struct gpio_chip *gc, unsigned gpio, int value)
+ 	spin_unlock_irqrestore(&gchip->lock, flags);
+ }
+ 
++static int mb86s70_gpio_to_irq(struct gpio_chip *gc, unsigned int offset)
 +{
-+	struct irq_domain *domain;
-+	struct exiu_irq_data *data;
-+	struct resource *res;
++	int irq, index;
 +
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!res) {
-+		dev_err(&pdev->dev, "failed to parse memory resource\n");
-+		return -ENXIO;
++	for (index = 0;; index++) {
++		irq = platform_get_irq(to_platform_device(gc->parent), index);
++		if (irq <= 0)
++			break;
++		if (irq_get_irq_data(irq)->hwirq == offset)
++			return irq;
 +	}
-+
-+	data = exiu_init(dev_fwnode(&pdev->dev), res);
-+	if (IS_ERR(data))
-+		return PTR_ERR(data);
-+
-+	domain = acpi_irq_create_hierarchy(0, NUM_IRQS, dev_fwnode(&pdev->dev),
-+					   &exiu_domain_ops, data);
-+	if (!domain) {
-+		dev_err(&pdev->dev, "failed to create IRQ domain\n");
-+		goto out_unmap;
-+	}
-+
-+	dev_info(&pdev->dev, "%d interrupts forwarded\n", NUM_IRQS);
-+
-+	return 0;
-+
-+out_unmap:
-+	iounmap(data->base);
-+	kfree(data);
-+	return -ENOMEM;
++	return -EINVAL;
 +}
 +
-+static const struct acpi_device_id exiu_acpi_ids[] = {
-+	{ "SCX0008" },
+ static int mb86s70_gpio_probe(struct platform_device *pdev)
+ {
+ 	struct mb86s70_gpio_chip *gchip;
+@@ -158,13 +175,15 @@ static int mb86s70_gpio_probe(struct platform_device *pdev)
+ 	if (IS_ERR(gchip->base))
+ 		return PTR_ERR(gchip->base);
+ 
+-	gchip->clk = devm_clk_get(&pdev->dev, NULL);
+-	if (IS_ERR(gchip->clk))
+-		return PTR_ERR(gchip->clk);
++	if (!has_acpi_companion(&pdev->dev)) {
++		gchip->clk = devm_clk_get(&pdev->dev, NULL);
++		if (IS_ERR(gchip->clk))
++			return PTR_ERR(gchip->clk);
+ 
+-	ret = clk_prepare_enable(gchip->clk);
+-	if (ret)
+-		return ret;
++		ret = clk_prepare_enable(gchip->clk);
++		if (ret)
++			return ret;
++	}
+ 
+ 	spin_lock_init(&gchip->lock);
+ 
+@@ -180,19 +199,28 @@ static int mb86s70_gpio_probe(struct platform_device *pdev)
+ 	gchip->gc.parent = &pdev->dev;
+ 	gchip->gc.base = -1;
+ 
++	if (has_acpi_companion(&pdev->dev))
++		gchip->gc.to_irq = mb86s70_gpio_to_irq;
++
+ 	ret = gpiochip_add_data(&gchip->gc, gchip);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "couldn't register gpio driver\n");
+ 		clk_disable_unprepare(gchip->clk);
++		return ret;
+ 	}
+ 
+-	return ret;
++	if (has_acpi_companion(&pdev->dev))
++		acpi_gpiochip_request_interrupts(&gchip->gc);
++
++	return 0;
+ }
+ 
+ static int mb86s70_gpio_remove(struct platform_device *pdev)
+ {
+ 	struct mb86s70_gpio_chip *gchip = platform_get_drvdata(pdev);
+ 
++	if (has_acpi_companion(&pdev->dev))
++		acpi_gpiochip_free_interrupts(&gchip->gc);
+ 	gpiochip_remove(&gchip->gc);
+ 	clk_disable_unprepare(gchip->clk);
+ 
+@@ -205,10 +233,19 @@ static const struct of_device_id mb86s70_gpio_dt_ids[] = {
+ };
+ MODULE_DEVICE_TABLE(of, mb86s70_gpio_dt_ids);
+ 
++#ifdef CONFIG_ACPI
++static const struct acpi_device_id mb86s70_gpio_acpi_ids[] = {
++	{ "SCX0007" },
 +	{ /* sentinel */ }
 +};
-+MODULE_DEVICE_TABLE(acpi, exiu_acpi_ids);
-+
-+static struct platform_driver exiu_driver = {
-+	.driver = {
-+		.name = "exiu",
-+		.acpi_match_table = exiu_acpi_ids,
-+	},
-+	.probe = exiu_acpi_probe,
-+};
-+builtin_platform_driver(exiu_driver);
++MODULE_DEVICE_TABLE(acpi, mb86s70_gpio_acpi_ids);
 +#endif
++
+ static struct platform_driver mb86s70_gpio_driver = {
+ 	.driver = {
+ 		.name = "mb86s70-gpio",
+ 		.of_match_table = mb86s70_gpio_dt_ids,
++		.acpi_match_table = ACPI_PTR(mb86s70_gpio_acpi_ids),
+ 	},
+ 	.probe = mb86s70_gpio_probe,
+ 	.remove = mb86s70_gpio_remove,
 -- 
 2.20.1
 
