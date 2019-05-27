@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D7962AD32
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 05:05:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D2492AD34
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 05:06:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XgaRQDYW+grQCzfjB4u/ZOBY4CJbjxfFmz/Kno93CT4=; b=QCvgM74pLU5Xu4
-	sOEz/UAqLdPlkr47HLtzSHdLO8uZPf7r0wFjfO2ij0qPQpG+j6dTMHPliqIgiiei586z/pmOAUZOj
-	2b03sxz+zeRNvvLRhoYKuWVWe4YIMHu9sMnzeUsQh4j6Yow59+hyTiFurSH5VJQCZLQPniPwJY2wr
-	1GGfF0DiKeJdTDX7Oy/RUYyguIsXxATIqIflozL6eBxmDAxNPPMGGMSIlwOoaraYNtTc0u1UOL8Js
-	5n8tTFki7lky+sAlejbQdIEL5QZ5J87inlNeV0D0pqMsnZcvhNl6wOqBsSpH2x4ER7KZHXHja+GWP
-	imFl1FEOwx99vStThoTg==;
+	List-Owner; bh=7tJONQrj7nM4hP1uPCv05ZUIWKMxQwkd6Udep0I6ySw=; b=WcYRGpraY5sTcL
+	O1taFEPIlg8Tsg1eVIW72WHwqYJTzDpQykHYZ6ayVevoQU6nKK8BcOYtSJ7QWxtTUl2wBKXtr83+3
+	9H0t+Dsm8aPLwq6YZwsvQ8AijIgARKUXm7jlg+i4MsoHiS8HR4zBe45scIQQHXT9mJvovi0qqNumx
+	Ltlew3cDBD39VGZloeonvpdc1SwOFO+8CDq+3hRUxahojQIZ8SZZLJFpVN6BzTf5Q6Grme1auBS+J
+	ug37/JUPOOfhQGbXAvfoEYzjhO8s2G1LcHujAC9ytbxhRZqKd8VqCSxW9/MO7JaLQmrjGObRbKzLo
+	guIfGLFplbP+UzCWMKxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV5xK-0002n9-Ur; Mon, 27 May 2019 03:05:46 +0000
+	id 1hV5xf-0003Eg-IB; Mon, 27 May 2019 03:06:07 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV5wL-0000bV-Li
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 03:04:48 +0000
+ id 1hV5wP-0000gQ-2x
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 03:04:50 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 58D851A01D7;
- Mon, 27 May 2019 05:04:44 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A9DEA1A01B2;
+ Mon, 27 May 2019 05:04:47 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 110041A01B2;
- Mon, 27 May 2019 05:04:39 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 609061A02B5;
+ Mon, 27 May 2019 05:04:42 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AE37D40307;
- Mon, 27 May 2019 11:04:31 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E539F40314;
+ Mon, 27 May 2019 11:04:32 +0800 (SGT)
 From: Peter Chen <peter.chen@nxp.com>
 To: balbi@kernel.org,
 	shawnguo@kernel.org
-Subject: [PATCH v3 6/8] ARM: dts: imx7ulp: add imx7ulp USBOTG1 support
-Date: Mon, 27 May 2019 11:06:14 +0800
-Message-Id: <20190527030616.44397-7-peter.chen@nxp.com>
+Subject: [PATCH v3 7/8] ARM: dts: imx7ulp-evk: enable USBOTG1 support
+Date: Mon, 27 May 2019 11:06:15 +0800
+Message-Id: <20190527030616.44397-8-peter.chen@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190527030616.44397-1-peter.chen@nxp.com>
 References: <20190527030616.44397-1-peter.chen@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_200446_209379_7CFC4A0B 
-X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-CacheID: sfid-20190526_200449_518409_68C869FD 
+X-CRM114-Status: UNSURE (   8.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,62 +78,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add imx7ulp USBOTG1 support.
+Enable USBOTG1 support for evk board, it is dual-role function
+port.
 
 Signed-off-by: Peter Chen <peter.chen@nxp.com>
 ---
- arch/arm/boot/dts/imx7ulp.dtsi | 31 +++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ arch/arm/boot/dts/imx7ulp-evk.dts | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx7ulp.dtsi b/arch/arm/boot/dts/imx7ulp.dtsi
-index fca6e50f37c8..37b058119505 100644
---- a/arch/arm/boot/dts/imx7ulp.dtsi
-+++ b/arch/arm/boot/dts/imx7ulp.dtsi
-@@ -30,6 +30,7 @@
- 		serial1 = &lpuart5;
- 		serial2 = &lpuart6;
- 		serial3 = &lpuart7;
-+		usbphy0 = &usbphy1;
+diff --git a/arch/arm/boot/dts/imx7ulp-evk.dts b/arch/arm/boot/dts/imx7ulp-evk.dts
+index a09026a6d22e..c8a56a2ae9a5 100644
+--- a/arch/arm/boot/dts/imx7ulp-evk.dts
++++ b/arch/arm/boot/dts/imx7ulp-evk.dts
+@@ -22,6 +22,17 @@
+ 		reg = <0x60000000 0x40000000>;
  	};
  
- 	cpus {
-@@ -133,6 +134,36 @@
- 			clock-names = "ipg", "per";
- 		};
++	reg_usb_otg1_vbus: regulator-usb-otg1-vbus {
++		compatible = "regulator-fixed";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_usbotg1_vbus>;
++		regulator-name = "usb_otg1_vbus";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		gpio = <&gpio_ptc 0 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++
+ 	reg_vsd_3v3: regulator-vsd-3v3 {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "VSD_3V3";
+@@ -40,6 +51,17 @@
+ 	status = "okay";
+ };
  
-+		usbotg1: usb@40330000 {
-+			compatible = "fsl,imx7ulp-usb", "fsl,imx6ul-usb",
-+				"fsl,imx27-usb";
-+			reg = <0x40330000 0x200>;
-+			interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&pcc2 IMX7ULP_CLK_USB0>;
-+			phys = <&usbphy1>;
-+			fsl,usbmisc = <&usbmisc1 0>;
-+			ahb-burst-config = <0x0>;
-+			tx-burst-size-dword = <0x8>;
-+			rx-burst-size-dword = <0x8>;
-+			status = "disabled";
-+		};
++&usbotg1 {
++	vbus-supply = <&reg_usb_otg1_vbus>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usbotg1_id>;
++	srp-disable;
++	hnp-disable;
++	adp-disable;
++	over-current-active-low;
++	status = "okay";
++};
 +
-+		usbmisc1: usbmisc@40330200 {
-+			compatible = "fsl,imx7ulp-usbmisc", "fsl,imx7d-usbmisc",
-+				"fsl,imx6q-usbmisc";
-+			#index-cells = <1>;
-+			reg = <0x40330200 0x200>;
-+		};
+ &usdhc0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_usdhc0>;
+@@ -57,6 +79,19 @@
+ 		bias-pull-up;
+ 	};
+ 
++	pinctrl_usbotg1_vbus: otg1vbusgrp {
++		fsl,pins = <
++			IMX7ULP_PAD_PTC0__PTC0		0x20000
++		>;
++	};
 +
-+		usbphy1: usbphy@0x40350000 {
-+			compatible = "fsl,imx7ulp-usbphy",
-+				"fsl,imx6ul-usbphy", "fsl,imx23-usbphy";
-+			reg = <0x40350000 0x1000>;
-+			interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&pcc2 IMX7ULP_CLK_USB_PHY>;
-+			#phy-cells = <0>;
-+		};
++	pinctrl_usbotg1_id: otg1idgrp {
++		fsl,pins = <
++			IMX7ULP_PAD_PTC13__USB0_ID	0x10003
++			IMX7ULP_PAD_PTC16__USB1_OC2	0x10003
++		>;
++	};
 +
- 		usdhc0: mmc@40370000 {
- 			compatible = "fsl,imx7ulp-usdhc", "fsl,imx6sx-usdhc";
- 			reg = <0x40370000 0x10000>;
+ 	pinctrl_usdhc0: usdhc0grp {
+ 		fsl,pins = <
+ 			IMX7ULP_PAD_PTD1__SDHC0_CMD	0x43
 -- 
 2.14.1
 
