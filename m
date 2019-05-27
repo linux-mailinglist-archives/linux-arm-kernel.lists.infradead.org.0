@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 694B22B908
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:23:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1B782B909
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:23:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qa37d0LWBJFvbqOUvHSe1qZT3rSk2frMpUqMSFXAwUc=; b=UGhq+2gxw9HMI1
-	OZW7gzhnSBpXque0dep92oxq1myTn2/oxz05+IsQFqJKsYphLt5dcXv94zb1+eImjpeUYFD/QKyT1
-	RMIDpO1acAfgdcdYiQwl3Ue0s+a1478KvLdzZX3qhvHdsd1bLMGt13QUTLFS+K2YEoK/rCDzwrKaV
-	cyCEGT9HWONragyIiixQOzs85qnzVlWenazf1Ey1n/Jzpnmr/002vJ8do/yFddOkvh0jq/ycwgCKn
-	xdaIRnCKdJNvkFze/JmTsdkyz1zsWR9Nmel0CNnq2hERYJcXkuIMxILbkcmgyluIg7IS2kqLvnBn0
-	Ep6ccRJNW7UC6BxfBcoQ==;
+	List-Owner; bh=FCAj8QGC3+vjRGcv8PUbKlcWHUtTU29srE19nz6jY2M=; b=TwmA1UQsHmlWZi
+	fNycc6OhRsA3PN5RMptILEEVeBiF9EVvgMFZhvinXeCT3ZQ72k/X4v4Qs8jjQmAFj+k0V9kWeXwkD
+	I5GeiuTARRYkztwS5PRmBdKoUBv5JmzzUYZzTCOLjEVI5N+P2VJ6yJdZtzY+M8j08f8xs8edvKncv
+	S7+LJ8HH4D/Rc7Tve4LOswOzWCQ2jutPqfMBQdgjBBc05t7uKTgzitkbTXQh/EFhmPge0l9pwux2s
+	fhPLCgsbPEbSmzS3Z8gw/UL14tg6kLnUrH6iYzuYpQZCDAFeMgxu0pGcvny4VyLaSwTe300YIuRXM
+	w/gk6byjQc/7gGphe8fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVIPK-0002qL-9M; Mon, 27 May 2019 16:23:30 +0000
+	id 1hVIPZ-0002zG-8H; Mon, 27 May 2019 16:23:45 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVIOY-00029t-8V
+ id 1hVIOY-00029u-Mz
  for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 16:22:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1558974160; bh=nngIr0xvxUzPFucWAhkm6BkX4oH0a0zOi33I9wUZi5w=;
+ t=1558974161; bh=YFp7iMAT2SUi48E3lCp5Rb+wby06G1ktJEOG3j6izbk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cQyrKuueeB+WVAEMvYTzh1ZQzRGSjXkA2vn1vFnjbas7ys8YHOyucByJv/ZYO1si/
- dLMZWBpaCtXBWdZEYZd9m1Kf3d6gVRzObfX21aIUMYFPpadVhe0dOy01xlEjawxKl4
- 9AWEEKXZF45HMJfhctOpZoF9YmjC0d29THiuKt0k=
+ b=FluKZoslmbV6VPUu+72aK+19fDYd4Lw3Y3aT0IKC59c+s0gsEFj72A5C9Uql8Nfjo
+ IbJJHD+6xuYTrKdi27OB0fzwlGz551U0tuhMmhLqIzhshGP2QFvloiSWuJ3f+ttTLh
+ lLzj4VinGAH2Cv/Cr10TAj9B5HnpTAqKOyhZl5/Q=
 From: megous@megous.com
 To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v6 3/6] arm64: dts: allwinner: orange-pi-3: Enable ethernet
-Date: Mon, 27 May 2019 18:22:34 +0200
-Message-Id: <20190527162237.18495-4-megous@megous.com>
+Subject: [PATCH v6 4/6] dt-bindings: display: hdmi-connector: Support DDC bus
+ enable
+Date: Mon, 27 May 2019 18:22:35 +0200
+Message-Id: <20190527162237.18495-5-megous@megous.com>
 In-Reply-To: <20190527162237.18495-1-megous@megous.com>
 References: <20190527162237.18495-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_092242_463936_3875F7CE 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20190527_092242_997878_E9482A45 
+X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -82,91 +84,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-Orange Pi 3 has two regulators that power the Realtek RTL8211E. According
-to the phy datasheet, both regulators need to be enabled at the same time,
-but we can only specify a single phy-supply in the DT.
+Some Allwinner SoC using boards (Orange Pi 3 for example) need to enable
+on-board voltage shifting logic for the DDC bus using a gpio to be able
+to access DDC bus. Use ddc-en-gpios property on the hdmi-connector to
+model this.
 
-This can be achieved by making one regulator depedning on the other via
-vin-supply. While it's not a technically correct description of the
-hardware, it achieves the purpose.
-
-All values of RX/TX delay were tested exhaustively and a middle one of the
-working values was chosen.
+Add binding documentation for optional ddc-en-gpios property.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 44 +++++++++++++++++++
- 1 file changed, 44 insertions(+)
+ .../devicetree/bindings/display/connector/hdmi-connector.txt     | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-index 17d496990108..2c6807b74ff6 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-@@ -15,6 +15,7 @@
+diff --git a/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt b/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt
+index 508aee461e0d..aeb07c4bd703 100644
+--- a/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt
++++ b/Documentation/devicetree/bindings/display/connector/hdmi-connector.txt
+@@ -9,6 +9,7 @@ Optional properties:
+ - label: a symbolic name for the connector
+ - hpd-gpios: HPD GPIO number
+ - ddc-i2c-bus: phandle link to the I2C controller used for DDC EDID probing
++- ddc-en-gpios: signal to enable DDC bus
  
- 	aliases {
- 		serial0 = &uart0;
-+		ethernet0 = &emac;
- 	};
- 
- 	chosen {
-@@ -44,6 +45,27 @@
- 		regulator-max-microvolt = <5000000>;
- 		regulator-always-on;
- 	};
-+
-+	/*
-+	 * The board uses 2.5V RGMII signalling. Power sequence to enable
-+	 * the phy is to enable GMAC-2V5 and GMAC-3V (aldo2) power rails
-+	 * at the same time and to wait 100ms.
-+	 */
-+	reg_gmac_2v5: gmac-2v5 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "gmac-2v5";
-+		regulator-min-microvolt = <2500000>;
-+		regulator-max-microvolt = <2500000>;
-+		startup-delay-us = <100000>;
-+		enable-active-high;
-+		gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
-+
-+		/* The real parent of gmac-2v5 is reg_vcc5v, but we need to
-+		 * enable two regulators to power the phy. This is one way
-+		 * to achieve that.
-+		 */
-+		vin-supply = <&reg_aldo2>; /* GMAC-3V */
-+	};
- };
- 
- &cpu0 {
-@@ -58,6 +80,28 @@
- 	status = "okay";
- };
- 
-+&emac {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&ext_rgmii_pins>;
-+	phy-mode = "rgmii";
-+	phy-handle = <&ext_rgmii_phy>;
-+	phy-supply = <&reg_gmac_2v5>;
-+	allwinner,rx-delay-ps = <1500>;
-+	allwinner,tx-delay-ps = <700>;
-+	status = "okay";
-+};
-+
-+&mdio {
-+	ext_rgmii_phy: ethernet-phy@1 {
-+		compatible = "ethernet-phy-ieee802.3-c22";
-+		reg = <1>;
-+
-+		reset-gpios = <&pio 3 14 GPIO_ACTIVE_LOW>; /* PD14 */
-+		reset-assert-us = <15000>;
-+		reset-deassert-us = <40000>;
-+	};
-+};
-+
- &mmc0 {
- 	vmmc-supply = <&reg_cldo1>;
- 	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
+ Required nodes:
+ - Video port for HDMI input
 -- 
 2.21.0
 
