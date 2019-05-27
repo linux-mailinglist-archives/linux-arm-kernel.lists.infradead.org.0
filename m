@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1EA32B0B5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 10:50:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F6512B0B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 10:51:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=u/WFyBTgZn7uXplsgCNqgProIBGagzEwCjolwi2Ygkg=; b=AOnHdyR0l2a9LCd+z1SmnwTCz4
-	gBo/59qKf0WzBqHVdmxLLIK351PZdWElkSLQn/lIoZFUL5C6axkXfYtj2AUdKUXNT+efqYNEpcoyF
-	CIrmoKa4M5RVgVik8CoiRkk9cHtvZoF53NxtudifvfOnEiilYIrix4+6+ISDrZz79q7PQSOyJ9tmR
-	usafyBaKmf3xGMKxlpPK2DC0jQH74CCrGut71DWDWp0lACXCfHt1VWb8lz2SSoweLDChMtnzCoBUH
-	2d0iJIB7xGjg2HXmbxz3xsdTlka17CSYY74Z3lfXgbItTLH6BkJbq9IjRdHfLTXI6ahRzre16gnfq
-	vih66cxQ==;
+	bh=9bMaw4CPqvAxlHSmfb61otBG5jUg1S5bVxz5jzKk3vo=; b=YLkyKvNSDW0FiIN6CGD/j0CEJg
+	sm7Ktes/5t5V2mB/Anw5xzQpuwY8MtY8DUBE2LKzRs8eQPbtm3sEMYxYuPEdCVm5324A9J81mrAaa
+	HdAHvb/7yCjUNj1ChKz2A0VRsQH7YUxOxXPLzQEeaBkwX3lzDARZaIHGGaL2tLR2L5FKkuWB8zYkL
+	p5hrG2FckWI1z/oSLgmqVoCW6HD3eLBfUc7bJYseuFfZ45B0AmlJcpHIoqAjCDnWtuGwCsCRDpffB
+	ASaH5CNGlGWbPzvl1jUpmo374VRpZf5V9rlxE3HipOijL/QT6TfazZ3oJiymSZTrK9nYp4JrjkdiZ
+	t5t1qQ9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVBLI-0007ll-Ri; Mon, 27 May 2019 08:50:52 +0000
+	id 1hVBLT-000829-MN; Mon, 27 May 2019 08:51:03 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVBKX-0006K1-Jt
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 08:50:07 +0000
+ id 1hVBKZ-0006ZO-2H
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 08:50:09 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5DF3D200B05;
- Mon, 27 May 2019 10:50:04 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D28BD200079;
+ Mon, 27 May 2019 10:50:05 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id ABA3A200AFC;
- Mon, 27 May 2019 10:49:58 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A179200AF0;
+ Mon, 27 May 2019 10:50:00 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 73051402CB;
- Mon, 27 May 2019 16:49:51 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B2FD7402FB;
+ Mon, 27 May 2019 16:49:52 +0800 (SGT)
 From: yibin.gong@nxp.com
 To: robh@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  festevam@gmail.com, mark.rutland@arm.com, vkoul@kernel.org,
  dan.j.williams@intel.com
-Subject: [PATCH v2 3/7] dmaengine: fsl-edma-common: move dmamux register to
- another single function
-Date: Mon, 27 May 2019 16:51:14 +0800
-Message-Id: <20190527085118.40423-4-yibin.gong@nxp.com>
+Subject: [PATCH v2 4/7] dmaengine: fsl-edma-common: version check for v2
+ instead
+Date: Mon, 27 May 2019 16:51:15 +0800
+Message-Id: <20190527085118.40423-5-yibin.gong@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190527085118.40423-1-yibin.gong@nxp.com>
 References: <20190527085118.40423-1-yibin.gong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_015005_815256_DDA2BCFC 
-X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-CacheID: sfid-20190527_015007_442231_24CFC6EF 
+X-CRM114-Status: UNSURE (   7.00  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,50 +81,65 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Robin Gong <yibin.gong@nxp.com>
 
-Prepare for edmav2 on i.mx7ulp whose dmamux register is 32bit. No function
-impacted.
+The next v3 i.mx7ulp edma is based on v1, so change version
+check logic for v2 instead.
 
 Signed-off-by: Robin Gong <yibin.gong@nxp.com>
 ---
- drivers/dma/fsl-edma-common.c | 18 ++++++++++++++----
- 1 file changed, 14 insertions(+), 4 deletions(-)
+ drivers/dma/fsl-edma-common.c | 40 ++++++++++++++++++++--------------------
+ 1 file changed, 20 insertions(+), 20 deletions(-)
 
 diff --git a/drivers/dma/fsl-edma-common.c b/drivers/dma/fsl-edma-common.c
-index c9a17fc..bb24251 100644
+index bb24251..45d70d3 100644
 --- a/drivers/dma/fsl-edma-common.c
 +++ b/drivers/dma/fsl-edma-common.c
-@@ -77,6 +77,19 @@ void fsl_edma_disable_request(struct fsl_edma_chan *fsl_chan)
- }
- EXPORT_SYMBOL_GPL(fsl_edma_disable_request);
+@@ -657,26 +657,26 @@ void fsl_edma_setup_regs(struct fsl_edma_engine *edma)
+ 	edma->regs.erql = edma->membase + EDMA_ERQ;
+ 	edma->regs.eeil = edma->membase + EDMA_EEI;
  
-+static void mux_configure8(struct fsl_edma_chan *fsl_chan, void __iomem *addr,
-+			   u32 off, u32 slot, bool enable)
-+{
-+	u8 val8;
-+
-+	if (enable)
-+		val8 = EDMAMUX_CHCFG_ENBL | slot;
-+	else
-+		val8 = EDMAMUX_CHCFG_DIS;
-+
-+	iowrite8(val8, addr + off);
-+}
-+
- void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
- 			unsigned int slot, bool enable)
- {
-@@ -89,10 +102,7 @@ void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
- 	muxaddr = fsl_chan->edma->muxbase[ch / chans_per_mux];
- 	slot = EDMAMUX_CHCFG_SOURCE(slot);
+-	edma->regs.serq = edma->membase + ((edma->version == v1) ?
+-			EDMA_SERQ : EDMA64_SERQ);
+-	edma->regs.cerq = edma->membase + ((edma->version == v1) ?
+-			EDMA_CERQ : EDMA64_CERQ);
+-	edma->regs.seei = edma->membase + ((edma->version == v1) ?
+-			EDMA_SEEI : EDMA64_SEEI);
+-	edma->regs.ceei = edma->membase + ((edma->version == v1) ?
+-			EDMA_CEEI : EDMA64_CEEI);
+-	edma->regs.cint = edma->membase + ((edma->version == v1) ?
+-			EDMA_CINT : EDMA64_CINT);
+-	edma->regs.cerr = edma->membase + ((edma->version == v1) ?
+-			EDMA_CERR : EDMA64_CERR);
+-	edma->regs.ssrt = edma->membase + ((edma->version == v1) ?
+-			EDMA_SSRT : EDMA64_SSRT);
+-	edma->regs.cdne = edma->membase + ((edma->version == v1) ?
+-			EDMA_CDNE : EDMA64_CDNE);
+-	edma->regs.intl = edma->membase + ((edma->version == v1) ?
+-			EDMA_INTR : EDMA64_INTL);
+-	edma->regs.errl = edma->membase + ((edma->version == v1) ?
+-			EDMA_ERR : EDMA64_ERRL);
++	edma->regs.serq = edma->membase + ((edma->version == v2) ?
++			EDMA64_SERQ : EDMA_SERQ);
++	edma->regs.cerq = edma->membase + ((edma->version == v2) ?
++			EDMA64_CERQ : EDMA_CERQ);
++	edma->regs.seei = edma->membase + ((edma->version == v2) ?
++			EDMA64_SEEI : EDMA_SEEI);
++	edma->regs.ceei = edma->membase + ((edma->version == v2) ?
++			EDMA64_CEEI : EDMA_CEEI);
++	edma->regs.cint = edma->membase + ((edma->version == v2) ?
++			EDMA64_CINT : EDMA_CINT);
++	edma->regs.cerr = edma->membase + ((edma->version == v2) ?
++			EDMA64_CERR : EDMA_CERR);
++	edma->regs.ssrt = edma->membase + ((edma->version == v2) ?
++			EDMA64_SSRT : EDMA_SSRT);
++	edma->regs.cdne = edma->membase + ((edma->version == v2) ?
++			EDMA64_CDNE : EDMA_CDNE);
++	edma->regs.intl = edma->membase + ((edma->version == v2) ?
++			EDMA64_INTL : EDMA_INTR);
++	edma->regs.errl = edma->membase + ((edma->version == v2) ?
++			EDMA64_ERRL : EDMA_ERR);
  
--	if (enable)
--		iowrite8(EDMAMUX_CHCFG_ENBL | slot, muxaddr + ch_off);
--	else
--		iowrite8(EDMAMUX_CHCFG_DIS, muxaddr + ch_off);
-+	mux_configure8(fsl_chan, muxaddr, ch_off, slot, enable);
- }
- EXPORT_SYMBOL_GPL(fsl_edma_chan_mux);
- 
+ 	if (edma->version == v2) {
+ 		edma->regs.erqh = edma->membase + EDMA64_ERQH;
 -- 
 2.7.4
 
