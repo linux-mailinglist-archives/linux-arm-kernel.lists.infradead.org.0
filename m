@@ -2,100 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09B642AEAB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 08:29:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90F752AEC2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 08:34:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8GW+yf6pULqH+rHPo+v3tBJimCvTbkyY4o9volV6MKc=; b=dP8c9wXcvZuLan
-	/cBseq0eyPsLXSDU6cBZQrlcJgisfB+MAetYgiEa/LP5Stt3aDgNJeZcyp+6N6/Ywz7dmSpnF+a0K
-	W+TjROO/mkOXqWtbeQ/S3NpkS5S4FMuoPNqc7GYAx7BMUgZ+lTvUskgE09cz8x/Kifh6OB9qqKJ06
-	Xmvx9aC1A4sDUlUI6d3CRYv1DMHIY01bnfsrQS7koHjqaeMIPOUeoXDEcj5UL3JoPodgHIgO5q6Pb
-	ds9IJR9LcsvxYeMCyV3OM9hDm9H0W2p+o3JKhSSzzYxufg0VsadA30PaTu+2QB6bUWYzAYrfgR+El
-	TD6SbJCQ8OOPL18g0OjA==;
+	List-Owner; bh=ZKG9jq8Cf4zsJgxi8i0YDzVImwjMd57l8qgHznkiyM0=; b=OYhY/nrU8S++zy
+	WQ4RG0Csx5HtT8d0myiNYcU9CjobIn/CmGdBxo7/zuKdGJcwb2RfNEAv3E042oqVbL8UTLQt0aV8T
+	4CzEp0xUorydmn8lkmIiHRWWCeDSume4btOGhl+RBfGey9/BIiowaTqvxT6MfLppgQUbym+SvJXsa
+	hHIqhasKuYsNSEHpv3Hlk9W9akQQD7A9d38QbDgR69Mg97BPoAfSXF397cV1FlFSs/rUniqn8F/hX
+	751QDYSVBoOhNFSYtj3VG0kBJX8XhODG7Kf+YRFEnQ03hiaPhTdalhk0eLtRwMb1rULQ+Q8VPcyfD
+	KC7+d9Isu/QDMUf1Xvuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV98O-0006fk-Ew; Mon, 27 May 2019 06:29:24 +0000
-Received: from mail-eopbgr20077.outbound.protection.outlook.com ([40.107.2.77]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hV9DZ-0000DH-0A; Mon, 27 May 2019 06:34:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV98F-0006cP-Jb
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 06:29:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rFtLYzbCbSm//VSTccVakGpmfXw3GfWHxoL0uxG0NsU=;
- b=rlXuPW/5zGEjaURCWbKFWh7126BRye+2OHMpSjPvulR8XbJwfnyUmTq1wOUETKTOO6tfCbrmBWFrV1fffn7OH6R22XQykZgWLzOjmo/i9V4OBbOTJ9nnd8np3XqmyLkZBoQy53EaQnXHc0ps7zDJCrgEQT6W6JQINRbFTHaAEyY=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4402.eurprd04.prod.outlook.com (52.135.148.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.18; Mon, 27 May 2019 06:29:11 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1922.021; Mon, 27 May 2019
- 06:29:11 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: =?utf-8?B?QW5kcsOpIFByenl3YXJh?= <andre.przywara@arm.com>, Sudeep Holla
- <sudeep.holla@arm.com>, Florian Fainelli <f.fainelli@gmail.com>
-Subject: RE: [PATCH 0/2] mailbox: arm: introduce smc triggered mailbox
-Thread-Topic: [PATCH 0/2] mailbox: arm: introduce smc triggered mailbox
-Thread-Index: AQHVESt7O8zUR8j7k0mzGFqyu7YBg6Z4+DAAgAGZogCAA4nsgIAAa+GA
-Date: Mon, 27 May 2019 06:29:11 +0000
-Message-ID: <AM0PR04MB4481665E2C99DEE66CCB2CA8881D0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <20190523060437.11059-1-peng.fan@nxp.com>
- <4ba2b243-5622-bb27-6fc3-cd9457430e54@gmail.com>
- <20190524175658.GA5045@e107155-lin>
- <d0800650-b79b-4698-3a3e-60e83c85f2d1@arm.com>
-In-Reply-To: <d0800650-b79b-4698-3a3e-60e83c85f2d1@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 83e38b07-fa5d-4f7b-b88e-08d6e26ca1d8
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4402; 
-x-ms-traffictypediagnostic: AM0PR04MB4402:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <AM0PR04MB4402BB7023CB4AE3701B5618881D0@AM0PR04MB4402.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0050CEFE70
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(376002)(366004)(136003)(39860400002)(346002)(199004)(189003)(81166006)(186003)(6436002)(81156014)(316002)(26005)(476003)(446003)(74316002)(486006)(8676002)(11346002)(256004)(229853002)(14444005)(86362001)(7736002)(102836004)(6116002)(3846002)(6306002)(44832011)(305945005)(6506007)(53546011)(9686003)(99286004)(7696005)(55016002)(2906002)(76176011)(76116006)(66556008)(64756008)(66476007)(66446008)(6246003)(110136005)(54906003)(45080400002)(66946007)(73956011)(7416002)(25786009)(478600001)(5660300002)(66066001)(14454004)(4326008)(52536014)(68736007)(53936002)(33656002)(71200400001)(71190400001)(15650500001)(8936002)(966005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4402;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: uzDUTkb9D8wAFTUGNkuxaPp9WJNhiq1sSlUMtUe7O4/vQ3AcNnppf22UIA54m/nPNub72jKBx0JWbYKNFzyHgeooqoX93aPY/AJ2wuqBVHcoDVq/ggOCS+wH0Vcqy31rN90NOLzm0lPx11gktk5LWGo10HPTYOqqT2xOTNLildjSlFfgF3o3daqwPlumuYYrcNm+2bpgO4cWUTHalE6lIX3MbTJTh0PZFfC5aRy/phjNIrXBW7aGAC5o5k5d8R3ebOTBBKQkFIzcRYzIpFDaaEcq0sZE+tCmIqFJhjacPviYvWDCk8Jda9fOfhALFE1riy2H+dxhKbsyGzYna6+hmFunkN0823a8Ybi76ligi8DomPqCkMRj3GyuocbAnBw0eZKjPSV0lzB427dAfnq3eBCQ/zDezQExFB18Nlq1wEg=
+ id 1hV9DQ-0000Cc-Sb
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 06:34:38 +0000
+Received: from localhost (unknown [171.61.91.186])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 752572070D;
+ Mon, 27 May 2019 06:34:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558938876;
+ bh=/sC9zHW3LYGVcmoxuL0w3UerOo+Ooz0R9DrcIepPkcY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=YvnYn5Pkdq6U2yCI6yFr4GrkcpAvO8RHbZ6Bf4J+iqww2PlKYy9YxGTVgQaq0yiQM
+ DjpZwMHLealrZRd4O5ScKTHzDCX4Dp9xltoZAHyi4ACk8pMf3bZEDnhMmnc+oLmIAc
+ csrbKu3Kx5oRVlqq51FwT8m1ahBDh3OZRkMX9FlI=
+Date: Mon, 27 May 2019 12:04:31 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v1 4/6] dmaengine: fsl-edma: add i.mx7ulp edma2 version
+ support
+Message-ID: <20190527063431.GC15118@vkoul-mobl>
+References: <1557512248-8440-1-git-send-email-yibin.gong@nxp.com>
+ <1557512248-8440-5-git-send-email-yibin.gong@nxp.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 83e38b07-fa5d-4f7b-b88e-08d6e26ca1d8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2019 06:29:11.7494 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: peng.fan@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4402
+Content-Disposition: inline
+In-Reply-To: <1557512248-8440-5-git-send-email-yibin.gong@nxp.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_232915_712724_1C1D6AC3 
-X-CRM114-Status: GOOD (  24.01  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190526_233436_962319_FDDDC0BA 
+X-CRM114-Status: GOOD (  25.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.77 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -104,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,13 +79,15 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "robh@kernel.org" <robh@kernel.org>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  "festevam@gmail.com" <festevam@gmail.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -130,90 +95,204 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andre,
+On 10-05-19, 10:14, Robin Gong wrote:
+>   Add edma2 for i.mx7ulp by version v3, since v2 has already
+> been used by mcf-edma.
+> The big changes based on v1 are belows:
+>   1. only one dmamux.
+>   2. another clock dma_clk except dmamux clk.
+>   3. 16 independent interrupts instead of only one interrupt for
+> all channels.
+> 
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> ---
+>  drivers/dma/fsl-edma-common.c | 18 ++++++++++-
+>  drivers/dma/fsl-edma-common.h |  3 ++
+>  drivers/dma/fsl-edma.c        | 69 ++++++++++++++++++++++++++++++++++++++++++-
+>  3 files changed, 88 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/dma/fsl-edma-common.c b/drivers/dma/fsl-edma-common.c
+> index bb24251..64e822e 100644
+> --- a/drivers/dma/fsl-edma-common.c
+> +++ b/drivers/dma/fsl-edma-common.c
+> @@ -90,6 +90,19 @@ static void mux_configure8(struct fsl_edma_chan *fsl_chan, void __iomem *addr,
+>  	iowrite8(val8, addr + off);
+>  }
+>  
+> +void mux_configure32(struct fsl_edma_chan *fsl_chan, void __iomem *addr,
+> +		     u32 off, u32 slot, bool enable)
+> +{
+> +	u32 val;
+> +
+> +	if (enable)
+> +		val = EDMAMUX_CHCFG_ENBL << 24 | slot;
+> +	else
+> +		val = EDMAMUX_CHCFG_DIS;
+> +
+> +	iowrite32(val, addr + off * 4);
+> +}
+> +
+>  void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
+>  			unsigned int slot, bool enable)
+>  {
+> @@ -102,7 +115,10 @@ void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
+>  	muxaddr = fsl_chan->edma->muxbase[ch / chans_per_mux];
+>  	slot = EDMAMUX_CHCFG_SOURCE(slot);
+>  
+> -	mux_configure8(fsl_chan, muxaddr, ch_off, slot, enable);
+> +	if (fsl_chan->edma->version == v3)
+> +		mux_configure32(fsl_chan, muxaddr, ch_off, slot, enable);
+> +	else
+> +		mux_configure8(fsl_chan, muxaddr, ch_off, slot, enable);
+>  }
+>  EXPORT_SYMBOL_GPL(fsl_edma_chan_mux);
+>  
+> diff --git a/drivers/dma/fsl-edma-common.h b/drivers/dma/fsl-edma-common.h
+> index 21a9cfd..2b0cc8e 100644
+> --- a/drivers/dma/fsl-edma-common.h
+> +++ b/drivers/dma/fsl-edma-common.h
+> @@ -124,6 +124,7 @@ struct fsl_edma_chan {
+>  	dma_addr_t			dma_dev_addr;
+>  	u32				dma_dev_size;
+>  	enum dma_data_direction		dma_dir;
+> +	char				chan_name[16];
+>  };
+>  
+>  struct fsl_edma_desc {
+> @@ -138,6 +139,7 @@ struct fsl_edma_desc {
+>  enum edma_version {
+>  	v1, /* 32ch, Vybrid, mpc57x, etc */
+>  	v2, /* 64ch Coldfire */
+> +	v3, /* 32ch, i.mx7ulp */
+>  };
+>  
+>  struct fsl_edma_engine {
+> @@ -145,6 +147,7 @@ struct fsl_edma_engine {
+>  	void __iomem		*membase;
+>  	void __iomem		*muxbase[DMAMUX_NR];
+>  	struct clk		*muxclk[DMAMUX_NR];
+> +	struct clk		*dmaclk;
+>  	u32			dmamux_nr;
+>  	struct mutex		fsl_edma_mutex;
+>  	u32			n_chans;
+> diff --git a/drivers/dma/fsl-edma.c b/drivers/dma/fsl-edma.c
+> index 7b65ef4..1568070 100644
+> --- a/drivers/dma/fsl-edma.c
+> +++ b/drivers/dma/fsl-edma.c
+> @@ -165,6 +165,51 @@ fsl_edma_irq_init(struct platform_device *pdev, struct fsl_edma_engine *fsl_edma
+>  	return 0;
+>  }
+>  
+> +static int
+> +fsl_edma2_irq_init(struct platform_device *pdev,
+> +		   struct fsl_edma_engine *fsl_edma)
+> +{
+> +	struct device_node *np = pdev->dev.of_node;
+> +	int i, ret, irq;
+> +	int count = 0;
+> +
+> +	count = of_irq_count(np);
+> +	dev_info(&pdev->dev, "%s Found %d interrupts\r\n", __func__, count);
+> +	if (count <= 2) {
+> +		dev_err(&pdev->dev, "Interrupts in DTS not correct.\n");
+> +		return -EINVAL;
+> +	}
+> +	/*
+> +	 * 16 channel independent interrupts + 1 error interrupt on i.mx7ulp.
+> +	 * 2 channel share one interrupt, for example, ch0/ch16, ch1/ch17...
+> +	 * For now, just simply request irq without IRQF_SHARED flag, since 16
+> +	 * channels are enough on i.mx7ulp whose M4 domain own some peripherals.
+> +	 */
+> +	for (i = 0; i < count; i++) {
+> +		irq = platform_get_irq(pdev, i);
+> +		if (irq < 0)
+> +			return -ENXIO;
+> +
+> +		sprintf(fsl_edma->chans[i].chan_name, "eDMA2-CH%02d", i);
+> +
+> +		/* The last IRQ is for eDMA err */
+> +		if (i == count - 1)
+> +			ret = devm_request_irq(&pdev->dev, irq,
+> +						fsl_edma_err_handler,
+> +						0, "eDMA2-ERR", fsl_edma);
+> +		else
+> +
+> +			ret = devm_request_irq(&pdev->dev, irq,
+> +						fsl_edma_tx_handler, 0,
+> +						fsl_edma->chans[i].chan_name,
+> +						fsl_edma);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static void fsl_edma_irq_exit(
+>  		struct platform_device *pdev, struct fsl_edma_engine *fsl_edma)
+>  {
+> @@ -218,6 +263,23 @@ static int fsl_edma_probe(struct platform_device *pdev)
+>  	fsl_edma_setup_regs(fsl_edma);
+>  	regs = &fsl_edma->regs;
+>  
+> +	if (of_device_is_compatible(np, "fsl,imx7ulp-edma")) {
+> +		fsl_edma->dmamux_nr = 1;
+> +		fsl_edma->version = v3;
 
-> Subject: Re: [PATCH 0/2] mailbox: arm: introduce smc triggered mailbox
-> 
-> On 24/05/2019 18:56, Sudeep Holla wrote:
-> > On Thu, May 23, 2019 at 10:30:50AM -0700, Florian Fainelli wrote:
-> 
-> Hi,
-> 
-> >> On 5/22/19 10:50 PM, Peng Fan wrote:
-> >>> This is a modified version from Andre Przywara's patch series
-> >>>
-> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore.ke
-> rnel.org%2Fpatchwork%2Fcover%2F812997%2F&amp;data=02%7C01%7Cpe
-> ng.fan%40nxp.com%7C02ee9487370c4eb9158008d6e2363ca0%7C686ea1d3
-> bc2b4c6fa92cd99c5c301635%7C0%7C0%7C636945119959534576&amp;sda
-> ta=U8FzX3FX2PoEZhRuRMhFbkaAnb3cqjZsb9%2FTdt8OfuY%3D&amp;reserve
-> d=0.
-> >>> [1] is a draft implementation of i.MX8MM SCMI ATF implementation
-> >>> that use smc as mailbox, power/clk is included, but only part of clk
-> >>> has been implemented to work with hardware, power domain only
-> >>> supports get name for now.
-> >>>
-> >>> The traditional Linux mailbox mechanism uses some kind of dedicated
-> >>> hardware IP to signal a condition to some other processing unit,
-> >>> typically a dedicated management processor.
-> >>> This mailbox feature is used for instance by the SCMI protocol to
-> >>> signal a request for some action to be taken by the management
-> processor.
-> >>> However some SoCs does not have a dedicated management core to
-> >>> provide those services. In order to service TEE and to avoid linux
-> >>> shutdown power and clock that used by TEE, need let firmware to
-> >>> handle power and clock, the firmware here is ARM Trusted Firmware
-> >>> that could also run SCMI service.
-> >>>
-> >>> The existing SCMI implementation uses a rather flexible shared
-> >>> memory region to communicate commands and their parameters, it still
-> >>> requires a mailbox to actually trigger the action.
-> >>
-> >> We have had something similar done internally with a couple of minor
-> >> differences:
-> >>
-> >> - a SGI is used to send SCMI notifications/delayed replies to support
-> >> asynchronism (patches are in the works to actually add that to the
-> >> Linux SCMI framework). There is no good support for SGI in the kernel
-> >> right now so we hacked up something from the existing SMP code and
-> >> adding the ability to register our own IPI handlers (SHAME!). Using a
-> >> PPI should work and should allow for using request_irq() AFAICT.
-> >>
-> >
-> > We have been thinking this since we were asked if SMC can be transport.
-> > Generally out of 16 SGIs, 8 are reserved for secure side and
-> > non-secure has 8. Of these 8, IIUC 7 is already being used by kernel.
-> > So unless we manage to get the last one reserved exclusive to SCMI, it
-> > makes it difficult to add SGI support in SCMI.
-> >
-> > We have been telling partners/vendors about this limitation if they
-> > use SMC as transport and need to have dedicated h/w interrupt for the
-> > notifications.
-> >
-> > Another issue could be with virtualisation(using HVC) and EL handling
-> > so called SCMI SGI. We need to think about those too. I will try to
-> > get more info on this and come back on this.
-> 
-> I think regardless of the *current* feasibility of using SGIs in *Linux* we
-> should at least specify an "interrupts" property in the binding, to allow for
-> future usage. We might copy the pmuv3 way [1] of allowing to specify
-> multiple SPI interrupts as well, to give more flexibility.
+well this is not really scalable, we will keep adding versions and
+compatible and expanding this check. So it would make sense to create a
+driver data table which can be set for compatible and we use those
+values and avoid these runtime checks for compatible.
 
-This needs to go with an optional property, agree?
-That means smc mailbox needs to support synchronous and asynchronous
-communication. I'll try to add that and write some porotype code to
-verify.
+Btw the binding documentation should precede the code usage, so this
+patch should come after that
 
-Thanks,
-Peng.
 
-> After all an implementation could offload the asynchronous notification to a
-> separate core, and that could use SPIs, for instance.
+> +
+> +		fsl_edma->dmaclk = devm_clk_get(&pdev->dev, "dma");
+> +		if (IS_ERR(fsl_edma->dmaclk)) {
+> +			dev_err(&pdev->dev, "Missing DMA block clock.\n");
+> +			return PTR_ERR(fsl_edma->dmaclk);
+> +		}
+> +
+> +		ret = clk_prepare_enable(fsl_edma->dmaclk);
+> +		if (ret) {
+> +			dev_err(&pdev->dev, "DMA clk block failed.\n");
+> +			return ret;
+> +		}
+> +	}
+> +
+>  	for (i = 0; i < fsl_edma->dmamux_nr; i++) {
+>  		char clkname[32];
+>  
+> @@ -264,7 +326,11 @@ static int fsl_edma_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	edma_writel(fsl_edma, ~0, regs->intl);
+> -	ret = fsl_edma_irq_init(pdev, fsl_edma);
+> +
+> +	if (fsl_edma->version == v3)
+> +		ret = fsl_edma2_irq_init(pdev, fsl_edma);
+> +	else
+> +		ret = fsl_edma_irq_init(pdev, fsl_edma);
+>  	if (ret)
+>  		return ret;
+>  
+> @@ -385,6 +451,7 @@ static const struct dev_pm_ops fsl_edma_pm_ops = {
+>  
+>  static const struct of_device_id fsl_edma_dt_ids[] = {
+>  	{ .compatible = "fsl,vf610-edma", },
+> +	{ .compatible = "fsl,imx7ulp-edma", },
+>  	{ /* sentinel */ }
+>  };
+>  MODULE_DEVICE_TABLE(of, fsl_edma_dt_ids);
+> -- 
+> 2.7.4
 > 
-> Cheers,
-> Andre.
-> 
-> [1] Documentation/devicetree/bindings/arm/pmu.yaml:45
+
+-- 
+~Vinod
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
