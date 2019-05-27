@@ -2,145 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E20E42B1FA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 12:19:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 083652B200
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 12:21:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LtE6vjY9NBuAe13Oz0kpaENV1Y2mytTODKqB7d0fURY=; b=riMLQl94d1pXCd
-	QMRqKZ+QZC4B+bFYruccf1w2sx+lArYCQ/bZCNsT0AZ8oIfhtD2hnSVYNF12Hx+HXtw3xh5wEMzbV
-	o9uXNSS6pz8mIuPjIoV5Hi5b/3tCMQsiVOq4i4k79KH3tApxNEjSKBJTGcAFaj2VAsohW1s0GGeY0
-	dhVct00OoHS1aY6Qg3AWdHoE9poulKXLl7/347/dNBdexfPQCoCYNfJvX3CJhsoiXepszuh8ALRkX
-	39QpIvKE0N3tgUTTc5TwNrVjGqkBUXivibpbvt95tgxW9F7fgxQDnUKXCrxnWQyhJ2wePSRzCUEEk
-	/uQQ5r5VnaPL+eqM0n5g==;
+	List-Owner; bh=1NWtn3XnUoT9BdnIRpQ2If2jQ45SFCSRENm6h0B+Gjs=; b=rTO5JnGT5aT6lO
+	4Fb/ka1qxLvoJdm66EW8813WmYw/WaJ1MMRnlFNQyt8xv2lUULeJI4oCTNnrI2KurgbTX/C2DgVQn
+	jZByma5RohMElqQ405UImAsdJLRiN545rfUAqzhi9XtWN68ALnuVP586kBg8Dv2qT+pF9DQXZ7hun
+	6awdbima16hLrqNliWSdgth8EhtmvhPrtSLfF4MIBgKtKSuAoHkQcJKNLBNuU/nxbi0/XTnoY4HTw
+	EmcC+dTG3+Ditugoh4V9w7zMcoYILiNlGtmrC/Ktg++Zc+CozvUWR6Fu8fVo1p9kxsJYVO7KFK09W
+	dwuieURxv13EaDBvui8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVCif-0004LC-Pr; Mon, 27 May 2019 10:19:05 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hVClK-0005zo-04; Mon, 27 May 2019 10:21:50 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVCiX-0004KN-K0
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 10:18:59 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l17so7964659wrm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 03:18:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=LwxUoJ6KHI7Lo4NCQzACEK8n04rpymIn25xi21VbxX4=;
- b=RqL1nQrOdTjnzSONL1IvtOuOlklcvbK1tF85BRV+pbcLrhXWlADQMKsenoa4tQjrLP
- N/jVWwsUuQT+XjDm/PuwIjgLVX5BGr1d0seSz7N3/TJFKnuxGwXn6zvBHJr8iqiRGXqJ
- Z7klCMvZWvov9l/aE0u3uUoRGZu9L6SoNhxal6ZE+toQPACBxnEfI5G5hMKfi4tNKRdj
- Qbu3Y1AmfGndb6R+aW7yydE0yPDplieWU4VQFk/39h9d5nojMZmT2NIi5pBnLocZ0ny1
- 1G46SK/biSVszctEqgwekddHB74ixXLVykPdmeSKdsRVau0l90IfdDHDr4oVAV5UsSkS
- trnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=LwxUoJ6KHI7Lo4NCQzACEK8n04rpymIn25xi21VbxX4=;
- b=esvDnIO1Mp1ZUZeav++pbqI1NcYYS+/JPh/5FsUVZqEOThyx+4JcP8hT8EMjpQl5fz
- VUi+UHu6Wy2VBevnYTltkkEauZNOFRPS3Z/IF0T9eM+hB/sgWYFYxMXYLZ/c+ey8wsTV
- IFgsmMBt5+aLB62KmGQ9M5R2d3455IPOWdIhAZV1rL4HkjKMnoNhuI/5s2zHjZ9Go8Ez
- QZ5IHyVjmMqdsMbMBfnIvWs3MiHl7N1zxwbeheE8JfEhePFEjcmThKJAv4GboioZ6H69
- t/HRfMweh7qK48pE1kqnnPgmPbvgrD28nBKR6smFEWZC0Qz3y9MoVfE5RLl6E/hwsMi/
- 0g5Q==
-X-Gm-Message-State: APjAAAXB5YChqzWZfcqOI8ZQQRjPOfbBA1Bj1FFs7jcrxKPz+Fh434ew
- Bcb1Oe68v/Nwq6U0hSbZnLjvOQ==
-X-Google-Smtp-Source: APXvYqyv3HYYF09TdDZ2Jkaw8zvFhG9+4dXf5+1hmublX7pzRHeL7KsnSbQ+YLYMrJThebn4SnCHdw==
-X-Received: by 2002:adf:83c5:: with SMTP id 63mr43965605wre.33.1558952334994; 
- Mon, 27 May 2019 03:18:54 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id n10sm4553989wrr.11.2019.05.27.03.18.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 03:18:53 -0700 (PDT)
-Subject: Re: [PATCH v6 3/4] media: meson: add v4l2 m2m video decoder driver
-To: Hans Verkuil <hverkuil@xs4all.nl>, Maxime Jourdan
- <mjourdan@baylibre.com>, Mauro Carvalho Chehab <mchehab@kernel.org>
-References: <20190514135612.30822-1-mjourdan@baylibre.com>
- <20190514135612.30822-4-mjourdan@baylibre.com>
- <07af1a22-d57c-aff6-b476-98fbf72135c1@xs4all.nl>
-From: Neil Armstrong <narmstrong@baylibre.com>
+ id 1hVClC-0005z5-1a
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 10:21:43 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 20FE9307D869;
+ Mon, 27 May 2019 10:21:36 +0000 (UTC)
+Received: from [10.36.117.89] (ovpn-117-89.ams2.redhat.com [10.36.117.89])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 89C595D9CA;
+ Mon, 27 May 2019 10:21:24 +0000 (UTC)
+Subject: Re: [PATCH V4 4/4] arm64/mm: Enable memory hot remove
+To: Anshuman Khandual <anshuman.khandual@arm.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ akpm@linux-foundation.org, catalin.marinas@arm.com, will.deacon@arm.com
+References: <1558329516-10445-1-git-send-email-anshuman.khandual@arm.com>
+ <1558329516-10445-5-git-send-email-anshuman.khandual@arm.com>
+ <a660313e-f96c-91ed-1e15-5f3ec6463596@redhat.com>
+ <b226746e-fed1-ea18-f100-0a2c6c561d1f@arm.com>
+From: David Hildenbrand <david@redhat.com>
 Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <480f2c43-9858-a4d3-7a6b-452756fb6076@baylibre.com>
-Date: Mon, 27 May 2019 12:18:53 +0200
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <88b9d9ec-36c0-b9f3-0b9d-e3d100dc5333@redhat.com>
+Date: Mon, 27 May 2019 12:21:23 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <07af1a22-d57c-aff6-b476-98fbf72135c1@xs4all.nl>
+In-Reply-To: <b226746e-fed1-ea18-f100-0a2c6c561d1f@arm.com>
 Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.48]); Mon, 27 May 2019 10:21:41 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_031857_800165_C6CE0DB0 
-X-CRM114-Status: GOOD (  24.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190527_032142_184482_2130B088 
+X-CRM114-Status: GOOD (  28.18  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -152,160 +119,370 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- Hans Verkuil <hans.verkuil@cisco.com>, linux-amlogic@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: mark.rutland@arm.com, mhocko@suse.com, ira.weiny@intel.com,
+ mgorman@techsingularity.net, cai@lca.pw, ard.biesheuvel@arm.com,
+ cpandya@codeaurora.org, james.morse@arm.com, dan.j.williams@intel.com,
+ logang@deltatee.com, arunks@codeaurora.org, osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hans,
+On 27.05.19 10:09, Anshuman Khandual wrote:
+> 
+> 
+> On 05/21/2019 03:50 PM, David Hildenbrand wrote:
+>> On 20.05.19 07:18, Anshuman Khandual wrote:
+>>> The arch code for hot-remove must tear down portions of the linear map and
+>>> vmemmap corresponding to memory being removed. In both cases the page
+>>> tables mapping these regions must be freed, and when sparse vmemmap is in
+>>> use the memory backing the vmemmap must also be freed.
+>>>
+>>> This patch adds a new remove_pagetable() helper which can be used to tear
+>>> down either region, and calls it from vmemmap_free() and
+>>> ___remove_pgd_mapping(). The sparse_vmap argument determines whether the
+>>> backing memory will be freed.
+>>>
+>>> While freeing intermediate level page table pages bail out if any of it's
+>>> entries are still valid. This can happen for partially filled kernel page
+>>> table either from a previously attempted failed memory hot add or while
+>>> removing an address range which does not span the entire page table page
+>>> range.
+>>>
+>>> The vmemmap region may share levels of table with the vmalloc region. Take
+>>> the kernel ptl so that we can safely free potentially-shared tables.
+>>>
+>>> While here update arch_add_memory() to handle __add_pages() failures by
+>>> just unmapping recently added kernel linear mapping. Now enable memory hot
+>>> remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
+>>>
+>>> This implementation is overall inspired from kernel page table tear down
+>>> procedure on X86 architecture.
+>>>
+>>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>>> ---
+>>>  arch/arm64/Kconfig  |   3 +
+>>>  arch/arm64/mm/mmu.c | 212 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+>>>  2 files changed, 213 insertions(+), 2 deletions(-)
+>>>
+>>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>>> index 4780eb7..ce24427 100644
+>>> --- a/arch/arm64/Kconfig
+>>> +++ b/arch/arm64/Kconfig
+>>> @@ -267,6 +267,9 @@ config HAVE_GENERIC_GUP
+>>>  config ARCH_ENABLE_MEMORY_HOTPLUG
+>>>  	def_bool y
+>>>  
+>>> +config ARCH_ENABLE_MEMORY_HOTREMOVE
+>>> +	def_bool y
+>>> +
+>>>  config SMP
+>>>  	def_bool y
+>>>  
+>>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>>> index a1bfc44..0cf0d41 100644
+>>> --- a/arch/arm64/mm/mmu.c
+>>> +++ b/arch/arm64/mm/mmu.c
+>>> @@ -733,6 +733,187 @@ int kern_addr_valid(unsigned long addr)
+>>>  
+>>>  	return pfn_valid(pte_pfn(pte));
+>>>  }
+>>> +
+>>> +#ifdef CONFIG_MEMORY_HOTPLUG
+>>> +static void free_hotplug_page_range(struct page *page, ssize_t size)
+>>> +{
+>>> +	WARN_ON(PageReserved(page));
+>>> +	free_pages((unsigned long)page_address(page), get_order(size));
+>>> +}
+>>> +
+>>> +static void free_hotplug_pgtable_page(struct page *page)
+>>> +{
+>>> +	free_hotplug_page_range(page, PAGE_SIZE);
+>>> +}
+>>> +
+>>> +static void free_pte_table(pte_t *ptep, pmd_t *pmdp, unsigned long addr)
+>>> +{
+>>> +	struct page *page;
+>>> +	int i;
+>>> +
+>>> +	for (i = 0; i < PTRS_PER_PTE; i++) {
+>>> +		if (!pte_none(ptep[i]))
+>>> +			return;
+>>> +	}
+>>> +
+>>> +	page = pmd_page(READ_ONCE(*pmdp));
+>>> +	pmd_clear(pmdp);
+>>> +	__flush_tlb_kernel_pgtable(addr);
+>>> +	free_hotplug_pgtable_page(page);
+>>> +}
+>>> +
+>>> +static void free_pmd_table(pmd_t *pmdp, pud_t *pudp, unsigned long addr)
+>>> +{
+>>> +	struct page *page;
+>>> +	int i;
+>>> +
+>>> +	if (CONFIG_PGTABLE_LEVELS <= 2)
+>>> +		return;
+>>> +
+>>> +	for (i = 0; i < PTRS_PER_PMD; i++) {
+>>> +		if (!pmd_none(pmdp[i]))
+>>> +			return;
+>>> +	}
+>>> +
+>>> +	page = pud_page(READ_ONCE(*pudp));
+>>> +	pud_clear(pudp);
+>>> +	__flush_tlb_kernel_pgtable(addr);
+>>> +	free_hotplug_pgtable_page(page);
+>>> +}
+>>> +
+>>> +static void free_pud_table(pud_t *pudp, pgd_t *pgdp, unsigned long addr)
+>>> +{
+>>> +	struct page *page;
+>>> +	int i;
+>>> +
+>>> +	if (CONFIG_PGTABLE_LEVELS <= 3)
+>>> +		return;
+>>> +
+>>> +	for (i = 0; i < PTRS_PER_PUD; i++) {
+>>> +		if (!pud_none(pudp[i]))
+>>> +			return;
+>>> +	}
+>>> +
+>>> +	page = pgd_page(READ_ONCE(*pgdp));
+>>> +	pgd_clear(pgdp);
+>>> +	__flush_tlb_kernel_pgtable(addr);
+>>> +	free_hotplug_pgtable_page(page);
+>>> +}
+>>> +
+>>> +static void
+>>> +remove_pte_table(pmd_t *pmdp, unsigned long addr,
+>>> +			unsigned long end, bool sparse_vmap)
+>>> +{
+>>> +	struct page *page;
+>>> +	pte_t *ptep, pte;
+>>> +	unsigned long start = addr;
+>>> +
+>>> +	for (; addr < end; addr += PAGE_SIZE) {
+>>> +		ptep = pte_offset_kernel(pmdp, addr);
+>>> +		pte = READ_ONCE(*ptep);
+>>> +
+>>> +		if (pte_none(pte))
+>>> +			continue;
+>>> +
+>>> +		WARN_ON(!pte_present(pte));
+>>> +		if (sparse_vmap) {
+>>> +			page = pte_page(pte);
+>>> +			free_hotplug_page_range(page, PAGE_SIZE);
+>>> +		}
+>>> +		pte_clear(&init_mm, addr, ptep);
+>>> +	}
+>>> +	flush_tlb_kernel_range(start, end);
+>>> +}
+>>> +
+>>> +static void
+>>> +remove_pmd_table(pud_t *pudp, unsigned long addr,
+>>> +			unsigned long end, bool sparse_vmap)
+>>> +{
+>>> +	unsigned long next;
+>>> +	struct page *page;
+>>> +	pte_t *ptep_base;
+>>> +	pmd_t *pmdp, pmd;
+>>> +
+>>> +	for (; addr < end; addr = next) {
+>>> +		next = pmd_addr_end(addr, end);
+>>> +		pmdp = pmd_offset(pudp, addr);
+>>> +		pmd = READ_ONCE(*pmdp);
+>>> +
+>>> +		if (pmd_none(pmd))
+>>> +			continue;
+>>> +
+>>> +		WARN_ON(!pmd_present(pmd));
+>>> +		if (pmd_sect(pmd)) {
+>>> +			if (sparse_vmap) {
+>>> +				page = pmd_page(pmd);
+>>> +				free_hotplug_page_range(page, PMD_SIZE);
+>>> +			}
+>>> +			pmd_clear(pmdp);
+>>> +			continue;
+>>> +		}
+>>> +		ptep_base = pte_offset_kernel(pmdp, 0UL);
+>>> +		remove_pte_table(pmdp, addr, next, sparse_vmap);
+>>> +		free_pte_table(ptep_base, pmdp, addr);
+>>> +	}
+>>> +}
+>>> +
+>>> +static void
+>>> +remove_pud_table(pgd_t *pgdp, unsigned long addr,
+>>> +			unsigned long end, bool sparse_vmap)
+>>> +{
+>>> +	unsigned long next;
+>>> +	struct page *page;
+>>> +	pmd_t *pmdp_base;
+>>> +	pud_t *pudp, pud;
+>>> +
+>>> +	for (; addr < end; addr = next) {
+>>> +		next = pud_addr_end(addr, end);
+>>> +		pudp = pud_offset(pgdp, addr);
+>>> +		pud = READ_ONCE(*pudp);
+>>> +
+>>> +		if (pud_none(pud))
+>>> +			continue;
+>>> +
+>>> +		WARN_ON(!pud_present(pud));
+>>> +		if (pud_sect(pud)) {
+>>> +			if (sparse_vmap) {
+>>> +				page = pud_page(pud);
+>>> +				free_hotplug_page_range(page, PUD_SIZE);
+>>> +			}
+>>> +			pud_clear(pudp);
+>>> +			continue;
+>>> +		}
+>>> +		pmdp_base = pmd_offset(pudp, 0UL);
+>>> +		remove_pmd_table(pudp, addr, next, sparse_vmap);
+>>> +		free_pmd_table(pmdp_base, pudp, addr);
+>>> +	}
+>>> +}
+>>> +
+>>> +static void
+>>> +remove_pagetable(unsigned long start, unsigned long end, bool sparse_vmap)
+>>> +{
+>>> +	unsigned long addr, next;
+>>> +	pud_t *pudp_base;
+>>> +	pgd_t *pgdp, pgd;
+>>> +
+>>> +	spin_lock(&init_mm.page_table_lock);
+>>> +	for (addr = start; addr < end; addr = next) {
+>>> +		next = pgd_addr_end(addr, end);
+>>> +		pgdp = pgd_offset_k(addr);
+>>> +		pgd = READ_ONCE(*pgdp);
+>>> +
+>>> +		if (pgd_none(pgd))
+>>> +			continue;
+>>> +
+>>> +		WARN_ON(!pgd_present(pgd));
+>>> +		pudp_base = pud_offset(pgdp, 0UL);
+>>> +		remove_pud_table(pgdp, addr, next, sparse_vmap);
+>>> +		free_pud_table(pudp_base, pgdp, addr);
+>>> +	}
+>>> +	spin_unlock(&init_mm.page_table_lock);
+>>> +}
+>>> +#endif
+>>> +
+>>>  #ifdef CONFIG_SPARSEMEM_VMEMMAP
+>>>  #if !ARM64_SWAPPER_USES_SECTION_MAPS
+>>>  int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
+>>> @@ -780,6 +961,9 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
+>>>  void vmemmap_free(unsigned long start, unsigned long end,
+>>>  		struct vmem_altmap *altmap)
+>>>  {
+>>> +#ifdef CONFIG_MEMORY_HOTPLUG
+>>> +	remove_pagetable(start, end, true);
+>>> +#endif
+>>>  }
+>>>  #endif	/* CONFIG_SPARSEMEM_VMEMMAP */
+>>>  
+>>> @@ -1070,10 +1254,16 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
+>>>  }
+>>>  
+>>>  #ifdef CONFIG_MEMORY_HOTPLUG
+>>> +static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
+>>> +{
+>>> +	WARN_ON(pgdir != init_mm.pgd);
+>>> +	remove_pagetable(start, start + size, false);
+>>> +}
+>>> +
+>>>  int arch_add_memory(int nid, u64 start, u64 size,
+>>>  			struct mhp_restrictions *restrictions)
+>>>  {
+>>> -	int flags = 0;
+>>> +	int ret, flags = 0;
+>>>  
+>>>  	if (rodata_full || debug_pagealloc_enabled())
+>>>  		flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
+>>> @@ -1081,7 +1271,25 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>>  	__create_pgd_mapping(swapper_pg_dir, start, __phys_to_virt(start),
+>>>  			     size, PAGE_KERNEL, __pgd_pgtable_alloc, flags);
+>>>  
+>>> -	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
+>>> +	ret = __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
+>>>  			   restrictions);
+>>> +	if (ret)
+>>> +		__remove_pgd_mapping(swapper_pg_dir,
+>>> +					__phys_to_virt(start), size);
+>>
+>> Nit: Indentation of the parameters looks really weird.
+>>
+>>> +	return ret;
+>>> +}
+>>> +
+>>> +#ifdef CONFIG_MEMORY_HOTREMOVE
+>>> +void arch_remove_memory(int nid, u64 start, u64 size,
+>>> +				struct vmem_altmap *altmap)
+>>> +{
+>>> +	unsigned long start_pfn = start >> PAGE_SHIFT;
+>>> +	unsigned long nr_pages = size >> PAGE_SHIFT;
+>>> +	struct zone *zone = page_zone(pfn_to_page(start_pfn));
+>>> +
+>>> +	__remove_pages(zone, start_pfn, nr_pages, altmap);
+>>> +	__remove_pgd_mapping(swapper_pg_dir,
+>>> +					__phys_to_virt(start), size);
+>>
+>> Dito, indentation of the parameters.
+>>
+>> For these two changes (arch_*_memory)
+>>
+>> Acked-by: David Hildenbrand <david@redhat.com>
+> 
+> Thanks David. The following change on this patch should fix the indentation
+> problem. If there are no other comments I will incorporate this and re-spin
+> the series once more.
+> 
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index 0cf0d41..a87ba18 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -1273,9 +1273,10 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>  
+>  	ret = __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
+>  			   restrictions);
+> -	if (ret)
+> -		__remove_pgd_mapping(swapper_pg_dir,
+> -					__phys_to_virt(start), size);
+> +	if (!ret)
+> +		return ret;
+> +
+> +	__remove_pgd_mapping(swapper_pg_dir, __phys_to_virt(start), size);
 
-On 27/05/2019 12:04, Hans Verkuil wrote:
-> Hi Maxime,
-> 
-> First a high-level comment: I think this driver should go to staging.
-> Once we finalize the stateful decoder spec, and we've updated the
-> v4l2-compliance test, then this needs to be tested against that and
-> only if it passes can it be moved out of staging.
 
-I don't understand the reason since other stateful codecs are already
-mainline and doesn't match the in-discussion stateful decoder spec either.
+you can leave the old code, just make sure the start of all parameters
+on new lines are aligned, that seemed to be not the case
 
-Neil
+if (ret)
+	__remove_pgd_mapping(swapper_pg_dir,
+			     __phys_to_virt(start), size);
+............................^
 
-> 
-> It is just a bit too soon to have this in mainline at this time.
-> 
-> One other comment below:
-> 
-> On 5/14/19 3:56 PM, Maxime Jourdan wrote:
->> Amlogic SoCs feature a powerful video decoder unit able to
->> decode many formats, with a performance of usually up to 4k60.
->>
->> This is a driver for this IP that is based around the v4l2 m2m framework.
->>
->> It features decoding for:
->> - MPEG 1
->> - MPEG 2
->>
->> Supported SoCs are: GXBB (S905), GXL (S905X/W/D), GXM (S912)
->>
->> There is also a hardware bitstream parser (ESPARSER) that is handled here.
->>
->> Tested-by: Neil Armstrong <narmstrong@baylibre.com>
->> Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
->> ---
->>  drivers/media/platform/Kconfig                |   10 +
->>  drivers/media/platform/meson/Makefile         |    1 +
->>  drivers/media/platform/meson/vdec/Makefile    |    8 +
->>  .../media/platform/meson/vdec/codec_mpeg12.c  |  209 ++++
->>  .../media/platform/meson/vdec/codec_mpeg12.h  |   14 +
->>  drivers/media/platform/meson/vdec/dos_regs.h  |   98 ++
->>  drivers/media/platform/meson/vdec/esparser.c  |  323 +++++
->>  drivers/media/platform/meson/vdec/esparser.h  |   32 +
->>  drivers/media/platform/meson/vdec/vdec.c      | 1071 +++++++++++++++++
->>  drivers/media/platform/meson/vdec/vdec.h      |  265 ++++
->>  drivers/media/platform/meson/vdec/vdec_1.c    |  229 ++++
->>  drivers/media/platform/meson/vdec/vdec_1.h    |   14 +
->>  .../media/platform/meson/vdec/vdec_ctrls.c    |   51 +
->>  .../media/platform/meson/vdec/vdec_ctrls.h    |   14 +
->>  .../media/platform/meson/vdec/vdec_helpers.c  |  441 +++++++
->>  .../media/platform/meson/vdec/vdec_helpers.h  |   80 ++
->>  .../media/platform/meson/vdec/vdec_platform.c |  107 ++
->>  .../media/platform/meson/vdec/vdec_platform.h |   30 +
->>  18 files changed, 2997 insertions(+)
->>  create mode 100644 drivers/media/platform/meson/vdec/Makefile
->>  create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.c
->>  create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.h
->>  create mode 100644 drivers/media/platform/meson/vdec/dos_regs.h
->>  create mode 100644 drivers/media/platform/meson/vdec/esparser.c
->>  create mode 100644 drivers/media/platform/meson/vdec/esparser.h
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec.c
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec.h
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_1.c
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_1.h
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.c
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.h
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.c
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.h
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.c
->>  create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.h
->>
-> 
-> <snip>
-> 
->> diff --git a/drivers/media/platform/meson/vdec/vdec_ctrls.c b/drivers/media/platform/meson/vdec/vdec_ctrls.c
->> new file mode 100644
->> index 000000000000..d5d6b1b97aa5
->> --- /dev/null
->> +++ b/drivers/media/platform/meson/vdec/vdec_ctrls.c
->> @@ -0,0 +1,51 @@
->> +// SPDX-License-Identifier: GPL-2.0+
->> +/*
->> + * Copyright (C) 2018 BayLibre, SAS
->> + * Author: Maxime Jourdan <mjourdan@baylibre.com>
->> + */
->> +
->> +#include "vdec_ctrls.h"
->> +
->> +static int vdec_op_g_volatile_ctrl(struct v4l2_ctrl *ctrl)
->> +{
->> +	struct amvdec_session *sess =
->> +	      container_of(ctrl->handler, struct amvdec_session, ctrl_handler);
->> +
->> +	switch (ctrl->id) {
->> +	case V4L2_CID_MIN_BUFFERS_FOR_CAPTURE:
->> +		ctrl->val = sess->dpb_size;
->> +		break;
->> +	default:
->> +		return -EINVAL;
->> +	};
->> +
->> +	return 0;
->> +}
->> +
->> +static const struct v4l2_ctrl_ops vdec_ctrl_ops = {
->> +	.g_volatile_ctrl = vdec_op_g_volatile_ctrl,
->> +};
->> +
->> +int amvdec_init_ctrls(struct v4l2_ctrl_handler *ctrl_handler)
->> +{
->> +	int ret;
->> +	struct v4l2_ctrl *ctrl;
->> +
->> +	ret = v4l2_ctrl_handler_init(ctrl_handler, 1);
->> +	if (ret)
->> +		return ret;
->> +
->> +	ctrl = v4l2_ctrl_new_std(ctrl_handler, &vdec_ctrl_ops,
->> +		V4L2_CID_MIN_BUFFERS_FOR_CAPTURE, 1, 32, 1, 1);
->> +	if (ctrl)
->> +		ctrl->flags |= V4L2_CTRL_FLAG_VOLATILE;
-> 
-> Why is this volatile? That makes little sense.
-> 
->> +
->> +	ret = ctrl_handler->error;
->> +	if (ret) {
->> +		v4l2_ctrl_handler_free(ctrl_handler);
->> +		return ret;
->> +	}
->> +
->> +	return 0;
->> +}
->> +EXPORT_SYMBOL_GPL(amvdec_init_ctrls);
-> 
-> <snip>
-> 
-> Regards,
-> 
-> 	Hans
+>  	return ret;
+>  }
+>  
+> @@ -1288,8 +1289,7 @@ void arch_remove_memory(int nid, u64 start, u64 size,
+>  	struct zone *zone = page_zone(pfn_to_page(start_pfn));
+>  
+>  	__remove_pages(zone, start_pfn, nr_pages, altmap);
+> -	__remove_pgd_mapping(swapper_pg_dir,
+> -					__phys_to_virt(start), size);
+> +	__remove_pgd_mapping(swapper_pg_dir, __phys_to_virt(start), size);
+>  }
+>  #endif
+>  #endif
 > 
 
+
+-- 
+
+Thanks,
+
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
