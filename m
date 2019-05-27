@@ -2,67 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC6D82B7BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:39:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE5EA2B7AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:38:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=w73jFOodj9sjFvQQpL/two+0FaWIGkblmd/v4ObVUWs=; b=aIHuV1yux43JgrUWPRlp53uZN8
-	z0SOTUusah9qS7C7T5VkNDt87ALZfNIiKhnScp8WOz18WpnLTNe0zEN6Kn3O4we9jukeoAHaK23OH
-	mCdKTQ0rWTWF0uv7PUg+9R+pf0NMY041T+EK0yTVaLsx/5lEGVCUEd4jZIDA+iDdlLXG1dNYBpNqO
-	6gMMj2qwM//eNl3nyHornvLOn2IjoLou6JX2S/XpJ3CRUTBJNH5/kZ7rezGORU+N1XJFTObDu5CHt
-	MTgbVS54h/p3Vx3oXGk3QU5p3VNp7Iiaq/nXGfvI3DeWULkv3vmDAm/m7n6m2Fy5/Er28YKhVBiz5
-	EJCxRt4A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w13BMjfQSlWTqXMMPYpvv374c7tzmbnCVc1WfPIrsuk=; b=h3SWQ1XhazAwUv
+	B3alj1+V3wDb1HODKzJb1fent1OHt4r5RfviS9JHGE7OVhipFFqa8v71Fp5m+ekjPG7v9vmt0b7Oc
+	xxoDK2MpGRFlknRT0UKJva/YSieC/8r9z2H/ENMvltvZMR6MtkKYoqRJm5aeB+2+4X+UinOnRU2g5
+	+zSVfPEm/Rx+PVNuZUN9ptqBcujHu844wJYwfxwKjJaZXnbv51aV4aBGmgVoG03jrhQ/X7ij5bG5S
+	DoRUJo8vPhJCxUjdUS4CeOYDyDal8BVUsccPc+XoK+q0gnt36T50VsbsKtLiXQYwmxM6amWGhO3z7
+	VWtqnxWujVTt8rdRJAwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVGml-00068M-1T; Mon, 27 May 2019 14:39:35 +0000
-Received: from conuserg-07.nifty.com ([210.131.2.74])
+	id 1hVGlK-0005di-RB; Mon, 27 May 2019 14:38:06 +0000
+Received: from pb-smtp2.pobox.com ([64.147.108.71])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVGmd-00067g-Ni; Mon, 27 May 2019 14:39:29 +0000
-Received: from grover.flets-west.jp (softbank126125154139.bbtec.net
- [126.125.154.139]) (authenticated)
- by conuserg-07.nifty.com with ESMTP id x4REc8hp015915;
- Mon, 27 May 2019 23:38:10 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-07.nifty.com x4REc8hp015915
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1558967891;
- bh=aMC7wmc6MMrYj/SHWn59QiqWoFmT1b06tH2CVxBYQ/k=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OKUBRFm8XZeO61bzi1Dt9OL9aFjL/GMFhjLgL9UsMdBmtaKiMZhsQ+ax4GKFt48Cn
- QXnq5+/DwPeKbyfSh+X5hpA4lMmO3AfHt3HO5+8MzEDoOJnnm1DgbJv2P4HY6KZOMB
- 8uBa9R/Z6424lD+ZwCQdB/+QXNkW9F9pbLIrZIHedwIqSFoPsQQmTYbGVnBHOfeMtp
- 1G87BxhCj+OMqnMfu6o5d3iVOARn4eDMu7DllObLccIp3d3LGqZ3EDl6yeVVkcm9p4
- WieBNMO7gyMrM4TyG5JnuaJWofywUCzfq+PQD9CH2lNwzCVA3NZjH1KsDoC5efuVGv
- NffcJi2LM4IdQ==
-X-Nifty-SrcIP: [126.125.154.139]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: linux-kbuild@vger.kernel.org
-Subject: [PATCH 4/5] kconfig: make arch/*/configs/defconfig the default of
- KBUILD_DEFCONFIG
-Date: Mon, 27 May 2019 23:37:24 +0900
-Message-Id: <20190527143725.12542-4-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190527143725.12542-1-yamada.masahiro@socionext.com>
-References: <20190527143725.12542-1-yamada.masahiro@socionext.com>
+ id 1hVGl4-0005Zo-Co
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 14:37:54 +0000
+Received: from pb-smtp2.pobox.com (unknown [127.0.0.1])
+ by pb-smtp2.pobox.com (Postfix) with ESMTP id A081915EDF3;
+ Mon, 27 May 2019 10:37:48 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
+ :cc:subject:in-reply-to:message-id:references:mime-version
+ :content-type; s=sasl; bh=zot+SgMMZ6NLkAbEfpi2LUH3mQg=; b=sWfOaR
+ Vk+aJbCEAlII2KwizI8uEAjvrRCGxGjVlq9esNoojV6ynhwQKBcAvWyvfipnrCwE
+ OhZa7VZwY/DfU1CC3BDgEpBieBcuLXnVSMEG85s977vrD8xv6Lv/E2UY48runV0f
+ uH/YesulcIvXULY5X6xTYKZRXW5ZHalfCjWhI=
+Received: from pb-smtp2.nyi.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp2.pobox.com (Postfix) with ESMTP id 9757315EDF2;
+ Mon, 27 May 2019 10:37:48 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
+ s=2016-12.pbsmtp; bh=iGYrYXMmcUG/e3dkcmXnxQB5h/4Pjc8UzTVPVZ4a6Eg=;
+ b=T3H3Hf1yUjjiAwjwbeXLI2c1avRjSUaDRUKgwlobx330QqXp72MtELf0geJg99iyhaGzLXIlUYpcIbOfP5xWb9uoFIKnMPHdcNV+sz9wuy0HqpgoB7RvzxrmzlDZDCQWAuRxkJgosFDOLBGgEIAORfZIpwqMq4G2plGrOz46iuM=
+Received: from yoda.home (unknown [70.82.130.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by pb-smtp2.pobox.com (Postfix) with ESMTPSA id 08FEF15EDF1;
+ Mon, 27 May 2019 10:37:48 -0400 (EDT)
+Received: from xanadu.home (xanadu.home [192.168.2.2])
+ by yoda.home (Postfix) with ESMTPSA id E1ADA2DA045D;
+ Mon, 27 May 2019 10:37:46 -0400 (EDT)
+Date: Mon, 27 May 2019 10:37:46 -0400 (EDT)
+From: Nicolas Pitre <nico@fluxnic.net>
+To: Jann Horn <jannh@google.com>
+Subject: Re: [PATCH] binfmt_flat: make load_flat_shared_library() work
+In-Reply-To: <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
+Message-ID: <nycvar.YSQ.7.76.1905271031340.1558@knanqh.ubzr>
+References: <20190524201817.16509-1-jannh@google.com>
+ <20190525144304.e2b9475a18a1f78a964c5640@linux-foundation.org>
+ <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
+User-Agent: Alpine 2.21 (LFD 202 2017-01-01)
+MIME-Version: 1.0
+X-Pobox-Relay-ID: FF6CA618-808C-11E9-ACB2-72EEE64BB12D-78420484!pb-smtp2.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_073927_987814_074414DC 
-X-CRM114-Status: UNSURE (   9.10  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190527_073750_718615_E7396512 
+X-CRM114-Status: GOOD (  24.56  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.74 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.74 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.108.71 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -77,145 +85,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Paul Walmsley <paul@pwsan.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
- Ivan Kokshaysky <ink@jurassic.park.msu.ru>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Firoz Khan <firoz.khan@linaro.org>, Greentime Hu <green.hu@gmail.com>,
- linux-alpha@vger.kernel.org, Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Guo Ren <guoren@kernel.org>, Matt Turner <mattst88@gmail.com>,
- Vincent Chen <deanbo422@gmail.com>, linux-riscv@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Richard Henderson <rth@twiddle.net>
-MIME-Version: 1.0
+Cc: linux-m68k@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, kernel list <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Until recently, if KBUILD_DEFCONFIG was not set by the arch Makefile,
-the default path arch/*/defconfig was used.
+On Mon, 27 May 2019, Jann Horn wrote:
 
-The last users of the default are gone by the following commits:
+> On Sat, May 25, 2019 at 11:43 PM Andrew Morton
+> <akpm@linux-foundation.org> wrote:
+> > On Fri, 24 May 2019 22:18:17 +0200 Jann Horn <jannh@google.com> wrote:
+> > > load_flat_shared_library() is broken: It only calls load_flat_file() if
+> > > prepare_binprm() returns zero, but prepare_binprm() returns the number of
+> > > bytes read - so this only happens if the file is empty.
+> >
+> > ouch.
+> >
+> > > Instead, call into load_flat_file() if the number of bytes read is
+> > > non-negative. (Even if the number of bytes is zero - in that case,
+> > > load_flat_file() will see nullbytes and return a nice -ENOEXEC.)
+> > >
+> > > In addition, remove the code related to bprm creds and stop using
+> > > prepare_binprm() - this code is loading a library, not a main executable,
+> > > and it only actually uses the members "buf", "file" and "filename" of the
+> > > linux_binprm struct. Instead, call kernel_read() directly.
+> > >
+> > > Cc: stable@vger.kernel.org
+> > > Fixes: 287980e49ffc ("remove lots of IS_ERR_VALUE abuses")
+> > > Signed-off-by: Jann Horn <jannh@google.com>
+> > > ---
+> > > I only found the bug by looking at the code, I have not verified its
+> > > existence at runtime.
+> > > Also, this patch is compile-tested only.
+> > > It would be nice if someone who works with nommu Linux could have a
+> > > look at this patch.
+> >
+> > 287980e49ffc was three years ago!  Has it really been broken for all
+> > that time?  If so, it seems a good source of freed disk space...
+> 
+> Maybe... but I didn't want to rip it out without having one of the
+> maintainers confirm that this really isn't likely to be used anymore.
 
-- Commit f3e20ad67b4c ("s390: move arch/s390/defconfig to
-  arch/s390/configs/defconfig")
+Last time I played with this, I couldn't figure out the toolchain to 
+produce shared libs. Only static executables worked fine. If I recall, 
+existing binfmt_flat distros don't use shared libs either.
 
-- Commit 986a13769c4b ("alpha: move arch/alpha/defconfig to
-  arch/alpha/configs/defconfig")
+For shared lib support on no-MMU target, binfmt_elf_fdpic is a much 
+saner choice.
 
-Let's set arch/*/configs/defconfig as a new default. This saves
-KBUILD_DEFCONFIG for some architectures.
 
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
-
- arch/alpha/Makefile      | 2 --
- arch/arm64/Makefile      | 2 --
- arch/csky/Makefile       | 1 -
- arch/nds32/Makefile      | 2 --
- arch/riscv/Makefile      | 2 --
- arch/s390/Makefile       | 2 --
- scripts/kconfig/Makefile | 4 ++++
- 7 files changed, 4 insertions(+), 11 deletions(-)
-
-diff --git a/arch/alpha/Makefile b/arch/alpha/Makefile
-index b3314e0dcb6f..12dee59b011c 100644
---- a/arch/alpha/Makefile
-+++ b/arch/alpha/Makefile
-@@ -8,8 +8,6 @@
- # Copyright (C) 1994 by Linus Torvalds
- #
- 
--KBUILD_DEFCONFIG := defconfig
--
- NM := $(NM) -B
- 
- LDFLAGS_vmlinux	:= -static -N #-relax
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index b025304bde46..970c41a30ed3 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -30,8 +30,6 @@ LDFLAGS_vmlinux	+= --fix-cortex-a53-843419
-   endif
- endif
- 
--KBUILD_DEFCONFIG := defconfig
--
- # Check for binutils support for specific extensions
- lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
- 
-diff --git a/arch/csky/Makefile b/arch/csky/Makefile
-index f9aab9157c4a..fb1bbbd91954 100644
---- a/arch/csky/Makefile
-+++ b/arch/csky/Makefile
-@@ -1,7 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0-only
- OBJCOPYFLAGS		:=-O binary
- GZFLAGS			:=-9
--KBUILD_DEFCONFIG	:= defconfig
- 
- ifdef CONFIG_CPU_HAS_FPU
- FPUEXT = f
-diff --git a/arch/nds32/Makefile b/arch/nds32/Makefile
-index 14dab5ad88ef..ccdca7142020 100644
---- a/arch/nds32/Makefile
-+++ b/arch/nds32/Makefile
-@@ -2,8 +2,6 @@
- LDFLAGS_vmlinux	:= --no-undefined -X
- OBJCOPYFLAGS	:= -O binary -R .note -R .note.gnu.build-id -R .comment -S
- 
--KBUILD_DEFCONFIG := defconfig
--
- ifdef CONFIG_FUNCTION_TRACER
- arch-y += -malways-save-lp -mno-relax
- endif
-diff --git a/arch/riscv/Makefile b/arch/riscv/Makefile
-index 03e760267657..7a117be8297c 100644
---- a/arch/riscv/Makefile
-+++ b/arch/riscv/Makefile
-@@ -16,8 +16,6 @@ endif
- KBUILD_AFLAGS_MODULE += -fPIC
- KBUILD_CFLAGS_MODULE += -fPIC
- 
--KBUILD_DEFCONFIG = defconfig
--
- export BITS
- ifeq ($(CONFIG_ARCH_RV64I),y)
- 	BITS := 64
-diff --git a/arch/s390/Makefile b/arch/s390/Makefile
-index de8521fc9de5..df1d6a150f30 100644
---- a/arch/s390/Makefile
-+++ b/arch/s390/Makefile
-@@ -10,8 +10,6 @@
- # Copyright (C) 1994 by Linus Torvalds
- #
- 
--KBUILD_DEFCONFIG := defconfig
--
- LD_BFD		:= elf64-s390
- KBUILD_LDFLAGS	:= -m elf64_s390
- KBUILD_AFLAGS_MODULE += -fPIC
-diff --git a/scripts/kconfig/Makefile b/scripts/kconfig/Makefile
-index 059642bd6584..ab30fe724c43 100644
---- a/scripts/kconfig/Makefile
-+++ b/scripts/kconfig/Makefile
-@@ -12,6 +12,10 @@ else
- Kconfig := Kconfig
- endif
- 
-+ifndef KBUILD_DEFCONFIG
-+KBUILD_DEFCONFIG := defconfig
-+endif
-+
- ifeq ($(quiet),silent_)
- silent := -s
- endif
--- 
-2.17.1
-
+Nicolas
 
 _______________________________________________
 linux-arm-kernel mailing list
