@@ -2,59 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E84B2B77A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:26:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F3702B79C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 16:35:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GHu3/ufqEwhET24/I9bWr/QAz47KpzMCL/zKwogPC6s=; b=q0VqiB4ulJe1R8
-	DKLX1XkLIs4KDefhDXUbVuaXEj13b9II7ld4JAng6XJJfGbb+poyUWzsNBBbkn+dLq5FM5eF4jV8+
-	2jCLkLzJggH8z9kysXSNxpCEoB2CTtp9ZagUuZ5qnBwTA77wB9FHO2Hu9xMqabUhjIlW4YpZGpCr7
-	idnYki9N6ZjjnXGj/Ac9qd3i/l0hL7O4ECxGe/5CRF/Dnreno1RBT/6Lp2zuLGMMRKtSGRcdy8ddx
-	07V+736l7/+7+m+XBqIuYK4rqauWQOB6Wc4scVgebfvX+5vizcp5/KlulQ9o8y6oTR/Iz4aRFV2yG
-	FQ+hIpdws8Ds6ZAZGRQA==;
+	List-Owner; bh=yCF/r/8yLfeu8Z1xl2xBefS5Jo+B+cWqGO5Tiu7l9MM=; b=GR7OxLT5ohf74N
+	X8O7ZMlYPyHX669T5PCD4hvOjwMQyAeOOYswt6K03TU0jQ634CgNFArTUhB93UujhOhZ6fp/7F6up
+	t3tBG0r6eoLSgrd18K5QzDCJvrve2EX25fp6IKtenROWO4FVIz9RGm7jGQ4CmZ1tZ/lKmXNbgaUWj
+	6YXysbUrbSLLrosbKDj9k45Ywm9fOcfjrtKipeiLMxNAzAcZntn8GT83tJuJg8LztelOtkD6avv+U
+	+pFQAPOe3MPQ9y99kvF9YeATj2IETRwffzfdHYqDeTbSArZs/2ux/NEKGwl3L5CmVFJ6eMwzWUmco
+	suHrbZP+xXU5fCgxwA9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVGZa-0001aY-PI; Mon, 27 May 2019 14:25:58 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1hVGib-0004xP-O1; Mon, 27 May 2019 14:35:17 +0000
+Received: from mail-it1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVGZP-0001Zb-Ra
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 14:25:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1558967145; bh=YdJsMoBfgcBjdirBr14DK8RXCBOe8eIuaLCRC2+BdlY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RsgGzKjvPR9e4zNtt5WAFyBLw6gSErgiUjbgGpbiEVRWVmpF5/vu++cmuXDQ+Owm4
- 9WAhXaZhCf0ZL6UVmHlw9P6jBPex0u+m/u/Gp7PGTlCEsXdAhIr2yLkQ811fHFtpXP
- oc6ht6iOfMztS3TtmunmUEQRaZTPsIzMF4LQxeGE=
-Date: Mon, 27 May 2019 16:25:44 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v3 1/3] thermal: sun8i: add thermal driver for h6
-Message-ID: <20190527142544.skblqfcz5fqfzxgl@core.my.home>
-Mail-Followup-To: Yangtao Li <tiny.windzz@gmail.com>, rui.zhang@intel.com,
- edubezval@gmail.com, daniel.lezcano@linaro.org, robh+dt@kernel.org,
- mark.rutland@arm.com, maxime.ripard@bootlin.com, wens@csie.org,
- davem@davemloft.net, mchehab+samsung@kernel.org,
- gregkh@linuxfoundation.org, linus.walleij@linaro.org,
- nicolas.ferre@microchip.com, paulmck@linux.ibm.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
-References: <20190525181329.18657-1-tiny.windzz@gmail.com>
- <20190525181329.18657-2-tiny.windzz@gmail.com>
+ id 1hVGiU-0004w9-U1
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 14:35:12 +0000
+Received: by mail-it1-x143.google.com with SMTP id e184so24364565ite.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 May 2019 07:35:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=6+XqkDysJ2lvGlKGrEtCwy0REIn7B+jIsk/sq1Q8Vh4=;
+ b=E58Me3Tz1u/QoiJcikhnl2d3zng3tBKgKOumiiI6dv2g3y+O7kUWnv7Pjq1daDAW79
+ D2ql/54QGPpUXEJlVLf2QocUirkcgoXaaf/MjFWeKtGv61T7bqi3EGvs+kqw+aDoZm6U
+ vUW13b0mgBtfzU12+Dn6KuQDB/9foTXqGWLFv9noMC6JAPcNgTJPOzS6loCDWxKIwINN
+ qt9tTZ42Nln/51H+8Zs00WfTMpQ/oeL9GMy7UNOXI9kWI102D1r/e8b2sa7+c+GEO5Wz
+ FdTjUzSurlM44w2QWdZPiK+JHXLBf5eKib57d7N3Q0ovqeyEocFdmNsdRT85vnro54qq
+ O6fg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6+XqkDysJ2lvGlKGrEtCwy0REIn7B+jIsk/sq1Q8Vh4=;
+ b=KyASdjs26/FsAn0Rk2QseZ7qtBVLcApcWSf3c+wKrTqJ/JU0YN+/j5YpdwfhB1z/rE
+ neBWeJb51onT9v+dIhHuKUg0gIQKvMGiw8DuGTtC+6uludaI2PhwdC21JSNzVxrVdKKt
+ y3uCHd2ZUW15vd8SAUznJ7yGBJL8vMuvGewkA4zJsWrqZ9b8GaQuMaIHXu4k4Y4iwczC
+ 0C5WA0hXIgM6iseTubEwmHR4i8qUjzQJyBKaDvY2dOd4r9DDjkhJU1Kjtd94G4hQ7mhc
+ mMkmSYG2y8HNTh1uffdDhZNilYm9S0+CnfAXweiwT2DnrYahwUrlP9/GaSnxeGx4k5/I
+ /0Fg==
+X-Gm-Message-State: APjAAAV3IKZ7Lhe6zjsKzHE2ILyNasEODtyZbTVAeditSc/N/GmYbzR3
+ 1eBnkba6OFwmoryxx3s6dEPeCIfkyXfTkyCIPi1oWg==
+X-Google-Smtp-Source: APXvYqysuSDkEC03OKzYxKO9hKrSv/c6TWgGj1d7E77j/f1DATyHT2dJDdLLf5mCtN+89X3xLa7S0wjnjSrQaDCZhIY=
+X-Received: by 2002:a02:ce37:: with SMTP id v23mr6771111jar.2.1558967709273;
+ Mon, 27 May 2019 07:35:09 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190525181329.18657-2-tiny.windzz@gmail.com>
+References: <20190524041814.7497-1-atish.patra@wdc.com>
+In-Reply-To: <20190524041814.7497-1-atish.patra@wdc.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Mon, 27 May 2019 16:34:57 +0200
+Message-ID: <CAKv+Gu9U56b50TrfriBfRFed_1aoXg2Y624tu7v5m2y+6DVq5w@mail.gmail.com>
+Subject: Re: [v4 PATCH] RISC-V: Add an Image header that boot loader can parse.
+To: Atish Patra <atish.patra@wdc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_072548_394176_62C17347 
-X-CRM114-Status: GOOD (  35.25  )
+X-CRM114-CacheID: sfid-20190527_073511_038977_E5F4CDA0 
+X-CRM114-Status: GOOD (  33.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -75,555 +90,264 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- maxime.ripard@bootlin.com, gregkh@linuxfoundation.org,
- linus.walleij@linaro.org, daniel.lezcano@linaro.org,
- linux-kernel@vger.kernel.org, edubezval@gmail.com, wens@csie.org,
- robh+dt@kernel.org, mchehab+samsung@kernel.org, rui.zhang@intel.com,
- paulmck@linux.ibm.com, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Albert Ou <aou@eecs.berkeley.edu>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Anup Patel <Anup.Patel@wdc.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Zong Li <zong@andestech.com>, Nick Kossifidis <mick@ics.forth.gr>,
+ Palmer Dabbelt <palmer@sifive.com>,
+ "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
+ Karsten Merker <merker@debian.org>, linux-riscv@lists.infradead.org,
+ "marek.vasut@gmail.com" <marek.vasut@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Yangtao,
-
-On Sat, May 25, 2019 at 02:13:27PM -0400, Yangtao Li wrote:
-> This patch adds the support for allwinner thermal sensor, within
-> allwinner SoC. It will register sensors for thermal framework
-> and use device tree to bind cooling device.
-> 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+On Fri, 24 May 2019 at 06:18, Atish Patra <atish.patra@wdc.com> wrote:
+>
+> Currently, the last stage boot loaders such as U-Boot can accept only
+> uImage which is an unnecessary additional step in automating boot
+> process.
+>
+> Add an image header that boot loader understands and boot Linux from
+> flat Image directly.
+>
+> This header is based on ARM64 boot image header and provides an
+> opportunity to combine both ARM64 & RISC-V image headers in future.
+>
+> Also make sure that PE/COFF header can co-exist in the same image so
+> that EFI stub can be supported for RISC-V in future. EFI specification
+> needs PE/COFF image header in the beginning of the kernel image in order
+> to load it as an EFI application. In order to support EFI stub, code0
+> should be replaced with "MZ" magic string and res4(at offset 0x3c)
+> should point to the rest of the PE/COFF header (which will be added
+> during EFI support).
+>
+> Tested on both QEMU and HiFive Unleashed using OpenSBI + U-Boot + Linux.
+>
+> Signed-off-by: Atish Patra <atish.patra@wdc.com>
+> Reviewed-by: Karsten Merker <merker@debian.org>
+> Tested-by: Karsten Merker <merker@debian.org> (QEMU+OpenSBI+U-Boot)
+>
 > ---
->  MAINTAINERS                     |   7 +
->  drivers/thermal/Kconfig         |  14 +
->  drivers/thermal/Makefile        |   1 +
->  drivers/thermal/sun8i_thermal.c | 437 ++++++++++++++++++++++++++++++++
->  4 files changed, 459 insertions(+)
->  create mode 100644 drivers/thermal/sun8i_thermal.c
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 2336dd26ece4..d312f9eecf0d 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -674,6 +674,13 @@ L:	linux-crypto@vger.kernel.org
->  S:	Maintained
->  F:	drivers/crypto/sunxi-ss/
->  
-> +ALLWINNER THERMAL DRIVER
-> +M:	Yangtao Li <tiny.windzz@gmail.com>
-> +L:	linux-pm@vger.kernel.org
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
-> +F:	drivers/thermal/sun8i_thermal.c
-> +
->  ALLWINNER VPU DRIVER
->  M:	Maxime Ripard <maxime.ripard@bootlin.com>
->  M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
-> index 9966364a6deb..e5465053d66f 100644
-> --- a/drivers/thermal/Kconfig
-> +++ b/drivers/thermal/Kconfig
-> @@ -262,6 +262,20 @@ config SPEAR_THERMAL
->  	  Enable this to plug the SPEAr thermal sensor driver into the Linux
->  	  thermal framework.
->  
-> +config SUN8I_THERMAL
-> +	tristate "Allwinner sun8i thermal driver"
-> +	depends on ARCH_SUNXI || COMPILE_TEST
-> +	depends on HAS_IOMEM
-> +	depends on NVMEM_SUNXI_SID
-> +	depends on OF
-> +	depends on RESET_CONTROLLER
-> +	help
-> +	  Support for the sun8i thermal sensor driver into the Linux thermal
-> +	  framework.
-> +
-> +	  To compile this driver as a module, choose M here: the
-> +	  module will be called sun8i-thermal.
-> +
->  config ROCKCHIP_THERMAL
->  	tristate "Rockchip thermal driver"
->  	depends on ARCH_ROCKCHIP || COMPILE_TEST
-> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
-> index 74a37c7f847a..fa6f8b206281 100644
-> --- a/drivers/thermal/Makefile
-> +++ b/drivers/thermal/Makefile
-> @@ -31,6 +31,7 @@ thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
->  obj-y				+= broadcom/
->  obj-$(CONFIG_THERMAL_MMIO)		+= thermal_mmio.o
->  obj-$(CONFIG_SPEAR_THERMAL)	+= spear_thermal.o
-> +obj-$(CONFIG_SUN8I_THERMAL)     += sun8i_thermal.o
->  obj-$(CONFIG_ROCKCHIP_THERMAL)	+= rockchip_thermal.o
->  obj-$(CONFIG_RCAR_THERMAL)	+= rcar_thermal.o
->  obj-$(CONFIG_RCAR_GEN3_THERMAL)	+= rcar_gen3_thermal.o
-> diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
+> I have not sent out corresponding U-Boot patch as all the changes are
+> compatible with current u-boot support. Once, the kernel header format
+> is agreed upon, I will update the U-Boot patch.
+>
+> Changes from v3->v4
+> 1. Update the commit text to clarify about PE/COFF header.
+>
+> Changes from v2->v3
+> 1. Modified reserved fields to define a header version.
+> 2. Added header documentation.
+>
+> Changes from v1-v2:
+> 1. Added additional reserved elements to make it fully PE compatible.
+> ---
+>  Documentation/riscv/boot-image-header.txt | 50 ++++++++++++++++++
+>  arch/riscv/include/asm/image.h            | 64 +++++++++++++++++++++++
+>  arch/riscv/kernel/head.S                  | 32 ++++++++++++
+>  3 files changed, 146 insertions(+)
+>  create mode 100644 Documentation/riscv/boot-image-header.txt
+>  create mode 100644 arch/riscv/include/asm/image.h
+>
+> diff --git a/Documentation/riscv/boot-image-header.txt b/Documentation/riscv/boot-image-header.txt
 > new file mode 100644
-> index 000000000000..a9cc2197f4cb
+> index 000000000000..68abc2353cec
 > --- /dev/null
-> +++ b/drivers/thermal/sun8i_thermal.c
-> @@ -0,0 +1,437 @@
-> +// SPDX-License-Identifier: GPL-2.0
+> +++ b/Documentation/riscv/boot-image-header.txt
+> @@ -0,0 +1,50 @@
+> +                               Boot image header in RISC-V Linux
+> +                       =============================================
+> +
+> +Author: Atish Patra <atish.patra@wdc.com>
+> +Date  : 20 May 2019
+> +
+> +This document only describes the boot image header details for RISC-V Linux.
+> +The complete booting guide will be available at Documentation/riscv/booting.txt.
+> +
+> +The following 64-byte header is present in decompressed Linux kernel image.
+> +
+> +       u32 code0;                /* Executable code */
+> +       u32 code1;                /* Executable code */
+
+Apologies for not mentioning this in my previous reply, but given that
+you already know that you will need to put the magic string MZ at
+offset 0x0, it makes more sense to not put any code there at all, but
+educate the bootloader that the first executable instruction is at
+offset 0x20, and put the spare fields right after it in case you ever
+need more than 2 slots. (On arm64, we were lucky to be able to find an
+opcode that happened to contain the MZ bit pattern and act almost like
+a NOP, but it seems silly to rely on that for RISC-V as well)
+
+So something like
+
+u16 pe_res1;  /* MZ for EFI bootable images, don't care otherwise */
+u8 magic[6];    /* "RISCV\0"
+
+u64 text_offset;          /* Image load offset, little endian */
+u64 image_size;           /* Effective Image size, little endian */
+u64 flags;                /* kernel flags, little endian */
+
+u32 code0;                /* Executable code */
+u32 code1;                /* Executable code */
+
+u64 reserved[2];     /* reserved for future use */
+
+u32 version;              /* Version of this header */
+u32 pe_res2;                 /* Reserved for PE COFF offset */
+
+
+
+> +This header format is compliant with PE/COFF header and largely inspired from
+> +ARM64 header. Thus, both ARM64 & RISC-V header can be combined into one common
+> +header in future.
+> +
+> +Notes:
+> +- This header can also be reused to support EFI stub for RISC-V in future. EFI
+> +  specification needs PE/COFF image header in the beginning of the kernel image
+> +  in order to load it as an EFI application. In order to support EFI stub,
+> +  code0 should be replaced with "MZ" magic string and res5(at offset 0x3c) should
+> +  point to the rest of the PE/COFF header.
+> +
+> +- version field indicate header version number.
+> +       Bits 0:15  - Minor version
+> +       Bits 16:31 - Major version
+> +
+> +  This preserves compatibility across newer and older version of the header.
+> +  The current version is defined as 0.1.
+> +
+> +- res3 is reserved for offset to any other additional fields. This makes the
+> +  header extendible in future. One example would be to accommodate ISA
+> +  extension for RISC-V in future. For current version, it is set to be zero.
+> +
+> +- In current header, the flag field has only one field.
+> +       Bit 0: Kernel endianness. 1 if BE, 0 if LE.
+> +
+> +- Image size is mandatory for boot loader to load kernel image. Booting will
+> +  fail otherwise.
+> diff --git a/arch/riscv/include/asm/image.h b/arch/riscv/include/asm/image.h
+> new file mode 100644
+> index 000000000000..61c9f20d2f19
+> --- /dev/null
+> +++ b/arch/riscv/include/asm/image.h
+> @@ -0,0 +1,64 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +
+> +#ifndef __ASM_IMAGE_H
+> +#define __ASM_IMAGE_H
+> +
+> +#define RISCV_IMAGE_MAGIC      "RISCV"
+> +
+> +
+> +#define RISCV_IMAGE_FLAG_BE_SHIFT      0
+> +#define RISCV_IMAGE_FLAG_BE_MASK       0x1
+> +
+> +#define RISCV_IMAGE_FLAG_LE            0
+> +#define RISCV_IMAGE_FLAG_BE            1
+> +
+> +
+> +#ifdef CONFIG_CPU_BIG_ENDIAN
+> +#define __HEAD_FLAG_BE         RISCV_IMAGE_FLAG_BE
+> +#else
+> +#define __HEAD_FLAG_BE         RISCV_IMAGE_FLAG_LE
+> +#endif
+> +
+> +#define __HEAD_FLAG(field)     (__HEAD_FLAG_##field << \
+> +                               RISCV_IMAGE_FLAG_##field##_SHIFT)
+> +
+> +#define __HEAD_FLAGS           (__HEAD_FLAG(BE))
+> +
+> +#define RISCV_HEADER_VERSION_MAJOR 0
+> +#define RISCV_HEADER_VERSION_MINOR 1
+> +
+> +#define RISCV_HEADER_VERSION (RISCV_HEADER_VERSION_MAJOR << 16 | \
+> +                             RISCV_HEADER_VERSION_MINOR)
+> +
+> +#ifndef __ASSEMBLY__
 > +/*
-> + * Thermal sensor driver for Allwinner SOC
-> + * Copyright (C) 2019 Yangtao Li
+> + * struct riscv_image_header - riscv kernel image header
 > + *
-> + * Based on the work of Icenowy Zheng <icenowy@aosc.io>
-> + * Based on the work of Ondrej Jirman <megous@megous.com>
-> + * Based on the work of Josef Gajdusek <atx@atx.name>
+> + * @code0:             Executable code
+> + * @code1:             Executable code
+> + * @text_offset:       Image load offset
+> + * @image_size:                Effective Image size
+> + * @flags:             kernel flags
+> + * @version:           version
+> + * @reserved:          reserved
+> + * @reserved:          reserved
+> + * @magic:             Magic number
+> + * @reserved:          reserved (will be used for additional RISC-V specific header)
+> + * @reserved:          reserved (will be used for PE COFF offset)
 > + */
 > +
-> +#include <linux/clk.h>
-> +#include <linux/device.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/wait.h>
-> +#include <linux/module.h>
-> +#include <linux/nvmem-consumer.h>
-> +#include <linux/of_device.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +#include <linux/slab.h>
-> +#include <linux/thermal.h>
-> +
-> +#define MAX_SENSOR_NUM	4
-> +
-> +#define FT_TEMP_MASK				GENMASK(11, 0)
-> +#define TEMP_CALIB_MASK				GENMASK(11, 0)
-> +#define TEMP_TO_REG				672
-> +#define CALIBRATE_DEFAULT			0x800
-> +
-> +#define SUN50I_THS_CTRL0			0x00
-> +#define SUN50I_H6_THS_ENABLE			0x04
-> +#define SUN50I_H6_THS_PC			0x08
-> +#define SUN50I_H6_THS_DIC			0x10
-> +#define SUN50I_H6_THS_DIS			0x20
-> +#define SUN50I_H6_THS_MFC			0x30
-> +#define SUN50I_H6_THS_TEMP_CALIB		0xa0
-> +#define SUN50I_H6_THS_TEMP_DATA			0xc0
-> +
-> +#define SUN50I_THS_CTRL0_T_ACQ(x)		((GENMASK(15, 0) & (x)) << 16)
-> +#define SUN50I_THS_FILTER_EN			BIT(2)
-> +#define SUN50I_THS_FILTER_TYPE(x)		(GENMASK(1, 0) & (x))
-> +#define SUN50I_H6_THS_PC_TEMP_PERIOD(x)		((GENMASK(19, 0) & (x)) << 12)
-> +#define SUN50I_H6_THS_DATA_IRQ_STS(x)		BIT(x)
-> +
-> +/* millidegree celsius */
-> +#define SUN50I_H6_FT_DEVIATION			7000
-> +
-> +struct ths_device;
-> +
-> +struct tsensor {
-> +	struct ths_device		*tmdev;
-> +	struct thermal_zone_device	*tzd;
-> +	int				id;
-> +	wait_queue_head_t		wait_queue;
+> +struct riscv_image_header {
+> +       u32 code0;
+> +       u32 code1;
+> +       u64 text_offset;
+> +       u64 image_size;
+> +       u64 flags;
+> +       u32 version;
+> +       u32 res1;
+> +       u64 res2;
+> +       u64 magic;
+> +       u32 res3;
+> +       u32 res4;
 > +};
+> +#endif /* __ASSEMBLY__ */
+> +#endif /* __ASM_IMAGE_H */
+> diff --git a/arch/riscv/kernel/head.S b/arch/riscv/kernel/head.S
+> index 370c66ce187a..577893bb150d 100644
+> --- a/arch/riscv/kernel/head.S
+> +++ b/arch/riscv/kernel/head.S
+> @@ -19,9 +19,41 @@
+>  #include <asm/thread_info.h>
+>  #include <asm/page.h>
+>  #include <asm/csr.h>
+> +#include <asm/image.h>
+>
+>  __INIT
+>  ENTRY(_start)
+> +       /*
+> +        * Image header expected by Linux boot-loaders. The image header data
+> +        * structure is described in asm/image.h.
+> +        * Do not modify it without modifying the structure and all bootloaders
+> +        * that expects this header format!!
+> +        */
+> +       /* jump to start kernel */
+> +       j _start_kernel
+> +       /* reserved */
+> +       .word 0
+> +       .balign 8
+> +#if __riscv_xlen == 64
+> +       /* Image load offset(2MB) from start of RAM */
+> +       .dword 0x200000
+> +#else
+> +       /* Image load offset(4MB) from start of RAM */
+> +       .dword 0x400000
+> +#endif
+> +       /* Effective size of kernel image */
+> +       .dword _end - _start
+> +       .dword __HEAD_FLAGS
+> +       .word RISCV_HEADER_VERSION
+> +       .word 0
+> +       .dword 0
+> +       .asciz RISCV_IMAGE_MAGIC
+> +       .word 0
+> +       .balign 4
+> +       .word 0
 > +
-> +struct ths_thermal_chip {
-> +	int		sensor_num;
-> +	int		offset;
-> +	int		scale;
-> +	int		ft_deviation;
-> +	int		temp_calib_base;
-> +	int		temp_data_base;
-> +	int		(*calibrate)(struct ths_device *tmdev);
-> +	int		(*init)(struct ths_device *tmdev);
-> +	irqreturn_t	(*irq_thread)(int irq, void *data);
-> +};
-> +
-> +struct ths_device {
-> +	const struct ths_thermal_chip		*chip;
-> +	struct device				*dev;
-> +	struct regmap				*regmap;
-> +	struct reset_control			*reset;
-> +	struct clk				*bus_clk;
-> +	struct tsensor				sensor[MAX_SENSOR_NUM];
-> +	int					data_ready;
-> +};
-> +
-> +/* Temp Unit: millidegree Celsius */
-> +static int sun8i_ths_reg2temp(struct ths_device *tmdev,
-> +			      int reg)
-> +{
-> +	return (reg + tmdev->chip->offset) * tmdev->chip->scale;
-> +}
-> +
-> +static int sun8i_ths_get_temp(void *data, int *temp)
-> +{
-> +	struct tsensor *s = data;
-> +	struct ths_device *tmdev = s->tmdev;
-> +	int val;
-> +
-> +	wait_event(s->wait_queue, tmdev->data_ready & BIT(s->id));
-> +	tmdev->data_ready &= ~BIT(s->id);
-
-I've looked at thermal_core.c and it looks like that the proper way to handle
-this situation is just returning -EAGAIN.
-
-See update_temperature() function in thermal_core.c.
-
-That will suppress the warning about failure to read thermal zone. Also
-it's much simpler than this wait_queue stuff. No other thermal driver uses this
-either. Also get_temp is called under thermal_list_lock mutex and that would
-block cooling device registrations and god knows what else.
-
-Other than that, and what Maxime said, I don't see any more issues.
-
-thank you,
-	o.
-
-> +	regmap_read(tmdev->regmap, tmdev->chip->temp_data_base +
-> +		    0x4 * s->id, &val);
-> +
-> +	*temp = sun8i_ths_reg2temp(tmdev, val);
-> +	/*
-> +	 * XX - According to the original sdk, there are some platforms(rarely)
-> +	 * that add a fixed offset value after calculating the temperature
-> +	 * value. We can't simply put it on the formula for calculating the
-> +	 * temperature above, because the formula for calculating the
-> +	 * temperature above is also used when the sensor is calibrated. If
-> +	 * do this, the correct calibration formula is hard to know.
-> +	 */
-> +	if (tmdev->chip->ft_deviation)
-> +		*temp += tmdev->chip->ft_deviation;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct thermal_zone_of_device_ops ths_ops = {
-> +	.get_temp = sun8i_ths_get_temp,
-> +};
-> +
-> +static const struct regmap_config config = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.fast_io = true,
-> +};
-> +
-> +static irqreturn_t sun50i_h6_irq_thread(int irq, void *data)
-> +{
-> +	wait_queue_head_t *data_wait;
-> +	struct ths_device *tmdev = data;
-> +	int i, state;
-> +
-> +	regmap_read(tmdev->regmap, SUN50I_H6_THS_DIS, &state);
-> +
-> +	for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> +		data_wait = &tmdev->sensor[i].wait_queue;
-> +
-> +		if (state & SUN50I_H6_THS_DATA_IRQ_STS(i)) {
-> +			/* clear data irq pending */
-> +			regmap_write(tmdev->regmap, SUN50I_H6_THS_DIS,
-> +				     SUN50I_H6_THS_DATA_IRQ_STS(i));
-> +
-> +			tmdev->data_ready |= BIT(i);
-> +			wake_up(data_wait);
-> +		}
-> +	}
-> +
-> +	return IRQ_HANDLED;
-> +}
-> +
-> +static int sun8i_ths_resource_init(struct ths_device *tmdev)
-> +{
-> +	struct device *dev = tmdev->dev;
-> +	struct platform_device *pdev = to_platform_device(dev);
-> +	struct resource *mem;
-> +	void __iomem *base;
-> +	int ret, irq;
-> +
-> +	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	base = devm_ioremap_resource(dev, mem);
-> +	if (IS_ERR(base))
-> +		return PTR_ERR(base);
-> +
-> +	tmdev->regmap = devm_regmap_init_mmio(dev, base, &config);
-> +	if (IS_ERR(tmdev->regmap))
-> +		return PTR_ERR(tmdev->regmap);
-> +
-> +	tmdev->reset = devm_reset_control_get(dev, 0);
-> +	if (IS_ERR(tmdev->reset))
-> +		return PTR_ERR(tmdev->reset);
-> +
-> +	tmdev->bus_clk = devm_clk_get(&pdev->dev, "bus");
-> +	if (IS_ERR(tmdev->bus_clk))
-> +		return PTR_ERR(tmdev->bus_clk);
-> +
-> +	irq = platform_get_irq(pdev, 0);
-> +	if (irq < 0)
-> +		return irq;
-> +
-> +	ret = devm_request_threaded_irq(dev, irq, NULL,
-> +					tmdev->chip->irq_thread,
-> +					IRQF_ONESHOT, "ths", tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = reset_control_deassert(tmdev->reset);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = clk_prepare_enable(tmdev->bus_clk);
-> +	if (ret)
-> +		goto assert_reset;
-> +
-> +	ret = tmdev->chip->calibrate(tmdev);
-> +	if (ret)
-> +		goto bus_disable;
-> +
-> +	return 0;
-> +
-> +bus_disable:
-> +	clk_disable_unprepare(tmdev->bus_clk);
-> +assert_reset:
-> +	reset_control_assert(tmdev->reset);
-> +
-> +	return ret;
-> +}
-> +
-> +static int sun50i_ths_calibrate(struct ths_device *tmdev)
-> +{
-> +	struct nvmem_cell *calcell;
-> +	struct device *dev = tmdev->dev;
-> +	u16 *caldata;
-> +	size_t callen;
-> +	int ft_temp;
-> +	int i, ret = 0;
-> +
-> +	calcell = devm_nvmem_cell_get(dev, "calib");
-> +	if (IS_ERR(calcell)) {
-> +		if (PTR_ERR(calcell) == -EPROBE_DEFER)
-> +			return -EPROBE_DEFER;
-> +		/*
-> +		 * Even if the external calibration data stored in sid is
-> +		 * not accessible, the THS hardware can still work, although
-> +		 * the data won't be so accurate.
-> +		 *
-> +		 * The default value of calibration register is 0x800 for
-> +		 * every sensor, and the calibration value is usually 0x7xx
-> +		 * or 0x8xx, so they won't be away from the default value
-> +		 * for a lot.
-> +		 *
-> +		 * So here we do not return error if the calibartion data is
-> +		 * not available, except the probe needs deferring.
-> +		 */
-> +		goto out;
-> +	}
-> +
-> +	caldata = nvmem_cell_read(calcell, &callen);
-> +	if (IS_ERR(caldata)) {
-> +		ret = PTR_ERR(caldata);
-> +		goto out;
-> +	}
-> +
-> +	if (!caldata[0] || callen < 2 + 2 * tmdev->chip->sensor_num) {
-> +		ret = -EINVAL;
-> +		goto out_free;
-> +	}
-> +
-> +	/*
-> +	 * efuse layout:
-> +	 *
-> +	 *	0   11  16	 32
-> +	 *	+-------+-------+-------+
-> +	 *	|temp|  |sensor0|sensor1|
-> +	 *	+-------+-------+-------+
-> +	 *
-> +	 * The calibration data on the H6 is the ambient temperature and
-> +	 * sensor values that are filled during the factory test stage.
-> +	 *
-> +	 * The unit of stored FT temperature is 0.1 degreee celusis.
-> +	 * Through the stored ambient temperature and the data read
-> +	 * by the sensor, after a certain calculation, the calibration
-> +	 * value to be compensated can be obtained.
-> +	 */
-> +	ft_temp = caldata[0] & FT_TEMP_MASK;
-> +
-> +	for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> +		int reg = (int)caldata[i + 1];
-> +		int sensor_temp = sun8i_ths_reg2temp(tmdev, reg);
-> +		int delta, cdata, calib_offest;
-> +
-> +		/*
-> +		 * To calculate the calibration value:
-> +		 *
-> +		 * X(in Celsius) = Ts - ft_temp
-> +		 * delta = X * 10000 / TEMP_TO_REG
-> +		 * cdata = CALIBRATE_DEFAULT - delta
-> +		 *
-> +		 * cdata: calibration value
-> +		 */
-> +		delta = (sensor_temp - ft_temp * 100) * 10 / TEMP_TO_REG;
-> +		cdata = CALIBRATE_DEFAULT - delta;
-> +		if (cdata & ~TEMP_CALIB_MASK) {
-> +			/*
-> +			 * Calibration value more than 12-bit, but calibration
-> +			 * register is 12-bit. In this case, ths hardware can
-> +			 * still work without calibration, although the data
-> +			 * won't be so accurate.
-> +			 */
-> +			dev_warn(dev, "sensor%d is not calibrated.\n", i);
-> +
-> +			continue;
-> +		}
-> +
-> +		calib_offest = tmdev->chip->temp_calib_base + (i / 2) * 0x4;
-> +
-> +		if (i % 2) {
-> +			int val;
-> +
-> +			regmap_read(tmdev->regmap, calib_offest, &val);
-> +			val = (val & TEMP_CALIB_MASK) | (cdata << 16);
-> +			regmap_write(tmdev->regmap, calib_offest, val);
-> +		} else {
-> +			regmap_write(tmdev->regmap, calib_offest, cdata);
-> +		}
-> +	}
-> +
-> +out_free:
-> +	kfree(caldata);
-> +out:
-> +	return ret;
-> +}
-> +
-> +static int sun8i_ths_register(struct ths_device *tmdev)
-> +{
-> +	struct thermal_zone_device *tzd;
-> +	int i;
-> +
-> +	for (i = 0; i < tmdev->chip->sensor_num; i++) {
-> +		tmdev->sensor[i].tmdev = tmdev;
-> +		tmdev->sensor[i].id = i;
-> +		tmdev->sensor[i].tzd =
-> +			devm_thermal_zone_of_sensor_register(tmdev->dev,
-> +							     i,
-> +							     &tmdev->sensor[i],
-> +							     &ths_ops);
-> +		if (IS_ERR(tmdev->sensor[i].tzd))
-> +			return PTR_ERR(tzd);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int sun8i_ths_probe(struct platform_device *pdev)
-> +{
-> +	struct ths_device *tmdev;
-> +	struct device *dev = &pdev->dev;
-> +	int i, ret;
-> +
-> +	tmdev = devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
-> +	if (!tmdev)
-> +		return -ENOMEM;
-> +
-> +	tmdev->dev = dev;
-> +	tmdev->chip = of_device_get_match_data(&pdev->dev);
-> +	if (!tmdev->chip)
-> +		return -EINVAL;
-> +
-> +	/*
-> +	 * Initialize wait_queue in advance, to avoid calling wake_up
-> +	 * before ths is registered in isr.
-> +	 */
-> +	for (i = 0; i < tmdev->chip->sensor_num; i++)
-> +		init_waitqueue_head(&tmdev->sensor[i].wait_queue);
-> +
-> +	platform_set_drvdata(pdev, tmdev);
-> +
-> +	ret = sun8i_ths_resource_init(tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = tmdev->chip->init(tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = sun8i_ths_register(tmdev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return ret;
-> +}
-> +
-> +static int sun8i_ths_remove(struct platform_device *pdev)
-> +{
-> +	struct ths_device *tmdev = platform_get_drvdata(pdev);
-> +
-> +	clk_disable_unprepare(tmdev->bus_clk);
-> +	reset_control_assert(tmdev->reset);
-> +
-> +	return 0;
-> +}
-> +
-> +static int sun50i_thermal_init(struct ths_device *tmdev)
-> +{
-> +	int val;
-> +
-> +	/*
-> +	 * clkin = 24MHz
-> +	 * T acquire = clkin / (x + 1)
-> +	 *           = 20us
-> +	 */
-> +	regmap_write(tmdev->regmap, SUN50I_THS_CTRL0,
-> +		     SUN50I_THS_CTRL0_T_ACQ(479));
-> +	/* average over 4 samples */
-> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_MFC,
-> +		     SUN50I_THS_FILTER_EN |
-> +		     SUN50I_THS_FILTER_TYPE(1));
-> +	/* period = (x + 1) * 4096 / clkin; ~10ms */
-> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_PC,
-> +		     SUN50I_H6_THS_PC_TEMP_PERIOD(58));
-> +	/* enable sensor */
-> +	val = GENMASK(tmdev->chip->sensor_num - 1, 0);
-> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_ENABLE, val);
-> +	/* thermal data interrupt enable */
-> +	val = GENMASK(tmdev->chip->sensor_num - 1, 0);
-> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_DIC, val);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct ths_thermal_chip sun50i_h6_ths = {
-> +	.sensor_num = 2,
-> +	.offset = -2794,
-> +	.scale = -67,
-> +	.ft_deviation = SUN50I_H6_FT_DEVIATION,
-> +	.temp_calib_base = SUN50I_H6_THS_TEMP_CALIB,
-> +	.temp_data_base = SUN50I_H6_THS_TEMP_DATA,
-> +	.calibrate = sun50i_ths_calibrate,
-> +	.init = sun50i_thermal_init,
-> +	.irq_thread = sun50i_h6_irq_thread,
-> +};
-> +
-> +static const struct of_device_id of_ths_match[] = {
-> +	{ .compatible = "allwinner,sun50i-h6-ths", .data = &sun50i_h6_ths },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, of_ths_match);
-> +
-> +static struct platform_driver ths_driver = {
-> +	.probe = sun8i_ths_probe,
-> +	.remove = sun8i_ths_remove,
-> +	.driver = {
-> +		.name = "sun8i-thermal",
-> +		.of_match_table = of_ths_match,
-> +	},
-> +};
-> +module_platform_driver(ths_driver);
-> +
-> +MODULE_DESCRIPTION("Thermal sensor driver for Allwinner SOC");
-> +MODULE_LICENSE("GPL v2");
-> -- 
-> 2.17.0
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> +.global _start_kernel
+> +_start_kernel:
+>         /* Mask all interrupts */
+>         csrw CSR_SIE, zero
+>         csrw CSR_SIP, zero
+> --
+> 2.21.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
