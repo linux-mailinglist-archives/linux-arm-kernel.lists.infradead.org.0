@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 123A12B650
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:23:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 426B82B657
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:24:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lPpsPOcrR93TdxZF2lrMEqrISIJjSzC/OGXBQPs6rXA=; b=sd3vLJfFgxeu18
-	DBJpiI69j68kyA3jngWCltt/eHCq0p5OR8ws+FPwZS+BooiUAIP1nwdLV4MuWmwj/WmShKnfQUrl7
-	y5GRsEdgwxezzBXd5E94HMESW79zPpwueycPQ7WBjXuWQJc6Vh4bGSFLM5U3yz0s+gcWij6b+WOBE
-	XblmkHRBsQtG7vLVTF+Yi7MTCZgI1lxKHFkHORJc/EHuvolUdoOFeLAeero65sLdDtSkYSiyRQYrU
-	oNGUxOadug8FzkpPsIXvp543FG/98V4Oo7p5r/BKNgjsURr8TFyNXBCicOkJZ1noC3dz3ZJ2NFg7p
-	+WpwZ9xiZIhlsZ0Yxtsg==;
+	List-Owner; bh=TCFdvvx18Hh9pOloK4csUaIIuZnQDiLDIMb43UEyoqQ=; b=Cm4n657tjuV6iN
+	1zxkznUGldExZvIrj1Xdch71YLLM3St1SmonfAFEnA8bdqxDjXeLpHSLqpXrBFo/tIPiymQK9xK/p
+	MU2upHaRAciWasTgiDiZSp9zb8qMHR3vySoPuuaYpDhmJ7XKKUpKuohfVKbkO8NouNxfBOAP30B3N
+	zfFxNaHqy2Sov38I4EOtlP0ZrCHpHZFHG6z+VaUzua0jeO9XnETr0c/nCYRUQoJO9MJ+EDUoeGjD/
+	tfnhP5zogUsog2MJrVtaFcxEN7KoawHMHsNi03aXAhZyIhyUehl+djp0IeHEo1FRq1vPHv4vdhDuF
+	z9mR4W7+jhhjN64Yv59Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVFbV-0003zz-Dn; Mon, 27 May 2019 13:23:53 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hVFcC-0004aj-Hc; Mon, 27 May 2019 13:24:36 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVFZp-0002C2-Qa
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 13:22:18 +0000
-Received: by mail-wm1-x343.google.com with SMTP id y3so16177505wmm.2
+ id 1hVFZq-0002EF-W3
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 13:22:21 +0000
+Received: by mail-wr1-x443.google.com with SMTP id l17so8527576wrm.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 06:22:09 -0700 (PDT)
+ Mon, 27 May 2019 06:22:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=DdDiX896+ezCVjE2omOCRKNF6RoJ/lx1xAP+K6/8hcI=;
- b=0taidlTmPCtCcB4JDbNmutRrOjR5sU3c+dVwtPaU9IRCQ0DyzKTGsFCl93SVFTE3Ro
- ccsPpDhPzt285NJdzFErdPt9OneOuVKy1/L1PDEl9dCYLm0T9UaLXGlEYyjhQtPCWriL
- zrhOYbgtmK1Ugz4k915t5pngUL2+4rnS2a7HqWAhcQ6+FaanvxOO4NFuH7GQon8VnL++
- Fhq50kZs28TwNur3YEFFbaU5B86p8vVGc7WGCryF0W1/ADPopbOehNDwlihgMmIZgIUc
- nGNegBj2pyTbz+GlzpmImgUv2alNedlx60dzK54mdtA4lBTFjNv4T0Y9NU68Lit/I6n1
- PaMw==
+ bh=4VtDGZ3OVSVw6HZggJOqUTRYqY5ZUaLIQ9cwARYH99A=;
+ b=U3aDFZjkZXFYe7wNf6AFeyb2CzT8QJzBjLaQiB1ybT58exOolffDkQZVEQs9IwqDlR
+ QupHWofac4pMpepiaHEoTBoAoDbCYUXpGZXPIAHJVsg6zrVjb/cSCHRMpR6uLZMrAIWk
+ 6rBE8L+83X9MjSsf0nrI/eChI1+CYF18c7AFPIb/WYqBGhWRRW4wCj9IwngIHnLdodiD
+ vJcNQV1d2auvf/HD178QOgLZxp/OqkiTLwo7k2i+po9wNsk1Vih74NuIrIR3bKMaDjOQ
+ clJSY0WBe8PP72dtaaKri3ykd9nxXqPJnaz84BsPl6+rXtGdeqp0Pso3z9BhRNexq2PC
+ Yjug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=DdDiX896+ezCVjE2omOCRKNF6RoJ/lx1xAP+K6/8hcI=;
- b=YhXKiVq8bLVv4ci/jL4MOCABuf/AO/pcemEsE9ddJmboAt5frn5hvNq2ba7uENUr0G
- B1YEUmYJ/eK01nj6Tpw38J+0MMPxYtsFipVoHwznjoQLD0IEXv1RPPbLYRZKHIq+wJGg
- OVLj9cW1lp58Qico9k+L5JEzcZMMUuD3QVXUPOSrhjxm8/16CiWB0NpPKzJKedxMYGnD
- +BTKRy2SfBk5J5YzqQxfc/yRPmeGqLMNTzq5daltCErVvhITAeZJTk53G2GfxJQ0I5xn
- oPo1b9bojeD+6nucd70IIncg4ae07Amce087nDufflexdUvGK9FHmbB9nQHgfKoAXMym
- bKnQ==
-X-Gm-Message-State: APjAAAU/1aG3cNRvGbleWFxazdEocigpRyluOtMpx75FEVutxY/ufJaR
- 2NoxCZZch+BPwoMvd00kPyoCTQ==
-X-Google-Smtp-Source: APXvYqx9B1l8Wqo70PYjwXfiLcOmhOwoS7q8t+cSLTwJ7RDvTS2xOIFZIkC/7C8I34i8CtpyFtMlkg==
-X-Received: by 2002:a1c:7a0d:: with SMTP id v13mr9696782wmc.44.1558963328167; 
- Mon, 27 May 2019 06:22:08 -0700 (PDT)
+ bh=4VtDGZ3OVSVw6HZggJOqUTRYqY5ZUaLIQ9cwARYH99A=;
+ b=OKRzb4RzdDAtNy3Z0wmyB6bOteUDnx46EaZkrbu+RL7Uaqs5OcxshpraLnV9VTcG3N
+ YzQ2EDg010WxMYsN6rFWsK4Q41eKVjs+Vleo9fNlUx6xDEZwtQHx7Q8g7CV+G/NropAE
+ HZmSFRXOW02wyUnc1QdJUWyhc/eG4DsDeWWFgTVKWohiofShe+V6z1VzZ1U78qQon8T6
+ 0TRY7eApxf/wTRH/nRmcLT0ZWDVUf+zkKLxE+yiEdWT904gZpqkGokD29xCNV3LL+6kw
+ KmDgWSagn1Ht0BmQPmH1oNvztlD2fX3Y8g2/uHdm1hHi5sew/nIGgJEDEJPRc+caYA7R
+ AyxA==
+X-Gm-Message-State: APjAAAXW5Tz28SSRdS+W9SAffFvAG+ta+v2aOUpSvfx4BsiDk9qVRK1f
+ wM4g1FrhiDQFH6+QP9fP3dtdqA==
+X-Google-Smtp-Source: APXvYqxf3k/7Wb+ZKnTinne4Kei3iMcPjtfcFlS1vpIpQ2xmpLUmTWkDcbZC/+3pmja1wPjdeR5u2w==
+X-Received: by 2002:adf:ec8e:: with SMTP id z14mr45794613wrn.198.1558963329516; 
+ Mon, 27 May 2019 06:22:09 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id l12sm7019836wmj.22.2019.05.27.06.22.07
+ by smtp.gmail.com with ESMTPSA id l12sm7019836wmj.22.2019.05.27.06.22.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 27 May 2019 06:22:07 -0700 (PDT)
+ Mon, 27 May 2019 06:22:08 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 07/10] arm64: dts: meson-gxbb-vega-s95: enable CEC
-Date: Mon, 27 May 2019 15:21:57 +0200
-Message-Id: <20190527132200.17377-8-narmstrong@baylibre.com>
+Subject: [PATCH 08/10] arm64: dts: meson-gxbb-vega-s95: enable SARADC
+Date: Mon, 27 May 2019 15:21:58 +0200
+Message-Id: <20190527132200.17377-9-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190527132200.17377-1-narmstrong@baylibre.com>
 References: <20190527132200.17377-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_062210_269234_BB041D89 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20190527_062211_439826_C057C7DD 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,32 +102,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add CEC nodes to support CEC communication on Vega S95
+Add SARARC node and associated regulator to support reading the
+ADC inputs on the Vega S95
 
 Suggested-by: Christian Hewitt <christianshewitt@gmail.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
-index 6738b2aac9a0..be8799653ad7 100644
+index be8799653ad7..4d2aa4dc59e7 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
-@@ -93,6 +93,13 @@
+@@ -54,6 +54,13 @@
+ 		regulator-max-microvolt = <3300000>;
  	};
+ 
++	vddio_ao18: regulator-vddio_ao18 {
++		compatible = "regulator-fixed";
++		regulator-name = "VDDIO_AO18";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++	};
++
+ 	vcc_3v3: regulator-vcc_3v3 {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "VCC_3V3";
+@@ -152,6 +159,11 @@
+ 	clock-names = "clkin0";
  };
  
-+&cec_AO {
++&saradc {
 +	status = "okay";
-+	pinctrl-0 = <&ao_cec_pins>;
-+	pinctrl-names = "default";
-+	hdmi-phandle = <&hdmi_tx>;
++	vref-supply = <&vddio_ao18>;
 +};
 +
- &ethmac {
+ /* Wireless SDIO Module */
+ &sd_emmc_a {
  	status = "okay";
- 	pinctrl-0 = <&eth_rgmii_pins>;
 -- 
 2.21.0
 
