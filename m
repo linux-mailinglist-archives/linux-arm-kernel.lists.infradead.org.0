@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE47D2B4C0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:17:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68E772B4C8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:17:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zATyFrgKLZJO4FF9cCpQUGKgFxwVRAYtsV+oyStkFo=; b=qpun9fY1QJdfvP
-	IAws8gv5vNZyDQDrvQLjdYlOC3BWmdZPFipREj4Rnb4scDM2w2FGLQpzsUhyP7fyWH8MlPlB8FA6b
-	jxwiI6q1XuveIATHw4HUPD2WUiWYE/FUYKuBKR3oJ9ljaHDei7ucL0bD0CSFd3ozVJaR6EoMCQWKD
-	FPuD+FB1STPsZkW3/D9u5MwnHErOL83kJ71fthyTfMOPlBeAkHVAqaJUnxoQvoPbWzz8QWfnRjGsN
-	1xC4IfMyM2EF+tFaUKRkSGxXkdPdz7b/Bw3cXR4FcwYikVbd9aiakZ9X83hugZuTxFQ9IoD5TUGE7
-	LO7P8OEc/Udb/ZEARhoQ==;
+	List-Owner; bh=wVvcTMjf/znhZ4DJLhOwsfYlsyKECstSrd+f+NCvXtc=; b=MmsjxqfkXlVFBL
+	naZ9OwEBMnIPaaWHwh/xarXF2uTibiwMC4fYyhDlEdZ1XfRDKzx37PP4DFEyy/Va97/hRqZIEw4hw
+	KmMxUV5tOS3fcp0XaTUS1L1QlgZAzvQFVKAWOhVEWt2dR0K9eg9vlMyrCqneupi6DA60UcopOTHQ+
+	RRcpMqgQwPnhPZSjsjvYEUS/pg2TUPlExjTnXtDDb5bS3YhAB3Spb96GTOhOwVqAdYwnM6IZHfE+E
+	/YSUip4vfAiGW/uxnhI3YloxD5AZGMOC7yB0HQx3w4UJGLPr0q3+kCwnYST6sJN3jZ6IB3qjc+fUR
+	FQgUa2RxBb0YpDDi52jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVEYv-0006A3-Sm; Mon, 27 May 2019 12:17:09 +0000
+	id 1hVEZ5-0006TP-OG; Mon, 27 May 2019 12:17:19 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEWM-0002NJ-9i
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:14:35 +0000
+ id 1hVEWO-0002R6-Ge
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:14:39 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 17C13812F;
- Mon, 27 May 2019 12:14:48 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 1C6698148;
+ Mon, 27 May 2019 12:14:51 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 10/12] bus: ti-sysc: Detect uarts also on omap34xx
-Date: Mon, 27 May 2019 05:13:46 -0700
-Message-Id: <20190527121348.45251-11-tony@atomide.com>
+Subject: [PATCH 11/12] ARM: dts: Drop legacy custom hwmods property for omap4
+ uart
+Date: Mon, 27 May 2019 05:13:47 -0700
+Message-Id: <20190527121348.45251-12-tony@atomide.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190527121348.45251-1-tony@atomide.com>
 References: <20190527121348.45251-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_051430_900956_EBA3256C 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20190527_051433_191525_610842C8 
+X-CRM114-Status: UNSURE (   6.52  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,33 +72,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Looks like we currently only detect UART on omap36xx, let's also
-add support for omap34xx. And let's also fix the SWSUP mode, it should
-be SWSUP_SIDLE for omap3, not SWSUP_SIDLE_ACT like for omap4 and later.
+With recent ti-sysc driver changes, we can now finally probe most
+modules without needing the custom ti,hwmods property.
 
-Note that we are still booting omap3 for most part without ti-sysc,
-so no need to treat this change as a fix.
+Let's start with omap4 uart as we can test that for runtime PM
+for core retention idle mode.
 
+Cc: devicetree@vger.kernel.org
+Cc: Rob Herring <robh@kernel.org>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/bus/ti-sysc.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/omap4-l4.dtsi | 4 ----
+ 1 file changed, 4 deletions(-)
 
-diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
---- a/drivers/bus/ti-sysc.c
-+++ b/drivers/bus/ti-sysc.c
-@@ -1205,8 +1205,10 @@ static const struct sysc_revision_quirk sysc_revision_quirks[] = {
- 		   0),
- 	SYSC_QUIRK("timer", 0, 0, 0x10, -1, 0x4fff1301, 0xffff00ff,
- 		   0),
-+	SYSC_QUIRK("uart", 0, 0x50, 0x54, 0x58, 0x00000046, 0xffffffff,
-+		   SYSC_QUIRK_SWSUP_SIDLE | SYSC_QUIRK_LEGACY_IDLE),
- 	SYSC_QUIRK("uart", 0, 0x50, 0x54, 0x58, 0x00000052, 0xffffffff,
--		   SYSC_QUIRK_SWSUP_SIDLE_ACT | SYSC_QUIRK_LEGACY_IDLE),
-+		   SYSC_QUIRK_SWSUP_SIDLE | SYSC_QUIRK_LEGACY_IDLE),
- 	/* Uarts on omap4 and later */
- 	SYSC_QUIRK("uart", 0, 0x50, 0x54, 0x58, 0x50411e03, 0xffff00ff,
- 		   SYSC_QUIRK_SWSUP_SIDLE_ACT | SYSC_QUIRK_LEGACY_IDLE),
+diff --git a/arch/arm/boot/dts/omap4-l4.dtsi b/arch/arm/boot/dts/omap4-l4.dtsi
+--- a/arch/arm/boot/dts/omap4-l4.dtsi
++++ b/arch/arm/boot/dts/omap4-l4.dtsi
+@@ -1371,7 +1371,6 @@
+ 
+ 		target-module@20000 {			/* 0x48020000, ap 3 06.0 */
+ 			compatible = "ti,sysc-omap2", "ti,sysc";
+-			ti,hwmods = "uart3";
+ 			reg = <0x20050 0x4>,
+ 			      <0x20054 0x4>,
+ 			      <0x20058 0x4>;
+@@ -1728,7 +1727,6 @@
+ 
+ 		target-module@6a000 {			/* 0x4806a000, ap 26 18.0 */
+ 			compatible = "ti,sysc-omap2", "ti,sysc";
+-			ti,hwmods = "uart1";
+ 			reg = <0x6a050 0x4>,
+ 			      <0x6a054 0x4>,
+ 			      <0x6a058 0x4>;
+@@ -1758,7 +1756,6 @@
+ 
+ 		target-module@6c000 {			/* 0x4806c000, ap 28 20.0 */
+ 			compatible = "ti,sysc-omap2", "ti,sysc";
+-			ti,hwmods = "uart2";
+ 			reg = <0x6c050 0x4>,
+ 			      <0x6c054 0x4>,
+ 			      <0x6c058 0x4>;
+@@ -1788,7 +1785,6 @@
+ 
+ 		target-module@6e000 {			/* 0x4806e000, ap 30 1c.1 */
+ 			compatible = "ti,sysc-omap2", "ti,sysc";
+-			ti,hwmods = "uart4";
+ 			reg = <0x6e050 0x4>,
+ 			      <0x6e054 0x4>,
+ 			      <0x6e058 0x4>;
 -- 
 2.21.0
 
