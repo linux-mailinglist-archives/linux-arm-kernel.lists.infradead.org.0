@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4E2A2B135
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 11:19:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 591652B179
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 11:40:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XUA1Oe6z82tx/WsA168N8FF1+q7stC/874Nk5OWzXM0=; b=RpTiBVCayTJvUm
-	jvL4Fnf17hpDtjSqxmRPRmPM1dJWoQj0kJsQyGwjbMkD57AqjTHFtGqgpIX8+O26AFOd5QOyfH8Ra
-	vFmu84SsbOMvdensu9eIYWUs4sRNe4qfOUXwMGjrG08KeNe62X/zc/U8COsjXabAjlmeDOI4/v3xX
-	zLMMCbx0WEErszgKyMCCDK/ifTpJ+IJrxUwNf9g4edCH+xmOhw1CJO6yY7YN2xnJmxEZs8TA9j1JQ
-	W7+NA1sQ+dFqijpTIDNIta3+d/z8VGfTO4EqA+oaSf1iukDHbxjto5CQ5vmun7n/T6cJZst1NTKJR
-	t1/l2Y4MP+Dld5d9upQQ==;
+	List-Owner; bh=D5IKzvux9iszbmYGdyimULhqs15qdNHzXVuhHX8sfJ4=; b=V4f8mPzR/2EveA
+	qkBjRAi92w5k1h9fJqqm+EAp/k/C6Vq6gKRjAoEOz9ePXzrju87IP6w7Th5B8Bg+gfbwQDCFh/S6Q
+	yuZtb2r6BIgFk7xCSVOLp4rZW5hDyzC9rT2kyTbyz8wfPqJ5AsptjjleKMO++kQ4am9/vhDGplUFl
+	w11/HKCU7cbYNhAfbacOlm9R3nifzXTlr0QV8z4xqeChHaEH5u5X3EalZLqJEC2A1mS5YHZI3wql+
+	+AozJd+T3re8QYaYBHMEJtEcJY9Wd53HD+BX2jRuzFLdLEzChkmIi45s0NPJROsGc8mIs4hrIVVa2
+	Yr7jIhAj6zfeJxMzGgQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVBmr-000474-DV; Mon, 27 May 2019 09:19:21 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1hVC7P-0003rq-E5; Mon, 27 May 2019 09:40:35 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVBmk-00046F-9F
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 09:19:15 +0000
-Received: by mail-lf1-x135.google.com with SMTP id a25so1669679lfg.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 02:19:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=QhJC9sG+upoYgIhtqyPxF5db4C3XR1ct/W+iO7AE0ts=;
- b=wkYgu7++vQ4DgZFfHCVN6JMTNifCtM7J3ZnlI5pHVXoeT0eJ8yFBbK+50NVj4x7NzT
- qPDOyBTVk157WPywFju164Mh8j10CNDyjMcF9sEim7EzZLr9nJXzr3R9ke4Sn6ttut6u
- DKBJGTr1D0vNQUArGwe5XvuepOt9PZM+31KRXD69U3oV1HHEdtcgtsQ8fK3ctS1NW8yv
- vrO/1WftlGJTAC+1ZSmejXs8jIcqpxu919IIhgqi+3VvcRhaLUhcFN1Tonu8trA1H6rR
- fcr1/eVFrx5fVXUC+FGXcNpvvqFjTtJfzfYBpHAsCdjCqpz84mJvptixAS86MCDI/wuK
- dEFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=QhJC9sG+upoYgIhtqyPxF5db4C3XR1ct/W+iO7AE0ts=;
- b=lZmBvN3/dpwwPBFctdE5YWaXVDvB91bPLNc+C6Zv0d6vs4DHcuU3EOpPKwamf3y+lk
- kWLh/hOT3pftSQXXza5aMXcptfADeMIOrb6V+5NCflTsSjlnOiQp4DjZG1veCtq+FPPf
- bFLx1VX84Ro8q2RN9eWhw7BdzERSQQsMsgG8K/QK/S2TqVlJbA05Vypz07pPLoMR/dn7
- DBRkxwZ2sMNAqOSlXxdLrxTEMBhHAKlPvsoCJ/f+aAcacmprk9KUo1dwpo4lfM+PTEDU
- +Y4hUSe07S9EYdYReBl71sWI2WTUGgJ0ndhreDc2uFHjGlh/sUxJvkO7AADLk+n4xdIt
- KqXQ==
-X-Gm-Message-State: APjAAAV/EtKjWfY0/D6WA8Fm70m+abW8jJOWqYC1GtxwsZwpWI8ZHvWJ
- e9vXA+Y0+6jvARizReaY0LNnqvdmIAOlmUlc8p6x4xgGGMQ=
-X-Google-Smtp-Source: APXvYqxsyHAoZkVNEyeXn6h3GQPNb0g0ifxUo0NZ3F1BXQYPoEKbXsJ+7pUPz+f+BOLc2zezRuSddgjVkiJ/ksdZEvs=
-X-Received: by 2002:a19:c312:: with SMTP id t18mr37363139lff.165.1558948751548; 
- Mon, 27 May 2019 02:19:11 -0700 (PDT)
+ id 1hVC7H-0003r7-KU
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 09:40:29 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 3ECA3419BF0B28FDFABB;
+ Mon, 27 May 2019 17:40:16 +0800 (CST)
+Received: from SZX1000472652.huawei.com (100.100.247.164) by
+ DGGEMS412-HUB.china.huawei.com (10.3.19.212) with Microsoft SMTP Server id
+ 14.3.439.0; Mon, 27 May 2019 17:40:05 +0800
+From: Yongliang Gao <gaoyongliang@huawei.com>
+To: <gregkh@linuxfoundation.org>, <rmk+kernel@armlinux.org.uk>,
+ <linux@armlinux.org.uk>, <punitagrawal@gmail.com>,
+ <rafael.j.wysocki@intel.com>, <marc.zyngier@arm.com>, <james.morse@arm.com>,
+ <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] arm: fix using smp_processor_id() in preemptible context
+Date: Mon, 27 May 2019 17:39:39 +0800
+Message-ID: <1558949979-129251-1-git-send-email-gaoyongliang@huawei.com>
+X-Mailer: git-send-email 1.8.5.6
 MIME-Version: 1.0
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 27 May 2019 11:19:00 +0200
-Message-ID: <CACRpkdYLcCB6zA2dYj9A0bJU-gQF3QuhmFd0oGt++oa+gSE_Cw@mail.gmail.com>
-Subject: [GIT PULL] Integrator DTS updates for v5.3
-To: arm-soc <arm@kernel.org>
+X-Originating-IP: [100.100.247.164]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_021914_330895_8984D28D 
-X-CRM114-Status: GOOD (  10.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190527_024027_906665_5E51B5EC 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:135 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,52 +65,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: shiwenlu@huawei.com, linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ zengweilin@huawei.com, nixiaoming@huawei.com, chenjie6@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM SoC people,
+harden_branch_predictor() call smp_processor_id() in preemptible
+context, this would cause a bug messages.
 
-please pull in these DTS changes to set the flash partition information
-right on the Integrator boards for kernel v5.3.
+The bug messages is as follows:
+BUG: using smp_processor_id() in preemptible [00000000] code: syz-executor0/17992
+caller is harden_branch_predictor arch/arm/include/asm/system_misc.h:27 [inline]
+caller is __do_user_fault+0x34/0x114 arch/arm/mm/fault.c:200
+CPU: 1 PID: 17992 Comm: syz-executor0 Tainted: G O 4.4.176 #1
+Hardware name: Hisilicon A9
+[<c0114ae4>] (unwind_backtrace) from [<c010e6fc>] (show_stack+0x18/0x1c)
+[<c010e6fc>] (show_stack) from [<c0379514>] (dump_stack+0xc8/0x118)
+[<c0379514>] (dump_stack) from [<c039b5a0>] (check_preemption_disabled+0xf4/0x138)
+[<c039b5a0>] (check_preemption_disabled) from [<c011abe4>] (__do_user_fault+0x34/0x114)
+[<c011abe4>] (__do_user_fault) from [<c053b0d0>] (do_page_fault+0x3b4/0x3d8)
+[<c053b0d0>] (do_page_fault) from [<c01013dc>] (do_DataAbort+0x58/0xf8)
+[<c01013dc>] (do_DataAbort) from [<c053a880>] (__dabt_usr+0x40/0x60)
 
-Yours,
-Linus Walleij
+Reported-by: Jingwen Qiu <qiujingwen@huawei.com>
+Signed-off-by: Yongliang Gao <gaoyongliang@huawei.com>
+Cc: <stable@vger.kernel.org>
+---
+ arch/arm/include/asm/system_misc.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+diff --git a/arch/arm/include/asm/system_misc.h b/arch/arm/include/asm/system_misc.h
+index 66f6a3a..4a55cfb 100644
+--- a/arch/arm/include/asm/system_misc.h
++++ b/arch/arm/include/asm/system_misc.h
+@@ -22,9 +22,10 @@
+ static inline void harden_branch_predictor(void)
+ {
+ 	harden_branch_predictor_fn_t fn = per_cpu(harden_branch_predictor_fn,
+-						  smp_processor_id());
++						  get_cpu());
+ 	if (fn)
+ 		fn();
++	put_cpu();
+ }
+ #else
+ #define harden_branch_predictor() do { } while (0)
+-- 
+1.8.5.6
 
-  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-integrator.git
-tags/integrator-dts-v5.3-arm-soc
-
-for you to fetch changes up to 62a5017bf825c9e4d3176eb975a01c329a9f364b:
-
-  ARM: dts: vexpress: specify AFS partition (2019-05-20 16:40:38 +0200)
-
-----------------------------------------------------------------
-DTS updates for the Integrator, target kernel v5.3.
-
-----------------------------------------------------------------
-Linus Walleij (4):
-      ARM: dts: integrator: specify AFS partition
-      ARM: dts: versatile: specify AFS partition
-      ARM: dts: realview: specify AFS partition
-      ARM: dts: vexpress: specify AFS partition
-
- arch/arm/boot/dts/arm-realview-eb.dtsi    | 6 ++++++
- arch/arm/boot/dts/arm-realview-pb1176.dts | 6 ++++++
- arch/arm/boot/dts/arm-realview-pb11mp.dts | 6 ++++++
- arch/arm/boot/dts/arm-realview-pbx.dtsi   | 6 ++++++
- arch/arm/boot/dts/integrator.dtsi         | 3 +++
- arch/arm/boot/dts/versatile-ab.dts        | 3 +++
- arch/arm/boot/dts/vexpress-v2m-rs1.dtsi   | 3 +++
- arch/arm/boot/dts/vexpress-v2m.dtsi       | 3 +++
- 8 files changed, 36 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
