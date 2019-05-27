@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F2D12B00E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 10:23:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D96D2B01A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 10:23:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mL1WIfC+Shzw64sPZ99m94qB3H0x7KFnYsTcvy25tjg=; b=gh3sIfXxQDRXR4
-	7wjDxBs6S6rE0UvrrYYsKLpp2DHycLzBjOHueLe2D8O2BDi0ks1nqKc+mD/79D4yCek3HeKrias0i
-	XlPllXS5Gyn/YLSsd3guMcoGEsyZYHCwUo6/UlPnLLNgZUUJ+cAyWzbARwa1OARK4jdTQek/mKmNs
-	hfl13mVNdkyp9iY8Df5JB3GmAbPuMhtjh4BlrQvntLjz1uHOTX0TdSzF3kDW5fCTIzknttgtXj7CF
-	ifZ1Dz12hHbAwQL9jjnVWxehEr1LIS8RzgdXdGZxr/dF+U8n2uQ1ydyeZcBfLfVGgK/Xzq0h1yeQW
-	fkbjx1b9ZJQhBaZPJprA==;
+	List-Owner; bh=t6urIAeTMwNwdgVNVD/LIfvkuhJ+7UHPxB2FILE8CQA=; b=NWZAAdu0pPI66A
+	T3FjigvBn/SWjbYOqYoEc34KineaEAMipq4ZqFFFZST4hxEjXOnx0wmWvreY56Omvl/D0tmtOqPlU
+	b4ruLsmdVDSANy1MbGIuMvTU57kMekGGa5e2VJJrsay96uk7Rgvc/a+OqXXmbjg2K0Ko/8aKqTjMh
+	7Nhz/zrKnFpPANfH+5HwIEDh5Y/lyJdO8AWhpNY7SL/g7XeBsC9TV1e5U/TK3539AKdMCEhMm2Hz+
+	OP0yDkku6rP+kwTHc4NhNm838xdVnRkCna6kJXrEct194Ukz3nfuUN/u7HGwVyYrUI3pEeyvtdXkm
+	yYAf5QNUkMzlQX9SBeYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVAuo-0001D3-Uq; Mon, 27 May 2019 08:23:30 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hVAuz-0001OQ-Dh; Mon, 27 May 2019 08:23:41 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVAuQ-0000sa-NG
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 08:23:08 +0000
-Received: by mail-wr1-x441.google.com with SMTP id f8so16005350wrt.1
+ id 1hVAuR-0000sr-Q1
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 08:23:09 +0000
+Received: by mail-wr1-x442.google.com with SMTP id e2so7216627wrv.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 01:23:06 -0700 (PDT)
+ Mon, 27 May 2019 01:23:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=O6d+R1BA43CR6//FSBQc7Q2qw1KEWApHiN8cbRKfTm8=;
- b=U+t0G69tazaJ32d2puFLX2n6t/xlReiVuHNX4sFtUMV9oIyiOxHwLAhcmjzB2AVWaE
- T94F/JIsMwMg/rb4bJVNBZ1Othe430BVUN9UuhhR5hzbmFSVm40NCAHqKy+gftpX/JCn
- sZZDjRjXR4i/kXjf3/hKX7G+o/yxJC5f2Se2UJqw0f5q0nQ8mmbtRWcQ6Sl3ZjkJubLi
- 3UpX49E8IeBm/UdoJHMSa4gbHFWMaJv/vHcqwtm1jyE3SelX+BIzzhmQGYvXulP3J5+a
- bNToEtbwYVJo8WDN9DAOnzSUwWxX8qFIzLaUS2/cFCeNNvWPzSdijxLXfJh95qFMM3mu
- 5Aaw==
+ bh=wkvoQ7ZQRviI68t1GQUcpGSIR6wTw9yWovYigsGIRFY=;
+ b=1IZRLlb+iAynIaLix5gVnCAZ7xAcsd6DubGOlTTQORdKeGFTdgOh86Q19BhVPF5sMv
+ u1AqrDphMxX0Fwzlt5Dk57C6gE+ZvPbGWoUjWVcMODmvKRc8x7h3blory7XLa3KETdcT
+ ecC9iPtBIvBvnBCSKIgCj3oWsT2OrdLpMlvDn0WCtiw7OgLy9TY+WVctIW8/9aNWRnlX
+ mRUVt7eA4ISwHFWuDZoy0s7d4LfdG4JfsnBgbrrtTPY2FN06VS7flHrs68atPeaAXBb4
+ 6+J9l9steEVtxruflDf2GdqRxa3qzPfn6FssE3SZ4CyeX3gTCwWVLtjvSi1XW8/FQt/c
+ PHYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=O6d+R1BA43CR6//FSBQc7Q2qw1KEWApHiN8cbRKfTm8=;
- b=mbVsN09f/Us0RHemCPbruFyTFZpU/WGK+rnelQbivsQCECuMZXaB6WGudTYDlh8vOC
- 9ghguZ6PRhkomJDjhguoR/Jn5vEi3sAMiOj+feQ3uod8bjv3zuaUurtnWZF5etWjYwec
- jp26l/GNuHdSkJ7r2hkUoFQ4nf958pM80MZDcWTx0fs9tERtt1V0/tCs8kRgeVRtY+aF
- 9FQGvoopiPg5uhcM/2AGOiZACNXTOaEh1mJkcN/UhEmQ0BbpHmy2XJU0cruFH6zAa80H
- TZLzp/Ek6sqLFdHPoPnYEqD9l88kBPRHI2x84v1tIUfdf/2/DjcrClxyHPgVv5hFgejF
- A69w==
-X-Gm-Message-State: APjAAAXy54oe2ovQtZSQDxeisqAYQkm2yCDI3xgDEDJhqJfOO72s9Vlw
- tui4Um3T1heqBhOqEbSU40cPTA==
-X-Google-Smtp-Source: APXvYqzl7Ctp82OmJEPm9ozlpt0egzfmyn5NVaZzUenfXA7KGk3WcpuMLjltC4b3IBRcqSYjl87k0A==
-X-Received: by 2002:a5d:400b:: with SMTP id n11mr23418939wrp.123.1558945385008; 
- Mon, 27 May 2019 01:23:05 -0700 (PDT)
+ bh=wkvoQ7ZQRviI68t1GQUcpGSIR6wTw9yWovYigsGIRFY=;
+ b=sgBKp9AvmowyVtb47n+p4aQy8I3Ye+HXq+fKrwZAFiqui0Bdy+NX3/FF49YeuCLLKW
+ gYkp3teeZjRBBKNrGMspMWwrgC4aSj2kyb/Z225pD+uKPCmAhVXQAxS20wiNQ/fd3KC3
+ 8Dtoq4SJk47pvK7iYZLibNJp7wCIQfu4Hd4AF+r2nArymvOToqLSV+5mx8ufxhvxhgNS
+ 4EqiIFqnI7ZjCcO84pqA72DwtiOsb/9s51O8cs7r8+XiJEbQumgYPeGJJzvO3CVvisyr
+ 22fvPd38J4tbg1iVXcaQHKrr4leoOvShUSQW/uAleNYSH9Yh2DGNXaBPGRESR35UVMOB
+ dpzw==
+X-Gm-Message-State: APjAAAWmRH6BKep6yPTY6BY9+AqNuBQ901fObjhJeul/VrbA7+c+xyYs
+ sUaXRpIj8w3VH28NT5zlHRMyQA==
+X-Google-Smtp-Source: APXvYqxjl3RRa1d0rScJAF3qliJ/Hk9OGySvApUogEWYS5nGYWKNr0B8fU4E1ulTp3VLCeiqGm9b1A==
+X-Received: by 2002:adf:f391:: with SMTP id m17mr8161803wro.90.1558945386129; 
+ Mon, 27 May 2019 01:23:06 -0700 (PDT)
 Received: from localhost.localdomain
  (amontpellier-652-1-281-69.w109-210.abo.wanadoo.fr. [109.210.96.69])
- by smtp.gmail.com with ESMTPSA id n5sm14482754wrj.27.2019.05.27.01.23.03
+ by smtp.gmail.com with ESMTPSA id n5sm14482754wrj.27.2019.05.27.01.23.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 01:23:04 -0700 (PDT)
+ Mon, 27 May 2019 01:23:05 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  David Lechner <david@lechnology.com>, Adam Ford <aford173@gmail.com>
-Subject: [RESEND PATCH v5 1/5] ARM: dts: da850: add cpu node and operating
- points to DT
-Date: Mon, 27 May 2019 10:22:55 +0200
-Message-Id: <20190527082259.29237-2-brgl@bgdev.pl>
+Subject: [RESEND PATCH v5 2/5] ARM: dts: da850-lego-ev3: enable cpufreq
+Date: Mon, 27 May 2019 10:22:56 +0200
+Message-Id: <20190527082259.29237-3-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190527082259.29237-1-brgl@bgdev.pl>
 References: <20190527082259.29237-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_012306_755773_9B3C81D2 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20190527_012307_840519_1C01BC81 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -107,79 +106,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: David Lechner <david@lechnology.com>
 
-This adds a cpu node and operating points to the common da850.dtsi file.
-
-All operating points above 300MHz are disabled by default.
-
-Regulators need to be hooked up on a per-board basis.
+Add a fixed regulator for the LEGO EV3 board along with board-specific
+CPU configuration.
 
 Signed-off-by: David Lechner <david@lechnology.com>
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- arch/arm/boot/dts/da850.dtsi | 50 ++++++++++++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
+ arch/arm/boot/dts/da850-lego-ev3.dts | 30 ++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
 
-diff --git a/arch/arm/boot/dts/da850.dtsi b/arch/arm/boot/dts/da850.dtsi
-index 559659b399d0..0c9a8e78f748 100644
---- a/arch/arm/boot/dts/da850.dtsi
-+++ b/arch/arm/boot/dts/da850.dtsi
-@@ -20,6 +20,56 @@
- 		reg = <0xc0000000 0x0>;
+diff --git a/arch/arm/boot/dts/da850-lego-ev3.dts b/arch/arm/boot/dts/da850-lego-ev3.dts
+index 66fcadf0ba91..553717f84483 100644
+--- a/arch/arm/boot/dts/da850-lego-ev3.dts
++++ b/arch/arm/boot/dts/da850-lego-ev3.dts
+@@ -125,6 +125,15 @@
+ 		amp-supply = <&amp>;
  	};
  
-+	cpus {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		cpu: cpu@0 {
-+			compatible = "arm,arm926ej-s";
-+			device_type = "cpu";
-+			reg = <0>;
-+			clocks = <&psc0 14>;
-+			operating-points-v2 = <&opp_table>;
-+		};
++	cvdd: regulator0 {
++		compatible = "regulator-fixed";
++		regulator-name = "cvdd";
++		regulator-min-microvolt = <1200000>;
++		regulator-max-microvolt = <1200000>;
++		regulator-always-on;
++		regulator-boot-on;
 +	};
 +
-+	opp_table: opp-table {
-+		compatible = "operating-points-v2";
+ 	/*
+ 	 * This is a 5V current limiting regulator that is shared by USB,
+ 	 * the sensor (input) ports, the motor (output) ports and the A/DC.
+@@ -204,6 +213,27 @@
+ 	clock-frequency = <24000000>;
+ };
+ 
++&cpu {
++	cpu-supply = <&cvdd>;
++};
 +
-+		opp_100: opp100-100000000 {
-+			opp-hz = /bits/ 64 <100000000>;
-+			opp-microvolt = <1000000 950000 1050000>;
-+		};
++/* since we have a fixed regulator, we can't run at these points */
++&opp_100 {
++	status = "disabled";
++};
 +
-+		opp_200: opp110-200000000 {
-+			opp-hz = /bits/ 64 <200000000>;
-+			opp-microvolt = <1100000 1050000 1160000>;
-+		};
++&opp_200 {
++	status = "disabled";
++};
 +
-+		opp_300: opp120-300000000 {
-+			opp-hz = /bits/ 64 <300000000>;
-+			opp-microvolt = <1200000 1140000 1320000>;
-+		};
++/*
++ * The SoC is actually the 456MHz version, but because of the fixed regulator
++ * This is the fastest we can go.
++ */
++&opp_375 {
++	status = "okay";
++};
 +
-+		/*
-+		 * Original silicon was 300MHz max, so higher frequencies
-+		 * need to be enabled on a per-board basis if the chip is
-+		 * capable.
-+		 */
-+
-+		opp_375: opp120-375000000 {
-+			status = "disabled";
-+			opp-hz = /bits/ 64 <375000000>;
-+			opp-microvolt = <1200000 1140000 1320000>;
-+		};
-+
-+		opp_456: opp130-456000000 {
-+			status = "disabled";
-+			opp-hz = /bits/ 64 <456000000>;
-+			opp-microvolt = <1300000 1250000 1350000>;
-+		};
-+	};
-+
- 	arm {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
+ &pmx_core {
+ 	status = "okay";
+ 
 -- 
 2.21.0
 
