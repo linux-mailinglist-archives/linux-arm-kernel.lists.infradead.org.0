@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38EF72B90A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:24:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 109CF2B8F0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 18:22:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Eh5hfoVg3DytDxaXK+tV7FOlWMXN9BZwVChWdJje38=; b=nBZoWy6jpkg/LE
-	OZWn3yDxdpbIxIp6HKYHAx/kYyRYktFjurtBYU983Ph+1dlUwQzdBQr/TEDV8KJrH0eFDuXpnbipa
-	qBPx1hRN1v8CXhllmzGOLvVHFKnCtQ21r8aM8B8CwQOVLeHGjGP1k46FjtthoAHqiN4dMiQPAPrVV
-	BVXCijJXyhBk6FtlzSlcO5e4srCYS5i4AEDwtj0zZTVjyVydX/WE+XLp42ONVMWWY1GHrKeheywo6
-	zVL0pr1sdvZbyqDLvjFNu2IdxlUzoY51kZr7WvM/sP3ox9zsib9mgU86q7ptGNqmEBktY8HwFTP++
-	PTEXb693zz3QVYGXER6Q==;
+	List-Owner; bh=3nXaLEYzzg0EEiF1MiiXgfF9bD99kwzSj24f+YOqT3k=; b=Boi4VXCJEcQJF+
+	U4Pqc0IIjZ/j/cViYzOhmAW3uBiwAkytpi0Yf9O5e2o36pe2g0b1B7nXUVtOTfguih/hFxgjb0Zg/
+	Z8B9DnG9t24ElCGGLjXsRHG65qQ1M4ZwjSztZv768WTjWGG7QqyrVwNQU5pK+7mIPo1KFDqk4fnRa
+	V13ejWBeryJVEV/ni4lvPKnJ9m4S8eptokbA2VgD5FWu0cCYanHm02RY78Q1n93xUfn5SVzNYGOo/
+	1RrRXt6hxd0Gwa4ARgYjXnyV4EoHDIei9VhwPur5jIJA3HlOYbXYFSAzdSPaowG/PY7zp9pXqb++H
+	fYOrTtLbGNUj94R4xhaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVIPn-0003IR-W9; Mon, 27 May 2019 16:24:00 +0000
+	id 1hVIOg-0002BR-T2; Mon, 27 May 2019 16:22:50 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVIOX-00029r-PM
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 16:22:45 +0000
+ id 1hVIOX-00029s-Sv
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 16:22:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1558974159; bh=W1eysqnIHUZkksJlW6Nnyz1rUD5/k0fxV0/y2AwBQ70=;
+ t=1558974160; bh=lmN/vA2/QcSdUuzR1xKNkZ8E+T7fPttQ3k8QpH5igsQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jtRJyTN0mda0dMEzqcL/RsuQH3ecGfIJExMPybYmhP/91ewbQ8PMdd0t02M7thPNb
- GLx+i1A+NAnqwhvXQb8kcP73pcszhszejUdUlmzP1pa+CTgXFB7L4O3QLKLmKczsFa
- br6uJjWMkUjgR9ciFeZpdqhKN/3ii65yVduiLv/Y=
+ b=EYsVsboervze6upedsAPLR+GOaPKFvlKo3JG/PI/hqI84VUAnvT9ybln/p3V+NFZS
+ 81fDswQzxTJ/I0DWHSCXPIMeUnyd7TZsin/ihijloxLSEWH25lKb/NGNNRNCyBY9yb
+ 2hxLz66YbfKgV7woPcPgnQTukC3lcMATrwlec8xQ=
 From: megous@megous.com
 To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v6 1/6] net: stmmac: sun8i: add support for Allwinner H6 EMAC
-Date: Mon, 27 May 2019 18:22:32 +0200
-Message-Id: <20190527162237.18495-2-megous@megous.com>
+Subject: [PATCH v6 2/6] net: stmmac: sun8i: force select external PHY when no
+ internal one
+Date: Mon, 27 May 2019 18:22:33 +0200
+Message-Id: <20190527162237.18495-3-megous@megous.com>
 In-Reply-To: <20190527162237.18495-1-megous@megous.com>
 References: <20190527162237.18495-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_092242_161158_B524D385 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20190527_092242_162264_9E1ED5DF 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -82,52 +83,39 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Icenowy Zheng <icenowy@aosc.io>
 
-The EMAC on Allwinner H6 is just like the one on A64. The "internal PHY" on
-H6 is on a co-packaged AC200 chip, and it's not really internal (it's
-connected via RMII at PA GPIO bank).
+The PHY selection bit also exists on SoCs without an internal PHY; if it's
+set to 1 (internal PHY, default value) then the MAC will not make use of
+any PHY such SoCs.
 
-Add support for the Allwinner H6 EMAC in the dwmac-sun8i driver.
+This problem appears when adapting for H6, which has no real internal PHY
+(the "internal PHY" on H6 is not on-die, but on a co-packaged AC200 chip,
+connected via RMII interface at GPIO bank A).
+
+Force the PHY selection bit to 0 when the SOC doesn't have an internal PHY,
+to address the problem of a wrong default value.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- .../net/ethernet/stmicro/stmmac/dwmac-sun8i.c    | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
-index ba124a4da793..3258dec84d55 100644
+index 3258dec84d55..0484c289f328 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c
-@@ -147,6 +147,20 @@ static const struct emac_variant emac_variant_a64 = {
- 	.tx_delay_max = 7,
- };
+@@ -907,6 +907,11 @@ static int sun8i_dwmac_set_syscon(struct stmmac_priv *priv)
+ 		 * address. No need to mask it again.
+ 		 */
+ 		reg |= 1 << H3_EPHY_ADDR_SHIFT;
++	} else {
++		/* For SoCs without internal PHY the PHY selection bit should be
++		 * set to 0 (external PHY).
++		 */
++		reg &= ~H3_EPHY_SELECT;
+ 	}
  
-+static const struct emac_variant emac_variant_h6 = {
-+	.default_syscon_value = 0x50000,
-+	.syscon_field = &sun8i_syscon_reg_field,
-+	/* The "Internal PHY" of H6 is not on the die. It's on the
-+	 * co-packaged AC200 chip instead.
-+	 */
-+	.soc_has_internal_phy = false,
-+	.support_mii = true,
-+	.support_rmii = true,
-+	.support_rgmii = true,
-+	.rx_delay_max = 31,
-+	.tx_delay_max = 7,
-+};
-+
- #define EMAC_BASIC_CTL0 0x00
- #define EMAC_BASIC_CTL1 0x04
- #define EMAC_INT_STA    0x08
-@@ -1212,6 +1226,8 @@ static const struct of_device_id sun8i_dwmac_match[] = {
- 		.data = &emac_variant_r40 },
- 	{ .compatible = "allwinner,sun50i-a64-emac",
- 		.data = &emac_variant_a64 },
-+	{ .compatible = "allwinner,sun50i-h6-emac",
-+		.data = &emac_variant_h6 },
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, sun8i_dwmac_match);
+ 	if (!of_property_read_u32(node, "allwinner,tx-delay-ps", &val)) {
 -- 
 2.21.0
 
