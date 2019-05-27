@@ -2,56 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 180882B5BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:49:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E99CE2B5C2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:51:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4WhKI/sPmMjvPm7qkP47T/w40jsSAgvjTNKHMHWBKxM=; b=gHANg7dK3ZXLpsstDvvj7AStl
-	ylHpyQJXKtjO49P8FZ04ENnmIBvUPGESHT/Pk5bXuUx44BqfwX5chSlgZI7o9s5vHle18iTxq0peq
-	RfgHJnTD+a4PVgL4UiFQcE3tktTzuWa4M6mkRf+l24gVPuqvvW4OREWq2Q6uoV0RbonWEK0MmsU9k
-	ongkT+OoVDsWncnuoXG4HHjASGcaMjrG6dHVrVLYqSw+Rz98uMme9toio5YZ45lwN7P5rsGyPLJHy
-	pxhDmJDDLaP1jpxBS15IJArKnOENe4F2/WtUsxiOKVGRGF54NribF0Feaf3TOZ4qwyocxFOes9sWy
-	2DRF5sSHQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FMGUIY43xvXNU0vswq3tNJv4Phh643p1m4fp7lz37vM=; b=RrNbAFwKvgELVC
+	8Y/XWDJAp5ivyisbLKXpvjJ0NCYqNJ5MENgc/W7ifZJPfOK30nz0xLTSmAOVbGUYGi15bQxRpTyuA
+	pUoHS5r08jtNnGyUm36T+Au8EE2mHJnQtnuRUCA/OVyovquX8KQhwHKdwF6FkljEEn3iK7af3N98k
+	AbMWYz0pIFgJlcZonTDUIcSff4FrXAyzvzJoowiGNm38ILfhDEF/4u4mh1293NQmwpJ4SVO3UoJpF
+	MxVDjBqQgAIm+hIJJ/e0W58qBPp5tx9oloH3xDEIF1RMbCmgwZAMzHu0M8zVe3R6h7SGE59/cwdx6
+	iEWIMp/rLJ1dXHfQa9bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVF4F-0004eg-UD; Mon, 27 May 2019 12:49:31 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hVF5u-0006DM-20; Mon, 27 May 2019 12:51:14 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVF47-0004eB-Hy
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:49:25 +0000
-X-Originating-IP: 90.88.147.134
-Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
- [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id D56D040009;
- Mon, 27 May 2019 12:49:19 +0000 (UTC)
-Date: Mon, 27 May 2019 14:49:19 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v2 5/7] dmaengine: sun6i: Add support for H6 DMA
-Message-ID: <20190527124919.wmdlqrhv4xw6iabi@flea>
-References: <20190525163819.21055-1-peron.clem@gmail.com>
- <20190525163819.21055-6-peron.clem@gmail.com>
- <20190526183425.nbhrk5pa264p7tdy@flea>
- <CAJiuCcfe7LHehZTzGvW+0LzqvDRs4dSjmGhRxkDHgbHrD2+MKA@mail.gmail.com>
+ id 1hVF5j-0006C3-7p
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:51:05 +0000
+Received: by mail-wm1-x344.google.com with SMTP id u78so3206326wmu.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 May 2019 05:51:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=sTM6dI5akQRWyNgshoI8vJ70uGaHk1NWByvSbK/496E=;
+ b=HQy04UfWNW9dML5RFNiHSPiHWbiHch9VJA0/kr8ZsG5AJy4HW3qHLodnmxMOIWWWAM
+ vkrZYEN/RVRTBumIpSbSXbRVMsqD0j0nzWNVa5JPu4cZbCECd2D5ZQ17PvS+f3+V6v/K
+ 0UwVysKMNwcaD+/4Q1OIOuElhaKFklzIIY9+29kp9HwvV8EI1FOQKSbdcfRpslJCW/+R
+ 1K5ihrCWppU6/L829dra29fnIKGhI+eXSBtLJsZYwtkLvonbTSjNLWLzuCLh4ncKIndh
+ QDwmp3e4LykgL5uBnpaQ9xuDvQVqBQKrXsSYGNBNbxRe3omLNMKeGnmRsmVEiLJYquyR
+ lhhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=sTM6dI5akQRWyNgshoI8vJ70uGaHk1NWByvSbK/496E=;
+ b=m5XowyQHY5jBNoOPPSpm7ZGO/+30TN7gdanISzx7MzLcO7X7Z3zGC0BSDfEJtUOyNf
+ goXQso/CkTtxyMjkPqNMEQ2LItk890LCOfuW/sQnSoiaSyVhQpaKCq7VeoN8RYzwOVi4
+ fo9hQNtT3qMOpB6u8S5x3CmfUO56+5fX45h9ummq+Wfd3YoWOu8sWCHy2OmClgqH0rOj
+ vUYYukjCZNMnTsZMHgr2Z+QahWMg3qjG+0Ysv4ykKmp21Z9OzJRFn8f4/rFvShm/ruUB
+ Hll1mnrgDQet9tz9gDYy8oGU+jc4kdFl7AhaviBDUDVsAqkxKAi7gZ0bv5xmuWbrkKvN
+ Fs7w==
+X-Gm-Message-State: APjAAAVIHmYamhMOMqscrWUO97ZjYbCM7WcvPRDaXSTgLjd6a374fESC
+ 5vszaoyyTnu+tEoEo3BrMuMcdw==
+X-Google-Smtp-Source: APXvYqxiQ+nNr1phuOgLrd40qhnD2k4Qu4xZOHnd9BuI8akHep+S8GBmuTUWpWihkDwWS3NEQtK/2w==
+X-Received: by 2002:a1c:1bc5:: with SMTP id b188mr9381743wmb.174.1558961461729; 
+ Mon, 27 May 2019 05:51:01 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id g127sm8911462wme.21.2019.05.27.05.51.00
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 27 May 2019 05:51:01 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH v2] arm64: dts: meson: g12a: Add hwrng node
+Date: Mon, 27 May 2019 14:50:59 +0200
+Message-Id: <20190527125059.32010-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <CAJiuCcfe7LHehZTzGvW+0LzqvDRs4dSjmGhRxkDHgbHrD2+MKA@mail.gmail.com>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_054923_900179_6F99D74E 
-X-CRM114-Status: GOOD (  27.69  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190527_055103_278905_ED05421C 
+X-CRM114-Status: GOOD (  10.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,207 +92,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============3711195224249465761=="
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The Amlogic G12A has the hwrng module at the end of an unknown
+"EFUSE" bus.
 
---===============3711195224249465761==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="hy74rh6pps3axx7f"
-Content-Disposition: inline
+The hwrng is not enabled on the vendor G12A DTs, but is enabled on
+next generation SM1 SoC family sharing the exact same memory mapping.
 
+Let's add the "EFUSE" bus and the hwrng node.
 
---hy74rh6pps3axx7f
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+This hwrng has been checked with the rng-tools rngtest FIPS tool :
+rngtest: starting FIPS tests...
+rngtest: bits received from input: 1630240032
+rngtest: FIPS 140-2 successes: 81436
+rngtest: FIPS 140-2 failures: 76
+rngtest: FIPS 140-2(2001-10-10) Monobit: 10
+rngtest: FIPS 140-2(2001-10-10) Poker: 6
+rngtest: FIPS 140-2(2001-10-10) Runs: 26
+rngtest: FIPS 140-2(2001-10-10) Long run: 34
+rngtest: FIPS 140-2(2001-10-10) Continuous run: 0
+rngtest: input channel speed: (min=3.784; avg=5687.521; max=19073.486)Mibits/s
+rngtest: FIPS tests speed: (min=47.684; avg=52.348; max=52.835)Mibits/s
+rngtest: Program run time: 30000987 microseconds
 
-On Sun, May 26, 2019 at 09:12:36PM +0200, Cl=E9ment P=E9ron wrote:
-> Hi Maxime,
->
-> On Sun, 26 May 2019 at 20:34, Maxime Ripard <maxime.ripard@bootlin.com> w=
-rote:
-> >
-> > On Sat, May 25, 2019 at 06:38:17PM +0200, Cl=E9ment P=E9ron wrote:
-> > > From: Jernej Skrabec <jernej.skrabec@siol.net>
-> > >
-> > > H6 DMA has more than 32 supported DRQs, which means that configuration
-> > > register is slightly rearranged. It also needs additional clock to be
-> > > enabled.
-> > >
-> > > Add support for it.
-> > >
-> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
-> > > ---
-> > >  drivers/dma/sun6i-dma.c | 44 +++++++++++++++++++++++++++++++++++++++=
---
-> > >  1 file changed, 42 insertions(+), 2 deletions(-)
-> > >
-> > > diff --git a/drivers/dma/sun6i-dma.c b/drivers/dma/sun6i-dma.c
-> > > index f5cb5e89bf7b..8d44ddae926a 100644
-> > > --- a/drivers/dma/sun6i-dma.c
-> > > +++ b/drivers/dma/sun6i-dma.c
-> > > @@ -69,14 +69,19 @@
-> > >
-> > >  #define DMA_CHAN_CUR_CFG     0x0c
-> > >  #define DMA_CHAN_MAX_DRQ_A31         0x1f
-> > > +#define DMA_CHAN_MAX_DRQ_H6          0x3f
-> > >  #define DMA_CHAN_CFG_SRC_DRQ_A31(x)  ((x) & DMA_CHAN_MAX_DRQ_A31)
-> > > +#define DMA_CHAN_CFG_SRC_DRQ_H6(x)   ((x) & DMA_CHAN_MAX_DRQ_H6)
-> > >  #define DMA_CHAN_CFG_SRC_MODE_A31(x) (((x) & 0x1) << 5)
-> > > +#define DMA_CHAN_CFG_SRC_MODE_H6(x)  (((x) & 0x1) << 8)
-> > >  #define DMA_CHAN_CFG_SRC_BURST_A31(x)        (((x) & 0x3) << 7)
-> > >  #define DMA_CHAN_CFG_SRC_BURST_H3(x) (((x) & 0x3) << 6)
-> > >  #define DMA_CHAN_CFG_SRC_WIDTH(x)    (((x) & 0x3) << 9)
-> > >
-> > >  #define DMA_CHAN_CFG_DST_DRQ_A31(x)  (DMA_CHAN_CFG_SRC_DRQ_A31(x) <<=
- 16)
-> > > +#define DMA_CHAN_CFG_DST_DRQ_H6(x)   (DMA_CHAN_CFG_SRC_DRQ_H6(x) << =
-16)
-> > >  #define DMA_CHAN_CFG_DST_MODE_A31(x) (DMA_CHAN_CFG_SRC_MODE_A31(x) <=
-< 16)
-> > > +#define DMA_CHAN_CFG_DST_MODE_H6(x)  (DMA_CHAN_CFG_SRC_MODE_H6(x) <<=
- 16)
-> > >  #define DMA_CHAN_CFG_DST_BURST_A31(x)        (DMA_CHAN_CFG_SRC_BURST=
-_A31(x) << 16)
-> > >  #define DMA_CHAN_CFG_DST_BURST_H3(x) (DMA_CHAN_CFG_SRC_BURST_H3(x) <=
-< 16)
-> > >  #define DMA_CHAN_CFG_DST_WIDTH(x)    (DMA_CHAN_CFG_SRC_WIDTH(x) << 1=
-6)
-> > > @@ -319,12 +324,24 @@ static void sun6i_set_drq_a31(u32 *p_cfg, s8 sr=
-c_drq, s8 dst_drq)
-> > >                 DMA_CHAN_CFG_DST_DRQ_A31(dst_drq);
-> > >  }
-> > >
-> > > +static void sun6i_set_drq_h6(u32 *p_cfg, s8 src_drq, s8 dst_drq)
-> > > +{
-> > > +     *p_cfg |=3D DMA_CHAN_CFG_SRC_DRQ_H6(src_drq) |
-> > > +               DMA_CHAN_CFG_DST_DRQ_H6(dst_drq);
-> > > +}
-> > > +
-> > >  static void sun6i_set_mode_a31(u32 *p_cfg, s8 src_mode, s8 dst_mode)
-> > >  {
-> > >       *p_cfg |=3D DMA_CHAN_CFG_SRC_MODE_A31(src_mode) |
-> > >                 DMA_CHAN_CFG_DST_MODE_A31(dst_mode);
-> > >  }
-> > >
-> > > +static void sun6i_set_mode_h6(u32 *p_cfg, s8 src_mode, s8 dst_mode)
-> > > +{
-> > > +     *p_cfg |=3D DMA_CHAN_CFG_SRC_MODE_H6(src_mode) |
-> > > +               DMA_CHAN_CFG_DST_MODE_H6(dst_mode);
-> > > +}
-> > > +
-> > >  static size_t sun6i_get_chan_size(struct sun6i_pchan *pchan)
-> > >  {
-> > >       struct sun6i_desc *txd =3D pchan->desc;
-> > > @@ -1160,6 +1177,28 @@ static struct sun6i_dma_config sun50i_a64_dma_=
-cfg =3D {
-> > >                            BIT(DMA_SLAVE_BUSWIDTH_8_BYTES),
-> > >  };
-> > >
-> > > +/*
-> > > + * The H6 binding uses the number of dma channels from the
-> > > + * device tree node.
-> > > + */
-> > > +static struct sun6i_dma_config sun50i_h6_dma_cfg =3D {
-> > > +     .clock_autogate_enable =3D sun6i_enable_clock_autogate_h3,
-> > > +     .set_burst_length =3D sun6i_set_burst_length_h3,
-> > > +     .set_drq          =3D sun6i_set_drq_h6,
-> > > +     .set_mode         =3D sun6i_set_mode_h6,
-> > > +     .src_burst_lengths =3D BIT(1) | BIT(4) | BIT(8) | BIT(16),
-> > > +     .dst_burst_lengths =3D BIT(1) | BIT(4) | BIT(8) | BIT(16),
-> > > +     .src_addr_widths   =3D BIT(DMA_SLAVE_BUSWIDTH_1_BYTE) |
-> > > +                          BIT(DMA_SLAVE_BUSWIDTH_2_BYTES) |
-> > > +                          BIT(DMA_SLAVE_BUSWIDTH_4_BYTES) |
-> > > +                          BIT(DMA_SLAVE_BUSWIDTH_8_BYTES),
-> > > +     .dst_addr_widths   =3D BIT(DMA_SLAVE_BUSWIDTH_1_BYTE) |
-> > > +                          BIT(DMA_SLAVE_BUSWIDTH_2_BYTES) |
-> > > +                          BIT(DMA_SLAVE_BUSWIDTH_4_BYTES) |
-> > > +                          BIT(DMA_SLAVE_BUSWIDTH_8_BYTES),
-> > > +     .has_mbus_clk =3D true,
-> > > +};
-> > > +
-> > >  /*
-> > >   * The V3s have only 8 physical channels, a maximum DRQ port id of 2=
-3,
-> > >   * and a total of 24 usable source and destination endpoints.
-> > > @@ -1190,6 +1229,7 @@ static const struct of_device_id sun6i_dma_matc=
-h[] =3D {
-> > >       { .compatible =3D "allwinner,sun8i-h3-dma", .data =3D &sun8i_h3=
-_dma_cfg },
-> > >       { .compatible =3D "allwinner,sun8i-v3s-dma", .data =3D &sun8i_v=
-3s_dma_cfg },
-> > >       { .compatible =3D "allwinner,sun50i-a64-dma", .data =3D &sun50i=
-_a64_dma_cfg },
-> > > +     { .compatible =3D "allwinner,sun50i-h6-dma", .data =3D &sun50i_=
-h6_dma_cfg },
-> > >       { /* sentinel */ }
-> > >  };
-> > >  MODULE_DEVICE_TABLE(of, sun6i_dma_match);
-> > > @@ -1288,8 +1328,8 @@ static int sun6i_dma_probe(struct platform_devi=
-ce *pdev)
-> > >       ret =3D of_property_read_u32(np, "dma-requests", &sdc->max_requ=
-est);
-> > >       if (ret && !sdc->max_request) {
-> > >               dev_info(&pdev->dev, "Missing dma-requests, using %u.\n=
-",
-> > > -                      DMA_CHAN_MAX_DRQ_A31);
-> > > -             sdc->max_request =3D DMA_CHAN_MAX_DRQ_A31;
-> > > +                      DMA_CHAN_MAX_DRQ_H6);
-> > > +             sdc->max_request =3D DMA_CHAN_MAX_DRQ_H6;
-> >
-> > This is changing the binding though, since we're changing the
-> > default. This should be reflected in the binding, and we should keep
-> > the same default in the device tree binding.
->
-> Agree, H6 device-tree will have the "dma-request" property.
-> As this modification is not mandatory, we can drop it to avoid
-> bindings modification.
->
-> What do you think?
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+Changes since v1:
+- fixes efuse bus size to 2000
+- add @218 suffix to rng node name
 
-That works for me
+ arch/arm64/boot/dts/amlogic/meson-g12a.dtsi | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-Maxime
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+index cbd05e537cd2..881d0f9a2112 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+@@ -197,6 +197,19 @@
+ 				};
+ 			};
+ 
++			apb_efuse: bus@30000 {
++				compatible = "simple-bus";
++				reg = <0x0 0x30000 0x0 0x2000>;
++				#address-cells = <2>;
++				#size-cells = <2>;
++				ranges = <0x0 0x0 0x0 0x30000 0x0 0x2000>;
++
++				hwrng: rng@218 {
++					compatible = "amlogic,meson-rng";
++					reg = <0x0 0x218 0x0 0x4>;
++				};
++			};
++
+ 			periphs: bus@34400 {
+ 				compatible = "simple-bus";
+ 				reg = <0x0 0x34400 0x0 0x400>;
+-- 
+2.21.0
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---hy74rh6pps3axx7f
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXOvczwAKCRDj7w1vZxhR
-xahtAQCtZnlWKjbb9URWtiuTZsZQNRsYSFRrzor0cn/TILKvlAD/efbuQ9zg3fZl
-GWbz279dIB+dZGtot06pTYthOZD4uAg=
-=W9yW
------END PGP SIGNATURE-----
-
---hy74rh6pps3axx7f--
-
-
---===============3711195224249465761==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3711195224249465761==--
-
