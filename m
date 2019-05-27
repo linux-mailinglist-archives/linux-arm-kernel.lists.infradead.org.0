@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9E242B658
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:24:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 362D22B659
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 15:25:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+xCr86OO6yTAJymRglkriX7OvkrSngmlbTQzoOl+4LA=; b=IL5KxCBVLgJXPE
-	VCFcWZ+fO5dDAEhnFViREgHcoyA/FagZwAw+wER/Zu7UWfzVo2H0vkSIuXtHRHA63TVFo90kg8Hxr
-	5TUb64JtiYhAfpciaBQ8oy31v6ndkLQa/Lkmor/ljB6bFVPRT9+UpuIXcfKGKqM6j8f+oRtRZXhcU
-	1149W94ztFLZEKozTX9g3YMXRLva1puynilt9XX5n73sHm0mqTN2D8mV5DeYTinmxh5CJAFAFti/T
-	J8AkSdiDlLEvNTj20YrKdz1PD9RkmXVeQ8isqMHA6KsO0BaAZRKcBH/7f5q2JLnsz9wy+VoK+L8dg
-	+aeB5s83A+d9Pd8SxmCw==;
+	List-Owner; bh=Go9O7/NkY2izuMXtGQoOOPNR55fW3uwe0xbR7xAdW+s=; b=OlSuG2cTeAhcUQ
+	kqPn2kNTDxmyrhq3Azd9W5/yba1gJycUhec/VlnFYdF5HUjVzu3ifbkvnhCngrHXhHhS6Gvl5sPbA
+	WS0Kf+AgCXjapn4mQJW28NMZvEGUkKZ8a3JkMCmnW0PMurf9MMQAAluqwGYzld24FktN5qqXE38TG
+	OnmHpSwFDXy0x2+GFXb2ok6M+8yk+cBZ3LdoAWVp8pLWvahUEDFRZuo85BI3IBNcEfHGPkG06xmt3
+	5ieZAEMvtMj8w8T8jpN91GfZU6FuoyiOo0Qg9pfekJeDlDroik93gYhwMygpiull0G104t76vn8nv
+	LlXYqoVSfkk3KDd3TqQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVFcM-0004qQ-C8; Mon, 27 May 2019 13:24:46 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hVFcX-00053c-Kk; Mon, 27 May 2019 13:24:57 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVFZr-0002Fj-VO
+ id 1hVFZs-0002Gw-P3
  for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 13:22:21 +0000
-Received: by mail-wr1-x441.google.com with SMTP id e2so8162234wrv.6
+Received: by mail-wr1-x442.google.com with SMTP id m3so16943458wrv.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 06:22:11 -0700 (PDT)
+ Mon, 27 May 2019 06:22:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Xq9gvQaTQshE54UN9urwGrJ/PW8MDhPcWZeqXmPnPkI=;
- b=Sj/HPZdj48Z931rhJgvmsSPg9x9RDBV6Vit7NVMr2+2LmFrs6YkavcRnQIACyyEKBC
- JB0eMOnlCkYUukcQew4/e5m9adRogWJzukVijek3voT9e65KbjkKgWGfz+8Ik/PYiH+S
- 7gEPfLx8YV7Z/5btip0Pt42tqUfMg9mlMcwEJGd0dm7jX+Ty4EuFLj3C6w+bn7xQ64df
- hp5fOf44UKaxglgAZT+ff0QGs5Pb+5dqow2cPeOcf8NM/PKBzk5R+gjRsH68gIZt/c40
- FmoT3ky2FPe7kyltE3xMM/M7hovEjwNe9oFjSZ6Lfa22Xqha4QFpok8rJ0LbIv9n9RWf
- BLig==
+ bh=1P5QlVaHw/qutd0fn2pg3sEjq4K4xykyak/BNOBt7EY=;
+ b=MiJuoVo4XE9EvwCi1lJ/KTjNn5vkTGuOAboQ1357fR8CCKNsFMkHx7jbSvFLyf8nAK
+ lT0K3rrLl7Udusvz9kAPZ2Am/rHTN8UJMd2sjIQeV0EUo007PCehoOLFxmjZNm5VZY4r
+ DFPwp91uwX2GfPpY1/vvPH0Penf8j3IsYBnOJu3yTpXNEVMdNLFnyVeTf7xRpkTODG32
+ hRFdP+VZyIPkWJaHaiWHkrWfTleo4gO1n1ozF1DlcemA7hAzh1FDoyJgGNELfPPNkog1
+ pD9D6pirVHuUyUozIsY0z7VhmmegqBdW7iVCknjA9PIhemNQwpp0NhCCQwSQvOKlTabG
+ +CqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Xq9gvQaTQshE54UN9urwGrJ/PW8MDhPcWZeqXmPnPkI=;
- b=iNIdjfjuYfob4qVJBcE+pDSz5yhhd02362qk3AR7gfEzV+i4pIE3KXl0giTJTCn4el
- WSvK5H+hQdgOQoFwLIYRRDUnISUpU6IxBgZ5Nfl5yIokMtBUNJATTzgA5EkhEyGjWl8e
- 8NfQ2nXWIAeddZgcryfuU3mYkO3R95tb5l4Tkr3v0q0pPHphjA2gWB7/QUIR/o7icx91
- 7WpGvz9tGkpaQV4eQqYqwzTbUWYsyxJKFBvbdfU9zVBH2pF1lSTPQ0vOqOUeuAu75R9H
- Gau1O9f+kn/hr1M4V0PAy60N5xvcfp/WRql09k4fm0huIHuT2qbH78M494ZBiMDmb97K
- YO8g==
-X-Gm-Message-State: APjAAAV3Oljwk0601n0Thb6pbOBXiL2pSlyS8lbM+g/Ez0ZbHyldfJMB
- yBt21yqzSGkjbgS/cUgXwWZJ4A==
-X-Google-Smtp-Source: APXvYqyMfifY65haasTe+0rgvLhCeYDfEiW9wVbHqKfZPRH8VMKJlHQZKtU/12FI2Cwvig9Y8yUxLg==
-X-Received: by 2002:adf:b446:: with SMTP id v6mr75583998wrd.30.1558963330491; 
- Mon, 27 May 2019 06:22:10 -0700 (PDT)
+ bh=1P5QlVaHw/qutd0fn2pg3sEjq4K4xykyak/BNOBt7EY=;
+ b=KlLIiIp1kKNrQSUD6PkILfvTjK+3kqH0ACdsYYxrjKInjz1NP2oVpXHsOwPfGl/KTm
+ 3n4vCKahkWRYVkwnvOL3VU9YXSX3R+ctvWK4iaydZ2AFl6Gw3RhPfzOe+qFNDKlVNzMI
+ v25rv9GLahpqdRh+kRrtbJDPrFiVpbXNzlq3R1YaiVfLjm4FWdLRCJ729kPwfDeZNJ2V
+ qMQ35ms8t6YMRs3qsy6visZTn6nmV/xBJN2zLzt1L5HXs4DoFSx+se3VLJO06/8Yv53+
+ TaF2lvVzr1XpOVZvAl5iVQAc9iIg18fFQ1FfFB96QIcCFs0D5TDhpWzjfz/Z4q7LfJAx
+ Li7Q==
+X-Gm-Message-State: APjAAAWgXtXwj08rdBJ4WvTnitFtRVJgw3PZgOLbxgx748BH1P6E8uac
+ 7gW1Ww8CgXRfKnSKAXevw92aEQ==
+X-Google-Smtp-Source: APXvYqyWlquctEhMRszF7odvCHXFI0pvNktDwIVJZOgmAvW/p89BNtQ/h0utKRsS3NvmSJeu3FKaGQ==
+X-Received: by 2002:a5d:680f:: with SMTP id w15mr7705835wru.349.1558963331213; 
+ Mon, 27 May 2019 06:22:11 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id l12sm7019836wmj.22.2019.05.27.06.22.09
+ by smtp.gmail.com with ESMTPSA id l12sm7019836wmj.22.2019.05.27.06.22.10
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 27 May 2019 06:22:09 -0700 (PDT)
+ Mon, 27 May 2019 06:22:10 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 09/10] arm64: dts: meson-gxbb-vega-s95: fix WiFi/BT module
- support
-Date: Mon, 27 May 2019 15:21:59 +0200
-Message-Id: <20190527132200.17377-10-narmstrong@baylibre.com>
+Subject: [PATCH 10/10] arm64: dts: meson-gxbb-vega-s95: add ethernet PHY
+ interrupt
+Date: Mon, 27 May 2019 15:22:00 +0200
+Message-Id: <20190527132200.17377-11-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190527132200.17377-1-narmstrong@baylibre.com>
 References: <20190527132200.17377-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_062212_492107_9EADC707 
-X-CRM114-Status: GOOD (  13.58  )
+X-CRM114-CacheID: sfid-20190527_062213_578314_3D5A223C 
+X-CRM114-Status: GOOD (  11.30  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,58 +103,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix the SDIO WiFi support and add proper Bluetooth support on the
-Vega S95 board.
+Add the external ethernet PHY interrupt on the Vega S95 board.
 
 Suggested-by: Christian Hewitt <christianshewitt@gmail.com>
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- .../boot/dts/amlogic/meson-gxbb-vega-s95.dtsi  | 18 +++++++++++++++---
- 1 file changed, 15 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
-index 4d2aa4dc59e7..9b52f3dcdd49 100644
+index 9b52f3dcdd49..18856f28fd60 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
-@@ -93,8 +93,7 @@
- 
- 	sdio_pwrseq: sdio-pwrseq {
- 		compatible = "mmc-pwrseq-simple";
--		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>,
--				<&gpio GPIOX_20 GPIO_ACTIVE_LOW>;
-+		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
- 		clocks = <&wifi32k>;
- 		clock-names = "ext_clock";
+@@ -128,6 +128,9 @@
+ 		eth_phy0: ethernet-phy@0 {
+ 			/* Realtek RTL8211F (0x001cc916) */
+ 			reg = <0>;
++			interrupt-parent = <&gpio_intc>;
++			/* MAC_INTR on GPIOZ_15 */
++			interrupts = <29 IRQ_TYPE_LEVEL_LOW>;
+ 		};
  	};
-@@ -167,7 +166,7 @@
- /* Wireless SDIO Module */
- &sd_emmc_a {
- 	status = "okay";
--	pinctrl-0 = <&sdio_pins &sdio_irq_pins>;
-+	pinctrl-0 = <&sdio_pins>;
- 	pinctrl-1 = <&sdio_clk_gate_pins>;
- 	pinctrl-names = "default", "clk-gate";
- 	#address-cells = <1>;
-@@ -229,6 +228,19 @@
- 	vqmmc-supply = <&vddio_boot>;
  };
- 
-+/* This is connected to the Bluetooth module: */
-+&uart_A {
-+	status = "okay";
-+	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
-+	pinctrl-names = "default";
-+
-+	bluetooth {
-+		compatible = "brcm,bcm43438-bt";
-+		shutdown-gpios = <&gpio GPIOX_20 GPIO_ACTIVE_HIGH>;
-+	};
-+};
-+
-+/* This UART is brought out to the DB9 connector */
- &uart_AO {
- 	status = "okay";
- 	pinctrl-0 = <&uart_ao_a_pins>;
 -- 
 2.21.0
 
