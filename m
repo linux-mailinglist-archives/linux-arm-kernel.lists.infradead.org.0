@@ -2,113 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A55292B439
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:05:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 938FA2B45D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:06:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pMWcVv8tICjC6N5Azcko8KKubOZUzw7eEe9SX+1VG9I=; b=t3xLt1WvcyDu7j
-	+1AXslNCmGQ35pnPxrLDrxqMnywZxwQzr4PGLbQ/knP4NvKycDiHC9eEYksGY3zS5riKDAvEER6jo
-	ss0FyWRvzSLrfeskGECCUahlmWn+Pf/zylM2aj1d/81SU7iPqYks9MnGcNzk5tSVRLuVZe7azi2p9
-	l4lygSs5+KuJD383jxEpi/O5E77zOAS8v4Qzipdbw83UHWh8+qwy6NP7WUNTdwT1qcFZsZCSGa8wC
-	9cXrr/sFH++lXd1+D85r+RYREhZhRB0OAqUFSoxclYsiHfY69nJRkvgcru685rA+7PEfCuPthlNuc
-	JnpMPd6giYq0I9SYVO7g==;
+	List-Owner; bh=NLHL6rxjWg9MwT2aszanAoU2+pFTBEUSX+BWQ82f3Ys=; b=ZpRAQPMv1cVvSj
+	65KKa2rkK76HhOJbGmU0Bln8tWE0pQ6/wWtx5vLyDQGV65xCi7dWAzaQLykGcEzabB3Bm6zDACsks
+	vj37IyTPMDi+pE/phnj06oopzSq0TIP0ERbSjRm4wCe990OMdctv7tnw+Fkvnqq5pJzsIRs8KW3fM
+	E3jB+JrhTh7gTYNprpuge/K+SJPGKwsEgZ6C9q5T8ZEsBj1xe8Y5r2Yix4xTMOIMjzjXgKflJnN+d
+	i1iH7LMOqFV3suDeSK1e3qCIS3rhXSrLZ1fIZno4KhHjcGQSWT8kYDSrjHsYOs/7EfSnDaC6x5wDK
+	g+EgdePE4vSPvv/GZ37g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVENL-0006gF-Tn; Mon, 27 May 2019 12:05:11 +0000
-Received: from mail-eopbgr140059.outbound.protection.outlook.com
- ([40.107.14.59] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1hVEOp-0008Kk-5U; Mon, 27 May 2019 12:06:43 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEMf-0005vw-4U
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:04:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Z1tNCt1Zo2Elml1aZsL4ncYgBz1AR7VKcCef9PzKego=;
- b=NFE0jV0iek+BH9nFkKcdxorwLOLToTJUJmMOTdntx5HlR48HxvWpPVf5tptACxEXGqvnwD8Xh25AvUzmWe3v6mV+0xZ5laeWvRw2SDsSljuWsPxcrZ5YFrq7bc6/T1ZZBUj3hWR4g/27YtouCLaNYInnYUGyMt7plfrge/L6PjE=
-Received: from AM6PR04MB5032.eurprd04.prod.outlook.com (20.177.34.92) by
- AM6PR04MB6421.eurprd04.prod.outlook.com (20.179.244.154) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.18; Mon, 27 May 2019 12:04:26 +0000
-Received: from AM6PR04MB5032.eurprd04.prod.outlook.com
- ([fe80::55a3:c244:9ba:6d21]) by AM6PR04MB5032.eurprd04.prod.outlook.com
- ([fe80::55a3:c244:9ba:6d21%4]) with mapi id 15.20.1922.021; Mon, 27 May 2019
- 12:04:26 +0000
-From: Pramod Kumar <pramod.kumar_1@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, "Michal.Vokac@ysoft.com"
- <Michal.Vokac@ysoft.com>, Leo Li <leoyang.li@nxp.com>
-Subject: [PATCH 3/3] arm64: dts: frwy-ls1046a: add support for micron nor flash
-Thread-Topic: [PATCH 3/3] arm64: dts: frwy-ls1046a: add support for micron nor
- flash
-Thread-Index: AQHVFIRU1CGDaCeXeUuac6cU0kHN7Q==
-Date: Mon, 27 May 2019 12:04:25 +0000
-Message-ID: <20190527120619.30546-4-pramod.kumar_1@nxp.com>
-References: <20190527120619.30546-1-pramod.kumar_1@nxp.com>
-In-Reply-To: <20190527120619.30546-1-pramod.kumar_1@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.17.1
-x-clientproxiedby: BMXPR01CA0062.INDPRD01.PROD.OUTLOOK.COM
- (2603:1096:b00:2c::26) To AM6PR04MB5032.eurprd04.prod.outlook.com
- (2603:10a6:20b:9::28)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pramod.kumar_1@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [92.120.1.70]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2edb073f-3d3d-45df-f1de-08d6e29b7689
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM6PR04MB6421; 
-x-ms-traffictypediagnostic: AM6PR04MB6421:
-x-microsoft-antispam-prvs: <AM6PR04MB64212457B50DD286700E32DAF61D0@AM6PR04MB6421.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1079;
-x-forefront-prvs: 0050CEFE70
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(346002)(376002)(396003)(39860400002)(366004)(189003)(199004)(6636002)(14444005)(4326008)(6486002)(256004)(102836004)(99286004)(3846002)(6436002)(8676002)(478600001)(71200400001)(71190400001)(53936002)(305945005)(2501003)(1076003)(2201001)(54906003)(6116002)(4744005)(8936002)(110136005)(5660300002)(36756003)(14454004)(66446008)(73956011)(186003)(52116002)(86362001)(7736002)(26005)(486006)(2616005)(386003)(446003)(11346002)(81156014)(81166006)(6506007)(476003)(316002)(76176011)(25786009)(6512007)(2906002)(66946007)(66476007)(66556008)(64756008)(66066001)(50226002)(68736007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB6421;
- H:AM6PR04MB5032.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: h7flMk9AgNPuxRX3SquA7R2CjT33Eq94p3y0+eXN999ASa5ndWs96Japh6y2PDkZieTyn6+rZJ3HRJfZ36ZwsxyoV/+RZOS4syolxKTEKMhT+3eSCPgc66NxWKv2E12Z2nwhf3Z/ZU76ItDkaNGoC241USmCVoAljWGQQpe8Y88HbO+YbARawHYsKwQOwNZ+QcbgYFjGssW5EybeI6BOzs19QVz5hmidgQu2idsMtlHGFjJc5p7oM7qvExz3Y7QCYu9Y213xPqtC0v772UEXK7b98euMHLiot21gg6W9Wx/F1hdOsdtQ8Mqel+zUCgFEnhbAxcQ73fXpmdsyluva1OBZ6kTtaPKXJZJzp/sD5ekGCNqLzDzM3FjMBG/GxS6LTN6DDtuzsjWtr7KOZ9B9jVcPJwa+HsDQQcQEusYbV7k=
+ id 1hVEOe-0008Fm-Jj
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:06:34 +0000
+X-Originating-IP: 90.66.53.80
+Received: from localhost (lfbn-1-3034-80.w90-66.abo.wanadoo.fr [90.66.53.80])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 76E9CFF819;
+ Mon, 27 May 2019 12:06:26 +0000 (UTC)
+Date: Mon, 27 May 2019 14:06:26 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Re: [PATCH 01/10] dt-bindings: rtc: Move trivial RTC over to trivial
+ devices
+Message-ID: <20190527120626.GM3274@piout.net>
+References: <290402405a34506997fd2fab2c4c1486dbe6b7e5.1558958381.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2edb073f-3d3d-45df-f1de-08d6e29b7689
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2019 12:04:25.9911 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pramod.kumar_1@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6421
+Content-Disposition: inline
+In-Reply-To: <290402405a34506997fd2fab2c4c1486dbe6b7e5.1558958381.git-series.maxime.ripard@bootlin.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_050429_513524_F31481E9 
-X-CRM114-Status: GOOD (  12.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190527_050632_949716_B2FCFF58 
+X-CRM114-Status: GOOD (  17.67  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.59 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -120,61 +62,241 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Ashish Kumar <ashish.kumar@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rtc@vger.kernel.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add micron nor flash support for ls1046a frwy board.
+On 27/05/2019 14:00:33+0200, Maxime Ripard wrote:
+> The RTC generic bindings has a bunch of devices that have a pretty simple
+> binding, with just compatible, reg and optional interrupts properties.
+> =
 
-Signed-off-by: Ashish Kumar <ashish.kumar@nxp.com>
-Signed-off-by: Pramod Kumar <pramod.kumar_1@nxp.com>
----
- .../boot/dts/freescale/fsl-ls1046a-frwy.dts    | 18 +++++++++++++++++-
- 1 file changed, 17 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
-index cda49988d8b8..0f626c986a9a 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
-@@ -2,7 +2,7 @@
- /*
-  * Device Tree Include file for Freescale Layerscape-1046A family SoC.
-  *
-- * Copyright 2019 NXP.
-+ * Copyright 2019 NXP
-  *
-  */
- 
-@@ -113,6 +113,22 @@
- 
- };
- 
-+&qspi {
-+	num-cs = <1>;
-+	bus-num = <0>;
-+	status = "okay";
-+
-+	qflash0: flash@0 {
-+		compatible = "jedec,spi-nor";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		spi-max-frequency = <50000000>;
-+		reg = <0>;
-+		spi-rx-bus-width = <4>;
-+		spi-tx-bus-width = <4>;
-+	};
-+};
-+
- #include "fsl-ls1046-post.dtsi"
- 
- &fman0 {
--- 
-2.17.1
+This is not true, they all also support the star-year property, this is
+why they are not in the trivial-devices file anymore.
+
+> This is exactly what the trivial devices YAML schema has been created for,
+> so let's move those devices there.
+> =
+
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> ---
+>  Documentation/devicetree/bindings/rtc/rtc.txt          | 39 +--------
+>  Documentation/devicetree/bindings/trivial-devices.yaml | 54 +++++++++++-
+>  2 files changed, 54 insertions(+), 39 deletions(-)
+> =
+
+> diff --git a/Documentation/devicetree/bindings/rtc/rtc.txt b/Documentatio=
+n/devicetree/bindings/rtc/rtc.txt
+> index a97fc6a9a75e..234bd2af1830 100644
+> --- a/Documentation/devicetree/bindings/rtc/rtc.txt
+> +++ b/Documentation/devicetree/bindings/rtc/rtc.txt
+> @@ -31,42 +31,3 @@ below.
+>                              expressed in femto Farad (fF).
+>                              The default value shall be listed (if option=
+al),
+>                              and likewise all valid values.
+> -
+> -Trivial RTCs
+> -------------
+> -
+> -This is a list of trivial RTC devices that have simple device tree
+> -bindings, consisting only of a compatible field, an address and
+> -possibly an interrupt line.
+> -
+> -
+> -Compatible		Vendor / Chip
+> -=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D		=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> -abracon,abb5zes3	AB-RTCMC-32.768kHz-B5ZE-S3: Real Time Clock/Calendar Mo=
+dule with I2C Interface
+> -abracon,abeoz9		AB-RTCMC-32.768kHz-EOZ9: Real Time Clock/Calendar Module=
+ with I2C Interface
+> -dallas,ds1374		I2C, 32-Bit Binary Counter Watchdog RTC with Trickle Char=
+ger and Reset Input/Output
+> -dallas,ds1672		Dallas DS1672 Real-time Clock
+> -dallas,ds3232		Extremely Accurate I=B2C RTC with Integrated Crystal and =
+SRAM
+> -epson,rx8010		I2C-BUS INTERFACE REAL TIME CLOCK MODULE
+> -epson,rx8571		I2C-BUS INTERFACE REAL TIME CLOCK MODULE with Battery Back=
+ed RAM
+> -epson,rx8581		I2C-BUS INTERFACE REAL TIME CLOCK MODULE
+> -emmicro,em3027		EM Microelectronic EM3027 Real-time Clock
+> -isil,isl1208		Intersil ISL1208 Low Power RTC with Battery Backed SRAM
+> -isil,isl1218		Intersil ISL1218 Low Power RTC with Battery Backed SRAM
+> -isil,isl12022		Intersil ISL12022 Real-time Clock
+> -microcrystal,rv3028	Real Time Clock Module with I2C-Bus
+> -microcrystal,rv3029	Real Time Clock Module with I2C-Bus
+> -microcrystal,rv8523	Real Time Clock
+> -nxp,pcf2127		Real-time clock
+> -nxp,pcf2129		Real-time clock
+> -nxp,pcf8563		Real-time clock/calendar
+> -pericom,pt7c4338	Real-time Clock Module
+> -ricoh,r2025sd		I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> -ricoh,r2221tl		I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> -ricoh,rs5c372a		I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> -ricoh,rs5c372b		I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> -ricoh,rv5c386		I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> -ricoh,rv5c387a		I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> -sii,s35390a		2-wire CMOS real-time clock
+> -whwave,sd3078		I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> -xircom,x1205		Xircom X1205 I2C RTC
+> diff --git a/Documentation/devicetree/bindings/trivial-devices.yaml b/Doc=
+umentation/devicetree/bindings/trivial-devices.yaml
+> index 747fd3f689dc..96035c5970d8 100644
+> --- a/Documentation/devicetree/bindings/trivial-devices.yaml
+> +++ b/Documentation/devicetree/bindings/trivial-devices.yaml
+> @@ -26,6 +26,10 @@ properties:
+>    compatible:
+>      items:
+>        - enum:
+> +            # AB-RTCMC-32.768kHz-B5ZE-S3: Real Time Clock/Calendar Modul=
+e with I2C Interface
+> +          - abracon,abb5zes3
+> +            # AB-RTCMC-32.768kHz-EOZ9: Real Time Clock/Calendar Module w=
+ith I2C Interface
+> +          - abracon,abeoz9
+>              # SMBus/I2C Digital Temperature Sensor in 6-Pin SOT with SMB=
+us Alert and Over Temperature Pin
+>            - ad,ad7414
+>              # ADM9240:  Complete System Hardware Monitor for uProcessor-=
+Based Systems
+> @@ -56,12 +60,18 @@ properties:
+>            - capella,cm32181
+>              # CM3232: Ambient Light Sensor
+>            - capella,cm3232
+> +            # I2C, 32-Bit Binary Counter Watchdog RTC with Trickle Charg=
+er and Reset Input/Output
+> +          - dallas,ds1374
+>              # High-Precision Digital Thermometer
+>            - dallas,ds1631
+> +            # Dallas DS1672 Real-time Clock
+> +          - dallas,ds1672
+>              # Total-Elapsed-Time Recorder with Alarm
+>            - dallas,ds1682
+>              # Tiny Digital Thermometer and Thermostat
+>            - dallas,ds1775
+> +            # Extremely Accurate I=B2C RTC with Integrated Crystal and S=
+RAM
+> +          - dallas,ds3232
+>              # CPU Supervisor with Nonvolatile Memory and Programmable I/O
+>            - dallas,ds4510
+>              # Digital Thermometer and Thermostat
+> @@ -80,6 +90,12 @@ properties:
+>            - domintech,dmard09
+>              # DMARD10: 3-axis Accelerometer
+>            - domintech,dmard10
+> +            # I2C-BUS INTERFACE REAL TIME CLOCK MODULE
+> +          - epson,rx8010
+> +            # I2C-BUS INTERFACE REAL TIME CLOCK MODULE with Battery Back=
+ed RAM
+> +          - epson,rx8571
+> +            # I2C-BUS INTERFACE REAL TIME CLOCK MODULE
+> +          - epson,rx8581
+>              # MMA7660FC: 3-Axis Orientation/Motion Detection Sensor
+>            - fsl,mma7660
+>              # MMA8450Q: Xtrinsic Low-power, 3-axis Xtrinsic Accelerometer
+> @@ -100,6 +116,12 @@ properties:
+>            - infineon,slb9645tt
+>              # Infineon TLV493D-A1B6 I2C 3D Magnetic Sensor
+>            - infineon,tlv493d-a1b6
+> +            # Intersil ISL1208 Low Power RTC with Battery Backed SRAM
+> +          - isil,isl1208
+> +            # Intersil ISL1218 Low Power RTC with Battery Backed SRAM
+> +          - isil,isl1218
+> +            # Intersil ISL12022 Real-time Clock
+> +          - isil,isl12022
+>              # Intersil ISL29028 Ambient Light and Proximity Sensor
+>            - isil,isl29028
+>              # Intersil ISL29030 Ambient Light and Proximity Sensor
+> @@ -274,6 +296,12 @@ properties:
+>            - microchip,tc654
+>              # PWM Fan Speed Controller With Fan Fault Detection
+>            - microchip,tc655
+> +            # Real Time Clock Module with I2C-Bus
+> +          - microcrystal,rv3028
+> +            # Real Time Clock Module with I2C-Bus
+> +          - microcrystal,rv3029
+> +            # Real Time Clock
+> +          - microcrystal,rv8523
+>              # MiraMEMS DA226 2-axis 14-bit digital accelerometer
+>            - miramems,da226
+>              # MiraMEMS DA280 3-axis 14-bit digital accelerometer
+> @@ -300,18 +328,40 @@ properties:
+>            - nxp,pca9556
+>              # 8-bit I2C-bus and SMBus I/O port with reset
+>            - nxp,pca9557
+> +            # Real-time clock
+> +          - nxp,pcf2127
+> +            # Real-time clock
+> +          - nxp,pcf2129
+> +            # Real-time clock/calendar
+> +          - nxp,pcf8563
+>              # OKI ML86V7667 video decoder
+>            - oki,ml86v7667
+>              # OV5642: Color CMOS QSXGA (5-megapixel) Image Sensor with O=
+mniBSI and Embedded TrueFocus
+>            - ovti,ov5642
+> +            # Real-time Clock Module
+> +          - pericom,pt7c4338
+>              # 48-Lane, 12-Port PCI Express Gen 2 (5.0 GT/s) Switch
+>            - plx,pex8648
+>              # Pulsedlight LIDAR range-finding sensor
+>            - pulsedlight,lidar-lite-v2
+> +            # I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> +          - ricoh,r2025sd
+> +            # I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> +          - ricoh,r2221tl
+> +            # I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> +          - ricoh,rs5c372a
+> +            # I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> +          - ricoh,rs5c372b
+> +            # I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> +          - ricoh,rv5c386
+> +            # I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> +          - ricoh,rv5c387a
+>              # S524AD0XF1 (128K/256K-bit Serial EEPROM for Low Power)
+>            - samsung,24ad0xd1
+>              # SGX Sensortech VZ89X Sensors
+>            - sgx,vz89x
+> +            # 2-wire CMOS real-time clock
+> +          - sii,s35390a
+>              # Relative Humidity and Temperature Sensors
+>            - silabs,si7020
+>              # Skyworks SKY81452: Six-Channel White LED Driver with Touch=
+ Panel Bias Supply
+> @@ -336,10 +386,14 @@ properties:
+>            - ti,tmp103
+>              # Digital Temperature Sensor
+>            - ti,tmp275
+> +            # I2C bus SERIAL INTERFACE REAL-TIME CLOCK IC
+> +          - whwave,sd3078
+>              # Winbond/Nuvoton H/W Monitor
+>            - winbond,w83793
+>              # i2c trusted platform module (TPM)
+>            - winbond,wpct301
+> +            # Xircom X1205 I2C RTC
+> +          - xircom,x1205
+>  =
+
+>  required:
+>    - compatible
+> =
+
+> base-commit: 89d8c504132e4c247707ac92d4bf6bb6607461dd
+> -- =
+
+> git-series 0.9.1
+
+-- =
+
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
