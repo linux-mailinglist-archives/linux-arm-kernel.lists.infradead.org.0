@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C60C72B4B9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:15:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C776B2B4BA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:16:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rHlogGxUQg+n12iGvI8FqJ1ETL/+wBLighhIP9zWGi0=; b=BDSO1MFguI7YMF
-	TDSDU2uHHpvTAsBEgwaYTqWvrnYsRwA6sNYB6D0os43ti4Qr7EqYN5vsESyDp4TIGfDO+zgcgSe6Z
-	aNKkcQTwNhNnhpM4ADDFnmdxD04CdTdPJasFsus4NHeeRJ2nWtvUvdNfMZjtMXRhz2CD9vk/QbxUG
-	78Hh/uAmhUH9HCv7CVNOASN7J5NYwVX+5V6wfVfS/4SCnet2cg/fC0Yr6rhhSL/0hsPqlqli3p8Hk
-	b8Sh85cqCz3VBScnptxl/K8v2Ns3PUY5sFZhSaglYy25yUGgIxKp5wgq6reboCHCyh0ZFUMSoJc6R
-	OOE/o/Osa8e83pzXhQOw==;
+	List-Owner; bh=5PWCw9CcLsWzwk0sOHDJKd+zz9OYCAUGpRCQIsEmaVo=; b=fRiXFdZsp8+JcZ
+	BsZN20ZaGkG669la5WDQYvS52uKCCcCBfQu4z1z3lnMEkGdLTxvkdwKY9ZBMTGlMMUKD2wJoWnpGm
+	gy+FJLcawbhdcj8+hMai6l56ES8fKkRIopQdfBnAXGcWJjWcItKpFbFrBsL/LC1I7XfBdgIsUD7sK
+	LImyoMm4Q1x43qL1ZerWj2t3pYupQBA8YYCl4y6+ImhVrU1aPJtzd1Ifb8WEgnb6uHadVRlZboc0k
+	jF1kZcOz6VjXEPBeb3WuBruwQyeUDX0cq5+sFtuprMmmqhtJ5n4/tvx7RKGxtQhEJf0GMhywNxxSv
+	oODww+Mbv4YNRvFEufkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVEXh-0004u5-Se; Mon, 27 May 2019 12:15:53 +0000
+	id 1hVEXr-0005A1-Ix; Mon, 27 May 2019 12:16:03 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEWF-0002BT-Gb
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:14:25 +0000
+ id 1hVEWH-0002GY-Uk
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:14:31 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 549CB8123;
- Mon, 27 May 2019 12:14:42 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 53DB980F3;
+ Mon, 27 May 2019 12:14:44 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 07/12] bus: ti-sysc: Set ENAWAKEUP if available
-Date: Mon, 27 May 2019 05:13:43 -0700
-Message-Id: <20190527121348.45251-8-tony@atomide.com>
+Subject: [PATCH 08/12] bus: ti-sysc: Add support for disabling module without
+ legacy mode
+Date: Mon, 27 May 2019 05:13:44 -0700
+Message-Id: <20190527121348.45251-9-tony@atomide.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190527121348.45251-1-tony@atomide.com>
 References: <20190527121348.45251-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_051423_742832_772DAC99 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190527_051426_162037_60BF2120 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,29 +71,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some modules have ENAWAKEUP bit that we need to configure when not
-relying on platform data callbacks.
+We must not assert reset for modules with no child device drivers
+until in runtime_suspend. Otherwise register access will fail without
+legacy mode helping us.
+
+Let's add a flag for disable_on_idle and move the reset driver
+handling to runtime suspend and resume. We can then also use the
+disable_on_idle flag to reconfigure sysconfig register for PM
+modes requesting it.
+
+Let's also make the other flags use bitfield while at it instead of
+bool.
 
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/bus/ti-sysc.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/bus/ti-sysc.c | 21 +++++++++++++++++----
+ 1 file changed, 17 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
 --- a/drivers/bus/ti-sysc.c
 +++ b/drivers/bus/ti-sysc.c
-@@ -881,6 +881,11 @@ static int sysc_enable_module(struct device *dev)
- 			dev_err(dev, "%s: invalid sidlemode\n", __func__);
- 			return -EINVAL;
- 		}
+@@ -89,9 +89,10 @@ struct sysc {
+ 	struct ti_sysc_cookie cookie;
+ 	const char *name;
+ 	u32 revision;
+-	bool enabled;
+-	bool needs_resume;
+-	bool child_needs_resume;
++	unsigned int enabled:1;
++	unsigned int needs_resume:1;
++	unsigned int child_needs_resume:1;
++	unsigned int disable_on_idle:1;
+ 	struct delayed_work idle_work;
+ };
+ 
+@@ -1007,6 +1008,9 @@ static int __maybe_unused sysc_runtime_suspend_legacy(struct device *dev,
+ 		dev_err(dev, "%s: could not idle: %i\n",
+ 			__func__, error);
+ 
++	if (ddata->disable_on_idle)
++		reset_control_assert(ddata->rsts);
 +
-+		/* Set WAKEUP */
-+		if (regbits->enwkup_shift >= 0 &&
-+		    ddata->cfg.sysc_val & BIT(regbits->enwkup_shift))
-+			reg |= BIT(regbits->enwkup_shift);
+ 	return 0;
+ }
+ 
+@@ -1016,6 +1020,9 @@ static int __maybe_unused sysc_runtime_resume_legacy(struct device *dev,
+ 	struct ti_sysc_platform_data *pdata;
+ 	int error;
+ 
++	if (ddata->disable_on_idle)
++		reset_control_deassert(ddata->rsts);
++
+ 	pdata = dev_get_platdata(ddata->dev);
+ 	if (!pdata)
+ 		return 0;
+@@ -1063,6 +1070,9 @@ static int __maybe_unused sysc_runtime_suspend(struct device *dev)
+ err_allow_idle:
+ 	sysc_clkdm_allow_idle(ddata);
+ 
++	if (ddata->disable_on_idle)
++		reset_control_assert(ddata->rsts);
++
+ 	return error;
+ }
+ 
+@@ -1076,6 +1086,9 @@ static int __maybe_unused sysc_runtime_resume(struct device *dev)
+ 	if (ddata->enabled)
+ 		return 0;
+ 
++	if (ddata->disable_on_idle)
++		reset_control_deassert(ddata->rsts);
++
+ 	sysc_clkdm_deny_idle(ddata);
+ 
+ 	if (sysc_opt_clks_needed(ddata)) {
+@@ -2293,7 +2306,7 @@ static int sysc_probe(struct platform_device *pdev)
  	}
  
- 	reg &= ~(SYSC_IDLE_MASK << regbits->sidle_shift);
+ 	if (!of_get_available_child_count(ddata->dev->of_node))
+-		reset_control_assert(ddata->rsts);
++		ddata->disable_on_idle = true;
+ 
+ 	return 0;
+ 
 -- 
 2.21.0
 
