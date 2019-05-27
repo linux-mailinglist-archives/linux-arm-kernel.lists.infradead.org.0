@@ -2,94 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6A0E2BB4F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 22:16:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3D2A2BB60
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 22:20:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5l39VB5wA38gVjLO1WUj5JzfbeYgKj8CxZcliMFRXQA=; b=Il4MBK0pOfGKpZ
-	Z8heCKUV9e9BWAd4EFJKs54rylVAnBJ4Dhdo0rPNWbf/yGsWM5r5drQGCWVmVqk59n3bETtnVt0jh
-	QO/vNVvjzY07WlR8yVQaSFnWOiqssCpknW8Ua522Wn6LpyZPwvHX/JjFiFtqo+hDDdBpy+/7Rrrj7
-	wNG4rqcuVHUXXAuI4P+KoGw3kHBXFDXDRS6nB/52skBVkf1T1yTju+D/OXbacnJPP8nRBZ3RoD1d+
-	SN8xZsCTJz0fF9pRCsXZlhVQkxdgTrit7iDfYiuVUkPMVPvW7UyDiEO7CnEy5UuNhB04wO2yR1Sa4
-	6voF7+w02hRSolJKILOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1d5rADXa+elFYl+CyR2zecg8alH9rzvfY9Dr3dwwrwA=; b=fVZ7H5XIls9TCSIX/C6fUTSuT
+	BuczOeM2GWDoKv1MBYWhk/Bf0LTM3x5f1dWOQ/EuksZ48+fNHYzQvc8GF8/CH0NOscqmyXSwSuQRv
+	MrZrIOcp9pd4a56EBuoQIr8Tq+rwcD35eYkJKSnX1uHC/yA7GOw3o9JndDyi+HBtSIjL4o2qbIDGJ
+	Fzwv521j+hL32QHBCuy+/u8ARn32Qj+c0+AmeGokAkgtGocl5UwQeaXz14FhTDXcqgVCxhquTMAI+
+	/1XMl87pkbsnU8IP18drLx2NEOfTTdF9N8RRHc4JOyCOsQmy2yPPrIJJI0rRsEyoZakSewcAWRbNR
+	/ocfdBi0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVM2X-0007Y5-LP; Mon, 27 May 2019 20:16:13 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVM1a-0006X3-Vr
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 20:15:18 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d9so17893075wrx.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 13:15:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=kX1q8iX0X4303ErWm6lM+rRst5YhXcgIu4cEhOJHl1c=;
- b=FxY8LQQd0PZVApVNIF+eHR5wYvbPUxCZAA5A1YZjzxZ7eM+eWerTJam3mrqVRMSYEe
- kjQ95H/YeXQ5HdiiMDBshV81jYgwBpgEeL91TdAz4p581fj0KHLbyS8rsxUOT7otLd30
- e6smxAcZcGyyn7sz48eglWl86Bi/FVXnKEVshr8jJmsrq9IjhRrH72GEjl3QVGs9CWJx
- ZmjZ0AHJtrC4BLATXmkTn9OSa1I5Tmu1asg90LTaKMM9XR4Jf1ICtMFyaxDhaNYj4asi
- XWq3Z3bmBcUaryPHRrI7hrdP+mlKPzlZ1YG+/95rZnfrgMQzQjgik4vvFEDar/OPe0Z2
- HO0g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=kX1q8iX0X4303ErWm6lM+rRst5YhXcgIu4cEhOJHl1c=;
- b=WfIV1XMG/+ciY0C4PLuQ50sULh8SzHMdBZAYUcwgzB9hPGhyiqY9ZittsPym5kxsBX
- ADFdbyTw0mzEONcqbpnSfw6cYYhm8ym76BEsGRGrBs2maqGX1fYWah/Rrh8xunB/+Xw2
- 90hdcVWqc9OJnSdEwDzFUsRX6OsNZSaYWdIqa5q6zvYPgSihWkSq5YBGFND/hmh9xDqb
- MLlXy/W7oGKtuUVbPLMm7l29D7Dh9ZZnyUsQnn+oVocei6j1uSatObE/K2LAv65jqxXN
- p07NWgY/JyPhzkzO1WLt8az7xGFAq3/k8TkuN7FY4A1fcOsa1ocMGC+FdTfWP6BoZ4R1
- 9ZMw==
-X-Gm-Message-State: APjAAAV85/RX4s9r/6NleMxA3w7/DHyvmxbuZIoosE8yyNnGTMsk5QcB
- aZhHhMqM87Ua4Vh3cFbAkmA=
-X-Google-Smtp-Source: APXvYqw43Ws45Qhr7xAS6WK8q2QHHFf0KA8NC8Pf9gwKYfj+j7tHTjZkvjaposYHAiD6VDUxbsNV/w==
-X-Received: by 2002:adf:f2c2:: with SMTP id d2mr1885143wrp.153.1558988113583; 
- Mon, 27 May 2019 13:15:13 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e0a:1f1:d0f0::4e2b:d7ca])
- by smtp.gmail.com with ESMTPSA id i27sm347146wmb.16.2019.05.27.13.15.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 13:15:12 -0700 (PDT)
-From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Dan Williams <dan.j.williams@intel.com>
-Subject: [PATCH v3 7/7] arm64: defconfig: enable Allwinner DMA drivers
-Date: Mon, 27 May 2019 22:14:59 +0200
-Message-Id: <20190527201459.20130-8-peron.clem@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190527201459.20130-1-peron.clem@gmail.com>
-References: <20190527201459.20130-1-peron.clem@gmail.com>
+	id 1hVM6Y-0002ER-Uu; Mon, 27 May 2019 20:20:22 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVM6R-0002E0-M6; Mon, 27 May 2019 20:20:17 +0000
+Received: from localhost (p5486CF59.dip0.t-ipconnect.de [84.134.207.89])
+ by pokefinder.org (Postfix) with ESMTPSA id AAA472C04C2;
+ Mon, 27 May 2019 22:20:14 +0200 (CEST)
+Date: Mon, 27 May 2019 22:20:14 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Annaliese McDermond <nh6z@nh6z.net>
+Subject: Re: [PATCH v2] i2c: bcm2835: Model Divider in CCF
+Message-ID: <20190527202014.GA20304@kunai>
+References: <20190508071227.18609-1-nh6z@nh6z.net>
+ <4174B26B-4E3A-4CCA-A5ED-BE62A3B5E66A@nh6z.net>
+ <20190516075848.GA1033@kunai>
+ <2E6EDCD1-E0B1-4859-BD75-EF411D3D4C6B@nh6z.net>
+ <20190527191534.GD8808@kunai>
+ <E711B8C3-85B8-435C-97FD-E62BCB88B679@nh6z.net>
 MIME-Version: 1.0
+In-Reply-To: <E711B8C3-85B8-435C-97FD-E62BCB88B679@nh6z.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_131515_342370_CAC81138 
-X-CRM114-Status: GOOD (  12.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190527_132015_875939_C73DC6C7 
+X-CRM114-Status: GOOD (  12.96  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,25 +62,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, devicetree@vger.kernel.org,
- =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, swarren@wwwdotorg.org,
+ NWDR Team <team@nwdigitalradio.com>, Eric Anholt <eric@anholt.net>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============5618548645493503419=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWxsd2lubmVyIHN1bjZpIERNQSBkcml2ZXJzIGlzIHVzZWQgb24gQTY0IGFuZCBINiBib2FyZHMu
-CgpFbmFibGUgaXQgYXMgYSBtb2R1bGUuCgpTaWduZWQtb2ZmLWJ5OiBDbMOpbWVudCBQw6lyb24g
-PHBlcm9uLmNsZW1AZ21haWwuY29tPgotLS0KIGFyY2gvYXJtNjQvY29uZmlncy9kZWZjb25maWcg
-fCAxICsKIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQoKZGlmZiAtLWdpdCBhL2FyY2gv
-YXJtNjQvY29uZmlncy9kZWZjb25maWcgYi9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCmlu
-ZGV4IDRkNTgzNTE0MjU4Yy4uYjUzNWYwZjQxMmNjIDEwMDY0NAotLS0gYS9hcmNoL2FybTY0L2Nv
-bmZpZ3MvZGVmY29uZmlnCisrKyBiL2FyY2gvYXJtNjQvY29uZmlncy9kZWZjb25maWcKQEAgLTYx
-NCw2ICs2MTQsNyBAQCBDT05GSUdfUlRDX0RSVl9JTVhfU0M9bQogQ09ORklHX1JUQ19EUlZfWEdF
-TkU9eQogQ09ORklHX0RNQURFVklDRVM9eQogQ09ORklHX0RNQV9CQ00yODM1PW0KK0NPTkZJR19E
-TUFfU1VONkk9bQogQ09ORklHX0szX0RNQT15CiBDT05GSUdfTVZfWE9SPXkKIENPTkZJR19NVl9Y
-T1JfVjI9eQotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+--===============5618548645493503419==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Kj7319i9nmIyA2yE"
+Content-Disposition: inline
+
+
+--Kj7319i9nmIyA2yE
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, May 27, 2019 at 01:00:00PM -0700, Annaliese McDermond wrote:
+>=20
+> > On May 27, 2019, at 12:15 PM, Wolfram Sang <wsa@the-dreams.de> wrote:
+> >=20
+> > Regardless which solution is favoured, I am going to apply this patch in
+> > a minute:
+> >=20
+> > http://patchwork.ozlabs.org/patch/1097688/
+> >=20
+> > It enables this driver for ARCH_BRCMSTB. So, the solution should work
+> > for this as well. (I don't know any of these platforms well)
+>=20
+> I did some looking the other day, and I had forgotten that the RPi has 3
+> of the i2c-bcm2835 devices each with their own divider that sits in their
+> register space.  This makes me think the correct solution would be for
+> the divider to be controlled in the driver as was in my original patch.
+> Otherwise we=E2=80=99d have to make three different dividers in the bcm28=
+35-clk
+> driver, and the i2c driver would no longer work for other platforms.
+
+I am getting more and more convinced of the original patch even without
+CCF acks. Others?
+
+
+--Kj7319i9nmIyA2yE
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAlzsRnoACgkQFA3kzBSg
+KbZ3Ig//bhLKH92dCBPaAdPCOobKJXl0WATDzHS3BEtr6DP1TTNBsUD5wBwUt7Rc
+gsfQF+nupWjX/ZzIMLFYhSA3UPz3G+F0WfeGXlHPKU3AWaCworIXr19ueovykBsI
+gF4JxmeWLIhjnogATB0ATUTPMiBiVtQYsfNjyzkTCwBNQaZKy8EKeSpV0Lo1pY4R
+3We7Ly8uFMyZpI6Xa9Q39rhuEpP3XMEQ3ex346eVdkSFVsn/GtlW79yJcYPuE2iH
+gk0HJarmM5UVuCQJwq2XKxhk7TTMc1cYLpWhRMkMqbR/7++WKjEX1ugSt/bSzyEW
+4rhv5tTpErXAUngtr/v21eXVvQ3to0mffd181t2qmMJjdCivLrj46usB5o64LgRW
+D/jvT6eDeTPpor7eGGfd6KJgzgLHDcEN/PB/61U0f82k31zT93flvZueZa12JO4R
+9zTU4YmG4qwO/coflGIwkgytmFVoKakQAtCkuylH9YqhKay51scrlbvZtVTLn87f
+Wy1H7cgotBXKQtA4NtOj20UKp0g0FTdT0fZBQlaCJeSsChEvjBR7y4xXvxl4sEQO
+GCBwu4sGvqfueTi0bl1W4kuTJLsHQiw7uB2a4wtj6kFZ6blsolODrUyO6hkIM4XR
+38nY4771iZVDSQHApx7VwIcmTEIsdVgrVs62c521ybNcbFV7ZH0=
+=eW6M
+-----END PGP SIGNATURE-----
+
+--Kj7319i9nmIyA2yE--
+
+
+--===============5618548645493503419==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5618548645493503419==--
+
