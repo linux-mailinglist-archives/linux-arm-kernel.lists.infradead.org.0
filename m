@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E001F2BA18
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 20:26:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 305902BA1F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 20:28:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HmyJDOz9XbnhUp/g5QG/5gFMGap/c72FsotCYQmAM/0=; b=vEEgxyft0edzpu
-	hov7zl0CKXaRu9Gfe8AdaNHnZeJH2oNXTaTBpQHlrRjBWMuSgUqzess254dL2AcTJylnfV7dFpQ4b
-	acuDyFunmjWINwSJst7BcmwO2ffZkxaE8HfLxP80vTn329gJH4Nc5Vf59cNf3vnRjwuy4ODCE13Ie
-	897F18zA9tFArWMp9vPU1VcZkT/YfTVH3rdpy3kKmROOXDbBmH8brjQJd7F/WPBlcKWnRIp2ACuVs
-	Dbz+ubLZug0rWmYb6HqwoekhPxCvu2ZmXPV89nBG8WVRsNdrcxfalnznMHkPq9rTzHlcTnkTWxTd0
-	45mNVlkmijmjNiQhMhaQ==;
+	List-Owner; bh=xyW+ltD38wefN+s58MuLmSsxZKLCPkV5OlPEX4+j9Q8=; b=Hs86TkuG+Kx2bj
+	iNr+me/HN+dnG0tgExo858e6rN/QKW0btUHoMRfkdlcc/OOExMlX5L4E7xtaW/iMVACPMGRjJG799
+	J1358drW9LQugQbjiSw2k9np62OjuDPqZsPu3rjma6zhGPlhAvOLBzVfZhGeldZXnMzpb3pA1WzAt
+	HnrS4asbIADjMbVWZTzT9IztFfYi9i9E6JNRbiHYBfoDoZzOl8dPJb9s6quvzcYtXsbKsOR/wM1yn
+	+auF/k+rYgOXpySEIK60+qmpKPG19AuPqvXofxI7G5Rm4H6uQtmzn3zgKRVysqJBThDTMR6rOEL4L
+	SCWQa2ZZgneQOpwdLUcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVKK5-0007DV-TT; Mon, 27 May 2019 18:26:13 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hVKLx-0007WD-Rs; Mon, 27 May 2019 18:28:09 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVKJw-0007CG-Ac; Mon, 27 May 2019 18:26:05 +0000
-Received: by mail-ot1-x342.google.com with SMTP id r10so15545534otd.4;
- Mon, 27 May 2019 11:26:04 -0700 (PDT)
+ id 1hVKLp-0007VH-Iq; Mon, 27 May 2019 18:28:02 +0000
+Received: by mail-oi1-x243.google.com with SMTP id z65so12448994oia.11;
+ Mon, 27 May 2019 11:28:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kEK8YEn82uZl3KtekPFpQObwQps/VzOazNNdEv6HIBA=;
- b=QDIRZ07yzcoElXx1D5ucFSGI3eU44JhkikzDlIE9bnlzRVnEM9LhsO50yqcl21AGha
- 9kmUcGS0oL53IGMo08aR3nyTp5v7yS48O08Am9Q6zNRoxi2hdAfm9MpMHGed/eSNMhpa
- iLBCl+FLUYgSCC7gmBAQ7YDoxHRmex1pFUbX06J24JSTjn6yaNFjEmknNVP7k4luXkV6
- 6aI1+2hG4rnvkESpzhGGrJNWbUU6hhvQyecWN39Sl/nT1deo9xjaXOiN33n9HhZXl4Og
- alAzIqNGSjcsErpW038oaoWDU2T/uGXpyh0NYmggXAAGNHqpvEuNXhuOiHbY/Sp6MAfM
- mFRQ==
+ :cc; bh=wseEiwf2iDxEx0rB6+bstHWLvTH8+Jm8S/2DOnZEoi0=;
+ b=U4DCnRER3Bo6N+YBQxNx5r8BgFCch9KSnniaEr49R7m55UNQtYzfvpxNgR0+hZ07dk
+ ruQ0Sn/8fhPl2/tfFl6c2jn9N2fIdH+XhAAXLvCA4kqSAwyHFw7eHic6OZxxPXL+AE1k
+ H3TbEeSrYrXRSTzCaxdNCYQ0h4NhvWgLwWh6D4sufX/FXiEmldm7jgDK4QKI/LSRyWYS
+ Kz7OEw5lcbqIzeigKpu8jNJ9dCaIfJW8siWZZ8fDOa48812IBYJ/86Moowk9etD/dmWS
+ S5P5JVOBPr6OXKKwv1mvSuuYYiWNywvQSa66j+CN+AuD7RqiRbn8xIhIzUjRjhHPuM40
+ f0RQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kEK8YEn82uZl3KtekPFpQObwQps/VzOazNNdEv6HIBA=;
- b=Vsj6Pj7Ec5jbiwzDEr87aLZl58pP6jG6cPN0wJ81+tzXdysu3BDaFJ5SMjiKY0UTpr
- oi2/HSI18C6c2WpirX5s7anvl3pytYT7wLC3QLLZwKUqtLUMFT/+ZePgFU9jna714C0p
- aZcPvJgMSXaG3PHtLFy3zcxU4DRyTZnjy9+/mKnw4NFMLRqQvMmR16ZZpG5AYLI3vpoh
- iZvRtP0I5UsZnhh6IQFGBCKQ07L+Gn58HwueedYZr11AbGYYaQrZ0rDiLWk82et+JJwl
- 2Gm0CK8I+AZJMxQe0+Mnk2xpHhXTdeTcgToMccgVPSqGoTX0YWWbjwtk1CXwECmQa0eo
- K5zw==
-X-Gm-Message-State: APjAAAULINUTciN1aNq63C7vPTrbimuJRP7Myte+B/VKWM1XgRidwgpQ
- KUK5xXHjAmxhn6piq0A056dIuLk3uNSr8sdz7H8=
-X-Google-Smtp-Source: APXvYqxO8mD3SqAenWNr+oA/vGJ22mekTdcIzROJVXOaweez4x2pUntpBksdEFug2PfumowB8H85gwXbyoy3O0xWdDE=
-X-Received: by 2002:a9d:69c8:: with SMTP id v8mr18611131oto.6.1558981563581;
- Mon, 27 May 2019 11:26:03 -0700 (PDT)
+ bh=wseEiwf2iDxEx0rB6+bstHWLvTH8+Jm8S/2DOnZEoi0=;
+ b=i45Z05CfywNbMj/VOlqncVNLN5Cb6ydYsynAevij1bMs02g1fGS7Hjc9jH2rxukily
+ Lfu8/kHMaOZf6NoLJAliKuRG5EdzlUQ//OwY1TG2MyZE0Qh2ZbMZzolHhm3jS3Jz+GLo
+ TPWG/QU13S8WizOwJsnvot3fh0gqKk0xtwRxX8AbGRU6cOzIHLA8Sk3OOtcnqL2WZHLa
+ Jyb2DhHa14vT28wJvi9Su5DboAbCm3iWSbVQQq+OwfBhAxHkTEft4mIsDmdKKvRjLXkB
+ qY/l7XqaZ38fzOhhhGkHYv9HK8VmS5RTUqwTxTr9wmgvQNrUu9N3yDfGWU38wApbDnHf
+ h2Sg==
+X-Gm-Message-State: APjAAAXWXy0637Bi0oHk7ISJaWr8zzACzWkHjIRgg0hPPDL/vXRrkbo9
+ YfXqZZrxBXGAxznfXg06/Zh4yBXDpPAr/F13GPU=
+X-Google-Smtp-Source: APXvYqwbfigH3TZlE9H2ckoSvg4wg8rLamp2jsQJnsfdYO0iUsmSoQWOoyFjfHYjDukhRzfcHFO1gwm7ahn3PyklXkU=
+X-Received: by 2002:aca:f144:: with SMTP id p65mr194565oih.47.1558981680480;
+ Mon, 27 May 2019 11:28:00 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190527132200.17377-1-narmstrong@baylibre.com>
- <20190527132200.17377-11-narmstrong@baylibre.com>
-In-Reply-To: <20190527132200.17377-11-narmstrong@baylibre.com>
+ <20190527132200.17377-10-narmstrong@baylibre.com>
+In-Reply-To: <20190527132200.17377-10-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 27 May 2019 20:25:52 +0200
-Message-ID: <CAFBinCDDGPqnFQjtJx8Ny7nuoKScq4qYwkNhznU+3TMMDOFWfw@mail.gmail.com>
-Subject: Re: [PATCH 10/10] arm64: dts: meson-gxbb-vega-s95: add ethernet PHY
- interrupt
+Date: Mon, 27 May 2019 20:27:49 +0200
+Message-ID: <CAFBinCBZr7nSnNTGO5upowuT48-pcR57VU7-zaxZ3Ocb-tZ1sA@mail.gmail.com>
+Subject: Re: [PATCH 09/10] arm64: dts: meson-gxbb-vega-s95: fix WiFi/BT module
+ support
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_112604_369558_CFB68D92 
-X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-CacheID: sfid-20190527_112801_620646_158BBD9D 
+X-CRM114-Status: UNSURE (   7.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,13 +104,14 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon, May 27, 2019 at 3:24 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> Add the external ethernet PHY interrupt on the Vega S95 board.
+> Fix the SDIO WiFi support and add proper Bluetooth support on the
+> Vega S95 board.
 >
 > Suggested-by: Christian Hewitt <christianshewitt@gmail.com>
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-I don't have this board (anymore, mine died) nor the schematics but it
-matches other GXBB boards and looks correct so:
-Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+I'm the cause of everything that needed fixing here. thank you for
+taking care of this, the result looks much better now:
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
