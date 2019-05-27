@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B1AA2B564
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:34:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24BF92B565
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:34:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8shVi/DySJA2atRlirN/Qv0ZgxOrdXDpPjYieKOA7dE=; b=j3kZ4dtJBCVBA1
-	Y12AYzDynYk9ogYr/zeXFST13fDkd7AqmnOaWfO9GSw6olhAOUcgDexM3KFnhmB2lCIqOsz/umDwB
-	pu+xqj2i+fQnFC9Y8eBUhkNfYQwU91fUtmVSXa8l0qcareg61x0KlrKRngmg9kULb74YcFs71WXbu
-	BeI5rMvDG1sMsAcjTjEtjwvaGfe3et/nvdhNjcqXrKPaYY/S3ly0z3LPYO11XvrzLx5Ml3448S4Vg
-	V1nyML4N38pWuNVS3cuDUZKSHSlBuNlAc9AAElfv+KvGlwtE7TlQklQ8whNwUJrL/AFzO5MOIN8ld
-	G+xSc3V3P8gQoiW/w7Ow==;
+	List-Owner; bh=wTuj3Pdsj8EElq0L2k4eDZX6s5ZrojIyKZdfR1WMwP0=; b=SeNsavh1tJEhGG
+	h3atIJRANOnEhAtmRROaRIdnMc1WOceWv960/ZCYcrZeK/IW6MEy+kHIUYsGy6q5c1h03grh79OVt
+	9WBHcK+TxKRwsdBPik47KLRYZBPRjbziIrso8HGVV1VZ3Omj02xmddvNMHfy7SHWuJBdjJ30SqSsS
+	aO17TnTSVsLCTsEhNu89E8RrQVuHt6rOpGGxa65EJ/CY5xCqcoL1lFfOb9kdpyrVrXMIvs2udksOC
+	iPBw9z16rq/RSLsZ65WHN8PQMZpFNvRZlxZWjXrtmCIUjvo8qwDBa5MdTvONEsMRxfqNUtLMv08MF
+	OdkZHnT1hQipJico8aBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVEpH-0004HR-RX; Mon, 27 May 2019 12:34:03 +0000
+	id 1hVEpW-0004Wz-3G; Mon, 27 May 2019 12:34:18 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEp8-0004Fd-Hl
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:33:55 +0000
-Received: by mail-wr1-x441.google.com with SMTP id m3so16790442wrv.2
+ id 1hVEp9-0004G0-EF
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:33:57 +0000
+Received: by mail-wr1-x441.google.com with SMTP id b18so16749593wrq.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 05:33:54 -0700 (PDT)
+ Mon, 27 May 2019 05:33:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Lu584p0HvbXxFHDjm3E5Bv6klwwi/JMTJfgsCrnryS4=;
- b=NMlGmDIui5A0tgyFH/7k/K9bwSvhSaMoTcKlOFVWMZYtSnUfiE6aY6euPvWFHlo7E5
- bNW+mNjDAMKNNHQe6TMH+qiFqDFtYXM36A0aSur/kEca6WDIYg8rwQCwFBXEMqawm4ww
- T4mAlF+plB9qlxlc9HTASzDoc3RTgWoKpbJPmUjYRTsnkKJE4ws79xzs55juQglL+Wb3
- 5OqfJJDzeT4ly4v5q7nI3VokTBGkHm3W8i2vgm1vvuB84uYcykyeCs9qZ3E4F1841ZQb
- GZFVJWEhgjQh/KH7Uts5wN0oneGXh8TINJH3zRA0Soq9DqmOdruWD0IRuZqfg2ZaazuG
- sh3w==
+ bh=+cVOiVFCJq/gjwV+btY3+Tpn5Lp/RZnsuWYYB3guIMU=;
+ b=cD/KMYcYKdCaRofRRaoCOCqlDeF88o6vA7EX1SknRosohJiylXLjWoPhAYXjxyvAHu
+ w7j+zVTZn5os5e8lM+/A9Jh1N+WWjfJYLtEZe5s2IYp4Ujcxl+W318MjSW87viEOi/AJ
+ dWFZFQE4kOeaonFjW0iOT9dXyhGbxHRb4Ph4VtYNoNJ+m6ez4JTDTEttmJnKflKaLgrT
+ dChTnYUUvsSnkJk2A4tldQH/ZW2dfcixuGe1lmttykhsk9x9H8yVoZmhw7IrqAGZefpD
+ gS62iTL0hTR6Vi2hUekCwvODxPthOCvl8VYFn9sFT6AU2cSB+9c2gwF0dsCc1CCbly49
+ um7w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Lu584p0HvbXxFHDjm3E5Bv6klwwi/JMTJfgsCrnryS4=;
- b=VeWgubJqWvlqsPOFbg2qcMoaun2txXsDzKQrYQLO/ZwLzuxNNQ6B+u5FJ4fviYxEmp
- TRXYV7X5qfHPkQz7t6oWgLHO82NQPMHraLUFLpzOH+tu95QHiRyuWsmf4h4Lb59Zgy0E
- 1f6SWsKW2/0JCwAq0YtN/W0Iwur7HXxyVR0KG0UOexSUtZOLOEEsGGRGb6P3DHr9nNKe
- 7tk+no6oDdrif0UzubWGmOEUYkr37GPclxWePy9s/yJcRxFoxezZOSAKPTQc6TuMN4ep
- tPIcG04B267TmXCUMbCwhqnQDcIlbl3WsMYDA9OwvqQ4LGV3Ltj0FNPt12jGrEnQxxhZ
- N4mg==
-X-Gm-Message-State: APjAAAVK6RGhxAaUT4pKdn70c7p49eqiatpUYl0ufm5NsFll8OrhvPs/
- y+N+CuNms6BQ/Z8iFZYW1BmMBQsK2E9Xow==
-X-Google-Smtp-Source: APXvYqxHJkwqnZ7CnTcUcxNEIT+3UK8ggiXkqGWeGENh3miaj9PGFisyYZjc3RJG4UEKLA7IcefNaQ==
-X-Received: by 2002:a05:6000:1285:: with SMTP id
- f5mr4275036wrx.112.1558960432650; 
- Mon, 27 May 2019 05:33:52 -0700 (PDT)
+ bh=+cVOiVFCJq/gjwV+btY3+Tpn5Lp/RZnsuWYYB3guIMU=;
+ b=b/GkCrs0jxyg2kRv9kM2oj2lgND1njyF7xAX+l9vlCblEFQmy48a0ioUffvkLklMzu
+ GqfrOAvMBTqFLEtrBp/J/CS5VwKl39pILZTRZ6mZNgYzp/5VEvbKNmnuEXCwizmEw9KS
+ 9wytnOXejfjfOpojiJC9vfGokAruyDRo/1tpu/aykD2N8wvrYA+Ih6BSGv/SO4m51Yeq
+ cxy8T6RlsPQsO3PX2twN0dJeQyuV8JhPH/hnjSyqL0AO4aHKDOKNCer39pe9k/pAY8Qo
+ PSHgR8taEwJ0bH6N/SUIzTXqYwIFnhgd8bsBBfT83IK5AhylUxmlw9sH/CJjqflNPCjT
+ AE9g==
+X-Gm-Message-State: APjAAAUC+GddqyYNwE8mI5aooyy8adWhH8G87+KsKdeoQO3lwQxxTKGb
+ N1nI5KBflsAZmYBQv4iWgQpbXw==
+X-Google-Smtp-Source: APXvYqwnPwjtuEjQwUJWuvt7XAdXU/uj6r0mgRRLit94T91pyyxyMOmC5kVUPbZEQb8acNTD4G1m+w==
+X-Received: by 2002:adf:e344:: with SMTP id n4mr21535770wrj.192.1558960434048; 
+ Mon, 27 May 2019 05:33:54 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c24sm894144wmb.21.2019.05.27.05.33.51
+ by smtp.gmail.com with ESMTPSA id y132sm15173687wmd.35.2019.05.27.05.33.53
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 05:33:52 -0700 (PDT)
-Subject: Re: [PATCH 13/14] pwm: meson: add support PWM_POLARITY_INVERSED when
- disabling
+ Mon, 27 May 2019 05:33:53 -0700 (PDT)
+Subject: Re: [PATCH 14/14] pwm: meson: add documentation to the driver
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  linux-amlogic@lists.infradead.org, linux-pwm@vger.kernel.org,
  thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de
 References: <20190525181133.4875-1-martin.blumenstingl@googlemail.com>
- <20190525181133.4875-14-martin.blumenstingl@googlemail.com>
+ <20190525181133.4875-15-martin.blumenstingl@googlemail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -120,16 +118,16 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <4de7d436-32b7-e4ed-39b2-e85f75a17c16@baylibre.com>
-Date: Mon, 27 May 2019 14:33:42 +0200
+Message-ID: <afc7da5b-dda2-84e0-a6c8-0ab3c41f7e0e@baylibre.com>
+Date: Mon, 27 May 2019 14:33:52 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190525181133.4875-14-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20190525181133.4875-15-martin.blumenstingl@googlemail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_053354_584873_1AD7AFC1 
-X-CRM114-Status: GOOD (  28.02  )
+X-CRM114-CacheID: sfid-20190527_053355_609606_A3C905AC 
+X-CRM114-Status: GOOD (  22.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -155,83 +153,46 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/05/2019 20:11, Martin Blumenstingl wrote:
-> meson_pwm_apply() has to consider the PWM polarity when disabling the
-> output.
-> With enabled=false and polarity=PWM_POLARITY_NORMAL the output needs to
-> be LOW. The driver already supports this.
-> With enabled=false and polarity=PWM_POLARITY_INVERSED the output needs
-> to be HIGH. Implement this in the driver by internally enabling the
-> output with the same settings that we already use for "period == duty".
-> 
-> This fixes a PWM API violation which expects that the driver honors the
-> polarity also for enabled=false. Due to the IP block not supporting this
-> natively we only get "an as close as possible" to 100% HIGH signal (in
-> my test setup with input clock of 24MHz and measuring the output with a
-> logic analyzer at 24MHz sampling rate I got a duty cycle of 99.998475%
-> on a Khadas VIM).
-> 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->  drivers/pwm/pwm-meson.c | 23 ++++++++++++++++++++++-
->  1 file changed, 22 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
-> index 900d362ec3c9..bb48ba85f756 100644
-> --- a/drivers/pwm/pwm-meson.c
-> +++ b/drivers/pwm/pwm-meson.c
-> @@ -245,6 +245,7 @@ static void meson_pwm_disable(struct meson_pwm *meson, struct pwm_device *pwm)
->  static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
->  			   struct pwm_state *state)
->  {
-> +	struct meson_pwm_channel *channel = pwm_get_chip_data(pwm);
->  	struct meson_pwm *meson = to_meson_pwm(chip);
->  	int err = 0;
->  
-> @@ -252,7 +253,27 @@ static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
->  		return -EINVAL;
->  
->  	if (!state->enabled) {
-> -		meson_pwm_disable(meson, pwm);
-> +		if (state->polarity == PWM_POLARITY_INVERSED) {
-> +			/*
-> +			 * This IP block revision doesn't have an "always high"
-> +			 * setting which we can use for "inverted disabled".
-> +			 * Instead we achieve this using the same settings
-> +			 * that we use a pre_div of 0 (to get the shortest
-> +			 * possible duration for one "count") and
-> +			 * "period == duty_cycle". This results in a signal
-> +			 * which is LOW for one "count", while being HIGH for
-> +			 * the rest of the (so the signal is HIGH for slightly
-> +			 * less than 100% of the period, but this is the best
-> +			 * we can achieve).
-> +			 */
-> +			channel->pre_div = 0;
-> +			channel->hi = ~0;
-> +			channel->lo = 0;
-> +
-> +			meson_pwm_enable(meson, pwm);
-> +		} else {
-> +			meson_pwm_disable(meson, pwm);
-> +		}
->  	} else {
->  		err = meson_pwm_calc(meson, pwm, state);
->  		if (err < 0)
-> 
-
-While not perfect, it almost fills the gap.
-Another way would be to use a specific pinctrl state setting the pin
-in GPIO output in high level, but this implementation could stay
-if the pinctrl state isn't available.
-
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjUvMDUvMjAxOSAyMDoxMSwgTWFydGluIEJsdW1lbnN0aW5nbCB3cm90ZToKPiBBZGQgYSBs
+aW5rIHRvIHRoZSBkYXRhc2hlZXQgYW5kIGEgc2hvcnQgc3VtbWFyeSBob3cgdGhlIGhhcmR3YXJl
+IHdvcmtzLgo+IFRoZSBnb2FsIGlzIHRvIG1ha2UgaXQgZWFzaWVyIGZvciBvdGhlciBkZXZlbG9w
+ZXJzIHRvIHVuZGVyc3RhbmQgd2h5IHRoZQo+IHB3bS1tZXNvbiBkcml2ZXIgaXMgaW1wbGVtZW50
+ZWQgdGhlIHdheSBpdCBpcy4KPiAKPiBTdWdnZXN0ZWQtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1
+LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU+Cj4gQ28tYXV0aG9yZWQtYnk6IE5laWwgQXJt
+c3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBNYXJ0aW4g
+Qmx1bWVuc3RpbmdsIDxtYXJ0aW4uYmx1bWVuc3RpbmdsQGdvb2dsZW1haWwuY29tPgo+IC0tLQo+
+ICBkcml2ZXJzL3B3bS9wd20tbWVzb24uYyB8IDE4ICsrKysrKysrKysrKysrKysrKwo+ICAxIGZp
+bGUgY2hhbmdlZCwgMTggaW5zZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3B3
+bS9wd20tbWVzb24uYyBiL2RyaXZlcnMvcHdtL3B3bS1tZXNvbi5jCj4gaW5kZXggYmI0OGJhODVm
+NzU2Li42YTk3OGNhYmE0ODMgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9wd20vcHdtLW1lc29uLmMK
+PiArKysgYi9kcml2ZXJzL3B3bS9wd20tbWVzb24uYwo+IEBAIC0xLDUgKzEsMjMgQEAKPiAgLy8g
+U1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAgT1IgQlNELTMtQ2xhdXNlCj4gIC8qCj4g
+KyAqIFBXTSBjb250cm9sbGVyIGRyaXZlciBmb3IgQW1sb2dpYyBNZXNvbiBTb0NzLgo+ICsgKgo+
+ICsgKiBUaGlzIFBXTSBpcyBvbmx5IGEgc2V0IG9mIEdhdGVzLCBEaXZpZGVycyBhbmQgQ291bnRl
+cnM6Cj4gKyAqIFBXTSBvdXRwdXQgaXMgYWNoaWV2ZWQgYnkgY2FsY3VsYXRpbmcgYSBjbG9jayB0
+aGF0IHBlcm1pdHMgY2FsY3VsYXRpbmcKPiArICogdHdvIHBlcmlvZHMgKGxvdyBhbmQgaGlnaCku
+IFRoZSBjb3VudGVyIHRoZW4gaGFzIHRvIGJlIHNldCB0byBzd2l0Y2ggYWZ0ZXIKPiArICogTiBj
+eWNsZXMgZm9yIHRoZSBmaXJzdCBoYWxmIHBlcmlvZC4KPiArICogVGhlIGhhcmR3YXJlIGhhcyBu
+byAicG9sYXJpdHkiIHNldHRpbmcuIFRoaXMgZHJpdmVyIHJldmVyc2VzIHRoZSBwZXJpb2QKPiAr
+ICogY3ljbGVzICh0aGUgbG93IGxlbmd0aCBpcyBpbnZlcnRlZCB3aXRoIHRoZSBoaWdoIGxlbmd0
+aCkgZm9yCj4gKyAqIFBXTV9QT0xBUklUWV9JTlZFUlNFRC4gVGhpcyBtZWFucyB0aGF0IC5nZXRf
+c3RhdGUgY2Fubm90IHJlYWQgdGhlIHBvbGFyaXR5Cj4gKyAqIGZyb20gdGhlIGhhcmR3YXJlLgo+
+ICsgKiBTZXR0aW5nIHRoZSBkdXR5IGN5Y2xlIHdpbGwgZGlzYWJsZSBhbmQgcmUtZW5hYmxlIHRo
+ZSBQV00gb3V0cHV0Lgo+ICsgKiBEaXNhYmxpbmcgdGhlIFBXTSBzdG9wcyB0aGUgb3V0cHV0IGlt
+bWVkaWF0ZWx5ICh3aXRob3V0IHdhaXRpbmcgZm9yIHRoZQo+ICsgKiBjdXJyZW50IHBlcmlvZCB0
+byBjb21wbGV0ZSBmaXJzdCkuCj4gKyAqCj4gKyAqIFRoZSBwdWJsaWMgUzkyMlggZGF0YXNoZWV0
+IGNvbnRhaW5zIHNvbWUgZG9jdW1lbnRhdGlvbiBmb3IgdGhpcyBQV00KPiArICogY29udHJvbGxl
+ciBzdGFydGluZyBvbiBwYWdlIDEwODQ6Cj4gKyAqIGh0dHBzOi8vZGwua2hhZGFzLmNvbS9IYXJk
+d2FyZS9WSU0yL0RhdGFzaGVldC9TOTEyX0RhdGFzaGVldF9WMC4yMjAxNzAzMTRwdWJsaWN2ZXJz
+aW9uLVdlc2lvbi5wZGYKPiArICoKPiAgICogQ29weXJpZ2h0IChjKSAyMDE2IEJheUxpYnJlLCBT
+QVMuCj4gICAqIEF1dGhvcjogTmVpbCBBcm1zdHJvbmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29t
+Pgo+ICAgKiBDb3B5cmlnaHQgKEMpIDIwMTQgQW1sb2dpYywgSW5jLgo+IAoKUmV2aWV3ZWQtYnk6
+IE5laWwgQXJtc3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT4KCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
