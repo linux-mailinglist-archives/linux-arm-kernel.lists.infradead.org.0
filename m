@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38BAE2B33C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:28:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D32B22B33D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:28:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i7GvPcirmEPVQ5PAto6JaP95Q9FWfPX2T5XdDCC3FBo=; b=UoT9KnA5Srrgqm
-	K3DqcE+KI1prm7ZoUr6l+xJyWU5RixaFiQjrkNZ1iluOhZ4tcvZ5Pl0PZMCSSZOE+FxHNFmQu7yFO
-	MdZf6+xVfrRYYhgjdtMJKbVpne+mPWaOcltmilEEwzwBBdXR2XgKjdoojHy67e31F541yBwegG8W9
-	HCoggmKp6WSsUayWtUekNzrnn2QC1i3ovFZg90VRwmTo/X8wfpiNqVFL0yoGqSLKuUdFpk1moBh0m
-	0qcaSN+QLnyhfn2rPj09hpzgVasMI6ISBE25aVRPX3hF+chrx1A2p0M5Ez89sXnS/z8F6MdlMjBkG
-	k1MyBJ6l9yTgjy0oXcog==;
+	List-Owner; bh=5R00WQ6ZLeET/idphi/N+zbMP9VrBdPMgMl1nK9SGJI=; b=CoCfqua3N6n5pp
+	z+RWsBFeGcvzemD8OS6nNHm41JadHWns5OhLdWtL63Nh1nqgLqrmk7RtULyG3WGHbh3KHVmApUKGX
+	yx1hyDBso9r8kOG03l7PsVXifvWXVmLVdRAgQU7eEiiB16u4289u00JvyKAEp7Ttnu6T9AjZD2FjG
+	3rNMtYxIdKDKm1lbCV8FrSx0s0i01FXmI3pmws3g1GJrImP/ZWO6ELgl4LepIxaqNUDV2JBCN8/jq
+	rTX3JrSpFNgMQe6/uYVlOY6U7NSMLc8gDyguXj1QW8pyizNt746JBEv6YhtKycBKOpWZ7aTerWoLE
+	JAysUwQMgv1zhiOUD6Rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVDnK-0007Hd-GO; Mon, 27 May 2019 11:27:58 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hVDnU-0007VO-Tr; Mon, 27 May 2019 11:28:08 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVDmr-0006ug-TS
+ id 1hVDms-0006vN-R8
  for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:27:33 +0000
-Received: by mail-wr1-x441.google.com with SMTP id d9so16591250wrx.0
+Received: by mail-wr1-x444.google.com with SMTP id c2so1372432wrm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 04:27:29 -0700 (PDT)
+ Mon, 27 May 2019 04:27:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=pKi5I0CJ2X5BwXo9XUNw8Vf2df15TmcuH8E+kJajjPM=;
- b=sim4f/+0M6hyPlAu9JEJF6ab6YBU9dpZnMdeKmnIMIkLoCJzRZqS+78KibKroDfuto
- ebgvxg/PCgDh69ige4loWXKOwSc4TIdOZ+0rnNqGW3yCwrr5TirBVl/NgllyRrTD1Zp+
- uq9dIjXKWfXQNWtEgrfb3Ac8vNOCgwRvrrIsMwGpQRXInQZm7lOQjJe8TvELVv7cYcGe
- eMdadgQ2HizkBWsIYuyqEbKxjaku7BBqZLqU9J71DXn1TU5NbNJ6fqggyLfXuwBB5qT0
- NQG0nhZEhUK+oQplf7r2ufho7xHk3Rkk4uBW2Xhp+YUaIuN2RJBWc7+zGmxFn5zfBdlj
- 0sBw==
+ bh=9EPMw9ZDt6r9OnVuoXUM9uuIE5EfX0cbi1r9IY8+97M=;
+ b=QwirmDGBiji1JuzbW6wei+YUkJRNV7UyseHQtII77EPKytrbdGHXVZVF5OqKoqqXR8
+ FcunUebz7zm7cad7SWqWjao8rKXcRbRL7lLb0YymFhJBvdwHRuEz6MNcp3/sFDchwtdX
+ b3hzKBrBeeqH1cSC39RhONf4Jo+xAIJXEnDVVuE/W6Vmjnm2NISvQ2K04Yk1uws/O/CA
+ a9MYK4Rvj2o/EYDvY/Usu2nn7U7SjpMVON931OxVcB1kfM/Zrt08+liOEFb3qPupgU7X
+ 0HuIbbM4c08DaOq09GcdTASL6t1b8uoVK7uYJcTA3lDW4e9cG2M/y2iNDXNY4Sgq8mCs
+ G5Ig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=pKi5I0CJ2X5BwXo9XUNw8Vf2df15TmcuH8E+kJajjPM=;
- b=qmsw+/sroabBXTZVHo5cOnMWNgLrdzn2iD14uvc0b2kuLxvW5E0lYkp5/jeRUwprGJ
- wMqGDQERELB2doUIdMM/xDgdMxgG8hOwVHjILRmrycVnHgIArSdTQHpWeKPCF5OYMmaH
- axyVPDweNWhNtp7kXcGGSEfAMulsuq0CXAvp1cURhd9XAZCHPZZjZnFCZ1oYO52v7ZQ9
- pm/XHnkd86kTlJbMEAk+W/OcCpUYu4IJW+t8FlKCiaAcuCijna+XER5HC45T5Ap6/apg
- CmWgWFpHhVdn4HsGshXUvZXckNP9QQsqrxpZ0hdslI6tx6cG0ZcwxMFZ/nNtrNWNlRKA
- i/Sw==
-X-Gm-Message-State: APjAAAUrjsF+urpqH+9zwD0y2oLd5HSpmvsQb4aL/WeolfF0cq7gd2BE
- S4IdrRJaBe5NYkhDhDUBEWY5gDPOsrTMbSbG
-X-Google-Smtp-Source: APXvYqw8SpCd+M4jJyq7zUwyAoqTgJjIobKM8rD3YiFtd56bz9HkfCXw5eBbjkgOO1RpXxVXLBy4pQ==
-X-Received: by 2002:adf:ef8d:: with SMTP id d13mr5588247wro.60.1558956448042; 
- Mon, 27 May 2019 04:27:28 -0700 (PDT)
+ bh=9EPMw9ZDt6r9OnVuoXUM9uuIE5EfX0cbi1r9IY8+97M=;
+ b=TxSMqnGKLLNC1fXleQgsQhA+mOJz3O2emoCGi9xH8LEzGwINVag+s00BK2n7T5XQNh
+ mH74AOJncI3e40Yfg4SUfZJjtoIZB/0V2UeMRKJFvA6CbXWmQjguUfT1dkrXB6fNf7mD
+ P6OYPIbHu3E2zM0E7hHGqECW+xYFMK21MpotZncYw8/d9kAGdubja4jQQj4b8EZRDOeq
+ U90xI74yyyVLLFvswbjmXnSOlb89rXiXAp+Loe/uaMiM/uFtKq6vH1tvdfOx6Zc+qbu/
+ ONYo2WJw2LzZ4/m7sGp1wpEyOmnBH70oM0AjWz3phnezWkvUJhDRC1bWQQyrUcxhEMFV
+ wo7w==
+X-Gm-Message-State: APjAAAUvgOxggL5mGi5susMiZur7gFEeIaiXGETVlH/Szq/2lfVkgBed
+ qa83h+g+7P/VkHm6307LP2ihohUL330RFKqj
+X-Google-Smtp-Source: APXvYqzTfClU/CiJaI98gbBQk9qFq+qk2vEqBO1yGu7b5coS9RX+IzQBWrCPVrrfSDCMo91F/Ygomg==
+X-Received: by 2002:a5d:6807:: with SMTP id w7mr7222991wru.336.1558956449254; 
+ Mon, 27 May 2019 04:27:29 -0700 (PDT)
 Received: from sudo.home ([2a01:cb1d:112:6f00:ccdd:dadc:1517:f416])
- by smtp.gmail.com with ESMTPSA id l6sm9677747wmi.24.2019.05.27.04.27.26
+ by smtp.gmail.com with ESMTPSA id l6sm9677747wmi.24.2019.05.27.04.27.28
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 04:27:27 -0700 (PDT)
+ Mon, 27 May 2019 04:27:28 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 2/4] irqchip/exiu: preparatory refactor for ACPI support
-Date: Mon, 27 May 2019 13:27:18 +0200
-Message-Id: <20190527112720.2266-3-ard.biesheuvel@linaro.org>
+Subject: [PATCH v3 3/4] irqchip/exiu: implement ACPI support
+Date: Mon, 27 May 2019 13:27:19 +0200
+Message-Id: <20190527112720.2266-4-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
 References: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_042730_120549_EC267415 
-X-CRM114-Status: GOOD (  15.82  )
+X-CRM114-CacheID: sfid-20190527_042731_096932_A863DC3A 
+X-CRM114-Status: GOOD (  17.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,127 +108,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation of adding support for EXIU controller devices described
-via ACPI, split the DT init function in a DT specific and a generic part,
-where the latter will be reused for ACPI support later.
+Expose the existing EXIU hierarchical irqchip domain code to permit
+the interrupt controller to be used as the irqchip component of a
+GPIO controller on ACPI systems, or as the target of ordinary
+interrupt resources.
 
 Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 ---
- drivers/irqchip/irq-sni-exiu.c | 66 +++++++++++++-------
- 1 file changed, 43 insertions(+), 23 deletions(-)
+ drivers/irqchip/irq-sni-exiu.c | 76 +++++++++++++++++---
+ 1 file changed, 68 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/irqchip/irq-sni-exiu.c b/drivers/irqchip/irq-sni-exiu.c
-index 1927b2f36ff6..fef7c2437dfb 100644
+index fef7c2437dfb..30a323a2b332 100644
 --- a/drivers/irqchip/irq-sni-exiu.c
 +++ b/drivers/irqchip/irq-sni-exiu.c
-@@ -1,7 +1,7 @@
- /*
-  * Driver for Socionext External Interrupt Unit (EXIU)
-  *
-- * Copyright (c) 2017 Linaro, Ltd. <ard.biesheuvel@linaro.org>
-+ * Copyright (c) 2017-2019 Linaro, Ltd. <ard.biesheuvel@linaro.org>
-  *
-  * Based on irq-tegra.c:
-  *   Copyright (C) 2011 Google, Inc.
-@@ -167,35 +167,23 @@ static const struct irq_domain_ops exiu_domain_ops = {
- 	.free		= irq_domain_free_irqs_common,
- };
+@@ -20,6 +20,7 @@
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+ #include <linux/of_irq.h>
++#include <linux/platform_device.h>
  
--static int __init exiu_init(struct device_node *node,
--			    struct device_node *parent)
-+static struct exiu_irq_data *exiu_init(const struct fwnode_handle *fwnode,
-+				       struct resource *res)
- {
--	struct irq_domain *parent_domain, *domain;
- 	struct exiu_irq_data *data;
- 	int err;
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
  
--	if (!parent) {
--		pr_err("%pOF: no parent, giving up\n", node);
--		return -ENODEV;
--	}
--
--	parent_domain = irq_find_host(parent);
--	if (!parent_domain) {
--		pr_err("%pOF: unable to obtain parent domain\n", node);
--		return -ENXIO;
--	}
--
- 	data = kzalloc(sizeof(*data), GFP_KERNEL);
- 	if (!data)
--		return -ENOMEM;
-+		return ERR_PTR(-ENOMEM);
+@@ -134,9 +135,13 @@ static int exiu_domain_translate(struct irq_domain *domain,
  
--	if (of_property_read_u32(node, "socionext,spi-base", &data->spi_base)) {
--		pr_err("%pOF: failed to parse 'spi-base' property\n", node);
-+	if (fwnode_property_read_u32_array(fwnode, "socionext,spi-base",
-+					   &data->spi_base, 1)) {
- 		err = -ENODEV;
- 		goto out_free;
+ 		*hwirq = fwspec->param[1] - info->spi_base;
+ 		*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
+-		return 0;
++	} else {
++		if (fwspec->param_count != 2)
++			return -EINVAL;
++		*hwirq = fwspec->param[0];
++		*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
  	}
+-	return -EINVAL;
++	return 0;
+ }
  
--	data->base = of_iomap(node, 0);
-+	data->base = ioremap(res->start, resource_size(res));
- 	if (!data->base) {
- 		err = -ENODEV;
- 		goto out_free;
-@@ -205,11 +193,44 @@ static int __init exiu_init(struct device_node *node,
- 	writel_relaxed(0xFFFFFFFF, data->base + EIREQCLR);
- 	writel_relaxed(0xFFFFFFFF, data->base + EIMASK);
+ static int exiu_domain_alloc(struct irq_domain *dom, unsigned int virq,
+@@ -147,16 +152,21 @@ static int exiu_domain_alloc(struct irq_domain *dom, unsigned int virq,
+ 	struct exiu_irq_data *info = dom->host_data;
+ 	irq_hw_number_t hwirq;
  
-+	return data;
+-	if (fwspec->param_count != 3)
+-		return -EINVAL;	/* Not GIC compliant */
+-	if (fwspec->param[0] != GIC_SPI)
+-		return -EINVAL;	/* No PPI should point to this domain */
++	parent_fwspec = *fwspec;
++	if (is_of_node(dom->parent->fwnode)) {
++		if (fwspec->param_count != 3)
++			return -EINVAL;	/* Not GIC compliant */
++		if (fwspec->param[0] != GIC_SPI)
++			return -EINVAL;	/* No PPI should point to this domain */
+ 
++		hwirq = fwspec->param[1] - info->spi_base;
++	} else {
++		hwirq = fwspec->param[0];
++		parent_fwspec.param[0] = hwirq + info->spi_base + 32;
++	}
+ 	WARN_ON(nr_irqs != 1);
+-	hwirq = fwspec->param[1] - info->spi_base;
+ 	irq_domain_set_hwirq_and_chip(dom, virq, hwirq, &exiu_irq_chip, info);
+ 
+-	parent_fwspec = *fwspec;
+ 	parent_fwspec.fwnode = dom->parent->fwnode;
+ 	return irq_domain_alloc_irqs_parent(dom, virq, nr_irqs, &parent_fwspec);
+ }
+@@ -245,3 +255,53 @@ static int __init exiu_dt_init(struct device_node *node,
+ 	return -ENOMEM;
+ }
+ IRQCHIP_DECLARE(exiu, "socionext,synquacer-exiu", exiu_dt_init);
 +
-+out_free:
-+	kfree(data);
-+	return ERR_PTR(err);
-+}
-+
-+static int __init exiu_dt_init(struct device_node *node,
-+			       struct device_node *parent)
++#ifdef CONFIG_ACPI
++static int exiu_acpi_probe(struct platform_device *pdev)
 +{
-+	struct irq_domain *parent_domain, *domain;
++	struct irq_domain *domain;
 +	struct exiu_irq_data *data;
-+	struct resource res;
++	struct resource *res;
 +
-+	if (!parent) {
-+		pr_err("%pOF: no parent, giving up\n", node);
-+		return -ENODEV;
-+	}
-+
-+	parent_domain = irq_find_host(parent);
-+	if (!parent_domain) {
-+		pr_err("%pOF: unable to obtain parent domain\n", node);
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	if (!res) {
++		dev_err(&pdev->dev, "failed to parse memory resource\n");
 +		return -ENXIO;
 +	}
 +
-+	if (of_address_to_resource(node, 0, &res)) {
-+		pr_err("%pOF: failed to parse memory resource\n", node);
-+		return -ENXIO;
-+	}
-+
-+	data = exiu_init(of_node_to_fwnode(node), &res);
++	data = exiu_init(dev_fwnode(&pdev->dev), res);
 +	if (IS_ERR(data))
 +		return PTR_ERR(data);
 +
- 	domain = irq_domain_add_hierarchy(parent_domain, 0, NUM_IRQS, node,
- 					  &exiu_domain_ops, data);
- 	if (!domain) {
- 		pr_err("%pOF: failed to allocate domain\n", node);
--		err = -ENOMEM;
- 		goto out_unmap;
- 	}
- 
-@@ -220,8 +241,7 @@ static int __init exiu_init(struct device_node *node,
- 
- out_unmap:
- 	iounmap(data->base);
--out_free:
- 	kfree(data);
--	return err;
++	domain = acpi_irq_create_hierarchy(0, NUM_IRQS, dev_fwnode(&pdev->dev),
++					   &exiu_domain_ops, data);
++	if (!domain) {
++		dev_err(&pdev->dev, "failed to create IRQ domain\n");
++		goto out_unmap;
++	}
++
++	dev_info(&pdev->dev, "%d interrupts forwarded\n", NUM_IRQS);
++
++	return 0;
++
++out_unmap:
++	iounmap(data->base);
++	kfree(data);
 +	return -ENOMEM;
- }
--IRQCHIP_DECLARE(exiu, "socionext,synquacer-exiu", exiu_init);
-+IRQCHIP_DECLARE(exiu, "socionext,synquacer-exiu", exiu_dt_init);
++}
++
++static const struct acpi_device_id exiu_acpi_ids[] = {
++	{ "SCX0008" },
++	{ /* sentinel */ }
++};
++MODULE_DEVICE_TABLE(acpi, exiu_acpi_ids);
++
++static struct platform_driver exiu_driver = {
++	.driver = {
++		.name = "exiu",
++		.acpi_match_table = exiu_acpi_ids,
++	},
++	.probe = exiu_acpi_probe,
++};
++builtin_platform_driver(exiu_driver);
++#endif
 -- 
 2.20.1
 
