@@ -2,97 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E8A62B296
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 12:56:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF112B2B0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 13:04:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mm+ZTNpHJJQOfP6P1S0z/S5w58PiJsg328TyFDWU7U4=; b=gCHDwJgm8nONQJ
-	ekN3dSv3lfCOE2WKuppivFIm4VoV0MvyVHuqNpWR0Ng2/v36jVYLSzesQ5eaULOdTbQ2zICPpkk6Z
-	nRss1Bv51mYDy3HElvgiSAzWUS9CzCbMLApghhNwZqIUGlOn1LP/BrE9b3DbjSUIn7cZW/eLeRqwD
-	BRjUImujZgAAhTO1bdeVkp8bsKG4BmONOiJ2h9jfpQcom61keDWQguIDEzslC80QLbnZ2IW7JzQ/7
-	katoD2S1wjcVUNqAvNC8EhN0ZLYdlVxbE4oBddwbQUSdz9cWM54PfiruXKl64o2mw3aXBtUijJyfu
-	BIdJ7jIWPZ+2xDw3Kf8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=snt53U+SGUxS+0GOwSK5Q1LLn6527Et/H9xhWxaY+Tg=; b=oqcD7mKsfjb5/6
+	V1EdC49Ewvm+gXBaTkHlrrSsk3J429YEyCy6x9frqJovcwP9f5wd2f1jSv+nNcCaaxuz4uYqscgTy
+	3mFWE8ryujmTY+U33dIRzaM3txzIVEkTmxYV/hoB0v1XFM++UGSP7mrTkoVeXv+aD5IOxiWzgSdqs
+	bErDUU9XgXnm/THDqR8ah4yqFvZUQZpDSK+E1xwYrBiRi/0NPkFbgMvgQ0zEpdUyTL77pZx5GJNZ6
+	4hOJlzDFtl+QmE49q+g+HBuw/+9VdKBeHAc5ljlyQvK7BN+9qbipkznbCU3CppNZh9lE14du8BOWU
+	+eyFNFT5UPAsiWeZPCYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVDJE-00024s-85; Mon, 27 May 2019 10:56:52 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hVDQd-0004VX-9O; Mon, 27 May 2019 11:04:31 +0000
+Received: from mail-co1nam03on062f.outbound.protection.outlook.com
+ ([2a01:111:f400:fe48::62f]
+ helo=NAM03-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVDJ6-00024D-Lf
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 10:56:45 +0000
-Received: by mail-pl1-x643.google.com with SMTP id c5so6923739pll.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 03:56:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=xQG94E91rcdUfSlkW1uYF9ApGj+jgzKgN0E+vtaKz6A=;
- b=Gy9EASSRYlr9i12Logn21TdN5ujim45QVkv2y2MggLHvc1zjqiO1HnQBLFMvdefKhV
- 8EUvnRVO5xeo+ymGVEjsG02qBU4VBKJE1w07kzfdcqPRGvvU6qwS7CcKyUwBb43n6ctR
- GXh4BXEKOgL0SWJtNXegveEi3DU5WYLZJg+61DjGG2FPDXWGfylwfRNQeZlbtfrm0Ca+
- 3h/DBbQC5pmXA6gRd0uHwD+EOUkhThBuDvV1Iai08L58GcavSub2+7rJ+l4x9dHUQrr6
- XJqz9SfLROkIZQU/3aNmTia9K5JyI8CzL9X7+4mJCGAJPvtRPfLc2cg1CoPnV0/ANVEJ
- kf8g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xQG94E91rcdUfSlkW1uYF9ApGj+jgzKgN0E+vtaKz6A=;
- b=Y0jGSFkWemmj/QYt5NwZLY/RQs99+xBnOpKxxt5Qo8njREeHNARo2neFaayNQedfY4
- jTLFZVizBE3FM07u5TbLNv3bymZwnWVrek/K2lGuaI92lbfKgZwA+AA6yV21DYeBx/md
- EcB/vgcbWiG0/qxy//iQJUKirQATsguob4JGjD/6LhgXcHqG4mxELyUZZG7HVKIGcMAF
- hhK+mhlWs0OEq0it56LNDYwa7X63m4ABmt6oWYzdaYkvwKphoxMXqeLxoVu4Tpm8bFFD
- dnjh6NjDHzr9Dd1AbgW4TkGYsn6h6IEgk4GKhKq1fE1t0E7d0GpWKZg9BxPVhzXAnTrM
- fCcg==
-X-Gm-Message-State: APjAAAUxT+zTLP9qZrVCkabCCi1lrasN2iuYs0usoFdPMBEeZeJO1/T+
- PyassvGdEQtVCN702rVvfTA=
-X-Google-Smtp-Source: APXvYqwYifFGznpVmbp990JQuxYufhL5+M7CwwnvfxITZA/hhhnqSphHZcc/3LL1+bFx/1MWhz5Akw==
-X-Received: by 2002:a17:902:28c9:: with SMTP id
- f67mr20202766plb.19.1558954603720; 
- Mon, 27 May 2019 03:56:43 -0700 (PDT)
-Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
- [216.228.112.22])
- by smtp.gmail.com with ESMTPSA id x10sm14034629pfj.136.2019.05.27.03.56.42
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 27 May 2019 03:56:43 -0700 (PDT)
-Date: Mon, 27 May 2019 03:55:29 -0700
-From: Nicolin Chen <nicoleotsuka@gmail.com>
-To: Ira Weiny <ira.weiny@intel.com>
-Subject: Re: [PATCH v3 2/2] dma-contiguous: Use fallback alloc_pages for
- single pages
-Message-ID: <20190527105528.GA26916@Asurada-Nvidia.nvidia.com>
-References: <20190524040633.16854-1-nicoleotsuka@gmail.com>
- <20190524040633.16854-3-nicoleotsuka@gmail.com>
- <20190524161618.GB23100@iweiny-DESK2.sc.intel.com>
+ id 1hVDQV-0004Uo-3X
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 11:04:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=Synaptics.onmicrosoft.com; s=selector1-Synaptics-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=A2Ahkms7ZskReuoeIx+XGDQwQZeJJz5Qjsrs7EltXC4=;
+ b=RwSkS4T6tE+K2amx5z2Hw8+KV3w+exmIjRSJdrj7WKO6LFdoGtqEGvLFTUoDFe0vo22THORIjRtj9lY9LnV3sHXojJ3NJY9QXPHKU0WaIARrkRFGHPe4XDktDsfRxWATWvZZBvW2EYTuHg2o5Xt+VrapHh3G/qElaEYlBEQ/2o0=
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
+ BYAPR03MB4101.namprd03.prod.outlook.com (20.177.184.22) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.21; Mon, 27 May 2019 11:04:17 +0000
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::e484:f15c:c415:5ff9]) by BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::e484:f15c:c415:5ff9%7]) with mapi id 15.20.1922.021; Mon, 27 May 2019
+ 11:04:17 +0000
+From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, "David S. Miller"
+ <davem@davemloft.net>
+Subject: [PATCH] net: mvneta: Fix err code path of probe
+Thread-Topic: [PATCH] net: mvneta: Fix err code path of probe
+Thread-Index: AQHVFHvt/gI8V9X5mUCJIK/fkWRQcQ==
+Date: Mon, 27 May 2019 11:04:17 +0000
+Message-ID: <20190527185513.04aca133@xhacker.debian>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [124.74.246.114]
+x-clientproxiedby: HK2PR02CA0147.apcprd02.prod.outlook.com
+ (2603:1096:202:16::31) To BYAPR03MB4773.namprd03.prod.outlook.com
+ (2603:10b6:a03:134::24)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d47ef688-cd24-47b6-df05-08d6e2930fa3
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BYAPR03MB4101; 
+x-ms-traffictypediagnostic: BYAPR03MB4101:
+x-microsoft-antispam-prvs: <BYAPR03MB410100915C96E45D64622AF5ED1D0@BYAPR03MB4101.namprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2512;
+x-forefront-prvs: 0050CEFE70
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(346002)(136003)(366004)(39850400004)(396003)(199004)(189003)(6512007)(3846002)(6116002)(9686003)(26005)(2906002)(68736007)(25786009)(6506007)(386003)(8676002)(81156014)(8936002)(305945005)(66446008)(64756008)(66556008)(66476007)(66946007)(52116002)(71190400001)(186003)(71200400001)(5660300002)(86362001)(478600001)(4326008)(7736002)(6436002)(73956011)(6486002)(66066001)(316002)(14454004)(72206003)(486006)(476003)(53936002)(102836004)(110136005)(54906003)(99286004)(81166006)(1076003)(256004)(50226002)(39210200001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB4101;
+ H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; MX:1; 
+received-spf: None (protection.outlook.com: synaptics.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: bH2TyxCwHS+dl4/26amAb2qnEzbkU6AQH5SnBK+DQw2dedoM6m2sTH2bnmX+KkfC5pXNQN4trnmf6/Y77j5kOgnXTokI2ZfFb4c+h+e4iEOHieJBmgB5NmkI3kYKIaWfiAFAw9BXnZiXjccOMYtKDlyMpLNcFPssxcelE5bfgWBH/y9BczB+HgPoYNw3v1FGfWbf8UNiJO9hWJhEpO8qryAVee5uHSisopoxc2E28bdcPuFeM8XqoPiKR0D75MNMKC1HXfVqFlJh/pBVvL8QdoY7xDwRcM5BkaitKjsy+0GCo7/nOkJw8mYkAwNcvJ4X1C1HcCHlQeCzO1UwUFHIwo+q92/4vPep7t0t5nxIaVc2GW0eT/ny2tzrq3HYde97NwWlbdy5N4IwSi0BJdfx7nNhlUH5N7H1BtcgLjqfxBk=
+Content-ID: <1C643B66700BAC4280B4784088475B1C@namprd03.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190524161618.GB23100@iweiny-DESK2.sc.intel.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: synaptics.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d47ef688-cd24-47b6-df05-08d6e2930fa3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2019 11:04:17.5078 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jiszha@synaptics.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB4101
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_035644_709425_4D5BE37D 
-X-CRM114-Status: GOOD (  18.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190527_040423_230464_57BA3AA0 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2a01:111:f400:fe48:0:0:0:62f listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (nicoleotsuka[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,62 +113,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, catalin.marinas@arm.com, will.deacon@arm.com,
- jcmvbkbc@gmail.com, hch@lst.de, m.szyprowski@samsung.com, sfr@canb.auug.org.au,
- dann.frazier@canonical.com, joro@8bytes.org, linux@armlinux.org.uk,
- treding@nvidia.com, linux-xtensa@linux-xtensa.org, keescook@chromium.org,
- akpm@linux-foundation.org, linux-arm-kernel@lists.infradead.org,
- chris@zankel.net, wsa+renesas@sang-engineering.com, robin.murphy@arm.com,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- iamjoonsoo.kim@lge.com, dwmw2@infradead.org
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ira,
+Fix below issues in err code path of probe:
+1. we don't need to unregister_netdev() because the netdev isn't
+registered.
+2. when register_netdev() fails, we also need to destroy bm pool for
+HWBM case.
 
-On Fri, May 24, 2019 at 09:16:19AM -0700, Ira Weiny wrote:
-> On Thu, May 23, 2019 at 09:06:33PM -0700, Nicolin Chen wrote:
-> > The addresses within a single page are always contiguous, so it's
-> > not so necessary to always allocate one single page from CMA area.
-> > Since the CMA area has a limited predefined size of space, it may
-> > run out of space in heavy use cases, where there might be quite a
-> > lot CMA pages being allocated for single pages.
-> > 
-> > However, there is also a concern that a device might care where a
-> > page comes from -- it might expect the page from CMA area and act
-> > differently if the page doesn't.
-> 
-> How does a device know, after this call, if a CMA area was used?  From the
-> patches I figured a device should not care.
+Fixes: dc35a10f68d3 ("net: mvneta: bm: add support for hardware buffer management")
+Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+---
+ drivers/net/ethernet/marvell/mvneta.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-A device doesn't know. But that doesn't mean a device won't care
-at all. There was a concern from Robin and Christoph, as a corner
-case that device might act differently if the memory isn't in its
-own CMA region. That's why we let it still use its device specific
-CMA area.
+diff --git a/drivers/net/ethernet/marvell/mvneta.c b/drivers/net/ethernet/marvell/mvneta.c
+index e758650b2c26..269bd73be1a0 100644
+--- a/drivers/net/ethernet/marvell/mvneta.c
++++ b/drivers/net/ethernet/marvell/mvneta.c
+@@ -4674,7 +4674,7 @@ static int mvneta_probe(struct platform_device *pdev)
+ 	err = register_netdev(dev);
+ 	if (err < 0) {
+ 		dev_err(&pdev->dev, "failed to register\n");
+-		goto err_free_stats;
++		goto err_netdev;
+ 	}
+ 
+ 	netdev_info(dev, "Using %s mac address %pM\n", mac_from,
+@@ -4685,14 +4685,12 @@ static int mvneta_probe(struct platform_device *pdev)
+ 	return 0;
+ 
+ err_netdev:
+-	unregister_netdev(dev);
+ 	if (pp->bm_priv) {
+ 		mvneta_bm_pool_destroy(pp->bm_priv, pp->pool_long, 1 << pp->id);
+ 		mvneta_bm_pool_destroy(pp->bm_priv, pp->pool_short,
+ 				       1 << pp->id);
+ 		mvneta_bm_put(pp->bm_priv);
+ 	}
+-err_free_stats:
+ 	free_percpu(pp->stats);
+ err_free_ports:
+ 	free_percpu(pp->ports);
+-- 
+2.20.1
 
-> > +	if (dev && dev->cma_area)
-> > +		cma = dev->cma_area;
-> > +	else if (count > 1)
-> > +		cma = dma_contiguous_default_area;
-> 
-> Doesn't dev_get_dma_area() already do this?
-
-Partially yes. But unwrapping it makes the program flow clear in
-my opinion. Actually I should have mentioned that this patch was
-suggested by Christoph also.
-
-Otherwise, it would need an override like:
-	cma = dev_get_dma_area();
-	if (count > 1 && cma == dma_contiguous_default_area)
-		cma = NULL;
-
-Which doesn't look that bad though..
-
-Thanks
-Nicolin
 
 _______________________________________________
 linux-arm-kernel mailing list
