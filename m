@@ -2,53 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FDE12B3EC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:02:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C525F2B3FA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:03:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rBCJb/Y0xGRHgvQtU6986R+W8MV/Ole8MVsYfgdZvII=; b=IXqhGJgl+zEE77
-	y3Hufgi5o28JkuCMaZeuBarqeKqO6akCyNs/HHsBlu+ie9xZiBpRIGs4PoRW61QMLmyJ3ICfieEAb
-	IobbUS3m5Gx1Y8sNBTY75VxVKgoKz/eRYRX9z0izu+cJLsd1v5gl3HbBTDCZ61fEQsvPVo6UHHNR2
-	0FdgwcpdGt4nMXDbQLww+o9KjxDN+VLgZojCDOAaSuK1fmJK1n/Q2pAdplpaSHS7fAEHmBcD/uXfQ
-	Y4QsEseV8f+I9yBWkb1oiSrHCVBc0W0yzE5PxQZ3zpORD3iqxolqUNkfWE583CsCDSRAFt48j+ux0
-	HQ91CY0Wel2TGNRDTCkA==;
+	List-Owner; bh=e/kgSIB9umqrkNmtVYVGEmIiWRkFiaicxxqBtOj+VuI=; b=IRaP+UcXlTSF6U
+	kTecwLUDQuhzYS+5Wx6pw/g3NtNRvd4wycfMTJJV6mY/2KkySQ55UUUwue1HdAMnRXEVtdSH2qFMz
+	Cjwi+yg8PBH0zq0ZxOtn9nKCUk4bc7kcwVmFAs2c+KmVvlgyQ2juICX0qku0oSEWtLmsA9O0JOF0q
+	SEIvL2nZ0irbip1qU7aaSfK2MvBeyJDfi1YMdbAsXbqRJ+KUc7pv+14YqjfpjtUOB2d4PGk6fzrTv
+	IF4+culg1mbIeNs4JguCXybsijuR8sS+NOqjhCp104US6R7tplEzPUnyd1uQw8J6HvA5vceXmmQp9
+	h0nS+bSAIERsWeIFx5jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVEKH-0004XS-QH; Mon, 27 May 2019 12:02:01 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1hVELT-0005XC-9A; Mon, 27 May 2019 12:03:15 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEJQ-0003Yr-Dd
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:01:10 +0000
+ id 1hVEJs-0004Am-UA
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 27 May 2019 12:01:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=W6TVe7vE2VNpWtzR2Tlpcx3iJRnZ1fsgeG/ZHGvd21I=; b=R0o9tlNd8Ls4M8UkMn6ZznXBmG
+ Ovh93OuthoYYNr4PEVGjWC1k3q1MWde5J2iNIy2TS4cY6ifloFfOG/A5CJQeuf8uoA8pzu/GAUbzV
+ OYzL/Hc3OEa9ABAGtQeJslcTd8KO8h8DXnFrEe6xOLFaNYEX4qlj82/iN3wsPDbUTPPM4L41BmG91
+ 3p2wzOHoupEaEFq779m2bfIVXATWRTB4r1IeBokH2mcE68H4DaRBgP6HGWRcSeneOqvVXq+KW/5aj
+ ZRIzsfM9zDbPGB8wJUdRLXcG8Eky7oM+j+ffPIO/VebB+9KuoktY6Gyz6XT97odevBuc5Rde/+aIM
+ TDQ3SwLg==;
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVEJp-0002to-IM
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:01:34 +0000
+X-Originating-IP: 90.88.147.134
 Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
  [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 2AFC2240004;
- Mon, 27 May 2019 12:00:59 +0000 (UTC)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id C9057FF807;
+ Mon, 27 May 2019 12:01:00 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
  Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH 07/10] ARM: dts: sun6i: Fix RTC node
-Date: Mon, 27 May 2019 14:00:39 +0200
-Message-Id: <9b447096c79c8660970013068457c05cb03f9027.1558958381.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH 08/10] ARM: dts: sun6i: Add external crystals accuracy
+Date: Mon, 27 May 2019 14:00:40 +0200
+Message-Id: <0b46e2c493cdab00ceef6e35dfef0cc869f14fa3.1558958381.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <290402405a34506997fd2fab2c4c1486dbe6b7e5.1558958381.git-series.maxime.ripard@bootlin.com>
 References: <290402405a34506997fd2fab2c4c1486dbe6b7e5.1558958381.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_050108_652817_769D5FAD 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20190527_080133_868251_9D142738 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,86 +86,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The RTC node doesn't match what is described in the binding for historical
-reasons. Let's add the proper description.
+The A31 datasheet mandates oscillators accuracy to be within 50ppm. Let's
+add that accuracy to their device tree nodes.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- arch/arm/boot/dts/sun6i-a31.dtsi | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
+ arch/arm/boot/dts/sun6i-a31.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi b/arch/arm/boot/dts/sun6i-a31.dtsi
-index c04efad81bbc..8832650cdc8d 100644
+index 8832650cdc8d..f564ba9a9c2d 100644
 --- a/arch/arm/boot/dts/sun6i-a31.dtsi
 +++ b/arch/arm/boot/dts/sun6i-a31.dtsi
-@@ -223,7 +223,7 @@
+@@ -216,6 +216,7 @@
+ 			#clock-cells = <0>;
+ 			compatible = "fixed-clock";
+ 			clock-frequency = <24000000>;
++			clock-accuracy = <50000>;
+ 			clock-output-names = "osc24M";
+ 		};
+ 
+@@ -223,6 +224,7 @@
  			#clock-cells = <0>;
  			compatible = "fixed-clock";
  			clock-frequency = <32768>;
--			clock-output-names = "osc32k";
-+			clock-output-names = "ext_osc32k";
++			clock-accuracy = <50000>;
+ 			clock-output-names = "ext_osc32k";
  		};
  
- 		/*
-@@ -588,7 +588,7 @@
- 		ccu: clock@1c20000 {
- 			compatible = "allwinner,sun6i-a31-ccu";
- 			reg = <0x01c20000 0x400>;
--			clocks = <&osc24M>, <&osc32k>;
-+			clocks = <&osc24M>, <&rtc 0>;
- 			clock-names = "hosc", "losc";
- 			#clock-cells = <1>;
- 			#reset-cells = <1>;
-@@ -601,7 +601,7 @@
- 				     <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>,
- 				     <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
- 				     <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&ccu CLK_APB1_PIO>, <&osc24M>, <&osc32k>;
-+			clocks = <&ccu CLK_APB1_PIO>, <&osc24M>, <&rtc 0>;
- 			clock-names = "apb", "hosc", "losc";
- 			gpio-controller;
- 			interrupt-controller;
-@@ -1279,10 +1279,13 @@
- 		};
- 
- 		rtc: rtc@1f00000 {
-+			#clock-cells = <1>;
- 			compatible = "allwinner,sun6i-a31-rtc";
- 			reg = <0x01f00000 0x54>;
- 			interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
- 				     <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&osc32k>;
-+			clock-output-names = "osc32k";
- 		};
- 
- 		nmi_intc: interrupt-controller@1f00c00 {
-@@ -1300,7 +1303,7 @@
- 			ar100: ar100_clk {
- 				compatible = "allwinner,sun6i-a31-ar100-clk";
- 				#clock-cells = <0>;
--				clocks = <&osc32k>, <&osc24M>,
-+				clocks = <&rtc 0>, <&osc24M>,
- 					 <&ccu CLK_PLL_PERIPH>,
- 					 <&ccu CLK_PLL_PERIPH>;
- 				clock-output-names = "ar100";
-@@ -1335,7 +1338,7 @@
- 			ir_clk: ir_clk {
- 				#clock-cells = <0>;
- 				compatible = "allwinner,sun4i-a10-mod0-clk";
--				clocks = <&osc32k>, <&osc24M>;
-+				clocks = <&rtc 0>, <&osc24M>;
- 				clock-output-names = "ir";
- 			};
- 
-@@ -1365,7 +1368,7 @@
- 			reg = <0x01f02c00 0x400>;
- 			interrupts = <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>,
- 				     <GIC_SPI 46 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&apb0_gates 0>, <&osc24M>, <&osc32k>;
-+			clocks = <&apb0_gates 0>, <&osc24M>, <&rtc 0>;
- 			clock-names = "apb", "hosc", "losc";
- 			resets = <&apb0_rst 0>;
- 			gpio-controller;
 -- 
 git-series 0.9.1
 
