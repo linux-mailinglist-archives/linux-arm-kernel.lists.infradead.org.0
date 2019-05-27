@@ -2,71 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B394D2B4FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD01C2B50B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 14:25:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zIMquy76tVQ8n4Bik/ooRlIGxy9L0eIPWJAG3irACPs=; b=QjBVIGTDeVNjoY
-	zcrYUmysCF2ug0hFoAyqORiBCWYOU1HtyrzdiYHzI6U/misWz/YXqYchs3JBILM7Qa1Njrez8r+9T
-	uF7dPGCAE5+avYbLalnIhYtGeDfh6unc12K/6Fm+3ldmZsJvwtg8f3DDwtSwQgOUKg4RESw05OObR
-	wmN+kT+R6kBNlrhf50oQWhRbLPRC5Nk0ShsuTQoNjaOz34DrwR3WPCsqG+D+Ktw6gAcc7L/dIptzV
-	RgXxUvmMdRuc61jYKgR+vD11XrO3dLJyXtAJidMh9NZlrOMS+uOMXJnGn1wk656lamLYkWwEv0NBL
-	/CVgWepXmq30txyTyMDw==;
+	List-Owner; bh=aMJT3JDJE2IaNFgrIvZ68CPZyRAf2/BE6oarX9HOcjs=; b=EtvwDvbJJV+ITR
+	AG4eGuCN/2pUFeMfg/woPfq+X1ZYLcoprzsZ96B5nZZHwnhU/8WP1ElSTRoKaly3HlVyWsy3K4RFX
+	3RRNtAVVmkdI5r6c3HsD74ybwhC4sqkRRuXyOs5dDaYEWe+5coL4YvBWFrbtLZ5C7RiYKjeyaiw0a
+	2mUJLn28JMZZ9atW6ldS2xViq9Q4F0PH4f6EPTztz/A6gzJJ3zHBXpGYdR19pSnOkI0a1tz8hRkWI
+	Aa7z57o21fUWj73tx5IGO8Yc95TZg9UoQyDiDhQyeuhs4To7q/ig19CWbh2YL9cwSLOQTrRcrKN0Q
+	tq1g4cDK1uru9S7XjXmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVEgs-0003qC-Dx; Mon, 27 May 2019 12:25:22 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hVEh9-000476-7a; Mon, 27 May 2019 12:25:39 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVEgh-0003ox-Uh
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:25:13 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f8so16770861wrt.1
+ id 1hVEgy-00042f-Bm
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 12:25:31 +0000
+Received: by mail-wm1-x342.google.com with SMTP id i3so15962100wml.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 05:25:11 -0700 (PDT)
+ Mon, 27 May 2019 05:25:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=sGKq4BVOhx+YoEDuHoZbnnRiDJ7L5mqSr1atGmHYHsY=;
- b=OAXFYXR7xyjkw6rYeOaIlE2B+Zvbvs9mSYi3/1CihglxPJKMFFFPfQw2agA2xOn/VX
- yqen6pnt0JpNcOluLTi0Nv+mh4msw98TTC/CM7ad7Z5PrcoIAW0JBp9E2BjgyFj0PBH8
- brBIf35wR/psVOYGMohRcCL4BiBt6xIediybjmLh9UHffxtkgHWxL1wapEnYci8ipFAl
- WR/o4C2avtWU/GJbdb/PC8tO2BIXG0yxck3JnPfneXZbvktD/tq7HWdugg4L6ohfILKV
- 2DGj8JTOrv7qj15oxKnNouO2H1u1hx5VxP/1M4mPtZqs8JzoePUmJ1YYuE9NmISVylr8
- v8pQ==
+ bh=xGiOy/CD4XgulwIIHSIhXC16Zrz6P2ZSbp7JsRj17Gc=;
+ b=RShj8NHI8B0WRqoRV6opiHiWCF5SyU2HSF7rp7zeEkoOQxwDFc9uIoFdh7aQtPXLoO
+ KA35HEONSjnftchnoAJK3VaaGiAvfGz+3hh61ioNInT1gJfntTXFzuLrgm86IyMBQho6
+ uISGT5Jfay4Adcd/BaVKXbgtcs1NLL5uz3phJ5MeNowaFbOSnBHftMG/tBU0kQ20Jtli
+ +pwmEG/DXtFT8h/3Gtty9CrRnkYWUP3vQ5fBrw5vakrtmIvovFyLpbuULv4ywYomLR0M
+ Nmxh4jgge0Js/EHoDie2OxnTrla/Jhxa20fJyK87BJbelEW8WMkWHCNnQdMXf/R8hJST
+ UOMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=sGKq4BVOhx+YoEDuHoZbnnRiDJ7L5mqSr1atGmHYHsY=;
- b=ab7NYXzS529orRfze1wXjksadhfFXZXOgSNSzZe8WdgY79iVyNQgf61I1FrvB7hQBf
- BuvBAIMcZavFBR30hItPuTOCJOH7wzaFzbbTgTMYF7ALZjz+JDHDkJ/ZU7nwVEZhn70f
- q+13xLhvCX/sprcR7SX/CpEaHgKJajsIETwyF2oOh86nk81/pAwrSFFmrKymx4DIqwvD
- tir9JcYb0e6gkGgOFyntvFLQ14XiQgRmXZq0reR5bXWLSjZmUPo354Jp1TmFYVb4uCZ1
- /d0PnyNN7WtFnycTgsc77xDNpTNavV0IJu6MpmXKJ1PnBZwueMqAixs4kOHdJ5kKWgT/
- V/3A==
-X-Gm-Message-State: APjAAAUFN3RZSWbQv2x3BRlAPl57Wk/4tTw4m6CtQOhJ/2w6M2Pj6fOV
- bgu4kEbEaNrYtVAjICUNLafFYiFKT05njA==
-X-Google-Smtp-Source: APXvYqxU3izd1btk+vMP58AKtWbDUacGuBFB8+c9b7OBPXUV/xBIYP3n8Xyvjqiry+ZGmJ+CpDpKWQ==
-X-Received: by 2002:a5d:5501:: with SMTP id b1mr53897257wrv.222.1558959909853; 
- Mon, 27 May 2019 05:25:09 -0700 (PDT)
+ bh=xGiOy/CD4XgulwIIHSIhXC16Zrz6P2ZSbp7JsRj17Gc=;
+ b=rgpa823AzIJ6JqJNGwbiOcAxGUH0Oie6e9ITr8enqJtNj4s5iJdXimhsf8yCXu5J38
+ dkYILgEVh0oloXc+4k41P3euiUs9Sd7huYJJYgRfKLjrf/91NHqmtM0U9u68kt2wxG+w
+ V0BGnR2HVO9DZNinstUJ72VvNguLmrFTyFef8BbB9apPC7X3UHK3kMuCgyJ8QQ2639TF
+ 8bSEj8u8e5qaKnSuGjAtL7gJirxDr203UhU3i5SxLkNZetuytjrt7gWEjR/SGUx9bwdN
+ yU8amrhmEaKkH+Oaxs/Fyvs4/s/POWUfeBZl2gcobraaq0ZCQuMnqiyHa0khAj1hMsWI
+ OSpA==
+X-Gm-Message-State: APjAAAVGIrl4UAVkPoJmv7BOx7eGvZs5ygdZRP7OKvPWsWM80RXcDMLw
+ tlt5AOXd5oLZb2CRel2PXC4MEffnPxK5vQ==
+X-Google-Smtp-Source: APXvYqx0kZcZ0bFvNB1ltFd0rTrrYicB2CHq6sgH1HG/wAPTdfTyex5/TTdQIQ9qf2ssJbwFQ+YdAw==
+X-Received: by 2002:a05:600c:2219:: with SMTP id
+ z25mr18258608wml.95.1558959926342; 
+ Mon, 27 May 2019 05:25:26 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id g2sm9709001wru.37.2019.05.27.05.25.08
+ by smtp.gmail.com with ESMTPSA id q14sm8641844wrw.60.2019.05.27.05.25.25
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 05:25:08 -0700 (PDT)
-Subject: Re: [PATCH 01/14] pwm: meson: unify the parameter list of
- meson_pwm_{enable, disable}
+ Mon, 27 May 2019 05:25:25 -0700 (PDT)
+Subject: Re: [PATCH 02/14] pwm: meson: use devm_clk_get_optional() to get the
+ input clock
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  linux-amlogic@lists.infradead.org, linux-pwm@vger.kernel.org,
  thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de
 References: <20190525181133.4875-1-martin.blumenstingl@googlemail.com>
- <20190525181133.4875-2-martin.blumenstingl@googlemail.com>
+ <20190525181133.4875-3-martin.blumenstingl@googlemail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -119,23 +120,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <bb920cb5-0e0b-ef1b-0ed9-35e865d54add@baylibre.com>
-Date: Mon, 27 May 2019 14:25:08 +0200
+Message-ID: <b4cfc101-7391-aef2-0f6c-8bdec2044101@baylibre.com>
+Date: Mon, 27 May 2019 14:25:25 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190525181133.4875-2-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20190525181133.4875-3-martin.blumenstingl@googlemail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_052511_986848_95F2A642 
-X-CRM114-Status: GOOD (  19.33  )
+X-CRM114-CacheID: sfid-20190527_052528_576649_1AE47F55 
+X-CRM114-Status: GOOD (  20.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -160,77 +161,40 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 25/05/2019 20:11, Martin Blumenstingl wrote:
-> This is a preparation for a future cleanup. Pass struct pwm_device
-> instead of passing the individual values required by each function as
-> these can be obtained for each struct pwm_device instance.
-> 
-> As a nice side-effect the driver now uses "switch (pwm->hwpwm)"
-> everywhere. Before some functions used "switch (id)" while others used
-> "switch (pwm->hwpwm)".
-> 
-> No functional changes.
+> Simplify the code which fetches the input clock for a PWM channel by
+> using devm_clk_get_optional().
+> This comes with a small functional change: previously all errors except
+> EPROBE_DEFER were ignored. Now all other errors are also treated as
+> errors. If no input clock is present devm_clk_get_optional() will return
+> NULL instead of an error which matches the behavior of the old code.
 > 
 > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > ---
->  drivers/pwm/pwm-meson.c | 15 +++++++--------
->  1 file changed, 7 insertions(+), 8 deletions(-)
+>  drivers/pwm/pwm-meson.c | 11 +++--------
+>  1 file changed, 3 insertions(+), 8 deletions(-)
 > 
 > diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
-> index 5fef7e925282..3fbbc4128ce8 100644
+> index 3fbbc4128ce8..35b38c7201c3 100644
 > --- a/drivers/pwm/pwm-meson.c
 > +++ b/drivers/pwm/pwm-meson.c
-> @@ -183,15 +183,14 @@ static int meson_pwm_calc(struct meson_pwm *meson,
+> @@ -474,14 +474,9 @@ static int meson_pwm_init_channels(struct meson_pwm *meson,
+>  
+>  		snprintf(name, sizeof(name), "clkin%u", i);
+>  
+> -		channel->clk_parent = devm_clk_get(dev, name);
+> -		if (IS_ERR(channel->clk_parent)) {
+> -			err = PTR_ERR(channel->clk_parent);
+> -			if (err == -EPROBE_DEFER)
+> -				return err;
+> -
+> -			channel->clk_parent = NULL;
+> -		}
+> +		channel->clk_parent = devm_clk_get_optional(dev, name);
+> +		if (IS_ERR(channel->clk_parent))
+> +			return PTR_ERR(channel->clk_parent);
+>  	}
+>  
 >  	return 0;
->  }
->  
-> -static void meson_pwm_enable(struct meson_pwm *meson,
-> -			     struct meson_pwm_channel *channel,
-> -			     unsigned int id)
-> +static void meson_pwm_enable(struct meson_pwm *meson, struct pwm_device *pwm)
->  {
-> +	struct meson_pwm_channel *channel = pwm_get_chip_data(pwm);
->  	u32 value, clk_shift, clk_enable, enable;
->  	unsigned int offset;
->  	unsigned long flags;
->  
-> -	switch (id) {
-> +	switch (pwm->hwpwm) {
->  	case 0:
->  		clk_shift = MISC_A_CLK_DIV_SHIFT;
->  		clk_enable = MISC_A_CLK_EN;
-> @@ -228,12 +227,12 @@ static void meson_pwm_enable(struct meson_pwm *meson,
->  	spin_unlock_irqrestore(&meson->lock, flags);
->  }
->  
-> -static void meson_pwm_disable(struct meson_pwm *meson, unsigned int id)
-> +static void meson_pwm_disable(struct meson_pwm *meson, struct pwm_device *pwm)
->  {
->  	u32 value, enable;
->  	unsigned long flags;
->  
-> -	switch (id) {
-> +	switch (pwm->hwpwm) {
->  	case 0:
->  		enable = MISC_A_EN;
->  		break;
-> @@ -266,7 +265,7 @@ static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
->  		return -EINVAL;
->  
->  	if (!state->enabled) {
-> -		meson_pwm_disable(meson, pwm->hwpwm);
-> +		meson_pwm_disable(meson, pwm);
->  		channel->state.enabled = false;
->  
->  		return 0;
-> @@ -293,7 +292,7 @@ static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
->  	}
->  
->  	if (state->enabled && !channel->state.enabled) {
-> -		meson_pwm_enable(meson, channel, pwm->hwpwm);
-> +		meson_pwm_enable(meson, pwm);
->  		channel->state.enabled = true;
->  	}
->  
 > 
 
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
