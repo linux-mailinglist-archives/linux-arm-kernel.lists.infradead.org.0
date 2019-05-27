@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 305902BA1F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 20:28:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10F5C2BA2C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 20:33:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xyW+ltD38wefN+s58MuLmSsxZKLCPkV5OlPEX4+j9Q8=; b=Hs86TkuG+Kx2bj
-	iNr+me/HN+dnG0tgExo858e6rN/QKW0btUHoMRfkdlcc/OOExMlX5L4E7xtaW/iMVACPMGRjJG799
-	J1358drW9LQugQbjiSw2k9np62OjuDPqZsPu3rjma6zhGPlhAvOLBzVfZhGeldZXnMzpb3pA1WzAt
-	HnrS4asbIADjMbVWZTzT9IztFfYi9i9E6JNRbiHYBfoDoZzOl8dPJb9s6quvzcYtXsbKsOR/wM1yn
-	+auF/k+rYgOXpySEIK60+qmpKPG19AuPqvXofxI7G5Rm4H6uQtmzn3zgKRVysqJBThDTMR6rOEL4L
-	SCWQa2ZZgneQOpwdLUcA==;
+	List-Owner; bh=xsKa1vbqXeq8a0w73ZVPyr018rNU0hQYGgi9dGqrg+A=; b=SBxvRWHvWNC6g9
+	9G8YbJUsg/gLz+2rGIAlM1XIa2ss1JjooZGBw1bsH/+XQaB8p7s34YQTXszxV50agBAuN9Up4sp57
+	klj6rSwH4ao5NNsn8u/S9dfMZtSzjtMtJo8BG0GY3DXA26TXm8yIRvPaQwLEDy6+3dPvHA7QdUf+K
+	1btlKmAad6lSLJBTkfLUAd0DsLrSLDRRk9g8wAJjgtczzXK0y7xdkI9KsNuO1dk9mKjw/0Fenfm6k
+	KE/46f4+Tgjg4Q+0BKedqfs4yOmxlZTD1A8dVm463vV/siMYlPNoesacIoaLLpFg1xCVNWM+BRskF
+	COuF0OYR1PqatSbBOgoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVKLx-0007WD-Rs; Mon, 27 May 2019 18:28:09 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1hVKQx-0000xF-NS; Mon, 27 May 2019 18:33:19 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVKLp-0007VH-Iq; Mon, 27 May 2019 18:28:02 +0000
-Received: by mail-oi1-x243.google.com with SMTP id z65so12448994oia.11;
- Mon, 27 May 2019 11:28:01 -0700 (PDT)
+ id 1hVKQp-0000wA-1n; Mon, 27 May 2019 18:33:12 +0000
+Received: by mail-oi1-x242.google.com with SMTP id f4so12467618oib.4;
+ Mon, 27 May 2019 11:33:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wseEiwf2iDxEx0rB6+bstHWLvTH8+Jm8S/2DOnZEoi0=;
- b=U4DCnRER3Bo6N+YBQxNx5r8BgFCch9KSnniaEr49R7m55UNQtYzfvpxNgR0+hZ07dk
- ruQ0Sn/8fhPl2/tfFl6c2jn9N2fIdH+XhAAXLvCA4kqSAwyHFw7eHic6OZxxPXL+AE1k
- H3TbEeSrYrXRSTzCaxdNCYQ0h4NhvWgLwWh6D4sufX/FXiEmldm7jgDK4QKI/LSRyWYS
- Kz7OEw5lcbqIzeigKpu8jNJ9dCaIfJW8siWZZ8fDOa48812IBYJ/86Moowk9etD/dmWS
- S5P5JVOBPr6OXKKwv1mvSuuYYiWNywvQSa66j+CN+AuD7RqiRbn8xIhIzUjRjhHPuM40
- f0RQ==
+ :cc; bh=S+zfvQdj9FnUsclchCusxb5xJgJGQtK3Vq/yGcWOHbM=;
+ b=Qwju68uT26kSUsNGz9ECyX/QmQIUYdN0bXLJQ2iqz9YUkr7O0pMNJQfbARhG4gw6/Q
+ KTobXi+lze+W5BZKejwZx08yynKbyloFDgDk/VGCKMER+VEmJ60guYTJb0GHQ7MFCdkf
+ x+Rbun65sC8s8UBKooH8StlKmW18EcM1P3ctHRETKl0NLrG2BckZU7cqNCEQAkPGJ5xj
+ G+Hxde8BLzqNS+CRaaI6e0DFnfaj7eZZ/PYVxbkhdmKi0Maj7bfVOOtVuOEnZ/Cs/Sey
+ AGm7NAle/1CeA16DmFkAtWXxN+c0yxxJN8oeRaUJZq2vksaws9kf+Tuyb3HdJAVJXclz
+ EUyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=wseEiwf2iDxEx0rB6+bstHWLvTH8+Jm8S/2DOnZEoi0=;
- b=i45Z05CfywNbMj/VOlqncVNLN5Cb6ydYsynAevij1bMs02g1fGS7Hjc9jH2rxukily
- Lfu8/kHMaOZf6NoLJAliKuRG5EdzlUQ//OwY1TG2MyZE0Qh2ZbMZzolHhm3jS3Jz+GLo
- TPWG/QU13S8WizOwJsnvot3fh0gqKk0xtwRxX8AbGRU6cOzIHLA8Sk3OOtcnqL2WZHLa
- Jyb2DhHa14vT28wJvi9Su5DboAbCm3iWSbVQQq+OwfBhAxHkTEft4mIsDmdKKvRjLXkB
- qY/l7XqaZ38fzOhhhGkHYv9HK8VmS5RTUqwTxTr9wmgvQNrUu9N3yDfGWU38wApbDnHf
- h2Sg==
-X-Gm-Message-State: APjAAAXWXy0637Bi0oHk7ISJaWr8zzACzWkHjIRgg0hPPDL/vXRrkbo9
- YfXqZZrxBXGAxznfXg06/Zh4yBXDpPAr/F13GPU=
-X-Google-Smtp-Source: APXvYqwbfigH3TZlE9H2ckoSvg4wg8rLamp2jsQJnsfdYO0iUsmSoQWOoyFjfHYjDukhRzfcHFO1gwm7ahn3PyklXkU=
-X-Received: by 2002:aca:f144:: with SMTP id p65mr194565oih.47.1558981680480;
- Mon, 27 May 2019 11:28:00 -0700 (PDT)
+ bh=S+zfvQdj9FnUsclchCusxb5xJgJGQtK3Vq/yGcWOHbM=;
+ b=H6twrkkDLX/HRxBe44orF5GKNVJtYMNzFlmn3IDRfnq/tI3H+yCqxt9309i7wHl/jD
+ 01cHC73xeH4kp0GAMHkYI3KW+algmoFchCo2u0xu4ueLC3PDIH0BDnELGndde2EWJ6Su
+ YG1vSfRmziN/l4u8KTSQk2bOCLwMcoiOUgkNa2SuiYrtZ6dbTpQ4HffXlSsqzlGoaRPN
+ uDNfo2BypDeyAcivdgk7XDlDpvLFFDOgWVvxO6hkkNn2SNydzVKwfpVKXWC9AAysMfpw
+ sFKy1feTQwcVhENp/BAJJ+2QRB6NQGZf8fNQwY9pILNOL3dM4SItLbqlZQe/Dnb6VOHM
+ 78XA==
+X-Gm-Message-State: APjAAAXVyO9Vf0nxENAlJou3RJ2YbMup7TVutEVOHyzfbwE2w+BkTmb+
+ k1QdG3R0OHma8z3DF3DX23lW1wIOKHrsKpiN0dU=
+X-Google-Smtp-Source: APXvYqySfT2vqPTVM4SYEzWI5e34ATqeldWvpzGysG2wnPt7WXQGJZSA/rBCSZvvFctmaav3G5VWvp/bJDDNojbX7Oc=
+X-Received: by 2002:aca:3545:: with SMTP id c66mr199156oia.129.1558981990179; 
+ Mon, 27 May 2019 11:33:10 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190527132200.17377-1-narmstrong@baylibre.com>
- <20190527132200.17377-10-narmstrong@baylibre.com>
-In-Reply-To: <20190527132200.17377-10-narmstrong@baylibre.com>
+ <20190527132200.17377-2-narmstrong@baylibre.com>
+In-Reply-To: <20190527132200.17377-2-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 27 May 2019 20:27:49 +0200
-Message-ID: <CAFBinCBZr7nSnNTGO5upowuT48-pcR57VU7-zaxZ3Ocb-tZ1sA@mail.gmail.com>
-Subject: Re: [PATCH 09/10] arm64: dts: meson-gxbb-vega-s95: fix WiFi/BT module
- support
+Date: Mon, 27 May 2019 20:32:59 +0200
+Message-ID: <CAFBinCBhdJdHzof0jmy65GHnQi6b8A+tmBUvhZJAf_Nbw1ADvw@mail.gmail.com>
+Subject: Re: [PATCH 01/10] arm64: dts: meson-gxm-khadas-vim2: fix
+ gpio-keys-polled node
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_112801_620646_158BBD9D 
-X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-CacheID: sfid-20190527_113311_116914_7972C1E3 
+X-CRM114-Status: UNSURE (   8.99  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -94,7 +94,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, christianshewitt@gmail.com,
+Cc: khilman@baylibre.com, Christian Hewitt <christianshewitt@gmail.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -102,16 +102,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 3:24 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+On Mon, May 27, 2019 at 3:22 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> Fix the SDIO WiFi support and add proper Bluetooth support on the
-> Vega S95 board.
+> From: Christian Hewitt <christianshewitt@gmail.com>
 >
+> Fix DTC warnings:
+>
+> meson-gxm-khadas-vim2.dtb: Warning (avoid_unnecessary_addr_size):
+>    /gpio-keys-polled: unnecessary #address-cells/#size-cells
+>         without "ranges" or child "reg" property
+>
+> Fixes: b8b74dda3908 ("ARM64: dts: meson-gxm: Add support for Khadas VIM2")
 > Suggested-by: Christian Hewitt <christianshewitt@gmail.com>
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-I'm the cause of everything that needed fixing here. thank you for
-taking care of this, the result looks much better now:
 Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+as well as:
+Tested-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
+> ---
+>  arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts | 4 +---
+there are more boards with the same "problem" out there
+we should clean these up at some point as well
+
+
+Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
