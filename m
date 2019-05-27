@@ -2,99 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E71742B211
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 12:22:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76F172B221
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 12:31:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kQalpuYY3wedBi3WmfC/jiEEm3LOjufVRZUEs4aHB2s=; b=I0MWHGKoBIbQgJ
-	YrL7xfu4h6EIAnUrOaOzsZ/YblivtYY9xwfDHYlSawfEesNvcG/TNV4Ibdkgb8EH3FqRLcCxhElpI
-	FKOTDZIM24zF9PXA/OLzRxSgE0im/VjSXJM+aVimjRtisiwDRgIutwYNF8WnTFz6+RzOEfSPnLggo
-	15RTz9El71l4gY/An1Ild1YkgkSs0BLtSlMJGGzzl398qIZWYXkvkXlsUjyjWsHKrZnsXSa/RTODs
-	liSRZOlMdaUpCKMQR+RGNZkU11V0HPmfnLEJJ9yyQHyFOeVP5miIj4R7jPGwP98GDmNUCI2dixRII
-	/aQkdmRdk02EZHyOA93Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mExKbSTZdYw53pGJXnJo7vEv35eTebeFxwkjsx+WYmo=; b=AUEwFZLzlodTY1
+	/0O08tzHWUyooUVqBlbh9gt1mu3FiTjmhRG01g+I8ErI99UOHo+h/WxtMDdABSfNbOgaQ2DW97NHd
+	wyCLGuuDK+gYz7VCGExigdF2no9tzEIQJ7m2AoKh7e8gxNq9cJF5Pziao0oyOsW+qy4Kfq9RsGOCO
+	xXRDoDeaFCj1zy76b4qzYLxhOPAMHFw+K+3akP0zLNijstdS73d3N1ez/qPNYfrZDK+z9CPJjgQ8N
+	5sNaAySZU+61pAyHENJswvlolrlJmwuT5XJKr5mMTg7CYX476yUToH9CEH/Y5B3yHgauFmA5m8bSY
+	4utQgIThTU4zKjyRHHzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVCmI-00070w-Cx; Mon, 27 May 2019 10:22:50 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hVCus-0002EV-Ia; Mon, 27 May 2019 10:31:42 +0000
+Received: from lb2-smtp-cloud9.xs4all.net ([194.109.24.26])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVClT-0006Jk-UV
- for linux-arm-kernel@lists.infradead.org; Mon, 27 May 2019 10:22:10 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4RAGcSf031336; Mon, 27 May 2019 12:21:49 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : in-reply-to : references : mime-version : content-type
- : content-transfer-encoding; s=STMicroelectronics;
- bh=wps+SDKyn14/sTW3Eret7RKWvrgnINJUAp0gJ+ptxDk=;
- b=gvnKygsUyE2/7zsLmyK3byjlXUl15AlFFGnZXXay4/tht9zRv0eFUjQgboXgGkVkG6Ju
- h6ku6Z4gIaLCcqeKKfwVIPusDk/0Oy3k+890b3+4a4eN6K/7Wa9E6UX937/Jk0ASBT28
- GIsazNr4pqEgE5PqEB56/cMIKYtdOV2AP+YzakDwVLsDTBBc0d1tmcSwc43jyCFgGZ45
- UuyhgsE9EvSEnT6EvTr4+zJYzQl6Z1n2kVnBN4V/LMmptiT7oARZ9K6focryReCaPmPt
- GNzKaHf/PobBU0uG+2eq0wsvL/C9U6wYA74KR82gQQe4LI8RRhCOwuLAjD1kKNDzKcD1 uQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2sptu9jjhj-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 27 May 2019 12:21:49 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C31B531;
- Mon, 27 May 2019 10:21:48 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 89C692805;
- Mon, 27 May 2019 10:21:48 +0000 (GMT)
-Received: from SAFEX1HUBCAS23.st.com (10.75.90.47) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 27 May
- 2019 12:21:48 +0200
-Received: from localhost (10.201.23.97) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 27 May 2019 12:21:48
- +0200
-From: =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>
-To: Andrzej Hajda <a.hajda@samsung.com>, Laurent Pinchart
- <Laurent.pinchart@ideasonboard.com>,
- David Airlie <airlied@linux.ie>, "Daniel Vetter" <daniel@ffwll.ch>,
- Heiko Stuebner <heiko@sntech.de>, Sam Ravnborg <sam@ravnborg.org>,
- Yannick Fertre <yannick.fertre@st.com>, Nickey
- Yang <nickey.yang@rock-chips.com>, Philippe Cornu <philippe.cornu@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>, Vincent Abriou
- <vincent.abriou@st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- <dri-devel@lists.freedesktop.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v1 2/2] drm/stm: dsi: add power on/off phy ops
-Date: Mon, 27 May 2019 12:21:39 +0200
-Message-ID: <1558952499-15418-3-git-send-email-yannick.fertre@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1558952499-15418-1-git-send-email-yannick.fertre@st.com>
-References: <1558952499-15418-1-git-send-email-yannick.fertre@st.com>
+ id 1hVCuj-0002Bb-Ng; Mon, 27 May 2019 10:31:35 +0000
+Received: from [IPv6:2001:983:e9a7:1:10b2:2e62:e4b1:bd13]
+ ([IPv6:2001:983:e9a7:1:10b2:2e62:e4b1:bd13])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id VCuehaL2PsDWyVCufhYhnd; Mon, 27 May 2019 12:31:29 +0200
+Subject: Re: [PATCH v6 3/4] media: meson: add v4l2 m2m video decoder driver
+To: Neil Armstrong <narmstrong@baylibre.com>,
+ Maxime Jourdan <mjourdan@baylibre.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>
+References: <20190514135612.30822-1-mjourdan@baylibre.com>
+ <20190514135612.30822-4-mjourdan@baylibre.com>
+ <07af1a22-d57c-aff6-b476-98fbf72135c1@xs4all.nl>
+ <480f2c43-9858-a4d3-7a6b-452756fb6076@baylibre.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <79491b42-9296-1dfd-59ec-3ce7d58b2119@xs4all.nl>
+Date: Mon, 27 May 2019 12:31:28 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-Originating-IP: [10.201.23.97]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-27_07:, , signatures=0
+In-Reply-To: <480f2c43-9858-a4d3-7a6b-452756fb6076@baylibre.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfCEa+gP20jycLyMtenMCXcxM2gS9GjwMobnKRsYfUiIMNSzGAirKt25OGsqJdWYV0Fv4hkRA2qRYQ5o0rDb11LEAeCMqQ4VvUKgDsJdKkkbGFCXcRwk9
+ H6HGVLolhV38puvk4WhdM1T5ZRgxrfpgbBEoatQfmx4z1z6rgJFwOIUJ3kfWrHYo9b4ngdSphORL/7YI0nX5mFyYaCmkJvP4xAHi8Wa54HjtS7m/wwf9P6BD
+ h3aAiv3hrOU3kjpRqAQDp40SUnH58KbOgs3P/xN2YHHU9gA7P+NxONgl2zpyiWiEqcmxdvQY4aycGJIi+mi7X2r4rUJaAJzFqHv941kglABR2bix3FyXYxd0
+ nIuhkqVrGekPqTajgEPUWr9LDMd05Gf/jr5+/Cj8hNHOT32tN7Q6xsKjqKFWA7ca5k67bmcjJuMAysSmyLlkPN67gn3HQtrBdZfdNSpgiyembennkdY3rhq/
+ Kzua5JWlTGpdRtFgFKIC0p6pm7yz9Y6YH9LsT21pTgS7x/CW81fO9Oxxzu1+c55qoNLQJ75f4qSH+R1OnhZNICAkTiNEjtpnZOSsoL2yDuBTxJQY495DP5GL
+ GOM43G+h4TovvmGSt2n7jKUYxRJySrBO9wXfzILfbBVyS8sygE1C4kMLqyOlcM/bphQSmjC/QtTsDmTCs2jtMDAk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_032200_871424_C47E56C5 
-X-CRM114-Status: GOOD (  13.31  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190527_033133_932713_478164EA 
+X-CRM114-Status: GOOD (  19.72  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [194.109.24.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,38 +71,183 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Hans Verkuil <hans.verkuil@cisco.com>, linux-amlogic@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlc2UgbmV3IHBoeXNpY2FsIG9wZXJhdGlvbnMgYXJlIGhlbHBmdWwgdG8gcG93ZXJfb24vb2Zm
-IHRoZSBkc2kKd3JhcHBlci4gSWYgdGhlIGRzaSB3cmFwcGVyIGlzIHBvd2VyZWQgaW4gdmlkZW8g
-bW9kZSwgdGhlIGRpc3BsYXkKY29udHJvbGxlciAobHRkYykgcmVnaXN0ZXIgYWNjZXNzIHdpbGwg
-aGFuZyB3aGVuIERTSSBmaWZvcyBhcmUgZnVsbC4KClNpZ25lZC1vZmYtYnk6IFlhbm5pY2sgRmVy
-dHLDqSA8eWFubmljay5mZXJ0cmVAc3QuY29tPgotLS0KIGRyaXZlcnMvZ3B1L2RybS9zdG0vZHdf
-bWlwaV9kc2ktc3RtLmMgfCAyMSArKysrKysrKysrKysrKysrKysrKy0KIDEgZmlsZSBjaGFuZ2Vk
-LCAyMCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9n
-cHUvZHJtL3N0bS9kd19taXBpX2RzaS1zdG0uYyBiL2RyaXZlcnMvZ3B1L2RybS9zdG0vZHdfbWlw
-aV9kc2ktc3RtLmMKaW5kZXggMDFkYjAyMC4uMGFiMzJmZSAxMDA2NDQKLS0tIGEvZHJpdmVycy9n
-cHUvZHJtL3N0bS9kd19taXBpX2RzaS1zdG0uYworKysgYi9kcml2ZXJzL2dwdS9kcm0vc3RtL2R3
-X21pcGlfZHNpLXN0bS5jCkBAIC0yMTAsMTAgKzIxMCwyNyBAQCBzdGF0aWMgaW50IGR3X21pcGlf
-ZHNpX3BoeV9pbml0KHZvaWQgKnByaXZfZGF0YSkKIAlpZiAocmV0KQogCQlEUk1fREVCVUdfRFJJ
-VkVSKCIhVElNRU9VVCEgd2FpdGluZyBQTEwsIGxldCdzIGNvbnRpbnVlXG4iKTsKIAorCXJldHVy
-biAwOworfQorCitzdGF0aWMgdm9pZCBkd19taXBpX2RzaV9waHlfcG93ZXJfb24odm9pZCAqcHJp
-dl9kYXRhKQoreworCXN0cnVjdCBkd19taXBpX2RzaV9zdG0gKmRzaSA9IHByaXZfZGF0YTsKKwor
-CURSTV9ERUJVR19EUklWRVIoIlxuIik7CisKIAkvKiBFbmFibGUgdGhlIERTSSB3cmFwcGVyICov
-CiAJZHNpX3NldChkc2ksIERTSV9XQ1IsIFdDUl9EU0lFTik7Cit9CiAKLQlyZXR1cm4gMDsKK3N0
-YXRpYyB2b2lkIGR3X21pcGlfZHNpX3BoeV9wb3dlcl9vZmYodm9pZCAqcHJpdl9kYXRhKQorewor
-CXN0cnVjdCBkd19taXBpX2RzaV9zdG0gKmRzaSA9IHByaXZfZGF0YTsKKworCURSTV9ERUJVR19E
-UklWRVIoIlxuIik7CisKKwkvKiBEaXNhYmxlIHRoZSBEU0kgd3JhcHBlciAqLworCWRzaV9jbGVh
-cihkc2ksIERTSV9XQ1IsIFdDUl9EU0lFTik7CiB9CiAKIHN0YXRpYyBpbnQKQEAgLTI4Nyw2ICsz
-MDQsOCBAQCBkd19taXBpX2RzaV9nZXRfbGFuZV9tYnBzKHZvaWQgKnByaXZfZGF0YSwgY29uc3Qg
-c3RydWN0IGRybV9kaXNwbGF5X21vZGUgKm1vZGUsCiAKIHN0YXRpYyBjb25zdCBzdHJ1Y3QgZHdf
-bWlwaV9kc2lfcGh5X29wcyBkd19taXBpX2RzaV9zdG1fcGh5X29wcyA9IHsKIAkuaW5pdCA9IGR3
-X21pcGlfZHNpX3BoeV9pbml0LAorCS5wb3dlcl9vbiA9IGR3X21pcGlfZHNpX3BoeV9wb3dlcl9v
-biwKKwkucG93ZXJfb2ZmID0gZHdfbWlwaV9kc2lfcGh5X3Bvd2VyX29mZiwKIAkuZ2V0X2xhbmVf
-bWJwcyA9IGR3X21pcGlfZHNpX2dldF9sYW5lX21icHMsCiB9OwogCi0tIAoyLjcuNAoKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 5/27/19 12:18 PM, Neil Armstrong wrote:
+> Hi Hans,
+> 
+> On 27/05/2019 12:04, Hans Verkuil wrote:
+>> Hi Maxime,
+>>
+>> First a high-level comment: I think this driver should go to staging.
+>> Once we finalize the stateful decoder spec, and we've updated the
+>> v4l2-compliance test, then this needs to be tested against that and
+>> only if it passes can it be moved out of staging.
+> 
+> I don't understand the reason since other stateful codecs are already
+> mainline and doesn't match the in-discussion stateful decoder spec either.
+
+With new drivers we should do better: I don't want to add such drivers
+without them being fully tested for API compliance.
+
+There is a bit too much variation in existing drivers and the main reason
+for that was lack of compliance testing. We're close to having a proper
+spec and proper compliance tests, but as long as that's not finalized I
+want to keep new codec drivers in staging.
+
+Once the compliance tests are available, then we have an objective way
+of checking if a codec driver is following the spec.
+
+Existing codec drivers in mainline will also have to be checked, for that
+matter.
+
+Regards,
+
+	Hans
+
+> 
+> Neil
+> 
+>>
+>> It is just a bit too soon to have this in mainline at this time.
+>>
+>> One other comment below:
+>>
+>> On 5/14/19 3:56 PM, Maxime Jourdan wrote:
+>>> Amlogic SoCs feature a powerful video decoder unit able to
+>>> decode many formats, with a performance of usually up to 4k60.
+>>>
+>>> This is a driver for this IP that is based around the v4l2 m2m framework.
+>>>
+>>> It features decoding for:
+>>> - MPEG 1
+>>> - MPEG 2
+>>>
+>>> Supported SoCs are: GXBB (S905), GXL (S905X/W/D), GXM (S912)
+>>>
+>>> There is also a hardware bitstream parser (ESPARSER) that is handled here.
+>>>
+>>> Tested-by: Neil Armstrong <narmstrong@baylibre.com>
+>>> Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
+>>> ---
+>>>  drivers/media/platform/Kconfig                |   10 +
+>>>  drivers/media/platform/meson/Makefile         |    1 +
+>>>  drivers/media/platform/meson/vdec/Makefile    |    8 +
+>>>  .../media/platform/meson/vdec/codec_mpeg12.c  |  209 ++++
+>>>  .../media/platform/meson/vdec/codec_mpeg12.h  |   14 +
+>>>  drivers/media/platform/meson/vdec/dos_regs.h  |   98 ++
+>>>  drivers/media/platform/meson/vdec/esparser.c  |  323 +++++
+>>>  drivers/media/platform/meson/vdec/esparser.h  |   32 +
+>>>  drivers/media/platform/meson/vdec/vdec.c      | 1071 +++++++++++++++++
+>>>  drivers/media/platform/meson/vdec/vdec.h      |  265 ++++
+>>>  drivers/media/platform/meson/vdec/vdec_1.c    |  229 ++++
+>>>  drivers/media/platform/meson/vdec/vdec_1.h    |   14 +
+>>>  .../media/platform/meson/vdec/vdec_ctrls.c    |   51 +
+>>>  .../media/platform/meson/vdec/vdec_ctrls.h    |   14 +
+>>>  .../media/platform/meson/vdec/vdec_helpers.c  |  441 +++++++
+>>>  .../media/platform/meson/vdec/vdec_helpers.h  |   80 ++
+>>>  .../media/platform/meson/vdec/vdec_platform.c |  107 ++
+>>>  .../media/platform/meson/vdec/vdec_platform.h |   30 +
+>>>  18 files changed, 2997 insertions(+)
+>>>  create mode 100644 drivers/media/platform/meson/vdec/Makefile
+>>>  create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.c
+>>>  create mode 100644 drivers/media/platform/meson/vdec/codec_mpeg12.h
+>>>  create mode 100644 drivers/media/platform/meson/vdec/dos_regs.h
+>>>  create mode 100644 drivers/media/platform/meson/vdec/esparser.c
+>>>  create mode 100644 drivers/media/platform/meson/vdec/esparser.h
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec.c
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec.h
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_1.c
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_1.h
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.c
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_ctrls.h
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.c
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_helpers.h
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.c
+>>>  create mode 100644 drivers/media/platform/meson/vdec/vdec_platform.h
+>>>
+>>
+>> <snip>
+>>
+>>> diff --git a/drivers/media/platform/meson/vdec/vdec_ctrls.c b/drivers/media/platform/meson/vdec/vdec_ctrls.c
+>>> new file mode 100644
+>>> index 000000000000..d5d6b1b97aa5
+>>> --- /dev/null
+>>> +++ b/drivers/media/platform/meson/vdec/vdec_ctrls.c
+>>> @@ -0,0 +1,51 @@
+>>> +// SPDX-License-Identifier: GPL-2.0+
+>>> +/*
+>>> + * Copyright (C) 2018 BayLibre, SAS
+>>> + * Author: Maxime Jourdan <mjourdan@baylibre.com>
+>>> + */
+>>> +
+>>> +#include "vdec_ctrls.h"
+>>> +
+>>> +static int vdec_op_g_volatile_ctrl(struct v4l2_ctrl *ctrl)
+>>> +{
+>>> +	struct amvdec_session *sess =
+>>> +	      container_of(ctrl->handler, struct amvdec_session, ctrl_handler);
+>>> +
+>>> +	switch (ctrl->id) {
+>>> +	case V4L2_CID_MIN_BUFFERS_FOR_CAPTURE:
+>>> +		ctrl->val = sess->dpb_size;
+>>> +		break;
+>>> +	default:
+>>> +		return -EINVAL;
+>>> +	};
+>>> +
+>>> +	return 0;
+>>> +}
+>>> +
+>>> +static const struct v4l2_ctrl_ops vdec_ctrl_ops = {
+>>> +	.g_volatile_ctrl = vdec_op_g_volatile_ctrl,
+>>> +};
+>>> +
+>>> +int amvdec_init_ctrls(struct v4l2_ctrl_handler *ctrl_handler)
+>>> +{
+>>> +	int ret;
+>>> +	struct v4l2_ctrl *ctrl;
+>>> +
+>>> +	ret = v4l2_ctrl_handler_init(ctrl_handler, 1);
+>>> +	if (ret)
+>>> +		return ret;
+>>> +
+>>> +	ctrl = v4l2_ctrl_new_std(ctrl_handler, &vdec_ctrl_ops,
+>>> +		V4L2_CID_MIN_BUFFERS_FOR_CAPTURE, 1, 32, 1, 1);
+>>> +	if (ctrl)
+>>> +		ctrl->flags |= V4L2_CTRL_FLAG_VOLATILE;
+>>
+>> Why is this volatile? That makes little sense.
+>>
+>>> +
+>>> +	ret = ctrl_handler->error;
+>>> +	if (ret) {
+>>> +		v4l2_ctrl_handler_free(ctrl_handler);
+>>> +		return ret;
+>>> +	}
+>>> +
+>>> +	return 0;
+>>> +}
+>>> +EXPORT_SYMBOL_GPL(amvdec_init_ctrls);
+>>
+>> <snip>
+>>
+>> Regards,
+>>
+>> 	Hans
+>>
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
