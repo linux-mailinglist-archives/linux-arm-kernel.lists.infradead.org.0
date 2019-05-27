@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7431D2B996
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 19:53:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E87E2B9A5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 May 2019 19:57:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gjy3N9oaH7Sj9iBEMR0rxQrOj5hHk9/7pZS3gPywR54=; b=fhWfa4KuH0lIhO
-	5NQbmou9/Wu41asmObHtmNmehbUEwsOo0xlSr8KV5ZRZ8ncibkj7Vl1aJZ+P2cTGYt73M+bX30zEB
-	UIKvYXReho5BwbIkD3BwG9TekcldmdpzdLKlx1kpZRwjmvI2o9Z2RZQn1rYr2RnqROnJ7vrHN7AEH
-	R9lE5t/QZ74uxdmSCzBTDMwMU9+TxMpj49i875d6/t/r2uxjmrBJARI2NcfTVmtM7Oyno89MY1GFp
-	5znNu1G4qVt/vs0hsyjYI2nIYlQVDhhudGrx1VhV+JcCq3PbITX1a44kLNyZUqBajtx1A/ZcT0uAr
-	DtqcaStBLRr9gY5crJzA==;
+	List-Owner; bh=SIoodxwpeGuEoKTfUFnbdd5KTeA3wofoW/gWmuCcNOw=; b=HiOgr7iLtzPRtA
+	bjNdlbWh485FYOIWhC6cwyoa+BNhmC0erVnsmXQ7kRw2DSB+J4Xv7/oCcBSwCkY/w72OIuP9qY159
+	YFQz+b0q6zAwx8PPmALtqHe2hH9GZ6uoMLAhCzRERCZPjltnPmRnzl2MT5mc0O5ZI95G3aoiaUVqr
+	yyhA9Jt+izKQgB+voulXmvCubgGyCuUZ50qN2XhYqCAtSuIilAVkRFvdMekjHFrvphwSJqqCYvwQT
+	PKqN3seW7jWhGtzgn2x28jD9C4c2BeQNLkS6Wtm92K+x50CV74xU14wCV1g4r0msj7YYfJPBCV1tr
+	X0jFaw/FLf5rKYZumN+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVJo6-00036F-Az; Mon, 27 May 2019 17:53:10 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hVJsc-0006AT-L8; Mon, 27 May 2019 17:57:50 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVJnx-00034t-Nv; Mon, 27 May 2019 17:53:02 +0000
-Received: by mail-ot1-x344.google.com with SMTP id r10so15477859otd.4;
- Mon, 27 May 2019 10:53:01 -0700 (PDT)
+ id 1hVJsS-00069M-La; Mon, 27 May 2019 17:57:43 +0000
+Received: by mail-oi1-x241.google.com with SMTP id q186so12430439oia.0;
+ Mon, 27 May 2019 10:57:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=odU0SgbTEI5GhdwYmf/8HQWqSSD3RqQBq6W2Heqhv/g=;
- b=bxE/eExN9DUllzlPqfF6gBqDQmqz6kf3hkDdqXF1OsTTBF6tFi/jlwB0B9y4Hc1xs5
- wDNnDO4c5ec1MjJTgFAHYbmeozBgLYwg+wOlWfNWDz7p7NJfcI8gkPfUmZhCr8O2ZnRc
- K4h6PoOPb+FOMjip8VMFMe6JOg9IHvqG+j9zFUpmemOfdlOheyrZgVb38w7ychsQ26Pn
- eAXTK35CW404qo4h4pSJDwRZVGOPcXT1juOyfKEAzTDcSxqT2YmvCxcuITKtDRAaViyz
- 3PO0j0f4K4yYEgQtf/xfQs2N/j62Pr0SEMMG4M5cMkWC0rbkMZ0x5x50PANo7U04AoOW
- RsbQ==
+ :cc; bh=hDEYY5ygEYM7eB8269ZdfC9BLmmN/DHPKYh4QFppUlg=;
+ b=ToqlEVP2NUqk1yF13crV2WHETC3Rsq4ZiR2PYfd/TyWMJVA6FhZGrByCR6zCejUNzX
+ H6kN3G6X15TWMGk7g5ytqjtUJDlelgsy6siA8+nqU6ejM8qsDp6RG8U+k6SQgI0QogBs
+ kvVja4Yi/60/tOSkYZB/Y3SJRzQFyoHtkbEk6V9z8W6L1HWWEUL8A8i8+MnAj7PdRTk7
+ klyBlz4jTut2pFPOc4O/mT2mnfPwflAZQYVx5Tcx7RP90t1YgaS3NWbfqaMemxgWisUW
+ 3DQhU3KWZ4LKOmQqVzvxmQDF8FcTcjxebNuN+CcE9kiBuMNLEnX1f8DBCrbYIdzJe5+C
+ f80A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=odU0SgbTEI5GhdwYmf/8HQWqSSD3RqQBq6W2Heqhv/g=;
- b=hYdMVve8Yxa0hE8bKlVwZXq7Ob6I3AD4Iupq51s6ttxlzubcAsmwhGF5hFPMewQQKh
- tHIS/PtFjPSbCa9YFShYu8T/R0jKvxbG3jYS8BmCghevno4grH+M6nRijJh9MoHyIHWm
- 8RtBOWAp3uAeY5TbIrwOAHAXFkT7SXcge4RrARTpuCxa7nHsyBr0IiWkWa2pMndM8ZYr
- RiHcukr4lrx3C6kLgXqusAQK+bF6XIVnPPNwNWjURS7BIpxPjbDde/5Qq/Gr6kg0jYVu
- P75cSpxGEAG39ljF/p/plMYKKHyeVJcR/+Z1m+tQI8Fr9TIDPtMywk0UDZvhpBzwlLO0
- qH0A==
-X-Gm-Message-State: APjAAAUyZYy4rdy09CWEmLHJLhuFMg52a8tFf7vOdQvBCotEtQK5tAgz
- 1ToeWBlfKT3ovfu2r0JMX4RiN5MZrMVQ0nooK9ggFh7k/qY=
-X-Google-Smtp-Source: APXvYqzN00Cuv7RkZRm5zYVZtYYroc43LSaIjSU8KO/gl+bM0ccpLPNKsokyqH3WeTCV0u7HXvOhGtnnXYEw4k8FwJU=
-X-Received: by 2002:a9d:32a6:: with SMTP id u35mr61251110otb.81.1558979580496; 
- Mon, 27 May 2019 10:53:00 -0700 (PDT)
+ bh=hDEYY5ygEYM7eB8269ZdfC9BLmmN/DHPKYh4QFppUlg=;
+ b=Kf/hD3JcJ0cc2aWumlpDY0YT4UHIjMDZ4Q7pYljcPJbgybrA5oxugToLbhihCG+/ZY
+ z8mE8juqQOsShzvJdvXzVHoHTfelM+tl8Ku7/Hnub7IOdDTpXBR1t7wCIhIV6xfkFYfD
+ LEI5Y6iP85G93dS+xwUlsMzvm9g1GaNOCXN4oYSUAYEuORwm+1Ka0zsxz1+qNKP8izuY
+ PPzxtftEiJdyrdP2Fou0PH8cyrWbLmLtn7vXgyyXmOOsjCHXoNVUlSWdELlVVTzcOWWX
+ XYtbOx0t8+KftzIa+tbDU8kLvNfFdGMsaPFXCEonWjKjWdV5/e1F1DCv728EA1KKeggm
+ /2lQ==
+X-Gm-Message-State: APjAAAVP99mkeGPK/EUvLaCZ46TGYuVjTIN6AZj1oUF8pp0pQd+70ziu
+ N90YcLsRWP/N5Qh86OiasNd4Siu9cogLQfF0JyAZpyoc2t8=
+X-Google-Smtp-Source: APXvYqzab+WElPiNBsDpIzidV2Ij/UyqpF0GjvkeY5qPyeOb9lXKwJVd5EfTjjin5MC7D7V4d97PzrxHd9FeOB3RKqQ=
+X-Received: by 2002:aca:4341:: with SMTP id q62mr131767oia.140.1558979859769; 
+ Mon, 27 May 2019 10:57:39 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190525181133.4875-1-martin.blumenstingl@googlemail.com>
- <20190525181133.4875-8-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20190525181133.4875-8-martin.blumenstingl@googlemail.com>
+ <20190525181133.4875-9-martin.blumenstingl@googlemail.com>
+ <7d169605-e117-70d4-5c66-47d2f80f4d4e@baylibre.com>
+In-Reply-To: <7d169605-e117-70d4-5c66-47d2f80f4d4e@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 27 May 2019 19:52:49 +0200
-Message-ID: <CAFBinCAYaLd60ABFxEB28p4J7FO1PRaTZ+N6Ak1AnizAKGaxnw@mail.gmail.com>
-Subject: Re: [PATCH 07/14] pwm: meson: add the meson_pwm_channel data to
- struct meson_pwm
-To: linux-amlogic@lists.infradead.org, linux-pwm@vger.kernel.org, 
- thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de
+Date: Mon, 27 May 2019 19:57:28 +0200
+Message-ID: <CAFBinCCyVHAG3yum_ty2dWXGaScafRcNPU-bHjxaKu9kzr8xQA@mail.gmail.com>
+Subject: Re: [PATCH 08/14] pwm: meson: add the per-channel register offsets
+ and bits in a struct
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_105301_810072_996FBF77 
-X-CRM114-Status: UNSURE (   8.01  )
+X-CRM114-CacheID: sfid-20190527_105742_243219_0DD1CA6C 
+X-CRM114-Status: UNSURE (   6.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,24 +95,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ thierry.reding@gmail.com, u.kleine-koenig@pengutronix.de,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 25, 2019 at 8:11 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
+Hi Neil,
+
+On Mon, May 27, 2019 at 2:28 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 [...]
-> @@ -509,18 +509,13 @@ static int meson_pwm_probe(struct platform_device *pdev)
->         meson->chip.dev = &pdev->dev;
->         meson->chip.ops = &meson_pwm_ops;
->         meson->chip.base = -1;
-> -       meson->chip.npwm = 2;
-> +       meson->chip.npwm = MESON_NUM_PWM;
-I messed this up during rebase, the macro name is actually MESON_NUM_PWMS
-I'll re-send a fix so these patches can be bisected cleanly (patch 8
-fixes this typo accidentally)
+> This looks a little over-engineered, but it's correct :
+my main motivation was to "not copy the 20 line switch/case statement
+from meson_pwm_enable() to meson_pwm_get_state()"
+I extended the idea that already existed for the "mux_reg_shifts"
+array and made it work for "more than one value"
+
+please speak up if you have another idea in mind, maybe that makes the
+result even better
+
+
+Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
