@@ -2,55 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E02912C5DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 13:54:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 644BB2C602
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 13:59:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YWtmpfnwN71Nh1/TxO8Du5cQIZ1iMJbGUchaOaOJ3wE=; b=HXZ0KLUdJ8Vx0n
-	4g40OMOWK0Yqo2V/E7BQJRHT9oLJujuO/EQOLWQmreOfJGOEUOE7hjDsACDIJLJswrZaukJtUPYOX
-	sWp993y2nEeIldDxI8c03n6+bfBfkuloLqN5p4Ll0hMs9kISwz1oh65NlT/Ha32xu78MJJ9gmS5WP
-	4RaHRYjIUsRUm+DWayNueGlOrN/dJyOsVVpPX8SPIWhE1MfduqOMKdJpS8JyVuR0wwudFAZe72pdr
-	GtHaaljI5ajJ6upzzefqhU1901ryenjIWW1BLsMx36aHYpA1XQNxNCABhhRTyKMGzgCIUkChm+r9b
-	YvzXBuTgjp2RJTyWmBwQ==;
+	List-Owner; bh=6rVzXpQgw7bxB2jlak/QYauP9O7eHAj1IoFJPmIOQMw=; b=PqrUZL5f6KcR83
+	eovTXQjYSAcLG0dNCtCv+Oe3OSQTD/OcYdvCtuI8pugFQBPZ/E9JL0nqIrujpNGiY/JhvcLlycHps
+	H5KcVsxj/aa5nCZO/5nca1GKWDtOjKMZkFlM6Cv9dZCmsAHk6MSU/qSrX1p0KKUo1OMuepkPFs92j
+	VVN1XwQLrc/XkREE0f3L14VWAlgsBjZ5X2JfK03A7avHtHw87+QFTvA27FoRM+e2cTGbPFvbh474M
+	w1oYmtdZP6sYGIEek+dpQs8zq6KfqdGTJFczJqYS6nwzR4aEfVny0ep48nQGQ5dqYRYkUw0i199Dg
+	J+RXGUx/h4reiqe65htQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVag3-0005LA-9S; Tue, 28 May 2019 11:53:59 +0000
-Received: from galois.linutronix.de ([2a01:7a0:2:106d:700::1])
+	id 1hVald-0007Od-IC; Tue, 28 May 2019 11:59:45 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVafv-0005KR-CB
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 11:53:52 +0000
-Received: from bigeasy by Galois.linutronix.de with local (Exim 4.80)
- (envelope-from <bigeasy@linutronix.de>)
- id 1hVafq-0003mE-N3; Tue, 28 May 2019 13:53:46 +0200
-Date: Tue, 28 May 2019 13:53:46 +0200
-From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Subject: Re: LZ4 decompressor broken on ARM due to missing strchrnul() string
- traverse in cpumask_parse"
-Message-ID: <20190528115346.f5a7kn3hdnuf5rts@linutronix.de>
-References: <20190528110412.gg66fl67yahtwb6i@linutronix.de>
- <ffc779fe-3735-9665-8ee2-6a3ff1a7dd83@rasmusvillemoes.dk>
+ id 1hValW-0007OG-QZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 11:59:40 +0000
+Received: by mail-lj1-x242.google.com with SMTP id 188so17397315ljf.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 04:59:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+or866nusWv4sIZAHRqBmPt7yJXa7/be8EsGR10LEm8=;
+ b=VshVblWVa8bBpOKLD1nlhbSgP7XvLRsdjffLU59Xbt+lrg42lWiHBq3sFNPwzwxYiC
+ 51y4aQj/Eil5ih2XZV8i/R0NSJOi8NcSUWIfpm9ICzJBoNCzIh6zBpzoyt4asPQQMeIX
+ 2oQHj48gWAdhGAW2dM2KB0PNVvPqfxTss9NfV+zGbhR5VU7QGBvhCEugB3VIqrdFuttH
+ dtvEDujFr1oAMvcmdHsigyTN34jrW8GIqrrVslcj1ZmcRTzqqc7vBNmwnSBdjhn3S3O2
+ 91xSR6v8qJWF+msox/ZeTcGrXU52utJRkpA6qCEMLN2v8GXnmmmCIca9shIKBXU2BR6L
+ Xrmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+or866nusWv4sIZAHRqBmPt7yJXa7/be8EsGR10LEm8=;
+ b=i+/YLooASqIvuUKmBXKKWTzLq+XeQj0YORssEnCQkgomxu6BxPoW3p85Pht1qactV4
+ bA/jcmbbutoN7XDtapi8t7F5xpBRH+iusmEgtzFx6iEQsn5hgO4C1OughLzKWldsFuqz
+ PRtzyYGHDnZ3qcx1aBQcdo7n2ly8BJPjHhoKajcr0rwnif2PJndI3uHyuFzKMO89LI0r
+ epo+mgk0ptywIDisB4hG6RGLNzw44PYtfomz9TmsaDhGidsneKlCGGKXD8he+ZbzT1cj
+ 2i9acVT9aGF4s3HkLL/whGWdHZhCLst7LyppITqfXaVoFOfDiBIp878wLSGzJ5NmJYmK
+ dz6w==
+X-Gm-Message-State: APjAAAWFG7L9j03TKmJXTfU2F0J32vDAaaK00PKDw0q+tBX4ZlbZk7zY
+ NdnP8hSZ5CFFUbUIfBDZ6D7L3hfqpgsU6idZ/BJKDg==
+X-Google-Smtp-Source: APXvYqyxBMj2RX54aqttzirIb6LKh0hs5CrIZypA2bJ5dInIZSVvqwJsryS8pV4YU5/ob64LgpBMPki6YntwhXJKick=
+X-Received: by 2002:a2e:2b8f:: with SMTP id r15mr32444998ljr.196.1559044776905; 
+ Tue, 28 May 2019 04:59:36 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ffc779fe-3735-9665-8ee2-6a3ff1a7dd83@rasmusvillemoes.dk>
-User-Agent: NeoMutt/20180716
+References: <20190521082137.2889-1-wsa@the-dreams.de>
+ <20190521082137.2889-5-wsa@the-dreams.de>
+In-Reply-To: <20190521082137.2889-5-wsa@the-dreams.de>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 28 May 2019 13:59:25 +0200
+Message-ID: <CACRpkdYUA_tOFLpk7GEnAfqp+vyLCu6PDGLngCYG1E0F6RUkow@mail.gmail.com>
+Subject: Re: [PATCH 4/8] MAINTAINERS: add I2C DT bindings to Nomadik/U300
+ platforms
+To: Wolfram Sang <wsa@the-dreams.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_045351_554551_EE287F3E 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190528_045938_862966_2ECDFF7F 
+X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:7a0:2:106d:700:0:0:1 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,61 +93,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Morton <akpm@linux-foundation.org>, tglx@linutronix.de,
- Yury Norov <ynorov@marvell.com>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: linux-i2c@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-05-28 13:33:12 [+0200], Rasmus Villemoes wrote:
-> > How do we deal with this one?
-> 
-> Urgh. The problem is really in arch/arm/boot/compressed/decompress.c
-> which does
-> 
-> #define _LINUX_STRING_H_
-> 
-> preventing linux/string.h from providing strchrnul. It also #includes
-> asm/string.h, which for arm has a declaration of strchr(), explaining
-> why this didn't use to fail.
-> 
-> However, the solution is also in the same file, it already has a section
-> 
-> /* Not needed, but used in some headers pulled in by decompressors */
-> extern char * strstr(const char * s1, const char *s2);
-> extern size_t strlen(const char *s);
-> extern int memcmp(const void *cs, const void *ct, size_t count);
-> 
-> so just add another declaration to that list - I strongly assume we
-> won't get a link failure since I find it hard to believe the
-> decompressor would actually call cpumask_parse...
+On Tue, May 21, 2019 at 10:21 AM Wolfram Sang <wsa@the-dreams.de> wrote:
 
-The hunk at the bottom of this mail compiles. Care to send to formal
-patch?
+> Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
 
-> I'm wondering why this wasn't caught by 0day and/or while in -next?
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-must be related to lz4 usage in the configs tested :) A few set
-XZ/LZO/LZMA. Majority falls back to GZIP.
-
-> Rasmus
-
-diff --git a/arch/arm/boot/compressed/decompress.c b/arch/arm/boot/compressed/decompress.c
-index c16c1829a5e4f..05814c2b382a3 100644
---- a/arch/arm/boot/compressed/decompress.c
-+++ b/arch/arm/boot/compressed/decompress.c
-@@ -32,6 +32,7 @@
- extern char * strstr(const char * s1, const char *s2);
- extern size_t strlen(const char *s);
- extern int memcmp(const void *cs, const void *ct, size_t count);
-+extern char * strchrnul(const char *,int);
- 
- #ifdef CONFIG_KERNEL_GZIP
- #include "../../../../lib/decompress_inflate.c"
-
-Sebastian
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
