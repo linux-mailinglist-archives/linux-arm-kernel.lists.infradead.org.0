@@ -2,87 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 713D72C0E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:09:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCBE22C0E9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:09:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cqcCVEPPWCIWGql/fFwqMP+i2MpJpxKtI1p2LRU4Jl4=; b=ZkRBnKfZacgqvR
-	UaYiL9NDiqGjG0nDGk2Q3iszdFtFG4QwrMLHQGNFeVjElC6RZx9kk7i602A9kuWlssa+odiJonk5Q
-	90KX3vv76d88TavqFzzxfjY8VZvMNnSjWwFbVSC/04uSjdq4JtJ0LVTjt/0Gm2dZn9syS/2i9EOdR
-	oBnn7oPCmMbEKVJa900v7uyZxeoj9yk4EhS7cvwI2eHCvdBvKYNgAJymkxitslhiK7wRkR2jnjyWv
-	ZWn2gL7clZ72gXSwVnwbqtSt6+HPfEMc9oVNLU7192Fqw2ZE9ygZyVkWI3jAlzDDfuutgryTRVLIb
-	NpvvueoFd12zphsFbWJg==;
+	List-Owner; bh=RkhAhlPmLO+Mixo2WTTuWURSvbLxE6EKwTqcWQb/XE4=; b=aFLBvfapM+XBBu
+	fLHQi67yaqrlAILu/1HKYEyr1uCTY/Q250Q0iVA4fqOuuoGT7ONL8QByJdE8X4DWQ6I81aa+SxyGr
+	FzH0RPiYSu9Gsg266ZS1OcWms7Dg2qio19Ad4qDNbfs1WgIuAx2oXo7EKqZMvYk9oQ9OdSTD8jmsQ
+	7ixAg8HuS4vz47rMeSY2Qxlx2EsPNnyus7ei2uHTNN5jKY9jwfKzPPliIGIx51bvkQLhtO2Eem2OY
+	G7SjGBjoid4n6zg9t1E2u9LRKugGQAEZo8f2+2OfO5xavemWFY6BwanZPJveC5A+CbwcJuXA3va2g
+	d+5939laMVvQ6I6LsgLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVXAI-00030f-Nf; Tue, 28 May 2019 08:08:59 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hVXAh-0003Rf-1S; Tue, 28 May 2019 08:09:23 +0000
+Received: from mail-lj1-f195.google.com ([209.85.208.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVX9X-0002GH-7p
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:08:13 +0000
-Received: by mail-wr1-x443.google.com with SMTP id e2so10336360wrv.6
+ id 1hVXA3-0002rE-Bp
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:08:45 +0000
+Received: by mail-lj1-f195.google.com with SMTP id 188so16750695ljf.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 01:08:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=CL//C3ZWRy94QZXf1OCefDGPvk7lxcX63rkB08gtAL0=;
- b=T+9lv1CUPBY7+nH6hUamE+GmY2yjsCZdeXbGcWUTfKkdC2brA4WvKz118M+QdCKzqA
- T26S/U9q9f4yxgtsJvMeIXsRquyYqvHNnTO9BOsgwBZ7eZ9orheKBskPH9AKeGxWE0wB
- /Bnn+m6ev3TPdTClWioDpz/zFCATrTmTxuarBJHhwPBOmIBG1wuHEyJm2dvelAGVMLwq
- OIqBi44kCwbv9I4cmZD2YRtBxs7cY4ZWHqmWdaj4pSifcm3ehzivUGJy2Rlbs8r9katY
- Jjtcudwq/bn2HbUuS2cnt2MkgvTHotWH33avaiw/yvrI+xRL0bTAQWyAeWI9OY5LcdLb
- xd9g==
+ Tue, 28 May 2019 01:08:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=CL//C3ZWRy94QZXf1OCefDGPvk7lxcX63rkB08gtAL0=;
- b=X18WEHUblwXgHf/6Wo6a4P2uwsVoS6rEpchTGNFouwIqTqEP+iLBw7hggDQQwgR7tJ
- AYagdKagOKtElSz4zo5BmR4bmX9g130bpRPCz/1QC3yLyuNMSDCYQcPeQQDeQbSPPI3+
- URj4SC9+l3U0olbRjdvYkBDiZbtMR1aoYe7gr1TsEN8FibpwZgqjc2D0PV38Prscu2Wp
- T090tPo5RoaPTkKyoKSQlLdyKnfTJqkh63DR4hW/TxwFKB3Aq18wSY/TS6RAv/NXBGhF
- RiIacfDSiDw8HVN3pNTgTEn+yQIl+jpKr514NJK3SOOvhaEZHXxeCX2ns/AqQRip2SuZ
- 5ZPQ==
-X-Gm-Message-State: APjAAAUGtrahOVDH0rgC3GR34qLHAJzZS2zxisYwJb9nqi06nfJPqLXB
- QAPJlMB4S+s7McnL+luwoasj8Q==
-X-Google-Smtp-Source: APXvYqzKYPRMi57PTY6M5KUFleV+I7Dkh+1equfvb7EphYfx1TQ5qT2yKEdmtd5GNtC9yq3KcNPCuA==
-X-Received: by 2002:adf:dc8a:: with SMTP id r10mr17366735wrj.15.1559030886540; 
- Tue, 28 May 2019 01:08:06 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id z74sm2456121wmc.2.2019.05.28.01.08.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 28 May 2019 01:08:06 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: jbrunet@baylibre.com
-Subject: [PATCH v2 3/3] clk: meson: g12a: mark fclk_div3 as critical
-Date: Tue, 28 May 2019 10:07:58 +0200
-Message-Id: <20190528080758.17079-4-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190528080758.17079-1-narmstrong@baylibre.com>
-References: <20190528080758.17079-1-narmstrong@baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jxRdLO81GaMwi25+pHF6tyabtHcRY5PiY9DnX9mbDaE=;
+ b=e8lmFj2aqDj6Lw80EKXO8+fE3qUBcIOoSN8VjrI8/h03lK2WN+HV+7bfQ1379JQpvG
+ o0ri9Xrpwtmh9P+FPkz5P3hcsh9TJIemghXKNQYHkEacLmLovuPhWytrbDFzon1CVSj0
+ GPpcYNzClJ2WUbMeNri+HIRu0MxCaTWcIup3ZDa4m+p+Yc6jwR6ZtUU2/1KyUalShQEe
+ SZcJo8eLG+U8yxSwprL8wSogwtIpzynn9oJ36R50zduNhoVDuhBt5Ui5xZrKKVebSfvo
+ TnYGvmwiEEejOuM6nEoT4q7e5KzthfAF0QvtzQ/mxtTNdYL0snT5a6hyOT8LUlHVnbEN
+ QJ0A==
+X-Gm-Message-State: APjAAAWKbFSPMQLTouuLDFkTIdpf7D5//r3K0If4DIibG3zzqRimY4uj
+ rFCV/gEpG/5I4DQ/SS19NAlFROGihUnt+0xduGGnZg==
+X-Google-Smtp-Source: APXvYqymnIsHnIptohD+ZvCPE/vzwdkhqMTohAuXSeeplJGZYPhUDn5vCS9XnIBXws7SNfPGmO24LuOyutztcv2tv38=
+X-Received: by 2002:a2e:249:: with SMTP id 70mr60782672ljc.178.1559030921424; 
+ Tue, 28 May 2019 01:08:41 -0700 (PDT)
 MIME-Version: 1.0
+References: <1558104187-2842-1-git-send-email-ykaneko0929@gmail.com>
+In-Reply-To: <1558104187-2842-1-git-send-email-ykaneko0929@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 28 May 2019 10:08:29 +0200
+Message-ID: <CAMuHMdUmmwmm2bx+g=G-py5FiQ5Ynrmxr262j61P5=y5GTA6OQ@mail.gmail.com>
+Subject: Re: [PATCH/RFT] arm: dts: renesas: r7s9210-rza2mevb: sort nodes of
+ rza2mevb board
+To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_010811_649234_B2802B53 
-X-CRM114-Status: GOOD (  15.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190528_010843_566717_A917E266 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.195 listed in list.dnswl.org]
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.195 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,50 +82,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Amlogic Meson G12b platform, the fclk_div3 seems to be necessary for
-the system to operate correctly.
+Hi Kaneko-san,
 
-Disabling it cause the entire system to freeze, including peripherals.
+On Fri, May 17, 2019 at 4:43 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
+> This patch sorts the nodes of arch/arm/boot/dts/r7s9210-rza2mevb.dts.
+>
+> * Sort subnodes of root ("/") node alphabetically
+> * Sort following top-level nodes alphabetically
+> * Sort subnodes of pinctrl alphabetically
+>
+> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 
-Let's mark this clock as critical, fixing boot on G12b platforms.
+Thanks for your patch!
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/clk/meson/g12a.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+> This patch is based on the devel branch of Simon Horman's renesas tree.
 
-diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
-index 1abe46a95dc1..3c75ef5e4d24 100644
---- a/drivers/clk/meson/g12a.c
-+++ b/drivers/clk/meson/g12a.c
-@@ -1350,6 +1350,16 @@ static struct clk_regmap g12a_fclk_div3 = {
- 		.ops = &clk_regmap_gate_ops,
- 		.parent_names = (const char *[]){ "fclk_div3_div" },
- 		.num_parents = 1,
-+		/*
-+		 * This clock is used by the resident firmware and is required
-+		 * by the platform to operate correctly.
-+		 * Until the following condition are met, we need this clock to
-+		 * be marked as critical:
-+		 * a) Mark the clock used by a firmware resource, if possible
-+		 * b) CCF has a clock hand-off mechanism to make the sure the
-+		 *    clock stays on until the proper driver comes along
-+		 */
-+		.flags = CLK_IS_CRITICAL,
- 	},
- };
- 
+This looks good to me, but in the mean time renesas-devel has progressed.
+Can you please respin?
+
+Thanks!
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.21.0
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
