@@ -2,72 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A1DD2C43A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:25:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C64C2C440
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:29:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o5+PrpDHQV8j002aKw0AEybJVtpkWgZ8wDEdbXGqBkw=; b=pKjg35Dac++Yq7
-	cv63cMEI0XUCYvmj+X7oNa0UjP3v3PqsFPms17P/cfJNjXiRSmCaP+OABalr4YbqRN90NyDdgwTbN
-	/ol9DxS+s2ufZJDa58AKfyYWojlFKkmMa7zUFYgcfZltbjJuREveccCEnnRt9XSZ8gevU7CUZF2Y3
-	ZQgz4gbnfd20B9wj7ZoZJxyYbsgTuO3uARzaD53l0ZmPb28SWDMpkHTIzWWViGKVFH7H6qGe/BABb
-	KlyxhyBTDuZ4zbhosl3Tab5qm036GpON5yUBeUrZoIfe811XrTZ1hPjTmD+7oM3VCYEZ2tXWqd/hZ
-	f2u8miqB+ZZx+j2mRnVA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=baXTHorU59IzRPxsrVbocNpF42TvINxhfx68O90kvNE=; b=gmoYfmhtOQcu4tXc+QjGU/vSJ
+	d1Bzc66uJUNuEoZb/YLMAdA5khTeFv8ERFep9posC4vBziGrksWIH2OMFqN0BDkzjr3lJUlPUoWN+
+	2/begEEuA0Qo3AAg3jFiLbna+A+jQkebRCUPE5NRdbndGMW5fteE/MIhmbb0gMQGBQj/YnHaBOvdB
+	WmVZjJP4aJx+hZVxNTw0gR/6VNhU6bY9caJpEUvygCrRRFHBpBZkKWFQ7JJ0Pkl2mOCMrRXZE5oxX
+	fkhn7ACpmd/FbvIEFQGnKO0VWoH/uxFfbg+3BR1sLFM+V4sPTvVbyi3NqR84MkTBpfF/2x2/frDuF
+	t/111cgcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVZIJ-0003vU-FB; Tue, 28 May 2019 10:25:23 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVZIC-0003uI-45
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:25:17 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 45CqjM1bQhz1rZ07;
- Tue, 28 May 2019 12:25:11 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 45CqjL64ZDz1qqkH;
- Tue, 28 May 2019 12:25:10 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id ipmAkLzaT_pN; Tue, 28 May 2019 12:25:09 +0200 (CEST)
-X-Auth-Info: 2hslSmEGTPLoyKNKYOOmViG/Dyfm+220WIVpGrKlHlvIBaw9uFUuecR4QmL82tBJ
-Received: from hawking (charybdis-ext.suse.de [195.135.221.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Tue, 28 May 2019 12:25:09 +0200 (CEST)
-From: Andreas Schwab <schwab@linux-m68k.org>
-To: Cyril Hrubis <chrubis@suse.cz>
-Subject: Re: [PATCH] [RFC] Remove bdflush syscall stub
-References: <20190528101012.11402-1-chrubis@suse.cz>
-X-Yow: I'm working under the direct orders of WAYNE NEWTON to deport
- consenting adults!
-Date: Tue, 28 May 2019 12:25:09 +0200
-In-Reply-To: <20190528101012.11402-1-chrubis@suse.cz> (Cyril Hrubis's message
- of "Tue, 28 May 2019 12:10:12 +0200")
-Message-ID: <mvmr28idgfu.fsf@linux-m68k.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.2 (gnu/linux)
+	id 1hVZMN-0004Rp-7A; Tue, 28 May 2019 10:29:35 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVZMF-0004RL-Hm
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:29:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 437D4341;
+ Tue, 28 May 2019 03:29:26 -0700 (PDT)
+Received: from [192.168.1.27] (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ F35D23F59C; Tue, 28 May 2019 03:29:23 -0700 (PDT)
+Subject: Re: [PATCH 0/4] arm64: wire up VM_FLUSH_RESET_PERMS
+To: Will Deacon <will.deacon@arm.com>
+References: <20190523102256.29168-1-ard.biesheuvel@arm.com>
+ <20190528100413.GA20809@fuggles.cambridge.arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@arm.com>
+Message-ID: <8963e2ba-be92-39cb-40f1-7df89aa1e635@arm.com>
+Date: Tue, 28 May 2019 12:29:21 +0200
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190528100413.GA20809@fuggles.cambridge.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_032516_313850_3737DB4E 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20190528_032927_596530_34796CD5 
+X-CRM114-Status: GOOD (  17.70  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,33 +65,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Michal Simek <monstr@monstr.eu>,
- linux-ia64@vger.kernel.org, linux-parisc@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-api@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, lkml <linux-kernel@vger.kernel.org>,
- linux-mips@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, linux-alpha@vger.kernel.org,
- sparclinux@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+Cc: mark.rutland@arm.com, marc.zyngier@arm.com, linux-kernel@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, Nadav Amit <namit@vmware.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Rick Edgecombe <rick.p.edgecombe@intel.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mai 28 2019, Cyril Hrubis <chrubis@suse.cz> wrote:
+On 5/28/19 12:04 PM, Will Deacon wrote:
+> On Thu, May 23, 2019 at 11:22:52AM +0100, Ard Biesheuvel wrote:
+>> Wire up the code introduced in v5.2 to manage the permissions
+>> of executable vmalloc regions (and their linear aliases) more
+>> strictly.
+>>
+>> One of the things that came up in the internal discussion is
+>> whether non-x86 architectures have any benefit at all from the
+>> lazy vunmap feature, and whether it would perhaps be better to
+>> implement eager vunmap instead.
+>>
+>> Cc: Nadav Amit <namit@vmware.com>
+>> Cc: Rick Edgecombe <rick.p.edgecombe@intel.com>
+>> Cc: Peter Zijlstra <peterz@infradead.org>
+>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>> Cc: Will Deacon <will.deacon@arm.com>
+>> Cc: Masami Hiramatsu <mhiramat@kernel.org>
+>> Cc: James Morse <james.morse@arm.com>
+>>
+>> Ard Biesheuvel (4):
+>>    arm64: module: create module allocations without exec permissions
+>>    arm64/mm: wire up CONFIG_ARCH_HAS_SET_DIRECT_MAP
+>>    arm64/kprobes: set VM_FLUSH_RESET_PERMS on kprobe instruction pages
+>>    arm64: bpf: do not allocate executable memory
+>>
+>>   arch/arm64/Kconfig                  |  1 +
+>>   arch/arm64/include/asm/cacheflush.h |  3 ++
+>>   arch/arm64/kernel/module.c          |  4 +-
+>>   arch/arm64/kernel/probes/kprobes.c  |  4 +-
+>>   arch/arm64/mm/pageattr.c            | 48 ++++++++++++++++----
+>>   arch/arm64/net/bpf_jit_comp.c       |  2 +-
+>>   mm/vmalloc.c                        | 11 -----
+>>   7 files changed, 50 insertions(+), 23 deletions(-)
+> 
+> Thanks, this all looks good to me. I can get pick this up for 5.2 if
+> Rick's fixes [1] land soon enough.
+> 
 
-> I've tested the patch on i386. Before the patch calling bdflush() with
-> attempt to tune a variable returned 0 and after the patch the syscall
-> fails with EINVAL.
-
-Should be ENOSYS, doesn't it?
-
-Andreas.
-
--- 
-Andreas Schwab, schwab@linux-m68k.org
-GPG Key fingerprint = 7578 EB47 D4E5 4D69 2510  2552 DF73 E780 A9DA AEC1
-"And now for something completely different."
+Note that you'll get a trivial conflict in the hunk against mm/vmalloc.c.
 
 _______________________________________________
 linux-arm-kernel mailing list
