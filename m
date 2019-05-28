@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 271B72C109
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:18:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3BE82C113
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:20:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fctqDlrQZ54TQhTDze9Sb+RmWtD+0VdttGwjFobarc4=; b=P7Nxu2wHZGzPoC
-	S42C2OmgzQxVmp6feQ3ZyT4L/0ih/rxx19/EFAG/Rb4sCaAoe0Bkap1l3dcWkEtneRUl0i7QOQEj8
-	OxQ3LaN0P1VGdKjOCQQC/JjTKqOzdPRgdHJRr/Ho58qE8R4sGnn7JtTYXmtuxyuc30FlKRLeKCWZL
-	pGPusB7BUT4+w8zNWi86TmvoNHyqNKjr8uWya8J7htzyr7jYcA5x4w9S9rBdZMNYk9q9vS8bn/Osh
-	n+yDInIUxi3baKRAi68RYesNF7zoiAkOtC8t3L7UnDenvan3dQs4GN09bHZt62yvxT6qeG1D5GaFe
-	QbDPMNn/2l0i3j5VRvyQ==;
+	List-Owner; bh=SKwLCt9Zeu0tsDTgPS818e0Fk/TLMsLs2WodmhoDsVc=; b=cGR/zAHy2qBlMX
+	zM73KRanCK61FxQfa/YSmlGFUmvX6dr1ywdaus20Q71x0LXgYyo4nl/xkRs4eJU3/ceWeKjQDlrE6
+	EAVpWTYZAakUlnKGGirkW8YdbJdqyZGgtR+wYX0csyNkToIdtpLuqF6CEv7k/sNUw1I7SLOmrQsAc
+	qDTtDakZ3t0pD0WcHymc3LaIJMYDRB3dcTOt9OALrXBjbb4b2VQiD5/5wiQbOceHnCzbMVx0oF4Se
+	Ptlu9YadE2GaVhZEUhTl2+NKGwYS/lr1dc1epKGmUMGz6WS0kCSqkJ/Nxl0wrkktWzjHTABi1Wsfj
+	w2gvhvj/JxzmpbfUEA9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVXJa-00010k-3W; Tue, 28 May 2019 08:18:34 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hVXLY-0002eV-4g; Tue, 28 May 2019 08:20:36 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVXJT-000101-PV
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:18:29 +0000
+ id 1hVXLR-0002e7-0m
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:20:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BA68C341;
- Tue, 28 May 2019 01:18:25 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 149EB3F59C;
- Tue, 28 May 2019 01:18:22 -0700 (PDT)
-Subject: Re: [PATCH v2 07/15] arm64: KVM: split debug save restore across
- vm/traps activation
-To: Sudeep Holla <sudeep.holla@arm.com>, kvmarm@lists.cs.columbia.edu,
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 82DCE341;
+ Tue, 28 May 2019 01:20:28 -0700 (PDT)
+Received: from [10.162.40.141] (p8cg001049571a15.blr.arm.com [10.162.40.141])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 6B8A83F59C; Tue, 28 May 2019 01:20:24 -0700 (PDT)
+Subject: Re: [PATCH 3/4] arm64/kprobes: set VM_FLUSH_RESET_PERMS on kprobe
+ instruction pages
+To: Ard Biesheuvel <ard.biesheuvel@arm.com>,
  linux-arm-kernel@lists.infradead.org
-References: <20190523103502.25925-1-sudeep.holla@arm.com>
- <20190523103502.25925-8-sudeep.holla@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <84eba64a-899f-e231-0873-c3ccfeb2201d@arm.com>
-Date: Tue, 28 May 2019 09:18:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+References: <20190523102256.29168-1-ard.biesheuvel@arm.com>
+ <20190523102256.29168-4-ard.biesheuvel@arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <e10f0e6c-2669-8e1e-1b28-ed7816e0b248@arm.com>
+Date: Tue, 28 May 2019 13:50:36 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <20190523103502.25925-8-sudeep.holla@arm.com>
+In-Reply-To: <20190523102256.29168-4-ard.biesheuvel@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_011827_837888_CF9F6DFC 
-X-CRM114-Status: GOOD (  21.14  )
+X-CRM114-CacheID: sfid-20190528_012029_067628_001B401C 
+X-CRM114-Status: GOOD (  20.72  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -66,105 +67,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+Cc: mark.rutland@arm.com, marc.zyngier@arm.com,
  Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>
+ Peter Zijlstra <peterz@infradead.org>, Nadav Amit <namit@vmware.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Rick Edgecombe <rick.p.edgecombe@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep,
 
-On 23/05/2019 11:34, Sudeep Holla wrote:
-> If we enable profiling buffer controls at EL1 generate a trap exception
-> to EL2, it also changes profiling buffer to use EL1&0 stage 1 translation
-> regime in case of VHE. To support SPE both in the guest and host, we
-> need to first stop profiling and flush the profiling buffers before
-> we activate/switch vm or enable/disable the traps.
+
+On 05/23/2019 03:52 PM, Ard Biesheuvel wrote:
+> In order to avoid transient inconsistencies where freed code pages
+> are remapped writable while stale TLB entries still exist on other
+> cores, mark the kprobes text pages with the VM_FLUSH_RESET_PERMS
+> attribute. This instructs the core vmalloc code not to defer the
+> TLB flush when this region is unmapped and returned to the page
+> allocator.
+
+Makes sense.
+
 > 
-> In prepartion to do that, lets split the debug save restore functionality
-> into 4 steps:
-> 1. debug_save_host_context - saves the host context
-> 2. debug_restore_guest_context - restore the guest context
-> 3. debug_save_guest_context - saves the guest context
-> 4. debug_restore_host_context - restores the host context
-> 
-> Lets rename existing __debug_switch_to_{host,guest} to make sure it's
-> aligned to the above and just add the place holders for new ones getting
-> added here as we need them to support SPE in guests.
-> 
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@arm.com>
 > ---
->  arch/arm64/include/asm/kvm_hyp.h |  6 ++++--
->  arch/arm64/kvm/hyp/debug-sr.c    | 25 ++++++++++++++++---------
->  arch/arm64/kvm/hyp/switch.c      | 12 ++++++++----
->  3 files changed, 28 insertions(+), 15 deletions(-)
+>  arch/arm64/kernel/probes/kprobes.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/include/asm/kvm_hyp.h b/arch/arm64/include/asm/kvm_hyp.h
-> index 782955db61dd..1c5ed80fcbda 100644
-> --- a/arch/arm64/include/asm/kvm_hyp.h
-> +++ b/arch/arm64/include/asm/kvm_hyp.h
-> @@ -164,8 +164,10 @@ void sysreg_restore_guest_state_vhe(struct kvm_cpu_context *ctxt);
->  void __sysreg32_save_state(struct kvm_vcpu *vcpu);
->  void __sysreg32_restore_state(struct kvm_vcpu *vcpu);
+> diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
+> index 2509fcb6d404..036cfbf9682a 100644
+> --- a/arch/arm64/kernel/probes/kprobes.c
+> +++ b/arch/arm64/kernel/probes/kprobes.c
+> @@ -131,8 +131,10 @@ void *alloc_insn_page(void)
+>  	void *page;
 >  
-> -void __debug_switch_to_guest(struct kvm_vcpu *vcpu);
-> -void __debug_switch_to_host(struct kvm_vcpu *vcpu);
-> +void __debug_save_host_context(struct kvm_vcpu *vcpu);
-> +void __debug_restore_guest_context(struct kvm_vcpu *vcpu);
-> +void __debug_save_guest_context(struct kvm_vcpu *vcpu);
-> +void __debug_restore_host_context(struct kvm_vcpu *vcpu);
->  
->  void __fpsimd_save_state(struct user_fpsimd_state *fp_regs);
->  void __fpsimd_restore_state(struct user_fpsimd_state *fp_regs);
-> diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
-> index fa51236ebcb3..618884df1dc4 100644
-> --- a/arch/arm64/kvm/hyp/debug-sr.c
-> +++ b/arch/arm64/kvm/hyp/debug-sr.c
-> @@ -149,20 +149,13 @@ static void __hyp_text __debug_restore_state(struct kvm_vcpu *vcpu,
->  	write_sysreg(ctxt->sys_regs[MDCCINT_EL1], mdccint_el1);
->  }
->  
-> -void __hyp_text __debug_switch_to_guest(struct kvm_vcpu *vcpu)
-> +void __hyp_text __debug_restore_guest_context(struct kvm_vcpu *vcpu)
->  {
->  	struct kvm_cpu_context *host_ctxt;
->  	struct kvm_cpu_context *guest_ctxt;
->  	struct kvm_guest_debug_arch *host_dbg;
->  	struct kvm_guest_debug_arch *guest_dbg;
->  
-> -	/*
-> -	 * Non-VHE: Disable and flush SPE data generation
-> -	 * VHE: The vcpu can run, but it can't hide.
-> -	 */
-> -	if (!has_vhe())
-> -		__debug_save_spe_nvhe(&vcpu->arch.host_debug_state.pmscr_el1);
-> -
->  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
->  		return;
->  
-> @@ -175,7 +168,7 @@ void __hyp_text __debug_switch_to_guest(struct kvm_vcpu *vcpu)
->  	__debug_restore_state(vcpu, guest_dbg, guest_ctxt);
->  }
->  
-> -void __hyp_text __debug_switch_to_host(struct kvm_vcpu *vcpu)
-> +void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
+>  	page = vmalloc_exec(PAGE_SIZE);
+> -	if (page)
+> +	if (page) {
+>  		set_memory_ro((unsigned long)page, 1);
+> +		set_vm_flush_reset_perms(page);
+> +	}
 
-In the current state of the sources, __debug_switch_to_host() seems to
-save the guest debug state before restoring the host's:
-
-	__debug_save_state(vcpu, guest_dbg, guest_ctxt);
-
-Since you're splitting the switch_to into save/restore operations, it
-feels like this would fit better __debug_save_guest_context() (currently
-empty) rather than __debug_restore_host_context().
-
-Cheers,
-
--- 
-Julien Thierry
+Looks good. It seems there might be more users who would like to set
+VM_FLUSH_RESET_PERMS right after their allocation for the same reason.
+Hence would not it help to have a variant like vmalloc_exec_reset() or
+such which will tag vm_struct->flags with VM_FLUSH_RESET_PERMS right
+after it's allocation without requiring the caller to do the same.
 
 _______________________________________________
 linux-arm-kernel mailing list
