@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3BE82C113
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:20:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF96D2C117
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:21:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SKwLCt9Zeu0tsDTgPS818e0Fk/TLMsLs2WodmhoDsVc=; b=cGR/zAHy2qBlMX
-	zM73KRanCK61FxQfa/YSmlGFUmvX6dr1ywdaus20Q71x0LXgYyo4nl/xkRs4eJU3/ceWeKjQDlrE6
-	EAVpWTYZAakUlnKGGirkW8YdbJdqyZGgtR+wYX0csyNkToIdtpLuqF6CEv7k/sNUw1I7SLOmrQsAc
-	qDTtDakZ3t0pD0WcHymc3LaIJMYDRB3dcTOt9OALrXBjbb4b2VQiD5/5wiQbOceHnCzbMVx0oF4Se
-	Ptlu9YadE2GaVhZEUhTl2+NKGwYS/lr1dc1epKGmUMGz6WS0kCSqkJ/Nxl0wrkktWzjHTABi1Wsfj
-	w2gvhvj/JxzmpbfUEA9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0Vy1E+3yxODb5QQgPilVKte4sX+GB3QGwe7Gya4Q4WU=; b=PIE9L7ZYx4tJ85Z0s8y9vQCHh
+	1lJX5dPhhPVeplzJ+NckLvtaWXKhheXFoZl7XbDp/7nVntaqaTekSguqYMDw7qOwntA8By3k3fS1A
+	FC92BYBj06WPrVFvakJJ/Eo7rLh3HQtUwHl6yQZ6ofQML44nMLSFFODtvAosWqhT+Dzw1FQ6yABTQ
+	5r0u44etVqu5xcR48rfdLdLLyliYkFlwBGs2mLgWGSqT9d7klUS2Oqg8/8B+sqaNbyn2+j/2Hsqcb
+	RPZUyuImioqimTi60wnigwWKzCP/fZpgXH6D14nwyj8fA/X9GCGlUWQMa0OMlQBfMC3YaoI9RceNz
+	1becPYWZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVXLY-0002eV-4g; Tue, 28 May 2019 08:20:36 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hVXLw-0002tY-Vi; Tue, 28 May 2019 08:21:00 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVXLR-0002e7-0m
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:20:30 +0000
+ id 1hVXLo-0002t9-Eh
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:20:53 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 82DCE341;
- Tue, 28 May 2019 01:20:28 -0700 (PDT)
-Received: from [10.162.40.141] (p8cg001049571a15.blr.arm.com [10.162.40.141])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 132EF341;
+ Tue, 28 May 2019 01:20:52 -0700 (PDT)
+Received: from [192.168.1.27] (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 6B8A83F59C; Tue, 28 May 2019 01:20:24 -0700 (PDT)
-Subject: Re: [PATCH 3/4] arm64/kprobes: set VM_FLUSH_RESET_PERMS on kprobe
- instruction pages
-To: Ard Biesheuvel <ard.biesheuvel@arm.com>,
+ 5F8003F59C; Tue, 28 May 2019 01:20:49 -0700 (PDT)
+Subject: Re: [PATCH 2/4] arm64/mm: wire up CONFIG_ARCH_HAS_SET_DIRECT_MAP
+To: Anshuman Khandual <anshuman.khandual@arm.com>,
  linux-arm-kernel@lists.infradead.org
 References: <20190523102256.29168-1-ard.biesheuvel@arm.com>
- <20190523102256.29168-4-ard.biesheuvel@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <e10f0e6c-2669-8e1e-1b28-ed7816e0b248@arm.com>
-Date: Tue, 28 May 2019 13:50:36 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ <20190523102256.29168-3-ard.biesheuvel@arm.com>
+ <e63e7367-3a37-9ebc-d17c-e1cef2948c6e@arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@arm.com>
+Message-ID: <7ab5edf6-e538-f052-471a-8e56f62bcfef@arm.com>
+Date: Tue, 28 May 2019 10:20:46 +0200
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190523102256.29168-4-ard.biesheuvel@arm.com>
+In-Reply-To: <e63e7367-3a37-9ebc-d17c-e1cef2948c6e@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_012029_067628_001B401C 
-X-CRM114-Status: GOOD (  20.72  )
+X-CRM114-CacheID: sfid-20190528_012052_498842_E5540AEF 
+X-CRM114-Status: GOOD (  30.71  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -73,48 +72,180 @@ Cc: mark.rutland@arm.com, marc.zyngier@arm.com,
  Masami Hiramatsu <mhiramat@kernel.org>, James Morse <james.morse@arm.com>,
  Andrew Morton <akpm@linux-foundation.org>,
  Rick Edgecombe <rick.p.edgecombe@intel.com>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 05/23/2019 03:52 PM, Ard Biesheuvel wrote:
-> In order to avoid transient inconsistencies where freed code pages
-> are remapped writable while stale TLB entries still exist on other
-> cores, mark the kprobes text pages with the VM_FLUSH_RESET_PERMS
-> attribute. This instructs the core vmalloc code not to defer the
-> TLB flush when this region is unmapped and returned to the page
-> allocator.
-
-Makes sense.
-
+On 5/28/19 10:10 AM, Anshuman Khandual wrote:
 > 
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@arm.com>
-> ---
->  arch/arm64/kernel/probes/kprobes.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
-> index 2509fcb6d404..036cfbf9682a 100644
-> --- a/arch/arm64/kernel/probes/kprobes.c
-> +++ b/arch/arm64/kernel/probes/kprobes.c
-> @@ -131,8 +131,10 @@ void *alloc_insn_page(void)
->  	void *page;
->  
->  	page = vmalloc_exec(PAGE_SIZE);
-> -	if (page)
-> +	if (page) {
->  		set_memory_ro((unsigned long)page, 1);
-> +		set_vm_flush_reset_perms(page);
-> +	}
+> On 05/23/2019 03:52 PM, Ard Biesheuvel wrote:
+>> Wire up the special helper functions to manipulate aliases of vmalloc
+>> regions in the linear map.
+> 
+> IMHO the commit message here could be bit more descriptive because of the
+> amount of changes this patch brings in.
+> 
+>>
+>> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@arm.com>
+>> ---
+>>   arch/arm64/Kconfig                  |  1 +
+>>   arch/arm64/include/asm/cacheflush.h |  3 ++
+>>   arch/arm64/mm/pageattr.c            | 48 ++++++++++++++++----
+>>   mm/vmalloc.c                        | 11 -----
+>>   4 files changed, 44 insertions(+), 19 deletions(-)
+>>
+>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>> index ca9c175fb949..4ab32180eabd 100644
+>> --- a/arch/arm64/Kconfig
+>> +++ b/arch/arm64/Kconfig
+>> @@ -26,6 +26,7 @@ config ARM64
+>>   	select ARCH_HAS_MEMBARRIER_SYNC_CORE
+>>   	select ARCH_HAS_PTE_SPECIAL
+>>   	select ARCH_HAS_SETUP_DMA_OPS
+>> +	select ARCH_HAS_SET_DIRECT_MAP
+>>   	select ARCH_HAS_SET_MEMORY
+>>   	select ARCH_HAS_STRICT_KERNEL_RWX
+>>   	select ARCH_HAS_STRICT_MODULE_RWX
+>> diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
+>> index 19844211a4e6..b9ee5510067f 100644
+>> --- a/arch/arm64/include/asm/cacheflush.h
+>> +++ b/arch/arm64/include/asm/cacheflush.h
+>> @@ -187,4 +187,7 @@ static inline void flush_cache_vunmap(unsigned long start, unsigned long end)
+>>   
+>>   int set_memory_valid(unsigned long addr, int numpages, int enable);
+>>   
+>> +int set_direct_map_invalid_noflush(struct page *page);
+>> +int set_direct_map_default_noflush(struct page *page);
+>> +
+>>   #endif
+>> diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
+>> index 6cd645edcf35..9c6b9039ec8f 100644
+>> --- a/arch/arm64/mm/pageattr.c
+>> +++ b/arch/arm64/mm/pageattr.c
+>> @@ -159,17 +159,48 @@ int set_memory_valid(unsigned long addr, int numpages, int enable)
+>>   					__pgprot(PTE_VALID));
+>>   }
+>>   
+>> -#ifdef CONFIG_DEBUG_PAGEALLOC
+>> +int set_direct_map_invalid_noflush(struct page *page)
+>> +{
+>> +	struct page_change_data data = {
+>> +		.set_mask = __pgprot(0),
+>> +		.clear_mask = __pgprot(PTE_VALID),
+>> +	};
+>> +
+>> +	if (!rodata_full)
+>> +		return 0;
+> 
+> Why rodata_full needs to be probed here ? Should not we still require the following
+> transition even if rodata_full is not enabled. Just wondering whether we can use
+> VM_FLUSH_RESET_PERMS feature without these required transitions.
+> 
+>          /*
+>           * Set direct map to something invalid so that it won't be cached if
+>           * there are any accesses after the TLB flush, then flush the TLB and
+>           * reset the direct map permissions to the default.
+>           */
+>          set_area_direct_map(area, set_direct_map_invalid_noflush);
+>          _vm_unmap_aliases(start, end, 1);
+>          set_area_direct_map(area, set_direct_map_default_noflush);
+> 
+>   > +
 
-Looks good. It seems there might be more users who would like to set
-VM_FLUSH_RESET_PERMS right after their allocation for the same reason.
-Hence would not it help to have a variant like vmalloc_exec_reset() or
-such which will tag vm_struct->flags with VM_FLUSH_RESET_PERMS right
-after it's allocation without requiring the caller to do the same.
+How would that work? With rodata_full disabled, the linear region is not 
+mapped down to pages, and so there is no way we can manipulate linear 
+aliases at page granularity.
+
+>> +	return apply_to_page_range(&init_mm,
+>> +				   (unsigned long)page_address(page),
+>> +				   PAGE_SIZE, change_page_range, &data);
+>> +}
+>> +
+>> +int set_direct_map_default_noflush(struct page *page)
+>> +{
+>> +	struct page_change_data data = {
+>> +		.set_mask = __pgprot(PTE_VALID | PTE_WRITE),
+>> +		.clear_mask = __pgprot(PTE_RDONLY),
+> 
+> Replace __pgprot(PTE_VALID | PTE_WRITE) with PAGE_KERNEL instead !
+> 
+
+This is a delta mask, so no need to pull in the PTE_MAYBE_NG or other 
+attributes that we know we haven't changed.
+
+>> +	};
+>> +
+>> +	if (!rodata_full)
+>> +		return 0;
+>> +
+>> +	return apply_to_page_range(&init_mm,
+>> +				   (unsigned long)page_address(page),
+>> +				   PAGE_SIZE, change_page_range, &data);
+>> +}
+>> +
+> 
+> IIUC set_direct_map_invalid_noflush() and set_direct_map_default_noflush()
+> should set *appropriate* permissions as seen fit from platform perspective
+> to implement this transition.
+> 
+> In here set_direct_map_invalid_noflush() makes the entry invalid preventing
+> further MMU walks (hence new TLB entries). set_direct_map_default_noflush()
+> makes it a valid write entry. Though it looks similar to PAGE_KERNEL which
+> is the default permission for linear mapping on arm64 via __map_memblock().
+> Should not PAGE_KERNEL be used explicitly as suggested above.
+> 
+
+No. We should restore the attributes that we cleared when manipulating 
+the linear aliases. There isn't a lot of code that does that, so I don't 
+see the need to use PAGE_KERNEL here.
+
+>>   void __kernel_map_pages(struct page *page, int numpages, int enable)
+>>   {
+>> +	if (!debug_pagealloc_enabled() && !rodata_full)
+>> +		return;
+>> +
+> 
+> I guess this is not related to CONFIG_ARCH_HAS_SET_DIRECT_MAP here and should
+> be a fix or an enhancement to CONFIG_DEBUG_PAGEALLOC implementation. Just
+> curious, !rodata_full check here to ensure that linear mapping does not have
+> block or contig mappings and should be backed by regular pages only ?
+> 
+
+It is related. CONFIG_ARCH_HAS_SET_DIRECT_MAP introduces references to 
+__kernel_map_pages() in generic code, so enabling 
+CONFIG_ARCH_HAS_SET_DIRECT_MAP should make __kernel_map_pages() 
+available unconditionally as well.
+
+>>   	set_memory_valid((unsigned long)page_address(page), numpages, enable);
+>>   }
+>> -#ifdef CONFIG_HIBERNATION
+>> +
+>>   /*
+>> - * When built with CONFIG_DEBUG_PAGEALLOC and CONFIG_HIBERNATION, this function
+>> - * is used to determine if a linear map page has been marked as not-valid by
+>> - * CONFIG_DEBUG_PAGEALLOC. Walk the page table and check the PTE_VALID bit.
+>> - * This is based on kern_addr_valid(), which almost does what we need.
+>> + * This function is used to determine if a linear map page has been marked as
+>> + * not-valid. Walk the page table and check the PTE_VALID bit. This is based
+>> + * on kern_addr_valid(), which almost does what we need.
+>>    *
+>>    * Because this is only called on the kernel linear map,  p?d_sect() implies
+>>    * p?d_present(). When debug_pagealloc is enabled, sections mappings are
+>> @@ -183,6 +214,9 @@ bool kernel_page_present(struct page *page)
+>>   	pte_t *ptep;
+>>   	unsigned long addr = (unsigned long)page_address(page);
+>>   
+>> +	if (!debug_pagealloc_enabled() && !rodata_full)
+>> +		return true;
+>> +
+> 
+> Ditto, not related to CONFIG_ARCH_HAS_SET_DIRECT_MAP.
+> 
+
+It is related.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
