@@ -2,109 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E83592C0D1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A43FD2C0DA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:08:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DGHyPCbUwing+dpesxrggmEs/95O/E/jtHapdBNcdPE=; b=oDsSJ5DkUCCeS8
-	eQhcmLZr6kYSH/WR2q3U75L166/whSn5pE05iy2o0QCRBP/OqK/SjW5Y1M6PTft0D4C4pEFzz6eZA
-	u0dZV5zEVkvhc3Ei/sTegu4fUjCjbE4a/bD09FGu+swc2GQ9NjnA33a8SBXhvq1yLqlyXGwEkzslI
-	eUB28zYhCnKP3ckhvsz1r3agLI1OckFdsPqjy+11phxlxKUjISZGRZWEP602DCcBekLXTGVtRVs0o
-	iAxDYbyaX7tzSGrp7R2SAf0AMnjnKwDtNFZZ6vFzmZ8PT38hXQI9aHoyc3WUgLn8ZXHAOoY0DTefo
-	cawND3n7pYKC9VzLCxiQ==;
+	List-Owner; bh=62gxj6Gqr8D1nM32yXeFp2UJr8/aQgEX3wHRVtvSoNQ=; b=nQN2Ifwai0YIM7
+	PBYaP0wn0emZX/TEE+10hr4i8zPH+kjg6YsMgzEvrRNKO1jGTNDhHq9ymyiN8NhM2eF4cdO+959vp
+	BU7Q0cKj1xF1nUrWOE1EH1ym7st9n8HTC0CSsJTmzXgZDQWBhwYwcwak4j2ijE7MGtQK2ssDHbN/u
+	QyoCbQRm5+gNgWpx59swh2wzgT/gW9LiW3M1/fKEzEaQUYxFJyDfIyrhL3Nz/UGgrhKi9mX/8qN+/
+	4BBAqZix9YjjnVQdEJi4in62/Q7aew2DCWLXGV8QOfShHGPdHbTvdiOHBJh1ue3DW/x0xQ845PkC4
+	NVM06CB145vPHxmf06oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVX7y-0001uE-OQ; Tue, 28 May 2019 08:06:34 +0000
-Received: from mail-eopbgr00077.outbound.protection.outlook.com ([40.107.0.77]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hVX9b-0002F4-7I; Tue, 28 May 2019 08:08:15 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVX7q-0001t2-Mg
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:06:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=MoNLWbJcE8ciyEKeH01oMsXT/BViZQqnsxUC4nHRJtI=;
- b=I+2HUIkG119oF5QQZ7g2+/FweH4Qph7KQV123mGrx50qiqyIlXHSAmF1qFSsTkcDulbT1WUkNnDfzathR1pNlPPQ+CNFpSKjd6gRut3OddbJ/Q2EpXNN6tc5YGdc/Z6dhtnAFrbzfqbxBWhFr6lJ4BIHiu2XJFjZOrGILDzcVns=
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
- VI1PR04MB4429.eurprd04.prod.outlook.com (20.177.55.157) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.16; Tue, 28 May 2019 08:06:21 +0000
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::9577:379c:2078:19a1]) by VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::9577:379c:2078:19a1%7]) with mapi id 15.20.1922.021; Tue, 28 May 2019
- 08:06:21 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Lucas Stach <l.stach@pengutronix.de>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>
-Subject: [PATCH RESEND] PCI: Kconfig: Simplify PCI_IMX6 depends on
-Thread-Topic: [PATCH RESEND] PCI: Kconfig: Simplify PCI_IMX6 depends on
-Thread-Index: AQHVFSw8Xw38Z2BmoUmojX3hMgzVBQ==
-Date: Tue, 28 May 2019 08:06:21 +0000
-Message-ID: <c30f0e497f9e8bddc32e31a22f00ae7757e3d24e.1559024737.git.leonard.crestez@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [89.37.124.34]
-x-mailer: git-send-email 2.17.1
-x-clientproxiedby: VI1PR0701CA0045.eurprd07.prod.outlook.com
- (2603:10a6:800:90::31) To VI1PR04MB5055.eurprd04.prod.outlook.com
- (2603:10a6:803:5a::12)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e33275a9-99d6-4cc3-62db-08d6e3435ef9
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB4429; 
-x-ms-traffictypediagnostic: VI1PR04MB4429:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <VI1PR04MB44292480EA47B353C789A57CEE1E0@VI1PR04MB4429.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 00514A2FE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(346002)(376002)(136003)(39860400002)(366004)(189003)(199004)(71200400001)(71190400001)(66066001)(118296001)(6506007)(102836004)(14444005)(52116002)(66476007)(25786009)(386003)(73956011)(256004)(68736007)(316002)(66946007)(99286004)(4326008)(53936002)(81156014)(14454004)(110136005)(478600001)(6436002)(54906003)(6306002)(2906002)(6512007)(36756003)(6486002)(66446008)(486006)(476003)(44832011)(2616005)(186003)(7736002)(66556008)(86362001)(966005)(5660300002)(3846002)(6116002)(64756008)(26005)(50226002)(305945005)(81166006)(8936002)(8676002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4429;
- H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: JMmqbHWFrOnbO04NHgLXo1W4flfXZnIusIUKVTa1zdH9aGAuCsFJjACcNr8x6JVCYJXXootlFiyXjALse3Cz4eI+eOGB0hZNAF7XJQMs4P9QTknY5LUPHBpeWM56dA4dWz9OUQYcq1x3EluUBUcb9KyxEZG4birVPOxplfwKEtlxa0DM6RkLzIr2CuIMYo91BGvTfjNYl4HhApKZ2kJAwYErt+blisgr+PJ6joX7vsvdJygI12o+gNzjMmwi2BgO+8oNrGrIPvbxDDtifPRrnTxL1XH/SBJpDjI63M+1JYj5J9qTwB6pelBLzjlxSApWGxwmRKCJXFkE0u/mbRt62wRcBjNUt7+vGsy2PJrmcC+xtrCZ6M6GUs9RxFEBqNO84c6fg+Rqpalld0okIJ6Y5SPBveqlziDFKA51sK2EW9U=
-Content-ID: <A61F5307C3403A4FB9AD816E95AC5FCC@eurprd04.prod.outlook.com>
+ id 1hVX9Q-0002DK-Sf
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:08:06 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f204so1761083wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 01:08:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ieWxa3W4BA8q2H3D0T8EoXTx0zcolQkck6xLMl469g8=;
+ b=fXMVIE25gFBZkltfmyi30Hdm7oNXRGCg36Ue8AqJIKTu7Br2JjltL2l6mx1/y9zSXq
+ 1DejqGZzDgEzZyrh+mASa0IfJnMPwCxnXK2yhf+1DD/jfIl0ZaZPNeobIIjpHbFtBjM9
+ WAXIZQsvFdNREA+ApsFE5hFbklJhY0xqsYn8k9wwPCOo5divimvO5v5w8OPFAE+xqb+6
+ mwcLS4ym6FxvQRYnVWJHcNrE2CbFvL4drdq/mdoRamgIX6KNQpc0lm22lWBlQ9i8C3vg
+ CcdPHA187hf3LD7qFqVVPbDHqo0L/BOjomOsOzcMaL84toLnN+ckxsZ0JYhUyqhVJtBV
+ 1F+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ieWxa3W4BA8q2H3D0T8EoXTx0zcolQkck6xLMl469g8=;
+ b=rTHH2gY7+BEGadjH07iyDV4PfpBEEBkhKOIwz2LcX8CZn8QOvzngg3th5c2aCNpIcl
+ 3g6haJzLz7xdNX0XXHve/cuYvlLrSd0pJt+PZJsaRCoEwSHsxTN3qGsvxJCrASZ8zj3B
+ EVPfQDP0z0SpLDVNMKNaRF/q3FIQUcWZy15x6/KaNBDFOYv9b7CSuAcZ//ypeoSpY+rC
+ 9FRkGozIkrKh/bPQla2a9cMbc5GXTaROxfk2Kt0UGAG4Bg8fqOaJw1XfGJen03EJZm1C
+ w30tIyJ1ZtJ4+5yUL3vKn8inqtRwfPxspFmiwTy9ifZsyHV+Rv9OzxpSY2otIf8ozI0q
+ jC5g==
+X-Gm-Message-State: APjAAAXWzfTmJTUqpcmk6aD5BKQgt1gVDiTgH+hMZ4k+2/UD92kr0lYk
+ eUH4F3a3rFjvwyU4nHSf2iEicQ==
+X-Google-Smtp-Source: APXvYqyfEAM5t74+Aid/26YokQ5XGUc9ooC3hQavU+b4VuiimllFa2MwkUoKeGaKLZR6X11GoMK3tg==
+X-Received: by 2002:a1c:f413:: with SMTP id z19mr2191165wma.145.1559030883029; 
+ Tue, 28 May 2019 01:08:03 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id z74sm2456121wmc.2.2019.05.28.01.08.02
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Tue, 28 May 2019 01:08:02 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: jbrunet@baylibre.com
+Subject: [PATCH v2 0/3] clk: meson: add support for Amlogic G12B
+Date: Tue, 28 May 2019 10:07:55 +0200
+Message-Id: <20190528080758.17079-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e33275a9-99d6-4cc3-62db-08d6e3435ef9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 May 2019 08:06:21.8628 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4429
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_010626_825285_62179306 
-X-CRM114-Status: GOOD (  12.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190528_010804_929421_CB19AB39 
+X-CRM114-Status: GOOD (  12.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.77 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,54 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Richard Zhu <hongxing.zhu@nxp.com>,
- Andrey Smirnov <andrew.smirnov@gmail.com>, Stefan Agner <stefan@agner.ch>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Trent Piepho <tpiepho@impinj.com>
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver can be used on imx6sx without enabling support for
-imx6q or imx7d but the "depends on" condition doesn't allow that.
+The Amlogic G12B SoC is very similar with the G12A SoC, sharing
+most of the features and architecture.
+G12B clock tree is very close, the main differences are :
+- SYS_PLL is used for the second cluster (otherwise used fir the first on G12a)
+- SYS_PLL1 is used for the first cluster (instead of SYS_PLL on G12a)
+- A duplicate CPU tree is added for the second cluster
+- G12B has additional clocks like for CSI an other components, not handled yet
 
-Instead of making the condition even longer just drop the per-soc
-defines and make it depend on "ARCH_MXC || COMPILE_TEST" instead,
-similar to many other drivers.
+Dependencies :
+- Patch 1, 3 : None
+- Patch 2 : Depends on Guillaume's Temperature sensor Clock patches at [1]
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- drivers/pci/controller/dwc/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+This patchset is a spinoff of the v2 Odroid-N2 megapatchset at [2]
 
-Link to v1: https://patchwork.kernel.org/patch/10848143/
+Changes since v1 at [3]:
+- Added the cpub_clk div2..8 and replaces the ahb/atb/axi/trace divs by muxes
+- Added the CLK_GATE_SET_TO_DISABLE flag to ahb/atb/axi/trace gates
+- Fixed all the G12A typos
+- Added martin's reviewed by on patch 1
 
-No objections were raised other than a request for Lucas to Ack the
-patch.
+Changes since original patchset :
+- Added missing sys1_pll div16, cpub div16 and cpub atb/axi/ahb/trace clocks
+- Rewrote "This patch .." in commit messages
 
-diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
-index 6ea74b1c0d94..21747fd0e799 100644
---- a/drivers/pci/controller/dwc/Kconfig
-+++ b/drivers/pci/controller/dwc/Kconfig
-@@ -88,11 +88,11 @@ config PCI_EXYNOS
- 	depends on PCI_MSI_IRQ_DOMAIN
- 	select PCIE_DW_HOST
- 
- config PCI_IMX6
- 	bool "Freescale i.MX6/7/8 PCIe controller"
--	depends on SOC_IMX6Q || SOC_IMX7D || (ARM64 && ARCH_MXC) || COMPILE_TEST
-+	depends on ARCH_MXC || COMPILE_TEST
- 	depends on PCI_MSI_IRQ_DOMAIN
- 	select PCIE_DW_HOST
- 
- config PCIE_SPEAR13XX
- 	bool "STMicroelectronics SPEAr PCIe controller"
+[1] https://lkml.kernel.org/r/20190412100221.26740-1-glaroque@baylibre.com
+[2] https://lkml.kernel.org/r/20190423091503.10847-1-narmstrong@baylibre.com
+[3] https://lkml.kernel.org/r/20190521150130.31684-1-narmstrong@baylibre.com
+
+Neil Armstrong (3):
+  dt-bindings: clk: meson: add g12b periph clock controller bindings
+  clk: meson: g12a: Add support for G12B CPUB clocks
+  clk: meson: g12a: mark fclk_div3 as critical
+
+ .../bindings/clock/amlogic,gxbb-clkc.txt      |   1 +
+ drivers/clk/meson/g12a.c                      | 772 ++++++++++++++++++
+ drivers/clk/meson/g12a.h                      |  40 +-
+ 3 files changed, 812 insertions(+), 1 deletion(-)
+
 -- 
-2.17.1
+2.21.0
 
 
 _______________________________________________
