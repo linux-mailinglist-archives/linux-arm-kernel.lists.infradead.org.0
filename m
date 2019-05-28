@@ -2,80 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 524232BDE1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 05:45:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A82FD2BDE4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 05:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HzewvMz3aRZwoeoZyLhdqawC8bLaHUxzS9X9D8eDPGU=; b=fO8v7xTFA2GV67
-	ff/dLsmW6Jez41GjphiL6bG9Soj29KrSoFVRUfKWbwv2QFOUrgbXTS0lYbBIsGjEvM/RF6ACG7I+I
-	lOm7zBmFqaQTXxX/g2cQhWeFOqx5WJPUdq1pgq0QdA7Ol7dJSTjeRB2zM9hCTWM5/EQnulYrTtDI7
-	etHQrEv4zqar+3STTD6vNKOryGnC5hr7E46z4aOu6renjFzz1lxsKF9WF7wRdZGJnDS68QqiH1J0j
-	kz2NqmsKJDZhd0wpo7P7N0xNvYzlU6W0JgwfVBHIYjdGM46/OJMTe/7x0vYIVVzCsffwUDtICaqKV
-	3lWwKoVxGWzZf6B51OVw==;
+	List-Owner; bh=kicr6eAOSI+wFpvR33HdpktNn+tKqx/mTcWqwniF6Zg=; b=E7jN1176mBWFXG
+	FhhzB+uPfsVWUCYaBzi1o5GVF7tnbGg4345hFCKfy6bYH4HCPO1eKR4ECI63ae1zdsfemtUpP3LDG
+	QyGTFW6pgx60ZcGV/ZZVczMhjIPmwdWQEnq2MGMznHCj/vS8o84XIERT+wBKj6KeaIx6+FK+eLXpD
+	u3vdtQGpqZ1sQ8BIQziPVjWgVEIRhl8/d8/0fY5isrbVkGNmCkg9ogL0ac8BvMC65kwCvIunm8vHJ
+	iGyRBvRc6o5SGN24u/nWC3dVN7V92WUTF/IJxPQhTC3OkFPvYxSDvORSNLAm9a6jk5OLQhHhINiro
+	07ffIZdLgWazZaMgumuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVT3b-0006qu-RS; Tue, 28 May 2019 03:45:47 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1hVT45-000795-BZ; Tue, 28 May 2019 03:46:17 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVT3U-0006oI-PI
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 03:45:42 +0000
-Received: by mail-ed1-f68.google.com with SMTP id b8so3621656edm.11
+ id 1hVT3w-00078J-A1
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 03:46:11 +0000
+Received: by mail-ed1-f67.google.com with SMTP id w37so29502961edw.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 20:45:40 -0700 (PDT)
+ Mon, 27 May 2019 20:46:06 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Qw8JSbDcgOlgQhN7ihWTX0Ajf+/37Qsz4z2IzghfKy0=;
- b=nrbwA9RCDI8vaMluPEEJsy3yestLuE60Nm+ypbwczJrGo/hwM2GgYLsjq+gcmZYoRL
- d44o2QtUKMsyUtVgVLN3e8witPcG/dbM5a+jbVV+pIFZbxzGN7rUdrzkAdDdHp8P7Ln8
- 1xJuThY15BrEvFc0qdwUw0kFFIUq1uDJYSA05fr45KJ0rTiQpDHGNq1lpVbqNQymfnp+
- GdCZxKbWRrL1p5+0+EwS3Odycwp+PiY6mEeRc79LWdsgVYkH8msfW/Za56EaI8i70db/
- iJy7eBRg29KUIfuPLTu+4mXaL+DW/21px8+WNdR9iRT4e5PJwhX5/LCERd3UG5mgh/MT
- GZgw==
-X-Gm-Message-State: APjAAAV8SzvYYfVkXRaHbHl/LYu5It2PJtKKjeBVFetIl6r11o1ZPrZ1
- GSxCqiLQ1QtuGejTCu8sDJKrEo5W6sA=
-X-Google-Smtp-Source: APXvYqx9PIK9j8RIr1/JlRPqrW2J1nkq2Fg3vbxc9qFk6S4VJCN3TZNG0t0eAiZRCO76WOfxb8bQ2w==
-X-Received: by 2002:a17:906:3713:: with SMTP id
- d19mr92014558ejc.194.1559015138598; 
- Mon, 27 May 2019 20:45:38 -0700 (PDT)
-Received: from mail-wr1-f49.google.com (mail-wr1-f49.google.com.
- [209.85.221.49])
- by smtp.gmail.com with ESMTPSA id w5sm3920900edd.19.2019.05.27.20.45.38
+ bh=4SEwU4Hy3cIfuDLFnw9kA0Guwr5r77r5h+wWMUlBBnA=;
+ b=DKA/UyqvszoIHCE5Vsmc4HqrxYkF6yRmAcMfZXEZ/acrytNM+DUjMTKz6F2fzT5pZw
+ epON/bXC2IM54LPbY6TuJWKClcrYdNTSpsVQe6puoZD8hmlpT6q7fPwrxx5oPxMKscdG
+ mPVJzsKcwOCXbXB34BQI2BcQSFJTUgSx0WeTALP5/VSc5g51v+2NChb9Q2f50kgkNh/b
+ ZZ/tr1PzrVl6zonz94niWYL9v1cJHi66OYeynDPT9pG5LwGHrJhSoGUA5/4IQ57Bnb3I
+ YPQ4Mayw8+4fVIaIVg3DTR9XGhrCZzxZiY8wOoNdMC2EyGOxIH0rqqpEJ8LGscKLi6qE
+ uOCg==
+X-Gm-Message-State: APjAAAXi0aF8H/DXxuCXcI7WQJJK3VvKVOuAQYERS4l8zCVPeLB904Ag
+ kihL2lFABzaWooEmnvef2wXpen4R0rY=
+X-Google-Smtp-Source: APXvYqwyGJMZtDUcM2156LZ5qcG0qW3ThCs9hMRIjlfWujJRhVyf8SkxKT687yyUuNqvX8hC1hjXsw==
+X-Received: by 2002:a17:906:2acf:: with SMTP id
+ m15mr83702912eje.31.1559015164918; 
+ Mon, 27 May 2019 20:46:04 -0700 (PDT)
+Received: from mail-wr1-f54.google.com (mail-wr1-f54.google.com.
+ [209.85.221.54])
+ by smtp.gmail.com with ESMTPSA id r14sm3868840edd.0.2019.05.27.20.46.04
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 20:45:38 -0700 (PDT)
-Received: by mail-wr1-f49.google.com with SMTP id s17so18547778wru.3
+ Mon, 27 May 2019 20:46:04 -0700 (PDT)
+Received: by mail-wr1-f54.google.com with SMTP id f8so18552377wrt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 20:45:38 -0700 (PDT)
-X-Received: by 2002:adf:c98f:: with SMTP id f15mr27531894wrh.279.1559015137997; 
- Mon, 27 May 2019 20:45:37 -0700 (PDT)
+ Mon, 27 May 2019 20:46:04 -0700 (PDT)
+X-Received: by 2002:adf:9c8a:: with SMTP id d10mr23572420wre.9.1559015164084; 
+ Mon, 27 May 2019 20:46:04 -0700 (PDT)
 MIME-Version: 1.0
 References: <290402405a34506997fd2fab2c4c1486dbe6b7e5.1558958381.git-series.maxime.ripard@bootlin.com>
- <e345cb06e54ce80db07e96c2cf2ef51794130585.1558958381.git-series.maxime.ripard@bootlin.com>
- <CAGb2v67mXr-V9_EOb7g27rguYJe2OFHoYX8HCnPnSba3AgcVAA@mail.gmail.com>
-In-Reply-To: <CAGb2v67mXr-V9_EOb7g27rguYJe2OFHoYX8HCnPnSba3AgcVAA@mail.gmail.com>
+ <8be02c659fe4191dbf1d3c8dcb1ded8ff92e2dda.1558958381.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <8be02c659fe4191dbf1d3c8dcb1ded8ff92e2dda.1558958381.git-series.maxime.ripard@bootlin.com>
 From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 28 May 2019 11:45:28 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64o5tnXrUcUXPpe-TevDo7-UPpmd=_3fv9cBwo+PTgF0w@mail.gmail.com>
-Message-ID: <CAGb2v64o5tnXrUcUXPpe-TevDo7-UPpmd=_3fv9cBwo+PTgF0w@mail.gmail.com>
-Subject: Re: [PATCH 04/10] dt-bindings: rtc: Convert Allwinner A31 RTC to a
- schema
+Date: Tue, 28 May 2019 11:45:54 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66M=VWdN-MTAe3qN1B8vwNHjfN5jwjzZBkqiCh7xTvnzQ@mail.gmail.com>
+Message-ID: <CAGb2v66M=VWdN-MTAe3qN1B8vwNHjfN5jwjzZBkqiCh7xTvnzQ@mail.gmail.com>
+Subject: Re: [PATCH 05/10] dt-bindings: rtc: sun6i: Add the R40 RTC compatible
 To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_204540_819972_28A89454 
-X-CRM114-Status: GOOD (  14.10  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190527_204609_514439_DB2004BB 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
+ no trust [209.85.208.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -84,6 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  provider (wens213[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (wens213[at]gmail.com)
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,27 +108,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 11:37 AM Chen-Yu Tsai <wens@csie.org> wrote:
+On Mon, May 27, 2019 at 8:01 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 >
-> On Mon, May 27, 2019 at 8:00 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> >
-> > The newer Allwinner SoCs have an embedded RTC supported in Linux, with a
-> > matching Device Tree binding.
-> >
-> > Now that we have the DT validation in place, let's convert the device tree
-> > bindings for that controller over to a YAML schemas.
-> >
-> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> The R40 has a pretty different RTC compared to the other SoCs we've
+> encountered so far, the most important difference being that it now has
+> only a single interrupt, compared to the previous SoCs having two.
 >
-> Without understanding the full detains of JSON schema, the new description
-> looks correct to me.
+> Let's add a compatible for that.
 >
-> Acked-by: Chen-Yu Tsai <wens@csie.org>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
-You should probably mention the R40 compatible was dropped in favor of
-the new one in the next patch. Or was that an error?
-
-ChenYu
+Acked-by: Chen-Yu Tsai <wens@csie.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
