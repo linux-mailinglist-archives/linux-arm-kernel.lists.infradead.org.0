@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AFC82C4E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:56:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C595E2C4E9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:56:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Esr/x825fhqAL1Ml8bt3/a2SJHciHZi8uKywIJxiULo=; b=OV47jjMTgCG9rJ18JA8Sect4/
-	fqDlOLOE9FPu3HZIeDf5MIy6ryMGd3yZKInpKoC3cHcr1ZRnKgUiO+HEzxWRQkNha6WeUV2dE5Eb3
-	mnA6EFYQTo8UJayaMrJtRRa0KAM16YE1bOJEN8r+1Eu85ZUiEynhN1UHChuR5cwtdD1UrB0ZfKOYM
-	d7KK/gqFkl9mJ0cAPkOW/+7EojYs2xdulLIEICmKxyuurNlcZKHl9Ei8195ywu+1Kb5w8iExxQizw
-	FJR5iSfZJE05S0y9z14ngltKLTGpsXDBWzvRVKOgDfRTroOZYUxLwVfLrySM2GC6j47nMXeJUi8xM
-	rnE24uHEA==;
+	 bh=Esr/x825fhqAL1Ml8bt3/a2SJHciHZi8uKywIJxiULo=; b=WkMeymFWeBqP1cz0KKflo3VTg
+	zPCecmKKn7+TUh/4iAyBKvp0yp75o/s2FRzClcS8j1NS+qD0DSH2ru63YHEshwDH9/3TPq99FfpqN
+	oTs/MgtSnWw2EmFD+nxYTEKdIb5y6IEK+cKqU89wo7s07nB5bNHe4t+chxnmhDK7bwFHeQ3nRDedf
+	JDG9Dbsa9M3opnbtOmLW1OVAmuXfn48YqLnmN+EGSfO5+Nm/y4qW7loYuC7KWs3KKKcc6HznzjQ8G
+	pr9qsLBL7sMLZUcX5EqoesTSHVdRGwsWll+mwmrcYtYu7DPg6VoV18tcfO/j6F8keCMQEeq9+7sgG
+	mZtyK1WYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVZmd-0007LM-0q; Tue, 28 May 2019 10:56:43 +0000
+	id 1hVZmr-0007Zd-G4; Tue, 28 May 2019 10:56:57 +0000
 Received: from icp-osb-irony-out6.external.iinet.net.au ([203.59.1.106])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVZmV-0007KY-Tb
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:56:37 +0000
+ id 1hVZme-0007KY-02
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:56:45 +0000
 X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2AoAACTEu1c//aqqnwNWBkBAQEBAQE?=
- =?us-ascii?q?BAQEBAQEHAQEBAQEBgWWEJoQTg3uRH5M/hj4DVAkBAQEBAQEBAQE3AQEBhD8?=
- =?us-ascii?q?CgwE4EwEDAQEBBAEBAQEDAYZgAQEBAyMVQRALGAICJgICVwYBDAYCAQGDHoF?=
- =?us-ascii?q?qAadJcYEvhUeDHIFGgQwoi2qBQD+BOII2NT6HToJYBI1bhgKUHVkJgR5xXo4?=
- =?us-ascii?q?HhCohgh+KZolELYxBmAZXgSEzGh+DQIIYGo4yYI8WAQE?=
-X-IPAS-Result: =?us-ascii?q?A2AoAACTEu1c//aqqnwNWBkBAQEBAQEBAQEBAQEHAQEBA?=
- =?us-ascii?q?QEBgWWEJoQTg3uRH5M/hj4DVAkBAQEBAQEBAQE3AQEBhD8CgwE4EwEDAQEBB?=
- =?us-ascii?q?AEBAQEDAYZgAQEBAyMVQRALGAICJgICVwYBDAYCAQGDHoFqAadJcYEvhUeDH?=
- =?us-ascii?q?IFGgQwoi2qBQD+BOII2NT6HToJYBI1bhgKUHVkJgR5xXo4HhCohgh+KZolEL?=
- =?us-ascii?q?YxBmAZXgSEzGh+DQIIYGo4yYI8WAQE?=
-X-IronPort-AV: E=Sophos;i="5.60,521,1549900800"; d="scan'208";a="163258770"
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2AsAACTEu1c//aqqnwNWBkBAQEBAQE?=
+ =?us-ascii?q?BAQEBAQEHAQEBAQEBgWWEJoQTk1kBAQEBAQEGgTWJT4lwhj4DVAkBAQEBAQE?=
+ =?us-ascii?q?BAQE3AQEBhD8CgwE4EwEDAQEBBAEBAQEDAYZgAQEBAyMVQRALGAICJgICVwY?=
+ =?us-ascii?q?BDAYCAQGDHoF3pz1xgS+FR4McgUaBDCiLaniBB4E4gjY1PodOglgEjVuGApQ?=
+ =?us-ascii?q?dWQgBgg+OZYQqIYIfimaJRC2MQZgGV4EhMxoIKAiDJ4IYGo4yYI8WAQE?=
+X-IPAS-Result: =?us-ascii?q?A2AsAACTEu1c//aqqnwNWBkBAQEBAQEBAQEBAQEHAQEBA?=
+ =?us-ascii?q?QEBgWWEJoQTk1kBAQEBAQEGgTWJT4lwhj4DVAkBAQEBAQEBAQE3AQEBhD8Cg?=
+ =?us-ascii?q?wE4EwEDAQEBBAEBAQEDAYZgAQEBAyMVQRALGAICJgICVwYBDAYCAQGDHoF3p?=
+ =?us-ascii?q?z1xgS+FR4McgUaBDCiLaniBB4E4gjY1PodOglgEjVuGApQdWQgBgg+OZYQqI?=
+ =?us-ascii?q?YIfimaJRC2MQZgGV4EhMxoIKAiDJ4IYGo4yYI8WAQE?=
+X-IronPort-AV: E=Sophos;i="5.60,521,1549900800"; d="scan'208";a="163258800"
 Received: from 124-170-170-246.dyn.iinet.net.au (HELO [192.168.0.106])
  ([124.170.170.246])
- by icp-osb-irony-out6.iinet.net.au with ESMTP; 28 May 2019 18:56:25 +0800
+ by icp-osb-irony-out6.iinet.net.au with ESMTP; 28 May 2019 18:56:39 +0800
 Subject: Re: [PATCH] binfmt_flat: make load_flat_shared_library() work
 To: Jann Horn <jannh@google.com>, Andrew Morton <akpm@linux-foundation.org>
 References: <20190524201817.16509-1-jannh@google.com>
  <20190525144304.e2b9475a18a1f78a964c5640@linux-foundation.org>
  <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
-From: Greg Ungerer <gregungerer@westnet.com.au>
-Message-ID: <aa7f66ad-dab5-f0b6-ade9-7d3698d509a9@westnet.com.au>
-Date: Tue, 28 May 2019 20:56:23 +1000
+From: Greg Ungerer <gerg@linux-m68k.org>
+Message-ID: <6956cfe5-90d4-aad4-48e3-66b0ece91fed@linux-m68k.org>
+Date: Tue, 28 May 2019 20:56:37 +1000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
 In-Reply-To: <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_035636_195760_E2D6FBD7 
+X-CRM114-CacheID: sfid-20190528_035644_351387_6F81881F 
 X-CRM114-Status: GOOD (  14.94  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -62,7 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [203.59.1.106 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
