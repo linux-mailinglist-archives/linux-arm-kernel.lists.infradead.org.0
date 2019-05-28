@@ -2,59 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 888D12CA73
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:41:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C9DC2CA91
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:47:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IWmHewr29szqMvTNO7cEModDoRxYYwV8hL/LNpqPedM=; b=eGEI7kuzkh5l6e
-	qMxrYwmVVCDO7bwf6JDBsVdoqm66C8UeCbGBJHMUKn+iBngeSrtR9J9zKOQt20T4+au00APEUpjYW
-	zAjKjH+KsS8BBZVIRL5gOvojjwarhKUDdTDgnl2UwGZsDqlKhiW1wK9RnAmHCbUdVq/0EBMxduHR+
-	h2qC8qetDQtJE9x4TdYTp5LhK2cOo1Mjl8gX707euIda48ZYDB187mEW+KeU4WigknAsZUYJ16/Q6
-	KfFsUSKSRlljHnOXJdoWjxZYrhTAlhAHzGZZ1zOH+VqXWoH5aUjVxz1aGqWC86cQFAw/FdRqLyKdQ
-	v+GGhX3ngHL+qhtq2wsQ==;
+	List-Owner; bh=gleR6O66RAeLSPaMk6dcWZXSPgquYKXABDatRVPWfHE=; b=BHmp/crDFIe5tZ
+	jJaGDLL34TQomj6zWLn0s/IVjtTm4w6dXelqCsvAb2+/xu+Exo+85o88rvxW4xYScSCgdP1ndDrzm
+	tihPRGODb3helPoXWH8CM3btJi91mPzLmOOkoUZh1RekEFOiZFcP0EZTouT2PeOSdp+HFgUqG9I4s
+	cF86ryEyVOB4Q4HV0wFk0uUbDsXHYP3g34TiSxwzSMw+oEu9QImj4f/YHY8BKhUhcmBTebHXZA4OT
+	vBWhPTwZGzq8DLddiPsxdkxVP/DG8gZJIKJq8uPdMjQUinOqBkh7J1ulqYlwmGo+961K+xEFoQWGh
+	tdhjXUMraatjJ13U7TaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVeE4-0004FY-BW; Tue, 28 May 2019 15:41:20 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVeDt-0004ES-Ah
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:41:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE9D7341;
- Tue, 28 May 2019 08:41:06 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 027FD3F59C; Tue, 28 May 2019 08:41:00 -0700 (PDT)
-Date: Tue, 28 May 2019 16:40:58 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190528154057.GD32006@arrakis.emea.arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
- <20190527143719.GA59948@MBP.local>
- <20190528145411.GA709@e119886-lin.cambridge.arm.com>
+	id 1hVeJh-0006Yy-0a; Tue, 28 May 2019 15:47:09 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVeJW-0006UL-FT; Tue, 28 May 2019 15:47:03 +0000
+X-UUID: deb7c255ae734f81abead77dacf636e3-20190528
+X-UUID: deb7c255ae734f81abead77dacf636e3-20190528
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <miles.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1967243365; Tue, 28 May 2019 07:46:48 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 28 May 2019 08:46:46 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 28 May 2019 23:46:45 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 28 May 2019 23:46:45 +0800
+Message-ID: <1559058405.26151.6.camel@mtkswgap22>
+Subject: Re: [PATCH] arm64: mm: make CONFIG_ZONE_DMA32 configurable
+From: Miles Chen <miles.chen@mediatek.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Date: Tue, 28 May 2019 23:46:45 +0800
+In-Reply-To: <814b9bd0-38de-4b8d-92b3-d663931d90bf@arm.com>
+References: <1558973315-19655-1-git-send-email-miles.chen@mediatek.com>
+ <814b9bd0-38de-4b8d-92b3-d663931d90bf@arm.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190528145411.GA709@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_084109_380537_4FE3ED86 
-X-CRM114-Status: GOOD (  23.62  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190528_084658_517928_301D839E 
+X-CRM114-Status: GOOD (  20.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,100 +71,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Lee Smith <Lee.Smith@arm.com>, linux-kselftest@vger.kernel.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: wsd_upstream@mediatek.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 03:54:11PM +0100, Andrew Murray wrote:
-> On Mon, May 27, 2019 at 03:37:20PM +0100, Catalin Marinas wrote:
-> > On Mon, May 06, 2019 at 06:30:51PM +0200, Andrey Konovalov wrote:
-> > > This patch is a part of a series that extends arm64 kernel ABI to allow to
-> > > pass tagged user pointers (with the top byte set to something else other
-> > > than 0x00) as syscall arguments.
-> > > 
-> > > This patch allows tagged pointers to be passed to the following memory
-> > > syscalls: brk, get_mempolicy, madvise, mbind, mincore, mlock, mlock2,
-> > > mmap, mmap_pgoff, mprotect, mremap, msync, munlock, munmap,
-> > > remap_file_pages, shmat and shmdt.
-> > > 
-> > > This is done by untagging pointers passed to these syscalls in the
-> > > prologues of their handlers.
-> > > 
-> > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+On Tue, 2019-05-28 at 11:43 +0100, Robin Murphy wrote:
+> On 27/05/2019 17:08, Miles Chen wrote:
+> > This change makes CONFIG_ZONE_DMA32 defuly y and allows users
+> > to overwrite it.
 > > 
-> > Actually, I don't think any of these wrappers get called (have you
-> > tested this patch?). Following commit 4378a7d4be30 ("arm64: implement
-> > syscall wrappers"), I think we have other macro names for overriding the
-> > sys_* ones.
+> > For the SoCs that do not need CONFIG_ZONE_DMA32, this is the
+> > first step to manage all available memory by a single
+> > zone(normal zone) to reduce the overhead of multiple zones.
+> > 
+> > The change also fixes a build error when CONFIG_NUMA=y and
+> > CONFIG_ZONE_DMA32=n.
+> > 
+> > arch/arm64/mm/init.c:195:17: error: use of undeclared identifier 'ZONE_DMA32'
+> >                  max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
+> > 
+> > Signed-off-by: Miles Chen <miles.chen@mediatek.com>
+> > ---
+> >   arch/arm64/Kconfig   | 3 ++-
+> >   arch/arm64/mm/init.c | 2 ++
+> >   2 files changed, 4 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> > index 76f6e4765f49..9d20a736d1d1 100644
+> > --- a/arch/arm64/Kconfig
+> > +++ b/arch/arm64/Kconfig
+> > @@ -260,7 +260,8 @@ config GENERIC_CALIBRATE_DELAY
+> >   	def_bool y
+> >   
+> >   config ZONE_DMA32
+> > -	def_bool y
+> > +	bool "Support DMA32 zone"
 > 
-> What is the value in adding these wrappers?
+> This probably warrants an "if EMBEDDED" or "if EXPERT", since turning it 
+> off produces a kernel which won't work at all on certain systems (I've 
+> played around with this before...)
 
-Not much value, initially proposed just to keep the core changes small.
-I'm fine with moving them back in the generic code (but see below).
+Thanks for your comment. 
+I'll put a "if EXPERT"  here to avoid this case.
 
-I think another aspect is how we define the ABI. Is allowing tags to
-mlock() for example something specific to arm64 or would sparc ADI need
-the same? In the absence of other architectures defining such ABI, my
-preference would be to keep the wrappers in the arch code.
+> 
+> > +	default y
+> >   
+> >   config HAVE_GENERIC_GUP
+> >   	def_bool y
+> > diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> > index d2adffb81b5d..96829ce21f99 100644
+> > --- a/arch/arm64/mm/init.c
+> > +++ b/arch/arm64/mm/init.c
+> > @@ -191,8 +191,10 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+> >   {
+> >   	unsigned long max_zone_pfns[MAX_NR_ZONES]  = {0};
+> >   
+> > +#ifdef CONFIG_ZONE_DMA32
+> >   	if (IS_ENABLED(CONFIG_ZONE_DMA32))
+> 
+> There's no point keeping the IS_ENABLED() check when it's entirely 
+> redundant with the #ifdefs.
 
-Assuming sparc won't implement untagged_addr(), we can place the macros
-back in the generic code but, as per the review here, we need to be more
-restrictive on where we allow tagged addresses. For example, if mmap()
-gets a tagged address with MAP_FIXED, is it expected to return the tag?
+I'll remove the IS_ENABLE() code in next patch.
 
-My thoughts on allowing tags (quick look):
+-Miles
+> 
+> Robin.
+> 
+> >   		max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
+> > +#endif
+> >   	max_zone_pfns[ZONE_NORMAL] = max;
+> >   
+> >   	free_area_init_nodes(max_zone_pfns);
+> > 
 
-brk - no
-get_mempolicy - yes
-madvise - yes
-mbind - yes
-mincore - yes
-mlock, mlock2, munlock - yes
-mmap - no (we may change this with MTE but not for TBI)
-mmap_pgoff - not used on arm64
-mprotect - yes
-mremap - yes for old_address, no for new_address (on par with mmap)
-msync - yes
-munmap - probably no (mmap does not return tagged ptrs)
-remap_file_pages - no (also deprecated syscall)
-shmat, shmdt - shall we allow tagged addresses on shared memory?
 
-The above is only about the TBI ABI while ignoring hardware MTE. For the
-latter, we may want to change the mmap() to allow pre-colouring on page
-fault which means that munmap()/mprotect() should also support tagged
-pointers. Possibly mremap() as well but we need to decide whether it
-should allow re-colouring the page (probably no, in which case
-old_address and new_address should have the same tag). For some of these
-we'll end up with arm64 specific wrappers again, unless sparc ADI adopts
-exactly the same ABI restrictions.
-
--- 
-Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
