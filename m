@@ -2,72 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DD452C6CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 14:42:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D0AD2C6DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 14:44:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OO/L/ZmCPP1Riy0vAMpOod5/HwaPac1Ek7PV2US/caA=; b=DW4wf9RIM421O3
-	rx3n5ZG45Naa4LIjIdulD3wxb8K3BO06TcPUJv8inkZozUr3qYXksXj1HNzYOfHTX7UEme1mluxxd
-	45W/aD7doty0zZRMqbTyGfkxtfyjUNe1+9JB3PKwmWDDZ+ZfKv9NN6gokDoko5hf25cUmh/mWIjPZ
-	6sh1tIhJ0qRQu33sUUtY3i8Rg3pB7NfyBDJGG09yIx6ptKY7MppcrgdjKK884jPc4Syqw5WLY7sg7
-	FFWa+hMFFDHW4w6DG7VeAymPrH0z0vaOCAeEvgsoQfzaGlv76lO8/PbcYB9QMzHumVIQnetR46R8J
-	m/V7BydjDRxq5kcWagAA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0kcOreSaxcy3dV58PJ9m6j5x5ZbftvLCMXUFKDZV8oc=; b=ors
+	VRwHhSJtwwRHeSwp5HBL1E3JcBAdT0MV0249pIIN++0erFx7anN+863bF9jvLL0e2G5L5QwtnqqKQ
+	HqV6ekP4+RXOjD2ifxif1MRGS3GA2CxDaghTGa5zJMc4Kg2UjLprAFIrVBJToS+OoXBtBDpMUGOlq
+	E35J+so5btePNatcGSjm7PwBkwnL9f4seGsU6UrwF0gwckfn1N3jw+iOCJ5DgS2MMGFxu82ofNTCV
+	EbP7jW3Ra+Cwvsatvwi4vevmKxX7OBD/4/vK0ESKXBGbpVC4KaYGUPmEwNcz7AuKZtQFB6JXdDi8q
+	9aOaBTp4Pfq5vrSyEuEMVf0N1pt972Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVbQy-0007qn-F9; Tue, 28 May 2019 12:42:28 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hVbSr-00006w-EL; Tue, 28 May 2019 12:44:25 +0000
+Received: from node.akkea.ca ([192.155.83.177])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVbQp-0007qK-Qm
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 12:42:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=t2vArhK5ONSzG4f61utNPX6iuQEVIA/xkviTlXVlEb4=; b=HPRJ9AXdPxXH93KtZWMlngs4d
- oLca7XsLgMK+6r6FdA4ZxY5y/aTFakuSI1ts6DG7/vtK92LYzhXJvGTVO1RTDATctncupVy4biIGM
- c14v4cUXQ9R9xaGfMz+wXoROvs7/teJ1apRU5hP1s+MEKHvIMeNVduA7NPxAlFKijYKStRXmdRUaB
- HycwgL/lBtOVl4LbgU7XZx0Kwp/EDpL0I5l+TXVTmZz85KEH+rDWSJTfWxOr+4hX19oY0ABEq0P54
- XthKetauAq/9eWp9+emsOoOJ0Q8T2I03rK3gXz4jkv7PpgO8rwQeZ6OGYOHz8pYbzhnd70glyCVbU
- n/lH3o41A==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:56030)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hVbQS-0005lo-AK; Tue, 28 May 2019 13:41:56 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hVbQO-0003cr-Ip; Tue, 28 May 2019 13:41:52 +0100
-Date: Tue, 28 May 2019 13:41:52 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Young Xiao <92siuyang@gmail.com>
-Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
-Message-ID: <20190528124152.z76z7ar62hklz7tk@shell.armlinux.org.uk>
-References: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+ id 1hVbSk-00005l-DP
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 12:44:19 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by node.akkea.ca (Postfix) with ESMTP id E243F4E204D;
+ Tue, 28 May 2019 12:44:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1559047454; bh=QN+qfKJcn+iv1NFE027lzE+60Gd7OUBp8PBwf368hi8=;
+ h=From:To:Cc:Subject:Date;
+ b=Oy9FRep8jiYbF4jTd69IGkP9IGgMBqpY3UZZJFMP+XDZ3fyJxL955yZWPDnGcdu2M
+ Rg8y7rcdRF/t540YZGn5wCWnQf0T/Gs7dfsrbFmi4QkaIhGAdqGb9AUEdfDr4ctaLT
+ m5vxS/3uQUUiAfvV8+QLEocdB0vHGP4RJpGnGec4=
+X-Virus-Scanned: Debian amavisd-new at mail.akkea.ca
+Received: from node.akkea.ca ([127.0.0.1])
+ by localhost (mail.akkea.ca [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id lTtIYmYKCoKZ; Tue, 28 May 2019 12:44:14 +0000 (UTC)
+Received: from midas.localdomain (S0106788a2041785e.gv.shawcable.net
+ [70.66.86.75])
+ by node.akkea.ca (Postfix) with ESMTPSA id EE1D04E204B;
+ Tue, 28 May 2019 12:44:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=akkea.ca; s=mail;
+ t=1559047454; bh=QN+qfKJcn+iv1NFE027lzE+60Gd7OUBp8PBwf368hi8=;
+ h=From:To:Cc:Subject:Date;
+ b=Oy9FRep8jiYbF4jTd69IGkP9IGgMBqpY3UZZJFMP+XDZ3fyJxL955yZWPDnGcdu2M
+ Rg8y7rcdRF/t540YZGn5wCWnQf0T/Gs7dfsrbFmi4QkaIhGAdqGb9AUEdfDr4ctaLT
+ m5vxS/3uQUUiAfvV8+QLEocdB0vHGP4RJpGnGec4=
+From: "Angus Ainslie (Purism)" <angus@akkea.ca>
+To: angus.ainslie@puri.sm
+Subject: [PATCH] arm64: dts: fsl: imx8mq: enable the svns power key
+Date: Tue, 28 May 2019 05:44:06 -0700
+Message-Id: <20190528124406.29730-1-angus@akkea.ca>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_054220_028519_16EC969D 
-X-CRM114-Status: GOOD (  15.69  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190528_054418_497916_785FFAC2 
+X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -86,57 +81,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, x86@kernel.org,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, mingo@redhat.com,
- bp@alien8.de, hpa@zytor.com, linux-arm-kernel@lists.infradead.org,
- kan.liang@linux.intel.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Abel Vesa <abel.vesa@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 08:31:29PM +0800, Young Xiao wrote:
-> When a kthread calls call_usermodehelper() the steps are:
->   1. allocate current->mm
->   2. load_elf_binary()
->   3. populate current->thread.regs
-> 
-> While doing this, interrupts are not disabled. If there is a perf
-> interrupt in the middle of this process (i.e. step 1 has completed
-> but not yet reached to step 3) and if perf tries to read userspace
-> regs, kernel oops.
-> 
-> Fix it by setting abi to PERF_SAMPLE_REGS_ABI_NONE when userspace
-> pt_regs are not set.
-> 
-> See commit bf05fc25f268 ("powerpc/perf: Fix oops when kthread execs
-> user process") for details.
-> 
-> Signed-off-by: Young Xiao <92siuyang@gmail.com>
-> ---
->  arch/arm/kernel/perf_regs.c   | 3 ++-
->  arch/arm64/kernel/perf_regs.c | 3 ++-
->  arch/x86/kernel/perf_regs.c   | 3 ++-
->  3 files changed, 6 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm/kernel/perf_regs.c b/arch/arm/kernel/perf_regs.c
-> index 05fe92a..78ee29a 100644
-> --- a/arch/arm/kernel/perf_regs.c
-> +++ b/arch/arm/kernel/perf_regs.c
-> @@ -36,5 +36,6 @@ void perf_get_regs_user(struct perf_regs *regs_user,
->  			struct pt_regs *regs_user_copy)
->  {
->  	regs_user->regs = task_pt_regs(current);
-> -	regs_user->abi = perf_reg_abi(current);
-> +	regs_user->abi = (regs_user->regs) ? perf_reg_abi(current) :
-> +			 PERF_SAMPLE_REGS_ABI_NONE;
+Add the snvs power key.
 
-I'd prefer it if we didn't introduce unnecessary parens - what function
-do the parens around "regs_user->regs" serve?
+Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
+---
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+index 45d10d8efd14..5f93fd9662ae 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -8,6 +8,7 @@
+ #include <dt-bindings/power/imx8mq-power.h>
+ #include <dt-bindings/reset/imx8mq-reset.h>
+ #include <dt-bindings/gpio/gpio.h>
++#include "dt-bindings/input/input.h"
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/thermal/thermal.h>
+ #include "imx8mq-pinfunc.h"
+@@ -463,6 +464,14 @@
+ 					interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
+ 						<GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
+ 				};
++
++				snvs_pwrkey: snvs-powerkey {
++					compatible = "fsl,sec-v4.0-pwrkey";
++					regmap = <&snvs>;
++					interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
++					linux,keycode = <KEY_POWER>;
++					wakeup-source;
++				};
+ 			};
+ 
+ 			clk: clock-controller@30380000 {
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
