@@ -2,63 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24DD42CB1D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 18:08:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D01A2CB37
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 18:10:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=43N1UsSzDf1E7lJ2Ov+e8vq1dxw+3x0P/npKiGNtzeM=; b=hEwzjV8pxzKJNl
-	DR6AK78yH8yureiE7p5wr46YWrQNY/kjAAPvZTT90zMVxbi+DgI8UKFK9lrjfiXOn4QXbxKvNwm3m
-	qR0JqbdnNDY+fUA89hhEWmXmqt9A6Q2VC23g/suQ6x7N/rMr0axPqbsr70Pn8sG1uIHIcW7wxtGh4
-	WlFk74bwp/IkhsbFocfpmNaB8KP5vfwnOlEKVzJ+TyeP6Y8dj0NEsgWPY9dCDHXUTG5ZE/j4EZ1Sh
-	FjxgMsJfzNQeAvQRWpef2UBz1qBiceW5kifwVKps9VNAcvoK6Ie2uqILz/MK8FjPh2QUXh8lNPKUl
-	EP18xXkdcYm/sUIw4H6Q==;
+	List-Owner; bh=bC2jMjcPE6Zu/gkXHVGNKU+acXHzMywkan77mkE29+Y=; b=Rgo6jfwtO7Xbfb
+	7PXs1sJVs19I8QhqIKE3oujdbRkv2eflPtpIsZnw3LqsRZpiBAorYAkDFdQ1bSIf4mqSkg6/vK4b0
+	gpimC2+YndSkWE6fIE4NYn7jIe5QYOarUNguQsNwqab3xvKIzIF7ITWEI9E7WSrfWlqYn4aq1nQJ7
+	oLBHmp48nmca0fiJ4XoXGunWJPOq6D5NVX46jEeoVOuhrBSObjV0Gk7beqCrDMM+9Temg7QiGqzmJ
+	qlGtejP0pNvTPoBrqvhQX0G3okNdJRUCQ2wdwg8OV7IxNEVZvRTt5L3qSf51YTXDG0ontA8ij458t
+	dy7gN8lhOZbqQeMzB2lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVeei-0002GZ-5a; Tue, 28 May 2019 16:08:52 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVeeY-0002B0-Iu; Tue, 28 May 2019 16:08:45 +0000
-X-UUID: da88268963504681809590c93c82c3b7-20190528
-X-UUID: da88268963504681809590c93c82c3b7-20190528
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <miles.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 531453213; Tue, 28 May 2019 08:08:37 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 28 May 2019 09:08:36 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 29 May 2019 00:08:22 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 29 May 2019 00:08:22 +0800
-From: Miles Chen <miles.chen@mediatek.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon
- <will.deacon@arm.com>
-Subject: [PATCH v2] arm64: mm: make CONFIG_ZONE_DMA32 configurable
-Date: Wed, 29 May 2019 00:08:20 +0800
-Message-ID: <1559059700-19078-1-git-send-email-miles.chen@mediatek.com>
-X-Mailer: git-send-email 1.9.1
+	id 1hVega-0004I8-Op; Tue, 28 May 2019 16:10:48 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVegT-0004HD-NI
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 16:10:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 98005341;
+ Tue, 28 May 2019 09:10:39 -0700 (PDT)
+Received: from capper-debian.arm.com (unknown [10.37.12.41])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 27AB03F59C;
+ Tue, 28 May 2019 09:10:36 -0700 (PDT)
+From: Steve Capper <steve.capper@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 00/12] 52-bit kernel + user VAs
+Date: Tue, 28 May 2019 17:10:14 +0100
+Message-Id: <20190528161026.13193-1-steve.capper@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 87B232C704D69A9827EA24D295E4D72D2BDE208AE19017C0BAEB038AA959C9202000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_090842_629666_3F8A0548 
-X-CRM114-Status: GOOD (  11.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190528_091041_771600_8C73A069 
+X-CRM114-Status: GOOD (  17.92  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,70 +60,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
- Miles Chen <miles.chen@mediatek.com>, linux-mediatek@lists.infradead.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, bhsharma@redhat.com, will.deacon@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This change makes CONFIG_ZONE_DMA32 defuly y and allows users
-to overwrite it only when CONFIG_EXPERT=y.
+This patch series adds support for 52-bit kernel VAs using some of the
+machinery already introduced by the 52-bit userspace VA code in 5.0.
 
-For the SoCs that do not need CONFIG_ZONE_DMA32, this is the
-first step to manage all available memory by a single
-zone(normal zone) to reduce the overhead of multiple zones.
+As 52-bit virtual address support is an optional hardware feature,
+software support for 52-bit kernel VAs needs to be deduced at early boot
+time. If HW support is not available, the kernel falls back to 48-bit.
 
-The change also fixes a build error when CONFIG_NUMA=y and
-CONFIG_ZONE_DMA32=n.
+A significant proportion of this series focuses on "de-constifying"
+VA_BITS related constants.
 
-arch/arm64/mm/init.c:195:17: error: use of undeclared identifier 'ZONE_DMA32'
-                max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
+In order to allow for a KASAN shadow that changes size at boot time, one
+must fix the KASAN_SHADOW_END for both 48 & 52-bit VAs and "grow" the
+start address. Also, it is highly desirable to maintain the same
+function addresses in the kernel .text between VA sizes. Both of these
+requirements necessitate us to flip the kernel address space halves s.t.
+the direct linear map occupies the lower addresses.
 
-Change since v1:
-1. only expose CONFIG_ZONE_DMA32 when CONFIG_EXPERT=y
-2. remove redundant IS_ENABLED(CONFIG_ZONE_DMA32)
+In V2 of this series (apologies for the long delay from V1), the major
+change is that PAGE_OFFSET is retained as a constant. This allows for
+much faster virt_to_page computations. This is achieved by expanding the
+size of the VMEMMAP region to accommodate a disjoint 52-bit/48-bit
+direct linear map. This has been found to work well in my testing, but I
+would appreciate any feedback on this if it needs changing. To aid with
+git bisect, this logic is broken down into a few smaller patches.
 
-Cc: Robin Murphy <robin.murphy@arm.com>
-Signed-off-by: Miles Chen <miles.chen@mediatek.com>
----
- arch/arm64/Kconfig   | 3 ++-
- arch/arm64/mm/init.c | 5 +++--
- 2 files changed, 5 insertions(+), 3 deletions(-)
+As far as I'm aware, there are two outstanding issues with this series
+that need to be resolved:
+ 1) Is the code patching for ttbr1_offset safe? I need to analyse this
+    a little more,
+ 2) How can this memory map be advertised to kdump tools/documentation?
+    I was planning on getting the kernel VA structure agreed on, then I
+    would add the relevant exports/documentation.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 76f6e4765f49..20c552b1302c 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -260,7 +260,8 @@ config GENERIC_CALIBRATE_DELAY
- 	def_bool y
- 
- config ZONE_DMA32
--	def_bool y
-+	bool "Support DMA32 zone" if EXPERT
-+	default y
- 
- config HAVE_GENERIC_GUP
- 	def_bool y
-diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-index d2adffb81b5d..f643bd45ff69 100644
---- a/arch/arm64/mm/init.c
-+++ b/arch/arm64/mm/init.c
-@@ -191,8 +191,9 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
- {
- 	unsigned long max_zone_pfns[MAX_NR_ZONES]  = {0};
- 
--	if (IS_ENABLED(CONFIG_ZONE_DMA32))
--		max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
-+#ifdef CONFIG_ZONE_DMA32
-+	max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
-+#endif
- 	max_zone_pfns[ZONE_NORMAL] = max;
- 
- 	free_area_init_nodes(max_zone_pfns);
+Cheers,
 -- 
-2.18.0
+Steve
+
+
+Steve Capper (12):
+  arm/arm64: KVM: Formalise end of direct linear map
+  arm64: mm: Flip kernel VA space
+  arm64: kasan: Switch to using KASAN_SHADOW_OFFSET
+  arm64: mm: Replace fixed map BUILD_BUG_ON's with BUG_ON's
+  arm64: dump: Make kernel page table dumper dynamic again
+  arm64: mm: Introduce VA_BITS_MIN
+  arm64: mm: Introduce VA_BITS_ACTUAL
+  arm64: mm: Logic to make offset_ttbr1 conditional
+  arm64: mm: Separate out vmemmap
+  arm64: mm: Modify calculation of VMEMMAP_SIZE
+  arm64: mm: Tweak PAGE_OFFSET logic
+  arm64: mm: Introduce 52-bit Kernel VAs
+
+ Documentation/arm64/kasan-offsets.sh   | 27 ++++++++++++
+ arch/arm/include/asm/memory.h          |  1 +
+ arch/arm64/Kconfig                     | 46 +++++++++++++++++++-
+ arch/arm64/Makefile                    |  8 ----
+ arch/arm64/include/asm/assembler.h     | 17 +++++++-
+ arch/arm64/include/asm/cpucaps.h       |  3 +-
+ arch/arm64/include/asm/efi.h           |  4 +-
+ arch/arm64/include/asm/kasan.h         | 11 ++---
+ arch/arm64/include/asm/memory.h        | 53 +++++++++++++++--------
+ arch/arm64/include/asm/mmu_context.h   |  4 +-
+ arch/arm64/include/asm/pgtable-hwdef.h |  2 +-
+ arch/arm64/include/asm/pgtable.h       |  6 +--
+ arch/arm64/include/asm/processor.h     |  2 +-
+ arch/arm64/kernel/cpufeature.c         | 18 ++++++++
+ arch/arm64/kernel/head.S               | 25 +++++++++--
+ arch/arm64/kernel/hibernate-asm.S      |  1 +
+ arch/arm64/kernel/hibernate.c          |  2 +-
+ arch/arm64/kernel/kaslr.c              |  6 +--
+ arch/arm64/kvm/va_layout.c             | 14 +++----
+ arch/arm64/mm/dump.c                   | 58 +++++++++++++++++++++-----
+ arch/arm64/mm/fault.c                  |  4 +-
+ arch/arm64/mm/init.c                   | 29 +++++++++----
+ arch/arm64/mm/kasan_init.c             | 11 +++--
+ arch/arm64/mm/mmu.c                    | 13 +++---
+ arch/arm64/mm/proc.S                   |  6 ++-
+ virt/kvm/arm/mmu.c                     |  4 +-
+ 26 files changed, 280 insertions(+), 95 deletions(-)
+ create mode 100644 Documentation/arm64/kasan-offsets.sh
+
+-- 
+2.20.1
 
 
 _______________________________________________
