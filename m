@@ -2,58 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA6802C74C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 15:05:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 958F42C77A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 15:11:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JAY6OvxdTxGpSuiLHirG4L1DN2mfyQ/e70zzUc8H5jc=; b=T8upyTyNeyyVQh
-	Tyvx5CtXGj48Lz3+45qGmsoAzk6oXnBt4remCJ4vmKOiREglx97qRmJFesrWFBPI5tNN7fDAtygoF
-	N6SGG1IZ/X+FLle5cu1Z8uQBizW3jYP5pbZd7SxagVtFEsL+BGKXA1nTuBbpNhCLEOU3Jc4mUmaP+
-	KchFXfxSN8aoXoOjK4vqb5nTrSQkm4GpCz9wVrWPzc1aFV1QQTTRXsijdUolk18XFmIxul0t/TWln
-	eV948GZGlTLA4kme6l7a81jWKeylKdjOw8ajVN3LwXEbHZFZgycw6toMFCJKEq24waFT8wiltuyQ5
-	5nnXpqkFkhcuGx+Z4moQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Jbt9y7eV8eVoENKPLDdT0jEYyQ1HfDJOTJrgg7V6Sp0=; b=c/ir8+jFxwiBs2
+	IEuQ9inxiYrSWBOCPu5gYcFyAK86rbReXJvyU/GnPxnLTmyUzM0u5WSs+IN+OviFP5+1pJX6bjuNc
+	PJUzuh6x5RLg1WbQrC/4J3OXdgETxK25tBGcrduTIcOlrFbqt5l+Lpee7KiX81o0Gg4dV6ZHHs5uF
+	vRQle2sKBkceNhF/9v3fs0c/OJtx8jbOj808HPtsiYHk++kdUjzn8eXTH+YNDpugJhfmFUeOQ1ary
+	rBvKywyuWHLBaOJW3m+pfktlO+jTOmPLTc2Nl5RbzwmiGWFaZ31ecTyw4GeW0k8HXofmf9WaUqVIZ
+	Wy1iBULPO/FbDjXgvNFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVbnK-0002xl-Bf; Tue, 28 May 2019 13:05:34 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVbnD-0002xF-IP
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 13:05:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D01EC80D;
- Tue, 28 May 2019 06:05:26 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 479923F5AF; Tue, 28 May 2019 06:05:21 -0700 (PDT)
-Date: Tue, 28 May 2019 14:05:18 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190528130518.GB32006@arrakis.emea.arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
+	id 1hVbsZ-0004va-8d; Tue, 28 May 2019 13:10:59 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVbsD-0004hp-Eu
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 13:10:38 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4SDAXeZ060641;
+ Tue, 28 May 2019 08:10:33 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559049033;
+ bh=j/HzWeJq7uUYskgj6xTmASdH7f56zUC9hO0ZwJte/V8=;
+ h=From:To:CC:Subject:Date;
+ b=jp1iwcFQHLiuDEgMeAAZ9JygmEqLBQPZhasyyK9kYwabsH0vtlI88PbaRm4nNqczV
+ PqhwlUlgKd3PIa7wfT3w0Hk0Rc1JfqliM1N29IDEKTAJgHl7YI4LuEOtg1zH7/h4R8
+ fKTpufiTSWTgWwaW9ITJoLOU+gxULu7igkSbIOoc=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4SDAX3I090325
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 28 May 2019 08:10:33 -0500
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 28
+ May 2019 08:10:33 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 28 May 2019 08:10:33 -0500
+Received: from gomoku.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4SDAVBu079520;
+ Tue, 28 May 2019 08:10:31 -0500
+From: Tero Kristo <t-kristo@ti.com>
+To: <linux-clk@vger.kernel.org>, <sboyd@kernel.org>, <mturquette@baylibre.com>,
+ <ssantosh@kernel.org>, <nm@ti.com>
+Subject: [PATCHv2 0/5] clk: keystone: clock optimizations / fixes
+Date: Tue, 28 May 2019 16:10:19 +0300
+Message-ID: <1559049024-30872-1-git-send-email-t-kristo@ti.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_060527_620852_AC8BEBBF 
-X-CRM114-Status: GOOD (  11.43  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190528_061037_558513_01CE58CD 
+X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,103 +89,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 06, 2019 at 06:30:51PM +0200, Andrey Konovalov wrote:
->  /*
->   * Wrappers to pass the pt_regs argument.
->   */
->  #define sys_personality		sys_arm64_personality
-> +#define sys_mmap_pgoff		sys_arm64_mmap_pgoff
-> +#define sys_mremap		sys_arm64_mremap
-> +#define sys_munmap		sys_arm64_munmap
-> +#define sys_brk			sys_arm64_brk
-> +#define sys_get_mempolicy	sys_arm64_get_mempolicy
-> +#define sys_madvise		sys_arm64_madvise
-> +#define sys_mbind		sys_arm64_mbind
-> +#define sys_mlock		sys_arm64_mlock
-> +#define sys_mlock2		sys_arm64_mlock2
-> +#define sys_munlock		sys_arm64_munlock
-> +#define sys_mprotect		sys_arm64_mprotect
-> +#define sys_msync		sys_arm64_msync
-> +#define sys_mincore		sys_arm64_mincore
-> +#define sys_remap_file_pages	sys_arm64_remap_file_pages
-> +#define sys_shmat		sys_arm64_shmat
-> +#define sys_shmdt		sys_arm64_shmdt
-
-This hunk should be (I sent a separate patch for sys_personality):
-
-@@ -160,23 +163,23 @@ SYSCALL_DEFINE1(arm64_shmdt, char __user *, shmaddr)
- /*
-  * Wrappers to pass the pt_regs argument.
-  */
--#define sys_personality		sys_arm64_personality
--#define sys_mmap_pgoff		sys_arm64_mmap_pgoff
--#define sys_mremap		sys_arm64_mremap
--#define sys_munmap		sys_arm64_munmap
--#define sys_brk			sys_arm64_brk
--#define sys_get_mempolicy	sys_arm64_get_mempolicy
--#define sys_madvise		sys_arm64_madvise
--#define sys_mbind		sys_arm64_mbind
--#define sys_mlock		sys_arm64_mlock
--#define sys_mlock2		sys_arm64_mlock2
--#define sys_munlock		sys_arm64_munlock
--#define sys_mprotect		sys_arm64_mprotect
--#define sys_msync		sys_arm64_msync
--#define sys_mincore		sys_arm64_mincore
--#define sys_remap_file_pages	sys_arm64_remap_file_pages
--#define sys_shmat		sys_arm64_shmat
--#define sys_shmdt		sys_arm64_shmdt
-+#define __arm64_sys_personality		__arm64_sys_arm64_personality
-+#define __arm64_sys_mmap_pgoff		__arm64_sys_arm64_mmap_pgoff
-+#define __arm64_sys_mremap		__arm64_sys_arm64_mremap
-+#define __arm64_sys_munmap		__arm64_sys_arm64_munmap
-+#define __arm64_sys_brk			__arm64_sys_arm64_brk
-+#define __arm64_sys_get_mempolicy	__arm64_sys_arm64_get_mempolicy
-+#define __arm64_sys_madvise		__arm64_sys_arm64_madvise
-+#define __arm64_sys_mbind		__arm64_sys_arm64_mbind
-+#define __arm64_sys_mlock		__arm64_sys_arm64_mlock
-+#define __arm64_sys_mlock2		__arm64_sys_arm64_mlock2
-+#define __arm64_sys_munlock		__arm64_sys_arm64_munlock
-+#define __arm64_sys_mprotect		__arm64_sys_arm64_mprotect
-+#define __arm64_sys_msync		__arm64_sys_arm64_msync
-+#define __arm64_sys_mincore		__arm64_sys_arm64_mincore
-+#define __arm64_sys_remap_file_pages	__arm64_sys_arm64_remap_file_pages
-+#define __arm64_sys_shmat		__arm64_sys_arm64_shmat
-+#define __arm64_sys_shmdt		__arm64_sys_arm64_shmdt
- 
- asmlinkage long sys_ni_syscall(const struct pt_regs *);
- #define __arm64_sys_ni_syscall	sys_ni_syscall
-
--- 
-Catalin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpUaGlzIGlzIGEgcmUtYmFzZSAvIHJlLXNwaW4gb2YgdGhlIEtleXN0b25lIGNsb2NrIG9w
+dGltaXphdGlvbiBzZXJpZXMgWzFdLgoKQ2hhbmdlcyBmcm9tIHYxOgotIHJlYmFzZWQgb24gdG9w
+IG9mIDUuMi1yYzEKLSBhZGRlZCBzdXBwb3J0IGZvciBjbGstaWRzIDI1NSsKLSBjaGFuZ2VkIHBh
+dGNoICMzIHRvIHBhcnNlIGFsc28gJ2Fzc2lnbmVkLWNsb2NrcycgaW4gYWRkaXRpb24gdG8gJ2Ns
+b2NrcycKICBEVCBub2RlcyBvbmx5LiBUaGlzIGFsbG93cyBhdXRvbWF0aWMgKERUIGJhc2VkKSBw
+cm9ncmFtbWluZyBvZiBjbG9ja3MKICB0aGF0IGFyZSBub3QgZGlyZWN0bHkgdG91Y2hlZCBieSBh
+bnkgZHJpdmVyLgoKUGxlYXNlIG5vdGUgdGhhdCB0aGVyZSBpcyBoYXJkIGRlcGVuZGVuY3kgYmV0
+d2VlbiBwYXRjaGVzIDQgJiA1LCBwYXRjaCAjNQptdXN0IGJlIGFwcGxpZWQgYWZ0ZXIgcGF0Y2gg
+IzQsIG90aGVyd2lzZSBiYWQgdGhpbmdzIHdpbGwgaGFwcGVuIChiYXNpY2FsbHkKYm9vdCBicmVh
+a3MuKSBUaGUgY2FzdCBtYWdpYyBpbiBwYXRjaCAjNCBpcyBkb25lIGFsc28gc28gdGhhdCB0aGlz
+IG9yZGVyCm9mIHBhdGNoZXMgY2FuIGJlIHVzZWQgYW5kIGJpc2VjdGFiaWxpdHkgaXMgcmV0YWlu
+ZWQuCgotVGVybwoKWzFdwqBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1hcm0ta2VybmVs
+LzE1NTUwOTMzNDItNDI4LTEtZ2l0LXNlbmQtZW1haWwtdC1rcmlzdG9AdGkuY29tLwoKCi0tClRl
+eGFzIEluc3RydW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNp
+bmtpLiBZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxl
+OiBIZWxzaW5raQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
