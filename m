@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B382F2C5C5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 13:51:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 100302C5D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 13:52:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BFMVEaanKVYRzoFuDEi0e0w+2qc8nukc8CYNgIRAnHI=; b=JsxVD21xqtwVK2
-	quSvxu+gxl57upbl2hrz+dacUn48dm6VDPnz/rPydsrTqVmwhuEDeVfwnX5oc+Q3Yqg46WHkWr+U/
-	8rMAWQhvt8pAgFIfWZwO9MipraLfy30sOEXITQUYgwU2/oNyUEJYbzsEhrRhyL9Es75dF4y5IPvGe
-	6dEHhdterFqdB5oacIKaa3FDglUkuey4VMOR58gQGcNGuhe13fNa6wdKnS/y4hlqVgKCtQQfvr6CF
-	FuBSD0C342WamZW1sPQwwjaxh4hWiEHyhAxCCnWaR3Ybo6pwPf31Qr8gdUNV7ilyS41ZOX+TKvWHh
-	vjmwcFh6hGVo6hvcVVMA==;
+	List-Owner; bh=JST48IjCQK40Be1/ZJIjY8LzO7dgXARzfY+g/4tRoPo=; b=VT8eUhz8QrB4hh
+	D8XoCYNlA74JRSMDjNRFHiX3HGHu/GfpHdFMXf8WbFYAWg50BIkzGszGEIn+/tozso2AN7biJ0jrd
+	eNBDPPrlagcJH9y/nVNApTH7s7xJMWmR7smaUd3E6lu7Wy0gzxQvepSPS7RQlRi1miV/aSsy29vzM
+	bGR/pgMbrWlocdqiT9qkfAhVx3FoEjXVIpLLdyifb2KsIcK0uJAG1W3CmvkKtnE/9hWZdJNgVpOFv
+	zsQAQ7LR76/6DBnF8yy8eLrPBjYh5J6ofd96qikPaaQ7kx3rvianESnzJX5HIws1rabynM6Tyo4Lq
+	4+wSWYJx/3SlbpxtkvYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVae0-0004lz-6B; Tue, 28 May 2019 11:51:52 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hVaeQ-00051q-1v; Tue, 28 May 2019 11:52:18 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVads-0004ky-9o
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 11:51:45 +0000
+ id 1hVaeH-00050s-IJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 11:52:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D58B8341;
- Tue, 28 May 2019 04:51:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1DD71341;
+ Tue, 28 May 2019 04:52:09 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E856E3F59C;
- Tue, 28 May 2019 04:51:42 -0700 (PDT)
-Date: Tue, 28 May 2019 12:51:40 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0E6C83F59C;
+ Tue, 28 May 2019 04:52:07 -0700 (PDT)
+Date: Tue, 28 May 2019 12:52:05 +0100
 From: Will Deacon <will.deacon@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH] arm64: Fix the arm64_personality() syscall wrapper
- redirection
-Message-ID: <20190528115140.GG20809@fuggles.cambridge.arm.com>
-References: <20190528113934.55295-1-catalin.marinas@arm.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH] arm64/module: revert to unsigned interpretation of
+ ABS16/32 relocations
+Message-ID: <20190528115205.GH20809@fuggles.cambridge.arm.com>
+References: <20190527064413.21304-1-ard.biesheuvel@linaro.org>
+ <20190528101147.GB20809@fuggles.cambridge.arm.com>
+ <CAKv+Gu8q1ABorbhL7yBjdKP=xt0gkFn2-BSntifkbx8w=bE=bg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190528113934.55295-1-catalin.marinas@arm.com>
+In-Reply-To: <CAKv+Gu8q1ABorbhL7yBjdKP=xt0gkFn2-BSntifkbx8w=bE=bg@mail.gmail.com>
 User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_045144_343583_9CFFED79 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20190528_045209_611365_30F09ADF 
+X-CRM114-Status: GOOD (  36.15  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -64,40 +67,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, stable@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ James Morse <james.morse@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 12:39:34PM +0100, Catalin Marinas wrote:
-> Following commit 4378a7d4be30 ("arm64: implement syscall wrappers"), the
-> syscall function names gained the '__arm64_' prefix. Ensure that we
-> have the correct #define for redirecting a default syscall through a
-> wrapper.
+On Tue, May 28, 2019 at 12:20:53PM +0200, Ard Biesheuvel wrote:
+> On Tue, 28 May 2019 at 12:11, Will Deacon <will.deacon@arm.com> wrote:
+> >
+> > On Mon, May 27, 2019 at 08:44:13AM +0200, Ard Biesheuvel wrote:
+> > > Commit 1cf24a2cc3fd
+> > >
+> > >   ("arm64/module: deal with ambiguity in PRELxx relocation ranges")
+> > >
+> > > updated the overflow checking logic in the relocation handling code to
+> > > ensure that PREL16/32 relocations don't overflow signed quantities.
+> > >
+> > > However, the same code path is used for absolute relocations, where the
+> > > interpretation is the opposite: the only current use case for absolute
+> > > relocations operating on non-native word size quantities is the CRC32
+> > > handling in the CONFIG_MODVERSIONS code, and these CRCs are unsigned
+> > > 32-bit quantities, which are now being rejected by the module loader
+> > > if bit 31 happens to be set.
+> > >
+> > > So let's use different ranges for quanties subject to absolute vs.
+> > > relative relocations:
+> > > - ABS16/32 relocations should be in the range [0, Uxx_MAX)
+> > > - PREL16/32 relocations should be in the range [Sxx_MIN, Sxx_MAX)
+> > >
+> > > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > > ---
+> > >  arch/arm64/kernel/module.c | 14 ++++++++------
+> > >  1 file changed, 8 insertions(+), 6 deletions(-)
+> > >
+> > > diff --git a/arch/arm64/kernel/module.c b/arch/arm64/kernel/module.c
+> > > index f32359cffb01..85fb63c1ba3a 100644
+> > > --- a/arch/arm64/kernel/module.c
+> > > +++ b/arch/arm64/kernel/module.c
+> > > @@ -98,10 +98,10 @@ static int reloc_data(enum aarch64_reloc_op op, void *place, u64 val, int len)
+> > >
+> > >       /*
+> > >        * The ELF psABI for AArch64 documents the 16-bit and 32-bit place
+> > > -      * relative relocations as having a range of [-2^15, 2^16) or
+> > > -      * [-2^31, 2^32), respectively. However, in order to be able to detect
+> > > -      * overflows reliably, we have to choose whether we interpret such
+> > > -      * quantities as signed or as unsigned, and stick with it.
+> > > +      * relative and absolute relocations as having a range of [-2^15, 2^16)
+> > > +      * or [-2^31, 2^32), respectively. However, in order to be able to
+> > > +      * detect overflows reliably, we have to choose whether we interpret
+> > > +      * such quantities as signed or as unsigned, and stick with it.
+> > >        * The way we organize our address space requires a signed
+> > >        * interpretation of 32-bit relative references, so let's use that
+> > >        * for all R_AARCH64_PRELxx relocations. This means our upper
+> > > @@ -111,12 +111,14 @@ static int reloc_data(enum aarch64_reloc_op op, void *place, u64 val, int len)
+> > >       switch (len) {
+> > >       case 16:
+> > >               *(s16 *)place = sval;
+> > > -             if (sval < S16_MIN || sval > S16_MAX)
+> > > +             if ((op == RELOC_OP_ABS && (sval < 0 || sval > U16_MAX)) ||
+> > > +                 (op == RELOC_OP_PREL && (sval < S16_MIN || sval > S16_MAX)))
+> > >                       return -ERANGE;
+> > >               break;
+> > >       case 32:
+> > >               *(s32 *)place = sval;
+> > > -             if (sval < S32_MIN || sval > S32_MAX)
+> > > +             if ((op == RELOC_OP_ABS && (sval < 0 || sval > U32_MAX)) ||
+> > > +                 (op == RELOC_OP_PREL && (sval < S32_MIN || sval > S32_MAX)))
+> > >                       return -ERANGE;
+> > >               break;
+> > >       case 64:
+> >
+> > Hmm. I worry that this isn't the last time we're going to be tweaking this,
+> > so I'm wondering whether or not we should just revert 1cf24a2cc3fd instead.
+> >
 > 
-> Fixes: 4378a7d4be30 ("arm64: implement syscall wrappers")
-> Cc: <stable@vger.kernel.org> # 4.19.x-
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> ---
->  arch/arm64/kernel/sys.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> Both absolute and relative 32-bit references can really only be
+> emitted using assembler code, since C code only uses the former, and
+> only uses it to resolve symbol addresses not bare values.
 > 
-> diff --git a/arch/arm64/kernel/sys.c b/arch/arm64/kernel/sys.c
-> index 6f91e8116514..162a95ed0881 100644
-> --- a/arch/arm64/kernel/sys.c
-> +++ b/arch/arm64/kernel/sys.c
-> @@ -50,7 +50,7 @@ SYSCALL_DEFINE1(arm64_personality, unsigned int, personality)
->  /*
->   * Wrappers to pass the pt_regs argument.
->   */
-> -#define sys_personality		sys_arm64_personality
-> +#define __arm64_sys_personality		__arm64_sys_arm64_personality
+> ABS32 is only used by the CONFIG_MODVERSIONS code, and PREL32 is only
+> used by the few data structures where we deliberately use relative
+> references to get rid of the RELA entries associated with absolute
+> references.
+> 
+> So I don't share your concern here, although I understand where it is
+> coming from.
 
-Cheers, I've picked this up as a fix for -rc3.
+Fair enough, although I'm not claiming that there's a bug in your patch
+(it looks fine), just more that I dislike the deviation we're introducing
+here.
+
+> *However*, not being able to detect overflow is *really* bad, so even
+> if there is another tweak behind the horizon, this is still better
+> than silent data corruption because your data reference is off by 4
+> GB.
+
+Agreed.
+
+> > However, if you still want to pursue this, please can you restructure the
+> > check so that we do:
+> >
+> >         if (op == RELOC_OP_PREL) {
+> >                 /* Comment about deviation from ELF ABI */
+> >                 if (signed overflow check)
+> >                         return -ERANGE;
+> >         } else if (unsigned overflow check) {
+> >                 return -ERANGE;
+> >         }
+> >
+> > i.e. drop the explicit check of ABS so that the default behaviour follows
+> > the ELF spec?
+> >
+> 
+> My patch does not follow the ELF spec for either ABS16/32 or PREL16/32
+> relocations. It chooses an unsigned interpretation for the former, and
+> a signed one for the latter, and I think this is the only way to deal
+> with this properly.
+> 
+> This is why I updated the comment as well: we should apply a strict
+> (but different) interpretation to both kinds of relocations, not just
+> the relative ones.
+
+Ah, apologies, I missed that you'd changed the ABS behaviour from what it
+was prior to 1cf24a2cc3fd. My main gripe is that our (currently unused)
+fallthrough case (for op != PREL or ABS) is to elide the check altogether,
+whereas I would prefer that we do our special casing with the comment, and
+then keep the old overflow check for everything else, even though it's
+really just there for documentation purposes.
 
 Will
 
