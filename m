@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3EE32C228
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 11:04:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A7302C27E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 11:05:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MWu/Q7Y4qGphFgW1VcIME2Ux1XwY1z6RmuWbhcV4Cms=; b=bZOGCSAhqRRJAx
-	d4Iy6eyBPJ7mmbo8qvribq/PzCWWUd/Ebez/Jmxhjg63GOAMjp/KEW1qnIUITMCSVMGPi/tuYB+nA
-	49Y+zggregNMPSx9fcIc71JmHLgBzqC9X/oCyk6rHBZ1Vsq2xchJ9ZGa/e/2wIdCcMHrVnwZfi59P
-	7Zxm6f+fAoMq93pqUr52TC5Hu+V79XJLmR5FbCcvKoSRL8C68jzTgj64tY9I7PBBMA9nO8/zGWLtL
-	H/sFDWl/cHaC+0BmtlpxjR/RL0Gj9qTVjuw+xTmT/yplt/iBf0kkt84VyDK+S1uvuGo+9JYjxv/xx
-	TR1FuogPY1qivyDK639Q==;
+	List-Owner; bh=0q8yNKnxu9piONTu3g6h85KVl+vCQ6qG2CyEWGg58P0=; b=bugkaMDCgk0Ftp
+	4bK5rzSXfcZMru/IxqjG8RRzuOZGSXwHofQbHfB1dcciZjuSLkhoqIcCzrYCttAOINN+rNhX0JCda
+	LSwEcdgvAF1O/hVqmcou7VrzvrP+D+QdcQFiC7lMfH4x+GjRnTqHWaY4g9biyyIu4lwE9jCeea5K5
+	mpyB4qVqN8wtXNSiya/YHXjhxXzWQCm7W/XZxRys9lnM8wbsBkOE/vhR2kaGrTZC+WHtxIDkmOf6k
+	J4kTfKM9is/59sBuxwD3eg1MLemzlfki5TcZc9OOZHu9TC8i1C2BF91cGtsGem8rDdx4zvjyU2xEx
+	r227rBRchlFnGzMB8G9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVY1W-0005vM-PT; Tue, 28 May 2019 09:03:58 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1hVY2w-00082Y-DU; Tue, 28 May 2019 09:05:26 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVY16-0005Zl-TW
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 09:03:36 +0000
-Received: from localhost.localdomain
- (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr [90.88.147.134])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id BD25320002F;
- Tue, 28 May 2019 09:03:13 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Gregory Clement <gregory.clement@bootlin.com>,
- Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] arm64: dts: marvell: armada-7040-db: Add USB current
- regulators
-Date: Tue, 28 May 2019 11:03:10 +0200
-Message-Id: <20190528090310.31774-1-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.19.1
+ id 1hVY2p-00081y-Ak
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 09:05:20 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 929DD88CD603B13F05D2;
+ Tue, 28 May 2019 17:05:12 +0800 (CST)
+Received: from localhost (10.177.31.96) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Tue, 28 May 2019
+ 17:04:56 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <gregkh@linuxfoundation.org>, <jslaby@suse.com>,
+ <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
+Subject: [PATCH -next] serial: stm32: Make stm32_get_databits static
+Date: Tue, 28 May 2019 17:04:49 +0800
+Message-ID: <20190528090449.22868-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
+X-Originating-IP: [10.177.31.96]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_020333_340597_48055046 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190528_020519_607253_0A5D1AD9 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -62,88 +63,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Antoine Tenart <antoine.tenart@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: YueHaibing <yuehaibing@huawei.com>, linux-serial@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Armada 7040-db USB ports deliver 500mA by default while they
-could deliver up to 900mA (usually, for USB3 devices).
+Fix sparse warning:
 
-The board embeds a GPIO controlled regulator on each port which can be
-configured to deliver each amount of current.
+drivers/tty/serial/stm32-usart.c:603:14: warning:
+ symbol 'stm32_get_databits' was not declared. Should it be static?
 
-Add a vin-supply property to the USB3 Vbus nodes for this purpose. The
-regulator will be automatically 'enabled', ie. set to limit at 900mA
-instead of 500mA.
-
-Suggested-by: Alex Leibovich <alexl@marvell.com>
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- .../arm64/boot/dts/marvell/armada-7040-db.dts | 28 +++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ drivers/tty/serial/stm32-usart.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-7040-db.dts b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-index d20d84ce7ca8..f34ee87a0f56 100644
---- a/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-7040-db.dts
-@@ -28,6 +28,32 @@
- 		ethernet2 = &cp0_eth2;
- 	};
+diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
+index 9c2b04e..4517f2b 100644
+--- a/drivers/tty/serial/stm32-usart.c
++++ b/drivers/tty/serial/stm32-usart.c
+@@ -600,7 +600,7 @@ static void stm32_shutdown(struct uart_port *port)
+ 	free_irq(port->irq, port);
+ }
  
-+	cp0_exp_usb3_0_current_regulator: gpio-regulator {
-+		compatible = "regulator-gpio";
-+		regulator-name = "cp0-usb3-0-current-regulator";
-+		regulator-type = "current";
-+		regulator-min-microamp = <500000>;
-+		regulator-max-microamp = <900000>;
-+		gpios = <&expander0 4 GPIO_ACTIVE_HIGH>;
-+		states = <500000 0x0
-+			  900000 0x1>;
-+		enable-active-high;
-+		gpios-states = <0>;
-+	};
-+
-+	cp0_exp_usb3_1_current_regulator: gpio-regulator {
-+		compatible = "regulator-gpio";
-+		regulator-name = "cp0-usb3-1-current-regulator";
-+		regulator-type = "current";
-+		regulator-min-microamp = <500000>;
-+		regulator-max-microamp = <900000>;
-+		gpios = <&expander0 5 GPIO_ACTIVE_HIGH>;
-+		states = <500000 0x0
-+			  900000 0x1>;
-+		enable-active-high;
-+		gpios-states = <0>;
-+	};
-+
- 	cp0_reg_usb3_0_vbus: cp0-usb3-0-vbus {
- 		compatible = "regulator-fixed";
- 		regulator-name = "usb3h0-vbus";
-@@ -35,6 +61,7 @@
- 		regulator-max-microvolt = <5000000>;
- 		enable-active-high;
- 		gpio = <&expander0 0 GPIO_ACTIVE_HIGH>;
-+		vin-supply = <&cp0_exp_usb3_0_current_regulator>;
- 	};
+-unsigned int stm32_get_databits(struct ktermios *termios)
++static unsigned int stm32_get_databits(struct ktermios *termios)
+ {
+ 	unsigned int bits;
  
- 	cp0_reg_usb3_1_vbus: cp0-usb3-1-vbus {
-@@ -44,6 +71,7 @@
- 		regulator-max-microvolt = <5000000>;
- 		enable-active-high;
- 		gpio = <&expander0 1 GPIO_ACTIVE_HIGH>;
-+		vin-supply = <&cp0_exp_usb3_1_current_regulator>;
- 	};
- 
- 	cp0_usb3_0_phy: cp0-usb3-0-phy {
 -- 
-2.19.1
+2.7.4
+
 
 
 _______________________________________________
