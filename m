@@ -2,79 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A242E2CA9F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:49:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 069202CABB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:54:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:To:From:Subject:References:
 	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D/8VngZat7y7MWkbLYy3hUwHzRZ235Wv2pO10o0nx5I=; b=ocSK98lqrri7M4
-	9tYf0J8D5seEjUsxfgt9MOme32TFG1fWXFeVkS+oFVDUR5/8bu3pNxMfMtgLFreHj4maJjs452Sux
-	y93tuRb5lT67anTYHzzA1ybuCqLbEwtW7AnBE0NlbwSDmxAzhkAps59E3DcLrPQEhyWTJ+fwsTKsK
-	AqHMt+C+xwzVgtJ8aQByLHXkTpa33/s3iYyU5JCYjjk0ClSXMl5Lqjrb2g0jNMqglWQpDM+lkUvcE
-	kn8M2XtqjjvNQ39D6jqI4YkPoNzoZ11Y3yCpZ76jfVPAOV9fmzrY2pFIb1z9A6adeYPNhWdfAkeW7
-	XDc7v4mwSf62agbF9TOg==;
+	List-Owner; bh=VFTFu/fIhKw5ZnzxEOgdoVg5ePZfupNf7ovZTh9Wd4Y=; b=RyXVu+oBlAVkfO
+	2VLL7YXs2V3BlRTglDzjiMZruNlMY2hi5u2kIY+7+6HMnBF+g+Hp5otlaqU51ckL39RtZ27bfbb7D
+	HBcHbfq8mikSVGJOltsSO5/UhSzV87AU00RmsBOEUa8E2E32SsltUABlQAS0c7vm4IpH6cvgNNNFe
+	oL3xAc4OzT/pDctZzXvfu+Qa/E/R3oWG8MEw0D0rmD83rYW3hrOBXR+A2XPUFxuV+8ZYTKX2WMhjZ
+	Fk5uMkuUP0016tyZTH3MM+myo0l6PSygKW3S7mQ2SDhaepGqL0JHQrpQ8/zC15x5gj5imZ0k3qIKI
+	xuSjLGZ1tkMRoH4RduZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVeLV-0006xN-PF; Tue, 28 May 2019 15:49:01 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hVeQI-0001IM-J6; Tue, 28 May 2019 15:53:58 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVeLN-0006wO-0Y
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:48:57 +0000
-Received: by mail-pl1-x642.google.com with SMTP id w7so8510499plz.1
+ id 1hVeQB-0001Hq-SE
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:53:53 +0000
+Received: by mail-pg1-x544.google.com with SMTP id w34so6569457pga.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 08:48:51 -0700 (PDT)
+ Tue, 28 May 2019 08:53:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=message-id:mime-version:content-transfer-encoding:in-reply-to
  :references:subject:from:cc:to:user-agent:date;
- bh=2ksREyYQk7jUAmxjj6kKAaOfKzWITL2u9MpABedwwuE=;
- b=mMTWIHmtpHW/kCfVi7P/cdu0cX26em5nK45r/zhOOcmUvWoS6ny5gdVUjARVj1qqNK
- 4+4OFcJ5R228v+wDVhBxn94cnE44EABCId0UFIwIP5SDEzNR6bv9isp3KRyTQTY/A2As
- GpyW8tWMC2sAGjRODK86Fqrn7XUvEVXYfts90=
+ bh=gZdVe4KYsQOsjAdrlH5pjQLw2I8u7ZqIj2eBsmzs94M=;
+ b=H/tDQsto+r3bnOsQ2Dr3G9DPtN6VFJ21sEuBJ25/pR8vNxEeLnmJnk/0c9YuW8bkDe
+ b5W3NUIWMGHJCKZiVPs+K+9bO3xF+nnc6gxysYXLoxJtPhNQwYf8eD8U9JBxqFz0r8pv
+ GDmox1lVt5VuEkJhsEpbB7no06+vFaqML/62g=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:message-id:mime-version
  :content-transfer-encoding:in-reply-to:references:subject:from:cc:to
  :user-agent:date;
- bh=2ksREyYQk7jUAmxjj6kKAaOfKzWITL2u9MpABedwwuE=;
- b=PqWkx/heILbBpkHuoI27nshlvngk1Za/WKnWNryRt0YcEXpEWOT+lPVRRz4NnO6y1g
- 3F2D+4DdNyvR+NRBohXHSVEQl6kHE7Yhyr32qbSdUmZOcLfD7TdSoNwsViBrGEvzBTAj
- yN/NKjihdppKTrcvNhX0nZPe8UUlBLF+kSobF0sN5fyn+vPX367AYIFhDF433Q9EEL6k
- bfobE8gUSo3ifBUf/Qu7GdlfFx77OubtYvC+fzym0KNlJImCZ+n6bNYKpePyKa6LHTRs
- CRHV04T0z9zsEhXQh3QxyYoLCTr0xSoXho9QRrxZ49B3qTV27aPBxdAW0inRR+cUBH0v
- GNrg==
-X-Gm-Message-State: APjAAAUqvrAHdjoxJPnVJTYveYd6JJK+RXOtX/JcLkQ06u2k3/xmlrWj
- srN6RLQ+DDdAUkN43lw8XemAyw==
-X-Google-Smtp-Source: APXvYqw9Crknxqe7+aih5W//k5MSZWoQ/ebigbuqf3onineoNwCYYi5TbTQA2Zp87VlgT8TB+Rekmg==
-X-Received: by 2002:a17:902:2aa6:: with SMTP id
- j35mr55060624plb.189.1559058530522; 
- Tue, 28 May 2019 08:48:50 -0700 (PDT)
+ bh=gZdVe4KYsQOsjAdrlH5pjQLw2I8u7ZqIj2eBsmzs94M=;
+ b=LsAkdsewr5YVKzkBOsCPt/q/3uy2GUeL6FK6d4L27/LvkXT0kqsBnt/u+mxE9AtMFG
+ tf4hQn7L9ap4kiJQGKBaS4a+aDITqXEn6jd4lPKjnMun3bfUDMxcxY77ItcRXHCrjJAo
+ prYLtWzBlGtKEID8EZ//BG+LAMEantGgMFaahaAnuZQ5jWD2p5YW0YlDP6WeotRieQAl
+ P9YZkQU4mtmJXLO5PdHsf0xrNowv56osbsZONfk7qYRIOAad9/XaCcmVKdEtj8diM1tm
+ FJTwwJqYM0iBsn6rxL68QES8O6+ZlXmgNOZ+MdfkU81BSfIckJX0E/9u75qbTvWSZTD8
+ mQUA==
+X-Gm-Message-State: APjAAAUK+EbYItDk7VvMsFp9rXT0vtqnkLGE1gMuBqcClFzaZe7Qz1+n
+ uDRIN7wzOeHIznZSnn6QJScRbg==
+X-Google-Smtp-Source: APXvYqw6/Wgo8S4X+4IdRoxCALLE8MCP8dhzdasnJiMxFjFHV3zRdny03KvOcEq5wVUfOwMG+APqMw==
+X-Received: by 2002:a17:90a:17ca:: with SMTP id
+ q68mr6883350pja.104.1559058830791; 
+ Tue, 28 May 2019 08:53:50 -0700 (PDT)
 Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id 206sm14582069pfy.90.2019.05.28.08.48.49
+ by smtp.gmail.com with ESMTPSA id f17sm13153090pgv.16.2019.05.28.08.53.49
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 28 May 2019 08:48:49 -0700 (PDT)
-Message-ID: <5ced5861.1c69fb81.956d8.5fb2@mx.google.com>
+ Tue, 28 May 2019 08:53:49 -0700 (PDT)
+Message-ID: <5ced598d.1c69fb81.dabd8.339d@mx.google.com>
 MIME-Version: 1.0
-In-Reply-To: <20190527043336.112854-1-hsinyi@chromium.org>
+In-Reply-To: <20190527043336.112854-2-hsinyi@chromium.org>
 References: <20190527043336.112854-1-hsinyi@chromium.org>
-Subject: Re: [PATCH v5 1/3] arm64: map FDT as RW for early_init_dt_scan()
+ <20190527043336.112854-2-hsinyi@chromium.org>
+Subject: Re: [PATCH v5 2/3] fdt: add support for rng-seed
 From: Stephen Boyd <swboyd@chromium.org>
 To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
 User-Agent: alot/0.8.1
-Date: Tue, 28 May 2019 08:48:48 -0700
+Date: Tue, 28 May 2019 08:53:48 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_084853_138429_1475BA1E 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20190528_085351_915914_9D7486AA 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -84,6 +82,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -111,11 +112,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Hsin-Yi Wang (2019-05-26 21:33:34)
-> Currently in arm64, FDT is mapped to RO before it's passed to
-> early_init_dt_scan(). However, there might be some codes
-> (eg. commit "fdt: add support for rng-seed") that need to modify FDT
-> during init. Map FDT to RO after early fixups are done.
+Quoting Hsin-Yi Wang (2019-05-26 21:33:35)
+> Introducing a chosen node, rng-seed, which is an entropy that can be
+> passed to kernel called very early to increase initial device
+> randomness. Bootloader should provide this entropy and the value is
+> read from /chosen/rng-seed in DT.
 > 
 > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 > ---
