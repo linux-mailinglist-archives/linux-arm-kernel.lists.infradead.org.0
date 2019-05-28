@@ -2,57 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B2752C3E1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:04:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DA8E2C3F6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:09:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ss2kHIWm3A6kQelloIwFHNSX99cxIMZKh7rDDEnkBcU=; b=q5SCOr+oofoHpk
-	GXJ1/5AZmQF4Ejz0XSK9uSk2fUSmqrre/b+EzsX25WGHoaEgJikRXS5i80qNs29KzmP+Y2zst0ZbE
-	17SqAUZga/snq+W/raYiQa5In8iCFQ5ldosYmFL6SFLCjZE71Mr/HAYWyD/fsSYFc+RbSQq4JfaMi
-	ls1YiT9yY6l4GjrWWmpkkZiIt2RtMRyrXtedl8bVCMIl69TKJkHv5OSq1qay3DjsoJ++hVu2RA9f6
-	SbFzY7jwcVKfnsWT0tvnaD9vnLU+odRADckOcM+et/OKrRdqPUvCvmyzh5BfV+BDBQ6SkzrahXAK8
-	OfTgJWUhi9huTUJOgqGg==;
+	List-Owner; bh=ga5xF6g0AEjOK93jNsmxKKvsG+ZL4gzosM/bHKWXpIc=; b=lX1FGV4X9Ib2Kv
+	YZEE2gtknmNh45ixnjt8+da9TGEFgyI5YO4swLd5EmCUSmMHJ1VIcR7//D9pn9MbsWzO+3hvHFKgj
+	fPIVHn2D1iIupsTCOgfoLmR+4Ti8oauAM4vHy8lYf4862IBcA5xs6+dpEZmygx9A+ikGdDs0oTF6H
+	R4koMjWPPWoUsHTc+ig4DXqjbJfquGqNYJzAz+cKYmmlgfm1EzX91bD00CZC99gF/v5r7mi5FmLSA
+	x4qN56qD9WVD+BDk1MpuOIXdbvqpAI5cJ7gPqTWHj+0XL3U6UojQbsaP+CjjJ28/rIabUjjiufUF8
+	hUNmiSZtIoC73ML1x4/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVYy6-0003nS-4e; Tue, 28 May 2019 10:04:30 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVYxy-0003mZ-Q0
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:04:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 473B9341;
- Tue, 28 May 2019 03:04:20 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56DCD3F59C;
- Tue, 28 May 2019 03:04:18 -0700 (PDT)
-Date: Tue, 28 May 2019 11:04:13 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Ard Biesheuvel <ard.biesheuvel@arm.com>
-Subject: Re: [PATCH 0/4] arm64: wire up VM_FLUSH_RESET_PERMS
-Message-ID: <20190528100413.GA20809@fuggles.cambridge.arm.com>
-References: <20190523102256.29168-1-ard.biesheuvel@arm.com>
+	id 1hVZ35-0005Rj-Vw; Tue, 28 May 2019 10:09:40 +0000
+Received: from mga11.intel.com ([192.55.52.93])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVZ2z-0005Nl-AZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:09:34 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 28 May 2019 03:07:32 -0700
+X-ExtLoop1: 1
+Received: from lahna.fi.intel.com (HELO lahna) ([10.237.72.157])
+ by fmsmga001.fm.intel.com with SMTP; 28 May 2019 03:07:28 -0700
+Received: by lahna (sSMTP sendmail emulation); Tue, 28 May 2019 13:07:28 +0300
+Date: Tue, 28 May 2019 13:07:28 +0300
+From: Mika Westerberg <mika.westerberg@linux.intel.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v3 1/4] acpi/irq: implement helper to create hierachical
+ domains
+Message-ID: <20190528100728.GV2781@lahna.fi.intel.com>
+References: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
+ <20190527112720.2266-2-ard.biesheuvel@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190523102256.29168-1-ard.biesheuvel@arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <20190527112720.2266-2-ard.biesheuvel@linaro.org>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_030422_851393_7E397677 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20190528_030933_376068_D774497A 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [192.55.52.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,58 +70,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, marc.zyngier@arm.com, linux-kernel@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>, Nadav Amit <namit@vmware.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, James Morse <james.morse@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Rick Edgecombe <rick.p.edgecombe@intel.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Graeme Gregory <graeme.gregory@linaro.org>, linux-gpio@vger.kernel.org,
+ Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
+ Masahisa Kojima <masahisa.kojima@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 11:22:52AM +0100, Ard Biesheuvel wrote:
-> Wire up the code introduced in v5.2 to manage the permissions
-> of executable vmalloc regions (and their linear aliases) more
-> strictly.
-> 
-> One of the things that came up in the internal discussion is
-> whether non-x86 architectures have any benefit at all from the
-> lazy vunmap feature, and whether it would perhaps be better to
-> implement eager vunmap instead.
-> 
-> Cc: Nadav Amit <namit@vmware.com>
-> Cc: Rick Edgecombe <rick.p.edgecombe@intel.com>
-> Cc: Peter Zijlstra <peterz@infradead.org>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Masami Hiramatsu <mhiramat@kernel.org>
-> Cc: James Morse <james.morse@arm.com>
-> 
-> Ard Biesheuvel (4):
->   arm64: module: create module allocations without exec permissions
->   arm64/mm: wire up CONFIG_ARCH_HAS_SET_DIRECT_MAP
->   arm64/kprobes: set VM_FLUSH_RESET_PERMS on kprobe instruction pages
->   arm64: bpf: do not allocate executable memory
-> 
->  arch/arm64/Kconfig                  |  1 +
->  arch/arm64/include/asm/cacheflush.h |  3 ++
->  arch/arm64/kernel/module.c          |  4 +-
->  arch/arm64/kernel/probes/kprobes.c  |  4 +-
->  arch/arm64/mm/pageattr.c            | 48 ++++++++++++++++----
->  arch/arm64/net/bpf_jit_comp.c       |  2 +-
->  mm/vmalloc.c                        | 11 -----
->  7 files changed, 50 insertions(+), 23 deletions(-)
+On Mon, May 27, 2019 at 01:27:17PM +0200, Ard Biesheuvel wrote:
+> +
+> +/**
+> + * acpi_irq_create_hierarchy - Create a hierarchical IRQ domain with the default
+> + *                             GSI domain as its parent.
 
-Thanks, this all looks good to me. I can get pick this up for 5.2 if
-Rick's fixes [1] land soon enough.
+Please document the arguments as well.
 
-Cheers,
+> + */
+> +struct irq_domain *acpi_irq_create_hierarchy(unsigned int flags,
+> +					     unsigned int size,
+> +					     struct fwnode_handle *fwnode,
+> +					     const struct irq_domain_ops *ops,
+> +					     void *host_data)
 
-Will
+Otherwise looks good to me.
 
-[1] https://lore.kernel.org/lkml/20190527211058.2729-1-rick.p.edgecombe@intel.com/T/#u
+Reviewed-by: Mika Westerberg <mika.westerberg@linux.intel.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
