@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 672822BF6B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 08:27:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCE912BF6C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 08:27:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m6TLnaF2tP+5OmrbcX3phYnchRE1nGyAH4aS3vOkogs=; b=ONlEwE63XE68Za
-	thw/n/fXbeLuQyLpFQISB1QhjzY+gEXzDEONlu3naiHSl6j8LAv7TZMrtrF2Mjmgu+FMGlPSdIIfo
-	wSH6/1BhWHFZrJze/N/KezQ5C2KDqXuPxz2gXd4rluSR7UWBmMTCTFyNUNvqPtGE+O4dt1wMsogyk
-	6gMerawaET8Gq27atuAlcqorROLCrUNQ185WQoSaywbrjHXsUvIw9aOsZ1GlxW1MhZp1NZ4jPd+Bd
-	lh79m2Jvav25kIBH1MUzL32jwfd7mWbFQGukd9/SRtx+XXI6Kx6V2+gA50kqiEM110aEedJK0K0uH
-	hgPDt56jLqy1ruBzpB6w==;
+	List-Owner; bh=1zATyFrgKLZJO4FF9cCpQUGKgFxwVRAYtsV+oyStkFo=; b=cSddxH16bTvHx9
+	uxL0ZE5lOcx41B1zx/xyN9mwogVrz/t1b1aaQWmaiWQcP3bN06tGdec4Q704pDtsZ+rsGD3Z/2TUW
+	K0I1dmfgqBeOu2bDC+ajRbvQbdrp3piqPxb8Fp19CoCkMXJ5IDFCMy6fXPoypcLWatEwAOEgwMxvI
+	gUBtBx8L1lzA0sT5cdNyzbpD6JDlMklFLh1d/9BXpJ2Y/dpnuefqPFbfiMKDVDVZ8De1RWwn8Z5qP
+	NDRGwi/f3Hlz0yx12mH1jwMbVsNaB22b+XxccTXKqRj1PVQW16StZlJPgdowP9qHQhg0uwNPwFzLK
+	by28tOw768+XVvwoTXhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVVZs-0001Ic-Lr; Tue, 28 May 2019 06:27:16 +0000
+	id 1hVVa3-0001Wf-SP; Tue, 28 May 2019 06:27:27 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVVXO-00066g-Uv
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 06:24:48 +0000
+ id 1hVVXQ-00069N-VZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 06:24:49 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 5460580F3;
- Tue, 28 May 2019 06:25:01 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id C49DF82BF;
+ Tue, 28 May 2019 06:25:03 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 10/13] bus: ti-sysc: Do rstctrl reset handling in two phases
-Date: Mon, 27 May 2019 23:24:11 -0700
-Message-Id: <20190528062414.27192-11-tony@atomide.com>
+Subject: [PATCH 11/13] bus: ti-sysc: Detect uarts also on omap34xx
+Date: Mon, 27 May 2019 23:24:12 -0700
+Message-Id: <20190528062414.27192-12-tony@atomide.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190528062414.27192-1-tony@atomide.com>
 References: <20190528062414.27192-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_232443_449054_15F4045F 
-X-CRM114-Status: GOOD (  12.24  )
+X-CRM114-CacheID: sfid-20190527_232445_658023_35AC6C4C 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,85 +71,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We need to deassert rstctrl resets before enabling clocks to avoid clock
-"failed to enable" errors. For asserting rstctrl reset, the clocks need
-to be enabled.
+Looks like we currently only detect UART on omap36xx, let's also
+add support for omap34xx. And let's also fix the SWSUP mode, it should
+be SWSUP_SIDLE for omap3, not SWSUP_SIDLE_ACT like for omap4 and later.
 
-As the reset controller status is not available for arrays, let's use
-devm_reset_control_get_optional() so we can get the status after reset.
-
-Note that depends on a proper PRM rstctrl driver, so far I've only
-tested this with earlier reset-simple patches.
+Note that we are still booting omap3 for most part without ti-sysc,
+so no need to treat this change as a fix.
 
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/bus/ti-sysc.c | 25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
+ drivers/bus/ti-sysc.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
 --- a/drivers/bus/ti-sysc.c
 +++ b/drivers/bus/ti-sysc.c
-@@ -483,7 +483,7 @@ static void sysc_clkdm_allow_idle(struct sysc *ddata)
- static int sysc_init_resets(struct sysc *ddata)
- {
- 	ddata->rsts =
--		devm_reset_control_array_get_optional_exclusive(ddata->dev);
-+		devm_reset_control_get_optional(ddata->dev, "rstctrl");
- 	if (IS_ERR(ddata->rsts))
- 		return PTR_ERR(ddata->rsts);
- 
-@@ -1407,7 +1407,7 @@ static int sysc_legacy_init(struct sysc *ddata)
-  */
- static int sysc_rstctrl_reset_deassert(struct sysc *ddata, bool reset)
- {
--	int error;
-+	int error, val;
- 
- 	if (!ddata->rsts)
- 		return 0;
-@@ -1418,7 +1418,14 @@ static int sysc_rstctrl_reset_deassert(struct sysc *ddata, bool reset)
- 			return error;
- 	}
- 
--	return reset_control_deassert(ddata->rsts);
-+	error = reset_control_deassert(ddata->rsts);
-+	if (error == -EEXIST)
-+		return 0;
-+
-+	error = readx_poll_timeout(reset_control_status, ddata->rsts, val,
-+				   val == 0, 100, MAX_MODULE_SOFTRESET_WAIT);
-+
-+	return error;
- }
- 
- /*
-@@ -1476,12 +1483,8 @@ static int sysc_init_module(struct sysc *ddata)
- {
- 	int error = 0;
- 	bool manage_clocks = true;
--	bool reset = true;
- 
--	if (ddata->cfg.quirks & SYSC_QUIRK_NO_RESET_ON_INIT)
--		reset = false;
--
--	error = sysc_rstctrl_reset_deassert(ddata, reset);
-+	error = sysc_rstctrl_reset_deassert(ddata, false);
- 	if (error)
- 		return error;
- 
-@@ -1505,6 +1508,12 @@ static int sysc_init_module(struct sysc *ddata)
- 			goto err_opt_clocks;
- 	}
- 
-+	if (!(ddata->cfg.quirks & SYSC_QUIRK_NO_RESET_ON_INIT)) {
-+		error = sysc_rstctrl_reset_deassert(ddata, true);
-+		if (error)
-+			goto err_main_clocks;
-+	}
-+
- 	ddata->revision = sysc_read_revision(ddata);
- 	sysc_init_revision_quirks(ddata);
- 
+@@ -1205,8 +1205,10 @@ static const struct sysc_revision_quirk sysc_revision_quirks[] = {
+ 		   0),
+ 	SYSC_QUIRK("timer", 0, 0, 0x10, -1, 0x4fff1301, 0xffff00ff,
+ 		   0),
++	SYSC_QUIRK("uart", 0, 0x50, 0x54, 0x58, 0x00000046, 0xffffffff,
++		   SYSC_QUIRK_SWSUP_SIDLE | SYSC_QUIRK_LEGACY_IDLE),
+ 	SYSC_QUIRK("uart", 0, 0x50, 0x54, 0x58, 0x00000052, 0xffffffff,
+-		   SYSC_QUIRK_SWSUP_SIDLE_ACT | SYSC_QUIRK_LEGACY_IDLE),
++		   SYSC_QUIRK_SWSUP_SIDLE | SYSC_QUIRK_LEGACY_IDLE),
+ 	/* Uarts on omap4 and later */
+ 	SYSC_QUIRK("uart", 0, 0x50, 0x54, 0x58, 0x50411e03, 0xffff00ff,
+ 		   SYSC_QUIRK_SWSUP_SIDLE_ACT | SYSC_QUIRK_LEGACY_IDLE),
 -- 
 2.21.0
 
