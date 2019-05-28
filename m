@@ -2,68 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA5F82CF11
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 21:00:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 400702CF12
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 21:01:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=uPg6zumvNVD6vlFX7BaCMR458QLs9cWnzXgiOUM/e3Y=; b=qvN
-	ocyHE8/dvubR+jkuLiUrFQMjPedcQm35Kbm5L48VRq72p/dNNLmbXS0FdsCR4uzqehnFthu9BuPJw
-	suYTlUX+WR4rlz5ZuR60RwyOSrlY4KkbewYF2BxIrKM42CDnnHyV1Okc6vc+20KdhI4kLE4jQBgO2
-	dnk3B/HVgkG+Ob+KYLEODaVFLeilKaitzB56M9ftIHwWoa86QFBs8doXB9tIu7dS0OcEMVhBuxS1m
-	Dz+PPsqwaKTIZ6HqBizvYFFkFXVgLPdAPu1MW84nqvcAocQfe2hvClpEnNM21RfOCeOBVuKNpdQuJ
-	RU17+5BJt4ATxZe24rVaB/7U415lWww==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=FUq3YVspH5LD25ld3dzL7V3EOe9Uc+I3M/QnVsCFYeU=; b=ElTd/8IUIii2i0k5bJMx0qsjla
+	yUr41AR+Y2IG4Gn/S4Q8W4lp309cGCSVMqLO2uX9I4JsURZ5o/Og7ZNFVPV8GgbJIot2piPZx3ZKJ
+	N1cMwvbKNmFdheJoc1AMZ+oSCdITu7Zi2dIgoP5XG7Nl4xnTS7YXg6PzQlMK2Kkipeq2ydbOFlB1f
+	2XKbIg6DtAuzZM8n+zkk8uOimskJvA9Zz87DuXmePJkgMRC1Wdj2EqaaN0ABWdGCT3M1SNVcPYxgr
+	URrP6M9FCqpsiuUhuLO2cgUrJekUSc7A93zKU+Isn3luXb1UcI25tIVAT6b74diZNfCwrYrCmpbXb
+	vIKErsKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVhL1-0004BM-Qr; Tue, 28 May 2019 19:00:43 +0000
+	id 1hVhLG-0004Qu-EC; Tue, 28 May 2019 19:00:58 +0000
 Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVhKt-0004AL-Od
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 19:00:36 +0000
-Received: by mail-qk1-x744.google.com with SMTP id l128so11477204qke.2
+ id 1hVhKw-0004Ax-9G
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 19:00:39 +0000
+Received: by mail-qk1-x744.google.com with SMTP id a132so24219000qkb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 12:00:35 -0700 (PDT)
+ Tue, 28 May 2019 12:00:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=71qzjB6JUZChy8R98fH4XGZW0/0DMf/YTha3yOcG9YQ=;
- b=ACHUl9bqnt3qcSiTg07hvsUlLGVHC875m3zbt8WRXZIpfWPSDve7bSLHF9xxnJeB6D
- QKRcJOz6wp76TW/WEv1I7OqH9v5lukW9oy3QsfCWfpDAJJKo1tfLu1whs1DkKPRMUhzT
- PqLp89a2JJZdNiZOvQaQ1PAycOTBzLZ9wFQXiIi/00gOFgVEukqYAKB00qz9sykB8lgc
- 72NHyPPWLkVDW2ZrsD/P3BRvYdHTKJCbpI/NyOX3YHRUQEd00W+5DutNIGq730xZ6tE7
- aYvnI9UEiy1QqEmXQ39phZsgCKAeSXuf+749OcCelvkt2gDJijpYTnFwRFtESaggzemb
- qNyw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=Zpzb1Oh5nzKBNLv2TvvvYuyzrjhDQSHhaisUN50hI1s=;
+ b=qtZp5n7YpN8pjKeNl3ksdbaouL8HxrMCvCBvVaG6650vSLPU9ZlnYXYYl/3JyjFQea
+ 1P7ucvbtYjpH1i6V8goi+iOI1ZOtgtrby0UirbGg5JK6IzjtJznRNKaZW1yaijAjjRQz
+ JBcvANIF7ZCsSWS2Ry3ROuR8Gwse+GzS2kajP1rQj64TddQtzBFy3142Yf9eL1scP3px
+ xElBCL4AHqiDQI1X5dfAH3OMdFEsLRWdT1QHhvuCj0lkbXJTnoM8sSTatd07N1h3sT74
+ g0oJAllXyA45TSxhwwGr2se99IN1R+K2/IB63CzNobkYzw8P36MzQutpNMP2YXYhsVxY
+ VWSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=71qzjB6JUZChy8R98fH4XGZW0/0DMf/YTha3yOcG9YQ=;
- b=nlq9swoRZtt3gL07FEkp0ZADxaYPfONGmGu2OInGN0DgwbPg/QWGYvJqUNBuTsfIXQ
- QgmJVT4TaU9lo3ASi8SWet2+RSOeOj08guy70+g5spi5d/c+mzpUacMhIjeksnDMtd0W
- sI2/r6ju0yDVI8by+r7l1o/fOIW/ncMY60NsQ77NLN63xD2UacEWul0EBxyq+kCwJu33
- f92KObTrWCETuq7KRYaEeva42TXmEjVbCp9fL6vY9SWqy6wShwW7u4OujlkOXoRwJhtq
- 8KeAMH5tThZ8Z/FoxLnFCJcLzKIMcWiGT/t+oK/xrQjjTLFuoSif530Dfvrvzwuh/aCc
- 7IiA==
-X-Gm-Message-State: APjAAAVVE6Na8PJCF+4qOHduIJsEDBY5Kab7b1obExI0PIO7rkOac64s
- DnVU6+ozMpQ6sofOGbUQoi5fa6Fc
-X-Google-Smtp-Source: APXvYqxi91XeMCb+Cta9A8BtgZCKsuvJc1q7h436E3jYOs3HbtECpb1s9qkP9Zjw8vn+jmwwWycFyQ==
-X-Received: by 2002:a05:6214:248:: with SMTP id
- k8mr1574112qvt.200.1559070034886; 
- Tue, 28 May 2019 12:00:34 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=Zpzb1Oh5nzKBNLv2TvvvYuyzrjhDQSHhaisUN50hI1s=;
+ b=rSADU5rey8XFFIqbgvSMFIVVJ7qnyqo/DcdM1MGoOLZ+RsrqarNYkGHHLUGUxOMx/+
+ JtcSFAl06nhyefZQYrZmfZzsCRZ1hLPOqgm13Vqh+q9j8PNkiCMCMXEYIVAxWccnsE9x
+ 1ytGI/vyjm0iF/yzUE8x3DH2qRU1rcA01A8jd4UApaCn5cwsghnAS7HoeGga4i8qZu/F
+ 7v4/eo0XRAg5O1+uZhdbxzzOzrjJevmgX9Iy0SSgD74w/9mPW/Uq4ac30TpsjFVsZBjT
+ iIodTHQJdFmw820wfJKuOeVzqRd6I5F7NXRds6IrXPzAdq6Th3RuZmGul618CICTqpuF
+ SasQ==
+X-Gm-Message-State: APjAAAUlYsjgLX2D3jqzcyubejELrPcDD1ACf+PWp2wm1UHPpj+putVH
+ 6l+P0nj3vNxOYhf/W6gk/i4=
+X-Google-Smtp-Source: APXvYqwsv1pzDLNBc9JPsqLKnaFLY9Iqb9Tsy4nDaSFsavAji/v5Y8u1ACWHwM2YfcQV2O/EU0SfXQ==
+X-Received: by 2002:a0c:9e08:: with SMTP id p8mr85506520qve.241.1559070037446; 
+ Tue, 28 May 2019 12:00:37 -0700 (PDT)
 Received: from fabio-Latitude-E5450.am.freescale.net ([177.221.114.206])
- by smtp.gmail.com with ESMTPSA id c16sm5388086qkb.15.2019.05.28.12.00.32
+ by smtp.gmail.com with ESMTPSA id c16sm5388086qkb.15.2019.05.28.12.00.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 May 2019 12:00:34 -0700 (PDT)
+ Tue, 28 May 2019 12:00:36 -0700 (PDT)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH v2 1/3] arm64: dts: imx8mm: Pass a unit name for the 'soc' node
-Date: Tue, 28 May 2019 16:00:21 -0300
-Message-Id: <20190528190023.7176-1-festevam@gmail.com>
+Subject: [PATCH v2 2/3] arm64: dts: imx8mm: Pass the 'ranges' property
+Date: Tue, 28 May 2019 16:00:22 -0300
+Message-Id: <20190528190023.7176-2-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190528190023.7176-1-festevam@gmail.com>
+References: <20190528190023.7176-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_120035_795426_AAC0DD3A 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20190528_120038_323653_7011AF0B 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -102,12 +105,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 'soc' name needs a unit name to match its 'ranges' property.
+Pass the 'ranges' property for each one of the AIPS bus in order
+to fix the following build warnings:
 
-Pass the unit name in order to fix the following dtc build warning
-with W=1:
-
-arch/arm64/boot/dts/freescale/imx8mm.dtsi:203.6-754.4: Warning (unit_address_vs_reg): /soc: node has a reg or ranges property, but no unit name
+arch/arm64/boot/dts/freescale/imx8mm.dtsi:209.23-388.5: Warning (unit_address_vs_reg): /soc/bus@30000000: node has a unit name, but no reg property
+arch/arm64/boot/dts/freescale/imx8mm.dtsi:390.23-439.5: Warning (unit_address_vs_reg): /soc/bus@30400000: node has a unit name, but no reg property
+arch/arm64/boot/dts/freescale/imx8mm.dtsi:441.23-658.5: Warning (unit_address_vs_reg): /soc/bus@30800000: node has a unit name, but no reg property
+arch/arm64/boot/dts/freescale/imx8mm.dtsi:660.23-724.5: Warning (unit_address_vs_reg): /soc/bus@32c00000: node has a unit name, but no reg property
 
 This also aligns with imx8mq.dtsi.
 
@@ -116,22 +120,49 @@ Signed-off-by: Fabio Estevam <festevam@gmail.com>
 Changes since v1:
 - Fixed typo in "aligns with imx8mq.dtsi"
 
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 708d3c4c1389..d6803db32e40 100644
+index d6803db32e40..b62d7aec8dc2 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -200,7 +200,7 @@
- 		arm,no-tick-in-suspend;
- 	};
+@@ -210,7 +210,7 @@
+ 			compatible = "fsl,aips-bus", "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+-			ranges;
++			ranges = <0x30000000 0x30000000 0x400000>;
  
--	soc {
-+	soc@0 {
- 		compatible = "simple-bus";
- 		#address-cells = <1>;
- 		#size-cells = <1>;
+ 			gpio1: gpio@30200000 {
+ 				compatible = "fsl,imx8mm-gpio", "fsl,imx35-gpio";
+@@ -391,7 +391,7 @@
+ 			compatible = "fsl,aips-bus", "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+-			ranges;
++			ranges = <0x30400000 0x30400000 0x400000>;
+ 
+ 			pwm1: pwm@30660000 {
+ 				compatible = "fsl,imx8mm-pwm", "fsl,imx27-pwm";
+@@ -442,7 +442,7 @@
+ 			compatible = "fsl,aips-bus", "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+-			ranges;
++			ranges = <0x30800000 0x30800000 0x400000>;
+ 
+ 			ecspi1: spi@30820000 {
+ 				compatible = "fsl,imx8mm-ecspi", "fsl,imx51-ecspi";
+@@ -661,7 +661,7 @@
+ 			compatible = "fsl,aips-bus", "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+-			ranges;
++			ranges = <0x32c00000 0x32c00000 0x400000>;
+ 
+ 			usbotg1: usb@32e40000 {
+ 				compatible = "fsl,imx8mm-usb", "fsl,imx7d-usb";
 -- 
 2.17.1
 
