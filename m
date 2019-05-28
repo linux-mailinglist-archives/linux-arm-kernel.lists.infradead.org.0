@@ -2,66 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F6852BCFF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 03:53:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D30FF2BD29
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 04:19:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f1b6IMW2aWc5m+B3P8VpWC4SMEAXgLwskQpmjPz/eCQ=; b=HrzxUfwLo7JONk
-	SM+X2Ffgd3YBEAkA9l7HIoLt+q8rwAiqwnuKhwnzi9PgkaE0t9lCe5FdINS/wVkb/gfHDbgV0tYnX
-	6OvlZPaJNEZRdmYo390t5oMu/9p3K1xyuKfVadYsh5M/z7TWnMNUM8H8xxYfL9R7RRrboTNjkk+8k
-	w7BQFMptkP5JS/DEuGoTaNKxIXMO9Dgo5g7PXXfvbDIC3LAcCmGWnJ0DfxkaEmQnYINxDkepRsMuC
-	6tdrL4r3YwOA914QR7h+Yv1rAgDtXN4Rg6g45dGrXqutOhs5GCCxffpJhWwd/SJJn6nrvBof0O51d
-	XpoiX8ZBP4WM1LApoZEg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u+lOm9xbKLErSNtNiw/rKMXeyarHmsHweW27xx625fw=; b=Hb4jZXDzEWdAkO
+	yZYjH4PIiNNr49OsAk4AYQNGbcNJZFUoIaqzibMiQS2UScmhcSE9gxDu1cOqwf3xRn+TKq5d7UlD6
+	nVqZE37be9jh3/q7FefJHwuN1E2UMaSTs5qYlfq3trnFiQa99xFpQtylGLHpYBJ7F3XsLv8V1cqM6
+	uXbgO8D6lzqArn7fD4hMgUS17lttexhwiZnqeJB6bJNR/QDqHE2kiQfVkdvMLh+fcUZ3g53jyfINn
+	BJSLSbxazS/DOmQo9CWA/A6IJgI3UCgF8wb0syLIkckdw1DcRmNLg6U4/B6GJAU/Sr6gCXNKfgzhI
+	oHSCBXrslhMrT1h/Nphw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVRIk-00086L-Hl; Tue, 28 May 2019 01:53:18 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hVRhX-0007OF-SL; Tue, 28 May 2019 02:18:55 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVRId-00085x-ED; Tue, 28 May 2019 01:53:13 +0000
-X-UUID: 366fbe3dbfa342e1a7cd8a7e0ac19b8a-20190527
-X-UUID: 366fbe3dbfa342e1a7cd8a7e0ac19b8a-20190527
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <biao.huang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 511790623; Mon, 27 May 2019 17:52:54 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 27 May 2019 18:52:53 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 28 May 2019 09:52:50 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 28 May 2019 09:52:49 +0800
-Message-ID: <1559008369.24897.66.camel@mhfsdcap03>
-Subject: Re: [v3, PATCH] net: stmmac: add support for hash table size
- 128/256 in dwmac4
-From: biao huang <biao.huang@mediatek.com>
-To: David Miller <davem@davemloft.net>
-Date: Tue, 28 May 2019 09:52:49 +0800
-In-Reply-To: <20190527.100800.1719164073038257292.davem@davemloft.net>
-References: <1558926867-16472-1-git-send-email-biao.huang@mediatek.com>
- <1558926867-16472-2-git-send-email-biao.huang@mediatek.com>
- <20190527.100800.1719164073038257292.davem@davemloft.net>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hVRhQ-0007Mo-6D
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 02:18:50 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id A04CAB7387BA1A0B5B88;
+ Tue, 28 May 2019 10:18:37 +0800 (CST)
+Received: from localhost.localdomain (10.67.212.132) by
+ DGGEMS412-HUB.china.huawei.com (10.3.19.212) with Microsoft SMTP Server id
+ 14.3.439.0; Tue, 28 May 2019 10:18:29 +0800
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+To: <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v4 1/2] drivers: base: cacheinfo: Add variable to record max
+ cache line size
+Date: Tue, 28 May 2019 10:16:53 +0800
+Message-ID: <1559009814-17004-1-git-send-email-zhangshaokun@hisilicon.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-MTK: N
+X-Originating-IP: [10.67.212.132]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_185311_483777_E1AC3181 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190527_191848_454481_E9189D15 
+X-CRM114-Status: GOOD (  11.45  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,61 +62,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jianguo.zhang@mediatek.com, alexandre.torgue@st.com,
- boon.leong.ong@intel.com, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- yt.shen@mediatek.com, joabreu@synopsys.com, linux-mediatek@lists.infradead.org,
- mcoquelin.stm32@gmail.com, matthias.bgg@gmail.com, peppe.cavallaro@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Will Deacon <will.deacon@arm.com>, Jeremy Linton <jeremy.linton@arm.com>,
+ Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear David,
+Add coherency_max_size variable to record the maximum cache line size
+for different cache levels. If it is available, we will synchronize
+it as cache line size, otherwise we will use CTR_EL0.CWG reporting
+in cache_line_size() for arm64.
 
-On Mon, 2019-05-27 at 10:08 -0700, David Miller wrote:
-> From: Biao Huang <biao.huang@mediatek.com>
-> Date: Mon, 27 May 2019 11:14:27 +0800
-> 
-> > diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-> > index 5e98da4..029a3db 100644
-> > --- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-> > +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-> > @@ -403,41 +403,50 @@ static void dwmac4_set_filter(struct mac_device_info *hw,
-> >  			      struct net_device *dev)
-> >  {
-> >  	void __iomem *ioaddr = (void __iomem *)dev->base_addr;
-> > -	unsigned int value = 0;
-> > +	unsigned int value;
-> > +	int numhashregs = (hw->multicast_filter_bins >> 5);
-> > +	int mcbitslog2 = hw->mcast_bits_log2;
-> > +	int i;
-> 
-> Please retain the reverse christmas tree ordering here.
-I'm a little confused about the reverse xmas tree ordering.
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Jeremy Linton <jeremy.linton@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+---
+ChangeLog since v3:
+  -- Address Greg's comments
+  -- Fix some commit information
 
-should I reorder them only according to the total length like this:
+ChangeLog since v2:
+  -- Rebase to 5.2-rc2
+  -- Export cache_line_size for I/O driver
 
-	void __iomem *ioaddr = (void __iomem *)dev->base_addr;
-	int numhashregs = (hw->multicast_filter_bins >> 5);
-	int mcbitslog2 = hw->mcast_bits_log2;
-	unsigned int value;
-	int i;
+ChangeLog since v1:
+  -- Move coherency_max_size to drivers/base/cacheinfo.c
+  -- Address Catalin's comments
+  Link: https://www.spinics.net/lists/arm-kernel/msg723615.html
 
-or should I gather the same type together, and order types as reverse
-xmas tree, then order the same type definitions as reverse xmas tree,
-like this:
+ drivers/base/cacheinfo.c  | 5 +++++
+ include/linux/cacheinfo.h | 2 ++
+ 2 files changed, 7 insertions(+)
 
-	void __iomem *ioaddr = (void __iomem *)dev->base_addr;
-	unsigned int value;
-	int numhashregs = (hw->multicast_filter_bins >> 5);
-	int mcbitslog2 = hw->mcast_bits_log2;
-	int i;
-
-Thank you.
-> 
-> Thank you.
-
+diff --git a/drivers/base/cacheinfo.c b/drivers/base/cacheinfo.c
+index a7359535caf5..8827c60f51e2 100644
+--- a/drivers/base/cacheinfo.c
++++ b/drivers/base/cacheinfo.c
+@@ -213,6 +213,8 @@ int __weak cache_setup_acpi(unsigned int cpu)
+ 	return -ENOTSUPP;
+ }
+ 
++unsigned int coherency_max_size;
++
+ static int cache_shared_cpu_map_setup(unsigned int cpu)
+ {
+ 	struct cpu_cacheinfo *this_cpu_ci = get_cpu_cacheinfo(cpu);
+@@ -251,6 +253,9 @@ static int cache_shared_cpu_map_setup(unsigned int cpu)
+ 				cpumask_set_cpu(i, &this_leaf->shared_cpu_map);
+ 			}
+ 		}
++		/* record the maximum cache line size */
++		if (this_leaf->coherency_line_size > coherency_max_size)
++			coherency_max_size = this_leaf->coherency_line_size;
+ 	}
+ 
+ 	return 0;
+diff --git a/include/linux/cacheinfo.h b/include/linux/cacheinfo.h
+index 70e19bc6cc9f..46b92cd61d0c 100644
+--- a/include/linux/cacheinfo.h
++++ b/include/linux/cacheinfo.h
+@@ -17,6 +17,8 @@ enum cache_type {
+ 	CACHE_TYPE_UNIFIED = BIT(2),
+ };
+ 
++extern unsigned int coherency_max_size;
++
+ /**
+  * struct cacheinfo - represent a cache leaf node
+  * @id: This cache's id. It is unique among caches with the same (type, level).
+-- 
+2.7.4
 
 
 _______________________________________________
