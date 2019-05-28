@@ -2,37 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62EE12BEF7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 08:05:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A273C2BF06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 08:05:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HfSFMMvNfsLfETBNp9Wi8QjS3iRKlmCOEvQ8BvAt20U=; b=twA
-	aoAsdC6H5Lviq/RVbZS7Lnfe2BTWXRQGUOgV5Jv0m8p68YwLveuqb8QIbe6f6FIGhiCrFvrNK1g0A
-	4rU1dp0IKpB+19ywlSXiQt4AQf3Ojug2qota9h0UEX3E47xhRuvfzjivkizu4d77djNGeTBVdQrD8
-	K0ZgRyQBsB7+UZsFxLLzKADW4v2Ssv7THq5FcznBLj73cQ4RXhja44eAKnSanvXUKlb512QFucpCI
-	UVA4ZaSOU7B8b3/1d7tf1FOlToXZ2qm65as7hClGZ25R14o2wX2NBt6dnXcJwgta9jbex3woB18Jd
-	NbNFHu/I/Fp3DgHmY68pJbl2J6EoDYg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=GLXXudks6DAG8fiEkl6rqcutRRz1Go3NmgUBRpZJ/X4=; b=lU/BsnGo7pYRXSW7hxWWmLFq2e
+	IONf0wJE88NmvzJ64dtY7NYRw1khXsNqNqQYlj+1JIVXapcZJa/0QlkPa3gwbfOJmYK6eOrUL7KPt
+	IvguuzllPL2/jlhtNkcxOE13WFylZl9onKwsGpqGPX0c66ttqhcBPg+DPNTlk/Z82ycr2Kq/WfBiU
+	ai8eY9GXK2qRdZpZzsVI+nSlMooJbvV/vLqdvkU7woQ8tBU+EVUFlZv2/XA/tCNObQdSHhf2IesAA
+	UzXdiVLgIj1GbSApkh1OMvKcrY2jaTEdtUYJfVMtUi6VF5fYm9VUDg7p5m3nlARHhNN00JBqu+WYO
+	P9tKv3Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVVEL-0005PX-03; Tue, 28 May 2019 06:05:01 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hVVEx-0007FC-Ap; Tue, 28 May 2019 06:05:39 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVVEC-0005Ob-Ri
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 06:04:54 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0B99F1A0D8A;
- Tue, 28 May 2019 08:04:51 +0200 (CEST)
+ id 1hVVEE-0005P3-V0
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 06:04:56 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 67185200D4E;
+ Tue, 28 May 2019 08:04:53 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 586321A0D9D;
- Tue, 28 May 2019 08:04:38 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1FCB0200274;
+ Tue, 28 May 2019 08:04:41 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id EA14E402C9;
- Tue, 28 May 2019 14:04:24 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 55199402CB;
+ Tue, 28 May 2019 14:04:27 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -45,22 +46,24 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  enric.balletbo@collabora.com, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH RESEND V13 1/5] dt-bindings: fsl: scu: add thermal binding
-Date: Tue, 28 May 2019 14:06:17 +0800
-Message-Id: <20190528060621.47342-1-Anson.Huang@nxp.com>
+Subject: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
+ sensor ID from DT
+Date: Tue, 28 May 2019 14:06:18 +0800
+Message-Id: <20190528060621.47342-2-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190528060621.47342-1-Anson.Huang@nxp.com>
+References: <20190528060621.47342-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_230453_037006_BA3C31FD 
-X-CRM114-Status: UNSURE (   7.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190527_230455_272813_B103D925 
+X-CRM114-Status: GOOD (  14.94  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -83,56 +86,150 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as
-system controller, the system controller is in charge of system
-power, clock and thermal sensors etc. management, Linux kernel
-has to communicate with system controller via MU (message unit)
-IPC to get temperature from thermal sensors, this patch adds
-binding doc for i.MX system controller thermal driver.
+On some platforms like i.MX8QXP, the thermal driver needs a
+real HW sensor ID from DT thermal zone, the HW sensor ID is
+used to get temperature from SCU firmware, and the virtual
+sensor ID starting from 0 to N is NOT used at all, this patch
+adds new API thermal_zone_of_get_sensor_id() to provide the
+feature of getting sensor ID from DT thermal zone's node.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-No change, just rebase the patch to top of linux-next and based on my watchdog patch:
-https://patchwork.kernel.org/patch/10962183/
+Changes since V12:
+	- adjust the second parameter of thermal_zone_of_get_sensor_id() API, then caller no need
+	  to pass the of_phandle_args structure and put the sensor_specs.np manually, also putting
+	  the sensor node device check inside this API to make it easy for usage;
 ---
- .../devicetree/bindings/arm/freescale/fsl,scu.txt        | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/thermal/of-thermal.c | 66 +++++++++++++++++++++++++++++++++-----------
+ include/linux/thermal.h      | 10 +++++++
+ 2 files changed, 60 insertions(+), 16 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-index a575e42..fc3844e 100644
---- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-+++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-@@ -155,6 +155,17 @@ Required properties:
- Optional properties:
- - timeout-sec: contains the watchdog timeout in seconds.
+diff --git a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c
+index dc5093b..a53792b 100644
+--- a/drivers/thermal/of-thermal.c
++++ b/drivers/thermal/of-thermal.c
+@@ -449,6 +449,54 @@ thermal_zone_of_add_sensor(struct device_node *zone,
+ }
  
-+Thermal bindings based on SCU Message Protocol
-+------------------------------------------------------------
+ /**
++ * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal zone
++ * @tz_np: a valid thermal zone device node.
++ * @sensor_np: a sensor node of a valid sensor device.
++ * @id: a sensor ID pointer will be passed back.
++ *
++ * This function will get sensor ID from a given thermal zone node, use
++ * "thermal-sensors" as list name, and get sensor ID from first phandle's
++ * argument.
++ *
++ * Return: 0 on success, proper error code otherwise.
++ */
 +
-+Required properties:
-+- compatible:			Should be :
-+				  "fsl,imx8qxp-sc-thermal"
-+				followed by "fsl,imx-sc-thermal";
++int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
++				  struct device_node *sensor_np,
++				  u32 *id)
++{
++	struct of_phandle_args sensor_specs;
++	int ret;
 +
-+- #thermal-sensor-cells:	See Documentation/devicetree/bindings/thermal/thermal.txt
-+				for a description.
++	ret = of_parse_phandle_with_args(tz_np,
++					 "thermal-sensors",
++					 "#thermal-sensor-cells",
++					 0,
++					 &sensor_specs);
++	if (ret)
++		return ret;
 +
- Example (imx8qxp):
- -------------
- aliases {
-@@ -222,6 +233,11 @@ firmware {
- 			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
- 			timeout-sec = <60>;
- 		};
++	if (sensor_specs.np != sensor_np) {
++		of_node_put(sensor_specs.np);
++		return -ENODEV;
++	}
 +
-+		tsens: thermal-sensor {
-+			compatible = "fsl,imx8qxp-sc-thermal", "fsl,imx-sc-thermal";
-+			#thermal-sensor-cells = <1>;
-+		};
- 	};
- };
++	if (sensor_specs.args_count >= 1) {
++		*id = sensor_specs.args[0];
++		WARN(sensor_specs.args_count > 1,
++		     "%pOFn: too many cells in sensor specifier %d\n",
++		     sensor_specs.np, sensor_specs.args_count);
++	} else {
++		*id = 0;
++	}
++
++	of_node_put(sensor_specs.np);
++
++	return 0;
++}
++EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
++
++/**
+  * thermal_zone_of_sensor_register - registers a sensor to a DT thermal zone
+  * @dev: a valid struct device pointer of a sensor device. Must contain
+  *       a valid .of_node, for the sensor node.
+@@ -499,36 +547,22 @@ thermal_zone_of_sensor_register(struct device *dev, int sensor_id, void *data,
+ 	sensor_np = of_node_get(dev->of_node);
  
+ 	for_each_available_child_of_node(np, child) {
+-		struct of_phandle_args sensor_specs;
+ 		int ret, id;
+ 
+ 		/* For now, thermal framework supports only 1 sensor per zone */
+-		ret = of_parse_phandle_with_args(child, "thermal-sensors",
+-						 "#thermal-sensor-cells",
+-						 0, &sensor_specs);
++		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
+ 		if (ret)
+ 			continue;
+ 
+-		if (sensor_specs.args_count >= 1) {
+-			id = sensor_specs.args[0];
+-			WARN(sensor_specs.args_count > 1,
+-			     "%pOFn: too many cells in sensor specifier %d\n",
+-			     sensor_specs.np, sensor_specs.args_count);
+-		} else {
+-			id = 0;
+-		}
+-
+-		if (sensor_specs.np == sensor_np && id == sensor_id) {
++		if (id == sensor_id) {
+ 			tzd = thermal_zone_of_add_sensor(child, sensor_np,
+ 							 data, ops);
+ 			if (!IS_ERR(tzd))
+ 				tzd->ops->set_mode(tzd, THERMAL_DEVICE_ENABLED);
+ 
+-			of_node_put(sensor_specs.np);
+ 			of_node_put(child);
+ 			goto exit;
+ 		}
+-		of_node_put(sensor_specs.np);
+ 	}
+ exit:
+ 	of_node_put(sensor_np);
+diff --git a/include/linux/thermal.h b/include/linux/thermal.h
+index 15a4ca5..5edffe6 100644
+--- a/include/linux/thermal.h
++++ b/include/linux/thermal.h
+@@ -375,6 +375,9 @@ struct thermal_trip {
+ 
+ /* Function declarations */
+ #ifdef CONFIG_THERMAL_OF
++int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
++				  struct device_node *sensor_np,
++				  u32 *id);
+ struct thermal_zone_device *
+ thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+ 				const struct thermal_zone_of_device_ops *ops);
+@@ -386,6 +389,13 @@ struct thermal_zone_device *devm_thermal_zone_of_sensor_register(
+ void devm_thermal_zone_of_sensor_unregister(struct device *dev,
+ 					    struct thermal_zone_device *tz);
+ #else
++
++static int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
++					 struct device_node *sensor_np,
++					 u32 *id)
++{
++	return -ENOENT;
++}
+ static inline struct thermal_zone_device *
+ thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+ 				const struct thermal_zone_of_device_ops *ops)
 -- 
 2.7.4
 
