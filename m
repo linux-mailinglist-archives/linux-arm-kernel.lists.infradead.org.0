@@ -2,86 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 846A82C55E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 13:26:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D05402C56F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 13:32:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dIjbgQVIU4iP7epXmXumofbnhXRw3KI4rBHDfJGqTik=; b=d+OZuNyP5Z6Mpn
-	d9aze4a7h1oGdsyO+tIXnr0GkCs2eVC2P4glohrWSwF+PK3OjYdj66Ngwz/XlfD2bzSASygrOjeE1
-	0QEzP1ilWRcD08fRICTB4tW8vFxa5X2qNFksa7EPrISG9/cASSikVpJ8PKROFZdZ3HI47TkIXOXDC
-	kx+ztgv1le8eMyL9QwJxnkyTaq3driAJzKwIwgusbXzhqXsqCUf/dA7cOFo5V46eedBhtlvsnpsX5
-	sSVaJgHqgopO31U9J4nCLZzNtFWXWZxUxLZi1+dXaqFNOv5wkfp+6hU3YGblQnZ1/BUWdA124ZVJO
-	YnwKl6fcSw3v/2q/rSig==;
+	List-Owner; bh=1a2gYuFkekJllOMq6aViNuGXI895V+DKGGo5UdowuJw=; b=COVec4wc+Tjp2R
+	PlC36Yyjibr3LaAPo5YEGCqa7fZH1BdrtWu6n1YFXi4VzQahtTaxXPenJy35YQCp6cxYkFyeFInEd
+	Ecl1/XZdNPUpRNePA1ZF5kPLwMeapKqdQp41AQEJPJ6J1/dlRgDompEkbimk6rPkIcUnHV97r0FH0
+	UUl1I81B8bwSyMW0DTuCRPTKhMp+brdpkAVSgsAmC+gyXw3k5xgMegyivo1j/WnJSj5cOySxh+d7z
+	H7Dw4IadLxNgqdykcTGVpYUJQeOTkUbOiU/vRUzqSa/c1hx2h9Y2HXC+M4Rqn1kI6lTRUqJNiTdJC
+	0xGwNGA9fsi4X5xOjn/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVaFi-0002tt-Ml; Tue, 28 May 2019 11:26:46 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hVaLN-0004l5-R7; Tue, 28 May 2019 11:32:37 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVaFb-0002tK-1E
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 11:26:40 +0000
-Received: by mail-io1-xd41.google.com with SMTP id g16so15397311iom.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 04:26:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=f63H1f5vJ9qAhu7DFKNxQrE7HwrSDOZLpyEalUp3FmA=;
- b=MoNcMVK+19rETeCSdS86WvUOF+QanmMuzgyz4USKjDCyqJy5ATxtytdNyWhLUhPzK7
- 3lLrA4eJp6EUT974Ua9jV0EW1h3qZbVDHKknvEVDD0yCnCqhV3q1+395Q30LTAn5kyK8
- YJ/9sbJy+3/3jSrakrFSJGTunWBuqpSw9bTrYyQLBB2BB/1K8kUaCM1rOjXwFd8T1Kem
- x5hrYzZwsa+/3J4oY99XIA70l/itoCfN5VdEhdJgMf5CBuZH+xrGEZNyswxjs+4JDpGK
- x04m+SZ/gzISHQNxsntNIhWsx6Qp31qyqxvHeq1YNtXegLT6XWBd45+kOk48qErpubmi
- DSjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=f63H1f5vJ9qAhu7DFKNxQrE7HwrSDOZLpyEalUp3FmA=;
- b=UoDiftF8HOP3yJUyaewLT0yaWuSkNMub0uTWzs3c5zD5amGgjuel+pLPDwtClK/Nu/
- SbWu8WKFNvMz8VRaVrF2oxHiRtt7IQM0drqdY16Gbhz3cIXfiitjZRptj/3KOyxI2FIp
- pnI7uVU/rKhV4t7wDWfEtqDspgIf2G9cx+uFuE1/Yh4ZvSUrR5KvjvOBXoYT2ek3DZm+
- WvqCGy93qMHR9AOtd0LU6sZrLLGP4udcLn3s1K4TVCOASB5pS1AfvHywXqseXnz1CpxY
- sgyAsyNm0KynH19ba8Ta4S1mFnqOItzmIddEJr6QpcsMBUyloUAvzpPcXtDH0eSI9ua2
- 6Ksg==
-X-Gm-Message-State: APjAAAXQK969mGdDc0XcoGo635QK8nnTyFQjwMEI8fmy1fXW8c0N2oTc
- o65AVzxjzNeoVevFGOkdxPkspYW2RqQ4a0HX0DR4Kw==
-X-Google-Smtp-Source: APXvYqxPxBqa6Q5trPqt6nLpEjrJvWagv+vXglYbTXmsfxK8aHVbZ7UlOoBk7J5fCcFuJ1NWlwPXJV7IrICxwnh16Ds=
-X-Received: by 2002:a05:6602:2109:: with SMTP id
- x9mr108496iox.128.1559042797766; 
- Tue, 28 May 2019 04:26:37 -0700 (PDT)
+ id 1hVaLE-0004ji-RF
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 11:32:31 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 66B21B82AD9FDEAAE061;
+ Tue, 28 May 2019 19:32:19 +0800 (CST)
+Received: from localhost (10.202.226.61) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Tue, 28 May 2019
+ 19:32:09 +0800
+Date: Tue, 28 May 2019 12:31:58 +0100
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: <linux-mm@kvack.org>, <linux-acpi@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
+Subject: Re: [PATCH 0/4 V3] ACPI: Support generic initiator proximity domains
+Message-ID: <20190528123158.0000167a@huawei.com>
+In-Reply-To: <20190415174907.102307-1-Jonathan.Cameron@huawei.com>
+References: <20190415174907.102307-1-Jonathan.Cameron@huawei.com>
+Organization: Huawei
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-References: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
- <20190527112720.2266-5-ard.biesheuvel@linaro.org>
- <CACRpkdZt-AosWLPcwDQqi_2i4adDk-ioT3g3aTicyXiZpQOGGg@mail.gmail.com>
-In-Reply-To: <CACRpkdZt-AosWLPcwDQqi_2i4adDk-ioT3g3aTicyXiZpQOGGg@mail.gmail.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Tue, 28 May 2019 13:26:25 +0200
-Message-ID: <CAKv+Gu90dwSdLOwVFEuobSEAMYCS+ju8x-MDHVGng8OKG7taug@mail.gmail.com>
-Subject: Re: [PATCH v3 4/4] gpio: mb86s7x: enable ACPI support
-To: Linus Walleij <linus.walleij@linaro.org>
+X-Originating-IP: [10.202.226.61]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_042639_232690_D20D7683 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190528_043229_850833_CFD77E50 
+X-CRM114-Status: GOOD (  25.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,45 +65,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Graeme Gregory <graeme.gregory@linaro.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Marc Zyngier <marc.zyngier@arm.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Masahisa Kojima <masahisa.kojima@linaro.org>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, Len Brown <lenb@kernel.org>
+Cc: Keith Busch <keith.busch@intel.com>,
+ =?ISO-8859-1?Q?J=E9r=F4me?= Glisse <jglisse@redhat.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linuxarm@huawei.com,
+ Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 May 2019 at 10:34, Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> On Mon, May 27, 2019 at 1:27 PM Ard Biesheuvel
-> <ard.biesheuvel@linaro.org> wrote:
->
-> > Make the mb86s7x GPIO block discoverable via ACPI. In addition, add
-> > support for ACPI GPIO interrupts routed via platform interrupts, by
-> > wiring the two together via the to_irq() gpiochip callback.
-> >
-> > Reviewed-by: Mika Westerberg <mika.westerberg@linux.intel.com>
-> > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->
-> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
->
+Hi All,
 
-Thanks.
+Anyone had a change to take a look at this?
 
-> I assume you want to merge this through the IRQ tree or the ACPI
-> tree, so go ahead.
->
-> If you want me to queue the whole thing in the GPIO tree just tell
-> me (once we have the ACKs in place).
->
+Thanks,
 
-Marc is willing to take the whole thing via the irqchip tree. I'll
-need to apply some tweaks though, so I'll send out a v4 shortly.
+Jonathan
+
+On Tue, 16 Apr 2019 01:49:03 +0800
+Jonathan Cameron <Jonathan.Cameron@huawei.com> wrote:
+
+> Changes since RFC V2.
+> * RFC dropped as now we have x86 support, so the lack of guards in in the
+> ACPI code etc should now be fine.
+> * Added x86 support.  Note this has only been tested on QEMU as I don't have
+> a convenient x86 NUMA machine to play with.  Note that this fitted together
+> rather differently form arm64 so I'm particularly interested in feedback
+> on the two solutions.
+> 
+> Since RFC V1.
+> * Fix incorrect interpretation of the ACPI entry noted by Keith Busch
+> * Use the acpica headers definitions that are now in mmotm.
+> 
+> It's worth noting that, to safely put a given device in a GI node, may
+> require changes to the existing drivers as it's not unusual to assume
+> you have local memory or processor core. There may be futher constraints
+> not yet covered by this patch.
+> 
+> Original cover letter...
+> 
+> ACPI 6.3 introduced a new entity that can be part of a NUMA proximity domain.
+> It may share such a domain with the existing options (memory, cpu etc) but it
+> may also exist on it's own.
+> 
+> The intent is to allow the description of the NUMA properties (particulary
+> via HMAT) of accelerators and other initiators of memory activity that are not
+> the host processor running the operating system.
+> 
+> This patch set introduces 'just enough' to make them work for arm64 and x86.
+> It should be trivial to support other architectures, I just don't suitable
+> NUMA systems readily available to test.
+> 
+> There are a few quirks that need to be considered.
+> 
+> 1. Fall back nodes
+> ******************
+> 
+> As pre ACPI 6.3 supporting operating systems do not have Generic Initiator
+> Proximity Domains it is possible to specify, via _PXM in DSDT that another
+> device is part of such a GI only node.  This currently blows up spectacularly.
+> 
+> Whilst we can obviously 'now' protect against such a situation (see the related
+> thread on PCI _PXM support and the  threadripper board identified there as
+> also falling into the  problem of using non existent nodes
+> https://patchwork.kernel.org/patch/10723311/ ), there is no way to  be sure
+> we will never have legacy OSes that are not protected  against this.  It would
+> also be 'non ideal' to fallback to  a default node as there may be a better
+> (non GI) node to pick  if GI nodes aren't available.
+> 
+> The work around is that we also have a new system wide OSC bit that allows
+> an operating system to 'annouce' that it supports Generic Initiators.  This
+> allows, the firmware to us DSDT magic to 'move' devices between the nodes
+> dependent on whether our new nodes are there or not.
+> 
+> 2. New ways of assigning a proximity domain for devices
+> *******************************************************
+> 
+> Until now, the only way firmware could indicate that a particular device
+> (outside the 'special' set of cpus etc) was to be found in a particular
+> Proximity Domain by the use of _PXM in DSDT.
+> 
+> That is equally valid with GI domains, but we have new options. The SRAT
+> affinity structure includes a handle (ACPI or PCI) to identify devices
+> with the system and specify their proximity domain that way.  If both _PXM
+> and this are provided, they should give the same answer.
+> 
+> For now this patch set completely ignores that feature as we don't need
+> it to start the discussion.  It will form a follow up set at some point
+> (if no one else fancies doing it).
+> 
+> Jonathan Cameron (4):
+>   ACPI: Support Generic Initiator only domains
+>   arm64: Support Generic Initiator only domains
+>   x86: Support Generic Initiator only proximity domains
+>   ACPI: Let ACPI know we support Generic Initiator Affinity Structures
+> 
+>  arch/arm64/kernel/smp.c        |  8 +++++
+>  arch/x86/include/asm/numa.h    |  2 ++
+>  arch/x86/kernel/setup.c        |  1 +
+>  arch/x86/mm/numa.c             | 14 ++++++++
+>  drivers/acpi/bus.c             |  1 +
+>  drivers/acpi/numa.c            | 62 +++++++++++++++++++++++++++++++++-
+>  drivers/base/node.c            |  3 ++
+>  include/asm-generic/topology.h |  3 ++
+>  include/linux/acpi.h           |  1 +
+>  include/linux/nodemask.h       |  1 +
+>  include/linux/topology.h       |  7 ++++
+>  11 files changed, 102 insertions(+), 1 deletion(-)
+> 
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
