@@ -2,113 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1D782CCD7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 19:01:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAED42CCE4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 19:03:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c+8amW0kSqliT1afOuAjwc4jjSpSvjDHUO4assD2SWo=; b=jPFoyKLaI2PGSD
-	r2fc5d1AV3FYcExCXIIpJx7PL1ZE68xoVu7t/R+lBmp9EMCxtoU4vFJUDuIvGc3bttSalfbIuXsSb
-	UjG3xC23cXavaSlsUkShKXYfzzg7f5GVVefcoq8hR1nTWX5v7oqSvk55uYMOd2YgQL/dUBYJK/s5J
-	lPlpxYqbcptpD7HGrgntoKXmQ5t8deYwJzH3vWbIX8Bx/nBKzTHm1WzqGMBzLHJyV6DnjDoAgtmUN
-	bzcOaWL/NhdEWCfJ+FM5bVFepim6otC6mcF6Mpvk9DfSJ7ZPQ9CgYXuGN6pwGTC0Hbyh+W8ercnm/
-	zUUdeenJpNZBxchwiRHg==;
+	List-Owner; bh=mua9eOITNtLNfzuHfAQfnPyKQWUEM3dS2p0G2yhpaCk=; b=Dn8mVlkdd5iUp9
+	GTbrQR4zUKUsarNH98cSdwf76FtnI5SuRKP2R3eQTsZcwLq4zPLHq6RDgPLNilUAwOhSkdIZylYZx
+	oiFiKoD+tEtlWzSn/mFspDjpkIjiT8vntL8XiMvveKfbNYpqERBU94Iw+ZcLBjmpnGKAZd7V1z2Ou
+	98U2pKrqd9k44s7q/68lwn6cHvOWc4IpUb+SmhJykK/rXjauIxYOp+1MBod7xeIeICGImk6KlGLIO
+	gxfKWWT89mXEE8VQmOz4MfRFuoLVfA3cZI71bIhnf3yFSU8MpCxwLRpSf6BAL8pzpvFsv5/tFvgTD
+	oQ58vUB4sNKgt7bzlSZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVfTt-0006gj-Sc; Tue, 28 May 2019 17:01:45 +0000
-Received: from mail-vi1eur04on060f.outbound.protection.outlook.com
- ([2a01:111:f400:fe0e::60f]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVfTl-0006e6-Rk
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 17:01:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bCwlOmQKePf6huPPxWjIhWT433NcKcvkiGvvEpJ8dUg=;
- b=Us4nnzOpxp+ss8h2ymOccsbyd4xitW2v/7RKRwKTVXohXdct4oy3GTyDLEGWgOMkGtCbdnQel3XFH0oVHU34C2hU7BQ1pXQ72QbX+zguPE+yWIYfi6U11v1/Wqu6sujSz/bOyXjgh4vV/DVvh8uMOjTRe/qYqs0wfyFdlWZbamA=
-Received: from DB8PR08MB4105.eurprd08.prod.outlook.com (20.179.12.12) by
- DB8PR08MB4187.eurprd08.prod.outlook.com (20.179.9.82) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.19; Tue, 28 May 2019 17:01:30 +0000
-Received: from DB8PR08MB4105.eurprd08.prod.outlook.com
- ([fe80::b4db:b3ed:75ff:167]) by DB8PR08MB4105.eurprd08.prod.outlook.com
- ([fe80::b4db:b3ed:75ff:167%3]) with mapi id 15.20.1922.021; Tue, 28 May 2019
- 17:01:30 +0000
-From: Steve Capper <Steve.Capper@arm.com>
-To: Marc Zyngier <Marc.Zyngier@arm.com>
-Subject: Re: [PATCH v2 01/12] arm/arm64: KVM: Formalise end of direct linear
- map
-Thread-Topic: [PATCH v2 01/12] arm/arm64: KVM: Formalise end of direct linear
- map
-Thread-Index: AQHVFW/x742AqOVF50emc0crforbhKaAuY6AgAAJf4A=
-Date: Tue, 28 May 2019 17:01:29 +0000
-Message-ID: <20190528170116.GA13287@capper-debian.cambridge.arm.com>
-References: <20190528161026.13193-1-steve.capper@arm.com>
- <20190528161026.13193-2-steve.capper@arm.com>
- <aaec6c01-0610-c9aa-a091-177749a29852@arm.com>
-In-Reply-To: <aaec6c01-0610-c9aa-a091-177749a29852@arm.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mutt/1.10.1 (2018-07-13)
-x-originating-ip: [217.140.96.140]
-x-clientproxiedby: DM5PR18CA0058.namprd18.prod.outlook.com
- (2603:10b6:3:22::20) To DB8PR08MB4105.eurprd08.prod.outlook.com
- (2603:10a6:10:b0::12)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Steve.Capper@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: eb360c4d-36ff-4345-24d7-08d6e38e20b0
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:DB8PR08MB4187; 
-x-ms-traffictypediagnostic: DB8PR08MB4187:
-nodisclaimer: True
-x-microsoft-antispam-prvs: <DB8PR08MB41877A34ADACF378959E14DC811E0@DB8PR08MB4187.eurprd08.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2733;
-x-forefront-prvs: 00514A2FE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(346002)(366004)(376002)(39860400002)(396003)(189003)(199004)(66476007)(64756008)(25786009)(66946007)(66446008)(256004)(73956011)(2906002)(8936002)(14444005)(66556008)(54906003)(305945005)(8676002)(99286004)(7736002)(52116002)(33656002)(81156014)(86362001)(81166006)(102836004)(53546011)(6506007)(386003)(76176011)(58126008)(44832011)(186003)(446003)(26005)(6436002)(4326008)(6862004)(6246003)(6116002)(3846002)(6636002)(14454004)(478600001)(72206003)(316002)(53936002)(66066001)(6512007)(229853002)(71190400001)(71200400001)(1076003)(68736007)(6486002)(5660300002)(11346002)(486006)(476003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR08MB4187;
- H:DB8PR08MB4105.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 2ttUfxV5F8Bkg/JqROt3f5GDRXwL0sY1uOBV0MzW3Xn0QXX4Yr/EG5cmD1LNv0zq4KzCM38WunoAyA3U2yJMwkNcFUw3lG/EFtZloeGksUVCqX9OOIzcAAsvE1WfbQZr6WinjFY+c+KaDNi6RDMjsI7spPzmnNNQ3dmBEHKGMNOLxRUjzURiVMsxPIWknP/9C862VBnLW1pYZhng5wHEyhWQZqO1GpMxB/IHWa1smKiT+8lvIK+CP0i4o/gimqkaD+nWCND/HEWxnkDI54WnYupBhgwMW8kMXTGml4gLcpJeeBuOwtiT73v4Cto9aNO/XIFGltxd8fCWa2OonpPzXm1bTmWbTiO/4Xc6jfTkaKpriCoelSZe++oh03pE8Pb3iuufDxJz0PowEFyLTvUcNF9RIxcsCwV4dSX6n0N6Uo0=
-Content-ID: <0ECCE47806ABD94C8FD1CA9620858854@eurprd08.prod.outlook.com>
+	id 1hVfV7-000780-At; Tue, 28 May 2019 17:03:01 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVfV0-00077R-GS
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 17:02:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5FEB341;
+ Tue, 28 May 2019 10:02:53 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ C71E83F59C; Tue, 28 May 2019 10:02:47 -0700 (PDT)
+Date: Tue, 28 May 2019 18:02:45 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190528170244.GF32006@arrakis.emea.arm.com>
+References: <20190521182932.sm4vxweuwo5ermyd@mbp>
+ <201905211633.6C0BF0C2@keescook>
+ <20190522101110.m2stmpaj7seezveq@mbp>
+ <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ <20190522163527.rnnc6t4tll7tk5zw@mbp>
+ <201905221316.865581CF@keescook>
+ <20190523144449.waam2mkyzhjpqpur@mbp>
+ <201905230917.DEE7A75EF0@keescook>
+ <20190523174345.6sv3kcipkvlwfmox@mbp>
+ <201905231327.77CA8D0A36@keescook>
 MIME-Version: 1.0
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: eb360c4d-36ff-4345-24d7-08d6e38e20b0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 May 2019 17:01:29.9615 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Steve.Capper@arm.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB4187
+Content-Disposition: inline
+In-Reply-To: <201905231327.77CA8D0A36@keescook>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_100137_936772_BD759098 
-X-CRM114-Status: GOOD (  24.14  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190528_100254_558762_563981B4 
+X-CRM114-Status: GOOD (  18.27  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0e:0:0:0:60f listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -120,96 +72,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "crecklin@redhat.com" <crecklin@redhat.com>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- "bhsharma@redhat.com" <bhsharma@redhat.com>, Will Deacon <Will.Deacon@arm.com>,
- nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 05:27:17PM +0100, Marc Zyngier wrote:
-> Hi Steve,
-
-Hi Marc,
-
+On Thu, May 23, 2019 at 02:31:16PM -0700, Kees Cook wrote:
+> syzkaller already attempts to randomly inject non-canonical and
+> 0xFFFF....FFFF addresses for user pointers in syscalls in an effort to
+> find bugs like CVE-2017-5123 where waitid() via unchecked put_user() was
+> able to write directly to kernel memory[1].
 > 
-> On 28/05/2019 17:10, Steve Capper wrote:
-> > We assume that the direct linear map ends at ~0 in the KVM HYP map
+> It seems that using TBI by default and not allowing a switch back to
+> "normal" ABI without a reboot actually means that userspace cannot inject
+> kernel pointers into syscalls any more, since they'll get universally
+> stripped now. Is my understanding correct, here? i.e. exploiting
+> CVE-2017-5123 would be impossible under TBI?
 > 
-> Do we? This has stopped being the case since ed57cac83e05f ("arm64: KVM:
-> Introduce EL2 VA randomisation").
+> If so, then I think we should commit to the TBI ABI and have a boot
+> flag to disable it, but NOT have a process flag, as that would allow
+> attackers to bypass the masking. The only flag should be "TBI or MTE".
 > 
-> > intersection checking code. This assumption will become invalid later on
-> > for arm64 when the address space of the kernel is re-arranged.
-> > 
-> > This patch introduces a new constant PAGE_OFFSET_END for both arm and
-> > arm64 and defines it to be ~0UL
-> > 
-> > Signed-off-by: Steve Capper <steve.capper@arm.com>
-> > ---
-> >  arch/arm/include/asm/memory.h   | 1 +
-> >  arch/arm64/include/asm/memory.h | 1 +
-> >  virt/kvm/arm/mmu.c              | 4 ++--
-> >  3 files changed, 4 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/arch/arm/include/asm/memory.h b/arch/arm/include/asm/memory.h
-> > index ed8fd0d19a3e..45c211fd50da 100644
-> > --- a/arch/arm/include/asm/memory.h
-> > +++ b/arch/arm/include/asm/memory.h
-> > @@ -24,6 +24,7 @@
-> >  
-> >  /* PAGE_OFFSET - the virtual address of the start of the kernel image */
-> >  #define PAGE_OFFSET		UL(CONFIG_PAGE_OFFSET)
-> > +#define PAGE_OFFSET_END		(~0UL)
-> >  
-> >  #ifdef CONFIG_MMU
-> >  
-> > diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> > index 8ffcf5a512bb..9fd387a63b9b 100644
-> > --- a/arch/arm64/include/asm/memory.h
-> > +++ b/arch/arm64/include/asm/memory.h
-> > @@ -52,6 +52,7 @@
-> >  	(UL(1) << VA_BITS) + 1)
-> >  #define PAGE_OFFSET		(UL(0xffffffffffffffff) - \
-> >  	(UL(1) << (VA_BITS - 1)) + 1)
-> > +#define PAGE_OFFSET_END		(~0UL)
-> >  #define KIMAGE_VADDR		(MODULES_END)
-> >  #define BPF_JIT_REGION_START	(VA_START + KASAN_SHADOW_SIZE)
-> >  #define BPF_JIT_REGION_SIZE	(SZ_128M)
-> > diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-> > index 74b6582eaa3c..e1a777275b37 100644
-> > --- a/virt/kvm/arm/mmu.c
-> > +++ b/virt/kvm/arm/mmu.c
-> > @@ -2202,10 +2202,10 @@ int kvm_mmu_init(void)
-> >  	kvm_debug("IDMAP page: %lx\n", hyp_idmap_start);
-> >  	kvm_debug("HYP VA range: %lx:%lx\n",
-> >  		  kern_hyp_va(PAGE_OFFSET),
-> > -		  kern_hyp_va((unsigned long)high_memory - 1));
-> > +		  kern_hyp_va(PAGE_OFFSET_END));
-> >  
-> >  	if (hyp_idmap_start >= kern_hyp_va(PAGE_OFFSET) &&
-> > -	    hyp_idmap_start <  kern_hyp_va((unsigned long)high_memory - 1) &&
-> > +	    hyp_idmap_start <  kern_hyp_va(PAGE_OFFSET_END) &&
-> >  	    hyp_idmap_start != (unsigned long)__hyp_idmap_text_start) {
-> >  		/*
-> >  		 * The idmap page is intersecting with the VA space,
-> > 
-> 
-> This definitely looks like a move in the wrong direction (reverting part
-> of the above commit). Is it that this is just an old patch that should
-> have been dropped? Or am I completely missing the point?
+> If so, can I get top byte masking for other architectures too? Like,
+> just to strip high bits off userspace addresses? ;)
 
-I suspect this is a case of me rebasing my series... poorly.
-I'll re-examine the logic here and either update the patch or the commit
-log to make it clearer.
+Just for fun, hack/attempt at your idea which should not interfere with
+TBI. Only briefly tested on arm64 (and the s390 __TYPE_IS_PTR macro is
+pretty weird ;)):
 
-Cheers,
+--------------------------8<---------------------------------
+diff --git a/arch/s390/include/asm/compat.h b/arch/s390/include/asm/compat.h
+index 63b46e30b2c3..338455a74eff 100644
+--- a/arch/s390/include/asm/compat.h
++++ b/arch/s390/include/asm/compat.h
+@@ -11,9 +11,6 @@
+ 
+ #include <asm-generic/compat.h>
+ 
+-#define __TYPE_IS_PTR(t) (!__builtin_types_compatible_p( \
+-				typeof(0?(__force t)0:0ULL), u64))
+-
+ #define __SC_DELOUSE(t,v) ({ \
+ 	BUILD_BUG_ON(sizeof(t) > 4 && !__TYPE_IS_PTR(t)); \
+ 	(__force t)(__TYPE_IS_PTR(t) ? ((v) & 0x7fffffff) : (v)); \
+diff --git a/include/linux/syscalls.h b/include/linux/syscalls.h
+index e2870fe1be5b..b1b9fe8502da 100644
+--- a/include/linux/syscalls.h
++++ b/include/linux/syscalls.h
+@@ -119,8 +119,15 @@ struct io_uring_params;
+ #define __TYPE_IS_L(t)	(__TYPE_AS(t, 0L))
+ #define __TYPE_IS_UL(t)	(__TYPE_AS(t, 0UL))
+ #define __TYPE_IS_LL(t) (__TYPE_AS(t, 0LL) || __TYPE_AS(t, 0ULL))
++#define __TYPE_IS_PTR(t) (!__builtin_types_compatible_p(typeof(0 ? (__force t)0 : 0ULL), u64))
+ #define __SC_LONG(t, a) __typeof(__builtin_choose_expr(__TYPE_IS_LL(t), 0LL, 0L)) a
++#ifdef CONFIG_64BIT
++#define __SC_CAST(t, a)	(__TYPE_IS_PTR(t) \
++				? (__force t) ((__u64)a & ~(1UL << 55)) \
++				: (__force t) a)
++#else
+ #define __SC_CAST(t, a)	(__force t) a
++#endif
+ #define __SC_ARGS(t, a)	a
+ #define __SC_TEST(t, a) (void)BUILD_BUG_ON_ZERO(!__TYPE_IS_LL(t) && sizeof(t) > sizeof(long))
+ 
+
 -- 
-Steve
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
