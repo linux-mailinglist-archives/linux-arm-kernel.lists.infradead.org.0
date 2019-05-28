@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B31F52D06A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 22:33:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ED5C2D068
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 22:32:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MOA1yMgsEko5R5es79JQsXVCfyS/rCVJHYTOf4p/0nI=; b=HFpv3E8bAk8PBn
-	hqO628wPasBeVn0MirEIYHIhiWs3KzV4aCxGmLqKUZIKXSfbKCeIQBMCUnyJUYpt4AB+TOpV0HR6j
-	JaHqEQd/Vsv++R0Bz2jCEqp5zDuGk2om4UoN2rcPflCqFKx7euI/DaMTEIWrOBLeT9DPhh9VdZFqy
-	Ot8DSAHIPovqCK91RrHTPtWzQ3OnqeQPfLkGYL+ZRIpQC4Ryz6bLTd+CKEp/W+cH5yXbYokFCMZqP
-	lAaMcgZUo+DcIUQQM+bTAsiBgmJ+eAGI9iGRuMSP/qr+urT51O9Kj8WRndjHBL7E+2zCQtKyXhlIz
-	/yrap+IMA4lZ4dxDSD1Q==;
+	List-Owner; bh=aCZ6fYFy/GNh2+mouEK1cQ44Q2LUzzGdvcGLD7KE3GQ=; b=I6r34ERJ8uk8+l
+	nNUgha/AF8kPayJRtOqN6EcDCHLqVSa0j7C74qwGjSGPyILIBV/SIkdCy0V+HhML9weLOXvDvlbuE
+	HEQS0JL7IfFQSs5H5ulQ3Tfp1Z4lV3i4FdWnJu4OCqh5sC98Oa3kANvgXKgSI8rZ0nYZ6TG6kw8mM
+	8LHdU9tOxmTSKxu4bbFJ4Zql/FMwStkXAe0cXb422+XyMB+/PkIQqxPqmprr0+eA+zSA+qOiClgDx
+	LX/XAL7C5woWcT18nbYT0SJdRUrvaVK+uXJ4OhYBUjgrzJv9kX3KS1ol4vTvJmSLcuV+i+SoIvsg+
+	WswPT9A/ONEHxlFPxyFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVimK-0004HK-3C; Tue, 28 May 2019 20:33:00 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1hVilz-0003ps-0V; Tue, 28 May 2019 20:32:39 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hViki-0002Oo-Ks
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 20:31:26 +0000
+ id 1hVikc-0002J8-QL
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 20:31:21 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (Authenticated sender: maxime.ripard@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 89263240005;
- Tue, 28 May 2019 20:31:06 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 18C9720001A;
+ Tue, 28 May 2019 20:31:10 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
  Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH v2 10/11] ARM: dts: sun8i: v3s: Add external crystals accuracy
-Date: Tue, 28 May 2019 22:30:40 +0200
-Message-Id: <8f90d944536ec2568920e6d1549fc07b16c22bea.1559075389.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH v2 11/11] ARM: dts: sun8i: r40: Change the RTC compatible
+Date: Tue, 28 May 2019 22:30:41 +0200
+Message-Id: <f123c02a0458a4a90234f636b85a2ef048075794.1559075389.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <434446bc5541d7dfe5823874355c7db8c7e213fa.1559075389.git-series.maxime.ripard@bootlin.com>
 References: <434446bc5541d7dfe5823874355c7db8c7e213fa.1559075389.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_133121_003907_5B1DBF5E 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20190528_133115_818767_13AE1F3B 
+X-CRM114-Status: GOOD (  13.49  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,35 +69,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The V3s datasheet mandates oscillators accuracy to be within 50ppm. Let's
-add that accuracy to their device tree nodes.
+Unlike what's being reported in the device tree so far, the RTC in the R40
+is quite different from the H3. Indeed it doesn't have the internal
+oscillator output, and it has only a single interrupt. Let's add a
+compatible for it.
 
 Acked-by: Chen-Yu Tsai <wens@csie.org>
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- arch/arm/boot/dts/sun8i-v3s.dtsi | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/boot/dts/sun8i-r40.dtsi | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/sun8i-v3s.dtsi b/arch/arm/boot/dts/sun8i-v3s.dtsi
-index 6ba9377458b3..d7aef128acb3 100644
---- a/arch/arm/boot/dts/sun8i-v3s.dtsi
-+++ b/arch/arm/boot/dts/sun8i-v3s.dtsi
-@@ -84,6 +84,7 @@
- 			#clock-cells = <0>;
- 			compatible = "fixed-clock";
- 			clock-frequency = <24000000>;
-+			clock-accuracy = <50000>;
- 			clock-output-names = "osc24M";
+diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+index bb856e53b806..6007d0cc252d 100644
+--- a/arch/arm/boot/dts/sun8i-r40.dtsi
++++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+@@ -318,8 +318,7 @@
  		};
  
-@@ -91,6 +92,7 @@
- 			#clock-cells = <0>;
- 			compatible = "fixed-clock";
- 			clock-frequency = <32768>;
-+			clock-accuracy = <50000>;
- 			clock-output-names = "ext-osc32k";
- 		};
- 	};
+ 		rtc: rtc@1c20400 {
+-			compatible = "allwinner,sun8i-r40-rtc",
+-				     "allwinner,sun8i-h3-rtc";
++			compatible = "allwinner,sun8i-r40-rtc";
+ 			reg = <0x01c20400 0x400>;
+ 			interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+ 			clock-output-names = "osc32k", "osc32k-out";
 -- 
 git-series 0.9.1
 
