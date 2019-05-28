@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6A732CB40
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 18:11:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35A5A2CB41
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 18:11:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jQMtSijoeCoCvrxfyuygaepSocM3BwcGJolk1WKrH00=; b=ewRY1vMY8BQg7B
-	5RU9+1WcJ4vKxKrX/GQdEe8j7f60vC54uTJ340GZf9tyw9VkzobgUs5kDjEJbeF6US/TUp0s3YUEk
-	PzDrezkdouENzTQmoC9XjtlKyrwptz89yldLKt00mksOipo/9KdG3LJUJ7oZTqeE8GW4xI8TYxFtK
-	e3xMLfToA4aPsg2I6thuiJGWUp162654o6vXnmBs8FT2YravnIhRlGZnJ3kKSs1OHdS8JdyGieV6i
-	arxlY8xkXqjTF+jskAUPmIlstYK/gFxQ7bx7Bpjv426PKSqS+S8FkuN3VF65fXfklf+XngHSJv78e
-	phQeUZS486kFo6dQdhng==;
+	List-Owner; bh=QfwbgAW0LN0Eij77ZiTa6ydeA8J1QLFluIdKkEmRpi0=; b=QHEl/PWb4WppZQ
+	LUdCWCSC2Ugn77wX7AOEnKjcF22qu0GTPhqdADFbRW+RnztJlZBdA2+gyjePafsDe2c6L64QVa/HP
+	NwV8WeR8D+2RgHIHYLSL11Ch2fPHl6/F0vRp063R8DEa9P5RMFWjvdwu+rng5oljle+QTqky232Ac
+	w7BXqqZZTEzDMiZ4B+p10XuyQeTWHMeSLGnKszcyjUsBfa6fQu15uDd1QGLT4QXgNFjqv5CY5Yeq5
+	0obDloinJ3/hq5K/SwfdQ/WTmZouNmNIVp4qBBh0kQAXqxZzRblha+iPF9CZF+d6bgpBCKk7ztNUE
+	HVb9AhrtNj2pSOIj5CQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVehH-0004ww-7m; Tue, 28 May 2019 16:11:31 +0000
+	id 1hVehS-0005B6-JE; Tue, 28 May 2019 16:11:42 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVegb-0004Ot-Ms
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 16:10:52 +0000
+ id 1hVege-0004SQ-5p
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 16:10:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F8E8165C;
- Tue, 28 May 2019 09:10:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C78C11684;
+ Tue, 28 May 2019 09:10:51 -0700 (PDT)
 Received: from capper-debian.arm.com (unknown [10.37.12.41])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5659F3F59C;
- Tue, 28 May 2019 09:10:46 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AF52E3F59C;
+ Tue, 28 May 2019 09:10:49 -0700 (PDT)
 From: Steve Capper <steve.capper@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 04/12] arm64: mm: Replace fixed map BUILD_BUG_ON's with
- BUG_ON's
-Date: Tue, 28 May 2019 17:10:18 +0100
-Message-Id: <20190528161026.13193-5-steve.capper@arm.com>
+Subject: [PATCH v2 05/12] arm64: dump: Make kernel page table dumper dynamic
+ again
+Date: Tue, 28 May 2019 17:10:19 +0100
+Message-Id: <20190528161026.13193-6-steve.capper@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190528161026.13193-1-steve.capper@arm.com>
 References: <20190528161026.13193-1-steve.capper@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_091050_268563_C0A2779E 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20190528_091052_607472_7BA0E6AC 
+X-CRM114-Status: GOOD (  13.88  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -70,43 +70,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to prepare for a variable VA_BITS we need to account for a
-variable size VMEMMAP which in turn means the position of the fixed map
-is variable at compile time.
+The kernel page table dumper assumes that the placement of VA regions is
+constant and determined at compile time. As we are about to introduce
+variable VA logic, we need to be able to determine certain regions at
+boot time.
 
-Thus, we need to replace the BUILD_BUG_ON's that check the fixed map
-position with BUG_ON's.
+This patch adds logic to the kernel page table dumper s.t. these regions
+can be computed at boot time.
 
 Signed-off-by: Steve Capper <steve.capper@arm.com>
 ---
- arch/arm64/mm/mmu.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/mm/dump.c | 58 +++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 47 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index b0401b2ec4da..1b88d9d81954 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -846,7 +846,7 @@ void __init early_fixmap_init(void)
- 	 * The boot-ioremap range spans multiple pmds, for which
- 	 * we are not prepared:
- 	 */
--	BUILD_BUG_ON((__fix_to_virt(FIX_BTMAP_BEGIN) >> PMD_SHIFT)
-+	BUG_ON((__fix_to_virt(FIX_BTMAP_BEGIN) >> PMD_SHIFT)
- 		     != (__fix_to_virt(FIX_BTMAP_END) >> PMD_SHIFT));
+diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
+index ee4e5bea8944..f5fd6d6557fc 100644
+--- a/arch/arm64/mm/dump.c
++++ b/arch/arm64/mm/dump.c
+@@ -29,23 +29,45 @@
+ #include <asm/pgtable-hwdef.h>
+ #include <asm/ptdump.h>
  
- 	if ((pmdp != fixmap_pmd(fix_to_virt(FIX_BTMAP_BEGIN)))
-@@ -914,9 +914,9 @@ void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
- 	 * On 4k pages, we'll use section mappings for the FDT so we only
- 	 * have to be in the same PUD.
- 	 */
--	BUILD_BUG_ON(dt_virt_base % SZ_2M);
-+	BUG_ON(dt_virt_base % SZ_2M);
+-static const struct addr_marker address_markers[] = {
+-	{ PAGE_OFFSET,			"Linear Mapping start" },
+-	{ VA_START,			"Linear Mapping end" },
++
++enum address_markers_idx {
++	PAGE_OFFSET_NR = 0,
++	VA_START_NR,
++#ifdef CONFIG_KASAN
++	KASAN_START_NR,
++	KASAN_END_NR,
++#endif
++	MODULES_START_NR,
++	MODULES_END_NR,
++	VMALLOC_START_NR,
++	VMALLOC_END_NR,
++	FIXADDR_START_NR,
++	FIXADDR_END_NR,
++	PCI_START_NR,
++	PCI_END_NR,
++#ifdef CONFIG_SPARSEMEM_VMEMMAP
++	VMEMMAP_START_NR,
++#endif
++	END_NR
++};
++
++static struct addr_marker address_markers[] = {
++	{ 0 /* PAGE_OFFSET */,		"Linear Mapping start" },
++	{ 0 /* VA_START */,		"Linear Mapping end" },
+ #ifdef CONFIG_KASAN
+-	{ KASAN_SHADOW_START,		"Kasan shadow start" },
++	{ 0 /* KASAN_SHADOW_START */,	"Kasan shadow start" },
+ 	{ KASAN_SHADOW_END,		"Kasan shadow end" },
+ #endif
+ 	{ MODULES_VADDR,		"Modules start" },
+ 	{ MODULES_END,			"Modules end" },
+ 	{ VMALLOC_START,		"vmalloc() area" },
+-	{ VMALLOC_END,			"vmalloc() end" },
+-	{ FIXADDR_START,		"Fixmap start" },
+-	{ FIXADDR_TOP,			"Fixmap end" },
+-	{ PCI_IO_START,			"PCI I/O start" },
+-	{ PCI_IO_END,			"PCI I/O end" },
++	{ 0 /* VMALLOC_END */,		"vmalloc() end" },
++	{ 0 /* FIXADDR_START */,	"Fixmap start" },
++	{ 0 /* FIXADDR_TOP */,		"Fixmap end" },
++	{ 0 /* PCI_IO_START */,		"PCI I/O start" },
++	{ 0 /* PCI_IO_END */,		"PCI I/O end" },
+ #ifdef CONFIG_SPARSEMEM_VMEMMAP
+-	{ VMEMMAP_START,		"vmemmap" },
++	{ 0 /* VMEMMAP_START */,	"vmemmap" },
+ #endif
+ 	{ -1,				NULL },
+ };
+@@ -380,7 +402,6 @@ static void ptdump_initialize(void)
+ static struct ptdump_info kernel_ptdump_info = {
+ 	.mm		= &init_mm,
+ 	.markers	= address_markers,
+-	.base_addr	= PAGE_OFFSET,
+ };
  
--	BUILD_BUG_ON(__fix_to_virt(FIX_FDT_END) >> SWAPPER_TABLE_SHIFT !=
-+	BUG_ON(__fix_to_virt(FIX_FDT_END) >> SWAPPER_TABLE_SHIFT !=
- 		     __fix_to_virt(FIX_BTMAP_BEGIN) >> SWAPPER_TABLE_SHIFT);
+ void ptdump_check_wx(void)
+@@ -405,6 +426,21 @@ void ptdump_check_wx(void)
  
- 	offset = dt_phys % SWAPPER_BLOCK_SIZE;
+ static int ptdump_init(void)
+ {
++	kernel_ptdump_info.base_addr = PAGE_OFFSET;
++	address_markers[PAGE_OFFSET_NR].start_address = PAGE_OFFSET;
++	address_markers[VA_START_NR].start_address = VA_START;
++#ifdef CONFIG_KASAN
++	address_markers[KASAN_START_NR].start_address = KASAN_SHADOW_START;
++#endif
++	address_markers[VMALLOC_END_NR].start_address = VMALLOC_END;
++	address_markers[FIXADDR_START_NR].start_address = FIXADDR_START;
++	address_markers[FIXADDR_END_NR].start_address = FIXADDR_TOP;
++	address_markers[PCI_START_NR].start_address = PCI_IO_START;
++	address_markers[PCI_END_NR].start_address = PCI_IO_END;
++#ifdef CONFIG_SPARSEMEM_VMEMMAP
++	address_markers[VMEMMAP_START_NR].start_address = VMEMMAP_START;
++#endif
++
+ 	ptdump_initialize();
+ 	ptdump_debugfs_register(&kernel_ptdump_info, "kernel_page_tables");
+ 	return 0;
 -- 
 2.20.1
 
