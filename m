@@ -2,89 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37A802BDF0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 05:48:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD902BE69
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 06:49:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xKMQFF7KcAJKXxE63517J4YhPPWJOlfGKmge04CKpqk=; b=cLDUdfPaEdl3W5
-	l6qf0p0xzs6ng5p9PE4II+QJCRKka5HDvoF7+nyD4pr+JWb79dGKP0azS7ckhhdCB72mzM+MjdbDy
-	DPP8qBMUCX9aqFeTbRXvpZkFiBLy8Fuzk5yUeDUALhVtGjGoNjVTL8CMpdtGWOFE+0CM+0ynbXlvI
-	/SsjauHD3w3s31sIaj/teajkeEgQojX4to7SO3AgRWShLmduEvpUGBVryk5SL3bHH0WAb82/CL5oL
-	J4Nxfgmren4g5BCgGtz/nXH6LGvPov+D4p08Zp37uVj/Kk93Wm+Pda/d2idXaUVeTD1AD+TtJTPN7
-	CwqI+QaXODZo4LyOFa7w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=I4M2urhJZkvyZ8LwoAkVrntMcIQGRtqEY3no6DiHjFw=; b=U0R
+	dtJC/Hn/EHnp/VRh7ZgL/PCRtSvDAdYlgJTEHoH9SdBJB+bH1IWZWC7rO00c+zNrHK1ee8en/tEGg
+	C4Px2s5L/wAdxjEvnyLrHw7d5KJqrHp8iFhDiSbIJsaVJrlB5LCg4gufmFd/23CNVXEE2CmmZqp5Z
+	QDJdHsBW0Oyou1CXExOn6pnXn3lt7uzPLHKvRADTsuYClxDXIwnUaE8ZS3Gw2PI/9kMTCHkxiQc3I
+	cuz/VprAfxTd74paPVSaH6B7eraF0lZCFmHWLQZ60tf8fYh8W5u3TSFrFzEf8AXVuSQeyyVig5434
+	ddO4dRSutLwlPJ6XumfcQFPixiDJt1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVT5z-0008Nr-QE; Tue, 28 May 2019 03:48:15 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1hVU2z-0002dz-9W; Tue, 28 May 2019 04:49:13 +0000
+Received: from regular1.263xmail.com ([211.150.70.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVT5s-0008NW-A0
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 03:48:09 +0000
-Received: by mail-ed1-f65.google.com with SMTP id n17so29585672edb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 20:48:08 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ykAmZNM3+M0rf6HLjev/b1JXrJdjuyj6wZaqtDFtAlI=;
- b=nedgYLkPi8DAr8TRE6S9UJs19hIUpFUUIL5LCGU/0HSyGhmMqHcXXAkCyBT3cwa8s+
- YFTEByPsqcFEhp3Mz7Fo74xyjwNw9kG9w48Viy9Q3Lrv9MB2a9FJB7uUViFXRx+z8ti2
- URVrYEf2CdRToZDEn0ooZA/bujHbykdcDjapOBrHHguNm1FLZEwWa2vjL8YZgXyK3nSD
- M832KwlQF6VU0NAH4TTg9EpR5FCMqrTRM6NVMdzy2GzLSaSLeB+ja39Rby5zP4LuS4wU
- AU3dXsGRXgdSqiBrBVhzE4eFCUP3iKIBkH8QlLTq9yNTyqzW/1EH9FIW5Rz2rS67puZx
- R/6A==
-X-Gm-Message-State: APjAAAWHfU/hYXFr8zRZY7FzO/LA+eZku4Cce61b5kKoxq0/QAqoC8Vj
- vkaK5otl1GYyShpLWX32gelzRq3RMGU=
-X-Google-Smtp-Source: APXvYqwvbuym6Ync594hFnTQeGTwvkEgLpDc9BszmDjkl6+Dr4opIzOpGlVFEYhY41s5vnzLsQ+s2w==
-X-Received: by 2002:a50:b343:: with SMTP id r3mr127466054edd.53.1559015286764; 
- Mon, 27 May 2019 20:48:06 -0700 (PDT)
-Received: from mail-wm1-f54.google.com (mail-wm1-f54.google.com.
- [209.85.128.54])
- by smtp.gmail.com with ESMTPSA id c26sm3911674ede.32.2019.05.27.20.48.06
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 27 May 2019 20:48:06 -0700 (PDT)
-Received: by mail-wm1-f54.google.com with SMTP id y3so1170832wmm.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 May 2019 20:48:06 -0700 (PDT)
-X-Received: by 2002:a1c:e906:: with SMTP id q6mr1327240wmc.47.1559015286157;
- Mon, 27 May 2019 20:48:06 -0700 (PDT)
-MIME-Version: 1.0
-References: <290402405a34506997fd2fab2c4c1486dbe6b7e5.1558958381.git-series.maxime.ripard@bootlin.com>
- <834199999676fdb119f3aa1966eb1b1d1391f347.1558958381.git-series.maxime.ripard@bootlin.com>
-In-Reply-To: <834199999676fdb119f3aa1966eb1b1d1391f347.1558958381.git-series.maxime.ripard@bootlin.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 28 May 2019 11:47:56 +0800
-X-Gmail-Original-Message-ID: <CAGb2v66bYFdv6=VUeQNvugMqOzg2L0dkgFbje7OE9pQC+FN0Fg@mail.gmail.com>
-Message-ID: <CAGb2v66bYFdv6=VUeQNvugMqOzg2L0dkgFbje7OE9pQC+FN0Fg@mail.gmail.com>
-Subject: Re: [PATCH 10/10] ARM: dts: r40: Change the RTC compatible
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+ id 1hVU2s-0002d8-Ng; Tue, 28 May 2019 04:49:08 +0000
+Received: from jay.xu?rock-chips.com (unknown [192.168.167.229])
+ by regular1.263xmail.com (Postfix) with ESMTP id 09B0F907;
+ Tue, 28 May 2019 12:48:57 +0800 (CST)
+X-263anti-spam: KSV:0;BIG:0;
+X-MAIL-GRAY: 0
+X-MAIL-DELIVERY: 1
+X-KSVirus-check: 0
+X-ADDR-CHECKED4: 1
+X-ABS-CHECKED: 1
+X-SKE-CHECKED: 1
+X-ANTISPAM-LEVEL: 2
+Received: from localhost.localdomain (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P6627T140475876996864S1559018932287865_; 
+ Tue, 28 May 2019 12:48:56 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <dc6bc3b2d626c351f61daca14b30d2eb>
+X-RL-SENDER: jay.xu@rock-chips.com
+X-SENDER: xjq@rock-chips.com
+X-LOGIN-NAME: jay.xu@rock-chips.com
+X-FST-TO: xjq@rock-chips.com
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+From: Jianqun Xu <jay.xu@rock-chips.com>
+To: jay.xu@rock-chips.com, heiko@sntech.de, mark.rutland@arm.com,
+ robh+dt@kernel.org
+Subject: [PATCH 1/1] arm64: dts: rockchip: add core dtsi file for RK3399Pro
+ SoCs
+Date: Tue, 28 May 2019 12:48:50 +0800
+Message-Id: <20190528044850.23703-1-jay.xu@rock-chips.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_204808_345263_1F07DF62 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190527_214907_142045_98A1023B 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,29 +77,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-rtc@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ zhangzj@rock-chips.com, linux-rockchip@lists.infradead.org,
+ manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 8:01 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Unlike what's being reported in the device tree so far, the RTC in the R40
-> is quite different from the H3. Indeed it doesn't have the internal
-> oscillator output, and it has only a single interrupt. Let's add a
-> compatible for it.
->
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+This patch adds core dtsi file for Rockchip RK3399Pro SoCs,
+include rk3399.dtsi. Also enable these nodes:
+- dfi/dmc for ddr devfreq
+- pcie/pcie_phy
+- sdhci/sdio/emmc/sdmmc
 
-There's a lot of unnecessary line reordering. Otherwise,
+Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3399pro.dtsi | 111 ++++++++++++++++++++
+ 1 file changed, 111 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
 
-Acked-by: Chen-Yu Tsai <wens@csie.org>
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+new file mode 100644
+index 000000000000..62f67f857c45
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+@@ -0,0 +1,111 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++// Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
++
++#include "rk3399.dtsi"
++
++/ {
++	compatible = "rockchip,rk3399pro";
++
++	xin32k: xin32k {
++		compatible = "fixed-clock";
++		clock-frequency = <32768>;
++		clock-output-names = "xin32k";
++		#clock-cells = <0>;
++	};
++};
++
++&dfi {
++	status = "okay";
++};
++
++&dmc {
++	status = "okay";
++	center-supply = <&vdd_log>;
++	upthreshold = <40>;
++	downdifferential = <20>;
++	system-status-freq = <
++		/*system status         freq(KHz)*/
++		SYS_STATUS_NORMAL       800000
++		SYS_STATUS_REBOOT       528000
++		SYS_STATUS_SUSPEND      200000
++		SYS_STATUS_VIDEO_1080P  200000
++		SYS_STATUS_VIDEO_4K     600000
++		SYS_STATUS_VIDEO_4K_10B 800000
++		SYS_STATUS_PERFORMANCE  800000
++		SYS_STATUS_BOOST        400000
++		SYS_STATUS_DUALVIEW     600000
++		SYS_STATUS_ISP          600000
++	>;
++	vop-pn-msch-readlatency = <
++	/* plane_number  readlatency */
++		0	0
++		4	0x20
++	>;
++	vop-bw-dmc-freq = <
++	/* min_bw(MB/s) max_bw(MB/s) freq(KHz) */
++		0       762      200000
++		763     1893     400000
++		1894    3012     528000
++		3013    99999    800000
++	>;
++	auto-min-freq = <200000>;
++};
++
++&emmc_phy {
++	status = "okay";
++};
++
++&pcie_phy {
++	status = "okay";
++};
++
++&pcie0 {
++	ep-gpios = <&gpio0 RK_PB4 GPIO_ACTIVE_HIGH>;
++	num-lanes = <4>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pcie_clkreqn_cpm>;
++	status = "okay";
++};
++
++&sdhci {
++	bus-width = <8>;
++	mmc-hs400-1_8v;
++	supports-emmc;
++	non-removable;
++	keep-power-in-suspend;
++	mmc-hs400-enhanced-strobe;
++	status = "okay";
++};
++
++&sdio0 {
++	clock-frequency = <150000000>;
++	clock-freq-min-max = <200000 150000000>;
++	supports-sdio;
++	bus-width = <4>;
++	disable-wp;
++	cap-sd-highspeed;
++	cap-sdio-irq;
++	keep-power-in-suspend;
++	mmc-pwrseq = <&sdio_pwrseq>;
++	non-removable;
++	num-slots = <1>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
++	sd-uhs-sdr104;
++	status = "okay";
++};
++
++&sdmmc {
++	clock-frequency = <150000000>;
++	clock-freq-min-max = <400000 150000000>;
++	supports-sd;
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	disable-wp;
++	num-slots = <1>;
++	vqmmc-supply = <&vccio_sd>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_cd &sdmmc_bus4>;
++	status = "okay";
++};
+-- 
+2.17.1
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
