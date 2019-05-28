@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 472962D1D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 01:02:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ED702D1E1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 01:02:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DEcB5Pj4/W5VE90gHA4RuubR+88ithmmozHEkmo64Fc=; b=irJEId3ayg9jQLLfy2WrqyVUNX
-	gzt/076ZqMq5XLXCWyN5yT0WzZQmHVBj3tSVugxtTrX9NDNJAWuAuXE0C3JPU2MxCfHVRgeB3jfE7
-	yhox3tY6vJ9riO6wCg76VChMfEjP79axQqXsDt+hsvykS4vzeSp9sT+8Zh3Cs0S3e/np+yetxes68
-	ZGY+bqACrGgX8VIIB2/QoodKuSu3CAbvsUH21Il+zTQ4yIt/D1BjPcSSX3FbRt0BGo2M8SCspwl3h
-	1Sv9Xn4roO36U8135L3kldpcI05PgUCRO3bQ6bH2reKVCiE3GVbMk4+HLe5XdlLJih2yvGKyhT0Y/
-	gj3SVVvg==;
+	bh=VhP96SAqCrLWyyHebbgBb2MAhY4jmZpb8I1IXBsPDko=; b=uF/XltDETmluoui+U/46tEIZEr
+	e4ID36tPppjG9Uz2s+/k8p5i+DhE3KEHLkQLGTLCZRLSiGnC2sqOYp0R8wUTqupGjJmsvmtpFtc6Z
+	KyGz16jMxxy3C6gyTbk/Js87XmeXZg+cvOHSpWTkSAyn4aE74HVuARdpv2yOPy5C/WpAyN5ejnu9O
+	FEhfEJWNGo0Uvmc1zKIZDoUCKfWpCRDh7pNyy4iiZHiwavZY210ugQhBQElubn5avtB1dfAJK5R7X
+	SJlras5ld7sr/24eV1jNHYCbiI74kFY1N+j6YX1pbixc4/kzdGOvKRYkIMgkQ43IwcKVhOL/civPJ
+	Y96Ri5zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVl7C-00012m-QC; Tue, 28 May 2019 23:02:42 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hVl7O-0001I3-Uo; Tue, 28 May 2019 23:02:54 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVl6j-0000dj-3v
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 23:02:15 +0000
-Received: by mail-pf1-x443.google.com with SMTP id y11so229627pfm.13
+ id 1hVl6k-0000ed-Lz
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 23:02:19 +0000
+Received: by mail-pg1-x541.google.com with SMTP id t1so112486pgc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 16:02:12 -0700 (PDT)
+ Tue, 28 May 2019 16:02:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=UhDRw3r3UGwm2vyQ38HyiVKpdnmKQn3bdX4h2mhrNw4=;
- b=iyEbEcxn6S/MuK024Xfl88KIaECfvI+zXln1AR9XOg8WZy8GokbylfZkMzKeynTUPN
- HtFLyoh6ec+Rd/1u2qefsNm0DuiD7dhMudBFqgylmPFCQhoIj/TYj6qLnuux+sdbr9d5
- Djvb68Oyzmal+nSgRtZv5za771gS8gBLPifkPYCpU7jYczVhthAyXblEN7KjV3EIK4Wd
- J0uIBsffT7IEkUSkvxoLap1v19xR4kivXL2EZt/u509hVifT+/LWjavKNAO88MkzRBAt
- P00qFtwH25EnhbInskB5HE26em2VnM/RJpwM54PGv851qtRFA8JibUub6yinXySPSjNd
- R9BQ==
+ bh=DiNorqXWgoDbfgP/oEKyzpDwUhueYSzO5ddWgL3qZc0=;
+ b=tihjiVu6azC/bBIP8aC4nnh34lp68t+9yZ67YgfV+qfTeuSQ0Ug/zIefYv1k8dM+N+
+ nwggC0P9xHpGBBDMt4ntfXDQVblOA6KVb9YyZ2aPqZf5Lw9j5SwwbqtDIOsT2iJ2vXBl
+ JwXGNyjGF5DJiBSs69UK8iy55ek8cUO3ID333MxJzm8KvUI6S9imRH72NNIU4yfPXwFe
+ kPzZOcnuyZ1KHsQeO6tjzNCJOh9540seNX9URpAohk9lW1zNLwNoHWGG8/rvdmA4H3UM
+ wLrcRT93as7OwQ8Q66IJJXoQb14EJR8a4tAXDF2Q910WXnPfR59JxM6NOln+sp36zNOJ
+ 5wMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=UhDRw3r3UGwm2vyQ38HyiVKpdnmKQn3bdX4h2mhrNw4=;
- b=sLzPQPKExmPCRTHwwBJSK/byi3WL7nx+nTawhtw51BNhqeqMI4NK5rSv8q6wPIQ4sw
- QvyE88Z9cNH7Sb8QswRZ+UKVhaludTdDDnZUmjwr8m0SshMmMkPhFLbsTONpxJFgg9iE
- UJ0idHLBu2I0OnY1PEb6Vf1kxfoXRUiv8ieh7Xl5tIduy2OmGpbo47OwKG7rOfPGYnUv
- jVf6zzTkSUV1ZkLoLcTGT4J7sRSKliVMk2FylEadc9NqRShkajFj0XSa0H5ANp9JaqGz
- AXTX4oVfI3oKr3DEY1OGphPWufYujyLg1txhsTSAwpOILoDWfY586cyxQ6lHA29QH5qW
- UhcQ==
-X-Gm-Message-State: APjAAAW9qEbgql4Z47cxmdeB2+8A57t7JW3gSmIpIkFWAYr0/zq4QCmq
- /M/Uc607jGIanAo//ZbV+Lmd0S3k
-X-Google-Smtp-Source: APXvYqypL8bzjXvnb1MD+6km7SNXH7zCKNwdFnUvmZfuP16nTTKhEk/IDuKtjgE3FGMJaclNa82XcA==
-X-Received: by 2002:a17:90a:bb82:: with SMTP id
- v2mr8857173pjr.73.1559084531988; 
- Tue, 28 May 2019 16:02:11 -0700 (PDT)
+ bh=DiNorqXWgoDbfgP/oEKyzpDwUhueYSzO5ddWgL3qZc0=;
+ b=oFMktj7uhBa5+cjWNBnCUw11G7llHmZRJlF5KmE15B0IbL3Wykop0/O6F2rvJsKTLq
+ MOc49ikdSffB0WkR7I583hNdO/1e/DwzhZYDqxCKBszTKH86fHIqZtw507pdBWUJtCPB
+ 166RbomjuiSM6KQ6ZqxSyPF54txT3yGOd99I0somqWqCtJ0C3Q2ioswevWihCl78cEHF
+ Zcg2FAIZC2pyxUl1MuMAc/6l0dOGlLLYFcX9xgVocYB0DmJkZmEQLrwRKMGx1U+fb3I9
+ V3E1OrL3BBPL4Lom4bnb3ryoZeketFoUXManp/m1pdKaxv/dTI7j+uq3xaAI5TNcSNc8
+ LlWQ==
+X-Gm-Message-State: APjAAAVxvaODretzfsxu6PWdDaSfL/8LLpmVgW40hzcJx+3Tvl7VBsH7
+ VORyUioTFXEpeqUqB/EEP+drdsvP
+X-Google-Smtp-Source: APXvYqwUDmK4KFQKcKJs4ycOJWZOGU/ulR86m3hzfITLJW7LiN1cuKIInu67ZZHWBcCmXpIzoD9c3g==
+X-Received: by 2002:a17:90a:37c2:: with SMTP id
+ v60mr1569862pjb.24.1559084533477; 
+ Tue, 28 May 2019 16:02:13 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id j13sm14369573pfh.13.2019.05.28.16.02.10
+ by smtp.gmail.com with ESMTPSA id j13sm14369573pfh.13.2019.05.28.16.02.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 May 2019 16:02:11 -0700 (PDT)
+ Tue, 28 May 2019 16:02:12 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/7] ARM: dts: Cygnus: Fix most DTC W=1 warnings
-Date: Tue, 28 May 2019 16:01:29 -0700
-Message-Id: <20190528230134.27007-3-f.fainelli@gmail.com>
+Subject: [PATCH 3/7] ARM: dts: bcm-mobile: Fix most DTC W=1 warnings
+Date: Tue, 28 May 2019 16:01:30 -0700
+Message-Id: <20190528230134.27007-4-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190528230134.27007-1-f.fainelli@gmail.com>
 References: <20190528230134.27007-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_160213_157664_B0D7AD66 
-X-CRM114-Status: GOOD (  15.92  )
+X-CRM114-CacheID: sfid-20190528_160214_963813_B0B32DCC 
+X-CRM114-Status: GOOD (  15.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -118,113 +118,194 @@ Fix the bulk of the unit_address_vs_reg warnings and unnecessary
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- arch/arm/boot/dts/bcm-cygnus-clock.dtsi | 12 ++++++------
- arch/arm/boot/dts/bcm-cygnus.dtsi       |  6 +++---
- arch/arm/boot/dts/bcm911360_entphn.dts  |  2 --
- 3 files changed, 9 insertions(+), 11 deletions(-)
+ arch/arm/boot/dts/bcm11351.dtsi        | 12 ++++++------
+ arch/arm/boot/dts/bcm21664-garnet.dts  |  2 +-
+ arch/arm/boot/dts/bcm21664.dtsi        | 10 +++++-----
+ arch/arm/boot/dts/bcm23550-sparrow.dts |  2 +-
+ arch/arm/boot/dts/bcm23550.dtsi        |  8 ++++----
+ arch/arm/boot/dts/bcm28155-ap.dts      |  2 +-
+ 6 files changed, 18 insertions(+), 18 deletions(-)
 
-diff --git a/arch/arm/boot/dts/bcm-cygnus-clock.dtsi b/arch/arm/boot/dts/bcm-cygnus-clock.dtsi
-index 80b6ba4ca50c..52f91a12a99a 100644
---- a/arch/arm/boot/dts/bcm-cygnus-clock.dtsi
-+++ b/arch/arm/boot/dts/bcm-cygnus-clock.dtsi
-@@ -42,7 +42,7 @@ clocks {
+diff --git a/arch/arm/boot/dts/bcm11351.dtsi b/arch/arm/boot/dts/bcm11351.dtsi
+index b99c2e579622..6197e7d80e3b 100644
+--- a/arch/arm/boot/dts/bcm11351.dtsi
++++ b/arch/arm/boot/dts/bcm11351.dtsi
+@@ -100,7 +100,7 @@
+ 		reg-io-width = <4>;
  	};
  
- 	/* Cygnus ARM PLL */
--	armpll: armpll {
-+	armpll: armpll@19000000 {
- 		#clock-cells = <0>;
- 		compatible = "brcm,cygnus-armpll";
- 		clocks = <&osc>;
-@@ -67,7 +67,7 @@ clocks {
- 		clock-mult = <1>;
+-	L2: l2-cache {
++	L2: l2-cache@3ff20000 {
+ 		compatible = "brcm,bcm11351-a2-pl310-cache";
+ 		reg = <0x3ff20000 0x1000>;
+ 		cache-unified;
+@@ -225,21 +225,21 @@
+ 		#size-cells = <1>;
+ 		ranges;
+ 
+-		root_ccu: root_ccu {
++		root_ccu: root_ccu@35001000 {
+ 			compatible = "brcm,bcm11351-root-ccu";
+ 			reg = <0x35001000 0x0f00>;
+ 			#clock-cells = <1>;
+ 			clock-output-names = "frac_1m";
+ 		};
+ 
+-		hub_ccu: hub_ccu {
++		hub_ccu: hub_ccu@34000000 {
+ 			compatible = "brcm,bcm11351-hub-ccu";
+ 			reg = <0x34000000 0x0f00>;
+ 			#clock-cells = <1>;
+ 			clock-output-names = "tmon_1m";
+ 		};
+ 
+-		aon_ccu: aon_ccu {
++		aon_ccu: aon_ccu@35002000 {
+ 			compatible = "brcm,bcm11351-aon-ccu";
+ 			reg = <0x35002000 0x0f00>;
+ 			#clock-cells = <1>;
+@@ -248,7 +248,7 @@
+ 					     "pmu_bsc_var";
+ 		};
+ 
+-		master_ccu: master_ccu {
++		master_ccu: master_ccu@3f001000 {
+ 			compatible = "brcm,bcm11351-master-ccu";
+ 			reg = <0x3f001000 0x0f00>;
+ 			#clock-cells = <1>;
+@@ -261,7 +261,7 @@
+ 					     "hsic2_12m";
+ 		};
+ 
+-		slave_ccu: slave_ccu {
++		slave_ccu: slave_ccu@3e011000 {
+ 			compatible = "brcm,bcm11351-slave-ccu";
+ 			reg = <0x3e011000 0x0f00>;
+ 			#clock-cells = <1>;
+diff --git a/arch/arm/boot/dts/bcm21664-garnet.dts b/arch/arm/boot/dts/bcm21664-garnet.dts
+index 8b045cfab64b..be468f4adc37 100644
+--- a/arch/arm/boot/dts/bcm21664-garnet.dts
++++ b/arch/arm/boot/dts/bcm21664-garnet.dts
+@@ -21,7 +21,7 @@
+ 	model = "BCM21664 Garnet board";
+ 	compatible = "brcm,bcm21664-garnet", "brcm,bcm21664";
+ 
+-	memory {
++	memory@80000000 {
+ 		device_type = "memory";
+ 		reg = <0x80000000 0x40000000>; /* 1 GB */
+ 	};
+diff --git a/arch/arm/boot/dts/bcm21664.dtsi b/arch/arm/boot/dts/bcm21664.dtsi
+index 758daa334148..3cf66faf3b56 100644
+--- a/arch/arm/boot/dts/bcm21664.dtsi
++++ b/arch/arm/boot/dts/bcm21664.dtsi
+@@ -90,7 +90,7 @@
+ 		reg-io-width = <4>;
  	};
  
--	genpll: genpll {
-+	genpll: genpll@301d000 {
- 		#clock-cells = <1>;
- 		compatible = "brcm,cygnus-genpll";
- 		reg = <0x0301d000 0x2c>, <0x0301c020 0x4>;
-@@ -94,7 +94,7 @@ clocks {
- 		clock-mult = <1>;
- 	};
+-	L2: l2-cache {
++	L2: l2-cache@3ff20000 {
+ 		compatible = "arm,pl310-cache";
+ 		reg = <0x3ff20000 0x1000>;
+ 		cache-unified;
+@@ -295,21 +295,21 @@
+ 			clock-frequency = <156000000>;
+ 		};
  
--	lcpll0: lcpll0 {
-+	lcpll0: lcpll0@301d02c {
- 		#clock-cells = <1>;
- 		compatible = "brcm,cygnus-lcpll0";
- 		reg = <0x0301d02c 0x1c>, <0x0301c020 0x4>;
-@@ -103,7 +103,7 @@ clocks {
- 				     "usb_phy", "smart_card", "ch5";
- 	};
+-		root_ccu: root_ccu {
++		root_ccu: root_ccu@35001000 {
+ 			compatible = BCM21664_DT_ROOT_CCU_COMPAT;
+ 			reg = <0x35001000 0x0f00>;
+ 			#clock-cells = <1>;
+ 			clock-output-names = "frac_1m";
+ 		};
  
--	mipipll: mipipll {
-+	mipipll: mipipll@180a9800 {
- 		#clock-cells = <1>;
- 		compatible = "brcm,cygnus-mipipll";
- 		reg = <0x180a9800 0x2c>, <0x0301c020 0x4>, <0x180aa024 0x4>;
-@@ -113,7 +113,7 @@ clocks {
- 				     "ch5_unused";
- 	};
+-		aon_ccu: aon_ccu {
++		aon_ccu: aon_ccu@35002000 {
+ 			compatible = BCM21664_DT_AON_CCU_COMPAT;
+ 			reg = <0x35002000 0x0f00>;
+ 			#clock-cells = <1>;
+ 			clock-output-names = "hub_timer";
+ 		};
  
--	asiu_clks: asiu_clks {
-+	asiu_clks: asiu_clks@301d048 {
- 		#clock-cells = <1>;
- 		compatible = "brcm,cygnus-asiu-clk";
- 		reg = <0x0301d048 0xc>, <0x180aa024 0x4>;
-@@ -122,7 +122,7 @@ clocks {
- 		clock-output-names = "keypad", "adc/touch", "pwm";
- 	};
+-		master_ccu: master_ccu {
++		master_ccu: master_ccu@3f001000 {
+ 			compatible = BCM21664_DT_MASTER_CCU_COMPAT;
+ 			reg = <0x3f001000 0x0f00>;
+ 			#clock-cells = <1>;
+@@ -323,7 +323,7 @@
+ 					     "sdio4_sleep";
+ 		};
  
--	audiopll: audiopll {
-+	audiopll: audiopll@180aeb00 {
- 		#clock-cells = <1>;
- 		compatible = "brcm,cygnus-audiopll";
- 		reg = <0x180aeb00 0x68>;
-diff --git a/arch/arm/boot/dts/bcm-cygnus.dtsi b/arch/arm/boot/dts/bcm-cygnus.dtsi
-index 5f7b46503a51..2dac3efc7640 100644
---- a/arch/arm/boot/dts/bcm-cygnus.dtsi
-+++ b/arch/arm/boot/dts/bcm-cygnus.dtsi
+-		slave_ccu: slave_ccu {
++		slave_ccu: slave_ccu@3e011000 {
+ 			compatible = BCM21664_DT_SLAVE_CCU_COMPAT;
+ 			reg = <0x3e011000 0x0f00>;
+ 			#clock-cells = <1>;
+diff --git a/arch/arm/boot/dts/bcm23550-sparrow.dts b/arch/arm/boot/dts/bcm23550-sparrow.dts
+index 1c66b15f3013..ace77709f468 100644
+--- a/arch/arm/boot/dts/bcm23550-sparrow.dts
++++ b/arch/arm/boot/dts/bcm23550-sparrow.dts
 @@ -45,7 +45,7 @@
- 		ethernet0 = &eth0;
+ 		bootargs = "console=ttyS0,115200n8";
  	};
  
 -	memory {
-+	memory@0 {
++	memory@80000000 {
  		device_type = "memory";
- 		reg = <0 0>;
+ 		reg = <0x80000000 0x20000000>; /* 512 MB */
  	};
-@@ -69,7 +69,7 @@
- 		interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>;
- 	};
- 
--	core {
-+	core@19000000 {
- 		compatible = "simple-bus";
- 		ranges = <0x00000000 0x19000000 0x1000000>;
- 		#address-cells = <1>;
-@@ -91,7 +91,7 @@
- 			      <0x20100 0x100>;
+diff --git a/arch/arm/boot/dts/bcm23550.dtsi b/arch/arm/boot/dts/bcm23550.dtsi
+index 701198f5f498..a36c9b1d23c8 100644
+--- a/arch/arm/boot/dts/bcm23550.dtsi
++++ b/arch/arm/boot/dts/bcm23550.dtsi
+@@ -371,21 +371,21 @@
+ 			clock-frequency = <156000000>;
  		};
  
--		L2: l2-cache {
-+		L2: l2-cache@22000 {
- 			compatible = "arm,pl310-cache";
- 			reg = <0x22000 0x1000>;
- 			cache-unified;
-diff --git a/arch/arm/boot/dts/bcm911360_entphn.dts b/arch/arm/boot/dts/bcm911360_entphn.dts
-index 53f990defd6a..b2d323f4a5ab 100644
---- a/arch/arm/boot/dts/bcm911360_entphn.dts
-+++ b/arch/arm/boot/dts/bcm911360_entphn.dts
-@@ -49,8 +49,6 @@
+-		root_ccu: root_ccu {
++		root_ccu: root_ccu@35001000 {
+ 			compatible = BCM21664_DT_ROOT_CCU_COMPAT;
+ 			reg = <0x35001000 0x0f00>;
+ 			#clock-cells = <1>;
+ 			clock-output-names = "frac_1m";
+ 		};
  
- 	gpio_keys {
- 		compatible = "gpio-keys";
--		#address-cells = <1>;
--		#size-cells = <0>;
+-		aon_ccu: aon_ccu {
++		aon_ccu: aon_ccu@35002000 {
+ 			compatible = BCM21664_DT_AON_CCU_COMPAT;
+ 			reg = <0x35002000 0x0f00>;
+ 			#clock-cells = <1>;
+ 			clock-output-names = "hub_timer";
+ 		};
  
- 		hook {
- 			label = "HOOK";
+-		slave_ccu: slave_ccu {
++		slave_ccu: slave_ccu@3e011000 {
+ 			compatible = BCM21664_DT_SLAVE_CCU_COMPAT;
+ 			reg = <0x3e011000 0x0f00>;
+ 			#clock-cells = <1>;
+@@ -398,7 +398,7 @@
+ 					     "bsc4";
+ 		};
+ 
+-		master_ccu: master_ccu {
++		master_ccu: master_ccu@3f001000 {
+ 			compatible = BCM21664_DT_MASTER_CCU_COMPAT;
+ 			reg = <0x3f001000 0x0f00>;
+ 			#clock-cells = <1>;
+diff --git a/arch/arm/boot/dts/bcm28155-ap.dts b/arch/arm/boot/dts/bcm28155-ap.dts
+index fbfca83bd28f..ead6e9804dbf 100644
+--- a/arch/arm/boot/dts/bcm28155-ap.dts
++++ b/arch/arm/boot/dts/bcm28155-ap.dts
+@@ -21,7 +21,7 @@
+ 	model = "BCM28155 AP board";
+ 	compatible = "brcm,bcm28155-ap", "brcm,bcm11351";
+ 
+-	memory {
++	memory@80000000 {
+ 		device_type = "memory";
+ 		reg = <0x80000000 0x40000000>; /* 1 GB */
+ 	};
 -- 
 2.17.1
 
