@@ -2,110 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC2E02BFD3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 09:02:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E45352BFE6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 09:11:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=m4YGBmhyOqR5Bgmt/Uy/CDZERyNEIq7uAZPvvxNq7AA=; b=iLsgrbix3eu4UE
-	LZ5bB10Fhysey1Gsx5yAWMo+1U73/5gnPVYEe5g1/BEEKKE+FRt3HdiBYmP7MlDFcV5uYSyhsobEq
-	zaqF5yHP8GFNUh3V0X1ratIxHxG8CrkFGVFWEC24LO5DDrBruAnU9ZUlb0xkdvxLoTJb+xDU+QVCN
-	1t+qfu6UiwDit77t6Lh4eE8Xk5hkiSmgjA/gcXzBAQbObNejzWenFKdl5db4pN5ig8jf7A/kMHMXh
-	5iOi9GcN/092CYGTcm9jjMbKBOHtcaSlgv2RL6BqqMhKhuzrFUZmj6a+bzJd26IJ535CFJ3BpKnsv
-	IsELg4wNLRRabtGWE67w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5pGqNjzDLH2jKgK8Lcsi3G8dh3ByoxkO2udkp0VV8rY=; b=tMUbncOvnyPVXB
+	L9dRQEkj80kzUk2x+fNSxAdB3N2wrMBqIfNiHRa/a6ECAEcn6YHSam7L1Fme3U4kaSwhOZH0GUJOn
+	pzeGDy6+dr0qwVqGYWXMOyZ2X1oATAL5IBg30y2wjKukIBpvctYc7xe7NS0p0HBb1RDBw2dZvYbKD
+	5pQykauBxpa2t76oIsUJdltrr3ePgrisgEpMbkdwHTU8xXR32X+C+ATepGlc+S+Ag4MsgF5RUiuZB
+	y/QRnFtUitLhBcpLPvgmSnN6BCkyHnp1cxVmmVJi/MjTV2r/OCK5/ryQ3K7hS04qJCUUT3H6SvzZy
+	IrManHvkN2zfpNqKZYKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVW7m-0000pu-Q4; Tue, 28 May 2019 07:02:18 +0000
-Received: from mail-sn1nam01on0626.outbound.protection.outlook.com
- ([2a01:111:f400:fe40::626]
- helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+	id 1hVWGG-0003r5-UK; Tue, 28 May 2019 07:11:04 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVW7f-0000p7-0u
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 07:02:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector1-Synaptics-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=AxdnGrTkHNOZgkBxgA0glW5ekbVIta1MIx8jjVGV09U=;
- b=BPOq3hZ6ml9Zr+9aXM+K+k2KIaI+GQkfO8BzH9s4MxuIQBZTD5vvpJmk/yzkwH64ghJJjMrvrAAKSRKdOM18hMXv6K1nAQl9AvGPWbVHGhHAx15sFng7TZwQwd1Nbg2p5yexnaPl67id6/TuJKGgs2nwEWpNEy8KS9Bk0vUPjCs=
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
- BYAPR03MB3560.namprd03.prod.outlook.com (52.135.213.25) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.20; Tue, 28 May 2019 07:02:07 +0000
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::e484:f15c:c415:5ff9]) by BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::e484:f15c:c415:5ff9%7]) with mapi id 15.20.1922.021; Tue, 28 May 2019
- 07:02:07 +0000
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: Giuseppe Cavallaro <peppe.cavallaro@st.com>, Alexandre Torgue
- <alexandre.torgue@st.com>, Jose Abreu <joabreu@synopsys.com>, "David S.
- Miller" <davem@davemloft.net>
-Subject: [PATCH net-next] net: stmmac: use dev_info() before netdev is
- registered
-Thread-Topic: [PATCH net-next] net: stmmac: use dev_info() before netdev is
- registered
-Thread-Index: AQHVFSNDwZ9fWQ9KOEG6EbFP/Z0S5Q==
-Date: Tue, 28 May 2019 07:02:07 +0000
-Message-ID: <20190528145253.21b8abbc@xhacker.debian>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [124.74.246.114]
-x-clientproxiedby: TY1PR01CA0201.jpnprd01.prod.outlook.com (2603:1096:403::31)
- To BYAPR03MB4773.namprd03.prod.outlook.com
- (2603:10b6:a03:134::24)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e56f1351-25c6-47aa-2a32-08d6e33a657b
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BYAPR03MB3560; 
-x-ms-traffictypediagnostic: BYAPR03MB3560:
-x-microsoft-antispam-prvs: <BYAPR03MB356077961C059714EF5286B2ED1E0@BYAPR03MB3560.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1122;
-x-forefront-prvs: 00514A2FE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(366004)(396003)(346002)(39850400004)(376002)(199004)(189003)(73956011)(5660300002)(66946007)(66476007)(1076003)(71190400001)(66556008)(478600001)(64756008)(66446008)(476003)(66066001)(2906002)(72206003)(54906003)(110136005)(71200400001)(14454004)(6436002)(81166006)(316002)(6486002)(86362001)(68736007)(305945005)(6512007)(81156014)(52116002)(7736002)(486006)(26005)(8676002)(99286004)(4326008)(186003)(53936002)(25786009)(50226002)(386003)(6506007)(3846002)(256004)(9686003)(6116002)(8936002)(102836004)(39210200001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB3560;
- H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:0; MX:1; 
-received-spf: None (protection.outlook.com: synaptics.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 9u2giS+oMkZS8Mw5tJ3UYNsfna6lDBy3yEyXnYUFn3u0M0eVLoaOiP1ejfbQTmiWmDaEH+aoRCOfAq+/mk0taZLpAiYifzRtZOYKpS5dSwnZ3PTMDOQyL3aUHCwC+3qdo/AoW6pmAorZMTHI2ahU0jEvdlB8XsalWwefsx6Rit2NkTtNfo5wjrZI9fFiRAJE+a55iutveNnbd/IigXM+e5mANe+HSylhEKx34QK1Q1PIWdR4ty9Tr1DwZAFfiN16nQMaRstdQdElOj1+xOCl/WxSd70QScgikvjsEl2NCBtl1nB+C/WwvZYnb8AG67PgGPVA5uEUsuvJFhnuf/yL7vOkiYLUbS0LtUYA7Tt5fFzJ/pX/91rG8PGiERBl+uRrPR7NGItrTvwPapXQucXdKpU1taOjX/bbn5QuHsk8EHg=
-Content-ID: <377D233A793EE04789DE5F86CED96582@namprd03.prod.outlook.com>
+ id 1hVWG9-0003q9-9s
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 07:10:58 +0000
+Received: by mail-ed1-x542.google.com with SMTP id e24so30193665edq.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 00:10:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=sh90EuYxrh193Q7HMx34uXLBv/PVyFJE/lBow6rEA4k=;
+ b=mvV7ZF8uWhYgBjffMM77I5Ql0OvSQtEllUykBqYO1LqPUptUBQ4Clj555ljFp5HxVB
+ tBckbCbOVOLWEI507jR5cxLEYPcv/ryx77EQ82dXt2UJgPSyJ4DIYHQxIe2n5IfLP4F1
+ zwXLmW47ZFSuqV5IbKxsIGoUh95Y4ol8HmxTUegtt+E0uYC4T9yp8jWlpqgfLBY8hc6M
+ W7mDI5P+EBlppPHhvwyAF71G1KPnEW8JSczuerHrAPmaGNxqSQPQVVs6tEN+O3J6nZMG
+ MJ9hP6X7ANVuNFMa4njp86xSk5DWoatQd5Hi86TEx/W2JcB3nUMBy9qb+IIujHqVuZzg
+ 26BA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=sh90EuYxrh193Q7HMx34uXLBv/PVyFJE/lBow6rEA4k=;
+ b=q9fIZA2oYpP+FXKKRj3GftbwjtyFAK7Nl0p5JntYCA+hhVs+SkKSK2Psd+UltgzSBE
+ NUty+H+juZjLL/CnWCEZviI/9w72I8bJ/elX/5F2MVEgxLRJBRTahiaFtzCsLR/jCVia
+ hrDuk72ATW2CrZb+Ale5QN3Y9r4MZ2avrP7OQTyAhQSGfPBjV/1/INgR2L5gQJv+Xn2o
+ FTGKVQ6cHFohMNKGFK8QBNfszXklWG30eJIYLmbmfmNt4KJsMJVNyxaFN23YlghFtuLp
+ YRRD/Gkcvzn4I4oBlSYa9buBRM4bjo5WeANHJ/uFzz0EDq06IY+QOjmhjclvsL70FYOj
+ B/cQ==
+X-Gm-Message-State: APjAAAUYePGbgEal9QRW8ryXFZyXf8m7NvWvRkxWwfzSt3t2iRIoVweg
+ ODVNx7U9Rl5oDkWW/Td4lb2niyoM29D/2YUYZk5SnR/l
+X-Google-Smtp-Source: APXvYqxNBlLhlVAOzGwcr+/jjrcH1xjzXnuJsY4nwozQ6IgG1ptIELlUIhMGBLO4K8gY4sqaP7ZTZpxsWKMvSqs+/sg=
+X-Received: by 2002:a50:ba5c:: with SMTP id 28mr48087986eds.238.1559027454465; 
+ Tue, 28 May 2019 00:10:54 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e56f1351-25c6-47aa-2a32-08d6e33a657b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 May 2019 07:02:07.2381 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jiszha@synaptics.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3560
+References: <20190515144210.25596-1-daniel.baluta@nxp.com>
+ <20190515144210.25596-3-daniel.baluta@nxp.com>
+ <CAOMZO5A6Gv5k3up0AtKrhQPyMLMe_8SXift68KEP2J+j8D_cJg@mail.gmail.com>
+ <CAOMZO5BTqwnun6d7G1vcHUu_Rs+xfvgxTzamWnBPy76W7eeF_A@mail.gmail.com>
+In-Reply-To: <CAOMZO5BTqwnun6d7G1vcHUu_Rs+xfvgxTzamWnBPy76W7eeF_A@mail.gmail.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 28 May 2019 10:10:43 +0300
+Message-ID: <CAEnQRZD98TKduVLshGrBANRB6NT7Se6CXD0cgd5XRYa6grAo4Q@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] arm64: dts: imx8mm-evk: Enable audio codec wm8524
+To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_000211_106089_91F014D0 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190528_001057_363033_DE024E18 
+X-CRM114-Status: GOOD (  13.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe40:0:0:0:626 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,46 +95,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "S.j. Wang" <shengjiu.wang@nxp.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Before the netdev is registered, calling netdev_info() will emit
-something as "(unnamed net device) (uninitialized)", looks confusing.
+On Mon, May 20, 2019 at 10:33 PM Fabio Estevam <festevam@gmail.com> wrote:
+>
+> On Thu, May 16, 2019 at 3:35 PM Fabio Estevam <festevam@gmail.com> wrote:
+> >
+> > On Wed, May 15, 2019 at 11:42 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
+> >
+> > > +               simple-audio-card,codec {
+> > > +                       sound-dai = <&wm8524>;
+> > > +                       clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
+> >
+> > IMX8MM_CLK_SAI3_ROOT is the internal clock that drives the SAI3
+> > interface, not an external clock that feeds the codec.
+> >
+> > It seems you should remove this 'clocks' entry.
+>
+> Just checked the schematics and the SAI3_MCLK pin clocks the codec, so
+> the representation is correct:
+>
+> Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
-Before this patch:
-[    3.155028] stmmaceth f7b60000.ethernet (unnamed net_device) (uninitialized): device MAC address 52:1a:55:18:9e:9d
+Shawn,
 
-After this patch:
-[    3.155028] stmmaceth f7b60000.ethernet: device MAC address 52:1a:55:18:9e:9d
-
-Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 08022fbcb67a..7af083c29b36 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -2167,8 +2167,8 @@ static void stmmac_check_ether_addr(struct stmmac_priv *priv)
- 		stmmac_get_umac_addr(priv, priv->hw, priv->dev->dev_addr, 0);
- 		if (!is_valid_ether_addr(priv->dev->dev_addr))
- 			eth_hw_addr_random(priv->dev);
--		netdev_info(priv->dev, "device MAC address %pM\n",
--			    priv->dev->dev_addr);
-+		dev_info(priv->device, "device MAC address %pM\n",
-+			 priv->dev->dev_addr);
- 	}
- }
- 
--- 
-2.20.1
-
+Can you have a look?
 
 _______________________________________________
 linux-arm-kernel mailing list
