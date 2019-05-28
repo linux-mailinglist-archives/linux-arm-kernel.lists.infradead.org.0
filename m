@@ -2,82 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E82E2C7E4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 15:38:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97A452C7E8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 15:38:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gvr2Di6ZGAjoZHJPvN2Vgg8WU2Xnlm+n1hr2f9fYzOs=; b=Og36vPUOw9d+fY
-	i2g3woSZAXSb28k6NJGbDgTfmv+MRxWadfyszcBlep2tZ7BMbB3uG5VOzeTK7C5Nnc0LDj2kYeK/+
-	Y+YMcUruP9Yt2jWBqZHtPOtVAAi8QxtVLykLtdC4dN4ch00412Alh3iTYaK0FpNPzqgripzCsgmuK
-	eMeTJmKyVJ5uyqSg6LZN9w9B8WUriNyYZRu3WvwBm81UXtfkqd8GdWNGM1NWaZW24TGZbY3/LXkOd
-	pLtxxrggVpFe3eSCZzQM1yPkfvcr5+1SGFtmb71eOhdW4AaJkne0L6J1KLeKr3K6NtGN4xxvhFqvM
-	z45jxyuoD79iNULCra7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=BJyJ7YmjJRhfwUz3RST1aMpcSs314Qtv/bL8REXpWDM=; b=G/TL5SV6EsdzkM
+	tc5G+DY8ixlDr3SfeD5HLkJm9lAG9YVhv5FEBczD8VB6xOBkUwf33bzyfaXORGu2GovyEe/SrsLFa
+	aeAltWBdMwYHE/RccUh2gH5fsxA427H/eSnxwbpP8ULgi7X58hgxOG4ondQPq9wiZQjMxcuF4ckno
+	fkp+jdUn+c1AVj0vDcgH/0bi1U0Wc72sKnDx5w8i88oUakeWljvi43hf+ZzbdE9B6TMyvL22+pDgz
+	dyKOUmQoDxPBpQx0P5aKlrIlu+ygl1J4cpQXHPJmeJ5HlkR5vtqCiVciOLIoIfTcsRxy1t7CqW+Rp
+	tAxqOvnSsZ81VakMyD2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVcIh-0000GF-8J; Tue, 28 May 2019 13:37:59 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hVcJ9-0000bm-DJ; Tue, 28 May 2019 13:38:27 +0000
+Received: from mail-vi1eur04on0627.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0e::627]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVcHp-0007cN-6B
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 13:37:09 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v22so2907639wml.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 06:37:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=bbidxiifh4zQbXF3+idClmgRZbbOXntRKLhQM+IruEA=;
- b=g9r4++eHwLh867+bZIoekdLRqjajwptL/liJwhVXgwhBPKGDq91Utht30DkTs2rLA8
- 6XkZmrhQcku9bdDJTCKfx17EMKG6UICuzY5+k7bio0APavWFb1UXXUtuLP23415dIlJ5
- 1/qnuMXVHlchnfPwtC4zFsD+ggvXQb4K49gfJ78eW6fOT59rbcBOhhFX8ApU8uOxMamh
- BBsA6HpW9Srs9QxHDkGywSvzGNL4W/T9PYNBhPl9B0otlG7uEaS1eNIOICTLyXVwZ1+j
- STdHEgUqufGyFsqmmYUwtRq+5AcF9kTkB+83hQpFzdP/ZS4VF9RRE0DEMTMpkXTkn+ab
- 4/mA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=bbidxiifh4zQbXF3+idClmgRZbbOXntRKLhQM+IruEA=;
- b=UHXcVcn+dgPL/br/Q7ytX/6cDLbaOOIvQdeTBTHFHhKId419BNYaB4mlb975shs7eD
- Rb9TEuKRbbgMEHJ+zqEAgoqzRXqpJfWTgFfeIJFNRyJCfE/D4eCt5pYIOm8fAAW2JO5g
- hViGkePJjp7Cxh2LtivrvVMeFXeq/798fcF2PawsWm7YZrXg6+vvk7rxLJ5VEbd2ANKr
- +Qn+ge9K8zpWtx+uJ2qvC675VE3DPyqeFD/w+/qJfIUJ30buceS74Oc2buHBAfEReRuu
- NYCGomb8lWBe/pPVsKCcCE8q/nGdlhXERRlbzVEx5QejkXjBucHkAUVTntcARO0vjA/h
- rrqQ==
-X-Gm-Message-State: APjAAAVi71sn2a/CZ8+J+9CZnRRLqQMZ/BuCaF1Ef6PrhzcA45nlYl8P
- 9Nb48SYcwRdlfD70JEnCM8KUB/R9F4kAjw==
-X-Google-Smtp-Source: APXvYqyI5qyGpNcVWlsS5O2+hF8OV81599UKPoaPWKuP93JFnxAM6YxqxifnXuT1dQl9Oboy3wZUSw==
-X-Received: by 2002:a7b:cbd8:: with SMTP id n24mr3221074wmi.2.1559050621491;
- Tue, 28 May 2019 06:37:01 -0700 (PDT)
-Received: from sudo.home ([2a01:cb1d:112:6f00:c8c7:f81b:b165:1aa7])
- by smtp.gmail.com with ESMTPSA id 95sm8652668wrk.70.2019.05.28.06.37.00
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 May 2019 06:37:00 -0700 (PDT)
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 4/4] gpio: mb86s7x: enable ACPI support
-Date: Tue, 28 May 2019 15:36:47 +0200
-Message-Id: <20190528133647.3362-5-ard.biesheuvel@linaro.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190528133647.3362-1-ard.biesheuvel@linaro.org>
-References: <20190528133647.3362-1-ard.biesheuvel@linaro.org>
+ id 1hVcI2-0007xF-VK
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 13:37:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=p2dOFtwREv0U+Q0wESCenZac7wlxESExSIWpm12qi1U=;
+ b=P2Q67/IWgJMc24ecQE4Zl0FQp7ocknRB7qw6YvyoX8TtVF87k9dD1iimvSat8hz7fpS1kpTTl+tXYCemYWOhx3VI4MZEOgZiyi/HeiZP+HPrESY1baqGIVXzbOCM737533uSYf/53JO3yTb4q3VWUrRSSgmUy5mWZLgPebShVh4=
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
+ VI1PR04MB4960.eurprd04.prod.outlook.com (20.177.49.213) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.17; Tue, 28 May 2019 13:37:15 +0000
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1]) by VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1%7]) with mapi id 15.20.1922.021; Tue, 28 May 2019
+ 13:37:15 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Lucas Stach <l.stach@pengutronix.de>, =?iso-8859-1?Q?Guido_G=FCnther?=
+ <agx@sigxcpu.org>
+Subject: Re: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
+Thread-Topic: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisions
+Thread-Index: AQHVEKAZarE5OuVeAEC7HAm8UuJafQ==
+Date: Tue, 28 May 2019 13:37:15 +0000
+Message-ID: <VI1PR04MB505574DFE06BFF0A894C22F0EE1E0@VI1PR04MB5055.eurprd04.prod.outlook.com>
+References: <20190522131304.GA5692@bogon.m.sigxcpu.org>
+ <AM0PR04MB6434B72679CD26C22FFB420BEE000@AM0PR04MB6434.eurprd04.prod.outlook.com>
+ <1558532450.2624.44.camel@pengutronix.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [212.146.100.6]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 447cde2e-1c71-4c0d-c210-08d6e37198fa
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB4960; 
+x-ms-traffictypediagnostic: VI1PR04MB4960:
+x-microsoft-antispam-prvs: <VI1PR04MB496065E59D80A237710AEC56EE1E0@VI1PR04MB4960.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 00514A2FE6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(366004)(376002)(396003)(39860400002)(346002)(189003)(199004)(305945005)(8676002)(68736007)(7736002)(8936002)(81166006)(81156014)(3846002)(2906002)(6116002)(186003)(26005)(110136005)(53546011)(6506007)(54906003)(102836004)(33656002)(446003)(76176011)(486006)(316002)(476003)(99286004)(44832011)(7696005)(86362001)(14454004)(229853002)(71190400001)(71200400001)(9686003)(55016002)(74316002)(25786009)(14444005)(256004)(6436002)(66574012)(52536014)(5660300002)(76116006)(73956011)(66946007)(66476007)(66556008)(64756008)(66446008)(66066001)(4326008)(6246003)(53936002)(478600001)(34023003)(148693002)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4960;
+ H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: pUJMATtwU0KPpFgHOm3KnquYSnwpBH4Rzt0gRXpf4BM+Xq5cQtq4QMUV2l1+6m4p16U2e1uiPHqhZZA70B9f3qx+DXr253lDjHtS9M1q+LhFUfGqEdrjvmu/vF329XIOQQpWTIMIgTfhMqRdSlDvCc7fj2qC3ycSfYXqFFCBzFcYpY550WO3mHPjw1HhXknpbD0bniWF5BZOd8P/xb1JMKq4Y+O+aF27ZS9gsokq/yd6osWdnxf+/3IsXfY151TsJLJ7hxpUZd8cUVmVYtRMmeXIc9cY47rI+yfNg24q3Gp7jd7d1coknxgNbpKmFiKRR0QdPVWAn6fk/sKOjuur+rwyNGdPPRQ+613/wFR5C2Y8SiocT3b+BwwdyafBuGANDyJmB47zH+Fr3UVTHvF4TFiaV+n+nZq9JC5XyjH76ME=
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 447cde2e-1c71-4c0d-c210-08d6e37198fa
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 May 2019 13:37:15.5654 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4960
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_063705_466190_34F917A1 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20190528_063719_597922_DFB4AAF6 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a01:111:f400:fe0e:0:0:0:627 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,145 +114,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Graeme Gregory <graeme.gregory@linaro.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
- linux-gpio@vger.kernel.org, Masahisa Kojima <masahisa.kojima@linaro.org>,
- Mika Westerberg <mika.westerberg@linux.intel.com>, Len Brown <lenb@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make the mb86s7x GPIO block discoverable via ACPI. In addition, add
-support for ACPI GPIO interrupts routed via platform interrupts, by
-wiring the two together via the to_irq() gpiochip callback.
+On 22.05.2019 16:40, Lucas Stach wrote:
+> Am Mittwoch, den 22.05.2019, 13:30 +0000 schrieb Leonard Crestez:
+>> On 22.05.2019 16:13, Guido G=FCnther wrote:
+>>> Subject: Re: [RFC PATCH] soc: imx: Try harder to get imq8mq SoC revisio=
+ns
+>>> On Wed, May 08, 2019 at 02:40:18PM +0200, Guido G=FCnther wrote:
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
----
- drivers/gpio/gpio-mb86s7x.c | 51 +++++++++++++++++---
- 1 file changed, 44 insertions(+), 7 deletions(-)
+>>>> Thanks for your comments. Let's try s.th. different then: identify by
+>>>> bootrom, ocotop and anatop and fall back to ATF afterwards (I'll split
+>>>> out the DT part and add binding docs if this makes sense). I'm also
+>>>> happy to drop the whole ATF logic until mailine ATF catched up:
+>>>>
+>>>> The mainline ATF doesn't currently support the FSL_SIP_GET_SOC_INFO ca=
+ll
+>>>> nor does it have the code to identify different imx8mq SOC revisions so
+>>>> mimic what NXPs ATF does here.
+>>>
+>>> Does this makes sense? If so I'll send this out as a series.
+>>
+>> Mainline ATF has recently caught up:
+>>
+>>>> As a fallback use ATF so we can identify new revisions once it gains
+>>>> support or when using NXPs ATF.
+>>>
+>>> I'm also fine with dropping the ATF part if we don't want to depend on
+>>> it in mainline.
+>>
+>> Linux arm64 depends on ATF to implement power management via PSCI:
+>> hotplug cpuidle and suspend.
+>>
+>> It is not clear why Linux would avoid other services and insist on
+>> reimplementing hardware workarounds.
+> =
 
-diff --git a/drivers/gpio/gpio-mb86s7x.c b/drivers/gpio/gpio-mb86s7x.c
-index 9308081e0a4a..64027f57a8aa 100644
---- a/drivers/gpio/gpio-mb86s7x.c
-+++ b/drivers/gpio/gpio-mb86s7x.c
-@@ -14,6 +14,7 @@
-  *  GNU General Public License for more details.
-  */
- 
-+#include <linux/acpi.h>
- #include <linux/io.h>
- #include <linux/init.h>
- #include <linux/clk.h>
-@@ -27,6 +28,8 @@
- #include <linux/spinlock.h>
- #include <linux/slab.h>
- 
-+#include "gpiolib.h"
-+
- /*
-  * Only first 8bits of a register correspond to each pin,
-  * so there are 4 registers for 32 pins.
-@@ -143,6 +146,20 @@ static void mb86s70_gpio_set(struct gpio_chip *gc, unsigned gpio, int value)
- 	spin_unlock_irqrestore(&gchip->lock, flags);
- }
- 
-+static int mb86s70_gpio_to_irq(struct gpio_chip *gc, unsigned int offset)
-+{
-+	int irq, index;
-+
-+	for (index = 0;; index++) {
-+		irq = platform_get_irq(to_platform_device(gc->parent), index);
-+		if (irq <= 0)
-+			break;
-+		if (irq_get_irq_data(irq)->hwirq == offset)
-+			return irq;
-+	}
-+	return -EINVAL;
-+}
-+
- static int mb86s70_gpio_probe(struct platform_device *pdev)
- {
- 	struct mb86s70_gpio_chip *gchip;
-@@ -158,13 +175,15 @@ static int mb86s70_gpio_probe(struct platform_device *pdev)
- 	if (IS_ERR(gchip->base))
- 		return PTR_ERR(gchip->base);
- 
--	gchip->clk = devm_clk_get(&pdev->dev, NULL);
--	if (IS_ERR(gchip->clk))
--		return PTR_ERR(gchip->clk);
-+	if (!has_acpi_companion(&pdev->dev)) {
-+		gchip->clk = devm_clk_get(&pdev->dev, NULL);
-+		if (IS_ERR(gchip->clk))
-+			return PTR_ERR(gchip->clk);
- 
--	ret = clk_prepare_enable(gchip->clk);
--	if (ret)
--		return ret;
-+		ret = clk_prepare_enable(gchip->clk);
-+		if (ret)
-+			return ret;
-+	}
- 
- 	spin_lock_init(&gchip->lock);
- 
-@@ -180,19 +199,28 @@ static int mb86s70_gpio_probe(struct platform_device *pdev)
- 	gchip->gc.parent = &pdev->dev;
- 	gchip->gc.base = -1;
- 
-+	if (has_acpi_companion(&pdev->dev))
-+		gchip->gc.to_irq = mb86s70_gpio_to_irq;
-+
- 	ret = gpiochip_add_data(&gchip->gc, gchip);
- 	if (ret) {
- 		dev_err(&pdev->dev, "couldn't register gpio driver\n");
- 		clk_disable_unprepare(gchip->clk);
-+		return ret;
- 	}
- 
--	return ret;
-+	if (has_acpi_companion(&pdev->dev))
-+		acpi_gpiochip_request_interrupts(&gchip->gc);
-+
-+	return 0;
- }
- 
- static int mb86s70_gpio_remove(struct platform_device *pdev)
- {
- 	struct mb86s70_gpio_chip *gchip = platform_get_drvdata(pdev);
- 
-+	if (has_acpi_companion(&pdev->dev))
-+		acpi_gpiochip_free_interrupts(&gchip->gc);
- 	gpiochip_remove(&gchip->gc);
- 	clk_disable_unprepare(gchip->clk);
- 
-@@ -205,10 +233,19 @@ static const struct of_device_id mb86s70_gpio_dt_ids[] = {
- };
- MODULE_DEVICE_TABLE(of, mb86s70_gpio_dt_ids);
- 
-+#ifdef CONFIG_ACPI
-+static const struct acpi_device_id mb86s70_gpio_acpi_ids[] = {
-+	{ "SCX0007" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(acpi, mb86s70_gpio_acpi_ids);
-+#endif
-+
- static struct platform_driver mb86s70_gpio_driver = {
- 	.driver = {
- 		.name = "mb86s70-gpio",
- 		.of_match_table = mb86s70_gpio_dt_ids,
-+		.acpi_match_table = ACPI_PTR(mb86s70_gpio_acpi_ids),
- 	},
- 	.probe = mb86s70_gpio_probe,
- 	.remove = mb86s70_gpio_remove,
--- 
-2.20.1
+> I fully agree. We should not duplicate functionality between ATF and
+> Linux kernel.
 
+Excellent, will remember this when debating who should manipulate GPC.
+
+Guido: Are you going to resend a variant of your V1?
+
+You mentioned that you need this for erratas, how exactly are you going =
+
+to fetch soc revision from a driver? For 32bit imx there is a global =
+
+imx_get_soc_revision(), maybe the definition could be moved from =
+
+arch/arm/mach-imx/cpu.c to drivers/soc/imx/revision.c so that it's =
+
+available everywhere?
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
