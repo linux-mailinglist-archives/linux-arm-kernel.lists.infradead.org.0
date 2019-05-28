@@ -2,82 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 414D92CF13
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 21:01:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7CF12CF62
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 21:24:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lWE8oMNcwmKdVy2OHFUaWn0d4dWOYFZ399MdRP0nPm8=; b=YwL6cXj1mHHP+hPoNUDno9yohd
-	OTwR0zjbEpHwEdiPHAnszKDfMY/JLrNI6c0kWr8LDf0u+W3c8GXC/rwqAwEM0bzEAcJ00coRRSHRJ
-	yzP6JZ063JF65z/RmL2oi5JVu5lk1LOnqhPccLcI6T0ah+Q6CCchKnd+ISeLT3GWmnO8EiwpAjTui
-	x2XOkoG4Ia/CwV6fgxfyX8MbpLQh3JfNSA6XRaOAD0p6DzyS7c6Yls7dSx/Gsu5kCoPsoFxm5BQm7
-	c1H9Io+l6KiJagTLhi1jTNwqGV7nXLrEgkruQCO/cZ/6rxnnoEWcF6ulPJGDYc2fz964HsGDqIRdA
-	jTXaDHyQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=o7Bf2SoaROHMILcNZt3FhvD9/nYulG0jZhVBVACQAsI=; b=VQwbcf0hsbryTN
+	eTxUMtaAGq63f3wQe+eA/NhU1+yzvtKEZV6gdc1VNX5bmkaLT6HRwaJ6pnQczX4kOh8Ktar2BcDYT
+	dhTpQ+wxlqhwstogz1+LNd2+zQ1tm+gcQZKuMpEPphX9M5c4Hk2OYG+QYpXwxEwVuJTJFwKh486LV
+	7fkfxe2CiaY/FfgflefGa9zbE5gJi4szfQ6pz5W2Hya9V8GhdnOXPffUcoHcjBncmdwNSZFamOAb7
+	EAy6a1QxsMYITUb7T03dEmPTZOTBuUrqXQV8MoX6Bovufk4yhfXytalFGtviDKaFoQccQG1xfQgib
+	bhL3JUmh0OZnOuJIlJzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVhLR-0004Zc-Aa; Tue, 28 May 2019 19:01:09 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1hVhhn-0002xM-6h; Tue, 28 May 2019 19:24:15 +0000
+Received: from mail-eopbgr30085.outbound.protection.outlook.com ([40.107.3.85]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVhKz-0004EI-6I
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 19:00:45 +0000
-Received: by mail-qk1-x743.google.com with SMTP id j1so1800858qkk.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 12:00:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=u8s+1NAXvqD9JBSU+JBxk7zmqvm3gdnRdVq+CFd8JrA=;
- b=l3fukH66HGnbMXDV+BvgnU72UfUBUg+rKK2KFIsYjBGtjVQwHtY/DSJD/mk2Xt1wwE
- ic2kVjW4RfWdNdP2zM/qPfD/tC42alTaYH+cG67hAmyId9WuptynzXpsgHqbCJwWb9fi
- TvymjShUfrlE1BD/u97M0sDT+T4kuQ14X2GgrEzZfD93Vy87K8bLpiJGFhc2VKM63rvt
- 7Xzr6M4udEPeX8tKq6VBQY8Z/l9rpFA1rvQHHDi+wWBqbi6lQ7CUcrI61foBScr3dUkj
- kQHxhq6pEvuox7BGDZCUoacqYlJc+R2biCG1+QFnVFITYyF8PuP41camvzLuR5EJ1Flp
- sy5g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=u8s+1NAXvqD9JBSU+JBxk7zmqvm3gdnRdVq+CFd8JrA=;
- b=tIo5qgyyV6cvzXhg7K68uPX+JsMTGI+w69XwvgJrrW3aaMppJoLoad2HBLRdDt0uDW
- LTvdAV3Ok37CrKMJMwmhJuf6sndIcflRIRa6dtPEOG7kXWKKvT6+Eix0SEA3N2/eGuQb
- Z0WDQD+eJDc4wsKTfSp4BMIB/6V3vnmyWCcGREwv16ZxJWyrSgbHFsDJukxarTscNv0u
- 0Ajrt8/3sRLWD+JEO2PI/MvuhTUqSU+duKrf1FbsdMB8DFLB/oSNOuSz21JhY7tAfjsx
- JEIr6C3KNOKdKY5ibe7kTWfblHZ3Ex8hlU58AEIgfYZwmzOES7lqqVDqi8Fe6MoCaw2B
- Z3jg==
-X-Gm-Message-State: APjAAAWp5JXH/TXAoKhyVFbgqdyfYDLxrp9or4aHdShzoFTEVXxd4mBX
- YXOrRf+x37OqGRNELyGDiDE=
-X-Google-Smtp-Source: APXvYqwMZfHxVkPejLya/eLJCWilUlHUsE7D7i7C1UdY9BudsqcAEvWnaY8E9U9fzIQWz8wjo94nzQ==
-X-Received: by 2002:a37:660b:: with SMTP id a11mr4849028qkc.342.1559070040271; 
- Tue, 28 May 2019 12:00:40 -0700 (PDT)
-Received: from fabio-Latitude-E5450.am.freescale.net ([177.221.114.206])
- by smtp.gmail.com with ESMTPSA id c16sm5388086qkb.15.2019.05.28.12.00.37
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 May 2019 12:00:39 -0700 (PDT)
-From: Fabio Estevam <festevam@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH  v2 3/3] arm64: dts: imx8mm: Move usbphy out of soc node
-Date: Tue, 28 May 2019 16:00:23 -0300
-Message-Id: <20190528190023.7176-3-festevam@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190528190023.7176-1-festevam@gmail.com>
-References: <20190528190023.7176-1-festevam@gmail.com>
+ id 1hVhhg-0002ws-CO
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 19:24:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ai9jwiNPVbNdbcJ/T84LdDnIB5vxKJDYi8EuBQKg02s=;
+ b=cBkcZmNWxtxHIKfhWmHJ1RuLpMdI7Tz2xr6AAOB4w/wkpO2sNnDTKm3IxTnMcizgj52YW3Ws1s/7QerNPWmZOKcBpqzKtny67p+OxaNqDn9h5uJ6ca9KpjdHRRrFKyDmv/1JrDxeU4YOhylGZ4olu2gwqGftr9YfV5ug6uNIm58=
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
+ VI1PR04MB4557.eurprd04.prod.outlook.com (20.177.55.215) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.16; Tue, 28 May 2019 19:24:05 +0000
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1]) by VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1%7]) with mapi id 15.20.1922.021; Tue, 28 May 2019
+ 19:24:05 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH RESEND 2/5] ARM: dts: imx7d-sdb: Assign corresponding
+ power supply for LDOs
+Thread-Topic: [PATCH RESEND 2/5] ARM: dts: imx7d-sdb: Assign corresponding
+ power supply for LDOs
+Thread-Index: AQHVCKkZHNdBkg2sXkeS6OCWrMrKwQ==
+Date: Tue, 28 May 2019 19:24:04 +0000
+Message-ID: <VI1PR04MB5055647612FAC2FE6FBE139FEE1E0@VI1PR04MB5055.eurprd04.prod.outlook.com>
+References: <1557654739-12564-1-git-send-email-Anson.Huang@nxp.com>
+ <1557654739-12564-2-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: a7eaac96-865a-4e83-fbc3-08d6e3a20c55
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB4557; 
+x-ms-traffictypediagnostic: VI1PR04MB4557:
+x-microsoft-antispam-prvs: <VI1PR04MB4557DCB8F61FA857AE351E1FEE1E0@VI1PR04MB4557.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4502;
+x-forefront-prvs: 00514A2FE6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(376002)(346002)(136003)(366004)(396003)(199004)(189003)(229853002)(446003)(74316002)(9686003)(5660300002)(6436002)(55016002)(6862004)(6246003)(76176011)(6636002)(4326008)(7696005)(54906003)(53936002)(99286004)(66066001)(256004)(71190400001)(71200400001)(478600001)(14454004)(316002)(4744005)(33656002)(3846002)(476003)(6116002)(2906002)(44832011)(486006)(305945005)(186003)(81166006)(52536014)(102836004)(73956011)(66946007)(68736007)(66556008)(81156014)(86362001)(7736002)(64756008)(66446008)(8936002)(66476007)(76116006)(8676002)(25786009)(53546011)(6506007)(26005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4557;
+ H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 0j+DgTF6NH1DBCGTSwBl0+4yMycwEiAvvQ4QXasZWxZxIYXpescSRWXRqyuVaN0tzhlSjL9wWgepDghtc0XRNKCxbOfBP/TMffyfYBhNyHPJnFnHgIpoAUtoNN/g38N0KFPOVxfApM2mSdJagd9Q5NXMq7tWpBkS/M93fFNErwMwsUTJHKa3c8MdyWbOF6gY7nmR2AB7IJ/4K9Yqs0Q000MVcORtfSnqds8CMmFF7t93wlqY630KJAaq3VtK73Pk6rpoHL8KMRO0wafb1om5vRu5uwVyAelOYCVUR4cL8F3K7zTgOuR43SMjiU/VmRx1d/mojE87fNHns6+fGNita8dXa5fo3IB/QhQjL3UMKty8k8UMsYQ8oUHgW3jameE4xPhDCQ/dNPddP27TN+3wqymAZr036kfjCBBIVVbOS6U=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a7eaac96-865a-4e83-fbc3-08d6e3a20c55
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 May 2019 19:24:04.9423 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4557
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_120041_600228_AE22C8C7 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20190528_122408_493488_E4C4AA7D 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ no trust [40.107.3.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,91 +113,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- linux-imx@nxp.com, kernel@pengutronix.de
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-usbphy nodes do not have any register properties and thus
-shouldn't be placed inside the bus.
+On 12.05.2019 12:57, Anson Huang wrote:
+> On i.MX7D SDB board, sw2 supplies 1p0d/1p2 LDO, this patch assigns
+> corresponding power supply for 1p0d/1p2 LDO to avoid confusion by
+> below log:
+> 
+> vdd1p0d: supplied by regulator-dummy
+> vdd1p2: supplied by regulator-dummy
+> 
+> With this patch, the power supply is more accurate:
+> 
+> vdd1p0d: supplied by SW2
+> vdd1p2: supplied by SW2
+> 
+> diff --git a/arch/arm/boot/dts/imx7d-sdb.dts b/arch/arm/boot/dts/imx7d-sdb.dts
+>
+> +&reg_1p0d {
+> +	vin-supply = <&sw2_reg>;
+> +};
+> +
+> +&reg_1p2 {
+> +	vin-supply = <&sw2_reg>;
+> +};
 
-Move usbphy nodes from soc node to root node in order to fix
-the following build warnings with W=1:
+It's not clear why but this patch breaks imx7d-sdb boot. Checked two 
+boards: in a board farm and on my desk.
 
-arch/arm64/boot/dts/freescale/imx8mm.dtsi:681.27-687.6: Warning (simple_bus_reg): /soc/bus@32c00000/usbphynop1: missing or empty reg/ranges property
-arch/arm64/boot/dts/freescale/imx8mm.dtsi:710.27-716.6: Warning (simple_bus_reg): /soc/bus@32c00000/usbphynop2: missing or empty reg/ranges property
-
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
----
-Changes since v1:
-- None
-
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 32 +++++++++++------------
- 1 file changed, 16 insertions(+), 16 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index b62d7aec8dc2..e497ad8c5ef7 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -200,6 +200,22 @@
- 		arm,no-tick-in-suspend;
- 	};
- 
-+	usbphynop1: usbphynop1 {
-+		compatible = "usb-nop-xceiv";
-+		clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
-+		assigned-clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
-+		assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_100M>;
-+		clock-names = "main_clk";
-+	};
-+
-+	usbphynop2: usbphynop2 {
-+		compatible = "usb-nop-xceiv";
-+		clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
-+		assigned-clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
-+		assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_100M>;
-+		clock-names = "main_clk";
-+	};
-+
- 	soc@0 {
- 		compatible = "simple-bus";
- 		#address-cells = <1>;
-@@ -678,14 +694,6 @@
- 				status = "disabled";
- 			};
- 
--			usbphynop1: usbphynop1 {
--				compatible = "usb-nop-xceiv";
--				clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
--				assigned-clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
--				assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_100M>;
--				clock-names = "main_clk";
--			};
--
- 			usbmisc1: usbmisc@32e40200 {
- 				compatible = "fsl,imx8mm-usbmisc", "fsl,imx7d-usbmisc";
- 				#index-cells = <1>;
-@@ -707,14 +715,6 @@
- 				status = "disabled";
- 			};
- 
--			usbphynop2: usbphynop2 {
--				compatible = "usb-nop-xceiv";
--				clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
--				assigned-clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
--				assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_100M>;
--				clock-names = "main_clk";
--			};
--
- 			usbmisc2: usbmisc@32e50200 {
- 				compatible = "fsl,imx8mm-usbmisc", "fsl,imx7d-usbmisc";
- 				#index-cells = <1>;
--- 
-2.17.1
-
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
