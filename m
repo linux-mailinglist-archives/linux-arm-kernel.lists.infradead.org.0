@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4763F2C992
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:07:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD39F2C990
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:07:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=zK4TWZkwpdiZBI6yX2oHVGolIe9BwFvuhGDrSTM0fD8=; b=I5o
-	kIewzarUxlmz9/VD8u1FX2clhimAD6Sy3TcgzSKS/3twhV9SWYxyO0bwARWlqt25tAWgevTJ8FQg0
-	8ElZ2ljwPKWYVSdxfWjUNhKYHXwqeShqnChhZI4aiCR8EBZYe9EL1l9rE2MlVmoiHsSqtGWYwuVog
-	YcAvMJIUu6ZuHX4/Zl2G+yBQ8+TadArxM3NSn5LOcIap2cyCfFnLNoiS9U6jou3nGQQyYNRabiwAp
-	GJjiU0j7HHUsQPzmSFYJxAbumhqhJA1jpY0BkneCFwAVc8Hojrh0kyGDZVpFAs4+xxpfOfRY0QU88
-	jZgNj2PBY9HeyvV7ewvRX5fJT4t7+1g==;
+	References:List-Owner; bh=2gJ2xes4G8B2S80YnOy8BMA3XxBp35gk9+pUsn2p6gQ=; b=NYn
+	t5qjoax6aIdwq2x6eXlWJ4lhxJK4K0py+j7i4gbULDOWIHkKrqlqbQVFdsPvxGR9SRdhRojIS1WNf
+	vSxpl9KPRCWrnyu+aI8pigmG7+O8IN+LTTIQm4cjq/P5YzkU1aUtTQ1OuxZIKNiIeKLbZv+OLEcue
+	CbkFmsUyb3K2+d/5Er0NpsU+FTNqoDkpt4FZ5uMdMbC7dTFuBgaVIjQ9ZaheOsAeBa0+HtS9o+ASf
+	NnbrEfaiGspW4urJQeDdofv9alv7a/7AYHvqjb47MPmmdKePTSysYZ/WPj4GzdARgdrTubGHwRcaL
+	f1UYi1P6I3bLMk9OQ3Lnk+OIywAIu7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVdhL-0008Mq-PK; Tue, 28 May 2019 15:07:31 +0000
+	id 1hVdh5-00087M-Ij; Tue, 28 May 2019 15:07:15 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVdgy-00085e-2n
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:07:09 +0000
+ id 1hVdgw-00085I-UV
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:07:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=lD31eoku3vRt5Ge3ug74axH4Ju4xcKQdmUJ79hzhrhs=; b=T2nwxDOISSVw
- VK7Vuj3cAmMhLEtdcxylX6QuxmpngwN+NNgLiTH1jXBJSxbtS8pCWJYCA4ncsyfWMW3U8NFQK19rK
- qJhfPkNqifqtWsEBwQPkG8zksc6qhn9ab4yDX2bs6XP/Hxae2htoHgiFf+gXHtAqTwIn34eGD2L9N
- gEXa8=;
+ List-Archive; bh=50UF5NrIgTV94h2lmtoHlHIleHK4ai5jgUswsShESRU=; b=P+hrYHLLCJn/
+ Y7ptg4w+HgOPPs3EAFacc8mjpi4YJ6DDhgq7owPzTnVxYaNfZFonJGP+xSvV22gDP6lHsLgoCPjJY
+ gBm28iBepZgjmZ6u6VCuS9aMXGZ0/ihKCNYqcFk/tAHNsIdWwt4fz/iSGEcW2Qn+BC5ALKZGo9Ts7
+ hdG1s=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=finisterre.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hVdgm-0002ni-Mb; Tue, 28 May 2019 15:06:56 +0000
+ id 1hVdgn-0002nl-2u; Tue, 28 May 2019 15:06:57 +0000
 Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id D09C7440046; Tue, 28 May 2019 16:06:55 +0100 (BST)
+ id 5B5C3440049; Tue, 28 May 2019 16:06:56 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Applied "dt-bindings: sound: sun4i-i2s: Document that the RX channel
- can be missing" to the asoc tree
-In-Reply-To: <9b280f9ce894e4e2ea7259db505cbe1a3e00120e.1558702660.git-series.maxime.ripard@bootlin.com>
+Subject: Applied "dt-bindings: sound: Convert Allwinner I2S binding to YAML"
+ to the asoc tree
+In-Reply-To: <5f8095fbd5c2c34478792b9715059675251a30e6.1558702660.git-series.maxime.ripard@bootlin.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190528150655.D09C7440046@finisterre.sirena.org.uk>
-Date: Tue, 28 May 2019 16:06:55 +0100 (BST)
+Message-Id: <20190528150656.5B5C3440049@finisterre.sirena.org.uk>
+Date: Tue, 28 May 2019 16:06:56 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_080708_266838_CFC92E1E 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20190528_080707_150102_4CFF69DE 
+X-CRM114-Status: GOOD (  20.23  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -91,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   dt-bindings: sound: sun4i-i2s: Document that the RX channel can be missing
+   dt-bindings: sound: Convert Allwinner I2S binding to YAML
 
 has been applied to the asoc tree at
 
@@ -116,102 +116,185 @@ to this mail.
 Thanks,
 Mark
 
-From eb5b12843b067d685a8d7a191b928b07934b2d02 Mon Sep 17 00:00:00 2001
+From 0a0ca8e94ca36d2153c2fbea69a31f792bfc5831 Mon Sep 17 00:00:00 2001
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-Date: Fri, 24 May 2019 14:57:59 +0200
-Subject: [PATCH] dt-bindings: sound: sun4i-i2s: Document that the RX channel
- can be missing
+Date: Fri, 24 May 2019 14:57:58 +0200
+Subject: [PATCH] dt-bindings: sound: Convert Allwinner I2S binding to YAML
 
-The A83t and compatibles controllers don't have any reception capabilities
-on some instances of the controllers, even though it was never documented
-as such in the binding before.
+The Allwinner SoCs feature an I2S controller across multiple SoC
+generations.
 
-Therefore, on those controllers, we don't have the option to set an RX DMA
-channel.
-
-This was already done in the DTSI, but the binding itself was never
-updated. Let's add a special case in the schemas.
+However, earlier generations were a bit simpler than the subsequent ones,
+and for example would always have RX and TX capabilities, and no reset
+lines.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- .../sound/allwinner,sun4i-a10-i2s.yaml        | 52 +++++++++++++++----
- 1 file changed, 42 insertions(+), 10 deletions(-)
+ .../sound/allwinner,sun4i-a10-i2s.yaml        | 100 ++++++++++++++++++
+ .../devicetree/bindings/sound/sun4i-i2s.txt   |  45 --------
+ 2 files changed, 100 insertions(+), 45 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+ delete mode 100644 Documentation/devicetree/bindings/sound/sun4i-i2s.txt
 
 diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
-index 85b2d6d84055..eb3992138eec 100644
---- a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+new file mode 100644
+index 000000000000..85b2d6d84055
+--- /dev/null
 +++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
-@@ -41,19 +41,11 @@ properties:
-       - const: apb
-       - const: mod
- 
--  dmas:
--    items:
--      - description: RX DMA Channel
--      - description: TX DMA Channel
--
--  dma-names:
--    items:
--      - const: rx
--      - const: tx
--
-   # Even though it only applies to subschemas under the conditionals,
-   # not listing them here will trigger a warning because of the
-   # additionalsProperties set to false.
-+  dmas: true
-+  dma-names: true
-   resets:
-     maxItems: 1
- 
-@@ -72,6 +64,46 @@ allOf:
-       required:
-         - resets
- 
+@@ -0,0 +1,100 @@
++# SPDX-License-Identifier: (GPL-2.0+ OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/sound/allwinner,sun4i-a10-i2s.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A10 I2S Controller Device Tree Bindings
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <maxime.ripard@bootlin.com>
++
++properties:
++  "#sound-dai-cells":
++    const: 0
++
++  compatible:
++    oneOf:
++      - const: allwinner,sun4i-a10-i2s
++      - const: allwinner,sun6i-a31-i2s
++      - const: allwinner,sun8i-a83t-i2s
++      - const: allwinner,sun8i-h3-i2s
++      - const: allwinner,sun50i-a64-codec-i2s
++      - items:
++          - const: allwinner,sun50i-a64-i2s
++          - const: allwinner,sun8i-h3-i2s
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: Bus Clock
++      - description: Module Clock
++
++  clock-names:
++    items:
++      - const: apb
++      - const: mod
++
++  dmas:
++    items:
++      - description: RX DMA Channel
++      - description: TX DMA Channel
++
++  dma-names:
++    items:
++      - const: rx
++      - const: tx
++
++  # Even though it only applies to subschemas under the conditionals,
++  # not listing them here will trigger a warning because of the
++  # additionalsProperties set to false.
++  resets:
++    maxItems: 1
++
++allOf:
 +  - if:
 +      properties:
 +        compatible:
 +          contains:
-+            const: allwinner,sun8i-a83t-i2s
++            enum:
++              - allwinner,sun6i-a31-i2s
++              - allwinner,sun8i-a83t-i2s
++              - allwinner,sun8i-h3-i2s
++              - allwinner,sun50i-a64-codec-i2s
 +
 +    then:
-+      properties:
-+        dmas:
-+          minItems: 1
-+          maxItems: 2
-+          items:
-+            - description: RX DMA Channel
-+            - description: TX DMA Channel
-+          description:
-+            Some controllers cannot receive but can only transmit
-+            data. In such a case, the RX DMA channel is to be omitted.
++      required:
++        - resets
 +
-+        dma-names:
-+          oneOf:
-+            - items:
-+                - const: rx
-+                - const: tx
-+            - const: tx
-+          description:
-+            Some controllers cannot receive but can only transmit
-+            data. In such a case, the RX name is to be omitted.
++required:
++  - "#sound-dai-cells"
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - dmas
++  - dma-names
 +
-+    else:
-+      properties:
-+        dmas:
-+          items:
-+            - description: RX DMA Channel
-+            - description: TX DMA Channel
++additionalProperties: false
 +
-+        dma-names:
-+          items:
-+            - const: rx
-+            - const: tx
++examples:
++  - |
++    i2s0: i2s@1c22400 {
++        #sound-dai-cells = <0>;
++        compatible = "allwinner,sun4i-a10-i2s";
++        reg = <0x01c22400 0x400>;
++        interrupts = <0 16 4>;
++        clocks = <&apb0_gates 3>, <&i2s0_clk>;
++        clock-names = "apb", "mod";
++        dmas = <&dma 0 3>, <&dma 0 3>;
++        dma-names = "rx", "tx";
++    };
 +
- required:
-   - "#sound-dai-cells"
-   - compatible
++...
+diff --git a/Documentation/devicetree/bindings/sound/sun4i-i2s.txt b/Documentation/devicetree/bindings/sound/sun4i-i2s.txt
+deleted file mode 100644
+index 61e71c1729e0..000000000000
+--- a/Documentation/devicetree/bindings/sound/sun4i-i2s.txt
++++ /dev/null
+@@ -1,45 +0,0 @@
+-* Allwinner A10 I2S controller
+-
+-The I2S bus (Inter-IC sound bus) is a serial link for digital
+-audio data transfer between devices in the system.
+-
+-Required properties:
+-
+-- compatible: should be one of the following:
+-   - "allwinner,sun4i-a10-i2s"
+-   - "allwinner,sun6i-a31-i2s"
+-   - "allwinner,sun8i-a83t-i2s"
+-   - "allwinner,sun8i-h3-i2s"
+-   - "allwinner,sun50i-a64-codec-i2s"
+-- reg: physical base address of the controller and length of memory mapped
+-  region.
+-- interrupts: should contain the I2S interrupt.
+-- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
+-	Documentation/devicetree/bindings/dma/dma.txt
+-- dma-names: should include "tx" and "rx".
+-- clocks: a list of phandle + clock-specifer pairs, one for each entry in clock-names.
+-- clock-names: should contain the following:
+-   - "apb" : clock for the I2S bus interface
+-   - "mod" : module clock for the I2S controller
+-- #sound-dai-cells : Must be equal to 0
+-
+-Required properties for the following compatibles:
+-	- "allwinner,sun6i-a31-i2s"
+-	- "allwinner,sun8i-a83t-i2s"
+-	- "allwinner,sun8i-h3-i2s"
+-	- "allwinner,sun50i-a64-codec-i2s"
+-- resets: phandle to the reset line for this codec
+-
+-Example:
+-
+-i2s0: i2s@1c22400 {
+-	#sound-dai-cells = <0>;
+-	compatible = "allwinner,sun4i-a10-i2s";
+-	reg = <0x01c22400 0x400>;
+-	interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+-	clocks = <&apb0_gates 3>, <&i2s0_clk>;
+-	clock-names = "apb", "mod";
+-	dmas = <&dma SUN4I_DMA_NORMAL 3>,
+-	       <&dma SUN4I_DMA_NORMAL 3>;
+-	dma-names = "rx", "tx";
+-};
 -- 
 2.20.1
 
