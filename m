@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 795CC2D16F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 00:24:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACF2E2D189
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 00:26:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8H3oFZ/TgDgtM8/nuCLMLljD34KEoEVUfcxp1NQ9V9Y=; b=N4I2RgZUbyZOWo
-	qqVn/9OcOIvu7iRzmiJW3o81+j2/lH6//8o7l34pc18gRODEsAtrG/OTQqKbJM5YnZrAxTA0n3BqR
-	tjByj9GHrwdaOiq0Dpnsx7Vj6QeXp5aZ863eZIxCrbs3BvMSPlhyHHa7fNrjEYaffaM80HLN/GNVW
-	2n9CrlcPr8izQ1M3c4/b0GB7Q9epNB9u/X7OIwaP9mffMGIQR31c/RHyc5yOlxIPjonvj/N4kCZIe
-	wAlzZuDGtb8rMndWorFHcLEEKEF5I/npv+/Ic5YLfi/WANbA68IDcXaCSBCsZh18OZYMiOzNAjiay
-	GCjPT1cZIjH3BGHpftkA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ukQoBOJfNnB1Bt9NjNOcuWGM/lnNGUmfQqSYxpTHN5A=; b=kI3eW8jUK5TiGWlmyxLSdqUSp
+	ow0e4cB7QkAfrIyx95X55UlVMJCDLH9GgO/AWttO9IaKG4JABswBGZtlU35Kc81IXkhAJuBt3tTe+
+	/TN+gxk9N1Ryq6eXdHa3thpZL5UiyRI7SX0zjFqqkxdFHd3wxHrMoQkzRpcrnKIDDFP9d+E5uV5Pv
+	SC04mP/9mUCZyoZnb/9ByAcedKqeVq/2CIYJFdA7kLmyMTFkY5KfX+WXcHttNeeyaRCkj6vrEpFYy
+	U/suqxCzGYPwd5tAoxIH//JiI+Wox8UqYG9mzDjDqdUdC45pYogzrGBS0FvNPPcMrnbcq0VVoP+fo
+	osTxpoIrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVkWC-0004fS-C3; Tue, 28 May 2019 22:24:28 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVkW5-0004f6-NO
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 22:24:23 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 63661A4540;
- Tue, 28 May 2019 22:24:20 +0000 (UTC)
-Received: from treble (ovpn-122-72.rdu2.redhat.com [10.10.122.72])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 27A1F610FE;
- Tue, 28 May 2019 22:24:18 +0000 (UTC)
-Date: Tue, 28 May 2019 17:24:15 -0500
-From: Josh Poimboeuf <jpoimboe@redhat.com>
-To: Raphael Gault <Raphael.Gault@arm.com>
-Subject: Re: [RFC V2 00/16] objtool: Add support for Arm64
-Message-ID: <20190528222415.x63qw55ujm33dozb@treble>
-References: <20190516103655.5509-1-raphael.gault@arm.com>
- <20190516142917.nuhh6dmfiufxqzls@treble>
- <26692833-0e5b-cfe0-0ffd-c2c2f0815935@arm.com>
+	id 1hVkXp-0006LJ-0B; Tue, 28 May 2019 22:26:09 +0000
+Received: from anholt.net ([50.246.234.109])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVkXg-0006IB-KN; Tue, 28 May 2019 22:26:02 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by anholt.net (Postfix) with ESMTP id 07A3E10A03D5;
+ Tue, 28 May 2019 15:25:56 -0700 (PDT)
+X-Virus-Scanned: Debian amavisd-new at anholt.net
+Received: from anholt.net ([127.0.0.1])
+ by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
+ with LMTP id f67l0HYwfo6f; Tue, 28 May 2019 15:25:54 -0700 (PDT)
+Received: from eliezer.anholt.net (localhost [127.0.0.1])
+ by anholt.net (Postfix) with ESMTP id B19BC10A1201;
+ Tue, 28 May 2019 15:25:54 -0700 (PDT)
+Received: by eliezer.anholt.net (Postfix, from userid 1000)
+ id 40E792FE3AAE; Tue, 28 May 2019 17:25:54 -0500 (CDT)
+From: Eric Anholt <eric@anholt.net>
+To: Annaliese McDermond <nh6z@nh6z.net>, Wolfram Sang <wsa@the-dreams.de>
+Subject: Re: [PATCH v2] i2c: bcm2835: Model Divider in CCF
+In-Reply-To: <E711B8C3-85B8-435C-97FD-E62BCB88B679@nh6z.net>
+References: <20190508071227.18609-1-nh6z@nh6z.net>
+ <4174B26B-4E3A-4CCA-A5ED-BE62A3B5E66A@nh6z.net> <20190516075848.GA1033@kunai>
+ <2E6EDCD1-E0B1-4859-BD75-EF411D3D4C6B@nh6z.net> <20190527191534.GD8808@kunai>
+ <E711B8C3-85B8-435C-97FD-E62BCB88B679@nh6z.net>
+User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
+ (x86_64-pc-linux-gnu)
+Date: Tue, 28 May 2019 15:25:53 -0700
+Message-ID: <87r28ijjwu.fsf@anholt.net>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <26692833-0e5b-cfe0-0ffd-c2c2f0815935@arm.com>
-User-Agent: NeoMutt/20180716
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.26]); Tue, 28 May 2019 22:24:20 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_152421_801279_71808A94 
-X-CRM114-Status: GOOD (  28.38  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190528_152600_694407_6C596F55 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [50.246.234.109 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,95 +70,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- "peterz@infradead.org" <peterz@infradead.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Kamalesh Babulal <kamalesh@linux.vnet.ibm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, swarren@wwwdotorg.org,
+ NWDR Team <team@nwdigitalradio.com>, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6583301510921339892=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 12:50:57PM +0000, Raphael Gault wrote:
-> Hi Josh,
-> 
-> Thanks for offering your help and sorry for the late answer.
-> 
-> My understanding is that a table of offsets is built by GCC, those
-> offsets being scaled by 4 before adding them to the base label.
-> I believe the offsets are stored in the .rodata section. To find the
-> size of that table, it is needed to find a comparison, which can be
-> optimized out apprently. In that case the end of the array can be found
-> by locating labels pointing to data behind it (which is not 100% safe).
-> 
-> On 5/16/19 3:29 PM, Josh Poimboeuf wrote:
-> > On Thu, May 16, 2019 at 11:36:39AM +0100, Raphael Gault wrote:
-> >> Noteworthy points:
-> >> * I still haven't figured out how to detect switch-tables on arm64. I
-> >> have a better understanding of them but still haven't implemented checks
-> >> as it doesn't look trivial at all.
-> >
-> > Switch tables were tricky to get right on x86.  If you share an example
-> > (or even just a .o file) I can take a look.  Hopefully they're somewhat
-> > similar to x86 switch tables.  Otherwise we may want to consider a
-> > different approach (for example maybe a GCC plugin could help annotate
-> > them).
-> >
-> 
-> The case which made me realize the issue is the one of
-> arch/arm64/kernel/module.o:apply_relocate_add:
-> 
-> ```
-> What seems to happen in the case of module.o is:
->   334:   90000015        adrp    x21, 0 <do_reloc>
-> which retrieves the location of an offset in the rodata section, and a
-> bit later we do some extra computation with it in order to compute the
-> jump destination:
->   3e0:   78625aa0        ldrh    w0, [x21, w2, uxtw #1]
->   3e4:   10000061        adr     x1, 3f0 <apply_relocate_add+0xf8>
->   3e8:   8b20a820        add     x0, x1, w0, sxth #2
->   3ec:   d61f0000        br      x0
-> ```
-> 
-> Please keep in mind that the actual offsets might vary.
-> 
-> I'm happy to provide more details about what I have identified if you
-> want me to.
+--===============6583301510921339892==
+Content-Type: multipart/signed; boundary="=-=-=";
+	micalg=pgp-sha512; protocol="application/pgp-signature"
 
-I get the feeling this is going to be trickier than x86 switch tables
-(which have already been tricky enough).
+--=-=-=
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-On x86, there's a .rela.rodata section which applies relocations to
-.rodata.  The presence of those relocations makes it relatively easy to
-differentiate switch tables from other read-only data.  For example, we
-can tell that a switch table ends when either a) there's not a text
-relocation or b) another switch table begins.
+Annaliese McDermond <nh6z@nh6z.net> writes:
 
-But with arm64 I don't see a deterministic way to do that, because the
-table offsets are hard-coded in .rodata, with no relocations.
+>> On May 27, 2019, at 12:15 PM, Wolfram Sang <wsa@the-dreams.de> wrote:
+>>=20
+>> Regardless which solution is favoured, I am going to apply this patch in
+>> a minute:
+>>=20
+>> http://patchwork.ozlabs.org/patch/1097688/
+>>=20
+>> It enables this driver for ARCH_BRCMSTB. So, the solution should work
+>> for this as well. (I don't know any of these platforms well)
+>
+> I did some looking the other day, and I had forgotten that the RPi has 3
+> of the i2c-bcm2835 devices each with their own divider that sits in their
+> register space.  This makes me think the correct solution would be for
+> the divider to be controlled in the driver as was in my original patch.
+> Otherwise we=E2=80=99d have to make three different dividers in the bcm28=
+35-clk
+> driver, and the i2c driver would no longer work for other platforms.
 
-From talking with Kamalesh I got the impression that we might have a
-similar issue for powerpc.
+Control of the divider should definitely be in the i2c driver, not in
+clk-bcm2835.
 
-So I'm beginning to think we'll need compiler help.  Like a GCC plugin
-that annotates at least the following switch table metadata:
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
 
-- Branch instruction address
-- Switch table address
-- Switch table entry size
-- Switch table size
+-----BEGIN PGP SIGNATURE-----
 
-The GCC plugin could write all the above metadata into a special section
-which gets discarded at link time.  I can look at implementing it,
-though I'll be traveling for two out of the next three weeks so it may
-be a while before I can get to it.
+iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAlzttXIACgkQtdYpNtH8
+nuiAbg//X0j7M7BOUJsCvwPSJpLQIHbCOYkYw5Ei6i+7Qz0SEnTtCGPVkXkBGC3A
+ZtKw5mR5T114FxhJL3GS40LwcUoW6nowzgaxop06/HCGCBP6pA98JRgbWhWznXHi
+vCkhqBhK9gNsD+JbW8RqDQ10YovQJg6poZ9f6fehxhPl37Vts2HV70RtKaenV8FO
+xoo1gw1wtcapre6nA7k1wy10+7DRAD3GVlCPu7vK29+Ih9sZcYkYLHmf6leIAQUp
+2qM0lZkzGcW24O0vqCFW9g2vU2PXiebLzGQVq6s0s0oV11zXjilCAgP3C0Z8hj6P
++iqwQeUFFQGrzaN+okFp/O9f84caHuDF4btgboZ+zqgSvIVi5ZxWYa9EDdlnM3pK
+HdYb5Nqcf+0rggfhj+L5EsIr1gO8w38JUT30KigbPnYb2Ps/lRrGFvqUnY1mnUCR
+tE9CUa793+/j2JS9ETX1bo6yJph6JtlqIHqLq/rED0PxbPjAIRHx8dj7RsIpFuCD
+/Ifk2KOzF/POKktZhXS0NYw2OQZaF8CPhs/bwiRix95WQlS3oF69DG4VKmI0V+0J
+p6MHf1EZrGr3k23x9+poohIcEN7zpeaYA/SOULdhoKxTT7BWNRrJ9QS1gQ51wY6E
+tZIMOXIBzptS4GoHjeeTm00GszKJsOMJQn4TeMWbf0WW6TvjPiQ=
+=I88g
+-----END PGP SIGNATURE-----
+--=-=-=--
 
--- 
-Josh
+
+--===============6583301510921339892==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6583301510921339892==--
+
