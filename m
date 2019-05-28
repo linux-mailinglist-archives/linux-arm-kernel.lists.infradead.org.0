@@ -2,55 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38C7F2C854
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 16:09:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F24B2C860
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 16:12:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ACAreOrMJBcOpNYmoTZIckTkbFoZ4eH9fxIn3V5S8Y=; b=cNDtPykrDyy9sC
-	BpThpgEg0XmrWrOHoCGnOo5XEImeY7xNLi4QOhgxWlgVmEmcGHFoJu1QHgzB5ahBxenoMT9eqY0pA
-	l5/2aWC/turgr7EACY99M1/R1xJHgrMKE2aARrNlTtgRdqmr93Mzd1CRKD4FmVMUAmtc750LJvU0W
-	iW2qoc8gbfTWY1kzTGcy0mN5641wU/YJvm6ARZmjvkYOHRmq+W8GvYe/lNaroxAKjXKHTvA0KjIW0
-	0nwT2Op7duzO1/Ny34BimYQRRzrzygBwl33S8lCVQQHWI8Cl2GFb6KTz2DEDwXSIUyHr7PGlZB+M2
-	OobM2qD22g6N6cbG/+rw==;
+	List-Owner; bh=AqWD9sRyaZtSkA7jZJmw5Z+nUKt85UhK66YH9BmXZTc=; b=S3I+6tyuVKlhGp
+	xx+e82WPbhAgyByqLjtynCng71iBi+XETZJpsGDPGwjm6JCEkHO933F1YUpsnyZO6QSEf/omoe720
+	aWfbaJEp2QZ/Co6uq0j+0zc04ahD+0VhC8HT7HscUOhEvW7w0uouGIpXYGXJu25s7xddSP51NDuy1
+	fWGS+BFTS6XkXxbOtVA0sChYBy56RO6GmXhODuX9Pof7nGgik037VQKzmH5no9YA3v5vugnbqQSJp
+	CT6/n/BIiRrsiWCaYGOcTy+NRLN4jxKLhDBj0rxWy25h+pjD59hlVqOz3yi1P99iFR1smU2lA2bSa
+	zjOQdcKtzeQkFRxBYE3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVcnW-00057r-FH; Tue, 28 May 2019 14:09:50 +0000
+	id 1hVcqO-00075J-47; Tue, 28 May 2019 14:12:48 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVcnO-00057L-SW
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 14:09:44 +0000
+ id 1hVcqG-00074f-1S; Tue, 28 May 2019 14:12:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0836D80D;
- Tue, 28 May 2019 07:09:40 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0F8363F5AF;
- Tue, 28 May 2019 07:09:36 -0700 (PDT)
-Date: Tue, 28 May 2019 15:09:34 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH V3 2/4] arm64/mm: Hold memory hotplug lock while walking
- for kernel page table dump
-Message-ID: <20190528140934.GC26178@lakrids.cambridge.arm.com>
-References: <1557824407-19092-1-git-send-email-anshuman.khandual@arm.com>
- <1557824407-19092-3-git-send-email-anshuman.khandual@arm.com>
- <20190515165847.GH16651@dhcp22.suse.cz>
- <20190516102354.GB40960@lakrids.cambridge.arm.com>
- <20190516110529.GQ16651@dhcp22.suse.cz>
- <20190522164212.GD23592@lakrids.cambridge.arm.com>
- <20190527072001.GB1658@dhcp22.suse.cz>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D36780D;
+ Tue, 28 May 2019 07:12:39 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ C10193F5AF; Tue, 28 May 2019 07:12:35 -0700 (PDT)
+Date: Tue, 28 May 2019 15:12:33 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH 4/5] kconfig: make arch/*/configs/defconfig the default
+ of KBUILD_DEFCONFIG
+Message-ID: <20190528141232.GC32006@arrakis.emea.arm.com>
+References: <20190527143725.12542-1-yamada.masahiro@socionext.com>
+ <20190527143725.12542-4-yamada.masahiro@socionext.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190527072001.GB1658@dhcp22.suse.cz>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190527143725.12542-4-yamada.masahiro@socionext.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_070942_929345_80029CD7 
-X-CRM114-Status: GOOD (  27.54  )
+X-CRM114-CacheID: sfid-20190528_071240_089255_5678ACDA 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -71,77 +64,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: cai@lca.pw, ira.weiny@intel.com,
- Anshuman Khandual <anshuman.khandual@arm.com>, catalin.marinas@arm.com,
- david@redhat.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- logang@deltatee.com, james.morse@arm.com, cpandya@codeaurora.org,
- arunks@codeaurora.org, akpm@linux-foundation.org, osalvador@suse.de,
- mgorman@techsingularity.net, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
+Cc: linux-s390@vger.kernel.org, Paul Walmsley <paul@pwsan.com>,
+ Albert Ou <aou@eecs.berkeley.edu>, Vincent Chen <deanbo422@gmail.com>,
+ linux-kbuild@vger.kernel.org, Ivan Kokshaysky <ink@jurassic.park.msu.ru>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Firoz Khan <firoz.khan@linaro.org>, Greentime Hu <green.hu@gmail.com>,
+ linux-alpha@vger.kernel.org, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Guo Ren <guoren@kernel.org>, Matt Turner <mattst88@gmail.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>,
+ linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 09:20:01AM +0200, Michal Hocko wrote:
-> On Wed 22-05-19 17:42:13, Mark Rutland wrote:
-> > On Thu, May 16, 2019 at 01:05:29PM +0200, Michal Hocko wrote:
-> > > On Thu 16-05-19 11:23:54, Mark Rutland wrote:
-> > > > On Wed, May 15, 2019 at 06:58:47PM +0200, Michal Hocko wrote:
-> > > > > On Tue 14-05-19 14:30:05, Anshuman Khandual wrote:
+On Mon, May 27, 2019 at 11:37:24PM +0900, Masahiro Yamada wrote:
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index b025304bde46..970c41a30ed3 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -30,8 +30,6 @@ LDFLAGS_vmlinux	+= --fix-cortex-a53-843419
+>    endif
+>  endif
+>  
+> -KBUILD_DEFCONFIG := defconfig
+> -
+>  # Check for binutils support for specific extensions
+>  lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
 
-> > I don't think that it's reasonable for this code to bring down the
-> > kernel unless the kernel page tables are already corrupt. I agree we
-> > should minimize the impact on other code, and I'm happy to penalize
-> > ptdump so long as it's functional and safe.
-> > 
-> > I would like it to be possible to use the ptdump code to debug
-> > hot-remove, so I'd rather not make the two mutually exclusive. I'd also
-> > like it to be possible to use this in-the-field, and for that asking an
-> > admin to potentially crash their system isn't likely to fly.
-> 
-> OK, fair enough.
-> 
-> > > > > I am asking because I would really love to make mem hotplug locking less
-> > > > > scattered outside of the core MM than more. Most users simply shouldn't
-> > > > > care. Pfn walkers should rely on pfn_to_online_page.
-> > 
-> > Jut to check, is your plan to limit access to the hotplug lock, or to
-> > redesign the locking scheme?
-> 
-> To change the locking to lock hotpluged ranges rather than having a
-> global lock as the operation is inherently pfn range scoped.
+For arm64:
 
-Ok. That sounds like something we could adapt the ptdump code to handle
-without too much pain (modulo how much of that you want to expose
-outside of the core mm code).
-
-> > > > I'm not sure if that would help us here; IIUC pfn_to_online_page() alone
-> > > > doesn't ensure that the page remains online. Is there a way to achieve
-> > > > that other than get_online_mems()?
-> > > 
-> > > You have to pin the page to make sure the hotplug is not going to
-> > > offline it.
-> > 
-> > I'm not exactly sure how pinning works -- is there a particular set of
-> > functions I should look at for that?
-> 
-> Pinning (get_page) on any page of the range will deffer the hotremove
-> operation and therefore the page tables cannot go away as well.
-> 
-> That being said, I thought the API is mostly for debugging and "you
-> should better know what you are doing" kinda thing (based on debugfs
-> being used here). If this is really useful in its current form and
-> should be used also while the hotremove is in progress then ok.
-> Once we actually get to rework the locking then we will have another
-> spot to handle but that's the life.
-
-Great.
-
-FWIW, I'm happy to rework the ptdump code to help with that.
-
-Thanks,
-Mark.
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
