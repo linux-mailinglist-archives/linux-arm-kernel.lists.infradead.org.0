@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 026352D056
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 22:31:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD4BB2D061
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 22:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fBK6Kuu+sVc08h2VOPyu4x3lccG5HtFWk3A6TCC4auY=; b=uMy9jlbFj/bJXM
-	2soFEAxoDYQWmYCCcHqL+cSfGe8+WsGzcQEohj25IJv5/36+NJ/sYGfeZtuBzFdGq77ruRElkCg0E
-	DsFuiO6MceBVE93gdC3s+1sFubkc2Wp+KhLkKzFVB4NJcC/d9WFIdUMgi4pC7b8Jt4YTVWKoN9d96
-	tpXiqx1LNjnFt2F99tAG5jniHuRTdGKGZtJbBKdtNr3jUuHLLKBinEC/XFrvFaDin4Kr2usGIuoVf
-	lcHxHNL1M8IjTSuz17i5gnbIrhcfMV1BC+0fyglIQ6jXMkm5GbzHiKpbUO6PHClOC5El4SOuZCVZU
-	ctjxGqUzxVUoEPPI2fSw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6nyrE6kBt1kgXcKllQlCZwJfRQU26gpkguN4Hx4noJE=; b=gNdOGLTVxFvlEm
+	zhDT1XuTN4dqdfqMR7el9WN3/fgvjFOyQc0+zLz5Lcjg7fyv/rSdoElQO4a04BG1JDCjqQOnheAMi
+	DDG6mjDMuY3KMF0Q7SnaUTttGkrOggg/tELxBJBcFJxiyLJYZUDhhdk1iCWIsfqCAoOU0Kx2Nw5Np
+	abaGtF1Lpzod/HivUnzL1FRqs528jKtq/cstCBJmxybOFDN1eTq0MFkZMF+FKhO1U4nIPPgR50Nrh
+	IuVSBQTjh0cK3u1JuUqdVCjgjzfAxOyyEia9Xaq4uq5sexPYDj+WX0DWc1MRc08SOjpH1jFwhZCnL
+	OhsJF/f4VjpaITBBXySw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVikV-00021a-J9; Tue, 28 May 2019 20:31:07 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hVil9-0002gR-Gx; Tue, 28 May 2019 20:31:47 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVikM-0001zv-U6
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 20:31:00 +0000
+ id 1hVikS-00021h-6g
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 20:31:09 +0000
 X-Originating-IP: 90.89.68.76
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 1CFF640005;
- Tue, 28 May 2019 20:30:42 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 3E831E000C;
+ Tue, 28 May 2019 20:30:45 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
  Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH v2 01/11] dt-bindings: rtc: Add YAML schemas for the generic
- RTC bindings
-Date: Tue, 28 May 2019 22:30:31 +0200
-Message-Id: <434446bc5541d7dfe5823874355c7db8c7e213fa.1559075389.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH v2 02/11] dt-bindings: rtc: Move trivial RTC over to a schemas
+ of their own
+Date: Tue, 28 May 2019 22:30:32 +0200
+Message-Id: <938b66b5c5d3b6b6cf95b39a16884852ed8d19b6.1559075389.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <434446bc5541d7dfe5823874355c7db8c7e213fa.1559075389.git-series.maxime.ripard@bootlin.com>
+References: <434446bc5541d7dfe5823874355c7db8c7e213fa.1559075389.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_133059_292007_6BFF3244 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20190528_133104_958130_453A21C2 
+X-CRM114-Status: GOOD (  14.50  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,125 +66,116 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The real time clocks have a bunch of generic properties that are needed in
-a device tree. Add a YAML schemas for those.
-
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- Documentation/devicetree/bindings/rtc/rtc.txt  | 34 +-------------
- Documentation/devicetree/bindings/rtc/rtc.yaml | 50 +++++++++++++++++++-
- 2 files changed, 51 insertions(+), 33 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/rtc/rtc.yaml
-
-diff --git a/Documentation/devicetree/bindings/rtc/rtc.txt b/Documentation/devicetree/bindings/rtc/rtc.txt
-index a97fc6a9a75e..4d6f81dccc68 100644
---- a/Documentation/devicetree/bindings/rtc/rtc.txt
-+++ b/Documentation/devicetree/bindings/rtc/rtc.txt
-@@ -1,36 +1,4 @@
--Generic device tree bindings for Real Time Clock devices
--========================================================
--
--This document describes generic bindings which can be used to describe Real Time
--Clock devices in a device tree.
--
--Required properties
---------------------
--
--- compatible : name of RTC device following generic names recommended practice.
--
--For other required properties e.g. to describe register sets,
--clocks, etc. check the binding documentation of the specific driver.
--
--Optional properties
---------------------
--
--- start-year : if provided, the default hardware range supported by the RTC is
--               shifted so the first usable year is the specified one.
--
--The following properties may not be supported by all drivers. However, if a
--driver wants to support one of the below features, it should adapt the bindings
--below.
--- trickle-resistor-ohms :   Selected resistor for trickle charger. Should be given
--                            if trickle charger should be enabled
--- trickle-diode-disable :   Do not use internal trickle charger diode Should be
--                            given if internal trickle charger diode should be
--                            disabled
--- wakeup-source :           Enables wake up of host system on alarm
--- quartz-load-femtofarads : The capacitive load of the quartz(x-tal),
--                            expressed in femto Farad (fF).
--                            The default value shall be listed (if optional),
--                            and likewise all valid values.
-+This file has been moved to rtc.yaml.
- 
- Trivial RTCs
- ------------
-diff --git a/Documentation/devicetree/bindings/rtc/rtc.yaml b/Documentation/devicetree/bindings/rtc/rtc.yaml
-new file mode 100644
-index 000000000000..ee237b2ed66a
---- /dev/null
-+++ b/Documentation/devicetree/bindings/rtc/rtc.yaml
-@@ -0,0 +1,50 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/rtc/rtc.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: RTC Generic Binding
-+
-+maintainers:
-+  - Alexandre Belloni <alexandre.belloni@bootlin.com>
-+
-+description: |
-+  This document describes generic bindings which can be used to
-+  describe Real Time Clock devices in a device tree.
-+
-+properties:
-+  $nodename:
-+    pattern: "^rtc(@.*|-[0-9a-f])*$"
-+
-+  quartz-load-femtofarads:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description:
-+      The capacitive load of the quartz(x-tal), expressed in femto
-+      Farad (fF). The default value shall be listed (if optional),
-+      and likewise all valid values.
-+
-+  start-year:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description:
-+      If provided, the default hardware range supported by the RTC is
-+      shifted so the first usable year is the specified one.
-+
-+  trickle-diode-disable:
-+    $ref: /schemas/types.yaml#/definitions/flag
-+    description:
-+      Do not use internal trickle charger diode. Should be given if
-+      internal trickle charger diode should be disabled.
-+
-+  trickle-resistor-ohms:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description:
-+      Selected resistor for trickle charger. Should be given
-+      if trickle charger should be enabled.
-+
-+  wakeup-source:
-+    $ref: /schemas/types.yaml#/definitions/flag
-+    description:
-+      Enables wake up of host system on alarm.
-+
-+...
-
-base-commit: 531b0a360899269bd99a38ba9852a8ba46852bcd
--- 
-git-series 0.9.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIFJUQyBnZW5lcmljIGJpbmRpbmdzIGhhcyBhIGJ1bmNoIG9mIGRldmljZXMgdGhhdCBoYXZl
+IGEgcHJldHR5IHNpbXBsZQpiaW5kaW5nLCB3aXRoIGp1c3QgY29tcGF0aWJsZSwgcmVnIGFuZCBv
+cHRpb25hbCBpbnRlcnJ1cHRzIHByb3BlcnRpZXMuCgpUaGlzIGlzIGV4YWN0bHkgd2hhdCB0aGUg
+dHJpdmlhbCBkZXZpY2VzIFlBTUwgc2NoZW1hIGhhcyBiZWVuIGNyZWF0ZWQgZm9yLApleGNlcHQg
+dGhhdCB0aGV5IGNhbiBhbHNvIGhhdmUgdGhlIHN0YXJ0LXllYXIgcHJvcGVydHksIGJ1dCBub3Qg
+YW55IG90aGVyCmdlbmVyaWMgUlRDIHByb3BlcnR5LgoKTGV0J3MgY3JlYXRlIGEgc2NoZW1hIHdp
+dGggdGhvc2UgY29uc3RyYWludHMuCgpTaWduZWQtb2ZmLWJ5OiBNYXhpbWUgUmlwYXJkIDxtYXhp
+bWUucmlwYXJkQGJvb3RsaW4uY29tPgoKLS0tCkNoYW5nZXMgZnJvbSB2MToKICAtIE1vdmUgZnJv
+bSB0cml2aWFsLWRldmljZXMgdG8gdHJpdmlhbC1ydGMKLS0tCiBEb2N1bWVudGF0aW9uL2Rldmlj
+ZXRyZWUvYmluZGluZ3MvcnRjL3J0Yy50eHQgICAgICAgICAgfCAzOSArLS0tLS0KIERvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ydGMvdHJpdmlhbC1ydGMueWFtbCB8IDkyICsrKysr
+KysrKysrLQogMiBmaWxlcyBjaGFuZ2VkLCA5MiBpbnNlcnRpb25zKCspLCAzOSBkZWxldGlvbnMo
+LSkKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+cnRjL3RyaXZpYWwtcnRjLnlhbWwKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRy
+ZWUvYmluZGluZ3MvcnRjL3J0Yy50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvcnRjL3J0Yy50eHQKaW5kZXggNGQ2ZjgxZGNjYzY4Li5iOGQzNmZjZTVlMmQgMTAwNjQ0Ci0t
+LSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ydGMvcnRjLnR4dAorKysgYi9E
+b2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3J0Yy50eHQKQEAgLTEsNDAgKzEg
+QEAKIFRoaXMgZmlsZSBoYXMgYmVlbiBtb3ZlZCB0byBydGMueWFtbC4KLQotVHJpdmlhbCBSVENz
+Ci0tLS0tLS0tLS0tLS0KLQotVGhpcyBpcyBhIGxpc3Qgb2YgdHJpdmlhbCBSVEMgZGV2aWNlcyB0
+aGF0IGhhdmUgc2ltcGxlIGRldmljZSB0cmVlCi1iaW5kaW5ncywgY29uc2lzdGluZyBvbmx5IG9m
+IGEgY29tcGF0aWJsZSBmaWVsZCwgYW4gYWRkcmVzcyBhbmQKLXBvc3NpYmx5IGFuIGludGVycnVw
+dCBsaW5lLgotCi0KLUNvbXBhdGlibGUJCVZlbmRvciAvIENoaXAKLT09PT09PT09PT0JCT09PT09
+PT09PT09PT0KLWFicmFjb24sYWJiNXplczMJQUItUlRDTUMtMzIuNzY4a0h6LUI1WkUtUzM6IFJl
+YWwgVGltZSBDbG9jay9DYWxlbmRhciBNb2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCi1hYnJhY29u
+LGFiZW96OQkJQUItUlRDTUMtMzIuNzY4a0h6LUVPWjk6IFJlYWwgVGltZSBDbG9jay9DYWxlbmRh
+ciBNb2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCi1kYWxsYXMsZHMxMzc0CQlJMkMsIDMyLUJpdCBC
+aW5hcnkgQ291bnRlciBXYXRjaGRvZyBSVEMgd2l0aCBUcmlja2xlIENoYXJnZXIgYW5kIFJlc2V0
+IElucHV0L091dHB1dAotZGFsbGFzLGRzMTY3MgkJRGFsbGFzIERTMTY3MiBSZWFsLXRpbWUgQ2xv
+Y2sKLWRhbGxhcyxkczMyMzIJCUV4dHJlbWVseSBBY2N1cmF0ZSBJwrJDIFJUQyB3aXRoIEludGVn
+cmF0ZWQgQ3J5c3RhbCBhbmQgU1JBTQotZXBzb24scng4MDEwCQlJMkMtQlVTIElOVEVSRkFDRSBS
+RUFMIFRJTUUgQ0xPQ0sgTU9EVUxFCi1lcHNvbixyeDg1NzEJCUkyQy1CVVMgSU5URVJGQUNFIFJF
+QUwgVElNRSBDTE9DSyBNT0RVTEUgd2l0aCBCYXR0ZXJ5IEJhY2tlZCBSQU0KLWVwc29uLHJ4ODU4
+MQkJSTJDLUJVUyBJTlRFUkZBQ0UgUkVBTCBUSU1FIENMT0NLIE1PRFVMRQotZW1taWNybyxlbTMw
+MjcJCUVNIE1pY3JvZWxlY3Ryb25pYyBFTTMwMjcgUmVhbC10aW1lIENsb2NrCi1pc2lsLGlzbDEy
+MDgJCUludGVyc2lsIElTTDEyMDggTG93IFBvd2VyIFJUQyB3aXRoIEJhdHRlcnkgQmFja2VkIFNS
+QU0KLWlzaWwsaXNsMTIxOAkJSW50ZXJzaWwgSVNMMTIxOCBMb3cgUG93ZXIgUlRDIHdpdGggQmF0
+dGVyeSBCYWNrZWQgU1JBTQotaXNpbCxpc2wxMjAyMgkJSW50ZXJzaWwgSVNMMTIwMjIgUmVhbC10
+aW1lIENsb2NrCi1taWNyb2NyeXN0YWwscnYzMDI4CVJlYWwgVGltZSBDbG9jayBNb2R1bGUgd2l0
+aCBJMkMtQnVzCi1taWNyb2NyeXN0YWwscnYzMDI5CVJlYWwgVGltZSBDbG9jayBNb2R1bGUgd2l0
+aCBJMkMtQnVzCi1taWNyb2NyeXN0YWwscnY4NTIzCVJlYWwgVGltZSBDbG9jawotbnhwLHBjZjIx
+MjcJCVJlYWwtdGltZSBjbG9jawotbnhwLHBjZjIxMjkJCVJlYWwtdGltZSBjbG9jawotbnhwLHBj
+Zjg1NjMJCVJlYWwtdGltZSBjbG9jay9jYWxlbmRhcgotcGVyaWNvbSxwdDdjNDMzOAlSZWFsLXRp
+bWUgQ2xvY2sgTW9kdWxlCi1yaWNvaCxyMjAyNXNkCQlJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0Ug
+UkVBTC1USU1FIENMT0NLIElDCi1yaWNvaCxyMjIyMXRsCQlJMkMgYnVzIFNFUklBTCBJTlRFUkZB
+Q0UgUkVBTC1USU1FIENMT0NLIElDCi1yaWNvaCxyczVjMzcyYQkJSTJDIGJ1cyBTRVJJQUwgSU5U
+RVJGQUNFIFJFQUwtVElNRSBDTE9DSyBJQwotcmljb2gscnM1YzM3MmIJCUkyQyBidXMgU0VSSUFM
+IElOVEVSRkFDRSBSRUFMLVRJTUUgQ0xPQ0sgSUMKLXJpY29oLHJ2NWMzODYJCUkyQyBidXMgU0VS
+SUFMIElOVEVSRkFDRSBSRUFMLVRJTUUgQ0xPQ0sgSUMKLXJpY29oLHJ2NWMzODdhCQlJMkMgYnVz
+IFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCi1zaWksczM1MzkwYQkJMi13aXJl
+IENNT1MgcmVhbC10aW1lIGNsb2NrCi13aHdhdmUsc2QzMDc4CQlJMkMgYnVzIFNFUklBTCBJTlRF
+UkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCi14aXJjb20seDEyMDUJCVhpcmNvbSBYMTIwNSBJMkMg
+UlRDCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3Ry
+aXZpYWwtcnRjLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3Ry
+aXZpYWwtcnRjLnlhbWwKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMDAwLi4w
+YzEyY2U5YTliNDUKLS0tIC9kZXYvbnVsbAorKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
+YmluZGluZ3MvcnRjL3RyaXZpYWwtcnRjLnlhbWwKQEAgLTAsMCArMSw5MiBAQAorIyBTUERYLUxp
+Y2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAorJVlBTUwgMS4yCistLS0KKyRpZDogaHR0cDovL2Rl
+dmljZXRyZWUub3JnL3NjaGVtYXMvcnRjL3RyaXZpYWwtcnRjLnlhbWwjCiskc2NoZW1hOiBodHRw
+Oi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0bGU6IFRyaXZp
+YWwgUlRDcworCittYWludGFpbmVyczoKKyAgLSBBbGV4YW5kcmUgQmVsbG9uaSA8YWxleGFuZHJl
+LmJlbGxvbmlAYm9vdGxpbi5jb20+CisKK2Rlc2NyaXB0aW9uOiB8CisgIFRoaXMgaXMgYSBsaXN0
+IG9mIHRyaXZpYWwgUlRDIGRldmljZXMgdGhhdCBoYXZlIHNpbXBsZSBkZXZpY2UgdHJlZQorICBi
+aW5kaW5ncywgY29uc2lzdGluZyBvbmx5IG9mIGEgY29tcGF0aWJsZSBmaWVsZCwgYW4gYWRkcmVz
+cyBhbmQKKyAgcG9zc2libHkgYW4gaW50ZXJydXB0IGxpbmUuCisKK2FsbE9mOgorICAtICRyZWY6
+ICJydGMueWFtbCMiCisKK3Byb3BlcnRpZXM6CisgIGNvbXBhdGlibGU6CisgICAgZW51bToKKyAg
+ICAgICMgQUItUlRDTUMtMzIuNzY4a0h6LUI1WkUtUzM6IFJlYWwgVGltZSBDbG9jay9DYWxlbmRh
+ciBNb2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCisgICAgICAtIGFicmFjb24sYWJiNXplczMKKyAg
+ICAgICMgQUItUlRDTUMtMzIuNzY4a0h6LUVPWjk6IFJlYWwgVGltZSBDbG9jay9DYWxlbmRhciBN
+b2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCisgICAgICAtIGFicmFjb24sYWJlb3o5CisgICAgICAj
+IEkyQywgMzItQml0IEJpbmFyeSBDb3VudGVyIFdhdGNoZG9nIFJUQyB3aXRoIFRyaWNrbGUgQ2hh
+cmdlciBhbmQgUmVzZXQgSW5wdXQvT3V0cHV0CisgICAgICAtIGRhbGxhcyxkczEzNzQKKyAgICAg
+ICMgRGFsbGFzIERTMTY3MiBSZWFsLXRpbWUgQ2xvY2sKKyAgICAgIC0gZGFsbGFzLGRzMTY3Mgor
+ICAgICAgIyBFeHRyZW1lbHkgQWNjdXJhdGUgScKyQyBSVEMgd2l0aCBJbnRlZ3JhdGVkIENyeXN0
+YWwgYW5kIFNSQU0KKyAgICAgIC0gZGFsbGFzLGRzMzIzMgorICAgICAgIyBJMkMtQlVTIElOVEVS
+RkFDRSBSRUFMIFRJTUUgQ0xPQ0sgTU9EVUxFCisgICAgICAtIGVwc29uLHJ4ODAxMAorICAgICAg
+IyBJMkMtQlVTIElOVEVSRkFDRSBSRUFMIFRJTUUgQ0xPQ0sgTU9EVUxFIHdpdGggQmF0dGVyeSBC
+YWNrZWQgUkFNCisgICAgICAtIGVwc29uLHJ4ODU3MQorICAgICAgIyBJMkMtQlVTIElOVEVSRkFD
+RSBSRUFMIFRJTUUgQ0xPQ0sgTU9EVUxFCisgICAgICAtIGVwc29uLHJ4ODU4MQorICAgICAgIyBJ
+bnRlcnNpbCBJU0wxMjA4IExvdyBQb3dlciBSVEMgd2l0aCBCYXR0ZXJ5IEJhY2tlZCBTUkFNCisg
+ICAgICAtIGlzaWwsaXNsMTIwOAorICAgICAgIyBJbnRlcnNpbCBJU0wxMjE4IExvdyBQb3dlciBS
+VEMgd2l0aCBCYXR0ZXJ5IEJhY2tlZCBTUkFNCisgICAgICAtIGlzaWwsaXNsMTIxOAorICAgICAg
+IyBJbnRlcnNpbCBJU0wxMjAyMiBSZWFsLXRpbWUgQ2xvY2sKKyAgICAgIC0gaXNpbCxpc2wxMjAy
+MgorICAgICAgIyBSZWFsIFRpbWUgQ2xvY2sgTW9kdWxlIHdpdGggSTJDLUJ1cworICAgICAgLSBt
+aWNyb2NyeXN0YWwscnYzMDI4CisgICAgICAjIFJlYWwgVGltZSBDbG9jayBNb2R1bGUgd2l0aCBJ
+MkMtQnVzCisgICAgICAtIG1pY3JvY3J5c3RhbCxydjMwMjkKKyAgICAgICMgUmVhbCBUaW1lIENs
+b2NrCisgICAgICAtIG1pY3JvY3J5c3RhbCxydjg1MjMKKyAgICAgICMgUmVhbC10aW1lIGNsb2Nr
+CisgICAgICAtIG54cCxwY2YyMTI3CisgICAgICAjIFJlYWwtdGltZSBjbG9jaworICAgICAgLSBu
+eHAscGNmMjEyOQorICAgICAgIyBSZWFsLXRpbWUgY2xvY2svY2FsZW5kYXIKKyAgICAgIC0gbnhw
+LHBjZjg1NjMKKyAgICAgICMgUmVhbC10aW1lIENsb2NrIE1vZHVsZQorICAgICAgLSBwZXJpY29t
+LHB0N2M0MzM4CisgICAgICAjIEkyQyBidXMgU0VSSUFMIElOVEVSRkFDRSBSRUFMLVRJTUUgQ0xP
+Q0sgSUMKKyAgICAgIC0gcmljb2gscjIwMjVzZAorICAgICAgIyBJMkMgYnVzIFNFUklBTCBJTlRF
+UkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCisgICAgICAtIHJpY29oLHIyMjIxdGwKKyAgICAgICMg
+STJDIGJ1cyBTRVJJQUwgSU5URVJGQUNFIFJFQUwtVElNRSBDTE9DSyBJQworICAgICAgLSByaWNv
+aCxyczVjMzcyYQorICAgICAgIyBJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1FIENM
+T0NLIElDCisgICAgICAtIHJpY29oLHJzNWMzNzJiCisgICAgICAjIEkyQyBidXMgU0VSSUFMIElO
+VEVSRkFDRSBSRUFMLVRJTUUgQ0xPQ0sgSUMKKyAgICAgIC0gcmljb2gscnY1YzM4NgorICAgICAg
+IyBJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCisgICAgICAtIHJp
+Y29oLHJ2NWMzODdhCisgICAgICAjIDItd2lyZSBDTU9TIHJlYWwtdGltZSBjbG9jaworICAgICAg
+LSBzaWksczM1MzkwYQorICAgICAgIyBJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1F
+IENMT0NLIElDCisgICAgICAtIHdod2F2ZSxzZDMwNzgKKyAgICAgICMgWGlyY29tIFgxMjA1IEky
+QyBSVEMKKyAgICAgIC0geGlyY29tLHgxMjA1CisKKyAgcmVnOgorICAgIG1heEl0ZW1zOiAxCisK
+KyAgaW50ZXJydXB0czoKKyAgICBtYXhJdGVtczogMQorCisgIHN0YXJ0LXllYXI6IHRydWUKKwor
+cmVxdWlyZWQ6CisgIC0gY29tcGF0aWJsZQorICAtIHJlZworCithZGRpdGlvbmFsUHJvcGVydGll
+czogZmFsc2UKKworLi4uCi0tIApnaXQtc2VyaWVzIDAuOS4xCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
