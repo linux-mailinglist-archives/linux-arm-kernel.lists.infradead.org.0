@@ -2,65 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAED42CCE4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 19:03:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 525DC2CD29
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 19:08:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mua9eOITNtLNfzuHfAQfnPyKQWUEM3dS2p0G2yhpaCk=; b=Dn8mVlkdd5iUp9
-	GTbrQR4zUKUsarNH98cSdwf76FtnI5SuRKP2R3eQTsZcwLq4zPLHq6RDgPLNilUAwOhSkdIZylYZx
-	oiFiKoD+tEtlWzSn/mFspDjpkIjiT8vntL8XiMvveKfbNYpqERBU94Iw+ZcLBjmpnGKAZd7V1z2Ou
-	98U2pKrqd9k44s7q/68lwn6cHvOWc4IpUb+SmhJykK/rXjauIxYOp+1MBod7xeIeICGImk6KlGLIO
-	gxfKWWT89mXEE8VQmOz4MfRFuoLVfA3cZI71bIhnf3yFSU8MpCxwLRpSf6BAL8pzpvFsv5/tFvgTD
-	oQ58vUB4sNKgt7bzlSZQ==;
+	List-Owner; bh=g3W5PT1xT4AwwAz8sPXYztaiA2tjaql0YU0jXI0Nbkc=; b=AoSwYUrbgg1Pw1
+	2D/o0S99eWuCJPOf6tcxMMFhFa2s36mDDyKFPml6qG3CwJRKnw1ih6TAz4qwbWE0Ib4Toi6sV6mr1
+	Y9chCynL1oPoSAqHDqmW4jNxQpCd0J4cZlZgOXk2jr0B0R0GPM201MVDtxSNxb+0OmpiHACFCluec
+	19V0xJ5ftMncMjlR81Wy8AF3KMGkzNyhDBHujrLvRF4sNFDJFOMfWzY2SY2O0JEr4GUJlZkSge4w9
+	DOeO61t6onZZMKIyV9wn64zC5G46Rp0y9JENz5WI3GijXGhizivqZdcx/ohXBZMX4yWXAEyDgE7et
+	ai5qvUYeaTmTx0q7adiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVfV7-000780-At; Tue, 28 May 2019 17:03:01 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVfV0-00077R-GS
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 17:02:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5FEB341;
- Tue, 28 May 2019 10:02:53 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- C71E83F59C; Tue, 28 May 2019 10:02:47 -0700 (PDT)
-Date: Tue, 28 May 2019 18:02:45 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
-Message-ID: <20190528170244.GF32006@arrakis.emea.arm.com>
-References: <20190521182932.sm4vxweuwo5ermyd@mbp>
- <201905211633.6C0BF0C2@keescook>
- <20190522101110.m2stmpaj7seezveq@mbp>
- <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
- <20190522163527.rnnc6t4tll7tk5zw@mbp>
- <201905221316.865581CF@keescook>
- <20190523144449.waam2mkyzhjpqpur@mbp>
- <201905230917.DEE7A75EF0@keescook>
- <20190523174345.6sv3kcipkvlwfmox@mbp>
- <201905231327.77CA8D0A36@keescook>
+	id 1hVfZy-0002Ak-N4; Tue, 28 May 2019 17:08:02 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVfZs-00029g-0x
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 17:07:57 +0000
+Received: by mail-io1-xd41.google.com with SMTP id u25so819675iot.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 10:07:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=o+CE7MrKDoduwbQI4BYzvnChQFaqVVhgzDgOnVuvjB4=;
+ b=o16W63eBBD3P9WrstiBe3i+fdd4Jv6aTafyjWs1xNmsGAoWoOsCHZUeDwEynplfblk
+ 9lIv8Kr5wLeEhbczRLPwNU2ZQwwkx0KDbzjGlYQ0YFQt/fi7eI8fSNYTpUOJH54QoPH6
+ Btu+usghESiOXNS6+q+G1RE+5lOsAXSpKy44kvIPIdf3SJgMQUZJxOvUy+uMnQvKHzjp
+ U0HIENMzWmV2dR2i6qAQTwFY35XnOIv1ov1B/WZ/fZMG11wKqhDydRZtnrvoMzCbgdiU
+ f2059725nifRAQ2VwrueSluYgTGVWZmTdZQy7WvOBKjSJIN7ujjglzSNgqbomeZsRfsi
+ jB3A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=o+CE7MrKDoduwbQI4BYzvnChQFaqVVhgzDgOnVuvjB4=;
+ b=mNKqxSmiJZxwxGafmMpLmvapV6dNo3kV2uFxmBByXW7+TMGw1NPGmZKxcNB/v8kjy2
+ sDHhod2KGCUoEevr9pcq57jcv3qvdQ5zoh+HloItSH/bF0l8qjzn4PfuLJrKZd7a8u4g
+ s+D8oCSpZy1ZkOtmzqCLU6cMK7WWReiBDo2jmlB38H4Eam/csl8TXGZOKFLDGkDMk3Hd
+ 3mqS6At9W8fYf861kXm4jJewHG1uYMpxU9oXmQM3rmT070CrG2u0gzaqMDMBumuCiQ+6
+ ZHO6H/3P625S1eOQJdlWLyt10eoL31cLE/lOWaj7Ia4qk6FEvAui13mSXCt5Jxo4hU70
+ bwdA==
+X-Gm-Message-State: APjAAAUTWzJSoh3yq4JRR8FeQVVXtlN1edlybzXrufDvGzj32lcxN4H/
+ Dm7WJ4qZGmLfOY2enMCnf5skHOZQDwnVUwZqL8O+TQ==
+X-Google-Smtp-Source: APXvYqzqFcuVwGInO1/FV4YuVwtytAEsFid5IHlJBokx/dWxUiZ5bHQM1iwS2ND6u2hpnrkLAL4hBHfEjwi2KrdZktw=
+X-Received: by 2002:a5d:9d83:: with SMTP id 3mr7823822ion.65.1559063272495;
+ Tue, 28 May 2019 10:07:52 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <201905231327.77CA8D0A36@keescook>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190528161026.13193-1-steve.capper@arm.com>
+ <20190528161026.13193-5-steve.capper@arm.com>
+In-Reply-To: <20190528161026.13193-5-steve.capper@arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 28 May 2019 19:07:40 +0200
+Message-ID: <CAKv+Gu-4OOy14uKQHxvwiZ-opaMf4h5UJ2V7HhaEKLP=L3aeqQ@mail.gmail.com>
+Subject: Re: [PATCH v2 04/12] arm64: mm: Replace fixed map BUILD_BUG_ON's with
+ BUG_ON's
+To: Steve Capper <steve.capper@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_100254_558762_563981B4 
-X-CRM114-Status: GOOD (  18.27  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190528_100756_076441_D9840949 
+X-CRM114-Status: GOOD (  16.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,100 +92,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: crecklin@redhat.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, Will Deacon <will.deacon@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 02:31:16PM -0700, Kees Cook wrote:
-> syzkaller already attempts to randomly inject non-canonical and
-> 0xFFFF....FFFF addresses for user pointers in syscalls in an effort to
-> find bugs like CVE-2017-5123 where waitid() via unchecked put_user() was
-> able to write directly to kernel memory[1].
-> 
-> It seems that using TBI by default and not allowing a switch back to
-> "normal" ABI without a reboot actually means that userspace cannot inject
-> kernel pointers into syscalls any more, since they'll get universally
-> stripped now. Is my understanding correct, here? i.e. exploiting
-> CVE-2017-5123 would be impossible under TBI?
-> 
-> If so, then I think we should commit to the TBI ABI and have a boot
-> flag to disable it, but NOT have a process flag, as that would allow
-> attackers to bypass the masking. The only flag should be "TBI or MTE".
-> 
-> If so, can I get top byte masking for other architectures too? Like,
-> just to strip high bits off userspace addresses? ;)
+On Tue, 28 May 2019 at 18:10, Steve Capper <steve.capper@arm.com> wrote:
+>
+> In order to prepare for a variable VA_BITS we need to account for a
+> variable size VMEMMAP which in turn means the position of the fixed map
+> is variable at compile time.
+>
+> Thus, we need to replace the BUILD_BUG_ON's that check the fixed map
+> position with BUG_ON's.
+>
+> Signed-off-by: Steve Capper <steve.capper@arm.com>
 
-Just for fun, hack/attempt at your idea which should not interfere with
-TBI. Only briefly tested on arm64 (and the s390 __TYPE_IS_PTR macro is
-pretty weird ;)):
+Do we still need this patch now that VMEMMAP_SIZE is a compile time
+constant again? Or am I missing something?
 
---------------------------8<---------------------------------
-diff --git a/arch/s390/include/asm/compat.h b/arch/s390/include/asm/compat.h
-index 63b46e30b2c3..338455a74eff 100644
---- a/arch/s390/include/asm/compat.h
-+++ b/arch/s390/include/asm/compat.h
-@@ -11,9 +11,6 @@
- 
- #include <asm-generic/compat.h>
- 
--#define __TYPE_IS_PTR(t) (!__builtin_types_compatible_p( \
--				typeof(0?(__force t)0:0ULL), u64))
--
- #define __SC_DELOUSE(t,v) ({ \
- 	BUILD_BUG_ON(sizeof(t) > 4 && !__TYPE_IS_PTR(t)); \
- 	(__force t)(__TYPE_IS_PTR(t) ? ((v) & 0x7fffffff) : (v)); \
-diff --git a/include/linux/syscalls.h b/include/linux/syscalls.h
-index e2870fe1be5b..b1b9fe8502da 100644
---- a/include/linux/syscalls.h
-+++ b/include/linux/syscalls.h
-@@ -119,8 +119,15 @@ struct io_uring_params;
- #define __TYPE_IS_L(t)	(__TYPE_AS(t, 0L))
- #define __TYPE_IS_UL(t)	(__TYPE_AS(t, 0UL))
- #define __TYPE_IS_LL(t) (__TYPE_AS(t, 0LL) || __TYPE_AS(t, 0ULL))
-+#define __TYPE_IS_PTR(t) (!__builtin_types_compatible_p(typeof(0 ? (__force t)0 : 0ULL), u64))
- #define __SC_LONG(t, a) __typeof(__builtin_choose_expr(__TYPE_IS_LL(t), 0LL, 0L)) a
-+#ifdef CONFIG_64BIT
-+#define __SC_CAST(t, a)	(__TYPE_IS_PTR(t) \
-+				? (__force t) ((__u64)a & ~(1UL << 55)) \
-+				: (__force t) a)
-+#else
- #define __SC_CAST(t, a)	(__force t) a
-+#endif
- #define __SC_ARGS(t, a)	a
- #define __SC_TEST(t, a) (void)BUILD_BUG_ON_ZERO(!__TYPE_IS_LL(t) && sizeof(t) > sizeof(long))
- 
-
--- 
-Catalin
+> ---
+>  arch/arm64/mm/mmu.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+>
+> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+> index b0401b2ec4da..1b88d9d81954 100644
+> --- a/arch/arm64/mm/mmu.c
+> +++ b/arch/arm64/mm/mmu.c
+> @@ -846,7 +846,7 @@ void __init early_fixmap_init(void)
+>          * The boot-ioremap range spans multiple pmds, for which
+>          * we are not prepared:
+>          */
+> -       BUILD_BUG_ON((__fix_to_virt(FIX_BTMAP_BEGIN) >> PMD_SHIFT)
+> +       BUG_ON((__fix_to_virt(FIX_BTMAP_BEGIN) >> PMD_SHIFT)
+>                      != (__fix_to_virt(FIX_BTMAP_END) >> PMD_SHIFT));
+>
+>         if ((pmdp != fixmap_pmd(fix_to_virt(FIX_BTMAP_BEGIN)))
+> @@ -914,9 +914,9 @@ void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
+>          * On 4k pages, we'll use section mappings for the FDT so we only
+>          * have to be in the same PUD.
+>          */
+> -       BUILD_BUG_ON(dt_virt_base % SZ_2M);
+> +       BUG_ON(dt_virt_base % SZ_2M);
+>
+> -       BUILD_BUG_ON(__fix_to_virt(FIX_FDT_END) >> SWAPPER_TABLE_SHIFT !=
+> +       BUG_ON(__fix_to_virt(FIX_FDT_END) >> SWAPPER_TABLE_SHIFT !=
+>                      __fix_to_virt(FIX_BTMAP_BEGIN) >> SWAPPER_TABLE_SHIFT);
+>
+>         offset = dt_phys % SWAPPER_BLOCK_SIZE;
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
