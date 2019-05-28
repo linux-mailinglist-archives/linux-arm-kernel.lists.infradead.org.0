@@ -2,75 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCBE22C0E9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:09:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E2782C0EA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 10:09:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RkhAhlPmLO+Mixo2WTTuWURSvbLxE6EKwTqcWQb/XE4=; b=aFLBvfapM+XBBu
-	fLHQi67yaqrlAILu/1HKYEyr1uCTY/Q250Q0iVA4fqOuuoGT7ONL8QByJdE8X4DWQ6I81aa+SxyGr
-	FzH0RPiYSu9Gsg266ZS1OcWms7Dg2qio19Ad4qDNbfs1WgIuAx2oXo7EKqZMvYk9oQ9OdSTD8jmsQ
-	7ixAg8HuS4vz47rMeSY2Qxlx2EsPNnyus7ei2uHTNN5jKY9jwfKzPPliIGIx51bvkQLhtO2Eem2OY
-	G7SjGBjoid4n6zg9t1E2u9LRKugGQAEZo8f2+2OfO5xavemWFY6BwanZPJveC5A+CbwcJuXA3va2g
-	d+5939laMVvQ6I6LsgLQ==;
+	List-Owner; bh=LHkvgP42Jcd4DmQWqHDrrsfVoaUOOP+I4H4cYJfKZHw=; b=Ww2/bDyE3TqgYB
+	zR6nUxRm2k7QbS2ZCK1ZP4DXJgpTiDU4XpBsxaGqILlpCo3/lf5GCZr55Hn7Xnm0s2ktOz18Lw9XE
+	H4sslv9jXkaJ70rQkq2AU3PtDlmzGva5arQlngDED3NGOacAJN8QlF901sM7veOsxcp35hriT9z0B
+	R2WR22L7f2SjbbEXa7XcrL+/r+szYM1PmxyGO6yskZZrtjKDL5anxaEk8zhqJYkk63efZpo9YK/kU
+	8/eErcDeOHVqQWvPaT3p0NDoRAJmqaNi2xPtmedmHQ2+zdDbQ3ic5P6WNioU2EiCy1/5LjTtZYRvc
+	zLyLn8p7H7vb0dSwzNNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVXAh-0003Rf-1S; Tue, 28 May 2019 08:09:23 +0000
-Received: from mail-lj1-f195.google.com ([209.85.208.195])
+	id 1hVXAr-0003YS-13; Tue, 28 May 2019 08:09:33 +0000
+Received: from mail-qk1-x72e.google.com ([2607:f8b0:4864:20::72e])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVXA3-0002rE-Bp
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:08:45 +0000
-Received: by mail-lj1-f195.google.com with SMTP id 188so16750695ljf.9
+ id 1hVXAQ-0003ME-Fm
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 08:09:15 +0000
+Received: by mail-qk1-x72e.google.com with SMTP id j1so21143439qkk.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 01:08:42 -0700 (PDT)
+ Tue, 28 May 2019 01:09:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=xDOcfUm0hx1+moO7XUT4Qyuo28lq60TTV8oVJkJSDf8=;
+ b=sWqbqkCcghXKhwjI3+Xh42gDOmLmikpVTRsgukr3jx+YA5eCGhQcPo2m93RTOPkLHB
+ 8fDzk0VoiU/nu0XtdRzDzm1BcyM5HaHfOEK8B6n4ScId52EtujnwrJtfsa3SZQFzt97H
+ U3fwH09XvO7mt4qR588300BgcxUiO5wI+2dWpO2YYhIUiAPev1fe11v6d31JGQV9oJyW
+ 9mVCTrrOysEPJx7qWQisEpks+LiURbb/tVwuawJtM6YkK6N7W+zHJuVDcealqD8XzFlj
+ 0+94ZgNIRc+kTPajYrWDhPUxMEyVUv5sTA2qi9aZAG/OYnhA4VcohWEqjMSRjm+YyL9k
+ MJ6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jxRdLO81GaMwi25+pHF6tyabtHcRY5PiY9DnX9mbDaE=;
- b=e8lmFj2aqDj6Lw80EKXO8+fE3qUBcIOoSN8VjrI8/h03lK2WN+HV+7bfQ1379JQpvG
- o0ri9Xrpwtmh9P+FPkz5P3hcsh9TJIemghXKNQYHkEacLmLovuPhWytrbDFzon1CVSj0
- GPpcYNzClJ2WUbMeNri+HIRu0MxCaTWcIup3ZDa4m+p+Yc6jwR6ZtUU2/1KyUalShQEe
- SZcJo8eLG+U8yxSwprL8wSogwtIpzynn9oJ36R50zduNhoVDuhBt5Ui5xZrKKVebSfvo
- TnYGvmwiEEejOuM6nEoT4q7e5KzthfAF0QvtzQ/mxtTNdYL0snT5a6hyOT8LUlHVnbEN
- QJ0A==
-X-Gm-Message-State: APjAAAWKbFSPMQLTouuLDFkTIdpf7D5//r3K0If4DIibG3zzqRimY4uj
- rFCV/gEpG/5I4DQ/SS19NAlFROGihUnt+0xduGGnZg==
-X-Google-Smtp-Source: APXvYqymnIsHnIptohD+ZvCPE/vzwdkhqMTohAuXSeeplJGZYPhUDn5vCS9XnIBXws7SNfPGmO24LuOyutztcv2tv38=
-X-Received: by 2002:a2e:249:: with SMTP id 70mr60782672ljc.178.1559030921424; 
- Tue, 28 May 2019 01:08:41 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=xDOcfUm0hx1+moO7XUT4Qyuo28lq60TTV8oVJkJSDf8=;
+ b=ccNYfMUNK/DEMxPP10MaWWLMauilUpsCf70i8tgoPk4OOYbPE2ovmYjnD0sbYCZaXb
+ nNVgwuEskc23QJoTOPCgI7pIRpJ35DZgb5vUPtLB5BcRtWkbi3uBQf4tcxvycjOfSXBf
+ 04O99UZj5S6sW13iSSPkXmdbBA8Di6XisknJPrUWZcFC3uLhfEqF88+WGpAv49iLzu83
+ OEa7ubObTzithYXIQ1/k3fKnD+YOuplvAfe519VEkztdj+zt4Fmv/D90OZxw2YVcawJz
+ xz99/AJi/E1HNIRdm6GjEAKaLQZHmnKXzaSW0KWIC/jdnWbcnhMUHVAE4s79tmVtnpdG
+ sXAQ==
+X-Gm-Message-State: APjAAAUOVsbbzfl019a9RjTDnyTH7weQR2OzfFZufj5HyKO/tDfMDNC/
+ lExqA6d3283JuICRqs652a4Pdg==
+X-Google-Smtp-Source: APXvYqzfmlI/oHiU+Uq4sz7SDPAZyh1TsYqXiHyhgextGozcdW+UWA5iJ+nmKdMmrLAMcPrhVYv2GA==
+X-Received: by 2002:ac8:1bec:: with SMTP id m41mr98723878qtk.272.1559030944933; 
+ Tue, 28 May 2019 01:09:04 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li483-211.members.linode.com.
+ [50.116.44.211])
+ by smtp.gmail.com with ESMTPSA id f67sm5267299qtb.68.2019.05.28.01.08.58
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 28 May 2019 01:09:03 -0700 (PDT)
+Date: Tue, 28 May 2019 16:08:53 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v4 00/30] coresight: Support for ACPI bindings
+Message-ID: <20190528080853.GB5753@leoy-ThinkPad-X240s>
+References: <1558521304-27469-1-git-send-email-suzuki.poulose@arm.com>
+ <20190528051924.GA19112@leoy-ThinkPad-X240s>
 MIME-Version: 1.0
-References: <1558104187-2842-1-git-send-email-ykaneko0929@gmail.com>
-In-Reply-To: <1558104187-2842-1-git-send-email-ykaneko0929@gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 28 May 2019 10:08:29 +0200
-Message-ID: <CAMuHMdUmmwmm2bx+g=G-py5FiQ5Ynrmxr262j61P5=y5GTA6OQ@mail.gmail.com>
-Subject: Re: [PATCH/RFT] arm: dts: renesas: r7s9210-rza2mevb: sort nodes of
- rza2mevb board
-To: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190528051924.GA19112@leoy-ThinkPad-X240s>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_010843_566717_A917E266 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190528_010906_867570_8D134B88 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.195 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.195 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:72e listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,44 +99,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kaneko-san,
+Hi Suzuki, Mathieu,
 
-On Fri, May 17, 2019 at 4:43 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
-> This patch sorts the nodes of arch/arm/boot/dts/r7s9210-rza2mevb.dts.
->
-> * Sort subnodes of root ("/") node alphabetically
-> * Sort following top-level nodes alphabetically
-> * Sort subnodes of pinctrl alphabetically
->
-> Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+On Tue, May 28, 2019 at 01:19:24PM +0800, Leo Yan wrote:
 
-Thanks for your patch!
+[...]
 
-> This patch is based on the devel branch of Simon Horman's renesas tree.
+> After I applied this patch set, I found all device names under
+> '/sys/bus/event_source/devices/cs_etm/sinks/' have been changed as
+> below on my DB410c board:
+> # ls /sys/bus/event_source/devices/cs_etm/sinks/
+> tmc_etf0  tmc_etr0  tpiu0
+> 
+> This leads to below command failure when open PMU device:
+> # perf record -e cs_etm/@826000.etr/ --per-thread uname
+> failed to set sink "826000.etr" on event cs_etm/@826000.etr/ with 2 (No such file or directory)
+> 
+> I must use below command so that perf can match string with the
+> device name under '/sys/bus/event_source/devices/cs_etm/sinks/':
+> # perf record -e cs_etm/@tmc_etr0/ --per-thread uname
+> 
+> Seems to me, this is an unexpected change and when I worked on the
+> patch set v2, IIRC that version still can use '826000.etr' to open PMU
+> device.
+> 
+> Please help confirm for this.  Thanks!
 
-This looks good to me, but in the mean time renesas-devel has progressed.
-Can you please respin?
+Finally, this is narrowed down to the patch 09/30 'coresight: Use
+coresight device names for sinks in PMU attribute', so this is
+delibrately to change to use new name format for perf command;
+if so, maybe also update the documentation to reflect this change?
 
-Thanks!
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Thanks,
+Leo Yan
 
 _______________________________________________
 linux-arm-kernel mailing list
