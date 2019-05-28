@@ -2,57 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D420B2C4AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:43:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F6A72C4B8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:48:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yh/MCBLO7NAAYuKLNyajCz5uOT/VKYKBf9nbluPm5VI=; b=Yxvycu+2Mi4PIwvU98f7eAOsy
-	qxNzH2xB1eZSOZnCLDZFJlWyVTVyAbHNE8NlDQBMScpFaA97Cdc69x6ik9nVnIb+mSQz+angrPO40
-	pC/ADAH+XYC1oP8ArzSSfeR+1TqSd2Jr9+ZuyhQCvJDDpXanqo2O6UZ+Znps/nalg9bO9gXUnpPXl
-	08NLIcMTPH5UluJ0oJicugKLf4q0hik0kNFlYZHtJtzAAKCej85t0bNQrJrEWDfKFiC2EsCOkMHR1
-	19yGmM2yHYaSMHsMlYKoDkFKuZOoqHfO1zzoD5zbxfh4FExudUWDGwoyqZ9ZO48hdfIuhbEpn9opG
-	68s+DAH3A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Kytu5QReL6FohJ3Nttg9WMY3MhJRiiF0iDWga2hIaj4=; b=GAA
+	dqw1GiYIya4JoaFdSO7VbqQRg7GuAc6/bViGp9lowLTcdRpxZ0uC+LuOR1mJe+X0+pQhn9odeuo6L
+	KcOO8+5eBdjsZod3zMttybgT3J6Qdz3lE67/L7b0TlVIuDvlyk/lpg+w57DLzyaN9gsemruBlfT0h
+	UjA/OLMjWXek7mebsfndKqAKmZ26W6cvp9xRBxZ44rDABWP4KEeJlVRh3fSqg6rgBvWDJ6wdgf/P/
+	+2aoNhoj9Gd68nw/jLz4abVvKP1C2DNwy3L0wGiDlF9Mquq+rt5dh6wqbjJhJk10Ba1at6eRisIRd
+	SZ680qKq0/pLKaDpODBS2c3COLXhk6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVZZl-0001K4-Ia; Tue, 28 May 2019 10:43:25 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVZZd-0001Iy-JX; Tue, 28 May 2019 10:43:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18D7A341;
- Tue, 28 May 2019 03:43:15 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 652ED3F59C;
- Tue, 28 May 2019 03:43:13 -0700 (PDT)
-Subject: Re: [PATCH] arm64: mm: make CONFIG_ZONE_DMA32 configurable
-To: Miles Chen <miles.chen@mediatek.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>
-References: <1558973315-19655-1-git-send-email-miles.chen@mediatek.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <814b9bd0-38de-4b8d-92b3-d663931d90bf@arm.com>
-Date: Tue, 28 May 2019 11:43:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <1558973315-19655-1-git-send-email-miles.chen@mediatek.com>
-Content-Language: en-GB
+	id 1hVZeP-0003Pr-64; Tue, 28 May 2019 10:48:13 +0000
+Received: from forward102p.mail.yandex.net ([77.88.28.102])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVZeG-0003Is-6j
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:48:06 +0000
+Received: from mxback12j.mail.yandex.net (mxback12j.mail.yandex.net
+ [IPv6:2a02:6b8:0:1619::87])
+ by forward102p.mail.yandex.net (Yandex) with ESMTP id 880021D40BB7;
+ Tue, 28 May 2019 13:47:56 +0300 (MSK)
+Received: from smtp4p.mail.yandex.net (smtp4p.mail.yandex.net
+ [2a02:6b8:0:1402::15:6])
+ by mxback12j.mail.yandex.net (nwsmtp/Yandex) with ESMTP id FY1s6RDynA-ls9Gkqrn;
+ Tue, 28 May 2019 13:47:56 +0300
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=emlid.com; s=mail;
+ t=1559040476; bh=Is/MIvi4jfDkUP+QCZKxpOOi4A6PloqEim41KKUSFQI=;
+ h=Subject:To:From:Message-Id:Cc:Date;
+ b=mk+kjWb0EdrqLncti5Yr4SSG1jWO9VAvGH5iMQZMPrtZ+uI2MwlatQNG6uTOVwWW2
+ p8XgkQy73ogqo768svZG8nEtCb90QcAUt2a4Xod2pz/QXuHnb8evEgpy5C2TPEvfdf
+ cEjPSQkeyKUEVj8/9nT0hk05qczAw1hhHeXtfiIo=
+Authentication-Results: mxback12j.mail.yandex.net;
+ dkim=pass header.i=@emlid.com
+Received: by smtp4p.mail.yandex.net (nwsmtp/Yandex) with ESMTPSA id
+ yGoKdH2rqr-lqmSh4ee; Tue, 28 May 2019 13:47:53 +0300
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (Client certificate not present)
+From: Georgii Staroselskii <georgii.staroselskii@emlid.com>
+To: lgirdwood@gmail.com, broonie@kernel.org, perex@perex.cz, tiwai@suse.com,
+ maxime.ripard@bootlin.com, wens@csie.org, dannym@scratchpost.org
+Subject: [PATCH v2] ASoC: sun4i-codec: fix first delay on Speaker
+Date: Tue, 28 May 2019 13:47:39 +0300
+Message-Id: <1559040459-16488-1-git-send-email-georgii.staroselskii@emlid.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_034317_649848_FAE95E79 
-X-CRM114-Status: GOOD (  24.08  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190528_034804_493264_56584046 
+X-CRM114-Status: GOOD (  10.45  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [77.88.28.102 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,74 +80,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, wsd_upstream@mediatek.com
+Cc: georgii.staroselskii@emlid.com, alsa-devel@alsa-project.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/05/2019 17:08, Miles Chen wrote:
-> This change makes CONFIG_ZONE_DMA32 defuly y and allows users
-> to overwrite it.
-> 
-> For the SoCs that do not need CONFIG_ZONE_DMA32, this is the
-> first step to manage all available memory by a single
-> zone(normal zone) to reduce the overhead of multiple zones.
-> 
-> The change also fixes a build error when CONFIG_NUMA=y and
-> CONFIG_ZONE_DMA32=n.
-> 
-> arch/arm64/mm/init.c:195:17: error: use of undeclared identifier 'ZONE_DMA32'
->                  max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
-> 
-> Signed-off-by: Miles Chen <miles.chen@mediatek.com>
-> ---
->   arch/arm64/Kconfig   | 3 ++-
->   arch/arm64/mm/init.c | 2 ++
->   2 files changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 76f6e4765f49..9d20a736d1d1 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -260,7 +260,8 @@ config GENERIC_CALIBRATE_DELAY
->   	def_bool y
->   
->   config ZONE_DMA32
-> -	def_bool y
-> +	bool "Support DMA32 zone"
+Allwinner DAC seems to have a delay in the Speaker audio routing. When
+playing a sound for the first time, the sound gets chopped. On a second
+play the sound is played correctly. After some time (~5s) the issue gets
+back.
 
-This probably warrants an "if EMBEDDED" or "if EXPERT", since turning it 
-off produces a kernel which won't work at all on certain systems (I've 
-played around with this before...)
+This commit seems to be fixing the same issue as bf14da7 but
+for another codepath.
 
-> +	default y
->   
->   config HAVE_GENERIC_GUP
->   	def_bool y
-> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> index d2adffb81b5d..96829ce21f99 100644
-> --- a/arch/arm64/mm/init.c
-> +++ b/arch/arm64/mm/init.c
-> @@ -191,8 +191,10 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
->   {
->   	unsigned long max_zone_pfns[MAX_NR_ZONES]  = {0};
->   
-> +#ifdef CONFIG_ZONE_DMA32
->   	if (IS_ENABLED(CONFIG_ZONE_DMA32))
+This is the DTS that was used to debug the problem.
 
-There's no point keeping the IS_ENABLED() check when it's entirely 
-redundant with the #ifdefs.
+&codec {
+        allwinner,pa-gpios = <&r_pio 0 11 GPIO_ACTIVE_HIGH>; /* PL11 */
+        allwinner,audio-routing =
+                "Speaker", "LINEOUT";
 
-Robin.
+        status = "okay";
+}
 
->   		max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
-> +#endif
->   	max_zone_pfns[ZONE_NORMAL] = max;
->   
->   	free_area_init_nodes(max_zone_pfns);
-> 
+Signed-off-by: Georgii Staroselskii <georgii.staroselskii@emlid.com>
+---
+ sound/soc/sunxi/sun4i-codec.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/sound/soc/sunxi/sun4i-codec.c b/sound/soc/sunxi/sun4i-codec.c
+index f2deffe..9e1f00e 100644
+--- a/sound/soc/sunxi/sun4i-codec.c
++++ b/sound/soc/sunxi/sun4i-codec.c
+@@ -1320,6 +1320,15 @@ static int sun4i_codec_spk_event(struct snd_soc_dapm_widget *w,
+ 	gpiod_set_value_cansleep(scodec->gpio_pa,
+ 				 !!SND_SOC_DAPM_EVENT_ON(event));
+ 
++	if (SND_SOC_DAPM_EVENT_ON(event)) {
++		/*
++		 * Need a delay to wait for DAC to push the data. 700ms seems
++		 * to be the best compromise not to feel this delay while
++		 * playing a sound.
++		 */
++		msleep(700);
++	}
++
+ 	return 0;
+ }
+ 
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
