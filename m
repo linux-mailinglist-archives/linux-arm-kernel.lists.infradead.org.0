@@ -2,84 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE9872D1ED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 01:03:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68B662D26C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 01:34:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zOm+v9Dj8eX5nxUs38ZzN6XnZho31ydwYmHKCfNBoWI=; b=soEOaUBJRo3ammI83IAANeuPwH
-	NbqwBuAIgLYCMG6kDiUwLrKRVfLsIoo0lCnVfCE0KCQluwIkCjAhkeJUqp8YTwWXlulb8udSpG54o
-	7UYdS51WKjqKZPa1eypkbPUN9lIYpJsmjwUsSB7U3kqdies4k/pLWJVBm9qzsobE0QgK390EZUoTD
-	05nYG6mrhoQKzMTqXVfgwHqoIRQn3CxOZ4lz9wRQ0LqkgHpuEdp2yrVoMuc2TpOyWJ2VOC4t9rlYm
-	BVTMgV0443mDmKavyP5OD4EHVHbfFwfCOrnPWZu7C8PFVQllS+jN7QHjvQX+SVHcWoJYsRhvRLDkf
-	gbsJIIrg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rxzn5moxCCJIYBm/o3G/C2YButxAcWenzHA53hvViGE=; b=CxfKFBrelp+Dtr
+	lWnMsyvYFbaEVniFSx0pKk4oto3CXBK5Vbn/ndnGyc66GoDhUIfLYTP8Ay0MOzbNQXUYQVTih8cwF
+	oVQZl/BAZWByL1uoVmr6/e6xumeff8wRabBnlEgjAXk6fZlzWzRlsZqfKv8PKjBQnZdatz8C6FOTU
+	iouYEYKELS6iIUxJ2x+kNabc4/8yX/rn4bncp5/+Eq7V1ul/Tjl0xzoyQiREHg4A+DgANheuh5jUk
+	4JVooL3aLP87IYDvHihtZjWsMxWQSS8h2J2cmVH2W2Mpp66p0GloPrhSkHrFM7oNl3L/yx3YSKLZN
+	Lm4uc3FAyEJNAlDk5P7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVl86-0002Gv-UI; Tue, 28 May 2019 23:03:38 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hVlbT-0002V9-E8; Tue, 28 May 2019 23:33:59 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVl6r-0000n3-Ax
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 23:02:23 +0000
-Received: by mail-pf1-x442.google.com with SMTP id n19so267254pfa.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 16:02:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=JrcPDuAFrT0kBFAkL3W3QNhPSv5oCk1/oSUkr2l2aQg=;
- b=RpbbByeIQSuxpCpW000iv9NexBvHSPXVbUWRIQdw2/m8q/ohtNGBYflUZgy9ZKltGA
- aJSEwHEHHHgjoysC5gacLMJuTuRqIM3kZZFLq8UaXX9DYIxIUygYz7nmd4G6/WE5YADe
- ylYnDLrhjaUSft+KuqT8j5xq24UcbqpVnSzI4aIHDqs6IJ5RGp52k+b/+riPV03IWFB2
- 2TjW89G4Io95py93GZie6KCOhZEQRE4NpbOIkq4qR29uYmlQYE77HDCbnijLTX5pFBU8
- rrBmscbnXEhYI03D8sLzy3gNo9DGooJcoCVB0Z0NuuT5CeKBdhLI6TPLnRew3v730qPH
- QenA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=JrcPDuAFrT0kBFAkL3W3QNhPSv5oCk1/oSUkr2l2aQg=;
- b=JCZ83wluXUW8+YcsAb+dTBi2BgmtzeQ6b9wzniziyd9jUPsgz+IXyNoYW+Kp45TO2s
- CXW+vac08ZO9r4HGd2VdT6/VG7ve3iWNp7Jjrtw6DXyUO6u9AvXNxoHkpmmcAODD0PQt
- tuBPVJiNu0EESvTK+I695QLsW5iDFNZQMbHPkGOf9GH4QPV4Oo2qnf7Yc6KA4CpgQJ5Q
- veWbB5H9snsFB1MvGsP7Ec/lf3EAAvy/V2B8kTjp5DkdyJxtoKRsWjsYeLD6yTSLXi22
- LixrrTMh00hwf7cBQtexAXuJw4lGFSqdcRiOfRBCJX+McMGQG3G9tbiIvAZHaUOWvie0
- 1LBg==
-X-Gm-Message-State: APjAAAX7ZWChMMQDsWyT+P7AMUYfsNLWpgPbHEGhyGjgBzOsyFw9ZwmA
- Ua4a4LNKNBKnGP26R13BseFjrmS2
-X-Google-Smtp-Source: APXvYqzmyQ4N+ykhgfKclIyz83roWdW3COf/TLcBCRdQQyOr7Y0HBhdCu30wnl7INN8Tcu0LC9OpkA==
-X-Received: by 2002:a63:2ad2:: with SMTP id
- q201mr131357493pgq.94.1559084539511; 
- Tue, 28 May 2019 16:02:19 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id j13sm14369573pfh.13.2019.05.28.16.02.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 May 2019 16:02:18 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 7/7] ARM: dts: NSP: Fix the bulk of W=1 DTC warnings
-Date: Tue, 28 May 2019 16:01:34 -0700
-Message-Id: <20190528230134.27007-8-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190528230134.27007-1-f.fainelli@gmail.com>
-References: <20190528230134.27007-1-f.fainelli@gmail.com>
+ id 1hVlbL-0002UN-9S
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 23:33:53 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4SNT0LH119660;
+ Tue, 28 May 2019 23:33:26 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=message-id : subject
+ : from : to : cc : date : in-reply-to : references : content-type :
+ mime-version : content-transfer-encoding; s=corp-2018-07-02;
+ bh=qZEaRDIPmwP5TWUCR9S3u/yLXWO2OSFxoldkS0AmjG0=;
+ b=tXXK5WkvA3VpUTlG51P2q9LGfJkxovSGvJIwhPF0NNiu+pmrRrs643ObtsLlzxRZv9sL
+ xGi67b35C30eA0gpzgCd7F8UFJTakd6EXWlodKDeKJ60hlPISFox2XuqHR9cIA7dhNTN
+ Q5Lw2qFPToynBCudzAjqo23xQbAWky82hD/SJG6b8yHxFH/FmpNvWlBPdvbxfUAY8M+n
+ Vx6af6q6yS6VUR4iO8Jx5PZrsb+QteyJjDVK43wT0JbTMcEcAMAf5nK5JLidAe2pkiIH
+ EDCG69b49G78RsJVwupKHxQhnxG73NvIMsSpzN+lJa9ewDtd9ObQ1kGCJ+pwcgxn6TKn sg== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2120.oracle.com with ESMTP id 2spxbq6a0j-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 28 May 2019 23:33:26 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4SNWSwv154312;
+ Tue, 28 May 2019 23:33:26 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3020.oracle.com with ESMTP id 2sqh73cyk2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 28 May 2019 23:33:25 +0000
+Received: from abhmp0007.oracle.com (abhmp0007.oracle.com [141.146.116.13])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x4SNXMjM008798;
+ Tue, 28 May 2019 23:33:23 GMT
+Received: from dhcp-10-65-132-79.vpn.oracle.com (/10.65.132.79)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 28 May 2019 16:33:22 -0700
+Message-ID: <11193998209cc6ff34e7d704f081206b8787b174.camel@oracle.com>
+Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
+ syscalls
+From: Khalid Aziz <khalid.aziz@oracle.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Andrew Murray
+ <andrew.murray@arm.com>
+Date: Tue, 28 May 2019 17:33:04 -0600
+In-Reply-To: <20190528154057.GD32006@arrakis.emea.arm.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
+ <20190527143719.GA59948@MBP.local>
+ <20190528145411.GA709@e119886-lin.cambridge.arm.com>
+ <20190528154057.GD32006@arrakis.emea.arm.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9271
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=4
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1905280148
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9271
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=4 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1905280148
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_160221_471644_A8A4C84B 
-X-CRM114-Status: GOOD (  15.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190528_163351_422308_01593CE4 
+X-CRM114-Status: GOOD (  39.04  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -87,6 +102,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,184 +116,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM IPROC ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>, Gregory Fong <gregory.0xf0@gmail.com>,
- Hauke Mehrtens <hauke@hauke-m.de>, Brian Norris <computersforpeace@gmail.com>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Lee Smith <Lee.Smith@arm.com>, linux-kselftest@vger.kernel.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix the bulk of the unit_address_vs_reg warnings and unnecessary
-\#address-cells/#size-cells without "ranges" or child "reg" property
+On Tue, 2019-05-28 at 16:40 +0100, Catalin Marinas wrote:
+> On Tue, May 28, 2019 at 03:54:11PM +0100, Andrew Murray wrote:
+> > On Mon, May 27, 2019 at 03:37:20PM +0100, Catalin Marinas wrote:
+> > > On Mon, May 06, 2019 at 06:30:51PM +0200, Andrey Konovalov wrote:
+> > > > This patch is a part of a series that extends arm64 kernel ABI
+> > > > to allow to
+> > > > pass tagged user pointers (with the top byte set to something
+> > > > else other
+> > > > than 0x00) as syscall arguments.
+> > > > 
+> > > > This patch allows tagged pointers to be passed to the following
+> > > > memory
+> > > > syscalls: brk, get_mempolicy, madvise, mbind, mincore, mlock,
+> > > > mlock2,
+> > > > mmap, mmap_pgoff, mprotect, mremap, msync, munlock, munmap,
+> > > > remap_file_pages, shmat and shmdt.
+> > > > 
+> > > > This is done by untagging pointers passed to these syscalls in
+> > > > the
+> > > > prologues of their handlers.
+> > > > 
+> > > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> > > 
+> > > Actually, I don't think any of these wrappers get called (have
+> > > you
+> > > tested this patch?). Following commit 4378a7d4be30 ("arm64:
+> > > implement
+> > > syscall wrappers"), I think we have other macro names for
+> > > overriding the
+> > > sys_* ones.
+> > 
+> > What is the value in adding these wrappers?
+> 
+> Not much value, initially proposed just to keep the core changes
+> small.
+> I'm fine with moving them back in the generic code (but see below).
+> 
+> I think another aspect is how we define the ABI. Is allowing tags to
+> mlock() for example something specific to arm64 or would sparc ADI
+> need
+> the same? In the absence of other architectures defining such ABI, my
+> preference would be to keep the wrappers in the arch code.
+> 
+> Assuming sparc won't implement untagged_addr(), we can place the
+> macros
+> back in the generic code but, as per the review here, we need to be
+> more
+> restrictive on where we allow tagged addresses. For example, if
+> mmap()
+> gets a tagged address with MAP_FIXED, is it expected to return the
+> tag?
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- arch/arm/boot/dts/bcm-nsp.dtsi     | 9 +++------
- arch/arm/boot/dts/bcm958522er.dts  | 2 +-
- arch/arm/boot/dts/bcm958525er.dts  | 2 +-
- arch/arm/boot/dts/bcm958525xmc.dts | 2 +-
- arch/arm/boot/dts/bcm958622hr.dts  | 2 +-
- arch/arm/boot/dts/bcm958623hr.dts  | 2 +-
- arch/arm/boot/dts/bcm958625hr.dts  | 2 +-
- arch/arm/boot/dts/bcm958625k.dts   | 2 +-
- arch/arm/boot/dts/bcm988312hr.dts  | 2 +-
- 9 files changed, 11 insertions(+), 14 deletions(-)
+I would recommend against any ABI differences between ARM64 MTE/TBI and
+sparc ADI unless it simply can not be helped. My understanding of
+MTE/TBI is limited, so I will explain how sparc ADI works. On sparc, a
+tagged address has no meaning until following steps happen:
 
-diff --git a/arch/arm/boot/dts/bcm-nsp.dtsi b/arch/arm/boot/dts/bcm-nsp.dtsi
-index 6925b30c2253..da6d70f09ef1 100644
---- a/arch/arm/boot/dts/bcm-nsp.dtsi
-+++ b/arch/arm/boot/dts/bcm-nsp.dtsi
-@@ -77,7 +77,7 @@
- 		interrupt-affinity = <&cpu0>, <&cpu1>;
- 	};
- 
--	mpcore {
-+	mpcore@19000000 {
- 		compatible = "simple-bus";
- 		ranges = <0x00000000 0x19000000 0x00023000>;
- 		#address-cells = <1>;
-@@ -122,7 +122,7 @@
- 			      <0x20100 0x100>;
- 		};
- 
--		L2: l2-cache {
-+		L2: l2-cache@22000 {
- 			compatible = "arm,pl310-cache";
- 			reg = <0x22000 0x1000>;
- 			cache-unified;
-@@ -166,7 +166,7 @@
- 		};
- 	};
- 
--	axi {
-+	axi@18000000 {
- 		compatible = "simple-bus";
- 		ranges = <0x00000000 0x18000000 0x0011c40c>;
- 		#address-cells = <1>;
-@@ -415,9 +415,6 @@
- 					  "imp_sleep_timer_p5",
- 					  "imp_sleep_timer_p7",
- 					  "imp_sleep_timer_p8";
--			#address-cells = <1>;
--			#size-cells = <0>;
--
- 			status = "disabled";
- 
- 			/* ports are defined in board DTS */
-diff --git a/arch/arm/boot/dts/bcm958522er.dts b/arch/arm/boot/dts/bcm958522er.dts
-index 21479b4ce823..8c388eb8a08f 100644
---- a/arch/arm/boot/dts/bcm958522er.dts
-+++ b/arch/arm/boot/dts/bcm958522er.dts
-@@ -43,7 +43,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x80000000>;
- 	};
-diff --git a/arch/arm/boot/dts/bcm958525er.dts b/arch/arm/boot/dts/bcm958525er.dts
-index cda3d790965b..c339771bb22e 100644
---- a/arch/arm/boot/dts/bcm958525er.dts
-+++ b/arch/arm/boot/dts/bcm958525er.dts
-@@ -43,7 +43,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x80000000>;
- 	};
-diff --git a/arch/arm/boot/dts/bcm958525xmc.dts b/arch/arm/boot/dts/bcm958525xmc.dts
-index f86649812b59..1c72ec8288de 100644
---- a/arch/arm/boot/dts/bcm958525xmc.dts
-+++ b/arch/arm/boot/dts/bcm958525xmc.dts
-@@ -43,7 +43,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x40000000>;
- 	};
-diff --git a/arch/arm/boot/dts/bcm958622hr.dts b/arch/arm/boot/dts/bcm958622hr.dts
-index df60602b054d..96a021cebd97 100644
---- a/arch/arm/boot/dts/bcm958622hr.dts
-+++ b/arch/arm/boot/dts/bcm958622hr.dts
-@@ -43,7 +43,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x80000000>;
- 	};
-diff --git a/arch/arm/boot/dts/bcm958623hr.dts b/arch/arm/boot/dts/bcm958623hr.dts
-index 3893e7af343a..b2c7f21d471e 100644
---- a/arch/arm/boot/dts/bcm958623hr.dts
-+++ b/arch/arm/boot/dts/bcm958623hr.dts
-@@ -43,7 +43,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x80000000>;
- 	};
-diff --git a/arch/arm/boot/dts/bcm958625hr.dts b/arch/arm/boot/dts/bcm958625hr.dts
-index cf226b02141f..a2c9de35ddfb 100644
---- a/arch/arm/boot/dts/bcm958625hr.dts
-+++ b/arch/arm/boot/dts/bcm958625hr.dts
-@@ -43,7 +43,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x20000000>;
- 	};
-diff --git a/arch/arm/boot/dts/bcm958625k.dts b/arch/arm/boot/dts/bcm958625k.dts
-index 10b3d512bb33..3fcca12d83c2 100644
---- a/arch/arm/boot/dts/bcm958625k.dts
-+++ b/arch/arm/boot/dts/bcm958625k.dts
-@@ -42,7 +42,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x80000000>;
- 	};
-diff --git a/arch/arm/boot/dts/bcm988312hr.dts b/arch/arm/boot/dts/bcm988312hr.dts
-index e39db14d805e..edd0f630e025 100644
---- a/arch/arm/boot/dts/bcm988312hr.dts
-+++ b/arch/arm/boot/dts/bcm988312hr.dts
-@@ -43,7 +43,7 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
--	memory {
-+	memory@60000000 {
- 		device_type = "memory";
- 		reg = <0x60000000 0x80000000>;
- 	};
--- 
-2.17.1
+1. set the user mode PSTATE.mcde bit. This acts as the master switch to
+enable ADI for a process.
+
+2. set TTE.mcd bit on TLB entries that match the address range ADI is
+being enabled on.
+
+3. Store version tag for the range of addresses userspace wants ADI
+enabled on using "stxa" instruction. These tags are stored in physical
+memory by the memory controller.
+
+Steps 1 and 2 are accomplished by userspace by calling mprotect() with
+PROT_ADI. Tags are set by storing tags in a loop, for example:
+
+        version = 10;
+        tmp_addr = shmaddr;
+        end = shmaddr + BUFFER_SIZE;
+        while (tmp_addr < end) {
+                asm volatile(
+                        "stxa %1, [%0]0x90\n\t"
+                        :
+                        : "r" (tmp_addr), "r" (version));
+                tmp_addr += adi_blksz;
+        }
+
+With these semantics, giving mmap() or shamat() a tagged address is
+meaningless since no tags have been stored at the addresses mmap() will
+allocate and one can not store tags before memory range has been
+allocated. If we choose to allow tagged addresses to come into mmap()
+and shmat(), sparc code can strip the tags unconditionally and that may
+help simplify ABI and/or code.
+
+> 
+> My thoughts on allowing tags (quick look):
+> 
+> brk - no
+> get_mempolicy - yes
+> madvise - yes
+> mbind - yes
+> mincore - yes
+> mlock, mlock2, munlock - yes
+> mmap - no (we may change this with MTE but not for TBI)
+> mmap_pgoff - not used on arm64
+> mprotect - yes
+> mremap - yes for old_address, no for new_address (on par with mmap)
+> msync - yes
+> munmap - probably no (mmap does not return tagged ptrs)
+> remap_file_pages - no (also deprecated syscall)
+> shmat, shmdt - shall we allow tagged addresses on shared memory?
+> 
+> The above is only about the TBI ABI while ignoring hardware MTE. For
+> the
+> latter, we may want to change the mmap() to allow pre-colouring on
+> page
+> fault which means that munmap()/mprotect() should also support tagged
+> pointers. Possibly mremap() as well but we need to decide whether it
+> should allow re-colouring the page (probably no, in which case
+> old_address and new_address should have the same tag). For some of
+> these
+> we'll end up with arm64 specific wrappers again, unless sparc ADI
+> adopts
+> exactly the same ABI restrictions.
+> 
+
+Let us keep any restrictions common across ARM64 and sparc. pre-
+coloring on sparc in the kernel would mean kernel will have to execute
+stxa instructions in a loop for each page being faulted in. Not that
+big a deal but doesn't that assume the entire page has the same tag
+which is dedcued from the upper bits of address? Shouldn't we support
+tags at the same granularity level as what the hardware supports? We
+went through this discussion for sparc and decision was to support tags
+at the same granularity as hardware. That means we can not deduce tags
+from the first address that pioints into an mmap or shmat region. Those
+tags and the upper bytes of colored address could change for every
+cacheline sized block (64-bytes on sparc M7). We can try to store tags
+for an entire region in vma but that is expensive, plus on sparc tags
+are set in userspace with no participation from kernel and now we need
+a way for userspace to communicate the tags to kernel. From sparc point
+of view, making kernel responsible for assigning tags to a page on page
+fault is full of pitfalls.
+
+Thanks,
+Khalid
 
 
 _______________________________________________
