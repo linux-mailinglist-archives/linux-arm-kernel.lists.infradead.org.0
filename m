@@ -2,58 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 733C42C97D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:05:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4763F2C992
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:07:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1G8bYIlvoOiXBDLH9o+YrLyzBVesvgeTK9f1QVstBbk=; b=n4SN4CD4mTmgCr97sFsZ2n/Pgg
-	P0oiaagDTVOTN6o0t4jQap/mj15rc0edpyvAiBYLn7Jhm49GFDaxymNRJxiN4R6wdkwhJHDNIazaw
-	GrcaTRBrrl3cf/HOixQAFvS4oJdrSGHb68HaBgGV6JJR/kaB4yWQRWtJb8nrE1HTWae1dpNUr1jKr
-	RMDSR0hmmObZL+EqzzQcYWtktz0MepVrveSHireE5QfN91YUoSuBjaqAKUZOrQWHWeQ7EXCDq/Dz+
-	QAxjtyaybm2grSfD5/tku7iTTS5sTI0NOxB9XBY5UMFMJ0J8fd9mR4yCVh9f6EnELgrYf6iZE2U/W
-	MJH+Rl6g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=zK4TWZkwpdiZBI6yX2oHVGolIe9BwFvuhGDrSTM0fD8=; b=I5o
+	kIewzarUxlmz9/VD8u1FX2clhimAD6Sy3TcgzSKS/3twhV9SWYxyO0bwARWlqt25tAWgevTJ8FQg0
+	8ElZ2ljwPKWYVSdxfWjUNhKYHXwqeShqnChhZI4aiCR8EBZYe9EL1l9rE2MlVmoiHsSqtGWYwuVog
+	YcAvMJIUu6ZuHX4/Zl2G+yBQ8+TadArxM3NSn5LOcIap2cyCfFnLNoiS9U6jou3nGQQyYNRabiwAp
+	GJjiU0j7HHUsQPzmSFYJxAbumhqhJA1jpY0BkneCFwAVc8Hojrh0kyGDZVpFAs4+xxpfOfRY0QU88
+	jZgNj2PBY9HeyvV7ewvRX5fJT4t7+1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVdf8-00060e-Vv; Tue, 28 May 2019 15:05:14 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVddt-0004eY-R9
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:04:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F24E169E;
- Tue, 28 May 2019 08:03:57 -0700 (PDT)
-Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
- [10.1.196.108])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0060D3F5AF;
- Tue, 28 May 2019 08:03:55 -0700 (PDT)
-From: Raphael Gault <raphael.gault@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [RFC 7/7] Documentation: arm64: Document PMU counters access from
- userspace
-Date: Tue, 28 May 2019 16:03:20 +0100
-Message-Id: <20190528150320.25953-8-raphael.gault@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190528150320.25953-1-raphael.gault@arm.com>
-References: <20190528150320.25953-1-raphael.gault@arm.com>
+	id 1hVdhL-0008Mq-PK; Tue, 28 May 2019 15:07:31 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVdgy-00085e-2n
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:07:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=lD31eoku3vRt5Ge3ug74axH4Ju4xcKQdmUJ79hzhrhs=; b=T2nwxDOISSVw
+ VK7Vuj3cAmMhLEtdcxylX6QuxmpngwN+NNgLiTH1jXBJSxbtS8pCWJYCA4ncsyfWMW3U8NFQK19rK
+ qJhfPkNqifqtWsEBwQPkG8zksc6qhn9ab4yDX2bs6XP/Hxae2htoHgiFf+gXHtAqTwIn34eGD2L9N
+ gEXa8=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hVdgm-0002ni-Mb; Tue, 28 May 2019 15:06:56 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id D09C7440046; Tue, 28 May 2019 16:06:55 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Applied "dt-bindings: sound: sun4i-i2s: Document that the RX channel
+ can be missing" to the asoc tree
+In-Reply-To: <9b280f9ce894e4e2ea7259db505cbe1a3e00120e.1558702660.git-series.maxime.ripard@bootlin.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190528150655.D09C7440046@finisterre.sirena.org.uk>
+Date: Tue, 28 May 2019 16:06:55 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_080358_100547_9AE5D313 
-X-CRM114-Status: GOOD (  15.62  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190528_080708_266838_CFC92E1E 
+X-CRM114-Status: GOOD (  16.22  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,74 +78,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- will.deacon@arm.com, acme@kernel.org, Raphael Gault <raphael.gault@arm.com>,
- mingo@redhat.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a documentation file to describe the access to the pmu hardware
-counters from userspace
+The patch
 
-Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+   dt-bindings: sound: sun4i-i2s: Document that the RX channel can be missing
+
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From eb5b12843b067d685a8d7a191b928b07934b2d02 Mon Sep 17 00:00:00 2001
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+Date: Fri, 24 May 2019 14:57:59 +0200
+Subject: [PATCH] dt-bindings: sound: sun4i-i2s: Document that the RX channel
+ can be missing
+
+The A83t and compatibles controllers don't have any reception capabilities
+on some instances of the controllers, even though it was never documented
+as such in the binding before.
+
+Therefore, on those controllers, we don't have the option to set an RX DMA
+channel.
+
+This was already done in the DTSI, but the binding itself was never
+updated. Let's add a special case in the schemas.
+
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- .../arm64/pmu_counter_user_access.txt         | 42 +++++++++++++++++++
- 1 file changed, 42 insertions(+)
- create mode 100644 Documentation/arm64/pmu_counter_user_access.txt
+ .../sound/allwinner,sun4i-a10-i2s.yaml        | 52 +++++++++++++++----
+ 1 file changed, 42 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/arm64/pmu_counter_user_access.txt b/Documentation/arm64/pmu_counter_user_access.txt
-new file mode 100644
-index 000000000000..6788b1107381
---- /dev/null
-+++ b/Documentation/arm64/pmu_counter_user_access.txt
-@@ -0,0 +1,42 @@
-+Access to PMU hardware counter from userspace
-+=============================================
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+index 85b2d6d84055..eb3992138eec 100644
+--- a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+@@ -41,19 +41,11 @@ properties:
+       - const: apb
+       - const: mod
+ 
+-  dmas:
+-    items:
+-      - description: RX DMA Channel
+-      - description: TX DMA Channel
+-
+-  dma-names:
+-    items:
+-      - const: rx
+-      - const: tx
+-
+   # Even though it only applies to subschemas under the conditionals,
+   # not listing them here will trigger a warning because of the
+   # additionalsProperties set to false.
++  dmas: true
++  dma-names: true
+   resets:
+     maxItems: 1
+ 
+@@ -72,6 +64,46 @@ allOf:
+       required:
+         - resets
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: allwinner,sun8i-a83t-i2s
 +
-+Overview
-+--------
-+The perf user-space tool relies on the PMU to monitor events. It offers an
-+abstraction layer over the hardware counters since the underlying
-+implementation is cpu-dependent.
-+Arm64 allows userspace tools to have access to the registers storing the
-+hardware counters' values directly.
++    then:
++      properties:
++        dmas:
++          minItems: 1
++          maxItems: 2
++          items:
++            - description: RX DMA Channel
++            - description: TX DMA Channel
++          description:
++            Some controllers cannot receive but can only transmit
++            data. In such a case, the RX DMA channel is to be omitted.
 +
-+This targets specifically self-monitoring tasks in order to reduce the overhead
-+by directly accessing the registers without having to go through the kernel.
++        dma-names:
++          oneOf:
++            - items:
++                - const: rx
++                - const: tx
++            - const: tx
++          description:
++            Some controllers cannot receive but can only transmit
++            data. In such a case, the RX name is to be omitted.
 +
-+How-to
-+------
-+The focus is set on the armv8 pmuv3 which makes sure that the access to the pmu
-+registers is enable and that the userspace have access to the relevent
-+information in order to use them.
++    else:
++      properties:
++        dmas:
++          items:
++            - description: RX DMA Channel
++            - description: TX DMA Channel
 +
-+In order to have access to the hardware counter it is necessary to open the event
-+using the perf tool interface: the sys_perf_event_open syscall returns a fd which
-+can subsequently be used with the mmap syscall in order to retrieve a page of memory
-+containing information about the event.
-+The PMU driver uses this page to expose to the user the hardware counter's
-+index. Using this index enables the user to access the PMU registers using the
-+`mrs` instruction.
++        dma-names:
++          items:
++            - const: rx
++            - const: tx
 +
-+Have a look `at tools/perf/arch/arm64/tests/user-events.c` for an example. It can be
-+run using the perf tool to check that the access to the registers works
-+correctly from userspace:
-+
-+./perf test -v
-+
-+About chained events
-+--------------------
-+When the user requests for an event to be counted on 64 bits, two hardware
-+counters are used and need to be combined to retrieve the correct value:
-+
-+val = read_counter(idx);
-+if ((event.attr.config1 & 0x1))
-+	val = (val << 32) | read_counter(idx - 1);
+ required:
+   - "#sound-dai-cells"
+   - compatible
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________
