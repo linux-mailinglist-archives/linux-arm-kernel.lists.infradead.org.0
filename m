@@ -2,64 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C9DC2CA91
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:47:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A242E2CA9F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 17:49:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:To:From:Subject:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gleR6O66RAeLSPaMk6dcWZXSPgquYKXABDatRVPWfHE=; b=BHmp/crDFIe5tZ
-	jJaGDLL34TQomj6zWLn0s/IVjtTm4w6dXelqCsvAb2+/xu+Exo+85o88rvxW4xYScSCgdP1ndDrzm
-	tihPRGODb3helPoXWH8CM3btJi91mPzLmOOkoUZh1RekEFOiZFcP0EZTouT2PeOSdp+HFgUqG9I4s
-	cF86ryEyVOB4Q4HV0wFk0uUbDsXHYP3g34TiSxwzSMw+oEu9QImj4f/YHY8BKhUhcmBTebHXZA4OT
-	vBWhPTwZGzq8DLddiPsxdkxVP/DG8gZJIKJq8uPdMjQUinOqBkh7J1ulqYlwmGo+961K+xEFoQWGh
-	tdhjXUMraatjJ13U7TaQ==;
+	List-Owner; bh=D/8VngZat7y7MWkbLYy3hUwHzRZ235Wv2pO10o0nx5I=; b=ocSK98lqrri7M4
+	9tYf0J8D5seEjUsxfgt9MOme32TFG1fWXFeVkS+oFVDUR5/8bu3pNxMfMtgLFreHj4maJjs452Sux
+	y93tuRb5lT67anTYHzzA1ybuCqLbEwtW7AnBE0NlbwSDmxAzhkAps59E3DcLrPQEhyWTJ+fwsTKsK
+	AqHMt+C+xwzVgtJ8aQByLHXkTpa33/s3iYyU5JCYjjk0ClSXMl5Lqjrb2g0jNMqglWQpDM+lkUvcE
+	kn8M2XtqjjvNQ39D6jqI4YkPoNzoZ11Y3yCpZ76jfVPAOV9fmzrY2pFIb1z9A6adeYPNhWdfAkeW7
+	XDc7v4mwSf62agbF9TOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVeJh-0006Yy-0a; Tue, 28 May 2019 15:47:09 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hVeLV-0006xN-PF; Tue, 28 May 2019 15:49:01 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVeJW-0006UL-FT; Tue, 28 May 2019 15:47:03 +0000
-X-UUID: deb7c255ae734f81abead77dacf636e3-20190528
-X-UUID: deb7c255ae734f81abead77dacf636e3-20190528
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <miles.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1967243365; Tue, 28 May 2019 07:46:48 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 28 May 2019 08:46:46 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 28 May 2019 23:46:45 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 28 May 2019 23:46:45 +0800
-Message-ID: <1559058405.26151.6.camel@mtkswgap22>
-Subject: Re: [PATCH] arm64: mm: make CONFIG_ZONE_DMA32 configurable
-From: Miles Chen <miles.chen@mediatek.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Date: Tue, 28 May 2019 23:46:45 +0800
-In-Reply-To: <814b9bd0-38de-4b8d-92b3-d663931d90bf@arm.com>
-References: <1558973315-19655-1-git-send-email-miles.chen@mediatek.com>
- <814b9bd0-38de-4b8d-92b3-d663931d90bf@arm.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hVeLN-0006wO-0Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 15:48:57 +0000
+Received: by mail-pl1-x642.google.com with SMTP id w7so8510499plz.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 08:48:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=message-id:mime-version:content-transfer-encoding:in-reply-to
+ :references:subject:from:cc:to:user-agent:date;
+ bh=2ksREyYQk7jUAmxjj6kKAaOfKzWITL2u9MpABedwwuE=;
+ b=mMTWIHmtpHW/kCfVi7P/cdu0cX26em5nK45r/zhOOcmUvWoS6ny5gdVUjARVj1qqNK
+ 4+4OFcJ5R228v+wDVhBxn94cnE44EABCId0UFIwIP5SDEzNR6bv9isp3KRyTQTY/A2As
+ GpyW8tWMC2sAGjRODK86Fqrn7XUvEVXYfts90=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:mime-version
+ :content-transfer-encoding:in-reply-to:references:subject:from:cc:to
+ :user-agent:date;
+ bh=2ksREyYQk7jUAmxjj6kKAaOfKzWITL2u9MpABedwwuE=;
+ b=PqWkx/heILbBpkHuoI27nshlvngk1Za/WKnWNryRt0YcEXpEWOT+lPVRRz4NnO6y1g
+ 3F2D+4DdNyvR+NRBohXHSVEQl6kHE7Yhyr32qbSdUmZOcLfD7TdSoNwsViBrGEvzBTAj
+ yN/NKjihdppKTrcvNhX0nZPe8UUlBLF+kSobF0sN5fyn+vPX367AYIFhDF433Q9EEL6k
+ bfobE8gUSo3ifBUf/Qu7GdlfFx77OubtYvC+fzym0KNlJImCZ+n6bNYKpePyKa6LHTRs
+ CRHV04T0z9zsEhXQh3QxyYoLCTr0xSoXho9QRrxZ49B3qTV27aPBxdAW0inRR+cUBH0v
+ GNrg==
+X-Gm-Message-State: APjAAAUqvrAHdjoxJPnVJTYveYd6JJK+RXOtX/JcLkQ06u2k3/xmlrWj
+ srN6RLQ+DDdAUkN43lw8XemAyw==
+X-Google-Smtp-Source: APXvYqw9Crknxqe7+aih5W//k5MSZWoQ/ebigbuqf3onineoNwCYYi5TbTQA2Zp87VlgT8TB+Rekmg==
+X-Received: by 2002:a17:902:2aa6:: with SMTP id
+ j35mr55060624plb.189.1559058530522; 
+ Tue, 28 May 2019 08:48:50 -0700 (PDT)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id 206sm14582069pfy.90.2019.05.28.08.48.49
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 28 May 2019 08:48:49 -0700 (PDT)
+Message-ID: <5ced5861.1c69fb81.956d8.5fb2@mx.google.com>
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190527043336.112854-1-hsinyi@chromium.org>
+References: <20190527043336.112854-1-hsinyi@chromium.org>
+Subject: Re: [PATCH v5 1/3] arm64: map FDT as RW for early_init_dt_scan()
+From: Stephen Boyd <swboyd@chromium.org>
+To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
+User-Agent: alot/0.8.1
+Date: Tue, 28 May 2019 08:48:48 -0700
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_084658_517928_301D839E 
-X-CRM114-Status: GOOD (  20.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190528_084853_138429_1475BA1E 
+X-CRM114-Status: GOOD (  10.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,85 +96,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, Yu Zhao <yuzhao@google.com>,
+ Kees Cook <keescook@chromium.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Jun Yao <yaojun8558363@gmail.com>, Miles Chen <miles.chen@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, James Morse <james.morse@arm.com>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
+ Frank Rowand <frowand.list@gmail.com>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-05-28 at 11:43 +0100, Robin Murphy wrote:
-> On 27/05/2019 17:08, Miles Chen wrote:
-> > This change makes CONFIG_ZONE_DMA32 defuly y and allows users
-> > to overwrite it.
-> > 
-> > For the SoCs that do not need CONFIG_ZONE_DMA32, this is the
-> > first step to manage all available memory by a single
-> > zone(normal zone) to reduce the overhead of multiple zones.
-> > 
-> > The change also fixes a build error when CONFIG_NUMA=y and
-> > CONFIG_ZONE_DMA32=n.
-> > 
-> > arch/arm64/mm/init.c:195:17: error: use of undeclared identifier 'ZONE_DMA32'
-> >                  max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
-> > 
-> > Signed-off-by: Miles Chen <miles.chen@mediatek.com>
-> > ---
-> >   arch/arm64/Kconfig   | 3 ++-
-> >   arch/arm64/mm/init.c | 2 ++
-> >   2 files changed, 4 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> > index 76f6e4765f49..9d20a736d1d1 100644
-> > --- a/arch/arm64/Kconfig
-> > +++ b/arch/arm64/Kconfig
-> > @@ -260,7 +260,8 @@ config GENERIC_CALIBRATE_DELAY
-> >   	def_bool y
-> >   
-> >   config ZONE_DMA32
-> > -	def_bool y
-> > +	bool "Support DMA32 zone"
+Quoting Hsin-Yi Wang (2019-05-26 21:33:34)
+> Currently in arm64, FDT is mapped to RO before it's passed to
+> early_init_dt_scan(). However, there might be some codes
+> (eg. commit "fdt: add support for rng-seed") that need to modify FDT
+> during init. Map FDT to RO after early fixups are done.
 > 
-> This probably warrants an "if EMBEDDED" or "if EXPERT", since turning it 
-> off produces a kernel which won't work at all on certain systems (I've 
-> played around with this before...)
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> ---
 
-Thanks for your comment. 
-I'll put a "if EXPERT"  here to avoid this case.
-
-> 
-> > +	default y
-> >   
-> >   config HAVE_GENERIC_GUP
-> >   	def_bool y
-> > diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> > index d2adffb81b5d..96829ce21f99 100644
-> > --- a/arch/arm64/mm/init.c
-> > +++ b/arch/arm64/mm/init.c
-> > @@ -191,8 +191,10 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
-> >   {
-> >   	unsigned long max_zone_pfns[MAX_NR_ZONES]  = {0};
-> >   
-> > +#ifdef CONFIG_ZONE_DMA32
-> >   	if (IS_ENABLED(CONFIG_ZONE_DMA32))
-> 
-> There's no point keeping the IS_ENABLED() check when it's entirely 
-> redundant with the #ifdefs.
-
-I'll remove the IS_ENABLE() code in next patch.
-
--Miles
-> 
-> Robin.
-> 
-> >   		max_zone_pfns[ZONE_DMA32] = PFN_DOWN(max_zone_dma_phys());
-> > +#endif
-> >   	max_zone_pfns[ZONE_NORMAL] = max;
-> >   
-> >   	free_area_init_nodes(max_zone_pfns);
-> > 
-
+Reviewed-by: Stephen Boyd <swboyd@chromium.org>
 
 
 _______________________________________________
