@@ -2,61 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A22C52C410
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:13:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1095C2C42A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 12:21:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wK6Li8GwJGNnzvAvjlef09QhgfD3OR2p/OKsEGSeLyY=; b=Mpt/gl0KSr4Oc5
-	tAidkmGXaR2jonV6Cyy8cMxoksID2vkQP4Vj+1jI1kp8a4CexQL/IxLhviF1ZlfUCP8xz7wzmd60r
-	CPO1kN3Bs7kUhje7TnXgZ+wO4MpMDMwp3bK5RAHlcVff4fXP3DENFiJCGZXMiZY8d8iSSbSSGApsq
-	lUiC7eQjbdwBpCirlDkHAo250hnI0Rtk4Rpy9qaw3WnOxy5llmKq8sW01YwUt2pcRqH3nkqSzmVvf
-	NWu0eLI66fjYFAcG4OI1cHDSnpPpZxN5zRAyOO0IoULSmYBjebmZUkARPQHjQIZshe0yiUeDlUBpd
-	0g4JfZW8lP8m5syU80Xw==;
+	List-Owner; bh=s65wlNvIDpC8pg/OjQp/+V1OO7SYocG5zVEqloMbUok=; b=rsyRvkx7qDr/9S
+	ujU2OCe3wu86VnB7vgRuQX+DGw/2TTCAC7sdUL/TrzXRZYc43TD4WwqIvJ0yooNxpW5j5USrohnrW
+	T/345iY9m8N+lxWtWQsbjt3u6/WdSbIHqeO9rrQwjrZ1jSDNkOoX97YGg+AOVh/LOcXCRSGjrMjaI
+	No9HPnWDzR2DZxSEtjG8ZILQ2tzSiP4reDrRV5xCKpGIYJKY6ANHXwnOVwEkHcocMgPKeF99qHCSF
+	ADX5q09SCkmKmZZTzLQrGdSH80luDCBdVQDNAxIfucMUgewzUKBJsdGm5fIF0cEIMZ531XGXkOQ6G
+	I++AaFbsB8PhQKQhhkWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVZ6I-0007cN-Ml; Tue, 28 May 2019 10:12:58 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1hVZEI-0002Nj-NA; Tue, 28 May 2019 10:21:14 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVZ6B-0007bp-Tp
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:12:53 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 28 May 2019 03:12:51 -0700
-X-ExtLoop1: 1
-Received: from lahna.fi.intel.com (HELO lahna) ([10.237.72.157])
- by fmsmga001.fm.intel.com with SMTP; 28 May 2019 03:12:47 -0700
-Received: by lahna (sSMTP sendmail emulation); Tue, 28 May 2019 13:12:46 +0300
-Date: Tue, 28 May 2019 13:12:46 +0300
-From: Mika Westerberg <mika.westerberg@linux.intel.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH v3 3/4] irqchip/exiu: implement ACPI support
-Message-ID: <20190528101246.GX2781@lahna.fi.intel.com>
-References: <20190527112720.2266-1-ard.biesheuvel@linaro.org>
- <20190527112720.2266-4-ard.biesheuvel@linaro.org>
+ id 1hVZEB-0002NO-SU
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 10:21:09 +0000
+Received: by mail-it1-x142.google.com with SMTP id m3so3407792itl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 03:21:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=95qgbzEm192Xpkh+n2cq8P2TlxzyG/CZ3sfwg/xCkQs=;
+ b=BGJhSfhJuaaEH7HiqZioLuzktiuC3wHVDZoBUaQwxHnMOjDVwRaBAMErO+SiiyVqsQ
+ Y/+/CMVHyMvRZPsdeaHR31vKG00931Ot6hDFfx3in+NnQWLJ8kK/W01zaUlccRbKiWbm
+ nXo6JCmfHnJWx5HJnRvzUFoCJZ8gPQAYg7CIe3LA7jCNidISuBPHRR9CAEahEvDcSQAP
+ JCN1ZYWVrBnNZfJyODG/vQ7QDeqv7yKiam035CN4P/lsnwoVm3pLroFHYGIYwunWHI4O
+ c9V03XSQUn+f404mtd3nz0PnGxZApXCbjZklRrIvvQR4AZ/F8n+F42ZvQMrSqNplHihx
+ hnYg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=95qgbzEm192Xpkh+n2cq8P2TlxzyG/CZ3sfwg/xCkQs=;
+ b=BlMxoNVMMI92G/p+K8kB+JJgHmji1mPbkxggg6NjuyUWRsw4GgIHQwH4r6iHnjNMcu
+ N0PTb+givI8N1heBs4u3+VumLrmf9CQE4XONHsUf7ofZY+GrfXQKmAWoDMxI/XiAcA7M
+ QwsTqsg+Oi3a7mIKmnwbhVSTPvIUz6p2OYdajsMxA/1qv38sOV1REgMlGaxA9xKaHHAq
+ vMflcjOH19xRujh50+wTqFRTlRrumf5qdxkSA15+DXUDLTel+wMnAFbuRqLGGShkM0UO
+ Rslv9iHErIa8f/NucWkRb8ZHxxPQFBq1zz0QugL5eWGutPzGzpipvyuAvJdOmQkJR0rz
+ ZHGw==
+X-Gm-Message-State: APjAAAWnayt7NcPUA05D/7EdFvbubZEreCRpYamAxzm6TMRQA8fbz5sv
+ 2WgTkvwTZWGIs95JVc1sxO01d1fyaioI32z44ogERQ==
+X-Google-Smtp-Source: APXvYqwSTjjuC7+XRBfp3KWkJ+qZNi3c8daU1VP82tS9htyhRcIxY9UlP4oqQzhuslJDoLh4MSzRS0wmTO46b+WAfHM=
+X-Received: by 2002:a24:d00e:: with SMTP id m14mr2299274itg.153.1559038866381; 
+ Tue, 28 May 2019 03:21:06 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190527112720.2266-4-ard.biesheuvel@linaro.org>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-User-Agent: Mutt/1.11.4 (2019-03-13)
+References: <20190527064413.21304-1-ard.biesheuvel@linaro.org>
+ <20190528101147.GB20809@fuggles.cambridge.arm.com>
+In-Reply-To: <20190528101147.GB20809@fuggles.cambridge.arm.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Tue, 28 May 2019 12:20:53 +0200
+Message-ID: <CAKv+Gu8q1ABorbhL7yBjdKP=xt0gkFn2-BSntifkbx8w=bE=bg@mail.gmail.com>
+Subject: Re: [PATCH] arm64/module: revert to unsigned interpretation of
+ ABS16/32 relocations
+To: Will Deacon <will.deacon@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_031251_971978_5F244D89 
-X-CRM114-Status: GOOD (  19.14  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190528_032107_946353_38E36525 
+X-CRM114-Status: GOOD (  28.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,121 +92,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Graeme Gregory <graeme.gregory@linaro.org>, linux-gpio@vger.kernel.org,
- Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
- Masahisa Kojima <masahisa.kojima@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ James Morse <james.morse@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 01:27:19PM +0200, Ard Biesheuvel wrote:
-> Expose the existing EXIU hierarchical irqchip domain code to permit
-> the interrupt controller to be used as the irqchip component of a
-> GPIO controller on ACPI systems, or as the target of ordinary
-> interrupt resources.
-> 
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> ---
->  drivers/irqchip/irq-sni-exiu.c | 76 +++++++++++++++++---
->  1 file changed, 68 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/irqchip/irq-sni-exiu.c b/drivers/irqchip/irq-sni-exiu.c
-> index fef7c2437dfb..30a323a2b332 100644
-> --- a/drivers/irqchip/irq-sni-exiu.c
-> +++ b/drivers/irqchip/irq-sni-exiu.c
-> @@ -20,6 +20,7 @@
->  #include <linux/of.h>
->  #include <linux/of_address.h>
->  #include <linux/of_irq.h>
-> +#include <linux/platform_device.h>
->  
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
->  
-> @@ -134,9 +135,13 @@ static int exiu_domain_translate(struct irq_domain *domain,
->  
->  		*hwirq = fwspec->param[1] - info->spi_base;
->  		*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
-> -		return 0;
-> +	} else {
-> +		if (fwspec->param_count != 2)
-> +			return -EINVAL;
-> +		*hwirq = fwspec->param[0];
-> +		*type = fwspec->param[2] & IRQ_TYPE_SENSE_MASK;
->  	}
-> -	return -EINVAL;
-> +	return 0;
->  }
->  
->  static int exiu_domain_alloc(struct irq_domain *dom, unsigned int virq,
-> @@ -147,16 +152,21 @@ static int exiu_domain_alloc(struct irq_domain *dom, unsigned int virq,
->  	struct exiu_irq_data *info = dom->host_data;
->  	irq_hw_number_t hwirq;
->  
-> -	if (fwspec->param_count != 3)
-> -		return -EINVAL;	/* Not GIC compliant */
-> -	if (fwspec->param[0] != GIC_SPI)
-> -		return -EINVAL;	/* No PPI should point to this domain */
-> +	parent_fwspec = *fwspec;
-> +	if (is_of_node(dom->parent->fwnode)) {
-> +		if (fwspec->param_count != 3)
-> +			return -EINVAL;	/* Not GIC compliant */
-> +		if (fwspec->param[0] != GIC_SPI)
-> +			return -EINVAL;	/* No PPI should point to this domain */
->  
-> +		hwirq = fwspec->param[1] - info->spi_base;
-> +	} else {
-> +		hwirq = fwspec->param[0];
-> +		parent_fwspec.param[0] = hwirq + info->spi_base + 32;
-> +	}
->  	WARN_ON(nr_irqs != 1);
-> -	hwirq = fwspec->param[1] - info->spi_base;
->  	irq_domain_set_hwirq_and_chip(dom, virq, hwirq, &exiu_irq_chip, info);
->  
-> -	parent_fwspec = *fwspec;
->  	parent_fwspec.fwnode = dom->parent->fwnode;
->  	return irq_domain_alloc_irqs_parent(dom, virq, nr_irqs, &parent_fwspec);
->  }
-> @@ -245,3 +255,53 @@ static int __init exiu_dt_init(struct device_node *node,
->  	return -ENOMEM;
->  }
->  IRQCHIP_DECLARE(exiu, "socionext,synquacer-exiu", exiu_dt_init);
-> +
-> +#ifdef CONFIG_ACPI
-> +static int exiu_acpi_probe(struct platform_device *pdev)
-> +{
-> +	struct irq_domain *domain;
-> +	struct exiu_irq_data *data;
-> +	struct resource *res;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	if (!res) {
-> +		dev_err(&pdev->dev, "failed to parse memory resource\n");
-> +		return -ENXIO;
-> +	}
-> +
-> +	data = exiu_init(dev_fwnode(&pdev->dev), res);
-> +	if (IS_ERR(data))
-> +		return PTR_ERR(data);
-> +
-> +	domain = acpi_irq_create_hierarchy(0, NUM_IRQS, dev_fwnode(&pdev->dev),
-> +					   &exiu_domain_ops, data);
-> +	if (!domain) {
-> +		dev_err(&pdev->dev, "failed to create IRQ domain\n");
-> +		goto out_unmap;
-> +	}
-> +
-> +	dev_info(&pdev->dev, "%d interrupts forwarded\n", NUM_IRQS);
+On Tue, 28 May 2019 at 12:11, Will Deacon <will.deacon@arm.com> wrote:
+>
+> On Mon, May 27, 2019 at 08:44:13AM +0200, Ard Biesheuvel wrote:
+> > Commit 1cf24a2cc3fd
+> >
+> >   ("arm64/module: deal with ambiguity in PRELxx relocation ranges")
+> >
+> > updated the overflow checking logic in the relocation handling code to
+> > ensure that PREL16/32 relocations don't overflow signed quantities.
+> >
+> > However, the same code path is used for absolute relocations, where the
+> > interpretation is the opposite: the only current use case for absolute
+> > relocations operating on non-native word size quantities is the CRC32
+> > handling in the CONFIG_MODVERSIONS code, and these CRCs are unsigned
+> > 32-bit quantities, which are now being rejected by the module loader
+> > if bit 31 happens to be set.
+> >
+> > So let's use different ranges for quanties subject to absolute vs.
+> > relative relocations:
+> > - ABS16/32 relocations should be in the range [0, Uxx_MAX)
+> > - PREL16/32 relocations should be in the range [Sxx_MIN, Sxx_MAX)
+> >
+> > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > ---
+> >  arch/arm64/kernel/module.c | 14 ++++++++------
+> >  1 file changed, 8 insertions(+), 6 deletions(-)
+> >
+> > diff --git a/arch/arm64/kernel/module.c b/arch/arm64/kernel/module.c
+> > index f32359cffb01..85fb63c1ba3a 100644
+> > --- a/arch/arm64/kernel/module.c
+> > +++ b/arch/arm64/kernel/module.c
+> > @@ -98,10 +98,10 @@ static int reloc_data(enum aarch64_reloc_op op, void *place, u64 val, int len)
+> >
+> >       /*
+> >        * The ELF psABI for AArch64 documents the 16-bit and 32-bit place
+> > -      * relative relocations as having a range of [-2^15, 2^16) or
+> > -      * [-2^31, 2^32), respectively. However, in order to be able to detect
+> > -      * overflows reliably, we have to choose whether we interpret such
+> > -      * quantities as signed or as unsigned, and stick with it.
+> > +      * relative and absolute relocations as having a range of [-2^15, 2^16)
+> > +      * or [-2^31, 2^32), respectively. However, in order to be able to
+> > +      * detect overflows reliably, we have to choose whether we interpret
+> > +      * such quantities as signed or as unsigned, and stick with it.
+> >        * The way we organize our address space requires a signed
+> >        * interpretation of 32-bit relative references, so let's use that
+> >        * for all R_AARCH64_PRELxx relocations. This means our upper
+> > @@ -111,12 +111,14 @@ static int reloc_data(enum aarch64_reloc_op op, void *place, u64 val, int len)
+> >       switch (len) {
+> >       case 16:
+> >               *(s16 *)place = sval;
+> > -             if (sval < S16_MIN || sval > S16_MAX)
+> > +             if ((op == RELOC_OP_ABS && (sval < 0 || sval > U16_MAX)) ||
+> > +                 (op == RELOC_OP_PREL && (sval < S16_MIN || sval > S16_MAX)))
+> >                       return -ERANGE;
+> >               break;
+> >       case 32:
+> >               *(s32 *)place = sval;
+> > -             if (sval < S32_MIN || sval > S32_MAX)
+> > +             if ((op == RELOC_OP_ABS && (sval < 0 || sval > U32_MAX)) ||
+> > +                 (op == RELOC_OP_PREL && (sval < S32_MIN || sval > S32_MAX)))
+> >                       return -ERANGE;
+> >               break;
+> >       case 64:
+>
+> Hmm. I worry that this isn't the last time we're going to be tweaking this,
+> so I'm wondering whether or not we should just revert 1cf24a2cc3fd instead.
+>
 
-Not sure how useful this message is for the end user. Maybe dev_dbg()
-instead.
+Both absolute and relative 32-bit references can really only be
+emitted using assembler code, since C code only uses the former, and
+only uses it to resolve symbol addresses not bare values.
 
-Regardless,
+ABS32 is only used by the CONFIG_MODVERSIONS code, and PREL32 is only
+used by the few data structures where we deliberately use relative
+references to get rid of the RELA entries associated with absolute
+references.
 
-Reviewed-by: Mika Westerberg <mika.westerberg@linux.intel.com>
+So I don't share your concern here, although I understand where it is
+coming from.
+
+*However*, not being able to detect overflow is *really* bad, so even
+if there is another tweak behind the horizon, this is still better
+than silent data corruption because your data reference is off by 4
+GB.
+
+> However, if you still want to pursue this, please can you restructure the
+> check so that we do:
+>
+>         if (op == RELOC_OP_PREL) {
+>                 /* Comment about deviation from ELF ABI */
+>                 if (signed overflow check)
+>                         return -ERANGE;
+>         } else if (unsigned overflow check) {
+>                 return -ERANGE;
+>         }
+>
+> i.e. drop the explicit check of ABS so that the default behaviour follows
+> the ELF spec?
+>
+
+My patch does not follow the ELF spec for either ABS16/32 or PREL16/32
+relocations. It chooses an unsigned interpretation for the former, and
+a signed one for the latter, and I think this is the only way to deal
+with this properly.
+
+This is why I updated the comment as well: we should apply a strict
+(but different) interpretation to both kinds of relocations, not just
+the relative ones.
 
 _______________________________________________
 linux-arm-kernel mailing list
