@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FCDB2CF89
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 21:33:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A43A2D046
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 22:30:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xxOlRD3w5jU5kXUa/zAwHF9Tzyhcw49mdBKNgj+OOAA=; b=cKuynCdRa+HweB
-	4OyPb+LlfL+B1uIf1HUi9BzdG/IJkZ0mh+IyI2O12Nt6G/mQGCVQUXS7NMpAtgoSFRySKotXc+puD
-	IlUHzWgMxqRuAL5hyVmoZVjfa92k9WdFsWjcwVCvcGgEP/S3OB/VRxHfonClslwLiEq4IkdUHklnr
-	zZr2cfMQgc+9Y37//B4vAReNOVHUxhWLNidTBWygP0v7qbxzo6UWwCEbSZhUKJYjynr+PL32AKOqZ
-	iXWAnYlyi9Oyf+5AEleDaTRdPhQxH0v5QwACCbEpPVuFhWSVZD4K8xAjuUArDxdJ3ULShPL608awD
-	vXijZz7899bmqiiM4svA==;
+	List-Owner; bh=e43yoRXtTKOxyn1DbAePdqnyUkFu7BE+aEgjI/WkfkA=; b=NO50ejI9+oV+Fa
+	Lm8Rpma35N/2q2JzFgA2/RQ0iMmH/OMpYJyQMmNN/c3gQ26i/SL/iQOIrTj0W9+GPZiDL/GNGfP2x
+	Blfc4VFQxKgyo+TXSx80F7ggII+A5AUvoVpff26bFjARcErei508j+EOj+/CW4sIwYI5brR6bof3h
+	bN7xeeV7Vi0/mCAybBdxHsB7Pg6LKfuxXPPy/vKtvkpvMr1OPZ8NIPcc5Ne819umc83v/8FXUvE27
+	lzcqdvQe5Ax3ru3jSqxgU02FAyjKxaPlcC1ihGWpwdtxvhMJDJpErHHhgRSca4c401tS6xrapWTJZ
+	NzN5FbVL/vQKj8lGtHWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVhqX-0006KX-73; Tue, 28 May 2019 19:33:17 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hVijO-0000PJ-Q6; Tue, 28 May 2019 20:29:58 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVhqP-0006Ju-TJ
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 19:33:11 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id k187so1024892vsk.12
+ id 1hVijF-0000Nv-PX
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 20:29:51 +0000
+Received: by mail-pf1-x443.google.com with SMTP id j2so8357pfe.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 12:33:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=a/4WAdDHD7o2J6jLaTa03Ods2jMwUYJoiUyhNBxjWQI=;
- b=dMMWYbArcJceM9L9LmUxOvLkkrX2JOFBhsd3cXHlbV62EkEx3ql6/xwnm6N5ua68wq
- lfkom4j6oFv/YNmvQUm8B1OQGZ2zulvaZOZ4Vb/2f9dLCgPmMB9Ugey3bU87fOc/WHEw
- p7Sw2zAKvnev37PmWp+aAzuUJUkQppWVldppFq2B2zoUI2yWw6WtGdGKVjULC+Dn/H6e
- d3sLokS7BkvYEDy3Hes7bzROVLsETM8bkQAKS2rty6owPH9VPSYb57J7qWuBL1cc+AVg
- V9jyGJ9CiMd+OVDQN8n0mjfPQP1ssYNAAjmKXpcP/+z1XJBMKFdd+vvMGuzqNeTQcjMe
- XoSA==
+ Tue, 28 May 2019 13:29:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=CH0uDuCm1IZlUutTSqd9yHCBwqxTh5kY/MOarp++qiU=;
+ b=Ba1Cm97vb6ARxJQgfFXGjdotGsHAP99t/791OfuTEFhQFlnonFvYATsLPtmM952cBb
+ ajhyIOeCIEH27PBz35HtzQmv3gJxOblUx4CDV+xaaHSLjF9wB9h5iRcgoBr1N3KZ0TQ7
+ DALG2D46yz9XpmIQQwMbvthZxrRnlJkstuZII=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=a/4WAdDHD7o2J6jLaTa03Ods2jMwUYJoiUyhNBxjWQI=;
- b=nDBLjuf1VR560U9TGOc0J4BjcaNncZGaLF9uyBBgb0X6Tmw15VlepugKqnK+HsZnwN
- oXe0r8AsQ/IxdgeYcGzazdT0IC18EHvCoBcPHPksU8kTGi+Wn8lNFTh5zG4qVyA4+PZD
- yOgqHSNK/xYwNs+EOV0PJ0Zs29xaoD8uD3nwUCQj29n5uaYlp6Kyfgg4opXmUoTy5Pzy
- hc3u7fduXh1B2Brr5rnTtykvLvpsDZYgP4DsNGs3JTYyMkIgCRxcohW2uZqg2pF661Tn
- SXdpnGaNbuiaarTp+DEeQgyPw+2D6ugvwiNvCjpYx5tkd4X8wD2jP9bGSxJXMbpLwbTw
- d9aA==
-X-Gm-Message-State: APjAAAX8lvCda/bEhmhdfPsN0+F0BRjPEueYCaGDyFg3t5OPWGWM86yg
- 9Py+6ryVmRwt6NGpC2rFuBSzUbAXbPZMEFt1Z31ZCA==
-X-Google-Smtp-Source: APXvYqwd813q3SqUy11sYCOolIowQZSdilqwamuHYez09q5jBp5bAunxVlKM4u8MuI3TDxKOUo/xgfSsPHni9ARExfo=
-X-Received: by 2002:a67:f485:: with SMTP id o5mr2970694vsn.165.1559071987467; 
- Tue, 28 May 2019 12:33:07 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CH0uDuCm1IZlUutTSqd9yHCBwqxTh5kY/MOarp++qiU=;
+ b=igw2eQ3rjqptEVa2Okjv/5P/s8U3zTDRvC+6A9lhbungdb6vodov7p8lNXzHCWmPSD
+ JZqb6ePvzMlwumOEyGgg45V+zBpgCqTFWXSRaP+hJjKDymoHd/OQ0vFPu7G2AFQjL1vt
+ nFSw4ArjG2PZallA8KQBfbTD6yHNYF6W0qyxr/xqp40yCoVEiq4dVWpo6XeRE2r4p470
+ 38DIQrlNC0ye5baFozC1YV/C4P4pBc0N38ptJQGh6NHCvSyLexkcTTOTrbo2rJ0SkBm/
+ IKed8fAwi96xXKWyvY+TiIzdEk+zBXMeL3eR7oJAUy4nQGNRciFzA7q/TEJTF+NzHaPq
+ LuOg==
+X-Gm-Message-State: APjAAAV9PS3Ndki9HxPtrreRhfCXoTh4mMz6L/tZUntAQXjxlPnxh+uU
+ i5ggS/+Rz5fEuJTUruKnGElwtQ==
+X-Google-Smtp-Source: APXvYqyJR8ErjR2+NyhyJOJUsta+0OAa1/KNcVcMUt+b3JS9GeD6tSPYwwARr6LFNFDtWBcPhMCA2w==
+X-Received: by 2002:a63:ff23:: with SMTP id
+ k35mr103694764pgi.139.1559075388740; 
+ Tue, 28 May 2019 13:29:48 -0700 (PDT)
+Received: from localhost ([2620:15c:202:1:75a:3f6e:21d:9374])
+ by smtp.gmail.com with ESMTPSA id f29sm23276944pfq.11.2019.05.28.13.29.47
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 28 May 2019 13:29:47 -0700 (PDT)
+Date: Tue, 28 May 2019 13:29:47 -0700
+From: Matthias Kaehlcke <mka@chromium.org>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH] ARM: dts: rockchip: Add pin names for rk3288-veyron jaq, 
+ mickey, speedy
+Message-ID: <20190528202947.GL40515@google.com>
+References: <20190524233309.45420-1-dianders@chromium.org>
 MIME-Version: 1.0
-References: <c6b8789d71ce1970be77387c066a262dca0a0dec.1558340089.git-series.maxime.ripard@bootlin.com>
- <CAPDyKFrs6f4_Xr=ATay_wDYNPa+-jdZvP4XSB55B-EFMAETN1Q@mail.gmail.com>
- <20190528172649.6mkdkscnu5d2rybi@flea>
-In-Reply-To: <20190528172649.6mkdkscnu5d2rybi@flea>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 28 May 2019 21:32:31 +0200
-Message-ID: <CAPDyKFrTroAOjEyT9GxQALC4UsiDg8739F9Qc216bDC=wgk2mg@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] dt-bindings: mmc: Add YAML schemas for the generic
- MMC options
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <20190524233309.45420-1-dianders@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_123310_015707_BE627C84 
-X-CRM114-Status: GOOD (  20.84  )
+X-CRM114-CacheID: sfid-20190528_132949_855462_1EFB33E8 
+X-CRM114-Status: GOOD (  16.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -82,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,86 +97,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Rob Herring <robh@kernel.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, briannorris@chromium.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, ryandcase@chromium.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 May 2019 at 19:26, Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Hi Ulf,
->
-> On Tue, May 28, 2019 at 10:40:16AM +0200, Ulf Hansson wrote:
-> > > +patternProperties:
-> > > +  "^.*@[0-9]+$":
-> > > +    properties:
-> > > +      reg:
-> > > +        items:
-> > > +          - minimum: 0
-> > > +            maximum: 7
-> > > +            description:
-> > > +              Must contain the SDIO function number of the function this
-> > > +              subnode describes. A value of 0 denotes the memory SD
-> > > +              function, values from 1 to 7 denote the SDIO functions.
-> > > +
-> > > +      broken-hpi:
-> > > +        $ref: /schemas/types.yaml#/definitions/flag
-> > > +        description:
-> > > +          Use this to indicate that the mmc-card has a broken hpi
-> > > +          implementation, and that hpi should not be used.
-> > > +
-> > > +    required:
-> > > +      - reg
-> > > +
-> >
-> > [...]
-> >
-> > > -Use of Function subnodes
-> > > -------------------------
-> > > -
-> > > -On embedded systems the cards connected to a host may need additional
-> > > -properties. These can be specified in subnodes to the host controller node.
-> > > -The subnodes are identified by the standard 'reg' property.
-> > > -Which information exactly can be specified depends on the bindings for the
-> > > -SDIO function driver for the subnode, as specified by the compatible string.
-> > > -
-> > > -Required host node properties when using function subnodes:
-> > > -- #address-cells: should be one. The cell is the slot id.
-> > > -- #size-cells: should be zero.
-> > > -
-> > > -Required function subnode properties:
-> > > -- reg: Must contain the SDIO function number of the function this subnode
-> > > -       describes. A value of 0 denotes the memory SD function, values from
-> > > -       1 to 7 denote the SDIO functions.
-> > > -
-> > > -Optional function subnode properties:
-> > > -- compatible: name of SDIO function following generic names recommended practice
-> > > -
-> >
-> > I think most of the information of how we use sub(child) nodes
-> > disappeared in this conversion - or at least gets harder to
-> > understand. Could we perhaps keep some of this?
->
-> Sure, what would you like to keep in particular?
+On Fri, May 24, 2019 at 04:33:09PM -0700, Douglas Anderson wrote:
+> This is like commit 0ca87bd5baa6 ("ARM: dts: rockchip: Add pin names
+> for rk3288-veyron-jerry") and commit ca3516b32cd9 ("ARM: dts:
+> rockchip: Add pin names for rk3288-veyron-minnie") but for 3 more
+> veyron boards.
+> 
+> A few notes:
+> - While there is most certainly duplication between all the veyron
+>   boards, it still feels like it is sane to just have each board have
+>   a full list of its pin names.  The format of "gpio-line-names" does
+>   not lend itself to one-off overriding and besides it seems sane to
+>   more fully match schematic names.  Also note that the extra
+>   duplication here is only in source code and is unlikely to ever
+>   change (since these boards are shipped).  Duplication in the .dtb
+>   files is unavoidable.
+> - veyron-jaq and veyron-mighty are very closely related and so I have
+>   shared a single list for them both with comments on how they are
+>   different.  This is just a typo fix on one of the boards, a possible
+>   missing signal on one of the boards (or perhaps I was never given
+>   the most recent schematics?) and dealing with the fact that one of
+>   the two boards has full sized SD.
+> 
+> Signed-off-by: Douglas Anderson <dianders@chromium.org>
 
-Most of it, so we can understand what can be described in sub-nodes.
-
-Additionally, we should also include what is stated in
-Documentation/devicetree/bindings/mmc/mmc-card.txt, as that also
-refers to how subnodes should be used, when it has the "mmc-card"
-compatible.
-
-Or maybe we should simply move all things related to subnodes into a
-separate .yaml?
-
-Kind regards
-Uffe
+Reviewed-by: Matthias Kaehlcke <mka@chromium.org
 
 _______________________________________________
 linux-arm-kernel mailing list
