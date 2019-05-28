@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD4BB2D061
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 22:31:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DA752D05C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 May 2019 22:31:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6nyrE6kBt1kgXcKllQlCZwJfRQU26gpkguN4Hx4noJE=; b=gNdOGLTVxFvlEm
-	zhDT1XuTN4dqdfqMR7el9WN3/fgvjFOyQc0+zLz5Lcjg7fyv/rSdoElQO4a04BG1JDCjqQOnheAMi
-	DDG6mjDMuY3KMF0Q7SnaUTttGkrOggg/tELxBJBcFJxiyLJYZUDhhdk1iCWIsfqCAoOU0Kx2Nw5Np
-	abaGtF1Lpzod/HivUnzL1FRqs528jKtq/cstCBJmxybOFDN1eTq0MFkZMF+FKhO1U4nIPPgR50Nrh
-	IuVSBQTjh0cK3u1JuUqdVCjgjzfAxOyyEia9Xaq4uq5sexPYDj+WX0DWc1MRc08SOjpH1jFwhZCnL
-	OhsJF/f4VjpaITBBXySw==;
+	List-Owner; bh=eEeVT8KzUYXXGaYY77oXaILp3EbMWejANLU4TGUhpTc=; b=Rv5ruS8obECmFK
+	p9eN7tcf+6O5SHVfzrI7V44ahS/d7UZEFd1Iidv4/Od1q0YpwrR6iAfej2yIkOIYCjtqoIYJfwq24
+	cyWIVVFYFTudhXX/l9O0ViWFFmXVFVU/2X8Z9qPUnblaVP7TTl5ybMnoTq4v1Cjv8DQUEDKgO139D
+	C/EabA9o1s4LvMVSX0DUiqqgjotb38TEBh/RyrRnyRoIgLBpq3npnW30To3L4Mb0IQlRYLcdgsL05
+	tqrGK9Sok5GGut7wBKj+f+vPnBFs2KcPNg/WODNaf3iGpcSLewvH8fcWzNouFOGmcDuyiIY4qoW+1
+	fmQTCehudI954k6txRLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVil9-0002gR-Gx; Tue, 28 May 2019 20:31:47 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1hVikg-0002AA-DS; Tue, 28 May 2019 20:31:18 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVikS-00021h-6g
- for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 20:31:09 +0000
+ id 1hVikM-0001zw-U5
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 May 2019 20:31:00 +0000
 X-Originating-IP: 90.89.68.76
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (Authenticated sender: maxime.ripard@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 3E831E000C;
- Tue, 28 May 2019 20:30:45 +0000 (UTC)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id C036940003;
+ Tue, 28 May 2019 20:30:53 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
  Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH v2 02/11] dt-bindings: rtc: Move trivial RTC over to a schemas
- of their own
-Date: Tue, 28 May 2019 22:30:32 +0200
-Message-Id: <938b66b5c5d3b6b6cf95b39a16884852ed8d19b6.1559075389.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH v2 03/11] dt-bindings: rtc: Convert Allwinner A10 RTC to a
+ schema
+Date: Tue, 28 May 2019 22:30:33 +0200
+Message-Id: <c9598ec7e668303e62c5e533f98096ca22d847aa.1559075389.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <434446bc5541d7dfe5823874355c7db8c7e213fa.1559075389.git-series.maxime.ripard@bootlin.com>
 References: <434446bc5541d7dfe5823874355c7db8c7e213fa.1559075389.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_133104_958130_453A21C2 
-X-CRM114-Status: GOOD (  14.50  )
+X-CRM114-CacheID: sfid-20190528_133059_125360_A25DCF00 
+X-CRM114-Status: GOOD (  13.67  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
+ low trust [217.70.183.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,116 +66,102 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIFJUQyBnZW5lcmljIGJpbmRpbmdzIGhhcyBhIGJ1bmNoIG9mIGRldmljZXMgdGhhdCBoYXZl
-IGEgcHJldHR5IHNpbXBsZQpiaW5kaW5nLCB3aXRoIGp1c3QgY29tcGF0aWJsZSwgcmVnIGFuZCBv
-cHRpb25hbCBpbnRlcnJ1cHRzIHByb3BlcnRpZXMuCgpUaGlzIGlzIGV4YWN0bHkgd2hhdCB0aGUg
-dHJpdmlhbCBkZXZpY2VzIFlBTUwgc2NoZW1hIGhhcyBiZWVuIGNyZWF0ZWQgZm9yLApleGNlcHQg
-dGhhdCB0aGV5IGNhbiBhbHNvIGhhdmUgdGhlIHN0YXJ0LXllYXIgcHJvcGVydHksIGJ1dCBub3Qg
-YW55IG90aGVyCmdlbmVyaWMgUlRDIHByb3BlcnR5LgoKTGV0J3MgY3JlYXRlIGEgc2NoZW1hIHdp
-dGggdGhvc2UgY29uc3RyYWludHMuCgpTaWduZWQtb2ZmLWJ5OiBNYXhpbWUgUmlwYXJkIDxtYXhp
-bWUucmlwYXJkQGJvb3RsaW4uY29tPgoKLS0tCkNoYW5nZXMgZnJvbSB2MToKICAtIE1vdmUgZnJv
-bSB0cml2aWFsLWRldmljZXMgdG8gdHJpdmlhbC1ydGMKLS0tCiBEb2N1bWVudGF0aW9uL2Rldmlj
-ZXRyZWUvYmluZGluZ3MvcnRjL3J0Yy50eHQgICAgICAgICAgfCAzOSArLS0tLS0KIERvY3VtZW50
-YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ydGMvdHJpdmlhbC1ydGMueWFtbCB8IDkyICsrKysr
-KysrKysrLQogMiBmaWxlcyBjaGFuZ2VkLCA5MiBpbnNlcnRpb25zKCspLCAzOSBkZWxldGlvbnMo
-LSkKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-cnRjL3RyaXZpYWwtcnRjLnlhbWwKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3MvcnRjL3J0Yy50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
-Z3MvcnRjL3J0Yy50eHQKaW5kZXggNGQ2ZjgxZGNjYzY4Li5iOGQzNmZjZTVlMmQgMTAwNjQ0Ci0t
-LSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ydGMvcnRjLnR4dAorKysgYi9E
-b2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3J0Yy50eHQKQEAgLTEsNDAgKzEg
-QEAKIFRoaXMgZmlsZSBoYXMgYmVlbiBtb3ZlZCB0byBydGMueWFtbC4KLQotVHJpdmlhbCBSVENz
-Ci0tLS0tLS0tLS0tLS0KLQotVGhpcyBpcyBhIGxpc3Qgb2YgdHJpdmlhbCBSVEMgZGV2aWNlcyB0
-aGF0IGhhdmUgc2ltcGxlIGRldmljZSB0cmVlCi1iaW5kaW5ncywgY29uc2lzdGluZyBvbmx5IG9m
-IGEgY29tcGF0aWJsZSBmaWVsZCwgYW4gYWRkcmVzcyBhbmQKLXBvc3NpYmx5IGFuIGludGVycnVw
-dCBsaW5lLgotCi0KLUNvbXBhdGlibGUJCVZlbmRvciAvIENoaXAKLT09PT09PT09PT0JCT09PT09
-PT09PT09PT0KLWFicmFjb24sYWJiNXplczMJQUItUlRDTUMtMzIuNzY4a0h6LUI1WkUtUzM6IFJl
-YWwgVGltZSBDbG9jay9DYWxlbmRhciBNb2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCi1hYnJhY29u
-LGFiZW96OQkJQUItUlRDTUMtMzIuNzY4a0h6LUVPWjk6IFJlYWwgVGltZSBDbG9jay9DYWxlbmRh
-ciBNb2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCi1kYWxsYXMsZHMxMzc0CQlJMkMsIDMyLUJpdCBC
-aW5hcnkgQ291bnRlciBXYXRjaGRvZyBSVEMgd2l0aCBUcmlja2xlIENoYXJnZXIgYW5kIFJlc2V0
-IElucHV0L091dHB1dAotZGFsbGFzLGRzMTY3MgkJRGFsbGFzIERTMTY3MiBSZWFsLXRpbWUgQ2xv
-Y2sKLWRhbGxhcyxkczMyMzIJCUV4dHJlbWVseSBBY2N1cmF0ZSBJwrJDIFJUQyB3aXRoIEludGVn
-cmF0ZWQgQ3J5c3RhbCBhbmQgU1JBTQotZXBzb24scng4MDEwCQlJMkMtQlVTIElOVEVSRkFDRSBS
-RUFMIFRJTUUgQ0xPQ0sgTU9EVUxFCi1lcHNvbixyeDg1NzEJCUkyQy1CVVMgSU5URVJGQUNFIFJF
-QUwgVElNRSBDTE9DSyBNT0RVTEUgd2l0aCBCYXR0ZXJ5IEJhY2tlZCBSQU0KLWVwc29uLHJ4ODU4
-MQkJSTJDLUJVUyBJTlRFUkZBQ0UgUkVBTCBUSU1FIENMT0NLIE1PRFVMRQotZW1taWNybyxlbTMw
-MjcJCUVNIE1pY3JvZWxlY3Ryb25pYyBFTTMwMjcgUmVhbC10aW1lIENsb2NrCi1pc2lsLGlzbDEy
-MDgJCUludGVyc2lsIElTTDEyMDggTG93IFBvd2VyIFJUQyB3aXRoIEJhdHRlcnkgQmFja2VkIFNS
-QU0KLWlzaWwsaXNsMTIxOAkJSW50ZXJzaWwgSVNMMTIxOCBMb3cgUG93ZXIgUlRDIHdpdGggQmF0
-dGVyeSBCYWNrZWQgU1JBTQotaXNpbCxpc2wxMjAyMgkJSW50ZXJzaWwgSVNMMTIwMjIgUmVhbC10
-aW1lIENsb2NrCi1taWNyb2NyeXN0YWwscnYzMDI4CVJlYWwgVGltZSBDbG9jayBNb2R1bGUgd2l0
-aCBJMkMtQnVzCi1taWNyb2NyeXN0YWwscnYzMDI5CVJlYWwgVGltZSBDbG9jayBNb2R1bGUgd2l0
-aCBJMkMtQnVzCi1taWNyb2NyeXN0YWwscnY4NTIzCVJlYWwgVGltZSBDbG9jawotbnhwLHBjZjIx
-MjcJCVJlYWwtdGltZSBjbG9jawotbnhwLHBjZjIxMjkJCVJlYWwtdGltZSBjbG9jawotbnhwLHBj
-Zjg1NjMJCVJlYWwtdGltZSBjbG9jay9jYWxlbmRhcgotcGVyaWNvbSxwdDdjNDMzOAlSZWFsLXRp
-bWUgQ2xvY2sgTW9kdWxlCi1yaWNvaCxyMjAyNXNkCQlJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0Ug
-UkVBTC1USU1FIENMT0NLIElDCi1yaWNvaCxyMjIyMXRsCQlJMkMgYnVzIFNFUklBTCBJTlRFUkZB
-Q0UgUkVBTC1USU1FIENMT0NLIElDCi1yaWNvaCxyczVjMzcyYQkJSTJDIGJ1cyBTRVJJQUwgSU5U
-RVJGQUNFIFJFQUwtVElNRSBDTE9DSyBJQwotcmljb2gscnM1YzM3MmIJCUkyQyBidXMgU0VSSUFM
-IElOVEVSRkFDRSBSRUFMLVRJTUUgQ0xPQ0sgSUMKLXJpY29oLHJ2NWMzODYJCUkyQyBidXMgU0VS
-SUFMIElOVEVSRkFDRSBSRUFMLVRJTUUgQ0xPQ0sgSUMKLXJpY29oLHJ2NWMzODdhCQlJMkMgYnVz
-IFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCi1zaWksczM1MzkwYQkJMi13aXJl
-IENNT1MgcmVhbC10aW1lIGNsb2NrCi13aHdhdmUsc2QzMDc4CQlJMkMgYnVzIFNFUklBTCBJTlRF
-UkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCi14aXJjb20seDEyMDUJCVhpcmNvbSBYMTIwNSBJMkMg
-UlRDCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3Ry
-aXZpYWwtcnRjLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3Ry
-aXZpYWwtcnRjLnlhbWwKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMDAwLi4w
-YzEyY2U5YTliNDUKLS0tIC9kZXYvbnVsbAorKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3MvcnRjL3RyaXZpYWwtcnRjLnlhbWwKQEAgLTAsMCArMSw5MiBAQAorIyBTUERYLUxp
-Y2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAorJVlBTUwgMS4yCistLS0KKyRpZDogaHR0cDovL2Rl
-dmljZXRyZWUub3JnL3NjaGVtYXMvcnRjL3RyaXZpYWwtcnRjLnlhbWwjCiskc2NoZW1hOiBodHRw
-Oi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0bGU6IFRyaXZp
-YWwgUlRDcworCittYWludGFpbmVyczoKKyAgLSBBbGV4YW5kcmUgQmVsbG9uaSA8YWxleGFuZHJl
-LmJlbGxvbmlAYm9vdGxpbi5jb20+CisKK2Rlc2NyaXB0aW9uOiB8CisgIFRoaXMgaXMgYSBsaXN0
-IG9mIHRyaXZpYWwgUlRDIGRldmljZXMgdGhhdCBoYXZlIHNpbXBsZSBkZXZpY2UgdHJlZQorICBi
-aW5kaW5ncywgY29uc2lzdGluZyBvbmx5IG9mIGEgY29tcGF0aWJsZSBmaWVsZCwgYW4gYWRkcmVz
-cyBhbmQKKyAgcG9zc2libHkgYW4gaW50ZXJydXB0IGxpbmUuCisKK2FsbE9mOgorICAtICRyZWY6
-ICJydGMueWFtbCMiCisKK3Byb3BlcnRpZXM6CisgIGNvbXBhdGlibGU6CisgICAgZW51bToKKyAg
-ICAgICMgQUItUlRDTUMtMzIuNzY4a0h6LUI1WkUtUzM6IFJlYWwgVGltZSBDbG9jay9DYWxlbmRh
-ciBNb2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCisgICAgICAtIGFicmFjb24sYWJiNXplczMKKyAg
-ICAgICMgQUItUlRDTUMtMzIuNzY4a0h6LUVPWjk6IFJlYWwgVGltZSBDbG9jay9DYWxlbmRhciBN
-b2R1bGUgd2l0aCBJMkMgSW50ZXJmYWNlCisgICAgICAtIGFicmFjb24sYWJlb3o5CisgICAgICAj
-IEkyQywgMzItQml0IEJpbmFyeSBDb3VudGVyIFdhdGNoZG9nIFJUQyB3aXRoIFRyaWNrbGUgQ2hh
-cmdlciBhbmQgUmVzZXQgSW5wdXQvT3V0cHV0CisgICAgICAtIGRhbGxhcyxkczEzNzQKKyAgICAg
-ICMgRGFsbGFzIERTMTY3MiBSZWFsLXRpbWUgQ2xvY2sKKyAgICAgIC0gZGFsbGFzLGRzMTY3Mgor
-ICAgICAgIyBFeHRyZW1lbHkgQWNjdXJhdGUgScKyQyBSVEMgd2l0aCBJbnRlZ3JhdGVkIENyeXN0
-YWwgYW5kIFNSQU0KKyAgICAgIC0gZGFsbGFzLGRzMzIzMgorICAgICAgIyBJMkMtQlVTIElOVEVS
-RkFDRSBSRUFMIFRJTUUgQ0xPQ0sgTU9EVUxFCisgICAgICAtIGVwc29uLHJ4ODAxMAorICAgICAg
-IyBJMkMtQlVTIElOVEVSRkFDRSBSRUFMIFRJTUUgQ0xPQ0sgTU9EVUxFIHdpdGggQmF0dGVyeSBC
-YWNrZWQgUkFNCisgICAgICAtIGVwc29uLHJ4ODU3MQorICAgICAgIyBJMkMtQlVTIElOVEVSRkFD
-RSBSRUFMIFRJTUUgQ0xPQ0sgTU9EVUxFCisgICAgICAtIGVwc29uLHJ4ODU4MQorICAgICAgIyBJ
-bnRlcnNpbCBJU0wxMjA4IExvdyBQb3dlciBSVEMgd2l0aCBCYXR0ZXJ5IEJhY2tlZCBTUkFNCisg
-ICAgICAtIGlzaWwsaXNsMTIwOAorICAgICAgIyBJbnRlcnNpbCBJU0wxMjE4IExvdyBQb3dlciBS
-VEMgd2l0aCBCYXR0ZXJ5IEJhY2tlZCBTUkFNCisgICAgICAtIGlzaWwsaXNsMTIxOAorICAgICAg
-IyBJbnRlcnNpbCBJU0wxMjAyMiBSZWFsLXRpbWUgQ2xvY2sKKyAgICAgIC0gaXNpbCxpc2wxMjAy
-MgorICAgICAgIyBSZWFsIFRpbWUgQ2xvY2sgTW9kdWxlIHdpdGggSTJDLUJ1cworICAgICAgLSBt
-aWNyb2NyeXN0YWwscnYzMDI4CisgICAgICAjIFJlYWwgVGltZSBDbG9jayBNb2R1bGUgd2l0aCBJ
-MkMtQnVzCisgICAgICAtIG1pY3JvY3J5c3RhbCxydjMwMjkKKyAgICAgICMgUmVhbCBUaW1lIENs
-b2NrCisgICAgICAtIG1pY3JvY3J5c3RhbCxydjg1MjMKKyAgICAgICMgUmVhbC10aW1lIGNsb2Nr
-CisgICAgICAtIG54cCxwY2YyMTI3CisgICAgICAjIFJlYWwtdGltZSBjbG9jaworICAgICAgLSBu
-eHAscGNmMjEyOQorICAgICAgIyBSZWFsLXRpbWUgY2xvY2svY2FsZW5kYXIKKyAgICAgIC0gbnhw
-LHBjZjg1NjMKKyAgICAgICMgUmVhbC10aW1lIENsb2NrIE1vZHVsZQorICAgICAgLSBwZXJpY29t
-LHB0N2M0MzM4CisgICAgICAjIEkyQyBidXMgU0VSSUFMIElOVEVSRkFDRSBSRUFMLVRJTUUgQ0xP
-Q0sgSUMKKyAgICAgIC0gcmljb2gscjIwMjVzZAorICAgICAgIyBJMkMgYnVzIFNFUklBTCBJTlRF
-UkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCisgICAgICAtIHJpY29oLHIyMjIxdGwKKyAgICAgICMg
-STJDIGJ1cyBTRVJJQUwgSU5URVJGQUNFIFJFQUwtVElNRSBDTE9DSyBJQworICAgICAgLSByaWNv
-aCxyczVjMzcyYQorICAgICAgIyBJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1FIENM
-T0NLIElDCisgICAgICAtIHJpY29oLHJzNWMzNzJiCisgICAgICAjIEkyQyBidXMgU0VSSUFMIElO
-VEVSRkFDRSBSRUFMLVRJTUUgQ0xPQ0sgSUMKKyAgICAgIC0gcmljb2gscnY1YzM4NgorICAgICAg
-IyBJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1FIENMT0NLIElDCisgICAgICAtIHJp
-Y29oLHJ2NWMzODdhCisgICAgICAjIDItd2lyZSBDTU9TIHJlYWwtdGltZSBjbG9jaworICAgICAg
-LSBzaWksczM1MzkwYQorICAgICAgIyBJMkMgYnVzIFNFUklBTCBJTlRFUkZBQ0UgUkVBTC1USU1F
-IENMT0NLIElDCisgICAgICAtIHdod2F2ZSxzZDMwNzgKKyAgICAgICMgWGlyY29tIFgxMjA1IEky
-QyBSVEMKKyAgICAgIC0geGlyY29tLHgxMjA1CisKKyAgcmVnOgorICAgIG1heEl0ZW1zOiAxCisK
-KyAgaW50ZXJydXB0czoKKyAgICBtYXhJdGVtczogMQorCisgIHN0YXJ0LXllYXI6IHRydWUKKwor
-cmVxdWlyZWQ6CisgIC0gY29tcGF0aWJsZQorICAtIHJlZworCithZGRpdGlvbmFsUHJvcGVydGll
-czogZmFsc2UKKworLi4uCi0tIApnaXQtc2VyaWVzIDAuOS4xCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+The older Allwinner SoCs have an embedded RTC supported in Linux, with a
+matching Device Tree binding.
+
+Now that we have the DT validation in place, let's convert the device tree
+bindings for that controller over to a YAML schemas.
+
+Acked-by: Chen-Yu Tsai <wens@csie.org>
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+---
+ Documentation/devicetree/bindings/rtc/allwinner,sun4i-a10-rtc.yaml | 43 +++++++++++++++++++++++++++++++++++++++++++
+ Documentation/devicetree/bindings/rtc/sunxi-rtc.txt                | 17 -----------------
+ 2 files changed, 43 insertions(+), 17 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/rtc/allwinner,sun4i-a10-rtc.yaml
+ delete mode 100644 Documentation/devicetree/bindings/rtc/sunxi-rtc.txt
+
+diff --git a/Documentation/devicetree/bindings/rtc/allwinner,sun4i-a10-rtc.yaml b/Documentation/devicetree/bindings/rtc/allwinner,sun4i-a10-rtc.yaml
+new file mode 100644
+index 000000000000..46d69c32b89b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/rtc/allwinner,sun4i-a10-rtc.yaml
+@@ -0,0 +1,43 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/rtc/allwinner,sun4i-a10-rtc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A10 RTC Device Tree Bindings
++
++allOf:
++  - $ref: "rtc.yaml#"
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <maxime.ripard@bootlin.com>
++
++properties:
++  compatible:
++    enum:
++      - allwinner,sun4i-a10-rtc
++      - allwinner,sun7i-a20-rtc
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++additionalProperties: false
++
++examples:
++  - |
++    rtc: rtc@1c20d00 {
++        compatible = "allwinner,sun4i-a10-rtc";
++        reg = <0x01c20d00 0x20>;
++        interrupts = <24>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/rtc/sunxi-rtc.txt b/Documentation/devicetree/bindings/rtc/sunxi-rtc.txt
+deleted file mode 100644
+index 4a8d79c1cf08..000000000000
+--- a/Documentation/devicetree/bindings/rtc/sunxi-rtc.txt
++++ /dev/null
+@@ -1,17 +0,0 @@
+-* sun4i/sun7i Real Time Clock
+-
+-RTC controller for the Allwinner A10/A20
+-
+-Required properties:
+-- compatible : Should be "allwinner,sun4i-a10-rtc" or "allwinner,sun7i-a20-rtc"
+-- reg: physical base address of the controller and length of memory mapped
+-  region.
+-- interrupts: IRQ line for the RTC.
+-
+-Example:
+-
+-rtc: rtc@1c20d00 {
+-	compatible = "allwinner,sun4i-a10-rtc";
+-	reg = <0x01c20d00 0x20>;
+-	interrupts = <24>;
+-};
+-- 
+git-series 0.9.1
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
