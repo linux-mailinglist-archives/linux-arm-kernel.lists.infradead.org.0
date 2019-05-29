@@ -2,100 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE0452D44C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:36:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD7AA2D457
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:46:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uI8ShubZtExURy9wTcNRCHlPfqs3bgzVkOXrR0AHPHs=; b=GtK3Qv5ANFE9Lu
-	z7Ht16KYLPx8XQukDaLTeQHB5MUCuOJYY78KdKl+gEJMDvKmbZMESWG90yXzYaPH/nuFNX8XrBnhN
-	ZurQmOVyD4l5lnFdhyOx1KYKBNmgKzuXJ/fAau1cvpU/ZDZi8ydllP0KilV7y+s6zioP72U/pjen7
-	tWXHl2Ldc+4HTEB1LoEqLweX98+ciNLaY52gRRJXuJReONdBzvr2VoSnwc8+rPnetXiyc8g+z7+3e
-	RpdAh/jF8utfmEY749ZtWp8vzIwnYBF6zEhIneqd3ggMzLiDTlcUgkhPPtj7sTojenR4WFnqDp3no
-	hOxyo7TF3b3jROFVweng==;
+	List-Owner; bh=ky64zxyI5CD+zZrlNgy4HbP7eZJHaKSkMPoMhQ2i224=; b=R+2K/lqmZxYO+3
+	48OWq8HBgWz91gUC03OL5nTWHJ6MURlRo5gohOGhRptXaVVLE5pyKvG/DGht5tNtyglxqYSaVUsu5
+	0Sr0VFk5c5kn/sWfMeIbcI3Mecypfc6TglnY7gNs6P0QhCwrvjdnVVfJoFMVpnpRpWirXexAfkDm7
+	xtQuTZzMbCY1ILRLwXiX+iImVwU05QIhvNGFXDyJF7KA3MlrWQVq++TwV45b6YqRW+aPj5Jb5FjlE
+	h/62gpa/gR2GSCWilkb8kxahIAs369K7Fl+JkHD7mLHX4K6QYbal5inL2/UJNTrpHJI7X2ZG39szW
+	9xRssNRF89dNobRPapaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVpOY-0006HZ-7l; Wed, 29 May 2019 03:36:54 +0000
-Received: from mail-eopbgr50044.outbound.protection.outlook.com ([40.107.5.44]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1hVpXh-0001AK-TV; Wed, 29 May 2019 03:46:21 +0000
+Received: from mail-it1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVpOP-0006H9-4l
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 03:36:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LAXxFt9W1FFyEge1An0kLLJhyQITNqYJP24u5hZ0gfM=;
- b=VFvEGUxg2U+qSwyzYb2naw6Xv5gdCkOSX7/ArVjGcVKiesMy2i+sdfjDmwzHHPx4RO6sempvrGtrq+YrAGsqssFDDG1kJuz7yapn9OrL9E1yCw8uCIP9aoryUZkj2zP2A2V5e6Tpudb2gtKAHwXBFEg01bOU4tZLulgldZqSkxU=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3898.eurprd04.prod.outlook.com (52.134.65.139) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.15; Wed, 29 May 2019 03:36:37 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1922.021; Wed, 29 May 2019
- 03:36:37 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Eduardo Valentin <edubezval@gmail.com>
-Subject: RE: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
- sensor ID from DT
-Thread-Topic: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
- sensor ID from DT
-Thread-Index: AQHVFRtF1HyUf82e5E+mJmD7zHGxLKaBa66AgAAIvwA=
-Date: Wed, 29 May 2019 03:36:37 +0000
-Message-ID: <DB3PR0402MB3916A099D7DE4F89D3F50CB3F51F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190528060621.47342-1-Anson.Huang@nxp.com>
- <20190528060621.47342-2-Anson.Huang@nxp.com>
- <20190529030225.GA2662@localhost.localdomain>
-In-Reply-To: <20190529030225.GA2662@localhost.localdomain>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4bdb87fe-b2a3-4989-2a19-08d6e3e6dae6
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3898; 
-x-ms-traffictypediagnostic: DB3PR0402MB3898:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <DB3PR0402MB3898965E01BE92272FA1063AF51F0@DB3PR0402MB3898.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 0052308DC6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(39860400002)(346002)(136003)(366004)(376002)(13464003)(189003)(199004)(3846002)(6116002)(6306002)(33656002)(54906003)(6506007)(14454004)(81166006)(81156014)(8676002)(99286004)(53936002)(256004)(966005)(71200400001)(2906002)(8936002)(1411001)(229853002)(86362001)(53546011)(44832011)(71190400001)(7696005)(7736002)(305945005)(6436002)(102836004)(66066001)(5660300002)(55016002)(478600001)(316002)(76176011)(76116006)(7416002)(486006)(4326008)(476003)(68736007)(6246003)(9686003)(446003)(186003)(73956011)(66446008)(66476007)(52536014)(66946007)(66556008)(64756008)(25786009)(26005)(74316002)(11346002)(6916009);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3898;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: EndQqB+65MZQuQ+lQ+Aizl5lKNzQYveUx+pZ6MPdIoTxNRu926xlmI5yAsjOSSSudnL07CdFH/QzCKiECmLZAw4bLfeIDoPO+wZhwvKc+qBfAKNHv6xD/JBt0W2nkJZP+ZYovtpMSKK7H5kZEV3Vmn7l48XeaFrIJCKvz2Ry8vf6t6wk9v7ck7DpzitFuQxz859WlIehUNNOxBecpLTcqYVuA3DGtTdDPFU0/P0Hbyl00zXjCkB+Tz+gTx2EQii7l4DLyPOh7y7eGKYO9V2itp1YVOJ35e2hiaZja1sa8kieIqNIc/mOpmOV5DjlwtGTJymOnG+4ckZG/MwtgjSqrocCBr6vKlN0jl1B12ka9xsxn0xS/zyVaJrESV0soPNnKzvam/ufyL5CbJEStkv4/3kBZ5BfEKqTs0rzniqOM1Q=
+ id 1hVpXa-0001A1-Mr
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 03:46:16 +0000
+Received: by mail-it1-x144.google.com with SMTP id e184so1345525ite.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 20:46:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mIbWrLxXAUE8DdyCUYuINo2mEcBTR51/ocvmSZbFSDw=;
+ b=lcHDc2Op9T8SoWV1TcTU9MzPj1yUXZKCIdo2qqKUeKkLApgMEYjVonwfqLSxyI8jUr
+ dutzBgiBuJt/RUNJqMJHifw/vSAqE9DuDbryE6gSznXK7pHOVR5vgSrMKXYWJPlFOpls
+ VzVfrKJwU1ySbtqwH+I71n0GF+r1wIXnbJxRI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mIbWrLxXAUE8DdyCUYuINo2mEcBTR51/ocvmSZbFSDw=;
+ b=PNLYeYejgDE06IY4TC3Uk4KkR1BT5Lu9wceGkeMKoZj1UD636aiZYHIwxH12p+I3pD
+ khLif/jC8is+9+KMGp5b1v8ShPM8AXn06Yw5OMSdMlcv+BuSMeO0hYIzmx4+a/jSFlri
+ mhniIzHmTyVgnTVoatBsjXRpPF8P/v8meHS73tsvrkVENxOIuSwcjAAb/QTA/tRsGTsy
+ xgkxmfquVVYJ3m+Pn0OMTJD1EERkKfTK2cOyX2gGhaE/C0SV6S4deC61pPJWsfQ4jCZS
+ +T/J/RaA+TustOAFs+MKtkkz556n47vF/I5fEpNyRe8SskUp7v3qR8qBskk8xHyOsRWI
+ BR3g==
+X-Gm-Message-State: APjAAAUHJqnsSLnXntn84o8jL6FEg5SnBrZ3R4FihvBAsIKUtMo1ifdW
+ 1AfS1V6clY5cxc62GJCkQDBzzYr0XyhULwjT
+X-Google-Smtp-Source: APXvYqykaMjF596e3ZqR4YdjWZAJqwyn2/K4WlDgrG4v8jU8vE9Y3bYwVaqmeLCwyZZDtfg/aYHVbQ==
+X-Received: by 2002:a24:7949:: with SMTP id z70mr6246812itc.36.1559101573806; 
+ Tue, 28 May 2019 20:46:13 -0700 (PDT)
+Received: from mail-io1-f50.google.com (mail-io1-f50.google.com.
+ [209.85.166.50])
+ by smtp.gmail.com with ESMTPSA id e2sm487570ith.39.2019.05.28.20.46.13
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 28 May 2019 20:46:13 -0700 (PDT)
+Received: by mail-io1-f50.google.com with SMTP id h6so618266ioh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 20:46:13 -0700 (PDT)
+X-Received: by 2002:a5e:db02:: with SMTP id q2mr308707iop.306.1559101103189;
+ Tue, 28 May 2019 20:38:23 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4bdb87fe-b2a3-4989-2a19-08d6e3e6dae6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 03:36:37.2405 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3898
+References: <20190417104511.21514-1-frederic.chen@mediatek.com>
+ <20190417104511.21514-7-frederic.chen@mediatek.com>
+ <20190509094846.GA65444@google.com>
+ <1558466055.15388.342.camel@mtksdccf07> <20190522102514.GA218991@chromium.org>
+ <1558619189.7995.27.camel@mtksdccf07>
+In-Reply-To: <1558619189.7995.27.camel@mtksdccf07>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 29 May 2019 12:38:11 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5BbrfhjGbKaUi4p6fJJNOKvkZb4_47gw-W8n5fEmaf5XQ@mail.gmail.com>
+Message-ID: <CAAFQd5BbrfhjGbKaUi4p6fJJNOKvkZb4_47gw-W8n5fEmaf5XQ@mail.gmail.com>
+Subject: Re: [RFC PATCH V1 6/6] platform: mtk-isp: Add Mediatek DIP driver
+To: Frederic Chen <frederic.chen@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_203645_342791_E1CAB7A5 
-X-CRM114-Status: GOOD (  27.02  )
+X-CRM114-CacheID: sfid-20190528_204614_773312_1E672195 
+X-CRM114-Status: GOOD (  28.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.44 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -104,6 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,232 +104,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
- "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>, Peng Fan <peng.fan@nxp.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>
+Cc: Shik Chen <shik@chromium.org>, devicetree@vger.kernel.org,
+ =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <Sean.Cheng@mediatek.com>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ =?UTF-8?B?SG9sbWVzIENoaW91ICjpgrHmjLop?= <holmes.chiou@mediatek.com>,
+ suleiman@chromium.org, Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>,
+ =?UTF-8?B?SnVuZ28gTGluICjmnpfmmI7kv4op?= <jungo.lin@mediatek.com>,
+ Sj Huang <sj.huang@mediatek.com>, yuzhao@chromium.org,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ zwisler@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ =?UTF-8?B?Q2hyaXN0aWUgWXUgKOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Hans Verkuil <hans.verkuil@cisco.com>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Eduardo
+On Thu, May 23, 2019 at 10:46 PM Frederic Chen
+<frederic.chen@mediatek.com> wrote:
+>
+> Dear Tomasz,
+>
+> Thank you for your comments.
+>
+>
+> On Wed, 2019-05-22 at 19:25 +0900, Tomasz Figa wrote:
+> > Hi Frederic,
+> >
+> > On Wed, May 22, 2019 at 03:14:15AM +0800, Frederic Chen wrote:
+> > > Dear Tomasz,
+> > >
+> > > I appreciate your comment. It is very helpful for us.
+> > >
+> >
+> > You're welcome. Thanks for replying to all the comments. I'll skip those
+> > resolved in my reply to keep the message shorter.
+> >
+> > >
+> > > On Thu, 2019-05-09 at 18:48 +0900, Tomasz Figa wrote:
+> > > > Hi Frederic,
+> > > >
+> > > > On Wed, Apr 17, 2019 at 7:45 PM Frederic Chen <frederic.chen@mediatek.com> wrote:
+[snip]
+> > > > Also a general note - a work can be queued only once. This means that
+> > > > current code races when two dip_works are attempted to be queued very
+> > > > quickly one after another (or even at the same time from different threads).
+> > > >
+> > > > I can think of two potential options for fixing this:
+> > > >
+> > > > 1) Loop in the work function until there is nothing to queue to the hardware
+> > > >    anymore - but this needs tricky synchronization, because there is still
+> > > >    short time at the end of the work function when a new dip_work could be
+> > > >    added.
+> > > >
+> > > > 2) Change this to a kthread that just keeps running in a loop waiting for
+> > > >    some available dip_work to show up and then sending it to the firmware.
+> > > >    This should be simpler, as the kthread shouldn't have a chance to miss
+> > > >    any dip_work queued.
+> > > >
+> > > > I'm personally in favor of option 2, as it should simplify the
+> > > > synchronization.
+> > > >
+> > >
+> > > I would like to re-design this part with a kthread in the next patch.
+> >
+> > Actually I missed another option. We could have 1 work_struct for 1
+> > request and then we could keep using a workqueue. Perhaps that could be
+> > simpler than a kthread.
+> >
+> > Actually, similar approach could be used for the dip_runner_func.
+> > Instead of having a kthread looping, we could just have another
+> > workqueue and 1 dip_runner_work per 1 request. Then we wouldn't need to
+> > do the waiting loop ourselves anymore.
+> >
+> > Does it make sense?
+>
+> Yes, it make sense. Let me summarize the modification about the flow.
+>
+> First, we will have two work_struct in mtk_dip_request.
+>
+> struct mtk_dip_request {
+>         struct media_request request;
+>         //...
+>         /* Prepare DIP part hardware configurtion */
+>         struct mtk_dip_hw_submit_work submit_work;
+>         /* Replace dip_running thread jobs*/
+>         struct mtk_dip_hw_composing_work composing_work;
+>         /* Only for composing error handling */
+>         struct mtk_dip_hw_mdpcb_timeout_work timeout_work;
+> };
+>
+> Second, the overall flow of handling each request is :
+>
+> 1. mtk_dip_hw_enqueue calls queue_work() to put submit_work into its
+>    workqueue
+> 2. submit_work sends IMG_IPI_FRAME command to SCP to prepare DIP
+>    hardware configuration
+> 3. dip_scp_handler receives the IMG_IPI_FRAME result from SCP
+> 4. dip_scp_handler calls queue_work() to put composing_work (instead
+>    of original dip_running thread jobs) into its workqueue
+> 5. composing_work calls dip_mdp_cmdq_send() to finish the mdp part tasks
+> 6. dip_mdp_cb_func() trigged by MDP driver calls vb2_buffer_done to
+>    return the buffer (no workqueue required here)
+>
 
-> -----Original Message-----
-> From: Eduardo Valentin <edubezval@gmail.com>
-> Sent: Wednesday, May 29, 2019 11:02 AM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: robh+dt@kernel.org; mark.rutland@arm.com; shawnguo@kernel.org;
-> s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
-> catalin.marinas@arm.com; will.deacon@arm.com; rui.zhang@intel.com;
-> daniel.lezcano@linaro.org; Aisheng Dong <aisheng.dong@nxp.com>;
-> ulf.hansson@linaro.org; Peng Fan <peng.fan@nxp.com>; Daniel Baluta
-> <daniel.baluta@nxp.com>; maxime.ripard@bootlin.com; olof@lixom.net;
-> jagan@amarulasolutions.com; horms+renesas@verge.net.au; Leonard Crestez
-> <leonard.crestez@nxp.com>; bjorn.andersson@linaro.org;
-> dinguyen@kernel.org; enric.balletbo@collabora.com;
-> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-pm@vger.kernel.org; dl-linux-imx <linux-
-> imx@nxp.com>
-> Subject: Re: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
-> sensor ID from DT
-> 
-> On Tue, May 28, 2019 at 02:06:18PM +0800, Anson.Huang@nxp.com wrote:
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > On some platforms like i.MX8QXP, the thermal driver needs a real HW
-> > sensor ID from DT thermal zone, the HW sensor ID is used to get
-> > temperature from SCU firmware, and the virtual sensor ID starting from
-> > 0 to N is NOT used at all, this patch adds new API
-> > thermal_zone_of_get_sensor_id() to provide the feature of getting
-> > sensor ID from DT thermal zone's node.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> > Changes since V12:
-> > 	- adjust the second parameter of thermal_zone_of_get_sensor_id() API,
-> then caller no need
-> > 	  to pass the of_phandle_args structure and put the sensor_specs.np
-> manually, also putting
-> > 	  the sensor node device check inside this API to make it easy for
-> > usage;
-> 
-> What happened to using nxp,resource-id property in your driver?
-> Why do we need this as an API in of-thermal? What other drivers may benefit
-> of this?
-> 
-> Regardless, this patch needs to document the new API under Documentation/
+Sounds good to me, but actually then simply making the workqueues
+freezable doesn't solve the suspend/resume problem, because the work
+functions wouldn't wait for the firmware/hardware completion anymore.
+That's also okay, but in this case we need to add some code to suspend
+to wait for any pending operations to complete.
 
-As Rob has different opinion about this property, he thought it is unnecessary, see below
-discussion mail, that is why I need to add API to get the resource ID from phandle argument.
-I am totally confused now, which approach should we adopt?
+Best regards,
+Tomasz
 
-https://patchwork.kernel.org/patch/10831397/
-
-Thanks,
-Anson
-
-> 
-> > ---
-> >  drivers/thermal/of-thermal.c | 66 +++++++++++++++++++++++++++++++++---
-> --------
-> >  include/linux/thermal.h      | 10 +++++++
-> >  2 files changed, 60 insertions(+), 16 deletions(-)
-> >
-> > diff --git a/drivers/thermal/of-thermal.c
-> > b/drivers/thermal/of-thermal.c index dc5093b..a53792b 100644
-> > --- a/drivers/thermal/of-thermal.c
-> > +++ b/drivers/thermal/of-thermal.c
-> > @@ -449,6 +449,54 @@ thermal_zone_of_add_sensor(struct device_node
-> > *zone,  }
-> >
-> >  /**
-> > + * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal
-> > + zone
-> > + * @tz_np: a valid thermal zone device node.
-> > + * @sensor_np: a sensor node of a valid sensor device.
-> > + * @id: a sensor ID pointer will be passed back.
-> > + *
-> > + * This function will get sensor ID from a given thermal zone node,
-> > + use
-> > + * "thermal-sensors" as list name, and get sensor ID from first
-> > + phandle's
-> > + * argument.
-> > + *
-> > + * Return: 0 on success, proper error code otherwise.
-> > + */
-> > +
-> > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > +				  struct device_node *sensor_np,
-> > +				  u32 *id)
-> > +{
-> > +	struct of_phandle_args sensor_specs;
-> > +	int ret;
-> > +
-> > +	ret = of_parse_phandle_with_args(tz_np,
-> > +					 "thermal-sensors",
-> > +					 "#thermal-sensor-cells",
-> > +					 0,
-> > +					 &sensor_specs);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	if (sensor_specs.np != sensor_np) {
-> > +		of_node_put(sensor_specs.np);
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	if (sensor_specs.args_count >= 1) {
-> > +		*id = sensor_specs.args[0];
-> > +		WARN(sensor_specs.args_count > 1,
-> > +		     "%pOFn: too many cells in sensor specifier %d\n",
-> > +		     sensor_specs.np, sensor_specs.args_count);
-> > +	} else {
-> > +		*id = 0;
-> > +	}
-> > +
-> > +	of_node_put(sensor_specs.np);
-> > +
-> > +	return 0;
-> > +}
-> > +EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
-> > +
-> > +/**
-> >   * thermal_zone_of_sensor_register - registers a sensor to a DT thermal zone
-> >   * @dev: a valid struct device pointer of a sensor device. Must contain
-> >   *       a valid .of_node, for the sensor node.
-> > @@ -499,36 +547,22 @@ thermal_zone_of_sensor_register(struct device
-> *dev, int sensor_id, void *data,
-> >  	sensor_np = of_node_get(dev->of_node);
-> >
-> >  	for_each_available_child_of_node(np, child) {
-> > -		struct of_phandle_args sensor_specs;
-> >  		int ret, id;
-> >
-> >  		/* For now, thermal framework supports only 1 sensor per
-> zone */
-> > -		ret = of_parse_phandle_with_args(child, "thermal-sensors",
-> > -						 "#thermal-sensor-cells",
-> > -						 0, &sensor_specs);
-> > +		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
-> >  		if (ret)
-> >  			continue;
-> >
-> > -		if (sensor_specs.args_count >= 1) {
-> > -			id = sensor_specs.args[0];
-> > -			WARN(sensor_specs.args_count > 1,
-> > -			     "%pOFn: too many cells in sensor specifier %d\n",
-> > -			     sensor_specs.np, sensor_specs.args_count);
-> > -		} else {
-> > -			id = 0;
-> > -		}
-> > -
-> > -		if (sensor_specs.np == sensor_np && id == sensor_id) {
-> > +		if (id == sensor_id) {
-> >  			tzd = thermal_zone_of_add_sensor(child, sensor_np,
-> >  							 data, ops);
-> >  			if (!IS_ERR(tzd))
-> >  				tzd->ops->set_mode(tzd,
-> THERMAL_DEVICE_ENABLED);
-> >
-> > -			of_node_put(sensor_specs.np);
-> >  			of_node_put(child);
-> >  			goto exit;
-> >  		}
-> > -		of_node_put(sensor_specs.np);
-> >  	}
-> >  exit:
-> >  	of_node_put(sensor_np);
-> > diff --git a/include/linux/thermal.h b/include/linux/thermal.h index
-> > 15a4ca5..5edffe6 100644
-> > --- a/include/linux/thermal.h
-> > +++ b/include/linux/thermal.h
-> > @@ -375,6 +375,9 @@ struct thermal_trip {
-> >
-> >  /* Function declarations */
-> >  #ifdef CONFIG_THERMAL_OF
-> > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > +				  struct device_node *sensor_np,
-> > +				  u32 *id);
-> >  struct thermal_zone_device *
-> >  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
-> >  				const struct thermal_zone_of_device_ops
-> *ops); @@ -386,6 +389,13
-> > @@ struct thermal_zone_device *devm_thermal_zone_of_sensor_register(
-> >  void devm_thermal_zone_of_sensor_unregister(struct device *dev,
-> >  					    struct thermal_zone_device *tz);
-> #else
-> > +
-> > +static int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > +					 struct device_node *sensor_np,
-> > +					 u32 *id)
-> > +{
-> > +	return -ENOENT;
-> > +}
-> >  static inline struct thermal_zone_device *
-> > thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
-> >  				const struct thermal_zone_of_device_ops
-> *ops)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
