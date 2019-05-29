@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E8CE2DA9F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:27:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA6F42DAA0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:28:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mGHiClM1kiorfmqqstjRNukXt1u7De1AmPjqDlQQjcE=; b=mz1ecp2xirbFUS
-	Hd7KPPlse7Gi2ZsH1Yyw6Grs2ErsvK6dK5hr93YA8zQ68ywhsEnwUU2SBb6AY2Mgd3BSnvrLnKmxg
-	RNlDqeQo4UfoeEgb0+ExYJxJ6mhTtHaTWkygnmYdhXlp11nqUKWKusAK+axykAZcffFXqWkhU18dL
-	FppZiMUwWD4KmyxZ6OQBjVwdboSOtQGyyufltSyIFGyMkVcFGuDxxT5ZlBh1vGKukhfrn/RWNjnE+
-	OC2miw+yEE76CIqfBkZaL5EXAKfNZo4jeXqYFS/04RXSNpT+vGmd3A0+Unf4zdNkMyPH6aPB8IbGf
-	gB9g1f42PmZf4wZxRP5Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Y/ts52Rus+f+nJFoHjO6G1X78NV6Pv1sAOsBIHs9YYI=; b=tEZuf91auAoLG9
+	o8OkuhrSGZNbJ3UZ7tIF/kdMQ6aBxAeWsUQ1SM78oZGd3kE1WR5sIHmzL6p9EWslIYX3gwZLbBHRV
+	p2t2PEcJq28GUYxNa0isv582csVG5YR55ozenWRPIQjVhCGdDKg6+v6B745cGFpgjdilj6+80ybsG
+	UKt9NbnsjlC3Lr3HjUcI6hIgUOCA0M66aIWvaWa88SGnjgSN71vT9v+GNr9NWenQB9Xu9fo+ulP+D
+	aZASS6xmev5B6Z8j2S2NBmZ1WCyjmRnuiu6keXCd2Ubm7P4uupeWTdZk5+HmuO84Jf54gfyb0/G1G
+	BZyPZCEOYsWxux+08rGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVvoI-0001E5-9o; Wed, 29 May 2019 10:27:54 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hVvoS-0001UG-Mq; Wed, 29 May 2019 10:28:04 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvnH-0000J6-Vq
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:26:54 +0000
-Received: by mail-pg1-x542.google.com with SMTP id 20so234500pgr.4
+ id 1hVvnP-0000PV-4Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:27:03 +0000
+Received: by mail-wr1-x441.google.com with SMTP id l2so1336319wrb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 03:26:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=YcCSMOQNkzGaXhDk0okGAy0XqAbQi4G2u6aLWlPaPBw=;
- b=Cuhppf15fgs+ro5fQzou91thI1XLxU4KioJr8st6A+3rShMcYV8fSqZOp424wsNyS7
- Yjt8ZDWKI8t5jY8/w/olvN9NejpmeXI58p0vNnxcpidO9I9OYs9PLq5hcAy2JUfwloW/
- 0z63BUjUnVKb52ngcrkoQKYOWPV2zpLSKFZpM=
+ Wed, 29 May 2019 03:26:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=qH4FDRgRxazUxppnfy66oz7/ZG4EwLFotnt4vrr38Jk=;
+ b=RgPCHnOIk/VcuuhD4LkWOrkoHFmhwsd+XnEJ0uKI0Y9pFcLjlriu5i/gfZaqJkJujN
+ uX0w3ErsriLvqQyvfuHw/+6hzD/3YSqYPn0Ok9CmE+geqXFAhUFw2w9Rpmi9fxUdaSoT
+ f8PsppOSw4hmU0VwylunyMWmFY3WF4dXd1VNRV/N2fphARv3Ag67OCa7fqP1RXTHdWEN
+ fvFHW1W62sR7GQpBSpZXJtdi/18X+yaqtKkKcyEMVDWq9579Kt2NmIoQ5s/aCDIDEVqx
+ +Y9+u1uii1HMVENAm79jR3qM7CuW6h9yq7Vs1947aMQK2Hx5LDPu8larIK/Vv2e3aVX+
+ e6DA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=YcCSMOQNkzGaXhDk0okGAy0XqAbQi4G2u6aLWlPaPBw=;
- b=nL6xBG6YJds2My8xeYEirJvxy7sr3o7g3IO/Cc2zHgawOEbOr/s+6ryOL3WQ9IsXkJ
- tXS5BRtFLIQ0EcGezKlFp8wJoGfavEDzrgAKJRnJldfhkknGgBdVa+XlxhmfgQgiaRQK
- QMapjY2Ie7b2B6c/FQ0cKfSBSNUI5rjsZ5M/4NJgFfoccNplD/PE9YjkeLO8k94MANL+
- Zx23apKivr141y418SljmlrQo5WPNhc2IfYMq0uSibmA2FCpqbh0ShylnWQzkWYaVheC
- zzwnvaRFRxdTTvYak+cdqjzhm69awFthIKmSVhoWvm0Lw3zbN5nT0KXPLEtxxtFf/8F3
- Gz9w==
-X-Gm-Message-State: APjAAAXVHJMWaogVtFbuyac3DZJMGzNP61+XbT3RYCmWwPRXLBRxRt4g
- zGSgEBhWRNKjCRUhJYU64GOS16YVUdyw6A==
-X-Google-Smtp-Source: APXvYqyyaROmC37HXAcccgz51No+HwGj0nRGT99eAspxv1IL1mnTD2gRQ1iaLO7Rvi00xcw+ddOyEQ==
-X-Received: by 2002:a17:90a:ac0d:: with SMTP id
- o13mr11037075pjq.139.1559125611164; 
- Wed, 29 May 2019 03:26:51 -0700 (PDT)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id e12sm18992183pfl.122.2019.05.29.03.26.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 29 May 2019 03:26:50 -0700 (PDT)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 4/4] drm: mediatek: clear num_pipes when unbind driver
-Date: Wed, 29 May 2019 18:25:55 +0800
-Message-Id: <20190529102555.251579-5-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190529102555.251579-1-hsinyi@chromium.org>
-References: <20190529102555.251579-1-hsinyi@chromium.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=qH4FDRgRxazUxppnfy66oz7/ZG4EwLFotnt4vrr38Jk=;
+ b=TpBOAjoh7lf0cJxe5Suam6sFxFoYDDCrxkKy4H6LbphvfpB/cEIFQmTLRBVDnNh5Mk
+ LaPnU+Fo7p8P553Y4IAEATMRODLYjq73yKArSn7M3Aewm7fVOCiu2DnyhsFMwaewC7EA
+ UnepOZRcqcCKW3MpXyB8JahRSyDQzza8OciV2rtvpn6Octm/0BPNGH6/AzhjNj1U07QL
+ A3JCJw3X3dX0Cv+07q5ozlhkUsLsrjmA7NNKphZzsTmyfc7epuo52d0N9RkUiPWHMgJ6
+ mcO0DacCxCO02yWh+hv3Vgtds2kugjWnZdLlDIoNh3UBQxpy9pmdEDF/rBa1YoYjyq5X
+ GJwQ==
+X-Gm-Message-State: APjAAAUlbn/rlAuuwxSU53ZDwmUkuZE3i92gPd2aOfc/TGRUkP+jHhTf
+ +AG8NoBEzV5LpqskDnkqS6Q=
+X-Google-Smtp-Source: APXvYqxpCtSZC0Q2fp8eoEj2RPZV2FI55G/Xb0w+oZGygASEKhSjAxQ5kZ6u9HACyVknmUMaPS9vhA==
+X-Received: by 2002:adf:8062:: with SMTP id 89mr11498516wrk.97.1559125617201; 
+ Wed, 29 May 2019 03:26:57 -0700 (PDT)
+Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
+ by smtp.gmail.com with ESMTPSA id f21sm841586wmb.2.2019.05.29.03.26.56
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 29 May 2019 03:26:56 -0700 (PDT)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: [PATCH 1/2] soc/tegra: pmc: Fail to allocate more than one wake IRQ
+Date: Wed, 29 May 2019 12:26:53 +0200
+Message-Id: <20190529102654.14665-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_032652_179288_792D3BC4 
-X-CRM114-Status: GOOD (  13.58  )
+X-CRM114-CacheID: sfid-20190529_032659_547414_7B1897C5 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -84,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,40 +96,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, CK Hu <ck.hu@mediatek.com>
+Cc: linux-tegra@vger.kernel.org, Bitan Biswas <bbiswas@nvidia.com>,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-num_pipes is used for mutex created in mtk_drm_crtc_create(). If we
-don't clear num_pipes count, when rebinding driver, the count will
-be accumulated. From mtk_disp_mutex_get(), there can only be at most
-10 mutex id. Clear this number so it starts from 0 in every rebind.
+From: Thierry Reding <treding@nvidia.com>
 
-Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+The code currently doesn't support allocating more than one wake IRQ at
+a time. Detect this situation and error out. Also make sure to output a
+warning when that happens to help track down callers.
+
+Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_drv.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/soc/tegra/pmc.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index 8718d123ccaa..bbfe3a464aea 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -400,6 +400,7 @@ static void mtk_drm_unbind(struct device *dev)
- 	drm_dev_unregister(private->drm);
- 	mtk_drm_kms_deinit(private->drm);
- 	drm_dev_put(private->drm);
-+	private->num_pipes = 0;
- 	private->drm = NULL;
- }
+diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
+index 5648e5c09ef5..653fe2c466f6 100644
+--- a/drivers/soc/tegra/pmc.c
++++ b/drivers/soc/tegra/pmc.c
+@@ -1863,6 +1863,9 @@ static int tegra_pmc_irq_alloc(struct irq_domain *domain, unsigned int virq,
+ 	unsigned int i;
+ 	int err = 0;
+ 
++	if (WARN_ON(num_irqs > 1))
++		return -EINVAL;
++
+ 	for (i = 0; i < soc->num_wake_events; i++) {
+ 		const struct tegra_wake_event *event = &soc->wake_events[i];
  
 -- 
-2.20.1
+2.21.0
 
 
 _______________________________________________
