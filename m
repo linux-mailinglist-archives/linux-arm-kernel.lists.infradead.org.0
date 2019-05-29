@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 704452D687
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 09:39:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 981AB2D68C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 09:40:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EHSAO0+QQvC6m+HAdu+/BAEaHkBAxdXECDNhCzkAGuU=; b=Qz9LXkvBJ+DUJK
-	g46AUmHT/GqytNbxhGq5oOiO4jaiAAfXkipajkoKlbGSsQsj4cIiQWCh1LOJuTd5xPV6Yqg+qCBB/
-	WTrdPzvwwpvPrTyE5Q8OODCPYzLcW/zVvDvU8hMeTdVC83bMoyTQNofgR6iXxuJW67zeIZ8a6CLh5
-	napwjJ8iLhIY76AwFoRjFmFgrtz0d77gVU8UbY/tIQ5xdjrjm67iGnSbMrxBXtuoEIMb/Q+S1gJJO
-	1X0GWPS2uG7sQ4UCSxphSn1K0s6UtVYPvFT8JyYcbMc9HSqAMhZiYnFAPUSHZjD77Han1Lo2emWEM
-	nMd64XNXyMHqgUuO5+nw==;
+	List-Owner; bh=t1pmQG6LDTRnrHl7za1qCtq32MwCTd3yemK5cFTL6I4=; b=PrZUKxkTe0TLaK
+	5m3GQhTbJbBZqBJOCWwhtfORsCKqrD5KUyWz+u/cyjzoA7IDug1sQXt5SXqqYFOsIrJjYLWg2W7wh
+	N0+z2qeJkevmUyPUm+Z/3txOZggrTTCHfboUYmrELMEYSClB7TFSo9J90PQ06k+oUtGussNXTqTUm
+	Dq3Ru5S2nDngvDtjyJss2bhBc21iSRhcSP5dGPDqM/w+4ap6i3uLUKe26ZCJebSw7WpuguTZqB1xF
+	I9xu1jojfaVn3Bu58qaf0GJKPkHILm6IXZ6zmeKbWDLira3DrL6HiBj6k8nXi5kalIxpyzlvDCqQ3
+	cFiEw2+UBhBobsUo+ZBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVtAu-0003My-OL; Wed, 29 May 2019 07:39:04 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1hVtC2-0004pc-UV; Wed, 29 May 2019 07:40:14 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVtAm-0003MN-EU
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 07:38:57 +0000
-Received: by mail-it1-x142.google.com with SMTP id s16so2010078ita.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 00:38:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sYdxpoQyKFeDaQbdKIUrN5/Ag9haNiYupFVN0i2N9tI=;
- b=uHyaDhs+yuzAFqEYJAVKpxTifDtlQH1n+iiledygxDhAWUxN21+5LPjKLrF81HPxVo
- D2QplBvvzVVRjujCa1RP5wHv/+uAKXtTZ5OmkmzBcQtszNJdcxWqQmE5/dYAcRwOdGLa
- hk5uHYPHHFLmOcp2LQswEdJjF8bX4JE9p9d1fUtTXKT8+Mg+pzbxoBErHaDy4o3HvSHh
- lSwfGtAYobCEWGbtdyBYRaVaDyvFvGBw0MTy6b5KGP2Ztaho5GjxZmaAPHE2kv6hev4I
- SKVF9ybnj72MgdsN95OdzbVAdNC+hLmQ09GmAQy6XfGi+0fo5Scs3hLEws+LDqMcDULk
- IQTg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=sYdxpoQyKFeDaQbdKIUrN5/Ag9haNiYupFVN0i2N9tI=;
- b=T+P7GRv6+HHp61rYf28V+Bc2eJ/ynb7TAoVc+WzACPRDBCB6262fzkrlE2GGKEHTBY
- 5vW/rVZLYTH4gPLz2YUuTRa2P0Y19spYGPZqXpsJoW+aPy4F399dWJR+8hKI51AOFsC7
- eFypp7aJLvaJ5qlbgtFhGPTO14i/zTNMQMyOMyPdIMc1o+48QkAKw6xdTf4EQW22gB+8
- Mu7MVeduwE91MxYNa6nIIxYERZVFXUbxi/33Ilx5PaOuzl8HXoEjpofh2yXO2C1kk6hZ
- Z1PF69gXJO64DVVfcUYD9X43el61HcosY9drT8JwVGF6m/mC9B4bsdy0KO2gNXdT+0wB
- xVgg==
-X-Gm-Message-State: APjAAAXtcIV/arhJk4/uxpye1ZGs9jq2VKt9IpAc/oJw523+AP0zNn3i
- 1qp63i6cO54HDNdLiY4aqkBIHnbiFqFRawpcoACm3w==
-X-Google-Smtp-Source: APXvYqwJaWt8FOT5iYYwEp1+i82EfIFqj3p//Hr4qZtGOCamTO84O9sAgIaSczF1o/Ft+u1WfFjVLNDcfZybQ0ZTrP0=
-X-Received: by 2002:a24:910b:: with SMTP id i11mr6751918ite.76.1559115535209; 
- Wed, 29 May 2019 00:38:55 -0700 (PDT)
+ id 1hVtBw-0003dZ-46; Wed, 29 May 2019 07:40:09 +0000
+Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
+ [10.192.0.18])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 305D0C263A;
+ Wed, 29 May 2019 07:39:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1559115584; bh=u0bHvq09qbXFfPIAKp6YPrwchkqDTwxdAG0Y1BAOgdk=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=lkJyzDP25Iq5Bo1MkV7iN3kRiuFWrghtGGqU3Xu15XD6DGkmrZI7mPOucZQPcX281
+ /3XhmhGqVJEOtctZctfG9bKvjGYFF3JZjyaURA28P+YVo1r5hEcZxhm571aN26dbrd
+ qw+1xHh8xk+/Iz64V1t+Iqj+fdW8AWDQq/LMlpn3o6r89wsXuo9eCrZATweQ3EaPEH
+ pPKdptPsTFlx/0EnN3fG/Fx9g6hG67rKjHFhuoM7Q7IvrV6VpTRqJidrxwHCvLZalE
+ QWryRDqmQIzyaAghUme5LnU+WnwIYs4PyNZzjjHS0CIH7Lnr1C5DoRQ9cTFghvDj+M
+ RQLMD2AF8w2DQ==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 74DCBA0070;
+ Wed, 29 May 2019 07:39:52 +0000 (UTC)
+Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 29 May 2019 00:39:51 -0700
+Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
+ by DE02WEHTCA.internal.synopsys.com ([::1]) with mapi id
+ 14.03.0415.000; Wed, 29 May 2019 09:39:49 +0200
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Biao Huang <biao.huang@mediatek.com>
+Subject: RE: [v4, PATCH] net: stmmac: add support for hash table size
+ 128/256 in dwmac4
+Thread-Topic: [v4, PATCH] net: stmmac: add support for hash table size
+ 128/256 in dwmac4
+Thread-Index: AQHVFb9bD/NyYV8x/ESH/6Rc+9wGiKaBtu5A
+Date: Wed, 29 May 2019 07:39:49 +0000
+Message-ID: <78EB27739596EE489E55E81C33FEC33A0B932F51@DE02WEMBXB.internal.synopsys.com>
+References: <1559093924-7791-1-git-send-email-biao.huang@mediatek.com>
+ <1559093924-7791-2-git-send-email-biao.huang@mediatek.com>
+In-Reply-To: <1559093924-7791-2-git-send-email-biao.huang@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.107.19.176]
 MIME-Version: 1.0
-References: <20190528133647.3362-1-ard.biesheuvel@linaro.org>
- <20190528133647.3362-5-ard.biesheuvel@linaro.org>
- <20190529073129.GP2781@lahna.fi.intel.com>
-In-Reply-To: <20190529073129.GP2781@lahna.fi.intel.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 29 May 2019 09:38:42 +0200
-Message-ID: <CAKv+Gu_BJO9AYDicyd4hC7uSWP47ac12wPzi4kgCETwjGZQZOA@mail.gmail.com>
-Subject: Re: [PATCH v4 4/4] gpio: mb86s7x: enable ACPI support
-To: Mika Westerberg <mika.westerberg@linux.intel.com>,
- Marc Zyngier <marc.zyngier@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_003856_491809_DDBB5C54 
-X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-CacheID: sfid-20190529_004008_171381_01A22A02 
+X-CRM114-Status: UNSURE (   8.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,38 +97,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Graeme Gregory <graeme.gregory@linaro.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Masahisa Kojima <masahisa.kojima@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Len Brown <lenb@kernel.org>
+Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
+ "jianguo.zhang@mediatek.com" <jianguo.zhang@mediatek.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "boon.leong.ong@intel.com" <boon.leong.ong@intel.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "yt.shen@mediatek.com" <yt.shen@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 May 2019 at 09:31, Mika Westerberg
-<mika.westerberg@linux.intel.com> wrote:
->
-> On Tue, May 28, 2019 at 03:36:47PM +0200, Ard Biesheuvel wrote:
-> > Make the mb86s7x GPIO block discoverable via ACPI. In addition, add
-> > support for ACPI GPIO interrupts routed via platform interrupts, by
-> > wiring the two together via the to_irq() gpiochip callback.
-> >
-> > Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
->
-> Hmm, I thought I reviewed this already? Well anyway,
->
-> Reviewed-by: Mika Westerberg <mika.westerberg@linux.intel.com>
+From: Biao Huang <biao.huang@mediatek.com>
+Date: Wed, May 29, 2019 at 02:38:44
 
-Yes, you did. Apologies.
+>  	} else if (!netdev_mc_empty(dev)) {
+> -		u32 mc_filter[2];
+> +		u32 mc_filter[8];
+>  		struct netdev_hw_addr *ha;
 
-Marc, can you still incorporate this? Or is it too late?
+The reverse christmas tree also applies here.
+
+I also see some coding-style errors, like missing line breaks, etc... 
+that checkpatch should complain about.
+
+Also, please run this patch against stmmac selftests and add the output 
+to the commit log.
+
+Thanks,
+Jose Miguel Abreu
 
 _______________________________________________
 linux-arm-kernel mailing list
