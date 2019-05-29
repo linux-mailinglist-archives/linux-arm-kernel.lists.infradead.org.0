@@ -2,108 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FBD32DB46
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:59:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5EF62DB6D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 13:09:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JKB9gbppInIGhE7jx8m7vTuuuE8Bcf1vxEg1niKzuCM=; b=alPRf9e/ofiNCx
-	tiqIk8cbAXOx1raEy859SwxZ5rTBEkLeuy3s5HRstwT3UZeuT3UDB9avzkv0e8dCXqkAmM648fWax
-	8+7nD1CPRIOizLbcad2jedRnS21HpjXaT2koZWsQV/8u0ppI05SjFWYsiqYPD6ZhhsdUupJBw4ztw
-	ZT7T9gGcdFSRv6wV2IfATzAaEKo4eRislB0eAJ4J8fC5eVlHFfJChmJwlM83J1MuK9xTLU/NjGiDV
-	g53RV7Lgd3TqZouKifsfBmSoyr/As9CpnoOc9uBWE2kBPTkACJyJ7syNP9jhYyFn0Hc7fZGwKjOMV
-	GfFM6HQXrnG6y2JHkDig==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BFxtoQU1D9U4Z7rZ7OnH7ERJh9NQmmFmrAjrfAk9GLE=; b=TiASqZUQT6zJzb
+	R3i58pemT8nfe/K9hcoXmaLZvw1cwPecToPD+zLw1UeSWqXxBXSN6KJoFN6UtDBV9PqPJjfPIgMHs
+	d84Kk4ms0mmTx3Uyq1Y3pn94ugORLGBzZJUMvdZDO7JRYX/YDBcZDS8v83w6y7ikktspd1ny9i/4m
+	jCUbbWKVdIW6Q1o+8dCIhruhnLrgm3Dl4KcpS2Cf6CzDN/NOfg56esVbmBAosnfGah9hEqmUCEy8I
+	CDulaJ+p9ZyAz8+iSJlv5d81Kf5MYipgUQBU9KrY5W+q9MUqtt0SvkmwpJIO+7afUiF9Mx5D5jixf
+	swMw+DT1XDxtga56Fdgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVwIU-00078c-5X; Wed, 29 May 2019 10:59:06 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hVwS3-00021B-Ls; Wed, 29 May 2019 11:08:59 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVwH0-00063B-70
- for linux-arm-kernel@bombadil.infradead.org; Wed, 29 May 2019 10:57:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=lMfuNcsK6tuVz7vC7aYS5UVf9NSaVZRFtcoyHVQ3R8M=; b=FxTLicM60F6slszzCJgSnAZMEp
- oai+Hkj8hz2lZ6xgQ6z+fpnqTlZZUacCCXdM+w3V5YMbKdwCk8O/lxrsH2Wa9ohmIEEUmjYWU+09v
- 8188GSiSdJFvMXD/LZQ7Wf4lRwk2iTSWV6rrLIQvoozeLfyGc4qT2P8TFxoBB8lnQTKzC6jzKmSt/
- yqQQLTtM19pZc8b/jTDZp6gDEWAEA/gUXrGk22ecuM8cRhmtqvEewIPhvZaZTgGat7eNnOkyC0wqJ
- s7CuLo6B6xkeUQamJezLyXwlf1kTmrOCjED21B3d84S9UYj1DV2AEY5OyYLL86mzqWYIlAEN6DSfh
- hnFof38Q==;
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVwGx-0003bX-9i
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:57:32 +0000
-Received: by mail-pl1-x642.google.com with SMTP id c5so898625pll.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 03:57:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=lMfuNcsK6tuVz7vC7aYS5UVf9NSaVZRFtcoyHVQ3R8M=;
- b=KwCs5fOwghwsU5zqVfivfYLGzuV2zoFcgXvqpGrFf4v+qrweHmIqI0lJmPNL4epz5f
- bMMAXr+tuk70/z4UYM5UxW/zi770+a2NqzhFNfecL2Sa4PWCiHz5H6EUHkB0fy4ge9Bq
- 8jK10Q21ii1l1Z/AYeX41oTpqgi372oJT7KSA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=lMfuNcsK6tuVz7vC7aYS5UVf9NSaVZRFtcoyHVQ3R8M=;
- b=eZRJ1ycue6XVYBTmPfxohYs0LfH6LRaYo507WBxeQ07TQZs5FbJ/dG88eIgWc6fJ94
- 8AYCurLe3hd4eXFehJMogItjgbYNLFi++wSpPiDLIA3TkEWU9ZaniZgT6CF2MDGjoNZA
- QLDyUE69ePLDJ+e9wlsRHkaidnuzK3wc9K1xXzp0jsVmD5s8W/xx6Sg5uW+o/SEzK+kJ
- 8P9cv2YyV7LDCjI0irzxoXc66sTR/ijeb5UpxteR9Fe9hSkfE3VHSo3xOrpatfAmYL0z
- D9VaV0xXPh9ln3TxncHsgeivYnMpn7ILAB6IXqPjRl6t+gKPtoUY53UNjbF01tV1gFZf
- 8txw==
-X-Gm-Message-State: APjAAAXXNxxDOgTbahB1kpYk3iy+NxIzba88yKPUMAKJjyszvw1IdVt9
- gRiTV+aCnjsZjOtKb29ZBIdN5w==
-X-Google-Smtp-Source: APXvYqwXHj5uVm2t/AeGvWcmeixCbqNTC6/9vS/5OT5LWc4yeua8wWhsULIPjXFvzVGVBE3iOaNS5Q==
-X-Received: by 2002:a17:902:b713:: with SMTP id
- d19mr79658807pls.123.1559127441569; 
- Wed, 29 May 2019 03:57:21 -0700 (PDT)
-Received: from localhost.localdomain ([49.206.202.218])
- by smtp.gmail.com with ESMTPSA id 184sm18974479pfa.48.2019.05.29.03.57.17
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 03:57:21 -0700 (PDT)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [DO NOT MERGE] [PATCH v9 9/9] arm64: dts: allwinner:
- oceanic-5205-5inmfd: Enable Microtech MTF050FHDI-03 panel
-Date: Wed, 29 May 2019 16:26:15 +0530
-Message-Id: <20190529105615.14027-10-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20190529105615.14027-1-jagan@amarulasolutions.com>
-References: <20190529105615.14027-1-jagan@amarulasolutions.com>
+ id 1hVwRv-00020m-IG
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 11:08:53 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 284A22043B;
+ Wed, 29 May 2019 13:08:45 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 098E920114;
+ Wed, 29 May 2019 13:08:45 +0200 (CEST)
+Subject: Re: [PATCH v4] arm64: dts: qcom: msm8998: Add PSCI cpuidle low power
+ states
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+To: Niklas Cassel <niklas.cassel@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>, Rafael Wysocki
+ <rjw@rjwysocki.net>, Daniel Lezcano <daniel.lezcano@linaro.org>
+References: <346cd9f0-583d-f467-83d0-e73768bf5aac@free.fr>
+ <20190523214619.GB25133@centauri>
+ <f9aa108f-cb0a-2cee-7fce-e2803dcadb24@free.fr>
+Message-ID: <c41508c7-35b2-aa40-c468-384e51d3d7b6@free.fr>
+Date: Wed, 29 May 2019 13:08:44 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <f9aa108f-cb0a-2cee-7fce-e2803dcadb24@free.fr>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Wed May 29 13:08:45 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_065731_342833_7832E424 
-X-CRM114-Status: GOOD (  12.65  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20190529_040851_895294_166F497F 
+X-CRM114-Status: GOOD (  14.96  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,123 +73,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Ryan Pannell <ryan@osukl.com>,
- bshah@mykolab.com, linux-sunxi@googlegroups.com,
- Jagan Teki <jagan@amarulasolutions.com>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com, Sergey Suloev <ssuloev@orpaltech.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ PM <linux-pm@vger.kernel.org>, Jeffrey Hugo <jhugo@codeaurora.org>,
+ MSM <linux-arm-msm@vger.kernel.org>, Andy Gross <agross@kernel.org>,
+ Sibi Sankar <sibis@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Microtech MTF050FHDI-03 is 1080x1920, 4-lane MIPI DSI LCD panel which
-has inbuilt NT35596 IC chip.
++ linux-pm
 
-DSI panel connected to board via 39-pin FPC port with,
-- DLDO1 as VCC-DSI supply
-- DLDO2 as DVDD supply
-- DC1SW as AVDD supply
-- DC1SW as AVEE supply
-- PD24 gpio for reset pin
-- PH10 gpio for backlight enable pin
+On 24/05/2019 14:32, Marc Gonzalez wrote:
 
-Tested-by: Tamas Papp <tamas@osukl.com>
-Signed-off-by: Ryan Pannell <ryan@osukl.com>
-Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- .../sun50i-a64-oceanic-5205-5inmfd.dts        | 49 +++++++++++++++++++
- 1 file changed, 49 insertions(+)
+> From: Amit Kucheria <amit.kucheria@linaro.org>
+> 
+> Add device bindings for cpuidle states for cpu devices.
+> 
+> [marc: rebase, fix arm,psci-suspend-param, fix entry-latency-us]
+> Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
+> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+> ---
+> Changes from v3:
+> - Fixup all 4 entry-latency-us (Niklas)
+> Changes from v2:
+> - Rebase
+> - Fixup arm,psci-suspend-param for power-collapse states (otherwise: reboot)
+> ---
+>  arch/arm64/boot/dts/qcom/msm8998.dtsi | 50 +++++++++++++++++++++++++++
+>  1 file changed, 50 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+> index 412195b9794c..ac6bd32c0e7d 100644
+> --- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+> @@ -78,6 +78,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x0>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_0>;
+>  			L2_0: l2-cache {
+>  				compatible = "arm,arch-cache";
+> @@ -96,6 +97,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x1>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_0>;
+>  			L1_I_1: l1-icache {
+>  				compatible = "arm,arch-cache";
+> @@ -110,6 +112,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x2>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_0>;
+>  			L1_I_2: l1-icache {
+>  				compatible = "arm,arch-cache";
+> @@ -124,6 +127,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x3>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&LITTLE_CPU_SLEEP_0 &LITTLE_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_0>;
+>  			L1_I_3: l1-icache {
+>  				compatible = "arm,arch-cache";
+> @@ -138,6 +142,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x100>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_1>;
+>  			L2_1: l2-cache {
+>  				compatible = "arm,arch-cache";
+> @@ -156,6 +161,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x101>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_1>;
+>  			L1_I_101: l1-icache {
+>  				compatible = "arm,arch-cache";
+> @@ -170,6 +176,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x102>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_1>;
+>  			L1_I_102: l1-icache {
+>  				compatible = "arm,arch-cache";
+> @@ -184,6 +191,7 @@
+>  			compatible = "arm,armv8";
+>  			reg = <0x0 0x103>;
+>  			enable-method = "psci";
+> +			cpu-idle-states = <&BIG_CPU_SLEEP_0 &BIG_CPU_SLEEP_1>;
+>  			next-level-cache = <&L2_1>;
+>  			L1_I_103: l1-icache {
+>  				compatible = "arm,arch-cache";
+> @@ -230,6 +238,48 @@
+>  				};
+>  			};
+>  		};
+> +
+> +		idle-states {
+> +			entry-method = "psci";
+> +
+> +			LITTLE_CPU_SLEEP_0: cpu-sleep-0-0 {
+> +				compatible = "arm,idle-state";
+> +				idle-state-name = "little-retention";
+> +				arm,psci-suspend-param = <0x00000002>;
+> +				entry-latency-us = <81>;
+> +				exit-latency-us = <86>;
+> +				min-residency-us = <200>;
+> +			};
+> +
+> +			LITTLE_CPU_SLEEP_1: cpu-sleep-0-1 {
+> +				compatible = "arm,idle-state";
+> +				idle-state-name = "little-power-collapse";
+> +				arm,psci-suspend-param = <0x40000003>;
+> +				entry-latency-us = <273>;
+> +				exit-latency-us = <612>;
+> +				min-residency-us = <1000>;
+> +				local-timer-stop;
+> +			};
+> +
+> +			BIG_CPU_SLEEP_0: cpu-sleep-1-0 {
+> +				compatible = "arm,idle-state";
+> +				idle-state-name = "big-retention";
+> +				arm,psci-suspend-param = <0x00000002>;
+> +				entry-latency-us = <79>;
+> +				exit-latency-us = <82>;
+> +				min-residency-us = <200>;
+> +			};
+> +
+> +			BIG_CPU_SLEEP_1: cpu-sleep-1-1 {
+> +				compatible = "arm,idle-state";
+> +				idle-state-name = "big-power-collapse";
+> +				arm,psci-suspend-param = <0x40000003>;
+> +				entry-latency-us = <336>;
+> +				exit-latency-us = <525>;
+> +				min-residency-us = <1000>;
+> +				local-timer-stop;
+> +			};
+> +		};
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts
-index a4ddc0b9664c..ab9ee10ba6a2 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-oceanic-5205-5inmfd.dts
-@@ -8,6 +8,7 @@
- /dts-v1/;
- 
- #include "sun50i-a64-sopine.dtsi"
-+#include <dt-bindings/pwm/pwm.h>
- 
- / {
- 	model = "Oceanic 5205 5inMFD";
-@@ -22,6 +23,15 @@
- 		stdout-path = "serial0:115200n8";
- 	};
- 
-+	backlight: backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&r_pwm 0 50000 PWM_POLARITY_INVERTED>;
-+		brightness-levels = <412 512>;
-+		num-interpolated-steps = <100>;
-+		default-brightness-level = <100>;
-+		enable-gpios = <&pio 7 10 GPIO_ACTIVE_HIGH>; /* LCD-BL-EN: PH10 */
-+	};
-+
- 	can_osc: can-osc {
- 		compatible = "fixed-clock";
- 		#clock-cells = <0>;
-@@ -40,6 +50,29 @@
- 	};
- };
- 
-+&de {
-+	status = "okay";
-+};
-+
-+&dphy {
-+	status = "okay";
-+};
-+
-+&dsi {
-+	vcc-dsi-supply = <&reg_dldo1>;		/* VCC-DSI */
-+	status = "okay";
-+
-+	panel@0 {
-+		compatible = "microtech,mtf050fhdi-03", "novatek,nt35596";
-+		reg = <0>;
-+		dvdd-supply = <&reg_dldo2>;			/* VCC-MIPI */
-+		avdd-supply = <&reg_dc1sw>;			/* AVDD_5V0 */
-+		avee-supply = <&reg_dc1sw>;			/* AVEE_5V */
-+		reset-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>;	/* LCD-RST: PD24 */
-+		backlight = <&backlight>;
-+	};
-+};
-+
- &ehci0 {
- 	status = "okay";
- };
-@@ -81,10 +114,26 @@
- 	status = "okay";
- };
- 
-+&r_pwm {
-+	status = "okay";
-+};
-+
- &reg_dc1sw {
- 	regulator-name = "vcc-phy";
- };
- 
-+&reg_dldo1 {
-+	regulator-min-microvolt = <3300000>;
-+	regulator-max-microvolt = <3300000>;
-+	regulator-name = "vcc-dsi";
-+};
-+
-+&reg_dldo2 {
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <1800000>;
-+	regulator-name = "vcc-mipi";
-+};
-+
- &reg_ldo_io0 {
- 	regulator-min-microvolt = <2800000>;
- 	regulator-max-microvolt = <2800000>;
--- 
-2.18.0.321.gffc6fa0e3
+Niklas and I have been discussing the min-residency-us prop.
 
+https://elixir.bootlin.com/linux/latest/source/Documentation/devicetree/bindings/arm/idle-states.txt
+
+I thought a requirement would be
+
+	min-residency > entry-latency + exit-latency
+
+but it doesn't seem to be the case.
+
+Do the values proposed here look kosher?
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
