@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C709F2DB2A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:57:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F7D12DB34
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:57:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/AbTxWJLZwmf3Hf08zzeX0IEUsvqG8Fe4xdqa4Ni0Jo=; b=CUucKsQxkiml+L
-	JireHU9tRr4h72uadntJkVdFEjR7mhYj6gWsRRAbnZtNH4MP2tTLQqCqitUfysxP5vkQSMFGw8cz8
-	MPDfxIw6E1h1aogvzgmdCN5Iab20DMJwDtB/QrVJwFL4MYy3Vc2TgpGkXM9OR54tdPxGLVhpO6hLu
-	a98RvDci5RxdAp6IG32LiTZ/yV+SkgYmNZT8ONXX60DQ2REJcmHbRFU7EExZkQ+vba8PIkCnCp5c8
-	wWfsjrIdpbYCDD9q84QtGsBg8rGs1FRfx1IiEiMnfMKsiiKrqSCrg3WGMU0rU0rnBZjSWQvZof+pq
-	KRbH8F1hzXxJXHf86lLQ==;
+	List-Owner; bh=ZFBSwNqoS7NCKmu1uUMi/eJTbL9FyrUCzZ0LoY8xg1M=; b=juYgQkQ/nnr8UH
+	dUhycLfT1NpVG1zCdmXN5CLXw0V+5Mlks7+JZlp7UTgudQBswOINwL+fLVQOWC4rbqTF2uwc3e6gM
+	SUl7flx/13CinOHPHCfSZIYXTVULW20aLPaOMMVC9lQvIL6CovmwGAnXOW3xZa2lPimI8JteIJcU9
+	VTrdnyU2tqheP9UlKgYChYgsU52C4+Ad6ib/foZoBiELAdjGVUjVbYUJG7mBcEYir0B8QGuyl2/YK
+	M02wuvVjfl+qiWn7ngKx+MzgNlHzffFmz/IueOn7bEfNeSKkUM481udw9Y9vLYT0skdQ2Bg5aVGX7
+	+CAtfvTtizLxO6BOeCng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVwGb-0005M3-O0; Wed, 29 May 2019 10:57:09 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hVwGm-0005XR-8P; Wed, 29 May 2019 10:57:20 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVwGF-00051e-5w
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:56:49 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d126so1401699pfd.2
+ id 1hVwGJ-00057n-Kq
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:56:54 +0000
+Received: by mail-pf1-x444.google.com with SMTP id u17so1386807pfn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 03:56:46 -0700 (PDT)
+ Wed, 29 May 2019 03:56:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ckydVo2IPZQfXMKYGz1uqlUzm7n70fMIZ1xjq1PJknE=;
- b=V0jQzMibWyqWK10H6MvY76fJcwPWlGrRY8e7Df827n8zYmV9xEN/F62M7y906QKzhy
- xoeISZnEqS7mw55e65yCWO7PijGBgJGHsLydsQoE9PlcgzZ466LkuT5qH+47NCdA5P9Z
- 1YRFF+E28l166xBoI+WV7zEvpSlDNH63GJ2Qo=
+ bh=/HOJUJPmu0DEDj06ebaN852o3ZXmTIE5qbyIrE/4RCQ=;
+ b=grc4vc5ccDjj9vGZrQtKPLDitASXNBkw5h02ZiZKrmHLtsjSNj70fuqjGVRCQ14aRU
+ 7XJhUM2Pw9Boghtdessngp/2nRsKNIwLs0YzadVFrG2srOi5gqGysUxZ1iEocuhjGiUs
+ G1BHkYB+bvxir0JgGl83waMzduEA5pjUWIGn4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ckydVo2IPZQfXMKYGz1uqlUzm7n70fMIZ1xjq1PJknE=;
- b=mYx8Ugc3kQx9YAcx3KHl9wcRVn7rSGjAzbmebyPn33azTjugjFKJDBFQ3iOp9/hLre
- 6D+6AsxDWFEQVgCK2+HYAaneWYwnaDKpxiAGnqv5EWEFEZ868X1WU92+r9xqLG9tZWkE
- QjkJPdo1FC2qjwugYLU7MLOgBOSfO/yl5llqYq3gpIrqsQdv89TnrXkjW9gcdcCVJjxw
- tIJRQItQWMyGwoKjLn+cXeEzyjEEAcJrvAQllemN0nB3M5tR9Rp53Rbi+UfxpeR/UK5i
- niDEs2xZI0zoyoCsCgRoczE5s5D9WyqGN1hz6Qdf/VyVTciXeq85YDLuDbkVCZVOEpJR
- Qa0A==
-X-Gm-Message-State: APjAAAUHByrPS9Q7e+4NWvES3BBzN1+Za7KuQMC3PwfJcjjQiennn39u
- lSOjTTdKZ2ZJFmoQiMvyBxd+3Q==
-X-Google-Smtp-Source: APXvYqxAqeyPUCEfsLpzPpNkG6VxtpiEQSBzycYxUZb/YK7f/rdLKTkrj+3tN8YOGJs1FXUIwvLy1A==
-X-Received: by 2002:a63:4d56:: with SMTP id
- n22mr110949138pgl.307.1559127406146; 
- Wed, 29 May 2019 03:56:46 -0700 (PDT)
+ bh=/HOJUJPmu0DEDj06ebaN852o3ZXmTIE5qbyIrE/4RCQ=;
+ b=fuF4LgRoYfQp17X3JCLzu2djBoZr+LSc5jSCqrE8R3TAq4gIIOChcahdT2ltuYZWcO
+ o15Y5MchDq+kCZrWlN5PumUUZKwqWrdd37cEcurqwS8JrlGm+Ffa89botQss+JymYyC1
+ eaPcsJye5wtRLuZ0z7GOUUBGkn72E4UCmJYIpim/dua2laoIBZXC4Aucas9QvHEmjTHC
+ ryffqJDzY7SwUd941FMSxbmnuGTR3YeTuteGixVg04n7fMgSmgc+7FW9AXHdWR+bV8wz
+ EJ2e45kxkfBP+e1+INYt1auU6ksOhS0GJXIBqgn297VOEvDMg/Qk7IAB5lAca/QNxzUp
+ Kx8A==
+X-Gm-Message-State: APjAAAUo9jaGwmtjKCiLSXD4eqy8SYe8RPvsLUpnyJ+mDp/aIrSvoDI7
+ nOsEYiBB1iwRlcW8Wds32eWx3g==
+X-Google-Smtp-Source: APXvYqwkDEN5ViwUhtjeUodU3pfOZQ1pY/mLl+5Nf3Rvnz+8uPjdcVebnc1VS0CfP684+zNGbbjsZw==
+X-Received: by 2002:a63:ff0c:: with SMTP id k12mr31032943pgi.32.1559127410770; 
+ Wed, 29 May 2019 03:56:50 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.202.218])
- by smtp.gmail.com with ESMTPSA id 184sm18974479pfa.48.2019.05.29.03.56.42
+ by smtp.gmail.com with ESMTPSA id 184sm18974479pfa.48.2019.05.29.03.56.46
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 03:56:45 -0700 (PDT)
+ Wed, 29 May 2019 03:56:50 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
  dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v9 1/9] dt-bindings: sun6i-dsi: Add A64 MIPI-DSI compatible
-Date: Wed, 29 May 2019 16:26:07 +0530
-Message-Id: <20190529105615.14027-2-jagan@amarulasolutions.com>
+Subject: [PATCH v9 2/9] dt-bindings: sun6i-dsi: Add A64 DPHY compatible (w/
+ A31 fallback)
+Date: Wed, 29 May 2019 16:26:08 +0530
+Message-Id: <20190529105615.14027-3-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190529105615.14027-1-jagan@amarulasolutions.com>
 References: <20190529105615.14027-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_035647_474715_954196A5 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20190529_035652_041138_CEA85626 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,30 +108,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The MIPI DSI controller in Allwinner A64 is similar to A33.
+The MIPI DSI PHY controller on Allwinner A64 is similar
+on the one on A31.
 
-But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
-to with separate compatible for A64 on the same driver.
+Add A64 compatible and append A31 compatible as fallback.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
-Tested-by: Merlijn Wajer <merlijn@wizzup.org>
 ---
  Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt b/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
-index 1cc40663b7a2..9877398be69a 100644
+index 9877398be69a..d0ce51fea103 100644
 --- a/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
 +++ b/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
-@@ -12,6 +12,7 @@ The DSI Encoder generates the DSI signal from the TCON's.
+@@ -38,6 +38,7 @@ D-PHY
  Required properties:
    - compatible: value must be one of:
-     * allwinner,sun6i-a31-mipi-dsi
-+    * allwinner,sun50i-a64-mipi-dsi
+     * allwinner,sun6i-a31-mipi-dphy
++    * allwinner,sun50i-a64-mipi-dphy, allwinner,sun6i-a31-mipi-dphy
    - reg: base address and size of memory-mapped region
-   - interrupts: interrupt associated to this IP
    - clocks: phandles to the clocks feeding the DSI encoder
+     * bus: the DSI interface clock
 -- 
 2.18.0.321.gffc6fa0e3
 
