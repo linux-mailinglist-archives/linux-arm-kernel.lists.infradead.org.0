@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA6F42DAA0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:28:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95EF22DAA1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:28:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y/ts52Rus+f+nJFoHjO6G1X78NV6Pv1sAOsBIHs9YYI=; b=tEZuf91auAoLG9
-	o8OkuhrSGZNbJ3UZ7tIF/kdMQ6aBxAeWsUQ1SM78oZGd3kE1WR5sIHmzL6p9EWslIYX3gwZLbBHRV
-	p2t2PEcJq28GUYxNa0isv582csVG5YR55ozenWRPIQjVhCGdDKg6+v6B745cGFpgjdilj6+80ybsG
-	UKt9NbnsjlC3Lr3HjUcI6hIgUOCA0M66aIWvaWa88SGnjgSN71vT9v+GNr9NWenQB9Xu9fo+ulP+D
-	aZASS6xmev5B6Z8j2S2NBmZ1WCyjmRnuiu6keXCd2Ubm7P4uupeWTdZk5+HmuO84Jf54gfyb0/G1G
-	BZyPZCEOYsWxux+08rGQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6g5mgMs/e3CJHZRPP3s8ruagZ2NIlgUQ3uzjYsOlNbk=; b=sZXxj/jYkEPo+V
+	jWL8SpnT0jia6PGSKJTpNfpVZCSGlBVsMH0K6bCUyzwvQFnPgMKhxFtTmZF2L29zIVYZ9vVI+L88c
+	rvPzwVKYXabMbFYiqAXUXKgGhuKkxk4C131JQbkzGyEiz98GrudqquugMlgNlIH6djb7obmyphnhK
+	LWbpRgH++gauBs9bYLVzLjGUdC9JR+tBztwc0N+HwnPNEN4ZHUU++SXL1GoSMrZwNa7gp3wXrkkqd
+	t1uRTYzIb6X51/5wfPYWumOIsFOdOnMvdScRM0wQb+6xdlVSsE0nYoUhAEB1uA516PDTNtZuyP9Jm
+	9zTMt6dpXYh1Q6eMyZuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVvoS-0001UG-Mq; Wed, 29 May 2019 10:28:04 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hVvoc-0001jb-2w; Wed, 29 May 2019 10:28:14 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvnP-0000PV-4Y
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:27:03 +0000
-Received: by mail-wr1-x441.google.com with SMTP id l2so1336319wrb.9
+ id 1hVvnQ-0000R2-6y
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:27:04 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f8so1378025wrt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 03:26:58 -0700 (PDT)
+ Wed, 29 May 2019 03:27:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=qH4FDRgRxazUxppnfy66oz7/ZG4EwLFotnt4vrr38Jk=;
- b=RgPCHnOIk/VcuuhD4LkWOrkoHFmhwsd+XnEJ0uKI0Y9pFcLjlriu5i/gfZaqJkJujN
- uX0w3ErsriLvqQyvfuHw/+6hzD/3YSqYPn0Ok9CmE+geqXFAhUFw2w9Rpmi9fxUdaSoT
- f8PsppOSw4hmU0VwylunyMWmFY3WF4dXd1VNRV/N2fphARv3Ag67OCa7fqP1RXTHdWEN
- fvFHW1W62sR7GQpBSpZXJtdi/18X+yaqtKkKcyEMVDWq9579Kt2NmIoQ5s/aCDIDEVqx
- +Y9+u1uii1HMVENAm79jR3qM7CuW6h9yq7Vs1947aMQK2Hx5LDPu8larIK/Vv2e3aVX+
- e6DA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=F4ek3zhf26WPz8SCGgna791YOt0uckHhipVYXfvPpfU=;
+ b=n5oxxiJDyt8yneaPCfXwu7Qf4lqKWCndkvzR5bGCkZ9MPGzEORul3krIgIDgl45oGN
+ PWUt79YD421ML4vQTauuPSKigORoLW0kbcOgo8l9GQbfaLW6YSzA0/kWc+eJoXPkMYr6
+ c17dOtopGGPXF6R/h4HZafeIEVm4xvOQyhScfNEjXEI01dhmeRd8rbgV9DIpnHTDnmqy
+ dR3GyA/2sMKBoFxrHKzN42Toj0nG8xEgdldygrVWF2Oo5lhSQQIOul0OXeVe+frc5tFE
+ 6zuV0vSREi73pASxy66Ys/47ZyrfHBe6QpytHNfzBt/omfnDA3e3VuB0QUASbu0LY3aW
+ dSfg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=qH4FDRgRxazUxppnfy66oz7/ZG4EwLFotnt4vrr38Jk=;
- b=TpBOAjoh7lf0cJxe5Suam6sFxFoYDDCrxkKy4H6LbphvfpB/cEIFQmTLRBVDnNh5Mk
- LaPnU+Fo7p8P553Y4IAEATMRODLYjq73yKArSn7M3Aewm7fVOCiu2DnyhsFMwaewC7EA
- UnepOZRcqcCKW3MpXyB8JahRSyDQzza8OciV2rtvpn6Octm/0BPNGH6/AzhjNj1U07QL
- A3JCJw3X3dX0Cv+07q5ozlhkUsLsrjmA7NNKphZzsTmyfc7epuo52d0N9RkUiPWHMgJ6
- mcO0DacCxCO02yWh+hv3Vgtds2kugjWnZdLlDIoNh3UBQxpy9pmdEDF/rBa1YoYjyq5X
- GJwQ==
-X-Gm-Message-State: APjAAAUlbn/rlAuuwxSU53ZDwmUkuZE3i92gPd2aOfc/TGRUkP+jHhTf
- +AG8NoBEzV5LpqskDnkqS6Q=
-X-Google-Smtp-Source: APXvYqxpCtSZC0Q2fp8eoEj2RPZV2FI55G/Xb0w+oZGygASEKhSjAxQ5kZ6u9HACyVknmUMaPS9vhA==
-X-Received: by 2002:adf:8062:: with SMTP id 89mr11498516wrk.97.1559125617201; 
- Wed, 29 May 2019 03:26:57 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=F4ek3zhf26WPz8SCGgna791YOt0uckHhipVYXfvPpfU=;
+ b=uKIWIBs5DJSdnppBzeNlLSFsRPfOtnXhv0/2RKZhovTgceGvry292HveNSJXRG7ff4
+ A8dZnHpGDMe60slsB4oj1AgWHB6gVcvGWAntoy2NkPHZ1evPSlE5gGS8tECUx1j0SjYo
+ 8fGQJVcXIFZTjJG5EoNoN3P+P7mjdwEvWtcGtSBmM9r7jHiDT/GlbjGJPmzsQ+vE54ur
+ wO0LR5XNmZ0Ow4zZvyAwFbCtIVyR1C+oVL40Bp42ONUHqkNm9FzAYEwh4qYjWdpMYEJ5
+ 9JgE6Mj2o4qnzRU/rp/DNFx4H3YtboAjTOL+ehm2yeNt82iVxm6kkVf03V/MxKciQbMz
+ vDdA==
+X-Gm-Message-State: APjAAAV1rLRIVvVyqcwNHu7/313XKW6I0d5AWZjDBLM3l27bUAWh2giE
+ T4u4/AtlM+wBTg16D8di9XdbamjV
+X-Google-Smtp-Source: APXvYqzzqvqYh9R4VEQzQroevdoud8G85S2Hh/csnHhyDgdBiZ+4LqpzQDY8Qqva1KFlLCrzMbuoAQ==
+X-Received: by 2002:adf:ef83:: with SMTP id d3mr8922611wro.253.1559125618796; 
+ Wed, 29 May 2019 03:26:58 -0700 (PDT)
 Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id f21sm841586wmb.2.2019.05.29.03.26.56
+ by smtp.gmail.com with ESMTPSA id r8sm498454wrt.92.2019.05.29.03.26.58
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 29 May 2019 03:26:56 -0700 (PDT)
+ Wed, 29 May 2019 03:26:58 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 1/2] soc/tegra: pmc: Fail to allocate more than one wake IRQ
-Date: Wed, 29 May 2019 12:26:53 +0200
-Message-Id: <20190529102654.14665-1-thierry.reding@gmail.com>
+Subject: [PATCH 2/2] soc/tegra: pmc: Avoid crash for non-wake IRQs
+Date: Wed, 29 May 2019 12:26:54 +0200
+Message-Id: <20190529102654.14665-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190529102654.14665-1-thierry.reding@gmail.com>
+References: <20190529102654.14665-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_032659_547414_7B1897C5 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20190529_032701_180331_ED03FBF0 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,28 +107,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The code currently doesn't support allocating more than one wake IRQ at
-a time. Detect this situation and error out. Also make sure to output a
-warning when that happens to help track down callers.
+For interrupts that are not wakeup sources but that may end up getting
+mapped through the PMC as interrupt parent (this can happen for GPIOs),
+return early in order to avoid a subsequent crash from an out-of-bounds
+access to the register region.
 
+Reported-by: Bitan Biswas <bbiswas@nvidia.com>
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
  drivers/soc/tegra/pmc.c | 3 +++
  1 file changed, 3 insertions(+)
 
 diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-index 5648e5c09ef5..653fe2c466f6 100644
+index 653fe2c466f6..6e66b5e293be 100644
 --- a/drivers/soc/tegra/pmc.c
 +++ b/drivers/soc/tegra/pmc.c
-@@ -1863,6 +1863,9 @@ static int tegra_pmc_irq_alloc(struct irq_domain *domain, unsigned int virq,
- 	unsigned int i;
- 	int err = 0;
+@@ -1924,6 +1924,9 @@ static int tegra_pmc_irq_set_wake(struct irq_data *data, unsigned int on)
+ 	unsigned int offset, bit;
+ 	u32 value;
  
-+	if (WARN_ON(num_irqs > 1))
-+		return -EINVAL;
++	if (WARN_ON(data->hwirq == ULONG_MAX))
++		return 0;
 +
- 	for (i = 0; i < soc->num_wake_events; i++) {
- 		const struct tegra_wake_event *event = &soc->wake_events[i];
+ 	offset = data->hwirq / 32;
+ 	bit = data->hwirq % 32;
  
 -- 
 2.21.0
