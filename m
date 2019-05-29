@@ -2,69 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 097702D620
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 09:20:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 260612D632
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 09:22:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/yhRTjqUTMXTy5aK4dPgTzDPRurF7XRbSBGtJWoToHM=; b=iEjFZ9rNOuQEphcT8yi7ghMj4
-	9DulUqaFiI0z/2eo2N8048j3wrXxX90/zMHB5gQywiof4Di6FLXBZIqKHs5UojLaELewXgRiPf2Dj
-	oQx9W54Hc6GtpVqHJM9cI5wjItCUN1FNY1JQD2BeaCi95kEJpqCTvYANehWC2GFS/Yqj0seqEPENA
-	/2zD6SvXAvgLHg1tISSldVhk6DjUtJOFgyh/aredr4P47b5wcuTrJF96ngDkQ902ux8ooI5hDNj52
-	6vzzjhAzeVEeyX5zsYLzv37+1oPiUwwK4zWRVmAfXjF0YSao0tBAY8NTMHiIlsBoIJZL8CmLTdJ0R
-	3NUv5CBsA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ee6DloDuY8KT3CZRnUzpC7/73y92Y8haw8Tfhq/7zXw=; b=H0YR8MH1OCYTp1
+	Z6lW+RLnryY9g8wVyNiRsHSwbn2WGgDPYvXwsngyCgw2QD4iVgz//7fqs+jxekEFF4KRZpKsuF2Nt
+	zbCgSBN9k8N6yp6jQIBmq4WReTW2TKoUSuLWZoQI0x/stuT8nmL5wzjYbhwsbz2ZKIATZXMnqd/6Z
+	r1v2i7LlWvZMjnjqd5kDzU5Qzw+VysTwitl/19GcAdgKS+GGeAXdd0f9h5PetAfTB3r9Fe6WG4bmF
+	3Xukog0yLmJ4dKRb2uA5ck0RPrK0fw75Lr+fdB+TR0TD8UsfcPoDf9EHKxicdtUhiZuCQmJwIWnFE
+	S+a0aDLh8x2a7AK76/ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVsse-00045O-LC; Wed, 29 May 2019 07:20:12 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1hVsuy-00051T-0z; Wed, 29 May 2019 07:22:36 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVssT-0003SX-Be
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 07:20:03 +0000
-Received: from localhost (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
- [90.88.147.134]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 740E3240014;
- Wed, 29 May 2019 07:19:46 +0000 (UTC)
-Date: Wed, 29 May 2019 09:19:45 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Chen-Yu Tsai <wens@csie.org>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-media@vger.kernel.org
-Subject: Re: [linux-sunxi] Re: [PATCH v2 00/10] Allwinner A64/H6 IR support
-Message-ID: <20190529071945.mrbgurcvl2jvpm5r@flea>
-References: <20190526222536.10917-1-peron.clem@gmail.com>
- <20190527134805.j7t4ffstrnhdml47@core.my.home>
- <CAJiuCcdnQa0TArduT4yBbUyd+dOaM0cQ1JcRUQLXLR6s_5e8sA@mail.gmail.com>
- <20190527163117.hpealt6cttqzqdxz@core.my.home>
- <20190527172337.5qxh5qeqnul55gsb@core.my.home>
- <CAJiuCccnRCqez2uG-pU8XY4Z=5S8rDwFB3rgsBovPHY1Uxyazw@mail.gmail.com>
- <20190527193016.yxngu5grsqnctx3z@core.my.home>
- <20190527195330.pugb7ypvnyv32fug@core.my.home>
- <CAJiuCccpnEqw_tGXST+WtGmZLbE+=wN1Hn9HKrk1+4WsW-abiA@mail.gmail.com>
- <20190528180447.zlrdfmn73fntnf4n@core.my.home>
+ id 1hVsur-000517-62
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 07:22:30 +0000
+Received: by mail-it1-x142.google.com with SMTP id 9so1936136itf.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 00:22:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=8PdySaW5/M3o7kkYS3QjGAsNuUlBv0LoNmhCVAMchU0=;
+ b=T9TPZUyUCmcKrtg2yY2ON08nKW6RVV80EBeBttIi75vabWW44DKxbpht0xyvAoRMgj
+ ibT+uaYcrnQOAnYHRcGQ/9rdZ22+IPHQ8rko9b13cMOPGQrdf19bFWgV+vIX1WhSaIIr
+ 8AZLnqtTgjvG/zpKo4nCO/bt1bUYKfa82foNbByK+OxrDBzpX7a9AOaYHYfT1780Tks0
+ oyTkVKhs/kM2XVYHtUViPUSB3yGyqjJDlBDDO/+ZNMWPQWJkFumhaCA4WyLsauYEU18t
+ LcRfvGfoZwj5me6sfb0hWOJefXLi7TqoZW2LBg4wVgW7AyjYcyL8kePaRGqDLG0BYdqu
+ QTqg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=8PdySaW5/M3o7kkYS3QjGAsNuUlBv0LoNmhCVAMchU0=;
+ b=oOGMoDymmu1QfSu/97oofZ1VUUjyB3el2/+xQhPd8ZkHoooKwcc619Qiu/XMc5BV4J
+ MUr4LQzcs26RIsSLaxc4ZkVwjBVzLMGH771L+/aAr/MvV8Wn1Sq24IXu+6fHNhJXKrhP
+ oCg7S0M9rTAwsmV39A9qBOr2aMtYJVpDysVnCMA/xz7vIO3O0KqMP6NxdN/icZyzzuQt
+ FGm1De4v87FDQtMyJ0KN64P8Rj/jtjKYqp7pt9rTdw/HjEcXIHBxGEgflURiaGM0bxkm
+ KBl0vhdVQa8fCfVK975jG9adPyFRBQehvp5hZovoL+LgF9hwjxaWO9wOYZnCth/WZkRn
+ CjZQ==
+X-Gm-Message-State: APjAAAVMI+O1Tb9UssGBeC+NwLJ7tnz1EIYZrFKZYpWESWquP5kp+JSb
+ HKQya3ClqzSXksbdsumvrvKquPs0W1SBmEeX+LnxC7kc+ic=
+X-Google-Smtp-Source: APXvYqxkZxQm2qtMOkWOJxLWeY/4J+xFkHGALhKS18VP9SiHIHbuR36TZL4ewm0+Z0rbmywU1DIfqoG8h1L2SB2ZUIc=
+X-Received: by 2002:a24:97d2:: with SMTP id k201mr5944306ite.151.1559114547584; 
+ Wed, 29 May 2019 00:22:27 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190528180447.zlrdfmn73fntnf4n@core.my.home>
-User-Agent: NeoMutt/20180716
+References: <20190529071843.24767-1-andrew.smirnov@gmail.com>
+In-Reply-To: <20190529071843.24767-1-andrew.smirnov@gmail.com>
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+Date: Wed, 29 May 2019 00:22:16 -0700
+Message-ID: <CAHQ1cqFb2f6TvWVzwsHq=mWmheLZ82rMDjoMwgrJmyXCdqrJKw@mail.gmail.com>
+Subject: Re: [PATCH 1/3] ARM: dts: imx6: rdu2: Add node for UCS1002 USB
+ charger chip
+To: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_002001_716289_9EA08C52 
-X-CRM114-Status: GOOD (  34.07  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190529_002229_227806_030F3416 
+X-CRM114-Status: GOOD (  18.07  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andrew.smirnov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 1.0 FREEMAIL_REPLY         From and body contain different freemails
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,253 +94,177 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8465683024680271823=="
+Cc: Fabio Estevam <festevam@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chris Healy <cphealy@gmail.com>,
+ Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============8465683024680271823==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="o7ly3ahra6ipavvh"
-Content-Disposition: inline
-
-
---o7ly3ahra6ipavvh
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, May 28, 2019 at 08:04:47PM +0200, Ond=C5=99ej Jirman wrote:
-> Hello Cl=C3=A9ment,
+On Wed, May 29, 2019 at 12:18 AM Andrey Smirnov
+<andrew.smirnov@gmail.com> wrote:
 >
-> On Tue, May 28, 2019 at 06:21:19PM +0200, Cl=C3=A9ment P=C3=A9ron wrote:
-> > Hi Ond=C5=99ej,
-> >
-> > On Mon, 27 May 2019 at 21:53, 'Ond=C5=99ej Jirman' via linux-sunxi
-> > <linux-sunxi@googlegroups.com> wrote:
-> > >
-> > > Hi Cl=C3=A9ment,
-> > >
-> > > On Mon, May 27, 2019 at 09:30:16PM +0200, verejna wrote:
-> > > > Hi Cl=C3=A9ment,
-> > > >
-> > > > On Mon, May 27, 2019 at 08:49:59PM +0200, Cl=C3=A9ment P=C3=A9ron w=
-rote:
-> > > > > Hi Ondrej,
-> > > > >
-> > > > > >
-> > > > > > I'm testing on Orange Pi 3.
-> > > > > >
-> > > > > > With your patches, I get kernel lockup after ~1 minute of use (=
-ssh stops
-> > > > > > responding/serial console stops responding). I don't have RC co=
-ntroller to test
-> > > > > > the CIR. But just enabling the CIR causes kernel to hang shortl=
-y after boot.
-> > > > > >
-> > > > > > I tried booting multiple times. Other results:
-> > > > > >
-> > > > > > boot 2:
-> > > > > >
-> > > > > > - ssh hangs even before connecting (ethernet crashes/is reset)
-> > > > > >
-> > > > > > INFO: rcu_sched detected stalls on CPUs/tasks:
-> > > > > > rcu:    0-....: (1 GPs behind) idle=3D64a/0/0x3 softirq=3D4091/=
-4091 fqs=3D2437
-> > > > > > dwmac-sun8i 5020000.ethernet eth0: Reset adapter.
-> > > > > > rcu: INFO: rcu_sched detected expedited stalls on CPUs/tasks: {=
- 0-... } 5696 jiffies s: 81 root: 0x1/.
-> > > > > > rcu: blocking rcu_node structures:
-> > > > > >  rcu: INFO: rcu_sched detected stalls on CPUs/tasks:
-> > > > > > rcu:    0-....: (1 GPs behind) idle=3D64a/0/0x3 softirq=3D4091/=
-4091 fqs=3D9714
-> > > > > > rcu: INFO: rcu_sched detected expedited stalls on CPUs/tasks: {=
- 0-... } 21568 jiffies s: 81 root: 0x1/.
-> > > > > > rcu: blocking rcu_node structures:
-> > > > > > rcu: INFO: rcu_sched detected stalls on CPUs/tasks:
-> > > > > > rcu:    0-....: (1 GPs behind) idle=3D64a/0/0x3 softirq=3D4091/=
-4091 fqs=3D17203
-> > > > > >
-> > > > > > above messages appear regularly.
-> > > > > >
-> > > > > > boot 3:
-> > > > > >
-> > > > > > rcu: INFO: rcu_sched detected stalls on CPUs/tasks:
-> > > > > > rcu:    0-....: (9 GPs behind) idle=3D992/0/0x3 softirq=3D6123/=
-6123 fqs=3D2600
-> > > > > >
-> > > > > >
-> > > > > > Sometimes serial console keeps working. Sometimes it locks up t=
-oo (but not
-> > > > > > frequently). Storage locks up always (any program that was not =
-run before
-> > > > > > the crash can't be started and lock up the kernel hard, program=
-s that
-> > > > > > were executed prior, can be run again).
-> > > > > >
-> > > > > >
-> > > > > > Exactly the same kernel build on H5 seems to work (or at least =
-I was not able to
-> > > > > > trigger the crash). So this seems to be limited to H6 for now.
-> > > > > >
-> > > > > > I suspect that the crash occurs sooner if I vary the light (tur=
-n on/off the table
-> > > > > > lamp light).
-> > > > > >
-> > > > > > Without your patches, everything works fine on H6, and I never =
-see
-> > > > > > crashes/lockups.
-> > > > > >
-> > > > > > I tired physically covering the IR receiver, and that helps pre=
-venting the
-> > > > > > crash. As soon as I uncover it, the crash happens again in 1s o=
-r so:
-> > > > > >
-> > > > > > rcu: INFO: rcu_sched detected stalls on CPUs/tasks:
-> > > > > > rcu:    0-....: (1 GPs behind) idle=3D4ea/0/0x3 softirq=3D4483/=
-4484 fqs=3D2444
-> > > > > > rcu: INFO: rcu_sched detected stalls on CPUs/tasks:
-> > > > > > rcu:    0-....: (1 GPs behind) idle=3D4ea/0/0x3 softirq=3D4483/=
-4484 fqs=3D9777
-> > > > > >
-> > > > > > This time I got the hung task and reboot: (probably not directl=
-y related)
-> > > > > >
-> > > > > > INFO: task find:560 blocked for more than 120 seconds.
-> > > > > >       Not tainted 5.2.0-rc2+ #7
-> > > > > > "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables thi=
-s message.
-> > > > > > find            D    0   560    551 0x00000000
-> > > > > > Call trace:
-> > > > > >  __switch_to+0x6c/0x90
-> > > > > >  __schedule+0x1f4/0x578
-> > > > > >  schedule+0x28/0xa8
-> > > > > >  io_schedule+0x18/0x38
-> > > > > >  __lock_page+0x12c/0x208
-> > > > > >  pagecache_get_page+0x238/0x2e8
-> > > > > >  __get_node_page+0x6c/0x310
-> > > > > >  f2fs_get_node_page+0x14/0x20
-> > > > > >  f2fs_iget+0x70/0xc60
-> > > > > >  f2fs_lookup+0xcc/0x218
-> > > > > >  __lookup_slow+0x78/0x160
-> > > > > >  lookup_slow+0x3c/0x60
-> > > > > >  walk_component+0x1e4/0x2e0
-> > > > > >  path_lookupat.isra.13+0x5c/0x1e0
-> > > > > >  filename_lookup.part.23+0x6c/0xe8
-> > > > > >  user_path_at_empty+0x4c/0x60
-> > > > > >  vfs_statx+0x78/0xd8
-> > > > > >  __se_sys_newfstatat+0x24/0x48
-> > > > > >  __arm64_sys_newfstatat+0x18/0x20
-> > > > > >  el0_svc_handler+0x9c/0x170
-> > > > > >  el0_svc+0x8/0xc
-> > > > > > Kernel panic - not syncing: hung_task: blocked tasks
-> > > > > > CPU: 1 PID: 34 Comm: khungtaskd Not tainted 5.2.0-rc2+ #7
-> > > > > > Hardware name: OrangePi 3 (DT)
-> > > > > > Call trace:
-> > > > > >  dump_backtrace+0x0/0xf8
-> > > > > >  show_stack+0x14/0x20
-> > > > > >  dump_stack+0xa8/0xcc
-> > > > > >  panic+0x124/0x2dc
-> > > > > >  proc_dohung_task_timeout_secs+0x0/0x40
-> > > > > >  kthread+0x120/0x128
-> > > > > >  ret_from_fork+0x10/0x18
-> > > > > > SMP: stopping secondary CPUs
-> > > > > > Kernel Offset: disabled
-> > > > > > CPU features: 0x0002,20002000
-> > > > > > Memory Limit: none
-> > > > > > Rebooting in 3 seconds..
-> > > > > >
-> > > > > >
-> > > > > > Meanwhile H5 based board now runs for 15 minutes without issues.
-> > > > > >
-> > > > > > So to sum up:
-> > > > > >
-> > > > > > - these crashes are definitely H6 IR related
-> > > > > >   - the same kernel, on H5 works
-> > > > > >   - covering the sensor prevents the crashes on H6
-> > > > > >
-> > > > > > So we should probably hold on with the series, until this is fi=
-gured out.
-> > > > >
-> > > > > Thanks for testing, but I think it's more hardware related.
-> > > > > It seems that your IR is flooded or misconfigured for your board.
-> > > > > Could you add a simple print in the "sunxi_ir_irq"
-> > > >
-> > > > Yes, I get flood of IRQs with status =3D 0x30. (after I turn on the=
- lamp,
-> > > > but it persists even after I turn it off and cover the IR sensor).
-> > >
-> > > Interestingly, status also contains RAC, and it's 0 in this case. So =
-the
-> > > interrupt if firing with "No available data in RX FIFO" repeatedly. R=
-egardless
-> > > of input.
-> > >
-> > > So there's something else up.
-> >
-> > Really weird indeed...
-> >
-> > I have pushed a new version, where I didn't enabled the support for
-> > others H6 board and the cover letter include a link to this thread.
-> >
-> > It would be great if other sunxi users could test this series, to
-> > check if this issue in present in other OPi3 / Pine H64.
+> Add node for UCS1002 USB charger chip connected to front panel USB and
+> replace "regulator-fixed" previously used to control VBUS.
 >
-> I don't know if this is enough. I'd rather prefer if the driver has a way
-> of detecting this situation and shutting the module down, at the very lea=
-st,
-> instead of taking down the entire system with IRQ flood.
+> Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Chris Healy <cphealy@gmail.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: Lucas Stach <l.stach@pengutronix.de>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+
+Ugh, forgot to properly update reroll counter. This and the rest of
+the series is a v2. Sorry about that.
+
+Thanks,
+Andrey Smirnov
+
+> ---
 >
-> It may be detectable by checking RAC =3D=3D 0 when RX FIFO available inte=
-rrupt
-> flag is set.
+> Changes since [v1]:
 >
-> Otherwise, this will eventually be forgotten (cover letters are not even =
-stored
-> in git), and someone will fall into the trap again, after enabling r_ir on
-> their board, and end up chasing their tail for a day. I've initially only=
- found
-> this is IR driver issue after a long unpleasant debugging session, chasin=
-g other
-> more obvious ideas (as when this happens there's absolutely nothing in th=
-e log
-> indicating this is IR issue).
-
-Returning IRQ_NONE in the handler will disable the interrupt line
-after 100,000 (I think?) occurences. That might be a good workaround,
-but we definitely want to have a comment there :)
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---o7ly3ahra6ipavvh
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXO4ykQAKCRDj7w1vZxhR
-xb1NAQDNa15Jo+iKDcJUUbYL1BxtfxSwU8hyju1duEPWEdh9IgEAhopDq0liLqdG
-T92UnkB3/xmbiRXIsrutMI+zxSNBvgU=
-=MPUW
------END PGP SIGNATURE-----
-
---o7ly3ahra6ipavvh--
-
-
---===============8465683024680271823==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>     - Added GPIO hog configuration to put UCS1002 into correct mode
+>       even before its driver takes over. The code for that is taken
+>       from similar patch from Lucas, so I added his Signed-off-by as
+>       well.
+>
+> [v1] lore.kernel.org/r/20190522071227.31488-1-andrew.smirnov@gmail.com
+>
+>  arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 77 +++++++++++++++++++------
+>  1 file changed, 59 insertions(+), 18 deletions(-)
+>
+> diff --git a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
+> index 93be00a60c88..07e21d1e5b4c 100644
+> --- a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
+> @@ -60,18 +60,6 @@
+>                 regulator-always-on;
+>         };
+>
+> -       reg_5p0v_user_usb: regulator-5p0v-user-usb {
+> -               compatible = "regulator-fixed";
+> -               pinctrl-names = "default";
+> -               pinctrl-0 = <&pinctrl_reg_user_usb>;
+> -               vin-supply = <&reg_5p0v_main>;
+> -               regulator-name = "5V_USER_USB";
+> -               regulator-min-microvolt = <5000000>;
+> -               regulator-max-microvolt = <5000000>;
+> -               gpio = <&gpio3 22 GPIO_ACTIVE_LOW>;
+> -               startup-delay-us = <1000>;
+> -       };
+> -
+>         reg_3p3v_pmic: regulator-3p3v-pmic {
+>                 compatible = "regulator-fixed";
+>                 vin-supply = <&reg_12p0v>;
+> @@ -331,6 +319,39 @@
+>         };
+>  };
+>
+> +&gpio3 {
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&pinctrl_gpio3_hog>;
+> +
+> +       usb-emulation {
+> +               gpio-hog;
+> +               gpios = <19 GPIO_ACTIVE_HIGH>;
+> +               output-low;
+> +               line-name = "usb-emulation";
+> +       };
+> +
+> +       usb-mode1 {
+> +               gpio-hog;
+> +               gpios = <20 GPIO_ACTIVE_HIGH>;
+> +               output-high;
+> +               line-name = "usb-mode1";
+> +       };
+> +
+> +       usb-pwr {
+> +               gpio-hog;
+> +               gpios = <22 GPIO_ACTIVE_LOW>;
+> +               output-high;
+> +               line-name = "usb-pwr-ctrl-en-n";
+> +       };
+> +
+> +       usb-mode2 {
+> +               gpio-hog;
+> +               gpios = <23 GPIO_ACTIVE_HIGH>;
+> +               output-high;
+> +               line-name = "usb-mode2";
+> +       };
+> +};
+> +
+>  &i2c1 {
+>         pinctrl-names = "default";
+>         pinctrl-0 = <&pinctrl_i2c1>;
+> @@ -590,6 +611,16 @@
+>                 status = "disabled";
+>         };
+>
+> +       reg_5p0v_user_usb: charger@32 {
+> +               compatible = "microchip,ucs1002";
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&pinctrl_ucs1002_pins>;
+> +               reg = <0x32>;
+> +               interrupts-extended = <&gpio5 2 IRQ_TYPE_EDGE_BOTH>,
+> +                                     <&gpio3 21 IRQ_TYPE_EDGE_BOTH>;
+> +               interrupt-names = "a_det", "alert";
+> +       };
+> +
+>         hpa1: amp@60 {
+>                 compatible = "ti,tpa6130a2";
+>                 pinctrl-names = "default";
+> @@ -935,6 +966,15 @@
+>                 >;
+>         };
+>
+> +       pinctrl_gpio3_hog: gpio3hoggrp {
+> +               fsl,pins = <
+> +                       MX6QDL_PAD_EIM_D19__GPIO3_IO19          0x1b0b0
+> +                       MX6QDL_PAD_EIM_D20__GPIO3_IO20          0x1b0b0
+> +                       MX6QDL_PAD_EIM_D22__GPIO3_IO22          0x1b0b0
+> +                       MX6QDL_PAD_EIM_D23__GPIO3_IO23          0x1b0b0
+> +               >;
+> +       };
+> +
+>         pinctrl_i2c1: i2c1grp {
+>                 fsl,pins = <
+>                         MX6QDL_PAD_CSI0_DAT8__I2C1_SDA          0x4001b8b1
+> @@ -982,12 +1022,6 @@
+>                 >;
+>         };
+>
+> -       pinctrl_reg_user_usb: usbotggrp {
+> -               fsl,pins = <
+> -                       MX6QDL_PAD_EIM_D22__GPIO3_IO22          0x40000038
+> -               >;
+> -       };
+> -
+>         pinctrl_rmii_phy_irq: phygrp {
+>                 fsl,pins = <
+>                         MX6QDL_PAD_EIM_D30__GPIO3_IO30          0x40010000
+> @@ -1047,6 +1081,13 @@
+>                 >;
+>         };
+>
+> +       pinctrl_ucs1002_pins: ucs1002grp {
+> +               fsl,pins = <
+> +                       MX6QDL_PAD_EIM_A25__GPIO5_IO02          0x1b0b0
+> +                       MX6QDL_PAD_EIM_D21__GPIO3_IO21          0x1b0b0
+> +               >;
+> +       };
+> +
+>         pinctrl_usdhc2: usdhc2grp {
+>                 fsl,pins = <
+>                         MX6QDL_PAD_SD2_CMD__SD2_CMD             0x10059
+> --
+> 2.21.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8465683024680271823==--
-
