@@ -2,49 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A8CF2E0AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 17:11:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4F0D2E0E0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 17:19:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vM6U3nFyBeZMU77Kc+Maz8rJ6mdJepleoRKA6zHFkv0=; b=LKj7zMh5f5RSuk
-	KSHhhqIB7xag5yTWNKgxuWvNaOPkyakkxF//4k97N0Cbf0mXQEb1jZ5FsD51hykYEIvbVlKVxj5h6
-	l3SzY6gZYcsnRUSWtnzVmKj6cWQrhn+R6TT3Um/RKLBWmgqDlxhEMVSkSHeAiZ3rNB2S/hlH+yAyO
-	rErhPVQffkOF5CGLwUe8yu2y8Ha4xtcR5jnrI2mVstUPUtL1jzw7a22rIV4uamOkNedGQzCFrk/Ol
-	dFLN+kKO7pM+inOQnK5S8EGdZlU3ig4yHmA6ooIE4I1H32Gkd+cAKn7vMC8rXKlCBq/GmuKkpURsb
-	zOKS8YDNkV0HMjLAYqaQ==;
+	List-Owner; bh=FBKjYt9SID4GkBm6JFsTgsnziZskhZZUg8d7kb2l3y0=; b=LhjNnxAegWOynS
+	TxFJ2d5mvNNQpIGYJfxzZqYtIZPqwnj9Xlg25oEviuYjieT/ggHdI5WHHPfn0OEK6k77MpzfSqkRm
+	ouXgcc8sSE75wQVHa+lOVO2p70xGmdygXXLnIt9z+CpeXQMaVvASRwOdpZ1wrXnSunGEsy8d0C81U
+	6t4AepkcuZFbq/ZSVwNRbmNVBbH+muiw6Ym2GsF8WClhb9bLEnuL+9F/eMMnK4o0BxCTjUt7nOJtw
+	I0IZ5kooNwYRc30fqjW5uTBMtZrz7dSbt/nIcguqjeBEoKyUTHSrYiNHbuTNfhSVDjrwvMtalbQ4J
+	WBRWxfYf//IgtDqHHAWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW0F0-0002hR-C4; Wed, 29 May 2019 15:11:46 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hW0Lw-000576-Rw; Wed, 29 May 2019 15:18:56 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW0Et-0002h7-A5
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 15:11:40 +0000
+ id 1hW0Lp-00056L-O4
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 15:18:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 19717341;
- Wed, 29 May 2019 08:11:39 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 95CC8341;
+ Wed, 29 May 2019 08:18:48 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B701F3F5AF;
- Wed, 29 May 2019 08:11:37 -0700 (PDT)
-Date: Wed, 29 May 2019 16:11:35 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 4/4] arm64/mm: Drop vm_fault_t argument from
- __do_page_fault()
-Message-ID: <20190529151134.GH31777@lakrids.cambridge.arm.com>
-References: <1559133285-27986-1-git-send-email-anshuman.khandual@arm.com>
- <1559133285-27986-5-git-send-email-anshuman.khandual@arm.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D9C163F5AF;
+ Wed, 29 May 2019 08:18:42 -0700 (PDT)
+Date: Wed, 29 May 2019 16:18:40 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
+ syscalls
+Message-ID: <20190529151839.GF28398@e103592.cambridge.arm.com>
+References: <cover.1557160186.git.andreyknvl@google.com>
+ <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
+ <20190527143719.GA59948@MBP.local>
+ <20190528145411.GA709@e119886-lin.cambridge.arm.com>
+ <20190528154057.GD32006@arrakis.emea.arm.com>
+ <20190528155644.GD28398@e103592.cambridge.arm.com>
+ <20190528163400.GE32006@arrakis.emea.arm.com>
+ <20190529124224.GE28398@e103592.cambridge.arm.com>
+ <20190529132341.27t3knoxpb7t7y3g@mbp>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559133285-27986-5-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190529132341.27t3knoxpb7t7y3g@mbp>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_081139_358681_F6FFC1FD 
-X-CRM114-Status: GOOD (  23.68  )
+X-CRM114-CacheID: sfid-20190529_081849_802992_CDEA6325 
+X-CRM114-Status: GOOD (  26.25  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -65,112 +73,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 06:04:45PM +0530, Anshuman Khandual wrote:
-> __do_page_fault() is over complicated with multiple goto statements. This
-> cleans up code flow and while there drops the vm_fault_t argument.
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: James Morse <james.morse@arm.com> 
-> Cc: Andrey Konovalov <andreyknvl@google.com>
-> ---
->  arch/arm64/mm/fault.c | 38 ++++++++++++++++----------------------
->  1 file changed, 16 insertions(+), 22 deletions(-)
+On Wed, May 29, 2019 at 02:23:42PM +0100, Catalin Marinas wrote:
+> On Wed, May 29, 2019 at 01:42:25PM +0100, Dave P Martin wrote:
+> > On Tue, May 28, 2019 at 05:34:00PM +0100, Catalin Marinas wrote:
+> > > On Tue, May 28, 2019 at 04:56:45PM +0100, Dave P Martin wrote:
+> > > > On Tue, May 28, 2019 at 04:40:58PM +0100, Catalin Marinas wrote:
+> > > > 
+> > > > [...]
+> > > > 
+> > > > > My thoughts on allowing tags (quick look):
+> > > > >
+> > > > > brk - no
+> > > > 
+> > > > [...]
+> > > > 
+> > > > > mlock, mlock2, munlock - yes
+> > > > > mmap - no (we may change this with MTE but not for TBI)
+> > > > 
+> > > > [...]
+> > > > 
+> > > > > mprotect - yes
+> > > > 
+> > > > I haven't following this discussion closely... what's the rationale for
+> > > > the inconsistencies here (feel free to refer me back to the discussion
+> > > > if it's elsewhere).
+> > > 
+> > > _My_ rationale (feel free to disagree) is that mmap() by default would
+> > > not return a tagged address (ignoring MTE for now). If it gets passed a
+> > > tagged address or a "tagged NULL" (for lack of a better name) we don't
+> > > have clear semantics of whether the returned address should be tagged in
+> > > this ABI relaxation. I'd rather reserve this specific behaviour if we
+> > > overload the non-zero tag meaning of mmap() for MTE. Similar reasoning
+> > > for mremap(), at least on the new_address argument (not entirely sure
+> > > about old_address).
+> > > 
+> > > munmap() should probably follow the mmap() rules.
+> > > 
+> > > As for brk(), I don't see why the user would need to pass a tagged
+> > > address, we can't associate any meaning to this tag.
+> > > 
+> > > For the rest, since it's likely such addresses would have been tagged by
+> > > malloc() in user space, we should allow tagged pointers.
+> > 
+> > Those arguments seem reasonable.  We should try to capture this
+> > somewhere when documenting the ABI.
+> > 
+> > To be clear, I'm not sure that we should guarantee anywhere that a
+> > tagged pointer is rejected: rather the behaviour should probably be
+> > left unspecified.  Then we can tidy it up incrementally.
+> > 
+> > (The behaviour is unspecified today, in any case.)
 > 
-> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-> index 170c71f..a53a30e 100644
-> --- a/arch/arm64/mm/fault.c
-> +++ b/arch/arm64/mm/fault.c
-> @@ -397,37 +397,31 @@ static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *re
->  static vm_fault_t __do_page_fault(struct mm_struct *mm, unsigned long addr,
->  			   unsigned int mm_flags, unsigned long vm_flags)
->  {
-> -	struct vm_area_struct *vma;
-> -	vm_fault_t fault;
-> +	struct vm_area_struct *vma = find_vma(mm, addr);
->  
-> -	vma = find_vma(mm, addr);
-> -	fault = VM_FAULT_BADMAP;
->  	if (unlikely(!vma))
-> -		goto out;
-> -	if (unlikely(vma->vm_start > addr))
-> -		goto check_stack;
-> +		return VM_FAULT_BADMAP;
->  
->  	/*
-> -	 * Ok, we have a good vm_area for this memory access, so we can handle
-> -	 * it.
-> +	 * Check if the VMA has got the required permssion with respect
-> +	 * to the access fault here.
->  	 */
+> What is specified (or rather de-facto ABI) today is that passing a user
+> address above TASK_SIZE (e.g. non-zero top byte) would fail in most
+> cases. If we relax this with the TBI we may end up with some de-facto
 
-We already had a perfectly good comment for this check:
+I may be being too picky, but "would fail in most cases" sounds like
+"unspecified" ?
 
-	/*
-	 * Check that the permissions on the VMA allow for the fault which
-	 * occurred.
-	 */
+> ABI before we actually get MTE hardware. Tightening it afterwards may be
+> slightly more problematic, although MTE needs to be an explicit opt-in.
+> 
+> IOW, I wouldn't want to unnecessarily relax the ABI if we don't need to.
 
-... so please keep that and minimize the diff.
+So long we don't block foreseeable future developments unnecessarily
+either -- I agree there's a balance to be struck.
 
-> -good_area:
-> +	if (!(vma->vm_flags & vm_flags))
-> +		return VM_FAULT_BADACCESS;
-> +
->  	/*
-> -	 * Check that the permissions on the VMA allow for the fault which
-> -	 * occurred.
-> +	 * There is a valid VMA for this access. But before proceeding
-> +	 * make sure that it has required flags if there is an attempt
-> +	 * to expand the stack downwards.
->  	 */
+I guess this can be reviewed when we have nailed down the details a bit
+further.
 
-I think we can drop this comment, given we didn't have it previously.
-
-> -	if (!(vma->vm_flags & vm_flags)) {
-> -		fault = VM_FAULT_BADACCESS;
-> -		goto out;
-> -	}
-> +	if (unlikely(vma->vm_start > addr)) {
-> +		if (!(vma->vm_flags & VM_GROWSDOWN))
-> +			return VM_FAULT_BADMAP;
->  
-> +		if (expand_stack(vma, addr))
-> +			return VM_FAULT_BADMAP;
-
-You can drop the line space between these two if statements.
-
-> +	}
->  	return handle_mm_fault(vma, addr & PAGE_MASK, mm_flags);
-> -
-> -check_stack:
-> -	if (vma->vm_flags & VM_GROWSDOWN && !expand_stack(vma, addr))
-> -		goto good_area;
-> -out:
-> -	return fault;
-
-We used to check the stack before the checknig the rest of the vm_flags,
-so this changes the precedence of the VM_FAULT_BADMAP and
-VM_FAULT_BADACCESS return codes.
-
-Please check the stack before checking the other vm_flags.
-
-Otherwise, this looks like a nice cleanup -- the old control flow was
-hideous.
-
-Thanks,
-Mark.
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
