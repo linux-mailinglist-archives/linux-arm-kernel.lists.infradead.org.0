@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4244E2E7DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 00:12:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E66962E7E7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 00:15:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=NEEErvIWbrWVL8TMHaagB+aOx/kYqUEhYmpCGKzoiXI=; b=sWE
-	RfZiq2kmRqbM1z2zJxVaCn0hF/YTX9uNi0rtmMa0kB0Rc1yBfmkFiZkcQx2bWGmYJUDRxdCAZPImH
-	tp4sY0mkgibsPu/9C1zUCGKa8vu+0RKDfctYeCx0A8fWhdHNsZxvQew1Zmy24Hc5kO1eaaYcKGU35
-	jxeqFn+bk/a3mXICkuAmw3aNJtDHfNeLtLGT6VhoN0AiZw8/s/Wg2g7889CHXREVKjxRALc5eALZ+
-	/hMuDKGAs8BUTdY3rtSptGkD+jdAAwIhRH/uWdB+bVZ5FdDoKkcaEXKIUisA7C02SIkNa25SaKyXM
-	Cqj1nMYvZvXJdShKSbXETw4FU/K30Ng==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KypIulgj+30hr7twVeJZK+qOJlksAHldCPmDMJFrfTg=; b=AQpKwQF4/8ncSw
+	mbgXq62g+TXh5Arf0Yt9YaRoG+hzi7OW+YYHpyaEeI07CuY8ryAg3ph8QN/8Z3SN/qBVlFEgGk1oD
+	38f9nofrjX9OxbsLqmikLRSmx0+9rnyTSB4L4wNni8ByC+arwApDoTtNI6vWkb9jFsfAk/3YbIjo0
+	90rG2AmME6V2i5Er9vgFcppz1TlYHKypiu9KhH30udTSFekSxoNQbXiFuTGKfg8uBRYJVcgqaJnLR
+	YrtkTEjgGwjBhxnWXZUzpxzK7W1Rh9rkRIDCtLfl1nrw3z3k6nsQV3Lpb+Zvc+hL2uSAHBoS54tYO
+	0pchxK4QTybu8FBFq4hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW6oP-0003lC-FN; Wed, 29 May 2019 22:12:45 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hW6r4-0005KL-VQ; Wed, 29 May 2019 22:15:30 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW6oH-0003kr-TJ
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 22:12:39 +0000
-Received: by mail-wr1-x443.google.com with SMTP id d18so2806005wrs.5
+ id 1hW6qx-0005Jb-L1
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 22:15:25 +0000
+Received: by mail-ot1-f67.google.com with SMTP id c3so3684057otr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 15:12:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=owy6Vq9IYGJvG4Y7XcUSzihBOZWBqRq/WwnHDiLGnsU=;
- b=dLMI2EsjM7gifNt/kAu2Oc1kFmhDSfQOCzu5yzwd5j0KFpH6Uh6bIUcs228xd2bB34
- lwtu3Q/TLyAgMBOv6XdHoRyvWRCHR0cLPnpzThBoeFcxgZNSYvM6b+L3vhWG/f+HsXxq
- vG6dYtzZfscem7z9fKKbjmAYYhBaBbyhbbp4Z3nyrKnXBaMHuvkOiF6+Nxd5/9wkRHRe
- SCtY7S1ZQNeaqgBxC/5QeflPbARD8EzvpDEoDhjZo7+cQEJ4LSMsDYSnILEngioSHOjz
- D4I21tn8M9bVTrBT/n7FY7U/TDaJOBoIHiPeqzEs8Q80bU5V628jQxcseUh8rHYFsQr/
- XOUQ==
+ Wed, 29 May 2019 15:15:22 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=owy6Vq9IYGJvG4Y7XcUSzihBOZWBqRq/WwnHDiLGnsU=;
- b=MI4KhX0eT4S+mcOEFEu0GzHWL1kVduTsrW/EUmr8CrrhGfpEFG7P1ZYuz/PYCrIceg
- rLLq61JoVrfoPapB8oo8F50cKiUQCYNaIRzUvNx1BWyjgl0zuvr3FtiSlIlPsTkvotQp
- B7AzhuCl0U7lijY2gWb5zTpBRfTd0HJPL+s4iJgt4WtMy6NQYluogn5JJA2YlA3l6SEH
- tNmAmkpJKuxhN1y7mYGhBHc8wSrH8VpEYLkIgzt15afibo+LC4YGddQs08hwesa/oJle
- ykgSTl3pyv/rZ3Qqt8RxpgbUT09YOKIYA1uzcK4oAdqFLLjkvqVCDzCHsPhw9TMXNyo1
- lopQ==
-X-Gm-Message-State: APjAAAVvPft2U+uSs5Dbv++p/4nxdtTWzGaJORjjE45nq2Myit1/Ac7U
- 9hfXLkItnL4ETzXJf2R+pxBxmhf04g0=
-X-Google-Smtp-Source: APXvYqzQqLPlZQBUgdHDk0pis7fJXhUn1Nk0pMjlkWHfNMqgeXbKSiLQr2j20qrWRj8Y92C8twGs2w==
-X-Received: by 2002:adf:e98a:: with SMTP id h10mr196926wrm.124.1559167955794; 
- Wed, 29 May 2019 15:12:35 -0700 (PDT)
-Received: from localhost.localdomain ([86.121.27.188])
- by smtp.gmail.com with ESMTPSA id 65sm560337wro.85.2019.05.29.15.12.34
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KSFF4bDXPHpLrA6n50RMJhRFJYg/glW80Pouz4KvDb0=;
+ b=DRd1KusBCyqQ8/hB+Pq2tTlCtlBuq7krQ39ttt/xgmOd89xU1s2oGSwdRTf17z0Oy/
+ Qi9PFa2maZn5Qi4PrwJKoN8kYvbUhoEo+M014bCHGoqIcfiOKB9JMfWvptq6WvqGIi0V
+ +Gko+p7hraau5YVVkiFus2jauKIfWUZIcbU/BXmVbwM0QUmCyM9j785ynAslah01lRP8
+ InRcrjsgMjstzRODkGU70ps73ihl+uibAUpLLbKrJoKzB/oSqt3PWKYKBMJQKAGpHvc7
+ XIWIGo4jHb4BT1+FbkVDbyV3Ed6a2ZIqZtDvymwADpoFiLBOf7XO55LEAiZt7lZ8rN5d
+ AG8Q==
+X-Gm-Message-State: APjAAAXWNiJbofwTGRgfI98KW8a61kjagMTq8nZQbYgf9NuquJyr6qxW
+ Emsqhth/xNg2uORK4DGznNGyrZYwmaA=
+X-Google-Smtp-Source: APXvYqwIl9+J4omx0XMbE6udkmuSGKXaZx2xAKJxiUYq0/dJIISpOb8YuZzRcg4llLxgTDNt1/Y2/Q==
+X-Received: by 2002:a05:6830:10d4:: with SMTP id
+ z20mr108648oto.40.1559168116705; 
+ Wed, 29 May 2019 15:15:16 -0700 (PDT)
+Received: from mail-oi1-f182.google.com (mail-oi1-f182.google.com.
+ [209.85.167.182])
+ by smtp.gmail.com with ESMTPSA id v20sm315632otk.66.2019.05.29.15.15.15
+ for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 15:12:35 -0700 (PDT)
-From: Vladimir Oltean <olteanv@gmail.com>
-To: shawnguo@kernel.org
-Subject: [PATCH v2] ARM: dts: Introduce the NXP LS1021A-TSN board
-Date: Thu, 30 May 2019 01:12:22 +0300
-Message-Id: <20190529221222.19276-1-olteanv@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ Wed, 29 May 2019 15:15:15 -0700 (PDT)
+Received: by mail-oi1-f182.google.com with SMTP id v25so2850567oic.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 15:15:15 -0700 (PDT)
+X-Received: by 2002:aca:ea05:: with SMTP id i5mr374591oih.51.1559168115228;
+ Wed, 29 May 2019 15:15:15 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190529083254.39581-1-chuanhua.han@nxp.com>
+ <20190529083254.39581-2-chuanhua.han@nxp.com>
+In-Reply-To: <20190529083254.39581-2-chuanhua.han@nxp.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Wed, 29 May 2019 17:15:03 -0500
+X-Gmail-Original-Message-ID: <CADRPPNTyr+ZpK84C4KPwLVLnabNYN4MC3q=Gp94hBc5VPh7fYg@mail.gmail.com>
+Message-ID: <CADRPPNTyr+ZpK84C4KPwLVLnabNYN4MC3q=Gp94hBc5VPh7fYg@mail.gmail.com>
+Subject: Re: [PATCH 2/3] gpio: mpc8xxx: Use IRQF_SHARED mode to request IRQ
+To: Chuanhua Han <chuanhua.han@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_151237_945799_67BE82CC 
-X-CRM114-Status: GOOD (  15.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190529_151523_691744_E054AC43 
+X-CRM114-Status: GOOD (  23.30  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ provider (pku.leo[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,355 +93,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
- Vladimir Oltean <olteanv@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-gpio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Zhang Ying-22455 <ying.zhang22455@nxp.com>,
+ lkml <linux-kernel@vger.kernel.org>, bgolaszewski@baylibre.com,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The LS1021A-TSN is a development board built by VVDN/Argonboards in
-partnership with NXP.
+On Wed, May 29, 2019 at 3:33 AM Chuanhua Han <chuanhua.han@nxp.com> wrote:
+>
+> GPIO3 and GPIO4 controllers share one irq number on Layerscape
+> platform. In the current implementation, only one GPIO controller
+> can register successfully.
+>
+> This patch is to allow two controllers to share a single interrupt
+> number.
 
-It features the LS1021A SoC and the first-generation SJA1105T Ethernet
-switch for prototyping implementations of a subset of IEEE 802.1 TSN
-standards.
+This patch definitely did more than setting the IRQF_SHARED flag for
+interrupt.  If the driver do need some cleanup please separate the
+cleanup into another patch.
 
-It has two regular Ethernet ports and four switched, TSN-capable ports.
+>
+> Signed-off-by: Zhang Ying-22455 <ying.zhang22455@nxp.com>
+> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
+> ---
+>  drivers/gpio/gpio-mpc8xxx.c | 43 ++++++++++++++++++++++++++-----------
+>  1 file changed, 30 insertions(+), 13 deletions(-)
+>
+> diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
+> index 555e0e7957d9..63c8586fe5c8 100644
+> --- a/drivers/gpio/gpio-mpc8xxx.c
+> +++ b/drivers/gpio/gpio-mpc8xxx.c
+> @@ -11,6 +11,7 @@
+>
+>  #include <linux/kernel.h>
+>  #include <linux/init.h>
+> +#include <linux/interrupt.h>
+>  #include <linux/spinlock.h>
+>  #include <linux/io.h>
+>  #include <linux/of.h>
+> @@ -105,10 +106,9 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
+>                 return -ENXIO;
+>  }
+>
+> -static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
+> +static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *dev_id)
+>  {
+> -       struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
+> -       struct irq_chip *chip = irq_desc_get_chip(desc);
+> +       struct mpc8xxx_gpio_chip *mpc8xxx_gc = dev_id;
+>         struct gpio_chip *gc = &mpc8xxx_gc->gc;
+>         unsigned int mask;
+>
+> @@ -117,8 +117,7 @@ static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
+>         if (mask)
+>                 generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
+>                                                      32 - ffs(mask)));
+> -       if (chip->irq_eoi)
+> -               chip->irq_eoi(&desc->irq_data);
+> +       return IRQ_HANDLED;
+>  }
+>
+>  static void mpc8xxx_irq_unmask(struct irq_data *d)
+> @@ -129,6 +128,9 @@ static void mpc8xxx_irq_unmask(struct irq_data *d)
+>
+>         raw_spin_lock_irqsave(&mpc8xxx_gc->lock, flags);
+>
+> +       gc->write_reg(mpc8xxx_gc->regs + GPIO_IER,
+> +                     gc->pin2mask(gc, irqd_to_hwirq(d)));
 
-It also features:
-- One Arduino header
-- One expansion header
-- Two USB 3.0 ports
-- One mini PCIe slot
-- One SATA interface
-- Accelerometer, gyroscope, temperature sensors
+This API has been removed for a while, are you sure you compiled and
+tested the change on latest kernel?
 
-Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
----
-Changes from v1:
-- Applied Shawn's feedback
-- Introduced QSPI flash node
+commit 24efd94bc38290dc1d9775a1e767ed4685d8a79b
+Author: Linus Walleij <linus.walleij@linaro.org>
+Date:   Fri Oct 20 16:31:27 2017 +0200
 
-v1 patch available at:
-https://patchwork.kernel.org/patch/10930451/
+    gpio: mmio: Make pin2mask() a private business
 
- arch/arm/boot/dts/Makefile        |   1 +
- arch/arm/boot/dts/ls1021a-tsn.dts | 288 ++++++++++++++++++++++++++++++
- 2 files changed, 289 insertions(+)
- create mode 100644 arch/arm/boot/dts/ls1021a-tsn.dts
+    The vtable call pin2mask() was introducing a vtable function call
+    in every gpiochip callback for a generic MMIO GPIO chip. This was
+    not exactly efficient. (Maybe link-time optimization could get rid of
+    it, I don't know.)
 
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index dab2914fa293..a4eb4ca5e148 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -602,6 +602,7 @@ dtb-$(CONFIG_SOC_IMX7ULP) += \
- dtb-$(CONFIG_SOC_LS1021A) += \
- 	ls1021a-moxa-uc-8410a.dtb \
- 	ls1021a-qds.dtb \
-+	ls1021a-tsn.dtb \
- 	ls1021a-twr.dtb
- dtb-$(CONFIG_SOC_VF610) += \
- 	vf500-colibri-eval-v3.dtb \
-diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
-new file mode 100644
-index 000000000000..b05774eac92e
---- /dev/null
-+++ b/arch/arm/boot/dts/ls1021a-tsn.dts
-@@ -0,0 +1,288 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Copyright 2016-2018 NXP Semiconductors
-+ * Copyright 2019 Vladimir Oltean <olteanv@gmail.com>
-+ */
-+
-+/dts-v1/;
-+#include "ls1021a.dtsi"
-+
-+/ {
-+	model = "NXP LS1021A-TSN Board";
-+
-+	sys_mclk: clock-mclk {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24576000>;
-+	};
-+
-+	reg_vdda_codec: regulator-3V3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "3P3V";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+	};
-+
-+	reg_vddio_codec: regulator-2V5 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "2P5V";
-+		regulator-min-microvolt = <2500000>;
-+		regulator-max-microvolt = <2500000>;
-+		regulator-always-on;
-+	};
-+};
-+
-+&enet0 {
-+	tbi-handle = <&tbi0>;
-+	phy-handle = <&sgmii_phy2>;
-+	phy-mode = "sgmii";
-+	status = "okay";
-+};
-+
-+&enet1 {
-+	tbi-handle = <&tbi1>;
-+	phy-handle = <&sgmii_phy1>;
-+	phy-mode = "sgmii";
-+	status = "okay";
-+};
-+
-+/* RGMII delays added via PCB traces */
-+&enet2 {
-+	phy-mode = "rgmii";
-+	status = "okay";
-+
-+	fixed-link {
-+		speed = <1000>;
-+		full-duplex;
-+	};
-+};
-+
-+&dspi0 {
-+	bus-num = <0>;
-+	status = "okay";
-+
-+	/* ADG704BRMZ 1:4 mux/demux */
-+	sja1105: ethernet-switch@1 {
-+		reg = <0x1>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		compatible = "nxp,sja1105t";
-+		/* 12 MHz */
-+		spi-max-frequency = <12000000>;
-+		/* Sample data on trailing clock edge */
-+		spi-cpha;
-+		fsl,spi-cs-sck-delay = <1000>;
-+		fsl,spi-sck-cs-delay = <1000>;
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				/* ETH5 written on chassis */
-+				label = "swp5";
-+				phy-handle = <&rgmii_phy6>;
-+				phy-mode = "rgmii-id";
-+				reg = <0>;
-+			};
-+
-+			port@1 {
-+				/* ETH2 written on chassis */
-+				label = "swp2";
-+				phy-handle = <&rgmii_phy3>;
-+				phy-mode = "rgmii-id";
-+				reg = <1>;
-+			};
-+
-+			port@2 {
-+				/* ETH3 written on chassis */
-+				label = "swp3";
-+				phy-handle = <&rgmii_phy4>;
-+				phy-mode = "rgmii-id";
-+				reg = <2>;
-+			};
-+
-+			port@3 {
-+				/* ETH4 written on chassis */
-+				label = "swp4";
-+				phy-handle = <&rgmii_phy5>;
-+				phy-mode = "rgmii-id";
-+				reg = <3>;
-+			};
-+
-+			port@4 {
-+				/* Internal port connected to eth2 */
-+				ethernet = <&enet2>;
-+				phy-mode = "rgmii";
-+				reg = <4>;
-+
-+				fixed-link {
-+					speed = <1000>;
-+					full-duplex;
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&mdio0 {
-+	/* AR8031 */
-+	sgmii_phy1: ethernet-phy@1 {
-+		reg = <0x1>;
-+	};
-+
-+	/* AR8031 */
-+	sgmii_phy2: ethernet-phy@2 {
-+		reg = <0x2>;
-+	};
-+
-+	/* BCM5464 quad PHY */
-+	rgmii_phy3: ethernet-phy@3 {
-+		reg = <0x3>;
-+	};
-+
-+	rgmii_phy4: ethernet-phy@4 {
-+		reg = <0x4>;
-+	};
-+
-+	rgmii_phy5: ethernet-phy@5 {
-+		reg = <0x5>;
-+	};
-+
-+	rgmii_phy6: ethernet-phy@6 {
-+		reg = <0x6>;
-+	};
-+
-+	/* SGMII PCS for enet0 */
-+	tbi0: tbi-phy@1f {
-+		reg = <0x1f>;
-+		device_type = "tbi-phy";
-+	};
-+};
-+
-+&mdio1 {
-+	/* SGMII PCS for enet1 */
-+	tbi1: tbi-phy@1f {
-+		reg = <0x1f>;
-+		device_type = "tbi-phy";
-+	};
-+};
-+
-+&i2c0 {
-+	status = "okay";
-+
-+	/* 3 axis accelerometer */
-+	accelerometer@1e {
-+		compatible = "fsl,fxls8471";
-+		position = <0>;
-+		reg = <0x1e>;
-+	};
-+
-+	/* Audio codec (SAI2) */
-+	codec@2a {
-+		compatible = "fsl,sgtl5000";
-+		VDDIO-supply = <&reg_vddio_codec>;
-+		VDDA-supply = <&reg_vdda_codec>;
-+		#sound-dai-cells = <0>;
-+		clocks = <&sys_mclk>;
-+		reg = <0x2a>;
-+	};
-+
-+	/* Current sensing circuit for 1V VDDCORE PMIC rail */
-+	current-sensor@44 {
-+		compatible = "ti,ina220";
-+		shunt-resistor = <1000>;
-+		reg = <0x44>;
-+	};
-+
-+	/* Current sensing circuit for 12V VCC rail */
-+	current-sensor@45 {
-+		compatible = "ti,ina220";
-+		shunt-resistor = <1000>;
-+		reg = <0x45>;
-+	};
-+
-+	/* Thermal monitor - case */
-+	temperature-sensor@48 {
-+		compatible = "national,lm75";
-+		reg = <0x48>;
-+	};
-+
-+	/* Thermal monitor - chip */
-+	temperature-sensor@4c {
-+		compatible = "ti,tmp451";
-+		reg = <0x4c>;
-+	};
-+
-+	eeprom@51 {
-+		compatible = "atmel,24c32";
-+		reg = <0x51>;
-+	};
-+
-+	/* Unsupported devices:
-+	 * - FXAS21002C Gyroscope at 0x20
-+	 * - TI ADS7924 4-channel ADC at 0x49
-+	 */
-+};
-+
-+&qspi {
-+	status = "okay";
-+
-+	flash@0 {
-+		/* Rev. A uses 64MB flash, Rev. B & C use 32MB flash */
-+		compatible = "jedec,spi-nor", "s25fl256s1", "s25fl512s";
-+		spi-max-frequency = <20000000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		reg = <0>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "RCW";
-+				reg = <0x0 0x40000>;
-+			};
-+
-+			partition@40000 {
-+				label = "U-Boot";
-+				reg = <0x40000 0x300000>;
-+			};
-+
-+			partition@340000 {
-+				label = "U-Boot Env";
-+				reg = <0x340000 0x100000>;
-+			};
-+		};
-+	};
-+};
-+
-+&ifc {
-+	status = "disabled";
-+};
-+
-+&esdhc {
-+	status = "okay";
-+};
-+
-+&uart0 {
-+	status = "okay";
-+};
-+
-+&lpuart0 {
-+	status = "okay";
-+};
-+
-+&lpuart3 {
-+	status = "okay";
-+};
-+
-+&sai2 {
-+	status = "okay";
-+};
-+
-+&sata {
-+	status = "okay";
-+};
--- 
-2.17.1
+    After removing all external calls into this API we can make it a
+    boolean flag in the struct gpio_chip call and sink the function into
+    the gpio-mmio driver yielding encapsulation and potential speedups.
 
+    Cc: Anton Vorontsov <anton@enomsg.org>
+    Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+
+> +
+>         gc->write_reg(mpc8xxx_gc->regs + GPIO_IMR,
+>                 gc->read_reg(mpc8xxx_gc->regs + GPIO_IMR)
+>                 | mpc_pin2mask(irqd_to_hwirq(d)));
+> @@ -302,21 +304,31 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+>         struct gpio_chip        *gc;
+>         const struct mpc8xxx_gpio_devtype *devtype =
+>                 of_device_get_match_data(&pdev->dev);
+> -       int ret;
+> +       int ret, irq;
+>
+>         mpc8xxx_gc = devm_kzalloc(&pdev->dev, sizeof(*mpc8xxx_gc), GFP_KERNEL);
+>         if (!mpc8xxx_gc)
+>                 return -ENOMEM;
+>
+> -       platform_set_drvdata(pdev, mpc8xxx_gc);
+> -
+> -       raw_spin_lock_init(&mpc8xxx_gc->lock);
+> -
+>         mpc8xxx_gc->regs = of_iomap(np, 0);
+>         if (!mpc8xxx_gc->regs)
+>                 return -ENOMEM;
+>
+>         gc = &mpc8xxx_gc->gc;
+> +       irq = platform_get_irq(pdev, 0);
+> +       if (irq < 0) {
+> +               dev_err(&pdev->dev, "can't get irq number\n");
+> +               return irq;
+> +       }
+> +
+> +       mpc8xxx_gc->gc.label = pdev->name;
+> +       mpc8xxx_gc->gc.owner = THIS_MODULE;
+> +       mpc8xxx_gc->gc.base = -1;
+> +       mpc8xxx_gc->gc.ngpio = MPC8XXX_GPIO_PINS;
+> +
+> +       platform_set_drvdata(pdev, mpc8xxx_gc);
+> +
+> +       raw_spin_lock_init(&mpc8xxx_gc->lock);
+>
+>         if (of_property_read_bool(np, "little-endian")) {
+>                 ret = bgpio_init(gc, &pdev->dev, 4,
+> @@ -364,7 +376,7 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+>                 goto err;
+>         }
+>
+> -       mpc8xxx_gc->irqn = irq_of_parse_and_map(np, 0);
+> +       mpc8xxx_gc->irqn = platform_get_irq(pdev, 0);
+>         if (!mpc8xxx_gc->irqn)
+>                 return 0;
+>
+> @@ -378,8 +390,13 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+>         gc->write_reg(mpc8xxx_gc->regs + GPIO_IMR, 0xffffffff);
+>         gc->write_reg(mpc8xxx_gc->regs + GPIO_ICR2, 0xffffffff);
+>
+> -       irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
+> -                                        mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
+> +       /* Request IRQ */
+> +       ret = devm_request_irq(&pdev->dev, irq, mpc8xxx_gpio_irq_cascade,
+> +                              IRQF_SHARED, pdev->name, mpc8xxx_gc);
+> +       if (ret) {
+> +               dev_err(&pdev->dev, "can't claim irq %d\n", mpc8xxx_gc->irqn);
+> +               goto err;
+> +       }
+>         return 0;
+>  err:
+>         iounmap(mpc8xxx_gc->regs);
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
