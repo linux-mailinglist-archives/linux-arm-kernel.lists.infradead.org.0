@@ -2,107 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53D462DE42
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 15:33:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 145982DE8B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 15:38:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gexsppWGNZl6bosuF068B70fLunRoKfGQGmJHDLue1I=; b=Pj7LuCe4JYlHrK
-	iFD7a24CEyVySZqcH3ZiD83xnj7z/+lfjdSXhrHE0TR2Jg+eOWeT9df6qpB4A5A/Il/ZturSyVWJW
-	dt9wEP6VYyxrFjXXyxpqNiXaXa1yt2czYXFAVoc70j0GXELHZbhHkU9MZepbFAGFyuZSQ0/aKPvjq
-	H+ashnPV3GcenbhqlZf3wodTiSYqE/JdvFY4fXT2RXyGgxJylcwGsbZu1I1xFo/wcN8K0g0ArkaYa
-	o6RLWIvu8NlLSb9isNX124NDz035JdHi+GQpSPoliD38fQhfTZtny5Htgo6chq21xZbJy1NuL2Asu
-	+feXDp4nW4VLXuQGZAGQ==;
+	List-Owner; bh=QYJu2w3ggKgUN+e7ripWhx8dYzIM6Aa6SlmCIK6Wh44=; b=WaPJly6qneWOQy
+	UyhxgrbjKDfkCz3WN1QwLj5LEp7wpx5LW5fWIrp5KiLfSR4I2LK4UuWGxU7elQEg6Bb+cqtlN/LNX
+	pX/nHcB/xIjmLIaUs6xg2lmkgOowxJKnmaKP2b07oN4X48F9HK7l3VxnQAHDUVWr4O8YhMeCsxZG2
+	1irJqdcCYk4nW1ruz+N7gs/025SQzLePYreuBX7OJo1kD9s/DRgeIoblV+7j/2i21wYTTbxJ/bxEF
+	lrOYdz09P+TEh00MMvBVVOMWNRfkff9eecWDyTm1XEJH71oxs2zo5Tx6ex8OT1xnAhV6RC3nEN1F7
+	DcbQ0e/BMGPTO/wyL8wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVyiH-0006Tj-0v; Wed, 29 May 2019 13:33:53 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVyi9-0006S3-SW
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 13:33:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DDCF280D;
- Wed, 29 May 2019 06:33:43 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- DE3F33F59C; Wed, 29 May 2019 06:33:40 -0700 (PDT)
-Subject: Re: [PATCH v4 01/10] ata: libahci: Ensure the host interrupt status
- bits are cleared
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-References: <20190521143023.31810-1-miquel.raynal@bootlin.com>
- <20190521143023.31810-2-miquel.raynal@bootlin.com>
- <CAHG4imNxsdzjzRpFWnL+PuznjdOU4hsp2E-g1bt4WVJeokfT3w@mail.gmail.com>
- <53ce8c5b-46fc-c969-5168-18e4bcc62cde@arm.com>
- <20190529120833.29334c70@xps13>
- <409ea2c5-c31a-fb6a-22c6-98b45e767809@arm.com>
- <20190529141356.1d9f03f3@xps13>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <f619298a-cb51-b86e-9542-55b9e45bf803@arm.com>
-Date: Wed, 29 May 2019 14:33:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hVymo-0008CE-Nl; Wed, 29 May 2019 13:38:34 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVymh-0008BL-7q
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 13:38:28 +0000
+Received: by mail-lj1-x242.google.com with SMTP id r76so2459922lja.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 06:38:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:newsgroups:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=VoMv/71us6M8DbDViUqysPdNgAN+xa2mLNMMXYgg6YA=;
+ b=fpu2tXpr7clU9LTk7+KSRqjY63WODxNTsAcGqDq5xKZ2wIbupZFJILlIdQZ4TftjNl
+ TmyGmp5IsKkvk/qitY+t+oMibDc5WR0hiyTI+QvmrGMbRNx2pF9znsL5Vvv/gYvumKCh
+ MZWzLFgHPnVRAHZhovrKRLH+jRci9pJcfWKEgQCiwG52567NA9TLoIWiSJx6JMkEEKxK
+ bl79yTvtQ/vUU4hjm5yRhaUzCKgyjOLkxjSOTeV60mZoiXxmALxK7Ba7up3bXO0P8+YE
+ wf5A5SjHT5oPaD+dYfu3sgdFjuN2p3uwiQvPMDgsoIfbKbMJcvWY0Vv/WQqIoUzXM/n5
+ 8niw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:newsgroups:references:from
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=VoMv/71us6M8DbDViUqysPdNgAN+xa2mLNMMXYgg6YA=;
+ b=UQaHg/Lu+pcgc1xAsrBQl8+AdLkenFuOdK2Scmk7bOHxal/5QaoV6gFCaXnHV57dld
+ XRQOxz94fSFkLn6LVu22kHG29Ph1MHqwhH74ZM+UTkr0hLil1nyS0IiFCznsm58zQBzw
+ 0HFP4Of+9poExTL6hQn/0J6PhvUTRosHdypTLP5WocqkAIn3c50mm2ySZzNuQCUgChYp
+ wcAN+9Xey6w2GN0Olg3n86ZcVegZy3WCQRSeQJpBRze4vPPYMV5ihg/9jf/+RPVL952k
+ gOy6L/fbJ7gveB+EH6qEKlOOf5kCXWvlFZ0EO1GtTNjAR27jnqvHUrio+AqTSHDNyoxT
+ JSDQ==
+X-Gm-Message-State: APjAAAVpJreN+zaRomjm0AniKOhXd1U3eiIlouspNyL/h7CO0bXK5CcP
+ KQKag4CiaGSKGLv4Yw2hIrNqHkbN
+X-Google-Smtp-Source: APXvYqzERz4U+Q9lLxvdncfDaBvdigW9kVACUuZgbRyZIBY4T9hQ8Em3/wCwkzyuRxGYSusJMHudyw==
+X-Received: by 2002:a2e:9a9a:: with SMTP id p26mr3978876lji.64.1559137104811; 
+ Wed, 29 May 2019 06:38:24 -0700 (PDT)
+Received: from [192.168.2.145] ([94.29.35.141])
+ by smtp.googlemail.com with ESMTPSA id d5sm3525117lji.85.2019.05.29.06.38.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 29 May 2019 06:38:24 -0700 (PDT)
+Subject: Re: [PATCH V4 5/8] memory: tegra: Add EMC scaling support code for
+ Tegra210
+To: Joseph Lo <josephl@nvidia.com>, Thierry Reding
+ <thierry.reding@gmail.com>, Peter De Schrijver <pdeschrijver@nvidia.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>
+Newsgroups: gmane.linux.ports.arm.kernel, gmane.linux.ports.tegra,
+ gmane.linux.drivers.devicetree, gmane.linux.kernel.clk
+References: <20190529082139.5581-1-josephl@nvidia.com>
+ <20190529082139.5581-6-josephl@nvidia.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <5bd95d0b-e1a5-e717-4d5a-b9ef5d5fa4a5@gmail.com>
+Date: Wed, 29 May 2019 16:37:20 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190529141356.1d9f03f3@xps13>
+In-Reply-To: <20190529082139.5581-6-josephl@nvidia.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_063345_934941_E4A62402 
-X-CRM114-Status: GOOD (  24.12  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190529_063827_308673_F398FA20 
+X-CRM114-Status: GOOD (  14.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (digetx[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,96 +108,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- raymond pang <raymondpangxd@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
- Nadav Haklai <nadavh@marvell.com>, devicetree@vger.kernel.org,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Baruch Siach <baruch@tkos.co.il>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-ide@vger.kernel.org,
- Hans de Goede <hdegoede@redhat.com>, Rob Herring <robh+dt@kernel.org>,
- Jens Axboe <axboe@kernel.dk>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-tegra@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/05/2019 13:13, Miquel Raynal wrote:
-> Hi Marc,
-> 
-> Marc Zyngier <marc.zyngier@arm.com> wrote on Wed, 29 May 2019 11:37:58
-> +0100:
-> 
->> On 29/05/2019 11:08, Miquel Raynal wrote:
->>> Hi Marc & Raymond,
->>>
->>> Marc Zyngier <marc.zyngier@arm.com> wrote on Thu, 23 May 2019 10:26:01
->>> +0100:
->>>   
->>>> On 23/05/2019 04:11, raymond pang wrote:  
->>>>> Hi Miquel,
->>>>>
->>>>> This patch adds clearing GHC.IS into hot path, could you explain how
->>>>> irq storm is generated? thanks
->>>>> According to AHCI Spec, HBA should not refer to GHC.IS to generate
->>>>> MSI when applying multiple MSIs.    
->>>>
->>>> Well spotted.
->>>>
->>>> I have the ugly feeling that this is because the Marvell AHCI
->>>> implementation is not using MSIs at all, but instead a pair of wired
->>>> interrupts (which are level triggered instead of edge, hence the
->>>> screaming interrupts).
->>>>
->>>> The changes in the following patches abuse the rest of the driver by
->>>> pretending this is a a multi-MSI setup, while it clearly doesn't match
->>>> the expectation of the AHCI spec for MSIs.
->>>>
->>>> It looks like this shouldn't be imposed on other unsuspecting
->>>> implementations which correctly use edge-triggered MSIs and do not
->>>> require such an MMIO access.  
->>>
->>> I understand your concern, let me add a AHCI_HFLAG_LEVEL_MSI in
->>> hpriv->flags which will be used by the mvebu_ahci.c driver to request
->>> for this MMIO access. This way, the hot path remains the same.  
->>
->> I'm not convinced that's a good idea, if only because from the PoV of
->> the AHCI device itself, these are not MSIs at all, but wired interrupts.
->> The fact that there is some glue logic in the middle that turns it into
->> a message (and then back into a wire) is a regrettable implementation
->> detail.
->>
->> I'd rather you stick to the normal interrupt handler, or provide your
->> own, which would solve most problems.
-> 
-> Unless I don't understand your proposal, "stick to the normal interrupt
-> handler" is not possible as I need this register write to happen at
-> this time, not at any other moment.
-> 
-> However, on the possibility of having a separate interrupt handler, I
-> may use the new AHCI_HFALG_LEVEL_MSI flag to change the
-> devm_request_irq call here [1] and use my own at this moment. The
-> handler will be in libahci.c though.
-> 
-> Would this be a better approach?
-
-Again, level-triggered MSIs are not a property of the AHCI block. If
-anything, that's a property of the ICU block. Please do not conflate the
-two.
-
-What you have here is a set of wired interrupts, one per port. I'd
-suggest you implement it a separate interrupt handler keyed on a
-particular flag if you cannot detect this case by other means.
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MjkuMDUuMjAxOSAxMToyMSwgSm9zZXBoIExvINC/0LjRiNC10YI6Cj4gVGhpcyBwYXRjaCBhZGRz
+IHRoZSByZXF1aXJlZCBBUElzIGFuZCB2YXJpYWJsZXMgZm9yIHRoZSBFTUMgc2NhbGluZwo+IHNl
+cXVlbmNlIGNvZGUgb24gVGVncmEyMTAuCj4gCj4gQmFzZWQgb24gdGhlIHdvcmsgb2YgUGV0ZXIg
+RGUgU2NocmlqdmVyIDxwZGVzY2hyaWp2ZXJAbnZpZGlhLmNvbT4uCj4gCj4gU2lnbmVkLW9mZi1i
+eTogSm9zZXBoIExvIDxqb3NlcGhsQG52aWRpYS5jb20+Cj4gLS0tCj4gdjQ6Cj4gLSBmaXggdGhl
+IEFQSSB3aXRoIGdlbmVyaWMgbmFtaW5nCj4gLSB1c2UgJ3UxNicgaW4gJ3N0cnVjdCBlbWNfdGFi
+bGVfcmVnaXN0ZXJfb2Zmc2V0Jwo+IC0tLQoKW3NuaXBdCgo+ICt2b2lkIGVtY193cml0ZWwoc3Ry
+dWN0IHRlZ3JhX2VtYyAqZW1jLCB1MzIgdmFsLCB1bnNpZ25lZCBsb25nIG9mZnNldCkKPiArewo+
+ICsJd3JpdGVsX3JlbGF4ZWQodmFsLCBlbWMtPmVtY19iYXNlW1JFR19FTUNdICsgb2Zmc2V0KTsK
+PiArfQo+ICsKPiAgdTMyIGVtY19yZWFkbChzdHJ1Y3QgdGVncmFfZW1jICplbWMsIHVuc2lnbmVk
+IGxvbmcgb2Zmc2V0KQo+ICB7Cj4gIAlyZXR1cm4gcmVhZGxfcmVsYXhlZChlbWMtPmVtY19iYXNl
+W1JFR19FTUNdICsgb2Zmc2V0KTsKPiAgfQo+ICAKPiArdTMyIGVtYzFfcmVhZGwoc3RydWN0IHRl
+Z3JhX2VtYyAqZW1jLCB1bnNpZ25lZCBsb25nIG9mZnNldCkKPiArewo+ICsJcmV0dXJuIHJlYWRs
+X3JlbGF4ZWQoZW1jLT5lbWNfYmFzZVtSRUdfRU1DMV0gKyBvZmZzZXQpOwo+ICt9CgpQbGVhc2Ug
+bWFrZSBhbGwgdGhlIGdsb2JhbCBvbmUtbGluZSBmdW5jdGlvbnMgc3RhdGljIGFuZCBpbmxpbmVk
+LCB0aGVuCm1vdmUgdGhlbSBvdXQgaW50byB0aGUgaGVhZGVyLiBUaGlzIHdpbGwgYWxsb3cgY29t
+cGlsZXIgdG8gb3B0aW1pemUgY29kZQpiZXR0ZXIgYW5kIGFsc28gd2lsbCBoaWRlIHRoZXNlIGdl
+bmVyaWMtbG9va2luZyBnbG9iYWwgc3ltYm9sIG5hbWVzIGZyb20KdW5yZWxhdGVkIHBhcnRpZXMg
+aW4gdGhlIG11bHRpcGxhdGZvcm0ga2VybmVsIGJ1aWxkLgoKLS0gCkRtaXRyeQoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
