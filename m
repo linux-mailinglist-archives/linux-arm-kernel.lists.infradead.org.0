@@ -2,59 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6338F2DA23
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:12:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 738572DA2E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:15:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ie+v7yis6U8z4bPEkqGZUa1m6SNXzncZVPUclBtIZyo=; b=SKvAabmidfel99
-	TStQWumeTTR+W1SCN+6iz7d9PU+GRmOZLbkLUcJJEdqUvHcT9TUTiMC56RaAIqY2M37CpaKtpjncs
-	pyzGBlgQ0aw+KsKEy0ayikQ2E8WC2TZSVvJ8KLdoHojlk1pMf3LqPlxsI4h1X7MAb/0TfVnFDfcBP
-	CysE8Mm8VXkY5kSEaKgx9uUM3I0RFd25h1vXOqUlTQSS1phc+b1intXhlVGSsQxmEGCpnTXBK8Jgh
-	yMBkkQGxdyf+nY4mfTu9wVKmBA0CQBLnMSOEqhtCkFDO1WuwngioZzWE9rC/7RdYQkKS37HGCCgBp
-	hsKIJ+C2J5a8+tJNi4qQ==;
+	List-Owner; bh=SRMmltNtsTlepvo9hzK+28xFcsCW+KpyZdp9EoBLj1w=; b=gWqLx/xq4sQ0sE
+	Hrc30lYDrt4MGNA9FLehxmKdy36JtHeETQbtIrTakTeZSngX/mDoki/o1tHxdFZVMAfqi+K8Mx8N4
+	75vNbvp+SMugcVuZjqA7bHYwqRi0LdJDtn1BfEMx4iH+a+/9gvqWGRUShlX3sGoOUYRxFbegPqNaN
+	IdneLucY/S+/rExb+fx35LjEy0b9gbuB0oOTfSspAasthDw7qK6bCS9hpFQCqrhoX2NSt78hxqbCh
+	Y4EWWOFgt3UOxTpNRuO/uxANj1FjQ3hTvs27WsucuPrXAgJNMIngdFHO3Is9NXWP21SAXTZiPeihh
+	EAr/xceMpprN6Xl6XDtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVvZa-0000on-82; Wed, 29 May 2019 10:12:42 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvZR-0000o4-PW
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:12:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8AAC4341;
- Wed, 29 May 2019 03:12:33 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 536243F59C;
- Wed, 29 May 2019 03:12:31 -0700 (PDT)
-Date: Wed, 29 May 2019 11:11:36 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
-Message-ID: <20190529101135.GA31777@lakrids.cambridge.arm.com>
-References: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
- <20190528140103.GT2623@hirez.programming.kicks-ass.net>
- <20190528153224.GE20758@fuggles.cambridge.arm.com>
- <20190528173228.GW2623@hirez.programming.kicks-ass.net>
+	id 1hVvbw-0001k7-HB; Wed, 29 May 2019 10:15:08 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVvbn-0001de-0b
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:15:00 +0000
+Received: by mail-oi1-x244.google.com with SMTP id y10so1544558oia.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 03:14:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=EAGedgacrWoeLyu0To12qxT1eO2alYayXGjZrLvwd+k=;
+ b=AJ5z3L0kCSDsX8kXY7FSc2jTfD36U/yC4myrub3XWsesly5t1RLKUIYsFwmIk7zsYu
+ G/ec1s4wKrkwSBj9pKJFzg44ijlFkepzOOVECZb78w2ln3vLeD60cOOUcrWjhvm/hcJj
+ 942E4WXbRgAxpZvAmBSkQhzszZ5bK+LHKWUDvfALZUh1KIitzPIV9pDwHwczthbpj6dX
+ e6IMh8yRgg27ugsXJVH2tMCQrdblMWGwu8SuiAdRuTkI9USXONsl/TqcoWuCAoCtatnF
+ ox3+f8AKTVMwzO+PznlyqLjWcdMeTDySGBYIriLWSXL+bIV/wMyDDeS0qlMUH7F541ct
+ m+zg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=EAGedgacrWoeLyu0To12qxT1eO2alYayXGjZrLvwd+k=;
+ b=treuoK+Hv9t159msN5bAa3FIfNN7dNmcG3dyyFx3EgPKxNvWRIJvT43kCVP2O7S32+
+ lZWYHFsw64eMQxjNqZoIHtydIoSJbs+Jj7Z5/5UsuAZkNlFncAoJTB3VLLNzrXAGvNUH
+ yhjtWj7D0Z6R23FEpPYY7daHvM0BMQQBEBFjwLaCISzYk+/1t+Ygu1OqYo0En9DBeeGq
+ Th96ty+H7FfWAhVgVsiE+bkCqzI1n+E5Baf+6MjjHN/rCCmDLmZjSpV/imvnyBFaong0
+ yi55M67iVc++gA7X8jlctdlXIg0+dHtt6I85x++eXLEGQCt3danoKsgdA0l6VhrsXoI/
+ EqMg==
+X-Gm-Message-State: APjAAAUun8XaidCvYgo8gKZwKdUJ18UvqXA3wDz/x4RFRj+9TsfNHFvm
+ 8G46l6FZQIl8YZTRjpJ3lRGicA==
+X-Google-Smtp-Source: APXvYqzycnDr7LSCH8lljP2nquWhzzkKaVjxa0t7sxxmmSebqcmDYlIZAEK+IFDcl6SuyoXkBJH5LA==
+X-Received: by 2002:a54:4f98:: with SMTP id g24mr6026696oiy.99.1559124897777; 
+ Wed, 29 May 2019 03:14:57 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li808-42.members.linode.com.
+ [104.237.132.42])
+ by smtp.gmail.com with ESMTPSA id w24sm5608786otk.74.2019.05.29.03.14.48
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 May 2019 03:14:56 -0700 (PDT)
+Date: Wed, 29 May 2019 18:14:45 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Mike Leach <mike.leach@linaro.org>, Wei Xu <xuwei5@hisilicon.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Andy Gross <agross@kernel.org>,
+ David Brown <david.brown@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Orson Zhai <orsonzhai@gmail.com>, Baolin Wang <baolin.wang@linaro.org>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH v2 00/11] dts: Update DT bindings for CoreSight
+ replicator and funnel
+Message-ID: <20190529101445.GC15808@leoy-ThinkPad-X240s>
+References: <20190508021902.10358-1-leo.yan@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190528173228.GW2623@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190508021902.10358-1-leo.yan@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_031233_838315_7DF40578 
-X-CRM114-Status: GOOD (  19.40  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190529_031459_067051_93B23ABB 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,67 +114,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Young Xiao <92siuyang@gmail.com>, mpe@ellerman.id.au, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- ravi.bangoria@linux.vnet.ibm.com, linux-arm-kernel@lists.infradead.org,
- kan.liang@linux.intel.com
+Cc: Andrew Lunn <andrew@lunn.ch>, Guodong Xu <guodong.xu@linaro.org>,
+ Chunyan Zhang <zhang.chunyan@linaro.org>,
+ Haojian Zhuang <haojian.zhuang@linaro.org>,
+ Zhangfei Gao <zhangfei.gao@linaro.org>, Lee Jones <lee.jones@linaro.org>,
+ Chris Healy <cphealy@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 07:32:28PM +0200, Peter Zijlstra wrote:
-> On Tue, May 28, 2019 at 04:32:24PM +0100, Will Deacon wrote:
-> > On Tue, May 28, 2019 at 04:01:03PM +0200, Peter Zijlstra wrote:
-> > > On Tue, May 28, 2019 at 08:31:29PM +0800, Young Xiao wrote:
-> > > > When a kthread calls call_usermodehelper() the steps are:
-> > > >   1. allocate current->mm
-> > > >   2. load_elf_binary()
-> > > >   3. populate current->thread.regs
-> > > > 
-> > > > While doing this, interrupts are not disabled. If there is a perf
-> > > > interrupt in the middle of this process (i.e. step 1 has completed
-> > > > but not yet reached to step 3) and if perf tries to read userspace
-> > > > regs, kernel oops.
-> > 
-> > This seems to be because pt_regs(current) gives NULL for kthreads on Power.
-> 
-> 'funny' thing that, perf_sample_regs_user() seems to assume that
-> anything with current->mm is in fact a user task, and that assumption is
-> just plain wrong, consider use_mm().
+On Wed, May 08, 2019 at 10:18:51AM +0800, Leo Yan wrote:
+> Since the DT bindings consolidatoins for CoreSight replicator and funnel
+> is ready for kernel v5.2 merge window [1], this patch set is to update
+> the related CoreSight DT bindings for platforms; IIUC, this patch set
+> will be safe for merging into kernel v5.2 because the dependency
+> patches in [1] will be landed into mainline kernel v5.2 cycle.
 
-Tagnentially, it looks like that assumption is made elsewhere, and could
-do with a more general cleanup. IIUC, the following are suspect:
+[...]
 
-* kmemleak's scan_should_stop()
-* x86's __kernel_fpu_begin()
-* arm64's arch_dup_task_struct()
+> Leo Yan (11):
+>   ARM: dts: hip04: Update coresight DT bindings
+>   ARM: dts: imx7s: Update coresight DT bindings
+>   ARM: dts: qcom-apq8064: Update coresight DT bindings
+>   ARM: dts: ste: Update coresight DT bindings
+>   ARM: dts: vexpress-v2p-ca15_a7: Update coresight DT bindings
+>   ARM: dts: qcom-msm8974: Update coresight DT bindings
+>   arm64: dts: hi6220: Update coresight DT bindings
+>   arm64: dts: juno: Update coresight DT bindings
+>   arm64: dts: qcom-msm8916: Update coresight DT bindings
+>   arm64: dts: sc9836: Update coresight DT bindings
+>   arm64: dts: sc9860: Update coresight DT bindings
 
-It's probably worth an is_thread(task) helper so that those can be
-written in an obviously correct way.
+Gentle ping for maintainers.
 
-> So I'm thinking the right thing to do here is something like the below;
-> umh should get PF_KTHREAD cleared when it passes exec(). And this should
-> also fix the power splat I'm thinking.
-> 
-> ---
-> 
-> diff --git a/kernel/events/core.c b/kernel/events/core.c
-> index abbd4b3b96c2..9929404b6eb9 100644
-> --- a/kernel/events/core.c
-> +++ b/kernel/events/core.c
-> @@ -5923,7 +5923,7 @@ static void perf_sample_regs_user(struct perf_regs *regs_user,
->  	if (user_mode(regs)) {
->  		regs_user->abi = perf_reg_abi(current);
->  		regs_user->regs = regs;
-> -	} else if (current->mm) {
-> +	} else if (!(current->flags & PF_KTHREAD) && current->mm) {
+Hi Andy, David,
 
-Wouldn't !PF_KTHREAD imply current->mm anyhow?
+Could you pick up patches 03, 06, 09/11 for QCOM DT bindings?
+
+Hi Sudeep,
+
+Could you pick up patches 05, 08/11 for Arm DT bindings?
+
+Hi Chunyan, Orson, Baolin,
+
+Could you pick up patches 10, 11/11 for Unisoc DT bindings?
+
+Thanks a lot for Shawn and Linus have picked up 02, 04/11 separately.
 
 Thanks,
-Mark.
+Leo Yan
 
 _______________________________________________
 linux-arm-kernel mailing list
