@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D93C32D8A4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:08:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 707932D8A6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:08:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=vpBGcHWFJ5tIVSHZ6IxCzETdMMVgA/Q3/mY/WGAFg2s=; b=cd/aT0M6W9zQObKTmeF0DNh8cV
-	bfWzyXVRbhGZb4Cag+xNLXs0p1pDHEU2jMN646lqdHm5HkgFAB3TF39z+aJfRsUfpGmGUo4FGU10N
-	w243MB0nMC9d7QUUAlAK8E3Hi46CkjEt85IzBerPOuhVv68uSSPbTLvc0mLwtUqVyxmYO8cwiO2k9
-	i/SMAlgOXqEdtRle2muZtBZ9zNR/3XeYma/dFtMOJN+Grb+VR4hbwcU/PKrHrSGjVlOyto8Sk7cq7
-	FMYhAbnlLXGeYCTpMRKDIdqvofmBfrIhUKjM1AI8NbKYKG42uXMV1oM9LSQOSfErX+dPPKUoQb8mT
-	naCf9Jvw==;
+	bh=6K16SJeMJbjiX/50RW6ZXlVVFLO9f334cIFUcECNIR8=; b=nJmGk30H2Ch86AsCkGwevzDtiE
+	Ks4qh+fmg/YhbAFUg0+fgwymh6nu4AlL/JIW69zQGGZ8D/NKTCpqBJko0dR4pG4Bf/NOIbbISj8e2
+	5TfDTB1ncF5npZ9MYWk2lDTzWzkO8E7Ur4K87/Cv+svnTrr8Rz1+Ny1ha6tGLE5YumUBR1wGe6YoX
+	OYfPATBut8J+FWh1N0xoCm5WacRjkWJ+qSm+gOsuMVOptj16GnFj6m7uVZKrhmFa3z9aeNpMtG0Oq
+	/tuPg606vtAsvrGhqoxWIP8MOqWXWUyAxZ2AfyrNiwXSYdYoLGh7ebYxhxcO1vNiXzLRZjiQxDcWw
+	H5SRLsXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVuZT-0003u5-Nt; Wed, 29 May 2019 09:08:31 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hVuZo-0004M2-BC; Wed, 29 May 2019 09:08:52 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVuYJ-0002c3-8t
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:07:26 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D8B2E1A0006;
- Wed, 29 May 2019 11:07:17 +0200 (CEST)
+ id 1hVuYJ-0002cq-Lw
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:07:30 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3A90D200143;
+ Wed, 29 May 2019 11:07:18 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EC4B51A03C9;
- Wed, 29 May 2019 11:07:11 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 56F4320021B;
+ Wed, 29 May 2019 11:07:12 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6A51140314;
- Wed, 29 May 2019 17:07:02 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id ABC7940319;
+ Wed, 29 May 2019 17:07:03 +0800 (SGT)
 From: yibin.gong@nxp.com
 To: robh@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  festevam@gmail.com, mark.rutland@arm.com, vkoul@kernel.org,
  dan.j.williams@intel.com
-Subject: [PATCH v3 6/8] dt-bindings: dma: fsl-edma: add new i.mx7ulp-edma
-Date: Wed, 29 May 2019 17:08:46 +0800
-Message-Id: <20190529090848.34350-7-yibin.gong@nxp.com>
+Subject: [PATCH v3 7/8] dmaengine: fsl-edma: add i.mx7ulp edma2 version support
+Date: Wed, 29 May 2019 17:08:47 +0800
+Message-Id: <20190529090848.34350-8-yibin.gong@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190529090848.34350-1-yibin.gong@nxp.com>
 References: <20190529090848.34350-1-yibin.gong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_020719_890273_021887D4 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20190529_020720_448302_E0C6F638 
+X-CRM114-Status: GOOD (  14.89  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,96 +79,179 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Robin Gong <yibin.gong@nxp.com>
 
-More channel interrupts, one more clock, and only one
-dmamux on i.mx7ulp-edma.
+  Add edma2 for i.mx7ulp by version v3, since v2 has already
+been used by mcf-edma.
+The big changes based on v1 are belows:
+1. only one dmamux.
+2. another clock dma_clk except dmamux clk.
+3. 16 independent interrupts instead of only one interrupt for
+all channels.
 
 Signed-off-by: Robin Gong <yibin.gong@nxp.com>
 ---
- Documentation/devicetree/bindings/dma/fsl-edma.txt | 44 +++++++++++++++++++---
- 1 file changed, 39 insertions(+), 5 deletions(-)
+ drivers/dma/fsl-edma-common.c | 18 +++++++++++-
+ drivers/dma/fsl-edma-common.h |  3 ++
+ drivers/dma/fsl-edma.c        | 67 +++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 87 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/dma/fsl-edma.txt b/Documentation/devicetree/bindings/dma/fsl-edma.txt
-index 97e213e..29dd3cc 100644
---- a/Documentation/devicetree/bindings/dma/fsl-edma.txt
-+++ b/Documentation/devicetree/bindings/dma/fsl-edma.txt
-@@ -9,15 +9,16 @@ group, DMAMUX0 or DMAMUX1, but not both.
- Required properties:
- - compatible :
- 	- "fsl,vf610-edma" for eDMA used similar to that on Vybrid vf610 SoC
-+	- "fsl,imx7ulp-edma" for eDMA2 used similar to that on i.mx7ulp
- - reg : Specifies base physical address(s) and size of the eDMA registers.
- 	The 1st region is eDMA control register's address and size.
- 	The 2nd and the 3rd regions are programmable channel multiplexing
- 	control register's address and size.
- - interrupts : A list of interrupt-specifiers, one for each entry in
--	interrupt-names.
--- interrupt-names : Should contain:
--	"edma-tx" - the transmission interrupt
--	"edma-err" - the error interrupt
-+	interrupt-names on vf610 similar SoC. But for i.mx7ulp per channel
-+	per transmission interrupt, total 16 channel interrupt and 1
-+	error interrupt(located in the last), no interrupt-names list on
-+	i.mx7ulp for clean on dts.
- - #dma-cells : Must be <2>.
- 	The 1st cell specifies the DMAMUX(0 for DMAMUX0 and 1 for DMAMUX1).
- 	Specific request source can only be multiplexed by specific channels
-@@ -28,6 +29,7 @@ Required properties:
- - clock-names : A list of channel group clock names. Should contain:
- 	"dmamux0" - clock name of mux0 group
- 	"dmamux1" - clock name of mux1 group
-+	Note: No dmamux0 on i.mx7ulp, but another 'dma' clk added on i.mx7ulp.
- - clocks : A list of phandle and clock-specifier pairs, one for each entry in
- 	clock-names.
+diff --git a/drivers/dma/fsl-edma-common.c b/drivers/dma/fsl-edma-common.c
+index 45d70d3..0d9915c 100644
+--- a/drivers/dma/fsl-edma-common.c
++++ b/drivers/dma/fsl-edma-common.c
+@@ -90,6 +90,19 @@ static void mux_configure8(struct fsl_edma_chan *fsl_chan, void __iomem *addr,
+ 	iowrite8(val8, addr + off);
+ }
  
-@@ -35,6 +37,10 @@ Optional properties:
- - big-endian: If present registers and hardware scatter/gather descriptors
- 	of the eDMA are implemented in big endian mode, otherwise in little
- 	mode.
-+- interrupt-names : Should contain the below on vf610 similar SoC but not used
-+	on i.mx7ulp similar SoC:
-+	"edma-tx" - the transmission interrupt
-+	"edma-err" - the error interrupt
++void mux_configure32(struct fsl_edma_chan *fsl_chan, void __iomem *addr,
++		     u32 off, u32 slot, bool enable)
++{
++	u32 val;
++
++	if (enable)
++		val = EDMAMUX_CHCFG_ENBL << 24 | slot;
++	else
++		val = EDMAMUX_CHCFG_DIS;
++
++	iowrite32(val, addr + off * 4);
++}
++
+ void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
+ 			unsigned int slot, bool enable)
+ {
+@@ -102,7 +115,10 @@ void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
+ 	muxaddr = fsl_chan->edma->muxbase[ch / chans_per_mux];
+ 	slot = EDMAMUX_CHCFG_SOURCE(slot);
  
+-	mux_configure8(fsl_chan, muxaddr, ch_off, slot, enable);
++	if (fsl_chan->edma->version == v3)
++		mux_configure32(fsl_chan, muxaddr, ch_off, slot, enable);
++	else
++		mux_configure8(fsl_chan, muxaddr, ch_off, slot, enable);
+ }
+ EXPORT_SYMBOL_GPL(fsl_edma_chan_mux);
  
- Examples:
-@@ -52,8 +58,36 @@ edma0: dma-controller@40018000 {
- 	clock-names = "dmamux0", "dmamux1";
- 	clocks = <&clks VF610_CLK_DMAMUX0>,
- 		<&clks VF610_CLK_DMAMUX1>;
--};
-+}; /* vf610 */
+diff --git a/drivers/dma/fsl-edma-common.h b/drivers/dma/fsl-edma-common.h
+index 014ab74..07482d2 100644
+--- a/drivers/dma/fsl-edma-common.h
++++ b/drivers/dma/fsl-edma-common.h
+@@ -125,6 +125,7 @@ struct fsl_edma_chan {
+ 	dma_addr_t			dma_dev_addr;
+ 	u32				dma_dev_size;
+ 	enum dma_data_direction		dma_dir;
++	char				chan_name[16];
+ };
  
-+edma1: dma-controller@40080000 {
-+	#dma-cells = <2>;
-+	compatible = "fsl,imx7ulp-edma";
-+	reg = <0x40080000 0x2000>,
-+		<0x40210000 0x1000>;
-+	dma-channels = <32>;
-+	interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>,
-+		     <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>,
-+		     /* last is eDMA2-ERR interrupt */
-+		     <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
-+	clock-names = "dma", "dmamux0";
-+	clocks = <&pcc2 IMX7ULP_CLK_DMA1>,
-+		 <&pcc2 IMX7ULP_CLK_DMA_MUX1>;
-+}; /* i.mx7ulp */
+ struct fsl_edma_desc {
+@@ -139,6 +140,7 @@ struct fsl_edma_desc {
+ enum edma_version {
+ 	v1, /* 32ch, Vybrid, mpc57x, etc */
+ 	v2, /* 64ch Coldfire */
++	v3, /* 32ch, i.mx7ulp */
+ };
  
- * DMA clients
- DMA client drivers that uses the DMA function must use the format described
+ struct fsl_edma_drvdata {
+@@ -154,6 +156,7 @@ struct fsl_edma_engine {
+ 	void __iomem		*membase;
+ 	void __iomem		*muxbase[DMAMUX_NR];
+ 	struct clk		*muxclk[DMAMUX_NR];
++	struct clk		*dmaclk;
+ 	u32			dmamux_nr;
+ 	struct mutex		fsl_edma_mutex;
+ 	const struct fsl_edma_drvdata *drvdata;
+diff --git a/drivers/dma/fsl-edma.c b/drivers/dma/fsl-edma.c
+index cf18301..45b26d6 100644
+--- a/drivers/dma/fsl-edma.c
++++ b/drivers/dma/fsl-edma.c
+@@ -165,6 +165,51 @@ fsl_edma_irq_init(struct platform_device *pdev, struct fsl_edma_engine *fsl_edma
+ 	return 0;
+ }
+ 
++static int
++fsl_edma2_irq_init(struct platform_device *pdev,
++		   struct fsl_edma_engine *fsl_edma)
++{
++	struct device_node *np = pdev->dev.of_node;
++	int i, ret, irq;
++	int count = 0;
++
++	count = of_irq_count(np);
++	dev_info(&pdev->dev, "%s Found %d interrupts\r\n", __func__, count);
++	if (count <= 2) {
++		dev_err(&pdev->dev, "Interrupts in DTS not correct.\n");
++		return -EINVAL;
++	}
++	/*
++	 * 16 channel independent interrupts + 1 error interrupt on i.mx7ulp.
++	 * 2 channel share one interrupt, for example, ch0/ch16, ch1/ch17...
++	 * For now, just simply request irq without IRQF_SHARED flag, since 16
++	 * channels are enough on i.mx7ulp whose M4 domain own some peripherals.
++	 */
++	for (i = 0; i < count; i++) {
++		irq = platform_get_irq(pdev, i);
++		if (irq < 0)
++			return -ENXIO;
++
++		sprintf(fsl_edma->chans[i].chan_name, "eDMA2-CH%02d", i);
++
++		/* The last IRQ is for eDMA err */
++		if (i == count - 1)
++			ret = devm_request_irq(&pdev->dev, irq,
++						fsl_edma_err_handler,
++						0, "eDMA2-ERR", fsl_edma);
++		else
++
++			ret = devm_request_irq(&pdev->dev, irq,
++						fsl_edma_tx_handler, 0,
++						fsl_edma->chans[i].chan_name,
++						fsl_edma);
++		if (ret)
++			return ret;
++	}
++
++	return 0;
++}
++
+ static void fsl_edma_irq_exit(
+ 		struct platform_device *pdev, struct fsl_edma_engine *fsl_edma)
+ {
+@@ -191,8 +236,16 @@ static struct fsl_edma_drvdata vf610_data = {
+ 	.setup_irq = fsl_edma_irq_init,
+ };
+ 
++static struct fsl_edma_drvdata imx7ulp_data = {
++	.version = v3,
++	.dmamuxs = 1,
++	.has_dmaclk = true,
++	.setup_irq = fsl_edma2_irq_init,
++};
++
+ static const struct of_device_id fsl_edma_dt_ids[] = {
+ 	{ .compatible = "fsl,vf610-edma", .data = &vf610_data},
++	{ .compatible = "fsl,imx7ulp-edma", .data = &imx7ulp_data},
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, fsl_edma_dt_ids);
+@@ -242,6 +295,20 @@ static int fsl_edma_probe(struct platform_device *pdev)
+ 	fsl_edma_setup_regs(fsl_edma);
+ 	regs = &fsl_edma->regs;
+ 
++	if (drvdata->has_dmaclk) {
++		fsl_edma->dmaclk = devm_clk_get(&pdev->dev, "dma");
++		if (IS_ERR(fsl_edma->dmaclk)) {
++			dev_err(&pdev->dev, "Missing DMA block clock.\n");
++			return PTR_ERR(fsl_edma->dmaclk);
++		}
++
++		ret = clk_prepare_enable(fsl_edma->dmaclk);
++		if (ret) {
++			dev_err(&pdev->dev, "DMA clk block failed.\n");
++			return ret;
++		}
++	}
++
+ 	for (i = 0; i < fsl_edma->dmamux_nr; i++) {
+ 		char clkname[32];
+ 
 -- 
 2.7.4
 
