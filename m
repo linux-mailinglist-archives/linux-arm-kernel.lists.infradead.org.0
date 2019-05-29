@@ -2,107 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 259A92D902
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:26:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F2A92D906
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:28:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=76ki5ij3IclMroOmvO1DgdenAfcbyahNEyh5kCK52Rw=; b=XysUtDgdJv8jnJ
-	lGDU5NxWFudM5+zVn8hppLH2a5FKxELyQwu4d8f/idnifm7MHEUhtLs4WRzktgvgc4TJEMgRWxVCR
-	Bwkvh9TIMFtT3tQWRz28TF7i/oxgAcLREpHSzHwf5QZy7rMcno+6oA6Xh4EZLucIQPnIXOgFbNYWO
-	MoFCsvnAn0IKchJi31zDU7dnY0yXqoCF1e8OO+851iOd2eQqDnXHwqKMkhQVP2hqxNdGLVjASaMTQ
-	B2mPZs6wIEeZY2j29KyX0ySG0ScWzsQTPrrGyyJpgDhdg+z2XZsMyLag7Htb6bQCsMNS7ylGX8K6s
-	fx2c/Vnw064j3LDZtoVQ==;
+	List-Owner; bh=QmKOsfVpWK0GmyLGmKlhOahe9u9f8MIO/gTqwsREPWk=; b=hZcEV9xIgjwb57
+	2KGIqNIGquPxZ44dqstQvyfhz3CfwA2c+9hfEOQ3mzSuOP1PdADoRQg6MQ86aBtKiz5EE56sDxyBZ
+	Y/AFjGLPFC6AmQKaoRznWzt91PCAB7lZhql9kBYe5oe3ulDn6uqLn3WSrfQUo7Ta4MotLFzp7OiUV
+	Pbe6gyjh9pxRlqZN7ua3r5Oa5RmSkDAexRhVaZLNhypjgT+3bQGFGiH2YcM1dvvPZoylr3IBgkIP3
+	G/BxoQM8OJmHIDXz3iJ2xCnYjB0ybYePEvRdLPrwv3lRIchgftI5uiFkzXKYPXykxQUCGI4xsFJT4
+	u8QzD2Nr7y5WsbVIoJXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVur0-0005TB-DN; Wed, 29 May 2019 09:26:38 +0000
-Received: from mail-eopbgr70084.outbound.protection.outlook.com ([40.107.7.84]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1hVuss-0005jp-S6; Wed, 29 May 2019 09:28:34 +0000
+Received: from mail-eopbgr00088.outbound.protection.outlook.com ([40.107.0.88]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVuqt-0005Sq-6U
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:26:32 +0000
+ id 1hVusl-0005jW-8X
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:28:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
  s=selector2-armh-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KsdXAsQGPriEnkmSM+1ZuHpfCqRIljpqi02ap5OBbZA=;
- b=H+sdbrlWN7Fr5tj6aQ29v3ErT+ljkeL1hxn5IxNkWo7q5GVAXFfak9OhpCRYYL7M5cth9N0kR6SLywcwbHPN7/0IHOq83DduUM4VIDZawcagOpSvO/5DKP17SDVEfg0vR5FJxyDm4gQE2pg41pUB2hfPFXJ6Zvr3+jzEBZK7UpE=
+ bh=EyXesuzcM1IcB5nETmfrkAUnLuUWIVqSPYbsS4RdxzM=;
+ b=EVUaR8q8M33vsPQAUmVLB5UBWB2CYz4bkAv7m6xWnSXvjPNe1qqjENJ36rQrGhy8Gi1MU57i5UYy3L/96IJkWM9eIJhMGipivdAxdzV7QF5bckAymUs91CKjjQMgJb01xrSNuMNc0HkjA0urpdoO3ELqtVc72wXiZ6zFzcyN+xk=
 Received: from DB8PR08MB4105.eurprd08.prod.outlook.com (20.179.12.12) by
  DB8PR08MB3994.eurprd08.prod.outlook.com (20.179.9.143) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.18; Wed, 29 May 2019 09:26:26 +0000
+ 15.20.1922.18; Wed, 29 May 2019 09:28:22 +0000
 Received: from DB8PR08MB4105.eurprd08.prod.outlook.com
  ([fe80::b4db:b3ed:75ff:167]) by DB8PR08MB4105.eurprd08.prod.outlook.com
  ([fe80::b4db:b3ed:75ff:167%3]) with mapi id 15.20.1922.021; Wed, 29 May 2019
- 09:26:26 +0000
+ 09:28:22 +0000
 From: Steve Capper <Steve.Capper@arm.com>
-To: Marc Zyngier <Marc.Zyngier@arm.com>
-Subject: Re: [PATCH v2 01/12] arm/arm64: KVM: Formalise end of direct linear
- map
-Thread-Topic: [PATCH v2 01/12] arm/arm64: KVM: Formalise end of direct linear
- map
-Thread-Index: AQHVFW/x742AqOVF50emc0crforbhKaAuY6AgAAaQgCAAQJxAA==
-Date: Wed, 29 May 2019 09:26:26 +0000
-Message-ID: <20190529092616.GA7196@capper-debian.cambridge.arm.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v2 04/12] arm64: mm: Replace fixed map BUILD_BUG_ON's with
+ BUG_ON's
+Thread-Topic: [PATCH v2 04/12] arm64: mm: Replace fixed map BUILD_BUG_ON's
+ with BUG_ON's
+Thread-Index: AQHVFXAGAoQa/fuZsEm+p8rWVwgcdaaAxNYAgAABCACAARDtAA==
+Date: Wed, 29 May 2019 09:28:22 +0000
+Message-ID: <20190529092812.GB7196@capper-debian.cambridge.arm.com>
 References: <20190528161026.13193-1-steve.capper@arm.com>
- <20190528161026.13193-2-steve.capper@arm.com>
- <aaec6c01-0610-c9aa-a091-177749a29852@arm.com>
- <20190528170116.GA13287@capper-debian.cambridge.arm.com>
-In-Reply-To: <20190528170116.GA13287@capper-debian.cambridge.arm.com>
+ <20190528161026.13193-5-steve.capper@arm.com>
+ <CAKv+Gu-4OOy14uKQHxvwiZ-opaMf4h5UJ2V7HhaEKLP=L3aeqQ@mail.gmail.com>
+ <CAKv+Gu8kg8H-HT35f46q6MPhimr_JasZdr-3kPVFpz3s6VeWdw@mail.gmail.com>
+In-Reply-To: <CAKv+Gu8kg8H-HT35f46q6MPhimr_JasZdr-3kPVFpz3s6VeWdw@mail.gmail.com>
 Accept-Language: en-GB, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 user-agent: Mutt/1.10.1 (2018-07-13)
 x-originating-ip: [217.140.106.32]
-x-clientproxiedby: DM5PR18CA0061.namprd18.prod.outlook.com
- (2603:10b6:3:22::23) To DB8PR08MB4105.eurprd08.prod.outlook.com
+x-clientproxiedby: DM5PR18CA0066.namprd18.prod.outlook.com
+ (2603:10b6:3:22::28) To DB8PR08MB4105.eurprd08.prod.outlook.com
  (2603:10a6:10:b0::12)
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=Steve.Capper@arm.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: cbc2347c-1b33-4c66-bb65-08d6e417b955
+x-ms-office365-filtering-correlation-id: 1ae9385c-606a-4152-4bd9-08d6e417fe24
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
  SRVR:DB8PR08MB3994; 
 x-ms-traffictypediagnostic: DB8PR08MB3994:
 nodisclaimer: True
-x-microsoft-antispam-prvs: <DB8PR08MB399458D030BF59820B81EC2A811F0@DB8PR08MB3994.eurprd08.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3968;
+x-microsoft-antispam-prvs: <DB8PR08MB39941683AB78C32F572E7787811F0@DB8PR08MB3994.eurprd08.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0052308DC6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(396003)(376002)(346002)(39860400002)(136003)(189003)(199004)(14444005)(33656002)(26005)(25786009)(99286004)(186003)(316002)(68736007)(476003)(11346002)(446003)(76176011)(52116002)(386003)(6506007)(53546011)(102836004)(66556008)(66446008)(73956011)(486006)(66476007)(64756008)(5660300002)(1076003)(66946007)(229853002)(6486002)(14454004)(7736002)(256004)(6436002)(53936002)(81156014)(3846002)(6116002)(8676002)(81166006)(8936002)(2906002)(6246003)(478600001)(54906003)(4326008)(58126008)(72206003)(6512007)(71200400001)(71190400001)(6862004)(66066001)(44832011)(86362001)(6636002)(305945005);
+ SFS:(10009020)(366004)(396003)(376002)(346002)(39860400002)(136003)(54094003)(189003)(199004)(14444005)(33656002)(26005)(25786009)(99286004)(186003)(316002)(68736007)(476003)(11346002)(446003)(76176011)(52116002)(386003)(6506007)(102836004)(66556008)(66446008)(73956011)(486006)(66476007)(64756008)(5660300002)(1076003)(66946007)(229853002)(6486002)(14454004)(7736002)(256004)(6436002)(53936002)(81156014)(3846002)(6116002)(8676002)(81166006)(8936002)(2906002)(6246003)(478600001)(54906003)(4326008)(58126008)(72206003)(6512007)(71200400001)(71190400001)(66066001)(44832011)(86362001)(305945005)(6916009);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR08MB3994;
  H:DB8PR08MB4105.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: arm.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: pjnfR+YqBhwwj2CciiHzIY2K6MtidDVXOGhsl7hj7oq4KDY3NWHdgWdy40EGDJVO4GHd+hrengXohbSZF3+UMXM5ZjR/Dt8FXU4golpUO3ISS1kS9c3CVp1f1bwYv5Z1gmG8R3oXPbLBRUl/O+CPZNE9Wdqr238HFV4Eem8114Ayj8QnUxpUlLuI0p6yMpHRAXnR+I1A23SKAkp7nOtkymQdeAwieYmCRALYjAaaNY1ayX4/e0JvvBLvF7V/yOfa0yP2l6TWDZhC21PBpvZIhqcJ7Zx/3SMcIPvIUb0w6cBdxKmIfCSdIjpFFmJGyyxH9kjhhf89wobfxJuvmoAZInqxLGLDhRqdVZRH0hKTnwtdyfU+nJ1KYiHDg5m443WufV/RFke0M3GJe3VnlZDcoRX1/wEiFCsZZUeZEB61Lzk=
-Content-ID: <3A7964E74DAAFA4E905EE48CC6F1C27D@eurprd08.prod.outlook.com>
+x-microsoft-antispam-message-info: yKYjkgk/v5efUKyZx477o/SKTUyWBqT0qY79uqPL7aT2x+kJF46MCGmgSFosCkmk7euKvYm2B21VpL4W8bMk9XbRh63O3GLri30xUNlRYAMorgqng29z+hKSciuIUz00pkw1YQ/ryXq5JCEMYk54CQrG4f53jtp3Lx6gZE9PLHQxqM82k9aHHAVwGSoDdLAh5I8J+S23rwKvoNc4DabbnFlHeSATOivt5zJRuFuFqUw7Tkmcus4ZxntOrySDb+nejcyokEG+60WYoSf5Pngaw12G71mClUzyXofTpHWHap4YB+5DHW0SJoxC8G6b5ruYOlRMkTAZ5fiYkioDSCybuzgnZ4s5MFM79EfBd6qJwfQw76Uy6UHw5Uyk9GA7aly0ij4eT/dRPfKKE6DowthMhBS0JS2brEdMo96X4qmH0lw=
+Content-ID: <0205961B61D7F94DB30C97C55861436C@eurprd08.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cbc2347c-1b33-4c66-bb65-08d6e417b955
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 09:26:26.8525 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1ae9385c-606a-4152-4bd9-08d6e417fe24
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 09:28:22.2524 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: f34e5979-57d9-4aaa-ad4d-b122a662184d
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: Steve.Capper@arm.com
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB3994
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_022631_324698_4934780B 
-X-CRM114-Status: GOOD (  26.88  )
+X-CRM114-CacheID: sfid-20190529_022827_301695_CC00D0F8 
+X-CRM114-Status: GOOD (  17.14  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.84 listed in list.dnswl.org]
+ no trust [40.107.0.88 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -120,97 +120,48 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "crecklin@redhat.com" <crecklin@redhat.com>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- "bhsharma@redhat.com" <bhsharma@redhat.com>, Will Deacon <Will.Deacon@arm.com>,
- nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Marc Zyngier <Marc.Zyngier@arm.com>, Catalin Marinas <Catalin.Marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, Will Deacon <Will.Deacon@arm.com>,
+ nd <nd@arm.com>, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 05:01:29PM +0000, Steve Capper wrote:
-> On Tue, May 28, 2019 at 05:27:17PM +0100, Marc Zyngier wrote:
-> > Hi Steve,
-> 
-> Hi Marc,
-> 
-> > 
-> > On 28/05/2019 17:10, Steve Capper wrote:
-> > > We assume that the direct linear map ends at ~0 in the KVM HYP map
-> > 
-> > Do we? This has stopped being the case since ed57cac83e05f ("arm64: KVM:
-> > Introduce EL2 VA randomisation").
-> > 
-> > > intersection checking code. This assumption will become invalid later on
-> > > for arm64 when the address space of the kernel is re-arranged.
-> > > 
-> > > This patch introduces a new constant PAGE_OFFSET_END for both arm and
-> > > arm64 and defines it to be ~0UL
-> > > 
+On Tue, May 28, 2019 at 07:11:22PM +0200, Ard Biesheuvel wrote:
+> On Tue, 28 May 2019 at 19:07, Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+> >
+> > On Tue, 28 May 2019 at 18:10, Steve Capper <steve.capper@arm.com> wrote:
+> > >
+> > > In order to prepare for a variable VA_BITS we need to account for a
+> > > variable size VMEMMAP which in turn means the position of the fixed map
+> > > is variable at compile time.
+> > >
+> > > Thus, we need to replace the BUILD_BUG_ON's that check the fixed map
+> > > position with BUG_ON's.
+> > >
 > > > Signed-off-by: Steve Capper <steve.capper@arm.com>
-> > > ---
-> > >  arch/arm/include/asm/memory.h   | 1 +
-> > >  arch/arm64/include/asm/memory.h | 1 +
-> > >  virt/kvm/arm/mmu.c              | 4 ++--
-> > >  3 files changed, 4 insertions(+), 2 deletions(-)
-> > > 
-> > > diff --git a/arch/arm/include/asm/memory.h b/arch/arm/include/asm/memory.h
-> > > index ed8fd0d19a3e..45c211fd50da 100644
-> > > --- a/arch/arm/include/asm/memory.h
-> > > +++ b/arch/arm/include/asm/memory.h
-> > > @@ -24,6 +24,7 @@
-> > >  
-> > >  /* PAGE_OFFSET - the virtual address of the start of the kernel image */
-> > >  #define PAGE_OFFSET		UL(CONFIG_PAGE_OFFSET)
-> > > +#define PAGE_OFFSET_END		(~0UL)
-> > >  
-> > >  #ifdef CONFIG_MMU
-> > >  
-> > > diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-> > > index 8ffcf5a512bb..9fd387a63b9b 100644
-> > > --- a/arch/arm64/include/asm/memory.h
-> > > +++ b/arch/arm64/include/asm/memory.h
-> > > @@ -52,6 +52,7 @@
-> > >  	(UL(1) << VA_BITS) + 1)
-> > >  #define PAGE_OFFSET		(UL(0xffffffffffffffff) - \
-> > >  	(UL(1) << (VA_BITS - 1)) + 1)
-> > > +#define PAGE_OFFSET_END		(~0UL)
-> > >  #define KIMAGE_VADDR		(MODULES_END)
-> > >  #define BPF_JIT_REGION_START	(VA_START + KASAN_SHADOW_SIZE)
-> > >  #define BPF_JIT_REGION_SIZE	(SZ_128M)
-> > > diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-> > > index 74b6582eaa3c..e1a777275b37 100644
-> > > --- a/virt/kvm/arm/mmu.c
-> > > +++ b/virt/kvm/arm/mmu.c
-> > > @@ -2202,10 +2202,10 @@ int kvm_mmu_init(void)
-> > >  	kvm_debug("IDMAP page: %lx\n", hyp_idmap_start);
-> > >  	kvm_debug("HYP VA range: %lx:%lx\n",
-> > >  		  kern_hyp_va(PAGE_OFFSET),
-> > > -		  kern_hyp_va((unsigned long)high_memory - 1));
-> > > +		  kern_hyp_va(PAGE_OFFSET_END));
-> > >  
-> > >  	if (hyp_idmap_start >= kern_hyp_va(PAGE_OFFSET) &&
-> > > -	    hyp_idmap_start <  kern_hyp_va((unsigned long)high_memory - 1) &&
-> > > +	    hyp_idmap_start <  kern_hyp_va(PAGE_OFFSET_END) &&
-> > >  	    hyp_idmap_start != (unsigned long)__hyp_idmap_text_start) {
-> > >  		/*
-> > >  		 * The idmap page is intersecting with the VA space,
-> > > 
-> > 
-> > This definitely looks like a move in the wrong direction (reverting part
-> > of the above commit). Is it that this is just an old patch that should
-> > have been dropped? Or am I completely missing the point?
+> >
+> > Do we still need this patch now that VMEMMAP_SIZE is a compile time
+> > constant again? Or am I missing something?
+> >
 > 
-> I suspect this is a case of me rebasing my series... poorly.
-> I'll re-examine the logic here and either update the patch or the commit
-> log to make it clearer.
+> Never mind. You are moving the start of the linear region and the
+> start of the vmemmap region.
+> 
+> I wonder if this is really necessry, though. On a 48-bit VA only
+> system, the linear region could still start at 0xfff0_.... as long as
+> we don't put any physical memory there (and we already move around our
+> physical memory inside the linear region when KASLR is enabled)
+> 
 >
 
-Hi Marc,
-Thanks, this was indeed an overzealous rebase. I've removed this patch from the
-series and kvmtool is happy booting guests (when rebased to v5.2-rc2).
+Thanks Ard,
+This patch is actually superfluous, it was needed in earlier versions of
+the series; but VMEMMAP is fixed at compile time.
+
+I have removed this patch from the series. I will also see if I can
+simplify the de-constifying patches and bitmask replacement logic.
 
 Cheers,
 -- 
