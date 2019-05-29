@@ -2,74 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87CE72E096
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 17:09:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E21672E0A0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 17:10:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7CUMH16/7hk53ljnGLI28qI8lDILPJ7af9YJ+rsloVA=; b=lpXe3rHfWcAkan
-	ILUe2Yzgi/ke4igjtfc0gXrcybaDjprZ7Sz8IyxTMm32NNVQ4SeCTg6+n6rC0ROllwYsLeLUCXfZg
-	yYK9jS9UHB9WFlZYUWOBq5tnfdZubEeblWtJW+4W5wW2Xik4+dy36ny85SNQbpDvjBsuiLBcmHv08
-	rPw+NGhLOIo2nQFoUxG0ksByRH1d+NcycN7cmzSeT0iTPXIeEKz5cPtw3WOAvT7YUVEyKGKXmOdXu
-	mCktcGa9ONOie6Dmf4juT5ItnyX+MryqgHzNS5MajzaER3PWdNjapJ3JZyqlkuru6HnGw0oWS4yUn
-	dCxxwm8kbuSbzYZn7C+g==;
+	List-Owner; bh=5xSHlyc46iTNXIJ072sliX2O+UJrnggcyyLhNfHUy+E=; b=Av4otRJto7DlPZ
+	O2FNdN4xDZWp6R2pZWmPEcSdgniwv0FXBHFjQLvAG7uzuDzVUX2BotdEa8wIcDc86kyh3f+qevc1J
+	Lcx9hewdTLAb0tUxK7vOAjojzIPluJldFq3FAcTbZQ5bfr5GICAsHLjviTYUU0NoSEcYa2VU9ZYMQ
+	LyU0jSiQVZsXsX2p5Anhen6hoWeU+njv649P6KqgZ3uRKUG5H09ztKZEP9XmMqKk3579nXT9X2vML
+	Sg8MkQWNg5GWjXt7wfi6WiOgZnsxiKsD6KtPqz6gnAbuECMTg7dxhQLf1trQNJNC9wDJ07ThR9ptR
+	V6QojFn9PY3BTUUoqTHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW0D0-0000nD-Dt; Wed, 29 May 2019 15:09:42 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW0Ct-0000mF-Im
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 15:09:36 +0000
-Received: by mail-io1-f68.google.com with SMTP id u13so2154156iop.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 08:09:34 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=ZnaDev0tj+heu2iB5lB6hq5yDeKgLXO4KFHMV/Qt+5k=;
- b=qDiqYiQPItRtRcpP3uPvQNoatzqHShlEXnE/gwqtUGc6aAkS3KXW4p1sV+k4+qNBap
- uiMo7uibpAvqhWH5gGBjWYG8CVM8t9LBYX1oKQtW13CYKU2cqe2Gi0Q2RHdNm2bMzNQg
- 6Jm25H9AZ65DD4ju+slLuHLRLcJ1YCai7RVt3vd/7CXGNPhW3iG3H0XbvXgoON3dUjs/
- Qf2/7YsF5EiyylW9YjB7xr1da17nQaOom7cbxLyKN2q5Uz/SBIDU3DBHaavhJPCVF7mA
- myxesD0AixAN0iuzTIgz8hovXjAw/0FrUJNkqrwA1lh/Ke/Uh1gqrzBkDgmM8wvUV5cN
- +7RA==
-X-Gm-Message-State: APjAAAUMobE1T+FdsIxOqi5AL5bzcOHIIrIw9EVWrVmxt6BDnYrZhnsj
- t/g4ki1gT6dmORhkbLELKNeL+kZqe9dIknoCYn8=
-X-Google-Smtp-Source: APXvYqySOnocW0FtjyGqwuP2FQxhmxY7P/texfW33GuY5PwHsuap8yTRqkoaWNnTkj3NpjtfrGddYcbbqyuWzUYQqNA=
-X-Received: by 2002:a6b:7:: with SMTP id 7mr828192ioa.253.1559142573556; Wed,
- 29 May 2019 08:09:33 -0700 (PDT)
+	id 1hW0Dt-0002IP-Sq; Wed, 29 May 2019 15:10:37 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hW0Dm-0002Hg-HV; Wed, 29 May 2019 15:10:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 29A15341;
+ Wed, 29 May 2019 08:10:30 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 77E1D3F5AF;
+ Wed, 29 May 2019 08:10:26 -0700 (PDT)
+Date: Wed, 29 May 2019 16:10:23 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Atish Patra <atish.patra@wdc.com>
+Subject: Re: [RFT PATCH v5 4/5] arm: Use common cpu_topology structure and
+ functions.
+Message-ID: <20190529151023.GB13155@e107155-lin>
+References: <20190524000653.13005-1-atish.patra@wdc.com>
+ <20190524000653.13005-5-atish.patra@wdc.com>
 MIME-Version: 1.0
-References: <20190521161102.29620-1-peron.clem@gmail.com>
-In-Reply-To: <20190521161102.29620-1-peron.clem@gmail.com>
-From: Tomeu Vizoso <tomeu.vizoso@collabora.com>
-Date: Wed, 29 May 2019 17:09:22 +0200
-Message-ID: <CAAObsKD8bij1ANLqX6y11Y6mDEXiymNjrDkmHmvGWiFLKWu_FA@mail.gmail.com>
-Subject: Re: [PATCH v6 0/6] Allwinner H6 Mali GPU support
-To: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190524000653.13005-5-atish.patra@wdc.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_080935_612120_1BCFF60F 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190529_081030_583974_82B56896 
+X-CRM114-Status: GOOD (  12.72  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tomeu.vizoso[at]gmail.com)
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,31 +64,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- open list <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, linux-riscv@lists.infradead.org,
+ Morten Rasmussen <morten.rasmussen@arm.com>, Andreas Schwab <schwab@suse.de>,
+ Ingo Molnar <mingo@kernel.org>, devicetree@vger.kernel.org,
+ Albert Ou <aou@eecs.berkeley.edu>, Sudeep Holla <sudeep.holla@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Jeremy Linton <jeremy.linton@arm.com>, Otto Sabart <ottosabart@seberm.com>,
+ Anup Patel <anup@brainfault.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAyMSBNYXkgMjAxOSBhdCAxODoxMSwgQ2zDqW1lbnQgUMOpcm9uIDxwZXJvbi5jbGVt
-QGdtYWlsLmNvbT4gd3JvdGU6Cj4KW3NuaXBdCj4gWyAgMzQ1LjIwNDgxM10gcGFuZnJvc3QgMTgw
-MDAwMC5ncHU6IG1tdSBpcnEgc3RhdHVzPTEKPiBbICAzNDUuMjA5NjE3XSBwYW5mcm9zdCAxODAw
-MDAwLmdwdTogVW5oYW5kbGVkIFBhZ2UgZmF1bHQgaW4gQVMwIGF0IFZBCj4gMHgwMDAwMDAwMDAy
-NDAwNDAwCgpGcm9tIHdoYXQgSSBjYW4gc2VlIGhlcmUsIDB4MDAwMDAwMDAwMjQwMDQwMCBwb2lu
-dHMgdG8gdGhlIGZpcnN0IGJ5dGUKb2YgdGhlIGZpcnN0IHN1Ym1pdHRlZCBqb2IgZGVzY3JpcHRv
-ci4KClNvIG1hcHBpbmcgYnVmZmVycyBmb3IgdGhlIEdQVSBkb2Vzbid0IHNlZW0gdG8gYmUgd29y
-a2luZyBhdCBhbGwgb24KNjQtYml0IFQtNzYwLgoKU3RldmVuLCBSb2JpbiwgZG8geW91IGhhdmUg
-YW55IGlkZWEgb2Ygd2h5IHRoaXMgY291bGQgYmU/CgpUaGFua3MsCgpUb21ldQoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, May 23, 2019 at 05:06:51PM -0700, Atish Patra wrote:
+> Currently, ARM32 and ARM64 uses different data structures to represent
+> their cpu topologies. Since, we are moving the ARM64 topology to common
+> code to be used by other architectures, we can reuse that for ARM32 as
+> well.
+> 
+> Take this opprtunity to remove the redundant functions from ARM32 and
+> reuse the common code instead.
+> 
+
+Tested-by: Sudeep Holla <sudeep.holla@arm.com> (on TC2)
+Reviewed-by : Sudeep Holla <sudeep.holla@arm.com>
+
+--
+Regards,
+Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
