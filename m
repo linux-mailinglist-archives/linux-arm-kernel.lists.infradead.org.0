@@ -2,39 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CABED2E906
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 01:24:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C47C2E97A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 01:36:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OHfwlqtYERj3Bg5Bx2rQXCL6e8SUBvhk0yKLWjAnDjE=; b=sJbHle5DFAl49n
-	8mr5GBju8386b9D/Ev1jsb6Yl6eG9BVSs5IdEbdLM6MtoxinUGuRLhODDotxYsRfhSC+zKyIAp3gF
-	5bVDPT4MtIYCa5v4fD/iNq+4x7IZWx0cxn8lru4wQTpbIRTsIyDAZwkPbPMPtuKBobvBnUyWqcoEj
-	k88r9rOTCcKhJmuQZMeGMJ4Yo/1XMFc+xMe819w059yhLNvv7Unpk/z7vE6Ek15c4BTo7fvDErsne
-	6GOomolHkePJxmiKACyrblzTvY8i8L7YXwZB6seURGlne2JxbVE63BI0E9lT0M0Wjvdkx9xLJ0pV2
-	nbMtOEluoWbAFS3kjUvw==;
+	List-Owner; bh=37VR6tur4h5YVjmAlBysgo5kcqDA5HpIcq8/8yxkj2E=; b=GlBrxGlohhPP6G
+	ycmedFiZ3X6fK74K2obeTYnakNuMTwQUIkGkjiaH0f9ExVoq5CMMxR1o91x7YCiKXO0Scvs7tGFF0
+	TTJBg3B5s5NKAYkOVGw0tB4P55J/fktHP2egqrQa6w82krWc6/aJBtZFp1yJ/Vecd73CRISkDFyoi
+	85J9Bz1rX4yjpEmpQM+3/PGu/nq/NOI7yWN75l1PZ3aIBodCvLgsYY4FvDDw0pK/lDHTFl/WG5EvI
+	cv6uk+rU44NyFzpEyou8ew1ulJKBzVzl8WNJvnuuUn7JAJG14WTmoHwvW2qxpmzM0KJRu7urnE8DC
+	f7HO9px9ZwQRamp9q/bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW7w5-0006Hu-8Q; Wed, 29 May 2019 23:24:45 +0000
-Received: from 177.132.232.81.dynamic.adsl.gvt.net.br ([177.132.232.81]
- helo=bombadil.infradead.org)
- by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW7vL-0005Rw-HW; Wed, 29 May 2019 23:23:59 +0000
-Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
- (envelope-from <mchehab@bombadil.infradead.org>)
- id 1hW7vI-0007xI-NZ; Wed, 29 May 2019 20:23:56 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH 09/22] docs: mark orphan documents as such
-Date: Wed, 29 May 2019 20:23:40 -0300
-Message-Id: <e0bf4e767dd5de9189e5993fbec2f4b1bafd2064.1559171394.git.mchehab+samsung@kernel.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <cover.1559171394.git.mchehab+samsung@kernel.org>
-References: <cover.1559171394.git.mchehab+samsung@kernel.org>
+	id 1hW86w-0002Vf-H2; Wed, 29 May 2019 23:35:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hW86p-0002V6-HY
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 23:35:52 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B7F6F2435D;
+ Wed, 29 May 2019 23:35:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559172947;
+ bh=aHRGWmrf5rXnGBiMo5ak6Pc0Hv90kyBqNX7HV998xic=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=jaP6SePRwzRnxN+ij5bLWVtNYpu/iF9tyV5WGHmrc8Q5SzcUP2k2bI/+uvhOKqeaT
+ hJUM0s/lPFbJHfEiJ7AhNx7ktcnq+WFF8qVegWcHmNX9L3ZpK49i93+RAHpYAXwoLo
+ ivyZqOm4nh2trqHx4QCtEtnTzdy3P1IDNhF3B9+M=
 MIME-Version: 1.0
+In-Reply-To: <20190523132235.GZ9261@dragon>
+References: <20190522014832.29485-1-peng.fan@nxp.com>
+ <20190523132235.GZ9261@dragon>
+To: Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH] clk: imx: imx8mm: correct audio_pll2_clk to audio_pll2_out
+User-Agent: alot/0.8.1
+Date: Wed, 29 May 2019 16:35:46 -0700
+Message-Id: <20190529233547.B7F6F2435D@mail.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190529_163551_600701_1B80504F 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -46,201 +76,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org,
- =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- dri-devel@lists.freedesktop.org, platform-driver-x86@vger.kernel.org,
- Paul Mackerras <paulus@samba.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@st.com>, Jonathan Corbet <corbet@lwn.net>,
- Michael Ellerman <mpe@ellerman.id.au>, David Airlie <airlied@linux.ie>,
- Andrew Donnellan <ajd@linux.ibm.com>, linux-pm@vger.kernel.org,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Matan Ziv-Av <matan@svgalib.org>,
- Mauro Carvalho Chehab <mchehab@infradead.org>, Daniel Vetter <daniel@ffwll.ch>,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Frederic Barrat <fbarrat@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- linuxppc-dev@lists.ozlabs.org, Georgi Djakov <georgi.djakov@linaro.org>
+Cc: "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sphinx doesn't like orphan documents:
+Quoting Shawn Guo (2019-05-23 06:22:36)
+> On Wed, May 22, 2019 at 01:34:46AM +0000, Peng Fan wrote:
+> > There is no audio_pll2_clk registered, it should be audio_pll2_out.
+> > 
+> > Cc: <stable@vger.kernel.org>
+> > Fixes: ba5625c3e27 ("clk: imx: Add clock driver support for imx8mm")
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> 
+> Stephen,
+> 
+> I leave this to you, since it's a fix.
+> 
 
-    Documentation/accelerators/ocxl.rst: WARNING: document isn't included in any toctree
-    Documentation/arm/stm32/overview.rst: WARNING: document isn't included in any toctree
-    Documentation/arm/stm32/stm32f429-overview.rst: WARNING: document isn't included in any toctree
-    Documentation/arm/stm32/stm32f746-overview.rst: WARNING: document isn't included in any toctree
-    Documentation/arm/stm32/stm32f769-overview.rst: WARNING: document isn't included in any toctree
-    Documentation/arm/stm32/stm32h743-overview.rst: WARNING: document isn't included in any toctree
-    Documentation/arm/stm32/stm32mp157-overview.rst: WARNING: document isn't included in any toctree
-    Documentation/gpu/msm-crash-dump.rst: WARNING: document isn't included in any toctree
-    Documentation/interconnect/interconnect.rst: WARNING: document isn't included in any toctree
-    Documentation/laptops/lg-laptop.rst: WARNING: document isn't included in any toctree
-    Documentation/powerpc/isa-versions.rst: WARNING: document isn't included in any toctree
-    Documentation/virtual/kvm/amd-memory-encryption.rst: WARNING: document isn't included in any toctree
-    Documentation/virtual/kvm/vcpu-requests.rst: WARNING: document isn't included in any toctree
-
-So, while they aren't on any toctree, add :orphan: to them, in order
-to silent this warning.
-
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
----
- Documentation/accelerators/ocxl.rst                 | 2 ++
- Documentation/arm/stm32/overview.rst                | 2 ++
- Documentation/arm/stm32/stm32f429-overview.rst      | 2 ++
- Documentation/arm/stm32/stm32f746-overview.rst      | 2 ++
- Documentation/arm/stm32/stm32f769-overview.rst      | 2 ++
- Documentation/arm/stm32/stm32h743-overview.rst      | 2 ++
- Documentation/arm/stm32/stm32mp157-overview.rst     | 2 ++
- Documentation/gpu/msm-crash-dump.rst                | 2 ++
- Documentation/interconnect/interconnect.rst         | 2 ++
- Documentation/laptops/lg-laptop.rst                 | 2 ++
- Documentation/powerpc/isa-versions.rst              | 2 ++
- Documentation/virtual/kvm/amd-memory-encryption.rst | 2 ++
- Documentation/virtual/kvm/vcpu-requests.rst         | 2 ++
- 13 files changed, 26 insertions(+)
-
-diff --git a/Documentation/accelerators/ocxl.rst b/Documentation/accelerators/ocxl.rst
-index 14cefc020e2d..b1cea19a90f5 100644
---- a/Documentation/accelerators/ocxl.rst
-+++ b/Documentation/accelerators/ocxl.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- ========================================================
- OpenCAPI (Open Coherent Accelerator Processor Interface)
- ========================================================
-diff --git a/Documentation/arm/stm32/overview.rst b/Documentation/arm/stm32/overview.rst
-index 85cfc8410798..f7e734153860 100644
---- a/Documentation/arm/stm32/overview.rst
-+++ b/Documentation/arm/stm32/overview.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- ========================
- STM32 ARM Linux Overview
- ========================
-diff --git a/Documentation/arm/stm32/stm32f429-overview.rst b/Documentation/arm/stm32/stm32f429-overview.rst
-index 18feda97f483..65bbb1c3b423 100644
---- a/Documentation/arm/stm32/stm32f429-overview.rst
-+++ b/Documentation/arm/stm32/stm32f429-overview.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- STM32F429 Overview
- ==================
- 
-diff --git a/Documentation/arm/stm32/stm32f746-overview.rst b/Documentation/arm/stm32/stm32f746-overview.rst
-index b5f4b6ce7656..42d593085015 100644
---- a/Documentation/arm/stm32/stm32f746-overview.rst
-+++ b/Documentation/arm/stm32/stm32f746-overview.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- STM32F746 Overview
- ==================
- 
-diff --git a/Documentation/arm/stm32/stm32f769-overview.rst b/Documentation/arm/stm32/stm32f769-overview.rst
-index 228656ced2fe..f6adac862b17 100644
---- a/Documentation/arm/stm32/stm32f769-overview.rst
-+++ b/Documentation/arm/stm32/stm32f769-overview.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- STM32F769 Overview
- ==================
- 
-diff --git a/Documentation/arm/stm32/stm32h743-overview.rst b/Documentation/arm/stm32/stm32h743-overview.rst
-index 3458dc00095d..c525835e7473 100644
---- a/Documentation/arm/stm32/stm32h743-overview.rst
-+++ b/Documentation/arm/stm32/stm32h743-overview.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- STM32H743 Overview
- ==================
- 
-diff --git a/Documentation/arm/stm32/stm32mp157-overview.rst b/Documentation/arm/stm32/stm32mp157-overview.rst
-index 62e176d47ca7..2c52cd020601 100644
---- a/Documentation/arm/stm32/stm32mp157-overview.rst
-+++ b/Documentation/arm/stm32/stm32mp157-overview.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- STM32MP157 Overview
- ===================
- 
-diff --git a/Documentation/gpu/msm-crash-dump.rst b/Documentation/gpu/msm-crash-dump.rst
-index 757cd257e0d8..240ef200f76c 100644
---- a/Documentation/gpu/msm-crash-dump.rst
-+++ b/Documentation/gpu/msm-crash-dump.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- =====================
- MSM Crash Dump Format
- =====================
-diff --git a/Documentation/interconnect/interconnect.rst b/Documentation/interconnect/interconnect.rst
-index c3e004893796..56e331dab70e 100644
---- a/Documentation/interconnect/interconnect.rst
-+++ b/Documentation/interconnect/interconnect.rst
-@@ -1,5 +1,7 @@
- .. SPDX-License-Identifier: GPL-2.0
- 
-+:orphan:
-+
- =====================================
- GENERIC SYSTEM INTERCONNECT SUBSYSTEM
- =====================================
-diff --git a/Documentation/laptops/lg-laptop.rst b/Documentation/laptops/lg-laptop.rst
-index aa503ee9b3bc..f2c2ffe31101 100644
---- a/Documentation/laptops/lg-laptop.rst
-+++ b/Documentation/laptops/lg-laptop.rst
-@@ -1,5 +1,7 @@
- .. SPDX-License-Identifier: GPL-2.0+
- 
-+:orphan:
-+
- LG Gram laptop extra features
- =============================
- 
-diff --git a/Documentation/powerpc/isa-versions.rst b/Documentation/powerpc/isa-versions.rst
-index 812e20cc898c..66c24140ebf1 100644
---- a/Documentation/powerpc/isa-versions.rst
-+++ b/Documentation/powerpc/isa-versions.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- CPU to ISA Version Mapping
- ==========================
- 
-diff --git a/Documentation/virtual/kvm/amd-memory-encryption.rst b/Documentation/virtual/kvm/amd-memory-encryption.rst
-index 659bbc093b52..33d697ab8a58 100644
---- a/Documentation/virtual/kvm/amd-memory-encryption.rst
-+++ b/Documentation/virtual/kvm/amd-memory-encryption.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- ======================================
- Secure Encrypted Virtualization (SEV)
- ======================================
-diff --git a/Documentation/virtual/kvm/vcpu-requests.rst b/Documentation/virtual/kvm/vcpu-requests.rst
-index 5feb3706a7ae..c1807a1b92e6 100644
---- a/Documentation/virtual/kvm/vcpu-requests.rst
-+++ b/Documentation/virtual/kvm/vcpu-requests.rst
-@@ -1,3 +1,5 @@
-+:orphan:
-+
- =================
- KVM VCPU Requests
- =================
--- 
-2.21.0
+Is it a critical fix? Or is it an annoyance that can wait in -next until
+the next merge window?
 
 
 _______________________________________________
