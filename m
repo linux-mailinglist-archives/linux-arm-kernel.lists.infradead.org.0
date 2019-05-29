@@ -2,54 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55F072DDAE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 15:05:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B33442DDB0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 15:06:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9YgOUbINi0ELljsVu4qgcUYDAa9nty1JeumxQ58P++8=; b=DCHcQboPFgtBXw
-	7vOE21gWOV+2j+a5OqtRvrco5/HwHCIMOWbz3jkkZcY4/ZEQV4y1cbD+PsjE0wokxT7uJdJRwiBv1
-	4t43dMDROkhmWZSF/YAORCqmxc7nIdcT6+SAzmHWRSDt/5yQwJiDs/DpGDefDX2JJ2qtv6EGI4gB9
-	Ug6Rl7+esuPWDkDZNJWa4HqbD2XAqTqBwjH9Zl5DAel3iF3gczxmC0/HXezoYA/4bJxnQZBLvz5FO
-	CHtwoC++HrZm4ANDINgqzKQ7gun2oabAYMNyUEuzZg36VG5yVvco0LjiyacgKXkzJIK7idJtdb7tg
-	s2BSh1QZFXQZfy57a8pQ==;
+	List-Owner; bh=rz+urBiSFRO4YauJexgc+sqpVHK9BaeTE4Ar0zfDC6o=; b=F1aJgF3Xm/c+/a
+	jVw3E2j++NE+ujq/crxQm7mtbi2OXz/lxNFyc4GwTpdZ72clD5z4GrV720RUDuuS/O5FRxJLp7J6M
+	kVzZOnBtHrvo5I2g5oAbdIl1lt9RbZaZanqeIwpeVut0zcbJodJAA4PJtzX80/pOpVkcYqAkiFWqG
+	eTex+b6OVd0FtLV73gWznVXA6if6WC9RyJd6eftR58CDphCNIfSgnoQLTJrjMNXK8hg2EXc+QOT2J
+	mffOh1l6JFUby6l3ZIiDuB+lqoIXMBwyTWLc8K27KayWaGeH7DgNnAezsUANGUge3ZnIabjTvpQdm
+	tor+XtAFlBZP7LdS/hlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVyGv-0004Pj-Ev; Wed, 29 May 2019 13:05:37 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hVyHS-0004f3-KS; Wed, 29 May 2019 13:06:10 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVyGn-0004PN-Tj
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 13:05:31 +0000
+ id 1hVyHL-0004ee-W9
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 13:06:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4389080D;
- Wed, 29 May 2019 06:05:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BC4BEA78;
+ Wed, 29 May 2019 06:06:03 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 71F863F59C;
- Wed, 29 May 2019 06:05:26 -0700 (PDT)
-Date: Wed, 29 May 2019 14:05:21 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EEA1C3F59C;
+ Wed, 29 May 2019 06:06:01 -0700 (PDT)
+Date: Wed, 29 May 2019 14:05:59 +0100
 From: Will Deacon <will.deacon@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
-Message-ID: <20190529130521.GA11023@fuggles.cambridge.arm.com>
-References: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
- <20190528140103.GT2623@hirez.programming.kicks-ass.net>
- <20190528153224.GE20758@fuggles.cambridge.arm.com>
- <20190528173228.GW2623@hirez.programming.kicks-ass.net>
- <20190529091733.GA4485@fuggles.cambridge.arm.com>
- <20190529101042.GN2623@hirez.programming.kicks-ass.net>
- <20190529102022.GC4485@fuggles.cambridge.arm.com>
- <20190529125557.GU2623@hirez.programming.kicks-ass.net>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH v2] iommu/arm-smmu: Avoid constant zero in TLBI writes
+Message-ID: <20190529130559.GB11023@fuggles.cambridge.arm.com>
+References: <f523effd-ef81-46fe-1f9e-1a0cb42c8b7b@free.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190529125557.GU2623@hirez.programming.kicks-ass.net>
+In-Reply-To: <f523effd-ef81-46fe-1f9e-1a0cb42c8b7b@free.fr>
 User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_060529_966298_9B1F2E37 
-X-CRM114-Status: GOOD (  18.25  )
+X-CRM114-CacheID: sfid-20190529_060604_038742_017FE0F5 
+X-CRM114-Status: GOOD (  24.81  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -70,62 +64,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Young Xiao <92siuyang@gmail.com>, mpe@ellerman.id.au,
- jolsa@redhat.com, x86@kernel.org, linux@armlinux.org.uk, eranian@google.com,
- linux-kernel@vger.kernel.org, acme@redhat.com, mingo@redhat.com, bp@alien8.de,
- hpa@zytor.com, ravi.bangoria@linux.vnet.ibm.com, fweisbec@gmail.com,
- linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Cc: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
+ MSM <linux-arm-msm@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ iommu <iommu@lists.linux-foundation.org>, Andy Gross <agross@kernel.org>,
+ AngeloGioacchino Del Regno <kholk11@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 02:55:57PM +0200, Peter Zijlstra wrote:
-> On Wed, May 29, 2019 at 11:20:22AM +0100, Will Deacon wrote:
-> > Anyway, you can add my ack to your patch, but I bet we can remove that mm
-> > check :D
+On Wed, May 29, 2019 at 01:55:48PM +0200, Marc Gonzalez wrote:
+> From: Robin Murphy <robin.murphy@arm.com>
 > 
-> I've ended up with the below. Ravi, can you test if that does indeed
-> obsolete your PPC patch?
-> 
-> ---
-> Subject: perf: Fix perf_sample_regs_user()
-> From: Peter Zijlstra <peterz@infradead.org>
-> Date: Wed May 29 14:37:24 CEST 2019
-> 
-> perf_sample_regs_user() uses 'current->mm' to test for the presence of
-> userspace, but this is insufficient, consider use_mm().
-> 
-> A better test is: '!(current->flags & PF_KTHREAD)', exec() clears
-> PF_KTHREAD after it sets the new ->mm but before it drops to userspace
-> for the first time.
-> 
-> Possibly obsoletes: bf05fc25f268 ("powerpc/perf: Fix oops when kthread execs user process")
-> 
-> Reported-by: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
-> Reported-by: Young Xiao <92siuyang@gmail.com>
-> Cc: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
-> Cc: Naveen N. Rao <naveen.n.rao@linux.vnet.ibm.com>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: Jiri Olsa <jolsa@redhat.com>
-> Cc: Frederic Weisbecker <fweisbec@gmail.com>
-> Cc: Stephane Eranian <eranian@google.com>
-> Cc: Arnaldo Carvalho de Melo <acme@redhat.com>
-> Acked-by: Will Deacon <will.deacon@arm.com>
-> Fixes: 4018994f3d87 ("perf: Add ability to attach user level registers dump to sample")
-> Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-> ---
->  kernel/events/core.c |    2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> --- a/kernel/events/core.c
-> +++ b/kernel/events/core.c
-> @@ -5923,7 +5923,7 @@ static void perf_sample_regs_user(struct
->  	if (user_mode(regs)) {
+> Apparently, some Qualcomm arm64 platforms which appear to expose their
+> SMMU global register space are still, in fact, using a hypervisor to
+> mediate it by trapping and emulating register accesses. Sadly, some
+> deployed versions of said trapping code have bugs wherein they go
+> horribly wrong for stores using r31 (i.e. XZR/WZR) as the source
+> register.
 
-Hmm, so it just occurred to me that Mark's observation is that the regs
-can be junk in some cases. In which case, should we be checking for
-kthreads first?
+^^^
+This should be in the comment instead of "qcom bug".
+
+> While this can be mitigated for GCC today by tweaking the constraints
+> for the implementation of writel_relaxed(), to avoid any potential
+> arms race with future compilers more aggressively optimising register
+> allocation, the simple way is to just remove all the problematic
+> constant zeros. For the write-only TLB operations, the actual value is
+> irrelevant anyway and any old nearby variable will provide a suitable
+> GPR to encode. The one point at which we really do need a zero to clear
+> a context bank happens before any of the TLB maintenance where crashes
+> have been reported, so is apparently not a problem... :/
+
+Hmm. It would be nice to understand this a little better. In which cases
+does XZR appear to work?
+
+> Reported-by: AngeloGioacchino Del Regno <kholk11@gmail.com>
+> Reviewed-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Tested-by: AngeloGioacchino Del Regno <kholk11@gmail.com>
+> Tested-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+> Tested-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+> Changes from v1:
+> - Tweak commit message (remove "compilers", s/hangs/crashes)
+> - Add a comment before writel_relaxed
+> ---
+>  drivers/iommu/arm-smmu.c | 8 +++++---
+>  1 file changed, 5 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index 5e54cc0a28b3..3f352268fa8b 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -423,7 +423,8 @@ static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
+>  {
+>  	unsigned int spin_cnt, delay;
+>  
+> -	writel_relaxed(0, sync);
+> +	/* Write "garbage" (rather than 0) to work around a qcom bug */
+> +	writel_relaxed((unsigned long)sync, sync);
+>  	for (delay = 1; delay < TLB_LOOP_TIMEOUT; delay *= 2) {
+>  		for (spin_cnt = TLB_SPIN_COUNT; spin_cnt > 0; spin_cnt--) {
+>  			if (!(readl_relaxed(status) & sTLBGSTATUS_GSACTIVE))
+> @@ -1763,8 +1764,9 @@ static void arm_smmu_device_reset(struct arm_smmu_device *smmu)
+>  	}
+>  
+>  	/* Invalidate the TLB, just in case */
+> -	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
+> -	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
+> +	/* Write "garbage" (rather than 0) to work around a qcom bug */
+> +	writel_relaxed(reg, gr0_base + ARM_SMMU_GR0_TLBIALLH);
+> +	writel_relaxed(reg, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
+
+Any reason not to make these obviously dummy values e.g.:
+
+	/*
+	 * Text from the commit message about broken hypervisor
+	 */
+	#define QCOM_DUMMY_VAL_NOT_XZR	~0U
+
+That makes the callsites much easier to understand and I doubt there's a
+performance impact from allocating an extra register here.
 
 Will
 
