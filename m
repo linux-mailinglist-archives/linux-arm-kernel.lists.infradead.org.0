@@ -2,60 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 574C92D4C3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 06:29:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D2E32D4C6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 06:32:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LfiilXnDiLqIqURccuEFQANCPzj5uZ6sgkudBE+59tQ=; b=Ddl+BfvFQDKkqB
-	FdaxL04XPc2zmyFONOiz0p98KAu+PlzKSP9xKf1BJKI5AOmfqEyny29FKoiIQphFqRaQUuN4Sl8Dr
-	W/V545LhDLdL7OyuV3ilX2cXrBNBM6sU6D7EVh1yhfh9HskGo2smvlVCsXSgGcjIyN+qaHHh1C0K+
-	rLzbKgmdUmRmkiUFLyO29Qqt1RBTTpjuVDa0ldRPA4R1R76KC7j2OhmuJKbm8AJoefEyjYDP2hVr2
-	GN49tMC3nXZVvswZkIGG2AzdxJADNAa7boG4PXyToIHRDDduAYH5GpuTYLbi0FWTISDblvywy2cOJ
-	LXSqO8tCmvwLlA8sT4Tg==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/oKfb2JAkFGPWZGFu9rkZmOqPw5mwoqT34zrH7fg1nw=; b=HmdGLPNfIUxXXe
+	cWIaGZo2gMWsAbWnMvW4iIDIw0vKGkpeTFqHzl6bhwiLk1+tV/yVOFDkXqiqI1a2rzQSwb4vE9wEn
+	pKbidSh5O3gmGMnOJhy5pXWj0djwaLzWif4YY0B2ICE/4utc32dq73fjf6rwW0qBgSCbd5k+s4Y6u
+	tNxQiQ1HYqeXTlJvLVazVPA5owqYLr3au5Vu3Mvf4O7hkW7HpWOwTM5e797u9mpQt35UpuQDxUxy6
+	0K9g5MfpSEVmeBjAGLSw/u99a4VwUdDpydl7iOJjG57bUV8gRG4MbQrZiNv/1QDs/kpdHm5KcGOYn
+	3nUrq3RAXQL/IPwZzcmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVqDR-0005mW-9e; Wed, 29 May 2019 04:29:29 +0000
+	id 1hVqGV-0007ww-NO; Wed, 29 May 2019 04:32:39 +0000
 Received: from smtp73.ord1d.emailsrvr.com ([184.106.54.73])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVqDJ-0005m4-Hi; Wed, 29 May 2019 04:29:23 +0000
+ id 1hVqGO-0007wb-9F; Wed, 29 May 2019 04:32:33 +0000
 Received: from smtp10.relay.ord1d.emailsrvr.com (localhost [127.0.0.1])
- by smtp10.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id 45C81A0116;
- Wed, 29 May 2019 00:29:20 -0400 (EDT)
+ by smtp10.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id B6CFBA00A8;
+ Wed, 29 May 2019 00:32:31 -0400 (EDT)
 X-SMTPDoctor-Processed: csmtpprox beta
 Received: from smtp10.relay.ord1d.emailsrvr.com (localhost [127.0.0.1])
- by smtp10.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id 3A0C6A011F;
- Wed, 29 May 2019 00:29:20 -0400 (EDT)
+ by smtp10.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id AADB3A00C7;
+ Wed, 29 May 2019 00:32:31 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=g001.emailsrvr.com;
- s=20190322-9u7zjiwi; t=1559104160;
- bh=mM7hi/iMm0gaPUAQlzy+XSLccfIJ932Jxhv7KVFLUik=;
- h=From:To:Subject:Date:From;
- b=JK/iv6oV0b3E3fym0aJkxGD32D7X860bRqPlDWAzq6E3OYiqT/BtWsqNWoykQxWfV
- v//MhmZX4+vOdlLY/eXskZDdn+Nkh2og89tLcIKOkVDOj8q4AMLpS3xHXVpg/N1tkX
- +W87ORbZc/Li1vIjqKn7FTibQegsI9jtun9MU1LM=
+ s=20190322-9u7zjiwi; t=1559104351;
+ bh=mcOSD+EFum3khj5SinsGaMT/35QO/uxIAir4XZYoT8g=;
+ h=Subject:From:Date:To:From;
+ b=MHycrVrxakzEDWlvwpHaEBzGrDb0gcYBv9ApqyioUjbKce1xluqS4DT8fIadzptw8
+ IRl1TrLl5RXPIf67SKptCbkPOspiI3rsuRPXi76GyPqaFuiwlMGXyjDbrno/IHCVA3
+ pHLqbPCmCSJTUTkDfxZ4gPc7UurMZHDHqevfjKWY=
 X-Auth-ID: mcdermj@xenotropic.com
 Received: by smtp10.relay.ord1d.emailsrvr.com (Authenticated sender:
- mcdermj-AT-xenotropic.com) with ESMTPSA id 17173A0116; 
- Wed, 29 May 2019 00:29:19 -0400 (EDT)
+ mcdermj-AT-xenotropic.com) with ESMTPSA id AF1E5A00A8; 
+ Wed, 29 May 2019 00:32:30 -0400 (EDT)
 X-Sender-Id: mcdermj@xenotropic.com
-Received: from commune.xenotropic.com (c-73-96-52-102.hsd1.or.comcast.net
- [73.96.52.102]) (using TLSv1.2 with cipher DHE-RSA-AES128-GCM-SHA256)
- by 0.0.0.0:25 (trex/5.7.12); Wed, 29 May 2019 00:29:20 -0400
+Received: from [10.0.3.33] (c-73-96-52-102.hsd1.or.comcast.net [73.96.52.102])
+ (using TLSv1.2 with cipher DHE-RSA-AES256-GCM-SHA384)
+ by 0.0.0.0:465 (trex/5.7.12); Wed, 29 May 2019 00:32:31 -0400
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: Re: [PATCH v2] i2c: bcm2835: Model Divider in CCF
 From: Annaliese McDermond <nh6z@nh6z.net>
-To: eric@anholt.net, stefan.wahren@i2se.com, f.fainelli@gmail.com,
- wsa@the-dreams.de, swarren@wwwdotorg.org, linux-i2c@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3] i2c: bcm2835: Model Divider in CCF
-Date: Tue, 28 May 2019 21:29:12 -0700
-Message-Id: <20190529042912.12956-1-nh6z@nh6z.net>
-X-Mailer: git-send-email 2.19.1
-MIME-Version: 1.0
+In-Reply-To: <ACF57AF2-51C9-4884-BC65-126221CDAB5B@nh6z.net>
+Date: Tue, 28 May 2019 21:32:29 -0700
+Message-Id: <F02ECB35-4999-4B6E-8ACF-4EC4359F4017@nh6z.net>
+References: <20190508071227.18609-1-nh6z@nh6z.net>
+ <716a7b8a-c2f8-a3c4-0b3a-be3cb26a6c12@i2se.com>
+ <ACF57AF2-51C9-4884-BC65-126221CDAB5B@nh6z.net>
+To: Stefan Wahren <stefan.wahren@i2se.com>
+X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_212921_693051_532B6B4C 
-X-CRM114-Status: GOOD (  20.19  )
+X-CRM114-CacheID: sfid-20190528_213232_429823_E40C2090 
+X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -79,297 +82,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: team@nwdigitalradio.com, Annaliese McDermond <nh6z@nh6z.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Florian Fainelli <f.fainelli@gmail.com>, swarren@wwwdotorg.org,
+ wsa@the-dreams.de, team@nwdigitalradio.com, Eric Anholt <eric@anholt.net>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Model the I2C bus clock divider as a part of the Core Clock Framework.
-Primarily this removes the clk_get_rate() call from each transfer.
-This call causes problems for slave drivers that themselves have
-internal clock components that are controlled by an I2C interface.
-When the slave's internal clock component is prepared, the prepare
-lock is obtained, and it makes calls to the I2C subsystem to
-command the hardware to activate the clock.  In order to perform
-the I2C transfer, this driver sets the divider, which requires
-it to get the parent clock rate, which it does with clk_get_rate().
-Unfortunately, this function will try to take the clock prepare
-lock, which is already held by the slave's internal clock calls
-creating a deadlock.
-
-Modeling the divider in the CCF natively removes this dependency
-and the divider value is only set upon changing the bus clock
-frequency or changes in the parent clock that cascade down to this
-divisor.  This obviates the need to set the divider with every
-transfer and avoids the deadlock described above.  It also should
-provide better clock debugging and save a few cycles on each
-transfer due to not having to recalcuate the divider value.
-
-Signed-off-by: Annaliese McDermond <nh6z@nh6z.net>
----
-Changes in v2:
- - Remove empty whitespace between declarations
- - Preserve comment regarding register rounding
- - Consolodate declarations and initial assignments
- - Return proper error pointer from bcm2835_i2c_register_div()
- - Properly handle return value from bcm2835_i2c_register_div()
-   in bcm2835_i2c_probe()
- - Refactor divider calulation code into separate function
- - Use clk_set_rate_exclusive() to ensure the clock is not
-   modified by other consumers
- - Deregister clock in bcm2835_i2c_remove() to properly clean up
-   after ourselves
-
-Changes in v3:
- - Changed name of clock to include the i2c device name to make
-   for easier debugging when using /sys/kernel/debug/clk/clk_summary
-
- drivers/i2c/busses/i2c-bcm2835.c | 146 ++++++++++++++++++++++++-------
- 1 file changed, 115 insertions(+), 31 deletions(-)
-
-diff --git a/drivers/i2c/busses/i2c-bcm2835.c b/drivers/i2c/busses/i2c-bcm2835.c
-index d2fbb4bb4a43..fc6ae024d0b3 100644
---- a/drivers/i2c/busses/i2c-bcm2835.c
-+++ b/drivers/i2c/busses/i2c-bcm2835.c
-@@ -4,6 +4,8 @@
-  */
- 
- #include <linux/clk.h>
-+#include <linux/clkdev.h>
-+#include <linux/clk-provider.h>
- #include <linux/completion.h>
- #include <linux/err.h>
- #include <linux/i2c.h>
-@@ -51,9 +53,7 @@
- struct bcm2835_i2c_dev {
- 	struct device *dev;
- 	void __iomem *regs;
--	struct clk *clk;
- 	int irq;
--	u32 bus_clk_rate;
- 	struct i2c_adapter adapter;
- 	struct completion completion;
- 	struct i2c_msg *curr_msg;
-@@ -74,12 +74,17 @@ static inline u32 bcm2835_i2c_readl(struct bcm2835_i2c_dev *i2c_dev, u32 reg)
- 	return readl(i2c_dev->regs + reg);
- }
- 
--static int bcm2835_i2c_set_divider(struct bcm2835_i2c_dev *i2c_dev)
-+#define to_clk_bcm2835_i2c(_hw) container_of(_hw, struct clk_bcm2835_i2c, hw)
-+struct clk_bcm2835_i2c {
-+	struct clk_hw hw;
-+	struct bcm2835_i2c_dev *i2c_dev;
-+};
-+
-+static int clk_bcm2835_i2c_calc_divider(unsigned long rate,
-+				unsigned long parent_rate)
- {
--	u32 divider, redl, fedl;
-+	u32 divider = DIV_ROUND_UP(parent_rate, rate);
- 
--	divider = DIV_ROUND_UP(clk_get_rate(i2c_dev->clk),
--			       i2c_dev->bus_clk_rate);
- 	/*
- 	 * Per the datasheet, the register is always interpreted as an even
- 	 * number, by rounding down. In other words, the LSB is ignored. So,
-@@ -88,12 +93,23 @@ static int bcm2835_i2c_set_divider(struct bcm2835_i2c_dev *i2c_dev)
- 	if (divider & 1)
- 		divider++;
- 	if ((divider < BCM2835_I2C_CDIV_MIN) ||
--	    (divider > BCM2835_I2C_CDIV_MAX)) {
--		dev_err_ratelimited(i2c_dev->dev, "Invalid clock-frequency\n");
-+	    (divider > BCM2835_I2C_CDIV_MAX))
- 		return -EINVAL;
--	}
- 
--	bcm2835_i2c_writel(i2c_dev, BCM2835_I2C_DIV, divider);
-+	return divider;
-+}
-+
-+static int clk_bcm2835_i2c_set_rate(struct clk_hw *hw, unsigned long rate,
-+				unsigned long parent_rate)
-+{
-+	struct clk_bcm2835_i2c *div = to_clk_bcm2835_i2c(hw);
-+	u32 redl, fedl;
-+	u32 divider = clk_bcm2835_i2c_calc_divider(rate, parent_rate);
-+
-+	if (divider == -EINVAL)
-+		return -EINVAL;
-+
-+	bcm2835_i2c_writel(div->i2c_dev, BCM2835_I2C_DIV, divider);
- 
- 	/*
- 	 * Number of core clocks to wait after falling edge before
-@@ -108,12 +124,62 @@ static int bcm2835_i2c_set_divider(struct bcm2835_i2c_dev *i2c_dev)
- 	 */
- 	redl = max(divider / 4, 1u);
- 
--	bcm2835_i2c_writel(i2c_dev, BCM2835_I2C_DEL,
-+	bcm2835_i2c_writel(div->i2c_dev, BCM2835_I2C_DEL,
- 			   (fedl << BCM2835_I2C_FEDL_SHIFT) |
- 			   (redl << BCM2835_I2C_REDL_SHIFT));
- 	return 0;
- }
- 
-+static long clk_bcm2835_i2c_round_rate(struct clk_hw *hw, unsigned long rate,
-+				unsigned long *parent_rate)
-+{
-+	u32 divider = clk_bcm2835_i2c_calc_divider(rate, *parent_rate);
-+
-+	return DIV_ROUND_UP(*parent_rate, divider);
-+}
-+
-+static unsigned long clk_bcm2835_i2c_recalc_rate(struct clk_hw *hw,
-+						unsigned long parent_rate)
-+{
-+	struct clk_bcm2835_i2c *div = to_clk_bcm2835_i2c(hw);
-+	u32 divider = bcm2835_i2c_readl(div->i2c_dev, BCM2835_I2C_DIV);
-+
-+	return DIV_ROUND_UP(parent_rate, divider);
-+}
-+
-+static const struct clk_ops clk_bcm2835_i2c_ops = {
-+	.set_rate = clk_bcm2835_i2c_set_rate,
-+	.round_rate = clk_bcm2835_i2c_round_rate,
-+	.recalc_rate = clk_bcm2835_i2c_recalc_rate,
-+};
-+
-+static struct clk *bcm2835_i2c_register_div(struct device *dev,
-+					const char *mclk_name,
-+					struct bcm2835_i2c_dev *i2c_dev)
-+{
-+	struct clk_init_data init;
-+	struct clk_bcm2835_i2c *priv;
-+	char name[32];
-+
-+	snprintf(name, sizeof(name), "%s_div", dev_name(dev));
-+
-+	init.ops = &clk_bcm2835_i2c_ops;
-+	init.name = name;
-+	init.parent_names = (const char* []) { mclk_name };
-+	init.num_parents = 1;
-+	init.flags = 0;
-+
-+	priv = devm_kzalloc(dev, sizeof(struct clk_bcm2835_i2c), GFP_KERNEL);
-+	if (priv == NULL)
-+		return ERR_PTR(-ENOMEM);
-+
-+	priv->hw.init = &init;
-+	priv->i2c_dev = i2c_dev;
-+
-+	clk_hw_register_clkdev(&priv->hw, "div", dev_name(dev));
-+	return devm_clk_register(dev, &priv->hw);
-+}
-+
- static void bcm2835_fill_txfifo(struct bcm2835_i2c_dev *i2c_dev)
- {
- 	u32 val;
-@@ -271,7 +337,7 @@ static int bcm2835_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg msgs[],
- {
- 	struct bcm2835_i2c_dev *i2c_dev = i2c_get_adapdata(adap);
- 	unsigned long time_left;
--	int i, ret;
-+	int i;
- 
- 	for (i = 0; i < (num - 1); i++)
- 		if (msgs[i].flags & I2C_M_RD) {
-@@ -280,10 +346,6 @@ static int bcm2835_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg msgs[],
- 			return -EOPNOTSUPP;
- 		}
- 
--	ret = bcm2835_i2c_set_divider(i2c_dev);
--	if (ret)
--		return ret;
--
- 	i2c_dev->curr_msg = msgs;
- 	i2c_dev->num_msgs = num;
- 	reinit_completion(&i2c_dev->completion);
-@@ -338,6 +400,9 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
- 	struct resource *mem, *irq;
- 	int ret;
- 	struct i2c_adapter *adap;
-+	const char *mclk_name;
-+	struct clk *bus_clk;
-+	u32 bus_clk_rate;
- 
- 	i2c_dev = devm_kzalloc(&pdev->dev, sizeof(*i2c_dev), GFP_KERNEL);
- 	if (!i2c_dev)
-@@ -351,21 +416,6 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
- 	if (IS_ERR(i2c_dev->regs))
- 		return PTR_ERR(i2c_dev->regs);
- 
--	i2c_dev->clk = devm_clk_get(&pdev->dev, NULL);
--	if (IS_ERR(i2c_dev->clk)) {
--		if (PTR_ERR(i2c_dev->clk) != -EPROBE_DEFER)
--			dev_err(&pdev->dev, "Could not get clock\n");
--		return PTR_ERR(i2c_dev->clk);
--	}
--
--	ret = of_property_read_u32(pdev->dev.of_node, "clock-frequency",
--				   &i2c_dev->bus_clk_rate);
--	if (ret < 0) {
--		dev_warn(&pdev->dev,
--			 "Could not read clock-frequency property\n");
--		i2c_dev->bus_clk_rate = 100000;
--	}
--
- 	irq = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
- 	if (!irq) {
- 		dev_err(&pdev->dev, "No IRQ resource\n");
-@@ -380,6 +430,35 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
- 		return -ENODEV;
- 	}
- 
-+	mclk_name = of_clk_get_parent_name(pdev->dev.of_node, 0);
-+
-+	bus_clk = bcm2835_i2c_register_div(&pdev->dev, mclk_name, i2c_dev);
-+
-+	if (IS_ERR(bus_clk)) {
-+		dev_err(&pdev->dev, "Could not register clock\n");
-+		return PTR_ERR(bus_clk);
-+	}
-+
-+	ret = of_property_read_u32(pdev->dev.of_node, "clock-frequency",
-+				   &bus_clk_rate);
-+	if (ret < 0) {
-+		dev_warn(&pdev->dev,
-+			 "Could not read clock-frequency property\n");
-+		bus_clk_rate = 100000;
-+	}
-+
-+	ret = clk_set_rate_exclusive(bus_clk, bus_clk_rate);
-+	if (ret < 0) {
-+		dev_err(&pdev->dev, "Could not set clock frequency\n");
-+		return ret;
-+	}
-+
-+	ret = clk_prepare_enable(bus_clk);
-+	if (ret) {
-+		dev_err(&pdev->dev, "Couldn't prepare clock");
-+		return ret;
-+	}
-+
- 	adap = &i2c_dev->adapter;
- 	i2c_set_adapdata(adap, i2c_dev);
- 	adap->owner = THIS_MODULE;
-@@ -402,6 +481,11 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
- static int bcm2835_i2c_remove(struct platform_device *pdev)
- {
- 	struct bcm2835_i2c_dev *i2c_dev = platform_get_drvdata(pdev);
-+	struct clk *bus_clk = devm_clk_get(i2c_dev->dev, "div");
-+
-+	clk_rate_exclusive_put(bus_clk);
-+	clk_disable_unprepare(bus_clk);
-+	devm_clk_unregister(i2c_dev->dev, bus_clk);
- 
- 	free_irq(i2c_dev->irq, i2c_dev);
- 	i2c_del_adapter(&i2c_dev->adapter);
--- 
-2.19.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cgo+IE9uIE1heSAyOCwgMjAxOSwgYXQgODowMSBQTSwgQW5uYWxpZXNlIE1jRGVybW9uZCA8bmg2
+ekBuaDZ6Lm5ldD4gd3JvdGU6Cj4gCj4gCj4gCj4+IE9uIE1heSAyOCwgMjAxOSwgYXQgMTI6NTIg
+QU0sIFN0ZWZhbiBXYWhyZW4gPHN0ZWZhbi53YWhyZW5AaTJzZS5jb20+IHdyb3RlOgoKPj4gUGxl
+YXNlIGFsc28gY2hlY2sgdGhlIG91dHB1dCBvZiAvc3lzL2tlcm5lbC9kZWJ1Zy9jbGsvY2xrX3N1
+bW1hcnkKPiAKPiBUaGV54oCZbGwgY29tZSB1cCB3aXRoIHRoZSBzYW1lIG5hbWUgaW4gdGhlIGN1
+cnJlbnQgY29kZSBpbiB0aGUgZGVidWcKPiBvdXRwdXQuICBJIGFncmVlIHRoaXMgaXMgbWlsZGx5
+IGNvbmZ1c2luZyBhbmQgSeKAmWxsIHNwaW4gYW5vdGhlciB2ZXJzaW9uCj4gb2YgdGhlIHBhdGNo
+IHRvIGdpdmUgdGhlbSB1bmlxdWUgY2xvY2sgbmFtZXMgaW4gY2xrX3N1bW1hcnkuCgpJbiB2MyBv
+ZiB0aGUgcGF0Y2ggdGhlIG91dHB1dCBvZiAvc3lzL2tlcm5lbC9kZWJ1Zy9jbGsvY2xrX3N1bW1h
+cnkgbG9va3MgbGlrZSB0aGUKZm9sbG93aW5nIHdpdGggdHdvIGkyYyBkZXZpY2VzIGVuYWJsZWQg
+b24gdGhlIFJQaS4gIE5vdGUgM2Y4MDQwMDAuaTJjX2RpdiBhbmQgCjNmMjA1MDAwLmkyY19kaXYu
+CgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbmFibGUgIHByZXBhcmUgIHByb3Rl
+Y3QgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGR1dHkKICAgY2xvY2sgICAgICAgICAg
+ICAgICAgICAgICAgICAgIGNvdW50ICAgIGNvdW50ICAgIGNvdW50ICAgICAgICByYXRlICAgYWNj
+dXJhY3kgcGhhc2UgIGN5Y2xlCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQog
+b3RnICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAg
+ICA0ODAwMDAwMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKIG9zYyAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICA3ICAgICAgICA3ICAgICAgICA0ICAgIDE5MjAwMDAwICAgICAgICAg
+IDAgICAgIDAgIDUwMDAwCiAgICBncDIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMSAg
+ICAgICAgMSAgICAgICAgMSAgICAgICAzMjc2OCAgICAgICAgICAwICAgICAwICA1MDAwMAogICAg
+dHNlbnMgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEgICAgICAgIDEgICAgICAgIDEgICAg
+IDE5MjAwMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgIHZlYyAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgIDE5MjAwMDAwICAgICAgICAgIDAg
+ICAgIDAgIDUwMDAwCiAgICBvdHAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAg
+ICAgMCAgICAgICAgMCAgICAgNDgwMDAwMCAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgdGlt
+ZXIgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAgIDEw
+MDAwMDIgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgIHBsbGggICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICA0ICAgICAgICA0ICAgICAgICAwICAgODU1MDAwMDAwICAgICAgICAgIDAgICAg
+IDAgIDUwMDAwCiAgICAgICBwbGxoX3BpeF9wcmVkaXYgICAgICAgICAgICAgICAgMSAgICAgICAg
+MSAgICAgICAgMCAgIDg1NTAwMDAwMCAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAg
+cGxsaF9waXggICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAgODU1MDAw
+MDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgICAgIHBsbGhfYXV4ICAgICAgICAgICAgICAg
+ICAgICAgICAxICAgICAgICAxICAgICAgICAwICAgICAzMzM5ODQ0ICAgICAgICAgIDAgICAgIDAg
+IDUwMDAwCiAgICAgICBwbGxoX3JjYWxfcHJlZGl2ICAgICAgICAgICAgICAgMSAgICAgICAgMSAg
+ICAgICAgMCAgICAgMzMzOTg0NCAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAgcGxs
+aF9yY2FsICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAgICAzMzM5ODQg
+ICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgIHBsbGQgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAzICAgICAgICAzICAgICAgICAxICAyMDAwMDAwMDI0ICAgICAgICAgIDAgICAgIDAgIDUw
+MDAwCiAgICAgICBwbGxkX2RzaTEgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgMCAgICAg
+ICAgMCAgICAgNzgxMjUwMSAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgcGxsZF9kc2kw
+ICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAgIDc4MTI1MDEgICAg
+ICAgICAgMCAgICAgMCAgNTAwMDAKICAgICAgIHBsbGRfcGVyICAgICAgICAgICAgICAgICAgICAg
+ICA0ICAgICAgICA0ICAgICAgICAzICAgNTAwMDAwMDA2ICAgICAgICAgIDAgICAgIDAgIDUwMDAw
+CiAgICAgICAgICBwY20gICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgMSAgICAgICAg
+MSAgICAgMTUzNTk5OSAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAgZ3AwICAgICAg
+ICAgICAgICAgICAgICAgICAgIDEgICAgICAgIDEgICAgICAgIDEgICAgMjQ5OTkzODkgICAgICAg
+ICAgMCAgICAgMCAgNTAwMDAKICAgICAgICAgICAgIHBsbCAgICAgICAgICAgICAgICAgICAgICAx
+ICAgICAgICAxICAgICAgICAwICAgIDk4MzAzODQ4ICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAg
+ICAgICAgICAgICAgICBjb2RlY19jbGtpbiAgICAgICAgICAgMiAgICAgICAgMiAgICAgICAgMCAg
+ICA5ODMwMzg0OCAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAgICAgICAgICAgbmFk
+YyAgICAgICAgICAgICAgIDEgICAgICAgIDEgICAgICAgIDAgICAgMTIyODc5ODEgICAgICAgICAg
+MCAgICAgMCAgNTAwMDAKICAgICAgICAgICAgICAgICAgICAgIG1hZGMgICAgICAgICAgICAxICAg
+ICAgICAxICAgICAgICAwICAgICA2MTQzOTkxICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAg
+ICAgICAgICAgICAgICBuZGFjICAgICAgICAgICAgICAgMSAgICAgICAgMSAgICAgICAgMCAgICAx
+MjI4Nzk4MSAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAgICAgICAgICAgICAgbWRh
+YyAgICAgICAgICAgIDIgICAgICAgIDIgICAgICAgIDAgICAgIDYxNDM5OTEgICAgICAgICAgMCAg
+ICAgMCAgNTAwMDAKICAgICAgICAgICAgICAgICAgICAgICAgIGJkaXYgICAgICAgICAxICAgICAg
+ICAxICAgICAgICAwICAgICAxNTM1OTk4ICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICAg
+ICBncDEgICAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgMSAgICAgICAgMSAgICAyNDAw
+MDA5NCAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAgaHNtICAgICAgICAgICAgICAg
+ICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAxNjM2ODI4NjYgICAgICAgICAgMCAgICAg
+MCAgNTAwMDAKICAgICAgICAgIHVhcnQgICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAw
+ICAgICAgICAwICAgIDQ3OTk5NjI1ICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICBwbGxk
+X2NvcmUgICAgICAgICAgICAgICAgICAgICAgMiAgICAgICAgMiAgICAgICAgMCAgIDUwMDAwMDAw
+NiAgICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAgc2RyYW0gICAgICAgICAgICAgICAg
+ICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAxNjY2NjY2NjggICAgICAgICAgMCAgICAgMCAg
+NTAwMDAKICAgIHBsbGMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAzICAgICAgICAzICAg
+ICAgICAxICAyNDAwMDAwMDAwICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICBwbGxjX3Bl
+ciAgICAgICAgICAgICAgICAgICAgICAgMSAgICAgICAgMSAgICAgICAgMCAgMTIwMDAwMDAwMCAg
+ICAgICAgICAwICAgICAwICA1MDAwMAogICAgICAgICAgZW1tYyAgICAgICAgICAgICAgICAgICAg
+ICAgIDAgICAgICAgIDAgICAgICAgIDAgICAyMDAwMDAwMDAgICAgICAgICAgMCAgICAgMCAgNTAw
+MDAKICAgICAgIHBsbGNfY29yZTIgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAwICAgICAg
+ICAwICAgICA5Mzc1MDAwICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICBwbGxjX2NvcmUx
+ICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgMCAgICAgICAgMCAgICAgOTM3NTAwMCAgICAg
+ICAgICAwICAgICAwICA1MDAwMAogICAgICAgcGxsY19jb3JlMCAgICAgICAgICAgICAgICAgICAg
+IDIgICAgICAgIDIgICAgICAgIDEgIDEyMDAwMDAwMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAK
+ICAgICAgICAgIHZwdSAgICAgICAgICAgICAgICAgICAgICAgICAzICAgICAgICAzICAgICAgICAy
+ICAgNDAwMDAwMDAwICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICAgICAgICAzZjgwNDAw
+MC5pMmNfZGl2ICAgICAgICAgMSAgICAgICAgMSAgICAgICAgMSAgICAgIDEwMDAwMCAgICAgICAg
+ICAwICAgICAwICA1MDAwMAogICAgICAgICAgICAgM2YyMDUwMDAuaTJjX2RpdiAgICAgICAgIDEg
+ICAgICAgIDEgICAgICAgIDEgICAgICAxMDAwMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAg
+ICAgICAgICAgIGF1eF9zcGkyICAgICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAg
+NDAwMDAwMDAwICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICAgICAgICBhdXhfc3BpMSAg
+ICAgICAgICAgICAgICAgMCAgICAgICAgMCAgICAgICAgMCAgIDQwMDAwMDAwMCAgICAgICAgICAw
+ICAgICAwICA1MDAwMAogICAgICAgICAgICAgYXV4X3VhcnQgICAgICAgICAgICAgICAgIDAgICAg
+ICAgIDAgICAgICAgIDAgICA0MDAwMDAwMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgICAg
+ICAgICAgIHBlcmlfaW1hZ2UgICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgNDAw
+MDAwMDAwICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICBwbGxiICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgMiAgICAgICAgMiAgICAgICAgMCAgMjgwMDAwMDAxMiAgICAgICAgICAwICAg
+ICAwICA1MDAwMAogICAgICAgcGxsYl9hcm0gICAgICAgICAgICAgICAgICAgICAgIDEgICAgICAg
+IDEgICAgICAgIDAgIDE0MDAwMDAwMDYgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgIHBsbGEg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAyICAgICAgICAyICAgICAgICAwICAyNDAwMDAw
+MDAwICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICBwbGxhX2NjcDIgICAgICAgICAgICAg
+ICAgICAgICAgMCAgICAgICAgMCAgICAgICAgMCAgICAgOTM3NTAwMCAgICAgICAgICAwICAgICAw
+ICA1MDAwMAogICAgICAgcGxsYV9kc2kwICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAg
+ICAgICAgIDAgICAgIDkzNzUwMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgICAgIHBsbGFf
+cGVyICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgICA5Mzc1MDAw
+ICAgICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICBwbGxhX2NvcmUgICAgICAgICAgICAgICAg
+ICAgICAgMSAgICAgICAgMSAgICAgICAgMCAgMTIwMDAwMDAwMCAgICAgICAgICAwICAgICAwICA1
+MDAwMAogICAgICAgICAgaDI2NCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAg
+ICAgIDAgICAzMDAwMDAwMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKICAgICAgICAgIGlzcCAg
+ICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgMzAwMDAwMDAwICAg
+ICAgICAgIDAgICAgIDAgIDUwMDAwCiAgICAgICAgICB2M2QgICAgICAgICAgICAgICAgICAgICAg
+ICAgMCAgICAgICAgMCAgICAgICAgMCAgIDMwMDAwMDAwMCAgICAgICAgICAwICAgICAwICA1MDAw
+MAogc2MxNmlzNzUyX2NsayAgICAgICAgICAgICAgICAgICAgICAgIDEgICAgICAgIDEgICAgICAg
+IDAgICAgIDE4NDMyMDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKIGRzaTFwICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgICAgICAgICAwICAgICAg
+ICAgIDAgICAgIDAgIDUwMDAwCiBkc2kwcCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+MCAgICAgICAgMCAgICAgICAgMCAgICAgICAgICAgMCAgICAgICAgICAwICAgICAwICA1MDAwMAog
+ZHNpMWUgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAg
+ICAgICAgICAgIDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKIGRzaTBlICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgICAgICAgICAwICAgICAgICAg
+IDAgICAgIDAgIDUwMDAwCiBjYW0xICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMCAg
+ICAgICAgMCAgICAgICAgMCAgICAgICAgICAgMCAgICAgICAgICAwICAgICAwICA1MDAwMAogY2Ft
+MCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAg
+ICAgICAgIDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKIGRwaSAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgICAgICAgICAwICAgICAgICAgIDAg
+ICAgIDAgIDUwMDAwCiB0ZWMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAg
+ICAgMCAgICAgICAgMCAgICAgICAgICAgMCAgICAgICAgICAwICAgICAwICA1MDAwMAogc21pICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAgICAg
+ICAgIDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKIHNsaW0gICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgICAgICAgICAwICAgICAgICAgIDAgICAg
+IDAgIDUwMDAwCiBkZnQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAg
+MCAgICAgICAgMCAgICAgICAgICAgMCAgICAgICAgICAwICAgICAwICA1MDAwMAogYXZlbyAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgIDAgICAgICAgIDAgICAgICAgICAg
+IDAgICAgICAgICAgMCAgICAgMCAgNTAwMDAKIHB3bSAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAwICAgICAgICAwICAgICAgICAwICAgICAgICAgICAwICAgICAgICAgIDAgICAgIDAg
+IDUwMDAwCgotLQpBbm5hbGllc2UgTWNEZXJtb25kCm5oNnpAbmg2ei5uZXQKCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
