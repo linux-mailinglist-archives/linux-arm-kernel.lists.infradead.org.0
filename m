@@ -2,86 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A50632DAEC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:37:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 223F02DAF0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:38:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ULqd5FUUAVrOWp6SQFAS6LRsOZXCH6qL16tNvfNWC4A=; b=o0lwBWeCWk0++p
-	n0xhS8CwQi0TQhpmAU1lqJRlORdTNz/9AYc3GJxxpdccBzJK8of5YY/uXO3rIk4qHJLpIbMcS06og
-	AlnYgRqR2iA3zu571gMZBzE3K7St9J1FtzmzwrEcPerkfKwY43AIFNZ86mgdU0TAwt0BR4NBUsXxX
-	ATvDXVIMbB1nHMDbN4UXsY2pTkTRu4EjjzILlvTM0jzupAONcEJ7z+PME6Jgn8EQDSWijET5dCRS4
-	KpgnABa8z6JfF40rGCwte1lAFKRxcjvr4V3UiRvHQiGETosNfvFsaA7LZCTD+UkDP1/6jkryN5tdD
-	WDDG9uncnTA7PSCaPWzw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ClaDX4/IWxPuy8F7VUSG4NriB4XW5BSH5pe9djO8zaE=; b=hFFzjhxlYQcBFF
+	c8rdqLwccyrUFqI3IekT0YqxGC3WNJBsdYw1prsuPE7gYNl9tA57CEsS7Cf4h4N0WSoA8TdQfLHfb
+	8NuRW+VqCLhb8traelM60fFDPejmgyPWbgZ4ZjMR7nKCimjwHFEtFcFU03N+Wib67j76xwhipuVhf
+	BhUQehp2z3SiZNjmJ2P6XEzIdgGHv9Bw994VVouamXkRCOaFpxyIRD+WQ37/bHzzzQJnT0uqWFidi
+	IajjssO8xzmJCce9ain5cubYDEpMWa7U+J/vcWRcBoczrQ9X7AgzE7TnP1JIWmJl1wUnHbrxe1o/s
+	t3cZnltilCg+IOcJMgzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVvxg-0005tb-PM; Wed, 29 May 2019 10:37:36 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvxZ-0005tH-Qs
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:37:31 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id m1so1407359vsr.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 03:37:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tjnCyAMKOLgkdZookUva/jit8+LoVCiTGzc0TNGq/oA=;
- b=wOZ28q0Dbsa83UgZEqBAyC7OuWb0kt0Le7tZXn7K4Cvh6Qd+xStSW7Yy8L8potaaWt
- vCbmGvPV8IcOQ/DvUiQ+adosG5dqCgOU0cxAlWaHwgdAWEQOwpa7mZd3r2dQfTTa/2Xp
- xfPvIdlyNqkUFyFUY7m71UUGC1xzQFWh/BD7nQZZSeEY2xfK/LMN48ajDbNJGFbWO1VN
- bLgEW84wPlSshhv5X9kGiTUuNdGdVICyMUMKraO5xgLstqh0aOGGWLQgBSCCB89yzogY
- Q9AQwpTs7/7RAYNEQnseubioA2ZJ7re36Nw2eitt4gpv7aqrecWSSXkKxIZOQg4hewD7
- y3bQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tjnCyAMKOLgkdZookUva/jit8+LoVCiTGzc0TNGq/oA=;
- b=A86N1kPTyo5f4p/fnrk2+LbTtSb0q51tNhPNuPBOYjz99l2tPhHv1DWeCiDhlI73Ng
- yViQIymy1GYVLtzoL6b2PoCF7qFbh9U54tzrfy85QX5V/LPjwvzhQktOY4LovkXKhoAP
- WFfvZLNcY/TPpqxRMMR1Y1IppLHOwTGinoT8tJQuwfahQF68MMKSTDQsByKtv0b/gqg3
- m7VjUY07H8TumhbZ2TkxaeCJ29pXMEY9U4j4YDdiXyFP/6yATGOrioDPtIPVa7vjMLvJ
- lt04SJxVKSx119zpDgk6uHiPWs/T7ezrP5FjsFz82rqSzv9hRoFygBAT9EqdpodsbAYN
- wrfQ==
-X-Gm-Message-State: APjAAAUnXT67wbUrrIbl/Djc4fzs2wXGwDNGMPlftY1v4IFhQNQ4lcCm
- JfNgO0Th4s+8M27oG64SvBt8XyR65uhmcvT/ZLL6Xw==
-X-Google-Smtp-Source: APXvYqx8zt/2mUaOcclrGUfqtNcoqVnj8CT/3HypSvAAWyzH7F3cDGM/H+pIvoe/h4PMDjOkbfsFLwZh6e2SC0ttcNo=
-X-Received: by 2002:a67:fa51:: with SMTP id j17mr38251200vsq.89.1559126247816; 
- Wed, 29 May 2019 03:37:27 -0700 (PDT)
+	id 1hVvyH-00068P-2W; Wed, 29 May 2019 10:38:13 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVvy7-000686-J0
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:38:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0FACD341;
+ Wed, 29 May 2019 03:38:03 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 13AB63F59C; Wed, 29 May 2019 03:37:59 -0700 (PDT)
+Subject: Re: [PATCH v4 01/10] ata: libahci: Ensure the host interrupt status
+ bits are cleared
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+References: <20190521143023.31810-1-miquel.raynal@bootlin.com>
+ <20190521143023.31810-2-miquel.raynal@bootlin.com>
+ <CAHG4imNxsdzjzRpFWnL+PuznjdOU4hsp2E-g1bt4WVJeokfT3w@mail.gmail.com>
+ <53ce8c5b-46fc-c969-5168-18e4bcc62cde@arm.com>
+ <20190529120833.29334c70@xps13>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <409ea2c5-c31a-fb6a-22c6-98b45e767809@arm.com>
+Date: Wed, 29 May 2019 11:37:58 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <1556264798-18540-1-git-send-email-ludovic.Barre@st.com>
- <1556264798-18540-4-git-send-email-ludovic.Barre@st.com>
- <CAPDyKFrxp3Y3AudNvkkSRaph2Fe-A-F6Cs0jfy9RUja76GYeiA@mail.gmail.com>
- <a6a74431-50a6-6298-b77d-9d27a77fd6cc@st.com>
-In-Reply-To: <a6a74431-50a6-6298-b77d-9d27a77fd6cc@st.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 29 May 2019 12:36:50 +0200
-Message-ID: <CAPDyKFqzNy3hDzovSxb6pd37u7SxWqYoJeu9+tf_qDF7gs0euA@mail.gmail.com>
-Subject: Re: [PATCH V2 3/5] mmc: mmci: fix clear of busy detect status
-To: Ludovic BARRE <ludovic.barre@st.com>
+In-Reply-To: <20190529120833.29334c70@xps13>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_033729_871332_7BFABBAE 
-X-CRM114-Status: GOOD (  25.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190529_033805_616034_09DA1559 
+X-CRM114-Status: GOOD (  20.02  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,104 +112,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ raymond pang <raymondpangxd@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Nadav Haklai <nadavh@marvell.com>, devicetree@vger.kernel.org,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Baruch Siach <baruch@tkos.co.il>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-ide@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>, Rob Herring <robh+dt@kernel.org>,
+ Jens Axboe <axboe@kernel.dk>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 May 2019 at 11:20, Ludovic BARRE <ludovic.barre@st.com> wrote:
->
-> hi Ulf
->
-> On 5/27/19 8:17 PM, Ulf Hansson wrote:
-> > On Fri, 26 Apr 2019 at 09:46, Ludovic Barre <ludovic.Barre@st.com> wrote:
-> >>
-> >> From: Ludovic Barre <ludovic.barre@st.com>
-> >>
-> >> The "busy_detect_flag" is used to read/clear busy value of
-> >> mmci status. The "busy_detect_mask" is used to manage busy irq of
-> >> mmci mask.
-> >> For sdmmc variant, the 2 properties have not the same offset.
-> >> To clear the busyd0 status bit, we must add busy detect flag,
-> >> the mmci mask is not enough.
-> >>
-> >> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
-> >
-> > Ludovic, again, apologies for the delay.
-> >
-> >> ---
-> >>   drivers/mmc/host/mmci.c | 3 ++-
-> >>   1 file changed, 2 insertions(+), 1 deletion(-)
-> >>
-> >> diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-> >> index a040f54..3cd52e8 100644
-> >> --- a/drivers/mmc/host/mmci.c
-> >> +++ b/drivers/mmc/host/mmci.c
-> >> @@ -1517,7 +1517,8 @@ static irqreturn_t mmci_irq(int irq, void *dev_id)
-> >>                   * to make sure that both start and end interrupts are always
-> >>                   * cleared one after the other.
-> >>                   */
-> >> -               status &= readl(host->base + MMCIMASK0);
-> >> +               status &= readl(host->base + MMCIMASK0) |
-> >> +                       host->variant->busy_detect_flag;
-> >
-> > I think this is not entirely correct, because it would mean we check
-> > for busy even if we haven't unmasked the busy IRQ via the
-> > variant->busy_detect_mask.
->
-> if the variant is busy_detect false:
->   => no problem because the busy_detect_flag or busy_detect_mask is not
->      defined.
+On 29/05/2019 11:08, Miquel Raynal wrote:
+> Hi Marc & Raymond,
+> 
+> Marc Zyngier <marc.zyngier@arm.com> wrote on Thu, 23 May 2019 10:26:01
+> +0100:
+> 
+>> On 23/05/2019 04:11, raymond pang wrote:
+>>> Hi Miquel,
+>>>
+>>> This patch adds clearing GHC.IS into hot path, could you explain how
+>>> irq storm is generated? thanks
+>>> According to AHCI Spec, HBA should not refer to GHC.IS to generate
+>>> MSI when applying multiple MSIs.  
+>>
+>> Well spotted.
+>>
+>> I have the ugly feeling that this is because the Marvell AHCI
+>> implementation is not using MSIs at all, but instead a pair of wired
+>> interrupts (which are level triggered instead of edge, hence the
+>> screaming interrupts).
+>>
+>> The changes in the following patches abuse the rest of the driver by
+>> pretending this is a a multi-MSI setup, while it clearly doesn't match
+>> the expectation of the AHCI spec for MSIs.
+>>
+>> It looks like this shouldn't be imposed on other unsuspecting
+>> implementations which correctly use edge-triggered MSIs and do not
+>> require such an MMIO access.
+> 
+> I understand your concern, let me add a AHCI_HFLAG_LEVEL_MSI in
+> hpriv->flags which will be used by the mvebu_ahci.c driver to request
+> for this MMIO access. This way, the hot path remains the same.
 
-Right.
+I'm not convinced that's a good idea, if only because from the PoV of
+the AHCI device itself, these are not MSIs at all, but wired interrupts.
+The fact that there is some glue logic in the middle that turns it into
+a message (and then back into a wire) is a regrettable implementation
+detail.
 
->
-> if variant is busy_detect true:
-> the busy handle is split in 3 steps (see mmci_cmd_irq):
-> step 1: detection of busy line => unmasked the busy irq end
-> step 2: in busy wait => ignore cmd irq while current busy flag is
-> enabled.
-> step 3: end of busy => clear and mask busy irq
->
-> To detect the first step (see mmci_cmd_irq: which unmasks the busy irq)
-> we need to know the current busy state. Actually, the status register is
-> re-read in mmci_cmd_irq, why not used the status read in mmci_irq and in
-> parameter ?
+I'd rather you stick to the normal interrupt handler, or provide your
+own, which would solve most problems.
 
-Right, I see your point.
+Thanks,
 
-On the other hand, that re-read of the status registers should really
-not be needed. Maybe it's a leftover from my initial version of the
-code, but in any case we should remove that.
-
->
-> Regards,
-> Ludo
->
-> >
-> > I suggest to store a new bool in the host (call it
-> > "busy_detect_unmasked" or whatever makes sense to you), to track
-> > whether we have unmasked the busy IRQ or not. Then take this flag into
-> > account, before ORing the value of host->variant->busy_detect_flag,
-> > according to above.
-> >
-> >>                  if (host->variant->busy_detect)
-> >>                          writel(status & ~host->variant->busy_detect_mask,
-> >>                                 host->base + MMCICLEAR);
-> >> --
-> >> 2.7.4
-
-Kind regards
-Uffe
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
