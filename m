@@ -2,99 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF20C2DD70
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:50:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B53122DD8F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:56:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CxSv3F6yPhsikocv6oGZt61X1AMsv3bLz4kSu7Wgrxo=; b=uTFdb4u9TrBAYI
-	ZN8orA4xP+SOI+QXi3qZswA4tPpdBZB+7T5FN/gqKdrw9qoJH80fQaIQHXfdX3aaWhcP6ZzYLtSKp
-	PHqoya0hvcAB0iEOP5T+2myeZCqbHkQU8+rW/miar7m8nq+4bPfmEB3zGmGZKXPs1teorGRltV1nr
-	6JW+OU51NfCwi17pry2FXPd4KSZfaEJu0nYsv8LC3vR70+cbaEruFPDjxK6DsSS0kXhGB0Cu0rb14
-	4Xqx8Eu6hu4vSEYq0mvDyI0jjKZVi+DfIWldna4t7lQwx+5Vd+4mXSJrGQhSSGeENv5AMcT7rY9zj
-	nT/hwyLa64etiKLUHSvg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3c8oa05GyP4tH29af2TlGxxbUg+rGh39MNDleXkS45s=; b=tq99tUOyFVz4w6
+	3579sVyZArGLkhq/wDI87jSnN7S49dpnunjc7qNFTEA25YMWduHhhbHkMCn4OFv4Elwm7pwaWMMUT
+	9RPi+68bFPCv8Feg6tlYCBYt9UF7v7EN9UOoiTaJ5GIGiqOuhx4qXUXR53KuUdmtCPcsuZPtFzDI7
+	wOztMnBzypLo9hIpRW1MeFBfQeB/CCUHGxiP5UASWv4XW1yaqhDCx9ZQuYEXeP+zCS9+3NTATCpTC
+	ALdegbOFW/EmiqDl8DnK0aoK2+I+UvBLRoLCgUZIhdgwYcKjK6IpVrR+hFM4TUpGxPZkaJYSO4Mup
+	FnVb7UaOsEMhmaU5CdwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVy2S-0007pY-9G; Wed, 29 May 2019 12:50:40 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hVy7o-00011e-9o; Wed, 29 May 2019 12:56:12 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVy2K-0007oz-AZ
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:50:33 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 188so2310623ljf.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 05:50:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Y/GjW0ggTr+KDX5N1qvSh09429RppJ4FAnZ8i4WBnhY=;
- b=Fo1s04OMp+eFPrWrP1AbzDVpYhsfTrEJzNw2UnF8XZs4eMkMJ1jXUwBdKd0vdglyH5
- Cz2SByoPwre6bVExbfWGTwdTLHPQYK9CtIMOzDzbSlZGSq4L3qOASARaA4Jex+uSyrKY
- zYGwLVO/ClM9QTjLU+2kmN+m9cuBQj4gQcHYni3G5gdJwwFysC2aV6Ptz0JUBrH2zxNO
- hL7chCs/AP30bnDzOh+pSH66dQ34Xp1x7PazS+ns7Hiqt1UrEvZHrVgaKfok6eQqpGvg
- JSLuRdnOgPE8OEtC8gOBbRR/351gL5oBJBIWP9IoQ1TP5tknLTg2L0DunfMi6ufJFngV
- w+jg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Y/GjW0ggTr+KDX5N1qvSh09429RppJ4FAnZ8i4WBnhY=;
- b=e4ggmSg1weWItEjXDea1hNyOcjYkgwwkNvsVN9v9seRkEmalL2vQqceaUyOu8ng6bx
- Ej/7Et3TwBLz+PAJF/FiQooQcRGj5gFz/n2CfRTaWAIIMVfNB67qZ9B4JYaEIpY1n74F
- IBLS9ESZ6qhwyVWNB8pAZqHBeS/CTKFsXCUGBDqyxo0oWXs6jov1IYW3TIzzurcIOQPd
- tJrL1clHc4T+4O3XnMcVT1ThT/gqsJBYPx4+ANJeieWUyX56XGQPbEB7XyCxRpyWHrv5
- /ABg0g2Tr7vGeoLYi91A9xI8YqoVizIsipx/bJ02Gq8hiMsils7ix/I5mJdOZU4byiPB
- dEgw==
-X-Gm-Message-State: APjAAAWOkZwMqYcT3vKXxLXlgnW41wnaCnjoGHm3U/g7Tr0BQF1jK38f
- Nz5MI5JnKoVcx9/4O3XbZf+fTKfg
-X-Google-Smtp-Source: APXvYqwRjJQjY7ixX0sxWEjupCb/IAECR01S9LEOiDFrhg1gvxe+Qd7Qxpq7qkk3ohQI57Gk8nusvw==
-X-Received: by 2002:a2e:89cc:: with SMTP id c12mr60915243ljk.90.1559134226037; 
- Wed, 29 May 2019 05:50:26 -0700 (PDT)
-Received: from [192.168.2.145] ([94.29.35.141])
- by smtp.googlemail.com with ESMTPSA id 20sm3452950ljw.7.2019.05.29.05.50.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 05:50:24 -0700 (PDT)
-Subject: Re: [PATCH V4 7/8] clk: tegra: Remove the old emc_mux clock for
- Tegra210
-To: Joseph Lo <josephl@nvidia.com>, Thierry Reding
- <thierry.reding@gmail.com>, Peter De Schrijver <pdeschrijver@nvidia.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>
-References: <20190529082139.5581-1-josephl@nvidia.com>
- <20190529082139.5581-8-josephl@nvidia.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <6651442d-d501-9363-ff95-988e1a4a3982@gmail.com>
-Date: Wed, 29 May 2019 15:49:20 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hVy7i-00011P-UL
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 29 May 2019 12:56:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ezJqmdGXuDFxk+yC+s5MBTQ1KIOcOFXTVhZGERGaSZE=; b=GlIPp6vvSyNmSfpucVORXmllw
+ pd6siyW81asRf2ZdtAIS1jQ9/wJI9KaTwqbIbKdhI9h3ZL0hyNPzAqkIWLLa+XuEN8iNy0VN2UmAH
+ qWBOipPXbwNNMpZHZynDOd29JWUf7t+JU5gAAtILJ3Tm2lg8Gx15ajtXObX+Bj0OMaE2LBRNNXOLc
+ hDI85tePcrSd6ry+er24xVvzMF6EX92SG6ScHFjbgg+BblcNdhD+xxiY1Is+CPpGUfoWHr8MDHm3X
+ 1BeGmc6P4QKi3dM/zYBltiNYi3ZPvOQz1HAPegPptnpI6AbT89OLR94zb3NxA79nj0DDQZsIBmcl0
+ v/Ou1OZsA==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVy7a-0004qc-BV; Wed, 29 May 2019 12:55:58 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 23099201D5ACB; Wed, 29 May 2019 14:55:57 +0200 (CEST)
+Date: Wed, 29 May 2019 14:55:57 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Will Deacon <will.deacon@arm.com>
+Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
+Message-ID: <20190529125557.GU2623@hirez.programming.kicks-ass.net>
+References: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
+ <20190528140103.GT2623@hirez.programming.kicks-ass.net>
+ <20190528153224.GE20758@fuggles.cambridge.arm.com>
+ <20190528173228.GW2623@hirez.programming.kicks-ass.net>
+ <20190529091733.GA4485@fuggles.cambridge.arm.com>
+ <20190529101042.GN2623@hirez.programming.kicks-ass.net>
+ <20190529102022.GC4485@fuggles.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190529082139.5581-8-josephl@nvidia.com>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_055032_401283_C04436D6 
-X-CRM114-Status: GOOD (  25.02  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+Content-Disposition: inline
+In-Reply-To: <20190529102022.GC4485@fuggles.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,84 +68,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, devicetree@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, Young Xiao <92siuyang@gmail.com>, mpe@ellerman.id.au,
+ jolsa@redhat.com, x86@kernel.org, linux@armlinux.org.uk, eranian@google.com,
+ linux-kernel@vger.kernel.org, acme@redhat.com, mingo@redhat.com, bp@alien8.de,
+ hpa@zytor.com, ravi.bangoria@linux.vnet.ibm.com, fweisbec@gmail.com,
+ linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MjkuMDUuMjAxOSAxMToyMSwgSm9zZXBoIExvINC/0LjRiNC10YI6Cj4gUmVtb3ZlIHRoZSBvbGQg
-ZW1jX211eCBjbG9jayBhbmQgZG9uJ3QgdXNlIHRoZSBjb21tb24gRU1DIGNsb2NrCj4gZGVmaW5p
-dGlvbi4gVGhpcyB3aWxsIGJlIHJlcGxhY2VkIGJ5IGEgbmV3IGNsb2NrIGRlZmluZWQgaW4gdGhl
-Cj4gRU1DIGRyaXZlci4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBKb3NlcGggTG8gPGpvc2VwaGxAbnZp
-ZGlhLmNvbT4KPiAtLS0KPiB2NDoKPiAtIG1ha2Ugc3VyZSB0aGUgYmVoYXZpb3IgaXMgY29tcGF0
-aWJsZSB3aXRoIGNhc2UgaWYgdGhlIGtlcm5lbCBzdGlsbAo+ICAgdXNlcyB0aGUgb2xkZXIgRFRC
-IHdoaWNoIGRvZXNuJ3QgaGF2ZSBFTUMgbm9kZS4gQW5kIHRoZSBNQyBhbmQgRU1DCj4gICBjbG9j
-ayBjYW4gc3RpbGwgYmUgcmVnaXN0ZXJlZCBzdWNjZXNzdWZsbHkuCj4gdjM6Cj4gLSBzcGxpdCB0
-byAzIHBhdGNoZXMgZnJvbSB0aGUgcHJldmlvdXMgdmVyc2lvbgo+IC0tLQo+ICBkcml2ZXJzL2Ns
-ay90ZWdyYS9jbGstdGVncmEyMTAuYyB8IDQyICsrKysrKysrKysrKysrKysrKysrLS0tLS0tLS0t
-LS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCAyNyBpbnNlcnRpb25zKCspLCAxNSBkZWxldGlvbnMoLSkK
-PiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9jbGsvdGVncmEvY2xrLXRlZ3JhMjEwLmMgYi9kcml2
-ZXJzL2Nsay90ZWdyYS9jbGstdGVncmEyMTAuYwo+IGluZGV4IDFkNTIzNTQ4MjBjYS4uOGIyMDll
-OGI1ZWFmIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvY2xrL3RlZ3JhL2Nsay10ZWdyYTIxMC5jCj4g
-KysrIGIvZHJpdmVycy9jbGsvdGVncmEvY2xrLXRlZ3JhMjEwLmMKPiBAQCAtMjgsNiArMjgsNyBA
-QAo+ICAjaW5jbHVkZSA8ZHQtYmluZGluZ3MvcmVzZXQvdGVncmEyMTAtY2FyLmg+Cj4gICNpbmNs
-dWRlIDxsaW51eC9pb3BvbGwuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L3NpemVzLmg+Cj4gKyNpbmNs
-dWRlIDxzb2MvdGVncmEvZW1jLmg+Cj4gICNpbmNsdWRlIDxzb2MvdGVncmEvcG1jLmg+Cj4gIAo+
-ICAjaW5jbHVkZSAiY2xrLmgiCj4gQEAgLTMyNCwxMiArMzI1LDYgQEAgc3RhdGljIHVuc2lnbmVk
-IGxvbmcgdGVncmEyMTBfaW5wdXRfZnJlcVtdID0gewo+ICAJWzhdID0gMTIwMDAwMDAsCj4gIH07
-Cj4gIAo+IC1zdGF0aWMgY29uc3QgY2hhciAqbXV4X3BsbG1jcF9jbGttW10gPSB7Cj4gLQkicGxs
-X20iLCAicGxsX2MiLCAicGxsX3AiLCAiY2xrX20iLCAicGxsX21fdWQiLCAicGxsX21iIiwgInBs
-bF9tYiIsCj4gLQkicGxsX3AiLAo+IC19Owo+IC0jZGVmaW5lIG11eF9wbGxtY3BfY2xrbV9pZHgg
-TlVMTAo+IC0KPiAgI2RlZmluZSBQTExfRU5BQkxFCQkJKDEgPDwgMzApCj4gIAo+ICAjZGVmaW5l
-IFBMTENYX01JU0MxX0lERFEJCSgxIDw8IDI3KQo+IEBAIC0yMzQ2LDcgKzIzNDEsNiBAQCBzdGF0
-aWMgc3RydWN0IHRlZ3JhX2NsayB0ZWdyYTIxMF9jbGtzW3RlZ3JhX2Nsa19tYXhdIF9faW5pdGRh
-dGEgPSB7Cj4gIAlbdGVncmFfY2xrX2kyYzJdID0geyAuZHRfaWQgPSBURUdSQTIxMF9DTEtfSTJD
-MiwgLnByZXNlbnQgPSB0cnVlIH0sCj4gIAlbdGVncmFfY2xrX3VhcnRjXzhdID0geyAuZHRfaWQg
-PSBURUdSQTIxMF9DTEtfVUFSVEMsIC5wcmVzZW50ID0gdHJ1ZSB9LAo+ICAJW3RlZ3JhX2Nsa19t
-aXBpX2NhbF0gPSB7IC5kdF9pZCA9IFRFR1JBMjEwX0NMS19NSVBJX0NBTCwgLnByZXNlbnQgPSB0
-cnVlIH0sCj4gLQlbdGVncmFfY2xrX2VtY10gPSB7IC5kdF9pZCA9IFRFR1JBMjEwX0NMS19FTUMs
-IC5wcmVzZW50ID0gdHJ1ZSB9LAo+ICAJW3RlZ3JhX2Nsa191c2IyXSA9IHsgLmR0X2lkID0gVEVH
-UkEyMTBfQ0xLX1VTQjIsIC5wcmVzZW50ID0gdHJ1ZSB9LAo+ICAJW3RlZ3JhX2Nsa19ic2V2XSA9
-IHsgLmR0X2lkID0gVEVHUkEyMTBfQ0xLX0JTRVYsIC5wcmVzZW50ID0gdHJ1ZSB9LAo+ICAJW3Rl
-Z3JhX2Nsa191YXJ0ZF84XSA9IHsgLmR0X2lkID0gVEVHUkEyMTBfQ0xLX1VBUlRELCAucHJlc2Vu
-dCA9IHRydWUgfSwKPiBAQCAtMjk1Nyw2ICsyOTUxLDI3IEBAIHN0YXRpYyBpbnQgdGVncmEyMTBf
-aW5pdF9wbGx1KHZvaWQpCj4gIAlyZXR1cm4gMDsKPiAgfQo+ICAKPiArc3RhdGljIGNvbnN0IHN0
-cnVjdCBjbGtfZGl2X3RhYmxlIG1jX2Rpdl90YWJsZV90ZWdyYTIxMFtdID0gewo+ICsJeyAudmFs
-ID0gMCwgLmRpdiA9IDIgfSwKPiArCXsgLnZhbCA9IDEsIC5kaXYgPSA0IH0sCj4gKwl7IC52YWwg
-PSAyLCAuZGl2ID0gMSB9LAo+ICsJeyAudmFsID0gMywgLmRpdiA9IDIgfSwKPiArCXsgLnZhbCA9
-IDAsIC5kaXYgPSAwIH0sCj4gK307Cj4gKwo+ICtzdGF0aWMgdm9pZCB0ZWdyYTIxMF9jbGtfcmVn
-aXN0ZXJfbWMoY29uc3QgY2hhciAqbmFtZSwKPiArCQkJCSAgICAgY29uc3QgY2hhciAqcGFyZW50
-X25hbWUpCj4gK3sKPiArCXN0cnVjdCBjbGsgKmNsazsKPiArCj4gKwljbGsgPSBjbGtfcmVnaXN0
-ZXJfZGl2aWRlcl90YWJsZShOVUxMLCBuYW1lLCBwYXJlbnRfbmFtZSwKPiArCQkJCQkgQ0xLX0lT
-X0NSSVRJQ0FMLAo+ICsJCQkJCSBjbGtfYmFzZSArIENMS19TT1VSQ0VfRU1DLAo+ICsJCQkJCSAx
-NSwgMiwgQ0xLX0RJVklERVJfUkVBRF9PTkxZLAo+ICsJCQkJCSBtY19kaXZfdGFibGVfdGVncmEy
-MTAsICZlbWNfbG9jayk7CgpUaGlzIGRvZXNuJ3QgbG9vayByaWdodCwgeW91J3JlIG1peGluZyB1
-cCB0aGUgTUMgZGl2aWRlciB3aXRoIHRoZSBFTUMKZGl2aWRlciBoZXJlLiBUaGUgTUMgY2xvY2sg
-aXMgYWx3YXlzIHNvdXJjZWQgZnJvbSBFTUMgYW5kIHRoZXJlIGlzIG9ubHkKb25lIGJpdCBmb3Ig
-dGhlIE1DIGRpdmlkZXIsIHRoZSBiaXQgMTYgTUNfRU1DX1NBTUVfRlJFUS4KCldoZW4gRU1DIGNs
-b2NrIGlzIGRpdmlkZWQgZG93biBieSAyIChiaXQgMTUgRU1DX0NMS19ESVYyX0VOKSwgdGhlbiB0
-aGUKY2xrLWZyYW1ld29yayB3aWxsIHRha2UgY2FyZSBvZiBpdCBieSBjYWxjdWxhdGluZyB0aGUg
-TUMgcmF0ZSBiYXNlZCBvbgp0aGUgYWN0dWFsIHBhcmVudCBFTUMgcmF0ZS4KCj4gKwljbGtzW1RF
-R1JBMjEwX0NMS19NQ10gPSBjbGs7Cj4gK30KPiArCj4gIHN0YXRpYyBjb25zdCBjaGFyICogY29u
-c3Qgc29yMV9vdXRfcGFyZW50c1tdID0gewo+ICAJLyoKPiAgCSAqIEJpdCAwIG9mIHRoZSBtdXgg
-c2VsZWN0cyBzb3IxX3BhZF9jbGtvdXQsIGlycmVzcGVjdGl2ZSBvZiBiaXQgMSwgc28KPiBAQCAt
-MzA0MCwxNSArMzA1NSwxMiBAQCBzdGF0aWMgX19pbml0IHZvaWQgdGVncmEyMTBfcGVyaXBoX2Ns
-a19pbml0KHZvaWQgX19pb21lbSAqY2xrX2Jhc2UsCj4gIAkJCUNMS19TT1VSQ0VfTEEsIDApOwo+
-ICAJY2xrc1tURUdSQTIxMF9DTEtfTEFdID0gY2xrOwo+ICAKPiAtCS8qIGVtYyBtdXggKi8KPiAt
-CWNsayA9IGNsa19yZWdpc3Rlcl9tdXgoTlVMTCwgImVtY19tdXgiLCBtdXhfcGxsbWNwX2Nsa20s
-Cj4gLQkJCSAgICAgICBBUlJBWV9TSVpFKG11eF9wbGxtY3BfY2xrbSksIDAsCj4gLQkJCSAgICAg
-ICBjbGtfYmFzZSArIENMS19TT1VSQ0VfRU1DLAo+IC0JCQkgICAgICAgMjksIDMsIDAsICZlbWNf
-bG9jayk7Cj4gKwkvKiBlbWMgKi8KPiArCWNsayA9IHRlZ3JhMjEwX2Nsa19yZWdpc3Rlcl9lbWMo
-KTsKPiArCWNsa3NbVEVHUkEyMTBfQ0xLX0VNQ10gPSBjbGs7Cj4gIAo+IC0JY2xrID0gdGVncmFf
-Y2xrX3JlZ2lzdGVyX21jKCJtYyIsICJlbWNfbXV4IiwgY2xrX2Jhc2UgKyBDTEtfU09VUkNFX0VN
-QywKPiAtCQkJCSAgICAmZW1jX2xvY2spOwo+IC0JY2xrc1tURUdSQTIxMF9DTEtfTUNdID0gY2xr
-Owo+ICsJLyogbWMgKi8KPiArCXRlZ3JhMjEwX2Nsa19yZWdpc3Rlcl9tYygibWMiLCAiZW1jIik7
-Cj4gIAo+ICAJLyogY21sMCAqLwo+ICAJY2xrID0gY2xrX3JlZ2lzdGVyX2dhdGUoTlVMTCwgImNt
-bDAiLCAicGxsX2UiLCAwLCBjbGtfYmFzZSArIFBMTEVfQVVYLAo+IAoKWW91IHNob3VsZCBsZWF2
-ZSB0aGUgY29tbW9uIHRlZ3JhX2Nsa19yZWdpc3Rlcl9tYygpIHVzYWdlIGFzLWlzIGFuZCBvbmx5
-CnMvZW1jX211eC9lbWMvIGluIHRoZSBhcmd1bWVudC4KCi0tIApEbWl0cnkKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, May 29, 2019 at 11:20:22AM +0100, Will Deacon wrote:
+> Anyway, you can add my ack to your patch, but I bet we can remove that mm
+> check :D
+
+I've ended up with the below. Ravi, can you test if that does indeed
+obsolete your PPC patch?
+
+---
+Subject: perf: Fix perf_sample_regs_user()
+From: Peter Zijlstra <peterz@infradead.org>
+Date: Wed May 29 14:37:24 CEST 2019
+
+perf_sample_regs_user() uses 'current->mm' to test for the presence of
+userspace, but this is insufficient, consider use_mm().
+
+A better test is: '!(current->flags & PF_KTHREAD)', exec() clears
+PF_KTHREAD after it sets the new ->mm but before it drops to userspace
+for the first time.
+
+Possibly obsoletes: bf05fc25f268 ("powerpc/perf: Fix oops when kthread execs user process")
+
+Reported-by: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
+Reported-by: Young Xiao <92siuyang@gmail.com>
+Cc: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
+Cc: Naveen N. Rao <naveen.n.rao@linux.vnet.ibm.com>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Frederic Weisbecker <fweisbec@gmail.com>
+Cc: Stephane Eranian <eranian@google.com>
+Cc: Arnaldo Carvalho de Melo <acme@redhat.com>
+Acked-by: Will Deacon <will.deacon@arm.com>
+Fixes: 4018994f3d87 ("perf: Add ability to attach user level registers dump to sample")
+Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
+---
+ kernel/events/core.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/kernel/events/core.c
++++ b/kernel/events/core.c
+@@ -5923,7 +5923,7 @@ static void perf_sample_regs_user(struct
+ 	if (user_mode(regs)) {
+ 		regs_user->abi = perf_reg_abi(current);
+ 		regs_user->regs = regs;
+-	} else if (current->mm) {
++	} else if (!(current->flags & PF_KTHREAD)) {
+ 		perf_get_regs_user(regs_user, regs, regs_user_copy);
+ 	} else {
+ 		regs_user->abi = PERF_SAMPLE_REGS_ABI_NONE;
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
