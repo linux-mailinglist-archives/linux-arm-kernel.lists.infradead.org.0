@@ -2,66 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4F0D2E0E0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 17:19:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98FE12E124
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 17:33:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FBKjYt9SID4GkBm6JFsTgsnziZskhZZUg8d7kb2l3y0=; b=LhjNnxAegWOynS
-	TxFJ2d5mvNNQpIGYJfxzZqYtIZPqwnj9Xlg25oEviuYjieT/ggHdI5WHHPfn0OEK6k77MpzfSqkRm
-	ouXgcc8sSE75wQVHa+lOVO2p70xGmdygXXLnIt9z+CpeXQMaVvASRwOdpZ1wrXnSunGEsy8d0C81U
-	6t4AepkcuZFbq/ZSVwNRbmNVBbH+muiw6Ym2GsF8WClhb9bLEnuL+9F/eMMnK4o0BxCTjUt7nOJtw
-	I0IZ5kooNwYRc30fqjW5uTBMtZrz7dSbt/nIcguqjeBEoKyUTHSrYiNHbuTNfhSVDjrwvMtalbQ4J
-	WBRWxfYf//IgtDqHHAWg==;
+	List-Owner; bh=lwzVvr3JgUoWCWqyZ7JwDq6No9NEqDIBdfS13stj7Pk=; b=cS2p4iCs81nRhf
+	u5iGyPt2aA1uYm7r+DMayYbYW5jc6cZ3HtxPVodK54D+lOjhBc+N8wcRo1Xb7wQBkJOYaxs7mFqYa
+	3WfRNH6u0Ych81et8vurMWHSfCGwWJ24WDd1fsBMbwGkn+0yowr7NtvLOmPOh6mWazdg1Iw6H9Y2O
+	OmRk0N3HTWf/fvN0S14CPdoNeRcXQHLY9Lsipgu7S8eaS/mSYKIHoiS7Ezb0oPPs4WkFzTk5tsJyx
+	lKvdCgTOQRo8HUCME7dzbSSxMuYKr/chxkK5mLTZt5b/tlwb1v5y0XS6YuBXNwJmLSnNrZBh6AKTu
+	sQN1LMyN3kMupLukMfTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW0Lw-000576-Rw; Wed, 29 May 2019 15:18:56 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW0Lp-00056L-O4
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 15:18:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 95CC8341;
- Wed, 29 May 2019 08:18:48 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D9C163F5AF;
- Wed, 29 May 2019 08:18:42 -0700 (PDT)
-Date: Wed, 29 May 2019 16:18:40 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190529151839.GF28398@e103592.cambridge.arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
- <20190527143719.GA59948@MBP.local>
- <20190528145411.GA709@e119886-lin.cambridge.arm.com>
- <20190528154057.GD32006@arrakis.emea.arm.com>
- <20190528155644.GD28398@e103592.cambridge.arm.com>
- <20190528163400.GE32006@arrakis.emea.arm.com>
- <20190529124224.GE28398@e103592.cambridge.arm.com>
- <20190529132341.27t3knoxpb7t7y3g@mbp>
+	id 1hW0Zr-0001bl-SV; Wed, 29 May 2019 15:33:19 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hW0Zl-0001bP-9g
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 15:33:14 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 15so1914609wmg.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 08:33:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=5W+VfwPfqMxuifytQsznT6sIYsecd+CfEiYRucHLtVw=;
+ b=Fpnbn0HNja35ikeRV50pnLDukXTvZ8yfSsbNwOK438ie6IyOvAPt5PvjCLxjq8MQPH
+ 4ZYtaLQWPnexoXzWYmYAf+LDrMCMeB5hFGjSuNA1v4sKE9YbyBTGBXGGefd3ZITHm5F8
+ WrUISOoGcPku4R+wXfliDsxAVY3ZoCWnIuothVksR0yPYWp2Kw0hPCjGMEMjG8Y90UWz
+ fKWp4ZcWytL9/hIN5j+k0m7IgW+kIk+5VtEpQF92UFU2NJ1/lYs2Iwp6hRADpITIGMsB
+ 9tjZ4JVWthW+Z2sjBQlKmp1JruLrcs0ok5Tb9xk/ZKaAiBAGyWlPgfaqmKXlDIzyDKAP
+ ZsNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=5W+VfwPfqMxuifytQsznT6sIYsecd+CfEiYRucHLtVw=;
+ b=Ow6OK4ArCcQSaWTHRkuDGMHHJJjhXozIJgu+88Qfrqx42bLL2U+w4nJzFAIb9HZzrJ
+ Jh29XHgSWy6afMn0JkToG1WgjeLy+Ze335+IRcJNji8Ukp4uRmigQJqZiJ0ph6kL7PJ/
+ u4y+JrG6BGJS7tfo7eMj6FjUfJ7fRdrXbqKag5Ub+W6Ew5NNzx3krOhMFGqkPxCypKdj
+ WrX1hDtXFzcm0KDrawuoakgP3/BT+pMx3nUweLslMbO/XODwib/HIKpwZ3E5GACcmGoJ
+ o5McAybiFfMc1F9WAxzLRjvldAUAiZjlR/aNCeKcNnSwkZGRzaNvtEKL4fHXwh8kdSUF
+ 3StA==
+X-Gm-Message-State: APjAAAU+P5L5FHA26DEY4oWUlUPUWExqLZJZ1tFP62hkGKEC9M/NQdQi
+ JEXlRuxyY1PzJCenl5m1/qE=
+X-Google-Smtp-Source: APXvYqwDY7MrR1G0Ebmbd/oGtnz/upe08lmQ74Ra2glmRchate4lPg8V3/LoNaUcg9HKRwxBBfDugQ==
+X-Received: by 2002:a7b:c8cb:: with SMTP id f11mr2194459wml.54.1559143991698; 
+ Wed, 29 May 2019 08:33:11 -0700 (PDT)
+Received: from cizrna.lan ([109.72.12.156])
+ by smtp.gmail.com with ESMTPSA id c14sm19105489wrt.45.2019.05.29.08.33.10
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 29 May 2019 08:33:10 -0700 (PDT)
+From: Tomeu Vizoso <tomeu.vizoso@collabora.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] arm64: dts: allwinner: Add GPU operating points for H6
+Date: Wed, 29 May 2019 17:32:55 +0200
+Message-Id: <20190529153255.40038-1-tomeu.vizoso@collabora.com>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190521161102.29620-1-peron.clem@gmail.com>
+References: <20190521161102.29620-1-peron.clem@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190529132341.27t3knoxpb7t7y3g@mbp>
-User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_081849_802992_CDEA6325 
-X-CRM114-Status: GOOD (  26.25  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190529_083313_343825_2CD3EB25 
+X-CRM114-Status: GOOD (  11.72  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tomeu.vizoso[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,108 +100,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 02:23:42PM +0100, Catalin Marinas wrote:
-> On Wed, May 29, 2019 at 01:42:25PM +0100, Dave P Martin wrote:
-> > On Tue, May 28, 2019 at 05:34:00PM +0100, Catalin Marinas wrote:
-> > > On Tue, May 28, 2019 at 04:56:45PM +0100, Dave P Martin wrote:
-> > > > On Tue, May 28, 2019 at 04:40:58PM +0100, Catalin Marinas wrote:
-> > > > 
-> > > > [...]
-> > > > 
-> > > > > My thoughts on allowing tags (quick look):
-> > > > >
-> > > > > brk - no
-> > > > 
-> > > > [...]
-> > > > 
-> > > > > mlock, mlock2, munlock - yes
-> > > > > mmap - no (we may change this with MTE but not for TBI)
-> > > > 
-> > > > [...]
-> > > > 
-> > > > > mprotect - yes
-> > > > 
-> > > > I haven't following this discussion closely... what's the rationale for
-> > > > the inconsistencies here (feel free to refer me back to the discussion
-> > > > if it's elsewhere).
-> > > 
-> > > _My_ rationale (feel free to disagree) is that mmap() by default would
-> > > not return a tagged address (ignoring MTE for now). If it gets passed a
-> > > tagged address or a "tagged NULL" (for lack of a better name) we don't
-> > > have clear semantics of whether the returned address should be tagged in
-> > > this ABI relaxation. I'd rather reserve this specific behaviour if we
-> > > overload the non-zero tag meaning of mmap() for MTE. Similar reasoning
-> > > for mremap(), at least on the new_address argument (not entirely sure
-> > > about old_address).
-> > > 
-> > > munmap() should probably follow the mmap() rules.
-> > > 
-> > > As for brk(), I don't see why the user would need to pass a tagged
-> > > address, we can't associate any meaning to this tag.
-> > > 
-> > > For the rest, since it's likely such addresses would have been tagged by
-> > > malloc() in user space, we should allow tagged pointers.
-> > 
-> > Those arguments seem reasonable.  We should try to capture this
-> > somewhere when documenting the ABI.
-> > 
-> > To be clear, I'm not sure that we should guarantee anywhere that a
-> > tagged pointer is rejected: rather the behaviour should probably be
-> > left unspecified.  Then we can tidy it up incrementally.
-> > 
-> > (The behaviour is unspecified today, in any case.)
-> 
-> What is specified (or rather de-facto ABI) today is that passing a user
-> address above TASK_SIZE (e.g. non-zero top byte) would fail in most
-> cases. If we relax this with the TBI we may end up with some de-facto
-
-I may be being too picky, but "would fail in most cases" sounds like
-"unspecified" ?
-
-> ABI before we actually get MTE hardware. Tightening it afterwards may be
-> slightly more problematic, although MTE needs to be an explicit opt-in.
-> 
-> IOW, I wouldn't want to unnecessarily relax the ABI if we don't need to.
-
-So long we don't block foreseeable future developments unnecessarily
-either -- I agree there's a balance to be struck.
-
-I guess this can be reviewed when we have nailed down the details a bit
-further.
-
-Cheers
----Dave
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIEdQVSBkcml2ZXIgbmVlZHMgdGhlbSB0byBjaGFuZ2UgdGhlIGNsb2NrIGZyZXF1ZW5jeSBh
+bmQgcmVndWxhdG9yCnZvbHRhZ2UgZGVwZW5kaW5nIG9uIHRoZSBsb2FkLgoKU2lnbmVkLW9mZi1i
+eTogVG9tZXUgVml6b3NvIDx0b21ldS52aXpvc29AY29sbGFib3JhLmNvbT4KQ2M6IENsw6ltZW50
+IFDDqXJvbiA8cGVyb24uY2xlbUBnbWFpbC5jb20+CgotLS0KCkZlZWwgZnJlZSB0byBwaWNrIHVw
+IHRoaXMgcGF0Y2ggaWYgeW91IGFyZSBnb2luZyB0byBrZWVwIHB1c2hpbmcgdGhpcwpzZXJpZXMg
+Zm9yd2FyZC4KClRoYW5rcywKClRvbWV1Ci0tLQogYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5u
+ZXIvc3VuNTBpLWg2LmR0c2kgfCA2NiArKysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5n
+ZWQsIDY2IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2Fs
+bHdpbm5lci9zdW41MGktaDYuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1
+bjUwaS1oNi5kdHNpCmluZGV4IDZhYWQwNjA5NWM0MC4uZGVjZjdiNTZlMmRmIDEwMDY0NAotLS0g
+YS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYuZHRzaQorKysgYi9hcmNo
+L2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYuZHRzaQpAQCAtMTU3LDYgKzE1Nyw3
+MSBAQAogCQkJYWxsd2lubmVyLHNyYW0gPSA8JnZlX3NyYW0gMT47CiAJCX07CiAKKwkJZ3B1X29w
+cF90YWJsZTogb3BwLXRhYmxlMiB7CisJCQljb21wYXRpYmxlID0gIm9wZXJhdGluZy1wb2ludHMt
+djIiOworCisJCQlvcHAwMCB7CisJCQkJb3BwLWh6ID0gL2JpdHMvIDY0IDw3NTYwMDAwMDA+Owor
+CQkJCW9wcC1taWNyb3ZvbHQgPSA8MTA0MDAwMD47CisJCQl9OworCQkJb3BwMDEgeworCQkJCW9w
+cC1oeiA9IC9iaXRzLyA2NCA8NjI0MDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDk1MDAw
+MD47CisJCQl9OworCQkJb3BwMDIgeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8NTc2MDAwMDAw
+PjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDkzMDAwMD47CisJCQl9OworCQkJb3BwMDMgeworCQkJ
+CW9wcC1oeiA9IC9iaXRzLyA2NCA8NTQwMDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDkx
+MDAwMD47CisJCQl9OworCQkJb3BwMDQgeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8NTA0MDAw
+MDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDg5MDAwMD47CisJCQl9OworCQkJb3BwMDUgewor
+CQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8NDU2MDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0g
+PDg3MDAwMD47CisJCQl9OworCQkJb3BwMDYgeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8NDMy
+MDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDg2MDAwMD47CisJCQl9OworCQkJb3BwMDcg
+eworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8NDIwMDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0
+ID0gPDg1MDAwMD47CisJCQl9OworCQkJb3BwMDggeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8
+NDA4MDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDg0MDAwMD47CisJCQl9OworCQkJb3Bw
+MDkgeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8Mzg0MDAwMDAwPjsKKwkJCQlvcHAtbWljcm92
+b2x0ID0gPDgzMDAwMD47CisJCQl9OworCQkJb3BwMTAgeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2
+NCA8MzYwMDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDgyMDAwMD47CisJCQl9OworCQkJ
+b3BwMTEgeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8MzM2MDAwMDAwPjsKKwkJCQlvcHAtbWlj
+cm92b2x0ID0gPDgxMDAwMD47CisJCQl9OworCQkJb3BwMTIgeworCQkJCW9wcC1oeiA9IC9iaXRz
+LyA2NCA8MzEyMDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDgxMDAwMD47CisJCQl9Owor
+CQkJb3BwMTMgeworCQkJCW9wcC1oeiA9IC9iaXRzLyA2NCA8MjY0MDAwMDAwPjsKKwkJCQlvcHAt
+bWljcm92b2x0ID0gPDgxMDAwMD47CisJCQl9OworCQkJb3BwMTQgeworCQkJCW9wcC1oeiA9IC9i
+aXRzLyA2NCA8MjE2MDAwMDAwPjsKKwkJCQlvcHAtbWljcm92b2x0ID0gPDgxMDAwMD47CisJCQl9
+OworCQl9OworCiAJCWdwdTogZ3B1QDE4MDAwMDAgewogCQkJY29tcGF0aWJsZSA9ICJhbGx3aW5u
+ZXIsc3VuNTBpLWg2LW1hbGkiLAogCQkJCSAgICAgImFybSxtYWxpLXQ3MjAiOwpAQCAtMTY4LDYg
+KzIzMyw3IEBACiAJCQljbG9ja3MgPSA8JmNjdSBDTEtfR1BVPiwgPCZjY3UgQ0xLX0JVU19HUFU+
+OwogCQkJY2xvY2stbmFtZXMgPSAiY29yZSIsICJidXMiOwogCQkJcmVzZXRzID0gPCZjY3UgUlNU
+X0JVU19HUFU+OworCQkJb3BlcmF0aW5nLXBvaW50cy12MiA9IDwmZ3B1X29wcF90YWJsZT47CiAJ
+CQlzdGF0dXMgPSAiZGlzYWJsZWQiOwogCQl9OwogCi0tIAoyLjIwLjEKCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
