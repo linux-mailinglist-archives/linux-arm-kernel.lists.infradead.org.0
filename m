@@ -2,65 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 358C52D54D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 07:58:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 723822D55B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 08:08:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DzkgjtncirSN4+QzZa1uWbP3bA64x7MfgzVNBT33/IA=; b=b/bAVVTSs50ESZ
-	W3lHXiGojB7INM6ePN1EAGk4hVNXpLRy6GVyhO2jh85uf/AIOAOhjlcBFOoJh5oiXf2qp9nUB13GI
-	+FEBYdGMwTIWRoCx7mida4o5yG8plwp2W2hdKeQ+nKV0U2ShVgUY5QiGJHWu8O4Y0Rg+LU5GYkxfk
-	YUG++oO5bbdWaD/IBlwxfMwhyUml0m4chpH05t7kydmV8UotxK1MDxBN0x1YT2PpXuYy7Z4y+596x
-	yyvUXg4ed+6KbNY2BR0wsoHtldzqXDW9n12YrD7AOlnFLAcH6475/YKKavWYkt5urwlNA9LH1/kzL
-	UFayWSoNyS0TT+rcOtAg==;
+	List-Owner; bh=ABwLpFMnY/aBKPYxvXiwLI+XsriWqWQ++HY4ZFg6udM=; b=tzdSxuyCZPu6r8
+	S/3de70DQKVByeH+StWrad5jXXmE/AJOijpvHX3voqNT5tzT5S+m00Jk8J/21t/wAq0bfKvma25lm
+	rf0orkYOxvMhd7xnSjVnEh6wFzRcTJ0xuPKwTwnTGCB9uk6whXGB6W3TN4YV45yCgGPZ5e8xm79M/
+	V9HF2nQFhuX/Ouv97NHoXlU5AzGH+++V/3hbSa3ucerfX6+lUZ7IYAkH+2YyU+Fip7LDOkQ8onZB7
+	a1CFuSQsWmJo+vQraux/wdimaExKLsMYoVQSfn/F6eZ6UJarn7S89+RRtl+1stk6MzftizOg/zgsH
+	QOHGu4XGUA4q4pEciFKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVrbZ-0001gk-3f; Wed, 29 May 2019 05:58:29 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hVrld-0004kA-Di; Wed, 29 May 2019 06:08:53 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVrbQ-0001ev-DF; Wed, 29 May 2019 05:58:22 +0000
-X-UUID: 54a31b2030fa4c36aa81acf1677a3561-20190528
-X-UUID: 54a31b2030fa4c36aa81acf1677a3561-20190528
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1930205923; Tue, 28 May 2019 21:58:13 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 28 May 2019 22:58:12 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by mtkcas08.mediatek.inc
- (172.21.101.126) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Wed, 29 May 2019 13:58:10 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 29 May 2019 13:58:10 +0800
-Message-ID: <1559109490.15592.6.camel@mtksdaap41>
-Subject: Re: [PATCH 2/3] drm: mediatek: remove clk_unprepare() in
- mtk_drm_crtc_destroy()
-From: CK Hu <ck.hu@mediatek.com>
-To: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Wed, 29 May 2019 13:58:10 +0800
-In-Reply-To: <20190527045054.113259-3-hsinyi@chromium.org>
+ id 1hVrlV-0004jD-1V
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 06:08:46 +0000
+Received: by mail-qt1-x842.google.com with SMTP id y57so1198755qtk.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 23:08:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=9m6XmpcV32pBGRaKWaAZOu/nkbXf9RLY5czIdmVMIiE=;
+ b=Vk/pDafXgg2bzDpfTFeKjsIp8WdKd3TNKbs23N/It+yi/CVfzyhiySQJ8J4jtLszAi
+ LFiveV8PEpd6y+Dsh/gNPfB9fYQ5zv+RrOkISmmXalE+GzteLeypk6R36MTVSR1m/T6a
+ wfTXpmePwdYxnvW4o3FzOIubaWyRpDgNwMyP8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=9m6XmpcV32pBGRaKWaAZOu/nkbXf9RLY5czIdmVMIiE=;
+ b=aXgemX1H96cAUGCfKyQuo2u2wC9qbfd1ZnxWG8CHPV2+Cg2uKL+K6VF/4QkOyTGw2G
+ t/lx2aKsJhf5wrP6PlLkgPCdG+l37aVuTL9u1uAvSC+yk393jYTk/i6UxJ5EEZ3PQGvu
+ 3J+kMbmfnckIWV0JhkNvOXyeiH+4X31k/zn/Lb6QIeyK/gGJ2OIlfBXMBHmUApGj1jf/
+ LgTPVkrG9HR086Vcfu/kB0tFDASD2AGx+Z7LfEE4ElEzIf8K7//0LGrG1VmrUxaekQAd
+ UnyMaX/8qHLY/C+D0HtdMW/ofn9Rc2M1+2PE5XpeerVBOY1hlse/AgF5D0UA0P7lgDb8
+ 77vA==
+X-Gm-Message-State: APjAAAUOLTbxFYIklY09BPsNIda28BBoADs9nOwNBm+BtteYAAwSNPDJ
+ bUTbfQToSbqd/BvyghKFPLwtSFRiityvAqKgXNnQkQ==
+X-Google-Smtp-Source: APXvYqy1lIVHOTaLcihvMF7zGLF3pmNL3AVewtEF/CAwLER2Lc1MzHGPozPVQVC8HRo0kHV7SIzbmTEe6U0L3SD3dn4=
+X-Received: by 2002:a0c:b621:: with SMTP id f33mr68502313qve.199.1559110123624; 
+ Tue, 28 May 2019 23:08:43 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190527045054.113259-1-hsinyi@chromium.org>
  <20190527045054.113259-3-hsinyi@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-MTK: N
+ <1559109490.15592.6.camel@mtksdaap41>
+In-Reply-To: <1559109490.15592.6.camel@mtksdaap41>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Wed, 29 May 2019 14:08:17 +0800
+Message-ID: <CAJMQK-gQ_j4ma_EjGbFJOz6WGXy3UZA0F9JZYnFHPZ0F08rXog@mail.gmail.com>
+Subject: Re: [PATCH 2/3] drm: mediatek: remove clk_unprepare() in
+ mtk_drm_crtc_destroy()
+To: CK Hu <ck.hu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_225820_453447_921B6451 
-X-CRM114-Status: GOOD (  15.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190528_230845_110702_23157061 
+X-CRM114-Status: GOOD (  13.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,105 +92,37 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
  linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Hsin-Yi:
+On Wed, May 29, 2019 at 1:58 PM CK Hu <ck.hu@mediatek.com> wrote:
+>
+> Hi, Hsin-Yi:
+>
+> On Mon, 2019-05-27 at 12:50 +0800, Hsin-Yi Wang wrote:
+> > There is no clk_prepare() called in mtk_drm_crtc_reset(), when unbinding
+> > drm device, mtk_drm_crtc_destroy() will be triggered, and the clocks will
+> > be disabled and unprepared in mtk_crtc_ddp_clk_disable. If clk_unprepare()
+> > is called here, we'll get warnings[1], so remove clk_unprepare() here.
+>
+> In original code, clk_prepare() is called in mtk_drm_crtc_create() and
+> clk_unprepare() is called in mtk_drm_crtc_destroy(). This looks correct.
 
-On Mon, 2019-05-27 at 12:50 +0800, Hsin-Yi Wang wrote:
-> There is no clk_prepare() called in mtk_drm_crtc_reset(), when unbinding
-> drm device, mtk_drm_crtc_destroy() will be triggered, and the clocks will
-> be disabled and unprepared in mtk_crtc_ddp_clk_disable. If clk_unprepare()
-> is called here, we'll get warnings[1], so remove clk_unprepare() here.
+clk_prepare() is removed in https://patchwork.kernel.org/patch/10872777/.
 
-In original code, clk_prepare() is called in mtk_drm_crtc_create() and
-clk_unprepare() is called in mtk_drm_crtc_destroy(). This looks correct.
-I don't know why we should do any thing about clock in
-mtk_drm_crtc_reset(). To debug this, the first step is to print message
-when mediatek drm call clk_prepare() and clk_unprepare(). If these two
-interface is called in pair, I think we should not modify mediatek drm
-driver, the bug maybe in clock driver.
-
-Regards,
-CK
-
-> 
-> [1]
-> [   19.416020] mm_disp_ovl0 already unprepared
-> ....
-> [   19.487536] pstate: 60000005 (nZCv daif -PAN -UAO)
-> [   19.492325] pc : clk_core_unprepare+0x1d8/0x220
-> [   19.496851] lr : clk_core_unprepare+0x1d8/0x220
-> [   19.501373] sp : ffffff8017bbba30
-> [   19.504681] x29: ffffff8017bbba50 x28: fffffff3f7978000
-> [   19.509989] x27: 0000000000000000 x26: 0000000000000000
-> [   19.515298] x25: 0000000044000000 x24: fffffff3f7978000
-> [   19.520605] x23: 0000000000000060 x22: ffffff9688a89f48
-> [   19.525912] x21: fffffff3f8755540 x20: 0000000000000000
-> [   19.531219] x19: fffffff3f9d5ca00 x18: 00000000fffebd18
-> [   19.536526] x17: 000000000000003c x16: ffffff96881458e4
-> [   19.541833] x15: 0000000000000005 x14: 706572706e752079
-> [   19.547140] x13: ffffff80085cc950 x12: 0000000000000000
-> [   19.552446] x11: 0000000000000000 x10: 0000000000000000
-> [   19.557754] x9 : 1b0fa21f0ec0d800 x8 : 1b0fa21f0ec0d800
-> [   19.563060] x7 : 0000000000000000 x6 : ffffff9688b5dd07
-> [   19.568366] x5 : 0000000000000000 x4 : 0000000000000000
-> [   19.573673] x3 : 0000000000000000 x2 : fffffff3fffa0248
-> [   19.578979] x1 : fffffff3fff97a00 x0 : 000000000000001f
-> [   19.584288] Call trace:
-> [   19.586734]  clk_core_unprepare+0x1d8/0x220
-> [   19.590914]  clk_unprepare+0x30/0x40
-> [   19.594491]  mtk_drm_crtc_destroy+0x30/0x5c
-> [   19.598672]  drm_mode_config_cleanup+0x124/0x290
-> [   19.603286]  mtk_drm_unbind+0x44/0x5c
-> [   19.606946]  take_down_master+0x40/0x54
-> [   19.610775]  component_master_del+0x70/0x94
-> [   19.614952]  mtk_drm_remove+0x28/0x44
-> [   19.618612]  platform_drv_remove+0x28/0x50
-> [   19.622702]  device_release_driver_internal+0x138/0x1ec
-> [   19.627921]  device_release_driver+0x24/0x30
-> [   19.632185]  unbind_store+0x90/0xdc
-> [   19.635667]  drv_attr_store+0x3c/0x54
-> [   19.639327]  sysfs_kf_write+0x50/0x68
-> [   19.642986]  kernfs_fop_write+0x12c/0x1c8
-> [   19.646997]  __vfs_write+0x54/0x15c
-> [   19.650482]  vfs_write+0xcc/0x188
-> [   19.653792]  ksys_write+0x78/0xd8
-> [   19.657104]  __arm64_sys_write+0x20/0x2c
-> [   19.661027]  el0_svc_common+0x9c/0xfc
-> [   19.664686]  el0_svc_compat_handler+0x2c/0x38
-> [   19.669039]  el0_svc_compat+0x8/0x18
-> [   19.672609] ---[ end trace 41ce954855cda6f0 ]---
-> 
-> Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 4 ----
->  1 file changed, 4 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index acad088173da..c2b38997ac8b 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -98,10 +98,6 @@ static void mtk_drm_finish_page_flip(struct mtk_drm_crtc *mtk_crtc)
->  static void mtk_drm_crtc_destroy(struct drm_crtc *crtc)
->  {
->  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> -	int i;
-> -
-> -	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
-> -		clk_unprepare(mtk_crtc->ddp_comp[i]->clk);
->  
->  	mtk_disp_mutex_put(mtk_crtc->mutex);
->  
-
-
+> I don't know why we should do any thing about clock in
+> mtk_drm_crtc_reset(). To debug this, the first step is to print message
+> when mediatek drm call clk_prepare() and clk_unprepare(). If these two
+> interface is called in pair, I think we should not modify mediatek drm
+> driver, the bug maybe in clock driver.
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
