@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 959992D9ED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:03:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C0582DA07
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:09:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=flPda1M5HOW9BIRfcUf8Jy7G5Vrz5xyqqLG0ffx6QCs=; b=nieZ3+N4T43daD
-	FnvGrI0dFtr6r/ptwWMhkH7OFu8OH51IHXZ0jPUe3uJ8CU7gr+mTbbAb8fSJiMzlBmhxQfNxC7+Yc
-	DtTDXZKWQdQC8qOnReauokb1J9EUp2vCUQtpI2R87+tTdJqEraNFpCgPXkK7V8ltISzi7UqlfzJn1
-	HpzFXruNWjJrBRrP7DafiCS9fSTpKX/3TF9BvuCn6wSfTlg9aXTl/cN4l3l/8GdKLjuHSeS2pk2zh
-	Av9ozLaOHmrnrlsQ+/lZON3iiXydF3FUlf6iM4YueoN9aLW94bPer0+NERMMGCXyaq/JbU1NVOFQQ
-	balMjbBtdjbL1XahebcA==;
+	List-Owner; bh=uihSC23W8lKI+++Kqo7pJ/UrKq6/XDWWr+QuHcuHh/o=; b=Tc9oVQH39wdsqs
+	72oRsmA2s132fIUghQiIKaBCPMJDYlzLvjM4xvM67TMLJT25LFXk1Sgk96JajhyVeOtWEKvJyl7uv
+	gKL3dlO1bN3K2Ga9c1PTX6w4yfeTQRrp+IiLz4ruxLTroectqZTP/Blr1W/rjYL6uPahlxM3hqHY6
+	1R4UZFau4nT5VYkAe7hhruic3RjOMvWxGbFv4AoM7FPvUvgSVSIGzlBeO7VW7VTeN7lyLEXTNFRMB
+	ZjNTG4J5x2IkqVFJzg15z2I5G6eEf4qOxB+/YxXm5Re/2V+OFglzavbZAO5OF8EINfoqbnsrNJ3uH
+	+y+Fw87EsjHylgxVaKEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVvR0-0004hb-MJ; Wed, 29 May 2019 10:03:50 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvQt-0004gw-Lo
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:03:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9374A341;
- Wed, 29 May 2019 03:03:42 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6034F3F5AF;
- Wed, 29 May 2019 03:03:41 -0700 (PDT)
-Date: Wed, 29 May 2019 11:03:38 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Robin Murphy <robin.murphy@arm.com>, akpm@linux-foundation.org
-Subject: Re: [PATCH v3.1 4/4] arm64: mm: Implement pte_devmap support
-Message-ID: <20190529100338.GB4485@fuggles.cambridge.arm.com>
-References: <cover.1558547956.git.robin.murphy@arm.com>
- <817d92886fc3b33bcbf6e105ee83a74babb3a5aa.1558547956.git.robin.murphy@arm.com>
- <13026c4e64abc17133bbfa07d7731ec6691c0bcd.1559050949.git.robin.murphy@arm.com>
+	id 1hVvW3-0006bd-29; Wed, 29 May 2019 10:09:03 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVvVw-0006aq-3I
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:08:57 +0000
+X-Originating-IP: 90.88.147.134
+Received: from xps13 (aaubervilliers-681-1-27-134.w90-88.abo.wanadoo.fr
+ [90.88.147.134]) (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 4702EC0004;
+ Wed, 29 May 2019 10:08:35 +0000 (UTC)
+Date: Wed, 29 May 2019 12:08:33 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Marc Zyngier <marc.zyngier@arm.com>
+Subject: Re: [PATCH v4 01/10] ata: libahci: Ensure the host interrupt status
+ bits are cleared
+Message-ID: <20190529120833.29334c70@xps13>
+In-Reply-To: <53ce8c5b-46fc-c969-5168-18e4bcc62cde@arm.com>
+References: <20190521143023.31810-1-miquel.raynal@bootlin.com>
+ <20190521143023.31810-2-miquel.raynal@bootlin.com>
+ <CAHG4imNxsdzjzRpFWnL+PuznjdOU4hsp2E-g1bt4WVJeokfT3w@mail.gmail.com>
+ <53ce8c5b-46fc-c969-5168-18e4bcc62cde@arm.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <13026c4e64abc17133bbfa07d7731ec6691c0bcd.1559050949.git.robin.murphy@arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_030343_721942_35AEFCBD 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190529_030856_300736_F056B9EA 
+X-CRM114-Status: GOOD (  17.73  )
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,39 +67,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ raymond pang <raymondpangxd@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Nadav Haklai <nadavh@marvell.com>, devicetree@vger.kernel.org,
+ Antoine Tenart <antoine.tenart@bootlin.com>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Baruch Siach <baruch@tkos.co.il>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>, linux-ide@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>, Rob Herring <robh+dt@kernel.org>,
+ Jens Axboe <axboe@kernel.dk>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 02:46:59PM +0100, Robin Murphy wrote:
-> In order for things like get_user_pages() to work on ZONE_DEVICE memory,
-> we need a software PTE bit to identify device-backed PFNs. Hook this up
-> along with the relevant helpers to join in with ARCH_HAS_PTE_DEVMAP.
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
-> 
-> Fix to build correctly under all combinations of
-> CONFIG_PGTABLE_LEVELS and CONFIG_TRANSPARENT_HUGEPAGE.
-> 
->  arch/arm64/Kconfig                    |  1 +
->  arch/arm64/include/asm/pgtable-prot.h |  1 +
->  arch/arm64/include/asm/pgtable.h      | 21 +++++++++++++++++++++
->  3 files changed, 23 insertions(+)
-
-Acked-by: Will Deacon <will.deacon@arm.com>
-
-Andrew -- please can you update the previous version of this patch, which
-I think you picked up?
-
-Thanks,
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyYyAmIFJheW1vbmQsCgpNYXJjIFp5bmdpZXIgPG1hcmMuenluZ2llckBhcm0uY29tPiB3
+cm90ZSBvbiBUaHUsIDIzIE1heSAyMDE5IDEwOjI2OjAxCiswMTAwOgoKPiBPbiAyMy8wNS8yMDE5
+IDA0OjExLCByYXltb25kIHBhbmcgd3JvdGU6Cj4gPiBIaSBNaXF1ZWwsCj4gPiAKPiA+IFRoaXMg
+cGF0Y2ggYWRkcyBjbGVhcmluZyBHSEMuSVMgaW50byBob3QgcGF0aCwgY291bGQgeW91IGV4cGxh
+aW4gaG93Cj4gPiBpcnEgc3Rvcm0gaXMgZ2VuZXJhdGVkPyB0aGFua3MKPiA+IEFjY29yZGluZyB0
+byBBSENJIFNwZWMsIEhCQSBzaG91bGQgbm90IHJlZmVyIHRvIEdIQy5JUyB0byBnZW5lcmF0ZQo+
+ID4gTVNJIHdoZW4gYXBwbHlpbmcgbXVsdGlwbGUgTVNJcy4gIAo+IAo+IFdlbGwgc3BvdHRlZC4K
+PiAKPiBJIGhhdmUgdGhlIHVnbHkgZmVlbGluZyB0aGF0IHRoaXMgaXMgYmVjYXVzZSB0aGUgTWFy
+dmVsbCBBSENJCj4gaW1wbGVtZW50YXRpb24gaXMgbm90IHVzaW5nIE1TSXMgYXQgYWxsLCBidXQg
+aW5zdGVhZCBhIHBhaXIgb2Ygd2lyZWQKPiBpbnRlcnJ1cHRzICh3aGljaCBhcmUgbGV2ZWwgdHJp
+Z2dlcmVkIGluc3RlYWQgb2YgZWRnZSwgaGVuY2UgdGhlCj4gc2NyZWFtaW5nIGludGVycnVwdHMp
+Lgo+IAo+IFRoZSBjaGFuZ2VzIGluIHRoZSBmb2xsb3dpbmcgcGF0Y2hlcyBhYnVzZSB0aGUgcmVz
+dCBvZiB0aGUgZHJpdmVyIGJ5Cj4gcHJldGVuZGluZyB0aGlzIGlzIGEgYSBtdWx0aS1NU0kgc2V0
+dXAsIHdoaWxlIGl0IGNsZWFybHkgZG9lc24ndCBtYXRjaAo+IHRoZSBleHBlY3RhdGlvbiBvZiB0
+aGUgQUhDSSBzcGVjIGZvciBNU0lzLgo+IAo+IEl0IGxvb2tzIGxpa2UgdGhpcyBzaG91bGRuJ3Qg
+YmUgaW1wb3NlZCBvbiBvdGhlciB1bnN1c3BlY3RpbmcKPiBpbXBsZW1lbnRhdGlvbnMgd2hpY2gg
+Y29ycmVjdGx5IHVzZSBlZGdlLXRyaWdnZXJlZCBNU0lzIGFuZCBkbyBub3QKPiByZXF1aXJlIHN1
+Y2ggYW4gTU1JTyBhY2Nlc3MuCgpJIHVuZGVyc3RhbmQgeW91ciBjb25jZXJuLCBsZXQgbWUgYWRk
+IGEgQUhDSV9IRkxBR19MRVZFTF9NU0kgaW4KaHByaXYtPmZsYWdzIHdoaWNoIHdpbGwgYmUgdXNl
+ZCBieSB0aGUgbXZlYnVfYWhjaS5jIGRyaXZlciB0byByZXF1ZXN0CmZvciB0aGlzIE1NSU8gYWNj
+ZXNzLiBUaGlzIHdheSwgdGhlIGhvdCBwYXRoIHJlbWFpbnMgdGhlIHNhbWUuCgoKVGhhbmtzLApN
+aXF1w6hsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
