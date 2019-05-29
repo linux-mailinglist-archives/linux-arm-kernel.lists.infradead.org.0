@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 129BF2D619
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 09:19:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B53342D61A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 09:19:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g0/vbz6dKez7RDO72/s6bHCE55ipR7tdAQFHVCrdpw8=; b=CMM0+KrIj5kaRH
-	9v2xsBejaFWjeel/d23NNzV5G9WpMtnIW3PhCLtfw1q+4SJBDAtdazApJx9QgVCktx2CQsGB80LHQ
-	KdnYRr90JnLET2QSZnkACahbOkfCjN4hIyZTR8FgsVWYJRPKn/7R5W7C3K/+KVF/h7nOL3YK2FmRB
-	kzisIJwzgDv70FwDqA9YEbp737yb0R5Awz0/Qfl5dgv36XsCqbZjIxXQPTAUF5IUkKIbH3MntDJCW
-	OxTyt+IoRtRE/B//budAY1omYWk/zrWkXykEm5RrZsSNBjMQwa7Gz17GYaqPEV/2mq8Y2uDaJvyRw
-	myi2dpHJpUp/GL44/9Ng==;
+	List-Owner; bh=3op82Svdy2JkGHJ4nn1NWgz8oAylC+jiNrz9FD8Fags=; b=IB7PqsvWyXt4qy
+	QGLpFJimsPDBVo3y16l5Ps+IuSrQUi8cvsHAQY9gVgmUERmC5kMWuvYUrSVYHtM8LdVMWrvtRD9AD
+	txAMi5nDp3a2SriD1g4LN0tfZ4tTUmDWJx8LQiyvTrygU/QoSRNLJVHsbmsLee6Fl1AqBjRvcIuVF
+	duJIHUVC6K3aWsEzsg8BrNlmrJ3nYNmS6CfE2KD0pIWowmJ12W4J1flaFISnx3jQ6+5fSB9TXKR6x
+	+DQSmcyY2hIQZJh2j+yv8kS8bkJP0Ejf7xLzCLrgSlOciHw3EResqDN4Dt6OeJSqot1l9QaWqvRxC
+	c7Tot2xZEJSTGv9Z4m4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVsrl-0002ht-Om; Wed, 29 May 2019 07:19:17 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hVsrv-0002q9-Ok; Wed, 29 May 2019 07:19:27 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVsrP-0002Se-5K
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 07:18:56 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a5so655976pls.12
+ id 1hVsrR-0002Sv-0b
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 07:18:59 +0000
+Received: by mail-pg1-x541.google.com with SMTP id t1so822344pgc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 00:18:54 -0700 (PDT)
+ Wed, 29 May 2019 00:18:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=aawXyaVUndOA3gmbFU8MOhKxpP5JaLgvaRjLb9Tuem4=;
- b=AnB4rk7IBerNEQACRXU0wbgqUN6GQKnv1TOiQZum+VHMJfGOrrRvF97L7rD85gqj2v
- W5UHKRF05pwBNpATd+bS/Kn1XLhyqoSEOGB8V+rPI2/Rkgnr6eBF6Ram0h/4ZhUtUY4t
- 6kKdMApz/Nh8LJ/QIB/TB1IAhvn2vbNASSudj/a99k7s1NCYGEeN3vy2/HSIi5ur0tv7
- q/+Nniui6A5wFc7ngMSBZbnXO7Wc7amyLQDb0EPABOh7r75uaBxyozpmg2ST/+uE1Tv5
- fcw7y+UvfTd78eQ5kuYo4ydO3ikP2ec7tkgCfxb9YjtOoOecFrm9kofPM4+Hb3pfiOig
- pQSA==
+ bh=P57cGd5au/pxCm3dCI4WNXQPVL3URAglM9O9Pw3PXWM=;
+ b=hdY+eLvGd0/CiM306UIlYlfWMtUD0oWi2NeJfCEW3M1nQmrICpgsesO3HyKaK0tbMj
+ y7O8PIRyWd21oU5g3cMRc6Gxyx92OfRUBsn71b9hnJu6eT07pqeokrxViFiwgDeWo4L1
+ X/moRRWJHWBUiWe4vLXQdDybRCaFLogvlPCkpZ+ZvIUI2nzXy1/sSUYbz4rfPBjKWc9v
+ jWg6cDG40Ivb3snKohS5Ql9LxbXYFmfycPxxU0G7m0lXW4VTpxwqn135c6cJ//RXUZRo
+ AzYd9iebs3tdOMni2xVMMRAoe1UdID6Isza4RXCzaR1GPNhEcaBfFh+uqFXU7mM5SdCu
+ HDcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=aawXyaVUndOA3gmbFU8MOhKxpP5JaLgvaRjLb9Tuem4=;
- b=ErmKwibJ7GtBV0ThCg6gp02wBS65f9IRYsg0AX+mAhgaYHlKr+EieAdFYNATE3/3/B
- Z+UkH/UiW4X3i13Gv/bJedRc2YxtT6XMjw/vjUpoPPP4WGUI4Rg9129Xandg25QTAGnw
- 6PhGXafBYRYYsaEmMT4y7wlAwsfPTARghN9NFtMEkuORnd6Co/1U682FmqNOUGzJwr9R
- w5JreXIFBO+qxAwdXj3vwqnjqigfHdxN7aSsj1VtOle4eOaE4zv3ViVs7TSvSc8HEBfT
- Aqlk2TMplnLWVsCE8fpqv6gkCqdY9PLWynqQlJNQ71LjCBOlNKpJH+nCDR5Ezc2Ju3zD
- ymJw==
-X-Gm-Message-State: APjAAAV+Tdz+TwHVpBYmOvbeBksS+p1FOq18RgAmSbLEDiztw/1UZJTG
- MXqfqKLhvvXoneTOz28NE0YV9GHHC9U=
-X-Google-Smtp-Source: APXvYqy2YXmVQ9gCwMlsysZFTnip1mV+36qIwpdi6BdCr9jTimWUqP8ajah8NmxFN+wIrkNfzVNVcg==
-X-Received: by 2002:a17:902:b495:: with SMTP id
- y21mr73769788plr.243.1559114333879; 
- Wed, 29 May 2019 00:18:53 -0700 (PDT)
+ bh=P57cGd5au/pxCm3dCI4WNXQPVL3URAglM9O9Pw3PXWM=;
+ b=LX/K5BIfHYTibyiRotKFpjo+AqqKw3Bndihp7zDNtdakaoQE0+NpeOPxDgGEiXk6q9
+ /aznxwMo3nj9MtoBMpJWLmU5fOThs5PCDttCVIcMFdrUZxxZ29E1hOnsrWnUB/sZBTmM
+ eqf46pmmHU5qm77oxHcntiAlo4nsSZJdLZgopub8R9C8Yzfui1hlo9bVxrq5F6moH7MP
+ YotYnRxINhlyINdjFmXpvG/Vm7AeqHzPQuIOXt4Fj1+g6qTwXGxysp5tWlO4V0fQ1FG0
+ fsgRgjp8rRCBswrbABhFHUrx4GeCvIMLKdenaRDQmU/tsXzqb3nQv8UyNoeqBejkftJz
+ S55w==
+X-Gm-Message-State: APjAAAXfGOR3BH6q2jKHREobv8np/FjqyC3lku4yiCIm+hLaoKaC3HDJ
+ 3k9uJm/KEMEgu2KAEfpEo60GE//51+A=
+X-Google-Smtp-Source: APXvYqzU/O0hkTUNdjazxjZSJmGmSvPWTsv6ggb+I3Z3g8OtTH+Y8bRN3EaXebun8KSunjKFkkaCpw==
+X-Received: by 2002:a63:2315:: with SMTP id j21mr42017705pgj.414.1559114335066; 
+ Wed, 29 May 2019 00:18:55 -0700 (PDT)
 Received: from localhost.lan (c-24-22-235-96.hsd1.wa.comcast.net.
  [24.22.235.96])
- by smtp.gmail.com with ESMTPSA id y16sm32038938pfo.133.2019.05.29.00.18.52
+ by smtp.gmail.com with ESMTPSA id y16sm32038938pfo.133.2019.05.29.00.18.53
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 29 May 2019 00:18:53 -0700 (PDT)
+ Wed, 29 May 2019 00:18:54 -0700 (PDT)
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/3] ARM: dts: imx6: rdu2: Disable WP for USDHC2 and USDHC3
-Date: Wed, 29 May 2019 00:18:42 -0700
-Message-Id: <20190529071843.24767-2-andrew.smirnov@gmail.com>
+Subject: [PATCH 3/3] ARM: dts: imx6: rdu2: Limit USBH1 to Full Speed
+Date: Wed, 29 May 2019 00:18:43 -0700
+Message-Id: <20190529071843.24767-3-andrew.smirnov@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190529071843.24767-1-andrew.smirnov@gmail.com>
 References: <20190529071843.24767-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_001855_198308_BAAA2C5D 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20190529_001857_202133_DE6D1369 
+X-CRM114-Status: GOOD (  11.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,9 +107,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RDU2 production units come with resistor connecting WP pin to
-correpsonding GPIO DNPed for both SD card slots. Drop any WP related
-configuration and mark both slots with "disable-wp".
+Cabling used to connect devices to USBH1 on RDU2 does not meet USB
+spec cable quality and cable length requirements to operate at High
+Speed, so limit the port to Full Speed only.
 
 Reported-by: Chris Healy <cphealy@gmail.com>
 Reviewed-by: Chris Healy <cphealy@gmail.com>
@@ -121,47 +120,21 @@ Cc: Lucas Stach <l.stach@pengutronix.de>
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-index 07e21d1e5b4c..04d4d4d7e43c 100644
+index 04d4d4d7e43c..e1d8478884f9 100644
 --- a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
 +++ b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-@@ -658,7 +658,7 @@
- 	pinctrl-0 = <&pinctrl_usdhc2>;
- 	bus-width = <4>;
- 	cd-gpios = <&gpio2 2 GPIO_ACTIVE_LOW>;
--	wp-gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
-+	disable-wp;
- 	vmmc-supply = <&reg_3p3v_sd>;
- 	vqmmc-supply = <&reg_3p3v>;
- 	no-1-8-v;
-@@ -671,7 +671,7 @@
- 	pinctrl-0 = <&pinctrl_usdhc3>;
- 	bus-width = <4>;
- 	cd-gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
--	wp-gpios = <&gpio2 1 GPIO_ACTIVE_HIGH>;
-+	disable-wp;
- 	vmmc-supply = <&reg_3p3v_sd>;
- 	vqmmc-supply = <&reg_3p3v>;
- 	no-1-8-v;
-@@ -1096,7 +1096,6 @@
- 			MX6QDL_PAD_SD2_DAT1__SD2_DATA1		0x17059
- 			MX6QDL_PAD_SD2_DAT2__SD2_DATA2		0x17059
- 			MX6QDL_PAD_SD2_DAT3__SD2_DATA3		0x17059
--			MX6QDL_PAD_NANDF_D3__GPIO2_IO03		0x40010040
- 			MX6QDL_PAD_NANDF_D2__GPIO2_IO02		0x40010040
- 		>;
- 	};
-@@ -1109,7 +1108,6 @@
- 			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x17059
- 			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x17059
- 			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x17059
--			MX6QDL_PAD_NANDF_D1__GPIO2_IO01		0x40010040
- 			MX6QDL_PAD_NANDF_D0__GPIO2_IO00		0x40010040
+@@ -805,6 +805,7 @@
+ &usbh1 {
+ 	vbus-supply = <&reg_5p0v_main>;
+ 	disable-over-current;
++	maximum-speed = "full-speed";
+ 	status = "okay";
+ };
  
- 		>;
 -- 
 2.21.0
 
