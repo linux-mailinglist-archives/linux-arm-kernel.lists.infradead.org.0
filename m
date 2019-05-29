@@ -2,59 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C21352DA53
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:20:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF4792DA5C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:22:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LU+mXJPimD/9X8bMj1/Psaf4fI6iXDJ8SsXB3AX11Ug=; b=Q50RdpMUWKxgvh
-	EsigsS0CyniTUn+FdpuNN33jBuISI3rxQd1jebws7Wg+H57Wpb+Trf2uaEOLGJ5ULy8z02u4qIADW
-	KnwRfyvAVtoPuVVOiZlvI2XlJhmE+iMVQx5ipUnW32H76v/HVehI1HRd2Ago3rmacPKrLMIajpqy7
-	HdKso81KdHEEDOWOmuKZAIOaQDVyzNyWOiUhzujhrYZZ0lZ2Mo/dMM1eyb0N1LnZ+9EmQPdlhvqnZ
-	9JnrHW8Sn8BImVUu9b6uWqRwooC/JRqs/hGKI68/BBKrLaLujybtt1Xx3Hzvi2z4D/8NDVa9SIXSL
-	iMAM/puBeVXZocwpFxVQ==;
+	List-Owner; bh=L9goKgDMwLyWPFNKTu0NztrvZ993a/EHFjm7GBpBfco=; b=bj/9J9j6XjvB3E
+	PfKFg7q91wuihbxuXOBkP30RWVPdYlmGe1n7GpIV/8/5u2yggivuFKJuc3LZhqb27zga3jmCya5XD
+	R/OU22kjIXdCQFzaUNDkKD/M4l7hOpUpKL/82aWqTd3g33CTm40Zs9riH4vZscoLM5AJLPwk9H18n
+	T0ZaiO0kTwXOkJH/MRRoxbBIS/GENVxzGcpH8TdlexFgDoe+Q5bSXsoC8YsN/QLFINxSbucqAb7pO
+	lKBF+xlsEKHpANHsuzvFQ6CeJVAbOxg0WKrSYQANfbsPMJdeLBFgciERTB+Yzdgry7h+v+fb4DRv3
+	OjIJ5wpyNej4Qx1fMhpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVvhO-0005KO-TS; Wed, 29 May 2019 10:20:46 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hVvjA-0005fI-IW; Wed, 29 May 2019 10:22:36 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvh7-00054n-DI
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:20:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 31E86341;
- Wed, 29 May 2019 03:20:27 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ED5933F59C;
- Wed, 29 May 2019 03:20:24 -0700 (PDT)
-Date: Wed, 29 May 2019 11:20:22 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
-Message-ID: <20190529102022.GC4485@fuggles.cambridge.arm.com>
-References: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
- <20190528140103.GT2623@hirez.programming.kicks-ass.net>
- <20190528153224.GE20758@fuggles.cambridge.arm.com>
- <20190528173228.GW2623@hirez.programming.kicks-ass.net>
- <20190529091733.GA4485@fuggles.cambridge.arm.com>
- <20190529101042.GN2623@hirez.programming.kicks-ass.net>
+ id 1hVvj3-0005ep-Cm
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:22:31 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 8DD5125AEEC;
+ Wed, 29 May 2019 20:22:26 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id 8F2C0940361; Wed, 29 May 2019 12:22:24 +0200 (CEST)
+Date: Wed, 29 May 2019 12:22:24 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH/RFT] arm: dts: renesas: r7s9210-rza2mevb: sort nodes of
+ rza2mevb board
+Message-ID: <20190529102219.pkhwalbm6feaq4tz@verge.net.au>
+References: <1558104187-2842-1-git-send-email-ykaneko0929@gmail.com>
+ <CAMuHMdUmmwmm2bx+g=G-py5FiQ5Ynrmxr262j61P5=y5GTA6OQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190529101042.GN2623@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <CAMuHMdUmmwmm2bx+g=G-py5FiQ5Ynrmxr262j61P5=y5GTA6OQ@mail.gmail.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_032029_479170_CB35C3F8 
-X-CRM114-Status: GOOD (  19.41  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190529_032229_724068_151B7DD5 
+X-CRM114-Status: GOOD (  20.54  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,64 +64,224 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Young Xiao <92siuyang@gmail.com>, mpe@ellerman.id.au,
- x86@kernel.org, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- ravi.bangoria@linux.vnet.ibm.com, linux-arm-kernel@lists.infradead.org,
- kan.liang@linux.intel.com
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Yoshihiro Kaneko <ykaneko0929@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 12:10:42PM +0200, Peter Zijlstra wrote:
-> On Wed, May 29, 2019 at 10:17:33AM +0100, Will Deacon wrote:
-> > On Tue, May 28, 2019 at 07:32:28PM +0200, Peter Zijlstra wrote:
+On Tue, May 28, 2019 at 10:08:29AM +0200, Geert Uytterhoeven wrote:
+> Hi Kaneko-san,
 > 
-> > > 'funny' thing that, perf_sample_regs_user() seems to assume that
-> > > anything with current->mm is in fact a user task, and that assumption is
-> > > just plain wrong, consider use_mm().
-> > 
-> > Right, I suppose that was attempting to handle interrupt skid from the PMU
-> > overflow?
+> On Fri, May 17, 2019 at 4:43 PM Yoshihiro Kaneko <ykaneko0929@gmail.com> wrote:
+> > This patch sorts the nodes of arch/arm/boot/dts/r7s9210-rza2mevb.dts.
+> >
+> > * Sort subnodes of root ("/") node alphabetically
+> > * Sort following top-level nodes alphabetically
+> > * Sort subnodes of pinctrl alphabetically
+> >
+> > Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
 > 
-> Nah, just a broken test to determine if there is userspace at all. It is
-> mostly right, just not completely :-)
+> Thanks for your patch!
 > 
-> > > So I'm thinking the right thing to do here is something like the below;
-> > > umh should get PF_KTHREAD cleared when it passes exec(). And this should
-> > > also fix the power splat I'm thinking.
-> > > 
-> > > ---
-> > > 
-> > > diff --git a/kernel/events/core.c b/kernel/events/core.c
-> > > index abbd4b3b96c2..9929404b6eb9 100644
-> > > --- a/kernel/events/core.c
-> > > +++ b/kernel/events/core.c
-> > > @@ -5923,7 +5923,7 @@ static void perf_sample_regs_user(struct perf_regs *regs_user,
-> > >  	if (user_mode(regs)) {
-> > >  		regs_user->abi = perf_reg_abi(current);
-> > >  		regs_user->regs = regs;
-> > > -	} else if (current->mm) {
-> > > +	} else if (!(current->flags & PF_KTHREAD) && current->mm) {
-> > >  		perf_get_regs_user(regs_user, regs, regs_user_copy);
-> > 
-> > Makes sense, but under which circumstances would we have a NULL mm here?
+> > This patch is based on the devel branch of Simon Horman's renesas tree.
 > 
-> Dunno; I'm paranoid, and also:
-> 
->   mm/memcontrol.c:        if (in_interrupt() || !current->mm || (current->flags & PF_KTHREAD))
+> This looks good to me, but in the mean time renesas-devel has progressed.
+> Can you please respin?
 
-So this one I also don't understand...
+I guess the same thing could happen again so I have gone ahead
+and both updated and applied the patch. The result is as follows:
 
->   mm/vmacache.c:  return current->mm == mm && !(current->flags & PF_KTHREAD);
+From da06407455334bd8ec24e9c434691d3dd68571f8 Mon Sep 17 00:00:00 2001
+From: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+Date: Fri, 17 May 2019 23:43:07 +0900
+Subject: [PATCH] arm: dts: rza2mevb: sort nodes of rza2mevb board
 
-... but this one is just about an mm mismatch, rather than a NULL mm.
+This patch sorts the nodes of arch/arm/boot/dts/r7s9210-rza2mevb.dts.
 
-Anyway, you can add my ack to your patch, but I bet we can remove that mm
-check :D
+* Sort subnodes of root ("/") node alphabetically
+* Sort following top-level nodes alphabetically
+* Sort subnodes of pinctrl alphabetically
 
-Will
+Signed-off-by: Yoshihiro Kaneko <ykaneko0929@gmail.com>
+[simon: rebase and sort new ehci nodes]
+Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
+---
+ arch/arm/boot/dts/r7s9210-rza2mevb.dts | 104 ++++++++++++++++-----------------
+ 1 file changed, 52 insertions(+), 52 deletions(-)
+
+diff --git a/arch/arm/boot/dts/r7s9210-rza2mevb.dts b/arch/arm/boot/dts/r7s9210-rza2mevb.dts
+index e140168da573..49c40065741b 100644
+--- a/arch/arm/boot/dts/r7s9210-rza2mevb.dts
++++ b/arch/arm/boot/dts/r7s9210-rza2mevb.dts
+@@ -26,11 +26,6 @@
+ 		stdout-path = "serial0:115200n8";
+ 	};
+ 
+-	memory@40000000 {
+-		device_type = "memory";
+-		reg = <0x40000000 0x00800000>;	 /* HyperRAM */
+-	};
+-
+ 	lbsc {
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+@@ -46,6 +41,41 @@
+ 			gpios = <&pinctrl RZA2_PIN(PORTC, 1) GPIO_ACTIVE_HIGH>;
+ 		};
+ 	};
++
++	memory@40000000 {
++		device_type = "memory";
++		reg = <0x40000000 0x00800000>;	 /* HyperRAM */
++	};
++};
++
++&ehci0 {
++	status = "okay";
++};
++
++&ehci1 {
++	status = "okay";
++};
++
++&ether0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&eth0_pins>;
++	status = "okay";
++	renesas,no-ether-link;
++	phy-handle = <&phy0>;
++	phy0: ethernet-phy@0 {
++		reg = <0>;
++	};
++};
++
++&ether1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&eth1_pins>;
++	status = "okay";
++	renesas,no-ether-link;
++	phy-handle = <&phy1>;
++	phy1: ethernet-phy@1 {
++		reg = <0>;
++	};
+ };
+ 
+ /* EXTAL */
+@@ -53,23 +83,16 @@
+ 	clock-frequency = <24000000>;	/* 24MHz */
+ };
+ 
+-/* RTC_X1 */
+-&rtc_x1_clk {
+-	clock-frequency = <32768>;
++/* High resolution System tick timers */
++&ostm0 {
++	status = "okay";
+ };
+ 
+-/* USB_X1 */
+-&usb_x1_clk {
+-	clock-frequency = <48000000>;
++&ostm1 {
++	status = "okay";
+ };
+ 
+ &pinctrl {
+-	/* Serial Console */
+-	scif4_pins: serial4 {
+-		pinmux = <RZA2_PINMUX(PORT9, 0, 4)>,	/* TxD4 */
+-			 <RZA2_PINMUX(PORT9, 1, 4)>;	/* RxD4 */
+-	};
+-
+ 	eth0_pins: eth0 {
+ 		pinmux = <RZA2_PINMUX(PORTE, 0, 7)>, /* REF50CK0 */
+ 			 <RZA2_PINMUX(PORT6, 1, 7)>, /* RMMI0_TXDEN */
+@@ -98,6 +121,12 @@
+ 			 <RZA2_PINMUX(PORTL, 1, 5)>; /* IRQ5 */
+ 	};
+ 
++	/* Serial Console */
++	scif4_pins: serial4 {
++		pinmux = <RZA2_PINMUX(PORT9, 0, 4)>,	/* TxD4 */
++			 <RZA2_PINMUX(PORT9, 1, 4)>;	/* RxD4 */
++	};
++
+ 	sdhi0_pins: sdhi0 {
+ 		pinmux = <RZA2_PINMUX(PORT5, 0, 3)>,	/* SD0_CD */
+ 			 <RZA2_PINMUX(PORT5, 1, 3)>;	/* SD0_WP */
+@@ -121,13 +150,9 @@
+ 	};
+ };
+ 
+-/* High resolution System tick timers */
+-&ostm0 {
+-	status = "okay";
+-};
+-
+-&ostm1 {
+-	status = "okay";
++/* RTC_X1 */
++&rtc_x1_clk {
++	clock-frequency = <32768>;
+ };
+ 
+ /* Serial Console */
+@@ -138,28 +163,6 @@
+ 	status = "okay";
+ };
+ 
+-&ether0 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&eth0_pins>;
+-	status = "okay";
+-	renesas,no-ether-link;
+-	phy-handle = <&phy0>;
+-	phy0: ethernet-phy@0 {
+-		reg = <0>;
+-	};
+-};
+-
+-&ether1 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&eth1_pins>;
+-	status = "okay";
+-	renesas,no-ether-link;
+-	phy-handle = <&phy1>;
+-	phy1: ethernet-phy@1 {
+-		reg = <0>;
+-	};
+-};
+-
+ &sdhi0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&sdhi0_pins>;
+@@ -182,10 +185,6 @@
+ 	status = "okay";
+ };
+ 
+-&ehci0 {
+-	status = "okay";
+-};
+-
+ /* USB-1 as Host */
+ &usb2_phy1 {
+ 	pinctrl-names = "default";
+@@ -194,6 +193,7 @@
+ 	status = "okay";
+ };
+ 
+-&ehci1 {
+-	status = "okay";
++/* USB_X1 */
++&usb_x1_clk {
++	clock-frequency = <48000000>;
+ };
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
