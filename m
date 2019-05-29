@@ -2,111 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DC0F2DC64
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:04:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7BA32DC69
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:05:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dN8cEsVv+H14XfZZUOwspmHU5sUgPhL/hcSv15Z++Gc=; b=GNUEJ6bOp+k5Ov
-	kX8b5l3/u6W2dnGuhDgZ7cZkLpR4UdlNU5Xx/LBObJgaEKMc3wN7cWuci6fyv3wbPXGv7Buh/HSqZ
-	d5CLiwIOCZoafSwTy5HzwXi0TGmwpM3Wd4AljqU+mH3/jNLFcRzW3eQpELlANDSSSJw7b+iRj4e42
-	cehBNWq8IOuCOMYnAei98Bgfz538W6vmXHf8G9AR4Xjz8n28Xl88DPdeze2loY0AtY2SOdtEv4Tai
-	CprcSbHG5aAnh8S8P0P7TPcd4rukR7bWRl6TWTMcXX4DqskUz/EameGXdD+FypFkECXiINh19blV6
-	76f51IDfIwAV2xAw5uvw==;
+	List-Owner; bh=cCpredNDUw7cBGA5ftfN05B37CQxbXkOpYSn8P1C9eE=; b=dKrOa5v2saZfP1
+	WBci88klWjroA3hMI8UXqDyJ/xUBfj17QMAavJdEhQthLO2PECO9Iz58fNrC6ImYmjlkia7VNhwi5
+	FbuDBLuIN2eoHUT+z2wiZA4ktJ1M8poETc4u0vKa2t1dI07+E6NC7FBo1RaYWjI/8CZIai3HBjNGR
+	djzgyyqpxkoqZTCgLHHKK4XWKXNA5rKqqiLpIIPDRgKrPBtXgCy4Ob7CuuFw5q1ZTsQxlhDuOvCuZ
+	fb/z8ufepPM2/npl8IPLbwCgTvPZATTJXtuYM/8/jWkvoLxDz3dqYnW7W4EonAyP5U4MQRcqI2HPB
+	KLKszHG/tqDgdWwXyqPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVxJb-0004I7-52; Wed, 29 May 2019 12:04:19 +0000
-Received: from mail-eopbgr130054.outbound.protection.outlook.com
- ([40.107.13.54] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hVxL0-0005qq-DV; Wed, 29 May 2019 12:05:46 +0000
+Received: from mail-qk1-f195.google.com ([209.85.222.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVxJ5-0003qn-Mc
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:03:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7uHAcUN+j6VtLPSbaJigjReOyt8r/3SfkyoasffYUZI=;
- b=I668Dbf27x2tpVdRKSZw8KNZ0X0EjzPxx989tK5/hr9nTT9JSL9MDAzYEMr/AU3DI7358YJSUxr1F4sicLDf9+BYrMlzEbJQEqlpHwy79XPv40oZ6ccpfsFZR5yQ1rG6Wh526GEOMFepEyUPDZVTyd6r4Sx6zpUxIyHHlzjlSSo=
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
- VI1PR04MB5998.eurprd04.prod.outlook.com (20.178.123.213) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.18; Wed, 29 May 2019 12:03:43 +0000
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::9577:379c:2078:19a1]) by VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::9577:379c:2078:19a1%7]) with mapi id 15.20.1922.021; Wed, 29 May 2019
- 12:03:43 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>, Shawn Guo <shawnguo@kernel.org>,
- Jacky Bai <ping.bai@nxp.com>
-Subject: [PATCH 3/3] cpufreq: Switch imx7d to imx-cpufreq-dt for speed grading
-Thread-Topic: [PATCH 3/3] cpufreq: Switch imx7d to imx-cpufreq-dt for speed
- grading
-Thread-Index: AQHVFhaPrvUUJ34dakS8wduWS4Ia3Q==
-Date: Wed, 29 May 2019 12:03:42 +0000
-Message-ID: <8787934ff35e7e55837f2caabc0d5bf65828d971.1559131365.git.leonard.crestez@nxp.com>
-References: <b6a9b9f80534af5c12db30a0bb699ec850f85be7.1559131365.git.leonard.crestez@nxp.com>
-In-Reply-To: <b6a9b9f80534af5c12db30a0bb699ec850f85be7.1559131365.git.leonard.crestez@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [89.37.124.34]
-x-mailer: git-send-email 2.17.1
-x-clientproxiedby: LO2P265CA0432.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:a0::36) To VI1PR04MB5055.eurprd04.prod.outlook.com
- (2603:10a6:803:5a::12)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ce5c93f0-2854-4e35-65bb-08d6e42db1ca
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5998; 
-x-ms-traffictypediagnostic: VI1PR04MB5998:
-x-microsoft-antispam-prvs: <VI1PR04MB599804DA4944B2E82224DACCEE1F0@VI1PR04MB5998.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:159;
-x-forefront-prvs: 0052308DC6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(396003)(39860400002)(366004)(376002)(136003)(199004)(189003)(6436002)(6512007)(73956011)(478600001)(66446008)(5660300002)(6116002)(6486002)(386003)(6506007)(102836004)(110136005)(25786009)(81156014)(305945005)(54906003)(3846002)(50226002)(6636002)(99286004)(7736002)(8936002)(68736007)(86362001)(76176011)(53936002)(8676002)(52116002)(316002)(4326008)(81166006)(14454004)(66476007)(64756008)(66946007)(66556008)(118296001)(2906002)(26005)(186003)(11346002)(256004)(486006)(476003)(446003)(2616005)(44832011)(14444005)(71200400001)(71190400001)(36756003)(66066001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5998;
- H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: q3BHYONav0EJpuXd7GSuf6W6UPJF+K0ItGG9Me3NChGa/H0IpOHM2FFbuMGmgmI8JfVS6tIAirLzgNnmIO3wyq4NVvMfm+txqLcEH3E3k79iqi9Cd8J+v5fg2y95YurHLM2YQseat7vt0jqMi0ZAU+Oz639zT3lnmXo6hBsUsaJWaIMbiGJK0a+mE41eylGyMdiT2k0q90GWs/fpwS4mXWFPrhpGN4yLWVOENO13L2acbpk6pKHZZJU7RPDip965musd8WUSQPULxhEeIVky12hT7lVwOVyWkIZYvf/QSnuym393L/bSL0GOCgme5ANjA9m/TRuqI2PQfPYCl7iWABSk19gzCVMm0EVKyDgFdqk03LFRfdUvp+RsVW/p/xYVrD94ungAJpo6JkozXLgauaLbtUCr2X/6idrHt/uzJVM=
-Content-ID: <E28AEEB54DAE8F458BCD2A518473E48E@eurprd04.prod.outlook.com>
+ id 1hVxKs-0005qW-Tx
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:05:40 +0000
+Received: by mail-qk1-f195.google.com with SMTP id b18so1211411qkc.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 05:05:38 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uptjHgaBaplGgf+wVSZU2eUIoKk2cN8EqiU/ukCqtno=;
+ b=ewM4aq9Qci/stT5watkohp1JeR9V1j0TcX2Xe8jUlejXK2s6B//BZ6hl6WUxn6F40C
+ 1exBqnceT3K8ABBTezLT6qy900vwFZjcRRPwMKXXX/7dwkdnh6kC7AePC2ElClPPXHPW
+ HL3sROAAcKY1Kbwb9dz2Lww2YFZTJ5jq3j+DHB4IRjXrDFNVEoE7FIf1eZEZ9M0SW5rm
+ /DIBPWzUWQrF7nvAIFTAg7OX3D7QXt9JzgGZKSG2HUXwlvHMNPhJShCuDkKUNjswrorh
+ +N4Gi4bZYfj0YRms4/UFhA9FpT40ysrMn+oIAqXZ8aItazlY0bX5OzDl7GSYB7v2T+YV
+ +LDQ==
+X-Gm-Message-State: APjAAAWx1IxP1pVlZqUpJgTQOLi4JV142HKW9RMEDEjKvJfhDmn+7xyA
+ zkY3Uttpkl25Ez0OewM0F/jYTr+1JpWM2XIUEj4giXcmb4c=
+X-Google-Smtp-Source: APXvYqyekV82e1W5v+9f5Zmh22yFEE89mido7w9iaejsZbo7/EiB96l90U3/3zjongBQz+oYmXVaIj2lHXggVe4sbas=
+X-Received: by 2002:a05:620a:1085:: with SMTP id
+ g5mr80432085qkk.182.1559131537731; 
+ Wed, 29 May 2019 05:05:37 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ce5c93f0-2854-4e35-65bb-08d6e42db1ca
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 12:03:43.0044 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5998
+References: <20190524201817.16509-1-jannh@google.com>
+ <20190525144304.e2b9475a18a1f78a964c5640@linux-foundation.org>
+ <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
+ <6956cfe5-90d4-aad4-48e3-66b0ece91fed@linux-m68k.org>
+In-Reply-To: <6956cfe5-90d4-aad4-48e3-66b0ece91fed@linux-m68k.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 29 May 2019 14:05:21 +0200
+Message-ID: <CAK8P3a0b7MBn+84jh0Y2zhFLLAqZ2tMvFDFF9Kw=breRLH4Utg@mail.gmail.com>
+Subject: Re: [PATCH] binfmt_flat: make load_flat_shared_library() work
+To: Greg Ungerer <gerg@linux-m68k.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_050347_879909_BC2296A0 
-X-CRM114-Status: GOOD (  12.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190529_050538_966919_CBF6997F 
+X-CRM114-Status: GOOD (  23.47  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.54 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.222.195 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -118,105 +85,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Nicolas Pitre <nicolas.pitre@linaro.org>,
+ Sergei Poselenov <sposelenov@emcraft.com>,
+ Linux/m68k <linux-m68k@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, kernel list <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver can handle speed grading bits on imx7d just like on imx8mq
-and imx8mm.
+On Tue, May 28, 2019 at 12:56 PM Greg Ungerer <gerg@linux-m68k.org> wrote:
+> On 27/5/19 11:38 pm, Jann Horn wrote:
+> > On Sat, May 25, 2019 at 11:43 PM Andrew Morton
+> > <akpm@linux-foundation.org> wrote:
+> >> On Fri, 24 May 2019 22:18:17 +0200 Jann Horn <jannh@google.com> wrote:
+> >>> load_flat_shared_library() is broken: It only calls load_flat_file() if
+> >>> prepare_binprm() returns zero, but prepare_binprm() returns the number of
+> >>> bytes read - so this only happens if the file is empty.
+> >>
+> >> ouch.
+> >>
+> >>> Instead, call into load_flat_file() if the number of bytes read is
+> >>> non-negative. (Even if the number of bytes is zero - in that case,
+> >>> load_flat_file() will see nullbytes and return a nice -ENOEXEC.)
+> >>>
+> >>> In addition, remove the code related to bprm creds and stop using
+> >>> prepare_binprm() - this code is loading a library, not a main executable,
+> >>> and it only actually uses the members "buf", "file" and "filename" of the
+> >>> linux_binprm struct. Instead, call kernel_read() directly.
+> >>>
+> >>> Cc: stable@vger.kernel.org
+> >>> Fixes: 287980e49ffc ("remove lots of IS_ERR_VALUE abuses")
+> >>> Signed-off-by: Jann Horn <jannh@google.com>
+> >>> ---
+> >>> I only found the bug by looking at the code, I have not verified its
+> >>> existence at runtime.
+> >>> Also, this patch is compile-tested only.
+> >>> It would be nice if someone who works with nommu Linux could have a
+> >>> look at this patch.
+> >>
+> >> 287980e49ffc was three years ago!  Has it really been broken for all
+> >> that time?  If so, it seems a good source of freed disk space...
+> >
+> > Maybe... but I didn't want to rip it out without having one of the
+> > maintainers confirm that this really isn't likely to be used anymore.
+>
+> I have not used shared libraries on m68k non-mmu setups for
+> a very long time. At least 10 years I would think.
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- arch/arm/mach-imx/mach-imx7d.c       | 7 +++++++
- drivers/cpufreq/cpufreq-dt-platdev.c | 2 +-
- drivers/cpufreq/imx-cpufreq-dt.c     | 1 +
- 3 files changed, 9 insertions(+), 1 deletion(-)
+I think Emcraft have a significant customer base running ARM NOMMU
+Linux, I wonder whether they would have run into this (adding
+Sergei to Cc).
+My suspicion is that they use only binfmt-elf-fdpic, not binfmt-flat.
 
-diff --git a/arch/arm/mach-imx/mach-imx7d.c b/arch/arm/mach-imx/mach-imx7d.c
-index 26ca744d3e2b..0b77412795c9 100644
---- a/arch/arm/mach-imx/mach-imx7d.c
-+++ b/arch/arm/mach-imx/mach-imx7d.c
-@@ -95,10 +95,16 @@ static void __init imx7d_init_machine(void)
- 
- 	imx_anatop_init();
- 	imx7d_enet_init();
- }
- 
-+static void __init imx7d_init_late(void)
-+{
-+	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
-+		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
-+}
-+
- static void __init imx7d_init_irq(void)
- {
- 	imx_init_revision_from_anatop();
- 	imx_src_init();
- 	irqchip_init();
-@@ -111,7 +117,8 @@ static const char *const imx7d_dt_compat[] __initconst = {
- };
- 
- DT_MACHINE_START(IMX7D, "Freescale i.MX7 Dual (Device Tree)")
- 	.init_irq	= imx7d_init_irq,
- 	.init_machine	= imx7d_init_machine,
-+	.init_late      = imx7d_init_late,
- 	.dt_compat	= imx7d_dt_compat,
- MACHINE_END
-diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
-index 19c1aad57e26..eb282dff9f2c 100644
---- a/drivers/cpufreq/cpufreq-dt-platdev.c
-+++ b/drivers/cpufreq/cpufreq-dt-platdev.c
-@@ -38,11 +38,10 @@ static const struct of_device_id whitelist[] __initconst = {
- 	{ .compatible = "hisilicon,hi3660", },
- 
- 	{ .compatible = "fsl,imx27", },
- 	{ .compatible = "fsl,imx51", },
- 	{ .compatible = "fsl,imx53", },
--	{ .compatible = "fsl,imx7d", },
- 
- 	{ .compatible = "marvell,berlin", },
- 	{ .compatible = "marvell,pxa250", },
- 	{ .compatible = "marvell,pxa270", },
- 
-@@ -106,10 +105,11 @@ static const struct of_device_id whitelist[] __initconst = {
-  */
- static const struct of_device_id blacklist[] __initconst = {
- 	{ .compatible = "calxeda,highbank", },
- 	{ .compatible = "calxeda,ecx-2000", },
- 
-+	{ .compatible = "fsl,imx7d", },
- 	{ .compatible = "fsl,imx8mq", },
- 	{ .compatible = "fsl,imx8mm", },
- 
- 	{ .compatible = "marvell,armadaxp", },
- 
-diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
-index 5061503cb0a1..ce26ffc18ce6 100644
---- a/drivers/cpufreq/imx-cpufreq-dt.c
-+++ b/drivers/cpufreq/imx-cpufreq-dt.c
-@@ -18,10 +18,11 @@
- #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
- #define OCOTP_CFG3_MKT_SEGMENT_SHIFT    6
- #define OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 6)
- 
- static const struct of_device_id imx_cpufreq_dt_match_list[] = {
-+	{ .compatible = "fsl,imx7d" },
- 	{ .compatible = "fsl,imx8mm" },
- 	{ .compatible = "fsl,imx8mq" },
- 	{}
- };
- 
--- 
-2.17.1
+The only architectures I see that enable binfmt-flat are sh, xtensa
+and h8300, but only arch/sh uses CONFIG_BINFMT_SHARED_FLAT
+for a few machine specific configurations, and I'm in turn fairly sure
+those machines have not run a recent kernel in many years.
 
+The one SH nommu platform likely to have users is j2, and that is
+probably always used with musl-libc with elf-fdpic (given that
+Rich Felker maintains both the kernel port and the library).
+
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
