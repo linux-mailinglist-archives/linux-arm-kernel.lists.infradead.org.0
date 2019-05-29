@@ -2,71 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8180A2D40E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:02:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DF162D413
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:02:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fZVLzLu/aiZSUOZ2enXK03dwoBfIGp1n4l5OEigCxeg=; b=W7p9LvTED+FFgr
-	NR1H6QRbVFTQt4viOuRfbZDHzvbvEv5tWwLBiRLVXuU7raEWhXNncBNsLk92KoUX1+iMJytZI/jAf
-	iYBRg8bW45+G4eC+u0LJQbeW/RWo+obD+Q4O9dqh6cSRMgblUG6mKtW5qqJCwbKgdW1vR+7irhQIP
-	LpX8xuhd8Px9Ab4m89aqlx+5SqRVNAFwxhFszfnYHzRQOZBB80Lm2Gh+hmWsyzhlrS9G8wf+CeYBZ
-	vlWOCgK6LaP/2/K5Wk1rcIztxu5cZ5LabxiWx0p/Bm1p8VO1v8yTyeu8Ns86OHhojfxObQUQRUJL/
-	LmjUUJuZ0yhV/pfizCKg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bIJlq69PqYRASgAOk9yDD8QOMpFO8Muxnp84niqfKV8=; b=BsHUP1p6eIDVRX
+	u/6uMKIEwwfrRgmstD0jMUDXfF2eLi5xW9k0Wgo0fITN+slnljlGt5H/qGpBGZz7OKr2Z5/RbM+53
+	4q89/lVYT+76nYvqlsmgFSHs2ARX2yh6xin505DD0VzYhnjjS8JxEuYcS+3gAkKrlxwrq1zbzqcDG
+	1ZcFDStGphzYtLObySufhc5Dki/l03hdjara5hdi3JHcWuyZcqfWHnlRGYTzjtpD6rmrFjlK08P56
+	thyUXCk4JJma+/9Dg2+NRZa6SvlyNvaZ9KSDJhdrw5eiCzMxqCwVQ7gsFSlZG/vVchQwnDyHCisVI
+	Xa3vuNPMsg04JugHaTaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVoqv-0001cS-5M; Wed, 29 May 2019 03:02:09 +0000
-Received: from smtp97.ord1d.emailsrvr.com ([184.106.54.97])
+	id 1hVorO-0001vc-LB; Wed, 29 May 2019 03:02:38 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVoqm-0001c4-QT; Wed, 29 May 2019 03:02:02 +0000
-Received: from smtp5.relay.ord1d.emailsrvr.com (localhost [127.0.0.1])
- by smtp5.relay.ord1d.emailsrvr.com (SMTP Server) with ESMTP id 13CC9A019D;
- Tue, 28 May 2019 23:01:58 -0400 (EDT)
-X-SMTPDoctor-Processed: csmtpprox beta
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=g001.emailsrvr.com;
- s=20190322-9u7zjiwi; t=1559098918;
- bh=dxk1NY8pRsVPWLjcp9o/Cvrv9iSK3H0mNb52VECozys=;
- h=Subject:From:Date:To:From;
- b=HVOZ521Hl7QMWUqq7mUULr8MvIxEYZto7hio+0rsM/MyRNWrTfM2GvLl0Vryk41b7
- 6gnJhRBPsnx9Wx1monqXJIgvFgNtVG1X4oGti3cC/xsNkPfRBXu3ruHG7cMWAQkxpO
- Z5WpSL8rO6/+GiDK5KJMtjY7WnRMjjGNkIoYNyEA=
-X-Auth-ID: mcdermj@xenotropic.com
-X-Auth-ID: mcdermj@xenotropic.com
-Received: by smtp5.relay.ord1d.emailsrvr.com (Authenticated sender:
- mcdermj-AT-xenotropic.com) with ESMTPSA id 2231CA00AB; 
- Tue, 28 May 2019 23:01:57 -0400 (EDT)
-X-Sender-Id: mcdermj@xenotropic.com
-Received: from [10.0.3.33] (c-73-96-52-102.hsd1.or.comcast.net [73.96.52.102])
- (using TLSv1.2 with cipher DHE-RSA-AES256-GCM-SHA384)
- by 0.0.0.0:465 (trex/5.7.12); Tue, 28 May 2019 23:01:58 -0400
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [PATCH v2] i2c: bcm2835: Model Divider in CCF
-From: Annaliese McDermond <nh6z@nh6z.net>
-In-Reply-To: <716a7b8a-c2f8-a3c4-0b3a-be3cb26a6c12@i2se.com>
-Date: Tue, 28 May 2019 20:01:56 -0700
-Message-Id: <ACF57AF2-51C9-4884-BC65-126221CDAB5B@nh6z.net>
-References: <20190508071227.18609-1-nh6z@nh6z.net>
- <716a7b8a-c2f8-a3c4-0b3a-be3cb26a6c12@i2se.com>
-To: Stefan Wahren <stefan.wahren@i2se.com>
-X-Mailer: Apple Mail (2.3445.104.11)
+ id 1hVorH-0001vG-St
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 03:02:33 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z3so420897pgp.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 20:02:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=X6hCgGrg1/EebBkiZczSeiIYTj567ezCT4B+Qvt2s6Q=;
+ b=E7MD6iUCYh7UBE8D8v6Tj9XnZ+OUEjLsn2t7PjrybNOo62FmkyX8L6GN+YvLcvreBf
+ 1K/b9tbQ1rSkY+RJnEpVfTgNzLxYFF6usqJTmHXT+jDAo0jfSt/XLCnXIx70y9IYfxti
+ CqvXgmkijrm0NNrTeidIZWiufx4mLZZDvLr3TgD/+VqLGthmsv80JpGVXSNZ7u5UTaKU
+ 65tp8D8zynwlLPjy4TGsnQgZa3bOZJ8lZb77FNu+9s7Mgu55R77DLLy8AxMfyyM/P8pg
+ vc4s/pueNLcGft20cBN2Z2nthMGvUjBkHoSnWgJS8zswD2cBuLQ8XbEUt+lAP0AoGHCB
+ hTZw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=X6hCgGrg1/EebBkiZczSeiIYTj567ezCT4B+Qvt2s6Q=;
+ b=JUULNALkOpKhNU+7tUMHr0q1omUaVQcIL1NWWRP3nH1ycMj+pH/eVbQJ5Lmw+mIQdi
+ EfexbTQUwgxYCkIFwkvYGxn5m/I7hpGynZZkk18rBY4B/9DmmHhjlspJjDMEXwtHHaiX
+ 9kdpeKbKrRc+0HHkXRBrmgNe1S6waONSaGkKDF6QDUXG22oZWIJ49OYCAo+A3J1QnhMf
+ WX3HJvyUfaZq1c/YfNVTTgyYYVmvRwhsTKgs9jM9TWjjvPKhOtcdzuGDSrn3LhTgJo98
+ b0KlegWsgRfNfmZ17Dsb7eR4IHv1csrIn3psx0jZmLiZ3uY3eagiB0W2EYtKPq++U7Zy
+ G32Q==
+X-Gm-Message-State: APjAAAXFRg3Pi0zNLFy74/tiyS44JLtRzZIBAiUjqJTXHXnKebf1pVjd
+ PM3qYivYLTvPT5tWlWuZUdc=
+X-Google-Smtp-Source: APXvYqyPsBpkG44hSDy7mXOJP8h3S5s7ICBOVNki4QTwaMsFGNf1xnTpWdMo6loLPLw8LZJQ9Rgn+A==
+X-Received: by 2002:a17:90a:b885:: with SMTP id
+ o5mr9397531pjr.52.1559098951071; 
+ Tue, 28 May 2019 20:02:31 -0700 (PDT)
+Received: from localhost.localdomain ([2601:644:8201:32e0:7256:81ff:febd:926d])
+ by smtp.gmail.com with ESMTPSA id d9sm13532565pgl.20.2019.05.28.20.02.29
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 28 May 2019 20:02:30 -0700 (PDT)
+Date: Tue, 28 May 2019 20:02:27 -0700
+From: Eduardo Valentin <edubezval@gmail.com>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
+ sensor ID from DT
+Message-ID: <20190529030225.GA2662@localhost.localdomain>
+References: <20190528060621.47342-1-Anson.Huang@nxp.com>
+ <20190528060621.47342-2-Anson.Huang@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190528060621.47342-2-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_200200_914209_D019336D 
-X-CRM114-Status: GOOD (  10.84  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190528_200231_952963_0F9E0CBE 
+X-CRM114-Status: GOOD (  25.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [184.106.54.97 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (edubezval[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,35 +102,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, swarren@wwwdotorg.org, wsa@the-dreams.de,
- team@nwdigitalradio.com, eric@anholt.net, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, ulf.hansson@linaro.org, maxime.ripard@bootlin.com,
+ catalin.marinas@arm.com, will.deacon@arm.com, peng.fan@nxp.com,
+ bjorn.andersson@linaro.org, leonard.crestez@nxp.com, festevam@gmail.com,
+ daniel.lezcano@linaro.org, jagan@amarulasolutions.com, rui.zhang@intel.com,
+ Linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ s.hauer@pengutronix.de, olof@lixom.net, robh+dt@kernel.org,
+ horms+renesas@verge.net.au, daniel.baluta@nxp.com,
+ linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
+ linux-kernel@vger.kernel.org, dinguyen@kernel.org, kernel@pengutronix.de,
+ enric.balletbo@collabora.com, shawnguo@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIE1heSAyOCwgMjAxOSwgYXQgMTI6NTIgQU0sIFN0ZWZhbiBXYWhyZW4gPHN0ZWZhbi53
-YWhyZW5AaTJzZS5jb20+IHdyb3RlOgo+IAo+IEhpIEFubmFsaWVzZSwKPiAKPiB0aGFuayB5b3Ug
-Zm9yIG1lbnRpb24gdGhhdCB3ZSBoYXZlIG11bHRpcGxlIEkyQyBpbnRlcmZhY2VzLgo+IAo+IE9u
-IDA4LjA1LjE5IDA5OjEyLCBBbm5hbGllc2UgTWNEZXJtb25kIHdyb3RlOgo+PiArCj4+ICtzdGF0
-aWMgc3RydWN0IGNsayAqYmNtMjgzNV9pMmNfcmVnaXN0ZXJfZGl2KHN0cnVjdCBkZXZpY2UgKmRl
-diwKPj4gKwkJCQkJY29uc3QgY2hhciAqbWNsa19uYW1lLAo+PiArCQkJCQlzdHJ1Y3QgYmNtMjgz
-NV9pMmNfZGV2ICppMmNfZGV2KQo+PiArewo+PiArCXN0cnVjdCBjbGtfaW5pdF9kYXRhIGluaXQ7
-Cj4+ICsJc3RydWN0IGNsa19iY20yODM1X2kyYyAqcHJpdjsKPj4gKwljb25zdCBjaGFyICpkZXZu
-YW1lID0gZGV2X25hbWUoZGV2KTsKPj4gKwo+PiArCWluaXQub3BzID0gJmNsa19iY20yODM1X2ky
-Y19vcHM7Cj4+ICsJaW5pdC5uYW1lID0gImJjbTI4MzUtaTJjIjsKPiAKPiBEb2VzIHRoaXMgd29y
-ayBpbnRlbnRpb25hbGx5IGluIGNhc2UgaTJjLTAgYW5kIGkyYy0xIGFyZSB1c2VkIGF0IHRoZQo+
-IHNhbWUgdGltZT8KCkl0IHNob3VsZCB3b3JrIGZpbmUuICBUaGUgY2xvY2tzIGFyZSBhbGwgcmVn
-aXN0ZXJlZCBzZXBhcmF0ZWx5IGFuZCBwYXNzZWQKdGhlIHBvaW50ZXIgdG8gdGhlIHN0cnVjdCBk
-ZXZpY2UgZm9yIHRoZSBpbnRlcmZhY2UuICBUaGlzIGtlZXBzIGl0CmFjY2Vzc2luZyB0aGUgY29y
-cmVjdCByZWdpc3RlcnMgYW5kIHN1Y2guCgo+IFBsZWFzZSBhbHNvIGNoZWNrIHRoZSBvdXRwdXQg
-b2YgL3N5cy9rZXJuZWwvZGVidWcvY2xrL2Nsa19zdW1tYXJ5CgpUaGV54oCZbGwgY29tZSB1cCB3
-aXRoIHRoZSBzYW1lIG5hbWUgaW4gdGhlIGN1cnJlbnQgY29kZSBpbiB0aGUgZGVidWcKb3V0cHV0
-LiAgSSBhZ3JlZSB0aGlzIGlzIG1pbGRseSBjb25mdXNpbmcgYW5kIEnigJlsbCBzcGluIGFub3Ro
-ZXIgdmVyc2lvbgpvZiB0aGUgcGF0Y2ggdG8gZ2l2ZSB0aGVtIHVuaXF1ZSBjbG9jayBuYW1lcyBp
-biBjbGtfc3VtbWFyeS4KCj4gUmVnYXJkcwo+IFN0ZWZhbgo+IAoKLS0KQW5uYWxpZXNlIE1jRGVy
-bW9ub2QKbmg2ekBuaDZ6Lm5ldApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Tue, May 28, 2019 at 02:06:18PM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
+> 
+> On some platforms like i.MX8QXP, the thermal driver needs a
+> real HW sensor ID from DT thermal zone, the HW sensor ID is
+> used to get temperature from SCU firmware, and the virtual
+> sensor ID starting from 0 to N is NOT used at all, this patch
+> adds new API thermal_zone_of_get_sensor_id() to provide the
+> feature of getting sensor ID from DT thermal zone's node.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> Changes since V12:
+> 	- adjust the second parameter of thermal_zone_of_get_sensor_id() API, then caller no need
+> 	  to pass the of_phandle_args structure and put the sensor_specs.np manually, also putting
+> 	  the sensor node device check inside this API to make it easy for usage;
+
+What happened to using nxp,resource-id property in your driver?
+Why do we need this as an API in of-thermal? What other drivers may
+benefit of this?
+
+Regardless, this patch needs to document the new API under
+Documentation/
+
+> ---
+>  drivers/thermal/of-thermal.c | 66 +++++++++++++++++++++++++++++++++-----------
+>  include/linux/thermal.h      | 10 +++++++
+>  2 files changed, 60 insertions(+), 16 deletions(-)
+> 
+> diff --git a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c
+> index dc5093b..a53792b 100644
+> --- a/drivers/thermal/of-thermal.c
+> +++ b/drivers/thermal/of-thermal.c
+> @@ -449,6 +449,54 @@ thermal_zone_of_add_sensor(struct device_node *zone,
+>  }
+>  
+>  /**
+> + * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal zone
+> + * @tz_np: a valid thermal zone device node.
+> + * @sensor_np: a sensor node of a valid sensor device.
+> + * @id: a sensor ID pointer will be passed back.
+> + *
+> + * This function will get sensor ID from a given thermal zone node, use
+> + * "thermal-sensors" as list name, and get sensor ID from first phandle's
+> + * argument.
+> + *
+> + * Return: 0 on success, proper error code otherwise.
+> + */
+> +
+> +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> +				  struct device_node *sensor_np,
+> +				  u32 *id)
+> +{
+> +	struct of_phandle_args sensor_specs;
+> +	int ret;
+> +
+> +	ret = of_parse_phandle_with_args(tz_np,
+> +					 "thermal-sensors",
+> +					 "#thermal-sensor-cells",
+> +					 0,
+> +					 &sensor_specs);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (sensor_specs.np != sensor_np) {
+> +		of_node_put(sensor_specs.np);
+> +		return -ENODEV;
+> +	}
+> +
+> +	if (sensor_specs.args_count >= 1) {
+> +		*id = sensor_specs.args[0];
+> +		WARN(sensor_specs.args_count > 1,
+> +		     "%pOFn: too many cells in sensor specifier %d\n",
+> +		     sensor_specs.np, sensor_specs.args_count);
+> +	} else {
+> +		*id = 0;
+> +	}
+> +
+> +	of_node_put(sensor_specs.np);
+> +
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
+> +
+> +/**
+>   * thermal_zone_of_sensor_register - registers a sensor to a DT thermal zone
+>   * @dev: a valid struct device pointer of a sensor device. Must contain
+>   *       a valid .of_node, for the sensor node.
+> @@ -499,36 +547,22 @@ thermal_zone_of_sensor_register(struct device *dev, int sensor_id, void *data,
+>  	sensor_np = of_node_get(dev->of_node);
+>  
+>  	for_each_available_child_of_node(np, child) {
+> -		struct of_phandle_args sensor_specs;
+>  		int ret, id;
+>  
+>  		/* For now, thermal framework supports only 1 sensor per zone */
+> -		ret = of_parse_phandle_with_args(child, "thermal-sensors",
+> -						 "#thermal-sensor-cells",
+> -						 0, &sensor_specs);
+> +		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
+>  		if (ret)
+>  			continue;
+>  
+> -		if (sensor_specs.args_count >= 1) {
+> -			id = sensor_specs.args[0];
+> -			WARN(sensor_specs.args_count > 1,
+> -			     "%pOFn: too many cells in sensor specifier %d\n",
+> -			     sensor_specs.np, sensor_specs.args_count);
+> -		} else {
+> -			id = 0;
+> -		}
+> -
+> -		if (sensor_specs.np == sensor_np && id == sensor_id) {
+> +		if (id == sensor_id) {
+>  			tzd = thermal_zone_of_add_sensor(child, sensor_np,
+>  							 data, ops);
+>  			if (!IS_ERR(tzd))
+>  				tzd->ops->set_mode(tzd, THERMAL_DEVICE_ENABLED);
+>  
+> -			of_node_put(sensor_specs.np);
+>  			of_node_put(child);
+>  			goto exit;
+>  		}
+> -		of_node_put(sensor_specs.np);
+>  	}
+>  exit:
+>  	of_node_put(sensor_np);
+> diff --git a/include/linux/thermal.h b/include/linux/thermal.h
+> index 15a4ca5..5edffe6 100644
+> --- a/include/linux/thermal.h
+> +++ b/include/linux/thermal.h
+> @@ -375,6 +375,9 @@ struct thermal_trip {
+>  
+>  /* Function declarations */
+>  #ifdef CONFIG_THERMAL_OF
+> +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> +				  struct device_node *sensor_np,
+> +				  u32 *id);
+>  struct thermal_zone_device *
+>  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+>  				const struct thermal_zone_of_device_ops *ops);
+> @@ -386,6 +389,13 @@ struct thermal_zone_device *devm_thermal_zone_of_sensor_register(
+>  void devm_thermal_zone_of_sensor_unregister(struct device *dev,
+>  					    struct thermal_zone_device *tz);
+>  #else
+> +
+> +static int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> +					 struct device_node *sensor_np,
+> +					 u32 *id)
+> +{
+> +	return -ENOENT;
+> +}
+>  static inline struct thermal_zone_device *
+>  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+>  				const struct thermal_zone_of_device_ops *ops)
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
