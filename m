@@ -2,110 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5628A2DC23
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 13:48:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E0C92DC37
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 13:52:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VPIwZjDXCMBZ35QKkeEcS6Oca6ZIewxRmUkDCKqfoxI=; b=eNQROCT2jzHT2n
-	HxaDdpGh+BFw16Il8pUBOEyW4EnlnwwLJFw0bBhBOk8CHsbjjQ70+D7jT9LT1vsJuHxEjHHmP0aSR
-	UyVwaWeeLMzD1WCRHX7r2Zd/3yv1ZHY6i2mOXKN2d/c3AwgP1nywIY+4uTHMotmYOgq5KO0Leezjr
-	04HrSCeIOuSb8ao+IrLQLEilrQtweoQwA9qdgV0vVXcL6Fy1JD3K9EPuMsYsOhOOv0UvVocX+qISa
-	PBXXJiB7DOeiNeGkW8y+dxx3hI75lrMexXPtm6lVQOVjYtbs3cN2TII8YVUuCaITnQQbTKsAIaVsf
-	levqpDubSKmC9PJZm4CQ==;
+	List-Owner; bh=1TGngKo4WYHbnsFDNg8/ABZbM6sw0USwjR2lpVR3IYE=; b=DtHYHvz9fHwpHk
+	K8wQ/eCN+ty2Xgx6TtVS11t0+rsURmJR2qMRYYk2/3yNcuJiqw8P1gaQWsIG5q4451mpI/AVbdayk
+	tSI6IaH5s5Cot2N3OBTURCWAd9DBfoCxCvVL4N0BoO33V0KvDE2T20LffdfzvlWUWThQqGLjOf+At
+	b5R8bMPhVuXdAjM8O+rWS8AqgmqLn0hmnM7BODiEmeWq/4pj52UfDoSzrYko2eaOfTtZT3wdkvRVN
+	HMqpqO2A396DXhKFQElRya3igc9JZ9EqH7G04S3OVBvKVoMysNxiFC0IUdKw/3KLxY99pM8geq8Cl
+	PqJc9244llBSl9K/y3rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVx4W-0006Vv-8b; Wed, 29 May 2019 11:48:44 +0000
-Received: from mail-ve1eur02on0616.outbound.protection.outlook.com
- ([2a01:111:f400:fe06::616]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1hVx8D-0008Mb-Qk; Wed, 29 May 2019 11:52:33 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVx4O-0006V6-QK
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 11:48:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cIiSuFGTVl9m/ZTNoQ/FCHYPKxVgP6vxQTjp2VbdnMU=;
- b=coO59u9dqTCJrfNqWgP4RLmuZEGK0SL58ZBtzn4ByJBkZ4Jveoq7koB4FHKOXkt6S6xwTyjlzUjafw7kW4TPCOeSLFmD/PRgn/0oye18MxIixaUVslBGM34M0op+/L5JF5AVjOBU48tcQPR/3/qhYXoS1FIgEJhg1pglRG0IXXI=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4065.eurprd04.prod.outlook.com (52.134.90.142) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.17; Wed, 29 May 2019 11:48:30 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::3173:24:d401:2378%6]) with mapi id 15.20.1922.021; Wed, 29 May 2019
- 11:48:30 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, "srinivas.kandagatla@linaro.org"
- <srinivas.kandagatla@linaro.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>
-Subject: RE: [RFC 1/2] dt-bindings: imx-ocotp: Add fusable-node property
-Thread-Topic: [RFC 1/2] dt-bindings: imx-ocotp: Add fusable-node property
-Thread-Index: AQHVDrkIcB6j+hDf/kC51b4HJvSviKaCCwCg
-Date: Wed, 29 May 2019 11:48:29 +0000
-Message-ID: <AM0PR04MB44810069F874677C6A2DE795881F0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <20190520032020.7920-1-peng.fan@nxp.com>
-In-Reply-To: <20190520032020.7920-1-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [180.110.22.24]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7e8061f8-c6bb-4868-b89c-08d6e42b91e4
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:AM0PR04MB4065; 
-x-ms-traffictypediagnostic: AM0PR04MB4065:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <AM0PR04MB4065767687E27F78D7B9D080881F0@AM0PR04MB4065.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0052308DC6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(376002)(396003)(136003)(39860400002)(346002)(199004)(189003)(4326008)(2201001)(110136005)(54906003)(68736007)(102836004)(76116006)(7416002)(8936002)(71200400001)(256004)(44832011)(6436002)(33656002)(73956011)(66066001)(305945005)(26005)(14444005)(71190400001)(25786009)(53936002)(2501003)(7736002)(52536014)(9686003)(55016002)(186003)(6306002)(14454004)(99286004)(86362001)(6506007)(81166006)(2906002)(81156014)(5660300002)(11346002)(7696005)(76176011)(3846002)(316002)(478600001)(6116002)(229853002)(966005)(64756008)(66556008)(74316002)(8676002)(476003)(446003)(66476007)(66446008)(486006)(6246003)(66946007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4065;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: yxkVRGT4pg0n6za3JUiANNNdkcEtPnVhRutj6kBt/l+JExpKOfmt7P+jyeAi2HTxL82A8FEY9zabUR6uvqatee26d+NOMW48EajsCqBewzNketENMIF6nVLu1yI2Mr5obew/c8MIPyqDtPv8nZDYugNGsyGyc2/enR8COl8qmdvjsoG2JB6ESDi7J8fpUxsx+h1+LTIUJIT4F1/0exD+I/Xu+UKtuq9G04Z+Ui0nq8hD1c7CkXH449JsvR/6DAamO9DSu7Aw8NeutEPRFSGLPTB8h7JzAsOraEn/zS/kJWeNIAdLMOJrdsZpfexcmvfXsWQBFg+cG/1a7a/FPlvNgjDXj7ayQapTiw/uD556R3Cg266YgxEmMSGD/jzb7udggogoh9jxJ5jSUJBTlI6UX3Y46Cpq8kjLK36wDJ6uV7M=
+ id 1hVx80-0008Do-Dx
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 11:52:22 +0000
+Received: by mail-qk1-f196.google.com with SMTP id w187so1172497qkb.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 04:52:19 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=TdAznkRxrKE17L8clQuRvpoCe6A9H8ATfOCcLEenWWI=;
+ b=GqG2XYBTnxnemG4ky3eZZxgC714wkZzVcHS/XaVrFJBIclVU2ryEr61HOwwpHNb7cb
+ LmbeUjo59anh7WbWrrEtGX0eZxqXTK2j1r5Fg/fo9oJHIdtsZ68dpaKJSp1WlIx2DlcQ
+ wNf5xsvcnuKoRw9acm+/7G/qPO99WJ1dQ79B1J98jyQ5Tr37ovJTaVko6/E1s24Qlbx+
+ eaFwYfeGcyxyO9VQGfwp6Bm9I3XE68L44mI0GskP3qnXS3mAeltQDmJjhLS6F2p2x4IJ
+ /wHw0H803tI9vS+r/I623lHAHPjWpK3KHxQjr9avarF8bfSunDJOoMwG+5WC0DSLsWYF
+ pdNA==
+X-Gm-Message-State: APjAAAXEyeziII6hvYCDwIXvabzwm9ZWcI6ao9242S5s2h35XfsM4B5o
+ Keugok9C+MagNjXIg7nMrOVCNqasedVMyv19jmE=
+X-Google-Smtp-Source: APXvYqzg32MH5decqHjgAwz1/0NlrkGcjLsvjWutrE0FtLUETA9tge85aPqT4FbVImIWliuZ7t/XSkbxBIATrB3QgH4=
+X-Received: by 2002:a37:bb85:: with SMTP id
+ l127mr27927380qkf.285.1559130738893; 
+ Wed, 29 May 2019 04:52:18 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7e8061f8-c6bb-4868-b89c-08d6e42b91e4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 11:48:30.1316 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: peng.fan@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4065
+References: <20190524201817.16509-1-jannh@google.com>
+ <20190525144304.e2b9475a18a1f78a964c5640@linux-foundation.org>
+ <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
+ <aa7f66ad-dab5-f0b6-ade9-7d3698d509a9@westnet.com.au>
+In-Reply-To: <aa7f66ad-dab5-f0b6-ade9-7d3698d509a9@westnet.com.au>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 29 May 2019 13:52:02 +0200
+Message-ID: <CAK8P3a2wA4R-V-W1+pPTaqVP7Dr=170G2a76AzASpx1xtRWj0Q@mail.gmail.com>
+Subject: Re: [PATCH] binfmt_flat: make load_flat_shared_library() work
+To: Greg Ungerer <gregungerer@westnet.com.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_044836_857071_DB308326 
-X-CRM114-Status: GOOD (  23.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190529_045220_898678_5C49F526 
+X-CRM114-Status: GOOD (  21.56  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe06:0:0:0:616 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [209.85.222.196 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,89 +85,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: Nicolas Pitre <nicolas.pitre@linaro.org>,
+ Linux/m68k <linux-m68k@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, kernel list <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob, Srinivas
-
-> Subject: [RFC 1/2] dt-bindings: imx-ocotp: Add fusable-node property
-
-Do you have any comments about this patch?
-
-Thanks,
-Peng.
-
-> 
-> Introduce fusable-node property for i.MX OCOTP driver.
-> The property will only be used by Firmware(eg. U-Boot) to runtime disable the
-> nodes.
-> 
-> Take i.MX6ULL for example, there are several parts that only have limited
-> modules enabled controlled by OCOTP fuse. It is not flexible to provide several
-> dts for the serval parts, instead we could provide one device tree and let
-> Firmware to runtime disable the device tree nodes for those modules that are
-> disable(fused).
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
-> 
-> Currently NXP vendor use U-Boot to set status to disabled for devices that
-> could not function,
-> https://source.codeaurora.org/external/imx/uboot-imx/tree/arch/arm/mach
-> -imx/mx6/module_fuse.c?h=imx_v2018.03_4.14.98_2.0.0_ga#n149
-> But this approach is will not work if kernel dts node path changed.
-> 
-> There are two approaches to resolve:
-> 
-> 1. This patch is to add a fusable-node property, and Firmware will parse
->    the property and read fuse to decide whether to disable or keeep enable
->    the nodes.
-> 
-> 2. There is another approach is that add nvmem-cells for all nodes that
->    could be disabled(fused). Then in each linux driver to use nvmem
->    api to detect fused or not, or in linux driver common code to check
->    device functionable or not with nvmem API.
-> 
-> 
-> To make it easy to work, we choose [1] here. Please advise whether it is
-> acceptable, because the property is not used by linux driver in approach [1].
-> Or you prefer [2] or please advise if any better solution.
-> 
-> Thanks.
-> 
->  Documentation/devicetree/bindings/nvmem/imx-ocotp.txt | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
-> b/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
-> index 7a999a135e56..e9a998588dbd 100644
-> --- a/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
-> +++ b/Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
-> @@ -21,6 +21,8 @@ Required properties:
-> 
->  Optional properties:
->  - read-only: disable write access
-> +- fusable-node: array of phandles with reg base and bit offset, this
-> +		property is used by Firmware to runtime disable nodes.
-> 
->  Optional Child nodes:
-> 
-> @@ -42,4 +44,7 @@ Example:
->  		tempmon_temp_grade: temp-grade@20 {
->  			reg = <0x20 4>;
->  		};
-> +
-> +		fusable-node = <&usdhc1 0x10 4
-> +				&usdhc2 0x10 5>;
->  	};
-> --
-> 2.16.4
+On Tue, May 28, 2019 at 12:56 PM Greg Ungerer
+<gregungerer@westnet.com.au> wrote:
+> On 27/5/19 11:38 pm, Jann Horn wrote:
+> > On Sat, May 25, 2019 at 11:43 PM Andrew Morton
+> > <akpm@linux-foundation.org> wrote:
+> >> On Fri, 24 May 2019 22:18:17 +0200 Jann Horn <jannh@google.com> wrote:
+> >>> load_flat_shared_library() is broken: It only calls load_flat_file() if
+> >>> prepare_binprm() returns zero, but prepare_binprm() returns the number of
+> >>> bytes read - so this only happens if the file is empty.
+> >>
+> >>> Instead, call into load_flat_file() if the number of bytes read is
+> >>> non-negative. (Even if the number of bytes is zero - in that case,
+> >>> load_flat_file() will see nullbytes and return a nice -ENOEXEC.)
+> >>>
+> >>> In addition, remove the code related to bprm creds and stop using
+> >>> prepare_binprm() - this code is loading a library, not a main executable,
+> >>> and it only actually uses the members "buf", "file" and "filename" of the
+> >>> linux_binprm struct. Instead, call kernel_read() directly.
+> >>>
+> >>> Cc: stable@vger.kernel.org
+> >>> Fixes: 287980e49ffc ("remove lots of IS_ERR_VALUE abuses")
+> >>> Signed-off-by: Jann Horn <jannh@google.com>
+> >>> ---
+> >>> I only found the bug by looking at the code, I have not verified its
+> >>> existence at runtime.
+> >>> Also, this patch is compile-tested only.
+> >>> It would be nice if someone who works with nommu Linux could have a
+> >>> look at this patch.
+> >>
+> >> 287980e49ffc was three years ago!  Has it really been broken for all
+> >> that time?  If so, it seems a good source of freed disk space...
+> >
+> > Maybe... but I didn't want to rip it out without having one of the
+> > maintainers confirm that this really isn't likely to be used anymore.
+>
+> I have not used shared libraries on m68k non-mmu setups for
+> a very long time. At least 10 years I would think.
+>
+> Regards
+> Greg
+>
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
