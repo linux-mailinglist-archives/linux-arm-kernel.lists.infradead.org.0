@@ -2,85 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CEF32E687
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 22:53:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B9262E69F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 22:55:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BaGZLBV/44dYRlg5GWchdaqoBYSJDzfsjNjMQEaiUhY=; b=ldzbUj7jyEEDke
-	C8hVX11KGEBYQQuh/qi4HaDNY9ifTbp0G6PGUuWSz4cckSGSEAMWu6y2RQvRNSlq24jE3m9ths7rY
-	V5GiYD9FJkgpgXWGtVcVzA6xbXHQ8ZiZGSYrBFzcni/VXhpQSbi3wbg8JZ5lug+jgV0YyauO4R7ON
-	XkbfqH7ZFPJiNal64d8cq7zTvb/dEfItlx9uAXJj6batroXaZNEALU0iqwJs4z9awTCf7jWgSKZ6S
-	y1XEnSK59rkhven/g0ctuhbo+MSBfEurNONW0HLqFkA7D08140DcY3gf7wSlOcACXoE7X3buCpyKb
-	eqnmw2H/bsCJrgYViJJw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ZooXboQ7yblX0zNX5cgMysBPiNrxidXp/p2MR68nPcE=; b=Ddr
+	noeqUs9bFGgriTSmNT6vCkuuyZBRHC+DpZ+MpwkK2yxP4X0x2jGho+96MarvK9pRH1rSegeaMZO//
+	Pi/pk8e4QpWIt1u8REsXmhSNPeetZje0DXCD3kq8lb8zKBwjFd6tVo0W5l0X/ILy/+B6vEo6+bpBN
+	B+uz/kIzEgDhrStk6tVj3Te5GDnNDDX5CtE9CaYQ0qikd9uMk6y39QKAD6VvCQVqWOpbpVf9ysLej
+	1qNswIXnBl8MXpmyzKvl3nCeYk95L6QLeBE1/zbDWLMEmPwKFwVNvJWT2DZ/4eyQYZVYxBJz7SqbQ
+	ZB46FmsqnMgbP23qcyAc7Rl/vXAKnfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW5Zs-0005fh-Q2; Wed, 29 May 2019 20:53:40 +0000
-Received: from mail-oi1-f170.google.com ([209.85.167.170])
+	id 1hW5bZ-0007Ll-Oj; Wed, 29 May 2019 20:55:25 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW5Zl-0005fD-Vx
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 20:53:36 +0000
-Received: by mail-oi1-f170.google.com with SMTP id a132so3255274oib.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 13:53:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=D2+H7EZcpvU21TkBJqjVERhn4aghur1shp/MYn/imNU=;
- b=a6c5JyxsK7PZJq2Uf21HJ/LdNqkn4EY5/nOcGNbZ/lFbn5fHSxXyp2qQLsvyrRxGQf
- UmiZAqfPiwWboKA/oZ9aiwPCZ9ZChXAu4+2qJOqSu2G3PATMpl5zrT5Kb+6Id/hMuvyt
- eVSFenhjCd058eyv5tDDvPWlRFAzewlKu+qz3ktqI/+Xj3YQc7764jotfNWpVjCRfDYt
- YAfQyWCzXvNdnmCa8ZjzRD6RPYOWWeGivqdcFrrSiyQ/8iRYA4Ic3wbwbmwTPxO1G8tV
- p6DI1UAIS1Usnq8w5Fcu/K9yvx6d6vuN1OFRuzrLLbIqwNoRm7xa1NLkxvvUOUphizHk
- yhqQ==
-X-Gm-Message-State: APjAAAU/pMw/ufLudnxyna523CTnJYAMJR7KesqwozwpPWQkRSnHm0Cz
- Dlwkqto7Zm7rPO1RFsRqI0py3RtM
-X-Google-Smtp-Source: APXvYqwKFaa6vBA8R7VemFgEF7B0fHF1HlvI65KafNhgblfxkuO2k4KbjuWGkPtXnsDXI92umtl/wQ==
-X-Received: by 2002:aca:b155:: with SMTP id a82mr164443oif.59.1559163207352;
- Wed, 29 May 2019 13:53:27 -0700 (PDT)
-Received: from mail-ot1-f49.google.com (mail-ot1-f49.google.com.
- [209.85.210.49])
- by smtp.gmail.com with ESMTPSA id c19sm240796otl.70.2019.05.29.13.53.26
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 13:53:26 -0700 (PDT)
-Received: by mail-ot1-f49.google.com with SMTP id l25so3459414otp.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 13:53:26 -0700 (PDT)
-X-Received: by 2002:a9d:7343:: with SMTP id l3mr58178960otk.63.1559163206194; 
- Wed, 29 May 2019 13:53:26 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190521085624.13665-1-colin.king@canonical.com>
-In-Reply-To: <20190521085624.13665-1-colin.king@canonical.com>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Wed, 29 May 2019 15:53:15 -0500
-X-Gmail-Original-Message-ID: <CADRPPNS5EbVrQ_ayvs=s7fYAc4JM1DfNeXwrmCXMvk6HzPouEQ@mail.gmail.com>
-Message-ID: <CADRPPNS5EbVrQ_ayvs=s7fYAc4JM1DfNeXwrmCXMvk6HzPouEQ@mail.gmail.com>
-Subject: Re: [PATCH][next] soc: fsl: fix spelling mistake "Firmaware" ->
- "Firmware"
-To: Colin King <colin.king@canonical.com>
+ id 1hW5bI-0006vf-Pz
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 20:55:10 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 45E0360A4E; Wed, 29 May 2019 20:55:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1559163306;
+ bh=a10cqXD3K1rvMJw3L43nt+iaIhgdpjlzVZD15xJBhaA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Vp0ytwik6JEWAQFO/yG5VFu3Z6MkCfPENawBVa/y59bquj5SpgduvRjs2xXk0Pdrg
+ xAShGzTeW+ZhTTQJhO/ke4tluOhH90QajK5uXiU5Odl6uJsGHhWHgplxm1hmnN+M9s
+ WYMKWEjF49mjefdBuETfWF9op/mMPhoYsCjvOGFs=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: jcrouse@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 00F036030E;
+ Wed, 29 May 2019 20:54:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1559163304;
+ bh=a10cqXD3K1rvMJw3L43nt+iaIhgdpjlzVZD15xJBhaA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=cSnhvA7BCJGATHq0sbtLanP6Lv34+whQEyH5M/1UWMBpLxrtk5CUaKV7c2SE1lSQd
+ 3/RMJ4i5inUbtIPaeQtlZgTz/sjprVqxt79t2tdd0hrHLlltv1Ng8V263HFJzEQIKv
+ 05ODYE8MeXimWoQrEpyB//MZ6ROo8rVnPKiBQOC0=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 00F036030E
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=jcrouse@codeaurora.org
+From: Jordan Crouse <jcrouse@codeaurora.org>
+To: freedreno@lists.freedesktop.org
+Subject: [PATCH v3 00/16] drm/msm: Per-instance pagetable support
+Date: Wed, 29 May 2019 14:54:36 -0600
+Message-Id: <1559163292-4792-1-git-send-email-jcrouse@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_135334_026074_5C694C08 
-X-CRM114-Status: GOOD (  14.63  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190529_135509_024793_8710B1FF 
+X-CRM114-Status: GOOD (  18.46  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.170 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,48 +93,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- lkml <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: David Airlie <airlied@linux.ie>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, dianders@chromium.org,
+ Wen Yang <wen.yang99@zte.com.cn>, Rob Herring <robh@kernel.org>,
+ Jonathan Marek <jonathan@marek.ca>, jean-philippe.brucker@arm.com,
+ Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
+ Mamta Shukla <mamtashukla555@gmail.com>, Kees Cook <keescook@chromium.org>,
+ linux-arm-msm@vger.kernel.org, Sharat Masetty <smasetty@codeaurora.org>,
+ Zhen Lei <thunder.leizhen@huawei.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
+ hoegsberg@google.com, Thomas Zimmermann <tzimmermann@suse.de>,
+ Robin Murphy <robin.murphy@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 21, 2019 at 3:57 AM Colin King <colin.king@canonical.com> wrote:
->
-> From: Colin Ian King <colin.king@canonical.com>
->
-> There is a spelling mistake in a pr_err message. Fix it.
->
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+This is v3 of the per-instance pagetable support. Biggest change in this
+revision is moving nearly all of the split pagetable support into
+io-pgtable-arm and setting up specific ops to handle the unique behavior
+of the split pagetables. Now that I've spent some time with it, I like how
+it turned out.
 
-Applied.  Thanks!
+For background:
 
-Regards,
-Leo
-> ---
->  drivers/soc/fsl/dpaa2-console.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/soc/fsl/dpaa2-console.c b/drivers/soc/fsl/dpaa2-console.c
-> index 9168d8ddc932..27243f706f37 100644
-> --- a/drivers/soc/fsl/dpaa2-console.c
-> +++ b/drivers/soc/fsl/dpaa2-console.c
-> @@ -73,7 +73,7 @@ static u64 get_mc_fw_base_address(void)
->
->         mcfbaregs = ioremap(mc_base_addr.start, resource_size(&mc_base_addr));
->         if (!mcfbaregs) {
-> -               pr_err("could not map MC Firmaware Base registers\n");
-> +               pr_err("could not map MC Firmware Base registers\n");
->                 return 0;
->         }
->
-> --
-> 2.20.1
->
+Per-instance pagetables allow the target GPU driver to create and manage
+an individual pagetable for each file descriptor instance and switch
+between them asynchronously using the GPU to reprogram the pagetable
+registers on the fly.
+
+Most of the heavy lifting for this is done in the arm-smmu-v2 driver by
+taking advantage of the newly added multiple domain API. The first patch in the
+series allows opted-in clients to direct map a device with
+iommu_request_dm_for_dev(). This bypasses the DMA domain creation in the IOMMU
+core which serves several purposes for the GPU by skipping the otherwise unused
+DMA domain and also keeping context bank 0 unused on the hardware (for better or
+worse, the GPU is hardcoded to only use context bank 0 for switching).
+
+The next several patches enable split pagetable support. This is used to map
+global buffers for the GPU so we can safely switch the TTBR0 pagetable for the
+instance.
+
+The last two arm-smmu-v2 patches enable auxillary domain support. Again the
+SMMU client can opt-in to allow auxiliary domains, and if enabled will create
+a pagetable but not otherwise touch the hardware. The client can get the address
+of the pagetable through an attribute to perform its own switching.
+
+After the arm-smmu-v2 patches are more than several msm/gpu patches to allow
+for target specific address spaces, enable 64 bit virtual addressing and
+implement the mechanics of pagetable switching.
+
+For the purposes of merging all the patches between
+
+drm/msm/adreno: Enable 64 bit mode by default on a5xx and a6xx targets
+
+and
+
+drm/msm: Add support to create target specific address spaces
+
+can be merged to the msm-next tree without dependencies on the IOMMU changes.
+Only the last three patches will require coordination between the two areas.
+
+Jordan Crouse (16):
+  iommu/arm-smmu: Allow client devices to select direct mapping
+  iommu: Add DOMAIN_ATTR_SPLIT_TABLES
+  iommu/io-pgtable-arm: Add support for AARCH64 split pagetables
+  iommu/arm-smmu: Add support for DOMAIN_ATTR_SPLIT_TABLES
+  iommu: Add DOMAIN_ATTR_PTBASE
+  iommu/arm-smmu: Add auxiliary domain support for arm-smmuv2
+  drm/msm/adreno: Enable 64 bit mode by default on a5xx and a6xx targets
+  drm/msm: Print all 64 bits of the faulting IOMMU address
+  drm/msm: Pass the MMU domain index in struct msm_file_private
+  drm/msm/gpu: Move address space setup to the GPU targets
+  drm/msm: Add support for IOMMU auxiliary domains
+  drm/msm: Add a helper function for a per-instance address space
+  drm/msm: Add support to create target specific address spaces
+  drm/msm/gpu: Add ttbr0 to the memptrs
+  drm/msm/a6xx: Support per-instance pagetables
+  drm/msm/a5xx: Support per-instance pagetables
+
+ drivers/gpu/drm/msm/adreno/a2xx_gpu.c     |  37 +++--
+ drivers/gpu/drm/msm/adreno/a3xx_gpu.c     |  50 ++++--
+ drivers/gpu/drm/msm/adreno/a4xx_gpu.c     |  51 ++++--
+ drivers/gpu/drm/msm/adreno/a5xx_gpu.c     | 163 ++++++++++++++++++-
+ drivers/gpu/drm/msm/adreno/a5xx_gpu.h     |  19 +++
+ drivers/gpu/drm/msm/adreno/a5xx_preempt.c |  70 ++++++--
+ drivers/gpu/drm/msm/adreno/a6xx_gpu.c     | 166 ++++++++++++++++++-
+ drivers/gpu/drm/msm/adreno/a6xx_gpu.h     |   1 +
+ drivers/gpu/drm/msm/adreno/adreno_gpu.c   |   7 -
+ drivers/gpu/drm/msm/msm_drv.c             |  25 ++-
+ drivers/gpu/drm/msm/msm_drv.h             |   5 +
+ drivers/gpu/drm/msm/msm_gem.h             |   2 +
+ drivers/gpu/drm/msm/msm_gem_submit.c      |  13 +-
+ drivers/gpu/drm/msm/msm_gem_vma.c         |  53 +++---
+ drivers/gpu/drm/msm/msm_gpu.c             |  59 +------
+ drivers/gpu/drm/msm/msm_gpu.h             |   3 +
+ drivers/gpu/drm/msm/msm_iommu.c           |  99 +++++++++++-
+ drivers/gpu/drm/msm/msm_mmu.h             |   4 +
+ drivers/gpu/drm/msm/msm_ringbuffer.h      |   1 +
+ drivers/iommu/arm-smmu.c                  | 176 ++++++++++++++++++--
+ drivers/iommu/io-pgtable-arm.c            | 261 +++++++++++++++++++++++++++---
+ drivers/iommu/io-pgtable.c                |   1 +
+ include/linux/io-pgtable.h                |   2 +
+ include/linux/iommu.h                     |   2 +
+ 24 files changed, 1082 insertions(+), 188 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
