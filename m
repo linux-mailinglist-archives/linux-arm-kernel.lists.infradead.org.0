@@ -2,125 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C84652E319
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 19:23:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 136422E327
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 19:25:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SHCzvUBZKhzYRhSFpKita0j7zdGb+B8Agv92tCm8QdA=; b=ZXtUF8eviPZt/m
-	yMCaOGG2e9i1xEQIvmhGdtyWe38NRCKjMiaydGzb9huQ2Je3ecvdmQE7wPR2cuU3gWKt9JSU4i3Y3
-	kIP84tqodOf4E1rc+hW8h/8FWMieB77CYyMqjzwFaPuD5HW7EJrmluhqlLnbSPybO9Qurl7Qj6q4b
-	PT4ecxKxbVSs2irEGtgKlaD539KVjiAqvCyFSgOW791I+NDFYrnqGyuEvm4ydLGfILBTTmgnPcr1s
-	xSkbnl0oiX2G8rBQOxTlvWwDIO/Utx58JO9iXlR7H1llyokHwAPDv7jyNU1qadh8qYUCLNuQ0jCo+
-	Nd/Adn+jiT54U44ZiLcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4f84qHM6O1cpOoQ0YSJFfv3fE0wbAWMHRrCtfB9C81o=; b=soDbhH10I9X4FT5+0DHLnoZMw
+	LPQeIQ6hlommWKva7dUkbR4fs6NqnjOf27QXcE7TrU3UZpJk95yng2948cVa5ZPO9JTAfJqrhD3OX
+	tV1U3OVHHhQY50bRrgrrsFSuwtal7dTqr0jcqpittwLRO5PMw9i0DAzw5pY0N0IUUVkHU+8HQQ0nZ
+	W05PpCng9n9zJKpJiQk7RgdDCzEzdNgUmsE1rmBv9PUoKRVwj/tAzh8FUHX5lW3g++mHxxNf4Jxty
+	K+kgLDkFbcRmD5BtYafwXIBD8f2Gtd6jPcc8jk0tDFwzBjS2Vzx1sFq62pAWsNKlfP35kjVXKNfhj
+	D8loiJkaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW2IW-0007rm-S1; Wed, 29 May 2019 17:23:32 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30])
+	id 1hW2Jx-0008F4-Kg; Wed, 29 May 2019 17:25:01 +0000
+Received: from esa3.hgst.iphmx.com ([216.71.153.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW2IP-0007rO-Dq
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 17:23:26 +0000
-Received: from pps.filterd (m0148460.ppops.net [127.0.0.1])
- by mx0a-00082601.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4THK58Y011968; Wed, 29 May 2019 10:23:12 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=facebook;
- bh=RYe2t34uPb4EOOnAoXFfT8xV9HqDtrzvfs1Xqg4S+wY=;
- b=cXNmnsk8g/po5cHt8l1Lzk2ulM/EyQtTNhh7l4R9sY3fEC2PFo8KiaT8MrPPEqFl2oxn
- q1W8ic0aFZ/0Da3V1a+/aY43pd68ArmblPf76Au3q1itgb4zpJUV5wD5eP875a62W6Yv
- 0Cy/ls86VIxn9UjXyJLtGOWVKbrCExJl5sk= 
-Received: from mail.thefacebook.com (mailout.thefacebook.com [199.201.64.23])
- by mx0a-00082601.pphosted.com with ESMTP id 2ssueerqqm-10
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Wed, 29 May 2019 10:23:11 -0700
-Received: from prn-hub01.TheFacebook.com (2620:10d:c081:35::125) by
- prn-hub06.TheFacebook.com (2620:10d:c081:35::130) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.1.1713.5; Wed, 29 May 2019 10:22:53 -0700
-Received: from NAM05-BY2-obe.outbound.protection.outlook.com (192.168.54.28)
- by o365-in.thefacebook.com (192.168.16.25) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.1.1713.5
- via Frontend Transport; Wed, 29 May 2019 10:22:52 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
- s=selector1-fb-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RYe2t34uPb4EOOnAoXFfT8xV9HqDtrzvfs1Xqg4S+wY=;
- b=nkrwJNth4Vz7lE29uXLOwoyXFy5vBCgoWKP448DFZz39Wdoc8oKpDkj/3PqHJoXU1GGv5WC+4SYmGh6DkcQ9lLZIoBbGGuP4OXRIxOR2XNKpOk0GmIyr3q2itXi9NefIFtSmVb6TcVpdCDFVVbGhZM+0kofufpDBWC4OYdBslPY=
-Received: from CY4PR15MB1269.namprd15.prod.outlook.com (10.172.177.11) by
- CY4PR15MB1687.namprd15.prod.outlook.com (10.175.119.148) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.22; Wed, 29 May 2019 17:22:51 +0000
-Received: from CY4PR15MB1269.namprd15.prod.outlook.com
- ([fe80::c026:bca5:3f4e:9b1f]) by CY4PR15MB1269.namprd15.prod.outlook.com
- ([fe80::c026:bca5:3f4e:9b1f%3]) with mapi id 15.20.1922.021; Wed, 29 May 2019
- 17:22:51 +0000
-From: Vijay Khemka <vijaykhemka@fb.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH] misc: aspeed-lpc-ctrl: make parameter optional
-Thread-Topic: [PATCH] misc: aspeed-lpc-ctrl: make parameter optional
-Thread-Index: AQHVAG4MVnagyLYdbEW1gTueyh4a2qZ6knKAgAd9oQA=
-Date: Wed, 29 May 2019 17:22:51 +0000
-Message-ID: <F6CAD6A7-3130-4649-B596-5FC53F4DBDFB@fb.com>
-References: <20190501223411.1655854-1-vijaykhemka@fb.com>
- <20190524155923.GA7516@kroah.com>
-In-Reply-To: <20190524155923.GA7516@kroah.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [2620:10d:c090:200::2:fd56]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ec4b2d6b-4063-4ec0-aeee-08d6e45a478b
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CY4PR15MB1687; 
-x-ms-traffictypediagnostic: CY4PR15MB1687:
-x-microsoft-antispam-prvs: <CY4PR15MB1687914A76306783454414E9DD1F0@CY4PR15MB1687.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2512;
-x-forefront-prvs: 0052308DC6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(39860400002)(346002)(366004)(396003)(376002)(136003)(199004)(189003)(73956011)(66446008)(64756008)(6116002)(76116006)(229853002)(66476007)(83716004)(66946007)(7736002)(53936002)(91956017)(305945005)(6512007)(2906002)(33656002)(6436002)(8676002)(81166006)(81156014)(36756003)(6486002)(14454004)(71200400001)(8936002)(71190400001)(478600001)(54906003)(4744005)(6916009)(102836004)(2616005)(6506007)(486006)(82746002)(186003)(476003)(446003)(11346002)(5660300002)(4326008)(25786009)(76176011)(99286004)(86362001)(68736007)(316002)(256004)(46003)(6246003)(66556008);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR15MB1687;
- H:CY4PR15MB1269.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: fb.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: o9Ram2e4sByPhhwAWawyaKr2dYdSuflwaaIay2dzfWOvuA6A/W6zStWnonFK8E6QatEDXzxqcYBCB1oUvrlBdRNPcDw50itHPDUfUAQRoRVTwvY4whCSUl1oPSZbhftRlu7w2bU4DmwltG+oa0Y90NtL+YY1806OyjcjjYfoD0hKpAuY6cQtYjwcLk0b3hEdwsCfLoObmehIMppqcrovAFk/zyDry+agManRC12TWQuDW7ScYvAfIOkTma7C6rdZnVj5hK7c7i1on6FmxecSJwkyu7R+A2XDEB9ateCs2WMWWN+WkuxKFnpXOOFruBKMUxvhIZej3UJJCulC6DIcLFqrfOmP0KP63nWaKZhBptQ1spZXKEoOjBqjMioBTNdFOCodw5NotHB4SLeBhSjI/jEkxjRz5mpg4DRkDekmy90=
-Content-ID: <B9BA4D932E651A4DA40E3894AC04DD39@namprd15.prod.outlook.com>
+ id 1hW2Jq-0008EQ-FA; Wed, 29 May 2019 17:24:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1559150694; x=1590686694;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=GmwkQjsql+93mksfGBKpKv07dJD3LbLgm/uiMZ0AHPo=;
+ b=IcNAdzEQHPgc+4aIKJ22ALt59JN4DyaiFuyqq7AuV8FrszVDq1OToeZF
+ hKjf8sR/F6JPKoG1cwNqrxYG6jRzy8nuuMNmwyadTVlWu/8wpt23WCvk9
+ sQO8rnL4kdphpgEw6lo9zN0rk9HcYDNtNOpoSuFILuvYCwlRbwx2hgMFl
+ MZdBwy8RUcnX8cOm8ukqkXZTfvlpBX4L1DKRCoPXwbEGywOET3j+DmvL/
+ mgLr35s4QlONX3Rs80dX6CCiyG2hwVPwxe2MRpxRV12UhMf37gbJEXA01
+ 5vO+c0Mgg9avdPKB1rpK0gwjJXI6aEsPTuVUn1afzqh8+kpELr33pBC/F g==;
+X-IronPort-AV: E=Sophos;i="5.60,527,1549900800"; d="scan'208";a="114284009"
+Received: from h199-255-45-15.hgst.com (HELO uls-op-cesaep02.wdc.com)
+ ([199.255.45.15])
+ by ob1.hgst.iphmx.com with ESMTP; 30 May 2019 01:24:45 +0800
+IronPort-SDR: a+vStgqvpc6Uh0GexzAsMiaaK9j75+cUaBAeZ4PzStqO2Pz9zuZdwl3jaUPIGnYvKcxNt1MCfu
+ ZOkTi8KUxiZiNR6XRS+5+mnwMlMsHlNpVDYAu6bEyVyN38N1dSy+sk583IyPQBLfR5oyXUwumO
+ 0XB0zeT0cd9sBh4lvPKUz9wf6foe9lXhA8y/L1pt3hk3En8MrzaHLiBTDG3itHLYVfmXI8ihcP
+ sLJITa19PAOs5+47rYFeV9M7PAjiYidtLphWB5n51Lxc8rNxAbTEnN5ltGxzCbg+3Nl/01nAhj
+ o/oNgfoxhFYk+ysxt7tyeCuw
+Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
+ by uls-op-cesaep02.wdc.com with ESMTP; 29 May 2019 10:02:17 -0700
+IronPort-SDR: qwx1yS5ZHNt0FCMSYqf+WJKfwEZzDe1m1COXuHEaXSEA1gbjcAghTgoZA/pAPmiHYjRRuhMwaS
+ 4YU0yZuBBWOR8HMPPKVU5iZV0wOR6jpU6gpjoSofyjnMX+Yj+CLJ54VyieeJDHrICAWbFkwZEE
+ 8fiPHmX0AWUyXp5ROGUHIaH1uox4cxYmupRrmw0K0LfN1+pPMJXpEiN7/T4ppYloUEVMdUMMYe
+ 0f9cT1yfCL6ZBGsZeJTclAy1epn3qLfhy4lQ1mzKbXDz2qH6YA/AnqpC7lGAh68rWc2HbLUYqk
+ pt8=
+Received: from r6220.sdcorp.global.sandisk.com (HELO [192.168.1.6])
+ ([10.196.157.143])
+ by uls-op-cesaip02.wdc.com with ESMTP; 29 May 2019 10:24:46 -0700
+Subject: Re: [RFT PATCH v5 3/5] cpu-topology: Move cpu topology code to common
+ code.
+To: Sudeep Holla <sudeep.holla@arm.com>, Jeffrey Hugo <jhugo@codeaurora.org>
+References: <20190524000653.13005-1-atish.patra@wdc.com>
+ <20190524000653.13005-4-atish.patra@wdc.com>
+ <20190529104801.GA13155@e107155-lin>
+From: Atish Patra <atish.patra@wdc.com>
+Message-ID: <b291e1da-47a7-32b9-ab36-90f65b2a961a@wdc.com>
+Date: Wed, 29 May 2019 10:24:44 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.6.1
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: ec4b2d6b-4063-4ec0-aeee-08d6e45a478b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 17:22:51.6068 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: vijaykhemka@fb.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR15MB1687
-X-OriginatorOrg: fb.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-29_09:, , signatures=0
-X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=888 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905290113
-X-FB-Internal: deliver
+In-Reply-To: <20190529104801.GA13155@e107155-lin>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_102325_636178_8E45D30B 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190529_102454_616890_C6B07A9B 
+X-CRM114-Status: GOOD (  24.65  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.153.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -141,30 +97,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Dasari <sdasari@fb.com>, Arnd Bergmann <arnd@arndb.de>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>, Andrew
- Jeffery <andrew@aj.id.au>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Albert Ou <aou@eecs.berkeley.edu>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Andreas Schwab <schwab@suse.de>, Anup Patel <anup@brainfault.org>,
+ Palmer Dabbelt <palmer@sifive.com>, Will Deacon <will.deacon@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
+ Jeremy Linton <jeremy.linton@arm.com>,
+ Morten Rasmussen <morten.rasmussen@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Otto Sabart <ottosabart@seberm.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ Ingo Molnar <mingo@kernel.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCu+7v09uIDUvMjQvMTksIDg6NTkgQU0sICJHcmVnIEtyb2FoLUhhcnRtYW4iIDxncmVna2hA
-bGludXhmb3VuZGF0aW9uLm9yZz4gd3JvdGU6DQoNCiAgICBPbiBXZWQsIE1heSAwMSwgMjAxOSBh
-dCAwMzozNDoxMVBNIC0wNzAwLCBWaWpheSBLaGVta2Egd3JvdGU6DQogICAgPiBNYWtpaW5nIG1l
-bW9yeS1yZWdpb24gYW5kIGZsYXNoIGFzIG9wdGlvbmFsIHBhcmFtZXRlciBpbiBkZXZpY2UNCiAg
-ICA+IHRyZWUgaWYgdXNlciBuZWVkcyB0byB1c2UgdGhlc2UgcGFyYW1ldGVyIHRocm91Z2ggaW9j
-dGwgdGhlbg0KICAgID4gbmVlZCB0byBkZWZpbmUgaW4gZGV2aWNldHJlZS4NCiAgICA+IA0KICAg
-ID4gU2lnbmVkLW9mZi1ieTogVmlqYXkgS2hlbWthIDx2aWpheWtoZW1rYUBmYi5jb20+DQogICAg
-PiAtLS0NCiAgICA+ICBkcml2ZXJzL21pc2MvYXNwZWVkLWxwYy1jdHJsLmMgfCA1OCArKysrKysr
-KysrKysrKysrKysrKystLS0tLS0tLS0tLS0tDQogICAgPiAgMSBmaWxlIGNoYW5nZWQsIDM2IGlu
-c2VydGlvbnMoKyksIDIyIGRlbGV0aW9ucygtKQ0KICAgIA0KICAgIEZpbGUgaXMgbm8gbG9uZ2Vy
-IGF0IHRoaXMgbG9jYXRpb24gOigNCg0KSSBoYXZlIHJlYmFzZWQgdG8gbmV3IGxvY2F0aW9uIGFu
-ZCBjb21iaW5lZCBib3RoIHBhdGNoZXMgYW5kIHN1Ym1pdHRlZCBhZ2Fpbi4gX18NCg0KUmVnYXJk
-cw0KLVZpamF5DQogICAgDQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 5/29/19 3:48 AM, Sudeep Holla wrote:
+> On Thu, May 23, 2019 at 05:06:50PM -0700, Atish Patra wrote:
+>> Both RISC-V & ARM64 are using cpu-map device tree to describe
+>> their cpu topology. It's better to move the relevant code to
+>> a common place instead of duplicate code.
+>>
+> 
+> I couldn't test this on any ARM64 server platforms, tested on Juno
+> and other embedded platforms.
+> 
+
+Jeff had tested earlier patch series on ARM64 server platform.
+Since then, the series has changed. Even though, I don't expect it break 
+ARM64, if it can be verified again that would be great.
+
+@Jeff: Can you give it a shot if you have some time ?
+
+> Tested-by: Sudeep Holla <sudeep.holla@arm.com>
+> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+> 
+
+Thanks!
+
+>> Signed-off-by: Atish Patra <atish.patra@wdc.com>
+>> Tested-by: Jeffrey Hugo <jhugo@codeaurora.org>
+>> ---
+>>   arch/arm64/include/asm/topology.h |  23 ---
+>>   arch/arm64/kernel/topology.c      | 303 +-----------------------------
+>>   drivers/base/arch_topology.c      | 296 +++++++++++++++++++++++++++++
+>>   include/linux/arch_topology.h     |  28 +++
+>>   include/linux/topology.h          |   1 +
+>>   5 files changed, 329 insertions(+), 322 deletions(-)
+>>
+> 
+> [...]
+> 
+>> diff --git a/arch/arm64/kernel/topology.c b/arch/arm64/kernel/topology.c
+>> index 0825c4a856e3..6b95c91e7d67 100644
+>> --- a/arch/arm64/kernel/topology.c
+>> +++ b/arch/arm64/kernel/topology.c
+>>
+> 
+> [...]
+> 
+>> -static int __init parse_cluster(struct device_node *cluster, int depth)
+>> -{
+>> -	char name[10];
+>> -	bool leaf = true;
+>> -	bool has_cores = false;
+>> -	struct device_node *c;
+>> -	static int package_id __initdata;
+>> -	int core_id = 0;
+> 
+> [Ultra minor nit]: you seem to have reordered the above declaration when
+> you moved, just noticed as it showed up when comparing.
+> 
+
+Arrgh. Sorry!
+
+I think I was trying to fix a checkpatch or something and forgot to 
+revert. I will update it.
+
+>> diff --git a/drivers/base/arch_topology.c b/drivers/base/arch_topology.c
+>> index 1739d7e1952a..20a960131bee 100644
+>> --- a/drivers/base/arch_topology.c
+>> +++ b/drivers/base/arch_topology.c
+> 
+> [...]
+> 
+>> +
+>> +static int __init parse_cluster(struct device_node *cluster, int depth)
+>> +{
+>> +	char name[10];
+>> +	bool leaf = true;
+>> +	bool has_cores = false;
+>> +	int core_id = 0;
+>> +	static int package_id __initdata;
+>> +	struct device_node *c;
+>> +	int i, ret;
+>> +
+> 
+> [...]
+> 
+>> +#if defined(CONFIG_ARM64) || defined(CONFIG_RISCV)
+>> +void update_siblings_masks(unsigned int cpu);
+>> +#endif
+>> +void remove_cpu_topology(unsigned int cpuid);
+>> +
+> 
+> Another thing(not a block and we can do it once this is merged) is to
+> remove these #ifdefs
+> 
+
+This #ifdef is removed in patch 4.
+
+But we should remove the other ones around init_cpu_topology, 
+parse_dt_topology and friends in a follow up patch once this is merged.
+
+> --
+> Regards,
+> Sudeep
+> 
+
+
+-- 
+Regards,
+Atish
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
