@@ -2,57 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 093C62D95E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:47:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEC402D962
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:47:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+nWuvKMKj/X5wIFYBzq7YdkloIWk90ZZfTTuON9Jj0A=; b=qHv2xxYNgPSpyy
-	/0XJCfssNsBkNk3fKj++kMCETlnzI0TmVkxnIV3SAs2DDFWsSoVFE6+DBk06SHlIfrkhgqA+RZnnR
-	Wr+mhU7jCu98+ZnuO+X2fpHVvZfm0lqQ4gY/870uqfvKJORHzHxqxkPBUzNiCVyAxwlQ4VQbp4rGc
-	GCVyVhJDquwHwq5cUSaaAvzk5ysupS0Sx07XPmkVVryUtm7zWrUJPsqinVTWHMSFLaxdqZSGzRUwQ
-	ddfFAx5yGvM/ObHhvnaD4GjeNh5e98FHXGG1/D4EfkJuF+EU2MGKYkTi4boBqikWRcowmB09FyJTO
-	zA5blmH5VvAkCcp1ECvw==;
+	List-Owner; bh=L6ZwSdHwdvR2E+TDzhgBdOxndPzz2Sj3aFCAEpB3zuE=; b=b4XoL3WfL2FV32
+	8+ROql1/iczxELHfZdXiOJSkvicTgm6yn7NbSWgHMdVEunhX718eoQqKw6zPGZLv+UIh03wj2vNNj
+	1tjnez+yJif7QU3G0Va0tlwILWbNcQFM4q2yNhTCJSENMmW1AhpT+tw3TKOUtL7fUPsE2R0+OTNa1
+	Libzbe+U6qIAehqqDaX6/1Wc558enaFf+3k388FnwThR4moSIx/3Aju4HhrsVW3T7idb9OgYiK9fg
+	0rc/C96GbOKmJvDq++7H+j2ZYGvNIV/EbYcwahkTo/9+Phw8ZlUr/ILXfvrNUyKHDr7KIsdPrCHYx
+	OJzi+INhNan5F0MFgUSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVvAv-0006xi-R9; Wed, 29 May 2019 09:47:13 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hVvB9-0007Cp-UA; Wed, 29 May 2019 09:47:27 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvAo-0006xM-Kn
- for linux-arm-kernel@bombadil.infradead.org; Wed, 29 May 2019 09:47:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UKyuDAkPKwwSacsWVLKxWWxL9wOlFAut+2qC4adY+g4=; b=OSsvfdXoF+PKP3Ps79Tocy7ZF
- 0NxLVYGDnDwqwOnRMnQgZKSLNAO3uPwcCV7wvnvIEbGlkpbS6BFpA1i3qGsWFq1EMlLbgG2Bqb21F
- UsiBSXwQOWQ63zCkfquOdf1UpQLXmHGnuKsAlyM5ziWogY05bTf04/tJuEKkXJ/KjXFEAEgAFuBBC
- 4wptVKi0WRDAEZ7/HrenNxIk9WhNwRQtUOZT/vEJeexx8784DYbvGikfyHQhWek8MbhJ47d3r/DKm
- iHiofNg4NDTIQd4+O9WGrbSpUlfQNPtHr0b7nre2swHdpMwICPsCSdsHgszNGje4a82P6stlW5QyC
- vdNZ5WMsw==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVvAj-00036F-S6; Wed, 29 May 2019 09:47:02 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 7F5A4201A7E42; Wed, 29 May 2019 11:46:59 +0200 (CEST)
-Date: Wed, 29 May 2019 11:46:59 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Raphael Gault <raphael.gault@arm.com>
-Subject: Re: [RFC 4/7] arm64: pmu: Add function implementation to update
- event index in userpage.
-Message-ID: <20190529094659.GK2623@hirez.programming.kicks-ass.net>
-References: <20190528150320.25953-1-raphael.gault@arm.com>
- <20190528150320.25953-5-raphael.gault@arm.com>
+ id 1hVvAs-0006yc-7F; Wed, 29 May 2019 09:47:13 +0000
+X-UUID: 13efe01553a0480b8f1e9893897760b7-20190529
+X-UUID: 13efe01553a0480b8f1e9893897760b7-20190529
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1913855606; Wed, 29 May 2019 01:47:05 -0800
+Received: from mtkmbs03n2.mediatek.inc (172.21.101.182) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 29 May 2019 02:47:04 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs03n2.mediatek.inc (172.21.101.182) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 29 May 2019 17:47:02 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 29 May 2019 17:47:02 +0800
+Message-ID: <1559123222.6582.2.camel@mtksdaap41>
+Subject: Re: [PATCH 3/3] drm: mediatek: unbind components in mtk_drm_unbind()
+From: CK Hu <ck.hu@mediatek.com>
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Wed, 29 May 2019 17:47:02 +0800
+In-Reply-To: <20190527045054.113259-4-hsinyi@chromium.org>
+References: <20190527045054.113259-1-hsinyi@chromium.org>
+ <20190527045054.113259-4-hsinyi@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190528150320.25953-5-raphael.gault@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-TM-SNTS-SMTP: 0D67655A3172A9E677B28064701E21555F16641623DFE39541481F10AB8379D22000:8
+X-MTK: N
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190529_024710_316707_24427C20 
+X-CRM114-Status: GOOD (  17.17  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,34 +72,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, acme@kernel.org, mingo@redhat.com,
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 04:03:17PM +0100, Raphael Gault wrote:
-> +static int armv8pmu_access_event_idx(struct perf_event *event)
-> +{
-> +	if (!(event->hw.flags & ARMPMU_EL0_RD_CNTR))
-> +		return 0;
-> +
-> +	/*
-> +	 * We remap the cycle counter index to 32 to
-> +	 * match the offset applied to the rest of
-> +	 * the counter indeces.
-> +	 */
-> +	if (event->hw.idx == ARMV8_IDX_CYCLE_COUNTER)
-> +		return 32;
-> +
-> +	return event->hw.idx;
+Hi, Hsin-Yi:
 
-Is there a guarantee event->hw.idx is never 0? Or should you, just like
-x86, use +1 here?
+On Mon, 2019-05-27 at 12:50 +0800, Hsin-Yi Wang wrote:
+> Unbinding components (i.e. mtk_dsi and mtk_disp_ovl/rdma/color) will
+> trigger master(mtk_drm)'s .unbind(), and currently mtk_drm's unbind
+> won't actually unbind components. During the next bind,
+> mtk_drm_kms_init() is called, and the components are added back.
+> 
+> .unbind() should call mtk_drm_kms_deinit() to unbind components.
+> 
+> And since component_master_del() in .remove() will trigger .unbind(),
+> which will also unregister device, it's fine to remove original functions
+> called here.
+> 
+> Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c | 8 +++-----
+>  1 file changed, 3 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index 57ce4708ef1b..bbfe3a464aea 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -311,6 +311,7 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+>  static void mtk_drm_kms_deinit(struct drm_device *drm)
+>  {
+>  	drm_kms_helper_poll_fini(drm);
+> +	drm_atomic_helper_shutdown(drm);
 
-> +}
+This looks not related to this patch. This patch is related to the
+unbind timing. You could separate this to an independent patch.
+
+>  
+>  	component_unbind_all(drm->dev, drm);
+>  	drm_mode_config_cleanup(drm);
+> @@ -397,7 +398,9 @@ static void mtk_drm_unbind(struct device *dev)
+>  	struct mtk_drm_private *private = dev_get_drvdata(dev);
+>  
+>  	drm_dev_unregister(private->drm);
+> +	mtk_drm_kms_deinit(private->drm);
+>  	drm_dev_put(private->drm);
+> +	private->num_pipes = 0;
+
+This looks not related to this patch. This patch is related to the
+unbind timing. You could separate this to an independent patch.
+
+Regards,
+CK
+
+>  	private->drm = NULL;
+>  }
+>  
+> @@ -568,13 +571,8 @@ static int mtk_drm_probe(struct platform_device *pdev)
+>  static int mtk_drm_remove(struct platform_device *pdev)
+>  {
+>  	struct mtk_drm_private *private = platform_get_drvdata(pdev);
+> -	struct drm_device *drm = private->drm;
+>  	int i;
+>  
+> -	drm_dev_unregister(drm);
+> -	mtk_drm_kms_deinit(drm);
+> -	drm_dev_put(drm);
+> -
+>  	component_master_del(&pdev->dev, &mtk_drm_ops);
+>  	pm_runtime_disable(&pdev->dev);
+>  	of_node_put(private->mutex_node);
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
