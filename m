@@ -2,44 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C7302D55F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 08:11:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 173C12D594
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 08:35:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uO0opy3rxcKlPTBqrkXMJFpaSVTvKLZcDBGSE5YIZfw=; b=vD8mVqLVaEo2Ap
-	NptEhJfXVuQu6zrCxMGwciY0PuijQp2UOp4MUZxcAC1/JsJMctZfltBRUYDmqSWY89lvDbrzbfaCG
-	w5d1wibTVTXkklVWqrtUBKK7EfCGeM366cb4DDvfGplflEsceSBe6DF8BCasNs7iYyaDsEZQIPWO7
-	Y4XeamGuOIX8X3Z85SaEnaKXuPrC4WVJn+J/dkcOsCgc88OLHPLzc4GiSh2Wv91Um7P8EJ13Fs1fx
-	Oz70j+k+Vz6wRp0B6E4W7KR3iiFgi5NiipTN7AUhAaBCQ9BFlwbz1FI/A2W6ybtUVs0pwOqUnhq1F
-	Eny+BQbeyKQ209aNUbfw==;
+	List-Owner; bh=fiyevErRdsRsJAMeXUj4a7S2WDdAjfonBwAj3eaFaHA=; b=UYiNj3wrWoA7Jj
+	4uAPNToKxTbim8YKgfMUSXK4VQnt7dALvw9oopIXQVJndOD9YIP/ZfNGF18BQ2tQbIxjh4l0woMac
+	A1js5QdNubl5qvsmLcGnXSGO+6ssQardlYRa25GcgEYsnv8hQy2xhO2qJTyuJgpZxzaWVev1pwEZ3
+	DsqXkTT7cO0DQpZqSqaiSk9FjGkmyAZALvkygvkx4IiTYmzGNp06IaBYWaCJ8xXvoG1riKU6uimbR
+	dUxJ3JMzApZsHLjO4I3VEP43whKit/hnbJD25ibe0tRPRYTe0NaUWEekIjgR3bfIApJWUExbsaOv9
+	giYT9MOgZObbilw+nXSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVroD-0006Yq-EQ; Wed, 29 May 2019 06:11:33 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.90_1 #2 (Red
- Hat Linux)) id 1hVro6-0006Yh-Is; Wed, 29 May 2019 06:11:26 +0000
-Date: Tue, 28 May 2019 23:11:26 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
-Message-ID: <20190529061126.GA18124@infradead.org>
-References: <20190517144931.GA56186@arrakis.emea.arm.com>
- <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
- <20190521182932.sm4vxweuwo5ermyd@mbp>
- <201905211633.6C0BF0C2@keescook>
- <6049844a-65f5-f513-5b58-7141588fef2b@oracle.com>
- <20190523201105.oifkksus4rzcwqt4@mbp>
- <ffe58af3-7c70-d559-69f6-1f6ebcb0fec6@oracle.com>
- <20190524101139.36yre4af22bkvatx@mbp>
- <c6dd53d8-142b-3d8d-6a40-d21c5ee9d272@oracle.com>
- <CAAeHK+yAUsZWhp6xPAbWewX5Nbw+-G3svUyPmhXu5MVeEDKYvA@mail.gmail.com>
+	id 1hVsB1-000492-8L; Wed, 29 May 2019 06:35:07 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVsAr-00048M-Ot
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 06:34:59 +0000
+Received: by mail-oi1-x244.google.com with SMTP id v2so1124967oie.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 May 2019 23:34:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=32oNNfOBxR/dIJDiqOCCeX3FJ2erRbG9x3SCfpFAaFc=;
+ b=A0ThL7X9hLFBwyv6iK++tvStLIKMPWGta2pKdZiVten8r/ND4jT+vyGCCE5oL3sH4K
+ APmx7ul95R/6gOgmEKWfoVrpaGhcozdHFgqQI4OAWBFMI0KT5KqgwRam+1TzGFVE8UzN
+ AAIJVGcoqGd8spLrUOFgdK44JrEKVFmEoFOD6ccDslM4FoQiBPlpqGODKufQm61utEkj
+ IyY35WqR1UX4/a4EJMV6Gi9xkOO4K6Zz4YvKInXqb3CR5bnZ1pP9WLciOAz6pR/rykjo
+ 6wQ4dz2Xsskpd3n7gHc9OUls52XyE3gyNqL52tMRc3LNph5j4qxbiRJWnhoqBxUr2S7E
+ wb8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=32oNNfOBxR/dIJDiqOCCeX3FJ2erRbG9x3SCfpFAaFc=;
+ b=MBmbOo3FNvFczciuPNHZtoWe6qdmpJiiwGM8xjYbVUQq4bKLWBzfF+QrV1eVXsEdqc
+ ozLxyP9qMUYHifIATDaHCZUYbho2oC8DkrhtUu3FVsJKDlUsno1Q26+DNLExz9CfsJIX
+ fZA9kK/aQQEItjXgBYggZxJtYAF5cZ7sD5wYMBF63rKEJ08xBY5LlPP7SHT5kMKhyGAr
+ sGCw2zQHveC/xekChdsXynLuP8Ty1kBt+ZpqpvrOUta1yRhze3Q9vRb7TtfGGzjDfT4r
+ XAdKqEcl2xpJUy8E1gUf28Vy+HbWGgbgdmTA+tWsaLToUXaowtNvkSYJ4e5nYA4T2bSJ
+ HwYQ==
+X-Gm-Message-State: APjAAAUoej43tosCFRZ5pheiln64XGkk6q74xl4KjB94uS3TZXokXrvL
+ 7CRHW0dLYCRUOns9/txP2v0ZXQ==
+X-Google-Smtp-Source: APXvYqxHsfGGqbhU2XvuVpniJ59bCKj++ACikAww1d20dZ3Q6JWKSdvvP6mQjxwxg5tf7cOqfRU+xw==
+X-Received: by 2002:aca:342:: with SMTP id 63mr5026668oid.10.1559111695072;
+ Tue, 28 May 2019 23:34:55 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li808-42.members.linode.com.
+ [104.237.132.42])
+ by smtp.gmail.com with ESMTPSA id l184sm6005234oih.49.2019.05.28.23.34.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 28 May 2019 23:34:54 -0700 (PDT)
+Date: Wed, 29 May 2019 14:34:49 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v4 00/30] coresight: Support for ACPI bindings
+Message-ID: <20190529063449.GA15808@leoy-ThinkPad-X240s>
+References: <1558521304-27469-1-git-send-email-suzuki.poulose@arm.com>
+ <20190528051924.GA19112@leoy-ThinkPad-X240s>
+ <20190528145126.GA20714@xps15>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAAeHK+yAUsZWhp6xPAbWewX5Nbw+-G3svUyPmhXu5MVeEDKYvA@mail.gmail.com>
-User-Agent: Mutt/1.9.2 (2017-12-15)
+In-Reply-To: <20190528145126.GA20714@xps15>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190528_233457_814319_9DB48FFB 
+X-CRM114-Status: GOOD (  29.36  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -51,56 +100,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 04:14:45PM +0200, Andrey Konovalov wrote:
-> Thanks for a lot of valuable input! I've read through all the replies
-> and got somewhat lost. What are the changes I need to do to this
-> series?
+On Tue, May 28, 2019 at 08:51:26AM -0600, Mathieu Poirier wrote:
+> Good day,
 > 
-> 1. Should I move untagging for memory syscalls back to the generic
-> code so other arches would make use of it as well, or should I keep
-> the arm64 specific memory syscalls wrappers and address the comments
-> on that patch?
+> On Tue, May 28, 2019 at 01:19:24PM +0800, Leo Yan wrote:
+> > Hi Suzuki,
+> > 
+> > On Wed, May 22, 2019 at 11:34:33AM +0100, Suzuki K Poulose wrote:
+> > > This series adds the support for CoreSight devices on ACPI based
+> > > platforms. The device connections are encoded as _DSD graph property[0],
+> > > with CoreSight specific extensions to indicate the direction of data
+> > > flow as described in [1]. Components attached to CPUs are listed
+> > > as child devices of the corresponding CPU, removing explicit links
+> > > to the CPU like we do in the DT.
+> > > 
+> > > The majority of the series cleans up the driver and prepares the subsystem
+> > > for platform agnostic firwmare probing, naming scheme, searching etc.
+> > > 
+> > > We introduce platform independent helpers to parse the platform supplied
+> > > information. Thus we rename the platform handling code from:
+> > > 	of_coresight.c  => coresight-platform.c
+> > > 
+> > > The CoreSight driver creates shadow devices that appear on the Coresight
+> > > bus, in addition to the real devices (e.g, AMBA bus devices). The name
+> > > of these devices match the real device. This makes the device name
+> > > a bit cryptic for ACPI platform. So this series also introduces a generic
+> > > platform agnostic device naming scheme for the shadow Coresight devices.
+> > > Towards this we also make changes to the way we lookup devices to resolve
+> > > the connections, as we can't use the names to identify the devices. So,
+> > > we use the "fwnode_handle" of the real device for the device lookups.
+> > > Towards that we clean up the drivers to keep track of the "CoreSight"
+> > > device rather than the "real" device. However, all real operations,
+> > > like DMA allocation, Power management etc. must be performed on
+> > > the real device which is the parent of the shadow device.
+> > > 
+> > > Finally we add the support for parsing the ACPI platform data. The power
+> > > management support is missing in the ACPI (and this is not specific to
+> > > CoreSight). The firmware must ensure that the respective power domains
+> > > are turned on.
+> > > 
+> > > Applies on v5.2-rc1
+> > > 
+> > > Tested on a Juno-r0 board with ACPI bindings patch (Patch 31/30) added on
+> > > top of [2]. You would need to make sure that the debug power domain is
+> > > turned on before the Linux kernel boots. (e.g, connect the DS-5 to the
+> > > Juno board while at UEFI). arm32 code is only compile tested.
+> > 
+> > After I applied this patch set, I found all device names under
+> > '/sys/bus/event_source/devices/cs_etm/sinks/' have been changed as
+> > below on my DB410c board:
+> > # ls /sys/bus/event_source/devices/cs_etm/sinks/
+> > tmc_etf0  tmc_etr0  tpiu0
+> 
+> Yes, that is the expected behavior.
+> 
+> > 
+> > This leads to below command failure when open PMU device:
+> > # perf record -e cs_etm/@826000.etr/ --per-thread uname
+> > failed to set sink "826000.etr" on event cs_etm/@826000.etr/ with 2 (No such file or directory)
+> 
+> Correct.
+> 
+> > 
+> > I must use below command so that perf can match string with the
+> > device name under '/sys/bus/event_source/devices/cs_etm/sinks/':
+> > # perf record -e cs_etm/@tmc_etr0/ --per-thread uname
+> 
+> Correct.
+> 
+> > 
+> > Seems to me, this is an unexpected change and when I worked on the
+> > patch set v2, IIRC that version still can use '826000.etr' to open PMU
+> > device.
+> 
+> Correct - v2 did not address the new naming convention for devices present under
+> 'event_source', something that was corrected in v3.
 
-It absolutely needs to move to common code.  Having arch code leads
-to pointless (often unintentional) semantic difference between
-architectures, and lots of boilerplate code.
-
-Btw, can anyone of the arm crowd or Khalid comment on the linux-mm
-thread on generic gup where I'm dealing with the pre-existing ADI
-case of pointer untagging?
+Thanks for confirmation, Mathieu.
 
 _______________________________________________
 linux-arm-kernel mailing list
