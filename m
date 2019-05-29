@@ -2,86 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03A962E3FA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 20:00:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E00A2E414
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 20:09:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xa9mDr1TcquDYQoBar4qdDxOykC9AeZcOfAf9F/8nS4=; b=Ei0Q6PJZ5+6gZE
-	4myU0CdwSBo+lu3CDXgk6zjC6oh1wTocyPlGEFqdiZQKfWna2oB8hXMbYxHo3ZR1ioaf+CKOVGHpa
-	3VU86SEXnsMiMt4plRvbnRZZHhXQFyMJhaZSDD5P+6svkVTaSOubHy4azk/t58i8ULKpbL6azY4Hz
-	bX8/cbt1ZDlb0oXcohGs0L39ZRnMUUnNbTdDTaEQQl90fDEMw3ChQWqnMGE6t8DYC7eZ3+FzKIq6z
-	PzAMlWLh/3hiNgPvWsJsGPU4ZuzmEYPDf0AwRATDrEsd7+jJ5m7fUPTymXvvQBmklzUkgZ+fkOkW0
-	VkFSjktFbIizPoS0Dcww==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hxrjZW30r1ReDTnB0VdQCY1kFKefEKNsawPRLZtE/EI=; b=He2Z9Sat559vEK
+	i/8+6hTokpPqfyeQzIJsIXpNL5hZF1P+f4qQ58OhfdeaUkWOa1c/9gqeRfCzA0uQUjvbwfBJiX5gd
+	y2kcUaaQ8ulim4sLBMzCuQERX8XAISti7/uixt6+Y26VPhSaJQy62T0A3p13sy9E9qjp38G3F272K
+	x/JIx8QoZTHvgVSYTfMTD80KExQ/O2CC84pl02U5EXExUWYC8pMDjdDO1qza+M338JE1Vjj1RHtT4
+	NnDvsBiRoYgtxDB5JBNc9zPvWme6CuWIRB2bw1QB2k6TxTnhKCfXeg0OHTiADQzcELAuRFLuZABqm
+	qr4/q9q2ByqgPSy/TR2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW2s5-0004CN-9Q; Wed, 29 May 2019 18:00:17 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1hW30N-00065H-LR; Wed, 29 May 2019 18:08:51 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW2rx-0003cI-04
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 18:00:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1559152784;
- bh=7XibJJMuc3gBDgywBVlMCtRhxW465B1HJ06mrxSAsUE=;
- h=X-UI-Sender-Class:Subject:From:To:Cc:References:Date:In-Reply-To;
- b=JZSdPvPZyjtbXTW9tH6mVZn5xq09RmfdIEVCgQP1kFn5o7MkoFGYgrfF0NmojvgyT
- 1RQlFckN176BOom4F7PgiDoJ3/x/5k2rNzQeMmijuXrC5rhQNxHQZNLGuYt/D3j3gx
- dVn1wb4zPg2djFQ8OZDS9nb414RtEojXQr/rwFng=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.166] ([37.4.249.160]) by mail.gmx.com (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MHG8g-1hRhHU21se-00DDtz; Wed, 29
- May 2019 19:59:44 +0200
-Subject: Re: usb: dwc2: RODATA_FULL_DEFAULT_ENABLED causes kernel oops
-From: Stefan Wahren <wahrenst@gmx.net>
-To: Minas Harutyunyan <hminas@synopsys.com>,
- Felipe Balbi <felipe.balbi@linux.intel.com>
-References: <0ae6261e-96b3-cf8b-d523-a6b8851c951b@gmx.net>
- <CAKv9HNaJg3OB3DrC_aJe0M97dFP9A0_Jew_wFqReHvzDoFF+sg@mail.gmail.com>
- <a908bca3-b410-d58f-1011-4f47eca85da4@gmx.net>
-Message-ID: <1765e293-c0a2-e3b6-4942-fdf3f3cea063@gmx.net>
-Date: Wed, 29 May 2019 19:59:41 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hW30F-00064L-NQ; Wed, 29 May 2019 18:08:45 +0000
+Received: by mail-ot1-x343.google.com with SMTP id t24so2944146otl.12;
+ Wed, 29 May 2019 11:08:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZqciIyIwhNV/sHfg7yKs2DBtNwzOc9301XGXD64ZpLU=;
+ b=F6umrA5vVhg7FYm3YxM9CPXIT1/fC0p8oz3rQuWtSZIr1DLRRLP447fdg1z10a8RXA
+ s3stQquLSBD9WnhT/YctqoLpNa8q1A/NhiirquY7/qTDqQHbGvnKWMdTeyhV8tRhgjap
+ p5nbNeWyi9P1yOZ7PicltL76xoa1CVyEFvCxJxDwyTK2fSQBnJO685cEmgSVf9od4FVS
+ ruUm2h138e6Fc0WLClAarGD6gppw0TSgWM/XWXztUvBLRjrzhC45oVCfmpfazbskvTMw
+ mO96D5V0oyU0ZxLYS2S+aueSYQJwV9nebXl8BKT+D1JAhuBvBFXTT8wvilCA34xA7+xz
+ DA/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZqciIyIwhNV/sHfg7yKs2DBtNwzOc9301XGXD64ZpLU=;
+ b=GPlNkAQgZ74mso9lCTaU+QC8AJqsPsTGM3/7/9U3kFWN0Ore+U1XjzxVtS0Hvgi7pe
+ +hPPXPYd+E0x+Yr9vC0AbiKomXHZEED2gAYzkEE2N8lULFFtu3r1oHzXBcZgQVImWmbT
+ xpxwgB08Fyc9DZLv6yi5mdXDo4dqn2REvEcC5kNnIBIGjTVdBwDMMsI2BkS6/tdPgetV
+ KxN6RzZ9FeDWBPqTAhSoL93cJZvhN3hzybUPf2ds/+x1AeaEPF1A7/rLmSNCUurDUkgr
+ 7sRc5hwCqxzz/sBgTu2BSX3xIJ9XBFtYjRkNmp0w6DK6wwIXeO1nFU757I/eyvG1rlqy
+ 7oTw==
+X-Gm-Message-State: APjAAAXkAmGLajUUniAlQM31sekLnanuNwWo8gupYM9xcPcOPXW7BcN4
+ YRod6E4vKTSJwXg+nKnEcFMvDx+c0zEGDyXQWsQ=
+X-Google-Smtp-Source: APXvYqxwk7iPwTnvooR6G+8asbXi2Yw5DbYyD1vDk+TyUrgU9x/Eq/8XReg/kqx8GMzQxm6aPn58ViHbD6tOsA/Ctv4=
+X-Received: by 2002:a9d:32a6:: with SMTP id u35mr69739914otb.81.1559153316582; 
+ Wed, 29 May 2019 11:08:36 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <a908bca3-b410-d58f-1011-4f47eca85da4@gmx.net>
-Content-Language: en-US
-X-Provags-ID: V03:K1:mUFCBMVahBmZYHJb/LAv73s6r3HZbxtjh7mQx/Dl8htmdZ/t7Bs
- 7DirHKfIBJMaB6MSkZypPbO2lkCC2wkE41vHX3ePR6mUxV03lKlvuOoViJKMshRAok5JbmS
- Bj03kNFI9F/2hNfjiDvzAKXo78kLas+se+vbcJdfyGiy/dbuHS/YzkUu2fxHDVH+B/9Cusm
- UcI3BYsZkgIHHBmMj4g8Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:7QXFQJOxifg=:7ijpr0RfE8w7mt4UMkuG5+
- g+AOU2UMrUY37zDRA3I5NntA6Ry0s3278fImr+ABQsfalFzCmAhvDHwwP7J7zh31Bo3yuS+67
- KEYpYvpDKYZSrnoIA1vX/O/LLRTtSOhomDm1vT2QPQ7JDbYT48OD9wrXcvhicL5IbHClEHXva
- Q6wQiH0r0Y355mJeyfIJedl7UzT8pVmCLcP68ZdsoGNiozp9+yvOWeYV7ClqToDXDDXTZ/p7m
- W5jnOAiQ+M9xsj81ySl6MyLQzLZx79+7y5cMgGhpj10GCod5rSoEvHnUtdWSBXweqcOFGroB7
- QJE2ANHGoYa7rYp3bT495UYpz4k3+Xkh3XdSqB1VylhNdHMqb6SbhBT6hx+5+wqO8YpEu97gj
- G61QOVcXvcVdaAowlM69AeExycoPr1NWErInlZR18rgAsfUm/3J57fS76akHf/L4Mv0LDZf1w
- v3dUEZ9ICh5m2MAjrZNIMd1pNyvq6iiPnkqIZyFKlfc7cm/XqTRPju3cnqF3lT3Ru6VufpbLP
- eKVYr9LYRm1E6F3M5CyaMlSKmN7OcjtihIJQcAwKIQTeLGKl/mH0DBC5riGgj6HQJDJxSDPf6
- KOolOZhIv3ueK0pjWu6JPt5Y3NVJuXsjvuSLdNQXL/gmY0m7N3CyD2F60h9Za3ZbjU76kG+/n
- 2bI0JGFCKAXFceHT2w6qEY8KKzaoP8aD3trNv+2AzDQ6EV/Tpcas3yx3drBNoKsv44qFq0yOi
- Ov+P+RK1ZRJDepv3femAhiRaJxqvvYBgzTY3uzs8ITQib6jz4OHeg9SKeQuITnzym/Uol0HhA
- ttGUdMTmZZxSnr6LfLfsv6bPiZsr8M8PHooOam0NIvbq17mHj+F6ZrQwsV7ODVGS9BQntfG1+
- hRaQ85urIOTk2Cxc8gs/3Adx6z2g8jCNtTj9KVH9MUbmhVF3AP0UvtDVnESlA9qmYF5V8qNKg
- 5pbJ6lMLhDjTIBe5aKNDSlZDqE2XVsnf7WxxAaHpMxQwZNsmawuEb
+References: <20190527132200.17377-1-narmstrong@baylibre.com>
+ <20190527132200.17377-3-narmstrong@baylibre.com>
+ <CAFBinCBTK=6OW4kG=i0KZe-+AzGVXyou9g0frnh9yqLsdmB5+w@mail.gmail.com>
+ <b54c7899-95b3-1202-d70b-9b8ee2955164@baylibre.com>
+In-Reply-To: <b54c7899-95b3-1202-d70b-9b8ee2955164@baylibre.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Wed, 29 May 2019 20:08:25 +0200
+Message-ID: <CAFBinCB9PZ-mjyjCafK24cH3sN5E1r4vt1z=m+uvkHsmRW2PFQ@mail.gmail.com>
+Subject: Re: [PATCH 02/10] arm64: dts: meson-gxm-khadas-vim2: fix Bluetooth
+ support
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_110009_377699_AEC43E00 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20190529_110843_765538_03B004E7 
+X-CRM114-Status: GOOD (  11.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
+ provider (martin.blumenstingl[at]googlemail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,6 +81,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,28 +95,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Artur Petrosyan <Arthur.Petrosyan@synopsys.com>, linux-usb@vger.kernel.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- =?UTF-8?B?QW50dGkgU2VwcMOkbMOk?= <a.seppala@gmail.com>,
- Will Deacon <will.deacon@arm.com>, Martin Schiller <ms@dev.tdt.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: khilman@baylibre.com, Christian Hewitt <christianshewitt@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWluYXMsCmhpIEZlbGlwZSwKCkFtIDI2LjA1LjE5IHVtIDIxOjU4IHNjaHJpZWIgU3RlZmFu
-IFdhaHJlbjoKPiBIaSwKPgo+IEFtIDI2LjA1LjE5IHVtIDEyOjQ0IHNjaHJpZWIgQW50dGkgU2Vw
-cMOkbMOkOgo+PiBIZWxsby4KPj4KPj4gVGhpcyBpcyBqdXN0IGEgc2hvdCBpbiB0aGUgZGFyayBi
-dXQgaGF2ZSB5b3UgdHJpZWQgdG8gYXBwbHkgRE1BIGNhY2hlCj4+IGFsaWdubWVudCBpc3N1ZSBm
-aXggWzFdIGFzIGEgdGhpcmQgd29ya2Fyb3VuZCBhbHRlcm5hdGl2ZT8KPj4gSWYgaXQgaGVscHMg
-dGhlIGZpeCBzaG91bGQgYmUgbWVyZ2VkIHVwc3RyZWFtLgo+IHllcy4gQWZ0ZXIgYXBwbHlpbmcg
-TWFydGluJ3MgcGF0Y2gsIGkgd2Fzbid0IGFibGUgdG8gcmVwcm9kdWNlIHRoaXMKPiBrZXJuZWwg
-b29wcy4KPgo+IFRoYW5rcyB0byBhbGwKPgo+PiBbMV0gLSBodHRwczovL3BhdGNod29yay5rZXJu
-ZWwub3JnL3BhdGNoLzEwODE3Mzc3LwpkbyB3ZSBuZWVkIGEgcmVzZW5kIG9mIHRoaXMgcGF0Y2g/
-IElzIHRoZXJlIHJlYXNvbiB3aHkgaXQgaGFzbid0IGJlZW4KYXBwbGllZD8KPj4KPj4gQnIsCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+On Wed, May 29, 2019 at 12:25 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> On 27/05/2019 20:36, Martin Blumenstingl wrote:
+> > On Mon, May 27, 2019 at 3:22 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+> >>
+> >> From: Christian Hewitt <christianshewitt@gmail.com>
+> >>
+> >> - Remove serial1 alias
+> >> - Add support for uart_A rts/cts
+> >> - Add bluetooth uart_A subnode qith shutdown gpio
+> > I tried this on my own Khadas VIM2:
+> > Bluetooth: hci0: command 0x1001 tx timeout
+> > Bluetooth: hci0: BCM: Reading local version info failed (-110)
+> >
+> > I'm not sure whether this is specific to my board or what causes this.
+>
+> Which kernel version ?
+5.2-rc2
+
+it's a Khadas VIM2 Basic (thus it has a AP6356S), board revision v1.2
+
+
+Martin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
