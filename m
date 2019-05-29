@@ -2,64 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC9B62DD5F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:42:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FA9C2DD67
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:47:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SjpsFR2DuNdYBkNJYTuylaGPSw4Q/Idga6TRTqFzjVI=; b=jKIlWrtCAm++AB
-	pNVQB7aAsPs7MAsxEejZ9eyk/u6HxObW8A50LazbfY1kb0fL1jxMNb/MaIwEWENe+ddU90qgiG3Uw
-	8BqxPRDQCoSgVJ24j9/U6d7nZcbMMNSABL/VtcH3tAUlIkGFCKxTrPccNWcrP725sdzw8N8agO+S8
-	rTy0c8y196xspOjpGBGyA0susCUzoeQ+eKts/1gN5Z6AsoisXu+5IV35VErwtBvyLWnoOIgCFzRa/
-	rBTXWfyXbI3IcSJjEYjxf7e+j7jcO1LW1u5F7y5VlScq9FC5PEITl85eT1JsIbYTE9bFBYOkO2EVo
-	NysaWJsERVga0VhltJEg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FXaturI6WXJIFzgq1/Pofs9b5+nHSXHleyw+Focjo4o=; b=ccPZf/pZiTK49F
+	F6YaBQngh6kM/6l0VC8nsIYzdtR45DMAHyavzLXgI/6XkfFcPvmb7ILDfxzgSu3CZdpQjkDeI0mk1
+	Y+TmVklXteuooahZpWX2VpzzD8olJk+d4LOT4AzorX0FquMtx1sLqiXj7hF9Jx50SkO7iKp0Hpe0G
+	T61aAN5XfyDxxvWqDK871xzKHRc0UYVOMdNF9jySIguRhlo7B0EyZSt6qSj9jFrehohersiYTeZjg
+	PeZMj0H5jac72TxgMytaxq5sQ9DpudlJ93SRWRvgikttUJzv7V9KywNlmrBASBIPTXUd1y371cQDN
+	/3OEEYp2FSqAvk5eKUTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVxun-0004KY-AU; Wed, 29 May 2019 12:42:45 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVxue-0004JT-NU
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:42:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B58780D;
- Wed, 29 May 2019 05:42:33 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DEF043F59C;
- Wed, 29 May 2019 05:42:27 -0700 (PDT)
-Date: Wed, 29 May 2019 13:42:25 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190529124224.GE28398@e103592.cambridge.arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
- <20190527143719.GA59948@MBP.local>
- <20190528145411.GA709@e119886-lin.cambridge.arm.com>
- <20190528154057.GD32006@arrakis.emea.arm.com>
- <20190528155644.GD28398@e103592.cambridge.arm.com>
- <20190528163400.GE32006@arrakis.emea.arm.com>
+	id 1hVxzJ-00068k-Kq; Wed, 29 May 2019 12:47:25 +0000
+Received: from outpost1.zedat.fu-berlin.de ([130.133.4.66])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVxzA-00068O-Tm
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:47:18 +0000
+Received: from inpost2.zedat.fu-berlin.de ([130.133.4.69])
+ by outpost.zedat.fu-berlin.de (Exim 4.85)
+ with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+ (envelope-from <glaubitz@physik.fu-berlin.de>)
+ id <1hVxz9-002KJi-7k>; Wed, 29 May 2019 14:47:15 +0200
+Received: from suse-laptop.physik.fu-berlin.de ([160.45.32.140])
+ by inpost2.zedat.fu-berlin.de (Exim 4.85)
+ with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+ (envelope-from <glaubitz@physik.fu-berlin.de>)
+ id <1hVxz8-000rk1-Kn>; Wed, 29 May 2019 14:47:15 +0200
+Subject: Re: [PATCH] binfmt_flat: make load_flat_shared_library() work
+To: Jann Horn <jannh@google.com>
+References: <20190524201817.16509-1-jannh@google.com>
+ <20190525144304.e2b9475a18a1f78a964c5640@linux-foundation.org>
+ <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
+ <6956cfe5-90d4-aad4-48e3-66b0ece91fed@linux-m68k.org>
+ <7cac8be1-1667-6b6e-d2b8-d6ec5dc6da09@physik.fu-berlin.de>
+ <CAG48ez1xe0MFrECFHAtiiTn1V0+yvJazuCNEiWWAm-kvUwG4nQ@mail.gmail.com>
+From: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=glaubitz@physik.fu-berlin.de; keydata=
+ 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
+ scOkTAZQGVpD/8AaLH4v1w==
+Message-ID: <7203be4f-cd4d-ef1a-f50f-223e17c8ca98@physik.fu-berlin.de>
+Date: Wed, 29 May 2019 14:47:13 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190528163400.GE32006@arrakis.emea.arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <CAG48ez1xe0MFrECFHAtiiTn1V0+yvJazuCNEiWWAm-kvUwG4nQ@mail.gmail.com>
+Content-Language: en-US
+X-Originating-IP: 160.45.32.140
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_054236_777633_1E0DBBEA 
-X-CRM114-Status: GOOD (  21.30  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190529_054717_109537_C14CA325 
+X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [130.133.4.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,87 +119,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Lee Smith <Lee.Smith@arm.com>, linux-kselftest@vger.kernel.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Nicolas Pitre <nicolas.pitre@linaro.org>, linux-m68k@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ kernel list <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Greg Ungerer <gerg@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 05:34:00PM +0100, Catalin Marinas wrote:
-> On Tue, May 28, 2019 at 04:56:45PM +0100, Dave P Martin wrote:
-> > On Tue, May 28, 2019 at 04:40:58PM +0100, Catalin Marinas wrote:
-> > 
-> > [...]
-> > 
-> > > My thoughts on allowing tags (quick look):
-> > >
-> > > brk - no
-> > 
-> > [...]
-> > 
-> > > mlock, mlock2, munlock - yes
-> > > mmap - no (we may change this with MTE but not for TBI)
-> > 
-> > [...]
-> > 
-> > > mprotect - yes
-> > 
-> > I haven't following this discussion closely... what's the rationale for
-> > the inconsistencies here (feel free to refer me back to the discussion
-> > if it's elsewhere).
+On 5/29/19 2:38 PM, Jann Horn wrote:
+>>> I have not used shared libraries on m68k non-mmu setups for
+>>> a very long time. At least 10 years I would think.
+>> We use shared libraries in Debian on m68k and Andreas Schwab uses them
+>> on openSUSE/m68k.
 > 
-> _My_ rationale (feel free to disagree) is that mmap() by default would
-> not return a tagged address (ignoring MTE for now). If it gets passed a
-> tagged address or a "tagged NULL" (for lack of a better name) we don't
-> have clear semantics of whether the returned address should be tagged in
-> this ABI relaxation. I'd rather reserve this specific behaviour if we
-> overload the non-zero tag meaning of mmap() for MTE. Similar reasoning
-> for mremap(), at least on the new_address argument (not entirely sure
-> about old_address).
-> 
-> munmap() should probably follow the mmap() rules.
-> 
-> As for brk(), I don't see why the user would need to pass a tagged
-> address, we can't associate any meaning to this tag.
-> 
-> For the rest, since it's likely such addresses would have been tagged by
-> malloc() in user space, we should allow tagged pointers.
+> And you're using FLAT shared libraries, not ELF / FDPIC ELF shared
+> libraries? See <https://lore.kernel.org/lkml/20190524201817.16509-1-jannh@google.com/>
+> for context - this thread is about CONFIG_BINFMT_SHARED_FLAT.
 
-Those arguments seem reasonable.  We should try to capture this
-somewhere when documenting the ABI.
+No, we're using ELF binaries only:
 
-To be clear, I'm not sure that we should guarantee anywhere that a
-tagged pointer is rejected: rather the behaviour should probably be
-left unspecified.  Then we can tidy it up incrementally.
+root@pacman:~# grep CONFIG_BINFMT /boot/config-$(uname -r)
+CONFIG_BINFMT_ELF=y
+CONFIG_BINFMT_SCRIPT=y
+# CONFIG_BINFMT_FLAT is not set
+# CONFIG_BINFMT_AOUT is not set
+CONFIG_BINFMT_MISC=m
+root@pacman:~#
 
-(The behaviour is unspecified today, in any case.)
+Thanks,
+Adrian
 
-Cheers
----Dave
+-- 
+ .''`.  John Paul Adrian Glaubitz
+: :' :  Debian Developer - glaubitz@debian.org
+`. `'   Freie Universitaet Berlin - glaubitz@physik.fu-berlin.de
+  `-    GPG: 62FF 8A75 84E0 2956 9546  0006 7426 3B37 F5B5 F913
 
 _______________________________________________
 linux-arm-kernel mailing list
