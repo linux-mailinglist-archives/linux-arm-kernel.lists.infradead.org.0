@@ -2,84 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 723822D55B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 08:08:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C7302D55F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 08:11:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ABwLpFMnY/aBKPYxvXiwLI+XsriWqWQ++HY4ZFg6udM=; b=tzdSxuyCZPu6r8
-	S/3de70DQKVByeH+StWrad5jXXmE/AJOijpvHX3voqNT5tzT5S+m00Jk8J/21t/wAq0bfKvma25lm
-	rf0orkYOxvMhd7xnSjVnEh6wFzRcTJ0xuPKwTwnTGCB9uk6whXGB6W3TN4YV45yCgGPZ5e8xm79M/
-	V9HF2nQFhuX/Ouv97NHoXlU5AzGH+++V/3hbSa3ucerfX6+lUZ7IYAkH+2YyU+Fip7LDOkQ8onZB7
-	a1CFuSQsWmJo+vQraux/wdimaExKLsMYoVQSfn/F6eZ6UJarn7S89+RRtl+1stk6MzftizOg/zgsH
-	QOHGu4XGUA4q4pEciFKg==;
+	List-Owner; bh=uO0opy3rxcKlPTBqrkXMJFpaSVTvKLZcDBGSE5YIZfw=; b=vD8mVqLVaEo2Ap
+	NptEhJfXVuQu6zrCxMGwciY0PuijQp2UOp4MUZxcAC1/JsJMctZfltBRUYDmqSWY89lvDbrzbfaCG
+	w5d1wibTVTXkklVWqrtUBKK7EfCGeM366cb4DDvfGplflEsceSBe6DF8BCasNs7iYyaDsEZQIPWO7
+	Y4XeamGuOIX8X3Z85SaEnaKXuPrC4WVJn+J/dkcOsCgc88OLHPLzc4GiSh2Wv91Um7P8EJ13Fs1fx
+	Oz70j+k+Vz6wRp0B6E4W7KR3iiFgi5NiipTN7AUhAaBCQ9BFlwbz1FI/A2W6ybtUVs0pwOqUnhq1F
+	Eny+BQbeyKQ209aNUbfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVrld-0004kA-Di; Wed, 29 May 2019 06:08:53 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVrlV-0004jD-1V
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 06:08:46 +0000
-Received: by mail-qt1-x842.google.com with SMTP id y57so1198755qtk.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 23:08:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9m6XmpcV32pBGRaKWaAZOu/nkbXf9RLY5czIdmVMIiE=;
- b=Vk/pDafXgg2bzDpfTFeKjsIp8WdKd3TNKbs23N/It+yi/CVfzyhiySQJ8J4jtLszAi
- LFiveV8PEpd6y+Dsh/gNPfB9fYQ5zv+RrOkISmmXalE+GzteLeypk6R36MTVSR1m/T6a
- wfTXpmePwdYxnvW4o3FzOIubaWyRpDgNwMyP8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9m6XmpcV32pBGRaKWaAZOu/nkbXf9RLY5czIdmVMIiE=;
- b=aXgemX1H96cAUGCfKyQuo2u2wC9qbfd1ZnxWG8CHPV2+Cg2uKL+K6VF/4QkOyTGw2G
- t/lx2aKsJhf5wrP6PlLkgPCdG+l37aVuTL9u1uAvSC+yk393jYTk/i6UxJ5EEZ3PQGvu
- 3J+kMbmfnckIWV0JhkNvOXyeiH+4X31k/zn/Lb6QIeyK/gGJ2OIlfBXMBHmUApGj1jf/
- LgTPVkrG9HR086Vcfu/kB0tFDASD2AGx+Z7LfEE4ElEzIf8K7//0LGrG1VmrUxaekQAd
- UnyMaX/8qHLY/C+D0HtdMW/ofn9Rc2M1+2PE5XpeerVBOY1hlse/AgF5D0UA0P7lgDb8
- 77vA==
-X-Gm-Message-State: APjAAAUOLTbxFYIklY09BPsNIda28BBoADs9nOwNBm+BtteYAAwSNPDJ
- bUTbfQToSbqd/BvyghKFPLwtSFRiityvAqKgXNnQkQ==
-X-Google-Smtp-Source: APXvYqy1lIVHOTaLcihvMF7zGLF3pmNL3AVewtEF/CAwLER2Lc1MzHGPozPVQVC8HRo0kHV7SIzbmTEe6U0L3SD3dn4=
-X-Received: by 2002:a0c:b621:: with SMTP id f33mr68502313qve.199.1559110123624; 
- Tue, 28 May 2019 23:08:43 -0700 (PDT)
+	id 1hVroD-0006Yq-EQ; Wed, 29 May 2019 06:11:33 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.90_1 #2 (Red
+ Hat Linux)) id 1hVro6-0006Yh-Is; Wed, 29 May 2019 06:11:26 +0000
+Date: Tue, 28 May 2019 23:11:26 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190529061126.GA18124@infradead.org>
+References: <20190517144931.GA56186@arrakis.emea.arm.com>
+ <CAFKCwrj6JEtp4BzhqO178LFJepmepoMx=G+YdC8sqZ3bcBp3EQ@mail.gmail.com>
+ <20190521182932.sm4vxweuwo5ermyd@mbp>
+ <201905211633.6C0BF0C2@keescook>
+ <6049844a-65f5-f513-5b58-7141588fef2b@oracle.com>
+ <20190523201105.oifkksus4rzcwqt4@mbp>
+ <ffe58af3-7c70-d559-69f6-1f6ebcb0fec6@oracle.com>
+ <20190524101139.36yre4af22bkvatx@mbp>
+ <c6dd53d8-142b-3d8d-6a40-d21c5ee9d272@oracle.com>
+ <CAAeHK+yAUsZWhp6xPAbWewX5Nbw+-G3svUyPmhXu5MVeEDKYvA@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190527045054.113259-1-hsinyi@chromium.org>
- <20190527045054.113259-3-hsinyi@chromium.org>
- <1559109490.15592.6.camel@mtksdaap41>
-In-Reply-To: <1559109490.15592.6.camel@mtksdaap41>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Wed, 29 May 2019 14:08:17 +0800
-Message-ID: <CAJMQK-gQ_j4ma_EjGbFJOz6WGXy3UZA0F9JZYnFHPZ0F08rXog@mail.gmail.com>
-Subject: Re: [PATCH 2/3] drm: mediatek: remove clk_unprepare() in
- mtk_drm_crtc_destroy()
-To: CK Hu <ck.hu@mediatek.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_230845_110702_23157061 
-X-CRM114-Status: GOOD (  13.41  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+Content-Disposition: inline
+In-Reply-To: <CAAeHK+yAUsZWhp6xPAbWewX5Nbw+-G3svUyPmhXu5MVeEDKYvA@mail.gmail.com>
+User-Agent: Mutt/1.9.2 (2017-12-15)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,38 +51,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 1:58 PM CK Hu <ck.hu@mediatek.com> wrote:
->
-> Hi, Hsin-Yi:
->
-> On Mon, 2019-05-27 at 12:50 +0800, Hsin-Yi Wang wrote:
-> > There is no clk_prepare() called in mtk_drm_crtc_reset(), when unbinding
-> > drm device, mtk_drm_crtc_destroy() will be triggered, and the clocks will
-> > be disabled and unprepared in mtk_crtc_ddp_clk_disable. If clk_unprepare()
-> > is called here, we'll get warnings[1], so remove clk_unprepare() here.
->
-> In original code, clk_prepare() is called in mtk_drm_crtc_create() and
-> clk_unprepare() is called in mtk_drm_crtc_destroy(). This looks correct.
+On Tue, May 28, 2019 at 04:14:45PM +0200, Andrey Konovalov wrote:
+> Thanks for a lot of valuable input! I've read through all the replies
+> and got somewhat lost. What are the changes I need to do to this
+> series?
+> 
+> 1. Should I move untagging for memory syscalls back to the generic
+> code so other arches would make use of it as well, or should I keep
+> the arm64 specific memory syscalls wrappers and address the comments
+> on that patch?
 
-clk_prepare() is removed in https://patchwork.kernel.org/patch/10872777/.
+It absolutely needs to move to common code.  Having arch code leads
+to pointless (often unintentional) semantic difference between
+architectures, and lots of boilerplate code.
 
-> I don't know why we should do any thing about clock in
-> mtk_drm_crtc_reset(). To debug this, the first step is to print message
-> when mediatek drm call clk_prepare() and clk_unprepare(). If these two
-> interface is called in pair, I think we should not modify mediatek drm
-> driver, the bug maybe in clock driver.
->
+Btw, can anyone of the arm crowd or Khalid comment on the linux-mm
+thread on generic gup where I'm dealing with the pre-existing ADI
+case of pointer untagging?
 
 _______________________________________________
 linux-arm-kernel mailing list
