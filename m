@@ -2,88 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DF162D413
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:02:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9D062D41E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:11:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bIJlq69PqYRASgAOk9yDD8QOMpFO8Muxnp84niqfKV8=; b=BsHUP1p6eIDVRX
-	u/6uMKIEwwfrRgmstD0jMUDXfF2eLi5xW9k0Wgo0fITN+slnljlGt5H/qGpBGZz7OKr2Z5/RbM+53
-	4q89/lVYT+76nYvqlsmgFSHs2ARX2yh6xin505DD0VzYhnjjS8JxEuYcS+3gAkKrlxwrq1zbzqcDG
-	1ZcFDStGphzYtLObySufhc5Dki/l03hdjara5hdi3JHcWuyZcqfWHnlRGYTzjtpD6rmrFjlK08P56
-	thyUXCk4JJma+/9Dg2+NRZa6SvlyNvaZ9KSDJhdrw5eiCzMxqCwVQ7gsFSlZG/vVchQwnDyHCisVI
-	Xa3vuNPMsg04JugHaTaA==;
+	List-Owner; bh=vnsA5pIz/ciVdIQ/NN0EFq4V+D5ZgynnT7g7YBHRlj4=; b=Jh8R/2ArFNjmhX
+	r+QZs8NW+8rJguu1pBDKX1qFxVCvu86+73g+/OpTCwt1D2fj6yoqroEuUlJAimzrMZqVGL5UJJjXj
+	gJQwQiPFaZQzI0d2DxEFpk7Dz6ncTpqo1+Kxm7RdlzKayzR0ob24vuCIpQneneLHGy/5NZdPHiL2T
+	maEwgdLIee9NaczH5HeKuvCWinxFdql1rXRVL5OAJscX1/CvDE4KpqliDQM+4iZ5u7mbsP8EGCfiD
+	c/ByEwuHbpHQH9oBnTR9Xptxm+mcowmbswUgI9jlVaTJBiFiCLZ8djhNPywmpR9XK0jkenEq2kO87
+	04DIwlLiU8hAZw4KajuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVorO-0001vc-LB; Wed, 29 May 2019 03:02:38 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hVozc-0006nW-KD; Wed, 29 May 2019 03:11:08 +0000
+Received: from rcdn-iport-1.cisco.com ([173.37.86.72])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVorH-0001vG-St
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 03:02:33 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z3so420897pgp.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 May 2019 20:02:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=X6hCgGrg1/EebBkiZczSeiIYTj567ezCT4B+Qvt2s6Q=;
- b=E7MD6iUCYh7UBE8D8v6Tj9XnZ+OUEjLsn2t7PjrybNOo62FmkyX8L6GN+YvLcvreBf
- 1K/b9tbQ1rSkY+RJnEpVfTgNzLxYFF6usqJTmHXT+jDAo0jfSt/XLCnXIx70y9IYfxti
- CqvXgmkijrm0NNrTeidIZWiufx4mLZZDvLr3TgD/+VqLGthmsv80JpGVXSNZ7u5UTaKU
- 65tp8D8zynwlLPjy4TGsnQgZa3bOZJ8lZb77FNu+9s7Mgu55R77DLLy8AxMfyyM/P8pg
- vc4s/pueNLcGft20cBN2Z2nthMGvUjBkHoSnWgJS8zswD2cBuLQ8XbEUt+lAP0AoGHCB
- hTZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=X6hCgGrg1/EebBkiZczSeiIYTj567ezCT4B+Qvt2s6Q=;
- b=JUULNALkOpKhNU+7tUMHr0q1omUaVQcIL1NWWRP3nH1ycMj+pH/eVbQJ5Lmw+mIQdi
- EfexbTQUwgxYCkIFwkvYGxn5m/I7hpGynZZkk18rBY4B/9DmmHhjlspJjDMEXwtHHaiX
- 9kdpeKbKrRc+0HHkXRBrmgNe1S6waONSaGkKDF6QDUXG22oZWIJ49OYCAo+A3J1QnhMf
- WX3HJvyUfaZq1c/YfNVTTgyYYVmvRwhsTKgs9jM9TWjjvPKhOtcdzuGDSrn3LhTgJo98
- b0KlegWsgRfNfmZ17Dsb7eR4IHv1csrIn3psx0jZmLiZ3uY3eagiB0W2EYtKPq++U7Zy
- G32Q==
-X-Gm-Message-State: APjAAAXFRg3Pi0zNLFy74/tiyS44JLtRzZIBAiUjqJTXHXnKebf1pVjd
- PM3qYivYLTvPT5tWlWuZUdc=
-X-Google-Smtp-Source: APXvYqyPsBpkG44hSDy7mXOJP8h3S5s7ICBOVNki4QTwaMsFGNf1xnTpWdMo6loLPLw8LZJQ9Rgn+A==
-X-Received: by 2002:a17:90a:b885:: with SMTP id
- o5mr9397531pjr.52.1559098951071; 
- Tue, 28 May 2019 20:02:31 -0700 (PDT)
-Received: from localhost.localdomain ([2601:644:8201:32e0:7256:81ff:febd:926d])
- by smtp.gmail.com with ESMTPSA id d9sm13532565pgl.20.2019.05.28.20.02.29
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 May 2019 20:02:30 -0700 (PDT)
-Date: Tue, 28 May 2019 20:02:27 -0700
-From: Eduardo Valentin <edubezval@gmail.com>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
- sensor ID from DT
-Message-ID: <20190529030225.GA2662@localhost.localdomain>
-References: <20190528060621.47342-1-Anson.Huang@nxp.com>
- <20190528060621.47342-2-Anson.Huang@nxp.com>
+ id 1hVozV-0006nA-4K
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 03:11:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=cisco.com; i=@cisco.com; l=1352; q=dns/txt; s=iport;
+ t=1559099461; x=1560309061;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-id:content-transfer-encoding: mime-version;
+ bh=Sdulz10sBIhnJIx8fDZdylJ9FoEjzCor9wR+V9xoFE0=;
+ b=QW93kefVGnYogwiTcD4hp03I7EQiFsN1AvgjHrT7vJdWPccW3Bf8KPZN
+ D5kAG85gmcothrb4bGF6WnReMSjGvoXA+kEs9lzaR5YtYy8u5mM6tWcDD
+ MkBU+TZDYmfCbzzMysNxhlFRGHEJP80X4jET76Cc1GYK/edX6yqomQs4B s=;
+IronPort-PHdr: =?us-ascii?q?9a23=3AzjqGjxQkDbo/uCXTgBZNRqHDmNpsv++ubAcI9p?=
+ =?us-ascii?q?oqja5Pea2//pPkeVbS/uhpkESXBNfA8/wRje3QvuigQmEG7Zub+FE6OJ1XH1?=
+ =?us-ascii?q?5g640NmhA4RsuMCEn1NvnvOjchF8RLWVRm13q6KkNSXs35Yg6arw=3D=3D?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0ChAABp9+1c/4kNJK1lHAEBAQQBAQc?=
+ =?us-ascii?q?EAQGBUwUBAQsBgT1QA4E+IAQLKIdaA48AgleXLYEuFIEQA1QJAQEBDAEBLQI?=
+ =?us-ascii?q?BAYRAAoJjIzYHDgEDAQEEAQECAQRtHAyFSwEBBBIVGQEBNwEPAgEIGB0RMiU?=
+ =?us-ascii?q?CBAENBSKDAIFrAx0BnhoCgTiIX4FtM4J5AQEFgQYBhAMYgg8JgTQBi1IXgUA?=
+ =?us-ascii?q?/gREnH4IeLj6ELBiDPIImk2CUeQkCgg2TFhuWS4xwlXgCBAIEBQIOAQEFgVY?=
+ =?us-ascii?q?LJoFXcBVlAYJBgg8MF4NNihwBNnKBKY1jAQE?=
+X-IronPort-AV: E=Sophos;i="5.60,525,1549929600"; d="scan'208";a="564674925"
+Received: from alln-core-4.cisco.com ([173.36.13.137])
+ by rcdn-iport-1.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA;
+ 29 May 2019 03:10:57 +0000
+Received: from XCH-ALN-017.cisco.com (xch-aln-017.cisco.com [173.36.7.27])
+ by alln-core-4.cisco.com (8.15.2/8.15.2) with ESMTPS id x4T3Avv5019255
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=FAIL);
+ Wed, 29 May 2019 03:10:57 GMT
+Received: from xhs-aln-003.cisco.com (173.37.135.120) by XCH-ALN-017.cisco.com
+ (173.36.7.27) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Tue, 28 May 2019 22:10:56 -0500
+Received: from xhs-rcd-003.cisco.com (173.37.227.248) by xhs-aln-003.cisco.com
+ (173.37.135.120) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Tue, 28 May 2019 22:10:56 -0500
+Received: from NAM05-DM3-obe.outbound.protection.outlook.com (72.163.14.9) by
+ xhs-rcd-003.cisco.com (173.37.227.248) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1473.3 via Frontend Transport; Tue, 28 May 2019 22:10:56 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cisco.onmicrosoft.com; 
+ s=selector2-cisco-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=B59HeDLnmBJtwbhJij9ITHV/Zkb7RsiodX/MnX980z8=;
+ b=Tqd35wk0xDYKzIlbG48ztOKMex2MD0vIRm9+YZzkCLujvZY9y00ASkDOiFiUgwRptysloaaK14XeGa0IPvuZxwhXioDkJcefkGsLKK8jXeElAODhLyw5eV4cHUS6NwndeQLVrGzjAIkrsLSze88bOEtrqhzX7XaZ3AnoOk1kRYk=
+Received: from BY5PR11MB4007.namprd11.prod.outlook.com (10.255.161.92) by
+ BY5PR11MB4183.namprd11.prod.outlook.com (10.255.162.161) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.23; Wed, 29 May 2019 03:10:54 +0000
+Received: from BY5PR11MB4007.namprd11.prod.outlook.com
+ ([fe80::1de7:32f5:3a7b:ae21]) by BY5PR11MB4007.namprd11.prod.outlook.com
+ ([fe80::1de7:32f5:3a7b:ae21%5]) with mapi id 15.20.1922.021; Wed, 29 May 2019
+ 03:10:54 +0000
+From: "Stefan Schaeckeler (sschaeck)" <sschaeck@cisco.com>
+To: Andrew Jeffery <andrew@aj.id.au>, YueHaibing <yuehaibing@huawei.com>,
+ Borislav Petkov <bp@alien8.de>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "james.morse@arm.com" <james.morse@arm.com>, Joel Stanley <joel@jms.id.au>
+Subject: Re: [PATCH -next] EDAC: aspeed: Remove set but not used variable 'np'
+Thread-Topic: [PATCH -next] EDAC: aspeed: Remove set but not used variable 'np'
+Thread-Index: AQHVEwgkpwm7NMGqKUyhE4ayNBdRIKaBVTwA//+nlwA=
+Date: Wed, 29 May 2019 03:10:54 +0000
+Message-ID: <960D5667-41E7-47F3-9C0A-726CA919B82D@cisco.com>
+References: <20190525144153.2028-1-yuehaibing@huawei.com>
+ <04f103fb-54b1-4911-8164-44b20bfd1e72@www.fastmail.com>
+In-Reply-To: <04f103fb-54b1-4911-8164-44b20bfd1e72@www.fastmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Microsoft-MacOutlook/10.19.0.190512
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=sschaeck@cisco.com; 
+x-originating-ip: [2001:420:c0c8:1002::23a]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: da4acbc0-d7fa-40d7-c0d6-08d6e3e34381
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BY5PR11MB4183; 
+x-ms-traffictypediagnostic: BY5PR11MB4183:
+x-microsoft-antispam-prvs: <BY5PR11MB4183B04A05AC67C88A772AC0C71F0@BY5PR11MB4183.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3173;
+x-forefront-prvs: 0052308DC6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(396003)(39860400002)(136003)(376002)(346002)(189003)(199004)(6436002)(6246003)(6486002)(4326008)(71190400001)(71200400001)(83716004)(66476007)(99286004)(14444005)(76116006)(73956011)(66446008)(64756008)(66556008)(2501003)(229853002)(82746002)(256004)(36756003)(86362001)(305945005)(54906003)(25786009)(66946007)(6512007)(8936002)(186003)(68736007)(476003)(446003)(11346002)(6116002)(14454004)(7736002)(53936002)(5660300002)(2906002)(7416002)(486006)(81156014)(58126008)(81166006)(316002)(6506007)(102836004)(8676002)(110136005)(53546011)(76176011)(478600001)(33656002)(2616005)(46003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BY5PR11MB4183;
+ H:BY5PR11MB4007.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: cisco.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: AghqIJs59cYjUuUMuNNC5Q4ehQp8qSYJum6+gIx7AhhZQBQo7KWB3jXiBi7dIsX6BnLF1+HuS2yi7NoJdH/Bo1Z/mD321tvHvMLP7G+Hd8tElngXXNfnE3PUJR7wxKxnKwrPy6GukNZaBeOEhI9LrGXWO29Y2g2yCEXon0F329khucXeuAAnBjguh6/9wXl7PdAwG/Np7pLOAujZ21UY3COWwmT7Yepb9Ped2DgIIZ3HDhfLjv742N/RWL5//23H+E2YOl9NNcuN4tTyZlCk+jExupEjVcTUAEH9V6Xabzbjskpj7pX5D9Bvpvp2oNLZMbigBeEaoEY2+t3BRAs2Pma2H/keeMf/zegmWiQnEg8atCpRmrst5z8ZB7GhcfRLGATc4n1ynuqDb1xiMbcowSMh+HkZZCcGq3XQ6uz9jZM=
+Content-ID: <3293C5D8B6EA624CB924C20630669181@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190528060621.47342-2-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+X-MS-Exchange-CrossTenant-Network-Message-Id: da4acbc0-d7fa-40d7-c0d6-08d6e3e34381
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 03:10:54.7573 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 5ae1af62-9505-4097-a69a-c1553ef7840e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sschaeck@cisco.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4183
+X-OriginatorOrg: cisco.com
+X-Outbound-SMTP-Client: 173.36.7.27, xch-aln-017.cisco.com
+X-Outbound-Node: alln-core-4.cisco.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_200231_952963_0F9E0CBE 
-X-CRM114-Status: GOOD (  25.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190528_201101_349210_5A8B81E5 
+X-CRM114-Status: GOOD (  13.83  )
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (edubezval[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [173.37.86.72 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -102,176 +155,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ulf.hansson@linaro.org, maxime.ripard@bootlin.com,
- catalin.marinas@arm.com, will.deacon@arm.com, peng.fan@nxp.com,
- bjorn.andersson@linaro.org, leonard.crestez@nxp.com, festevam@gmail.com,
- daniel.lezcano@linaro.org, jagan@amarulasolutions.com, rui.zhang@intel.com,
- Linux-imx@nxp.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- s.hauer@pengutronix.de, olof@lixom.net, robh+dt@kernel.org,
- horms+renesas@verge.net.au, daniel.baluta@nxp.com,
- linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
- linux-kernel@vger.kernel.org, dinguyen@kernel.org, kernel@pengutronix.de,
- enric.balletbo@collabora.com, shawnguo@kernel.org
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-edac@vger.kernel.org" <linux-edac@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 02:06:18PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
-> 
-> On some platforms like i.MX8QXP, the thermal driver needs a
-> real HW sensor ID from DT thermal zone, the HW sensor ID is
-> used to get temperature from SCU firmware, and the virtual
-> sensor ID starting from 0 to N is NOT used at all, this patch
-> adds new API thermal_zone_of_get_sensor_id() to provide the
-> feature of getting sensor ID from DT thermal zone's node.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V12:
-> 	- adjust the second parameter of thermal_zone_of_get_sensor_id() API, then caller no need
-> 	  to pass the of_phandle_args structure and put the sensor_specs.np manually, also putting
-> 	  the sensor node device check inside this API to make it easy for usage;
+On  Tuesday, May 28, 2019 at 6:27 PM, Andrew Jeffery wrote:
+> On Sun, 26 May 2019, at 00:12, YueHaibing wrote:
+> > Fixes gcc '-Wunused-but-set-variable' warning:
+> >
+> > drivers/edac/aspeed_edac.c: In function aspeed_probe:
+> > drivers/edac/aspeed_edac.c:284:22: warning: variable np set but not
+> > used [-Wunused-but-set-variable]
+> >
+> > It is never used and can be removed.
+> >
+> > Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+>
+> Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
 
-What happened to using nxp,resource-id property in your driver?
-Why do we need this as an API in of-thermal? What other drivers may
-benefit of this?
+Reviewed-by: Stefan Schaeckeler <sschaeck@cisco.com>
 
-Regardless, this patch needs to document the new API under
-Documentation/
+> > ---
+> >  drivers/edac/aspeed_edac.c | 4 ----
+> >  1 file changed, 4 deletions(-)
+> >
+> > diff --git a/drivers/edac/aspeed_edac.c b/drivers/edac/aspeed_edac.c
+> > index 11833c0a5d07..5634437bb39d 100644
+> > --- a/drivers/edac/aspeed_edac.c
+> > +++ b/drivers/edac/aspeed_edac.c
+> > @@ -281,15 +281,11 @@ static int aspeed_probe(struct platform_device *pdev)
+> >  	struct device *dev = &pdev->dev;
+> >  	struct edac_mc_layer layers[2];
+> >  	struct mem_ctl_info *mci;
+> > -	struct device_node *np;
+> >  	struct resource *res;
+> >  	void __iomem *regs;
+> >  	u32 reg04;
+> > 	int rc;
+> >
+> > -	/* setup regmap */
+> > -	np = dev->of_node;
+> > -
+> >  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> >  	if (!res)
+> >  		return -ENOENT;
+> > --
+> > 2.17.1
 
-> ---
->  drivers/thermal/of-thermal.c | 66 +++++++++++++++++++++++++++++++++-----------
->  include/linux/thermal.h      | 10 +++++++
->  2 files changed, 60 insertions(+), 16 deletions(-)
-> 
-> diff --git a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c
-> index dc5093b..a53792b 100644
-> --- a/drivers/thermal/of-thermal.c
-> +++ b/drivers/thermal/of-thermal.c
-> @@ -449,6 +449,54 @@ thermal_zone_of_add_sensor(struct device_node *zone,
->  }
->  
->  /**
-> + * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal zone
-> + * @tz_np: a valid thermal zone device node.
-> + * @sensor_np: a sensor node of a valid sensor device.
-> + * @id: a sensor ID pointer will be passed back.
-> + *
-> + * This function will get sensor ID from a given thermal zone node, use
-> + * "thermal-sensors" as list name, and get sensor ID from first phandle's
-> + * argument.
-> + *
-> + * Return: 0 on success, proper error code otherwise.
-> + */
-> +
-> +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> +				  struct device_node *sensor_np,
-> +				  u32 *id)
-> +{
-> +	struct of_phandle_args sensor_specs;
-> +	int ret;
-> +
-> +	ret = of_parse_phandle_with_args(tz_np,
-> +					 "thermal-sensors",
-> +					 "#thermal-sensor-cells",
-> +					 0,
-> +					 &sensor_specs);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (sensor_specs.np != sensor_np) {
-> +		of_node_put(sensor_specs.np);
-> +		return -ENODEV;
-> +	}
-> +
-> +	if (sensor_specs.args_count >= 1) {
-> +		*id = sensor_specs.args[0];
-> +		WARN(sensor_specs.args_count > 1,
-> +		     "%pOFn: too many cells in sensor specifier %d\n",
-> +		     sensor_specs.np, sensor_specs.args_count);
-> +	} else {
-> +		*id = 0;
-> +	}
-> +
-> +	of_node_put(sensor_specs.np);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
-> +
-> +/**
->   * thermal_zone_of_sensor_register - registers a sensor to a DT thermal zone
->   * @dev: a valid struct device pointer of a sensor device. Must contain
->   *       a valid .of_node, for the sensor node.
-> @@ -499,36 +547,22 @@ thermal_zone_of_sensor_register(struct device *dev, int sensor_id, void *data,
->  	sensor_np = of_node_get(dev->of_node);
->  
->  	for_each_available_child_of_node(np, child) {
-> -		struct of_phandle_args sensor_specs;
->  		int ret, id;
->  
->  		/* For now, thermal framework supports only 1 sensor per zone */
-> -		ret = of_parse_phandle_with_args(child, "thermal-sensors",
-> -						 "#thermal-sensor-cells",
-> -						 0, &sensor_specs);
-> +		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
->  		if (ret)
->  			continue;
->  
-> -		if (sensor_specs.args_count >= 1) {
-> -			id = sensor_specs.args[0];
-> -			WARN(sensor_specs.args_count > 1,
-> -			     "%pOFn: too many cells in sensor specifier %d\n",
-> -			     sensor_specs.np, sensor_specs.args_count);
-> -		} else {
-> -			id = 0;
-> -		}
-> -
-> -		if (sensor_specs.np == sensor_np && id == sensor_id) {
-> +		if (id == sensor_id) {
->  			tzd = thermal_zone_of_add_sensor(child, sensor_np,
->  							 data, ops);
->  			if (!IS_ERR(tzd))
->  				tzd->ops->set_mode(tzd, THERMAL_DEVICE_ENABLED);
->  
-> -			of_node_put(sensor_specs.np);
->  			of_node_put(child);
->  			goto exit;
->  		}
-> -		of_node_put(sensor_specs.np);
->  	}
->  exit:
->  	of_node_put(sensor_np);
-> diff --git a/include/linux/thermal.h b/include/linux/thermal.h
-> index 15a4ca5..5edffe6 100644
-> --- a/include/linux/thermal.h
-> +++ b/include/linux/thermal.h
-> @@ -375,6 +375,9 @@ struct thermal_trip {
->  
->  /* Function declarations */
->  #ifdef CONFIG_THERMAL_OF
-> +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> +				  struct device_node *sensor_np,
-> +				  u32 *id);
->  struct thermal_zone_device *
->  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
->  				const struct thermal_zone_of_device_ops *ops);
-> @@ -386,6 +389,13 @@ struct thermal_zone_device *devm_thermal_zone_of_sensor_register(
->  void devm_thermal_zone_of_sensor_unregister(struct device *dev,
->  					    struct thermal_zone_device *tz);
->  #else
-> +
-> +static int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> +					 struct device_node *sensor_np,
-> +					 u32 *id)
-> +{
-> +	return -ENOENT;
-> +}
->  static inline struct thermal_zone_device *
->  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
->  				const struct thermal_zone_of_device_ops *ops)
 
 _______________________________________________
 linux-arm-kernel mailing list
