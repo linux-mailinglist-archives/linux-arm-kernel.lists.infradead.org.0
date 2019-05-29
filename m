@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 496212DBB0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 13:21:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9D102DBDB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 13:29:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DTgFuuw2pS9BEOP1IToBuEkLA2EkuBxripTHdK+Ucxw=; b=VcLfq7kSnYwJA9
-	KP3fYit82GPk1FIlIhhjnFIpFxo2bAYxzD/7xvK5zGExHQRtDlLEqiqToDBhljhkkPof57/oMEDHx
-	/dV0HF0LcA4KcUHpiJuJ34BRdOnaW1kPiO6Ilra9hLaX8afA77Js4xMzqlMIXFpeWRNnoEaslQeg1
-	XAFMoMstJkd31UKmARv9GuL+ccgYNq3h5sZ/fGOiXFAfXv1hzGnhqd/aLqOEUeeslOEfxGf5b9Rvf
-	ykFmiacOQ+EYJ7PGQ/LP+9gE8R0M41M/BgrK24Y6frPxfCUqwe3gk5rQWRKA5uqEafx+EUsg72KLn
-	7ZVyjW4WpVGT8pNubUng==;
+	List-Owner; bh=Jv1BTltcsSWkwvjaR7Q+FwMvnv2GfeZr9vSL71L8KSs=; b=UNKSZjM5ffQ5Pq
+	ImGuby0qQ30ELoHK7dupWG37rfIrXhBxPSPNiAm0C+8uCHidHfbD0xb+m+Sda+Sw4DpffwpPX2TnT
+	7g/l5ylSelsyAQ5C7HPhcnkHAmd9tOMwShdsNttyg98wNuEfpIKIJopUyP9F7ZWO5Y3F3oDRnU+8j
+	5qa6G7YTsKwrJwi7+FEDC67DBBWj+yVYP1a/TsENazUXAwgzfZWRPe0SJcI657tqkRtahdzmctNNO
+	mrpD/nGz7pUqI0fYK+uVahn8ydeJlSBaGYqC2/+TJ+owLq49A40vmYkXvtyIw+Zknp5VACL9q8SnM
+	/xlFez5KOos0XZv0+WEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVweY-0006sP-4Z; Wed, 29 May 2019 11:21:54 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hVwla-0000Ik-0F; Wed, 29 May 2019 11:29:10 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVweR-0006s5-6B
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 11:21:48 +0000
+ id 1hVwlT-0000IP-II
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 11:29:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6CA8341;
- Wed, 29 May 2019 04:21:45 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AED6C341;
+ Wed, 29 May 2019 04:29:02 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C70B83F59C;
- Wed, 29 May 2019 04:21:44 -0700 (PDT)
-Date: Wed, 29 May 2019 12:21:42 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9DE9A3F59C;
+ Wed, 29 May 2019 04:29:01 -0700 (PDT)
+Date: Wed, 29 May 2019 12:28:59 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Laura Abbott <labbott@redhat.com>
 Subject: Re: CONFIG_OPTIMIZE_INLINING breaks atomic64 test on arm64
-Message-ID: <20190529112141.GB31777@lakrids.cambridge.arm.com>
+Message-ID: <20190529112858.GC31777@lakrids.cambridge.arm.com>
 References: <ba33029c-64f6-6908-a098-b543f0851fb7@redhat.com>
+ <20190529112141.GB31777@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ba33029c-64f6-6908-a098-b543f0851fb7@redhat.com>
+In-Reply-To: <20190529112141.GB31777@lakrids.cambridge.arm.com>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_042147_239062_F17DAEEB 
-X-CRM114-Status: GOOD (  19.05  )
+X-CRM114-CacheID: sfid-20190529_042903_614568_E80287AC 
+X-CRM114-Status: GOOD (  18.54  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -73,132 +73,139 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laura,
-
-On Tue, May 28, 2019 at 05:42:04PM -0400, Laura Abbott wrote:
-> Hi,
+On Wed, May 29, 2019 at 12:21:42PM +0100, Mark Rutland wrote:
+> On Tue, May 28, 2019 at 05:42:04PM -0400, Laura Abbott wrote:
+> > The value returned from arch_atomic64_dec_if_positive looks like
+> > a stack value
+> >
+> > ffff0000104901d0 <arch_atomic64_dec_if_positive>:
+> > ffff0000104901d0:       a9bf7bfd        stp     x29, x30, [sp, #-16]!
+> > ffff0000104901d4:       aa0003e1        mov     x1, x0
+> > ffff0000104901d8:       910003fd        mov     x29, sp
+> > ffff0000104901dc:       9412c9d5        bl      ffff000010942930 <__ll_sc_arch_atomic64_dec_if_positive>
+> > ffff0000104901e0:       d503201f        nop
+> > ffff0000104901e4:       d503201f        nop
+> > ffff0000104901e8:       d503201f        nop
+> > ffff0000104901ec:       d503201f        nop
+> > ffff0000104901f0:       d503201f        nop
+> > ffff0000104901f4:       d503201f        nop
+> > ffff0000104901f8:       aa0103e0        mov     x0, x1
+> > ffff0000104901fc:       a8c17bfd        ldp     x29, x30, [sp], #16
+> > ffff000010490200:       d65f03c0        ret
+> > 
+> > ...which seems to be coming from this buggy looking code.
 > 
-> CONFIG_OPTIMIZE_INLINING is a selectable option on arm64 now. It currently
-> triggers a bug on the CONFIG_ATOMIC64_SELFTEST:
+> Ouch, so it's trying to save/restore x0, and returning the original
+> value of the atomic64_t *v argument.
 > 
-> [    4.521551] ------------[ cut here ]------------
-> [    4.521763] kernel BUG at lib/atomic64_test.c:220!
-> [    4.522059] Internal error: Oops - BUG: 0 [#1] SMP
-> [    4.522456] Modules linked in:
-> [    4.522860] Process swapper/0 (pid: 1, stack limit = 0x(____ptrval____))
-> [    4.523287] CPU: 4 PID: 1 Comm: swapper/0 Not tainted 5.2.0-rc1 #6
-> [    4.523462] Hardware name: linux,dummy-virt (DT)
-> [    4.523779] pstate: a0000005 (NzCv daif -PAN -UAO)
-> [    4.524231] pc : test_atomic64+0x1270/0x13a4
-> [    4.524392] lr : test_atomic64+0x1258/0x13a4
-> [    4.524571] sp : ffff000011f2fd60
-> [    4.524755] x29: ffff000011f2fd60 x28: 0000000000000000
-> [    4.525397] x27: 0000000000000000 x26: ffff000010d105c4
-> [    4.525660] x25: ffff000010de10a0 x24: 0000000000000006
-> [    4.525821] x23: aaa31337c001d00e x22: bbb42448e223f22f
-> [    4.526032] x21: aaa31337c001d00c x20: 999202269ddfadeb
-> [    4.526180] x19: aaa31337c001d00d x18: 0000000000000001
-> [    4.526324] x17: 0000000000000000 x16: 1111111122222221
-> [    4.526466] x15: ffff000010b838f0 x14: ffff80003fcf28c8
-> [    4.526609] x13: 0000000000000000 x12: 0000000000000004
-> [    4.526765] x11: 0000000000000000 x10: 0000000000000c80
-> [    4.526940] x9 : 0000000000000000 x8 : ffff800020f12b00
-> [    4.527090] x7 : deadbeefdeafcafe x6 : aaa31337c001d00d
-> [    4.527234] x5 : ffff000011f2fda0 x4 : deadbeefdeafcafe
-> [    4.527378] x3 : aaa31337c001d00d x2 : 1111111122222222
-> [    4.527522] x1 : 1111111122222221 x0 : ffff000011f2fda0
-> [    4.527759] Call trace:
-> [    4.527923]  test_atomic64+0x1270/0x13a4
-> [    4.528047]  test_atomics_init+0x10/0x28
-> [    4.528162]  do_one_initcall+0x54/0x230
-> [    4.528273]  kernel_init_freeable+0x1cc/0x278
-> [    4.528397]  kernel_init+0x18/0x108
-> [    4.528510]  ret_from_fork+0x10/0x18
-> [    4.528827] Code: f2c22221 f2e22221 eb01001f 54000040 (d4210000)
-> [    4.529647] ---[ end trace e08e679056f5b7ee ]---
-
-Thanks for the report.
-
-FWIW I can reproduce this locally, after hacking cpufeature.c to not
-detect the LSE atomics on my test platform.
-
-> Snippet of assembly from test_atomic64:
+> AFAICT, GCC *shouldn't* be doing that, since we have a "=&r" constraint
+> on a register variable in x0, which we use as the return value:
+>  
+> static inline long arch_atomic64_dec_if_positive(atomic64_t *v)
+> {
+> 	register long x0 asm ("x0") = (long)v;
 > 
-> ffff000010de64cc:       d2844442        mov     x2, #0x2222                     // #8738
-> ffff000010de64d0:       910103e0        add     x0, sp, #0x40
-> ffff000010de64d4:       f2a44442        movk    x2, #0x2222, lsl #16
-> ffff000010de64d8:       f2c22222        movk    x2, #0x1111, lsl #32
-> ffff000010de64dc:       f2e22222        movk    x2, #0x1111, lsl #48
-> ffff000010de64e0:       f90023e2        str     x2, [sp, #64]
-> ffff000010de64e4:       97daa73b        bl      ffff0000104901d0 <arch_atomic64_dec_if_positive>
-> ffff000010de64e8:       d2844421        mov     x1, #0x2221                     // #8737
-> ffff000010de64ec:       f2a44441        movk    x1, #0x2222, lsl #16
-> ffff000010de64f0:       f2c22221        movk    x1, #0x1111, lsl #32
-> ffff000010de64f4:       f2e22221        movk    x1, #0x1111, lsl #48
-> ffff000010de64f8:       eb01001f        cmp     x0, x1
-> ffff000010de64fc:       54000040        b.eq    ffff000010de6504 <test_atomic64+0x1274>  // b.none
-> ffff000010de6500:       d4210000        brk     #0x800
+> 	asm volatile(ARM64_LSE_ATOMIC_INSN(
+> 	/* LL/SC */
+> 	__LL_SC_ATOMIC64(dec_if_positive)
+> 	__nops(6),
+> 	/* LSE atomics */
+> 	"1:     ldr     x30, %[v]\n"
+> 	"       subs    %[ret], x30, #1\n"
+> 	"       b.lt    2f\n"
+> 	"       casal   x30, %[ret], %[v]\n"
+> 	"       sub     x30, x30, #1\n"
+> 	"       sub     x30, x30, %[ret]\n"
+> 	"       cbnz    x30, 1b\n"
+> 	"2:")
+> 	: [ret] "+&r" (x0), [v] "+Q" (v->counter)
+> 	:
+> 	: __LL_SC_CLOBBERS, "cc", "memory");
 > 
-> The value returned from arch_atomic64_dec_if_positive looks like
-> a stack value
->
-> ffff0000104901d0 <arch_atomic64_dec_if_positive>:
-> ffff0000104901d0:       a9bf7bfd        stp     x29, x30, [sp, #-16]!
-> ffff0000104901d4:       aa0003e1        mov     x1, x0
-> ffff0000104901d8:       910003fd        mov     x29, sp
-> ffff0000104901dc:       9412c9d5        bl      ffff000010942930 <__ll_sc_arch_atomic64_dec_if_positive>
-> ffff0000104901e0:       d503201f        nop
-> ffff0000104901e4:       d503201f        nop
-> ffff0000104901e8:       d503201f        nop
-> ffff0000104901ec:       d503201f        nop
-> ffff0000104901f0:       d503201f        nop
-> ffff0000104901f4:       d503201f        nop
-> ffff0000104901f8:       aa0103e0        mov     x0, x1
-> ffff0000104901fc:       a8c17bfd        ldp     x29, x30, [sp], #16
-> ffff000010490200:       d65f03c0        ret
+> 	return x0;
+> }
 > 
-> ...which seems to be coming from this buggy looking code.
+> ... so this smells like a GCC bug.
+> 
+> I *think* GCC places the "x0" variable into x1 despite it being a local
+> register variable that should be in x0, and GCC places v in x0.
+> 
+> That would explain why this works for LSE even with the shuffle back,
+> since the asm would use x1 for ret.
+> 
+> I haven't managed to come up with a test-case that proves that, though,
+> and I don't knwo how we could bodge around that.
 
-Ouch, so it's trying to save/restore x0, and returning the original
-value of the atomic64_t *v argument.
+With an __asmeq(), it looks like "x0" isn't in x0:
 
-AFAICT, GCC *shouldn't* be doing that, since we have a "=&r" constraint
-on a register variable in x0, which we use as the return value:
+[mark@lakrids:~/src/linux]% git diff
+diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
+index 9256a3921e4b..c3549f87dfe8 100644
+--- a/arch/arm64/include/asm/atomic_lse.h
++++ b/arch/arm64/include/asm/atomic_lse.h
+@@ -25,6 +25,8 @@
+ #error "please don't include this file directly"
+ #endif
  
-static inline long arch_atomic64_dec_if_positive(atomic64_t *v)
-{
-	register long x0 asm ("x0") = (long)v;
++#define __asmeq(x, y)  ".ifnc " x "," y " ; .err ; .endif\n\t"
++
+ #define __LL_SC_ATOMIC(op)     __LL_SC_CALL(arch_atomic_##op)
+ #define ATOMIC_OP(op, asm_op)                                          \
+ static inline void arch_atomic_##op(int i, atomic_t *v)                        \
+@@ -423,6 +425,7 @@ static inline long arch_atomic64_dec_if_positive(atomic64_t *v)
+        register long x0 asm ("x0") = (long)v;
+ 
+        asm volatile(ARM64_LSE_ATOMIC_INSN(
++       __asmeq("%[ret]", "x0")
+        /* LL/SC */
+        __LL_SC_ATOMIC64(dec_if_positive)
+        __nops(6),
+[mark@lakrids:~/src/linux]% usekorg 8.1.0 make ARCH=arm64 CROSS_COMPILE=aarch64-linux- lib/atomic64_test.o
+  CC      kernel/bounds.s
+  CC      arch/arm64/kernel/asm-offsets.s
+  CALL    scripts/checksyscalls.sh
+  CALL    scripts/atomic/check-atomics.sh
+  CC      lib/atomic64_test.o
+/tmp/ccQ5P7I7.s: Assembler messages:
+/tmp/ccQ5P7I7.s:39: Error: .err encountered
+scripts/Makefile.build:278: recipe for target 'lib/atomic64_test.o' failed
+make[1]: *** [lib/atomic64_test.o] Error 1
+Makefile:1747: recipe for target 'lib/atomic64_test.o' failed
+make: *** [lib/atomic64_test.o] Error 2
 
-	asm volatile(ARM64_LSE_ATOMIC_INSN(
-	/* LL/SC */
-	__LL_SC_ATOMIC64(dec_if_positive)
-	__nops(6),
-	/* LSE atomics */
-	"1:     ldr     x30, %[v]\n"
-	"       subs    %[ret], x30, #1\n"
-	"       b.lt    2f\n"
-	"       casal   x30, %[ret], %[v]\n"
-	"       sub     x30, x30, #1\n"
-	"       sub     x30, x30, %[ret]\n"
-	"       cbnz    x30, 1b\n"
-	"2:")
-	: [ret] "+&r" (x0), [v] "+Q" (v->counter)
-	:
-	: __LL_SC_CLOBBERS, "cc", "memory");
+... and is actuall in x1:
 
-	return x0;
-}
+[mark@lakrids:~/src/linux]% git diff                                                         
+diff --git a/arch/arm64/include/asm/atomic_lse.h b/arch/arm64/include/asm/atomic_lse.h
+index 9256a3921e4b..d8b38c168a04 100644
+--- a/arch/arm64/include/asm/atomic_lse.h
++++ b/arch/arm64/include/asm/atomic_lse.h
+@@ -25,6 +25,8 @@
+ #error "please don't include this file directly"
+ #endif
+ 
++#define __asmeq(x, y)  ".ifnc " x "," y " ; .err ; .endif\n\t"
++
+ #define __LL_SC_ATOMIC(op)     __LL_SC_CALL(arch_atomic_##op)
+ #define ATOMIC_OP(op, asm_op)                                          \
+ static inline void arch_atomic_##op(int i, atomic_t *v)                        \
+@@ -423,6 +425,7 @@ static inline long arch_atomic64_dec_if_positive(atomic64_t *v)
+        register long x0 asm ("x0") = (long)v;
+ 
+        asm volatile(ARM64_LSE_ATOMIC_INSN(
++       __asmeq("%[ret]", "x1")
+        /* LL/SC */
+        __LL_SC_ATOMIC64(dec_if_positive)
+        __nops(6),
+[mark@lakrids:~/src/linux]% usekorg 8.1.0 make ARCH=arm64 CROSS_COMPILE=aarch64-linux- lib/atomic64_test.o
+  CC      kernel/bounds.s
+  CC      arch/arm64/kernel/asm-offsets.s
+  CALL    scripts/checksyscalls.sh
+  CALL    scripts/atomic/check-atomics.sh
+  CC      lib/atomic64_test.o
 
-... so this smells like a GCC bug.
 
-I *think* GCC places the "x0" variable into x1 despite it being a local
-register variable that should be in x0, and GCC places v in x0.
-
-That would explain why this works for LSE even with the shuffle back,
-since the asm would use x1 for ret.
-
-I haven't managed to come up with a test-case that proves that, though,
-and I don't knwo how we could bodge around that.
+... which is not fantastic. :/
 
 Thanks,
 Mark.
