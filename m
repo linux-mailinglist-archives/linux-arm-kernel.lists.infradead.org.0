@@ -2,101 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 145982DE8B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 15:38:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A267E2DEAE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 15:42:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QYJu2w3ggKgUN+e7ripWhx8dYzIM6Aa6SlmCIK6Wh44=; b=WaPJly6qneWOQy
-	UyhxgrbjKDfkCz3WN1QwLj5LEp7wpx5LW5fWIrp5KiLfSR4I2LK4UuWGxU7elQEg6Bb+cqtlN/LNX
-	pX/nHcB/xIjmLIaUs6xg2lmkgOowxJKnmaKP2b07oN4X48F9HK7l3VxnQAHDUVWr4O8YhMeCsxZG2
-	1irJqdcCYk4nW1ruz+N7gs/025SQzLePYreuBX7OJo1kD9s/DRgeIoblV+7j/2i21wYTTbxJ/bxEF
-	lrOYdz09P+TEh00MMvBVVOMWNRfkff9eecWDyTm1XEJH71oxs2zo5Tx6ex8OT1xnAhV6RC3nEN1F7
-	DcbQ0e/BMGPTO/wyL8wg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u3FEyld3cL1vx2iKKw0flH4dJipTo5Zfu/i3bn2FFCo=; b=nhH7a/zHcv6onh
+	dGiV3fCmMGAAwZyPYoHpjMAUbsJSYulf4TS8lUM6Uk5rgcj3T0wLT2O5Hp7BQHBkQpuAxNyO2GolN
+	Qny3dYfWNSofBZSEXLLaQmQt1DfWW3p6UOWNy1cXNy77Y8eZ0H964OVtZtTWlJgsycS1P3pX3P2+y
+	Yr6CgVyx1SNDqGFfOwHL8BbQZ/37ihOrU0/H1ej7Uop1vFRcPt+/NnONlgkUxs3aEINay3jiItZnO
+	4xfz0c4ulGUa5paqLYctckUhbClCf1bOYv1u/2dFKbiKCI9r8M2AU+UuDhSXfJmh5yNN3M4Bmub1p
+	9hpf8sxh45Kd55K/ZmPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVymo-0008CE-Nl; Wed, 29 May 2019 13:38:34 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hVyq5-0002Bo-Da; Wed, 29 May 2019 13:41:57 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVymh-0008BL-7q
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 13:38:28 +0000
-Received: by mail-lj1-x242.google.com with SMTP id r76so2459922lja.12
+ id 1hVypx-0002BR-C4
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 13:41:50 +0000
+Received: by mail-qk1-f196.google.com with SMTP id j1so1421644qkk.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 06:38:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:newsgroups:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=VoMv/71us6M8DbDViUqysPdNgAN+xa2mLNMMXYgg6YA=;
- b=fpu2tXpr7clU9LTk7+KSRqjY63WODxNTsAcGqDq5xKZ2wIbupZFJILlIdQZ4TftjNl
- TmyGmp5IsKkvk/qitY+t+oMibDc5WR0hiyTI+QvmrGMbRNx2pF9znsL5Vvv/gYvumKCh
- MZWzLFgHPnVRAHZhovrKRLH+jRci9pJcfWKEgQCiwG52567NA9TLoIWiSJx6JMkEEKxK
- bl79yTvtQ/vUU4hjm5yRhaUzCKgyjOLkxjSOTeV60mZoiXxmALxK7Ba7up3bXO0P8+YE
- wf5A5SjHT5oPaD+dYfu3sgdFjuN2p3uwiQvPMDgsoIfbKbMJcvWY0Vv/WQqIoUzXM/n5
- 8niw==
+ Wed, 29 May 2019 06:41:49 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:newsgroups:references:from
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=VoMv/71us6M8DbDViUqysPdNgAN+xa2mLNMMXYgg6YA=;
- b=UQaHg/Lu+pcgc1xAsrBQl8+AdLkenFuOdK2Scmk7bOHxal/5QaoV6gFCaXnHV57dld
- XRQOxz94fSFkLn6LVu22kHG29Ph1MHqwhH74ZM+UTkr0hLil1nyS0IiFCznsm58zQBzw
- 0HFP4Of+9poExTL6hQn/0J6PhvUTRosHdypTLP5WocqkAIn3c50mm2ySZzNuQCUgChYp
- wcAN+9Xey6w2GN0Olg3n86ZcVegZy3WCQRSeQJpBRze4vPPYMV5ihg/9jf/+RPVL952k
- gOy6L/fbJ7gveB+EH6qEKlOOf5kCXWvlFZ0EO1GtTNjAR27jnqvHUrio+AqTSHDNyoxT
- JSDQ==
-X-Gm-Message-State: APjAAAVpJreN+zaRomjm0AniKOhXd1U3eiIlouspNyL/h7CO0bXK5CcP
- KQKag4CiaGSKGLv4Yw2hIrNqHkbN
-X-Google-Smtp-Source: APXvYqzERz4U+Q9lLxvdncfDaBvdigW9kVACUuZgbRyZIBY4T9hQ8Em3/wCwkzyuRxGYSusJMHudyw==
-X-Received: by 2002:a2e:9a9a:: with SMTP id p26mr3978876lji.64.1559137104811; 
- Wed, 29 May 2019 06:38:24 -0700 (PDT)
-Received: from [192.168.2.145] ([94.29.35.141])
- by smtp.googlemail.com with ESMTPSA id d5sm3525117lji.85.2019.05.29.06.38.23
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 06:38:24 -0700 (PDT)
-Subject: Re: [PATCH V4 5/8] memory: tegra: Add EMC scaling support code for
- Tegra210
-To: Joseph Lo <josephl@nvidia.com>, Thierry Reding
- <thierry.reding@gmail.com>, Peter De Schrijver <pdeschrijver@nvidia.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>
-Newsgroups: gmane.linux.ports.arm.kernel, gmane.linux.ports.tegra,
- gmane.linux.drivers.devicetree, gmane.linux.kernel.clk
-References: <20190529082139.5581-1-josephl@nvidia.com>
- <20190529082139.5581-6-josephl@nvidia.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <5bd95d0b-e1a5-e717-4d5a-b9ef5d5fa4a5@gmail.com>
-Date: Wed, 29 May 2019 16:37:20 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=B4Hu2BykjV2XUgQjXYreykG9CRGtaQihhtWlraD16NE=;
+ b=IlIqRoBNRb31bQr8Inf78ZHK1i2QsrS1zfOS3nc3Xu9kJsXHPieLxRhMGddL+vrHOj
+ BguE8AplZ3bugW3mvsuQhaAJ6UN8cEBEPU1JCotmQaazeOu/ktZJIEJ18EHLhmlon2er
+ NYIO+/im3vc6CMQYnYp8giDLdA2DWZxMlciu6HxzM1kE4om+2qsqjk1kslwDsX0445mX
+ Vexc+mez12cO1Oq5tRgsFq+ztPi3E2ppmy8uNqrD8VfNChB9HPEwsrQwIByYRKISJVgx
+ d5f6wAS1C15PLQZ3kd41W4DePeNNF7OA/1e1H/27tpA6AK3LZra3YWcGEerXotxRXihJ
+ 92hQ==
+X-Gm-Message-State: APjAAAXPSm7BRJWYHbYg3/lU90/dEXnYbnkZRsQSXUwDoUdrohsId662
+ VmULc7NG8NTS5U/GZZ4DUa/t+1Ru5DQg02jamIE=
+X-Google-Smtp-Source: APXvYqwI32DYHBzUvKVuPe+aOANmgUoQBTNNnfm9jjZUjMGmB4YKECE25ibchquT1Q2cVjHAmLwbc+ySXwB2JGCPHNI=
+X-Received: by 2002:a05:620a:1085:: with SMTP id
+ g5mr80895478qkk.182.1559137308118; 
+ Wed, 29 May 2019 06:41:48 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190529082139.5581-6-josephl@nvidia.com>
-Content-Language: en-US
+References: <20190524201817.16509-1-jannh@google.com>
+ <20190525144304.e2b9475a18a1f78a964c5640@linux-foundation.org>
+ <CAG48ez36xJ9UA8gWef3+1rHQwob5nb8WP3RqnbT8GEOV9Z38jA@mail.gmail.com>
+ <6956cfe5-90d4-aad4-48e3-66b0ece91fed@linux-m68k.org>
+ <CAK8P3a0b7MBn+84jh0Y2zhFLLAqZ2tMvFDFF9Kw=breRLH4Utg@mail.gmail.com>
+ <889fc718-b662-8235-5d60-9d330e77cf18@linux-m68k.org>
+In-Reply-To: <889fc718-b662-8235-5d60-9d330e77cf18@linux-m68k.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 29 May 2019 15:41:31 +0200
+Message-ID: <CAK8P3a0zj126XSGjMbiDJDkY8sF+6JNWH0VsJEUAga6OGHV0vg@mail.gmail.com>
+Subject: Re: [PATCH] binfmt_flat: make load_flat_shared_library() work
+To: Greg Ungerer <gregungerer00@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_063827_308673_F398FA20 
-X-CRM114-Status: GOOD (  14.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190529_064149_412171_6B324C22 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ no trust [209.85.222.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ provider (arndbergmann[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,32 +87,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, devicetree@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Nicolas Pitre <nicolas.pitre@linaro.org>,
+ Sergei Poselenov <sposelenov@emcraft.com>,
+ Linux/m68k <linux-m68k@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, kernel list <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MjkuMDUuMjAxOSAxMToyMSwgSm9zZXBoIExvINC/0LjRiNC10YI6Cj4gVGhpcyBwYXRjaCBhZGRz
-IHRoZSByZXF1aXJlZCBBUElzIGFuZCB2YXJpYWJsZXMgZm9yIHRoZSBFTUMgc2NhbGluZwo+IHNl
-cXVlbmNlIGNvZGUgb24gVGVncmEyMTAuCj4gCj4gQmFzZWQgb24gdGhlIHdvcmsgb2YgUGV0ZXIg
-RGUgU2NocmlqdmVyIDxwZGVzY2hyaWp2ZXJAbnZpZGlhLmNvbT4uCj4gCj4gU2lnbmVkLW9mZi1i
-eTogSm9zZXBoIExvIDxqb3NlcGhsQG52aWRpYS5jb20+Cj4gLS0tCj4gdjQ6Cj4gLSBmaXggdGhl
-IEFQSSB3aXRoIGdlbmVyaWMgbmFtaW5nCj4gLSB1c2UgJ3UxNicgaW4gJ3N0cnVjdCBlbWNfdGFi
-bGVfcmVnaXN0ZXJfb2Zmc2V0Jwo+IC0tLQoKW3NuaXBdCgo+ICt2b2lkIGVtY193cml0ZWwoc3Ry
-dWN0IHRlZ3JhX2VtYyAqZW1jLCB1MzIgdmFsLCB1bnNpZ25lZCBsb25nIG9mZnNldCkKPiArewo+
-ICsJd3JpdGVsX3JlbGF4ZWQodmFsLCBlbWMtPmVtY19iYXNlW1JFR19FTUNdICsgb2Zmc2V0KTsK
-PiArfQo+ICsKPiAgdTMyIGVtY19yZWFkbChzdHJ1Y3QgdGVncmFfZW1jICplbWMsIHVuc2lnbmVk
-IGxvbmcgb2Zmc2V0KQo+ICB7Cj4gIAlyZXR1cm4gcmVhZGxfcmVsYXhlZChlbWMtPmVtY19iYXNl
-W1JFR19FTUNdICsgb2Zmc2V0KTsKPiAgfQo+ICAKPiArdTMyIGVtYzFfcmVhZGwoc3RydWN0IHRl
-Z3JhX2VtYyAqZW1jLCB1bnNpZ25lZCBsb25nIG9mZnNldCkKPiArewo+ICsJcmV0dXJuIHJlYWRs
-X3JlbGF4ZWQoZW1jLT5lbWNfYmFzZVtSRUdfRU1DMV0gKyBvZmZzZXQpOwo+ICt9CgpQbGVhc2Ug
-bWFrZSBhbGwgdGhlIGdsb2JhbCBvbmUtbGluZSBmdW5jdGlvbnMgc3RhdGljIGFuZCBpbmxpbmVk
-LCB0aGVuCm1vdmUgdGhlbSBvdXQgaW50byB0aGUgaGVhZGVyLiBUaGlzIHdpbGwgYWxsb3cgY29t
-cGlsZXIgdG8gb3B0aW1pemUgY29kZQpiZXR0ZXIgYW5kIGFsc28gd2lsbCBoaWRlIHRoZXNlIGdl
-bmVyaWMtbG9va2luZyBnbG9iYWwgc3ltYm9sIG5hbWVzIGZyb20KdW5yZWxhdGVkIHBhcnRpZXMg
-aW4gdGhlIG11bHRpcGxhdGZvcm0ga2VybmVsIGJ1aWxkLgoKLS0gCkRtaXRyeQoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, May 29, 2019 at 2:29 PM Greg Ungerer <gregungerer00@gmail.com> wrote:
+> On 29/5/19 10:05 pm, Arnd Bergmann wrote:
+> > On Tue, May 28, 2019 at 12:56 PM Greg Ungerer <gerg@linux-m68k.org> wrote:
+> >> On 27/5/19 11:38 pm, Jann Horn wrote:
+> >>> On Sat, May 25, 2019 at 11:43 PM Andrew Morton
+> >>> <akpm@linux-foundation.org> wrote:
+> >>> Maybe... but I didn't want to rip it out without having one of the
+> >>> maintainers confirm that this really isn't likely to be used anymore.
+> >>
+> >> I have not used shared libraries on m68k non-mmu setups for
+> >> a very long time. At least 10 years I would think.
+> >
+> > I think Emcraft have a significant customer base running ARM NOMMU
+> > Linux, I wonder whether they would have run into this (adding
+> > Sergei to Cc).
+> > My suspicion is that they use only binfmt-elf-fdpic, not binfmt-flat.
+> >
+> > The only architectures I see that enable binfmt-flat are sh, xtensa
+> > and h8300, but only arch/sh uses CONFIG_BINFMT_SHARED_FLAT
+>
+> m68k uses enables it too. It is the only binary format supported
+> when running no-mmu on m68k. (You can use it with MMU enabled too
+> if you really want too).
+
+My mistake, I meant to write 'the only architectures /other than m68k/",
+which you had already mentioned above.
+
+    Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
