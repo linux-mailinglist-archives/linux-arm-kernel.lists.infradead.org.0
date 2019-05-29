@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DB6D2D894
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:07:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69A2C2D889
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:07:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1Iq4VdwomPy3eX6347P/V36cBL4ub/pXpd+n+NFJpyg=; b=s1ZbUiyljvsGwRFDtk8df+ajni
-	xAvJrqEFwo3lZW/i+C0NztlrE+1/FfrWPuR9SYZF32+VfhvHNOqK7/q1TL6bqVZI7HU5ZbvDORyS5
-	Cxsi/Hz6KsC1T5SbxUayuj9PJfKB2uPm1TVKvb2UTlK8R1DwwH6rSM0tUGgiw5OKkck9ekTTpxA4q
-	8yscsxOmpfRz/KhN6c4gp8SYvO5p3HDuIfpA++LVT/cEQmxsqtJghFLtc+GH7w6sB9lYWTt7RPl7c
-	etuUUIKByax/nh5vk/ZfSu7+OWen+JBJziakAPbFJQ0FSjufiAB+P5957jdaGdkEyqfhf7TGA28IR
-	McGuOUdA==;
+	bh=pRdtEdYz6fHgdGk1VZgRLSQq93zQCCMv9cQbVSFOVRc=; b=seW1HXmd+3fOt/RBhL7/pGIQHL
+	1eYnuUj5+yQakqBNAa/kOx67ple7r8lGW8T4Z0I1XK9EJFO61+VIEa2goED4IQTeAlO9aN0mmfWGL
+	5HXi12uLO4WW6lVGWELr4g97iVoOj3S5S4pPNXGoR/C3P107sEr0VkturR5Arv8Y4wu+Bx2Lb5lhv
+	vNdfewa+XcgAxZLnMTtx3P4E4LrkBaRz5/bwUobA8b4msD7wQlB9JK+8kIiTkRnFeExAREjX80P7b
+	QtrHAvHKj8DZQ4Hm+YPE1dn6BOwLJ5JYenwjZSxwEQr14fLKJKbC/itR7zZmdT96xQlFUJSRW4rkM
+	9Y5buJ2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVuYn-00034s-Ux; Wed, 29 May 2019 09:07:49 +0000
+	id 1hVuYU-0002ex-Vm; Wed, 29 May 2019 09:07:31 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVuYB-0002Vd-Gg
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:07:14 +0000
+ id 1hVuYB-0002Ve-Ed
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:07:12 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EC31B1A025A;
- Wed, 29 May 2019 11:07:08 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4195A1A03CE;
+ Wed, 29 May 2019 11:07:10 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4608A1A11C4;
- Wed, 29 May 2019 11:07:03 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 90DC51A11DD;
+ Wed, 29 May 2019 11:07:04 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 07158402F1;
- Wed, 29 May 2019 17:06:55 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4E132402FA;
+ Wed, 29 May 2019 17:06:57 +0800 (SGT)
 From: yibin.gong@nxp.com
 To: robh@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  festevam@gmail.com, mark.rutland@arm.com, vkoul@kernel.org,
  dan.j.williams@intel.com
-Subject: [PATCH v3 1/8] dmaengine: fsl-edma: add dmamux_nr for next version
-Date: Wed, 29 May 2019 17:08:41 +0800
-Message-Id: <20190529090848.34350-2-yibin.gong@nxp.com>
+Subject: [PATCH v3 2/8] dmaengine: mcf-edma: update to 'dmamux_nr'
+Date: Wed, 29 May 2019 17:08:42 +0800
+Message-Id: <20190529090848.34350-3-yibin.gong@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190529090848.34350-1-yibin.gong@nxp.com>
 References: <20190529090848.34350-1-yibin.gong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_020711_842225_01229755 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20190529_020711_621889_4536CA33 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -79,85 +79,40 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Robin Gong <yibin.gong@nxp.com>
 
-Next version of edma such as edmav2 on i.mx7ulp has only one dmamux.
-Add dmamux_nr instead of static macro define 'DMAMUX_NR'. No any
-function change here.
+Update to 'dmamux_nr' instead of static macro DMAMUX_NR since
+new version edma only has one dmamux.
 
 Signed-off-by: Robin Gong <yibin.gong@nxp.com>
 ---
- drivers/dma/fsl-edma-common.h |  1 +
- drivers/dma/fsl-edma.c        | 11 ++++++-----
- 2 files changed, 7 insertions(+), 5 deletions(-)
+ drivers/dma/fsl-edma-common.c | 2 +-
+ drivers/dma/mcf-edma.c        | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/dma/fsl-edma-common.h b/drivers/dma/fsl-edma-common.h
-index c53f76e..21a9cfd 100644
---- a/drivers/dma/fsl-edma-common.h
-+++ b/drivers/dma/fsl-edma-common.h
-@@ -145,6 +145,7 @@ struct fsl_edma_engine {
- 	void __iomem		*membase;
- 	void __iomem		*muxbase[DMAMUX_NR];
- 	struct clk		*muxclk[DMAMUX_NR];
-+	u32			dmamux_nr;
- 	struct mutex		fsl_edma_mutex;
- 	u32			n_chans;
- 	int			txirq;
-diff --git a/drivers/dma/fsl-edma.c b/drivers/dma/fsl-edma.c
-index d641ef8..7b65ef4 100644
---- a/drivers/dma/fsl-edma.c
-+++ b/drivers/dma/fsl-edma.c
-@@ -96,7 +96,7 @@ static struct dma_chan *fsl_edma_xlate(struct of_phandle_args *dma_spec,
- 	struct fsl_edma_engine *fsl_edma = ofdma->of_dma_data;
- 	struct dma_chan *chan, *_chan;
- 	struct fsl_edma_chan *fsl_chan;
--	unsigned long chans_per_mux = fsl_edma->n_chans / DMAMUX_NR;
-+	unsigned long chans_per_mux = fsl_edma->n_chans / fsl_edma->dmamux_nr;
+diff --git a/drivers/dma/fsl-edma-common.c b/drivers/dma/fsl-edma-common.c
+index 680b2a0..c9a17fc 100644
+--- a/drivers/dma/fsl-edma-common.c
++++ b/drivers/dma/fsl-edma-common.c
+@@ -84,7 +84,7 @@ void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
+ 	void __iomem *muxaddr;
+ 	unsigned int chans_per_mux, ch_off;
  
- 	if (dma_spec->args_count != 2)
- 		return NULL;
-@@ -206,6 +206,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
- 		return -ENOMEM;
+-	chans_per_mux = fsl_chan->edma->n_chans / DMAMUX_NR;
++	chans_per_mux = fsl_chan->edma->n_chans / fsl_chan->edma->dmamux_nr;
+ 	ch_off = fsl_chan->vchan.chan.chan_id % chans_per_mux;
+ 	muxaddr = fsl_chan->edma->muxbase[ch / chans_per_mux];
+ 	slot = EDMAMUX_CHCFG_SOURCE(slot);
+diff --git a/drivers/dma/mcf-edma.c b/drivers/dma/mcf-edma.c
+index 7de54b2f..4484190 100644
+--- a/drivers/dma/mcf-edma.c
++++ b/drivers/dma/mcf-edma.c
+@@ -189,6 +189,7 @@ static int mcf_edma_probe(struct platform_device *pdev)
  
- 	fsl_edma->version = v1;
-+	fsl_edma->dmamux_nr = DMAMUX_NR;
- 	fsl_edma->n_chans = chans;
- 	mutex_init(&fsl_edma->fsl_edma_mutex);
+ 	/* Set up version for ColdFire edma */
+ 	mcf_edma->version = v2;
++	mcf_edma->dmamux_nr = DMAMUX_NR;
+ 	mcf_edma->big_endian = 1;
  
-@@ -217,7 +218,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
- 	fsl_edma_setup_regs(fsl_edma);
- 	regs = &fsl_edma->regs;
- 
--	for (i = 0; i < DMAMUX_NR; i++) {
-+	for (i = 0; i < fsl_edma->dmamux_nr; i++) {
- 		char clkname[32];
- 
- 		res = platform_get_resource(pdev, IORESOURCE_MEM, 1 + i);
-@@ -295,7 +296,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
- 	if (ret) {
- 		dev_err(&pdev->dev,
- 			"Can't register Freescale eDMA engine. (%d)\n", ret);
--		fsl_disable_clocks(fsl_edma, DMAMUX_NR);
-+		fsl_disable_clocks(fsl_edma, fsl_edma->dmamux_nr);
- 		return ret;
- 	}
- 
-@@ -304,7 +305,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
- 		dev_err(&pdev->dev,
- 			"Can't register Freescale eDMA of_dma. (%d)\n", ret);
- 		dma_async_device_unregister(&fsl_edma->dma_dev);
--		fsl_disable_clocks(fsl_edma, DMAMUX_NR);
-+		fsl_disable_clocks(fsl_edma, fsl_edma->dmamux_nr);
- 		return ret;
- 	}
- 
-@@ -323,7 +324,7 @@ static int fsl_edma_remove(struct platform_device *pdev)
- 	fsl_edma_cleanup_vchan(&fsl_edma->dma_dev);
- 	of_dma_controller_free(np);
- 	dma_async_device_unregister(&fsl_edma->dma_dev);
--	fsl_disable_clocks(fsl_edma, DMAMUX_NR);
-+	fsl_disable_clocks(fsl_edma, fsl_edma->dmamux_nr);
- 
- 	return 0;
- }
+ 	if (!mcf_edma->n_chans) {
 -- 
 2.7.4
 
