@@ -2,99 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D36FB2D34C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 03:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEC8F2D361
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 03:35:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=380kl2LbjWMYiJfwxUoiyPGGYATL3kqdNZLPnLk1l4Y=; b=cgyimfgzA/Bdjp
-	L9o6QP0HMIMG7ndo8hLPOPeOE+jqMq2+ckjS++bNSyHY2K5e5EXY4iswpRxYbYU0q+h4/z7TvdlUI
-	7VBxnY2C3XZdqSPnkhF+d39m9IaITS+8+Ilh4WqfWud5Wd+Ks8iSqKNNRUMAAj5l6Hu6EjetEtFCk
-	onS36LYGilLFtzmhAyduBKT3E4UWHb4iKCgiMVRBeUhJkVXvtK1Gjjp4j/u2iagDiqdUq4u1cQSCI
-	aGvExizkRwc6iYOvpAbid4/oRiLn3B5GRfYQtmsXWjAN1viM+va9KlQ6x+rqSmyW91kyr0i3mAe7h
-	GCC+70+vASRri5Rx9WnQ==;
+	List-Owner; bh=Xvehg+nBZfVgOEW8vnhHc6lZ0CMP3Hi3os2FQJ2e32Y=; b=Y2VdMKpTqXaF8Z
+	z+H2lP1YakYemD+BCQnmt02IfUpgxpVTb45ry9Y2R32b1oW7s4gc/yJ45U6NOeGsJj2Fm8BV5d4Gy
+	yqVdygwepAzYvbhn1rMGLm3n+y551H9B3lfhwZc70fjtfH6kptHph43Nty6ZrbiR1v3F3h+FDBjC7
+	vouYih11soYKpaImb1UD3C6OtayzUhZVaT4brgIi1oNEKTrXgiBsVvxijULHemXh3jgP9PnJnJQxw
+	R1jWpX8zzWA4p7pfKG8do7cYn8v04/EsmBbE9s5Ug+WtXOYv4O+tFbuo7ct1+5QtVoygeExNokXE2
+	xjr3aRSBnNgUw6FKMBwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVnNF-0002zk-Kp; Wed, 29 May 2019 01:27:25 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1hVnVC-0005ur-Uz; Wed, 29 May 2019 01:35:39 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVnN9-0002zC-40
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 01:27:20 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 524D02203E;
- Tue, 28 May 2019 21:27:18 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Tue, 28 May 2019 21:27:18 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm2; bh=ioeB7zHzuIrWPlycdQWlBGq8mtTxytQ
- LMO5+tIc96Og=; b=LS3OzXUPrbKqiJbL/pQVT1MOVVOLo0+E78YZXJwv1DpXruf
- Y3EncH+L0nN+izLmvqtPA83EWSEX+v2552DeODXpV1erb4L+vkGD3nVEBIBZw9sm
- OuR30rXhiCxmfx+LGZjtoViVbT4/FBfs6JiVkrG+iLsij2gpR+riYxtNa8qpFkc0
- gamh++e/Wa9GJ3wpZobvoTlMsrCwjJ+s1YAKOnruIuS3bmIIOMb2xsBsZ4VW3lJj
- Y02sZb4dCrd68pIeF8BSFcutQwq3qCP/dJbmrid5p0xjuakUlkz/b2dFyF0eSqE5
- jqae/CrC6u2XcaDqB2C6PX91ETJ1hQJxr82/s2g==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ioeB7z
- HzuIrWPlycdQWlBGq8mtTxytQLMO5+tIc96Og=; b=7qswdVOlE1f9vJrwsJhoSE
- jV3vZHzZk0EoBNB+HKPtenBhp5sGO19cz9qrOBv5JoICgK6IIDVBuVdyEdyreiJt
- 8gszj6Hpz+pCnLkUH4x1jW/nJ9gw45WZRi2du9T7OZlV44TrvlK/GSmEe8/nyHDl
- 40eNjgftT+ttN2I1C/NojHm6nHQAr6EturFeysDAqTT2qBeUbcN5eDbVEGWysR7X
- SVYCAQmVw+eRli37zjajA+2vrjW659hiWQ4ZTTuupzJSSbJT0sgQpH1/DIamN6FW
- 6r/4ATUBTk8RIHXda43qaUIZPK4AaxHl++sSQuKB7xMPif67R+Ehw35XlCUk28ZQ
- ==
-X-ME-Sender: <xms:9N_tXLiz0FV_kq6p9HMQVm8b9GwTjYANLQpCEKbfhcbreVLkNG6wdQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduuddruddviedggeehucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:9N_tXLCRm4BGk27OuOe1ur6tyqa-6U06n2BL-N-Z6wL5FEUvaSAuHg>
- <xmx:9N_tXNqMOY8haizNcQXR51DiO96ZyDlZGA7RCousVe5ICapsxn-ebQ>
- <xmx:9N_tXCtIugJuRak_0OyMewJoejHMcP4Ymiu80TXHHI4NBgpy3-x5tw>
- <xmx:9t_tXGV3PMpaR97hvvy9j8WxwcyOGvhcCUp7fC7MjiCi6DXjsFb-pQ>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id C2A78E00A1; Tue, 28 May 2019 21:27:16 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-555-g49357e1-fmstable-20190528v2
-Mime-Version: 1.0
-Message-Id: <04f103fb-54b1-4911-8164-44b20bfd1e72@www.fastmail.com>
-In-Reply-To: <20190525144153.2028-1-yuehaibing@huawei.com>
-References: <20190525144153.2028-1-yuehaibing@huawei.com>
-Date: Wed, 29 May 2019 10:57:16 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: YueHaibing <yuehaibing@huawei.com>,
- "Stefan M Schaeckeler" <sschaeck@cisco.com>,
- "Borislav Petkov" <bp@alien8.de>,
- "Mauro Carvalho Chehab" <mchehab@kernel.org>, james.morse@arm.com,
- "Joel Stanley" <joel@jms.id.au>
-Subject: Re: [PATCH -next] EDAC: aspeed: Remove set but not used variable 'np'
+ id 1hVnV5-0005tv-2H; Wed, 29 May 2019 01:35:33 +0000
+X-UUID: 9934a6f9010e4fad899b91e7ee2badc0-20190528
+X-UUID: 9934a6f9010e4fad899b91e7ee2badc0-20190528
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 735358917; Tue, 28 May 2019 17:35:25 -0800
+Received: from mtkexhb02.mediatek.inc (172.21.101.103) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 28 May 2019 18:35:24 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by mtkexhb02.mediatek.inc
+ (172.21.101.103) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Wed, 29 May 2019 09:35:11 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 29 May 2019 09:35:11 +0800
+Message-ID: <1559093711.11380.6.camel@mtksdaap41>
+Subject: Re: [PATCH 1/3] drm: mediatek: fix unbind functions
+From: CK Hu <ck.hu@mediatek.com>
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Wed, 29 May 2019 09:35:11 +0800
+In-Reply-To: <20190527045054.113259-2-hsinyi@chromium.org>
+References: <20190527045054.113259-1-hsinyi@chromium.org>
+ <20190527045054.113259-2-hsinyi@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_182719_298898_5BF0137C 
-X-CRM114-Status: GOOD (  11.14  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190528_183531_116359_782DB0CB 
+X-CRM114-Status: GOOD (  15.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,57 +71,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, linux-edac@vger.kernel.org
+Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Hsin-yi:
 
+On Mon, 2019-05-27 at 12:50 +0800, Hsin-Yi Wang wrote:
+> move mipi_dsi_host_unregister() to .remove since mipi_dsi_host_register()
+> is called in .probe.
 
-On Sun, 26 May 2019, at 00:12, YueHaibing wrote:
-> Fixes gcc '-Wunused-but-set-variable' warning:
+In the latest kernel [1], mipi_dsi_host_register() is called in
+mtk_dsi_bind(), I think we don't need this part.
+
+[1]
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/mediatek/mtk_dsi.c?h=v5.2-rc2
+
 > 
-> drivers/edac/aspeed_edac.c: In function aspeed_probe:
-> drivers/edac/aspeed_edac.c:284:22: warning: variable np set but not 
-> used [-Wunused-but-set-variable]
+> detatch panel in mtk_dsi_destroy_conn_enc(), since .bind will try to
+> attach it again.
 > 
-> It is never used and can be removed.
-> 
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
-
+> Fixes: 2e54c14e310f ("drm/mediatek: Add DSI sub driver")
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 > ---
->  drivers/edac/aspeed_edac.c | 4 ----
->  1 file changed, 4 deletions(-)
+>  drivers/gpu/drm/mediatek/mtk_dsi.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> diff --git a/drivers/edac/aspeed_edac.c b/drivers/edac/aspeed_edac.c
-> index 11833c0a5d07..5634437bb39d 100644
-> --- a/drivers/edac/aspeed_edac.c
-> +++ b/drivers/edac/aspeed_edac.c
-> @@ -281,15 +281,11 @@ static int aspeed_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct edac_mc_layer layers[2];
->  	struct mem_ctl_info *mci;
-> -	struct device_node *np;
->  	struct resource *res;
->  	void __iomem *regs;
->  	u32 reg04;
->  	int rc;
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index b00eb2d2e086..c9b6d3a68c8b 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -844,6 +844,8 @@ static void mtk_dsi_destroy_conn_enc(struct mtk_dsi *dsi)
+>  	/* Skip connector cleanup if creation was delegated to the bridge */
+>  	if (dsi->conn.dev)
+>  		drm_connector_cleanup(&dsi->conn);
+> +	if (dsi->panel)
+> +		drm_panel_detach(dsi->panel);
+
+I think mtk_dsi_destroy_conn_enc() has much thing to do and I would like
+you to do more. You could refer to [2] for complete implementation.
+
+[2]
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/exynos/exynos_drm_dsi.c?h=v5.2-rc2#n1575
+
+Regards,
+CK
+
+>  }
 >  
-> -	/* setup regmap */
-> -	np = dev->of_node;
-> -
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	if (!res)
->  		return -ENOENT;
-> -- 
-> 2.17.1
-> 
-> 
->
+>  static void mtk_dsi_ddp_start(struct mtk_ddp_comp *comp)
+> @@ -1073,7 +1075,6 @@ static void mtk_dsi_unbind(struct device *dev, struct device *master,
+>  	struct mtk_dsi *dsi = dev_get_drvdata(dev);
+>  
+>  	mtk_dsi_destroy_conn_enc(dsi);
+> -	mipi_dsi_host_unregister(&dsi->host);
+>  	mtk_ddp_comp_unregister(drm, &dsi->ddp_comp);
+>  }
+>  
+> @@ -1179,6 +1180,7 @@ static int mtk_dsi_remove(struct platform_device *pdev)
+>  
+>  	mtk_output_dsi_disable(dsi);
+>  	component_del(&pdev->dev, &mtk_dsi_component_ops);
+> +	mipi_dsi_host_unregister(&dsi->host);
+>  
+>  	return 0;
+>  }
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
