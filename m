@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C0082DB42
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:58:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0175E2DB47
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 12:59:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bnoYqcBE5j+K6VJhjl5BT80TbUa3bJlvMRIAVp6qkjs=; b=uWTeOTOHi4R9tr
-	sY6H8XT9fWccX8+Yve6C0B7KnzK0wwK+nP7iYWw/Gn4tBtEvPApZdE6oOW/b0TYw9k+uW/Vlb1No/
-	jOs7NSOnJMIrJG/7Toc09yszxup4CPCggVohl291kgURCekBptdeoX19UAN7z38pY10eGGiOlnfzD
-	4W2SkTyWdU74pMrZal8Ce7CsB6h1MJY/tcLO0viVYMwAL+Q+7ZK1JC96exvZJJqLdqpu+xocTI2uj
-	+ptBNua2pCKdKUmPML/9W5sLMdvEa2CmEgi/vvZUlULZC44Q+qrW7yuyFwtWLyhusFVsaI38a+jQG
-	rQbhH1msWTqwBuITddkA==;
+	List-Owner; bh=oFLfSbZT0nSHgmWHUhdW+4mIu8N+1bGnYQUMQ+AhEBQ=; b=SSQzCORfb69GKk
+	bC/GvfVk5cypbVql5mfk43R9ubyphNFoOLE2OwYZFLg+wON9FAS6cosxqqubnj0wvX1j9cyMVFYFw
+	iNQleHy9fdG5UKlWo4sIIsCTkwHhaWao8/GgbSeEIQ01xKj77oR2oEyRlyOKTkGki+w/y1gFFd+wD
+	yl/ugLU6i7vXda2XpMBLFl6auJqOJK8hQzxEHTXdu+E0RwbhJeEKmMtbNbqKVgOJ5R7IDosA8BKMw
+	RL3+SyrKXfsHWiMR6buNdA4nRzeQWkUm7mlxk/80mEK6lp45KLKgti6mIPPd73TkRh1peo7kQS1z4
+	gfD92jnpHMDLSnnQ25Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVwHv-0006mi-Bs; Wed, 29 May 2019 10:58:31 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hVwIc-0007FK-KY; Wed, 29 May 2019 10:59:14 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVwGf-0005b4-R8
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:57:32 +0000
-Received: by mail-pl1-x641.google.com with SMTP id d21so918478plr.3
+ id 1hVwGk-0005i3-1z
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 10:57:46 +0000
+Received: by mail-pl1-x642.google.com with SMTP id bb3so893398plb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 03:57:13 -0700 (PDT)
+ Wed, 29 May 2019 03:57:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=2ZQ8G0W1S9OmrPavif11lWWMbohgMuBG92FhjQ0hCpY=;
- b=gdGxlLlLsfXGohWiydB6LjurSsdfuFwPeks8QxffA0jURX8ULCrSOR2YiO7hgtpsji
- pRmU5gTaS68DtWTDZ+9jgfF86+uStkqc1uiYAY/md8Bxjem8cy01t+D3dbrvS2sRyZYA
- bx3Xe8a04d+GpRGxmn/E53y2kaBxnnVJcM0zs=
+ bh=6DwmkLGpJZpkcPw0XMVVDkf1y0K009QPRSW8hUfXBRY=;
+ b=VFu9w0hD1Ourpd8eMMh8PYNciyswgOS1KtrgHUdk0KAmbBdup7r3OzJtKsKMtdN0BH
+ 5AS3DuAId2PTW+ttuh2IAHVuA7mZ2XxF6MgB1mm9oABWptM+8bobX3Dwxul01VlpKDoS
+ gSnWhBuTO1Skk4JqIA12yvsaam3Xpv9pnZMN0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=2ZQ8G0W1S9OmrPavif11lWWMbohgMuBG92FhjQ0hCpY=;
- b=XZIb1zU9WNqKyIBwjfp7eqhrNVaMnGMSi3D0ID4VbAIP+nHZO6Vm1Angofg19/HbTO
- 7UyIbjNAEyyFgwBU8jQa9H1w0lUZpnjbs9wHZmF0apTiCu0+16E6UfS5tS2O9q3TfULD
- WIlDfENWnhT826oTV95WHg5FhX1O0il1qerc73S+e+7MHEGq8DxArSJVJxsA96y/2T9j
- wLU0lhVZMCkwPUCOLKOXh9jGr1iNn1yH0GCbZQg11Z1Prhq11/j3CrSPIXzzob/+6Gi6
- 5S/wQTXwjiuLnrjZBlJkhRN0LBx1jdebx0RbCLSZspjC5nyo8wXoCdROdsTxrewuy4UN
- /HUQ==
-X-Gm-Message-State: APjAAAXIXmVlUw17sIJ3TEAXwX/cMy0c3882UIxhJtu/wfJdjt7F5f3l
- 6/PXfWX7tKLUCx8p/F3zKRM+aA==
-X-Google-Smtp-Source: APXvYqxJAVroZSxkWNSASs009+W1R6iWdZWK44wcz1sc8TL7INu/U1qlJ65ThlWxirmvQ5tEXda/FA==
-X-Received: by 2002:a17:902:a982:: with SMTP id
- bh2mr35644829plb.224.1559127432704; 
- Wed, 29 May 2019 03:57:12 -0700 (PDT)
+ bh=6DwmkLGpJZpkcPw0XMVVDkf1y0K009QPRSW8hUfXBRY=;
+ b=fQNaAnjstx1lKa6JopythSiRaFjDoW5LSELHHCmKWm6uTIcbgz4n2s6xsREYdbmd8d
+ HYIaULXIH3++DZG8eiyvbWhMZIeGfTmM6RZ/ICTjg9rhBEMQUAqxfTNjIljFP0eP5iD/
+ vWXdYJ1/rjuUWJxKHt6QSx6Sbc/+mI0dPwNBCc0IfU5VcR/dYpHWrzkq2TipGHoLajvP
+ e7dz3RK7JzYTCefj7n5fmQvg9MRGPGLzmTSNmcAjuIdGFaNS13PmB87bnM4OT0HeogZs
+ bfexbXRTge9HGStJmG8L/BBBUWkt0jflyU3QBNEdVrF4IDC4oepZTLL86k84X/1+c3cK
+ xg3w==
+X-Gm-Message-State: APjAAAWTRTK7dniHQtLevUYEaI+Xa0CKvELt7tVYKm1K1dtsmvHqLhsG
+ 3lC+Oc4TIiAxj5162y4ZaMJkMg==
+X-Google-Smtp-Source: APXvYqwygLxq0inFrDqP1GBEA4oJIXO+O1N08+R0LPi1oqe2Amq7V89w6a/dgny0hRfvq1CVA26PnA==
+X-Received: by 2002:a17:902:20eb:: with SMTP id
+ v40mr15879742plg.239.1559127437024; 
+ Wed, 29 May 2019 03:57:17 -0700 (PDT)
 Received: from localhost.localdomain ([49.206.202.218])
- by smtp.gmail.com with ESMTPSA id 184sm18974479pfa.48.2019.05.29.03.57.08
+ by smtp.gmail.com with ESMTPSA id 184sm18974479pfa.48.2019.05.29.03.57.12
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 03:57:12 -0700 (PDT)
+ Wed, 29 May 2019 03:57:16 -0700 (PDT)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Chen-Yu Tsai <wens@csie.org>,
  dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [DO NOT MERGE] [PATCH v9 7/9] arm64: dts: allwinner: bananapi-m64:
- Enable Bananapi S070WV20-CT16 DSI panel
-Date: Wed, 29 May 2019 16:26:13 +0530
-Message-Id: <20190529105615.14027-8-jagan@amarulasolutions.com>
+Subject: [DO NOT MERGE] [PATCH v9 8/9] arm64: dts: allwinner: a64-pine64-lts:
+ Enable Feiyang FY07024DI26A30-D DSI panel
+Date: Wed, 29 May 2019 16:26:14 +0530
+Message-Id: <20190529105615.14027-9-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20190529105615.14027-1-jagan@amarulasolutions.com>
 References: <20190529105615.14027-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_035714_586883_510E1D2A 
-X-CRM114-Status: GOOD (  12.65  )
+X-CRM114-CacheID: sfid-20190529_035718_953616_2EDC6BA6 
+X-CRM114-Status: GOOD (  11.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,49 +109,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add support for Bananapi S070WV20-CT16 DSI panel to
-BPI-M64 board.
+Feiyang FY07024DI26A30-D MIPI_DSI panel is desiged to attach with
+DSI connector on pine64 boards, enable the same for pine64 LTS.
 
 DSI panel connected via board DSI port with,
 - DLDO1 as VCC-DSI supply
-- DCDC1 as VDD supply
-- PD7 gpio for lcd enable pin
-- PD6 gpio for lcd reset pin
-- PD5 gpio for backlight enable pin
+- DC1SW as AVDD supply
+- DLDO2 as DVDD supply
+- PD24 gpio for reset pin
+- PH10 gpio for backlight enable pin
 
+Tested-by: Merlijn Wajer <merlijn@wizzup.org>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
- .../dts/allwinner/sun50i-a64-bananapi-m64.dts | 31 +++++++++++++++++++
+ .../allwinner/sun50i-a64-sopine-baseboard.dts | 31 +++++++++++++++++++
  1 file changed, 31 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-index c2a6b73b17cf..166b9761ca83 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-@@ -45,6 +45,7 @@
- #include "sun50i-a64.dtsi"
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+index e6fb9683f213..51b0cf71c3d4 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+@@ -46,6 +46,7 @@
+ /dts-v1/;
  
- #include <dt-bindings/gpio/gpio.h>
+ #include "sun50i-a64-sopine.dtsi"
 +#include <dt-bindings/pwm/pwm.h>
  
  / {
- 	model = "BananaPi-M64";
-@@ -56,6 +57,14 @@
- 		serial1 = &uart1;
+ 	model = "SoPine with baseboard";
+@@ -61,6 +62,14 @@
+ 		stdout-path = "serial0:115200n8";
  	};
  
 +	backlight: backlight {
 +		compatible = "pwm-backlight";
 +		pwms = <&r_pwm 0 50000 PWM_POLARITY_INVERTED>;
 +		brightness-levels = <1 2 4 8 16 32 64 128 255>;
-+		default-brightness-level = <2>;
-+		enable-gpios = <&pio 3 5 GPIO_ACTIVE_HIGH>; /* LCD-BL-EN: PD5 */
++		default-brightness-level = <8>;
++		enable-gpios = <&pio 7 10 GPIO_ACTIVE_HIGH>; /* LCD-BL-EN: PH10 */
 +	};
 +
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
-@@ -116,6 +125,24 @@
+ 	hdmi-connector {
+ 		compatible = "hdmi-connector";
+ 		type = "a";
+@@ -104,6 +113,24 @@
  	status = "okay";
  };
  
@@ -160,15 +161,15 @@ index c2a6b73b17cf..166b9761ca83 100644
 +};
 +
 +&dsi {
-+	vcc-dsi-supply = <&reg_dldo1>;		/* VCC3V3-DSI */
++	vcc-dsi-supply = <&reg_dldo1>;		/* VCC-DSI */
 +	status = "okay";
 +
 +	panel@0 {
-+		compatible = "bananapi,s070wv20-ct16-icn6211";
++		compatible = "feiyang,fy07024di26a30d";
 +		reg = <0>;
-+		enable-gpios = <&pio 3 7 GPIO_ACTIVE_HIGH>; /* LCD-PWR-EN: PD7 */
-+		reset-gpios = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* LCD-RST: PD6 */
-+		vdd-supply = <&reg_dcdc1>;
++		avdd-supply = <&reg_dc1sw>;	/* VCC-LCD */
++		dvdd-supply = <&reg_dldo2>;	/* VCC-MIPI */
++		reset-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>; /* LCD-RST: PD24 */
 +		backlight = <&backlight>;
 +	};
 +};
@@ -176,17 +177,17 @@ index c2a6b73b17cf..166b9761ca83 100644
  &ehci0 {
  	status = "okay";
  };
-@@ -206,6 +233,10 @@
- 	status = "okay";
+@@ -184,6 +211,10 @@
+ 	vcc-hdmi-supply = <&reg_dldo1>;
  };
  
 +&r_pwm {
 +	status = "okay";
 +};
 +
- &r_rsb {
- 	status = "okay";
- 
+ &sound {
+ 	simple-audio-card,aux-devs = <&codec_analog>;
+ 	simple-audio-card,widgets = "Microphone", "Microphone Jack",
 -- 
 2.18.0.321.gffc6fa0e3
 
