@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9922DF77
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 16:17:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 460172DF7E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 16:18:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t1kLWX3PHvG7HhxvSfPl2VUGmF5sn+K3F0GoRMNfl4E=; b=VUhqkQ4Q3Ay+JU
-	mIgG9XRupoKNwmqch84ZT9H6Ai2d/oYfGQokoDfRhbI0DrPNYCO3iR4NvTiY83KTvYgLgzK04a1/B
-	fOV4rJmD1CE21cIMbW4zrux6HsnX5bQXRrz/92Ihlt3J29nkX17gze671Fs6z3tkCPYNWgC+QF4Bm
-	JV4g/qp11QsruGZvKenK2FLYv1MjFXLxVhiLCCUVXTkR+9XMuJm7SkLhdJlm5zK57p+i/ucxCkz6O
-	gKaHy0Z3nk7KcIjAveRmfjxonnjhY2N7hzCg+9W+N4htlBpZNza8JJL55gUCKIAqfd4o77QxzPjwJ
-	cQaOiyNk1rcJTFNRCGUQ==;
+	List-Owner; bh=M6x1bkW7EWc/nVhoUmwG0Suqku4NG95WXl6gUuQQvLw=; b=Krb0V5vHCbsQ+3
+	bJvxSB1bmVgj4TXlM4qPtmmXmGl3YK/3JIX7yimMD9OBM4JhUxXqvxMvtCBlnLiBYwY9PdxfIYh9H
+	TiQWJeTPz13uaLCLCCzFKE2AcYdq0bQltF8Pk0jtaYjrsCsx1RDyTHf5h3crP6LloPcYBgkoK/KFm
+	3dg7slr/+I74CZHXedyJLWGxB4PQplR1WH6689rvenEwY4U6eeomGj487HUaeRlYFsvweyx5G1Cri
+	xDY6ZUOhpEY4TzLx6l4Y2ri+clXDKWDA/g30QU/Y37yCCaUnILMAf8AahGYkuG5LBVBWCt8MUZFw8
+	KA2Qbu0Ecg+xDdGpNZOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVzOd-0007DZ-KF; Wed, 29 May 2019 14:17:39 +0000
+	id 1hVzP7-0007XD-9Z; Wed, 29 May 2019 14:18:09 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVzOW-0007Cb-7g
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 14:17:34 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u78so1810313wmu.5
+ id 1hVzOx-0007UB-M1
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 14:18:01 +0000
+Received: by mail-wm1-x342.google.com with SMTP id w9so1747761wmi.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 07:17:31 -0700 (PDT)
+ Wed, 29 May 2019 07:17:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=c3tkqZh517BY6AR/S6xMnJ7Cpq7UtW1QuIk6bwoE9sc=;
- b=d7qZ7oQxeIxjAcRQK6bOotSK2OrSTIHA+cK1XesmK7rGtdNFC5OXWnXwqg6+AUOza0
- v+OeA+1NYvzAc7Enhl9AVn/rXOpCvThdYZp7tjixv2ZHS6b1YguPgOjE5NrEeiggzxt/
- nJiZgYqVizY+NlTGbzQLferXXqqVMIxdw2JQjuP8eJRVbV0L0IsOvSNFs+cBqG2I4tRc
- 4ypGM43rph7DBt3g5YfOt5h3no1wSMjKpuGKgv9vV/EdqJkFLd0EuCU+UNtjPWoZgz2c
- p9Er+UOkNW4RCGHf043WYibs2IjbjbxfwLGhrh7qqIL3orvuscbNPP4x+/UjlDYKYWzl
- 7AkQ==
+ bh=v7C3c6MQIY3CiheB5n/mnPTuxee+MqjjRtfJwGq9axQ=;
+ b=KF7LRI9ZvSGluIcDB5qACOh33uHyZsA5WNrmZYh7hCTmXU4rD6gbjfECMq0857HXtd
+ 2NiVcak4pGkaMTuPBH+pBBFbAZ96TREPEID/6uhPJDTvgVuI/fbDmfQ6F0nZ0AsQhrFK
+ Uc8xtzmy18iyWKE032S1kB3XlZP0WCRO66gUE4wfK/U8loSCS/W+zsgFUONfKABufBji
+ lU7nzPKWjkH281RJlY8zFsyzPaGpsHcNLVp0LceB9oVox7MCXVeAuULzlsFJs/d6yAyL
+ qecGAPp5FImqYLmPJmozFjEAAjjgcEXETb2AckhhoGQ3dVuUWu8HyWuNFwc0xi0oJGQv
+ aFgA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=c3tkqZh517BY6AR/S6xMnJ7Cpq7UtW1QuIk6bwoE9sc=;
- b=pfq2JEtlUvpweSeCGfFqHYaLOJ/oxdLSP8rlEq0sKIJP8iBTQh/GvNDE42I9nHU3iP
- M6EZEhNZSILvs8JVzsiM1bSRBk2e/NmrYXDDIolEcn5nfBiEux0qFtbTSPNGfc9ytCQf
- An1g99G9uAndxPKA7h28NbwKQ7Chs3FHdQFRu3lBzt6rIq5rAE8mGtz622FhtJw8pxcl
- MsjQ6QZezdpD+4p2f7TUjDggwtYdU3aJVxk3yXKI4IsyiM2sNYd9do9th+5vPLaD7b7g
- CmYKpxnau4GqLgiF3EHhuWznk/9LfIeDCw/+3OmGdiintEO9I4VpsGgwJq6cFY4n7Mkc
- xkVw==
-X-Gm-Message-State: APjAAAVg6JNMxDpoZjVlgAZeipmDw6TV/jZpy5c6sK19eLkd4KWXSfxs
- oeyVymlfrErIBSLFsmvjAi2Hv+8aLP9VRw==
-X-Google-Smtp-Source: APXvYqy+bZBmoM9YkQhFkVcs3V6POwoQx1UEKI0oVjleSevoBo6qB01xpruDbjYGHMlXfRuBN0Ap1w==
-X-Received: by 2002:a1c:a483:: with SMTP id n125mr6153746wme.172.1559139445406; 
- Wed, 29 May 2019 07:17:25 -0700 (PDT)
+ bh=v7C3c6MQIY3CiheB5n/mnPTuxee+MqjjRtfJwGq9axQ=;
+ b=VSgtojOkU9p/fXdTtcpuNUgcVazuJXtKJtjgvixtGtpC7+Ii7hqYEJo3xH8kIHcWB1
+ ntv/EoDn8bhQJ0dtvsfImbrYwlm416z38yxJ/w7eeZMk+LkBi6uY0IC3+XmF3EdVLrRb
+ BfDdHkqzH55jfPGFyCQ8B+yXl8JQ191He3rsuNxsTI7QyCK/azg3fwyf9iqd5uWMshZB
+ stwPH/vlkRXtF4F49c3Rxcfq/a0rNPiujT3wpvu8OUBLlTcBAOppIH+peJ5nvbDEVe7s
+ 6cEw+Y4eml2fOBnH+o9WRWup/Gl/gKAfURlWYzvho3sRU9U0oYmHirvcV5E6kwZb72Qq
+ S5Cw==
+X-Gm-Message-State: APjAAAWj2EBrKFPhmp9o1UuPMpkdDvZGWZkI2LUMdnKKLof33C3ky8nG
+ TauTglbPuKiMNjzmyXhH/yjuie4YtrgsYQ==
+X-Google-Smtp-Source: APXvYqw6WVhYQ7Wxf9DJm8mNsv9yDKvgSkVVRgsZsq4Vb+4e2Mo8aq1BtO9CwxAo8z9he0zNJ0QiOw==
+X-Received: by 2002:a1c:7a0d:: with SMTP id v13mr7265358wmc.10.1559139473364; 
+ Wed, 29 May 2019 07:17:53 -0700 (PDT)
 Received: from [192.168.1.62] (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr.
  [176.150.251.154])
- by smtp.gmail.com with ESMTPSA id u14sm6901110wrt.75.2019.05.29.07.17.24
+ by smtp.gmail.com with ESMTPSA id n7sm6537928wrw.64.2019.05.29.07.17.52
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 07:17:24 -0700 (PDT)
-Subject: Re: [PATCH 08/10] arm64: dts: meson-gxbb-vega-s95: enable SARADC
+ Wed, 29 May 2019 07:17:52 -0700 (PDT)
+Subject: Re: [PATCH 03/10] arm64: dts: meson-gxbb-wetek: enable SARADC
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 References: <20190527132200.17377-1-narmstrong@baylibre.com>
- <20190527132200.17377-9-narmstrong@baylibre.com>
- <CAFBinCAbFDsT_6+mA4EGy1Tv8_Qkb7mDDbGbwygiKjDDtX79MA@mail.gmail.com>
+ <20190527132200.17377-4-narmstrong@baylibre.com>
+ <CAFBinCBJwVT0uMx--NPuuAYS7k2Zx-X-Ew+qNmRQiPV+Cmv=KA@mail.gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -117,16 +117,16 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <9a33178f-0379-173a-675f-50023c7931a9@baylibre.com>
-Date: Wed, 29 May 2019 16:17:23 +0200
+Message-ID: <471c24af-ad63-3986-6265-1cf62ce45cb0@baylibre.com>
+Date: Wed, 29 May 2019 16:17:52 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCAbFDsT_6+mA4EGy1Tv8_Qkb7mDDbGbwygiKjDDtX79MA@mail.gmail.com>
+In-Reply-To: <CAFBinCBJwVT0uMx--NPuuAYS7k2Zx-X-Ew+qNmRQiPV+Cmv=KA@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_071732_327324_F3E053A3 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20190529_071759_722991_11A2B868 
+X-CRM114-Status: GOOD (  16.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -151,7 +151,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, christianshewitt@gmail.com,
+Cc: khilman@baylibre.com, Christian Hewitt <christianshewitt@gmail.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -159,20 +159,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/05/2019 20:24, Martin Blumenstingl wrote:
-> On Mon, May 27, 2019 at 3:23 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+On 27/05/2019 20:15, Martin Blumenstingl wrote:
+> On Mon, May 27, 2019 at 3:22 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >>
->> Add SARARC node and associated regulator to support reading the
->> ADC inputs on the Vega S95
-> I'm curious: is this the same problem than on the Wetek boards (where
-> SCPI hwmon reads garbage if SAR ADC is disabled)?
+>> From: Christian Hewitt <christianshewitt@gmail.com>
+>>
+>> Enable SARADC on Wetek Boards.
+> as far I as remember there's a story behind this (and it would be nice
+> to have it documented here):
+> some of the SCPI firmware revisions don't enable the SAR ADC clock
+> when reading the SoCs temperature.
+> if the SAR ADC is disabled in Linux then the common clock framework
+> will disable the SAR ADC clock.
+> now, when the SCPI firmware uses the SAR ADC to read the SoC
+> temperature we only get garbage.
+> 
+> enabling the SAR ADC in Linux "fixes" this issue
 
-Yes
+Yes seems to be this issue solved here
 
 > 
->> Suggested-by: Christian Hewitt <christianshewitt@gmail.com>
+>> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> in any case:
+> with that:
 > Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > 
 
