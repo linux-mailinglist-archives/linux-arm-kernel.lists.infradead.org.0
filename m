@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67BD22D852
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 10:57:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1266B2D864
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 10:59:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SmT+wk1r42uGO+Sbi2wyolNYvPVtBKpUOXgjaKm2ppg=; b=TqQCAHHuCzelrc
-	Y8QIfl8hvn9Sf+fd71BUbgD7+CbTiNh08Bgkw7R9vGdF9d1Hxmziaj7CqLfR6WKXRHWUIR+OgEA5D
-	gZW5KyO7iuUIGaJhz94K1dN+FEpOAwOsDmPX3+HwAlj3QrZL5znDytetjj8dTzBoF107DlLV3N5BG
-	s1epCBgBCBCA7qwIKJMsLet5Di/ZD1s3B/thQjpRBVieYzwiOtAkxi/3I5MdhDlzQHTwtpJapkNY6
-	3W9X54EvTWVSIgNcbK7+3v3R6ghE7CaYWcORluATfMi1b+z/GZqJSQnbENW8vncq62HotjHWY7EiA
-	GteQ5wrP/PVNsDEGk2pQ==;
+	List-Owner; bh=4ktuNp1yMW0+IXa4mlRa4vH5gRwasmEWDaYj9STdscc=; b=No06SMPq9snxpa
+	mTIqFnYfsS8qO0FIN/CKeTqCNahgwZKO5lRnB/qBGei9iVL4hnuFi5U6DSWJP7hlY1qTA8jDoASWu
+	eewPruuzgLqQZ9ybJFfNaPlczd9MauwzdQf5J5+R+wisEra+vDedegVC16yYthagITlVdd4pnZ38S
+	at50/ZxmytvjwLkM0XAVbh1a+CdReE0U77S3buQ9oivbgNAT1iSJJc4axJezNqeKPZHGU8G3upbTb
+	dSrQxcLlpsjqTWYCkMrsSVFbdHxefyb7ph1jlN+WWBe08WTJTWvshLuW+sbW8HXrBmlR2qZJFKQvU
+	bXrhLym9T6fw8J30i08w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVuOO-0006up-7J; Wed, 29 May 2019 08:57:04 +0000
-Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
+	id 1hVuQm-0007Y2-0U; Wed, 29 May 2019 08:59:32 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVuOE-0006tO-Up
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 08:56:56 +0000
-Received: from [IPv6:2001:983:e9a7:1:352c:d076:e7aa:19ae]
- ([IPv6:2001:983:e9a7:1:352c:d076:e7aa:19ae])
- by smtp-cloud7.xs4all.net with ESMTPA
- id VuO8h4USX3qlsVuO9hsPNJ; Wed, 29 May 2019 10:56:51 +0200
-Subject: Re: [PATCH 4/4] media: xilinx: fix leaked of_node references
-To: Wen Yang <wen.yang99@zte.com.cn>, linux-kernel@vger.kernel.org
-References: <1557126318-21487-1-git-send-email-wen.yang99@zte.com.cn>
- <1557126318-21487-5-git-send-email-wen.yang99@zte.com.cn>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <e557b5a7-524b-56e0-0642-7f9c04c136f9@xs4all.nl>
-Date: Wed, 29 May 2019 10:56:48 +0200
+ id 1hVuQe-0007XQ-DO
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 08:59:25 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4T8xK6s004264;
+ Wed, 29 May 2019 03:59:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559120360;
+ bh=/+w+mZZzuWRILKJdXMOWaJzNhHy6P1T9tsqIDoioDRU=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=gfOOnodYqTyN9qCF0xTiFfcngdoyIbGEM7aqPBIeZ1DZ7/TSHzVqFE5+/PubApA5O
+ ycMkH7fIUH8eaUS2Yc3M4HIxQS/RWy4+mxzAZFXkZ9a3OGMfaSikwrsvBUSqj3CVnW
+ HAwe8sFJQB5ImYRslcLgH0WpuqGWUzsuJ8bYe9PY=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4T8xKq8007904
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 29 May 2019 03:59:20 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 29
+ May 2019 03:59:19 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 29 May 2019 03:59:19 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4T8xGTd112812;
+ Wed, 29 May 2019 03:59:17 -0500
+Subject: Re: [PATCH v3 0/5] soc: ti: k3-am654: Allow for exclusive and shared
+ device requests
+To: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>, Santosh
+ Shilimkar <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>
+References: <20190410053728.17374-1-lokeshvutla@ti.com>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <3f8e15a0-af8f-c91c-5401-826460726a7d@ti.com>
+Date: Wed, 29 May 2019 14:28:46 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.2.1
 MIME-Version: 1.0
-In-Reply-To: <1557126318-21487-5-git-send-email-wen.yang99@zte.com.cn>
+In-Reply-To: <20190410053728.17374-1-lokeshvutla@ti.com>
 Content-Language: en-US
-X-CMAE-Envelope: MS4wfCNcQwo2tuDr/le+vUGvfG5jmsmcDf9YkYYz99PHycHPmKjCwQlYKvxglDv57a3asuiBY5gKxAEKqAKjFc3lu2ZDtAslmARGu7eN1mc1tICkwrBtrRHf
- jETldO7ENIaH2fYtCZa/jD7AxE9q1CAbUGMt1a8I5v5wFd7bSIxyT7b/3sKSZp7oJMDyr6CUNt6HoGn2YWiU5+GcUsoXjpM8Pc+shfRL1wxAx3m4MqOPgmB8
- nsusfRls9FAQ0N3gedQv9uF1D0i7yN02Xg0g5gDG4nGL2N7GiZ2FQPIaW+ie4kwQ/Gj2ZsAegb4rK8gMy8dhNhKhysa5bTmT2uKO+ReHJJ2w5he2Csd/Vl4p
- l8l28GeEUPq0xeflpZ2iE0cHY81U0zQfutkAM7pGNxk5AEGrsR0y6xpoXw9981qK4kklNbnqvb3aVKIdYUCwmTCofERU0yrjY4lk25P+4JpgzTEZHdnaMuH4
- nl6AbgRZYZoa66bsIu3U2qHzj2GHmXFvoJIW23v+ACJSAD8d9g403vBZc/tvdYSdn2OFqot0GZg0YegL02ignZKzTGObZ3Je5nqDEh9PuWlx4KeGDDwKdwqI
- zVaalO86OUNbdiaWzg8SWOK9
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_015655_158286_9BD8054F 
-X-CRM114-Status: GOOD (  18.40  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190529_015924_528007_6AD21180 
+X-CRM114-Status: GOOD (  21.25  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.31 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,110 +93,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wang.yi59@zte.com.cn, Hyun Kwon <hyun.kwon@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Patrice Chotard <patrice.chotard@st.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Sekhar Nori <nsekhar@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/6/19 9:05 AM, Wen Yang wrote:
-> The call to of_get_child_by_name returns a node pointer with refcount
-> incremented thus it must be explicitly decremented after the last
-> usage.
+Hi Rob, Tero,
+
+On 10/04/19 11:07 AM, Lokesh Vutla wrote:
+> Sysfw provides an option for requesting exclusive access for a
+> device using the flags MSG_FLAG_DEVICE_EXCLUSIVE. If this flag is
+> not used, the device is meant to be shared across hosts. Once a device
+> is requested from a host with this flag set, any request to this
+> device from a different host will be nacked by sysfw.
 > 
-> Detected by coccinelle with the following warnings:
-> drivers/media/platform/xilinx/xilinx-vipp.c:487:3-9: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 477, but without a corresponding object release within this function.
-> drivers/media/platform/xilinx/xilinx-vipp.c:491:1-7: ERROR: missing of_node_put; acquired a node pointer with refcount incremented on line 477, but without a corresponding object release within this function.
-> 
-> Signed-off-by: Wen Yang <wen.yang99@zte.com.cn>
-> Cc: Patrice Chotard <patrice.chotard@st.com>
-> Cc: Hyun Kwon <hyun.kwon@xilinx.com>
-> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
-> Cc: Michal Simek <michal.simek@xilinx.com>
-> Cc: linux-media@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> ---
->  drivers/media/platform/exynos4-is/fimc-is.c   | 1 +
->  drivers/media/platform/exynos4-is/media-dev.c | 1 +
-
-Huh? This patch changes exynos4 as well, not just xilinx.
-
-Please split this up into two patches, one for each driver.
-
->  drivers/media/platform/xilinx/xilinx-vipp.c   | 8 +++++---
->  3 files changed, 7 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/media/platform/exynos4-is/fimc-is.c b/drivers/media/platform/exynos4-is/fimc-is.c
-> index 02da0b0..25df4c6 100644
-> --- a/drivers/media/platform/exynos4-is/fimc-is.c
-> +++ b/drivers/media/platform/exynos4-is/fimc-is.c
-> @@ -809,6 +809,7 @@ static int fimc_is_probe(struct platform_device *pdev)
->  		return -ENODEV;
->  
->  	is->pmu_regs = of_iomap(node, 0);
-> +	of_node_put(node);
->  	if (!is->pmu_regs)
->  		return -ENOMEM;
->  
-> diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
-> index 463f2d8..a31dacf 100644
-> --- a/drivers/media/platform/exynos4-is/media-dev.c
-> +++ b/drivers/media/platform/exynos4-is/media-dev.c
-> @@ -450,6 +450,7 @@ static int fimc_md_parse_port_node(struct fimc_md *fmd,
->  	else
->  		pd->fimc_bus_type = pd->sensor_bus_type;
->  
-> +	of_node_put(np);
->  	if (WARN_ON(index >= ARRAY_SIZE(fmd->sensor))) {
->  		of_node_put(rem);
->  		return -EINVAL;
-> diff --git a/drivers/media/platform/xilinx/xilinx-vipp.c b/drivers/media/platform/xilinx/xilinx-vipp.c
-> index edce040..307717c 100644
-> --- a/drivers/media/platform/xilinx/xilinx-vipp.c
-> +++ b/drivers/media/platform/xilinx/xilinx-vipp.c
-> @@ -472,7 +472,7 @@ static int xvip_graph_dma_init(struct xvip_composite_device *xdev)
->  {
->  	struct device_node *ports;
->  	struct device_node *port;
-> -	int ret;
-> +	int ret = 0;
->  
->  	ports = of_get_child_by_name(xdev->dev->of_node, "ports");
->  	if (ports == NULL) {
-> @@ -484,11 +484,13 @@ static int xvip_graph_dma_init(struct xvip_composite_device *xdev)
->  		ret = xvip_graph_dma_init_one(xdev, port);
->  		if (ret < 0) {
->  			of_node_put(port);
-> -			return ret;
-> +			goto out_put_node;
-
-Just do a break here,
-
->  		}
->  	}
->  
-> -	return 0;
-> +out_put_node:
-
-and drop this label.
-
-> +	of_node_put(ports);
-> +	return ret;
->  }
->  
->  static void xvip_graph_cleanup(struct xvip_composite_device *xdev)
+> Current tisci firmware and pm drivers always requests for device with
+> exclusive permissions set. But this is not be true for certain devices
+> that are expcted to be shared across different host contexts.
+> So add support for getting the shared or exclusive permissions from DT
+> and request firmware accordingly.
 > 
 
-Regards,
+If there are no comments on this series, can this be merged?
 
-	Hans
+Thanks and regards,
+Lokesh
+
+> Changes since v2:
+> - Added macros for new power-domain cell
+> - Rebased on top of v5.1-rc4
+> - Updated commit messages.
+> 
+> Lokesh Vutla (5):
+>   firmware: ti_sci: Allow for device shared and exclusive requests
+>   dt-bindings: ti_sci_pm_domains: Add support for exclusive and shared
+>     access
+>   soc: ti: ti_sci_pm_domains: Add support for exclusive and shared
+>     access
+>   soc: ti: ti_sci_pm_domains: Switch to SPDX Licensing
+>   arm64: dts: ti: k3-am654: Update the power domain cells
+> 
+>  .../bindings/soc/ti/sci-pm-domain.txt         | 11 ++++-
+>  MAINTAINERS                                   |  1 +
+>  arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 32 ++++++-------
+>  arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       | 10 ++---
+>  arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    |  6 +--
+>  arch/arm64/boot/dts/ti/k3-am65.dtsi           |  1 +
+>  drivers/firmware/ti_sci.c                     | 45 ++++++++++++++++++-
+>  drivers/soc/ti/ti_sci_pm_domains.c            | 33 +++++++++-----
+>  include/dt-bindings/soc/ti,sci_pm_domain.h    |  9 ++++
+>  include/linux/soc/ti/ti_sci_protocol.h        |  3 ++
+>  10 files changed, 112 insertions(+), 39 deletions(-)
+>  create mode 100644 include/dt-bindings/soc/ti,sci_pm_domain.h
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
