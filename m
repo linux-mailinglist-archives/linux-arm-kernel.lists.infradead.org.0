@@ -2,49 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 196492E880
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 00:49:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 055512E8A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 00:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Ahhm4N8LiGUqFlhZkZK6OGRK8yzNSsD37PK696pr0NM=; b=UW7IxlcobJwyrxUFyA8l0gYfEW
-	6oH5NeKTp7msHCwaigFP/1QGNb1/dsGRUejiEW+DUIyUQ0LZuclyUSEXJb6ykf6XyCP0uL/3enohl
-	fa8WVJR5c47KF8JWRuR26xnrwtVzWKl4z+pDb4QIKXiUHB+cjml/bXGEAIZyLWtPLZOfjA34z778+
-	KzHEkLX1w/ydoI0VscABGz+bP5gI2ellzrChjzxsiJOLZGpZGiTudeth3NzXq3UEgjoZ+jUkVMTSg
-	9/Cig1JiVg1IvX5L/uvj0iONyhvtS1Nf8IZDb/5IIPS5mUC+yBzkGkyzF85dDldasbJWvG2azltHX
-	GFO2x4mA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QRP9/oFQE61ohoWnoiWd9/RV8EEnggQ4unI53IvBwF0=; b=Ww4iv87e1HG8WA
+	mm5RO8ffU95j1kMa3M/BU4oUUjv+GfKl43kuNwXfIXmRcvdXPxxvAdJ/7W2/A7+CScc4xfYGUFEtw
+	bGW2xYrDIItX38YvJmFGul/j0JreVNF8JVdEgUXcMvvWEB6/TLgxDLy1ynSU0x2FU3SqSEhEWtCfU
+	C/GH+OyfGTsq1/T88InZA34xjeLjlx6dXZRwoa5Kbaquu0ybLcEw0PRC9S6F0bHOlMp+OmTbzjDld
+	fnCsOHgzao5Sn3gxT0SjZ9mSGH89NGF39Xy1YPb9rcQAdgOTiUhot7grpMTU+bnAm76yANZJ/upn7
+	08YXP2f2q9VS+CV8Fx5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW7O6-0000cs-Du; Wed, 29 May 2019 22:49:38 +0000
-Received: from lilium.sigma-star.at ([109.75.188.150])
+	id 1hW7XJ-0005Ho-Hn; Wed, 29 May 2019 22:59:09 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW7Np-0008Ny-4g
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 22:49:23 +0000
-Received: from localhost (localhost [127.0.0.1])
- by lilium.sigma-star.at (Postfix) with ESMTP id D92FE1803086A;
- Thu, 30 May 2019 00:49:09 +0200 (CEST)
-From: Richard Weinberger <richard@nod.at>
-To: linux-crypto@vger.kernel.org
-Subject: [RFC PATCH 2/2] crypto: mxs-dcp: Implement reference keys
-Date: Thu, 30 May 2019 00:48:44 +0200
-Message-Id: <20190529224844.25203-2-richard@nod.at>
-X-Mailer: git-send-email 2.16.4
-In-Reply-To: <20190529224844.25203-1-richard@nod.at>
-References: <20190529224844.25203-1-richard@nod.at>
+ id 1hW7XB-0005Gy-Nr
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 22:59:04 +0000
+Received: by mail-pl1-x644.google.com with SMTP id f97so1690507plb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 15:59:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=iRXiq08eonK9BxjJjymdgHQ4qGSvRUxD96bZCDtUMV8=;
+ b=stSrV1REP7r/iO0UySmKgfFQfgnoSywv5NEtp+3mDh+GJouFI80ivyUakPvqig8Azk
+ YgB10Lri9r0RC0ld01sWyFm0/h8uTiv14UMm9g9A5G5CsmRxkOYkpXzsBxF+Q17278tr
+ Px91blXo6+fUgF+HLBAuoi2qy4+OyklLJPHr9DZt3StO0PqO4rhu88kqA9lQuNlnPgvN
+ yn07ols/kBnUXU7GcG4++x6XMFl1njQt5KNlxr6O8HGncwNDZXgKxrpK6qctCadJc6WV
+ PlenhQY9FKgMHji+69msD05gr+N6JwIZ2G+9zzgd1/be20BaLEw4xZLahuoCFZPzkVjy
+ dljg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=iRXiq08eonK9BxjJjymdgHQ4qGSvRUxD96bZCDtUMV8=;
+ b=HCAJVvO5rPRWFp83tEOFtfngA/aJlUO1EIDNFE9lLnziFYngQIBCqQ81nmngVxj/MN
+ sdk+hOQmfaQOQnaUbcok16U1CqHHsT8YLyUifytcv3K6N1CBD0oNRE03oav+EfEG88MR
+ lHyXRBR9PWcGGrvW2cGo0/84hl2OnL0urx44uZolkavxjMZHkEWOKDGmBNDGvCQur3tT
+ dtTgUst+U0Lmmw0mp80hswOFYuMODixq4Ck8c4WsqGl/bb8LjDg/GazeMWxrdFop1jyT
+ Q+PM4O2fiHAHxBt9Mh07U05jRLYCSl5oWS9MJ2W5aH3SYNZZ0dkwI4A58antJVbU6bzv
+ SBhQ==
+X-Gm-Message-State: APjAAAXFM0KiqSTbASAoil5n+0GIpuP58PTsq0ole7qAZ+1x/0l2T0M8
+ AnTo+JvH0LE2vFLCgd7I/f4=
+X-Google-Smtp-Source: APXvYqx96A2IXwPpSqyQ4BjLhdKAVqBGtW28Z6W8F3//efV2DHQ3i/2tcwUQ5QxYVU6xOHShEZbpJA==
+X-Received: by 2002:a17:902:b601:: with SMTP id
+ b1mr458014pls.117.1559170740954; 
+ Wed, 29 May 2019 15:59:00 -0700 (PDT)
+Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
+ [216.228.112.22])
+ by smtp.gmail.com with ESMTPSA id s66sm822586pfb.37.2019.05.29.15.58.59
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 May 2019 15:59:00 -0700 (PDT)
+Date: Wed, 29 May 2019 15:57:48 -0700
+From: Nicolin Chen <nicoleotsuka@gmail.com>
+To: Daniel Baluta <daniel.baluta@nxp.com>
+Subject: Re: [PATCH 1/3] ARM: dts: imx: Add mclk0 clock for SAI
+Message-ID: <20190529225742.GA17556@Asurada-Nvidia.nvidia.com>
+References: <20190528132034.3908-1-daniel.baluta@nxp.com>
+ <20190528132034.3908-2-daniel.baluta@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190528132034.3908-2-daniel.baluta@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_154921_467198_A41A1DBC 
-X-CRM114-Status: GOOD (  17.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190529_155902_960685_619601E0 
+X-CRM114-Status: GOOD (  14.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (nicoleotsuka[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -56,178 +102,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: david@sigma-star.at, herbert@gondor.apana.org.au, shawnguo@kernel.org,
- s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, Richard Weinberger <richard@nod.at>, festevam@gmail.com,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "timur@kernel.org" <timur@kernel.org>,
+ "Xiubo.Lee@gmail.com" <Xiubo.Lee@gmail.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "tiwai@suse.com" <tiwai@suse.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "S.j. Wang" <shengjiu.wang@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DCP allows working with secure keys. These keys can reside in a
-protected memory region of the crypto accelerator, burned in
-eFuses or being an internal chip key. To use these keys a key
-reference is transferred to the chip instead of a AES key.
-For DCP these references can be:
-0x00 to 0x03: Key slot number in the secure memory region
-0xfe: Unique device key
-0xff: OTP key (burned in eFuse)
+On Tue, May 28, 2019 at 01:21:00PM +0000, Daniel Baluta wrote:
+> From: Shengjiu Wang <shengjiu.wang@nxp.com>
+> 
+> Audio MCLK source option is selected with a 4:1 MUX
+> controller using MCLK Select bits in SAI xCR2 register.
+> 
+> On imx6/7 mclk0 and mclk1 always point to the same clock
+> source. Anyhow, this is no longer true for imx8.
+> 
+> For this reason, we need to add mclk0 and handle it
+> in a generic way in SAI driver.
+> 
+> Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> ---
+>  arch/arm/boot/dts/imx6sx.dtsi | 6 ++++--
+>  arch/arm/boot/dts/imx6ul.dtsi | 9 ++++++---
+>  arch/arm/boot/dts/imx7s.dtsi  | 9 ++++++---
 
-To utilize this functionality we check for the
-CRYPTO_TFM_REQ_REF_KEY flag, if it is set the key as provided
-via mxs_dcp_aes_setkey() is used as reference.
+These are dtsi/dts files that have SAI missing mclk0:
+arch/arm/boot/dts/imx6ul.dtsi
+arch/arm/boot/dts/imx6sx.dtsi
+arch/arm/boot/dts/ls1021a.dtsi
+arch/arm/boot/dts/imx7s.dtsi
+arch/arm/boot/dts/vfxxx.dtsi
+arch/arm64/boot/dts/freescale/imx8mq.dtsi
+arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+arch/arm64/boot/dts/freescale/fsl-ls1012a.dtsi
+arch/arm64/boot/dts/freescale/fsl-ls1012a.dtsi
 
-Signed-off-by: Richard Weinberger <richard@nod.at>
----
- drivers/crypto/mxs-dcp.c | 77 +++++++++++++++++++++++++++++++++++++++---------
- 1 file changed, 63 insertions(+), 14 deletions(-)
+Would it be possible for you to update the others also?
 
-diff --git a/drivers/crypto/mxs-dcp.c b/drivers/crypto/mxs-dcp.c
-index b4429891e368..22b048a3a91b 100644
---- a/drivers/crypto/mxs-dcp.c
-+++ b/drivers/crypto/mxs-dcp.c
-@@ -147,6 +147,10 @@ static struct dcp *global_sdcp;
- 
- #define MXS_DCP_CONTEXT				0x50
- 
-+#define MXS_DCP_KEY				0x60
-+#define MXS_DCP_KEY_IDX(id, word)		(((id) << 4) | (word))
-+#define MXS_DCP_KEYDATA				0x70
-+
- #define MXS_DCP_CH_N_CMDPTR(n)			(0x100 + ((n) * 0x40))
- 
- #define MXS_DCP_CH_N_SEMA(n)			(0x110 + ((n) * 0x40))
-@@ -158,6 +162,7 @@ static struct dcp *global_sdcp;
- #define MXS_DCP_CONTROL0_HASH_TERM		(1 << 13)
- #define MXS_DCP_CONTROL0_HASH_INIT		(1 << 12)
- #define MXS_DCP_CONTROL0_PAYLOAD_KEY		(1 << 11)
-+#define MXS_DCP_CONTROL0_OTP_KEY		(1 << 10)
- #define MXS_DCP_CONTROL0_CIPHER_ENCRYPT		(1 << 8)
- #define MXS_DCP_CONTROL0_CIPHER_INIT		(1 << 9)
- #define MXS_DCP_CONTROL0_ENABLE_HASH		(1 << 6)
-@@ -222,15 +227,22 @@ static int mxs_dcp_run_aes(struct dcp_async_ctx *actx,
- 	struct dcp *sdcp = global_sdcp;
- 	struct dcp_dma_desc *desc = &sdcp->coh->desc[actx->chan];
- 	struct dcp_aes_req_ctx *rctx = ablkcipher_request_ctx(req);
-+	struct crypto_async_request *arq = &req->base;
-+	bool key_referenced = !!(crypto_tfm_get_flags(arq->tfm) &
-+				 CRYPTO_TFM_REQ_REF_KEY);
-+	dma_addr_t src_phys, dst_phys, key_phys = {0};
- 	int ret;
- 
--	dma_addr_t key_phys = dma_map_single(sdcp->dev, sdcp->coh->aes_key,
--					     2 * AES_KEYSIZE_128,
--					     DMA_TO_DEVICE);
--	dma_addr_t src_phys = dma_map_single(sdcp->dev, sdcp->coh->aes_in_buf,
--					     DCP_BUF_SZ, DMA_TO_DEVICE);
--	dma_addr_t dst_phys = dma_map_single(sdcp->dev, sdcp->coh->aes_out_buf,
--					     DCP_BUF_SZ, DMA_FROM_DEVICE);
-+	if (!key_referenced) {
-+		key_phys = dma_map_single(sdcp->dev, sdcp->coh->aes_key,
-+						     2 * AES_KEYSIZE_128,
-+						     DMA_TO_DEVICE);
-+	}
-+
-+	src_phys = dma_map_single(sdcp->dev, sdcp->coh->aes_in_buf,
-+				  DCP_BUF_SZ, DMA_TO_DEVICE);
-+	dst_phys = dma_map_single(sdcp->dev, sdcp->coh->aes_out_buf,
-+				  DCP_BUF_SZ, DMA_FROM_DEVICE);
- 
- 	if (actx->fill % AES_BLOCK_SIZE) {
- 		dev_err(sdcp->dev, "Invalid block size!\n");
-@@ -243,8 +255,12 @@ static int mxs_dcp_run_aes(struct dcp_async_ctx *actx,
- 		    MXS_DCP_CONTROL0_INTERRUPT |
- 		    MXS_DCP_CONTROL0_ENABLE_CIPHER;
- 
--	/* Payload contains the key. */
--	desc->control0 |= MXS_DCP_CONTROL0_PAYLOAD_KEY;
-+	if (key_referenced) {
-+		desc->control0 |= MXS_DCP_CONTROL0_OTP_KEY;
-+	} else {
-+		/* Payload contains the key. */
-+		desc->control0 |= MXS_DCP_CONTROL0_PAYLOAD_KEY;
-+	}
- 
- 	if (rctx->enc)
- 		desc->control0 |= MXS_DCP_CONTROL0_CIPHER_ENCRYPT;
-@@ -258,18 +274,26 @@ static int mxs_dcp_run_aes(struct dcp_async_ctx *actx,
- 	else
- 		desc->control1 |= MXS_DCP_CONTROL1_CIPHER_MODE_CBC;
- 
-+	if (key_referenced)
-+		desc->control1 |= sdcp->coh->aes_key[0] << 8;
-+
- 	desc->next_cmd_addr = 0;
- 	desc->source = src_phys;
- 	desc->destination = dst_phys;
- 	desc->size = actx->fill;
--	desc->payload = key_phys;
-+	if (key_referenced)
-+		desc->payload = 0;
-+	else
-+		desc->payload = key_phys;
- 	desc->status = 0;
- 
- 	ret = mxs_dcp_start_dma(actx);
- 
- aes_done_run:
--	dma_unmap_single(sdcp->dev, key_phys, 2 * AES_KEYSIZE_128,
--			 DMA_TO_DEVICE);
-+	if (!key_referenced) {
-+		dma_unmap_single(sdcp->dev, key_phys, 2 * AES_KEYSIZE_128,
-+				 DMA_TO_DEVICE);
-+	}
- 	dma_unmap_single(sdcp->dev, src_phys, DCP_BUF_SZ, DMA_TO_DEVICE);
- 	dma_unmap_single(sdcp->dev, dst_phys, DCP_BUF_SZ, DMA_FROM_DEVICE);
- 
-@@ -498,15 +522,40 @@ static int mxs_dcp_aes_setkey(struct crypto_ablkcipher *tfm, const u8 *key,
- 			      unsigned int len)
- {
- 	struct dcp_async_ctx *actx = crypto_ablkcipher_ctx(tfm);
-+	bool key_referenced = !!(crypto_ablkcipher_get_flags(tfm) &
-+				 CRYPTO_TFM_REQ_REF_KEY);
- 	unsigned int ret;
- 
- 	/*
--	 * AES 128 is supposed by the hardware, store key into temporary
-+	 * AES 128 is supported by the hardware, store key into temporary
- 	 * buffer and exit. We must use the temporary buffer here, since
- 	 * there can still be an operation in progress.
- 	 */
- 	actx->key_len = len;
--	if (len == AES_KEYSIZE_128) {
-+
-+	if (key_referenced) {
-+		/*
-+		 * If a hardware key is used, no software fallback is possible.
-+		 */
-+		if (len != AES_KEYSIZE_128)
-+			return -EINVAL;
-+
-+		/*
-+		 * DCP supports the following key slots.
-+		 */
-+		switch (key[0]) {
-+		case 0x00:
-+		case 0x01:
-+		case 0x02:
-+		case 0x03:
-+		case 0xfe:
-+		case 0xff:
-+			memcpy(actx->key, key, len);
-+			return 0;
-+		default:
-+			return -EINVAL;
-+		}
-+	} else if (len == AES_KEYSIZE_128) {
- 		memcpy(actx->key, key, len);
- 		return 0;
- 	}
--- 
-2.16.4
-
+Thanks
+Nicolin
 
 _______________________________________________
 linux-arm-kernel mailing list
