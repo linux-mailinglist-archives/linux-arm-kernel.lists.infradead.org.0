@@ -2,61 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AA002DD31
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:33:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C22F02DD36
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:34:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fBT/6R55iCdM5TNq/B4mAEhvkkIrQJw+1/EoGeeQsNw=; b=H5xzMtSTmus4OC
-	sJIPZ9xMxIKAoa3ZbV+ETNBpEBbRFABBT7EDe4NJLqwM/4DNPhqtwGN6wATKP5qHlFriXhpnqTAGY
-	PHYUtJSKltReFhl3iq4j2KOjZEBEBAhmdJ1ouVsE55OO+fpvkX1dVb99PT044y0mXB4U1PLddO9dk
-	Cw80KR79c5Wx7VPzkl2kiFXbQQ+D6sK+cUHZZ2UwqbYp8DMaFr1xoCkctCyRvf8iMvO9dNfMHLflL
-	Yk033I72swMduSFLPRYPsze4nzTYhR6BbZswYDoyzXEg4gEqtd44IMQusY/j6smFW99MS8Wm4p3xD
-	10CVcZcNn6tdWwuuDh3g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+DkE0VVzkpnYEcU9qwGPJkOrXffoyOVdAJJk7wa8Oy4=; b=NND
+	jYz6GbUlXjqa5h8o8BitO+RREOlgCrz3HSh+q800LAMzkge1FRqF7T4i1bQDtijFwIRyepn2ZSNpK
+	ubzrO9rAWPjxauq3VISIcfLBYA9GQy2PFoQUAkNesgB0LHHuIA7n1kWTEUoe+EBv4d5Uma3CevZ9F
+	SGhA8SaUw1LlIKjxZgI/EBO/I64N/zqgON+wTUxw469uYq/8h8fQ8hgoL0Q1a0m5sxUnIaae2ka00
+	MoUx0yIBW8Gdyr3FuCdp8pSB+N00zBWRcyDpf2PNw6s4yceCZxL5KHyI7s+Fztrgn0sPJL6ToUXiG
+	Ei4Lvpohh0h03AZsMl4BAb2wssBYHgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVxlT-0007Eo-4s; Wed, 29 May 2019 12:33:07 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVxlN-0007EV-Fn
- for linux-arm-kernel@bombadil.infradead.org; Wed, 29 May 2019 12:33:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Transfer-Encoding:
- Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
- Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=g4ryd9Nzcm7kUpTsMCBskfr2zjZGmv4ARSA21OChxfQ=; b=D63S5V8OyIbUAB7eEEGPP8Q3/7
- KGfP52FNIMKG5CPK9MAfXkp4KoS8g4/onwWItYKxjbfPLWzUSUcKzA7BrqPkVETgxfsMr0RfB8k/p
- 3XwcFORrty85MFGzJBxXdqzssL3NI1/98D/uCGT74WXhlhYUT8BX2kYjOhQUlgUb9WMy0S2XRjeYx
- GZNQqwj3O/Hnp3LvWuYymfThISWuwvFF6PH+/N7ak9RrwEc8pnIlPR6QwK66eU4oXaaXtKh143Lzk
- KbCyxjQZnzp+56OkG7pF1wsXadxWGvLh1QdHKWUsnP9zNdn4olg3gP+PUA55lMPF5QlL7C0Whbbqc
- +3/2qjmQ==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=hirez.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVxlK-0004Xo-1g; Wed, 29 May 2019 12:32:58 +0000
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 508EB201DA64E; Wed, 29 May 2019 14:32:56 +0200 (CEST)
-Date: Wed, 29 May 2019 14:32:56 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Raphael Gault <raphael.gault@arm.com>
-Subject: Re: [RFC 4/7] arm64: pmu: Add function implementation to update
- event index in userpage.
-Message-ID: <20190529123256.GT2623@hirez.programming.kicks-ass.net>
-References: <20190528150320.25953-1-raphael.gault@arm.com>
- <20190528150320.25953-5-raphael.gault@arm.com>
- <20190529094659.GK2623@hirez.programming.kicks-ass.net>
- <42a937dd-5cf6-6738-6f69-005fce64138f@arm.com>
- <d6f40c6c-6a73-bd7f-e384-050bd9428631@arm.com>
- <0100f2bd-7940-0b81-4c03-205b295a048f@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0100f2bd-7940-0b81-4c03-205b295a048f@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1hVxn7-0007ZW-K8; Wed, 29 May 2019 12:34:49 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVxn0-0007ZB-Fd
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:34:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB0F180D;
+ Wed, 29 May 2019 05:34:41 -0700 (PDT)
+Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
+ [10.162.41.181])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 23E9B3F59C;
+ Wed, 29 May 2019 05:34:38 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/4] arm64/mm: Fixes and cleanups for do_page_fault()
+Date: Wed, 29 May 2019 18:04:41 +0530
+Message-Id: <1559133285-27986-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190529_053442_524627_0B2F5077 
+X-CRM114-Status: GOOD (  10.73  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,66 +61,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, acme@kernel.org, mingo@redhat.com,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ James Morse <james.morse@arm.com>, Andrey Konovalov <andreyknvl@google.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 01:25:46PM +0100, Raphael Gault wrote:
-> Hi Robin, Hi Peter,
-> =
+This series contains some fixes and cleanups for page fault handling in
+do_page_fault(). This has been boot tested on arm64 platform along with
+some stress test but just build tested on others.
 
-> On 5/29/19 11:50 AM, Robin Murphy wrote:
-> > On 29/05/2019 11:46, Raphael Gault wrote:
-> > > Hi Peter,
-> > > =
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Andrey Konovalov <andreyknvl@google.com>
 
-> > > On 5/29/19 10:46 AM, Peter Zijlstra wrote:
-> > > > On Tue, May 28, 2019 at 04:03:17PM +0100, Raphael Gault wrote:
-> > > > > +static int armv8pmu_access_event_idx(struct perf_event *event)
-> > > > > +{
-> > > > > +=A0=A0=A0 if (!(event->hw.flags & ARMPMU_EL0_RD_CNTR))
-> > > > > +=A0=A0=A0=A0=A0=A0=A0 return 0;
-> > > > > +
-> > > > > +=A0=A0=A0 /*
-> > > > > +=A0=A0=A0=A0 * We remap the cycle counter index to 32 to
-> > > > > +=A0=A0=A0=A0 * match the offset applied to the rest of
-> > > > > +=A0=A0=A0=A0 * the counter indeces.
-> > > > > +=A0=A0=A0=A0 */
-> > > > > +=A0=A0=A0 if (event->hw.idx =3D=3D ARMV8_IDX_CYCLE_COUNTER)
-> > > > > +=A0=A0=A0=A0=A0=A0=A0 return 32;
-> > > > > +
-> > > > > +=A0=A0=A0 return event->hw.idx;
-> > > > =
+Anshuman Khandual (4):
+  arm64/mm: Drop mmap_sem before calling __do_kernel_fault()
+  arm64/mm: Drop task_struct argument from __do_page_fault()
+  arm64/mm: Consolidate page fault information capture
+  arm64/mm: Drop vm_fault_t argument from __do_page_fault()
 
-> > > > Is there a guarantee event->hw.idx is never 0? Or should you, just =
-like
-> > > > x86, use +1 here?
-> > > > =
+ arch/arm64/mm/fault.c | 77 +++++++++++++++++++++++++--------------------------
+ 1 file changed, 38 insertions(+), 39 deletions(-)
 
-> > > =
+-- 
+2.7.4
 
-> > > You are right, I should use +1 here. Thanks for pointing that out.
-> > =
-
-> > Isn't that already the case though, since we reserve index 0 for the
-> > cycle counter? I'm looking at ARMV8_IDX_TO_COUNTER() here...
-> > =
-
-> =
-
-> Well the current behaviour is correct and takes care of the zero case with
-> the ARMV8_IDX_CYCLE_COUNTER check. But using ARMV8_IDX_TO_COUNTER() and a=
-dd
-> 1 would also work. However this seems indeed redundant with the current
-> value held in event->hw.idx.
-
-Note that whatever you pick now will become ABI. Also note that the
-comment/pseudo-code in perf_event_mmap_page suggests to use idx-1 for
-the actual hardware access.
 
 _______________________________________________
 linux-arm-kernel mailing list
