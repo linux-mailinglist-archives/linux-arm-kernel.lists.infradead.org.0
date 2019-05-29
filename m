@@ -2,102 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53F382E52A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 21:17:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FAFB2E541
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 21:26:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eNNdnHTlr9CImFV0Kg+Tjz7axR8rR0qZ4op17kv1IUs=; b=JHaSXer2x6XBoM
-	gbmX0pyjHYfk/pYMa2iRBiaQ6kuPT1pb0Nhfns0dXDAaNNyXybXoZzkIOXvjeExCGXK3mq8abSM8q
-	aTEVhSsVMfkP9KJo3rTxOpPuuyLUSB+9GzkK8MfKoOFgymQ03+4ZxapdZwfqs9/XQYhHW7+Qd8gzZ
-	I00W/CTw76qBOTRKCvkG2YcowfHpGGeQUOcEVyE3Igs9h8Bu6lHAixr+F+uYy6SBxl13u6vfRUL7m
-	hTT+nGHYJnwXtv2B0IZActeK7mZ8V4v3U/qiaKJtMDj3fKRE+duGqCGfTGqzQTRm+ax8b9eX7IQyM
-	IeC/3HwWnbKOVesLE7BA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BUbE0reV2GilF1ijr7pMmI6Qp4ic0/P+5lhfK6z5T+Q=; b=qAt6maAXBceyAF
+	6JFaPc4oZlk8qexllRccb05WVqs+iXudiX+PnLtkE2CcqqG0Ix6uxfU5FT7EZBPNeQTHJEwHA7zOa
+	lfgKayc8XalAdIjy+JZaDBcJDymQ/qBCDa87O9IQkrikV+byLLFEMawAzOtfwijsxz/gxuveAnO79
+	xrULVTuyJhvJX6vownRO6G/kvEsrUwDlumxq3KBcgdAhqmzG+Hdrt/6Cj3Eo5pNjmd8kbucHvEbpv
+	/TcZ2m5RhT9gYLvnglQ4lF2mg8ydJLwHhXB3a+mbqiWwdzP51sM0pqonCasYDivwH18gQ7LZpe7JR
+	XaJZZiRQToeHz08OcHrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW44s-0006Y6-Qq; Wed, 29 May 2019 19:17:34 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1hW4DT-0001k1-FN; Wed, 29 May 2019 19:26:27 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW44l-0006XH-DI
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 19:17:29 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4TJ8nat081450;
- Wed, 29 May 2019 19:16:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2018-07-02;
- bh=CtA6ICxKGe1fqkMs0pY+hvbN0hwH+SCp+kagkC8uKUU=;
- b=uiZc6BJjnxYlkKC0mVgzDMYlXqZp+X7nNs45fIZjaUrNaM6NMEcap06Ic5/50URhPfQK
- bt3R45V10xYXmjyX694eszHU/v7Ha6KRp2Ax/d5zm//J0A+N9v8ZAIJV+fmZY7UvVjsb
- Y8mXLog4WJLDTtB0Sg5R3fE/FmaQNwojslvdVW1zvt77HRXYqa1HYnngfQcFpcqpF1MT
- aPuDSchQXC0rsXFFUo/oO5LlzQT0g++W9ohrJZAp2uxHQUMvu/GTY4bEdyNOpcSyTmX4
- HkllS8/BNhBVGuhrkIHCRCj/VY0fG/Wc3aNzLhHDA3jofDXaA/V1JDdyelNDZntAXNxo tQ== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2130.oracle.com with ESMTP id 2spw4tm189-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 29 May 2019 19:16:56 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x4TJGOPJ155964;
- Wed, 29 May 2019 19:16:55 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3020.oracle.com with ESMTP id 2sqh73w8nw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 29 May 2019 19:16:55 +0000
-Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x4TJGoBM009180;
- Wed, 29 May 2019 19:16:51 GMT
-Received: from [192.168.1.16] (/24.9.64.241)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 29 May 2019 12:16:50 -0700
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
- <20190527143719.GA59948@MBP.local>
- <20190528145411.GA709@e119886-lin.cambridge.arm.com>
- <20190528154057.GD32006@arrakis.emea.arm.com>
- <11193998209cc6ff34e7d704f081206b8787b174.camel@oracle.com>
- <20190529142008.5quqv3wskmpwdfbu@mbp>
-From: Khalid Aziz <khalid.aziz@oracle.com>
-Organization: Oracle Corp
-Message-ID: <b2753e81-7b57-481f-0095-3c6fecb1a74c@oracle.com>
-Date: Wed, 29 May 2019 13:16:37 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hW4DL-0001iP-3l
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 19:26:20 +0000
+Received: by mail-pg1-x542.google.com with SMTP id t1so483351pgc.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 12:26:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=MqvScE+mpTeungkeSlvv3Q/uzBYTV0O7Qr5Vox35/hw=;
+ b=Buw3FXSp4ANIXhiVaYcFq7ueT4hHfJzssIhWbmrncc4YnHk0oVg8OvJ0WvauqQALhB
+ sBghG+54cb3Hrx24CLKE7D0oxQLoKUXTBDFyYSm5aD1WKGg3/759D66vG6dvvqaZZSbX
+ RMrPVBwObsIhqMoSQcIrTNLUVIJxzJvUk8a8g=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=MqvScE+mpTeungkeSlvv3Q/uzBYTV0O7Qr5Vox35/hw=;
+ b=QcFdjESvPuQ/2rXAr0Btc1AzJgifvz4Twf6y8FefJx0MVRcsVUJA/2bsufilBY47Vv
+ bN5d1avOPAzDOW/lOoggASI1Vy3bgwwWAiha2Xf68YmmiJUCJa+8Z1b/490pf2aJbY1i
+ QwBMSEOuC6Ek3IRp9gtg2zXBJtXCzieBCVqBqnBl88E765gP9yd4a0u1rSTPTTv2MlUy
+ Q3r8NdWxPLEBgfTkG/NMyKckgBisaHykpWzdh0jAQWdvq4G5notWGB2fthRApCmNqX00
+ d4R9BH93/1IHVsr5Knccqan6mH7wOO47UUGYUqhxRjRI0Zg/986meOKRgbNZBCRnrBsE
+ XOJw==
+X-Gm-Message-State: APjAAAX7/zS9KnjTJR1hrV6hp/W4Tp0S0mYQnvRPlT0J3akh2pqGjkyd
+ us9h245oEsvhhTeIVxF/+PmLtw==
+X-Google-Smtp-Source: APXvYqwq6lC0O0O/2wGuHUis8CaujTzg5ED6XBldzBsiAKxCW18NlPMCdk/8ggb/wiv8TlnrM8H9eg==
+X-Received: by 2002:a62:585:: with SMTP id 127mr130528149pff.231.1559157973778; 
+ Wed, 29 May 2019 12:26:13 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id q17sm480361pfq.74.2019.05.29.12.26.12
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 May 2019 12:26:12 -0700 (PDT)
+Date: Wed, 29 May 2019 12:26:11 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Alexandre Ghiti <alex@ghiti.fr>
+Subject: Re: [PATCH v4 08/14] arm: Use generic mmap top-down layout and brk
+ randomization
+Message-ID: <201905291222.595685C3F0@keescook>
+References: <20190526134746.9315-1-alex@ghiti.fr>
+ <20190526134746.9315-9-alex@ghiti.fr>
 MIME-Version: 1.0
-In-Reply-To: <20190529142008.5quqv3wskmpwdfbu@mbp>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9272
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=271
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1905290124
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9272
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=294 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1905290124
+Content-Disposition: inline
+In-Reply-To: <20190526134746.9315-9-alex@ghiti.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_121727_550854_C8E37E40 
-X-CRM114-Status: GOOD (  51.97  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190529_122619_155646_74FB45E0 
+X-CRM114-Status: GOOD (  24.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -118,254 +96,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Lee Smith <Lee.Smith@arm.com>, linux-kselftest@vger.kernel.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Albert Ou <aou@eecs.berkeley.edu>,
+ Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
+ linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
+ James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
+ Luis Chamberlain <mcgrof@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/29/19 8:20 AM, Catalin Marinas wrote:
-> Hi Khalid,
+On Sun, May 26, 2019 at 09:47:40AM -0400, Alexandre Ghiti wrote:
+> arm uses a top-down mmap layout by default that exactly fits the generic
+> functions, so get rid of arch specific code and use the generic version
+> by selecting ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT.
+> As ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT selects ARCH_HAS_ELF_RANDOMIZE,
+> use the generic version of arch_randomize_brk since it also fits.
+> Note that this commit also removes the possibility for arm to have elf
+> randomization and no MMU: without MMU, the security added by randomization
+> is worth nothing.
 > 
-> On Tue, May 28, 2019 at 05:33:04PM -0600, Khalid Aziz wrote:
->> On Tue, 2019-05-28 at 16:40 +0100, Catalin Marinas wrote:
->>> I think another aspect is how we define the ABI. Is allowing tags to
->>> mlock() for example something specific to arm64 or would sparc ADI
->>> need the same? In the absence of other architectures defining such
->>> ABI, my preference would be to keep the wrappers in the arch code.
->>>
->>> Assuming sparc won't implement untagged_addr(), we can place the
->>> macros back in the generic code but, as per the review here, we need
->>> to be more restrictive on where we allow tagged addresses. For
->>> example, if mmap() gets a tagged address with MAP_FIXED, is it
->>> expected to return the tag?
->>
->> I would recommend against any ABI differences between ARM64 MTE/TBI and
->> sparc ADI unless it simply can not be helped. My understanding of
->> MTE/TBI is limited, so I will explain how sparc ADI works. On sparc, a
->> tagged address has no meaning until following steps happen:
-> 
-> Before we go into the MTE/ADI similarities or differences, just to
-> clarify that TBI is something that we supported from the start of the
-> arm64 kernel port. TBI (top byte ignore) allows a user pointer to have
-> non-zero top byte and dereference it without causing a fault (the
-> hardware masks it out). The user/kernel ABI does not allow such tagged
-> pointers into the kernel, nor would the kernel return any such tagged
-> addresses.
-> 
-> With MTE (memory tagging extensions), the top-byte meaning is changed
-> from no longer being ignored to actually being checked against a tag in
-> the physical RAM (we call it allocation tag).
-> 
->> 1. set the user mode PSTATE.mcde bit. This acts as the master switch to
->> enable ADI for a process.
->>
->> 2. set TTE.mcd bit on TLB entries that match the address range ADI is
->> being enabled on.
-> 
-> Something close enough for MTE, with the difference that enabling it is
-> not a PSTATE bit but rather a system control bit (SCTLR_EL1 register),
-> so only the kernel can turn it on/off for the user.
-> 
->> 3. Store version tag for the range of addresses userspace wants ADI
->> enabled on using "stxa" instruction. These tags are stored in physical
->> memory by the memory controller.
-> 
-> Do you have an "ldxa" instruction to load the tags from physical memory?
+> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
 
-Yes, "ldxa" can be used to read current tag for any memory location.
-Kernel uses it to read the tags for a physical page being swapped out
-and restores those tags when the page is swapped back in.
+Acked-by: Kees Cook <keescook@chromium.org>
 
-> 
->> Steps 1 and 2 are accomplished by userspace by calling mprotect() with
->> PROT_ADI. Tags are set by storing tags in a loop, for example:
->>
->>         version = 10;
->>         tmp_addr = shmaddr;
->>         end = shmaddr + BUFFER_SIZE;
->>         while (tmp_addr < end) {
->>                 asm volatile(
->>                         "stxa %1, [%0]0x90\n\t"
->>                         :
->>                         : "r" (tmp_addr), "r" (version));
->>                 tmp_addr += adi_blksz;
->>         }
-> 
-> On arm64, a sequence similar to the above would live in the libc. So a
-> malloc() call will tag the memory and return the tagged address to thePre-coloring could easily be done by 
-> user.
-> 
-> We were not planning for a PROT_ADI/MTE but rather have MTE enabled for
-> all user memory ranges. We may revisit this before we upstream the MTE
-> support (probably some marginal benefit for the hardware not fetching
-> the tags from memory if we don't need to, e.g. code sections).
-> 
-> Given that we already have the TBI feature and with MTE enabled the top
-> byte is no longer ignored, we are planning for an explicit opt-in by the
-> user via prctl() to enable MTE.
+It may be worth noting that STACK_RND_MASK is safe to remove here
+because it matches the default that now exists in mm/util.c.
 
-OK. I had initially proposed enabling ADI for a process using prctl().
-Feedback I got was prctl was not a desirable interface and I ended up
-making mprotect() with PROT_ADI enable ADI on the process instead. Just
-something to keep in mind.
+-Kees
 
+> ---
+>  arch/arm/Kconfig                 |  2 +-
+>  arch/arm/include/asm/processor.h |  2 --
+>  arch/arm/kernel/process.c        |  5 ---
+>  arch/arm/mm/mmap.c               | 62 --------------------------------
+>  4 files changed, 1 insertion(+), 70 deletions(-)
 > 
->> With these semantics, giving mmap() or shamat() a tagged address is
->> meaningless since no tags have been stored at the addresses mmap() will
->> allocate and one can not store tags before memory range has been
->> allocated. If we choose to allow tagged addresses to come into mmap()
->> and shmat(), sparc code can strip the tags unconditionally and that may
->> help simplify ABI and/or code.
-> 
-> We could say that with TBI (pre-MTE support), the top byte is actually
-> ignored on mmap(). Now, if you pass a MAP_FIXED with a tagged address,
-> should the user expect the same tagged address back or stripping the tag
-> is acceptable? If we want to keep the current mmap() semantics, I'd say
-> the same tag is returned. However, with MTE this also implies that the
-> memory was coloured.
-> 
-
-Is assigning a tag aprivileged operationon ARM64? I am thinking not
-since you mentioned libc could do it in a loop for malloc'd memory.
-mmap() can return the same tagged address but I am uneasy about kernel
-pre-coloring the pages. Database can mmap 100's of GB of memory. That is
-lot of work being offloaded to the kernel to pre-color the page even if
-done in batches as pages are faulted in.
-
->>> My thoughts on allowing tags (quick look):
->>>
->>> brk - no
->>> get_mempolicy - yes
->>> madvise - yes
->>> mbind - yes
->>> mincore - yes
->>> mlock, mlock2, munlock - yes
->>> mmap - no (we may change this with MTE but not for TBI)
->>> mmap_pgoff - not used on arm64
->>> mprotect - yes
->>> mremap - yes for old_address, no for new_address (on par with mmap)
->>> msync - yes
->>> munmap - probably no (mmap does not return tagged ptrs)
->>> remap_file_pages - no (also deprecated syscall)
->>> shmat, shmdt - shall we allow tagged addresses on shared memory?
->>>
->>> The above is only about the TBI ABI while ignoring hardware MTE. For
->>> the latter, we may want to change the mmap() to allow pre-colouring
->>> on page fault which means that munmap()/mprotect() should also
->>> support tagged pointers. Possibly mremap() as well but we need to
->>> decide whether it should allow re-colouring the page (probably no,
->>> in which case old_address and new_address should have the same tag).
->>> For some of these we'll end up with arm64 specific wrappers again,
->>> unless sparc ADI adopts exactly the same ABI restrictions.
->>
->> Let us keep any restrictions common across ARM64 and sparc. pre-
->> coloring on sparc in the kernel would mean kernel will have to execute
->> stxa instructions in a loop for each page being faulted in.
-> 
-> Since the user can probe the pre-existing colour in a faulted-in page
-> (either with some 'ldxa' instruction or by performing a tag-checked
-> access), the kernel should always pre-colour (even if colour 0) any
-> allocated page. There might not be an obvious security risk but I feel
-> uneasy about letting colours leak between address spaces (different user
-> processes or between kernel and user).
-
-On sparc, tags 0 and 15 are special in that 0 means untagged memory and
-15 means match any tag in the address. Colour 0 is the default for any
-newly faulted in page on sparc.
-
-> 
-> Since we already need such loop in the kernel, we might as well allow
-> user space to require a certain colour. This comes in handy for large
-> malloc() and another advantage is that the C library won't be stuck
-> trying to paint the whole range (think GB).
-
-If kernel is going to pre-color all pages in a vma, we will need to
-store the default tag in the vma. It will add more time to page fault
-handling code. On sparc M7, kernel will need to execute additional 128
-stxa instructions to set the tags on a normal page.
-
-> 
->> Not that big a deal but doesn't that assume the entire page has the
->> same tag which is dedcued from the upper bits of address? Shouldn't we
->> support tags at the same granularity level as what the hardware
->> supports?
-> 
-> That's mostly about large malloc() optimisation via mmap(), the latter
-> working on page granularity already. There is another use-case for
-> pre-coloured thread stacks, also allocated via anonymous mmap().
-> 
->> We went through this discussion for sparc and decision was to support
->> tags at the same granularity as hardware. That means we can not deduce
->> tags from the first address that pioints into an mmap or shmat region.
->> Those tags and the upper bytes of colored address could change for
->> every cacheline sized block (64-bytes on sparc M7).
-> 
-> It's 16-byte for arm64, so smaller than the cacheline.
-> 
->> We can try to store tags for an entire region in vma but that is
->> expensive, plus on sparc tags are set in userspace with no
->> participation from kernel and now we need a way for userspace to
->> communicate the tags to kernel.
-> 
-> We can't support finer granularity through the mmap() syscall and, as
-> you said, the vma is not the right thing to store the individual tags.
-> With the above extension to mmap(), we'd have to store a colour per vma
-> and prevent merging if different colours (we could as well use the
-> pkeys mechanism we already have in the kernel but use a colour per vma
-> instead of a key).
-
-Since tags can change on any part of mmap region on sparc at any time
-without kernel being involved, I am not sure I see much reason for
-kernel to enforce any tag related restrictions.
-
-> 
-> Of course, the user is allowed to change the in-memory colours at a
-> finer granularity and the kernel will preserve them during swapping
-> out/in, page migration etc. The above mmap() proposal is just for the
-> first fault-in of a page in a given range/vma.
-> 
->> From sparc point of view, making kernel responsible for assigning tags
->> to a page on page fault is full of pitfalls.
-> 
-> This could be just some arm64-specific but if you plan to deploy it more
-> generically for sparc (at the C library level), you may find this
-> useful.
+> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+> index 8869742a85df..27687a8c9fb5 100644
+> --- a/arch/arm/Kconfig
+> +++ b/arch/arm/Kconfig
+> @@ -6,7 +6,6 @@ config ARM
+>  	select ARCH_CLOCKSOURCE_DATA
+>  	select ARCH_HAS_DEBUG_VIRTUAL if MMU
+>  	select ARCH_HAS_DEVMEM_IS_ALLOWED
+> -	select ARCH_HAS_ELF_RANDOMIZE
+>  	select ARCH_HAS_FORTIFY_SOURCE
+>  	select ARCH_HAS_KEEPINITRD
+>  	select ARCH_HAS_KCOV
+> @@ -29,6 +28,7 @@ config ARM
+>  	select ARCH_SUPPORTS_ATOMIC_RMW
+>  	select ARCH_USE_BUILTIN_BSWAP
+>  	select ARCH_USE_CMPXCHG_LOCKREF
+> +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
+>  	select ARCH_WANT_IPC_PARSE_VERSION
+>  	select BUILDTIME_EXTABLE_SORT if MMU
+>  	select CLONE_BACKWARDS
+> diff --git a/arch/arm/include/asm/processor.h b/arch/arm/include/asm/processor.h
+> index 5d06f75ffad4..95b7688341c5 100644
+> --- a/arch/arm/include/asm/processor.h
+> +++ b/arch/arm/include/asm/processor.h
+> @@ -143,8 +143,6 @@ static inline void prefetchw(const void *ptr)
+>  #endif
+>  #endif
+>  
+> -#define HAVE_ARCH_PICK_MMAP_LAYOUT
+> -
+>  #endif
+>  
+>  #endif /* __ASM_ARM_PROCESSOR_H */
+> diff --git a/arch/arm/kernel/process.c b/arch/arm/kernel/process.c
+> index 72cc0862a30e..19a765db5f7f 100644
+> --- a/arch/arm/kernel/process.c
+> +++ b/arch/arm/kernel/process.c
+> @@ -322,11 +322,6 @@ unsigned long get_wchan(struct task_struct *p)
+>  	return 0;
+>  }
+>  
+> -unsigned long arch_randomize_brk(struct mm_struct *mm)
+> -{
+> -	return randomize_page(mm->brk, 0x02000000);
+> -}
+> -
+>  #ifdef CONFIG_MMU
+>  #ifdef CONFIG_KUSER_HELPERS
+>  /*
+> diff --git a/arch/arm/mm/mmap.c b/arch/arm/mm/mmap.c
+> index 0b94b674aa91..b8d912ac9e61 100644
+> --- a/arch/arm/mm/mmap.c
+> +++ b/arch/arm/mm/mmap.c
+> @@ -17,43 +17,6 @@
+>  	((((addr)+SHMLBA-1)&~(SHMLBA-1)) +	\
+>  	 (((pgoff)<<PAGE_SHIFT) & (SHMLBA-1)))
+>  
+> -/* gap between mmap and stack */
+> -#define MIN_GAP		(128*1024*1024UL)
+> -#define MAX_GAP		((STACK_TOP)/6*5)
+> -#define STACK_RND_MASK	(0x7ff >> (PAGE_SHIFT - 12))
+> -
+> -static int mmap_is_legacy(struct rlimit *rlim_stack)
+> -{
+> -	if (current->personality & ADDR_COMPAT_LAYOUT)
+> -		return 1;
+> -
+> -	if (rlim_stack->rlim_cur == RLIM_INFINITY)
+> -		return 1;
+> -
+> -	return sysctl_legacy_va_layout;
+> -}
+> -
+> -static unsigned long mmap_base(unsigned long rnd, struct rlimit *rlim_stack)
+> -{
+> -	unsigned long gap = rlim_stack->rlim_cur;
+> -	unsigned long pad = stack_guard_gap;
+> -
+> -	/* Account for stack randomization if necessary */
+> -	if (current->flags & PF_RANDOMIZE)
+> -		pad += (STACK_RND_MASK << PAGE_SHIFT);
+> -
+> -	/* Values close to RLIM_INFINITY can overflow. */
+> -	if (gap + pad > gap)
+> -		gap += pad;
+> -
+> -	if (gap < MIN_GAP)
+> -		gap = MIN_GAP;
+> -	else if (gap > MAX_GAP)
+> -		gap = MAX_GAP;
+> -
+> -	return PAGE_ALIGN(STACK_TOP - gap - rnd);
+> -}
+> -
+>  /*
+>   * We need to ensure that shared mappings are correctly aligned to
+>   * avoid aliasing issues with VIPT caches.  We need to ensure that
+> @@ -181,31 +144,6 @@ arch_get_unmapped_area_topdown(struct file *filp, const unsigned long addr0,
+>  	return addr;
+>  }
+>  
+> -unsigned long arch_mmap_rnd(void)
+> -{
+> -	unsigned long rnd;
+> -
+> -	rnd = get_random_long() & ((1UL << mmap_rnd_bits) - 1);
+> -
+> -	return rnd << PAGE_SHIFT;
+> -}
+> -
+> -void arch_pick_mmap_layout(struct mm_struct *mm, struct rlimit *rlim_stack)
+> -{
+> -	unsigned long random_factor = 0UL;
+> -
+> -	if (current->flags & PF_RANDOMIZE)
+> -		random_factor = arch_mmap_rnd();
+> -
+> -	if (mmap_is_legacy(rlim_stack)) {
+> -		mm->mmap_base = TASK_UNMAPPED_BASE + random_factor;
+> -		mm->get_unmapped_area = arch_get_unmapped_area;
+> -	} else {
+> -		mm->mmap_base = mmap_base(random_factor, rlim_stack);
+> -		mm->get_unmapped_area = arch_get_unmapped_area_topdown;
+> -	}
+> -}
+> -
+>  /*
+>   * You really shouldn't be using read() or write() on /dev/mem.  This
+>   * might go away in the future.
+> -- 
+> 2.20.1
 > 
 
-Common semantics from app developer point of view will be very useful to
-maintain. If arm64 says mmap with MAP_FIXED and a tagged address will
-return a pre-colored page, I would rather have it be the same on any
-architecture. Is there a use case that justifies kernel doing this extra
-work?
-
---
-Khalid
-
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
