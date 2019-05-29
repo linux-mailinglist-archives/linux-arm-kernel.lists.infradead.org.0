@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B75E62E4FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 21:06:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FDB82E4FD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 21:06:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4s2kRVODns7bmhs19XcYE+HHwkMMC6XdJYEFM3PkBTU=; b=s1qo1tv5X/Kw3/Z0QIe0xGHocR
-	q9IA4W8k/yqeZGdMv4S3oel9IPiomffMLRmULZ7roPDohPV/HUvmBnBy+dH+WqE0GnhgWc4utCg1Q
-	4dmC6cBps8gjZqGxZRITzf+wIVX0jHkf+C+vsgkwamfsshJ8CUXp+EgQWl7C96qde6/icbQmWKpWm
-	XIo6pefHRrcZUp74q29dKTO/ve0y1b0oWRg/5M5DWU3CXx9XJBuvhZP08llIUton26oksinYsTljb
-	+mTS7ab4G78Ah4AIoB5WE+nhEIjrLBo6e6pUeUpCfBrtnWmmINCem6wh5dKjOtiL/m4WXDsNUPBwZ
-	2a2nurPg==;
+	bh=L3etFPGknbXRH6bJFsmMrWGnprqVFG5UzgxRtxwzdy4=; b=K0jsmDInGnJaYMbtJmY3z9AMoG
+	4wDTeJGdB9B8iBWReM8zcTDBRw8TzMHaIIqdZ19PxBLUNOgqKfPDQdF3xMoVNEHXE0CWqsw0wsnma
+	N5RqiXC0t+b+xzQYs/NXt+4gtruDftFwfY7npzw/4kuLgZJERdbahKQqovRqEEUYw/0xVaCRFQntm
+	ZG+uqmrvrbZxe3CLfjSWKtJRTZzeG8U36SAFhKZTHrKZWmiOvMQcGI9OPtGQAseByOLfPlYepS++4
+	nfp52BTbdt1R6+hBYVu+bhDE/3XHz1qqQBYSEBP+Ky/knPJQmw1Nu7dNHNxbSTp/sNojQzEj8cBfv
+	6DQ0e2yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW3tk-0001fV-IN; Wed, 29 May 2019 19:06:04 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hW3uY-00026z-Dn; Wed, 29 May 2019 19:06:54 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW3se-0007jO-D3
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 19:04:57 +0000
+ id 1hW3sg-0007m0-Tb
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 19:05:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 186ECA78;
- Wed, 29 May 2019 12:04:56 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9369115A2;
+ Wed, 29 May 2019 12:04:58 -0700 (PDT)
 Received: from moonbear.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 48AF03F59C;
- Wed, 29 May 2019 12:04:54 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C60783F59C;
+ Wed, 29 May 2019 12:04:56 -0700 (PDT)
 From: Kristina Martsenko <kristina.martsenko@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC v2 6/7] arm64: unwind: strip PAC from kernel addresses
-Date: Wed, 29 May 2019 20:03:31 +0100
-Message-Id: <20190529190332.29753-7-kristina.martsenko@arm.com>
+Subject: [RFC v2 7/7] arm64: compile the kernel with ptrauth return address
+ signing
+Date: Wed, 29 May 2019 20:03:32 +0100
+Message-Id: <20190529190332.29753-8-kristina.martsenko@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190529190332.29753-1-kristina.martsenko@arm.com>
 References: <20190529190332.29753-1-kristina.martsenko@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_120456_455137_E4F608BB 
-X-CRM114-Status: GOOD (  14.58  )
+X-CRM114-CacheID: sfid-20190529_120458_966362_B2CB6674 
+X-CRM114-Status: GOOD (  19.43  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,71 +75,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mark Rutland <mark.rutland@arm.com>
+Compile all non-leaf functions with two ptrauth instructions: PACIASP in
+the prologue to sign the return address, and AUTIASP in the epilogue to
+authenticate the return address (from the stack). If authentication
+fails, the return will cause an instruction abort to be taken, followed
+by an oops and killing the task. This should help protect the kernel
+against attacks using return-oriented programming.
 
-When we enable pointer authentication in the kernel, LR values saved to
-the stack will have a PAC which we must strip in order to retrieve the
-real return address.
+The new instructions are in the HINT encoding space, so on a system
+without ptrauth they execute as NOPs.
 
-Strip PACs when unwinding the stack in order to account for this.
+CONFIG_ARM64_PTR_AUTH now not only enables ptrauth for userspace and KVM
+guests, but also automatically builds the kernel with ptrauth
+instructions if the compiler supports it. If there is no compiler
+support, we do not warn that the kernel was built without ptrauth
+instructions.
 
-Reviewed-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+GCC 7 and 8 support the -msign-return-address option, while GCC 9
+deprecates that option and replaces it with -mbranch-protection. Support
+both options.
+
 Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 ---
 
 Changes since RFC v1:
- - Moved the patch later in the series
+ - Fixed support for compilers without ptrauth
+ - Added support for the new -mbranch-protection option
+ - Switched from protecting all functions to only protecting non-leaf functions
+   (for no good reason, I have not done e.g. gadget analysis)
+ - Moved __no_ptrauth definition to this patch, depending on compiler support
+ - Updated the Kconfig symbol description
+ - Updated the commit message
 
- arch/arm64/include/asm/pointer_auth.h | 10 +++++++---
- arch/arm64/kernel/stacktrace.c        |  3 +++
- 2 files changed, 10 insertions(+), 3 deletions(-)
+ arch/arm64/Kconfig                    | 12 +++++++++++-
+ arch/arm64/Makefile                   |  6 ++++++
+ arch/arm64/include/asm/pointer_auth.h |  6 ++++++
+ 3 files changed, 23 insertions(+), 1 deletion(-)
 
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index f4c1e9b30129..3ce93d88fae1 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1295,11 +1295,15 @@ config ARM64_PTR_AUTH
+ 	  and other attacks.
+ 
+ 	  This option enables these instructions at EL0 (i.e. for userspace).
+-
+ 	  Choosing this option will cause the kernel to initialise secret keys
+ 	  for each process at exec() time, with these keys being
+ 	  context-switched along with the process.
+ 
++	  If the compiler supports the -mbranch-protection or
++	  -msign-return-address flag (e.g. GCC 7 or later), then this option
++	  will also cause the kernel itself to be compiled with return address
++	  protection.
++
+ 	  The feature is detected at runtime. If the feature is not present in
+ 	  hardware it will not be advertised to userspace nor will it be
+ 	  enabled.
+@@ -1308,6 +1312,12 @@ config ARM64_PTR_AUTH
+ 	  then the secondary CPU will be offlined. On such a system, this
+ 	  option should not be selected.
+ 
++config CC_HAS_BRANCH_PROT_PAC_RET
++	def_bool $(cc-option,-mbranch-protection=pac-ret)
++
++config CC_HAS_SIGN_RETURN_ADDRESS
++	def_bool $(cc-option,-msign-return-address=non-leaf)
++
+ endmenu
+ 
+ config ARM64_SVE
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index b025304bde46..1dfbe755b531 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -66,6 +66,12 @@ stack_protector_prepare: prepare0
+ 					include/generated/asm-offsets.h))
+ endif
+ 
++ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
++pac-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=non-leaf
++pac-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret
++KBUILD_CFLAGS += $(pac-flags-y)
++endif
++
+ ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
+ KBUILD_CPPFLAGS	+= -mbig-endian
+ CHECKFLAGS	+= -D__AARCH64EB__
 diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
-index 79f35f5ecff5..5491c34b4dc3 100644
+index 5491c34b4dc3..3a83c40ffd8a 100644
 --- a/arch/arm64/include/asm/pointer_auth.h
 +++ b/arch/arm64/include/asm/pointer_auth.h
-@@ -80,12 +80,16 @@ extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
-  * The EL0 pointer bits used by a pointer authentication code.
-  * This is dependent on TBI0 being enabled, or bits 63:56 would also apply.
+@@ -15,7 +15,13 @@
+  * allows pointer authentication to be enabled/disabled within the function
+  * (but leaves the function unprotected by pointer authentication).
   */
--#define ptrauth_user_pac_mask()	GENMASK(54, vabits_user)
-+#define ptrauth_user_pac_mask()		GENMASK(54, vabits_user)
-+
-+#define ptrauth_kernel_pac_mask()	(GENMASK(63, 56) | GENMASK(54, VA_BITS))
++#if defined(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET)
++#define __no_ptrauth	__attribute__((target("branch-protection=none")))
++#elif defined(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS)
++#define __no_ptrauth	__attribute__((target("sign-return-address=none")))
++#else
+ #define __no_ptrauth
++#endif
  
--/* Only valid for EL0 TTBR0 instruction pointers */
- static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
- {
--	return ptr & ~ptrauth_user_pac_mask();
-+	if (ptr & BIT_ULL(55))
-+		return ptr | ptrauth_kernel_pac_mask();
-+	else
-+		return ptr & ~ptrauth_user_pac_mask();
- }
- 
- #define ptrauth_thread_init_user(tsk)					\
-diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
-index d908b5e9e949..df07c27a9673 100644
---- a/arch/arm64/kernel/stacktrace.c
-+++ b/arch/arm64/kernel/stacktrace.c
-@@ -24,6 +24,7 @@
- #include <linux/stacktrace.h>
- 
- #include <asm/irq.h>
-+#include <asm/pointer_auth.h>
- #include <asm/stack_pointer.h>
- #include <asm/stacktrace.h>
- 
-@@ -56,6 +57,8 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
- 	frame->fp = READ_ONCE_NOCHECK(*(unsigned long *)(fp));
- 	frame->pc = READ_ONCE_NOCHECK(*(unsigned long *)(fp + 8));
- 
-+	frame->pc = ptrauth_strip_insn_pac(frame->pc);
-+
- #ifdef CONFIG_FUNCTION_GRAPH_TRACER
- 	if (tsk->ret_stack &&
- 			(frame->pc == (unsigned long)return_to_handler)) {
+ /*
+  * Each key is a 128-bit quantity which is split across a pair of 64-bit
 -- 
 2.11.0
 
