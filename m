@@ -2,97 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E96502D43E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:27:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE0452D44C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 05:36:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B1IZKgxvC83MtYwjYrxDgw281Fs6b+vDMLtfqVClDQ8=; b=mhGPVXJk+3jj6j
-	kJ5JpQj2PWI/GhO1wjUAdLqRWmt3iuMSwOJD4lpT5irrMvjFhxm9fjkolCHvxjokYaW6WUf5ESPtE
-	YnsK867D9oix0KW5zysp6l+TC4noSy2eXaAKU8vFACCYZA2cWkxraOcmZBMQTgK2QHBtSEH9Vv+5x
-	cO4+mC/tYdiOXWWFIDWNDBT3TAxJ0CPCMzs9FyoN12ipPXhrYMt+vHOPU2kk8PbIMDAWRBFxW0Qlk
-	St6do2D7uyAbJxER3r1jd3PF7tmWCgFD6xFDvtJMkSGzeBsUcYB1CM84o1QDTfSWPheI+03WDEh2c
-	xqAiLqc0Xq4+kywlYx1Q==;
+	List-Owner; bh=uI8ShubZtExURy9wTcNRCHlPfqs3bgzVkOXrR0AHPHs=; b=GtK3Qv5ANFE9Lu
+	z7Ht16KYLPx8XQukDaLTeQHB5MUCuOJYY78KdKl+gEJMDvKmbZMESWG90yXzYaPH/nuFNX8XrBnhN
+	ZurQmOVyD4l5lnFdhyOx1KYKBNmgKzuXJ/fAau1cvpU/ZDZi8ydllP0KilV7y+s6zioP72U/pjen7
+	tWXHl2Ldc+4HTEB1LoEqLweX98+ciNLaY52gRRJXuJReONdBzvr2VoSnwc8+rPnetXiyc8g+z7+3e
+	RpdAh/jF8utfmEY749ZtWp8vzIwnYBF6zEhIneqd3ggMzLiDTlcUgkhPPtj7sTojenR4WFnqDp3no
+	hOxyo7TF3b3jROFVweng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVpEz-00037i-Sl; Wed, 29 May 2019 03:27:01 +0000
-Received: from mail-eopbgr130047.outbound.protection.outlook.com
- ([40.107.13.47] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1hVpOY-0006HZ-7l; Wed, 29 May 2019 03:36:54 +0000
+Received: from mail-eopbgr50044.outbound.protection.outlook.com ([40.107.5.44]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVpEr-00037A-KM
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 03:26:55 +0000
+ id 1hVpOP-0006H9-4l
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 03:36:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+nU6qwhV2UvDgcipwtDOBThwVYFgHLhUR+q1ywhUqxU=;
- b=daSmc58+fSFB0q3tKS1TZy+jK7kjwzRfvziifj5njUgCrLndzDgAbZdf0CCXVv55NFolsP+h1yMX68+rUuLLHmf64Cs8sxhBV4+jP8g9bdloZCFKFG0oyrFe0dWE6kDlXhppDx2jcmIBeYQaOPV4rgvoja31Rs89aYgPpllu+XM=
-Received: from VI1PR04MB4333.eurprd04.prod.outlook.com (52.134.122.155) by
- VI1PR04MB5597.eurprd04.prod.outlook.com (20.178.125.74) with Microsoft SMTP
+ bh=LAXxFt9W1FFyEge1An0kLLJhyQITNqYJP24u5hZ0gfM=;
+ b=VFvEGUxg2U+qSwyzYb2naw6Xv5gdCkOSX7/ArVjGcVKiesMy2i+sdfjDmwzHHPx4RO6sempvrGtrq+YrAGsqssFDDG1kJuz7yapn9OrL9E1yCw8uCIP9aoryUZkj2zP2A2V5e6Tpudb2gtKAHwXBFEg01bOU4tZLulgldZqSkxU=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3898.eurprd04.prod.outlook.com (52.134.65.139) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.16; Wed, 29 May 2019 03:26:46 +0000
-Received: from VI1PR04MB4333.eurprd04.prod.outlook.com
- ([fe80::497a:768:c7b1:34e0]) by VI1PR04MB4333.eurprd04.prod.outlook.com
- ([fe80::497a:768:c7b1:34e0%6]) with mapi id 15.20.1922.021; Wed, 29 May 2019
- 03:26:46 +0000
-From: Andy Tang <andy.tang@nxp.com>
+ 15.20.1922.15; Wed, 29 May 2019 03:36:37 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1922.021; Wed, 29 May 2019
+ 03:36:37 +0000
+From: Anson Huang <anson.huang@nxp.com>
 To: Eduardo Valentin <edubezval@gmail.com>
-Subject: RE: [EXT] Re: [PATCH] arm64: dts: ls1028a: Add Thermal Monitor Unit
- node
-Thread-Topic: [EXT] Re: [PATCH] arm64: dts: ls1028a: Add Thermal Monitor Unit
- node
-Thread-Index: AQHU+0Gute7V4LpN/kG0bCUPuN8YU6aBnOMAgAAEY9A=
-Date: Wed, 29 May 2019 03:26:46 +0000
-Message-ID: <VI1PR04MB43330251231DB7E379DBF49AF31F0@VI1PR04MB4333.eurprd04.prod.outlook.com>
-References: <20190425082640.37982-1-andy.tang@nxp.com>
- <20190529025331.GB2419@localhost.localdomain>
-In-Reply-To: <20190529025331.GB2419@localhost.localdomain>
+Subject: RE: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
+ sensor ID from DT
+Thread-Topic: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
+ sensor ID from DT
+Thread-Index: AQHVFRtF1HyUf82e5E+mJmD7zHGxLKaBa66AgAAIvwA=
+Date: Wed, 29 May 2019 03:36:37 +0000
+Message-ID: <DB3PR0402MB3916A099D7DE4F89D3F50CB3F51F0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190528060621.47342-1-Anson.Huang@nxp.com>
+ <20190528060621.47342-2-Anson.Huang@nxp.com>
+ <20190529030225.GA2662@localhost.localdomain>
+In-Reply-To: <20190529030225.GA2662@localhost.localdomain>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=andy.tang@nxp.com; 
-x-originating-ip: [119.31.174.73]
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ed03dcd8-f2eb-453b-a448-08d6e3e57ae3
+x-ms-office365-filtering-correlation-id: 4bdb87fe-b2a3-4989-2a19-08d6e3e6dae6
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5597; 
-x-ms-traffictypediagnostic: VI1PR04MB5597:
-x-microsoft-antispam-prvs: <VI1PR04MB55976495B228339176F25239F31F0@VI1PR04MB5597.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3898; 
+x-ms-traffictypediagnostic: DB3PR0402MB3898:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <DB3PR0402MB3898965E01BE92272FA1063AF51F0@DB3PR0402MB3898.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
 x-forefront-prvs: 0052308DC6
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(366004)(346002)(39860400002)(396003)(376002)(199004)(189003)(13464003)(66476007)(66446008)(73956011)(64756008)(66556008)(305945005)(7736002)(76116006)(66946007)(68736007)(7416002)(7696005)(102836004)(8936002)(81166006)(8676002)(4326008)(76176011)(6916009)(33656002)(74316002)(53546011)(54906003)(1411001)(9686003)(81156014)(6506007)(6246003)(53936002)(99286004)(55016002)(26005)(476003)(256004)(186003)(44832011)(86362001)(5660300002)(6436002)(478600001)(446003)(229853002)(52536014)(486006)(25786009)(71200400001)(71190400001)(66066001)(316002)(6116002)(3846002)(2906002)(14444005)(14454004)(11346002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5597;
- H:VI1PR04MB4333.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ SFS:(10009020)(396003)(39860400002)(346002)(136003)(366004)(376002)(13464003)(189003)(199004)(3846002)(6116002)(6306002)(33656002)(54906003)(6506007)(14454004)(81166006)(81156014)(8676002)(99286004)(53936002)(256004)(966005)(71200400001)(2906002)(8936002)(1411001)(229853002)(86362001)(53546011)(44832011)(71190400001)(7696005)(7736002)(305945005)(6436002)(102836004)(66066001)(5660300002)(55016002)(478600001)(316002)(76176011)(76116006)(7416002)(486006)(4326008)(476003)(68736007)(6246003)(9686003)(446003)(186003)(73956011)(66446008)(66476007)(52536014)(66946007)(66556008)(64756008)(25786009)(26005)(74316002)(11346002)(6916009);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3898;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 7eORb9MB7+2um/wVCnzHI2pawgcls86E15dciyWCT/ZJisPlgucEVKl/Tmoux2PAPLkbfh9x0kq/csnQbB506Ml9dMkMDoFt8c9TTgTvi1xgvEjX9ZXLT37ssWx2U6QyqqCNxyN/MUn6kJL8yfQvq4+ATnz4xIJI0yzpgEdz+aalTGKwOWIvR8yCoL649KvkAIlGovxnI5fRqXKUmkRGWJjscGIrtQJjNbQa4y4t8Wf2U269Kk+Z7EcvC/QCfs2tO2gvo2w5M8qBE3xIPcpRXdMv6wNcggtuQhRqhDEtDA0wsI56/TEWP+fwHF20JX7R4lASNtg56jFYFJgjwnDJhqWfBx/lYovH0ZDljNSgXJPrXGINC1vi/CUwrqgntRD2Iokbylg7MJX6KDOt/iFfVN8xqwuIVBi+pPuybiU1Pc8=
+x-microsoft-antispam-message-info: EndQqB+65MZQuQ+lQ+Aizl5lKNzQYveUx+pZ6MPdIoTxNRu926xlmI5yAsjOSSSudnL07CdFH/QzCKiECmLZAw4bLfeIDoPO+wZhwvKc+qBfAKNHv6xD/JBt0W2nkJZP+ZYovtpMSKK7H5kZEV3Vmn7l48XeaFrIJCKvz2Ry8vf6t6wk9v7ck7DpzitFuQxz859WlIehUNNOxBecpLTcqYVuA3DGtTdDPFU0/P0Hbyl00zXjCkB+Tz+gTx2EQii7l4DLyPOh7y7eGKYO9V2itp1YVOJ35e2hiaZja1sa8kieIqNIc/mOpmOV5DjlwtGTJymOnG+4ckZG/MwtgjSqrocCBr6vKlN0jl1B12ka9xsxn0xS/zyVaJrESV0soPNnKzvam/ufyL5CbJEStkv4/3kBZ5BfEKqTs0rzniqOM1Q=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ed03dcd8-f2eb-453b-a448-08d6e3e57ae3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 03:26:46.6519 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4bdb87fe-b2a3-4989-2a19-08d6e3e6dae6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 03:36:37.2405 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: andy.tang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5597
+X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3898
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_202653_910399_BD1E278E 
-X-CRM114-Status: GOOD (  18.92  )
+X-CRM114-CacheID: sfid-20190528_203645_342791_E1CAB7A5 
+X-CRM114-Status: GOOD (  27.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.47 listed in list.dnswl.org]
+ no trust [40.107.5.44 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -114,192 +116,232 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>, Peng Fan <peng.fan@nxp.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>, dl-linux-imx <linux-imx@nxp.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "olof@lixom.net" <olof@lixom.net>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBFZHVhcmRvIFZhbGVudGluIDxl
-ZHViZXp2YWxAZ21haWwuY29tPg0KPiBTZW50OiAyMDE5xOo11MIyOcjVIDEwOjU0DQo+IFRvOiBB
-bmR5IFRhbmcgPGFuZHkudGFuZ0BueHAuY29tPg0KPiBDYzogc2hhd25ndW9Aa2VybmVsLm9yZzsg
-TGVvIExpIDxsZW95YW5nLmxpQG54cC5jb20+Ow0KPiByb2JoK2R0QGtlcm5lbC5vcmc7IG1hcmsu
-cnV0bGFuZEBhcm0uY29tOw0KPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7
-IGRldmljZXRyZWVAdmdlci5rZXJuZWwub3JnOw0KPiBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwu
-b3JnOyBsaW51eC1wbUB2Z2VyLmtlcm5lbC5vcmc7DQo+IGRhbmllbC5sZXpjYW5vQGxpbmFyby5v
-cmc7IHJ1aS56aGFuZ0BpbnRlbC5jb20NCj4gU3ViamVjdDogW0VYVF0gUmU6IFtQQVRDSF0gYXJt
-NjQ6IGR0czogbHMxMDI4YTogQWRkIFRoZXJtYWwgTW9uaXRvciBVbml0DQo+IG5vZGUNCj4gDQo+
-IENhdXRpb246IEVYVCBFbWFpbA0KPiANCj4gT24gVGh1LCBBcHIgMjUsIDIwMTkgYXQgMDQ6MjY6
-NDBQTSArMDgwMCwgWXVhbnRpYW4gVGFuZyB3cm90ZToNCj4gPiBUaGUgVGhlcm1hbCBNb25pdG9y
-aW5nIFVuaXQgKFRNVSkgbW9uaXRvcnMgYW5kIHJlcG9ydHMgdGhlIHRlbXBlcmF0dXJlDQo+ID4g
-ZnJvbSAyIHJlbW90ZSB0ZW1wZXJhdHVyZSBtZWFzdXJlbWVudCBzaXRlcyBsb2NhdGVkIG9uIGxz
-MTAyOGEgY2hpcC4NCj4gPiBBZGQgVE1VIGR0cyBub2RlIHRvIGVuYWJsZSB0aGlzIGZlYXR1cmUu
-DQo+ID4NCj4gPiBTaWduZWQtb2ZmLWJ5OiBZdWFudGlhbiBUYW5nIDxhbmR5LnRhbmdAbnhwLmNv
-bT4NCj4gDQo+IEkgZG9udCBzZWUgYW55dGhpbmcgd3JvbmcgZnJvbSBhIHRoZXJtYWwgc3RhbmRw
-b2ludC4NCj4gDQo+IEFja2VkLWJ5OiBFZHVhcmRvIFZhbGVudGluIDxlZHViZXp2YWxAZ21haWwu
-Y29tPg0KPiANCj4gUGxlYXNlIGdldCB0aGlzIHZpYSB5b3VyIGFyY2ggdHJlZSBtYWludGFpbmVy
-IHRvIGF2b2lkIG1lcmdlIGNvbmZsaWN0cy4NClRoYW5rcyBmb3IgeW91ciByZXZpZXcuIA0KVGhl
-IG9ubHkgY29uY2VybiBmb3IgYXJjaCB0cmVlIG1haW50YWluZXIgaXMgdGhhdCAiY29vbGluZy1t
-YXBzIiBpcyBhIHJlcXVpcmVkIHByb3BlcnR5Lg0KU28gSSBoYXZlIHRvIGFkZCBjb29saW5nLW1h
-cHMgZm9yIGVhY2ggem9uZS4gDQpTaW5jZSB0aGVyZSBhcmUgdHdvIHRoZXJtYWwgem9uZXMgYnV0
-IG9ubHkgb25lIGNvb2xpbmcgZGV2aWNlLCB3aGljaCBpcyBjcHVmcmVxLCBJIGhhdmUgdG8NCnVz
-ZSBDUFVGUkVRIGFzIGNvb2xpbmcgZGV2aWNlIHR3aWNlIHdoaWNoIG1heSBjYXVzZSBjb29saW5n
-IGRlY2lzaW9uIGNvbmZsaWN0Lg0KVGhlIGNhc2Ugd2lsbCBnZXQgd29yc2Ugd2hlbiB3ZSBoYXZl
-IDcgdGhlcm1hbCB6b25lcy4NClRoaXMgbWFrZXMgbWUgdGhpbmsgIm1heWJlIHdlIG5lZWQgdG8g
-Y2hhbmdlIGNvb2xpbmctbWFwcyB0byBhbiBvcHRpb25hbCBwcm9wZXJ0eSIuDQpJbiB0aGlzIHdh
-eSwgd2UgY2FuIHB1dCB0aGUgY29vbGluZyBkZXZpY2VzIHRvIHNwZWNpZmljIHRoZXJtYWwgem9u
-ZXMgYW5kIGxlYXZlIHRoZSB6b25lcyB3aXRob3V0DQpDb29saW5nIGRldmljZXMgdG8gZG8gdGhl
-IGRlZmF1bHQgYWN0aW9uIHdoaWNoIGlzIHJlc2V0IG9yIHBvd2Vyb2ZmIHNvYy4NCldoYXQncyB5
-b3VyIG9waW5pb24gYWJvdXQgdGhpcz8NCg0KQlIsDQpBbmR5DQoNCj4gDQo+ID4gLS0tDQo+ID4g
-IGFyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2ZzbC1sczEwMjhhLmR0c2kgfCAgMTE0DQo+
-ID4gKysrKysrKysrKysrKysrKysrKysrKysrDQo+ID4gIDEgZmlsZXMgY2hhbmdlZCwgMTE0IGlu
-c2VydGlvbnMoKyksIDAgZGVsZXRpb25zKC0pDQo+ID4NCj4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9h
-cm02NC9ib290L2R0cy9mcmVlc2NhbGUvZnNsLWxzMTAyOGEuZHRzaQ0KPiA+IGIvYXJjaC9hcm02
-NC9ib290L2R0cy9mcmVlc2NhbGUvZnNsLWxzMTAyOGEuZHRzaQ0KPiA+IGluZGV4IGIwNDU4MTIu
-LmEyNWY1ZmMgMTAwNjQ0DQo+ID4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUv
-ZnNsLWxzMTAyOGEuZHRzaQ0KPiA+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxl
-L2ZzbC1sczEwMjhhLmR0c2kNCj4gPiBAQCAtMjksNiArMjksNyBAQA0KPiA+ICAgICAgICAgICAg
-ICAgICAgICAgICBjbG9ja3MgPSA8JmNsb2NrZ2VuIDEgMD47DQo+ID4gICAgICAgICAgICAgICAg
-ICAgICAgIG5leHQtbGV2ZWwtY2FjaGUgPSA8JmwyPjsNCj4gPiAgICAgICAgICAgICAgICAgICAg
-ICAgY3B1LWlkbGUtc3RhdGVzID0gPCZDUFVfUEgyMD47DQo+ID4gKyAgICAgICAgICAgICAgICAg
-ICAgICNjb29saW5nLWNlbGxzID0gPDI+Ow0KPiA+ICAgICAgICAgICAgICAgfTsNCj4gPg0KPiA+
-ICAgICAgICAgICAgICAgY3B1MTogY3B1QDEgew0KPiA+IEBAIC0zOSw2ICs0MCw3IEBADQo+ID4g
-ICAgICAgICAgICAgICAgICAgICAgIGNsb2NrcyA9IDwmY2xvY2tnZW4gMSAwPjsNCj4gPiAgICAg
-ICAgICAgICAgICAgICAgICAgbmV4dC1sZXZlbC1jYWNoZSA9IDwmbDI+Ow0KPiA+ICAgICAgICAg
-ICAgICAgICAgICAgICBjcHUtaWRsZS1zdGF0ZXMgPSA8JkNQVV9QSDIwPjsNCj4gPiArICAgICAg
-ICAgICAgICAgICAgICAgI2Nvb2xpbmctY2VsbHMgPSA8Mj47DQo+ID4gICAgICAgICAgICAgICB9
-Ow0KPiA+DQo+ID4gICAgICAgICAgICAgICBsMjogbDItY2FjaGUgew0KPiA+IEBAIC0zOTgsNiAr
-NDAwLDExOCBAQA0KPiA+ICAgICAgICAgICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlzYWJsZWQi
-Ow0KPiA+ICAgICAgICAgICAgICAgfTsNCj4gPg0KPiA+ICsgICAgICAgICAgICAgdG11OiB0bXVA
-MWYwMDAwMCB7DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAiZnNsLHFv
-cmlxLXRtdSI7DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgIHJlZyA9IDwweDAgMHgxZjgwMDAw
-IDB4MCAweDEwMDAwPjsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgaW50ZXJydXB0cyA9IDww
-IDIzIDB4ND47DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgIGZzbCx0bXUtcmFuZ2UgPSA8MHhi
-MDAwMCAweGEwMDI2IDB4ODAwNDgNCj4gMHg3MDA2MT47DQo+ID4gKyAgICAgICAgICAgICAgICAg
-ICAgIGZzbCx0bXUtY2FsaWJyYXRpb24gPSA8MHgwMDAwMDAwMCAweDAwMDAwMDI0DQo+ID4gKyAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAwMDAwMQ0KPiAw
-eDAwMDAwMDJiDQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgMHgwMDAwMDAwMg0KPiAweDAwMDAwMDMxDQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgMHgwMDAwMDAwMw0KPiAweDAwMDAwMDM4DQo+ID4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAwMDAwNA0KPiAweDAw
-MDAwMDNmDQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-MHgwMDAwMDAwNQ0KPiAweDAwMDAwMDQ1DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgMHgwMDAwMDAwNg0KPiAweDAwMDAwMDRjDQo+ID4gKyAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAwMDAwNw0KPiAweDAwMDAw
-MDUzDQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgw
-MDAwMDAwOA0KPiAweDAwMDAwMDU5DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgMHgwMDAwMDAwOQ0KPiAweDAwMDAwMDYwDQo+ID4gKyAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAwMDAwYQ0KPiAweDAwMDAwMDY2
-DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAw
-MDAwYg0KPiAweDAwMDAwMDZkDQo+ID4gKw0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIDB4MDAwMTAwMDANCj4gMHgwMDAwMDAxYw0KPiA+ICsgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDAwMTAwMDENCj4gMHgwMDAw
-MDAyNA0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4
-MDAwMTAwMDINCj4gMHgwMDAwMDAyYw0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIDB4MDAwMTAwMDMNCj4gMHgwMDAwMDAzNQ0KPiA+ICsgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDAwMTAwMDQNCj4gMHgwMDAwMDAz
-ZA0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDAw
-MTAwMDUNCj4gMHgwMDAwMDA0NQ0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIDB4MDAwMTAwMDYNCj4gMHgwMDAwMDA0ZA0KPiA+ICsgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDAwMTAwMDcNCj4gMHgwMDAwMDA0NQ0K
-PiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDAwMTAw
-MDgNCj4gMHgwMDAwMDA1ZQ0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgIDB4MDAwMTAwMDkNCj4gMHgwMDAwMDA2Ng0KPiA+ICsgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIDB4MDAwMTAwMGENCj4gMHgwMDAwMDA2ZQ0KPiA+
-ICsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAweDAw
-MDIwMDAwDQo+IDB4MDAwMDAwMTgNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAweDAwMDIwMDAxDQo+IDB4MDAwMDAwMjINCj4gPiArICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAweDAwMDIwMDAyDQo+IDB4MDAwMDAwMmQN
-Cj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAweDAwMDIw
-MDAzDQo+IDB4MDAwMDAwMzgNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAweDAwMDIwMDA0DQo+IDB4MDAwMDAwNDMNCj4gPiArICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAweDAwMDIwMDA1DQo+IDB4MDAwMDAwNGQNCj4g
-PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAweDAwMDIwMDA2
-DQo+IDB4MDAwMDAwNTgNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAweDAwMDIwMDA3DQo+IDB4MDAwMDAwNjMNCj4gPiArICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAweDAwMDIwMDA4DQo+IDB4MDAwMDAwNmUNCj4gPiAr
-DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAz
-MDAwMA0KPiAweDAwMDAwMDEwDQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgMHgwMDAzMDAwMQ0KPiAweDAwMDAwMDFjDQo+ID4gKyAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAzMDAwMg0KPiAweDAwMDAwMDI5DQo+
-ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAzMDAw
-Mw0KPiAweDAwMDAwMDM2DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgMHgwMDAzMDAwNA0KPiAweDAwMDAwMDQyDQo+ID4gKyAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAzMDAwNQ0KPiAweDAwMDAwMDRmDQo+ID4g
-KyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMHgwMDAzMDAwNg0K
-PiAweDAwMDAwMDViDQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgMHgwMDAzMDAwNw0KPiAweDAwMDAwMDY4PjsNCj4gPiArICAgICAgICAgICAgICAgICAg
-ICAgbGl0dGxlLWVuZGlhbjsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgI3RoZXJtYWwtc2Vu
-c29yLWNlbGxzID0gPDE+Ow0KPiA+ICsgICAgICAgICAgICAgfTsNCj4gPiArDQo+ID4gKyAgICAg
-ICAgICAgICB0aGVybWFsLXpvbmVzIHsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgY29yZS1j
-bHVzdGVyIHsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwb2xsaW5nLWRlbGF5
-LXBhc3NpdmUgPSA8MTAwMD47DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcG9s
-bGluZy1kZWxheSA9IDw1MDAwPjsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0
-aGVybWFsLXNlbnNvcnMgPSA8JnRtdSAwPjsNCj4gPiArDQo+ID4gKyAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgdHJpcHMgew0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgY29yZV9jbHVzdGVyX2FsZXJ0Og0KPiBjb3JlLWNsdXN0ZXItYWxlcnQgew0KPiA+ICsg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0ZW1wZXJhdHVyZSA9
-DQo+IDw4NTAwMD47DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgIGh5c3RlcmVzaXMgPQ0KPiA8MjAwMD47DQo+ID4gKyAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAicGFzc2l2ZSI7DQo+ID4gKyAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9Ow0KPiA+ICsNCj4gPiArICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIGNvcmVfY2x1c3Rlcl9jcml0Og0KPiBjb3JlLWNsdXN0
-ZXItY3JpdCB7DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIHRlbXBlcmF0dXJlID0NCj4gPDk1MDAwPjsNCj4gPiArICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgaHlzdGVyZXNpcyA9DQo+IDwyMDAwPjsNCj4gPiArICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdHlwZSA9ICJjcml0aWNh
-bCI7DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9Ow0KPiA+ICsg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIH07DQo+ID4gKw0KPiA+ICsgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIGNvb2xpbmctbWFwcyB7DQo+ID4gKyAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICBtYXAwIHsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgdHJpcCA9DQo+IDwmY29yZV9jbHVzdGVyX2FsZXJ0PjsNCj4gPiAr
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29vbGluZy1kZXZp
-Y2UgPQ0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgIDwmY3B1MA0KPiBUSEVSTUFMX05PX0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+LA0KPiA+
-ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwm
-Y3B1MQ0KPiBUSEVSTUFMX05PX0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+Ow0KPiA+ICsgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfTsNCj4gPiArICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICB9Ow0KPiA+ICsgICAgICAgICAgICAgICAgICAgICB9Ow0KPiA+ICsNCj4gPiAr
-ICAgICAgICAgICAgICAgICAgICAgZGRyLWNvbnRyb2xsZXIgew0KPiA+ICsgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIHBvbGxpbmctZGVsYXktcGFzc2l2ZSA9IDwxMDAwPjsNCj4gPiArICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICBwb2xsaW5nLWRlbGF5ID0gPDUwMDA+Ow0KPiA+ICsg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRoZXJtYWwtc2Vuc29ycyA9IDwmdG11IDE+Ow0K
-PiA+ICsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmlwcyB7DQo+ID4gKyAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkZHJfY29udHJvbGxlcl9hbGVydDoN
-Cj4gZGRyLWNvbnRyb2xsZXItYWxlcnQgew0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICB0ZW1wZXJhdHVyZSA9DQo+IDw4NTAwMD47DQo+ID4gKyAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGh5c3RlcmVzaXMgPQ0KPiA8
-MjAwMD47DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IHR5cGUgPSAicGFzc2l2ZSI7DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICB9Ow0KPiA+ICsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IGRkcl9jb250cm9sbGVyX2NyaXQ6DQo+IGRkci1jb250cm9sbGVyLWNyaXQgew0KPiA+ICsgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0ZW1wZXJhdHVyZSA9DQo+
-IDw5NTAwMD47DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIGh5c3RlcmVzaXMgPQ0KPiA8MjAwMD47DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIHR5cGUgPSAiY3JpdGljYWwiOw0KPiA+ICsgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgfTsNCj4gPiArICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICB9Ow0KPiA+ICsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb29s
-aW5nLW1hcHMgew0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbWFw
-MCB7DQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRy
-aXAgPQ0KPiA8JmRkcl9jb250cm9sbGVyX2FsZXJ0PjsNCj4gPiArICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgY29vbGluZy1kZXZpY2UgPQ0KPiA+ICsgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwmY3B1MA0KPiBU
-SEVSTUFMX05PX0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+LA0KPiA+ICsgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwmY3B1MQ0KPiBUSEVSTUFMX05P
-X0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+Ow0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgfTsNCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9Ow0KPiA+
-ICsgICAgICAgICAgICAgICAgICAgICB9Ow0KPiA+ICsgICAgICAgICAgICAgfTsNCj4gPiArDQo+
-ID4gICAgICAgICAgICAgICBwY2llQDFmMDAwMDAwMCB7IC8qIEludGVncmF0ZWQgRW5kcG9pbnQg
-Um9vdCBDb21wbGV4DQo+ICovDQo+ID4gICAgICAgICAgICAgICAgICAgICAgIGNvbXBhdGlibGUg
-PSAicGNpLWhvc3QtZWNhbS1nZW5lcmljIjsNCj4gPiAgICAgICAgICAgICAgICAgICAgICAgcmVn
-ID0gPDB4MDEgMHhmMDAwMDAwMCAweDAgMHgxMDAwMDA+Ow0KX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi, Eduardo
+
+> -----Original Message-----
+> From: Eduardo Valentin <edubezval@gmail.com>
+> Sent: Wednesday, May 29, 2019 11:02 AM
+> To: Anson Huang <anson.huang@nxp.com>
+> Cc: robh+dt@kernel.org; mark.rutland@arm.com; shawnguo@kernel.org;
+> s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
+> catalin.marinas@arm.com; will.deacon@arm.com; rui.zhang@intel.com;
+> daniel.lezcano@linaro.org; Aisheng Dong <aisheng.dong@nxp.com>;
+> ulf.hansson@linaro.org; Peng Fan <peng.fan@nxp.com>; Daniel Baluta
+> <daniel.baluta@nxp.com>; maxime.ripard@bootlin.com; olof@lixom.net;
+> jagan@amarulasolutions.com; horms+renesas@verge.net.au; Leonard Crestez
+> <leonard.crestez@nxp.com>; bjorn.andersson@linaro.org;
+> dinguyen@kernel.org; enric.balletbo@collabora.com;
+> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-pm@vger.kernel.org; dl-linux-imx <linux-
+> imx@nxp.com>
+> Subject: Re: [PATCH RESEND V13 2/5] thermal: of-thermal: add API for getting
+> sensor ID from DT
+> 
+> On Tue, May 28, 2019 at 02:06:18PM +0800, Anson.Huang@nxp.com wrote:
+> > From: Anson Huang <Anson.Huang@nxp.com>
+> >
+> > On some platforms like i.MX8QXP, the thermal driver needs a real HW
+> > sensor ID from DT thermal zone, the HW sensor ID is used to get
+> > temperature from SCU firmware, and the virtual sensor ID starting from
+> > 0 to N is NOT used at all, this patch adds new API
+> > thermal_zone_of_get_sensor_id() to provide the feature of getting
+> > sensor ID from DT thermal zone's node.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> > Changes since V12:
+> > 	- adjust the second parameter of thermal_zone_of_get_sensor_id() API,
+> then caller no need
+> > 	  to pass the of_phandle_args structure and put the sensor_specs.np
+> manually, also putting
+> > 	  the sensor node device check inside this API to make it easy for
+> > usage;
+> 
+> What happened to using nxp,resource-id property in your driver?
+> Why do we need this as an API in of-thermal? What other drivers may benefit
+> of this?
+> 
+> Regardless, this patch needs to document the new API under Documentation/
+
+As Rob has different opinion about this property, he thought it is unnecessary, see below
+discussion mail, that is why I need to add API to get the resource ID from phandle argument.
+I am totally confused now, which approach should we adopt?
+
+https://patchwork.kernel.org/patch/10831397/
+
+Thanks,
+Anson
+
+> 
+> > ---
+> >  drivers/thermal/of-thermal.c | 66 +++++++++++++++++++++++++++++++++---
+> --------
+> >  include/linux/thermal.h      | 10 +++++++
+> >  2 files changed, 60 insertions(+), 16 deletions(-)
+> >
+> > diff --git a/drivers/thermal/of-thermal.c
+> > b/drivers/thermal/of-thermal.c index dc5093b..a53792b 100644
+> > --- a/drivers/thermal/of-thermal.c
+> > +++ b/drivers/thermal/of-thermal.c
+> > @@ -449,6 +449,54 @@ thermal_zone_of_add_sensor(struct device_node
+> > *zone,  }
+> >
+> >  /**
+> > + * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal
+> > + zone
+> > + * @tz_np: a valid thermal zone device node.
+> > + * @sensor_np: a sensor node of a valid sensor device.
+> > + * @id: a sensor ID pointer will be passed back.
+> > + *
+> > + * This function will get sensor ID from a given thermal zone node,
+> > + use
+> > + * "thermal-sensors" as list name, and get sensor ID from first
+> > + phandle's
+> > + * argument.
+> > + *
+> > + * Return: 0 on success, proper error code otherwise.
+> > + */
+> > +
+> > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> > +				  struct device_node *sensor_np,
+> > +				  u32 *id)
+> > +{
+> > +	struct of_phandle_args sensor_specs;
+> > +	int ret;
+> > +
+> > +	ret = of_parse_phandle_with_args(tz_np,
+> > +					 "thermal-sensors",
+> > +					 "#thermal-sensor-cells",
+> > +					 0,
+> > +					 &sensor_specs);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	if (sensor_specs.np != sensor_np) {
+> > +		of_node_put(sensor_specs.np);
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	if (sensor_specs.args_count >= 1) {
+> > +		*id = sensor_specs.args[0];
+> > +		WARN(sensor_specs.args_count > 1,
+> > +		     "%pOFn: too many cells in sensor specifier %d\n",
+> > +		     sensor_specs.np, sensor_specs.args_count);
+> > +	} else {
+> > +		*id = 0;
+> > +	}
+> > +
+> > +	of_node_put(sensor_specs.np);
+> > +
+> > +	return 0;
+> > +}
+> > +EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
+> > +
+> > +/**
+> >   * thermal_zone_of_sensor_register - registers a sensor to a DT thermal zone
+> >   * @dev: a valid struct device pointer of a sensor device. Must contain
+> >   *       a valid .of_node, for the sensor node.
+> > @@ -499,36 +547,22 @@ thermal_zone_of_sensor_register(struct device
+> *dev, int sensor_id, void *data,
+> >  	sensor_np = of_node_get(dev->of_node);
+> >
+> >  	for_each_available_child_of_node(np, child) {
+> > -		struct of_phandle_args sensor_specs;
+> >  		int ret, id;
+> >
+> >  		/* For now, thermal framework supports only 1 sensor per
+> zone */
+> > -		ret = of_parse_phandle_with_args(child, "thermal-sensors",
+> > -						 "#thermal-sensor-cells",
+> > -						 0, &sensor_specs);
+> > +		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
+> >  		if (ret)
+> >  			continue;
+> >
+> > -		if (sensor_specs.args_count >= 1) {
+> > -			id = sensor_specs.args[0];
+> > -			WARN(sensor_specs.args_count > 1,
+> > -			     "%pOFn: too many cells in sensor specifier %d\n",
+> > -			     sensor_specs.np, sensor_specs.args_count);
+> > -		} else {
+> > -			id = 0;
+> > -		}
+> > -
+> > -		if (sensor_specs.np == sensor_np && id == sensor_id) {
+> > +		if (id == sensor_id) {
+> >  			tzd = thermal_zone_of_add_sensor(child, sensor_np,
+> >  							 data, ops);
+> >  			if (!IS_ERR(tzd))
+> >  				tzd->ops->set_mode(tzd,
+> THERMAL_DEVICE_ENABLED);
+> >
+> > -			of_node_put(sensor_specs.np);
+> >  			of_node_put(child);
+> >  			goto exit;
+> >  		}
+> > -		of_node_put(sensor_specs.np);
+> >  	}
+> >  exit:
+> >  	of_node_put(sensor_np);
+> > diff --git a/include/linux/thermal.h b/include/linux/thermal.h index
+> > 15a4ca5..5edffe6 100644
+> > --- a/include/linux/thermal.h
+> > +++ b/include/linux/thermal.h
+> > @@ -375,6 +375,9 @@ struct thermal_trip {
+> >
+> >  /* Function declarations */
+> >  #ifdef CONFIG_THERMAL_OF
+> > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> > +				  struct device_node *sensor_np,
+> > +				  u32 *id);
+> >  struct thermal_zone_device *
+> >  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+> >  				const struct thermal_zone_of_device_ops
+> *ops); @@ -386,6 +389,13
+> > @@ struct thermal_zone_device *devm_thermal_zone_of_sensor_register(
+> >  void devm_thermal_zone_of_sensor_unregister(struct device *dev,
+> >  					    struct thermal_zone_device *tz);
+> #else
+> > +
+> > +static int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> > +					 struct device_node *sensor_np,
+> > +					 u32 *id)
+> > +{
+> > +	return -ENOENT;
+> > +}
+> >  static inline struct thermal_zone_device *
+> > thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+> >  				const struct thermal_zone_of_device_ops
+> *ops)
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
