@@ -2,84 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B3542D924
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:33:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C50C12D92A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:35:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WbDC1FRAAv0mVmtfv0v/VN13vY3bPfd/V7D+A44HWJI=; b=aHYIqrnv4JWmWM
-	k8KYx33A5S/6htDZDVPQkBUTm1Q2FIFK0N/NNH7Jo1RhugCKnifITLyYsvwHFMnAjlJCsn0RFumVx
-	XACQn9/BO/KqUIL2iR2bKFaBl0rIaFrbkvUVaJh6Lv9FbjxgAm3PFvfTlK+0l4W74zSdDduJc9VZZ
-	jYUAQep8sjF/lDuMJtqMtOvYMkpTYSip7pf/2My0RQsB571QnNhujLVH8eivvRvJVGKnqkLVNmeM2
-	fsRSFP+ypsgsxjnwGxMbH0uUs9L8KxNNn+mbGqkZt8jMeMi1C7A0C2UrnI9mMKj+aRqMRFUfOKapf
-	OiFNKmwadw5/JF7MKDFg==;
+	List-Owner; bh=j5Y0Ah16a3Fz0zTOvS0EwNCfDlg2+vs0bWbGAoSSD9g=; b=pq3qVpisSCoGZf
+	u3TGaG02eooRgVdxCKq5RgyWt1HOEJtBBk5T4UpT2NL0UUSpb30LVSSpLAcEK71cANJkW53qXUBBR
+	5ef+3w1/Ja6D5limhOBMxAsl2y/qmcykhvGfR4FWNUfCKAtqQmaK4UCw5ioxgn4XA43UPUL9WzwF9
+	JCZchbWZlrKoaz7NG1Nz1qB9eXao6mpbLXL67y0Z7om9/NcxKUy9wiXgy3aJonM2/0IWR1UkWpiwo
+	G23umRYLOihd3vfAtmAhHocKBE3zh/LN6/2WMiEnejH4AT55GZ39R/49hel4PuWmImSl/+MhgveKT
+	kK4VNgwDY5XC6tH/Nhiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVuxT-0008Md-OF; Wed, 29 May 2019 09:33:19 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hVuzp-0001TY-84; Wed, 29 May 2019 09:35:45 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVuxK-0008KK-KO
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:33:13 +0000
-Received: by mail-qt1-x843.google.com with SMTP id m2so1666107qtp.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 02:33:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=p7e/n9MQO+MPQMx1/3utWKhXUce7ensfT1IkKRwayMs=;
- b=mfH181h95/b1VFsfoLdIi1zqvh5gCqZFtKTDUrAhads42BIalR5Sw4FNOeUbCLNeGh
- 2og9BNDKRE0ZIMzVI5LfFSb/ROsVIApnJJmZ4eIjgZvgW6fmMuKjCxaPIsanyTrPYqeh
- DK9VXBFKzxy4lWT+w/IZ3nzPs3yPL2TH3VEOYgDDhJJpUJHxNVWJ3vTBwoIZdt3/vURf
- PQPTHqAqkEDIZl1F83Ptyq5D5vCI899B2a6aPNf3OYfpX80za6FPbg8Ybuai4Eh65NEZ
- OcV+ucf+T9mVWhLvmMq1Yv4ta9qrAoic0LOx8FMbdFBce1I3eDQvCLk4LdbOaRqqmhq1
- FE2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=p7e/n9MQO+MPQMx1/3utWKhXUce7ensfT1IkKRwayMs=;
- b=R/krljAUUAxHpxpN53OBfLWhqrj0gQlVDNtqB1eSiGRHOK2Gj5REO3aFWk80Y36krv
- 9nMzzUJ5Nz7FaEElqhau1NPGJdkne3pHDovvhy1DBgWoCkHe2ykzN1bs6YL646zQBRJA
- JKpV6A57K7SniAufstUAF3OU0R6gbj0gYAFmcJK2bKV9rDrln1OYfI5RXEH4kQlJhjOl
- hPi3irb82KMQx2kmBKKK1mdTYW42qSuEIp8Z3yuSn4scdC5swUUE2jJWqQV0LBBBr1Dn
- j2svGHRwt0ubQGi1yKHj7FvnFb/o2wdfqVGnsdZzy27bbMtEIepneP5L4/fT+EZMNp5C
- oKdQ==
-X-Gm-Message-State: APjAAAUOXJ7KduEydbhYOUoydXvxP53tB6Ys2IXlPFJgmaqoT9PitI3q
- /v8xmKFmgzcKhy7m7CeCS91gOgRvGUMFbuaINFJi9g==
-X-Google-Smtp-Source: APXvYqxjruBYTDHIG+EpJ5vstfjHASR0nbu2CcbP+9180ThdGo76O/POFINevhY8WsyFhCISJ/+PTBLhyDLNRuNMA0A=
-X-Received: by 2002:ac8:3221:: with SMTP id x30mr9094402qta.176.1559122389003; 
- Wed, 29 May 2019 02:33:09 -0700 (PDT)
+ id 1hVuzf-0001SM-PO; Wed, 29 May 2019 09:35:38 +0000
+X-UUID: 292ac46de4ec4f05aa31fd17fcb77e90-20190529
+X-UUID: 292ac46de4ec4f05aa31fd17fcb77e90-20190529
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 169317879; Wed, 29 May 2019 01:35:32 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 29 May 2019 02:35:31 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 29 May 2019 17:35:29 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 29 May 2019 17:35:29 +0800
+Message-ID: <1559122529.17186.24.camel@mtksdccf07>
+Subject: Re: [PATCH] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Wed, 29 May 2019 17:35:29 +0800
+In-Reply-To: <CACT4Y+aCnODuffR7PafyYispp_U+ZdY1Dr0XQYvmghkogLJzSw@mail.gmail.com>
+References: <1559027797-30303-1-git-send-email-walter-zh.wu@mediatek.com>
+ <CACT4Y+aCnODuffR7PafyYispp_U+ZdY1Dr0XQYvmghkogLJzSw@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <1558521304-27469-1-git-send-email-suzuki.poulose@arm.com>
- <1558521304-27469-27-git-send-email-suzuki.poulose@arm.com>
-In-Reply-To: <1558521304-27469-27-git-send-email-suzuki.poulose@arm.com>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Wed, 29 May 2019 10:32:57 +0100
-Message-ID: <CAJ9a7VhwHeN5uSEwDhLVR=CL=vgCfKHtWZ3o8NnLnxw_=mYBOg@mail.gmail.com>
-Subject: Re: [PATCH v4 26/30] coresight: Use platform agnostic names
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_023310_683022_00CB3E91 
-X-CRM114-Status: GOOD (  26.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190529_023535_832657_50CA673B 
+X-CRM114-Status: GOOD (  33.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,505 +72,447 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: wsd_upstream@mediatek.com, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Pekka Enberg <penberg@kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, Miles
+ Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Christoph Lameter <cl@linux.com>,
+ Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-Why am I not seeing references to coresight-cpu-debug in here? In
-other places in this patchset CPU debug has been changed, but there
-appears to be no platform agnostic name here, nor any ACPI type name
-either. Is cpu-debug remaining device tree only? Should CPU debug not
-be treated like ETM and get a cpu centric name?
-
-Mike
-
-On Wed, 22 May 2019 at 11:39, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->
-> So far we have reused the name of the "platform" device for
-> the CoreSight device. But this is not very intuitive when
-> we move to ACPI. Also, the ACPI device names have ":" in them
-> (e.g, ARMHC97C:01), which the perf tool doesn't like very much.
-> This patch introduces a generic naming scheme, givin more intuitive
-> names for the devices that appear on the CoreSight bus.
-> The names follow the pattern "prefix" followed by "index" (e.g, etm5).
-> We maintain a list of allocated devices per "prefix" to make sure
-> we don't allocate a new name when it is reprobed (e.g, due to
-> unsatisifed device dependencies). So, we maintain the list
-> of "fwnodes" of the parent devices to allocate a consistent name.
-> All devices except the ETMs get an index allocated in the order
-> of probing. ETMs get an index based on the CPU they are attached to.
->
-> TMC devices are named using "tmc_etf", "tmc_etb", and "tmc_etr"
-> prefixes depending on the configuration of the device.
->
-> The replicators and funnels are not classified as dynamic/static
-> anymore. One could easily figure that out by checking the presence
-> of "mgmt" registers under sysfs.
->
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> ---
->  drivers/hwtracing/coresight/coresight-catu.c       |  7 ++-
->  drivers/hwtracing/coresight/coresight-etb10.c      |  7 ++-
->  drivers/hwtracing/coresight/coresight-etm3x.c      |  4 +-
->  drivers/hwtracing/coresight/coresight-etm4x.c      |  4 +-
->  drivers/hwtracing/coresight/coresight-funnel.c     |  7 ++-
->  drivers/hwtracing/coresight/coresight-replicator.c |  7 ++-
->  drivers/hwtracing/coresight/coresight-stm.c        | 12 +++--
->  drivers/hwtracing/coresight/coresight-tmc.c        | 15 +++++-
->  drivers/hwtracing/coresight/coresight-tpiu.c       |  7 ++-
->  drivers/hwtracing/coresight/coresight.c            | 58 ++++++++++++++++++++++
->  include/linux/coresight.h                          | 25 +++++++++-
->  11 files changed, 141 insertions(+), 12 deletions(-)
->
-> diff --git a/drivers/hwtracing/coresight/coresight-catu.c b/drivers/hwtracing/coresight/coresight-catu.c
-> index 1c1ad12..16ebf38 100644
-> --- a/drivers/hwtracing/coresight/coresight-catu.c
-> +++ b/drivers/hwtracing/coresight/coresight-catu.c
-> @@ -28,6 +28,8 @@
->  #define catu_dbg(x, ...) do {} while (0)
->  #endif
->
-> +DEFINE_CORESIGHT_DEVLIST(catu_devs, "catu");
-> +
->  struct catu_etr_buf {
->         struct tmc_sg_table *catu_table;
->         dma_addr_t sladdr;
-> @@ -505,6 +507,10 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
->         struct device *dev = &adev->dev;
->         void __iomem *base;
->
-> +       catu_desc.name = coresight_alloc_device_name(&catu_devs, dev);
-> +       if (!catu_desc.name)
-> +               return -ENOMEM;
-> +
->         drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->         if (!drvdata) {
->                 ret = -ENOMEM;
-> @@ -551,7 +557,6 @@ static int catu_probe(struct amba_device *adev, const struct amba_id *id)
->         catu_desc.type = CORESIGHT_DEV_TYPE_HELPER;
->         catu_desc.subtype.helper_subtype = CORESIGHT_DEV_SUBTYPE_HELPER_CATU;
->         catu_desc.ops = &catu_ops;
-> -       catu_desc.name = dev_name(dev);
->
->         drvdata->csdev = coresight_register(&catu_desc);
->         if (IS_ERR(drvdata->csdev))
-> diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
-> index 09df827..bdd4fd5 100644
-> --- a/drivers/hwtracing/coresight/coresight-etb10.c
-> +++ b/drivers/hwtracing/coresight/coresight-etb10.c
-> @@ -63,6 +63,8 @@
->  #define ETB_FFSR_BIT           1
->  #define ETB_FRAME_SIZE_WORDS   4
->
-> +DEFINE_CORESIGHT_DEVLIST(etb_devs, "etb");
-> +
->  /**
->   * struct etb_drvdata - specifics associated to an ETB component
->   * @base:      memory mapped base address for this component.
-> @@ -726,6 +728,10 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
->         struct resource *res = &adev->res;
->         struct coresight_desc desc = { 0 };
->
-> +       desc.name = coresight_alloc_device_name(&etb_devs, dev);
-> +       if (!desc.name)
-> +               return -ENOMEM;
-> +
->         drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->         if (!drvdata)
->                 return -ENOMEM;
-> @@ -770,7 +776,6 @@ static int etb_probe(struct amba_device *adev, const struct amba_id *id)
->         desc.ops = &etb_cs_ops;
->         desc.pdata = pdata;
->         desc.dev = dev;
-> -       desc.name = dev_name(dev);
->         desc.groups = coresight_etb_groups;
->         drvdata->csdev = coresight_register(&desc);
->         if (IS_ERR(drvdata->csdev))
-> diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-> index f2d4616..bed7291 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm3x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-> @@ -815,6 +815,9 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
->         }
->
->         drvdata->cpu = coresight_get_cpu(dev);
-> +       desc.name  = devm_kasprintf(dev, GFP_KERNEL, "etm%d", drvdata->cpu);
-> +       if (!desc.name)
-> +               return -ENOMEM;
->
->         cpus_read_lock();
->         etmdrvdata[drvdata->cpu] = drvdata;
-> @@ -856,7 +859,6 @@ static int etm_probe(struct amba_device *adev, const struct amba_id *id)
->         desc.ops = &etm_cs_ops;
->         desc.pdata = pdata;
->         desc.dev = dev;
-> -       desc.name = dev_name(dev);
->         desc.groups = coresight_etm_groups;
->         drvdata->csdev = coresight_register(&desc);
->         if (IS_ERR(drvdata->csdev)) {
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index 1609da1..7fe2661 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -1101,6 +1101,9 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
->         spin_lock_init(&drvdata->spinlock);
->
->         drvdata->cpu = coresight_get_cpu(dev);
-> +       desc.name = devm_kasprintf(dev, GFP_KERNEL, "etm%d", drvdata->cpu);
-> +       if (!desc.name)
-> +               return -ENOMEM;
->
->         cpus_read_lock();
->         etmdrvdata[drvdata->cpu] = drvdata;
-> @@ -1144,7 +1147,6 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
->         desc.pdata = pdata;
->         desc.dev = dev;
->         desc.groups = coresight_etmv4_groups;
-> -       desc.name = dev_name(dev);
->         drvdata->csdev = coresight_register(&desc);
->         if (IS_ERR(drvdata->csdev)) {
->                 ret = PTR_ERR(drvdata->csdev);
-> diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
-> index 75fa2d3..5867fcb 100644
-> --- a/drivers/hwtracing/coresight/coresight-funnel.c
-> +++ b/drivers/hwtracing/coresight/coresight-funnel.c
-> @@ -29,6 +29,8 @@
->  #define FUNNEL_HOLDTIME                (0x7 << FUNNEL_HOLDTIME_SHFT)
->  #define FUNNEL_ENSx_MASK       0xff
->
-> +DEFINE_CORESIGHT_DEVLIST(funnel_devs, "funnel");
-> +
->  /**
->   * struct funnel_drvdata - specifics associated to a funnel component
->   * @base:      memory mapped base address for this component.
-> @@ -192,6 +194,10 @@ static int funnel_probe(struct device *dev, struct resource *res)
->             of_device_is_compatible(dev->of_node, "arm,coresight-funnel"))
->                 pr_warn_once("Uses OBSOLETE CoreSight funnel binding\n");
->
-> +       desc.name = coresight_alloc_device_name(&funnel_devs, dev);
-> +       if (!desc.name)
-> +               return -ENOMEM;
-> +
->         drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->         if (!drvdata)
->                 return -ENOMEM;
-> @@ -231,7 +237,6 @@ static int funnel_probe(struct device *dev, struct resource *res)
->         desc.ops = &funnel_cs_ops;
->         desc.pdata = pdata;
->         desc.dev = dev;
-> -       desc.name = dev_name(dev);
->         drvdata->csdev = coresight_register(&desc);
->         if (IS_ERR(drvdata->csdev)) {
->                 ret = PTR_ERR(drvdata->csdev);
-> diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-> index 64dfde7..c0e4225 100644
-> --- a/drivers/hwtracing/coresight/coresight-replicator.c
-> +++ b/drivers/hwtracing/coresight/coresight-replicator.c
-> @@ -22,6 +22,8 @@
->  #define REPLICATOR_IDFILTER0           0x000
->  #define REPLICATOR_IDFILTER1           0x004
->
-> +DEFINE_CORESIGHT_DEVLIST(replicator_devs, "replicator");
-> +
->  /**
->   * struct replicator_drvdata - specifics associated to a replicator component
->   * @base:      memory mapped base address for this component. Also indicates
-> @@ -183,6 +185,10 @@ static int replicator_probe(struct device *dev, struct resource *res)
->             of_device_is_compatible(dev->of_node, "arm,coresight-replicator"))
->                 pr_warn_once("Uses OBSOLETE CoreSight replicator binding\n");
->
-> +       desc.name = coresight_alloc_device_name(&replicator_devs, dev);
-> +       if (!desc.name)
-> +               return -ENOMEM;
-> +
->         drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->         if (!drvdata)
->                 return -ENOMEM;
-> @@ -222,7 +228,6 @@ static int replicator_probe(struct device *dev, struct resource *res)
->         desc.ops = &replicator_cs_ops;
->         desc.pdata = dev->platform_data;
->         desc.dev = dev;
-> -       desc.name = dev_name(dev);
->
->         drvdata->csdev = coresight_register(&desc);
->         if (IS_ERR(drvdata->csdev)) {
-> diff --git a/drivers/hwtracing/coresight/coresight-stm.c b/drivers/hwtracing/coresight/coresight-stm.c
-> index 03528f3..e3e2b00 100644
-> --- a/drivers/hwtracing/coresight/coresight-stm.c
-> +++ b/drivers/hwtracing/coresight/coresight-stm.c
-> @@ -107,6 +107,8 @@ struct channel_space {
->         unsigned long           *guaranteed;
->  };
->
-> +DEFINE_CORESIGHT_DEVLIST(stm_devs, "stm");
-> +
->  /**
->   * struct stm_drvdata - specifics associated to an STM component
->   * @base:              memory mapped base address for this component.
-> @@ -810,6 +812,10 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
->         size_t bitmap_size;
->         struct coresight_desc desc = { 0 };
->
-> +       desc.name = coresight_alloc_device_name(&stm_devs, dev);
-> +       if (!desc.name)
-> +               return -ENOMEM;
-> +
->         drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->         if (!drvdata)
->                 return -ENOMEM;
-> @@ -854,11 +860,12 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
->         spin_lock_init(&drvdata->spinlock);
->
->         stm_init_default_data(drvdata);
-> -       stm_init_generic_data(drvdata, dev_name(dev));
-> +       stm_init_generic_data(drvdata, desc.name);
->
->         if (stm_register_device(dev, &drvdata->stm, THIS_MODULE)) {
->                 dev_info(dev,
-> -                        "stm_register_device failed, probing deferred\n");
-> +                        "%s : stm_register_device failed, probing deferred\n",
-> +                        desc.name);
->                 return -EPROBE_DEFER;
->         }
->
-> @@ -874,7 +881,6 @@ static int stm_probe(struct amba_device *adev, const struct amba_id *id)
->         desc.ops = &stm_cs_ops;
->         desc.pdata = pdata;
->         desc.dev = dev;
-> -       desc.name = dev_name(dev);
->         desc.groups = coresight_stm_groups;
->         drvdata->csdev = coresight_register(&desc);
->         if (IS_ERR(drvdata->csdev)) {
-> diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
-> index 212630e..be37aff 100644
-> --- a/drivers/hwtracing/coresight/coresight-tmc.c
-> +++ b/drivers/hwtracing/coresight/coresight-tmc.c
-> @@ -27,6 +27,10 @@
->  #include "coresight-priv.h"
->  #include "coresight-tmc.h"
->
-> +DEFINE_CORESIGHT_DEVLIST(etb_devs, "tmc_etb");
-> +DEFINE_CORESIGHT_DEVLIST(etf_devs, "tmc_etf");
-> +DEFINE_CORESIGHT_DEVLIST(etr_devs, "tmc_etr");
-> +
->  void tmc_wait_for_tmcready(struct tmc_drvdata *drvdata)
->  {
->         /* Ensure formatter, unformatter and hardware fifo are empty */
-> @@ -397,6 +401,7 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
->         struct tmc_drvdata *drvdata;
->         struct resource *res = &adev->res;
->         struct coresight_desc desc = { 0 };
-> +       struct coresight_dev_list *dev_list = NULL;
->
->         ret = -ENOMEM;
->         drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
-> @@ -429,13 +434,13 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
->
->         desc.dev = dev;
->         desc.groups = coresight_tmc_groups;
-> -       desc.name = dev_name(dev);
->
->         switch (drvdata->config_type) {
->         case TMC_CONFIG_TYPE_ETB:
->                 desc.type = CORESIGHT_DEV_TYPE_SINK;
->                 desc.subtype.sink_subtype = CORESIGHT_DEV_SUBTYPE_SINK_BUFFER;
->                 desc.ops = &tmc_etb_cs_ops;
-> +               dev_list = &etb_devs;
->                 break;
->         case TMC_CONFIG_TYPE_ETR:
->                 desc.type = CORESIGHT_DEV_TYPE_SINK;
-> @@ -447,11 +452,13 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
->                         goto out;
->                 idr_init(&drvdata->idr);
->                 mutex_init(&drvdata->idr_mutex);
-> +               dev_list = &etr_devs;
->                 break;
->         case TMC_CONFIG_TYPE_ETF:
->                 desc.type = CORESIGHT_DEV_TYPE_LINKSINK;
->                 desc.subtype.link_subtype = CORESIGHT_DEV_SUBTYPE_LINK_FIFO;
->                 desc.ops = &tmc_etf_cs_ops;
-> +               dev_list = &etf_devs;
->                 break;
->         default:
->                 pr_err("%s: Unsupported TMC config\n", desc.name);
-> @@ -459,6 +466,12 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
->                 goto out;
->         }
->
-> +       desc.name = coresight_alloc_device_name(dev_list, dev);
-> +       if (!desc.name) {
-> +               ret = -ENOMEM;
-> +               goto out;
-> +       }
-> +
->         pdata = coresight_get_platform_data(dev);
->         if (IS_ERR(pdata)) {
->                 ret = PTR_ERR(pdata);
-> diff --git a/drivers/hwtracing/coresight/coresight-tpiu.c b/drivers/hwtracing/coresight/coresight-tpiu.c
-> index b699d61..f8583e4 100644
-> --- a/drivers/hwtracing/coresight/coresight-tpiu.c
-> +++ b/drivers/hwtracing/coresight/coresight-tpiu.c
-> @@ -47,6 +47,8 @@
->  #define FFCR_FON_MAN           BIT(6)
->  #define FFCR_STOP_FI           BIT(12)
->
-> +DEFINE_CORESIGHT_DEVLIST(tpiu_devs, "tpiu");
-> +
->  /**
->   * @base:      memory mapped base address for this component.
->   * @atclk:     optional clock for the core parts of the TPIU.
-> @@ -125,6 +127,10 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
->         struct resource *res = &adev->res;
->         struct coresight_desc desc = { 0 };
->
-> +       desc.name = coresight_alloc_device_name(&tpiu_devs, dev);
-> +       if (!desc.name)
-> +               return -ENOMEM;
-> +
->         drvdata = devm_kzalloc(dev, sizeof(*drvdata), GFP_KERNEL);
->         if (!drvdata)
->                 return -ENOMEM;
-> @@ -157,7 +163,6 @@ static int tpiu_probe(struct amba_device *adev, const struct amba_id *id)
->         desc.ops = &tpiu_cs_ops;
->         desc.pdata = pdata;
->         desc.dev = dev;
-> -       desc.name = dev_name(dev);
->         drvdata->csdev = coresight_register(&desc);
->
->         if (!IS_ERR(drvdata->csdev)) {
-> diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
-> index 1287778..86d1fc2 100644
-> --- a/drivers/hwtracing/coresight/coresight.c
-> +++ b/drivers/hwtracing/coresight/coresight.c
-> @@ -1291,3 +1291,61 @@ void coresight_unregister(struct coresight_device *csdev)
->         device_unregister(&csdev->dev);
->  }
->  EXPORT_SYMBOL_GPL(coresight_unregister);
-> +
-> +
-> +/*
-> + * coresight_search_device_idx - Search the fwnode handle of a device
-> + * in the given dev_idx list. Must be called with the coresight_mutex held.
-> + *
-> + * Returns the index of the entry, when found. Otherwise, -ENOENT.
-> + */
-> +static inline int coresight_search_device_idx(struct coresight_dev_list *dict,
-> +                                             struct fwnode_handle *fwnode)
-> +{
-> +       int i;
-> +
-> +       for (i = 0; i < dict->nr_idx; i++)
-> +               if (dict->fwnode_list[i] == fwnode)
-> +                       return i;
-> +       return -ENOENT;
-> +}
-> +
-> +/*
-> + * coresight_alloc_device_name - Get an index for a given device in the
-> + * device index list specific to a driver. An index is allocated for a
-> + * device and is tracked with the fwnode_handle to prevent allocating
-> + * duplicate indices for the same device (e.g, if we defer probing of
-> + * a device due to dependencies), in case the index is requested again.
-> + */
-> +char *coresight_alloc_device_name(struct coresight_dev_list *dict,
-> +                                 struct device *dev)
-> +{
-> +       int idx;
-> +       char *name = NULL;
-> +       struct fwnode_handle **list;
-> +
-> +       mutex_lock(&coresight_mutex);
-> +
-> +       idx = coresight_search_device_idx(dict, dev_fwnode(dev));
-> +       if (idx < 0) {
-> +               /* Make space for the new entry */
-> +               idx = dict->nr_idx;
-> +               list = krealloc(dict->fwnode_list,
-> +                               (idx + 1) * sizeof(*dict->fwnode_list),
-> +                               GFP_KERNEL);
-> +               if (ZERO_OR_NULL_PTR(list)) {
-> +                       idx = -ENOMEM;
-> +                       goto done;
-> +               }
-> +
-> +               list[idx] = dev_fwnode(dev);
-> +               dict->fwnode_list = list;
-> +               dict->nr_idx = idx + 1;
-> +       }
-> +
-> +       name = devm_kasprintf(dev, GFP_KERNEL, "%s%d", dict->pfx, idx);
-> +done:
-> +       mutex_unlock(&coresight_mutex);
-> +       return name;
-> +}
-> +EXPORT_SYMBOL_GPL(coresight_alloc_device_name);
-> diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-> index b40544b..a2b6882 100644
-> --- a/include/linux/coresight.h
-> +++ b/include/linux/coresight.h
-> @@ -168,6 +168,28 @@ struct coresight_device {
->         struct dev_ext_attribute *ea;
->  };
->
-> +/*
-> + * coresight_dev_list - Mapping for devices to "name" index for device
-> + * names.
-> + *
-> + * @nr_idx:            Number of entries already allocated.
-> + * @pfx:               Prefix pattern for device name.
-> + * @fwnode_list:       Array of fwnode_handles associated with each allocated
-> + *                     index, upto nr_idx entries.
-> + */
-> +struct coresight_dev_list {
-> +       int                     nr_idx;
-> +       const char              *pfx;
-> +       struct fwnode_handle    **fwnode_list;
-> +};
-> +
-> +#define DEFINE_CORESIGHT_DEVLIST(var, dev_pfx)                         \
-> +static struct coresight_dev_list (var) = {                             \
-> +                                               .pfx = dev_pfx,         \
-> +                                               .nr_idx = 0,            \
-> +                                               .fwnode_list = NULL,    \
-> +}
-> +
->  #define to_coresight_device(d) container_of(d, struct coresight_device, dev)
->
->  #define source_ops(csdev)      csdev->ops->source_ops
-> @@ -261,7 +283,8 @@ extern int coresight_claim_device_unlocked(void __iomem *base);
->
->  extern void coresight_disclaim_device(void __iomem *base);
->  extern void coresight_disclaim_device_unlocked(void __iomem *base);
-> -
-> +extern char *coresight_alloc_device_name(struct coresight_dev_list *devs,
-> +                                        struct device *dev);
->  #else
->  static inline struct coresight_device *
->  coresight_register(struct coresight_desc *desc) { return NULL; }
-> --
-> 2.7.4
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
-
-
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+PiBIaSBXYWx0ZXIsCj4gCj4gUGxlYXNlIGRlc2NyaWJlIHlvdXIgdXNlIGNhc2UuCj4gRm9yIHRl
+c3RpbmcgY29udGV4dCB0aGUgZ2VuZXJpYyBLQVNBTiB3b3JrcyBiZXR0ZXIgYW5kIGl0IGRvZXMg
+aGF2ZQo+IHF1YXJhbnRpbmUgYWxyZWFkeS4gRm9yIHByb2QvY2FuYXJ5IGVudmlyb25tZW50IHRo
+ZSBxdWFyYW50aW5lIG1heSBiZQo+IHVuYWNjZXB0YWJsZSBpbiBtb3N0IGNhc2VzLgo+IEkgdGhp
+bmsgd2UgYWxzbyB3YW50IHRvIHVzZSB0YWctYmFzZWQgS0FTQU4gYXMgYSBiYXNlIGZvciBBUk0g
+TVRFCj4gc3VwcG9ydCBpbiBuZWFyIGZ1dHVyZSBhbmQgcXVhcmFudGluZSB3aWxsIGJlIG1vc3Qg
+bGlrZWx5IHVuYWNjZXB0YWJsZQo+IGZvciBtYWluIE1URSB1c2UgY2FzZXMuIFNvIGF0IHRoZSB2
+ZXJ5IGxlYXN0IEkgdGhpbmsgdGhpcyBzaG91bGQgYmUKPiBjb25maWd1cmFibGUuICtDYXRhbGlu
+IGZvciB0aGlzLgo+IApNeSBwYXRjaCBob3BlIHRoZSB0YWctYmFzZWQgS0FTQU4gYnVnIHJlcG9y
+dCBtYWtlIGl0IGVhc2llciBmb3IKcHJvZ3JhbW1lcnMgdG8gc2VlIG1lbW9yeSBjb3JydXB0aW9u
+IHByb2JsZW0uIApCZWNhdXNlIG5vdyB0YWctYmFzZWQgS0FTQU4gYnVnIHJlcG9ydCBhbHdheXMg
+c2hvd3Mg4oCcaW52YWxpZC1hY2Nlc3PigJ0KZXJyb3IsIG15IHBhdGNoIGNhbiBpZGVudGlmeSBp
+dCB3aGV0aGVyIGl0IGlzIHVzZS1hZnRlci1mcmVlIG9yCm91dC1vZi1ib3VuZC4KCldlIGNhbiB0
+cnkgdG8gbWFrZSBvdXIgcGF0Y2ggaXMgZmVhdHVyZSBvcHRpb24uIFRoYW5rcyB5b3VyIHN1Z2dl
+c3Rpb24uCldvdWxkIHlvdSBleHBsYWluIHdoeSB0aGUgcXVhcmFudGluZSBpcyB1bmFjY2VwdGFi
+bGUgZm9yIG1haW4gTVRFPwpUaGFua3MuCgoKPiBZb3UgZG9uJ3QgY2hhbmdlIHRvdGFsIHF1YXJh
+bnRpbmUgc2l6ZSBhbmQgY2hhcmdlIG9ubHkgc2l6ZW9mKHN0cnVjdAo+IHFsaXN0X29iamVjdCku
+IElmIEkgYW0gcmVhZGluZyB0aGlzIGNvcnJlY3RseSwgdGhpcyBtZWFucyB0aGF0Cj4gcXVhcmFu
+dGluZSB3aWxsIGhhdmUgdGhlIHNhbWUgbGFyZ2Ugb3ZlcmhlYWQgYXMgd2l0aCBnZW5lcmljIEtB
+U0FOLiBXZQo+IHdpbGwganVzdCBjYWNoZSBtdWNoIG1vcmUgb2JqZWN0cyB0aGVyZS4gVGhlIGJv
+b3QgYmVuY2htYXJrcyBtYXkgYmUKPiB1bnJlcHJlc2VudGF0aXZlIGZvciB0aGlzLiBEb24ndCB3
+ZSBuZWVkIHRvIHJlZHVjZSBxdWFyYW50aW5lIHNpemUgb3IKPiBzb21ldGhpbmc/Cj4gClllcywg
+d2Ugd2lsbCB0cnkgdG8gY2hvb3NlIDIuIE15IG9yaWdpbmFsIGlkZWEgaXMgYmVsb25nIHRvIGl0
+LiBTbyB3ZQp3aWxsIHJlZHVjZSBxdWFyYW50aW5lIHNpemUuCgoxKS4gSWYgcXVhcmFudGluZSBz
+aXplIGlzIHRoZSBzYW1lIHdpdGggZ2VuZXJpYyBLQVNBTiBhbmQgdGFnLWJhc2VkCktBU0FOLCB0
+aGVuIHRoZSBtaXNzIHJhdGUgb2YgdXNlLWFmdGVyLWZyZWUgY2FzZSBpbiBnZW5lcmljIEtBU0FO
+IGlzCmxhcmdlciB0aGFuIHRhZy1iYXNlZCBLQVNBTi4KMikuIElmIHRhZy1iYXNlZCBLQVNBTiBx
+dWFyYW50aW5lIHNpemUgaXMgc21hbGxlciBnZW5lcmljIEtBU0FOLCB0aGVuCnRoZSBtaXNzIHJh
+dGUgb2YgdXNlLWFmdGVyLWZyZWUgY2FzZSBtYXkgYmUgdGhlIHNhbWUsIGJ1dCB0YWctYmFzZWQK
+S0FTQU4gY2FuIHNhdmUgc2xhYiBtZW1vcnkgdXNhZ2UuCgoKPiAKPiA+IFNpZ25lZC1vZmYtYnk6
+IFdhbHRlciBXdSA8d2FsdGVyLXpoLnd1QG1lZGlhdGVrLmNvbT4KPiA+IC0tLQo+ID4gIGluY2x1
+ZGUvbGludXgva2FzYW4uaCAgfCAgMjAgKysrKystLS0KPiA+ICBtbS9rYXNhbi9NYWtlZmlsZSAg
+ICAgIHwgICA0ICstCj4gPiAgbW0va2FzYW4vY29tbW9uLmMgICAgICB8ICAxNSArKysrKy0KPiA+
+ICBtbS9rYXNhbi9nZW5lcmljLmMgICAgIHwgIDExIC0tLS0tCj4gPiAgbW0va2FzYW4va2FzYW4u
+aCAgICAgICB8ICA0NSArKysrKysrKysrKysrKysrLQo+ID4gIG1tL2thc2FuL3F1YXJhbnRpbmUu
+YyAgfCAxMDcgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0KPiA+ICBt
+bS9rYXNhbi9yZXBvcnQuYyAgICAgIHwgIDM2ICsrKysrKysrKy0tLS0tCj4gPiAgbW0va2FzYW4v
+dGFncy5jICAgICAgICB8ICA2NCArKysrKysrKysrKysrKysrKysrKysrKysKPiA+ICBtbS9rYXNh
+bi90YWdzX3JlcG9ydC5jIHwgICA1ICstCj4gPiAgbW0vc2x1Yi5jICAgICAgICAgICAgICB8ICAg
+MiAtCj4gPiAgMTAgZmlsZXMgY2hhbmdlZCwgMjYyIGluc2VydGlvbnMoKyksIDQ3IGRlbGV0aW9u
+cygtKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L2thc2FuLmggYi9pbmNsdWRl
+L2xpbnV4L2thc2FuLmgKPiA+IGluZGV4IGI0MGVhMTA0ZGQzNi4uYmJiNTJhOGJmNGE5IDEwMDY0
+NAo+ID4gLS0tIGEvaW5jbHVkZS9saW51eC9rYXNhbi5oCj4gPiArKysgYi9pbmNsdWRlL2xpbnV4
+L2thc2FuLmgKPiA+IEBAIC04Myw2ICs4Myw5IEBAIHNpemVfdCBrYXNhbl9tZXRhZGF0YV9zaXpl
+KHN0cnVjdCBrbWVtX2NhY2hlICpjYWNoZSk7Cj4gPiAgYm9vbCBrYXNhbl9zYXZlX2VuYWJsZV9t
+dWx0aV9zaG90KHZvaWQpOwo+ID4gIHZvaWQga2FzYW5fcmVzdG9yZV9tdWx0aV9zaG90KGJvb2wg
+ZW5hYmxlZCk7Cj4gPgo+ID4gK3ZvaWQga2FzYW5fY2FjaGVfc2hyaW5rKHN0cnVjdCBrbWVtX2Nh
+Y2hlICpjYWNoZSk7Cj4gPiArdm9pZCBrYXNhbl9jYWNoZV9zaHV0ZG93bihzdHJ1Y3Qga21lbV9j
+YWNoZSAqY2FjaGUpOwo+ID4gKwo+ID4gICNlbHNlIC8qIENPTkZJR19LQVNBTiAqLwo+ID4KPiA+
+ICBzdGF0aWMgaW5saW5lIHZvaWQga2FzYW5fdW5wb2lzb25fc2hhZG93KGNvbnN0IHZvaWQgKmFk
+ZHJlc3MsIHNpemVfdCBzaXplKSB7fQo+ID4gQEAgLTE1MywyMCArMTU2LDE0IEBAIHN0YXRpYyBp
+bmxpbmUgdm9pZCBrYXNhbl9yZW1vdmVfemVyb19zaGFkb3codm9pZCAqc3RhcnQsCj4gPiAgc3Rh
+dGljIGlubGluZSB2b2lkIGthc2FuX3VucG9pc29uX3NsYWIoY29uc3Qgdm9pZCAqcHRyKSB7IH0K
+PiA+ICBzdGF0aWMgaW5saW5lIHNpemVfdCBrYXNhbl9tZXRhZGF0YV9zaXplKHN0cnVjdCBrbWVt
+X2NhY2hlICpjYWNoZSkgeyByZXR1cm4gMDsgfQo+ID4KPiA+ICtzdGF0aWMgaW5saW5lIHZvaWQg
+a2FzYW5fY2FjaGVfc2hyaW5rKHN0cnVjdCBrbWVtX2NhY2hlICpjYWNoZSkge30KPiA+ICtzdGF0
+aWMgaW5saW5lIHZvaWQga2FzYW5fY2FjaGVfc2h1dGRvd24oc3RydWN0IGttZW1fY2FjaGUgKmNh
+Y2hlKSB7fQo+ID4gICNlbmRpZiAvKiBDT05GSUdfS0FTQU4gKi8KPiA+Cj4gPiAgI2lmZGVmIENP
+TkZJR19LQVNBTl9HRU5FUklDCj4gPgo+ID4gICNkZWZpbmUgS0FTQU5fU0hBRE9XX0lOSVQgMAo+
+ID4KPiA+IC12b2lkIGthc2FuX2NhY2hlX3NocmluayhzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUp
+Owo+ID4gLXZvaWQga2FzYW5fY2FjaGVfc2h1dGRvd24oc3RydWN0IGttZW1fY2FjaGUgKmNhY2hl
+KTsKPiA+IC0KPiA+IC0jZWxzZSAvKiBDT05GSUdfS0FTQU5fR0VORVJJQyAqLwo+ID4gLQo+ID4g
+LXN0YXRpYyBpbmxpbmUgdm9pZCBrYXNhbl9jYWNoZV9zaHJpbmsoc3RydWN0IGttZW1fY2FjaGUg
+KmNhY2hlKSB7fQo+ID4gLXN0YXRpYyBpbmxpbmUgdm9pZCBrYXNhbl9jYWNoZV9zaHV0ZG93bihz
+dHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpIHt9Cj4gCj4gV2h5IGRvIHdlIG5lZWQgdG8gbW92ZSB0
+aGVzZSBmdW5jdGlvbnM/Cj4gRm9yIGdlbmVyaWMgS0FTQU4gdGhhdCdzIHJlcXVpcmVkIGJlY2F1
+c2Ugd2Ugc3RvcmUgdGhlIG9iamVjdHMKPiB0aGVtc2VsdmVzIGluIHRoZSBxdWFyYW50aW5lLCBi
+dXQgaXQncyBub3QgdGhlIGNhc2UgZm9yIHRhZy1iYXNlZCBtb2RlCj4gd2l0aCB5b3VyIHBhdGNo
+Li4uCj4gClRoZSBxdWFyYW50aW5lIGluIHRhZy1iYXNlZCBLQVNBTiBpbmNsdWRlcyBuZXcgb2Jq
+ZWN0cyB3aGljaCB3ZSBjcmVhdGUuClRob3NlIG9iamVjdHMgYXJlIHRoZSBmcmVlZCBpbmZvcm1h
+dGlvbi4gVGhleSBjYW4gYmUgc2hydW5rIGJ5IGNhbGxpbmcKdGhlbS4gU28gd2UgbW92ZSB0aGVz
+ZSBmdW5jdGlvbiBpbnRvIENPTkZJR19LQVNBTi4gCgoKPiA+IC0KPiA+ICAjZW5kaWYgLyogQ09O
+RklHX0tBU0FOX0dFTkVSSUMgKi8KPiA+Cj4gPiAgI2lmZGVmIENPTkZJR19LQVNBTl9TV19UQUdT
+Cj4gPiBAQCAtMTgwLDYgKzE3Nyw4IEBAIHZvaWQgKmthc2FuX3Jlc2V0X3RhZyhjb25zdCB2b2lk
+ICphZGRyKTsKPiA+ICB2b2lkIGthc2FuX3JlcG9ydCh1bnNpZ25lZCBsb25nIGFkZHIsIHNpemVf
+dCBzaXplLAo+ID4gICAgICAgICAgICAgICAgIGJvb2wgaXNfd3JpdGUsIHVuc2lnbmVkIGxvbmcg
+aXApOwo+ID4KPiA+ICtzdHJ1Y3Qga2FzYW5fYWxsb2NfbWV0YSAqZ2V0X29iamVjdF90cmFjayh2
+b2lkKTsKPiA+ICsKPiA+ICAjZWxzZSAvKiBDT05GSUdfS0FTQU5fU1dfVEFHUyAqLwo+ID4KPiA+
+ICBzdGF0aWMgaW5saW5lIHZvaWQga2FzYW5faW5pdF90YWdzKHZvaWQpIHsgfQo+ID4gQEAgLTE4
+OSw2ICsxODgsMTEgQEAgc3RhdGljIGlubGluZSB2b2lkICprYXNhbl9yZXNldF90YWcoY29uc3Qg
+dm9pZCAqYWRkcikKPiA+ICAgICAgICAgcmV0dXJuICh2b2lkICopYWRkcjsKPiA+ICB9Cj4gPgo+
+ID4gK3N0YXRpYyBpbmxpbmUgc3RydWN0IGthc2FuX2FsbG9jX21ldGEgKmdldF9vYmplY3RfdHJh
+Y2sodm9pZCkKPiA+ICt7Cj4gPiArICAgICAgIHJldHVybiAwOwo+ID4gK30KPiA+ICsKPiA+ICAj
+ZW5kaWYgLyogQ09ORklHX0tBU0FOX1NXX1RBR1MgKi8KPiA+Cj4gPiAgI2VuZGlmIC8qIExJTlVY
+X0tBU0FOX0ggKi8KPiA+IGRpZmYgLS1naXQgYS9tbS9rYXNhbi9NYWtlZmlsZSBiL21tL2thc2Fu
+L01ha2VmaWxlCj4gPiBpbmRleCA1ZDEwNjVlZmJkNDcuLjAzYjBmZTIyZWM1NSAxMDA2NDQKPiA+
+IC0tLSBhL21tL2thc2FuL01ha2VmaWxlCj4gPiArKysgYi9tbS9rYXNhbi9NYWtlZmlsZQo+ID4g
+QEAgLTE2LDYgKzE2LDYgQEAgQ0ZMQUdTX2NvbW1vbi5vIDo9ICQoY2FsbCBjYy1vcHRpb24sIC1m
+bm8tY29uc2VydmUtc3RhY2sgLWZuby1zdGFjay1wcm90ZWN0b3IpCj4gPiAgQ0ZMQUdTX2dlbmVy
+aWMubyA6PSAkKGNhbGwgY2Mtb3B0aW9uLCAtZm5vLWNvbnNlcnZlLXN0YWNrIC1mbm8tc3RhY2st
+cHJvdGVjdG9yKQo+ID4gIENGTEFHU190YWdzLm8gOj0gJChjYWxsIGNjLW9wdGlvbiwgLWZuby1j
+b25zZXJ2ZS1zdGFjayAtZm5vLXN0YWNrLXByb3RlY3RvcikKPiA+Cj4gPiAtb2JqLSQoQ09ORklH
+X0tBU0FOKSA6PSBjb21tb24ubyBpbml0Lm8gcmVwb3J0Lm8KPiA+IC1vYmotJChDT05GSUdfS0FT
+QU5fR0VORVJJQykgKz0gZ2VuZXJpYy5vIGdlbmVyaWNfcmVwb3J0Lm8gcXVhcmFudGluZS5vCj4g
+PiArb2JqLSQoQ09ORklHX0tBU0FOKSA6PSBjb21tb24ubyBpbml0Lm8gcmVwb3J0Lm8gcXVhcmFu
+dGluZS5vCj4gPiArb2JqLSQoQ09ORklHX0tBU0FOX0dFTkVSSUMpICs9IGdlbmVyaWMubyBnZW5l
+cmljX3JlcG9ydC5vCj4gPiAgb2JqLSQoQ09ORklHX0tBU0FOX1NXX1RBR1MpICs9IHRhZ3MubyB0
+YWdzX3JlcG9ydC5vCj4gPiBkaWZmIC0tZ2l0IGEvbW0va2FzYW4vY29tbW9uLmMgYi9tbS9rYXNh
+bi9jb21tb24uYwo+ID4gaW5kZXggODBiYmU2MmIxNmNkLi45MTlmNjkzYTU4YWIgMTAwNjQ0Cj4g
+PiAtLS0gYS9tbS9rYXNhbi9jb21tb24uYwo+ID4gKysrIGIvbW0va2FzYW4vY29tbW9uLmMKPiA+
+IEBAIC04MSw3ICs4MSw3IEBAIHN0YXRpYyBpbmxpbmUgZGVwb3Rfc3RhY2tfaGFuZGxlX3Qgc2F2
+ZV9zdGFjayhnZnBfdCBmbGFncykKPiA+ICAgICAgICAgcmV0dXJuIGRlcG90X3NhdmVfc3RhY2so
+JnRyYWNlLCBmbGFncyk7Cj4gPiAgfQo+ID4KPiA+IC1zdGF0aWMgaW5saW5lIHZvaWQgc2V0X3Ry
+YWNrKHN0cnVjdCBrYXNhbl90cmFjayAqdHJhY2ssIGdmcF90IGZsYWdzKQo+ID4gK3ZvaWQgc2V0
+X3RyYWNrKHN0cnVjdCBrYXNhbl90cmFjayAqdHJhY2ssIGdmcF90IGZsYWdzKQo+ID4gIHsKPiA+
+ICAgICAgICAgdHJhY2stPnBpZCA9IGN1cnJlbnQtPnBpZDsKPiA+ICAgICAgICAgdHJhY2stPnN0
+YWNrID0gc2F2ZV9zdGFjayhmbGFncyk7Cj4gPiBAQCAtNDU3LDcgKzQ1Nyw3IEBAIHN0YXRpYyBi
+b29sIF9fa2FzYW5fc2xhYl9mcmVlKHN0cnVjdCBrbWVtX2NhY2hlICpjYWNoZSwgdm9pZCAqb2Jq
+ZWN0LAo+ID4gICAgICAgICAgICAgICAgIHJldHVybiBmYWxzZTsKPiA+Cj4gPiAgICAgICAgIHNl
+dF90cmFjaygmZ2V0X2FsbG9jX2luZm8oY2FjaGUsIG9iamVjdCktPmZyZWVfdHJhY2ssIEdGUF9O
+T1dBSVQpOwo+ID4gLSAgICAgICBxdWFyYW50aW5lX3B1dChnZXRfZnJlZV9pbmZvKGNhY2hlLCBv
+YmplY3QpLCBjYWNoZSk7Cj4gPiArICAgICAgIHF1YXJhbnRpbmVfcHV0KGdldF9mcmVlX2luZm8o
+Y2FjaGUsIHRhZ2dlZF9vYmplY3QpLCBjYWNoZSk7Cj4gCj4gV2h5IGRvIHdlIG5lZWQgdGhpcyBj
+aGFuZ2U/Cj4gCkluIG9yZGVyIHRvIGFkZCBmcmVlZCBvYmplY3QgaW5mb3JtYXRpb24gaW50byBx
+dWFyYW50aW5lLgpUaGUgZnJlZWQgb2JqZWN0IGluZm9ybWF0aW9uIGlzIHRhZyBhZGRyZXNzICwg
+c2l6ZSwgYW5kIGZyZWUgYmFja3RyYWNlLgoKCj4gPgo+ID4gICAgICAgICByZXR1cm4gSVNfRU5B
+QkxFRChDT05GSUdfS0FTQU5fR0VORVJJQyk7Cj4gPiAgfQo+ID4gQEAgLTYxNCw2ICs2MTQsMTcg
+QEAgdm9pZCBrYXNhbl9mcmVlX3NoYWRvdyhjb25zdCBzdHJ1Y3Qgdm1fc3RydWN0ICp2bSkKPiA+
+ICAgICAgICAgICAgICAgICB2ZnJlZShrYXNhbl9tZW1fdG9fc2hhZG93KHZtLT5hZGRyKSk7Cj4g
+PiAgfQo+ID4KPiA+ICt2b2lkIGthc2FuX2NhY2hlX3NocmluayhzdHJ1Y3Qga21lbV9jYWNoZSAq
+Y2FjaGUpCj4gPiArewo+ID4gKyAgICAgICBxdWFyYW50aW5lX3JlbW92ZV9jYWNoZShjYWNoZSk7
+Cj4gPiArfQo+ID4gKwo+ID4gK3ZvaWQga2FzYW5fY2FjaGVfc2h1dGRvd24oc3RydWN0IGttZW1f
+Y2FjaGUgKmNhY2hlKQo+ID4gK3sKPiA+ICsgICAgICAgaWYgKCFfX2ttZW1fY2FjaGVfZW1wdHko
+Y2FjaGUpKQo+ID4gKyAgICAgICAgICAgICAgIHF1YXJhbnRpbmVfcmVtb3ZlX2NhY2hlKGNhY2hl
+KTsKPiA+ICt9Cj4gPiArCj4gPiAgI2lmZGVmIENPTkZJR19NRU1PUllfSE9UUExVRwo+ID4gIHN0
+YXRpYyBib29sIHNoYWRvd19tYXBwZWQodW5zaWduZWQgbG9uZyBhZGRyKQo+ID4gIHsKPiA+IGRp
+ZmYgLS1naXQgYS9tbS9rYXNhbi9nZW5lcmljLmMgYi9tbS9rYXNhbi9nZW5lcmljLmMKPiA+IGlu
+ZGV4IDUwNGM3OTM2M2EzNC4uNWY1NzkwNTFkZWFkIDEwMDY0NAo+ID4gLS0tIGEvbW0va2FzYW4v
+Z2VuZXJpYy5jCj4gPiArKysgYi9tbS9rYXNhbi9nZW5lcmljLmMKPiA+IEBAIC0xOTEsMTcgKzE5
+MSw2IEBAIHZvaWQgY2hlY2tfbWVtb3J5X3JlZ2lvbih1bnNpZ25lZCBsb25nIGFkZHIsIHNpemVf
+dCBzaXplLCBib29sIHdyaXRlLAo+ID4gICAgICAgICBjaGVja19tZW1vcnlfcmVnaW9uX2lubGlu
+ZShhZGRyLCBzaXplLCB3cml0ZSwgcmV0X2lwKTsKPiA+ICB9Cj4gPgo+ID4gLXZvaWQga2FzYW5f
+Y2FjaGVfc2hyaW5rKHN0cnVjdCBrbWVtX2NhY2hlICpjYWNoZSkKPiA+IC17Cj4gPiAtICAgICAg
+IHF1YXJhbnRpbmVfcmVtb3ZlX2NhY2hlKGNhY2hlKTsKPiA+IC19Cj4gPiAtCj4gPiAtdm9pZCBr
+YXNhbl9jYWNoZV9zaHV0ZG93bihzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpCj4gPiAtewo+ID4g
+LSAgICAgICBpZiAoIV9fa21lbV9jYWNoZV9lbXB0eShjYWNoZSkpCj4gPiAtICAgICAgICAgICAg
+ICAgcXVhcmFudGluZV9yZW1vdmVfY2FjaGUoY2FjaGUpOwo+ID4gLX0KPiA+IC0KPiA+ICBzdGF0
+aWMgdm9pZCByZWdpc3Rlcl9nbG9iYWwoc3RydWN0IGthc2FuX2dsb2JhbCAqZ2xvYmFsKQo+ID4g
+IHsKPiA+ICAgICAgICAgc2l6ZV90IGFsaWduZWRfc2l6ZSA9IHJvdW5kX3VwKGdsb2JhbC0+c2l6
+ZSwgS0FTQU5fU0hBRE9XX1NDQUxFX1NJWkUpOwo+ID4gZGlmZiAtLWdpdCBhL21tL2thc2FuL2th
+c2FuLmggYi9tbS9rYXNhbi9rYXNhbi5oCj4gPiBpbmRleCAzZTBjMTFmN2Q3YTEuLjY4NDhhOTM2
+NjBkOSAxMDA2NDQKPiA+IC0tLSBhL21tL2thc2FuL2thc2FuLmgKPiA+ICsrKyBiL21tL2thc2Fu
+L2thc2FuLmgKPiA+IEBAIC05NSw5ICs5NSwyMSBAQCBzdHJ1Y3Qga2FzYW5fYWxsb2NfbWV0YSB7
+Cj4gPiAgICAgICAgIHN0cnVjdCBrYXNhbl90cmFjayBmcmVlX3RyYWNrOwo+ID4gIH07Cj4gPgo+
+ID4gKyNpZmRlZiBDT05GSUdfS0FTQU5fR0VORVJJQwo+ID4gIHN0cnVjdCBxbGlzdF9ub2RlIHsK
+PiA+ICAgICAgICAgc3RydWN0IHFsaXN0X25vZGUgKm5leHQ7Cj4gPiAgfTsKPiA+ICsjZWxzZQo+
+ID4gK3N0cnVjdCBxbGlzdF9vYmplY3Qgewo+ID4gKyAgICAgICB1bnNpZ25lZCBsb25nIGFkZHI7
+Cj4gPiArICAgICAgIHVuc2lnbmVkIGludCBzaXplOwo+ID4gKyAgICAgICBzdHJ1Y3Qga2FzYW5f
+YWxsb2NfbWV0YSBmcmVlX3RyYWNrOwo+IAo+IFdoeSBpcyB0aGlzIGthc2FuX2FsbG9jX21ldGEg
+cmF0aGVyIHRoZW4ga2FzYW5fdHJhY2s/IFdlIGRvbid0Cj4gbWVtb3JpemUgYWxsb2Mgc3RhY2su
+Li4KPiAKWWVzLCB5b3UgYXJlIHJpZ2h0LCB3ZSBvbmx5IG5lZWQgdGhlIGZyZWVfdHJhY2sgb2Yg
+a2FzYW5fYWxsb2NfbWV0YS4gV2UKd2lsbCBjaGFuZ2UgaXQuCgoKPiA+ICt9Owo+ID4gK3N0cnVj
+dCBxbGlzdF9ub2RlIHsKPiA+ICsgICAgICAgc3RydWN0IHFsaXN0X29iamVjdCAqcW9iamVjdDsK
+PiA+ICsgICAgICAgc3RydWN0IHFsaXN0X25vZGUgKm5leHQ7Cj4gPiArfTsKPiA+ICsjZW5kaWYK
+PiA+ICBzdHJ1Y3Qga2FzYW5fZnJlZV9tZXRhIHsKPiA+ICAgICAgICAgLyogVGhpcyBmaWVsZCBp
+cyB1c2VkIHdoaWxlIHRoZSBvYmplY3QgaXMgaW4gdGhlIHF1YXJhbnRpbmUuCj4gPiAgICAgICAg
+ICAqIE90aGVyd2lzZSBpdCBtaWdodCBiZSB1c2VkIGZvciB0aGUgYWxsb2NhdG9yIGZyZWVsaXN0
+Lgo+ID4gQEAgLTEzMywxNiArMTQ1LDE5IEBAIHZvaWQga2FzYW5fcmVwb3J0KHVuc2lnbmVkIGxv
+bmcgYWRkciwgc2l6ZV90IHNpemUsCj4gPiAgICAgICAgICAgICAgICAgYm9vbCBpc193cml0ZSwg
+dW5zaWduZWQgbG9uZyBpcCk7Cj4gPiAgdm9pZCBrYXNhbl9yZXBvcnRfaW52YWxpZF9mcmVlKHZv
+aWQgKm9iamVjdCwgdW5zaWduZWQgbG9uZyBpcCk7Cj4gPgo+ID4gLSNpZiBkZWZpbmVkKENPTkZJ
+R19LQVNBTl9HRU5FUklDKSAmJiBcCj4gPiArI2lmIGRlZmluZWQoQ09ORklHX0tBU0FOX0dFTkVS
+SUMpIHx8IGRlZmluZWQoQ09ORklHX0tBU0FOX1NXX1RBR1MpICYmIFwKPiAKPiBUaGlzIGNvbmRp
+dGlvbiBzZWVtcyB0byBiZSBhbHdheXMgdHJ1ZSwgbm8/Cj4gClllcywgaXQgaXMgYWx3YXlzIHRy
+dWUsIGl0IHNob3VsZCBiZSByZW1vdmVkLgoKCj4gPiAgICAgICAgIChkZWZpbmVkKENPTkZJR19T
+TEFCKSB8fCBkZWZpbmVkKENPTkZJR19TTFVCKSkKPiA+ICsKPiA+ICB2b2lkIHF1YXJhbnRpbmVf
+cHV0KHN0cnVjdCBrYXNhbl9mcmVlX21ldGEgKmluZm8sIHN0cnVjdCBrbWVtX2NhY2hlICpjYWNo
+ZSk7Cj4gPiAgdm9pZCBxdWFyYW50aW5lX3JlZHVjZSh2b2lkKTsKPiA+ICB2b2lkIHF1YXJhbnRp
+bmVfcmVtb3ZlX2NhY2hlKHN0cnVjdCBrbWVtX2NhY2hlICpjYWNoZSk7Cj4gPiArdm9pZCBzZXRf
+dHJhY2soc3RydWN0IGthc2FuX3RyYWNrICp0cmFjaywgZ2ZwX3QgZmxhZ3MpOwo+ID4gICNlbHNl
+Cj4gPiAgc3RhdGljIGlubGluZSB2b2lkIHF1YXJhbnRpbmVfcHV0KHN0cnVjdCBrYXNhbl9mcmVl
+X21ldGEgKmluZm8sCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCBr
+bWVtX2NhY2hlICpjYWNoZSkgeyB9Cj4gPiAgc3RhdGljIGlubGluZSB2b2lkIHF1YXJhbnRpbmVf
+cmVkdWNlKHZvaWQpIHsgfQo+ID4gIHN0YXRpYyBpbmxpbmUgdm9pZCBxdWFyYW50aW5lX3JlbW92
+ZV9jYWNoZShzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpIHsgfQo+ID4gK3N0YXRpYyBpbmxpbmUg
+dm9pZCBzZXRfdHJhY2soc3RydWN0IGthc2FuX3RyYWNrICp0cmFjaywgZ2ZwX3QgZmxhZ3MpIHt9
+Cj4gPiAgI2VuZGlmCj4gPgo+ID4gICNpZmRlZiBDT05GSUdfS0FTQU5fU1dfVEFHUwo+ID4gQEAg
+LTE1MSw2ICsxNjYsMTUgQEAgdm9pZCBwcmludF90YWdzKHU4IGFkZHJfdGFnLCBjb25zdCB2b2lk
+ICphZGRyKTsKPiA+Cj4gPiAgdTggcmFuZG9tX3RhZyh2b2lkKTsKPiA+Cj4gPiArYm9vbCBxdWFy
+YW50aW5lX2ZpbmRfb2JqZWN0KHZvaWQgKm9iamVjdCk7Cj4gPiArCj4gPiAraW50IHFvYmplY3Rf
+YWRkX3NpemUodm9pZCk7Cj4gCj4gV291bGQgYmUgbW9yZSByZWFzb25hYmxlIHRvIHVzZSBzaXpl
+X3QgdHlwZSBmb3Igb2JqZWN0IHNpemVzLgo+IAp0aGUgc3VtIG9mIHFvYmVjdCBhbmQgcW5vZGUg
+c2l6ZT8KCgo+ID4gKwo+ID4gK3N0cnVjdCBxbGlzdF9ub2RlICpxb2JqZWN0X2NyZWF0ZShzdHJ1
+Y3Qga2FzYW5fZnJlZV9tZXRhICppbmZvLAo+ID4gKyAgICAgICAgICAgICAgIHN0cnVjdCBrbWVt
+X2NhY2hlICpjYWNoZSk7Cj4gPiArCj4gPiArdm9pZCBxb2JqZWN0X2ZyZWUoc3RydWN0IHFsaXN0
+X25vZGUgKnFsaW5rLCBzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpOwo+ID4gKwo+ID4gICNlbHNl
+Cj4gPgo+ID4gIHN0YXRpYyBpbmxpbmUgdm9pZCBwcmludF90YWdzKHU4IGFkZHJfdGFnLCBjb25z
+dCB2b2lkICphZGRyKSB7IH0KPiA+IEBAIC0xNjAsNiArMTg0LDI1IEBAIHN0YXRpYyBpbmxpbmUg
+dTggcmFuZG9tX3RhZyh2b2lkKQo+ID4gICAgICAgICByZXR1cm4gMDsKPiA+ICB9Cj4gPgo+ID4g
+K3N0YXRpYyBpbmxpbmUgYm9vbCBxdWFyYW50aW5lX2ZpbmRfb2JqZWN0KHZvaWQgKm9iamVjdCkK
+PiA+ICt7Cj4gPiArICAgICAgIHJldHVybiAwOwo+IAo+IHMvMC9mYWxzZS8KPiAKVGhhbmtzIGZv
+ciB5b3VyIGZyaWVuZGx5IHJlbWluZGVyLiB3ZSB3aWxsIGNoYW5nZSBpdC4KCgo+ID4gK30KPiA+
+ICsKPiA+ICtzdGF0aWMgaW5saW5lIGludCBxb2JqZWN0X2FkZF9zaXplKHZvaWQpCj4gPiArewo+
+ID4gKyAgICAgICByZXR1cm4gMDsKPiA+ICt9Cj4gPiArCj4gPiArc3RhdGljIGlubGluZSBzdHJ1
+Y3QgcWxpc3Rfbm9kZSAqcW9iamVjdF9jcmVhdGUoc3RydWN0IGthc2FuX2ZyZWVfbWV0YSAqaW5m
+bywKPiA+ICsgICAgICAgICAgICAgICBzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpCj4gPiArewo+
+ID4gKyAgICAgICByZXR1cm4gMDsKPiAKPiBzLzAvTlVMTC8KPiAKVGhhbmtzIGZvciB5b3VyIGZy
+aWVuZGx5IHJlbWluZGVyLiB3ZSB3aWxsIGNoYW5nZSBpdC4KCgo+ID4gK30KPiA+ICsKPiA+ICtz
+dGF0aWMgaW5saW5lIHZvaWQgcW9iamVjdF9mcmVlKHN0cnVjdCBxbGlzdF9ub2RlICpxbGluaywK
+PiA+ICsgICAgICAgICAgICAgICBzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpIHt9Cj4gPiArCj4g
+PiAgI2VuZGlmCj4gPgo+ID4gICNpZm5kZWYgYXJjaF9rYXNhbl9zZXRfdGFnCj4gPiBkaWZmIC0t
+Z2l0IGEvbW0va2FzYW4vcXVhcmFudGluZS5jIGIvbW0va2FzYW4vcXVhcmFudGluZS5jCj4gPiBp
+bmRleCA5NzhiYzRhM2ViNTEuLmYxNGM4ZGJlYzU1MiAxMDA2NDQKPiA+IC0tLSBhL21tL2thc2Fu
+L3F1YXJhbnRpbmUuYwo+ID4gKysrIGIvbW0va2FzYW4vcXVhcmFudGluZS5jCj4gPiBAQCAtNjcs
+NyArNjcsMTAgQEAgc3RhdGljIHZvaWQgcWxpc3RfcHV0KHN0cnVjdCBxbGlzdF9oZWFkICpxLCBz
+dHJ1Y3QgcWxpc3Rfbm9kZSAqcWxpbmssCj4gPiAgICAgICAgICAgICAgICAgcS0+dGFpbC0+bmV4
+dCA9IHFsaW5rOwo+ID4gICAgICAgICBxLT50YWlsID0gcWxpbms7Cj4gPiAgICAgICAgIHFsaW5r
+LT5uZXh0ID0gTlVMTDsKPiA+IC0gICAgICAgcS0+Ynl0ZXMgKz0gc2l6ZTsKPiA+ICsgICAgICAg
+aWYgKElTX0VOQUJMRUQoQ09ORklHX0tBU0FOX1NXX1RBR1MpKQo+IAo+IEl0IHdvdWxkIGJlIG1v
+cmUgcmVhc29uYWJsZSB0byBwYXNzIHRoZSByaWdodCBzaXplIGZyb20gdGhlIGNhbGxlci4gSXQK
+PiBhbHJlYWR5IGhhdmUgdG8gaGF2ZSB0aGUgYnJhbmNoIG9uIENPTkZJR19LQVNBTl9TV19UQUdT
+IGJlY2F1c2UgaXQKPiBuZWVkcyB0byBhbGxvY2F0ZSBxb2JqZWN0IG9yIG5vdCwgdGhhdCB3b3Vs
+ZCBiZSB0aGUgcmlnaHQgcGxhY2UgdG8KPiBwYXNzIHRoZSByaWdodCBzaXplLgo+IApJbiB0YWct
+YmFzZWQgS0FTQU4sIHdlIHdpbGwgcGFzcyB0aGUgc3VtIG9mIHFvYmplY3QgYW5kIHFub2RlIHNp
+emUgdG8gaXQKYW5kIHJldmlldyBxbGlzdF9wdXQoKSBjYWxsZXIgd2hldGhlciBpdCBwYXNzIHJp
+Z2h0IHNpemUuCgoKPiA+ICsgICAgICAgICAgICAgICBxLT5ieXRlcyArPSBxb2JqZWN0X2FkZF9z
+aXplKCk7Cj4gPiArICAgICAgIGVsc2UKPiA+ICsgICAgICAgICAgICAgICBxLT5ieXRlcyArPSBz
+aXplOwo+ID4gIH0KPiA+Cj4gPiAgc3RhdGljIHZvaWQgcWxpc3RfbW92ZV9hbGwoc3RydWN0IHFs
+aXN0X2hlYWQgKmZyb20sIHN0cnVjdCBxbGlzdF9oZWFkICp0bykKPiA+IEBAIC0xMzksMTMgKzE0
+MiwxOCBAQCBzdGF0aWMgdm9pZCAqcWxpbmtfdG9fb2JqZWN0KHN0cnVjdCBxbGlzdF9ub2RlICpx
+bGluaywgc3RydWN0IGttZW1fY2FjaGUgKmNhY2hlKQo+ID4KPiA+ICBzdGF0aWMgdm9pZCBxbGlu
+a19mcmVlKHN0cnVjdCBxbGlzdF9ub2RlICpxbGluaywgc3RydWN0IGttZW1fY2FjaGUgKmNhY2hl
+KQo+ID4gIHsKPiA+IC0gICAgICAgdm9pZCAqb2JqZWN0ID0gcWxpbmtfdG9fb2JqZWN0KHFsaW5r
+LCBjYWNoZSk7Cj4gPiAgICAgICAgIHVuc2lnbmVkIGxvbmcgZmxhZ3M7Cj4gPiArICAgICAgIHN0
+cnVjdCBrbWVtX2NhY2hlICpvYmpfY2FjaGUgPQo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAg
+Y2FjaGUgPyBjYWNoZSA6IHFsaW5rX3RvX2NhY2hlKHFsaW5rKTsKPiA+ICsgICAgICAgdm9pZCAq
+b2JqZWN0ID0gcWxpbmtfdG9fb2JqZWN0KHFsaW5rLCBvYmpfY2FjaGUpOwo+ID4gKwo+ID4gKyAg
+ICAgICBpZiAoSVNfRU5BQkxFRChDT05GSUdfS0FTQU5fU1dfVEFHUykpCj4gPiArICAgICAgICAg
+ICAgICAgcW9iamVjdF9mcmVlKHFsaW5rLCBjYWNoZSk7Cj4gPgo+ID4gICAgICAgICBpZiAoSVNf
+RU5BQkxFRChDT05GSUdfU0xBQikpCj4gPiAgICAgICAgICAgICAgICAgbG9jYWxfaXJxX3NhdmUo
+ZmxhZ3MpOwo+ID4KPiA+IC0gICAgICAgX19fY2FjaGVfZnJlZShjYWNoZSwgb2JqZWN0LCBfVEhJ
+U19JUF8pOwo+ID4gKyAgICAgICBfX19jYWNoZV9mcmVlKG9ial9jYWNoZSwgb2JqZWN0LCBfVEhJ
+U19JUF8pOwo+ID4KPiA+ICAgICAgICAgaWYgKElTX0VOQUJMRUQoQ09ORklHX1NMQUIpKQo+ID4g
+ICAgICAgICAgICAgICAgIGxvY2FsX2lycV9yZXN0b3JlKGZsYWdzKTsKPiA+IEBAIC0xNjAsMTEg
+KzE2OCw5IEBAIHN0YXRpYyB2b2lkIHFsaXN0X2ZyZWVfYWxsKHN0cnVjdCBxbGlzdF9oZWFkICpx
+LCBzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpCj4gPgo+ID4gICAgICAgICBxbGluayA9IHEtPmhl
+YWQ7Cj4gPiAgICAgICAgIHdoaWxlIChxbGluaykgewo+ID4gLSAgICAgICAgICAgICAgIHN0cnVj
+dCBrbWVtX2NhY2hlICpvYmpfY2FjaGUgPQo+ID4gLSAgICAgICAgICAgICAgICAgICAgICAgY2Fj
+aGUgPyBjYWNoZSA6IHFsaW5rX3RvX2NhY2hlKHFsaW5rKTsKPiA+ICAgICAgICAgICAgICAgICBz
+dHJ1Y3QgcWxpc3Rfbm9kZSAqbmV4dCA9IHFsaW5rLT5uZXh0Owo+ID4KPiA+IC0gICAgICAgICAg
+ICAgICBxbGlua19mcmVlKHFsaW5rLCBvYmpfY2FjaGUpOwo+ID4gKyAgICAgICAgICAgICAgIHFs
+aW5rX2ZyZWUocWxpbmssIGNhY2hlKTsKPiA+ICAgICAgICAgICAgICAgICBxbGluayA9IG5leHQ7
+Cj4gPiAgICAgICAgIH0KPiA+ICAgICAgICAgcWxpc3RfaW5pdChxKTsKPiA+IEBAIC0xODcsNyAr
+MTkzLDE4IEBAIHZvaWQgcXVhcmFudGluZV9wdXQoc3RydWN0IGthc2FuX2ZyZWVfbWV0YSAqaW5m
+bywgc3RydWN0IGttZW1fY2FjaGUgKmNhY2hlKQo+ID4gICAgICAgICBsb2NhbF9pcnFfc2F2ZShm
+bGFncyk7Cj4gPgo+ID4gICAgICAgICBxID0gdGhpc19jcHVfcHRyKCZjcHVfcXVhcmFudGluZSk7
+Cj4gPiAtICAgICAgIHFsaXN0X3B1dChxLCAmaW5mby0+cXVhcmFudGluZV9saW5rLCBjYWNoZS0+
+c2l6ZSk7Cj4gPiArICAgICAgIGlmIChJU19FTkFCTEVEKENPTkZJR19LQVNBTl9TV19UQUdTKSkg
+ewo+ID4gKyAgICAgICAgICAgICAgIHN0cnVjdCBxbGlzdF9ub2RlICpmcmVlX29ial9pbmZvID0g
+cW9iamVjdF9jcmVhdGUoaW5mbywgY2FjaGUpOwo+ID4gKwo+ID4gKyAgICAgICAgICAgICAgIGlm
+ICghZnJlZV9vYmpfaW5mbykgewo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgbG9jYWxfaXJx
+X3Jlc3RvcmUoZmxhZ3MpOwo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuOwo+ID4g
+KyAgICAgICAgICAgICAgIH0KPiA+ICsgICAgICAgICAgICAgICBxbGlzdF9wdXQocSwgZnJlZV9v
+YmpfaW5mbywgY2FjaGUtPnNpemUpOwo+ID4gKyAgICAgICB9IGVsc2Ugewo+ID4gKyAgICAgICAg
+ICAgICAgIHFsaXN0X3B1dChxLCAmaW5mby0+cXVhcmFudGluZV9saW5rLCBjYWNoZS0+c2l6ZSk7
+Cj4gPiArICAgICAgIH0KPiA+ICsKPiA+ICAgICAgICAgaWYgKHVubGlrZWx5KHEtPmJ5dGVzID4g
+UVVBUkFOVElORV9QRVJDUFVfU0laRSkpIHsKPiA+ICAgICAgICAgICAgICAgICBxbGlzdF9tb3Zl
+X2FsbChxLCAmdGVtcCk7Cj4gPgo+ID4gQEAgLTMyNywzICszNDQsNzkgQEAgdm9pZCBxdWFyYW50
+aW5lX3JlbW92ZV9jYWNoZShzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpCj4gPgo+ID4gICAgICAg
+ICBzeW5jaHJvbml6ZV9zcmN1KCZyZW1vdmVfY2FjaGVfc3JjdSk7Cj4gPiAgfQo+ID4gKwo+ID4g
+KyNpZmRlZiBDT05GSUdfS0FTQU5fU1dfVEFHUwo+ID4gK3N0YXRpYyBzdHJ1Y3Qga2FzYW5fYWxs
+b2NfbWV0YSBvYmplY3RfZnJlZV90cmFjazsKPiAKPiBUaGlzIGdsb2JhbCBpcyBhIGRpcnR5IHNv
+bHV0aW9uLiBJdCdzIGJldHRlciBwYXNzZWQgYXMgYXJndW1lbnQgdG8gdGhlCj4gcmVxdWlyZWQg
+ZnVuY3Rpb25zIHJhdGhlciB0aGFuIGZ1bmN0aW9ucyBsZWF2ZSBwYXJ0IG9mIHN0YXRlIGluIGEK
+PiBnbG9iYWwgYW5kIHNvbWVib2R5IHBpY2tzIGl0IHVwIGxhdGVyLgo+IApUaGFua3MgeW91ciBz
+dWdnZXN0aW9uLCB3ZSB3aWxsIGNoYW5nZSB0aGUgaW1wbGVtZW50YXRpb24gaGVyZS4KCgo+ID4g
+Kwo+ID4gK3N0cnVjdCBrYXNhbl9hbGxvY19tZXRhICpnZXRfb2JqZWN0X3RyYWNrKHZvaWQpCj4g
+PiArewo+ID4gKyAgICAgICByZXR1cm4gJm9iamVjdF9mcmVlX3RyYWNrOwo+ID4gK30KPiA+ICsK
+PiA+ICtzdGF0aWMgYm9vbCBxbGlzdF9maW5kX29iamVjdChzdHJ1Y3QgcWxpc3RfaGVhZCAqZnJv
+bSwgdm9pZCAqYWRkcikKPiA+ICt7Cj4gPiArICAgICAgIHN0cnVjdCBxbGlzdF9ub2RlICpjdXJy
+Owo+ID4gKyAgICAgICBzdHJ1Y3QgcWxpc3Rfb2JqZWN0ICpjdXJyX29iajsKPiA+ICsKPiA+ICsg
+ICAgICAgaWYgKHVubGlrZWx5KHFsaXN0X2VtcHR5KGZyb20pKSkKPiA+ICsgICAgICAgICAgICAg
+ICByZXR1cm4gZmFsc2U7Cj4gPiArCj4gPiArICAgICAgIGN1cnIgPSBmcm9tLT5oZWFkOwo+ID4g
+KyAgICAgICB3aGlsZSAoY3Vycikgewo+ID4gKyAgICAgICAgICAgICAgIHN0cnVjdCBxbGlzdF9u
+b2RlICpuZXh0ID0gY3Vyci0+bmV4dDsKPiA+ICsKPiA+ICsgICAgICAgICAgICAgICBjdXJyX29i
+aiA9IGN1cnItPnFvYmplY3Q7Cj4gPiArICAgICAgICAgICAgICAgaWYgKHVubGlrZWx5KCgodW5z
+aWduZWQgbG9uZylhZGRyID49IGN1cnJfb2JqLT5hZGRyKQo+ID4gKyAgICAgICAgICAgICAgICAg
+ICAgICAgJiYgKCh1bnNpZ25lZCBsb25nKWFkZHIgPAo+ID4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIChjdXJyX29iai0+YWRkciArIGN1cnJfb2JqLT5zaXplKSkpKSB7
+Cj4gPiArICAgICAgICAgICAgICAgICAgICAgICBvYmplY3RfZnJlZV90cmFjayA9IGN1cnJfb2Jq
+LT5mcmVlX3RyYWNrOwo+ID4gKwo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHRy
+dWU7Cj4gPiArICAgICAgICAgICAgICAgfQo+ID4gKwo+ID4gKyAgICAgICAgICAgICAgIGN1cnIg
+PSBuZXh0Owo+ID4gKyAgICAgICB9Cj4gPiArICAgICAgIHJldHVybiBmYWxzZTsKPiA+ICt9Cj4g
+PiArCj4gPiArc3RhdGljIGludCBwZXJfY3B1X2ZpbmRfb2JqZWN0KHZvaWQgKmFyZykKPiA+ICt7
+Cj4gPiArICAgICAgIHZvaWQgKmFkZHIgPSBhcmc7Cj4gPiArICAgICAgIHN0cnVjdCBxbGlzdF9o
+ZWFkICpxOwo+ID4gKwo+ID4gKyAgICAgICBxID0gdGhpc19jcHVfcHRyKCZjcHVfcXVhcmFudGlu
+ZSk7Cj4gPiArICAgICAgIHJldHVybiBxbGlzdF9maW5kX29iamVjdChxLCBhZGRyKTsKPiA+ICt9
+Cj4gPiArCj4gPiArc3RydWN0IGNwdW1hc2sgY3B1X2FsbG93ZWRfbWFzayBfX3JlYWRfbW9zdGx5
+Owo+ID4gKwo+ID4gK2Jvb2wgcXVhcmFudGluZV9maW5kX29iamVjdCh2b2lkICphZGRyKQo+ID4g
+K3sKPiA+ICsgICAgICAgdW5zaWduZWQgbG9uZyBmbGFncywgaTsKPiA+ICsgICAgICAgYm9vbCBm
+aW5kID0gZmFsc2U7Cj4gPiArICAgICAgIGludCBjcHU7Cj4gPiArCj4gPiArICAgICAgIGNwdW1h
+c2tfY29weSgmY3B1X2FsbG93ZWRfbWFzaywgY3B1X29ubGluZV9tYXNrKTsKPiA+ICsgICAgICAg
+Zm9yX2VhY2hfY3B1KGNwdSwgJmNwdV9hbGxvd2VkX21hc2spIHsKPiA+ICsgICAgICAgICAgICAg
+ICBmaW5kID0gc21wX2NhbGxfb25fY3B1KGNwdSwgcGVyX2NwdV9maW5kX29iamVjdCwgYWRkciwg
+dHJ1ZSk7Cj4gCj4gVGhlcmUgY2FuIGJlIG11bHRpcGxlIHFvYmplY3RzIGluIHRoZSBxdWFyYW50
+aW5lIGFzc29jaWF0ZWQgd2l0aCB0aGUKPiBhZGRyZXNzLCByaWdodD8gSWYgc28sIHdlIG5lZWQg
+dG8gZmluZCB0aGUgbGFzdCBvbmUgcmF0aGVyIHRoZW4gYQo+IHJhbmRvbSBvbmUuCj4gClRoZSBx
+b2JqZWN0IGluY2x1ZGVzIHRoZSBhZGRyZXNzIHdoaWNoIGhhcyB0YWcgYW5kIHJhbmdlLCBjb3Jy
+dXB0aW9uCmFkZHJlc3MgbXVzdCBiZSBzYXRpc2ZpZWQgd2l0aCB0aGUgc2FtZSB0YWcgYW5kIHdp
+dGhpbiBvYmplY3QgYWRkcmVzcwpyYW5nZSwgdGhlbiBpdCBpcyBmb3VuZCBpbiB0aGUgcXVhcmFu
+dGluZS4KSXQgc2hvdWxkIG5vdCBlYXN5IHRvIGdldCBtdWx0aXBsZSBxb2JqZWN0cyBoYXZlIHRo
+ZSBzYW1lIHRhZyBhbmQgd2l0aGluCm9iamVjdCBhZGRyZXNzIHJhbmdlLgoKCj4gPiArICAgICAg
+ICAgICAgICAgaWYgKGZpbmQpCj4gPiArICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gdHJ1
+ZTsKPiA+ICsgICAgICAgfQo+ID4gKwo+ID4gKyAgICAgICByYXdfc3Bpbl9sb2NrX2lycXNhdmUo
+JnF1YXJhbnRpbmVfbG9jaywgZmxhZ3MpOwo+ID4gKyAgICAgICBmb3IgKGkgPSAwOyBpIDwgUVVB
+UkFOVElORV9CQVRDSEVTOyBpKyspIHsKPiA+ICsgICAgICAgICAgICAgICBpZiAocWxpc3RfZW1w
+dHkoJmdsb2JhbF9xdWFyYW50aW5lW2ldKSkKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIGNv
+bnRpbnVlOwo+ID4gKyAgICAgICAgICAgICAgIGZpbmQgPSBxbGlzdF9maW5kX29iamVjdCgmZ2xv
+YmFsX3F1YXJhbnRpbmVbaV0sIGFkZHIpOwo+ID4gKyAgICAgICAgICAgICAgIC8qIFNjYW5uaW5n
+IHdob2xlIHF1YXJhbnRpbmUgY2FuIHRha2UgYSB3aGlsZS4gKi8KPiA+ICsgICAgICAgICAgICAg
+ICByYXdfc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmcXVhcmFudGluZV9sb2NrLCBmbGFncyk7Cj4g
+PiArICAgICAgICAgICAgICAgY29uZF9yZXNjaGVkKCk7Cj4gPiArICAgICAgICAgICAgICAgcmF3
+X3NwaW5fbG9ja19pcnFzYXZlKCZxdWFyYW50aW5lX2xvY2ssIGZsYWdzKTsKPiA+ICsgICAgICAg
+fQo+ID4gKyAgICAgICByYXdfc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmcXVhcmFudGluZV9sb2Nr
+LCBmbGFncyk7Cj4gPiArCj4gPiArICAgICAgIHN5bmNocm9uaXplX3NyY3UoJnJlbW92ZV9jYWNo
+ZV9zcmN1KTsKPiA+ICsKPiA+ICsgICAgICAgcmV0dXJuIGZpbmQ7Cj4gPiArfQo+ID4gKyNlbmRp
+Zgo+ID4gZGlmZiAtLWdpdCBhL21tL2thc2FuL3JlcG9ydC5jIGIvbW0va2FzYW4vcmVwb3J0LmMK
+PiA+IGluZGV4IGNhOTQxOGZlOTIzMi4uOWNmYWJmMmYwYzQwIDEwMDY0NAo+ID4gLS0tIGEvbW0v
+a2FzYW4vcmVwb3J0LmMKPiA+ICsrKyBiL21tL2thc2FuL3JlcG9ydC5jCj4gPiBAQCAtMTUwLDE4
+ICsxNTAsMjYgQEAgc3RhdGljIHZvaWQgZGVzY3JpYmVfb2JqZWN0X2FkZHIoc3RydWN0IGttZW1f
+Y2FjaGUgKmNhY2hlLCB2b2lkICpvYmplY3QsCj4gPiAgfQo+ID4KPiA+ICBzdGF0aWMgdm9pZCBk
+ZXNjcmliZV9vYmplY3Qoc3RydWN0IGttZW1fY2FjaGUgKmNhY2hlLCB2b2lkICpvYmplY3QsCj4g
+PiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IHZvaWQgKmFkZHIpCj4gPiAr
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0IHZvaWQgKnRhZ2dlZF9hZGRyKQo+
+ID4gIHsKPiA+ICsgICAgICAgdm9pZCAqdW50YWdnZWRfYWRkciA9IHJlc2V0X3RhZyh0YWdnZWRf
+YWRkcik7Cj4gPiAgICAgICAgIHN0cnVjdCBrYXNhbl9hbGxvY19tZXRhICphbGxvY19pbmZvID0g
+Z2V0X2FsbG9jX2luZm8oY2FjaGUsIG9iamVjdCk7Cj4gPgo+ID4gICAgICAgICBpZiAoY2FjaGUt
+PmZsYWdzICYgU0xBQl9LQVNBTikgewo+ID4gLSAgICAgICAgICAgICAgIHByaW50X3RyYWNrKCZh
+bGxvY19pbmZvLT5hbGxvY190cmFjaywgIkFsbG9jYXRlZCIpOwo+ID4gLSAgICAgICAgICAgICAg
+IHByX2VycigiXG4iKTsKPiA+IC0gICAgICAgICAgICAgICBwcmludF90cmFjaygmYWxsb2NfaW5m
+by0+ZnJlZV90cmFjaywgIkZyZWVkIik7Cj4gPiAtICAgICAgICAgICAgICAgcHJfZXJyKCJcbiIp
+Owo+ID4gKyAgICAgICAgICAgICAgIGlmIChJU19FTkFCTEVEKENPTkZJR19LQVNBTl9TV19UQUdT
+KSAmJgo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgcXVhcmFudGluZV9maW5kX29iamVjdCgo
+dm9pZCAqKXRhZ2dlZF9hZGRyKSkgewo+IAo+IENhbid0IHRoaXMgYmUgYW4gb3V0LW9mLWJvdW5k
+IGV2ZW4gaWYgd2UgZmluZCB0aGUgb2JqZWN0IGluIHF1YXJhbnRpbmU/Cj4gRm9yIGV4YW1wbGUs
+IGlmIHdlJ3ZlIGZyZWVkIGFuIG9iamVjdCwgdGhlbiByZWFsbG9jYXRlZCBhbmQgYWNjZXNzZWQK
+PiBvdXQtb2YtYm91bmRzIHdpdGhpbiB0aGUgb2JqZWN0IGJvdW5kcz8KPiBPdmVyYWxsIHN1Z2dl
+c3RpbmcgdGhhdCB0aGlzIGlzIGEgdXNlLWFmdGVyLWZyZWUgcmF0aGVyIHRoYW4KPiBvdXQtb2Yt
+Ym91bmRzIHdpdGhvdXQgcmVkem9uZXMgYW5kIHF1YXJhbnRpbmluZyB0aGUgb2JqZWN0IGl0c2Vs
+ZiBpcwo+IHF1aXRlIGltcHJlY2lzZS4gV2UgY2FuIGNvbmZ1c2UgYSB1c2VyIGV2ZW4gbW9yZS4u
+Lgo+IAp0aGUgcW9iamVjdCBzdG9yZXMgb2JqZWN0IHJhbmdlIGFuZCBhZGRyZXNzIHdoaWNoIGhh
+cyB0YWcsIGV2ZW4gaWYKdGhlIG9iamVjdCByZWFsbG9jYXRlIGFuZCBhY2Nlc3NlZCBvdXQtb2Yt
+Ym91bmRzLCB0aGVuIG5ldyBvYmplY3QgYW5kCm9sZCBvYmplY3QgaW4gcXVhcmFudGluZSBzaG91
+bGQgYmUgZGlmZmVyZW50IHRhZyB2YWx1ZSwgc28gaXQgc2hvdWxkIGJlCm5vIGZvdW5kIGluIHF1
+YXJhbnRpbmUuCgoKPiAKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIGFsbG9jX2luZm8gPSBn
+ZXRfb2JqZWN0X3RyYWNrKCk7Cj4gPiArICAgICAgICAgICAgICAgICAgICAgICBwcmludF90cmFj
+aygmYWxsb2NfaW5mby0+ZnJlZV90cmFjaywgIkZyZWVkIik7Cj4gPiArICAgICAgICAgICAgICAg
+ICAgICAgICBwcl9lcnIoIlxuIik7Cj4gPiArICAgICAgICAgICAgICAgfSBlbHNlIHsKPiA+ICsg
+ICAgICAgICAgICAgICAgICAgICAgIHByaW50X3RyYWNrKCZhbGxvY19pbmZvLT5hbGxvY190cmFj
+aywgIkFsbG9jYXRlZCIpOwo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgcHJfZXJyKCJcbiIp
+Owo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgcHJpbnRfdHJhY2soJmFsbG9jX2luZm8tPmZy
+ZWVfdHJhY2ssICJGcmVlZCIpOwo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgcHJfZXJyKCJc
+biIpOwo+ID4gKyAgICAgICAgICAgICAgIH0KPiA+ICAgICAgICAgfQo+ID4KPiA+IC0gICAgICAg
+ZGVzY3JpYmVfb2JqZWN0X2FkZHIoY2FjaGUsIG9iamVjdCwgYWRkcik7Cj4gPiArICAgICAgIGRl
+c2NyaWJlX29iamVjdF9hZGRyKGNhY2hlLCBvYmplY3QsIHVudGFnZ2VkX2FkZHIpOwo+ID4gIH0K
+PiA+Cj4gPiAgc3RhdGljIGlubGluZSBib29sIGtlcm5lbF9vcl9tb2R1bGVfYWRkcihjb25zdCB2
+b2lkICphZGRyKQo+ID4gQEAgLTE4MCwyMyArMTg4LDI1IEBAIHN0YXRpYyBpbmxpbmUgYm9vbCBp
+bml0X3Rhc2tfc3RhY2tfYWRkcihjb25zdCB2b2lkICphZGRyKQo+ID4gICAgICAgICAgICAgICAg
+ICAgICAgICAgc2l6ZW9mKGluaXRfdGhyZWFkX3VuaW9uLnN0YWNrKSk7Cj4gPiAgfQo+ID4KPiA+
+IC1zdGF0aWMgdm9pZCBwcmludF9hZGRyZXNzX2Rlc2NyaXB0aW9uKHZvaWQgKmFkZHIpCj4gPiAr
+c3RhdGljIHZvaWQgcHJpbnRfYWRkcmVzc19kZXNjcmlwdGlvbih2b2lkICp0YWdnZWRfYWRkcikK
+PiA+ICB7Cj4gPiAtICAgICAgIHN0cnVjdCBwYWdlICpwYWdlID0gYWRkcl90b19wYWdlKGFkZHIp
+Owo+ID4gKyAgICAgICB2b2lkICp1bnRhZ2dlZF9hZGRyID0gcmVzZXRfdGFnKHRhZ2dlZF9hZGRy
+KTsKPiA+ICsgICAgICAgc3RydWN0IHBhZ2UgKnBhZ2UgPSBhZGRyX3RvX3BhZ2UodW50YWdnZWRf
+YWRkcik7Cj4gPgo+ID4gICAgICAgICBkdW1wX3N0YWNrKCk7Cj4gPiAgICAgICAgIHByX2Vycigi
+XG4iKTsKPiA+Cj4gPiAgICAgICAgIGlmIChwYWdlICYmIFBhZ2VTbGFiKHBhZ2UpKSB7Cj4gPiAg
+ICAgICAgICAgICAgICAgc3RydWN0IGttZW1fY2FjaGUgKmNhY2hlID0gcGFnZS0+c2xhYl9jYWNo
+ZTsKPiA+IC0gICAgICAgICAgICAgICB2b2lkICpvYmplY3QgPSBuZWFyZXN0X29iaihjYWNoZSwg
+cGFnZSwgYWRkcik7Cj4gPiArICAgICAgICAgICAgICAgdm9pZCAqb2JqZWN0ID0gbmVhcmVzdF9v
+YmooY2FjaGUsIHBhZ2UsIHVudGFnZ2VkX2FkZHIpOwo+ID4KPiA+IC0gICAgICAgICAgICAgICBk
+ZXNjcmliZV9vYmplY3QoY2FjaGUsIG9iamVjdCwgYWRkcik7Cj4gPiArICAgICAgICAgICAgICAg
+ZGVzY3JpYmVfb2JqZWN0KGNhY2hlLCBvYmplY3QsIHRhZ2dlZF9hZGRyKTsKPiA+ICAgICAgICAg
+fQo+ID4KPiA+IC0gICAgICAgaWYgKGtlcm5lbF9vcl9tb2R1bGVfYWRkcihhZGRyKSAmJiAhaW5p
+dF90YXNrX3N0YWNrX2FkZHIoYWRkcikpIHsKPiA+ICsgICAgICAgaWYgKGtlcm5lbF9vcl9tb2R1
+bGVfYWRkcih1bnRhZ2dlZF9hZGRyKSAmJgo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgIWlu
+aXRfdGFza19zdGFja19hZGRyKHVudGFnZ2VkX2FkZHIpKSB7Cj4gPiAgICAgICAgICAgICAgICAg
+cHJfZXJyKCJUaGUgYnVnZ3kgYWRkcmVzcyBiZWxvbmdzIHRvIHRoZSB2YXJpYWJsZTpcbiIpOwo+
+ID4gLSAgICAgICAgICAgICAgIHByX2VycigiICVwU1xuIiwgYWRkcik7Cj4gPiArICAgICAgICAg
+ICAgICAgcHJfZXJyKCIgJXBTXG4iLCB1bnRhZ2dlZF9hZGRyKTsKPiA+ICAgICAgICAgfQo+ID4K
+PiA+ICAgICAgICAgaWYgKHBhZ2UpIHsKPiA+IEBAIC0zMTQsNyArMzI0LDcgQEAgdm9pZCBrYXNh
+bl9yZXBvcnQodW5zaWduZWQgbG9uZyBhZGRyLCBzaXplX3Qgc2l6ZSwKPiA+ICAgICAgICAgcHJf
+ZXJyKCJcbiIpOwo+ID4KPiA+ICAgICAgICAgaWYgKGFkZHJfaGFzX3NoYWRvdyh1bnRhZ2dlZF9h
+ZGRyKSkgewo+ID4gLSAgICAgICAgICAgICAgIHByaW50X2FkZHJlc3NfZGVzY3JpcHRpb24odW50
+YWdnZWRfYWRkcik7Cj4gPiArICAgICAgICAgICAgICAgcHJpbnRfYWRkcmVzc19kZXNjcmlwdGlv
+bih0YWdnZWRfYWRkcik7Cj4gPiAgICAgICAgICAgICAgICAgcHJfZXJyKCJcbiIpOwo+ID4gICAg
+ICAgICAgICAgICAgIHByaW50X3NoYWRvd19mb3JfYWRkcmVzcyhpbmZvLmZpcnN0X2JhZF9hZGRy
+KTsKPiA+ICAgICAgICAgfSBlbHNlIHsKPiA+IGRpZmYgLS1naXQgYS9tbS9rYXNhbi90YWdzLmMg
+Yi9tbS9rYXNhbi90YWdzLmMKPiA+IGluZGV4IDYzZmNhMzE3MjY1OS4uZmE1ZDFlMjkwMDNkIDEw
+MDY0NAo+ID4gLS0tIGEvbW0va2FzYW4vdGFncy5jCj4gPiArKysgYi9tbS9rYXNhbi90YWdzLmMK
+PiA+IEBAIC0xMjQsNiArMTI0LDcwIEBAIHZvaWQgY2hlY2tfbWVtb3J5X3JlZ2lvbih1bnNpZ25l
+ZCBsb25nIGFkZHIsIHNpemVfdCBzaXplLCBib29sIHdyaXRlLAo+ID4gICAgICAgICB9Cj4gPiAg
+fQo+ID4KPiA+ICtpbnQgcW9iamVjdF9hZGRfc2l6ZSh2b2lkKQo+ID4gK3sKPiA+ICsgICAgICAg
+cmV0dXJuIHNpemVvZihzdHJ1Y3QgcWxpc3Rfb2JqZWN0KTsKPiAKPiBTaG91bGRuJ3QgdGhpcyBh
+bHNvIGFjY291bnQgZm9yIHFsaXN0X25vZGU/Cj4gCnllcywgd2Ugd2lsbCBjb3VudCBpdC4KCgo+
+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgc3RydWN0IGttZW1fY2FjaGUgKnFvYmplY3RfdG9fY2Fj
+aGUoc3RydWN0IHFsaXN0X29iamVjdCAqcW9iamVjdCkKPiA+ICt7Cj4gPiArICAgICAgIHJldHVy
+biB2aXJ0X3RvX2hlYWRfcGFnZShxb2JqZWN0KS0+c2xhYl9jYWNoZTsKPiA+ICt9Cj4gPiArCj4g
+PiArc3RydWN0IHFsaXN0X25vZGUgKnFvYmplY3RfY3JlYXRlKHN0cnVjdCBrYXNhbl9mcmVlX21l
+dGEgKmluZm8sCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICBzdHJ1Y3Qga21lbV9jYWNoZSAqY2FjaGUpCj4gPiArewo+ID4gKyAgICAgICBzdHJ1Y3Qg
+cWxpc3Rfbm9kZSAqZnJlZV9vYmpfaW5mbzsKPiA+ICsgICAgICAgc3RydWN0IHFsaXN0X29iamVj
+dCAqcW9iamVjdF9pbmZvOwo+ID4gKyAgICAgICBzdHJ1Y3Qga2FzYW5fYWxsb2NfbWV0YSAqb2Jq
+ZWN0X3RyYWNrOwo+ID4gKyAgICAgICB2b2lkICpvYmplY3Q7Cj4gPiArCj4gPiArICAgICAgIG9i
+amVjdCA9ICgodm9pZCAqKWluZm8pIC0gY2FjaGUtPmthc2FuX2luZm8uZnJlZV9tZXRhX29mZnNl
+dDsKPiA+ICsgICAgICAgcW9iamVjdF9pbmZvID0ga21hbGxvYyhzaXplb2Yoc3RydWN0IHFsaXN0
+X29iamVjdCksIEdGUF9OT1dBSVQpOwo+ID4gKyAgICAgICBpZiAoIXFvYmplY3RfaW5mbykKPiA+
+ICsgICAgICAgICAgICAgICByZXR1cm4gTlVMTDsKPiA+ICsgICAgICAgcW9iamVjdF9pbmZvLT5h
+ZGRyID0gKHVuc2lnbmVkIGxvbmcpIG9iamVjdDsKPiA+ICsgICAgICAgcW9iamVjdF9pbmZvLT5z
+aXplID0gY2FjaGUtPm9iamVjdF9zaXplOwo+ID4gKyAgICAgICBvYmplY3RfdHJhY2sgPSAmcW9i
+amVjdF9pbmZvLT5mcmVlX3RyYWNrOwo+ID4gKyAgICAgICBzZXRfdHJhY2soJm9iamVjdF90cmFj
+ay0+ZnJlZV90cmFjaywgR0ZQX05PV0FJVCk7Cj4gPiArCj4gPiArICAgICAgIGZyZWVfb2JqX2lu
+Zm8gPSBrbWFsbG9jKHNpemVvZihzdHJ1Y3QgcWxpc3Rfbm9kZSksIEdGUF9OT1dBSVQpOwo+IAo+
+IFdoeSBkb24ndCB3ZSBhbGxvY2F0ZSBxbGlzdF9vYmplY3QgYW5kIHFsaXN0X25vZGUgaW4gYSBz
+aW5nbGUKPiBhbGxvY2F0aW9uPyBEb2luZyAyIGFsbG9jYXRpb25zIGlzIGJvdGggdW5uZWNlc3Nh
+cnkgc2xvdyBhbmQgbGVhZHMgdG8KPiBtb3JlIGNvbXBsZXggY29kZS4gV2UgbmVlZCB0byBhbGxv
+Y2F0ZSB0aGVtIHdpdGggYSBzaW5nbGUgYWxsb2NhdGlvbnMuCj4gQWxzbyBJIHRoaW5rIHRoZXkg
+c2hvdWxkIGJlIGFsbG9jYXRlZCBmcm9tIGEgZGVkaWNhdGVkIGNhY2hlIHRoYXQgb3B0cwo+IG91
+dCBvZiBxdWFyYW50aW5lPwo+IApTaW5nbGUgYWxsb2NhdGlvbiBpcyBnb29kIHN1Z2dlc3Rpb24s
+IGlmIHdlIG9ubHkgaGFzIG9uZSBhbGxvY2F0aW9uLgp0aGVuIHdlIG5lZWQgdG8gbW92ZSBhbGwg
+bWVtYmVyIG9mIHFsaXN0X29iamVjdCB0byBxbGlzdF9ub2RlPwoKc3RydWN0IHFsaXN0X29iamVj
+dCB7CiAgICB1bnNpZ25lZCBsb25nIGFkZHI7CiAgICB1bnNpZ25lZCBpbnQgc2l6ZTsKICAgIHN0
+cnVjdCBrYXNhbl9hbGxvY19tZXRhIGZyZWVfdHJhY2s7Cn07CnN0cnVjdCBxbGlzdF9ub2RlIHsK
+ICAgIHN0cnVjdCBxbGlzdF9vYmplY3QgKnFvYmplY3Q7CiAgICBzdHJ1Y3QgcWxpc3Rfbm9kZSAq
+bmV4dDsKfTsKCgpXZSBjYWxsIGNhbGwgX19fY2FjaGVfZnJlZSgpIHRvIGZyZWUgdGhlIHFvYmpl
+Y3QgYW5kIHFub2RlLCBpdCBzaG91bGQgYmUKb3V0IG9mIHF1YXJhbnRpbmU/CgoKVGhhbmtzLApX
+YWx0ZXIKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
