@@ -2,71 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDDAE2E173
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 17:45:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0071E2E225
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 18:20:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=9zVMi/oIagltrqORXdDvp8xXhSLaxiEzCe9BLTXAm1c=; b=BVW
-	ld6tHxAxe0kRmTTYuUVVU9MyztH1JIgMVNQ003vYWRGkCY3SCJ7C5wIxkd2pwnYTmD9t5d6tFM5/s
-	Xyq8t+a7gz17g6AgFN4bLJm0rmkJr/nasJmfiBCadsFZGuzgal6NW2kR6L2QPvAJ4nf1J+FaC6jd1
-	lf7FsjfcG1MgJOGF6PRsIGdqBgyNI9+Hv1sH+q3iiHGy0mnrwN7JmtVbWajo4C03d+btTrMkB5Pox
-	YOkJQLlQRqt6yijm4R5ZFXm4IokD+KQWJC48lcOYmKcqtreishIdrkyX23A+MzOYE3TwsqZFs+FRd
-	wljhSOIrpWs62Anjw3Wasnm8/kh7vfw==;
+	List-Owner; bh=JfecMD9o8gIfrxP9yY+FaUvpyBeObBdCcFflt3YGvwg=; b=SLvzpbUPyS7D15
+	bMbW6bV99rE7+OxG1/HHIMaLtfF7XJnpzx1aT+g6eHCds1eDQL8/D19RDu3wb3DA4IGg/S+qPpf28
+	w7jchTRWmpap2QQQ+6iqmzSIK/gRfi4hNwGNZXE1zhMXeMmkpYvNuQxTdznzikdcwji2QLXST1lar
+	0tn3XZlPno6G3JeW4C4QKWf5AinSnmM6g0CCipTjdYQLAXqJp4bv+ou+1pOSmnj639l3HFZbfsv5N
+	ib8MRa5dpizOoCMPJquXp3z+BeVLcAQjoAiVomN7cm1Xf9fknj45nE5IpbxbJIbWhMjpYJsyk8tHM
+	mVs4RQtEXrRoKKImPKNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW0lx-0007ww-Pn; Wed, 29 May 2019 15:45:49 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW0lq-0007rb-T0
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 15:45:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=AGzOto7qa/uRKqkLQ40iD6LHzhbRPnB+Ym6gwGx0xHU=; b=Qg0MbLUMOHLp
- wBdRzs7eszD66gPlCdHVCq7LgxQcfisF+SpHyCxmy3osZO3L/vACk+h26FHCqIMynZ99qS9bbpUxH
- 1dRO8t23yZz0kREcbxPI92e+oD++ZfujONLwxCHnZvi3lQCbAC/Xk2d48WGKxeaLTV41olNCC7TOY
- JoZ9c=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hW0le-00051q-J3; Wed, 29 May 2019 15:45:30 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id F1F06440046; Wed, 29 May 2019 16:45:29 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Georgii Staroselskii <georgii.staroselskii@emlid.com>
-Subject: Applied "ASoC: sun4i-codec: fix first delay on Speaker" to the asoc
- tree
-In-Reply-To: <1559040459-16488-1-git-send-email-georgii.staroselskii@emlid.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190529154529.F1F06440046@finisterre.sirena.org.uk>
-Date: Wed, 29 May 2019 16:45:29 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_084543_082640_B8909CC3 
-X-CRM114-Status: GOOD (  16.13  )
-X-Spam-Score: -0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+	id 1hW1J9-0002EJ-JB; Wed, 29 May 2019 16:20:07 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hW1J0-0002Dz-4p; Wed, 29 May 2019 16:19:58 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 0751D201CF1CB; Wed, 29 May 2019 18:19:56 +0200 (CEST)
+Date: Wed, 29 May 2019 18:19:55 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Will Deacon <will.deacon@arm.com>
+Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
+Message-ID: <20190529161955.GZ2623@hirez.programming.kicks-ass.net>
+References: <20190528140103.GT2623@hirez.programming.kicks-ass.net>
+ <20190528153224.GE20758@fuggles.cambridge.arm.com>
+ <20190528173228.GW2623@hirez.programming.kicks-ass.net>
+ <20190529091733.GA4485@fuggles.cambridge.arm.com>
+ <20190529101042.GN2623@hirez.programming.kicks-ass.net>
+ <20190529102022.GC4485@fuggles.cambridge.arm.com>
+ <20190529125557.GU2623@hirez.programming.kicks-ass.net>
+ <20190529130521.GA11023@fuggles.cambridge.arm.com>
+ <20190529132515.GW2623@hirez.programming.kicks-ass.net>
+ <20190529143510.GA11154@fuggles.cambridge.arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190529143510.GA11154@fuggles.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,96 +55,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, maxime.ripard@bootlin.com,
- dannym@scratchpost.org, tiwai@suse.com, lgirdwood@gmail.com, perex@perex.cz,
- georgii.staroselskii@emlid.com, wens@csie.org, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, Young Xiao <92siuyang@gmail.com>, mpe@ellerman.id.au,
+ jolsa@redhat.com, x86@kernel.org, linux@armlinux.org.uk, eranian@google.com,
+ linux-kernel@vger.kernel.org, acme@redhat.com, mingo@redhat.com, bp@alien8.de,
+ hpa@zytor.com, ravi.bangoria@linux.vnet.ibm.com, fweisbec@gmail.com,
+ linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Wed, May 29, 2019 at 03:35:10PM +0100, Will Deacon wrote:
+> On Wed, May 29, 2019 at 03:25:15PM +0200, Peter Zijlstra wrote:
+> > On Wed, May 29, 2019 at 02:05:21PM +0100, Will Deacon wrote:
+> > > On Wed, May 29, 2019 at 02:55:57PM +0200, Peter Zijlstra wrote:
+> > 
+> > > >  	if (user_mode(regs)) {
+> > > 
+> > > Hmm, so it just occurred to me that Mark's observation is that the regs
+> > > can be junk in some cases. In which case, should we be checking for
+> > > kthreads first?
+> > 
+> > task_pt_regs() can return garbage, but @regs is the exception (or
+> > perf_arch_fetch_caller_regs()) regs, and for those user_mode() had
+> > better be correct.
+> 
+> So what should we report for the idle task?
 
-   ASoC: sun4i-codec: fix first delay on Speaker
+If an interrupt hits the idle task, @regs would be !user_mode(regs),
+we'll find current->flags & PF_KTHREAD (idle not having passed through
+exec()) and therefore we'll take ABI_NONE for the user regs.
 
-has been applied to the asoc tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.2
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 1f2675f6655838aaf910f911fd0abc821e3ff3df Mon Sep 17 00:00:00 2001
-From: Georgii Staroselskii <georgii.staroselskii@emlid.com>
-Date: Tue, 28 May 2019 13:47:39 +0300
-Subject: [PATCH] ASoC: sun4i-codec: fix first delay on Speaker
-
-Allwinner DAC seems to have a delay in the Speaker audio routing. When
-playing a sound for the first time, the sound gets chopped. On a second
-play the sound is played correctly. After some time (~5s) the issue gets
-back.
-
-This commit seems to be fixing the same issue as bf14da7 but
-for another codepath.
-
-This is the DTS that was used to debug the problem.
-
-&codec {
-        allwinner,pa-gpios = <&r_pio 0 11 GPIO_ACTIVE_HIGH>; /* PL11 */
-        allwinner,audio-routing =
-                "Speaker", "LINEOUT";
-
-        status = "okay";
-}
-
-Signed-off-by: Georgii Staroselskii <georgii.staroselskii@emlid.com>
-Reviewed-by: Chen-Yu Tsai <wens@csie.org>
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/sunxi/sun4i-codec.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
-
-diff --git a/sound/soc/sunxi/sun4i-codec.c b/sound/soc/sunxi/sun4i-codec.c
-index 15d08e343b47..28d2f7713f8d 100644
---- a/sound/soc/sunxi/sun4i-codec.c
-+++ b/sound/soc/sunxi/sun4i-codec.c
-@@ -1329,6 +1329,15 @@ static int sun4i_codec_spk_event(struct snd_soc_dapm_widget *w,
- 	gpiod_set_value_cansleep(scodec->gpio_pa,
- 				 !!SND_SOC_DAPM_EVENT_ON(event));
- 
-+	if (SND_SOC_DAPM_EVENT_ON(event)) {
-+		/*
-+		 * Need a delay to wait for DAC to push the data. 700ms seems
-+		 * to be the best compromise not to feel this delay while
-+		 * playing a sound.
-+		 */
-+		msleep(700);
-+	}
-+
- 	return 0;
- }
- 
--- 
-2.20.1
-
+Or am I not getting it?
 
 _______________________________________________
 linux-arm-kernel mailing list
