@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCD142D8A0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:08:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F01BC2D8A1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 11:08:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9bMaw4CPqvAxlHSmfb61otBG5jUg1S5bVxz5jzKk3vo=; b=XiXbEhLOL7HHyDknT/diIdZcLM
-	cpiQDkhHwIWx4TV0FJQgfb/7EME66D9f912UPp1zYcj9Mfspxx1GQ3fDstVWG9SNf27B9y619YIVo
-	bEx9Ls9Ozlz8jdLcxhXYviwOO+tK/ReDZhaPDV2R6LBHAfX67dV2H0SAfe3vIzvc2bGpayvPI23ww
-	pXbPMzseDXfmndEKgcR92ySU5xqB0JdaQBHZBtXB9YefpPWCj3pgYcG87VEgGSgtdu8QirEEnY9h7
-	+XTOhvTgviR+4Xd2j0zY96sBVeeE3iuqdlhaOjB/UIXq/B48SvD1rHIVkuL8rlhuHtFW3ahnQcRud
-	rhj+wa/A==;
+	bh=UlZkHxflYfLrHxqiRkaL4K2Ju1ncx4H2sFnA8cr0Q2E=; b=JvzNxEA6fzBtmyJbydKFAA2yBT
+	jXIgSRy6XbBimKTtgfFxZz6PsqVbFP/78NxGOz1X1Pl72Awcoc2MF5U667idG5CkYXyh0HGzQMmYV
+	MNLcj40eqxvJxbtt882PKiQeFGxIl6qyT7GJiW6pmbGFxNUyT1nf/LWTmI9QfnVB/hjmnCwCMwPk1
+	haXcm0yC47rOt8ikHOK5CQnsqDWMzjHSKTRtjF+hYyY5IUcivsAAcKMmt1e1sYL02RZg9XyrZcalo
+	OX4VXB5nQoFomJ/FosTVsxua0tCs81n4sp1qZHhfZMCyKb50dARXeRXB49JPpL60RzwfYMRV7fW5A
+	SExzotlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVuZ9-0003Ri-0Q; Wed, 29 May 2019 09:08:11 +0000
+	id 1hVuZJ-0003fY-2M; Wed, 29 May 2019 09:08:21 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVuYE-0002X4-EV
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:07:16 +0000
+ id 1hVuYH-0002ZL-CA
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 09:07:23 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3ECB01A03D2;
- Wed, 29 May 2019 11:07:13 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1CF741A005A;
+ Wed, 29 May 2019 11:07:16 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8DCEE1A03D0;
- Wed, 29 May 2019 11:07:07 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 320F91A03CD;
+ Wed, 29 May 2019 11:07:10 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DB22C40307;
- Wed, 29 May 2019 17:06:59 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 26FF440309;
+ Wed, 29 May 2019 17:07:01 +0800 (SGT)
 From: yibin.gong@nxp.com
 To: robh@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  festevam@gmail.com, mark.rutland@arm.com, vkoul@kernel.org,
  dan.j.williams@intel.com
-Subject: [PATCH v3 4/8] dmaengine: fsl-edma-common: version check for v2
- instead
-Date: Wed, 29 May 2019 17:08:44 +0800
-Message-Id: <20190529090848.34350-5-yibin.gong@nxp.com>
+Subject: [PATCH v3 5/8] dmaengine: fsl-edma: add drvdata for vf610
+Date: Wed, 29 May 2019 17:08:45 +0800
+Message-Id: <20190529090848.34350-6-yibin.gong@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190529090848.34350-1-yibin.gong@nxp.com>
 References: <20190529090848.34350-1-yibin.gong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_020714_625268_D6953799 
-X-CRM114-Status: UNSURE (   7.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190529_020718_215440_878CBA08 
+X-CRM114-Status: GOOD (  13.41  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -81,65 +79,128 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Robin Gong <yibin.gong@nxp.com>
 
-The next v3 i.mx7ulp edma is based on v1, so change version
-check logic for v2 instead.
+There are some differences between vf610 and next i.mx7ulp. Put such
+differences into static driver data for distiguish easily in driver.
 
 Signed-off-by: Robin Gong <yibin.gong@nxp.com>
 ---
- drivers/dma/fsl-edma-common.c | 40 ++++++++++++++++++++--------------------
- 1 file changed, 20 insertions(+), 20 deletions(-)
+ drivers/dma/fsl-edma-common.h | 10 ++++++++++
+ drivers/dma/fsl-edma.c        | 36 +++++++++++++++++++++++++++---------
+ 2 files changed, 37 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/dma/fsl-edma-common.c b/drivers/dma/fsl-edma-common.c
-index bb24251..45d70d3 100644
---- a/drivers/dma/fsl-edma-common.c
-+++ b/drivers/dma/fsl-edma-common.c
-@@ -657,26 +657,26 @@ void fsl_edma_setup_regs(struct fsl_edma_engine *edma)
- 	edma->regs.erql = edma->membase + EDMA_ERQ;
- 	edma->regs.eeil = edma->membase + EDMA_EEI;
+diff --git a/drivers/dma/fsl-edma-common.h b/drivers/dma/fsl-edma-common.h
+index 21a9cfd..014ab74 100644
+--- a/drivers/dma/fsl-edma-common.h
++++ b/drivers/dma/fsl-edma-common.h
+@@ -7,6 +7,7 @@
+ #define _FSL_EDMA_COMMON_H_
  
--	edma->regs.serq = edma->membase + ((edma->version == v1) ?
--			EDMA_SERQ : EDMA64_SERQ);
--	edma->regs.cerq = edma->membase + ((edma->version == v1) ?
--			EDMA_CERQ : EDMA64_CERQ);
--	edma->regs.seei = edma->membase + ((edma->version == v1) ?
--			EDMA_SEEI : EDMA64_SEEI);
--	edma->regs.ceei = edma->membase + ((edma->version == v1) ?
--			EDMA_CEEI : EDMA64_CEEI);
--	edma->regs.cint = edma->membase + ((edma->version == v1) ?
--			EDMA_CINT : EDMA64_CINT);
--	edma->regs.cerr = edma->membase + ((edma->version == v1) ?
--			EDMA_CERR : EDMA64_CERR);
--	edma->regs.ssrt = edma->membase + ((edma->version == v1) ?
--			EDMA_SSRT : EDMA64_SSRT);
--	edma->regs.cdne = edma->membase + ((edma->version == v1) ?
--			EDMA_CDNE : EDMA64_CDNE);
--	edma->regs.intl = edma->membase + ((edma->version == v1) ?
--			EDMA_INTR : EDMA64_INTL);
--	edma->regs.errl = edma->membase + ((edma->version == v1) ?
--			EDMA_ERR : EDMA64_ERRL);
-+	edma->regs.serq = edma->membase + ((edma->version == v2) ?
-+			EDMA64_SERQ : EDMA_SERQ);
-+	edma->regs.cerq = edma->membase + ((edma->version == v2) ?
-+			EDMA64_CERQ : EDMA_CERQ);
-+	edma->regs.seei = edma->membase + ((edma->version == v2) ?
-+			EDMA64_SEEI : EDMA_SEEI);
-+	edma->regs.ceei = edma->membase + ((edma->version == v2) ?
-+			EDMA64_CEEI : EDMA_CEEI);
-+	edma->regs.cint = edma->membase + ((edma->version == v2) ?
-+			EDMA64_CINT : EDMA_CINT);
-+	edma->regs.cerr = edma->membase + ((edma->version == v2) ?
-+			EDMA64_CERR : EDMA_CERR);
-+	edma->regs.ssrt = edma->membase + ((edma->version == v2) ?
-+			EDMA64_SSRT : EDMA_SSRT);
-+	edma->regs.cdne = edma->membase + ((edma->version == v2) ?
-+			EDMA64_CDNE : EDMA_CDNE);
-+	edma->regs.intl = edma->membase + ((edma->version == v2) ?
-+			EDMA64_INTL : EDMA_INTR);
-+	edma->regs.errl = edma->membase + ((edma->version == v2) ?
-+			EDMA64_ERRL : EDMA_ERR);
+ #include <linux/dma-direction.h>
++#include <linux/platform_device.h>
+ #include "virt-dma.h"
  
- 	if (edma->version == v2) {
- 		edma->regs.erqh = edma->membase + EDMA64_ERQH;
+ #define EDMA_CR_EDBG		BIT(1)
+@@ -140,6 +141,14 @@ enum edma_version {
+ 	v2, /* 64ch Coldfire */
+ };
+ 
++struct fsl_edma_drvdata {
++	enum edma_version	version;
++	u32	dmamuxs;
++	bool	has_dmaclk;
++	int	(*setup_irq)(struct platform_device *pdev,
++			     struct fsl_edma_engine *fsl_edma);
++};
++
+ struct fsl_edma_engine {
+ 	struct dma_device	dma_dev;
+ 	void __iomem		*membase;
+@@ -147,6 +156,7 @@ struct fsl_edma_engine {
+ 	struct clk		*muxclk[DMAMUX_NR];
+ 	u32			dmamux_nr;
+ 	struct mutex		fsl_edma_mutex;
++	const struct fsl_edma_drvdata *drvdata;
+ 	u32			n_chans;
+ 	int			txirq;
+ 	int			errirq;
+diff --git a/drivers/dma/fsl-edma.c b/drivers/dma/fsl-edma.c
+index 7b65ef4..cf18301 100644
+--- a/drivers/dma/fsl-edma.c
++++ b/drivers/dma/fsl-edma.c
+@@ -184,16 +184,39 @@ static void fsl_disable_clocks(struct fsl_edma_engine *fsl_edma, int nr_clocks)
+ 		clk_disable_unprepare(fsl_edma->muxclk[i]);
+ }
+ 
++static struct fsl_edma_drvdata vf610_data = {
++	.version = v1,
++	.dmamuxs = DMAMUX_NR,
++	.has_dmaclk = false,
++	.setup_irq = fsl_edma_irq_init,
++};
++
++static const struct of_device_id fsl_edma_dt_ids[] = {
++	{ .compatible = "fsl,vf610-edma", .data = &vf610_data},
++	{ /* sentinel */ }
++};
++MODULE_DEVICE_TABLE(of, fsl_edma_dt_ids);
++
+ static int fsl_edma_probe(struct platform_device *pdev)
+ {
++	const struct of_device_id *of_id =
++			of_match_device(fsl_edma_dt_ids, &pdev->dev);
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct fsl_edma_engine *fsl_edma;
++	const struct fsl_edma_drvdata *drvdata = NULL;
+ 	struct fsl_edma_chan *fsl_chan;
+ 	struct edma_regs *regs;
+ 	struct resource *res;
+ 	int len, chans;
+ 	int ret, i;
+ 
++	if (of_id)
++		drvdata = of_id->data;
++	if (!drvdata) {
++		dev_err(&pdev->dev, "unable to find driver data\n");
++		return -EINVAL;
++	}
++
+ 	ret = of_property_read_u32(np, "dma-channels", &chans);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "Can't get dma-channels.\n");
+@@ -205,8 +228,9 @@ static int fsl_edma_probe(struct platform_device *pdev)
+ 	if (!fsl_edma)
+ 		return -ENOMEM;
+ 
+-	fsl_edma->version = v1;
+-	fsl_edma->dmamux_nr = DMAMUX_NR;
++	fsl_edma->drvdata = drvdata;
++	fsl_edma->version = drvdata->version;
++	fsl_edma->dmamux_nr = drvdata->dmamuxs;
+ 	fsl_edma->n_chans = chans;
+ 	mutex_init(&fsl_edma->fsl_edma_mutex);
+ 
+@@ -264,7 +288,7 @@ static int fsl_edma_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	edma_writel(fsl_edma, ~0, regs->intl);
+-	ret = fsl_edma_irq_init(pdev, fsl_edma);
++	ret = fsl_edma->drvdata->setup_irq(pdev, fsl_edma);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -383,12 +407,6 @@ static const struct dev_pm_ops fsl_edma_pm_ops = {
+ 	.resume_early   = fsl_edma_resume_early,
+ };
+ 
+-static const struct of_device_id fsl_edma_dt_ids[] = {
+-	{ .compatible = "fsl,vf610-edma", },
+-	{ /* sentinel */ }
+-};
+-MODULE_DEVICE_TABLE(of, fsl_edma_dt_ids);
+-
+ static struct platform_driver fsl_edma_driver = {
+ 	.driver		= {
+ 		.name	= "fsl-edma",
 -- 
 2.7.4
 
