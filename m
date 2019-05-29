@@ -2,62 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E53A2DCB8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:26:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04FBA2DCBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 May 2019 14:26:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=E+/1o1Slz94/K5uslsdMPDd/Mh5g8HWYcOKTkydXmig=; b=VkgfAVJnUSYzSI3inLM2eKAD8
-	nSE9Gyee/PVHE4wtEGSjHp9ST4juGIxrRwTEF/KbcLsT9QR1SXNNCrP5Uz/upgBnZmxOz16XS8FZ+
-	ES1ZYQknUZk07Zp/ONwsKzwnV34ffcQY2cltntYuIFQ0CTfqwHx9c8dKZSo35T8ZN62KpNhHdXjn9
-	d7dDESA96a6yzpdb/O/wY7oFzWBGuuJEK2sOo+SQ9DHRVx3Ff1fSdreFPptU5NejmUCO4EN4Kc1OW
-	DNwfSZTRiEDdpmd7CCIKLnp/c0nWy3C+ViwEFz+OC3p/L2cM0tWzT/Y5PUrT6a46bFdVziD+4q5nM
-	oGhlxGmwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PNzZkzyxotkTFvvd3LEC1P8EcrJBgn+VBAU0/kolVMk=; b=sqz3dloQtl+3FG
+	BF7SGYtHd6WBhHMNoc5aImMa9454v+T3ggAFaPT+ITCNyujJxxBPWRUFFWuvbOFIXlJVLhgcqnoG1
+	Xnm3eX5wp/ZcBS+FqtSWQ5KUuTf+oywcFVjDvvMMD6n1BKyPl96P754N9GGgA/38/J2SUzp2IljMS
+	fpArsgjF+sSf20AOVmvPx5HRxcXNjMYSTH8h+QXLd9HvFvjgq9pLgzaFzL2vtmX62qAp5SbAsRVhj
+	zR0HyNFkyYPcnndeiZ+MUmeUUQong2XovcmVueKVDGCRG8XOvVHA3la/fryB6/I0weq0YEK3CQzsw
+	KxjYxu8nLJDt/M6yp5tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVxea-00043q-EC; Wed, 29 May 2019 12:26:00 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVxeT-000439-S1
- for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:25:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B74B80D;
- Wed, 29 May 2019 05:25:49 -0700 (PDT)
-Received: from [10.1.196.108] (e121650-lin.cambridge.arm.com [10.1.196.108])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0206E3F59C;
- Wed, 29 May 2019 05:25:47 -0700 (PDT)
-Subject: Re: [RFC 4/7] arm64: pmu: Add function implementation to update event
- index in userpage.
-To: Robin Murphy <robin.murphy@arm.com>, Peter Zijlstra <peterz@infradead.org>
-References: <20190528150320.25953-1-raphael.gault@arm.com>
- <20190528150320.25953-5-raphael.gault@arm.com>
- <20190529094659.GK2623@hirez.programming.kicks-ass.net>
- <42a937dd-5cf6-6738-6f69-005fce64138f@arm.com>
- <d6f40c6c-6a73-bd7f-e384-050bd9428631@arm.com>
-From: Raphael Gault <raphael.gault@arm.com>
-Message-ID: <0100f2bd-7940-0b81-4c03-205b295a048f@arm.com>
-Date: Wed, 29 May 2019 13:25:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <d6f40c6c-6a73-bd7f-e384-050bd9428631@arm.com>
+	id 1hVxfQ-0004M2-Ow; Wed, 29 May 2019 12:26:52 +0000
+Received: from mail-am5eur03on0604.outbound.protection.outlook.com
+ ([2a01:111:f400:fe08::604]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVxfJ-0004JY-0O
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 May 2019 12:26:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DEm8vd9qbgi3G+kfZFeysPFqBpQPa5ugi6q1nbqYcc8=;
+ b=T6C7rqkB0r7z4I2fJkPFxvcQUwCplk3W2DY2lmv91LnWb3vE1E8wFS91PK4edczSrHYJb0WeAHHlXMMtsjMSQq7ev5Kqhg9a70SGODJWzNBB83ZmVxbq1qkEmaVFLI/li+JS5o5Blj/viz36EKDfUcgLt5nxtgdU+cd9fP6V/UU=
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
+ AM0PR04MB6049.eurprd04.prod.outlook.com (20.179.32.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.17; Wed, 29 May 2019 12:26:39 +0000
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::c19b:5964:bfcb:96a8]) by AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::c19b:5964:bfcb:96a8%7]) with mapi id 15.20.1922.021; Wed, 29 May 2019
+ 12:26:39 +0000
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Mike Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
+ Shawn Guo <shawnguo@kernel.org>
+Subject: [RESEND v2 00/18] clk: imx: Switch the imx6 and imx7 to clk_hw based
+ API
+Thread-Topic: [RESEND v2 00/18] clk: imx: Switch the imx6 and imx7 to clk_hw
+ based API
+Thread-Index: AQHVFhnD3RH0i/2Cgk+sGoC+IpMb+g==
+Date: Wed, 29 May 2019 12:26:38 +0000
+Message-ID: <1559132773-12884-1-git-send-email-abel.vesa@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=abel.vesa@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: a3b61161-3443-419e-d6a9-08d6e430e62c
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB6049; 
+x-ms-traffictypediagnostic: AM0PR04MB6049:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <AM0PR04MB6049D7ADC92066999155BD4EF61F0@AM0PR04MB6049.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5236;
+x-forefront-prvs: 0052308DC6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(199004)(189003)(6436002)(476003)(73956011)(53936002)(486006)(76116006)(186003)(5660300002)(102836004)(66446008)(66476007)(66946007)(26005)(44832011)(64756008)(36756003)(91956017)(66556008)(8936002)(966005)(2616005)(66066001)(99286004)(256004)(6116002)(6512007)(498600001)(3846002)(6306002)(68736007)(305945005)(81156014)(81166006)(6486002)(6506007)(54906003)(110136005)(2906002)(7736002)(8676002)(14454004)(86362001)(71190400001)(71200400001)(25786009)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6049;
+ H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: C5P12dYUaQXQkWvxkwqWYLRx8Hpg/f5tHM1t8iKtU2yz2pmY+ly08AiIca7D582oOPOlSrZXgeGvGdMJL1qTTj8OjSDllVIzBmnk5wZETrYfo5WzDma6RevvHWSsAX3VodNHYmRBO87VetsuGd2V0nuuL1sax5k2E39vR8AKt1p0i3u4YiNmdQtBU8NzeTiQ9VxRXUqZUtPhwYtA3/tWq8NSRXV2KQLqgFOPtodLPZyTm7abr6JnTjJap41mU04Qs/URXLiHO9yzIgSKsB0/TDlIoN1yswT4o5WlHOsuyi6tCNmjyUFiSdvU/lre3Eh/Y67+XQgcVFP+5oYq1SGVls+whslqgq8pNMtOtc1NKLEVqytQGdRnBG7mNbyI7s+P8CeleqXJwwplsDH8CLOAuOdZZI2EeOZWiJKlG5L9Ebk=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a3b61161-3443-419e-d6a9-08d6e430e62c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 May 2019 12:26:38.9925 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: abel.vesa@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_052553_912867_C13A012B 
-X-CRM114-Status: GOOD (  18.49  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190529_052645_071828_C8C94BB3 
+X-CRM114-Status: UNSURE (   6.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe08:0:0:0:604 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,38 +115,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, acme@kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Abel Vesa <abel.vesa@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUm9iaW4sIEhpIFBldGVyLAoKT24gNS8yOS8xOSAxMTo1MCBBTSwgUm9iaW4gTXVycGh5IHdy
-b3RlOgo+IE9uIDI5LzA1LzIwMTkgMTE6NDYsIFJhcGhhZWwgR2F1bHQgd3JvdGU6Cj4+IEhpIFBl
-dGVyLAo+Pgo+PiBPbiA1LzI5LzE5IDEwOjQ2IEFNLCBQZXRlciBaaWpsc3RyYSB3cm90ZToKPj4+
-IE9uIFR1ZSwgTWF5IDI4LCAyMDE5IGF0IDA0OjAzOjE3UE0gKzAxMDAsIFJhcGhhZWwgR2F1bHQg
-d3JvdGU6Cj4+Pj4gK3N0YXRpYyBpbnQgYXJtdjhwbXVfYWNjZXNzX2V2ZW50X2lkeChzdHJ1Y3Qg
-cGVyZl9ldmVudCAqZXZlbnQpCj4+Pj4gK3sKPj4+PiArwqDCoMKgIGlmICghKGV2ZW50LT5ody5m
-bGFncyAmIEFSTVBNVV9FTDBfUkRfQ05UUikpCj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHJldHVybiAw
-Owo+Pj4+ICsKPj4+PiArwqDCoMKgIC8qCj4+Pj4gK8KgwqDCoMKgICogV2UgcmVtYXAgdGhlIGN5
-Y2xlIGNvdW50ZXIgaW5kZXggdG8gMzIgdG8KPj4+PiArwqDCoMKgwqAgKiBtYXRjaCB0aGUgb2Zm
-c2V0IGFwcGxpZWQgdG8gdGhlIHJlc3Qgb2YKPj4+PiArwqDCoMKgwqAgKiB0aGUgY291bnRlciBp
-bmRlY2VzLgo+Pj4+ICvCoMKgwqDCoCAqLwo+Pj4+ICvCoMKgwqAgaWYgKGV2ZW50LT5ody5pZHgg
-PT0gQVJNVjhfSURYX0NZQ0xFX0NPVU5URVIpCj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHJldHVybiAz
-MjsKPj4+PiArCj4+Pj4gK8KgwqDCoCByZXR1cm4gZXZlbnQtPmh3LmlkeDsKPj4+Cj4+PiBJcyB0
-aGVyZSBhIGd1YXJhbnRlZSBldmVudC0+aHcuaWR4IGlzIG5ldmVyIDA/IE9yIHNob3VsZCB5b3Us
-IGp1c3QgbGlrZQo+Pj4geDg2LCB1c2UgKzEgaGVyZT8KPj4+Cj4+Cj4+IFlvdSBhcmUgcmlnaHQs
-IEkgc2hvdWxkIHVzZSArMSBoZXJlLiBUaGFua3MgZm9yIHBvaW50aW5nIHRoYXQgb3V0Lgo+IAo+
-IElzbid0IHRoYXQgYWxyZWFkeSB0aGUgY2FzZSB0aG91Z2gsIHNpbmNlIHdlIHJlc2VydmUgaW5k
-ZXggMCBmb3IgdGhlIAo+IGN5Y2xlIGNvdW50ZXI/IEknbSBsb29raW5nIGF0IEFSTVY4X0lEWF9U
-T19DT1VOVEVSKCkgaGVyZS4uLgo+IAoKV2VsbCB0aGUgY3VycmVudCBiZWhhdmlvdXIgaXMgY29y
-cmVjdCBhbmQgdGFrZXMgY2FyZSBvZiB0aGUgemVybyBjYXNlIAp3aXRoIHRoZSBBUk1WOF9JRFhf
-Q1lDTEVfQ09VTlRFUiBjaGVjay4gQnV0IHVzaW5nIEFSTVY4X0lEWF9UT19DT1VOVEVSKCkgCmFu
-ZCBhZGQgMSB3b3VsZCBhbHNvIHdvcmsuIEhvd2V2ZXIgdGhpcyBzZWVtcyBpbmRlZWQgcmVkdW5k
-YW50IHdpdGggdGhlIApjdXJyZW50IHZhbHVlIGhlbGQgaW4gZXZlbnQtPmh3LmlkeC4KCj4gUm9i
-aW4uCgotLSAKUmFwaGFlbCBHYXVsdAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Resend for the following:
+
+https://lkml.org/lkml/2019/5/2/170
+
+Abel Vesa (18):
+  clk: imx: Add imx_obtain_fixed_clock clk_hw based variant
+  clk: imx6sx: Do not reparent to unregistered IMX6SX_CLK_AXI
+  clk: imx6q: Do not reparent uninitialized IMX6QDL_CLK_PERIPH2 clock
+  clk: imx: clk-busy: Switch to clk_hw based API
+  clk: imx: clk-cpu: Switch to clk_hw based API
+  clk: imx: clk-gate2: Switch to clk_hw based API
+  clk: imx: clk-pllv3: Switch to clk_hw based API
+  clk: imx: clk-pfd: Switch to clk_hw based API
+  clk: imx: clk-gate-exclusive: Switch to clk_hw based API
+  clk: imx: clk-fixup-div: Switch to clk_hw based API
+  clk: imx: clk-fixup-mux: Switch to clk_hw based API
+  clk: imx: Switch wrappers to clk_hw based API
+  clk: imx6q: Switch to clk_hw based API
+  clk: imx6sl: Switch to clk_hw based API
+  clk: imx6sx: Switch to clk_hw based API
+  clk: imx6ul: Switch to clk_hw based API
+  clk: imx7d: Switch to clk_hw based API
+  clk: imx6sll: Switch to clk_hw based API
+
+ drivers/clk/imx/clk-busy.c           |  30 +-
+ drivers/clk/imx/clk-cpu.c            |  14 +-
+ drivers/clk/imx/clk-fixup-div.c      |  15 +-
+ drivers/clk/imx/clk-fixup-mux.c      |  15 +-
+ drivers/clk/imx/clk-gate-exclusive.c |  17 +-
+ drivers/clk/imx/clk-gate2.c          |  14 +-
+ drivers/clk/imx/clk-imx6q.c          | 767 ++++++++++++++-------------
+ drivers/clk/imx/clk-imx6sl.c         | 404 +++++++-------
+ drivers/clk/imx/clk-imx6sll.c        | 430 +++++++--------
+ drivers/clk/imx/clk-imx6sx.c         | 656 +++++++++++------------
+ drivers/clk/imx/clk-imx6ul.c         | 574 ++++++++++----------
+ drivers/clk/imx/clk-imx7d.c          | 983 ++++++++++++++++++-----------------
+ drivers/clk/imx/clk-pfd.c            |  14 +-
+ drivers/clk/imx/clk-pllv3.c          |  14 +-
+ drivers/clk/imx/clk.c                |  11 +
+ drivers/clk/imx/clk.h                | 142 +++--
+ 16 files changed, 2151 insertions(+), 1949 deletions(-)
+
+-- 
+2.7.4
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
