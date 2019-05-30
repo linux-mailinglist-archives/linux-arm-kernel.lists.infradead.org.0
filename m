@@ -2,65 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0E3B2F981
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:34:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D0062F98D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:36:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2wb5XxX0ZTEuQy1yWAI7pdmUi/yzBiSDf1pkO1PVbMM=; b=s6XG3mj0TSXEjD
-	Xi9ZMoJ6Mheqy51EPVRJBSwsHo45u/hzEFB97j7cnjxb2iXwh1Mv7VyrXbtnbJVRMEDblez/lt7MN
-	MQJZl+gFXpk6DAWDOABUwW8c8338gcSMHxttfGzxQcBYZKd9M5nRWOjZQ4OfamOVMZ2ZbKS1D768v
-	IgjIgE2Ylv7CCgWoTMfomZOH2sZZX8qb17egFcFGYDtnc0k7tNnujaV587KN8nfYx4Gh/XuvfOV8T
-	mBWF1G8WTRTWY1UqrX6hSqPe6WDqlpQ/Yy7RS/lLHewybRuKuZ54wxRCuMuxhbQ1ryIGc9CLPoSEN
-	JEVHgnwT3atQP+LUxDug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9gcAQseW+LDcVrWeWjbVxmJI+esqRYjTjtaQ2QnyIbI=; b=Fs+LHBajwcPFe6
+	d1+LzO0AnJtguxPUGEqaFdF2UlQ8jZGlkFiGtIaupAgBXE8bCSuvVPf/SMIlC7sVfBou0q0NoovkE
+	2bzCxC8zatW3riNQOPhjnPLmoF5OTb2Ne2EihSZcyRGUXx+Im/hi4d+DFrhOw7R6fJteMzS/7rHzq
+	Hs5T+cFypo1gq+QfabnzmjlPdEb0YVJ0ybtbgEfbm4PXd0bfEpdPuEpbquG8E/loxo6diy08UiIZu
+	qTc9Afb7cntpBlqXztQOruUnkpZ+YGnivCKdTPqRr0AxE3l/kcg1QUcMgmKUsvmbx53y+tP/RZnmJ
+	PAXsuPk1cPKSXesMyxYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWHSM-0004Cr-Tn; Thu, 30 May 2019 09:34:42 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hWHU7-0005u7-5x; Thu, 30 May 2019 09:36:31 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWHSF-0004CG-Gc; Thu, 30 May 2019 09:34:37 +0000
-X-UUID: 25c3d1e88afc46968404f0524f29b104-20190530
-X-UUID: 25c3d1e88afc46968404f0524f29b104-20190530
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <long.cheng@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 494420038; Thu, 30 May 2019 01:34:28 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 30 May 2019 02:34:27 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs08n2.mediatek.inc
- (172.21.101.56) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 30 May 2019 17:34:17 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 30 May 2019 17:34:16 +0800
-Message-ID: <1559208856.14150.35.camel@mhfsdcap03>
-Subject: Re: [PATCH 2/2] serial: 8250-mtk: modify uart DMA rx
-From: Long Cheng <long.cheng@mediatek.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Date: Thu, 30 May 2019 17:34:16 +0800
-In-Reply-To: <1558596909-14084-3-git-send-email-long.cheng@mediatek.com>
-References: <1558596909-14084-1-git-send-email-long.cheng@mediatek.com>
- <1558596909-14084-3-git-send-email-long.cheng@mediatek.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hWHU0-0005tp-Qg
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 30 May 2019 09:36:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Type:Content-Transfer-Encoding:
+ MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=8EEGV5j7su7x+U41KAtZHoCVmGA2+he42t2ihupsqQY=; b=bpctEQYkxIE2uCZ3x70vVmNe/8
+ RiNWlH7vXDKVnhGW+b88NSWhjpqclXxJxAeNiKB8Vtbd3kd8h10mU1FOlhru5IfsUZ1IWbLbtOf9V
+ 3ToCMiStSHWTrbV/RBNWUTB7U31vE20lNA6WUcPEUuqu1bmt7Nk0AKZ9QvC9rBpwOukvSrgx1HJUu
+ 46JB0r3lZj61Umj0iSTYOnlehrp2WZekZ6iCNkIrMaOgxKxViDPKkEq9Ae7OjTamEeDJTjjTtBjDM
+ oALF+r1BTF5HOp4VXuJlDLOy2w45vhol6Plte1iATxbzAqHbCA5WCaAnX7xjEZhqUoPMkfe0cYT4D
+ WZH12eBQ==;
+Received: from mta-01.yadro.com ([89.207.88.251])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWHTx-0005pR-OC
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 09:36:22 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-01.yadro.com (Postfix) with ESMTP id EC249418F9;
+ Thu, 30 May 2019 09:36:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
+ content-type:content-type:content-transfer-encoding:mime-version
+ :x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mta-01; t=1559208964; x=
+ 1561023365; bh=Mu95EKtaQY/5ic5LnPWzPshc+PWDAixLkJ5r9QM+Pyc=; b=b
+ WNTUJM6n2crg9ginmn/IUSerVWkjHc3SF6QEgcxBUSgaosf8n7a5q4sZPd7qrC0d
+ Q0DsL2cwsLDC7PKJznfTHYRrmfeVY9poUu4RSQYaLD8oAzvYqKaFMANDJ0bqkBz5
+ wxDG+2id/R2wRVVeJFkTjlRWwptRV5lMTgjIcas8Wc=
+X-Virus-Scanned: amavisd-new at yadro.com
+Received: from mta-01.yadro.com ([127.0.0.1])
+ by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id hLO47OulB66Z; Thu, 30 May 2019 12:36:04 +0300 (MSK)
+Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
+ [172.17.10.102])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mta-01.yadro.com (Postfix) with ESMTPS id 6FBF341860;
+ Thu, 30 May 2019 12:36:04 +0300 (MSK)
+Received: from bbwork.com (172.17.14.115) by T-EXCH-02.corp.yadro.com
+ (172.17.10.102) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id 15.1.669.32; Thu, 30
+ May 2019 12:36:04 +0300
+From: Alexander Filippov <a.filippov@yadro.com>
+To: <linux-aspeed@lists.ozlabs.org>
+Subject: [PATCH v2] ARM: dts: aspeed: g4: add video engine support
+Date: Thu, 30 May 2019 12:35:44 +0300
+Message-ID: <20190530093544.12215-1-a.filippov@yadro.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: B27139AB2F1BB9957CAE9332638E0C210155CD5265085DED026FD2DB4FE943502000:8
-X-MTK: N
+X-Originating-IP: [172.17.14.115]
+X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
+ T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_023435_783817_7E77D342 
-X-CRM114-Status: GOOD (  14.55  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190530_053621_914264_FD4E0673 
+X-CRM114-Status: GOOD (  11.92  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [89.207.88.251 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,140 +104,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Sean Wang <sean.wang@kernel.org>,
- Zhenbao Liu <zhenbao.liu@mediatek.com>, Nicolas
- Boichat <drinkcat@chromium.org>, Long Cheng <Long.cheng@mediatek.com>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- YT Shen <yt.shen@mediatek.com>, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- devicetree@vger.kernel.org, Changqi
- Hu <changqi.hu@mediatek.com>, Sean Wang <sean.wang@mediatek.com>, Ryder
- Lee <ryder.lee@mediatek.com>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- srv_heupstream@mediatek.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Randy Dunlap <rdunlap@infradead.org>, linux-kernel@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, dmaengine@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ Alexander Filippov <a.filippov@yadro.com>, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-05-23 at 15:35 +0800, Long Cheng wrote:
+Add a node to describe the video engine on AST2400.
 
+These changes were copied from aspeed-g5.dtsi
 
-Hi Greg,
+Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
+---
+ arch/arm/boot/dts/aspeed-g4.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-Just a gentle ping!
-
-thanks.
-
-> Modify uart rx and complete for DMA
-> 
-> Signed-off-by: Long Cheng <long.cheng@mediatek.com>
-> ---
->  drivers/tty/serial/8250/8250_mtk.c |   49 +++++++++++++++---------------------
->  1 file changed, 20 insertions(+), 29 deletions(-)
-> 
-> diff --git a/drivers/tty/serial/8250/8250_mtk.c b/drivers/tty/serial/8250/8250_mtk.c
-> index 417c7c8..f470ded 100644
-> --- a/drivers/tty/serial/8250/8250_mtk.c
-> +++ b/drivers/tty/serial/8250/8250_mtk.c
-> @@ -47,7 +47,6 @@
->  #define MTK_UART_DMA_EN_RX	0x5
->  
->  #define MTK_UART_ESCAPE_CHAR	0x77	/* Escape char added under sw fc */
-> -#define MTK_UART_TX_SIZE	UART_XMIT_SIZE
->  #define MTK_UART_RX_SIZE	0x8000
->  #define MTK_UART_TX_TRIGGER	1
->  #define MTK_UART_RX_TRIGGER	MTK_UART_RX_SIZE
-> @@ -89,28 +88,30 @@ static void mtk8250_dma_rx_complete(void *param)
->  	struct mtk8250_data *data = up->port.private_data;
->  	struct tty_port *tty_port = &up->port.state->port;
->  	struct dma_tx_state state;
-> +	int copied, total, cnt;
->  	unsigned char *ptr;
-> -	int copied;
->  
-> -	dma_sync_single_for_cpu(dma->rxchan->device->dev, dma->rx_addr,
-> -				dma->rx_size, DMA_FROM_DEVICE);
-> +	if (data->rx_status == DMA_RX_SHUTDOWN)
-> +		return;
->  
->  	dmaengine_tx_status(dma->rxchan, dma->rx_cookie, &state);
-> +	total = dma->rx_size - state.residue;
-> +	cnt = total;
->  
-> -	if (data->rx_status == DMA_RX_SHUTDOWN)
-> -		return;
-> +	if ((data->rx_pos + cnt) > dma->rx_size)
-> +		cnt = dma->rx_size - data->rx_pos;
->  
-> -	if ((data->rx_pos + state.residue) <= dma->rx_size) {
-> -		ptr = (unsigned char *)(data->rx_pos + dma->rx_buf);
-> -		copied = tty_insert_flip_string(tty_port, ptr, state.residue);
-> -	} else {
-> -		ptr = (unsigned char *)(data->rx_pos + dma->rx_buf);
-> -		copied = tty_insert_flip_string(tty_port, ptr,
-> -						dma->rx_size - data->rx_pos);
-> +	ptr = (unsigned char *)(data->rx_pos + dma->rx_buf);
-> +	copied = tty_insert_flip_string(tty_port, ptr, cnt);
-> +	data->rx_pos += cnt;
-> +
-> +	if (total > cnt) {
->  		ptr = (unsigned char *)(dma->rx_buf);
-> -		copied += tty_insert_flip_string(tty_port, ptr,
-> -				data->rx_pos + state.residue - dma->rx_size);
-> +		cnt = total - cnt;
-> +		copied += tty_insert_flip_string(tty_port, ptr, cnt);
-> +		data->rx_pos = cnt;
->  	}
-> +
->  	up->port.icount.rx += copied;
->  
->  	tty_flip_buffer_push(tty_port);
-> @@ -121,9 +122,7 @@ static void mtk8250_dma_rx_complete(void *param)
->  static void mtk8250_rx_dma(struct uart_8250_port *up)
->  {
->  	struct uart_8250_dma *dma = up->dma;
-> -	struct mtk8250_data *data = up->port.private_data;
->  	struct dma_async_tx_descriptor	*desc;
-> -	struct dma_tx_state	 state;
->  
->  	desc = dmaengine_prep_slave_single(dma->rxchan, dma->rx_addr,
->  					   dma->rx_size, DMA_DEV_TO_MEM,
-> @@ -138,12 +137,6 @@ static void mtk8250_rx_dma(struct uart_8250_port *up)
->  
->  	dma->rx_cookie = dmaengine_submit(desc);
->  
-> -	dmaengine_tx_status(dma->rxchan, dma->rx_cookie, &state);
-> -	data->rx_pos = state.residue;
-> -
-> -	dma_sync_single_for_device(dma->rxchan->device->dev, dma->rx_addr,
-> -				   dma->rx_size, DMA_FROM_DEVICE);
-> -
->  	dma_async_issue_pending(dma->rxchan);
->  }
->  
-> @@ -156,13 +149,11 @@ static void mtk8250_dma_enable(struct uart_8250_port *up)
->  	if (data->rx_status != DMA_RX_START)
->  		return;
->  
-> -	dma->rxconf.direction		= DMA_DEV_TO_MEM;
-> -	dma->rxconf.src_addr_width	= dma->rx_size / 1024;
-> -	dma->rxconf.src_addr		= dma->rx_addr;
-> +	dma->rxconf.src_port_window_size	= dma->rx_size;
-> +	dma->rxconf.src_addr				= dma->rx_addr;
->  
-> -	dma->txconf.direction		= DMA_MEM_TO_DEV;
-> -	dma->txconf.dst_addr_width	= MTK_UART_TX_SIZE / 1024;
-> -	dma->txconf.dst_addr		= dma->tx_addr;
-> +	dma->txconf.dst_port_window_size	= UART_XMIT_SIZE;
-> +	dma->txconf.dst_addr				= dma->tx_addr;
->  
->  	serial_out(up, UART_FCR, UART_FCR_ENABLE_FIFO | UART_FCR_CLEAR_RCVR |
->  		UART_FCR_CLEAR_XMIT);
-
+diff --git a/arch/arm/boot/dts/aspeed-g4.dtsi b/arch/arm/boot/dts/aspeed-g4.dtsi
+index 6011692df15a..5a9e3f684359 100644
+--- a/arch/arm/boot/dts/aspeed-g4.dtsi
++++ b/arch/arm/boot/dts/aspeed-g4.dtsi
+@@ -195,6 +195,16 @@
+ 				reg = <0x1e720000 0x8000>;	// 32K
+ 			};
+ 
++			video: video@1e700000 {
++				compatible = "aspeed,ast2400-video-engine";
++				reg = <0x1e700000 0x1000>;
++				clocks = <&syscon ASPEED_CLK_GATE_VCLK>,
++					 <&syscon ASPEED_CLK_GATE_ECLK>;
++				clock-names = "vclk", "eclk";
++				interrupts = <7>;
++				status = "disabled";
++			};
++
+ 			gpio: gpio@1e780000 {
+ 				#gpio-cells = <2>;
+ 				gpio-controller;
+-- 
+2.20.1
 
 
 _______________________________________________
