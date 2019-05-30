@@ -2,68 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 018362EAEC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:04:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C30E2EC0C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:17:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lyC9q1MXxq5WHrERVK1mWDocZxG54EU5miayy93Jwuk=; b=NG0Jx8bjoemoftcc9UxyGni2UZ
-	NNlxjafdo4iiZ0nIgjlsBh1Z3vJv0DmjV/xA6wm3hWlJJiLZ75i7UoQ3cfJ04jrKaU4oQeWTAv/KC
-	2dJecL9vrhsGLTLhJijBXoflrgByNzjnQqeC3uByxVvlGPFNlP6QGYB0S9CUbPQKX6lq8czwDuv37
-	FsHZ+Zr8bLZZHYj8L/TbgcYLwf2sSQRcZ9W2+lr+OQzkNu6znqiDPFunY9+5yWCzOigHw5Gl8Pk3K
-	rv49ljsFQy71QVelPeiiNlw8PuzZ1xGrllbZ9vTs77zGTdV7Z3yD2UvZv/XTt/EE+2QWUAodHpuoD
-	1tGb6sDw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p+nqgE0wAHvUCadydE1LjzKCWqI4GL9DcjvcjWx76GA=; b=oVlGT/HDQcpLR5
+	0rd5pxFz2T/9dNeN4gcJ38eG8iFwWjGb4qZRITFMHcHfN4yl761IeCBielHIELxNIeRwoCb6I3pao
+	t0ups2wIdXQktzvnL4z1Bb0OmDWfT8umndTxtturfBae5sTwv7w1+DWU1gw8vcdQFUWtk+1wue014
+	fGWeGtDJQCR8bCy1uH5ELlaLQfsJEBYd4bGw3mD2sL02ITz6UpmvT44ujpaBAKxm/4smJkRqOvMZN
+	xK/U5PsUzgIYvVmAf8m+VQ71ksWQcZcFDwLwJHpHHErHwDruYhazCrGcnwVzOrzbf6x/Inn/rtQJK
+	T6fCpXSqAIbD/IRJj3iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWBN7-0003K9-1b; Thu, 30 May 2019 03:04:53 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hWBZi-0002zU-Jy; Thu, 30 May 2019 03:17:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWBMz-0003JK-7w
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:04:46 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7EA461A11ED;
- Thu, 30 May 2019 05:04:43 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 57A021A0164;
- Thu, 30 May 2019 05:04:33 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 01381402FA;
- Thu, 30 May 2019 11:04:20 +0800 (SGT)
-From: Anson.Huang@nxp.com
-To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
- stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
- robh+dt@kernel.org, mark.rutland@arm.com, s.hauer@pengutronix.de,
- catalin.marinas@arm.com, will.deacon@arm.com, maxime.ripard@bootlin.com,
- olof@lixom.net, horms+renesas@verge.net.au, jagan@amarulasolutions.com,
- leonard.crestez@nxp.com, bjorn.andersson@linaro.org, dinguyen@kernel.org,
- enric.balletbo@collabora.com, linux-gpio@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 3/3] arm64: defconfig: Select CONFIG_PINCTRL_IMX8MN by default
-Date: Thu, 30 May 2019 11:05:46 +0800
-Message-Id: <20190530030546.9224-3-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190530030546.9224-1-Anson.Huang@nxp.com>
-References: <20190530030546.9224-1-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1hWBZc-0002z7-1d
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:17:49 +0000
+Received: from localhost (ip67-88-213-2.z213-88-67.customer.algx.net
+ [67.88.213.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B1AC824725;
+ Thu, 30 May 2019 03:17:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559186267;
+ bh=UJiPpQOR8Dhm936UzxmqRdc9QwzhXyAeIt40ybzJZ4E=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=0LKpMCeGDvyyGVWBzoVbciG3u4dWMuxt0J3awRe4XbjaS4rVrVGsEaHj5m5Twyn9l
+ 3Kdzs6BGaCPKbI2HnQNr1kIYLoU4D5/shIca0qnywLQnB0aGldFSKC0k9Rw2/Z3CTZ
+ 3RkZDATVrXyVgvZYlzsuu/Diz5j8ak9RbFwfN+z4=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 4.19 204/276] arm64: cpu_ops: fix a leaked reference by adding
+ missing of_node_put
+Date: Wed, 29 May 2019 20:06:02 -0700
+Message-Id: <20190530030537.889697689@linuxfoundation.org>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190530030523.133519668@linuxfoundation.org>
+References: <20190530030523.133519668@linuxfoundation.org>
+User-Agent: quilt/0.66
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_200445_424390_E1C8038B 
-X-CRM114-Status: UNSURE (   6.28  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190529_201748_106157_345FF386 
+X-CRM114-Status: GOOD (  10.82  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,37 +74,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Wen Yang <wen.yang99@zte.com.cn>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <Anson.Huang@nxp.com>
+[ Upstream commit 92606ec9285fb84cd9b5943df23f07d741384bfc ]
 
-Enable CONFIG_PINCTRL_IMX8MN by default to support i.MX8MN
-pinctrl driver.
+The call to of_get_next_child returns a node pointer with refcount
+incremented thus it must be explicitly decremented after the last
+usage.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Detected by coccinelle with the following warnings:
+  ./arch/arm64/kernel/cpu_ops.c:102:1-7: ERROR: missing of_node_put;
+  acquired a node pointer with refcount incremented on line 69, but
+  without a corresponding object release within this function.
+
+Signed-off-by: Wen Yang <wen.yang99@zte.com.cn>
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Will Deacon <will.deacon@arm.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/configs/defconfig | 1 +
+ arch/arm64/kernel/cpu_ops.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 7c7b6b5..8d4f25c 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -373,6 +373,7 @@ CONFIG_SPI_SUN6I=y
- CONFIG_SPMI=y
- CONFIG_PINCTRL_SINGLE=y
- CONFIG_PINCTRL_MAX77620=y
-+CONFIG_PINCTRL_IMX8MN=y
- CONFIG_PINCTRL_IMX8MM=y
- CONFIG_PINCTRL_IMX8MQ=y
- CONFIG_PINCTRL_IMX8QXP=y
+diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
+index ea001241bdd47..00f8b8612b69f 100644
+--- a/arch/arm64/kernel/cpu_ops.c
++++ b/arch/arm64/kernel/cpu_ops.c
+@@ -85,6 +85,7 @@ static const char *__init cpu_read_enable_method(int cpu)
+ 				pr_err("%pOF: missing enable-method property\n",
+ 					dn);
+ 		}
++		of_node_put(dn);
+ 	} else {
+ 		enable_method = acpi_get_enable_method(cpu);
+ 		if (!enable_method) {
 -- 
-2.7.4
+2.20.1
+
+
 
 
 _______________________________________________
