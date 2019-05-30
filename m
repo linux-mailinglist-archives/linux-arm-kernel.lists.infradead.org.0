@@ -2,85 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D69AB2EDA5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:40:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B06792EE3B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:45:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bWLlKkQCo5r1e6cGRLgsCmWJt11Bc40apv9rFD0qr20=; b=jdcyeR9uKF4lkt
-	AYHP1TV7VBaMGjhlgZr3MZ2v5jxi/C493/e+CferoJ88YwUuoHRErl3rPgCdwZT4agJs9vnRfedki
-	msjCLifazEyAXFaWBtbVUk3TqxbqagE8CvqVSH/Qc5fvARixoWJjyx6mID2GFOZEQyoL+S94UpT9q
-	TH9N74SjPlD+Gze/0zwDkqrcLN2Bwp1xdAnYC07xoQ8qsg3n29NqbwU7p3PocUnUl1Ztxr9Njhl4/
-	p4ysxmr9RANqGqciZSFPf5/kt6SGIvWMJQKC/xayLfVgGDJDbsLdXQGvDU4l9oqP0w3IUFm+ttsWX
-	8Be6h0dfP0GqzY1v8mHA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wJoRV2h+dUl9A38D+0omX+3Br3QqG16//TWcEAMo4Qc=; b=jnI5cfSGrazYo5
+	zY/eCXhmP4jNTQ6sI+eaEBDRH0ufWy2sbg35cOtUpxAynEaKHbOacnVDIHestYWKsUDLCo/NPyCuu
+	KNxKmnXGvLFGOSXJ7USqRiTLja/HT7Lz1/NVgSoT7Awkvwd9Bkfa+kQIwbK9VEqNzmG5hwnmYXleX
+	tbG1hBGy+7t9LqJpNqUmAF8SRJsjIMA+lOOpO4ToysRrGauubCYU7jEKDckvk2ipPf2zUoFgEcahT
+	y3Smw5u6P7hbWdB8AQ+RwR7KgsF67Fz8dvshgoCOOijgl1Dgb/1QdsqwcQjQUlOIuzsA46iRet2HV
+	BXWt7OqOt813I3ryphYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWBvJ-0005O5-My; Thu, 30 May 2019 03:40:13 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hWC0W-0007Wp-Mz; Thu, 30 May 2019 03:45:36 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWBvC-0004XQ-CQ
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:40:07 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 33so1126342pgv.9
+ id 1hWC0P-0007Vp-Fe
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:45:31 +0000
+Received: by mail-pf1-x444.google.com with SMTP id j2so3026734pfe.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 20:40:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=On4X9gP05IE6u39GfyTMWmnrBCSblT4ly+1lTynpuxM=;
- b=WFE4DqoYhBaDtI9vw3yEq3Sxu3mrMEHM4SNbqfZDx7gvEkRpIDcYfZQiHrSXQ1Bc7B
- FK+LpSF8yaLmLfFN5JYb7uj1zjEQektzjXwoPdv3ZQaKBCm/ElkH+ni23Al/lwx2KgQG
- AfhookdRR5uoVsK8/zss+h1bMt9jBNPhTzG4Eu+a25QFFV5nu4WB7B5plmiZ4sM8rbZL
- pgvBSDmABvSSWZbepyvbrSth84KbKOm07FT4plShm+qxtdFkO5tu5ztV326tDGiLQ2rt
- YKnj2Yn+0yF+fzra8DM4HhFuSscDR9floBREUQ12DB/kazlg2m+CadyTZmQZP6i7qqZA
- 1PNQ==
+ Wed, 29 May 2019 20:45:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=ANGMPv0fMte+lIptCxwzjy7A8eyhF4GY98O4EHJExwI=;
+ b=CAwJTuelY0V3e2+6KfTHye4vkjVk6Gcydst9VavikgE9vtWHu5tmPASVjd9UnqS6Ia
+ FUZVqLfS22amOE9hxTdb8mLRGHq2MU+56vqRB9VwXgDLefKDwx5PGQ8jBLVP/sR8zAL2
+ idLecvLayhjTn5J6eiG0BhB8GXTjW+YUrUNT8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=On4X9gP05IE6u39GfyTMWmnrBCSblT4ly+1lTynpuxM=;
- b=GxWsZ8eZZp0hUuxzYCFCVEQUakyuYurUiVAcP29xr/Z8rZ5JS0HDPPDlhdIuxrW6kL
- 5+Pv2seOpRNfCKh6uq/+KTsjJIKfmAFVXkqruuqHpk+W+N+hgt/RbZ9fTdJ5Irhh6/1k
- numhly2qPMCDpcasDwdryp1TLuRDADobFxSg37oJby2TjWLfx/GOCEk+rOr9Cfbggkhl
- MC7cu/zPzYz9HAhn1zUecKozGalJctM0yhQedMlKOjONRTr03I6yMQR6m1IYbvUu9Kv5
- 4+g230zAoDyTWmhH2YegVeSjmXTBMfRUVg1EPJEcCo/Zz5NwWK2j729PM2shtbB7ksRz
- bcPA==
-X-Gm-Message-State: APjAAAXXh93f+ivrXsUdVnrhrl2cXCn1AD6Tf9Ju10CB+T8oSdhS9CZm
- sbzDATnESAXxemTy1K1EmbKjIBJGJSg=
-X-Google-Smtp-Source: APXvYqxuFSdogN4yad6fsZaedYCCU8dUKIXjf4voXj6fUVc2vKA9MzYgvckHtvbeiGEpL+lIZvhLKA==
-X-Received: by 2002:a17:90a:b393:: with SMTP id
- e19mr1414944pjr.91.1559187603609; 
- Wed, 29 May 2019 20:40:03 -0700 (PDT)
-Received: from zhanggen-UX430UQ ([66.42.35.75])
- by smtp.gmail.com with ESMTPSA id r4sm1155654pfq.134.2019.05.29.20.39.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 29 May 2019 20:40:03 -0700 (PDT)
-Date: Thu, 30 May 2019 11:39:49 +0800
-From: Gen Zhang <blackgod016574@gmail.com>
-To: ssantosh@kernel.org
-Subject: [PATCH] knav_qmss_queue: fix a missing-check bug in knav_pool_create()
-Message-ID: <20190530033949.GA8895@zhanggen-UX430UQ>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=ANGMPv0fMte+lIptCxwzjy7A8eyhF4GY98O4EHJExwI=;
+ b=YpaKAtlJvpQrZwxKEvnVeNEzI96m9pxwPir0mqe0LseMzN7fABcZqbQN69aiZ/bhoM
+ 3Z1vyClaTGCinq6xCv8jEqMX4JbGUDXptDI8QbLjpNP/dapIrL563BFCejWtKh5VYlA7
+ dOrId2tgBOdeaYM1oM82e8IL1asHeWRcS4Y/WJKussh4IRi5Gjxh4BYP+A5iJsVU+Ixy
+ 2ukfm7LtSIbgoASndAe6/479bheVBufmw71LA/4ID0lbgSTZZtyM/qewXTpW+zmyuram
+ VsVkhB9DQLikaOd6lHpX0gjtlrEssd5x/inNtuxSqFXxAA9b0SZsN9p9kaezioSGQtH8
+ ZIbw==
+X-Gm-Message-State: APjAAAUQKqgzkPzaQ1YA7wzKtRI14FnmRLIBlhNBFEXyQvcaBS/KhmIV
+ lIAe+3dGKWaJH+3Wx4uWRxxuuw==
+X-Google-Smtp-Source: APXvYqxtRapHT7gKGLWPgJWsV4HHfXa3vroV1igiakuGY6pkOEIQfzJ3OYiMXtPMe3TuI49eX7eWAQ==
+X-Received: by 2002:a65:42c3:: with SMTP id l3mr1764616pgp.372.1559187924357; 
+ Wed, 29 May 2019 20:45:24 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id k2sm951328pjl.23.2019.05.29.20.45.23
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 May 2019 20:45:23 -0700 (PDT)
+Date: Wed, 29 May 2019 20:45:22 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Kristina Martsenko <kristina.martsenko@arm.com>
+Subject: Re: [RFC v2 7/7] arm64: compile the kernel with ptrauth return
+ address signing
+Message-ID: <201905292041.5297BF8C2F@keescook>
+References: <20190529190332.29753-1-kristina.martsenko@arm.com>
+ <20190529190332.29753-8-kristina.martsenko@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20190529190332.29753-8-kristina.martsenko@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_204006_428471_92963910 
-X-CRM114-Status: GOOD (  10.07  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190529_204529_571078_D3DA50B8 
+X-CRM114-Status: GOOD (  31.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (blackgod016574[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (blackgod016574[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -88,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,43 +96,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Kachhap <Amit.Kachhap@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In knav_pool_create(), 'pool->name' is allocated by kstrndup(). It
-returns NULL when fails. So 'pool->name' should be checked. And free
-'pool' when error.
+On Wed, May 29, 2019 at 08:03:32PM +0100, Kristina Martsenko wrote:
+> Compile all non-leaf functions with two ptrauth instructions: PACIASP in
+> the prologue to sign the return address, and AUTIASP in the epilogue to
+> authenticate the return address (from the stack). If authentication
+> fails, the return will cause an instruction abort to be taken, followed
+> by an oops and killing the task. This should help protect the kernel
+> against attacks using return-oriented programming.
+> 
+> The new instructions are in the HINT encoding space, so on a system
+> without ptrauth they execute as NOPs.
+> 
+> CONFIG_ARM64_PTR_AUTH now not only enables ptrauth for userspace and KVM
+> guests, but also automatically builds the kernel with ptrauth
+> instructions if the compiler supports it. If there is no compiler
+> support, we do not warn that the kernel was built without ptrauth
+> instructions.
+> 
+> GCC 7 and 8 support the -msign-return-address option, while GCC 9
+> deprecates that option and replaces it with -mbranch-protection. Support
+> both options.
+> 
+> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 
-Signed-off-by: Gen Zhang <blackgod016574@gmail.com>
----
-diff --git a/drivers/soc/ti/knav_qmss_queue.c b/drivers/soc/ti/knav_qmss_queue.c
-index 8b41837..0f8cb28 100644
---- a/drivers/soc/ti/knav_qmss_queue.c
-+++ b/drivers/soc/ti/knav_qmss_queue.c
-@@ -814,6 +814,12 @@ void *knav_pool_create(const char *name,
- 	}
- 
- 	pool->name = kstrndup(name, KNAV_NAME_SIZE - 1, GFP_KERNEL);
-+	if (!pool->name) {
-+		dev_err(kdev->dev, "failed to duplicate for pool(%s)\n",
-+			name);
-+		ret = -ENOMEM;
-+		goto err_name;
-+	}
- 	pool->kdev = kdev;
- 	pool->dev = kdev->dev;
- 
-@@ -864,6 +870,7 @@ void *knav_pool_create(const char *name,
- 	mutex_unlock(&knav_dev_lock);
- err:
- 	kfree(pool->name);
-+err_name:
- 	devm_kfree(kdev->dev, pool);
- 	return ERR_PTR(ret);
- }
+Minor nits below...
+
+Reviewed-by: Kees Cook <keescook@chromium.org>
+
+> ---
+> 
+> Changes since RFC v1:
+>  - Fixed support for compilers without ptrauth
+>  - Added support for the new -mbranch-protection option
+>  - Switched from protecting all functions to only protecting non-leaf functions
+>    (for no good reason, I have not done e.g. gadget analysis)
+>  - Moved __no_ptrauth definition to this patch, depending on compiler support
+>  - Updated the Kconfig symbol description
+>  - Updated the commit message
+> 
+>  arch/arm64/Kconfig                    | 12 +++++++++++-
+>  arch/arm64/Makefile                   |  6 ++++++
+>  arch/arm64/include/asm/pointer_auth.h |  6 ++++++
+>  3 files changed, 23 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index f4c1e9b30129..3ce93d88fae1 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1295,11 +1295,15 @@ config ARM64_PTR_AUTH
+>  	  and other attacks.
+>  
+>  	  This option enables these instructions at EL0 (i.e. for userspace).
+> -
+>  	  Choosing this option will cause the kernel to initialise secret keys
+>  	  for each process at exec() time, with these keys being
+>  	  context-switched along with the process.
+>  
+> +	  If the compiler supports the -mbranch-protection or
+> +	  -msign-return-address flag (e.g. GCC 7 or later), then this option
+> +	  will also cause the kernel itself to be compiled with return address
+> +	  protection.
+> +
+>  	  The feature is detected at runtime. If the feature is not present in
+>  	  hardware it will not be advertised to userspace nor will it be
+>  	  enabled.
+> @@ -1308,6 +1312,12 @@ config ARM64_PTR_AUTH
+>  	  then the secondary CPU will be offlined. On such a system, this
+>  	  option should not be selected.
+>  
+> +config CC_HAS_BRANCH_PROT_PAC_RET
+> +	def_bool $(cc-option,-mbranch-protection=pac-ret)
+> +
+> +config CC_HAS_SIGN_RETURN_ADDRESS
+> +	def_bool $(cc-option,-msign-return-address=non-leaf)
+> +
+
+I would add comments here for "GCC 9, Clang" and "GCC 7, 8"
+respectively, just so it's quickly obvious what's to be expected when
+reading this later. :)
+
+>  endmenu
+>  
+>  config ARM64_SVE
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index b025304bde46..1dfbe755b531 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -66,6 +66,12 @@ stack_protector_prepare: prepare0
+>  					include/generated/asm-offsets.h))
+>  endif
+>  
+> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+> +pac-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=non-leaf
+> +pac-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret
+> +KBUILD_CFLAGS += $(pac-flags-y)
+> +endif
+> +
+>  ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
+>  KBUILD_CPPFLAGS	+= -mbig-endian
+>  CHECKFLAGS	+= -D__AARCH64EB__
+> diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
+> index 5491c34b4dc3..3a83c40ffd8a 100644
+> --- a/arch/arm64/include/asm/pointer_auth.h
+> +++ b/arch/arm64/include/asm/pointer_auth.h
+> @@ -15,7 +15,13 @@
+>   * allows pointer authentication to be enabled/disabled within the function
+>   * (but leaves the function unprotected by pointer authentication).
+>   */
+> +#if defined(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET)
+> +#define __no_ptrauth	__attribute__((target("branch-protection=none")))
+> +#elif defined(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS)
+> +#define __no_ptrauth	__attribute__((target("sign-return-address=none")))
+> +#else
+>  #define __no_ptrauth
+> +#endif
+
+Is arch/arm64/include/asm/pointer_auth.h going to be included always?
+I suspect the correct place for this might end up being in
+include/linux/compiler_types.h, but for now, only a few select places
+need it, so this is probably fine as-is.
+
+>  
+>  /*
+>   * Each key is a 128-bit quantity which is split across a pair of 64-bit
+> -- 
+> 2.11.0
+> 
+
+I'm excited to test this series! :)
+
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
