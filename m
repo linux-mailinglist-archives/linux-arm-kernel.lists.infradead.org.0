@@ -2,99 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62CD12FACE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 13:20:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C37742FAD4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 13:23:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LBO44POUe5ENfOX3StgmCIGM1D7wPLgEYOTK/yPfIfY=; b=rxJ7SCXbbTaZyj
-	pZdWuhs0g/V4S7RN7sKlyGDBN941H7Tv9G1tSfiZ8qyUrNQjoQDJB5Qx6S+NkJeGZE/Z1AkIer0uk
-	UX9ZINOAEM56ugIIdKcNR76LG/MsP7iQitLy3EBUntN56/Jf0QAenISc2RzuJSm6L/cAq48imWlVJ
-	+uz+Go+IhP5K3L7amAK5Srt8wvlmjfnTShMFbD+nUPHQvtuS4QZLE+8DrAZXSGDU55SAf6YwdN6l4
-	oz25tQq8jVZ8ILtI+2Fl/93V3C4w61zh3GFHarySvZi9jXRKeX8l+X0kRcSFhOsQZ78ozjYJBCU4C
-	USZUFduEl7UKeqMbWzIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BjEzC1MnHoGYKae34pbwH90yVo5s4AL0f73Gxwthz3Q=; b=C7uylKGoAzcnHX
+	uEO7KQHNrAQ/fnSA4nm/7cGAfeLjApBEfELIHfv8+C6xMej0sLEewxtbswqTfdrOvnVbpI9YHQtEi
+	qtb8YpyH7zZ6AwPdHIk4PuJhsHocsCsh+mh5p05KaK2fP/dQ4qUynoAzbcOUkQPynhMYAQrUvLk9V
+	JXuKpffIgP2wEl9FaqC3KHEG6ZtWCE57tb2b0v4L5kP0sRGfj3O1PnFoK0Wp0QjSDf92fGfeLbyxP
+	7uLayQKHDDgDo8HDDd5/Vtx7h6p68S0+SO1DYsjGwgu/X5VVvMBZm481og6m20ZMiaciTp6aAMk/6
+	myaqkB0YSwMobxjUJusg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWJ6k-0003Ru-0q; Thu, 30 May 2019 11:20:30 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWJ6c-0003RO-Pl
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 11:20:24 +0000
-Received: by mail-lf1-x141.google.com with SMTP id m14so4680614lfp.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 04:20:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=VekgKS2qzcKcSAxRPfpFghP7GZS0WUkLzmxFEC0aAfw=;
- b=i5Y/x+LaTL+31TC/zpG95n9Pxw2Ttz9M8CjsJwaFNoF8mqscNVhB8iZB8iasTK5+GJ
- R4vFDjRYOr01LtD8iq59BJZ1JgTLhSg26Mtbz4zaxOGirksWIbFAmXgd2v6lR/mhD3o9
- zlAxoRCMQsK/yqB7X5vxT0P0a65W0IDsrHLpQ16Xz3wgaym7he5ulnucdJpePFLK0N/q
- hD6oU9KRrBZUNxAJfkDkWQgYBEqWlkptHTXbKa7KX5AXLhShQBEsdNEFzpJNcJNhradN
- XTANkmB+vax7WVabB3JKEo80N+UkarcrfmoLt33gHMPPDy1e9THzG1e+sipTu9H3hHA6
- fblg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=VekgKS2qzcKcSAxRPfpFghP7GZS0WUkLzmxFEC0aAfw=;
- b=oL7ifhdsD3NRshODnSEmj+IR5DCs5DiRYWOiyep2/uxScXxUr8vMYsPyWBRTKQWQIG
- 2IAtXjS7hFCk7npmdMtOuu1bmq67blWBO6bdAMwRCsAymrG32UHSbcOjV0pKJSJckkk3
- pmWywRowuV0QJNPJ9bzxQPe8KNTyderUUjluAvLWsj083zBrvMPLAz7f19s9gg3YujXo
- 5f82VjLQJoX10CElNFIX23CFeKYqTSo+NBPIXDw/3JoxBp3mGjpt+2YtULuNML0c6wIk
- 8K9gNXH3BOqBONZiRIMkqSqyiawJtKTc3RvgOAIFgyPOwcTznpxgu2PGKvf6ywOPo1b2
- J+gw==
-X-Gm-Message-State: APjAAAVOJMkAu1r1igupV22VisMlE/ybWL8FpXakmuEcM2NakXzdlgwI
- rMlvyjm45aexC9M66Wo/LvpgnY/X
-X-Google-Smtp-Source: APXvYqxcrL5kdqSLjZhlD0FVQkH3bohM0sbHuwh/0mk3vsWwNIiZx41LWxTDWsUlDr10RgWDi82Mjw==
-X-Received: by 2002:ac2:4908:: with SMTP id n8mr1767791lfi.10.1559215219998;
- Thu, 30 May 2019 04:20:19 -0700 (PDT)
-Received: from [192.168.2.145] ([94.29.35.141])
- by smtp.googlemail.com with ESMTPSA id f30sm440648lfa.48.2019.05.30.04.20.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 30 May 2019 04:20:19 -0700 (PDT)
-Subject: Re: [PATCH V4 5/8] memory: tegra: Add EMC scaling support code for
- Tegra210
-To: Joseph Lo <josephl@nvidia.com>, Thierry Reding
- <thierry.reding@gmail.com>, Peter De Schrijver <pdeschrijver@nvidia.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>
-References: <20190529082139.5581-1-josephl@nvidia.com>
- <20190529082139.5581-6-josephl@nvidia.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <1838333d-bf58-1e06-7e4c-a64753075053@gmail.com>
-Date: Thu, 30 May 2019 14:20:18 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hWJ9s-0003se-J9; Thu, 30 May 2019 11:23:44 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWJ9l-0003rt-3d
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 11:23:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21CD1374;
+ Thu, 30 May 2019 04:23:35 -0700 (PDT)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B8FA03F5AF;
+ Thu, 30 May 2019 04:23:32 -0700 (PDT)
+Date: Thu, 30 May 2019 12:23:29 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH 0/2] mailbox: arm: introduce smc triggered mailbox
+Message-ID: <20190530122329.235d13c7@donnerap.cambridge.arm.com>
+In-Reply-To: <AM0PR04MB4481C44F9B5EFCDD076EF728881D0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <20190523060437.11059-1-peng.fan@nxp.com>
+ <4ba2b243-5622-bb27-6fc3-cd9457430e54@gmail.com>
+ <AM0PR04MB4481C44F9B5EFCDD076EF728881D0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20190529082139.5581-6-josephl@nvidia.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_042022_864960_A6C3F289 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190530_042337_164906_3C1B4993 
+X-CRM114-Status: GOOD (  38.59  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (digetx[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,40 +65,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, devicetree@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MjkuMDUuMjAxOSAxMToyMSwgSm9zZXBoIExvINC/0LjRiNC10YI6Cj4gVGhpcyBwYXRjaCBhZGRz
-IHRoZSByZXF1aXJlZCBBUElzIGFuZCB2YXJpYWJsZXMgZm9yIHRoZSBFTUMgc2NhbGluZwo+IHNl
-cXVlbmNlIGNvZGUgb24gVGVncmEyMTAuCj4gCj4gQmFzZWQgb24gdGhlIHdvcmsgb2YgUGV0ZXIg
-RGUgU2NocmlqdmVyIDxwZGVzY2hyaWp2ZXJAbnZpZGlhLmNvbT4uCj4gCj4gU2lnbmVkLW9mZi1i
-eTogSm9zZXBoIExvIDxqb3NlcGhsQG52aWRpYS5jb20+Cj4gLS0tCj4gdjQ6Cj4gLSBmaXggdGhl
-IEFQSSB3aXRoIGdlbmVyaWMgbmFtaW5nCgo+ICtleHRlcm4gY29uc3Qgc3RydWN0IGVtY190YWJs
-ZV9yZWdpc3Rlcl9vZmZzZXQgcmVnX29mZjsKPiArZXh0ZXJuIHVuc2lnbmVkIGxvbmcgZHJhbV9v
-dmVyX3RlbXBfc3RhdGU7Cj4gKwo+ICt2b2lkIGNjZmlmb193cml0ZWwoc3RydWN0IHRlZ3JhX2Vt
-YyAqZW1jLCB1MzIgdmFsLCB1bnNpZ25lZCBsb25nIGFkZHIsCj4gKwkJICAgdTMyIGRlbGF5KTsK
-PiArdTMyIGRpdl9vMyh1MzIgYSwgdTMyIGIpOwo+ICt2b2lkIGVtY193cml0ZWwoc3RydWN0IHRl
-Z3JhX2VtYyAqZW1jLCB1MzIgdmFsLCB1bnNpZ25lZCBsb25nIG9mZnNldCk7Cj4gK3UzMiAgZW1j
-X3JlYWRsKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywgdW5zaWduZWQgbG9uZyBvZmZzZXQpOwo+ICt2
-b2lkIGVtY193cml0ZWxfcGVyX2NoKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywgdTMyIHZhbCwgaW50
-IHR5cGUsCj4gKwkJICAgICAgIHVuc2lnbmVkIGxvbmcgb2Zmc2V0KTsKPiArdTMyICBlbWMxX3Jl
-YWRsKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywgdW5zaWduZWQgbG9uZyBvZmZzZXQpOwo+ICsKPiAr
-dm9pZCBlbWNfZG9fY2xvY2tfY2hhbmdlKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywgdTMyIGNsa3Ny
-Yyk7Cj4gK3ZvaWQgZW1jX3NldF9zaGFkb3dfYnlwYXNzKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywg
-aW50IHNldCk7Cj4gK3ZvaWQgZW1jX3RpbWluZ191cGRhdGUoc3RydWN0IHRlZ3JhX2VtYyAqZW1j
-LCBpbnQgZHVhbF9jaGFuKTsKPiArdTMyIGVtY19nZXRfZGxsX3N0YXRlKHN0cnVjdCBlbWNfdGFi
-bGUgKm5leHRfdGltaW5nKTsKPiArc3RydWN0IGVtY190YWJsZSAqZW1jX2dldF90aW1pbmdfZnJv
-bV9mcmVxKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywKPiArCQkJCQkgICB1bnNpZ25lZCBsb25nIHJh
-dGUpOwo+ICt2b2lkIGVtY19zZXRfb3Zlcl90ZW1wX3RpbWluZyhzdHJ1Y3QgdGVncmFfZW1jICpl
-bWMsIHN0cnVjdCBlbWNfdGFibGUgKnRpbWluZywKPiArCQkJICAgICAgdW5zaWduZWQgbG9uZyBz
-dGF0ZSk7Cj4gK2ludCBlbWNfd2FpdF9mb3JfdXBkYXRlKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywg
-dTMyIHN0YXR1c19yZWcsIHUzMiBiaXRfbWFzaywKPiArCQkJYm9vbCB1cGRhdGVkX3N0YXRlLCBp
-bnQgY2hhbik7CgpJdCB3b3VsZG4ndCBodXJ0IHRvIHByZXBlbmQgdGhlc2UgYWxsIHdpdGggInRl
-Z3JhMjEwXyIuCgotLSAKRG1pdHJ5CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, 27 May 2019 05:19:41 +0000
+Peng Fan <peng.fan@nxp.com> wrote:
+
+Hi,
+
+> > Subject: Re: [PATCH 0/2] mailbox: arm: introduce smc triggered mailbox
+> > 
+> > Hi,
+> > 
+> > On 5/22/19 10:50 PM, Peng Fan wrote:  
+> > > This is a modified version from Andre Przywara's patch series
+> > >  
+> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore.ke
+> > rnel.org%2Fpatchwork%2Fcover%2F812997%2F&amp;data=02%7C01%7Cpe
+> > ng.fan%40nxp.com%7C010c9ddd5df645c9c66b08d6dfa46cb2%7C686ea1d3b
+> > c2b4c6fa92cd99c5c301635%7C0%7C0%7C636942294631442665&amp;sdat
+> > a=BbS5ZQtzMANSwaKRDJ62NKrPrAyaED1%2BvymQaT6Qr8E%3D&amp;rese
+> > rved=0.  
+> > > [1] is a draft implementation of i.MX8MM SCMI ATF implementation that
+> > > use smc as mailbox, power/clk is included, but only part of clk has
+> > > been implemented to work with hardware, power domain only supports get
+> > > name for now.
+> > >
+> > > The traditional Linux mailbox mechanism uses some kind of dedicated
+> > > hardware IP to signal a condition to some other processing unit,
+> > > typically a dedicated management processor.
+> > > This mailbox feature is used for instance by the SCMI protocol to
+> > > signal a request for some action to be taken by the management processor.
+> > > However some SoCs does not have a dedicated management core to  
+> > provide  
+> > > those services. In order to service TEE and to avoid linux shutdown
+> > > power and clock that used by TEE, need let firmware to handle power
+> > > and clock, the firmware here is ARM Trusted Firmware that could also
+> > > run SCMI service.
+> > >
+> > > The existing SCMI implementation uses a rather flexible shared memory
+> > > region to communicate commands and their parameters, it still requires
+> > > a mailbox to actually trigger the action.  
+> > 
+> > We have had something similar done internally with a couple of minor
+> > differences:
+> > 
+> > - a SGI is used to send SCMI notifications/delayed replies to support
+> > asynchronism (patches are in the works to actually add that to the Linux SCMI
+> > framework). There is no good support for SGI in the kernel right now so we
+> > hacked up something from the existing SMP code and adding the ability to
+> > register our own IPI handlers (SHAME!). Using a PPI should work and should
+> > allow for using request_irq() AFAICT.  
+> 
+> So you are also implementing a firmware inside ATF for SCMI usecase, right?
+> 
+> Introducing SGI in ATF to notify Linux will introduce complexity, there is
+> no good framework inside ATF for SCMI, and I use synchronization call for
+> simplicity for now.
+
+I think we don't disagree, but just to clarify on one thing:
+
+I think we should avoid tying this driver to specific protocol or software on the other end, be it ATF or SCMI. After all it's just a mailbox driver, meant to signal some event (and parameters) to some external entity. Yes, SCMI (or SCPI back then) was the reason to push for this, but it should be independent from that. I am not even sure we should mention it too much in the documentation.
+
+So whether the receiving end is ATF or something else it irrelevant, I think. For instance we have had discussions in Xen to provide guests some virtualised device management support, and using an HVC mailbox seems like a neat solution. This could be using the SCMI (or SCPI) protocol, but that's not a requirement. In this case the Xen hypervisor would be the one to pick up the mailbox trigger, probably forwarding the request to something else (Dom0 in this case).
+Also having a generic SMC mailbox could avoid having the actual hardware mailbox drivers in the kernel, so EL3 firmware could forward the request to an external management processor, and Linux would just work, without the need to describe the actual hardware mailbox device in some firmware tables. This might help ACPI on those devices.
+
+Cheers,
+Andre.
+
+> > 
+> > - the mailbox identifier is indicated as part of the SMC call such that we can
+> > have multiple SCMI mailboxes serving both standard protocols and
+> > non-standard (in the 0x80 and above) range, also they may have different
+> > throughput (in hindsight, these could simply be different channels)
+> > 
+> > Your patch series looks both good and useful to me, I would just put a
+> > provision in the binding to support an optional interrupt such that
+> > asynchronism gets reasonably easy to plug in when it is available (and
+> > desirable).  
+> 
+> Ok. Let me think about and add that in new version patch.
+> 
+> Thanks,
+> Peng.
+> 
+> >   
+> > >
+> > > This patch series provides a Linux mailbox compatible service which
+> > > uses smc calls to invoke firmware code, for instance taking care of SCMI  
+> > requests.  
+> > > The actual requests are still communicated using the standard SCMI way
+> > > of shared memory regions, but a dedicated mailbox hardware IP can be
+> > > replaced via this new driver.
+> > >
+> > > This simple driver uses the architected SMC calling convention to
+> > > trigger firmware services, also allows for using "HVC" calls to call
+> > > into hypervisors or firmware layers running in the EL2 exception level.
+> > >
+> > > Patch 1 contains the device tree binding documentation, patch 2
+> > > introduces the actual mailbox driver.
+> > >
+> > > Please note that this driver just provides a generic mailbox
+> > > mechanism, though this is synchronous and one-way only (triggered by
+> > > the OS only, without providing an asynchronous way of triggering
+> > > request from the firmware).
+> > > And while providing SCMI services was the reason for this exercise,
+> > > this driver is in no way bound to this use case, but can be used
+> > > generically where the OS wants to signal a mailbox condition to
+> > > firmware or a hypervisor.
+> > > Also the driver is in no way meant to replace any existing firmware
+> > > interface, but actually to complement existing interfaces.
+> > >
+> > > [1]
+> > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgith
+> > >  
+> > ub.com%2FMrVan%2Farm-trusted-firmware%2Ftree%2Fscmi&amp;data=02
+> > %7C01%7  
+> > >  
+> > Cpeng.fan%40nxp.com%7C010c9ddd5df645c9c66b08d6dfa46cb2%7C686ea1
+> > d3bc2b4  
+> > >  
+> > c6fa92cd99c5c301635%7C0%7C0%7C636942294631442665&amp;sdata=kN
+> > 9bEFFcsZA  
+> > > 1ePeNLLfHmONpVaG6O5ajVQvKMuaBXyk%3D&amp;reserved=0
+> > >
+> > > Peng Fan (2):
+> > >   DT: mailbox: add binding doc for the ARM SMC mailbox
+> > >   mailbox: introduce ARM SMC based mailbox
+> > >
+> > >  .../devicetree/bindings/mailbox/arm-smc.txt        |  96  
+> > +++++++++++++  
+> > >  drivers/mailbox/Kconfig                            |   7 +
+> > >  drivers/mailbox/Makefile                           |   2 +
+> > >  drivers/mailbox/arm-smc-mailbox.c                  | 154  
+> > +++++++++++++++++++++  
+> > >  include/linux/mailbox/arm-smc-mailbox.h            |  10 ++
+> > >  5 files changed, 269 insertions(+)
+> > >  create mode 100644
+> > > Documentation/devicetree/bindings/mailbox/arm-smc.txt
+> > >  create mode 100644 drivers/mailbox/arm-smc-mailbox.c  create mode
+> > > 100644 include/linux/mailbox/arm-smc-mailbox.h
+> > >  
+> > 
+> > 
+> > --
+> > Florian  
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
