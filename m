@@ -2,79 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C31202EAD0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 04:49:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC4B62EAD7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 04:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NXhkggNKAU52H1BEvjZORjgjDkyGcMMmigSjXwc6qjs=; b=VlCTY6goNe7GQ3
-	uCYwpesxUVgdTQyCVHr6feOwvefS9qJWnWbycwD9RT18Na21qrxmiBHpkMwcd/FLorN/5QDEEbB7c
-	zVzjt79Y/aAZK7SKT3gQZ9uOSPnn9j3uZZOpfMZF2Q4PBspy9jNtr+fDpG3e9VqY3bGTYHp3OM1YK
-	C23oD/ra07oc0+zFsd31mvo+ZQjy8grBa3AOcW+s1nu/K8F85vJjiqnipTwAZspI0XSApN/N/95p8
-	6n1jp14S5xhjESGAdJe10LDpnaCwpMWsRdKPeX1JiUwyg/tvdBnufOrA+251IRwjb4izZXvL4YY2E
-	+LpBHkNKWMZnFlNfw/Lg==;
+	List-Owner; bh=Hh/WQbP1M/8gmyK2p8Ijva7NnatmgLKgzR3cWuKM+xo=; b=CJ7ZvnbFqMO52Q
+	JQpUdWHDR4IWkqmGT0fMGWPpeu37jSPjWpFhehcArNzQL5wnhJVwlza7uc5spqvE3FcPsYEv05iLM
+	Ws3iFjC2ZqkiI8h/pVtbBY65OJ0NUtMXA6uiuzibF5CdhuvCStq1U4p5bxQmmE0g2rIxBDpNqQ6wp
+	Q7A1ejvUlZsK9oC5r0LK9aEY681TUUuxHDF4NinZIe8Vnac8jyAwJukB0ahacUN4wUjqeHmTnZYfq
+	l6B7Yi1dF6T2gHmXv8UYN2Qzpdhi1Ndv7C5R2fdjKSRLnl/7GYIMuXwrXVmz3KRkdRZtaevep09AG
+	SEgBTmJUszot/0WKVUAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWB8L-00071u-Lu; Thu, 30 May 2019 02:49:37 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hWBEL-0001JF-2h; Thu, 30 May 2019 02:55:49 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWB8D-00071a-Pw
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 02:49:31 +0000
-Received: by mail-pl1-x644.google.com with SMTP id s24so1769175plr.8
+ id 1hWBEC-0001Hq-BO
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 02:55:41 +0000
+Received: by mail-qk1-x743.google.com with SMTP id t64so2951396qkh.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 May 2019 19:49:28 -0700 (PDT)
+ Wed, 29 May 2019 19:55:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=oDAvAtHxMiZy3j1comeWLphZxyTZ382z6LJJ+SlK6dc=;
- b=HM2u5a/hNEKMLPh218qTDktJYPNSP+8kzP8tKdjbATzxrUseVxv2PnnpXPJA6ftU/D
- lXMBr/sqzAQr5ssH4HGB/DylbZJfTV9Rg0/os8bzh+lhm3A+jCrOveffzC65a6/HJjwZ
- zpozx0Q9sK4i/8F/wh81njwixOFsPVxjtIKlM=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hXC4kHzYwJGnl8YXVUWx0puoDDwpLZgED1hwjltNjg4=;
+ b=K6yWGboPMYwUdNCjC32JmzZHDaPsR9bN4M9bMJOWj6QNjlo3n58nUVIKLrzji8AhDW
+ 7QezzgWoWhv/YRJ2k7nX4f7ltYiLhEMyhrCUrbTEXlKVqJC0bvB2UyywYyuaFizo68zv
+ ugWTtb5QNrzFd7wJvqKR8eeF8DfRbkXiaWjn4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=oDAvAtHxMiZy3j1comeWLphZxyTZ382z6LJJ+SlK6dc=;
- b=eYVLIcdWHUpx0YHw7NmLsARQaegPeGC3TJXagDvGQvGIPqkmJsigh77NEGR+/twt4J
- Wj5NsA6D9/Punn2gCDYKSpwjIoUgkEL1ZiAczsXkyM0iWR+IE1d3xEpYMORLdMpI1zC6
- 6Rp8KnmsyuBSjBF9p894Nk2qcCmNMT8PnAwbVW8nmM/EoHy5JPhx4LHkrggJfKCXT6Oo
- wmj09CsgfFrBqCSYGIs2XxDwZh8bgYF7UjzSKGCu1og0Um/Taf6ucqnh2T18uY6tiChK
- P3jvJ8auShY9L1jUgl2DnAPNCnDu4LuztuDzKJXexTRtbMjor6bjtzPdoB0xlggKvqtJ
- pfbQ==
-X-Gm-Message-State: APjAAAXH/swD07C1m64zdmAwmwZ9Kn8APDeWtH25kPdR1uVBUnnuvwhT
- Wg96lDJ9bB74H8UntC9JAi6nMg==
-X-Google-Smtp-Source: APXvYqyqSiX4Sfyq9cBp6kKZlGzNPCaNerORZZmtTdqwCm8v0tJ/+lAYmzdhIFbmoMAL1g0oGxLk/w==
-X-Received: by 2002:a17:902:1566:: with SMTP id
- b35mr1488424plh.147.1559184568175; 
- Wed, 29 May 2019 19:49:28 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id 2sm655319pgl.40.2019.05.29.19.49.26
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 29 May 2019 19:49:27 -0700 (PDT)
-Date: Wed, 29 May 2019 19:49:25 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Kristina Martsenko <kristina.martsenko@arm.com>
-Subject: Re: [RFC v2 3/7] arm64: cpufeature: handle conflicts based on
- capability
-Message-ID: <201905291948.295007E00@keescook>
-References: <20190529190332.29753-1-kristina.martsenko@arm.com>
- <20190529190332.29753-4-kristina.martsenko@arm.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hXC4kHzYwJGnl8YXVUWx0puoDDwpLZgED1hwjltNjg4=;
+ b=ZOdQ9R1teFDVZyiTNh+N5cwF0T/A1aKTccBEeaYR+854SoPB5Gxd17TFENunC63dLk
+ oo+76tq7SRhvwJS/FIDoPltpbKvCkh7iD4sSlo89pF1kTtjxXm1sv0Ra30BUFCjIh/PI
+ VpVUxb4rl2gga6gMnARAndLpbhroT+SaFmryyC8BIUpLsMzws2eMYigle1ULeD24howF
+ 7RavnL9SNMsx2fnAjBZcXnMcDZUfntIroinkigYDUKoNKEf8nVaQAS2FsjqYq827CF1u
+ uYN/tZq8kwBdd15fvZOby8JZ0iMRWibkXow9TGunG7P3MHs7r8WEbL4wjyWzC35i6LoF
+ jSiQ==
+X-Gm-Message-State: APjAAAXo0AjCbFB7TdUb8cJyzMZJHZjPEPfSwqOdaYI/zJ8wXLeQoY9A
+ KYgMju/KURgxj6A2RieI4DavOZrb6Q2RESqibT6vBw==
+X-Google-Smtp-Source: APXvYqwbvVCUHkyZ1UVrW3CoWKtkXaSs4V4XiLDBo7b0pM95AINVAYXNQOY+l2q5rzTV9S+lLKzvEUHvy1askLPhD+c=
+X-Received: by 2002:a05:620a:1425:: with SMTP id
+ k5mr1062627qkj.146.1559184938564; 
+ Wed, 29 May 2019 19:55:38 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190529190332.29753-4-kristina.martsenko@arm.com>
+References: <20190528073908.633-1-hsinyi@chromium.org>
+ <1559033586.5141.3.camel@mtksdaap41>
+In-Reply-To: <1559033586.5141.3.camel@mtksdaap41>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Thu, 30 May 2019 10:55:12 +0800
+Message-ID: <CAJMQK-ir9J-JN9DDZPBA1nVkJUZ_6A+fY4fA6jx6zOh_9q5a-w@mail.gmail.com>
+Subject: Re: [PATCH v3] gpu/drm: mediatek: call mtk_dsi_stop() after
+ mtk_drm_crtc_atomic_disable()
+To: CK Hu <ck.hu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_194929_875986_62CD3398 
-X-CRM114-Status: GOOD (  33.71  )
+X-CRM114-CacheID: sfid-20190529_195540_417323_9043DD90 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,159 +92,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Amit Kachhap <Amit.Kachhap@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 08:03:28PM +0100, Kristina Martsenko wrote:
-> Each system capability can be of either boot, local, or system scope,
-> depending on when the state of the capability is finalized. When we
-> detect a conflict on a late CPU, we either offline the CPU or panic the
-> system. We currently always panic if the conflict is caused by a boot
-> scope capability, and offline the CPU if the conflict is caused by a
-> local or system scope capability.
-> 
-> We're going to want to add new capability (for pointer authentication)
-> which needs to be boot scope but doesn't need to panic the system when a
-> conflict is detected. So add a new flag to specify whether the
-> capability requires the system to panic or not. Current boot scope
-> capabilities are updated to set the flag, so there should be no
-> functional change as a result of this patch.
-> 
-> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+On Tue, May 28, 2019 at 4:53 PM CK Hu <ck.hu@mediatek.com> wrote:
 
-Reviewed-by: Kees Cook <keescook@chromium.org>
+> I think we've already discussed in [1]. I need a reason to understand
+> this is hardware behavior or software bug. If this is a software bug, we
+> need to fix the bug and code could be symmetric.
+>
+> [1]
+> http://lists.infradead.org/pipermail/linux-mediatek/2019-March/018423.html
+>
+Hi CK,
 
--Kees
+Jitao has replied in v2[1]
+"
+mtk_dsi_start must after dsi full setting.
+If you put it in mtk_dsi_ddp_start, mtk_dsi_set_mode won't work. DSI
+will keep cmd mode. So you see no irq.
+...
+"
 
-> ---
-> 
-> Changes since RFC v1:
->  - New patch, to have ptrauth mismatches disable secondaries instead of
->    panicking
-> 
->  arch/arm64/include/asm/cpufeature.h | 15 ++++++++++++++-
->  arch/arm64/kernel/cpufeature.c      | 23 +++++++++--------------
->  2 files changed, 23 insertions(+), 15 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-> index 0522ea674253..ad952f2e0a2b 100644
-> --- a/arch/arm64/include/asm/cpufeature.h
-> +++ b/arch/arm64/include/asm/cpufeature.h
-> @@ -217,6 +217,10 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
->   *     In some non-typical cases either both (a) and (b), or neither,
->   *     should be permitted. This can be described by including neither
->   *     or both flags in the capability's type field.
-> + *
-> + *     In case of a conflict, the CPU is prevented from booting. If the
-> + *     ARM64_CPUCAP_PANIC_ON_CONFLICT flag is specified for the capability,
-> + *     then a kernel panic is triggered.
->   */
->  
->  
-> @@ -249,6 +253,8 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
->  #define ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU	((u16)BIT(4))
->  /* Is it safe for a late CPU to miss this capability when system has it */
->  #define ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU	((u16)BIT(5))
-> +/* Panic when a conflict is detected */
-> +#define ARM64_CPUCAP_PANIC_ON_CONFLICT		((u16)BIT(6))
->  
->  /*
->   * CPU errata workarounds that need to be enabled at boot time if one or
-> @@ -290,7 +296,8 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
->   * CPU feature used early in the boot based on the boot CPU. All secondary
->   * CPUs must match the state of the capability as detected by the boot CPU.
->   */
-> -#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE ARM64_CPUCAP_SCOPE_BOOT_CPU
-> +#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE		\
-> +	(ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PANIC_ON_CONFLICT)
->  
->  struct arm64_cpu_capabilities {
->  	const char *desc;
-> @@ -354,6 +361,12 @@ cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
->  	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
->  }
->  
-> +static inline bool
-> +cpucap_panic_on_conflict(const struct arm64_cpu_capabilities *cap)
-> +{
-> +	return !!(cap->type & ARM64_CPUCAP_PANIC_ON_CONFLICT);
-> +}
-> +
->  /*
->   * Generic helper for handling capabilties with multiple (match,enable) pairs
->   * of call backs, sharing the same capability bit.
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 166584deaed2..8a595b4cb0aa 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -1796,10 +1796,8 @@ static void __init enable_cpu_capabilities(u16 scope_mask)
->   * Run through the list of capabilities to check for conflicts.
->   * If the system has already detected a capability, take necessary
->   * action on this CPU.
-> - *
-> - * Returns "false" on conflicts.
->   */
-> -static bool verify_local_cpu_caps(u16 scope_mask)
-> +static void verify_local_cpu_caps(u16 scope_mask)
->  {
->  	int i;
->  	bool cpu_has_cap, system_has_cap;
-> @@ -1844,10 +1842,12 @@ static bool verify_local_cpu_caps(u16 scope_mask)
->  		pr_crit("CPU%d: Detected conflict for capability %d (%s), System: %d, CPU: %d\n",
->  			smp_processor_id(), caps->capability,
->  			caps->desc, system_has_cap, cpu_has_cap);
-> -		return false;
-> -	}
->  
-> -	return true;
-> +		if (cpucap_panic_on_conflict(caps))
-> +			cpu_panic_kernel();
-> +		else
-> +			cpu_die_early();
-> +	}
->  }
->  
->  /*
-> @@ -1857,12 +1857,8 @@ static bool verify_local_cpu_caps(u16 scope_mask)
->  static void check_early_cpu_features(void)
->  {
->  	verify_cpu_asid_bits();
-> -	/*
-> -	 * Early features are used by the kernel already. If there
-> -	 * is a conflict, we cannot proceed further.
-> -	 */
-> -	if (!verify_local_cpu_caps(SCOPE_BOOT_CPU))
-> -		cpu_panic_kernel();
-> +
-> +	verify_local_cpu_caps(SCOPE_BOOT_CPU);
->  }
->  
->  static void
-> @@ -1910,8 +1906,7 @@ static void verify_local_cpu_capabilities(void)
->  	 * check_early_cpu_features(), as they need to be verified
->  	 * on all secondary CPUs.
->  	 */
-> -	if (!verify_local_cpu_caps(SCOPE_ALL & ~SCOPE_BOOT_CPU))
-> -		cpu_die_early();
-> +	verify_local_cpu_caps(SCOPE_ALL & ~SCOPE_BOOT_CPU);
->  
->  	verify_local_elf_hwcaps(arm64_elf_hwcaps);
->  
-> -- 
-> 2.11.0
-> 
+[1] https://lore.kernel.org/patchwork/patch/1052505/#1276270
 
--- 
-Kees Cook
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
