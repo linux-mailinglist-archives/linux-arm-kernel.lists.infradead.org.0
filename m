@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 011F03001F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 18:23:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F87630028
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 18:27:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=61tG5sv89caPTWcGo/5y+jJcb6/U+3FeEP1CQr46kVk=; b=Eiq4SdkirAtBx5
-	KdspuKgmG7XJFrtkZkuzYJx4M1Qb7l88X8CCzuk7epuoSlszd+Xqwzfn4xqjtDZvpHlrwtMY4QZWw
-	vgAYp1rkGvJyuoIr2ZmRwKM/XFMDMdIW2+NtqrFs0psgzNLQ9BerG5Chvx+nuFQApyPljki/k7XwJ
-	EMtHPpGxNMvdugQ+ygeYlod9dCIGpd2i98d29iQG1BKh+vZTNkYHPjHozVbksUDq/YEwpbCAQ6pNt
-	XBnQldUTYl1soW5/PkjvoUoa58SG+J6w26WEsfcylptKh9SaJvXHIaa92qFo91HSi6LjnhHLZfItz
-	sFwSqFOmFWtB7fT2svWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yoM1Wx/CatwdcFqJME4zQj2yaBPKDbaHAB5+KIpEzh4=; b=g8rR3mPIe5s5Po
+	Y7R5CZwrweScQurJvyUXgMPhbQvOoOYmY3jscbeCyAht93iaF/wq57HoLgiYDTt2UvnPBhvHBkjVa
+	JJn1ohOnil6Uphx0MOSOOCXBNy9VqEq+yjg+aGrQOSIw3WcIk0Tytsz+i+UxBlbyP2d03QnnUHshP
+	X6mZakmMaxOGEOG5gGgpTPxBwc/g41EZK5EkpeRhkqkwMxE7CQqxVenJUl4tNOCPkZunZ3IwOlQ1I
+	1p2R/t8rCA8PbAd28+mKmA1PkRQnWp9ml/Rt15geIRCa3FvT1GDXOz+cxFrKcDA6G5IP+ICoB2gE6
+	GLlO+Y6/jirIC5nhndWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWNpS-0003wS-9D; Thu, 30 May 2019 16:22:58 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWNpK-0003tJ-QQ
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 16:22:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=3kgTdo02E09r0Og/xJIfjwXUfONzBeGtXYyX4dAdahU=; b=GvpSLRjWIZcMSQnSrU6NlCPkd
- 4GgdrNg1JUKpxUmF0KRYP+9AIO6S0jfabyoLT/MO4nUiaJaxhoDocAjahPovhRCK783KHto5H+I3L
- YeRWs3S0B1UnWxn7SZ9OvQaOOkcOA049rMEVHFOQOFZXehZ8zf+JvQfeCrpBJiOWL0LZ6xHtNd/ts
- e1b+xLNcjxKU8f3wIGWMKXseLrbe5UOkEj58WUzf0QOaVkpok/qUTQwqcBw6h46DuV72hPgRIoQkS
- 86dKC5355W1BSaOKY/AKXO+Galfvburird4v78S41JPneh5Fmc3XTqQcNfEQXTWl6tcJsVlFTdrnS
- HD/jgHkRw==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:52716)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hWNos-0003sF-QT; Thu, 30 May 2019 17:22:22 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hWNop-0005Y0-Ja; Thu, 30 May 2019 17:22:19 +0100
-Date: Thu, 30 May 2019 17:22:19 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: l00383200 <liucheng32@huawei.com>
-Subject: Re: [PATCH] Stacktrace in ARM32 architecture has jumped the first 2
- layers, which may ignore the display of save_stack_trace_tsk.
-Message-ID: <20190530162219.dtooagpeyczfaazb@shell.armlinux.org.uk>
-References: <1559228799-84473-1-git-send-email-liucheng32@huawei.com>
+	id 1hWNtV-0005Ub-Be; Thu, 30 May 2019 16:27:09 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWNtN-0005U8-He
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 16:27:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 016D315AD;
+ Thu, 30 May 2019 09:27:01 -0700 (PDT)
+Received: from [10.1.197.21] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 56A563F5AF; Thu, 30 May 2019 09:26:59 -0700 (PDT)
+Subject: Re: [RFC v2 5/7] arm64: initialize and switch ptrauth kernel keys
+To: Kees Cook <keescook@chromium.org>
+References: <20190529190332.29753-1-kristina.martsenko@arm.com>
+ <20190529190332.29753-6-kristina.martsenko@arm.com>
+ <201905292027.B439EF2CA@keescook>
+From: Kristina Martsenko <kristina.martsenko@arm.com>
+Message-ID: <13eae27a-6348-fdc9-c92b-9156ec2ac3ab@arm.com>
+Date: Thu, 30 May 2019 17:26:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1559228799-84473-1-git-send-email-liucheng32@huawei.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <201905292027.B439EF2CA@keescook>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_092250_868100_D80E878C 
-X-CRM114-Status: GOOD (  16.95  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190530_092701_591001_383E259C 
+X-CRM114-Status: GOOD (  15.09  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,79 +65,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peterz@infradead.org, gregkh@linuxfoundation.org, tglx@linutronix.de,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Kachhap <Amit.Kachhap@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 11:06:39PM +0800, l00383200 wrote:
-> Without optimization, both save_stack_trace_tsk and __save_stack_trace
-> will have stacktrace information in ARM32.
+On 30/05/2019 04:34, Kees Cook wrote:
+> On Wed, May 29, 2019 at 08:03:30PM +0100, Kristina Martsenko wrote:
+>> Set up keys to use pointer authentication within the kernel. The kernel
+>> will be compiled with APIAKey instructions, the other keys are currently
+>> unused. Each task is given its own APIAKey, which is initialized during
+>> fork. The key is changed during context switch and on kernel entry from
+>> EL0.
+>>
+>> A function that changes the key cannot return, so compile such functions
+>> without pointer auth (using __no_ptrauth which will be defined to a
+>> compiler function attribute later).
+>>
+>> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
 > 
-> In this situation, "data.skip += 2" operation will skip the first two layers,
-> which may make the stacktrace strange and different from other architectures.
-> 
-> A simple example is as follows:
-> In ARM32 architecture:
-> [<ffffff80083cb3f8>] proc_pid_stack+0xac/0x12c
-> [<ffffff80083c7c70>] proc_single_show+0x5c/0xa8
-> [<ffffff800838aca8>] seq_read+0x130/0x420
-> [<ffffff8008365c54>] __vfs_read+0x60/0x11c
-> [<ffffff80083665dc>] vfs_read+0x8c/0x140
-> [<ffffff800836717c>] SyS_read+0x6c/0xcc
-> [<ffffff8008202cb8>] __sys_trace_return+0x0/0x4
-> [<ffffffffffffffff>] 0xffffffffffffffff
-> 
-> In some other architectures(ARM64):
-> [<ffffff8008209be0>] save_stack_trace_tsk+0x0/0xf0
-> [<ffffff80083cb3f8>] proc_pid_stack+0xac/0x12c
-> [<ffffff80083c7c70>] proc_single_show+0x5c/0xa8
-> [<ffffff800838aca8>] seq_read+0x130/0x420
-> [<ffffff8008365c54>] __vfs_read+0x60/0x11c
-> [<ffffff80083665dc>] vfs_read+0x8c/0x140
-> [<ffffff800836717c>] SyS_read+0x6c/0xcc
-> [<ffffff8008202cb8>] __sys_trace_return+0x0/0x4
-> [<ffffffffffffffff>] 0xffffffffffffffff
-> 
-> Therefore, we'd better just jump only one layer to ensure accuracy and consistency.
+> Just so I'm reading this right: the kernel is only using APIAKey?
 
-Why do we want to log the function we called to save the stack trace
-_in_ the stack trace?  What useful purpose does it serve?
+Yes, that's right. The compiler options (in patch #7) will compile the
+kernel with only APIAKey instructions, so the kernel will only use
+APIAKey. We don't initialize or install the other 4 keys for the kernel
+(only for userspace). Let me know if the commit message could be clearer
+in some way.
 
-I've always taken the attitude that if we want a stack trace from a
-certain point in the function, then that's the point that the stack
-trace should start.  It's entirely sensible.
+> Reviewed-by: Kees Cook <keescook@chromium.org>
 
-> 
-> Signed-off-by: liucheng <liucheng32@huawei.com>
-> ---
->  arch/arm/kernel/stacktrace.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/kernel/stacktrace.c b/arch/arm/kernel/stacktrace.c
-> index 71778bb..bb3da38 100644
-> --- a/arch/arm/kernel/stacktrace.c
-> +++ b/arch/arm/kernel/stacktrace.c
-> @@ -125,7 +125,7 @@ static noinline void __save_stack_trace(struct task_struct *tsk,
->  #endif
->  	} else {
->  		/* We don't want this function nor the caller */
-> -		data.skip += 2;
-> +		data.skip += 1;
->  		frame.fp = (unsigned long)__builtin_frame_address(0);
->  		frame.sp = current_stack_pointer;
->  		frame.lr = (unsigned long)__builtin_return_address(0);
-> -- 
-> 1.8.5.6
-> 
-> 
+Thanks for all the review!
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Kristina
 
 _______________________________________________
 linux-arm-kernel mailing list
