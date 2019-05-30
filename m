@@ -2,57 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 040D52FF2D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 17:16:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 388782FF90
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 17:41:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PaJbz45h6WuU/sNwx3ytWZFGUj2c6USnnfGwY/EDlzk=; b=XWaSEq5s9WaVKFNjVP7szl/sLy
-	BDwYu9zIEdhclU2m0RW2SsW65uSpjTdINoqn1V28LJjBn36jT9U0ujCuz/pkxq0oD6LHGdpNonAwh
-	UYpVDL0vyxDxl5eFEeRQI1PZsU5utI5yvU1rLvwjA1nRZqryk3DhXmYpou7qEPJTcS6DRk0qqyUDe
-	dVoN8Sc8rZ/jfBd4cwm50rURRCdkrzO81q49Wq2Rstz6ZP57I9gmlQvrp4jP9ztHUzGUCPqd8eKiP
-	gLoYmxgN92zrioDYymTp+SE5P+huGFYQZRNXC8rRcNcrRHOS3UH5aGSdLJcNRTjlG1bWCmlQ0QHq6
-	57mCEL8w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nOcV0bLEBHQ2uliG6OKBDrS+s0eAHRxHfHQltyExbO8=; b=fPyP4SesOty76o
+	GAiXOOC60usWEnkK8xJFi5EET+lOypdGiWOTZ4xaMlFsDY2TCPEQp9DLOOXNKZJQvbxBahrYmpYmX
+	/8rfDGS/dzPRxxbShTqYq7PNMWF5X8MhLhY4RK2ph7tCdvR12odVz9jNbUta1H970UQcgocPWRtW2
+	Eng5QozmOCzf/cafpbtyVVVY+TY9m8Kz0XRyLlLhe8Nz/3aXPiNiIxz/qSSYEaD5SgirlDGGYnJzw
+	lTmuCT3m9M1IyWvHFOXdaXixqXOKgeuy799qLYd/NUxa7RUHt6Flew+y3GdfEr3YmLfe3I7aoakVM
+	34fNbXIP3NwmQb2Syr2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWMn7-00058T-6q; Thu, 30 May 2019 15:16:29 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWMl2-0002I1-Nn
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 15:14:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 74780341;
- Thu, 30 May 2019 08:14:20 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CA8013F59C;
- Thu, 30 May 2019 08:14:18 -0700 (PDT)
-From: Dave Martin <Dave.Martin@arm.com>
-To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH kvmtool v3 9/9] arm64: Select SVE vector lengths via the
- command line
-Date: Thu, 30 May 2019 16:13:14 +0100
-Message-Id: <1559229194-3036-10-git-send-email-Dave.Martin@arm.com>
-X-Mailer: git-send-email 2.1.4
-In-Reply-To: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
-References: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
+	id 1hWNBH-0006FU-QJ; Thu, 30 May 2019 15:41:27 +0000
+Received: from mail-eopbgr820128.outbound.protection.outlook.com
+ ([40.107.82.128] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWNB9-0006A2-HV
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 15:41:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=testarcselector01; d=microsoft.com; cv=none;
+ b=qGgV8eRfWlvvoiDW/7elKQndemU7clic04Xn5s4TUK13v98+khOkLv081ZpzmJ7b8Hnc8O6qi4LXADjnuTQHz3PiIXTBMVWRIu+2KifVP9rgU1BHJ38Ny/0RrhAKfgGJKhCY6Cmzv3umtodbsS7i8LdlJVBZAVKA1iCuZRMBB5s=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=testarcselector01;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=b+wq9znLRZWjUiHdVwwJvy8mOOn1MTHnLq1q0+zW5Yo=;
+ b=LKrq2tgHPVcbZ6FPfn+EHV+jgY6nOjgxsCfgGr44cMb9rVuS7lQvLzqF2p3T1h0il5NDbQFS7LCuY3Jt09MDASW7GprDIF2LVvcPP5FJ/CSccgvycRGFOOSoDS0Vz5nujGenDLbHotvWy0xz5R/IgsgcrhRO3V9nV95P5ob7g+g=
+ARC-Authentication-Results: i=1; test.office365.com
+ 1;spf=none;dmarc=none;dkim=none;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=b+wq9znLRZWjUiHdVwwJvy8mOOn1MTHnLq1q0+zW5Yo=;
+ b=a1RRRke8iyfCeaHcmWsM+4v0lfjmhfzLjrqHhakE20hqJS87gKm2WFwXgAwBLiL7A/CJzfsaxv+zemL+jAxPNae4KeZD5vWvTFzWyzwyap3AhDFbW9IRd8ifs3rSLECUcK9UurJhJP3YneUItH53SOndeNP3l1I7MMfvp7yCKwg=
+Received: from BYAPR21MB1221.namprd21.prod.outlook.com (2603:10b6:a03:107::12)
+ by BYAPR21MB1175.namprd21.prod.outlook.com (2603:10b6:a03:104::17)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.1; Thu, 30 May
+ 2019 15:41:14 +0000
+Received: from BYAPR21MB1221.namprd21.prod.outlook.com
+ ([fe80::d005:4de8:ffbf:ba6b]) by BYAPR21MB1221.namprd21.prod.outlook.com
+ ([fe80::d005:4de8:ffbf:ba6b%7]) with mapi id 15.20.1943.015; Thu, 30 May 2019
+ 15:41:13 +0000
+From: Michael Kelley <mikelley@microsoft.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-mips@vger.kernel.org"
+ <linux-mips@vger.kernel.org>, "linux-kselftest@vger.kernel.org"
+ <linux-kselftest@vger.kernel.org>
+Subject: RE: [PATCH v6 18/19] x86: Add support for generic vDSO
+Thread-Topic: [PATCH v6 18/19] x86: Add support for generic vDSO
+Thread-Index: AQHVFvJX/FWqgsMYXUWDuWvrdwhvDKaDyyHw
+Date: Thu, 30 May 2019 15:41:13 +0000
+Message-ID: <BYAPR21MB1221D54FCEC97509EEF7395CD7180@BYAPR21MB1221.namprd21.prod.outlook.com>
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-19-vincenzo.frascino@arm.com>
+In-Reply-To: <20190530141531.43462-19-vincenzo.frascino@arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=mikelley@ntdev.microsoft.com;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2019-05-30T15:41:11.5395527Z;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=edbd9425-16cf-4ba0-af14-008492b8a3c0;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=mikelley@microsoft.com; 
+x-originating-ip: [2001:4898:80e8:2:d4d:c6de:4660:8ab7]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c3085077-a364-48ec-f317-08d6e5153f49
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:BYAPR21MB1175; 
+x-ms-traffictypediagnostic: BYAPR21MB1175:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <BYAPR21MB1175430A2A9ACEC88C678E7FD7180@BYAPR21MB1175.namprd21.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:651;
+x-forefront-prvs: 00531FAC2C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(396003)(39860400002)(366004)(346002)(136003)(199004)(189003)(6116002)(9686003)(71200400001)(55016002)(81156014)(186003)(2201001)(8676002)(6306002)(99286004)(81166006)(52536014)(10090500001)(5660300002)(476003)(110136005)(6246003)(8936002)(54906003)(4326008)(2501003)(446003)(486006)(229853002)(25786009)(966005)(68736007)(2906002)(22452003)(6506007)(71190400001)(478600001)(86362001)(316002)(53936002)(10290500003)(6436002)(14454004)(74316002)(8990500004)(66476007)(66556008)(7416002)(46003)(305945005)(76116006)(52396003)(33656002)(256004)(66946007)(102836004)(73956011)(7696005)(66446008)(64756008)(7736002)(76176011)(11346002)(41533002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR21MB1175;
+ H:BYAPR21MB1221.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microsoft.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: XwopYJYDuddQXyifUk232xXJbrCzN9hWVSa2ABr3VkN5sKwpX3tWGO8W4HljgFH+fh5VG6vUIBgPFzFRabxwbDfElVrsQnycHNcecx11MSqGoVN9wQz6Npbe63Au/kXxx967qlEP0j3e3WlvzpPp7OB51tf0Hl2dUnUD0ro6yrtWWr7Gy14blVwCcRZgMTRUr4KZOus4whg1bC6e/P1O/4fOseYXFDgz77YHnhHHSej2Gwy1yC4YiBKvxLYAWz7XEWGUb2RoBl6chbD/w/aFQD8YctWc2bx9uav1YEuEgCms8dC46d1h4h7POhqnGvXvxIWrXpfGFvtFhMIzWQQ5gd9wR9PyS+8ZEDLGrTp7JV1WfheTQEbLp/XuZH4e6pgvYWIP/AT2VJsoP9pT8wCtmkat6dgW0CMXLqrSjqvMG6s=
+MIME-Version: 1.0
+X-OriginatorOrg: microsoft.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c3085077-a364-48ec-f317-08d6e5153f49
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 May 2019 15:41:13.7289 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: mikelley@ntdev.microsoft.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR21MB1175
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_081420_820611_CD4BC646 
-X-CRM114-Status: GOOD (  19.85  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190530_084119_695504_CD6D09B7 
+X-CRM114-Status: GOOD (  22.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.82.128 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,198 +139,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <cdall@kernel.org>, Marc Zyngier <marc.zyngier@arm.com>,
- Andre Przywara <andre.przywara@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Zhang Lei <zhang.lei@jp.fujitsu.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>,
- =?UTF-8?q?Alex=20Benn=C3=A9e?= <alex.bennee@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Shuah Khan <shuah@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Russell King <linux@armlinux.org.uk>, Ralf Baechle <ralf@linux-mips.org>,
+ Mark Salyzyn <salyzyn@android.com>, Paul Burton <paul.burton@mips.com>,
+ Dmitry Safonov <0x7f454c46@gmail.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to support use cases such as migration, it may be
-important in some situations to restrict the set of SVE vector
-lengths available to the guest.  It can also be useful to observe
-the behaviour of guest OSes with different vector lengths.
+From: Vincenzo Frascino <vincenzo.frascino@arm.com> On Thursday, May 30, 2019 7:16 AM
+> 
+> The x86 vDSO library requires some adaptations to take advantage of the
+> newly introduced generic vDSO library.
+> 
+> Introduce the following changes:
+>  - Modification of vdso.c to be compliant with the common vdso datapage
+>  - Use of lib/vdso for gettimeofday
+> 
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>
+>
+> diff --git a/arch/x86/include/asm/mshyperv-tsc.h b/arch/x86/include/asm/mshyperv-tsc.h
+> new file mode 100644
+> index 000000000000..99c98ccea0bf
+> --- /dev/null
+> +++ b/arch/x86/include/asm/mshyperv-tsc.h
+> @@ -0,0 +1,76 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _ASM_X86_MSHYPER_TSCPAGE_H
+> +#define _ASM_X86_MSHYPER_TSCPAGE_H
+> +
+> +#include <asm/hyperv-tlfs.h>
+> +
+> +#ifdef CONFIG_HYPERV_TSCPAGE
+> +struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
+> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> +				       u64 *cur_tsc)
+> +{
+> +	u64 scale, offset;
+> +	u32 sequence;
+> +
+> +	/*
+> +	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
+> +	 * Top-Level Functional Specification ver. 3.0 and above. To get the
+> +	 * reference time we must do the following:
+> +	 * - READ ReferenceTscSequence
+> +	 *   A special '0' value indicates the time source is unreliable and we
+> +	 *   need to use something else. The currently published specification
+> +	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
+> +	 *   instead of '0' as the special value, see commit c35b82ef0294.
+> +	 * - ReferenceTime =
+> +	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
+> +	 * - READ ReferenceTscSequence again. In case its value has changed
+> +	 *   since our first reading we need to discard ReferenceTime and repeat
+> +	 *   the whole sequence as the hypervisor was updating the page in
+> +	 *   between.
+> +	 */
+> +	do {
+> +		sequence = READ_ONCE(tsc_pg->tsc_sequence);
+> +		if (!sequence)
+> +			return U64_MAX;
+> +		/*
+> +		 * Make sure we read sequence before we read other values from
+> +		 * TSC page.
+> +		 */
+> +		smp_rmb();
+> +
+> +		scale = READ_ONCE(tsc_pg->tsc_scale);
+> +		offset = READ_ONCE(tsc_pg->tsc_offset);
+> +		*cur_tsc = rdtsc_ordered();
+> +
+> +		/*
+> +		 * Make sure we read sequence after we read all other values
+> +		 * from TSC page.
+> +		 */
+> +		smp_rmb();
+> +
+> +	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
+> +
+> +	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
+> +}
+> +
+> +static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
+> +{
+> +	u64 cur_tsc;
+> +
+> +	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
+> +}
+> +
+> +#else
+> +static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+> +{
+> +	return NULL;
+> +}
+> +
+> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> +				       u64 *cur_tsc)
+> +{
+> +	BUG();
+> +	return U64_MAX;
+> +}
+> +#endif
+> +#endif
+> diff --git a/arch/x86/include/asm/mshyperv.h b/arch/x86/include/asm/mshyperv.h
+> index cc60e617931c..db095a992f3e 100644
+> --- a/arch/x86/include/asm/mshyperv.h
+> +++ b/arch/x86/include/asm/mshyperv.h
+> @@ -7,6 +7,7 @@
+>  #include <linux/nmi.h>
+>  #include <asm/io.h>
+>  #include <asm/hyperv-tlfs.h>
+> +#include <asm/mshyperv-tsc.h>
+>  #include <asm/nospec-branch.h>
+> 
+>  #define VP_INVAL	U32_MAX
+> @@ -387,73 +388,4 @@ static inline int hyperv_flush_guest_mapping_range(u64 as,
+>  }
+>  #endif /* CONFIG_HYPERV */
+> 
+> -#ifdef CONFIG_HYPERV_TSCPAGE
+> -struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
+> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> -				       u64 *cur_tsc)
+> -{
+> -	u64 scale, offset;
+> -	u32 sequence;
+> -
+> -	/*
+> -	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
+> -	 * Top-Level Functional Specification ver. 3.0 and above. To get the
+> -	 * reference time we must do the following:
+> -	 * - READ ReferenceTscSequence
+> -	 *   A special '0' value indicates the time source is unreliable and we
+> -	 *   need to use something else. The currently published specification
+> -	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
+> -	 *   instead of '0' as the special value, see commit c35b82ef0294.
+> -	 * - ReferenceTime =
+> -	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
+> -	 * - READ ReferenceTscSequence again. In case its value has changed
+> -	 *   since our first reading we need to discard ReferenceTime and repeat
+> -	 *   the whole sequence as the hypervisor was updating the page in
+> -	 *   between.
+> -	 */
+> -	do {
+> -		sequence = READ_ONCE(tsc_pg->tsc_sequence);
+> -		if (!sequence)
+> -			return U64_MAX;
+> -		/*
+> -		 * Make sure we read sequence before we read other values from
+> -		 * TSC page.
+> -		 */
+> -		smp_rmb();
+> -
+> -		scale = READ_ONCE(tsc_pg->tsc_scale);
+> -		offset = READ_ONCE(tsc_pg->tsc_offset);
+> -		*cur_tsc = rdtsc_ordered();
+> -
+> -		/*
+> -		 * Make sure we read sequence after we read all other values
+> -		 * from TSC page.
+> -		 */
+> -		smp_rmb();
+> -
+> -	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
+> -
+> -	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
+> -}
+> -
+> -static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
+> -{
+> -	u64 cur_tsc;
+> -
+> -	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
+> -}
+> -
+> -#else
+> -static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+> -{
+> -	return NULL;
+> -}
+> -
+> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> -				       u64 *cur_tsc)
+> -{
+> -	BUG();
+> -	return U64_MAX;
+> -}
+> -#endif
+>  #endif
 
-To enable testing and experimentation for such configurations, this
-patch adds a command-line option to allow setting of the set of
-vector lengths to be made available to the guest.
+Vincenzo -- these changes for Hyper-V are a subset of a larger patch set
+I have that moves all of the Hyper-V clock/timer code into a separate
+clocksource driver in drivers/clocksource, with an include file in
+includes/clocksource.  That new include file should be able to work
+instead of your new mshyperv-tsc.h.  It also has the benefit of being
+ISA neutral, so it will work with my in-progress patch set to support
+Linux on Hyper-V on ARM64.  See https://lkml.org/lkml/2019/5/27/231
+for the new clocksource driver patch set.
 
-For now, the setting is global: no means is offered to configure
-individual guest vcpus independently of each other.
-
-By default all vector lengths that the host can support are given
-to the guest, as before.
-
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
----
- arm/aarch64/include/kvm/kvm-config-arch.h |  8 +++-
- arm/aarch64/kvm-cpu.c                     | 80 ++++++++++++++++++++++++++++++-
- arm/include/arm-common/kvm-config-arch.h  |  1 +
- 3 files changed, 87 insertions(+), 2 deletions(-)
-
-diff --git a/arm/aarch64/include/kvm/kvm-config-arch.h b/arm/aarch64/include/kvm/kvm-config-arch.h
-index 41e9d05..a996612 100644
---- a/arm/aarch64/include/kvm/kvm-config-arch.h
-+++ b/arm/aarch64/include/kvm/kvm-config-arch.h
-@@ -1,6 +1,8 @@
- #ifndef KVM__KVM_CONFIG_ARCH_H
- #define KVM__KVM_CONFIG_ARCH_H
- 
-+int sve_vls_parser(const struct option *opt, const char *arg, int unset);
-+
- #define ARM_OPT_ARCH_RUN(cfg)						\
- 	OPT_BOOLEAN('\0', "aarch32", &(cfg)->aarch32_guest,		\
- 			"Run AArch32 guest"),				\
-@@ -16,7 +18,11 @@
- 	OPT_BOOLEAN('\0', "enable-sve", &(cfg)->enable_sve,		\
- 			"Enable SVE for the guest"),			\
- 	OPT_BOOLEAN('\0', "disable-sve", &(cfg)->disable_sve,		\
--			"Disable SVE for the guest"),
-+			"Disable SVE for the guest"),			\
-+	OPT_CALLBACK('\0', "sve-vls", &(cfg)->sve_vqs,			\
-+		     "comma-separated list of vector lengths, in 128-bit units", \
-+		     "Set of vector lengths to enable for the guest",	\
-+		     sve_vls_parser, NULL),
- 
- #include "arm-common/kvm-config-arch.h"
- 
-diff --git a/arm/aarch64/kvm-cpu.c b/arm/aarch64/kvm-cpu.c
-index cdfb22e..2c624c3 100644
---- a/arm/aarch64/kvm-cpu.c
-+++ b/arm/aarch64/kvm-cpu.c
-@@ -1,8 +1,13 @@
-+#include <errno.h>
-+#include <stdio.h>
-+#include <string.h>
-+
- #include "kvm/kvm-cpu.h"
- #include "kvm/kvm.h"
- #include "kvm/virtio.h"
- 
- #include <asm/ptrace.h>
-+#include <asm/sigcontext.h>
- 
- #define COMPAT_PSR_F_BIT	0x00000040
- #define COMPAT_PSR_I_BIT	0x00000080
-@@ -12,6 +17,65 @@
- #define SCTLR_EL1_E0E_MASK	(1 << 24)
- #define SCTLR_EL1_EE_MASK	(1 << 25)
- 
-+/*
-+ * Work around old kernel headers that lack these definitions in
-+ * <asm/sigcontext.h>:
-+ */
-+#ifndef SVE_VQ_MIN
-+#define SVE_VQ_MIN 1
-+#endif
-+
-+#ifndef SVE_VQ_MAX
-+#define SVE_VQ_MAX 512
-+#endif
-+
-+int sve_vls_parser(const struct option *opt, const char *arg, int unset)
-+{
-+	size_t offset = 0;
-+	int vq, n, t;
-+	u64 (*vqs)[(SVE_VQ_MAX + 1 - SVE_VQ_MIN + 63) / 64];
-+	u64 **cfg_vqs = opt->value;
-+
-+	if (*cfg_vqs) {
-+		pr_err("sve-vls: SVE vector lengths set may only be specified once");
-+		return -1;
-+	}
-+
-+	vqs = calloc(1, sizeof *vqs);
-+	if (!vqs)
-+		die("%s", strerror(ENOMEM));
-+
-+	offset = 0;
-+	while (arg[offset]) {
-+		n = -1;
-+
-+		t = sscanf(arg + offset,
-+			   offset == 0 ? "%i%n" : ",%i%n",
-+			   &vq, &n);
-+		if (t == EOF || t < 1 || n <= 0) {
-+			pr_err("sve-vls: Comma-separated list of vector lengths required");
-+			goto error;
-+		}
-+
-+		if (vq < SVE_VQ_MIN || vq > SVE_VQ_MAX) {
-+			pr_err("sve-vls: Invalid vector length %d", vq);
-+			goto error;
-+		}
-+
-+		vq -= SVE_VQ_MIN;
-+		(*vqs)[vq / 64] |= (u64)1 << (vq % 64);
-+
-+		offset += n;
-+	}
-+
-+	*cfg_vqs = *vqs;
-+	return 0;
-+
-+error:
-+	free(vqs);
-+	return -1;
-+}
-+
- static __u64 __core_reg_id(__u64 offset)
- {
- 	__u64 id = KVM_REG_ARM64 | KVM_REG_ARM_CORE | offset;
-@@ -180,6 +244,16 @@ void kvm_cpu__select_features(struct kvm *kvm, struct kvm_vcpu_init *init)
- static int configure_sve(struct kvm_cpu *vcpu)
- {
- 	int feature = KVM_ARM_VCPU_SVE;
-+	struct kvm_one_reg r = {
-+		.id = KVM_REG_ARM64_SVE_VLS,
-+		.addr = (u64)vcpu->kvm->cfg.arch.sve_vqs,
-+	};
-+
-+	if (vcpu->kvm->cfg.arch.sve_vqs)
-+		if (ioctl(vcpu->vcpu_fd, KVM_SET_ONE_REG, &r)) {
-+			pr_err("Cannot set requested SVE vector lengths");
-+			return -1;
-+		}
- 
- 	if (ioctl(vcpu->vcpu_fd, KVM_ARM_VCPU_FINALIZE, &feature)) {
- 		pr_err("KVM_ARM_VCPU_FINALIZE: %s", strerror(errno));
-@@ -191,9 +265,13 @@ static int configure_sve(struct kvm_cpu *vcpu)
- 
- int kvm_cpu__configure_features(struct kvm_cpu *vcpu)
- {
--	if (vcpu->kvm->cfg.arch.enable_sve)
-+	if (vcpu->kvm->cfg.arch.enable_sve) {
- 		if (configure_sve(vcpu))
- 			return -1;
-+	} else {
-+		if (vcpu->kvm->cfg.arch.sve_vqs)
-+			pr_warning("SVE vector lengths ignored");
-+	}
- 
- 	return 0;
- }
-diff --git a/arm/include/arm-common/kvm-config-arch.h b/arm/include/arm-common/kvm-config-arch.h
-index 40e3d1f..b45201f 100644
---- a/arm/include/arm-common/kvm-config-arch.h
-+++ b/arm/include/arm-common/kvm-config-arch.h
-@@ -12,6 +12,7 @@ struct kvm_config_arch {
- 	u64		kaslr_seed;
- 	bool		enable_sve;
- 	bool		disable_sve;
-+	u64		*sve_vqs;
- 	bool		enable_ptrauth;
- 	bool		disable_ptrauth;
- 	enum irqchip_type irqchip;
--- 
-2.1.4
-
+Michael
 
 _______________________________________________
 linux-arm-kernel mailing list
