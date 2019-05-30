@@ -2,88 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 047202F920
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:19:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBAD72F945
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:21:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xNF9BwuwSB9nOKaAcsbZb+m3NJZKxQUaixQ8umAgNIA=; b=YpqzQna4FJ20Wq
-	hI2zoaibaLQLLD35TcgAnuCf+hdWJ75SiQD6iqM8fWv7aGrn/vkdQjD1Eh/g31A02Pmig634sH5tI
-	7CMtx+M9Hnnz6cVycfXJK/u59MVNkoVdVQ0lidwRMgC8a+C0R6cTXotRWtj3RJNyRV/idDNoWXRnD
-	BLg3imdm4qlUf7K3fEU/7tHUzBFnz1Nut09CIylQVoF2WOyNxdAQ5xQTz8i5kbZ7LNP08RLtvaO6b
-	uZaRHDw5L+xfxZgwn0CBos1aoHIea7IRgW4Ywo+wvpLicTLXJgHoovCt0Klk19gXtlG5RQZd1soQM
-	RiyA30Yt6rGPkbZlETWA==;
+	List-Owner; bh=86m+Zl8RsNRM5yV8x0FvSoZCq1Ke3JGPoVCjmwZHio0=; b=EWgaWJd5rI5t9h
+	K1x7lfgVrgMiBuH8MJwcJW/MV0GsVRD5KZyJtZ9tMj3/m86WYPSc1eYNBchdWA53rPanWQYuskNrM
+	G1Z/FPvObJiSep9CSy3N5akJp0IKIDipJhbyGGICbFgFdt8kJqbpt5bzq+YKQ4HPD3kRVzBcvbt9s
+	7iAZJe81BKBFW1Ban/QWW2VUUHLfftMancNPsdPXCFusg8S5NfyqF49hs5InM2x9qiWBz9zul0y8w
+	p2fOVtPt/QNnyHJqobVSCiyDN1YO3tVWwmFtMfrJhlczK8VZ6CAvlYpN6kZv1h+u5xK30PNm+ZDlf
+	MlMmowJCQcEaPDdT3KPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWHDC-0005PB-Mi; Thu, 30 May 2019 09:19:02 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hWHF2-0007S5-Fg; Thu, 30 May 2019 09:20:56 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWHD5-0005OR-1t
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 09:18:56 +0000
-Received: by mail-pf1-x443.google.com with SMTP id c9so311950pfc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 02:18:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AiM9lQChj12NVhLaqvQMt0hxwIJhnj7lqdz7I6Ifl9k=;
- b=CafCN9m8YypnM2GI7SEoCWLj8aK6f3cTJiEE3GUT0CIR1isix8CftjLmtVJNfjlFWw
- SPB9eFwkyaw6VXXg2KN2vlPYwFj0jhn1+6k3hZX3oAaJ8LMlzseUF7qEqNiHaqfdEL+a
- b3DdhF8j/Wt6ijQK6bSDDPS6TLrQZ+6ZbPfiY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AiM9lQChj12NVhLaqvQMt0hxwIJhnj7lqdz7I6Ifl9k=;
- b=E5JBiJjHnq5UNO03jhtPWMCpgvymTcHhOaygJRgUtLU7l3Ra9nwPLUSYIpZvjklHWL
- mVxQRpsouK+bkPg5l1xYNgC7PAtPuEHiUyHijZC9lVu3D7h2qZJO9AGmRYOvf20SnZSU
- gE+q695Fkv/s/tSL92f/neFlk7wDcB36FHLHyksbgNq0saDwlOKkNYshh/o0K3RAStm/
- bIXP3q/EEXpquFEvMbB11zW0wNnPIA2H8Jy3bWSk66/UsruHpd84JMFrUEdKFNgmK6jx
- u6IS7GKk117xRI3bpgFCsxIQG85L562RyNi44oGOsrdNjtdbsULYHrxvqMoj/wGLcq5d
- kreQ==
-X-Gm-Message-State: APjAAAVZgdr1mRJJ/p03MyQ20ATiWnh2DOWftxpM7P6/5FBEMqFrRRrc
- NGDF2vt5UidMEx6hh0hBqW1sbzCet5i2zA==
-X-Google-Smtp-Source: APXvYqyR2TapAsuf4Y55MbptIVWHJtSABFxvasONsBUaove+y19OR5W0sbkiLKtro5lpzENh/qk8+g==
-X-Received: by 2002:a05:6a00:cc:: with SMTP id
- e12mr2753772pfj.207.1559207933788; 
- Thu, 30 May 2019 02:18:53 -0700 (PDT)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id o2sm1720924pgm.51.2019.05.30.02.18.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 30 May 2019 02:18:52 -0700 (PDT)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4] gpu/drm: mediatek: call mtk_dsi_stop() after
- mtk_drm_crtc_atomic_disable()
-Date: Thu, 30 May 2019 17:18:47 +0800
-Message-Id: <20190530091847.90263-1-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.20.1
+ id 1hWHEg-0007BN-5P; Thu, 30 May 2019 09:20:35 +0000
+X-UUID: 28ebb01500874deab2241489713c77d1-20190530
+X-UUID: 28ebb01500874deab2241489713c77d1-20190530
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <biao.huang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 52979489; Thu, 30 May 2019 01:20:32 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 02:20:30 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 17:20:22 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 30 May 2019 17:20:21 +0800
+From: Biao Huang <biao.huang@mediatek.com>
+To: <davem@davemloft.net>, Jose Abreu <joabreu@synopsys.com>
+Subject: [v6, PATCH] add some features in stmmac
+Date: Thu, 30 May 2019 17:20:18 +0800
+Message-ID: <1559208019-2778-1-git-send-email-biao.huang@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 00D74C4A67192BF2D8FCF3A20E60CE58346C2B4688C88E87FBC1C8D124E4871A2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_021855_122999_A0EBF719 
-X-CRM114-Status: GOOD (  13.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190530_022034_203514_6BE6EEA7 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,76 +70,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, CK Hu <ck.hu@mediatek.com>
+Cc: andrew@lunn.ch, jianguo.zhang@mediatek.com,
+ Alexandre Torgue <alexandre.torgue@st.com>, boon.leong.ong@intel.com,
+ biao.huang@mediatek.com, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ yt.shen@mediatek.com, linux-mediatek@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-mtk_dsi_stop() should be called after mtk_drm_crtc_atomic_disable(), which needs
-ovl irq for drm_crtc_wait_one_vblank(), since after mtk_dsi_stop() is called,
-ovl irq will be disabled. If drm_crtc_wait_one_vblank() is called after last
-irq, it will timeout with this message: "vblank wait timed out on crtc 0". This
-happens sometimes when turning off the screen.
-
-In drm_atomic_helper.c#disable_outputs(),
-the calling sequence when turning off the screen is:
-
-1. mtk_dsi_encoder_disable()
-     --> mtk_output_dsi_disable()
-       --> mtk_dsi_stop();  // sometimes make vblank timeout in atomic_disable
-       --> mtk_dsi_poweroff();
-2. mtk_drm_crtc_atomic_disable()
-     --> drm_crtc_wait_one_vblank();
-     ...
-       --> mtk_dsi_ddp_stop()
-         --> mtk_dsi_poweroff();
-
-mtk_dsi_poweroff() has reference count design, change to make mtk_dsi_stop()
-called in mtk_dsi_poweroff() when refcount is 0.
-
-Fixes: 0707632b5bac ("drm/mediatek: update DSI sub driver flow for sending commands to panel")
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
----
-change log v3->v4:
-* add comment in code.
----
- drivers/gpu/drm/mediatek/mtk_dsi.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-index b00eb2d2e086..730594a91440 100644
---- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-@@ -630,6 +630,15 @@ static void mtk_dsi_poweroff(struct mtk_dsi *dsi)
- 	if (--dsi->refcount != 0)
- 		return;
- 
-+	/* 
-+	 * mtk_dsi_stop() and mtk_dsi_start() is asymmetric, since
-+	 * mtk_dsi_stop() should be called after mtk_drm_crtc_atomic_disable(),
-+	 * which needs irq for vblank, and mtk_dsi_stop() will disable irq.
-+	 * mtk_dsi_start() needs to be called in mtk_output_dsi_enable(),
-+	 * after dsi is fully set.
-+	 */
-+	mtk_dsi_stop(dsi);
-+
- 	if (!mtk_dsi_switch_to_cmd_mode(dsi, VM_DONE_INT_FLAG, 500)) {
- 		if (dsi->panel) {
- 			if (drm_panel_unprepare(dsi->panel)) {
-@@ -696,7 +705,6 @@ static void mtk_output_dsi_disable(struct mtk_dsi *dsi)
- 		}
- 	}
- 
--	mtk_dsi_stop(dsi);
- 	mtk_dsi_poweroff(dsi);
- 
- 	dsi->enabled = false;
--- 
-2.20.1
+Changes in v6:                                                                  
+        update commit message with selftest output log when flow control on        
+                                                                                
+Changes in v5:                                                                  
+        1. run checkpatch.pl to fix coding style issue.                         
+        2. apply reverse xmas tree.                                             
+        3. add output log of "ethtool -t eth0" to commit message.               
+                                                                                
+Changes in v4:                                                                  
+        retain the reverse xmas tree ordering.                                  
+                                                                                
+Changes in v3:                                                                  
+        rewrite the patch base on serires in                                    
+        https://patchwork.ozlabs.org/project/netdev/list/?series=109699         
+                                                                                
+Changes in v2;                                                                  
+        1. reverse Christmas tree order in dwmac4_set_filter.                   
+        2. remove clause 45 patch, waiting for cl45 patch from Boon Leong          
+                                                                                
+v1:                                                                             
+This series add some features in stmmac driver.                                 
+        1. add support for hash table size 128/256                              
+        2. add mdio clause 45 access from mac device for dwmac4.                
+                                                                                
+Biao Huang (1):                                                                 
+  net: stmmac: add support for hash table size 128/256 in dwmac4                
+                                                                                
+ drivers/net/ethernet/stmicro/stmmac/common.h      |    7 +--                   
+ drivers/net/ethernet/stmicro/stmmac/dwmac4.h      |    4 +-                    
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c |   49 ++++++++++++--------- 
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c  |    1 +                     
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |    6 +++                   
+ 5 files changed, 42 insertions(+), 25 deletions(-)                             
+                                                                                
+--                                                                              
+1.7.9.5
 
 
 _______________________________________________
