@@ -2,66 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 625CE304F7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 00:51:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBC3D30508
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 00:56:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ziGazBzSttV85XQTsenOJ3lNB2hnx9JH8ky+kllg4pw=; b=dgSV1clNKAZ8DN
-	ZZ1LKQ6861ju9c/ccFaH+Q2KyKmqQNeGovrL6+FCdNKVJebu8vK/yWnjsgJMEY7XsdBEETkHzVCwA
-	AFJVG8ex366IEOhOyqgfg/k6Z2MGM5DS6vrz54RUS3CBj5N1zG8Zj7s38QfP56633VME/LWfr0GRK
-	hefmjLDFwUS0bka55aSI6CkdIjM9Jb9OdKAmKdJwkDoA7MvyELMwlbvGH2sg1wKCko/nvvDS0zEv+
-	G/Yk8EQuzUDGVG8LH63T3K11aaa0T0RbLmR/2jhg+xv9CcvsJqWeWnO3wIUdXuhqZXpFuVEyR4deB
-	COTOWn1/xq5cHl+jdQIw==;
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C6zcDEjJfCOFdAfep3GgZqX7Mt2XtPYxdtl4RvHFNJY=; b=fxW7EF8ZMTruej
+	Lh0SFZ9OB32mDmv7itg1ky+Kvic5Pahpjy/nW+p9hjkA6kQTnTXFrAzS44eVSTVdDUsRP/fsMlHBd
+	S4W5nUcWgI1FbDnnarFf1Albj6Z6lXW0HZrMDsFG3MvUOL1x9pDFA2GFHRcJ9YNvm9mI/DFxfUGpO
+	L1+qgNSLfn1DH1X+28owjgK7ZKmEkxh2LsPaLnR0MDS7Jje20Ft+cLq8TUOgrwIkAPI2cNFVnLBmq
+	fvEEHPyH/ToqlMQg3PQwwjLBqOIjt2rzC8FKzhGbK0JZMjNF/4hj3M/vUgjF90EGUA/6RVylY5h5H
+	JEA1IbiTe8y4yORU8maA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWTsv-0004ux-NS; Thu, 30 May 2019 22:50:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hWTyD-0006cK-BN; Thu, 30 May 2019 22:56:25 +0000
+Received: from mail-oi1-x234.google.com ([2607:f8b0:4864:20::234])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWTsm-0004uM-7B; Thu, 30 May 2019 22:50:50 +0000
-Received: from mail-wm1-f46.google.com (mail-wm1-f46.google.com
- [209.85.128.46])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C0F4262B5;
- Thu, 30 May 2019 22:50:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559256647;
- bh=hjWqKFlJP4/yUgQMwqUdhZkErpO8lhwWKHylFyTK9uA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=1M9ZC5ANvJgXHP4foCQorjUJ/I07kCeNHrXMQm5rWFcbagVU/aeM244UAXe+MxPuK
- fjXDzTxT7RK7oEIZeiMY95zZfE+HiIZ28GB1/Lvg2sqlrwv17x8NjVM18bvSbDV21c
- wSahg+yB57xeRoyJEUxQWmJxsI9JHrbxJUP0+6Mc=
-Received: by mail-wm1-f46.google.com with SMTP id f10so4890007wmb.1;
- Thu, 30 May 2019 15:50:47 -0700 (PDT)
-X-Gm-Message-State: APjAAAUgJpciWBFjG5dZtbHQGGSJ4eJA8qbKQWqH1jIb6ueQzbizdF+J
- vcmiOlctbRn2ici9QJElJg82AwIjGPR/OnZW7Cc=
-X-Google-Smtp-Source: APXvYqzcn6C73pVcqdKVZsxUqEXkCfOCjxE1QAYlQcPsoykEW/jt3tkTj4k3F9uoyu3sRjkb0vm04eM9ByDOVS/ZKbI=
-X-Received: by 2002:a1c:c2d5:: with SMTP id s204mr3672258wmf.174.1559256645963; 
- Thu, 30 May 2019 15:50:45 -0700 (PDT)
+ id 1hWTy6-0006bz-TX
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 22:56:20 +0000
+Received: by mail-oi1-x234.google.com with SMTP id b21so2337586oic.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 15:56:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=android.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=mF9BT0vVIhQ3kN58HKKzZDfeqkZ0Lp4zeTFNG+RnoRU=;
+ b=FpYoC2OjsNV06ZZlG55K6obFqq1qTn+6823Vl4EcFnzslNEyHCJnGYxopBD5N03dBE
+ /gbVhIu9PlINsThp7NYupqePgTNSNTRzA16/okgqV8nFa0QP+qB6SpZEoNmLBaHrRJtk
+ BqErzdbA+iW9UJiie5F3oax4yTWyteUcYu4DntIwgzLsU7TGW4hiM734ov2fE9COVOgi
+ fawosDX6cKeDcmnKtfIy51q507NDgIiIInVaRWgnTvOdfI7DtuLmS7nN+McOjI5duDZQ
+ um8RTh+811b5XMDHhA7qK1jhPg4S6N8egyAHVzFM+zRFmtqwpFyeQQKLSvFRCg1Ao0/M
+ rBiw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=mF9BT0vVIhQ3kN58HKKzZDfeqkZ0Lp4zeTFNG+RnoRU=;
+ b=YwAMJr/9Ea7n+bk0iD+AueX2mm5l/JBOjoXN/ZJk/+00gcZNv/Jd8H7XGIY7F+fWSm
+ wzcdqzUChE3KPNYyCmMY8QMMTY6nCwiOKHYYqCWmFBIuOaVbePqGhYtHnbPyUPzKRhcS
+ oFrJDOx7BMwVP1Cnt/ZQnJMxP684CaZ7pEBrcmRE8b7vX2L6K8RSamPJccrhdAtx0tL+
+ btAIJd/13OkRdQ7l3azJKc/Kk31e70najShlyFyuu/l38QOj3+css60hfgS1iZNGnUJS
+ ib5d9QPA9gel16eMpne5IepQ0GsbFcbK9247uOfF8IrocL5kJ5x257MK1HpR5MEV5iMv
+ Lrpg==
+X-Gm-Message-State: APjAAAWVqBK3rGzurws5KVztmQ45c6dh6sPPEzKAS5sPFizNqvlhq0FQ
+ wjhYA7Bmos45GXQviws3U7nuwqArl8IxtoBeSoPAHLkqfQA=
+X-Google-Smtp-Source: APXvYqwkNqLb9Err9D4C+R209/ji7mwIOMA7+WPRFnsAST6VmtTBtYUPWS13pjwbNgwIn3eoYvrZnfXQF2g0++vHKpE=
+X-Received: by 2002:aca:ccd0:: with SMTP id c199mr325784oig.63.1559256977216; 
+ Thu, 30 May 2019 15:56:17 -0700 (PDT)
 MIME-Version: 1.0
-References: <1558946326-13630-1-git-send-email-neal.liu@mediatek.com>
- <1558946326-13630-2-git-send-email-neal.liu@mediatek.com>
-In-Reply-To: <1558946326-13630-2-git-send-email-neal.liu@mediatek.com>
-From: Sean Wang <sean.wang@kernel.org>
-Date: Thu, 30 May 2019 15:50:35 -0700
-X-Gmail-Original-Message-ID: <CAGp9LzpkhDhSHL=go3fvzn2Oh8DrsW8F=1YKP4ne9TDvWQVq6Q@mail.gmail.com>
-Message-ID: <CAGp9LzpkhDhSHL=go3fvzn2Oh8DrsW8F=1YKP4ne9TDvWQVq6Q@mail.gmail.com>
-Subject: Re: [PATCH v2 1/3] soc: mediatek: add SMC fid table for SIP interface
-To: Neal Liu <neal.liu@mediatek.com>
+From: Tri Vo <trong@android.com>
+Date: Thu, 30 May 2019 15:56:06 -0700
+Message-ID: <CANA+-vBHL9a9fXDWxALXXuJk6r8ObZZjhrGp-p5JUnfOThEV5g@mail.gmail.com>
+Subject: CONFIG_FRAME_POINTER support for Clang
+To: linux@armlinux.org.uk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_155048_294024_66C7E8FE 
-X-CRM114-Status: GOOD (  16.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190530_155618_979713_E6A0CD71 
+X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:234 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,102 +90,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>, wsd_upstream@mediatek.com,
- lkml <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- linux-crypto@vger.kernel.org, Matt Mackall <mpm@selenic.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Crystal Guo <Crystal.Guo@mediatek.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: irogers@google.com, Nick Desaulniers <ndesaulniers@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, stefan@agner.ch
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neal,
+Hello Russell,
 
-On Mon, May 27, 2019 at 1:39 AM Neal Liu <neal.liu@mediatek.com> wrote:
->
-> 1. Add a header file to provide SIP interface to ARM Trusted
-> Firmware(ATF)
-> 2. Add hwrng SMC fid
->
-> Signed-off-by: Neal Liu <neal.liu@mediatek.com>
-> ---
->  include/linux/soc/mediatek/mtk_sip_svc.h |   51 ++++++++++++++++++++++++++++++
->  1 file changed, 51 insertions(+)
->  create mode 100644 include/linux/soc/mediatek/mtk_sip_svc.h
->
-> diff --git a/include/linux/soc/mediatek/mtk_sip_svc.h b/include/linux/soc/mediatek/mtk_sip_svc.h
-> new file mode 100644
-> index 0000000..f65d403
-> --- /dev/null
-> +++ b/include/linux/soc/mediatek/mtk_sip_svc.h
-> @@ -0,0 +1,51 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + */
-> +
-> +#ifndef _MTK_SECURE_API_H_
-> +#define _MTK_SECURE_API_H_
-> +
-> +#include <linux/kernel.h>
-> +
-> +/* Error Code */
-> +#define SIP_SVC_E_SUCCESS                      0
-> +#define SIP_SVC_E_NOT_SUPPORTED                        -1
-> +#define SIP_SVC_E_INVALID_PARAMS               -2
-> +#define SIP_SVC_E_INVALID_RANGE                        -3
-> +#define SIP_SVC_E_PERMISSION_DENY              -4
-> +
-> +#ifdef CONFIG_ARM64
-> +#define MTK_SIP_SMC_AARCH_BIT                  0x40000000
+I'm trying to implement support for CONFIG_FRAME_POINTER when building Linux
+with Clang compiler.
 
-#define MTK_SIP_SMC_AARCH_BIT                  BIT(30)
+Currently, CONFIG_FRAME_POINTER relies on function prologue that is emitted by
+GCC using -mapcs flag. However, APCS is obsolete and Clang doesn't support it.
 
-> +#else
-> +#define MTK_SIP_SMC_AARCH_BIT                  0x00000000
+So in order to accommodate Clang-emitted frame layout, I'm thinking of
+providing Clang-specific implementation of code that relies on frame pointer,
+most notably in these files:
+        lib/backtrace.S
+        arch/arm/kernel/stacktrace.c
+        arch/arm/net/bpf_jit_32.c
 
-#define MTK_SIP_SMC_AARCH_BIT                  0
+This will likely involve putting "#ifdef CC_IS_CLANG" statements in the source
+code. Is that OK?
 
-> +#endif
-> +
-> +/*******************************************************************************
-> + * Defines for Mediatek runtime services func ids
-> + ******************************************************************************/
+Another caveat is that Clang implementation of backtracing won't be able to
+dump saved registers or dump precise pc value of the caller, because IIUC that
+information is derived from APCS's fixed prologue.
 
-It would be good if remove the trivial and below all unused comments.
+What do you think about this approach?
 
-> +
-> +/* Debug feature and ATF related SMC call */
-> +
-> +/* CPU operations related SMC call */
-> +
-> +/* SPM related SMC call */
-> +
-> +/* Low power related SMC call */
-> +
-> +/* AMMS related SMC call */
-> +
-> +/* Security related SMC call */
-> +/* HWRNG */
-> +#define MTK_SIP_KERNEL_GET_RND \
-> +       (0x82000206 | MTK_SIP_SMC_AARCH_BIT)
-> +
-> +/* Storage Encryption related SMC call */
-> +
-> +/* Platform related SMC call */
-> +
-> +/* Pheripheral related SMC call */
-> +
-> +/* MM related SMC call */
-> +
-> +#endif /* _MTK_SECURE_API_H_ */
-> --
-> 1.7.9.5
->
+Thanks,
+Tri
 
 _______________________________________________
 linux-arm-kernel mailing list
