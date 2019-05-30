@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B765C303D0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 23:07:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2624303E6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 23:12:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e4k6V6f96qRD1oh5neaFKAfG/L8x2qinUeqT22ew05Q=; b=oWzZnJExcqJ0Kn
-	dO+ZE/7NOHw5r50Z1sDfPr6zX2caRPjpSABmb78xA+ANEk+DsE5SojuAlS0S+L0iw1M0tRhTG/M5M
-	IZKQpDnG/YNhPdCNrtYfBRlF5Lk0i8NedzMSiajVW2VnXTA4cvN7meJz8aiX9dnmumm7x7JrUWOJn
-	UgScznek1FZudqg2ujK0QUBkVSVmNsfpf2zUoIGo6Ckod7YkKbYfIGiQV4N0d70ze7Oqk/DKq8G0+
-	Hk26BcP6x+iYBu4dAj0vl6En8CmsOwAePvw81qk9o61xg2rQsyZ4zCxyJY3WdVkroV1Qcuz5QtxrS
-	85EevQea1v+BjFfi6W2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2i1RD1eVEOWFZIQhkkDiEksdB4Bih9TrnWIF/ekmBqk=; b=Ogh9mSlb5WQ4JRVz0HH2owWrc
+	T3pXdPiTp4C1gtj5o5wx2I/pSf4jmDse4k3e+bbkMn96cJjWsKQG0DDjK9isStC2mjC/f3mEpSEMF
+	31rswwQeRWtsbdvz0dbONxDt8Y3Y65QJmG/GqD47AEWEJc3rJ7esa08VaPrKBtfSD4LwnSpnwtZNn
+	8KzY2V0vCvZV53BVqN2BE2Zip3yGiKB62ieWXvgH5iFVnYcQD7kWxDloShD4n2DF/1tQipFrVzbPd
+	Rm+xnHybR+h46SreijfJHBiZ41AQgrxnAdE1Qxttm4H9a288lMHSY1/z+xJrzLtdZn8uv9gfmU5yj
+	DUZbhup0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWSGj-0005CN-9y; Thu, 30 May 2019 21:07:25 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWSGc-0005BS-Ei
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 21:07:20 +0000
-Received: by mail-ed1-x542.google.com with SMTP id p26so11125467edr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 14:07:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Pv5CB4WwZj0N9C+rEj8/2lRh5EGUHdn0uj79m0rM0oo=;
- b=VEU5u5GDrcgB8PRAclAeTaxHNWRXxNgMKQuxMFD2SFRizhpvwX2vSFrW58YKLvKdGO
- eVuKFZtXyc1RHb9iKevkl1RKESa8X+H4JsE7X49/wDWGTTF1++R+Oi6bCGLu0qiMFC7q
- hWo0t+OsCQNb5YJC5V+PLRuPaGXL4SH2RlhfYwJV76d+wtYGM87zkTYGJrmM5dahxIDn
- qHnxrRKHJ981k6zXutXR8rLnD27RwSUR9gdS6t3qdzrPraAAqPEeILMrt+Xu+DkaI8aO
- CnVCUN2x67n04/yYkoMoVaF4yzXSA1yTow1K1ywH4DmLZh4o+OnP8FcuMAvRu6sLPZIL
- UDpQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Pv5CB4WwZj0N9C+rEj8/2lRh5EGUHdn0uj79m0rM0oo=;
- b=oFc6td4hS4LVUetNzns6S5iSspRNsZcAcFhgu0dhFJqCTka1XTnQX0e6yd7Sm7V14C
- R+wd9JbZh1R/5eBGgJGdIpTJ546WwiyVrklzAKxjMWrRBEMuO2m+foKUQbeiCIDNxzXa
- U52eAAD3aNO0zrpv0kHVM2733LCsFyxVyuj6W2wKbY7sI2IigBKslj/5jWA/D6mRzCJO
- gtvjcxDhgNS87r5xD+sWmSf6WUH3fW71+c/jVhjkZLRgvTJcsOCMk57+48iCTlib9s/o
- xj0kk+a24cKDSNW1ckdc87KOYHhuM2mwa+gJaueek1Z+ixYqlCbLGqLC2j8zpx3mbhmM
- GA1w==
-X-Gm-Message-State: APjAAAVyAM/kDikgPQa7Y+nxoa/YxcZAU3luSSAn7v37DbYXsFrFPsDu
- +Q1/fmLnnjaMQQzp1O/0onjplOqZtOe3zjXFXg0ALA==
-X-Google-Smtp-Source: APXvYqzIBqcTjn5yiKx6Vr6nLGFPUVRyPMd7kuo7uA8Xmjn8HuSs90QeWcqYdxDxX2LpwL8i4qi0lXPOMCD5KRVUoAU=
-X-Received: by 2002:aa7:d711:: with SMTP id t17mr7195382edq.80.1559250436307; 
- Thu, 30 May 2019 14:07:16 -0700 (PDT)
+	id 1hWSLc-0006wd-Sj; Thu, 30 May 2019 21:12:28 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWSLV-0006w3-7V; Thu, 30 May 2019 21:12:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9C8B0341;
+ Thu, 30 May 2019 14:12:20 -0700 (PDT)
+Received: from [192.168.100.220] (usa-sjc-mx-foss1.foss.arm.com
+ [217.140.101.70])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 210CC3F690;
+ Thu, 30 May 2019 14:12:19 -0700 (PDT)
+Subject: Re: [PATCH v6 0/7] Unify CPU topology across ARM & RISC-V
+To: Atish Patra <atish.patra@wdc.com>, linux-kernel@vger.kernel.org
+References: <20190529211340.17087-1-atish.patra@wdc.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <1b61e699-79c7-bbfd-c7ed-d51d321ae7ef@arm.com>
+Date: Thu, 30 May 2019 16:12:18 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-8-david@redhat.com>
-In-Reply-To: <20190527111152.16324-8-david@redhat.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Thu, 30 May 2019 17:07:05 -0400
-Message-ID: <CA+CK2bBLtZL8qxsjJt-tdaOraJCbDYfH2cbQ1ABJJ8hYif8LiQ@mail.gmail.com>
-Subject: Re: [PATCH v3 07/11] mm/memory_hotplug: Create memory block devices
- after arch_add_memory()
-To: David Hildenbrand <david@redhat.com>
+In-Reply-To: <20190529211340.17087-1-atish.patra@wdc.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_140718_629217_059346C5 
-X-CRM114-Status: GOOD (  11.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190530_141221_282854_19BF1FCD 
+X-CRM114-Status: GOOD (  30.12  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,61 +63,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
- Michal Hocko <mhocko@suse.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, "mike.travis@hpe.com" <mike.travis@hpe.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ linux-riscv@lists.infradead.org, Morten Rasmussen <morten.rasmussen@arm.com>,
+ Anup Patel <anup@brainfault.org>, Russell King <linux@armlinux.org.uk>,
+ Ingo Molnar <mingo@kernel.org>, devicetree@vger.kernel.org,
+ Albert Ou <aou@eecs.berkeley.edu>, Rob Herring <robh+dt@kernel.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Mathieu Malaterre <malat@debian.org>,
- LKML <linux-kernel@vger.kernel.org>, Arun KS <arunks@codeaurora.org>,
- Wei Yang <richard.weiyang@gmail.com>, linux-mm <linux-mm@kvack.org>,
- Andrew Banman <andrew.banman@hpe.com>, Qian Cai <cai@lca.pw>,
- Igor Mammedov <imammedo@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="us-ascii"
+ Otto Sabart <ottosabart@seberm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 7:12 AM David Hildenbrand <david@redhat.com> wrote:
->
-> Only memory to be added to the buddy and to be onlined/offlined by
-> user space using /sys/devices/system/memory/... needs (and should have!)
-> memory block devices.
->
-> Factor out creation of memory block devices. Create all devices after
-> arch_add_memory() succeeded. We can later drop the want_memblock parameter,
-> because it is now effectively stale.
->
-> Only after memory block devices have been added, memory can be onlined
-> by user space. This implies, that memory is not visible to user space at
-> all before arch_add_memory() succeeded.
->
-> While at it
-> - use WARN_ON_ONCE instead of BUG_ON in moved unregister_memory()
-> - introduce find_memory_block_by_id() to search via block id
-> - Use find_memory_block_by_id() in init_memory_block() to catch
->   duplicates
->
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
-> Cc: David Hildenbrand <david@redhat.com>
-> Cc: "mike.travis@hpe.com" <mike.travis@hpe.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Ingo Molnar <mingo@kernel.org>
-> Cc: Andrew Banman <andrew.banman@hpe.com>
-> Cc: Oscar Salvador <osalvador@suse.de>
-> Cc: Michal Hocko <mhocko@suse.com>
-> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
-> Cc: Qian Cai <cai@lca.pw>
-> Cc: Wei Yang <richard.weiyang@gmail.com>
-> Cc: Arun KS <arunks@codeaurora.org>
-> Cc: Mathieu Malaterre <malat@debian.org>
-> Signed-off-by: David Hildenbrand <david@redhat.com>
+Hi,
 
-LGTM
-Reviewed-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+On 5/29/19 4:13 PM, Atish Patra wrote:
+> The cpu-map DT entry in ARM can describe the CPU topology in much better
+> way compared to other existing approaches. RISC-V can easily adopt this
+> binding to represent its own CPU topology. Thus, both cpu-map DT
+> binding and topology parsing code can be moved to a common location so
+> that RISC-V or any other architecture can leverage that.
+> 
+> The relevant discussion regarding unifying cpu topology can be found in
+> [1].
+> 
+> arch_topology seems to be a perfect place to move the common code. I
+> have not introduced any significant functional changes in the moved code.
+> The only downside in this approach is that the capacity code will be
+> executed for RISC-V as well. But, it will exit immediately after not
+> able to find the appropriate DT node. If the overhead is considered too
+> much, we can always compile out capacity related functions under a
+> different config for the architectures that do not support them.
+> 
+> There was an opportunity to unify topology data structure for ARM32 done
+> by patch 3/4. But, I refrained from making any other changes as I am not
+> very well versed with original intention for some functions that
+> are present in arch_topology.c. I hope this patch series can be served
+> as a baseline for such changes in the future.
+> 
+> The patches have been tested for RISC-V and compile tested for ARM64,
+> ARM32 & x86.
+>
+
+I applied these to 5.2rc2, along with my PPTT/MT change and verified the 
+system & scheduler topology/etc on DAWN and ThunderX2 using ACPI on 
+arm64. They appear to be working correctly.
+
+so for the series,
+Tested-by: Jeremy Linton <jeremy.linton@arm.com>
+
+The code itself looks fine to me as well:
+
+Reviewed-by: Jeremy Linton <jeremy.linton@arm.com>
+
+Thanks!
+
+> The socket change[2] is also now part of this series.
+> 
+> [1] https://lkml.org/lkml/2018/11/6/19
+> [2] https://lkml.org/lkml/2018/11/7/918
+> 
+> QEMU changes for RISC-V topology are available at
+> 
+> https://github.com/atishp04/qemu/tree/riscv_topology_dt
+> 
+> HiFive Unleashed DT with topology node is available here.
+> https://github.com/atishp04/opensbi/tree/HiFive_unleashed_topology
+> 
+> It can be verified with OpenSBI with following additional compile time
+> option.
+> 
+> FW_PAYLOAD_FDT="unleashed_topology.dtb"
+> 
+> Changes from v5->v6
+> 1. Added two more patches from Sudeep about maintainership of arch_topology.c
+>     and Kconfig update.
+> 2. Added Tested-by & Reviewed-by
+> 3. Fixed a nit (reordering of variables)
+> 
+> Changes from v4-v5
+> 1. Removed the arch_topology.h header inclusion from topology.c and arch_topology.c
+> file. Added it in linux/topology.h.
+> 2. core_id is set to -1 upon reset. Otherwise, ARM topology store function does not
+> work.
+> 
+> Changes from v3->v4
+> 1. Get rid of ARM32 specific information in topology structure.
+> 2. Remove redundant functions from ARM32 and use common code instead.
+> 
+> Changes from v2->v3
+> 1. Cover letter update with experiment DT for topology changes.
+> 2. Added the patch for [2].
+> 
+> Changes from v1->v2
+> 1. ARM32 can now use the common code as well.
+> 
+> Atish Patra (4):
+> dt-binding: cpu-topology: Move cpu-map to a common binding.
+> cpu-topology: Move cpu topology code to common code.
+> arm: Use common cpu_topology structure and functions.
+> RISC-V: Parse cpu topology during boot.
+> 
+> Sudeep Holla (3):
+> Documentation: DT: arm: add support for sockets defining package
+> boundaries
+> base: arch_topology: update Kconfig help description
+> MAINTAINERS: Add an entry for generic architecture topology
+> 
+> .../topology.txt => cpu/cpu-topology.txt}     | 134 ++++++--
+> MAINTAINERS                                   |   7 +
+> arch/arm/include/asm/topology.h               |  20 --
+> arch/arm/kernel/topology.c                    |  60 +---
+> arch/arm64/include/asm/topology.h             |  23 --
+> arch/arm64/kernel/topology.c                  | 303 +-----------------
+> arch/riscv/Kconfig                            |   1 +
+> arch/riscv/kernel/smpboot.c                   |   3 +
+> drivers/base/Kconfig                          |   2 +-
+> drivers/base/arch_topology.c                  | 298 +++++++++++++++++
+> include/linux/arch_topology.h                 |  26 ++
+> include/linux/topology.h                      |   1 +
+> 12 files changed, 452 insertions(+), 426 deletions(-)
+> rename Documentation/devicetree/bindings/{arm/topology.txt => cpu/cpu-topology.txt} (66%)
+> 
+> --
+> 2.21.0
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
