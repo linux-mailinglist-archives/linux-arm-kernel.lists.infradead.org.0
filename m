@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5827E2FF20
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 17:14:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAD312FF21
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 17:14:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=7ETE6NH9FFRW7u0D8x1XQl9zrZYx6MUBs8NqgYu0kLs=; b=EoqEtyXTajK4+za8FTtHotilYv
-	LCDt9p/pFOReoVh6KDEiIQOUjq2gYopQ8tdFi//R67p3pLwFmpHiasZadRyeuYSvOpquBSYFml+nl
-	AvPysdU4Xq5nVYEwDMwESIHlQlK8Z45oiJwPSHfwsizxesD9moocXf7urzNVyATQUKwyv0Yc690Ik
-	cgGsmMBjwXGaY7+2aaoPpEpnqwvJFVpXGtSDuf91T6pgMeyzvIpYoIHQla3PTlUy6fM8gCTyo0J9s
-	rvRQdknExg50YJz0wTcV70LxiLZBEVFG8sYgh+bEw1DRDsznyJI1+Q0hZtpMS5Ujd6RY3U9+TyrQF
-	/SXEMtzA==;
+	bh=YOWchE1edZesvoTcNJ1P2Vo52cXbkoXubJkPGgYAhmU=; b=SHXL4Un30SNrHzuGx9ZpxbMYJ5
+	h2EoAUaimHWsisStH+e2Awd48JNEoc6eaWaUEe7it3KwhOl+YebSA0OGMFykD6s+vjJgQGFmc5OJ8
+	ta7V4sp6ZgIVyG7Re3LCxt8FejF6az3VJ5IV2vyXzCuEUjNQ0Qg+X47nsDiQ5ZOqqdNcXNKjOjmbP
+	UPTwAV+RUFUrEG47xxFI5weACl/3eX9KHdmydXGZboRONp8VDGUXClnFJGwFKGM0eWIKEI2SpZXMs
+	IyQkQqNXCFOo7hPj4meQ2QRZVbYLvfRfSbWHZCW6LPmIjI2LcVkzXnk4+o+iuIGhmM6qRsTBS+9bM
+	zg1gXhog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWMl9-0002NA-FS; Thu, 30 May 2019 15:14:27 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hWMlK-0002UH-J6; Thu, 30 May 2019 15:14:38 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWMkp-00027I-3j
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 15:14:08 +0000
+ id 1hWMkr-00027l-6U
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 15:14:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F1BEE15AD;
- Thu, 30 May 2019 08:14:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12693341;
+ Thu, 30 May 2019 08:14:09 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 26EEC3F59C;
- Thu, 30 May 2019 08:14:05 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3B8153F59C;
+ Thu, 30 May 2019 08:14:07 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH kvmtool v3 2/9] update_headers.sh: Cleanly report failure on
- error
-Date: Thu, 30 May 2019 16:13:07 +0100
-Message-Id: <1559229194-3036-3-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH kvmtool v3 3/9] update_headers.sh: arm64: Copy sve_context.h
+ if available
+Date: Thu, 30 May 2019 16:13:08 +0100
+Message-Id: <1559229194-3036-4-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
 References: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_081407_153844_B6580007 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190530_081409_251190_EE58B410 
+X-CRM114-Status: GOOD (  10.47  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -78,32 +76,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If in intermediate step fails, update_headers.sh blindly continues
-and may return success status.
+The SVE KVM support for arm64 includes the additional backend
+header <asm/sve_context.h> from <asm/kvm.h>.
 
-To avoid errors going unnoticed when driving this script, exit and
-report failure status as soon as something goes wrong.  For good
-measure, also fail on expansion of undefined shell variables to aid
-future maintainers.
+So update this header if it is available.
+
+To avoid creating a sudden dependency on a specific minimum kernel
+version, ignore the header if the source kernel tree doesn't have
+it.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 ---
- util/update_headers.sh | 2 ++
- 1 file changed, 2 insertions(+)
+ util/update_headers.sh | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
 
 diff --git a/util/update_headers.sh b/util/update_headers.sh
-index 4ba1b9f..a7e21b8 100755
+index a7e21b8..90d3ead 100755
 --- a/util/update_headers.sh
 +++ b/util/update_headers.sh
-@@ -7,6 +7,8 @@
- # using the lib/modules/`uname -r`/source link.
- ########################################################################
+@@ -25,11 +25,22 @@ fi
  
-+set -ue
+ cp -- "$LINUX_ROOT/include/uapi/linux/kvm.h" include/linux
+ 
++unset KVMTOOL_PATH
 +
- if [ "$#" -ge 1 ]
- then
- 	LINUX_ROOT="$1"
++copy_arm64 () {
++	local src=$LINUX_ROOT/arch/$arch/include/uapi/asm/sve_context.h
++
++	if [ -e "$src" ]
++	then
++		cp -- "$src" "$KVMTOOL_PATH/include/asm"
++	fi
++}
++
+ for arch in arm arm64 mips powerpc x86
+ do
+ 	case "$arch" in
+ 		arm) KVMTOOL_PATH=arm/aarch32 ;;
+-		arm64) KVMTOOL_PATH=arm/aarch64 ;;
++		arm64) KVMTOOL_PATH=arm/aarch64; copy_arm64 ;;
+ 		*) KVMTOOL_PATH=$arch ;;
+ 	esac
+ 	cp -- "$LINUX_ROOT/arch/$arch/include/uapi/asm/kvm.h" \
 -- 
 2.1.4
 
