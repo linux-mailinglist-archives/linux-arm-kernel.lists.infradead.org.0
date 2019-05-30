@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 027822EC2A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:20:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3567A2EC60
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:21:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h9HB4RtrEHzVUojNTkPdEpqilvB1Q9XAbIfQ7XDC7WQ=; b=Y3vkq4b+WP897c
-	sGFcI+NJZTI2kn0Eo2bGt9qZuSNH8DWdriNl3DkGQAWru8X/qIQ8texLgHSjgD1NmAYxdfd31ExLl
-	mOj+7uWcNWxJMj4nXllLrt8OtfFF6xK9I/WwAgnr9OGAKWzH64DJe2MNbx9ISPzvH/s0SCKY3tCnJ
-	af0DW4JP+ebm9IeuzwX/bVPtdnibnT0gTeNjr6SnNBxp3RkIg+iBOJDkLH0LWfMmeFz8xzkwFbQQu
-	NpGe7yiH9o8M5lI95fQpQU8vYtMXtihAlSWklshdNValsqXgvtmExG4W8hQXSGiM5VTUsIt+KRJYp
-	Z9WOiS8Tc8kbSeQpSvfw==;
+	List-Owner; bh=/EFFTRWHQx3g+JkrskCbwgZa5llkxwxVDPu41YuXXyg=; b=Hb8W0KZcyvXQ/+
+	l4MSSo8lSBMl1jMDd1CxU9w1vRqyr3KUGZFRKm7zCgPbJE6Rn0qIaRrFnEIL/jhAqRD5A4wjNNtTc
+	LxTqPxB9/ZWppaFIo4vWEd0FfYSGzleM2wEdUVD5Ur20PNh4dCFOPF6MSpdyVe8LvmiqDRwOPce0d
+	qTHdXI/YS8U8Yuu0M6w7KyeLnjcYmjNEnhpsX8gMvXnFMA8qljZX8+qbI+oIKlK+m7BV0z4yuViLX
+	yoUb2GUecCcwlfR6TWbApxJXb4luIfzgsB2HiLAyosVEIvDIhlEBUUY7avNWwhoZwYFxIIyW0cm57
+	tVNgF4vTRDb6qGFn1VQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWBbh-0003Y8-20; Thu, 30 May 2019 03:19:57 +0000
+	id 1hWBd1-000596-MR; Thu, 30 May 2019 03:21:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWBbV-0003X0-6v
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:19:51 +0000
+ id 1hWBcu-00058b-4M
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:21:13 +0000
 Received: from localhost (ip67-88-213-2.z213-88-67.customer.algx.net
  [67.88.213.2])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CDF97248C3;
- Thu, 30 May 2019 03:19:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BEB0E249D4;
+ Thu, 30 May 2019 03:21:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559186384;
- bh=l9B/OIDn8cuAVE8HO0aG3+J5d3MKu0EY/omgxsB3MUE=;
+ s=default; t=1559186471;
+ bh=XGmnVclwZXZkmuOEHu1RgQWExfuWhKj/ZVh8jChX7aw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DX+sfQTjKtQxzoAr0eZRDCGnj/8vhP/Z+qZ/pJNQP8xt0Z3Ud8bFT5O9fXOhtXIDa
- TQFR/y0Asl3RUh2s9A0GvYl4vFM9dcViySqnHU9Y+n/s8zkT9P4S3uWBQ6a0QJxv3S
- +K8BrLiNJcgsVBASGXcHBc4w9e/9wYRKzxqvXQzs=
+ b=F9oTs/8JJ2T4AjweCIEEZ1CDADZWgZ9t0WoImMysg5p70AJOxo/u65ywyrpuN8xp3
+ y51zDVO1JKhzvv5XPW7npwBhQN7yGwsg/jcfguD9wwahfNjQGodl3+H6NmrJ7eokgG
+ y6vdU1NArdEgQCdEwxcq0YNCJ1Z7/I7LUtnaUm3M=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.14 151/193] arm64: cpu_ops: fix a leaked reference by adding
+Subject: [PATCH 4.9 101/128] arm64: cpu_ops: fix a leaked reference by adding
  missing of_node_put
-Date: Wed, 29 May 2019 20:06:45 -0700
-Message-Id: <20190530030509.250581004@linuxfoundation.org>
+Date: Wed, 29 May 2019 20:07:13 -0700
+Message-Id: <20190530030452.805037561@linuxfoundation.org>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190530030446.953835040@linuxfoundation.org>
-References: <20190530030446.953835040@linuxfoundation.org>
+In-Reply-To: <20190530030432.977908967@linuxfoundation.org>
+References: <20190530030432.977908967@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_201950_404494_CEC6D52B 
+X-CRM114-CacheID: sfid-20190529_202112_189854_780CBF5C 
 X-CRM114-Status: GOOD (  10.82  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -108,12 +108,12 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
-index d16978213c5b3..e2a9d04d05175 100644
+index e137ceaf5016b..82b465207ed0a 100644
 --- a/arch/arm64/kernel/cpu_ops.c
 +++ b/arch/arm64/kernel/cpu_ops.c
 @@ -85,6 +85,7 @@ static const char *__init cpu_read_enable_method(int cpu)
- 				pr_err("%pOF: missing enable-method property\n",
- 					dn);
+ 				pr_err("%s: missing enable-method property\n",
+ 					dn->full_name);
  		}
 +		of_node_put(dn);
  	} else {
