@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FB1E2F7E9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 09:29:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F4972F7ED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 09:32:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gNyhKNFksQDEjqFwx/uIQVonE2GEEGEk7hAzjSi6OWs=; b=ng29DCsIbgaqkA
-	0akpiBt29DHTTRiqhJec81drbtmg++oQJpDyB06Jt2+ZF8LdLH6hXCVZVgT2cZpg+smNdXEWNBDyp
-	zAegRc1uh789OXtS5c+E3ghgdWcM2J/nnirv6Fu7ZKSckMWd2EVQ8DfxqnytNVgUeTTYRH06v2IuY
-	HBFaMzdrYQgn46m4O3kgwUrqpnLVan0LAGRvK8cvmhvBOELWOmRFx+9Be+gS4lYh36J8oS2SHcm/5
-	xlDhG0FWoOq1SC3zdrLvBo3TxqymoHx2ctKhfxvaTpw8o2TIjel58eS1GraigNL+infCIMvAGz8uV
-	YFDMJxI3buVGZny8b4FA==;
+	List-Owner; bh=Kez4vsuPb6O8hULURfNZ7OoFor/YWM3nkcyxtUaOFQk=; b=eQW037OQTw27R2
+	DFdABCN1LWi7em5xuawuLwJLZedf9uzXXo12qT0OAYOrVskRoPxxyQ9xk6JZrxzE3BYi1hln5grl8
+	FScgkEpdnFmRyu8ZnP4swFzPRkTD8ppQo0epKuph0gzn4Y6bq5y9kjMSj0BEFtD7Fb8ZU2xenJHow
+	OWp/RuTj6b9f0WjDsNcc534wZgGLYsoNo39AHTjVrKhwkPj8tpL4M9DalYe9ulUD72Yt0SkH8y2ki
+	tOB4/rwc+Nx9yI5PR/Sr+d4Qdhgvoo4MgoCD11CcVzRcbVccH4YHYUGbqef8T1+wuq5/9JraT7AP7
+	cdBGDDljhENmNzpHuwVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWFUv-0007Lq-5n; Thu, 30 May 2019 07:29:13 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWFUo-0007LT-9w
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 07:29:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E1D4BA78;
- Thu, 30 May 2019 00:29:05 -0700 (PDT)
-Received: from brain-police (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F00F53F690;
- Thu, 30 May 2019 00:29:01 -0700 (PDT)
-Date: Thu, 30 May 2019 08:28:58 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
-Message-ID: <20190530072858.GB9955@brain-police>
-References: <20190529091733.GA4485@fuggles.cambridge.arm.com>
- <20190529101042.GN2623@hirez.programming.kicks-ass.net>
- <20190529102022.GC4485@fuggles.cambridge.arm.com>
- <20190529125557.GU2623@hirez.programming.kicks-ass.net>
- <20190529130521.GA11023@fuggles.cambridge.arm.com>
- <20190529132515.GW2623@hirez.programming.kicks-ass.net>
- <20190529143510.GA11154@fuggles.cambridge.arm.com>
- <20190529161955.GZ2623@hirez.programming.kicks-ass.net>
- <20190529162528.GB12420@fuggles.cambridge.arm.com>
- <20190529164407.GA2623@hirez.programming.kicks-ass.net>
+	id 1hWFY4-0000ik-Dg; Thu, 30 May 2019 07:32:28 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWFXv-0000hw-HF; Thu, 30 May 2019 07:32:23 +0000
+X-UUID: 4d3dc13f9a48485eb6f3fccfd8813978-20190529
+X-UUID: 4d3dc13f9a48485eb6f3fccfd8813978-20190529
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 4402759; Wed, 29 May 2019 23:31:49 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 00:31:46 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Thu, 30 May 2019 15:31:39 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 30 May 2019 15:31:39 +0800
+Message-ID: <1559201499.8487.40.camel@mhfsdcap03>
+Subject: Re: [v3 PATCH] usb: create usb_debug_root for gadget only
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Felipe Balbi <felipe.balbi@linux.intel.com>
+Date: Thu, 30 May 2019 15:31:39 +0800
+In-Reply-To: <87k1ebj8vt.fsf@linux.intel.com>
+References: <cffd6d75f69e4d908c8f39b8a60ddae27d6b7c88.1559028752.git.chunfeng.yun@mediatek.com>
+ <87k1ebj8vt.fsf@linux.intel.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190529164407.GA2623@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_002906_401116_62B45CB4 
-X-CRM114-Status: GOOD (  19.93  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190530_003221_864610_FC302176 
+X-CRM114-Status: GOOD (  13.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,65 +71,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Young Xiao <92siuyang@gmail.com>, mpe@ellerman.id.au,
- jolsa@redhat.com, x86@kernel.org, linux@armlinux.org.uk, eranian@google.com,
- linux-kernel@vger.kernel.org, acme@redhat.com, mingo@redhat.com, bp@alien8.de,
- hpa@zytor.com, ravi.bangoria@linux.vnet.ibm.com, fweisbec@gmail.com,
- linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Cc: linux-usb@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 06:44:07PM +0200, Peter Zijlstra wrote:
-> On Wed, May 29, 2019 at 05:25:28PM +0100, Will Deacon wrote:
+Hi Felipe,
+On Tue, 2019-05-28 at 11:11 +0300, Felipe Balbi wrote:
+> Hi,
 > 
-> > > > > On Wed, May 29, 2019 at 02:05:21PM +0100, Will Deacon wrote:
-> > > > > > On Wed, May 29, 2019 at 02:55:57PM +0200, Peter Zijlstra wrote:
-> > > > > 
-> > > > > > >  	if (user_mode(regs)) {
-> > > > > > 
-> > > > > > Hmm, so it just occurred to me that Mark's observation is that the regs
-> > > > > > can be junk in some cases. In which case, should we be checking for
-> > > > > > kthreads first?
+> Chunfeng Yun <chunfeng.yun@mediatek.com> writes:
+> > diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
+> > index 7fcb9f782931..88b3ee03a12d 100644
+> > --- a/drivers/usb/core/usb.c
+> > +++ b/drivers/usb/core/usb.c
+> > @@ -1190,7 +1190,7 @@ EXPORT_SYMBOL_GPL(usb_debug_root);
+> >  
+> >  static void usb_debugfs_init(void)
+> >  {
+> > -	usb_debug_root = debugfs_create_dir("usb", NULL);
+> > +	usb_debug_root = debugfs_create_dir(USB_DEBUG_ROOT_NAME, NULL);
+> >  	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
+> >  			    &usbfs_devices_fops);
+> >  }
 > 
-> > Sorry, I'm not trying to catch you out! Just trying to understand what the
-> > semantics are supposed to be.
-> > 
-> > I do find the concept of user_mode(regs) bizarre for the idle task. By the
-> > above, we definitely have a bug on arm64 (user_mode(regs) tends to be
-> > true for the idle task), and I couldn't figure out how you avoided it on
-> > x86. I guess it happens to work because the stack is zero-initialised or
-> > something?
+> might be a better idea to move this to usb common. Then have a function
+> which can be called by both host and gadget to maybe create the
+> directory:
 > 
-> So lets take the whole thing:
+> static struct dentry *usb_debug_root;
 > 
-> static void perf_sample_regs_user(struct perf_regs *regs_user,
-> 				  struct pt_regs *regs,
-> 				  struct pt_regs *regs_user_copy)
+> struct dentry *usb_debugfs_init(void)
 > {
-> 	if (user_mode(regs)) {
-> 		regs_user->abi = perf_reg_abi(current);
-> 		regs_user->regs = regs;
-> 	} else if (!(current->flags & PF_KTHREAD)) {
-> 		perf_get_regs_user(regs_user, regs, regs_user_copy);
-> 	} else {
-> 		regs_user->abi = PERF_SAMPLE_REGS_ABI_NONE;
-> 		regs_user->regs = NULL;
-> 	}
+> 	if (!usb_debug_root)
+>         	usb_debug_root = debugfs_create_dir("usb", NULL);
+> 
+> 	return usb_debug_root;
 > }
 > 
-> This is called from the perf-generate-a-sample path, which is typically
-> an exception (IRQ/NMI/whatever) or a software/tracepoint thing.
+> 
+> Then usb core would be updated to something like:
+> 
+> static void usb_core_debugfs_init(void)
+> {
+> 	struct dentry *root = usb_debugfs_init();
+> 
+> 	debugfs_create_file("devices", 0444, root, NULL, &usbfs_devices_fops);
+> }
+> 
+I find a problem when move usb_debugfs_init() and usb_debugfs_cleanup()
+into usb common, it's easy to create "usb" directory, but difficult to
+cleanup it:
 
-Yes, sorry, fell into the same trap as Mark here and misunderstood your
-assertion about user_mode(regs) always needing to be valid. Then I went down
-a stupid rabbit hole and dragged you with me. I can't ack a patch twice, so
-I'll just go do something else for a bit...
+common/common.c
 
-Thanks for your patience!
+struct dentry *usb_debugfs_init(void)
+{
+    if (!usb_debug_root)
+        usb_debug_root = debugfs_create_dir("usb", NULL);
 
-Will
+    return usb_debug_root;
+}
+
+void usb_debugfs_cleanup(void)
+{
+    debugfs_remove_recursive(usb_debug_root);
+    usb_debug_root = NULL;
+}
+
+core/usb.c
+
+static void usb_core_debugfs_init(void)
+{
+    struct dentry *root = usb_debugfs_init();
+
+    debugfs_create_file("devices", 0444, root, NULL,
+&usbfs_devices_fops);
+}
+
+static int __init usb_init(void)
+{
+    ...
+    usb_core_debugfs_init();
+    ...
+}
+
+static void __exit usb_exit(void)
+{
+    ...
+    usb_debugfs_cleanup();
+    // will be error, gadget may use it.
+    ...
+}
+
+gadget/udc/core.c
+
+static int __init usb_udc_init(void)
+{
+    ...
+    usb_debugfs_init();
+    ...
+}
+
+static void __exit usb_udc_exit(void)
+{
+    ...
+    usb_debugfs_cleanup();
+    // can't cleanup in fact, usb core may use it.
+}
+
+How to handle this case? introduce a reference count? do you have any
+suggestion?
+
+Thanks a lot
+
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
