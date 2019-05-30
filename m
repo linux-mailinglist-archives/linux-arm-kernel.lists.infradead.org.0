@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8905D30522
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 01:05:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 798CA30526
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 01:05:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ExigyIYC2xemyjzvgUuWv2SB2u9np4QmdgRihjxRRjs=; b=Jpx
-	P82PFO5RnGTJ0e0Ob4xCX3E92uNdT0wcqTcTEhfOvuPkl00vL5pQCS3G5RGQEjS46eYYkKJCUMDfz
-	deeAGpiJDWQs2Ax2Q/tAGnh1P4y/8yhRurikv3poIz6XjQy9ffX3WGpgUiZL1DWuDc9OFLDdZI55v
-	rHzy4JDJiRgKlNVPMws+Qzc4DwSg/h4zbGLpcELb1nC0t1HBtdIh5Yq+SWeJR6BKzJxvSWS82FBV7
-	VSjV0IrIUxVVVdHuKdxz5o4mcm4LbbGFMet6lywjGa7WAWTigzrddkKCKTsF1pU+pqgC2QGuzbV2S
-	5drZ0DRthnM2jBT0xVPBhrtmBBjWIFA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=4rOTDgto4cVslT9K778VICarogacCFw4nSeDO7GOKK0=; b=TCREiyLrgcmHJojFcmp2nPtBEP
+	GT7QTxBtRs/7BASKuWWDnQIBgT17gls0iMN9kgy775kz4i9wTSlAmBaeIB3OGgS36KJ9HzCM2X7yV
+	KA2RAs4MWlABuQQ7TyW+7pyphSS7Lc/rAma0872x3h865/RpzrH6bh1xp9T8o9s7lAm5yYEDVgLqB
+	CBiYv9t3E83Qrx/Ao2/ZZ0QY2FXnVQQAjfvv/oiokAZuwL7K3ELOzojY8xaLvRtbx4OV/cGYsfat1
+	GUT2xX2H/TIzhOirgnK6TPSXLTU0XBP4FXjXH3OSM9qthrcrFc7Hokw758afZt4Uo9hLKtkm61G52
+	G/OZw51g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWU79-0002SO-NR; Thu, 30 May 2019 23:05:39 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1hWU7N-0002fa-2k; Thu, 30 May 2019 23:05:53 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWU72-0002S6-E9
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 23:05:33 +0000
-Received: by mail-ed1-x541.google.com with SMTP id b8so11455299edm.11
+ id 1hWU74-0002SI-Df
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 23:05:36 +0000
+Received: by mail-ed1-x542.google.com with SMTP id p26so11535148edr.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 16:05:31 -0700 (PDT)
+ Thu, 30 May 2019 16:05:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=RMNTEGnjljyZAjriCMOY9IejLkj2W1fVjZma/THgYWM=;
- b=Ug25Zi4io4lNYmvN0FjHQCoGTHi0tfCmeeYI3Nty3xemOLb4nnkC6nb1zjtP1ekZnF
- 2ehiYmhQJCb1q766r/PDkBL3cEtv226HPGfusj2FWZz+XJlQKwSUkv9rhKxNQG+Dnntb
- NJM1I19OUoAlMHsnqcNsPXWnzlZ1MWogxq/QZMzEeF+Y+hxK8HJB4n8BELa7eqkK5FfI
- FY3oJB9/MtSk1bKWFJU6zkJ1EQzHZ0TyecM4PVhbIR8wpNON7CwcxaI+1K4I7IBDt2Ko
- 25RkGSCtgcKMcyrLnp3/Axn+95ngviupi4EbaPCSC8N/hcR3lzijUjKd8A0MbbRz50PV
- TQsw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=b+zhfp2mLlsmTcyYwU+vQigbmWTMuWSVH8iE+gThN3E=;
+ b=uzoRuZewUCcPDQJlDJLxMrkdcO9Aba52CApN7ezu5FEu8il6Ypl5p1sa+8eVm6LtMj
+ Yu10POMOgrkAqrPmT7QUAyRvhiXAwO8bLzwm1tZOudc/C0JQPrMcRZRtGig/drUVHbAX
+ MkNE+3gBJKFBZOjcbjpzNZGG58qqaaCQrSuHsf3eApTeCS1aXKp06ve/ipfqmHwABj+F
+ dDwB3kOlKVjVZP0aSkuVIt9u5zRk8AQ5r2aA+towfq8gOG6GUd1tv7U8WKtlt+UdesCT
+ DvyLKMPVYNGiarm6R5lAu6g1jhugKPEnIcDW5/eenf5fqM9RkjrQOMvax7W3fH+QQ1DV
+ 4gmA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=RMNTEGnjljyZAjriCMOY9IejLkj2W1fVjZma/THgYWM=;
- b=jw1ZKqRsRUyz939Fpg3NpGAMD93AbtWG65MRKMDDmmJVbQ+fMHjl1NdobjznoA2Ewd
- 1fTEOXH7fwqMtJaPVlRZEVEfnEsVIaIt/aL4Vl8nKHFK3f6IE2bcm2xN/vHsnsmXjl5F
- RxHXMGtengsl1TTcgEmKQaQ+i1yDoP6Gmw8F7jp83ChSde5PUOEhwax3i2ShKQgitPkj
- y/wCMj0/3oXt2xQ3HatTBMyMI3wuVa81UhTbc1jxyqYQ1oSk6xe1L8KPIpP0ZmhBC5DA
- mfj1wn3FAqdJBz5doISHjoEwWVbbNvmq9lTfyZcu0FX22lLO5EAKGT/+kmIR5TH631V5
- WgRw==
-X-Gm-Message-State: APjAAAUTSn8lJ6PT04tb1MG0CJPd1Q81HPMpXeWckSSX+WWFZGk+L/a0
- Iex62j/cjPvtK3/PWx2MadU6dZdL
-X-Google-Smtp-Source: APXvYqyTfAAv3mftVSrbrGSG+M230SItvNnMHvOHywfs3HzbRf5qS0cWXLFOho9rWKuZyFMblzaPaQ==
-X-Received: by 2002:aa7:d617:: with SMTP id c23mr7661762edr.74.1559257530214; 
- Thu, 30 May 2019 16:05:30 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=b+zhfp2mLlsmTcyYwU+vQigbmWTMuWSVH8iE+gThN3E=;
+ b=jjZJKmyT+d6a9RwamKKpsyQr/2fGEzWedE4NX6KuivjvZa+XkhvErZbn0vEk2am6Z9
+ OuYvgC3ONIzuB7gj7lnL4t1ew5BSXGKIJiQKf6K1ZppRKoh1GPM9MWJSvtVSy06354gH
+ J/7rHmuJ79Rn2m7W6ywPavGHEiMQIiKu9tYnobxVzmVjtfMWPAMezg/gTfN0wxmzOAH4
+ z+l9dEUFK5LOFk/GWxtzPC6erKsVqRuYd+VBEpIkYyGM14D9EKzMGmVj8kkU4zds4acZ
+ Wz+mcBewS3Lcgd788nUm2MqgAYuch62sqsSO90WGbzM7CHwko08LC0pLGDhU36DNxrDH
+ 7u5A==
+X-Gm-Message-State: APjAAAVPyY100MvBaYQfvHA4k9WpHsovGUEJB6TJD4N/U2aIgHXwJvwZ
+ nLSsyXPwj0syyi94P2XCkuCHzxTT
+X-Google-Smtp-Source: APXvYqx0pj62s9zGLECnIgWhuj1iuXUDyZz2isnGsi4nXi1cuZnAhLZFR8m2Rmluxszy7LTgZwC63g==
+X-Received: by 2002:aa7:c919:: with SMTP id b25mr7717655edt.274.1559257532618; 
+ Thu, 30 May 2019 16:05:32 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id d22sm640338ejm.83.2019.05.30.16.05.27
+ by smtp.gmail.com with ESMTPSA id d22sm640338ejm.83.2019.05.30.16.05.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 30 May 2019 16:05:29 -0700 (PDT)
+ Thu, 30 May 2019 16:05:31 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] arm64: smp: Include smp_plat.h from smp.h
-Date: Thu, 30 May 2019 16:05:16 -0700
-Message-Id: <20190530230518.4334-1-f.fainelli@gmail.com>
+Subject: [PATCH 1/2] arm64: smp: Include smp_plat.h from smp.h
+Date: Thu, 30 May 2019 16:05:17 -0700
+Message-Id: <20190530230518.4334-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190530230518.4334-1-f.fainelli@gmail.com>
+References: <20190530230518.4334-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_160532_501178_AC9F7728 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190530_160534_498671_A46C298D 
+X-CRM114-Status: GOOD (  12.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -104,28 +107,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM64 maintainers,
+Most architectures provide the cpu_logical_map[] definition as part of
+asm/smp.h, which is included by linux/smp.h. For irqchip drivers that
+work across a variety of platforms (MIPS, ARM, ARM64, etc.), and making
+use of cpu_logical_map[] this avoids making any architecture specific
+include in those drivers.
 
-This patch series aims at enabling irq-bcm7038-l1.c on
-ARM64/ARCH_BRCMSTB, this driver makes use of cpu_logical_map[] and in
-order to avoid adding a CONFIG_ARM64 conditional inclusion of
-smp_plat.h, instead smp.h includes smp_plat.h, which is in turn included
-by linux/smp.h.
+smp_plat.h uses -EINVAL, so make sure that header file include
+linux/errmo.h.
 
-If you like the approach, I would suggest to carry that through the
-Broadcom ARM64 SoC pull request for 5.3.
-
-Thank you!
-
-Florian Fainelli (2):
-  arm64: smp: Include smp_plat.h from smp.h
-  arm64: Enable BCM7038_L1_IRQ for ARCH_BRCMSTB
-
- arch/arm64/Kconfig.platforms      | 1 +
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
  arch/arm64/include/asm/smp.h      | 1 +
  arch/arm64/include/asm/smp_plat.h | 1 +
- 3 files changed, 3 insertions(+)
+ 2 files changed, 2 insertions(+)
 
+diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
+index 18553f399e08..259135d07a75 100644
+--- a/arch/arm64/include/asm/smp.h
++++ b/arch/arm64/include/asm/smp.h
+@@ -37,6 +37,7 @@
+ #ifndef __ASSEMBLY__
+ 
+ #include <asm/percpu.h>
++#include <asm/smp_plat.h>
+ 
+ #include <linux/threads.h>
+ #include <linux/cpumask.h>
+diff --git a/arch/arm64/include/asm/smp_plat.h b/arch/arm64/include/asm/smp_plat.h
+index af58dcdefb21..eab572cff56c 100644
+--- a/arch/arm64/include/asm/smp_plat.h
++++ b/arch/arm64/include/asm/smp_plat.h
+@@ -20,6 +20,7 @@
+ #define __ASM_SMP_PLAT_H
+ 
+ #include <linux/cpumask.h>
++#include <linux/errno.h>
+ 
+ #include <asm/types.h>
+ 
 -- 
 2.17.1
 
