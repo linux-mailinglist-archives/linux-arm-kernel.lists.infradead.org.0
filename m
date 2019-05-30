@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9D9F2FD6C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:19:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 879BF2FD6F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:20:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=db4bU4tGsum9KKatki115Q7qxTrYXb0S/oKL1wJnpSs=; b=VuLmeQFKwVaC2w
-	mROkDzSeuw3PMDwSoDR9iGQi2a+AJZ1uL75EXNRC+wDyciROtzKtB0aoKiWOPUw3OmSOFPRXobbfK
-	BuSl/WtdDLoK8ml6tdue4TCOc+6bqEx4ZT8PQNjuFzAOo3L1H6A7Xi7W4TeADVAGg9WdFvBcYsf50
-	fyaieXt5k4lRFfAHhpc1pRqTdINPBk/m3BQb3BioiO/bz2SzGk/k6VFp2+AeeZqYv3Y7bWCqebnkP
-	fcplAT1KfGCHlQc3WivQYC3eBtAsK+KzMRUyIaEGRNvoRifC6G43eRRIeIrkd4PZJq6WljCzdm2ia
-	CWNPCqz5+Mcs9PnsaPSA==;
+	List-Owner; bh=5HiubfA6VB/3UfWrBK3Gdjw7ZSzYoBTVcM/VhshVMt0=; b=nYDE87KMO5dp6t
+	e+Fru65lQrntncPnK81eu6c5BWencFlMZJgw6KAzNJZYkz1qhNSERX14+Gb5ciupm+rr+mrVYm13b
+	Mq8OGdrKKCSZ3Xi4abmpyU42CCXFF7Ha5bdNhJVEUEHtdMP6xbbOmtTJ2zLoCk7Fy2vYPJjuG/MXz
+	Q1Pbaxn7XrTtQPeVWHwOsQKaLWsxkPXkLjICxu0q4r0Vof2PyR8z0UAy78FDgfWdQC12RV5ZrjXRp
+	2kdP8lRbe/h2pxR+bz3JtVTOssbZvEoV75HDUdhTYB9d8tOWXp8ECeCb3u2hIeIaCtQfGnCxhviN8
+	VQRDwyKozhgvxxK4RwcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWLu0-0003UH-QX; Thu, 30 May 2019 14:19:32 +0000
+	id 1hWLug-00057d-N4; Thu, 30 May 2019 14:20:14 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWLr3-0000LT-8m
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:16:32 +0000
+ id 1hWLr7-0000LT-1y
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:16:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2936915AD;
- Thu, 30 May 2019 07:16:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 800D1165C;
+ Thu, 30 May 2019 07:16:32 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 11C0C3F59C;
- Thu, 30 May 2019 07:16:25 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6877E3F59C;
+ Thu, 30 May 2019 07:16:29 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  linux-kselftest@vger.kernel.org
-Subject: [PATCH v6 13/19] arm64: elf: vDSO code page discovery
-Date: Thu, 30 May 2019 15:15:25 +0100
-Message-Id: <20190530141531.43462-14-vincenzo.frascino@arm.com>
+Subject: [PATCH v6 14/19] arm64: compat: Get sigreturn trampolines from vDSO
+Date: Thu, 30 May 2019 15:15:26 +0100
+Message-Id: <20190530141531.43462-15-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190530141531.43462-1-vincenzo.frascino@arm.com>
 References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_071629_580307_AACD3482 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20190530_071633_523477_0A5A2E60 
+X-CRM114-Status: GOOD (  13.40  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -78,45 +78,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Like in normal vDSOs, when compat vDSOs are enabled the auxiliary
-vector symbol AT_SYSINFO_EHDR needs to point at the address of the
-vDSO code, to allow the dynamic linker to find it.
+When the compat vDSO is enabled, the sigreturn trampolines are not
+anymore available through [sigpage] but through [vdso].
 
-Add the necessary code to the elf arm64 module to make this possible.
+Add the relevant code the enable the feature.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm64/include/asm/elf.h | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ arch/arm64/include/asm/vdso.h |  3 +++
+ arch/arm64/kernel/signal32.c  | 26 ++++++++++++++++++++++++++
+ 2 files changed, 29 insertions(+)
 
-diff --git a/arch/arm64/include/asm/elf.h b/arch/arm64/include/asm/elf.h
-index 355d120b78cb..34cabaf78011 100644
---- a/arch/arm64/include/asm/elf.h
-+++ b/arch/arm64/include/asm/elf.h
-@@ -213,7 +213,21 @@ typedef compat_elf_greg_t		compat_elf_gregset_t[COMPAT_ELF_NGREG];
- ({									\
- 	set_thread_flag(TIF_32BIT);					\
-  })
-+#ifdef CONFIG_GENERIC_COMPAT_VDSO
-+#define COMPAT_ARCH_DLINFO						\
-+do {									\
-+	/*								\
-+	 * Note that we use Elf64_Off instead of elf_addr_t because	\
-+	 * elf_addr_t in compat is defined as Elf32_Addr and casting	\
-+	 * current->mm->context.vdso to it triggers a cast warning of	\
-+	 * cast from pointer to integer of different size.		\
-+	 */								\
-+	NEW_AUX_ENT(AT_SYSINFO_EHDR,					\
-+			(Elf64_Off)current->mm->context.vdso);		\
-+} while (0)
-+#else
- #define COMPAT_ARCH_DLINFO
+diff --git a/arch/arm64/include/asm/vdso.h b/arch/arm64/include/asm/vdso.h
+index 839ce0031bd5..9b197e5ea759 100644
+--- a/arch/arm64/include/asm/vdso.h
++++ b/arch/arm64/include/asm/vdso.h
+@@ -28,6 +28,9 @@
+ #ifndef __ASSEMBLY__
+ 
+ #include <generated/vdso-offsets.h>
++#ifdef CONFIG_COMPAT_VDSO
++#include <generated/vdso32-offsets.h>
 +#endif
- extern int aarch32_setup_additional_pages(struct linux_binprm *bprm,
- 					  int uses_interp);
- #define compat_arch_setup_additional_pages \
+ 
+ #define VDSO_SYMBOL(base, name)						   \
+ ({									   \
+diff --git a/arch/arm64/kernel/signal32.c b/arch/arm64/kernel/signal32.c
+index 74e06d8c7c2b..4fca2e1937b2 100644
+--- a/arch/arm64/kernel/signal32.c
++++ b/arch/arm64/kernel/signal32.c
+@@ -29,6 +29,7 @@
+ #include <asm/traps.h>
+ #include <linux/uaccess.h>
+ #include <asm/unistd.h>
++#include <asm/vdso.h>
+ 
+ struct compat_vfp_sigframe {
+ 	compat_ulong_t	magic;
+@@ -352,6 +353,30 @@ static void compat_setup_return(struct pt_regs *regs, struct k_sigaction *ka,
+ 		retcode = ptr_to_compat(ka->sa.sa_restorer);
+ 	} else {
+ 		/* Set up sigreturn pointer */
++#ifdef CONFIG_COMPAT_VDSO
++		void *vdso_base = current->mm->context.vdso;
++		void *vdso_trampoline;
++
++		if (ka->sa.sa_flags & SA_SIGINFO) {
++			if (thumb) {
++				vdso_trampoline = VDSO_SYMBOL(vdso_base,
++							compat_rt_sigreturn_thumb);
++			} else {
++				vdso_trampoline = VDSO_SYMBOL(vdso_base,
++							compat_rt_sigreturn_arm);
++			}
++		} else {
++			if (thumb) {
++				vdso_trampoline = VDSO_SYMBOL(vdso_base,
++							compat_sigreturn_thumb);
++			} else {
++				vdso_trampoline = VDSO_SYMBOL(vdso_base,
++							compat_sigreturn_arm);
++			}
++		}
++
++		retcode = ptr_to_compat(vdso_trampoline) + thumb;
++#else
+ 		unsigned int idx = thumb << 1;
+ 
+ 		if (ka->sa.sa_flags & SA_SIGINFO)
+@@ -359,6 +384,7 @@ static void compat_setup_return(struct pt_regs *regs, struct k_sigaction *ka,
+ 
+ 		retcode = (unsigned long)current->mm->context.vdso +
+ 			  (idx << 2) + thumb;
++#endif
+ 	}
+ 
+ 	regs->regs[0]	= usig;
 -- 
 2.21.0
 
