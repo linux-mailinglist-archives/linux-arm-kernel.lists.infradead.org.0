@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3D972FCFC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:13:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E35CF2FD91
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:21:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pScOaKTYAmAOJpChjq6WEgEpFwfRxH6DKRYgERThzVM=; b=CNbP5V0Q9CFKMeubENud7X7hj
-	xVvbAYqzEIRBHhkZQdq41O9hHB6PuY0NNjc8PtQg7L7+f9h5PvCRONbmJZS6enI6dF8Ac8zAh3Lla
-	Stqt89LVOpkH/CfLj7UDq1QIimCQIJodPGCcyrbxGDdekYJGcWXxQeTC+xd1i7UivNgrDXr2/9VRp
-	0GumTKtSGtm/N1SSmf4h6C9VfO5EghlEeOYHSKI/PlorgDXdMczJbwKi9D/4HGvC/Jozh56ZeBR0/
-	XLoXk/DZ1kBJkGc5M4i8P8KyBR2StFSnZT+fKBgqKUhi6gK00QEpwY7SVvoH0qLL1Oe3aewP4AqUo
-	XMFdMR3vQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=56kVKMQ6AwkDbrjv44vGFpuFbxLJRdPK0HV/H3gx5+M=; b=Es62feQ5hN1zUI
+	+OHoxHpbjlck85le6ZIbN+GTVw1/IM7xxwqd1IMqN0xxALOcnax7AedWI9sEvZC+qSLsizJxfHv49
+	LaTi5imhX1b/E09ehVyewNK9u8gSkDfYTa28OKYB08WGmkBQozoheQJj8AgW9vSmbZtovVp/6ekD3
+	ggk7Y34+fBk2GwZ/OngwA9GKFZKl+G373KImPYKpXRpvHkGSrZ4vgPRNv+YJRuO9+EF9IQgukZkCi
+	B3mQKHYbjSSszA48gvNWfER3uIzWt8EWx96LnYcOHZvYZBZyFmsUEht+12AesXW55BxEx8IGzqnlU
+	b20E/3njBrEyV97QCp2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWLoO-0006Fy-9p; Thu, 30 May 2019 14:13:44 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWLoG-0006FG-Gd
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:13:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5830BA78;
- Thu, 30 May 2019 07:13:34 -0700 (PDT)
-Received: from [192.168.0.21] (usa-sjc-mx-foss1.foss.arm.com [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- D0C5C3F59C; Thu, 30 May 2019 07:13:31 -0700 (PDT)
-Subject: Re: [RFC v2 3/7] arm64: cpufeature: handle conflicts based on
- capability
-To: kristina.martsenko@arm.com, linux-arm-kernel@lists.infradead.org
-References: <20190529190332.29753-1-kristina.martsenko@arm.com>
- <20190529190332.29753-4-kristina.martsenko@arm.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <e4ab4a88-9e14-4d2b-e89a-6ea3202bcfd1@arm.com>
-Date: Thu, 30 May 2019 15:16:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1hWLvu-0006Fn-Pf; Thu, 30 May 2019 14:21:30 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWLrk-0001LU-Gf
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:18:03 +0000
+Received: by mail-qk1-x743.google.com with SMTP id m14so3923375qka.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 07:17:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=l+LOT5T/HmBUsdzCxRl5dLbbljv3/ECxiQWhmt5quQ0=;
+ b=Lp7NHqOwMPQVLwKjwmPtyYv6BBVOczLj1a73C6xr2V2zY9ATwNY9UPq8yXTSXrkq5r
+ L4phwmL0wNDGV9sklxFEuTIUL0WNtXLLw3syl3N7eBtW8YXwsMmtpFKW9fTFvEto0imz
+ ylPC2npd0R+mRKamHItWAhq5iJJGp8hp4cE+g=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=l+LOT5T/HmBUsdzCxRl5dLbbljv3/ECxiQWhmt5quQ0=;
+ b=jzDHAfBwfKmYOvuDe5VNjM4aQv+GFgf/WU/ZWY4WlYCyU0bNmgU7IUgsu3JOh4frj/
+ pW57k630oGHO23MSkrgCAmAsVgGzDM7o1X7hwtb4jTtpVJXgvvnYav60fWeb3fBuHkIe
+ zuJ4Vj3JhiPCdX2V5kNUTlwKxECPxsUxfgIJf/AH23iZ97OLVmQfuemzOfQ1gvRPW3Yr
+ ymINUxzqFAWtDM0qYAfVZjLMKpKbc62XGQPQwLMqyTGPN76NgaqkKHBmBi/PVdm6e+cj
+ TfrjcTEG42IWF6yaWo5qiE1qsimh7KFZrSgg9HbODFSdp59AKnVXFC/woAjmcPqpYRCi
+ /a8w==
+X-Gm-Message-State: APjAAAXKAmMgA25bY7swpm/ssy1EX+R0gBvHjs0dR6u9GfY0XfFH9gdw
+ sLnPOME/kQk086M9W6pXrPJ/k/M7I5W2zEwiYxs=
+X-Google-Smtp-Source: APXvYqxvcdqalIqdQbZ8c+pH8PwVq3is068RciFxLPOT3so+FaMecraJ+Da1cHA1B+kh92m1vrm1sTnOMVgRKO/Dr+E=
+X-Received: by 2002:a37:a3c5:: with SMTP id m188mr3485959qke.223.1559225831160; 
+ Thu, 30 May 2019 07:17:11 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190529190332.29753-4-kristina.martsenko@arm.com>
-Content-Language: en-US
+References: <20190530093948.12479-1-a.filippov@yadro.com>
+In-Reply-To: <20190530093948.12479-1-a.filippov@yadro.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Thu, 30 May 2019 14:16:59 +0000
+Message-ID: <CACPK8XfG7j4Z2bqX9CFxUeUrpx708Uqbh-5ts9W5SnDfDw-xYA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: aspeed: Add YADRO VESNIN BMC
+To: Alexander Filippov <a.filippov@yadro.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_071336_566230_889E4C19 
-X-CRM114-Status: GOOD (  27.84  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190530_071713_040975_C9C0E492 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,80 +92,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, keescook@chromium.org, ard.biesheuvel@linaro.org,
- catalin.marinas@arm.com, will.deacon@arm.com, ramana.radhakrishnan@arm.com,
- amit.kachhap@arm.com, dave.martin@arm.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/29/2019 08:03 PM, Kristina Martsenko wrote:
-> Each system capability can be of either boot, local, or system scope,
-> depending on when the state of the capability is finalized. When we
-> detect a conflict on a late CPU, we either offline the CPU or panic the
-> system. We currently always panic if the conflict is caused by a boot
-> scope capability, and offline the CPU if the conflict is caused by a
-> local or system scope capability.
-> 
-> We're going to want to add new capability (for pointer authentication)
-> which needs to be boot scope but doesn't need to panic the system when a
-> conflict is detected. So add a new flag to specify whether the
-> capability requires the system to panic or not. Current boot scope
-> capabilities are updated to set the flag, so there should be no
-> functional change as a result of this patch.
-> 
-> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+On Thu, 30 May 2019 at 09:40, Alexander Filippov <a.filippov@yadro.com> wrote:
+> @@ -0,0 +1,262 @@
 
+Can we get a SDPX license string at the top of the file? Something like this:
 
-> ---
-> 
-> Changes since RFC v1:
->   - New patch, to have ptrauth mismatches disable secondaries instead of
->     panicking
-> 
->   arch/arm64/include/asm/cpufeature.h | 15 ++++++++++++++-
->   arch/arm64/kernel/cpufeature.c      | 23 +++++++++--------------
->   2 files changed, 23 insertions(+), 15 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-> index 0522ea674253..ad952f2e0a2b 100644
-> --- a/arch/arm64/include/asm/cpufeature.h
-> +++ b/arch/arm64/include/asm/cpufeature.h
-> @@ -217,6 +217,10 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
->    *     In some non-typical cases either both (a) and (b), or neither,
->    *     should be permitted. This can be described by including neither
->    *     or both flags in the capability's type field.
-> + *
-> + *     In case of a conflict, the CPU is prevented from booting. If the
-> + *     ARM64_CPUCAP_PANIC_ON_CONFLICT flag is specified for the capability,
-> + *     then a kernel panic is triggered.
->    */
->   
->   
-> @@ -249,6 +253,8 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
->   #define ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU	((u16)BIT(4))
->   /* Is it safe for a late CPU to miss this capability when system has it */
->   #define ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU	((u16)BIT(5))
-> +/* Panic when a conflict is detected */
-> +#define ARM64_CPUCAP_PANIC_ON_CONFLICT		((u16)BIT(6))
->   
->   /*
->    * CPU errata workarounds that need to be enabled at boot time if one or
-> @@ -290,7 +296,8 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
->    * CPU feature used early in the boot based on the boot CPU. All secondary
->    * CPUs must match the state of the capability as detected by the boot CPU.
->    */
-> -#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE ARM64_CPUCAP_SCOPE_BOOT_CPU
-> +#define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE		\
-> +	(ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PANIC_ON_CONFLICT)
+// SPDX-License-Identifier: GPL-2.0+
+// Copyright 2019 <copyright holder>
 
-You may want to update the comment to mention that a conflict triggers
-kernel panic, as it is more within the control of the "cap" behavior.
+> +/dts-v1/;
+> +
+> +#include "aspeed-g4.dtsi"
+> +#include <dt-bindings/gpio/aspeed-gpio.h>
+> +
 
-With that:
+> +&i2c3 {
+> +       status = "okay";
+> +       cpr2021@59 {
+> +               #address-cells = <1>;
+> +               #size-cells = <0>;
+> +               compatible = "general,cpr2021", "general,pmbus";
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Do you have a driver for this one you plan on submitting?
 
 _______________________________________________
 linux-arm-kernel mailing list
