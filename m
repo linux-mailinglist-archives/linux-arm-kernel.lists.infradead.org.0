@@ -2,116 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39D4D2FB96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 14:30:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3CB72FBAC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 14:39:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Date:Message-ID
-	:To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=WRNfXCwZJZlhCc4tS+mqeDZd+/5QjDm8tH+dSJaX2oA=; b=Ma8Oe/zLSeDbv7
-	bsiZxcdmTwVqmVDxi5VycvUu4l2fmvbwQK7cnLk+VfO+oLJSLaQBBRIyQ08cbPwlLWAHXPAe1/L5x
-	WMVLp++T1xQN8LZl2W1BURSu5EmMEQ9jSP/oK4e237qXZ63TQCosBi7G4zPK9bKH1K61fqmcd7Xim
-	142lesQZrLFg4w+HgGMBBcM/sTyXQttatb2m388ybzBJvNNExwMMAmxPwdvtMTNuuPsBXYlfeRrSF
-	CfTQdkDwGrK6rRRcQWNC5k97hNK87Ti89faDlmsPdhkrUIg0L2txRYk3IGrysqHur4+RWFTC1uKy4
-	GQq7266vkQCwoVE0cT7A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X9KM6TlstXoN2D075vKz+aikoUYruoYO9OXBBtd/8Eg=; b=Of4wXoPZBEsfnv
+	95tfbnG0iE3TtHztwL1MS2WlsgY3fFquIAu8uIovq0vcfWrl7BUjihZjhyRrk8Ekhv2t5AWyscKvF
+	MG25q/l2+lwDeY5qppkFh6qu6+CeJehnLQLoOooWh5Va/WX+/zngXOl2hI7aan1EVt6wfFjivgiXj
+	NxDF9HCfrHw+AJYHycHU91M7X5E/OM8AmW0evoj9u9k6z675+OTAQB/Cd4Ie8vl0xPJ8OGLWCTS7w
+	2nydL0613t/BTRv3SYFOolKa8b2DhnzawIFpkAm6ZuNDtrMSFVuFWnjMWKFTodHhxoy3Eg+Hblgk8
+	tpSIPDSLrz2XhZFPZ5OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWKCW-0002Wx-GO; Thu, 30 May 2019 12:30:32 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1hWKLT-0004Yk-CF; Thu, 30 May 2019 12:39:47 +0000
+Received: from mail-co1nam03on0708.outbound.protection.outlook.com
+ ([2a01:111:f400:fe48::708]
+ helo=NAM03-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWKCO-0002WE-Vb
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 12:30:26 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190530123017euoutp0187e8d0a9619b9e0be862a256647d6b79~jdcyMJ2DY1556815568euoutp01X
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 12:30:17 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190530123017euoutp0187e8d0a9619b9e0be862a256647d6b79~jdcyMJ2DY1556815568euoutp01X
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1559219417;
- bh=rRfb4nIQIlulai7VhUp6tUgeds7+T13bxgzJ6lGHQr0=;
- h=From:Subject:To:Cc:Date:References:From;
- b=HTnrnE85RKKW4euGLPzcyYUYxL/R+LhA6OJiSSo1VrdcnvSUHr2qAy8nsdo43L+zP
- BnVorvltXUY0QdH0KIhkqh61tS82mHxtNAp5hCQoeWwZ6PgB1iOcP9UWab9jyC6Kt3
- hGgK3F0cIpGhX5mswgfuE9plJUAXGbLRdofQ9M3M=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190530123017eucas1p2c5af602281ac3b3f30663bd705a5986f~jdcx3d3852345123451eucas1p2P;
- Thu, 30 May 2019 12:30:17 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 19.2F.04325.8DCCFEC5; Thu, 30
- May 2019 13:30:16 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190530123016eucas1p2e18747b8ac1d156657232eab52876a61~jdcxGWxd90451604516eucas1p2a;
- Thu, 30 May 2019 12:30:16 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190530123015eusmtrp195d81c13e4784a1c2aef07b057426f84~jdcw22ISC1402014020eusmtrp17;
- Thu, 30 May 2019 12:30:15 +0000 (GMT)
-X-AuditID: cbfec7f5-fbbf09c0000010e5-4b-5cefccd852ad
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id B7.88.04146.7DCCFEC5; Thu, 30
- May 2019 13:30:15 +0100 (BST)
-Received: from [106.120.51.71] (unknown [106.120.51.71]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190530123015eusmtip2b655394a251cc6ef2a9636882a39000a~jdcwYkvkm2162821628eusmtip2H;
- Thu, 30 May 2019 12:30:15 +0000 (GMT)
-From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Subject: [PATCH v3] video: fbdev: atmel_lcdfb: add COMPILE_TEST support
-To: Nicolas Ferre <nicolas.ferre@microchip.com>
-Message-ID: <69cd6b8b-1fd1-86fa-2070-99d0ce15a868@samsung.com>
-Date: Thu, 30 May 2019 14:30:19 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
+ id 1hWKLL-0004Xf-8E
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 12:39:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=testarcselector01; d=microsoft.com; cv=none;
+ b=LLBqLQQtMUa2jQLty58NWPbFp940lzadlYR4b4VGbiNsJ1Y/s2baN2UR1vm6RLX93+k8S2ACioULx8E1+2okwJ6QB3qdydRkcOHfUuXLJ9vw3sZbwW4WqwQVcspq1B2iX+qfwSv+7D/XHmywl/RyjKh8+EF4Z9wVygyX5WOAUAc=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=testarcselector01;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4vJ9qKaDwnc0OT7xj/8PPFeAE8V0MZbhSpqTqdNZMxo=;
+ b=n3L+NifHbiC9MfpWsAPmrlGahS501ri7Z8EZldaxwOJF4T3QUcDkbt1Z8Y08a0oDhOK/UI+k6R0dDUth9OTGA79x12kGytrBMwv2kwEk4pTwHZz7+7ehcpU7PmIW6KOKmHyWPEwCU91M5a0+F1ZbgjOhxDLTnjNYzj8/y7KS1QI=
+ARC-Authentication-Results: i=1; test.office365.com
+ 1;spf=none;dmarc=none;dkim=none;arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4vJ9qKaDwnc0OT7xj/8PPFeAE8V0MZbhSpqTqdNZMxo=;
+ b=TAM6/8Iuc6CRlYZE6hO1G/Zl5CxtTbBb1iMZiaQixikj0tkFQSb78DF8c2aXDkmoR3+/U+74EDTauO8Jl2if/TlSergMxUuIafbZFKRiLrirmdo6KqrOsRo/hH7Z8OOOvHTLiktSy7ksGSzSOL5P7T0spSEctw2gTf3rVC8616g=
+Received: from BYAPR21MB1221.namprd21.prod.outlook.com (2603:10b6:a03:107::12)
+ by BYAPR21MB1288.namprd21.prod.outlook.com (2603:10b6:a03:10a::25)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.3; Thu, 30 May
+ 2019 12:39:33 +0000
+Received: from BYAPR21MB1221.namprd21.prod.outlook.com
+ ([fe80::d005:4de8:ffbf:ba6b]) by BYAPR21MB1221.namprd21.prod.outlook.com
+ ([fe80::d005:4de8:ffbf:ba6b%7]) with mapi id 15.20.1943.015; Thu, 30 May 2019
+ 12:39:33 +0000
+From: Michael Kelley <mikelley@microsoft.com>
+To: vkuznets <vkuznets@redhat.com>
+Subject: RE: [PATCH v3 2/2] Drivers: hv: Move Hyper-V clocksource code to new
+ clocksource driver
+Thread-Topic: [PATCH v3 2/2] Drivers: hv: Move Hyper-V clocksource code to new
+ clocksource driver
+Thread-Index: AQHVFJzHNl4KBQP76kq8rU1v4qba66aDcFoAgAAtg+A=
+Date: Thu, 30 May 2019 12:39:33 +0000
+Message-ID: <BYAPR21MB122115920E78B7897FDC7BE9D7180@BYAPR21MB1221.namprd21.prod.outlook.com>
+References: <1558969089-13204-1-git-send-email-mikelley@microsoft.com>
+ <1558969089-13204-3-git-send-email-mikelley@microsoft.com>
+ <87r28gl1d1.fsf@vitty.brq.redhat.com>
+In-Reply-To: <87r28gl1d1.fsf@vitty.brq.redhat.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrFKsWRmVeSWpSXmKPExsWy7djP87o3zryPMehaqmvR/m4Zu8WVr+/Z
- LDY9vsZqcaLvA6vF5V1z2CxerL3OarF980JmB3aPeWuqPe53H2fy2Lyk3uPOj6WMHp83yQWw
- RnHZpKTmZJalFunbJXBlHP2xmK3gFn/F/c5JzA2M83m7GDk5JARMJO7+bmfpYuTiEBJYwSjR
- /Og/E4TzhVHi9srprBDOZ0aJNe+72WBaJlzrZYNILGeUOPXtB1TVW0aJV5OnsoJUsQlYSUxs
- X8UIYgsLuEu8bfkMNJeDQ0RAX+JPlyJIPbPAJ0aJ9llrwWp4Bewkfp1bCraBRUBVonHnPxYQ
- W1QgQuL+sQ2sEDWCEidnPgGLMwuIS9x6Mp8JwpaX2P52DjPIUAmB6ewSD1q2s0Kc6iKx7cVa
- JghbWOLV8S3sELaMxOnJPSwQDesYJf52vIDq3s4osXzyP6hHrSUOH7/ICnI2s4CmxPpd+hBh
- R4kfXR8ZQcISAnwSN94KQhzBJzFp23RmiDCvREebEES1msSGZRvYYNZ27VzJDGF7SLzY+YZ1
- AqPiLCSvzULy2iwkr81CuGEBI8sqRvHU0uLc9NRi47zUcr3ixNzi0rx0veT83E2MwBR0+t/x
- rzsY9/1JOsQowMGoxMMrcPB9jBBrYllxZe4hRgkOZiUR3p/L38UI8aYkVlalFuXHF5XmpBYf
- YpTmYFES561meBAtJJCeWJKanZpakFoEk2Xi4JRqYEzblCu+7eCjLJPZUgu7n7Ht8m9bPtFG
- uWJeBe/Bsxp+bXf39z6/o1F86JfY1/ZP3rZ+ffq+6de3NO9TD9EW2fGOc3n3j35LkVMS01xi
- qzK/Mz7b7VEx460jz9yj6ivcXi9XFrJfp+g8z2HqmfgqY/dcZwXVLT88jsTMSGs5I/pu6veI
- Sx7JD5RYijMSDbWYi4oTAbcRiMo9AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrEIsWRmVeSWpSXmKPExsVy+t/xe7rXz7yPMZi339ii/d0ydosrX9+z
- WWx6fI3V4kTfB1aLy7vmsFm8WHud1WL75oXMDuwe89ZUe9zvPs7ksXlJvcedH0sZPT5vkgtg
- jdKzKcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxLLdK3S9DLOPpj
- MVvBLf6K+52TmBsY5/N2MXJySAiYSEy41svWxcjFISSwlFFiZ+Me9i5GDqCEjMTx9WUQNcIS
- f651QdW8ZpTYun8DK0iCTcBKYmL7KkYQW1jAXeJty2cmkF4RAX2JP12KIPXMAp8YJX49bwer
- 4RWwk/h1bikbiM0ioCrRuPMfC4gtKhAhceb9ChaIGkGJkzOfgNnMAuoSf+ZdYoawxSVuPZnP
- BGHLS2x/O4d5AqPALCQts5C0zELSMgtJywJGllWMIqmlxbnpucWGesWJucWleel6yfm5mxiB
- 8bPt2M/NOxgvbQw+xCjAwajEwytw8H2MEGtiWXFl7iFGCQ5mJRHen8vfxQjxpiRWVqUW5ccX
- leakFh9iNAV6aCKzlGhyPjC280riDU0NzS0sDc2NzY3NLJTEeTsEDsYICaQnlqRmp6YWpBbB
- 9DFxcEo1MOavrM9Tz6twK9dhe+n6QnzP5X+PXUoeHVTp5mMOUeL5+H5Ni4RlymG22nkKveFX
- eZX/t0tHVd8SO7lZ2+XKyVVPv9ZYm/zce93pLsMV501X153fvDMtXfRNdMbribNUjZQutvBM
- m/j2iEZMCAvT9Gc1ZRJn2GKPaBXnfPd/9HX2UgVv1cyWJUosxRmJhlrMRcWJAIrKAuG1AgAA
-X-CMS-MailID: 20190530123016eucas1p2e18747b8ac1d156657232eab52876a61
-X-Msg-Generator: CA
-X-RootMTR: 20190530123016eucas1p2e18747b8ac1d156657232eab52876a61
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190530123016eucas1p2e18747b8ac1d156657232eab52876a61
-References: <CGME20190530123016eucas1p2e18747b8ac1d156657232eab52876a61@eucas1p2.samsung.com>
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=mikelley@ntdev.microsoft.com;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2019-05-30T12:39:30.3975535Z;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=bad36bc6-94e8-4270-bb43-85fadc3ce727;
+ MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=mikelley@microsoft.com; 
+x-originating-ip: [24.22.167.197]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6dfa94de-e46e-4666-8ca7-08d6e4fbde6f
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:BYAPR21MB1288; 
+x-ms-traffictypediagnostic: BYAPR21MB1288:
+x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
+x-microsoft-antispam-prvs: <BYAPR21MB1288824D40F7C68D89A48A23D7180@BYAPR21MB1288.namprd21.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 00531FAC2C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(396003)(376002)(366004)(346002)(39860400002)(136003)(189003)(199004)(256004)(446003)(71190400001)(3846002)(476003)(102836004)(11346002)(4326008)(8990500004)(22452003)(7416002)(81166006)(33656002)(14454004)(86362001)(6436002)(26005)(81156014)(486006)(6116002)(99286004)(54906003)(186003)(55016002)(9686003)(52396003)(25786009)(66066001)(74316002)(2906002)(71200400001)(7696005)(478600001)(8936002)(66556008)(8676002)(6246003)(52536014)(76176011)(316002)(76116006)(6506007)(305945005)(10290500003)(229853002)(73956011)(10090500001)(7736002)(5660300002)(66446008)(64756008)(68736007)(107886003)(53936002)(66946007)(6916009)(66476007);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BYAPR21MB1288;
+ H:BYAPR21MB1221.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microsoft.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: FzEA7Z5pTo5Zh21+e0RVHlvVcS6Jdilj0oBZm49bmej82SGIaPsD60PC/JeUsfhdXUoi0lkWEd6Zb7eaufNcJxJJqfQ2lujW7DPE+jcz5uPjzmtb7vMDW6ptH1Asfg5xyQZp+RmPDY//R8OuyJ/B31pnSUp0sHoZnGKbR4w9qIlVJkoLKjd6P+EaDCTWMF1mpEy2ki3Iq+VUGAIn8iqam2+O3LLfoyu/e8hcy5p5wAmQAYZpSDjyV4RmKrL4Aa2JK1Lwc1/scLkMuuJqQxoklpHg4okGtWUzsKS8fI0W2prxSfg8hEVD3POCnP6IZ5YsLqfAbo+ydMV0qInA+v554jSkAl8g02+cNiL0jp4tyx9gT5CKpCH5OfRwasqAfOUHoxKL9ZeFycNYWVaBzTrjJnMKI4LqAslYnIsj7KJMszg=
+MIME-Version: 1.0
+X-OriginatorOrg: microsoft.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6dfa94de-e46e-4666-8ca7-08d6e4fbde6f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 May 2019 12:39:33.7001 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: mikelley@ntdev.microsoft.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR21MB1288
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_053025_151498_2CE9637A 
-X-CRM114-Status: GOOD (  13.65  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190530_053939_369153_B7F7B86A 
+X-CRM114-Status: GOOD (  11.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe48:0:0:0:708 listed in]
+ [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -133,69 +138,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-fbdev@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
+ "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "jasowang@redhat.com" <jasowang@redhat.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
+ "olaf@aepfle.de" <olaf@aepfle.de>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "apw@canonical.com" <apw@canonical.com>,
+ Sunil Muthuswamy <sunilmut@microsoft.com>, KY Srinivasan <kys@microsoft.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add COMPILE_TEST support to atmel_lcdfb driver for better compile
-testing coverage.
+From: Vitaly Kuznetsov <vkuznets@redhat.com> Sent: Thursday, May 30, 2019 2:48 AM
+> > +		/*
+> > +		 * sched_clock_register is needed on ARM64 but
+> > +		 * is a no-op on x86
+> > +		 */
+> > +		sched_clock_register(read_hv_sched_clock_msr,
+> > +						64, HV_CLOCK_HZ);
+> 
+> I'm not sure about ARM, but MSR-based clocksource would be a really bad
+> choice for sched clock on x86, this will slow things down
+> significantly. Luckily, as you're validly stating above,
+> sched_clock_register() is a no-op on x86 as we don't define
+> CONFIG_GENERIC_SCHED_CLOCK.
+> 
+> Can we actually *not* do sched_clock_register() in case
+> TSC page is unavailable (and revert to counting jiffies or whatever)?
+> 
 
-While at it fix improper use of UL (to silence build warnings on
-x86_64).
+We can't skip the sched_clock_register() on ARM64 because it
+does define CONFIG_GENERIC_SCHED_CLOCK.  However, Hyper-V
+should always provide REFERENCE_TSC_AVAILALBE on ARM64,
+so we should never end up in the MSR-based code on ARM64.
+Arguably that means the call to sched_clock_register() could be
+removed since it's a no-op on x86.  But I'd like to keep it for symmetry
+and in case there's a testing/debugging situation on ARM64 where
+we want to clear REFERENCE_TSC_AVAILABLE and go down the
+MSR-based code path.
 
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
----
-v3: fix build warnings on x86_64
-
-v2: add missing HAVE_CLK && HAS IOMEM dependencies
-
- drivers/video/fbdev/Kconfig       |    3 ++-
- drivers/video/fbdev/atmel_lcdfb.c |    4 ++--
- 2 files changed, 4 insertions(+), 3 deletions(-)
-
-Index: b/drivers/video/fbdev/Kconfig
-===================================================================
---- a/drivers/video/fbdev/Kconfig
-+++ b/drivers/video/fbdev/Kconfig
-@@ -855,7 +855,8 @@ config FB_S1D13XXX
- 
- config FB_ATMEL
- 	tristate "AT91 LCD Controller support"
--	depends on FB && OF && HAVE_FB_ATMEL
-+	depends on FB && OF && HAVE_CLK && HAS_IOMEM
-+	depends on HAVE_FB_ATMEL || COMPILE_TEST
- 	select FB_BACKLIGHT
- 	select FB_CFB_FILLRECT
- 	select FB_CFB_COPYAREA
-Index: b/drivers/video/fbdev/atmel_lcdfb.c
-===================================================================
---- a/drivers/video/fbdev/atmel_lcdfb.c
-+++ b/drivers/video/fbdev/atmel_lcdfb.c
-@@ -673,7 +673,7 @@ static int atmel_lcdfb_set_par(struct fb
- 	lcdc_writel(sinfo, ATMEL_LCDC_MVAL, 0);
- 
- 	/* Disable all interrupts */
--	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0UL);
-+	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0U);
- 	/* Enable FIFO & DMA errors */
- 	lcdc_writel(sinfo, ATMEL_LCDC_IER, ATMEL_LCDC_UFLWI | ATMEL_LCDC_OWRI | ATMEL_LCDC_MERI);
- 
-@@ -1291,7 +1291,7 @@ static int atmel_lcdfb_suspend(struct pl
- 	 * We don't want to handle interrupts while the clock is
- 	 * stopped. It may take forever.
- 	 */
--	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0UL);
-+	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0U);
- 
- 	sinfo->saved_lcdcon = lcdc_readl(sinfo, ATMEL_LCDC_CONTRAST_CTR);
- 	lcdc_writel(sinfo, ATMEL_LCDC_CONTRAST_CTR, 0);
+Michael
 
 _______________________________________________
 linux-arm-kernel mailing list
