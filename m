@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AE472FAD9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 13:25:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B1BB2FAE4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 13:28:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qhxNnZ1ZFjqekxseajGEQ0FT/6DPw9BD18xNodBu+UE=; b=eyjU+C8f3o+QxW
-	Jgw1ZqMQ+eQXKSsYVSbTAlDpa21T0+ZjVwtQzNctfLZfp2CHofBIib9nGDJUFy6aTzM5/4+28wCX6
-	LK1kbj0MMQ7Gmd+EEG08rcddW1K5qUEhc+WsCUJvab7Fg94DZAmUaijIJSQx6fV46SuWFolsALvvA
-	NOnBBKoU1pqSqJlpCqUk240QbihiYTOt4T1LtjZyEeiXLz3aRetPCr0U1qFJ2X63NwW+Hc8xpzPvX
-	UWpTBg5i2N6/1lIml9HWk4dM2GffjSDIDhfveKSoGvAB3w1FJfK/RethdwbE2wL7KOBAhyKu4eyVn
-	8vP8YZryAPzQmA+O7G5w==;
+	List-Owner; bh=WZ/9nyLxcfMn69m/VdU0MI1hZKqH9SjWE4r4m8CQ3pU=; b=YicQNW2H1ADM8T
+	LzDRCQUV3i0t1EGRZMXWjz3DRe08Y/NpVX0+swsWigfvM7pU1yJIl4PbOU3beG5aOXpyxUg1AWVtn
+	DvoMu0Afdi8YDNbt1le+a81fAADRwYCMLnwIz51lbrL2yd3LAKNGpehmvlePw7NTe+HgOIQ5ttPeH
+	BQLF3W8A++1hgvV29DYqR9A+Qz8UIK/SDhdxHrkNqmvoVSIaAb+fuJ6nHnyALn6l50KE1AOpK2rzT
+	MR75Hq8E7qfG0IpNISHpMiHhUqwHxLBKLqsfNQaNa8ZH+MxKZi/+CA/pFwXQgzt6yRXlyS0uUQuYn
+	rv/HiYrTBzs9UgWdjHxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWJB1-00049b-JY; Thu, 30 May 2019 11:24:55 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hWJE1-0005xL-9u; Thu, 30 May 2019 11:28:01 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWJAv-00049C-Gn
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 11:24:50 +0000
+ id 1hWJDu-0005wv-Gn
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 11:27:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F33D6374;
- Thu, 30 May 2019 04:24:48 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DD97E374;
+ Thu, 30 May 2019 04:27:53 -0700 (PDT)
 Received: from queper01-lin (queper01-lin.cambridge.arm.com [10.1.195.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7343E3F5AF;
- Thu, 30 May 2019 04:24:46 -0700 (PDT)
-Date: Thu, 30 May 2019 12:24:44 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C3FE3F5AF;
+ Thu, 30 May 2019 04:27:51 -0700 (PDT)
+Date: Thu, 30 May 2019 12:27:49 +0100
 From: Quentin Perret <quentin.perret@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH v5 2/3] thermal: cpu_cooling: Make the power-related code
- depend on IPA
-Message-ID: <20190530112442.kywpbophjkv2j2tq@queper01-lin>
+To: edubezval@gmail.com, rui.zhang@intel.com, javi.merino@kernel.org,
+ viresh.kumar@linaro.org, amit.kachhap@gmail.com, rjw@rjwysocki.net,
+ will.deacon@arm.com, catalin.marinas@arm.com,
+ daniel.lezcano@linaro.org, dietmar.eggemann@arm.com,
+ ionela.voinescu@arm.com, mka@chromium.org, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v5 3/3] thermal: cpu_cooling: Migrate to using the EM
+ framework
+Message-ID: <20190530112747.nlfyctzjkz5lak7o@queper01-lin>
 References: <20190530092038.12020-1-quentin.perret@arm.com>
- <20190530092038.12020-3-quentin.perret@arm.com>
- <20190530110356.vet2exwowdbm4umq@vireshk-i7>
+ <20190530092038.12020-4-quentin.perret@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190530110356.vet2exwowdbm4umq@vireshk-i7>
+In-Reply-To: <20190530092038.12020-4-quentin.perret@arm.com>
 User-Agent: NeoMutt/20171215
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_042449_568753_C26B6121 
-X-CRM114-Status: GOOD (  12.64  )
+X-CRM114-CacheID: sfid-20190530_042754_594461_B92F4A29 
+X-CRM114-Status: GOOD (  17.46  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -66,33 +69,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, rjw@rjwysocki.net, amit.kachhap@gmail.com,
- daniel.lezcano@linaro.org, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- edubezval@gmail.com, mka@chromium.org, catalin.marinas@arm.com,
- rui.zhang@intel.com, javi.merino@kernel.org, ionela.voinescu@arm.com,
- dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thursday 30 May 2019 at 16:33:56 (+0530), Viresh Kumar wrote:
-> On 30-05-19, 10:20, Quentin Perret wrote:
-> > The core CPU cooling infrastructure has power-related functions
-> > that have only one client: IPA. Since there can be no user of those
-> > functions if IPA is not compiled in, make sure to guard them with
-> > checks on CONFIG_THERMAL_GOV_POWER_ALLOCATOR to not waste space
-> > unnecessarily.
-> > 
-> > Suggested-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-> > Signed-off-by: Quentin Perret <quentin.perret@arm.com>
-> > ---
-> >  drivers/thermal/cpu_cooling.c | 214 +++++++++++++++++-----------------
-> >  1 file changed, 104 insertions(+), 110 deletions(-)
+On Thursday 30 May 2019 at 10:20:38 (+0100), Quentin Perret wrote:
+> The newly introduced Energy Model framework manages power cost tables in
+> a generic way. Moreover, it supports several types of models since the
+> tables can come from DT or firmware (through SCMI) for example. On the
+> other hand, the cpu_cooling subsystem manages its own power cost tables
+> using only DT data.
+> 
+> In order to avoid the duplication of data in the kernel, and in order to
+> enable IPA with EMs coming from more than just DT, remove the private
+> tables from cpu_cooling.c and migrate it to using the centralized EM
+> framework. Doing so should have no visible functional impact for
+> existing users of IPA since:
+> 
+>  - recent extenstions to the the PM_OPP infrastructure enable the
+>    registration of EMs in PM_EM using the DT property used by IPA;
+> 
+>  - the existing upstream cpufreq drivers marked with the
+>    'CPUFREQ_IS_COOLING_DEV' flag all use the aforementioned PM_OPP
+>    infrastructure, which means they all support PM_EM. The only two
+>    exceptions are qoriq-cpufreq which doesn't in fact use an EM and
+>    scmi-cpufreq which doesn't use DT for power costs.
+> 
+> For existing users of cpu_cooling, PM_EM tables will contain the exact
+> same power values that IPA used to compute on its own until now. The
+> only new dependency for them is to compile in CONFIG_ENERGY_MODEL.
+> 
+> The case where the thermal subsystem is used without an Energy Model
+> (cpufreq_cooling_ops) is handled by looking directly at CPUFreq's
+> frequency table which is already a dependency for cpu_cooling.c anyway.
+> Since the thermal framework expects the cooling states in a particular
+> order, bail out whenever the CPUFreq table is unsorted, since that is
+> fairly uncommon in general, and there are currently no users of
+> cpu_cooling for this use-case.
 > 
 > Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
 
-Thanks !
+Viresh: the patch hasn't changed much so I kept this, but please shout
+if you're not happy with the new version :-)
+
+Thanks,
 Quentin
 
 _______________________________________________
