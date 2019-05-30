@@ -2,73 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFF8E2E9A1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 02:09:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4DA02E9BB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 02:34:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Pu9+F0SEw4zxA/zM61R7vPb/Oww0yddkVifU8/iLCAQ=; b=Pg5AgESxRiQfKSRSfSa4YE4IZo
-	5sU0Kaaut0jqGYKYAi/A2JbPIQMpwhNo7or8BzJOQS/lc0DEak1lvrjmFX0Cb68PIFXWJsUSebttm
-	Y4ArOdgcK3hh1x5II4UbW2Od/jyPAxrYa1iNjvFf9Zd0NLWcS1W+JrsoN2B8LMKeWK+CaveiIIwcn
-	MqjiotZjC2FDcG43A++qurbnWQRlBe8RUDg2po0zpjpZKW19BbC5F/aSX2wTiPk8ms8tNUVNwGg12
-	yUYGvfI/5Xv/A/s4yJhEoJJiIixv2Yyk7FcfpITIZUE902KSYfYcGbRIJNwQrweMy7wAZB24lH/hi
-	AgsTG40A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W88dy+aKjKDB/N6dprxYyQQQQFP2NAdzDG5KSR40dVQ=; b=Lj96PFxDqu5G6p
+	wxzsbHg7vUUGlaGxe6ONyXF3Ecd5nC+8m69I0WUT0NjoMYLWBFnAS7rgeRyyFSJ755M+o0HYefpYG
+	rTQA9oJDPQZKVoebL7PHPHwPLUgAbhyuOy3OAafHpqz9LHx4BVte7KpW2RpMx2hOuFTeN7O+i6P9C
+	w+Mrp56IqI24Gz/UrTtHhFhMRyZvdzNXMLlRgLIhYrtcvv6KW0RCDrnf4GUr0VknJVsQiY/Jh0TP+
+	syD9kBSx2wGK0m5lzu9Nm3z4hWdcSv2oQcJfuRwZgOb6ydjATworyWjzeVSlsk0DEC/haygY8nL0m
+	WihQEDkdVTPWGhuY6pfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW8cx-0003LA-Ji; Thu, 30 May 2019 00:09:03 +0000
-Received: from regular1.263xmail.com ([211.150.70.202])
+	id 1hW91c-0003JI-0p; Thu, 30 May 2019 00:34:32 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW8cr-0003KO-39; Thu, 30 May 2019 00:08:58 +0000
-Received: from jay.xu?rock-chips.com (unknown [192.168.167.164])
- by regular1.263xmail.com (Postfix) with ESMTP id F0F36265;
- Thu, 30 May 2019 08:08:52 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P6465T140561499830016S1559174930113109_; 
- Thu, 30 May 2019 08:08:52 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <7226ec3af7018d2e8926de38c05e9585>
-X-RL-SENDER: jay.xu@rock-chips.com
-X-SENDER: xjq@rock-chips.com
-X-LOGIN-NAME: jay.xu@rock-chips.com
-X-FST-TO: xjq@rock-chips.com
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Jianqun Xu <jay.xu@rock-chips.com>
-To: jay.xu@rock-chips.com, heiko@sntech.de, mark.rutland@arm.com,
- robh+dt@kernel.org
-Subject: [PATCH v3 1/1] arm64: dts: rockchip: add core dtsi file for RK3399Pro
- SoCs
-Date: Thu, 30 May 2019 08:08:48 +0800
-Message-Id: <20190530000848.28106-1-jay.xu@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190529074752.19388-1-jay.xu@rock-chips.com>
-References: <20190529074752.19388-1-jay.xu@rock-chips.com>
+ id 1hW91V-0003IX-1j
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 00:34:26 +0000
+Received: by mail-qk1-x743.google.com with SMTP id t64so2785370qkh.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 17:34:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KHD+sHVUPLQmygDU5dgl8aDe2PTeVVrxe8ejiYsJbzA=;
+ b=nW0+RjTgr112JeSC0qx2gUZmFr6cGCDqdl+BpCHWqJuE+d78Bs5iJJebC6syz05H1g
+ APITCHaqFOtnhiPTw51uDWFk0zRdcaug6U0SqwHUL+FX62RpIXyMwquSehD4D9wCa9Nz
+ DjkgdB2ypi/hj1qa/QKZLnb8qvc1wkMBkifao=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KHD+sHVUPLQmygDU5dgl8aDe2PTeVVrxe8ejiYsJbzA=;
+ b=mEhy28dI91yaU+cd//Vp76es73z1rQY9Udw0du5zYnd31h9cY+sDC6ECUTyzc8unaj
+ 3RajvA+4pYp7WWmEKKFNzeJl9aEvuXq5UtlgUi8xqjOQ/O9pXVAO4jCNw7MBzJidLBt0
+ 4lQi/IHqnjfoABcx9VcwCZeUau4Ncb3JfpWvDJhSeVS+ojzT7vxrSwH7w/P2Lp78Ou+2
+ GdAPnksGIcosoL9rS6dt6vVNUqX28skg1yrVuj7L5k6NAkwUP23X5l8sf+LYESzM4OXx
+ lcfRROZcMCIKxMMrQpP3O2B3EeHEOk5Xwtk58caNunaOCtFBpi3JmmgsmoaYLGsUZi9O
+ yJxw==
+X-Gm-Message-State: APjAAAVr29CerMti1S9uDHE/XMk4K20EGvDLFQcEF7YdNMMrBNkbZqR0
+ MkZWTVa4IOmtRuFP1hkLc74pjuCpvFAwcmaWAj8=
+X-Google-Smtp-Source: APXvYqxYyCeKyYUztJa3DHENKeZigts1pQtuupR+90lPSZNjZI5bKFuOpg4mU0O5bqKNHFmvb0879Dook4z1MhjB/qo=
+X-Received: by 2002:a37:a10b:: with SMTP id k11mr713236qke.76.1559176459320;
+ Wed, 29 May 2019 17:34:19 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190527112753.1681-1-a.filippov@yadro.com>
+In-Reply-To: <20190527112753.1681-1-a.filippov@yadro.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Thu, 30 May 2019 00:34:04 +0000
+Message-ID: <CACPK8XeXh8uiQ6f5LWJRBJ=VwMAvdPHOo34uHhWZyMFBG2HVqw@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: aspeed: g4: add video engine support
+To: Alexander Filippov <a.filippov@yadro.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_170857_293643_ACD2C5D5 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190529_173425_094834_B1FEA31B 
+X-CRM114-Status: GOOD (  17.63  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,64 +91,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- zhangzj@rock-chips.com, linux-rockchip@lists.infradead.org,
- manivannan.sadhasivam@linaro.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds core dtsi file for Rockchip RK3399Pro SoCs,
-include rk3399.dtsi. Also enable pciei0/pcie_phy for AP to
-talk to NPU part inside SoC.
+Hi Alexander,
 
-Signed-off-by: Jianqun Xu <jay.xu@rock-chips.com>
----
-changes since v2:
-- only enable pcie0 and pcie_phy nodes, thanks for Heiko and manivannan
+On Mon, 27 May 2019 at 11:28, Alexander Filippov <a.filippov@yadro.com> wrote:
+>
+> Add a node to describe the video engine and VGA scratch registers on
+> AST2400.
 
-changes since v1:
-- remove dfi and dmc
+The scratch registers are unrelated to the video engine. As Andrew
+pointed out, the bindings are not upstream either.
 
- arch/arm64/boot/dts/rockchip/rk3399pro.dtsi | 22 +++++++++++++++++++++
- 1 file changed, 22 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
+Can you re-spin this patch wit just the video engine changes?
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-new file mode 100644
-index 000000000000..bb5ebf6608b9
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro.dtsi
-@@ -0,0 +1,22 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd.
-+
-+#include "rk3399.dtsi"
-+
-+/ {
-+	compatible = "rockchip,rk3399pro";
-+};
-+
-+/* Default to enabled since AP talk to NPU part over pcie */
-+&pcie_phy {
-+	status = "okay";
-+};
-+
-+/* Default to enabled since AP talk to NPU part over pcie */
-+&pcie0 {
-+	ep-gpios = <&gpio0 RK_PB4 GPIO_ACTIVE_HIGH>;
-+	num-lanes = <4>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_clkreqn_cpm>;
-+	status = "okay";
-+};
--- 
-2.17.1
+We also need a platform to enable and test this on. Can you submit the
+device tree for your system?
 
-
-
+>
+> These changes were copied from aspeed-g5.dtsi
+>
+> Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
+> ---
+>  arch/arm/boot/dts/aspeed-g4.dtsi | 62 ++++++++++++++++++++++++++++++++
+>  1 file changed, 62 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/aspeed-g4.dtsi b/arch/arm/boot/dts/aspeed-g4.dtsi
+> index 6011692df15a..adc1804918df 100644
+> --- a/arch/arm/boot/dts/aspeed-g4.dtsi
+> +++ b/arch/arm/boot/dts/aspeed-g4.dtsi
+> @@ -168,6 +168,10 @@
+>                                         compatible = "aspeed,g4-pinctrl";
+>                                 };
+>
+> +                               vga_scratch: scratch {
+> +                                       compatible = "aspeed,bmc-misc";
+> +                               };
+> +
+>                                 p2a: p2a-control {
+>                                         compatible = "aspeed,ast2400-p2a-ctrl";
+>                                         status = "disabled";
+> @@ -195,6 +199,16 @@
+>                                 reg = <0x1e720000 0x8000>;      // 32K
+>                         };
+>
+> +                       video: video@1e700000 {
+> +                               compatible = "aspeed,ast2400-video-engine";
+> +                               reg = <0x1e700000 0x1000>;
+> +                               clocks = <&syscon ASPEED_CLK_GATE_VCLK>,
+> +                                        <&syscon ASPEED_CLK_GATE_ECLK>;
+> +                               clock-names = "vclk", "eclk";
+> +                               interrupts = <7>;
+> +                               status = "disabled";
+> +                       };
+> +
+>                         gpio: gpio@1e780000 {
+>                                 #gpio-cells = <2>;
+>                                 gpio-controller;
+> @@ -1408,6 +1422,54 @@
+>         };
+>  };
+>
+> +&vga_scratch {
+> +       dac_mux {
+> +               offset = <0x2c>;
+> +               bit-mask = <0x3>;
+> +               bit-shift = <16>;
+> +       };
+> +       vga0 {
+> +               offset = <0x50>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +       vga1 {
+> +               offset = <0x54>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +       vga2 {
+> +               offset = <0x58>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +       vga3 {
+> +               offset = <0x5c>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +       vga4 {
+> +               offset = <0x60>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +       vga5 {
+> +               offset = <0x64>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +       vga6 {
+> +               offset = <0x68>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +       vga7 {
+> +               offset = <0x6c>;
+> +               bit-mask = <0xffffffff>;
+> +               bit-shift = <0>;
+> +       };
+> +};
+> +
+>  &sio_regs {
+>         sio_2b {
+>                 offset = <0xf0>;
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
