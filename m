@@ -2,37 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C29912F77B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 08:35:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBB2B2F7C0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 09:11:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/qHkL+DLbD6UJvW/xHGS16aTZqG2/32mlxoCboebHXY=; b=G4yw958SmpIMMy
-	Nic5CZLDKq7kcBVhItZsUnNLGX1hLqT9IhVNVH52ScSZfQG3ua4wvN71IAS6ABf541QrGT+n4YRoJ
-	h9AH8DvpMwrlhWMUsTB6b7CEDHxPoX3YUtIiwIZfV4ABilTTQ7ni/XPyFZ+mel7iD6wzLDMUQC/PE
-	VCqTKuYlsJi+J3vsbAHBtYdGKvl7E4wA1xxbA/7L3dGmGxCwMpeOnJYmL+YNX0NfpqdVewaZSWUyW
-	kDgzkM4lOcOgm+OWu1siavY+nTl4uOLaDwvbgsuXeZySxALnt6dncn2c54C1NccTcfzavk7oQIqEC
-	lJZPO3ROXQ5Df8kaZ+Iw==;
+	List-Owner; bh=WkTd8jtLA/bb3Ll4XgFSFtzw2Qr+oxQdVYCP1yhViwQ=; b=m0ceDjxHqdLOJn
+	DszBcxWhw1EYD3ND6hJsFXAtG9IC5rv42R+zBwK5DPct1KwhEiHsstheWfILFQFjbeCGRoEbbj8Hw
+	92ZMgiSeFpeOhtVhx85GDLrg6cFIKFLvar0OWLcrwQe7sdcluvhRqZHGYQdZWo3nE7IUWnksHkpMQ
+	iVVxUn3xwMx4UurNFFLts+3UPi4RLcPKCmR92MykPghDpNf1BDlvvSpHhc5rVw7uZWCj1ORVuepgm
+	FxGBKfodnAJaRN4sNeg4FT2Sfr5Nr4BS1HQukSMquBteiZ6kii/lE++Mukfp0RAxbICkImoRdHiGU
+	XkvNhi5Wof2D6FIjsy4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWEeZ-0000fg-Qs; Thu, 30 May 2019 06:35:07 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.90_1 #2 (Red
- Hat Linux)) id 1hWEeR-0000fN-4p; Thu, 30 May 2019 06:34:59 +0000
-Date: Wed, 29 May 2019 23:34:59 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 4/4] arm64/mm: Drop vm_fault_t argument from
- __do_page_fault()
-Message-ID: <20190530063459.GA2181@infradead.org>
-References: <1559133285-27986-1-git-send-email-anshuman.khandual@arm.com>
- <1559133285-27986-5-git-send-email-anshuman.khandual@arm.com>
+	id 1hWFDD-0001Q1-Va; Thu, 30 May 2019 07:10:55 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWFD4-0001P8-Lv; Thu, 30 May 2019 07:10:48 +0000
+X-UUID: 2f9ae829a9d540bda714eca8f10a57b3-20190529
+X-UUID: 2f9ae829a9d540bda714eca8f10a57b3-20190529
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2022672156; Wed, 29 May 2019 23:10:30 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 00:10:29 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 15:10:26 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 30 May 2019 15:10:26 +0800
+Message-ID: <1559200226.23119.4.camel@mtksdaap41>
+Subject: Re: [PATCH v3] gpu/drm: mediatek: call mtk_dsi_stop() after
+ mtk_drm_crtc_atomic_disable()
+From: CK Hu <ck.hu@mediatek.com>
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Thu, 30 May 2019 15:10:26 +0800
+In-Reply-To: <CAJMQK-ir9J-JN9DDZPBA1nVkJUZ_6A+fY4fA6jx6zOh_9q5a-w@mail.gmail.com>
+References: <20190528073908.633-1-hsinyi@chromium.org>
+ <1559033586.5141.3.camel@mtksdaap41>
+ <CAJMQK-ir9J-JN9DDZPBA1nVkJUZ_6A+fY4fA6jx6zOh_9q5a-w@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1559133285-27986-5-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.9.2 (2017-12-15)
+X-TM-SNTS-SMTP: 21091E5AA1B68CD54EA112FEDEABEE38DDE2401439AE716AE08C1FA05B4F42452000:8
+X-MTK: N
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190530_001047_249796_09A1EF39 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -44,20 +74,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 06:04:45PM +0530, Anshuman Khandual wrote:
-> __do_page_fault() is over complicated with multiple goto statements. This
-> cleans up code flow and while there drops the vm_fault_t argument.
+Hi, Hsin-Yi:
 
-There is no argument dropped anywhere, just a local variable.
+On Thu, 2019-05-30 at 10:55 +0800, Hsin-Yi Wang wrote:
+> On Tue, May 28, 2019 at 4:53 PM CK Hu <ck.hu@mediatek.com> wrote:
+> 
+> > I think we've already discussed in [1]. I need a reason to understand
+> > this is hardware behavior or software bug. If this is a software bug, we
+> > need to fix the bug and code could be symmetric.
+> >
+> > [1]
+> > http://lists.infradead.org/pipermail/linux-mediatek/2019-March/018423.html
+> >
+> Hi CK,
+> 
+> Jitao has replied in v2[1]
+> "
+> mtk_dsi_start must after dsi full setting.
+> If you put it in mtk_dsi_ddp_start, mtk_dsi_set_mode won't work. DSI
+> will keep cmd mode. So you see no irq.
+> ...
+> "
+> 
+> [1] https://lore.kernel.org/patchwork/patch/1052505/#1276270
+> 
+> Thanks
+
+OK, this looks the hardware behavior, so I would like you to add comment
+in the code to describe why we need this asymmetric behavior. The
+description should be clear so that we could know how to modify the code
+flow in future.
+
+Regards,
+CK
+
 
 _______________________________________________
 linux-arm-kernel mailing list
