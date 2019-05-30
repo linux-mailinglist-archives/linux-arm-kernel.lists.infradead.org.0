@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15B863006A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 18:55:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EA9E3006B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 18:55:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3KNlbQIABU4Ak+4dBF8Kjg2dcFNLHyF2v5X/Ehx3rto=; b=CK9SdqP8YLXyrDZchTymNZNHHC
-	5BFqG7ffecAQVIa7nn22W/OhpMy1PnGSF8KQmIxP7LQoczHULNOvDPy35TA9ZiP+6nrPtt4Qhh6j8
-	Ur+a4cPiXhxahgpl+j6yDnTR2AcrfAl1t0bbcph174mY6TZD7SE5wSw47akRT0mVsnfBB1oI6ievg
-	uyPq+Yj9xREmipzM+09fcGn08EQWLVcbfb3wLoG4/ctS9HBIVlNQRnr+3ICQIug4qeCfPMWSalOky
-	ifqqFsdU+1h5abyYvhy2TD+YzQEdENfg6ZIv3mt4XhX4JYq4zzM1bSZzookQz0bCU25/scxJjhpBq
-	QLoKKpQg==;
+	bh=F2dfZz2QRs4zKaqIPndtB49p4Y/AD72OFNL5IZNvGuQ=; b=eMuixZZJEGYkTZhuUPzanlsi8t
+	WlwxmUn77HTWVKOFk+nJ6wj4sWK2Ec0AQmQMlGT5irRF/fevblSz+RZjdKFs0R1UZXyTcNO1fCiok
+	JZtclm2kI8LHKqlQqt4HwycApku2ZXa2r49ALNNN80LekDueMBxaKyEFD83Tm5w+OGuFuZ+s/tSvw
+	aH1Ze51xpUkP617wDC8QGVBMNZtKm+184v43aav2F56eAvyzD3l2XuqV8tBM7EZMu7gDU1k4JFlnY
+	ujmC9vxvwt+d//I6XPLoje2rtyilTbyLZYcRRhMAU/bIU8XcCKg4IV9M/O7GyZKyt5tn578Fc5xiE
+	VHN33kNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWOKq-00082i-Mq; Thu, 30 May 2019 16:55:24 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hWOL0-0008FG-Tj; Thu, 30 May 2019 16:55:34 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWOKB-00069c-NP
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 16:54:46 +0000
+ id 1hWOKD-0006Bb-5N
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 16:54:47 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6135E341;
- Thu, 30 May 2019 09:54:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB8A415AD;
+ Thu, 30 May 2019 09:54:44 -0700 (PDT)
 Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- 2E1373F5AF; Thu, 30 May 2019 09:54:42 -0700 (PDT)
+ 9DDE53F5AF; Thu, 30 May 2019 09:54:43 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 3/4] coresight: tmc-etf: Do not call smp_processor_id from
+Subject: [PATCH v3 4/4] coresight: etb10: Do not call smp_processor_id from
  preemptible
-Date: Thu, 30 May 2019 17:54:26 +0100
-Message-Id: <1559235267-25232-4-git-send-email-suzuki.poulose@arm.com>
+Date: Thu, 30 May 2019 17:54:27 +0100
+Message-Id: <1559235267-25232-5-git-send-email-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1559235267-25232-1-git-send-email-suzuki.poulose@arm.com>
 References: <1559235267-25232-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_095444_077230_7CC3441A 
-X-CRM114-Status: GOOD (  12.95  )
+X-CRM114-CacheID: sfid-20190530_095445_495569_6825A571 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -77,40 +76,21 @@ to a CPU, to find the node for memory allocation. Use the safe
 numa_node_id() instead, to avoid BUG(). e.g:
 
  BUG: using smp_processor_id() in preemptible [00000000] code: perf/2544
- caller is tmc_alloc_etf_buffer+0x5c/0x60
- CPU: 2 PID: 2544 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
- Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
- Call trace:
-  dump_backtrace+0x0/0x150
-  show_stack+0x14/0x20
-  dump_stack+0x9c/0xc4
-  debug_smp_processor_id+0x10c/0x110
-  tmc_alloc_etf_buffer+0x5c/0x60
-  etm_setup_aux+0x1c4/0x230
-  rb_alloc_aux+0x1b8/0x2b8
-  perf_mmap+0x35c/0x478
-  mmap_region+0x34c/0x4f0
-  do_mmap+0x2d8/0x418
-  vm_mmap_pgoff+0xd0/0xf8
-  ksys_mmap_pgoff+0x88/0xf8
-  __arm64_sys_mmap+0x28/0x38
-  el0_svc_handler+0xd8/0x138
-  el0_svc+0x8/0xc
 
-Fixes: 2e499bbc1a929ac ("coresight: tmc: implementing TMC-ETF AUX space API")
+Fixes: 2997aa4063d97fdb39 ("coresight: etb10: implementing AUX API")
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-tmc-etf.c | 6 ++----
+ drivers/hwtracing/coresight/coresight-etb10.c | 6 ++----
  1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-index b89e29c..23b7ff0 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-@@ -377,12 +377,10 @@ static void *tmc_alloc_etf_buffer(struct coresight_device *csdev,
- 				  struct perf_event *event, void **pages,
- 				  int nr_pages, bool overwrite)
+diff --git a/drivers/hwtracing/coresight/coresight-etb10.c b/drivers/hwtracing/coresight/coresight-etb10.c
+index d5b9ede..3810290 100644
+--- a/drivers/hwtracing/coresight/coresight-etb10.c
++++ b/drivers/hwtracing/coresight/coresight-etb10.c
+@@ -374,12 +374,10 @@ static void *etb_alloc_buffer(struct coresight_device *csdev,
+ 			      struct perf_event *event, void **pages,
+ 			      int nr_pages, bool overwrite)
  {
 -	int node, cpu = event->cpu;
 +	int node;
@@ -121,8 +101,8 @@ index b89e29c..23b7ff0 100644
 -	node = cpu_to_node(cpu);
 +	node = (event->cpu == -1) ? NUMA_NO_NODE : cpu_to_node(event->cpu);
  
- 	/* Allocate memory structure for interaction with Perf */
  	buf = kzalloc_node(sizeof(struct cs_buffers), GFP_KERNEL, node);
+ 	if (!buf)
 -- 
 2.7.4
 
