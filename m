@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE6532FD9A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:22:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D0612FD98
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:22:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qvPV6zVDPPpVuLQYO0TcQVioa7lRD9b5oQBS9jVJC/Q=; b=ffgjWxoOCRwxRaxNiR3fZAtjzL
-	LeFayQ43jkgiYNfJ1k++JT2dBpm1XIYs7ridpr9hkmqzJrznVU+kjZtr3qQ1OTm35SkMRUC1QH9on
-	CSX/Y3fNgFuG5/qNZytKY+ftbs6gbYNaE3AMzmIzk1h5ur8N/UqQ+Tj6+yGjyszubCBQ+ct28IkB7
-	QuYUGQBftxTsPmaBu/2jNVW/a+zLZAnqTcpf04qDhkUMfqZPAoRMgsO/Krb7WyYUohnwZACVu42CO
-	MTE3gQIjV2WFAcjjLUrs82PJjgbF5XIDFFcQ4IgO7m32N1ZkI10xADJD1VjKtLhC2bLHZSJ8XN4O9
-	7mUmYCqA==;
+	bh=CGG3CorEVMPEbi2gcIDdRyjwgrEsz4OdJnSXHphqPP4=; b=Kn4CIFONFKd3VeqJ+kDU5mfT7w
+	yaOdhX0i5wgbk/NRF58Ui1B52ZPWKxNYBTv5jVwI5X1w3JQHc4KfFqOxOi0XTzMAnBSIxtZMPwBNM
+	ykmGISqedVEEQGtyI5JBj5nqX8g3N9kKmH0H/eubE3vGcJe/cJnKTxK7K7c57BwIgYR9r6vjgmYz4
+	oNg4Lr5qsuH6cftZlZhvaOv4Hfl/V0eXlvHRzX3++9ONzXaIaXL107/VOdqLT2t5tdEm9aDXxHC2k
+	WuLlyXfnIHDnb/1ekHCb57nELfMiCdQ6AyBcE0u6Jthf9asQmHpMP0uOc3cE2KGXgX4GnDpddO9Cm
+	yhlopcXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWLwt-0007en-2m; Thu, 30 May 2019 14:22:31 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hWLwX-0007DZ-PJ; Thu, 30 May 2019 14:22:09 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWLuP-0003tj-FY
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:19:59 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 28A251A0650;
+ id 1hWLuS-0003vU-1d
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:20:01 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C226B2005D7;
  Thu, 30 May 2019 16:19:54 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1C93E1A016B;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B4BD620027F;
  Thu, 30 May 2019 16:19:54 +0200 (CEST)
 Received: from fsr-ub1864-101.ea.freescale.net
  (fsr-ub1864-101.ea.freescale.net [10.171.82.13])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 883732061C;
- Thu, 30 May 2019 16:19:53 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 2BF522061C;
+ Thu, 30 May 2019 16:19:54 +0200 (CEST)
 From: laurentiu.tudor@nxp.com
 To: netdev@vger.kernel.org, madalin.bucur@nxp.com, roy.pledge@nxp.com,
  camelia.groza@nxp.com, leoyang.li@nxp.com
-Subject: [PATCH v3 1/6] fsl/fman: don't touch liodn base regs reserved on
- non-PAMU SoCs
-Date: Thu, 30 May 2019 17:19:46 +0300
-Message-Id: <20190530141951.6704-2-laurentiu.tudor@nxp.com>
+Subject: [PATCH v3 2/6] fsl/fman: add API to get the device behind a fman port
+Date: Thu, 30 May 2019 17:19:47 +0300
+Message-Id: <20190530141951.6704-3-laurentiu.tudor@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190530141951.6704-1-laurentiu.tudor@nxp.com>
 References: <20190530141951.6704-1-laurentiu.tudor@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_071957_744892_88018D5E 
-X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-CacheID: sfid-20190530_072000_383532_72CC9202 
+X-CRM114-Status: UNSURE (   8.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,7 +55,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,45 +81,53 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 
-liodn base registers are specific to PAMU based NXP systems and on SMMU
-based ones are reserved. Don't access them if PAMU is compiled in.
+Add an API that retrieves the 'struct device' that the specified fman
+port probed against. The new API will be used in a subsequent iommu
+enablement related patch.
 
 Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Acked-by: Madalin Bucur <madalin.bucur@nxp.com>
 ---
- drivers/net/ethernet/freescale/fman/fman.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/freescale/fman/fman_port.c | 14 ++++++++++++++
+ drivers/net/ethernet/freescale/fman/fman_port.h |  2 ++
+ 2 files changed, 16 insertions(+)
 
-diff --git a/drivers/net/ethernet/freescale/fman/fman.c b/drivers/net/ethernet/freescale/fman/fman.c
-index e80fedb27cee..cce6636b1763 100644
---- a/drivers/net/ethernet/freescale/fman/fman.c
-+++ b/drivers/net/ethernet/freescale/fman/fman.c
-@@ -634,6 +634,9 @@ static void set_port_liodn(struct fman *fman, u8 port_id,
- {
- 	u32 tmp;
- 
-+	iowrite32be(liodn_ofst, &fman->bmi_regs->fmbm_spliodn[port_id - 1]);
-+	if (!IS_ENABLED(CONFIG_FSL_PAMU))
-+		return;
- 	/* set LIODN base for this port */
- 	tmp = ioread32be(&fman->dma_regs->fmdmplr[port_id / 2]);
- 	if (port_id % 2) {
-@@ -644,7 +647,6 @@ static void set_port_liodn(struct fman *fman, u8 port_id,
- 		tmp |= liodn_base << DMA_LIODN_SHIFT;
- 	}
- 	iowrite32be(tmp, &fman->dma_regs->fmdmplr[port_id / 2]);
--	iowrite32be(liodn_ofst, &fman->bmi_regs->fmbm_spliodn[port_id - 1]);
+diff --git a/drivers/net/ethernet/freescale/fman/fman_port.c b/drivers/net/ethernet/freescale/fman/fman_port.c
+index ee82ee1384eb..bd76c9730692 100644
+--- a/drivers/net/ethernet/freescale/fman/fman_port.c
++++ b/drivers/net/ethernet/freescale/fman/fman_port.c
+@@ -1728,6 +1728,20 @@ u32 fman_port_get_qman_channel_id(struct fman_port *port)
  }
+ EXPORT_SYMBOL(fman_port_get_qman_channel_id);
  
- static void enable_rams_ecc(struct fman_fpm_regs __iomem *fpm_rg)
-@@ -1942,6 +1944,8 @@ static int fman_init(struct fman *fman)
++/**
++ * fman_port_get_device
++ * port:	Pointer to the FMan port device
++ *
++ * Get the 'struct device' associated to the specified FMan port device
++ *
++ * Return: pointer to associated 'struct device'
++ */
++struct device *fman_port_get_device(struct fman_port *port)
++{
++	return port->dev;
++}
++EXPORT_SYMBOL(fman_port_get_device);
++
+ int fman_port_get_hash_result_offset(struct fman_port *port, u32 *offset)
+ {
+ 	if (port->buffer_offsets.hash_result_offset == ILLEGAL_BASE)
+diff --git a/drivers/net/ethernet/freescale/fman/fman_port.h b/drivers/net/ethernet/freescale/fman/fman_port.h
+index 9dbb69f40121..82f12661a46d 100644
+--- a/drivers/net/ethernet/freescale/fman/fman_port.h
++++ b/drivers/net/ethernet/freescale/fman/fman_port.h
+@@ -157,4 +157,6 @@ int fman_port_get_tstamp(struct fman_port *port, const void *data, u64 *tstamp);
  
- 		fman->liodn_offset[i] =
- 			ioread32be(&fman->bmi_regs->fmbm_spliodn[i - 1]);
-+		if (!IS_ENABLED(CONFIG_FSL_PAMU))
-+			continue;
- 		liodn_base = ioread32be(&fman->dma_regs->fmdmplr[i / 2]);
- 		if (i % 2) {
- 			/* FMDM_PLR LSB holds LIODN base for odd ports */
+ struct fman_port *fman_port_bind(struct device *dev);
+ 
++struct device *fman_port_get_device(struct fman_port *port);
++
+ #endif /* __FMAN_PORT_H */
 -- 
 2.17.1
 
