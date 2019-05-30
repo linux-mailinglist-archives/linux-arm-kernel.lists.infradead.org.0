@@ -2,37 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F08762F9CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:46:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AB832F9CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:46:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xiDWjYQfMrbO1Do8xlRul1k8th6+KOUlVvv4Ovlj5ec=; b=c1/
-	MVXHyxHfm3eFzpdLPUgfCt5XF5oPi31u+CoHrvlcYbH37ysbvgVVxC8rvwCMKCrd7fQQ/gxHijtV3
-	Qvd81ZWcvVv+ilIf/LXpkB6IUilpsIAqIsqJMU9Qv0HuG44pXvHSy6xrcbIYxBv18AtdMtMdZvo43
-	kjUZ2KmVgbDi4m1o0c+7ddYFssRfBTly4krrM7/5lp5eVGDTnTGzQAPh5an4v6BtnUafxLKvrZ71y
-	J9EhMfW8SpyGKLWoD2q8hXYRSn7PjYVMfVvHtJ+GFCJzHRXFBgZ8QiT9xcAMa7OmdpjKIJLw6k2F1
-	47ObFNYaYwYWCwLZngdBRWUKBzzPHqQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=LszXKd85CDpc0PblwPLsiqDa/ZD9ypwgoNK6nMJUHPM=; b=Sc0q8M1MDu2xykKtHGIGnypfU6
+	03YpQmPVZu+voNvFJQS2G7c1ndSozSpFYYOdgXfcZ87FhCGMfJlG2j6dYvPa+avJbwrSen/hTiGOX
+	AFqoeHvkTqRJSWDc0latGy0NOXLK4LSF6F2cvqk8Es8Tf1OcwDJN/3RdsdqrcgFIvxEHJv7lmdz+g
+	shnUsC9WXC9RirfwWTTj2aof+Hn66vJCLV+LnCWDU5B1IrclzusE9LIuuJFbUfzknrom46Uu4jg6p
+	Us/UVSeGieoQE+FvJz1HtsKl/QuxC+bEPKjg5bcYTeJoVVvHuh1x2m6xr07EWzf7bosvbf0LNClO1
+	m8NfPOSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWHdG-0003N7-Fm; Thu, 30 May 2019 09:45:58 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hWHdd-0003kN-JP; Thu, 30 May 2019 09:46:21 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWHct-00031p-JU
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 09:45:39 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C388720129F;
- Thu, 30 May 2019 11:45:31 +0200 (CEST)
+ id 1hWHcu-00034O-Ho
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 09:45:44 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 005101A126B;
+ Thu, 30 May 2019 11:45:34 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 989072000B3;
- Thu, 30 May 2019 11:45:22 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9DD891A1242;
+ Thu, 30 May 2019 11:45:24 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2FF044029F;
- Thu, 30 May 2019 17:45:11 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2B083402FA;
+ Thu, 30 May 2019 17:45:13 +0800 (SGT)
 From: Anson.Huang@nxp.com
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -42,22 +43,23 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  bhaskar.upadhaya@nxp.com, pramod.kumar_1@nxp.com, vabhav.sharma@nxp.com,
  leonard.crestez@nxp.com, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/3] dt-bindings: arm: imx: Add the soc binding for i.MX8MN
-Date: Thu, 30 May 2019 17:47:04 +0800
-Message-Id: <20190530094706.865-1-Anson.Huang@nxp.com>
+Subject: [PATCH 2/3] arm64: dts: freescale: Add i.MX8MN dtsi support
+Date: Thu, 30 May 2019 17:47:05 +0800
+Message-Id: <20190530094706.865-2-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190530094706.865-1-Anson.Huang@nxp.com>
+References: <20190530094706.865-1-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_024536_373329_368CF7A2 
-X-CRM114-Status: UNSURE (   5.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190530_024537_543134_9E3ABAB5 
+X-CRM114-Status: GOOD (  11.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,30 +82,732 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Anson Huang <Anson.Huang@nxp.com>
 
-This patch adds the soc & board binding for i.MX8MN.
+The i.MX8M Nano Media Applications Processor is a new SoC of the i.MX8M
+family, it is a 14nm FinFET product of the growing mScale family targeting
+the consumer market. It is built in Samsung 14LPP to achieve both high
+performance and low power consumption and relies on a powerful fully
+coherent core complex based on a quad core ARM Cortex-A53 cluster,
+Cortex-M7 low-power coprocessor and graphics accelerator.
+
+This patch adds the basic dtsi support for i.MX8MN.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- Documentation/devicetree/bindings/arm/fsl.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
+This patch should be based on below patches for clock and pinctrl head files:
+https://patchwork.kernel.org/patch/10968059/
+https://patchwork.kernel.org/patch/10968267/
+---
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi | 701 ++++++++++++++++++++++++++++++
+ 1 file changed, 701 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8mn.dtsi
 
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index 407138e..b1a5231 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -171,6 +171,12 @@ properties:
-           - const: compulab,cl-som-imx7
-           - const: fsl,imx7d
- 
-+      - description: i.MX8MN based Boards
-+        items:
-+          - enum:
-+              - fsl,imx8mn-ddr4-evk            # i.MX8MN DDR4 EVK Board
-+          - const: fsl,imx8mn
+diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+new file mode 100644
+index 0000000..c318ee6
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+@@ -0,0 +1,701 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright 2019 NXP
++ */
 +
-       - description: i.MX8MM based Boards
-         items:
-           - enum:
++#include <dt-bindings/clock/imx8mn-clock.h>
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++
++#include "imx8mn-pinfunc.h"
++
++/ {
++	compatible = "fsl,imx8mn";
++	interrupt-parent = <&gic>;
++	#address-cells = <2>;
++	#size-cells = <2>;
++
++	aliases {
++		ethernet0 = &fec1;
++		gpio0 = &gpio1;
++		gpio1 = &gpio2;
++		gpio2 = &gpio3;
++		gpio3 = &gpio4;
++		gpio4 = &gpio5;
++		i2c0 = &i2c1;
++		i2c1 = &i2c2;
++		i2c2 = &i2c3;
++		i2c3 = &i2c4;
++		mmc0 = &usdhc1;
++		mmc1 = &usdhc2;
++		mmc2 = &usdhc3;
++		serial0 = &uart1;
++		serial1 = &uart2;
++		serial2 = &uart3;
++		serial3 = &uart4;
++		spi0 = &ecspi1;
++		spi1 = &ecspi2;
++		spi2 = &ecspi3;
++	};
++
++	cpus {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		A53_0: cpu@0 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x0>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MN_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_1: cpu@1 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x1>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MN_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_2: cpu@2 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x2>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MN_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_3: cpu@3 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x3>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MN_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_L2: l2-cache0 {
++			compatible = "cache";
++		};
++	};
++
++	memory@40000000 {
++		device_type = "memory";
++		reg = <0x0 0x40000000 0 0x80000000>;
++	};
++
++	osc_32k: clock-osc-32k {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <32768>;
++		clock-output-names = "osc_32k";
++	};
++
++	osc_24m: clock-osc-24m {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <24000000>;
++		clock-output-names = "osc_24m";
++	};
++
++	clk_ext1: clock-ext1 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <133000000>;
++		clock-output-names = "clk_ext1";
++	};
++
++	clk_ext2: clock-ext2 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <133000000>;
++		clock-output-names = "clk_ext2";
++	};
++
++	clk_ext3: clock-ext3 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <133000000>;
++		clock-output-names = "clk_ext3";
++	};
++
++	clk_ext4: clock-ext4 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency= <133000000>;
++		clock-output-names = "clk_ext4";
++	};
++
++	gic: interrupt-controller@38800000 {
++		compatible = "arm,gic-v3";
++		reg = <0x0 0x38800000 0 0x10000>,
++		      <0x0 0x38880000 0 0xC0000>;
++		#interrupt-cells = <3>;
++		interrupt-controller;
++		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
++	};
++
++	psci {
++		compatible = "arm,psci-1.0";
++		method = "smc";
++	};
++
++	timer {
++		compatible = "arm,armv8-timer";
++		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>;
++		clock-frequency = <8000000>;
++		arm,no-tick-in-suspend;
++	};
++
++	soc {
++		compatible = "simple-bus";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0x0 0x0 0x0 0x3e000000>;
++
++		aips1: bus@30000000 {
++			compatible = "fsl,aips-bus", "simple-bus";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			gpio1: gpio@30200000 {
++				compatible = "fsl,imx8mn-gpio", "fsl,imx35-gpio";
++				reg = <0x30200000 0x10000>;
++				interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++			};
++
++			gpio2: gpio@30210000 {
++				compatible = "fsl,imx8mn-gpio", "fsl,imx35-gpio";
++				reg = <0x30210000 0x10000>;
++				interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++			};
++
++			gpio3: gpio@30220000 {
++				compatible = "fsl,imx8mn-gpio", "fsl,imx35-gpio";
++				reg = <0x30220000 0x10000>;
++				interrupts = <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++			};
++
++			gpio4: gpio@30230000 {
++				compatible = "fsl,imx8mn-gpio", "fsl,imx35-gpio";
++				reg = <0x30230000 0x10000>;
++				interrupts = <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++			};
++
++			gpio5: gpio@30240000 {
++				compatible = "fsl,imx8mn-gpio", "fsl,imx35-gpio";
++				reg = <0x30240000 0x10000>;
++				interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++			};
++
++			wdog1: watchdog@30280000 {
++				compatible = "fsl,imx8mn-wdt", "fsl,imx21-wdt";
++				reg = <0x30280000 0x10000>;
++				interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_WDOG1_ROOT>;
++				status = "disabled";
++			};
++
++			wdog2: watchdog@30290000 {
++				compatible = "fsl,imx8mn-wdt", "fsl,imx21-wdt";
++				reg = <0x30290000 0x10000>;
++				interrupts = <GIC_SPI 79 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_WDOG2_ROOT>;
++				status = "disabled";
++			};
++
++			wdog3: watchdog@302a0000 {
++				compatible = "fsl,imx8mn-wdt", "fsl,imx21-wdt";
++				reg = <0x302a0000 0x10000>;
++				interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_WDOG3_ROOT>;
++				status = "disabled";
++			};
++
++			sdma3: dma-controller@302b0000 {
++				compatible = "fsl,imx8mn-sdma", "fsl,imx7d-sdma";
++				reg = <0x302b0000 0x10000>;
++				interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_SDMA3_ROOT>,
++				 <&clk IMX8MN_CLK_SDMA3_ROOT>;
++				clock-names = "ipg", "ahb";
++				#dma-cells = <3>;
++				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx7d.bin";
++			};
++
++			sdma2: dma-controller@302c0000 {
++				compatible = "fsl,imx8mn-sdma", "fsl,imx7d-sdma";
++				reg = <0x302c0000 0x10000>;
++				interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_SDMA2_ROOT>,
++					 <&clk IMX8MN_CLK_SDMA2_ROOT>;
++				clock-names = "ipg", "ahb";
++				#dma-cells = <3>;
++				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx7d.bin";
++			};
++
++			iomuxc: pinctrl@30330000 {
++				compatible = "fsl,imx8mn-iomuxc";
++				reg = <0x30330000 0x10000>;
++			};
++
++			gpr: iomuxc-gpr@30340000 {
++				compatible = "fsl,imx8mn-iomuxc-gpr", "syscon";
++				reg = <0x30340000 0x10000>;
++			};
++
++			ocotp: ocotp-ctrl@30350000 {
++				compatible = "fsl,imx8mn-ocotp", "fsl,imx7d-ocotp", "syscon";
++				reg = <0x30350000 0x10000>;
++				clocks = <&clk IMX8MN_CLK_OCOTP_ROOT>;
++			};
++
++			anatop: anatop@30360000 {
++				compatible = "fsl,imx8mn-anatop", "syscon", "simple-bus";
++				reg = <0x30360000 0x10000>;
++			};
++
++			snvs: snvs@30370000 {
++				compatible = "fsl,sec-v4.0-mon","syscon", "simple-mfd";
++				reg = <0x30370000 0x10000>;
++
++				snvs_rtc: snvs-rtc-lp {
++					compatible = "fsl,sec-v4.0-mon-rtc-lp";
++					regmap = <&snvs>;
++					offset = <0x34>;
++					interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
++						     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
++					clock-names = "snvs-rtc";
++				};
++
++				snvs_pwrkey: snvs-powerkey {
++					compatible = "fsl,sec-v4.0-pwrkey";
++					regmap = <&snvs>;
++					interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
++					linux,keycode = <KEY_POWER>;
++					wakeup-source;
++				};
++			};
++
++			clk: clock-controller@30380000 {
++				compatible = "fsl,imx8mn-ccm";
++				reg = <0x30380000 0x10000>;
++				#clock-cells = <1>;
++				clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>, <&clk_ext2>,
++					 <&clk_ext3>, <&clk_ext4>;
++				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
++					      "clk_ext3", "clk_ext4";
++			};
++
++			src: reset-controller@30390000 {
++				compatible = "fsl,imx8mn-src", "syscon";
++				reg = <0x30390000 0x10000>;
++				interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
++				#reset-cells = <1>;
++			};
++		};
++
++		aips2: bus@30400000 {
++			compatible = "fsl,aips-bus", "simple-bus";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			pwm1: pwm@30660000 {
++				compatible = "fsl,imx8mn-pwm", "fsl,imx27-pwm";
++				reg = <0x30660000 0x10000>;
++				interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_PWM1_ROOT>,
++					<&clk IMX8MN_CLK_PWM1_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++
++			pwm2: pwm@30670000 {
++				compatible = "fsl,imx8mn-pwm", "fsl,imx27-pwm";
++				reg = <0x30670000 0x10000>;
++				interrupts = <GIC_SPI 82 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_PWM2_ROOT>,
++					 <&clk IMX8MN_CLK_PWM2_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++
++			pwm3: pwm@30680000 {
++				compatible = "fsl,imx8mn-pwm", "fsl,imx27-pwm";
++				reg = <0x30680000 0x10000>;
++				interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_PWM3_ROOT>,
++					 <&clk IMX8MN_CLK_PWM3_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++
++			pwm4: pwm@30690000 {
++				compatible = "fsl,imx8mn-pwm", "fsl,imx27-pwm";
++				reg = <0x30690000 0x10000>;
++				interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_PWM4_ROOT>,
++					 <&clk IMX8MN_CLK_PWM4_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++		};
++
++		aips3: bus@30800000 {
++			compatible = "fsl,aips-bus", "simple-bus";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			ecspi1: spi@30820000 {
++				compatible = "fsl,imx8mn-ecspi", "fsl,imx51-ecspi";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30820000 0x10000>;
++				interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_ECSPI1_ROOT>,
++					 <&clk IMX8MN_CLK_ECSPI1_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 0 7 1>, <&sdma1 1 7 2>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			ecspi2: spi@30830000 {
++				compatible = "fsl,imx8mn-ecspi", "fsl,imx51-ecspi";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30830000 0x10000>;
++				interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_ECSPI2_ROOT>,
++					 <&clk IMX8MN_CLK_ECSPI2_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 2 7 1>, <&sdma1 3 7 2>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			ecspi3: spi@30840000 {
++				compatible = "fsl,imx8mn-ecspi", "fsl,imx51-ecspi";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30840000 0x10000>;
++				interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_ECSPI3_ROOT>,
++					 <&clk IMX8MN_CLK_ECSPI3_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 4 7 1>, <&sdma1 5 7 2>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			uart1: serial@30860000 {
++				compatible = "fsl,imx8mn-uart", "fsl,imx6q-uart";
++				reg = <0x30860000 0x10000>;
++				interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_UART1_ROOT>,
++					 <&clk IMX8MN_CLK_UART1_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 22 4 0>, <&sdma1 23 4 0>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			uart3: serial@30880000 {
++				compatible = "fsl,imx8mn-uart", "fsl,imx6q-uart";
++				reg = <0x30880000 0x10000>;
++				interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_UART3_ROOT>,
++					 <&clk IMX8MN_CLK_UART3_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 26 4 0>, <&sdma1 27 4 0>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			uart2: serial@30890000 {
++				compatible = "fsl,imx8mn-uart", "fsl,imx6q-uart";
++				reg = <0x30890000 0x10000>;
++				interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_UART2_ROOT>,
++					 <&clk IMX8MN_CLK_UART2_ROOT>;
++				clock-names = "ipg", "per";
++				status = "disabled";
++			};
++
++			i2c1: i2c@30a20000 {
++				compatible = "fsl,imx8mn-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30a20000 0x10000>;
++				interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_I2C1_ROOT>;
++				status = "disabled";
++			};
++
++			i2c2: i2c@30a30000 {
++				compatible = "fsl,imx8mn-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30a30000 0x10000>;
++				interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_I2C2_ROOT>;
++				status = "disabled";
++			};
++
++			i2c3: i2c@30a40000 {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				compatible = "fsl,imx8mn-i2c", "fsl,imx21-i2c";
++				reg = <0x30a40000 0x10000>;
++				interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_I2C3_ROOT>;
++				status = "disabled";
++			};
++
++			i2c4: i2c@30a50000 {
++				compatible = "fsl,imx8mn-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30a50000 0x10000>;
++				interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_I2C4_ROOT>;
++				status = "disabled";
++			};
++
++			uart4: serial@30a60000 {
++				compatible = "fsl,imx8mn-uart", "fsl,imx6q-uart";
++				reg = <0x30a60000 0x10000>;
++				interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_UART4_ROOT>,
++					 <&clk IMX8MN_CLK_UART4_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 28 4 0>, <&sdma1 29 4 0>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			usdhc1: mmc@30b40000 {
++				compatible = "fsl,imx8mn-usdhc", "fsl,imx7d-usdhc";
++				reg = <0x30b40000 0x10000>;
++				interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_DUMMY>,
++					 <&clk IMX8MN_CLK_NAND_USDHC_BUS>,
++					 <&clk IMX8MN_CLK_USDHC1_ROOT>;
++				clock-names = "ipg", "ahb", "per";
++				assigned-clocks = <&clk IMX8MN_CLK_USDHC1>;
++				assigned-clock-rates = <400000000>;
++				fsl,tuning-start-tap = <20>;
++				fsl,tuning-step= <2>;
++				bus-width = <4>;
++				status = "disabled";
++			};
++
++			usdhc2: mmc@30b50000 {
++				compatible = "fsl,imx8mn-usdhc", "fsl,imx7d-usdhc";
++				reg = <0x30b50000 0x10000>;
++				interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_DUMMY>,
++					 <&clk IMX8MN_CLK_NAND_USDHC_BUS>,
++					 <&clk IMX8MN_CLK_USDHC2_ROOT>;
++				clock-names = "ipg", "ahb", "per";
++				fsl,tuning-start-tap = <20>;
++				fsl,tuning-step= <2>;
++				bus-width = <4>;
++				status = "disabled";
++			};
++
++			usdhc3: mmc@30b60000 {
++				compatible = "fsl,imx8mn-usdhc", "fsl,imx7d-usdhc";
++				reg = <0x30b60000 0x10000>;
++				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_DUMMY>,
++					 <&clk IMX8MN_CLK_NAND_USDHC_BUS>,
++					 <&clk IMX8MN_CLK_USDHC3_ROOT>;
++				clock-names = "ipg", "ahb", "per";
++				assigned-clocks = <&clk IMX8MN_CLK_USDHC3_ROOT>;
++				assigned-clock-rates = <400000000>;
++				fsl,tuning-start-tap = <20>;
++				fsl,tuning-step= <2>;
++				bus-width = <4>;
++				status = "disabled";
++			};
++
++			sdma1: dma-controller@30bd0000 {
++				compatible = "fsl,imx8mn-sdma", "fsl,imx7d-sdma";
++				reg = <0x30bd0000 0x10000>;
++				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_SDMA1_ROOT>,
++					 <&clk IMX8MN_CLK_SDMA1_ROOT>;
++				clock-names = "ipg", "ahb";
++				#dma-cells = <3>;
++				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx7d.bin";
++			};
++
++			fec1: ethernet@30be0000 {
++				compatible = "fsl,imx8mn-fec", "fsl,imx6sx-fec";
++				reg = <0x30be0000 0x10000>;
++				interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_ENET1_ROOT>,
++					 <&clk IMX8MN_CLK_ENET1_ROOT>,
++					 <&clk IMX8MN_CLK_ENET_TIMER>,
++					 <&clk IMX8MN_CLK_ENET_REF>,
++					 <&clk IMX8MN_CLK_ENET_PHY_REF>;
++				clock-names = "ipg", "ahb", "ptp",
++					      "enet_clk_ref", "enet_out";
++				assigned-clocks = <&clk IMX8MN_CLK_ENET_AXI>,
++						  <&clk IMX8MN_CLK_ENET_TIMER>,
++						  <&clk IMX8MN_CLK_ENET_REF>,
++						  <&clk IMX8MN_CLK_ENET_TIMER>;
++				assigned-clock-parents = <&clk IMX8MN_SYS_PLL1_266M>,
++							 <&clk IMX8MN_SYS_PLL2_100M>,
++							 <&clk IMX8MN_SYS_PLL2_125M>;
++				assigned-clock-rates = <0>, <0>, <125000000>, <100000000>;
++				fsl,num-tx-queues = <3>;
++				fsl,num-rx-queues = <3>;
++				status = "disabled";
++			};
++
++		};
++
++		aips4: bus@32c00000 {
++			compatible = "fsl,aips-bus", "simple-bus";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			usbotg1: usb@32e40000 {
++				compatible = "fsl,imx8mn-usb", "fsl,imx7d-usb";
++				reg = <0x32e40000 0x200>;
++				interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_USB1_CTRL_ROOT>;
++				clock-names = "usb1_ctrl_root_clk";
++				assigned-clocks = <&clk IMX8MN_CLK_USB_BUS>,
++						  <&clk IMX8MN_CLK_USB_CORE_REF>;
++				assigned-clock-parents = <&clk IMX8MN_SYS_PLL2_500M>,
++							 <&clk IMX8MN_SYS_PLL1_100M>;
++				fsl,usbphy = <&usbphynop1>;
++				fsl,usbmisc = <&usbmisc1 0>;
++				status = "disabled";
++			};
++
++			usbphynop1: usbphynop1 {
++				compatible = "usb-nop-xceiv";
++				clocks = <&clk IMX8MN_CLK_USB_PHY_REF>;
++				assigned-clocks = <&clk IMX8MN_CLK_USB_PHY_REF>;
++				assigned-clock-parents = <&clk IMX8MN_SYS_PLL1_100M>;
++				clock-names = "main_clk";
++			};
++
++			usbmisc1: usbmisc@32e40200 {
++				compatible = "fsl,imx8mn-usbmisc", "fsl,imx7d-usbmisc";
++				#index-cells = <1>;
++				reg = <0x32e40200 0x200>;
++			};
++
++			usbotg2: usb@32e50000 {
++				compatible = "fsl,imx8mn-usb", "fsl,imx7d-usb";
++				reg = <0x32e50000 0x200>;
++				interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MN_CLK_USB1_CTRL_ROOT>;
++				clock-names = "usb1_ctrl_root_clk";
++				assigned-clocks = <&clk IMX8MN_CLK_USB_BUS>,
++						  <&clk IMX8MN_CLK_USB_CORE_REF>;
++				assigned-clock-parents = <&clk IMX8MN_SYS_PLL2_500M>,
++							 <&clk IMX8MN_SYS_PLL1_100M>;
++				fsl,usbphy = <&usbphynop2>;
++				fsl,usbmisc = <&usbmisc2 0>;
++				status = "disabled";
++			};
++
++			usbphynop2: usbphynop2 {
++				compatible = "usb-nop-xceiv";
++				clocks = <&clk IMX8MN_CLK_USB_PHY_REF>;
++				assigned-clocks = <&clk IMX8MN_CLK_USB_PHY_REF>;
++				assigned-clock-parents = <&clk IMX8MN_SYS_PLL1_100M>;
++				clock-names = "main_clk";
++			};
++
++			usbmisc2: usbmisc@32e50200 {
++				compatible = "fsl,imx8mn-usbmisc", "fsl,imx7d-usbmisc";
++				#index-cells = <1>;
++				reg = <0x32e50200 0x200>;
++			};
++
++		};
++
++		dma_apbh: dma-controller@33000000 {
++			compatible = "fsl,imx7d-dma-apbh", "fsl,imx28-dma-apbh";
++			reg = <0x33000000 0x2000>;
++			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "gpmi0", "gpmi1", "gpmi2", "gpmi3";
++			#dma-cells = <1>;
++			dma-channels = <4>;
++			clocks = <&clk IMX8MN_CLK_NAND_USDHC_BUS_RAWNAND_CLK>;
++		};
++
++		gpmi: nand-controller@33002000{
++			compatible = "fsl,imx8mn-gpmi-nand", "fsl,imx7d-gpmi-nand";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			reg = <0x33002000 0x2000>, <0x33004000 0x4000>;
++			reg-names = "gpmi-nand", "bch";
++			interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "bch";
++			clocks = <&clk IMX8MN_CLK_NAND_ROOT>,
++				 <&clk IMX8MN_CLK_NAND_USDHC_BUS_RAWNAND_CLK>;
++			clock-names = "gpmi_io", "gpmi_bch_apb";
++			dmas = <&dma_apbh 0>;
++			dma-names = "rx-tx";
++			status = "disabled";
++		};
++	};
++};
 -- 
 2.7.4
 
