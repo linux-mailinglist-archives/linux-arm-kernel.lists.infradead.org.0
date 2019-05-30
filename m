@@ -2,54 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9056C2FF02
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 17:11:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44E442FF04
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 17:12:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/U3oF/N670GDyW88j/EcE+Sz2+3jkNEUW1dh/Lu67x0=; b=gtS5Vk20m97DrA
-	SLi096XlnInj74YsyL7VSUhGYNBEmou/K1lBHnjUDDaoPPuNmAZEUSgLWM0LFBQyBW78DjhspFYOl
-	5LuGoTugeYqr/Vuu09J+gzlHwlWJqlnKy4L/g8Y1YATSrIsJs4KFMFiqFeHPuOAVuVcqNzIShEyJT
-	Xup9v7x6ZTw+4oyRj5u1Us0WS9w3HTAWyVhBoc7poGSf33g33VAnhzorBDoVqoh3Hf5clw8QGqgb2
-	LgIOPPoVMuC0wSk3wyq1Qy5Uwmodi8P1+uboXNS2bxJh5YvOtB3xA4hENI51LuzgmcLMZi4zBKz9F
-	tjWNjRQmHLs62eisoNQg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mE44BP8hTxDcGTtybCKgZ3A5BPOq57mYlp+bdu6akms=; b=aEL
+	bEcbiCoG45c9bdGrxbnF3QQPGnqJAoouw+TYrfH8lC4pLBpZ4nVWHpH8ixKQhSpn8yHo1w+hcU++a
+	x0IpJR2b2ElsatLAfN/JVnrt4mXen6G19OVmSt5oXsZId9Sp16gYeOhCgEWUMwZKyHURug3cRsmxZ
+	2bWBTvKftPD4UxOiRvw+Aa995UsW90X3ttKx1rmSqmMWVKjA+ypBZO4+djCYL6BTHnpmJ6+DghwCc
+	3IORcRm6Of7ugXlr8q4teacw3yxJgkamFRXmhW0XzH5HMufRB5zqQ+s1YAjpbmbqzmTR3q3coc0Hf
+	RALP7F71HWh29aqmVgqezBNbg5gJ5fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWMiD-0000wx-L0; Thu, 30 May 2019 15:11:25 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hWMiy-0001Ee-JL; Thu, 30 May 2019 15:12:12 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWMi5-0000wB-G6
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 15:11:19 +0000
+ id 1hWMiK-00018q-7Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 15:11:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66C00341;
- Thu, 30 May 2019 08:11:15 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 8A9563F59C; Thu, 30 May 2019 08:11:09 -0700 (PDT)
-Date: Thu, 30 May 2019 16:11:07 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Khalid Aziz <khalid.aziz@oracle.com>
-Subject: Re: [PATCH v15 05/17] arms64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190530151105.GA35418@arrakis.emea.arm.com>
-References: <cover.1557160186.git.andreyknvl@google.com>
- <00eb4c63fefc054e2c8d626e8fedfca11d7c2600.1557160186.git.andreyknvl@google.com>
- <20190527143719.GA59948@MBP.local>
- <20190528145411.GA709@e119886-lin.cambridge.arm.com>
- <20190528154057.GD32006@arrakis.emea.arm.com>
- <11193998209cc6ff34e7d704f081206b8787b174.camel@oracle.com>
- <20190529142008.5quqv3wskmpwdfbu@mbp>
- <b2753e81-7b57-481f-0095-3c6fecb1a74c@oracle.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b2753e81-7b57-481f-0095-3c6fecb1a74c@oracle.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D7CD915AD;
+ Thu, 30 May 2019 08:11:31 -0700 (PDT)
+Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
+ 7F7C73F59C; Thu, 30 May 2019 08:11:30 -0700 (PDT)
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] Documentation: coresight: Update the generic device names
+Date: Thu, 30 May 2019 16:11:17 +0100
+Message-Id: <1559229077-26436-1-git-send-email-suzuki.poulose@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_081117_551531_A64F17EE 
-X-CRM114-Status: GOOD (  44.97  )
+X-CRM114-CacheID: sfid-20190530_081132_282368_907E9BD3 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -70,183 +59,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Lee Smith <Lee.Smith@arm.com>, linux-kselftest@vger.kernel.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
- Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Jonathan Corbet <corbet@lwn.net>, coresight@lists.linaro.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ leo.yan@linaro.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 01:16:37PM -0600, Khalid Aziz wrote:
-> On 5/29/19 8:20 AM, Catalin Marinas wrote:
-> > On Tue, May 28, 2019 at 05:33:04PM -0600, Khalid Aziz wrote:
-> >> Steps 1 and 2 are accomplished by userspace by calling mprotect() with
-> >> PROT_ADI. Tags are set by storing tags in a loop, for example:
-> >>
-> >>         version = 10;
-> >>         tmp_addr = shmaddr;
-> >>         end = shmaddr + BUFFER_SIZE;
-> >>         while (tmp_addr < end) {
-> >>                 asm volatile(
-> >>                         "stxa %1, [%0]0x90\n\t"
-> >>                         :
-> >>                         : "r" (tmp_addr), "r" (version));
-> >>                 tmp_addr += adi_blksz;
-> >>         }
-> > 
-> > On arm64, a sequence similar to the above would live in the libc. So a
-> > malloc() call will tag the memory and return the tagged address to thePre-coloring could easily be done by 
-> > user.
-> > 
-> > We were not planning for a PROT_ADI/MTE but rather have MTE enabled for
-> > all user memory ranges. We may revisit this before we upstream the MTE
-> > support (probably some marginal benefit for the hardware not fetching
-> > the tags from memory if we don't need to, e.g. code sections).
-> > 
-> > Given that we already have the TBI feature and with MTE enabled the top
-> > byte is no longer ignored, we are planning for an explicit opt-in by the
-> > user via prctl() to enable MTE.
-> 
-> OK. I had initially proposed enabling ADI for a process using prctl().
-> Feedback I got was prctl was not a desirable interface and I ended up
-> making mprotect() with PROT_ADI enable ADI on the process instead. Just
-> something to keep in mind.
+Update the documentation to reflect the new naming scheme with
+latest changes.
 
-Thanks for the feedback. We'll keep this in mind when adding MTE
-support. In the way we plan to deploy this, it would be a libc decision
-to invoke the mmap() with the right flag.
+Reported-by: Leo Yan <leo.yan@linaro.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Jonathan Corbet <corbet@lwn.net>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+---
+ Documentation/trace/coresight.txt | 34 +++++++++++++++++++---------------
+ 1 file changed, 19 insertions(+), 15 deletions(-)
 
-This could actually simplify the automatic page faulting below brk(),
-basically no tagged/coloured memory allowed implicitly. It needs
-feedback from the bionic/glibc folk.
-
-> >> With these semantics, giving mmap() or shamat() a tagged address is
-> >> meaningless since no tags have been stored at the addresses mmap() will
-> >> allocate and one can not store tags before memory range has been
-> >> allocated. If we choose to allow tagged addresses to come into mmap()
-> >> and shmat(), sparc code can strip the tags unconditionally and that may
-> >> help simplify ABI and/or code.
-> > 
-> > We could say that with TBI (pre-MTE support), the top byte is actually
-> > ignored on mmap(). Now, if you pass a MAP_FIXED with a tagged address,
-> > should the user expect the same tagged address back or stripping the tag
-> > is acceptable? If we want to keep the current mmap() semantics, I'd say
-> > the same tag is returned. However, with MTE this also implies that the
-> > memory was coloured.
-> 
-> Is assigning a tag aprivileged operationon ARM64? I am thinking not
-> since you mentioned libc could do it in a loop for malloc'd memory.
-
-Indeed it's not, the user can do it.
-
-> mmap() can return the same tagged address but I am uneasy about kernel
-> pre-coloring the pages. Database can mmap 100's of GB of memory. That is
-> lot of work being offloaded to the kernel to pre-color the page even if
-> done in batches as pages are faulted in.
-
-For anonymous mmap() for example, the kernel would have to zero the
-faulted in pages anyway. We can handle the colouring at the same time in
-clear_user_page() (as I said below, we have to clear the colour anyway
-from previous uses, so it's simply extending this to support something
-other than tag/colour 0 by default with no additional overhead).
-
-> > Since the user can probe the pre-existing colour in a faulted-in page
-> > (either with some 'ldxa' instruction or by performing a tag-checked
-> > access), the kernel should always pre-colour (even if colour 0) any
-> > allocated page. There might not be an obvious security risk but I feel
-> > uneasy about letting colours leak between address spaces (different user
-> > processes or between kernel and user).
-> 
-> On sparc, tags 0 and 15 are special in that 0 means untagged memory and
-> 15 means match any tag in the address. Colour 0 is the default for any
-> newly faulted in page on sparc.
-
-With MTE we don't have match-all/any tag in memory, only in the virtual
-address/pointer. So if we turn on MTE for all pages and the user
-accesses an address with a 0 tag, the underlying memory needs to be
-coloured with the same 0 value.
-
-> > Since we already need such loop in the kernel, we might as well allow
-> > user space to require a certain colour. This comes in handy for large
-> > malloc() and another advantage is that the C library won't be stuck
-> > trying to paint the whole range (think GB).
-> 
-> If kernel is going to pre-color all pages in a vma, we will need to
-> store the default tag in the vma. It will add more time to page fault
-> handling code. On sparc M7, kernel will need to execute additional 128
-> stxa instructions to set the tags on a normal page.
-
-As I said, since the user can retrieve an old colour using ldxa, the
-kernel should perform this operation anyway on any newly allocated page
-(unless you clear the existing colour on page freeing).
-
-> >> We can try to store tags for an entire region in vma but that is
-> >> expensive, plus on sparc tags are set in userspace with no
-> >> participation from kernel and now we need a way for userspace to
-> >> communicate the tags to kernel.
-> > 
-> > We can't support finer granularity through the mmap() syscall and, as
-> > you said, the vma is not the right thing to store the individual tags.
-> > With the above extension to mmap(), we'd have to store a colour per vma
-> > and prevent merging if different colours (we could as well use the
-> > pkeys mechanism we already have in the kernel but use a colour per vma
-> > instead of a key).
-> 
-> Since tags can change on any part of mmap region on sparc at any time
-> without kernel being involved, I am not sure I see much reason for
-> kernel to enforce any tag related restrictions.
-
-It's not enforcing a tag, more like the default colour for a faulted in
-page. Anyway, if sparc is going with default 0/untagged, that's fine as
-well. We may add this mmap() option to arm64 only.
-
-> >> From sparc point of view, making kernel responsible for assigning tags
-> >> to a page on page fault is full of pitfalls.
-> > 
-> > This could be just some arm64-specific but if you plan to deploy it more
-> > generically for sparc (at the C library level), you may find this
-> > useful.
-> 
-> Common semantics from app developer point of view will be very useful to
-> maintain. If arm64 says mmap with MAP_FIXED and a tagged address will
-> return a pre-colored page, I would rather have it be the same on any
-> architecture. Is there a use case that justifies kernel doing this extra
-> work?
-
-So if a database program is doing an anonymous mmap(PROT_TBI) of 100GB,
-IIUC for sparc the faulted-in pages will have random colours (on 64-byte
-granularity). Ignoring the information leak from prior uses of such
-pages, it would be the responsibility of the db program to issue the
-stxa. On arm64, since we also want to do this via malloc(), any large
-allocation would require all pages to be faulted in so that malloc() can
-set the write colour before being handed over to the user. That's what
-we want to avoid and the user is free to repaint the memory as it likes.
-
+diff --git a/Documentation/trace/coresight.txt b/Documentation/trace/coresight.txt
+index efbc832..7b427cf 100644
+--- a/Documentation/trace/coresight.txt
++++ b/Documentation/trace/coresight.txt
+@@ -326,16 +326,20 @@ amount of processor cores), the "cs_etm" PMU will be listed only once.
+ A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
+ listed along with configuration options within forward slashes '/'.  Since a
+ Coresight system will typically have more than one sink, the name of the sink to
+-work with needs to be specified as an event option.  Names for sink to choose
+-from are listed in sysFS under ($SYSFS)/bus/coresight/devices:
++work with needs to be specified as an event option.
++On newer kernels the available sinks are listed in sysFS under:
++($SYSFS)/bus/event_source/devices/cs_etm/sinks/
+ 
+-	root@linaro-nano:~# ls /sys/bus/coresight/devices/
+-		20010000.etf   20040000.funnel  20100000.stm  22040000.etm
+-		22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu
+-		20070000.etr     20120000.replicator  220c0000.funnel
+-		23040000.etm  23140000.etm     23340000.etm
++	root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
++	tmc_etf0  tmc_etr0  tpiu0
+ 
+-	root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
++On older kernels, this may need to be found from the list of coresight devices,
++available under ($SYSFS)/bus/coresight/devices/:
++
++	root@localhost:/sys/bus/coresight/devices# ls
++	etm0  etm1  etm2  etm3  etm4  etm5  funnel0  funnel1  funnel2  replicator0  stm0 tmc_etf0  tmc_etr0  tpiu0
++
++	root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
+ 
+ The syntax within the forward slashes '/' is important.  The '@' character
+ tells the parser that a sink is about to be specified and that this is the sink
+@@ -352,7 +356,7 @@ perf can be used to record and analyze trace of programs.
+ Execution can be recorded using 'perf record' with the cs_etm event,
+ specifying the name of the sink to record to, e.g:
+ 
+-    perf record -e cs_etm/@20070000.etr/u --per-thread
++    perf record -e cs_etm/@tmc_etr0/u --per-thread
+ 
+ The 'perf report' and 'perf script' commands can be used to analyze execution,
+ synthesizing instruction and branch events from the instruction trace.
+@@ -381,7 +385,7 @@ sort example is from the AutoFDO tutorial (https://gcc.gnu.org/wiki/AutoFDO/Tuto
+ 	Bubble sorting array of 30000 elements
+ 	5910 ms
+ 
+-	$ perf record -e cs_etm/@20070000.etr/u --per-thread taskset -c 2 ./sort
++	$ perf record -e cs_etm/@tmc_etr0/u --per-thread taskset -c 2 ./sort
+ 	Bubble sorting array of 30000 elements
+ 	12543 ms
+ 	[ perf record: Woken up 35 times to write data ]
+@@ -405,7 +409,7 @@ than the program flow through the code.
+ As with any other CoreSight component, specifics about the STM tracer can be
+ found in sysfs with more information on each entry being found in [1]:
+ 
+-root@genericarmv8:~# ls /sys/bus/coresight/devices/20100000.stm
++root@genericarmv8:~# ls /sys/bus/coresight/devices/stm0
+ enable_source   hwevent_select  port_enable     subsystem       uevent
+ hwevent_enable  mgmt            port_select     traceid
+ root@genericarmv8:~#
+@@ -413,14 +417,14 @@ root@genericarmv8:~#
+ Like any other source a sink needs to be identified and the STM enabled before
+ being used:
+ 
+-root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/20010000.etf/enable_sink
+-root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/20100000.stm/enable_source
++root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/tmc_etf0/enable_sink
++root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/stm0/enable_source
+ 
+ From there user space applications can request and use channels using the devfs
+ interface provided for that purpose by the generic STM API:
+ 
+-root@genericarmv8:~# ls -l /dev/20100000.stm
+-crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/20100000.stm
++root@genericarmv8:~# ls -l /dev/stm0
++crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/stm0
+ root@genericarmv8:~#
+ 
+ Details on how to use the generic STM API can be found here [2].
 -- 
-Catalin
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
