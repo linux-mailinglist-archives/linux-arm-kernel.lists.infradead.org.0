@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2123A2F9D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:47:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC0FB2F9DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 11:48:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xiR/akU8lOI4C+k2NIJ0f/kmwedJOXDZ8WyV578w4t4=; b=GpY8SIGBcXZlT2PJf7XhrNwuY
-	tS9tAeOr3azvO3kGRhU5v8Iz2a04tlZI6f6te0P5xSljb0nOjclyqKBu6fAZA3CahCs3hRkWwRDP7
-	xWN/0U/z4PgMfft06rPAkX7HEMnwKNUPvyNLrI1smNGAGtsceCtNWrGuLOpAM4JWhN6W4ef8NY4A4
-	McqMilUk8FRMKpRBYdiDJ3WgK8j1Hoc7jsxwGOf0pObhfQNWraVpfJPx3Jmp1eYxofCPhf7CF5Lt9
-	ecNHST7NfsWzQlBdV7iWOFKv4V7Dn7EIPnH9tjdWxX9eonXR3E/ga1YqJ9qM1vbrMjeN8Det4rgVG
-	wMQo7ZKOg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OeS/lIUKDioDb/gJT27G25FUZgmTTmu/n++vUCTVVSM=; b=ukcAVmABApLdkh
+	ggYWznhLpSXSGGdsg6YVtEivBuLYaDlfgC8obw6IFVi0A8WMsQH24sYWBPnajM9b2+TsfKFzcglN1
+	24hLrFhKRAyJ3pAgpcOfQkF7EqCdDH3hdzPyHcM3ddUTKYldDc61Tq3hJ5t+Cak1qvDV8hSVAEyOM
+	rTXhW0hyDm3nXuS2KTQESs7rFF8F4Jx28ryCQSfUloKSOoBdlyQRftTrOQxYbcquz9yUlm/wc+tLS
+	Y1swSzyyHNTCAywHGoAxBKRyIoG8UoJ6J2CceH9fyWoRWqNq2H9hO60JJ0Uiuo6/Kd3/082WXuIO0
+	5d6H23Qyg1xfAtWY8hrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWHep-0004I8-0j; Thu, 30 May 2019 09:47:35 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWHeg-0004H8-RS
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 09:47:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3491C374;
- Thu, 30 May 2019 02:47:26 -0700 (PDT)
-Received: from [10.37.12.226] (unknown [10.37.12.226])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 025B83F59C;
- Thu, 30 May 2019 02:47:24 -0700 (PDT)
-Subject: Re: Issues with initialising generic crypto implementations earlier
- on ARMv7
-To: Peter Robinson <pbrobinson@gmail.com>, Eric Biggers
- <ebiggers@google.com>, Herbert Xu <herbert@gondor.apana.org.au>
-References: <CALeDE9Owj-y6CEfjwjavkdCEcTGenMJoKBvDzR+nVMrKVFQmMw@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <39a3fea0-efec-2103-6e8a-1a3fff31f856@arm.com>
-Date: Thu, 30 May 2019 10:47:18 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hWHfa-0004cf-AK; Thu, 30 May 2019 09:48:22 +0000
+Received: from mail-wm1-f66.google.com ([209.85.128.66])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWHfR-0004cI-OS
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 09:48:15 +0000
+Received: by mail-wm1-f66.google.com with SMTP id f204so3542844wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 02:48:13 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=ieBreYqn74TE4VVKVG76q3gXbE8UVws6L1EIn4PkLWo=;
+ b=Dd2HFcSnWyHYkOV2Sws3Df+45+YAAdlGoM4yqPWMjruQE7EOz6ksLIJtlANHTl5Uzs
+ VhaI+xiEeFkZdIEYYnjT9SGeaYXWq0vQe+ZSKYZ1nuvlkKvg1uSa/jQAqdtgofnuV7fb
+ Wufr+lQ5ngfAf4ZcONohUmOmHgwcMubqvYJ3OdYzRrRl5e+sn32SqDl1T2O0CeKi8Kx8
+ HTvKfun/rnW6bLvcNVTkPZveW4oMB//TTMGnm7Yf9g7OV+AHmh8Db2AyfHHTVVo0iI16
+ FF6WV0JuMzq6YrFtSAAKJGWkICTK21kKbojXMCnGxCAQd4QQ3G9yh9O2/7lK0kzEY4e4
+ Borg==
+X-Gm-Message-State: APjAAAW59FDjtHRmYeFGWE22clz08DUjobfnEqvrt785+RUAFyi0KUcJ
+ 0Wt9FMfmyoe0Z29no8v9PTrjaQ==
+X-Google-Smtp-Source: APXvYqwC4qmvkkAwaPy+mAdn3u79acI1wL8OUviaj6zXVUioYKFa2fz2TZJcnHZVYG0bqBX0irgYbg==
+X-Received: by 2002:a1c:a6d1:: with SMTP id p200mr1552381wme.169.1559209692028; 
+ Thu, 30 May 2019 02:48:12 -0700 (PDT)
+Received: from vitty.brq.redhat.com (cst-prg-69-174.cust.vodafone.cz.
+ [46.135.69.174])
+ by smtp.gmail.com with ESMTPSA id a2sm4996198wrg.69.2019.05.30.02.48.10
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 30 May 2019 02:48:11 -0700 (PDT)
+From: Vitaly Kuznetsov <vkuznets@redhat.com>
+To: Michael Kelley <mikelley@microsoft.com>
+Subject: Re: [PATCH v3 2/2] Drivers: hv: Move Hyper-V clocksource code to new
+ clocksource driver
+In-Reply-To: <1558969089-13204-3-git-send-email-mikelley@microsoft.com>
+References: <1558969089-13204-1-git-send-email-mikelley@microsoft.com>
+ <1558969089-13204-3-git-send-email-mikelley@microsoft.com>
+Date: Thu, 30 May 2019 11:48:10 +0200
+Message-ID: <87r28gl1d1.fsf@vitty.brq.redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <CALeDE9Owj-y6CEfjwjavkdCEcTGenMJoKBvDzR+nVMrKVFQmMw@mail.gmail.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_024726_907594_5EF18D25 
-X-CRM114-Status: GOOD (  19.03  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190530_024813_797634_F07448C6 
+X-CRM114-Status: GOOD (  27.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,147 +80,575 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
+ "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "jasowang@redhat.com" <jasowang@redhat.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
+ "olaf@aepfle.de" <olaf@aepfle.de>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "apw@canonical.com" <apw@canonical.com>,
+ Sunil Muthuswamy <sunilmut@microsoft.com>, KY Srinivasan <kys@microsoft.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-05-30 10:12 am, Peter Robinson wrote:
-> Hi Eric,
-> 
-> I'm seeing the crash below on ARMv7 devices, at least the Raspberry Pi
-> and UDoo Neo (i.MX6SX), with your "crypto: run initcalls for generic
-> implementations earlier" patch. It's causing the boot to fail very
-> early on across the ARMv7 devices I've tested on Fedora (I'm the Arm
-> lead for Fedora. Reverting the patch makes the problem go away. I'm
-> unsure why initialising it earlier in the boot would cause issues, any
-> chance you could assist in sorting the issue out? Tested on 5.2 rc1
-> and rc2.
+Michael Kelley <mikelley@microsoft.com> writes:
 
-It looks like this would now run before the alignment fault handler has 
-been installed at fs_initcall - that might explain the difference in 
-behaviour, but the real question would be why this code is making an 
-unsupported unaligned access in the first place, especially on v7. That 
-smells like a problem which may have just been masked by the fixup 
-handler before.
+> Code for the Hyper-V specific clocksources is currently mixed
+> in with other Hyper-V code. Move the code to the Hyper-V specific
+> driver in the "clocksource" directory, while separating out
+> ISA dependencies so that the clocksource driver remains ISA
+> independent. Update the Hyper-V initialization code to call
+> initialization and cleanup routines since the Hyper-V synthetic
+> timers are not independently enumerated in ACPI. Update Hyper-V
+> clocksource users KVM and VDSO to get definitions from a new
+> include file.
+>
+> No behavior is changed and no new functionality is added.
+>
+> Suggested-by: Marc Zyngier <marc.zyngier@arm.com>
+> Signed-off-by: Michael Kelley <mikelley@microsoft.com>
+> ---
+>  arch/x86/entry/vdso/vclock_gettime.c |   1 +
+>  arch/x86/entry/vdso/vma.c            |   2 +-
+>  arch/x86/hyperv/hv_init.c            |  91 +-----------------------
+>  arch/x86/include/asm/mshyperv.h      |  81 +++-------------------
+>  arch/x86/kvm/x86.c                   |   1 +
+>  drivers/clocksource/hyperv_timer.c   | 130 +++++++++++++++++++++++++++++++++++
+>  drivers/hv/hv_util.c                 |   1 +
+>  include/clocksource/hyperv_timer.h   |  78 +++++++++++++++++++++
+>  8 files changed, 226 insertions(+), 159 deletions(-)
+>
+> diff --git a/arch/x86/entry/vdso/vclock_gettime.c b/arch/x86/entry/vdso/vclock_gettime.c
+> index 98c7d12..7983ca2 100644
+> --- a/arch/x86/entry/vdso/vclock_gettime.c
+> +++ b/arch/x86/entry/vdso/vclock_gettime.c
+> @@ -21,6 +21,7 @@
+>  #include <linux/math64.h>
+>  #include <linux/time.h>
+>  #include <linux/kernel.h>
+> +#include <clocksource/hyperv_timer.h>
+>  
+>  #define gtod (&VVAR(vsyscall_gtod_data))
+>  
+> diff --git a/arch/x86/entry/vdso/vma.c b/arch/x86/entry/vdso/vma.c
+> index babc4e7..99b38e9 100644
+> --- a/arch/x86/entry/vdso/vma.c
+> +++ b/arch/x86/entry/vdso/vma.c
+> @@ -22,7 +22,7 @@
+>  #include <asm/page.h>
+>  #include <asm/desc.h>
+>  #include <asm/cpufeature.h>
+> -#include <asm/mshyperv.h>
+> +#include <clocksource/hyperv_timer.h>
+>  
+>  #if defined(CONFIG_X86_64)
+>  unsigned int __read_mostly vdso64_enabled = 1;
+> diff --git a/arch/x86/hyperv/hv_init.c b/arch/x86/hyperv/hv_init.c
+> index e4ba467..79f626a 100644
+> --- a/arch/x86/hyperv/hv_init.c
+> +++ b/arch/x86/hyperv/hv_init.c
+> @@ -27,64 +27,13 @@
+>  #include <linux/version.h>
+>  #include <linux/vmalloc.h>
+>  #include <linux/mm.h>
+> -#include <linux/clockchips.h>
+>  #include <linux/hyperv.h>
+>  #include <linux/slab.h>
+>  #include <linux/cpuhotplug.h>
+> -
+> -#ifdef CONFIG_HYPERV_TSCPAGE
+> -
+> -static struct ms_hyperv_tsc_page *tsc_pg;
+> -
+> -struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+> -{
+> -	return tsc_pg;
+> -}
+> -EXPORT_SYMBOL_GPL(hv_get_tsc_page);
+> -
+> -static u64 read_hv_clock_tsc(struct clocksource *arg)
+> -{
+> -	u64 current_tick = hv_read_tsc_page(tsc_pg);
+> -
+> -	if (current_tick == U64_MAX)
+> -		rdmsrl(HV_X64_MSR_TIME_REF_COUNT, current_tick);
+> -
+> -	return current_tick;
+> -}
+> -
+> -static struct clocksource hyperv_cs_tsc = {
+> -		.name		= "hyperv_clocksource_tsc_page",
+> -		.rating		= 400,
+> -		.read		= read_hv_clock_tsc,
+> -		.mask		= CLOCKSOURCE_MASK(64),
+> -		.flags		= CLOCK_SOURCE_IS_CONTINUOUS,
+> -};
+> -#endif
+> -
+> -static u64 read_hv_clock_msr(struct clocksource *arg)
+> -{
+> -	u64 current_tick;
+> -	/*
+> -	 * Read the partition counter to get the current tick count. This count
+> -	 * is set to 0 when the partition is created and is incremented in
+> -	 * 100 nanosecond units.
+> -	 */
+> -	rdmsrl(HV_X64_MSR_TIME_REF_COUNT, current_tick);
+> -	return current_tick;
+> -}
+> -
+> -static struct clocksource hyperv_cs_msr = {
+> -	.name		= "hyperv_clocksource_msr",
+> -	.rating		= 400,
+> -	.read		= read_hv_clock_msr,
+> -	.mask		= CLOCKSOURCE_MASK(64),
+> -	.flags		= CLOCK_SOURCE_IS_CONTINUOUS,
+> -};
+> +#include <clocksource/hyperv_timer.h>
+>  
+>  void *hv_hypercall_pg;
+>  EXPORT_SYMBOL_GPL(hv_hypercall_pg);
+> -struct clocksource *hyperv_cs;
+> -EXPORT_SYMBOL_GPL(hyperv_cs);
+>  
+>  u32 *hv_vp_index;
+>  EXPORT_SYMBOL_GPL(hv_vp_index);
+> @@ -353,42 +302,8 @@ void __init hyperv_init(void)
+>  
+>  	x86_init.pci.arch_init = hv_pci_init;
+>  
+> -	/*
+> -	 * Register Hyper-V specific clocksource.
+> -	 */
+> -#ifdef CONFIG_HYPERV_TSCPAGE
+> -	if (ms_hyperv.features & HV_MSR_REFERENCE_TSC_AVAILABLE) {
+> -		union hv_x64_msr_hypercall_contents tsc_msr;
+> -
+> -		tsc_pg = __vmalloc(PAGE_SIZE, GFP_KERNEL, PAGE_KERNEL);
+> -		if (!tsc_pg)
+> -			goto register_msr_cs;
+> -
+> -		hyperv_cs = &hyperv_cs_tsc;
+> -
+> -		rdmsrl(HV_X64_MSR_REFERENCE_TSC, tsc_msr.as_uint64);
+> -
+> -		tsc_msr.enable = 1;
+> -		tsc_msr.guest_physical_address = vmalloc_to_pfn(tsc_pg);
+> -
+> -		wrmsrl(HV_X64_MSR_REFERENCE_TSC, tsc_msr.as_uint64);
+> -
+> -		hyperv_cs_tsc.archdata.vclock_mode = VCLOCK_HVCLOCK;
+> -
+> -		clocksource_register_hz(&hyperv_cs_tsc, NSEC_PER_SEC/100);
+> -		return;
+> -	}
+> -register_msr_cs:
+> -#endif
+> -	/*
+> -	 * For 32 bit guests just use the MSR based mechanism for reading
+> -	 * the partition counter.
+> -	 */
+> -
+> -	hyperv_cs = &hyperv_cs_msr;
+> -	if (ms_hyperv.features & HV_MSR_TIME_REF_COUNT_AVAILABLE)
+> -		clocksource_register_hz(&hyperv_cs_msr, NSEC_PER_SEC/100);
+> -
+> +	/* Register Hyper-V specific clocksource */
+> +	hv_init_clocksource();
+>  	return;
+>  
+>  remove_cpuhp_state:
+> diff --git a/arch/x86/include/asm/mshyperv.h b/arch/x86/include/asm/mshyperv.h
+> index cc60e61..f4fa8a9 100644
+> --- a/arch/x86/include/asm/mshyperv.h
+> +++ b/arch/x86/include/asm/mshyperv.h
+> @@ -105,6 +105,17 @@ static inline void vmbus_signal_eom(struct hv_message *msg, u32 old_msg_type)
+>  #define hv_get_crash_ctl(val) \
+>  	rdmsrl(HV_X64_MSR_CRASH_CTL, val)
+>  
+> +#define hv_get_time_ref_count(val) \
+> +	rdmsrl(HV_X64_MSR_TIME_REF_COUNT, val)
+> +
+> +#define hv_get_reference_tsc(val) \
+> +	rdmsrl(HV_X64_MSR_REFERENCE_TSC, val)
+> +#define hv_set_reference_tsc(val) \
+> +	wrmsrl(HV_X64_MSR_REFERENCE_TSC, val)
+> +#define hv_set_clocksource_vdso(val) \
+> +	((val).archdata.vclock_mode = VCLOCK_HVCLOCK)
+> +#define hv_get_raw_timer() rdtsc_ordered()
+> +
+>  void hyperv_callback_vector(void);
+>  void hyperv_reenlightenment_vector(void);
+>  #ifdef CONFIG_TRACING
+> @@ -133,7 +144,6 @@ static inline void hv_disable_stimer0_percpu_irq(int irq) {}
+>  
+>  
+>  #if IS_ENABLED(CONFIG_HYPERV)
+> -extern struct clocksource *hyperv_cs;
+>  extern void *hv_hypercall_pg;
+>  extern void  __percpu  **hyperv_pcpu_input_arg;
+>  
+> @@ -387,73 +397,4 @@ static inline int hyperv_flush_guest_mapping_range(u64 as,
+>  }
+>  #endif /* CONFIG_HYPERV */
+>  
+> -#ifdef CONFIG_HYPERV_TSCPAGE
+> -struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
+> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> -				       u64 *cur_tsc)
+> -{
+> -	u64 scale, offset;
+> -	u32 sequence;
+> -
+> -	/*
+> -	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
+> -	 * Top-Level Functional Specification ver. 3.0 and above. To get the
+> -	 * reference time we must do the following:
+> -	 * - READ ReferenceTscSequence
+> -	 *   A special '0' value indicates the time source is unreliable and we
+> -	 *   need to use something else. The currently published specification
+> -	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
+> -	 *   instead of '0' as the special value, see commit c35b82ef0294.
+> -	 * - ReferenceTime =
+> -	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
+> -	 * - READ ReferenceTscSequence again. In case its value has changed
+> -	 *   since our first reading we need to discard ReferenceTime and repeat
+> -	 *   the whole sequence as the hypervisor was updating the page in
+> -	 *   between.
+> -	 */
+> -	do {
+> -		sequence = READ_ONCE(tsc_pg->tsc_sequence);
+> -		if (!sequence)
+> -			return U64_MAX;
+> -		/*
+> -		 * Make sure we read sequence before we read other values from
+> -		 * TSC page.
+> -		 */
+> -		smp_rmb();
+> -
+> -		scale = READ_ONCE(tsc_pg->tsc_scale);
+> -		offset = READ_ONCE(tsc_pg->tsc_offset);
+> -		*cur_tsc = rdtsc_ordered();
+> -
+> -		/*
+> -		 * Make sure we read sequence after we read all other values
+> -		 * from TSC page.
+> -		 */
+> -		smp_rmb();
+> -
+> -	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
+> -
+> -	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
+> -}
+> -
+> -static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
+> -{
+> -	u64 cur_tsc;
+> -
+> -	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
+> -}
+> -
+> -#else
+> -static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+> -{
+> -	return NULL;
+> -}
+> -
+> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> -				       u64 *cur_tsc)
+> -{
+> -	BUG();
+> -	return U64_MAX;
+> -}
+> -#endif
+>  #endif
+> diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+> index 536b78c..3fbaac0 100644
+> --- a/arch/x86/kvm/x86.c
+> +++ b/arch/x86/kvm/x86.c
+> @@ -70,6 +70,7 @@
+>  #include <asm/mshyperv.h>
+>  #include <asm/hypervisor.h>
+>  #include <asm/intel_pt.h>
+> +#include <clocksource/hyperv_timer.h>
+>  
+>  #define CREATE_TRACE_POINTS
+>  #include "trace.h"
+> diff --git a/drivers/clocksource/hyperv_timer.c b/drivers/clocksource/hyperv_timer.c
+> index 30615f3..274614d 100644
+> --- a/drivers/clocksource/hyperv_timer.c
+> +++ b/drivers/clocksource/hyperv_timer.c
+> @@ -14,6 +14,8 @@
+>  #include <linux/percpu.h>
+>  #include <linux/cpumask.h>
+>  #include <linux/clockchips.h>
+> +#include <linux/clocksource.h>
+> +#include <linux/sched_clock.h>
+>  #include <linux/mm.h>
+>  #include <clocksource/hyperv_timer.h>
+>  #include <asm/hyperv-tlfs.h>
+> @@ -189,3 +191,131 @@ void hv_stimer_global_cleanup(void)
+>  	hv_stimer_free();
+>  }
+>  EXPORT_SYMBOL_GPL(hv_stimer_global_cleanup);
+> +
+> +/*
+> + * Code and definitions for the Hyper-V clocksources.  Two
+> + * clocksources are defined: one that reads the Hyper-V defined MSR, and
+> + * the other that uses the TSC reference page feature as defined in the
+> + * TLFS.  The MSR version is for compatibility with old versions of
+> + * Hyper-V and 32-bit x86.  The TSC reference page version is preferred.
+> + */
+> +
+> +struct clocksource *hyperv_cs;
+> +EXPORT_SYMBOL_GPL(hyperv_cs);
+> +
+> +#ifdef CONFIG_HYPERV_TSCPAGE
+> +
+> +static struct ms_hyperv_tsc_page *tsc_pg;
+> +
+> +struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+> +{
+> +	return tsc_pg;
+> +}
+> +EXPORT_SYMBOL_GPL(hv_get_tsc_page);
+> +
+> +static u64 read_hv_sched_clock_tsc(void)
+> +{
+> +	u64 current_tick = hv_read_tsc_page(tsc_pg);
+> +
+> +	if (current_tick == U64_MAX)
+> +		hv_get_time_ref_count(current_tick);
+> +
+> +	return current_tick;
+> +}
+> +
+> +static u64 read_hv_clock_tsc(struct clocksource *arg)
+> +{
+> +	return read_hv_sched_clock_tsc();
+> +}
+> +
+> +static struct clocksource hyperv_cs_tsc = {
+> +		.name		= "hyperv_clocksource_tsc_page",
+> +		.rating		= 400,
+> +		.read		= read_hv_clock_tsc,
+> +		.mask		= CLOCKSOURCE_MASK(64),
+> +		.flags		= CLOCK_SOURCE_IS_CONTINUOUS,
+> +};
+> +#endif
+> +
+> +static u64 read_hv_sched_clock_msr(void)
+> +{
+> +	u64 current_tick;
+> +	/*
+> +	 * Read the partition counter to get the current tick count. This count
+> +	 * is set to 0 when the partition is created and is incremented in
+> +	 * 100 nanosecond units.
+> +	 */
+> +	hv_get_time_ref_count(current_tick);
+> +	return current_tick;
+> +}
+> +
+> +static u64 read_hv_clock_msr(struct clocksource *arg)
+> +{
+> +	return read_hv_sched_clock_msr();
+> +}
+> +
+> +static struct clocksource hyperv_cs_msr = {
+> +	.name		= "hyperv_clocksource_msr",
+> +	.rating		= 400,
+> +	.read		= read_hv_clock_msr,
+> +	.mask		= CLOCKSOURCE_MASK(64),
+> +	.flags		= CLOCK_SOURCE_IS_CONTINUOUS,
+> +};
+> +
+> +void __init hv_init_clocksource(void)
+> +{
+> +#ifdef CONFIG_HYPERV_TSCPAGE
+> +	if (ms_hyperv.features & HV_MSR_REFERENCE_TSC_AVAILABLE) {
+> +
+> +		u64		tsc_msr;
+> +		phys_addr_t	phys_addr;
+> +
+> +		tsc_pg = vmalloc(PAGE_SIZE);
+> +		if (!tsc_pg)
+> +			goto register_msr_cs;
+> +
+> +		hyperv_cs = &hyperv_cs_tsc;
+> +		phys_addr = page_to_phys(vmalloc_to_page(tsc_pg));
+> +
+> +		/* The Hyper-V TLFS specifies to preserve the value of
+> +		 * reserved bits in registers.  So read the existing
+> +		 * value, preserve the low order 12 bits, and add in
+> +		 * the guest physical address (which already has at
+> +		 * least the low 12 bits set to zero since it is page
+> +		 * aligned). Also set the "enable" bit, which is bit 0.
+> +		 */
+> +		hv_get_reference_tsc(tsc_msr);
+> +		tsc_msr &= GENMASK_ULL(11, 0);
+> +		tsc_msr = tsc_msr | 0x1 | (u64)phys_addr;
+> +		hv_set_reference_tsc(tsc_msr);
+> +
+> +		hv_set_clocksource_vdso(hyperv_cs_tsc);
+> +		clocksource_register_hz(&hyperv_cs_tsc, NSEC_PER_SEC/100);
+> +
+> +		/*
+> +		 * sched_clock_register is needed on ARM64 but
+> +		 * is a no-op on x86
+> +		 */
+> +		sched_clock_register(read_hv_sched_clock_tsc,
+> +						64, HV_CLOCK_HZ);
+> +		return;
+> +	}
+> +register_msr_cs:
+> +#endif
+> +	/*
+> +	 * For 32 bit guests just use the MSR based mechanism for reading
+> +	 * the partition counter.
+> +	 */
+> +	hyperv_cs = &hyperv_cs_msr;
+> +	if (ms_hyperv.features & HV_MSR_TIME_REF_COUNT_AVAILABLE) {
+> +		clocksource_register_hz(&hyperv_cs_msr, NSEC_PER_SEC/100);
+> +
+> +		/*
+> +		 * sched_clock_register is needed on ARM64 but
+> +		 * is a no-op on x86
+> +		 */
+> +		sched_clock_register(read_hv_sched_clock_msr,
+> +						64, HV_CLOCK_HZ);
 
-Robin.
+I'm not sure about ARM, but MSR-based clocksource would be a really bad
+choice for sched clock on x86, this will slow things down
+significantly. Luckily, as you're validly stating above,
+sched_clock_register() is a no-op on x86 as we don't define
+CONFIG_GENERIC_SCHED_CLOCK.
 
-> 
-> Regards,
-> Peter
-> 
-> [1] c4741b23059794bd99beef0f700103b0d983b3fd
-> 
-> [    2.239276] cryptd: max_cpu_qlen set to 1000
-> [    2.257316] alg: No test for lzo-rle (lzo-rle-generic)
-> [    2.262883] alg: No test for lzo-rle (lzo-rle-scomp)
-> [    2.268303] alg: No test for 842 (842-generic)
-> [    2.273154] alg: No test for 842 (842-scomp)
-> [    2.299763] Unhandled fault: alignment fault (0x221) at 0xc0eb987e
-> [    2.306015] pgd = (ptrval)
-> [    2.308746] [c0eb987e] *pgd=80000000207003, *pmd=00e0071d(bad)
-> [    2.314650] Internal error: : 221 [#1] SMP ARM
-> [    2.319137] Modules linked in:
-> [    2.322228] CPU: 0 PID: 142 Comm: cryptomgr_test Not tainted
-> 5.2.0-0.rc2.git0.1.fc31.armv7hl+lpae #1
-> [    2.331455] Hardware name: BCM2835
-> [    2.334902] PC is at gf128mul_init_4k_lle+0x2c/0xa0
-> [    2.339834] LR is at kmem_cache_alloc_trace+0xc0/0x14c
-> [    2.345024] pc : [<c071ec8c>]    lr : [<c05d0ab0>]    psr: a0000013
-> [    2.351355] sp : eafcfcf8  ip : ead04000  fp : ead71dc0
-> [    2.356632] r10: 00000000  r9 : 00000000  r8 : c0eb987e
-> [    2.361910] r7 : c0eb987e  r6 : c12576c0  r5 : c0eb987e  r4 : ead03000
-> [    2.368506] r3 : 00001000  r2 : 00001000  r1 : ead03000  r0 : ead03000
-> [    2.375103] Flags: NzCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment user
-> [    2.382313] Control: 30c5383d  Table: 00203000  DAC: fffffffd
-> [    2.388118] Process cryptomgr_test (pid: 142, stack limit = 0x(ptrval))
-> [    2.394801] Stack: (0xeafcfcf8 to 0xeafd0000)
-> [    2.399203] fce0:
->      ead71600 c0eb987e
-> [    2.407472] fd00: c12576c0 c0eb987e c0eb987e 00000000 00000000
-> c0729434 00000010 ead71600
-> [    2.415742] fd20: c12576c0 c0713f90 ead71d80 00000010 c0bf55c4
-> c0eb987e 00000000 00000010
-> [    2.424012] fd40: 00000000 c07134a4 00000000 ead71540 c0bf55c4
-> eaef5400 eafcfe80 c071aa1c
-> [    2.432282] fd60: 00000000 00000001 eaef5400 ead71d80 c0c1a89c
-> ffffffff 00000073 00000400
-> [    2.440550] fd80: 00000000 00000000 00000000 00000014 00000000
-> 00000000 00000cc0 00000000
-> [    2.448820] fda0: 00000000 eafcfda4 eafcfda4 00000000 eac01c00
-> 00000000 00000000 eac01c00
-> [    2.457090] fdc0: 00000084 c070d15c eafcfd30 c05d0824 00000dc0
-> 00000dc0 00000004 c0bf4a14
-> [    2.465360] fde0: 00000040 eafcfe5c eafcfe80 eafcfe58 ffffffff
-> eafcfe80 eafcfe18 1503017f
-> [    2.473630] fe00: c0f3bf27 c0bb9d5c ffffff0f ffff0a00 eac01e00
-> eadcb180 ffffff0f ffff0a00
-> [    2.481901] fe20: 00000024 00000000 eae96c00 ead71540 eaef5400
-> ead71d80 eadcb180 00000000
-> [    2.490171] fe40: eae96c00 ead71540 eaef5400 ead71d80 eadcb180
-> 00000000 00000000 c071b144
-> [    2.498441] fe60: ead71540 eae96c00 eadcb180 87c8332f ead71dc0
-> c0c1a89c c0c1a89c 00000006
-> [    2.506710] fe80: eafc0030 c0483f9c 0000407f c048610c 0000407f
-> 00000006 eaef5400 0000000e
-> [    2.514980] fea0: 00000400 c0c1a89c c071b1a0 ffffffff 00000073
-> c071b250 00000400 eaef5400
-> [    2.523250] fec0: eaef5400 0000000e eaef5480 c137ae08 00000400
-> c071a0a4 00000000 eb3c8704
-> [    2.531519] fee0: 00000001 eafcff50 00000004 c0bbe504 00000009
-> c121d158 eafcff0c c047aaf0
-> [    2.539790] ff00: c120a000 eafacb00 eafcff3c c047ac74 c1200018
-> eafacb00 c120a000 24854451
-> [    2.548061] ff20: eb3d3140 eafacb00 c120a000 c1236200 eb3d3140
-> eafacf68 eafcff7c c0bbe3d8
-> [    2.556331] ff40: ead0de24 00000000 00000001 ead0de20 ead0de24
-> 00000004 ead0de20 eafacb00
-> [    2.564602] ff60: eafce000 eaef5400 eaeea4c0 eafce000 ead0de20
-> eaef5400 c0716c34 eadcb35c
-> [    2.572871] ff80: 00000000 c0716c60 eadcb340 c0473000 eaeea4c0
-> c0472ef4 00000000 00000000
-> [    2.581140] ffa0: 00000000 00000000 00000000 c04011f8 00000000
-> 00000000 00000000 00000000
-> [    2.589408] ffc0: 00000000 00000000 00000000 00000000 00000000
-> 00000000 00000000 00000000
-> [    2.597676] ffe0: 00000000 00000000 00000000 00000000 00000013
-> 00000000 00000000 00000000
-> [    2.605961] [<c071ec8c>] (gf128mul_init_4k_lle) from [<c0729434>]
-> (ghash_setkey+0x48/0x5c)
-> [    2.614325] [<c0729434>] (ghash_setkey) from [<c0713f90>]
-> (crypto_shash_setkey+0xbc/0xd8)
-> [    2.622599] [<c0713f90>] (crypto_shash_setkey) from [<c07134a4>]
-> (crypto_ahash_setkey+0xbc/0xd8)
-> [    2.631486] [<c07134a4>] (crypto_ahash_setkey) from [<c071aa1c>]
-> (test_hash_vec_cfg+0x74/0x60c)
-> [    2.640286] [<c071aa1c>] (test_hash_vec_cfg) from [<c071b144>]
-> (__alg_test_hash.constprop.0+0x190/0x1ec)
-> [    2.649875] [<c071b144>] (__alg_test_hash.constprop.0) from
-> [<c071b250>] (alg_test_hash+0xb0/0xf8)
-> [    2.658936] [<c071b250>] (alg_test_hash) from [<c071a0a4>]
-> (alg_test+0x330/0x3f8)
-> [    2.666504] [<c071a0a4>] (alg_test) from [<c0716c60>]
-> (cryptomgr_test+0x2c/0x4c)
-> [    2.673988] [<c0716c60>] (cryptomgr_test) from [<c0473000>]
-> (kthread+0x10c/0x118)
-> [    2.681559] [<c0473000>] (kthread) from [<c04011f8>]
-> (ret_from_fork+0x14/0x3c)
-> [    2.688856] Exception stack(0xeafcffb0 to 0xeafcfff8)
-> [    2.693960] ffa0:                                     00000000
-> 00000000 00000000 00000000
-> [    2.702228] ffc0: 00000000 00000000 00000000 00000000 00000000
-> 00000000 00000000 00000000
-> [    2.710494] ffe0: 00000000 00000000 00000000 00000000 00000013 00000000
-> [    2.717185] Code: e5930030 ebfac75a e2504000 0a000019 (e895000f)
-> [    2.723350] ---[ end trace 9839f43693f21333 ]---
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Can we actually *not* do sched_clock_register() in case
+TSC page is unavailable (and revert to counting jiffies or whatever)?
+
+> +	}
+> +}
+> +EXPORT_SYMBOL_GPL(hv_init_clocksource);
+> diff --git a/drivers/hv/hv_util.c b/drivers/hv/hv_util.c
+> index f10eeb1..9eff85e 100644
+> --- a/drivers/hv/hv_util.c
+> +++ b/drivers/hv/hv_util.c
+> @@ -29,6 +29,7 @@
+>  #include <linux/hyperv.h>
+>  #include <linux/clockchips.h>
+>  #include <linux/ptp_clock_kernel.h>
+> +#include <clocksource/hyperv_timer.h>
+>  #include <asm/mshyperv.h>
+>  
+>  #include "hyperv_vmbus.h"
+> diff --git a/include/clocksource/hyperv_timer.h b/include/clocksource/hyperv_timer.h
+> index ba5dc17..e17e8a2 100644
+> --- a/include/clocksource/hyperv_timer.h
+> +++ b/include/clocksource/hyperv_timer.h
+> @@ -13,6 +13,10 @@
+>  #ifndef __CLKSOURCE_HYPERV_TIMER_H
+>  #define __CLKSOURCE_HYPERV_TIMER_H
+>  
+> +#include <linux/clocksource.h>
+> +#include <linux/math64.h>
+> +#include <asm/mshyperv.h>
+> +
+>  #define HV_MAX_MAX_DELTA_TICKS 0xffffffff
+>  #define HV_MIN_DELTA_TICKS 1
+>  
+> @@ -24,4 +28,78 @@
+>  extern void hv_stimer_global_cleanup(void);
+>  extern void hv_stimer0_isr(void);
+>  
+> +#if IS_ENABLED(CONFIG_HYPERV)
+> +extern struct clocksource *hyperv_cs;
+> +extern void hv_init_clocksource(void);
+> +#endif /* CONFIG_HYPERV */
+> +
+> +#ifdef CONFIG_HYPERV_TSCPAGE
+> +extern struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
+> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> +				       u64 *cur_tsc)
+> +{
+> +	u64 scale, offset;
+> +	u32 sequence;
+> +
+> +	/*
+> +	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
+> +	 * Top-Level Functional Specification ver. 3.0 and above. To get the
+> +	 * reference time we must do the following:
+> +	 * - READ ReferenceTscSequence
+> +	 *   A special '0' value indicates the time source is unreliable and we
+> +	 *   need to use something else. The currently published specification
+> +	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
+> +	 *   instead of '0' as the special value, see commit c35b82ef0294.
+> +	 * - ReferenceTime =
+> +	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
+> +	 * - READ ReferenceTscSequence again. In case its value has changed
+> +	 *   since our first reading we need to discard ReferenceTime and repeat
+> +	 *   the whole sequence as the hypervisor was updating the page in
+> +	 *   between.
+> +	 */
+> +	do {
+> +		sequence = READ_ONCE(tsc_pg->tsc_sequence);
+> +		if (!sequence)
+> +			return U64_MAX;
+> +		/*
+> +		 * Make sure we read sequence before we read other values from
+> +		 * TSC page.
+> +		 */
+> +		smp_rmb();
+> +
+> +		scale = READ_ONCE(tsc_pg->tsc_scale);
+> +		offset = READ_ONCE(tsc_pg->tsc_offset);
+> +		*cur_tsc = hv_get_raw_timer();
+> +
+> +		/*
+> +		 * Make sure we read sequence after we read all other values
+> +		 * from TSC page.
+> +		 */
+> +		smp_rmb();
+> +
+> +	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
+> +
+> +	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
+> +}
+> +
+> +static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
+> +{
+> +	u64 cur_tsc;
+> +
+> +	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
+> +}
+> +
+> +#else /* CONFIG_HYPERV_TSC_PAGE */
+> +static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+> +{
+> +	return NULL;
+> +}
+> +
+> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+> +				       u64 *cur_tsc)
+> +{
+> +	return U64_MAX;
+> +}
+> +#endif /* CONFIG_HYPERV_TSCPAGE */
+> +
+>  #endif
+
+With the (theoretical) question above answered,
+
+Reviewed-by: Vitaly Kuznetsov <vkuznets@redhat.com>
+
+-- 
+Vitaly
 
 _______________________________________________
 linux-arm-kernel mailing list
