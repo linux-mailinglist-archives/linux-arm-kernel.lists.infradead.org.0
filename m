@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 113B82F8E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 10:56:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B76B2F8DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 10:55:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mSw++qsV28AwdmphJkLac0UOXPopKdoOsxZpBb79kyY=; b=rCN0KJjJJ5/m8P
-	4zVA1IjyOpEXS6YrqnXCevSrM5Dxrcbmnsi+/yDbINmn1uyXQQWL9iKKAp5jH9slrG5ItUeNO/iCN
-	MSURmzONGMdLRxkjx6r26E97a3vzN+APoYO+lceS0qRML9ES/53KOt/v+fgZAP/plc2k7bvPfi6y2
-	p2zTre6kju4yzvP5g393yQ+b+neKuoPunOIsk2YTysZt9Zh72JngcKpFRaFIBBaYR0TYy+DtUScjx
-	Th83WbQodfg6Nogu4ZExPC6eRQGGTnKpjhm+KhjEBT5w/MsDi8f8wMY3pxsqGrHyMzNX68ejc/w0b
-	y0DUlYICKG0Hq9a8Bz5Q==;
+	List-Owner; bh=UO5XhR1CliLJ0VgblvTpfO6I+uHxHnPD02SJSoFXfZo=; b=ktoxtzQRACE/1O
+	mWSkvU1u1jz5iwZ2fzw8+aOJ6T9PEljvk62c8glBh+ioUXv9aOW+NnnhVQxca3Y4bn89rOg2pihNr
+	FM3pvvZD6y6umsWM8KmAQaX/caKLsA0CoRZqyPg0Qrl2yxqWSiEI4TipOK+aHDQnw+E3U4VZDgGZh
+	gmUEfmqgTy1L1eGK1keMmdOH8yfRVFeJO7B52ihbUfVuffLfzkSGX4FajuW8zgKIbfouEwVdPKI4w
+	5Zhlw+9MZoEh77iUggb6rnOJ4BSjjMTx6GBQlLLZN+CsqmwICS4yLIWPDUvO35OPagOdRTitHlYnz
+	zmTv1Mdi5dkQMzrwWpKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWGqy-0005JH-VF; Thu, 30 May 2019 08:56:04 +0000
+	id 1hWGqg-0004pM-Nl; Thu, 30 May 2019 08:55:46 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWGpx-0002r3-S1; Thu, 30 May 2019 08:55:03 +0000
-X-UUID: bf2ac114065f4e04a507a5e7d2e234e0-20190530
-X-UUID: bf2ac114065f4e04a507a5e7d2e234e0-20190530
+ id 1hWGpy-0002qh-0W; Thu, 30 May 2019 08:55:03 +0000
+X-UUID: 9e55aba685ef4579bd7a1d567965f9a6-20190530
+X-UUID: 9e55aba685ef4579bd7a1d567965f9a6-20190530
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <biao.huang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 901222464; Thu, 30 May 2019 00:54:53 -0800
+ with ESMTP id 1466605951; Thu, 30 May 2019 00:54:53 -0800
 Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 30 May 2019 01:54:52 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
  mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 30 May 2019 16:54:50 +0800
+ 15.0.1395.4; Thu, 30 May 2019 16:54:51 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 30 May 2019 16:54:49 +0800
+ Transport; Thu, 30 May 2019 16:54:50 +0800
 From: Biao Huang <biao.huang@mediatek.com>
 To: Jose Abreu <joabreu@synopsys.com>
-Subject: [PATCH 3/4] net: stmmac: modify default value of tx-frames
-Date: Thu, 30 May 2019 16:54:43 +0800
-Message-ID: <1559206484-1825-4-git-send-email-biao.huang@mediatek.com>
+Subject: [PATCH 4/4] net: stmmac: dwmac4: fix flow control issue
+Date: Thu, 30 May 2019 16:54:44 +0800
+Message-ID: <1559206484-1825-5-git-send-email-biao.huang@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1559206484-1825-1-git-send-email-biao.huang@mediatek.com>
 References: <1559206484-1825-1-git-send-email-biao.huang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_015502_025988_C0730AA6 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20190530_015502_137582_2484CBBC 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,43 +83,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-the default value of tx-frames is 25, it's too late when
-passing tstamp to stack, then the ptp4l will fail:
+Current dwmac4_flow_ctrl will not clear
+GMAC_RX_FLOW_CTRL_RFE/GMAC_RX_FLOW_CTRL_RFE bits,
+so MAC hw will keep flow control on although expecting
+flow control off by ethtool. Add codes to fix it.
 
-ptp4l -i eth0 -f gPTP.cfg -m
-ptp4l: selected /dev/ptp0 as PTP clock
-ptp4l: port 1: INITIALIZING to LISTENING on INITIALIZE
-ptp4l: port 0: INITIALIZING to LISTENING on INITIALIZE
-ptp4l: port 1: link up
-ptp4l: timed out while polling for tx timestamp
-ptp4l: increasing tx_timestamp_timeout may correct this issue,
-       but it is likely caused by a driver bug
-ptp4l: port 1: send peer delay response failed
-ptp4l: port 1: LISTENING to FAULTY on FAULT_DETECTED (FT_UNSPECIFIED)
-
-ptp4l tests pass when changing the tx-frames from 25 to 1 with
-ethtool -C option.
-It should be fine to set tx-frames default value to 1, so ptp4l will pass
-by default.
-
+Fixes: 477286b53f55 ("stmmac: add GMAC4 core support")
 Signed-off-by: Biao Huang <biao.huang@mediatek.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/common.h |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c |    8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 26bbcd8..6a08cec 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -261,7 +261,7 @@ struct stmmac_safety_stats {
- #define STMMAC_COAL_TX_TIMER	1000
- #define STMMAC_MAX_COAL_TX_TICK	100000
- #define STMMAC_TX_MAX_FRAMES	256
--#define STMMAC_TX_FRAMES	25
-+#define STMMAC_TX_FRAMES	1
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 2544cff..9322b71 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -488,8 +488,9 @@ static void dwmac4_flow_ctrl(struct mac_device_info *hw, unsigned int duplex,
+ 	if (fc & FLOW_RX) {
+ 		pr_debug("\tReceive Flow-Control ON\n");
+ 		flow |= GMAC_RX_FLOW_CTRL_RFE;
+-		writel(flow, ioaddr + GMAC_RX_FLOW_CTRL);
+ 	}
++	writel(flow, ioaddr + GMAC_RX_FLOW_CTRL);
++
+ 	if (fc & FLOW_TX) {
+ 		pr_debug("\tTransmit Flow-Control ON\n");
  
- /* Packets types */
- enum packets_types {
+@@ -497,7 +498,7 @@ static void dwmac4_flow_ctrl(struct mac_device_info *hw, unsigned int duplex,
+ 			pr_debug("\tduplex mode: PAUSE %d\n", pause_time);
+ 
+ 		for (queue = 0; queue < tx_cnt; queue++) {
+-			flow |= GMAC_TX_FLOW_CTRL_TFE;
++			flow = GMAC_TX_FLOW_CTRL_TFE;
+ 
+ 			if (duplex)
+ 				flow |=
+@@ -505,6 +506,9 @@ static void dwmac4_flow_ctrl(struct mac_device_info *hw, unsigned int duplex,
+ 
+ 			writel(flow, ioaddr + GMAC_QX_TX_FLOW_CTRL(queue));
+ 		}
++	} else {
++		for (queue = 0; queue < tx_cnt; queue++)
++			writel(0, ioaddr + GMAC_QX_TX_FLOW_CTRL(queue));
+ 	}
+ }
+ 
 -- 
 1.7.9.5
 
