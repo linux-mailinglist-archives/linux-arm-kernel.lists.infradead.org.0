@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F10B52FD96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:21:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4942C2FD9D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 16:22:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,51 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dgRfJBpIyvcSsuXJeu2QA9xIKuO45K6L5PWzyxpMHBg=; b=p213jtxaTlSx93xzqQlXZOfu5I
-	zsrYi+HH421FC/YhReamdzEtuEh9QOsALRsQNYjKjMehcm5DNcJQGYJpOoE+AA+8kbH+yQ14ctfAl
-	CjVwCPXPqX+JdwhehJis7GdXaJlkDT61NZOcKu7yCaPKoBoq9WxyAftq3HJU2vIToemF1jOmA1PND
-	f85ALo9kwgZ8MOe4/zdIWMmLjGRATnvj/c+njr2Bc6ArD5ICCqrTlE8CxhboRicBqU6dduuZx8flF
-	Ic8vgw52hTiaBqruG3t0GOIqCgDpK0imnKf++VAVeKgGZcoZ4JwldNNFw3H0470gFIKQz4zD2BXuO
-	zW/inXqA==;
+	bh=E4tibI1uCAUNbdDi7lH6aOuZjK/EqFc8mJfo+1+xfFc=; b=RxjDD1PbsIZHMa4uVxyJCs2G0d
+	Q/Y5tjtJju19K1POttszlS8nl4sooBW/aZMR4Xir7/FRVj/+Xh7Sl9YruVWe8LA5zbqyiIgfMqNWO
+	tiOHVeDtR5A6k5+xq06EqgKLCgBzwjmjoEDOSo7uCH+xkA9X+48lxnOLs4mE0Gqw9UofP6CEIorHX
+	++4ViIIg+p/uTHkew7WMzjk0nTIHgzWM2pO8jO9kpcdjoMkHmT4lcWlxJf4BczVCLxEuS8Aco2/z7
+	Kio+q8wQPV6JdHf9NOETxdqTsZLsxC2IlRvlF06G1eZywlxbTr95r+sKpvXZ+WK4SQq1OmyukNVEi
+	79twYQVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWLwE-0006m6-FB; Thu, 30 May 2019 14:21:50 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hWLxC-00085c-Mp; Thu, 30 May 2019 14:22:50 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWLuQ-0003tk-8W
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:20:01 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 63FE91A0179;
- Thu, 30 May 2019 16:19:55 +0200 (CEST)
+ id 1hWLuQ-0003tm-25
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 14:20:00 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0899420054E;
+ Thu, 30 May 2019 16:19:56 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 57C171A016B;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F0260200182;
  Thu, 30 May 2019 16:19:55 +0200 (CEST)
 Received: from fsr-ub1864-101.ea.freescale.net
  (fsr-ub1864-101.ea.freescale.net [10.171.82.13])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id C38CA2026B;
- Thu, 30 May 2019 16:19:54 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 678932026B;
+ Thu, 30 May 2019 16:19:55 +0200 (CEST)
 From: laurentiu.tudor@nxp.com
 To: netdev@vger.kernel.org, madalin.bucur@nxp.com, roy.pledge@nxp.com,
  camelia.groza@nxp.com, leoyang.li@nxp.com
-Subject: [PATCH v3 3/6] dpaa_eth: defer probing after qbman
-Date: Thu, 30 May 2019 17:19:48 +0300
-Message-Id: <20190530141951.6704-4-laurentiu.tudor@nxp.com>
+Subject: [PATCH v3 4/6] dpaa_eth: base dma mappings on the fman rx port
+Date: Thu, 30 May 2019 17:19:49 +0300
+Message-Id: <20190530141951.6704-5-laurentiu.tudor@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190530141951.6704-1-laurentiu.tudor@nxp.com>
 References: <20190530141951.6704-1-laurentiu.tudor@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_071958_547843_58F0C21F 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190530_071958_275140_21553B52 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,60 +80,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 
-Enabling SMMU altered the order of device probing causing the dpaa1
-ethernet driver to get probed before qbman and causing a boot crash.
-Add predictability in the probing order by deferring the ethernet
-driver probe after qbman and portals by using the recently introduced
-qbman APIs.
+The dma transactions initiator is the rx fman port so that's the device
+that the dma mappings should be done. Previously the mappings were done
+through the MAC device which makes no sense because it's neither dma-able
+nor connected in any way to smmu.
 
 Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Acked-by: Madalin Bucur <madalin.bucur@nxp.com>
 ---
- .../net/ethernet/freescale/dpaa/dpaa_eth.c    | 31 +++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ drivers/net/ethernet/freescale/dpaa/dpaa_eth.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-index d3f2408dc9e8..975f307f0caa 100644
+index 975f307f0caa..f54b0cd0d175 100644
 --- a/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
 +++ b/drivers/net/ethernet/freescale/dpaa/dpaa_eth.c
-@@ -2774,6 +2774,37 @@ static int dpaa_eth_probe(struct platform_device *pdev)
- 	int err = 0, i, channel;
- 	struct device *dev;
+@@ -2805,8 +2805,15 @@ static int dpaa_eth_probe(struct platform_device *pdev)
+ 		return -ENODEV;
+ 	}
  
-+	err = bman_is_probed();
-+	if (!err)
-+		return -EPROBE_DEFER;
-+	if (err < 0) {
-+		dev_err(&pdev->dev, "failing probe due to bman probe error\n");
-+		return -ENODEV;
-+	}
-+	err = qman_is_probed();
-+	if (!err)
-+		return -EPROBE_DEFER;
-+	if (err < 0) {
-+		dev_err(&pdev->dev, "failing probe due to qman probe error\n");
-+		return -ENODEV;
-+	}
-+	err = bman_portals_probed();
-+	if (!err)
-+		return -EPROBE_DEFER;
-+	if (err < 0) {
-+		dev_err(&pdev->dev,
-+			"failing probe due to bman portals probe error\n");
-+		return -ENODEV;
-+	}
-+	err = qman_portals_probed();
-+	if (!err)
-+		return -EPROBE_DEFER;
-+	if (err < 0) {
-+		dev_err(&pdev->dev,
-+			"failing probe due to qman portals probe error\n");
-+		return -ENODEV;
++	mac_dev = dpaa_mac_dev_get(pdev);
++	if (IS_ERR(mac_dev)) {
++		dev_err(&pdev->dev, "dpaa_mac_dev_get() failed\n");
++		err = PTR_ERR(mac_dev);
++		goto probe_err;
 +	}
 +
  	/* device used for DMA mapping */
- 	dev = pdev->dev.parent;
+-	dev = pdev->dev.parent;
++	dev = fman_port_get_device(mac_dev->port[RX]);
  	err = dma_coerce_mask_and_coherent(dev, DMA_BIT_MASK(40));
+ 	if (err) {
+ 		dev_err(dev, "dma_coerce_mask_and_coherent() failed\n");
+@@ -2831,13 +2838,6 @@ static int dpaa_eth_probe(struct platform_device *pdev)
+ 
+ 	priv->msg_enable = netif_msg_init(debug, DPAA_MSG_DEFAULT);
+ 
+-	mac_dev = dpaa_mac_dev_get(pdev);
+-	if (IS_ERR(mac_dev)) {
+-		dev_err(dev, "dpaa_mac_dev_get() failed\n");
+-		err = PTR_ERR(mac_dev);
+-		goto free_netdev;
+-	}
+-
+ 	/* If fsl_fm_max_frm is set to a higher value than the all-common 1500,
+ 	 * we choose conservatively and let the user explicitly set a higher
+ 	 * MTU via ifconfig. Otherwise, the user may end up with different MTUs
+@@ -2973,9 +2973,9 @@ static int dpaa_eth_probe(struct platform_device *pdev)
+ 	qman_release_cgrid(priv->cgr_data.cgr.cgrid);
+ free_dpaa_bps:
+ 	dpaa_bps_free(priv);
+-free_netdev:
+ 	dev_set_drvdata(dev, NULL);
+ 	free_netdev(net_dev);
++probe_err:
+ 
+ 	return err;
+ }
 -- 
 2.17.1
 
