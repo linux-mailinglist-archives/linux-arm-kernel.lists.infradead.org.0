@@ -2,104 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4D712EB08
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:09:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0559C2EB5C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 05:12:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ip0kRCl4lsOWebQH8Hx4dH46G/BZZl1KGOqH4uf2PlU=; b=uxhYEg1AcQFET5
-	cIeLiU0yt/2pmhdPvulqsPOSe/uy3s8ZVLYA0XjqhobANC+8LW/HkfC7oK/DhlwQK7PUOLmRbNkdo
-	9FIaMqUi0IQ8Hfo+y22VGRkFsBBeEclMOYHKs/jkjyb+BWJrwsNka2u8A1hsvQT4ql6E++N1tTQs+
-	x+BWq3YHIGEgZBeRsbBfJcXXCAlpXghvEesVCa56KAUj0lhZvvW05vwcrcvrb6fZ961FQimB0BOb5
-	yeps/dVSm+keEa7H9mR0epES/4HKJaHy1JkLayMzm/FlKAuulk7JTkodBL0Sij41oTesY6/R5mpsd
-	KnDt9f+M5JUZF/WloHHQ==;
+	List-Owner; bh=Fi6WM6+eR7QeFfVFqPyRkIaCEuFwSvN4U/3c7XIXg8w=; b=G/7kq0grFbQ+tJ
+	oygJX395S6eUkwI3oK7oZCZCVr7aI/gRBECReagHORtVnJSvAyhpBddcbAAs9NLO5s/MxLAm5Q56Z
+	U1pinggtgSujEyeYZMaKTr9q6Hyn2xEf7GZNp+qcgbq5jzjOYiWLW2lBYIugq3LIJq4kqq4VstR0c
+	/hBOhVsUuRsKrxHmTr8b0/ooDvvy9NB6aHkCKU7d7+aVDvAm8It1gKfb90SdHKgcRitnLQIWbT337
+	2VVL/B4nEq5zLRCXhGnWmQEc24xU5R9dMWe5aPugGuQNjC6uNvpHx4wzblk8M+8MRe6HFMuFIZi0O
+	31jti8NKj393YjynDQeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWBRy-0005dJ-II; Thu, 30 May 2019 03:09:54 +0000
-Received: from mail-eopbgr10078.outbound.protection.outlook.com ([40.107.1.78]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1hWBUH-00084w-Nk; Thu, 30 May 2019 03:12:17 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWBRn-0005NA-IQ
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:09:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GHi0c9mDstHF85xZs1iI/uKxKjPrRj7kba7R09Z1Z4o=;
- b=hvysCZplplixTp3nHznyNbWt9/J65jrz4vZnB4oRXeav8c4so0+Y4isxZYYpIpGtCXuMoCZ5qrQPG52miw+Xw0SOMPAx3x04vRQoD/V7a6E5YDjDgzxoLrGnOzONRTpBCh+qa2U8CTwfHBeSp0Gx4Q1F03FJ0C2WUusGR8vaoBs=
-Received: from AM6PR04MB4357.eurprd04.prod.outlook.com (52.135.167.33) by
- AM6PR04MB5079.eurprd04.prod.outlook.com (20.177.34.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.20; Thu, 30 May 2019 03:09:30 +0000
-Received: from AM6PR04MB4357.eurprd04.prod.outlook.com
- ([fe80::d877:33b5:bfa6:30ce]) by AM6PR04MB4357.eurprd04.prod.outlook.com
- ([fe80::d877:33b5:bfa6:30ce%6]) with mapi id 15.20.1922.021; Thu, 30 May 2019
- 03:09:30 +0000
-From: Chuanhua Han <chuanhua.han@nxp.com>
-To: Rob Herring <robh@kernel.org>
-Subject: RE: [EXT] Re: [PATCH] arm64: dts: ls1028a: fix watchdog device node
-Thread-Topic: [EXT] Re: [PATCH] arm64: dts: ls1028a: fix watchdog device node
-Thread-Index: AQHVBjWLU5tDmMzveEaz3RlKVqbc5aZupocAgAA6wsCAAQpVgIAFsPwAgAB6roCAAKa7cIAACsWAgANWFYCAAC1XAIAI0QqQ
-Date: Thu, 30 May 2019 03:09:30 +0000
-Message-ID: <AM6PR04MB43573B91F0D575EB293B490597180@AM6PR04MB4357.eurprd04.prod.outlook.com>
-References: <20190509070657.18281-1-chuanhua.han@nxp.com>
- <20190517023728.GA15856@dragon>
- <AM6PR04MB4357C78FCEBA1B00AA42ED2E970B0@AM6PR04MB4357.eurprd04.prod.outlook.com>
- <AM6PR04MB586341334E62A663EE5E8BD18F0B0@AM6PR04MB5863.eurprd04.prod.outlook.com>
- <AM6PR04MB435758E1498B6A2BE0C0ACE397070@AM6PR04MB4357.eurprd04.prod.outlook.com>
- <AM6PR04MB58631458E6D851E4D83A77ED8F070@AM6PR04MB5863.eurprd04.prod.outlook.com>
- <AM6PR04MB435708872A4DBA92561C772597000@AM6PR04MB4357.eurprd04.prod.outlook.com>
- <AM6PR04MB5863FA1CE6D1E40F11B2E5008F000@AM6PR04MB5863.eurprd04.prod.outlook.com>
- <AM6PR04MB4357072E079BDD8D1866595797020@AM6PR04MB4357.eurprd04.prod.outlook.com>
- <CAL_Jsq+evXqKKyXLFbE+9o8X5BA9NWmcjvZ9-Y1Y7-pwcu8nJg@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+evXqKKyXLFbE+9o8X5BA9NWmcjvZ9-Y1Y7-pwcu8nJg@mail.gmail.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=chuanhua.han@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 64c9abf1-1b8b-4724-bc81-08d6e4ac3bcf
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM6PR04MB5079; 
-x-ms-traffictypediagnostic: AM6PR04MB5079:
-x-microsoft-antispam-prvs: <AM6PR04MB50790D97B91EB82E16FE85C897180@AM6PR04MB5079.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 00531FAC2C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(366004)(376002)(396003)(136003)(39860400002)(13464003)(189003)(199004)(478600001)(44832011)(14454004)(4326008)(66066001)(476003)(99286004)(11346002)(52536014)(53936002)(6506007)(5660300002)(6246003)(53546011)(33656002)(71190400001)(6116002)(3846002)(71200400001)(86362001)(102836004)(81156014)(76176011)(8676002)(8936002)(66946007)(486006)(54906003)(305945005)(7736002)(9686003)(68736007)(74316002)(55016002)(316002)(6436002)(25786009)(81166006)(256004)(26005)(2906002)(66556008)(76116006)(66476007)(229853002)(66446008)(64756008)(73956011)(6916009)(14444005)(186003)(446003)(7696005)(21314003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5079;
- H:AM6PR04MB4357.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 56YYvbg5CLq2c2LMQO6/yGrPeGW6f+CNxlmPokq+JbsHQ9uTxdhQlSaMEVAcuYQ1rD8skZ+LRXTXBqkqtJYHoWvenH6yR+wlMIU0iudrGwlO20GLZIDDlkxPfFn9lcN+nlLjZwhEUDjeNGhO0II+UBAEuOv2ekTsEN8WzNrEJh2Tpbevmjh+wEkmc6ZqqDlj1c2ZwgmCEEUCHp+1by82D0PhJbZRKnGiJSf+ICmeEtueSXLL5VN8BHJy2LPIF67rIBwf4Uq0cX/gslaiWVABuwY6zXDGJfj/DewQ2TTQnnrEQsERrlEn9DwSSsJVjI3MD2OEStfRqA5DjjLXHcTrcTrcml0H7W4CdbKU3zWq2WNqEWCBZUHGz4zqGGvB0dRv5ODcsjOvWvMal+VqUr4vgBeD/u6pmUlXTJJ2pZ2xiig=
+ id 1hWBTz-0007rH-NC
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 03:12:05 +0000
+Received: by mail-pl1-x642.google.com with SMTP id g21so1938514plq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 May 2019 20:11:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=VaRhbcIX5ep9K0ZeR9yp6HWYrhnzvyPHZvKg3hvxS/U=;
+ b=iBrxDQyYPiaqiG0jjoOraJtzmcfDORoAhqxxgXsheLX7ZhhTgk0aTtcVCYDWTMIOhE
+ Sas11Ofp1O2+kryKGNmX18hbYqHcYxtC4t0+9O9aOOFJ6i8YEU/eWXGA2lwgWGizrCe2
+ 2V/Y3G+m1Nrtowcp26CoQ+QP4ZxIiW/lKJOOw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=VaRhbcIX5ep9K0ZeR9yp6HWYrhnzvyPHZvKg3hvxS/U=;
+ b=VYEdd1lZ1a6lWk44qHhA8KIeDud60bZ/VS+GWyGoXw1fS3J8xL53AsFc5Yrh86Kvva
+ sClXcaL2YsiIjWl28e/mKp1nDjW56q8ZXtEgA1Rx8qozKt62Vz8WCRWFPiCGHBtGFfTz
+ 2jLrKfMDd1N4C8I2MO3Q4JhNmA9nfRxFyqiUfGDvNQo0jXRc/9jhnGIK0X8R/fm9EdOy
+ HvwbFjKBeYkxLUnH6ldVhC3e5icfzKl/CcQnVfMqoDmfJOPHJUzkdmcquzzIZJDKbrwK
+ MBHzwJ7xphxZZ/SmSJXBav1ZlfQim/P8PDj9HlL2t+VTcN6ePVQivLWHg5EfFl1QdDGE
+ MCSg==
+X-Gm-Message-State: APjAAAXl7oYkwEgXWgMIJU7VsMSlTA0OhbJToMDQCOU9vhvEbTzYj3Wc
+ wp96GCl8Sh720Rv0SDTpbC2ErVL3EvQ=
+X-Google-Smtp-Source: APXvYqyge6qWXUzB5FjqFnvFycD7Np2jH260/7/7Gt4dBGdm+i1NXyhXNvHrpHaWqjqrnTQSQa0KCQ==
+X-Received: by 2002:a17:902:2be8:: with SMTP id
+ l95mr1470547plb.231.1559185919132; 
+ Wed, 29 May 2019 20:11:59 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id n1sm703673pgv.15.2019.05.29.20.11.57
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 May 2019 20:11:58 -0700 (PDT)
+Date: Wed, 29 May 2019 20:11:57 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Kristina Martsenko <kristina.martsenko@arm.com>
+Subject: Re: [RFC v2 4/7] arm64: enable ptrauth earlier
+Message-ID: <201905292010.8C66149@keescook>
+References: <20190529190332.29753-1-kristina.martsenko@arm.com>
+ <20190529190332.29753-5-kristina.martsenko@arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 64c9abf1-1b8b-4724-bc81-08d6e4ac3bcf
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 May 2019 03:09:30.7532 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: chuanhua.han@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5079
+Content-Disposition: inline
+In-Reply-To: <20190529190332.29753-5-kristina.martsenko@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_200943_718658_D8AB999E 
-X-CRM114-Status: GOOD (  22.88  )
+X-CRM114-CacheID: sfid-20190529_201200_064109_B62BE0D9 
+X-CRM114-Status: GOOD (  31.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -108,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -119,68 +96,240 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Ying Zhang <ying.zhang22455@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Kachhap <Amit.Kachhap@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogUm9iIEhlcnJpbmcgPHJv
-YmhAa2VybmVsLm9yZz4NCj4gU2VudDogMjAxOeW5tDXmnIgyNOaXpSAyMDoyOQ0KPiBUbzogQ2h1
-YW5odWEgSGFuIDxjaHVhbmh1YS5oYW5AbnhwLmNvbT4NCj4gQ2M6IExlbyBMaSA8bGVveWFuZy5s
-aUBueHAuY29tPjsgU2hhd24gR3VvIDxzaGF3bmd1b0BrZXJuZWwub3JnPjsNCj4gbWFyay5ydXRs
-YW5kQGFybS5jb207IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsNCj4gZGV2
-aWNldHJlZUB2Z2VyLmtlcm5lbC5vcmc7IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7IFlp
-bmcgWmhhbmcNCj4gPHlpbmcuemhhbmcyMjQ1NUBueHAuY29tPg0KPiBTdWJqZWN0OiBSZTogW0VY
-VF0gUmU6IFtQQVRDSF0gYXJtNjQ6IGR0czogbHMxMDI4YTogZml4IHdhdGNoZG9nIGRldmljZSBu
-b2RlDQo+IA0KPiBDYXV0aW9uOiBFWFQgRW1haWwNCj4gDQo+IE9uIEZyaSwgTWF5IDI0LCAyMDE5
-IGF0IDQ6NDggQU0gQ2h1YW5odWEgSGFuIDxjaHVhbmh1YS5oYW5AbnhwLmNvbT4NCj4gd3JvdGU6
-DQo+ID4NCj4gPiBIaSwgUm9iIEhlcnJpbmcNCj4gPg0KPiA+ID4gLS0tLS1PcmlnaW5hbCBNZXNz
-YWdlLS0tLS0NCj4gPiA+IEZyb206IExlbyBMaQ0KPiA+ID4gU2VudDogMjAxOeW5tDXmnIgyMuaX
-pSAxNDo1MA0KPiANCj4gDQo+ID4gPiA+ID4gPiA+ID4gPiA+IC0gICAgICAgICAgICAgd2RvZzA6
-IHdhdGNoZG9nQDIzYzAwMDAgew0KPiA+ID4gPiA+ID4gPiA+ID4gPiAtICAgICAgICAgICAgICAg
-ICAgICAgY29tcGF0aWJsZSA9ICJmc2wsbHMxMDI4YS13ZHQiLA0KPiA+ID4gPiA+ICJmc2wsaW14
-MjEtd2R0IjsNCj4gPiA+ID4gPiA+ID4gPiA+ID4gLSAgICAgICAgICAgICAgICAgICAgIHJlZyA9
-IDwweDAgMHgyM2MwMDAwIDB4MCAweDEwMDAwPjsNCj4gPiA+ID4gPiA+ID4gPiA+ID4gLSAgICAg
-ICAgICAgICAgICAgICAgIGludGVycnVwdHMgPSA8R0lDX1NQSSA1OQ0KPiA+ID4gPiA+ID4gPiBJ
-UlFfVFlQRV9MRVZFTF9ISUdIPjsNCj4gPiA+ID4gPiA+ID4gPiA+ID4gLSAgICAgICAgICAgICAg
-ICAgICAgIGNsb2NrcyA9IDwmY2xvY2tnZW4gNCAxPjsNCj4gPiA+ID4gPiA+ID4gPiA+ID4gLSAg
-ICAgICAgICAgICAgICAgICAgIGJpZy1lbmRpYW47DQo+ID4gPiA+ID4gPiA+ID4gPiA+IC0gICAg
-ICAgICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlzYWJsZWQiOw0KPiA+ID4gPiA+ID4gPiA+ID4g
-PiArICAgICAgICAgICAgIGNsdXN0ZXIxX2NvcmUwX3dhdGNoZG9nOiB3ZHRAYzAwMDAwMCB7DQo+
-ID4gPiA+ID4gPiA+ID4gPg0KPiA+ID4gPiA+ID4gPiA+ID4gS2VlcCAnd2F0Y2hkb2cnIGFzIHRo
-ZSBub2RlIG5hbWUsDQo+ID4gPiA+ID4gPiA+ID4gVGhhbmtzIGZvciB5b3VyIHJlcGxheQ0KPiA+
-ID4gPiA+ID4gPiA+IERvIHlvdSBtZWFuIHJlcGxhY2UgdGhlIOKAmHdkdOKAmSB3aXRoIOKAmHdh
-dGNoZG9n4oCZPw0KPiA+ID4gPiA+ID4gPiA+IGFuZCBrZWVwIG5vZGVzIHNvcnQgaW4gdW5pdC1h
-ZGRyZXNzLg0KPiA+ID4gPiA+ID4gPiA+IFdoYXQgZG9lcyB0aGlzIG1lYW4/DQo+ID4gPiA+ID4g
-PiA+DQo+ID4gPiA+ID4gPiA+IFRoYXQgbWVhbnMgb3JkZXIgdGhlIG5vZGVzIGJ5IHRoZSBhZGRy
-ZXNzZXMgKGUuZy4gYzAwMDAwMCwNCj4gPiA+ID4gPiA+ID4gYzAxMDAwMCkNCj4gPiA+ID4gPiA+
-IFRoZSBjdXJyZW50IG9yZGVyIGlzIGNvcnJlY3TvvIhUaGUgZmlyc3QgaXMgYzAwMDAwMCwgdGhl
-biBjMDAwMDAw77yJLg0KPiA+ID4gPiA+DQo+ID4gPiA+ID4gQnV0IHRoZXkgYXJlIGFkZGVkIGFm
-dGVyIGdwaW9AMjMyMDAwMCBhbmQgYmVmb3JlIHNhdGFAMzIwMDAwMC4NCj4gPiA+ID4gSSBjaGFu
-Z2VkIGFuZCBtYWRlIHRoZSBzZWNvbmQgdmVyc2lvbiBvZiB0aGUgcGF0Y2gsIGJ1dCBJIGZvdW5k
-DQo+ID4gPiA+IHRoZSBmb2xsb3dpbmcgZXJyb3Igd2hlbiBJIGV4ZWN1dGVkIC4vc2NyaXB0cy9j
-aGVja3BhdGNoLnBsDQo+ID4gPiA+IHh4eC5wYXRjaCB0byBjaGVjayB0aGUgcGF0Y2g6DQo+ID4g
-PiA+DQo+ID4gPiA+IFdBUk5JTkc6IERUIGNvbXBhdGlibGUgc3RyaW5nIHZlbmRvciAiYXJtIiBh
-cHBlYXJzIHVuLWRvY3VtZW50ZWQNCj4gPiA+ID4gLS0gY2hlY2sgLi9Eb2N1bWVudGF0aW9uL2Rl
-dmljZXRyZWUvYmluZGluZ3MvdmVuZG9yLXByZWZpeGVzLnR4dA0KPiA+ID4gPiAjNDM6IEZJTEU6
-IGFyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2ZzbC1sczEwMjhhLmR0c2k6MzUxOg0KPiA+
-ID4gPiArIGNvbXBhdGlibGUgPSAiYXJtLHNwODA1IiwgImFybSxwcmltZWNlbGwiOw0KPiA+ID4g
-Pg0KPiA+ID4gPiBIb3dldmVyLCB0aGVyZSBpcyBubyB2ZW5kb3ItcHJlZml4ZXMudHh0IGZpbGUg
-aW4gdGhlDQo+ID4gPiA+IC4vRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzLyBkaXJl
-Y3RvcnksIG9ubHkgdmVuZG9yLQ0KPiA+ID4gPiBwcmVmaXhlcy55YW1sLg0KPiA+ID4gPiBNb3Jl
-b3ZlciwgdGhlcmUgYXJlIOKAmGFybeKAmSB2ZW5kb3JzIGluIHZlbmRvci1wcmVmaXhlcy55YW1s
-Lg0KPiA+ID4NCj4gPiA+IEFkZGVkIFJvYiBIZXJyaW5nIHRvIHRoZSB0aHJlYWQuDQo+ID4gPg0K
-PiA+ID4gPiBSZXF1ZXN0IGhlbHDvvIx0aGFua3MNCj4gPiBIb3cgY2FuIEkgc29sdmUgdGhpcyBw
-YXRjaCBjaGVjayBlcnJvcj8gQXNrIGZvciBoZWxwLCB0aGFuayB5b3UhDQo+IA0KPiBJZ25vcmUg
-aXQuIEEgZml4IHRvIGNoZWNrcGF0Y2gucGwgaXMgcGVuZGluZy4NCk9LLCB0aGUgc2Vjb25kIHZl
-cnNpb24gaGFzIGJlZW4gc2VudC4gQ2hlY2tpbmcgd2l0aCBjaGVja3BhdGNoLnBsIGlzIG5vIHBy
-b2JsZW0uDQo+IA0KPiBSb2INCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, May 29, 2019 at 08:03:29PM +0100, Kristina Martsenko wrote:
+> When the kernel is compiled with pointer auth instructions, the boot CPU
+> needs to start using address auth very early, so change the cpucap to
+> account for this.
+> 
+> A function that enables pointer auth cannot return, so compile such
+> functions without pointer auth (using a compiler function attribute).
+> The __no_ptrauth macro will be defined to the required function
+> attribute in a later patch.
+> 
+> Do not use the cpu_enable callback, to avoid compiling the whole
+> callchain down to cpu_enable without pointer auth.
+> 
+> Note the change in behavior: if the boot CPU has address auth and a late
+> CPU does not, then we offline the late CPU. Until now we would have just
+> disabled address auth in this case.
+> 
+> Leave generic authentication as a "system scope" cpucap for now, since
+> initially the kernel will only use address authentication.
+> 
+> Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+
+This feels a little out of order to define the empty __no_ptrauth here.
+The only better option I can think of is to split the compiler flag
+patch in half to introduce the __no_ptrauth flag in full, on its own.
+Either way:
+
+Reviewed-by: Kees Cook <keescook@chromium.org>
+
+-Kees
+
+> ---
+> 
+> Changes since RFC v1:
+>  - Enable instructions for all 5 keys
+>  - Replaced __always_inline with __no_ptrauth as it turns out __always_inline
+>    is only a hint (and could therefore result in crashes)
+>  - Left the __no_ptrauth definition blank for now as it needs to be determined
+>    with more complex logic in a later patch
+>  - Updated the Kconfig symbol description
+>  - Minor cleanups
+>  - Updated the commit message
+> 
+>  arch/arm64/Kconfig                    |  4 ++++
+>  arch/arm64/include/asm/cpufeature.h   |  9 +++++++++
+>  arch/arm64/include/asm/pointer_auth.h | 19 +++++++++++++++++++
+>  arch/arm64/kernel/cpufeature.c        | 13 +++----------
+>  arch/arm64/kernel/smp.c               |  7 ++++++-
+>  5 files changed, 41 insertions(+), 11 deletions(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 7e34b9eba5de..f4c1e9b30129 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1304,6 +1304,10 @@ config ARM64_PTR_AUTH
+>  	  hardware it will not be advertised to userspace nor will it be
+>  	  enabled.
+>  
+> +	  If the feature is present on the primary CPU but not a secondary CPU,
+> +	  then the secondary CPU will be offlined. On such a system, this
+> +	  option should not be selected.
+> +
+>  endmenu
+>  
+>  config ARM64_SVE
+> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+> index ad952f2e0a2b..e36a7948b763 100644
+> --- a/arch/arm64/include/asm/cpufeature.h
+> +++ b/arch/arm64/include/asm/cpufeature.h
+> @@ -299,6 +299,15 @@ extern struct arm64_ftr_reg arm64_ftr_reg_ctrel0;
+>  #define ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE		\
+>  	(ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PANIC_ON_CONFLICT)
+>  
+> +/*
+> + * CPU feature used early in the boot based on the boot CPU. It is safe for a
+> + * late CPU to have this feature even though the boot CPU hasn't enabled it,
+> + * although the feature will not be used by Linux in this case. If the boot CPU
+> + * has enabled this feature already, then every late CPU must have it.
+> + */
+> +#define ARM64_CPUCAP_BOOT_CPU_FEATURE			\
+> +	 (ARM64_CPUCAP_SCOPE_BOOT_CPU | ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU)
+> +
+>  struct arm64_cpu_capabilities {
+>  	const char *desc;
+>  	u16 capability;
+> diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
+> index fc8dc70cc19f..a97b7dc10bdb 100644
+> --- a/arch/arm64/include/asm/pointer_auth.h
+> +++ b/arch/arm64/include/asm/pointer_auth.h
+> @@ -11,6 +11,13 @@
+>  
+>  #ifdef CONFIG_ARM64_PTR_AUTH
+>  /*
+> + * Compile the function without pointer authentication instructions. This
+> + * allows pointer authentication to be enabled/disabled within the function
+> + * (but leaves the function unprotected by pointer authentication).
+> + */
+> +#define __no_ptrauth
+> +
+> +/*
+>   * Each key is a 128-bit quantity which is split across a pair of 64-bit
+>   * registers (Lo and Hi).
+>   */
+> @@ -50,6 +57,16 @@ do {								\
+>  	write_sysreg_s(__pki_v.hi, SYS_ ## k ## KEYHI_EL1);	\
+>  } while (0)
+>  
+> +static inline void __no_ptrauth ptrauth_cpu_enable(void)
+> +{
+> +	if (!system_supports_address_auth())
+> +		return;
+> +
+> +	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
+> +				       SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
+> +	isb();
+> +}
+> +
+>  extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
+>  
+>  /*
+> @@ -68,6 +85,8 @@ static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
+>  	ptrauth_keys_init(&(tsk)->thread.keys_user)
+>  
+>  #else /* CONFIG_ARM64_PTR_AUTH */
+> +#define __no_ptrauth
+> +#define ptrauth_cpu_enable(tsk)
+>  #define ptrauth_prctl_reset_keys(tsk, arg)	(-EINVAL)
+>  #define ptrauth_strip_insn_pac(lr)	(lr)
+>  #define ptrauth_thread_init_user(tsk)
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index 8a595b4cb0aa..2cf042ebb237 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -1200,12 +1200,6 @@ static void cpu_clear_disr(const struct arm64_cpu_capabilities *__unused)
+>  #endif /* CONFIG_ARM64_RAS_EXTN */
+>  
+>  #ifdef CONFIG_ARM64_PTR_AUTH
+> -static void cpu_enable_address_auth(struct arm64_cpu_capabilities const *cap)
+> -{
+> -	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
+> -				       SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
+> -}
+> -
+>  static bool has_address_auth(const struct arm64_cpu_capabilities *entry,
+>  			     int __unused)
+>  {
+> @@ -1474,7 +1468,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+>  	{
+>  		.desc = "Address authentication (architected algorithm)",
+>  		.capability = ARM64_HAS_ADDRESS_AUTH_ARCH,
+> -		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
+> +		.type = ARM64_CPUCAP_BOOT_CPU_FEATURE,
+>  		.sys_reg = SYS_ID_AA64ISAR1_EL1,
+>  		.sign = FTR_UNSIGNED,
+>  		.field_pos = ID_AA64ISAR1_APA_SHIFT,
+> @@ -1484,7 +1478,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+>  	{
+>  		.desc = "Address authentication (IMP DEF algorithm)",
+>  		.capability = ARM64_HAS_ADDRESS_AUTH_IMP_DEF,
+> -		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
+> +		.type = ARM64_CPUCAP_BOOT_CPU_FEATURE,
+>  		.sys_reg = SYS_ID_AA64ISAR1_EL1,
+>  		.sign = FTR_UNSIGNED,
+>  		.field_pos = ID_AA64ISAR1_API_SHIFT,
+> @@ -1493,9 +1487,8 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+>  	},
+>  	{
+>  		.capability = ARM64_HAS_ADDRESS_AUTH,
+> -		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
+> +		.type = ARM64_CPUCAP_BOOT_CPU_FEATURE,
+>  		.matches = has_address_auth,
+> -		.cpu_enable = cpu_enable_address_auth,
+>  	},
+>  	{
+>  		.desc = "Generic authentication (architected algorithm)",
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index 824de7038967..eca6aa05ac66 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -54,6 +54,7 @@
+>  #include <asm/numa.h>
+>  #include <asm/pgtable.h>
+>  #include <asm/pgalloc.h>
+> +#include <asm/pointer_auth.h>
+>  #include <asm/processor.h>
+>  #include <asm/smp_plat.h>
+>  #include <asm/sections.h>
+> @@ -238,6 +239,8 @@ asmlinkage notrace void secondary_start_kernel(void)
+>  	 */
+>  	check_local_cpu_capabilities();
+>  
+> +	ptrauth_cpu_enable();
+> +
+>  	if (cpu_ops[cpu]->cpu_postboot)
+>  		cpu_ops[cpu]->cpu_postboot();
+>  
+> @@ -432,7 +435,7 @@ void __init smp_cpus_done(unsigned int max_cpus)
+>  	mark_linear_text_alias_ro();
+>  }
+>  
+> -void __init smp_prepare_boot_cpu(void)
+> +void __init __no_ptrauth smp_prepare_boot_cpu(void)
+>  {
+>  	set_my_cpu_offset(per_cpu_offset(smp_processor_id()));
+>  	/*
+> @@ -452,6 +455,8 @@ void __init smp_prepare_boot_cpu(void)
+>  	/* Conditionally switch to GIC PMR for interrupt masking */
+>  	if (system_uses_irq_prio_masking())
+>  		init_gic_priority_masking();
+> +
+> +	ptrauth_cpu_enable();
+>  }
+>  
+>  static u64 __init of_get_cpu_mpidr(struct device_node *dn)
+> -- 
+> 2.11.0
+> 
+
+-- 
+Kees Cook
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
