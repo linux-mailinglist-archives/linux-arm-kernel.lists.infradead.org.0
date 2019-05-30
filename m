@@ -2,68 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7956A30510
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 00:57:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C806D30514
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 00:58:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WBshHfeDziyQBEHZmxcYjgOFMgcob2sJasf09yksiik=; b=F3gkBRZCwvE9Dk
-	Pe83P2GgwPCL1YQwTnH52qPwihm/quJS/p3IiThExVaMHlM2XwZjEnfB3p2T96hgRK6HVDv/cyqq8
-	1Ij7w0pbZNYXvTot6aoH+KlLdI1xFR3hwDCI7rPA8N36+MpR1euy6koVgynopwP10/KY8kbcEtQGG
-	Yvb80TFwiLc6RJNB2g/rnRq5tJnLkackH6aexwqvFpqD1kFetkGk6AkKoLu2YZLAH2cX3b1yR7nlF
-	QHnOKgmAGMaNq2D+5DBOEOSm2DPnUn+FEEKKzIDT4C34fuI29orTiGvvqwnHtpKNZu/s/Fe1dXiky
-	hfMwASpowwRAvkOE2CiA==;
+	List-Owner; bh=avcIRUAHBibh/U8/c2DXqRxHBaWBroZfBGr7BYagVRo=; b=Y3aVdBcdYerIwF
+	9XOGZLKEHyRCbh4J4oy5qkyPW5GHE4W/3jYcQRLWOEeLhnTnkPfyceR1oK0E9BQ8Z+ZaEDSs61hNf
+	2P9edwpJ4dAXkGiMIvxKbPWYXVTd9jCTWYsTxc4lzxJJ+FCOLKv96FC+tmvr0k1pHldHF5oTGJls/
+	UV0YXA3XYguZiJgse0r3W/pxW/KtFeA/yB2XNZIqiv1I75xEotm4lUFR3dvV0R6M95m1WCE6oNiq8
+	OZg6IpDWkOuOJeqyW1+s9iWD/wWaYZxzx8AaSVNlatPHerbVoqthOcF97Sc/lEHZDeu3cNhjFzJ3J
+	0tU0GdStZ1vKtkANtp+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWTz1-0006xT-4D; Thu, 30 May 2019 22:57:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hWU09-0007Gm-2D; Thu, 30 May 2019 22:58:25 +0000
+Received: from mail-pg1-x52e.google.com ([2607:f8b0:4864:20::52e])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWTyt-0006x3-Ha; Thu, 30 May 2019 22:57:08 +0000
-Received: from mail-wr1-f48.google.com (mail-wr1-f48.google.com
- [209.85.221.48])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 079B2262D0;
- Thu, 30 May 2019 22:57:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559257027;
- bh=iWlHwQIQWXgJxw5M7bJPq4MrgLHO4zyeNxvUKrcQDJs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=eDQuxbkGjkCAjxTDwhjOqsUUKwS5T+l9GzaPR7RBxLxTl+iBKmcTUMdrT+fiJdW+/
- kKRS+2KsvqgM5EqpG8kq54+6i7djmBKARo6z3QPbMHFi7wxOubOmP56RGfYFMvk9za
- 7Gd+MU8CdRzFhTJyrd436HeCx2cUeKXtLt7sUdxc=
-Received: by mail-wr1-f48.google.com with SMTP id r7so5200479wrr.13;
- Thu, 30 May 2019 15:57:06 -0700 (PDT)
-X-Gm-Message-State: APjAAAX21bIQ9ZA9VSPh0LoLSS4t3JVXfyvmL60dcNm709GGHHzVuSwa
- ffn4pe2aJtbzKp15zoAq3XLcweBkbgYgCpbmPuQ=
-X-Google-Smtp-Source: APXvYqzB/imXLBAYcgV5SPngjuVw5E3+3UKU9f5J+X1Zzb2GO4Nj5erqdYaBmQU52zkdl0I+DX6YMxUcnUkt7x5fGUA=
-X-Received: by 2002:adf:afd5:: with SMTP id y21mr4064469wrd.12.1559257025604; 
- Thu, 30 May 2019 15:57:05 -0700 (PDT)
+ id 1hWU01-0007GS-HA
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 22:58:18 +0000
+Received: by mail-pg1-x52e.google.com with SMTP id w34so2828907pga.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 15:58:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=g3fyQ5vC911DtgxXJ3PgVEWFheMcjPz72If1BfifQAs=;
+ b=ctDFoVHOn/KGxReSwUExeuF/3FnwVQymU+8BTgoe14+ebN5HOY0ciBPooqMPFOZQdU
+ eu5uIryUWSY/uU1YUIq/tLjuK+Eh+ADB2H9TXfwbUXVOTCSQFJqQeRkvVTrXPC5D4ctj
+ tdQXRzKnLQ84JZpwahzQYP0kNSSvS074L5rrpvwMNqfnt8kOCCgqTyQTqPCpebSwvawY
+ NeKVKZjOGBFnx35r0+iI/YDaMOr6A/oFBgb+PpqToS9VAlAW/5KvCmx/78lc0iGXxs37
+ usoU5uo/WXwrO9BHpJEsv0vZgCyhwlSUW+r8sX9RHgIxaIpLzvS2y6v99AQQ4xJ3walw
+ MeRw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=g3fyQ5vC911DtgxXJ3PgVEWFheMcjPz72If1BfifQAs=;
+ b=B8z2D/aH/KS1UB71qM0V62P9dcdsjwWYFyhQo7FNNt5hzMFZ3IBuDkHAGllGaNz+gq
+ yzHwzKmjOJMLKO6VPiHWHdLkeGDTqk6LmvkwFj70QbM/pXYb9R5IbcRUZ+A4euaptkgD
+ uAVNe4tg9i47W2oHz8vLnWlos4QtvS4wyhyz36LYlrJQSA+hl076L9/QEw/ARTGlEfwF
+ kPaZDl18kKRc3G5yrqil9k1/ciLhz4Ak2+EjqWvtkEE5KsolShRGrzy1DCgn/+dsRJ8Z
+ /EoRr84LfWzji5DIHZ2FHExKtwBTkmH8n2B/nS7oGbG56mLA+6rZ6NUEeN/Mg2a5ksv3
+ yVWg==
+X-Gm-Message-State: APjAAAXesnR1Cs1XNMzNW5t119H5PJZegUbLTNrIMt2Ow4Wl0SP8BQ7T
+ Ktu7WeSbvf3qD+wTpCcGdqj5+5VX1JrsWHfS2xAWZg==
+X-Google-Smtp-Source: APXvYqxue3upVLHsWnlCEto+CuyURWG3yRToxHEvczF75YfvyVuzKH0CymMBgJEyoDKlg4OVBEGY2vmJ8o7JU4NIPnk=
+X-Received: by 2002:a65:52c8:: with SMTP id z8mr5778125pgp.10.1559257096141;
+ Thu, 30 May 2019 15:58:16 -0700 (PDT)
 MIME-Version: 1.0
-References: <1558946326-13630-1-git-send-email-neal.liu@mediatek.com>
- <1558946326-13630-3-git-send-email-neal.liu@mediatek.com>
-In-Reply-To: <1558946326-13630-3-git-send-email-neal.liu@mediatek.com>
-From: Sean Wang <sean.wang@kernel.org>
-Date: Thu, 30 May 2019 15:56:55 -0700
-X-Gmail-Original-Message-ID: <CAGp9LzrQegBb9Oe-=jfkwOrsYY=eN3BSF=DWnu+aSBAhQ5bexA@mail.gmail.com>
-Message-ID: <CAGp9LzrQegBb9Oe-=jfkwOrsYY=eN3BSF=DWnu+aSBAhQ5bexA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] dt-bindings: rng: update bindings for MediaTek
- ARMv8 SoCs
-To: Neal Liu <neal.liu@mediatek.com>
+References: <CANA+-vBHL9a9fXDWxALXXuJk6r8ObZZjhrGp-p5JUnfOThEV5g@mail.gmail.com>
+In-Reply-To: <CANA+-vBHL9a9fXDWxALXXuJk6r8ObZZjhrGp-p5JUnfOThEV5g@mail.gmail.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Thu, 30 May 2019 15:58:04 -0700
+Message-ID: <CAKwvOd=W35EwxS+g46tZVfhO9gDVH=g8oMhhHkZ+DHUqiYq7CQ@mail.gmail.com>
+Subject: Re: CONFIG_FRAME_POINTER support for Clang
+To: Tri Vo <trong@android.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_155707_610242_9190F88C 
-X-CRM114-Status: GOOD (  16.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190530_155817_599200_C3DC211D 
+X-CRM114-Status: GOOD (  13.92  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:52e listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -72,7 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -84,72 +96,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>, wsd_upstream@mediatek.com,
- lkml <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- linux-crypto@vger.kernel.org, Matt Mackall <mpm@selenic.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Crystal Guo <Crystal.Guo@mediatek.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Ian Rogers <irogers@google.com>, Russell King <linux@armlinux.org.uk>,
+ Stefan Agner <stefan@agner.ch>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Matthias Kaehlcke <mka@chromium.org>, Manoj Gupta <manojgupta@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Neal
++ Some more lists/people
 
-On Mon, May 27, 2019 at 1:39 AM Neal Liu <neal.liu@mediatek.com> wrote:
+On Thu, May 30, 2019 at 3:56 PM Tri Vo <trong@android.com> wrote:
 >
-> Document the binding used by the MediaTek ARMv8 SoCs random
-> number generator with TrustZone enabled.
+> Hello Russell,
 >
-> Signed-off-by: Neal Liu <neal.liu@mediatek.com>
-> ---
->  Documentation/devicetree/bindings/rng/mtk-rng.txt |   13 ++++++++++---
->  1 file changed, 10 insertions(+), 3 deletions(-)
+> I'm trying to implement support for CONFIG_FRAME_POINTER when building Linux
+> with Clang compiler.
 >
-> diff --git a/Documentation/devicetree/bindings/rng/mtk-rng.txt b/Documentation/devicetree/bindings/rng/mtk-rng.txt
-> index 2bc89f1..1fb9b1d 100644
-> --- a/Documentation/devicetree/bindings/rng/mtk-rng.txt
-> +++ b/Documentation/devicetree/bindings/rng/mtk-rng.txt
-> @@ -3,9 +3,12 @@ found in MediaTek SoC family
+> Currently, CONFIG_FRAME_POINTER relies on function prologue that is emitted by
+> GCC using -mapcs flag. However, APCS is obsolete and Clang doesn't support it.
 >
->  Required properties:
->  - compatible       : Should be
-> -                       "mediatek,mt7622-rng",  "mediatek,mt7623-rng" : for MT7622
-> -                       "mediatek,mt7629-rng",  "mediatek,mt7623-rng" : for MT7629
-> -                       "mediatek,mt7623-rng" : for MT7623
-> +                       "mediatek,mt7622-rng", "mediatek,mt7623-rng" for MT7622
-> +                       "mediatek,mt7629-rng", "mediatek,mt7623-rng" for MT7629
-> +                       "mediatek,mt7623-rng" for MT7623
-
-No make any change for those lines not belong to the series
-
-> +                       "mediatek,mtk-sec-rng" for MediaTek ARMv8 SoCs
-
-I thought "mediatek,mtk-sec-rng" is only for those MediaTek ARMv8 SoCs
-with security RNG
-
-> +
-> +Optional properties:
->  - clocks           : list of clock specifiers, corresponding to
->                       entries in clock-names property;
->  - clock-names      : Should contain "rng" entries;
-> @@ -19,3 +22,7 @@ rng: rng@1020f000 {
->         clocks = <&infracfg CLK_INFRA_TRNG>;
->         clock-names = "rng";
->  };
-
-For those MediaTek ARMv8 SoCs with security RNG
-
-> +
-> +hwrng: hwrng {
-> +       compatible = "mediatek,mtk-sec-rng";
-> +};
-> --
-> 1.7.9.5
+> So in order to accommodate Clang-emitted frame layout, I'm thinking of
+> providing Clang-specific implementation of code that relies on frame pointer,
+> most notably in these files:
+>         lib/backtrace.S
+>         arch/arm/kernel/stacktrace.c
+>         arch/arm/net/bpf_jit_32.c
 >
+> This will likely involve putting "#ifdef CC_IS_CLANG" statements in the source
+> code. Is that OK?
+>
+> Another caveat is that Clang implementation of backtracing won't be able to
+> dump saved registers or dump precise pc value of the caller, because IIUC that
+> information is derived from APCS's fixed prologue.
+>
+> What do you think about this approach?
+>
+> Thanks,
+> Tri
+
+
+
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
