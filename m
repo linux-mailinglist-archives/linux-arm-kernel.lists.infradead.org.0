@@ -2,59 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C1113039E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 22:55:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B765C303D0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 23:07:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BEP1Jv5LRjpHQS8bPkmWrCDgHRortxO7NdmWqhzxgSk=; b=V+0Q1IDCumXm+6K+/Y+9ZztzI
-	pCTSDCuU2t6bCjx26DeloIhCey+vDxyNtwfg0WhcHkGYi99I53ScKnS0PUxvVTjZ6+tblLjXiCdR7
-	N4BKM1f5bDuMatoR0UJhcGZLVaSte86nib7nYbYlB4mcAnnaCX/WQv7YFwSJXO3DWNYg3qT4DtxLB
-	76qgyTqLozlwWGZ4ARtRd08qz5e0OhSKIks3cIdwcUH5hgDghpXqUjCLfV9vDP/9oGJ9fJ8eoRpuZ
-	N1SSjUkZjOCQkFBigFUhRFrPVpRoIyIa1SHhu6htvxYLpxQQUulFt0I5uXS4q0rKgubALo/8vCp/+
-	TLnG2dlRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e4k6V6f96qRD1oh5neaFKAfG/L8x2qinUeqT22ew05Q=; b=oWzZnJExcqJ0Kn
+	dO+ZE/7NOHw5r50Z1sDfPr6zX2caRPjpSABmb78xA+ANEk+DsE5SojuAlS0S+L0iw1M0tRhTG/M5M
+	IZKQpDnG/YNhPdCNrtYfBRlF5Lk0i8NedzMSiajVW2VnXTA4cvN7meJz8aiX9dnmumm7x7JrUWOJn
+	UgScznek1FZudqg2ujK0QUBkVSVmNsfpf2zUoIGo6Ckod7YkKbYfIGiQV4N0d70ze7Oqk/DKq8G0+
+	Hk26BcP6x+iYBu4dAj0vl6En8CmsOwAePvw81qk9o61xg2rQsyZ4zCxyJY3WdVkroV1Qcuz5QtxrS
+	85EevQea1v+BjFfi6W2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWS54-00023n-3I; Thu, 30 May 2019 20:55:22 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWS4w-00022q-8i; Thu, 30 May 2019 20:55:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF11C341;
- Thu, 30 May 2019 13:55:11 -0700 (PDT)
-Received: from [192.168.100.220] (usa-sjc-mx-foss1.foss.arm.com
- [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 193FB3F690;
- Thu, 30 May 2019 13:55:10 -0700 (PDT)
-Subject: Re: [PATCH v6 2/7] dt-binding: cpu-topology: Move cpu-map to a common
- binding.
-To: Atish Patra <atish.patra@wdc.com>, linux-kernel@vger.kernel.org
-References: <20190529211340.17087-1-atish.patra@wdc.com>
- <20190529211340.17087-3-atish.patra@wdc.com>
-From: Jeremy Linton <jeremy.linton@arm.com>
-Message-ID: <0515d803-0da5-dcbe-3d3e-bb786b320d8b@arm.com>
-Date: Thu, 30 May 2019 15:55:09 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hWSGj-0005CN-9y; Thu, 30 May 2019 21:07:25 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWSGc-0005BS-Ei
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 21:07:20 +0000
+Received: by mail-ed1-x542.google.com with SMTP id p26so11125467edr.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 14:07:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Pv5CB4WwZj0N9C+rEj8/2lRh5EGUHdn0uj79m0rM0oo=;
+ b=VEU5u5GDrcgB8PRAclAeTaxHNWRXxNgMKQuxMFD2SFRizhpvwX2vSFrW58YKLvKdGO
+ eVuKFZtXyc1RHb9iKevkl1RKESa8X+H4JsE7X49/wDWGTTF1++R+Oi6bCGLu0qiMFC7q
+ hWo0t+OsCQNb5YJC5V+PLRuPaGXL4SH2RlhfYwJV76d+wtYGM87zkTYGJrmM5dahxIDn
+ qHnxrRKHJ981k6zXutXR8rLnD27RwSUR9gdS6t3qdzrPraAAqPEeILMrt+Xu+DkaI8aO
+ CnVCUN2x67n04/yYkoMoVaF4yzXSA1yTow1K1ywH4DmLZh4o+OnP8FcuMAvRu6sLPZIL
+ UDpQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Pv5CB4WwZj0N9C+rEj8/2lRh5EGUHdn0uj79m0rM0oo=;
+ b=oFc6td4hS4LVUetNzns6S5iSspRNsZcAcFhgu0dhFJqCTka1XTnQX0e6yd7Sm7V14C
+ R+wd9JbZh1R/5eBGgJGdIpTJ546WwiyVrklzAKxjMWrRBEMuO2m+foKUQbeiCIDNxzXa
+ U52eAAD3aNO0zrpv0kHVM2733LCsFyxVyuj6W2wKbY7sI2IigBKslj/5jWA/D6mRzCJO
+ gtvjcxDhgNS87r5xD+sWmSf6WUH3fW71+c/jVhjkZLRgvTJcsOCMk57+48iCTlib9s/o
+ xj0kk+a24cKDSNW1ckdc87KOYHhuM2mwa+gJaueek1Z+ixYqlCbLGqLC2j8zpx3mbhmM
+ GA1w==
+X-Gm-Message-State: APjAAAVyAM/kDikgPQa7Y+nxoa/YxcZAU3luSSAn7v37DbYXsFrFPsDu
+ +Q1/fmLnnjaMQQzp1O/0onjplOqZtOe3zjXFXg0ALA==
+X-Google-Smtp-Source: APXvYqzIBqcTjn5yiKx6Vr6nLGFPUVRyPMd7kuo7uA8Xmjn8HuSs90QeWcqYdxDxX2LpwL8i4qi0lXPOMCD5KRVUoAU=
+X-Received: by 2002:aa7:d711:: with SMTP id t17mr7195382edq.80.1559250436307; 
+ Thu, 30 May 2019 14:07:16 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190529211340.17087-3-atish.patra@wdc.com>
-Content-Language: en-US
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-8-david@redhat.com>
+In-Reply-To: <20190527111152.16324-8-david@redhat.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Thu, 30 May 2019 17:07:05 -0400
+Message-ID: <CA+CK2bBLtZL8qxsjJt-tdaOraJCbDYfH2cbQ1ABJJ8hYif8LiQ@mail.gmail.com>
+Subject: Re: [PATCH v3 07/11] mm/memory_hotplug: Create memory block devices
+ after arch_add_memory()
+To: David Hildenbrand <david@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_135514_321771_D2F03E65 
-X-CRM114-Status: GOOD (  29.49  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190530_140718_629217_059346C5 
+X-CRM114-Status: GOOD (  11.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,201 +92,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-riscv@lists.infradead.org, Morten Rasmussen <morten.rasmussen@arm.com>,
- Rob Herring <robh@kernel.org>, Anup Patel <anup@brainfault.org>,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@kernel.org>,
- devicetree@vger.kernel.org, Albert Ou <aou@eecs.berkeley.edu>,
- Rob Herring <robh+dt@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+Cc: Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
+ Michal Hocko <mhocko@suse.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, "mike.travis@hpe.com" <mike.travis@hpe.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Otto Sabart <ottosabart@seberm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- "David S. Miller" <davem@davemloft.net>
+ "Rafael J. Wysocki" <rafael@kernel.org>, Mathieu Malaterre <malat@debian.org>,
+ LKML <linux-kernel@vger.kernel.org>, Arun KS <arunks@codeaurora.org>,
+ Wei Yang <richard.weiyang@gmail.com>, linux-mm <linux-mm@kvack.org>,
+ Andrew Banman <andrew.banman@hpe.com>, Qian Cai <cai@lca.pw>,
+ Igor Mammedov <imammedo@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Oscar Salvador <osalvador@suse.de>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Mon, May 27, 2019 at 7:12 AM David Hildenbrand <david@redhat.com> wrote:
+>
+> Only memory to be added to the buddy and to be onlined/offlined by
+> user space using /sys/devices/system/memory/... needs (and should have!)
+> memory block devices.
+>
+> Factor out creation of memory block devices. Create all devices after
+> arch_add_memory() succeeded. We can later drop the want_memblock parameter,
+> because it is now effectively stale.
+>
+> Only after memory block devices have been added, memory can be onlined
+> by user space. This implies, that memory is not visible to user space at
+> all before arch_add_memory() succeeded.
+>
+> While at it
+> - use WARN_ON_ONCE instead of BUG_ON in moved unregister_memory()
+> - introduce find_memory_block_by_id() to search via block id
+> - Use find_memory_block_by_id() in init_memory_block() to catch
+>   duplicates
+>
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Cc: David Hildenbrand <david@redhat.com>
+> Cc: "mike.travis@hpe.com" <mike.travis@hpe.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Ingo Molnar <mingo@kernel.org>
+> Cc: Andrew Banman <andrew.banman@hpe.com>
+> Cc: Oscar Salvador <osalvador@suse.de>
+> Cc: Michal Hocko <mhocko@suse.com>
+> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
+> Cc: Qian Cai <cai@lca.pw>
+> Cc: Wei Yang <richard.weiyang@gmail.com>
+> Cc: Arun KS <arunks@codeaurora.org>
+> Cc: Mathieu Malaterre <malat@debian.org>
+> Signed-off-by: David Hildenbrand <david@redhat.com>
 
-On 5/29/19 4:13 PM, Atish Patra wrote:
-> cpu-map binding can be used to described cpu topology for both
-> RISC-V & ARM. It makes more sense to move the binding to document
-> to a common place.
-> 
-> The relevant discussion can be found here.
-> https://lkml.org/lkml/2018/11/6/19
-> 
-> Signed-off-by: Atish Patra <atish.patra@wdc.com>
-> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
->   .../topology.txt => cpu/cpu-topology.txt}     | 82 +++++++++++++++----
->   1 file changed, 66 insertions(+), 16 deletions(-)
->   rename Documentation/devicetree/bindings/{arm/topology.txt => cpu/cpu-topology.txt} (86%)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/topology.txt b/Documentation/devicetree/bindings/cpu/cpu-topology.txt
-> similarity index 86%
-> rename from Documentation/devicetree/bindings/arm/topology.txt
-> rename to Documentation/devicetree/bindings/cpu/cpu-topology.txt
-> index 3b8febb46dad..069addccab14 100644
-> --- a/Documentation/devicetree/bindings/arm/topology.txt
-> +++ b/Documentation/devicetree/bindings/cpu/cpu-topology.txt
-> @@ -1,12 +1,12 @@
->   ===========================================
-> -ARM topology binding description
-> +CPU topology binding description
->   ===========================================
->   
->   ===========================================
->   1 - Introduction
->   ===========================================
->   
-> -In an ARM system, the hierarchy of CPUs is defined through three entities that
-> +In a SMP system, the hierarchy of CPUs is defined through three entities that
->   are used to describe the layout of physical CPUs in the system:
->   
->   - socket
-> @@ -14,9 +14,6 @@ are used to describe the layout of physical CPUs in the system:
->   - core
->   - thread
->   
-> -The cpu nodes (bindings defined in [1]) represent the devices that
-> -correspond to physical CPUs and are to be mapped to the hierarchy levels.
-> -
->   The bottom hierarchy level sits at core or thread level depending on whether
->   symmetric multi-threading (SMT) is supported or not.
->   
-> @@ -25,33 +22,31 @@ threads existing in the system and map to the hierarchy level "thread" above.
->   In systems where SMT is not supported "cpu" nodes represent all cores present
->   in the system and map to the hierarchy level "core" above.
->   
-> -ARM topology bindings allow one to associate cpu nodes with hierarchical groups
-> +CPU topology bindings allow one to associate cpu nodes with hierarchical groups
->   corresponding to the system hierarchy; syntactically they are defined as device
->   tree nodes.
->   
-> -The remainder of this document provides the topology bindings for ARM, based
-> -on the Devicetree Specification, available from:
-> +Currently, only ARM/RISC-V intend to use this cpu topology binding but it may be
-> +used for any other architecture as well.
->   
-> -https://www.devicetree.org/specifications/
-> +The cpu nodes, as per bindings defined in [4], represent the devices that
-> +correspond to physical CPUs and are to be mapped to the hierarchy levels.
->   
-> -If not stated otherwise, whenever a reference to a cpu node phandle is made its
-> -value must point to a cpu node compliant with the cpu node bindings as
-> -documented in [1].
->   A topology description containing phandles to cpu nodes that are not compliant
-> -with bindings standardized in [1] is therefore considered invalid.
-> +with bindings standardized in [4] is therefore considered invalid.
->   
->   ===========================================
->   2 - cpu-map node
->   ===========================================
->   
-> -The ARM CPU topology is defined within the cpu-map node, which is a direct
-> +The ARM/RISC-V CPU topology is defined within the cpu-map node, which is a direct
->   child of the cpus node and provides a container where the actual topology
->   nodes are listed.
->   
->   - cpu-map node
->   
-> -	Usage: Optional - On ARM SMP systems provide CPUs topology to the OS.
-> -			  ARM uniprocessor systems do not require a topology
-> +	Usage: Optional - On SMP systems provide CPUs topology to the OS.
-> +			  Uniprocessor systems do not require a topology
->   			  description and therefore should not define a
->   			  cpu-map node.
->   
-> @@ -494,8 +489,63 @@ cpus {
->   	};
->   };
->   
-> +Example 3: HiFive Unleashed (RISC-V 64 bit, 4 core system)
-> +
-> +{
-> +	#address-cells = <2>;
-> +	#size-cells = <2>;
-> +	compatible = "sifive,fu540g", "sifive,fu500";
-> +	model = "sifive,hifive-unleashed-a00";
-> +
-> +	...
-> +	cpus {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		cpu-map {
-> +			cluster0 {
-> +				core0 {
-> +					cpu = <&CPU1>;
-> +				};
-> +				core1 {
-> +					cpu = <&CPU2>;
-> +				};
-> +				core2 {
-> +					cpu0 = <&CPU2>;
-> +				};
-> +				core3 {
-> +					cpu0 = <&CPU3>;
-> +				};
-> +			};
-> +		};
-
-
-<nit picking>
-
-While socket is optional, its probably a good idea to include the node 
-in the example even if the result is the same. That is because at least 
-on arm64 the DT clusters=sockets decision had performance implications 
-for larger systems.
-
-Assuring the socket information is correct is helpful by itself to avoid 
-having to explain why a single socket machine is displaying some other 
-value in lscpu.
-
-
-
-> +
-> +		CPU1: cpu@1 {
-> +			device_type = "cpu";
-> +			compatible = "sifive,rocket0", "riscv";
-> +			reg = <0x1>;
-> +		}
-> +
-> +		CPU2: cpu@2 {
-> +			device_type = "cpu";
-> +			compatible = "sifive,rocket0", "riscv";
-> +			reg = <0x2>;
-> +		}
-> +		CPU3: cpu@3 {
-> +			device_type = "cpu";
-> +			compatible = "sifive,rocket0", "riscv";
-> +			reg = <0x3>;
-> +		}
-> +		CPU4: cpu@4 {
-> +			device_type = "cpu";
-> +			compatible = "sifive,rocket0", "riscv";
-> +			reg = <0x4>;
-> +		}
-> +	}
-> +};
->   ===============================================================================
->   [1] ARM Linux kernel documentation
->       Documentation/devicetree/bindings/arm/cpus.yaml
->   [2] Devicetree NUMA binding description
->       Documentation/devicetree/bindings/numa.txt
-> +[3] RISC-V Linux kernel documentation
-> +    Documentation/devicetree/bindings/riscv/cpus.txt
-> +[4] https://www.devicetree.org/specifications/
-> 
-
+LGTM
+Reviewed-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
