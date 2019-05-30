@@ -2,98 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFDFF2F03D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 06:02:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A23EE2F29F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 06:23:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mOhUbKM/LRc7OtTkeqwk/chvAej/bwocywlT7AUHK+w=; b=mp1w2h1iGk+rz+
-	5n08FglwWBfDI/3oXZkNysn6/WN9lLBfv/YVSRd/nwM7C+rYJMPcBoHk9ovdsObCPOaTJ+jq8+HtI
-	EgaSrauVbiGxt8HNDV5uIAVx5P9rio7mYeahkQJc8JSImKZc0v1TY+kW/4wXNaK3jvW6R7cIo8SFU
-	TM1wVuFSWE4rkg0E6YxRqtsSBbN7v7HUlMTOc0L7P8H3GE7fWlwZLcN/IEsPlc9lbjs9ZNJsmxyl6
-	T8IFFlOKR/nkloMb9t/xgxJK889QOSslUxxFMvQyqPxTRMnYIM56xbJYPnT2HhFgfFpo3AgVqUWRf
-	OlcdstvzNhRTLUoKyEaQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0chSW71leciYZ6PYczIo35aQdB7HKhKReBzMjbNytUg=; b=uubMsm/K1dDesI
+	37xgv3Dndwxp2EEgXSGlfETjkO1pt+4yf1WoT6cJthRwf4shrUo+RDjvvtcgPBDbwIqwuMw4EOIlk
+	uePri7lEX+AzytiMwCW8KLNuXf2t3sQzexNl9n0i4apfULjGwBTjGreYA/Ip4ttIMESwwcjL+zbeX
+	+2avVxLXXwaCZrhDpFqy9riSY30NdLq/kcBAFNLyM5iQdIdORzkk8y1afu2RTLO6xhVoOmqH2DNDJ
+	0iArRhmvas5f/l4gFYT1IKUrYgCln3kmWIxM7KwwH+iR+Nb/Eu7lGplT/wNFH1+xaKXYMNgfjbqlp
+	LxDBKs//yCYC8eNza4xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWCGp-00051b-7s; Thu, 30 May 2019 04:02:27 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWCGg-00050C-Jv
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 04:02:20 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id DAB2C21FA7;
- Thu, 30 May 2019 00:02:10 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Thu, 30 May 2019 00:02:10 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm2; bh=qyIi9G9ln+NMQWurPQHYWug6XmoD14N
- 6qzo4ZOFsaOY=; b=Bqih8YLnL2VC2g+8JAzRNlikdAjAGB7W19vPi3fcYrRVV7e
- o/CrIuGMifez0eB8jpJNdT/3Ft6BTkjteYu/PwkWi01a8DKDkcxN1P3pn6oMKBFs
- QRvzEDSWFKBrsCoa3SRTzrFKDibbndeWhntyz4zOaSlwIpq0ectk3a025ay5jSQT
- IXXQO64v5jlt5iGoKPVKlIiiOZ4lbqqrmriyFTSQ0U+UvHVVzQFcBX0oatx8djiK
- aiFoiK4XTJ0+WlhzIQIWgdlROF+y+cWorvXm6ky2NC8EEBB24O/kx6NDl1ihPd3n
- 1LqP34eLwfFJJKdtc2FrWTctonW4g1OYa3kQ7Sg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=qyIi9G
- 9ln+NMQWurPQHYWug6XmoD14N6qzo4ZOFsaOY=; b=LZC8KP36MjQNGAwMOKxclA
- pMXHy4rTEv/bM4O19IlKlhkg9CFwS42Cx2e4A5D0hbprPIJbPeWhiNmWO5Otx2s/
- aqemrxMMLW0cIC0iI+fsUjAEiacuz7Wm6SxDcUGaZZxjqYYObOHR7ziyUESY3io5
- H1RMZP6OGTEjHBJLIF1gQ4q78rAzWB50aXrpJTDcqn+FWmmlGpUk3eszmyrvUlSA
- xrpmD1q12nFIBQ8Fs6ZEt26rRxykBm0jnLLTmUJkvwaatyjkMX2BcDcycnU17kam
- tTR+n0YwzNrDn+6ejRMleun6pKTb6oOosyUqte84SY+tThZ1MghWLd1mVFYJvp6w
- ==
-X-ME-Sender: <xms:wVXvXLxY60qWGyq1NkgwT9ZIUo-I84eI-TfgQ3hHyPRM5wXt2YSXTw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduuddruddvkedgjeejucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:wVXvXLFrjku1qhknIzEIpz4qiDiCkouHHrUfCykEWlCaNsp_vmcZKw>
- <xmx:wVXvXAt51U9RjzmNfIFa_u7Y_fZHKFovUOxOk4pE4HNwTbv88Jlykg>
- <xmx:wVXvXPXDjBNLjDSJDw3ZueJ9r8XapTg_fk_y9387Y9eiOVhV8gyJQQ>
- <xmx:wlXvXA0uNKJw6-La1QmRmdQMkjtYDAyVdfVWexWCs1Ko-T3eNXa3TA>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 33313E00A1; Thu, 30 May 2019 00:02:09 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.6-555-g49357e1-fmstable-20190528v2
-Mime-Version: 1.0
-Message-Id: <fe36fbac-e29c-4210-9af2-defca62e9c2a@www.fastmail.com>
-In-Reply-To: <20190529172103.1130525-1-vijaykhemka@fb.com>
-References: <20190529172103.1130525-1-vijaykhemka@fb.com>
-Date: Thu, 30 May 2019 13:32:08 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Vijay Khemka" <vijaykhemka@fb.com>, "Joel Stanley" <joel@jms.id.au>,
- "Patrick Venture" <venture@google.com>, "Olof Johansson" <olof@lixom.net>,
- "Arnd Bergmann" <arnd@arndb.de>, linux-arm-kernel@lists.infradead.org,
- linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] soc: aspeed: lpc-ctrl: make parameter optional
+	id 1hWCbU-0004Mf-UL; Thu, 30 May 2019 04:23:48 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWCbO-0004Lb-Jt
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 04:23:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 105F1374;
+ Wed, 29 May 2019 21:23:37 -0700 (PDT)
+Received: from [10.162.40.143] (p8cg001049571a15.blr.arm.com [10.162.40.143])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ ED62B3F5AF; Wed, 29 May 2019 21:23:30 -0700 (PDT)
+Subject: Re: [PATCH V5 0/3] arm64/mm: Enable memory hot remove
+To: Andrew Morton <akpm@linux-foundation.org>
+References: <1559121387-674-1-git-send-email-anshuman.khandual@arm.com>
+ <20190529150611.fc27dee202b4fd1646210361@linux-foundation.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <c6e3af6e-27f4-ec3e-5ced-af4f62a9cdff@arm.com>
+Date: Thu, 30 May 2019 09:53:43 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <20190529150611.fc27dee202b4fd1646210361@linux-foundation.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_210218_976771_F2CCEB58 
-X-CRM114-Status: GOOD (  16.97  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190529_212342_659320_D37C847B 
+X-CRM114-Status: GOOD (  15.03  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,8 +64,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sai Dasari <sdasari@fb.com>
+Cc: mark.rutland@arm.com, mhocko@suse.com, mgorman@techsingularity.net,
+ david@redhat.com, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, logang@deltatee.com,
+ arunks@codeaurora.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ cpandya@codeaurora.org, james.morse@arm.com, dan.j.williams@intel.com,
+ ira.weiny@intel.com, linux-arm-kernel@lists.infradead.org, osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -114,148 +77,50 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On Thu, 30 May 2019, at 02:51, Vijay Khemka wrote:
-> Makiing
-
-Typo here, but I'd prefer to see this patch go in, so
-
-> memory-region and flash as optional parameter in device
-> tree if user needs to use these parameter through ioctl then
-> need to define in devicetree.
+On 05/30/2019 03:36 AM, Andrew Morton wrote:
+> On Wed, 29 May 2019 14:46:24 +0530 Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 > 
-> Signed-off-by: Vijay Khemka <vijaykhemka@fb.com>
-
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
-
-> ---
->  drivers/soc/aspeed/aspeed-lpc-ctrl.c | 58 +++++++++++++++++-----------
->  1 file changed, 36 insertions(+), 22 deletions(-)
+>> This series enables memory hot remove on arm64 after fixing a memblock
+>> removal ordering problem in generic __remove_memory() and one possible
+>> arm64 platform specific kernel page table race condition. This series
+>> is based on latest v5.2-rc2 tag.
 > 
-> diff --git a/drivers/soc/aspeed/aspeed-lpc-ctrl.c 
-> b/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> index a024f8042259..aca13779764a 100644
-> --- a/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> +++ b/drivers/soc/aspeed/aspeed-lpc-ctrl.c
-> @@ -68,6 +68,7 @@ static long aspeed_lpc_ctrl_ioctl(struct file *file, 
-> unsigned int cmd,
->  		unsigned long param)
->  {
->  	struct aspeed_lpc_ctrl *lpc_ctrl = file_aspeed_lpc_ctrl(file);
-> +	struct device *dev = file->private_data;
->  	void __user *p = (void __user *)param;
->  	struct aspeed_lpc_ctrl_mapping map;
->  	u32 addr;
-> @@ -90,6 +91,12 @@ static long aspeed_lpc_ctrl_ioctl(struct file *file, 
-> unsigned int cmd,
->  		if (map.window_id != 0)
->  			return -EINVAL;
->  
-> +		/* If memory-region is not described in device tree */
-> +		if (!lpc_ctrl->mem_size) {
-> +			dev_dbg(dev, "Didn't find reserved memory\n");
-> +			return -ENXIO;
-> +		}
-> +
->  		map.size = lpc_ctrl->mem_size;
->  
->  		return copy_to_user(p, &map, sizeof(map)) ? -EFAULT : 0;
-> @@ -126,9 +133,18 @@ static long aspeed_lpc_ctrl_ioctl(struct file 
-> *file, unsigned int cmd,
->  			return -EINVAL;
->  
->  		if (map.window_type == ASPEED_LPC_CTRL_WINDOW_FLASH) {
-> +			if (!lpc_ctrl->pnor_size) {
-> +				dev_dbg(dev, "Didn't find host pnor flash\n");
-> +				return -ENXIO;
-> +			}
->  			addr = lpc_ctrl->pnor_base;
->  			size = lpc_ctrl->pnor_size;
->  		} else if (map.window_type == ASPEED_LPC_CTRL_WINDOW_MEMORY) {
-> +			/* If memory-region is not described in device tree */
-> +			if (!lpc_ctrl->mem_size) {
-> +				dev_dbg(dev, "Didn't find reserved memory\n");
-> +				return -ENXIO;
-> +			}
->  			addr = lpc_ctrl->mem_base;
->  			size = lpc_ctrl->mem_size;
->  		} else {
-> @@ -196,17 +212,17 @@ static int aspeed_lpc_ctrl_probe(struct 
-> platform_device *pdev)
->  	if (!lpc_ctrl)
->  		return -ENOMEM;
->  
-> +	/* If flash is described in device tree then store */
->  	node = of_parse_phandle(dev->of_node, "flash", 0);
->  	if (!node) {
-> -		dev_err(dev, "Didn't find host pnor flash node\n");
-> -		return -ENODEV;
-> -	}
-> -
-> -	rc = of_address_to_resource(node, 1, &resm);
-> -	of_node_put(node);
-> -	if (rc) {
-> -		dev_err(dev, "Couldn't address to resource for flash\n");
-> -		return rc;
-> +		dev_dbg(dev, "Didn't find host pnor flash node\n");
-> +	} else {
-> +		rc = of_address_to_resource(node, 1, &resm);
-> +		of_node_put(node);
-> +		if (rc) {
-> +			dev_err(dev, "Couldn't address to resource for flash\n");
-> +			return rc;
-> +		}
->  	}
->  
->  	lpc_ctrl->pnor_size = resource_size(&resm);
-> @@ -214,22 +230,22 @@ static int aspeed_lpc_ctrl_probe(struct 
-> platform_device *pdev)
->  
->  	dev_set_drvdata(&pdev->dev, lpc_ctrl);
->  
-> +	/* If memory-region is described in device tree then store */
->  	node = of_parse_phandle(dev->of_node, "memory-region", 0);
->  	if (!node) {
-> -		dev_err(dev, "Didn't find reserved memory\n");
-> -		return -EINVAL;
-> -	}
-> +		dev_dbg(dev, "Didn't find reserved memory\n");
-> +	} else {
-> +		rc = of_address_to_resource(node, 0, &resm);
-> +		of_node_put(node);
-> +		if (rc) {
-> +			dev_err(dev, "Couldn't address to resource for reserved memory\n");
-> +			return -ENXIO;
-> +		}
->  
-> -	rc = of_address_to_resource(node, 0, &resm);
-> -	of_node_put(node);
-> -	if (rc) {
-> -		dev_err(dev, "Couldn't address to resource for reserved memory\n");
-> -		return -ENOMEM;
-> +		lpc_ctrl->mem_size = resource_size(&resm);
-> +		lpc_ctrl->mem_base = resm.start;
->  	}
->  
-> -	lpc_ctrl->mem_size = resource_size(&resm);
-> -	lpc_ctrl->mem_base = resm.start;
-> -
->  	lpc_ctrl->regmap = syscon_node_to_regmap(
->  			pdev->dev.parent->of_node);
->  	if (IS_ERR(lpc_ctrl->regmap)) {
-> @@ -258,8 +274,6 @@ static int aspeed_lpc_ctrl_probe(struct 
-> platform_device *pdev)
->  		goto err;
->  	}
->  
-> -	dev_info(dev, "Loaded at %pr\n", &resm);
-> -
->  	return 0;
->  
->  err:
-> -- 
-> 2.17.1
+> Unfortunately this series clashes syntactically and semantically with
+> David Hildenbrand's series "mm/memory_hotplug: Factor out memory block
+> devicehandling".  Could you and David please figure out what we should
+> do here?
 > 
->
+
+Hello Andrew,
+
+I was able to apply the above mentioned V3 series [1] from David with some changes
+listed below which tests positively on arm64. These changes assume that the arm64
+hot-remove series (current V5) gets applied first.
+
+Changes to David's series
+
+A) Please drop (https://patchwork.kernel.org/patch/10962565/) [v3,04/11]
+
+	- arch_remove_memory() is already being added through hot-remove series
+
+B) Rebase (https://patchwork.kernel.org/patch/10962575/) [v3, 06/11]
+
+	- arm64 hot-remove series adds CONFIG_MEMORY_HOTREMOVE wrapper around
+	  arch_remove_memory() which can be dropped in the rebased patch
+
+C) Rebase (https://patchwork.kernel.org/patch/10962589/) [v3, 09/11]
+
+	- hot-remove series moves arch_remove_memory() before memblock_[free|remove]()
+	- So remove_memory_block_devices() should be moved before arch_remove_memory()
+	  in it's new position
+
+David,
+
+Please do let me know if the plan sounds good or you have some other suggestions.
+
+- Anshuman
+
+[1] https://patchwork.kernel.org/project/linux-mm/list/?series=123133 
 
 _______________________________________________
 linux-arm-kernel mailing list
