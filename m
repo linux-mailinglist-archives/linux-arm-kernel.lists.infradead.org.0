@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 394E92EAA5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 04:23:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41A752EAB3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 04:29:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JO76p3CwWStZ8fUwJgGvH50HPFd9+KhK5F/Am0Lkstw=; b=kLngbHXowryequ
-	V0a4h5HBOmZwWKnvo+6M2kNzBMmzZ63ZAJ/OwJAw/tHQNytxL4/IXCg2QHwgO/AoKXCROS9CfsSNr
-	ha4gSnv52W8fl3aJQPLiWG063wqSJB4X4pSfX+H/fi1/Lag6d1x8pEZB+LNFraFaV0ZAyAQ0c+5S2
-	uNSeejmt4jiR6FaF9pQLtsXeD/hYa6ZnqpBSUgzgKvoHvjaI1Uo6FQGmKSJ9qfoyyO/48xYqm8U5S
-	vKEQsyFNQoEsXpWetKBnleHs/m/XbnKADwsz4kIW0HdrWZHd+g229OxkUtdlMJs28x81oKWk2gOUt
-	y8lWTciFDG1RFvRHT0Og==;
+	List-Owner; bh=5rHq8YBxSiPzlMp+iiAzRhKIf36KM5I6GC8fnMsotZA=; b=uuAKKNcxcrK/H+
+	wxFkBryU2DoLdTI/9iHFRPrZGfFPyOd3ysx2doqISBAouft282GI160UXuCLl0MMaH/61nYtPIixy
+	bpm1BBxfrA+7ujKcMgL/ABDquYLwZrEQkwZd2ksuwjlSUsB3aJiSOqVHq7ZkAvQY8HWjwL72ceBZt
+	D0RkaW90W1qAYx+C3nFhvOVkdu0nT9roeluL/j2SBXT0sODhzt9kguYzvoxW+hjUrPecHfCDOOYea
+	r9/4hf9pH67DC18f9fYb66+qmDleO/2MXcaJq9RulAWUa7rVYkJtLtaMwHWCST4rCM9hirHeVcWKb
+	0o56hFzjP3zzy/jfyq9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWAiZ-0006pq-KU; Thu, 30 May 2019 02:22:59 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hWAoi-0008SN-7W; Thu, 30 May 2019 02:29:20 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWAiR-0006p0-2h; Thu, 30 May 2019 02:22:52 +0000
-X-UUID: f3a798b0bb8c4c569d75f549d43d1c3f-20190529
-X-UUID: f3a798b0bb8c4c569d75f549d43d1c3f-20190529
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1hWAoZ-0008RU-Jb; Thu, 30 May 2019 02:29:13 +0000
+X-UUID: 86650867fb694ef09a4889f1a06574cf-20190529
+X-UUID: 86650867fb694ef09a4889f1a06574cf-20190529
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 182980377; Wed, 29 May 2019 18:22:48 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 29 May 2019 19:22:46 -0700
+ with ESMTP id 1377117187; Wed, 29 May 2019 18:29:03 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 29 May 2019 19:29:02 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 30 May 2019 10:22:45 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 10:28:54 +0800
 Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 30 May 2019 10:22:45 +0800
-Message-ID: <1559182965.6868.2.camel@mtksdaap41>
-Subject: Re: [PATCH v2 3/4] drm: mediatek: call drm_atomic_helper_shutdown()
- when unbinding driver
+ Transport; Thu, 30 May 2019 10:28:54 +0800
+Message-ID: <1559183334.6868.3.camel@mtksdaap41>
+Subject: Re: [PATCH v2 4/4] drm: mediatek: clear num_pipes when unbind driver
 From: CK Hu <ck.hu@mediatek.com>
 To: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Thu, 30 May 2019 10:22:45 +0800
-In-Reply-To: <20190529102555.251579-4-hsinyi@chromium.org>
+Date: Thu, 30 May 2019 10:28:54 +0800
+In-Reply-To: <20190529102555.251579-5-hsinyi@chromium.org>
 References: <20190529102555.251579-1-hsinyi@chromium.org>
- <20190529102555.251579-4-hsinyi@chromium.org>
+ <20190529102555.251579-5-hsinyi@chromium.org>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_192251_125489_03D30832 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20190529_192911_652856_179BE5CD 
+X-CRM114-Status: GOOD (  14.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,11 +84,14 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi, Hsin-Yi:
 
 On Wed, 2019-05-29 at 18:25 +0800, Hsin-Yi Wang wrote:
-> shutdown all CRTC when unbinding drm driver.
-> 
+> num_pipes is used for mutex created in mtk_drm_crtc_create(). If we
+> don't clear num_pipes count, when rebinding driver, the count will
+> be accumulated. From mtk_disp_mutex_get(), there can only be at most
+> 10 mutex id. Clear this number so it starts from 0 in every rebind.
 
 Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
+> 
 > Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
 > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 > ---
@@ -97,17 +99,17 @@ Reviewed-by: CK Hu <ck.hu@mediatek.com>
 >  1 file changed, 1 insertion(+)
 > 
 > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> index e7362bdafa82..8718d123ccaa 100644
+> index 8718d123ccaa..bbfe3a464aea 100644
 > --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
 > +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> @@ -311,6 +311,7 @@ static int mtk_drm_kms_init(struct drm_device *drm)
->  static void mtk_drm_kms_deinit(struct drm_device *drm)
->  {
->  	drm_kms_helper_poll_fini(drm);
-> +	drm_atomic_helper_shutdown(drm);
+> @@ -400,6 +400,7 @@ static void mtk_drm_unbind(struct device *dev)
+>  	drm_dev_unregister(private->drm);
+>  	mtk_drm_kms_deinit(private->drm);
+>  	drm_dev_put(private->drm);
+> +	private->num_pipes = 0;
+>  	private->drm = NULL;
+>  }
 >  
->  	component_unbind_all(drm->dev, drm);
->  	drm_mode_config_cleanup(drm);
 
 
 
