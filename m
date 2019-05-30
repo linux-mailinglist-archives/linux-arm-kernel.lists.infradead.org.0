@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9F132F8D8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 10:55:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 585902F8E3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 10:56:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DtB1mh8aGEWY/0uTmLJdiX1srF+Hy57kXfcuXsML4mw=; b=dTolgT9RuXudJT
-	Fx3CBYrDFvltQwBZkKoP7N26cN1xTWaQOWc7BG3O9HvbyIX2xcSm6O29jige9iimowjC8lTSKYMNn
-	0bXgfzDKf2nv9eWe5v8X+cDYM+k2pP/JEUor5TShDTAxgVUpcQyUSD29LVZ6g/N5l/a22i7K7WZUe
-	8IFDYUoFOR7vrwkH8yBYW3AW49wPwPh2yOwulnkQC3XVVhQEQM5olxqOx7iIZWZZ889P10poSHRze
-	id6iB9JtxqFfWaocMm6hAJJ+dJb9nCu1jcs1wqN4tmsVKF3fe+DhGLDYl+/V6KCKMc/Fvx1vMLu4B
-	+/S471XNyHqArH6aNagA==;
+	List-Owner; bh=Fo9ZnsVH3pnoFJ3emPlNqOJAsnCRt/U4yod2V+8mRTI=; b=sAwb1zmFFiYoZH
+	eCdNrPZf3nFAG8rvqEuAVbnx3hwb1XDfBkL/lAHVNnIX7tvW8nsAIvfm2tRxBHsBL93wTYeebA4L/
+	AceIA33rjkXh4+BSIKp6NU0XIA42q0fL7zhKXnoj4oiNikRZ68c5/B5G0RAPj//Y7emiOTwCrMvdB
+	4eG3D9T1REyW7SrJCsHS3hdSd9G2Z30R4JeVmD1PTFkwsuDEO+l8PpTF0npub/Sewm4LaQ/2wXU3J
+	2nJyqxowokyg7Syq75u49MqbQHVCvGHvrDuGXy3G2Bz7GeWT14HQ8FInt/pPzJYIBhL3GB4t8/QNJ
+	KnehTKm6WBR1CUey5H7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWGqI-00045g-0t; Thu, 30 May 2019 08:55:22 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hWGr9-0005SO-NQ; Thu, 30 May 2019 08:56:15 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWGpw-0002qh-9Z; Thu, 30 May 2019 08:55:01 +0000
-X-UUID: 24b66d580d854c7782e3e5ebd8cfbbb7-20190530
-X-UUID: 24b66d580d854c7782e3e5ebd8cfbbb7-20190530
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ id 1hWGpz-0002rX-EX; Thu, 30 May 2019 08:55:05 +0000
+X-UUID: 15f9b40d2fd44d2db3db967e991100a0-20190530
+X-UUID: 15f9b40d2fd44d2db3db967e991100a0-20190530
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <biao.huang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 392552825; Thu, 30 May 2019 00:54:50 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 30 May 2019 01:54:49 -0700
+ with ESMTP id 126956429; Thu, 30 May 2019 00:54:58 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 01:54:57 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 30 May 2019 16:54:48 +0800
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 May 2019 16:54:49 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 30 May 2019 16:54:47 +0800
+ Transport; Thu, 30 May 2019 16:54:48 +0800
 From: Biao Huang <biao.huang@mediatek.com>
 To: Jose Abreu <joabreu@synopsys.com>
-Subject: [PATCH 1/4] net: stmmac: dwmac-mediatek: enable Ethernet power domain
-Date: Thu, 30 May 2019 16:54:41 +0800
-Message-ID: <1559206484-1825-2-git-send-email-biao.huang@mediatek.com>
+Subject: [PATCH 2/4] net: stmmac: dwmac-mediatek: disable rx watchdog
+Date: Thu, 30 May 2019 16:54:42 +0800
+Message-ID: <1559206484-1825-3-git-send-email-biao.huang@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1559206484-1825-1-git-send-email-biao.huang@mediatek.com>
 References: <1559206484-1825-1-git-send-email-biao.huang@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 6BDEB72B246466E87AEFA38E556217A54BDD67FD1C070C393FC484201E3BDEE02000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_015500_337983_1642AFE0 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20190530_015503_524644_C3A5F5D1 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,70 +85,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add Ethernet power on/off operations in init/exit flow.
+disable rx watchdog for dwmac-mediatek, then the hw will
+issue a rx interrupt once receiving a packet, so the responding time
+for rx path will be reduced.
 
 Signed-off-by: Biao Huang <biao.huang@mediatek.com>
 ---
- .../net/ethernet/stmicro/stmmac/dwmac-mediatek.c   |   18 +++++++++++++++++-
- 1 file changed, 17 insertions(+), 1 deletion(-)
+ .../net/ethernet/stmicro/stmmac/dwmac-mediatek.c   |    1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c
-index 126b66b..3c7a60f 100644
+index 3c7a60f..38cd054 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-mediatek.c
-@@ -9,6 +9,7 @@
- #include <linux/of.h>
- #include <linux/of_device.h>
- #include <linux/of_net.h>
-+#include <linux/pm_runtime.h>
- #include <linux/regmap.h>
- #include <linux/stmmac.h>
- 
-@@ -298,6 +299,9 @@ static int mediatek_dwmac_init(struct platform_device *pdev, void *priv)
- 		return ret;
- 	}
- 
-+	pm_runtime_enable(&pdev->dev);
-+	pm_runtime_get_sync(&pdev->dev);
-+
- 	return 0;
- }
- 
-@@ -307,6 +311,9 @@ static void mediatek_dwmac_exit(struct platform_device *pdev, void *priv)
- 	const struct mediatek_dwmac_variant *variant = plat->variant;
- 
- 	clk_bulk_disable_unprepare(variant->num_clks, plat->clks);
-+
-+	pm_runtime_put_sync(&pdev->dev);
-+	pm_runtime_disable(&pdev->dev);
- }
- 
- static int mediatek_dwmac_probe(struct platform_device *pdev)
-@@ -364,6 +371,15 @@ static int mediatek_dwmac_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static int mediatek_dwmac_remove(struct platform_device *pdev)
-+{
-+	int ret;
-+
-+	ret = stmmac_pltfr_remove(pdev);
-+
-+	return ret;
-+}
-+
- static const struct of_device_id mediatek_dwmac_match[] = {
- 	{ .compatible = "mediatek,mt2712-gmac",
- 	  .data = &mt2712_gmac_variant },
-@@ -374,7 +390,7 @@ static int mediatek_dwmac_probe(struct platform_device *pdev)
- 
- static struct platform_driver mediatek_dwmac_driver = {
- 	.probe  = mediatek_dwmac_probe,
--	.remove = stmmac_pltfr_remove,
-+	.remove = mediatek_dwmac_remove,
- 	.driver = {
- 		.name           = "dwmac-mediatek",
- 		.pm		= &stmmac_pltfr_pm_ops,
+@@ -356,6 +356,7 @@ static int mediatek_dwmac_probe(struct platform_device *pdev)
+ 	plat_dat->has_gmac4 = 1;
+ 	plat_dat->has_gmac = 0;
+ 	plat_dat->pmt = 0;
++	plat_dat->riwt_off = 1;
+ 	plat_dat->maxmtu = ETH_DATA_LEN;
+ 	plat_dat->bsp_priv = priv_plat;
+ 	plat_dat->init = mediatek_dwmac_init;
 -- 
 1.7.9.5
 
