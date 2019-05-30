@@ -2,56 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 360642FB5C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 14:01:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A020E2FB8F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 14:27:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XosMt4rWYSzxLsx1o2C3XDns2OrFvXojzKyrFuUAF2o=; b=h2HfNMVq8X9TxN
-	KRktwXv421XJFVeEmCL6zr4edrfe3dI2pvfQYkcP1Fp48Lq+bk8etWL72+kz4U9Lsc++0geFMNhIX
-	cg/K0ShIv1r1KSex0vvpyrwE4Kmz9a7Bqmrx3vKxUxx+BvKYEbEJ506xIDQqNVyaaJ7DFjFkwf99w
-	WgNx6AwLeS96MrCc+3d8hRX5JNrsxhixHdcIhGKvsFsRheiMrpbwF7pYmm9UUPR+zra+jqAnBOZD9
-	/saftE8l1BomaOaaK2RUtJkcP1r51ObysaaxUem1K/a9VZ/bqk4b8GM1EwHaajvMCyCQDPzsQs2E6
-	QiMT2CoFiRDpJFQHE+1Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=REWbvEOr/Qb3p0cdUiUSbV7FctFPTRzgvCJj3jN5YFU=; b=TTYUzbEwkH62mv
+	x5RdPYto3J39fUc64PmMR8Zbd5T0Mnny28ICw8D+2/1eKg68ZdUi4FioOMOEtV/Ayn7TOkefNnZO/
+	WxBiFwU4iRDTwHIWdxUPPpCWmExieFUoyzMmGeUjoZX88ZbbcxBz2nhPtR48IGdbiWOzUUAIo4pM6
+	86FEy4+D6Ty0zGlQCPyUUWCwq3oArXgadprWqXRrVcXL1d4yPe+QeTG5bLXyGqako2hLm/6hsXunm
+	n9zM69Qlgz1DPrG7EoeLdjdtv3Ju3+UOlC76uh9FtK0bLl3FyQdHE/LYhevXzH1F+mPNWwqxP/v1X
+	MygjD8LHZjgKho4UP0Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWJkf-0001PC-I5; Thu, 30 May 2019 12:01:45 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWJkW-0001M0-ED
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 12:01:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E2154374;
- Thu, 30 May 2019 05:01:33 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2086D3F5AF;
- Thu, 30 May 2019 05:01:31 -0700 (PDT)
-Date: Thu, 30 May 2019 13:01:29 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH] arm64/cpufeature: Convert hook_lock to raw_spin_lock_t
- in cpu_enable_ssbs()
-Message-ID: <20190530120129.GD13751@fuggles.cambridge.arm.com>
-References: <20190530113058.1988-1-julien.grall@arm.com>
+	id 1hWK9w-0000we-6A; Thu, 30 May 2019 12:27:52 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWK9o-0000wC-UT
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 12:27:46 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id E5931AD4E0FB6A5B3EBE;
+ Thu, 30 May 2019 20:27:32 +0800 (CST)
+Received: from [127.0.0.1] (10.177.19.180) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Thu, 30 May 2019
+ 20:27:29 +0800
+Subject: Re: [PATCH] clk: samsung: exynos5433: Use of_clk_get_parent_count()
+To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+References: <CGME20190525114732epcas3p1fdc42650975c9f7b1a39a87561e65a29@epcas3p1.samsung.com>
+ <20190525115542.107929-1-wangkefeng.wang@huawei.com>
+ <b57d66da-9b18-7b1d-ffa6-3b4600f9dc5a@samsung.com>
+From: Kefeng Wang <wangkefeng.wang@huawei.com>
+Message-ID: <3673777a-60dc-3eec-ccb8-9ffa1a3e5cf4@huawei.com>
+Date: Thu, 30 May 2019 20:24:46 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.3.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190530113058.1988-1-julien.grall@arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <b57d66da-9b18-7b1d-ffa6-3b4600f9dc5a@samsung.com>
+Content-Language: en-US
+X-Originating-IP: [10.177.19.180]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_050136_483006_896826DC 
-X-CRM114-Status: GOOD (  21.92  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190530_052745_207565_222A5F2F 
+X-CRM114-Status: GOOD (  12.83  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -64,61 +67,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rt-users@vger.kernel.org, suzuki.poulose@arm.com,
- catalin.marinas@arm.com, bigeasy@linutronix.de, linux-kernel@vger.kernel.org,
- rostedt@goodmis.org, tglx@linutronix.de, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 12:30:58PM +0100, Julien Grall wrote:
-> cpu_enable_ssbs() is called via stop_machine() as part of the cpu_enable
-> callback. A spin lock is used to ensure the hook is registered before
-> the rest of the callback is executed.
-> 
-> On -RT spin_lock() may sleep. However, all the callees in stop_machine()
-> are expected to not sleep. Therefore a raw_spin_lock() is required here.
-> 
-> Given this is already done under stop_machine() and the work done under
-> the lock is quite small, the latency should not increase too much.
-> 
-> Signed-off-by: Julien Grall <julien.grall@arm.com>
-> 
-> ---
-> 
-> It was noticed when looking at the current use of spin_lock in
-> arch/arm64. I don't have a platform calling that callback, so I have
-> hacked the code to reproduce the error and check it is now fixed.
-> ---
->  arch/arm64/kernel/cpufeature.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index ca27e08e3d8a..2a7159fda3ce 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -1194,14 +1194,14 @@ static struct undef_hook ssbs_emulation_hook = {
->  static void cpu_enable_ssbs(const struct arm64_cpu_capabilities *__unused)
->  {
->  	static bool undef_hook_registered = false;
-> -	static DEFINE_SPINLOCK(hook_lock);
-> +	static DEFINE_RAW_SPINLOCK(hook_lock);
->  
-> -	spin_lock(&hook_lock);
-> +	raw_spin_lock(&hook_lock);
->  	if (!undef_hook_registered) {
->  		register_undef_hook(&ssbs_emulation_hook);
->  		undef_hook_registered = true;
->  	}
-> -	spin_unlock(&hook_lock);
-> +	raw_spin_unlock(&hook_lock);
 
-Makes sense to me. We could probably avoid the lock entirely if we wanted
-to (via atomic_dec_if_positive), but I'm not sure it's really worth it.
+On 2019/5/30 19:13, Sylwester Nawrocki wrote:
+> On 5/25/19 13:55, Kefeng Wang wrote:
+>> Use of_clk_get_parent_count() instead of open coding.
+>>
+>> Signed-off-by: Kefeng Wang <wangkefeng.wang@huawei.com>
+> Patch applied, thank you.
+>
+> In future please make sure to also Cc linux-clk@vger.kernel.org mailing list 
+> and the clk maintainers (Stephen, Michael) when sending clk patches.
 
-Will
+OK, thanks for the tip.
+
+>
+>> ---
+>>  drivers/clk/samsung/clk-exynos5433.c | 4 ++--
+>>  1 file changed, 2 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/clk/samsung/clk-exynos5433.c b/drivers/clk/samsung/clk-exynos5433.c
+>> index dae1c96de933..14e253915ca4 100644
+>> --- a/drivers/clk/samsung/clk-exynos5433.c
+>> +++ b/drivers/clk/samsung/clk-exynos5433.c
+>> @@ -5590,8 +5590,8 @@ static int __init exynos5433_cmu_probe(struct platform_device *pdev)
+>>  	data->nr_clk_save = info->nr_clk_regs;
+>>  	data->clk_suspend = info->suspend_regs;
+>>  	data->nr_clk_suspend = info->nr_suspend_regs;
+>> -	data->nr_pclks = of_count_phandle_with_args(dev->of_node, "clocks",
+>> -						    "#clock-cells");
+>> +	data->nr_pclks = of_clk_get_parent_count(dev->of_node);
+>> +
+>>  	if (data->nr_pclks > 0) {
+>>  		data->pclks = devm_kcalloc(dev, sizeof(struct clk *),
+>>  					   data->nr_pclks, GFP_KERNEL);
+>>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
