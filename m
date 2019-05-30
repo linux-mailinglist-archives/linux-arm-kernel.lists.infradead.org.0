@@ -2,57 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 672C13014E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 19:54:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 967D730152
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 19:54:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xTosnws7tdP47oz+4+lMJIg04HnYJNwSK7EzkRPnOCs=; b=fSMxrTtc9oOD7P
-	ZKLFr4GvPUEUhYYEfeGLM5cPoFnJRQZ5oI581EEV/E4K+SfLYprpqJdS31qVm5WSjVhPG8DIRDuEQ
-	2LoFv7x0l0tm1RjffH17iECOK+JTd8e6Lv3/hA76p3gH/AV7lAgg/TC2in5Q4RWk85RCvnzgFBAkq
-	cqYkxIHHxc19s4aqwbKngwnR0k2VRX5HsWhaNc+ZptOeIoSuldRG3JS6DUzPthY6IBcHggy5Tw9FO
-	cKFQopINNlKKiznGghYltqpXX5mN+5L7AmjBs5D2QAtMFc9ZO7Lgd4aYsuGHIz4eHkhPiwTW9KCI/
-	fwvyBxmpHZyHefN+FZuA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BVREHOzkn1edekZNz5XhU3e9xtMDJxveCpp+VZscPOg=; b=QkM5/ybkUZVfHN
+	mm9IlSt68T53D5X+1WrgEoxJGrnSL0NCn9rWekA647ZUPHmr/l0aTBcKsR9Ecq7tBtQgHqy4YGFnL
+	iLo+8wRA2E9WMpsNtt+Pl+f5V94B0VUas5q37khW4U/cUzTqmJH9Azpd8ROKqIk3N3fav2aF5ZWlL
+	2D+C1oiZH4aaBUhULmMcPvo2h+9ngcarVduQGSr/aJo7lPH8fcLFCMpBJ/FT7/kd59QtKvYSzQmaM
+	PsEGIyNi6E9y6mdCQcpwLvpgAy07ZHYCuthTw4Xjjw7Afmb/68DLdC4s2O4WAMhZi0vswC3qwA7ra
+	VpnP4nIQI0OlJRFO1grA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWPFg-00015m-Ko; Thu, 30 May 2019 17:54:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hWPFu-0001JH-Un; Thu, 30 May 2019 17:54:22 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWPFZ-000157-55
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 17:54:02 +0000
-Received: from ebiggers-linuxstation.mtv.corp.google.com (unknown
- [104.132.1.77])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C039F25ECD;
- Thu, 30 May 2019 17:54:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559238840;
- bh=D/PAsRdmHinV0G8J8RSgg+BLFB1EZv/D0c+yzSUAlhI=;
- h=From:To:Cc:Subject:Date:From;
- b=SmpYdl/4ara6nxE2+chm8yUcFEOCr3bQNqCB9DY6QMKQygP7tdj02728lmpiPZJ0Q
- ol9U5cqM0GTUkOM3wnZyQ0rSy6LEzVQZv3kvI7Rbr0kafSkQ0fOdTBku0adckxgl2h
- IFOIWAGHt/ORavLSFlX76Pnv3G96EtlIxxZUqpzQ=
-From: Eric Biggers <ebiggers@kernel.org>
-To: linux-crypto@vger.kernel.org
-Subject: [PATCH] crypto: lrw - use correct alignmask
-Date: Thu, 30 May 2019 10:53:08 -0700
-Message-Id: <20190530175308.196938-1-ebiggers@kernel.org>
-X-Mailer: git-send-email 2.22.0.rc1.257.g3120a18244-goog
+ id 1hWPFe-00015L-Go
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 17:54:09 +0000
+Received: by mail-ed1-x544.google.com with SMTP id g24so674866eds.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 10:54:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=QlYOqgGgItn5hucl8pZOYZeRpF+/j+lyZEX0rN4v98g=;
+ b=LYlHNdAV/SNBSa2OU1jdHVGlps7i+f4ToRjbTl9D2wFgpxOnqYU6L0tHRyBKqXN8PS
+ bA20mdUlqFwilW74sDweWwxCRjLlo9fuLRBJptvvxIq+vYgZ96pbtG7pADnxLsZ5u6Ed
+ xa3CEpbgxATF5V1HpcSCSGovWdI7wIoti8PlUbQ7uPq+eFKDXrzPzbDKxcOs/rbfxHdW
+ 3wcYT/Y0vSetxxTI7PMr+4dEKBZMAaPHqAJ4cafp6No1HT2gZdPpzYTqxY9BWFqu5i8v
+ c8SEsw9ZPMpf8Cmj587OTzTy+La1UCwO9pu1FiOK6SpUJ9aeYM0ra8QLMjn3GNWlh/JN
+ PXWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QlYOqgGgItn5hucl8pZOYZeRpF+/j+lyZEX0rN4v98g=;
+ b=rVdyBW9fFppdCcClgDaw14Ls7nVM54rfGtsp7SHGLuG6OWdiQxzA+XCktJobi5a2O4
+ dG1ud41FCzn+KfFVgfnhBMD2ifo5uGDwL/oBGbMRxONSAkrXm/ODhXUq5+Jv+ecwb/id
+ zWqVFpUHnTRONDCFu1qS0HANu2B7+UlbTiXX45Y3lr7Hy9xkiZx2NVS6QXOs45kscJbx
+ Hksv1cb/CmLdOMgx/enG79bIefetVzRHILRznP3WKQmm2MVCq5ACRE1IfbY8Er78vCBo
+ CYL3hbZT4dy+AvNP2UTGolexVhalU15T8ZR3W6xBuRoD/WlenPxeYjLayL7lBD7d5v0v
+ khPA==
+X-Gm-Message-State: APjAAAVAbY6vVYro/5gS3lPaee656sbm1PpeV8zUAYn1LX6XRyjBG/Jx
+ fXfXd7wKHEzVTPhUvfdJeQhdb8NwiiYFaEomUtKpIA==
+X-Google-Smtp-Source: APXvYqxJpnEky/HQoCMiqMXy5GPOyKza2hJ+52II0wfo1HpL9rVDxjuGoL3UWKguhdIYjncFwf0xnjjAWLfB3JRkG5w=
+X-Received: by 2002:a17:906:a354:: with SMTP id
+ bz20mr4932536ejb.209.1559238840892; 
+ Thu, 30 May 2019 10:54:00 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-2-david@redhat.com>
+In-Reply-To: <20190527111152.16324-2-david@redhat.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Thu, 30 May 2019 13:53:50 -0400
+Message-ID: <CA+CK2bBW4vH+J6bam1dOxjSwFwvoOEok0VNO0n_JjyHxpkGj+A@mail.gmail.com>
+Subject: Re: [PATCH v3 01/11] mm/memory_hotplug: Simplify and fix
+ check_hotplug_memory_range()
+To: David Hildenbrand <david@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_105401_206323_87C4B29D 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190530_105406_778038_A5701392 
+X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -62,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,48 +94,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Ondrej Mosnacek <omosnace@redhat.com>
+Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Mathieu Malaterre <malat@debian.org>, LKML <linux-kernel@vger.kernel.org>,
+ Wei Yang <richard.weiyang@gmail.com>, linux-mm <linux-mm@kvack.org>,
+ Arun KS <arunks@codeaurora.org>, Qian Cai <cai@lca.pw>,
+ Wei Yang <richardw.yang@linux.intel.com>, Igor Mammedov <imammedo@redhat.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Dan Williams <dan.j.williams@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Oscar Salvador <osalvador@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Eric Biggers <ebiggers@google.com>
+On Mon, May 27, 2019 at 7:12 AM David Hildenbrand <david@redhat.com> wrote:
+>
+> By converting start and size to page granularity, we actually ignore
+> unaligned parts within a page instead of properly bailing out with an
+> error.
+>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Oscar Salvador <osalvador@suse.de>
+> Cc: Michal Hocko <mhocko@suse.com>
+> Cc: David Hildenbrand <david@redhat.com>
+> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
+> Cc: Qian Cai <cai@lca.pw>
+> Cc: Wei Yang <richard.weiyang@gmail.com>
+> Cc: Arun KS <arunks@codeaurora.org>
+> Cc: Mathieu Malaterre <malat@debian.org>
+> Reviewed-by: Dan Williams <dan.j.williams@intel.com>
+> Reviewed-by: Wei Yang <richardw.yang@linux.intel.com>
+> Signed-off-by: David Hildenbrand <david@redhat.com>
 
-Commit c778f96bf347 ("crypto: lrw - Optimize tweak computation")
-incorrectly reduced the alignmask of LRW instances from
-'__alignof__(u64) - 1' to '__alignof__(__be32) - 1'.
-
-However, xor_tweak() and setkey() assume that the data and key,
-respectively, are aligned to 'be128', which has u64 alignment.
-
-Fix the alignmask to be at least '__alignof__(be128) - 1'.
-
-Fixes: c778f96bf347 ("crypto: lrw - Optimize tweak computation")
-Cc: <stable@vger.kernel.org> # v4.20+
-Cc: Ondrej Mosnacek <omosnace@redhat.com>
-Signed-off-by: Eric Biggers <ebiggers@google.com>
----
- crypto/lrw.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/crypto/lrw.c b/crypto/lrw.c
-index fa302f3f161e0..b43ea285b8c79 100644
---- a/crypto/lrw.c
-+++ b/crypto/lrw.c
-@@ -388,7 +388,7 @@ static int create(struct crypto_template *tmpl, struct rtattr **tb)
- 	inst->alg.base.cra_priority = alg->base.cra_priority;
- 	inst->alg.base.cra_blocksize = LRW_BLOCK_SIZE;
- 	inst->alg.base.cra_alignmask = alg->base.cra_alignmask |
--				       (__alignof__(__be32) - 1);
-+				       (__alignof__(be128) - 1);
- 
- 	inst->alg.ivsize = LRW_BLOCK_SIZE;
- 	inst->alg.min_keysize = crypto_skcipher_alg_min_keysize(alg) +
--- 
-2.22.0.rc1.257.g3120a18244-goog
-
+Reviewed-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
