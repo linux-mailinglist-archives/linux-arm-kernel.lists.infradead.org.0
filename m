@@ -2,107 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECDB12F89C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 10:32:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D157E2F8AA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 10:39:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	Date:From:References:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/MhLO8vjqpN56LeRaVbCey9ne3hVbFitar0iJG/jfXA=; b=QBSLWTY8RWb2bG
-	YNJzVhogj8U3kucYBWbOewRWFnODtbNkateb9pNRwfZwzC4l8WPffAVhSWGCvbMBHDWanr2vPWtv1
-	iuA/3T1ok/12EetHe9WGdj02gd4pSA/y1z3PRdJCCG6UpYk1IYW4cfLyn/0y+Tg5BdJk0MCAfF6AB
-	a1mnTNIsp5XowOtkRsAxJ3Jb5r8I7eZ7TBFy0z0328oxvuKSUlhSHiuxoMP3YW1iqbdsEh4NSI8fR
-	5MA/ZFZQZrteAAwopKSDafeg2feEsCfxzsdxty1rMkTkvMVh+KodvE+LzetcrPt4O+htMro034dKZ
-	ArcexQnHBFu2d8IpJbDQ==;
+	List-Owner; bh=LX1T/TNNAcePEJ1Xen90FF+PaQmaFFc/UdqCFApF4NM=; b=KA0CGiQA4mkfrm
+	/7Fc+nnJvqvmsambK3RFE0x15FMubFzSysMf1Gfo3FKjHg3FIcFLT4Xdi3os5adRMjL0SMpn0ZcfX
+	4F07bThEl5dJZWOMOpY75mD9YlfUETaKET6V+b9eNYdf20EEZbT0mQDfyXAxyYDYFxiTHzoTothJy
+	qY8HhfaVTP0eTQgb31LZiYz6Z28RoMbU6J6TNln1wNAHessUA3lg1JXzLmaB4OVLUX3Q2ckU8GW3t
+	nFDD0QhF+/h3yxkBwZwAl1oDTt/0uAsRZcg2yqGTNDI0cRL92kdSVUDFppg8to9wwEAWb+ITHk5zo
+	Q2rz2ytGWcxXbyP41EaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWGUY-0004jk-Rx; Thu, 30 May 2019 08:32:54 +0000
-Received: from mail-vi1eur04on0609.outbound.protection.outlook.com
- ([2a01:111:f400:fe0e::609]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1hWGac-0006Ix-Nl; Thu, 30 May 2019 08:39:10 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWGUR-0004iy-Vt
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 08:32:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fi54/Wsb2EELtCPVtGgRW8DWCkW3wAB0JnotLKVG+Gs=;
- b=oR8V5EBDtL7fbUySSjtUo+BZWIhQsw1Yjy1MPQf3Qip+d6FWtvSBNKbabIu5eFkb5S1vegNq8zbX51dTnIDICwbH7u78KDT42e9SUm9w4jJZTi9AmN72+H6qF6AmdarXe8E7FEAS5fo0lCvU0ZE1aFCrjCNr+OY2U1FWs3THJUo=
-Received: from VI1PR04MB5214.eurprd04.prod.outlook.com (20.177.51.203) by
- VI1PR04MB3085.eurprd04.prod.outlook.com (10.170.228.159) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1922.16; Thu, 30 May 2019 08:32:41 +0000
-Received: from VI1PR04MB5214.eurprd04.prod.outlook.com
- ([fe80::5141:a777:e2ca:f736]) by VI1PR04MB5214.eurprd04.prod.outlook.com
- ([fe80::5141:a777:e2ca:f736%3]) with mapi id 15.20.1922.021; Thu, 30 May 2019
- 08:32:41 +0000
-From: Daniel Baluta <daniel.baluta@nxp.com>
-To: "nicoleotsuka@gmail.com" <nicoleotsuka@gmail.com>
-Subject: Re: [PATCH 0/3] Add mclk0 clock source for SAI
-Thread-Topic: [PATCH 0/3] Add mclk0 clock source for SAI
-Thread-Index: AQHVFVgpjX4j9HD02UiVNkRH/YGV5aaCuuaAgACe54A=
-Date: Thu, 30 May 2019 08:32:41 +0000
-Message-ID: <fe755bc76ac7226790a7db6ab025db04fcd6d8d5.camel@nxp.com>
-References: <20190528132034.3908-1-daniel.baluta@nxp.com>
- <20190529230357.GB17556@Asurada-Nvidia.nvidia.com>
-In-Reply-To: <20190529230357.GB17556@Asurada-Nvidia.nvidia.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=daniel.baluta@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: b68ef5d0-529e-4384-ffe3-08d6e4d961d0
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB3085; 
-x-ms-traffictypediagnostic: VI1PR04MB3085:
-x-microsoft-antispam-prvs: <VI1PR04MB30851DECD84980EA92A83E5BF9180@VI1PR04MB3085.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 00531FAC2C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(396003)(366004)(39860400002)(136003)(346002)(189003)(199004)(66066001)(71190400001)(6246003)(6506007)(118296001)(71200400001)(76176011)(25786009)(66946007)(256004)(6916009)(76116006)(102836004)(66476007)(1361003)(316002)(6512007)(99286004)(229853002)(73956011)(44832011)(1411001)(2351001)(68736007)(4744005)(53936002)(186003)(14454004)(2501003)(478600001)(54906003)(6436002)(6486002)(4326008)(2906002)(486006)(2616005)(476003)(36756003)(446003)(11346002)(66446008)(7736002)(1730700003)(5640700003)(66556008)(8676002)(3846002)(6116002)(86362001)(5660300002)(64756008)(81156014)(26005)(305945005)(81166006)(8936002)(7416002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3085;
- H:VI1PR04MB5214.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: aeMVxTvOmwFeMyJ8V5lJolWb9AmL4hwvVn6eE+NdffmxoDeDcBnsNyvdIvy3HBitSifmbkDCV5hnTSLmikTY9F4hmcoWcsaztbNjk4oEEtw9hWqNDoFVznaDHDmp/qbMpIB0J0DlIbqXDrlsFgftuKx+qi9DrA1lLqt4tYDvbtrGkQROODGnYqUChp2WLk6mt64ROZteqJ+fNQ0zcxiCPrS1iIvCKNtP1819FbLJt3NE2a975tZlzTL/iRcDyQ6eG8wy22OGPCS1ZPN3fEsLbVyUIGj13a0SWqxZrB+U/4wh//e9RN6u3i7VP2Njmo+R81CZRPESkRMLkOH6oRzxgvFH5VVh39umhB9Zrh/QxQ8XFpOXPbbkKzVj05tkb2s+j5H5KtikwrxUeeBK+cG5N3G43hGbMUvKv0s1coWborA=
-Content-ID: <1F4BDF9EB712444AB8F6F83A9950F048@eurprd04.prod.outlook.com>
+ id 1hWGaV-0006Ht-FO
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 08:39:04 +0000
+Received: from pps.filterd (m0098393.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4U8apOT038425
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 30 May 2019 04:38:59 -0400
+Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2stbhws06w-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 30 May 2019 04:38:59 -0400
+Received: from localhost
+ by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <ravi.bangoria@linux.ibm.com>; 
+ Thu, 30 May 2019 09:38:56 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 30 May 2019 09:38:51 +0100
+Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
+ [9.149.105.58])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x4U8covW52690944
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 30 May 2019 08:38:50 GMT
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 206FD4C044;
+ Thu, 30 May 2019 08:38:50 +0000 (GMT)
+Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 277EC4C050;
+ Thu, 30 May 2019 08:38:47 +0000 (GMT)
+Received: from [9.124.31.34] (unknown [9.124.31.34])
+ by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Thu, 30 May 2019 08:38:46 +0000 (GMT)
+Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
+To: Peter Zijlstra <peterz@infradead.org>
+References: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
+ <20190528140103.GT2623@hirez.programming.kicks-ass.net>
+ <20190528153224.GE20758@fuggles.cambridge.arm.com>
+ <20190528173228.GW2623@hirez.programming.kicks-ass.net>
+ <20190529091733.GA4485@fuggles.cambridge.arm.com>
+ <20190529101042.GN2623@hirez.programming.kicks-ass.net>
+ <20190529102022.GC4485@fuggles.cambridge.arm.com>
+ <20190529125557.GU2623@hirez.programming.kicks-ass.net>
+From: Ravi Bangoria <ravi.bangoria@linux.ibm.com>
+Date: Thu, 30 May 2019 14:08:46 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b68ef5d0-529e-4384-ffe3-08d6e4d961d0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 May 2019 08:32:41.8687 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: daniel.baluta@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3085
+In-Reply-To: <20190529125557.GU2623@hirez.programming.kicks-ass.net>
+Content-Language: en-US
+X-TM-AS-GCONF: 00
+x-cbid: 19053008-0016-0000-0000-00000280EC8C
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19053008-0017-0000-0000-000032DE01CA
+Message-Id: <efcd5cf4-3501-f3b6-bf47-145a9ef19a53@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-30_04:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1905300066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_013248_079583_DAD1033C 
-X-CRM114-Status: GOOD (  14.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190530_013903_626826_46B2E044 
+X-CRM114-Status: GOOD (  28.27  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0e:0:0:0:609 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,40 +109,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "timur@kernel.org" <timur@kernel.org>,
- "Xiubo.Lee@gmail.com" <Xiubo.Lee@gmail.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tiwai@suse.com" <tiwai@suse.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, ravi.bangoria@linux.ibm.com,
+ Young Xiao <92siuyang@gmail.com>, mpe@ellerman.id.au, jolsa@redhat.com,
+ x86@kernel.org, Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
+ eranian@google.com, linux-kernel@vger.kernel.org, acme@redhat.com,
+ mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
+ ravi.bangoria@linux.vnet.ibm.com, fweisbec@gmail.com,
+ linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-05-29 at 16:03 -0700, Nicolin Chen wrote:
-> On Tue, May 28, 2019 at 01:20:46PM +0000, Daniel Baluta wrote:
-> 
-> > 1) SAI clock source select MUX is really part of the hardware
-> > 2) flexibility! We let DT tell us which is the option for MUX
-> > option 0.
-> 
-> I think the "MUX" is plausible comparing to your previous version.
-> As long as DT maintainers ack the DT binding doc, I would be okay
-> to ack too. Just one comments at the dts/dtsi changes, I know the
-> driver would just warn old DTs, but it does change the behavior at
-> the mclk_clk[0] from previously bus_clk to NULL after this series.
 
-Thanks for review, will fix in v2.
+
+On 5/29/19 6:25 PM, Peter Zijlstra wrote:
+> On Wed, May 29, 2019 at 11:20:22AM +0100, Will Deacon wrote:
+>> Anyway, you can add my ack to your patch, but I bet we can remove that mm
+>> check :D
+> 
+> I've ended up with the below. Ravi, can you test if that does indeed
+> obsolete your PPC patch?
+
+Checking.
+
+> 
+> ---
+> Subject: perf: Fix perf_sample_regs_user()
+> From: Peter Zijlstra <peterz@infradead.org>
+> Date: Wed May 29 14:37:24 CEST 2019
+> 
+> perf_sample_regs_user() uses 'current->mm' to test for the presence of
+> userspace, but this is insufficient, consider use_mm().
+> 
+> A better test is: '!(current->flags & PF_KTHREAD)', exec() clears
+> PF_KTHREAD after it sets the new ->mm but before it drops to userspace
+> for the first time.
+
+This looks correct. I'll give it a try.
+
+> 
+> Possibly obsoletes: bf05fc25f268 ("powerpc/perf: Fix oops when kthread execs user process")
+> 
+> Reported-by: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
+> Reported-by: Young Xiao <92siuyang@gmail.com>
+> Cc: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
+> Cc: Naveen N. Rao <naveen.n.rao@linux.vnet.ibm.com>
+> Cc: Michael Ellerman <mpe@ellerman.id.au>
+> Cc: Jiri Olsa <jolsa@redhat.com>
+> Cc: Frederic Weisbecker <fweisbec@gmail.com>
+> Cc: Stephane Eranian <eranian@google.com>
+> Cc: Arnaldo Carvalho de Melo <acme@redhat.com>
+> Acked-by: Will Deacon <will.deacon@arm.com>
+> Fixes: 4018994f3d87 ("perf: Add ability to attach user level registers dump to sample")
+> Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
+> ---
+>  kernel/events/core.c |    2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> --- a/kernel/events/core.c
+> +++ b/kernel/events/core.c
+> @@ -5923,7 +5923,7 @@ static void perf_sample_regs_user(struct
+>  	if (user_mode(regs)) {
+>  		regs_user->abi = perf_reg_abi(current);
+>  		regs_user->regs = regs;
+> -	} else if (current->mm) {
+> +	} else if (!(current->flags & PF_KTHREAD)) {
+>  		perf_get_regs_user(regs_user, regs, regs_user_copy);
+>  	} else {
+>  		regs_user->abi = PERF_SAMPLE_REGS_ABI_NONE;
+> 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
