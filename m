@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9683130539
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 01:10:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54A6C30545
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 01:12:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XXVtu5S2mk4VJnbcEoVB0JdzS5+xFlHcnhS78tkCgEg=; b=qpR
-	riOwEqO+/zJHeUzaiqqOmWCrx1s1EImTscV2fHn7QvzpiOuzV0XNm8IJ4OkRAv7O33U+RQJnrlAJ/
-	TcSxUbp4dfj6vZ3wJqSW7saH08ahJbFMPsF2PHsm7tafBPGYifCM/xaBhSE99I1jMJNlR0QD/qsQd
-	qctIc4AvJla9n8ehDQRtlvCHwJ2W6bfPf6h3D0wihzz8BwEGMEG9uIRpcg5K5OKotxVDbVhXVNCZV
-	syooheIqC16VPrO9UmFtJGitHG16idi6nRHEQyGAHGnLV1pl9QW8p09UTgzGz7Owe5OIscfQjmFJn
-	U45fRZxRD4S87hlWCQnDn5eWguPMutQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3DA0Tw3FnRGqAWO1MAdFKps4ekca+Zr0RDc9E7fu0EM=; b=eDRSKEN76/XI5P
+	9C0XrCwIqnCO1yYGpWYCZWhn4396qHmfbpEVLJIXY4oZuBdPyzzZo15IxpIXlCtRb33r3AN3nP5mO
+	y6VArAgvzdXEzr1MG6WsrTLYQyCTbwG1mghfkG9krr16mbD6GW0+zq2+ucnFNsvJmiguhmWyjy5Bf
+	YdvK9pap4aKnVova/M3Ha017b9avBPN94lKdk4i+74ax+fpF1a3YYg1DxAJd3TiyQ+cmHkcyX2ync
+	Lc0sK3c63Q5zgna7pj67JRmHXj23TVunDLWAp5Glz8jD9NrNB//RwD4jbKOsC0x0oigitJXEoRX4Y
+	8y0ktlVHOE1FObX+D/bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWUBc-0004Yh-4i; Thu, 30 May 2019 23:10:16 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hWUDp-0004s0-9n; Thu, 30 May 2019 23:12:33 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWUBV-0004YK-1r
- for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 23:10:10 +0000
-Received: by mail-pg1-x544.google.com with SMTP id v11so2866304pgl.5
+ id 1hWUDg-0004rC-Ki
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 23:12:25 +0000
+Received: by mail-wm1-x343.google.com with SMTP id y3so4899126wmm.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 16:10:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=HnaOzrwwH51oiIcYbbiBCTmS7Rc7gDAzx83ZpPiCGcM=;
- b=t2huDdkmSslScVjL94JKcIQCMTMwwACkvRwPfUenZ7x2N/8P/OndXymZV/ztYmff3n
- Yk91NpO1iA0Ra2DTWifvaZl+HZnhGShz3a9IH8XU6PkSoLOoaL0pUgZe3BpUWMTjOh1N
- PkPNkT2KEJ8KweJSbM9uvyv3d9n7MOE9gjf9Bbmj/0Jc/NUlS1bwaqgvfYcIrTwFJzpJ
- ytlES1SMoigWeXgb70wxf+NpnrJ0vQTOGQoenE/O40jCq1Qf7PDz0AQtJh6wC58PInvG
- aJvqv5XNX4CiYEm+o1ckIBYPJi9N2c6hfY+4qbHaLN0SL6TxgOL/iuF5Sc3/1T5ebnJZ
- AhUg==
+ Thu, 30 May 2019 16:12:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=C5TAa3mAzwLnTUs90m43rAvPZouLNZzcNbzmtj7Kzpw=;
+ b=u6+JuzK/TCEMfLKrC5GBr7gfb0TMTZnk8Bm2HyGFbIbmPiDkoNsoD5MZyx8VDyZtDJ
+ XEHYv3SNrlIJhtNREHAQzinWbwINEZmQbl+l32WjRoKvysMILccoSa85D65YFDufY612
+ x+gBl8eo3krVFqBM5b0BwgPLclUj4dFCfjXOt2SBKxxsolAHKZ6rH/KuUIid5PnYPDL3
+ RZM7zD9hhuvDtGy5GdcX9uVyEBziTjXsSPUG1wDva+0hDQOgJ5FHfGFYPUU5C93nSopY
+ wWcSzU5hWuIqigzNEEXpEM5rsdt7zYI/ow8AvD8P7kWn+4gpPb4x0dzcLPAG6PTgg/PV
+ abnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=HnaOzrwwH51oiIcYbbiBCTmS7Rc7gDAzx83ZpPiCGcM=;
- b=cpfcFzhL9BjFnBwryIiuUtLnABmNIn9X8gI0ICLYRsJHT/7wQFOYyD6RQludWXoVfq
- XT5XhFWvbNMl46agSDw/uKN5wcGk9P7VIt1CPmvj61SKnXYsluido5hyYCLJVBQVxyOw
- WVKoUmA0CNshK1HyrmpjGCGeb6K3YXY0lgn2zRLK0gvBU5VOS/MYaGZLYgSBm6Pchh48
- BSwvqP8cBFvCfayqPTRxiIQNsNmkGoStF7YBFjNJxqYEu9PeQ/f4Nd2v5yJuIyvf5jRZ
- FOZDMzVN2ajQZSmPuRY6Nh0HrIutrh1m6JZklhUf6G2rxH4FXXQaacQ1YPlGg8FKCD6G
- 36iQ==
-X-Gm-Message-State: APjAAAVOCeBPGpqSvkaRC3UAB11+RXKOAJr+9KGw9hkoZZR0FBiK0HRO
- fo41arDkqs+QCzjX6Vlj46EiKqTH
-X-Google-Smtp-Source: APXvYqx7aB3hSQRS2ZPzY3sVELO8sZe8zAAyeqzVXweS1UkqAbfC9T/d66uiLnWGgbp5+RvPfchtIQ==
-X-Received: by 2002:a17:90a:aa85:: with SMTP id
- l5mr5502041pjq.69.1559257808071; 
- Thu, 30 May 2019 16:10:08 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id k8sm3871643pfi.168.2019.05.30.16.10.06
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 30 May 2019 16:10:07 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] ARM: bcm: Enable BCM7038_L1_IRQ for ARCH_BRCMSTB
-Date: Thu, 30 May 2019 16:09:58 -0700
-Message-Id: <20190530230958.7059-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=C5TAa3mAzwLnTUs90m43rAvPZouLNZzcNbzmtj7Kzpw=;
+ b=ueV950zQvIvqsL3OrthYnWMG+XyKWyhSjPvzwCuolGurPWg8T7BrTDjvvxKoK9j8MI
+ Citmu08vc8rJbjjC9f66hnmmZZVN7mRUiJugN9XW665D+w8oUpXj/SQGUyjeUeyWTRKT
+ F8gIXkEVKXKylXz4NSS9aCd8EJLzs0PGiM8+5UQ+v/FEKqTaRaOUC/s7uKkaDKScWY3p
+ NfpAHo16oLLRecGXCe18suGbBjHRUgFq8kNVvijj3FDkrnqDnysUjV1oTHO807zwuNgT
+ D/b6gYoiBjTI2wgujvs7f6rCt/Mq6umHGjElZ/DPl3KSPVFecssWPqfjNJhAp31yBOCz
+ zaNg==
+X-Gm-Message-State: APjAAAUR/ITiAIMolgU4jNQWerCJnJJ+fKVU1UZCsMmgilO0ydAX4eXf
+ ZX9j86bz4buG7rbFCl+WmoIMaEPuChUwnJjVfMRcSw==
+X-Google-Smtp-Source: APXvYqx1NeyN4W8Fq+DXvc3fCOC9uziuHg69l1K6URUyVyUIGdgMwD6SLlSCPZX+iYzV7lLQlNHYM1c7d/WsphCpWgk=
+X-Received: by 2002:a1c:3b41:: with SMTP id i62mr3601073wma.155.1559257937573; 
+ Thu, 30 May 2019 16:12:17 -0700 (PDT)
+MIME-Version: 1.0
+References: <CANA+-vBHL9a9fXDWxALXXuJk6r8ObZZjhrGp-p5JUnfOThEV5g@mail.gmail.com>
+ <CAKwvOd=W35EwxS+g46tZVfhO9gDVH=g8oMhhHkZ+DHUqiYq7CQ@mail.gmail.com>
+In-Reply-To: <CAKwvOd=W35EwxS+g46tZVfhO9gDVH=g8oMhhHkZ+DHUqiYq7CQ@mail.gmail.com>
+From: Ian Rogers <irogers@google.com>
+Date: Thu, 30 May 2019 16:12:05 -0700
+Message-ID: <CAP-5=fUQQAEcZQ4KXAa8pLQFnD0nrN42faYGY2NPAziguTnwKg@mail.gmail.com>
+Subject: Re: CONFIG_FRAME_POINTER support for Clang
+To: Nick Desaulniers <ndesaulniers@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_161009_196796_36B6D64A 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190530_161224_707060_7B7EADCB 
+X-CRM114-Status: GOOD (  16.70  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,6 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,40 +97,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>
-MIME-Version: 1.0
+Cc: Tri Vo <trong@android.com>, Russell King <linux@armlinux.org.uk>,
+ Stefan Agner <stefan@agner.ch>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Matthias Kaehlcke <mka@chromium.org>, Manoj Gupta <manojgupta@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ARCH_BRCMSTB makes use of the irq-bcm7038-l1.c irqchip driver, enable
-it.
+Would it be practical to use __builtin_return_address for the caller's PC?
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- arch/arm/mach-bcm/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+Thanks,
+Ian
 
-diff --git a/arch/arm/mach-bcm/Kconfig b/arch/arm/mach-bcm/Kconfig
-index 4ef1e55f4a0b..ef4600cd2ce9 100644
---- a/arch/arm/mach-bcm/Kconfig
-+++ b/arch/arm/mach-bcm/Kconfig
-@@ -211,6 +211,7 @@ config ARCH_BRCMSTB
- 	select ARM_GIC
- 	select ARM_ERRATA_798181 if SMP
- 	select HAVE_ARM_ARCH_TIMER
-+	select BCM7038_L1_IRQ
- 	select BRCMSTB_L2_IRQ
- 	select BCM7120_L2_IRQ
- 	select ARCH_HAS_HOLES_MEMORYMODEL
--- 
-2.17.1
-
+On Thu, May 30, 2019 at 3:58 PM Nick Desaulniers
+<ndesaulniers@google.com> wrote:
+>
+> + Some more lists/people
+>
+> On Thu, May 30, 2019 at 3:56 PM Tri Vo <trong@android.com> wrote:
+> >
+> > Hello Russell,
+> >
+> > I'm trying to implement support for CONFIG_FRAME_POINTER when building Linux
+> > with Clang compiler.
+> >
+> > Currently, CONFIG_FRAME_POINTER relies on function prologue that is emitted by
+> > GCC using -mapcs flag. However, APCS is obsolete and Clang doesn't support it.
+> >
+> > So in order to accommodate Clang-emitted frame layout, I'm thinking of
+> > providing Clang-specific implementation of code that relies on frame pointer,
+> > most notably in these files:
+> >         lib/backtrace.S
+> >         arch/arm/kernel/stacktrace.c
+> >         arch/arm/net/bpf_jit_32.c
+> >
+> > This will likely involve putting "#ifdef CC_IS_CLANG" statements in the source
+> > code. Is that OK?
+> >
+> > Another caveat is that Clang implementation of backtracing won't be able to
+> > dump saved registers or dump precise pc value of the caller, because IIUC that
+> > information is derived from APCS's fixed prologue.
+> >
+> > What do you think about this approach?
+> >
+> > Thanks,
+> > Tri
+>
+>
+>
+> --
+> Thanks,
+> ~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
