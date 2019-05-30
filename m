@@ -2,54 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2624303E6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 23:12:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E71730400
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 May 2019 23:16:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2i1RD1eVEOWFZIQhkkDiEksdB4Bih9TrnWIF/ekmBqk=; b=Ogh9mSlb5WQ4JRVz0HH2owWrc
-	T3pXdPiTp4C1gtj5o5wx2I/pSf4jmDse4k3e+bbkMn96cJjWsKQG0DDjK9isStC2mjC/f3mEpSEMF
-	31rswwQeRWtsbdvz0dbONxDt8Y3Y65QJmG/GqD47AEWEJc3rJ7esa08VaPrKBtfSD4LwnSpnwtZNn
-	8KzY2V0vCvZV53BVqN2BE2Zip3yGiKB62ieWXvgH5iFVnYcQD7kWxDloShD4n2DF/1tQipFrVzbPd
-	Rm+xnHybR+h46SreijfJHBiZ41AQgrxnAdE1Qxttm4H9a288lMHSY1/z+xJrzLtdZn8uv9gfmU5yj
-	DUZbhup0Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VbaHslbTf74GoWC+5hFnv0EHnmWsX+FLAbUowHQr2FA=; b=dRQSApX9p4z4Ql
+	TOmhuufqkp1J7MSi1eUjbjkxKAA5ABtIX419OanxP+mRs9y1ld9pDLci3jcE3gKzcKDQWrZugKMNw
+	JW5SsPPkEhZExnbIE/ZHsMMSpPMWQ8Yt+uwOj0rk7znVgqtjP1rfIEiHnOAqOnT2VgyzibmdjP0/v
+	FlW0nCu+ItbcHkf4xiabzP+LD4dWpnlamPcL3NxCdP7SANNPpc0fb8tfesMV7hz5xA2o8O9Oyt+8s
+	FANU5yXyHkxobKy7xKfhAKneUgmsxIN2szF29cnbrszSRltT1nxydJ0NY04/lkMmXo3SsvFkCrM3i
+	zdcjJcUVwvLroMvZaNxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWSLc-0006wd-Sj; Thu, 30 May 2019 21:12:28 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWSLV-0006w3-7V; Thu, 30 May 2019 21:12:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9C8B0341;
- Thu, 30 May 2019 14:12:20 -0700 (PDT)
-Received: from [192.168.100.220] (usa-sjc-mx-foss1.foss.arm.com
- [217.140.101.70])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 210CC3F690;
- Thu, 30 May 2019 14:12:19 -0700 (PDT)
-Subject: Re: [PATCH v6 0/7] Unify CPU topology across ARM & RISC-V
-To: Atish Patra <atish.patra@wdc.com>, linux-kernel@vger.kernel.org
-References: <20190529211340.17087-1-atish.patra@wdc.com>
-From: Jeremy Linton <jeremy.linton@arm.com>
-Message-ID: <1b61e699-79c7-bbfd-c7ed-d51d321ae7ef@arm.com>
-Date: Thu, 30 May 2019 16:12:18 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hWSP1-0000H5-LN; Thu, 30 May 2019 21:15:59 +0000
+Received: from mailoutvs7.siol.net ([185.57.226.198] helo=mail.siol.net)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWSOh-0008Us-Hf
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 May 2019 21:15:41 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 77B93522867;
+ Thu, 30 May 2019 23:15:30 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id Q4d6PDinGsox; Thu, 30 May 2019 23:15:30 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 23ACA522869;
+ Thu, 30 May 2019 23:15:30 +0200 (CEST)
+Received: from localhost.localdomain (cpe-86-58-52-202.static.triera.net
+ [86.58.52.202]) (Authenticated sender: 031275009)
+ by mail.siol.net (Postfix) with ESMTPSA id 41B70522867;
+ Thu, 30 May 2019 23:15:28 +0200 (CEST)
+From: Jernej Skrabec <jernej.skrabec@siol.net>
+To: paul.kocialkowski@bootlin.com,
+	maxime.ripard@bootlin.com
+Subject: [PATCH 0/7] media: cedrus: Improvements/cleanup
+Date: Thu, 30 May 2019 23:15:09 +0200
+Message-Id: <20190530211516.1891-1-jernej.skrabec@siol.net>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190529211340.17087-1-atish.patra@wdc.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_141221_282854_19BF1FCD 
-X-CRM114-Status: GOOD (  30.12  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190530_141539_752940_779E3193 
+X-CRM114-Status: UNSURE (   6.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,140 +70,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-riscv@lists.infradead.org, Morten Rasmussen <morten.rasmussen@arm.com>,
- Anup Patel <anup@brainfault.org>, Russell King <linux@armlinux.org.uk>,
- Ingo Molnar <mingo@kernel.org>, devicetree@vger.kernel.org,
- Albert Ou <aou@eecs.berkeley.edu>, Rob Herring <robh+dt@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Otto Sabart <ottosabart@seberm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- "David S. Miller" <davem@davemloft.net>
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, wens@csie.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Here is first batch of random Cedrus improvements/cleanups. Only patch 2
+has a change which raises a question about H264 controls.
 
-On 5/29/19 4:13 PM, Atish Patra wrote:
-> The cpu-map DT entry in ARM can describe the CPU topology in much better
-> way compared to other existing approaches. RISC-V can easily adopt this
-> binding to represent its own CPU topology. Thus, both cpu-map DT
-> binding and topology parsing code can be moved to a common location so
-> that RISC-V or any other architecture can leverage that.
-> 
-> The relevant discussion regarding unifying cpu topology can be found in
-> [1].
-> 
-> arch_topology seems to be a perfect place to move the common code. I
-> have not introduced any significant functional changes in the moved code.
-> The only downside in this approach is that the capacity code will be
-> executed for RISC-V as well. But, it will exit immediately after not
-> able to find the appropriate DT node. If the overhead is considered too
-> much, we can always compile out capacity related functions under a
-> different config for the architectures that do not support them.
-> 
-> There was an opportunity to unify topology data structure for ARM32 done
-> by patch 3/4. But, I refrained from making any other changes as I am not
-> very well versed with original intention for some functions that
-> are present in arch_topology.c. I hope this patch series can be served
-> as a baseline for such changes in the future.
-> 
-> The patches have been tested for RISC-V and compile tested for ARM64,
-> ARM32 & x86.
->
+Changes were tested on H3 SoC using modified ffmpeg and Kodi.
 
-I applied these to 5.2rc2, along with my PPTT/MT change and verified the 
-system & scheduler topology/etc on DAWN and ThunderX2 using ACPI on 
-arm64. They appear to be working correctly.
+Please take a look.
 
-so for the series,
-Tested-by: Jeremy Linton <jeremy.linton@arm.com>
+Best regards,
+Jernej
 
-The code itself looks fine to me as well:
+Jernej Skrabec (7):
+  media: cedrus: Disable engine after each slice decoding
+  media: cedrus: Fix H264 default reference index count
+  media: cedrus: Fix decoding for some H264 videos
+  media: cedrus: Remove dst_bufs from context
+  media: cedrus: Don't set chroma size for scale & rotation
+  media: cedrus: Add infra for extra buffers connected to capture
+    buffers
+  media: cedrus: Improve H264 memory efficiency
 
-Reviewed-by: Jeremy Linton <jeremy.linton@arm.com>
+ drivers/staging/media/sunxi/cedrus/cedrus.h   |  12 +-
+ .../staging/media/sunxi/cedrus/cedrus_h264.c  | 115 ++++++++----------
+ .../staging/media/sunxi/cedrus/cedrus_hw.c    |   4 +-
+ .../staging/media/sunxi/cedrus/cedrus_video.c |  25 ++--
+ 4 files changed, 68 insertions(+), 88 deletions(-)
 
-Thanks!
-
-> The socket change[2] is also now part of this series.
-> 
-> [1] https://lkml.org/lkml/2018/11/6/19
-> [2] https://lkml.org/lkml/2018/11/7/918
-> 
-> QEMU changes for RISC-V topology are available at
-> 
-> https://github.com/atishp04/qemu/tree/riscv_topology_dt
-> 
-> HiFive Unleashed DT with topology node is available here.
-> https://github.com/atishp04/opensbi/tree/HiFive_unleashed_topology
-> 
-> It can be verified with OpenSBI with following additional compile time
-> option.
-> 
-> FW_PAYLOAD_FDT="unleashed_topology.dtb"
-> 
-> Changes from v5->v6
-> 1. Added two more patches from Sudeep about maintainership of arch_topology.c
->     and Kconfig update.
-> 2. Added Tested-by & Reviewed-by
-> 3. Fixed a nit (reordering of variables)
-> 
-> Changes from v4-v5
-> 1. Removed the arch_topology.h header inclusion from topology.c and arch_topology.c
-> file. Added it in linux/topology.h.
-> 2. core_id is set to -1 upon reset. Otherwise, ARM topology store function does not
-> work.
-> 
-> Changes from v3->v4
-> 1. Get rid of ARM32 specific information in topology structure.
-> 2. Remove redundant functions from ARM32 and use common code instead.
-> 
-> Changes from v2->v3
-> 1. Cover letter update with experiment DT for topology changes.
-> 2. Added the patch for [2].
-> 
-> Changes from v1->v2
-> 1. ARM32 can now use the common code as well.
-> 
-> Atish Patra (4):
-> dt-binding: cpu-topology: Move cpu-map to a common binding.
-> cpu-topology: Move cpu topology code to common code.
-> arm: Use common cpu_topology structure and functions.
-> RISC-V: Parse cpu topology during boot.
-> 
-> Sudeep Holla (3):
-> Documentation: DT: arm: add support for sockets defining package
-> boundaries
-> base: arch_topology: update Kconfig help description
-> MAINTAINERS: Add an entry for generic architecture topology
-> 
-> .../topology.txt => cpu/cpu-topology.txt}     | 134 ++++++--
-> MAINTAINERS                                   |   7 +
-> arch/arm/include/asm/topology.h               |  20 --
-> arch/arm/kernel/topology.c                    |  60 +---
-> arch/arm64/include/asm/topology.h             |  23 --
-> arch/arm64/kernel/topology.c                  | 303 +-----------------
-> arch/riscv/Kconfig                            |   1 +
-> arch/riscv/kernel/smpboot.c                   |   3 +
-> drivers/base/Kconfig                          |   2 +-
-> drivers/base/arch_topology.c                  | 298 +++++++++++++++++
-> include/linux/arch_topology.h                 |  26 ++
-> include/linux/topology.h                      |   1 +
-> 12 files changed, 452 insertions(+), 426 deletions(-)
-> rename Documentation/devicetree/bindings/{arm/topology.txt => cpu/cpu-topology.txt} (66%)
-> 
-> --
-> 2.21.0
-> 
+-- 
+2.21.0
 
 
 _______________________________________________
