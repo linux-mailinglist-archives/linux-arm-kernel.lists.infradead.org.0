@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13BB93134E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:03:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8580D3135C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:04:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4PASqLIo/VynZYPPcb/9G42eZXxE8IEiVcaRkz65d9Q=; b=Xw/4wV3rNWWNGS
-	UWWR/widMWMAvUfjDer/4M5fL+THd7cFv0u1DwxIo6vcYn50z5/ZLUqBHC3ay9nPuCeL7vV+3Nrnq
-	iw0sUuX13tmKd7R52nhbIj5JMxQrkzcU73u5xWy+LOeJgZSS6wTuhI2EroN15zAXsUnb5g+3EZpAd
-	Ymkqm7sO5PRxeSXtWWDeETNiD7fkoZ8kzKlqt6x/GDtTNKsk9EsfveIwvHF0wojraJqSZ2vxWInKP
-	qk0sgd7M1XSL6layzXyxG8R8gk+6SEsG2Kv9U26wX5fK2Et7tpmFhpBisZpVFkLYhYrU+ZqF3a2KI
-	HgsHptT3l/B+NEgvoCQg==;
+	List-Owner; bh=9UGxVfkrbe5bHp8rukmA+tgkIM5kwLls+VapxFMO7i4=; b=Km2LPNxHptgElP
+	uOAT2rMtPPddkpPcPcJDDaE17lraBSAw3Ks/Dic9LGji9PaHP4Vq5GJL6Irj1LR/4s0T13QKsRwwF
+	bE069Y+8GO9ng8HnFWouIF5EO8x3X5frOhHOU1cWDmoP6Q7wpBM4xgFDFgGcpT1ojRxO4RxvYHcQr
+	O3xkwHR6YreOg9X/7Gju9xf0s5/vqYe1xB5/SvGCShy0UXHc4EZq7Xa1q8i1Mqo0wmN+c0YUxgmTj
+	Mkozznk9YWLjUmwazGum8sFGRFhOSOvw+85a05czUXf0x/+HZakIehpJk5tRDbMozWViNLYBQtPsd
+	U1JxxuUU8vsRuUQqUWpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWkw8-0007vR-Da; Fri, 31 May 2019 17:03:24 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hWkwr-0000B8-Pc; Fri, 31 May 2019 17:04:09 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWkw0-0007sT-0z
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:03:17 +0000
+ id 1hWkwA-00086e-Kf
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:03:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 17ACAA78;
- Fri, 31 May 2019 10:03:15 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4813BA78;
+ Fri, 31 May 2019 10:03:26 -0700 (PDT)
 Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3CB863F59C;
- Fri, 31 May 2019 10:03:13 -0700 (PDT)
-Date: Fri, 31 May 2019 18:03:10 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 79E0C3F59C;
+ Fri, 31 May 2019 10:03:24 -0700 (PDT)
+Date: Fri, 31 May 2019 18:03:19 +0100
 From: Andre Przywara <andre.przywara@arm.com>
 To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH kvmtool v3 2/9] update_headers.sh: Cleanly report
- failure on error
-Message-ID: <20190531180310.2305008c@donnerap.cambridge.arm.com>
-In-Reply-To: <1559229194-3036-3-git-send-email-Dave.Martin@arm.com>
+Subject: Re: [PATCH kvmtool v3 4/9] update_headers: Sync kvm UAPI headers
+ with linux v5.1-rc1
+Message-ID: <20190531180319.4ecb5157@donnerap.cambridge.arm.com>
+In-Reply-To: <1559229194-3036-5-git-send-email-Dave.Martin@arm.com>
 References: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
- <1559229194-3036-3-git-send-email-Dave.Martin@arm.com>
+ <1559229194-3036-5-git-send-email-Dave.Martin@arm.com>
 Organization: ARM
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_100316_132551_5B7325A9 
-X-CRM114-Status: GOOD (  14.30  )
+X-CRM114-CacheID: sfid-20190531_100327_029016_5A05E64C 
+X-CRM114-Status: GOOD (  18.54  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -78,43 +77,301 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 30 May 2019 16:13:07 +0100
+On Thu, 30 May 2019 16:13:09 +0100
 Dave Martin <Dave.Martin@arm.com> wrote:
 
-> If in intermediate step fails, update_headers.sh blindly continues
-> and may return success status.
-> 
-> To avoid errors going unnoticed when driving this script, exit and
-> report failure status as soon as something goes wrong.  For good
-> measure, also fail on expansion of undefined shell variables to aid
-> future maintainers.
+> Subject: [PATCH kvmtool v3 4/9] update_headers: Sync kvm UAPI headers with linux v5.1-rc1
+
+This is actually v5.2-rc1, isn't it?
+
+Apart from that:
+
+> Pull in upstream UAPI headers, for subsequent arm64 SVE / ptrauth
+> support (among other things).
 > 
 > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 
-Both "u" and "e" seem to be standard and work in dash and ash, so:
-
 Reviewed-by: Andre Przywara <andre.przywara@arm.com>
 
-Thanks,
+Cheers,
 Andre.
 
 > ---
->  util/update_headers.sh | 2 ++
->  1 file changed, 2 insertions(+)
+>  arm/aarch64/include/asm/kvm.h         | 43 ++++++++++++++++++++++++++++
+>  arm/aarch64/include/asm/sve_context.h | 53 +++++++++++++++++++++++++++++++++++
+>  include/linux/kvm.h                   | 15 ++++++++--
+>  powerpc/include/asm/kvm.h             | 48 +++++++++++++++++++++++++++++++
+>  x86/include/asm/kvm.h                 |  1 +
+>  5 files changed, 158 insertions(+), 2 deletions(-)
+>  create mode 100644 arm/aarch64/include/asm/sve_context.h
 > 
-> diff --git a/util/update_headers.sh b/util/update_headers.sh
-> index 4ba1b9f..a7e21b8 100755
-> --- a/util/update_headers.sh
-> +++ b/util/update_headers.sh
-> @@ -7,6 +7,8 @@
->  # using the lib/modules/`uname -r`/source link.
->  ########################################################################
+> diff --git a/arm/aarch64/include/asm/kvm.h b/arm/aarch64/include/asm/kvm.h
+> index 97c3478..7b7ac0f 100644
+> --- a/arm/aarch64/include/asm/kvm.h
+> +++ b/arm/aarch64/include/asm/kvm.h
+> @@ -35,6 +35,7 @@
+>  #include <linux/psci.h>
+>  #include <linux/types.h>
+>  #include <asm/ptrace.h>
+> +#include <asm/sve_context.h>
 >  
-> +set -ue
+>  #define __KVM_HAVE_GUEST_DEBUG
+>  #define __KVM_HAVE_IRQ_LINE
+> @@ -102,6 +103,9 @@ struct kvm_regs {
+>  #define KVM_ARM_VCPU_EL1_32BIT		1 /* CPU running a 32bit VM */
+>  #define KVM_ARM_VCPU_PSCI_0_2		2 /* CPU uses PSCI v0.2 */
+>  #define KVM_ARM_VCPU_PMU_V3		3 /* Support guest PMUv3 */
+> +#define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
+> +#define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
+> +#define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
+>  
+>  struct kvm_vcpu_init {
+>  	__u32 target;
+> @@ -226,6 +230,45 @@ struct kvm_vcpu_events {
+>  					 KVM_REG_ARM_FW | ((r) & 0xffff))
+>  #define KVM_REG_ARM_PSCI_VERSION	KVM_REG_ARM_FW_REG(0)
+>  
+> +/* SVE registers */
+> +#define KVM_REG_ARM64_SVE		(0x15 << KVM_REG_ARM_COPROC_SHIFT)
 > +
->  if [ "$#" -ge 1 ]
->  then
->  	LINUX_ROOT="$1"
+> +/* Z- and P-regs occupy blocks at the following offsets within this range: */
+> +#define KVM_REG_ARM64_SVE_ZREG_BASE	0
+> +#define KVM_REG_ARM64_SVE_PREG_BASE	0x400
+> +#define KVM_REG_ARM64_SVE_FFR_BASE	0x600
+> +
+> +#define KVM_ARM64_SVE_NUM_ZREGS		__SVE_NUM_ZREGS
+> +#define KVM_ARM64_SVE_NUM_PREGS		__SVE_NUM_PREGS
+> +
+> +#define KVM_ARM64_SVE_MAX_SLICES	32
+> +
+> +#define KVM_REG_ARM64_SVE_ZREG(n, i)					\
+> +	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_ZREG_BASE | \
+> +	 KVM_REG_SIZE_U2048 |						\
+> +	 (((n) & (KVM_ARM64_SVE_NUM_ZREGS - 1)) << 5) |			\
+> +	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
+> +
+> +#define KVM_REG_ARM64_SVE_PREG(n, i)					\
+> +	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_PREG_BASE | \
+> +	 KVM_REG_SIZE_U256 |						\
+> +	 (((n) & (KVM_ARM64_SVE_NUM_PREGS - 1)) << 5) |			\
+> +	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
+> +
+> +#define KVM_REG_ARM64_SVE_FFR(i)					\
+> +	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_FFR_BASE | \
+> +	 KVM_REG_SIZE_U256 |						\
+> +	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
+> +
+> +#define KVM_ARM64_SVE_VQ_MIN __SVE_VQ_MIN
+> +#define KVM_ARM64_SVE_VQ_MAX __SVE_VQ_MAX
+> +
+> +/* Vector lengths pseudo-register: */
+> +#define KVM_REG_ARM64_SVE_VLS		(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | \
+> +					 KVM_REG_SIZE_U512 | 0xffff)
+> +#define KVM_ARM64_SVE_VLS_WORDS	\
+> +	((KVM_ARM64_SVE_VQ_MAX - KVM_ARM64_SVE_VQ_MIN) / 64 + 1)
+> +
+>  /* Device Control API: ARM VGIC */
+>  #define KVM_DEV_ARM_VGIC_GRP_ADDR	0
+>  #define KVM_DEV_ARM_VGIC_GRP_DIST_REGS	1
+> diff --git a/arm/aarch64/include/asm/sve_context.h b/arm/aarch64/include/asm/sve_context.h
+> new file mode 100644
+> index 0000000..754ab75
+> --- /dev/null
+> +++ b/arm/aarch64/include/asm/sve_context.h
+> @@ -0,0 +1,53 @@
+> +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+> +/* Copyright (C) 2017-2018 ARM Limited */
+> +
+> +/*
+> + * For use by other UAPI headers only.
+> + * Do not make direct use of header or its definitions.
+> + */
+> +
+> +#ifndef _UAPI__ASM_SVE_CONTEXT_H
+> +#define _UAPI__ASM_SVE_CONTEXT_H
+> +
+> +#include <linux/types.h>
+> +
+> +#define __SVE_VQ_BYTES		16	/* number of bytes per quadword */
+> +
+> +#define __SVE_VQ_MIN		1
+> +#define __SVE_VQ_MAX		512
+> +
+> +#define __SVE_VL_MIN		(__SVE_VQ_MIN * __SVE_VQ_BYTES)
+> +#define __SVE_VL_MAX		(__SVE_VQ_MAX * __SVE_VQ_BYTES)
+> +
+> +#define __SVE_NUM_ZREGS		32
+> +#define __SVE_NUM_PREGS		16
+> +
+> +#define __sve_vl_valid(vl)			\
+> +	((vl) % __SVE_VQ_BYTES == 0 &&		\
+> +	 (vl) >= __SVE_VL_MIN &&		\
+> +	 (vl) <= __SVE_VL_MAX)
+> +
+> +#define __sve_vq_from_vl(vl)	((vl) / __SVE_VQ_BYTES)
+> +#define __sve_vl_from_vq(vq)	((vq) * __SVE_VQ_BYTES)
+> +
+> +#define __SVE_ZREG_SIZE(vq)	((__u32)(vq) * __SVE_VQ_BYTES)
+> +#define __SVE_PREG_SIZE(vq)	((__u32)(vq) * (__SVE_VQ_BYTES / 8))
+> +#define __SVE_FFR_SIZE(vq)	__SVE_PREG_SIZE(vq)
+> +
+> +#define __SVE_ZREGS_OFFSET	0
+> +#define __SVE_ZREG_OFFSET(vq, n) \
+> +	(__SVE_ZREGS_OFFSET + __SVE_ZREG_SIZE(vq) * (n))
+> +#define __SVE_ZREGS_SIZE(vq) \
+> +	(__SVE_ZREG_OFFSET(vq, __SVE_NUM_ZREGS) - __SVE_ZREGS_OFFSET)
+> +
+> +#define __SVE_PREGS_OFFSET(vq) \
+> +	(__SVE_ZREGS_OFFSET + __SVE_ZREGS_SIZE(vq))
+> +#define __SVE_PREG_OFFSET(vq, n) \
+> +	(__SVE_PREGS_OFFSET(vq) + __SVE_PREG_SIZE(vq) * (n))
+> +#define __SVE_PREGS_SIZE(vq) \
+> +	(__SVE_PREG_OFFSET(vq, __SVE_NUM_PREGS) - __SVE_PREGS_OFFSET(vq))
+> +
+> +#define __SVE_FFR_OFFSET(vq) \
+> +	(__SVE_PREGS_OFFSET(vq) + __SVE_PREGS_SIZE(vq))
+> +
+> +#endif /* ! _UAPI__ASM_SVE_CONTEXT_H */
+> diff --git a/include/linux/kvm.h b/include/linux/kvm.h
+> index 6d4ea4b..2fe12b4 100644
+> --- a/include/linux/kvm.h
+> +++ b/include/linux/kvm.h
+> @@ -986,8 +986,13 @@ struct kvm_ppc_resize_hpt {
+>  #define KVM_CAP_HYPERV_ENLIGHTENED_VMCS 163
+>  #define KVM_CAP_EXCEPTION_PAYLOAD 164
+>  #define KVM_CAP_ARM_VM_IPA_SIZE 165
+> -#define KVM_CAP_MANUAL_DIRTY_LOG_PROTECT 166
+> +#define KVM_CAP_MANUAL_DIRTY_LOG_PROTECT 166 /* Obsolete */
+>  #define KVM_CAP_HYPERV_CPUID 167
+> +#define KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 168
+> +#define KVM_CAP_PPC_IRQ_XIVE 169
+> +#define KVM_CAP_ARM_SVE 170
+> +#define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
+> +#define KVM_CAP_ARM_PTRAUTH_GENERIC 172
+>  
+>  #ifdef KVM_CAP_IRQ_ROUTING
+>  
+> @@ -1145,6 +1150,7 @@ struct kvm_dirty_tlb {
+>  #define KVM_REG_SIZE_U256	0x0050000000000000ULL
+>  #define KVM_REG_SIZE_U512	0x0060000000000000ULL
+>  #define KVM_REG_SIZE_U1024	0x0070000000000000ULL
+> +#define KVM_REG_SIZE_U2048	0x0080000000000000ULL
+>  
+>  struct kvm_reg_list {
+>  	__u64 n; /* number of regs */
+> @@ -1211,6 +1217,8 @@ enum kvm_device_type {
+>  #define KVM_DEV_TYPE_ARM_VGIC_V3	KVM_DEV_TYPE_ARM_VGIC_V3
+>  	KVM_DEV_TYPE_ARM_VGIC_ITS,
+>  #define KVM_DEV_TYPE_ARM_VGIC_ITS	KVM_DEV_TYPE_ARM_VGIC_ITS
+> +	KVM_DEV_TYPE_XIVE,
+> +#define KVM_DEV_TYPE_XIVE		KVM_DEV_TYPE_XIVE
+>  	KVM_DEV_TYPE_MAX,
+>  };
+>  
+> @@ -1434,12 +1442,15 @@ struct kvm_enc_region {
+>  #define KVM_GET_NESTED_STATE         _IOWR(KVMIO, 0xbe, struct kvm_nested_state)
+>  #define KVM_SET_NESTED_STATE         _IOW(KVMIO,  0xbf, struct kvm_nested_state)
+>  
+> -/* Available with KVM_CAP_MANUAL_DIRTY_LOG_PROTECT */
+> +/* Available with KVM_CAP_MANUAL_DIRTY_LOG_PROTECT_2 */
+>  #define KVM_CLEAR_DIRTY_LOG          _IOWR(KVMIO, 0xc0, struct kvm_clear_dirty_log)
+>  
+>  /* Available with KVM_CAP_HYPERV_CPUID */
+>  #define KVM_GET_SUPPORTED_HV_CPUID _IOWR(KVMIO, 0xc1, struct kvm_cpuid2)
+>  
+> +/* Available with KVM_CAP_ARM_SVE */
+> +#define KVM_ARM_VCPU_FINALIZE	  _IOW(KVMIO,  0xc2, int)
+> +
+>  /* Secure Encrypted Virtualization command */
+>  enum sev_cmd_id {
+>  	/* Guest initialization commands */
+> diff --git a/powerpc/include/asm/kvm.h b/powerpc/include/asm/kvm.h
+> index 8c876c1..b0f72de 100644
+> --- a/powerpc/include/asm/kvm.h
+> +++ b/powerpc/include/asm/kvm.h
+> @@ -463,10 +463,12 @@ struct kvm_ppc_cpu_char {
+>  #define KVM_PPC_CPU_CHAR_BR_HINT_HONOURED	(1ULL << 58)
+>  #define KVM_PPC_CPU_CHAR_MTTRIG_THR_RECONF	(1ULL << 57)
+>  #define KVM_PPC_CPU_CHAR_COUNT_CACHE_DIS	(1ULL << 56)
+> +#define KVM_PPC_CPU_CHAR_BCCTR_FLUSH_ASSIST	(1ull << 54)
+>  
+>  #define KVM_PPC_CPU_BEHAV_FAVOUR_SECURITY	(1ULL << 63)
+>  #define KVM_PPC_CPU_BEHAV_L1D_FLUSH_PR		(1ULL << 62)
+>  #define KVM_PPC_CPU_BEHAV_BNDS_CHK_SPEC_BAR	(1ULL << 61)
+> +#define KVM_PPC_CPU_BEHAV_FLUSH_COUNT_CACHE	(1ull << 58)
+>  
+>  /* Per-vcpu XICS interrupt controller state */
+>  #define KVM_REG_PPC_ICP_STATE	(KVM_REG_PPC | KVM_REG_SIZE_U64 | 0x8c)
+> @@ -480,6 +482,8 @@ struct kvm_ppc_cpu_char {
+>  #define  KVM_REG_PPC_ICP_PPRI_SHIFT	16	/* pending irq priority */
+>  #define  KVM_REG_PPC_ICP_PPRI_MASK	0xff
+>  
+> +#define KVM_REG_PPC_VP_STATE	(KVM_REG_PPC | KVM_REG_SIZE_U128 | 0x8d)
+> +
+>  /* Device control API: PPC-specific devices */
+>  #define KVM_DEV_MPIC_GRP_MISC		1
+>  #define   KVM_DEV_MPIC_BASE_ADDR	0	/* 64-bit */
+> @@ -675,4 +679,48 @@ struct kvm_ppc_cpu_char {
+>  #define  KVM_XICS_PRESENTED		(1ULL << 43)
+>  #define  KVM_XICS_QUEUED		(1ULL << 44)
+>  
+> +/* POWER9 XIVE Native Interrupt Controller */
+> +#define KVM_DEV_XIVE_GRP_CTRL		1
+> +#define   KVM_DEV_XIVE_RESET		1
+> +#define   KVM_DEV_XIVE_EQ_SYNC		2
+> +#define KVM_DEV_XIVE_GRP_SOURCE		2	/* 64-bit source identifier */
+> +#define KVM_DEV_XIVE_GRP_SOURCE_CONFIG	3	/* 64-bit source identifier */
+> +#define KVM_DEV_XIVE_GRP_EQ_CONFIG	4	/* 64-bit EQ identifier */
+> +#define KVM_DEV_XIVE_GRP_SOURCE_SYNC	5       /* 64-bit source identifier */
+> +
+> +/* Layout of 64-bit XIVE source attribute values */
+> +#define KVM_XIVE_LEVEL_SENSITIVE	(1ULL << 0)
+> +#define KVM_XIVE_LEVEL_ASSERTED		(1ULL << 1)
+> +
+> +/* Layout of 64-bit XIVE source configuration attribute values */
+> +#define KVM_XIVE_SOURCE_PRIORITY_SHIFT	0
+> +#define KVM_XIVE_SOURCE_PRIORITY_MASK	0x7
+> +#define KVM_XIVE_SOURCE_SERVER_SHIFT	3
+> +#define KVM_XIVE_SOURCE_SERVER_MASK	0xfffffff8ULL
+> +#define KVM_XIVE_SOURCE_MASKED_SHIFT	32
+> +#define KVM_XIVE_SOURCE_MASKED_MASK	0x100000000ULL
+> +#define KVM_XIVE_SOURCE_EISN_SHIFT	33
+> +#define KVM_XIVE_SOURCE_EISN_MASK	0xfffffffe00000000ULL
+> +
+> +/* Layout of 64-bit EQ identifier */
+> +#define KVM_XIVE_EQ_PRIORITY_SHIFT	0
+> +#define KVM_XIVE_EQ_PRIORITY_MASK	0x7
+> +#define KVM_XIVE_EQ_SERVER_SHIFT	3
+> +#define KVM_XIVE_EQ_SERVER_MASK		0xfffffff8ULL
+> +
+> +/* Layout of EQ configuration values (64 bytes) */
+> +struct kvm_ppc_xive_eq {
+> +	__u32 flags;
+> +	__u32 qshift;
+> +	__u64 qaddr;
+> +	__u32 qtoggle;
+> +	__u32 qindex;
+> +	__u8  pad[40];
+> +};
+> +
+> +#define KVM_XIVE_EQ_ALWAYS_NOTIFY	0x00000001
+> +
+> +#define KVM_XIVE_TIMA_PAGE_OFFSET	0
+> +#define KVM_XIVE_ESB_PAGE_OFFSET	4
+> +
+>  #endif /* __LINUX_KVM_POWERPC_H */
+> diff --git a/x86/include/asm/kvm.h b/x86/include/asm/kvm.h
+> index dabfcf7..7a0e64c 100644
+> --- a/x86/include/asm/kvm.h
+> +++ b/x86/include/asm/kvm.h
+> @@ -381,6 +381,7 @@ struct kvm_sync_regs {
+>  #define KVM_X86_QUIRK_LINT0_REENABLED	(1 << 0)
+>  #define KVM_X86_QUIRK_CD_NW_CLEARED	(1 << 1)
+>  #define KVM_X86_QUIRK_LAPIC_MMIO_HOLE	(1 << 2)
+> +#define KVM_X86_QUIRK_OUT_7E_INC_RIP	(1 << 3)
+>  
+>  #define KVM_STATE_NESTED_GUEST_MODE	0x00000001
+>  #define KVM_STATE_NESTED_RUN_PENDING	0x00000002
 
 
 _______________________________________________
