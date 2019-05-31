@@ -2,87 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 271A130689
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 04:14:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C73B1306D4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 05:02:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZHYHqd/AYV74osf883FfETNEeG9sZsBIn0GW/zJaYTw=; b=P1hHhE5j2lbDet
-	7umFnUcKRgfsQYKzoxAsMQbpiSMfGq84KKIuWQGLNb3aVUxkB2iMLQQ8om+FKDZ+5NRU2m9eGjrpM
-	kZpQX+MnlGfXrhLkG/gNWkPWG7kEx5BPM3YAglcJFdpA/Do8Fx+2t6ikhqaMgKjCR+h83gLlZd9cA
-	i/sq+aCdyeYL6PlHRYumoDJadEl3SI7fkYp7G+3rJ674Cl/YUuYSV55k599bQHPpm2Wkh/JiSv4rK
-	veUehLrg0eg5Sn6wfR2EU0CsN4+v3budRfEInwbITPG9/FueGbPF23I0rbQGecBd359IOeacYNs6E
-	8IvIntZ3k77/h1PFC5ZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/2ulXu0fSWTUk+j7ooVVEdIS+IJ1bFbm5bqqdH1qWhc=; b=TSnIFwqyyoTqp7
+	ooQlo0ZOw+P/VPh71elHv6i+8Uk/F75Dcuc5ITAgThdAAM+N9o3y2J+twdZncXu9B9CV0RC1r/E9G
+	9dQbxpYlwm7OmqzwLB581CmQhgHOyeQYuZoSCCdgdJInYrnFde7mZdhgl/YbMM1VE2zUNNk44E0D/
+	8aUDa6YWVCtxH1i3BwFiVxDYjXR4M0NV1Z4nxcWuImLweRi4rGVdcv/7Bfoc0AjQKIuIvW3NVHsiL
+	zm4PAHE8T1eEmmER0fDu36ndr2XgKR3CDErXyXFKTBeV0BjzjTc5vRCxiN+Q4C18liUYcW9Flijg8
+	Sa809gPDsfwkT4uw4uDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWX3T-00053f-BP; Fri, 31 May 2019 02:14:03 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hWXoO-0003oK-MF; Fri, 31 May 2019 03:02:32 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWX2t-0004Zh-N9
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 02:13:30 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4V2DOCH105395;
- Thu, 30 May 2019 21:13:24 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559268804;
- bh=hs354EoGbV73TbB075I8Lanu8CNWjwVr00edQ5IOMWo=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=FkqaIt0OwYhrxKB0BgGMX+rrb/5/fpm9FgyaDJfGOD4hXPVJkSb2ydZYWRhfT57sy
- 4lZGx+1Y+kVEfNECHzqr9rBVHG6uxLEQaJN7ujdmKJdMA7l3xgVRT9apwiznorEZbX
- 1/C63RG29eiDFbpVypUsGYZ3Bh28CwvPoXD4CNjM=
-Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4V2DOhR108705
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 30 May 2019 21:13:24 -0500
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 30
- May 2019 21:13:24 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 30 May 2019 21:13:24 -0500
-Received: from legion.dal.design.ti.com (legion.dal.design.ti.com
- [128.247.22.53])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4V2DOPO027212;
- Thu, 30 May 2019 21:13:24 -0500
-Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
- by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x4V2DOm18136; 
- Thu, 30 May 2019 21:13:24 -0500 (CDT)
-From: Suman Anna <s-anna@ti.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
- <robh+dt@kernel.org>
-Subject: [PATCH 3/3] hwspinlock/omap: Add a trace during probe
-Date: Thu, 30 May 2019 21:13:21 -0500
-Message-ID: <20190531021321.14025-4-s-anna@ti.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190531021321.14025-1-s-anna@ti.com>
-References: <20190531021321.14025-1-s-anna@ti.com>
+ id 1hWXoI-0003nb-Au
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 03:02:28 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id B09E3763727074F9058B;
+ Fri, 31 May 2019 11:02:18 +0800 (CST)
+Received: from huawei.com (10.67.188.14) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Fri, 31 May 2019
+ 11:02:11 +0800
+From: xiaoqian <xiaoqian9@huawei.com>
+To: <linux@armlinux.org.uk>, <rafael.j.wysocki@intel.com>,
+ <ebiederm@xmission.com>, <rppt@linux.ibm.com>, <pmladek@suse.com>,
+ <bhelgaas@google.com>, <sakari.ailus@linux.intel.com>,
+ <linux-arm-kernel@lists.infradead.org>, <gregkh@linuxfoundation.org>
+Subject: [PATCH] Subject:alignment:fetch pc-instr before irq_enable
+Date: Fri, 31 May 2019 11:01:20 +0800
+Message-ID: <1559271680-7486-1-git-send-email-xiaoqian9@huawei.com>
+X-Mailer: git-send-email 1.8.5.6
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Originating-IP: [10.67.188.14]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_191327_806842_6812A195 
-X-CRM114-Status: GOOD (  10.86  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190530_200226_674652_0785F6E9 
+X-CRM114-Status: GOOD (  12.89  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,38 +64,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: xiaoqian9@huawei.com, linux-kernel@vger.kernel.org, stable@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a debug level trace statement in the OMAP HwSpinlock driver
-probe function to print the number of hwlocks on a successful
-registration.
+When the instruction code under PC address is read through
+_probe_kernel_read in do_alignment,if the pte page corresponding
+to the code segment of PC address is reclaimed exactly at this time,
+the address mapping cannot be reconstructed because page fault_disable()
+is executed in _probe_kernel_read function,and the failure to obtain
+the instruction code of PC finally results in the unsuccessful repair
+operation.
+Thus we can modify the implementation of reading user-mode PC instruction
+before local_irq_enable to avoid the above risk.
+At the same time, adjust the sequence of code processing and optimize the
+process.
 
-Signed-off-by: Suman Anna <s-anna@ti.com>
+Signed-off-by: xiaoqian <xiaoqian9@huawei.com>
+Cc: stable@vger.kernel.org
 ---
- drivers/hwspinlock/omap_hwspinlock.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm/mm/alignment.c | 81 +++++++++++++++++++++++++++++++++----------------
+ 1 file changed, 55 insertions(+), 26 deletions(-)
 
-diff --git a/drivers/hwspinlock/omap_hwspinlock.c b/drivers/hwspinlock/omap_hwspinlock.c
-index a4d7a7bc863a..14e1a532ebb5 100644
---- a/drivers/hwspinlock/omap_hwspinlock.c
-+++ b/drivers/hwspinlock/omap_hwspinlock.c
-@@ -140,6 +140,9 @@ static int omap_hwspinlock_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto reg_fail;
+diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
+index e376883ab35b..4124b9ce3c70 100644
+--- a/arch/arm/mm/alignment.c
++++ b/arch/arm/mm/alignment.c
+@@ -76,6 +76,11 @@
+ #define IS_T32(hi16) \
+ 	(((hi16) & 0xe000) == 0xe000 && ((hi16) & 0x1800))
  
-+	dev_dbg(&pdev->dev, "Registered %d locks with HwSpinlock core\n",
-+		num_locks);
++#define INVALID_INSTR_MODE     0
++#define ARM_INSTR_MODE         1
++#define THUMB_INSTR_MODE       2
++#define THUMB2_INSTR_MODE      3
 +
- 	return 0;
+ static unsigned long ai_user;
+ static unsigned long ai_sys;
+ static void *ai_sys_last_pc;
+@@ -705,6 +710,48 @@ thumb2arm(u16 tinstr)
+ 	}
+ }
  
- reg_fail:
++static unsigned int
++fetch_usr_pc_instr(struct pt_regs *regs, unsigned long *pc_instrptr)
++{
++	unsigned int fault;
++	unsigned long instrptr;
++	unsigned long instr_mode = INVALID_INSTR_MODE;
++
++	instrptr = instruction_pointer(regs);
++
++	if (thumb_mode(regs)) {
++		u16 tinstr = 0;
++		u16 *ptr = (u16 *)(instrptr & ~1);
++
++		fault = probe_kernel_address(ptr, tinstr);
++		if (!fault) {
++			tinstr = __mem_to_opcode_thumb16(tinstr);
++			if (cpu_architecture() >= CPU_ARCH_ARMv7 &&
++			    IS_T32(tinstr)) {
++				/* Thumb-2 32-bit */
++				u16 tinstr2 = 0;
++
++				fault = probe_kernel_address(ptr + 1, tinstr2);
++				if (!fault) {
++					tinstr2 = __mem_to_opcode_thumb16(tinstr2);
++					*pc_instrptr = __opcode_thumb32_compose(tinstr, tinstr2);
++					instr_mode = THUMB2_INSTR_MODE;
++				}
++			} else {
++				*pc_instrptr = thumb2arm(tinstr);
++				instr_mode = THUMB_INSTR_MODE;
++			}
++		}
++	} else {
++		fault = probe_kernel_address((void *)instrptr, *pc_instrptr);
++		if (!fault) {
++			*pc_instrptr = __mem_to_opcode_arm(*pc_instrptr);
++			instr_mode = ARM_INSTR_MODE;
++		}
++	}
++	return instr_mode;
++}
++
+ /*
+  * Convert Thumb-2 32 bit LDM, STM, LDRD, STRD to equivalent instruction
+  * handlable by ARM alignment handler, also find the corresponding handler,
+@@ -775,42 +822,24 @@ do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+ 	unsigned long instr = 0, instrptr;
+ 	int (*handler)(unsigned long addr, unsigned long instr, struct pt_regs *regs);
+ 	unsigned int type;
+-	unsigned int fault;
+ 	u16 tinstr = 0;
+ 	int isize = 4;
+ 	int thumb2_32b = 0;
++	unsigned long pc_instr_mode;
++
++	pc_instr_mode = fetch_usr_pc_instr(regs, &instr);
+ 
+ 	if (interrupts_enabled(regs))
+ 		local_irq_enable();
+ 
+ 	instrptr = instruction_pointer(regs);
+-
+-	if (thumb_mode(regs)) {
+-		u16 *ptr = (u16 *)(instrptr & ~1);
+-		fault = probe_kernel_address(ptr, tinstr);
+-		tinstr = __mem_to_opcode_thumb16(tinstr);
+-		if (!fault) {
+-			if (cpu_architecture() >= CPU_ARCH_ARMv7 &&
+-			    IS_T32(tinstr)) {
+-				/* Thumb-2 32-bit */
+-				u16 tinst2 = 0;
+-				fault = probe_kernel_address(ptr + 1, tinst2);
+-				tinst2 = __mem_to_opcode_thumb16(tinst2);
+-				instr = __opcode_thumb32_compose(tinstr, tinst2);
+-				thumb2_32b = 1;
+-			} else {
+-				isize = 2;
+-				instr = thumb2arm(tinstr);
+-			}
+-		}
+-	} else {
+-		fault = probe_kernel_address((void *)instrptr, instr);
+-		instr = __mem_to_opcode_arm(instr);
+-	}
+-
+-	if (fault) {
++	if (pc_instr_mode == INVALID_INSTR_MODE) {
+ 		type = TYPE_FAULT;
+ 		goto bad_or_fault;
++	} else if (pc_instr_mode == THUMB_INSTR_MODE) {
++		isize = 2;
++	} else if (pc_instr_mode == THUMB2_INSTR_MODE) {
++		thumb2_32b = 1;
+ 	}
+ 
+ 	if (user_mode(regs))
 -- 
-2.21.0
+2.12.3
 
 
 _______________________________________________
