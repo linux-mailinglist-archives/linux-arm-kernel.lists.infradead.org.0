@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEE3130D1A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 13:13:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD2F130D1F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 13:14:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8K1uYvofym8WCSgYFxyel34DOqsGSp/UKrxVHSsd//Q=; b=PcV4n1HjM/YkTq
-	fWX1erhNW2d10Zc5WQTPXueOtdo3vfS23oeC60zHbgTdGcKyl2fEe6j64C5SNtn86cFkPBJ4oH6Nj
-	xjmwptz7K26qwB+3rRRtOHTAsGSLj+vt104F/vdC8woDkdZeeoXaBxqwAZKK1kuc/36WdHk3mkoGb
-	N4q/bUpze1gjTyQRy1yprSYNsXi27t5xYoJuugbg96ixFZAwoVyork5lZ4ZKg4Bw0teRCwgUmoX3q
-	T6JGk2TALGtxp8oGvYgLFacitwQsQAbDxBJD1kCsgRvyaTN9wsDUZ9NiGCfHKPHLTOEBkMSjA8LfR
-	MmZomnrRFzwNdDCE/HCw==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aMqibKqnofQQV+RvQPMoLX4A5l0DDaYVPnvEPyWRY3E=; b=CaXfdka/EPkUu/
+	zkjKeAE3Fo6EJd2kvLdPFuDY+OSy5biXLgjCexZ371TXphpSmy5zEiPyi48lGAHtrM0SCITjJXT5E
+	bMxreq08b0NyIVnxfDRwdgprwU45Q4OqGrsieuCybPGL07QH1my4ku+9qckU8fG5JBVcAFQ/+o0hF
+	VDzpV8r3P5TrL+hOYf79KeKXJq6ZT0NNtQAWPu83IYBQ5OrYAyw18dlxDHD0h2qCAFL3l1oTeIBOK
+	njH1YiwwX4XUhEJc/Gd0nrBIh6KPooA6xrD/352wdqfbXaEgUnvu7A31ttto4pJIcaRGf5/sTntdB
+	SVhc7xzXZZmyohcOTg1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWfTI-0001dV-1u; Fri, 31 May 2019 11:13:16 +0000
+	id 1hWfU4-0001tC-Oc; Fri, 31 May 2019 11:14:04 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWfTA-0001cu-O7
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 11:13:10 +0000
+ id 1hWfTx-0001sd-A1
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 11:13:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
- Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=xKwYum+NdkBywT3KdX8GLgUjDsYEDJi/LhH01e2YoKs=; b=YpOF1AmbgiMNCQAooVDALqb9p
- q6WcY2prqOXPzTArJB7zxCR4ywAW58HHokF3tRPIvi00uZuMdNRswKovvLoqY+jX6fSt+b9VFsHnq
- 82SzIEXRe4UxCIQfzd8PMT91+pYke3Jw5lNcksWVvWG34VwgmB40QyMpt9cAnobG/WCXtDM39aTbG
- kcfM2+7A4YbjC1sJlKYlQUucthphYhOoKqCHk2rxkCFQUl1v55dzfHae4lGSPVHt/gUU9r8j/gSnF
- lbOHTxBfqG/A5J7S1JpNkCaaGWMAjSRt/Ge0P3OWa3IJRDUwodR6Bx1mViJOSL10wJ+FYDYxo0hnv
- d2HEjccYQ==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:52740)
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
+ In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=8bjlRRQk+fTkUda6A12qG2OKezeVUJOTB3AnBDWrHLE=; b=VXlsy3cDvivDOr6KXVxYbnmIM8
+ joZVoF0PFIZdiB5fHbAqNhCcKA8xInT9eFUyvrKziyslsuIzM7jl64EBxVYX+IDA7mLytm7WmzFox
+ C2FiWpchXXP93ow2C/3OIAijU61d4NK/7rNpnoB52pMbrQcV9FxRmQbSNshpHJNgEHJ+WwIxZLPno
+ bAsFYrpd9LYUcQxjyMItPtR7eZ+1ya87nUYrLpOBRSh2znxY9BQm8FjhjDY1r0xeCXkUk85ANgICA
+ +/6f//501g9t921nnC2ZVLFV5+KCwLHU8Q8NxG/UJiVGjAwcG4Ox58s7MSz4qPTOtrJQugjsW32U4
+ 8OLKtpdQ==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([2002:4e20:1eda:1:222:68ff:fe15:37dd]:49054 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hWfT2-0000OD-2J; Fri, 31 May 2019 12:13:00 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hWfSz-0006FD-82; Fri, 31 May 2019 12:12:57 +0100
-Date: Fri, 31 May 2019 12:12:57 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org
-Subject: [PATCH 0/6] Convert sa1100 serial to use mctrl gpios
-Message-ID: <20190531111257.27hor6xgb3nsdghg@shell.armlinux.org.uk>
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1hWfTo-0000Od-I4; Fri, 31 May 2019 12:13:48 +0100
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
+ 4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
+ id 1hWfTn-0003fP-Rl; Fri, 31 May 2019 12:13:47 +0100
+In-Reply-To: <20190531111257.27hor6xgb3nsdghg@shell.armlinux.org.uk>
+References: <20190531111257.27hor6xgb3nsdghg@shell.armlinux.org.uk>
+From: Russell King <rmk+kernel@armlinux.org.uk>
+To: linux-arm-kernel@lists.infradead.org,linux-serial@vger.kernel.org
+Subject: [PATCH 1/6] serial: sa1100: add support for mctrl gpios
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
+Message-Id: <E1hWfTn-0003fP-Rl@rmk-PC.armlinux.org.uk>
+Date: Fri, 31 May 2019 12:13:47 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_041308_786717_B24F5628 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20190531_041357_345291_460167A0 
+X-CRM114-Status: GOOD (  16.39  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -91,31 +92,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series takes the next step along the path of cleaning up and
-modernising the sa11x0 code, concentrating on the sa1100 serial
-driver.  At the end of this conversion, we are left with collie
-being the only platform that uses the old platform data get_mctrl
-and set_mctrl methods.  As the locomo code is also used with PXA,
-this is left for a future cleanup.
+Add support for the generic mctrl gpio helper.  This will allow us to
+convert several board files to use the gpiod tables to assign GPIOs to
+serial ports, rather than needing to have private function callbacks.
 
-The first patch was previously acked quite some time ago.
+If the generic mctrl gpio helper fails, ignore the mctrl gpios rather
+than preventing the (possibly console) serial port from being created.
 
-I'm intending to send this to arm-soc.
+Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ drivers/tty/serial/Kconfig  |  1 +
+ drivers/tty/serial/sa1100.c | 42 ++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 39 insertions(+), 4 deletions(-)
 
- arch/arm/mach-sa1100/assabet.c  |  91 +++++++++++----------------------
- arch/arm/mach-sa1100/badge4.c   |   2 -
- arch/arm/mach-sa1100/h3xxx.c    |  64 ++++-------------------
- arch/arm/mach-sa1100/hackkit.c  |  48 ------------------
- arch/arm/mach-sa1100/neponset.c | 109 +++++++++++-----------------------------
- drivers/tty/serial/Kconfig      |   1 +
- drivers/tty/serial/sa1100.c     |  42 ++++++++++++++--
- 7 files changed, 106 insertions(+), 251 deletions(-)
-
-
+diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
+index 72966bc0ac76..f4372ac1a774 100644
+--- a/drivers/tty/serial/Kconfig
++++ b/drivers/tty/serial/Kconfig
+@@ -511,6 +511,7 @@ config SERIAL_SA1100
+ 	bool "SA1100 serial port support"
+ 	depends on ARCH_SA1100
+ 	select SERIAL_CORE
++	select SERIAL_MCTRL_GPIO if GPIOLIB
+ 	help
+ 	  If you have a machine based on a SA1100/SA1110 StrongARM(R) CPU you
+ 	  can enable its onboard serial port by enabling this option.
+diff --git a/drivers/tty/serial/sa1100.c b/drivers/tty/serial/sa1100.c
+index a399772be3fc..97bdfeccbea9 100644
+--- a/drivers/tty/serial/sa1100.c
++++ b/drivers/tty/serial/sa1100.c
+@@ -28,6 +28,8 @@
+ #include <mach/hardware.h>
+ #include <mach/irqs.h>
+ 
++#include "serial_mctrl_gpio.h"
++
+ /* We've been assigned a range on the "Low-density serial ports" major */
+ #define SERIAL_SA1100_MAJOR	204
+ #define MINOR_START		5
+@@ -77,6 +79,7 @@ struct sa1100_port {
+ 	struct uart_port	port;
+ 	struct timer_list	timer;
+ 	unsigned int		old_status;
++	struct mctrl_gpios	*gpios;
+ };
+ 
+ /*
+@@ -174,6 +177,8 @@ static void sa1100_enable_ms(struct uart_port *port)
+ 		container_of(port, struct sa1100_port, port);
+ 
+ 	mod_timer(&sport->timer, jiffies);
++
++	mctrl_gpio_enable_ms(sport->gpios);
+ }
+ 
+ static void
+@@ -322,11 +327,21 @@ static unsigned int sa1100_tx_empty(struct uart_port *port)
+ 
+ static unsigned int sa1100_get_mctrl(struct uart_port *port)
+ {
+-	return TIOCM_CTS | TIOCM_DSR | TIOCM_CAR;
++	struct sa1100_port *sport =
++		container_of(port, struct sa1100_port, port);
++	int ret = TIOCM_CTS | TIOCM_DSR | TIOCM_CAR;
++
++	mctrl_gpio_get(sport->gpios, &ret);
++
++	return ret;
+ }
+ 
+ static void sa1100_set_mctrl(struct uart_port *port, unsigned int mctrl)
+ {
++	struct sa1100_port *sport =
++		container_of(port, struct sa1100_port, port);
++
++	mctrl_gpio_set(sport->gpios, mctrl);
+ }
+ 
+ /*
+@@ -842,6 +857,27 @@ static int sa1100_serial_resume(struct platform_device *dev)
+ 	return 0;
+ }
+ 
++static int sa1100_serial_add_one_port(struct sa1100_port *sport, struct platform_device *dev)
++{
++	sport->port.dev = &dev->dev;
++	sport->gpios = mctrl_gpio_init_noauto(sport->port.dev, 0);
++	if (IS_ERR(sport->gpios)) {
++		int err = PTR_ERR(sport->gpios);
++
++		dev_err(sport->port.dev, "failed to get mctrl gpios: %d\n",
++			err);
++
++		if (err == -EPROBE_DEFER)
++			return err;
++
++		sport->gpios = NULL;
++	}
++
++	platform_set_drvdata(dev, sport);
++
++	return uart_add_one_port(&sa1100_reg, &sport->port);
++}
++
+ static int sa1100_serial_probe(struct platform_device *dev)
+ {
+ 	struct resource *res = dev->resource;
+@@ -856,9 +892,7 @@ static int sa1100_serial_probe(struct platform_device *dev)
+ 			if (sa1100_ports[i].port.mapbase != res->start)
+ 				continue;
+ 
+-			sa1100_ports[i].port.dev = &dev->dev;
+-			uart_add_one_port(&sa1100_reg, &sa1100_ports[i].port);
+-			platform_set_drvdata(dev, &sa1100_ports[i]);
++			sa1100_serial_add_one_port(&sa1100_ports[i], dev);
+ 			break;
+ 		}
+ 	}
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
