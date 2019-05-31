@@ -2,61 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D87B331177
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 17:39:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F5C9311CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 17:57:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kAMDoJkr22UkV94YDjOENmz+V+EyI1kM10swau3DYmU=; b=GQcOBPKLJY9+5l
-	p6ZNxwDnf0V8zGyOZPhx6V6+JqiN5eoFlSqFxg+5s2GjuIbXklA8vSvvT3Twao9wmZsz8l+N7LD8Y
-	6hc0X5xMhbcIs9ecm2y8crU7vCN6g2m1ZMfmyJkbOJRERHJpnxMC/IseqabFYw/OjL54LHPAyAAGn
-	PKNKT3DoWC+Abt3Bgv3TElOOqrAJ7lj27dmAsOp4sa/kTN09IkYsqzA0D/WyFVbC8g8IAIu5dllgu
-	Hfyon+gkfvMPwKq4J0jLdGQZnsT4jgGwXvKW5k4ufBuzq/Hkkwcj0KwnCU8PjUWETD/4LcbZ6/4vs
-	G164AnDhYse9onc5Zf5A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+8rw3Jx7YmYC2oLQV8sIp249udB6q7zPZZ3lxmkn1lQ=; b=SuiF6nI+nOVWh7
+	9xafpp/eACtlLs9S21Q03KaJMOpy7+T5Z9csguDpgkyay0iYiEM2bJBCsng8GHUEotcw099JT/Onf
+	aO0wUTbZ/fCR1sO7EvOD9ZL9hjc1Lz4oPZaBdozhRmWlbUJ+awJTBH3h+Xu79VqEyoULlrZWTT3Bc
+	ZZzcnpnkMP5XDetcMq9qWDxDg2wernwE7Ou5Vj2uXVSar2CH5E6MJf4hAR1GcS3tsJ66j9Ka2pZQd
+	cLxnQHMFRexH7/l8sTQ4F8oVr19iIj7mLS5yhx7V9IsCSugU+23NdtCoM/tudecs9BmoP/4gBJfvu
+	tQl6MnhEpD61HDkpN+CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWjdF-0000F9-7d; Fri, 31 May 2019 15:39:49 +0000
+	id 1hWju9-0006Jf-Qk; Fri, 31 May 2019 15:57:17 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWjd8-0000Ei-0m
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 15:39:43 +0000
+ id 1hWju2-0006Iy-82
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 15:57:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:Reply-To:Content-ID
- :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
- Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bgL2y3/j5lT8VJv1X4icMHRSKQxSkhL0zm7BgJmmyuc=; b=CRhKa0d7JKJS2eFUydT0k7hFv/
- jh9nJDgyVz6OdCJrr0pqpLVRxfRLNlmf6x/IWwJk/7o5xgWNVoVZ/68huvgK5GunC8iL/8YYtsyBY
- gTyHMPzCo1ELx1VTetg5rQrsF4vrV/RID6Td6Z/kXwt+0LRbsGKSZjSubMO6WhQ8OiPFojMyfFhsH
- ZOGMjh/VNxdKRKahT097OgFHGRQCuMfYGN/id3vXL6xzCWtWJurv//zVbc53JESXjP7hirL0j9+4c
- /SUYqEl14k4UggLLvN3aB3gfjlxYxPugtWtEAOe7JHfPVLO7amEW1U3OrFBuXhRb/HnNsxnNeyZQO
- DK47eJCA==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:50342 helo=rmk-PC.armlinux.org.uk)
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=1qsXgMdZdZCVb0zGvBJg48inoUnxWB9wnqlIe6TKCKQ=; b=lMzx7007xbCUygcV/Kwz6yH5h
+ pJYhIa7kqEoC8Rw1iqQw3xkJOSwAesHfalzwzBCi8y7A/9zGdvLks6XMBdMoCxpcIZ/MkHZhMWgAB
+ JX5K+LbyeV5/uhWl3BShi2oZ/cnTfbzsHols4Q+n0888jF51iq9bCqOif3FboCBteN6zZnZ9ahfzN
+ uV84PRibXhMiD7FLhG5VoedR1rTjvueaPF8MSngs1qWniJ+iogk5hfAvaq5Ng7EOXJmoC73nfBq4Z
+ HDznL08UeMSuZLvIw1Oj+mgg+Mm1okBQzjokAa89kNYtAMeUYBvob8jPJd+Yo+XGrgNX5fQmdTz4Z
+ qydNMxa1A==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:52758)
  by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1hWjcz-0001c9-SC; Fri, 31 May 2019 16:39:33 +0100
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
- 4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
- id 1hWjcz-0008Eq-BV; Fri, 31 May 2019 16:39:33 +0100
-From: Russell King <rmk+kernel@armlinux.org.uk>
-To: Robert Jarzmik <robert.jarzmik@free.fr>
-Subject: [PATCH] ARM: pxa/lubbock: remove lubbock_set_misc_wr() from global
- view
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hWjtx-0001gZ-3z; Fri, 31 May 2019 16:57:05 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hWjts-0006T6-L2; Fri, 31 May 2019 16:57:00 +0100
+Date: Fri, 31 May 2019 16:57:00 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH] serial: sa1100: add note about modem control signals
+Message-ID: <20190531155700.crrawgf3iot2sm2t@shell.armlinux.org.uk>
+References: <20190531151032.tfrl7yqph6wsg5pl@pengutronix.de>
+ <E1hWjO0-00087g-7y@rmk-PC.armlinux.org.uk>
+ <20190531153135.sboekptwx4jxlpeg@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1hWjcz-0008Eq-BV@rmk-PC.armlinux.org.uk>
-Date: Fri, 31 May 2019 16:39:33 +0100
+In-Reply-To: <20190531153135.sboekptwx4jxlpeg@pengutronix.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_083942_063951_A41DCA6C 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190531_085710_286468_5D46F4D4 
+X-CRM114-Status: GOOD (  16.77  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -85,59 +88,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Haojian Zhuang <haojian.zhuang@gmail.com>, Daniel Mack <daniel@zonque.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jiri Slaby <jslaby@suse.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are now no users of lubbock_set_misc_wr() outside lubbock.c, so
-make this function static.
+On Fri, May 31, 2019 at 05:31:35PM +0200, Uwe Kleine-K=F6nig wrote:
+> Hello Russell,
+> =
 
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
----
-Hi Robert,
+> On Fri, May 31, 2019 at 04:24:04PM +0100, Russell King wrote:
+> > As suggested by Uwe, add a note indicating that the modem control
+> > signals do not support interrupts, which precludes the driver from
+> > using mctrl_gpio_init().
+> > =
 
-Please merge this patch, thanks.
+> > Suggested-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+> > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> > ---
+> > =
 
- arch/arm/mach-pxa/include/mach/lubbock.h | 4 ----
- arch/arm/mach-pxa/lubbock.c              | 3 +--
- 2 files changed, 1 insertion(+), 6 deletions(-)
+> > Uwe, something like this?
+> > =
 
-diff --git a/arch/arm/mach-pxa/include/mach/lubbock.h b/arch/arm/mach-pxa/include/mach/lubbock.h
-index 1eecf794acd2..9926a5d741f7 100644
---- a/arch/arm/mach-pxa/include/mach/lubbock.h
-+++ b/arch/arm/mach-pxa/include/mach/lubbock.h
-@@ -50,7 +50,3 @@
- #define LUBBOCK_LAST_IRQ	LUBBOCK_IRQ(6)
- 
- #define LUBBOCK_SA1111_IRQ_BASE	(LUBBOCK_NR_IRQS + 32)
--
--#ifndef __ASSEMBLY__
--extern void lubbock_set_misc_wr(unsigned int mask, unsigned int set);
--#endif
-diff --git a/arch/arm/mach-pxa/lubbock.c b/arch/arm/mach-pxa/lubbock.c
-index c1bd0d544981..9fca56dbe8d5 100644
---- a/arch/arm/mach-pxa/lubbock.c
-+++ b/arch/arm/mach-pxa/lubbock.c
-@@ -119,12 +119,11 @@ void lubbock_set_hexled(uint32_t value)
- 
- static struct gpio_chip *lubbock_misc_wr_gc;
- 
--void lubbock_set_misc_wr(unsigned int mask, unsigned int set)
-+static void lubbock_set_misc_wr(unsigned int mask, unsigned int set)
- {
- 	unsigned long m = mask, v = set;
- 	lubbock_misc_wr_gc->set_multiple(lubbock_misc_wr_gc, &m, &v);
- }
--EXPORT_SYMBOL(lubbock_set_misc_wr);
- 
- static int lubbock_udc_is_connected(void)
- {
--- 
-2.7.4
+> >  drivers/tty/serial/sa1100.c | 3 +++
+> >  1 file changed, 3 insertions(+)
+> > =
 
+> > diff --git a/drivers/tty/serial/sa1100.c b/drivers/tty/serial/sa1100.c
+> > index a6b4309b62fc..d7dbf0576be8 100644
+> > --- a/drivers/tty/serial/sa1100.c
+> > +++ b/drivers/tty/serial/sa1100.c
+> > @@ -949,6 +949,9 @@ static int sa1100_serial_resume(struct platform_dev=
+ice *dev)
+> >  static int sa1100_serial_add_one_port(struct sa1100_port *sport, struc=
+t platform_device *dev)
+> >  {
+> >  	sport->port.dev =3D &dev->dev;
+> > +
+> > +	// GPIO driver does not support interrupts for these modem
+> > +	// control signals, so the serial driver polls them.
+> >  	sport->gpios =3D mctrl_gpio_init_noauto(sport->port.dev, 0);
+> >  	if (IS_ERR(sport->gpios)) {
+> >  		int err =3D PTR_ERR(sport->gpios);
+> =
+
+> I would mention that because of this mctrl_gpio_init cannot be used.
+
+Ok.
+
+> (And I would have expected C-like comments).
+
+It seems that Linus has changed his opinion on C99 commenting style,
+from "it's not real C" to "I prefer it":
+
+https://lore.kernel.org/patchwork/patch/852060/
+
+Yes, this is mostly about the SPDX commenting style, but Linus seems to
+be expressing a general preference towards "//" style comments over
+"/* */" comments, especially for new comments.
+
+Specifically see replies #14 and #18, especially #18 where the
+discussion moves towards trailing-line comments for structure members.
+
+-- =
+
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
+up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
