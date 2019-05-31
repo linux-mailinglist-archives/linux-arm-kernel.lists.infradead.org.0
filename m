@@ -2,57 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C73B1306D4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 05:02:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09CE0306D7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 05:04:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/2ulXu0fSWTUk+j7ooVVEdIS+IJ1bFbm5bqqdH1qWhc=; b=TSnIFwqyyoTqp7
-	ooQlo0ZOw+P/VPh71elHv6i+8Uk/F75Dcuc5ITAgThdAAM+N9o3y2J+twdZncXu9B9CV0RC1r/E9G
-	9dQbxpYlwm7OmqzwLB581CmQhgHOyeQYuZoSCCdgdJInYrnFde7mZdhgl/YbMM1VE2zUNNk44E0D/
-	8aUDa6YWVCtxH1i3BwFiVxDYjXR4M0NV1Z4nxcWuImLweRi4rGVdcv/7Bfoc0AjQKIuIvW3NVHsiL
-	zm4PAHE8T1eEmmER0fDu36ndr2XgKR3CDErXyXFKTBeV0BjzjTc5vRCxiN+Q4C18liUYcW9Flijg8
-	Sa809gPDsfwkT4uw4uDg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZgA3vL5QxL6NyDkafSaTvk3omaaxIK17FJj09vP4axk=; b=J56d97seysg7u4
+	AJ+rLtBuaeCyasUu0+JimzTM1emqVVBYjHB+5uO8EeGWgUaSLGNMycqdijhq+vBvKl0aCSNG+Jwid
+	CEKKj6wri97TM+4d7tOzEQQGvNgPGewJFM0x1zpxr6IBhFAYQr9Q0CCz7rRjdE1xdQ0OHb/GmG6wQ
+	+KtVMkrtO0cpa35Wa6HJallX64jFY5B2XwxTCB8Fk94oGgr/dYR5A+bWAK+W0jtYsxuNu+quUEc41
+	WqIreW0u/li7t0PBXXVS6xD0A1VlKLCU7EQbxar1a7NThK93G6pvuUE8j2KwGrpuRmV2fl/pTrzEH
+	gPKdcE4HsiGt8jxze1vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWXoO-0003oK-MF; Fri, 31 May 2019 03:02:32 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1hWXpp-00045j-7b; Fri, 31 May 2019 03:04:01 +0000
+Received: from mail-it1-f193.google.com ([209.85.166.193])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWXoI-0003nb-Au
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 03:02:28 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id B09E3763727074F9058B;
- Fri, 31 May 2019 11:02:18 +0800 (CST)
-Received: from huawei.com (10.67.188.14) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Fri, 31 May 2019
- 11:02:11 +0800
-From: xiaoqian <xiaoqian9@huawei.com>
-To: <linux@armlinux.org.uk>, <rafael.j.wysocki@intel.com>,
- <ebiederm@xmission.com>, <rppt@linux.ibm.com>, <pmladek@suse.com>,
- <bhelgaas@google.com>, <sakari.ailus@linux.intel.com>,
- <linux-arm-kernel@lists.infradead.org>, <gregkh@linuxfoundation.org>
-Subject: [PATCH] Subject:alignment:fetch pc-instr before irq_enable
-Date: Fri, 31 May 2019 11:01:20 +0800
-Message-ID: <1559271680-7486-1-git-send-email-xiaoqian9@huawei.com>
-X-Mailer: git-send-email 1.8.5.6
+ id 1hWXph-00045I-Pw
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 03:03:55 +0000
+Received: by mail-it1-f193.google.com with SMTP id a186so13469769itg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 20:03:53 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lXjk4EabF/9GMSniDWqhkev/Ug2c+H2S6xMvNNJvkwQ=;
+ b=dAx7HX3zNeCpgjxnYQm+q73GU8D+o3KbBzc8AmDXOCGpqbYCPBtQuUZaLsTE8Wc6Sy
+ D68Z4XCgZ13vESIu1HBIUjx1p8568dLgZdP3V69c4r1HlGX9/s2vQb7KWq7lVrraK5Gi
+ 2eo9JjETCrNLybfHwBHJyw8UyzjAhHSNdskpPSJAUnO4UFbnMSu+aPpIFfulzfmQOpqM
+ Le2OwWslXsnJRILZ3aJiyEqUXXhtyxE9aJCkHSla6avWr1v3HROwqiPIP55U3K3N7lDo
+ cbVGFU+HzMln/SivInL9AhEg5b4UHxdJTviYJK9A1+7OoX+LDdpUKSs64GmpmgZcnhw8
+ U0/w==
+X-Gm-Message-State: APjAAAVT9ZS9J3PcsHo4e9l+20zAHqvlVLT/CHrFGw68aLZOghhspRRM
+ Bm/u3ubNNaNLaDpwYSWgbTTc89qpgRE=
+X-Google-Smtp-Source: APXvYqxJ/wg+/Sy0umVkuxhpsLYoFhp7zoSaXGwC/ilKWT120G1i0DtVUGrwFOFZ4b/CGlAFHow06Q==
+X-Received: by 2002:a24:edce:: with SMTP id r197mr5402393ith.147.1559271832102; 
+ Thu, 30 May 2019 20:03:52 -0700 (PDT)
+Received: from mail-io1-f43.google.com (mail-io1-f43.google.com.
+ [209.85.166.43])
+ by smtp.gmail.com with ESMTPSA id s24sm715286ioe.63.2019.05.30.20.03.51
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 30 May 2019 20:03:51 -0700 (PDT)
+Received: by mail-io1-f43.google.com with SMTP id r185so6957275iod.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 May 2019 20:03:51 -0700 (PDT)
+X-Received: by 2002:a5e:8505:: with SMTP id i5mr5159405ioj.101.1559271830934; 
+ Thu, 30 May 2019 20:03:50 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.67.188.14]
-X-CFilter-Loop: Reflected
+References: <20190527120910.18964-1-maxime.ripard@bootlin.com>
+ <CAGb2v66uhrm20BwmODkPZjSM6Ek+xEg23w2Cs49ikW3WcU1Lqg@mail.gmail.com>
+ <20190530185347.aql4znrk5msk2q6o@flea>
+In-Reply-To: <20190530185347.aql4znrk5msk2q6o@flea>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Fri, 31 May 2019 11:03:39 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66apz30Jy1BjU==s1a5Vwcr6GJsaswNqORSZc8fFKmzWQ@mail.gmail.com>
+Message-ID: <CAGb2v66apz30Jy1BjU==s1a5Vwcr6GJsaswNqORSZc8fFKmzWQ@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: display: Convert Allwinner DSI to a schema
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_200226_674652_0785F6E9 
-X-CRM114-Status: GOOD (  12.89  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190530_200353_837224_5352B0EC 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.193 listed in list.dnswl.org]
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.193 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,149 +97,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: xiaoqian9@huawei.com, linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Cc: Sean Paul <seanpaul@chromium.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ devicetree <devicetree@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the instruction code under PC address is read through
-_probe_kernel_read in do_alignment,if the pte page corresponding
-to the code segment of PC address is reclaimed exactly at this time,
-the address mapping cannot be reconstructed because page fault_disable()
-is executed in _probe_kernel_read function,and the failure to obtain
-the instruction code of PC finally results in the unsuccessful repair
-operation.
-Thus we can modify the implementation of reading user-mode PC instruction
-before local_irq_enable to avoid the above risk.
-At the same time, adjust the sequence of code processing and optimize the
-process.
+On Fri, May 31, 2019 at 2:54 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> Hi,
+>
+> On Thu, May 30, 2019 at 09:48:02PM +0800, Chen-Yu Tsai wrote:
+> > On Mon, May 27, 2019 at 8:09 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > >
+> > > The Allwinner SoCs have a MIPI-DSI and MIPI-D-PHY controllers supported in
+> > > Linux, with a matching Device Tree binding.
+> > >
+> > > Now that we have the DT validation in place, let's convert the device tree
+> > > bindings for that controller over to a YAML schemas.
+> > >
+> > > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> >
+> > Looks good to me. However not sure why you replaced the clock index macros
+> > with raw numbers.
+>
+> The examples are compiled now, and unfortunately we can't use the
+> defines at this point.
 
-Signed-off-by: xiaoqian <xiaoqian9@huawei.com>
-Cc: stable@vger.kernel.org
----
- arch/arm/mm/alignment.c | 81 +++++++++++++++++++++++++++++++++----------------
- 1 file changed, 55 insertions(+), 26 deletions(-)
-
-diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
-index e376883ab35b..4124b9ce3c70 100644
---- a/arch/arm/mm/alignment.c
-+++ b/arch/arm/mm/alignment.c
-@@ -76,6 +76,11 @@
- #define IS_T32(hi16) \
- 	(((hi16) & 0xe000) == 0xe000 && ((hi16) & 0x1800))
- 
-+#define INVALID_INSTR_MODE     0
-+#define ARM_INSTR_MODE         1
-+#define THUMB_INSTR_MODE       2
-+#define THUMB2_INSTR_MODE      3
-+
- static unsigned long ai_user;
- static unsigned long ai_sys;
- static void *ai_sys_last_pc;
-@@ -705,6 +710,48 @@ thumb2arm(u16 tinstr)
- 	}
- }
- 
-+static unsigned int
-+fetch_usr_pc_instr(struct pt_regs *regs, unsigned long *pc_instrptr)
-+{
-+	unsigned int fault;
-+	unsigned long instrptr;
-+	unsigned long instr_mode = INVALID_INSTR_MODE;
-+
-+	instrptr = instruction_pointer(regs);
-+
-+	if (thumb_mode(regs)) {
-+		u16 tinstr = 0;
-+		u16 *ptr = (u16 *)(instrptr & ~1);
-+
-+		fault = probe_kernel_address(ptr, tinstr);
-+		if (!fault) {
-+			tinstr = __mem_to_opcode_thumb16(tinstr);
-+			if (cpu_architecture() >= CPU_ARCH_ARMv7 &&
-+			    IS_T32(tinstr)) {
-+				/* Thumb-2 32-bit */
-+				u16 tinstr2 = 0;
-+
-+				fault = probe_kernel_address(ptr + 1, tinstr2);
-+				if (!fault) {
-+					tinstr2 = __mem_to_opcode_thumb16(tinstr2);
-+					*pc_instrptr = __opcode_thumb32_compose(tinstr, tinstr2);
-+					instr_mode = THUMB2_INSTR_MODE;
-+				}
-+			} else {
-+				*pc_instrptr = thumb2arm(tinstr);
-+				instr_mode = THUMB_INSTR_MODE;
-+			}
-+		}
-+	} else {
-+		fault = probe_kernel_address((void *)instrptr, *pc_instrptr);
-+		if (!fault) {
-+			*pc_instrptr = __mem_to_opcode_arm(*pc_instrptr);
-+			instr_mode = ARM_INSTR_MODE;
-+		}
-+	}
-+	return instr_mode;
-+}
-+
- /*
-  * Convert Thumb-2 32 bit LDM, STM, LDRD, STRD to equivalent instruction
-  * handlable by ARM alignment handler, also find the corresponding handler,
-@@ -775,42 +822,24 @@ do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
- 	unsigned long instr = 0, instrptr;
- 	int (*handler)(unsigned long addr, unsigned long instr, struct pt_regs *regs);
- 	unsigned int type;
--	unsigned int fault;
- 	u16 tinstr = 0;
- 	int isize = 4;
- 	int thumb2_32b = 0;
-+	unsigned long pc_instr_mode;
-+
-+	pc_instr_mode = fetch_usr_pc_instr(regs, &instr);
- 
- 	if (interrupts_enabled(regs))
- 		local_irq_enable();
- 
- 	instrptr = instruction_pointer(regs);
--
--	if (thumb_mode(regs)) {
--		u16 *ptr = (u16 *)(instrptr & ~1);
--		fault = probe_kernel_address(ptr, tinstr);
--		tinstr = __mem_to_opcode_thumb16(tinstr);
--		if (!fault) {
--			if (cpu_architecture() >= CPU_ARCH_ARMv7 &&
--			    IS_T32(tinstr)) {
--				/* Thumb-2 32-bit */
--				u16 tinst2 = 0;
--				fault = probe_kernel_address(ptr + 1, tinst2);
--				tinst2 = __mem_to_opcode_thumb16(tinst2);
--				instr = __opcode_thumb32_compose(tinstr, tinst2);
--				thumb2_32b = 1;
--			} else {
--				isize = 2;
--				instr = thumb2arm(tinstr);
--			}
--		}
--	} else {
--		fault = probe_kernel_address((void *)instrptr, instr);
--		instr = __mem_to_opcode_arm(instr);
--	}
--
--	if (fault) {
-+	if (pc_instr_mode == INVALID_INSTR_MODE) {
- 		type = TYPE_FAULT;
- 		goto bad_or_fault;
-+	} else if (pc_instr_mode == THUMB_INSTR_MODE) {
-+		isize = 2;
-+	} else if (pc_instr_mode == THUMB2_INSTR_MODE) {
-+		thumb2_32b = 1;
- 	}
- 
- 	if (user_mode(regs))
--- 
-2.12.3
-
+That was what I suspected. Thanks.
+My Reviewed-by still stands.
 
 _______________________________________________
 linux-arm-kernel mailing list
