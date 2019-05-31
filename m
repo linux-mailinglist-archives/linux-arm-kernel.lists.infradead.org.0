@@ -2,61 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0311F310C2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 16:59:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C8FD310D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 17:09:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1MDMBGGo6TWGP+5BfQXI5fzLGqsSwfgG7jaOGbkGB0I=; b=WNxYqM9F8x9Ceb
-	jqV9CcALhTKIUjtHIRxujDVvcxo4/MUFp3x42emJBL4/FFpRsmZh7sHmnu147URuF5PdS0b1SCGpd
-	9wQKi5XDRehovENm41PbK01GvHvhP36dXzOtYALR8ez4YRZn6xyx2ZG3q8eWbNl3oyJKOJeRCJRSf
-	so/rBTr1/xeKjzM+Q8D+V5v/B9dyLmPNIQV9+ULYDWQSKXo5/X8WQfh1gjXp1LNU26UA6dzFzgtSd
-	uB9ySI7hzD86k1RmCPuEDstTuvvToz64Kv/vLGndN5FAgtbukKN0EMY58vs5/NWcwQZp8DBbG7Mfh
-	HQyIaq3DLFS0egiW0n7Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=irFxKLffukQNMEYmwCPHsaljef2I6yPxwNc0KCcf330=; b=R1AUisNIu5GKdSDRQHbK0z5mM
+	ZJKseK+1ixYCi0jXpOKK1Etb6eSNRDMkCenWCqlZfX9yC2/2CUcbcWaoi0IzHhpD6pXaqqK2ZOmku
+	OXq6Vg+g249fGkq5u9RdKTmfLeZb+RYWOEWGRqQwFGC5wfT3Ri/Uvyf9UL/uzXgSQdqHK9vdSkAiH
+	DEgZXu7KOX/PP4HUU8zz4KDK8DNfQgZd2SFLz4MZ5xEXlHBldxRY/D+RyZcnjLSXiNmsbOAzZ9JGS
+	dALFPp1F9JziFJ7jRoxrx4DRy78C3sqTnH4+appJ73H+Ds//awyzgclgLsl5HWafTUhpvQJI2/0Jm
+	fgWDGNJIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWj0D-0001U5-HU; Fri, 31 May 2019 14:59:29 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWj03-0001TG-Di
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 14:59:22 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 57F013078AAE;
- Fri, 31 May 2019 14:59:10 +0000 (UTC)
-Received: from ovpn-112-17.rdu2.redhat.com (ovpn-112-17.rdu2.redhat.com
- [10.10.112.17])
- by smtp.corp.redhat.com (Postfix) with ESMTP id D8202891B0;
- Fri, 31 May 2019 14:58:59 +0000 (UTC)
-Message-ID: <e75cd1c111233fdc05f47017046a6b0f0c97673a.camel@redhat.com>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-From: Dan Williams <dcbw@redhat.com>
-To: Alex Elder <elder@linaro.org>, davem@davemloft.net, arnd@arndb.de, 
- bjorn.andersson@linaro.org, ilias.apalodimas@linaro.org
-Date: Fri, 31 May 2019 09:58:58 -0500
-In-Reply-To: <20190531035348.7194-1-elder@linaro.org>
-References: <20190531035348.7194-1-elder@linaro.org>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+	id 1hWj9W-00054m-2G; Fri, 31 May 2019 15:09:06 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWj9O-00054E-80
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 15:08:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA29F341;
+ Fri, 31 May 2019 08:08:55 -0700 (PDT)
+Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0BAD73F5AF;
+ Fri, 31 May 2019 08:08:53 -0700 (PDT)
+Subject: Re: [RFC v2 3/7] arm64: cpufeature: handle conflicts based on
+ capability
+To: kristina.martsenko@arm.com, linux-arm-kernel@lists.infradead.org
+References: <20190529190332.29753-1-kristina.martsenko@arm.com>
+ <20190529190332.29753-4-kristina.martsenko@arm.com>
+ <e4ab4a88-9e14-4d2b-e89a-6ea3202bcfd1@arm.com>
+ <254e656a-9fa7-3bf7-9d76-c1b30e2b394a@arm.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <c3aee191-39b1-1ad5-f62b-3ab38cf535ed@arm.com>
+Date: Fri, 31 May 2019 16:08:52 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.48]); Fri, 31 May 2019 14:59:13 +0000 (UTC)
+In-Reply-To: <254e656a-9fa7-3bf7-9d76-c1b30e2b394a@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_075919_509535_49AA08B1 
-X-CRM114-Status: GOOD (  31.80  )
+X-CRM114-CacheID: sfid-20190531_080858_292161_DB4770AB 
+X-CRM114-Status: GOOD (  19.21  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -69,216 +67,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, syadagir@codeaurora.org, ejcaruso@google.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, evgreen@chromium.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- subashab@codeaurora.org, linux-soc@vger.kernel.org, abhishek.esse@gmail.com,
- cpratapa@codeaurora.org, benchan@google.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, keescook@chromium.org, ard.biesheuvel@linaro.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, ramana.radhakrishnan@arm.com,
+ Amit.Kachhap@arm.com, dave.martin@arm.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-05-30 at 22:53 -0500, Alex Elder wrote:
-> This series presents the driver for the Qualcomm IP Accelerator
-> (IPA).
-> 
-> This is version 2 of the series.  This version has addressed almost
-> all of the feedback received in the first version:
->   
-> https://lore.kernel.org/lkml/20190512012508.10608-1-elder@linaro.org/
-> More detail is included in the individual patches, but here is a
-> high-level summary of what's changed since then:
->   - Two spinlocks have been removed.
->       - The code for enabling and disabling endpoint interrupts has
->         been simplified considerably, and the spinlock is no longer
-> 	required
->       - A spinlock used when updating ring buffer pointers is no
->         longer needed.  Integers indexing the ring are used instead
-> 	(and they don't even have to be atomic).
->   - One spinlock remains to protect list updates, but it is always
->     acquired using spin_lock_bh() (no more irqsave).
->   - Information about the queueing and completion of messages is now
->     supplied to the network stack in batches rather than one at a
->     time.
->   - I/O completion handling has been simplified, with the IRQ
->     handler now consisting mainly of disabling the interrupt and
->     calling napi_schedule().
->   - Some comments have been updated and improved througout.
-> 
-> What follows is the introduction supplied with v1 of the series.
-> 
-> -----
-> 
-> The IPA is a component present in some Qualcomm SoCs that allows
-> network functions such as aggregation, filtering, routing, and NAT
-> to be performed without active involvement of the main application
-> processor (AP).
-> 
-> Initially, these advanced features are disabled; the IPA driver
-> simply provides a network interface that makes the modem's LTE
-> network available to the AP.  In addition, only support for the
-> IPA found in the Qualcomm SDM845 SoC is provided.
-
-My question from the Nov 2018 IPA rmnet driver still stands; how does
-this relate to net/ethernet/qualcomm/rmnet/ if at all? And if this is
-really just a netdev talking to the IPA itself and unrelated to
-net/ethernet/qualcomm/rmnet, let's call it "ipa%d" and stop cargo-
-culting rmnet around just because it happens to be a net driver for a
-QC SoC.
-
-Is the firmware that the driver loads already in linux-firmware or
-going to be there soon?
-
-How does the driver support multiple PDNs (eg PDP or EPS contexts) that
-are enabled through the control plane via QMI messages? I couldn't
-quite find that out.
-
-Thanks,
-Dan
-
-> This code is derived from a driver developed internally by Qualcomm.
-> A version of the original source can be seen here:
->   https://source.codeaurora.org/quic/la/kernel/msm-4.9/tree
-> in the "drivers/platform/msm/ipa" directory.  Many were involved in
-> developing this, but the following individuals deserve explicit
-> acknowledgement for their substantial contributions:
-> 
->     Abhishek Choubey
->     Ady Abraham
->     Chaitanya Pratapa
->     David Arinzon
->     Ghanim Fodi
->     Gidon Studinski
->     Ravi Gummadidala
->     Shihuan Liu
->     Skylar Chang
-> 
-> A version of this code was posted in November 2018 as an RFC.
->   
-> https://lore.kernel.org/lkml/20181107003250.5832-1-elder@linaro.org/
-> All feedback received was addressed.  The code has undergone
-> considerable further rework since that time, and most of the
-> "future work" described then has now been completed.
-> 
-> This code is available in buildable form here, based on kernel
-> v5.2-rc1:
->   remote: ssh://git@git.linaro.org/people/alex.elder/linux.git
->   branch: ipa-v2_kernel-v5.2-rc2
->     75adf2ac1266 arm64: defconfig: enable build of IPA code
-> 
-> The branch depends on a commit now found in in net-next.  It has
-> been cherry-picked, and (in this branch) has this commit ID:
->   13c627b5a078 net: qualcomm: rmnet: Move common struct definitions
-> to include
-> by 
-> 
-> 					-Alex
-> 
-> Alex Elder (17):
->   bitfield.h: add FIELD_MAX() and field_max()
->   dt-bindings: soc: qcom: add IPA bindings
->   soc: qcom: ipa: main code
->   soc: qcom: ipa: configuration data
->   soc: qcom: ipa: clocking, interrupts, and memory
->   soc: qcom: ipa: GSI headers
->   soc: qcom: ipa: the generic software interface
->   soc: qcom: ipa: GSI transactions
->   soc: qcom: ipa: IPA interface to GSI
->   soc: qcom: ipa: IPA endpoints
->   soc: qcom: ipa: immediate commands
->   soc: qcom: ipa: IPA network device and microcontroller
->   soc: qcom: ipa: AP/modem communications
->   soc: qcom: ipa: support build of IPA code
->   MAINTAINERS: add entry for the Qualcomm IPA driver
->   arm64: dts: sdm845: add IPA information
->   arm64: defconfig: enable build of IPA code
-> 
->  .../devicetree/bindings/net/qcom,ipa.yaml     |  180 ++
->  MAINTAINERS                                   |    6 +
->  arch/arm64/boot/dts/qcom/sdm845.dtsi          |   51 +
->  arch/arm64/configs/defconfig                  |    1 +
->  drivers/net/Kconfig                           |    2 +
->  drivers/net/Makefile                          |    1 +
->  drivers/net/ipa/Kconfig                       |   16 +
->  drivers/net/ipa/Makefile                      |    7 +
->  drivers/net/ipa/gsi.c                         | 1635
-> +++++++++++++++++
->  drivers/net/ipa/gsi.h                         |  246 +++
->  drivers/net/ipa/gsi_private.h                 |  148 ++
->  drivers/net/ipa/gsi_reg.h                     |  376 ++++
->  drivers/net/ipa/gsi_trans.c                   |  624 +++++++
->  drivers/net/ipa/gsi_trans.h                   |  116 ++
->  drivers/net/ipa/ipa.h                         |  131 ++
->  drivers/net/ipa/ipa_clock.c                   |  297 +++
->  drivers/net/ipa/ipa_clock.h                   |   52 +
->  drivers/net/ipa/ipa_cmd.c                     |  377 ++++
->  drivers/net/ipa/ipa_cmd.h                     |  116 ++
->  drivers/net/ipa/ipa_data-sdm845.c             |  245 +++
->  drivers/net/ipa/ipa_data.h                    |  267 +++
->  drivers/net/ipa/ipa_endpoint.c                | 1283 +++++++++++++
->  drivers/net/ipa/ipa_endpoint.h                |   97 +
->  drivers/net/ipa/ipa_gsi.c                     |   48 +
->  drivers/net/ipa/ipa_gsi.h                     |   49 +
->  drivers/net/ipa/ipa_interrupt.c               |  279 +++
->  drivers/net/ipa/ipa_interrupt.h               |   53 +
->  drivers/net/ipa/ipa_main.c                    |  921 ++++++++++
->  drivers/net/ipa/ipa_mem.c                     |  234 +++
->  drivers/net/ipa/ipa_mem.h                     |   83 +
->  drivers/net/ipa/ipa_netdev.c                  |  251 +++
->  drivers/net/ipa/ipa_netdev.h                  |   24 +
->  drivers/net/ipa/ipa_qmi.c                     |  402 ++++
->  drivers/net/ipa/ipa_qmi.h                     |   35 +
->  drivers/net/ipa/ipa_qmi_msg.c                 |  583 ++++++
->  drivers/net/ipa/ipa_qmi_msg.h                 |  238 +++
->  drivers/net/ipa/ipa_reg.h                     |  279 +++
->  drivers/net/ipa/ipa_smp2p.c                   |  304 +++
->  drivers/net/ipa/ipa_smp2p.h                   |   47 +
->  drivers/net/ipa/ipa_uc.c                      |  208 +++
->  drivers/net/ipa/ipa_uc.h                      |   32 +
->  include/linux/bitfield.h                      |   14 +
->  42 files changed, 10358 insertions(+)
->  create mode 100644
-> Documentation/devicetree/bindings/net/qcom,ipa.yaml
->  create mode 100644 drivers/net/ipa/Kconfig
->  create mode 100644 drivers/net/ipa/Makefile
->  create mode 100644 drivers/net/ipa/gsi.c
->  create mode 100644 drivers/net/ipa/gsi.h
->  create mode 100644 drivers/net/ipa/gsi_private.h
->  create mode 100644 drivers/net/ipa/gsi_reg.h
->  create mode 100644 drivers/net/ipa/gsi_trans.c
->  create mode 100644 drivers/net/ipa/gsi_trans.h
->  create mode 100644 drivers/net/ipa/ipa.h
->  create mode 100644 drivers/net/ipa/ipa_clock.c
->  create mode 100644 drivers/net/ipa/ipa_clock.h
->  create mode 100644 drivers/net/ipa/ipa_cmd.c
->  create mode 100644 drivers/net/ipa/ipa_cmd.h
->  create mode 100644 drivers/net/ipa/ipa_data-sdm845.c
->  create mode 100644 drivers/net/ipa/ipa_data.h
->  create mode 100644 drivers/net/ipa/ipa_endpoint.c
->  create mode 100644 drivers/net/ipa/ipa_endpoint.h
->  create mode 100644 drivers/net/ipa/ipa_gsi.c
->  create mode 100644 drivers/net/ipa/ipa_gsi.h
->  create mode 100644 drivers/net/ipa/ipa_interrupt.c
->  create mode 100644 drivers/net/ipa/ipa_interrupt.h
->  create mode 100644 drivers/net/ipa/ipa_main.c
->  create mode 100644 drivers/net/ipa/ipa_mem.c
->  create mode 100644 drivers/net/ipa/ipa_mem.h
->  create mode 100644 drivers/net/ipa/ipa_netdev.c
->  create mode 100644 drivers/net/ipa/ipa_netdev.h
->  create mode 100644 drivers/net/ipa/ipa_qmi.c
->  create mode 100644 drivers/net/ipa/ipa_qmi.h
->  create mode 100644 drivers/net/ipa/ipa_qmi_msg.c
->  create mode 100644 drivers/net/ipa/ipa_qmi_msg.h
->  create mode 100644 drivers/net/ipa/ipa_reg.h
->  create mode 100644 drivers/net/ipa/ipa_smp2p.c
->  create mode 100644 drivers/net/ipa/ipa_smp2p.h
->  create mode 100644 drivers/net/ipa/ipa_uc.c
->  create mode 100644 drivers/net/ipa/ipa_uc.h
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAzMS8wNS8yMDE5IDE1OjAwLCBLcmlzdGluYSBNYXJ0c2Vua28gd3JvdGU6Cj4gT24gMzAv
+MDUvMjAxOSAxNToxNiwgU3V6dWtpIEsgUG91bG9zZSB3cm90ZToKPj4gT24gMDUvMjkvMjAxOSAw
+ODowMyBQTSwgS3Jpc3RpbmEgTWFydHNlbmtvIHdyb3RlOgo+Pj4gRWFjaCBzeXN0ZW0gY2FwYWJp
+bGl0eSBjYW4gYmUgb2YgZWl0aGVyIGJvb3QsIGxvY2FsLCBvciBzeXN0ZW0gc2NvcGUsCj4+PiBk
+ZXBlbmRpbmcgb24gd2hlbiB0aGUgc3RhdGUgb2YgdGhlIGNhcGFiaWxpdHkgaXMgZmluYWxpemVk
+LiBXaGVuIHdlCj4+PiBkZXRlY3QgYSBjb25mbGljdCBvbiBhIGxhdGUgQ1BVLCB3ZSBlaXRoZXIg
+b2ZmbGluZSB0aGUgQ1BVIG9yIHBhbmljIHRoZQo+Pj4gc3lzdGVtLiBXZSBjdXJyZW50bHkgYWx3
+YXlzIHBhbmljIGlmIHRoZSBjb25mbGljdCBpcyBjYXVzZWQgYnkgYSBib290Cj4+PiBzY29wZSBj
+YXBhYmlsaXR5LCBhbmQgb2ZmbGluZSB0aGUgQ1BVIGlmIHRoZSBjb25mbGljdCBpcyBjYXVzZWQg
+YnkgYQo+Pj4gbG9jYWwgb3Igc3lzdGVtIHNjb3BlIGNhcGFiaWxpdHkuCj4+Pgo+Pj4gV2UncmUg
+Z29pbmcgdG8gd2FudCB0byBhZGQgbmV3IGNhcGFiaWxpdHkgKGZvciBwb2ludGVyIGF1dGhlbnRp
+Y2F0aW9uKQo+Pj4gd2hpY2ggbmVlZHMgdG8gYmUgYm9vdCBzY29wZSBidXQgZG9lc24ndCBuZWVk
+IHRvIHBhbmljIHRoZSBzeXN0ZW0gd2hlbiBhCj4+PiBjb25mbGljdCBpcyBkZXRlY3RlZC4gU28g
+YWRkIGEgbmV3IGZsYWcgdG8gc3BlY2lmeSB3aGV0aGVyIHRoZQo+Pj4gY2FwYWJpbGl0eSByZXF1
+aXJlcyB0aGUgc3lzdGVtIHRvIHBhbmljIG9yIG5vdC4gQ3VycmVudCBib290IHNjb3BlCj4+PiBj
+YXBhYmlsaXRpZXMgYXJlIHVwZGF0ZWQgdG8gc2V0IHRoZSBmbGFnLCBzbyB0aGVyZSBzaG91bGQg
+YmUgbm8KPj4+IGZ1bmN0aW9uYWwgY2hhbmdlIGFzIGEgcmVzdWx0IG9mIHRoaXMgcGF0Y2guCj4+
+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogS3Jpc3RpbmEgTWFydHNlbmtvIDxrcmlzdGluYS5tYXJ0c2Vu
+a29AYXJtLmNvbT4KCj4+PiAgwqAgwqAgQEAgLTI0OSw2ICsyNTMsOCBAQCBleHRlcm4gc3RydWN0
+IGFybTY0X2Z0cl9yZWcgYXJtNjRfZnRyX3JlZ19jdHJlbDA7Cj4+PiAgwqAgI2RlZmluZSBBUk02
+NF9DUFVDQVBfUEVSTUlUVEVEX0ZPUl9MQVRFX0NQVcKgwqDCoCAoKHUxNilCSVQoNCkpCj4+PiAg
+wqAgLyogSXMgaXQgc2FmZSBmb3IgYSBsYXRlIENQVSB0byBtaXNzIHRoaXMgY2FwYWJpbGl0eSB3
+aGVuIHN5c3RlbSBoYXMgaXQgKi8KPj4+ICDCoCAjZGVmaW5lIEFSTTY0X0NQVUNBUF9PUFRJT05B
+TF9GT1JfTEFURV9DUFXCoMKgwqAgKCh1MTYpQklUKDUpKQo+Pj4gKy8qIFBhbmljIHdoZW4gYSBj
+b25mbGljdCBpcyBkZXRlY3RlZCAqLwo+Pj4gKyNkZWZpbmUgQVJNNjRfQ1BVQ0FQX1BBTklDX09O
+X0NPTkZMSUNUwqDCoMKgwqDCoMKgwqAgKCh1MTYpQklUKDYpKQo+Pj4gIMKgIMKgIC8qCj4+PiAg
+wqDCoCAqIENQVSBlcnJhdGEgd29ya2Fyb3VuZHMgdGhhdCBuZWVkIHRvIGJlIGVuYWJsZWQgYXQg
+Ym9vdCB0aW1lIGlmIG9uZSBvcgo+Pj4gQEAgLTI5MCw3ICsyOTYsOCBAQCBleHRlcm4gc3RydWN0
+IGFybTY0X2Z0cl9yZWcgYXJtNjRfZnRyX3JlZ19jdHJlbDA7Cj4+PiAgwqDCoCAqIENQVSBmZWF0
+dXJlIHVzZWQgZWFybHkgaW4gdGhlIGJvb3QgYmFzZWQgb24gdGhlIGJvb3QgQ1BVLiBBbGwgc2Vj
+b25kYXJ5Cj4+PiAgwqDCoCAqIENQVXMgbXVzdCBtYXRjaCB0aGUgc3RhdGUgb2YgdGhlIGNhcGFi
+aWxpdHkgYXMgZGV0ZWN0ZWQgYnkgdGhlIGJvb3QgQ1BVLgo+Pj4gIMKgwqAgKi8KPj4+IC0jZGVm
+aW5lIEFSTTY0X0NQVUNBUF9TVFJJQ1RfQk9PVF9DUFVfRkVBVFVSRSBBUk02NF9DUFVDQVBfU0NP
+UEVfQk9PVF9DUFUKPj4+ICsjZGVmaW5lIEFSTTY0X0NQVUNBUF9TVFJJQ1RfQk9PVF9DUFVfRkVB
+VFVSRcKgwqDCoMKgwqDCoMKgIFwKPj4+ICvCoMKgwqAgKEFSTTY0X0NQVUNBUF9TQ09QRV9CT09U
+X0NQVSB8IEFSTTY0X0NQVUNBUF9QQU5JQ19PTl9DT05GTElDVCkKPj4KPj4gWW91IG1heSB3YW50
+IHRvIHVwZGF0ZSB0aGUgY29tbWVudCB0byBtZW50aW9uIHRoYXQgYSBjb25mbGljdCB0cmlnZ2Vy
+cwo+PiBrZXJuZWwgcGFuaWMsIGFzIGl0IGlzIG1vcmUgd2l0aGluIHRoZSBjb250cm9sIG9mIHRo
+ZSAiY2FwIiBiZWhhdmlvci4KPiAKPiBEbyB5b3UgbWVhbiB0byB1cGRhdGUgdGhlIGNvbW1lbnQg
+YWJvdmUgQVJNNjRfQ1BVQ0FQX1NUUklDVF9CT09UX0NQVV9GRUFUVVJFPwo+IFRvIHNvbWV0aGlu
+ZyBsaWtlIHRoZSBmb2xsb3dpbmc/Cj4gCj4gLyoKPiAgICogQ1BVIGZlYXR1cmUgdXNlZCBlYXJs
+eSBpbiB0aGUgYm9vdCBiYXNlZCBvbiB0aGUgYm9vdCBDUFUuIEFsbCBzZWNvbmRhcnkKPiAgICog
+Q1BVcyBtdXN0IG1hdGNoIHRoZSBzdGF0ZSBvZiB0aGUgY2FwYWJpbGl0eSBhcyBkZXRlY3RlZCBi
+eSB0aGUgYm9vdCBDUFUuIEluCj4gICAqIGNhc2Ugb2YgYSBjb25mbGljdCwgYSBrZXJuZWwgcGFu
+aWMgaXMgdHJpZ2dlcmVkLgo+ICAgKi8KPiAKClllcy4gVGhhdCBsb29rcyBnb29kLgpFYXJsaWVy
+IGl0IHdhcyB1cHRvIHRoZSBjYWxsZXIgdG8gZGVjaWRlIHdoZW4gdGhlcmUgd2FzIGEgY29uZmxp
+Y3Qgd2l0aApCb290IGZlYXR1cmVzIHRvIHRha2UgYW4gYWN0aW9uLiBCdXQgd2l0aCB0aGlzIGNo
+YW5nZSB3ZSBQYW5pYyBmb3IgU1RSSUNUX0JPT1QKZmVhdHVyZXMuCgpTdXp1a2kKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
