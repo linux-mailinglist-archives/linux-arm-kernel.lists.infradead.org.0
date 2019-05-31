@@ -2,59 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0267B30A9B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 10:47:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF94630AB1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 10:54:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5tDLppDaNvHxP5fuhkow84wbMmAsbjVmbRMPGmwClfU=; b=XrC4yHFumFQkbR
-	5ckPwH/Uswi3GpQlaYgJtfVHdCvPgfgw0G53H/prWwmq8LIM0OTRqnbbB7BD3989FlKS0Y95EaYqD
-	OyfkQbzev6XfhiJIEFyOM09YpCawGr0vqMhC5p8wI2gIQMmWmbMngGwz9hpmZ2lNP6zlj0HyrXri5
-	rAKjCcL7ridII71PKJLX6+JciM3QVWJ9C7Yxh5q66vCMjHj+zGaQbY1cl0LQAkxS3K3TDriRMel2q
-	/Vm6wWQHsbnvw7j+h5DpipgbuY3OSC6aqMr6FoKJ02PK7p2f5T6ueg/kNC79Jrj1ZKcnnlUQO99Ez
-	KVDTXyr0JfQ69afxZyOg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7r6qGSRgvLz3siB/62nsJehsiQP+yOWMjKA+rJBCPrk=; b=TreFm8NkK7K8uh
+	OBGKH0VMbXNwodXsGwghyXS4yujuI6lC4GSS/WojhjSa1+XVt2xZ0z6MEJAYiCTBhiI2HRAbZJPAL
+	p6k6zw36+tzuQZRMZTuczIB2SnhdPsKGyx6lJCY8PyGeVP/5xQjdmTEVfG4zsNwFNSh0ncKZQ/Sfx
+	vgmsLHvuq27iJelsWv+IuxV5++as0ZJU1xUtBfXeaICvi4xik1UyQy5u6n7maL3WL3wS6frqBsZPK
+	qb04DfzFJi1fE844sa4fZMYDw4IZkPtnuHnkXDfTUIIJnI5BXZwc2UQCpXVHGdZujVeCliDy30mu8
+	+9Qc3S/G7KlstWndY2xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWdCU-0007zp-Pm; Fri, 31 May 2019 08:47:46 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWdCN-0007z0-BR
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 08:47:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7619E341;
- Fri, 31 May 2019 01:47:37 -0700 (PDT)
-Received: from [10.162.42.223] (unknown [10.162.42.223])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 20D713F59C;
- Fri, 31 May 2019 01:47:28 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [RFC] mm: Generalize notify_page_fault()
-To: Matthew Wilcox <willy@infradead.org>
-References: <1559195713-6956-1-git-send-email-anshuman.khandual@arm.com>
- <20190530110639.GC23461@bombadil.infradead.org>
- <4f9a610d-e856-60f6-4467-09e9c3836771@arm.com>
- <20190530133954.GA2024@bombadil.infradead.org>
-Message-ID: <f1995445-d5ab-f292-d26c-809581002184@arm.com>
-Date: Fri, 31 May 2019 14:17:43 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hWdIa-0001Fr-OH; Fri, 31 May 2019 08:54:04 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWdIS-0001FC-Q6
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 08:53:58 +0000
+Received: by mail-qt1-f195.google.com with SMTP id y57so10472455qtk.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 31 May 2019 01:53:56 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PLETH2OB3IxfKN1eggOuRioC9EOnLLXN9MFUnFFew5s=;
+ b=nqoXu3AEWtDjhyhvDXmQQZiNePT04KNXflx7aIJ9f/4N+IeUEsMK7JHGvoQvv0EMFT
+ Tuu64P96AFfODH+Pj/8nQ4dJwTc+m8Umkw0S4QJaiT0Yw7k0kAFhzq1W77nzQcwPPhbK
+ MJjuFPRdWtR3aoknnBXJnrXY01pFP9vUPf6xTXr+0ahAXRmDI05sWqSpDTQE7t0gRn1Z
+ +Ywb/VEpo1+un6kAqQElksoGVOIC+eDGNjzV2iILx9nfYdpGvK8FUv/VTzS1cHBdABB0
+ IjUF6mq8ZV9zct0JCol8j3ZlPpqqTfIH/egqJfdaIxhTTD68VmWRD+1TJFy+ZXNpPrkU
+ j+Dw==
+X-Gm-Message-State: APjAAAU/puz6hMfEQSUVHDbmtKdccC3hOTkc/dQ+B5N768UZxoht4PSr
+ viTaUHw4w7hNFiQ9pVbjZ8SY2FPNzg3lx7Wgrbo=
+X-Google-Smtp-Source: APXvYqzU7iWArqELb2azzCaYfon35mBi7acUgoO6bIp937zY6y9ykUj3bD/yvsjRGY3UDM715ORpT4Efor58s/vfKbs=
+X-Received: by 2002:a0c:9e0f:: with SMTP id p15mr7638581qve.176.1559292835687; 
+ Fri, 31 May 2019 01:53:55 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190530133954.GA2024@bombadil.infradead.org>
-Content-Language: en-US
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-20-vincenzo.frascino@arm.com>
+In-Reply-To: <20190530141531.43462-20-vincenzo.frascino@arm.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 31 May 2019 10:53:39 +0200
+Message-ID: <CAK8P3a3Z=wWQDu4aqV73J5PR2jNb3GzyWzYGT3dUp-F81H8mzQ@mail.gmail.com>
+Subject: Re: [PATCH v6 19/19] kselftest: Extend vDSO selftest
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_014739_400561_4BB95BB2 
-X-CRM114-Status: GOOD (  16.48  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190531_015356_843446_34652457 
+X-CRM114-Status: GOOD (  12.09  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,57 +80,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, Russell King <linux@armlinux.org.uk>,
- Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Andrey Konovalov <andreyknvl@google.com>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Huw Davies <huw@codeweavers.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 30, 2019 at 4:16 PM Vincenzo Frascino
+<vincenzo.frascino@arm.com> wrote:
 
+> +/*
+> + * ARM64's vDSO exports its vDSO implementation with different names and
+> + * a different version from other architectures, so we need to handle it
+> + * as a special case.
+> + */
+> +#if defined(__aarch64__)
+> +const char *version = "LINUX_2.6.39";
+> +const char *name[4] = {
+> +       "__kernel_gettimeofday",
+> +       "__kernel_clock_gettime",
+> +       "__kernel_time",
+> +       "__kernel_clock_getres",
+> +};
+> +#else
+> +/* Tested on x86, arm, mips */
+> +const char *version = "LINUX_2.6";
+> +const char *name[4] = {
+> +       "__vdso_gettimeofday",
+> +       "__vdso_clock_gettime",
+> +       "__vdso_time",
+> +       "__vdso_clock_getres",
+> +};
+> +#endif
 
-On 05/30/2019 07:09 PM, Matthew Wilcox wrote:
-> On Thu, May 30, 2019 at 05:31:15PM +0530, Anshuman Khandual wrote:
->> On 05/30/2019 04:36 PM, Matthew Wilcox wrote:
->>> The two handle preemption differently.  Why is x86 wrong and this one
->>> correct?
->>
->> Here it expects context to be already non-preemptible where as the proposed
->> generic function makes it non-preemptible with a preempt_[disable|enable]()
->> pair for the required code section, irrespective of it's present state. Is
->> not this better ?
-> 
-> git log -p arch/x86/mm/fault.c
-> 
-> search for 'kprobes'.
-> 
-> tell me what you think.
-> 
+I see the __kernel_* name used on arm64, powerpc and s390, whiel the __vdso_*
+name is used on arm, mips, nds32, riscv, sparc, and x86.
 
-Are you referring to these following commits
+Also the versions have more variants:
 
-a980c0ef9f6d ("x86/kprobes: Refactor kprobes_fault() like kprobe_exceptions_notify()")
-b506a9d08bae ("x86: code clarification patch to Kprobes arch code")
+$ git ls-files arch | grep vdso | xargs grep
+'\(LINUX_[2345]\|VDSO_VERSION_STRING\)'
+arch/arm/vdso/vdso.lds.S:    LINUX_2.6 {
+arch/arm64/kernel/vdso/vdso.lds.S:    LINUX_2.6.39 {
+arch/mips/vdso/vdso.lds.S:    LINUX_2.6 {
+arch/nds32/kernel/vdso/vdso.lds.S:    LINUX_4 {
+arch/powerpc/include/asm/vdso.h:#define VDSO_VERSION_STRING    LINUX_2.6.15
+arch/powerpc/kernel/vdso32/vdso32.lds.S:    VDSO_VERSION_STRING {
+arch/powerpc/kernel/vdso64/vdso64.lds.S:    VDSO_VERSION_STRING {
+arch/riscv/kernel/vdso/vdso.lds.S:    LINUX_4.15 {
+arch/s390/include/asm/vdso.h:#define VDSO_VERSION_STRING    LINUX_2.6.29
+arch/s390/kernel/vdso32/vdso32.lds.S:    VDSO_VERSION_STRING {
+arch/s390/kernel/vdso64/vdso64.lds.S:    VDSO_VERSION_STRING {
+arch/sparc/vdso/vdso.lds.S:    LINUX_2.6 {
+arch/sparc/vdso/vdso32/vdso32.lds.S:    LINUX_2.6 {
+arch/x86/entry/vdso/vdso.lds.S:    LINUX_2.6 {
+arch/x86/entry/vdso/vdso32/vdso32.lds.S:    LINUX_2.6 {
+arch/x86/entry/vdso/vdso32/vdso32.lds.S:    LINUX_2.5 {
+arch/x86/entry/vdso/vdsox32.lds.S:    LINUX_2.6 {
+arch/x86/um/vdso/vdso.lds.S:    LINUX_2.6 {
 
-In particular the later one (b506a9d08bae). It explains how the invoking context
-in itself should be non-preemptible for the kprobes processing context irrespective
-of whether kprobe_running() or perhaps smp_processor_id() is safe or not. Hence it
-does not make much sense to continue when original invoking context is preemptible.
-Instead just bail out earlier. This seems to be making more sense than preempt
-disable-enable pair. If there are no concerns about this change from other platforms,
-I will change the preemption behavior in proposed generic function next time around.
+Maybe change the test case to just try all combinations of the
+above (and __vdso_clock_gettime64 as well) and stop checking
+the architecture?
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
