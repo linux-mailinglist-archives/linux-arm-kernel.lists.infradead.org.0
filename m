@@ -2,76 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CDBA311E8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 18:04:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98380311FC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 18:10:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CArQDMFmNm7GHA+ltWaNwsGl+ANeg8EB4LkaHsC1Jfk=; b=G7rhamWDEgLlwn
-	7O6Mx4hjFEPPcWGjAhEdHT5ptQnGgx9wGcECqXeiueUW9L59j5CIoCO4QOyU6Uwcp91eK/wOjgUul
-	KF5vrPtQWTdm8yfg512XSNAgQr+7io6qxoWnMeQ7RyzgnjfYF3SD63dW2fOI464256OKnKvHOnqJv
-	L6sudBGoNf4BPuEfE4BFjhUDMBnYril91gc57Ncky4f3l2eqFgRjqK/dlaqs2RFUj+UA7lCoaJiFz
-	CVu9NEZx+UxI4lHxsXdkwHqRg9cMQSwywgsXBtLICLWnK6sDh7YgONSTGwzeBGEFbR7IxVqGOGvxX
-	Y8ji6NxkS6DOv62GVlMg==;
+	List-Owner; bh=MqZEnoli82NXtWrzERmPZCA3+aF8/Rf2/RlYvPIRQp8=; b=uzv6V+qnd1sODS
+	2SKf171xq+ui0LLgP7eYCGhzGHnsh7qZEUhagNlj8M8ypugIBN8gx8x+kmpX7a8lUFM6PRK6pdMug
+	7dq9fWrojOx9AF8uklUkmgC1aIksVmtNPz1jYzI6ZvjUEyEZ2Ol6uJPXRM+Y4Ip7+xPjnkIjQFAc7
+	6KZjczPdnONakBbj1xQms4qJkyDq5GX4UcEYNYCbCvxrM5zgTZ/JPgKbgAz8jVCx1DB6HN4URm/nM
+	r/NznBBDq6au+3OhX0zhJQP7nbkXhba96W3z61/YyoG52wzMfZJSxe8BmrQ70jYmGtbgHNzt1CzpO
+	Ua6CUj1N42eLtTAHbaog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWk0e-0000iH-6s; Fri, 31 May 2019 16:04:00 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWk0W-0000hp-HH
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 16:03:54 +0000
-Received: from mail-ua1-f41.google.com (mail-ua1-f41.google.com
- [209.85.222.41]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id x4VG3EH1022977
- for <linux-arm-kernel@lists.infradead.org>; Sat, 1 Jun 2019 01:03:14 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x4VG3EH1022977
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1559318595;
- bh=kJBHRLcXvbaLbs7VdY0urin0KXZb9MB5irbTDQDFLsM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=j1vS3Fo2SbSSGk5hgSGlnZE18MPfhXToy+JQX6djnAMb6PqS6sC4G7WD9736s6PKJ
- 10F7vqeJS79+DJ3knYjdpChTvE8N3V/W8R2ucksMjuF+TaC4SdSt0kZLnju2TAE0bC
- 6iPMC/O0QIKHMtdipBy3dEZE3I/P7kGA5MVv93o33/CfeKA+8yXp0HFEFXAKCC5eFU
- jaSJ8AyNJ2yXiV5udyXAMvodL0Mlig+DC4VoI8tNbFgtrWvZZ6Lf0w7HZVzD/qxmeh
- DxonV1qKs//TvOYzk/X7inuTOqsRnVlloS6Slk5lzFmX4lIxctELld9i11NGF6Jx5N
- MCtiwYF/17xZg==
-X-Nifty-SrcIP: [209.85.222.41]
-Received: by mail-ua1-f41.google.com with SMTP id d4so4024052uaj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 May 2019 09:03:14 -0700 (PDT)
-X-Gm-Message-State: APjAAAXbFCo2O/IQfchdaU0Xx0/UYytbewA4yn9Hll8KDLm7YgE4fTOK
- chBlUvg6VNl3959hV9UfrZOR5Eb/vbzME6rQlDc=
-X-Google-Smtp-Source: APXvYqwHQqFZ9e5//lG3X8WUAgLmWN6ZzV4dNJBRrUjKgJtyQq6oBEdOAFsk02L/Yu/qZJbj3cpHf8ZTPT/71l3++hs=
-X-Received: by 2002:a9f:3381:: with SMTP id p1mr5953024uab.40.1559318593421;
- Fri, 31 May 2019 09:03:13 -0700 (PDT)
+	id 1hWk6d-0002xY-1b; Fri, 31 May 2019 16:10:11 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWk6T-0002W7-Fb
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 16:10:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CA07341;
+ Fri, 31 May 2019 09:10:00 -0700 (PDT)
+Received: from redmoon (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 459BB3F59C;
+ Fri, 31 May 2019 09:09:59 -0700 (PDT)
+Date: Fri, 31 May 2019 17:09:56 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com>
+Subject: Re: [PATCH v3] PCI: xilinx-nwl: Fix Multi MSI data programming
+Message-ID: <20190531160956.GB9356@redmoon>
+References: <1559133469-11981-1-git-send-email-bharat.kumar.gogada@xilinx.com>
 MIME-Version: 1.0
-References: <1559316388-19565-1-git-send-email-george_davis@mentor.com>
-In-Reply-To: <1559316388-19565-1-git-send-email-george_davis@mentor.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Sat, 1 Jun 2019 01:02:37 +0900
-X-Gmail-Original-Message-ID: <CAK7LNATXzLzttF_gLA4wdfE1ue+bLPhvDZVsTKbB5K3nrN3jng@mail.gmail.com>
-Message-ID: <CAK7LNATXzLzttF_gLA4wdfE1ue+bLPhvDZVsTKbB5K3nrN3jng@mail.gmail.com>
-Subject: Re: [RFC][PATCH] Makefile: Fix checkstack.pl arm64 wrong or unknown
- architecture
-To: "George G. Davis" <george_davis@mentor.com>
+Content-Disposition: inline
+In-Reply-To: <1559133469-11981-1-git-send-email-bharat.kumar.gogada@xilinx.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_090352_834907_B0A5FCF2 
-X-CRM114-Status: GOOD (  13.46  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190531_091001_610750_4DF59E41 
+X-CRM114-Status: GOOD (  22.04  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -83,64 +62,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Marek <michal.lkml@markovi.net>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- open list <linux-kernel@vger.kernel.org>, Joe Perches <joe@perches.com>,
- Andy Whitcroft <apw@canonical.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: marc.zyngier@arm.com, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, rgummal@xilinx.com, bhelgaas@google.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 1, 2019 at 12:27 AM George G. Davis <george_davis@mentor.com> wrote:
->
-> The following error occurs for the `make ARCH=arm64 checkstack` case:
->
-> aarch64-linux-gnu-objdump -d vmlinux $(find . -name '*.ko') | \
-> perl ./scripts/checkstack.pl arm64
-> wrong or unknown architecture "arm64"
->
-> Fix the above error by setting `CHECKSTACK_ARCH := aarch64` for the
-> ARCH=arm64 case.
->
-> Signed-off-by: George G. Davis <george_davis@mentor.com>
+[+Marc]
 
+On Wed, May 29, 2019 at 06:07:49PM +0530, Bharat Kumar Gogada wrote:
+> The current Multi MSI data programming fails if multiple end points
+> requesting MSI and multi MSI are connected with switch, i.e the current
+> multi MSI data being given is not considering the number of vectors
+> being requested in case of multi MSI.
+> Ex: Two EP's connected via switch, EP1 requesting single MSI first,
+> EP2 requesting Multi MSI of count four. The current code gives
+> MSI data 0x0 to EP1 and 0x1 to EP2, but EP2 can modify lower two bits
+> due to which EP2 also sends interrupt with MSI data 0x0 which results
+> in always invoking virq of EP1 due to which EP2 MSI interrupt never
+> gets handled.
 
-Why don't you fix scripts/checkstack.pl ?
+If this is a problem it is not the only driver where it should be fixed
+it seems. CC'ed Marc in case I have missed something in relation to MSI
+IRQs but AFAIU it looks like HW is allowed to toggled bits (according to
+bits[6:4] in Message Control for MSI) in the MSI data, given that the
+data written is the hwirq number (in this specific MSI controller)
+it ought to be fixed.
 
+The commit log and patch should be rewritten (I will do that) but
+first I would like to understand if there are more drivers to be
+updated.
 
+Lorenzo
 
+> Fix Multi MSI data programming with required alignment by
+> using number of vectors being requested.
+> 
+> Fixes: ab597d35ef11 ("PCI: xilinx-nwl: Add support for Xilinx NWL PCIe
+> Host Controller")
+> Signed-off-by: Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com>
 > ---
->  Makefile | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
->
-> diff --git a/Makefile b/Makefile
-> index 11358153d8f2..3e615e8553c0 100644
-> --- a/Makefile
-> +++ b/Makefile
-> @@ -1695,7 +1695,11 @@ PHONY += checkstack kernelrelease kernelversion image_name
->  ifeq ($(ARCH), um)
->  CHECKSTACK_ARCH := $(SUBARCH)
->  else
-> -CHECKSTACK_ARCH := $(ARCH)
-> +       ifeq ($(ARCH), arm64)
-> +               CHECKSTACK_ARCH := aarch64
-> +       else
-> +               CHECKSTACK_ARCH := $(ARCH)
-> +       endif
->  endif
->  checkstack:
->         $(OBJDUMP) -d vmlinux $$(find . -name '*.ko') | \
-> --
+> V3:
+>  - Added example description of the issue
+> ---
+>  drivers/pci/controller/pcie-xilinx-nwl.c | 11 ++++++++++-
+>  1 file changed, 10 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c b/drivers/pci/controller/pcie-xilinx-nwl.c
+> index 81538d7..8efcb8a 100644
+> --- a/drivers/pci/controller/pcie-xilinx-nwl.c
+> +++ b/drivers/pci/controller/pcie-xilinx-nwl.c
+> @@ -483,7 +483,16 @@ static int nwl_irq_domain_alloc(struct irq_domain *domain, unsigned int virq,
+>  	int i;
+>  
+>  	mutex_lock(&msi->lock);
+> -	bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
+> +
+> +	/*
+> +	 * Multi MSI count is requested in power of two
+> +	 * Check if multi msi is requested
+> +	 */
+> +	if (nr_irqs % 2 == 0)
+> +		bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
+> +					 nr_irqs, nr_irqs - 1);
+> +	else
+> +		bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
+>  					 nr_irqs, 0);
+>  	if (bit >= INT_PCI_MSI_NR) {
+>  		mutex_unlock(&msi->lock);
+> -- 
 > 2.7.4
->
-
-
--- 
-Best Regards
-Masahiro Yamada
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
