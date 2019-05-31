@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC6853174E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 00:43:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EDDD317ED
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 01:28:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GFEThAotRopp0HVy4AtcVOalasvlPEr9mpIcfgWZPyc=; b=jZyCmkS2ITypWS
-	cFM0q3o4uV2cLnaYzUd1fyT60jfFKPeNfSeBIl4+8+lAnX4JeVV2TXtjYbmiZR9o54pQxKf+Q6DrZ
-	WE7ynisvVK3tos1qUfrPWR5yjpTwO3Waqy4S61sC1lrkUw22zxi/p7mZR9W1oBUYRiNIByd6Ia1jT
-	T3YFNnljPy+/83ImcyWXPoPA1iw0AWhLg8dbinhu7ciIDjek1B678ahWUH7ch1svEX51+Uahk8dwV
-	2b3dqs/fd+XnW1Wom+ZBcU5E6ztWD6LgPouKOZ2Ypf/HptpAVYuVui2ba3XVItT0/X+l3szHpjQgh
-	7fyAFc+pgviXCWXRQr6Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kWMxgRTNswBM3QcLEw1nQp/ham28UjleN3m02CKjEEY=; b=GgNa/3D2Y6uqgT
+	diF26m22bA9tf1nrLSG2Mw9An3GVHPwp3Ai8OHesk2MWbSXqkJ33t9xuoNQ0SlJI1QW0Zu9wGZkPj
+	c0Jm0snwDvNkn/6EA/wX/1zr4kTHlGxjYQ1ySxgflxLEPVhP2hKMQhF/+WA93Cjgb12xsqRalSwNk
+	kRIoFo2dboyPNye8OqCacNMBOwIOy1ZmlAEh10THQSuIcQ/7yPDlWuLcwtnDMFCVCUryQxGyRlLY5
+	/wpamql5MlB1Qha6Yc2UVvaRzp3rm80uYAvp5k9rGCcpwDd0YVZptYk0zRD+5jsvnPNOfCf2ZlCkN
+	/HEvjhEtGgmLk1/bXSLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWqFY-0001oh-By; Fri, 31 May 2019 22:43:48 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hWqwI-0006QF-Hy; Fri, 31 May 2019 23:27:58 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWqFQ-0001oG-Eg
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 22:43:42 +0000
-Received: by mail-wr1-x443.google.com with SMTP id n4so2213924wrw.13
+ id 1hWqwB-0006Pq-CY
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 23:27:52 +0000
+Received: by mail-pg1-x543.google.com with SMTP id v11so4846501pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 May 2019 15:43:39 -0700 (PDT)
+ Fri, 31 May 2019 16:27:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1xabkKHib5YVNF+FNN9RYllcelJ/yI/1PSg1Js4AYD4=;
- b=HmJw8kJh3KyknWoc9/xEn/HZVl6ILNOA5tjFoXZb9h4OdEovfRGDjtvRVOaweOAmGG
- 6vwRXVZzaAd+tCnHeWsi2+w7XKChgrPyE/bP2LvHMTRoW148nHacUy26aU2TSzHlSPWm
- PRBjY+3zvL1zm58kb/Znh3C5mMFHIgbcYfdvb25OetcBQ1oD6TdhTiRyTmjfKaChcufU
- GfFwIgvkKHb6nU2WHX25RnzRi15/wXpUs99xMXfT2/AiCllukHRsOpc7YC8k6IfwOtTg
- qSucpubqZulUzak+OVW0e11hcL8G819VPJnLsex1YqTQGeSqdKH8s6phcOVeJwThPJ2M
- 3MLw==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=1mBjmLwOKlNkyYhM6oxRhsf42lMAXU/xAGOi1IdZboQ=;
+ b=ZNOteqQLyqgc+QbRl7AXNIxJGN4xjDTgG6lWt6T6hJIAi2uw3z3Flh39L0EupY/Gdy
+ aRQu8htEcM2guXKL3DiQ4okSSGGyunEAl9Vs6GRc1UEOfPAiDmQ8zPwoUqSNG0OYQVV6
+ EIib45uFU25OiqwIdyyh8xrqPokchZdfmTrwCmyplfHfbLDWbuuuOwUb+ovvtbfvhNA1
+ zjW6vzLAyANZQjQVAtJnOlbpyMIjpq149dUyltnV5NgU5IpF1Yk5dIVTcoGsrgrl27Ql
+ 8PicUE4+rTtZi9T5oo0W1VHdKG2BtaIZImEFJFnrAmzM0oJR7kaWUvZ22S1Cz16LJR/k
+ aIlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1xabkKHib5YVNF+FNN9RYllcelJ/yI/1PSg1Js4AYD4=;
- b=hZO4TjjU9dJeyySkqF62bniEMGfFHJlUCzRvqB5300c+QXNeyq38YB3oiZ/aCmhOWH
- sH6AT21ev+O6e04goqCLZ7324pJxobQnm0OJ3bFBVwbF0PcrqQcER5BDUspjZMXDSxbq
- ub+M0EvZsatJwQdXrMt0Nylk3e0xUuOhe8aF9IrupOCFPSAfUFW6WexVURvtkyGUL5mx
- QL5Mm2apNEl+szYXCXvKaCJ3KpVMAm10aW8uc/SA8V80QMH5lHAsJVNJsVsAwHSYF8PA
- Vv7YZ9ShM9Q1hANFgOH41QyyoFqaYRRSqvrbj5peePzeU7yyOIXMCrffHg4wthOpMsY4
- uk0w==
-X-Gm-Message-State: APjAAAWnJvzSApLu02NINVjy82r6T7+G4NH5p+vu+RH3dRRFY2XeLc1F
- GEMleySvc7kxUamodxKzSaWwgg==
-X-Google-Smtp-Source: APXvYqzRPYy1UaAPlFDCQE8o1qAZmDtee4C81G+PJavoPpCP2prOjHkVZWq+u029BJbkUgGKH4NMuw==
-X-Received: by 2002:a05:6000:1c6:: with SMTP id
- t6mr8347992wrx.236.1559342618005; 
- Fri, 31 May 2019 15:43:38 -0700 (PDT)
-Received: from localhost.localdomain (catv-89-135-96-219.catv.broadband.hu.
- [89.135.96.219])
- by smtp.gmail.com with ESMTPSA id x6sm11288263wru.36.2019.05.31.15.43.36
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 31 May 2019 15:43:36 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: Sekhar Nori <nsekhar@ti.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH] ARM: davinci: Use GPIO lookup table for DA850 LEDs
-Date: Sat,  1 Jun 2019 00:43:33 +0200
-Message-Id: <20190531224333.3335-1-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.20.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1mBjmLwOKlNkyYhM6oxRhsf42lMAXU/xAGOi1IdZboQ=;
+ b=Y7TS8jzqH4g+pRot4Hcjyo5kSvEBqCWD9ueXRxO6N/QLVogNIi4W+ryJDLB9iAwJcP
+ rybPBY7exBPzDCW9DmprZGfoTZIznw28lIiJCmrw+gVB7IRrHHHaEZTLLt9PJ9phB1v4
+ Ef9uDhL8nsIS4HHyAkI++3TGm9SAH777ihx55x+R8i9QfmFfdYe8Lbm3RnXaKPlFi4lh
+ BGjP5+wP6ayiMK80Re9KdQMg8xNJDKu93gaHYq4TW7pFVNR8QP+5vhFWPmw8eS++bG6d
+ /XzyvrhF6JbR3M7lEQFPIjpg7f95yjpuR6vzQZbDw57Yd2WC3RSACafOEN7oXML/2jRs
+ kFlQ==
+X-Gm-Message-State: APjAAAW7IKtw54Twl3V6dHOBqe33W9M3USBOmTNf1Vanilsh+ueBavTE
+ 4hfKCMW0J97swQfI1T9FOm73Eg==
+X-Google-Smtp-Source: APXvYqw/ryB+xTJ5eNyo0R0Rz5FbaRSXOb+hJAMPW6Ub79YQuTrjFf0b/mvOzSK2WWNJ4P0EduX3Cg==
+X-Received: by 2002:a17:90a:7147:: with SMTP id
+ g7mr12603555pjs.42.1559345269878; 
+ Fri, 31 May 2019 16:27:49 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id u1sm7196808pfh.85.2019.05.31.16.27.48
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 31 May 2019 16:27:49 -0700 (PDT)
+Date: Fri, 31 May 2019 16:27:46 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+Message-ID: <20190531232746.GA25597@minitux>
+References: <20190531035348.7194-1-elder@linaro.org>
+ <e75cd1c111233fdc05f47017046a6b0f0c97673a.camel@redhat.com>
+ <065c95a8-7b17-495d-f225-36c46faccdd7@linaro.org>
+ <CAK8P3a05CevRBV3ym+pnKmxv+A0_T+AtURW2L4doPAFzu3QcJw@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a05CevRBV3ym+pnKmxv+A0_T+AtURW2L4doPAFzu3QcJw@mail.gmail.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_154340_560493_FC886336 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20190531_162751_430284_1FC29128 
+X-CRM114-Status: GOOD (  13.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,118 +102,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
+ Networking <netdev@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ abhishek.esse@gmail.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, David Miller <davem@davemloft.net>,
+ cpratapa@codeaurora.org, Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This switches the DA850 board to use a GPIO lookup table to
-look up the GPIO LEDs. Thanks to the offset handling when
-we define GPIOs as an offset into the chip, we can drop
-some complex code.
+On Fri 31 May 12:19 PDT 2019, Arnd Bergmann wrote:
 
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
-Sekhar, Bartosz: I had this patch sitting around in my
-tree, can any of you test it and/or apply it? The
-prerequisite patch naming the GPIO expander properly
-after .dev_name was commited a while back.
----
- arch/arm/mach-davinci/board-da850-evm.c | 43 +++++++++++++------------
- 1 file changed, 22 insertions(+), 21 deletions(-)
+> On Fri, May 31, 2019 at 6:36 PM Alex Elder <elder@linaro.org> wrote:
+> > On 5/31/19 9:58 AM, Dan Williams wrote:
+> > > On Thu, 2019-05-30 at 22:53 -0500, Alex Elder wrote:
+[..]
+> > So basically, the purpose of the rmnet driver is to handle QMAP
+> > protocol connections, and right now that's what the modem provides.
+> 
+> Do you have any idea why this particular design was picked?
+> 
 
-diff --git a/arch/arm/mach-davinci/board-da850-evm.c b/arch/arm/mach-davinci/board-da850-evm.c
-index 4ee65a8a3b80..acf3013f4ae5 100644
---- a/arch/arm/mach-davinci/board-da850-evm.c
-+++ b/arch/arm/mach-davinci/board-da850-evm.c
-@@ -631,13 +631,12 @@ static void da850_evm_bb_keys_init(unsigned gpio)
- 	}
- }
- 
--#define DA850_N_BB_USER_LED	2
--
- static struct gpio_led da850_evm_bb_leds[] = {
--	[0 ... DA850_N_BB_USER_LED - 1] = {
--		.active_low = 1,
--		.gpio = -1, /* assigned at runtime */
--		.name = NULL, /* assigned at runtime */
-+	{
-+		.name = "user_led2",
-+	},
-+	{
-+		.name = "user_led1",
- 	},
- };
- 
-@@ -646,6 +645,20 @@ static struct gpio_led_platform_data da850_evm_bb_leds_pdata = {
- 	.num_leds = ARRAY_SIZE(da850_evm_bb_leds),
- };
- 
-+static struct gpiod_lookup_table da850_evm_bb_leds_gpio_table = {
-+	.dev_id = "leds-gpio",
-+	.table = {
-+		GPIO_LOOKUP_IDX("i2c-bb-expander",
-+				DA850_EVM_BB_EXP_USER_LED2, NULL,
-+				0, GPIO_ACTIVE_LOW),
-+		GPIO_LOOKUP_IDX("i2c-bb-expander",
-+				DA850_EVM_BB_EXP_USER_LED2 + 1, NULL,
-+				1, GPIO_ACTIVE_LOW),
-+
-+		{ },
-+	},
-+};
-+
- static struct platform_device da850_evm_bb_leds_device = {
- 	.name		= "leds-gpio",
- 	.id		= -1,
-@@ -654,20 +667,6 @@ static struct platform_device da850_evm_bb_leds_device = {
- 	}
- };
- 
--static void da850_evm_bb_leds_init(unsigned gpio)
--{
--	int i;
--	struct gpio_led *led;
--
--	for (i = 0; i < DA850_N_BB_USER_LED; i++) {
--		led = &da850_evm_bb_leds[i];
--
--		led->gpio = gpio + DA850_EVM_BB_EXP_USER_LED2 + i;
--		led->name =
--			da850_evm_bb_exp[DA850_EVM_BB_EXP_USER_LED2 + i];
--	}
--}
--
- static int da850_evm_bb_expander_setup(struct i2c_client *client,
- 						unsigned gpio, unsigned ngpio,
- 						void *c)
-@@ -685,7 +684,7 @@ static int da850_evm_bb_expander_setup(struct i2c_client *client,
- 		goto io_exp_setup_sw_fail;
- 	}
- 
--	da850_evm_bb_leds_init(gpio);
-+	gpiod_add_lookup_table(&da850_evm_bb_leds_gpio_table);
- 	ret = platform_device_register(&da850_evm_bb_leds_device);
- 	if (ret) {
- 		pr_warn("Could not register baseboard GPIO expander LEDs");
-@@ -729,10 +728,12 @@ static struct i2c_board_info __initdata da850_evm_i2c_devices[] = {
- 	},
- 	{
- 		I2C_BOARD_INFO("tca6416", 0x20),
-+		.dev_name = "ui-expander",
- 		.platform_data = &da850_evm_ui_expander_info,
- 	},
- 	{
- 		I2C_BOARD_INFO("tca6416", 0x21),
-+		.dev_name = "bb-expander",
- 		.platform_data = &da850_evm_bb_expander_info,
- 	},
- };
--- 
-2.20.1
+From what I've seen of QMAP it seems like a reasonable design choice to
+have a software component (rmnet) dealing with this, separate from the
+transport. And I think IPA is the 4th or 5th mechanism for transporting
+QMAP packets back and forth to the modem.
 
+
+Downstream rmnet is copyright 2007-, and I know of interest in bringing
+at least one of the other transports upstream.
+
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
