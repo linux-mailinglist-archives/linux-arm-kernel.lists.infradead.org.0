@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E619D307E0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 06:50:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E764E307EE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 06:57:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dbQvNXc+EemFaDuncQNf3QFibmyJiOhNZjQY5RBx3RU=; b=RbZ2hbmzZ0s4iH4xXqcyDnLbp
-	YZZUeAnEqJR5tSCN6PqLCoXh9lTzE2qeeu4Y/9QxMhRlaZE32Bkxc2YBfnycNgwUxBMKtk4Lt0JYI
-	b9hPYmwZq24r1pKiMxP3JCg3gWH6y5Tu2LrQvak8SgX08up0XtvEM56NrZpPCiBvVQcLQGIbmoeUD
-	P8ZtD6+Lbh0ScSFaGo/7i+sj2B3SQ0iCirn4d2pcPE4unRa/y6vYbfUzz9Q2wiM8WgdXD2U0WscZQ
-	YZdiWfGhGhfiExtTEae6dHL4AQhXRtoMI7GbSenle8bIK7rcWk+QYcMLiKK1T8/76DXWY3I/7g+lM
-	1ZIMw62hQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3BGsUCs2ughzQDAsOxn2RkHphu+/V9QHCxPYPmKiVtE=; b=e1Xz4qq/bMknxF
+	4HxitQk0y6ORBT0QaGPSLeE0aOFjLrIHgl4Bwe4Hmusrn3YN0phP8MynjFt9TydUfUYhOFARsNFot
+	TOSmBGN2//Q90/bK6WwQGRJav2+aEBtugy3uyq8hxo4SA3IdwTNTxxIHWyn9YsPdW8BlH0w2A36Rs
+	llprGM25gmUDq0OtD7WKXaZ1rUoJ7cLjLRJDSVktfSHVceVSukRvSgu/VVXUvqYMnQsw/XV0xAORL
+	8T7FrbQeu5bit/H/7LY3X6tkIJqs5rKbDUs1iupsGsP/G/B6dTRiWOBOQQYfq4u0uuOxdt4H9IY2j
+	iSiT3gjl3AEnvP8iM8Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWZUd-0008GS-1K; Fri, 31 May 2019 04:50:15 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1hWZbr-0001aA-8f; Fri, 31 May 2019 04:57:43 +0000
+Received: from mail-it1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWZUU-00075H-Rv; Fri, 31 May 2019 04:50:09 +0000
-Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alex@ghiti.fr)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id 18921100004;
- Fri, 31 May 2019 04:49:29 +0000 (UTC)
-Subject: Re: [PATCH v4 08/14] arm: Use generic mmap top-down layout and brk
- randomization
-To: Kees Cook <keescook@chromium.org>
-References: <20190526134746.9315-1-alex@ghiti.fr>
- <20190526134746.9315-9-alex@ghiti.fr> <201905291222.595685C3F0@keescook>
-From: Alex Ghiti <alex@ghiti.fr>
-Message-ID: <b8c0c2e4-4d58-1d6e-5458-f0af3eb86d7c@ghiti.fr>
-Date: Fri, 31 May 2019 00:49:29 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1hWZbk-0001ZG-1E; Fri, 31 May 2019 04:57:38 +0000
+Received: by mail-it1-x144.google.com with SMTP id t184so13707250itf.2;
+ Thu, 30 May 2019 21:57:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pYMrn55kLH2S++DFur1WFLWOoxAYXbVwA77jHVN56K0=;
+ b=kfoYhZkf6QrrWJKyrfZm2jySez/Ob1PR92nLjbtbCIkwApTrJE8LqKlBo+hOLDWtzm
+ Kbtq5RETimAdVvyEQlSWLCxb9FxX67p4RfrZmKYTPVmM/7a66eqQt8supqC5Jl68mjXl
+ 3g0meLrU3kkQS2nIBulztcE8EsYVtq5Zt3yldQON/t2fiIgLNmGmq0iW9TjOf3cb8HRV
+ hQUCSI48LvaJU4wgAQw6+tTPUsfGbpYE1FTI8IlM24vtiVxgkCJdT3er1u/dmKP5v9xo
+ 6pn8gVndXm6lkx/pDiVVkcj0Aqz42IxHdM3Zo+vXVJjOCDvwGBRmjTKMTNy21DiMmG6H
+ FnfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pYMrn55kLH2S++DFur1WFLWOoxAYXbVwA77jHVN56K0=;
+ b=gkAzGZ4xv1pNzf5pae1Fq+oZhavJ0aERBLZrN+FuI/CfY/QD0eQ9RZa0oUwqW4+uGq
+ 8U7kSGQAIJmBx4T8MDbwafgPhXwa3DA739NzmtiXfxFZPT7bFvgYnKE54w3Rgl5wVjz4
+ k8NQUcZ9nbloo8yi4ZYWbDus4rhyrYew9CI8Ayzg8C/JP90kP9dgTe+Fjx7jD9SNMJ3W
+ hGqbnkP7jgmhpk6puQFY83ETCkuPIUFHGTPU3xUx05MLsz4uDSTaipnsl5OChhpBsu/X
+ sI9K7b6KnTA7Q1aeilEjROp2tKJvil9OYY/aDSEp9wTsjk841Ipqxlu2p3vF4LaDgfYW
+ 4gQw==
+X-Gm-Message-State: APjAAAWQdGbXv1nJSemFgs+lGR695Ti30IrFbs9iOTPCxJQGer8CaVMQ
+ O5RxZr9Y3unE0I/KdkXAnAqXtRM29QBmAaT+S7U=
+X-Google-Smtp-Source: APXvYqyrNSflW/4/Z9Kt+shMt+wzrH+meKU5Uw8V7PnnqJVcWdQXyvi3s2unKfCvSA99bkG0l1jdlkupXL3T+WefGeQ=
+X-Received: by 2002:a24:4acd:: with SMTP id k196mr5575395itb.157.1559278654178; 
+ Thu, 30 May 2019 21:57:34 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <201905291222.595685C3F0@keescook>
-Content-Language: sv-FI
+References: <20190530125837.730-1-linux.amoon@gmail.com>
+ <20190531040222.GB9641@Mani-XPS-13-9360>
+In-Reply-To: <20190531040222.GB9641@Mani-XPS-13-9360>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Fri, 31 May 2019 10:27:22 +0530
+Message-ID: <CANAwSgQ13PizDuNEVF5JMM=byt-HELCmZFhLAa3RS6kvxmXuhw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: Add missing PCIe pwr amd rst
+ configuration
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_215007_218508_995A0736 
-X-CRM114-Status: GOOD (  18.52  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190530_215736_072627_EA7C03F0 
+X-CRM114-Status: GOOD (  18.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,190 +92,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
- linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- Luis Chamberlain <mcgrof@kernel.org>
+Cc: devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/29/19 3:26 PM, Kees Cook wrote:
-> On Sun, May 26, 2019 at 09:47:40AM -0400, Alexandre Ghiti wrote:
->> arm uses a top-down mmap layout by default that exactly fits the generic
->> functions, so get rid of arch specific code and use the generic version
->> by selecting ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT.
->> As ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT selects ARCH_HAS_ELF_RANDOMIZE,
->> use the generic version of arch_randomize_brk since it also fits.
->> Note that this commit also removes the possibility for arm to have elf
->> randomization and no MMU: without MMU, the security added by randomization
->> is worth nothing.
->>
->> Signed-off-by: Alexandre Ghiti <alex@ghiti.fr>
-> Acked-by: Kees Cook <keescook@chromium.org>
+Hi Manivannan,
+
+On Fri, 31 May 2019 at 09:32, Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
 >
-> It may be worth noting that STACK_RND_MASK is safe to remove here
-> because it matches the default that now exists in mm/util.c.
+> Hi,
+>
+> On Thu, May 30, 2019 at 12:58:37PM +0000, Anand Moon wrote:
+> > This patch add missing PCIe gpio and pinctrl for power (#PCIE_PWR)
+> > also add PCIe gpio and pinctrl for reset (#PCIE_PERST_L).
+> >
+> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> > ---
+> > Tested on Rock960 Model A
+> > ---
+> >  arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi | 16 ++++++++++++++--
+> >  1 file changed, 14 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
+> > index c7d48d41e184..f5bef6b0fe89 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
+> > @@ -55,9 +55,10 @@
+> >
+> >       vcc3v3_pcie: vcc3v3-pcie-regulator {
+> >               compatible = "regulator-fixed";
+> > +             gpio = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
+> >               enable-active-high;
+> >               pinctrl-names = "default";
+> > -             pinctrl-0 = <&pcie_drv>;
+> > +             pinctrl-0 = <&pcie_drv &pcie_pwr>;
+> >               regulator-boot-on;
+> >               regulator-name = "vcc3v3_pcie";
+> >               regulator-min-microvolt = <3300000>;
+> > @@ -381,9 +382,10 @@
+> >  };
+> >
+> >  &pcie0 {
+> > +     ep-gpio = <&gpio2 RK_PD4 GPIO_ACTIVE_HIGH>;
+> >       num-lanes = <4>;
+> >       pinctrl-names = "default";
+> > -     pinctrl-0 = <&pcie_clkreqn_cpm>;
+> > +     pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
+> >       vpcie3v3-supply = <&vcc3v3_pcie>;
+> >       status = "okay";
+> >  };
+> > @@ -408,6 +410,16 @@
+> >               };
+> >       };
+> >
+> > +     pcie {
+> > +             pcie_pwr: pcie-pwr {
+> > +                     rockchip,pins = <2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+> > +             };
+> > +
+> > +             pcie_perst_l:pcie-perst-l {
+> > +                     rockchip,pins = <2 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
+> > +             };
+>
+> Which schematics did you refer? According to Rock960 v2.1 schematics [1], below
+> is the pin mapping for PCI-E PWR and PERST:
+>
+> PCIE_PERST - GPIO2_A2
+> PCIE_PWR - GPIO2_A5
+>
 
+Opps, I have referred the wrong schematics *RK3399_Rock960_V1.0.pdf*
+may be old version.
+Thanks for pointing out the correct schematics.
 
-Yes, thanks for pointing that.
+> Above mapping holds true for Rock960 version 1.1, 1.2 and 1.3. Also,
+> rk3399-rock960.dtsi is common for both Rock960 and Ficus boards, so the board
+> specific parts should go to rk3399-rock960.dts and rk3399-ficus.dts.
+>
+> Thanks,
+> Mani
 
+I have ROCK960-V 1.2 (Model A) for testing so. I will be sending patch
+v2 the relevant
+node update in rk3399-rock960.dts and rk3399-ficus.dts if below common
+for both the boards.
 
-Thanks,
-
-
-Alex
-
+PCIE_PERST - GPIO2_A2
+PCIE_PWR - GPIO2_A5
 
 >
-> -Kees
->
->> ---
->>   arch/arm/Kconfig                 |  2 +-
->>   arch/arm/include/asm/processor.h |  2 --
->>   arch/arm/kernel/process.c        |  5 ---
->>   arch/arm/mm/mmap.c               | 62 --------------------------------
->>   4 files changed, 1 insertion(+), 70 deletions(-)
->>
->> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
->> index 8869742a85df..27687a8c9fb5 100644
->> --- a/arch/arm/Kconfig
->> +++ b/arch/arm/Kconfig
->> @@ -6,7 +6,6 @@ config ARM
->>   	select ARCH_CLOCKSOURCE_DATA
->>   	select ARCH_HAS_DEBUG_VIRTUAL if MMU
->>   	select ARCH_HAS_DEVMEM_IS_ALLOWED
->> -	select ARCH_HAS_ELF_RANDOMIZE
->>   	select ARCH_HAS_FORTIFY_SOURCE
->>   	select ARCH_HAS_KEEPINITRD
->>   	select ARCH_HAS_KCOV
->> @@ -29,6 +28,7 @@ config ARM
->>   	select ARCH_SUPPORTS_ATOMIC_RMW
->>   	select ARCH_USE_BUILTIN_BSWAP
->>   	select ARCH_USE_CMPXCHG_LOCKREF
->> +	select ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT if MMU
->>   	select ARCH_WANT_IPC_PARSE_VERSION
->>   	select BUILDTIME_EXTABLE_SORT if MMU
->>   	select CLONE_BACKWARDS
->> diff --git a/arch/arm/include/asm/processor.h b/arch/arm/include/asm/processor.h
->> index 5d06f75ffad4..95b7688341c5 100644
->> --- a/arch/arm/include/asm/processor.h
->> +++ b/arch/arm/include/asm/processor.h
->> @@ -143,8 +143,6 @@ static inline void prefetchw(const void *ptr)
->>   #endif
->>   #endif
->>   
->> -#define HAVE_ARCH_PICK_MMAP_LAYOUT
->> -
->>   #endif
->>   
->>   #endif /* __ASM_ARM_PROCESSOR_H */
->> diff --git a/arch/arm/kernel/process.c b/arch/arm/kernel/process.c
->> index 72cc0862a30e..19a765db5f7f 100644
->> --- a/arch/arm/kernel/process.c
->> +++ b/arch/arm/kernel/process.c
->> @@ -322,11 +322,6 @@ unsigned long get_wchan(struct task_struct *p)
->>   	return 0;
->>   }
->>   
->> -unsigned long arch_randomize_brk(struct mm_struct *mm)
->> -{
->> -	return randomize_page(mm->brk, 0x02000000);
->> -}
->> -
->>   #ifdef CONFIG_MMU
->>   #ifdef CONFIG_KUSER_HELPERS
->>   /*
->> diff --git a/arch/arm/mm/mmap.c b/arch/arm/mm/mmap.c
->> index 0b94b674aa91..b8d912ac9e61 100644
->> --- a/arch/arm/mm/mmap.c
->> +++ b/arch/arm/mm/mmap.c
->> @@ -17,43 +17,6 @@
->>   	((((addr)+SHMLBA-1)&~(SHMLBA-1)) +	\
->>   	 (((pgoff)<<PAGE_SHIFT) & (SHMLBA-1)))
->>   
->> -/* gap between mmap and stack */
->> -#define MIN_GAP		(128*1024*1024UL)
->> -#define MAX_GAP		((STACK_TOP)/6*5)
->> -#define STACK_RND_MASK	(0x7ff >> (PAGE_SHIFT - 12))
->> -
->> -static int mmap_is_legacy(struct rlimit *rlim_stack)
->> -{
->> -	if (current->personality & ADDR_COMPAT_LAYOUT)
->> -		return 1;
->> -
->> -	if (rlim_stack->rlim_cur == RLIM_INFINITY)
->> -		return 1;
->> -
->> -	return sysctl_legacy_va_layout;
->> -}
->> -
->> -static unsigned long mmap_base(unsigned long rnd, struct rlimit *rlim_stack)
->> -{
->> -	unsigned long gap = rlim_stack->rlim_cur;
->> -	unsigned long pad = stack_guard_gap;
->> -
->> -	/* Account for stack randomization if necessary */
->> -	if (current->flags & PF_RANDOMIZE)
->> -		pad += (STACK_RND_MASK << PAGE_SHIFT);
->> -
->> -	/* Values close to RLIM_INFINITY can overflow. */
->> -	if (gap + pad > gap)
->> -		gap += pad;
->> -
->> -	if (gap < MIN_GAP)
->> -		gap = MIN_GAP;
->> -	else if (gap > MAX_GAP)
->> -		gap = MAX_GAP;
->> -
->> -	return PAGE_ALIGN(STACK_TOP - gap - rnd);
->> -}
->> -
->>   /*
->>    * We need to ensure that shared mappings are correctly aligned to
->>    * avoid aliasing issues with VIPT caches.  We need to ensure that
->> @@ -181,31 +144,6 @@ arch_get_unmapped_area_topdown(struct file *filp, const unsigned long addr0,
->>   	return addr;
->>   }
->>   
->> -unsigned long arch_mmap_rnd(void)
->> -{
->> -	unsigned long rnd;
->> -
->> -	rnd = get_random_long() & ((1UL << mmap_rnd_bits) - 1);
->> -
->> -	return rnd << PAGE_SHIFT;
->> -}
->> -
->> -void arch_pick_mmap_layout(struct mm_struct *mm, struct rlimit *rlim_stack)
->> -{
->> -	unsigned long random_factor = 0UL;
->> -
->> -	if (current->flags & PF_RANDOMIZE)
->> -		random_factor = arch_mmap_rnd();
->> -
->> -	if (mmap_is_legacy(rlim_stack)) {
->> -		mm->mmap_base = TASK_UNMAPPED_BASE + random_factor;
->> -		mm->get_unmapped_area = arch_get_unmapped_area;
->> -	} else {
->> -		mm->mmap_base = mmap_base(random_factor, rlim_stack);
->> -		mm->get_unmapped_area = arch_get_unmapped_area_topdown;
->> -	}
->> -}
->> -
->>   /*
->>    * You really shouldn't be using read() or write() on /dev/mem.  This
->>    * might go away in the future.
->> -- 
->> 2.20.1
->>
+> [1] https://dl.vamrs.com/products/rock960/docs/hw/rock960_sch_v12_20180314.pdf
+
+Best Regards
+-Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
