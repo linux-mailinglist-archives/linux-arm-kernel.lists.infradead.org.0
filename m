@@ -2,86 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2964305B6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 02:17:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D623305E3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 02:49:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=i1VBff6P6i38Pms92K/y1JlAz6itceFB0XYB6b586Ro=; b=jkxJDN4fXLa+MQ86WWNmG6OUHq
-	xR6O3gP1YusQAgk7xwbEMLLfXesd+ZNAzC9PEowA0AvyjRf/9pBIVQaNjlPt4LW7tXsWamYn/ho4x
-	8eGrRQwTfLPWVwHZkVOE6mapLHTIczw2PMxTbSKxX6gQ9DJT/jxGm72ohYp1zOk0rOLW2IBV47P2x
-	C07G75Ut934no1nFx+y3WDiXVvs3T7I0+MBS0PHD3uLsUnKZfYaPpZFbQm2Hi4zKhHXnT8ALVYtpV
-	Nx4EWsc8+91E2L1dfFw3IoakaG39jE3L3kMeNx5blYaOjF4yDdK/MfbIdSEKmNEWvw29dIM45p9Iv
-	bo1WFFMg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VG0IbTMCuGeB0lruJCJ0s1BlBudebck+pEAu7NdZN7s=; b=ioujUZo1+DA1w+
+	arw9HseT4s06MxQlkAJI8icgrD264CXyqXrnbF6LlIGeMJRIW2HbbyEb6VE3D39zB7r+Zbp0iytBy
+	yzU6EfU/vCTLYEPowpqDgyVfNNcMh97inJyY+C9pUd0Slt4gx74VHLhWfNW1Om7K+MjfbSu21R2IK
+	z9iVlRvrcmfWwYZ8lWlcPnUvm9LuSz80agXFzPfdaUyD5CB4QjJnHx24CH3//zjIKSdTIb3j0xIfX
+	2wRkEqaufNRccROnCQPVHgNHDfBA0WQlJ0UsoljXG/uyS9QgRTr15iizOU5NWyxT0RfEULshCoI1Q
+	mbG0znpWyJwXlRCQV5/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWVEs-0003vf-Li; Fri, 31 May 2019 00:17:42 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1hWVjH-0004A7-Ki; Fri, 31 May 2019 00:49:07 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWVEm-0003vI-A6
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 00:17:37 +0000
-Received: by mail-ed1-x544.google.com with SMTP id n12so3757410edt.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 17:17:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=KilQgTmnb5nYWh7a+i+EYwFVHm8qNkHvjaIrcsYy+bQ=;
- b=UYD6a11T0faxUH6FuHYRubUy66uwhxQIFEQHBDNi6Hm0rsKXch8bTe4qbEogjYXF12
- +tAXmYQJ2h0kxzyQiD4t336y85hpXCAo42Kpxvof+f9lePbWvaCcWzpiUJcAHGhnIRYb
- 0uJU5TwEMlTC8awpUo4J5raGlGPbw6sNU0C0o=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=KilQgTmnb5nYWh7a+i+EYwFVHm8qNkHvjaIrcsYy+bQ=;
- b=gTBpcu7W7y52LzfLYDlDJEHpiCrtH1aTxSZ0YTZ+vKd3hStiFUVZerRRu2dgmdExq3
- 9oDscATwitc20AO93oT3mRZQZsb56xZ84ECKnuyQ9fc1jPCnrbMc684AM3Km+n6m1aAh
- Hb90jioGfJ+UYiIHASbc1j4oO6ZAPSeBOAbg5Dlsmq0cyMdplkopiQBok9KZpY6FzFmE
- 57PDx4xl9rVK0ny5+SgOtwMFGO1WkiA0qk8+FZwo3xA66EY2Cpz/RrDMLYmTu1HWEaO0
- DpD36ihZgQ9jYIwUJhQlg3uoO0llBplQ2EyEJj4w45rfB7Vit5+8LvU+pMRJdWamVBaY
- 3HuA==
-X-Gm-Message-State: APjAAAWwVXtz3jAV9E8P/s5FO5hasWBzhhe6QquISnhfzwDHx8SW9TZ/
- UECI0LCU8rr4qmXWpofcwy8Zag==
-X-Google-Smtp-Source: APXvYqxpHaDuapqKKB2H8FRfUx2YJNboFSFW9NVWgRnsRiE5ANLJDWfQM9va4NxyzqJDXI1k3Rd8FQ==
-X-Received: by 2002:a17:906:843:: with SMTP id f3mr6346472ejd.70.1559261853687; 
- Thu, 30 May 2019 17:17:33 -0700 (PDT)
-Received: from [10.136.8.252] ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id o2sm684618ejz.22.2019.05.30.17.17.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 30 May 2019 17:17:32 -0700 (PDT)
-Subject: Re: [PATCH] pinctrl: ns2: Fix potential NULL dereference
-To: Young Xiao <92siuyang@gmail.com>, rjui@broadcom.com,
- sbranden@broadcom.com, bcm-kernel-feedback-list@broadcom.com,
- linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <1559097838-26070-1-git-send-email-92siuyang@gmail.com>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <ace57d13-6194-df8e-d2e8-fbc85d9ce21a@broadcom.com>
-Date: Thu, 30 May 2019 17:17:28 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hWVj9-00049S-UQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 00:49:01 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4V0mp6I026191;
+ Thu, 30 May 2019 19:48:51 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559263731;
+ bh=WK2k58QukEIJdpLlTnnulnkBnYtAL9Snthfg/26Dpqk=;
+ h=From:To:CC:Subject:Date;
+ b=wUbIg09Ma8NH35/hGDFgI+X+6t2VsqCEP11qR0HcHzyf0GUJTfCh+Wb4WFG0z/K1f
+ ycfD2gTCFgeJBHqBpww77/TGP7k07QHVztDDLrkHtsLvQU4YFKv39+FY7ai+fkEKqg
+ Kn4x/tC7wHtG6TN71BwFRYvNlLm4ATZRzc735ws0=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4V0moI4075840
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 30 May 2019 19:48:50 -0500
+Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 30
+ May 2019 19:48:50 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 30 May 2019 19:48:50 -0500
+Received: from legion.dal.design.ti.com (legion.dal.design.ti.com
+ [128.247.22.53])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4V0moIh026309;
+ Thu, 30 May 2019 19:48:50 -0500
+Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
+ by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x4V0mnm09273; 
+ Thu, 30 May 2019 19:48:49 -0500 (CDT)
+From: Suman Anna <s-anna@ti.com>
+To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
+Subject: [PATCH] arm64: dts: ti: k3-j721e-main: Add Main NavSS Interrupt
+ controller node
+Date: Thu, 30 May 2019 19:48:48 -0500
+Message-ID: <20190531004848.32061-1-s-anna@ti.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <1559097838-26070-1-git-send-email-92siuyang@gmail.com>
-Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_171736_355833_57375D94 
-X-CRM114-Status: GOOD (  16.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190530_174900_120798_96904902 
+X-CRM114-Status: GOOD (  11.48  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -101,44 +92,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add the Interrupt controller node for the Interrupt Router present within
+the Main NavSS module. This Interrupt Router can route 192 interrupts to
+the GIC_SPI in 3 sets of 64 interrupts each. Note that the last set is
+reserved for the host ID A72_3 for hypervisor usecases, so the node is
+added only with 2 sets for the Linux kernel context (host id A72_2). This
+is specified through the ti,sci-rm-range-girq property.
 
+Signed-off-by: Suman Anna <s-anna@ti.com>
+---
+Hi Tero,
 
-On 5/28/2019 7:43 PM, Young Xiao wrote:
-> platform_get_resource() may fail and return NULL, so we should
-> better check it's return value to avoid a NULL pointer dereference
-> a bit later in the code.
-> 
-> Signed-off-by: Young Xiao <92siuyang@gmail.com>
-> ---
->  drivers/pinctrl/bcm/pinctrl-ns2-mux.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/drivers/pinctrl/bcm/pinctrl-ns2-mux.c b/drivers/pinctrl/bcm/pinctrl-ns2-mux.c
-> index 4b5cf0e..2bf6af7 100644
-> --- a/drivers/pinctrl/bcm/pinctrl-ns2-mux.c
-> +++ b/drivers/pinctrl/bcm/pinctrl-ns2-mux.c
-> @@ -1048,6 +1048,8 @@ static int ns2_pinmux_probe(struct platform_device *pdev)
->  		return PTR_ERR(pinctrl->base0);
->  
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
-> +	if (!res)
-> +		return -EINVAL;
+This patch depends on the J721E series [1] from Nishanth. Patch tested
+using additional patches exercising Mailbox IP.
 
-Right, usually not needed if devm_ioremap_resource is used since it was
-checked there. But in this case, I do think it needs to be checked. This
-change looks good to me. Thanks.
+regards
+Suman
 
->  	pinctrl->base1 = devm_ioremap_nocache(&pdev->dev, res->start,
->  					resource_size(res));
->  	if (!pinctrl->base1) {
-> 
+[1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=121189
 
-Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+ arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
+index d42912044a5d..36c51ff9a898 100644
+--- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
+@@ -50,6 +50,24 @@
+ 		#iommu-cells = <1>;
+ 	};
+ 
++	cbass_main_navss: interconnect0 {
++		compatible = "simple-bus";
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		main_navss_intr: interrupt-controller1 {
++			compatible = "ti,sci-intr";
++			ti,intr-trigger-type = <4>;
++			interrupt-controller;
++			interrupt-parent = <&gic500>;
++			#interrupt-cells = <2>;
++			ti,sci = <&dmsc>;
++			ti,sci-dst-id = <14>;
++			ti,sci-rm-range-girq = <0>, <2>;
++		};
++	};
++
+ 	secure_proxy_main: mailbox@32c00000 {
+ 		compatible = "ti,am654-secure-proxy";
+ 		#mbox-cells = <1>;
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
