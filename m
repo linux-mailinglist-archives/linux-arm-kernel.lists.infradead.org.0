@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 189DA30F74
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 16:00:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8E7230F7B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 16:01:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qhTnT/AZcbZZjonB0OX6yZKkgF25/d4GFU58I3zjxZ8=; b=f9XpT031xR8RNs
-	pgvXmD8TvBLMxh1L5shRHcSIkzjyEsaafyZYQglMYFvysHGd1XYXx3Ep2ABJOhuaq3Vrvw89/bFNi
-	Oocbkzqnofb2W671vsUEMmElNFMOVAshweh/cFEgusi/aEIK6JCpz8huFOAQAfbAbVLhyn+LZSz72
-	NCfRa+T89G8/gRvi9eXYostlHtQIR1UL70ZK9Sl2AiJCNLbPY0HuCKuyz9Vh6GEmGTaGO93gCO7OI
-	hftTU6Fi8iW4uOZVviOOu8ZTrJ7Y4hz46H6nJpza0zvW2Sz3ILJrdgkA/uQ+04xNP80RBzX3ulWgM
-	lVAX+kS8BY4wOHYi1KHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p6YoVdEFXR4IirDLHDYkMk1zLOz4t+Ijd71Dpr/qHxw=; b=XZOMBzI4AToR4z
+	F3Wp6slk//5druJv6k2CaXORayK1VItaWxhjcUd4JtZgKhw3+VvO+qhBQTdrYq2M3XGP67eCdA5n2
+	GRYVve4S2uJXeeHVpEsBP3nuWjL7dHOaA5nJdVRLoBbYpjSABsaelfq00TfbfFCFa4QgnBYstaHGH
+	f4jqlp30IIoFDx/mOcPlvEwt1vgOvURtNn6cTkcaeSs4MoiNn2g2Jm8JKM5rpp9cBFNOtse/Hpsn/
+	z+dRZdW1M+q4+npmTFR/HdNL4tfxdwKX1UAPfYvLCaw+cTsG6hVfg0D+pw8S6V9ou3e3EMGumYTWU
+	+VBlfhUCZLdj9mq4IvtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWi5Q-0003jt-5u; Fri, 31 May 2019 14:00:48 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWi5I-0003iz-Vj
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 14:00:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3427A78;
- Fri, 31 May 2019 07:00:38 -0700 (PDT)
-Received: from [10.1.197.21] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 1502C3F5AF; Fri, 31 May 2019 07:00:36 -0700 (PDT)
-Subject: Re: [RFC v2 3/7] arm64: cpufeature: handle conflicts based on
- capability
-To: Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20190529190332.29753-1-kristina.martsenko@arm.com>
- <20190529190332.29753-4-kristina.martsenko@arm.com>
- <e4ab4a88-9e14-4d2b-e89a-6ea3202bcfd1@arm.com>
-From: Kristina Martsenko <kristina.martsenko@arm.com>
-Message-ID: <254e656a-9fa7-3bf7-9d76-c1b30e2b394a@arm.com>
-Date: Fri, 31 May 2019 15:00:35 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hWi6L-00045I-1v; Fri, 31 May 2019 14:01:45 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWi6C-00044r-LV
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 14:01:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=gwiVuzFV6bQvlyPXmdEGdPq+Cy17hU8CYkt3Fw8v/lU=; b=lcPC/c3qpa4vkVD3PvIN0ICGd
+ 0zoixj25uxmyrPC1Gl7gwqwTnH6jZaINctHr7f5EijX5pDknWZP6zUFb2gEvXbD9QQrYgydwfY6Sv
+ 5MQXJtQCEc1sNkIluhHPJ2YGMK75RfPb7BRy2d5ig5+iwtW0LxtnP6yqh+d7DXzJELG+kxT+grrvB
+ R9BBnisnkcsa7ILE9alXYIYhhRpOK6oqTJW5iIehQRjLG/7v5iVG/Ori9lflWJTHLrO0VvwxbBYM4
+ VXEkVwSZOlsqgBv8em/B2/mCJBPqpy5foQ28445i0ge0zgUsqpt6kItLt8thiAb5gtuAh5JlKGeQP
+ avpaTKeSw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:56106)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1hWi66-0001AF-6m; Fri, 31 May 2019 15:01:30 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1hWi64-0006Oj-3h; Fri, 31 May 2019 15:01:28 +0100
+Date: Fri, 31 May 2019 15:01:28 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: [PATCH 1/6] serial: sa1100: add support for mctrl gpios
+Message-ID: <20190531140127.yp2o7effrsxencyb@shell.armlinux.org.uk>
+References: <20190531111257.27hor6xgb3nsdghg@shell.armlinux.org.uk>
+ <E1hWfTn-0003fP-Rl@rmk-PC.armlinux.org.uk>
+ <20190531125013.3gkexhmbqjpdvrtf@pengutronix.de>
+ <20190531132340.bco6xpyl3aatbryl@shell.armlinux.org.uk>
+ <20190531135658.jo4kas3ozj7gpmmc@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <e4ab4a88-9e14-4d2b-e89a-6ea3202bcfd1@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190531135658.jo4kas3ozj7gpmmc@pengutronix.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_070041_033667_91058BF9 
-X-CRM114-Status: GOOD (  24.39  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190531_070136_705946_2946501A 
+X-CRM114-Status: GOOD (  17.53  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,78 +90,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, keescook@chromium.org, ard.biesheuvel@linaro.org,
- catalin.marinas@arm.com, will.deacon@arm.com, ramana.radhakrishnan@arm.com,
- amit.kachhap@arm.com, dave.martin@arm.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ Jiri Slaby <jslaby@suse.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMzAvMDUvMjAxOSAxNToxNiwgU3V6dWtpIEsgUG91bG9zZSB3cm90ZToKPiBPbiAwNS8yOS8y
-MDE5IDA4OjAzIFBNLCBLcmlzdGluYSBNYXJ0c2Vua28gd3JvdGU6Cj4+IEVhY2ggc3lzdGVtIGNh
-cGFiaWxpdHkgY2FuIGJlIG9mIGVpdGhlciBib290LCBsb2NhbCwgb3Igc3lzdGVtIHNjb3BlLAo+
-PiBkZXBlbmRpbmcgb24gd2hlbiB0aGUgc3RhdGUgb2YgdGhlIGNhcGFiaWxpdHkgaXMgZmluYWxp
-emVkLiBXaGVuIHdlCj4+IGRldGVjdCBhIGNvbmZsaWN0IG9uIGEgbGF0ZSBDUFUsIHdlIGVpdGhl
-ciBvZmZsaW5lIHRoZSBDUFUgb3IgcGFuaWMgdGhlCj4+IHN5c3RlbS4gV2UgY3VycmVudGx5IGFs
-d2F5cyBwYW5pYyBpZiB0aGUgY29uZmxpY3QgaXMgY2F1c2VkIGJ5IGEgYm9vdAo+PiBzY29wZSBj
-YXBhYmlsaXR5LCBhbmQgb2ZmbGluZSB0aGUgQ1BVIGlmIHRoZSBjb25mbGljdCBpcyBjYXVzZWQg
-YnkgYQo+PiBsb2NhbCBvciBzeXN0ZW0gc2NvcGUgY2FwYWJpbGl0eS4KPj4KPj4gV2UncmUgZ29p
-bmcgdG8gd2FudCB0byBhZGQgbmV3IGNhcGFiaWxpdHkgKGZvciBwb2ludGVyIGF1dGhlbnRpY2F0
-aW9uKQo+PiB3aGljaCBuZWVkcyB0byBiZSBib290IHNjb3BlIGJ1dCBkb2Vzbid0IG5lZWQgdG8g
-cGFuaWMgdGhlIHN5c3RlbSB3aGVuIGEKPj4gY29uZmxpY3QgaXMgZGV0ZWN0ZWQuIFNvIGFkZCBh
-IG5ldyBmbGFnIHRvIHNwZWNpZnkgd2hldGhlciB0aGUKPj4gY2FwYWJpbGl0eSByZXF1aXJlcyB0
-aGUgc3lzdGVtIHRvIHBhbmljIG9yIG5vdC4gQ3VycmVudCBib290IHNjb3BlCj4+IGNhcGFiaWxp
-dGllcyBhcmUgdXBkYXRlZCB0byBzZXQgdGhlIGZsYWcsIHNvIHRoZXJlIHNob3VsZCBiZSBubwo+
-PiBmdW5jdGlvbmFsIGNoYW5nZSBhcyBhIHJlc3VsdCBvZiB0aGlzIHBhdGNoLgo+Pgo+PiBTaWdu
-ZWQtb2ZmLWJ5OiBLcmlzdGluYSBNYXJ0c2Vua28gPGtyaXN0aW5hLm1hcnRzZW5rb0Bhcm0uY29t
-Pgo+IAo+IAo+PiAtLS0KPj4KPj4gQ2hhbmdlcyBzaW5jZSBSRkMgdjE6Cj4+IMKgIC0gTmV3IHBh
-dGNoLCB0byBoYXZlIHB0cmF1dGggbWlzbWF0Y2hlcyBkaXNhYmxlIHNlY29uZGFyaWVzIGluc3Rl
-YWQgb2YKPj4gwqDCoMKgIHBhbmlja2luZwo+Pgo+PiDCoCBhcmNoL2FybTY0L2luY2x1ZGUvYXNt
-L2NwdWZlYXR1cmUuaCB8IDE1ICsrKysrKysrKysrKysrLQo+PiDCoCBhcmNoL2FybTY0L2tlcm5l
-bC9jcHVmZWF0dXJlLmPCoMKgwqDCoMKgIHwgMjMgKysrKysrKysrLS0tLS0tLS0tLS0tLS0KPj4g
-wqAgMiBmaWxlcyBjaGFuZ2VkLCAyMyBpbnNlcnRpb25zKCspLCAxNSBkZWxldGlvbnMoLSkKPj4K
-Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vY3B1ZmVhdHVyZS5oIGIvYXJj
-aC9hcm02NC9pbmNsdWRlL2FzbS9jcHVmZWF0dXJlLmgKPj4gaW5kZXggMDUyMmVhNjc0MjUzLi5h
-ZDk1MmYyZTBhMmIgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vY3B1ZmVh
-dHVyZS5oCj4+ICsrKyBiL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vY3B1ZmVhdHVyZS5oCj4+IEBA
-IC0yMTcsNiArMjE3LDEwIEBAIGV4dGVybiBzdHJ1Y3QgYXJtNjRfZnRyX3JlZyBhcm02NF9mdHJf
-cmVnX2N0cmVsMDsKPj4gwqDCoCAqwqDCoMKgwqAgSW4gc29tZSBub24tdHlwaWNhbCBjYXNlcyBl
-aXRoZXIgYm90aCAoYSkgYW5kIChiKSwgb3IgbmVpdGhlciwKPj4gwqDCoCAqwqDCoMKgwqAgc2hv
-dWxkIGJlIHBlcm1pdHRlZC4gVGhpcyBjYW4gYmUgZGVzY3JpYmVkIGJ5IGluY2x1ZGluZyBuZWl0
-aGVyCj4+IMKgwqAgKsKgwqDCoMKgIG9yIGJvdGggZmxhZ3MgaW4gdGhlIGNhcGFiaWxpdHkncyB0
-eXBlIGZpZWxkLgo+PiArICoKPj4gKyAqwqDCoMKgwqAgSW4gY2FzZSBvZiBhIGNvbmZsaWN0LCB0
-aGUgQ1BVIGlzIHByZXZlbnRlZCBmcm9tIGJvb3RpbmcuIElmIHRoZQo+PiArICrCoMKgwqDCoCBB
-Uk02NF9DUFVDQVBfUEFOSUNfT05fQ09ORkxJQ1QgZmxhZyBpcyBzcGVjaWZpZWQgZm9yIHRoZSBj
-YXBhYmlsaXR5LAo+PiArICrCoMKgwqDCoCB0aGVuIGEga2VybmVsIHBhbmljIGlzIHRyaWdnZXJl
-ZC4KPj4gwqDCoCAqLwo+PiDCoCDCoCBAQCAtMjQ5LDYgKzI1Myw4IEBAIGV4dGVybiBzdHJ1Y3Qg
-YXJtNjRfZnRyX3JlZyBhcm02NF9mdHJfcmVnX2N0cmVsMDsKPj4gwqAgI2RlZmluZSBBUk02NF9D
-UFVDQVBfUEVSTUlUVEVEX0ZPUl9MQVRFX0NQVcKgwqDCoCAoKHUxNilCSVQoNCkpCj4+IMKgIC8q
-IElzIGl0IHNhZmUgZm9yIGEgbGF0ZSBDUFUgdG8gbWlzcyB0aGlzIGNhcGFiaWxpdHkgd2hlbiBz
-eXN0ZW0gaGFzIGl0ICovCj4+IMKgICNkZWZpbmUgQVJNNjRfQ1BVQ0FQX09QVElPTkFMX0ZPUl9M
-QVRFX0NQVcKgwqDCoCAoKHUxNilCSVQoNSkpCj4+ICsvKiBQYW5pYyB3aGVuIGEgY29uZmxpY3Qg
-aXMgZGV0ZWN0ZWQgKi8KPj4gKyNkZWZpbmUgQVJNNjRfQ1BVQ0FQX1BBTklDX09OX0NPTkZMSUNU
-wqDCoMKgwqDCoMKgwqAgKCh1MTYpQklUKDYpKQo+PiDCoCDCoCAvKgo+PiDCoMKgICogQ1BVIGVy
-cmF0YSB3b3JrYXJvdW5kcyB0aGF0IG5lZWQgdG8gYmUgZW5hYmxlZCBhdCBib290IHRpbWUgaWYg
-b25lIG9yCj4+IEBAIC0yOTAsNyArMjk2LDggQEAgZXh0ZXJuIHN0cnVjdCBhcm02NF9mdHJfcmVn
-IGFybTY0X2Z0cl9yZWdfY3RyZWwwOwo+PiDCoMKgICogQ1BVIGZlYXR1cmUgdXNlZCBlYXJseSBp
-biB0aGUgYm9vdCBiYXNlZCBvbiB0aGUgYm9vdCBDUFUuIEFsbCBzZWNvbmRhcnkKPj4gwqDCoCAq
-IENQVXMgbXVzdCBtYXRjaCB0aGUgc3RhdGUgb2YgdGhlIGNhcGFiaWxpdHkgYXMgZGV0ZWN0ZWQg
-YnkgdGhlIGJvb3QgQ1BVLgo+PiDCoMKgICovCj4+IC0jZGVmaW5lIEFSTTY0X0NQVUNBUF9TVFJJ
-Q1RfQk9PVF9DUFVfRkVBVFVSRSBBUk02NF9DUFVDQVBfU0NPUEVfQk9PVF9DUFUKPj4gKyNkZWZp
-bmUgQVJNNjRfQ1BVQ0FQX1NUUklDVF9CT09UX0NQVV9GRUFUVVJFwqDCoMKgwqDCoMKgwqAgXAo+
-PiArwqDCoMKgIChBUk02NF9DUFVDQVBfU0NPUEVfQk9PVF9DUFUgfCBBUk02NF9DUFVDQVBfUEFO
-SUNfT05fQ09ORkxJQ1QpCj4gCj4gWW91IG1heSB3YW50IHRvIHVwZGF0ZSB0aGUgY29tbWVudCB0
-byBtZW50aW9uIHRoYXQgYSBjb25mbGljdCB0cmlnZ2Vycwo+IGtlcm5lbCBwYW5pYywgYXMgaXQg
-aXMgbW9yZSB3aXRoaW4gdGhlIGNvbnRyb2wgb2YgdGhlICJjYXAiIGJlaGF2aW9yLgoKRG8geW91
-IG1lYW4gdG8gdXBkYXRlIHRoZSBjb21tZW50IGFib3ZlIEFSTTY0X0NQVUNBUF9TVFJJQ1RfQk9P
-VF9DUFVfRkVBVFVSRT8KVG8gc29tZXRoaW5nIGxpa2UgdGhlIGZvbGxvd2luZz8KCi8qCiAqIENQ
-VSBmZWF0dXJlIHVzZWQgZWFybHkgaW4gdGhlIGJvb3QgYmFzZWQgb24gdGhlIGJvb3QgQ1BVLiBB
-bGwgc2Vjb25kYXJ5CiAqIENQVXMgbXVzdCBtYXRjaCB0aGUgc3RhdGUgb2YgdGhlIGNhcGFiaWxp
-dHkgYXMgZGV0ZWN0ZWQgYnkgdGhlIGJvb3QgQ1BVLiBJbgogKiBjYXNlIG9mIGEgY29uZmxpY3Qs
-IGEga2VybmVsIHBhbmljIGlzIHRyaWdnZXJlZC4KICovCgo+IAo+IFdpdGggdGhhdDoKPiAKPiBS
-ZXZpZXdlZC1ieTogU3V6dWtpIEsgUG91bG9zZSA8c3V6dWtpLnBvdWxvc2VAYXJtLmNvbT4KClRo
-YW5rcyEKCktyaXN0aW5hCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Fri, May 31, 2019 at 03:56:58PM +0200, Uwe Kleine-K=F6nig wrote:
+> On Fri, May 31, 2019 at 02:23:40PM +0100, Russell King - ARM Linux admin =
+wrote:
+> > On Fri, May 31, 2019 at 02:50:13PM +0200, Uwe Kleine-K=F6nig wrote:
+> > > On Fri, May 31, 2019 at 12:13:47PM +0100, Russell King wrote:
+> > > > +static int sa1100_serial_add_one_port(struct sa1100_port *sport, s=
+truct platform_device *dev)
+> > > > +{
+> > > > +	sport->port.dev =3D &dev->dev;
+> > > > +	sport->gpios =3D mctrl_gpio_init_noauto(sport->port.dev, 0);
+> > > =
+
+> > > the _noauto function was only introduced to ease a transition. I think
+> > > the driver would benefit to use mctrl_gpio_init() instead.
+> > =
+
+> > In what way would the driver benefit?  mctrl_gpio_init() requires that
+> > there are IRQs for each input GPIO.  This is not the case with most
+> > SA11x0 platforms, where the GPIO controls are implemented using simple
+> > latches, hence that interface is entirely unsuitable.
+> =
+
+> Ah, but then you can only use the outputs reliably here as an edge on
+> (say) CTS stays unnoticed with both mctrl_gpio_init() and
+> mctrl_gpio_init_noauto().
+
+Right that is a risk with a polled approach, but that is the approach
+that the SA1100 serial driver has taken ever since it was written
+almost twenty years ago, and no one has raised any concerns about
+that until now.
+
+> Unless I miss something (which is quite possible given that it's quite
+> some time ago I looked into mctrl_gpio) with mctrl_gpio_init_noauto()
+> having a CTS-gpio is just ignored unless the modem ctrl lines are
+> explicitely requestet while with mctrl_gpio_init() it results in an
+> error. Isn't the error the better alternative?
+
+Unless the serial driver polls the modem control line status, which
+the SA1100 driver continues to do in exactly the same way after this
+conversion.
+
+Do you suggest that we just regress the driver by ripping out this
+support that no one has had any problems with, and that is known to
+work sufficiently in its day, just because we now don't like it?
+
+-- =
+
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
+up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
