@@ -2,75 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33EA730672
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 04:02:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B10B30687
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 04:13:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zg3XxHuCPxam9IqlHQGwZ1eHId6Ul1WHkH7GaGDJADs=; b=lR/hu/S8ow59KK
-	wL7+LdVhs11N3mpo+eT80gDCbgNV8RIP5jFi5DCWhBODAc1YMAZO9VKVsJarYGcs2Wa8dn1vRTcxx
-	6M5aR7NL8lxcrupRd/Xsjmm60ElDwuL0uaJ8tKJAoUTE+IG2OL7oO0uTdkPE43+KOLD0nE45LcIhP
-	eAVJN6MzM7I2R8QyKc/nRKI69NkOAe8jDjQm1lCmRHLKeSY1XwvOz9EGu8ep1dIL5zp0KyJfQxET8
-	0tJ0tSmT5F4Rkwh6VkPkJfEa2oNKVlgmcCKywZF6v5KBsF3CUNFSMCQXqswXqWriA2WqZSmouzbti
-	VtnlMOgBpJNQNIQP5uUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7xql5EZ9d/YM1D4zoKD4/XMNASYebrvjpffh6lm5NEg=; b=mxIh3DP5Kvt8so
+	YusMkQuJg5MmJR6S1+92tYIDIZQGtdqWrSGsTlbJraol4OI23Z2lQse7I1TiObYztkQJcaDGmKVOk
+	rguYOgJl5DC6dI3gI8PhY+akFhr0DFO5fGZHUHwzS+aiNMjowBLLcAL+dixI1YnC4JvNaf+WkWJ2B
+	cPcG4CYNf7Nh2jnPXGQ+dLLVT7NVyYTISgyuVIVVa0F82qxdxs+MfdwnwXbHuiPsgYT2qM/imJscZ
+	1WW0cMzQs9ysZ+3w+aA8AgFTLIsOGHbgdxvzCEyJYdgB2X9J2e6jDgVazmfSUEYa7JPddCw1otT6K
+	bsLF4d4JUB5GAvyTySGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWWsI-0001fQ-M1; Fri, 31 May 2019 02:02:30 +0000
-Received: from conssluserg-03.nifty.com ([210.131.2.82])
+	id 1hWX30-0004b4-Gm; Fri, 31 May 2019 02:13:34 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWWsA-0001es-Ug
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 02:02:24 +0000
-Received: from mail-vs1-f46.google.com (mail-vs1-f46.google.com
- [209.85.217.46]) (authenticated)
- by conssluserg-03.nifty.com with ESMTP id x4V220IG026218
- for <linux-arm-kernel@lists.infradead.org>; Fri, 31 May 2019 11:02:00 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x4V220IG026218
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1559268121;
- bh=JFKrCexjwszU8gfQr6gW63eXVh2Hm+G6S4mj7tEbXBk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Gy9TmV6St9w3knc6CLRQIxjO90p3aOCozwt75d8GEjJesM/ZEDgxL8yKNCQezIlMc
- HVCUNTVU3t2OD7wFo49b/0s5+H1p8zXmzTxBkh0pLyIo5CaZbZeRoUY1gSowgEymjy
- TuHvd6Lqwpt3rRaSn9PoSC76moqRKXBaqC3eHlLE/4kx/sqIMn99GMJGKPF2n4T+Ln
- +3Net432SjsjP6bO0ADHtZdEs8SXhz4pQWYuW4rYy/iu4aSPLm02HrBieQUlI76e9w
- kFq0h9gnBHlNrm938clEM/L8KGz9VputCTg6OE0Jcv0/UMElkP3QO1F6Xh5ykq4NFW
- xHLYv63EaCg1Q==
-X-Nifty-SrcIP: [209.85.217.46]
-Received: by mail-vs1-f46.google.com with SMTP id d128so5688274vsc.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 19:02:00 -0700 (PDT)
-X-Gm-Message-State: APjAAAX1xpZKfH3bQ3wGm2drhzTkDS2FTb5l9T65BbKHhbQRNB+X6apr
- 9q0rsTgsK35RVv8uNmbGbuTvNMmhpmTmcXMeGjI=
-X-Google-Smtp-Source: APXvYqzVzNfAFknY7H7mEOgb5wDJU1a317iny5D7E6KvkLWcVJbVf3bJmiOMvqJe5LYISJjwZVa1Kmh96JHDJfwhpUY=
-X-Received: by 2002:a67:b109:: with SMTP id w9mr3599220vsl.155.1559268119666; 
- Thu, 30 May 2019 19:01:59 -0700 (PDT)
+ id 1hWX2t-0004ZZ-Ib
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 02:13:28 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4V2DNib098757;
+ Thu, 30 May 2019 21:13:23 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559268804;
+ bh=4vHnJdthnChgJfAriNkhNapcvwKQORqbRQnHgoj1we0=;
+ h=From:To:CC:Subject:Date;
+ b=DybxtHrFjYw9OxY3kbZCcSWtD/wOGmO/+PiB1j2PHboNVNfr2vtaMuKoG2BsQcFDs
+ 4O2XfHxc8NuKXwTzi7fIpnOGlJo/fEHNWIifLlUFiPfU3fAAJUmnbPMw7j21aD1d0n
+ yPDgPz+VDgoES3g12gzzhvO2ImNRAZ2XlvwEiTKY=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4V2DNoS040227
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 30 May 2019 21:13:23 -0500
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 30
+ May 2019 21:13:23 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 30 May 2019 21:13:23 -0500
+Received: from legion.dal.design.ti.com (legion.dal.design.ti.com
+ [128.247.22.53])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4V2DNGG027201;
+ Thu, 30 May 2019 21:13:23 -0500
+Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
+ by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x4V2DNm18124; 
+ Thu, 30 May 2019 21:13:23 -0500 (CDT)
+From: Suman Anna <s-anna@ti.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>
+Subject: [PATCH 0/3] Add HwSpinlock support for TI K3 SoCs
+Date: Thu, 30 May 2019 21:13:18 -0500
+Message-ID: <20190531021321.14025-1-s-anna@ti.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190529182324.8140-1-Jason@zx2c4.com>
-In-Reply-To: <20190529182324.8140-1-Jason@zx2c4.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 31 May 2019 11:01:23 +0900
-X-Gmail-Original-Message-ID: <CAK7LNARFUaaJH+g3oGzwFyKnELum72nOzxnvUfMKYBaAoGVkug@mail.gmail.com>
-Message-ID: <CAK7LNARFUaaJH+g3oGzwFyKnELum72nOzxnvUfMKYBaAoGVkug@mail.gmail.com>
-Subject: Re: [PATCH] arm: vdso: pass --be8 to linker if necessary
-To: "Jason A. Donenfeld" <Jason@zx2c4.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_190223_201297_106D9775 
-X-CRM114-Status: GOOD (  14.63  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190530_191327_678360_99940C02 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.82 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,72 +92,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <rmk+kernel@armlinux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jason,
+Hi Bjorn,
 
-Thanks for catching this.
+The following series adds the support for the HwSpinlock IP present
+on the newer TI K3 AM65x and J721E SoCs. The first 2 patches are
+related to the K3 support, and the last patch is a minor debug related
+trace to see the number of locks registered on each SoC.
 
-On Thu, May 30, 2019 at 3:26 AM Jason A. Donenfeld <Jason@zx2c4.com> wrote:
->
-> The commit fe00e50b2db8 ("ARM: 8858/1: vdso: use $(LD) instead of $(CC)
-> to link VDSO") removed the passing of CFLAGS, since ld doesn't take
-> those directly. However, prior, big-endian ARM was relying on gcc to
-> translate its -mbe8 option into ld's --be8 option. Lacking this, ld
+I will be posting the DT nodes once the binding is acked.
 
+regards
+Suman
 
-'git grep -- -mbe8' has no hit.
+Suman Anna (3):
+  dt-bindings: hwlock: Update OMAP binding for TI K3 SoCs
+  hwspinlock/omap: Add support for TI K3 SoCs
+  hwspinlock/omap: Add a trace during probe
 
-Is it a toolchain internal flag?
+ .../bindings/hwlock/omap-hwspinlock.txt       | 25 +++++++++++++++----
+ drivers/hwspinlock/Kconfig                    |  2 +-
+ drivers/hwspinlock/omap_hwspinlock.c          |  4 +++
+ 3 files changed, 25 insertions(+), 6 deletions(-)
 
+-- 
+2.21.0
 
-
-> generated be32 code, making the VDSO generate SIGILL when called by
-> userspace.
->
-> This commit passes --be8 if CONFIG_CPU_ENDIAN_BE8 is enabled.
->
-> Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
-> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-> Cc: Russell King <rmk+kernel@armlinux.org.uk>
-> Cc: Arnd Bergmann <arnd@arndb.de>
-> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> ---
->  arch/arm/vdso/Makefile | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm/vdso/Makefile b/arch/arm/vdso/Makefile
-> index fadf554d9391..1f5ec9741e6d 100644
-> --- a/arch/arm/vdso/Makefile
-> +++ b/arch/arm/vdso/Makefile
-> @@ -10,9 +10,10 @@ obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
->  ccflags-y := -fPIC -fno-common -fno-builtin -fno-stack-protector
->  ccflags-y += -DDISABLE_BRANCH_PROFILING
->
-> -ldflags-y = -Bsymbolic --no-undefined -soname=linux-vdso.so.1 \
-> +ldflags-$(CONFIG_CPU_ENDIAN_BE8) := --be8
-> +ldflags-y := -Bsymbolic --no-undefined -soname=linux-vdso.so.1 \
->             -z max-page-size=4096 -z common-page-size=4096 \
-> -           -nostdlib -shared \
-> +           -nostdlib -shared $(ldflags-y) \
->             $(call ld-option, --hash-style=sysv) \
->             $(call ld-option, --build-id) \
->             -T
-> --
-> 2.21.0
->
-
-
---
-Best Regards
-Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
