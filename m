@@ -2,58 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D02431218
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 18:17:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A81EF3122A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 18:20:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/LuO64wl3WBVEbnCDePKtnQVlukBauGMwUzfDrftl/s=; b=I3QcMghXIZ+Jl4
-	6rdlobezRzsldTUqdggTTcCcoLI1cEA3/dB1Tr95rWvJEcUkk7GBN8tvLS+S6zxAo1FeRveSwqPTb
-	aZ1vmYxoXzQ7C+Jw1u6sowJpWkwhGa8V8cI4U1FsMA3UZrKWLV5sBkQiiPk3lgB3yXR+RllnSL4xF
-	QQBUY1O4zsQP0myyley/n8gMCIs+ohcJF4lVz4jf7xDlIKYfJ5zh1sS0kAT6+ggJf9WTId/eVZhAk
-	vIWne64HETwF6Rly8Z3lusX1sVF57gpltT8Au6c+yD0/HJin7R9J1QzPtbqPACwtz1twMgIMO+TL3
-	IssU4mKMfUievMunj6pQ==;
+	List-Owner; bh=AkBtVyDQ+ZDQKh8wKzljkbwMRS9OJq3SDHwfZJIxc/Y=; b=mEuvSnccVlcxpR
+	NoqYa8IR3Wgfo2ImTwAQa57oiOaDttH0Kt5kEKT8uutmkOt6fNnMstzZCqSyR5fg+ilPpuGA/pcXt
+	gtUN+ndB8aWbbG+LaMlhWuRVaPUjqdk57URj6I0ca+l27TZUpm+8kVocFk7/o1w5oW8bMrDUEES/H
+	nDXqsBFar4oih36h6yqpY+buXucxLQDXR5ipiaqWImNkAJWuYcTqKFl1rlzt+AGN5UrAiPatLXXwY
+	3olUOlQ0x1Ga4zgLkG5dLiO4jua0LulVYcmKR4W+g71AN1vu68jj4wsgKWKitYtmbby44fefl2uxg
+	aW0EG3RWIbgG9f1SqoWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWkDS-0005kD-WC; Fri, 31 May 2019 16:17:15 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWkDL-0005jQ-CM; Fri, 31 May 2019 16:17:09 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id ABA8A634C7B;
- Fri, 31 May 2019 19:16:58 +0300 (EEST)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.89)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1hWkDC-0000Lt-QG; Fri, 31 May 2019 19:16:58 +0300
-Date: Fri, 31 May 2019 19:16:58 +0300
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: dongchun.zhu@mediatek.com
-Subject: Re: [PATCH 3/3] media: dt-bindings: media: i2c: Add bindings for
- ov02a10
-Message-ID: <20190531161658.2y2amfngbhfbllj7@valkosipuli.retiisi.org.uk>
-References: <20190523102204.24112-1-dongchun.zhu@mediatek.com>
- <20190523102204.24112-4-dongchun.zhu@mediatek.com>
+	id 1hWkGK-0007Ra-PD; Fri, 31 May 2019 16:20:12 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWkGD-0006gi-VR
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 16:20:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9E486341;
+ Fri, 31 May 2019 09:20:03 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B67CE3F59C; Fri, 31 May 2019 09:19:57 -0700 (PDT)
+Date: Fri, 31 May 2019 17:19:55 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <20190531161954.GA3568@arrakis.emea.arm.com>
+References: <20190521182932.sm4vxweuwo5ermyd@mbp>
+ <201905211633.6C0BF0C2@keescook>
+ <6049844a-65f5-f513-5b58-7141588fef2b@oracle.com>
+ <20190523201105.oifkksus4rzcwqt4@mbp>
+ <ffe58af3-7c70-d559-69f6-1f6ebcb0fec6@oracle.com>
+ <20190524101139.36yre4af22bkvatx@mbp>
+ <c6dd53d8-142b-3d8d-6a40-d21c5ee9d272@oracle.com>
+ <CAAeHK+yAUsZWhp6xPAbWewX5Nbw+-G3svUyPmhXu5MVeEDKYvA@mail.gmail.com>
+ <20190530171540.GD35418@arrakis.emea.arm.com>
+ <CAAeHK+y34+SNz3Vf+_378bOxrPaj_3GaLCeC2Y2rHAczuaSz1A@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190523102204.24112-4-dongchun.zhu@mediatek.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <CAAeHK+y34+SNz3Vf+_378bOxrPaj_3GaLCeC2Y2rHAczuaSz1A@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_091707_631055_6AD7B60B 
-X-CRM114-Status: GOOD (  17.95  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190531_092006_028854_FD1CB9F4 
+X-CRM114-Status: GOOD (  21.88  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -66,99 +71,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, menghui.lin@mediatek.com,
- shengnan.wang@mediatek.com, louis.kuo@mediatek.com, sj.huang@mediatek.com,
- robh+dt@kernel.org, linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- bingbu.cao@intel.com, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Elliott Hughes <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dongchun,
-
-Thanks for the patch.
-
-On Thu, May 23, 2019 at 06:22:04PM +0800, dongchun.zhu@mediatek.com wrote:
-> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+On Fri, May 31, 2019 at 04:29:10PM +0200, Andrey Konovalov wrote:
+> On Thu, May 30, 2019 at 7:15 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > On Tue, May 28, 2019 at 04:14:45PM +0200, Andrey Konovalov wrote:
+> > > Thanks for a lot of valuable input! I've read through all the replies
+> > > and got somewhat lost. What are the changes I need to do to this
+> > > series?
+> > >
+> > > 1. Should I move untagging for memory syscalls back to the generic
+> > > code so other arches would make use of it as well, or should I keep
+> > > the arm64 specific memory syscalls wrappers and address the comments
+> > > on that patch?
+> >
+> > Keep them generic again but make sure we get agreement with Khalid on
+> > the actual ABI implications for sparc.
 > 
-> Add device tree binding documentation for the OV02A10 CMOS image sensor.
+> OK, will do. I find it hard to understand what the ABI implications
+> are. I'll post the next version without untagging in brk, mmap,
+> munmap, mremap (for new_address), mmap_pgoff, remap_file_pages, shmat
+> and shmdt.
+
+It's more about not relaxing the ABI to accept non-zero top-byte unless
+we have a use-case for it. For mmap() etc., I don't think that's needed
+but if you think otherwise, please raise it.
+
+> > > 2. Should I make untagging opt-in and controlled by a command line argument?
+> >
+> > Opt-in, yes, but per task rather than kernel command line option.
+> > prctl() is a possibility of opting in.
 > 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> ---
->  .../devicetree/bindings/media/i2c/ov02a10.txt      | 43 ++++++++++++++++++++++
->  1 file changed, 43 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/media/i2c/ov02a10.txt b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> new file mode 100644
-> index 0000000..fdc2904
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/i2c/ov02a10.txt
-> @@ -0,0 +1,43 @@
-> +* Omnivision OV02A10 MIPI CSI-2 sensor
-> +
-> +Required Properties:
-> +- compatible: shall be "ovti,ov02a10"
-> +- clocks: reference to the xvclk input clock
-> +- clock-names: shall be "xvclk"
-> +- avdd-supply: Analog voltage supply, 2.8 volts
-> +- dovdd-supply: Digital I/O voltage supply, 1.8 volts
-> +- dvdd-supply: Digital core voltage supply, 1.8 volts
-> +- reset-gpios: Low active reset gpio
-> +
-> +The device node shall contain one 'port' child node with an
-> +'endpoint' subnode for its digital output video port,
-> +in accordance with the video interface bindings defined in
-> +Documentation/devicetree/bindings/media/video-interfaces.txt.
-> +The endpoint optional property 'data-lanes' shall be "<1>".
+> OK. Should I store a flag somewhere in task_struct? Should it be
+> inheritable on clone?
 
-If the sensor only supports a single lane configuration (one lane), you can
-omit that property altogether. Is that the only possible configuration for
-the sensor?
+A TIF flag would do but I'd say leave it out for now (default opted in)
+until we figure out the best way to do this (can be a patch on top of
+this series).
 
-Please also wrap the text at 80 characters, not 65 or so.
-
-> +
-> +Example:
-> +&i2c4 {
-> +	sensor_sub: sensor_sub {
-
-camera-sensor@3d {
-
-> +		compatible = "ovti,ov02a10";
-> +		reg = <0x3d>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&camera_pins_cam1_mclk_on>;
-> +
-> +		clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
-> +			<&topckgen CLK_TOP_UNIVP_192M_D8>;
-> +		clock-names = "xvclk", "freq_mux";
-> +
-> +		avdd-supply = <&mt6358_vcama1_reg>;
-> +		dvdd-supply = <&mt6358_vcn18_reg>;
-> +		dovdd-supply = <&mt6358_vcamio_reg>;
-> +		pwdn-gpios = <&pio 107 1>;
-> +		reset-gpios = <&pio 109 1>;
-> +
-> +		port@0 {
-> +		   ov02a10_core: endpoint {
-> +		       remote-endpoint = <&ov02a10_0>;
-> +			   data-lanes = <1>;
-> +		   };
-
-Tabs for indentation, please.
-
-> +		};
-> +	};
-> +};
+Thanks.
 
 -- 
-Kind regards,
-
-Sakari Ailus
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
