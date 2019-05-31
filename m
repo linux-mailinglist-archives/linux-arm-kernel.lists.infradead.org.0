@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D39863077C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 05:58:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 555E13077D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 05:58:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xEqNGfM3m5lEYIJK7qTQIHHirV1FOSL80LEOXHu5mPo=; b=UydlqW6Y/q/CAb
-	xRO96hRIRfdQ8R+dMudKHdZ23KKx7pW9s2p2fYB/y+rVP0Sx5wkW3I6+Yxv+SNWTI07r8Q21Ecjxj
-	5rrANGnPRmV7VeiJB+ST6S7m82xBKYDKx0dZE1tk5ruHCuh5LPlSj81cKY6MweO8ZVdMJo9elYpFU
-	3Zd972uuj0E/a4RGB5YixsLhww4o0F9HglBEISWkRqDIQWWCD367iK+hWtqvcpYADJK47HsE9lG/m
-	LhxwIwprpK+epv3caTsqa3w3kH/raX3AJWUvbIK24C2jbvPTSysim1A62Q8GOKNY5R2jqnCGQPCxy
-	1W4WCaHj7J2slClDl6Fw==;
+	List-Owner; bh=hr7Dwgnd05kWbzEurvvcR209XouspurgAaCxL8USXRU=; b=faofaE2dCx5FON
+	kROFJoHOglKkqqnpDQITL7jXhPUvlFUawqlPSTvbmS2FB98R1NpwdKRRg00LDqY4itVmpKyzaYFhq
+	+uCFsqhUm8kVFLc4bz1eYqF8pcXQyYDXSXy/wfdakB4xOPibB/CWPsjGyqEo2SdYgVd3ZVdbfPf53
+	eQiM9W6/ObxEu+ApADqXEmVqYOIT4JhKi9T+DSehB65dtVFfiGYhB+7zCQ11lLr/0o+aIsZwaLaQF
+	L0Igondy/d6ICqkWwH8Ymy+a1cVUBkQ7FDx3bEmyrX50CSxGckWM2ybO78fqvftkyYj7Xg/lMqVZb
+	eYkSPtPvctpNcYduyapg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWYg7-0007Mw-0I; Fri, 31 May 2019 03:58:03 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1hWYgI-0007be-6K; Fri, 31 May 2019 03:58:14 +0000
+Received: from mail-it1-x12a.google.com ([2607:f8b0:4864:20::12a])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWYcS-0002sP-Ar
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 03:54:27 +0000
-Received: by mail-io1-xd43.google.com with SMTP id x24so7020681ion.5
+ id 1hWYcT-0002tA-Rn
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 03:54:30 +0000
+Received: by mail-it1-x12a.google.com with SMTP id t184so13549264itf.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 20:54:16 -0700 (PDT)
+ Thu, 30 May 2019 20:54:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=AD2v4+YBh23vSrSakkquxEV0xAfLkc+oDW+gsObgm4g=;
- b=v1Im+dSykIZ/o17BF2dZBN6qKUORfLiTIwGOO21jMWRdRFVgvCgye8wMMCE2pTy9mO
- dzHZGVmPOV+yUJSAChQU8I1hW74bryP1A8PNhrYJyXRDQHkatWnUORM7hhHV//8JIVqq
- 1vJu4XMk1QmOluxXtFqS/p16+wp7r+E82bnLZNBw5zk9lMr988zMbe44q+gzQgxsqULY
- hUWB3Asp1j5ktucxfoyRCUrr6xbSwwX1rUURVIB0V5NIosbfr7BARxFvkJb9TYnCkFMa
- Tm3ZpQq7ApNQPFkYHvQ+uWJjGJDXjch4E2gN7wC/sYMAOaJZVC3PpOeVFaLRpsxkfm3B
- J//Q==
+ bh=kagssQd3QuWugHezIJ6doapoPYga+HnLQRv+8NMyX9g=;
+ b=aVaU2Uk/PSvFOR2ZTUEkpLv50UR082xEm5HsKlrw7QgZckzEHtXA7yO/Wn/WOBbJvJ
+ Dc+RwCg9LLpK+kEt8JnxklzRSCovp7PitZw296lYP8Jd1UwgpjL6wVVrUTMb+9Bc9n+N
+ t3Maw5oZUPapO1nFVOsnDqMKzA6i4fmK+kL1wanbzG8ogV628MK9QBHGEZKqK77sc8Wg
+ gEHiQzbr0xcVtCqK6elbQQ1PkYtX5ZPymVlQtCfCogAJWOQT7ZhIg+V/xQd8Q9pgDbYZ
+ zifSkJyuzPAChGKjgwm6JomDh11WZ8yM0/5ykVmjJzQLsMFc391cvHSKIpBnUCPJl/x6
+ CBFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=AD2v4+YBh23vSrSakkquxEV0xAfLkc+oDW+gsObgm4g=;
- b=PJbL8b+aCwvKn2ClKMBcLvJColQ5c23w0izhV7PKBULE2P3GLwFrwIqgmRn8SNuVTB
- uEtlpK2mMS4QEAxNWApiZ6hIIj67wZkt/oI6AxOFYNlK+4AP2XEC6pvxT+iSg6aFqi9H
- 4z8DpM4kQtv8I2g8dVwGU257tUw1/DYHif56P0ahzVwea2eCMp1zvlx0CVtaX3XazXLz
- uphQU/cawQWdE8rRKCv2vwSWdAmip75wdPGixhj4mZliEppLebp2p8/7M4YdylMWiO7z
- fytmGsY5BV4eu2dayhCYhYBvhk1nfu2iJhltHD8aCbEA71uexhy+lcmtX79Uc8N6nXF0
- 4QoQ==
-X-Gm-Message-State: APjAAAVQh5Emi5JCJ+7guiPYY5jVZObyOaWsIbLVUV63eBKVLq52RGV+
- 4LX7QWPvwA/gnloS7TEX61tgJg==
-X-Google-Smtp-Source: APXvYqycI8C7GJZADcTmt8i31xiUOJTKNoLAX+58tPg2SEvn+jL2s46fJt29gnMhTlelRCo9iy5FmA==
-X-Received: by 2002:a05:6602:50:: with SMTP id
- z16mr5477434ioz.302.1559274855582; 
- Thu, 30 May 2019 20:54:15 -0700 (PDT)
+ bh=kagssQd3QuWugHezIJ6doapoPYga+HnLQRv+8NMyX9g=;
+ b=leyyYmPWnPBI0gQ9gbrqxNKI7icKc98252psgiKY+Pk2ILVDRCRArDrBXrsMYLklX5
+ DSyfv+If2rN6UG4v8tT9CZZdQqomv+qBwqOlBqz5D0B3UrKfeQk6lylZ6h+jzGh5Vz8+
+ Ajio5qKWrdbsNDLAAIBxKajZutDVmq7PwLQOr2JxuhOn5uaQYyuKsPpjaZjnb06/HFRH
+ IdD59SkB1kLW21qQ7a1Hp5NKd8C52VHdI+TFV53W4mnCNO5xF9ciUNXYb9QhukD8GeMh
+ qhINF1Z2aLIRuGfCwxskCTT3uau8nVxidZN77AV+sz681C6oNQuizW72fugwh3ICymjy
+ SlCw==
+X-Gm-Message-State: APjAAAVMKOdL1LW+OkxNoSER/siu4Ckbhg/PLOaLstDyMYAgQBpn0MRT
+ z0wDf4wIc/7Usj6Orol9au5Jag==
+X-Google-Smtp-Source: APXvYqwU/ZRoDGo6axXL+D8tg1NufQkmrF7bSAtLkJC7p296STpfjSogYdgLZwKpdUbt2XAzDoRcpA==
+X-Received: by 2002:a24:5095:: with SMTP id m143mr5427071itb.68.1559274856806; 
+ Thu, 30 May 2019 20:54:16 -0700 (PDT)
 Received: from localhost.localdomain (c-71-195-29-92.hsd1.mn.comcast.net.
  [71.195.29.92])
- by smtp.gmail.com with ESMTPSA id q15sm1626947ioi.15.2019.05.30.20.54.14
+ by smtp.gmail.com with ESMTPSA id q15sm1626947ioi.15.2019.05.30.20.54.15
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 30 May 2019 20:54:15 -0700 (PDT)
+ Thu, 30 May 2019 20:54:16 -0700 (PDT)
 From: Alex Elder <elder@linaro.org>
 To: davem@davemloft.net, arnd@arndb.de, bjorn.andersson@linaro.org,
  ilias.apalodimas@linaro.org
-Subject: [PATCH v2 15/17] MAINTAINERS: add entry for the Qualcomm IPA driver
-Date: Thu, 30 May 2019 22:53:46 -0500
-Message-Id: <20190531035348.7194-16-elder@linaro.org>
+Subject: [PATCH v2 16/17] arm64: dts: sdm845: add IPA information
+Date: Thu, 30 May 2019 22:53:47 -0500
+Message-Id: <20190531035348.7194-17-elder@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190531035348.7194-1-elder@linaro.org>
 References: <20190531035348.7194-1-elder@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_205416_570410_24B9E4E5 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190530_205418_018274_5382B24A 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:12a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,30 +108,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add an entry in the MAINTAINERS file for the Qualcomm IPA driver
+Add IPA-related nodes and definitions to "sdm845.dtsi".
 
 Signed-off-by: Alex Elder <elder@linaro.org>
 ---
- MAINTAINERS | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm64/boot/dts/qcom/sdm845.dtsi | 51 ++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 429c6c624861..a2dece647641 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12872,6 +12872,12 @@ L:	alsa-devel@alsa-project.org (moderated for non-subscribers)
- S:	Supported
- F:	sound/soc/qcom/
+diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+index fcb93300ca62..985479925af8 100644
+--- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
++++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+@@ -20,6 +20,7 @@
+ #include <dt-bindings/soc/qcom,rpmh-rsc.h>
+ #include <dt-bindings/clock/qcom,gcc-sdm845.h>
+ #include <dt-bindings/thermal/thermal.h>
++#include <dt-bindings/interconnect/qcom,sdm845.h>
  
-+QCOM IPA DRIVER
-+M:	Alex Elder <elder@kernel.org>
-+L:	netdev@vger.kernel.org
-+S:	Supported
-+F:	drivers/net/ipa/
+ / {
+ 	interrupt-parent = <&intc>;
+@@ -517,6 +518,17 @@
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
+ 		};
 +
- QEMU MACHINE EMULATOR AND VIRTUALIZER SUPPORT
- M:	Gabriel Somlo <somlo@cmu.edu>
- M:	"Michael S. Tsirkin" <mst@redhat.com>
++		ipa_smp2p_out: ipa-ap-to-modem {
++			qcom,entry-name = "ipa";
++			#qcom,smem-state-cells = <1>;
++		};
++
++		ipa_smp2p_in: ipa-modem-to-ap {
++			qcom,entry-name = "ipa";
++			interrupt-controller;
++			#interrupt-cells = <2>;
++		};
+ 	};
+ 
+ 	smp2p-slpi {
+@@ -1268,6 +1280,45 @@
+ 			};
+ 		};
+ 
++		ipa@1e40000 {
++			compatible = "qcom,sdm845-ipa";
++
++			modem-init;
++
++			reg = <0 0x1e40000 0 0x7000>,
++			      <0 0x1e47000 0 0x2000>,
++			      <0 0x1e04000 0 0x2c000>;
++			reg-names = "ipa-reg",
++				    "ipa-shared",
++				    "gsi";
++
++			interrupts-extended =
++					<&intc 0 311 IRQ_TYPE_EDGE_RISING>,
++					<&intc 0 432 IRQ_TYPE_LEVEL_HIGH>,
++					<&ipa_smp2p_in 0 IRQ_TYPE_EDGE_RISING>,
++					<&ipa_smp2p_in 1 IRQ_TYPE_EDGE_RISING>;
++			interrupt-names = "ipa",
++					  "gsi",
++					  "ipa-clock-query",
++					  "ipa-setup-ready";
++
++			clocks = <&rpmhcc RPMH_IPA_CLK>;
++			clock-names = "core";
++
++			interconnects =
++				<&rsc_hlos MASTER_IPA &rsc_hlos SLAVE_EBI1>,
++				<&rsc_hlos MASTER_IPA &rsc_hlos SLAVE_IMEM>,
++				<&rsc_hlos MASTER_APPSS_PROC &rsc_hlos SLAVE_IPA_CFG>;
++			interconnect-names = "memory",
++					     "imem",
++					     "config";
++
++			qcom,smem-states = <&ipa_smp2p_out 0>,
++					   <&ipa_smp2p_out 1>;
++			qcom,smem-state-names = "ipa-clock-enabled-valid",
++						"ipa-clock-enabled";
++		};
++
+ 		tcsr_mutex_regs: syscon@1f40000 {
+ 			compatible = "syscon";
+ 			reg = <0 0x01f40000 0 0x40000>;
 -- 
 2.20.1
 
