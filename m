@@ -2,59 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6393C30B0A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 11:05:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CF9B30B16
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 11:07:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bdVINPqK+bM1/VaI/qPGDgFJZPFDr7eSHREJui+2OR0=; b=GQzRgjTIxSNYfl
-	gEPKUesDX6U8eAtdmt97d1HnZ53YrjqDV9Nvj0F32oBHk4UcIQa91y6+vYsmD3RHiV91gmV3vONV1
-	kvH9TbDdcWtt4LqsZORb6xzE6a7B9Q97dvqYR+rYLdARvShhc9rPdRp/cooQddbTGCLyfuhOdmz+s
-	0sCC1rM9gMGzuCPfuCucK6GHEy4splELqzwH+FH1n2UPHvXooI4e7FADMZWHMvvKzAzsVTg0RlgU2
-	i65UhTAAAunGQywZsy+7OiuhOAd+ABHOqggML1emUqHE5ZV8HvGnLyeryHnMoPyd+eIr7w68qiE4e
-	+lL4M15f4G/62FMcRq/g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VE+T5J5lrIInRtPcUGzp6qUiEwIIbZSy+RR1vMTNE0A=; b=NMYgG3syvoAHFK
+	a1DNglLIISoRYJ2YWVlq1kgdVYyAL+jxcFigxO68AUsZlF1KqLRGKXnCA/Ol8PAy0nBUBpXo9IPcP
+	BTmEFxMuY8WWBLJctESxYbH8zvAEPGnR2cbgdpYnz/PvGzRGGZDW6b+SG6rRa83OKa7GldX158fbk
+	4QY9c8CqZgZN3azcJ0sUhRu+Gp6UCiVkC0cf1gHO+stKRdZZy4Kplr+6CjZ+nueMZxymQPqjRtwTp
+	1RcegndznPzdopKOF6qUBjX97h0K3gvxseckvw7QTZUJvUfDVy4xYKN+PBtzHnvAvcZMHPauWZKeF
+	yxJ52vJJSMm+U2hWf2Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWdTT-0006ky-FW; Fri, 31 May 2019 09:05:19 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWdTM-0006kd-DH
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 09:05:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 93933341;
- Fri, 31 May 2019 02:05:11 -0700 (PDT)
-Received: from [10.162.42.223] (p8cg001049571a15.blr.arm.com [10.162.42.223])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 143BB3F59C; Fri, 31 May 2019 02:05:08 -0700 (PDT)
-Subject: Re: [PATCH 4/4] arm64/mm: Drop vm_fault_t argument from
- __do_page_fault()
-To: Mark Rutland <mark.rutland@arm.com>
-References: <1559133285-27986-1-git-send-email-anshuman.khandual@arm.com>
- <1559133285-27986-5-git-send-email-anshuman.khandual@arm.com>
- <20190529151134.GH31777@lakrids.cambridge.arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <5e565fd3-0d2b-31a5-8644-c91ccc5fb05e@arm.com>
-Date: Fri, 31 May 2019 14:35:23 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hWdVL-000766-V7; Fri, 31 May 2019 09:07:15 +0000
+Received: from mta-01.yadro.com ([89.207.88.251])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWdVE-00075R-20
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 09:07:09 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-01.yadro.com (Postfix) with ESMTP id 3F5C941908;
+ Fri, 31 May 2019 09:07:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
+ user-agent:in-reply-to:content-disposition:content-type
+ :content-type:mime-version:references:message-id:subject:subject
+ :from:from:date:date:received:received:received; s=mta-01; t=
+ 1559293624; x=1561108025; bh=V2JYksw1ZpPn49A8Zy8oL1DLxXqIFwPGBxx
+ 0ZykK3RM=; b=ZWXV53Rs0HjRaijj7GccsS27X91FsXvdCKAEkgTbszlF1SNFbNu
+ Recqa8xL9JFDzJdRk3eJxRKLci3VsBho2OKC8FptW7OC7vYdPcFzgSYGEaysKFa/
+ uK7ox0LWLrCaYusGi/w5tqL6QflmSBAJeZPP3j2nCnQuwBn4Ul8TRqDs=
+X-Virus-Scanned: amavisd-new at yadro.com
+Received: from mta-01.yadro.com ([127.0.0.1])
+ by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id FeODQLn3iRyt; Fri, 31 May 2019 12:07:04 +0300 (MSK)
+Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
+ [172.17.10.102])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mta-01.yadro.com (Postfix) with ESMTPS id 7E16D41860;
+ Fri, 31 May 2019 12:07:02 +0300 (MSK)
+Received: from localhost (172.17.14.115) by T-EXCH-02.corp.yadro.com
+ (172.17.10.102) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id 15.1.669.32; Fri, 31
+ May 2019 12:07:01 +0300
+Date: Fri, 31 May 2019 12:07:01 +0300
+From: "Alexander A. Filippov" <a.filippov@yadro.com>
+To: Andrew Jeffery <andrew@aj.id.au>
+Subject: Re: [PATCH v3] ARM: dts: aspeed: Add YADRO VESNIN BMC
+Message-ID: <20190531090701.GA12476@bbwork.lan>
+References: <20190531061207.23079-1-a.filippov@yadro.com>
+ <2966b961-77ca-4371-949c-195b623e344b@www.fastmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190529151134.GH31777@lakrids.cambridge.arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <2966b961-77ca-4371-949c-195b623e344b@www.fastmail.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
+X-Originating-IP: [172.17.14.115]
+X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
+ T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_020512_471801_43D30693 
-X-CRM114-Status: GOOD (  26.66  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190531_020708_478018_BF5E11C3 
+X-CRM114-Status: GOOD (  23.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [89.207.88.251 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,122 +92,326 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>,
+ "Alexander A. Filippov" <a.filippov@yadro.com>,
+ linux-arm-kernel@lists.infradead.org, Joel Stanley <joel@jms.id.au>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, May 31, 2019 at 04:02:37PM +0930, Andrew Jeffery wrote:
+> Hello Alexander,
 
-
-On 05/29/2019 08:41 PM, Mark Rutland wrote:
-> On Wed, May 29, 2019 at 06:04:45PM +0530, Anshuman Khandual wrote:
->> __do_page_fault() is over complicated with multiple goto statements. This
->> cleans up code flow and while there drops the vm_fault_t argument.
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will.deacon@arm.com>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Cc: James Morse <james.morse@arm.com> 
->> Cc: Andrey Konovalov <andreyknvl@google.com>
->> ---
->>  arch/arm64/mm/fault.c | 38 ++++++++++++++++----------------------
->>  1 file changed, 16 insertions(+), 22 deletions(-)
->>
->> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
->> index 170c71f..a53a30e 100644
->> --- a/arch/arm64/mm/fault.c
->> +++ b/arch/arm64/mm/fault.c
->> @@ -397,37 +397,31 @@ static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *re
->>  static vm_fault_t __do_page_fault(struct mm_struct *mm, unsigned long addr,
->>  			   unsigned int mm_flags, unsigned long vm_flags)
->>  {
->> -	struct vm_area_struct *vma;
->> -	vm_fault_t fault;
->> +	struct vm_area_struct *vma = find_vma(mm, addr);
->>  
->> -	vma = find_vma(mm, addr);
->> -	fault = VM_FAULT_BADMAP;
->>  	if (unlikely(!vma))
->> -		goto out;
->> -	if (unlikely(vma->vm_start > addr))
->> -		goto check_stack;
->> +		return VM_FAULT_BADMAP;
->>  
->>  	/*
->> -	 * Ok, we have a good vm_area for this memory access, so we can handle
->> -	 * it.
->> +	 * Check if the VMA has got the required permssion with respect
->> +	 * to the access fault here.
->>  	 */
-> 
-> We already had a perfectly good comment for this check:
-> 
-> 	/*
-> 	 * Check that the permissions on the VMA allow for the fault which
-> 	 * occurred.
-> 	 */
-> 
-> ... so please keep that and minimize the diff.
-
-Sure, will keep all the existing comments here.
+Hi Andrew,
 
 > 
->> -good_area:
->> +	if (!(vma->vm_flags & vm_flags))
->> +		return VM_FAULT_BADACCESS;
->> +
->>  	/*
->> -	 * Check that the permissions on the VMA allow for the fault which
->> -	 * occurred.
->> +	 * There is a valid VMA for this access. But before proceeding
->> +	 * make sure that it has required flags if there is an attempt
->> +	 * to expand the stack downwards.
->>  	 */
+> On Fri, 31 May 2019, at 15:42, Alexander Filippov wrote:
+> > VESNIN is an OpenPower machine with an Aspeed 2400 BMC SoC manufactured
+> > by YADRO.
+> > 
+> > Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
+> > ---
+> >  arch/arm/boot/dts/Makefile                  |   1 +
+> >  arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts | 234 ++++++++++++++++++++
+> >  2 files changed, 235 insertions(+)
+> >  create mode 100644 arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+> > 
+> > diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> > index 834cce80d1b8..09a851a4705c 100644
+> > --- a/arch/arm/boot/dts/Makefile
+> > +++ b/arch/arm/boot/dts/Makefile
+> > @@ -1261,6 +1261,7 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
+> >  	aspeed-bmc-opp-palmetto.dtb \
+> >  	aspeed-bmc-opp-romulus.dtb \
+> >  	aspeed-bmc-opp-swift.dtb \
+> > +	aspeed-bmc-opp-vesnin.dtb \
 > 
-> I think we can drop this comment, given we didn't have it previously.
+> The patch doesn't apply to upstream - the Swift machine only exists in the
+> OpenBMC kernel tree. Please rebase the patch onto upstream and resend.
 
-Okay.
-
-> 
->> -	if (!(vma->vm_flags & vm_flags)) {
->> -		fault = VM_FAULT_BADACCESS;
->> -		goto out;
->> -	}
->> +	if (unlikely(vma->vm_start > addr)) {
->> +		if (!(vma->vm_flags & VM_GROWSDOWN))
->> +			return VM_FAULT_BADMAP;
->>  
->> +		if (expand_stack(vma, addr))
->> +			return VM_FAULT_BADMAP;
-> 
-> You can drop the line space between these two if statements.
-
-Will do.
+Done.
 
 > 
->> +	}
->>  	return handle_mm_fault(vma, addr & PAGE_MASK, mm_flags);
->> -
->> -check_stack:
->> -	if (vma->vm_flags & VM_GROWSDOWN && !expand_stack(vma, addr))
->> -		goto good_area;
->> -out:
->> -	return fault;
+> >  	aspeed-bmc-opp-witherspoon.dtb \
+> >  	aspeed-bmc-opp-zaius.dtb \
+> >  	aspeed-bmc-portwell-neptune.dtb \
+> > diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts 
+> > b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+> > new file mode 100644
+> > index 000000000000..20f07f5bb4f4
+> > --- /dev/null
+> > +++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+> > @@ -0,0 +1,234 @@
+> > +// SPDX-License-Identifier: GPL-2.0+
+> > +// Copyright 2019 YADRO
+> > +/dts-v1/;
+> > +
+> > +#include "aspeed-g4.dtsi"
+> > +#include <dt-bindings/gpio/aspeed-gpio.h>
+> > +
+> > +/ {
+> > +	model = "Vesnin BMC";
+> > +	compatible = "yadro,vesnin-bmc", "aspeed,ast2400";
+> > +
+> > +	chosen {
+> > +		stdout-path = &uart5;
+> > +		bootargs = "console=ttyS4,115200 earlyprintk";
+> > +	};
+> > +
+> > +	memory {
+> > +		reg = <0x40000000 0x20000000>;
+> > +	};
+> > +
+> > +	reserved-memory {
+> > +		#address-cells = <1>;
+> > +		#size-cells = <1>;
+> > +		ranges;
+> > +
+> > +		vga_memory: framebuffer@5f000000 {
+> > +			no-map;
+> > +			reg = <0x5f000000 0x01000000>; /* 16MB */
+> > +		};
+> > +		flash_memory: region@5c000000 {
+> > +			no-map;
+> > +			reg = <0x5c000000 0x02000000>; /* 32M */
+> > +		};
+> > +	};
+> > +
+> > +	leds {
+> > +		compatible = "gpio-leds";
+> > +
+> > +		heartbeat {
+> > +			gpios = <&gpio ASPEED_GPIO(R, 4) GPIO_ACTIVE_LOW>;
+> > +		};
+> > +		power_red {
+> > +			gpios = <&gpio ASPEED_GPIO(N, 1) GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		id_blue {
+> > +			gpios = <&gpio ASPEED_GPIO(O, 0) GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		alarm_red {
+> > +			gpios = <&gpio ASPEED_GPIO(N, 6) GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		alarm_yel {
+> > +			gpios = <&gpio ASPEED_GPIO(N, 7) GPIO_ACTIVE_HIGH>;
+> > +		};
+> > +	};
+> > +
+> > +	gpio-keys {
+> > +		compatible = "gpio-keys";
+> > +
+> > +		button_checkstop {
+> > +			label = "checkstop";
+> > +			linux,code = <74>;
+> > +			gpios = <&gpio ASPEED_GPIO(P, 5) GPIO_ACTIVE_LOW>;
+> > +		};
+> > +
+> > +		button_identify {
+> > +			label = "identify";
+> > +			linux,code = <152>;
+> > +			gpios = <&gpio ASPEED_GPIO(O, 7) GPIO_ACTIVE_LOW>;
+> > +		};
+> > +	};
+> > +};
+> > +
+> > +&fmc {
+> > +	status = "okay";
+> > +	flash@0 {
+> > +		status = "okay";
+> > +		m25p,fast-read;
+> > +        label = "bmc";
+> > +#include "openbmc-flash-layout.dtsi"
+> > +	};
+> > +};
+> > +
+> > +&spi {
+> > +	status = "okay";
+> > +	pinctrl-names = "default";
+> > +	pinctrl-0 = <&pinctrl_spi1debug_default>;
 > 
-> We used to check the stack before the checknig the rest of the vm_flags,
-> so this changes the precedence of the VM_FAULT_BADMAP and
-> VM_FAULT_BADACCESS return codes.
-> 
-> Please check the stack before checking the other vm_flags.
+> Is this how the board is strapped? I'm asking in case it's just copy/paste
+> from Palmetto, which was (unfortunately) strapped this way.
 
-Though it makes some sense to move VMA permission check earlier in the function as it
-is the quicker one but I understand need to maintain the existing code flow in a clean
-up patch like this. Will retain the existing flow.
+Yes, the board is strapped in such manner.
+I guess it was brought from barreleye which was a prototype for vesnin.
+
+Setting this pin to &pinctrl_spi1_default leads to warning:
+  kernel: aspeed-smc 1e630000.spi: Error applying setting, reverse things back
+
+> 
+> > +
+> > +	flash@0 {
+> > +		status = "okay";
+> > +		label = "pnor";
+> > +		m25p,fast-read;
+> > +	};
+> > +};
+> > +
+> > +&mac0 {
+> > +	status = "okay";
+> > +
+> > +	use-ncsi;
+> > +	no-hw-checksum;
+> > +
+> > +	pinctrl-names = "default";
+> > +	pinctrl-0 = <&pinctrl_rmii1_default>;
+> > +};
+> > +
+> > +
+> > +&uart5 {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&lpc_ctrl {
+> > +	status = "okay";
+> > +	memory-region = <&flash_memory>;
+> > +	flash = <&spi>;
+> > +};
+> > +
+> > +&ibt {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&lpc_host {
+> > +    sio_regs: regs {
+> > +        compatible = "aspeed,bmc-misc";
+> 
+> The patches for this are not upstream, and won't make it in their current
+> form. Please drop this node from the patch.
+> 
+
+Done.
+
+> > +    };
+> > +};
+> > +
+> > +&mbox {
+> > +	status = "okay";
+> 
+> This driver is not upstream either, and we plan on dropping it from the
+> OpenBMC tree too. Please remove this node from the patch.
+
+Done.
+
+> 
+> Cheers,
+> 
+> Andrew
+> 
+> > +};
+> > +
+> > +&uart3 {
+> > +	status = "okay";
+> > +	pinctrl-names = "default";
+> > +	pinctrl-0 = <&pinctrl_txd2_default &pinctrl_rxd2_default>;
+> > +};
+> > +
+> > +&i2c0 {
+> > +	status = "okay";
+> > +
+> > +	eeprom@50 {
+> > +		compatible = "atmel,24c256";
+> > +		reg = <0x50>;
+> > +		pagesize = <64>;
+> > +	};
+> > +};
+> > +
+> > +&i2c1 {
+> > +	status = "okay";
+> > +
+> > +	tmp75@49 {
+> > +		compatible = "ti,tmp75";
+> > +		reg = <0x49>;
+> > +	};
+> > +};
+> > +
+> > +&i2c2 {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&i2c3 {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&i2c4 {
+> > +	status = "okay";
+> > +
+> > +	occ-hwmon@50 {
+> > +		compatible = "ibm,p8-occ-hwmon";
+> > +		reg = <0x50>;
+> > +	};
+> > +};
+> > +
+> > +&i2c5 {
+> > +	status = "okay";
+> > +
+> > +	occ-hwmon@51 {
+> > +		compatible = "ibm,p8-occ-hwmon";
+> > +		reg = <0x51>;
+> > +	};
+> > +};
+> > +
+> > +&i2c6 {
+> > +	status = "okay";
+> > +
+> > +	w83795g@2f {
+> > +		compatible = "nuvoton,w83795g";
+> > +		reg = <0x2f>;
+> > +	};
+> > +};
+> > +
+> > +&i2c7 {
+> > +	status = "okay";
+> > +
+> > +	occ-hwmon@56 {
+> > +		compatible = "ibm,p8-occ-hwmon";
+> > +		reg = <0x56>;
+> > +	};
+> > +};
+> > +
+> > +&i2c9 {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&i2c10 {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&i2c11 {
+> > +	status = "okay";
+> > +
+> > +	occ-hwmon@57 {
+> > +		compatible = "ibm,p8-occ-hwmon";
+> > +		reg = <0x57>;
+> > +	};
+> > +};
+> > +
+> > +&i2c12 {
+> > +	status = "okay";
+> > +
+> > +	rtc@68 {
+> > +		compatible = "maxim,ds3231";
+> > +		reg = <0x68>;
+> > +	};
+> > +};
+> > +
+> > +&i2c13 {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&vuart {
+> > +	status = "okay";
+> > +};
+> > -- 
+> > 2.20.1
+> > 
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
