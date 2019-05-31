@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6424630918
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 09:00:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01D5A3091C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 09:01:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GwEH9jx/7L/9D2K7TJoU4MHsj1JnEu/khMul7RBadF8=; b=JiIWKENtguWK2i
-	2gVZ2qT2vpNbKLt5ck9Iynle6iNosZBJbSvzzhyHf5tPNio1Fe84GkMDNheqv5hR0MZJ/sww+q+qa
-	swCHSw0uxgmohCg+RykrGqiuT/I0wv49eo3u21AmwFhg+B037Q3xNeUL8RTOCHJiGrzxZ1XFEXhqi
-	2euDr9isCqZSYaFGq5aXQstf47ZRn+8tRJ2yqsD05hww/zU53JLsrrHfX+KdoxD3JHrFgPBHhrN4M
-	x0U3g+rm0MHY9R6M8Uq1WQlOZ76M6Lm6F5V7F/lNbuqcJerSFFdP4T4rCrCMPzQkTHpnVpGLomUHC
-	lrtMRKVxtxmEM3zYmWXg==;
+	List-Owner; bh=vrF5DVg8Ga2ugplbtVYJA1F+oBk+JdX51TKqURvZCL8=; b=NCqMkq2WGaeAs9
+	lWQF/knwZDQ9xHX/87A6g881McHxSzceRjXgGcTDL4iGPZl8GRdf2OcS7TnsCTGnlQVXoiFZYVoTC
+	n8Moulb9Q9LFcYsIv8moJzG4Jfr7w7U78tbtiuYeTX6SjtpCvZsGGjS4z5eUVIByUyzaYUT+9VjlI
+	8sa+ocuoHryTqZF1K823McoLfUn7a2YsDDOUzABer2g0bvVHr/E0VNo8XmA+bG9CkdIhZT+C0SYco
+	eDn+KuIZRbdCwg8Cuz/DEnsSO4ua6kmB3Ovv1eGr5V/qYuncHMiIPXw15ckQ0AwQ+Zl4FKDZxCtx/
+	j/K7QNgeg2vdpTU/bMRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWbWX-0004Yx-1i; Fri, 31 May 2019 07:00:21 +0000
+	id 1hWbXK-00058d-7m; Fri, 31 May 2019 07:01:10 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWbWQ-0004YV-CH
- for linux-arm-kernel@bombadil.infradead.org; Fri, 31 May 2019 07:00:14 +0000
+ id 1hWbXD-00058R-D1
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 31 May 2019 07:01:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YHEx0ij7h9y+5MyBHOAzDXUzxYxNmQSptfSLXYOAYqQ=; b=lrXQCGbAVo4TxApL+tvHNaFL8
- DfLuxiMEZrBWOnuD6Hypm5jocPNID27WuD61zwhFE7zpwhsAWnunT1DSNpzFO4PxLn0EDUt37Hda8
- rGO3rGIXTd9OBYiwvfw0BUDwU+pyA3tFkZqIOy0NG9ADav7X4Q/9MELcaA5x/qQVh3MkiI5lWbiH/
- 9wiaWQznmrX38MGJyp9eebvVugb6an25OQPf3LkiEd5OLMGn8fumGc42tRvnIfJD+x6X/8mo62xQP
- +S5PJi4xU3D9F48uTV5W631Yznj7fQcJAakFdtsolr6CUAQX0My1TmPXIdeGcr/EbzX+tNbfXPGsw
- 7tFQNnYdA==;
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+ bh=9A97hJUqWQzbw2/Tsh6aoUNyLzN8nFYjBn/i+RwpyeA=; b=XfReIPdWGB9ZkNVY50XiJjpai
+ S1nfJfjQHb6nx7wvCM2/dAPpBaPuE49IKiC50iJBz1FsBeBA6qn9fk7M+CUejx7JQaVTLcbkEtWHW
+ c/AH3VSoQL7rR28X6MobCaBIzCsHui8bT3zJDUXlG5jOmsnm9H68A3HdTuPxYDSY2us+/LGfOS3Jg
+ u57DourvkyipUynPzSx6XXpj6Fu/RpS5EfPNoQd1e1B0SAS8VhFyda/ZEt4dmW3OEPje/f6q5wuwB
+ diYheGZGhJeb4DhuPmyfq5QPMY2LWajT1n+1fvz02E5WXyFMQUaO5KoLYwGCsKJ2hT/5hbH95BOqf
+ risoMsq6w==;
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWbWM-0000Vl-Bp
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 07:00:12 +0000
-X-Originating-IP: 90.89.68.76
+ id 1hWbXA-0000ZB-6R
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 07:01:02 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (Authenticated sender: maxime.ripard@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 0DDFCE0005;
- Fri, 31 May 2019 06:59:28 +0000 (UTC)
-Date: Fri, 31 May 2019 08:59:28 +0200
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 8ECD020000D;
+ Fri, 31 May 2019 07:00:24 +0000 (UTC)
+Date: Fri, 31 May 2019 09:00:23 +0200
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v9 1/9] dt-bindings: sun6i-dsi: Add A64 MIPI-DSI compatible
-Message-ID: <20190531065928.4wfr3kjngefy4q2b@flea>
+Subject: Re: [PATCH v9 2/9] dt-bindings: sun6i-dsi: Add A64 DPHY compatible
+ (w/ A31 fallback)
+Message-ID: <20190531070023.2vj4sq4kk3aji25d@flea>
 References: <20190529105615.14027-1-jagan@amarulasolutions.com>
- <20190529105615.14027-2-jagan@amarulasolutions.com>
+ <20190529105615.14027-3-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190529105615.14027-2-jagan@amarulasolutions.com>
+In-Reply-To: <20190529105615.14027-3-jagan@amarulasolutions.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_080010_494929_1549D55B 
-X-CRM114-Status: GOOD (  19.83  )
+X-CRM114-CacheID: sfid-20190531_080100_279839_9E94B218 
+X-CRM114-Status: GOOD (  17.72  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -91,39 +91,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 04:26:07PM +0530, Jagan Teki wrote:
-> The MIPI DSI controller in Allwinner A64 is similar to A33.
+On Wed, May 29, 2019 at 04:26:08PM +0530, Jagan Teki wrote:
+> The MIPI DSI PHY controller on Allwinner A64 is similar
+> on the one on A31.
 >
-> But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
-> to with separate compatible for A64 on the same driver.
+> Add A64 compatible and append A31 compatible as fallback.
 >
 > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 > Reviewed-by: Rob Herring <robh@kernel.org>
-> Tested-by: Merlijn Wajer <merlijn@wizzup.org>
 > ---
 >  Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt | 1 +
 >  1 file changed, 1 insertion(+)
 >
 > diff --git a/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt b/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
-> index 1cc40663b7a2..9877398be69a 100644
+> index 9877398be69a..d0ce51fea103 100644
 > --- a/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
 > +++ b/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
-> @@ -12,6 +12,7 @@ The DSI Encoder generates the DSI signal from the TCON's.
+> @@ -38,6 +38,7 @@ D-PHY
 >  Required properties:
 >    - compatible: value must be one of:
->      * allwinner,sun6i-a31-mipi-dsi
-> +    * allwinner,sun50i-a64-mipi-dsi
+>      * allwinner,sun6i-a31-mipi-dphy
+> +    * allwinner,sun50i-a64-mipi-dphy, allwinner,sun6i-a31-mipi-dphy
 >    - reg: base address and size of memory-mapped region
->    - interrupts: interrupt associated to this IP
 >    - clocks: phandles to the clocks feeding the DSI encoder
+>      * bus: the DSI interface clock
 
-We've switch to YAML now, and the compatible should be expressed that
-way now:
+And this one should be:
 
 compatible:
-  enum:
-    - allwinner,sun6i-a31-mipi-dsi
-    - allwinner,sun50i-a64-mipi-dsi
+  oneOf:
+    - const: allwinner,sun6i-a31-mipi-dphy
+    - items:
+      - const: allwinner,sun50i-a64-mipi-dphy
+      - const: allwinner,sun6i-a31-mipi-dphy
 
 Maxime
 
