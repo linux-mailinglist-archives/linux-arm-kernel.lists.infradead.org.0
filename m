@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43D05313F9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:39:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F4EA313FA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:39:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=cu+mGtrhaajsLRwcDWVvo0ZsOgN398U5cP7ONAqkimk=; b=Nh7R3wJ6E/jkNZ2Znpcs7vdrGE
-	Fl+ZHny0BL17mXRVYHIHpBhbzln9YnOtHLQ2Otafnsh6RvkPueicrh4DNQzTq8z67T4HHWuIYvAXb
-	wa70vdb3COaUf2wB8JUIkgb8A/AlJWNGFsquovrssXu7R5ozY4sg9KzXZVdTN/nHNGH/Q2coTVXXG
-	YKtwaWVMJ+gxwbNWCXyAczOcr041umEqVM2+0ExuHDoqP4+pF6y+rQ8s7fBnF6qj3GZCbzWWZvXdu
-	yNLNyGMQ4lwphX96VX7eUUmvt1BtgdN+NwfGBiXD91QqukVq0rYOjjvQvVaF3jB9eGrvP0Yf9V/vb
-	mqTbkCZA==;
+	bh=MaGO27wCm+SJcXUuM2nVz+rDzY+zmnOgN3fQ+IJSNYo=; b=eDnTW22fGEb4XdCuDDkuDwGu8z
+	bYdAT60W4XwVbRBzok3SUcmgZ7DVGqbYqZ10EVJSPv9+sbKUVy0PezhmFM/AOR6HQD/Fvg0Lr8ptt
+	2J9Vjq3oz/Wj3EQd4JRv7UaU7OmFrPWwZcF3WxA1nUHNsWsphbWsAu6BKWIUl+kiAinnND99cCIo+
+	vr+0jYmehS7knP6jl+buEAat3WlbZZG9BBPLsVI33QyEZWBVmYTW3fsKezzcvQxpkkdyMQV8oIu8E
+	QmnkkfBYricSKwLnL282JDvSHwW8TlbGgzf+dPC8QbBdwH3EPyELe1eY9+X4A6quPRnDryqIOcBaE
+	MqCInbBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWlUY-0005cZ-HZ; Fri, 31 May 2019 17:38:58 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hWlUj-0005l5-MQ; Fri, 31 May 2019 17:39:09 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWlUF-0005Ox-Sj
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:38:41 +0000
-Received: by mail-pg1-x542.google.com with SMTP id n2so4408124pgp.11
+ id 1hWlUH-0005PO-3V
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:38:43 +0000
+Received: by mail-pf1-x442.google.com with SMTP id s11so6602261pfm.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 May 2019 10:38:39 -0700 (PDT)
+ Fri, 31 May 2019 10:38:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2xel43xGFPsdpjNgXH57hGUT8nITJMGWrawGJ8l12P4=;
- b=Tc4/awbpJKz9o9GS9uYFOuQmlzkb+X4tt+5cIge0DnYW2Nx5XPYbrkTVkFPg78qTxe
- JVaCbXj11/6/g93rStGhzePdUm4HmuKmNu0BHzaJRL4Je2dUKx/jiogJvOw/B5Xi7ARd
- 38xMwCFQycNdcHh92fc1fo6p6UIFmSp6YRDhHDDfcd56V6UE9dV38yhdIobBBOxDQ8ap
- lJ6VBRHNIUiqnRUe1LFJwktGUj3VVt75qHatmzNJmPPPmVYW3M1twTfccWfb8aae71Lt
- fHRRVH4jcA4SbMr9AKLBtfuxa3CWIECEoylRuouZ3wNk7Uyws+6CJXB5zEL+dXnbxFgX
- SnPA==
+ bh=H043+d/K0lU8Bwi5pfOj5dvnExTA6UuaPSOVo6O+L9g=;
+ b=KE0+6rpF64j1vTYhYacaFSqLgXxD1DAk8LtuQSPG0MbcqUtdGrY9VA+RV6fqODQmDU
+ ufluZYKKdg5bhEn3K2N3mfFFgQs+9wAU/6gjTkA/eDUKG8Nq1w3HistHZ5KBnTx4lT5t
+ gVKFyn+UlPbAKsWogoUF4rw5MOwVHjhQ6tN0N8sdKa0rmjSq+HJoL4ySvgGAAAHnG+6k
+ X5VJY0u3rbLGXi+Br0zyzQydvHOM+btMAWOVYJAr/Q2ofNk/5+6oeLggdVmwgmA3mIDJ
+ 1I0TWUGONAHvbaNvJ7tVyTsP9BHz1g+0OQKewztyUhd6WeEBOGugtf/HGTvZdCJamba0
+ +/Kw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=2xel43xGFPsdpjNgXH57hGUT8nITJMGWrawGJ8l12P4=;
- b=Yj7wZYkHnGUd1MC92FAeZk1SUp96qZY53NtxMzHZm118tXq0EKmog5DCG/Rh7DviAc
- Kj2OhCplENMogvHfaK3+Rtg9NCqc0iM+952ejDuE/t0OD6ZKjo8Rc6j9Q0X5Qzy/JGtb
- FOkW0ceQypQLBmXz0EskG/UQZoGDLJz6u6UTNDdRSC2fIkjubuU155BlF6sr21cm1hnk
- U+/sSY84bpdgrOLJ1EVwcON31biEhh5sFMiFCOo4zdYnSYO+uRUIJm1rPfkaWXo2RNyl
- BtI9mAu9l4nO/3uLLTX+KZ3UPugOwjEtcXtGmLVwZJm9/iH4IrSuk8okWxnngPn0/CmJ
- y0bA==
-X-Gm-Message-State: APjAAAV74Ps+N4LD6nfzVo7SlSPNK25+fT7skZEXfiHIubanOJ1anMUT
- 5GtcaH3483yCSBxc6fIuZd8U06DS
-X-Google-Smtp-Source: APXvYqw0ssR2Q2X7zQnu/7AtF7gwwJbT04BkG+x8oOLsf2AyTFNuPK6wvavSwBCpRtaH8tARKh/LQg==
-X-Received: by 2002:a63:e953:: with SMTP id q19mr10732341pgj.313.1559324318724; 
- Fri, 31 May 2019 10:38:38 -0700 (PDT)
+ bh=H043+d/K0lU8Bwi5pfOj5dvnExTA6UuaPSOVo6O+L9g=;
+ b=LRzN9XoZJFaHgiRkF4tPsBnd2PTpyD4Sa+TkIQRQvLGHLKq4FuUlvTlaJXZq62Cgtn
+ KIn4EinULuc/qyn2gVtYx9Qs2+A16cNhrM4Ja0yp6FlbpA0/C57sA/uqw4BmrteN+MrK
+ X0tHJF+9KpE/O5y2Z9xTvzVweMBDHYH4VBp7QJLUv/eSlNlgGlYmycZm0vgy2FHd483o
+ pRiYM1YshKHUeLbqdYOPFXSaSSsXDDPvcXCYyjLnTvJZEB3yNHfAU7U/FtFXk/n5Yo+N
+ ziFP4hlXmE90ODCIUkPi1xTBD1+qRwu3NI9ZflncxRAOw9GYC2pRQsllf6eZlnQ/zQJJ
+ MPxQ==
+X-Gm-Message-State: APjAAAUhH2PfEKRhVIj77nKSTZAb0LZToXG9uP6vM5YIt+AKScQSbJOI
+ /4xTU1aLSdVAMJtTDk64KRv/3CgG
+X-Google-Smtp-Source: APXvYqzrpx5rqG3QKB3Va61sR+x4aFbmnpKZ0UizXtVWQWGQ8BqKOxWS+kAph4wLwDL3RROI+yc5QA==
+X-Received: by 2002:a17:90a:840c:: with SMTP id
+ j12mr10651474pjn.23.1559324319961; 
+ Fri, 31 May 2019 10:38:39 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id p16sm14974419pfq.153.2019.05.31.10.38.37
+ by smtp.gmail.com with ESMTPSA id p16sm14974419pfq.153.2019.05.31.10.38.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 31 May 2019 10:38:37 -0700 (PDT)
+ Fri, 31 May 2019 10:38:39 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] arm64: Enable ARCH_HAS_RESET_CONTROLLER for ARCH_BRCMSTB
-Date: Fri, 31 May 2019 10:38:25 -0700
-Message-Id: <20190531173826.6729-2-f.fainelli@gmail.com>
+Subject: [PATCH 2/2] arm64: Enable PINCTRL for ARCH_BRCMSTB
+Date: Fri, 31 May 2019 10:38:26 -0700
+Message-Id: <20190531173826.6729-3-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190531173826.6729-1-f.fainelli@gmail.com>
 References: <20190531173826.6729-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_103839_923184_4599A8C8 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20190531_103841_343321_238E3996 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -105,29 +106,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jim Quinlan <jim2101024@gmail.com>
+From: Doug Berger <opendmb@gmail.com>
 
-Allow the use of reset controllers on ARCH_BRCMSTB such as the recently
-introduced RESET_BRCMSTB driver.
+ARCH_BRCMSTB needs to use the BCM2835 pin controller for chips like
+BCM7211 which adopted that pin controller for GPIO.
 
-Signed-off-by: Jim Quinlan <jim2101024@gmail.com>
+Signed-off-by: Doug Berger <opendmb@gmail.com>
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
  arch/arm64/Kconfig.platforms | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
-index d0aca109bdf6..2d8b1afa3799 100644
+index 2d8b1afa3799..af0d1270094a 100644
 --- a/arch/arm64/Kconfig.platforms
 +++ b/arch/arm64/Kconfig.platforms
-@@ -65,6 +65,7 @@ config ARCH_BITMAIN
- 
- config ARCH_BRCMSTB
- 	bool "Broadcom Set-Top-Box SoCs"
-+	select ARCH_HAS_RESET_CONTROLLER
+@@ -69,6 +69,7 @@ config ARCH_BRCMSTB
  	select BCM7038_L1_IRQ
  	select BRCMSTB_L2_IRQ
  	select GENERIC_IRQ_CHIP
++	select PINCTRL
+ 	help
+ 	  This enables support for Broadcom's ARMv8 Set Top Box SoCs
+ 
 -- 
 2.17.1
 
