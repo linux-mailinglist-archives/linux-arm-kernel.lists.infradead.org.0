@@ -2,53 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C289330A88
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 10:46:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAC1030A8D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 10:47:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kfJSqB0QkwZVI32D5UAqHtIlsyYEg2Eiph6NgOiqmDQ=; b=n1xSRJJ46vqbWy
-	eNMsaG9tz1bQYs2VXv4QknJjkKtecq10XpgR7/2g5Kurpyvvf2TATWmGcNF8xwcEL0lfowWwSwqJ5
-	99LNnGLLPjeWdF3OBvnFdeMwZQNUlN5Kijwz/Hwt7sfLQ/TZgKXTRxRQQ5H460DIsdOimSZWZ9C9h
-	73EVs86meSNnQZJvrgKmoDuvftOxiJL7K1GLAJjHJyOd+FGiRvU+TM/jtrZW0RcWpka0uoN3DKdNi
-	KKjATIfuGUxWELC9sicNe2QKiJ/mkf2ADsmh83diRLh9jYn1ym+vBLskAgOVwWRE3oRyWYqMnC6eY
-	iabDl0EioRxgLT5tIuog==;
+	List-Owner; bh=f6jwKTeTDgETOhzaoKVKj4GhDTDm+XE70k57RhZRoHQ=; b=hOl31VD1moPthF
+	4Y41tE4R9ndeHBw1zF6A+srlUGftrseyHce3egUgMv16vjTtg/MlVGpC1akWBXLynotrS4HSACnLU
+	BWfE+aX4S+6A08Nu2iA7g2tTBHHL9CFRbFsxeibysNAtgwen3yZ1+znvsgaixkeftZHX1BVRkjBIe
+	VvhFnVIXbg+BA5lVi7REA/9bC6q6AwudR8Jdsbmfu8QmSCsYEhRQG/oPm7Q7e+cV3qN7Xuzdvti1Q
+	JR0koSDdkn9MZlkMDLMI3Cr+UFGw5gNsSBvb6v83eo2ILtHJmtVZ/ZNcEsum6jsJ1M8JJzpMsE3Z5
+	MHsP2sMw1+gBCHYi36qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWdB5-0007GV-3g; Fri, 31 May 2019 08:46:19 +0000
-Received: from cloudserver094114.home.pl ([79.96.170.134])
+	id 1hWdBr-0007hs-QW; Fri, 31 May 2019 08:47:07 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWdAx-0007Fe-On
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 08:46:13 +0000
-Received: from 79.184.255.225.ipv4.supernova.orange.pl (79.184.255.225) (HELO
- kreacher.localnet)
- by serwer1319399.home.pl (79.96.170.134) with SMTP (IdeaSmtpServer 0.83.213)
- id f191c577164177af; Fri, 31 May 2019 10:45:58 +0200
-From: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH v4 1/4] acpi/irq: implement helper to create hierachical
- domains
-Date: Fri, 31 May 2019 10:45:57 +0200
-Message-ID: <1909675.6iIoxqmsXk@kreacher>
-In-Reply-To: <20190528133647.3362-2-ard.biesheuvel@linaro.org>
-References: <20190528133647.3362-1-ard.biesheuvel@linaro.org>
- <20190528133647.3362-2-ard.biesheuvel@linaro.org>
+ id 1hWdBk-0007ZZ-Qg
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 08:47:02 +0000
+Received: by mail-qt1-f195.google.com with SMTP id s15so10388553qtk.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 31 May 2019 01:47:00 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=musdmvMfmuFle9U6pm5zoVH2cKv9Sr+Vl2GKNkM9WAw=;
+ b=AL80P8lXuyZjc5XV6ZR1W8wlv4oCCNKh7dAPDVPbgy09N6/qi7C+G2OixLh/JguExl
+ Yy2mKjPUsoDBl0K9ixoVctbAQNlvstpd1TZWkOkfxvqvKadkylB/6ynZzvwErCtVUSIp
+ 9V3v8Uo7L/WHLJikm+iBkFZcOlyUT4BwPvt3Dmnez3URsyheQaeSZ4SafJA5OXRG1+jD
+ BgQkUjYvu9gqTOLehGsFH44yQDS5fCARzYjDl+4kamrhnlEsEZ/birfHOS6Y+PmXzR0I
+ a0rrI9zDiRlE1bGdkMYorp+c/voS6qaCqhKkoYaZb53eCVuQnPMukwpVzQai819OqCW8
+ X23Q==
+X-Gm-Message-State: APjAAAVGzO6PIUFwiP41l47ridafLnN5g/YaFIWdRQFVHllqw8NXFxTg
+ EaiZBUIfTOs+ZFdXK9GziJL5CiKiNbpDbddt4Kc=
+X-Google-Smtp-Source: APXvYqxSrOECMcfl+h+gsYyFe6RMvJn3OIE0E1mWVu+ZeZ78o7tzQsJyOmKpAbm439V51yw3EWIWq4QnzKJ/LfAWdno=
+X-Received: by 2002:aed:3e7c:: with SMTP id m57mr2866079qtf.204.1559292419933; 
+ Fri, 31 May 2019 01:46:59 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+In-Reply-To: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 31 May 2019 10:46:43 +0200
+Message-ID: <CAK8P3a11DE0sXteZoaP_N=mDhx3tXitGKddn1ogtFqJBYO-SCA@mail.gmail.com>
+Subject: Re: [PATCH v6 00/19] Unify vDSOs across more architectures
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_014611_970821_245F3C25 
-X-CRM114-Status: GOOD (  19.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190531_014700_863296_0895BD66 
+X-CRM114-Status: GOOD (  14.60  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,136 +79,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Graeme Gregory <graeme.gregory@linaro.org>, linux-gpio@vger.kernel.org,
- Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
- linux-acpi@vger.kernel.org, Masahisa Kojima <masahisa.kojima@linaro.org>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Huw Davies <huw@codeweavers.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tuesday, May 28, 2019 3:36:44 PM CEST Ard Biesheuvel wrote:
-> ACPI permits arbitrary producer->consumer interrupt links to be
-> described in AML, which means a topology such as the following
-> is perfectly legal:
-> 
->   Device (EXIU) {
->     Name (_HID, "SCX0008")
->     Name (_UID, Zero)
->     Name (_CRS, ResourceTemplate () {
->       ...
->     })
->   }
-> 
->   Device (GPIO) {
->     Name (_HID, "SCX0007")
->     Name (_UID, Zero)
->     Name (_CRS, ResourceTemplate () {
->       Memory32Fixed (ReadWrite, SYNQUACER_GPIO_BASE, SYNQUACER_GPIO_SIZE)
->       Interrupt (ResourceConsumer, Edge, ActiveHigh, ExclusiveAndWake, 0, "\\_SB.EXIU") {
->         7,
->       }
->     })
->     ...
->   }
-> 
-> The EXIU in this example is the external interrupt unit as can be found
-> on Socionext SynQuacer based platforms, which converts a block of 32 SPIs
-> from arbitrary polarity/trigger into level-high, with a separate set
-> of config/mask/unmask/clear controls.
-> 
-> The existing DT based driver in drivers/irqchip/irq-sni-exiu.c models
-> this as a hierarchical domain stacked on top of the GIC's irqdomain.
-> Since the GIC is modeled as a DT node as well, obtaining a reference
-> to this irqdomain is easily done by going through the parent link.
-> 
-> On ACPI systems, however, the GIC is not modeled as an object in the
-> namespace, and so device objects cannot refer to it directly. So in
-> order to obtain the irqdomain reference when driving the EXIU in ACPI
-> mode, we need a helper that implicitly grabs the default domain as the
-> parent of the hierarchy for interrupts allocated out of the global GSI
-> pool.
-> 
-> Reviewed-by: Mika Westerberg <mika.westerberg@linux.intel.com>
-> Reviewed-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+On Thu, May 30, 2019 at 4:15 PM Vincenzo Frascino
+<vincenzo.frascino@arm.com> wrote:
+>
+> vDSO (virtual dynamic shared object) is a mechanism that the Linux
+> kernel provides as an alternative to system calls to reduce where
+> possible the costs in terms of cycles.
+> This is possible because certain syscalls like gettimeofday() do
+> not write any data and return one or more values that are stored
+> in the kernel, which makes relatively safe calling them directly
+> as a library function.
 
-Acked-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
+Hi Vincento,
 
-if that matters.
+I've very happy with how this turned out overall, and as far as I can
+tell you have addressed all my previous comments. I had another
+look through the series and only noticed a few very minor issues.
 
-> ---
->  drivers/acpi/irq.c   | 26 ++++++++++++++++++++
->  include/linux/acpi.h |  7 ++++++
->  2 files changed, 33 insertions(+)
-> 
-> diff --git a/drivers/acpi/irq.c b/drivers/acpi/irq.c
-> index c3b2222e2129..ce6b25a3b7a7 100644
-> --- a/drivers/acpi/irq.c
-> +++ b/drivers/acpi/irq.c
-> @@ -295,3 +295,29 @@ void __init acpi_set_irq_model(enum acpi_irq_model_id model,
->  	acpi_irq_model = model;
->  	acpi_gsi_domain_id = fwnode;
->  }
-> +
-> +/**
-> + * acpi_irq_create_hierarchy - Create a hierarchical IRQ domain with the default
-> + *                             GSI domain as its parent.
-> + * @flags:      Irq domain flags associated with the domain
-> + * @size:       Size of the domain.
-> + * @fwnode:     Optional fwnode of the interrupt controller
-> + * @ops:        Pointer to the interrupt domain callbacks
-> + * @host_data:  Controller private data pointer
-> + */
-> +struct irq_domain *acpi_irq_create_hierarchy(unsigned int flags,
-> +					     unsigned int size,
-> +					     struct fwnode_handle *fwnode,
-> +					     const struct irq_domain_ops *ops,
-> +					     void *host_data)
-> +{
-> +	struct irq_domain *d = irq_find_matching_fwnode(acpi_gsi_domain_id,
-> +							DOMAIN_BUS_ANY);
-> +
-> +	if (!d)
-> +		return NULL;
-> +
-> +	return irq_domain_create_hierarchy(d, flags, size, fwnode, ops,
-> +					   host_data);
-> +}
-> +EXPORT_SYMBOL_GPL(acpi_irq_create_hierarchy);
-> diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-> index 98440df7fe42..70de4bc30cea 100644
-> --- a/include/linux/acpi.h
-> +++ b/include/linux/acpi.h
-> @@ -23,6 +23,7 @@
->  
->  #include <linux/errno.h>
->  #include <linux/ioport.h>	/* for struct resource */
-> +#include <linux/irqdomain.h>
->  #include <linux/resource_ext.h>
->  #include <linux/device.h>
->  #include <linux/property.h>
-> @@ -327,6 +328,12 @@ int acpi_isa_irq_to_gsi (unsigned isa_irq, u32 *gsi);
->  void acpi_set_irq_model(enum acpi_irq_model_id model,
->  			struct fwnode_handle *fwnode);
->  
-> +struct irq_domain *acpi_irq_create_hierarchy(unsigned int flags,
-> +					     unsigned int size,
-> +					     struct fwnode_handle *fwnode,
-> +					     const struct irq_domain_ops *ops,
-> +					     void *host_data);
-> +
->  #ifdef CONFIG_X86_IO_APIC
->  extern int acpi_get_override_irq(u32 gsi, int *trigger, int *polarity);
->  #else
-> 
+I hope Thomas can have another look soon, he probably also finds
+a few things, and then it should be ready for inclusion in linux-next
+and the coming merge window.
 
+One open question I touched in my review is whether we want to
+have a vdso version of clock_getres() in all architectures or not.
+I'd prefer to leave it out because there is very little advantage to
+it over the system call (the results don't change at runtime and
+can easily be cached by libc if performance ever matters), and
+it takes up a small amount of memory for the implementation.
 
+We shouldn't just need it for consistency because all callers
+would require implementing a fallback to the system call
+anyway, to deal with old kernels.
 
+If anyone comes up with a good reason why it should be added
+after all, let me know and I'll stop mentioning it.
 
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
