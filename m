@@ -2,90 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8667631403
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:42:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26D9F3140C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:45:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OM2z2zUh2R42mW+Qz/nN2DJrGPGNsmIPVijqgP7LiQM=; b=pWHGM0obQfEm/uPK3n7SPyO+QH
-	yITUf2N147xZfoFsEq4nUFaQM1WtQTvnYvMvEoWoeS44/1W6WRDlW+MARc6IxUdkKQhc12krR9YMy
-	lLQvSQIoaUPAl+M/9OWNclhMNBl+YI22Q5l9A2GE4/lK87+N+2of5nhJBHz6nfwfNjt/+WeW2yKTj
-	+actL9Yd0BQbUG44dpEg4OVXrDv4BPMGiZagtp1L6NpGbY1Efef4YrYAKtQ8n+/dDzF/vquFYShI9
-	Qh/HtXjM5i9JHGMXUImRZKtmCYUFAw+X6buMN3ys+Uj2VE77fmtnCsblOoEo6r4RZ3QbfOxthtkIu
-	oc2pi9Xw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xhTqykEkKBhz46Lif6zdIMGBMG58r/k/sqOwNloHQZI=; b=ZnNe3dytMmox0/61XN5rYtsSS
+	8sNr/W30wVCxxwyNyMEc80WNtc2KW3fxdSS2C8luR3F4R02naNVL+dkoNNtC38Iv8zx2dR+J+eiJs
+	x0vF7x1P18M7gp7OhcOZyhczjmUDr3f6oIHwZjORnYbsYcxjVyIfSWx98bAzTw+BXWpQvyU4UyYXQ
+	oyGThYK4W6raWnqtOfPZEH1QLF6W3Orwc+fV/bieTM8IPbCa4uQkUthf9oAAYxwVdElbZy+0jFV8N
+	zd2oYeggjwkOTV08ZJyyCQZ3bnV//DeMxHt9VGI7WdxpCjtSogOCjWi9VRbQPk7leJ2tTRByhtpJ0
+	QSxMS1Xyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWlXj-0007ux-Lu; Fri, 31 May 2019 17:42:15 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWlXG-0007YX-JN
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:41:47 +0000
-Received: by mail-pg1-x542.google.com with SMTP id h2so1185194pgg.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 May 2019 10:41:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=IgrJ71MNBgTIUzIRKQesOjEqI6A/RrDDrwRnH+2AsMA=;
- b=DBUqb9Tk2v181KVHFYUeRdOkY+Qj4THTwifTVw1OqMdCUrUWZhxhHnV+hE7Skoqrav
- QDPkMMtEFWiFfcIjO0Gz/hRR5WPT7XQgH8TAefPhLFM/cXwTInCBtshH9NR8ds4RVuUc
- Mu3MrPXrYW4ks6d6fkvijHGY+7LehdRwRAp6oauEM/Rnd35BDVPNEye9dGsADTelxrFH
- topbi2+ATbFODFj1ITbh/qTFbNuOmk+zsQoYU3jRlyQbNUVlrQLQl1TFuimrdavlqgOx
- fzOgzgZthPvNKMlN1RL0L2pYkAQilNTk8ZAOrWb2YHtFoUPFMVIotlLv+zjDxj0FzsbY
- 6PPg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=IgrJ71MNBgTIUzIRKQesOjEqI6A/RrDDrwRnH+2AsMA=;
- b=Pn5V6rZ1gRp1H7WztsCiB3z3zYbUCNpLd6tV4FB5qUA5TlDQLdoy9b5NnhK2iopWA7
- 8shdKINSoKDJYiaNZyPAMe27IlrIm3UzGpMR5m/sav5Z6SfrH7gmtNMIN0DoNb9eGN26
- uV/v2YFLv+LqatMIZJSFVaxlUDVFNU0CANsVcfB6R6X4l1ssUx982vQiQmg3vD2bZwH1
- 2C2hExDDEOyC4ZMmgPz8N9MKS10G6L1htLa+EDoexFGNAkuCfF3ORhkG0eYesNL7+9kv
- zQa1OS44Fdbik1AWVvApKdjf3Si0D3NMAUHVn9nYcC9uLskB3kbechKoav21UPSpH3qH
- Gahw==
-X-Gm-Message-State: APjAAAWRHkhYLyACX4rRliYcKMEu7n5bK6bxlyN9omgVCrm9s8JFPLkO
- B4llZCeJVejjJ7OJ57MaKxUYiAbf
-X-Google-Smtp-Source: APXvYqzjvDdyD9Lgvun83lGnMOcolbN9ksXJnvTK/jVnDIw1Lm0lVPLqyhJ1xgQ6+95c8er5zChF9A==
-X-Received: by 2002:a63:8f09:: with SMTP id n9mr10550139pgd.249.1559324505626; 
- Fri, 31 May 2019 10:41:45 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id m11sm5373031pjv.21.2019.05.31.10.41.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 31 May 2019 10:41:44 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] ARM: bcm: Enable PINCTRL for ARCH_BRCMSTB
-Date: Fri, 31 May 2019 10:41:29 -0700
-Message-Id: <20190531174129.6974-3-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190531174129.6974-1-f.fainelli@gmail.com>
-References: <20190531174129.6974-1-f.fainelli@gmail.com>
+	id 1hWlab-0001QX-4e; Fri, 31 May 2019 17:45:13 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWlaT-00013O-K4
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:45:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E4D53A78;
+ Fri, 31 May 2019 10:45:04 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DEB233F59C;
+ Fri, 31 May 2019 10:45:01 -0700 (PDT)
+Subject: Re: [PATCH v3 0/6] Prerequisites for NXP LS104xA SMMU enablement
+To: Christoph Hellwig <hch@infradead.org>
+References: <20190530141951.6704-1-laurentiu.tudor@nxp.com>
+ <20190530.150844.1826796344374758568.davem@davemloft.net>
+ <20190531163350.GB8708@infradead.org>
+ <37406608-df48-c7a0-6975-4b4ad408ba36@arm.com>
+ <20190531170804.GA12211@infradead.org>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <1b81c168-f5e0-f86a-f90e-22e8c3f2a602@arm.com>
+Date: Fri, 31 May 2019 18:45:00 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20190531170804.GA12211@infradead.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_104146_674161_D6FD82BD 
-X-CRM114-Status: GOOD (  11.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190531_104505_669740_E42B1B53 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,40 +67,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jim Quinlan <jim2101024@gmail.com>, opendmb@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, Florian Fainelli <f.fainelli@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: madalin.bucur@nxp.com, netdev@vger.kernel.org, roy.pledge@nxp.com,
+ linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
+ Joakim.Tjernlund@infinera.com, iommu@lists.linux-foundation.org,
+ camelia.groza@nxp.com, linuxppc-dev@lists.ozlabs.org,
+ David Miller <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Doug Berger <opendmb@gmail.com>
+On 31/05/2019 18:08, Christoph Hellwig wrote:
+> On Fri, May 31, 2019 at 06:03:30PM +0100, Robin Murphy wrote:
+>>> The thing needs to be completely redone as it abuses parts of the
+>>> iommu API in a completely unacceptable way.
+>>
+>> `git grep iommu_iova_to_phys drivers/{crypto,gpu,net}`
+>>
+>> :(
+>>
+>> I guess one alternative is for the offending drivers to maintain their own
+>> lookup tables of mapped DMA addresses - I think at least some of these
+>> things allow storing some kind of token in a descriptor, which even if it's
+>> not big enough for a virtual address might be sufficient for an index.
+> 
+> Well, we'll at least need DMA API wrappers that work on the dma addr
+> only and hide this madness underneath.  And then tell if an given device
+> supports this and fail the probe otherwise.
 
-ARCH_BRCMSTB needs to use the BCM2835 pin controller for chips like
-BCM7211 which adopted that pin controller for GPIO.
+Bleh, I'm certainly not keen on formalising any kind of 
+dma_to_phys()/dma_to_virt() interface for this. Or are you just 
+proposing something like dma_unmap_sorry_sir_the_dog_ate_my_homework() 
+for drivers which have 'lost' the original VA they mapped?
 
-Signed-off-by: Doug Berger <opendmb@gmail.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- arch/arm/mach-bcm/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm/mach-bcm/Kconfig b/arch/arm/mach-bcm/Kconfig
-index 9c51d9d0aa68..31065c9a6936 100644
---- a/arch/arm/mach-bcm/Kconfig
-+++ b/arch/arm/mach-bcm/Kconfig
-@@ -219,6 +219,7 @@ config ARCH_BRCMSTB
- 	select ZONE_DMA if ARM_LPAE
- 	select SOC_BRCMSTB
- 	select SOC_BUS
-+	select PINCTRL
- 	help
- 	  Say Y if you intend to run the kernel on a Broadcom ARM-based STB
- 	  chipset.
--- 
-2.17.1
-
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
