@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9CA830E5E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 14:50:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9B1530E65
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 14:53:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tn6jDf0WGo672/zK2Q8Dy8XgkOFC6BZKGDTvazI/Sp4=; b=Z5R6tAkGrLcr2s
-	wDYyHHX4uD0l902bW0ojfWe+iWotxeszxYqFqsVcQGyyjKPwrJmLJ/T7txoasZBlzf6NBEfsgpcDB
-	CQ7nqS1l3p9aJ3erGJcx0cUYjWTBBQy1+iGLTm4IDFv8n9QxX18vtuSEiCrGflICHlngjOwGBPTYE
-	4TSzFH1jLG4LcCEWkjBY2DQpSsOzU4z+1Xh+pn2H6xUWUQvrWt6kz/eA8dwbgO8jIsSFQbWWgTTWh
-	clqaTVozbCzmO5IcJVmJZq+z/G5M1Pnunqqvzax/ucSslytwfanyS2LJN4769X1Mb2NU7nMgZJSuo
-	ab9uxfWhaF7DzOmidf+A==;
+	List-Owner; bh=AiAYeyuPzR8GWlr0uRakTLvrrAXrRaeKBiAH90xhZ5U=; b=MlnRlIX/hbB05H
+	M2vBUwbn9T5xxAm0RefGNfhuTetvUQkahSj10wxNBc8E4rYwioXOej1REZ850nM8yzZ7dNe0izez4
+	lFvxqgpnpj9qMrlZzYvBd6l5by4sBE1fv2VfObwYS99QHrM+sfEa27I4hpIk2Hbe+r6p4Ml2usoZG
+	UvzeJOD/axQabM1fo2kpIbhhsT8szKtiqfg3D0NTTG2eHehYtw0uI2hLszIujiumiiwaPWcxQxz+M
+	JhqsbMy4CcrJWLKMy8LjoN+5g3/ONdkIdf1HSkYZ/f5GM0PN68/pDNcnhNn7jsYgzYTnFoxPz4WfE
+	bpsSJSsVpLSZKYBfj4Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWgzK-0002iN-PK; Fri, 31 May 2019 12:50:26 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hWh1k-00033M-Gn; Fri, 31 May 2019 12:52:56 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWgzC-0002hH-TM
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 12:50:20 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hWgz9-00020A-Fo; Fri, 31 May 2019 14:50:15 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1hWgz7-00078v-KN; Fri, 31 May 2019 14:50:13 +0200
-Date: Fri, 31 May 2019 14:50:13 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Russell King <rmk+kernel@armlinux.org.uk>
-Subject: Re: [PATCH 1/6] serial: sa1100: add support for mctrl gpios
-Message-ID: <20190531125013.3gkexhmbqjpdvrtf@pengutronix.de>
-References: <20190531111257.27hor6xgb3nsdghg@shell.armlinux.org.uk>
- <E1hWfTn-0003fP-Rl@rmk-PC.armlinux.org.uk>
+ id 1hWh1c-00032z-Fl
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 12:52:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1559307166; bh=MzehFNsFWdso1PSBBodWcbOt17a6y4Bkl/7J5D4dJxM=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=leYfL1GkTc5tv9YKMObM7uLJimTV/Lul6pc3RcPczj3teChDoKop0mFuU351oqMgM
+ 8FTjFxDA7C8NJxiGTq3mCeQzPIER768n+7wsbWh+70JBKQDFL8GgEJ1mk/bbd/TGmS
+ ZsCfcxmw2MvaElHxsYGQsGdUOu9QFnNuk9M3UMbs=
+Date: Fri, 31 May 2019 14:52:46 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jose Abreu <joabreu@synopsys.com>, "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [linux-sunxi] [PATCH v6 0/6] Add support for Orange Pi 3
+Message-ID: <20190531125246.qqfvmgmw2mv442tq@core.my.home>
+Mail-Followup-To: linux-sunxi@googlegroups.com,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Jose Abreu <joabreu@synopsys.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com
+References: <20190527162237.18495-1-megous@megous.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <E1hWfTn-0003fP-Rl@rmk-PC.armlinux.org.uk>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190527162237.18495-1-megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_055019_109122_88DE6411 
-X-CRM114-Status: GOOD (  21.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190531_055248_869055_5A8048D7 
+X-CRM114-Status: GOOD (  28.22  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,132 +89,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jiri Slaby <jslaby@suse.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 31, 2019 at 12:13:47PM +0100, Russell King wrote:
-> Add support for the generic mctrl gpio helper.  This will allow us to
-> convert several board files to use the gpiod tables to assign GPIOs to
-> serial ports, rather than needing to have private function callbacks.
-> =
+Hello,
 
-> If the generic mctrl gpio helper fails, ignore the mctrl gpios rather
-> than preventing the (possibly console) serial port from being created.
-> =
+On Mon, May 27, 2019 at 06:22:31PM +0200, megous via linux-sunxi wrote:
+> From: Ondrej Jirman <megous@megous.com>
+> 
+> This series implements support for Xunlong Orange Pi 3 board.
+> 
+> Unfortunately, this board needs some small driver patches, so I have
+> split the boards DT patch into chunks that require patches for drivers
+> in various subsystems.
+> 
+> Suggested merging plan/dependencies:
+> 
+> - stmmac patches are needed for ethernet support (patches 1-3)
+>   - these should be ready now
+> - HDMI support (patches 4-6)
+>   - should be ready
 
-> Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Acked-by: Linus Walleij <linus.walleij@linaro.org>
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> ---
->  drivers/tty/serial/Kconfig  |  1 +
->  drivers/tty/serial/sa1100.c | 42 ++++++++++++++++++++++++++++++++++++++-=
----
->  2 files changed, 39 insertions(+), 4 deletions(-)
-> =
+If there are no futher comments, can all these patches please be merged?
 
-> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-> index 72966bc0ac76..f4372ac1a774 100644
-> --- a/drivers/tty/serial/Kconfig
-> +++ b/drivers/tty/serial/Kconfig
-> @@ -511,6 +511,7 @@ config SERIAL_SA1100
->  	bool "SA1100 serial port support"
->  	depends on ARCH_SA1100
->  	select SERIAL_CORE
-> +	select SERIAL_MCTRL_GPIO if GPIOLIB
->  	help
->  	  If you have a machine based on a SA1100/SA1110 StrongARM(R) CPU you
->  	  can enable its onboard serial port by enabling this option.
-> diff --git a/drivers/tty/serial/sa1100.c b/drivers/tty/serial/sa1100.c
-> index a399772be3fc..97bdfeccbea9 100644
-> --- a/drivers/tty/serial/sa1100.c
-> +++ b/drivers/tty/serial/sa1100.c
-> @@ -28,6 +28,8 @@
->  #include <mach/hardware.h>
->  #include <mach/irqs.h>
->  =
+thank you and kind regards,
+	Ondrej
 
-> +#include "serial_mctrl_gpio.h"
-> +
->  /* We've been assigned a range on the "Low-density serial ports" major */
->  #define SERIAL_SA1100_MAJOR	204
->  #define MINOR_START		5
-> @@ -77,6 +79,7 @@ struct sa1100_port {
->  	struct uart_port	port;
->  	struct timer_list	timer;
->  	unsigned int		old_status;
-> +	struct mctrl_gpios	*gpios;
->  };
->  =
-
->  /*
-> @@ -174,6 +177,8 @@ static void sa1100_enable_ms(struct uart_port *port)
->  		container_of(port, struct sa1100_port, port);
->  =
-
->  	mod_timer(&sport->timer, jiffies);
-> +
-> +	mctrl_gpio_enable_ms(sport->gpios);
->  }
->  =
-
->  static void
-> @@ -322,11 +327,21 @@ static unsigned int sa1100_tx_empty(struct uart_por=
-t *port)
->  =
-
->  static unsigned int sa1100_get_mctrl(struct uart_port *port)
->  {
-> -	return TIOCM_CTS | TIOCM_DSR | TIOCM_CAR;
-> +	struct sa1100_port *sport =3D
-> +		container_of(port, struct sa1100_port, port);
-> +	int ret =3D TIOCM_CTS | TIOCM_DSR | TIOCM_CAR;
-> +
-> +	mctrl_gpio_get(sport->gpios, &ret);
-> +
-> +	return ret;
->  }
->  =
-
->  static void sa1100_set_mctrl(struct uart_port *port, unsigned int mctrl)
->  {
-> +	struct sa1100_port *sport =3D
-> +		container_of(port, struct sa1100_port, port);
-> +
-> +	mctrl_gpio_set(sport->gpios, mctrl);
->  }
->  =
-
->  /*
-> @@ -842,6 +857,27 @@ static int sa1100_serial_resume(struct platform_devi=
-ce *dev)
->  	return 0;
->  }
->  =
-
-> +static int sa1100_serial_add_one_port(struct sa1100_port *sport, struct =
-platform_device *dev)
-> +{
-> +	sport->port.dev =3D &dev->dev;
-> +	sport->gpios =3D mctrl_gpio_init_noauto(sport->port.dev, 0);
-
-the _noauto function was only introduced to ease a transition. I think
-the driver would benefit to use mctrl_gpio_init() instead.
-
-Getting rid of mctrl_gpio_init_noauto() was on my todo list for some
-time, but it was pushed down too far :-|
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+> Changes in v2:
+> - added dt-bindings documentation for the board's compatible string
+>   (suggested by Clement)
+> - addressed checkpatch warnings and code formatting issues (on Maxime's
+>   suggestions)
+> - stmmac: dropped useless parenthesis, reworded description of the patch
+>   (suggested by Sergei)
+> - drop useles dev_info() about the selected io bias voltage
+> - docummented io voltage bias selection variant macros
+> - wifi: marked WiFi DTS patch and realted mmc1_pins as "DO NOT MERGE",
+>   because wifi depends on H6 RTC support that's not merged yet (suggested
+>   by Clement)
+> - added missing signed-of-bys
+> - changed &usb2otg dr_mode to otg, and added a note about VBUS
+> - improved wording of HDMI driver's DDC power supply patch
+> 
+> Changes in v3:
+> - dropped already applied patches
+> - changed pinctrl I/O bias selection constants to enum and renamed
+> - added /omit-if-no-ref/ to mmc1_pins
+> - made mmc1_pins default pinconf for mmc1 in H6 dtsi
+> - move ddc-supply to HDMI connector node, updated patch descriptions,
+>   changed dt-bindings docs
+> 
+> Changes in v4:
+> - fix checkpatch warnings/style issues
+> - use enum in struct sunxi_desc_function for io_bias_cfg_variant
+> - collected acked-by's
+> - fix compile error in drivers/pinctrl/sunxi/pinctrl-sun9i-a80-r.c:156
+>   caused by missing conversion from has_io_bias_cfg struct member
+>   (I've kept the acked-by, because it's a trivial change, but feel free
+>   to object.) (reported by Martin A. on github)
+>   I did not have A80 pinctrl enabled for some reason, so I did not catch
+>   this sooner.
+> - dropped brcm firmware patch (was already applied)
+> - dropped the wifi dts patch (will re-send after H6 RTC gets merged,
+>   along with bluetooth support, in a separate series)
+> 
+> Changes in v5:
+> - dropped already applied patches (pinctrl patches, mmc1 pinconf patch)
+> - rename GMAC-3V3 -> GMAC-3V to match the schematic (Jagan)
+> - changed hdmi-connector's ddc-supply property to ddc-en-gpios
+>   (Rob Herring)
+> 
+> Changes in v6:
+> - added dt-bindings reviewed-by tag
+> - fix wording in stmmac commit (as suggested by Sergei)
+> 
+> Please take a look.
+> 
+> thank you and regards,
+>   Ondrej Jirman
+> 
+> Icenowy Zheng (2):
+>   net: stmmac: sun8i: add support for Allwinner H6 EMAC
+>   net: stmmac: sun8i: force select external PHY when no internal one
+> 
+> Ondrej Jirman (4):
+>   arm64: dts: allwinner: orange-pi-3: Enable ethernet
+>   dt-bindings: display: hdmi-connector: Support DDC bus enable
+>   drm: sun4i: Add support for enabling DDC I2C bus to sun8i_dw_hdmi glue
+>   arm64: dts: allwinner: orange-pi-3: Enable HDMI output
+> 
+>  .../display/connector/hdmi-connector.txt      |  1 +
+>  .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 70 +++++++++++++++++++
+>  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.c         | 55 ++++++++++++++-
+>  drivers/gpu/drm/sun4i/sun8i_dw_hdmi.h         |  3 +
+>  .../net/ethernet/stmicro/stmmac/dwmac-sun8i.c | 21 ++++++
+>  5 files changed, 147 insertions(+), 3 deletions(-)
+> 
+> -- 
+> 2.21.0
+> 
+> -- 
+> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20190527162237.18495-1-megous%40megous.com.
+> For more options, visit https://groups.google.com/d/optout.
 
 _______________________________________________
 linux-arm-kernel mailing list
