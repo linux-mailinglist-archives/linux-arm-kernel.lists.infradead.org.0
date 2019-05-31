@@ -2,75 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6177C305A3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 02:04:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2964305B6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 02:17:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+92qELl1B81oBolKubkyEqpkW0tRWPZZDpItSJDI9tM=; b=lc+ix9cyZGACuc
-	axPhNDkpJyYr7d0HiGQLrao/kdO3wBZeKHYno8mYiYWGtFYWMm4AmIgabfu4xS2zKaeNTenyN4xj4
-	qy8RYXYuxldCVY4EtM+Hf/qpcYBaKJUGuRyN7ANgaaANggVmoCvFmKvjQ2/5nZbEJhoTRaIoJnJgr
-	tJR1Qx6uB9enagtp4KQO4CLExVbJLArOrC67QTWyal5AmOBQqrtnLkyWxMUy2z03Afa0rIHU3hkhV
-	HlNR/LpPeqU6zzP0TnzoLtt47kHWhmX8F/adfLv33ccOQ0BPDKtnXoB2LF29gmpl5UrRBzKaTirAw
-	1tFaGHBLpHJOuEtJCNKQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=i1VBff6P6i38Pms92K/y1JlAz6itceFB0XYB6b586Ro=; b=jkxJDN4fXLa+MQ86WWNmG6OUHq
+	xR6O3gP1YusQAgk7xwbEMLLfXesd+ZNAzC9PEowA0AvyjRf/9pBIVQaNjlPt4LW7tXsWamYn/ho4x
+	8eGrRQwTfLPWVwHZkVOE6mapLHTIczw2PMxTbSKxX6gQ9DJT/jxGm72ohYp1zOk0rOLW2IBV47P2x
+	C07G75Ut934no1nFx+y3WDiXVvs3T7I0+MBS0PHD3uLsUnKZfYaPpZFbQm2Hi4zKhHXnT8ALVYtpV
+	Nx4EWsc8+91E2L1dfFw3IoakaG39jE3L3kMeNx5blYaOjF4yDdK/MfbIdSEKmNEWvw29dIM45p9Iv
+	bo1WFFMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWV1Z-0005Y3-0m; Fri, 31 May 2019 00:03:57 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1hWVEs-0003vf-Li; Fri, 31 May 2019 00:17:42 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWV1R-0005XW-0b
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 00:03:50 +0000
-Received: by mail-oi1-x241.google.com with SMTP id b21so2439212oic.8
+ id 1hWVEm-0003vI-A6
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 00:17:37 +0000
+Received: by mail-ed1-x544.google.com with SMTP id n12so3757410edt.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 May 2019 17:03:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=android.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yVDumebw9ygBDXtfHiPhnGIQjTpXFLhYCkxCUy9lBzU=;
- b=qw9YprhyZX7mcpOIgwrmBHwhrxEs/oCObQFT8/hpupxtrDkYp6X2+GtgRjXtvbrd4+
- oX1k304qiIJe/2Gaw7Zy9bzXjfiEsijmL5Y1x6iLFN6ueBdvKFyluHMOzZuAPfdBWBy5
- ggSftIPAPDH6KeZmCztOSLFe+2eKNLAciSHdS8/MejzYHhXREEBnCMrJsnoAMmefuPWC
- mDkzCjcRl95bvlshHzp7Ts3mCI+bZGLt0SpIMLaZ3zVyiR7TrGJtUfd8dM146otuAPot
- YbKo7vBs0OZ0nX7A/TWy2gMPsd2G8ylFW02w20z3GQJqykhzj5y7iBnFHuXoLSD+kA2S
- 8Igg==
+ Thu, 30 May 2019 17:17:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=KilQgTmnb5nYWh7a+i+EYwFVHm8qNkHvjaIrcsYy+bQ=;
+ b=UYD6a11T0faxUH6FuHYRubUy66uwhxQIFEQHBDNi6Hm0rsKXch8bTe4qbEogjYXF12
+ +tAXmYQJ2h0kxzyQiD4t336y85hpXCAo42Kpxvof+f9lePbWvaCcWzpiUJcAHGhnIRYb
+ 0uJU5TwEMlTC8awpUo4J5raGlGPbw6sNU0C0o=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yVDumebw9ygBDXtfHiPhnGIQjTpXFLhYCkxCUy9lBzU=;
- b=Yj5tjobwrGkD3mIN8Oqwv4u//8jG0HrlIZ5QzYDKNoBTucUWdJU6fpZMObsN5T1pVD
- 3TVryDP1G2z6fNAQSI3sVDa4bIcbB0oQANiAt6hbDd6C0v3w4s+hloIXwbiu50sIsklI
- L2FQY9XHdvPlvgWv7OgQQlnZW14CgwelDEzlx6K1EeQnaVnA/OIxdSQrsjDo+l0OZ6/y
- TBDHs+p6wB9IXAAZK4z9kcPeRtDTn+d7cRW+H20Y4wZl0iOVGaN4zAdUSVGDnlf2wsL5
- Q/jgb7yd0pxZWziM7jqbSnRslP9d+vnll86ezlXc/axFN8Lrt+WBd0p1Wtb3jzIrgEjq
- MLzg==
-X-Gm-Message-State: APjAAAW4xKn7NzRmOOC22mMHOTKI+4x1IJX8Q8g4GDZplbP5HpDXdoJn
- qf+lZk5kxYyS0XVlVMO73YjAiPuosEo4JhFpILFRbw==
-X-Google-Smtp-Source: APXvYqx4bHeISWBB/C8aBk0LvDBc4rgC3d1vOecTzWEQenWbhknHFl0Z/4lOzR5rNme3iod+J6Gv95Qwron3apqwYWE=
-X-Received: by 2002:aca:3fc6:: with SMTP id m189mr4157056oia.124.1559261027717; 
- Thu, 30 May 2019 17:03:47 -0700 (PDT)
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=KilQgTmnb5nYWh7a+i+EYwFVHm8qNkHvjaIrcsYy+bQ=;
+ b=gTBpcu7W7y52LzfLYDlDJEHpiCrtH1aTxSZ0YTZ+vKd3hStiFUVZerRRu2dgmdExq3
+ 9oDscATwitc20AO93oT3mRZQZsb56xZ84ECKnuyQ9fc1jPCnrbMc684AM3Km+n6m1aAh
+ Hb90jioGfJ+UYiIHASbc1j4oO6ZAPSeBOAbg5Dlsmq0cyMdplkopiQBok9KZpY6FzFmE
+ 57PDx4xl9rVK0ny5+SgOtwMFGO1WkiA0qk8+FZwo3xA66EY2Cpz/RrDMLYmTu1HWEaO0
+ DpD36ihZgQ9jYIwUJhQlg3uoO0llBplQ2EyEJj4w45rfB7Vit5+8LvU+pMRJdWamVBaY
+ 3HuA==
+X-Gm-Message-State: APjAAAWwVXtz3jAV9E8P/s5FO5hasWBzhhe6QquISnhfzwDHx8SW9TZ/
+ UECI0LCU8rr4qmXWpofcwy8Zag==
+X-Google-Smtp-Source: APXvYqxpHaDuapqKKB2H8FRfUx2YJNboFSFW9NVWgRnsRiE5ANLJDWfQM9va4NxyzqJDXI1k3Rd8FQ==
+X-Received: by 2002:a17:906:843:: with SMTP id f3mr6346472ejd.70.1559261853687; 
+ Thu, 30 May 2019 17:17:33 -0700 (PDT)
+Received: from [10.136.8.252] ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id o2sm684618ejz.22.2019.05.30.17.17.30
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 30 May 2019 17:17:32 -0700 (PDT)
+Subject: Re: [PATCH] pinctrl: ns2: Fix potential NULL dereference
+To: Young Xiao <92siuyang@gmail.com>, rjui@broadcom.com,
+ sbranden@broadcom.com, bcm-kernel-feedback-list@broadcom.com,
+ linus.walleij@linaro.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <1559097838-26070-1-git-send-email-92siuyang@gmail.com>
+From: Ray Jui <ray.jui@broadcom.com>
+Message-ID: <ace57d13-6194-df8e-d2e8-fbc85d9ce21a@broadcom.com>
+Date: Thu, 30 May 2019 17:17:28 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <CANA+-vBHL9a9fXDWxALXXuJk6r8ObZZjhrGp-p5JUnfOThEV5g@mail.gmail.com>
- <20190530231346.ede52pjznj3pgfll@shell.armlinux.org.uk>
-In-Reply-To: <20190530231346.ede52pjznj3pgfll@shell.armlinux.org.uk>
-From: Tri Vo <trong@android.com>
-Date: Thu, 30 May 2019 17:03:32 -0700
-Message-ID: <CANA+-vAEJyvR=_zBHyUNyWdMMccbRL6ooSbqqVdYAc-0hTLh7w@mail.gmail.com>
-Subject: Re: CONFIG_FRAME_POINTER support for Clang
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+In-Reply-To: <1559097838-26070-1-git-send-email-92siuyang@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_170349_082057_393597F3 
-X-CRM114-Status: GOOD (  19.35  )
+X-CRM114-CacheID: sfid-20190530_171736_355833_57375D94 
+X-CRM114-Status: GOOD (  16.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,74 +101,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: irogers@google.com, Nick Desaulniers <ndesaulniers@google.com>,
- stefan@agner.ch, clang-built-linux@googlegroups.com, mka@chromium.org,
- manojgupta@google.com, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 4:13 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Thu, May 30, 2019 at 03:56:06PM -0700, Tri Vo wrote:
-> > Hello Russell,
-> >
-> > I'm trying to implement support for CONFIG_FRAME_POINTER when building Linux
-> > with Clang compiler.
-> >
-> > Currently, CONFIG_FRAME_POINTER relies on function prologue that is emitted by
-> > GCC using -mapcs flag. However, APCS is obsolete and Clang doesn't support it.
-> >
-> > So in order to accommodate Clang-emitted frame layout, I'm thinking of
-> > providing Clang-specific implementation of code that relies on frame pointer,
-> > most notably in these files:
-> >         lib/backtrace.S
-> >         arch/arm/kernel/stacktrace.c
-> >         arch/arm/net/bpf_jit_32.c
->
-> What format stack frames does Clang use?  I don't use clang, never seen
-> any clang ARM assembly, so I've no idea on this.
 
-The set and order of registers pushed onto the stack is different with Clang.
-Consequently, positions of saved registers relative to the value of FP are
-different with Clang.
-https://github.com/llvm-mirror/llvm/blob/master/lib/Target/ARM/ARMCallingConv.td#L256
 
-For purposes of backtracing, the important difference is that LR is pushed
-onto the stack at offset -4 from the value of FP with GCC + APCS, and at
-offset +4 with Clang.
+On 5/28/2019 7:43 PM, Young Xiao wrote:
+> platform_get_resource() may fail and return NULL, so we should
+> better check it's return value to avoid a NULL pointer dereference
+> a bit later in the code.
+> 
+> Signed-off-by: Young Xiao <92siuyang@gmail.com>
+> ---
+>  drivers/pinctrl/bcm/pinctrl-ns2-mux.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/pinctrl/bcm/pinctrl-ns2-mux.c b/drivers/pinctrl/bcm/pinctrl-ns2-mux.c
+> index 4b5cf0e..2bf6af7 100644
+> --- a/drivers/pinctrl/bcm/pinctrl-ns2-mux.c
+> +++ b/drivers/pinctrl/bcm/pinctrl-ns2-mux.c
+> @@ -1048,6 +1048,8 @@ static int ns2_pinmux_probe(struct platform_device *pdev)
+>  		return PTR_ERR(pinctrl->base0);
+>  
+>  	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+> +	if (!res)
+> +		return -EINVAL;
 
-Also, unlike GCC, Clang's frame pointer always points to the location of the
-previous frame pointer.
+Right, usually not needed if devm_ioremap_resource is used since it was
+checked there. But in this case, I do think it needs to be checked. This
+change looks good to me. Thanks.
 
-Here is a simple example:
-https://godbolt.org/z/gJN0nz
+>  	pinctrl->base1 = devm_ioremap_nocache(&pdev->dev, res->start,
+>  					resource_size(res));
+>  	if (!pinctrl->base1) {
+> 
 
->
-> > This will likely involve putting "#ifdef CC_IS_CLANG" statements in the source
-> > code. Is that OK?
-> >
-> > Another caveat is that Clang implementation of backtracing won't be able to
-> > dump saved registers or dump precise pc value of the caller, because IIUC that
-> > information is derived from APCS's fixed prologue.
-> >
-> > What do you think about this approach?
-> >
-> > Thanks,
-> > Tri
-> >
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> >
->
-> --
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-> According to speedtest.net: 11.9Mbps down 500kbps up
+Reviewed-by: Ray Jui <ray.jui@broadcom.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
