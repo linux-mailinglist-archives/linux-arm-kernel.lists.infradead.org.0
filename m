@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26D9F3140C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:45:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E714A31412
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:45:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xhTqykEkKBhz46Lif6zdIMGBMG58r/k/sqOwNloHQZI=; b=ZnNe3dytMmox0/61XN5rYtsSS
-	8sNr/W30wVCxxwyNyMEc80WNtc2KW3fxdSS2C8luR3F4R02naNVL+dkoNNtC38Iv8zx2dR+J+eiJs
-	x0vF7x1P18M7gp7OhcOZyhczjmUDr3f6oIHwZjORnYbsYcxjVyIfSWx98bAzTw+BXWpQvyU4UyYXQ
-	oyGThYK4W6raWnqtOfPZEH1QLF6W3Orwc+fV/bieTM8IPbCa4uQkUthf9oAAYxwVdElbZy+0jFV8N
-	zd2oYeggjwkOTV08ZJyyCQZ3bnV//DeMxHt9VGI7WdxpCjtSogOCjWi9VRbQPk7leJ2tTRByhtpJ0
-	QSxMS1Xyg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iHDsB57zF4dmwxu7tSAl/8fagGEcKSlsT/TwaXfMbTw=; b=mez56xM3BoCH52
+	NnJkg97dffvSSEhU4KRcLPiIPywFNifDhLYSCuBmIbS0Odt8suT9HAS/duZ8+RComNTbrvnpzjrVo
+	dv7Qr4XxZTNuXg0EnbXuZpB1OxlWn8vGwTofWXQqkL1jYYpMuLJGyBcTRug342oZp+UfOjHHa3cLA
+	OCEFQIihuDjw7AWahGFwXfg0J70kvMezvj+rXxQlGYvmxI8mNkywk4rRXntqCDGRq6rl+H1bG5VM6
+	n+R7z5t/bUvJbtnAhfg5dCGHQtBppxY7R0PQ+Uz9h4KoYQE3Wbi85yz2verPiaP9NgKAmtmFfM6VR
+	B1PjOMgCFNcU+q3Fj2Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWlab-0001QX-4e; Fri, 31 May 2019 17:45:13 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWlaT-00013O-K4
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:45:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E4D53A78;
- Fri, 31 May 2019 10:45:04 -0700 (PDT)
-Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DEB233F59C;
- Fri, 31 May 2019 10:45:01 -0700 (PDT)
-Subject: Re: [PATCH v3 0/6] Prerequisites for NXP LS104xA SMMU enablement
-To: Christoph Hellwig <hch@infradead.org>
-References: <20190530141951.6704-1-laurentiu.tudor@nxp.com>
- <20190530.150844.1826796344374758568.davem@davemloft.net>
- <20190531163350.GB8708@infradead.org>
- <37406608-df48-c7a0-6975-4b4ad408ba36@arm.com>
- <20190531170804.GA12211@infradead.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <1b81c168-f5e0-f86a-f90e-22e8c3f2a602@arm.com>
-Date: Fri, 31 May 2019 18:45:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hWlb1-0001f8-Jx; Fri, 31 May 2019 17:45:39 +0000
+Received: from relay1.mentorg.com ([192.94.38.131])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWlae-0001ZC-0V
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:45:17 +0000
+Received: from svr-orw-mbx-01.mgc.mentorg.com ([147.34.90.201])
+ by relay1.mentorg.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-SHA384:256)
+ id 1hWlaY-00048y-04 from George_Davis@mentor.com ;
+ Fri, 31 May 2019 10:45:10 -0700
+Received: from localhost (147.34.91.1) by svr-orw-mbx-01.mgc.mentorg.com
+ (147.34.90.201) with Microsoft SMTP Server (TLS) id 15.0.1320.4; Fri, 31 May
+ 2019 10:45:07 -0700
+Date: Fri, 31 May 2019 13:45:06 -0400
+From: "George G. Davis" <george_davis@mentor.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [RFC][PATCH] Makefile: Fix checkstack.pl arm64 wrong or unknown
+ architecture
+Message-ID: <20190531174506.GC10644@mam-gdavis-lt>
+References: <1559316388-19565-1-git-send-email-george_davis@mentor.com>
+ <CAK7LNATXzLzttF_gLA4wdfE1ue+bLPhvDZVsTKbB5K3nrN3jng@mail.gmail.com>
+ <20190531163908.GB10644@mam-gdavis-lt>
+ <CAK7LNASq8eW0D8fpbxFGhAgR5D158emTR2quCD5ufyC+kK-2GQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190531170804.GA12211@infradead.org>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <CAK7LNASq8eW0D8fpbxFGhAgR5D158emTR2quCD5ufyC+kK-2GQ@mail.gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-ClientProxiedBy: svr-orw-mbx-02.mgc.mentorg.com (147.34.90.202) To
+ svr-orw-mbx-01.mgc.mentorg.com (147.34.90.201)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_104505_669740_E42B1B53 
-X-CRM114-Status: GOOD (  16.78  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190531_104516_105782_514887D1 
+X-CRM114-Status: GOOD (  16.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.94.38.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,40 +69,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: madalin.bucur@nxp.com, netdev@vger.kernel.org, roy.pledge@nxp.com,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
- Joakim.Tjernlund@infinera.com, iommu@lists.linux-foundation.org,
- camelia.groza@nxp.com, linuxppc-dev@lists.ozlabs.org,
- David Miller <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Michal Marek <michal.lkml@markovi.net>,
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ open list <linux-kernel@vger.kernel.org>, Joe Perches <joe@perches.com>,
+ Andy Whitcroft <apw@canonical.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31/05/2019 18:08, Christoph Hellwig wrote:
-> On Fri, May 31, 2019 at 06:03:30PM +0100, Robin Murphy wrote:
->>> The thing needs to be completely redone as it abuses parts of the
->>> iommu API in a completely unacceptable way.
->>
->> `git grep iommu_iova_to_phys drivers/{crypto,gpu,net}`
->>
->> :(
->>
->> I guess one alternative is for the offending drivers to maintain their own
->> lookup tables of mapped DMA addresses - I think at least some of these
->> things allow storing some kind of token in a descriptor, which even if it's
->> not big enough for a virtual address might be sufficient for an index.
+Hello Masahiro,
+
+On Sat, Jun 01, 2019 at 02:22:36AM +0900, Masahiro Yamada wrote:
+
+// CUT
+
+> As far as I understood, checkstack.pl is supposed to
+> understand both ARCH= and 'uname -m'.
 > 
-> Well, we'll at least need DMA API wrappers that work on the dma addr
-> only and hide this madness underneath.  And then tell if an given device
-> supports this and fail the probe otherwise.
+> 
+> For example, the following commit supports x86, x86_64, i386,
+> by using regular expression.
+> 
+> commit fda9f9903be6c3b590472c175c514b0834bb3c83
+> Author: Konstantin Khlebnikov <koct9i@gmail.com>
+> Date:   Fri Aug 8 14:23:35 2014 -0700
+> 
+>     scripts/checkstack.pl: automatically handle 32-bit and 64-bit mode
+> for ARCH=x86
+> 
+>     This patch adds support for ARCH=x86 into checkstack.
+> 
+> 
+> 
+> Following this pattern, does this work for you?
+> 
+> diff --git a/scripts/checkstack.pl b/scripts/checkstack.pl
+> index 122aef5e4e14..371bd17a4983 100755
+> --- a/scripts/checkstack.pl
+> +++ b/scripts/checkstack.pl
+> @@ -46,7 +46,7 @@ my (@stack, $re, $dre, $x, $xs, $funcre);
+>         $x      = "[0-9a-f]";   # hex character
+>         $xs     = "[0-9a-f ]";  # hex character or space
+>         $funcre = qr/^$x* <(.*)>:$/;
+> -       if ($arch eq 'aarch64') {
+> +       if ($arch =~ '^(aarch|arm)64$') {
 
-Bleh, I'm certainly not keen on formalising any kind of 
-dma_to_phys()/dma_to_virt() interface for this. Or are you just 
-proposing something like dma_unmap_sorry_sir_the_dog_ate_my_homework() 
-for drivers which have 'lost' the original VA they mapped?
+Yes, that works, thanks!
 
-Robin.
+Will you submit a fix or would you like me to resubmit with the above suggested
+fix?
+
+
+Thanks again!
+
+>                 #ffffffc0006325cc:       a9bb7bfd        stp     x29,
+> x30, [sp, #-80]!
+>                 #a110:       d11643ff        sub     sp, sp, #0x590
+>                 $re = qr/^.*stp.*sp, \#-([0-9]{1,8})\]\!/o;
+> 
+> 
+> 
+> -- 
+> Best Regards
+> Masahiro Yamada
+
+-- 
+Regards,
+George
 
 _______________________________________________
 linux-arm-kernel mailing list
