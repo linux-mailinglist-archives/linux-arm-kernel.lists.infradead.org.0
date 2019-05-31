@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFEA730959
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 09:29:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 854C63095C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 09:30:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lJUCui/ZmFlub00/c8EpS72TkNm458un8XRnYArPi/c=; b=FUHdb6jtTMI4lj
-	vikwHHkc3s6/LLrYZ0u64F57jHyWN96njtYy+vB6IuZuZ/bIffQM61EVjyEzOynb2Lioql/HCsO4Y
-	wl2D1ZkhV5mUFekdike6J1YRRh7zfglCIg0Tl96jm6ok2TNv0pGijAFMTc9mtdbGYcIJqgclCWTfQ
-	EE4MtDheWzPXTnKC6EH/kXf3tf282uG8kh6dOGIdKR69WLL5mSluDeFSZ04nAAE/CihWJ1YBgnwTd
-	Use2wsvnsJkTrlo5nGk99bc8D5yaPVS325PfGaZRp2jMhHTjFrS1aDGlXoKlUK4/jUv9zDGp1ujYB
-	dAC71KEbiv+kyjOG/Tvg==;
+	List-Owner; bh=NJ3g3ciaBKpZZ/yWy4KRsAU3mUD4UduBuTd/77xK9Tg=; b=AtZ8bis4qQXuTf
+	tbyqkICXDz3OolOlh0e+e45X6YvL2Yny9msyjdGf+L3BiiRQcxBfxVNeVqZkkGH0cmJ7yBD5cH73p
+	y3ISN0aUSV5D1Dsc+HsKj+nHKAvvApoCMSoF/SkLdeuVyxNro2UXgYaDmzraFuZThVwaJN6a1/USE
+	LuyHsxVmvq0jwxUeFHTtsE8XUFAzq+Bg6JkbwUqAFrxmNVZ+FmPrUtvZvJrAwGAYye2ZwHNhstGKA
+	K4nsaTtqhhSpJV5vpAH/B9vZSDH9kB5lPxioFdYiYlt/rqTnaRkPXkwkEmaQj2XMNUiImgwCiZ8oM
+	Mt72jL4G/SC6GuXCOXHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWbyF-00075X-K8; Fri, 31 May 2019 07:28:59 +0000
+	id 1hWbzL-0007OE-JW; Fri, 31 May 2019 07:30:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWby6-00074a-MJ
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 07:28:51 +0000
+ id 1hWbzC-0007Nm-AD
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 07:29:59 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0AC6A2650B;
- Fri, 31 May 2019 07:28:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E55FA264E7;
+ Fri, 31 May 2019 07:29:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559287729;
- bh=QxnEIAuMjeVnNv5orkkiuF9Lbcy91s9E5WW6FJ7br3Q=;
+ s=default; t=1559287798;
+ bh=Sx1m5/E8D/5A8KuMvDlpJkX5r56naO8qUsBat8C+qgk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=qlcQjViLKQ5cUCw4eQNi52wfuudi7KQT309H5Fxh4it9mOmifPNWK1cqUEFxDV/jj
- v1pTSbX+gIqUieq58yUMepC/5WthFis9z2fBkxnx7SVQXjsqzLFUQHGdpIwCvpDTWv
- ilEdW7LiEJTAc0oEgJ7UvQhAZ6Csmq6CXP5xdmK0=
-Date: Fri, 31 May 2019 15:27:28 +0800
+ b=mTrEKnP3igGNFyinU5WlegALoxSzHevTxDMhvJML01Fxvds9diY9kGh0ptqTEVba6
+ jZt+kT6htNw5fnBs9nk4d0FTlH5KiAWoPM3Y6WcCd31Ggzsfzo/Mgb3lVBrxVqA5jx
+ jhOcrry6DTnI5nrlsGw61OpHny4D+zMtZFL6SIw8=
+Date: Fri, 31 May 2019 15:28:33 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Daniel Baluta <daniel.baluta@nxp.com>
-Subject: Re: [PATCH v3 1/2] arm64: dts: imx8mm: Add SAI nodes
-Message-ID: <20190531072727.GB23453@dragon>
+To: Daniel Baluta <daniel.baluta@gmail.com>
+Subject: Re: [PATCH v3 2/2] arm64: dts: imx8mm-evk: Enable audio codec wm8524
+Message-ID: <20190531072832.GC23453@dragon>
 References: <20190515144210.25596-1-daniel.baluta@nxp.com>
- <20190515144210.25596-2-daniel.baluta@nxp.com>
+ <20190515144210.25596-3-daniel.baluta@nxp.com>
+ <CAOMZO5A6Gv5k3up0AtKrhQPyMLMe_8SXift68KEP2J+j8D_cJg@mail.gmail.com>
+ <CAOMZO5BTqwnun6d7G1vcHUu_Rs+xfvgxTzamWnBPy76W7eeF_A@mail.gmail.com>
+ <CAEnQRZD98TKduVLshGrBANRB6NT7Se6CXD0cgd5XRYa6grAo4Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190515144210.25596-2-daniel.baluta@nxp.com>
+In-Reply-To: <CAEnQRZD98TKduVLshGrBANRB6NT7Se6CXD0cgd5XRYa6grAo4Q@mail.gmail.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_002850_746429_B42C906B 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190531_002958_365445_533B673A 
+X-CRM114-Status: GOOD (  15.31  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,31 +84,47 @@ Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
  Anson Huang <anson.huang@nxp.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
  "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 15, 2019 at 02:42:28PM +0000, Daniel Baluta wrote:
-> i.MX8MM has 5 SAI instances with the following base
-> addresses according to RM.
+On Tue, May 28, 2019 at 10:10:43AM +0300, Daniel Baluta wrote:
+> On Mon, May 20, 2019 at 10:33 PM Fabio Estevam <festevam@gmail.com> wrote:
+> >
+> > On Thu, May 16, 2019 at 3:35 PM Fabio Estevam <festevam@gmail.com> wrote:
+> > >
+> > > On Wed, May 15, 2019 at 11:42 AM Daniel Baluta <daniel.baluta@nxp.com> wrote:
+> > >
+> > > > +               simple-audio-card,codec {
+> > > > +                       sound-dai = <&wm8524>;
+> > > > +                       clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
+> > >
+> > > IMX8MM_CLK_SAI3_ROOT is the internal clock that drives the SAI3
+> > > interface, not an external clock that feeds the codec.
+> > >
+> > > It seems you should remove this 'clocks' entry.
+> >
+> > Just checked the schematics and the SAI3_MCLK pin clocks the codec, so
+> > the representation is correct:
+> >
+> > Reviewed-by: Fabio Estevam <festevam@gmail.com>
 > 
-> SAI1 base address: 3001_0000h
-> SAI2 base address: 3002_0000h
-> SAI3 base address: 3003_0000h
-> SAI5 base address: 3005_0000h
-> SAI6 base address: 3006_0000h
+> Shawn,
 > 
-> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> Can you have a look?
 
-Applied, thanks.
+I cannot apply this one, because there are '=20' in the patch content.
+
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
