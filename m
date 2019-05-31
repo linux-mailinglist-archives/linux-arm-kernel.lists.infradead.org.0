@@ -2,60 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10D7D30BD5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 11:41:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AEE230BDD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 11:42:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WdGuw31nzdPw3ew5imUmhmJY5hhEO9QP1wUwvxfQVV4=; b=hw+OLBa1W2T+tJ
-	SA/LzV8nLLEyhwLtRStftK2tnkrHd3GowHvbOQPwpfDV8M5SIct6eDMqawA3ZQQrTsd868Yk1cN+K
-	dT8B4daSVRJXsbahPeF6tdMx6taos4qnIily2KoQbUfBqBy9ipSatryRoG8EOfaIzTVZNv8omZIGU
-	nfNKdUhognTz/M0EIH9ah3Wu0r/A3jlYxS5NipVlBc364snxQUdOcIBcEwf4sc09FnHpBc8fo7jdA
-	F9JJ3/dL0ThEsgShBOlJtC/Il1RFKzMt/4aj5MXaEWc8EoauzMJ/WgyNCxxO1UFEtqJWsr165HNIg
-	blIc0nG2rI77FPyjBGtw==;
+	List-Owner; bh=O+3ZeeksbD6043qgxJ7fuJiHeLzeE+gmw61BZ7b84is=; b=VM5OwvGVIjOhgF
+	I3W/gL5WSv9ZF5OtpQ/oHeqT0GWIxf+jnSnj1sJMjbYm/2frRegrN9RcuCPuD/Nuz2MiIC+ZUbkBS
+	lCrGdHPRHrLfXjBvqeLqT1jAU0rxtaIuf4ZCZu1osZL2b15qUyFcDuCCYw/35UsLljP0+hOw9kaiS
+	SVl6q2UbBXdR8Rax0lq+v9UfqRcj5zfwheiKfzE03bGQrY0BKDDnLMy9ZdJdys7pEjn7uThYvGh8C
+	aMLT3X0ylaP6+O3IEZ99ytKFQuwtVJ8R8XNsKiuyiV8l9IST04EW1UoD10DYgd3ias9gO8ORiU1Ti
+	+7eHyOVMRaA9eVvzIUiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWe2N-0005NV-Rs; Fri, 31 May 2019 09:41:23 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWe2F-0005N6-Vt; Fri, 31 May 2019 09:41:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8520341;
- Fri, 31 May 2019 02:41:15 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 44C313F59C;
- Fri, 31 May 2019 02:41:11 -0700 (PDT)
-Date: Fri, 31 May 2019 10:41:08 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: "Andrew F. Davis" <afd@ti.com>
-Subject: Re: [PATCH v6 1/7] Documentation: DT: arm: add support for sockets
- defining package boundaries
-Message-ID: <20190531094108.GC18292@e107155-lin>
-References: <20190529211340.17087-1-atish.patra@wdc.com>
- <20190529211340.17087-2-atish.patra@wdc.com>
- <49f41e62-5354-a674-d95f-5f63851a0ca6@ti.com>
- <20190530115103.GA10919@e105550-lin.cambridge.arm.com>
- <70639181-09d1-4644-f062-b19e06db7471@ti.com>
+	id 1hWe3W-0005iP-RA; Fri, 31 May 2019 09:42:34 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWe3O-0005i3-Kz
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 09:42:27 +0000
+Received: by mail-it1-x142.google.com with SMTP id j204so8899485ite.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 31 May 2019 02:42:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HhL4osx7ESpBduYF2Unw1uRF9bT1OgVQDPJAu+S7bbM=;
+ b=mqRL7pQSlFTZGtxyeO3wy/9cmrkU/33+hQAmkFIq9NbunOA3bsL30A/mMJHoxDDlnl
+ A+3S/kWB6G+hh/IEjY/gpipUAduje+pGUpBEsgmW/toXllExNcw6LZSCKwKeMRNOBvr9
+ H4U1lPEbHlGp2CsFaAcMNMKFUbaedBleqJZ5pwVtZWuyHhrBJdMRuRsizplltzvbf1Nr
+ SsfP7ah1F857CFixN1g+IDRGRtiBl5tjghOtIS+f1E42g7cv13msnsbSOPLhy9i9wetk
+ g7ATnlILwIPVbjDjVPYhr8PVXKhWYJgXlVv7B54pA/gvNu0UaQIQEzSPI0lDnP5di+Ma
+ /sfA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HhL4osx7ESpBduYF2Unw1uRF9bT1OgVQDPJAu+S7bbM=;
+ b=drxM/ppyte5PBpncHgNpfZj6+cssbVhSw5cN/v7sMJgcHf9XVJlCO/mKraRxNTfs6S
+ DMThAj/7TEmyPf6Hhtg6nNEoYfwzTLaaXKv6b9mV2k9rL/UUTAVqGXcX8wHSd649xkBA
+ ypuLs1H5htmd4Q2HW3v9BWL3MipRxhGUG5rkGVNhByrHC0uXPePApvahhzh7DQsi8pSL
+ Npkdw3yNwL2UqSHDJWwHrTta1gVfuGQcDgmVpm1zbjMYjTW6CBMiQu0a9Bq6aLrl1/J9
+ wUaalZNBRIQN3txQ/NHJ3dKPsC9NtYqPzzd2L4waVnMMY+oEwU8wm2ASJr+YPCRKJnag
+ t4mQ==
+X-Gm-Message-State: APjAAAX/gNNzVtlI+Apisr0VlR3n/YZPQIl23x+ql0qx9lkeX+fTHvd8
+ hnX2nwuT29R7YjPY1Aej4N8el40a5br5hw8hW/g=
+X-Google-Smtp-Source: APXvYqwkiJMj34/oANfH3YW9bzF/NQr+5I6NBsmtVf0A0U7Jfn7/2fd88CsHM5mvSyEBPrLAmzwQFYu8LP3gfpzWYaw=
+X-Received: by 2002:a24:b8c2:: with SMTP id m185mr6253209ite.0.1559295744959; 
+ Fri, 31 May 2019 02:42:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <70639181-09d1-4644-f062-b19e06db7471@ti.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20190530175039.195574-1-ebiggers@kernel.org>
+In-Reply-To: <20190530175039.195574-1-ebiggers@kernel.org>
+From: Peter Robinson <pbrobinson@gmail.com>
+Date: Fri, 31 May 2019 10:42:13 +0100
+Message-ID: <CALeDE9PL0q7wGj6rJO03fzJZ4m5dnkLxvu4xgMhG0dNKWxxW2A@mail.gmail.com>
+Subject: Re: [PATCH] crypto: ghash - fix unaligned memory access in
+ ghash_setkey()
+To: Eric Biggers <ebiggers@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_024116_038927_0FDA8A49 
-X-CRM114-Status: GOOD (  27.03  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190531_024226_709684_122D8A55 
+X-CRM114-Status: GOOD (  20.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pbrobinson[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,91 +93,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Atish Patra <atish.patra@wdc.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- linux-riscv@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
- Rob Herring <robh@kernel.org>, Anup Patel <anup@brainfault.org>,
- Russell King <linux@armlinux.org.uk>,
- Morten Rasmussen <morten.rasmussen@arm.com>, devicetree@vger.kernel.org,
- Albert Ou <aou@eecs.berkeley.edu>, Rob Herring <robh+dt@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, Otto Sabart <ottosabart@seberm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, "David S. Miller" <davem@davemloft.net>
+Cc: stable@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 08:56:03AM -0400, Andrew F. Davis wrote:
-> On 5/30/19 7:51 AM, Morten Rasmussen wrote:
-> > On Wed, May 29, 2019 at 07:39:17PM -0400, Andrew F. Davis wrote:
-> > > On 5/29/19 5:13 PM, Atish Patra wrote:
-> > > > From: Sudeep Holla <sudeep.holla@arm.com>
-> > > >
-> > > > The current ARM DT topology description provides the operating system
-> > > > with a topological view of the system that is based on leaf nodes
-> > > > representing either cores or threads (in an SMT system) and a
-> > > > hierarchical set of cluster nodes that creates a hierarchical topology
-> > > > view of how those cores and threads are grouped.
-> > > >
-> > > > However this hierarchical representation of clusters does not allow to
-> > > > describe what topology level actually represents the physical package or
-> > > > the socket boundary, which is a key piece of information to be used by
-> > > > an operating system to optimize resource allocation and scheduling.
-> > > >
-> > >
-> > > Are physical package descriptions really needed? What does "socket" imply
-> > > that a higher layer "cluster" node grouping does not? It doesn't imply a
-> > > different NUMA distance and the definition of "socket" is already not well
-> > > defined, is a dual chiplet processor not just a fancy dual "socket" or are
-> > > dual "sockets" on a server board "slotket" card, will we need new names for
-> > > those too..
-> >
-> > Socket (or package) just implies what you suggest, a grouping of CPUs
-> > based on the physical socket (or package). Some resources might be
-> > associated with packages and more importantly socket information is
-> > exposed to user-space. At the moment clusters are being exposed to
-> > user-space as sockets which is less than ideal for some topologies.
-> >
+On Thu, May 30, 2019 at 6:51 PM Eric Biggers <ebiggers@kernel.org> wrote:
 >
-> I see the benefit of reporting the physical layout and packaging information
-> to user-space for tracking reasons, but from software perspective this
-> doesn't matter, and the resource partitioning should be described elsewhere
-> (NUMA nodes being the go to example).
+> From: Eric Biggers <ebiggers@google.com>
 >
-> > At the moment user-space is only told about hw threads, cores, and
-> > sockets. In the very near future it is going to be told about dies too
-> > (look for Len Brown's multi-die patch set).
-> >
+> Changing ghash_mod_init() to be subsys_initcall made it start running
+> before the alignment fault handler has been installed on ARM.  In kernel
+> builds where the keys in the ghash test vectors happened to be
+> misaligned in the kernel image, this exposed the longstanding bug that
+> ghash_setkey() is incorrectly casting the key buffer (which can have any
+> alignment) to be128 for passing to gf128mul_init_4k_lle().
 >
-> Seems my hypothetical case is already in the works :(
+> Fix this by memcpy()ing the key to a temporary buffer.
 >
-> > I don't see how we can provide correct information to user-space based
-> > on the current information in DT. I'm not convinced it was a good idea
-> > to expose this information to user-space to begin with but that is
-> > another discussion.
-> >
+> Don't fix it by setting an alignmask on the algorithm instead because
+> that would unnecessarily force alignment of the data too.
 >
-> Fair enough, it's a little late now to un-expose this info to userspace so
-> we should at least present it correctly. My worry was this getting out of
-> hand with layering, for instance what happens when we need to add die nodes
-> in-between cluster and socket?
->
+> Fixes: 2cdc6899a88e ("crypto: ghash - Add GHASH digest algorithm for GCM")
+> Reported-by: Peter Robinson <pbrobinson@gmail.com>
+Tested-by: Peter Robinson <pbrobinson@gmail.com>
 
-We may have to, if there's a similar requirement on ARM64 as the one
-addressed by Len Brown's multi-die patch set. But for now, no one has
-asked for it.
+That fixes the problems I was seeing, thanks for the quick response/fix.
 
---
-Regards,
-Sudeep
+Peter
+
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Eric Biggers <ebiggers@google.com>
+> ---
+>  crypto/ghash-generic.c | 8 +++++++-
+>  1 file changed, 7 insertions(+), 1 deletion(-)
+>
+> diff --git a/crypto/ghash-generic.c b/crypto/ghash-generic.c
+> index e6307935413c1..c8a347798eae6 100644
+> --- a/crypto/ghash-generic.c
+> +++ b/crypto/ghash-generic.c
+> @@ -34,6 +34,7 @@ static int ghash_setkey(struct crypto_shash *tfm,
+>                         const u8 *key, unsigned int keylen)
+>  {
+>         struct ghash_ctx *ctx = crypto_shash_ctx(tfm);
+> +       be128 k;
+>
+>         if (keylen != GHASH_BLOCK_SIZE) {
+>                 crypto_shash_set_flags(tfm, CRYPTO_TFM_RES_BAD_KEY_LEN);
+> @@ -42,7 +43,12 @@ static int ghash_setkey(struct crypto_shash *tfm,
+>
+>         if (ctx->gf128)
+>                 gf128mul_free_4k(ctx->gf128);
+> -       ctx->gf128 = gf128mul_init_4k_lle((be128 *)key);
+> +
+> +       BUILD_BUG_ON(sizeof(k) != GHASH_BLOCK_SIZE);
+> +       memcpy(&k, key, GHASH_BLOCK_SIZE); /* avoid violating alignment rules */
+> +       ctx->gf128 = gf128mul_init_4k_lle(&k);
+> +       memzero_explicit(&k, GHASH_BLOCK_SIZE);
+> +
+>         if (!ctx->gf128)
+>                 return -ENOMEM;
+>
+> --
+> 2.22.0.rc1.257.g3120a18244-goog
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
