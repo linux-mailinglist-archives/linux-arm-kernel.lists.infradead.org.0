@@ -2,71 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01D5A3091C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 09:01:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0537030923
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 09:07:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vrF5DVg8Ga2ugplbtVYJA1F+oBk+JdX51TKqURvZCL8=; b=NCqMkq2WGaeAs9
-	lWQF/knwZDQ9xHX/87A6g881McHxSzceRjXgGcTDL4iGPZl8GRdf2OcS7TnsCTGnlQVXoiFZYVoTC
-	n8Moulb9Q9LFcYsIv8moJzG4Jfr7w7U78tbtiuYeTX6SjtpCvZsGGjS4z5eUVIByUyzaYUT+9VjlI
-	8sa+ocuoHryTqZF1K823McoLfUn7a2YsDDOUzABer2g0bvVHr/E0VNo8XmA+bG9CkdIhZT+C0SYco
-	eDn+KuIZRbdCwg8Cuz/DEnsSO4ua6kmB3Ovv1eGr5V/qYuncHMiIPXw15ckQ0AwQ+Zl4FKDZxCtx/
-	j/K7QNgeg2vdpTU/bMRg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YqYdvekhfkcWr6EL+6enjAJsoxpy/AneKc5fLxHaoYU=; b=nAW
+	Lmvb37dAW2DrAHoOhXgaLpA/9bpKAvGTzDojZRrgjJL9VENKD7OaAMqioictvISE51XLOAQc3lM30
+	f/VKznYdLMTNLTMrKgzs7V+tDxV8f7OA850TL70w61xl9ThL0zEhrj0t1YA57VSsdZT4lYFpLu2X2
+	RNN9FonivRPmq5p+2yQuE4uPi86a1Kf1au2HqEzGo1cuJ2ta1bvujtvY1pcUk+KmVOaJWg9wRrUfl
+	rYlsMMpUw0yRMd46FcS40lmZu+1TC7K2K8ISBvJc3HRfGI1Kpo0J9ykvVD7phHd7CIdgedRrh/wpV
+	0i9cAUQxfN41L0cHpLpTRpGzxSOGVsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWbXK-00058d-7m; Fri, 31 May 2019 07:01:10 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hWbdD-0006zr-BB; Fri, 31 May 2019 07:07:15 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWbXD-00058R-D1
- for linux-arm-kernel@bombadil.infradead.org; Fri, 31 May 2019 07:01:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9A97hJUqWQzbw2/Tsh6aoUNyLzN8nFYjBn/i+RwpyeA=; b=XfReIPdWGB9ZkNVY50XiJjpai
- S1nfJfjQHb6nx7wvCM2/dAPpBaPuE49IKiC50iJBz1FsBeBA6qn9fk7M+CUejx7JQaVTLcbkEtWHW
- c/AH3VSoQL7rR28X6MobCaBIzCsHui8bT3zJDUXlG5jOmsnm9H68A3HdTuPxYDSY2us+/LGfOS3Jg
- u57DourvkyipUynPzSx6XXpj6Fu/RpS5EfPNoQd1e1B0SAS8VhFyda/ZEt4dmW3OEPje/f6q5wuwB
- diYheGZGhJeb4DhuPmyfq5QPMY2LWajT1n+1fvz02E5WXyFMQUaO5KoLYwGCsKJ2hT/5hbH95BOqf
- risoMsq6w==;
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWbXA-0000ZB-6R
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 07:01:02 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (Authenticated sender: maxime.ripard@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 8ECD020000D;
- Fri, 31 May 2019 07:00:24 +0000 (UTC)
-Date: Fri, 31 May 2019 09:00:23 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v9 2/9] dt-bindings: sun6i-dsi: Add A64 DPHY compatible
- (w/ A31 fallback)
-Message-ID: <20190531070023.2vj4sq4kk3aji25d@flea>
-References: <20190529105615.14027-1-jagan@amarulasolutions.com>
- <20190529105615.14027-3-jagan@amarulasolutions.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190529105615.14027-3-jagan@amarulasolutions.com>
-User-Agent: NeoMutt/20180716
+ id 1hWbd4-0006yT-JN; Fri, 31 May 2019 07:07:08 +0000
+Received: by mail-pl1-x642.google.com with SMTP id g9so3621557plm.6;
+ Fri, 31 May 2019 00:07:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=gCzPYZeRgzuxB/s/HnMyy2mQvWi7OdLM0MRQ3A6icIU=;
+ b=N9aDnulkY1Sw39aFl/VRAFPXkuoHv54dZ8n6jHZMrECIta1ErWsd8gArMwFTJ6Z5CF
+ +fn1jBNNvO+PilqWYQc/qg7ZFfBcae1os5qtWEsuR44IWdIp4m3FTJky3L4Hy2F+Cp6z
+ KfGAGW1+WcPCoqMBsrhuaE1sZZE8rjnTNh1GQFu+FKVgJ3JFTi+a2QfEzqv204N5GBY1
+ srom02AuUoSAuNVSlf68bBQDm1t3CMsgLwnlIjnmVIc6/IlZPergmNzqA789t/6bZnKp
+ QvSQLrMPS0wqQwX/8wDgrtKhvelcX0jyCe5BDdSnOoOxFVVEcJF7n85QebaMXTMzdOrb
+ X8fw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=gCzPYZeRgzuxB/s/HnMyy2mQvWi7OdLM0MRQ3A6icIU=;
+ b=FJMRa3+KJa+DfwdayTEAfKs8i7GY5w9blOrkaSnTIMwToEh/SSG+fX21h6o9eUo4uV
+ +lzpUuEGITYmzg///Th4BxUcb518fauoyITvJN8eFmP56K3xchuq9H4GyM/Z1AioHgJv
+ VvXfsCzmQVd4f6MWCqSLE6lDML+DgaZp8f4zIpMYbsQ/SxV80tECWnahuShIPVRmBTx+
+ 7IAB5d+4MPeEB2JSp1EGsb3k9XS5d5Vj+JGRwpuSx66dbnXReDxjYA1gtRO1qnzj+azw
+ Qgjy2Le597rzX+6kdyxhJZJnDrj0LPtQs/odUz+uawGhX0F9fxQRRChcivpfITyUoSKL
+ hpIQ==
+X-Gm-Message-State: APjAAAXPdqJ+MGvEYMfKabQ4JmEVQ+CLYnpd1f+25G7ZCwHIIvFTFJId
+ 7rKx6QwX/xo1e1RK7ujxUQqrbL/+u/m4+Q==
+X-Google-Smtp-Source: APXvYqyxJsDO9UeM9q0M+fBL8/9K7JuWsbGJrDj2dkj/zbuEYvCNFMay+iJhARsFqHiwXuGlN3cG1Q==
+X-Received: by 2002:a17:902:a40d:: with SMTP id
+ p13mr7181833plq.11.1559286425503; 
+ Fri, 31 May 2019 00:07:05 -0700 (PDT)
+Received: from xy-data.openstacklocal
+ (ecs-159-138-22-150.compute.hwclouds-dns.com. [159.138.22.150])
+ by smtp.gmail.com with ESMTPSA id k6sm5177437pfi.86.2019.05.31.00.07.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 31 May 2019 00:07:04 -0700 (PDT)
+From: Young Xiao <92siuyang@gmail.com>
+To: sean.wang@kernel.org, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, linux-gpio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] pinctrl: pinctrl-mtk-common: fix a possible NULL pointer
+ deference
+Date: Fri, 31 May 2019 15:08:09 +0800
+Message-Id: <1559286489-5418-1-git-send-email-92siuyang@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_080100_279839_9E94B218 
-X-CRM114-Status: GOOD (  17.72  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190531_000706_661237_24F68AEE 
+X-CRM114-Status: GOOD (  11.95  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (92siuyang[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,59 +96,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Ryan Pannell <ryan@osukl.com>,
- bshah@mykolab.com, David Airlie <airlied@linux.ie>,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
- Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
- Sergey Suloev <ssuloev@orpaltech.com>
+Cc: Young Xiao <92siuyang@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 04:26:08PM +0530, Jagan Teki wrote:
-> The MIPI DSI PHY controller on Allwinner A64 is similar
-> on the one on A31.
->
-> Add A64 compatible and append A31 compatible as fallback.
->
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
->  Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt b/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
-> index 9877398be69a..d0ce51fea103 100644
-> --- a/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
-> +++ b/Documentation/devicetree/bindings/display/sunxi/sun6i-dsi.txt
-> @@ -38,6 +38,7 @@ D-PHY
->  Required properties:
->    - compatible: value must be one of:
->      * allwinner,sun6i-a31-mipi-dphy
-> +    * allwinner,sun50i-a64-mipi-dphy, allwinner,sun6i-a31-mipi-dphy
->    - reg: base address and size of memory-mapped region
->    - clocks: phandles to the clocks feeding the DSI encoder
->      * bus: the DSI interface clock
+The function, external interrupt controller, is made as an optional to
+pinctrl. But if we don't want pio behaves as an external interrupt
+controller, it would lead to pctl->eint not be created properly and then
+will cause 'kernel NULL pointer' issue when gpiochip try to call .to_irq
+or .set_config. To fix it, check pctl->eint before accessing the member.
 
-And this one should be:
+See commit 5f591543a937 ("pinctrl: mt7622: fix a kernel panic when pio
+don't work as EINT controller") for details.
 
-compatible:
-  oneOf:
-    - const: allwinner,sun6i-a31-mipi-dphy
-    - items:
-      - const: allwinner,sun50i-a64-mipi-dphy
-      - const: allwinner,sun6i-a31-mipi-dphy
+Signed-off-by: Young Xiao <92siuyang@gmail.com>
+---
+ drivers/pinctrl/mediatek/pinctrl-mtk-common.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-Maxime
+diff --git a/drivers/pinctrl/mediatek/pinctrl-mtk-common.c b/drivers/pinctrl/mediatek/pinctrl-mtk-common.c
+index 0716238..b395f0b 100644
+--- a/drivers/pinctrl/mediatek/pinctrl-mtk-common.c
++++ b/drivers/pinctrl/mediatek/pinctrl-mtk-common.c
+@@ -836,6 +836,9 @@ static int mtk_gpio_to_irq(struct gpio_chip *chip, unsigned offset)
+ 	const struct mtk_desc_pin *pin;
+ 	unsigned long eint_n;
+ 
++	if (!pctl->eint)
++		return -ENOTSUPP;
++
+ 	pin = pctl->devdata->pins + offset;
+ 	if (pin->eint.eintnum == NO_EINT_SUPPORT)
+ 		return -EINVAL;
+@@ -853,7 +856,8 @@ static int mtk_gpio_set_config(struct gpio_chip *chip, unsigned offset,
+ 	unsigned long eint_n;
+ 	u32 debounce;
+ 
+-	if (pinconf_to_config_param(config) != PIN_CONFIG_INPUT_DEBOUNCE)
++	if (!pctl->eint ||
++	    pinconf_to_config_param(config) != PIN_CONFIG_INPUT_DEBOUNCE)
+ 		return -ENOTSUPP;
+ 
+ 	pin = pctl->devdata->pins + offset;
+-- 
+2.7.4
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
