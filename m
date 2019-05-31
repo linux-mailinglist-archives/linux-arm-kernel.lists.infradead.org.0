@@ -2,74 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1B0B30E57
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 14:46:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9CA830E5E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 14:50:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l0gMAhCxOgEsIJoEVz5OH7OtFDJhsrIuntMa2zJEvlA=; b=cgKIt1u/fERvHR
-	UICgQ1XByKryJJ4GI04HhULawLFC4U3tLri+kZXjkmmbGEqflT80UZXuXdA+yok8nQOs7lEQibyaV
-	bMRJDTbt8vym5+4dsolraTvgYIZnhIYs8MrLP439m6FjvqKPQyn46+ZSkqmdjV2VGD250auHu8Aht
-	tLZiMvUZUdg5bFFGXBSHLO61Fe6qwaKNyVW69PtAh/GcaYvKsXDRbQcfhW4DHRp8w9YSZX24TZdJP
-	WTxSyzANO7MjtwlYnjRdSVGpy17CVaZxPWhXzOiT1vGYsjpib4alR1YyCICfHFjKlAekqulv51H9p
-	NUam3v7sUKTjm6f03rTg==;
+	List-Owner; bh=tn6jDf0WGo672/zK2Q8Dy8XgkOFC6BZKGDTvazI/Sp4=; b=Z5R6tAkGrLcr2s
+	wDYyHHX4uD0l902bW0ojfWe+iWotxeszxYqFqsVcQGyyjKPwrJmLJ/T7txoasZBlzf6NBEfsgpcDB
+	CQ7nqS1l3p9aJ3erGJcx0cUYjWTBBQy1+iGLTm4IDFv8n9QxX18vtuSEiCrGflICHlngjOwGBPTYE
+	4TSzFH1jLG4LcCEWkjBY2DQpSsOzU4z+1Xh+pn2H6xUWUQvrWt6kz/eA8dwbgO8jIsSFQbWWgTTWh
+	clqaTVozbCzmO5IcJVmJZq+z/G5M1Pnunqqvzax/ucSslytwfanyS2LJN4769X1Mb2NU7nMgZJSuo
+	ab9uxfWhaF7DzOmidf+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWgvn-00015g-9D; Fri, 31 May 2019 12:46:47 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1hWgzK-0002iN-PK; Fri, 31 May 2019 12:50:26 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWgve-00014g-Jj
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 12:46:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1559306791; bh=Vq6PHN+aRiKBxc4hddRHLSZfiSd9bUvG627zPC4o9vY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=r7SNqaIwNqwOb9guoWHE+5kcqm8Eu7YcYIULLPtYivZ8AwmvJo/eJZGEmRO1PppSD
- sTdI0zKF207BU/1eEZQuURPmnPPtCk//a5UQlBB0RqHTU9jsBnN14mUimA6O4If6tq
- 3YsMz2n2ah8SkyCqn84s9ElTauLkHFeD0Xypwu1E=
-Date: Fri, 31 May 2019 14:46:30 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [linux-sunxi] Re: [PATCH v3 10/12] arm64: dts: allwinner: h6:
- Add IR receiver node
-Message-ID: <20190531124630.q2guo54kjfzr7rkn@core.my.home>
-Mail-Followup-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-media@vger.kernel.org
-References: <20190528161440.27172-1-peron.clem@gmail.com>
- <20190528161440.27172-11-peron.clem@gmail.com>
- <20190530145550.amalnxmx7kpokykv@core.my.home>
- <CAJiuCce7nHSktVsDKcR8GLRpD3WrN5yP3Nb_Hbu_Q9NjUQbSMw@mail.gmail.com>
+ id 1hWgzC-0002hH-TM
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 12:50:20 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hWgz9-00020A-Fo; Fri, 31 May 2019 14:50:15 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1hWgz7-00078v-KN; Fri, 31 May 2019 14:50:13 +0200
+Date: Fri, 31 May 2019 14:50:13 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Russell King <rmk+kernel@armlinux.org.uk>
+Subject: Re: [PATCH 1/6] serial: sa1100: add support for mctrl gpios
+Message-ID: <20190531125013.3gkexhmbqjpdvrtf@pengutronix.de>
+References: <20190531111257.27hor6xgb3nsdghg@shell.armlinux.org.uk>
+ <E1hWfTn-0003fP-Rl@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJiuCce7nHSktVsDKcR8GLRpD3WrN5yP3Nb_Hbu_Q9NjUQbSMw@mail.gmail.com>
+In-Reply-To: <E1hWfTn-0003fP-Rl@rmk-PC.armlinux.org.uk>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_054638_981874_259386D6 
-X-CRM114-Status: GOOD (  25.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190531_055019_109122_88DE6411 
+X-CRM114-Status: GOOD (  21.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,78 +68,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jiri Slaby <jslaby@suse.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gQ2zDqW1lbnQsCgpPbiBGcmksIE1heSAzMSwgMjAxOSBhdCAxMjoyNTozMkFNICswMjAw
-LCBDbMOpbWVudCBQw6lyb24gd3JvdGU6Cj4gSGkgT25kcmVqLAo+IAo+IE9uIFRodSwgMzAgTWF5
-IDIwMTkgYXQgMTY6NTUsIE9uZMWZZWogSmlybWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4gd3JvdGU6
-Cj4gPgo+ID4gSGVsbG8gQ2zDqW1lbnQsCj4gPgo+ID4gT24gVHVlLCBNYXkgMjgsIDIwMTkgYXQg
-MDY6MTQ6MzhQTSArMDIwMCwgQ2zDqW1lbnQgUMOpcm9uIHdyb3RlOgo+ID4gPiBBbGx3aW5uZXIg
-SDYgSVIgaXMgc2ltaWxhciB0byBBMzEgYW5kIGNhbiB1c2Ugc2FtZSBkcml2ZXIuCj4gPiA+Cj4g
-PiA+IEFkZCBzdXBwb3J0IGZvciBpdC4KPiA+ID4KPiA+ID4gU2lnbmVkLW9mZi1ieTogQ2zDqW1l
-bnQgUMOpcm9uIDxwZXJvbi5jbGVtQGdtYWlsLmNvbT4KPiA+ID4gLS0tCj4gPiA+ICBhcmNoL2Fy
-bTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYuZHRzaSB8IDE5ICsrKysrKysrKysrKysr
-KysrKysKPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxOSBpbnNlcnRpb25zKCspCj4gPiA+Cj4gPiA+
-IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYuZHRz
-aSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi5kdHNpCj4gPiA+IGlu
-ZGV4IDE2YzVjM2QwZmQ4MS4uNjQ5Y2JkZmU0NTJlIDEwMDY0NAo+ID4gPiAtLS0gYS9hcmNoL2Fy
-bTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYuZHRzaQo+ID4gPiArKysgYi9hcmNoL2Fy
-bTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktaDYuZHRzaQo+ID4gPiBAQCAtNjQ3LDYgKzY0
-NywyNSBAQAo+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwaW5zID0gIlBMMCIs
-ICJQTDEiOwo+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBmdW5jdGlvbiA9ICJz
-X2kyYyI7Cj4gPiA+ICAgICAgICAgICAgICAgICAgICAgICB9Owo+ID4gPiArCj4gPiA+ICsgICAg
-ICAgICAgICAgICAgICAgICByX2lyX3J4X3Bpbjogci1pci1yeC1waW4gewo+ID4gPiArICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICBwaW5zID0gIlBMOSI7Cj4gPiA+ICsgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIGZ1bmN0aW9uID0gInNfY2lyX3J4IjsKPiA+ID4gKyAgICAgICAgICAg
-ICAgICAgICAgIH07Cj4gPiA+ICsgICAgICAgICAgICAgfTsKPiA+ID4gKwo+ID4gPiArICAgICAg
-ICAgICAgIHJfaXI6IGlyQDcwNDAwMDAgewo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICBjb21wYXRpYmxlID0gImFsbHdpbm5lcixzdW41MGktaDYtaXIiLAo+ID4gPiArICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImFsbHdpbm5lcixzdW42aS1hMzEt
-aXIiOwo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZWcgPSA8MHgwNzA0MDAw
-MCAweDQwMD47Cj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGludGVycnVwdHMg
-PSA8R0lDX1NQSSAxMDkgSVJRX1RZUEVfTEVWRUxfSElHSD47Cj4gPiA+ICsgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIGNsb2NrcyA9IDwmcl9jY3UgQ0xLX1JfQVBCMV9JUj4sCj4gPiA+ICsg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwmcl9jY3UgQ0xLX0lSPjsKPiA+
-ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xvY2stbmFtZXMgPSAiYXBiIiwgImly
-IjsKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmVzZXRzID0gPCZyX2NjdSBS
-U1RfUl9BUEIxX0lSPjsKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGluY3Ry
-bC1uYW1lcyA9ICJkZWZhdWx0IjsKPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-cGluY3RybC0wID0gPCZyX2lyX3J4X3Bpbj47Cj4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgIHN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gPiA+ICAgICAgICAgICAgICAgfTsKPiA+Cj4g
-PiBQbGVhc2UgbWFrZSBhIGNvbW1lbnQgaGVyZSwgdGhhdCB0aGlzIGlzIGtub3duIGJyb2tlbiBv
-biBzb21lIGJvYXJkcyBhbmQgbWF5Cj4gPiByZXN1bHQgSVJRIGZsb29kIGlmIGVuYWJsZWQuIE90
-aGVyd2lzZSBub29uZSB3aWxsIGtub3cuCj4gCj4gSSdtIHBsYW5uaW5nIHRvIHNlbmQgYSB2NCBu
-ZXh0IHdlZWsgd2l0aCB0aGUgSVJRX05PTkUgcmV0dXJuIGFzIE1heGltZQo+IHN1Z2dlc3RlZCBp
-dC4KPiBodHRwczovL2dpdGh1Yi5jb20vY2xlbWVudHBlcm9uL2xpbnV4L3RyZWUvaDZfaXJfdjQK
-PiAKPiBCdXQgbWF5YmUgd2UgY291bGQgYWxzbyB1c2UgdGhlIGJpdCA1IG9mIHRoZSBJUlEgc3Rh
-dHVzLgoKVGhhbmtzLCB0aGF0J3MgbmljZSwgYnV0IHRoYXQgd2lsbCBub3QgbWFrZSB0aGUgSFcg
-d29yay4gVGhhdCB3aWxsIGp1c3QgZGlzYWJsZQppdC4gVGhlIGNvbW1lbnQgaXMgc3RpbGwgbmVj
-ZXNzYXJ5LgoKdGhhbmsgeW91LAoJby4KCj4gUmVnYXJkcywgQ2xlbWVudAo+IAo+ID4KPiA+IHRo
-YW5rcywKPiA+ICAgICAgICAgby4KPiA+Cj4gPiA+ICAgICAgICAgICAgICAgcl9pMmM6IGkyY0A3
-MDgxNDAwIHsKPiA+ID4gLS0KPiA+ID4gMi4yMC4xCj4gPiA+Cj4gPiA+Cj4gPiA+IF9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gPiA+IGxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0Cj4gPiA+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwo+ID4gPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwKPiAKPiAtLSAKPiBZb3UgcmVjZWl2ZWQgdGhpcyBtZXNzYWdlIGJlY2F1
-c2UgeW91IGFyZSBzdWJzY3JpYmVkIHRvIHRoZSBHb29nbGUgR3JvdXBzICJsaW51eC1zdW54aSIg
-Z3JvdXAuCj4gVG8gdW5zdWJzY3JpYmUgZnJvbSB0aGlzIGdyb3VwIGFuZCBzdG9wIHJlY2Vpdmlu
-ZyBlbWFpbHMgZnJvbSBpdCwgc2VuZCBhbiBlbWFpbCB0byBsaW51eC1zdW54aSt1bnN1YnNjcmli
-ZUBnb29nbGVncm91cHMuY29tLgo+IFRvIHZpZXcgdGhpcyBkaXNjdXNzaW9uIG9uIHRoZSB3ZWIs
-IHZpc2l0IGh0dHBzOi8vZ3JvdXBzLmdvb2dsZS5jb20vZC9tc2dpZC9saW51eC1zdW54aS9DQUpp
-dUNjZTduSFNrdFZzREtjUjhHTFJwRDNXck41eVAzTmJfSGJ1X1E5TmpVUWJTTXclNDBtYWlsLmdt
-YWlsLmNvbS4KPiBGb3IgbW9yZSBvcHRpb25zLCB2aXNpdCBodHRwczovL2dyb3Vwcy5nb29nbGUu
-Y29tL2Qvb3B0b3V0LgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+On Fri, May 31, 2019 at 12:13:47PM +0100, Russell King wrote:
+> Add support for the generic mctrl gpio helper.  This will allow us to
+> convert several board files to use the gpiod tables to assign GPIOs to
+> serial ports, rather than needing to have private function callbacks.
+> =
+
+> If the generic mctrl gpio helper fails, ignore the mctrl gpios rather
+> than preventing the (possibly console) serial port from being created.
+> =
+
+> Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Acked-by: Linus Walleij <linus.walleij@linaro.org>
+> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> ---
+>  drivers/tty/serial/Kconfig  |  1 +
+>  drivers/tty/serial/sa1100.c | 42 ++++++++++++++++++++++++++++++++++++++-=
+---
+>  2 files changed, 39 insertions(+), 4 deletions(-)
+> =
+
+> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
+> index 72966bc0ac76..f4372ac1a774 100644
+> --- a/drivers/tty/serial/Kconfig
+> +++ b/drivers/tty/serial/Kconfig
+> @@ -511,6 +511,7 @@ config SERIAL_SA1100
+>  	bool "SA1100 serial port support"
+>  	depends on ARCH_SA1100
+>  	select SERIAL_CORE
+> +	select SERIAL_MCTRL_GPIO if GPIOLIB
+>  	help
+>  	  If you have a machine based on a SA1100/SA1110 StrongARM(R) CPU you
+>  	  can enable its onboard serial port by enabling this option.
+> diff --git a/drivers/tty/serial/sa1100.c b/drivers/tty/serial/sa1100.c
+> index a399772be3fc..97bdfeccbea9 100644
+> --- a/drivers/tty/serial/sa1100.c
+> +++ b/drivers/tty/serial/sa1100.c
+> @@ -28,6 +28,8 @@
+>  #include <mach/hardware.h>
+>  #include <mach/irqs.h>
+>  =
+
+> +#include "serial_mctrl_gpio.h"
+> +
+>  /* We've been assigned a range on the "Low-density serial ports" major */
+>  #define SERIAL_SA1100_MAJOR	204
+>  #define MINOR_START		5
+> @@ -77,6 +79,7 @@ struct sa1100_port {
+>  	struct uart_port	port;
+>  	struct timer_list	timer;
+>  	unsigned int		old_status;
+> +	struct mctrl_gpios	*gpios;
+>  };
+>  =
+
+>  /*
+> @@ -174,6 +177,8 @@ static void sa1100_enable_ms(struct uart_port *port)
+>  		container_of(port, struct sa1100_port, port);
+>  =
+
+>  	mod_timer(&sport->timer, jiffies);
+> +
+> +	mctrl_gpio_enable_ms(sport->gpios);
+>  }
+>  =
+
+>  static void
+> @@ -322,11 +327,21 @@ static unsigned int sa1100_tx_empty(struct uart_por=
+t *port)
+>  =
+
+>  static unsigned int sa1100_get_mctrl(struct uart_port *port)
+>  {
+> -	return TIOCM_CTS | TIOCM_DSR | TIOCM_CAR;
+> +	struct sa1100_port *sport =3D
+> +		container_of(port, struct sa1100_port, port);
+> +	int ret =3D TIOCM_CTS | TIOCM_DSR | TIOCM_CAR;
+> +
+> +	mctrl_gpio_get(sport->gpios, &ret);
+> +
+> +	return ret;
+>  }
+>  =
+
+>  static void sa1100_set_mctrl(struct uart_port *port, unsigned int mctrl)
+>  {
+> +	struct sa1100_port *sport =3D
+> +		container_of(port, struct sa1100_port, port);
+> +
+> +	mctrl_gpio_set(sport->gpios, mctrl);
+>  }
+>  =
+
+>  /*
+> @@ -842,6 +857,27 @@ static int sa1100_serial_resume(struct platform_devi=
+ce *dev)
+>  	return 0;
+>  }
+>  =
+
+> +static int sa1100_serial_add_one_port(struct sa1100_port *sport, struct =
+platform_device *dev)
+> +{
+> +	sport->port.dev =3D &dev->dev;
+> +	sport->gpios =3D mctrl_gpio_init_noauto(sport->port.dev, 0);
+
+the _noauto function was only introduced to ease a transition. I think
+the driver would benefit to use mctrl_gpio_init() instead.
+
+Getting rid of mctrl_gpio_init_noauto() was on my todo list for some
+time, but it was pushed down too far :-|
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
