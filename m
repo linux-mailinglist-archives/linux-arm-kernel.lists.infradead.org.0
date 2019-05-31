@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 431B731361
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:04:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5E4F31367
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 19:05:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IZmpVqKrYnAJ9Cq+A0S0CEp5/FOTAA0bvxbtw56PQg4=; b=fMdLv0NXWpIFMA
-	q8Bdk1KAWwCxEhqytXRIswBzlJqW6iFOQ6Eu19I2TWcRVmOO+EfIKFYNKHjwGajeHRWzH1K9oVSKe
-	mix98H175SiLwiyzsJ9VDf+gTlz3OE+iIYDDVyTW9fVNZB48/foCqS50RxLa6ftZzzq49MFRhjwXW
-	w7iuIRnFW+oswoo/OwphP0EYfrB2uh8jPViTglZUXY+3YaMqlxVRd+T2zj6Y6M3lgsOkJXnzlKbXY
-	HyeSbYz8Z5e2vMrspNB6ukBKqPJmkrivyBvUYdgieSB91f1FIMyLMj6YLhDevv6xJPUHax85ka18Z
-	vBs3lBWJJhL2Qxn7nRnw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G+2TlYi5iWwzmWwnNm4q0qeO7oIin5fX/MdLRqeLCgY=; b=EVbh4TzqafhhmY
+	U9n8yUjQrGtaHIKil3pdUTIQNlofhylsA1ePt6gQQ3UxiC67n/Qv8IYLslNCGDrAdCsXHAH3s5chS
+	Uw9KywCmnQG4Mh8LMnkNl+cOz2ajE1y2kfy5nXfGh+9h1S8jmRTop8DuKqVa+iB6OjHVkYSRvLVRW
+	rrNqAVwC81BHRhIJIe/VFDB6YHxH7JFl4EgucusaKdh1e0v0JCV0MDHhvlSR++ckQ5R3UjHoW2Rzc
+	++++iUJFXS/G2FBwW7YJZyglQaYE5v3UpPDziMsJzoUBuyR9g2R8Dt0OeboyMcz9cB2XH0hW5YSRj
+	8H5xDqlt1aFyDAvwQ1MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWkxM-0000lj-4w; Fri, 31 May 2019 17:04:40 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWkwZ-00008P-46
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:03:58 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 91664ACC4;
- Fri, 31 May 2019 17:03:49 +0000 (UTC)
-Subject: Re: [PATCH v3 0/6] Prerequisites for NXP LS104xA SMMU enablement
-To: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-References: <20190530141951.6704-1-laurentiu.tudor@nxp.com>
- <d086216f-f3fc-c88a-3891-81e84e8bdb01@suse.de>
- <VI1PR04MB5134BFA391D8FF013762882FEC190@VI1PR04MB5134.eurprd04.prod.outlook.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Openpgp: preference=signencrypt
-Organization: SUSE Linux GmbH
-Message-ID: <19cc3230-33b0-e465-6317-590780b33efa@suse.de>
-Date: Fri, 31 May 2019 19:03:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hWkxu-0002Lv-4B; Fri, 31 May 2019 17:05:14 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWkx7-0000f5-C2
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 17:04:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D2760A78;
+ Fri, 31 May 2019 10:04:24 -0700 (PDT)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 10C243F59C;
+ Fri, 31 May 2019 10:04:22 -0700 (PDT)
+Date: Fri, 31 May 2019 18:04:16 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH kvmtool v3 5/9] KVM: arm/arm64: Add a vcpu feature for
+ pointer authentication
+Message-ID: <20190531180416.3e87f5ad@donnerap.cambridge.arm.com>
+In-Reply-To: <1559229194-3036-6-git-send-email-Dave.Martin@arm.com>
+References: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
+ <1559229194-3036-6-git-send-email-Dave.Martin@arm.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <VI1PR04MB5134BFA391D8FF013762882FEC190@VI1PR04MB5134.eurprd04.prod.outlook.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_100351_430930_7292F47C 
-X-CRM114-Status: GOOD (  12.92  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190531_100426_441996_417620D0 
+X-CRM114-Status: GOOD (  23.50  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,46 +66,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Madalin-cristian Bucur <madalin.bucur@nxp.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Roy Pledge <roy.pledge@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>,
- "jocke@infinera.com" <joakim.tjernlund@infinera.com>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- Camelia Alexandra Groza <camelia.groza@nxp.com>,
- Mian Yousaf Kaukab <yousaf.kaukab@suse.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Christoffer Dall <cdall@kernel.org>, Marc Zyngier <marc.zyngier@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Zhang Lei <zhang.lei@jp.fujitsu.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Alex =?UTF-8?B?QmVubsOpZQ==?= <alex.bennee@linaro.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gTGF1cmVudGl1LAoKQW0gMzEuMDUuMTkgdW0gMTg6NDYgc2NocmllYiBMYXVyZW50aXUg
-VHVkb3I6Cj4+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4+IEZyb206IEFuZHJlYXMgRsOk
-cmJlciA8YWZhZXJiZXJAc3VzZS5kZT4KPj4gU2VudDogRnJpZGF5LCBNYXkgMzEsIDIwMTkgNzox
-NSBQTQo+Pgo+PiBIaSBMYXVyZW50aXUsCj4+Cj4+IEFtIDMwLjA1LjE5IHVtIDE2OjE5IHNjaHJp
-ZWIgbGF1cmVudGl1LnR1ZG9yQG54cC5jb206Cj4+PiBUaGlzIHBhdGNoIHNlcmllcyBjb250YWlu
-cyBzZXZlcmFsIGZpeGVzIGluIHByZXBhcmF0aW9uIGZvciBTTU1VCj4+PiBzdXBwb3J0IG9uIE5Y
-UCBMUzEwNDNBIGFuZCBMUzEwNDZBIGNoaXBzLiBPbmNlIHRoZXNlIGdldCBwaWNrZWQgdXAsCj4+
-PiBJJ2xsIHN1Ym1pdCB0aGUgYWN0dWFsIFNNTVUgZW5hYmxlbWVudCBwYXRjaGVzIGNvbnNpc3Rp
-bmcgaW4gdGhlCj4+PiByZXF1aXJlZCBkZXZpY2UgdHJlZSBjaGFuZ2VzLgo+Pgo+PiBIYXZlIHlv
-dSB0aG91Z2h0IHRocm91Z2ggd2hhdCB3aWxsIGhhcHBlbiBpZiB0aGlzIHBhdGNoIG9yZGVyaW5n
-IGlzIG5vdAo+PiBwcmVzZXJ2ZWQ/IEluIHBhcnRpY3VsYXIsIGEgdXNlciBpbnN0YWxsaW5nIGEg
-ZnV0dXJlIFUtQm9vdCB1cGRhdGUgd2l0aAo+PiB0aGUgRFRCIGJpdHMgYnV0IGJvb3RpbmcgYSBz
-dGFibGUga2VybmVsIHdpdGhvdXQgdGhpcyBwYXRjaCBzZXJpZXMgLQo+PiB3b3VsZG4ndCB0aGF0
-IHJlZ3Jlc3MgZHBhYSB0aGVuIGZvciBvdXIgY3VzdG9tZXJzPwo+Pgo+IAo+IFRoZXNlIGFyZSBm
-aXhlcyBmb3IgaXNzdWVzIHRoYXQgcG9wcGVkIG91dCBhZnRlciBlbmFibGluZyBTTU1VLiAKPiBJ
-IGRvIG5vdCBleHBlY3QgdGhlbSB0byBicmVhayBhbnl0aGluZy4KClRoYXQgd2FzIG5vdCBteSBx
-dWVzdGlvbiEgWW91J3JlIG1pc3NpbmcgbXkgcG9pbnQ6IEFsbCB5b3VyIHBhdGNoZXMgYXJlCmxh
-Y2tpbmcgYSBGaXhlcyBoZWFkZXIgaW4gdGhlaXIgY29tbWl0IG1lc3NhZ2UsIGZvciBiYWNrcG9y
-dGluZyB0aGVtLCB0bwphdm9pZCBfeW91ciBEVCBwYXRjaGVzXyBicmVha2luZyB0aGUgZHJpdmVy
-IG9uIHN0YWJsZSBicmFuY2hlcyEKClJlZ2FyZHMsCkFuZHJlYXMKCi0tIApTVVNFIExpbnV4IEdt
-YkgsIE1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpHRjogRmVsaXggSW1l
-bmTDtnJmZmVyLCBNYXJ5IEhpZ2dpbnMsIFNyaSBSYXNpYWgKSFJCIDIxMjg0IChBRyBOw7xybmJl
-cmcpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+On Thu, 30 May 2019 16:13:10 +0100
+Dave Martin <Dave.Martin@arm.com> wrote:
+
+> From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> 
+> This patch adds a runtime capabality for KVM tool to enable Arm64 8.3
+> Pointer Authentication in guest kernel. Two vcpu features
+> KVM_ARM_VCPU_PTRAUTH_[ADDRESS/GENERIC] are supplied together to enable
+> Pointer Authentication in KVM guest after checking the capability.
+> 
+> Command line options --enable-ptrauth and --disable-ptrauth are added
+> to use this feature. However, if those options are not provided then
+> also this feature is enabled if host supports this capability.
+
+I don't really get the purpose of two options, I think that's quite confusing. Should the first one either be dropped at all or called something with "force"?
+I guess the idea is to fail if pointer auth isn't available, but the option is supplied?
+
+Or maybe have one option with parameters?
+--ptrauth[,=enable,=disable]
+
+> The macros defined in the headers are not in sync and should be replaced
+> from the upstream.
+
+This is no longer true, I guess?
+
+Cheers,
+Andre.
+
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com> [merge new kernel heaers]
+> ---
+>  arm/aarch32/include/kvm/kvm-cpu-arch.h    |  2 ++
+>  arm/aarch64/include/kvm/kvm-config-arch.h |  6 +++++-
+>  arm/aarch64/include/kvm/kvm-cpu-arch.h    |  3 +++
+>  arm/include/arm-common/kvm-config-arch.h  |  2 ++
+>  arm/kvm-cpu.c                             | 20 ++++++++++++++++++--
+>  5 files changed, 30 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arm/aarch32/include/kvm/kvm-cpu-arch.h b/arm/aarch32/include/kvm/kvm-cpu-arch.h
+> index d28ea67..3ec6f03 100644
+> --- a/arm/aarch32/include/kvm/kvm-cpu-arch.h
+> +++ b/arm/aarch32/include/kvm/kvm-cpu-arch.h
+> @@ -13,4 +13,6 @@
+>  #define ARM_CPU_ID		0, 0, 0
+>  #define ARM_CPU_ID_MPIDR	5
+>  
+> +#define ARM_VCPU_PTRAUTH_FEATURE	0
+> +
+>  #endif /* KVM__KVM_CPU_ARCH_H */
+> diff --git a/arm/aarch64/include/kvm/kvm-config-arch.h b/arm/aarch64/include/kvm/kvm-config-arch.h
+> index 04be43d..0279b13 100644
+> --- a/arm/aarch64/include/kvm/kvm-config-arch.h
+> +++ b/arm/aarch64/include/kvm/kvm-config-arch.h
+> @@ -8,7 +8,11 @@
+>  			"Create PMUv3 device"),				\
+>  	OPT_U64('\0', "kaslr-seed", &(cfg)->kaslr_seed,			\
+>  			"Specify random seed for Kernel Address Space "	\
+> -			"Layout Randomization (KASLR)"),
+> +			"Layout Randomization (KASLR)"),		\
+> +	OPT_BOOLEAN('\0', "enable-ptrauth", &(cfg)->enable_ptrauth,	\
+> +			"Enables pointer authentication"),		\
+> +	OPT_BOOLEAN('\0', "disable-ptrauth", &(cfg)->disable_ptrauth,	\
+> +			"Disables pointer authentication"),
+>  
+>  #include "arm-common/kvm-config-arch.h"
+>  
+> diff --git a/arm/aarch64/include/kvm/kvm-cpu-arch.h b/arm/aarch64/include/kvm/kvm-cpu-arch.h
+> index a9d8563..9fa99fb 100644
+> --- a/arm/aarch64/include/kvm/kvm-cpu-arch.h
+> +++ b/arm/aarch64/include/kvm/kvm-cpu-arch.h
+> @@ -17,4 +17,7 @@
+>  #define ARM_CPU_CTRL		3, 0, 1, 0
+>  #define ARM_CPU_CTRL_SCTLR_EL1	0
+>  
+> +#define ARM_VCPU_PTRAUTH_FEATURE	((1UL << KVM_ARM_VCPU_PTRAUTH_ADDRESS) \
+> +					| (1UL << KVM_ARM_VCPU_PTRAUTH_GENERIC))
+> +
+>  #endif /* KVM__KVM_CPU_ARCH_H */
+> diff --git a/arm/include/arm-common/kvm-config-arch.h b/arm/include/arm-common/kvm-config-arch.h
+> index 5734c46..1b4287d 100644
+> --- a/arm/include/arm-common/kvm-config-arch.h
+> +++ b/arm/include/arm-common/kvm-config-arch.h
+> @@ -10,6 +10,8 @@ struct kvm_config_arch {
+>  	bool		aarch32_guest;
+>  	bool		has_pmuv3;
+>  	u64		kaslr_seed;
+> +	bool		enable_ptrauth;
+> +	bool		disable_ptrauth;
+>  	enum irqchip_type irqchip;
+>  	u64		fw_addr;
+>  };
+> diff --git a/arm/kvm-cpu.c b/arm/kvm-cpu.c
+> index 7780251..acd1d5f 100644
+> --- a/arm/kvm-cpu.c
+> +++ b/arm/kvm-cpu.c
+> @@ -68,6 +68,18 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
+>  		vcpu_init.features[0] |= (1UL << KVM_ARM_VCPU_PSCI_0_2);
+>  	}
+>  
+> +	/* Check Pointer Authentication command line arguments. */
+> +	if (kvm->cfg.arch.enable_ptrauth && kvm->cfg.arch.disable_ptrauth)
+> +		die("Both enable-ptrauth and disable-ptrauth option cannot be present");
+> +	/*
+> +	 * Always enable Pointer Authentication if system supports
+> +	 * this extension unless disable-ptrauth option is present.
+> +	 */
+> +	if (kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_ADDRESS) &&
+> +	    kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_GENERIC) &&
+> +	    !kvm->cfg.arch.disable_ptrauth)
+> +			vcpu_init.features[0] |= ARM_VCPU_PTRAUTH_FEATURE;
+> +
+>  	/*
+>  	 * If the preferred target ioctl is successful then
+>  	 * use preferred target else try each and every target type
+> @@ -106,8 +118,12 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
+>  			die("Unable to find matching target");
+>  	}
+>  
+> -	if (err || target->init(vcpu))
+> -		die("Unable to initialise vcpu");
+> +	if (err || target->init(vcpu)) {
+> +		if (kvm->cfg.arch.enable_ptrauth)
+> +			die("Unable to initialise vcpu with pointer authentication feature");
+> +		else
+> +			die("Unable to initialise vcpu");
+> +	}
+>  
+>  	coalesced_offset = ioctl(kvm->sys_fd, KVM_CHECK_EXTENSION,
+>  				 KVM_CAP_COALESCED_MMIO);
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
