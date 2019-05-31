@@ -2,59 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86E0630AB7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 10:55:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3BD730AF5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 11:02:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A1Fm9UH1W0Ay24M8KN+weRvEIrseQ4o08w2JIbInENs=; b=NzSEjKILSrTTBz
-	AkRlwe2//srPkyJ5OAIFFjP8ZCxzVna+gTQoPIEqy/rlwLN/F3m2IlXdEM0KWvLKtT1DCOE+fWjVP
-	fRLaQ4VsI1AWMu7oiOzkEFrfDBXbGi+IeN8EUwbmCWhDH//Il39TiqG6ziZg2/otSiZZtJ2Ehdi38
-	pcV/q5shqwqw7DofTlQiN++OCoCwPSKmz+QgLtaCo/4Xh4HIUldNEYBf1AKEWkpTzBgwgq+6ZLvx3
-	cndVpWt+b8eC6pE8dz/uR7KcclqysMP7+9TI10vL3TBp/EnUE+wod8a7m7q6zR70LGZjV63EcvgXW
-	yi1CKOZQcKuNWVABzUGg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:To:From:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lWdThiDMjk15toHrpXjP8ZSjs/Bmhq3BT2blYPg5GaM=; b=CO3RG7420bgsDJ
+	3Hfm3DcYXe4FNTMGvqO2DBF4UccXonTIr1gS8aOilC12AewdyWfYUY6sF8rr7QPrNeih4TX8Ijd7k
+	QdpmyJlkEkIcOFna3FIqjlepCo3yR0dhY8tNK4ZZ0MrgmwrUb26m5gNI3QCyylVGES6fc1o/fpfOe
+	Lje23T4Tx3YTUaud57AvrcXSTbgfX3gvVan8FEs38N+V2rIBl5V6jYDB/fqGjjRRSZtHm3WWLJ6WU
+	wJRH1JtCpUFH0+kqoWWeg4PI0bfZeOWNEa0lS4zxL2gpbF59u7JXShRGT9chQCjuPwoy9Ama4rZ1W
+	bNJbCOuL9XLvTZZuGccg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWdJi-0002jv-SI; Fri, 31 May 2019 08:55:14 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWdJb-0002Vm-6U
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 08:55:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB4D0341;
- Fri, 31 May 2019 01:55:06 -0700 (PDT)
-Received: from [10.162.42.223] (p8cg001049571a15.blr.arm.com [10.162.42.223])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 18C9D3F59C; Fri, 31 May 2019 01:55:03 -0700 (PDT)
-Subject: Re: [PATCH 4/4] arm64/mm: Drop vm_fault_t argument from
- __do_page_fault()
-To: Christoph Hellwig <hch@infradead.org>
-References: <1559133285-27986-1-git-send-email-anshuman.khandual@arm.com>
- <1559133285-27986-5-git-send-email-anshuman.khandual@arm.com>
- <20190530063459.GA2181@infradead.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <985b0d8f-2141-019b-8555-272eafc58ea3@arm.com>
-Date: Fri, 31 May 2019 14:25:18 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hWdQe-0004jA-Ds; Fri, 31 May 2019 09:02:24 +0000
+Received: from mail.tastiess.eu ([194.182.86.235])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWdQX-0004ij-4g
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 09:02:18 +0000
+Received: by mail.tastiess.eu (Postfix, from userid 1001)
+ id E14298AA09; Fri, 31 May 2019 11:01:00 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=tastiess.eu; s=mail;
+ t=1559293284; bh=Pq3JAJM5iF8ICERSPFAm/P648K1IfJ1sBmhj3v1LJ9Q=;
+ h=Date:From:To:Subject:From;
+ b=ZGbye1FQ2WgXeZzNRbfuxPM1pjBxFxo+WTTV23z9o/3L1/PG9LdWnff77vn8dBo/Q
+ +quAAzMmaKOBopTsQUUY3cOR80wzuMEKT0X++ReMQoXkAecsAPrfUSI9YCXT7rkbHi
+ 8dgE38FsUVdvpX5oJ0eLFaNPnwGt4XBNPJ1NxA2w=
+Received: by mail.tastiess.eu for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 31 May 2019 09:00:56 GMT
+Message-ID: <20190531100930-0.1.1e.f5k.0.gpjdihj5qu@tastiess.eu>
+Date: Fri, 31 May 2019 09:00:56 GMT
+From: =?UTF-8?Q?"Kapolcs_M=C3=A1ty=C3=A1s"?= <matyas@tastiess.eu>
+To: <linux-arm-kernel@lists.infradead.org>
+Subject: =?UTF-8?Q?Dolgoz=C3=B3i_juttat=C3=A1sok?=
+X-Mailer: mail.tastiess.eu
 MIME-Version: 1.0
-In-Reply-To: <20190530063459.GA2181@infradead.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_015507_251699_E8964F5A 
-X-CRM114-Status: GOOD (  13.58  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190531_020217_353022_3B466940 
+X-CRM114-Status: UNSURE (   1.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,28 +69,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 05/30/2019 12:04 PM, Christoph Hellwig wrote:
-> On Wed, May 29, 2019 at 06:04:45PM +0530, Anshuman Khandual wrote:
->> __do_page_fault() is over complicated with multiple goto statements. This
->> cleans up code flow and while there drops the vm_fault_t argument.
-> 
-> There is no argument dropped anywhere, just a local variable.
-> 
-
-You are right. Will fix both subject line and the commit message.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+w5xkdsO2emzDtm0hCgoyMDE5IGphbnXDoXJqw6F0w7NsIGplbGVudMWRc2VuIMOhdGFsYWt1bHQg
+bWluZCBhIGp1dHRhdMOhc29rIGFkw7N6w6FzYSwgbWluZCBhIHBpYWNvbiBlbMOpcmhldMWRIGp1
+dHRhdMOhc2kgdGVybcOpa2VrIGvDtnJlLiAgCgpBbWVubnlpYmVuIMOWbm5layBpcyBmZWp0w7Zy
+w6lzdCBva296LCBtaXZlbCBww7N0b2xqYSBhIGtvcsOhYmJhbiBoYXN6bsOhbHQgRXJ6c8OpYmV0
+IHV0YWx2w6FueXQsIGlzbWVyamUgbWVnIGvDoXJ0ecOhaW5rYXQgw6lzIHV0YWx2w6FueWFpbmth
+dCwgbWVseWVrIGF6IMOWbiBjw6lnw6luZWsgaXMga8OtdsOhbMOzIGFsdGVybmF0w612w6F0IG55
+w7pqdGhhdG5hay4KCkEgU1rDiVAga8OhcnR5w6Fob3oga8OpcGVzdCBqdXR0YXTDoXNpIGvDoXJ0
+ecOhaW5rYXQgasOzdmFsIHN6w6lsZXNlYmIga8O2cmJlbiBoYXN6bsOhbGhhdGrDoWsga8OhcnR5
+YWJpcnRva29zYWluayB0w7ZiYmVrIGvDtnrDtnR0IMOpbGVsbWlzemVyIHbDoXPDoXJsw6FzcmEs
+IGVnw6lzenPDqWfDvGd5aSBzem9sZ8OhbHRhdMOhc29rcmEsIGVsZWt0cm9uaWthaSB0ZXJtw6lr
+ZWtyZSwgw7xkw7xsw6lzcmUsIHRhbmtvbMOhc3JhIOKAkyBha8OhciBrw6lzenDDqW56ZmVsdsOp
+dGVsaSBsZWhldMWRc8OpZ2dlbCBpcy4KClN6ZXJldG7DqSBtZWdpc21lcm5pLCBtaWx5ZW4gbGVo
+ZXTFkXPDqWdla2V0IGvDrW7DoWx1bmsganV0dGF0w6FzaSB0ZXJtw6lrZWlua2tlbD8gIAoKCkth
+cG9sY3MgTcOhdHnDoXMKSHVuZ2FyeSBUZWFtIExlYWRlciAgCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
