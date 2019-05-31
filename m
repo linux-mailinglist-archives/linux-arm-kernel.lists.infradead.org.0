@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74DDB3105E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 16:38:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA66931087
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 16:47:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JboyrwPXJrPEMrSjlq2GksJsPE5nVsGQmi3ZzOayJlY=; b=oGH8w8gm6QHSK5
-	jSVl/tJh1YjVeZkvaIv6JKzJcXOHaYYDfEhmu3NEsTx79RIMp4KWG2HFK7eufyOucj5lBDArHJKXJ
-	/r2e5idUB2UHcw6OsoI78bQAep0yRq4tTpu/TV61jsZ3saWE/cEAws6S9uOt1IVlg/jl6OqQtlrab
-	DHvHAPsNSGvLcpTKSfxMX4ttG+C2yCnjJATgRdqvn9Z/kuxYbgyapwvqFyXptBAasgwZ9uPZJBNR6
-	dVJkiDeuYHZcdHp2XftqjraTgWupe/r55a/T5W3HV/P8pdrwaePz0WoY9KreFw2SFK+XP83SjIx4T
-	8ZgsV9oY83qiq7mph+1g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7h2NlZqjLHUu4HO/vJeh32iJ6MAdJR/vdvlJETYe5OM=; b=oGFjv4cZ+g4INp
+	NT0JbR9OwtHstRdKM9qOfrucnaZu+vM25GCHin6LmNLIzPJBhN+4gxi67U9hdJ0sVzYg8DtvxMhbL
+	03kjczCqzy92im1Tki5w3TsfAhAfxmOuRc8rTEhSGN+MPlyXX2zA7dTKzBzwapMmrWqsSBSj1yHgX
+	CB82hn6laNd6DGyAZEezKoh8vIxImyTby/RRiNJiW0LXcAZZBC8medzKSAtYYsACUMxeTG5yLgPRx
+	3ll7pstKwpPJCgMjlwhd2vurt/H03JwWf6epqnTE9YiOfHFufv7yKIoJdQ+lrFjCBisPs5tQvD20k
+	IK7qhU+Kikuv1zKXPBXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWifR-0001ys-IJ; Fri, 31 May 2019 14:38:01 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWifJ-0001yC-Qb; Fri, 31 May 2019 14:37:55 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x4VEbplN017657;
- Fri, 31 May 2019 09:37:51 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559313471;
- bh=zZgQ70nXbR7VQXN97IAfQFiWqnaeO/F+zfJEbFVW/qc=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=FJSBML7vdqyGPKRY8PjpPy5WX/LhKShKt50DkSD1S88xlTjLxD3tnrAKs8IOHSViI
- TlVoBHxIhoh92erINraWh7PLohZS1TgJsrssjO1RtUZ92PwZYEg6xFSqm/p1wlcCM1
- vTgpGXUlYf2GTq9CnI3QAvUx4+GlDdeVRiAvo/fo=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x4VEbojt063709
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 31 May 2019 09:37:51 -0500
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 31
- May 2019 09:37:50 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 31 May 2019 09:37:50 -0500
-Received: from [172.24.190.233] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x4VEbmh4103596;
- Fri, 31 May 2019 09:37:49 -0500
-Subject: Re: [PATCH] phy: meson-g12a-usb3-pcie: disable locking for cr_regmap
-To: Neil Armstrong <narmstrong@baylibre.com>
-References: <20190531103137.14901-1-narmstrong@baylibre.com>
- <4dc22a2e-66ca-0556-3aa3-4ed8887c2b1b@ti.com>
- <2a354f12-61a8-6b4e-8006-e442245a92ec@baylibre.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <84bdde38-96a5-6ba0-dc81-e157202a4c52@ti.com>
-Date: Fri, 31 May 2019 20:06:29 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hWiop-0005Zq-8i; Fri, 31 May 2019 14:47:43 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hWiog-0005YN-AS; Fri, 31 May 2019 14:47:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE3AC341;
+ Fri, 31 May 2019 07:47:31 -0700 (PDT)
+Received: from redmoon (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DA8D3F5AF;
+ Fri, 31 May 2019 07:47:28 -0700 (PDT)
+Date: Fri, 31 May 2019 15:47:18 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH] drivers/pci/controller: fix warning PTR_ERR_OR_ZERO can
+ be used
+Message-ID: <20190531144710.GA9356@redmoon>
+References: <20190525085748.GA10926@hari-Inspiron-1545>
+ <20190527140952.GB7202@ulmo>
 MIME-Version: 1.0
-In-Reply-To: <2a354f12-61a8-6b4e-8006-e442245a92ec@baylibre.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190527140952.GB7202@ulmo>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_073753_945678_C5A95DD6 
-X-CRM114-Status: GOOD (  18.85  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190531_074734_578985_05BE460E 
+X-CRM114-Status: GOOD (  23.42  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,97 +63,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+Cc: Hariprasad Kelam <hariprasad.kelam@gmail.com>,
+ Binghui Wang <wangbinghui@hisilicon.com>, linux-kernel@vger.kernel.org,
+ linux-tegra@vger.kernel.org, ingoo Han <jingoohan1@gmail.com>,
+ linux-arm-msm@vger.kernel.org, Xiaowei Song <songxiaowei@hisilicon.com>,
+ linux-pci@vger.kernel.org, Andy Gross <agross@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Yue Wang <yue.wang@amlogic.com>,
+ Stanimir Varbanov <svarbanov@mm-sol.com>, David Brown <david.brown@linaro.org>,
+ Kukjin Kim <kgene@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Kevin Hilman <khilman@baylibre.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-amlogic@lists.infradead.org, Jonathan Hunter <jonathanh@nvidia.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, May 27, 2019 at 04:09:52PM +0200, Thierry Reding wrote:
+> On Sat, May 25, 2019 at 02:27:48PM +0530, Hariprasad Kelam wrote:
+> > fix below warnings reported by coccichek
+> > 
+> > /drivers/pci/controller/pci-tegra.c:1132:1-3: WARNING: PTR_ERR_OR_ZERO
+> > can be used
+> 
+> This has been discussed many times before, but PTR_ERR_OR_ZERO is not
+> liked by everybody. Most of these are actually in place on purpose. One
+> of the reasons I hear most frequently cited in opposition to this macro
+> is that it complicates things when you need to add some new code in, so
+> PTR_ERR_OR_ZERO() becomes wrong and has to be changed. The original,
+> with the "return 0;" being explicit doesn't have that problem and you
+> can easily add things in between.
+> 
+> It's obviously up to Bjorn to decide whether he wants this, but I
+> vaguely remember discussing this particular instance with him before and
+> we both agreed that we didn't think this was worth it.
+
++1, patch dropped, thanks Hariprasad for reporting it anyway.
+
+Lorenzo
+
+> Perhaps it's time to make checkpatch not complain about this anymore? Or
+> at least make this not a WARNING.
+> 
+> Thierry
+> 
+> > ./drivers/pci/controller/dwc/pcie-qcom.c:703:1-3: WARNING:
+> > PTR_ERR_OR_ZERO can be used
+> > ./drivers/pci/controller/dwc/pci-meson.c:185:1-3: WARNING:
+> > PTR_ERR_OR_ZERO can be used
+> > ./drivers/pci/controller/dwc/pci-meson.c:262:1-3: WARNING:
+> > PTR_ERR_OR_ZERO can be used
+> > ./drivers/pci/controller/dwc/pcie-kirin.c:141:1-3: WARNING:
+> > PTR_ERR_OR_ZERO can be used
+> > ./drivers/pci/controller/dwc/pcie-kirin.c:177:1-3: WARNING:
+> > PTR_ERR_OR_ZERO can be used
+> > ./drivers/pci/controller/dwc/pci-exynos.c:95:1-3: WARNING:
+> > PTR_ERR_OR_ZERO can be used
+> > 
+> > Signed-off-by: Hariprasad Kelam <hariprasad.kelam@gmail.com>
+> > ---
+> >  drivers/pci/controller/dwc/pci-exynos.c | 4 +---
+> >  drivers/pci/controller/dwc/pci-meson.c  | 8 ++------
+> >  drivers/pci/controller/dwc/pcie-kirin.c | 8 ++------
+> >  drivers/pci/controller/dwc/pcie-qcom.c  | 4 +---
+> >  drivers/pci/controller/pci-tegra.c      | 4 +---
+> >  5 files changed, 7 insertions(+), 21 deletions(-)
+> > 
+> > diff --git a/drivers/pci/controller/dwc/pci-exynos.c b/drivers/pci/controller/dwc/pci-exynos.c
+> > index cee5f2f..b0b4849 100644
+> > --- a/drivers/pci/controller/dwc/pci-exynos.c
+> > +++ b/drivers/pci/controller/dwc/pci-exynos.c
+> > @@ -92,10 +92,8 @@ static int exynos5440_pcie_get_mem_resources(struct platform_device *pdev,
+> >  
+> >  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> >  	ep->mem_res->elbi_base = devm_ioremap_resource(dev, res);
+> > -	if (IS_ERR(ep->mem_res->elbi_base))
+> > -		return PTR_ERR(ep->mem_res->elbi_base);
+> >  
+> > -	return 0;
+> > +	return PTR_ERR_OR_ZERO(ep->mem_res->elbi_base);
+> >  }
+> >  
+> >  static int exynos5440_pcie_get_clk_resources(struct exynos_pcie *ep)
+> > diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
+> > index e35e9ea..1ca78c2 100644
+> > --- a/drivers/pci/controller/dwc/pci-meson.c
+> > +++ b/drivers/pci/controller/dwc/pci-meson.c
+> > @@ -182,10 +182,8 @@ static int meson_pcie_get_mems(struct platform_device *pdev,
+> >  
+> >  	/* Meson SoC has two PCI controllers use same phy register*/
+> >  	mp->mem_res.phy_base = meson_pcie_get_mem_shared(pdev, mp, "phy");
+> > -	if (IS_ERR(mp->mem_res.phy_base))
+> > -		return PTR_ERR(mp->mem_res.phy_base);
+> >  
+> > -	return 0;
+> > +	return PTR_ERR_OR_ZERO(mp->mem_res.phy_base);
+> >  }
+> >  
+> >  static void meson_pcie_power_on(struct meson_pcie *mp)
+> > @@ -259,10 +257,8 @@ static int meson_pcie_probe_clocks(struct meson_pcie *mp)
+> >  		return PTR_ERR(res->general_clk);
+> >  
+> >  	res->clk = meson_pcie_probe_clock(dev, "pcie", 0);
+> > -	if (IS_ERR(res->clk))
+> > -		return PTR_ERR(res->clk);
+> >  
+> > -	return 0;
+> > +	return PTR_ERR_OR_ZERO(res->clk);
+> >  }
+> >  
+> >  static inline void meson_elb_writel(struct meson_pcie *mp, u32 val, u32 reg)
+> > diff --git a/drivers/pci/controller/dwc/pcie-kirin.c b/drivers/pci/controller/dwc/pcie-kirin.c
+> > index 9b59929..87cfdb4 100644
+> > --- a/drivers/pci/controller/dwc/pcie-kirin.c
+> > +++ b/drivers/pci/controller/dwc/pcie-kirin.c
+> > @@ -138,10 +138,8 @@ static long kirin_pcie_get_clk(struct kirin_pcie *kirin_pcie,
+> >  		return PTR_ERR(kirin_pcie->apb_sys_clk);
+> >  
+> >  	kirin_pcie->pcie_aclk = devm_clk_get(dev, "pcie_aclk");
+> > -	if (IS_ERR(kirin_pcie->pcie_aclk))
+> > -		return PTR_ERR(kirin_pcie->pcie_aclk);
+> >  
+> > -	return 0;
+> > +	return PTR_ERR_OR_ZERO(kirin_pcie->pcie_aclk);
+> >  }
+> >  
+> >  static long kirin_pcie_get_resource(struct kirin_pcie *kirin_pcie,
+> > @@ -174,10 +172,8 @@ static long kirin_pcie_get_resource(struct kirin_pcie *kirin_pcie,
+> >  
+> >  	kirin_pcie->sysctrl =
+> >  		syscon_regmap_lookup_by_compatible("hisilicon,hi3660-sctrl");
+> > -	if (IS_ERR(kirin_pcie->sysctrl))
+> > -		return PTR_ERR(kirin_pcie->sysctrl);
+> >  
+> > -	return 0;
+> > +	return PTR_ERR_OR_ZERO(kirin_pcie->sysctrl);
+> >  }
+> >  
+> >  static int kirin_pcie_phy_init(struct kirin_pcie *kirin_pcie)
+> > diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+> > index 0ed235d..6c421e6 100644
+> > --- a/drivers/pci/controller/dwc/pcie-qcom.c
+> > +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+> > @@ -700,10 +700,8 @@ static int qcom_pcie_get_resources_2_4_0(struct qcom_pcie *pcie)
+> >  		return PTR_ERR(res->ahb_reset);
+> >  
+> >  	res->phy_ahb_reset = devm_reset_control_get_exclusive(dev, "phy_ahb");
+> > -	if (IS_ERR(res->phy_ahb_reset))
+> > -		return PTR_ERR(res->phy_ahb_reset);
+> >  
+> > -	return 0;
+> > +	return PTR_ERR_OR_ZERO(res->phy_ahb_reset);
+> >  }
+> >  
+> >  static void qcom_pcie_deinit_2_4_0(struct qcom_pcie *pcie)
+> > diff --git a/drivers/pci/controller/pci-tegra.c b/drivers/pci/controller/pci-tegra.c
+> > index 464ba25..3cd5069 100644
+> > --- a/drivers/pci/controller/pci-tegra.c
+> > +++ b/drivers/pci/controller/pci-tegra.c
+> > @@ -1129,10 +1129,8 @@ static int tegra_pcie_resets_get(struct tegra_pcie *pcie)
+> >  		return PTR_ERR(pcie->afi_rst);
+> >  
+> >  	pcie->pcie_xrst = devm_reset_control_get_exclusive(dev, "pcie_x");
+> > -	if (IS_ERR(pcie->pcie_xrst))
+> > -		return PTR_ERR(pcie->pcie_xrst);
+> >  
+> > -	return 0;
+> > +	return PTR_ERR_OR_ZERO(pcie->pcie_xrst);
+> >  }
+> >  
+> >  static int tegra_pcie_phys_get_legacy(struct tegra_pcie *pcie)
+> > -- 
+> > 2.7.4
+> > 
 
 
-On 31/05/19 7:52 PM, Neil Armstrong wrote:
-> On 31/05/2019 12:35, Kishon Vijay Abraham I wrote:
->> Hi,
->>
->> On 31/05/19 4:01 PM, Neil Armstrong wrote:
->>> Fix the following BUG by disabling locking for the cr_regmap config.
->>
->> What caused the BUG in the first place? The commit log needs more details or
->> else this looks like a workaround to mask a BUG.
-> 
-> I thought it was pretty explicit, phy_g12a_usb3_pcie_cr_bus_read() sleeps
-> with regmap_read_poll_timeout() while ran in spinlock_irq, caused by regmap fast_io = true
-> 
-> Locking is not needed in our case, this regmap is only used by the PHY init() callback.
-> 
-> Should I send a v2 with such explanation ?
-
-yes, should atleast mention locking is not needed here.
-
--Kishon
-
-> 
-> Neil
-> 
->>
->> Thanks
->> Kishon
->>
->>>
->>> BUG: sleeping function called from invalid context at drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c:85
->>> in_atomic(): 1, irqs_disabled(): 128, pid: 60, name: kworker/3:1
->>> [snip]
->>> Workqueue: events deferred_probe_work_func
->>> Call trace:
->>>  dump_backtrace+0x0/0x190
->>>  show_stack+0x14/0x20
->>>  dump_stack+0x90/0xb4
->>>  ___might_sleep+0xec/0x110
->>>  __might_sleep+0x50/0x88
->>>  phy_g12a_usb3_pcie_cr_bus_addr.isra.0+0x80/0x1a8
->>>  phy_g12a_usb3_pcie_cr_bus_read+0x34/0x1d8
->>>  _regmap_read+0x60/0xe0
->>>  _regmap_update_bits+0xc4/0x110
->>>  regmap_update_bits_base+0x60/0x90
->>>  phy_g12a_usb3_pcie_init+0xdc/0x210
->>>  phy_init+0x74/0xd0
->>>  dwc3_meson_g12a_probe+0x2cc/0x4d0
->>>  platform_drv_probe+0x50/0xa0
->>>  really_probe+0x20c/0x3b8
->>>  driver_probe_device+0x68/0x150
->>>  __device_attach_driver+0xa8/0x170
->>>  bus_for_each_drv+0x64/0xc8
->>>  __device_attach+0xd8/0x158
->>>  device_initial_probe+0x10/0x18
->>>  bus_probe_device+0x90/0x98
->>>  deferred_probe_work_func+0x94/0xe8
->>>  process_one_work+0x1e0/0x338
->>>  worker_thread+0x230/0x458
->>>  kthread+0x134/0x138
->>>  ret_from_fork+0x10/0x1c
->>>
->>> Fixes: 36077e16c050 ("phy: amlogic: Add Amlogic G12A USB3 + PCIE Combo PHY Driver")
->>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->>> ---
->>>  drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c | 2 +-
->>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>
->>> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
->>> index 6233a7979a93..ac322d643c7a 100644
->>> --- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
->>> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
->>> @@ -188,7 +188,7 @@ static const struct regmap_config phy_g12a_usb3_pcie_cr_regmap_conf = {
->>>  	.reg_read = phy_g12a_usb3_pcie_cr_bus_read,
->>>  	.reg_write = phy_g12a_usb3_pcie_cr_bus_write,
->>>  	.max_register = 0xffff,
->>> -	.fast_io = true,
->>> +	.disable_locking = true,
->>>  };
->>>  
->>>  static int phy_g12a_usb3_init(struct phy *phy)
->>>
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
