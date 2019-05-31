@@ -2,87 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56D0E314C8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 20:32:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 915B03150D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 May 2019 21:04:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U+Tl7Gw06da0TcVQlALiYyUX36ccw6bf2P7vDOxrN1o=; b=PdVxxDZvW0z1xh
-	C49oGnPQ7JJc0ywzAnzoqx4w6eU8p2P6MNwMUhaPV44HEIM1P5gKp1J5+oCbc9NgPiilGKTRVzq+P
-	vmEfvL3oP9i4SPwSwL7t71nHsXycyMAtt2eqqnK1EuASFy20W79aRVs/MmWRbp4/aITXuJW0R1wbv
-	D+ZgsvTLassInDc+UdFY+UX4KPDvc2hSltpxH+g1lgTM9rgxtxmCTzrHT7mAZG2+dvphlqwd9TzWg
-	ybdT4b79qVAwRbAxRIuQOT3MsBGR1YJpp5Ch8V2zTnLUrQOF8QpLUZQdkHfcXFrVNxrHDefdPjazA
-	KymZ14S1Z6M4PhBPFHSw==;
+	List-Owner; bh=T3N21gKfDSp8TsqcZnhyaxlnzr4fZXjUq//y4PNuLWI=; b=lTAnnw1RYyHPdu
+	6aGtB6eCrMfmza1GtRChh/wGJE7IHV41Efg2GGlkv4FF+QJGqFdI4d1Hrr6drqA6T6gFJhKzNQ4tY
+	nu9uUWQQdc1xCuSIRINMxk3vdecAv6gexgOSj6epgVMb0ysHL92HRiot6/jgfsYmvqZRHCBvTEalA
+	3y5i0AiuxTVaVMBqxzI+127f3aI9bJaEsIlBxBXlrDx+uTP6sOH88qod7egnvZ0dcT8moLZZoooxr
+	yRwzKAI89nNkELdJiE5KDY994KzYeOiRXutZ/Sa3cDg56A/dyburstYzST+jmP0ltO0KcTlo9/8ff
+	+TB143CcXskoYpOPz0cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWmKW-0004l1-MP; Fri, 31 May 2019 18:32:40 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1hWmpG-0005yF-1a; Fri, 31 May 2019 19:04:26 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWmKO-0004kC-O5
- for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 18:32:34 +0000
-Received: by mail-ed1-x544.google.com with SMTP id a8so15909792edx.3
+ id 1hWmp8-0005xl-IY
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 May 2019 19:04:20 +0000
+Received: by mail-it1-x142.google.com with SMTP id t184so17523308itf.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 May 2019 11:32:32 -0700 (PDT)
+ Fri, 31 May 2019 12:04:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/qCEAxJby+Q3JZ8llKzwy+sZNSav6qCCM0ocEIgzH0k=;
- b=pnA32Q//XASMsJVTAIORwQ21Lho5quheH7a5SypaIQCMLMIGfEoFksi/ihA7ieW7oW
- 0k2RRAe8q6vYgDPEe9tILYVo2DQ17b2LlwcGJ4Z2KokwZlydXvUaQ4jlSRyQsUf5qWtf
- BgR8MOc3fktLlLPSQz4/QtCmnYQc0IZAx1EI5CCqgDIpT5DiMGImyQaLU5Tugy8pCta4
- 6mTeWQBBi5vm10k9BzI/xPMw/sV32PS7rBtcjVDxC+pM94/USalh2aDx9kPucMWBKsDn
- vYE2L1T8UAUjMXP5KyfJOvizbZ2vnogz3af3NAdB8nYpGXxKuh9tD6fzhmQcGysydUXi
- c6lQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jii0B1SHiBfsyisYt0tjpTfpkyGH53lgOLJFv4P8AwE=;
+ b=iuCYLYmDOhQ9p8JLVl/C0+c+Ld3GC+bFYACfyafdHxSbhnh+0QqJKPbE763fesZle2
+ zI84+KPISI7qwEliFT9USl6LsFCNKr2yU2Fd0EambT/PztdMkUmbto28suxyDlm/5j3W
+ dO/DR9hsyXaIdamyLwgTQuhHhFdZdmoXswkluBpKYYfYaXC/81D3YlmeXlSEefLZQQwZ
+ 75PpNdtP+lDS2l63AMLuQ/gfe2hrPhwETogRiKrpkvUqz2SQggbiHIwy420WZHk8EZB+
+ J+PtKB0wY1DiZY5yWROXVbNhF/8aSWU6OsDFO6hWzQz0X6TtAChf8GboM4UgVDE8UGMS
+ 135w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/qCEAxJby+Q3JZ8llKzwy+sZNSav6qCCM0ocEIgzH0k=;
- b=bff1GUbQ28swPbUCHgWDUdVlvPAjH9hekMn2Is7n2nRfYu/Fi0p30yeSxKmTADlles
- PE/Lk1H60pi5gTvnS0nFN9KThqEOUYUwS/RS0ehWD7V6/zxoUIdELDShH8OfXYwVCsrz
- CfIUZJkzVvtOgXl0apCHz1Him+LqmnuSq9UgJbV5kG5bivSqCUYXvVxS66pIIp4P/dOd
- LPD+gw7C2ucEoj+ig6vCAhWOcUwISlDBsOmu7ixAa1MgXByeBXLy2Pzs+wK3Zc3ZzCOY
- 4wy0qL0n2zXgI4AkSsj3cGofPb3bxs83ebAkv44GpNErI2BTnKbpGC1KF+y6ZghgvstH
- rl9Q==
-X-Gm-Message-State: APjAAAWCApTiRXCZdvi+eDihuPC8TqH1RTAdkztSBXVxVjkX/X9f+ExZ
- KY0dkEj05mssmPrg3qFFSR0=
-X-Google-Smtp-Source: APXvYqxfLxURqU5ciVrR3TSIjSt8BDjYXtDZo/7u98PKRRpTcl7yXsUg4F/tkPwh30o1QhOS6CWM4g==
-X-Received: by 2002:a17:906:265b:: with SMTP id
- i27mr10809987ejc.147.1559327550493; 
- Fri, 31 May 2019 11:32:30 -0700 (PDT)
-Received: from archlinux-epyc ([2a01:4f9:2b:2b15::2])
- by smtp.gmail.com with ESMTPSA id n8sm1111182ejk.45.2019.05.31.11.32.29
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 31 May 2019 11:32:29 -0700 (PDT)
-Date: Fri, 31 May 2019 11:32:27 -0700
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] ARM: xor-neon: Replace __GNUC__ checks with
- CONFIG_CC_IS_GCC
-Message-ID: <20190531183227.GA34102@archlinux-epyc>
-References: <20190528235742.105510-1-natechancellor@gmail.com>
- <CAK8P3a0a0hMsZDkqKsfsyCWpdvDni72tjAxCz2VeAaU56zqrXg@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jii0B1SHiBfsyisYt0tjpTfpkyGH53lgOLJFv4P8AwE=;
+ b=Ud/XP9Wj4sMRaUyyX1D6ItoGSEztjRPyc+pfiNnH3JsXiZOUCMHwpIvq2/wMJzRRWG
+ 5anOR1K1Vqn+H3nUANaVAb0xmO79a5K2klDlH3ja29Xoc+v2YUYrc9ZX9t9aNdEOACcg
+ wQB2cuyxBuHWz2re+jRz2TxkAlpX8bbhA6Kk3XGgDPAm8fD19mV9sjiptseSO0t+6N1s
+ m6vkcpmJh7Nks7WMRU3lpQR6zQajlVIs9zBh4Z8tKp8Q1NL04e5ns0GCmdCpQFpULH5T
+ Ie9bGAfwgX4GsTyxNJdHbMKdkGZgvPtPedW8PwYu49Rrpr9iAoVc9zjnwK6GCpniPhsa
+ mHIA==
+X-Gm-Message-State: APjAAAVsLk+GRf/+k7bAs1MGHyc+JzSgonlxRVc0LX6uLA+KX4JYL81y
+ RO5cuJBvNw5VClIrgQoT3BJ9AMs1Acy8NtOkLO4=
+X-Google-Smtp-Source: APXvYqwapy1+PtDtUVrQRkp40Z48kFBN7dxwhXYy+KhKWw8zc87Kq8HPXqmR6nBSk2z2xbUgQdaKwXi9T9lS1g6+EIw=
+X-Received: by 2002:a24:97d2:: with SMTP id k201mr8019261ite.151.1559329457355; 
+ Fri, 31 May 2019 12:04:17 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a0a0hMsZDkqKsfsyCWpdvDni72tjAxCz2VeAaU56zqrXg@mail.gmail.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+References: <20190530094706.865-1-Anson.Huang@nxp.com>
+ <20190530094706.865-2-Anson.Huang@nxp.com>
+In-Reply-To: <20190530094706.865-2-Anson.Huang@nxp.com>
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+Date: Fri, 31 May 2019 12:04:06 -0700
+Message-ID: <CAHQ1cqE2UPL6mM0GdS3aLinM46puE1r+80qGUEX2yA9CDMz=EQ@mail.gmail.com>
+Subject: Re: [PATCH 2/3] arm64: dts: freescale: Add i.MX8MN dtsi support
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_113232_778464_2C2BFEE7 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20190531_120418_640918_8F98F514 
+X-CRM114-Status: GOOD (  19.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
+ provider (andrew.smirnov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -102,39 +93,204 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Nicolas Pitre <nico@fluxnic.net>, Nick Desaulniers <ndesaulniers@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>, Russell King <linux@armlinux.org.uk>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Dong Aisheng <aisheng.dong@nxp.com>,
+ ping.bai@nxp.com,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, bruno.thomsen@gmail.com,
+ linux-kernel <linux-kernel@vger.kernel.org>, leoyang.li@nxp.com,
+ vabhav.sharma@nxp.com, Rob Herring <robh+dt@kernel.org>,
+ bhaskar.upadhaya@nxp.com, dl-linux-imx <Linux-imx@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>, manivannan.sadhasivam@linaro.org,
+ pramod.kumar_1@nxp.com, Leonard Crestez <leonard.crestez@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>, pankaj.bansal@nxp.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 31, 2019 at 10:05:22AM +0200, Arnd Bergmann wrote:
-> If I remember correctly, we also had the same issue with older versions
-> of clang, possibly even newer ones. Shouldn't we check for a minimum
-> compiler version when building with clang to ensure that the code is
-> really vectorized?
-> 
->        Arnd
+On Thu, May 30, 2019 at 2:45 AM <Anson.Huang@nxp.com> wrote:
+>
+> From: Anson Huang <Anson.Huang@nxp.com>
+>
+> The i.MX8M Nano Media Applications Processor is a new SoC of the i.MX8M
+> family, it is a 14nm FinFET product of the growing mScale family targeting
+> the consumer market. It is built in Samsung 14LPP to achieve both high
+> performance and low power consumption and relies on a powerful fully
+> coherent core complex based on a quad core ARM Cortex-A53 cluster,
+> Cortex-M7 low-power coprocessor and graphics accelerator.
+>
+> This patch adds the basic dtsi support for i.MX8MN.
+>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> This patch should be based on below patches for clock and pinctrl head files:
+> https://patchwork.kernel.org/patch/10968059/
+> https://patchwork.kernel.org/patch/10968267/
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mn.dtsi | 701 ++++++++++++++++++++++++++++++
+>  1 file changed, 701 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/freescale/imx8mn.dtsi
+>
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+> new file mode 100644
+> index 0000000..c318ee6
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+> @@ -0,0 +1,701 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright 2019 NXP
+> + */
+> +
+> +#include <dt-bindings/clock/imx8mn-clock.h>
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/input/input.h>
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +#include "imx8mn-pinfunc.h"
+> +
+> +/ {
+> +       compatible = "fsl,imx8mn";
+> +       interrupt-parent = <&gic>;
+> +       #address-cells = <2>;
+> +       #size-cells = <2>;
+> +
+> +       aliases {
+> +               ethernet0 = &fec1;
+> +               gpio0 = &gpio1;
+> +               gpio1 = &gpio2;
+> +               gpio2 = &gpio3;
+> +               gpio3 = &gpio4;
+> +               gpio4 = &gpio5;
+> +               i2c0 = &i2c1;
+> +               i2c1 = &i2c2;
+> +               i2c2 = &i2c3;
+> +               i2c3 = &i2c4;
+> +               mmc0 = &usdhc1;
+> +               mmc1 = &usdhc2;
+> +               mmc2 = &usdhc3;
+> +               serial0 = &uart1;
+> +               serial1 = &uart2;
+> +               serial2 = &uart3;
+> +               serial3 = &uart4;
+> +               spi0 = &ecspi1;
+> +               spi1 = &ecspi2;
+> +               spi2 = &ecspi3;
+> +       };
+> +
+> +       cpus {
+> +               #address-cells = <1>;
+> +               #size-cells = <0>;
+> +
+> +               A53_0: cpu@0 {
+> +                       device_type = "cpu";
+> +                       compatible = "arm,cortex-a53";
+> +                       reg = <0x0>;
+> +                       clock-latency = <61036>;
+> +                       clocks = <&clk IMX8MN_CLK_ARM>;
+> +                       enable-method = "psci";
+> +                       next-level-cache = <&A53_L2>;
+> +               };
+> +
+> +               A53_1: cpu@1 {
+> +                       device_type = "cpu";
+> +                       compatible = "arm,cortex-a53";
+> +                       reg = <0x1>;
+> +                       clock-latency = <61036>;
+> +                       clocks = <&clk IMX8MN_CLK_ARM>;
+> +                       enable-method = "psci";
+> +                       next-level-cache = <&A53_L2>;
+> +               };
+> +
+> +               A53_2: cpu@2 {
+> +                       device_type = "cpu";
+> +                       compatible = "arm,cortex-a53";
+> +                       reg = <0x2>;
+> +                       clock-latency = <61036>;
+> +                       clocks = <&clk IMX8MN_CLK_ARM>;
+> +                       enable-method = "psci";
+> +                       next-level-cache = <&A53_L2>;
+> +               };
+> +
+> +               A53_3: cpu@3 {
+> +                       device_type = "cpu";
+> +                       compatible = "arm,cortex-a53";
+> +                       reg = <0x3>;
+> +                       clock-latency = <61036>;
+> +                       clocks = <&clk IMX8MN_CLK_ARM>;
+> +                       enable-method = "psci";
+> +                       next-level-cache = <&A53_L2>;
+> +               };
+> +
+> +               A53_L2: l2-cache0 {
+> +                       compatible = "cache";
+> +               };
+> +       };
+> +
+> +       memory@40000000 {
+> +               device_type = "memory";
+> +               reg = <0x0 0x40000000 0 0x80000000>;
+> +       };
+> +
+> +       osc_32k: clock-osc-32k {
+> +               compatible = "fixed-clock";
+> +               #clock-cells = <0>;
+> +               clock-frequency = <32768>;
+> +               clock-output-names = "osc_32k";
+> +       };
+> +
+> +       osc_24m: clock-osc-24m {
+> +               compatible = "fixed-clock";
+> +               #clock-cells = <0>;
+> +               clock-frequency = <24000000>;
+> +               clock-output-names = "osc_24m";
+> +       };
+> +
+> +       clk_ext1: clock-ext1 {
+> +               compatible = "fixed-clock";
+> +               #clock-cells = <0>;
+> +               clock-frequency = <133000000>;
+> +               clock-output-names = "clk_ext1";
+> +       };
+> +
+> +       clk_ext2: clock-ext2 {
+> +               compatible = "fixed-clock";
+> +               #clock-cells = <0>;
+> +               clock-frequency = <133000000>;
+> +               clock-output-names = "clk_ext2";
+> +       };
+> +
+> +       clk_ext3: clock-ext3 {
+> +               compatible = "fixed-clock";
+> +               #clock-cells = <0>;
+> +               clock-frequency = <133000000>;
+> +               clock-output-names = "clk_ext3";
+> +       };
+> +
+> +       clk_ext4: clock-ext4 {
+> +               compatible = "fixed-clock";
+> +               #clock-cells = <0>;
+> +               clock-frequency= <133000000>;
+> +               clock-output-names = "clk_ext4";
+> +       };
+> +
+> +       gic: interrupt-controller@38800000 {
+> +               compatible = "arm,gic-v3";
+> +               reg = <0x0 0x38800000 0 0x10000>,
+> +                     <0x0 0x38880000 0 0xC0000>;
+> +               #interrupt-cells = <3>;
+> +               interrupt-controller;
+> +               interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+> +       };
 
-Even on tip of tree, it doesn't look like vectorization happens
-properly. With -S -Rpass-missed='.*' added to the xor-neon.c command:
+GIC should probably go into soc {} node. At least that's how we have
+it in i.MX8MQ AFAICT.
 
-/home/nathan/cbl/linux-next/include/asm-generic/xor.h:15:2: remark: the cost-model indicates that interleaving is not beneficial [-Rpass-missed=loop-vectorize]
-/home/nathan/cbl/linux-next/include/asm-generic/xor.h:11:1: remark: List vectorization was possible but not beneficial with cost 0 >= 0 [-Rpass-missed=slp-vectorizer]
-xor_8regs_2(unsigned long bytes, unsigned long *p1, unsigned long *p2)
-^
-
-So right now, it doesn't look like there is a minimum version for clang
-and I don't think adding a warning for clang is productive (what is a
-user supposed to do?)
-
-Cheers,
-Nathan
+Thanks,
+Andrey Smirnov
 
 _______________________________________________
 linux-arm-kernel mailing list
