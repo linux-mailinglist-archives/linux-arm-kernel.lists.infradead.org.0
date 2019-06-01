@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC32F320B9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 23:07:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B7D320C4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 23:18:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b7M/zZxyL7bAqHwxFXzSr+oo/mPOx6vPRynWWgHYVqA=; b=j9Enk09lZ1ckTi
-	Hr3+ylGCXfn/P5ppNKw8u1t/Jhu4pPnPaRobnZrDGPDMVSkTuJoTIAYl/VxkC0vBK29KRAuls3AzO
-	+WDBAYuiivaLR6of5I5tWb9pkiIgq8QKmCAcKmuVU8Fqf6aHAdnu3aPTGkRn3xynLS2Q5l/w9wI/M
-	7t90VmPNmcpb2OT7uLu+hlOv1ARpIwLThIMKxCNorI4YetlKK6aNendWOjS91pLFxgI8VECkgMuk6
-	KCdYirnHy51i9DRh7y3F8XZBTdRN6VJJLCGt+q7x5Wy8sjduwj+HIQjeRS9Su7x8rgcipEfVnd8dC
-	ezeDbOKtFWx81de8S6MQ==;
+	List-Owner; bh=2c+WL65zRdzie5E7uYVPYBBcHPGJzrqH+nm2x7QsGIg=; b=smgjl5S5vy6rA/
+	eKQ7iptLt5NPOnSCqwdAmUXOAJVWpoIuGEThNCPwTh1QVXa63k1aUaziHXRDLHocB5PwQQgJ8G90q
+	SV3jArliCPFm+8Tp2j8ajplAnkgImZSvOhLoQQg4a8OdfcJWz5RQrLlNpvS6GkHMsnGXNmZH046xR
+	3KaEg7fl/3yzYmyT3zv7h8AGqHLcniSJKod/ROSfle198oYTg7YszwG/k8NiOoxASYAfBYL4n1ERB
+	+FJV9DVqgqZwdzRCAljWuj1scRq5z+2AaBVAZu2AewCSW5oDxOsuC64qpoqALhbYewBUth30T7khf
+	9XTT3yrs7RgCwZt607yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXBDi-0002KM-Gh; Sat, 01 Jun 2019 21:07:18 +0000
+	id 1hXBOa-0005Bk-CJ; Sat, 01 Jun 2019 21:18:32 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXBDb-0002JV-NU
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 21:07:13 +0000
+ id 1hXBOT-0005BM-Q3
+ for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 21:18:27 +0000
 X-Originating-IP: 82.246.155.60
 Received: from localhost (hy283-1-82-246-155-60.fbx.proxad.net [82.246.155.60])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 0904CE0005;
- Sat,  1 Jun 2019 21:06:53 +0000 (UTC)
-Date: Sat, 1 Jun 2019 23:06:51 +0200
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id AC846E0009;
+ Sat,  1 Jun 2019 21:18:19 +0000 (UTC)
+Date: Sat, 1 Jun 2019 23:18:16 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Subject: Re: [PATCH v3] video: fbdev: atmel_lcdfb: add COMPILE_TEST support
-Message-ID: <20190601210651.GB3558@piout.net>
-References: <CGME20190530123016eucas1p2e18747b8ac1d156657232eab52876a61@eucas1p2.samsung.com>
- <69cd6b8b-1fd1-86fa-2070-99d0ce15a868@samsung.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH V7 4/4] rtc: imx-sc: add rtc alarm support
+Message-ID: <20190601211816.GF3558@piout.net>
+References: <1554785675-8090-1-git-send-email-Anson.Huang@nxp.com>
+ <1554785675-8090-4-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <69cd6b8b-1fd1-86fa-2070-99d0ce15a868@samsung.com>
+In-Reply-To: <1554785675-8090-4-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_140711_923300_5C954E8B 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20190601_141826_003706_6415FA17 
+X-CRM114-Status: GOOD (  10.39  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -62,75 +62,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "a.zummo@towertech.it" <a.zummo@towertech.it>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30/05/2019 14:30:19+0200, Bartlomiej Zolnierkiewicz wrote:
-> Add COMPILE_TEST support to atmel_lcdfb driver for better compile
-> testing coverage.
+On 09/04/2019 05:00:07+0000, Anson Huang wrote:
+> Add i.MX system controller RTC alarm support, the RTC alarm
+> is implemented via SIP(silicon provider) runtime service call
+> and ARM-Trusted-Firmware will communicate with system controller
+> via MU(message unit) IPC to set RTC alarm. When RTC alarm fires,
+> system controller will generate a common MU irq event and notify
+> system controller RTC driver to handle the irq event.
 > 
-> While at it fix improper use of UL (to silence build warnings on
-> x86_64).
-> 
-> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-
-> Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-> Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 > ---
-> v3: fix build warnings on x86_64
-
-Hopefully, no building errors anymore ;)
-
+> Changes since V6:
+> 	- add comments to .read_alarm callback function to explain why it is an empty function;
+> 	- improve irq notify callback function name.
+> --
+>  drivers/rtc/rtc-imx-sc.c | 87 ++++++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 87 insertions(+)
 > 
-> v2: add missing HAVE_CLK && HAS IOMEM dependencies
-> 
->  drivers/video/fbdev/Kconfig       |    3 ++-
->  drivers/video/fbdev/atmel_lcdfb.c |    4 ++--
->  2 files changed, 4 insertions(+), 3 deletions(-)
-> 
-> Index: b/drivers/video/fbdev/Kconfig
-> ===================================================================
-> --- a/drivers/video/fbdev/Kconfig
-> +++ b/drivers/video/fbdev/Kconfig
-> @@ -855,7 +855,8 @@ config FB_S1D13XXX
->  
->  config FB_ATMEL
->  	tristate "AT91 LCD Controller support"
-> -	depends on FB && OF && HAVE_FB_ATMEL
-> +	depends on FB && OF && HAVE_CLK && HAS_IOMEM
-> +	depends on HAVE_FB_ATMEL || COMPILE_TEST
->  	select FB_BACKLIGHT
->  	select FB_CFB_FILLRECT
->  	select FB_CFB_COPYAREA
-> Index: b/drivers/video/fbdev/atmel_lcdfb.c
-> ===================================================================
-> --- a/drivers/video/fbdev/atmel_lcdfb.c
-> +++ b/drivers/video/fbdev/atmel_lcdfb.c
-> @@ -673,7 +673,7 @@ static int atmel_lcdfb_set_par(struct fb
->  	lcdc_writel(sinfo, ATMEL_LCDC_MVAL, 0);
->  
->  	/* Disable all interrupts */
-> -	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0UL);
-> +	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0U);
->  	/* Enable FIFO & DMA errors */
->  	lcdc_writel(sinfo, ATMEL_LCDC_IER, ATMEL_LCDC_UFLWI | ATMEL_LCDC_OWRI | ATMEL_LCDC_MERI);
->  
-> @@ -1291,7 +1291,7 @@ static int atmel_lcdfb_suspend(struct pl
->  	 * We don't want to handle interrupts while the clock is
->  	 * stopped. It may take forever.
->  	 */
-> -	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0UL);
-> +	lcdc_writel(sinfo, ATMEL_LCDC_IDR, ~0U);
->  
->  	sinfo->saved_lcdcon = lcdc_readl(sinfo, ATMEL_LCDC_CONTRAST_CTR);
->  	lcdc_writel(sinfo, ATMEL_LCDC_CONTRAST_CTR, 0);
+Applied, thanks.
 
 -- 
 Alexandre Belloni, Bootlin
