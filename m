@@ -2,52 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC8FF31B9A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 13:41:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85F5231BB9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 14:36:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=THYFY4XkKTNxTnI/uCm87ZU8Geyyw9wCAiNPrgYnXTI=; b=fgcTZe6D+Y1o4ePvE0on7tALL
-	5fwWY3TAuWOxDfo70ijAgrd+8OZATcYojU/Kk8xEdb7Qak4yvqXoqJYfs9RSQhNWsDLogx8F7AFqU
-	zoQw7ZBG14bxNeEFns1RVVEGpXlP67B5QGfgeyHFO+iatLHUlA9TbCAbVRooHf9XEwi/njYdM6jqT
-	aMcNgjrzIHq8AlpPcJeRiCEG/UVpzekBrLliO6DAYotD2k64GZbCFle6WoE8kq1a1JueKWfsCLrga
-	soiLhGHstzkDoFH8ePRTLBF/N034/a01rBnzRDs7Kan9+GRUjo8hkCFqs/jsTbicxqNhTUn2DwYK9
-	JxSVlcC2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7u5E10nTPuzZ+wN2hQQ6cKJYZavvl+EI/fQaUFkLc0c=; b=Xq8doFJGqSprAs
+	K8iIfVEXDvmCVXDNiIQxGYZUA9z/uGwlbrGgqIVmloXOZztRvs5e6jf+UPgwZ6bq8MqvK4GVNZpGR
+	dSLgwAvflSP5L72tK/vUJQuJLCbVHvwg+YLBUKnVRNLXvvketmOuFSu95AMeKLUGqMqWLJgf1NpX8
+	mQEA6vcInBE0rIgFpty7txfMuERmEuWHZrlmLuvSw/BR1297GZiHYN/QdlTvAsXSYEot0L8dBDCti
+	tts169z6Rn0/kp3zmuoscDGgrMRtSiglYJFXNZHPBNFfVQacfiGxqo82IlhLwGiUX2HBt/ImsQGu5
+	oMt8TaHDLFKFKHwh3YCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hX2Nl-0006k7-GC; Sat, 01 Jun 2019 11:41:05 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX2Nf-0006jj-40
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 11:41:00 +0000
-Received: from localhost (unknown [91.64.182.124])
- by pokefinder.org (Postfix) with ESMTPSA id 6BDAD2C54BC;
- Sat,  1 Jun 2019 13:40:58 +0200 (CEST)
-Date: Sat, 1 Jun 2019 13:40:58 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 0/8] arm: add I2C DT binding docs to various platforms
-Message-ID: <20190601114057.GD1993@kunai>
-References: <20190521082137.2889-1-wsa@the-dreams.de>
+	id 1hX3FM-00060P-5e; Sat, 01 Jun 2019 12:36:28 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hX3FF-0005zp-NI
+ for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 12:36:23 +0000
+Received: by mail-lf1-x143.google.com with SMTP id p24so3618616lfo.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 01 Jun 2019 05:36:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KjmTEVuPQh2PXyikcfpuk1xw+TYpGej2il1PhpQgd+M=;
+ b=fDIEy+69xjVfiGw1Nm3ga/odi3vgEOKElm+SRP0yqZTpkK9ED1bxAVf6HKS4AxsHur
+ y2n6JRBg41yR3BAStijMUgB/y6uO/UzhwAGipQ/s92AyyW9prjWOnQku24ZCCpQoSAb1
+ YzDCkbAYE5zNRO5o2AbuC873QMbot/Pvn31bWWYLusZ7+VmpFhGZA1PwyQbuZyKXKZZr
+ Wn2UnDjVgAi5VZ/NAjrgZ7r1xKALIBBAR19kv6uV7jfoHuBMRa3bSTPN6d50PgYZjKjS
+ zSV8kOepHxgbdJQQQ2I5+8kxfsEKeR2CSJc0CdzwhZFmjGXHNvKnsLA0w4yTg4KhofPV
+ ttQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KjmTEVuPQh2PXyikcfpuk1xw+TYpGej2il1PhpQgd+M=;
+ b=qEwF78Vv64Oq5syEKirVCPAryeUKZPyVEY8LpV3+9NLQWQrlMoZNKNT2fR99fjbx+y
+ rTRZ63rqax7EiL75oRIOpM+OQeu+30+oZp5sLaatMs+IiKvftXCbdzd4t0g79v6O0ab/
+ Cd6+slDqCG0lKwE5eRQ0zw3gG7ZCjiy8d/g5aDBEo3wjGHbngFTeKPqfBeIqH2jrMPgB
+ h+JMag8yQMgFkX3FE7N1i0+Zuhc9pooj9b9bD+gbGISUADdQ0P+vjh1t8K7wYDj9dGsQ
+ GvPd0IG2gFkJAtfdRkoWgWVjfvLLmMAPMospIv+GmyutA9TiksDznQkhLxLNrsX09flX
+ xdRw==
+X-Gm-Message-State: APjAAAUsFYkFqdsvWJYF03BiSoN9IvxvbzrYWBwXsEC+JKEseGs76U0R
+ fQlZhRhEw2K7C4lvnfvc6jDHjW1nagDEcP6RgCU=
+X-Google-Smtp-Source: APXvYqzIxvph6QzXKEy0tNENHkmBH3p7QP147fe/zSUDcJZEcdyderZw1eVOZ4eLMdUGKS6Tl4HYtq9Cmr+Uka075u4=
+X-Received: by 2002:a19:5046:: with SMTP id z6mr8798219lfj.185.1559392579117; 
+ Sat, 01 Jun 2019 05:36:19 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190521082137.2889-1-wsa@the-dreams.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190601011951.603-1-marex@denx.de>
+In-Reply-To: <20190601011951.603-1-marex@denx.de>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Sat, 1 Jun 2019 09:36:13 -0300
+Message-ID: <CAOMZO5ADvVfWL0RCzkb9yK6OVHap8AdrB6GrWDn1Svj7yhK98w@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: imx53: Bind CPLD on M53Menlo
+To: Marek Vasut <marex@denx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_044059_305996_D36B1871 
-X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-CacheID: sfid-20190601_053621_763787_2218F90A 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -59,64 +93,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6615525343984428413=="
+Cc: Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marek,
 
---===============6615525343984428413==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="cQXOx3fnlpmgJsTP"
-Content-Disposition: inline
+On Fri, May 31, 2019 at 10:20 PM Marek Vasut <marex@denx.de> wrote:
 
+> +&ecspi2 {
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&pinctrl_ecspi2>;
+> +       fsl,spi-num-chipselects = <2>;
 
---cQXOx3fnlpmgJsTP
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+'fsl,spi-num-chipselects' is deprecated as per
+Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
 
-On Tue, May 21, 2019 at 10:21:29AM +0200, Wolfram Sang wrote:
-> Some I2C drivers entries in MAINTAINERS miss their DT bindings docs.
-> This series fixes that. Because these drivers are all embedded in their
-> platform entries, I suggest the respective maintainers pick them up via
-> their tree. If you prefer that I take them via I2C, let me know.
-
-Series applied to for-current!
-
-
---cQXOx3fnlpmgJsTP
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAlzyZEkACgkQFA3kzBSg
-KbZBKQ/+J6xdC3F2JIYkJ0e0Ru0FGHiSqVM11jQh/EUyMUWXXwTdyNBO3qyENIEO
-sVFLcJSINSMYWAEB2KR1qnhCYC8JVNSmhy5/hbc5Qhl5AOAQ6gv7m2zEnX0R3S0V
-dJc0+xXhOQZWQZdG033+MAKdlMcz+1EslOs4JnHCWBQcT9saB3jlk2zEY1VLnJEK
-xgM/TvQGA3WL1FNtHBn7hdb0ZmcxBlIeHvW7WefoVLCeK2r+05k/UzfW+pDMhZB5
-+K7uU4g9wyXA1U+KSHtnZyqUtv2XxnRHMNdwG7LMHq5oTLynqu168odEkTDMaaI6
-lXjqMIN9iZVD5OqNbugLbVHBSdxcmFqcmvUxXtQhL2/+tH0x9c2BFPqqlB0BhcVm
-uMwGwkE5AQbO/Foide6AOBtHAXrjCy2pZPbktW2BQIE2Cc7VkIWRo2URZsdrS+nL
-t8cgYYMDi3dIlfdU1n1KMyTuO6fspbTPHa8tP0dDlux0o6A38yRLbTWs1VFimhS/
-Y0+nkBY0oCbmoBXcEwGr1iSkby4MJRxzwj0m850k6rCtq8kMziBgJVetzHHPoRU3
-gjgCgr+LMqwItJ79LeWv9nevjJIwMLhxuq8ivzGMOT/udJTUSZ41laXY2kv9ZXsg
-O1jQhoR5bjZrCZ5GIeJ9MJfdSHIG3vUUf1Fl/A0QrzDJFgIgljY=
-=zv7P
------END PGP SIGNATURE-----
-
---cQXOx3fnlpmgJsTP--
-
-
---===============6615525343984428413==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Please remove it.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6615525343984428413==--
-
