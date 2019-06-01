@@ -2,99 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29B7931B9F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 13:49:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDE5B31B8A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 13:03:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D0ymBTF6LYG1qsHdaSH3TR55CmA+tbbcOaCWVb/GF4s=; b=rDuFWRXXSE/FvA
-	rKRivkMYmXy5SUHqb7uogfxCsXrxS/kG/uk+zcR4RfaNpGVS21Bgm9hZ4p/KNNstxNKdIJsiSwwML
-	2TSnd2jP2S/6YUubGkQqJF+Ofyr+EVMvrESYE14tcLNOeggHSF16JbZqBh3qgxdJOppzCx7Th4FaW
-	M1sc/V0n3Ua4b8hzoy/RGeMQ4GXb6qHpaHui4uNCJj+FpKs9Cu/XsmOFp+sXhFzxSy80wczfMEH5J
-	gJmlVynzof654m2eblQlSuaUTt74XycggtGuwn7DcT5279c2O2jVrsrbxK9wgHjlGSs+ZsX65WrBj
-	WWbHf84CpJQpgSuFjCcw==;
+	List-Owner; bh=RUsyUtjxn4XbRGWW3XDpQWTr5eunFFV51AKd4VUXeQM=; b=JjlbJ1nkKXqxub
+	MOZtu/B+pqk1FfCVJkkzOdHlWTr4bU9luA3791INKHYr33m5b7JYiZXrHwmTLZrP5n4OCa2m3npDn
+	AtdpU/nIPFtvRMMAo+PJn2nxRF0bMqVaGTfMjX3AmX4/VWKUDKMhJoPftCulpKVgpiQSIqY6g7NbU
+	UxEhQdk+BkfxlpuvDF7bFSwmKx+OONm911TkZXa8n25loGfXw8QMwka4WbZKx7/OeVCeYC0Rs4Dn2
+	uawzoJyPG/U4Z25xmBk1+HHGlmgnBth9n5Mptumx+9c5SeN1sE4jbQ3TbNHpqgODud4LZCjfTOpyF
+	FWrcTHLUlSKpQh/3bMqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hX2VN-00006B-Lg; Sat, 01 Jun 2019 11:48:57 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hX1mz-0003D6-VP; Sat, 01 Jun 2019 11:03:05 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX2VG-00005j-Qk
- for linux-arm-kernel@bombadil.infradead.org; Sat, 01 Jun 2019 11:48:50 +0000
+ id 1hX1mu-00036i-Tj
+ for linux-arm-kernel@bombadil.infradead.org; Sat, 01 Jun 2019 11:03:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:References:
+ d=infradead.org; s=casper.20170209; h=Content-Type:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=gxtJhkuG7IPxei2RhexfsQ5UaZGWrzpnLrzOoKIishA=; b=R0U2EfOYNWfIUGpAtmo8uE/zN
- 9uYJsj3NBS0NrP257Qxihaoh2+FIakmSsRLH2xLEG3IUnONEKErCaMP5RMABW9QYziVwS6GNOpNXN
- bXL6v6zgc4W29ajiugvDlIAVmy8HAe8CVzjCarOjvkdAuA4dIYS4aEpn6tpQyz/4qe0t3YjfHun8H
- n1Vd1PhjcUME5NQZ6Ik/WNYMG9fpZ6I01/NfNSVbdVqp+447YGUO2hE4Sk2n82Wdvp5Fwh4fN6in2
- nB4Jqw4A0eYVjg5ZFgtfxqgfOe4EHNl2Me+UiwkSJaxry5RhUJ5vqrHksDgNL3S6/2t/ltdCAVNmw
- /efO38xDQ==;
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX1Xa-0002if-Jy
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 10:47:12 +0000
+ bh=X5SQUumkW58Zgp2FI1ph9B4uenobpRYKTZ55G7V38jk=; b=ZaDRCem0lnYUW2UayBZ5WlMTu
+ 4+SKDkUmRk58sjxqlx4J2jRNxxyvmdk5iFZAFL76WlUTDrFqmn0aJfLTERRfEjsFhw2xwafMCbe71
+ KSDsQKXIfeG8wAq8nx4fuWEVK7yd8enHSzWnsHLfEhLlo6eTZVY0CjLiXXMNV/D/2csvLZUyv7vxG
+ 8LPT6YdUkSfLYdp9gi54nSwo8LzgjJ4XfUY+IApr6e5LnL25cqvcVxQFvk1PWBCtfOFg9e0MnCpIj
+ fW28liU83NC/hGxxJkLAO9gf6G56qo7Yi49z7T++pYMZS8A6REKrz2+BMx1MtM2LSUDmypU+8RzUx
+ HUGMI0SRw==;
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hX1XQ-00015O-5J
+ for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 10:47:01 +0000
 Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x51AkoIV092130;
- Sat, 1 Jun 2019 05:46:50 -0500
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x51AkvkA017551;
+ Sat, 1 Jun 2019 05:46:57 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559386010;
- bh=gxtJhkuG7IPxei2RhexfsQ5UaZGWrzpnLrzOoKIishA=;
+ s=ti-com-17Q1; t=1559386017;
+ bh=X5SQUumkW58Zgp2FI1ph9B4uenobpRYKTZ55G7V38jk=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=rCIor0ENVuebME4Cuw574W2WVShi0vh6xCwkiFnqs2rgvR+mQ2Fws9wiQemoflllC
- oP7IVLJb+2ACC1afH8USRT1GPlk0Nyxs51RfSPA1S+Gu2GszYByj8Xct7Him/ri9Dd
- 9afgLm4ZXX2sO8Xr0dQbqFXWHOXSUDv4ix/ZEAj8=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x51Akomw127884
+ b=s+zSHjQr8j7LzP7xkz9QMs65WHK8SIQ1VLS3n4K1+4Ww/WgVwdd7X+BRxzeAw8NjC
+ XgUsnQ8YRkdywMTMq2qJpTqxro1fspa4jOQ7hu7P2a8efbeXTY7GWfn7kKfeJiYeB3
+ a3/mdpcMljhrIHCL63rkhbB8yyk++ekW5cFYOIYA=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x51AkvYP127980
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Sat, 1 Jun 2019 05:46:50 -0500
-Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ Sat, 1 Jun 2019 05:46:57 -0500
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Sat, 1 Jun
- 2019 05:46:49 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 05:46:56 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Sat, 1 Jun 2019 05:46:49 -0500
+ Frontend Transport; Sat, 1 Jun 2019 05:46:56 -0500
 Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x51AkmSY113068;
- Sat, 1 Jun 2019 05:46:49 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x51Akt93052539;
+ Sat, 1 Jun 2019 05:46:56 -0500
 From: Grygorii Strashko <grygorii.strashko@ti.com>
 To: "David S. Miller" <davem@davemloft.net>, Santosh Shilimkar
  <ssantosh@kernel.org>, Richard Cochran <richardcochran@gmail.com>, Rob
  Herring <robh+dt@kernel.org>
-Subject: [PATCH net-next 09/10] ARM: dts: k2l-netcp: add cpts refclk_mux node
-Date: Sat, 1 Jun 2019 13:45:33 +0300
-Message-ID: <20190601104534.25790-10-grygorii.strashko@ti.com>
+Subject: [PATCH net-next 10/10] ARM: configs: keystone: enable cpts
+Date: Sat, 1 Jun 2019 13:45:34 +0300
+Message-ID: <20190601104534.25790-11-grygorii.strashko@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190601104534.25790-1-grygorii.strashko@ti.com>
 References: <20190601104534.25790-1-grygorii.strashko@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_064710_756054_F817F0D2 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20190601_114700_317413_19BF7E8A 
+X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-2.5 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-2.5 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -116,59 +117,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KeyStone 66AK2L 1G Ethernet Switch Subsystems, can control an external
-multiplexer that selects one of up to 32 clocks for time sync reference
-(RFTCLK) clock. This feature can be configured through CPTS_RFTCLK_SEL
-register (offset: x08) in CPTS module and modelled as multiplexer clock.
+Enable CPTS support which is present in Network Coprocessor Gigabit
+Ethernet (GbE) Switch Subsystem.
 
-Hence, add cpts-refclk-mux clock node which allows to mux one of SYSCLK2,
-SYSCLK3, TIMI0, TIMI1, TSREFCLK clocks as CPTS
-reference clock [1] and group all CPTS properties under "cpts" subnode.
-
-[1] http://www.ti.com/lit/gpn/66ak2l06
 Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
 ---
- arch/arm/boot/dts/keystone-k2l-netcp.dtsi | 20 ++++++++++++++++++--
- 1 file changed, 18 insertions(+), 2 deletions(-)
+ arch/arm/configs/keystone_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/keystone-k2l-netcp.dtsi b/arch/arm/boot/dts/keystone-k2l-netcp.dtsi
-index a2e47bad3307..c1f982604145 100644
---- a/arch/arm/boot/dts/keystone-k2l-netcp.dtsi
-+++ b/arch/arm/boot/dts/keystone-k2l-netcp.dtsi
-@@ -134,8 +134,8 @@ netcp: netcp@26000000 {
- 	/* NetCP address range */
- 	ranges = <0 0x26000000 0x1000000>;
- 
--	clocks = <&clkpa>, <&clkcpgmac>, <&chipclk12>;
--	clock-names = "pa_clk", "ethss_clk", "cpts";
-+	clocks = <&clkpa>, <&clkcpgmac>;
-+	clock-names = "pa_clk", "ethss_clk";
- 	dma-coherent;
- 
- 	ti,navigator-dmas = <&dma_gbe 0>,
-@@ -155,6 +155,22 @@ netcp: netcp@26000000 {
- 			tx-queue = <896>;
- 			tx-channel = "nettx";
- 
-+			cpts {
-+				clocks = <&cpts_refclk_mux>;
-+				clock-names = "cpts";
-+
-+				cpts_refclk_mux: cpts-refclk-mux {
-+					#clock-cells = <0>;
-+					clocks = <&chipclk12>, <&chipclk13>,
-+						 <&timi0>, <&timi1>,
-+						 <&tsrefclk>;
-+					ti,mux-tbl = <0x0>, <0x1>, <0x2>,
-+						<0x3>, <0x8>;
-+					assigned-clocks = <&cpts_refclk_mux>;
-+					assigned-clock-parents = <&chipclk12>;
-+				};
-+			};
-+
- 			interfaces {
- 				gbe0: interface-0 {
- 					slave-port = <0>;
+diff --git a/arch/arm/configs/keystone_defconfig b/arch/arm/configs/keystone_defconfig
+index 72fee57aad2f..0b2281407ecf 100644
+--- a/arch/arm/configs/keystone_defconfig
++++ b/arch/arm/configs/keystone_defconfig
+@@ -136,6 +136,7 @@ CONFIG_BLK_DEV_SD=y
+ CONFIG_NETDEVICES=y
+ CONFIG_TI_KEYSTONE_NETCP=y
+ CONFIG_TI_KEYSTONE_NETCP_ETHSS=y
++CONFIG_TI_CPTS=y
+ CONFIG_MARVELL_PHY=y
+ CONFIG_SERIAL_8250=y
+ CONFIG_SERIAL_8250_CONSOLE=y
 -- 
 2.17.1
 
