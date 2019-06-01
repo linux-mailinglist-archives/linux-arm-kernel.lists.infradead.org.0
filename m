@@ -2,75 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA29D318F3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 04:10:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C47131943
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 05:24:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0tQVLq54o+lvVUBVcppmbS0ODH/+gzKJuMBdxctLl0c=; b=sYWMFoRj/ANZ/Z
-	tpbG7eWPPEjurFjPkWkjyiomVPQPqeYDbppb1StEbm5yCFzW0NfVlFXsoeTICWYoeYcv3uYF/vBZ0
-	u1TBKftYI8D5F8sAaqI9WErX6YuVWWvIbLjyMUUSJwC6WmoBWEgns+QbLRoCzpykxtQzJJ1WR8Zv0
-	6WBcX+UwUE2xhilJBc0CCXL5ltZeaQtvxEG8hythhM6c/XZBZo29P2r2ixsAA7O1KeRZsGFV2n20/
-	zBOaNvPq0SQN61h6Ejn44zAXX1/uSJrJjSA+umLp4RNOfM8zzaDLC9W/7/CoH/b9v1AvcQSelV06I
-	vw15z+xvU6/Qjpb/WpFQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=TETI3xz9tqgvxw/5yEerG50JKr/uoeMqEZZblwjbAlw=; b=XpF
+	v1hoCdH2DIYUaecKDj7/1ovnP+URFB3PAij6nEVfiQSmrLXoB0JPFx8TPtZNhqONMhVnZCun5aRor
+	SY8bNWWNCieSa1UxMT2ryoWegk8lUH7pq42sispmFM+u7vNNIPG4VCVsNU+SbQy+b9muvzGVpjfxw
+	+w8RWlcxbO5tpmi56lya/XFR5mZsy16d9ijvrFQsx3LL+SKEEZEugMYoSCMp9gH9e6LAnHzP0b8QK
+	pBuAC/ap1yvsrzfoOj/N284ykbeCtpGNStBXmJ9F9QY95a3XlY/eHac+q+rzfdERAnD9JUXVn72Lo
+	as58s90IZ3jGtlmVWec1jhZ7mgYM2ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWtTL-00049h-M0; Sat, 01 Jun 2019 02:10:15 +0000
-Received: from conssluserg-05.nifty.com ([210.131.2.90])
+	id 1hWuck-0008JC-Vq; Sat, 01 Jun 2019 03:24:03 +0000
+Received: from conuserg-12.nifty.com ([210.131.2.79])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWtTD-0003Tu-Gz
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 02:10:09 +0000
-Received: from mail-ua1-f45.google.com (mail-ua1-f45.google.com
- [209.85.222.45]) (authenticated)
- by conssluserg-05.nifty.com with ESMTP id x5129pe4009935
- for <linux-arm-kernel@lists.infradead.org>; Sat, 1 Jun 2019 11:09:52 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-05.nifty.com x5129pe4009935
+ id 1hWucd-0008In-PZ
+ for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 03:23:57 +0000
+Received: from grover.flets-west.jp (softbank126125154139.bbtec.net
+ [126.125.154.139]) (authenticated)
+ by conuserg-12.nifty.com with ESMTP id x513MrHC023003;
+ Sat, 1 Jun 2019 12:22:53 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com x513MrHC023003
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1559354992;
- bh=m5mAnMPwjDlz809r+I3TRHdaHgJqPbJUfMA2Ks6nXoQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=OXeFWh5kuMc7PTux0tSwL10409K9U7aOGxjnZO1hWJNDnwx1LePGzmlGuDCbgxoMD
- QpZwvldZiivIxLEHn7dLcZYzH3PIGLliMHztJ5fJZbpo4DVCq0MTyqjeaauCxwewT7
- q7zQF9p9V58dK1SRNhWQNNF6pN+kRbEhj3B1yPyKWCsNvyOGE6t20dbEH5HNUqY50M
- tC+3iaysZEfZ4Oar2sIKZ8pCVUx0bcRkn9r54NiEYO3758lkucCz5NfVrNqe9pMb3C
- eQgktkwUR4/y41lamVDG6kf+D5Evp8dx0l8VtjFQNZzqA7WIvhKY/t8nHkzpMLxlDB
- TlP9QFI1AE87Q==
-X-Nifty-SrcIP: [209.85.222.45]
-Received: by mail-ua1-f45.google.com with SMTP id n7so4535916uap.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 May 2019 19:09:52 -0700 (PDT)
-X-Gm-Message-State: APjAAAWLXbWYuDq4gZ+waehQAu4vjDAhD3lHpPA0v0IMhR0rE7wpxIj+
- EnLTNaSORfKp1zUoSXx57iiTsZw+XF+DbOEJdis=
-X-Google-Smtp-Source: APXvYqwB4BA9jCIMiyU3B9xWJ0d64yGLFmvT3Mp/7QBMvJ549t1LuK/enpEv26YsyVU68yhuPMAWs/m0Dcps68fsJt0=
-X-Received: by 2002:ab0:234d:: with SMTP id h13mr6905688uao.95.1559354991160; 
- Fri, 31 May 2019 19:09:51 -0700 (PDT)
-MIME-Version: 1.0
-References: <1559316388-19565-1-git-send-email-george_davis@mentor.com>
- <CAK7LNATXzLzttF_gLA4wdfE1ue+bLPhvDZVsTKbB5K3nrN3jng@mail.gmail.com>
- <20190531163908.GB10644@mam-gdavis-lt>
- <CAK7LNASq8eW0D8fpbxFGhAgR5D158emTR2quCD5ufyC+kK-2GQ@mail.gmail.com>
- <20190531174506.GC10644@mam-gdavis-lt>
-In-Reply-To: <20190531174506.GC10644@mam-gdavis-lt>
+ s=dec2015msa; t=1559359374;
+ bh=r3qAVs3xM8MaSXiqlFioeBt+ecKWRRFeKPnE+XTAM3A=;
+ h=From:To:Cc:Subject:Date:From;
+ b=xw0YwrrAPeAY0OlcTa3SqAJKQnezXQoI2+/7rrH2CfETfalYjs1oPY4aVPA7tr9gd
+ PRENg4z1TGu6XcME/fQNuRRNr/MWUyJDUA9g6NOMDBnSEuZOGzvFEhQ27AUfnIO3sa
+ i1YAFJSzyn2RPF7OIZdKRk5sifWn4Jnc1sOFY9daWmqQyNbN9Bv7WwR1Z0r2TcU1q8
+ wYJjAACezYFAKTQmvSn0Nxg8GYX4RN/YnoLhUfVK+VO0x+7E0OfO0bRe/S3bJLJByI
+ R2uRHaeHgFubi/04LIXnk9kFNomJCl9TkcTXqn7fOzIIxpVKdpGhv5s4zM4BOfsM7g
+ mqkobRgO/jTHA==
+X-Nifty-SrcIP: [126.125.154.139]
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Sat, 1 Jun 2019 11:09:15 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASazA2496=GkJdJFVw3S7mQ8LaVqHc6dX=FU0DGYtRTBg@mail.gmail.com>
-Message-ID: <CAK7LNASazA2496=GkJdJFVw3S7mQ8LaVqHc6dX=FU0DGYtRTBg@mail.gmail.com>
-Subject: Re: [RFC][PATCH] Makefile: Fix checkstack.pl arm64 wrong or unknown
- architecture
-To: "George G. Davis" <george_davis@mentor.com>
+To: Andrew Morton <akpm@linux-foundation.org>
+Subject: [PATCH] treewide: fix typos of SPDX-License-Identifier
+Date: Sat,  1 Jun 2019 12:22:42 +0900
+Message-Id: <20190601032242.10405-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_191007_962530_AE38EC42 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20190531_202356_151536_E90BE4D4 
+X-CRM114-Status: GOOD (  11.62  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.90 listed in list.dnswl.org]
+ no trust [210.131.2.79 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,43 +71,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Marek <michal.lkml@markovi.net>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- open list <linux-kernel@vger.kernel.org>, Joe Perches <joe@perches.com>,
- Andy Whitcroft <apw@canonical.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: alsa-devel@alsa-project.org, Kees Cook <keescook@chromium.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, linux-gpio@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, Liam Girdwood <lgirdwood@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Takashi Iwai <tiwai@suse.com>,
+ linux-kernel@vger.kernel.org, Jaroslav Kysela <perex@perex.cz>,
+ linux-renesas-soc@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Joe Perches <joe@perches.com>, linux-spdx@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Kishon Vijay Abraham I <kishon@ti.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 1, 2019 at 2:45 AM George G. Davis <george_davis@mentor.com> wrote:
-> > Following this pattern, does this work for you?
-> >
-> > diff --git a/scripts/checkstack.pl b/scripts/checkstack.pl
-> > index 122aef5e4e14..371bd17a4983 100755
-> > --- a/scripts/checkstack.pl
-> > +++ b/scripts/checkstack.pl
-> > @@ -46,7 +46,7 @@ my (@stack, $re, $dre, $x, $xs, $funcre);
-> >         $x      = "[0-9a-f]";   # hex character
-> >         $xs     = "[0-9a-f ]";  # hex character or space
-> >         $funcre = qr/^$x* <(.*)>:$/;
-> > -       if ($arch eq 'aarch64') {
-> > +       if ($arch =~ '^(aarch|arm)64$') {
->
-> Yes, that works, thanks!
->
-> Will you submit a fix or would you like me to resubmit with the above suggested
-> fix?
+Prior to the adoption of SPDX, it was difficult for tools to determine
+the correct license due to incomplete or badly formatted license text.
+The SPDX solves this issue, assuming people can correctly spell
+"SPDX-License-Identifier" although this assumption is broken in some
+places.
 
-Please send v2.
+Since scripts/spdxcheck.py parses only lines that exactly matches to
+the correct tag, it cannot (should not) detect this kind of error.
 
-Thanks.
+If the correct tag is missing, scripts/checkpatch.pl warns like this:
 
+ WARNING: Missing or malformed SPDX-License-Identifier tag in line *
+
+So, people should notice it before the patch submission, but in reality
+broken tags sometimes slip in. The checkpatch warning is not useful for
+checking the committed files globally since large number of files still
+have no SPDX tag.
+
+Also, I am not sure about the legal effect when the SPDX tag is broken.
+
+Anyway, these typos are absolutely worth fixing. It is pretty easy to
+find suspicious lines by grep.
+
+  $ git grep --not -e SPDX-License-Identifier --and -e SPDX- -- \
+    :^LICENSES :^scripts/spdxcheck.py :^*/license-rules.rst
+  arch/arm/kernel/bugs.c:// SPDX-Identifier: GPL-2.0
+  drivers/phy/st/phy-stm32-usbphyc.c:// SPDX-Licence-Identifier: GPL-2.0
+  drivers/pinctrl/sh-pfc/pfc-r8a77980.c:// SPDX-Lincense-Identifier: GPL 2.0
+  lib/test_stackinit.c:// SPDX-Licenses: GPLv2
+  sound/soc/codecs/max9759.c:// SPDX-Licence-Identifier: GPL-2.0
+
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
+
+ arch/arm/kernel/bugs.c                | 2 +-
+ drivers/phy/st/phy-stm32-usbphyc.c    | 2 +-
+ drivers/pinctrl/sh-pfc/pfc-r8a77980.c | 2 +-
+ lib/test_stackinit.c                  | 2 +-
+ sound/soc/codecs/max9759.c            | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm/kernel/bugs.c b/arch/arm/kernel/bugs.c
+index d41d3598e5e5..14c8dbbb7d2d 100644
+--- a/arch/arm/kernel/bugs.c
++++ b/arch/arm/kernel/bugs.c
+@@ -1,4 +1,4 @@
+-// SPDX-Identifier: GPL-2.0
++// SPDX-License-Identifier: GPL-2.0
+ #include <linux/init.h>
+ #include <asm/bugs.h>
+ #include <asm/proc-fns.h>
+diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
+index 1255cd1d9a60..56bdea4b0bd9 100644
+--- a/drivers/phy/st/phy-stm32-usbphyc.c
++++ b/drivers/phy/st/phy-stm32-usbphyc.c
+@@ -1,4 +1,4 @@
+-// SPDX-Licence-Identifier: GPL-2.0
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * STMicroelectronics STM32 USB PHY Controller driver
+  *
+diff --git a/drivers/pinctrl/sh-pfc/pfc-r8a77980.c b/drivers/pinctrl/sh-pfc/pfc-r8a77980.c
+index 473da65890a7..9ed4ead2dafb 100644
+--- a/drivers/pinctrl/sh-pfc/pfc-r8a77980.c
++++ b/drivers/pinctrl/sh-pfc/pfc-r8a77980.c
+@@ -1,4 +1,4 @@
+-// SPDX-Lincense-Identifier: GPL 2.0
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * R8A77980 processor support - PFC hardware block.
+  *
+diff --git a/lib/test_stackinit.c b/lib/test_stackinit.c
+index 13115b6f2b88..e97dc54b4fdf 100644
+--- a/lib/test_stackinit.c
++++ b/lib/test_stackinit.c
+@@ -1,4 +1,4 @@
+-// SPDX-Licenses: GPLv2
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * Test cases for compiler-based stack variable zeroing via future
+  * compiler flags or CONFIG_GCC_PLUGIN_STRUCTLEAK*.
+diff --git a/sound/soc/codecs/max9759.c b/sound/soc/codecs/max9759.c
+index ecfb4a80424b..00e9d4fd1651 100644
+--- a/sound/soc/codecs/max9759.c
++++ b/sound/soc/codecs/max9759.c
+@@ -1,4 +1,4 @@
+-// SPDX-Licence-Identifier: GPL-2.0
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  * MAX9759 Amplifier Driver
+  *
 -- 
-Best Regards
-Masahiro Yamada
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
