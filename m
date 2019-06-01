@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7575431D17
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 15:27:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC1BA31D1C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 15:27:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M0yyqj/oZjVZPMGWS/+EuUeB2ptkCFDbnVjgUem5lPQ=; b=iwgEJIowZsJS3S
-	vEoS4vJ/wuolZw8ODvZ7TeJ5JjSMedyEqwhrpECDuF3rtTEJC0OTAc3i5DSj/CEp4xH6+Is5CsKvo
-	rq2sMYjxZQENVr2hMpyDVQ8j1mLcTRToA6X2PjYSi68s3Mza643j9eh2oR7qQCQLx7ipDf2yUOJUt
-	hYqqc1Nsmnx7H7akL3kqbbVrJH9DOLxJ52R1B8bm6os8JluPS7zwyqOxZYeeMlcAW7ru93SkEwbZp
-	PWGp0ikwgsy23xuUQk7ZC5gWJ7z3coDNLucd2LbOiCUZm567uSqY6A9TGczCZ5KtjKBFJLOLW8GyA
-	Sh8VxeMQSTEVUdsZMySw==;
+	List-Owner; bh=JFNgS5KaommeAKXRhkh5f4p1TD1uSvMuBEcux2F6AbU=; b=MSYWkcj4Llk9Bp
+	IFRfcCzrpGcW0GHAbJ+6YCy+4EhSSXq4WB75VePCOC3flbzmMJS5X6uZe8X1m+utbAWwEV4aLNR7z
+	2SedQRp2FMxfFZj7A3tC4SgRQivh/kbSdZGFYp2hCGkMcHh+l8o3v+abubYbVziczhfE4rF7nCrwo
+	T7pK6yAqxKcH/dzHd5JVDS1GQtZtfihDc82BGrp5vHysTsK+chLxzgrVKr06Av+99miEBiVR0hKzu
+	C6kU5OyISER7B2orqwIXLmyhFcbj1vr6SlhxtON3yZil6kKBy5mYjVzHAFGfoTV8uuYDpdSzt0xNk
+	JTHLprSb64FeG56lMlfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hX42O-0005mM-5J; Sat, 01 Jun 2019 13:27:08 +0000
+	id 1hX42X-0005sS-Oc; Sat, 01 Jun 2019 13:27:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX42I-0005l1-28
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 13:27:03 +0000
+ id 1hX42J-0005lu-ED
+ for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 13:27:04 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9DE04273B2;
- Sat,  1 Jun 2019 13:27:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1C922273D1;
+ Sat,  1 Jun 2019 13:27:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559395621;
- bh=gQlPNPhZcXT6VIEEzKrUXnPC76Ad8zmFYPWyY//o/gw=;
+ s=default; t=1559395623;
+ bh=IRnwZ3COW2+KZixsKFABgqyXSPpJBQl7zAVbj6qVFAg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=MkfBOSNxrY25g+WOeA2nGLz+NkTwPKH52ahPGb2GRBIOw9+sJHNEMfCj2c97vTgza
- 7xmQxk6+EKIPFOpZUWZ5KONkm0s2NmjkRLcye6WgWC0eyccH07mJ/xBI19q9axKq/o
- D7czrADW542jHNXxJEruKb2bHVaH+56rTlLEsfm4=
+ b=YfWKVV8G/GVQumJyOVHOWJa60fPZpkAc+OJuDUkjt76vy6gMnz9wfjorPxAFpBTH/
+ S91QmXMKyTJSbWcNwVQZ4r69eqwno6wWnVCDRU+DFquuB6vMgIGAhHdJV5rh/Ae1cP
+ c3mXkd6KDkFDXCK6YT6YOjb0fogxWbEIbVxusNhs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 35/56] ARM: dts: imx6sx: Specify IMX6SX_CLK_IPG as
- "ahb" clock to SDMA
-Date: Sat,  1 Jun 2019 09:25:39 -0400
-Message-Id: <20190601132600.27427-35-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 36/56] ARM: dts: imx6sx: Specify IMX6SX_CLK_IPG as
+ "ipg" clock to SDMA
+Date: Sat,  1 Jun 2019 09:25:40 -0400
+Message-Id: <20190601132600.27427-36-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190601132600.27427-1-sashal@kernel.org>
 References: <20190601132600.27427-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_062702_116919_5A55C6EF 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20190601_062703_546093_3BE4861C 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,14 +92,14 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 
-[ Upstream commit cc839d0f8c284fcb7591780b568f13415bbb737c ]
+[ Upstream commit 8979117765c19edc3b01cc0ef853537bf93eea4b ]
 
 Since 25aaa75df1e6 SDMA driver uses clock rates of "ipg" and "ahb"
 clock to determine if it needs to configure the IP block as operating
 at 1:1 or 1:2 clock ratio (ACR bit in SDMAARM_CONFIG). Specifying both
-clocks as IMX6SL_CLK_SDMA results in driver incorrectly thinking that
+clocks as IMX6SX_CLK_SDMA results in driver incorrectly thinking that
 ratio is 1:1 which results in broken SDMA funtionality. Fix the code
-to specify IMX6SL_CLK_AHB as "ahb" clock for SDMA, to avoid detecting
+to specify IMX6SX_CLK_IPG as "ipg" clock for SDMA, to avoid detecting
 incorrect clock ratio.
 
 Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
@@ -113,22 +113,22 @@ Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx6sl.dtsi | 2 +-
+ arch/arm/boot/dts/imx6sx.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-index d8ba99f1d87ba..ac820dfef9774 100644
---- a/arch/arm/boot/dts/imx6sl.dtsi
-+++ b/arch/arm/boot/dts/imx6sl.dtsi
-@@ -657,7 +657,7 @@
+diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
+index 6963dff815dc8..5783eb8541ed9 100644
+--- a/arch/arm/boot/dts/imx6sx.dtsi
++++ b/arch/arm/boot/dts/imx6sx.dtsi
+@@ -732,7 +732,7 @@
+ 				compatible = "fsl,imx6sx-sdma", "fsl,imx6q-sdma";
  				reg = <0x020ec000 0x4000>;
- 				interrupts = <0 2 IRQ_TYPE_LEVEL_HIGH>;
- 				clocks = <&clks IMX6SL_CLK_SDMA>,
--					 <&clks IMX6SL_CLK_SDMA>;
-+					 <&clks IMX6SL_CLK_AHB>;
+ 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
+-				clocks = <&clks IMX6SX_CLK_SDMA>,
++				clocks = <&clks IMX6SX_CLK_IPG>,
+ 					 <&clks IMX6SX_CLK_SDMA>;
  				clock-names = "ipg", "ahb";
  				#dma-cells = <3>;
- 				/* imx6sl reuses imx6q sdma firmware */
 -- 
 2.20.1
 
