@@ -2,91 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B249431B0C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 11:51:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67BD431B1A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 11:53:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bjzkajFt5Z3G8C2T7gDiO4FtsiG6A4iRSoj4Uegy1To=; b=IefVy31VdMugyr
-	yRInzae7nG/0aBJBNbt2/VqSIdlwC/LM3jIBbmSBxkrC8pZ9SKNjY/4yDXZ9HlWfPgPPHXojv2s5M
-	nfAjsGyHSjx+4BFHrZLsn6/HZn16+Rd3tYfjzlpwKPhqBDfe6djq/V5YyuTpEklEZTkwUYAGpRadG
-	mMzQu5MjKlVfOz12pCLiY9lHtAljvR/c12z49ex3VtePhLvqdIAKuCJ1E0zY9z3bbiXYNTP/WhsOo
-	cfpClxigHBZHwjkTEY8/6uRwjoss22It3+xWVU8ilLZ+2LF2xbI+ITDH39NOJ7guGK3w5nZbCx1ti
-	0NbLb5BM1kF+W1HYEKXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sVZxc5ukkOMHdLeytqtMh8Yn+0LV6ED+emxy0CEB9gM=; b=kq/IxdwHZhlCPN
+	afGIQguk8KYdzXuZV/Kn5MwE3cMjW3S3XA7f4kWE4fOEaVU9ImLSIJTYTbn723CNQh41t11ILvx+b
+	5Ph1nSpg5uf6huHn1vm5BEGro7qbVwl1GLHizgg/z/qZcA1dVwdKNQR+e1h7ESzY6X+9JU3mYA2Du
+	EP4sSCo/npmChUz4/nvHGYaUdJL59cQPQWGwJ7W2Oi9bn6JUUwU19QP76rDypepxmO9mIbjon8Tgm
+	hyVXXAUqHcwiIsNxec32QPGXH1nILau5CIzdh/70JLjk4Oan4oix0qjrT4wUDlgggOaesi6MgfhS2
+	CLfm/1Jvm2cV3HLm8hgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hX0fd-0003wv-Ra; Sat, 01 Jun 2019 09:51:25 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hX0h5-0004ND-NJ; Sat, 01 Jun 2019 09:52:55 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX0fX-0003wF-CX
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 09:51:21 +0000
-Received: by mail-pf1-x444.google.com with SMTP id j2so7698828pfe.6
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 01 Jun 2019 02:51:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=RNxGbxuQjJnKHmflH8io0Yh7K3STajOAFY5UlUeImlE=;
- b=ftzq3jR2++4o8NJW8hDTNe4IEPPtpBxc6+CvixxSQYqrrMYyMK0FzKvHhVlVMpyjLp
- tsuJMJbjfLULDaK8sjJNLkWrG9vMaaoGRnWlq0I6CSgjjB8uz8CX938f5shEc+LbxgsV
- aI3kxJoTtsRnwz5Q1H9OZv8R6MOdfFvNsQ5gewgkPYS1+z7b/vNHrpeLVukE/dRo6gMn
- 54ps7O57q9L+8NcpZxWwMTIDedNIrIEmZ2qwSNkT8qyXqDxN3Z3dHi46EyyQC570ti1y
- SOt7Ls7zsxDaxnTuxtrW4XT7TWqp284BP8+qP/5qZDEAqOV3Wav7gzaRZSro76A9VIWZ
- V5rg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RNxGbxuQjJnKHmflH8io0Yh7K3STajOAFY5UlUeImlE=;
- b=eb025OH14KFExFdbF5PxItLW/e0k6Jp3WSFcCnhiW7pbCMXMQi0tkfv6fnPNeZTSiY
- 6T+E3jTCwL7bhVxLsC126yyf3N+15nzL5ARTCznQxV1L104IWYwI0UDLlzt+6zzep57x
- v3h/V/APLkZdDFmEE5LqNfpleHabNC9mJky/NDC6A6tNdwtBxPMiGyHMnQwMNKmejujF
- cZqIRevMRtWCidljTWAPj2I0PpcDP0cSZvnoT4gAeb9fNRZproU0AZNXogdVqJ8iNIbW
- D/OnpicvxR5G7ydo7/sJ6QrtzAH9yP1KXgD+EPDBqzxpHvjCQ7gtvLrJ/UKiYFcq41Oe
- VZsg==
-X-Gm-Message-State: APjAAAXnD8V9arC2i6JpuNdckA5J8FrnXEkedlxgyweFpWCdz1tQAX9p
- yne4B4bpwEVe66Fxp5/+XS1b
-X-Google-Smtp-Source: APXvYqx465ZqZSGI5f9aNCQ1QW6+B2C0NyP5YwUfaCtwz4wNoXssIWR/WyKtFDiUgKvIIdWIaw3JMw==
-X-Received: by 2002:a62:1993:: with SMTP id 141mr15320990pfz.97.1559382677973; 
- Sat, 01 Jun 2019 02:51:17 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([2405:204:73c0:f79b:51a5:964b:dc02:28ec])
- by smtp.gmail.com with ESMTPSA id u14sm9611863pfc.31.2019.06.01.02.51.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 01 Jun 2019 02:51:16 -0700 (PDT)
-Date: Sat, 1 Jun 2019 15:21:06 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Anand Moon <linux.amoon@gmail.com>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: Add missing configuration pwr
- amd rst for PCIe
-Message-ID: <20190601095106.GA2213@Mani-XPS-13-9360>
-References: <20190531201913.1122-1-linux.amoon@gmail.com>
+ id 1hX0gw-0004LF-DD; Sat, 01 Jun 2019 09:52:47 +0000
+X-UUID: 5df6c765ce3449e2932c47c0c2b78da2-20190601
+X-UUID: 5df6c765ce3449e2932c47c0c2b78da2-20190601
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <jitao.shi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 738242445; Sat, 01 Jun 2019 01:52:42 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 1 Jun 2019 02:52:41 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33DR.mediatek.inc
+ (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Sat, 1 Jun 2019 17:52:39 +0800
+Received: from mszsdaap41.mediatek.inc (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Sat, 1 Jun 2019 17:52:37 +0800
+From: Jitao Shi <jitao.shi@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Pawel Moll <pawel.moll@arm.com>, "Mark
+ Rutland" <mark.rutland@arm.com>, Ian Campbell
+ <ijc+devicetree@hellion.org.uk>, <linux-pwm@vger.kernel.org>, David Airlie
+ <airlied@linux.ie>, "Matthias Brugger" <matthias.bgg@gmail.com>
+Subject: [v4 0/3] Support mipitx for mt8183
+Date: Sat, 1 Jun 2019 17:52:32 +0800
+Message-ID: <20190601095235.9194-1-jitao.shi@mediatek.com>
+X-Mailer: git-send-email 2.12.5
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190531201913.1122-1-linux.amoon@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_025119_434886_BCDB64C1 
-X-CRM114-Status: GOOD (  19.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190601_025246_448152_43C16D58 
+X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,129 +72,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org
+Cc: stonea168@163.com, dri-devel@lists.freedesktop.org,
+ Andy Yan <andy.yan@rock-chips.com>, Ajay Kumar <ajaykumar.rs@samsung.com>,
+ Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
+ bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ Thierry Reding <treding@nvidia.com>, devicetree@vger.kernel.org,
+ Jitao Shi <jitao.shi@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Inki Dae <inki.dae@samsung.com>, linux-mediatek@lists.infradead.org,
+ yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
+ srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Sean Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Changes since v3:
+ - turn off PLL before setting PLL parameters.
 
-On Fri, May 31, 2019 at 08:19:13PM +0000, Anand Moon wrote:
-> This patch add missing PCIe gpio pin (#PCIE_PWR) for vcc3v3_pcie power
-> regulator node also add missing reset pinctrl (#PCIE_PERST_L) for PCIe node.
-> 
-> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
-> ---
-> using schematics: thanks for suggested by Manivannan
-> [1] https://dl.vamrs.com/products/rock960/docs/hw/rock960_sch_v12_20180314.pdf
-> 
-> Changes from prevoius patch:
-> [2] https://patchwork.kernel.org/patch/10968695/
-> 
-> Fix the suject and commit message and corrected the PWR and PERST configuration
-> as per shematics and dts nodes.
-> ---
->  arch/arm64/boot/dts/rockchip/rk3399-ficus.dts    | 7 +++++++
->  arch/arm64/boot/dts/rockchip/rk3399-rock960.dts  | 7 +++++++
->  arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi | 3 +--
->  3 files changed, 15 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-> index 6b059bd7a04f..94e2a59bc1c7 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-> @@ -89,6 +89,8 @@
->  
->  &pcie0 {
->  	ep-gpios = <&gpio4 RK_PD4 GPIO_ACTIVE_HIGH>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
+Changes since v2:
+ - update Acked-by: Rob Herring <robh@kernel.org>
+ - update mt8183 max bit rate support
 
-Looks like ep-gpio is wrong here :/ I probably referred old schematics
-at that time. Correct pin mapping is,
+Changes since v1:
+ - update dt-bindings document for mt8183 mipitx.
+ - remove mtk_mipitx_clk_get_ops and assign clk_ops in probe.
+ - fix the lincence
+ - remove txdiv1 from mtk_mipi_tx_pll_prepare
 
-ep-gpios = <&gpio2 RK_PD4 GPIO_ACTIVE_HIGH>;
+Jitao Shi (3):
+  dt-bindings: display: mediatek: update dsi supported chips
+  drm/mediatek: separate mipi_tx to different file
+  drm/mediatek: add mipi_tx driver for mt8183
 
-And this should be fixed in a separate patch with "Fixes" tag!
+ .../bindings/display/mediatek/mediatek,dsi.txt     |   2 +-
+ drivers/gpu/drm/mediatek/Makefile                  |   2 +
+ drivers/gpu/drm/mediatek/mtk_mipi_tx.c             | 345 ++-------------------
+ drivers/gpu/drm/mediatek/mtk_mipi_tx.h             |  50 +++
+ drivers/gpu/drm/mediatek/mtk_mt8173_mipi_tx.c      | 289 +++++++++++++++++
+ drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c      | 162 ++++++++++
+ 6 files changed, 530 insertions(+), 320 deletions(-)
+ create mode 100644 drivers/gpu/drm/mediatek/mtk_mipi_tx.h
+ create mode 100644 drivers/gpu/drm/mediatek/mtk_mt8173_mipi_tx.c
+ create mode 100644 drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
 
->  };
->  
->  &pinctrl {
-> @@ -104,6 +106,11 @@
->  			rockchip,pins =
->  				<1 RK_PD0 RK_FUNC_GPIO &pcfg_pull_none>;
->  			};
-> +
-> +		pcie_perst_l: pcie-perst-l {
-> +			rockchip,pins =
-> +				<4 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
-> +		};
->  	};
->  
->  	usb2 {
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-> index 12285c51cceb..665fe09c7c74 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-> @@ -64,6 +64,8 @@
->  
->  &pcie0 {
->  	ep-gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
->  };
->  
->  &pinctrl {
-> @@ -104,6 +106,11 @@
->  			rockchip,pins =
->  				<2 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
->  			};
-> +
-> +		pcie_perst_l: pcie-perst-l {
-> +			rockchip,pins =
-> +				<2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-> +		};
->  	};
->  
->  	usb2 {
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> index c7d48d41e184..3df0cd67b4b2 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> @@ -55,6 +55,7 @@
->  
->  	vcc3v3_pcie: vcc3v3-pcie-regulator {
->  		compatible = "regulator-fixed";
-> +		gpio = <&gpio2 RK_PA5 GPIO_ACTIVE_HIGH>;
+-- 
+2.12.5
 
-Actually the PWR pin mapping is defined in a separate node for both Rock960
-and Ficus in respective dts. So defining it here would be wrong as the PWR
-pin mapping is different for both boards.
-
-Thanks,
-Mani
-
->  		enable-active-high;
->  		pinctrl-names = "default";
->  		pinctrl-0 = <&pcie_drv>;
-> @@ -382,8 +383,6 @@
->  
->  &pcie0 {
->  	num-lanes = <4>;
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pcie_clkreqn_cpm>;
->  	vpcie3v3-supply = <&vcc3v3_pcie>;
->  	status = "okay";
->  };
-> -- 
-> 2.21.0
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
