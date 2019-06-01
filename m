@@ -2,64 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CDDA318E0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 03:21:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5C43318F0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Jun 2019 04:08:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VeiufO+mVVeNq8FDMydklDp5LLfAKCwkZ5iklX2du5w=; b=JSD0rG3WLqiyk1
-	HFqRlQSquOX+FliqZZb41/SHHGyNbTmOAon7FClY5+n0vW3t5V/B3CgZmEd0GNq9Lkt8AfMH6DjO0
-	+1o1jKGvu7dthmlmWxCzn3fQ2ssKYvK1lEH95HkLtkWvRFigzn+qAfgn6uBrFvnawKyt1Mv1P5Gc+
-	/QMehajjNR3AUzRPx5/vDuxeBNxiitS1M5KISEBOFHO5mNQ0ZBM8ZtNe1bg88kVSkrJXg9aciUf+b
-	TjQIJxOLO6T3JIEdI4IoOVlrzA52p9Xvnkt8cwSH4I2yoAUqn7CXIUZ77gM9fUCclXt37WYzs/FdV
-	MCGRgwJxtWHIUTdOb+uA==;
+	List-Owner; bh=L3Hej+y02MF++io3sCXVA1wIbnlWt5f/MO2156FJckE=; b=lqbLGWr3/i1iba
+	rjlVeq1dwtDI86gTLsf55yXMzOQ4h3knN8mCbGI3RG7BV3WpJTKpDPacX0Ppj8Y8lLhpqv4T5XVPY
+	/cw3qXj/sL8BtapkTPBejs5lHh4ebydjiJtxQhqQQdiBuIDCmhAg0PuXPaOK2u27vgwpuYl3cxHTo
+	+IE6qW0qANdp7E7ik6Tgc1v1PPyyltFS89nH8S1al2XTvYJg3BItd2wlg2P+G+a7t0M7l8M7hAYJs
+	k0u9xThS4y7M19DyAyCdnKJZ9+GAVKI/OL8SFHlyxzC9VSL4MDt1H34tLWnRZjvrf1yA4B1/h6Syf
+	zxnpTozCIdH3tLUw7A2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWshZ-000653-St; Sat, 01 Jun 2019 01:20:53 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1hWtRc-0002dS-AL; Sat, 01 Jun 2019 02:08:28 +0000
+Received: from out30-38.freemail.mail.aliyun.com ([115.124.30.38])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWshS-00064g-Ow
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 01:20:49 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 45G3RF1yrtz1rWxp;
- Sat,  1 Jun 2019 03:20:41 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 45G3RF1X6Vz1rh5c;
- Sat,  1 Jun 2019 03:20:41 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id 7kOC-4vrYDq0; Sat,  1 Jun 2019 03:20:40 +0200 (CEST)
-X-Auth-Info: xUhi1iEOgpOXEZnWCmlnY9TYZi1EEpubO9JU2Q/e9kw=
-Received: from kurokawa.lan (ip-86-49-110-70.net.upcbroadband.cz
- [86.49.110.70])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Sat,  1 Jun 2019 03:20:40 +0200 (CEST)
-From: Marek Vasut <marex@denx.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] ARM: dts: imx53: Bind CPLD on M53Menlo
-Date: Sat,  1 Jun 2019 03:19:51 +0200
-Message-Id: <20190601011951.603-1-marex@denx.de>
+ id 1hWtRV-0002cr-71
+ for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 02:08:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aliyun.com; s=s1024;
+ t=1559354896; h=From:To:Subject:Date:Message-Id:MIME-Version;
+ bh=S95rpAoAZoZQAtMaIsGsRXvLlYrSFJkcbZX9qF9dCdY=;
+ b=Qxtvr1kmMQ/dcQsu3FvjmyBV3FNcmT5B7nQJoY/+dr+ZNT6JJ2X3rfg47pl1pYCMSVf5NGUBD+XDCi2ia3tYgToPND58qLX/Md2aSXemhIiKn1aoKntwmi0z8nB69naEWKUKAmkhzExvnTus1BkUwOmGnmE+T/SVN1XfLVxbhBs=
+X-Alimail-AntiSpam: AC=CONTINUE; BC=0.1382167|-1; CH=green; DM=||false|;
+ FP=0|0|0|0|0|-1|-1|-1; HT=e01e04395; MF=fishland@aliyun.com; NM=1; PH=DS; RN=5;
+ RT=5; SR=0; TI=SMTPD_---0TT7FIKX_1559354890; 
+Received: from 192.168.42.134(mailfrom:fishland@aliyun.com
+ fp:SMTPD_---0TT7FIKX_1559354890) by smtp.aliyun-inc.com(127.0.0.1);
+ Sat, 01 Jun 2019 10:08:15 +0800
+From: Liu Song <fishland@aliyun.com>
+To: catalin.marinas@arm.com,
+	will.deacon@arm.com
+Subject: [PATCH] arm64: kernel: use aff3 instead of aff2 in comment
+Date: Sat,  1 Jun 2019 10:08:08 +0800
+Message-Id: <20190601020808.3091-1-fishland@aliyun.com>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_182046_964298_BBE6A8FA 
-X-CRM114-Status: GOOD (  10.40  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190531_190821_426037_0915A973 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [115.124.30.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (fishland[at]aliyun.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,73 +76,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Fabio Estevam <festevam@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ liu.song11@zte.com.cn
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable ECSPI2 and bind CPLD to both chip selects.
+From: Liu Song <liu.song11@zte.com.cn>
 
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-To: linux-arm-kernel@lists.infradead.org
+Should use aff3 instead of aff2 in comment.
+
+Signed-off-by: Liu Song <liu.song11@zte.com.cn>
 ---
- arch/arm/boot/dts/imx53-m53menlo.dts | 31 ++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ arch/arm64/kernel/sleep.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
-index 55c122a64ef0..57ebefda9d53 100644
---- a/arch/arm/boot/dts/imx53-m53menlo.dts
-+++ b/arch/arm/boot/dts/imx53-m53menlo.dts
-@@ -100,6 +100,26 @@
- 	assigned-clock-rates = <133333334>, <33333334>, <33333334>;
- };
- 
-+&ecspi2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi2>;
-+	fsl,spi-num-chipselects = <2>;
-+	cs-gpios = <&gpio2 26 GPIO_ACTIVE_HIGH>, <&gpio2 27 GPIO_ACTIVE_HIGH>;
-+	status = "okay";
-+
-+	spidev@0 {
-+		compatible = "menlo,m53cpld", "spidev";
-+		spi-max-frequency = <25000000>;
-+		reg = <0>;
-+	};
-+
-+	spidev@1 {
-+		compatible = "menlo,m53cpld", "spidev";
-+		spi-max-frequency = <25000000>;
-+		reg = <1>;
-+	};
-+};
-+
- &esdhc1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_esdhc1>;
-@@ -301,6 +321,17 @@
- 			>;
- 		};
- 
-+		pinctrl_ecspi2: ecspi2grp {
-+			fsl,pins = <
-+				MX53_PAD_EIM_CS0__ECSPI2_SCLK		0xe4
-+				MX53_PAD_EIM_OE__ECSPI2_MISO		0xe4
-+				MX53_PAD_EIM_CS1__ECSPI2_MOSI		0xe4
-+
-+				MX53_PAD_EIM_RW__GPIO2_26		0xe4
-+				MX53_PAD_EIM_LBA__GPIO2_27		0xe4
-+			>;
-+		};
-+
- 		pinctrl_esdhc1: esdhc1grp {
- 			fsl,pins = <
- 				MX53_PAD_SD1_DATA0__ESDHC1_DAT0		0x1e4
+diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
+index 3e53ffa07994..f5b04dd8a710 100644
+--- a/arch/arm64/kernel/sleep.S
++++ b/arch/arm64/kernel/sleep.S
+@@ -27,7 +27,7 @@
+  *	aff0 = mpidr_masked & 0xff;
+  *	aff1 = mpidr_masked & 0xff00;
+  *	aff2 = mpidr_masked & 0xff0000;
+- *	aff2 = mpidr_masked & 0xff00000000;
++ *	aff3 = mpidr_masked & 0xff00000000;
+  *	dst = (aff0 >> rs0 | aff1 >> rs1 | aff2 >> rs2 | aff3 >> rs3);
+  *}
+  * Input registers: rs0, rs1, rs2, rs3, mpidr, mask
 -- 
 2.20.1
 
