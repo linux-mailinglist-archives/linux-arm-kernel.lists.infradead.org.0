@@ -2,78 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10B09321FD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Jun 2019 06:35:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39CC432238
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Jun 2019 07:06:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q4LWhxpiHLu7PIthy3tRix7WLjT+NSED8Afnmr16xQE=; b=ckOEKqXnKYeQX2
-	U2YiU4C9jALNaLc9xeMdqbqpHJQ7/JoHFOY6f/vpK3K3niBYFJ+c1OBGBIQtXugrwm+aSUgNPFQ5f
-	q02qV4kYa5WjgPnC4fLiNq6xURUjGTtW3h6lh4BuiKhzCRlZAEvbEsiMBSSjDA0X85u0rbq0oo6pC
-	6sOA4DReOiLbptgvAGP+eo1cLCLJbnYm04XaO3lEFIRPCi5vBXrhFunwKW2pacv4cZSpmoXIWjOJa
-	L1oopjujogA/eFp8O0g1BTj+h3L7tnH8vLgF/03w0R/YyrcAw1yJwbt0kIute9+vO9YH4EsFqa0G4
-	GEGjxY9i5ZHQfzdPMMyQ==;
+	List-Owner; bh=LdA8vB0gDfErHEmiXRPXj4qKqv6lYrZAeLu38xOxHqA=; b=Bc06AKEbL7rX2y
+	jkdoTZ/jpmssvYs15s3HEyWS6yvyylDJT/VfUhbMcQ2EZ48gpw1RsUP5ffuWhTWIzrjF9lWRvFM0F
+	LdMiNT6nQmKXLuL4LTYwAWXUu7nC8W06UuH6GSq4hso5hnmBSYOY04FNUQNshSpoG2BBjFdDCwkjB
+	ZC/S03PLwdiUauaAVo7ng4s4VVx/xSUqx/Vq8o9wFwybkpAgfGKbVpK/3F1pNBgohJr2tuxCEWZ6O
+	fJMfmaEgWZxeuky41YbMOmYzoGKa8sFsMzKeByNMEqYB0vXlz/viuleHXSv/kuWmQf7F+AdnCh869
+	Ix5UngJ+azTZHrl5vQpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXIDM-0001uU-Oy; Sun, 02 Jun 2019 04:35:24 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1hXIhJ-0003W4-1e; Sun, 02 Jun 2019 05:06:21 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXIDH-0001tv-0I; Sun, 02 Jun 2019 04:35:20 +0000
-Received: by mail-it1-x142.google.com with SMTP id n189so3260709itd.0;
- Sat, 01 Jun 2019 21:35:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=v4CanWuqlNjLflmz2Qk/RlQLeFzHSfAI7esEAGrAgZw=;
- b=l5F5ZBWA+DIDLYP5up+gD3seEEamNpL0MIqvd2Dnmdzhee4Vu3Qq86qHO7VzvIibYj
- dfY4wHw1J+8/HcOLOBnYfdo6CXkMP02GgHcPT1j1imyhoYpcU3tsvT3Wige8AkhKKba+
- uoq40Z505t+MEPTpTDwGFM2wi/CDY0dul+QJC3PwCbYoKSNUwjiZh7UuzC6iDpWhI3oo
- 119NU4yjBTiceJGveft99++sSNK9OGlX6Dt3WIeDa2pgKdMzib/4hYDg5nnJ1mC5PkMP
- /7fDWrV/2FI5awIClRiZelc98NLmR1Pdxc0NrlnCBpMbi15KMXw4BiZyHSvjiIJCZied
- fFlA==
+ id 1hXIhC-0003Vj-Qg
+ for linux-arm-kernel@lists.infradead.org; Sun, 02 Jun 2019 05:06:16 +0000
+Received: by mail-pg1-x541.google.com with SMTP id 20so6338890pgr.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 01 Jun 2019 22:06:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=8FrEn8Oc47oyqvsIyUn+ei84DckXK5ddHX1nKUOQVF0=;
+ b=I+l433GU6rh5Vh+cXRg2sWftONjf5E0xtYRJR0maMC3On194A0XuFQ8es0fmdrLaO4
+ QMulbFvcAdi+pOn8HpskX0ufgW7qoStMxwwMGtpoIzBLU8ImYfubQhLJZlu5J4RYe6TO
+ Yim8ter4osHiihcYza518LDlKNV+048cHSWMc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=v4CanWuqlNjLflmz2Qk/RlQLeFzHSfAI7esEAGrAgZw=;
- b=a0lS2U6/wXTjhyl0zCRjAnfnSNP/KqezZlvSX6r22enpK2p+i3i4OWekN8auXfg4of
- FJAn9pn93uIzTUhxXRGQHjp55KrEZP6pLDSP0WewqWgNSC5YPulK1iB0BOhDXeLRZF2J
- b3dmzscqpbqPp2nc0KTatKk+PYS44Y3lWDsdXHwjUuCc+/oGpP2WGDzuiC/Akp1Tl32o
- V2Sy6uQedPiat4BlvYHGPVYH2uy3XqeFyJ4L/6XxKGYG1N0WHcKlRhkpr19JDITHqkje
- 6z5utcxp8eUzxH6fbHeaPleQevNQJkBlZ66UueCPHVJ+PwLAgejdi3V0lUx3nc65Ul2a
- rU5Q==
-X-Gm-Message-State: APjAAAWrlEnVQ8nSJhs1S5Dnts9dSv34+RAd+0T95fPqjFReYt9gJN1c
- 0FRWUjK8Tp8FMTkoHykGX55Ok256hwj4SCBuTlY=
-X-Google-Smtp-Source: APXvYqwXbkiXIYjDHXmh3/thigHgwkv16g5iRA7ZvyyvH5clOqzbumpceyiCVbQ5RGunSbjGlHDuLiCOYNTYxPCyj8E=
-X-Received: by 2002:a24:ed7:: with SMTP id 206mr9474956ite.97.1559450117296;
- Sat, 01 Jun 2019 21:35:17 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=8FrEn8Oc47oyqvsIyUn+ei84DckXK5ddHX1nKUOQVF0=;
+ b=EPseeRTJnSJ7qkRPwVvpkcS2y/OU4APWe5/KOH0uznFBA7vQYxK9phgYnokaTBgfgC
+ fwtXYNhBXuWbCB9ypqfa+OK7DVpjzVJCgu0PqsPplIVY0sPNTtMCNyEGCTB/pbssyVR1
+ +gI2Adowb8z5/pihf2tueKfYavrdalNJMWuXip+a68pwYAnXP/2VLMXDX8G7et2vIBkl
+ iZeFG26toO9X6EV/H3DMirMCtl4ywFyy8vq+ntwBxensYiXKx6gVIOh2CtxjOcqDs83r
+ BRUyhfMvdEml6c9PZH3rrlFPHJswEd4xDGv3xOvc8FijNvyfPpq8q3BfPqvqfRb9O0xh
+ DE2Q==
+X-Gm-Message-State: APjAAAWyaJ6ZK5Ko39UlMNT/q4ncemNqcLmLREj+Vv+PkKVFXyrKo+vo
+ O85LR4bmr8gVU1V4OGJE1VcHXg==
+X-Google-Smtp-Source: APXvYqww51z53Fj+SFur89FkVZvsAjQrEhIV13t8870aGnrYJ2f32X4e6lxRmTKOa2Pc17jm0i7ppA==
+X-Received: by 2002:a65:520b:: with SMTP id o11mr20347226pgp.184.1559451973138; 
+ Sat, 01 Jun 2019 22:06:13 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id x28sm12472404pfo.78.2019.06.01.22.06.11
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 01 Jun 2019 22:06:12 -0700 (PDT)
+Date: Sat, 1 Jun 2019 22:06:10 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v15 00/17] arm64: untag user pointers passed to the kernel
+Message-ID: <201906012156.55E2C45@keescook>
+References: <201905211633.6C0BF0C2@keescook>
+ <20190522101110.m2stmpaj7seezveq@mbp>
+ <CAJgzZoosKBwqXRyA6fb8QQSZXFqfHqe9qO9je5TogHhzuoGXJQ@mail.gmail.com>
+ <20190522163527.rnnc6t4tll7tk5zw@mbp>
+ <201905221316.865581CF@keescook>
+ <20190523144449.waam2mkyzhjpqpur@mbp>
+ <201905230917.DEE7A75EF0@keescook>
+ <20190523174345.6sv3kcipkvlwfmox@mbp>
+ <201905231327.77CA8D0A36@keescook>
+ <20190528170244.GF32006@arrakis.emea.arm.com>
 MIME-Version: 1.0
-References: <20190531201913.1122-1-linux.amoon@gmail.com>
- <20190601095106.GA2213@Mani-XPS-13-9360>
-In-Reply-To: <20190601095106.GA2213@Mani-XPS-13-9360>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Sun, 2 Jun 2019 10:05:06 +0530
-Message-ID: <CANAwSgQXrp5+UOdBEjq9PvBHw9KmgxpkVsENc05MoBMDBOoczg@mail.gmail.com>
-Subject: Re: [PATCH v2] arm64: dts: rockchip: Add missing configuration pwr
- amd rst for PCIe
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20190528170244.GF32006@arrakis.emea.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_213519_073439_42BC2F33 
-X-CRM114-Status: GOOD (  19.84  )
+X-CRM114-CacheID: sfid-20190601_220614_919150_F433FB83 
+X-CRM114-Status: GOOD (  23.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,6 +91,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,137 +103,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- Vicente Bergas <vicencb@gmail.com>, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Ezequiel Garcia <ezequiel@collabora.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Manivannan,
+On Tue, May 28, 2019 at 06:02:45PM +0100, Catalin Marinas wrote:
+> On Thu, May 23, 2019 at 02:31:16PM -0700, Kees Cook wrote:
+> > syzkaller already attempts to randomly inject non-canonical and
+> > 0xFFFF....FFFF addresses for user pointers in syscalls in an effort to
+> > find bugs like CVE-2017-5123 where waitid() via unchecked put_user() was
+> > able to write directly to kernel memory[1].
+> > 
+> > It seems that using TBI by default and not allowing a switch back to
+> > "normal" ABI without a reboot actually means that userspace cannot inject
+> > kernel pointers into syscalls any more, since they'll get universally
+> > stripped now. Is my understanding correct, here? i.e. exploiting
+> > CVE-2017-5123 would be impossible under TBI?
+> > 
+> > If so, then I think we should commit to the TBI ABI and have a boot
+> > flag to disable it, but NOT have a process flag, as that would allow
+> > attackers to bypass the masking. The only flag should be "TBI or MTE".
+> > 
+> > If so, can I get top byte masking for other architectures too? Like,
+> > just to strip high bits off userspace addresses? ;)
+> 
+> Just for fun, hack/attempt at your idea which should not interfere with
+> TBI. Only briefly tested on arm64 (and the s390 __TYPE_IS_PTR macro is
+> pretty weird ;)):
 
-Thanks for your review comment.
+OMG, this is amazing and bonkers. I love it.
 
-On Sat, 1 Jun 2019 at 15:21, Manivannan Sadhasivam
-<manivannan.sadhasivam@linaro.org> wrote:
->
-> Hi,
->
-> On Fri, May 31, 2019 at 08:19:13PM +0000, Anand Moon wrote:
-> > This patch add missing PCIe gpio pin (#PCIE_PWR) for vcc3v3_pcie power
-> > regulator node also add missing reset pinctrl (#PCIE_PERST_L) for PCIe node.
-> >
-> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
-> > ---
-> > using schematics: thanks for suggested by Manivannan
-> > [1] https://dl.vamrs.com/products/rock960/docs/hw/rock960_sch_v12_20180314.pdf
-> >
-> > Changes from prevoius patch:
-> > [2] https://patchwork.kernel.org/patch/10968695/
-> >
-> > Fix the suject and commit message and corrected the PWR and PERST configuration
-> > as per shematics and dts nodes.
-> > ---
-> >  arch/arm64/boot/dts/rockchip/rk3399-ficus.dts    | 7 +++++++
-> >  arch/arm64/boot/dts/rockchip/rk3399-rock960.dts  | 7 +++++++
-> >  arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi | 3 +--
-> >  3 files changed, 15 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-> > index 6b059bd7a04f..94e2a59bc1c7 100644
-> > --- a/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-ficus.dts
-> > @@ -89,6 +89,8 @@
-> >
-> >  &pcie0 {
-> >       ep-gpios = <&gpio4 RK_PD4 GPIO_ACTIVE_HIGH>;
-> > +     pinctrl-names = "default";
-> > +     pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
->
-> Looks like ep-gpio is wrong here :/ I probably referred old schematics
-> at that time. Correct pin mapping is,
->
-> ep-gpios = <&gpio2 RK_PD4 GPIO_ACTIVE_HIGH>;
->
-> And this should be fixed in a separate patch with "Fixes" tag!
->
+> --------------------------8<---------------------------------
+> diff --git a/arch/s390/include/asm/compat.h b/arch/s390/include/asm/compat.h
+> index 63b46e30b2c3..338455a74eff 100644
+> --- a/arch/s390/include/asm/compat.h
+> +++ b/arch/s390/include/asm/compat.h
+> @@ -11,9 +11,6 @@
+>  
+>  #include <asm-generic/compat.h>
+>  
+> -#define __TYPE_IS_PTR(t) (!__builtin_types_compatible_p( \
+> -				typeof(0?(__force t)0:0ULL), u64))
+> -
+>  #define __SC_DELOUSE(t,v) ({ \
+>  	BUILD_BUG_ON(sizeof(t) > 4 && !__TYPE_IS_PTR(t)); \
+>  	(__force t)(__TYPE_IS_PTR(t) ? ((v) & 0x7fffffff) : (v)); \
+> diff --git a/include/linux/syscalls.h b/include/linux/syscalls.h
+> index e2870fe1be5b..b1b9fe8502da 100644
+> --- a/include/linux/syscalls.h
+> +++ b/include/linux/syscalls.h
+> @@ -119,8 +119,15 @@ struct io_uring_params;
+>  #define __TYPE_IS_L(t)	(__TYPE_AS(t, 0L))
+>  #define __TYPE_IS_UL(t)	(__TYPE_AS(t, 0UL))
+>  #define __TYPE_IS_LL(t) (__TYPE_AS(t, 0LL) || __TYPE_AS(t, 0ULL))
+> +#define __TYPE_IS_PTR(t) (!__builtin_types_compatible_p(typeof(0 ? (__force t)0 : 0ULL), u64))
+>  #define __SC_LONG(t, a) __typeof(__builtin_choose_expr(__TYPE_IS_LL(t), 0LL, 0L)) a
+> +#ifdef CONFIG_64BIT
+> +#define __SC_CAST(t, a)	(__TYPE_IS_PTR(t) \
+> +				? (__force t) ((__u64)a & ~(1UL << 55)) \
+> +				: (__force t) a)
+> +#else
+>  #define __SC_CAST(t, a)	(__force t) a
+> +#endif
+>  #define __SC_ARGS(t, a)	a
+>  #define __SC_TEST(t, a) (void)BUILD_BUG_ON_ZERO(!__TYPE_IS_LL(t) && sizeof(t) > sizeof(long))
 
-Ok I will changes per the above. I have also check this with the
-u-boot changes .
+I'm laughing, I'm crying. Now I have to go look at the disassembly to
+see how this actually looks. (I mean, it _does_ solve my specific case
+of the waitid() flaw, but wouldn't help with pointers deeper in structs,
+etc, though TBI does, I think still help with that. I have to catch back
+up on the thread...) Anyway, if it's not too expensive it'd block
+reachability for those kinds of flaws.
 
-> >  };
-> >
-> >  &pinctrl {
-> > @@ -104,6 +106,11 @@
-> >                       rockchip,pins =
-> >                               <1 RK_PD0 RK_FUNC_GPIO &pcfg_pull_none>;
-> >                       };
-> > +
-> > +             pcie_perst_l: pcie-perst-l {
-> > +                     rockchip,pins =
-> > +                             <4 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
-> > +             };
-> >       };
-> >
-> >       usb2 {
-> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-> > index 12285c51cceb..665fe09c7c74 100644
-> > --- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
-> > @@ -64,6 +64,8 @@
-> >
-> >  &pcie0 {
-> >       ep-gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_HIGH>;
-> > +     pinctrl-names = "default";
-> > +     pinctrl-0 = <&pcie_clkreqn_cpm &pcie_perst_l>;
-> >  };
-> >
-> >  &pinctrl {
-> > @@ -104,6 +106,11 @@
-> >                       rockchip,pins =
-> >                               <2 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
-> >                       };
-> > +
-> > +             pcie_perst_l: pcie-perst-l {
-> > +                     rockchip,pins =
-> > +                             <2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
-> > +             };
-> >       };
-> >
-> >       usb2 {
-> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> > index c7d48d41e184..3df0cd67b4b2 100644
-> > --- a/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock960.dtsi
-> > @@ -55,6 +55,7 @@
-> >
-> >       vcc3v3_pcie: vcc3v3-pcie-regulator {
-> >               compatible = "regulator-fixed";
-> > +             gpio = <&gpio2 RK_PA5 GPIO_ACTIVE_HIGH>;
->
-> Actually the PWR pin mapping is defined in a separate node for both Rock960
-> and Ficus in respective dts. So defining it here would be wrong as the PWR
-> pin mapping is different for both boards.
->
+I wonder what my chances are of actually getting this landed? :)
+(Though, I guess I need to find a "VA width" macro instead of a raw 55.)
 
-Ok Thanks, so I will move the PWR pin nodes the respective dts files.
+Thanks for thinking of __SC_CAST() and __TYPE_IS_PTR() together. Really
+made my day. :)
 
-                  PCIE_PERST     PCIE_PWR
-Rock960     GPIO2_A2          GPIO2_A5
-Ficus          GPIO2_D4          GPIO1_D0   /* reference u-boot */
-
-Pls confirm this is correct.
-
-Best Regards
--Anand
-
-> Thanks,
-> Mani
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
