@@ -2,64 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 731AB322D1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Jun 2019 11:33:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9DDC322F0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Jun 2019 12:24:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S2g3EgKeZ3uNTMAR7BhTDEcAwlzBPA4o/4MX5OhW5pQ=; b=sFH0QKDxEbbfzjaUFXbpvlxnb
-	IvL+mR+zHXkq/oTXzu/5RapIvIvJI0WoXUjUpH3CXmIojVCnrvvXVaAUaoK4tVlT6E9iZ0Q65Dcl3
-	0Pu6dYpJrLWn0J+u/Quzr+UCQ1drVQKD3R/l0icKafSis69bsxZ6QBS5oM21RA/0w3WPMTI0xbiHp
-	uMP4nfvv5TrSwxhMc/fMzti7exCgJqp0DPizcgxqTe+XnOQ0C1JQZpyh7EAe63jKk8gRGH/HgTaF5
-	0wvNk3LGtNqepNIIaK6dmPmJpjJ/NKzsg89I+M7v8B8dM6P94iANZCthSV53/Nc1ezdOTBJVaqOKC
-	j0GLBaBIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qjjGc7MDisq4wC9us8ATbSW07Ru2WeVfLVj6uUgEJy8=; b=h4wbBnc6zJ10ZB
+	Hfw48mW1D93deudxLqKz2YZk8Y2VUgUUwID32vAZPtfcDNg2h1TR+pqXrO6KoxCtjr7BT1vDXbHlZ
+	B9q43MQMyex3gPXI+ephvMcqHSJhtAP/C4OMGt31X39ooCiy/oirvbMZ5qRxcMKG1k3Ki3MOdRjKG
+	VBscSCg717iEA084kr4SGJC1bnI6ogn2qnLMAtoqhenvxh9ummv3wDFKl23kbqwXzxJtc/j83t6wE
+	b+QaSwHKdbDQxlbvFc1JkInnYzmw5dinF3xLjSA9nTjNbZCF9xbVEjYV5IHKoHitBQ2uAIWxVFwNR
+	gsJh5nStvn1TJU2ZzMEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXMs0-00056r-La; Sun, 02 Jun 2019 09:33:40 +0000
-Received: from mail.z3ntu.xyz ([128.199.32.197])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXMrr-000560-Nr
- for linux-arm-kernel@lists.infradead.org; Sun, 02 Jun 2019 09:33:33 +0000
-Received: from g550jk.localnet (188-23-224-77.adsl.highway.telekom.at
- [188.23.224.77])
- by mail.z3ntu.xyz (Postfix) with ESMTPSA id CB64EC62FD;
- Sun,  2 Jun 2019 09:33:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=z3ntu.xyz; s=z3ntu;
- t=1559468008; bh=pQdvPMLIBmdIcqXAkWH+WvQdnCpnkFRtt4HIJgSnwC4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=mvP5P3mXB/dB/BvooP+TNehmDN6t1qMkvdl5CKdYRgltnKJO9kpa7fU37fFxFDiy4
- 0UXkiSOpD3TQfZGcOQZdzeS6m8IU7DMfmUKH9kfPRpppTaxnQhtnGTx3v+SfBowUxH
- uTH0vnS1/M55LTnxWhCcMDZFJK5uo7VMp+SuBl1E=
-From: Luca Weiss <luca@z3ntu.xyz>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 3/8] dt-bindings: net: bluetooth: Add rtl8723bs-bluetooth
-Date: Sun, 02 Jun 2019 11:33:19 +0200
-Message-ID: <3444508.DTbMFtmaYk@g550jk>
-In-Reply-To: <CAL_Jsq+kqFrY3DoHG_TJCCSxVHRkin4OwM+F9qm6W0w5YfjPQQ@mail.gmail.com>
-References: <20190118170232.16142-1-anarsoul@gmail.com>
- <CA+E=qVdq5GORg-t-vVXM3zBxy3Aq93iCE+zmcGgLFBMcnTDgfw@mail.gmail.com>
- <CAL_Jsq+kqFrY3DoHG_TJCCSxVHRkin4OwM+F9qm6W0w5YfjPQQ@mail.gmail.com>
+	id 1hXNen-00036W-4t; Sun, 02 Jun 2019 10:24:05 +0000
+Received: from gofer.mess.org ([88.97.38.141])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXNeg-000363-6c; Sun, 02 Jun 2019 10:23:59 +0000
+Received: by gofer.mess.org (Postfix, from userid 1000)
+ id A747D60474; Sun,  2 Jun 2019 11:23:50 +0100 (BST)
+Date: Sun, 2 Jun 2019 11:23:50 +0100
+From: Sean Young <sean@mess.org>
+To: Thierry Reding <thierry.reding@gmail.com>, Eric Anholt <eric@anholt.net>,
+ Stefan Wahren <stefan.wahren@i2se.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-pwm@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Andreas Christ <andreas@christ-faesch.ch>
+Subject: [PATCH] pwm: bcm2835: increase precision of pwm
+Message-ID: <20190602102350.zzwmfvlky3mnlqln@gofer.mess.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_023332_077199_FBBE50B8 
-X-CRM114-Status: GOOD (  13.06  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190602_032358_438091_C5F10417 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,96 +59,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Johan Hedberg <johan.hedberg@gmail.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
- Marcel Holtmann <marcel@holtmann.org>,
- "open list:BLUETOOTH DRIVERS" <linux-bluetooth@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, "David S. Miller" <davem@davemloft.net>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============4891794949723689328=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============4891794949723689328==
-Content-Type: multipart/signed; boundary="nextPart8714085.0COXUpWfup"; micalg="pgp-sha256"; protocol="application/pgp-signature"
+If sending IR with carrier of 455kHz using the pwm-ir-tx driver, the
+carrier ends up being 476kHz.
 
---nextPart8714085.0COXUpWfup
-Content-Transfer-Encoding: 7Bit
-Content-Type: text/plain; charset="us-ascii"
+A carrier of 455kHz has a period of 2198ns, but the arithmetic truncates
+this to 2.1ns rather than 2.2ns. So, use DIV_ROUND_CLOSEST() to reduce
+rounding errors, and we have a much more accurate carrier of 454.5kHz.
 
-On Dienstag, 19. Februar 2019 15:14:01 CEST Rob Herring wrote:
-> > > How is this used?
-> > 
-> > rtl8723bs-bt needs 2 firmware binaries -- one is actual firmware,
-> > another is firmware config which is specific to the board. If
-> > firmware-postfix is specified, driver appends it to the name of config
-> > and requests board-specific config while loading firmware. I.e. if
-> > 'pine64' is specified as firmware-postfix driver will load
-> > rtl8723bs_config-pine64.bin.
-> 
-> We already have 'firmware-name' defined and I'd prefer not to have
-> another way to do things. The difference is just you have to give the
-> full filename.
-> 
+Reported-by: Andreas Christ <andreas@christ-faesch.ch>
+Signed-off-by: Sean Young <sean@mess.org>
+---
+ drivers/pwm/pwm-bcm2835.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-Hi Rob,
+diff --git a/drivers/pwm/pwm-bcm2835.c b/drivers/pwm/pwm-bcm2835.c
+index 5652f461d994..edb2387c49a2 100644
+--- a/drivers/pwm/pwm-bcm2835.c
++++ b/drivers/pwm/pwm-bcm2835.c
+@@ -63,14 +63,14 @@ static int bcm2835_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
+ {
+ 	struct bcm2835_pwm *pc = to_bcm2835_pwm(chip);
+ 	unsigned long rate = clk_get_rate(pc->clk);
+-	unsigned long scaler;
++	unsigned int scaler;
+ 
+ 	if (!rate) {
+ 		dev_err(pc->dev, "failed to get clock rate\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	scaler = NSEC_PER_SEC / rate;
++	scaler = DIV_ROUND_CLOSEST(NSEC_PER_SEC, rate);
+ 
+ 	if (period_ns <= MIN_PERIOD) {
+ 		dev_err(pc->dev, "period %d not supported, minimum %d\n",
+@@ -78,8 +78,10 @@ static int bcm2835_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
+ 		return -EINVAL;
+ 	}
+ 
+-	writel(duty_ns / scaler, pc->base + DUTY(pwm->hwpwm));
+-	writel(period_ns / scaler, pc->base + PERIOD(pwm->hwpwm));
++	writel(DIV_ROUND_CLOSEST(duty_ns, scaler),
++	       pc->base + DUTY(pwm->hwpwm));
++	writel(DIV_ROUND_CLOSEST(period_ns, scaler),
++	       pc->base + PERIOD(pwm->hwpwm));
+ 
+ 	return 0;
+ }
+-- 
+2.20.1
 
-I'm working on a v2 for this patchset and I've looked on how using "firmware-
-name" with the full filename would be possible but as David Summers has already 
-written [1], the existing code [2] takes this "postfix" as parameter and 
-basically fills it into a filename template ("${CFG_NAME}-${POSTFIX}.bin"). So 
-either we stay with the "firmware-postfix" property or the existing code would 
-have to be modified to accomodate the full filename; but if using firmware-postfix 
-is unacceptable, I can rework the existing code.
-
-Luca
-
-[1] https://lore.kernel.org/netdev/d06e3c30-a34a-bd84-9cdf-535f253843e3@davidjohnsummers.uk/
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/
-drivers/bluetooth/btrtl.c#n566
---nextPart8714085.0COXUpWfup
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEE66ocILd+OiPORlvAOY2pEqPLBhkFAlzzl98ACgkQOY2pEqPL
-BhnnFA//VC5cSighumkwqn1tDlKT2am98yezWEof4TyDc9ep57nBLBfxfVi/J9o7
-S3uuBW876kpDuh5jCZ9jc7ajY/HOVk2kP63WklFmCPrFSatDw8JGaNV03cnbgV4z
-NFZh3Vgnouz+9ELHRG6o2gQiQgu4FLHrQZWzHoccDS5RmerDEFN+1/LYEQuPuFay
-WzXUcwNW4STqqQrw0AqfR61Gws1JarHMqShEmvI/5OEdfCFBlVu7uEkyMhQgurNO
-dz6Nc6KQQKPV6xBHDAHnTtXKauBENpAe8GSZyIcqpDdIIMzLm/xP1uSG7E9W2yQ8
-8YI62hXxCuKcLqNhMmmlxtnR4zQPpqV8b0bMlTHqZ/xdMsiksx/dgagafvPorvRs
-U76IRzgrye43KpLQQEmYZxCVjrvtI6RAPY764AfdwoUpo17VEUrmT40W1NkmsPyQ
-zo8m3Sl8DIvbxPTOSivZeMpN5GdgkCBT9mEQbYEkdMlDf+mUVOJBqZSNyfimwqL5
-mvtTWXneuQmpRrrIhugsO0T0fLEUqTzddawDOgA3r3f6KjQQ6JnGA7FOfF8eJNeO
-8uwK36whihKCYqUaUJaWSayF6VZVV4uurjyOMccHD+h1dYiNRBOLxcEns2XiWftw
-fcKG10h3MfKscapGVYL6HegnxTnmTSDdeb3CD+v7aP57RIqLb0g=
-=np+i
------END PGP SIGNATURE-----
-
---nextPart8714085.0COXUpWfup--
-
-
-
-
-
---===============4891794949723689328==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4891794949723689328==--
-
-
-
-
