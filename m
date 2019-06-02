@@ -2,64 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6ADBC32108
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Jun 2019 00:32:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C2E132153
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Jun 2019 03:04:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CiWOoAi8kyuJGoKNqSdb+7Sg/f0FKe3LuVffij17LUo=; b=PH/Tf7f0Pd4RKc
-	1VSZB952/MDB0f+zpftkKx8KlRKGKcyEdr6jSaCQzmBkcnc3EAdfB2ZwB9ZPPtQuhNHbh1YIIxC2Z
-	RdJ3XqAc/g4V7KlYjzUzJPV9PN4jjYYduqIEy3TWn9lrD4txemBNUti3drVOJqZvaT/CHYxvKwW81
-	0MfmjBN66l6AZtSQeu1jRq9MsSTGrSQMlOBQuS3UG893UXXgzr32ZIf2VoyHYRu4eQJTe+hRmHL6v
-	mNgx0EjD/fr/ve/rD0cUjtJRxb+54SRZkZG/9rsATSHSjH36Gzbho56zwSo+9T/ISn/UW+A/0Q2fl
-	I6jeWHQCxSWomIB+/DJQ==;
+	List-Owner; bh=5Na9GhDWjKCwsMj6eSOyHvII35THz04xHm0Kw3c6iGY=; b=BVmgnZ0cHI92cW
+	Ioqle90TD99XSSbtjo9Y/yuUI+6mvz1NmSRi0CRc3JZxcPVDibIhVVs2s3sl0x88glq1eh66TQVpJ
+	H0aMBWm03l8U2+eNwUOzZKEQWFzy+Xr6tFAUQTRfAxvEZf90NuuRvubM+z0No6eJbaKmZc+9BwyEE
+	GSi/qOXGl0UJRFx4tRuvJXkjRMi3LdY4LwTm5B0IPJ1piUf/+djnJsKyCPjE0iiDuSWF/xDMaALwP
+	VdTAChl2J4+22rx5q5KllnGw7PLsS6SI8ubRbNmYUg01kzFnybSNqre+F6BSIorzKxX2XwqjAN1Hu
+	5u14LErzkf2tuJWTsV8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXCXZ-0000wF-06; Sat, 01 Jun 2019 22:31:53 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1hXEvN-0000Az-Bh; Sun, 02 Jun 2019 01:04:37 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXCXR-0000sQ-BR
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Jun 2019 22:31:47 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 45Gbdn19fpz1rWxB;
- Sun,  2 Jun 2019 00:31:41 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 45Gbdn0nz6z1qqkj;
- Sun,  2 Jun 2019 00:31:41 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id i9VW3zfENnRr; Sun,  2 Jun 2019 00:31:39 +0200 (CEST)
-X-Auth-Info: ft1+Ne8ae1I6hrZvZ01K6PN4Ur/wSUu0QbyEJew7T1w=
-Received: from kurokawa.lan (ip-86-49-110-70.net.upcbroadband.cz
- [86.49.110.70])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Sun,  2 Jun 2019 00:31:39 +0200 (CEST)
-From: Marek Vasut <marex@denx.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2] ARM: dts: imx53: Bind CPLD on M53Menlo
-Date: Sun,  2 Jun 2019 00:30:50 +0200
-Message-Id: <20190601223050.27410-1-marex@denx.de>
-X-Mailer: git-send-email 2.20.1
+ id 1hXEvE-00009P-Cd; Sun, 02 Jun 2019 01:04:30 +0000
+X-UUID: d43de728071f431291d6e142fd8b3374-20190601
+X-UUID: d43de728071f431291d6e142fd8b3374-20190601
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <sean.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1157082919; Sat, 01 Jun 2019 17:04:21 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 1 Jun 2019 18:04:19 -0700
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Sun, 2 Jun 2019 09:04:18 +0800
+From: <sean.wang@mediatek.com>
+To: <robh+dt@kernel.org>, <mark.rutland@arm.com>, <marcel@holtmann.org>,
+ <johan.hedberg@gmail.com>
+Subject: [PATCH v1 0/4] add boot-gpios and clock property to btmtkuart
+Date: Sun, 2 Jun 2019 09:04:13 +0800
+Message-ID: <1559437457-26766-1-git-send-email-sean.wang@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_153145_541194_88F64469 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190601_180428_435088_4805A3FF 
+X-CRM114-Status: UNSURE (   4.67  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,76 +67,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Fabio Estevam <festevam@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>
+Cc: devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable ECSPI2 and bind CPLD to both chip selects.
+From: Sean Wang <sean.wang@mediatek.com>
 
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-To: linux-arm-kernel@lists.infradead.org
----
-V2: Drop fsl,spi-num-chipselects
----
- arch/arm/boot/dts/imx53-m53menlo.dts | 30 ++++++++++++++++++++++++++++
- 1 file changed, 30 insertions(+)
+Update dt-binding and the corresponding implmentation of boot-gpios and clock
+property to btmtkuart.
 
-diff --git a/arch/arm/boot/dts/imx53-m53menlo.dts b/arch/arm/boot/dts/imx53-m53menlo.dts
-index 55c122a64ef0..1deb070c1c21 100644
---- a/arch/arm/boot/dts/imx53-m53menlo.dts
-+++ b/arch/arm/boot/dts/imx53-m53menlo.dts
-@@ -100,6 +100,25 @@
- 	assigned-clock-rates = <133333334>, <33333334>, <33333334>;
- };
- 
-+&ecspi2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_ecspi2>;
-+	cs-gpios = <&gpio2 26 GPIO_ACTIVE_HIGH>, <&gpio2 27 GPIO_ACTIVE_HIGH>;
-+	status = "okay";
-+
-+	spidev@0 {
-+		compatible = "menlo,m53cpld", "spidev";
-+		spi-max-frequency = <25000000>;
-+		reg = <0>;
-+	};
-+
-+	spidev@1 {
-+		compatible = "menlo,m53cpld", "spidev";
-+		spi-max-frequency = <25000000>;
-+		reg = <1>;
-+	};
-+};
-+
- &esdhc1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_esdhc1>;
-@@ -301,6 +320,17 @@
- 			>;
- 		};
- 
-+		pinctrl_ecspi2: ecspi2grp {
-+			fsl,pins = <
-+				MX53_PAD_EIM_CS0__ECSPI2_SCLK		0xe4
-+				MX53_PAD_EIM_OE__ECSPI2_MISO		0xe4
-+				MX53_PAD_EIM_CS1__ECSPI2_MOSI		0xe4
-+
-+				MX53_PAD_EIM_RW__GPIO2_26		0xe4
-+				MX53_PAD_EIM_LBA__GPIO2_27		0xe4
-+			>;
-+		};
-+
- 		pinctrl_esdhc1: esdhc1grp {
- 			fsl,pins = <
- 				MX53_PAD_SD1_DATA0__ESDHC1_DAT0		0x1e4
+Sean Wang (4):
+  dt-bindings: net: bluetooth: add boot-gpios property to UART-based
+    device
+  dt-bindings: net: bluetooth: add clock property to UART-based device
+  Bluetooth: btmtkuart: add an implementation for boot-gpios property
+  Bluetooth: btmtkuart: add an implementation for clock osc property
+
+ .../bindings/net/mediatek-bluetooth.txt       | 17 +++++++
+ drivers/bluetooth/btmtkuart.c                 | 51 +++++++++++++++----
+ 2 files changed, 58 insertions(+), 10 deletions(-)
+
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
