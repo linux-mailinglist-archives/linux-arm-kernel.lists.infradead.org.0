@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB665327D7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 06:53:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE3E9327E7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 07:13:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=afKVNp82+jUCY0+R4UKP4O7ktOiJRhP0YagKB3BbYds=; b=mAjohUIEUdP2Ms
-	zKFrykSrFxDPhTAv1AKgNWxwHjsiUaD5lYQIBxkgOf9Psxtq5AHfAche2nc3l4rbH4R1W0qS5KqeX
-	XcIjymaHLw7DL+u+FKGlY0ctssHBzBn2fgvvslqfuTYmmspqPxXDm6w8VmIGNTxT7x7m4zPfodwnA
-	ixLYE0IKddHxz/ChaOoVnS+MwEGT1u+2LHygUQaWjKiHWZAWzrYvMG+oWewzKgH4lqeMcxJQmkQdn
-	28fjzTANVHRx7Q91WebC9EZI6MZRV+vgEWdFh/mF0g5BSuaNBfxHUynpHCfbQlAAZrQL1ZPe2ie4r
-	6nm56PBXd2UkIoQT42uQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=i5itpzdDRVY0llOkU0ctrVxyZ6yl8q/oAEFprz5klnI=; b=qg9rFStGmKEEnl
+	tdfDWEoX7HIJ+R2lBmKD8vmE0kCq8sEgA/k8x+TU7B+VYxdjUEWVv077DD85Ru1LHKhyJN1+kacUO
+	1F+9YGHUg04Pfx55U7/kVi0ALozGcg/eK1AtZHut0VG9xghKpi+GdhLBckFKW3A2tKicpuenNWlut
+	qgB78fhMoK77I3uuw4Q8JcjIFLJD37aGprgHqFi1sgG0A3yWijlBSg1YWlLqMOyDWuc5boAuNLtQE
+	5vSc+i/EV+QNzDTBknuIXdjZmnhksXFnzcZheJTU1cekXQaThTAsi7AKsABgk6yEf1Q9lEbw3Csl1
+	5NQWfWmgiE28gA7Zu+IA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXeyP-0002Vm-QW; Mon, 03 Jun 2019 04:53:29 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXeyH-0002Uk-Pa
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 04:53:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A87D1341;
- Sun,  2 Jun 2019 21:53:18 -0700 (PDT)
-Received: from [10.162.40.144] (p8cg001049571a15.blr.arm.com [10.162.40.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- CC0BB3F5AF; Sun,  2 Jun 2019 21:53:11 -0700 (PDT)
-Subject: Re: [RFC] mm: Generalize notify_page_fault()
-To: Matthew Wilcox <willy@infradead.org>
-References: <1559195713-6956-1-git-send-email-anshuman.khandual@arm.com>
- <20190530110639.GC23461@bombadil.infradead.org>
- <4f9a610d-e856-60f6-4467-09e9c3836771@arm.com>
- <20190530133954.GA2024@bombadil.infradead.org>
- <f1995445-d5ab-f292-d26c-809581002184@arm.com>
- <20190531174854.GA31852@bombadil.infradead.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <6338fef8-e097-a76e-5c07-455d0d9b6e24@arm.com>
-Date: Mon, 3 Jun 2019 10:23:26 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hXfHD-0008Iw-QL; Mon, 03 Jun 2019 05:12:55 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXfH7-0008Ic-84
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 05:12:51 +0000
+Received: by mail-lj1-x243.google.com with SMTP id e13so14828797ljl.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 02 Jun 2019 22:12:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=mobiveil.co.in; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1hhBDceAp7DealibgpzRgQkbsVjG+SPyfDmMhWMC+1k=;
+ b=jG9jP4nThSDZwaD/kp6Xib4Vyzog5fkGaOB9Mcgv4DXEGXAX3fPA+ceqLabquL17Cy
+ 7tX1tYLDfASqHNZdWw9421ZUVBGDAvLcloFKmmp0yrGGjo8RmoLOehp9xgiAKKaLYiez
+ 8RIVCutou53+Y/XUepTtiE9JghvqzS/w1te3s=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1hhBDceAp7DealibgpzRgQkbsVjG+SPyfDmMhWMC+1k=;
+ b=J7XjA1ZQWZE8v8L6t/TlU5XfJA/9BdcLAXndqze8a732M0OOntJP0OpJ3Jhhs8aNNA
+ V2N3ES8B1p2vlyqZ9QQmmau6OH6T73lSPVVexLn+vcpO0zf6jftws5+587PTydbbjpgo
+ RGf2R/QOO3kQv7C6duUAeYhEuwS0ziVFRCawGUaiLXcH6PU0mohH6OI+GcwNaClDsNt0
+ tRCu8fG/n4byGR3g1H6easas+uR1+zX2LxO7hl+w1QhiHZ9ZTmQwN5CrHIItB1msq8ev
+ MlRZje5A/UIbAOUkaC1Uj491remXtAUHs7gF9CDLTg5SBJoQjW9ni5FvjBPHMRSpyQA+
+ SeOg==
+X-Gm-Message-State: APjAAAUiAv4wgmn7d1m3ltIoI2OC8J23J3XBr1qQ0Ckh1M98dZTYHoQf
+ S1H9zTjGjHBD+xpj4QvAuzLbFTEMQOKoDrmXHRrrb2k88bn5bHDzab/kH9q+asVwEWb8DqiDs7q
+ 2AnnCIbanTHSGdMXJx11VWzTiKrvGYG3Bb0mm/2Lhfme3
+X-Google-Smtp-Source: APXvYqyWjAc8SYG4ta2+f5Ybndd/TXrp1FQlRY75lQ4TqUbou9Kfolc0l0Jje5R6RKuhzCRFDrhia/kPvTtHFiIVU30=
+X-Received: by 2002:a2e:8555:: with SMTP id u21mr12390145ljj.133.1559538766557; 
+ Sun, 02 Jun 2019 22:12:46 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190531174854.GA31852@bombadil.infradead.org>
-Content-Language: en-US
+References: <20190528065129.8769-1-Zhiqiang.Hou@nxp.com>
+ <20190528065129.8769-6-Zhiqiang.Hou@nxp.com>
+In-Reply-To: <20190528065129.8769-6-Zhiqiang.Hou@nxp.com>
+From: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
+Date: Mon, 3 Jun 2019 10:42:33 +0530
+Message-ID: <CAKnKUHH8JU2Bqgq90rfgZ8r0xxB_RMRj16DBBLDhMpg3mwFU2Q@mail.gmail.com>
+Subject: Re: [PATCHv6 5/6] arm64: dts: lx2160a: Add PCIe controller DT nodes
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_215321_843620_EF47F65B 
-X-CRM114-Status: GOOD (  17.64  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190602_221249_352965_18605A6A 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,81 +90,236 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, Russell King <linux@armlinux.org.uk>,
- Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Andrey Konovalov <andreyknvl@google.com>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>, "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Hou Zhiqiang
+   Two instances [@3600000 and @3800000] of the six has a different
+window count, the RC can not have more than 8 windows.
+apio-wins = <256>;  //Can we change it to 8
+ppio-wins = <24>;    //Can we change it to 8
+
+On Tue, May 28, 2019 at 12:20 PM Z.q. Hou <zhiqiang.hou@nxp.com> wrote:
+>
+> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+>
+> The LX2160A integrated 6 PCIe Gen4 controllers.
+>
+> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+> ---
+> V6:
+>  - No change.
+>
+>  .../arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 163 ++++++++++++++++++
+>  1 file changed, 163 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+> index 125a8cc2c5b3..7a2b91ff1fbc 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+> @@ -964,5 +964,168 @@
+>                                 };
+>                         };
+>                 };
+> +
+> +               pcie@3400000 {
+> +                       compatible = "fsl,lx2160a-pcie";
+> +                       reg = <0x00 0x03400000 0x0 0x00100000   /* controller registers */
+> +                              0x80 0x00000000 0x0 0x00001000>; /* configuration space */
+> +                       reg-names = "csr_axi_slave", "config_axi_slave";
+> +                       interrupts = <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
+> +                                    <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
+> +                                    <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
+> +                       interrupt-names = "aer", "pme", "intr";
+> +                       #address-cells = <3>;
+> +                       #size-cells = <2>;
+> +                       device_type = "pci";
+> +                       dma-coherent;
+> +                       apio-wins = <8>;
+> +                       ppio-wins = <8>;
+> +                       bus-range = <0x0 0xff>;
+> +                       ranges = <0x82000000 0x0 0x40000000 0x80 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
+> +                       msi-parent = <&its>;
+> +                       #interrupt-cells = <1>;
+> +                       interrupt-map-mask = <0 0 0 7>;
+> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>;
+> +                       status = "disabled";
+> +               };
+> +
+> +               pcie@3500000 {
+> +                       compatible = "fsl,lx2160a-pcie";
+> +                       reg = <0x00 0x03500000 0x0 0x00100000   /* controller registers */
+> +                              0x88 0x00000000 0x0 0x00001000>; /* configuration space */
+> +                       reg-names = "csr_axi_slave", "config_axi_slave";
+> +                       interrupts = <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
+> +                                    <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
+> +                                    <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
+> +                       interrupt-names = "aer", "pme", "intr";
+> +                       #address-cells = <3>;
+> +                       #size-cells = <2>;
+> +                       device_type = "pci";
+> +                       dma-coherent;
+> +                       apio-wins = <8>;
+> +                       ppio-wins = <8>;
+> +                       bus-range = <0x0 0xff>;
+> +                       ranges = <0x82000000 0x0 0x40000000 0x88 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
+> +                       msi-parent = <&its>;
+> +                       #interrupt-cells = <1>;
+> +                       interrupt-map-mask = <0 0 0 7>;
+> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
+> +                       status = "disabled";
+> +               };
+> +
+> +               pcie@3600000 {
+> +                       compatible = "fsl,lx2160a-pcie";
+> +                       reg = <0x00 0x03600000 0x0 0x00100000   /* controller registers */
+> +                              0x90 0x00000000 0x0 0x00001000>; /* configuration space */
+> +                       reg-names = "csr_axi_slave", "config_axi_slave";
+> +                       interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
+> +                                    <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
+> +                                    <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
+> +                       interrupt-names = "aer", "pme", "intr";
+> +                       #address-cells = <3>;
+> +                       #size-cells = <2>;
+> +                       device_type = "pci";
+> +                       dma-coherent;
+> +                       apio-wins = <256>;
+> +                       ppio-wins = <24>;
+> +                       bus-range = <0x0 0xff>;
+> +                       ranges = <0x82000000 0x0 0x40000000 0x90 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
+> +                       msi-parent = <&its>;
+> +                       #interrupt-cells = <1>;
+> +                       interrupt-map-mask = <0 0 0 7>;
+> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>;
+> +                       status = "disabled";
+> +               };
+> +
+> +               pcie@3700000 {
+> +                       compatible = "fsl,lx2160a-pcie";
+> +                       reg = <0x00 0x03700000 0x0 0x00100000   /* controller registers */
+> +                              0x98 0x00000000 0x0 0x00001000>; /* configuration space */
+> +                       reg-names = "csr_axi_slave", "config_axi_slave";
+> +                       interrupts = <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
+> +                                    <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
+> +                                    <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
+> +                       interrupt-names = "aer", "pme", "intr";
+> +                       #address-cells = <3>;
+> +                       #size-cells = <2>;
+> +                       device_type = "pci";
+> +                       dma-coherent;
+> +                       apio-wins = <8>;
+> +                       ppio-wins = <8>;
+> +                       bus-range = <0x0 0xff>;
+> +                       ranges = <0x82000000 0x0 0x40000000 0x98 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
+> +                       msi-parent = <&its>;
+> +                       #interrupt-cells = <1>;
+> +                       interrupt-map-mask = <0 0 0 7>;
+> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>;
+> +                       status = "disabled";
+> +               };
+> +
+> +               pcie@3800000 {
+> +                       compatible = "fsl,lx2160a-pcie";
+> +                       reg = <0x00 0x03800000 0x0 0x00100000   /* controller registers */
+> +                              0xa0 0x00000000 0x0 0x00001000>; /* configuration space */
+> +                       reg-names = "csr_axi_slave", "config_axi_slave";
+> +                       interrupts = <GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
+> +                                    <GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
+> +                                    <GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
+> +                       interrupt-names = "aer", "pme", "intr";
+> +                       #address-cells = <3>;
+> +                       #size-cells = <2>;
+> +                       device_type = "pci";
+> +                       dma-coherent;
+> +                       apio-wins = <256>;
+> +                       ppio-wins = <24>;
+> +                       bus-range = <0x0 0xff>;
+> +                       ranges = <0x82000000 0x0 0x40000000 0xa0 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
+> +                       msi-parent = <&its>;
+> +                       #interrupt-cells = <1>;
+> +                       interrupt-map-mask = <0 0 0 7>;
+> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 129 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 130 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 132 IRQ_TYPE_LEVEL_HIGH>;
+> +                       status = "disabled";
+> +               };
+> +
+> +               pcie@3900000 {
+> +                       compatible = "fsl,lx2160a-pcie";
+> +                       reg = <0x00 0x03900000 0x0 0x00100000   /* controller registers */
+> +                              0xa8 0x00000000 0x0 0x00001000>; /* configuration space */
+> +                       reg-names = "csr_axi_slave", "config_axi_slave";
+> +                       interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
+> +                                    <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
+> +                                    <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
+> +                       interrupt-names = "aer", "pme", "intr";
+> +                       #address-cells = <3>;
+> +                       #size-cells = <2>;
+> +                       device_type = "pci";
+> +                       dma-coherent;
+> +                       apio-wins = <8>;
+> +                       ppio-wins = <8>;
+> +                       bus-range = <0x0 0xff>;
+> +                       ranges = <0x82000000 0x0 0x40000000 0xa8 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
+> +                       msi-parent = <&its>;
+> +                       #interrupt-cells = <1>;
+> +                       interrupt-map-mask = <0 0 0 7>;
+> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH>,
+> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 107 IRQ_TYPE_LEVEL_HIGH>;
+> +                       status = "disabled";
+> +               };
+> +
+>         };
+>  };
+> --
+> 2.17.1
+>
 
 
-On 05/31/2019 11:18 PM, Matthew Wilcox wrote:
-> On Fri, May 31, 2019 at 02:17:43PM +0530, Anshuman Khandual wrote:
->> On 05/30/2019 07:09 PM, Matthew Wilcox wrote:
->>> On Thu, May 30, 2019 at 05:31:15PM +0530, Anshuman Khandual wrote:
->>>> On 05/30/2019 04:36 PM, Matthew Wilcox wrote:
->>>>> The two handle preemption differently.  Why is x86 wrong and this one
->>>>> correct?
->>>>
->>>> Here it expects context to be already non-preemptible where as the proposed
->>>> generic function makes it non-preemptible with a preempt_[disable|enable]()
->>>> pair for the required code section, irrespective of it's present state. Is
->>>> not this better ?
->>>
->>> git log -p arch/x86/mm/fault.c
->>>
->>> search for 'kprobes'.
->>>
->>> tell me what you think.
->>
->> Are you referring to these following commits
->>
->> a980c0ef9f6d ("x86/kprobes: Refactor kprobes_fault() like kprobe_exceptions_notify()")
->> b506a9d08bae ("x86: code clarification patch to Kprobes arch code")
->>
->> In particular the later one (b506a9d08bae). It explains how the invoking context
->> in itself should be non-preemptible for the kprobes processing context irrespective
->> of whether kprobe_running() or perhaps smp_processor_id() is safe or not. Hence it
->> does not make much sense to continue when original invoking context is preemptible.
->> Instead just bail out earlier. This seems to be making more sense than preempt
->> disable-enable pair. If there are no concerns about this change from other platforms,
->> I will change the preemption behavior in proposed generic function next time around.
-> 
-> Exactly.
-> 
-> So, any of the arch maintainers know of a reason they behave differently
-> from x86 in this regard?  Or can Anshuman use the x86 implementation
-> for all the architectures supporting kprobes?
+-- 
+Thanks,
+Regards,
+Karthikeyan Mitran
 
-So the generic notify_page_fault() will be like this.
-
-int __kprobes notify_page_fault(struct pt_regs *regs, unsigned int trap)
-{
-        int ret = 0;
-
-        /*
-         * To be potentially processing a kprobe fault and to be allowed
-         * to call kprobe_running(), we have to be non-preemptible.
-         */
-        if (kprobes_built_in() && !preemptible() && !user_mode(regs)) {
-                if (kprobe_running() && kprobe_fault_handler(regs, trap))
-                        ret = 1;
-        }
-        return ret;
-}
+-- 
+Mobiveil INC., CONFIDENTIALITY NOTICE: This e-mail message, including any 
+attachments, is for the sole use of the intended recipient(s) and may 
+contain proprietary confidential or privileged information or otherwise be 
+protected by law. Any unauthorized review, use, disclosure or distribution 
+is prohibited. If you are not the intended recipient, please notify the 
+sender and destroy all copies and the original message.
 
 _______________________________________________
 linux-arm-kernel mailing list
