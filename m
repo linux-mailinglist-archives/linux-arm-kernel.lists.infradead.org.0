@@ -2,71 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F5AA32918
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 09:06:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D163532920
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 09:08:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/5Twa/ArhuwZ94R7PkN4cHZW2Uuss4i8WCzQozlsc5I=; b=Mo7megqviyxB0KjBV/MktyGNA
-	RHj8FGV5ICr7+2/JWVgLEckE06Vi42o+npQQWxzH4pxWknGD9uCqZles30GcSTO657wuA82NVXloG
-	slyBCKyy063dlbQhfMKEB/gyoUWIpTX668cnR1g3Dt/qS88yVVmB5WRTNO+vfGPqpF65kVbu2xreO
-	9k8bLrOYxXNskXEiCY+/9uI+Li2QS+5R5C6kJEctB4Xa2hs0ENR5p3styngX0Yf7X4pYVUuu8b0ue
-	6Xwh4EZ/b3kh7eOLe1iaen8oHIHXrxsxkcBuUxB7GPKyFKtSNuLxCv6AP6CnDqMjyD8O8J6nQrk56
-	c0As/nHnQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=C6yCnho6cZfSr82zs7EyxC1ig1XYRFkaCoGiXpOhbkY=; b=vAI60H6XrVd8C2
+	N5whaVJjkVcpsPrg8Aq3Efol/NC/kDYyKXp+cUP0hdxirELKzoGpru0vcNLAILA78wTS2Y7SSFZyX
+	jpfobNrO9YeejdNOIBNwic1f/6qt7qvWQu/14QU+sy7Z9WYdHDYcV0Lr7ympb+Kw4zJFJomQwHB14
+	2k+zQBeDiOM3gsP5MljCuPL9hcF4Ou3kuGHblfKCGMQMXOkmyxgF2QLQrk1F5b00SjvPYczHa/DgJ
+	Tc8nMw1/5huBamUG/IuFl3la9EnsKV9Xwu7QM5jETTIKvZ6MmtVkQaTUKSetVjtjDx6fsQKvLcl+F
+	THOGiwr4RsBMHPCwAauQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXh3A-000221-Dr; Mon, 03 Jun 2019 07:06:32 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hXh4q-0002LL-Vf; Mon, 03 Jun 2019 07:08:17 +0000
+Received: from mail-lj1-f195.google.com ([209.85.208.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXh34-00021s-QV; Mon, 03 Jun 2019 07:06:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EM7o9Os3M5DtwAMRoFNvFu9547v4JOKUzUUCVl9kaHk=; b=lEVG3x8rhxiF/K2swBFp1EPbx5
- jw4kFyeq9zinEh74knEhWhaqX9CUNFSTz084t0YhlyedztEYtTgwbsqdsQgLJhByWLxQF/BeKXl8F
- Jv8o4uuDK9IpFh4ZVLwmhDPtandIo3zkPXuASquUs8V9QpjKESCtlOtGoFMU32u8Xh8nSXI232USv
- fPcZfS60VwYdyVpAtzs/4UQzKWthZOX/++R3JZB1UOU6bBbe9K9OjgLcNSLP7KM1UNjJHdTUb3dq9
- af5avJdCnuI35cen1ZvbO+0cbISLnn5LBSpyv9Iv/9oMXZuVo/DYlrwwvrDQ6S6kNoU/lCQB3e37m
- srEgAcNQ==;
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXh30-0004dN-HS; Mon, 03 Jun 2019 07:06:24 +0000
-X-Originating-IP: 81.250.144.103
-Received: from [10.30.1.20] (lneuilly-657-1-5-103.w81-250.abo.wanadoo.fr
- [81.250.144.103]) (Authenticated sender: alex@ghiti.fr)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 4D6CA1C0002;
- Mon,  3 Jun 2019 07:05:37 +0000 (UTC)
-Subject: Re: [PATCH v4 05/14] arm64, mm: Make randomization selected by
- generic topdown mmap layout
-To: Christoph Hellwig <hch@lst.de>
-References: <20190526134746.9315-1-alex@ghiti.fr>
- <20190526134746.9315-6-alex@ghiti.fr> <20190601090437.GF6453@lst.de>
-From: Alexandre Ghiti <alex@ghiti.fr>
-Message-ID: <211c4d0b-ec11-c94e-8a7f-9564e7905f50@ghiti.fr>
-Date: Mon, 3 Jun 2019 09:05:37 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hXh4j-0002Kh-KL
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 07:08:11 +0000
+Received: by mail-lj1-f195.google.com with SMTP id a10so11868870ljf.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Jun 2019 00:08:08 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WQJinh/xC2bOeYFsYlUlkNYdlsn0JSMzJ6+7ugAlLz8=;
+ b=airqYKLeXAjzh5ocZ0xJ5JkOHgaLCDLNiWyLD61qv4InE+CmXpeyHDpB539zrotcdW
+ Lw0zmcttS+cFRwfHPYIXTYQT3ulfE9TERrsC3XkF8r+wLOB3x/Wqph0yonusQ3Sob/qH
+ vmBFdkHU8T04jA419sC27LmiCMeIIHSVqFpcDyIRA6B82woYPZDReT0k6mqdFE3j/mlK
+ 9EPppOIJZ10lxpb2jJ4arPkDqlpyggYYMsqlp3FW5ZE7JL+Ej20zk26tBDkVU2GBbcID
+ BtRSwk6jfrw13JhlHiGoIUkDf4WY/6UNHPTY13FSuIfOXIgKUUa4i9AaxJJzs00FtXa9
+ 75Yg==
+X-Gm-Message-State: APjAAAVZo1CHmRnyY8VLSNLpSI7/UD0+aSvI/9/FRqQPYKxis+0fyZqo
+ xEe4myW9WnbH1n2nGpOMmpO9XvpDwvcO34ufD4w=
+X-Google-Smtp-Source: APXvYqypxYOxQMw1wVILyzLBXGz+DJuPq5TH5W+toycfqpB93xioye3d2NaNp9HP84cOJVmXrpIamDZiegLE7qs7sEM=
+X-Received: by 2002:a2e:91c5:: with SMTP id u5mr1410332ljg.65.1559545686497;
+ Mon, 03 Jun 2019 00:08:06 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190601090437.GF6453@lst.de>
-Content-Language: fr
+References: <20190601032242.10405-1-yamada.masahiro@socionext.com>
+In-Reply-To: <20190601032242.10405-1-yamada.masahiro@socionext.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 3 Jun 2019 09:07:54 +0200
+Message-ID: <CAMuHMdXXbEr=oU0amKLbEkTm3cZ=jyQuk1-aZa5L4JL_dUmYMw@mail.gmail.com>
+Subject: Re: [PATCH] treewide: fix typos of SPDX-License-Identifier
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_080622_647887_3000A82F 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190603_000809_670176_3187717A 
+X-CRM114-Status: GOOD (  17.13  )
+X-Spam-Score: -0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.195 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,36 +81,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>, James Hogan <jhogan@kernel.org>,
- linux-fsdevel@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-mips@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, Luis Chamberlain <mcgrof@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@ti.com>,
+ ALSA Development Mailing List <alsa-devel@alsa-project.org>,
+ Kees Cook <keescook@chromium.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Takashi Iwai <tiwai@suse.com>,
+ linux-stm32@st-md-mailman.stormreply.com, Russell King <linux@armlinux.org.uk>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Joe Perches <joe@perches.com>, linux-spdx@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, Jaroslav Kysela <perex@perex.cz>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/1/19 11:04 AM, Christoph Hellwig wrote:
-> Looks good,
+Hi Yamada-san,
+
+On Sat, Jun 1, 2019 at 5:24 AM Masahiro Yamada
+<yamada.masahiro@socionext.com> wrote:
+> Prior to the adoption of SPDX, it was difficult for tools to determine
+> the correct license due to incomplete or badly formatted license text.
+> The SPDX solves this issue, assuming people can correctly spell
+> "SPDX-License-Identifier" although this assumption is broken in some
+> places.
 >
-> Reviewed-by: Christoph Hellwig <hch@lst.de>
-
-
-Thanks for your time,
-
-Alex
-
-
+> Since scripts/spdxcheck.py parses only lines that exactly matches to
+> the correct tag, it cannot (should not) detect this kind of error.
 >
-> _______________________________________________
-> linux-riscv mailing list
-> linux-riscv@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-riscv
+> If the correct tag is missing, scripts/checkpatch.pl warns like this:
+>
+>  WARNING: Missing or malformed SPDX-License-Identifier tag in line *
+>
+> So, people should notice it before the patch submission, but in reality
+> broken tags sometimes slip in. The checkpatch warning is not useful for
+> checking the committed files globally since large number of files still
+> have no SPDX tag.
+>
+> Also, I am not sure about the legal effect when the SPDX tag is broken.
+>
+> Anyway, these typos are absolutely worth fixing. It is pretty easy to
+> find suspicious lines by grep.
+>
+>   $ git grep --not -e SPDX-License-Identifier --and -e SPDX- -- \
+>     :^LICENSES :^scripts/spdxcheck.py :^*/license-rules.rst
+>   arch/arm/kernel/bugs.c:// SPDX-Identifier: GPL-2.0
+>   drivers/phy/st/phy-stm32-usbphyc.c:// SPDX-Licence-Identifier: GPL-2.0
+>   drivers/pinctrl/sh-pfc/pfc-r8a77980.c:// SPDX-Lincense-Identifier: GPL 2.0
+>   lib/test_stackinit.c:// SPDX-Licenses: GPLv2
+>   sound/soc/codecs/max9759.c:// SPDX-Licence-Identifier: GPL-2.0
+>
+> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+
+Thanks for your patch!
+
+>  drivers/pinctrl/sh-pfc/pfc-r8a77980.c | 2 +-
+
+For the sh-pfc change:
+Acked-by: Geert Uytterhoeven <geert+renesas@glider.be>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
