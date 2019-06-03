@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF29E33230
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:31:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E68033323C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:34:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=p4miqSGyzhrAYvPsw0Wh2ohMsYw9spQ18Nwl/58yZhE=; b=hW3qyfo0cEwfsW
-	miiY3toiLAqdhAXQbMvC3g40/RBn+YQ6tJ/cBFzTGyFnH+PY+WHGUBLXE/Ov7SPKydEiclX480l9L
-	HWEXxGWwvpMtH2sgYrP3xtACIDPpt7AXaxPS53XBUJUQsV/qiiUo9eZYxPJqrLYyPPdkvYMOgAP2B
-	kagXLT5y4kc4xoiil3pIq2pHZf+xNlSV46SFSyVsoWAsyBvthSsDbuoISW1ZH9ZwdfUASfZAAcxiu
-	4YAfj4XF5R8gWN/mNIN0j4MxeujZe1GgXlfDXWae19uFCGbscnQn0uzJKIX8xr0dLxaPRzYvs9Pln
-	w5LTluY8B2s6PJF0C2sw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=orvFY4r7mIwYmePWFYltWwC4fGCrXkpbi8GnnLXwJyg=; b=Fd2BKVX44x84hN
+	pkO89LvjP/39AIB3UGp9eQhDvPR22VJGSkVWA59ysfwUDAqw9wqKLAeKcmE6aR5tnlm6xBh0lD+7p
+	ro+E0kOP98Sc4q/2+M7Z03IGrpF78cNzeqsjXvfei1WdWlgr/7PTEbI63j8RT7KX6pMTKAPu1hDym
+	l0JDGMSii5HcUIL/3Lld8oSsy7MVgMyzHe3Fn6z1YkpwUB8EX6hyI326mAnMzyjIPejGiYjsIadgR
+	Tj8vH1k6R0p1F+89qcpnfur4gQZ5dyFkWGFNxQ9G1gi7Fvom5HNg56AaNOENLsurHDkU5NASPK5Q3
+	AvGLYLkJ8Nc3vCF8Mfwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXo09-0007mf-Vb; Mon, 03 Jun 2019 14:31:53 +0000
+	id 1hXo2d-0008E5-S8; Mon, 03 Jun 2019 14:34:27 +0000
 Received: from relay1.mentorg.com ([192.94.38.131])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXo02-0007lV-Nx
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:31:48 +0000
+ id 1hXo2X-0008Dl-2B
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:34:22 +0000
 Received: from svr-orw-mbx-01.mgc.mentorg.com ([147.34.90.201])
  by relay1.mentorg.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-SHA384:256)
- id 1hXnzq-0003wA-Ns from George_Davis@mentor.com ;
- Mon, 03 Jun 2019 07:31:34 -0700
+ id 1hXo2W-0004B8-6v from George_Davis@mentor.com ;
+ Mon, 03 Jun 2019 07:34:20 -0700
 Received: from localhost (147.34.91.1) by svr-orw-mbx-01.mgc.mentorg.com
  (147.34.90.201) with Microsoft SMTP Server (TLS) id 15.0.1320.4; Mon, 3 Jun
- 2019 07:31:32 -0700
+ 2019 07:34:18 -0700
+Date: Mon, 3 Jun 2019 10:34:17 -0400
 From: "George G. Davis" <george_davis@mentor.com>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>, Andy Whitcroft
- <apw@canonical.com>, Joe Perches <joe@perches.com>, Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- <linux-arm-kernel@lists.infradead.org>, Michal Marek
- <michal.lkml@markovi.net>, <linux-kbuild@vger.kernel.org>, Qian Cai
- <cai@lca.pw>, Andrew Morton <akpm@linux-foundation.org>, "George G. Davis"
- <george_davis@mentor.com>, Breno Leitao <leitao@debian.org>, Michael Ellerman
- <mpe@ellerman.id.au>, open list <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] scripts/checkstack.pl: Fix arm64 wrong or unknown
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [RFC][PATCH] Makefile: Fix checkstack.pl arm64 wrong or unknown
  architecture
-Date: Mon, 3 Jun 2019 10:30:39 -0400
-Message-ID: <1559572240-18706-1-git-send-email-george_davis@mentor.com>
-X-Mailer: git-send-email 2.7.4
+Message-ID: <20190603143416.GA17299@mam-gdavis-lt>
+References: <1559316388-19565-1-git-send-email-george_davis@mentor.com>
+ <CAK7LNATXzLzttF_gLA4wdfE1ue+bLPhvDZVsTKbB5K3nrN3jng@mail.gmail.com>
+ <20190531163908.GB10644@mam-gdavis-lt>
+ <CAK7LNASq8eW0D8fpbxFGhAgR5D158emTR2quCD5ufyC+kK-2GQ@mail.gmail.com>
+ <20190531174506.GC10644@mam-gdavis-lt>
+ <CAK7LNASazA2496=GkJdJFVw3S7mQ8LaVqHc6dX=FU0DGYtRTBg@mail.gmail.com>
 MIME-Version: 1.0
-X-ClientProxiedBy: svr-orw-mbx-02.mgc.mentorg.com (147.34.90.202) To
+Content-Disposition: inline
+In-Reply-To: <CAK7LNASazA2496=GkJdJFVw3S7mQ8LaVqHc6dX=FU0DGYtRTBg@mail.gmail.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-ClientProxiedBy: svr-orw-mbx-08.mgc.mentorg.com (147.34.90.208) To
  svr-orw-mbx-01.mgc.mentorg.com (147.34.90.201)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_073146_782298_7F032CDE 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20190603_073421_106049_802074E1 
+X-CRM114-Status: GOOD (  15.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,51 +71,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Michal Marek <michal.lkml@markovi.net>,
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ open list <linux-kernel@vger.kernel.org>, Joe Perches <joe@perches.com>,
+ Andy Whitcroft <apw@canonical.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following error occurs for the `make ARCH=arm64 checkstack` case:
+Hello Masahiro,
 
-aarch64-linux-gnu-objdump -d vmlinux $(find . -name '*.ko') | \
-perl ./scripts/checkstack.pl arm64
-wrong or unknown architecture "arm64"
+On Sat, Jun 01, 2019 at 11:09:15AM +0900, Masahiro Yamada wrote:
+> On Sat, Jun 1, 2019 at 2:45 AM George G. Davis <george_davis@mentor.com> wrote:
+> > > Following this pattern, does this work for you?
+> > >
+> > > diff --git a/scripts/checkstack.pl b/scripts/checkstack.pl
+> > > index 122aef5e4e14..371bd17a4983 100755
+> > > --- a/scripts/checkstack.pl
+> > > +++ b/scripts/checkstack.pl
+> > > @@ -46,7 +46,7 @@ my (@stack, $re, $dre, $x, $xs, $funcre);
+> > >         $x      = "[0-9a-f]";   # hex character
+> > >         $xs     = "[0-9a-f ]";  # hex character or space
+> > >         $funcre = qr/^$x* <(.*)>:$/;
+> > > -       if ($arch eq 'aarch64') {
+> > > +       if ($arch =~ '^(aarch|arm)64$') {
+> >
+> > Yes, that works, thanks!
+> >
+> > Will you submit a fix or would you like me to resubmit with the above suggested
+> > fix?
+> 
+> Please send v2.
 
-As suggested by Masahiro Yamada, fix the above error using regular
-expressions in the same way it was fixed for the `ARCH=x86` case via
-commit fda9f9903be6 ("scripts/checkstack.pl: automatically handle
-32-bit and 64-bit mode for ARCH=x86").
+Done:
 
-Suggested-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-Signed-off-by: George G. Davis <george_davis@mentor.com>
----
-v1:
-- https://patchwork.kernel.org/patch/10970393/
-v2:
-- Updates as Suggested-by: Masahiro Yamada
-- Update commit subject due to moving the fix from Makefile to
-  checkstack.pl
----
- scripts/checkstack.pl | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+https://patchwork.kernel.org/patch/10972965/
 
-diff --git a/scripts/checkstack.pl b/scripts/checkstack.pl
-index 122aef5e4e14..371bd17a4983 100755
---- a/scripts/checkstack.pl
-+++ b/scripts/checkstack.pl
-@@ -46,7 +46,7 @@ my (@stack, $re, $dre, $x, $xs, $funcre);
- 	$x	= "[0-9a-f]";	# hex character
- 	$xs	= "[0-9a-f ]";	# hex character or space
- 	$funcre = qr/^$x* <(.*)>:$/;
--	if ($arch eq 'aarch64') {
-+	if ($arch =~ '^(aarch|arm)64$') {
- 		#ffffffc0006325cc:       a9bb7bfd        stp     x29, x30, [sp, #-80]!
- 		#a110:       d11643ff        sub     sp, sp, #0x590
- 		$re = qr/^.*stp.*sp, \#-([0-9]{1,8})\]\!/o;
+Thanks!
+
+> 
+> Thanks.
+> 
+> -- 
+> Best Regards
+> Masahiro Yamada
+
 -- 
-2.7.4
-
+Regards,
+George
 
 _______________________________________________
 linux-arm-kernel mailing list
