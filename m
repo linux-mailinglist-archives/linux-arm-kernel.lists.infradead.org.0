@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 598E53280F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 07:39:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E60993281A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 07:43:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T52hW/VySnF/bzwRJosGvgDClb6a81Msew3zQ37Bi44=; b=K92TsYzHL0gpxR
-	9zR7GHAMvqmNY1bDyKdWOJlWrt+a1pgrOMnAaFVMRk42D20ztW5/IOYguSN8JpBfxm2r7l81dKk4P
-	DRWBe4z3Jm6sHPVkp35Pgr0+6VcioTsdK3liLV7PaH7SbbTNEy4y6jz6/O/VMgF3pkLgAxUxisk7i
-	Tvq3k2gNN26UklQ9L5C4m+KuIAcqeCLWmOZpjX//Nb5hrcgcVZj6cCfjDFvg74kV8WbeHml4TiAhg
-	Y9VMBXs58dCVaEaRN4X73m7ES3DkFJAa97tVq0zCAtmpugpAs87WDd/huKDqLVjuE27tnEIiAWTdM
-	hM8LFQPcDG0dM/fVDcIQ==;
+	List-Owner; bh=P8n0XOzx+fidzCLNIgnP+Njg4IYbdMcmgY1b68a0ZxU=; b=IFJqjiOJUIbfmW
+	UcLdBDEC4VY+D0WpMrXfPVnchYJAENf5YOFUw7zNcCKwlTqCx82xjXcb8n8NHR4QI1Oly0NumkKGj
+	HvaDrodvt8SKbZI7MGhWd7h+ZCYZ/ov/ZfFSZ4hEPrtsUl8IDsvubs9+STBu/a3NMuyR8TjDGT79D
+	kst6EDjW63dNXVdBrcb9e5ML93YQyR8BaWcB/HKCNagTVUaVK83b48o4h0nymDbqV8T4D23XVZYJb
+	pUcFPDGgFEAdbsRHReZanHDlf6XZH558xyxq2tZwRG6kggCx4YxPlk0JzJ2LSIpAlb4TdzsKwIDjv
+	jfgfBpYR9GIZxw7P5KOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXfga-0007Hm-G2; Mon, 03 Jun 2019 05:39:08 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hXfkQ-0000LH-EC; Mon, 03 Jun 2019 05:43:06 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXfgU-0007HK-El
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 05:39:03 +0000
-Received: by mail-pg1-x541.google.com with SMTP id h2so4362029pgg.1
+ id 1hXfkI-0000Ks-SY
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 05:43:00 +0000
+Received: by mail-pf1-x444.google.com with SMTP id r22so9905169pfh.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 02 Jun 2019 22:38:58 -0700 (PDT)
+ Sun, 02 Jun 2019 22:42:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=6l/t3TPXvfJk0FS5YLye4jJo2DVIjuavG0t1rw643+k=;
- b=ktlv2Mm+By5P70XspYlFjdpSJ4FlQUI0eZS4JlIBkO/7/R5LyitYYA50M/cEXEQ2sA
- nqUh/zQ26C7HTbHeGzl8tZcGwKECYp61JdNHaqddmXtgebc8aWJJ37uZr/ARaS907BpA
- mPqLEydS8bIEj2b2bfV+te5IErDpqLzBS53VmN9aPDNau0llfo7GMgeNt2UZ/UcODWhS
- DwSbpELYfj5kPrLS2W4tM3uLQwjuGFtCSTH0yXivvXXY26bjZnkAxR2rRCQKCsCRjjXd
- bOn/eFPHnIKuX75JrjoTEu0NHK9AQ/y4Iaw4vSh4u/vCMV8qObPUWooWjoB5k+0A5H94
- rVFA==
+ bh=I+cs9eaGYc8ZeuwC+POeS4O6No+gk9upqRJery6C4XM=;
+ b=nxMGW1j/fKDIfZvhKeOllR/fg/yOqiZiyS6AzFGZbxPxrEA7ZVT3GEiQ+70VNwXahX
+ h/g/Na00WwdBAP0brV8zWVlld76ZJ8EFJhnm4eJh4EF+lFYF8T2oaq2yC4zl/6hNQZ83
+ zzw13MvTYT2O3TDW9BuG7IPIoEyXSWhrSrQo3uozlMM4IqNELfTXXhx1pnnqJrG3p7c3
+ c6wFeCzRKmbsstcQRhXtaYvWCgz338NMn/va+MbV+w5uJpotB5gKRx+E8xbAB6VDN/nh
+ 9wWMXaETgM2JPdkfhmebk+H3fRaIPSCQ8Y/tWcs/nu1dZttpwrHLABWpVn14qq0ar39o
+ hQrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6l/t3TPXvfJk0FS5YLye4jJo2DVIjuavG0t1rw643+k=;
- b=biw1WmRG/+uTJB2wcL2vu02nGtqiDDuhVh20UeeCSlo/b92WTZ3yJXLj9z7tEEbgdI
- zUO4UucZy+i1zjRn2QAN5q1wRihK6zJ08o2+DDLcqrZ9x6deqEgrQMtznXjfOza+wzn/
- DPl4zRcGUdBw7KXV7BCW6Pa0rkBi3rcHqueYyfNstt3uV+mzARTHOm5qWaRGwpqzFRV5
- XL2vW9TVtfSSZ9yRwpZXrImcz8Y4/50wFzOgzByDSuZyevutNVQ7WLU6J1Pv9Ads8fv2
- ZyDXuyLGRdQrrcHR9zBLNQgisAq1sUaXc30Y96+R7nmJ0U16PXFIAx03PzOOnpl57Trf
- NZ6g==
-X-Gm-Message-State: APjAAAXr/XMb3lo+vnP1guxGdz+bsf+bU3OxTExfY/6LLtbZ9nvSL+ll
- H/8P+wQ6EfAZkYGvaA74BMl5kw==
-X-Google-Smtp-Source: APXvYqxPwjgggsw3vyhv07YeyRgvqkFWuIU3POtBpFlAjIwDxc07WYB9GVgYDELUGf58CTZeMA36Dw==
-X-Received: by 2002:a17:90a:de14:: with SMTP id
- m20mr27355763pjv.36.1559540337621; 
- Sun, 02 Jun 2019 22:38:57 -0700 (PDT)
+ bh=I+cs9eaGYc8ZeuwC+POeS4O6No+gk9upqRJery6C4XM=;
+ b=Ee02usBtRxILqd2ZGVNVT5iFYL0gAozT+V75zvUheuwV4S2W7Q+wfDENCqoLt4GGrK
+ OPBpH0q4toznaTOUbzcrU4YM7JPJGfDf6obeLz6A/f7YOhMcmIEnYNEbmRhe41mYO2PP
+ lx6Ik/d3StLm79LANxsD4MPkPFSyvy2KYnz31gfthgjywXAFLxgXpxQFf2hwdsr/jsK1
+ tnXetN2oGE05UknWHXYsXJrgmY861IVOSym/NEPzAPc8O1pKcAL77PZjHpo8i7d8cC+Q
+ NX6kzOogQ6ajA7ZZHvRd/Yw69ElKRYNYHwPLf6TNv5JdUb8b6w16RNGacyik3xrx5oUp
+ faJg==
+X-Gm-Message-State: APjAAAUr3kNqoXpXekhCuuwE0k9GIK5hrFVjAmtLnhIydbeEaSS3vX0T
+ 3zhbD4lnOVaVGWSo5IifzWC8HQ==
+X-Google-Smtp-Source: APXvYqxGTg589i5WZUbOYu57f5zabxQ5xPih4ahJgsa+A/aq9eQGeINiR5EiQKH1BWDVHD4nU/EKyA==
+X-Received: by 2002:a63:c744:: with SMTP id v4mr26137288pgg.370.1559540577657; 
+ Sun, 02 Jun 2019 22:42:57 -0700 (PDT)
 Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id w187sm15573923pfb.4.2019.06.02.22.38.52
+ by smtp.gmail.com with ESMTPSA id j64sm6660823pfg.24.2019.06.02.22.42.56
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 02 Jun 2019 22:38:53 -0700 (PDT)
-Date: Mon, 3 Jun 2019 11:08:50 +0530
+ Sun, 02 Jun 2019 22:42:56 -0700 (PDT)
+Date: Mon, 3 Jun 2019 11:12:54 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH 3/3] cpufreq: Switch imx7d to imx-cpufreq-dt for speed
- grading
-Message-ID: <20190603053850.tkskdzcloir4k3kw@vireshk-i7>
-References: <b6a9b9f80534af5c12db30a0bb699ec850f85be7.1559131365.git.leonard.crestez@nxp.com>
- <8787934ff35e7e55837f2caabc0d5bf65828d971.1559131365.git.leonard.crestez@nxp.com>
+Subject: Re: [PATCH] cpufreq: imx-cpufreq-dt: Fix no OPPs available on
+ unfused parts
+Message-ID: <20190603054254.gfnyfsglo5valg6m@vireshk-i7>
+References: <64c450d4ee5119ef21ae744a3ca90d7172f973fd.1559130569.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8787934ff35e7e55837f2caabc0d5bf65828d971.1559131365.git.leonard.crestez@nxp.com>
+In-Reply-To: <64c450d4ee5119ef21ae744a3ca90d7172f973fd.1559130569.git.leonard.crestez@nxp.com>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_223902_494981_E318D92D 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20190602_224258_984226_58039900 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,108 +98,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
  "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
  "Rafael J. Wysocki" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
  Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29-05-19, 12:03, Leonard Crestez wrote:
-> This driver can handle speed grading bits on imx7d just like on imx8mq
-> and imx8mm.
+On 29-05-19, 11:52, Leonard Crestez wrote:
+> Early samples without fuses written report "0 0" which means consumer
+> segment and minumum speed grading. According to datasheet the minimum speed
+> grade is not supported for consumer parts so all OPPs are disabled
+> which results in stack dumps later on.
+> 
+> Fix by clamping minimum consumer speed grade to 1 on imx8mm and imx8mq.
+> 
+> Fixes: 4d28ba1d62c4 ("cpufreq: Add imx-cpufreq-dt driver")
 > 
 > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 > ---
->  arch/arm/mach-imx/mach-imx7d.c       | 7 +++++++
->  drivers/cpufreq/cpufreq-dt-platdev.c | 2 +-
->  drivers/cpufreq/imx-cpufreq-dt.c     | 1 +
->  3 files changed, 9 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/mach-imx/mach-imx7d.c b/arch/arm/mach-imx/mach-imx7d.c
-> index 26ca744d3e2b..0b77412795c9 100644
-> --- a/arch/arm/mach-imx/mach-imx7d.c
-> +++ b/arch/arm/mach-imx/mach-imx7d.c
-> @@ -95,10 +95,16 @@ static void __init imx7d_init_machine(void)
->  
->  	imx_anatop_init();
->  	imx7d_enet_init();
->  }
->  
-> +static void __init imx7d_init_late(void)
-> +{
-> +	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
-> +		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
-> +}
-> +
->  static void __init imx7d_init_irq(void)
->  {
->  	imx_init_revision_from_anatop();
->  	imx_src_init();
->  	irqchip_init();
-> @@ -111,7 +117,8 @@ static const char *const imx7d_dt_compat[] __initconst = {
->  };
->  
->  DT_MACHINE_START(IMX7D, "Freescale i.MX7 Dual (Device Tree)")
->  	.init_irq	= imx7d_init_irq,
->  	.init_machine	= imx7d_init_machine,
-> +	.init_late      = imx7d_init_late,
->  	.dt_compat	= imx7d_dt_compat,
->  MACHINE_END
-> diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
-> index 19c1aad57e26..eb282dff9f2c 100644
-> --- a/drivers/cpufreq/cpufreq-dt-platdev.c
-> +++ b/drivers/cpufreq/cpufreq-dt-platdev.c
-> @@ -38,11 +38,10 @@ static const struct of_device_id whitelist[] __initconst = {
->  	{ .compatible = "hisilicon,hi3660", },
->  
->  	{ .compatible = "fsl,imx27", },
->  	{ .compatible = "fsl,imx51", },
->  	{ .compatible = "fsl,imx53", },
-> -	{ .compatible = "fsl,imx7d", },
->  
->  	{ .compatible = "marvell,berlin", },
->  	{ .compatible = "marvell,pxa250", },
->  	{ .compatible = "marvell,pxa270", },
->  
-> @@ -106,10 +105,11 @@ static const struct of_device_id whitelist[] __initconst = {
->   */
->  static const struct of_device_id blacklist[] __initconst = {
->  	{ .compatible = "calxeda,highbank", },
->  	{ .compatible = "calxeda,ecx-2000", },
->  
-> +	{ .compatible = "fsl,imx7d", },
->  	{ .compatible = "fsl,imx8mq", },
->  	{ .compatible = "fsl,imx8mm", },
->  
->  	{ .compatible = "marvell,armadaxp", },
->  
-> diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
-> index 5061503cb0a1..ce26ffc18ce6 100644
-> --- a/drivers/cpufreq/imx-cpufreq-dt.c
-> +++ b/drivers/cpufreq/imx-cpufreq-dt.c
-> @@ -18,10 +18,11 @@
->  #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
->  #define OCOTP_CFG3_MKT_SEGMENT_SHIFT    6
->  #define OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 6)
->  
->  static const struct of_device_id imx_cpufreq_dt_match_list[] = {
-> +	{ .compatible = "fsl,imx7d" },
->  	{ .compatible = "fsl,imx8mm" },
->  	{ .compatible = "fsl,imx8mq" },
->  	{}
->  };
+>  drivers/cpufreq/imx-cpufreq-dt.c | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
 
-What is the purpose of this array and can we get rid of it instead ? I am asking
-as this driver gets probed only if the platform code has created the
-imx-cpufreq-dt device and it shouldn't get created for other machines than what
-is supported.
+Applied with following changes:
+
+s/minumum/minimum/
+
+Thanks.
 
 -- 
 viresh
