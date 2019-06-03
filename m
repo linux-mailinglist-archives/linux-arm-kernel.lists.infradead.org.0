@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3622C33729
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:48:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA99533723
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:48:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jXUzj8/zlex4A+pdmkikE/ckmA6U4Q/k4nz3ZeF4RaE=; b=nFcvoMLlagGFFJ
-	ptt6AOOv+mjJ2JUdBsk472ry/fAFdnI3Ljr9uElYhpiaQlg0kiQK9a+IP6AyNj2672lG/bFfru4o+
-	vVhGrpXUumk0YHkRSFZ7BbJXWCd+Pp8XkZdhiRodVoBCVuD5Q6MLX2JyQgzn5rY8RGtZuP6KgB8Ja
-	FfJ7kwJgOJJYjTuN53bMDnfOLCaR19IvMuIKiexi6InuPkP9f8sSGPpg3WzyzLz9ry6U7KtRnLgKL
-	RMfLI2YBrzxBgIpwUsgupNrhMBchryPz4+CLNtVaHHZbmI5pLsficBxmN2SRVhxIN3gAPClLRhSIG
-	wxF+v6vTy/xKF9XelE0g==;
+	List-Owner; bh=4taVmE8hMX1UmrtV3lj/6mvWZZBTMC01tLmS/8f2LYs=; b=BqX56jI5/bPHAE
+	z7BkGeEgGvt17IvG3PwUckixhxnkWERMPks7UtQRhWJzF8vdtBTcnDjR5aKb0vcn6KZm5MD9SVpzO
+	8vqC9PhCRBj6uFKfvTslNcGAmtUFegv71uzR5ohr22NquVelueE98ZmOjOl6623ebObo5Nvc7sbaO
+	MCJe4Lisna8o8U0OgsNz+TcV7J9zoige2ugbjHWDm+SDaHFPZy9pjnvlPCYyQGJUaGEJ+WrE2k+t0
+	POJyEt7eDi2yu4KhtQAuu7IANBao1/jm86GU/WjP5k21gon1Blm/iyrkzpuowgP911edTg1fnzCt6
+	4/omrLCItrBD69Zjd6bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXr4g-00030f-Uw; Mon, 03 Jun 2019 17:48:46 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hXr4L-0002Yg-Ss; Mon, 03 Jun 2019 17:48:25 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXr3e-0001mp-V7
+ id 1hXr3g-0001nK-3J
  for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:47:46 +0000
-Received: by mail-lf1-x142.google.com with SMTP id u10so7252080lfm.12
+Received: by mail-lj1-x243.google.com with SMTP id o13so17068388lji.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 10:47:42 -0700 (PDT)
+ Mon, 03 Jun 2019 10:47:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=JwGUR02EDQ13UCHXrb89qrEiTxqnpniiixZ9ii9/brU=;
- b=fbvcavDwHCyV2dKEGAeUTgZUKMNr01Q6ULE8FaQUiQ0JNUrjsYilRijeWC2uCcENRm
- ncJuCkU64ceD57b3rxwPalvIbpznVZ7OkkJ4B0ZPwyGyAA2gs/VJl5rtG1a0rPbDNLBj
- Gq4NihVFfIedw9rSwdHTg7pv/zx/Am+uDPlXbJE8VRA2RBdGBsca4ykyyGNXAbwI0pRQ
- Zi/4ypd/JLnHATw3n1vJk8wIgXn44kMJB5tRTL7xqUpY5vhW8KTrfn17Secy0wGMPITQ
- JFijHJq9c8jmkEMhQN8AgIdRwr/DksdSrrCmnStyH+lY/STE05oQ5yB+q0o4EOFL8IDm
- z4Ug==
+ bh=4qDu9sgTgZn0ixKovZtDdWsY36CDb/LQcyeDWdfScG8=;
+ b=VB7x2EfdwROpsggAChY65dDFdT4snrzfhIsqFYJismvsXq0mLGWEpQPGANo6GZ86WD
+ EhluPWYQPbQI/VFt/GMWVZTgyYHqszB0rLOaGRMVg4VjXS18RqJW09eEmeXOXKqQcm31
+ omLCWC5Mh3F3Y0cq0FGe9FoX3NMaq3Ek60AZkyyAxJI/PVrudcafQaC1CcwU/zP0+PFm
+ X162LXhajyp+9zrRGf/vq0gBV6Uj4Lp9j1a2J4KZYbtmiywJ1hIvGs18iNVcojXLfNjM
+ 2v0tYS+Bywfe4G3RLDioJokRUvLQbkLXF3/T6eNyQo3HxlZRXWV+avdLO2X9ZAJVAtYk
+ ccqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=JwGUR02EDQ13UCHXrb89qrEiTxqnpniiixZ9ii9/brU=;
- b=WuCAImCCxFLJiw3z1P4hCYzQMUHragUOvqEqMHR8yX9M3rhIIp6x9dMOaJDBOI3OE2
- uIxr1Jt5oMomhjSkj83joA+gnW/IZkIRHyjIjFODnAqdHf1sP9dSSpyJlv2cMM8PVRBX
- ZhDc99PFmBmlyK6m47ld0DjLQ02dvaXnWVaDSYtKtDEmQdLsazPQwTnm8oct9AhnTcRl
- vcPVlhN7fMnJ19WKqCMvb9hWfu4qglv4FjpAT6UwpCtlbjJvfAAPuJGWVLSiZ6Zyq6Nl
- tcp+SXI9SdW3ip0h9T13yiU9XECIR1sx85RVAsKdDKV7TTz73kAUVKjGlUcaGGohJCia
- BOIA==
-X-Gm-Message-State: APjAAAUN9z65XnpmZkES9rBWZqy/9BOdS8/nu1XEC169oCRX8iNN4vc5
- C41L0EJwsMJuQ7JdIKHpgZY=
-X-Google-Smtp-Source: APXvYqzhmC7VgtWYMxxp2kY23YtH8Ca0a0KQNKe2mlI1+BLdkn+mgGJp9VxVUIN/qnwBwT0R5uQVCQ==
-X-Received: by 2002:a19:4f50:: with SMTP id a16mr13990334lfk.24.1559584061508; 
- Mon, 03 Jun 2019 10:47:41 -0700 (PDT)
+ bh=4qDu9sgTgZn0ixKovZtDdWsY36CDb/LQcyeDWdfScG8=;
+ b=H5nZKCg8g/aSkXpuvLq67rOb9b32NQEqp3OVMNGt1BychdkGfSfHtn+z9LJS+cCpO7
+ zuvxVb5jwUAeK3Xh4UrAlQaleNTNIbJEBkqDDqKIKh97RWfdubR1O+JvkRIqzkw0jndQ
+ Q1/230SNm8uoFizq9x0QH26ZU/EV45FSKjwgzQCO0f7Ylv7UDEmDYpBFPQBD7BX7POLk
+ D8SzVSrkh0eZnFQbe2rcWcyJtkr0v/vn1nKwDGa7KasiYttlEFBZTnXbtd6j9mNSxPhc
+ eA76yVQQ4SxHVuw5hCLT/YIL8g1SBPZT/h/mtgsMl55yuEZ3SIqRQcpGCv7sLBTBvz4d
+ SqXQ==
+X-Gm-Message-State: APjAAAXXySWBIsPKUhYIqWWI7KW4o7fwftNjDR5tRrtuzn5jlpKF+9zL
+ sNCAQpdRT5woNCX6/Y5KsbY=
+X-Google-Smtp-Source: APXvYqz2F0PyDNUFtpD+QUjxtj9ZHAQF3f3fXBXumc+SWsHJ+iRNTuzAyPXaNJZS7kycwtwb/Rn35A==
+X-Received: by 2002:a2e:91d7:: with SMTP id u23mr14465389ljg.150.1559584062466; 
+ Mon, 03 Jun 2019 10:47:42 -0700 (PDT)
 Received: from localhost.localdomain ([188.150.253.81])
- by smtp.gmail.com with ESMTPSA id n7sm2803532lfi.68.2019.06.03.10.47.40
+ by smtp.gmail.com with ESMTPSA id n7sm2803532lfi.68.2019.06.03.10.47.41
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
  Mon, 03 Jun 2019 10:47:41 -0700 (PDT)
 From: codekipper@gmail.com
 To: maxime.ripard@free-electrons.com, wens@csie.org,
  linux-sunxi@googlegroups.com
-Subject: [PATCH v4 4/9] ASoC: sun4i-i2s: Reduce quirks for sun8i-h3
-Date: Mon,  3 Jun 2019 19:47:30 +0200
-Message-Id: <20190603174735.21002-5-codekipper@gmail.com>
+Subject: [PATCH v4 5/9] ASoC: sun4i-i2s: Add set_tdm_slot functionality
+Date: Mon,  3 Jun 2019 19:47:31 +0200
+Message-Id: <20190603174735.21002-6-codekipper@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190603174735.21002-1-codekipper@gmail.com>
 References: <20190603174735.21002-1-codekipper@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_104743_302045_BAC1D812 
-X-CRM114-Status: GOOD (  14.95  )
+X-CRM114-CacheID: sfid-20190603_104744_135750_DEC97088 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,92 +109,74 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marcus Cooper <codekipper@gmail.com>
 
-We have a number of flags used to identify the functionality
-of the IP block found on the sun8i-h3 and later devices. As it
-is only neccessary to identify this new block then replace
-these flags with just one.
+Some codecs require a different amount of a bit clocks per frame than
+what is calculated by the sample width. Use the tdm slot bindings to
+provide this mechanism.
 
 Signed-off-by: Marcus Cooper <codekipper@gmail.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 23 +++++++----------------
- 1 file changed, 7 insertions(+), 16 deletions(-)
+ sound/soc/sunxi/sun4i-i2s.c | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index e2961d8f6e8c..329883750d6f 100644
+index 329883750d6f..bca73b3c0d74 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -119,10 +119,7 @@
-  *
-  * @has_reset: SoC needs reset deasserted.
-  * @has_slave_select_bit: SoC has a bit to enable slave mode.
-- * @has_fmt_set_lrck_period: SoC requires lrclk period to be set.
-- * @has_chcfg: tx and rx slot number need to be set.
-- * @has_chsel_tx_chen: SoC requires that the tx channels are enabled.
-- * @has_chsel_offset: SoC uses offset for selecting dai operational mode.
-+ * @is_h3_i2s_based: This block is similiar to what is found on the h3.
-  * @reg_offset_txdata: offset of the tx fifo.
-  * @sun4i_i2s_regmap: regmap config to use.
-  * @mclk_offset: Value by which mclkdiv needs to be adjusted.
-@@ -143,10 +140,7 @@
- struct sun4i_i2s_quirks {
- 	bool				has_reset;
- 	bool				has_slave_select_bit;
--	bool				has_fmt_set_lrck_period;
--	bool				has_chcfg;
--	bool				has_chsel_tx_chen;
--	bool				has_chsel_offset;
-+	bool				is_h3_i2s_based;
- 	unsigned int			reg_offset_txdata;	/* TX FIFO */
- 	const struct regmap_config	*sun4i_i2s_regmap;
- 	unsigned int			mclk_offset;
-@@ -340,7 +334,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
- 	regmap_field_write(i2s->field_clkdiv_mclk_en, 1);
+@@ -186,6 +186,9 @@ struct sun4i_i2s {
+ 	struct regmap_field	*field_rxchansel;
  
- 	/* Set sync period */
--	if (i2s->variant->has_fmt_set_lrck_period)
-+	if (i2s->variant->is_h3_i2s_based)
+ 	const struct sun4i_i2s_quirks	*variant;
++
++	unsigned int	tdm_slots;
++	unsigned int	slot_width;
+ };
+ 
+ struct sun4i_i2s_clk_div {
+@@ -337,7 +340,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 	if (i2s->variant->is_h3_i2s_based)
  		regmap_update_bits(i2s->regmap, SUN4I_I2S_FMT0_REG,
  				   SUN8I_I2S_FMT0_LRCK_PERIOD_MASK,
- 				   SUN8I_I2S_FMT0_LRCK_PERIOD(32));
-@@ -366,7 +360,7 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
- 		return -EINVAL;
- 	}
+-				   SUN8I_I2S_FMT0_LRCK_PERIOD(32));
++				   SUN8I_I2S_FMT0_LRCK_PERIOD(word_size));
  
--	if (i2s->variant->has_chcfg) {
-+	if (i2s->variant->is_h3_i2s_based) {
- 		regmap_update_bits(i2s->regmap, SUN8I_I2S_CHAN_CFG_REG,
- 				   SUN8I_I2S_CHAN_CFG_TX_SLOT_NUM_MASK,
- 				   SUN8I_I2S_CHAN_CFG_TX_SLOT_NUM(channels));
-@@ -386,7 +380,7 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
- 	regmap_field_write(i2s->field_rxchansel,
- 			   SUN4I_I2S_CHAN_SEL(params_channels(params)));
+ 	/* Set sign extension to pad out LSB with 0 */
+ 	regmap_field_write(i2s->field_fmt_sext, 0);
+@@ -414,7 +417,8 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ 			   sr + i2s->variant->fmt_offset);
  
--	if (i2s->variant->has_chsel_tx_chen)
-+	if (i2s->variant->is_h3_i2s_based)
- 		regmap_update_bits(i2s->regmap, SUN8I_I2S_TX_CHAN_SEL_REG,
- 				   SUN8I_I2S_TX_CHAN_EN_MASK,
- 				   SUN8I_I2S_TX_CHAN_EN(channels));
-@@ -449,7 +443,7 @@ static int sun4i_i2s_set_fmt(struct snd_soc_dai *dai, unsigned int fmt)
- 		return -EINVAL;
- 	}
+ 	return sun4i_i2s_set_clk_rate(dai, params_rate(params),
+-				      params_width(params));
++				      i2s->tdm_slots ?
++				      i2s->slot_width : params_width(params));
+ }
  
--	if (i2s->variant->has_chsel_offset) {
-+	if (i2s->variant->is_h3_i2s_based) {
- 		/*
- 		 * offset being set indicates that we're connected to an i2s
- 		 * device, however offset is only used on the sun8i block and
-@@ -942,10 +936,7 @@ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
- 	.mclk_offset		= 1,
- 	.bclk_offset		= 2,
- 	.fmt_offset		= 3,
--	.has_fmt_set_lrck_period = true,
--	.has_chcfg		= true,
--	.has_chsel_tx_chen	= true,
--	.has_chsel_offset	= true,
-+	.is_h3_i2s_based     = true,
- 	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
- 	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
- 	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
+ static int sun4i_i2s_set_fmt(struct snd_soc_dai *dai, unsigned int fmt)
+@@ -657,11 +661,25 @@ static int sun4i_i2s_set_sysclk(struct snd_soc_dai *dai, int clk_id,
+ 	return 0;
+ }
+ 
++static int sun4i_i2s_set_dai_tdm_slot(struct snd_soc_dai *dai,
++	unsigned int tx_mask, unsigned int rx_mask,
++	int slots, int width)
++{
++	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
++
++	i2s->tdm_slots = slots;
++
++	i2s->slot_width = width;
++
++	return 0;
++}
++
+ static const struct snd_soc_dai_ops sun4i_i2s_dai_ops = {
+ 	.hw_params	= sun4i_i2s_hw_params,
+ 	.set_fmt	= sun4i_i2s_set_fmt,
+ 	.set_sysclk	= sun4i_i2s_set_sysclk,
+ 	.trigger	= sun4i_i2s_trigger,
++	.set_tdm_slot	= sun4i_i2s_set_dai_tdm_slot,
+ };
+ 
+ static int sun4i_i2s_dai_probe(struct snd_soc_dai *dai)
 -- 
 2.21.0
 
