@@ -2,45 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95EC03339F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 17:35:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA25B333AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 17:36:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ZMw6aSTZLFbFBrisvZE/NLX8ydzPrGE854E+oQESu10=; b=jUn
-	026E/0rXC6k2bLmZ0vmoBOchsm6ZLHLyRu2LaX/xRq+UyAGFRR/sh/4ksEumvTVKEmH7+r6rSbsE4
-	c6ScxO6GGdylPk0sjTMEkkKPLw1GnHE2mTNplUJda6ItJAb4VwU35MBomVelKCQzriv+k9vTITz4s
-	JKBRTuPJggZDo4U7QDHmtYxfZ5X6/3gdGW7GCl3Kc1iNo9O1plmdQdHyeWtoclb/WIVS9bUg3vKfx
-	ZM7E9Z7FiNyKPKNbVYMAGDiqTwTWxIVdrIN3csDajDhBRAAlnVc5VnSwCoNBvpvCUKcd81eKSTCsu
-	015CpfbUHCFGeuuqfWL4rNR2H+GnsQQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q/kdR2F5Lx7+4+qjIStEyCJm6Nb3Q1JABkYHOiFlheA=; b=OZGCcMcbiQHBKi
+	bQUKkyE/12cu2eHFJ9+h/6+JQCwfMD9FrtOodalsKFDSGtPkxlt1gBtyalt0FuPDvfR3pNyDPknnI
+	piCR+YBYEwG3xvNPD7sqkWropf0i5r12Q82mge6PKorzbNWGQx/Crj/otQf6AGE/C23Cx1KkwAxTU
+	v6MkoBpeLSZk/v2sOfu2fUV9AjfZ7QaKl/BHE79BM+pOSpS1MVnMtsm6wpq2uXe6HvJiTc3C4fV/J
+	Teq2hc5DdDvcgsFRbz/sscNsIH2UuPPM5ZC8qAcq0vNJ11yyuIB5V2122PuoXvxbrGP7ES17XbrQ/
+	njBA+HOgwAwPF4Yvyokg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXozU-0001AC-Bx; Mon, 03 Jun 2019 15:35:16 +0000
+	id 1hXp14-0001Su-VJ; Mon, 03 Jun 2019 15:36:55 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXozN-00019t-SF
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 15:35:11 +0000
+ id 1hXp0u-0001SV-Te
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 15:36:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2153780D;
- Mon,  3 Jun 2019 08:35:09 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 341FD3F246;
- Mon,  3 Jun 2019 08:35:08 -0700 (PDT)
-From: Dave Martin <Dave.Martin@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: cpufeature: Fix missing ZFR0 in
- __read_sysreg_by_encoding()
-Date: Mon,  3 Jun 2019 16:35:02 +0100
-Message-Id: <1559576102-12156-1-git-send-email-Dave.Martin@arm.com>
-X-Mailer: git-send-email 2.1.4
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 55C4380D;
+ Mon,  3 Jun 2019 08:36:42 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ F37BE3F246; Mon,  3 Jun 2019 08:36:40 -0700 (PDT)
+Date: Mon, 3 Jun 2019 16:36:38 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V3 2/2] arm64/mm: Change offset base address in
+ [pud|pmd]_free_[pmd|pte]_page()
+Message-ID: <20190603153638.GA63283@arrakis.emea.arm.com>
+References: <1557377177-20695-1-git-send-email-anshuman.khandual@arm.com>
+ <1557377177-20695-3-git-send-email-anshuman.khandual@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1557377177-20695-3-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_083509_917469_96783724 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20190603_083645_234906_57092E64 
+X-CRM114-Status: GOOD (  12.53  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -61,55 +65,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, Suzuki Poulose <suzuki.poulose@arm.com>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-mm@kvack.org, James Morse <james.morse@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In commit 06a916feca2b ("arm64: Expose SVE2 features for
-userspace"), new hwcaps are added that are detected via fields in
-the SVE-specific ID register ID_AA64ZFR0_EL1.
+Hi Anshuman,
 
-In order to check compatibility of secondary cpus with the hwcaps
-established at boot, the cpufeatures code uses
-__read_sysreg_by_encoding() to read this ID register based on the
-sys_reg field of the arm64_elf_hwcaps[] table.
 
-This leads to a kernel splat if an hwcap uses an ID register that
-__read_sysreg_by_encoding() doesn't explicitly handle, as now
-happens when exercising cpu hotplug on an SVE2-capable platform.
+On Thu, May 09, 2019 at 10:16:17AM +0530, Anshuman Khandual wrote:
+> Pgtable page address can be fetched with [pmd|pte]_offset_[kernel] if input
+> address is PMD_SIZE or PTE_SIZE aligned. Input address is now guaranteed to
+> be aligned, hence fetched pgtable page address is always correct. But using
+> 0UL as offset base address has been a standard practice across platforms.
+> It also makes more sense as it isolates pgtable page address computation
+> from input virtual address alignment. This does not change functionality.
+> 
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Robin Murphy <robin.murphy@arm.com>
 
-So fix it by adding the required case in there.
+What's the plan with this small series? I didn't find a v5 (unless I
+deleted it by mistake). I can queue this patch through the arm64 tree or
+they can both go in via the mm tree.
 
-Fixes: 06a916feca2b ("arm64: Expose SVE2 features for userspace")
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-
----
-
-There is a broader question about how to avoid this happening again, but
-I couldn't see an obvious solution so far.
----
- arch/arm64/kernel/cpufeature.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index ca27e08..80babf4 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -830,6 +830,7 @@ static u64 __read_sysreg_by_encoding(u32 sys_id)
- 
- 	read_sysreg_case(SYS_ID_AA64PFR0_EL1);
- 	read_sysreg_case(SYS_ID_AA64PFR1_EL1);
-+	read_sysreg_case(SYS_ID_AA64ZFR0_EL1);
- 	read_sysreg_case(SYS_ID_AA64DFR0_EL1);
- 	read_sysreg_case(SYS_ID_AA64DFR1_EL1);
- 	read_sysreg_case(SYS_ID_AA64MMFR0_EL1);
 -- 
-2.1.4
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
