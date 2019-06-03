@@ -2,98 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7B5732A34
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:00:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0272232A45
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:02:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	Date:From:References:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fkl+rOYrmH1tLM6dLVLlRRu5zlJ7WZ4xz0YEVnrycPk=; b=CFdJ24qt1v607o
-	XS4bRXQo3BgeLDWmqvsZjEYSb5MLz110eF2qVdmDaA8iYe2Q4guN+T1kNsU3X8C+Uahw+ksaH+FWi
-	zSypPDyhmv9DIfI+KWHLBIhphnqFrPFu4pGslXVX9vd40Td3ooIQ9XcKjFVkU2tUkXdw6l080yTsS
-	QTxlZKa/j4CHSTMM2qlI9dJ1WVfepa67FN5hOt+EXGDA08yIvKFXfwOMP7a2oE2gwsTpAz9F/+azF
-	QgQPlsFRkzgw5QfpAe/wngTO+9DMcZ9gIZyylSoRgb3J1p33ViJH90tljZSg0TJyZ/u0hTzBBHMD1
-	IQ4VRtpkHTz9HXPvKbyA==;
+	List-Owner; bh=iDIKMTp7XuCMaDB4E/GwvBPQPVag6QzIxQjV1LKBb2I=; b=WpYTeahTaDRxIV
+	VcJMarlSnpvfOjOAkhWpE+uk5EhTlabqM+QGc3/BqYohjg3CMAXUhirdRQGIboBIgBa93u7CKdZXV
+	U6rbPA0PUFtYiM0w/12tFvgDyqwh8S9WA9WzBM4S3X5TE155hl0pfNtNaldElrKjfud2/qd9w8wJO
+	9hAscYBfIS8YX6g9gzl0XIT4yxmLoJ8KTR4vTd+jybIs6N2aIc7pd8MDcDQaltysWnj2BBD15kxm4
+	SS0hcSnHWUXkSYUS2Q74gYWJP7F97iqtF0JOrrRnGGdvZlhkOciSD9vFgx+kbdnrMrTXnUKySu9UH
+	4llZRXffvKjNnINk1XgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXht6-0005Vd-8R; Mon, 03 Jun 2019 08:00:12 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hXhvQ-00061W-TS; Mon, 03 Jun 2019 08:02:36 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXhsy-0004Uk-6G
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:00:05 +0000
-Received: from pps.filterd (m0098413.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x537vSk7000745
- for <linux-arm-kernel@lists.infradead.org>; Mon, 3 Jun 2019 04:00:01 -0400
-Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2svw0gp4w5-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 03 Jun 2019 04:00:01 -0400
-Received: from localhost
- by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <freude@linux.ibm.com>;
- Mon, 3 Jun 2019 08:59:59 +0100
-Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
- by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Mon, 3 Jun 2019 08:59:55 +0100
-Received: from d06av24.portsmouth.uk.ibm.com (mk.ibm.com [9.149.105.60])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x537xsA146989420
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 3 Jun 2019 07:59:54 GMT
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 0CEC342045;
- Mon,  3 Jun 2019 07:59:54 +0000 (GMT)
-Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 870E642042;
- Mon,  3 Jun 2019 07:59:53 +0000 (GMT)
-Received: from [10.0.2.15] (unknown [9.152.224.114])
- by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Mon,  3 Jun 2019 07:59:53 +0000 (GMT)
-Subject: Re: [RFC PATCH 1/2] crypto: Allow working with key references
-To: Richard Weinberger <richard@nod.at>,
- Herbert Xu <herbert@gondor.apana.org.au>
-References: <20190529224844.25203-1-richard@nod.at>
- <20190530023357.2mrjtslnka4i6dbl@gondor.apana.org.au>
- <2084969721.73871.1559201016164.JavaMail.zimbra@nod.at>
-From: Harald Freudenberger <freude@linux.ibm.com>
-Date: Mon, 3 Jun 2019 09:59:53 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hXhvI-000614-Df; Mon, 03 Jun 2019 08:02:30 +0000
+X-UUID: 5bd85c2b98234535aeed002a4edbc6a1-20190603
+X-UUID: 5bd85c2b98234535aeed002a4edbc6a1-20190603
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chuanjia.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1654606549; Mon, 03 Jun 2019 00:01:31 -0800
+Received: from MTKMBS32N1.mediatek.inc (172.27.4.71) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 3 Jun 2019 01:01:29 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS32N1.mediatek.inc
+ (172.27.4.71) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Mon, 3 Jun 2019 16:01:26 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 3 Jun 2019 16:01:25 +0800
+Message-ID: <1559548885.13732.28.camel@mhfsdcap03>
+Subject: Re: [PATCH 2/2] pinctrl: mediatek: Update cur_mask in mask/mask ops
+From: Chuanjia Liu <Chuanjia.Liu@mediatek.com>
+To: Evan Green <evgreen@chromium.org>
+Date: Mon, 3 Jun 2019 16:01:25 +0800
+In-Reply-To: <CAE=gft7YOVFUiWD=u39xSPVFUtiqb7m93sMGBFb7Ufn2RB+B_g@mail.gmail.com>
+References: <20190429035515.73611-1-drinkcat@chromium.org>
+ <20190429035515.73611-3-drinkcat@chromium.org>
+ <155778659317.14659.136626364818483852@swboyd.mtv.corp.google.com>
+ <CANMq1KBMd7eR3dP=V9gJ6G4OgE6DsXad_gzvuNJ25_pee4+6eg@mail.gmail.com>
+ <155786487644.14659.17142525593824613967@swboyd.mtv.corp.google.com>
+ <CANMq1KCNzn-5sYJZGivUedsNaQfVW_MjgDZn27W6sz8Fk3beNA@mail.gmail.com>
+ <CAE=gft6jxR9Lt7tLwm6VKy9_shMVW7wf3g6rBGEqtB7oNH0hUA@mail.gmail.com>
+ <1559289956.13732.17.camel@mhfsdcap03>
+ <CAE=gft7YOVFUiWD=u39xSPVFUtiqb7m93sMGBFb7Ufn2RB+B_g@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <2084969721.73871.1559201016164.JavaMail.zimbra@nod.at>
-Content-Language: en-US
-X-TM-AS-GCONF: 00
-x-cbid: 19060307-0016-0000-0000-000002830744
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19060307-0017-0000-0000-000032E00F2A
-Message-Id: <14ffcdf2-ed9f-be07-fde5-62dfb1fce4f9@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-03_06:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1906030059
+X-TM-SNTS-SMTP: 2C14DE7CA442EC2F710E1EF29AFDD501DEEBC05FC271561E76C5DBCCDCA3DF262000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_010004_369969_78A3BFAC 
-X-CRM114-Status: GOOD (  23.66  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190603_010228_467823_C2378EEB 
+X-CRM114-Status: GOOD (  46.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,57 +79,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: david <david@sigma-star.at>, shawnguo@kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, linux-imx@nxp.com,
- kernel <kernel@pengutronix.de>, festevam@gmail.com, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Nicolas Boichat <drinkcat@chromium.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@kernel.org>,
+ lkml <linux-kernel@vger.kernel.org>, Stephen Boyd <swboyd@chromium.org>,
+ linux-gpio@vger.kernel.org,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm Mailing
+ List <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMzAuMDUuMTkgMDk6MjMsIFJpY2hhcmQgV2VpbmJlcmdlciB3cm90ZToKPiAtLS0tLSBVcnNw
-csO8bmdsaWNoZSBNYWlsIC0tLS0tCj4+IFZvbjogIkhlcmJlcnQgWHUiIDxoZXJiZXJ0QGdvbmRv
-ci5hcGFuYS5vcmcuYXU+Cj4+IEFuOiAicmljaGFyZCIgPHJpY2hhcmRAbm9kLmF0Pgo+PiBDQzog
-IkxpbnV4IENyeXB0byBNYWlsaW5nIExpc3QiIDxsaW51eC1jcnlwdG9Admdlci5rZXJuZWwub3Jn
-PiwgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnLCAibGludXgta2VybmVsIgo+
-PiA8bGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZz4sIGxpbnV4LWlteEBueHAuY29tLCBmZXN0
-ZXZhbUBnbWFpbC5jb20sICJrZXJuZWwiIDxrZXJuZWxAcGVuZ3V0cm9uaXguZGU+LCAiU2FzY2hh
-IEhhdWVyIgo+PiA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4sIHNoYXduZ3VvQGtlcm5lbC5vcmcs
-IGRhdmVtQGRhdmVtbG9mdC5uZXQsICJkYXZpZCIgPGRhdmlkQHNpZ21hLXN0YXIuYXQ+Cj4+IEdl
-c2VuZGV0OiBEb25uZXJzdGFnLCAzMC4gTWFpIDIwMTkgMDQ6MzM6NTcKPj4gQmV0cmVmZjogUmU6
-IFtSRkMgUEFUQ0ggMS8yXSBjcnlwdG86IEFsbG93IHdvcmtpbmcgd2l0aCBrZXkgcmVmZXJlbmNl
-cwo+PiBPbiBUaHUsIE1heSAzMCwgMjAxOSBhdCAxMjo0ODo0M0FNICswMjAwLCBSaWNoYXJkIFdl
-aW5iZXJnZXIgd3JvdGU6Cj4+PiBTb21lIGNyeXB0byBhY2NlbGVyYXRvcnMgYWxsb3cgd29ya2lu
-ZyB3aXRoIHNlY3VyZSBvciBoaWRkZW4ga2V5cy4KPj4+IFRoaXMga2V5cyBhcmUgbm90IGV4cG9z
-ZWQgdG8gTGludXggbm9yIG1haW4gbWVtb3J5LiBUbyB1c2UgdGhlbQo+Pj4gZm9yIGEgY3J5cHRv
-IG9wZXJhdGlvbiB0aGV5IGFyZSByZWZlcmVuY2VkIHdpdGggYSBkZXZpY2Ugc3BlY2lmaWMgaWQu
-Cj4+Pgo+Pj4gVGhpcyBwYXRjaCBhZGRzIGEgbmV3IGZsYWcsIENSWVBUT19URk1fUkVRX1JFRl9L
-RVkuCj4+PiBJZiB0aGlzIGZsYWcgaXMgc2V0LCBjcnlwdG8gZHJpdmVycyBzaG91bGQgdHJlYWQg
-dGhlIGtleSBhcwo+Pj4gc3BlY2lmaWVkIHZpYSBzZXRrZXkgYXMgcmVmZXJlbmNlIGFuZCBub3Qg
-YXMgcmVndWxhciBrZXkuCj4+PiBTaW5jZSB3ZSByZXVzZSB0aGUga2V5IGRhdGEgc3RydWN0dXJl
-IHN1Y2ggYSByZWZlcmVuY2UgaXMgbGltaXRlZAo+Pj4gYnkgdGhlIGtleSBzaXplIG9mIHRoZSBj
-aGlwZXIgYW5kIGlzIGNoaXAgc3BlY2lmaWMuCj4+Pgo+Pj4gVE9ETzogSWYgdGhlIGNpcGhlciBp
-bXBsZW1lbnRhdGlvbiBvciB0aGUgZHJpdmVyIGRvZXMgbm90Cj4+PiBzdXBwb3J0IHJlZmVyZW5j
-ZSBrZXlzLCB3ZSBuZWVkIGEgd2F5IHRvIGRldGVjdCB0aGlzIGFuIGZhaWwKPj4+IHVwb24gc2V0
-a2V5Lgo+Pj4gSG93IHNob3VsZCB0aGUgZHJpdmVyIGluZGljYXRlIHRoYXQgaXQgc3VwcG9ydHMg
-dGhpcyBmZWF0dXJlPwo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IFJpY2hhcmQgV2VpbmJlcmdlciA8
-cmljaGFyZEBub2QuYXQ+Cj4+IFdlIGFscmVhZHkgaGF2ZSBleGlzdGluZyBkcml2ZXJzIGRvaW5n
-IHRoaXMuICBQbGVhc2UgaGF2ZSBhIGxvb2sKPj4gYXQgaG93IHRoZXkncmUgZG9pbmcgaXQgYW5k
-IHVzZSB0aGUgc2FtZSBwYXJhZGlnbS4gIFlvdSBjYW4gZ3JlcAo+PiBmb3IgcGFlcyB1bmRlciBk
-cml2ZXJzL2NyeXB0by4KPiBUaGFua3MgZm9yIHRoZSBwb2ludGVyLgo+IFNvIHRoZSBwcmVmZXJy
-ZWQgd2F5IGlzIGRlZmluaW5nIGEgbmV3IGNyeXB0byBhbGdvcml0aG0gcHJlZml4ZWQgd2l0aAo+
-ICJwIiBhbmQgcmV1c2luZyBzZXRrZXkgdG8gcHJvdmlkZSB0aGUga2V5IHJlZmVyZW5jZS4KVGhl
-ICJwIiBpbiBwYWVzIGlzIGJlY2F1c2Ugd2UgY2FsbCBpdCAicHJvdGVjdGVkIGtleSBhZXMiLiBJ
-IHRoaW5rIHlvdSBhcmUgbm90IGxpbWl0ZWQKdG8gdGhlICJwIi4gV2hhdCBIZXJiZXJ0IHRyaWVz
-IHRvIHBvaW50IG91dCBpcyB0aGF0IHlvdSBtYXkgZGVmaW5lIHlvdXIgb3duCmNpcGhlciB3aXRo
-IGFuIHVuaXF1ZSBuYW1lIGFuZCB0aGVyZSB5b3UgY2FuIGhhbmRsZSB5b3VyIHNlY3VyZSBrZXkg
-cmVmZXJlbmNlcwphcyB5b3UgbGlrZS4gWW91IG1heSB1c2UgdGhlIHMzOTAgcGFlcyBpbXBsZW1l
-bnRhdGlvbiBhcyBhIHN0YXJ0aW5nIHBvaW50LgoKcmVnYXJkcyBIYXJhbGQgRnJldWRlbmJlcmdl
-ciA8ZnJldWRlQGxpbnV4LmlibS5jb20+Cgo+Cj4gVGhhbmtzLAo+IC8vcmljaGFyZAo+CgoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+On Fri, 2019-05-31 at 10:17 -0700, Evan Green wrote:
+> On Fri, May 31, 2019 at 1:06 AM Chuanjia Liu <Chuanjia.Liu@mediatek.com> wrote:
+> >
+> > On Thu, 2019-05-30 at 10:12 -0700, Evan Green wrote:
+> > > On Wed, May 15, 2019 at 1:05 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
+> > > >
+> > > > On Wed, May 15, 2019 at 4:14 AM Stephen Boyd <swboyd@chromium.org> wrote:
+> > > > >
+> > > > > Quoting Nicolas Boichat (2019-05-13 18:37:58)
+> > > > > > On Tue, May 14, 2019 at 6:29 AM Stephen Boyd <swboyd@chromium.org> wrote:
+> > > > > > >
+> > > > > > > Quoting Nicolas Boichat (2019-04-28 20:55:15)
+> > > > > > > > During suspend/resume, mtk_eint_mask may be called while
+> > > > > > > > wake_mask is active. For example, this happens if a wake-source
+> > > > > > > > with an active interrupt handler wakes the system:
+> > > > > > > > irq/pm.c:irq_pm_check_wakeup would disable the interrupt, so
+> > > > > > > > that it can be handled later on in the resume flow.
+> > > > > > > >
+> > > > > > > > However, this may happen before mtk_eint_do_resume is called:
+> > > > > > > > in this case, wake_mask is loaded, and cur_mask is restored
+> > > > > > > > from an older copy, re-enabling the interrupt, and causing
+> > > > > > > > an interrupt storm (especially for level interrupts).
+> > > > > > > >
+> > > > > > > > Instead, we just record mask/unmask changes in cur_mask. This
+> > > > > > > > also avoids the need to read the current mask in eint_do_suspend,
+> > > > > > > > and we can remove mtk_eint_chip_read_mask function.
+> > > > > > > >
+> > > > > > > > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+> > > > > > >
+> > > > > > > It looks an awful lot like you should just use IRQCHIP_MASK_ON_SUSPEND
+> > > > > > > here. Isn't that what's happening? All non-wake irqs should be masked at
+> > > > > > > the hardware level so they can't cause a wakeup during suspend and on
+> > > > > > > resume they can be unmasked?
+> > > > > >
+> > > > > > No, this is for an line that has both wake and interrupt enabled. To
+> > > > > > reword the commit message above:
+> > > > >
+> > > > > Is my understanding correct that there isn't a different "wake up"
+> > > > > register that can be written to cause a GPIO to be configured to wake
+> > > > > the system from suspend? The only way to do so is to leave the GPIO
+> > > > > unmasked in the hardware by having EINT_EN[irq] = 1? And thus any
+> > > > > interrupts that we don't want to wake us up during suspend should be
+> > > > > masked in the hardware?
+> > > >
+> > > > Yes, that's my understanding as well.
+> > > >
+> > > > And then, what this driver does is to emulate the behaviour of a
+> > > > controller that would actually have separate irq and wake enable
+> > > > registers.
+> > > >
+> > > > > If that's true, the code here that's trying to keep track of enabled
+> > > > > irqs and wakeup enabled irqs can be replaced with the irqchip flag so
+> > > > > that wakeup irqs are not masked while non-wakeups are masked.
+> > > >
+> > > > Correct, but with the caveat that I don't see anything that definitely
+> > > > requires an interrupt to be enabled to be a wake source. See below...
+> > > >
+> > > > >
+> > > > > >  1. cur_mask[irq] = 1; wake_mask[irq] = 1; EINT_EN[irq] = 1 (interrupt
+> > > > > > enabled at hardware level)
+> > > > > >  2. System suspends, resumes due to that line (at this stage EINT_HW
+> > > > > > == wake_mask)
+> > > > > >  3. irq_pm_check_wakeup is called, and disables the interrupt =>
+> > > > > > EINT_EN[irq] = 0, but we still have cur_mask[irq] = 1
+> > > > > >  4. mtk_eint_do_resume is called, and restores EINT_EN = cur_mask, so
+> > > > > > it reenables EINT_EN[irq] = 1 => interrupt storm.
+> > > > > >
+> > > > > > This patch fixes the issue in step 3. So that the interrupt can be
+> > > > > > re-enabled properly later on, sometimes after mtk_eint_do_resume, when
+> > > > > > the driver is ready to handle it.
+> > > > >
+> > > > > Right, we'd rather not see irqchip drivers working around the genirq
+> > > > > layer to do these things like tracking cur_mask and wake_mask. That
+> > > > > leads to subtle bugs and makes the driver maintain state across the
+> > > > > irqchip callbacks and system suspend/resume.
+> > > > >
+> > > > > >
+> > > > > > Also, IRQCHIP_MASK_ON_SUSPEND does not handle lines that are enabled
+> > > > > > as a wake source, but without interrupt enabled (e.g. cros_ec driver
+> > > > > > does that), which we do want to support.
+> > > > >
+> > > > > Hmm. I thought that even if the irq is disabled by a driver, that would
+> > > > > be a lazy disable so it isn't really masked in the hardware. Then if an
+> > > > > interrupt comes in during suspend on a wake configured irq line, the
+> > > > > hardware will have left it unmasked because IRQCHIP_MASK_ON_SUSPEND in
+> > > > > combination with lazy disable would mean that the line is left unmasked
+> > > > > (ignoring whatever this mediatek driver is doing to mask and unmask in
+> > > > > PM hooks).
+> > > >
+> > > > At the very least, that's not what happens with this system. The
+> > > > interrupt is definitely not kept enabled in suspend, and the system
+> > > > would not wake from an EC interrupt. (see also this series, BTW:
+> > > > https://patchwork.kernel.org/cover/10921121/).
+> > > >
+> > > > > Just reading Documentation/power/suspend-and-interrupts.txt I'm led to
+> > > > > believe that the cros_ec driver shouldn't call disable_irq() on the
+> > > > > interrupt if it wants to wakeup from it:
+> > > > >
+> > > > > "Calling enable_irq_wake() causes suspend_device_irqs() to treat the
+> > > > > given IRQ in a special way.  Namely, the IRQ remains enabled, by on the
+> > > > > first interrupt it will be disabled, marked as pending and "suspended"
+> > > > > so that it will be re-enabled by resume_device_irqs() during the
+> > > > > subsequent system resume.  Also the PM core is notified about the event
+> > > > > which causes the system suspend in progress to be aborted (that doesn't
+> > > > > have to happen immediately, but at one of the points where the suspend
+> > > > > thread looks for pending wakeup events)."
+> > > >
+> > > > I think this describes the behaviour when you keep both enabled.
+> > > >
+> > > > > I suppose the problem is an irq line disabled in hardware that has
+> > > > > wakeup armed on it? Is this even valid? Shouldn't an irq be enabled for
+> > > > > wakeup to work?
+> > > >
+> > > > I couldn't really find a definite answer, but there are a bunch of
+> > > > examples of other drivers in the kernel:
+> > > >  - drivers/extcon/extcon-usb-gpio.c:usb_extcon_suspend
+> > > >  - drivers/hid/i2c-hid/i2c-hid.c:i2c_hid_suspend
+> > > >  - drivers/mfd/max77843.c:max77843_suspend
+> > > > (not exhaustive, this is quite hard to grep for...)
+> > > >
+> > > > > We could immediately unmask those lines in the hardware when the
+> > > > > set_wake() callback is called. That way the genirq layer can use the
+> > > > > driver to do what it wants with the hardware and the driver can make
+> > > > > sure that set_wake() will always cause the wakeup interrupt to be
+> > > > > delivered to genirq even when software has disabled it.
+> > > > >
+> > > > > But I think that there might be a problem with how genirq understands
+> > > > > the masked state of a line when the wakeup implementation conflates
+> > > > > masked state with wakeup armed state. Consider this call-flow:
+> > > > >
+> > > > >         irq masked in hardware, IRQD_IRQ_MASKED is set
+> > > > >         enable_irq_wake()
+> > > > >           unmask_irq in hardware
+> > > > >         IRQD_WAKEUP_ARMED is set
+> > > > >         <suspend and wakeup from irq>
+> > > > >         handle_level_irq()
+> > > > >           mask_ack_irq()
+> > > > >             mask_irq()
+> > > > >               if (irqd_irq_masked()) -> returns true and skips masking!
+> > > > >             if (desc->irq_data.chip->irq_ack)
+> > > > >               ...
+> > > > >           irq_may_run()
+> > > > >             irq_pm_check_wakeup()
+> > > > >               irq_disable()
+> > > > >                 mask_irq() -> does nothing again
+> > > > >
+> > > > > In the above flow, we never mask the irq because we thought it was
+> > > > > already masked when it was disabled, but the irqchip implementation
+> > > > > unmasked it to make wakeup work. Maybe we should always mask the irq if
+> > > > > wakeup is armed and we're trying to call mask_irq()? Looks hacky.
+> > Maybe we can implement irqchip's mask_ack_irq  in mediatek driver to
+> > always mask the irq. Then flow will always call it without judgment
+> > IRQD_IRQ_MASKED.
+> >
+> > diff --git a/drivers/pinctrl/mediatek/mtk-eint.c
+> > b/drivers/pinctrl/mediatek/mtk-
+> > index f464f8c..9f1aae2 100644
+> > --- a/drivers/pinctrl/mediatek/mtk-eint.c
+> > +++ b/drivers/pinctrl/mediatek/mtk-eint.c
+> > @@ -272,12 +272,19 @@ static void mtk_eint_irq_release_resources(struct
+> > irq_data
+> >         gpiochip_unlock_as_irq(gpio_c, gpio_n);
+> >  }
+> >
+> > +static void mtk_eint_mask_ack(struct irq_data *d)
+> > +{
+> > +       mtk_eint_mask(d);
+> > +       mtk_eint_ack(d);
+> > +}
+> > +
+> >  static struct irq_chip mtk_eint_irq_chip = {
+> >         .name = "mt-eint",
+> >         .irq_disable = mtk_eint_mask,
+> >         .irq_mask = mtk_eint_mask,
+> >         .irq_unmask = mtk_eint_unmask,
+> >         .irq_ack = mtk_eint_ack,
+> > +       .irq_mask_ack = mtk_eint_mask_ack,
+> >         .irq_set_type = mtk_eint_set_type,
+> >         .irq_set_wake = mtk_eint_irq_set_wake,
+> >         .irq_request_resources = mtk_eint_irq_request_resources,
+> >
+> > This seems like a small change.
+> > thanks.
+> 
+> Does this work? My understanding is that Linux thinks the irq is
+> _already_ masked, so it short-circuits in the generic IRQ code and
+> doesn't call mask again.
+> -Evan
+
+Yes, you are right.
+
+The underlying problem is really that the hardware IRQ enabled state is
+out of sync with what linux thinks.In resume flow,Linux thinks the irq
+is _already_masked, so it short-circuits in the generic IRQ code and
+doesn't call mask again.So in step 3 will have a interrupt storm.
+
+But we implement irqchip's mask_ack_irq so that mask_ack_irq() calls
+desc->irq_data.chip->irq_mask_ack instead of mask_irq() that needs to
+judge IRQD_IRQ_MASKED. This will correctly set cur_mask[irq] = 0 to 
+sync with kernel state.
+
+Also, this patch can solve the issue of [1/2] in this patchset[1] which
+also is the interrupt mask cannot be set correctly due to hardware irq
+state not sync kernel.
+
+[1] https://patchwork.kernel.org/patch/10921143/
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
