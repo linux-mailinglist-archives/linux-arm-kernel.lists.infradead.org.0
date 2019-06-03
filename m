@@ -2,104 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 380C7326C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 04:51:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90424326CF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 04:53:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xDdO1YJOBfZPwmyjNUslacRfFKl4PVZgCAkGleFZX/o=; b=Nzf7CIa5VzaPa5
-	kRkKtmIZV2NdvNvSFDk3vsl6wrQXKEmhVc9gS++92un26/3CTTyZeYc2ajcEZyNxa2Acp7l16t1NT
-	w/vovn8uj+sU/PG/C4ln0t1LCHYIZz4YtlHzXk20MhfuTk/xUm5t+uRwBO4vuTL6dbIxvRfCqGlz+
-	8ENa+wZJ8f9NsMl4wgA8IjqBVeg2vQCERsasgKD4VitI0SU4GLivGX7jBLMOu/tFGllwvDrAuokX8
-	C4tDNLDMxNNfzUxyF2xiNT6Pk1KNik6xdV0OWKLpD5Y+81tPMwAeYgUhjaEy9Adj/WkpfhsCUD96f
-	BEF3OEbKd2K3VKypaBgg==;
+	List-Owner; bh=onNSog9GGbZMWp5QxuUV72n0ioYkobOaSngqZpWjtAY=; b=onOtgwuLsxw4TY
+	3TcM09o9f5tFzRTctnWNSqosgfEPaA3nvkIb9oD3IE6xkUExtB1UpCNuCYDuamEI7NOYdpYtBatwN
+	cZw2V6y6bLUtJd3AQg8rmtNmhzFkbuokDFW/TA+YLeotkLVoNEM8fUtIoE10vXHIxSkzk8XEvJudj
+	1gCjmbbAmtJyWw72yGquzua2NfEosCiknJBtMqJqEGqltIFRkwiJTxhHK3bBDYqL6DDOZ8f1HS6bS
+	u6/VybmoKDP/ZodZamd3e3iNVwAWG9xo1qO0WjVw+Fcw8KI5dOpWv72bLE5vNfcPHC7EQHsbPNKJ2
+	KIwEwzsY5tHePvxIJHVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXd46-0000QN-Pi; Mon, 03 Jun 2019 02:51:14 +0000
-Received: from mail-eopbgr30058.outbound.protection.outlook.com ([40.107.3.58]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hXd6b-00019b-Gq; Mon, 03 Jun 2019 02:53:49 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXd3z-0000PU-Sz
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 02:51:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4SmWoqJSneWeLmHCMTw5WTlnZGfm8dE5b0oRTak8TRQ=;
- b=j7+8aIfM1iV2JxNeCMpndipUcyV8xUKdFe3fhQvACi7gDTpgoopLRfGRxwSKAaOwIsx6n9vnugd2MjdCQ1w71sAkwxwpROM4ZC0JHr/zxaPZ0gW8YH7oqtJ5yf56PdiAK6z13cn4o7nCo3SWoDu6taMwil338zCY75QVsIxDFpg=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3644.eurprd04.prod.outlook.com (52.134.70.17) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1943.17; Mon, 3 Jun 2019 02:51:04 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1943.018; Mon, 3 Jun 2019
- 02:51:04 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: RE: [PATCH] arm64: dts: imx8mm: Fix build warnings
-Thread-Topic: [PATCH] arm64: dts: imx8mm: Fix build warnings
-Thread-Index: AQHVGaXO4iCjF9SbWUifvQR5SJsW3qaJOl6AgAAAj8A=
-Date: Mon, 3 Jun 2019 02:51:04 +0000
-Message-ID: <DB3PR0402MB3916DEAAAF8992D12BFAE302F5140@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190603004820.36247-1-Anson.Huang@nxp.com>
- <CAOMZO5B_1HTg6i2Aybv1Hdm4jXg=1R7FRbOnkAXjjG0mk3RZ=A@mail.gmail.com>
-In-Reply-To: <CAOMZO5B_1HTg6i2Aybv1Hdm4jXg=1R7FRbOnkAXjjG0mk3RZ=A@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a37a7226-3f60-4425-d0df-08d6e7ce5217
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3644; 
-x-ms-traffictypediagnostic: DB3PR0402MB3644:
-x-microsoft-antispam-prvs: <DB3PR0402MB36446C8A06C60E43DF825B3BF5140@DB3PR0402MB3644.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:597;
-x-forefront-prvs: 0057EE387C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(396003)(376002)(39860400002)(346002)(136003)(13464003)(189003)(199004)(6916009)(316002)(4744005)(54906003)(71200400001)(71190400001)(52536014)(478600001)(8676002)(26005)(68736007)(7736002)(81166006)(14454004)(476003)(8936002)(486006)(186003)(305945005)(81156014)(1411001)(11346002)(66066001)(55016002)(9686003)(66476007)(102836004)(6436002)(64756008)(66446008)(73956011)(66946007)(76176011)(99286004)(6506007)(53546011)(7696005)(66556008)(86362001)(6246003)(74316002)(53936002)(229853002)(76116006)(7416002)(4326008)(5660300002)(33656002)(446003)(25786009)(256004)(3846002)(6116002)(14444005)(44832011)(2906002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3644;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ODg+yYB95TRa0hpREUIERxQKFGBc2IfbyFWBSN3Mh+xLOQ6OanZiw6vT8wPtQNeBBRdZXCmUqj7ZtOIsz8yrf5AvK9/DicckrfbhS5m8SM9CeBiioQVfdv4o+kRB7s+ivDfrvWSGas7Hq7XqZCKEb3MHeLWWYszEQGqdAtPpHCKxtXn+P21FVmgtiFrhhuFD+7gNWVqX7ie7lBrd/OI2gFblYUtljUYswoxf6j+rLlgMPcf17FZ+z+vpNlRHC7DwJR1NMs1Zto/LxZ4u/UpFUiyqtCYA0yHu95B57FAnOlc3SYcueF8zfn2tMPSneEj/JQxwBtzmPjHCOHOgKc6+dEj2BcJo0tXCWHh//HwqvYs0bGx6FrjMGR8JBiZLiqsFHljGRnFcSnXx6Tj5WmUU+SFPUvO2oef8iJv+gxFnZpA=
+ id 1hXd6S-00018f-Pb; Mon, 03 Jun 2019 02:53:42 +0000
+X-UUID: a3e8252ce227418fa96643eea19f8b54-20190602
+X-UUID: a3e8252ce227418fa96643eea19f8b54-20190602
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1522237117; Sun, 02 Jun 2019 18:53:39 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 2 Jun 2019 19:53:37 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS33DR.mediatek.inc (172.27.6.106) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 3 Jun 2019 10:53:34 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 3 Jun 2019 10:53:33 +0800
+Message-ID: <1559530413.32185.8.camel@mtksdaap41>
+Subject: Re: [v4 3/3] drm/mediatek: add mipi_tx driver for mt8183
+From: CK Hu <ck.hu@mediatek.com>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Date: Mon, 3 Jun 2019 10:53:33 +0800
+In-Reply-To: <20190601095235.9194-4-jitao.shi@mediatek.com>
+References: <20190601095235.9194-1-jitao.shi@mediatek.com>
+ <20190601095235.9194-4-jitao.shi@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a37a7226-3f60-4425-d0df-08d6e7ce5217
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jun 2019 02:51:04.3746 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3644
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_195107_939575_9C73E58A 
-X-CRM114-Status: GOOD (  11.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190602_195340_839550_8CA61163 
+X-CRM114-Status: GOOD (  17.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.58 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,51 +71,258 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, "open list:OPEN
- FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- viresh kumar <viresh.kumar@linaro.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
+ Ajay Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
+ cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>, Thierry
+ Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
+ Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki
+ Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Andy
+ Yan <andy.yan@rock-chips.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ Rahul Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>, Sean
+ Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Fabio
+Hi, Jitao:
 
-> -----Original Message-----
-> From: Fabio Estevam <festevam@gmail.com>
-> Sent: Monday, June 3, 2019 10:49 AM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: Rob Herring <robh+dt@kernel.org>; Mark Rutland
-> <mark.rutland@arm.com>; Shawn Guo <shawnguo@kernel.org>; Sascha
-> Hauer <s.hauer@pengutronix.de>; Sascha Hauer <kernel@pengutronix.de>;
-> Leonard Crestez <leonard.crestez@nxp.com>; Aisheng Dong
-> <aisheng.dong@nxp.com>; viresh kumar <viresh.kumar@linaro.org>; Jacky
-> Bai <ping.bai@nxp.com>; open list:OPEN FIRMWARE AND FLATTENED
-> DEVICE TREE BINDINGS <devicetree@vger.kernel.org>; moderated
-> list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE <linux-arm-
-> kernel@lists.infradead.org>; linux-kernel <linux-kernel@vger.kernel.org>; dl-
-> linux-imx <linux-imx@nxp.com>
-> Subject: Re: [PATCH] arm64: dts: imx8mm: Fix build warnings
+On Sat, 2019-06-01 at 17:52 +0800, Jitao Shi wrote:
+> This patch add mt8183 mipi_tx driver.
+> And also support other chips that use the same binding and driver.
 > 
-> Hi Anson,
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/Makefile             |   1 +
+>  drivers/gpu/drm/mediatek/mtk_mipi_tx.c        |   2 +
+>  drivers/gpu/drm/mediatek/mtk_mipi_tx.h        |   1 +
+>  drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c | 162 ++++++++++++++++++++++++++
+>  4 files changed, 166 insertions(+)
+>  create mode 100644 drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
 > 
-> On Sun, Jun 2, 2019 at 9:46 PM <Anson.Huang@nxp.com> wrote:
-> >
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > This patch fixes below build warning with "W=1":
-> 
-> I have already sent patches to fix these warnings.
+> diff --git a/drivers/gpu/drm/mediatek/Makefile b/drivers/gpu/drm/mediatek/Makefile
+> index 2c8de1f5a5ee..8067a4be8311 100644
+> --- a/drivers/gpu/drm/mediatek/Makefile
+> +++ b/drivers/gpu/drm/mediatek/Makefile
+> @@ -13,6 +13,7 @@ mediatek-drm-y := mtk_disp_color.o \
+>  		  mtk_dsi.o \
+>  		  mtk_mipi_tx.o \
+>  		  mtk_mt8173_mipi_tx.o \
+> +		  mtk_mt8183_mipi_tx.o \
+>  		  mtk_dpi.o
+>  
+>  obj-$(CONFIG_DRM_MEDIATEK) += mediatek-drm.o
+> diff --git a/drivers/gpu/drm/mediatek/mtk_mipi_tx.c b/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
+> index cdc68b88cefd..ab0fbfba5572 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_mipi_tx.c
+> @@ -182,6 +182,8 @@ static const struct of_device_id mtk_mipi_tx_match[] = {
+>  	  .data = &mt2701_mipitx_data },
+>  	{ .compatible = "mediatek,mt8173-mipi-tx",
+>  	  .data = &mt8173_mipitx_data },
+> +	{ .compatible = "mediatek,mt8183-mipi-tx",
+> +	  .data = &mt8183_mipitx_data },
+>  	{ },
+>  };
+>  
+> diff --git a/drivers/gpu/drm/mediatek/mtk_mipi_tx.h b/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
+> index 660726924992..3fd24563952e 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_mipi_tx.h
+> @@ -45,5 +45,6 @@ unsigned long mtk_mipi_tx_pll_recalc_rate(struct clk_hw *hw,
+>  
+>  extern const struct mtk_mipitx_data mt2701_mipitx_data;
+>  extern const struct mtk_mipitx_data mt8173_mipitx_data;
+> +extern const struct mtk_mipitx_data mt8183_mipitx_data;
+>  
+>  #endif
+> diff --git a/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c b/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
+> new file mode 100644
+> index 000000000000..a9f893d8e409
+> --- /dev/null
+> +++ b/drivers/gpu/drm/mediatek/mtk_mt8183_mipi_tx.c
+> @@ -0,0 +1,162 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2019 MediaTek Inc.
+> + * Author: jitao.shi <jitao.shi@mediatek.com>
+> + */
+> +
+> +#include "mtk_mipi_tx.h"
+> +
+> +#define MIPITX_LANE_CON		0x000c
+> +#define RG_DSI_CPHY_T1DRV_EN		BIT(0)
+> +#define RG_DSI_ANA_CK_SEL		BIT(1)
+> +#define RG_DSI_PHY_CK_SEL		BIT(2)
+> +#define RG_DSI_CPHY_EN			BIT(3)
+> +#define RG_DSI_PHYCK_INV_EN		BIT(4)
+> +#define RG_DSI_PWR04_EN			BIT(5)
+> +#define RG_DSI_BG_LPF_EN		BIT(6)
+> +#define RG_DSI_BG_CORE_EN		BIT(7)
+> +#define RG_DSI_PAD_TIEL_SEL		BIT(8)
+> +
+> +#define MIPITX_PLL_PWR	0x0028
+> +#define MIPITX_PLL_CON0	0x002c
+> +#define MIPITX_PLL_CON1	0x0030
+> +#define MIPITX_PLL_CON2	0x0034
+> +#define MIPITX_PLL_CON3	0x0038
+> +#define MIPITX_PLL_CON4	0x003c
+> +#define RG_DSI_PLL_IBIAS		(3 << 10)
+> +
+> +#define MIPITX_D2_SW_CTL_EN	0x0144
+> +#define MIPITX_D0_SW_CTL_EN	0x0244
+> +#define MIPITX_CK_CKMODE_EN	0x0328
+> +#define DSI_CK_CKMODE_EN		BIT(0)
+> +#define MIPITX_CK_SW_CTL_EN	0x0344
+> +#define MIPITX_D1_SW_CTL_EN	0x0444
+> +#define MIPITX_D3_SW_CTL_EN	0x0544
+> +#define DSI_SW_CTL_EN			BIT(0)
+> +#define AD_DSI_PLL_SDM_PWR_ON		BIT(0)
+> +#define AD_DSI_PLL_SDM_ISO_EN		BIT(1)
+> +
+> +#define RG_DSI_PLL_EN			BIT(4)
+> +#define RG_DSI_PLL_POSDIV		(0x7 << 8)
+> +
+> +static int mtk_mipi_tx_pll_prepare(struct clk_hw *hw)
+> +{
+> +	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
+> +	unsigned int txdiv, txdiv0;
+> +	u64 pcw;
+> +	int ret;
+> +
+> +	dev_dbg(mipi_tx->dev, "prepare: %u bps\n", mipi_tx->data_rate);
+> +
+> +	if (mipi_tx->data_rate >= 2000000000) {
+> +		txdiv = 1;
+> +		txdiv0 = 0;
+> +	} else if (mipi_tx->data_rate >= 1000000000) {
+> +		txdiv = 2;
+> +		txdiv0 = 1;
+> +	} else if (mipi_tx->data_rate >= 500000000) {
+> +		txdiv = 4;
+> +		txdiv0 = 2;
+> +	} else if (mipi_tx->data_rate > 250000000) {
+> +		txdiv = 8;
+> +		txdiv0 = 3;
+> +	} else if (mipi_tx->data_rate >= 125000000) {
+> +		txdiv = 16;
+> +		txdiv0 = 4;
+> +	} else {
+> +		return -EINVAL;
+> +	}
+> +
+> +	ret = clk_prepare_enable(mipi_tx->ref_clk);
 
-OK, thanks, then please ignore this patch.
+My last comment is in [1].
 
-Anson.
+[1]
+http://lists.infradead.org/pipermail/linux-mediatek/2019-May/019851.html
+
+Regards,
+CK
+
+> +	if (ret < 0) {
+> +		dev_err(mipi_tx->dev,
+> +			"can't prepare and enable mipi_tx ref_clk %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON4, RG_DSI_PLL_IBIAS);
+> +
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
+> +	usleep_range(30, 100);
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
+> +	pcw = div_u64(((u64)mipi_tx->data_rate * txdiv) << 24, 26000000);
+> +	writel(pcw, mipi_tx->regs + MIPITX_PLL_CON0);
+> +	mtk_mipi_tx_update_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_POSDIV,
+> +				txdiv0 << 8);
+> +	usleep_range(1000, 2000);
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
+> +
+> +	return 0;
+> +}
+> +
+> +static void mtk_mipi_tx_pll_unprepare(struct clk_hw *hw)
+> +{
+> +	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
+> +
+> +	dev_dbg(mipi_tx->dev, "unprepare\n");
+> +
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_CON1, RG_DSI_PLL_EN);
+> +
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_ISO_EN);
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_PLL_PWR, AD_DSI_PLL_SDM_PWR_ON);
+> +	clk_disable_unprepare(mipi_tx->ref_clk);
+> +}
+> +
+> +static long mtk_mipi_tx_pll_round_rate(struct clk_hw *hw, unsigned long rate,
+> +				       unsigned long *prate)
+> +{
+> +	return clamp_val(rate, 50000000, 1600000000);
+> +}
+> +
+> +static const struct clk_ops mtk_mipi_tx_pll_ops = {
+> +	.prepare = mtk_mipi_tx_pll_prepare,
+> +	.unprepare = mtk_mipi_tx_pll_unprepare,
+> +	.round_rate = mtk_mipi_tx_pll_round_rate,
+> +	.set_rate = mtk_mipi_tx_pll_set_rate,
+> +	.recalc_rate = mtk_mipi_tx_pll_recalc_rate,
+> +};
+> +
+> +static void mtk_mipi_tx_power_on_signal(struct phy *phy)
+> +{
+> +	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
+> +
+> +	/* BG_LPF_EN / BG_CORE_EN */
+> +	writel(RG_DSI_PAD_TIEL_SEL | RG_DSI_BG_CORE_EN,
+> +	       mipi_tx->regs + MIPITX_LANE_CON);
+> +	usleep_range(30, 100);
+> +	writel(RG_DSI_BG_CORE_EN | RG_DSI_BG_LPF_EN,
+> +	       mipi_tx->regs + MIPITX_LANE_CON);
+> +
+> +	/* Switch OFF each Lane */
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D0_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D1_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D2_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_D3_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_clear_bits(mipi_tx, MIPITX_CK_SW_CTL_EN, DSI_SW_CTL_EN);
+> +
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_CK_CKMODE_EN, DSI_CK_CKMODE_EN);
+> +}
+> +
+> +static void mtk_mipi_tx_power_off_signal(struct phy *phy)
+> +{
+> +	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
+> +
+> +	/* Switch ON each Lane */
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D0_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D1_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D2_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_D3_SW_CTL_EN, DSI_SW_CTL_EN);
+> +	mtk_mipi_tx_set_bits(mipi_tx, MIPITX_CK_SW_CTL_EN, DSI_SW_CTL_EN);
+> +
+> +	writel(RG_DSI_PAD_TIEL_SEL | RG_DSI_BG_CORE_EN,
+> +	       mipi_tx->regs + MIPITX_LANE_CON);
+> +	writel(RG_DSI_PAD_TIEL_SEL, mipi_tx->regs + MIPITX_LANE_CON);
+> +}
+> +
+> +const struct mtk_mipitx_data mt8183_mipitx_data = {
+> +	.mipi_tx_clk_ops = &mtk_mipi_tx_pll_ops,
+> +	.mipi_tx_enable_signal = mtk_mipi_tx_power_on_signal,
+> +	.mipi_tx_disable_signal = mtk_mipi_tx_power_off_signal,
+> +};
+> +
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
