@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D1A6331AB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:04:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C873A331B8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:07:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mjYdhCs54qFpAxpfcrluG2uaLbCUtLLIiVzo5uTR8Ps=; b=UrWIUYfDq0pVIu
-	PVw8xn5wvMMzF0cSMQKHHLlQB25HIzSdAh1ydCplzn7AgsD3K2Z8EKiJIysIT9f+4YkOaThFUony/
-	RktYz81QHZLqU07avw5/tMgDrpkeL0uAm0L2dJ0xGORvNCUe3p0cJ1IaMtkn/4TBfLB/8apjB+OXd
-	NuLKX3fgIa0BCCGEdo4165eCcmdI8I9QuSakBUWJ9MKKhs8C17Skg/UTXXwstl4DInFzVZVezsBk/
-	bQ06t3AmnTtNEDoyb1wMez0E4dlaWexb4Vh06pNyq66oa19xYjEzNBRpAyOuUrfgsLx5rynQsRR/S
-	yyp1I6GFgHEeB8xDJ2UA==;
+	List-Owner; bh=Kh1Bsz9PNlFbiLkBD87PG0n9UA4FH9N2Lx/Iz3mVkek=; b=Mzmyug4m679QDl
+	RLhNiUdqSuhUVvW9CKK3yQDMVrNXTTzMMRpawFK2bJgT0CN5I17n1PZmi3RuR1vSIqo6bLBRJrkQs
+	WiKN5qpoxjc2lBS2I42k+RP2UmI+UYXFdx0E+ywEcp+7rX4RbANbd/rmaJlTas9iTrxtJNlwdIpgX
+	0JUZRRKpWbIeucIjpDwMHYp4GjlDcEB1ULLdFwy71o9vyE3Kv+Tg/GTm21+QbF1HeJjGY+aCr4ov1
+	wphZyVzr/PvCiD+lzbJg+xNWU51gA9bvwR/MiK8uia3gUtEQkBh1X+iMfNhMrDqhy0VkLkq6R1Deg
+	0xc0B43QNPd2nLe4xVYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXnZD-0002Uc-Ch; Mon, 03 Jun 2019 14:04:03 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hXncL-0004nQ-CD; Mon, 03 Jun 2019 14:07:17 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXnZ6-0002U8-32
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:03:57 +0000
+ id 1hXncF-0004n4-0t
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:07:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8FEDB15A2;
- Mon,  3 Jun 2019 07:03:53 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1E51515A2;
+ Mon,  3 Jun 2019 07:07:10 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DBAAB3F246;
- Mon,  3 Jun 2019 07:03:51 -0700 (PDT)
-Date: Mon, 3 Jun 2019 15:03:48 +0100
-From: Andre Przywara <andre.przywara@arm.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 73AA43F246;
+ Mon,  3 Jun 2019 07:07:08 -0700 (PDT)
+Date: Mon, 3 Jun 2019 15:07:06 +0100
+From: Will Deacon <will.deacon@arm.com>
 To: Dave Martin <Dave.Martin@arm.com>
 Subject: Re: [PATCH kvmtool v3 5/9] KVM: arm/arm64: Add a vcpu feature for
  pointer authentication
-Message-ID: <20190603150348.47368256@donnerap.cambridge.arm.com>
-In-Reply-To: <20190603112302.GN28398@e103592.cambridge.arm.com>
+Message-ID: <20190603140706.GB28296@fuggles.cambridge.arm.com>
 References: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
  <1559229194-3036-6-git-send-email-Dave.Martin@arm.com>
  <20190531180416.3e87f5ad@donnerap.cambridge.arm.com>
  <20190603112302.GN28398@e103592.cambridge.arm.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190603112302.GN28398@e103592.cambridge.arm.com>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_070356_143976_B7A3E422 
-X-CRM114-Status: GOOD (  30.56  )
+X-CRM114-CacheID: sfid-20190603_070711_072445_C44EF1B6 
+X-CRM114-Status: GOOD (  26.28  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -68,7 +69,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Christoffer Dall <cdall@kernel.org>, Marc Zyngier <marc.zyngier@arm.com>,
- Will Deacon <will.deacon@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>,
  Kristina Martsenko <kristina.martsenko@arm.com>,
  Zhang Lei <zhang.lei@jp.fujitsu.com>,
  Amit Daniel Kachhap <amit.kachhap@arm.com>, kvmarm@lists.cs.columbia.edu,
@@ -78,15 +79,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 3 Jun 2019 12:23:03 +0100
-Dave Martin <Dave.Martin@arm.com> wrote:
-
-Hi Dave,
-
+On Mon, Jun 03, 2019 at 12:23:03PM +0100, Dave Martin wrote:
 > On Fri, May 31, 2019 at 06:04:16PM +0100, Andre Przywara wrote:
 > > On Thu, 30 May 2019 16:13:10 +0100
 > > Dave Martin <Dave.Martin@arm.com> wrote:
-> >   
+> > 
 > > > From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 > > > 
 > > > This patch adds a runtime capabality for KVM tool to enable Arm64 8.3
@@ -96,7 +93,7 @@ Hi Dave,
 > > > 
 > > > Command line options --enable-ptrauth and --disable-ptrauth are added
 > > > to use this feature. However, if those options are not provided then
-> > > also this feature is enabled if host supports this capability.  
+> > > also this feature is enabled if host supports this capability.
 > > 
 > > I don't really get the purpose of two options, I think that's quite
 > > confusing. Should the first one either be dropped at all or called
@@ -106,7 +103,7 @@ Hi Dave,
 > > option is supplied?
 > > 
 > > Or maybe have one option with parameters?
-> > --ptrauth[,=enable,=disable]  
+> > --ptrauth[,=enable,=disable]
 > 
 > So, I was following two principles here, either or both of which may be
 > bogus:
@@ -130,32 +127,17 @@ Hi Dave,
 > 
 > If we really can't decide, maybe it's better to drop the options
 > altogether until we have a real use case.
-
-In general I prefer the lack of a *need* for options over tuneability, but my concern is not so much exposing this knob, but more how it's done ...
-
+> 
 > I've found the options very useful for testing and debugging on the SVE
 > side, but I can't comment on ptrauth.  Maybe someone else has a view?
 
-Given that kvmtool was designed as a hacker tool, I find it quite useful to play around with those setting. I just have my gripes with those enable/disable pair, which are two related, but actually separate options, both polluting the command line options space and also being confusing to the user.
-I would be much happier if we would have one option per feature and a parameter: "--ptrauth={enable,disable}". Omitting the option altogether defaults to "enabled-if-available". Specifying it will force it on or off, accompanied by an error message if either(?) if not possible. This would also remove the need for the somewhat awkward "don't enable both" check.
-It would also more easily allow a common parser, to be used by both ptrauth and SVE, for instance.
-We could even introduce an explicit "default" parameter value, just in case people want to spell this case out.
+I'd prefer to drop them, to be honest. Whilst they may have been useful
+during SVE development, it's not clear to me that they will continue to
+be as useful now that things should be settling down. It's probably useful
+to print out any features that we've explicitly enabled (or failed to
+enable), but I'd stop there for the time being.
 
-What do you think about this?
-
-Cheers,
-Andre.
-> 
-> > > The macros defined in the headers are not in sync and should be replaced
-> > > from the upstream.  
-> > 
-> > This is no longer true, I guess?  
-> 
-> Ah yes, that comment can go.
-> 
-> Cheers
-> ---Dave
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
