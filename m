@@ -2,74 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D163532920
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 09:08:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4A9F32926
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 09:11:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C6yCnho6cZfSr82zs7EyxC1ig1XYRFkaCoGiXpOhbkY=; b=vAI60H6XrVd8C2
-	N5whaVJjkVcpsPrg8Aq3Efol/NC/kDYyKXp+cUP0hdxirELKzoGpru0vcNLAILA78wTS2Y7SSFZyX
-	jpfobNrO9YeejdNOIBNwic1f/6qt7qvWQu/14QU+sy7Z9WYdHDYcV0Lr7ympb+Kw4zJFJomQwHB14
-	2k+zQBeDiOM3gsP5MljCuPL9hcF4Ou3kuGHblfKCGMQMXOkmyxgF2QLQrk1F5b00SjvPYczHa/DgJ
-	Tc8nMw1/5huBamUG/IuFl3la9EnsKV9Xwu7QM5jETTIKvZ6MmtVkQaTUKSetVjtjDx6fsQKvLcl+F
-	THOGiwr4RsBMHPCwAauQ==;
+	List-Owner; bh=BKYJiqFG3fPrKJ6T8ZiRd/9BGPBrtoMOtwscpZmQDpg=; b=aHdZg85Q3u6btn
+	2tW+Vsycp9uVBFBA1UkDMYywaXCCX8Vzi+orbR3V0dqX2P4h8rFZ2O2fHbyiWicnmXsltv6N+OPPE
+	Zyxh0rQDxjHsoTa4+cjPZl88AGY/0iZGpcgDGiUVVZev9r34OjgJpQ0f9/lxRClM5Y+AHDwfr35w+
+	faJbypvdkffr7/nmPfg+W6+fdFT+w0j24zY3gpf3axGO/rnNYzCVoqP29OS+eQGxAFAPkZPmLzdQ9
+	kCUzGSOGm9CiEmFzCmKbmvlCTqzsmEFKvBkHNbUwkAMcwMbN9kUym/FsImb1wtBeXaeA0iIfDtmH8
+	5WjsJ22zuzxoPH1VlNfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXh4q-0002LL-Vf; Mon, 03 Jun 2019 07:08:17 +0000
-Received: from mail-lj1-f195.google.com ([209.85.208.195])
+	id 1hXh7n-0003tR-Rv; Mon, 03 Jun 2019 07:11:19 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXh4j-0002Kh-KL
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 07:08:11 +0000
-Received: by mail-lj1-f195.google.com with SMTP id a10so11868870ljf.6
+ id 1hXh7g-0003t3-FM
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 07:11:13 +0000
+Received: by mail-pf1-x441.google.com with SMTP id t16so1229706pfe.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 00:08:08 -0700 (PDT)
+ Mon, 03 Jun 2019 00:11:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Qm18g2EWN56tn+30WXhvjhc6Deqa0sfwyr6OO2dMMGc=;
+ b=EVkE7KvhSAwj6CijMdMBTze/Y3Ta1Ydzm7tQIDqJY3uO1UUehTqRfjLhag2P0TOyu4
+ X8J5kctBrCbCH10ff3m1LM693Ylt6Rk4qFfJ6HqRQN6hgqCnvKmXOJ23JvBRljl+8aGy
+ Mvt4Hh1OiOlXrDD5afZ0y3IMVxGiTrElV/54EenbtcpdNwFnIhBOYgiluF41GR70istx
+ 3JcK4VAD5GlxYBCEYMfjqrrF9yoL7k13d4vv5GxOzM6rVM/EsgQ0VwG/kFwjV+XxOPTg
+ HjfVu0+KNrZscWWdph/AzQGxVPHszKPTejeBG/EkLjz20uwUFT1neQGiwf1l5A1ZosZd
+ N6hA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WQJinh/xC2bOeYFsYlUlkNYdlsn0JSMzJ6+7ugAlLz8=;
- b=airqYKLeXAjzh5ocZ0xJ5JkOHgaLCDLNiWyLD61qv4InE+CmXpeyHDpB539zrotcdW
- Lw0zmcttS+cFRwfHPYIXTYQT3ulfE9TERrsC3XkF8r+wLOB3x/Wqph0yonusQ3Sob/qH
- vmBFdkHU8T04jA419sC27LmiCMeIIHSVqFpcDyIRA6B82woYPZDReT0k6mqdFE3j/mlK
- 9EPppOIJZ10lxpb2jJ4arPkDqlpyggYYMsqlp3FW5ZE7JL+Ej20zk26tBDkVU2GBbcID
- BtRSwk6jfrw13JhlHiGoIUkDf4WY/6UNHPTY13FSuIfOXIgKUUa4i9AaxJJzs00FtXa9
- 75Yg==
-X-Gm-Message-State: APjAAAVZo1CHmRnyY8VLSNLpSI7/UD0+aSvI/9/FRqQPYKxis+0fyZqo
- xEe4myW9WnbH1n2nGpOMmpO9XvpDwvcO34ufD4w=
-X-Google-Smtp-Source: APXvYqypxYOxQMw1wVILyzLBXGz+DJuPq5TH5W+toycfqpB93xioye3d2NaNp9HP84cOJVmXrpIamDZiegLE7qs7sEM=
-X-Received: by 2002:a2e:91c5:: with SMTP id u5mr1410332ljg.65.1559545686497;
- Mon, 03 Jun 2019 00:08:06 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Qm18g2EWN56tn+30WXhvjhc6Deqa0sfwyr6OO2dMMGc=;
+ b=XEjXRlWghSZxiMeb0WzYv8dnYT8w/m9vpm2aUWN9X0c4LqaGj0+xHE2V2r5NOb1rS7
+ ZK5ZhyJvn61Bf0qwvp5HC3PxfIzmTf3Py7NVui304GtS35MUyl0blkaZHIfJfEKiLxc6
+ XkISk4ZNNWQaFM3rsBhJ1TK2nvNqDBcpWLYO1djG8e9x1/nsRDRywzRkotypiDMaS1bj
+ q9KWCw5NyR0YPgHUKAr8vxiPjQCsOuUAyuU+iHDDeSbnQ9YQCcJvsxsmNcHHhDMDKS+w
+ A5VJskdfWZLRbBQNOnTtSHVeqE6VBhhQkT9AfuUahZ+XbvPye1oEssPX7HMpuItGmAAj
+ UtJw==
+X-Gm-Message-State: APjAAAV3o4LurdodGG9XYV9OEkdygHnH4INdtPsTjFke1Ydn+v6j5laU
+ /R9c7aRKnRPOj0618WY3H7iU8IADjZo=
+X-Google-Smtp-Source: APXvYqzzgxYFOssxgDncS+tgpwltYQPncZLlvPo5Vj1BvECm+EaZeUf2qkpwOqD/qtwtgaGrzOHlmA==
+X-Received: by 2002:a63:5ca:: with SMTP id 193mr2657457pgf.232.1559545871531; 
+ Mon, 03 Jun 2019 00:11:11 -0700 (PDT)
+Received: from localhost ([122.172.66.84])
+ by smtp.gmail.com with ESMTPSA id m7sm21245374pff.44.2019.06.03.00.11.10
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Jun 2019 00:11:10 -0700 (PDT)
+Date: Mon, 3 Jun 2019 12:41:08 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH 3/3] cpufreq: Switch imx7d to imx-cpufreq-dt for speed
+ grading
+Message-ID: <20190603071108.toainiom76pth4qs@vireshk-i7>
+References: <b6a9b9f80534af5c12db30a0bb699ec850f85be7.1559131365.git.leonard.crestez@nxp.com>
+ <8787934ff35e7e55837f2caabc0d5bf65828d971.1559131365.git.leonard.crestez@nxp.com>
+ <20190603053850.tkskdzcloir4k3kw@vireshk-i7>
+ <VI1PR04MB50551BDB2D0AA64D7192D98CEE140@VI1PR04MB5055.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190601032242.10405-1-yamada.masahiro@socionext.com>
-In-Reply-To: <20190601032242.10405-1-yamada.masahiro@socionext.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 3 Jun 2019 09:07:54 +0200
-Message-ID: <CAMuHMdXXbEr=oU0amKLbEkTm3cZ=jyQuk1-aZa5L4JL_dUmYMw@mail.gmail.com>
-Subject: Re: [PATCH] treewide: fix typos of SPDX-License-Identifier
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Content-Disposition: inline
+In-Reply-To: <VI1PR04MB50551BDB2D0AA64D7192D98CEE140@VI1PR04MB5055.eurprd04.prod.outlook.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_000809_670176_3187717A 
-X-CRM114-Status: GOOD (  17.13  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190603_001112_537250_7F12C1E8 
+X-CRM114-Status: GOOD (  16.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.195 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,81 +101,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kishon Vijay Abraham I <kishon@ti.com>,
- ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Kees Cook <keescook@chromium.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Takashi Iwai <tiwai@suse.com>,
- linux-stm32@st-md-mailman.stormreply.com, Russell King <linux@armlinux.org.uk>,
- Liam Girdwood <lgirdwood@gmail.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Joe Perches <joe@perches.com>, linux-spdx@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, Jaroslav Kysela <perex@perex.cz>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Abel Vesa <abel.vesa@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Yamada-san,
+On 03-06-19, 07:01, Leonard Crestez wrote:
+> On 6/3/2019 8:39 AM, Viresh Kumar wrote:
+> > On 29-05-19, 12:03, Leonard Crestez wrote:
+> >> This driver can handle speed grading bits on imx7d just like on imx8mq
+> >> and imx8mm.
+> >>
+> >> diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
+> >> index 5061503cb0a1..ce26ffc18ce6 100644
+> >> --- a/drivers/cpufreq/imx-cpufreq-dt.c
+> >> +++ b/drivers/cpufreq/imx-cpufreq-dt.c
+> >> @@ -18,10 +18,11 @@
+> >>   #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
+> >>   #define OCOTP_CFG3_MKT_SEGMENT_SHIFT    6
+> >>   #define OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 6)
+> >>   
+> >>   static const struct of_device_id imx_cpufreq_dt_match_list[] = {
+> >> +	{ .compatible = "fsl,imx7d" },
+> >>   	{ .compatible = "fsl,imx8mm" },
+> >>   	{ .compatible = "fsl,imx8mq" }, >>   	{}
+> >>   };
+> > 
+> > What is the purpose of this array and can we get rid of it instead ? I am asking
+> > as this driver gets probed only if the platform code has created the
+> > imx-cpufreq-dt device and it shouldn't get created for other machines than what
+> > is supported.
+> 
+> Maybe it will be useful in the future to add .data here if a chip starts 
+> using 3 speed grading bits?
+> 
+> It can be removed for now.
 
-On Sat, Jun 1, 2019 at 5:24 AM Masahiro Yamada
-<yamada.masahiro@socionext.com> wrote:
-> Prior to the adoption of SPDX, it was difficult for tools to determine
-> the correct license due to incomplete or badly formatted license text.
-> The SPDX solves this issue, assuming people can correctly spell
-> "SPDX-License-Identifier" although this assumption is broken in some
-> places.
->
-> Since scripts/spdxcheck.py parses only lines that exactly matches to
-> the correct tag, it cannot (should not) detect this kind of error.
->
-> If the correct tag is missing, scripts/checkpatch.pl warns like this:
->
->  WARNING: Missing or malformed SPDX-License-Identifier tag in line *
->
-> So, people should notice it before the patch submission, but in reality
-> broken tags sometimes slip in. The checkpatch warning is not useful for
-> checking the committed files globally since large number of files still
-> have no SPDX tag.
->
-> Also, I am not sure about the legal effect when the SPDX tag is broken.
->
-> Anyway, these typos are absolutely worth fixing. It is pretty easy to
-> find suspicious lines by grep.
->
->   $ git grep --not -e SPDX-License-Identifier --and -e SPDX- -- \
->     :^LICENSES :^scripts/spdxcheck.py :^*/license-rules.rst
->   arch/arm/kernel/bugs.c:// SPDX-Identifier: GPL-2.0
->   drivers/phy/st/phy-stm32-usbphyc.c:// SPDX-Licence-Identifier: GPL-2.0
->   drivers/pinctrl/sh-pfc/pfc-r8a77980.c:// SPDX-Lincense-Identifier: GPL 2.0
->   lib/test_stackinit.c:// SPDX-Licenses: GPLv2
->   sound/soc/codecs/max9759.c:// SPDX-Licence-Identifier: GPL-2.0
->
-> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-
-Thanks for your patch!
-
->  drivers/pinctrl/sh-pfc/pfc-r8a77980.c | 2 +-
-
-For the sh-pfc change:
-Acked-by: Geert Uytterhoeven <geert+renesas@glider.be>
-
-Gr{oetje,eeting}s,
-
-                        Geert
+Yep, please remove it then for now. And it would be better to break the current
+patch into arch and cpufreq part, so I can apply only the cpufreq parts easily.
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
