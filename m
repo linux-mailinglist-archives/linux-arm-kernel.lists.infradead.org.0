@@ -2,52 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EE4E33AEE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 00:14:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08F5633AF5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 00:15:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=syo0yWm4JBHULX54bURTA4eLdqpUAi3nHDjIhxIG8F8=; b=LtCLENCgO1h0Hk
-	8qg8AQQRLXiPCu+PXJDmgXivzHAO11iR7RICRBvy9VZaRwwlQxtYqQTPLXUoLAPqyQDYfvFtMwIuH
-	Er+r5GaUf8nYZZDZTbj/QWNGyzDOlYREwtnEpvqcWLiXrTG3+BMrMNV3dS/httMJeotSfdGES2nZm
-	5uqs36C1YG/y4XdPN6ts3Vf8J9IKrmErZmIt6p0CRZw1eHd0DDg3fsGXA/JedrGLKz4cGERfwmV65
-	aKTQSoYARlfdH+vlsKTUMc3AmM4Ek+4YAx43VDI8kzy0OeaMkgiF5yaor9QvH4JJuEah8c7KR1Mex
-	EFoJxbUeV8wo97/JF1bQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sOKHYbuwYalxFzTmNQUo+yIZrKrvcgotDzcKF3Cehi4=; b=oYJGoKv/4DTXWP
+	lVfJmORRJWobW8YTgSnzGocdmYMkqkGvCaCOZuwfxbf8MDEdWH6pCeerRrIYh+/3ug6DxC0zkiPBS
+	HFFWUVVh4P2vmn3QxVLXN4yY9IODEWCDzydNTcPEMy0YNjI8iuKRDBE4SPphfj9aGOihYi1TDYZ+D
+	TZ6P397ZMwo8cBc4HOJMDBFUS4gOqhhaOrqrv0IpTI5h6jscKiVcrrwHckeD80wlH/7fpPDJOAjFK
+	HOevNHRLexwJysYzfjiQnVRfYGHKtgOIStYnHgjqbq4JH29SOuQZedJEGZjd3blPPbmhX7JzVKh48
+	ZCxObBcxQXT4yzSaoLRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXvDp-000635-Cr; Mon, 03 Jun 2019 22:14:29 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hXvF5-0007Wm-5E; Mon, 03 Jun 2019 22:15:47 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXvDi-00062a-HE
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 22:14:24 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: gportay) with ESMTPSA id BE220260A21
-From: =?UTF-8?q?Ga=C3=ABl=20PORTAY?= <gael.portay@collabora.com>
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>
-Subject: [PATCH 1/1] arm64: defconfig: Enable RK3399 DMC devfreq driver
-Date: Mon,  3 Jun 2019 18:14:35 -0400
-Message-Id: <20190603221435.7599-1-gael.portay@collabora.com>
-X-Mailer: git-send-email 2.21.0
+ id 1hXvEw-0007Ve-GG
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 22:15:40 +0000
+Received: by mail-pl1-x644.google.com with SMTP id c5so7492453pll.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Jun 2019 15:15:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=AS+5msGMEX1/8R6Y37Be553kjtYeh4WbTw7nlVDQ3fw=;
+ b=qBcbQOrH7/lAUooQqY7B354nOSfo8120KYrAagGRLluXFqf/5E8SAIO8ERKuFud2gE
+ DrWecjYJNk/bl/ev7vgVtZOG7sM/RMZmAB+BubapSjxCH878TfewaumtVkfkG0jQbQST
+ a772e/QIUaUCP1tbEY/5RdTLGx/POkz5uABZ9GTS22CyHk6+ZpJ20vj62+B6trv4A/Nq
+ RDjLugBO9fExWsJmkkk9aGrASUEWNz+TVzULoJxaync77pFmd+mRHhuPFnw77c91y38j
+ KZGFBsxGV5BIYnuogEDU6PDawdkkRN9orJTj9zTZgDforVxWoW7hDZm2sUBPctKOnY9z
+ WTSw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=AS+5msGMEX1/8R6Y37Be553kjtYeh4WbTw7nlVDQ3fw=;
+ b=bodPJONC8m89uJBQeCdhnZQ9DbeDASEWf+OTk1b2xb0hg4y8K7czCSsSKt39PxlNIw
+ qwSKDh/dnfuYW2psa4mmrIeRFtCXhujM06+p6ETxHIV6gLf7zz2DGJy/Gca0VbkYHzeq
+ EG6q6UeWCiJd+AA0c/2abYcAzH1aa6ICEAX1/w4Nt2WPwy2sk2T/eZdHlXyOBUMCKbML
+ YHt4r7Ao3JW5qH81FIx2Pd62MpLYo1yrsEf9iYocE7axvTUmDed54CG66tx4x01mdBCw
+ EX5F22Kio98TMwJwSf22fOe0TzAd4oYfQJK81xdsqqw/AAzfXBrUlSH+dMzEmH4T/D/K
+ g7AA==
+X-Gm-Message-State: APjAAAXtqkveWUQ/tM0/aGci9zY1iD/HwqhxztQfLmm0WGpCGw1saim0
+ pfmqDZfmVcru4SfIHMApgqX2VA==
+X-Google-Smtp-Source: APXvYqzW4UJMHXhVyffvyuhaOGHNRco6mfxCHAHPih8GypHJkUx+ZG8CTCoQM38gm5YIRTyALBFE5Q==
+X-Received: by 2002:a17:902:31a4:: with SMTP id
+ x33mr4946785plb.331.1559600137824; 
+ Mon, 03 Jun 2019 15:15:37 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.googlemail.com with ESMTPSA id d6sm14561224pjo.32.2019.06.03.15.15.37
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 03 Jun 2019 15:15:37 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v2] arm64: dts: meson-g12a-x96-max: Add Gigabit Ethernet
+ Support
+In-Reply-To: <CAFBinCD67XCpT-zmppJ3SSs5Q5ruse-otGqMLdbeaTnkr3PKiQ@mail.gmail.com>
+References: <20190527130043.3384-1-narmstrong@baylibre.com>
+ <CAFBinCD67XCpT-zmppJ3SSs5Q5ruse-otGqMLdbeaTnkr3PKiQ@mail.gmail.com>
+Date: Mon, 03 Jun 2019 15:15:36 -0700
+Message-ID: <7hpnnuiad3.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_151422_853787_AF10B541 
-X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-CacheID: sfid-20190603_151538_549312_7E03DB8E 
+X-CRM114-Status: UNSURE (   8.48  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -59,26 +97,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@collabora.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RW5hYmxlIHRoZSBETUMgZGV2ZnJlcSBkcml2ZXIgdGhhdCBpcyBwcmVzZW50IGluIHRoZSBSSzMz
-OTkgU29DLgoKTm90ZSB0aGF0IGl0IHNlbGVjdHMgdGhlIERGSSBkZXZmcmVxIGV2ZW50IGFuZCB0
-aGUgc2ltcGxlIG9uZGVtYW5kCmdvdmVybm9yIGRyaXZlcnMuCgpTaWduZWQtb2ZmLWJ5OiBHYcOr
-bCBQT1JUQVkgPGdhZWwucG9ydGF5QGNvbGxhYm9yYS5jb20+Ci0tLQogYXJjaC9hcm02NC9jb25m
-aWdzL2RlZmNvbmZpZyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBk
-ZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvY29uZmlncy9kZWZjb25maWcgYi9h
-cmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCmluZGV4IDRkNTgzNTE0MjU4Yy4uYzc3OWU3MWZi
-Y2ViIDEwMDY0NAotLS0gYS9hcmNoL2FybTY0L2NvbmZpZ3MvZGVmY29uZmlnCisrKyBiL2FyY2gv
-YXJtNjQvY29uZmlncy9kZWZjb25maWcKQEAgLTY5OCw3ICs2OTgsNyBAQCBDT05GSUdfQVJDSF9U
-RUdSQV8xOTRfU09DPXkKIENPTkZJR19BUkNIX0szX0FNNl9TT0M9eQogQ09ORklHX1NPQ19UST15
-CiBDT05GSUdfVElfU0NJX1BNX0RPTUFJTlM9eQotQ09ORklHX0RFVkZSRVFfR09WX1NJTVBMRV9P
-TkRFTUFORD15CitDT05GSUdfQVJNX1JLMzM5OV9ETUNfREVWRlJFUT1tCiBDT05GSUdfRVhUQ09O
-X1VTQl9HUElPPXkKIENPTkZJR19FWFRDT05fVVNCQ19DUk9TX0VDPXkKIENPTkZJR19NRU1PUlk9
-eQotLSAKMi4yMS4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
+
+> On Mon, May 27, 2019 at 3:00 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>
+>> Enable the network interface of the X96 Mac using an external
+>> Realtek RTL8211F gigabit PHY, needing the same broken-eee properties
+>> as the previous Amlogic SoC generations.
+>>
+>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+
+Queued for v5.3,
+
+Kevin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
