@@ -2,89 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 293C63370F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:46:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDDDE3371C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:48:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UMnW52XLh2CJqNk6wrL288gVuiS8SXWii9UqVi9qpxA=; b=os0b1rgYWgLbdd
-	butcheb84Os2gn97aTmw9OSfV5ynA724cIW46B7ugvtBZOdh6ixHEQPrVSi/Li/PGhKC3ZjZDL2Up
-	jV3iIWCPWIjNC3rAxRGUCeKl8715Z9alA7qp/L+0dBOtx5SU1IK8dIprZ1sDXPcb9/yzbo88n4UBD
-	mMLIO0cH/+PWJTsfm1Bkr55v5hRSvnkm0wpV2/6ZAeKFKVEt56MFNyilh6j4yRzQD9ccNWo15bWzW
-	8PteTJz8JZhNawZKpCd+vCYFoHIFcBlfqKegU2JzIxjEdcm+pljfwhna5QabbEMlwcbWqC01dRbPE
-	faBF4rLPKD/j81P7woYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+mU92/hEgLhevrpgG0XEyzzTT11NCaFXqJCtNBMctJw=; b=CJnelhxw0vqHyH
+	n+bnzzGbOcR6hBhaoM1T1TtFyTRksDjK/kyNghsqA14Vt0oxoS9HkLhMzJqfl72HORw333IqQjxzf
+	Uy7Xja30JY/8ghpH5inR9R1BWNSskL8WzGpaWTr6/MnguVl4HjA0UwnZ/rqcSeteZnfkR4GRufj3m
+	zGHVgWIBBesx9m1ddLSx7JqVe1EiXhNFUuzRY8z28eNMoa3aQXXUqWGOOxtrqfDjskMQi6pv3QAed
+	rtzUXhFai28Mxye89H9aWdxpQc2QzLz+Fyf7bRTQp7hvWAOldO0k78hPdpIro4W9W0U28Y725dP8s
+	q4asaA77IiBE7Wuz54Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXr2U-0001T3-6G; Mon, 03 Jun 2019 17:46:30 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hXr3x-0001xz-LU; Mon, 03 Jun 2019 17:48:01 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXr2M-0001SM-AG
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:46:23 +0000
-Received: by mail-qt1-x843.google.com with SMTP id m29so5203197qtu.1
+ id 1hXr3e-0001mL-Pr
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:47:44 +0000
+Received: by mail-lf1-x141.google.com with SMTP id b11so14297979lfa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 10:46:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=3YD9QwJxecxdMHZGSRuYOcVyiXHhODdQ+7hG9X3IFEc=;
- b=Y8xQhEUl5VIp1CHI2GNhUWumFeridnSrDVLR4ophf+TEEqb9RYCBYUuzTaKnpS0N95
- PodsZw5QrRzXwcVAdLU8QbPx8UtppQyKINjpafz63KgI0mbZL1RBR/HG+Aw16qS1mL8x
- GbfoGarwImiN/E4mJOvSlkb1cLIeV/RY7kSfMlxm7UZhj+NafqRJ9xFMGOVfHXfBQNL8
- 3KhvQIu3nzrYZ9gVumHcKZbTTOBDGZbVoC0PmchuHZfBO5itRE+CWVGivs8JV9Bdb68S
- oKMm5wdMIjQdNVuG5jJ5CkpKuMh+/TZa/xggfv/76T6HlvfgScQBIZzwwZTZ5LwtflBg
- nfEg==
+ Mon, 03 Jun 2019 10:47:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=f1Dtl9xXT8tEGwrUxBzQBfGddt3tp9MI+UPqkpN1WN0=;
+ b=mqTz1839SvTGVA6JMBG6+XjE0xYwF2fSddZ7+seYCgdrXgukg0+NU1E4tXpmGF15Im
+ UZJXC+yUDioaBsN6la1dNtjTzmPzvL4teQe+GSwWL7g0C0GQ8xS+7Y5L2BBcCfXp+86x
+ wmMcAuVi4hbPPf8Pu4a/f2A02J0NXA367FrEGeAtR7D+OzvyqwIKbnX6pmohPchdxcab
+ om1NVhjh5ihdIMLobhgkrDeIrhVafIUwILMNvwzW9QzXJf7xfvMfpFZqOPjCRzZdWpdS
+ xCDuNsMcjH7LJDGLtHTp/dy+CwlmAJLQAjPt9FsfMow6RPEaUZ3hCIdNIW31jvDpVBA0
+ Et6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3YD9QwJxecxdMHZGSRuYOcVyiXHhODdQ+7hG9X3IFEc=;
- b=kzER9BokCyDMqfohvIMosXU7yf27Gk2OAZDrre6wx3gvYKknTI9OKU+YOFmZFt0SeR
- 1d7A7M2vmqMXR1uEB/rJE+Jpjzinp6XgrGrs+Q9taKvCtGdPrjejdrw/9KcezYzDz//o
- W0EEOflL8xvpH/scb0g/SuDcctaNwtqcU6H6phecJykmePEMonRx7ZkTEjYeOxNIAWhh
- DPWSasY5a4PMnNy9CA7gTWmq6bXL7XAskP2tAVLI093aLn9jqDhmQYrV4zEi2UUQhwNd
- jis+yVMV1TcDbs7BBzks9hIQ7+nAyC8dBTrBS9jzb/mnXFLxhtIDpEYF5YbzgE47ivM/
- ti4A==
-X-Gm-Message-State: APjAAAVXEadNTDV5TxX2EPsynXyxcPJWmytRpT248gBh3vUnaq0Duek2
- 9ms9HLnzgbF/YMuLMgg4wQ93Jw==
-X-Google-Smtp-Source: APXvYqx+ClbIfZmOUdY0b04TFbjW+3r9mnjIe7N0zaIfZmDOHWubw4QUOroagi67b9WugppzpkzydA==
-X-Received: by 2002:ac8:7381:: with SMTP id t1mr24802701qtp.387.1559583980558; 
- Mon, 03 Jun 2019 10:46:20 -0700 (PDT)
-Received: from ziepe.ca
- (hlfxns017vw-156-34-55-100.dhcp-dynamic.fibreop.ns.bellaliant.net.
- [156.34.55.100])
- by smtp.gmail.com with ESMTPSA id m40sm12874710qtm.2.2019.06.03.10.46.19
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 03 Jun 2019 10:46:19 -0700 (PDT)
-Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
- (envelope-from <jgg@ziepe.ca>)
- id 1hXr2J-00032t-AT; Mon, 03 Jun 2019 14:46:19 -0300
-Date: Mon, 3 Jun 2019 14:46:19 -0300
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v16 12/16] IB, arm64: untag user pointers in
- ib_uverbs_(re)reg_mr()
-Message-ID: <20190603174619.GC11474@ziepe.ca>
-References: <cover.1559580831.git.andreyknvl@google.com>
- <c829f93b19ad6af1b13be8935ce29baa8e58518f.1559580831.git.andreyknvl@google.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=f1Dtl9xXT8tEGwrUxBzQBfGddt3tp9MI+UPqkpN1WN0=;
+ b=VCE4gd1dYmD9V09rTR1puIsfHuo2jn6niPCBMMw5toXE+GNGzQ9xz2pgZgiQWxZd2f
+ 4ir1MPQYSEZJY61359BngyBlPsahSXLii8GmgqqqIO9zrfTOKy8h6D2VxrTxP8dYYUcc
+ Jp8aykNZGkLz1iclUFt5QIDD9Ery9YMIlIb1WTIh+bgl+XuuxerbNHLEWUatuU8ZcKaA
+ L6NvybjLc/mDXFfMVW6uPDbwDS5TwmwEfGvUTjzbiMoW1sJ1F8gGzzOg2W7rIXawfKEI
+ NRRgHxM8xBwFeMPAqYFCo3VoYYtUTd8rc9K+SdwnOY8Se8nIJdTdW2sueQlIwmEMWeJp
+ fqrA==
+X-Gm-Message-State: APjAAAXaNsXqQUCVHwNYJPl0qPyJ1Dd/sRnCAApixNgwtngYL8qsChr5
+ gYVUff9QzRzpcndoJPoAUFE=
+X-Google-Smtp-Source: APXvYqxCQNjDQHJYWJnJyGea/doMquTKfXFLsAZndtY60a6k8pR2NhL8Rsw2Q/prcSP3U/G6IrOLRg==
+X-Received: by 2002:ac2:599b:: with SMTP id w27mr15110769lfn.184.1559584057528; 
+ Mon, 03 Jun 2019 10:47:37 -0700 (PDT)
+Received: from localhost.localdomain ([188.150.253.81])
+ by smtp.gmail.com with ESMTPSA id n7sm2803532lfi.68.2019.06.03.10.47.36
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Jun 2019 10:47:36 -0700 (PDT)
+From: codekipper@gmail.com
+To: maxime.ripard@free-electrons.com, wens@csie.org,
+ linux-sunxi@googlegroups.com
+Subject: [PATCH v4 0/9]ASoC: sun4i-i2s: Updates to the driver
+Date: Mon,  3 Jun 2019 19:47:26 +0200
+Message-Id: <20190603174735.21002-1-codekipper@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c829f93b19ad6af1b13be8935ce29baa8e58518f.1559580831.git.andreyknvl@google.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_104622_497045_D9AA34D3 
-X-CRM114-Status: GOOD (  21.37  )
+X-CRM114-CacheID: sfid-20190603_104742_849475_FD8A9C29 
+X-CRM114-Status: GOOD (  18.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (codekipper[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -104,144 +97,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Dmitry Vyukov <dvyukov@google.com>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: alsa-devel@alsa-project.org, Marcus Cooper <codekipper@gmail.com>,
+ lgirdwood@gmail.com, linux-kernel@vger.kernel.org, be17068@iperbole.bo.it,
+ broonie@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 06:55:14PM +0200, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
-> 
-> ib_uverbs_(re)reg_mr() use provided user pointers for vma lookups (through
-> e.g. mlx4_get_umem_mr()), which can only by done with untagged pointers.
-> 
-> Untag user pointers in these functions.
->
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
->  drivers/infiniband/core/uverbs_cmd.c | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/drivers/infiniband/core/uverbs_cmd.c b/drivers/infiniband/core/uverbs_cmd.c
-> index 5a3a1780ceea..f88ee733e617 100644
-> +++ b/drivers/infiniband/core/uverbs_cmd.c
-> @@ -709,6 +709,8 @@ static int ib_uverbs_reg_mr(struct uverbs_attr_bundle *attrs)
->  	if (ret)
->  		return ret;
->  
-> +	cmd.start = untagged_addr(cmd.start);
-> +
->  	if ((cmd.start & ~PAGE_MASK) != (cmd.hca_va & ~PAGE_MASK))
->  		return -EINVAL;
+From: Marcus Cooper <codekipper@gmail.com>
 
-I feel like we shouldn't thave to do this here, surely the cmd.start
-should flow unmodified to get_user_pages, and gup should untag it?
+Hi All,
 
-ie, this sort of direction for the IB code (this would be a giant
-patch, so I didn't have time to write it all, but I think it is much
-saner):
+here is a patch series to add some improvements to the sun4i-i2s driver
+found whilst getting slave clocking and hdmi audio working on the newer
+SoCs. As the LibreELEC project is progressing extremely well then there
+has been some activity getting surround sound working and this is included.
 
-diff --git a/drivers/infiniband/core/umem.c b/drivers/infiniband/core/umem.c
-index 54628ef879f0ce..7b3b736c87c253 100644
---- a/drivers/infiniband/core/umem.c
-+++ b/drivers/infiniband/core/umem.c
-@@ -193,7 +193,7 @@ EXPORT_SYMBOL(ib_umem_find_best_pgsz);
-  * @access: IB_ACCESS_xxx flags for memory being pinned
-  * @dmasync: flush in-flight DMA when the memory region is written
-  */
--struct ib_umem *ib_umem_get(struct ib_udata *udata, unsigned long addr,
-+struct ib_umem *ib_umem_get(struct ib_udata *udata, void __user *addr,
- 			    size_t size, int access, int dmasync)
- {
- 	struct ib_ucontext *context;
-@@ -201,7 +201,7 @@ struct ib_umem *ib_umem_get(struct ib_udata *udata, unsigned long addr,
- 	struct page **page_list;
- 	unsigned long lock_limit;
- 	unsigned long new_pinned;
--	unsigned long cur_base;
-+	void __user *cur_base;
- 	struct mm_struct *mm;
- 	unsigned long npages;
- 	int ret;
-diff --git a/drivers/infiniband/core/uverbs_cmd.c b/drivers/infiniband/core/uverbs_cmd.c
-index 5a3a1780ceea4d..94389e7f12371f 100644
---- a/drivers/infiniband/core/uverbs_cmd.c
-+++ b/drivers/infiniband/core/uverbs_cmd.c
-@@ -735,7 +735,8 @@ static int ib_uverbs_reg_mr(struct uverbs_attr_bundle *attrs)
- 		}
- 	}
- 
--	mr = pd->device->ops.reg_user_mr(pd, cmd.start, cmd.length, cmd.hca_va,
-+	mr = pd->device->ops.reg_user_mr(pd, u64_to_user_ptr(cmd.start),
-+					 cmd.length, cmd.hca_va,
- 					 cmd.access_flags,
- 					 &attrs->driver_udata);
- 	if (IS_ERR(mr)) {
-diff --git a/drivers/infiniband/hw/mlx5/mr.c b/drivers/infiniband/hw/mlx5/mr.c
-index 4d033796dcfcc2..bddbb952082fc5 100644
---- a/drivers/infiniband/hw/mlx5/mr.c
-+++ b/drivers/infiniband/hw/mlx5/mr.c
-@@ -786,7 +786,7 @@ static int mr_cache_max_order(struct mlx5_ib_dev *dev)
- }
- 
- static int mr_umem_get(struct mlx5_ib_dev *dev, struct ib_udata *udata,
--		       u64 start, u64 length, int access_flags,
-+		       void __user *start, u64 length, int access_flags,
- 		       struct ib_umem **umem, int *npages, int *page_shift,
- 		       int *ncont, int *order)
- {
-@@ -1262,8 +1262,8 @@ struct ib_mr *mlx5_ib_reg_dm_mr(struct ib_pd *pd, struct ib_dm *dm,
- 				 attr->access_flags, mode);
- }
- 
--struct ib_mr *mlx5_ib_reg_user_mr(struct ib_pd *pd, u64 start, u64 length,
--				  u64 virt_addr, int access_flags,
-+struct ib_mr *mlx5_ib_reg_user_mr(struct ib_pd *pd, void __user *start,
-+				  u64 length, u64 virt_addr, int access_flags,
- 				  struct ib_udata *udata)
- {
- 	struct mlx5_ib_dev *dev = to_mdev(pd->device);
-diff --git a/include/rdma/ib_verbs.h b/include/rdma/ib_verbs.h
-index ec6446864b08e9..b3c8eaaa35c760 100644
---- a/include/rdma/ib_verbs.h
-+++ b/include/rdma/ib_verbs.h
-@@ -2464,8 +2464,8 @@ struct ib_device_ops {
- 	struct ib_mr *(*reg_user_mr)(struct ib_pd *pd, u64 start, u64 length,
- 				     u64 virt_addr, int mr_access_flags,
- 				     struct ib_udata *udata);
--	int (*rereg_user_mr)(struct ib_mr *mr, int flags, u64 start, u64 length,
--			     u64 virt_addr, int mr_access_flags,
-+	int (*rereg_user_mr)(struct ib_mr *mr, int flags, void __user *start,
-+			     u64 length, u64 virt_addr, int mr_access_flags,
- 			     struct ib_pd *pd, struct ib_udata *udata);
- 	int (*dereg_mr)(struct ib_mr *mr, struct ib_udata *udata);
- 	struct ib_mr *(*alloc_mr)(struct ib_pd *pd, enum ib_mr_type mr_type,
+The functionality included with the new patch set has been extended to
+cover more sample resolutions, multi-lane data output for HDMI audio
+and some bug fixes that have been discovered along the way.
+
+I can see more usage of the tdm property since I last attempted to push
+these patches and the examples currently in mainline sort of the opposite
+to what I'm trying to achieve. When we first started looking at the i2s
+driver, the codecs that we were using allowed for the frame width to be
+determined based on the sampling resolution but in most use cases it
+seems that a fixed width is required(my highest priority should be to get
+HDMI audio support in). We're using the tdm property to override the old
+way to calculate the frame width. What I've seen in what has already been
+mainlined is that the i2s driver has a frame width that is fixed to 32
+bits and this can be overridden using the tdm property.
+
+I still need to investigate the FIFO syncing issues which i've not had a 
+chance to change or address the concerns that broonie and wens brought up.
+This change has been moved to the top of the patch stack.
+
+BR,
+CK
+
+---
+v4 changes compared to v3 are:
+- Moved patches around so that the more controversial of patches are
+  at the top of the stack.
+- Added more details to commit messages.
+- Fixed 20bit audio PCM format to use 4 bytes.
+- Reduced number of flags used to indicate a new SoC.
+
+v3 changes compared to v2 are:
+ - added back slave mode changes
+ - added back the use of tdm properties
+ - changes to regmap and caching
+ - removed loopback functionality
+ - fixes to the channel offset mask
+
+v2 changes compared to v1 are:
+ - removed slave mode changes which didn't set mclk and bclk div.
+ - removed use of tdm and now use a dedicated property.
+ - fix commit message to better explain reason for sign extending
+ - add divider calculations for newer SoCs.
+ - add support for multi-lane i2s data output.
+ - add support for 20, 24 and 32 bit samples.
+ - add loopback property so blocks can be tested without a codec.
+
+
+Marcus Cooper (9):
+  ASoC: sun4i-i2s: Fix sun8i tx channel offset mask
+  ASoC: sun4i-i2s: Add offset to RX channel select
+  ASoC: sun4i-i2s: Add regmap field to sign extend sample
+  ASoC: sun4i-i2s: Reduce quirks for sun8i-h3
+  ASoC: sun4i-i2s: Add set_tdm_slot functionality
+  ASoC: sun4i-i2s: Add multi-lane functionality
+  ASoC: sun4i-i2s: Add multichannel functionality
+  ASoc: sun4i-i2s: Add 20, 24 and 32 bit support
+  ASoC: sun4i-i2s: Adjust regmap settings
+
+ sound/soc/sunxi/sun4i-i2s.c | 242 ++++++++++++++++++++++++------------
+ 1 file changed, 164 insertions(+), 78 deletions(-)
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
