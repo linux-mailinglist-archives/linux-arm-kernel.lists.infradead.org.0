@@ -2,88 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D18832B24
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:50:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DD9532B29
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:52:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BP/ESaVd5+Bpl//kZTO6S0jxpatxI/VnvmoY2NIM+Ec=; b=ESJppNR2GDD75kYDf75o+kFhF
-	wWtruQWFQvB14ZM9xx9LfuqCrFeKgvicnUUvSvLjyJ2AR2a8Sm1RLJubVlh8RwZEu5jkGTZGeJ6ky
-	ZT6O1vXELfwrq1MiiSndtqjsbS76GJMQ8LUdlSMqeu+9W08sh+cQyjgFgHsHHzJiWN8O0XA1jiKcN
-	NAEZYqsaOdlh9X5XtyXLZfhC6VQ14kQy42DWM8edQ0mmJKxlIOLYT3NSAhjxBxPliPp32Dr10hdPo
-	wvYQB86RUjKjsVurvxwL4x8stfc+B5QyOj5kR8GNOtLOZUfPqs2fGaCRIDXX6jvZGkXXxROEJ51HA
-	W3WqZEZig==;
+	 bh=1fsqEpo/U4wIKsIVZ3i2seLsmRCgCn7+MQb5BccEzAo=; b=gKRXFKaoJv9OisQIEwQx130Oc
+	uBArHv4Xk14zxoPu8bOEEWwJfibs1PzTee753Y6ZZHsxePz6pA4jI3J1QapOfbczGX8pRKUvfX5jX
+	z7EaBGBxvKce1i0yaxXoNUkFJDHYP6ZIK66LZb9iQ5Dmkid71s+2F3+v/4s+v1TOw8iSgmhn5O3+M
+	kNHAxKAI8n+v/m4m+VsvSRm2U+zX5C6RmDVY8Iy3BBo8JOK73WeOvfzC8RYv493684lncVsB6KYz0
+	qJfKfUFgbox/FuKSjhTfOa9frVgQUOLwWzzUgoP6p3f1AlbePwk7cm0w7Rx9xC2kAS0trEnkW4+4N
+	xcn3xMPvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXift-0006qr-0x; Mon, 03 Jun 2019 08:50:37 +0000
-Received: from esa2.hgst.iphmx.com ([68.232.143.124])
+	id 1hXihR-0007NF-TW; Mon, 03 Jun 2019 08:52:13 +0000
+Received: from mx01.hilscher.com ([46.189.19.166])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXifk-0006px-PL; Mon, 03 Jun 2019 08:50:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1559551865; x=1591087865;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=MIAH61ZDoSTIi8UI2nEz3ddvY2H2UI9t9luM6KSxPSM=;
- b=nFaZ0xgrwwbD6RrZ757Y/jwU+ur/YBh15MzGm4rskeMpLuYImI2ZDyn8
- r5JIJsFaOl+v+Bkt/jXNMRmoXHihiqqSJFGHkycoeapfgJ6xw21ofmtH5
- VCmSx6IqIMA11ciDQ9Inj2ZqR+De0E+fN4IMrG5x8m0jmfxcnK4hqTU28
- umNGS5tEvdJ96MSwmcbErU+5EqnCbh5fhW4/QTnCcZ5GS+RK7s/lla5RC
- 5Wrmbj4QYLPMJVzxzwX95w5/ajAtqjK6zwlA3dSQVO40xpZnSLmyZ1VO9
- trAZneE6LoHUrMlTWG3dJvghiKmClN2gu7fx52N4/yITDZsu0tB1839In Q==;
-X-IronPort-AV: E=Sophos;i="5.60,546,1549900800"; d="scan'208";a="209243163"
-Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
- ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 03 Jun 2019 16:51:02 +0800
-IronPort-SDR: wd4dqhKqNSjMp4V/9P3rVabO4Hva2a+qpVH9uLY9QEvB9+i6LA7LQgz69DRh7/eNb4CAqPA6yl
- aZz7cpnz8RVlaG5/9IBzdhQDR+ZCVRkkjSK5O4MC1/vgM2RgxzQLbWDjEDQKLReDxdqbpYE3gQ
- 4k3K6bgGYuH2PEQMOR2sz6Y106aJf+aBv3mb8Lnim2lFE4IzFdejrF4HIj86++CecLOu1WOv0c
- 6ixcckFqjX5WeXfAMj6xk0R40NjZUPj71X75kaulevzRJ+AG8xhUGQHnyS0lyVB0LEEFTuhwk9
- aQzEuMeOxBIgDs8/ESAjxbd1
-Received: from uls-op-cesaip01.wdc.com ([10.248.3.36])
- by uls-op-cesaep01.wdc.com with ESMTP; 03 Jun 2019 01:25:29 -0700
-IronPort-SDR: BFoXFGYP9juvqbXuMHbRgJh6jvpVhIbp0yQpP2IxiYAHVF0SyJtFKGxa+lYptSpbrh8ATdj/2F
- Uu3ojGhtuBMTdltS2t/r7PY7QW0py++iuHKLIhIzOeyED/NrJJByCIU8tpsacS6wyksSX5u1Nk
- UcjV6Voz5PGI1p8paSbgIZxpp5QgWd8PZU6LjGi43+EQlRDSbV3Kx5/qHa6uajicArdYbArPRi
- v4k7q/8pXcgz6iJXQmenVN0WYlE/ViGNZ3ns1s8Ag8xhwY1EnjEfCUUAFakjmQg99MqTlkE+JW
- UxI=
-Received: from unknown (HELO [10.225.104.42]) ([10.225.104.42])
- by uls-op-cesaip01.wdc.com with ESMTP; 03 Jun 2019 01:50:26 -0700
-Subject: Re: [PATCH v6 0/7] Unify CPU topology across ARM & RISC-V
-To: Jeremy Linton <jeremy.linton@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-References: <20190529211340.17087-1-atish.patra@wdc.com>
- <1b61e699-79c7-bbfd-c7ed-d51d321ae7ef@arm.com>
-From: Atish Patra <atish.patra@wdc.com>
-Message-ID: <ed23bed6-91bf-f132-1b8f-03b02c6dd28a@wdc.com>
-Date: Mon, 3 Jun 2019 01:50:19 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.6.1
+ id 1hXihK-0007Ma-Lc
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:52:08 +0000
+Received: from [10.13.5.83] (10.13.5.83) by maiser03.hilscher.local
+ (192.168.100.44) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 3 Jun
+ 2019 10:51:49 +0200
+Subject: Re: [PATCH] ARM: delete netx machine
+To: Linus Walleij <linus.walleij@linaro.org>,
+ <linux-arm-kernel@lists.infradead.org>
+References: <20190521012801.15355-1-linus.walleij@linaro.org>
+From: Michael Trensch <MTrensch@hilscher.com>
+Message-ID: <3d7f4030-0076-5027-16a9-2abc10953e35@hilscher.com>
+Date: Mon, 3 Jun 2019 10:51:39 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <1b61e699-79c7-bbfd-c7ed-d51d321ae7ef@arm.com>
+In-Reply-To: <20190521012801.15355-1-linus.walleij@linaro.org>
 Content-Language: en-US
+X-Originating-IP: [10.13.5.83]
+X-ClientProxiedBy: maiser03.hilscher.local (192.168.100.44) To
+ maiser03.hilscher.local (192.168.100.44)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_015028_860510_0657E05F 
-X-CRM114-Status: GOOD (  25.24  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190603_015206_705970_2E9DDF25 
+X-CRM114-Status: GOOD (  10.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.143.124 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.189.19.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,153 +65,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- Morten Rasmussen <morten.rasmussen@arm.com>, Anup Patel <anup@brainfault.org>,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Albert Ou <aou@eecs.berkeley.edu>, Rob Herring <robh+dt@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Otto Sabart <ottosabart@seberm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Sascha Hauer <s.hauer@pengutronix.de>,
+ Robert Schwebel <r.schwebel@pengutronix.de>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/30/19 2:12 PM, Jeremy Linton wrote:
-> Hi,
-> 
-> On 5/29/19 4:13 PM, Atish Patra wrote:
->> The cpu-map DT entry in ARM can describe the CPU topology in much better
->> way compared to other existing approaches. RISC-V can easily adopt this
->> binding to represent its own CPU topology. Thus, both cpu-map DT
->> binding and topology parsing code can be moved to a common location so
->> that RISC-V or any other architecture can leverage that.
->>
->> The relevant discussion regarding unifying cpu topology can be found in
->> [1].
->>
->> arch_topology seems to be a perfect place to move the common code. I
->> have not introduced any significant functional changes in the moved code.
->> The only downside in this approach is that the capacity code will be
->> executed for RISC-V as well. But, it will exit immediately after not
->> able to find the appropriate DT node. If the overhead is considered too
->> much, we can always compile out capacity related functions under a
->> different config for the architectures that do not support them.
->>
->> There was an opportunity to unify topology data structure for ARM32 done
->> by patch 3/4. But, I refrained from making any other changes as I am not
->> very well versed with original intention for some functions that
->> are present in arch_topology.c. I hope this patch series can be served
->> as a baseline for such changes in the future.
->>
->> The patches have been tested for RISC-V and compile tested for ARM64,
->> ARM32 & x86.
->>
-> 
-> I applied these to 5.2rc2, along with my PPTT/MT change and verified the
-> system & scheduler topology/etc on DAWN and ThunderX2 using ACPI on
-> arm64. They appear to be working correctly.
-> 
-> so for the series,
-> Tested-by: Jeremy Linton <jeremy.linton@arm.com>
-> 
-> The code itself looks fine to me as well:
-> 
-> Reviewed-by: Jeremy Linton <jeremy.linton@arm.com>
-> 
-Thank you the review and testing on arm64 server.
-
-> Thanks!
-> 
->> The socket change[2] is also now part of this series.
->>
->> [1] https://lkml.org/lkml/2018/11/6/19
->> [2] https://lkml.org/lkml/2018/11/7/918
->>
->> QEMU changes for RISC-V topology are available at
->>
->> https://github.com/atishp04/qemu/tree/riscv_topology_dt
->>
->> HiFive Unleashed DT with topology node is available here.
->> https://github.com/atishp04/opensbi/tree/HiFive_unleashed_topology
->>
->> It can be verified with OpenSBI with following additional compile time
->> option.
->>
->> FW_PAYLOAD_FDT="unleashed_topology.dtb"
->>
->> Changes from v5->v6
->> 1. Added two more patches from Sudeep about maintainership of arch_topology.c
->>      and Kconfig update.
->> 2. Added Tested-by & Reviewed-by
->> 3. Fixed a nit (reordering of variables)
->>
->> Changes from v4-v5
->> 1. Removed the arch_topology.h header inclusion from topology.c and arch_topology.c
->> file. Added it in linux/topology.h.
->> 2. core_id is set to -1 upon reset. Otherwise, ARM topology store function does not
->> work.
->>
->> Changes from v3->v4
->> 1. Get rid of ARM32 specific information in topology structure.
->> 2. Remove redundant functions from ARM32 and use common code instead.
->>
->> Changes from v2->v3
->> 1. Cover letter update with experiment DT for topology changes.
->> 2. Added the patch for [2].
->>
->> Changes from v1->v2
->> 1. ARM32 can now use the common code as well.
->>
->> Atish Patra (4):
->> dt-binding: cpu-topology: Move cpu-map to a common binding.
->> cpu-topology: Move cpu topology code to common code.
->> arm: Use common cpu_topology structure and functions.
->> RISC-V: Parse cpu topology during boot.
->>
->> Sudeep Holla (3):
->> Documentation: DT: arm: add support for sockets defining package
->> boundaries
->> base: arch_topology: update Kconfig help description
->> MAINTAINERS: Add an entry for generic architecture topology
->>
->> .../topology.txt => cpu/cpu-topology.txt}     | 134 ++++++--
->> MAINTAINERS                                   |   7 +
->> arch/arm/include/asm/topology.h               |  20 --
->> arch/arm/kernel/topology.c                    |  60 +---
->> arch/arm64/include/asm/topology.h             |  23 --
->> arch/arm64/kernel/topology.c                  | 303 +-----------------
->> arch/riscv/Kconfig                            |   1 +
->> arch/riscv/kernel/smpboot.c                   |   3 +
->> drivers/base/Kconfig                          |   2 +-
->> drivers/base/arch_topology.c                  | 298 +++++++++++++++++
->> include/linux/arch_topology.h                 |  26 ++
->> include/linux/topology.h                      |   1 +
->> 12 files changed, 452 insertions(+), 426 deletions(-)
->> rename Documentation/devicetree/bindings/{arm/topology.txt => cpu/cpu-topology.txt} (66%)
->>
->> --
->> 2.21.0
->>
-> 
-> 
-
-
--- 
-Regards,
-Atish
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjEuMDUuMjAxOSAwMzoyOCwgTGludXMgV2FsbGVpaiB3cm90ZToKPiBBZnRlciBkaXNjdXNz
+aW5nIHdpdGggdGhlIHN1YmFyY2ggbWFpbnRhaW5lcnMgYW5kIEhpbHNjaGVyLAo+IHdlIGNvbmNs
+dWRlZCB0aGF0IHRoZSBuZXR4IHN1YmFyY2hpdGVjdHVyZSAoTmV0eCAxMDAvNTAwKQo+IGlzIG5v
+IGxvbmdlciBtYWludGFpbmVkIG9yIHRlc3RlZCwgYW5kIG5vb25lIHdpbGwgbWlzcyBpdAo+IGlm
+IHdlIGRlbGV0ZSBpdC4gU28gZGVsZXRlIGl0Lgo+Cj4gVGhlcmUgaXMgYSBuZXdlciBOZXR4IDQw
+MDAgYXJjaGl0ZWN0dXJlIHdoaWNoIHdlIG1heSBzZWUKPiBpbmNsdWRlZCBhdCBzb21lIHBvaW50
+LCBidXQgdGhpcyB3aWxsIGJlIHN1cHBvcnRlZCB1c2luZwo+IHRoZSBzdGFuZGFyZCBtdWx0aXBs
+YXRmb3JtIGFuZCBkZXZpY2V0cmVlIG1lY2hhbmlzbXMgYW5kIGlzCj4gZWFzaWVyIHRvIGRldmVs
+b3AgZnJvbSBzY3JhdGNoLgo+Cj4gQ2M6IE1pY2hhZWwgVHJlbnNjaCA8TVRyZW5zY2hAaGlsc2No
+ZXIuY29tPgo+IENjOiBTYXNjaGEgSGF1ZXIgPHMuaGF1ZXJAcGVuZ3V0cm9uaXguZGU+Cj4gQ2M6
+IFJvYmVydCBTY2h3ZWJlbCA8ci5zY2h3ZWJlbEBwZW5ndXRyb25peC5kZT4KPiBTaWduZWQtb2Zm
+LWJ5OiBMaW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlqQGxpbmFyby5vcmc+Cj4gLS0tCgpBY2tl
+ZC1ieTogTWljaGFlbCBUcmVuc2NoIDxNVHJlbnNjaEBoaWxzY2hlci5jb20+CgoKU29ycnkgZm9y
+IHRoZSBkZWxheSwgSSBoYWQgc29tZSB3ZWVrcyBvZmYuCgoKTWl0IGZyZXVuZGxpY2hlbiBHcsO8
+w59lbiAvIEJlc3QgcmVnYXJkcwoKTWljaGFlbCBUcmVuc2NoCi0tCk1pY2hhZWwgVHJlbnNjaCB8
+IG5ldFggU3lzdGVtClBob25lOiArNDkgKDApIDYxOTAgOTkwNy0wIHwgRmF4OiArNDkgKDApIDYx
+OTAgOTkwNy01MAoKSGlsc2NoZXIgR2VzZWxsc2NoYWZ0IGbDvHIgU3lzdGVtYXV0b21hdGlvbiBt
+YkggICB8ICBSaGVpbnN0cmFzc2UgMTUgIHwgIDY1Nzk1IEhhdHRlcnNoZWltICB8ICBHZXJtYW55
+ICB8ICB3d3cuaGlsc2NoZXIuY29tPGh0dHA6Ly93d3cuaGlsc2NoZXIuY29tPgpTaXR6IGRlciBH
+ZXNlbGxzY2hhZnQgLyBwbGFjZSBvZiBidXNpbmVzczogSGF0dGVyc2hlaW0gIHwgIEdlc2Now6Rm
+dHNmw7xocmVyIC8gbWFuYWdpbmcgZGlyZWN0b3I6IERpcGwuLUluZy4gSGFucy1Kw7xyZ2VuIEhp
+bHNjaGVyCkhhbmRlbHNyZWdpc3RlciAvIGNvbW1lcmNpYWwgcmVnaXN0ZXI6IEZyYW5rZnVydCBC
+IDI2ODczICB8ICBVc3QuIElkbnIuIC8gVkFUIE5vLjogREUxMTM4NTI3MTUKUmVnaXN0ZXJnZXJp
+Y2h0IC8gcmVnaXN0ZXIgY291cnQ6IEFtdHNnZXJpY2h0IEZyYW5rZnVydC9NYWluCgpJbXBvcnRh
+bnQgSW5mb3JtYXRpb246ClRoaXMgZS1tYWlsIG1lc3NhZ2UgaW5jbHVkaW5nIGl0cyBhdHRhY2ht
+ZW50cyBjb250YWlucyBjb25maWRlbnRpYWwgYW5kIGxlZ2FsbHkgcHJvdGVjdGVkIGluZm9ybWF0
+aW9uIHNvbGVseSBpbnRlbmRlZCBmb3IgdGhlIGFkZHJlc3NlZS4gSWYgeW91IGFyZSBub3QgdGhl
+IGludGVuZGVkIGFkZHJlc3NlZSBvZiB0aGlzIG1lc3NhZ2UsIHBsZWFzZSBjb250YWN0IHRoZSBh
+ZGRyZXNzZXIgaW1tZWRpYXRlbHkgYW5kIGRlbGV0ZSB0aGlzIG1lc3NhZ2UgaW5jbHVkaW5nIGl0
+cyBhdHRhY2htZW50cy4gVGhlIHVuYXV0aG9yaXplZCBkaXNzZW1pbmF0aW9uLCBjb3B5aW5nIGFu
+ZCBjaGFuZ2Ugb2YgdGhpcyBlLW1haWwgYXJlIHN0cmljdGx5IGZvcmJpZGRlbi4gVGhlIGFkZHJl
+c3NlciBzaGFsbCBub3QgYmUgbGlhYmxlIGZvciB0aGUgY29udGVudCBvZiBzdWNoIGNoYW5nZWQg
+ZS1tYWlscy4KCldpY2h0aWdlciBIaW53ZWlzOgpEaWVzZSBFLU1haWwgZWluc2NobGllw59saWNo
+IGlocmVyIEFuaMOkbmdlIGVudGjDpGx0IHZlcnRyYXVsaWNoZSB1bmQgcmVjaHRsaWNoIGdlc2No
+w7x0enRlIEluZm9ybWF0aW9uZW4sIGRpZSBudXIgZsO8ciBkZW4gQWRyZXNzYXRlbiBiZXN0aW1t
+dCBzaW5kLiBTb2xsdGVuIFNpZSBuaWNodCBkZXIgYmV6ZWljaG5ldGUgQWRyZXNzYXQgc2Vpbiwg
+c28gdGVpbGVuIFNpZSBkaWVzIGJpdHRlIGRlbSBBYnNlbmRlciB1bWdlaGVuZCBtaXQgdW5kIGzD
+tnNjaGVuIFNpZSBkaWVzZSBOYWNocmljaHQgdW5kIGlocmUgQW5ow6RuZ2UuIERpZSB1bmJlZnVn
+dGUgV2VpdGVyZ2FiZSwgZGFzIEFuZmVydGlnZW4gdm9uIEtvcGllbiB1bmQgamVkZSBWZXLDpG5k
+ZXJ1bmcgZGVyIEUtTWFpbCBpc3QgdW50ZXJzYWd0LiBEZXIgQWJzZW5kZXIgaGFmdGV0IG5pY2h0
+IGbDvHIgSW5oYWx0ZSB2b24gdmVyw6RuZGVydGVuIEUtTWFpbHMuCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
