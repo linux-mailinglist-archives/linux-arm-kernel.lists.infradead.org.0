@@ -2,40 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61D033369B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 529AF336C8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:31:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=blTtSJensDuTrg0JA5SCGYyldDcVsAFwJZwBJILFiHg=; b=IobFZhQ4aIKo0c
-	A6FDVG8gGBxEZ1EXk1DcmgpX70qvGkJ/QmN6z+L+ZVzhMZabJgsJG5c3uS1LeB7oo/AiG5JzTtZVB
-	fZhOMxWBP7VEWrOhhmmAgIURw30zd2QeIdnG+Uu1jhjDubptQQUrKqHVUICyPEMybDR8zfCS0X7ri
-	c5+Mu/cpTKMSnWmrj/OwPuo9ok+iIGQCxk9ahIElJzNYEjm3uxfgBRvSNbYzcFiecPyixX2jjXkoP
-	ToNncMu07ElF+3lcSF6ACBDtsVE/UnBoAOdLou2NfiUbDFkGNXBVuxhL0N5l4BtRVZOZrQ4HQ9s1g
-	e6ZOWGAjh+CM0G6NZ18Q==;
+	List-Owner; bh=c0+luWqjnSAdgif8dYMj6TZ+IMJLVQlZ+TqHN06BPcA=; b=tPbBnnmwh30edS
+	v94ao4uHHFuZ45ZWLHO8KCdGA1SgNmQLH1LPM8ljXUiJe1hY8hBNd3oEdrWajGDL9tJRos2AgsE3K
+	LAukq/WTLjeiHmR6Ch9FDtwC/RJLNdNEbG12g65n2aBeHnvpdD2smJTyJgAJYxVErK6UU3XIClkYu
+	E4IsxInzKiNUr0SwLpv5vQLwH3uQZRgQj5hOPFeXKE8SSILQxCpyD7A9DAZf+47h1dUYXNBhUvle+
+	r9/nKaylhGy2+ozK1NEZ7r++BUmprMi+Huvhthw5PbrxGv5msSKBkfrIJUqNLRXOT6obrEPOyoEvN
+	OcOhOs0ExAt2M/EZ47+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqlt-00025i-II; Mon, 03 Jun 2019 17:29:21 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.90_1 #2 (Red
- Hat Linux)) id 1hXqlo-00025Q-9C; Mon, 03 Jun 2019 17:29:16 +0000
-Date: Mon, 3 Jun 2019 10:29:16 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Khalid Aziz <khalid.aziz@oracle.com>
-Subject: Re: [PATCH v16 01/16] uaccess: add untagged_addr definition for
- other arches
-Message-ID: <20190603172916.GA5390@infradead.org>
-References: <cover.1559580831.git.andreyknvl@google.com>
- <097bc300a5c6554ca6fd1886421bb2e0adb03420.1559580831.git.andreyknvl@google.com>
- <8ff5b0ff-849a-1e0b-18da-ccb5be85dd2b@oracle.com>
- <CAAeHK+xX2538e674Pz25unkdFPCO_SH0pFwFu=8+DS7RzfYnLQ@mail.gmail.com>
- <f6711d31-e52c-473a-d7ad-b2d63131d7a5@oracle.com>
+	id 1hXqoB-0003qI-0I; Mon, 03 Jun 2019 17:31:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXqo3-0003pY-EC
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:31:37 +0000
+Received: from gmail.com (unknown [104.132.1.77])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DCD0126D87;
+ Mon,  3 Jun 2019 17:31:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559583094;
+ bh=ef4z7eIvFCgptVOwhdxrknQEusVHxKBjNcgPZL7xjwM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Qtp2a/6xnsWe0YzsE1p3a6RJ4UhAkMhH/cvtVt2NYNKzbFDNwYHZApJ84LoiuQVJF
+ XgGPJDNd/C89Mug6ldKVOPF2s3rqmXP/inTecxEBqK9SjdZa5hCb0IZVfz/58Tn6mb
+ GJ6AbQHaAB0pOVD3d6n+POGFs88MMudq88uWaWZU=
+Date: Mon, 3 Jun 2019 10:31:32 -0700
+From: Eric Biggers <ebiggers@kernel.org>
+To: Christophe Leroy <christophe.leroy@c-s.fr>
+Subject: Re: [PATCH] crypto: ghash - fix unaligned memory access in
+ ghash_setkey()
+Message-ID: <20190603173131.GA240519@gmail.com>
+References: <20190530175039.195574-1-ebiggers@kernel.org>
+ <0f7e6d3d-aa27-30c3-5c82-67d484bf667c@c-s.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <f6711d31-e52c-473a-d7ad-b2d63131d7a5@oracle.com>
-User-Agent: Mutt/1.9.2 (2017-12-15)
+In-Reply-To: <0f7e6d3d-aa27-30c3-5c82-67d484bf667c@c-s.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190603_103135_491367_98716C2D 
+X-CRM114-Status: GOOD (  13.71  )
+X-Spam-Score: -1.5 (-)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-1.5 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 3.7 FSL_HELO_FAKE          No description available.
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -47,61 +79,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: stable@vger.kernel.org, linux-crypto@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Peter Robinson <pbrobinson@gmail.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 11:24:35AM -0600, Khalid Aziz wrote:
-> On 6/3/19 11:06 AM, Andrey Konovalov wrote:
-> > On Mon, Jun 3, 2019 at 7:04 PM Khalid Aziz <khalid.aziz@oracle.com> wrote:
-> >> Andrey,
-> >>
-> >> This patch has now become part of the other patch series Chris Hellwig
-> >> has sent out -
-> >> <https://lore.kernel.org/lkml/20190601074959.14036-1-hch@lst.de/>. Can
-> >> you coordinate with that patch series?
-> > 
-> > Hi!
-> > 
-> > Yes, I've seen it. How should I coordinate? Rebase this series on top
-> > of that one?
-> 
-> That would be one way to do it. Better yet, separate this patch from
-> both patch series, make it standalone and then rebase the two patch
-> series on top of it.
+On Mon, Jun 03, 2019 at 09:27:24AM +0200, Christophe Leroy wrote:
+> =
 
-I think easiest would be to just ask Linus if he could make an exception
-and include this trivial prep patch in 5.2-rc.
+> =
+
+> Le 30/05/2019 =E0 19:50, Eric Biggers a =E9crit=A0:
+> > From: Eric Biggers <ebiggers@google.com>
+> > =
+
+> > Changing ghash_mod_init() to be subsys_initcall made it start running
+> > before the alignment fault handler has been installed on ARM.  In kernel
+> > builds where the keys in the ghash test vectors happened to be
+> > misaligned in the kernel image, this exposed the longstanding bug that
+> > ghash_setkey() is incorrectly casting the key buffer (which can have any
+> > alignment) to be128 for passing to gf128mul_init_4k_lle().
+> > =
+
+> > Fix this by memcpy()ing the key to a temporary buffer.
+> =
+
+> Shouldn't we make it dependent on CONFIG_HAVE_64BIT_ALIGNED_ACCESS
+
+No, because the buffer can have as little as 1-byte alignment.
+
+> or !CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS ?
+
+I don't think that's a good idea because two code paths are harder to test =
+than
+one, and also CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS only means that the CPU
+allows "regular" loads and stores to be misaligned.  On some architectures =
+the
+compiler can still generate load and store instructions that require alignm=
+ent,
+e.g. 'ldrd' or 'ldm' on ARM.
+
+We could change gf128mul_init_4k_lle() to take a byte array and make it use
+get_unaligned_be64().  But since it has to allocate and initialize a 4 KiB
+multiplication table anyway, that microoptimization would be lost in the no=
+ise.
+
+- Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
