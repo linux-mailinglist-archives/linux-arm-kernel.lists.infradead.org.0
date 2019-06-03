@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65EF2335D6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:59:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2678A335D9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:59:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WPD+DAz8tHn3Qk8Jv2lVTdk1eeQxlOj8kTR5N5PSm2w=; b=FBZj4uYIqSaxMa
-	l7yaETLUcmVhXtFT1V05lEMBzF79GhrlSdGanXhRSg9A18Ex93kpPR8OuExQVfCNUV8P1ARB5PNGp
-	mB9aTizLFlXlta6yATa3b4+3CaqZw4zeA0qY5daiN/TNnZEnEq2PkAnSV3/isfZiDLWi+XpIJpOfc
-	ol3NaB7EZL7Opfr8kFmmfmjty8DePW0M6/1JT3c/oZim9dyvBAgbSnQN3kXhYRWAGuWEpll0hLuTV
-	Pv6TqamtfAYbvdzB9KFmPlXFHhnMG1C/WmRW7m6uoQGhmUP6jney/dssIWoCLnMmNAb2TxG4ve7CU
-	4jT+w0IcAygYEBQyOpEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WZOyIik23gIO4VFH4o1qwz09tQ7Qoa92LmUl4pvFBy0=; b=sEF1Y+mF5yHOT9
+	2iWkEy8yAZ/dLgNtyV8R5f4HP2agRquSX7KiHt9VXlHIECt/KQlz4BfBTP6pg3m2R0z8jIHtzTclV
+	Q6TAGcDfGVhx9r1l9IC1sTyySR4639oobbYO2aPRc2ubsEQcmeQbVQDER7Tqlv4TfmM9ycgUvEuwY
+	mXaLHasYX16CcLrZqOP39WgyQONwrE7gkQ1EJm5gcC/+XQp53C1y7VRJzCUIrTBbsCJNaDpZUnQsP
+	J0UvlxZBDcjcXFOx4MqiMicR+XGqtfBlqoUmG3xF+jwKdHKVUVrPuZCKwDPMGauKNzk2H1xM9IXQC
+	W0+N3qriuNiWA51Uxi/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqIe-0004Hj-NK; Mon, 03 Jun 2019 16:59:08 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hXqIq-0004Yw-IW; Mon, 03 Jun 2019 16:59:20 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqG9-0001Ai-J0; Mon, 03 Jun 2019 16:57:02 +0000
+ id 1hXqGE-0001HZ-2F; Mon, 03 Jun 2019 16:57:09 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 82DD527FDB2
+ (Authenticated sender: koike) with ESMTPSA id 57A39284AA2
 From: Helen Koike <helen.koike@collabora.com>
 To: dri-devel@lists.freedesktop.org,
 	nicholas.kazlauskas@amd.com
-Subject: [PATCH v4 0/5] drm: Fix fb changes for async updates
-Date: Mon,  3 Jun 2019 13:56:05 -0300
-Message-Id: <20190603165610.24614-1-helen.koike@collabora.com>
+Subject: [PATCH v4 1/5] drm/rockchip: fix fb references in async update
+Date: Mon,  3 Jun 2019 13:56:06 -0300
+Message-Id: <20190603165610.24614-2-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190603165610.24614-1-helen.koike@collabora.com>
+References: <20190603165610.24614-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_095634_377090_1D588021 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190603_095638_781697_0F72F2CF 
+X-CRM114-Status: GOOD (  16.82  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -58,82 +57,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Sean Paul <seanpaul@google.com>, David Airlie <airlied@linux.ie>,
- daniel.vetter@ffwll.ch, linux-kernel@vger.kernel.org, eric@anholt.net,
- Mamta Shukla <mamtashukla555@gmail.com>, kernel@collabora.com,
- Anthony Koo <Anthony.Koo@amd.com>,
- =?UTF-8?q?Ville=20Syrj=C3=A4l=C3=A4?= <ville.syrjala@linux.intel.com>,
- "David \(ChunMing\) Zhou" <David1.Zhou@amd.com>,
- Mario Kleiner <mario.kleiner.de@gmail.com>,
- Bhawanpreet Lakha <Bhawanpreet.Lakha@amd.com>,
- David Francis <David.Francis@amd.com>, amd-gfx@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, harry.wentland@amd.com,
- andrey.grodzovsky@amd.com, Daniel Vetter <daniel@ffwll.ch>,
- Leo Li <sunpeng.li@amd.com>, linux-arm-msm@vger.kernel.org,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Helen Koike <helen.koike@collabora.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Jeykumar Sankaran <jsanka@codeaurora.org>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org,
+Cc: andrey.grodzovsky@amd.com,
  =?UTF-8?q?St=C3=A9phane=20Marchesin?= <marcheu@google.com>,
- Sandy Huang <hjc@rock-chips.com>, Tomasz Figa <tfiga@chromium.org>,
- Rob Clark <robdclark@gmail.com>, boris.brezillon@collabora.com,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Alex Deucher <alexander.deucher@amd.com>, freedreno@lists.freedesktop.org,
- =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>
+ =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Sean Paul <seanpaul@google.com>, Sandy Huang <hjc@rock-chips.com>,
+ David Airlie <airlied@linux.ie>, daniel.vetter@ffwll.ch,
+ linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ boris.brezillon@collabora.com, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@collabora.com, harry.wentland@amd.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+In the case of async update, modifications are done in place, i.e. in the
+current plane state, so the new_state is prepared and the new_state is
+cleaned up (instead of the old_state, unlike what happens in a
+normal sync update).
+To cleanup the old_fb properly, it needs to be placed in the new_state
+in the end of async_update, so cleanup call will unreference the old_fb
+correctly.
+
+Also, the previous code had a:
+
+	plane_state = plane->funcs->atomic_duplicate_state(plane);
+	...
+	swap(plane_state, plane->state);
+
+	if (plane->state->fb && plane->state->fb != new_state->fb) {
+	...
+	}
+
+Which was wrong, as the fb were just assigned to be equal, so this if
+statement nevers evaluates to true.
+
+Another details is that the function drm_crtc_vblank_get() can only be
+called when vop->is_enabled is true, otherwise it has no effect and
+trows a WARN_ON().
+
+Calling drm_atomic_set_fb_for_plane() (which get a referent of the new
+fb and pus the old fb) is not required, as it is taken care by
+drm_mode_cursor_universal() when calling
+drm_atomic_helper_update_plane().
+
+Signed-off-by: Helen Koike <helen.koike@collabora.com>
+
+---
 Hello,
 
-I'm re-sending this series with the acked by in the msm patch and
-updating the docs in the last patch, the rest is the same.
+I tested on the rockchip ficus v1.1 using igt plane_cursor_legacy and
+kms_cursor_legacy and I didn't see any regressions.
 
-v3 link: https://patchwork.kernel.org/project/dri-devel/list/?series=91353
-
-Thanks!
-Helen
-
-Changes in v4:
-- add acked by tag
-- update docs in atomic_async_update callback
-
+Changes in v4: None
 Changes in v3:
 - use swap() to swap old and new framebuffers in async_update
 - get the reference to old_fb and set the worker after vop_plane_atomic_update()
 - add a FIXME tag for when we have multiple fbs to be released when
 vblank happens.
 - update commit message
-- Add Reviewed-by tags
-- Add TODO in drm_atomic_helper_async_commit()
 
-Changes in v2:
-- added reviewed-by tag
-- update CC stable and Fixes tag
-- Added reviewed-by tag
-- updated CC stable and Fixes tag
-- Change the order of the patch in the series, add this as the last one.
-- Add documentation
-- s/ballanced/balanced
+Changes in v2: None
 
-Helen Koike (5):
-  drm/rockchip: fix fb references in async update
-  drm/amd: fix fb references in async update
-  drm/msm: fix fb references in async update
-  drm/vc4: fix fb references in async update
-  drm: don't block fb changes for async plane updates
+ drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 51 +++++++++++----------
+ 1 file changed, 26 insertions(+), 25 deletions(-)
 
- .../gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c |  3 +-
- drivers/gpu/drm/drm_atomic_helper.c           | 22 ++++----
- drivers/gpu/drm/msm/disp/mdp5/mdp5_plane.c    |  4 ++
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c   | 51 ++++++++++---------
- drivers/gpu/drm/vc4/vc4_plane.c               |  2 +-
- include/drm/drm_modeset_helper_vtables.h      |  8 +++
- 6 files changed, 52 insertions(+), 38 deletions(-)
-
+diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+index 4189ca17f381..b7c47d1153c6 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
++++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
+@@ -919,29 +919,17 @@ static void vop_plane_atomic_async_update(struct drm_plane *plane,
+ 					  struct drm_plane_state *new_state)
+ {
+ 	struct vop *vop = to_vop(plane->state->crtc);
+-	struct drm_plane_state *plane_state;
+-
+-	plane_state = plane->funcs->atomic_duplicate_state(plane);
+-	plane_state->crtc_x = new_state->crtc_x;
+-	plane_state->crtc_y = new_state->crtc_y;
+-	plane_state->crtc_h = new_state->crtc_h;
+-	plane_state->crtc_w = new_state->crtc_w;
+-	plane_state->src_x = new_state->src_x;
+-	plane_state->src_y = new_state->src_y;
+-	plane_state->src_h = new_state->src_h;
+-	plane_state->src_w = new_state->src_w;
+-
+-	if (plane_state->fb != new_state->fb)
+-		drm_atomic_set_fb_for_plane(plane_state, new_state->fb);
+-
+-	swap(plane_state, plane->state);
+-
+-	if (plane->state->fb && plane->state->fb != new_state->fb) {
+-		drm_framebuffer_get(plane->state->fb);
+-		WARN_ON(drm_crtc_vblank_get(plane->state->crtc) != 0);
+-		drm_flip_work_queue(&vop->fb_unref_work, plane->state->fb);
+-		set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
+-	}
++	struct drm_framebuffer *old_fb = plane->state->fb;
++
++	plane->state->crtc_x = new_state->crtc_x;
++	plane->state->crtc_y = new_state->crtc_y;
++	plane->state->crtc_h = new_state->crtc_h;
++	plane->state->crtc_w = new_state->crtc_w;
++	plane->state->src_x = new_state->src_x;
++	plane->state->src_y = new_state->src_y;
++	plane->state->src_h = new_state->src_h;
++	plane->state->src_w = new_state->src_w;
++	swap(plane->state->fb, new_state->fb);
+ 
+ 	if (vop->is_enabled) {
+ 		rockchip_drm_psr_inhibit_get_state(new_state->state);
+@@ -950,9 +938,22 @@ static void vop_plane_atomic_async_update(struct drm_plane *plane,
+ 		vop_cfg_done(vop);
+ 		spin_unlock(&vop->reg_lock);
+ 		rockchip_drm_psr_inhibit_put_state(new_state->state);
+-	}
+ 
+-	plane->funcs->atomic_destroy_state(plane, plane_state);
++		/*
++		 * A scanout can still be occurring, so we can't drop the
++		 * reference to the old framebuffer. To solve this we get a
++		 * reference to old_fb and set a worker to release it later.
++		 * FIXME: if we perform 500 async_update calls before the
++		 * vblank, then we can have 500 different framebuffers waiting
++		 * to be released.
++		 */
++		if (old_fb && plane->state->fb != old_fb) {
++			drm_framebuffer_get(old_fb);
++			WARN_ON(drm_crtc_vblank_get(plane->state->crtc) != 0);
++			drm_flip_work_queue(&vop->fb_unref_work, old_fb);
++			set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
++		}
++	}
+ }
+ 
+ static const struct drm_plane_helper_funcs plane_helper_funcs = {
 -- 
 2.20.1
 
