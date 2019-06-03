@@ -2,65 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF99033906
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 21:23:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B0D633916
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 21:29:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wTX6ofoAp06NImIyFAtR0waGhu5f9GB5v4aXlqdxbwI=; b=f1x
-	wsbPAZZBU22LSb9AJBQCyWXAtWETmrKT+tBvFG0WnvFpVvwRxY7Ayuc28XMb8+juTTV1BBz1EIT42
-	2NCpGU1N7YGFsG4I7wzpyiDLTiYlaY+QKx03Rf4U0Hb7xOw0uHdz4SjWjZNQcx5lhlURMc2HM3FEu
-	4NmGwDAdJdLYPyeetbhzFRaILG6F+rx6gE4iz9VjOoioTU/02EWp4GyX3ljEzDzMHtItFXueh/tbw
-	l5baxzuONTx2cfCD/25uEFlDf9lxDyBnjdr6Am2omXclGnr9eHBa+L/534p77sfItexjyOQbqOw1t
-	x8ZTxQubFMFwCk2d+YMQqXxBvbtYLsA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4bYQBXmefNp0oLYgCxI3vIlZBl9lCnv/e0cbWJn0Feo=; b=XgoW9pfDiQg5OP
+	lLVN5w/92tnOji68acvJqPM5HU68+uMRDbaeTdY8BNRISgJ3VdSDEO1g62lRxUUBNT+nvAesvZIIS
+	vwAqxbZ7mYkCkwa2weZ15KQnZSKAPNEZIEwEeAIr8i4oUl7k7UUaxKD4N+hHUSqbETGAXkrpw0npC
+	H1UD8KmtjqxeJWyuz3rC0r3jG+NW8RJB/x1QOJOimfPha6iuFbgYx/XktYc7MzYGaaqJevyKXRwTq
+	FQ5QqDwIxSn1rbMlRZVIBdJZAUH+vz/wgcHG12Mt3Z0TIqU4+7hNRO3+Q6CW6JhceOSycd4K/x2en
+	wq0dDyaeJBcnfg33RU5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXsXu-0001fv-NC; Mon, 03 Jun 2019 19:23:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hXsds-0003Xp-El; Mon, 03 Jun 2019 19:29:12 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXsXm-0001fP-DU
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 19:22:56 +0000
-Received: from localhost.localdomain (unknown [194.230.155.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3B2FB2673F;
- Mon,  3 Jun 2019 19:22:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559589774;
- bh=8oR+yNovf6kh7da44z76KIdK3ZYQpCPI8NCz8Y+7i4A=;
- h=From:To:Cc:Subject:Date:From;
- b=jeNxtkhlAu3jqsLKUOkyk+csWouLtZP1ukxvnLSYj8iJFVwVjSH14/wxLtnfz8Chz
- k5L4/sL78icHURMNmvZSAuYFSk8w79qoZjE3pZksXK5oRTg41kvZXWzxywxNE5LC/6
- hQeVog2aiHwn7as07SveqFMTPikq4qkaVko7TmiQ=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Russell King <linux@armlinux.org.uk>, Vladimir Zapolskiy <vz@mleia.com>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-omap@vger.kernel.org, arm@kernel.org
-Subject: [PATCH] ARM: config: Remove left-over BACKLIGHT_LCD_SUPPORT
-Date: Mon,  3 Jun 2019 21:22:45 +0200
-Message-Id: <20190603192245.30652-1-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1hXsdm-0003XS-Ci
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 19:29:07 +0000
+Received: by mail-pl1-x642.google.com with SMTP id g69so7360701plb.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Jun 2019 12:29:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=XjbgWtoecpGGajCSSxHkoYg0HmkkYE0g6rtDFZJfqLM=;
+ b=aVXt972j+L4QJiEfQu9yr9mHi5NHN1WOMWIQZ0VhO/k4Y+NVMjTZKbIZQ9w+A3J55Y
+ BQSwuX/Jvgk2KwytF567CvYv4/bqZ8+E4IW0GXiLmpdt3lGZ1AMIF6ZQxiH6IiacZKRh
+ QFDE+hIpEw0KQDaoFae4M/TDkVXeFYx4CkYNzcFASTDTkE6cniX/id0RMVqNVocpTj0c
+ wsFYEFub/ywol1MOSNLsQVTN750ucmNxYvoDpKis8RQmY59V5+AnW6xdXlFnEUDNVBBc
+ EArKbtntvQk1kG9VOjhbRMMPGSreb0hekgCqKWxpH0hL1RsNBwrvaYKpqUSgjMQ753yI
+ /AWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=XjbgWtoecpGGajCSSxHkoYg0HmkkYE0g6rtDFZJfqLM=;
+ b=XXIJnXwhZeh1hDqzXQLTBfpXZLsEztQBmBSBW3iVNEWzF7auPQMwax88qN1n1B+z3g
+ CJ7dzfdeHVi7rYx3FeQsqONbRl0e8ABp+HtBDxpxFmdhEXANURS3YoUG2nhtHsHvHzrv
+ FMK5GCI99tihic0BOpWpS9mPRl/w7mrZK6dUIcCstEhGrPpeIHkysxvHOpNe4oZPXRO0
+ dQ6gOm6pVP8502IX5cWTLEKb0zs292XcVpGi0Qs9Vp+F4Z3LoMWBOPWPgjGvOHx8FV/l
+ yvV0U76BF8hW/12HgNQBTdniqqOeKMKr79lRVUvLgenYa5U7x3x4GVjG/kcpE8lW+06x
+ iGwQ==
+X-Gm-Message-State: APjAAAXYBeTeIfcRN9HHlgUYTNYmDrYvx9j4uoMbEWA8DhBX9WQwqyte
+ NulxfgxAp/jn50P6b8UQiuFQHg==
+X-Google-Smtp-Source: APXvYqytyDKluUAQxYCRbUH9nLXS/merzNWi5SCHyS7kQ56eMr5A31BrUtpLE/l2IiEjLGoxkEEOvA==
+X-Received: by 2002:a17:902:728b:: with SMTP id
+ d11mr2108640pll.78.1559590145287; 
+ Mon, 03 Jun 2019 12:29:05 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id n35sm14099984pgl.44.2019.06.03.12.29.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 03 Jun 2019 12:29:04 -0700 (PDT)
+Date: Mon, 3 Jun 2019 13:29:02 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v3 1/4] coresight: tmc-etr: Do not call
+ smp_processor_id() from preemptible
+Message-ID: <20190603192902.GB20462@xps15>
+References: <1559235267-25232-1-git-send-email-suzuki.poulose@arm.com>
+ <1559235267-25232-2-git-send-email-suzuki.poulose@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1559235267-25232-2-git-send-email-suzuki.poulose@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_122254_492862_9157BF60 
-X-CRM114-Status: GOOD (  11.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190603_122906_431844_AB1DA29A 
+X-CRM114-Status: GOOD (  17.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -70,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,469 +100,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lee Jones <lee.jones@linaro.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Alexander Shiyan <shc_work@mail.ru>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-MIME-Version: 1.0
+Cc: coresight@lists.linaro.org, robin.murphy@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The CONFIG_BACKLIGHT_LCD_SUPPORT was removed in commit 8c5dc8d9f19c
-("video: backlight: Remove useless BACKLIGHT_LCD_SUPPORT kernel
-symbol"). Options protected by CONFIG_BACKLIGHT_LCD_SUPPORT are now
-available directly.
+On Thu, May 30, 2019 at 05:54:24PM +0100, Suzuki K Poulose wrote:
+> Instead of using smp_processor_id() to figure out the node,
+> use the numa_node_id() for the current CPU node to avoid
+> splats like :
 
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/arm/configs/cm_x2xx_defconfig        | 1 -
- arch/arm/configs/cm_x300_defconfig        | 1 -
- arch/arm/configs/colibri_pxa270_defconfig | 1 -
- arch/arm/configs/colibri_pxa300_defconfig | 1 -
- arch/arm/configs/collie_defconfig         | 1 -
- arch/arm/configs/corgi_defconfig          | 1 -
- arch/arm/configs/em_x270_defconfig        | 1 -
- arch/arm/configs/eseries_pxa_defconfig    | 1 -
- arch/arm/configs/ezx_defconfig            | 1 -
- arch/arm/configs/imote2_defconfig         | 1 -
- arch/arm/configs/integrator_defconfig     | 1 -
- arch/arm/configs/jornada720_defconfig     | 1 -
- arch/arm/configs/lpc18xx_defconfig        | 1 -
- arch/arm/configs/lpc32xx_defconfig        | 1 -
- arch/arm/configs/magician_defconfig       | 1 -
- arch/arm/configs/mmp2_defconfig           | 1 -
- arch/arm/configs/mxs_defconfig            | 1 -
- arch/arm/configs/nhk8815_defconfig        | 1 -
- arch/arm/configs/omap1_defconfig          | 1 -
- arch/arm/configs/palmz72_defconfig        | 1 -
- arch/arm/configs/pxa3xx_defconfig         | 1 -
- arch/arm/configs/pxa_defconfig            | 1 -
- arch/arm/configs/qcom_defconfig           | 1 -
- arch/arm/configs/realview_defconfig       | 1 -
- arch/arm/configs/s3c6400_defconfig        | 1 -
- arch/arm/configs/sama5_defconfig          | 1 -
- arch/arm/configs/spear3xx_defconfig       | 1 -
- arch/arm/configs/spitz_defconfig          | 1 -
- arch/arm/configs/trizeps4_defconfig       | 1 -
- arch/arm/configs/u300_defconfig           | 1 -
- arch/arm/configs/versatile_defconfig      | 1 -
- arch/arm/configs/vexpress_defconfig       | 1 -
- arch/arm/configs/viper_defconfig          | 1 -
- arch/arm/configs/zeus_defconfig           | 1 -
- 34 files changed, 34 deletions(-)
+I was in the process of applying this set when I noticed the changelogs are
+still referring to numa_node_id(), which is not part of the solution anymore.
+Please address in all 4 patches.
 
-diff --git a/arch/arm/configs/cm_x2xx_defconfig b/arch/arm/configs/cm_x2xx_defconfig
-index 5344434df652..2789837ea24c 100644
---- a/arch/arm/configs/cm_x2xx_defconfig
-+++ b/arch/arm/configs/cm_x2xx_defconfig
-@@ -103,7 +103,6 @@ CONFIG_FB=y
- CONFIG_FB_PXA=y
- CONFIG_FB_PXA_PARAMETERS=y
- CONFIG_FB_MBX=m
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_LCD_CLASS_DEVICE is not set
- # CONFIG_BACKLIGHT_CLASS_DEVICE is not set
- # CONFIG_VGA_CONSOLE is not set
-diff --git a/arch/arm/configs/cm_x300_defconfig b/arch/arm/configs/cm_x300_defconfig
-index 3707a014cbc4..569a5ed70c55 100644
---- a/arch/arm/configs/cm_x300_defconfig
-+++ b/arch/arm/configs/cm_x300_defconfig
-@@ -86,7 +86,6 @@ CONFIG_REGULATOR=y
- CONFIG_REGULATOR_DA903X=y
- CONFIG_FB=y
- CONFIG_FB_PXA=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_LCD_TDO24M=y
- # CONFIG_BACKLIGHT_GENERIC is not set
-diff --git a/arch/arm/configs/colibri_pxa270_defconfig b/arch/arm/configs/colibri_pxa270_defconfig
-index 8d484e4d51cc..a54e1f32139f 100644
---- a/arch/arm/configs/colibri_pxa270_defconfig
-+++ b/arch/arm/configs/colibri_pxa270_defconfig
-@@ -102,7 +102,6 @@ CONFIG_WATCHDOG=y
- CONFIG_FB=y
- CONFIG_FIRMWARE_EDID=y
- CONFIG_FB_PXA=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_VGA_CONSOLE is not set
-diff --git a/arch/arm/configs/colibri_pxa300_defconfig b/arch/arm/configs/colibri_pxa300_defconfig
-index d282e8b0bf33..8364407e0abf 100644
---- a/arch/arm/configs/colibri_pxa300_defconfig
-+++ b/arch/arm/configs/colibri_pxa300_defconfig
-@@ -33,7 +33,6 @@ CONFIG_DEBUG_GPIO=y
- # CONFIG_HWMON is not set
- CONFIG_FB=y
- CONFIG_FB_PXA=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_LCD_CLASS_DEVICE is not set
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_BACKLIGHT_GENERIC is not set
-diff --git a/arch/arm/configs/collie_defconfig b/arch/arm/configs/collie_defconfig
-index d398ae53aba7..e6df11e906ba 100644
---- a/arch/arm/configs/collie_defconfig
-+++ b/arch/arm/configs/collie_defconfig
-@@ -63,7 +63,6 @@ CONFIG_MCP_UCB1200_TS=y
- CONFIG_FB=y
- CONFIG_FB_MODE_HELPERS=y
- CONFIG_FB_SA1100=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_VGA_CONSOLE is not set
- CONFIG_FRAMEBUFFER_CONSOLE=y
- CONFIG_FRAMEBUFFER_CONSOLE_ROTATION=y
-diff --git a/arch/arm/configs/corgi_defconfig b/arch/arm/configs/corgi_defconfig
-index d99725984947..58d7deec7e1b 100644
---- a/arch/arm/configs/corgi_defconfig
-+++ b/arch/arm/configs/corgi_defconfig
-@@ -132,7 +132,6 @@ CONFIG_SPI=y
- CONFIG_SPI_PXA2XX=y
- CONFIG_FB=y
- CONFIG_FB_W100=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_LCD_CORGI=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
-diff --git a/arch/arm/configs/em_x270_defconfig b/arch/arm/configs/em_x270_defconfig
-index 61228a25ba8d..858289b7f1de 100644
---- a/arch/arm/configs/em_x270_defconfig
-+++ b/arch/arm/configs/em_x270_defconfig
-@@ -101,7 +101,6 @@ CONFIG_FB=y
- CONFIG_FB_PXA=y
- CONFIG_FB_PXA_PARAMETERS=y
- CONFIG_FB_MBX=m
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_LCD_TDO24M=y
- # CONFIG_BACKLIGHT_GENERIC is not set
-diff --git a/arch/arm/configs/eseries_pxa_defconfig b/arch/arm/configs/eseries_pxa_defconfig
-index b85575867d21..bc76cf5399b6 100644
---- a/arch/arm/configs/eseries_pxa_defconfig
-+++ b/arch/arm/configs/eseries_pxa_defconfig
-@@ -74,7 +74,6 @@ CONFIG_MFD_TC6393XB=y
- CONFIG_FB=y
- CONFIG_FB_PXA=y
- CONFIG_FB_W100=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_VGA_CONSOLE is not set
-diff --git a/arch/arm/configs/ezx_defconfig b/arch/arm/configs/ezx_defconfig
-index e3afca5bd9d6..eb966ac6de1d 100644
---- a/arch/arm/configs/ezx_defconfig
-+++ b/arch/arm/configs/ezx_defconfig
-@@ -247,7 +247,6 @@ CONFIG_FB=y
- CONFIG_FB_PXA=y
- CONFIG_FB_PXA_OVERLAY=y
- CONFIG_FB_PXA_PARAMETERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_LCD_CLASS_DEVICE is not set
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_PWM=y
-diff --git a/arch/arm/configs/imote2_defconfig b/arch/arm/configs/imote2_defconfig
-index 9b779e13e05d..82f5b938e395 100644
---- a/arch/arm/configs/imote2_defconfig
-+++ b/arch/arm/configs/imote2_defconfig
-@@ -228,7 +228,6 @@ CONFIG_FB=y
- CONFIG_FB_PXA=y
- CONFIG_FB_PXA_OVERLAY=y
- CONFIG_FB_PXA_PARAMETERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_LCD_CLASS_DEVICE is not set
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_VGA_CONSOLE is not set
-diff --git a/arch/arm/configs/integrator_defconfig b/arch/arm/configs/integrator_defconfig
-index 747550c7af2f..2f0a762dc3a0 100644
---- a/arch/arm/configs/integrator_defconfig
-+++ b/arch/arm/configs/integrator_defconfig
-@@ -61,7 +61,6 @@ CONFIG_FB_MODE_HELPERS=y
- CONFIG_FB_MATROX=y
- CONFIG_FB_MATROX_MILLENIUM=y
- CONFIG_FB_MATROX_MYSTIQUE=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_VGA_CONSOLE is not set
- CONFIG_LOGO=y
-diff --git a/arch/arm/configs/jornada720_defconfig b/arch/arm/configs/jornada720_defconfig
-index 65d37ad6e6b8..3dcc2f4ab7b7 100644
---- a/arch/arm/configs/jornada720_defconfig
-+++ b/arch/arm/configs/jornada720_defconfig
-@@ -47,7 +47,6 @@ CONFIG_LEGACY_PTY_COUNT=32
- # CONFIG_HWMON is not set
- CONFIG_FB=y
- CONFIG_FB_S1D13XXX=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_BACKLIGHT_GENERIC is not set
-diff --git a/arch/arm/configs/lpc18xx_defconfig b/arch/arm/configs/lpc18xx_defconfig
-index e3d5e15d66d1..e518168a0627 100644
---- a/arch/arm/configs/lpc18xx_defconfig
-+++ b/arch/arm/configs/lpc18xx_defconfig
-@@ -119,7 +119,6 @@ CONFIG_REGULATOR_FIXED_VOLTAGE=y
- CONFIG_DRM=y
- CONFIG_DRM_PL111=y
- CONFIG_FB_MODE_HELPERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_USB=y
- CONFIG_USB_EHCI_HCD=y
- CONFIG_USB_EHCI_ROOT_HUB_TT=y
-diff --git a/arch/arm/configs/lpc32xx_defconfig b/arch/arm/configs/lpc32xx_defconfig
-index 4b3b2c693c29..6d5a0067e66d 100644
---- a/arch/arm/configs/lpc32xx_defconfig
-+++ b/arch/arm/configs/lpc32xx_defconfig
-@@ -110,7 +110,6 @@ CONFIG_DRM=y
- CONFIG_DRM_PANEL_SIMPLE=y
- CONFIG_DRM_PL111=y
- CONFIG_FB_MODE_HELPERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_FRAMEBUFFER_CONSOLE=y
- CONFIG_LOGO=y
-diff --git a/arch/arm/configs/magician_defconfig b/arch/arm/configs/magician_defconfig
-index de5be2fc7306..6116c44678b9 100644
---- a/arch/arm/configs/magician_defconfig
-+++ b/arch/arm/configs/magician_defconfig
-@@ -96,7 +96,6 @@ CONFIG_FB=y
- CONFIG_FB_PXA=y
- CONFIG_FB_PXA_OVERLAY=y
- CONFIG_FB_W100=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_BACKLIGHT_GENERIC is not set
-diff --git a/arch/arm/configs/mmp2_defconfig b/arch/arm/configs/mmp2_defconfig
-index 94deb0ed0541..a5e8d2235a1a 100644
---- a/arch/arm/configs/mmp2_defconfig
-+++ b/arch/arm/configs/mmp2_defconfig
-@@ -50,7 +50,6 @@ CONFIG_MFD_MAX8925=y
- CONFIG_REGULATOR=y
- CONFIG_REGULATOR_MAX8649=y
- CONFIG_REGULATOR_MAX8925=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_MAX8925=y
-diff --git a/arch/arm/configs/mxs_defconfig b/arch/arm/configs/mxs_defconfig
-index ed570a0d1f2a..2773899c21b3 100644
---- a/arch/arm/configs/mxs_defconfig
-+++ b/arch/arm/configs/mxs_defconfig
-@@ -96,7 +96,6 @@ CONFIG_DRM=y
- CONFIG_DRM_PANEL_SEIKO_43WVF1G=y
- CONFIG_DRM_MXSFB=y
- CONFIG_FB_MODE_HELPERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_PWM=y
-diff --git a/arch/arm/configs/nhk8815_defconfig b/arch/arm/configs/nhk8815_defconfig
-index cfc094189d09..2ecb049daf61 100644
---- a/arch/arm/configs/nhk8815_defconfig
-+++ b/arch/arm/configs/nhk8815_defconfig
-@@ -98,7 +98,6 @@ CONFIG_REGULATOR=y
- CONFIG_DRM=y
- CONFIG_DRM_PANEL_TPO_TPG110=y
- CONFIG_DRM_PL111=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_PWM=y
- CONFIG_FRAMEBUFFER_CONSOLE=y
-diff --git a/arch/arm/configs/omap1_defconfig b/arch/arm/configs/omap1_defconfig
-index 82af77c093f1..f24a857e8733 100644
---- a/arch/arm/configs/omap1_defconfig
-+++ b/arch/arm/configs/omap1_defconfig
-@@ -154,7 +154,6 @@ CONFIG_FB_OMAP_LCDC_EXTERNAL=y
- CONFIG_FB_OMAP_LCDC_HWA742=y
- CONFIG_FB_OMAP_MANUAL_UPDATE=y
- CONFIG_FB_OMAP_LCD_MIPID=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_FRAMEBUFFER_CONSOLE=y
- CONFIG_FRAMEBUFFER_CONSOLE_ROTATION=y
-diff --git a/arch/arm/configs/palmz72_defconfig b/arch/arm/configs/palmz72_defconfig
-index e0a614272561..ade09bfcba56 100644
---- a/arch/arm/configs/palmz72_defconfig
-+++ b/arch/arm/configs/palmz72_defconfig
-@@ -49,7 +49,6 @@ CONFIG_PDA_POWER=y
- # CONFIG_HWMON is not set
- CONFIG_FB=y
- CONFIG_FB_PXA=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_LCD_CLASS_DEVICE is not set
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_PWM=y
-diff --git a/arch/arm/configs/pxa3xx_defconfig b/arch/arm/configs/pxa3xx_defconfig
-index 7681eea60127..02997bcbfe8a 100644
---- a/arch/arm/configs/pxa3xx_defconfig
-+++ b/arch/arm/configs/pxa3xx_defconfig
-@@ -72,7 +72,6 @@ CONFIG_REGULATOR_DEBUG=y
- CONFIG_REGULATOR_DA903X=y
- CONFIG_FB=y
- CONFIG_FB_PXA=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_LCD_TDO24M=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
-diff --git a/arch/arm/configs/pxa_defconfig b/arch/arm/configs/pxa_defconfig
-index 07ebbdce3645..a02dd4cf6138 100644
---- a/arch/arm/configs/pxa_defconfig
-+++ b/arch/arm/configs/pxa_defconfig
-@@ -462,7 +462,6 @@ CONFIG_PXA3XX_GCU=m
- CONFIG_FB_MBX=m
- CONFIG_FB_VIRTUAL=m
- CONFIG_FB_SIMPLE=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CORGI=m
- CONFIG_LCD_PLATFORM=m
- CONFIG_LCD_TOSA=m
-diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
-index c1854751c99a..e8a17b41b2db 100644
---- a/arch/arm/configs/qcom_defconfig
-+++ b/arch/arm/configs/qcom_defconfig
-@@ -148,7 +148,6 @@ CONFIG_MEDIA_SUPPORT=y
- CONFIG_DRM=y
- CONFIG_FB=y
- CONFIG_FRAMEBUFFER_CONSOLE=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_LCD_CLASS_DEVICE is not set
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_BACKLIGHT_GENERIC is not set
-diff --git a/arch/arm/configs/realview_defconfig b/arch/arm/configs/realview_defconfig
-index cc9fa24d4b8f..8884723b827e 100644
---- a/arch/arm/configs/realview_defconfig
-+++ b/arch/arm/configs/realview_defconfig
-@@ -65,7 +65,6 @@ CONFIG_DRM=y
- CONFIG_DRM_PANEL_SIMPLE=y
- CONFIG_DRM_PL111=y
- CONFIG_FB_MODE_HELPERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_LOGO=y
- # CONFIG_LOGO_LINUX_MONO is not set
-diff --git a/arch/arm/configs/s3c6400_defconfig b/arch/arm/configs/s3c6400_defconfig
-index 6e2656567da6..a18be42e5134 100644
---- a/arch/arm/configs/s3c6400_defconfig
-+++ b/arch/arm/configs/s3c6400_defconfig
-@@ -40,7 +40,6 @@ CONFIG_SPI_GPIO=m
- CONFIG_SPI_S3C64XX=m
- CONFIG_FB=y
- CONFIG_FB_S3C=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_LCD_LTV350QV=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
-diff --git a/arch/arm/configs/sama5_defconfig b/arch/arm/configs/sama5_defconfig
-index d5341b0bd88d..6275f4fb3e5e 100644
---- a/arch/arm/configs/sama5_defconfig
-+++ b/arch/arm/configs/sama5_defconfig
-@@ -154,7 +154,6 @@ CONFIG_SOC_CAMERA_OV2640=m
- CONFIG_DRM=y
- CONFIG_DRM_ATMEL_HLCDC=y
- CONFIG_DRM_PANEL_SIMPLE=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_BACKLIGHT_GENERIC is not set
-diff --git a/arch/arm/configs/spear3xx_defconfig b/arch/arm/configs/spear3xx_defconfig
-index ddd73b25f75e..5d88c4817f41 100644
---- a/arch/arm/configs/spear3xx_defconfig
-+++ b/arch/arm/configs/spear3xx_defconfig
-@@ -54,7 +54,6 @@ CONFIG_WATCHDOG=y
- CONFIG_ARM_SP805_WATCHDOG=y
- CONFIG_DRM=y
- CONFIG_DRM_PL111=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_USB=y
- CONFIG_USB_EHCI_HCD=y
-diff --git a/arch/arm/configs/spitz_defconfig b/arch/arm/configs/spitz_defconfig
-index f6d2f674517c..09f6fe432eef 100644
---- a/arch/arm/configs/spitz_defconfig
-+++ b/arch/arm/configs/spitz_defconfig
-@@ -126,7 +126,6 @@ CONFIG_SPI=y
- CONFIG_SPI_PXA2XX=y
- CONFIG_FB=y
- CONFIG_FB_PXA=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_LCD_CORGI=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
-diff --git a/arch/arm/configs/trizeps4_defconfig b/arch/arm/configs/trizeps4_defconfig
-index ecad22501b48..d66f0c287d41 100644
---- a/arch/arm/configs/trizeps4_defconfig
-+++ b/arch/arm/configs/trizeps4_defconfig
-@@ -136,7 +136,6 @@ CONFIG_SA1100_WATCHDOG=y
- CONFIG_FB=y
- CONFIG_FIRMWARE_EDID=y
- CONFIG_FB_PXA=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_LCD_CLASS_DEVICE=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_VGA_CONSOLE is not set
-diff --git a/arch/arm/configs/u300_defconfig b/arch/arm/configs/u300_defconfig
-index bedf397c75de..9f16487c0eb0 100644
---- a/arch/arm/configs/u300_defconfig
-+++ b/arch/arm/configs/u300_defconfig
-@@ -43,7 +43,6 @@ CONFIG_WATCHDOG=y
- CONFIG_REGULATOR=y
- CONFIG_REGULATOR_FIXED_VOLTAGE=y
- CONFIG_FB=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_LCD_CLASS_DEVICE is not set
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- # CONFIG_USB_SUPPORT is not set
-diff --git a/arch/arm/configs/versatile_defconfig b/arch/arm/configs/versatile_defconfig
-index 5282324c7cef..fe4d4b596585 100644
---- a/arch/arm/configs/versatile_defconfig
-+++ b/arch/arm/configs/versatile_defconfig
-@@ -62,7 +62,6 @@ CONFIG_DRM_PANEL_SIMPLE=y
- CONFIG_DRM_DUMB_VGA_DAC=y
- CONFIG_DRM_PL111=y
- CONFIG_FB_MODE_HELPERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_LOGO=y
- CONFIG_SOUND=y
-diff --git a/arch/arm/configs/vexpress_defconfig b/arch/arm/configs/vexpress_defconfig
-index 484d77a7f589..d170da388389 100644
---- a/arch/arm/configs/vexpress_defconfig
-+++ b/arch/arm/configs/vexpress_defconfig
-@@ -86,7 +86,6 @@ CONFIG_DRM_PANEL_SIMPLE=y
- CONFIG_DRM_SII902X=y
- CONFIG_DRM_PL111=y
- CONFIG_FB_MODE_HELPERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_CLASS_DEVICE=y
- CONFIG_LOGO=y
- # CONFIG_LOGO_LINUX_MONO is not set
-diff --git a/arch/arm/configs/viper_defconfig b/arch/arm/configs/viper_defconfig
-index 070e5074f1ee..218bfb6c9b24 100644
---- a/arch/arm/configs/viper_defconfig
-+++ b/arch/arm/configs/viper_defconfig
-@@ -110,7 +110,6 @@ CONFIG_WATCHDOG=y
- CONFIG_FB=y
- CONFIG_FB_PXA=m
- CONFIG_FB_PXA_PARAMETERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- CONFIG_BACKLIGHT_PWM=m
- # CONFIG_VGA_CONSOLE is not set
- CONFIG_FRAMEBUFFER_CONSOLE=y
-diff --git a/arch/arm/configs/zeus_defconfig b/arch/arm/configs/zeus_defconfig
-index 09e7050d5653..8c01047801b8 100644
---- a/arch/arm/configs/zeus_defconfig
-+++ b/arch/arm/configs/zeus_defconfig
-@@ -110,7 +110,6 @@ CONFIG_WATCHDOG=y
- CONFIG_FB=y
- CONFIG_FB_PXA=m
- CONFIG_FB_PXA_PARAMETERS=y
--CONFIG_BACKLIGHT_LCD_SUPPORT=y
- # CONFIG_VGA_CONSOLE is not set
- CONFIG_FRAMEBUFFER_CONSOLE=y
- CONFIG_LOGO=y
--- 
-2.17.1
+Mathieu
 
+> 
+>  BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
+>  caller is alloc_etr_buf.isra.6+0x80/0xa0
+>  CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
+>  Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
+>   Call trace:
+>    dump_backtrace+0x0/0x150
+>    show_stack+0x14/0x20
+>    dump_stack+0x9c/0xc4
+>    debug_smp_processor_id+0x10c/0x110
+>    alloc_etr_buf.isra.6+0x80/0xa0
+>    tmc_alloc_etr_buffer+0x12c/0x1f0
+>    etm_setup_aux+0x1c4/0x230
+>    rb_alloc_aux+0x1b8/0x2b8
+>    perf_mmap+0x35c/0x478
+>    mmap_region+0x34c/0x4f0
+>    do_mmap+0x2d8/0x418
+>    vm_mmap_pgoff+0xd0/0xf8
+>    ksys_mmap_pgoff+0x88/0xf8
+>    __arm64_sys_mmap+0x28/0x38
+>    el0_svc_handler+0xd8/0x138
+>    el0_svc+0x8/0xc
+> 
+> Fixes: 855ab61c16bf70b646 ("coresight: tmc-etr: Refactor function tmc_etr_setup_perf_buf()")
+> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> ---
+>  drivers/hwtracing/coresight/coresight-tmc-etr.c | 6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> index ce0114a..7c81f63 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+> @@ -1323,13 +1323,11 @@ static struct etr_perf_buffer *
+>  tmc_etr_setup_perf_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
+>  		       int nr_pages, void **pages, bool snapshot)
+>  {
+> -	int node, cpu = event->cpu;
+> +	int node;
+>  	struct etr_buf *etr_buf;
+>  	struct etr_perf_buffer *etr_perf;
+>  
+> -	if (cpu == -1)
+> -		cpu = smp_processor_id();
+> -	node = cpu_to_node(cpu);
+> +	node = (event->cpu == -1) ? NUMA_NO_NODE : cpu_to_node(event->cpu);
+>  
+>  	etr_perf = kzalloc_node(sizeof(*etr_perf), GFP_KERNEL, node);
+>  	if (!etr_perf)
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
