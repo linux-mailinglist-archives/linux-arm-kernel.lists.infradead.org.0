@@ -2,73 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB8E432F51
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 14:14:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC81432F57
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 14:15:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kP8gC0CBtbrhY6CNVqnZQ0VBx8L44Jkc0x6f6ng3F/Q=; b=UjxShwEq5frjBc74STHaX4XOq
-	czCF/YjGNFxVWROFwoNrQPLd7jBRgxlmqj8S39k4CT+P1xYq/kYTnOP4uI9LuPT+3R+Sz6P7X59eb
-	ED5h/P+tZlKmk1FOwbinku0v9P4/HimRujz46DEHDPDfuY7/A8vxDa2uqRy9t+nOh8XRVc9LLCiy6
-	WzbuYlx0NvPgH4gzeedU1TWdzymlq6jG9Q3BTeNV7PEXdx/vn6dFj37TL8oFg9n4z+TICmwwiMNMM
-	tPXM6ZVySaK/UiNzpGAxZ0/G/+Y7Ye9gQQjdRtbGzEGVlugRv/73gfWWdyhq1gsNCzhhYUKHFzTi/
-	Vis5m4mBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Wt0wx1fzhyPEXIRJyCz73Zdk8ejw8Y/xrEZRZ1SJwJ8=; b=PzWz0g7ikqg1mL
+	1pLDimavYzGcKvxMbWNICysIp0QOcaMFvGcT1+A3FibVyLZPL5IOUruJCJp9HTt2dGy7zV20QEq1/
+	8mmJNfB7oZ091nfsvwMcUk4xWs+WkXGI7tDQD8hzAcB8+9lmi+rHwFQyElsqcCWBG0KoR9Dzfa2pg
+	a5I1crbGX0CNKCm3zH0bzxMtNVGySYNEukvjG03OOTB5HHyV7uMeW92efZNnXY16jFCvkwWZeoCI+
+	M2q/Dtd9dVsYQ8QNY0zwNLtqFR2VBgEqcjJFFf3CIsWHn9Dch+UDTvmqlSadivK47HjhWSnfAPRXh
+	T1cWtuodfabyXC43pBUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXlrI-0000A3-4Z; Mon, 03 Jun 2019 12:14:36 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hXlsX-0001fY-MU; Mon, 03 Jun 2019 12:15:53 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXlrD-00009x-1l
- for linux-arm-kernel@bombadil.infradead.org; Mon, 03 Jun 2019 12:14:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7/k7vftessYca9Ij4BRS0pqBYAH6AAwcx440/1KuWUQ=; b=EQCTvSpfrA+IkHUIQMOh2xaX0
- Nbcc4vZ1AnP2KpW0ekxJgA6zBRfvxQqoq+2u71GlMVi49SubQZkAvnq7M9o5dYz5DpE+eRg7P2LmL
- 5qxO7uPKszC/T/JPGUuOp6yu2njl1EqeMBT+LOVw+o/wFX12UthlrgtipSTBdY3azdOWxHvsKNxEO
- nsDE1wfZNqpUCe8IZI3IOy7grgHH4zyPtq2A6ooKr3DGKxKwfk3HIFxKT61ChXLlQKgJM9S4sTXA/
- T2U5d9oUL7e8vx9jRw2eFFCarKHL2+pwt0NtieNWG5+G4iftOTEHM9ELdYVisacRBgVJI1uT/hbkb
- yAu8AJO2w==;
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXlr8-000626-TJ
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 12:14:28 +0000
-X-Originating-IP: 90.88.144.139
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 970BC60004;
- Mon,  3 Jun 2019 12:13:45 +0000 (UTC)
-Date: Mon, 3 Jun 2019 14:13:45 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 4/7] media: cedrus: Remove dst_bufs from context
-Message-ID: <20190603121345.5uh4xquo64fopqnn@flea>
-References: <20190530211516.1891-1-jernej.skrabec@siol.net>
- <20190530211516.1891-5-jernej.skrabec@siol.net>
+ id 1hXlsP-0001dg-BR
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 12:15:47 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 600F120A84;
+ Mon,  3 Jun 2019 14:15:38 +0200 (CEST)
+Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 3DEF11FF14;
+ Mon,  3 Jun 2019 14:15:38 +0200 (CEST)
+Subject: [PATCH v3] iommu/arm-smmu: Avoid constant zero in TLBI writes
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+To: Will Deacon <will.deacon@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+ Joerg Roedel <joro@8bytes.org>
+References: <f523effd-ef81-46fe-1f9e-1a0cb42c8b7b@free.fr>
+ <20190529130559.GB11023@fuggles.cambridge.arm.com>
+ <84791515-e0ae-0322-78aa-02ca0b40d157@free.fr>
+Message-ID: <09a290f1-27a0-5ee3-16b9-659ef2ba99dc@free.fr>
+Date: Mon, 3 Jun 2019 14:15:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190530211516.1891-5-jernej.skrabec@siol.net>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <84791515-e0ae-0322-78aa-02ca0b40d157@free.fr>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Mon Jun  3 14:15:38 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_131426_961988_4677D516 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.0 (-)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-1.0 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190603_051545_686138_40CA834B 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,64 +70,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, paul.kocialkowski@bootlin.com, wens@csie.org,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6777371676536000264=="
+Cc: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
+ MSM <linux-arm-msm@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ iommu <iommu@lists.linux-foundation.org>, Andy Gross <agross@kernel.org>,
+ AngeloGioacchino Del Regno <kholk11@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Robin Murphy <robin.murphy@arm.com>
 
---===============6777371676536000264==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="hwwfrxwoaemzsp3p"
-Content-Disposition: inline
+Apparently, some Qualcomm arm64 platforms which appear to expose their
+SMMU global register space are still, in fact, using a hypervisor to
+mediate it by trapping and emulating register accesses. Sadly, some
+deployed versions of said trapping code have bugs wherein they go
+horribly wrong for stores using r31 (i.e. XZR/WZR) as the source
+register.
 
+While this can be mitigated for GCC today by tweaking the constraints
+for the implementation of writel_relaxed(), to avoid any potential
+arms race with future compilers more aggressively optimising register
+allocation, the simple way is to just remove all the problematic
+constant zeros. For the write-only TLB operations, the actual value is
+irrelevant anyway and any old nearby variable will provide a suitable
+GPR to encode. The one point at which we really do need a zero to clear
+a context bank happens before any of the TLB maintenance where crashes
+have been reported, so is apparently not a problem... :/
 
---hwwfrxwoaemzsp3p
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Reported-by: AngeloGioacchino Del Regno <kholk11@gmail.com>
+Tested-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+---
+Changes from v2:
+- Define and use QCOM_DUMMY_VAL for the 3 problematic mmio writes
+- Drop previous Reviewed-by and Tested-by tags (rationale: we are now writing a different value)
 
-On Thu, May 30, 2019 at 11:15:13PM +0200, Jernej Skrabec wrote:
-> This array is just duplicated capture buffer queue. Remove it and adjust
-> code to look into capture buffer queue instead.
->
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+Boot log:
+REMAP: PA=01680000 VA=ffffff80111b0000 SIZE=10000
+arm-smmu 1680000.arm,smmu: probing hardware configuration...
+arm-smmu 1680000.arm,smmu: SMMUv2 with:
+arm-smmu 1680000.arm,smmu:      stage 1 translation
+arm-smmu 1680000.arm,smmu:      address translation ops
+arm-smmu 1680000.arm,smmu:      non-coherent table walk
+arm-smmu 1680000.arm,smmu:      (IDR0.CTTW overridden by FW configuration)
+arm-smmu 1680000.arm,smmu:      stream matching with 16 register groups
+arm-smmu 1680000.arm,smmu:      6 context banks (0 stage-2 only)
+arm-smmu 1680000.arm,smmu:      Supported page sizes: 0x63315000
+arm-smmu 1680000.arm,smmu:      Stage-1: 36-bit VA -> 36-bit IPA
+[        SMMU + 000048] = 00000000
+[        SMMU + 000c00] = 00020000
+[        SMMU + 000800] = 00000000
+[        SMMU + 000c04] = 00020000
+[        SMMU + 000804] = 00000000
+[        SMMU + 000c08] = 00020000
+[        SMMU + 000808] = 00000000
+[        SMMU + 000c0c] = 00020000
+[        SMMU + 00080c] = 00000000
+[        SMMU + 000c10] = 00020000
+[        SMMU + 000810] = 00000000
+[        SMMU + 000c14] = 00020000
+[        SMMU + 000814] = 00000000
+[        SMMU + 000c18] = 00020000
+[        SMMU + 000818] = 00000000
+[        SMMU + 000c1c] = 00020000
+[        SMMU + 00081c] = 00000000
+[        SMMU + 000c20] = 00020000
+[        SMMU + 000820] = 00000000
+[        SMMU + 000c24] = 00020000
+[        SMMU + 000824] = 00000000
+[        SMMU + 000c28] = 00020000
+[        SMMU + 000828] = 00000000
+[        SMMU + 000c2c] = 00020000
+[        SMMU + 00082c] = 00000000
+[        SMMU + 000c30] = 00020000
+[        SMMU + 000830] = 00000000
+[        SMMU + 000c34] = 00020000
+[        SMMU + 000834] = 00000000
+[        SMMU + 000c38] = 00020000
+[        SMMU + 000838] = 00000000
+[        SMMU + 000c3c] = 00020000
+[        SMMU + 00083c] = 00000000
+[        SMMU + 008000] = 00000000
+[        SMMU + 008058] = c00001fe
+[        SMMU + 009000] = 00000000
+[        SMMU + 009058] = c00001fe
+[        SMMU + 00a000] = 00000000
+[        SMMU + 00a058] = c00001fe
+[        SMMU + 00b000] = 00000000
+[        SMMU + 00b058] = c00001fe
+[        SMMU + 00c000] = 00000000
+[        SMMU + 00c058] = c00001fe
+[        SMMU + 00d000] = 00000000
+[        SMMU + 00d058] = c00001fe
+[        SMMU + 00006c] = ffffffff
+[        SMMU + 000068] = ffffffff
+[        SMMU + 000070] = ffffffff
+[        SMMU + 000000] = 00201e36
+[        SMMU + 000800] = 00001fff
+[        SMMU + 000800] = 1fff0000
+[        SMMU + 001800] = 00000001
+[        SMMU + 001000] = 0001f300
+[        SMMU + 008010] = 00038011
+[        SMMU + 008030] = 0080351c
+[        SMMU + 008020] = 00000000785d5000
+[        SMMU + 008028] = 0000000000000000
+[        SMMU + 008038] = 0004ff44
+[        SMMU + 00803c] = 00000000
+[        SMMU + 008000] = 00001067
+[        SMMU + 000c00] = 00000000
+atl1c 0000:01:00.0: Adding to iommu group 0
+[        SMMU + 000c00] = 00000000
+[        SMMU + 000800] = 80001480
+---
+ drivers/iommu/arm-smmu.c | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
 
-Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---hwwfrxwoaemzsp3p
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPUO+QAKCRDj7w1vZxhR
-xY1uAP9hH5O7WjfeV/BXsKPStm23IM1ZX1gwoL+bHz6M1yQBjwD+NvJ/2aWqWf8f
-R+ArhaQDIa5EhvE33GmymyMWU6/RpQc=
-=Hu9G
------END PGP SIGNATURE-----
-
---hwwfrxwoaemzsp3p--
-
-
---===============6777371676536000264==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index 930c07635956..9435e4a7759f 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -59,6 +59,15 @@
+ 
+ #include "arm-smmu-regs.h"
+ 
++/*
++ * Apparently, some Qualcomm arm64 platforms which appear to expose their SMMU
++ * global register space are still, in fact, using a hypervisor to mediate it
++ * by trapping and emulating register accesses. Sadly, some deployed versions
++ * of said trapping code have bugs wherein they go horribly wrong for stores
++ * using r31 (i.e. XZR/WZR) as the source register.
++ */
++#define QCOM_DUMMY_VAL -1
++
+ #define ARM_MMU500_ACTLR_CPRE		(1 << 1)
+ 
+ #define ARM_MMU500_ACR_CACHE_LOCK	(1 << 26)
+@@ -423,7 +432,7 @@ static void __arm_smmu_tlb_sync(struct arm_smmu_device *smmu,
+ {
+ 	unsigned int spin_cnt, delay;
+ 
+-	writel_relaxed(0, sync);
++	writel_relaxed(QCOM_DUMMY_VAL, sync);
+ 	for (delay = 1; delay < TLB_LOOP_TIMEOUT; delay *= 2) {
+ 		for (spin_cnt = TLB_SPIN_COUNT; spin_cnt > 0; spin_cnt--) {
+ 			if (!(readl_relaxed(status) & sTLBGSTATUS_GSACTIVE))
+@@ -1761,8 +1770,8 @@ static void arm_smmu_device_reset(struct arm_smmu_device *smmu)
+ 	}
+ 
+ 	/* Invalidate the TLB, just in case */
+-	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLH);
+-	writel_relaxed(0, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
++	writel_relaxed(QCOM_DUMMY_VAL, gr0_base + ARM_SMMU_GR0_TLBIALLH);
++	writel_relaxed(QCOM_DUMMY_VAL, gr0_base + ARM_SMMU_GR0_TLBIALLNSNH);
+ 
+ 	reg = readl_relaxed(ARM_SMMU_GR0_NS(smmu) + ARM_SMMU_GR0_sCR0);
+ 
+-- 
+2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6777371676536000264==--
-
