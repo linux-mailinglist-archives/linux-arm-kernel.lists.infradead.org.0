@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1751C328A5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 08:42:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C292328AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 08:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YZktyg5sFKWHgxdlQv/IPkZj2IUu86V3T/fl4Z0z9kM=; b=B9ae8NS4/V+/7P7SQAo7tJtA2U
-	Mebtsioj9wddGDmBADJDJXtdvrjO5VqgfGuldFNkf8uSO8VNdbYGuqTrNHnkCA9Hh69QuE1mlBtj1
-	LR9yCXB1yVjV7vLh62N9eGE/gYbGWiuU9qZHlaETKO6GODYqMfQrLAHO3dmLrKKbB97dCL/IHjaZZ
-	lvO6DKpaVBoYoPdubr2bfg5xfCqQbB34pJrU2baVyur7sC7VxSE069lY+aWgn+0Vpjove82/Txk3J
-	XEeaTKQLnw7OcMeWB5wdbOd6YBP7nZwblTDX0H63fINeCo0HyQcMPSyJ//TPS04aEyqsbO7Ng9LNj
-	22rHmKHQ==;
+	bh=V6E15g9E0i0KjtomDkxnjX7QvyAYRRoqJHIUQvnI7Pw=; b=ZfVDu8HcuqOI6tgzJ79ZKQlmbI
+	rCJkQzlBtV7yZcPHTY2uN0gN6UuSoPFw8TcBZ8NCt+QtTUf6eyLa1aaRnoB5CMAAfSfn+iHQ+9Wtz
+	01aNIH3Ni41mfukJht0kWbv+M6g2FsGklG/GmKZrOzbJJ6fu9edgDKEqsM1+9T7TXyycoYqe2AqBi
+	UKWVrPeZEjR0307lHpSp9i6zXqR5CWWg4emYzH/bcOAo+IBcDlJCFKsvuqTrxmjEGeQtAhxdybpEh
+	Ttm1lqghPPepLLd35U0Ui5ljpd4CQBLI35gEJFX+L8zlOwFhLJ0VVCbMO2VoB+uaNNSWX9DNg22E1
+	jkrg37Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXgfg-0001mR-4W; Mon, 03 Jun 2019 06:42:16 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hXgfr-0001yT-95; Mon, 03 Jun 2019 06:42:27 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXgfT-0001e2-Bq
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 06:42:06 +0000
+ id 1hXgfW-0001im-B2
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 06:42:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 73E9F15AB;
- Sun,  2 Jun 2019 23:42:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EED715A2;
+ Sun,  2 Jun 2019 23:42:06 -0700 (PDT)
 Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
  [10.162.40.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 88E193F5AF;
- Sun,  2 Jun 2019 23:41:59 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0A4533F5AF;
+ Sun,  2 Jun 2019 23:42:02 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 1/4] arm64/mm: Drop mmap_sem before calling
- __do_kernel_fault()
-Date: Mon,  3 Jun 2019 12:11:22 +0530
-Message-Id: <1559544085-7502-2-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V2 2/4] arm64/mm: Drop task_struct argument from
+ __do_page_fault()
+Date: Mon,  3 Jun 2019 12:11:23 +0530
+Message-Id: <1559544085-7502-3-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1559544085-7502-1-git-send-email-anshuman.khandual@arm.com>
 References: <1559544085-7502-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_234203_682535_B246CA4F 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20190602_234206_524545_A075FF9C 
+X-CRM114-Status: GOOD (  13.79  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -74,19 +75,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is an inconsistency between down_read_trylock() success and failure
-paths while dealing with kernel access for non exception table areas where
-it calls __do_kernel_fault(). In case of failure it just bails out without
-holding mmap_sem but when it succeeds it does so while holding mmap_sem.
-Fix this inconsistency by just dropping mmap_sem in success path as well.
-
-__do_kernel_fault() calls die_kernel_fault() which then calls show_pte().
-show_pte() in this path might become bit more unreliable without holding
-mmap_sem. But there are already instances [1] in do_page_fault() where
-die_kernel_fault() gets called without holding mmap_sem. show_pte() can
-be made more robust independently but in a later patch.
-
-[1] Conditional block for (is_ttbr0_addr && is_el1_permission_fault)
+The task_struct argument is not getting used in __do_page_fault(). Hence
+just drop it and use current or cuurent->mm instead where ever required.
+This does not change any functionality.
 
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
@@ -95,25 +86,66 @@ Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: James Morse <james.morse@arm.com>
 Cc: Andrey Konovalov <andreyknvl@google.com>
 ---
- arch/arm64/mm/fault.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/arm64/mm/fault.c | 15 +++++----------
+ 1 file changed, 5 insertions(+), 10 deletions(-)
 
 diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index a30818e..dc1cf32 100644
+index dc1cf32..da02678 100644
 --- a/arch/arm64/mm/fault.c
 +++ b/arch/arm64/mm/fault.c
-@@ -503,8 +503,10 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 		 */
- 		might_sleep();
- #ifdef CONFIG_DEBUG_VM
--		if (!user_mode(regs) && !search_exception_tables(regs->pc))
-+		if (!user_mode(regs) && !search_exception_tables(regs->pc)) {
-+			up_read(&mm->mmap_sem);
- 			goto no_context;
-+		}
+@@ -395,8 +395,7 @@ static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *re
+ #define VM_FAULT_BADACCESS	0x020000
+ 
+ static vm_fault_t __do_page_fault(struct mm_struct *mm, unsigned long addr,
+-			   unsigned int mm_flags, unsigned long vm_flags,
+-			   struct task_struct *tsk)
++			   unsigned int mm_flags, unsigned long vm_flags)
+ {
+ 	struct vm_area_struct *vma;
+ 	vm_fault_t fault;
+@@ -440,8 +439,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 				   struct pt_regs *regs)
+ {
+ 	const struct fault_info *inf;
+-	struct task_struct *tsk;
+-	struct mm_struct *mm;
++	struct mm_struct *mm = current->mm;
+ 	vm_fault_t fault, major = 0;
+ 	unsigned long vm_flags = VM_READ | VM_WRITE;
+ 	unsigned int mm_flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
+@@ -449,9 +447,6 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	if (notify_page_fault(regs, esr))
+ 		return 0;
+ 
+-	tsk = current;
+-	mm  = tsk->mm;
+-
+ 	/*
+ 	 * If we're in an interrupt or have no user context, we must not take
+ 	 * the fault.
+@@ -510,7 +505,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
  #endif
  	}
  
+-	fault = __do_page_fault(mm, addr, mm_flags, vm_flags, tsk);
++	fault = __do_page_fault(mm, addr, mm_flags, vm_flags);
+ 	major |= fault & VM_FAULT_MAJOR;
+ 
+ 	if (fault & VM_FAULT_RETRY) {
+@@ -550,11 +545,11 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 		 * that point.
+ 		 */
+ 		if (major) {
+-			tsk->maj_flt++;
++			current->maj_flt++;
+ 			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MAJ, 1, regs,
+ 				      addr);
+ 		} else {
+-			tsk->min_flt++;
++			current->min_flt++;
+ 			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MIN, 1, regs,
+ 				      addr);
+ 		}
 -- 
 2.7.4
 
