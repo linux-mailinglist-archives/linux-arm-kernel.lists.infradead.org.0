@@ -2,87 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E126327BE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 06:35:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB665327D7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 06:53:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JKrFhwRCbXO0ip4p7Q7f3/LJxj/ZGLzuA1w/5gOPq40=; b=bQjrslmtMAqLxy
-	qwMx7H+HIu4DDwnK4FOQWSyxmOn9yKIfHpDvVGJFwld4rTyfKTl2JI4E4V4I1cz8P/Rp98ZchdBjV
-	0XLsiX7wao+DUUULukDSDsnwQvDYKaiCwzy/SS+aWTLCMA8c6kkyXQVM5LxImKO8p2qgk7ZEAJgLQ
-	KnLhh7fBrMfHvR/TalL4vUF3AGMk76+ozAC7tDtGWKLXFrY4eEHAEE/u7dMxnTwn5Uydy/Mvdq9Wn
-	zJ1edRJ11o7dZhZKWUoajnoJm646bKKnidPqZNJwGyjCqo7GHDOcw68geypLXwSsbdbwaXU+0miMm
-	oW2gw8/NqT+DuL+sS/lw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=afKVNp82+jUCY0+R4UKP4O7ktOiJRhP0YagKB3BbYds=; b=mAjohUIEUdP2Ms
+	zKFrykSrFxDPhTAv1AKgNWxwHjsiUaD5lYQIBxkgOf9Psxtq5AHfAche2nc3l4rbH4R1W0qS5KqeX
+	XcIjymaHLw7DL+u+FKGlY0ctssHBzBn2fgvvslqfuTYmmspqPxXDm6w8VmIGNTxT7x7m4zPfodwnA
+	ixLYE0IKddHxz/ChaOoVnS+MwEGT1u+2LHygUQaWjKiHWZAWzrYvMG+oWewzKgH4lqeMcxJQmkQdn
+	28fjzTANVHRx7Q91WebC9EZI6MZRV+vgEWdFh/mF0g5BSuaNBfxHUynpHCfbQlAAZrQL1ZPe2ie4r
+	6nm56PBXd2UkIoQT42uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXega-0004Ip-2D; Mon, 03 Jun 2019 04:35:04 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXefk-0003H8-6x
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 04:34:43 +0000
-Received: by mail-pf1-x444.google.com with SMTP id c85so1031802pfc.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 02 Jun 2019 21:34:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=b/qy0C/+qIVS4p/9C8coL0gczc7xGffHcCTpl84Pnik=;
- b=W0HFUAGEBlitH2BpXUVE7tLd15Ng5l2TZqjITWduI3EGWRg3JKMe0MjJis9TBvMp02
- 4awA3xZDrtX56bGXOH5ZQ3oEimCGvzikfQPZANnHJau89l5kDDX0gPAAvlPieYi8kSIP
- TwDl7/UAUwCplFr2sy8k4qBf+wMfpuYAoO41w=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=b/qy0C/+qIVS4p/9C8coL0gczc7xGffHcCTpl84Pnik=;
- b=n0iKcDsHO5yQVye/aYtURNTMc9KkVqrPXBo5ML73amaMHLceScGZKU7sqqQ1MgmIQD
- 8Ad90qoBDkx1DqKybBwe8X8ESz3iEC7UGY1mcrnBCe6Gkv4vpX7pfmET61tfHyMeNzXn
- Uw6PEzR95PTn1ULOdeIdbUiM8sGpwlqygAqVQOk/442CU7GQ5+9r5ntjDr+DIcn/LqAW
- yuQSH8RkvViW+WC0CEF3YJmNIQEGOdmW4nlcr8BOmM2aAACVmIrxHxCiAxOjZBH6qoa5
- fTyPzsVz39K/8kxD5FgqTfo6BdXCYHyaK6s6EN8xK+pmjfq13XeREW7gcyr3CCR95JeU
- v81g==
-X-Gm-Message-State: APjAAAVURMlRzLZgA2IcPR33TGthqKpZ+AogM/jC9P30J/8Fd1I9NM6t
- I56XaY5XM90K+wC5KAAybVUc0g==
-X-Google-Smtp-Source: APXvYqyNg+8OlIDr5Hr5hFnNgwXQAuI+ahu2SvEr6XII+hIpaqZoSlyKPzFn5UBfI4WiO1Ahj/0G/w==
-X-Received: by 2002:a62:6145:: with SMTP id v66mr28539820pfb.144.1559536451549; 
- Sun, 02 Jun 2019 21:34:11 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:b:e688:dfd2:a1a7:2956])
- by smtp.gmail.com with ESMTPSA id e20sm11842630pfi.35.2019.06.02.21.34.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 02 Jun 2019 21:34:10 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 7/7] ARM: dts: rockchip: Specify HDMI node to sound card node
-Date: Mon,  3 Jun 2019 12:32:51 +0800
-Message-Id: <20190603043251.226549-8-cychiang@chromium.org>
-X-Mailer: git-send-email 2.22.0.rc1.257.g3120a18244-goog
-In-Reply-To: <20190603043251.226549-1-cychiang@chromium.org>
-References: <20190603043251.226549-1-cychiang@chromium.org>
+	id 1hXeyP-0002Vm-QW; Mon, 03 Jun 2019 04:53:29 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXeyH-0002Uk-Pa
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 04:53:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A87D1341;
+ Sun,  2 Jun 2019 21:53:18 -0700 (PDT)
+Received: from [10.162.40.144] (p8cg001049571a15.blr.arm.com [10.162.40.144])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ CC0BB3F5AF; Sun,  2 Jun 2019 21:53:11 -0700 (PDT)
+Subject: Re: [RFC] mm: Generalize notify_page_fault()
+To: Matthew Wilcox <willy@infradead.org>
+References: <1559195713-6956-1-git-send-email-anshuman.khandual@arm.com>
+ <20190530110639.GC23461@bombadil.infradead.org>
+ <4f9a610d-e856-60f6-4467-09e9c3836771@arm.com>
+ <20190530133954.GA2024@bombadil.infradead.org>
+ <f1995445-d5ab-f292-d26c-809581002184@arm.com>
+ <20190531174854.GA31852@bombadil.infradead.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <6338fef8-e097-a76e-5c07-455d0d9b6e24@arm.com>
+Date: Mon, 3 Jun 2019 10:23:26 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <20190531174854.GA31852@bombadil.infradead.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_213412_767687_BDE8E8BC 
-X-CRM114-Status: GOOD (  11.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190602_215321_843620_EF47F65B 
+X-CRM114-Status: GOOD (  17.64  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,48 +68,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Heiko Stuebner <heiko@sntech.de>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- Liam Girdwood <lgirdwood@gmail.com>, Hans Verkuil <hverkuil@xs4all.nl>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Cheng-Yi Chiang <cychiang@chromium.org>, Takashi Iwai <tiwai@suse.com>,
- linux-rockchip@lists.infradead.org, dgreid@chromium.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org, tzungbi@chromium.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Rob Herring <robh+dt@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, dianders@chromium.org,
- Mark Brown <broonie@kernel.org>, Daniel Vetter <daniel@ffwll.ch>
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, Russell King <linux@armlinux.org.uk>,
+ Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Andrey Konovalov <andreyknvl@google.com>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sound card needs HDMI node in order to register jack callback on HDMI
-notifier.
 
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
----
- arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi | 1 +
- 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi b/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
-index 445270aa136e..096ba4e96db2 100644
---- a/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
-+++ b/arch/arm/boot/dts/rk3288-veyron-analog-audio.dtsi
-@@ -14,6 +14,7 @@
- 		rockchip,model = "VEYRON-I2S";
- 		rockchip,i2s-controller = <&i2s>;
- 		rockchip,audio-codec = <&max98090>;
-+		rockchip,hdmi= <&hdmi>;
- 		rockchip,hp-det-gpios = <&gpio6 RK_PA5 GPIO_ACTIVE_HIGH>;
- 		rockchip,mic-det-gpios = <&gpio6 RK_PB3 GPIO_ACTIVE_LOW>;
- 		rockchip,headset-codec = <&headsetcodec>;
--- 
-2.22.0.rc1.257.g3120a18244-goog
+On 05/31/2019 11:18 PM, Matthew Wilcox wrote:
+> On Fri, May 31, 2019 at 02:17:43PM +0530, Anshuman Khandual wrote:
+>> On 05/30/2019 07:09 PM, Matthew Wilcox wrote:
+>>> On Thu, May 30, 2019 at 05:31:15PM +0530, Anshuman Khandual wrote:
+>>>> On 05/30/2019 04:36 PM, Matthew Wilcox wrote:
+>>>>> The two handle preemption differently.  Why is x86 wrong and this one
+>>>>> correct?
+>>>>
+>>>> Here it expects context to be already non-preemptible where as the proposed
+>>>> generic function makes it non-preemptible with a preempt_[disable|enable]()
+>>>> pair for the required code section, irrespective of it's present state. Is
+>>>> not this better ?
+>>>
+>>> git log -p arch/x86/mm/fault.c
+>>>
+>>> search for 'kprobes'.
+>>>
+>>> tell me what you think.
+>>
+>> Are you referring to these following commits
+>>
+>> a980c0ef9f6d ("x86/kprobes: Refactor kprobes_fault() like kprobe_exceptions_notify()")
+>> b506a9d08bae ("x86: code clarification patch to Kprobes arch code")
+>>
+>> In particular the later one (b506a9d08bae). It explains how the invoking context
+>> in itself should be non-preemptible for the kprobes processing context irrespective
+>> of whether kprobe_running() or perhaps smp_processor_id() is safe or not. Hence it
+>> does not make much sense to continue when original invoking context is preemptible.
+>> Instead just bail out earlier. This seems to be making more sense than preempt
+>> disable-enable pair. If there are no concerns about this change from other platforms,
+>> I will change the preemption behavior in proposed generic function next time around.
+> 
+> Exactly.
+> 
+> So, any of the arch maintainers know of a reason they behave differently
+> from x86 in this regard?  Or can Anshuman use the x86 implementation
+> for all the architectures supporting kprobes?
 
+So the generic notify_page_fault() will be like this.
+
+int __kprobes notify_page_fault(struct pt_regs *regs, unsigned int trap)
+{
+        int ret = 0;
+
+        /*
+         * To be potentially processing a kprobe fault and to be allowed
+         * to call kprobe_running(), we have to be non-preemptible.
+         */
+        if (kprobes_built_in() && !preemptible() && !user_mode(regs)) {
+                if (kprobe_running() && kprobe_fault_handler(regs, trap))
+                        ret = 1;
+        }
+        return ret;
+}
 
 _______________________________________________
 linux-arm-kernel mailing list
