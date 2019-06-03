@@ -2,92 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FF7D332A5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:49:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D74B332AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:50:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Scwk7vB7v1/KmTeP2V0dX20D9X0AqMQpznN1BoYOtZg=; b=UFwIKJG2haGu7G
-	uSCKr5v9vFa5PauXqbDc35rAIBQbO5eEMgb0S1Z0ArQmmfLgkWbgL2Af8yjH+rhcmcbP+Y5/SgxZM
-	lLdw2mxAr5oYjYm/2tm0tsgdBYs6OCL1pn8yvZObM1WJHQwfqmNERiIHyqr4pxB3olxO+FoBsFEXr
-	1KeTJFzwdVxChpalneWzDFF9Pxe8NyTVYbpAAVGBQqJvOPbmacY08W/kCN/Y7cknWDXam66rPdRMX
-	cR7GkktRnUjMi2rFDaaK6Yz0M+MRzk0/IKpaEGHZENhJXZ7DR/YBL6W36h+Qwo8++g1DYoUN52VH/
-	aVvIUZ8qWiwL905edXNw==;
+	List-Owner; bh=5vqpSNQ/Q6YQgb861CM/74/aqaOCuF0CqszHHi5CKBw=; b=hKOhAaEItrUkLC
+	37f+30d0vQSAbFl/LdETnpot/mnZsUu+o/+9M16vs9Fzw48VRz5ycP1jFzdcO3GfGkqctkMem85Ok
+	NaX25jjVkPo8XLCYehVUKO4riKSz+hTvlKRuDwcsLUywcsV8H8tajIZ0jaRgKFmBeVqun5Gj+v8Va
+	4MhCJjtGofo0s7Fx7z/KReIZl4uhkwPMszw21B92TCArEzO8nxwO1/37BDUD8HyTqXeTtSvB9PAoa
+	r7JonW4aX9VLZ2sXqEa9wE85qLKc5vcAPJtxJmonIUdRSknGv19JCW69zJMr320w2S8jLk3Mx0jQE
+	hs68AOzu3yNcqg/84gRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXoGg-0006Bf-GW; Mon, 03 Jun 2019 14:48:58 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hXoIQ-0007jD-Bo; Mon, 03 Jun 2019 14:50:46 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXoGY-0006AS-Do
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:48:52 +0000
-Received: by mail-pl1-x641.google.com with SMTP id go2so7067754plb.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 07:48:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Q+sHhqSxZbf8keZOMlJSAWpHXVIafP73qkF/eQ1kaEg=;
- b=lR82yWXUpVnRwrloRqpoNOP0h28pmhl9RZJEKQG+xRMq6tXSFYRiAwRkNwerYbaYyT
- mCi4aJWaTlcYDT14orBv5IHGGmzerqXKyNMQDvzQh39isZbQ6oJ36LC8BqeT7yuWXG7f
- 8fyALfgl4w1zSntEm7DRrtKCXvWYtPCRFqSaTSkKeosOkigvtxwR+TDZi1YKPZXgzHsh
- RVsXsNR+bFFsTarRQfzzr2fbY4nHoHS8WlZfhuvLyQbEWhiscP0/0NcM1yQBh+W/xEdT
- abcq/hXaFiugkbBaSCcBFR11OfjpYAF4OGmksbpcxHMyqtCA9vbtDRDVQp6zr9w3Y1Fu
- jWMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Q+sHhqSxZbf8keZOMlJSAWpHXVIafP73qkF/eQ1kaEg=;
- b=Gg/KvSd7H0pMMY+EFXaZ69lwPe3xI0hlDFCfijgXUuiw/SgnQy0GlOQGUseBBH5Tl5
- pUNeLJvxF4FkNbfnfmWRgj9cnGzdw+5kaW5Hc3B9qOiRK9gffvZXcI/Gf1KZgAhd36/8
- /Niai1mXD2zTg4Uqom6ju6IG7jFKQ+vxg3h3xQlHQzwJvCVVGKTRkxYlB7WgQHfdJQTG
- 1LqywnHBZvh9olkvFzQCqprIv9dXjzZKi6hqAomh19E6LW2bONEpbShKsOkUmk2/HWLk
- 7jc3Grd+GA54p6ooQebmlYzTsHXuOi9Q3hZIP+pJigEdPJxp4ZSWQEr5x70212bdZVdi
- gxIw==
-X-Gm-Message-State: APjAAAXoBrToQfSxVbuvOtEjXtJbnoYfUWpqK58+BmVUz6ZkShtvO8FH
- xYmT/FQnqaUfLNy8y4gT2/Pa
-X-Google-Smtp-Source: APXvYqzDCE7HSjzkN8v18+gy/2oC+6Z+r7kTihM1KnbA2Ry1zX6rsvrfzvO37yYwBVRz4RQQxawIEA==
-X-Received: by 2002:a17:902:a982:: with SMTP id
- bh2mr29907129plb.224.1559573329403; 
- Mon, 03 Jun 2019 07:48:49 -0700 (PDT)
-Received: from mani ([103.59.133.81])
- by smtp.gmail.com with ESMTPSA id z125sm18266392pfb.75.2019.06.03.07.48.43
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 03 Jun 2019 07:48:48 -0700 (PDT)
-Date: Mon, 3 Jun 2019 20:18:38 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: fix isp iommu clocks and power
- domain
-Message-ID: <20190603144838.GA27534@mani>
-References: <20190603142214.24686-1-helen.koike@collabora.com>
+ id 1hXoIJ-0007iQ-7X
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:50:41 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0328830917AB;
+ Mon,  3 Jun 2019 14:50:32 +0000 (UTC)
+Received: from ovpn-112-59.rdu2.redhat.com (ovpn-112-59.rdu2.redhat.com
+ [10.10.112.59])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id CCFC72E053;
+ Mon,  3 Jun 2019 14:50:25 +0000 (UTC)
+Message-ID: <99b9a24b229975689fb4686915190200606e8afc.camel@redhat.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Dan Williams <dcbw@redhat.com>
+To: Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>, Bjorn
+ Andersson <bjorn.andersson@linaro.org>
+Date: Mon, 03 Jun 2019 09:50:24 -0500
+In-Reply-To: <d76a710d45dd7df3a28afb12fc62cf14@codeaurora.org>
+References: <20190531035348.7194-1-elder@linaro.org>
+ <e75cd1c111233fdc05f47017046a6b0f0c97673a.camel@redhat.com>
+ <065c95a8-7b17-495d-f225-36c46faccdd7@linaro.org>
+ <CAK8P3a05CevRBV3ym+pnKmxv+A0_T+AtURW2L4doPAFzu3QcJw@mail.gmail.com>
+ <a28c5e13-59bc-144d-4153-9d104cfa9188@linaro.org>
+ <20190531233306.GB25597@minitux>
+ <d76a710d45dd7df3a28afb12fc62cf14@codeaurora.org>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190603142214.24686-1-helen.koike@collabora.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.41]); Mon, 03 Jun 2019 14:50:38 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_074850_471340_27DBC504 
-X-CRM114-Status: GOOD (  18.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190603_075039_305895_026BC242 
+X-CRM114-Status: GOOD (  36.23  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,94 +75,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Heiko Stuebner <heiko@sntech.de>, Tony Xie <tony.xie@rock-chips.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Randy Li <ayaka@soulik.info>,
- linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- laurent.pinchart@ideasonboard.com, Marc Zyngier <marc.zyngier@arm.com>,
- kernel@collabora.com, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ Networking <netdev@vger.kernel.org>, linux-arm-msm@vger.kernel.org,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ abhishek.esse@gmail.com, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 11:22:15AM -0300, Helen Koike wrote:
-> isp iommu requires wrapper variants of the clocks.
-> noc variants are always on and using the wrapper variants will activate
-> {A,H}CLK_ISP{0,1} due to the hierarchy.
+On Fri, 2019-05-31 at 17:59 -0600, Subash Abhinov Kasiviswanathan
+wrote:
+> On 2019-05-31 17:33, Bjorn Andersson wrote:
+> > On Fri 31 May 13:47 PDT 2019, Alex Elder wrote:
+> > 
+> > > On 5/31/19 2:19 PM, Arnd Bergmann wrote:
+> > > > On Fri, May 31, 2019 at 6:36 PM Alex Elder <elder@linaro.org>
+> > > > wrote:
+> > > > > On 5/31/19 9:58 AM, Dan Williams wrote:
+> > > > > > On Thu, 2019-05-30 at 22:53 -0500, Alex Elder wrote:
+> > > > > > 
+> > > > > > My question from the Nov 2018 IPA rmnet driver still
+> > > > > > stands; how does
+> > > > > > this relate to net/ethernet/qualcomm/rmnet/ if at all? And
+> > > > > > if this is
+> > > > > > really just a netdev talking to the IPA itself and
+> > > > > > unrelated to
+> > > > > > net/ethernet/qualcomm/rmnet, let's call it "ipa%d" and stop
+> > > > > > cargo-
+> > > > > > culting rmnet around just because it happens to be a net
+> > > > > > driver for a
+> > > > > > QC SoC.
+> > > > > 
+> > > > > First, the relationship between the IPA driver and the rmnet
+> > > > > driver
+> > > > > is that the IPA driver is assumed to sit between the rmnet
+> > > > > driver
+> > > > > and the hardware.
+> > > > 
+> > > > Does this mean that IPA can only be used to back rmnet, and
+> > > > rmnet
+> > > > can only be used on top of IPA, or can or both of them be
+> > > > combined
+> > > > with another driver to talk to instead?
+> > > 
+> > > No it does not mean that.
+> > > 
+> > > As I understand it, one reason for the rmnet layer was to
+> > > abstract
+> > > the back end, which would allow using a modem, or using something
+> > > else (a LAN?), without exposing certain details of the hardware.
+> > > (Perhaps to support multiplexing, etc. without duplicating that
+> > > logic in two "back-end" drivers?)
+> > > 
+> > > To be perfectly honest, at first I thought having IPA use rmnet
+> > > was a cargo cult thing like Dan suggested, because I didn't see
+> > > the benefit.  I now see why one would use that pass-through layer
+> > > to handle the QMAP features.
+> > > 
+> > > But back to your question.  The other thing is that I see no
+> > > reason the IPA couldn't present a "normal" (non QMAP) interface
+> > > for a modem.  It's something I'd really like to be able to do,
+> > > but I can't do it without having the modem firmware change its
+> > > configuration for these endpoints.  My access to the people who
+> > > implement the modem firmware has been very limited (something
+> > > I hope to improve), and unless and until I can get corresponding
+> > > changes on the modem side to implement connections that don't
+> > > use QMAP, I can't implement such a thing.
+> > > 
+> > 
+> > But any such changes would either be years into the future or for
+> > specific devices and as such not applicable to any/most of devices
+> > on
+> > the market now or in the coming years.
+> > 
+> > 
+> > But as Arnd points out, if the software split between IPA and rmnet
+> > is
+> > suboptimal your are encouraged to fix that.
+> > 
+> > Regards,
+> > Bjorn
 > 
-> Also add the respective power domain.
-> 
-> Refer:
->  RK3399 TRM v1.4 Fig. 2-4 RK3399 Clock Architecture Diagram
->  RK3399 TRM v1.4 Fig. 8-1 RK3399 Power Domain Partition
-> 
-> Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> The split rmnet design was chosen because we could place rmnet
+> over any transport - IPA, PCIe (https://lkml.org/lkml/2018/4/26/1159)
+> or USB.
 
-Tested on Rock960 with ISP patches.
+Yeah, that's what I was looking for clarification on :) Clearly since
+rmnet can have many transports it should be able to be used by
+different HW drivers, be that qmi_wwan, IPA, and maybe even
+rmnet_smd.c?
 
-Tested-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> rmnet registers a rx handler, so the rmnet packet processing itself
+> happens in the same softirq when packets are queued to network stack
+> by IPA.
+
+This directly relates to the discussion about a WWAN subsystem that
+Johannes Berg started a couple weeks ago. IPA appears to create a
+netdev of its own. Is that netdev usable immediately, or does one need
+to create an rmnet device on top to access the default PDN?
 
 Thanks,
-Mani
+Dan
 
-> 
-> ---
-> Hello,
-> 
-> I tested this using the isp patch set (which is not upstream
-> yet). Without this patch, streaming from the isp stalls.
-> 
-> I'm also enabling the power domain and removing the disable status,
-> please let me know if this should be done in a separated patch.
-> 
-> Thanks
-> Helen
-> 
->  arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> index 196ac9b78076..89594a7276f4 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-> @@ -1706,11 +1706,11 @@
->  		reg = <0x0 0xff914000 0x0 0x100>, <0x0 0xff915000 0x0 0x100>;
->  		interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
->  		interrupt-names = "isp0_mmu";
-> -		clocks = <&cru ACLK_ISP0_NOC>, <&cru HCLK_ISP0_NOC>;
-> +		clocks = <&cru ACLK_ISP0_WRAPPER>, <&cru HCLK_ISP0_WRAPPER>;
->  		clock-names = "aclk", "iface";
->  		#iommu-cells = <0>;
-> +		power-domains = <&power RK3399_PD_ISP0>;
->  		rockchip,disable-mmu-reset;
-> -		status = "disabled";
->  	};
->  
->  	isp1_mmu: iommu@ff924000 {
-> @@ -1718,11 +1718,11 @@
->  		reg = <0x0 0xff924000 0x0 0x100>, <0x0 0xff925000 0x0 0x100>;
->  		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH 0>;
->  		interrupt-names = "isp1_mmu";
-> -		clocks = <&cru ACLK_ISP1_NOC>, <&cru HCLK_ISP1_NOC>;
-> +		clocks = <&cru ACLK_ISP1_WRAPPER>, <&cru HCLK_ISP1_WRAPPER>;
->  		clock-names = "aclk", "iface";
->  		#iommu-cells = <0>;
-> +		power-domains = <&power RK3399_PD_ISP1>;
->  		rockchip,disable-mmu-reset;
-> -		status = "disabled";
->  	};
->  
->  	hdmi_sound: hdmi-sound {
-> -- 
-> 2.20.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
