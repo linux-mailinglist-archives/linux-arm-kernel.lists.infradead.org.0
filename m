@@ -2,58 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30B82335DB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:59:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7962335FB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:05:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WKkJmbN4CUplmsgBbrHKk3Mq8/3eZ2tIX6D1dfO5zSQ=; b=VEhvdStmC+Cj08
-	ydv+BLt29P3EOZb5pG/Lxb7A46VWBixUKyiTrZwEsCj7Z6gH7b+4e+8qdBOhglvAKij/2fK3Pb7Qc
-	wSqLxdwQo+z/+syiuyPZ9ZPVEj7RjDYFXGWFkBtEW75LcoAt5H1iLe+5tyY8TLWuR+98nf6ikNRcf
-	BZVvIDmM2wQuYE/7tfQCSrSEKPybWbypJjuZpqx8+zVixFoREk0dGeHBFEyvoGLeydMCpwV5lGycM
-	9j/R7komQhTsPHD7URuMd8ZptFKU/bS+Rh4YMqOICl32iOIMUp+OM27IPr8mRvQ7ZaSzLfYNdW8Vb
-	xMfrH/k927Y4UWLLOGzg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mQRJlKcGaEDIRKucOd3Bf+SbdAgUWlQUzjeOPp3PL8s=; b=CHIXMX/8YbFwiF
+	IptpRHEZQ70WLacDLTWTl9zJ3hOQIld8Y/F8nwGqEDcJ5ktzYE1dyb+Iv+DoHEj2xuDiNzhlbeIDG
+	ev6HeU/rC2M1lxEBVtUhRz0gxrcUZxqx2LHdmr+wvSSSipJ8maEA5qcG/ivSlJCCM9bXl1RpwTxOP
+	q0aKWA0eE1g1E6J204521mOSKwpd7PWJ41tvU9QdiTotHI/N13CzUb5uyNpFj6kKoj7Ztxn0f5IJe
+	pn3d5Uv+PSdfDvn+j/g9t5fa8wew2v1q99lgnceEIF0FMhPYUD6ID1dIuoOY1noYsLSyI7eY7W6fN
+	5hQxKvnToCslz8nGKk1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqJ2-0004oT-Cg; Mon, 03 Jun 2019 16:59:32 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqGa-0001kh-5p
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 16:57:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC65A80D;
- Mon,  3 Jun 2019 09:56:59 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2D30F3F5AF;
- Mon,  3 Jun 2019 09:56:57 -0700 (PDT)
-Date: Mon, 3 Jun 2019 17:56:51 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH V2 1/2] DT: mailbox: add binding doc for the ARM SMC
- mailbox
-Message-ID: <20190603165651.GA12196@e107155-lin>
-References: <20190603083005.4304-1-peng.fan@nxp.com>
- <20190603083005.4304-2-peng.fan@nxp.com>
- <ae4c79f0-4aec-250e-e312-20aba5554665@gmail.com>
+	id 1hXqOf-0008Lz-CL; Mon, 03 Jun 2019 17:05:21 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXqOY-0008Kn-Jq
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:05:16 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x53H3xSn100496;
+ Mon, 3 Jun 2019 17:04:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2018-07-02;
+ bh=OfBlugxBOMTUJDS5Fta0E067EXIuFHrIc+KiOftycQo=;
+ b=jX8igtAtwdGWEcSQ15NbliZz+NGIxv22eo7wYyRnuuYQ7I4J/bIEqkjIMzg4nRkoaTHN
+ Izj1eZ3FVe1MPbsF1dYsa+JsLP+4qEQVawH6/fkC1cv94PTeQa/skgeNAkL7L8E1wd20
+ 4RGoi2Jt3aFi4/U0wmvd4vrnsadD0wKIeZChrG/bw4MRrCFb484s4PEYw6yASdqlW7XP
+ gY1T8XQl48DrdBh2Zl0WHDVvzFQRmVP7va2HFIKL3rd5QdAY2VUdmHvX1AdMNXXvrYIN
+ hq/n16LS6BO3VJFXQsI955s6dUO0v4GGeGgILk3iJmQi8y78QUC3NMgSdO1Vb3Lpd7Pa rg== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2120.oracle.com with ESMTP id 2suj0q87ph-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 03 Jun 2019 17:04:43 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x53H25KX001162;
+ Mon, 3 Jun 2019 17:02:42 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3030.oracle.com with ESMTP id 2supp77nea-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 03 Jun 2019 17:02:42 +0000
+Received: from abhmp0022.oracle.com (abhmp0022.oracle.com [141.146.116.28])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x53H2beP015785;
+ Mon, 3 Jun 2019 17:02:37 GMT
+Received: from [192.168.1.16] (/24.9.64.241)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 03 Jun 2019 10:02:37 -0700
+Subject: Re: [PATCH v16 01/16] uaccess: add untagged_addr definition for other
+ arches
+To: Andrey Konovalov <andreyknvl@google.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org,
+ linux-media@vger.kernel.org, kvm@vger.kernel.org,
+ linux-kselftest@vger.kernel.org
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <097bc300a5c6554ca6fd1886421bb2e0adb03420.1559580831.git.andreyknvl@google.com>
+From: Khalid Aziz <khalid.aziz@oracle.com>
+Organization: Oracle Corp
+Message-ID: <8ff5b0ff-849a-1e0b-18da-ccb5be85dd2b@oracle.com>
+Date: Mon, 3 Jun 2019 11:02:33 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ae4c79f0-4aec-250e-e312-20aba5554665@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <097bc300a5c6554ca6fd1886421bb2e0adb03420.1559580831.git.andreyknvl@google.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9277
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906030117
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9277
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906030118
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_095701_017144_A0AAEA28 
-X-CRM114-Status: GOOD (  23.06  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190603_100514_747580_049DA00D 
+X-CRM114-Status: GOOD (  23.27  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,75 +118,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, peng.fan@nxp.com,
- Sudeep Holla <sudeep.holla@arm.com>, festevam@gmail.com,
- jassisinghbrar@gmail.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, andre.przywara@arm.com,
- van.freenix@gmail.com, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kostya Serebryany <kcc@google.com>, Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 09:22:16AM -0700, Florian Fainelli wrote:
-> On 6/3/19 1:30 AM, peng.fan@nxp.com wrote:
-> > From: Peng Fan <peng.fan@nxp.com>
-> >
-> > The ARM SMC mailbox binding describes a firmware interface to trigger
-> > actions in software layers running in the EL2 or EL3 exception levels.
-> > The term "ARM" here relates to the SMC instruction as part of the ARM
-> > instruction set, not as a standard endorsed by ARM Ltd.
-> >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >
-> > V2:
-> > Introduce interrupts as a property.
-> >
-> > V1:
-> > arm,func-ids is still kept as an optional property, because there is no
-> > defined SMC funciton id passed from SCMI. So in my test, I still use
-> > arm,func-ids for ARM SIP service.
-> >
-> >  .../devicetree/bindings/mailbox/arm-smc.txt        | 101 +++++++++++++++++++++
-> >  1 file changed, 101 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.txt
-> >
-> > diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.txt b/Documentation/devicetree/bindings/mailbox/arm-smc.txt
-> > new file mode 100644
-> > index 000000000000..401887118c09
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.txt
-> > @@ -0,0 +1,101 @@
+On 6/3/19 10:55 AM, Andrey Konovalov wrote:
+> To allow arm64 syscalls to accept tagged pointers from userspace, we must
+> untag them when they are passed to the kernel. Since untagging is done in
+> generic parts of the kernel, the untagged_addr macro needs to be defined
+> for all architectures.
+> 
+> Define it as a noop for architectures other than arm64.
+> 
+> Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+> Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
+> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> ---
+>  include/linux/mm.h | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/include/linux/mm.h b/include/linux/mm.h
+> index 0e8834ac32b7..949d43e9c0b6 100644
+> --- a/include/linux/mm.h
+> +++ b/include/linux/mm.h
+> @@ -99,6 +99,10 @@ extern int mmap_rnd_compat_bits __read_mostly;
+>  #include <asm/pgtable.h>
+>  #include <asm/processor.h>
+>  
+> +#ifndef untagged_addr
+> +#define untagged_addr(addr) (addr)
+> +#endif
+> +
+>  #ifndef __pa_symbol
+>  #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
+>  #endif
+> 
 
-[...]
+Andrey,
 
-> > +Optional properties:
-> > +- arm,func-ids		An array of 32-bit values specifying the function
-> > +			IDs used by each mailbox channel. Those function IDs
-> > +			follow the ARM SMC calling convention standard [1].
-> > +			There is one identifier per channel and the number
-> > +			of supported channels is determined by the length
-> > +			of this array.
-> > +- interrupts		SPI interrupts may be listed for notification,
-> > +			each channel should use a dedicated interrupt
-> > +			line.
->
-> I would not go about defining a specific kind of interrupt, since SPI is
-> a GIC terminology, this firmware interface could be used in premise with
-> any parent interrupt controller, for which the concept of a SPI/PPI/SGI
-> may not be relevant.
->
-
-While I agree the binding document may not contain specifics, I still
-don't see how to use SGI with this. Also note it's generally reserved
-for OS future use(IPC) and using this for other than IPC may be bit
-challenging IMO. It opens up lots of questions.
+This patch has now become part of the other patch series Chris Hellwig
+has sent out -
+<https://lore.kernel.org/lkml/20190601074959.14036-1-hch@lst.de/>. Can
+you coordinate with that patch series?
 
 --
-Regards,
-Sudeep
+Khalid
+
 
 _______________________________________________
 linux-arm-kernel mailing list
