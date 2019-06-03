@@ -2,88 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F40C32ED7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 13:41:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7217132EE6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 13:45:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oDfzbvMnqJx7HUMtpcsjekQNxNvgKgBmXRDgqP31OkU=; b=l1Gomhtcyf34iH
-	v0snHdlwmA0GzStTvie+qFAmbcZF4TtQ9GYHG6NRiFcUGnZbPzjOLFRIfycZHoqIGdOiFLkk2Kz6m
-	e2IgFWsI7+O7Yy/udXdq5YpEDEExks4aZ9oeQ5DtgoaLXDd+jJpn349ZVE9UHD1bhGZh1TBYuIWRC
-	fuX6Ckjdk3xy2Granyc4saQODmclAgYlVkVHph2s+cffBNgdX0gQVMQMlQXWBju7dRSZuYHv5ymeq
-	Qs7ZX541YWUAozh1va2sqxyX2khDRJnwhcZnwTnVikKizhUmk7jhD5gbFVnPfgqdVw6uAF1ZkI3b8
-	EODzvW9WX93es7giiXEw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZQ/tcUG1nRZUZVquarGhSBu7fU1OnDYrLFgemqHlo2c=; b=j+i8kRD1jhSwMA
+	gxONOajlMiLCh/jt1UFMbNuSlIygizqLvdSq+UZfNmjFK8BFnR1PL2tm1qraeeQ9b7dE33M0mKdMi
+	ecMlsu3845iYmwSG2gLKpC5fwua9Ygapfu0zUgjJlt6nSZA5GdaUBiSadsdaS8NGrGWJUtGMF1Fug
+	yHaPrQSvziXE4gJVJgjHvsSuMUG4jjS/G2WOWkGuHb9snpEWz0kqenpm7pxzFxvtBfBBSQCsL5PTC
+	NoMs02vihBj2t/jn8sL0riT7B5jlUy/W+0N1XibI+GHxaR0CmLMuhdgs+31NDjealjLWqS38tOIUL
+	Selm88VCrdJDcOWGMKDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXlKi-0005L9-RZ; Mon, 03 Jun 2019 11:40:56 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1hXlPR-0007KN-0p; Mon, 03 Jun 2019 11:45:49 +0000
+Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXlKb-0005KJ-IA; Mon, 03 Jun 2019 11:40:50 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost2.synopsys.com
- [10.13.135.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 30711C1E73;
- Mon,  3 Jun 2019 11:40:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1559562028; bh=JNgLsT7LPunYfej4pP5aCroqrdhvEaNr8asK8r1HI7Y=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=QnpyQMXRrAFzeVwuPSVQX9syBt+Hb02uRHs7Fs7uKpQolYd8MaUOTYFEKb3Tvkqt9
- ryS1+FR7+e8qYxHQFmZexwW9ROZau/gsFbKRW8YZxLn2JNuZh0RFRNvE3Kww/Cahjm
- /VUoCFFnV/yofaYRK2uhyZ+RJ7lRutTQ9dWPb1YmY7UW8cmdF60WTBv9hcvoxI4Aa1
- tw6oUYRs/E7Xfe8+LHapSeLdJuzhzEiI2BZQ0K/HHKSB/fX0xsfVFNPqGQUdZIPVMS
- dbyLdu/ckJRdYQAGzW7p+A4V8h3eT/bTrRTjx0LBuOmQ6nw2vvbDvdGQ7gKWFrOtEn
- NrO2YR068NpfA==
-Received: from us01wehtc1.internal.synopsys.com
- (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 87BABA0067;
- Mon,  3 Jun 2019 11:40:40 +0000 (UTC)
-Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
- us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 3 Jun 2019 04:40:40 -0700
-Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
- by DE02WEHTCA.internal.synopsys.com ([::1]) with mapi id
- 14.03.0415.000; Mon, 3 Jun 2019 13:40:37 +0200
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: Biao Huang <biao.huang@mediatek.com>, "davem@davemloft.net"
- <davem@davemloft.net>, "andrew@lunn.ch" <andrew@lunn.ch>
-Subject: RE: [v2, PATCH 3/4] net: stmmac: modify default value of tx-frames
-Thread-Topic: [v2, PATCH 3/4] net: stmmac: modify default value of tx-frames
-Thread-Index: AQHVGa/XGYfQ4t70BkaeZd4pZlVHSKaJzoyA
-Date: Mon, 3 Jun 2019 11:40:37 +0000
-Message-ID: <78EB27739596EE489E55E81C33FEC33A0B93B6DF@DE02WEMBXB.internal.synopsys.com>
-References: <1559527086-7227-1-git-send-email-biao.huang@mediatek.com>
- <1559527086-7227-4-git-send-email-biao.huang@mediatek.com>
-In-Reply-To: <1559527086-7227-4-git-send-email-biao.huang@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.107.19.176]
+ id 1hXlPJ-0007JD-Ii
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 11:45:43 +0000
+Received: from [192.168.2.10] ([46.9.252.75])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id XlP5hL7kAsDWyXlP8hsryq; Mon, 03 Jun 2019 13:45:31 +0200
+Subject: Re: [PATCH] media: stm32-dcmi: fix irq = 0 case
+To: Fabien Dessenne <fabien.dessenne@st.com>,
+ Hugues Fruchet <hugues.fruchet@st.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Pavel Machek <pavel@denx.de>,
+ linux-media@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <1559294295-20573-1-git-send-email-fabien.dessenne@st.com>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Message-ID: <46944972-1f88-ef3b-fef9-8e37753c0ffe@xs4all.nl>
+Date: Mon, 3 Jun 2019 13:45:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <1559294295-20573-1-git-send-email-fabien.dessenne@st.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfCN0MWjkjUyGzp6RpvMIZ2ZANeW2kYEP03Lpq3iqxfDwME2NkMqcJ+4u8wJA/QHfTb1eUz+uisc7OqX0O7kndwdR0ZVW6uYMPcB/P15b1VaJn538Lf+x
+ NpoGEuGPiPtkBx9DsS6X0tLYlnRiI7z09uP0CoCsy8Xjtn42bpslVuei6PSli3eMoap5saASbpiDX6XpET+OFtD9B3RPXBwVdY8s8ZorQPRjKWBS+iFs5tU5
+ JcyHlEgjEwFC3lQWFrLx7IKttSJSdQhzLTcFNI4C/GGkE2trkxzNun+9+Ruulo+8qY9ak+/SmKIQ+kgTg7xKgQBhwcWRnLRBWT55TpNhtogX6wNgZDrHA6R+
+ DP8O8sDZLy5bkdDBxfik+WTTyrM7PXg/048e9w11h0IqIIlGhif1381FUXcLSGcLziyMd6bFNfwfgVfEUgK16hHn9FgCB4acy5ykhFHypGJ47adWQgK/dE6G
+ 9TJhkrGyPEBntvMjPZ9BgUNRVSNLdIIqLJzmuyPjIYgbtaRxjKOprgUXnCZ2Mg+Lh4zk3jdL6wiFvQH6IqSYwOZc/HHUQ3Mu+pq0ncGcj1p4oBZbHedZLcz6
+ 1ZXK7+Aa9y7T7q16w8DCGy61
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_044049_609017_AD0B96B8 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190603_044541_818546_C79E6EDC 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,50 +72,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "jianguo.zhang@mediatek.com" <jianguo.zhang@mediatek.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "boon.leong.ong@intel.com" <boon.leong.ong@intel.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "yt.shen@mediatek.com" <yt.shen@mediatek.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Biao Huang <biao.huang@mediatek.com>
-
-> the default value of tx-frames is 25, it's too late when
-> passing tstamp to stack, then the ptp4l will fail:
+On 5/31/19 11:18 AM, Fabien Dessenne wrote:
+> Manage the irq = 0 case, where we shall return an error.
 > 
-> ptp4l -i eth0 -f gPTP.cfg -m
-> ptp4l: selected /dev/ptp0 as PTP clock
-> ptp4l: port 1: INITIALIZING to LISTENING on INITIALIZE
-> ptp4l: port 0: INITIALIZING to LISTENING on INITIALIZE
-> ptp4l: port 1: link up
-> ptp4l: timed out while polling for tx timestamp
-> ptp4l: increasing tx_timestamp_timeout may correct this issue,
->        but it is likely caused by a driver bug
-> ptp4l: port 1: send peer delay response failed
-> ptp4l: port 1: LISTENING to FAULTY on FAULT_DETECTED (FT_UNSPECIFIED)
+> Fixes: b5b5a27bee58 ("media: stm32-dcmi: return appropriate error codes during probe")
+> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+> ---
+>  drivers/media/platform/stm32/stm32-dcmi.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> ptp4l tests pass when changing the tx-frames from 25 to 1 with
-> ethtool -C option.
-> It should be fine to set tx-frames default value to 1, so ptp4l will pass
-> by default.
+> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+> index b9dad0a..d855e9c 100644
+> --- a/drivers/media/platform/stm32/stm32-dcmi.c
+> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
+> @@ -1702,7 +1702,7 @@ static int dcmi_probe(struct platform_device *pdev)
+>  	if (irq <= 0) {
 
-I'm not sure if this is the right approach ... What's the timeout value 
-you have for TX Timestamp ?
+Shouldn't this be 'irq < 0' instead of '<=' ?
 
-Thanks,
-Jose Miguel Abreu
+AFAICT irq == 0 can be a valid irq and isn't an error.
+
+Regards,
+
+	Hans
+
+>  		if (irq != -EPROBE_DEFER)
+>  			dev_err(&pdev->dev, "Could not get irq\n");
+> -		return irq;
+> +		return irq ? irq : -ENXIO;
+>  	}
+>  
+>  	dcmi->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
