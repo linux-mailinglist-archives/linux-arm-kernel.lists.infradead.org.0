@@ -2,61 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 918EF32695
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 04:24:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78BA232698
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 04:27:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rT8HBwcxy7qnTpdcuwOapR6m3jLtGx8cKsMbES5MPQY=; b=kLLVaiI+HSnp5v
-	au183J9xhmJE5c8i1hgd6/a3gx+6/NJ7I9OQyL+KD4lBl6faevM3gtUQhTZ/O+2VUFfx+KYpUAJKN
-	dldRLg+AsF2nTlNYdgiGUlnhTHTv8XVhf2siTQw/o+YaqlmWFjODekd5lK8/btWOLlW3IyrtiJG9h
-	e8jCWpmJQsTVjsaPWTQX7meL4l40XK5GRZEEaOpuCApjgvki98c5306jHjx0vI2/t1XRLPZ+HcgD0
-	vzC6BXyz3OZgxbHxDySayJRz/79VjvXyL5VlechudGEMw96BDMSfTrA+FOvnkWM6RDT4vNssBjXu7
-	F7/+tzei55wqzbK3GM6g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mMZ/4LNfsNSILRnaS6aypsNh6P4FRsT4VI78oOYKb9A=; b=KdeswG65A5yLmC
+	A8YTmC6x916KPCKmK+wF7stXWs1RlLNgm058dI7kuMq+ckyGFImKn6wXjgVwQ2aU92TbXJl2TrNI6
+	DlQsI7pyLQ+pGFq8NFa+LA5Y/eGuUvYj6+5Eona8zgqrwEV8+5aruFEQpzKPlk9+aG4Sb4aXL2wnL
+	fPnXdRC35fPSjiJEUUY2UMZvRKxxro8n3j/r5OaH6K+ohsObS3/XC+9Dw9/M0LrIoSkZ4zQeoZSGn
+	uSWpw8C2zWbT2MFio8YO9Qhlakj0kgAgQc/J/nCXzKFVkAPS4rxho0Oz3YAZZ7dpFEmDrXKxocRPl
+	2kLyhI5k7kAt9ZAC80gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXceG-0006RT-LK; Mon, 03 Jun 2019 02:24:32 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1hXch0-00088L-Ti; Mon, 03 Jun 2019 02:27:22 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXce8-0006QA-4E; Mon, 03 Jun 2019 02:24:26 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 108B9137E52AEBD42766;
- Mon,  3 Jun 2019 10:24:19 +0800 (CST)
-Received: from [127.0.0.1] (10.177.131.64) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Mon, 3 Jun 2019
- 10:24:08 +0800
-Subject: Re: [PATCH 0/4] support reserving crashkernel above 4G on arm64 kdump
-To: Bhupesh Sharma <bhsharma@redhat.com>, <catalin.marinas@arm.com>,
- <will.deacon@arm.com>, <akpm@linux-foundation.org>,
- <ard.biesheuvel@linaro.org>, <rppt@linux.ibm.com>, <tglx@linutronix.de>,
- <mingo@redhat.com>, <bp@alien8.de>, <ebiederm@xmission.com>
-References: <20190507035058.63992-1-chenzhou10@huawei.com>
- <a9d017d0-82d3-3e5f-4af2-4c611393106d@redhat.com>
- <bf4050c5-cfb7-fd69-4892-1e0b65861d34@huawei.com>
-From: Chen Zhou <chenzhou10@huawei.com>
-Message-ID: <1567962e-f60b-60c2-1f73-10e07377be1e@huawei.com>
-Date: Mon, 3 Jun 2019 10:24:06 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1hXcgt-00087q-Cr; Mon, 03 Jun 2019 02:27:16 +0000
+X-UUID: f47d695679ca4c45b29dbe8e26737be2-20190602
+X-UUID: f47d695679ca4c45b29dbe8e26737be2-20190602
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 943676317; Sun, 02 Jun 2019 18:27:10 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 2 Jun 2019 19:27:08 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 3 Jun 2019 10:27:07 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 3 Jun 2019 10:27:07 +0800
+Message-ID: <1559528827.6663.8.camel@mtkswgap22>
+Subject: Re: [PATCH v2 2/3] dt-bindings: rng: update bindings for MediaTek
+ ARMv8 SoCs
+From: Neal Liu <neal.liu@mediatek.com>
+To: Sean Wang <sean.wang@kernel.org>
+Date: Mon, 3 Jun 2019 10:27:07 +0800
+In-Reply-To: <CAGp9LzrQegBb9Oe-=jfkwOrsYY=eN3BSF=DWnu+aSBAhQ5bexA@mail.gmail.com>
+References: <1558946326-13630-1-git-send-email-neal.liu@mediatek.com>
+ <1558946326-13630-3-git-send-email-neal.liu@mediatek.com>
+ <CAGp9LzrQegBb9Oe-=jfkwOrsYY=eN3BSF=DWnu+aSBAhQ5bexA@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <bf4050c5-cfb7-fd69-4892-1e0b65861d34@huawei.com>
-X-Originating-IP: [10.177.131.64]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_192424_395474_1F75A83C 
-X-CRM114-Status: GOOD (  16.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190602_192715_443873_071B8828 
+X-CRM114-Status: GOOD (  17.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,141 +73,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wangkefeng.wang@huawei.com, takahiro.akashi@linaro.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- horms@verge.net.au, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Herbert Xu <herbert@gondor.apana.org.au>, wsd_upstream@mediatek.com,
+ lkml <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>, linux-crypto@vger.kernel.org,
+ Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Crystal Guo <Crystal.Guo@mediatek.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
-
-Sorry to ping you.
-What's your suggestion about this patch series? I am looking forward to your replay.
-
-Thanks,
-Chen Zhou
+Hi Sean,
 
 
-On 2019/5/16 11:19, Chen Zhou wrote:
-> Hi Bhupesh,
+On Thu, 2019-05-30 at 15:56 -0700, Sean Wang wrote:
+> Hi, Neal
 > 
-> On 2019/5/15 13:06, Bhupesh Sharma wrote:
->> +Cc kexec-list.
->>
->> Hi Chen,
->>
->> I think we are still in the quiet period of the merge cycle, but this is a change which will be useful for systems like HPE Apollo where we are looking at reserving crashkernel across a larger range.
->>
->> Some comments inline and in respective patch threads..
->>
->> On 05/07/2019 09:20 AM, Chen Zhou wrote:
->>> This patch series enable reserving crashkernel on high memory in arm64.
->>
->> Please fix the patch subject, it should be v5.
->> Also please Cc the kexec-list (kexec@lists.infradead.org) for future versions to allow wider review of the patchset.
->>
->>> We use crashkernel=X to reserve crashkernel below 4G, which will fail
->>> when there is no enough memory. Currently, crashkernel=Y@X can be used
->>> to reserve crashkernel above 4G, in this case, if swiotlb or DMA buffers
->>> are requierd, capture kernel will boot failure because of no low memory.
->>
->> ... ^^ required
->>
->> s/capture kernel will boot failure because of no low memory./capture kernel boot will fail because there is no low memory available for allocation.
->>
->>> When crashkernel is reserved above 4G in memory, kernel should reserve
->>> some amount of low memory for swiotlb and some DMA buffers. So there may
->>> be two crash kernel regions, one is below 4G, the other is above 4G. Then
->>> Crash dump kernel reads more than one crash kernel regions via a dtb
->>> property under node /chosen,
->>> linux,usable-memory-range = <BASE1 SIZE1 [BASE2 SIZE2]>.
->>
->> Please use consistent naming for the second kernel, better to use crash dump kernel.
->>
->> I have tested this on my HPE Apollo machine and with crashkernel=886M,high syntax, I can get the board to reserve a larger memory range for the crashkernel (i.e. 886M):
->>
->> # dmesg | grep -i crash
->> [    0.000000] kexec_core: Reserving 256MB of low memory at 3560MB for crashkernel (System low RAM: 2029MB)
->> [    0.000000] crashkernel reserved: 0x0000000bc5a00000 - 0x0000000bfd000000 (886 MB)
->>
->> kexec/kdump can also work also work fine on the board.
->>
->> So, with the changes suggested in this cover letter and individual patches, please feel free to add:
->>
->> Reviewed-and-Tested-by: Bhupesh Sharma <bhsharma@redhat.com>
->>
->> Thanks,
->> Bhupesh
->>
+> On Mon, May 27, 2019 at 1:39 AM Neal Liu <neal.liu@mediatek.com> wrote:
+> >
+> > Document the binding used by the MediaTek ARMv8 SoCs random
+> > number generator with TrustZone enabled.
+> >
+> > Signed-off-by: Neal Liu <neal.liu@mediatek.com>
+> > ---
+> >  Documentation/devicetree/bindings/rng/mtk-rng.txt |   13 ++++++++++---
+> >  1 file changed, 10 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/rng/mtk-rng.txt b/Documentation/devicetree/bindings/rng/mtk-rng.txt
+> > index 2bc89f1..1fb9b1d 100644
+> > --- a/Documentation/devicetree/bindings/rng/mtk-rng.txt
+> > +++ b/Documentation/devicetree/bindings/rng/mtk-rng.txt
+> > @@ -3,9 +3,12 @@ found in MediaTek SoC family
+> >
+> >  Required properties:
+> >  - compatible       : Should be
+> > -                       "mediatek,mt7622-rng",  "mediatek,mt7623-rng" : for MT7622
+> > -                       "mediatek,mt7629-rng",  "mediatek,mt7623-rng" : for MT7629
+> > -                       "mediatek,mt7623-rng" : for MT7623
+> > +                       "mediatek,mt7622-rng", "mediatek,mt7623-rng" for MT7622
+> > +                       "mediatek,mt7629-rng", "mediatek,mt7623-rng" for MT7629
+> > +                       "mediatek,mt7623-rng" for MT7623
 > 
-> Thanks for you review and test. I will fix these later.
+> No make any change for those lines not belong to the series
+
+There are some unused spaces and symbols. We try to align coding style
+with other bindings.
+
 > 
-> Thanks,
-> Chen Zhou
+> > +                       "mediatek,mtk-sec-rng" for MediaTek ARMv8 SoCs
 > 
->>> Besides, we need to modify kexec-tools:
->>>    arm64: support more than one crash kernel regions(see [1])
->>>
->>> I post this patch series about one month ago. The previous changes and
->>> discussions can be retrived from:
->>>
->>> Changes since [v4]
->>> - reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
->>>
->>> Changes since [v3]
->>> - Add memblock_cap_memory_ranges back for multiple ranges.
->>> - Fix some compiling warnings.
->>>
->>> Changes since [v2]
->>> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
->>>    two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
->>>    patch.
->>>
->>> Changes since [v1]:
->>> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
->>> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
->>>    in fdt_enforce_memory_region().
->>>    There are at most two crash kernel regions, for two crash kernel regions
->>>    case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
->>>    and then remove the memory range in the middle.
->>>
->>> [1]: http://lists.infradead.org/pipermail/kexec/2019-April/022792.html
->>> [v1]: https://lkml.org/lkml/2019/4/2/1174
->>> [v2]: https://lkml.org/lkml/2019/4/9/86
->>> [v3]: https://lkml.org/lkml/2019/4/9/306
->>> [v4]: https://lkml.org/lkml/2019/4/15/273
->>>
->>> Chen Zhou (3):
->>>    x86: kdump: move reserve_crashkernel_low() into kexec_core.c
->>>    arm64: kdump: support reserving crashkernel above 4G
->>>    kdump: update Documentation about crashkernel on arm64
->>>
->>> Mike Rapoport (1):
->>>    memblock: extend memblock_cap_memory_range to multiple ranges
->>>
->>>   Documentation/admin-guide/kernel-parameters.txt |  6 +--
->>>   arch/arm64/include/asm/kexec.h                  |  3 ++
->>>   arch/arm64/kernel/setup.c                       |  3 ++
->>>   arch/arm64/mm/init.c                            | 72 +++++++++++++++++++------
->>>   arch/x86/include/asm/kexec.h                    |  3 ++
->>>   arch/x86/kernel/setup.c                         | 66 +++--------------------
->>>   include/linux/kexec.h                           |  5 ++
->>>   include/linux/memblock.h                        |  2 +-
->>>   kernel/kexec_core.c                             | 56 +++++++++++++++++++
->>>   mm/memblock.c                                   | 44 +++++++--------
->>>   10 files changed, 157 insertions(+), 103 deletions(-)
->>>
->>
->>
->> .
->>
+> I thought "mediatek,mtk-sec-rng" is only for those MediaTek ARMv8 SoCs
+> with security RNG
+
+Yes, sure. It's better to describe with "MediaTek ARMv8 SoCs with
+security RNG". 
+
 > 
+> > +
+> > +Optional properties:
+> >  - clocks           : list of clock specifiers, corresponding to
+> >                       entries in clock-names property;
+> >  - clock-names      : Should contain "rng" entries;
+> > @@ -19,3 +22,7 @@ rng: rng@1020f000 {
+> >         clocks = <&infracfg CLK_INFRA_TRNG>;
+> >         clock-names = "rng";
+> >  };
 > 
-> .
+> For those MediaTek ARMv8 SoCs with security RNG
+
+Are you suggesting we create a new binding file with security RNG?
+
 > 
+> > +
+> > +hwrng: hwrng {
+> > +       compatible = "mediatek,mtk-sec-rng";
+> > +};
+> > --
+> > 1.7.9.5
+> >
+
 
 
 _______________________________________________
