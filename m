@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEED4331CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:12:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82279331D5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:15:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KVNhwWDnSqShnX4TpJXC8BbxdGkVlw32UoMNomRhRYA=; b=lv/GZmv4vi2KR1
-	0Kix5KP4v7S/DRXZchPT/VMcmlbY4q7V8IXGwGHj7EnEQrICOe/qaz8FRIUKKx76fHmx7qsu6KMEu
-	OrLDDIzNYl/lpV40hSCnu3EQq61XX/3BcgTnFmHAM+X21AFdfdo3Q6YPiBvs+9IzY0PVxMKxKz6Q7
-	e0s8jxrcxWtRhAVAcIllt87cz03reVst5svCTNtQRDb8KxfBAWCAqSn11KgU6Sj/hiKU66QpAU9Mt
-	iHpRMrJUMTf7q71R5wsTrC9iIlAZRCJhKL77iTdRWTN7d5+E2duNpS3sK8Qu9z7W8QQ8X0kJnCb/S
-	nbaybt4WbamvonGbeyZw==;
+	List-Owner; bh=xHZ6ywFh4p1PB3b9SHEcvLV5QhMWSP3glHrAcNrRzQk=; b=iDSyEpyd/DQNcX
+	RXbJfmlHLeML3nRqjI1YztbkrJ6QrIH+edJeOoYrTP9qmvEqSOrRMJB+7czGBTVwDE0l4MW6Z15pc
+	efTTZABgFhPppJLBKN+WAcLyR1SttEagEJktEeoxyKZhM0FOnUxflmi2Aqzym8fvRFhKCDiiXqOWg
+	p2OtH3HOvmh+6btyCGU8qOCKkYS3tcMQS0N4W+4DB2cMe0Y2NcbKKWw5vsfIapjsAsRt0WxJP3jjr
+	CLJBaYzvlL6Mp/X6nuy4LC6rEjnk1ETJ+/QJD/jzghCY5GR2ygKlXlaVek2LyUPscAReIb1gPODkd
+	gsEuobsuzr5BFjx/YvDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXnhC-0006rJ-6M; Mon, 03 Jun 2019 14:12:18 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1hXnkg-00007M-DW; Mon, 03 Jun 2019 14:15:54 +0000
+Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXnh3-0006qQ-9W
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:12:11 +0000
-X-Originating-IP: 92.137.69.152
-Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
- [92.137.69.152]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 0F1D1E0004;
- Mon,  3 Jun 2019 14:11:52 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Stephen Rothwell <sfr@canb.auug.org.au>,
- Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
- ARM <linux-arm-kernel@lists.infradead.org>
-Subject: Re: linux-next: unable to fetch the mvebu tree
-In-Reply-To: <20190603082346.7bd1d7a4@canb.auug.org.au>
-References: <20190603082346.7bd1d7a4@canb.auug.org.au>
-Date: Mon, 03 Jun 2019 16:11:51 +0200
-Message-ID: <87y32ikbbs.fsf@FE-laptop>
+ id 1hXnkZ-00006P-JU
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:15:49 +0000
+Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
+ by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
+ id 1hXnkK-0003TA-Vh; Mon, 03 Jun 2019 22:15:33 +0800
+Received: from herbert by gondobar with local (Exim 4.89)
+ (envelope-from <herbert@gondor.apana.org.au>)
+ id 1hXnkC-0002q7-KC; Mon, 03 Jun 2019 22:15:24 +0800
+Date: Mon, 3 Jun 2019 22:15:24 +0800
+From: Herbert Xu <herbert@gondor.apana.org.au>
+To: Harald Freudenberger <freude@linux.ibm.com>
+Subject: Re: [RFC PATCH 1/2] crypto: Allow working with key references
+Message-ID: <20190603141524.wmjmgre4qge7zqjh@gondor.apana.org.au>
+References: <20190529224844.25203-1-richard@nod.at>
+ <20190530023357.2mrjtslnka4i6dbl@gondor.apana.org.au>
+ <2084969721.73871.1559201016164.JavaMail.zimbra@nod.at>
+ <14ffcdf2-ed9f-be07-fde5-62dfb1fce4f9@linux.ibm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <14ffcdf2-ed9f-be07-fde5-62dfb1fce4f9@linux.ibm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_071210_491810_96DBCAA7 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20190603_071547_778634_2227CE1B 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,42 +64,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Next Mailing List <linux-next@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: david <david@sigma-star.at>, Richard Weinberger <richard@nod.at>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>, linux-imx@nxp.com,
+ kernel <kernel@pengutronix.de>, shawnguo@kernel.org, festevam@gmail.com,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephen,
-
-> Hi all,
+On Mon, Jun 03, 2019 at 09:59:53AM +0200, Harald Freudenberger wrote:
 >
-> Tyring to fetch the mvebu tree
-> (git://git.infradead.org/linux-mvebu.git#for-next) for the past several
-> days produces this error message:
->
-> fatal: Couldn't find remote ref refs/heads/for-next
+> The "p" in paes is because we call it "protected key aes". I think you are not limited
+> to the "p". What Herbert tries to point out is that you may define your own
+> cipher with an unique name and there you can handle your secure key references
+> as you like. You may use the s390 paes implementation as a starting point.
 
-Sorry for this, the main reason was that I didn't create a for-next
-branch for this new cycle.
+Well we have one other driver that is also using the paes name
+ccree so I think we should all use this name for hardware keys
+with AES.  Only the driver name needs to be unique.
 
-I was waiting for 5.2-rc1 and then didn't take time to merge our current
-branches in the for-next branch.
-
-But now it should be available.
-
-Gregory
-
->
-> -- 
-> Cheers,
-> Stephen Rothwell
-
+Cheers,
 -- 
-Gregory Clement, Bootlin
-Embedded Linux and Kernel engineering
-http://bootlin.com
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 _______________________________________________
 linux-arm-kernel mailing list
