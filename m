@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7391B32A8A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:13:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 600A832A8C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:13:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,48 +11,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JA01Cql97Zgk6MSNoaJ+YXM/eHwvxwrTo47XLiz/zVk=; b=CLRxVGodvLtlbHBFiUkRkZzQ8P
-	u+aDzsLVPPSAmxMm8acj5dRnyrc1UzqHek7Xd00xtbltcBpwBNT/8PJsAyljJY8WI+Tua+2fZHQnR
-	5Zi9AnaSD/YnljnY3qbod51kFV+i4EGb0j3DZBZcALc1LsSYE19c5Caa1DXEtfqghrtBi4GR8Ti6r
-	yr1EcLEVw5rXjOpp2ha221QQotOSN0ahMlNkOkd/RkLvhry9ZO43yZvNr9gz/gkshfRYpVFdgvS7u
-	rLyq5zI2Ey3KjCwAioSyorZvWl76kbsM14wDPBTzuZ9O/ri4EAa3EZarpswoUVU3Izh0KjE5m+WeY
-	CToGdMaw==;
+	bh=3wF39fT6ilCESmNasngDrY+dK1pAQ4wT64Bhm6RdPEE=; b=Hh10TWbve+GDIIU6g6uo6pASx3
+	9f9CanRlUN57bwcFBOqUw1HuW/akURFg9v/Oun8hfkA3cjq0usxme9FVCWY8ea15bGbve2zxif2pW
+	VRaQew/117ClWscoq2y4/dOfAYwB4JUsS/aazqmFEaBpAsK/5eCSUgkB8pRV7MBTkDZ6q5+li11/f
+	YtNnNbxHL3KUByfXeZXVroK1UOp7XhJzVgWUAOhEQbVRIPc9YRDHzr7oARWlCIH5S2Pgp0ofGTU7h
+	SSbp8b4EXxqjLTRvsF90RUUVRV064H0ynbCn/kiIaO5jHjna5eCPWRooTiw8zMZ/RRCNN+AyOrFOx
+	0YWTdo2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXi66-0006TH-9b; Mon, 03 Jun 2019 08:13:38 +0000
+	id 1hXi6G-0006i5-Jr; Mon, 03 Jun 2019 08:13:48 +0000
 Received: from conuserg-08.nifty.com ([210.131.2.75])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXi5p-0006Mb-Gl
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:13:23 +0000
+ id 1hXi5p-0006Md-G3
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:13:24 +0000
 Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
  [153.142.97.92]) (authenticated)
- by conuserg-08.nifty.com with ESMTP id x538Cdoq002048;
- Mon, 3 Jun 2019 17:12:40 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-08.nifty.com x538Cdoq002048
+ by conuserg-08.nifty.com with ESMTP id x538Cdor002048;
+ Mon, 3 Jun 2019 17:12:42 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-08.nifty.com x538Cdor002048
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1559549561;
- bh=Yy6xaRVBbLuyh41FBcaoTVAl8eAfN9twm28AUEdXycQ=;
+ s=dec2015msa; t=1559549562;
+ bh=p//No+hpKX3bBuChWljMBq7O7wxZpa31Ei+M+7TG65Q=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=MaKfWbk+u3wpVWJQJUa2yLnFBc1y42PpgtLUsd2euIuj4urVlPr7CF3pDUiVLQCfm
- cbghzAtofe1v71Lq3ofmfw0qnkxkiXQKGk5mGwn7i4uEAgWVVFhYLdhFjGeRHcL1ur
- lLrv45psTRB+gbNt6QpZmN25e2h++gW5cnhzbhTFNJvxKosyVvru1UC9SUsynILwR+
- 9oEkSV/CyB2TQCjp7vJ8bnzEXO7sZIfTkbNGM9UHd3ACIO5UIyt8aZkvbKRmN++WD2
- Er2T6UQhUw8yCG3IpINybHJn5qvZ2sdf8WY1y4a7g/Jy2q/rESAvpyp4PG62512ngZ
- DUL73jw+4r9gA==
+ b=KqwWUkpSXMd92pSxF2HHBDB61ZSrRw+BjVwv+W5EF2BsU5V0Zx4yxckLK5wu6dE+n
+ dRVMiWIZY96EGO5/vH0gbYT35oCsyXoUCY9Kpr42u8RlPCVh/3KJCKI2VhMnYaUxB1
+ XZpxXl4kBtiC217nMC6Vl1Y7NxryhBrUASviXra3ycmubs32Bn9W232B6RWK+SIjgy
+ 7BzS3L/A4YZ9l2RU8rTu+NyCa6VVzQLfhojLBzhq3a5GQO4v8XAB6lfFWWkydl03do
+ KSwEHwKwWDslw4Sx5OWy6HoRM40uKD+GrSika+cA1gZh3S07MZoQve2U9/ASMZmTGX
+ fxSJlpmD2FtxA==
 X-Nifty-SrcIP: [153.142.97.92]
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
 To: arm@kernel.org, Olof Johansson <olof@lixom.net>,
  Arnd Bergmann <arnd@arndb.de>
-Subject: [RESEND PATCH 1/2] memory: move jedec_ddr_data.c from lib/ to
+Subject: [RESEND PATCH 2/2] memory: move jedec_ddr.h from include/memory to
  drivers/memory/
-Date: Mon,  3 Jun 2019 17:12:32 +0900
-Message-Id: <20190603081233.17394-2-yamada.masahiro@socionext.com>
+Date: Mon,  3 Jun 2019 17:12:33 +0900
+Message-Id: <20190603081233.17394-3-yamada.masahiro@socionext.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190603081233.17394-1-yamada.masahiro@socionext.com>
 References: <20190603081233.17394-1-yamada.masahiro@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_011321_868511_BB5388F5 
-X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-CacheID: sfid-20190603_011321_876142_11059703 
+X-CRM114-Status: UNSURE (   9.16  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,100 +78,105 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Santosh Shilimkar <ssantosh@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-jedec_ddr_data.c exports 3 symbols, and all of them are only
-referenced from drivers/memory/{emif.c,of_memory.c}
+Now that jedec_ddr_data.c was moved from lib/ to drivers/memory/,
+<memory/jedec_ddr.h> is included only from drivers/memory/.
 
-drivers/memory/ is a better location than lib/.
+Make it a local header of drivers/memory/.
 
-I removed the Kconfig prompt "JEDEC DDR data" because it is only
-select'ed by TI_EMIF, and there is no other user. There is no good
-reason in making it a user-configurable CONFIG option.
+The directory include/memory is now gone.
+
+While I am here, I also changed #include <linux/module.h> to
+<linux/export.h>. Because CONFIG_DDR is bool, jedec_ddr_data.c is
+never compiled as a module.
 
 Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 ---
 
- drivers/memory/Kconfig                   | 8 ++++++++
- drivers/memory/Makefile                  | 1 +
- {lib => drivers/memory}/jedec_ddr_data.c | 0
- lib/Kconfig                              | 8 --------
- lib/Makefile                             | 2 --
- 5 files changed, 9 insertions(+), 10 deletions(-)
- rename {lib => drivers/memory}/jedec_ddr_data.c (100%)
+ drivers/memory/emif.c                   | 3 ++-
+ {include => drivers}/memory/jedec_ddr.h | 6 +++---
+ drivers/memory/jedec_ddr_data.c         | 5 +++--
+ drivers/memory/of_memory.c              | 3 ++-
+ 4 files changed, 10 insertions(+), 7 deletions(-)
+ rename {include => drivers}/memory/jedec_ddr.h (97%)
 
-diff --git a/drivers/memory/Kconfig b/drivers/memory/Kconfig
-index 392ad4f5c570..477f0f130e5b 100644
---- a/drivers/memory/Kconfig
-+++ b/drivers/memory/Kconfig
-@@ -8,6 +8,14 @@ menuconfig MEMORY
- 
- if MEMORY
- 
-+config DDR
-+	bool
-+	help
-+	  Data from JEDEC specs for DDR SDRAM memories,
-+	  particularly the AC timing parameters and addressing
-+	  information. This data is useful for drivers handling
-+	  DDR SDRAM controllers.
+diff --git a/drivers/memory/emif.c b/drivers/memory/emif.c
+index 2f214440008c..32cad7540d78 100644
+--- a/drivers/memory/emif.c
++++ b/drivers/memory/emif.c
+@@ -26,8 +26,9 @@
+ #include <linux/list.h>
+ #include <linux/spinlock.h>
+ #include <linux/pm.h>
+-#include <memory/jedec_ddr.h>
 +
- config ARM_PL172_MPMC
- 	tristate "ARM PL172 MPMC driver"
- 	depends on ARM_AMBA && OF
-diff --git a/drivers/memory/Makefile b/drivers/memory/Makefile
-index 91ae4eb0e913..9d5c409a1591 100644
---- a/drivers/memory/Makefile
-+++ b/drivers/memory/Makefile
-@@ -3,6 +3,7 @@
- # Makefile for memory devices
- #
+ #include "emif.h"
++#include "jedec_ddr.h"
+ #include "of_memory.h"
  
-+obj-$(CONFIG_DDR)		+= jedec_ddr_data.o
- ifeq ($(CONFIG_DDR),y)
- obj-$(CONFIG_OF)		+= of_memory.o
- endif
-diff --git a/lib/jedec_ddr_data.c b/drivers/memory/jedec_ddr_data.c
-similarity index 100%
-rename from lib/jedec_ddr_data.c
-rename to drivers/memory/jedec_ddr_data.c
-diff --git a/lib/Kconfig b/lib/Kconfig
-index 90623a0e1942..e09b3e081a53 100644
---- a/lib/Kconfig
-+++ b/lib/Kconfig
-@@ -531,14 +531,6 @@ config LRU_CACHE
- config CLZ_TAB
- 	bool
+ /**
+diff --git a/include/memory/jedec_ddr.h b/drivers/memory/jedec_ddr.h
+similarity index 97%
+rename from include/memory/jedec_ddr.h
+rename to drivers/memory/jedec_ddr.h
+index ddad0f870e5d..a2094a9a588e 100644
+--- a/include/memory/jedec_ddr.h
++++ b/drivers/memory/jedec_ddr.h
+@@ -9,8 +9,8 @@
+  * it under the terms of the GNU General Public License version 2 as
+  * published by the Free Software Foundation.
+  */
+-#ifndef __LINUX_JEDEC_DDR_H
+-#define __LINUX_JEDEC_DDR_H
++#ifndef __JEDEC_DDR_H
++#define __JEDEC_DDR_H
  
--config DDR
--	bool "JEDEC DDR data"
--	help
--	  Data from JEDEC specs for DDR SDRAM memories,
--	  particularly the AC timing parameters and addressing
--	  information. This data is useful for drivers handling
--	  DDR SDRAM controllers.
--
- config IRQ_POLL
- 	bool "IRQ polling library"
- 	help
-diff --git a/lib/Makefile b/lib/Makefile
-index fb7697031a79..cb66bc9c5b2f 100644
---- a/lib/Makefile
-+++ b/lib/Makefile
-@@ -206,8 +206,6 @@ obj-$(CONFIG_SIGNATURE) += digsig.o
+ #include <linux/types.h>
  
- lib-$(CONFIG_CLZ_TAB) += clz_tab.o
+@@ -172,4 +172,4 @@ extern const struct lpddr2_timings
+ 	lpddr2_jedec_timings[NUM_DDR_TIMING_TABLE_ENTRIES];
+ extern const struct lpddr2_min_tck lpddr2_jedec_min_tck;
  
--obj-$(CONFIG_DDR) += jedec_ddr_data.o
--
- obj-$(CONFIG_GENERIC_STRNCPY_FROM_USER) += strncpy_from_user.o
- obj-$(CONFIG_GENERIC_STRNLEN_USER) += strnlen_user.o
+-#endif /* __LINUX_JEDEC_DDR_H */
++#endif /* __JEDEC_DDR_H */
+diff --git a/drivers/memory/jedec_ddr_data.c b/drivers/memory/jedec_ddr_data.c
+index 6d2cbf1d567f..1f9ca0f23407 100644
+--- a/drivers/memory/jedec_ddr_data.c
++++ b/drivers/memory/jedec_ddr_data.c
+@@ -10,8 +10,9 @@
+  * published by the Free Software Foundation.
+  */
  
+-#include <memory/jedec_ddr.h>
+-#include <linux/module.h>
++#include <linux/export.h>
++
++#include "jedec_ddr.h"
+ 
+ /* LPDDR2 addressing details from JESD209-2 section 2.4 */
+ const struct lpddr2_addressing
+diff --git a/drivers/memory/of_memory.c b/drivers/memory/of_memory.c
+index 12a61f558644..46539b27a3fb 100644
+--- a/drivers/memory/of_memory.c
++++ b/drivers/memory/of_memory.c
+@@ -10,8 +10,9 @@
+ #include <linux/list.h>
+ #include <linux/of.h>
+ #include <linux/gfp.h>
+-#include <memory/jedec_ddr.h>
+ #include <linux/export.h>
++
++#include "jedec_ddr.h"
+ #include "of_memory.h"
+ 
+ /**
 -- 
 2.17.1
 
