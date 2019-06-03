@@ -2,75 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4A543395B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 21:55:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0454633960
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 21:56:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VkfR0ZQX3thxNrzm7PJW464wsIAfrUDz+qHaWNbzsdw=; b=hnvsHI6hGIzQor
-	SmwMOUE075N6TwtQ86wkoHEBzGaCpXeXW6QHOYPcQpHIcpJnyw2uz6Ug0iRCA/IOCJ/92ZYFLQdLo
-	Ahs0D1DVFL6IGcy/tRrlc7JrgYfoejBbXsaZErSrg0L8TALp42RmvuTZJwLKvA3dTaT0yte9IjlKJ
-	7VfrURrYjrnEG8okkKZoemdKX3rwkDJ8dl0IC5a4h4O/A9Epma1sXuORSszguc284YI13NaVrjdnd
-	iR9fco/VEcvneuOLew9+d0mePHs0RjUOSOzuikD/KlBj3XVWj0KqodVp+S/iEeVNB8MqpPbX5kW0U
-	sm+ZJAF/Gthdovdkx8ow==;
+	List-Owner; bh=ujb+HzWtC0nvmzqFJk2moPC8qSiKlJEkaTcPsf6vsxw=; b=ahPu9ozlAqVTd9
+	UOHtvqXcbTsRXM+/MTU4KlFStbsKfI/mZk3kzHU6JoqqPLgW2xFkjdcsnnGdfsCrfSqd5hVimFq7d
+	+ChyNrotkQrKjKfiHDN0K/+/bBGVF8xymQq1RmobH3cLnMnqZ9LzuKbNR4Z52QqxeGfNyBLAkcWot
+	/5qaUGdiOPryF9Lwmn06KTy5c1sMGcUPpi8EdemgAkCi64VbIqkojJGOVC94c7whk40wJohrWcS2p
+	YI2KT5QwYQdzqaThIu8kdrun39rNVOnwaQVU742zGrm0LPZ9HUmy/EYnatjOWUHm73GaeUIW0+Vek
+	w4gBrAA8O5FJsSOUjFUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXt3H-0004kL-1o; Mon, 03 Jun 2019 19:55:27 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hXt3q-00054e-M4; Mon, 03 Jun 2019 19:56:02 +0000
+Received: from mail-db5eur01on061a.outbound.protection.outlook.com
+ ([2a01:111:f400:fe02::61a]
+ helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXt39-0004jD-KE
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 19:55:21 +0000
-Received: by mail-qt1-x844.google.com with SMTP id z24so3816921qtj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 12:55:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1KV1EL2zWlz4BNwMzZsPPlusL/bx0yMiXCoqZlXd458=;
- b=f/VSrUxboXoGFGdWMMd2FDeP8+ypIq64epfnLR1+dKU5NMMKQvoEkLcb1gXkzsU7wz
- Jn/pM2dph432cJm0hpfUrbOa2Iqat6S2Hn2aMVwbuIRid7V89u8IdB8eypsxoOh4PeC4
- rCN8Cqwz/u6w2Yn0EgkhmvpUsMx+j0EiV1hm8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1KV1EL2zWlz4BNwMzZsPPlusL/bx0yMiXCoqZlXd458=;
- b=IsveC8y4DOkacvYkb9KJnD5WDaMZp1J7i0SDWNtYf5vQszP62eQcjHgwi9I3P0teYI
- v/gZawiXQMP5QWSOYzEhQt/OdoY2JFcjEKJJ4CBY3kYaWcTiTgb8Oar/M9QZiPHZ8xRY
- SqmPpzPq8SQjyZFiTSRkmxt3VQoHZ2P8PXuKqIqf/U8j6gjI6CxniOIGSCixYcHQrIS2
- RvVBFJZxiqz1IXH1wNsx5pYwj89oUlnrR6LrX7OhpeTRijdhnS57pfVjHUBf8bDskSIW
- sVBBBAk0fjaqKnIxdAd08qbcPPQQshm/heZE96xnxK29wPeqd5N/+8crH0rb/ywH9w3b
- 1+GA==
-X-Gm-Message-State: APjAAAX8o3APkpF88Nt2QSMOi8fePg9g8y9FmvfSCc8DKEteVQbEiRnY
- gDtCvJu8Zk70As0RcCMyVs2poGFO0Yjj9Y9sX9wqpw==
-X-Google-Smtp-Source: APXvYqw9CyjBN9zLt670R7s4Nqh+tF2Uw/nqdK92LwjcIbHrzECu2UzbVydDyKivYV7rqUCst1Zpy0CU03QqWZF+nkw=
-X-Received: by 2002:ac8:2906:: with SMTP id y6mr4604304qty.138.1559591717763; 
- Mon, 03 Jun 2019 12:55:17 -0700 (PDT)
+ id 1hXt3k-000546-DF
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 19:55:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Yw9U0BA/Rbnuost0XrXLpPpt3YzVCVxPdRWpRM9ggvc=;
+ b=fN90t4Kti5ZuuGzE/ORrPJ9AOByQdJKZeQX/rMkn0WHWSVa9HOyuGXMqwv715CWlS2FFL0xtH+vKNhVGK9GNfrEPEe96+qk+vQ2c6V5KIYIehqVX7uypr0FCUSytv8w+Yud9HeAHiLDydiChq8sGlVMNj1t/+cukzJo60UxqD9A=
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.235.152) by
+ VE1PR04MB6670.eurprd04.prod.outlook.com (20.179.235.142) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1943.17; Mon, 3 Jun 2019 19:55:51 +0000
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::9e6:e136:4c09:fe67]) by VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::9e6:e136:4c09:fe67%5]) with mapi id 15.20.1943.018; Mon, 3 Jun 2019
+ 19:55:51 +0000
+From: Leo Li <leoyang.li@nxp.com>
+To: Rasmus Villemoes <Rasmus.Villemoes@prevas.se>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, Qiang Zhao
+ <qiang.zhao@nxp.com>
+Subject: RE: [PATCH v3 0/6] soc/fsl/qe: cleanups and new DT binding
+Thread-Topic: [PATCH v3 0/6] soc/fsl/qe: cleanups and new DT binding
+Thread-Index: AQHVCX0ZigTT3b8e40uvrg8HEyl+g6aKeRUAgAAAdGA=
+Date: Mon, 3 Jun 2019 19:55:51 +0000
+Message-ID: <VE1PR04MB6687FF805430978ED307EA2D8F140@VE1PR04MB6687.eurprd04.prod.outlook.com>
+References: <20190501092841.9026-1-rasmus.villemoes@prevas.dk>
+ <20190513111442.25724-1-rasmus.villemoes@prevas.dk>
+ <e11c1e55-1e11-7ce3-3c0f-0b723ab260aa@prevas.se>
+In-Reply-To: <e11c1e55-1e11-7ce3-3c0f-0b723ab260aa@prevas.se>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leoyang.li@nxp.com; 
+x-originating-ip: [64.157.242.222]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 579c5b46-ed17-4d70-dd88-08d6e85d7b38
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VE1PR04MB6670; 
+x-ms-traffictypediagnostic: VE1PR04MB6670:
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-microsoft-antispam-prvs: <VE1PR04MB667010E870DE62DA6AC70C118F140@VE1PR04MB6670.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0057EE387C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(366004)(39860400002)(346002)(396003)(136003)(13464003)(199004)(189003)(7736002)(305945005)(76176011)(2501003)(99286004)(7696005)(6506007)(486006)(74316002)(33656002)(478600001)(52536014)(6116002)(476003)(68736007)(2906002)(102836004)(3846002)(256004)(26005)(5660300002)(186003)(7416002)(11346002)(86362001)(53546011)(14454004)(25786009)(6436002)(6246003)(4326008)(8676002)(66946007)(446003)(73956011)(71200400001)(71190400001)(66476007)(66446008)(9686003)(64756008)(66066001)(66556008)(229853002)(54906003)(110136005)(53936002)(55016002)(316002)(8936002)(81166006)(81156014)(6636002)(76116006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6670;
+ H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: pICCQVEdCAjHBf+x3/AVVw6qC65ksmgT482DiEDw0msXak+Ss4Sp0KSWtBoeO9yfJefrjtvHpvoBORrakmvIleL+65fO5kMlGMfYaGShSOYsgnOc6GDgIwHzwOPqJHtG7+YZTWzzaNFQSUJTBy+FX+o1XZypMAWMjZZXHaCQWjExo3bzeFYrJgvhKNiyGTdzcKh0QtaRphfwRjR3q4MF5ZU/5/1OPDtNlhEPAzdzrAa5ywmgm6QYQd01hTTs/5fihLLBe1cDk4bOKvpqzRHc/+cuNAMhoWomQfwPgxU5ngqPFyPz3hPhOucqzW2b6QvGYp5MnmyfeuNH+s8KcrzUOuqmgXp4ZOckFWMP8WeCthlE/Fg29wf0vWr8env7mqxYUS78+C8IcZW16YpQ7EkepA6ETtuGdOaLdpbC2FN1758=
 MIME-Version: 1.0
-References: <20190522184547.31791-1-f.fainelli@gmail.com>
- <3734641.73qX0VsHyn@kreacher>
- <013ec7c0-0984-cfc9-ea3a-0180719f5ac4@gmail.com>
-In-Reply-To: <013ec7c0-0984-cfc9-ea3a-0180719f5ac4@gmail.com>
-From: Markus Mayer <mmayer@broadcom.com>
-Date: Mon, 3 Jun 2019 12:55:06 -0700
-Message-ID: <CAGt4E5tZ1YLbtCDJDXTTZrH5S4Jmw_BVOfz+i-KF=TUjA=yvkQ@mail.gmail.com>
-Subject: Re: [PATCH 0/2] cpufreq: brcmstb-avs-cpufreq: Couple fixes
-To: Florian Fainelli <f.fainelli@gmail.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 579c5b46-ed17-4d70-dd88-08d6e85d7b38
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jun 2019 19:55:51.5311 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: leoyang.li@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6670
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_125519_669244_3A26C1C9 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20190603_125556_515087_FCE3612B 
+X-CRM114-Status: GOOD (  16.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2a01:111:f400:fe02:0:0:0:61a listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,7 +106,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,49 +117,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:BROADCOM STB AVS CPUFREQ DRIVER" <linux-pm@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- "maintainer:BROADCOM STB AVS CPUFREQ DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Gregory Fong <gregory.0xf0@gmail.com>,
- Markus Mayer <code@mmayer.net>, Brian Norris <computersforpeace@gmail.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Scott Wood <oss@buserror.net>,
+ "jocke@infinera.com" <joakim.tjernlund@infinera.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 May 2019 at 10:02, Florian Fainelli <f.fainelli@gmail.com> wrote:
->
-> On 5/27/19 3:51 AM, Rafael J. Wysocki wrote:
-> > On Wednesday, May 22, 2019 8:45:45 PM CEST Florian Fainelli wrote:
-> >> Hi Rafael, Viresh,
-> >>
-> >> These patch series contains two minor fixes for the brcmstb-avs-cpufreq
-> >> driver.
-> >>
-> >> Florian Fainelli (2):
-> >>   cpufreq: brcmstb-avs-cpufreq: Fix initial command check
-> >>   cpufreq: brcmstb-avs-cpufreq: Fix types for voltage/frequency
 
-To both of these
 
-Acked-by: Markus Mayer <mmayer@broadcom.com>
-
-My apologies for the delay.
-
-> >>  drivers/cpufreq/brcmstb-avs-cpufreq.c | 12 ++++++------
-> >>  1 file changed, 6 insertions(+), 6 deletions(-)
+> -----Original Message-----
+> From: Rasmus Villemoes <Rasmus.Villemoes@prevas.se>
+> Sent: Monday, June 3, 2019 2:54 PM
+> To: devicetree@vger.kernel.org; Qiang Zhao <qiang.zhao@nxp.com>; Leo Li
+> <leoyang.li@nxp.com>
+> Cc: linuxppc-dev@lists.ozlabs.org; linux-arm-kernel@lists.infradead.org;
+> linux-kernel@vger.kernel.org; Rob Herring <robh+dt@kernel.org>; Scott
+> Wood <oss@buserror.net>; Christophe Leroy <christophe.leroy@c-s.fr>;
+> Mark Rutland <mark.rutland@arm.com>; jocke@infinera.com
+> <joakim.tjernlund@infinera.com>
+> Subject: Re: [PATCH v3 0/6] soc/fsl/qe: cleanups and new DT binding
+> 
+> On 13/05/2019 13.14, Rasmus Villemoes wrote:
+> > This small series consists of some small cleanups and simplifications
+> > of the QUICC engine driver, and introduces a new DT binding that makes
+> > it much easier to support other variants of the QUICC engine IP block
+> > that appears in the wild: There's no reason to expect in general that
+> > the number of valid SNUMs uniquely determines the set of such, so it's
+> > better to simply let the device tree specify the values (and,
+> > implicitly via the array length, also the count).
 > >
-> > These look straightforward enough to me, but it would be good to get an ACK from the
-> > driver maintainer for them.
->
-> Adding Markus' other email address.
-> --
-> Florian
+> > Which tree should this go through?
+> 
+> Ping? These patches should be ready to go in, but I don't know who is
+> supposed to pick them up.
 
+I can pick them up through the soc/fsl tree.
+
+Regards,
+Leo
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
