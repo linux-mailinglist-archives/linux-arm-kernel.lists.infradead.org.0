@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3287233728
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:48:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 036B83371B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:47:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K6eHgi9UWD1IUZxE0FD9vodZtjrhH4G02ee6ZhuWtG0=; b=OT996qb2HWmUi6
-	P5NvEuuNRmNo1/BCPJmCtx2PojMHMrBpWPyO2L2+0YmRsAKn6Z/mYSs/j3vkfO16im/v6xDAstn93
-	mDNJKd+4WfOmZIg9633m7gxMlrZgCiljP6OElHHwxbbifCuOmhunvZLjQKb/hTDqrZFz36lT+VX+P
-	rwFZxKdEwXdB1uAgfKL6VKtnGUigRqa9PkyWLVmiZf5ruAbFEgceLg2Yb8lh5N4ShpboMiivRtfVl
-	clu+Z/L6WzdzG1SbIteXYhNivV/3Ai5XxV8wLk1t22R8ovR1TVkf+P90KFCKz5yD1Re4BheHNXziz
-	53oV+w1Iuw3P5/ZHkJFw==;
+	List-Owner; bh=OtbGtUOkba16O1tOyQTORT9E8UQF3u0yyKNIXZW5pD8=; b=UhNxyWMTyK20bs
+	n+iN37DrV9q5zcKmfRsqK/1dZdnAZU9jQE4bPWfxnW3JTq3n3SvdYFHC2PBP+MEHLVtDJJhJYrlmR
+	MBzOl+Fq/RCFrKSTh2bOqS9Aok7gUrM4YEg0qiJpMZcO6gxkjqEQT9SXbvGdyyyDOhpOV3aTYc895
+	CDFJKzu/VYmz3wAW0wr5jTiAd/u9eRaXp8zLp2GaJFNaR4MvWnlleNVs9UhY8SDlGvlzYPVBfFVZL
+	ypaLPWb9SljjD7fzM9iUz71s2TsqnChPnbkSJVNZ5d2cQbOzxxNHxu0pEy1BXIsm05sYw8FpyR0Qb
+	qiBV15CYgwEi0RQ7BAnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXr4W-0002mP-W3; Mon, 03 Jun 2019 17:48:37 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hXr3n-0001p7-GW; Mon, 03 Jun 2019 17:47:51 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXr3f-0001mP-8g
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:47:46 +0000
-Received: by mail-lf1-x142.google.com with SMTP id q26so14291277lfc.3
+ id 1hXr3e-0001mY-QD
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:47:44 +0000
+Received: by mail-lf1-x143.google.com with SMTP id b11so14298042lfa.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 10:47:39 -0700 (PDT)
+ Mon, 03 Jun 2019 10:47:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=GjT900taG1ijSa9lWUX/G6V7gIXt/Ttjrhy2y92+ySQ=;
- b=Ogrh9eTDgQAUONxtoCEsmlhtx9p4ZZt29kbWmmfagH5K1N51dWWiwQXBmLQshGR8J8
- JaNQR+8WKr/MTf8K1xrO0Syb9jjiMj35sivUp6zm1jV3T/QuMpE6Dw6L+RD342txYebk
- NJV8ZHfOTYFNFDubmYUOXAbSAhy5J+kUkggW04A+6mKqqgGSxB3BC5kzw4qweIKUiWXc
- RWh6GQHeO7X8UFlW3a9oj4ZkCyHYFG6u8OIgykswrOARCeyPCclz+zAeg7NjyYx51bDx
- //dpzaNZ8IwgIk00p3O4Qkzp3RAjBuhVSNlUHZlOzqvOgVE12g4mWxUF53/MCmxYTpvE
- sw7A==
+ bh=d+gHoaqCUhQT6e1Ym0xN6NiXtzxs58xfZkboy1ldAY4=;
+ b=h5dZgeoIw79Kv/1VWSq4u0iUmi8FcFdS5XaGrfJHimMztfcNh7dQVIiKTiQVrkFIDN
+ tt/CEWjxMPtIutWCG+Qg+dtaAfT8RTFKodnxjVUm+CTtev6nBWMKe1yR60NbdJEjuLOi
+ C+DB7NPOh7+CSv6DMZJCEVsOwd/i3pQcTjpXDt/Wn5ifvBjUm2lbprVhPFw0q4fsoiLr
+ TcIXPDhB2iLwZP0At3Jw9MdR5dSfxgLEYObLerFRfewHaFrjRn6FKPzO7wIez3xx1ttZ
+ 7iqSRQDjsL6B1qv5AlpMCLWBsJs2IKTdBCpAA7J3Uno8uUTSJ1vnaWTAZheT04VtAZED
+ 0P2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=GjT900taG1ijSa9lWUX/G6V7gIXt/Ttjrhy2y92+ySQ=;
- b=kFDRXWFGDFnfgaFe25NVISBHP0SIY0G4TDO/pAk9zQ7geloKtjocJPBQhzOY+6h+Ky
- OsTnaziJueHSP4N+RZ33UQt65lRR33KRrYE21MsUWzGnM/y98p97itkbipvGo/F/sD9U
- PnnUXlwXZ63CDjhTbcsXMFel861STtbK/g74e/F4kXgAO7djAkbaApeXa4j+yVAsMjAG
- 5JU/svbOWxh7ZdNIbmBN3XyA1fn3MUZK5ycQdAzFSPxvwUADb+AFeFxO+4FM2ltmOZZG
- KhgsySgKgQ+GTAenc/W/xD1i+urOucM1vq2D56Ih7mRcC/quhf0AihzflMLWZVRkf0eQ
- opPQ==
-X-Gm-Message-State: APjAAAW/CzZ4vpXHQOQhAK9rbpyxrbp4YJb9SuZKiDabT0Q/Tpo+ObN0
- sYAxbJxk5xEhXBtR5wDMlto=
-X-Google-Smtp-Source: APXvYqymibEEWq50h1UhkT3XaRXxM5Grj6g5eLWzSPNypWuItCujKf4Kk6Dvxeq4YPayp2H9tk8i+A==
-X-Received: by 2002:ac2:4c3c:: with SMTP id u28mr4407330lfq.136.1559584058502; 
- Mon, 03 Jun 2019 10:47:38 -0700 (PDT)
+ bh=d+gHoaqCUhQT6e1Ym0xN6NiXtzxs58xfZkboy1ldAY4=;
+ b=QaxolqCW0EKQ65KISvye14dOjbbhIUa8utkHg7MtxN7Lkx9qvIY/wg/QNrotrR5s+Z
+ B0JV2EY5RNYbZ4jngBZWevet/J+MxlM9oWl2agcUfglg4UifXq0fsKdHnEQvmIJS4/8K
+ b+HzyGVOtAmdZnK6uSM+M3tHJqpBFdcXo82Jzdh/UcJ2VE26MswbRtancEMoyljKkhPw
+ cNjO4NPwGsQg3S8eeIM8DQwR1NZzXm6bBxeeEKz8G71jlx0fGj8RFR0o5k6Pb/YDIfgF
+ 6Uu62B1A1/ZsDeyOVIfhTPGMfOkoTrmOfAhOjeyF9AngLyWxsUbIa4jNSH5gRs8P+jBm
+ h9sA==
+X-Gm-Message-State: APjAAAWSTltNSNnowAtVN5riw3A72qPmZHFtVe3DTDnC5Gam3vfBC+fM
+ 5o2s7cHgE4d4bFY+5ktWyms=
+X-Google-Smtp-Source: APXvYqwSvyGLQCwtw23kykXSMCtNcYtakfcNcaj9YVYmjqtrKle0F/xUggVT07pnNTUG4U0Miv6MBA==
+X-Received: by 2002:ac2:5938:: with SMTP id v24mr4108075lfi.161.1559584059490; 
+ Mon, 03 Jun 2019 10:47:39 -0700 (PDT)
 Received: from localhost.localdomain ([188.150.253.81])
- by smtp.gmail.com with ESMTPSA id n7sm2803532lfi.68.2019.06.03.10.47.37
+ by smtp.gmail.com with ESMTPSA id n7sm2803532lfi.68.2019.06.03.10.47.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
  Mon, 03 Jun 2019 10:47:38 -0700 (PDT)
 From: codekipper@gmail.com
 To: maxime.ripard@free-electrons.com, wens@csie.org,
  linux-sunxi@googlegroups.com
-Subject: [PATCH v4 1/9] ASoC: sun4i-i2s: Fix sun8i tx channel offset mask
-Date: Mon,  3 Jun 2019 19:47:27 +0200
-Message-Id: <20190603174735.21002-2-codekipper@gmail.com>
+Subject: [PATCH v4 2/9] ASoC: sun4i-i2s: Add offset to RX channel select
+Date: Mon,  3 Jun 2019 19:47:28 +0200
+Message-Id: <20190603174735.21002-3-codekipper@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190603174735.21002-1-codekipper@gmail.com>
 References: <20190603174735.21002-1-codekipper@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_104743_436455_709AAF5E 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20190603_104742_853518_6F1A04B2 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,27 +109,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marcus Cooper <codekipper@gmail.com>
 
-Although not causing any noticeable issues, the mask for the
-channel offset is covering too many bits.
+Whilst testing the capture functionality of the i2s on the newer
+SoCs it was noticed that the recording was somewhat distorted.
+This was due to the offset not being set correctly on the receiver
+side.
 
 Signed-off-by: Marcus Cooper <codekipper@gmail.com>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ sound/soc/sunxi/sun4i-i2s.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index c53bfed8d4c2..90bd3963d8ae 100644
+index 90bd3963d8ae..fd7c37596f21 100644
 --- a/sound/soc/sunxi/sun4i-i2s.c
 +++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -106,7 +106,7 @@
+@@ -456,6 +456,10 @@ static int sun4i_i2s_set_fmt(struct snd_soc_dai *dai, unsigned int fmt)
+ 		regmap_update_bits(i2s->regmap, SUN8I_I2S_TX_CHAN_SEL_REG,
+ 				   SUN8I_I2S_TX_CHAN_OFFSET_MASK,
+ 				   SUN8I_I2S_TX_CHAN_OFFSET(offset));
++
++		regmap_update_bits(i2s->regmap, SUN8I_I2S_RX_CHAN_SEL_REG,
++				   SUN8I_I2S_TX_CHAN_OFFSET_MASK,
++				   SUN8I_I2S_TX_CHAN_OFFSET(offset));
+ 	}
  
- #define SUN8I_I2S_TX_CHAN_MAP_REG	0x44
- #define SUN8I_I2S_TX_CHAN_SEL_REG	0x34
--#define SUN8I_I2S_TX_CHAN_OFFSET_MASK		GENMASK(13, 11)
-+#define SUN8I_I2S_TX_CHAN_OFFSET_MASK		GENMASK(13, 12)
- #define SUN8I_I2S_TX_CHAN_OFFSET(offset)	(offset << 12)
- #define SUN8I_I2S_TX_CHAN_EN_MASK		GENMASK(11, 4)
- #define SUN8I_I2S_TX_CHAN_EN(num_chan)		(((1 << num_chan) - 1) << 4)
+ 	regmap_field_write(i2s->field_fmt_mode, val);
 -- 
 2.21.0
 
