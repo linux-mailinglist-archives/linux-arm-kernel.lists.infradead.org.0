@@ -2,88 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7F4A33B7F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 00:40:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4358433B8D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 00:44:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4z161OUllh2F4nRq0av9MsahrdCSCSoG1QiVr5L8Dd8=; b=S2Lnrw826hXDMh
-	IP2E8hVEMcyDsjfSPYG6sVAVBZlCjXJQstlFNfNM4wM7SoxL50WXr/I60bB8/9ji5D+JixI/ZfH91
-	YrnPE6QWszeaX7qyYXcIk7bbaUzCJMelhHOpUd3ZitzXiIfjUthNuqQuD5AWb2OOfqpkTCaRlzYGg
-	6N0/e+9jum371FrzE+GrSHGpQ8ca2/og0TuMNpZDDzaXqagZlpwYOBe1zqoStQoaXW74VkDF2m06p
-	w8YptbgsG/RYgMOz6yLsmhe6JwV7ZcALbb6p+n0g3EaEmk5lRSv2sHYFpHHEZHKn/tV+3xVe7KkLw
-	Y0xkf2Zk7wvhqzxgEjjw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Bftt3I7djClfZCYN6rAfFwo33vklXhXjLoTwzQ2Hrnc=; b=mLRFfV0Kmgn+Tb
+	Grh6Cy5/IGLxLPQuDRjukmTt18cv2kYAuzi4k1Hztfu3ie7XAIiQwaAV4T6By4813j/4MqFIo9UL/
+	+yator0KVRGqtcnoeRsu7/a2MHbmsxS7/9s1PWyS8Y5oLwXvyDYDHNn9OitS6MsA4pwqLXun5Ydew
+	hQOuawsKAr6PIhayvB9Yf4ykk3WwM3vpP3pNkcKu71Cs0uoAlb5H0MWuj8XfIMDFRupW+UMtoX2Xl
+	TayYaEmdGcLEH8BAqhhrV4sm0jIK/o7/C0AnGafrg1q+Morsis5faIQYfrbfxg10tC/eWAKSlO/my
+	FO43E3nlHvqmDUdvqJzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXvcX-0007vc-7E; Mon, 03 Jun 2019 22:40:01 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hXvgn-0001U6-TI; Mon, 03 Jun 2019 22:44:25 +0000
+Received: from atlmailgw2.ami.com ([63.147.10.42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXvcP-0007up-NX
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 22:39:55 +0000
-Received: by mail-pl1-x641.google.com with SMTP id d21so7529706plr.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 15:39:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=d0pHGkFAzud1LXVO2y8qggIx+lZyQUhfT9A6e9r7pVo=;
- b=FgCBDPY6CRCXcPfk8fTafoSLnOLpuZSDUFRvAWxACU0zQWMF3HJ7nn6TkRRcn0oixU
- Yko0WDBIyDpE/d1snVSEuha+BomUaa+tnm8tbvNOMhhAmF0GCeqqJ32D5nJTkNxwZz+z
- brMiHfKbm88zFuyU7H97WwSZbpI1x1r0yFw7PisVxJm5Z8oIuRu/a3zbsjgotxcktI0e
- cqAHx9nLyf4QC/CpWQafjMf/+xNq7n9G4FScYwN5xpRtE8p7bIyP0I+6lk0xFOkSDaKm
- AG6X3oEgcDW55aCXpS181mxbF1IgPy6WMNlk5KAC7fDrOBSYg0NUOztcKNkac6oP3DcG
- aa+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=d0pHGkFAzud1LXVO2y8qggIx+lZyQUhfT9A6e9r7pVo=;
- b=IvNXuMYeoqHSE0nIwR97Q6Jtw1puoh81dooRbv6xEaANLtkvgXMkpnDlL8PiAKFBuw
- /VYJgo3Gva9EI/JQ2lRTInJmitAxBI8vOhXV4JjRwfyGOK0/wm74PbOjAZGiTHHtVbJY
- OAQkXjNET2MXOdTSQfTGmJUDYGDhU0rQoMjD/OKBxe3xI6CHLBYM4dey97jVcDxW7BAb
- wiJwmuEcqSzu1tC/o+S9xaBv5vxyPj2y5cehi2wt7MCkmLnvifd0hyGH2DYqWCyXPDFZ
- XFqfTndX+eC6KYZ2OI8IzSCHaC7Hx5T/PNq+tMxPhj6JkCsolynED6Jr2kVMdhEFGm65
- EYNg==
-X-Gm-Message-State: APjAAAVtW6rS4QHizOw8O9+OkiPl3c68C/JeyYOGsoDhq4elvyLiLA0i
- wcJvpn0CdFW/GTzX/9x79LhQ9A==
-X-Google-Smtp-Source: APXvYqwudy03I5p10WfbvIimwqVrr2QjqJjMVmggzEI1EiREVUvMw5spyMDtTF/kgJ3WUmnjkQt/rQ==
-X-Received: by 2002:a17:902:163:: with SMTP id
- 90mr33158196plb.212.1559601592730; 
- Mon, 03 Jun 2019 15:39:52 -0700 (PDT)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.googlemail.com with ESMTPSA id j97sm15138949pje.5.2019.06.03.15.39.51
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 03 Jun 2019 15:39:52 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v2 10/10] ARM: mach-meson: update with SPDX Licence
- identifier
-In-Reply-To: <20190527133857.30108-11-narmstrong@baylibre.com>
-References: <20190527133857.30108-1-narmstrong@baylibre.com>
- <20190527133857.30108-11-narmstrong@baylibre.com>
-Date: Mon, 03 Jun 2019 15:39:51 -0700
-Message-ID: <7h8suii98o.fsf@baylibre.com>
+ id 1hXvgg-0001TG-Lw
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 22:44:20 +0000
+X-AuditID: ac10606f-bd5ff70000003de9-4b-5cf5a2bc2cf5
+Received: from atlms1.us.megatrends.com (atlms1.us.megatrends.com
+ [172.16.96.144])
+ (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by atlmailgw2.ami.com (Symantec Messaging Gateway) with SMTP id
+ C7.FD.15849.CB2A5FC5; Mon,  3 Jun 2019 18:44:13 -0400 (EDT)
+Received: from hongweiz-Ubuntu-AMI.us.megatrends.com (172.16.98.93) by
+ atlms1.us.megatrends.com (172.16.96.144) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Mon, 3 Jun 2019 18:44:12 -0400
+From: Hongwei Zhang <hongweiz@ami.com>
+To: Joel Stanley <joel@jms.id.au>, Linus Walleij <linus.walleij@linaro.org>,
+ Andrew Jeffery <andrew@aj.id.au>, Rob Herring <robh+dt@kernel.org>, Mark
+ Rutland <mark.rutland@arm.com>
+Subject: [PATCH linux dev-5.1 v1] ARM: dts: aspeed: Add SGPM pinmux
+Date: Mon, 3 Jun 2019 18:43:09 -0400
+Message-ID: <1559601789-27121-1-git-send-email-hongweiz@ami.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
+X-Originating-IP: [172.16.98.93]
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrCLMWRmVeSWpSXmKPExsWyRiBhgu7eRV9jDJ5NkLTYdZnDYv6Rc6wW
+ v8//ZbaY8mc5k8Wmx9dYLZpXn2O22Dz/D6PF5V1z2CyWXr/IZNG69wi7A5fH1fZd7B5r5q1h
+ 9Lj48Rizx6ZVnWwed67tYfPYvKTe4/yMhYwenzfJBXBEcdmkpOZklqUW6dslcGVsubuKqWC2
+ RMWfM81MDYzHRboYOTkkBEwkXrz9xQZiCwnsYpK4s6usi5ELyD7EKDH9/C12kASbgJrE3s1z
+ mEASIgI7GCU657exgjjMAmcZJTY83MsMUiUs4Czx78NGRhCbRUBFYu2sS2BxXgEHic4rk9kh
+ 1slJ3DzXCRUXlDg58wkLiM0sICFx8MULZogzZCVuHXrMBFGvIPG87zHLBEa+WUhaZiFpWcDI
+ tIpRKLEkJzcxMye93EgvMTdTLzk/dxMjJKTzdzB+/Gh+iJGJgxHoJQ5mJRHexNtfYoR4UxIr
+ q1KL8uOLSnNSiw8xSnOwKInzzgi5HCMkkJ5YkpqdmlqQWgSTZeLglGpgXFWk/GnRonOdGUuS
+ Yvj+KN696zD/SIOiGe9i1tu51qxbHpmmTKi+xySVLxDkWlKqesnXKcfL1mijY7nSMhND1wcz
+ nFXCAo1vqgbVvpP/wvr8Q3ha28qiqNnlLscamS8/Z7tUU6QdbnZvscfNq0IFhzYXzP59cmJw
+ ZLXxjnk29exmpTETWL4rsRRnJBpqMRcVJwIA93vZXlcCAAA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_153953_764656_177D0E17 
-X-CRM114-Status: GOOD (  16.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190603_154418_787178_75AF6528 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [63.147.10.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,49 +77,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: devicetree@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Hongwei Zhang <hongweiz@ami.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+Add SGPM pinmux to ast2500-pinctrl function and group, to prepare for
+supporting SGPIO in AST2500 SoC.
 
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  arch/arm/mach-meson/meson.c | 12 +-----------
->  1 file changed, 1 insertion(+), 11 deletions(-)
->
-> diff --git a/arch/arm/mach-meson/meson.c b/arch/arm/mach-meson/meson.c
-> index c8d99df32f9b..04ae414d88c9 100644
-> --- a/arch/arm/mach-meson/meson.c
-> +++ b/arch/arm/mach-meson/meson.c
-> @@ -1,16 +1,6 @@
-> +// SPDX-License-Identifier: GPL-2.0+
->  /*
->   * Copyright (C) 2014 Carlo Caione <carlo@caione.org>
-> - *
-> - * This program is free software; you can redistribute it and/or modify
-> - * it under the terms of the GNU General Public License as published by
-> - * the Free Software Foundation; either version 2 of the License, or
-> - * (at your option) any later version.
-> - *
-> - * This program is distributed in the hope that it will be useful, but WITHOUT
-> - * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-> - * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
-> - * more details.
-> - *
->   */
+Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
+---
+ Documentation/devicetree/bindings/pinctrl/pinctrl-aspeed.txt | 2 +-
+ arch/arm/boot/dts/aspeed-g5.dtsi                             | 5 +++++
+ drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c                   | 4 ++++
+ 3 files changed, 10 insertions(+), 1 deletion(-)
 
-I dropped this one since it conflicts with one that was already applied
-to mainline in the treewide cleanup of SPDX headers.
+diff --git a/Documentation/devicetree/bindings/pinctrl/pinctrl-aspeed.txt b/Documentation/devicetree/bindings/pinctrl/pinctrl-aspeed.txt
+index 3b7266c..8f1c5c4 100644
+--- a/Documentation/devicetree/bindings/pinctrl/pinctrl-aspeed.txt
++++ b/Documentation/devicetree/bindings/pinctrl/pinctrl-aspeed.txt
+@@ -84,7 +84,7 @@ NDCD2 NDCD3 NDCD4 NDSR1 NDSR2 NDSR3 NDSR4 NDTR1 NDTR2 NDTR3 NDTR4 NRI1 NRI2
+ NRI3 NRI4 NRTS1 NRTS2 NRTS3 NRTS4 OSCCLK PEWAKE PNOR PWM0 PWM1 PWM2 PWM3 PWM4
+ PWM5 PWM6 PWM7 RGMII1 RGMII2 RMII1 RMII2 RXD1 RXD2 RXD3 RXD4 SALT1 SALT10
+ SALT11 SALT12 SALT13 SALT14 SALT2 SALT3 SALT4 SALT5 SALT6 SALT7 SALT8 SALT9
+-SCL1 SCL2 SD1 SD2 SDA1 SDA2 SGPS1 SGPS2 SIOONCTRL SIOPBI SIOPBO SIOPWREQ
++SCL1 SCL2 SD1 SD2 SDA1 SDA2 SGPM SGPS1 SGPS2 SIOONCTRL SIOPBI SIOPBO SIOPWREQ
+ SIOPWRGD SIOS3 SIOS5 SIOSCI SPI1 SPI1CS1 SPI1DEBUG SPI1PASSTHRU SPI2CK SPI2CS0
+ SPI2CS1 SPI2MISO SPI2MOSI TIMER3 TIMER4 TIMER5 TIMER6 TIMER7 TIMER8 TXD1 TXD2
+ TXD3 TXD4 UART6 USB11BHID USB2AD USB2AH USB2BD USB2BH USBCKI VGABIOSROM VGAHS
+diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
+index 383510d..d10c3ea 100644
+--- a/arch/arm/boot/dts/aspeed-g5.dtsi
++++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+@@ -1394,6 +1394,11 @@
+ 		groups = "SDA2";
+ 	};
+ 
++	pinctrl_sgpm_default: sgpm_default {
++		function = "SGPM";
++		groups = "SGPM";
++	};
++
+ 	pinctrl_sgps1_default: sgps1_default {
+ 		function = "SGPS1";
+ 		groups = "SGPS1";
+diff --git a/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c b/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c
+index 187abd7..0c89647 100644
+--- a/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c
++++ b/drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c
+@@ -577,6 +577,8 @@ SS_PIN_DECL(N3, GPIOJ2, SGPMO);
+ SIG_EXPR_LIST_DECL_SINGLE(SGPMI, SGPM, SIG_DESC_SET(SCU84, 11));
+ SS_PIN_DECL(N4, GPIOJ3, SGPMI);
+ 
++FUNC_GROUP_DECL(SGPM, R2, L2, N3, N4);
++
+ #define N5 76
+ SIG_EXPR_LIST_DECL_SINGLE(VGAHS, VGAHS, SIG_DESC_SET(SCU84, 12));
+ SIG_EXPR_LIST_DECL_SINGLE(DASHN5, DASHN5, SIG_DESC_SET(SCU94, 8));
+@@ -2127,6 +2129,7 @@ static const struct aspeed_pin_group aspeed_g5_groups[] = {
+ 	ASPEED_PINCTRL_GROUP(SD2),
+ 	ASPEED_PINCTRL_GROUP(SDA1),
+ 	ASPEED_PINCTRL_GROUP(SDA2),
++	ASPEED_PINCTRL_GROUP(SGPM),
+ 	ASPEED_PINCTRL_GROUP(SGPS1),
+ 	ASPEED_PINCTRL_GROUP(SGPS2),
+ 	ASPEED_PINCTRL_GROUP(SIOONCTRL),
+@@ -2296,6 +2299,7 @@ static const struct aspeed_pin_function aspeed_g5_functions[] = {
+ 	ASPEED_PINCTRL_FUNC(SD2),
+ 	ASPEED_PINCTRL_FUNC(SDA1),
+ 	ASPEED_PINCTRL_FUNC(SDA2),
++	ASPEED_PINCTRL_FUNC(SGPM),
+ 	ASPEED_PINCTRL_FUNC(SGPS1),
+ 	ASPEED_PINCTRL_FUNC(SGPS2),
+ 	ASPEED_PINCTRL_FUNC(SIOONCTRL),
+-- 
+2.7.4
 
-The rest of the series is queued for v5.3,
-
-Thanks,
-
-Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
