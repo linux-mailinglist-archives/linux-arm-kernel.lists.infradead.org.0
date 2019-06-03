@@ -2,102 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E597732B3F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:59:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D75432B45
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 11:01:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jnJcaD+WUgYq3f4YbxiHDz8k5Rgoms9oyvATGMibt4Y=; b=VFXdM9RlGH8N67
-	OV8Y0iQymLwf3W+qML3iFQXnzEJAI7cFNlDrjSTVjboJPeEWRwBjaxcJnd1JaTc9iTZ7GIjVhEN/G
-	GRUu2sb0AQz1aAfpLII1vupXQ/8QYDmH9m9ALuB/Uh1HFxE9OqbAeGDCupQ/y/36+qskcPsl2vWSK
-	jqENug9fG/RZcJ132OXu7s0p2m2DBPla/WHkHqCcQBDEx58rvVR1kyNzQnz5pL8BxdyKvtf/yoXRv
-	ATfXxy+avlfyl4cNon9lNqAooZzf9pJQ3HPolN3D2LEPxFCH0g/HLpTcoja7O9u1kvjuw4ijmxGpQ
-	nKrb/2Y7AOWjNvFYTK/Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0SOhs+xnxNkgWmlZ2CKi8guiO396JMrffQ9X4lflQRc=; b=st5DjGAmMDH6ha
+	rSnTt5B6TgUqAoKfETRDZq17Zb6041KIAfC0jnb+jQkHrNA4MyG9r+7Dz92zJunLUpUTsSrcziGv3
+	Uejx//FkU0qY1m1OEdqI3zJJxqTaVOy8SkTxRprSevHZ2397UqWc8U9rtjjMnSYAvxE4IeDOit3+W
+	PUZx/zB3rA+PyAZwBBnB1JdHaQnAdiu73YKV5sAR0Upcduh3yOEEZjZhOltfRUaFEQ9EuZDk4uvhc
+	D3bN3B9Np1jaU2nG525zUoz1gjbSk5rLmEtK2RqNfYFKaOkjO3DBCsa2KvydCCeu9Yi4+dd1leyep
+	r4gc9naF/zDggZDkHTKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXio7-0001jW-Qt; Mon, 03 Jun 2019 08:59:07 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hXiq6-0003Og-5O; Mon, 03 Jun 2019 09:01:10 +0000
+Received: from gofer.mess.org ([2a02:8011:d000:212::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXio0-0001ii-4P
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:59:01 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x538uY80031648; Mon, 3 Jun 2019 10:58:54 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=vhx7EIV6xeOk88gkHCWKERKEgt0npZQLR8heaw2xtlI=;
- b=iBU5FywKEi3ZkJQl6/SQMMRxLzzSRD/Eh7hyB26luQ4OXcKfxat0CRmyHsgGxNFeHFyR
- pPFuoebFRxQncEC1f4CkjkvA0k3KIbZgEoboD3qYiHorHGB6Ap7x0RcZGHhIa8SxoO3s
- M6dtdXjJdRr8/OushmrOIRehhAg1He4MtnXmdwk/pthOcqYOmrdLnwSnl29GnynCmNpW
- 5BqPAh0ZY3zGXvt+qR7kU4qxAFh+3LhJhUJDZswAVXGaCXlOBuJa8HHKBgKE4bKoCuU3
- wyOjkBEQGr4W6zc4flWsYevXZKvWuTlId5XwuImAoWjaObg3gxWq6hsm6cawDYGjRxRH tw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2sundrsbtr-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 03 Jun 2019 10:58:54 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0DFDC3F;
- Mon,  3 Jun 2019 08:58:53 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D063F1645;
- Mon,  3 Jun 2019 08:58:52 +0000 (GMT)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE1.st.com
- (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 3 Jun
- 2019 10:58:52 +0200
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1347.000; Mon, 3 Jun 2019 10:58:52 +0200
-From: Patrice CHOTARD <patrice.chotard@st.com>
-To: YueHaibing <yuehaibing@huawei.com>, "stern@rowland.harvard.edu"
- <stern@rowland.harvard.edu>, "gregkh@linuxfoundation.org"
- <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH -next] usb: host: ehci-st: Remove set but not used
- variable 'ehci'
-Thread-Topic: [PATCH -next] usb: host: ehci-st: Remove set but not used
- variable 'ehci'
-Thread-Index: AQHVFVu5oOZw623mTkKrd0PNUsnGP6aJiNsA
-Date: Mon, 3 Jun 2019 08:58:52 +0000
-Message-ID: <0c5c8b72-0242-bd9e-24d2-fb48bd5dbfe3@st.com>
-References: <20190528134529.17612-1-yuehaibing@huawei.com>
-In-Reply-To: <20190528134529.17612-1-yuehaibing@huawei.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
-Content-ID: <B8E577DA51A7EA43A8B47DF0E9F0A2D8@st.com>
+ id 1hXipz-0003Nw-Da; Mon, 03 Jun 2019 09:01:05 +0000
+Received: by gofer.mess.org (Postfix, from userid 1000)
+ id 8805160599; Mon,  3 Jun 2019 10:00:58 +0100 (BST)
+Date: Mon, 3 Jun 2019 10:00:58 +0100
+From: Sean Young <sean@mess.org>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: [PATCH v2] pwm: bcm2835: improve precision of pwm
+Message-ID: <20190603090058.qd3tbiffmdgqm34d@gofer.mess.org>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-03_07:, , signatures=0
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_015900_456469_F5F454F5 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190603_020103_594558_1992F210 
+X-CRM114-Status: GOOD (  13.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,57 +53,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-pwm@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ Andreas Christ <andreas@christ-faesch.ch>, Ray Jui <rjui@broadcom.com>,
+ Eric Anholt <eric@anholt.net>, Thierry Reding <thierry.reding@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+If sending IR with carrier of 455kHz using the pwm-ir-tx driver, the
+carrier ends up being 476kHz. The clock is set to bcm2835-pwm with a
+rate of 10MHz.
 
-On 5/28/19 3:45 PM, YueHaibing wrote:
-> Fixes gcc '-Wunused-but-set-variable' warning:
-> 
-> drivers/usb/host/ehci-st.c: In function st_ehci_platform_probe:
-> drivers/usb/host/ehci-st.c:155:19: warning: variable ehci set but not used [-Wunused-but-set-variable]
-> 
-> It is never used, so can be removed.
-> 
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->  drivers/usb/host/ehci-st.c | 2 --
->  1 file changed, 2 deletions(-)
-> 
-> diff --git a/drivers/usb/host/ehci-st.c b/drivers/usb/host/ehci-st.c
-> index dc42981047c9..ccb4e611001d 100644
-> --- a/drivers/usb/host/ehci-st.c
-> +++ b/drivers/usb/host/ehci-st.c
-> @@ -152,7 +152,6 @@ static int st_ehci_platform_probe(struct platform_device *dev)
->  	struct resource *res_mem;
->  	struct usb_ehci_pdata *pdata = &ehci_platform_defaults;
->  	struct st_ehci_platform_priv *priv;
-> -	struct ehci_hcd *ehci;
->  	int err, irq, clk = 0;
->  
->  	if (usb_disabled())
-> @@ -177,7 +176,6 @@ static int st_ehci_platform_probe(struct platform_device *dev)
->  	platform_set_drvdata(dev, hcd);
->  	dev->dev.platform_data = pdata;
->  	priv = hcd_to_ehci_priv(hcd);
-> -	ehci = hcd_to_ehci(hcd);
->  
->  	priv->phy = devm_phy_get(&dev->dev, "usb");
->  	if (IS_ERR(priv->phy)) {
-> 
+A carrier of 455kHz has a period of 2198ns, but the arithmetic truncates
+this to 2100ns rather than 2200ns. So, use DIV_ROUND_CLOSEST() to reduce
+rounding errors, and we have a much more accurate carrier of 454.5kHz.
+
+Reported-by: Andreas Christ <andreas@christ-faesch.ch>
+Signed-off-by: Sean Young <sean@mess.org>
+---
+ drivers/pwm/pwm-bcm2835.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/pwm/pwm-bcm2835.c b/drivers/pwm/pwm-bcm2835.c
+index 5652f461d994..f6fe0b922e1e 100644
+--- a/drivers/pwm/pwm-bcm2835.c
++++ b/drivers/pwm/pwm-bcm2835.c
+@@ -70,7 +70,7 @@ static int bcm2835_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
+ 		return -EINVAL;
+ 	}
+ 
+-	scaler = NSEC_PER_SEC / rate;
++	scaler = DIV_ROUND_CLOSEST(NSEC_PER_SEC, rate);
+ 
+ 	if (period_ns <= MIN_PERIOD) {
+ 		dev_err(pc->dev, "period %d not supported, minimum %d\n",
+@@ -78,8 +78,10 @@ static int bcm2835_pwm_config(struct pwm_chip *chip, struct pwm_device *pwm,
+ 		return -EINVAL;
+ 	}
+ 
+-	writel(duty_ns / scaler, pc->base + DUTY(pwm->hwpwm));
+-	writel(period_ns / scaler, pc->base + PERIOD(pwm->hwpwm));
++	writel(DIV_ROUND_CLOSEST(duty_ns, scaler),
++	       pc->base + DUTY(pwm->hwpwm));
++	writel(DIV_ROUND_CLOSEST(period_ns, scaler),
++	       pc->base + PERIOD(pwm->hwpwm));
+ 
+ 	return 0;
+ }
+-- 
+2.20.1
 
 
-Acked-by: Patrice Chotard <patrice.chotard@st.com>
-
-Thanks
-
-Patrice
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
