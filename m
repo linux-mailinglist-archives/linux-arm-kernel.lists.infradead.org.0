@@ -2,51 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2D2633666
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:19:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D11B33678
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:23:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B5wqbrYm7cWl+d3yKR1y/ZmrRz4M2CZBQZrqxezxLGM=; b=nr8UrrR6X5Blub
-	qe5OmLjd2OqMKmgw78hmvP2vniIObFUvZAuqmGFvyn+lMd6OKPIZXnvXHdOr2AGPzGppTinyB6U5S
-	jPuMZKQAfdsWAKPuRhyyYhnBtcbx104mpV4eOxSGk8wrtcTeSptLa9R2/qTPgJWP02LMQ7EAr1sZJ
-	invsHUX0Nr1IOraO0+P2+j19/KGdN54WqrSMj/4EzbzCWKOivQ+dGyhucbYSsPIRRVA7kaMJR4AQU
-	+i5CNfJ9SCrzC3q/dVCQFsfxNoQ7zrIohebbiLf12o27M0Wt5AqCk99LhKm79ex0J4LB1hWg2CnZ5
-	MmIPbuw273KdxwCJg6Zw==;
+	List-Owner; bh=kJbLYMqb8Ivc8cAdCV+RRYCxsynR7cXjz3u4i/G1qy4=; b=qR89gYu2SbWpfk
+	QOYoQDopFAL4HedU3tr1rF5J5klJPsiDoJVMzLhuNHG90nGQ2DfjHnL8j1Z0IQTiXKyT9fn9aYotB
+	Nyfo7+m+iwgcXOCCbFoTDwaxZCwMCAo6RnolfLkjBoSpyTN1KPD6futTDVj7+Ki3zcs7Ze6/lDDIj
+	sDcrKTfKyeu4TeLNy3fMS45w7H0HtF8wtmkyOMpa9BxbAmPBPaECn2+I9Sfhrc6/81uS5fNE0h+am
+	2lCbwPpDftllnCqbaQ5KbFmS1IHpxUWeEQKFDZIeSM9UllyktYdkH9hcqmpuiE5lYu7bByKQZM2/1
+	17ugRf7aeXq09ZnLy7Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqcF-0005sx-Qs; Mon, 03 Jun 2019 17:19:23 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hXqfo-0007SG-MW; Mon, 03 Jun 2019 17:23:04 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqc9-0005sI-68
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:19:18 +0000
+ id 1hXqfh-0007Rv-V3
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:22:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3258480D;
- Mon,  3 Jun 2019 10:19:16 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C0D223F5AF;
- Mon,  3 Jun 2019 10:19:13 -0700 (PDT)
-Date: Mon, 3 Jun 2019 18:18:56 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH V2 1/2] DT: mailbox: add binding doc for the ARM SMC
- mailbox
-Message-ID: <20190603181856.34996aaa@donnerap.cambridge.arm.com>
-In-Reply-To: <20190603165651.GA12196@e107155-lin>
-References: <20190603083005.4304-1-peng.fan@nxp.com>
- <20190603083005.4304-2-peng.fan@nxp.com>
- <ae4c79f0-4aec-250e-e312-20aba5554665@gmail.com>
- <20190603165651.GA12196@e107155-lin>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 16F2CA78;
+ Mon,  3 Jun 2019 10:22:57 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 8CDEE3F5AF; Mon,  3 Jun 2019 10:22:54 -0700 (PDT)
+Date: Mon, 3 Jun 2019 18:22:52 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Sudeep Holla <sudeep.holla@arm.com>, Andy Lutomirski <luto@kernel.org>
+Subject: Re: [PATCH v4 2/4] x86: simplify _TIF_SYSCALL_EMU handling
+Message-ID: <20190603172251.GG63283@arrakis.emea.arm.com>
+References: <20190523090618.13410-1-sudeep.holla@arm.com>
+ <20190523090618.13410-3-sudeep.holla@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190523090618.13410-3-sudeep.holla@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_101917_235344_40EFE20E 
-X-CRM114-Status: GOOD (  27.33  )
+X-CRM114-CacheID: sfid-20190603_102258_000795_61A33407 
+X-CRM114-Status: GOOD (  19.95  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -67,84 +64,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, peng.fan@nxp.com,
- Florian Fainelli <f.fainelli@gmail.com>, festevam@gmail.com,
- jassisinghbrar@gmail.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, van.freenix@gmail.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
+ Richard Weinberger <richard@nod.at>, jdike@addtoit.com, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Oleg Nesterov <oleg@redhat.com>, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Bin Lu <bin.lu@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 3 Jun 2019 17:56:51 +0100
-Sudeep Holla <sudeep.holla@arm.com> wrote:
-
-Hi,
-
-> On Mon, Jun 03, 2019 at 09:22:16AM -0700, Florian Fainelli wrote:
-> > On 6/3/19 1:30 AM, peng.fan@nxp.com wrote:  
-> > > From: Peng Fan <peng.fan@nxp.com>
-> > >
-> > > The ARM SMC mailbox binding describes a firmware interface to trigger
-> > > actions in software layers running in the EL2 or EL3 exception levels.
-> > > The term "ARM" here relates to the SMC instruction as part of the ARM
-> > > instruction set, not as a standard endorsed by ARM Ltd.
-> > >
-> > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > > ---
-> > >
-> > > V2:
-> > > Introduce interrupts as a property.
-> > >
-> > > V1:
-> > > arm,func-ids is still kept as an optional property, because there is no
-> > > defined SMC funciton id passed from SCMI. So in my test, I still use
-> > > arm,func-ids for ARM SIP service.
-> > >
-> > >  .../devicetree/bindings/mailbox/arm-smc.txt        | 101 +++++++++++++++++++++
-> > >  1 file changed, 101 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.txt
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.txt b/Documentation/devicetree/bindings/mailbox/arm-smc.txt
-> > > new file mode 100644
-> > > index 000000000000..401887118c09
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.txt
-> > > @@ -0,0 +1,101 @@  
+On Thu, May 23, 2019 at 10:06:16AM +0100, Sudeep Holla wrote:
+> The usage of emulated/_TIF_SYSCALL_EMU flags in syscall_trace_enter
+> seems to be bit overcomplicated than required. Let's simplify it.
 > 
-> [...]
+> Cc: Andy Lutomirski <luto@kernel.org>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Borislav Petkov <bp@alien8.de>
+> Acked-by: Oleg Nesterov <oleg@redhat.com>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  arch/x86/entry/common.c | 17 ++++++-----------
+>  1 file changed, 6 insertions(+), 11 deletions(-)
 > 
-> > > +Optional properties:
-> > > +- arm,func-ids		An array of 32-bit values specifying the function
-> > > +			IDs used by each mailbox channel. Those function IDs
-> > > +			follow the ARM SMC calling convention standard [1].
-> > > +			There is one identifier per channel and the number
-> > > +			of supported channels is determined by the length
-> > > +			of this array.
-> > > +- interrupts		SPI interrupts may be listed for notification,
-> > > +			each channel should use a dedicated interrupt
-> > > +			line.  
-> >
-> > I would not go about defining a specific kind of interrupt, since SPI is
-> > a GIC terminology, this firmware interface could be used in premise with
-> > any parent interrupt controller, for which the concept of a SPI/PPI/SGI
-> > may not be relevant.
-> >  
-> 
-> While I agree the binding document may not contain specifics, I still
-> don't see how to use SGI with this. Also note it's generally reserved
-> for OS future use(IPC) and using this for other than IPC may be bit
-> challenging IMO. It opens up lots of questions.
+> diff --git a/arch/x86/entry/common.c b/arch/x86/entry/common.c
+> index a986b3c8294c..0a61705d62ec 100644
+> --- a/arch/x86/entry/common.c
+> +++ b/arch/x86/entry/common.c
+> @@ -72,23 +72,18 @@ static long syscall_trace_enter(struct pt_regs *regs)
+>  
+>  	struct thread_info *ti = current_thread_info();
+>  	unsigned long ret = 0;
+> -	bool emulated = false;
+>  	u32 work;
+>  
+>  	if (IS_ENABLED(CONFIG_DEBUG_ENTRY))
+>  		BUG_ON(regs != task_pt_regs(current));
+>  
+> -	work = READ_ONCE(ti->flags) & _TIF_WORK_SYSCALL_ENTRY;
+> +	work = READ_ONCE(ti->flags);
+>  
+> -	if (unlikely(work & _TIF_SYSCALL_EMU))
+> -		emulated = true;
+> -
+> -	if ((emulated || (work & _TIF_SYSCALL_TRACE)) &&
+> -	    tracehook_report_syscall_entry(regs))
+> -		return -1L;
+> -
+> -	if (emulated)
+> -		return -1L;
+> +	if (work & (_TIF_SYSCALL_TRACE | _TIF_SYSCALL_EMU)) {
+> +		ret = tracehook_report_syscall_entry(regs);
+> +		if (ret || (work & _TIF_SYSCALL_EMU))
+> +			return -1L;
+> +	}
 
-Well, a PPI might be possible to use, although it's somewhat dodgy to hijack the GIC's (re-)distributor from EL3 to write to GICD_ISPENDR<n>. Need to ask Marc about his feelings towards this. But it's definitely possible from a hypervisor to inject arbitrary interrupts into a guest.
+Andy (or the other x86 folk), could I please get an ack on this patch? I
+plan to queue this series through the arm64 tree (though if you want to
+merge it separately, it looks like an independent clean-up with no
+dependencies on the other patches).
 
-But more importantly: is there any actual reason this needs to be a GIC interrupt? If I understand the code correctly, this could just be any interrupt, including one of an interrupt combiner or a GPIO chip. So why not just use the standard wording of: "exactly one interrupt specifier for each channel"?
+Thanks.
 
-By the way: Shouldn't new bindings use the YAML format instead?
-
-Cheers,
-Andre.
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
