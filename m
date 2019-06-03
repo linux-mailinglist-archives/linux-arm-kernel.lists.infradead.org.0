@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78BA232698
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 04:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09A76326AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 04:37:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mMZ/4LNfsNSILRnaS6aypsNh6P4FRsT4VI78oOYKb9A=; b=KdeswG65A5yLmC
-	A8YTmC6x916KPCKmK+wF7stXWs1RlLNgm058dI7kuMq+ckyGFImKn6wXjgVwQ2aU92TbXJl2TrNI6
-	DlQsI7pyLQ+pGFq8NFa+LA5Y/eGuUvYj6+5Eona8zgqrwEV8+5aruFEQpzKPlk9+aG4Sb4aXL2wnL
-	fPnXdRC35fPSjiJEUUY2UMZvRKxxro8n3j/r5OaH6K+ohsObS3/XC+9Dw9/M0LrIoSkZ4zQeoZSGn
-	uSWpw8C2zWbT2MFio8YO9Qhlakj0kgAgQc/J/nCXzKFVkAPS4rxho0Oz3YAZZ7dpFEmDrXKxocRPl
-	2kLyhI5k7kAt9ZAC80gg==;
+	List-Owner; bh=kVYpCczmWuMrH8jRari+CZEPawxbifXzeHz6Io93+Vo=; b=M7cLLzGdryOV3T
+	UGTfkWCB+0xypjH9KKPNO8i2hVA8wjQyg+w+uUUkPu4/USUdBuixmZwWNJHpUQLfDqBnGYud7qrZO
+	MzJlnT2jq6unJEALDUII8N+LeSNGZxR+ssDrv8in0xduZJ5DqinpS/0XI1h4VJ4OHGjP73IemEADP
+	/rGy01qaJy7/TJMIi2OOBYqP/p4m8b2ejG72lDtgRk2dAGoznHCY0+qZfDnulNklyRW9djtgTIJ84
+	Cn1f/piFWgrurcNL2Tl1szLUSZneFJx81CVUwutdd5w1mCaAWe5xPBgCNhh4pu2RlsLb77pNlfjso
+	zOVuGTxF6FBUnws23IZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXch0-00088L-Ti; Mon, 03 Jun 2019 02:27:22 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hXcqW-0003AO-49; Mon, 03 Jun 2019 02:37:12 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXcgt-00087q-Cr; Mon, 03 Jun 2019 02:27:16 +0000
-X-UUID: f47d695679ca4c45b29dbe8e26737be2-20190602
-X-UUID: f47d695679ca4c45b29dbe8e26737be2-20190602
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ id 1hXcqO-00039N-SR; Mon, 03 Jun 2019 02:37:06 +0000
+X-UUID: b5d8010a5bd9483fa2656aa755e34434-20190602
+X-UUID: b5d8010a5bd9483fa2656aa755e34434-20190602
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <neal.liu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 943676317; Sun, 02 Jun 2019 18:27:10 -0800
+ with ESMTP id 524511121; Sun, 02 Jun 2019 18:36:58 -0800
 Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 2 Jun 2019 19:27:08 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 2 Jun 2019 19:36:56 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
  mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 3 Jun 2019 10:27:07 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ 15.0.1395.4; Mon, 3 Jun 2019 10:36:55 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 3 Jun 2019 10:27:07 +0800
-Message-ID: <1559528827.6663.8.camel@mtkswgap22>
-Subject: Re: [PATCH v2 2/3] dt-bindings: rng: update bindings for MediaTek
- ARMv8 SoCs
+ Transport; Mon, 3 Jun 2019 10:36:55 +0800
+Message-ID: <1559529415.6663.10.camel@mtkswgap22>
+Subject: Re: [PATCH v2 3/3] hwrng: add mtk-sec-rng driver
 From: Neal Liu <neal.liu@mediatek.com>
 To: Sean Wang <sean.wang@kernel.org>
-Date: Mon, 3 Jun 2019 10:27:07 +0800
-In-Reply-To: <CAGp9LzrQegBb9Oe-=jfkwOrsYY=eN3BSF=DWnu+aSBAhQ5bexA@mail.gmail.com>
+Date: Mon, 3 Jun 2019 10:36:55 +0800
+In-Reply-To: <CAGp9LzoC7d9MaCv4OSm5yEGP845zeoQ=Fas_MgZGzSUCeWZ=ww@mail.gmail.com>
 References: <1558946326-13630-1-git-send-email-neal.liu@mediatek.com>
- <1558946326-13630-3-git-send-email-neal.liu@mediatek.com>
- <CAGp9LzrQegBb9Oe-=jfkwOrsYY=eN3BSF=DWnu+aSBAhQ5bexA@mail.gmail.com>
+ <1558946326-13630-4-git-send-email-neal.liu@mediatek.com>
+ <CAGp9LzoC7d9MaCv4OSm5yEGP845zeoQ=Fas_MgZGzSUCeWZ=ww@mail.gmail.com>
 X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_192715_443873_071B8828 
-X-CRM114-Status: GOOD (  17.80  )
+X-CRM114-CacheID: sfid-20190602_193704_928373_6EFD476E 
+X-CRM114-Status: GOOD (  24.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -88,69 +87,172 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Sean,
 
-
-On Thu, 2019-05-30 at 15:56 -0700, Sean Wang wrote:
+On Thu, 2019-05-30 at 15:59 -0700, Sean Wang wrote:
 > Hi, Neal
 > 
 > On Mon, May 27, 2019 at 1:39 AM Neal Liu <neal.liu@mediatek.com> wrote:
 > >
-> > Document the binding used by the MediaTek ARMv8 SoCs random
-> > number generator with TrustZone enabled.
+> > For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
+> > entropy sources is not accessible from normal world (linux) and
+> > rather accessible from secure world (ATF/TEE) only. This driver aims
+> > to provide a generic interface to ATF rng service.
 > >
 > > Signed-off-by: Neal Liu <neal.liu@mediatek.com>
 > > ---
-> >  Documentation/devicetree/bindings/rng/mtk-rng.txt |   13 ++++++++++---
-> >  1 file changed, 10 insertions(+), 3 deletions(-)
+> >  drivers/char/hw_random/Kconfig       |   16 ++++++
+> >  drivers/char/hw_random/Makefile      |    1 +
+> >  drivers/char/hw_random/mtk-sec-rng.c |   97 ++++++++++++++++++++++++++++++++++
+> >  3 files changed, 114 insertions(+)
+> >  create mode 100644 drivers/char/hw_random/mtk-sec-rng.c
 > >
-> > diff --git a/Documentation/devicetree/bindings/rng/mtk-rng.txt b/Documentation/devicetree/bindings/rng/mtk-rng.txt
-> > index 2bc89f1..1fb9b1d 100644
-> > --- a/Documentation/devicetree/bindings/rng/mtk-rng.txt
-> > +++ b/Documentation/devicetree/bindings/rng/mtk-rng.txt
-> > @@ -3,9 +3,12 @@ found in MediaTek SoC family
+> > diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
+> > index 25a7d8f..6c82a3b 100644
+> > --- a/drivers/char/hw_random/Kconfig
+> > +++ b/drivers/char/hw_random/Kconfig
+> > @@ -398,6 +398,22 @@ config HW_RANDOM_MTK
 > >
-> >  Required properties:
-> >  - compatible       : Should be
-> > -                       "mediatek,mt7622-rng",  "mediatek,mt7623-rng" : for MT7622
-> > -                       "mediatek,mt7629-rng",  "mediatek,mt7623-rng" : for MT7629
-> > -                       "mediatek,mt7623-rng" : for MT7623
-> > +                       "mediatek,mt7622-rng", "mediatek,mt7623-rng" for MT7622
-> > +                       "mediatek,mt7629-rng", "mediatek,mt7623-rng" for MT7629
-> > +                       "mediatek,mt7623-rng" for MT7623
-> 
-> No make any change for those lines not belong to the series
-
-There are some unused spaces and symbols. We try to align coding style
-with other bindings.
-
-> 
-> > +                       "mediatek,mtk-sec-rng" for MediaTek ARMv8 SoCs
-> 
-> I thought "mediatek,mtk-sec-rng" is only for those MediaTek ARMv8 SoCs
-> with security RNG
-
-Yes, sure. It's better to describe with "MediaTek ARMv8 SoCs with
-security RNG". 
-
-> 
+> >           If unsure, say Y.
+> >
+> > +config HW_RANDOM_MTK_SEC
+> > +       tristate "MediaTek Security Random Number Generator support"
+> > +       depends on HW_RANDOM
+> > +       depends on ARCH_MEDIATEK || COMPILE_TEST
+> > +       default HW_RANDOM
+> > +       help
+> > +         This driver provides kernel-side support for the Random Number
+> > +         Generator hardware found on MediaTek SoCs. The difference with
+> > +         mtk-rng is the Random Number Generator hardware is secure
+> > +         access only.
 > > +
-> > +Optional properties:
-> >  - clocks           : list of clock specifiers, corresponding to
-> >                       entries in clock-names property;
-> >  - clock-names      : Should contain "rng" entries;
-> > @@ -19,3 +22,7 @@ rng: rng@1020f000 {
-> >         clocks = <&infracfg CLK_INFRA_TRNG>;
-> >         clock-names = "rng";
-> >  };
-> 
-> For those MediaTek ARMv8 SoCs with security RNG
-
-Are you suggesting we create a new binding file with security RNG?
-
-> 
+> > +         To compile this driver as a module, choose M here. the
+> > +         module will be called mtk-sec-rng.
 > > +
-> > +hwrng: hwrng {
-> > +       compatible = "mediatek,mtk-sec-rng";
+> > +         If unsure, say Y.
+> > +
+> >  config HW_RANDOM_S390
+> >         tristate "S390 True Random Number Generator support"
+> >         depends on S390
+> > diff --git a/drivers/char/hw_random/Makefile b/drivers/char/hw_random/Makefile
+> > index 7c9ef4a..0ae4993 100644
+> > --- a/drivers/char/hw_random/Makefile
+> > +++ b/drivers/char/hw_random/Makefile
+> > @@ -36,6 +36,7 @@ obj-$(CONFIG_HW_RANDOM_PIC32) += pic32-rng.o
+> >  obj-$(CONFIG_HW_RANDOM_MESON) += meson-rng.o
+> >  obj-$(CONFIG_HW_RANDOM_CAVIUM) += cavium-rng.o cavium-rng-vf.o
+> >  obj-$(CONFIG_HW_RANDOM_MTK)    += mtk-rng.o
+> > +obj-$(CONFIG_HW_RANDOM_MTK_SEC) += mtk-sec-rng.o
+> >  obj-$(CONFIG_HW_RANDOM_S390) += s390-trng.o
+> >  obj-$(CONFIG_HW_RANDOM_KEYSTONE) += ks-sa-rng.o
+> >  obj-$(CONFIG_HW_RANDOM_OPTEE) += optee-rng.o
+> > diff --git a/drivers/char/hw_random/mtk-sec-rng.c b/drivers/char/hw_random/mtk-sec-rng.c
+> > new file mode 100644
+> > index 0000000..4c6e5bf
+> > --- /dev/null
+> > +++ b/drivers/char/hw_random/mtk-sec-rng.c
+> > @@ -0,0 +1,97 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (C) 2019 MediaTek Inc.
+> > + */
+> > +
+> > +#include <linux/arm-smccc.h>
+> > +#include <linux/hw_random.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/soc/mediatek/mtk_sip_svc.h>
+> > +
+> > +#define MT67XX_RNG_MAGIC       0x74726e67
+> > +#define SMC_RET_NUM            4
+> > +#define MTK_SEC_RND_SIZE       (sizeof(u32) * SMC_RET_NUM)
+> > +
+> > +struct mtk_sec_rng_priv {
+> > +       struct hwrng rng;
 > > +};
+> > +
+> > +static void mtk_sec_get_rnd(uint32_t *val)
+> > +{
+> > +       struct arm_smccc_res res;
+> > +
+> > +       arm_smccc_smc(MTK_SIP_KERNEL_GET_RND,
+> > +                     MT67XX_RNG_MAGIC, 0, 0, 0, 0, 0, 0, &res);
+> > +
+> > +       val[0] = res.a0;
+> > +       val[1] = res.a1;
+> > +       val[2] = res.a2;
+> > +       val[3] = res.a3;
+> > +}
+> > +
+> > +static int mtk_sec_rng_read(struct hwrng *rng, void *buf, size_t max, bool wait)
+> > +{
+> > +       size_t get_rnd_size = MTK_SEC_RND_SIZE;
+> 
+> the variable get_rnd_size can be further eliminated
+
+Yes, sure. I'll send new patchset to eliminate this variable, Thanks
+
+> 
+> > +       u32 val[4] = {0};
+> > +       int i, retval = 0;
+> > +
+> > +       while (max >= get_rnd_size) {
+> > +               mtk_sec_get_rnd(val);
+> > +
+> > +               for (i = 0; i < SMC_RET_NUM; i++) {
+> > +                       *(u32 *)buf = val[i];
+> > +                       buf += sizeof(u32);
+> > +               }
+> > +
+> > +               retval += get_rnd_size;
+> > +               max -= get_rnd_size;
+> > +       }
+> > +
+> > +       return retval;
+> > +}
+> > +
+> > +static int mtk_sec_rng_probe(struct platform_device *pdev)
+> > +{
+> > +       struct mtk_sec_rng_priv *priv;
+> > +       int ret;
+> > +
+> > +       priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> > +       if (!priv)
+> > +               return -ENOMEM;
+> > +
+> > +       priv->rng.name = pdev->name;
+> > +       priv->rng.read = mtk_sec_rng_read;
+> > +       priv->rng.priv = (unsigned long)&pdev->dev;
+> > +       priv->rng.quality = 900;
+> > +
+> > +       ret = devm_hwrng_register(&pdev->dev, &priv->rng);
+> > +       if (ret) {
+> > +               dev_err(&pdev->dev, "failed to register rng device: %d\n", ret);
+> > +               return ret;
+> > +       }
+> > +
+> > +       return 0;
+> > +}
+> > +
+> > +static const struct of_device_id mtk_sec_rng_match[] = {
+> > +       { .compatible = "mediatek,mtk-sec-rng", },
+> > +       {}
+> > +};
+> > +MODULE_DEVICE_TABLE(of, mtk_sec_rng_match);
+> > +
+> > +static struct platform_driver mtk_sec_rng_driver = {
+> > +       .probe = mtk_sec_rng_probe,
+> > +       .driver = {
+> > +               .name = KBUILD_MODNAME,
+> > +               .owner = THIS_MODULE,
+> > +               .of_match_table = mtk_sec_rng_match,
+> > +       },
+> > +};
+> > +
+> > +module_platform_driver(mtk_sec_rng_driver);
+> > +
+> > +MODULE_DESCRIPTION("MediaTek Security Random Number Generator Driver");
+> > +MODULE_AUTHOR("Neal Liu <neal.liu@mediatek.com>");
+> > +MODULE_LICENSE("GPL");
 > > --
 > > 1.7.9.5
 > >
