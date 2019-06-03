@@ -2,47 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A19C933206
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:23:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B4423320A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 16:23:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/7IitbGBHzBfTZSeUvvh/NtosGWLXSIvb1YhuuTR4II=; b=aSe1OwrTpD4m0g
-	HGiH5d+a7GmZhdZ8ViuBFe+pscvaAit6iAss5uZ5VSpjMupZoaTUvXHIrbo57Ctc0vbuKd/V4pC+C
-	hMH1CByAVOmfddpfoErp89z9P6OBRGsJhRt30/sn2u4abViQff0KlEM/Rv5ayAwE6kCFsfHUVvAYN
-	u4lQjFdhGWuPXee0/vmBfvMfbH+FJTWIj/LB7yhOTHpUq64FFgt6sLJECzRP7SsNQstx1YnJrif3p
-	cUCRvFMK7vhGzExq7aoX8OJpfuXmrvQUxVDxLoGQkIXjomZ0IBJ/x7VHEDklbDsICbNkXG0qU+7/I
-	Yhinnmt9f2gpgt9+28iQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ooDZMv31+oaD7Bjw9N14+vW3Nui3A0AyVC4TLnPRn8Y=; b=WCHs67ILQ+phUe
+	rpCbGkPtem5MobjOs+PRkrVdDo5UCD86DVMipG86V+BR4vrTkYoidDuAMY8fClIu3mMgaSms687jx
+	/pHsUvWVkrwcSUc6ULz96PcbNmc8FEQ701XTSFAn8dZp206JWDGw6BAHeEJrWQsUMOqn4hRz/5ALl
+	6LlKwRrPnYcGEAs6XbW4Z2dSvWm4uI7nnB8LsG0gSdDKMEjrr79BqFIqYs87FtST1z43Gomwx6HES
+	0s6hNfwCwnH5pfeVSYrlTRym08SqyjJvYzOXicjCkTS8T2z6Jgsi8eouO2NF5VnNzhJsYjBZTZNJn
+	yexaEMOEIDAa1/kzoVjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXnrf-0003Fm-5X; Mon, 03 Jun 2019 14:23:07 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hXnsI-0003ed-90; Mon, 03 Jun 2019 14:23:46 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXnrX-0003EU-Rc; Mon, 03 Jun 2019 14:23:01 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id A1E642639EE
-From: Helen Koike <helen.koike@collabora.com>
-To: linux-rockchip@lists.infradead.org
-Subject: [PATCH] arm64: dts: rockchip: fix isp iommu clocks and power domain
-Date: Mon,  3 Jun 2019 11:22:15 -0300
-Message-Id: <20190603142214.24686-1-helen.koike@collabora.com>
-X-Mailer: git-send-email 2.20.1
+ id 1hXnsB-0003e1-D5
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 14:23:41 +0000
+X-Originating-IP: 92.137.69.152
+Received: from localhost (alyon-656-1-672-152.w92-137.abo.wanadoo.fr
+ [92.137.69.152]) (Authenticated sender: gregory.clement@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 9B1111C0010;
+ Mon,  3 Jun 2019 14:23:23 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Baruch Siach <baruch@tkos.co.il>, Jason Cooper <jason@lakedaemon.net>,
+ Andrew Lunn <andrew@lunn.ch>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Subject: Re: [PATCH v2 2/2] arm64: dts: marvell: clearfog-gt-8k: set SFP power
+ limit
+In-Reply-To: <27f5b086099cd8b7573b3ea9aa77f95fb1b3398f.1558325301.git.baruch@tkos.co.il>
+References: <9cb7837edf96d5a0d41b4ef67c635695e92f1a21.1558325301.git.baruch@tkos.co.il>
+ <27f5b086099cd8b7573b3ea9aa77f95fb1b3398f.1558325301.git.baruch@tkos.co.il>
+Date: Mon, 03 Jun 2019 16:23:23 +0200
+Message-ID: <87v9xmkask.fsf@FE-laptop>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_072300_035595_5BAE3427 
-X-CRM114-Status: GOOD (  10.33  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190603_072339_591040_D863FD19 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -54,85 +63,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Tomsich <philipp.tomsich@theobroma-systems.com>,
- Heiko Stuebner <heiko@sntech.de>, Tony Xie <tony.xie@rock-chips.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Randy Li <ayaka@soulik.info>,
- linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Helen Koike <helen.koike@collabora.com>,
- Rob Herring <robh+dt@kernel.org>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- laurent.pinchart@ideasonboard.com, manivannan.sadhasivam@linaro.org,
- Matthias Brugger <matthias.bgg@gmail.com>, kernel@collabora.com,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org,
- Christoph Muellner <christoph.muellner@theobroma-systems.com>
+Cc: Baruch Siach <baruch@tkos.co.il>, Russell King <linux@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-isp iommu requires wrapper variants of the clocks.
-noc variants are always on and using the wrapper variants will activate
-{A,H}CLK_ISP{0,1} due to the hierarchy.
+Baruch Siach <baruch@tkos.co.il> writes:
 
-Also add the respective power domain.
+> The Clearfog GT-8K board is capable of supplying power up to 2W to SFP
+> modules. Make that explicit in the device-tree. Without this property
+> current kernel does not allow SFP modules that require more than 1W.
+>
+> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
 
-Refer:
- RK3399 TRM v1.4 Fig. 2-4 RK3399 Clock Architecture Diagram
- RK3399 TRM v1.4 Fig. 8-1 RK3399 Power Domain Partition
+Applied on mvebu/dt64
 
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
+Thanks,
 
----
-Hello,
+Gregory
 
-I tested this using the isp patch set (which is not upstream
-yet). Without this patch, streaming from the isp stalls.
+> ---
+> v2: Fix power measure scale (RMK)
+> ---
+>  arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
+> index 9143aa13ceb1..f275d9420d5b 100644
+> --- a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
+> +++ b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
+> @@ -63,6 +63,7 @@
+>  		tx-disable-gpio = <&cp1_gpio1 29 GPIO_ACTIVE_HIGH>;
+>  		pinctrl-names = "default";
+>  		pinctrl-0 = <&cp0_sfp_present_pins &cp1_sfp_tx_disable_pins>;
+> +		maximum-power-milliwatt = <2000>;
+>  	};
+>  
+>  	leds {
+> -- 
+> 2.20.1
+>
 
-I'm also enabling the power domain and removing the disable status,
-please let me know if this should be done in a separated patch.
-
-Thanks
-Helen
-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 196ac9b78076..89594a7276f4 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1706,11 +1706,11 @@
- 		reg = <0x0 0xff914000 0x0 0x100>, <0x0 0xff915000 0x0 0x100>;
- 		interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH 0>;
- 		interrupt-names = "isp0_mmu";
--		clocks = <&cru ACLK_ISP0_NOC>, <&cru HCLK_ISP0_NOC>;
-+		clocks = <&cru ACLK_ISP0_WRAPPER>, <&cru HCLK_ISP0_WRAPPER>;
- 		clock-names = "aclk", "iface";
- 		#iommu-cells = <0>;
-+		power-domains = <&power RK3399_PD_ISP0>;
- 		rockchip,disable-mmu-reset;
--		status = "disabled";
- 	};
- 
- 	isp1_mmu: iommu@ff924000 {
-@@ -1718,11 +1718,11 @@
- 		reg = <0x0 0xff924000 0x0 0x100>, <0x0 0xff925000 0x0 0x100>;
- 		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH 0>;
- 		interrupt-names = "isp1_mmu";
--		clocks = <&cru ACLK_ISP1_NOC>, <&cru HCLK_ISP1_NOC>;
-+		clocks = <&cru ACLK_ISP1_WRAPPER>, <&cru HCLK_ISP1_WRAPPER>;
- 		clock-names = "aclk", "iface";
- 		#iommu-cells = <0>;
-+		power-domains = <&power RK3399_PD_ISP1>;
- 		rockchip,disable-mmu-reset;
--		status = "disabled";
- 	};
- 
- 	hdmi_sound: hdmi-sound {
 -- 
-2.20.1
-
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
