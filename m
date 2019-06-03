@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96D4933577
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:56:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00DA733592
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:56:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mvZ3i5OUznl1WCUCZ+ZCKbmti/Uw8RX+o0nPnofD9jQ=; b=GaEcUGtnY5mmK+
-	dreb7s3UKLrbGoST9kR9Fam0ORlo/3Dthx1nZjXIvL0D9wcniGcSHVZqnDrE+ESlvmYMAoUFAScI9
-	RdeXYgOr1Ci/6UY1UcOZ3BFrusOBapOXKUlClIV4va8x3kuSX7ZNlOydfZZqvzqw2A7HiePa2ITlR
-	R7gor986uq073x8h2mEQ6uc4zeHGkNHczcdBTDpCHU37kcNrkQlYk7ZFxxAy/5qDrEnN/JW8n7CdW
-	2GrKRNeUNfjxrk5kYNzOW/3fZu0qJnp5OKZRB2xncwwF8PO7sgue1BN1ml4I0O3K5gy02TmPCHpr1
-	EHnoNsXdpf76CT8MvT3w==;
+	List-Owner; bh=1tLxP2QgSIlYeVK+YgkY6es2kN/BgzhNcFEal5vD7vU=; b=LPEPW5ZNOsBZjQ
+	yCKvvOzz+apitmuMbKP3wVEw6GdAAwLBfsP+2g8AolBkmSlsnKzxBI5WJH69r99rU4koRwI9x9usF
+	3lPXnlODMB/XH5EiKmZ0ItI/yOyJyi9xsmhsF6VfYt1Y8vkE/pQNOUZpH0RFj253cqLxDEMWQSLoN
+	t16m7Nl0u/hXKNLW8fFy62HY+7/kkGeC8DoAyoyQFSYXe1lgk0DuFrxEN1egm7bwurpja190yAA4U
+	ATctCZ3KmFPw3cGj6ub56XDWx+bAO1iktFQS/fTtcrFoOp9YpPjfzXEMmEbEjc6hybaQBvHJj5oZp
+	KCfLPZDxRvh4dWP3LfRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqGG-000162-QT; Mon, 03 Jun 2019 16:56:40 +0000
-Received: from mail-yb1-xb49.google.com ([2607:f8b0:4864:20::b49])
+	id 1hXqGS-0001O6-CM; Mon, 03 Jun 2019 16:56:52 +0000
+Received: from mail-qt1-x849.google.com ([2607:f8b0:4864:20::849])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqFJ-0008NU-QK
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 16:55:49 +0000
-Received: by mail-yb1-xb49.google.com with SMTP id p79so14670823yba.21
+ id 1hXqFN-0008Sb-A0
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 16:55:58 +0000
+Received: by mail-qt1-x849.google.com with SMTP id t11so8120303qtc.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 09:55:40 -0700 (PDT)
+ Mon, 03 Jun 2019 09:55:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=ai2S3fD+fr3rvCBmSGFiSuVAfjaa7sExxiTSFFYH1Fc=;
- b=IhwpzfJqwE3DvUc/g2ohuoF7FRDSV+OKLdbdm3aHJhyQC5R8qffzGm3GUGDEK5mLGU
- HwRFraAw3ADQD0MAJJ3addDW9VF2xcSR/1cU+MqYWb30fZYz6OI+lqi9l0mvrBzJRKlx
- 9Jf/vJ7t9tP8BgDAD/yBWpZTteEGqZVu6BQfOgaOZ55GquSpR/7KRV6XVaghO9dlfSJI
- nnlViXK79lK70wRQBUW327/n/PMH7XujjWiQLfV9EFwKMzG6uOgMIpIPl3C2s4DgbvSu
- MCtmUckwctT1sQWlCUv7u3dxJmI+R7ltNLatQs+ATRBm1UQXWv9Bi0Pz/MXuzZkI0IoN
- 5eSw==
+ :cc; bh=8pgHCk5wEiyaTFCxwJKfncM1f+2WF9g+TqLFqNfWufQ=;
+ b=eM3yvxS7rzZ2nnFYrRtwMpVwIimBA7OeBVGUKG05qqQOYpi+Zis4iOHoCqOn+3sjDh
+ 2SabES8eFCAsnon36EZg8qxjmj+CW/08eSPui+O8M8q9qj9EihXzk/kg7mFnv1ofmO2L
+ 6gdrPpvdTVeWEXirSohkSFcGd3CTquZjzaE1d3uIrVhOjCiqBdkigRuAKI8/ID1Mi6ud
+ zk8tRRsd3G4px7QGEmRqWs1oq4KZBZQ84TPIW2/PRqcP/P9TeozrBt0HPw3seUNx6jqU
+ wgzokqzg3Z9TB08A/q6k7ggwnJy6GtgW83uc4Qh4qCVWwdITo0WCqdd0x9WCtndSuvUL
+ /u8A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=ai2S3fD+fr3rvCBmSGFiSuVAfjaa7sExxiTSFFYH1Fc=;
- b=AqltkHbOnRoUnO3F25d1mw6hIrxw9n3CgZAQnrCsPXvu+VSeSioep7EjRJ7bU9+9Y5
- uqmCAMmirpvxE6BozVyi6w3uCsygkZVjDDY5z0FpsA26jKjsaXgAOmTEkpy3iBoamOtv
- ajyU9A2Y37A8X+viYQrQFse0+KrCrtTO+V4mv7rdO/ftQ9IQZMNyZEbmxV8GcXgIwWRY
- 6C9rmCGA+MJO6MpK0X/M7Rnx8H4SmFbhzumjqR+MGATCp8lwnVmU9FjeU+OTYzTJjJ/n
- jHepg1E77ZWbOWX9UvN1wI/H5GSuKI5YQU0H1RxS3B5nXkNariiwQlo4S0N8iQzVqQP0
- M56g==
-X-Gm-Message-State: APjAAAWypTi9J2dbBvT5ial8BS54TJUbmVkpAN4bRuvzVJbph6DSGc4b
- 4v9I+RopH666NkMVrcH+FPJG1KW6Gyc0HPocArQck3dinibPZ73go71GlO8MzPs45tY+iA3+RLJ
- 9A0pLc0YHpP4HAUUnO99A9ljzMH7fSb4MhJcYyBNiHm6V9btl52BvTYwtmV5WDiHogMnr5qiPbu
- ew/1b8QV9chopU8nU=
-X-Google-Smtp-Source: APXvYqyU8lBI93nJuhlJYUnIY7lf1oCA3Bdyf6XCo68IA8G3gKcVv3P8yXxzoFzeAZRqfZIBiTZMwuBdZZXNUsQZ
-X-Received: by 2002:a25:bfcf:: with SMTP id q15mr11764130ybm.453.1559580939725; 
- Mon, 03 Jun 2019 09:55:39 -0700 (PDT)
-Date: Mon,  3 Jun 2019 18:55:07 +0200
+ bh=8pgHCk5wEiyaTFCxwJKfncM1f+2WF9g+TqLFqNfWufQ=;
+ b=XbmtlcHzz9JDwDTGgcG2e4xLR1yu4DzxSWi+DgjrDcQnJNV9OwPLS0yvkuF96T1T79
+ DlTkdzmracL+nNjTGYc6hu0oItd34Dy2uFBaQ7wdy+5tluhlW74fKa1djeTkU0Zczxsh
+ X/U4TnBA7m7TRGfeZ9Fh4nw3h4VWvisX+LkZ8KMVWdjvl/Cz8Z5m7Q61e11D7rGc/Ia5
+ 6h0+hhx4LGtSRRnVkFw8ihdQ8VYjuR2E1o+cEFyH/UECCeSNZRvq8Z2aiCg3EHLHLj2x
+ 1V2ubVjMZCnZmqmawONGcygVyB/na6PzP1iAKq2mC72Y10pAqgwIeEFX0lGIaMQ853OC
+ ef+A==
+X-Gm-Message-State: APjAAAXmOKbI2YCFmA13SVHzaMcV67oWo/za3I/yd9Hxjsc2Zg0EqZ4P
+ ToPi+0wnMfHKg4uKV1bNsLgHYrpgC38cC7NwOJq9mTu03VElmSmKPTxbM9h9gJEW9LB8ThtyRc9
+ KZLrL9AXMb+YL/jYcKtlUEfC2lFnG1x1+WVoBJILG5W2+wJ+9rBOykDCrntPOD4wmBUj+0OdzBr
+ +iUhcKNIs32TpU0D8=
+X-Google-Smtp-Source: APXvYqyNatgo8rHVRn4VlhemarHIUF3AdcvyBy1EVpeL8RHKUhqmEsOqMc7TMbe6ArCDJ95BM6gVWf7qKnPTt9YN
+X-Received: by 2002:a0c:9233:: with SMTP id a48mr6236042qva.66.1559580942841; 
+ Mon, 03 Jun 2019 09:55:42 -0700 (PDT)
+Date: Mon,  3 Jun 2019 18:55:08 +0200
 In-Reply-To: <cover.1559580831.git.andreyknvl@google.com>
-Message-Id: <045a94326401693e015bf80c444a4d946a5c68ed.1559580831.git.andreyknvl@google.com>
+Message-Id: <e1f6d268135f683fd70c2af27e75f694d7ffaf48.1559580831.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1559580831.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.22.0.rc1.311.g5d7573a151-goog
-Subject: [PATCH v16 05/16] arm64: untag user pointers passed to memory syscalls
+Subject: [PATCH v16 06/16] mm, arm64: untag user pointers in mm/gup.c
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -67,15 +67,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_095542_668618_65A15911 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20190603_095545_817740_D9721EB3 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:849 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -131,129 +131,41 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-This patch allows tagged pointers to be passed to the following memory
-syscalls: get_mempolicy, madvise, mbind, mincore, mlock, mlock2, mprotect,
-mremap, msync, munlock.
+mm/gup.c provides a kernel interface that accepts user addresses and
+manipulates user pages directly (for example get_user_pages, that is used
+by the futex syscall). Since a user can provided tagged addresses, we need
+to handle this case.
 
+Add untagging to gup.c functions that use user addresses for vma lookups.
+
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- mm/madvise.c   | 2 ++
- mm/mempolicy.c | 3 +++
- mm/mincore.c   | 2 ++
- mm/mlock.c     | 4 ++++
- mm/mprotect.c  | 2 ++
- mm/mremap.c    | 2 ++
- mm/msync.c     | 2 ++
- 7 files changed, 17 insertions(+)
+ mm/gup.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/mm/madvise.c b/mm/madvise.c
-index 628022e674a7..39b82f8a698f 100644
---- a/mm/madvise.c
-+++ b/mm/madvise.c
-@@ -810,6 +810,8 @@ SYSCALL_DEFINE3(madvise, unsigned long, start, size_t, len_in, int, behavior)
- 	size_t len;
- 	struct blk_plug plug;
+diff --git a/mm/gup.c b/mm/gup.c
+index ddde097cf9e4..c37df3d455a2 100644
+--- a/mm/gup.c
++++ b/mm/gup.c
+@@ -802,6 +802,8 @@ static long __get_user_pages(struct task_struct *tsk, struct mm_struct *mm,
+ 	if (!nr_pages)
+ 		return 0;
  
 +	start = untagged_addr(start);
 +
- 	if (!madvise_behavior_valid(behavior))
- 		return error;
+ 	VM_BUG_ON(!!pages != !!(gup_flags & FOLL_GET));
  
-diff --git a/mm/mempolicy.c b/mm/mempolicy.c
-index 01600d80ae01..78e0a88b2680 100644
---- a/mm/mempolicy.c
-+++ b/mm/mempolicy.c
-@@ -1360,6 +1360,7 @@ static long kernel_mbind(unsigned long start, unsigned long len,
- 	int err;
- 	unsigned short mode_flags;
+ 	/*
+@@ -964,6 +966,8 @@ int fixup_user_fault(struct task_struct *tsk, struct mm_struct *mm,
+ 	struct vm_area_struct *vma;
+ 	vm_fault_t ret, major = 0;
  
-+	start = untagged_addr(start);
- 	mode_flags = mode & MPOL_MODE_FLAGS;
- 	mode &= ~MPOL_MODE_FLAGS;
- 	if (mode >= MPOL_MAX)
-@@ -1517,6 +1518,8 @@ static int kernel_get_mempolicy(int __user *policy,
- 	int uninitialized_var(pval);
- 	nodemask_t nodes;
- 
-+	addr = untagged_addr(addr);
++	address = untagged_addr(address);
 +
- 	if (nmask != NULL && maxnode < nr_node_ids)
- 		return -EINVAL;
+ 	if (unlocked)
+ 		fault_flags |= FAULT_FLAG_ALLOW_RETRY;
  
-diff --git a/mm/mincore.c b/mm/mincore.c
-index c3f058bd0faf..64c322ed845c 100644
---- a/mm/mincore.c
-+++ b/mm/mincore.c
-@@ -249,6 +249,8 @@ SYSCALL_DEFINE3(mincore, unsigned long, start, size_t, len,
- 	unsigned long pages;
- 	unsigned char *tmp;
- 
-+	start = untagged_addr(start);
-+
- 	/* Check the start address: needs to be page-aligned.. */
- 	if (start & ~PAGE_MASK)
- 		return -EINVAL;
-diff --git a/mm/mlock.c b/mm/mlock.c
-index 080f3b36415b..e82609eaa428 100644
---- a/mm/mlock.c
-+++ b/mm/mlock.c
-@@ -674,6 +674,8 @@ static __must_check int do_mlock(unsigned long start, size_t len, vm_flags_t fla
- 	unsigned long lock_limit;
- 	int error = -ENOMEM;
- 
-+	start = untagged_addr(start);
-+
- 	if (!can_do_mlock())
- 		return -EPERM;
- 
-@@ -735,6 +737,8 @@ SYSCALL_DEFINE2(munlock, unsigned long, start, size_t, len)
- {
- 	int ret;
- 
-+	start = untagged_addr(start);
-+
- 	len = PAGE_ALIGN(len + (offset_in_page(start)));
- 	start &= PAGE_MASK;
- 
-diff --git a/mm/mprotect.c b/mm/mprotect.c
-index bf38dfbbb4b4..19f981b733bc 100644
---- a/mm/mprotect.c
-+++ b/mm/mprotect.c
-@@ -465,6 +465,8 @@ static int do_mprotect_pkey(unsigned long start, size_t len,
- 	const bool rier = (current->personality & READ_IMPLIES_EXEC) &&
- 				(prot & PROT_READ);
- 
-+	start = untagged_addr(start);
-+
- 	prot &= ~(PROT_GROWSDOWN|PROT_GROWSUP);
- 	if (grows == (PROT_GROWSDOWN|PROT_GROWSUP)) /* can't be both */
- 		return -EINVAL;
-diff --git a/mm/mremap.c b/mm/mremap.c
-index fc241d23cd97..1d98281f7204 100644
---- a/mm/mremap.c
-+++ b/mm/mremap.c
-@@ -606,6 +606,8 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
- 	LIST_HEAD(uf_unmap_early);
- 	LIST_HEAD(uf_unmap);
- 
-+	addr = untagged_addr(addr);
-+
- 	if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
- 		return ret;
- 
-diff --git a/mm/msync.c b/mm/msync.c
-index ef30a429623a..c3bd3e75f687 100644
---- a/mm/msync.c
-+++ b/mm/msync.c
-@@ -37,6 +37,8 @@ SYSCALL_DEFINE3(msync, unsigned long, start, size_t, len, int, flags)
- 	int unmapped_error = 0;
- 	int error = -EINVAL;
- 
-+	start = untagged_addr(start);
-+
- 	if (flags & ~(MS_ASYNC | MS_INVALIDATE | MS_SYNC))
- 		goto out;
- 	if (offset_in_page(start))
 -- 
 2.22.0.rc1.311.g5d7573a151-goog
 
