@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2678A335D9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:59:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F5FF335DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:59:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZOyIik23gIO4VFH4o1qwz09tQ7Qoa92LmUl4pvFBy0=; b=sEF1Y+mF5yHOT9
-	2iWkEy8yAZ/dLgNtyV8R5f4HP2agRquSX7KiHt9VXlHIECt/KQlz4BfBTP6pg3m2R0z8jIHtzTclV
-	Q6TAGcDfGVhx9r1l9IC1sTyySR4639oobbYO2aPRc2ubsEQcmeQbVQDER7Tqlv4TfmM9ycgUvEuwY
-	mXaLHasYX16CcLrZqOP39WgyQONwrE7gkQ1EJm5gcC/+XQp53C1y7VRJzCUIrTBbsCJNaDpZUnQsP
-	J0UvlxZBDcjcXFOx4MqiMicR+XGqtfBlqoUmG3xF+jwKdHKVUVrPuZCKwDPMGauKNzk2H1xM9IXQC
-	W0+N3qriuNiWA51Uxi/w==;
+	List-Owner; bh=jVvFaJPvU9H/1pf9+3E0BV5mlFipYmXZH2wHY+vlK/E=; b=lAmlANcNzVASYt
+	s04P5+5eI8e8kHznurLMziouPTuIJ2mGd7i4NfCb1QrmaAxdQqTcRe9/e8I7xMlECf+XPzidoqO6U
+	Em2oRQkFZOMkXA7rN9pjzXgzf03b3muG5umixN36BdBdyYLqLWl20uYTq/JAgIA3Uv2BKHlQDJREh
+	IJ8ptNtFdSTor5NzWyJrX6yOqQGyehE4hwj0WK4FRaIkqstcQlQMBFVaLF97tyUIl81Kn83rw+Hs+
+	heOINadlhqJIrTODxZwOgOB8agES/Br2g4tqYNC1YBeyonMMQibdRjh7QIgEZ7D0fBppeRE5HFmNk
+	2YKTBNhtvLoUMdGxVREg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqIq-0004Yw-IW; Mon, 03 Jun 2019 16:59:20 +0000
+	id 1hXqJF-00056H-Fq; Mon, 03 Jun 2019 16:59:45 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqGE-0001HZ-2F; Mon, 03 Jun 2019 16:57:09 +0000
+ id 1hXqGc-0001nN-TR; Mon, 03 Jun 2019 16:57:48 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 57A39284AA2
+ (Authenticated sender: koike) with ESMTPSA id 1DD31284FB7
 From: Helen Koike <helen.koike@collabora.com>
 To: dri-devel@lists.freedesktop.org,
 	nicholas.kazlauskas@amd.com
-Subject: [PATCH v4 1/5] drm/rockchip: fix fb references in async update
-Date: Mon,  3 Jun 2019 13:56:06 -0300
-Message-Id: <20190603165610.24614-2-helen.koike@collabora.com>
+Subject: [PATCH v4 5/5] drm: don't block fb changes for async plane updates
+Date: Mon,  3 Jun 2019 13:56:10 -0300
+Message-Id: <20190603165610.24614-6-helen.koike@collabora.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190603165610.24614-1-helen.koike@collabora.com>
 References: <20190603165610.24614-1-helen.koike@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_095638_781697_0F72F2CF 
-X-CRM114-Status: GOOD (  16.82  )
+X-CRM114-CacheID: sfid-20190603_095703_884524_8F7D803A 
+X-CRM114-Status: GOOD (  18.69  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -57,142 +57,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrey.grodzovsky@amd.com,
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+ Sean Paul <seanpaul@google.com>, David Airlie <airlied@linux.ie>,
+ daniel.vetter@ffwll.ch, linux-kernel@vger.kernel.org, eric@anholt.net,
+ kernel@collabora.com, Maxime Ripard <maxime.ripard@bootlin.com>,
+ amd-gfx@lists.freedesktop.org, linux-rockchip@lists.infradead.org,
+ harry.wentland@amd.com, andrey.grodzovsky@amd.com,
+ linux-arm-msm@vger.kernel.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Helen Koike <helen.koike@collabora.com>, Sean Paul <sean@poorly.run>,
+ linux-arm-kernel@lists.infradead.org,
  =?UTF-8?q?St=C3=A9phane=20Marchesin?= <marcheu@google.com>,
- =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
- Sean Paul <seanpaul@google.com>, Sandy Huang <hjc@rock-chips.com>,
- David Airlie <airlied@linux.ie>, daniel.vetter@ffwll.ch,
- linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
- linux-rockchip@lists.infradead.org, Helen Koike <helen.koike@collabora.com>,
+ Sandy Huang <hjc@rock-chips.com>, stable@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, robdclark@gmail.com,
  boris.brezillon@collabora.com, Daniel Vetter <daniel@ffwll.ch>,
- kernel@collabora.com, harry.wentland@amd.com,
- linux-arm-kernel@lists.infradead.org
+ freedreno@lists.freedesktop.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the case of async update, modifications are done in place, i.e. in the
-current plane state, so the new_state is prepared and the new_state is
-cleaned up (instead of the old_state, unlike what happens in a
-normal sync update).
-To cleanup the old_fb properly, it needs to be placed in the new_state
-in the end of async_update, so cleanup call will unreference the old_fb
-correctly.
+In the case of a normal sync update, the preparation of framebuffers (be
+it calling drm_atomic_helper_prepare_planes() or doing setups with
+drm_framebuffer_get()) are performed in the new_state and the respective
+cleanups are performed in the old_state.
 
-Also, the previous code had a:
+In the case of async updates, the preparation is also done in the
+new_state but the cleanups are done in the new_state (because updates
+are performed in place, i.e. in the current state).
 
-	plane_state = plane->funcs->atomic_duplicate_state(plane);
-	...
-	swap(plane_state, plane->state);
+The current code blocks async udpates when the fb is changed, turning
+async updates into sync updates, slowing down cursor updates and
+introducing regressions in igt tests with errors of type:
 
-	if (plane->state->fb && plane->state->fb != new_state->fb) {
-	...
-	}
+"CRITICAL: completed 97 cursor updated in a period of 30 flips, we
+expect to complete approximately 15360 updates, with the threshold set
+at 7680"
 
-Which was wrong, as the fb were just assigned to be equal, so this if
-statement nevers evaluates to true.
+Fb changes in async updates were prevented to avoid the following scenario:
 
-Another details is that the function drm_crtc_vblank_get() can only be
-called when vop->is_enabled is true, otherwise it has no effect and
-trows a WARN_ON().
+- Async update, oldfb = NULL, newfb = fb1, prepare fb1, cleanup fb1
+- Async update, oldfb = fb1, newfb = fb2, prepare fb2, cleanup fb2
+- Non-async commit, oldfb = fb2, newfb = fb1, prepare fb1, cleanup fb2 (wrong)
+Where we have a single call to prepare fb2 but double cleanup call to fb2.
 
-Calling drm_atomic_set_fb_for_plane() (which get a referent of the new
-fb and pus the old fb) is not required, as it is taken care by
-drm_mode_cursor_universal() when calling
-drm_atomic_helper_update_plane().
+To solve the above problems, instead of blocking async fb changes, we
+place the old framebuffer in the new_state object, so when the code
+performs cleanups in the new_state it will cleanup the old_fb and we
+will have the following scenario instead:
 
+- Async update, oldfb = NULL, newfb = fb1, prepare fb1, no cleanup
+- Async update, oldfb = fb1, newfb = fb2, prepare fb2, cleanup fb1
+- Non-async commit, oldfb = fb2, newfb = fb1, prepare fb1, cleanup fb2
+
+Where calls to prepare/cleanup are balanced.
+
+Cc: <stable@vger.kernel.org> # v4.14+
+Fixes: 25dc194b34dd ("drm: Block fb changes for async plane updates")
+Suggested-by: Boris Brezillon <boris.brezillon@collabora.com>
 Signed-off-by: Helen Koike <helen.koike@collabora.com>
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+Reviewed-by: Nicholas Kazlauskas <nicholas.kazlauskas@amd.com>
 
 ---
-Hello,
 
-I tested on the rockchip ficus v1.1 using igt plane_cursor_legacy and
-kms_cursor_legacy and I didn't see any regressions.
+Changes in v4:
+- update docs in atomic_async_update callback
 
-Changes in v4: None
 Changes in v3:
-- use swap() to swap old and new framebuffers in async_update
-- get the reference to old_fb and set the worker after vop_plane_atomic_update()
-- add a FIXME tag for when we have multiple fbs to be released when
-vblank happens.
-- update commit message
+- Add Reviewed-by tags
+- Add TODO in drm_atomic_helper_async_commit()
 
-Changes in v2: None
+Changes in v2:
+- Change the order of the patch in the series, add this as the last one.
+- Add documentation
+- s/ballanced/balanced
 
- drivers/gpu/drm/rockchip/rockchip_drm_vop.c | 51 +++++++++++----------
- 1 file changed, 26 insertions(+), 25 deletions(-)
+ drivers/gpu/drm/drm_atomic_helper.c      | 22 ++++++++++++----------
+ include/drm/drm_modeset_helper_vtables.h |  8 ++++++++
+ 2 files changed, 20 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-index 4189ca17f381..b7c47d1153c6 100644
---- a/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-+++ b/drivers/gpu/drm/rockchip/rockchip_drm_vop.c
-@@ -919,29 +919,17 @@ static void vop_plane_atomic_async_update(struct drm_plane *plane,
- 					  struct drm_plane_state *new_state)
- {
- 	struct vop *vop = to_vop(plane->state->crtc);
--	struct drm_plane_state *plane_state;
+diff --git a/drivers/gpu/drm/drm_atomic_helper.c b/drivers/gpu/drm/drm_atomic_helper.c
+index acf993cb8e52..ac81d8440b40 100644
+--- a/drivers/gpu/drm/drm_atomic_helper.c
++++ b/drivers/gpu/drm/drm_atomic_helper.c
+@@ -1610,15 +1610,6 @@ int drm_atomic_helper_async_check(struct drm_device *dev,
+ 	    old_plane_state->crtc != new_plane_state->crtc)
+ 		return -EINVAL;
+ 
+-	/*
+-	 * FIXME: Since prepare_fb and cleanup_fb are always called on
+-	 * the new_plane_state for async updates we need to block framebuffer
+-	 * changes. This prevents use of a fb that's been cleaned up and
+-	 * double cleanups from occuring.
+-	 */
+-	if (old_plane_state->fb != new_plane_state->fb)
+-		return -EINVAL;
 -
--	plane_state = plane->funcs->atomic_duplicate_state(plane);
--	plane_state->crtc_x = new_state->crtc_x;
--	plane_state->crtc_y = new_state->crtc_y;
--	plane_state->crtc_h = new_state->crtc_h;
--	plane_state->crtc_w = new_state->crtc_w;
--	plane_state->src_x = new_state->src_x;
--	plane_state->src_y = new_state->src_y;
--	plane_state->src_h = new_state->src_h;
--	plane_state->src_w = new_state->src_w;
--
--	if (plane_state->fb != new_state->fb)
--		drm_atomic_set_fb_for_plane(plane_state, new_state->fb);
--
--	swap(plane_state, plane->state);
--
--	if (plane->state->fb && plane->state->fb != new_state->fb) {
--		drm_framebuffer_get(plane->state->fb);
--		WARN_ON(drm_crtc_vblank_get(plane->state->crtc) != 0);
--		drm_flip_work_queue(&vop->fb_unref_work, plane->state->fb);
--		set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
--	}
-+	struct drm_framebuffer *old_fb = plane->state->fb;
+ 	funcs = plane->helper_private;
+ 	if (!funcs->atomic_async_update)
+ 		return -EINVAL;
+@@ -1649,6 +1640,8 @@ EXPORT_SYMBOL(drm_atomic_helper_async_check);
+  * drm_atomic_async_check() succeeds. Async commits are not supposed to swap
+  * the states like normal sync commits, but just do in-place changes on the
+  * current state.
++ *
++ * TODO: Implement full swap instead of doing in-place changes.
+  */
+ void drm_atomic_helper_async_commit(struct drm_device *dev,
+ 				    struct drm_atomic_state *state)
+@@ -1659,6 +1652,9 @@ void drm_atomic_helper_async_commit(struct drm_device *dev,
+ 	int i;
+ 
+ 	for_each_new_plane_in_state(state, plane, plane_state, i) {
++		struct drm_framebuffer *new_fb = plane_state->fb;
++		struct drm_framebuffer *old_fb = plane->state->fb;
 +
-+	plane->state->crtc_x = new_state->crtc_x;
-+	plane->state->crtc_y = new_state->crtc_y;
-+	plane->state->crtc_h = new_state->crtc_h;
-+	plane->state->crtc_w = new_state->crtc_w;
-+	plane->state->src_x = new_state->src_x;
-+	plane->state->src_y = new_state->src_y;
-+	plane->state->src_h = new_state->src_h;
-+	plane->state->src_w = new_state->src_w;
-+	swap(plane->state->fb, new_state->fb);
+ 		funcs = plane->helper_private;
+ 		funcs->atomic_async_update(plane, plane_state);
  
- 	if (vop->is_enabled) {
- 		rockchip_drm_psr_inhibit_get_state(new_state->state);
-@@ -950,9 +938,22 @@ static void vop_plane_atomic_async_update(struct drm_plane *plane,
- 		vop_cfg_done(vop);
- 		spin_unlock(&vop->reg_lock);
- 		rockchip_drm_psr_inhibit_put_state(new_state->state);
--	}
- 
--	plane->funcs->atomic_destroy_state(plane, plane_state);
+@@ -1667,11 +1663,17 @@ void drm_atomic_helper_async_commit(struct drm_device *dev,
+ 		 * plane->state in-place, make sure at least common
+ 		 * properties have been properly updated.
+ 		 */
+-		WARN_ON_ONCE(plane->state->fb != plane_state->fb);
++		WARN_ON_ONCE(plane->state->fb != new_fb);
+ 		WARN_ON_ONCE(plane->state->crtc_x != plane_state->crtc_x);
+ 		WARN_ON_ONCE(plane->state->crtc_y != plane_state->crtc_y);
+ 		WARN_ON_ONCE(plane->state->src_x != plane_state->src_x);
+ 		WARN_ON_ONCE(plane->state->src_y != plane_state->src_y);
++
 +		/*
-+		 * A scanout can still be occurring, so we can't drop the
-+		 * reference to the old framebuffer. To solve this we get a
-+		 * reference to old_fb and set a worker to release it later.
-+		 * FIXME: if we perform 500 async_update calls before the
-+		 * vblank, then we can have 500 different framebuffers waiting
-+		 * to be released.
++		 * Make sure the FBs have been swapped so that cleanups in the
++		 * new_state performs a cleanup in the old FB.
 +		 */
-+		if (old_fb && plane->state->fb != old_fb) {
-+			drm_framebuffer_get(old_fb);
-+			WARN_ON(drm_crtc_vblank_get(plane->state->crtc) != 0);
-+			drm_flip_work_queue(&vop->fb_unref_work, old_fb);
-+			set_bit(VOP_PENDING_FB_UNREF, &vop->pending);
-+		}
-+	}
++		WARN_ON_ONCE(plane_state->fb != old_fb);
+ 	}
  }
- 
- static const struct drm_plane_helper_funcs plane_helper_funcs = {
+ EXPORT_SYMBOL(drm_atomic_helper_async_commit);
+diff --git a/include/drm/drm_modeset_helper_vtables.h b/include/drm/drm_modeset_helper_vtables.h
+index f9c94c2a1364..f7bbd0b0ecd1 100644
+--- a/include/drm/drm_modeset_helper_vtables.h
++++ b/include/drm/drm_modeset_helper_vtables.h
+@@ -1185,6 +1185,14 @@ struct drm_plane_helper_funcs {
+ 	 * current one with the new plane configurations in the new
+ 	 * plane_state.
+ 	 *
++	 * Drivers should also swap the framebuffers between current plane
++	 * state (&drm_plane.state) and new_state.
++	 * This is required since cleanup for async commits is performed on
++	 * the new state, rather than old state like for traditional commits.
++	 * Since we want to give up the reference on the current (old) fb
++	 * instead of our brand new one, swap them in the driver during the
++	 * async commit.
++	 *
+ 	 * FIXME:
+ 	 *  - It only works for single plane updates
+ 	 *  - Async Pageflips are not supported yet
 -- 
 2.20.1
 
