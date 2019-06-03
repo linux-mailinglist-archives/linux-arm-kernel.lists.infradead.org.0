@@ -2,64 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1311333111
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 15:30:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ADF23311F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 15:32:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sypxeqyGOpVqV1QmmXwmWTVayg1GGlkYDYpVq/KR9ws=; b=WxAhqPzlnAyDCy
-	yObUdKHqZDjwMCIm7mDnzgA+01hoikwQO7q35qG21jjah7pPaCx+hPnX86dms0NphUXn5rtNJ7svb
-	xdE/UhlWxk++7gpTerRbYqBYCUO4AsPGYJXTsShyTvboVHF6pdtDd5JHJlbdIUaXb+zw95N5tfj7o
-	45mDY7hCY6FIeNshoPa9I49ui5IDrzYBvDcV8Ws6zf5K72kBMYn2kPlbVTrMqCSYPYB8KEm9CwoeB
-	gD+tqrrCeFblHDYp//5xsLGgd0TSD0eyFn7dmpF6T9qLu1JAFd11Ddn3vQjCvzY8Kkww4H24fhsIj
-	3y31bSeaTIIFtXX3/tPw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vgp+tIxMwdq5WmU/JRQW9vnKt6p9wSocq/YWATG5cWE=; b=u+72xC7sCVa379
+	NAho0MlhcX96AQSh2iZbru7gbDB8unB+MXoJB5ZcOk4Z/6ciH2c5s3BuL6+9pfFrxz9UktivbCN17
+	v8iYdcW9DQt1KTdhfXhM5NwacImOB0KD+nkSzZ6Te1sKdM2DQ7MzBJtSohAOLpflNyEx3hTZqjF+B
+	/i0Lg1n7mcqpDR0JHYQNH2A4PYvRpE+7C9CzobEJPfHcWCytywGjq12WYXyLLb9wN+wVbs+d9LGBD
+	5c5UYEaoJ81MHNtGJIkXwlU54HWn0dQ4+KO1jkaBtuKhjxM835+Jv1W/7cBjIWEldZzG5cr9jcHIT
+	jkpKtydFneAMrraohY/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXn31-0008Gf-Qq; Mon, 03 Jun 2019 13:30:47 +0000
-Received: from ozlabs.org ([203.11.71.1])
+	id 1hXn4k-0000AU-HT; Mon, 03 Jun 2019 13:32:34 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXn2u-0008Fp-DA
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 13:30:42 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 45HbXV0k6Kz9s1c;
- Mon,  3 Jun 2019 23:30:33 +1000 (AEST)
-From: Michael Ellerman <mpe@ellerman.id.au>
-To: Will Deacon <will.deacon@arm.com>,
- Ravi Bangoria <ravi.bangoria@linux.ibm.com>
-Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
-In-Reply-To: <20190531153703.GA21288@fuggles.cambridge.arm.com>
-References: <1559046689-24091-1-git-send-email-92siuyang@gmail.com>
- <20190528140103.GT2623@hirez.programming.kicks-ass.net>
- <20190528153224.GE20758@fuggles.cambridge.arm.com>
- <20190528173228.GW2623@hirez.programming.kicks-ass.net>
- <20190529091733.GA4485@fuggles.cambridge.arm.com>
- <20190529101042.GN2623@hirez.programming.kicks-ass.net>
- <20190529102022.GC4485@fuggles.cambridge.arm.com>
- <20190529125557.GU2623@hirez.programming.kicks-ass.net>
- <efcd5cf4-3501-f3b6-bf47-145a9ef19a53@linux.ibm.com>
- <8b55f79a-c324-0701-e85f-c7797a60a708@linux.ibm.com>
- <20190531153703.GA21288@fuggles.cambridge.arm.com>
-Date: Mon, 03 Jun 2019 23:30:33 +1000
-Message-ID: <875zpmokxy.fsf@concordia.ellerman.id.au>
+ id 1hXn4c-00009s-OB
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 13:32:28 +0000
+Received: by mail-io1-xd42.google.com with SMTP id e3so14262318ioc.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Jun 2019 06:32:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=VeCYvjZJn7GtHGX/PA2+xplClEyq02Kh7mrOK3/KKkQ=;
+ b=Qe1vSnm0mjNiYHSbelkoOUXFNvMhWM6uGc2KkQgJt+rwmeVowKLMaXwjSnBm28Z/yN
+ 6NoDXwMRZnH3TqrjYpwHkbZyKYDDd2xIlflxAOc5MyRZYlynM3Z4ViCBwHv50/Gcw4jN
+ TUAQd/2V+k0sIIdiM+Yz87B8qMzOslP2Z+v9U+NzcmWH1jLhNo2fH/EXzD36rc4NIZrb
+ mifzUlDv9zwGQ0JDO1YTdJEjM7bpWeYz5RoE0ZdErgQhKtjmZ22GIKOpEUvkAUV6wJVX
+ kDK8cs1vSLgIKchGhxDtEQcjOeHNnkWjn3BUtdOY/m5XReuDGtB9aNnyGrNBsO4TGQQg
+ iecQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=VeCYvjZJn7GtHGX/PA2+xplClEyq02Kh7mrOK3/KKkQ=;
+ b=AA4JPd7K0geXzdPKtySzQ8IGPBH+cEfql69meJkJNIHCr03Fw/pUiflyZ1prgDecmH
+ JfxJbv3jmyZT8MQPk5Snp+GCvsgYubA5865rfR94pTlixXHBD1jNGUq93vb9ivdoOjRC
+ Xb67i1taytEKlMTiyt6tU9sbCoSLjIzrbm3UjPcdmris3xeTeep/vjJm5X8y7vOOrXtp
+ bH6PEi8NKh3LBvQuz8o5VMBUAvjqL7US/IQLecbSxuFPynOaR/ImAjHcjuJZfuLNF2Ec
+ p0QsvzY50uEonM+lEtSqETDIkbloZNuITCXGQr/I5r+eGNdBKiKDU2dz8nxeT9yhwSL7
+ Aw4Q==
+X-Gm-Message-State: APjAAAUgKLpP2C8RcqfKsN12NrLFrHILsA1zEYgX8lh2iFyBHvf8nLcj
+ ZXlPjFvNu4Ij7IPJbCi78xpw7g==
+X-Google-Smtp-Source: APXvYqxAAkJUqQ+MU00LqQKkZdcB5/FFu5kIbtc8fTc7xJteSQ3kRtirsmt17Olj3hOZ/pdqjsk6Bw==
+X-Received: by 2002:a05:6602:2256:: with SMTP id
+ o22mr8751729ioo.95.1559568745189; 
+ Mon, 03 Jun 2019 06:32:25 -0700 (PDT)
+Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
+ [71.195.29.92])
+ by smtp.googlemail.com with ESMTPSA id k18sm6383686itb.0.2019.06.03.06.32.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Jun 2019 06:32:24 -0700 (PDT)
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Arnd Bergmann <arnd@arndb.de>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>
+References: <20190531035348.7194-1-elder@linaro.org>
+ <e75cd1c111233fdc05f47017046a6b0f0c97673a.camel@redhat.com>
+ <065c95a8-7b17-495d-f225-36c46faccdd7@linaro.org>
+ <CAK8P3a05CevRBV3ym+pnKmxv+A0_T+AtURW2L4doPAFzu3QcJw@mail.gmail.com>
+ <a28c5e13-59bc-144d-4153-9d104cfa9188@linaro.org>
+ <20190531233306.GB25597@minitux>
+ <d76a710d45dd7df3a28afb12fc62cf14@codeaurora.org>
+ <CAK8P3a0brT0zyZGNWiS2R0RMHHFF2JG=_ixQyvjhj3Ky39o0UA@mail.gmail.com>
+From: Alex Elder <elder@linaro.org>
+Message-ID: <040ce9cc-7173-d10a-a82c-5186d2fcd737@linaro.org>
+Date: Mon, 3 Jun 2019 08:32:22 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <CAK8P3a0brT0zyZGNWiS2R0RMHHFF2JG=_ixQyvjhj3Ky39o0UA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_063040_814991_2D199B4B 
-X-CRM114-Status: GOOD (  19.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190603_063226_801213_7AF2491C 
+X-CRM114-Status: GOOD (  31.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [203.11.71.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,169 +109,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Young Xiao <92siuyang@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>, fweisbec@gmail.com, x86@kernel.org,
- linux@armlinux.org.uk, eranian@google.com, linux-kernel@vger.kernel.org,
- acme@redhat.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- ravi.bangoria@linux.vnet.ibm.com, jolsa@redhat.com,
- linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
+ Networking <netdev@vger.kernel.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, abhishek.esse@gmail.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-arm-msm@vger.kernel.org, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Will Deacon <will.deacon@arm.com> writes:
-> On Thu, May 30, 2019 at 03:57:36PM +0530, Ravi Bangoria wrote:
->> On 5/30/19 2:08 PM, Ravi Bangoria wrote:
->> >> ---
->> >> Subject: perf: Fix perf_sample_regs_user()
->> >> From: Peter Zijlstra <peterz@infradead.org>
->> >> Date: Wed May 29 14:37:24 CEST 2019
->> >>
->> >> perf_sample_regs_user() uses 'current->mm' to test for the presence of
->> >> userspace, but this is insufficient, consider use_mm().
->> >>
->> >> A better test is: '!(current->flags & PF_KTHREAD)', exec() clears
->> >> PF_KTHREAD after it sets the new ->mm but before it drops to userspace
->> >> for the first time.
->> > 
->> > This looks correct. I'll give it a try.
->> > 
->> >>
->> >> Possibly obsoletes: bf05fc25f268 ("powerpc/perf: Fix oops when kthread execs user process")
->> >>
->> >> Reported-by: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
->> >> Reported-by: Young Xiao <92siuyang@gmail.com>
->> >> Cc: Ravi Bangoria <ravi.bangoria@linux.vnet.ibm.com>
->> >> Cc: Naveen N. Rao <naveen.n.rao@linux.vnet.ibm.com>
->> >> Cc: Michael Ellerman <mpe@ellerman.id.au>
->> >> Cc: Jiri Olsa <jolsa@redhat.com>
->> >> Cc: Frederic Weisbecker <fweisbec@gmail.com>
->> >> Cc: Stephane Eranian <eranian@google.com>
->> >> Cc: Arnaldo Carvalho de Melo <acme@redhat.com>
->> >> Acked-by: Will Deacon <will.deacon@arm.com>
->> >> Fixes: 4018994f3d87 ("perf: Add ability to attach user level registers dump to sample")
->> >> Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
->> >> ---
->> >>  kernel/events/core.c |    2 +-
->> >>  1 file changed, 1 insertion(+), 1 deletion(-)
->> >>
->> >> --- a/kernel/events/core.c
->> >> +++ b/kernel/events/core.c
->> >> @@ -5923,7 +5923,7 @@ static void perf_sample_regs_user(struct
->> >>  	if (user_mode(regs)) {
->> >>  		regs_user->abi = perf_reg_abi(current);
->> >>  		regs_user->regs = regs;
->> >> -	} else if (current->mm) {
->> >> +	} else if (!(current->flags & PF_KTHREAD)) {
->> 
->> With this patch applied and my patch reverted, I still see it crashing
->> because current->flags does not have PF_KTHREAD set. Sample trace with
->> v5.0 kernel:
->> 
->> 
->>    BUG: Kernel NULL pointer dereference at 0x00000000
->>    Faulting instruction address: 0xc0000000000f1a6c
->>    Oops: Kernel access of bad area, sig: 11 [#1]
->>    LE SMP NR_CPUS=2048 NUMA pSeries
->>    CPU: 17 PID: 3241 Comm: systemd-cgroups Kdump: loaded Not tainted 5.0.0+ #7
->>    NIP:  c0000000000f1a6c LR: c0000000002acc7c CTR: c0000000002a8f90
->>    REGS: c0000001e80469a0 TRAP: 0300   Not tainted  (5.0.0+)
->>    MSR:  8000000000001033 <SF,ME,IR,DR,RI,LE>  CR: 48022448  XER: 20000000
->>    CFAR: c00000000000deb4 DAR: 0000000000000000 DSISR: 40000000 IRQMASK: 1 
->>    GPR00: c0000000002acc7c c0000001e8046c30 c000000001607500 0000000000000000 
->>    GPR04: 0000000000000000 0000000000000000 0000000000000000 c000000000128618 
->>    GPR08: 000007ffffffffff 0000000000000000 ffffffffffffffff c00000000001cd40 
->>    GPR12: c000000000446fd8 c00000003ffdf080 00000000ffff0000 0000000000000007 
->>    GPR16: c0000001edd74988 c0000001edd60400 00007fff89801130 000000000005e1b0 
->>    GPR20: c0000001edb77a08 c0000001e8047208 c0000001f03d9800 c0000001e8046e00 
->>    GPR24: 000000000000b1af c000000001126938 c0000001f03d9b28 0000000000010000 
->>    GPR28: c0000001e8046d30 0000000000000000 0000000000000000 0000000000000000 
->>    NIP [c0000000000f1a6c] perf_reg_value+0x5c/0xc0
->>    LR [c0000000002acc7c] perf_output_sample_regs+0x6c/0xd0
->>    Call Trace:
->>    [c0000001e8046c30] [c0000000002acc7c] perf_output_sample_regs+0x6c/0xd0 (unreliable)
->>    [c0000001e8046c80] [c0000000002b9cd0] perf_output_sample+0x620/0x8c0
->>    [c0000001e8046d10] [c0000000002ba6b4] perf_event_output_forward+0x64/0x90
->>    [c0000001e8046d80] [c0000000002b2908] __perf_event_overflow+0x88/0x1e0
->>    [c0000001e8046dd0] [c0000000000f3d18] record_and_restart+0x288/0x670
->>    [c0000001e8047180] [c0000000000f4c18] perf_event_interrupt+0x2b8/0x4b0
->>    [c0000001e8047280] [c00000000002b380] performance_monitor_exception+0x50/0x70
->>    [c0000001e80472a0] [c000000000009ca0] performance_monitor_common+0x110/0x120
->>    --- interrupt: f01 at slice_scan_available+0x20/0xc0
->>        LR = slice_find_area+0x174/0x210
->>    [c0000001e8047630] [c000000000083ea0] slice_get_unmapped_area+0x3d0/0x7f0
->>    [c0000001e8047ae0] [c00000000032d5b0] get_unmapped_area+0xa0/0x170
->>    [c0000001e8047b10] [c00000000001cd40] arch_setup_additional_pages+0xc0/0x1c0
->>    [c0000001e8047b60] [c000000000446fd8] load_elf_binary+0xb48/0x1580
->>    [c0000001e8047c80] [c0000000003c3938] search_binary_handler+0xe8/0x2a0
->>    [c0000001e8047d10] [c0000000003c42f4] __do_execve_file.isra.13+0x694/0x980
->>    [c0000001e8047de0] [c000000000128618] call_usermodehelper_exec_async+0x248/0x290
->>    [c0000001e8047e20] [c00000000000b65c] ret_from_kernel_thread+0x5c/0x80
->>    Instruction dump:
->>    7c9e2378 7c7f1b78 f8010010 f821ffd1 419e0044 3d22ff6b 7bc41764 3929ae10 
->>    7d29202e 2b890150 419d003c 38210030 <7c7f482a> e8010010 ebc1fff0 ebe1fff8 
->>    ---[ end trace 54f3492ad1d403d8 ]---
->
-> Oh, nice! I think this happens because Power doesn't actually initialise
-> the regs after a kthread execs() until late in start_thread().
+On 6/3/19 5:04 AM, Arnd Bergmann wrote:
+> On Sat, Jun 1, 2019 at 1:59 AM Subash Abhinov Kasiviswanathan
+> <subashab@codeaurora.org> wrote:
+>> On 2019-05-31 17:33, Bjorn Andersson wrote:
+>>> On Fri 31 May 13:47 PDT 2019, Alex Elder wrote:
+>>>> On 5/31/19 2:19 PM, Arnd Bergmann wrote:
+>>> But any such changes would either be years into the future or for
+>>> specific devices and as such not applicable to any/most of devices on
+>>> the market now or in the coming years.
+>>>
+>>>
+>>> But as Arnd points out, if the software split between IPA and rmnet is
+>>> suboptimal your are encouraged to fix that.
+>>
+>> The split rmnet design was chosen because we could place rmnet
+>> over any transport - IPA, PCIe (https://lkml.org/lkml/2018/4/26/1159)
+>> or USB.
+>>
+>> rmnet registers a rx handler, so the rmnet packet processing itself
+>> happens in the same softirq when packets are queued to network stack
+>> by IPA.
+> 
+> I've read up on the implementation some more, and concluded that
+> it's mostly a regular protocol wrapper, doing IP over QMAP. There
+> is nothing wrong with the basic concept I think, and as you describe
+> this is an abstraction to keep the common bits in one place, and
+> have them configured consistently.
+> 
+> A few observations on more details here:
+> 
+> - What I'm worried about most here is the flow control handling on the
+>   transmit side. The IPA driver now uses the modern BQL method to
+>   control how much data gets submitted to the hardware at any time.
+>   The rmnet driver also uses flow control using the
+>   rmnet_map_command() function, that blocks tx on the higher
+>   level device when the remote side asks us to.
+>   I fear that doing flow control for a single physical device on two
+>   separate netdev instances is counterproductive and confuses
+>   both sides.
 
-Hmm, it's more or less at the top of start_thread(), but that's late vs
-flush_old_exec(), so there's definitely a window there.
+I understand what you're saying here, and instinctively I think
+you're right.
 
-> But the plot thickens somewhat, since current_pt_regs() is different to
-> task_pt_regs(current) on Power (the former cannot return NULL).
+But BQL manages the *local* interface's ability to get rid of
+packets, whereas the QMAP flow control is initiated by the other
+end of the connection (the modem in this case).
 
-Ugh.
+With multiplexing, it's possible that one of several logical
+devices on the modem side has exhausted a resource and must
+ask the source of the data on the host side to suspend the
+flow.  Meanwhile the other logical devices sharing the physical
+link might be fine, and should not be delayed by the first one. 
 
-Mark had convinced me in the other part of the thread that returning
-NULL for kthreads made sense, but having different results depending on
-which similarly named accessor you use is gross.
+It is the multiplexing itself that confuses the BQL algorithm.
+The abstraction obscures the *real* rates at which individual
+logical connections are able to transmit data.
 
-We used to implement current_pt_regs() without actually looking at
-current via:
+Even if the multiple logical interfaces implemented BQL, they
+would not get the feedback they need directly from the IPA
+driver, because transmitting over the physical interface might
+succeed even if the logical interface on the modem side can't
+handle more data.  So I think the flow control commands may be
+necessary, given multiplexing.
 
-	((struct pt_regs *)((unsigned long)current_thread_info() + THREAD_SIZE) - 1)
+The rmnet driver could use BQL, and could return NETDEV_TX_BUSY
+for a logical interface when its TX flow has been stopped by a
+QMAP command.  That way the feedback for BQL on the logical
+interfaces would be provided in the right place.
 
-Where current_thread_info() just masked the stack pointer, so that was a
-nice optimisation.
+I have no good intuition about the interaction between
+two layered BQL managed queues though.
 
-But now that we have THREAD_INFO_IN_TASK we're going via current anyway,
-so we may as well just get rid of current_pt_regs() and make it a
-synonym for task_pt_regs(current).
+> - I was a little confused by the location of the rmnet driver in
+>   drivers/net/ethernet/... More conventionally, I think as a protocol
+>   handler it should go into net/qmap/, with the ipa driver going
+>   into drivers/net/qmap/ipa/, similar to what we have fo ethernet,
+>   wireless, ppp, appletalk, etc.
+> 
+> - The rx_handler uses gro_cells, which as I understand is meant
+>   for generic tunnelling setups and takes another loop through
+>   NAPI to aggregate data from multiple queues, but in case of
+>   IPA's single-queue receive calling gro directly would be simpler
+>   and more efficient.
 
-Though that will probably cause something else to break :D
+I have been planning to investigate some of the generic GRO
+stuff for IPA but was going to wait on that until the basic
+code was upstream.
+
+> - I'm still not sure I understand the purpose of the layering with
+>   using an rx_handler as opposed to just using
+>   EXPORT_SYMBOL(rmnet_rx_handler) and calling that from
+>   the hardware driver directly.
+
+I think that's a good idea.
+
+>   From the overall design and the rmnet Kconfig description, it
+>   appears as though the intention as that rmnet could be a
+>   generic wrapper on top of any device, but from the
+>   implementation it seems that IPA is not actually usable that
+>   way and would always go through IPA.
+
+As far as I know *nothing* upstream currently uses rmnet; the
+IPA driver will be the first, but as Bjorn said others seem to
+be on the way.  I'm not sure what you mean by "IPA is not
+usable that way."  Currently the IPA driver assumes a fixed
+configuration, and that configuration assumes the use of QMAP,
+and therefore assumes the rmnet driver is layered above it.
+That doesn't preclude rmnet from using a different back end.
+
+And I'll also mention that although QMAP *can* do multiplexed
+connections over a single physical link, the IPA code I posted
+currently supports only one logical interface.
+
+					-Alex
 
 
-> So a really hideous hack on top of Peter's patch might be:
->
-> diff --git a/arch/arm64/kernel/perf_regs.c b/arch/arm64/kernel/perf_regs.c
-> index 0bbac612146e..5bde866024b6 100644
-> --- a/arch/arm64/kernel/perf_regs.c
-> +++ b/arch/arm64/kernel/perf_regs.c
-> @@ -57,6 +57,6 @@ void perf_get_regs_user(struct perf_regs *regs_user,
->  			struct pt_regs *regs,
->  			struct pt_regs *regs_user_copy)
->  {
-> -	regs_user->regs = task_pt_regs(current);
-> +	regs_user->regs = current_pt_regs();
->  	regs_user->abi = perf_reg_abi(current);
-
-
-I'd be inclined to stick with what we've got, at least so long as we're
-the only arch that lets task_pt_regs() return NULL.
-
-void perf_get_regs_user(struct perf_regs *regs_user,
-			struct pt_regs *regs,
-			struct pt_regs *regs_user_copy)
-{
-	regs_user->regs = task_pt_regs(current);
-	regs_user->abi = (regs_user->regs) ? perf_reg_abi(current) :
-			 PERF_SAMPLE_REGS_ABI_NONE;
-}
-
-
-cheers
+> 
+>         Arnd
+> 
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
