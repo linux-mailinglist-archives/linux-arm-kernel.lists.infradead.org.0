@@ -2,73 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE3E9327E7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 07:13:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 598E53280F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 07:39:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i5itpzdDRVY0llOkU0ctrVxyZ6yl8q/oAEFprz5klnI=; b=qg9rFStGmKEEnl
-	tdfDWEoX7HIJ+R2lBmKD8vmE0kCq8sEgA/k8x+TU7B+VYxdjUEWVv077DD85Ru1LHKhyJN1+kacUO
-	1F+9YGHUg04Pfx55U7/kVi0ALozGcg/eK1AtZHut0VG9xghKpi+GdhLBckFKW3A2tKicpuenNWlut
-	qgB78fhMoK77I3uuw4Q8JcjIFLJD37aGprgHqFi1sgG0A3yWijlBSg1YWlLqMOyDWuc5boAuNLtQE
-	5vSc+i/EV+QNzDTBknuIXdjZmnhksXFnzcZheJTU1cekXQaThTAsi7AKsABgk6yEf1Q9lEbw3Csl1
-	5NQWfWmgiE28gA7Zu+IA==;
+	List-Owner; bh=T52hW/VySnF/bzwRJosGvgDClb6a81Msew3zQ37Bi44=; b=K92TsYzHL0gpxR
+	9zR7GHAMvqmNY1bDyKdWOJlWrt+a1pgrOMnAaFVMRk42D20ztW5/IOYguSN8JpBfxm2r7l81dKk4P
+	DRWBe4z3Jm6sHPVkp35Pgr0+6VcioTsdK3liLV7PaH7SbbTNEy4y6jz6/O/VMgF3pkLgAxUxisk7i
+	Tvq3k2gNN26UklQ9L5C4m+KuIAcqeCLWmOZpjX//Nb5hrcgcVZj6cCfjDFvg74kV8WbeHml4TiAhg
+	Y9VMBXs58dCVaEaRN4X73m7ES3DkFJAa97tVq0zCAtmpugpAs87WDd/huKDqLVjuE27tnEIiAWTdM
+	hM8LFQPcDG0dM/fVDcIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXfHD-0008Iw-QL; Mon, 03 Jun 2019 05:12:55 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hXfga-0007Hm-G2; Mon, 03 Jun 2019 05:39:08 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXfH7-0008Ic-84
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 05:12:51 +0000
-Received: by mail-lj1-x243.google.com with SMTP id e13so14828797ljl.11
+ id 1hXfgU-0007HK-El
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 05:39:03 +0000
+Received: by mail-pg1-x541.google.com with SMTP id h2so4362029pgg.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 02 Jun 2019 22:12:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mobiveil.co.in; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1hhBDceAp7DealibgpzRgQkbsVjG+SPyfDmMhWMC+1k=;
- b=jG9jP4nThSDZwaD/kp6Xib4Vyzog5fkGaOB9Mcgv4DXEGXAX3fPA+ceqLabquL17Cy
- 7tX1tYLDfASqHNZdWw9421ZUVBGDAvLcloFKmmp0yrGGjo8RmoLOehp9xgiAKKaLYiez
- 8RIVCutou53+Y/XUepTtiE9JghvqzS/w1te3s=
+ Sun, 02 Jun 2019 22:38:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=6l/t3TPXvfJk0FS5YLye4jJo2DVIjuavG0t1rw643+k=;
+ b=ktlv2Mm+By5P70XspYlFjdpSJ4FlQUI0eZS4JlIBkO/7/R5LyitYYA50M/cEXEQ2sA
+ nqUh/zQ26C7HTbHeGzl8tZcGwKECYp61JdNHaqddmXtgebc8aWJJ37uZr/ARaS907BpA
+ mPqLEydS8bIEj2b2bfV+te5IErDpqLzBS53VmN9aPDNau0llfo7GMgeNt2UZ/UcODWhS
+ DwSbpELYfj5kPrLS2W4tM3uLQwjuGFtCSTH0yXivvXXY26bjZnkAxR2rRCQKCsCRjjXd
+ bOn/eFPHnIKuX75JrjoTEu0NHK9AQ/y4Iaw4vSh4u/vCMV8qObPUWooWjoB5k+0A5H94
+ rVFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1hhBDceAp7DealibgpzRgQkbsVjG+SPyfDmMhWMC+1k=;
- b=J7XjA1ZQWZE8v8L6t/TlU5XfJA/9BdcLAXndqze8a732M0OOntJP0OpJ3Jhhs8aNNA
- V2N3ES8B1p2vlyqZ9QQmmau6OH6T73lSPVVexLn+vcpO0zf6jftws5+587PTydbbjpgo
- RGf2R/QOO3kQv7C6duUAeYhEuwS0ziVFRCawGUaiLXcH6PU0mohH6OI+GcwNaClDsNt0
- tRCu8fG/n4byGR3g1H6easas+uR1+zX2LxO7hl+w1QhiHZ9ZTmQwN5CrHIItB1msq8ev
- MlRZje5A/UIbAOUkaC1Uj491remXtAUHs7gF9CDLTg5SBJoQjW9ni5FvjBPHMRSpyQA+
- SeOg==
-X-Gm-Message-State: APjAAAUiAv4wgmn7d1m3ltIoI2OC8J23J3XBr1qQ0Ckh1M98dZTYHoQf
- S1H9zTjGjHBD+xpj4QvAuzLbFTEMQOKoDrmXHRrrb2k88bn5bHDzab/kH9q+asVwEWb8DqiDs7q
- 2AnnCIbanTHSGdMXJx11VWzTiKrvGYG3Bb0mm/2Lhfme3
-X-Google-Smtp-Source: APXvYqyWjAc8SYG4ta2+f5Ybndd/TXrp1FQlRY75lQ4TqUbou9Kfolc0l0Jje5R6RKuhzCRFDrhia/kPvTtHFiIVU30=
-X-Received: by 2002:a2e:8555:: with SMTP id u21mr12390145ljj.133.1559538766557; 
- Sun, 02 Jun 2019 22:12:46 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=6l/t3TPXvfJk0FS5YLye4jJo2DVIjuavG0t1rw643+k=;
+ b=biw1WmRG/+uTJB2wcL2vu02nGtqiDDuhVh20UeeCSlo/b92WTZ3yJXLj9z7tEEbgdI
+ zUO4UucZy+i1zjRn2QAN5q1wRihK6zJ08o2+DDLcqrZ9x6deqEgrQMtznXjfOza+wzn/
+ DPl4zRcGUdBw7KXV7BCW6Pa0rkBi3rcHqueYyfNstt3uV+mzARTHOm5qWaRGwpqzFRV5
+ XL2vW9TVtfSSZ9yRwpZXrImcz8Y4/50wFzOgzByDSuZyevutNVQ7WLU6J1Pv9Ads8fv2
+ ZyDXuyLGRdQrrcHR9zBLNQgisAq1sUaXc30Y96+R7nmJ0U16PXFIAx03PzOOnpl57Trf
+ NZ6g==
+X-Gm-Message-State: APjAAAXr/XMb3lo+vnP1guxGdz+bsf+bU3OxTExfY/6LLtbZ9nvSL+ll
+ H/8P+wQ6EfAZkYGvaA74BMl5kw==
+X-Google-Smtp-Source: APXvYqxPwjgggsw3vyhv07YeyRgvqkFWuIU3POtBpFlAjIwDxc07WYB9GVgYDELUGf58CTZeMA36Dw==
+X-Received: by 2002:a17:90a:de14:: with SMTP id
+ m20mr27355763pjv.36.1559540337621; 
+ Sun, 02 Jun 2019 22:38:57 -0700 (PDT)
+Received: from localhost ([122.172.66.84])
+ by smtp.gmail.com with ESMTPSA id w187sm15573923pfb.4.2019.06.02.22.38.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 02 Jun 2019 22:38:53 -0700 (PDT)
+Date: Mon, 3 Jun 2019 11:08:50 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH 3/3] cpufreq: Switch imx7d to imx-cpufreq-dt for speed
+ grading
+Message-ID: <20190603053850.tkskdzcloir4k3kw@vireshk-i7>
+References: <b6a9b9f80534af5c12db30a0bb699ec850f85be7.1559131365.git.leonard.crestez@nxp.com>
+ <8787934ff35e7e55837f2caabc0d5bf65828d971.1559131365.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
-References: <20190528065129.8769-1-Zhiqiang.Hou@nxp.com>
- <20190528065129.8769-6-Zhiqiang.Hou@nxp.com>
-In-Reply-To: <20190528065129.8769-6-Zhiqiang.Hou@nxp.com>
-From: Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
-Date: Mon, 3 Jun 2019 10:42:33 +0530
-Message-ID: <CAKnKUHH8JU2Bqgq90rfgZ8r0xxB_RMRj16DBBLDhMpg3mwFU2Q@mail.gmail.com>
-Subject: Re: [PATCHv6 5/6] arm64: dts: lx2160a: Add PCIe controller DT nodes
-To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <8787934ff35e7e55837f2caabc0d5bf65828d971.1559131365.git.leonard.crestez@nxp.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_221249_352965_18605A6A 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20190602_223902_494981_E318D92D 
+X-CRM114-Status: GOOD (  18.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -90,236 +100,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- Xiaowei Bao <xiaowei.bao@nxp.com>, "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Abel Vesa <abel.vesa@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hou Zhiqiang
-   Two instances [@3600000 and @3800000] of the six has a different
-window count, the RC can not have more than 8 windows.
-apio-wins = <256>;  //Can we change it to 8
-ppio-wins = <24>;    //Can we change it to 8
-
-On Tue, May 28, 2019 at 12:20 PM Z.q. Hou <zhiqiang.hou@nxp.com> wrote:
->
-> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
->
-> The LX2160A integrated 6 PCIe Gen4 controllers.
->
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+On 29-05-19, 12:03, Leonard Crestez wrote:
+> This driver can handle speed grading bits on imx7d just like on imx8mq
+> and imx8mm.
+> 
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 > ---
-> V6:
->  - No change.
->
->  .../arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 163 ++++++++++++++++++
->  1 file changed, 163 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> index 125a8cc2c5b3..7a2b91ff1fbc 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> @@ -964,5 +964,168 @@
->                                 };
->                         };
->                 };
+>  arch/arm/mach-imx/mach-imx7d.c       | 7 +++++++
+>  drivers/cpufreq/cpufreq-dt-platdev.c | 2 +-
+>  drivers/cpufreq/imx-cpufreq-dt.c     | 1 +
+>  3 files changed, 9 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/mach-imx/mach-imx7d.c b/arch/arm/mach-imx/mach-imx7d.c
+> index 26ca744d3e2b..0b77412795c9 100644
+> --- a/arch/arm/mach-imx/mach-imx7d.c
+> +++ b/arch/arm/mach-imx/mach-imx7d.c
+> @@ -95,10 +95,16 @@ static void __init imx7d_init_machine(void)
+>  
+>  	imx_anatop_init();
+>  	imx7d_enet_init();
+>  }
+>  
+> +static void __init imx7d_init_late(void)
+> +{
+> +	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
+> +		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
+> +}
 > +
-> +               pcie@3400000 {
-> +                       compatible = "fsl,lx2160a-pcie";
-> +                       reg = <0x00 0x03400000 0x0 0x00100000   /* controller registers */
-> +                              0x80 0x00000000 0x0 0x00001000>; /* configuration space */
-> +                       reg-names = "csr_axi_slave", "config_axi_slave";
-> +                       interrupts = <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
-> +                                    <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> +                                    <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
-> +                       interrupt-names = "aer", "pme", "intr";
-> +                       #address-cells = <3>;
-> +                       #size-cells = <2>;
-> +                       device_type = "pci";
-> +                       dma-coherent;
-> +                       apio-wins = <8>;
-> +                       ppio-wins = <8>;
-> +                       bus-range = <0x0 0xff>;
-> +                       ranges = <0x82000000 0x0 0x40000000 0x80 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +                       msi-parent = <&its>;
-> +                       #interrupt-cells = <1>;
-> +                       interrupt-map-mask = <0 0 0 7>;
-> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>;
-> +                       status = "disabled";
-> +               };
-> +
-> +               pcie@3500000 {
-> +                       compatible = "fsl,lx2160a-pcie";
-> +                       reg = <0x00 0x03500000 0x0 0x00100000   /* controller registers */
-> +                              0x88 0x00000000 0x0 0x00001000>; /* configuration space */
-> +                       reg-names = "csr_axi_slave", "config_axi_slave";
-> +                       interrupts = <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
-> +                                    <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> +                                    <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
-> +                       interrupt-names = "aer", "pme", "intr";
-> +                       #address-cells = <3>;
-> +                       #size-cells = <2>;
-> +                       device_type = "pci";
-> +                       dma-coherent;
-> +                       apio-wins = <8>;
-> +                       ppio-wins = <8>;
-> +                       bus-range = <0x0 0xff>;
-> +                       ranges = <0x82000000 0x0 0x40000000 0x88 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +                       msi-parent = <&its>;
-> +                       #interrupt-cells = <1>;
-> +                       interrupt-map-mask = <0 0 0 7>;
-> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
-> +                       status = "disabled";
-> +               };
-> +
-> +               pcie@3600000 {
-> +                       compatible = "fsl,lx2160a-pcie";
-> +                       reg = <0x00 0x03600000 0x0 0x00100000   /* controller registers */
-> +                              0x90 0x00000000 0x0 0x00001000>; /* configuration space */
-> +                       reg-names = "csr_axi_slave", "config_axi_slave";
-> +                       interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
-> +                                    <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> +                                    <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
-> +                       interrupt-names = "aer", "pme", "intr";
-> +                       #address-cells = <3>;
-> +                       #size-cells = <2>;
-> +                       device_type = "pci";
-> +                       dma-coherent;
-> +                       apio-wins = <256>;
-> +                       ppio-wins = <24>;
-> +                       bus-range = <0x0 0xff>;
-> +                       ranges = <0x82000000 0x0 0x40000000 0x90 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +                       msi-parent = <&its>;
-> +                       #interrupt-cells = <1>;
-> +                       interrupt-map-mask = <0 0 0 7>;
-> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>;
-> +                       status = "disabled";
-> +               };
-> +
-> +               pcie@3700000 {
-> +                       compatible = "fsl,lx2160a-pcie";
-> +                       reg = <0x00 0x03700000 0x0 0x00100000   /* controller registers */
-> +                              0x98 0x00000000 0x0 0x00001000>; /* configuration space */
-> +                       reg-names = "csr_axi_slave", "config_axi_slave";
-> +                       interrupts = <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
-> +                                    <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> +                                    <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
-> +                       interrupt-names = "aer", "pme", "intr";
-> +                       #address-cells = <3>;
-> +                       #size-cells = <2>;
-> +                       device_type = "pci";
-> +                       dma-coherent;
-> +                       apio-wins = <8>;
-> +                       ppio-wins = <8>;
-> +                       bus-range = <0x0 0xff>;
-> +                       ranges = <0x82000000 0x0 0x40000000 0x98 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +                       msi-parent = <&its>;
-> +                       #interrupt-cells = <1>;
-> +                       interrupt-map-mask = <0 0 0 7>;
-> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>;
-> +                       status = "disabled";
-> +               };
-> +
-> +               pcie@3800000 {
-> +                       compatible = "fsl,lx2160a-pcie";
-> +                       reg = <0x00 0x03800000 0x0 0x00100000   /* controller registers */
-> +                              0xa0 0x00000000 0x0 0x00001000>; /* configuration space */
-> +                       reg-names = "csr_axi_slave", "config_axi_slave";
-> +                       interrupts = <GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
-> +                                    <GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> +                                    <GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
-> +                       interrupt-names = "aer", "pme", "intr";
-> +                       #address-cells = <3>;
-> +                       #size-cells = <2>;
-> +                       device_type = "pci";
-> +                       dma-coherent;
-> +                       apio-wins = <256>;
-> +                       ppio-wins = <24>;
-> +                       bus-range = <0x0 0xff>;
-> +                       ranges = <0x82000000 0x0 0x40000000 0xa0 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +                       msi-parent = <&its>;
-> +                       #interrupt-cells = <1>;
-> +                       interrupt-map-mask = <0 0 0 7>;
-> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 129 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 130 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 132 IRQ_TYPE_LEVEL_HIGH>;
-> +                       status = "disabled";
-> +               };
-> +
-> +               pcie@3900000 {
-> +                       compatible = "fsl,lx2160a-pcie";
-> +                       reg = <0x00 0x03900000 0x0 0x00100000   /* controller registers */
-> +                              0xa8 0x00000000 0x0 0x00001000>; /* configuration space */
-> +                       reg-names = "csr_axi_slave", "config_axi_slave";
-> +                       interrupts = <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>, /* AER interrupt */
-> +                                    <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> +                                    <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>; /* controller interrupt */
-> +                       interrupt-names = "aer", "pme", "intr";
-> +                       #address-cells = <3>;
-> +                       #size-cells = <2>;
-> +                       device_type = "pci";
-> +                       dma-coherent;
-> +                       apio-wins = <8>;
-> +                       ppio-wins = <8>;
-> +                       bus-range = <0x0 0xff>;
-> +                       ranges = <0x82000000 0x0 0x40000000 0xa8 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +                       msi-parent = <&its>;
-> +                       #interrupt-cells = <1>;
-> +                       interrupt-map-mask = <0 0 0 7>;
-> +                       interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 2 &gic 0 0 GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 3 &gic 0 0 GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <0000 0 0 4 &gic 0 0 GIC_SPI 107 IRQ_TYPE_LEVEL_HIGH>;
-> +                       status = "disabled";
-> +               };
-> +
->         };
+>  static void __init imx7d_init_irq(void)
+>  {
+>  	imx_init_revision_from_anatop();
+>  	imx_src_init();
+>  	irqchip_init();
+> @@ -111,7 +117,8 @@ static const char *const imx7d_dt_compat[] __initconst = {
 >  };
-> --
-> 2.17.1
->
+>  
+>  DT_MACHINE_START(IMX7D, "Freescale i.MX7 Dual (Device Tree)")
+>  	.init_irq	= imx7d_init_irq,
+>  	.init_machine	= imx7d_init_machine,
+> +	.init_late      = imx7d_init_late,
+>  	.dt_compat	= imx7d_dt_compat,
+>  MACHINE_END
+> diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
+> index 19c1aad57e26..eb282dff9f2c 100644
+> --- a/drivers/cpufreq/cpufreq-dt-platdev.c
+> +++ b/drivers/cpufreq/cpufreq-dt-platdev.c
+> @@ -38,11 +38,10 @@ static const struct of_device_id whitelist[] __initconst = {
+>  	{ .compatible = "hisilicon,hi3660", },
+>  
+>  	{ .compatible = "fsl,imx27", },
+>  	{ .compatible = "fsl,imx51", },
+>  	{ .compatible = "fsl,imx53", },
+> -	{ .compatible = "fsl,imx7d", },
+>  
+>  	{ .compatible = "marvell,berlin", },
+>  	{ .compatible = "marvell,pxa250", },
+>  	{ .compatible = "marvell,pxa270", },
+>  
+> @@ -106,10 +105,11 @@ static const struct of_device_id whitelist[] __initconst = {
+>   */
+>  static const struct of_device_id blacklist[] __initconst = {
+>  	{ .compatible = "calxeda,highbank", },
+>  	{ .compatible = "calxeda,ecx-2000", },
+>  
+> +	{ .compatible = "fsl,imx7d", },
+>  	{ .compatible = "fsl,imx8mq", },
+>  	{ .compatible = "fsl,imx8mm", },
+>  
+>  	{ .compatible = "marvell,armadaxp", },
+>  
+> diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
+> index 5061503cb0a1..ce26ffc18ce6 100644
+> --- a/drivers/cpufreq/imx-cpufreq-dt.c
+> +++ b/drivers/cpufreq/imx-cpufreq-dt.c
+> @@ -18,10 +18,11 @@
+>  #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
+>  #define OCOTP_CFG3_MKT_SEGMENT_SHIFT    6
+>  #define OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 6)
+>  
+>  static const struct of_device_id imx_cpufreq_dt_match_list[] = {
+> +	{ .compatible = "fsl,imx7d" },
+>  	{ .compatible = "fsl,imx8mm" },
+>  	{ .compatible = "fsl,imx8mq" },
+>  	{}
+>  };
 
+What is the purpose of this array and can we get rid of it instead ? I am asking
+as this driver gets probed only if the platform code has created the
+imx-cpufreq-dt device and it shouldn't get created for other machines than what
+is supported.
 
 -- 
-Thanks,
-Regards,
-Karthikeyan Mitran
-
--- 
-Mobiveil INC., CONFIDENTIALITY NOTICE: This e-mail message, including any 
-attachments, is for the sole use of the intended recipient(s) and may 
-contain proprietary confidential or privileged information or otherwise be 
-protected by law. Any unauthorized review, use, disclosure or distribution 
-is prohibited. If you are not the intended recipient, please notify the 
-sender and destroy all copies and the original message.
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
