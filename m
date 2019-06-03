@@ -2,78 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA65133614
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:08:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E20EF33628
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 19:09:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QOBlRA2rRASufAYHm5eXBe979WkmucoDr7YucVHfb8M=; b=gtRG1s7UYsrG9W
-	9yeqDSiE0ehp2dAMMWsfd4HglzuPiigHIq3pFFLfLyALJndFazGLBJYCVJmV8wHfmm31zPkWQAdwd
-	AaCl3/urtLk8fNvhX5WqeVAL01WcZROPepfvb75GAtSVaiAg+dqYx0YRWopYgXhsSxV4QmST07ts7
-	5ETNavfqmW9pSgjzF6oaYTWP2GWEE4+LVItq1I20FEvHt3OVQObCTZLQkhz7FMGJGCpmEo/TkG5qN
-	vg+XyN8ie55KjyoQES3sztJI0Md0H3VzHoOrU9dTUsvYbyv+6fR+LAFrB/MxFwNqMmMLc+VBWkja6
-	/HN+E7L0tw2hPgLaeagA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h22pkZYUldNgZDfB+XZdTOGcFT8/3CWxO6M63co1WkA=; b=PTo2BiNiXOTeds
+	UcHtOW2KuuRWoebUdsjVYuXjf+eyTc/+45Mij3Q66d9t/R6ilm5jaVmFt4wze3Qa75Ou7LUT0yvlC
+	qpZun4mvJDLsJEa7U3pU9MZ8t2OXIncxWJnjJtnT2oQj1iy7yKNBqH2lIkZE1oe95NmCqCeDeL8JO
+	0vlzc/STTFn/Cdnl2QFfKb9eZHrClYns7cR8oT2sykscGZ/tPQTy1HRzq6Ai9ZWkl+p4dQOl5Aymc
+	R+EoXNSZynOBMDOpXEGWjiO+pbmj8PVt2YNTxSUqslzdLIHv6PdD5w0TsM29owgoxv7Tfuddc1kYQ
+	RoAXMjOIT2VXCGo5VyWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqRC-0000Sd-EK; Mon, 03 Jun 2019 17:07:58 +0000
-Received: from mail-qt1-f196.google.com ([209.85.160.196])
+	id 1hXqT5-00019V-MN; Mon, 03 Jun 2019 17:09:55 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqR6-0000SK-9w
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 17:07:53 +0000
-Received: by mail-qt1-f196.google.com with SMTP id z24so3135310qtj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 10:07:52 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Aj0cpcxQ2O6hFlX37bf2kO1xsusmBejE3Ar/NHpEoV4=;
- b=pzXFbBYgkAprv81o4nkUnCmfe78OQbKexUnWswGn8zHRn7Q5slEz820SrkQ9I6pGJj
- Q0RKb4Qkuob22bcDYkyx5IXFzLvSeNmwhjplo4l3z5mQ2TsRDGmiVf87N7KnL9PT+loT
- 5hYS2Zhl89jLgEloEXzM3jm1Azqw5rv723cXq8gWUV9+8KQoRDc+NbUN2GoKpT+oNl8Q
- QqTu3Tbb3p7eqtVs550HcsUJG6M6orub7x/W9h0MlI++4Q1gl9akzv2S+C/olK65JEdf
- m/ugt6qSRm3sBiqkNuuxuTXtKGmN+t2Z2rFXgcLnefdUSbuxhueHAH1lYXLoreJaz/Tn
- 3+pA==
-X-Gm-Message-State: APjAAAX7tjJVFSkCUAmeUtBiMzTU5Bl3u+C+sN/DIdt8W9ntXncCxvpL
- 9Pl1as8peUMPOXh2S45ut3s0Ah1Ag3UcKSagku0=
-X-Google-Smtp-Source: APXvYqwbJWvGlfk068cQnPCsOnTMnS+38b2uW4yx7NPKeQr+nVfqv4x5tnNHu/1skd7GPUOm+SPgjUJEz0LsR7r4j08=
-X-Received: by 2002:ac8:2433:: with SMTP id c48mr23290784qtc.18.1559581671050; 
- Mon, 03 Jun 2019 10:07:51 -0700 (PDT)
+ id 1hXqSk-0000uo-I2; Mon, 03 Jun 2019 17:09:37 +0000
+Received: from ip5f5a6320.dynamic.kabel-deutschland.de ([95.90.99.32]
+ helo=phil.fritz.box)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hXqSd-0004ZW-Vz; Mon, 03 Jun 2019 19:09:28 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: broonie@kernel.org,
+	lee.jones@linaro.org
+Subject: [PATCH v8 RESEND 0/5] support a new rk80x pmic-variants (rk817 and
+ rk809)
+Date: Mon,  3 Jun 2019 19:08:55 +0200
+Message-Id: <20190603170900.5195-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-18-vincenzo.frascino@arm.com>
- <CAK8P3a29QXCP8nw7po06GeYEGvJ_y2GxjAvswFk3=Y6YCjbdDg@mail.gmail.com>
- <200c39f5-3bff-cacb-57c9-e11c57df70f5@android.com>
-In-Reply-To: <200c39f5-3bff-cacb-57c9-e11c57df70f5@android.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 3 Jun 2019 19:07:34 +0200
-Message-ID: <CAK8P3a24SFh1eeYpkU1xWL4_2j5_7ieejwuBZW1m3G6biKSK4g@mail.gmail.com>
-Subject: Re: [PATCH v6 17/19] mips: Add support for generic vDSO
-To: Mark Salyzyn <salyzyn@android.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_100752_340922_A266D2D3 
-X-CRM114-Status: GOOD (  16.53  )
+X-CRM114-CacheID: sfid-20190603_100934_749017_C2B84851 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.196 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -85,62 +58,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Huw Davies <huw@codeweavers.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: huangtao@rock-chips.com, Heiko Stuebner <heiko@sntech.de>,
+ zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, tony.xie@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 3, 2019 at 4:54 PM Mark Salyzyn <salyzyn@android.com> wrote:
-> On 05/31/2019 01:34 AM, Arnd Bergmann wrote:
-> > On Thu, May 30, 2019 at 4:16 PM Vincenzo Frascino
-> > <vincenzo.frascino@arm.com> wrote:
-> >
-> >> --- a/arch/mips/vdso/vdso.lds.S
-> >> +++ b/arch/mips/vdso/vdso.lds.S
-> >> @@ -99,6 +99,10 @@ VERSION
-> >>          global:
-> >>                  __vdso_clock_gettime;
-> >>                  __vdso_gettimeofday;
-> >> +               __vdso_clock_getres;
-> >> +#if _MIPS_SIM != _MIPS_SIM_ABI64
-> >> +               __vdso_clock_gettime64;
-> >> +#endif
-> >>   #endif
-> >>          local: *;
-> >>          };
-> > Same comment as for the corresponding arm change: I'd leave the ABI
-> > changes to a separate patch, and probably not add __vdso_clock_getres
-> > at all.
->
-> Removing this would break ABI (would it really, it just replaces the
-> syscall ... so it is more of a user space expectation)? already present
-> in arm64 before this series.
+I've picked up and rebased Tony's patch-series for rk809 and rk817.
+From the last iteration it looks like the regulator-portion did
+fall through the cracks, the other patches seem to be sufficiently
+reviewed/acked.
 
-What I meant is that we should only keep clock_getres() in the vdso
-for architectures that already have it, to keep the ABI unchanged,
-but not add it to new ones.
+The regulator-patch could either just be picked alone to the regulator-
+tree or with an Ack go through the mfd tree with the other patches.
 
-At the moment, arm64, nds32, ppc, riscv and s390 have clock_getres,
-while arm, mips, sparc, and x86 don't.
 
-Also: on 32-bit architectures with 64-bit time_t, the series only adds
-clock_gettime()., not clock_getres(), so user space should stop
-assuming it's there.
+Original cover-letter + changelog follows:
 
-        Arnd
+Most of functions and registers of the rk817 and rk808 are the same,
+so they can share allmost all codes.
+
+Their specifications are as follows:
+  1) The RK809 and RK809 consist of 5 DCDCs, 9 LDOs and have the same
+registers
+     for these components except dcdc5.
+  2) The dcdc5 is a boost dcdc for RK817 and is a buck for RK809.
+  3) The RK817 has one switch but The Rk809 has two.
+
+Changes in V2:
+1. initialize the pm_pwroff_fn to NULL.
+2. use EXPORT_SYMBOL_GPL to export pm_power_off_prepare.
+3. change patch 2/3/4/5 subjects.
+
+Changes in V3
+1. change patch 4 subjects
+2. replace pr_ with dev_ for printing in patch 2
+3. modify switch1 and switch2 configs in patch 2
+4. explain gpio information for rk809 and rk817 in patch 4
+
+Changes in V4:
+1. modify some codes for patch 2 and patch 5 according to comments 
+2. add reviewer mail lists for patch 3 and 4
+
+Changes in V5:
+modify some codes for patch 1 according to reveiw comments for v3.
+ 1) remove the pm_power_off_prepare() and replace with shutdown
+call-back from syscore
+ 2) move the macro REGMAP_IRQ_M into the regmap.h and rename it
+REGMAP_IRQ_LINE
+ 3) make some dev_warn() log clear
+
+Changes in V6:
+modify some codes according to reveiw comments for v5.
+
+Changes in V7:
+modify some codes for patch 2 according to reveiw comments.
+
+Changes in V8:
+- [Heiko] rebase onto current mainline
+- [Heiko] add some tags from Lee so that he can keep track of what
+  he reviewed
+
+Changes in V8 RESEND:
+- none, just needs a regulator Ack
+
+
+Tony Xie (5):
+  mfd: rk808: Add RK817 and RK809 support
+  regulator: rk808: add RK809 and RK817 support.
+  dt-bindings: mfd: rk808: Add binding information for RK809 and RK817.
+  rtc: rk808: add RK809 and RK817 support.
+  clk: RK808: add RK809 and RK817 support.
+
+ .../devicetree/bindings/mfd/rk808.txt         |  44 ++
+ drivers/clk/Kconfig                           |   9 +-
+ drivers/clk/clk-rk808.c                       |  64 +-
+ drivers/mfd/Kconfig                           |   6 +-
+ drivers/mfd/rk808.c                           | 192 ++++-
+ drivers/regulator/Kconfig                     |   4 +-
+ drivers/regulator/rk808-regulator.c           | 657 +++++++++++++++++-
+ drivers/rtc/Kconfig                           |   4 +-
+ drivers/rtc/rtc-rk808.c                       |  68 +-
+ include/linux/mfd/rk808.h                     | 175 +++++
+ 10 files changed, 1165 insertions(+), 58 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
