@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6E053317F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 15:49:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 362EE3316C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 15:48:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6a1PRzz5mEhCFes3N4GqzVhMsBtL6SgEseLQWvepk2E=; b=mZww9K2AoOECoe
-	d+KxusaatsqP2/E85o/yTGrQiVEbraZMpyLCHoKTwp6Os+8AJZWzdkatmzTrVj5BWvxFcvIv2TqSv
-	8Oclgy1GVCXfnzFF5hSEizE6bc8A5hAAiCW3r2INq3CA7iLBEOJTeDmi/qwyKK8dWAB2svftua5RK
-	WDx3sROkm+6peSXjB+NMOidDMOcdevXr0L1+vwsjhBrPo0kMyvRE5h9pofsX7jQuzeX2gQ7LmMh1x
-	oFmE2yq9D/eYMDtKgoJFw0AA5z9zKlr9U3aJgYk/1vKvufkyflM6cnzGEvDpJHdhzThq/WczPh0yh
-	I/mCqlEJQUoAqZac+YxA==;
+	List-Owner; bh=hzdKnwcZmoDMGhmSiqodbC3RClTGTdo/ayS+EcYhppI=; b=GpKqyllFMyJyPa
+	SRLhP4qVq0JItwyITGfpO1CCiHXmiaPPBMiNN387l1+khsmTjQ6/ZEqIjtcjja1s7HTcLK4LwlQkA
+	DlA5cpEvogZFsktUEyFX8wU63HRc/AMed6z3O+UdVtRQfLSK5olLWamQASPbHwzTSHoow+OunEQxn
+	rOJgepqSoCNdJUB9zIRBv3EIBZqyVsF/02R7obvARCskgY2JoUhte4LwNZpKZzaT15TFPmQ0Y1riP
+	6OxrNj3CEF+ZqTYfjEguELRriXGds5G4F3bJO6Wbq/Ww9R2tx6qHR+h4lfeBrI8qrbReFIVO/xN5p
+	mrPZfrZH9CgGcjMMAJzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXnL7-0005rj-S2; Mon, 03 Jun 2019 13:49:29 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXnKf-0005Y9-7R
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 13:49:06 +0000
-Received: by mail-ua1-x941.google.com with SMTP id e9so6475834uar.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 06:49:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YXhr+BwIgUPhgF4d09b3r0Qo13e2PHna1eP3jnT6Qi8=;
- b=TXfcW5K5F21xYiVGqdDr8P2/r41vdZUFtyMAIbmEa4PA9HQBrjCXpmwxgPeCaxc5Kn
- 71pRxtejDttuMkZIgC0eHVUxzdpXYQfdUg3XmHLRAn1qReEUCbrPnW5cYs08wGLwVwc/
- ef7Wbra9MWQnM9fu2clZCXG/Vj1K+nFSkHnPJVk2HFhWS0U4jUN9txyKWA4ZyIALEatd
- fawasUZ15AvzKv/qiZ47GVpHfQXqQp0ei6/mNxX9dPNT8IkV3us/IjQpswC31ust9lnJ
- So3hEjUkkZ9DyIz2lkAENfADiQ8eo5g4Nhf/vOm74jsGYSURWLPOQo9T2S+RMoTyqpjf
- dYaw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YXhr+BwIgUPhgF4d09b3r0Qo13e2PHna1eP3jnT6Qi8=;
- b=rAV8yc7tAmh3sN3qrv0Q5vLS0ztA0cACpplicSfitiFmlkWQl/IYpZ4TzUkWYMaRDE
- XsWmxz+eL0lxjgjXCz93tcCtUB3bOCbuth7X2vRrYyHX0jZt2CIGrmT7RMnnO3SccPGX
- b1H7za5R7Lrx53T9hOPZQB3Fll/nk6pC1E0M9we+JDRBCboG3Y1CfEUjyYFfL2Nze/lK
- XX9Sna4R8vWftLaxqqIxs9HooM2EgkmZ5img+RevC7wWfMK/2QRc7E1uLW/gGNHRrQmY
- uShvIivO4aDeQFUVaCQBkck7XzlJtY70LVw8Nz4Qd2mqixk3yar/CBid1dVPVPNirI2W
- iJvg==
-X-Gm-Message-State: APjAAAWM02AzqtY7QerE19xQyAifuyEXY03m5NL8P3Sv+mW4Nw5CibK3
- 1ERLHf9iHWKK/6M+51SVNl9/HMk/e9moj6X/P+mzPQ==
-X-Google-Smtp-Source: APXvYqzrxZO8qBHiLmue4vi0qZqpShO+FpOyBYDHmeL01dvSwUywWOH3kWLiqCHfZO66hriRv5CuPb4xhbSbdFDpnng=
-X-Received: by 2002:ab0:16da:: with SMTP id g26mr5873388uaf.15.1559569740038; 
- Mon, 03 Jun 2019 06:49:00 -0700 (PDT)
+	id 1hXnKS-000596-NR; Mon, 03 Jun 2019 13:48:48 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXnKL-00058a-PK
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 13:48:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A740015A2;
+ Mon,  3 Jun 2019 06:48:38 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D8E253F246;
+ Mon,  3 Jun 2019 06:48:36 -0700 (PDT)
+Date: Mon, 3 Jun 2019 14:48:34 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: kvmarm@lists.cs.columbia.edu
+Subject: Re: [PATCH kvmtool v3 5/9] KVM: arm/arm64: Add a vcpu feature for
+ pointer authentication
+Message-ID: <20190603134834.GO28398@e103592.cambridge.arm.com>
+References: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
+ <1559229194-3036-6-git-send-email-Dave.Martin@arm.com>
 MIME-Version: 1.0
-References: <fab0ec653b4e059cdb1206f65bfca051c8b0a7de.1559114458.git-series.maxime.ripard@bootlin.com>
- <18bb36183d93fd6bc03a401c2b6b498c0171d375.1559114458.git-series.maxime.ripard@bootlin.com>
-In-Reply-To: <18bb36183d93fd6bc03a401c2b6b498c0171d375.1559114458.git-series.maxime.ripard@bootlin.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 3 Jun 2019 15:48:23 +0200
-Message-ID: <CAPDyKFrjXAdiuYZRT9+BQ9omPT0g+SaAO3NbEHBkF03S3mzDJA@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] dt-bindings: mmc: sun4i: Add YAML schemas
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <1559229194-3036-6-git-send-email-Dave.Martin@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_064901_329847_FD408A53 
-X-CRM114-Status: GOOD (  19.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190603_064841_837714_850494B0 
+X-CRM114-Status: GOOD (  27.17  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,206 +66,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Rob Herring <robh@kernel.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Peter Maydell <peter.maydell@linaro.org>,
+ Christoffer Dall <cdall@kernel.org>, Marc Zyngier <marc.zyngier@arm.com>,
+ Andre Przywara <andre.przywara@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Zhang Lei <zhang.lei@jp.fujitsu.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 May 2019 at 09:23, Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Switch the DT binding to a YAML schema to enable the DT validation.
->
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+@Peter, do you have an opinion on this (below) ?
 
-Applied for next, thanks!
-
-Kind regards
-Uffe
-
-
->
+On Thu, May 30, 2019 at 04:13:10PM +0100, Dave Martin wrote:
+> From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> 
+> This patch adds a runtime capabality for KVM tool to enable Arm64 8.3
+> Pointer Authentication in guest kernel. Two vcpu features
+> KVM_ARM_VCPU_PTRAUTH_[ADDRESS/GENERIC] are supplied together to enable
+> Pointer Authentication in KVM guest after checking the capability.
+> 
+> Command line options --enable-ptrauth and --disable-ptrauth are added
+> to use this feature. However, if those options are not provided then
+> also this feature is enabled if host supports this capability.
+> 
+> The macros defined in the headers are not in sync and should be replaced
+> from the upstream.
+> 
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com> [merge new kernel heaers]
 > ---
->
-> Changes from v2
->   - Add Rob's Reviewed-by
-> ---
->  Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml | 98 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
->  Documentation/devicetree/bindings/mmc/sunxi-mmc.txt                | 52 +--------------------------------------
->  2 files changed, 98 insertions(+), 52 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
->  delete mode 100644 Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
->
-> diff --git a/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-> new file mode 100644
-> index 000000000000..df0280edef97
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mmc/allwinner,sun4i-a10-mmc.yaml
-> @@ -0,0 +1,98 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mmc/allwinner,sun4i-a10-mmc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>  arm/aarch32/include/kvm/kvm-cpu-arch.h    |  2 ++
+>  arm/aarch64/include/kvm/kvm-config-arch.h |  6 +++++-
+>  arm/aarch64/include/kvm/kvm-cpu-arch.h    |  3 +++
+>  arm/include/arm-common/kvm-config-arch.h  |  2 ++
+>  arm/kvm-cpu.c                             | 20 ++++++++++++++++++--
+>  5 files changed, 30 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arm/aarch32/include/kvm/kvm-cpu-arch.h b/arm/aarch32/include/kvm/kvm-cpu-arch.h
+> index d28ea67..3ec6f03 100644
+> --- a/arm/aarch32/include/kvm/kvm-cpu-arch.h
+> +++ b/arm/aarch32/include/kvm/kvm-cpu-arch.h
+> @@ -13,4 +13,6 @@
+>  #define ARM_CPU_ID		0, 0, 0
+>  #define ARM_CPU_ID_MPIDR	5
+>  
+> +#define ARM_VCPU_PTRAUTH_FEATURE	0
 > +
-> +title: Allwinner A10 MMC Controller Device Tree Bindings
+>  #endif /* KVM__KVM_CPU_ARCH_H */
+> diff --git a/arm/aarch64/include/kvm/kvm-config-arch.h b/arm/aarch64/include/kvm/kvm-config-arch.h
+> index 04be43d..0279b13 100644
+> --- a/arm/aarch64/include/kvm/kvm-config-arch.h
+> +++ b/arm/aarch64/include/kvm/kvm-config-arch.h
+> @@ -8,7 +8,11 @@
+>  			"Create PMUv3 device"),				\
+>  	OPT_U64('\0', "kaslr-seed", &(cfg)->kaslr_seed,			\
+>  			"Specify random seed for Kernel Address Space "	\
+> -			"Layout Randomization (KASLR)"),
+> +			"Layout Randomization (KASLR)"),		\
+> +	OPT_BOOLEAN('\0', "enable-ptrauth", &(cfg)->enable_ptrauth,	\
+> +			"Enables pointer authentication"),		\
+> +	OPT_BOOLEAN('\0', "disable-ptrauth", &(cfg)->disable_ptrauth,	\
+> +			"Disables pointer authentication"),
+>  
+>  #include "arm-common/kvm-config-arch.h"
+>  
+> diff --git a/arm/aarch64/include/kvm/kvm-cpu-arch.h b/arm/aarch64/include/kvm/kvm-cpu-arch.h
+> index a9d8563..9fa99fb 100644
+> --- a/arm/aarch64/include/kvm/kvm-cpu-arch.h
+> +++ b/arm/aarch64/include/kvm/kvm-cpu-arch.h
+> @@ -17,4 +17,7 @@
+>  #define ARM_CPU_CTRL		3, 0, 1, 0
+>  #define ARM_CPU_CTRL_SCTLR_EL1	0
+>  
+> +#define ARM_VCPU_PTRAUTH_FEATURE	((1UL << KVM_ARM_VCPU_PTRAUTH_ADDRESS) \
+> +					| (1UL << KVM_ARM_VCPU_PTRAUTH_GENERIC))
 > +
-> +allOf:
-> +  - $ref: "mmc-controller.yaml"
+>  #endif /* KVM__KVM_CPU_ARCH_H */
+> diff --git a/arm/include/arm-common/kvm-config-arch.h b/arm/include/arm-common/kvm-config-arch.h
+> index 5734c46..1b4287d 100644
+> --- a/arm/include/arm-common/kvm-config-arch.h
+> +++ b/arm/include/arm-common/kvm-config-arch.h
+> @@ -10,6 +10,8 @@ struct kvm_config_arch {
+>  	bool		aarch32_guest;
+>  	bool		has_pmuv3;
+>  	u64		kaslr_seed;
+> +	bool		enable_ptrauth;
+> +	bool		disable_ptrauth;
+>  	enum irqchip_type irqchip;
+>  	u64		fw_addr;
+>  };
+> diff --git a/arm/kvm-cpu.c b/arm/kvm-cpu.c
+> index 7780251..acd1d5f 100644
+> --- a/arm/kvm-cpu.c
+> +++ b/arm/kvm-cpu.c
+> @@ -68,6 +68,18 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
+>  		vcpu_init.features[0] |= (1UL << KVM_ARM_VCPU_PSCI_0_2);
+>  	}
+>  
+> +	/* Check Pointer Authentication command line arguments. */
+> +	if (kvm->cfg.arch.enable_ptrauth && kvm->cfg.arch.disable_ptrauth)
+> +		die("Both enable-ptrauth and disable-ptrauth option cannot be present");
+> +	/*
+> +	 * Always enable Pointer Authentication if system supports
+> +	 * this extension unless disable-ptrauth option is present.
+> +	 */
+> +	if (kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_ADDRESS) &&
+> +	    kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_GENERIC) &&
+> +	    !kvm->cfg.arch.disable_ptrauth)
+> +			vcpu_init.features[0] |= ARM_VCPU_PTRAUTH_FEATURE;
 > +
-> +maintainers:
-> +  - Chen-Yu Tsai <wens@csie.org>
-> +  - Maxime Ripard <maxime.ripard@bootlin.com>
-> +
-> +properties:
-> +  "#address-cells": true
-> +  "#size-cells": true
-> +
-> +  compatible:
-> +    oneOf:
-> +      - const: allwinner,sun4i-a10-mmc
-> +      - const: allwinner,sun5i-a13-mmc
-> +      - const: allwinner,sun7i-a20-mmc
-> +      - const: allwinner,sun8i-a83t-emmc
-> +      - const: allwinner,sun9i-a80-mmc
-> +      - const: allwinner,sun50i-a64-emmc
-> +      - const: allwinner,sun50i-a64-mmc
-> +      - items:
-> +          - const: allwinner,sun8i-a83t-mmc
-> +          - const: allwinner,sun7i-a20-mmc
-> +      - items:
-> +          - const: allwinner,sun50i-h6-emmc
-> +          - const: allwinner,sun50i-a64-emmc
-> +      - items:
-> +          - const: allwinner,sun50i-h6-mmc
-> +          - const: allwinner,sun50i-a64-mmc
-> +      - items:
-> +          - const: allwinner,sun8i-r40-emmc
-> +          - const: allwinner,sun50i-a64-emmc
-> +      - items:
-> +          - const: allwinner,sun8i-r40-mmc
-> +          - const: allwinner,sun50i-a64-mmc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 2
-> +    maxItems: 4
-> +    items:
-> +      - description: Bus Clock
-> +      - description: Module Clock
-> +      - description: Output Clock
-> +      - description: Sample Clock
-> +
-> +  clock-names:
-> +    minItems: 2
-> +    maxItems: 4
-> +    items:
-> +      - const: ahb
-> +      - const: mmc
-> +      - const: output
-> +      - const: sample
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    const: ahb
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +    mmc0: mmc@1c0f000 {
-> +        compatible = "allwinner,sun5i-a13-mmc";
-> +        reg = <0x01c0f000 0x1000>;
-> +        clocks = <&ahb_gates 8>, <&mmc0_clk>;
-> +        clock-names = "ahb", "mmc";
-> +        interrupts = <32>;
-> +        bus-width = <4>;
-> +        cd-gpios = <&pio 7 1 0>;
-> +    };
-> +
-> +# FIXME: We should set it, but it would report all the generic
-> +# properties as additional properties.
-> +# additionalProperties: false
-> +
-> +...
-> diff --git a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt b/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-> deleted file mode 100644
-> index e9cb3ec5e502..000000000000
-> --- a/Documentation/devicetree/bindings/mmc/sunxi-mmc.txt
-> +++ /dev/null
-> @@ -1,52 +0,0 @@
-> -* Allwinner sunxi MMC controller
-> -
-> -The highspeed MMC host controller on Allwinner SoCs provides an interface
-> -for MMC, SD and SDIO types of memory cards.
-> -
-> -Supported maximum speeds are the ones of the eMMC standard 4.5 as well
-> -as the speed of SD standard 3.0.
-> -Absolute maximum transfer rate is 200MB/s
-> -
-> -Required properties:
-> - - compatible : should be one of:
-> -   * "allwinner,sun4i-a10-mmc"
-> -   * "allwinner,sun5i-a13-mmc"
-> -   * "allwinner,sun7i-a20-mmc"
-> -   * "allwinner,sun8i-a83t-emmc"
-> -   * "allwinner,sun9i-a80-mmc"
-> -   * "allwinner,sun50i-a64-emmc"
-> -   * "allwinner,sun50i-a64-mmc"
-> -   * "allwinner,sun50i-h6-emmc", "allwinner.sun50i-a64-emmc"
-> -   * "allwinner,sun50i-h6-mmc", "allwinner.sun50i-a64-mmc"
-> - - reg : mmc controller base registers
-> - - clocks : a list with 4 phandle + clock specifier pairs
-> - - clock-names : must contain "ahb", "mmc", "output" and "sample"
-> - - interrupts : mmc controller interrupt
-> -
-> -Optional properties:
-> - - resets : phandle + reset specifier pair
-> - - reset-names : must contain "ahb"
-> - - for cd, bus-width and additional generic mmc parameters
-> -   please refer to mmc.txt within this directory
-> -
-> -Examples:
-> -       - Within .dtsi:
-> -       mmc0: mmc@1c0f000 {
-> -               compatible = "allwinner,sun5i-a13-mmc";
-> -               reg = <0x01c0f000 0x1000>;
-> -               clocks = <&ahb_gates 8>, <&mmc0_clk>, <&mmc0_output_clk>, <&mmc0_sample_clk>;
-> -               clock-names = "ahb", "mod", "output", "sample";
-> -               interrupts = <0 32 4>;
-> -               status = "disabled";
-> -       };
-> -
-> -       - Within dts:
-> -       mmc0: mmc@1c0f000 {
-> -               pinctrl-names = "default", "default";
-> -               pinctrl-0 = <&mmc0_pins_a>;
-> -               pinctrl-1 = <&mmc0_cd_pin_reference_design>;
-> -               bus-width = <4>;
-> -               cd-gpios = <&pio 7 1 0>; /* PH1 */
-> -               cd-inverted;
-> -               status = "okay";
-> -       };
-> --
-> git-series 0.9.1
+
+Does anyone recall why we need these cap and feature flags for ptrauth
+at all?
+
+We have a window before v5.2 where we could remove them, but we need to
+get a move on if so...
+
+
+As I understand it, the main concern here was to support migrations
+between nodes that have the same hardware but are running different
+kernel versions, thus allowing a new kernel to be deployed across a
+cluster without having to stop the world.
+
+Thus, a guest created on an old kernel where KVM doesn's support
+ptrauth wouldn't detect the caps and wouldn't set those VCPU_INIT
+feature bits: the VCPU_INIT feature set would be recorded in the guest
+metadata by userspace and used for creating vcpus on the new node when
+migrating, forcing ptrauth still to be hidden from the guest even
+if the new node's kernel supports ptrauth for KVM.  Fine.
+
+However, this is equally a problem for other random CPU features, and
+we don't handle those at all for now: any feature that the new kernel
+supports and is present in the hardware will result in changed CPUID
+registers exposed to the guest and thus migration failures.  This
+applies even to features that require no KVM supervision whatever.
+
+So migrating between arbitrary kernel versions doesn't work today.
+For that, we'd need a way for the CPUID sysregs at the destination
+node to values different that the default: we have no logic for that
+today.
+
+What problem(s) are we actually trying to solve here?
+
+Do the ptrauth caps and feature flags actually solve anything?
+
+
+(Note, the SVE case is different: there, the cap and VCPU_INIT flag are
+there to work around an ABI break, so that old userspace doesn't see
+impossibly-large registers through KVM_GET_ONE_REG etc.)
+
+[...]
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
