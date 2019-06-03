@@ -2,64 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4B8F33077
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 15:03:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EC623307E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 15:04:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EcgYwT+QMvVMrIbTeVFmlFPprBzNla8UZrEU07aHjMo=; b=fBnRIKthq0GpEI
-	0Ti9zwHlclx/tHpthbqM0cu5yIIdBKwIljKZzO4yi+VuSlELlfw1LneKns0sPgvybmUcDGkwprXXK
-	cOQe2IA4A+Vvnc9wyLpNR/4dLePykVhqs+xP0j9Suy0JA5owcJLDIlgbu3aUNjggVy5V8XcQxhbPq
-	ZJQ+nHMF/ervmn+zc1371/xUizK95PcnFcO0hXZAPM5vM70VtxlCUfk5dqTpOn1i0dy6Z6E8ZUe/n
-	CTDbmzFN3xH+qyZJZvyG65ytXTbLcVfkcK1bf4RvgnDNIoFDkpcFl3PwiepXCdeQG5Ms3pJTmcWQT
-	jVl2x56DqqLUVEH9Rarw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OvLcNWf7m1QyyRYmyUbi4xt28PdhWVmFTtCgFyKy/N8=; b=GbV4I/XMJMDcsc
+	F5xHWVhxMoCG+Mr20nZ3+yNWp36FoQTZ/s9J8oLihQA4lwSLDJuKnpfY5tgWdkDPXUKRfctDlK74r
+	0sfOXA3lsrfWI7RcrkaMvMI0glp1XkcEJQT/KUgABnKio0lhiRRNYQEebMw3tsoWDAzz0f14/jihU
+	0c3CXkrQr2hDqUDXDRfWlPkJTflFnr01QAoMD2AiNoG0o7JTpA+jSolQROhbRmLSYefuDwB8aOa+4
+	jT7/rx2128MFv60LWEwhysSv2i1a30d1G55kd+xsMT3j+GQpKEtJnbFPohxbUPqmAAaAY5wMWKbU1
+	z6gk+bPjxA7Fql6tAP5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXmcT-00069s-2i; Mon, 03 Jun 2019 13:03:21 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1hXmd5-0006TJ-Hw; Mon, 03 Jun 2019 13:03:59 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXmcM-00069C-97
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 13:03:16 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 03 Jun 2019 06:03:13 -0700
-X-ExtLoop1: 1
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.198])
- ([10.237.72.198])
- by orsmga005.jf.intel.com with ESMTP; 03 Jun 2019 06:03:09 -0700
-Subject: Re: [PATCH 8/9] mmc: sdhci-sprd: Add PHY DLL delay configuration
-To: Baolin Wang <baolin.wang@linaro.org>, ulf.hansson@linaro.org,
- zhang.lyra@gmail.com, orsonzhai@gmail.com, robh+dt@kernel.org,
- mark.rutland@arm.com, arnd@arndb.de, olof@lixom.net
-References: <cover.1558346019.git.baolin.wang@linaro.org>
- <aafceaeb2fc7e9d103d1d7a19cdae97759dd1500.1558346019.git.baolin.wang@linaro.org>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <6b539c8b-c2fd-6c37-d645-ef714c0e29c9@intel.com>
-Date: Mon, 3 Jun 2019 16:01:58 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <aafceaeb2fc7e9d103d1d7a19cdae97759dd1500.1558346019.git.baolin.wang@linaro.org>
+ id 1hXmcw-0006R3-Li
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 13:03:52 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x53D29gj007830; Mon, 3 Jun 2019 15:03:41 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=Yw1hBtZR78FRlvaY6GGctzL2o+O10Y/M0xnj+n+p2Bc=;
+ b=hp+ZYfxxfJeIuT/RaytPDswUXx+ds5iGHjF2orcdEDZur/sIDfUbb85B9EQGs4KkmZ5f
+ KyGWLZ3dGw5KVOu2jhV2/nxv5zvNfcLL605UUPvG+ZyM9FEPm+xK5+zETprDYxSNetBK
+ 67WbBy9piiuojVicOol5hKWDMHkO5ajhMmdwq60YeRFvAmxtmj84JC5QzN5vlNI02N/z
+ gAGV0P6Y6Fa6f/V2PZYnjsYsob6dwUJkUY91V5z2yYA+uYvcQWvUkfZ3LoAuIa63inCd
+ rC6Fr75jQrNQJ5ychX3YNpFTi7pJ+xtYLoa+uuB3+2KnId4alxfXj5ZYAN6AuVL9Q/ip Sw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2sunmeaess-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 03 Jun 2019 15:03:41 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D35C13F;
+ Mon,  3 Jun 2019 13:03:40 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A223D2434;
+ Mon,  3 Jun 2019 13:03:40 +0000 (GMT)
+Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG5NODE2.st.com
+ (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 3 Jun
+ 2019 15:03:40 +0200
+Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
+ SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
+ 15.00.1347.000; Mon, 3 Jun 2019 15:03:40 +0200
+From: Fabien DESSENNE <fabien.dessenne@st.com>
+To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Hugues FRUCHET
+ <hugues.fruchet@st.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "Maxime Coquelin" <mcoquelin.stm32@gmail.com>, Alexandre TORGUE
+ <alexandre.torgue@st.com>, Pavel Machek <pavel@denx.de>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH] media: stm32-dcmi: fix irq = 0 case
+Thread-Topic: [PATCH] media: stm32-dcmi: fix irq = 0 case
+Thread-Index: AQHVF5HP7OIc+eCgyUyFjdbkSczlYqaJswGAgAAV2oA=
+Date: Mon, 3 Jun 2019 13:03:40 +0000
+Message-ID: <dd4ca76b-9f93-5ddc-e878-25b9905e0cd2@st.com>
+References: <1559294295-20573-1-git-send-email-fabien.dessenne@st.com>
+ <46944972-1f88-ef3b-fef9-8e37753c0ffe@xs4all.nl>
+In-Reply-To: <46944972-1f88-ef3b-fef9-8e37753c0ffe@xs4all.nl>
+Accept-Language: fr-FR, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.44]
+Content-ID: <16FAE0F28C0E154C942967FC70244FEE@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-03_10:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_060314_333931_EB64F74D 
-X-CRM114-Status: GOOD (  20.83  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190603_060351_150714_E63864D0 
+X-CRM114-Status: GOOD (  18.50  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,138 +115,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, arm@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/05/19 1:12 PM, Baolin Wang wrote:
-> Set the PHY DLL delay for each timing mode, which is used to sample the clock
-> accurately and make the clock more stable.
-> 
-> Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
-
-One comment, nevertheless:
-
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
-
-> ---
->  drivers/mmc/host/sdhci-sprd.c |   51 +++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 51 insertions(+)
-> 
-> diff --git a/drivers/mmc/host/sdhci-sprd.c b/drivers/mmc/host/sdhci-sprd.c
-> index e6eda13..911a09b 100644
-> --- a/drivers/mmc/host/sdhci-sprd.c
-> +++ b/drivers/mmc/host/sdhci-sprd.c
-> @@ -29,6 +29,8 @@
->  #define  SDHCI_SPRD_DLL_INIT_COUNT	0xc00
->  #define  SDHCI_SPRD_DLL_PHASE_INTERNAL	0x3
->  
-> +#define SDHCI_SPRD_REG_32_DLL_DLY	0x204
-> +
->  #define SDHCI_SPRD_REG_32_DLL_DLY_OFFSET	0x208
->  #define  SDHCIBSPRD_IT_WR_DLY_INV		BIT(5)
->  #define  SDHCI_SPRD_BIT_CMD_DLY_INV		BIT(13)
-> @@ -72,6 +74,24 @@ struct sdhci_sprd_host {
->  	struct clk *clk_2x_enable;
->  	u32 base_rate;
->  	int flags; /* backup of host attribute */
-> +	u32 phy_delay[MMC_TIMING_MMC_HS400 + 2];
-> +};
-> +
-> +struct sdhci_sprd_phy_cfg {
-> +	const char *property;
-> +	u8 timing;
-> +};
-> +
-> +static const struct sdhci_sprd_phy_cfg sdhci_sprd_phy_cfgs[] = {
-> +	{ "sprd,phy-delay-legacy", MMC_TIMING_LEGACY, },
-> +	{ "sprd,phy-delay-sd-highspeed", MMC_TIMING_MMC_HS, },
-
-Did you mean MMC_TIMING_SD_HS
-
-> +	{ "sprd,phy-delay-sd-uhs-sdr50", MMC_TIMING_UHS_SDR50, },
-> +	{ "sprd,phy-delay-sd-uhs-sdr104", MMC_TIMING_UHS_SDR104, },
-> +	{ "sprd,phy-delay-mmc-highspeed", MMC_TIMING_MMC_HS, },
-> +	{ "sprd,phy-delay-mmc-ddr52", MMC_TIMING_MMC_DDR52, },
-> +	{ "sprd,phy-delay-mmc-hs200", MMC_TIMING_MMC_HS200, },
-> +	{ "sprd,phy-delay-mmc-hs400", MMC_TIMING_MMC_HS400, },
-> +	{ "sprd,phy-delay-mmc-hs400es", MMC_TIMING_MMC_HS400 + 1, },
->  };
->  
->  #define TO_SPRD_HOST(host) sdhci_pltfm_priv(sdhci_priv(host))
-> @@ -276,6 +296,9 @@ static unsigned int sdhci_sprd_get_min_clock(struct sdhci_host *host)
->  static void sdhci_sprd_set_uhs_signaling(struct sdhci_host *host,
->  					 unsigned int timing)
->  {
-> +	struct sdhci_sprd_host *sprd_host = TO_SPRD_HOST(host);
-> +	struct mmc_host *mmc = host->mmc;
-> +	u32 *p = sprd_host->phy_delay;
->  	u16 ctrl_2;
->  
->  	if (timing == host->timing)
-> @@ -314,6 +337,9 @@ static void sdhci_sprd_set_uhs_signaling(struct sdhci_host *host,
->  	}
->  
->  	sdhci_writew(host, ctrl_2, SDHCI_HOST_CONTROL2);
-> +
-> +	if (!mmc->ios.enhanced_strobe)
-> +		sdhci_writel(host, p[timing], SDHCI_SPRD_REG_32_DLL_DLY);
->  }
->  
->  static void sdhci_sprd_hw_reset(struct sdhci_host *host)
-> @@ -381,6 +407,8 @@ static void sdhci_sprd_hs400_enhanced_strobe(struct mmc_host *mmc,
->  					     struct mmc_ios *ios)
->  {
->  	struct sdhci_host *host = mmc_priv(mmc);
-> +	struct sdhci_sprd_host *sprd_host = TO_SPRD_HOST(host);
-> +	u32 *p = sprd_host->phy_delay;
->  	u16 ctrl_2;
->  
->  	if (!ios->enhanced_strobe)
-> @@ -395,6 +423,28 @@ static void sdhci_sprd_hs400_enhanced_strobe(struct mmc_host *mmc,
->  	sdhci_writew(host, ctrl_2, SDHCI_HOST_CONTROL2);
->  
->  	sdhci_sprd_sd_clk_on(host);
-> +
-> +	/* Set the PHY DLL delay value for HS400 enhanced strobe mode */
-> +	sdhci_writel(host, p[MMC_TIMING_MMC_HS400 + 1],
-> +		     SDHCI_SPRD_REG_32_DLL_DLY);
-> +}
-> +
-> +static void sdhci_sprd_phy_param_parse(struct sdhci_sprd_host *sprd_host,
-> +				       struct device_node *np)
-> +{
-> +	u32 *p = sprd_host->phy_delay;
-> +	int ret, i, index;
-> +	u32 val[4];
-> +
-> +	for (i = 0; i < ARRAY_SIZE(sdhci_sprd_phy_cfgs); i++) {
-> +		ret = of_property_read_u32_array(np,
-> +				sdhci_sprd_phy_cfgs[i].property, val, 4);
-> +		if (ret)
-> +			continue;
-> +
-> +		index = sdhci_sprd_phy_cfgs[i].timing;
-> +		p[index] = val[0] | (val[1] << 8) | (val[2] << 16) | (val[3] << 24);
-> +	}
->  }
->  
->  static const struct sdhci_pltfm_data sdhci_sprd_pdata = {
-> @@ -428,6 +478,7 @@ static int sdhci_sprd_probe(struct platform_device *pdev)
->  		goto pltfm_free;
->  
->  	sprd_host = TO_SPRD_HOST(host);
-> +	sdhci_sprd_phy_param_parse(sprd_host, pdev->dev.of_node);
->  
->  	clk = devm_clk_get(&pdev->dev, "sdio");
->  	if (IS_ERR(clk)) {
-> 
+Hi Hans
 
 
+"platform_get_irq() = 0" shall be considered as an error. See these 
+discussions:
+https://patchwork.kernel.org/patch/10006651/
+https://yarchive.net/comp/linux/zero.html
+
+BR
+
+Fabien
+
+On 03/06/2019 1:45 PM, Hans Verkuil wrote:
+> On 5/31/19 11:18 AM, Fabien Dessenne wrote:
+>> Manage the irq = 0 case, where we shall return an error.
+>>
+>> Fixes: b5b5a27bee58 ("media: stm32-dcmi: return appropriate error codes during probe")
+>> Signed-off-by: Fabien Dessenne <fabien.dessenne@st.com>
+>> ---
+>>   drivers/media/platform/stm32/stm32-dcmi.c | 2 +-
+>>   1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+>> index b9dad0a..d855e9c 100644
+>> --- a/drivers/media/platform/stm32/stm32-dcmi.c
+>> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
+>> @@ -1702,7 +1702,7 @@ static int dcmi_probe(struct platform_device *pdev)
+>>   	if (irq <= 0) {
+> Shouldn't this be 'irq < 0' instead of '<=' ?
+>
+> AFAICT irq == 0 can be a valid irq and isn't an error.
+>
+> Regards,
+>
+> 	Hans
+>
+>>   		if (irq != -EPROBE_DEFER)
+>>   			dev_err(&pdev->dev, "Could not get irq\n");
+>> -		return irq;
+>> +		return irq ? irq : -ENXIO;
+>>   	}
+>>   
+>>   	dcmi->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
