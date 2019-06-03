@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C292328AE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 08:42:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38A6C328B2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 08:42:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=V6E15g9E0i0KjtomDkxnjX7QvyAYRRoqJHIUQvnI7Pw=; b=ZfVDu8HcuqOI6tgzJ79ZKQlmbI
-	rCJkQzlBtV7yZcPHTY2uN0gN6UuSoPFw8TcBZ8NCt+QtTUf6eyLa1aaRnoB5CMAAfSfn+iHQ+9Wtz
-	01aNIH3Ni41mfukJht0kWbv+M6g2FsGklG/GmKZrOzbJJ6fu9edgDKEqsM1+9T7TXyycoYqe2AqBi
-	UKWVrPeZEjR0307lHpSp9i6zXqR5CWWg4emYzH/bcOAo+IBcDlJCFKsvuqTrxmjEGeQtAhxdybpEh
-	Ttm1lqghPPepLLd35U0Ui5ljpd4CQBLI35gEJFX+L8zlOwFhLJ0VVCbMO2VoB+uaNNSWX9DNg22E1
-	jkrg37Kg==;
+	bh=5XU3pEXjtNn8JuMB3HDG6w4xrphHZhGMkx2twTWNR1A=; b=d6Z02TFsO5wb82BKwNsIru90Hf
+	aU1rf7TQZq1W4N01W7d5Qvons5sxNu4luHEgFiNsgw4CEgn8+0rXis+82fN/SZOMqhe1h7uBP65Bn
+	pI8lqV+0FFvUR7ynI1+KqRRXEgh5u0tbtah2TAOIust+W3tmx3WrrR2fc6BogXNr3sKlh7msVtmhV
+	Wlv82u9JYfl9OVGcoZjOmf+s2Nb6RSWiDvzrxEQ7rQUVH6TWcfqRI6a0hCjvPUs/9KuLTfdt5X3ph
+	K7W+2K6g5335brom5lQqqufnVdxTgWrlUfGJXaqXRWciRMS53cpy0qRH4xSC8ogV3ljMPUSEM/Cvp
+	1RgAm8Tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXgfr-0001yT-95; Mon, 03 Jun 2019 06:42:27 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
+	id 1hXgg1-0002Ga-M5; Mon, 03 Jun 2019 06:42:37 +0000
+Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXgfW-0001im-B2
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 06:42:08 +0000
+ id 1hXgfZ-0001n4-N9
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 06:42:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EED715A2;
- Sun,  2 Jun 2019 23:42:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6C95215AB;
+ Sun,  2 Jun 2019 23:42:09 -0700 (PDT)
 Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
  [10.162.40.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0A4533F5AF;
- Sun,  2 Jun 2019 23:42:02 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7E1A13F5AF;
+ Sun,  2 Jun 2019 23:42:06 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 2/4] arm64/mm: Drop task_struct argument from
- __do_page_fault()
-Date: Mon,  3 Jun 2019 12:11:23 +0530
-Message-Id: <1559544085-7502-3-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V2 3/4] arm64/mm: Consolidate page fault information capture
+Date: Mon,  3 Jun 2019 12:11:24 +0530
+Message-Id: <1559544085-7502-4-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1559544085-7502-1-git-send-email-anshuman.khandual@arm.com>
 References: <1559544085-7502-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190602_234206_524545_A075FF9C 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20190602_234210_408052_544F362B 
+X-CRM114-Status: GOOD (  14.41  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,9 +73,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The task_struct argument is not getting used in __do_page_fault(). Hence
-just drop it and use current or cuurent->mm instead where ever required.
-This does not change any functionality.
+This consolidates page fault information capture and move them bit earlier.
+While here it also adds an wrapper is_el0_write_abort(). It also saves some
+cycles by replacing multiple user_mode() calls into a single one earlier
+during the fault.
 
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
@@ -86,66 +85,90 @@ Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: James Morse <james.morse@arm.com>
 Cc: Andrey Konovalov <andreyknvl@google.com>
 ---
- arch/arm64/mm/fault.c | 15 +++++----------
- 1 file changed, 5 insertions(+), 10 deletions(-)
+ arch/arm64/mm/fault.c | 25 ++++++++++++++++++-------
+ 1 file changed, 18 insertions(+), 7 deletions(-)
 
 diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index dc1cf32..da02678 100644
+index da02678..4bb65f3 100644
 --- a/arch/arm64/mm/fault.c
 +++ b/arch/arm64/mm/fault.c
-@@ -395,8 +395,7 @@ static void do_bad_area(unsigned long addr, unsigned int esr, struct pt_regs *re
- #define VM_FAULT_BADACCESS	0x020000
+@@ -435,6 +435,14 @@ static bool is_el0_instruction_abort(unsigned int esr)
+ 	return ESR_ELx_EC(esr) == ESR_ELx_EC_IABT_LOW;
+ }
  
- static vm_fault_t __do_page_fault(struct mm_struct *mm, unsigned long addr,
--			   unsigned int mm_flags, unsigned long vm_flags,
--			   struct task_struct *tsk)
-+			   unsigned int mm_flags, unsigned long vm_flags)
- {
- 	struct vm_area_struct *vma;
- 	vm_fault_t fault;
-@@ -440,8 +439,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
++/*
++ * This is applicable only for EL0 write aborts.
++ */
++static bool is_el0_write_abort(unsigned int esr)
++{
++	return (esr & ESR_ELx_WNR) && !(esr & ESR_ELx_CM);
++}
++
+ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
  				   struct pt_regs *regs)
  {
- 	const struct fault_info *inf;
--	struct task_struct *tsk;
--	struct mm_struct *mm;
-+	struct mm_struct *mm = current->mm;
+@@ -443,6 +451,9 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
  	vm_fault_t fault, major = 0;
  	unsigned long vm_flags = VM_READ | VM_WRITE;
  	unsigned int mm_flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
-@@ -449,9 +447,6 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
++	bool is_user = user_mode(regs);
++	bool is_el0_exec = is_el0_instruction_abort(esr);
++	bool is_el0_write = is_el0_write_abort(esr);
+ 
  	if (notify_page_fault(regs, esr))
  		return 0;
+@@ -454,12 +465,12 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	if (faulthandler_disabled() || !mm)
+ 		goto no_context;
  
--	tsk = current;
--	mm  = tsk->mm;
--
- 	/*
- 	 * If we're in an interrupt or have no user context, we must not take
- 	 * the fault.
-@@ -510,7 +505,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- #endif
+-	if (user_mode(regs))
++	if (is_user)
+ 		mm_flags |= FAULT_FLAG_USER;
+ 
+-	if (is_el0_instruction_abort(esr)) {
++	if (is_el0_exec) {
+ 		vm_flags = VM_EXEC;
+-	} else if ((esr & ESR_ELx_WNR) && !(esr & ESR_ELx_CM)) {
++	} else if (is_el0_write) {
+ 		vm_flags = VM_WRITE;
+ 		mm_flags |= FAULT_FLAG_WRITE;
  	}
- 
--	fault = __do_page_fault(mm, addr, mm_flags, vm_flags, tsk);
-+	fault = __do_page_fault(mm, addr, mm_flags, vm_flags);
- 	major |= fault & VM_FAULT_MAJOR;
- 
- 	if (fault & VM_FAULT_RETRY) {
-@@ -550,11 +545,11 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 		 * that point.
+@@ -487,7 +498,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	 * we can bug out early if this is from code which shouldn't.
+ 	 */
+ 	if (!down_read_trylock(&mm->mmap_sem)) {
+-		if (!user_mode(regs) && !search_exception_tables(regs->pc))
++		if (!is_user && !search_exception_tables(regs->pc))
+ 			goto no_context;
+ retry:
+ 		down_read(&mm->mmap_sem);
+@@ -498,7 +509,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
  		 */
- 		if (major) {
--			tsk->maj_flt++;
-+			current->maj_flt++;
- 			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MAJ, 1, regs,
- 				      addr);
- 		} else {
--			tsk->min_flt++;
-+			current->min_flt++;
- 			perf_sw_event(PERF_COUNT_SW_PAGE_FAULTS_MIN, 1, regs,
- 				      addr);
+ 		might_sleep();
+ #ifdef CONFIG_DEBUG_VM
+-		if (!user_mode(regs) && !search_exception_tables(regs->pc)) {
++		if (!is_user && !search_exception_tables(regs->pc)) {
+ 			up_read(&mm->mmap_sem);
+ 			goto no_context;
  		}
+@@ -516,7 +527,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 		 * in __lock_page_or_retry in mm/filemap.c.
+ 		 */
+ 		if (fatal_signal_pending(current)) {
+-			if (!user_mode(regs))
++			if (!is_user)
+ 				goto no_context;
+ 			return 0;
+ 		}
+@@ -561,7 +572,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ 	 * If we are in kernel mode at this point, we have no context to
+ 	 * handle this fault with.
+ 	 */
+-	if (!user_mode(regs))
++	if (!is_user)
+ 		goto no_context;
+ 
+ 	if (fault & VM_FAULT_OOM) {
 -- 
 2.7.4
 
