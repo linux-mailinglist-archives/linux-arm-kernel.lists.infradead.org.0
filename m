@@ -2,103 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2FA532B21
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:50:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D18832B24
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:50:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=797DQZCzXkbe9Yk77UlelqOMLKZR9FTtkmZN86WY9OY=; b=jHz/KK1BTCqeq0
-	ZxDnIDdgDaK2RZYD155Z1L3mrWj7/AQMtIh4ANYjL/aUZFBJ7vvH1XERQciQ9gexy7kG7fpsu4p/f
-	hGBnPvhQj4G9f9CZdzGF0Z7EO44GW2XqUmSvSNAZqXJyGF0S0WBadRtaqADsi6SHX7I9EP6xxFSrV
-	svLihk9Jnw9ow327qILa2e4L8Ad3pxHia2WR3KpgA/Frl4UBrNy0mAYGo5jtsMaVjFssQSIc2dpnh
-	F5x1j+psL3KA1pPsjQMZmTno53kSLh8mn2H8gQ6DRnYJ+jKw0TxlhyB9Mnr3HCrxbG479ID8mn56H
-	v062fUaD3rsQkI341tgQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BP/ESaVd5+Bpl//kZTO6S0jxpatxI/VnvmoY2NIM+Ec=; b=ESJppNR2GDD75kYDf75o+kFhF
+	wWtruQWFQvB14ZM9xx9LfuqCrFeKgvicnUUvSvLjyJ2AR2a8Sm1RLJubVlh8RwZEu5jkGTZGeJ6ky
+	ZT6O1vXELfwrq1MiiSndtqjsbS76GJMQ8LUdlSMqeu+9W08sh+cQyjgFgHsHHzJiWN8O0XA1jiKcN
+	NAEZYqsaOdlh9X5XtyXLZfhC6VQ14kQy42DWM8edQ0mmJKxlIOLYT3NSAhjxBxPliPp32Dr10hdPo
+	wvYQB86RUjKjsVurvxwL4x8stfc+B5QyOj5kR8GNOtLOZUfPqs2fGaCRIDXX6jvZGkXXxROEJ51HA
+	W3WqZEZig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXifW-0005a9-RY; Mon, 03 Jun 2019 08:50:14 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXif5-000520-NZ
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:50:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CD4AA374;
- Mon,  3 Jun 2019 01:49:44 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 982DD3F690; Mon,  3 Jun 2019 01:49:43 -0700 (PDT)
-Subject: Re: [PATCH v3] PCI: xilinx-nwl: Fix Multi MSI data programming
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com>
-References: <1559133469-11981-1-git-send-email-bharat.kumar.gogada@xilinx.com>
- <20190531160956.GB9356@redmoon>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <5de53585-e90f-77d2-bd96-025e1b39a573@arm.com>
-Date: Mon, 3 Jun 2019 09:49:42 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hXift-0006qr-0x; Mon, 03 Jun 2019 08:50:37 +0000
+Received: from esa2.hgst.iphmx.com ([68.232.143.124])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hXifk-0006px-PL; Mon, 03 Jun 2019 08:50:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1559551865; x=1591087865;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=MIAH61ZDoSTIi8UI2nEz3ddvY2H2UI9t9luM6KSxPSM=;
+ b=nFaZ0xgrwwbD6RrZ757Y/jwU+ur/YBh15MzGm4rskeMpLuYImI2ZDyn8
+ r5JIJsFaOl+v+Bkt/jXNMRmoXHihiqqSJFGHkycoeapfgJ6xw21ofmtH5
+ VCmSx6IqIMA11ciDQ9Inj2ZqR+De0E+fN4IMrG5x8m0jmfxcnK4hqTU28
+ umNGS5tEvdJ96MSwmcbErU+5EqnCbh5fhW4/QTnCcZ5GS+RK7s/lla5RC
+ 5Wrmbj4QYLPMJVzxzwX95w5/ajAtqjK6zwlA3dSQVO40xpZnSLmyZ1VO9
+ trAZneE6LoHUrMlTWG3dJvghiKmClN2gu7fx52N4/yITDZsu0tB1839In Q==;
+X-IronPort-AV: E=Sophos;i="5.60,546,1549900800"; d="scan'208";a="209243163"
+Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
+ ([199.255.45.14])
+ by ob1.hgst.iphmx.com with ESMTP; 03 Jun 2019 16:51:02 +0800
+IronPort-SDR: wd4dqhKqNSjMp4V/9P3rVabO4Hva2a+qpVH9uLY9QEvB9+i6LA7LQgz69DRh7/eNb4CAqPA6yl
+ aZz7cpnz8RVlaG5/9IBzdhQDR+ZCVRkkjSK5O4MC1/vgM2RgxzQLbWDjEDQKLReDxdqbpYE3gQ
+ 4k3K6bgGYuH2PEQMOR2sz6Y106aJf+aBv3mb8Lnim2lFE4IzFdejrF4HIj86++CecLOu1WOv0c
+ 6ixcckFqjX5WeXfAMj6xk0R40NjZUPj71X75kaulevzRJ+AG8xhUGQHnyS0lyVB0LEEFTuhwk9
+ aQzEuMeOxBIgDs8/ESAjxbd1
+Received: from uls-op-cesaip01.wdc.com ([10.248.3.36])
+ by uls-op-cesaep01.wdc.com with ESMTP; 03 Jun 2019 01:25:29 -0700
+IronPort-SDR: BFoXFGYP9juvqbXuMHbRgJh6jvpVhIbp0yQpP2IxiYAHVF0SyJtFKGxa+lYptSpbrh8ATdj/2F
+ Uu3ojGhtuBMTdltS2t/r7PY7QW0py++iuHKLIhIzOeyED/NrJJByCIU8tpsacS6wyksSX5u1Nk
+ UcjV6Voz5PGI1p8paSbgIZxpp5QgWd8PZU6LjGi43+EQlRDSbV3Kx5/qHa6uajicArdYbArPRi
+ v4k7q/8pXcgz6iJXQmenVN0WYlE/ViGNZ3ns1s8Ag8xhwY1EnjEfCUUAFakjmQg99MqTlkE+JW
+ UxI=
+Received: from unknown (HELO [10.225.104.42]) ([10.225.104.42])
+ by uls-op-cesaip01.wdc.com with ESMTP; 03 Jun 2019 01:50:26 -0700
+Subject: Re: [PATCH v6 0/7] Unify CPU topology across ARM & RISC-V
+To: Jeremy Linton <jeremy.linton@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+References: <20190529211340.17087-1-atish.patra@wdc.com>
+ <1b61e699-79c7-bbfd-c7ed-d51d321ae7ef@arm.com>
+From: Atish Patra <atish.patra@wdc.com>
+Message-ID: <ed23bed6-91bf-f132-1b8f-03b02c6dd28a@wdc.com>
+Date: Mon, 3 Jun 2019 01:50:19 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190531160956.GB9356@redmoon>
+In-Reply-To: <1b61e699-79c7-bbfd-c7ed-d51d321ae7ef@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_014948_685884_630DD050 
-X-CRM114-Status: GOOD (  28.52  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190603_015028_860510_0657E05F 
+X-CRM114-Status: GOOD (  25.24  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.143.124 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,134 +95,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bhelgaas@google.com, linux-pci@vger.kernel.org, rgummal@xilinx.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ Morten Rasmussen <morten.rasmussen@arm.com>, Anup Patel <anup@brainfault.org>,
+ Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Albert Ou <aou@eecs.berkeley.edu>, Rob Herring <robh+dt@kernel.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Otto Sabart <ottosabart@seberm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ "David S. Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 31/05/2019 17:09, Lorenzo Pieralisi wrote:
-> [+Marc]
+On 5/30/19 2:12 PM, Jeremy Linton wrote:
+> Hi,
 > 
-> On Wed, May 29, 2019 at 06:07:49PM +0530, Bharat Kumar Gogada wrote:
->> The current Multi MSI data programming fails if multiple end points
->> requesting MSI and multi MSI are connected with switch, i.e the current
->> multi MSI data being given is not considering the number of vectors
->> being requested in case of multi MSI.
->> Ex: Two EP's connected via switch, EP1 requesting single MSI first,
->> EP2 requesting Multi MSI of count four. The current code gives
->> MSI data 0x0 to EP1 and 0x1 to EP2, but EP2 can modify lower two bits
->> due to which EP2 also sends interrupt with MSI data 0x0 which results
->> in always invoking virq of EP1 due to which EP2 MSI interrupt never
->> gets handled.
-> 
-> If this is a problem it is not the only driver where it should be fixed
-> it seems. CC'ed Marc in case I have missed something in relation to MSI
-> IRQs but AFAIU it looks like HW is allowed to toggled bits (according to
-> bits[6:4] in Message Control for MSI) in the MSI data, given that the
-> data written is the hwirq number (in this specific MSI controller)
-> it ought to be fixed.
-
-Yeah, it looks like a number of MSI controllers could be quite broken
-in this particular area.
-
-> 
-> The commit log and patch should be rewritten (I will do that) but
-> first I would like to understand if there are more drivers to be
-> updated.
-> 
-> Lorenzo
-> 
->> Fix Multi MSI data programming with required alignment by
->> using number of vectors being requested.
+> On 5/29/19 4:13 PM, Atish Patra wrote:
+>> The cpu-map DT entry in ARM can describe the CPU topology in much better
+>> way compared to other existing approaches. RISC-V can easily adopt this
+>> binding to represent its own CPU topology. Thus, both cpu-map DT
+>> binding and topology parsing code can be moved to a common location so
+>> that RISC-V or any other architecture can leverage that.
 >>
->> Fixes: ab597d35ef11 ("PCI: xilinx-nwl: Add support for Xilinx NWL PCIe
->> Host Controller")
->> Signed-off-by: Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com>
->> ---
->> V3:
->>  - Added example description of the issue
->> ---
->>  drivers/pci/controller/pcie-xilinx-nwl.c | 11 ++++++++++-
->>  1 file changed, 10 insertions(+), 1 deletion(-)
+>> The relevant discussion regarding unifying cpu topology can be found in
+>> [1].
 >>
->> diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c b/drivers/pci/controller/pcie-xilinx-nwl.c
->> index 81538d7..8efcb8a 100644
->> --- a/drivers/pci/controller/pcie-xilinx-nwl.c
->> +++ b/drivers/pci/controller/pcie-xilinx-nwl.c
->> @@ -483,7 +483,16 @@ static int nwl_irq_domain_alloc(struct irq_domain *domain, unsigned int virq,
->>  	int i;
->>  
->>  	mutex_lock(&msi->lock);
->> -	bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
->> +
->> +	/*
->> +	 * Multi MSI count is requested in power of two
->> +	 * Check if multi msi is requested
->> +	 */
->> +	if (nr_irqs % 2 == 0)
->> +		bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
->> +					 nr_irqs, nr_irqs - 1);
->> +	else
->> +		bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
->>  					 nr_irqs, 0);
->>  	if (bit >= INT_PCI_MSI_NR) {
->>  		mutex_unlock(&msi->lock);
->> -- 
->> 2.7.4
+>> arch_topology seems to be a perfect place to move the common code. I
+>> have not introduced any significant functional changes in the moved code.
+>> The only downside in this approach is that the capacity code will be
+>> executed for RISC-V as well. But, it will exit immediately after not
+>> able to find the appropriate DT node. If the overhead is considered too
+>> much, we can always compile out capacity related functions under a
+>> different config for the architectures that do not support them.
 >>
+>> There was an opportunity to unify topology data structure for ARM32 done
+>> by patch 3/4. But, I refrained from making any other changes as I am not
+>> very well versed with original intention for some functions that
+>> are present in arch_topology.c. I hope this patch series can be served
+>> as a baseline for such changes in the future.
+>>
+>> The patches have been tested for RISC-V and compile tested for ARM64,
+>> ARM32 & x86.
+>>
+> 
+> I applied these to 5.2rc2, along with my PPTT/MT change and verified the
+> system & scheduler topology/etc on DAWN and ThunderX2 using ACPI on
+> arm64. They appear to be working correctly.
+> 
+> so for the series,
+> Tested-by: Jeremy Linton <jeremy.linton@arm.com>
+> 
+> The code itself looks fine to me as well:
+> 
+> Reviewed-by: Jeremy Linton <jeremy.linton@arm.com>
+> 
+Thank you the review and testing on arm64 server.
 
-This doesn't look like the best fix. The only case where nr_irqs is not 
-set to 1 is when using Multi-MSI, so the '% 2' case actually covers all 
-cases. Now, and in the interest of consistency, other drivers use a 
-construct such as:
+> Thanks!
+> 
+>> The socket change[2] is also now part of this series.
+>>
+>> [1] https://lkml.org/lkml/2018/11/6/19
+>> [2] https://lkml.org/lkml/2018/11/7/918
+>>
+>> QEMU changes for RISC-V topology are available at
+>>
+>> https://github.com/atishp04/qemu/tree/riscv_topology_dt
+>>
+>> HiFive Unleashed DT with topology node is available here.
+>> https://github.com/atishp04/opensbi/tree/HiFive_unleashed_topology
+>>
+>> It can be verified with OpenSBI with following additional compile time
+>> option.
+>>
+>> FW_PAYLOAD_FDT="unleashed_topology.dtb"
+>>
+>> Changes from v5->v6
+>> 1. Added two more patches from Sudeep about maintainership of arch_topology.c
+>>      and Kconfig update.
+>> 2. Added Tested-by & Reviewed-by
+>> 3. Fixed a nit (reordering of variables)
+>>
+>> Changes from v4-v5
+>> 1. Removed the arch_topology.h header inclusion from topology.c and arch_topology.c
+>> file. Added it in linux/topology.h.
+>> 2. core_id is set to -1 upon reset. Otherwise, ARM topology store function does not
+>> work.
+>>
+>> Changes from v3->v4
+>> 1. Get rid of ARM32 specific information in topology structure.
+>> 2. Remove redundant functions from ARM32 and use common code instead.
+>>
+>> Changes from v2->v3
+>> 1. Cover letter update with experiment DT for topology changes.
+>> 2. Added the patch for [2].
+>>
+>> Changes from v1->v2
+>> 1. ARM32 can now use the common code as well.
+>>
+>> Atish Patra (4):
+>> dt-binding: cpu-topology: Move cpu-map to a common binding.
+>> cpu-topology: Move cpu topology code to common code.
+>> arm: Use common cpu_topology structure and functions.
+>> RISC-V: Parse cpu topology during boot.
+>>
+>> Sudeep Holla (3):
+>> Documentation: DT: arm: add support for sockets defining package
+>> boundaries
+>> base: arch_topology: update Kconfig help description
+>> MAINTAINERS: Add an entry for generic architecture topology
+>>
+>> .../topology.txt => cpu/cpu-topology.txt}     | 134 ++++++--
+>> MAINTAINERS                                   |   7 +
+>> arch/arm/include/asm/topology.h               |  20 --
+>> arch/arm/kernel/topology.c                    |  60 +---
+>> arch/arm64/include/asm/topology.h             |  23 --
+>> arch/arm64/kernel/topology.c                  | 303 +-----------------
+>> arch/riscv/Kconfig                            |   1 +
+>> arch/riscv/kernel/smpboot.c                   |   3 +
+>> drivers/base/Kconfig                          |   2 +-
+>> drivers/base/arch_topology.c                  | 298 +++++++++++++++++
+>> include/linux/arch_topology.h                 |  26 ++
+>> include/linux/topology.h                      |   1 +
+>> 12 files changed, 452 insertions(+), 426 deletions(-)
+>> rename Documentation/devicetree/bindings/{arm/topology.txt => cpu/cpu-topology.txt} (66%)
+>>
+>> --
+>> 2.21.0
+>>
+> 
+> 
 
-offset = bitmap_find_free_region(bitmap, bitmap_size,
-				 get_count_order(nr_irqs));
 
-which has the advantage of dealing with the bitmap setting as well.
-
-I'd suggest something like this (completely untested):
-
-diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c b/drivers/pci/controller/pcie-xilinx-nwl.c
-index 3b031f00a94a..8b9b58909e7c 100644
---- a/drivers/pci/controller/pcie-xilinx-nwl.c
-+++ b/drivers/pci/controller/pcie-xilinx-nwl.c
-@@ -482,15 +482,13 @@ static int nwl_irq_domain_alloc(struct irq_domain *domain, unsigned int virq,
- 	int i;
- 
- 	mutex_lock(&msi->lock);
--	bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
--					 nr_irqs, 0);
--	if (bit >= INT_PCI_MSI_NR) {
-+	bit = bitmap_find_free_region(msi->bitmap, INT_PCI_MSI_NR,
-+				      get_count_order(nr_irqs));
-+	if (bit < 0) {
- 		mutex_unlock(&msi->lock);
- 		return -ENOSPC;
- 	}
- 
--	bitmap_set(msi->bitmap, bit, nr_irqs);
--
- 	for (i = 0; i < nr_irqs; i++) {
- 		irq_domain_set_info(domain, virq + i, bit + i, &nwl_irq_chip,
- 				domain->host_data, handle_simple_irq,
-@@ -508,7 +506,7 @@ static void nwl_irq_domain_free(struct irq_domain *domain, unsigned int virq,
- 	struct nwl_msi *msi = &pcie->msi;
- 
- 	mutex_lock(&msi->lock);
--	bitmap_clear(msi->bitmap, data->hwirq, nr_irqs);
-+	bitmap_release_region(msi->bitmap, data->hwirq, get_count_order(nr_irqs));
- 	mutex_unlock(&msi->lock);
- }
- 
-
-Thanks,
-
-	M.
 -- 
-Jazz is not dead. It just smells funny...
+Regards,
+Atish
 
 _______________________________________________
 linux-arm-kernel mailing list
