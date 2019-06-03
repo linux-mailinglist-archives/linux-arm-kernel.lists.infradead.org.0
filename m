@@ -2,86 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4A9F32926
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 09:11:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AB6A3293A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 09:20:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BKYJiqFG3fPrKJ6T8ZiRd/9BGPBrtoMOtwscpZmQDpg=; b=aHdZg85Q3u6btn
-	2tW+Vsycp9uVBFBA1UkDMYywaXCCX8Vzi+orbR3V0dqX2P4h8rFZ2O2fHbyiWicnmXsltv6N+OPPE
-	Zyxh0rQDxjHsoTa4+cjPZl88AGY/0iZGpcgDGiUVVZev9r34OjgJpQ0f9/lxRClM5Y+AHDwfr35w+
-	faJbypvdkffr7/nmPfg+W6+fdFT+w0j24zY3gpf3axGO/rnNYzCVoqP29OS+eQGxAFAPkZPmLzdQ9
-	kCUzGSOGm9CiEmFzCmKbmvlCTqzsmEFKvBkHNbUwkAMcwMbN9kUym/FsImb1wtBeXaeA0iIfDtmH8
-	5WjsJ22zuzxoPH1VlNfQ==;
+	List-Owner; bh=NJ992v6ncdQVBMOSoeo2j7FpHWc9FLKGUcpZlawAwDc=; b=fnNT2kxV7I3i3k
+	vhgZhazb7w4/84y0LxTyYy8ntHwO3p9BnUD0HRA+0E5MgrXXn7Fk52Csdk4ahqJGKHYO+3T7pQGkE
+	PdWXL9/50hhcuLwWAUcAZOzm+GP77mSvAzLrG6bM9gOwPqWO+iD84TglH8+tzCpToq0lOeNuN1IZG
+	QKldmbWvFmgf0GGNHsBw3DjFG6Zw6/4IHH9mXzpIR/GS9fSLZSQoSniXjJRypMvLVYxx3M5G2mGOX
+	qKD8V8HnXaIsLVnsAMi3TitC3XaZ6nEDRvZYt4NBftYWDM6uUF4bsBSmgtWPt0tBH0ALYxSPNvI43
+	w/RFn3TbHw6g9Ea4lT/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXh7n-0003tR-Rv; Mon, 03 Jun 2019 07:11:19 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hXhGz-0006xi-3q; Mon, 03 Jun 2019 07:20:49 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXh7g-0003t3-FM
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 07:11:13 +0000
-Received: by mail-pf1-x441.google.com with SMTP id t16so1229706pfe.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 00:11:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Qm18g2EWN56tn+30WXhvjhc6Deqa0sfwyr6OO2dMMGc=;
- b=EVkE7KvhSAwj6CijMdMBTze/Y3Ta1Ydzm7tQIDqJY3uO1UUehTqRfjLhag2P0TOyu4
- X8J5kctBrCbCH10ff3m1LM693Ylt6Rk4qFfJ6HqRQN6hgqCnvKmXOJ23JvBRljl+8aGy
- Mvt4Hh1OiOlXrDD5afZ0y3IMVxGiTrElV/54EenbtcpdNwFnIhBOYgiluF41GR70istx
- 3JcK4VAD5GlxYBCEYMfjqrrF9yoL7k13d4vv5GxOzM6rVM/EsgQ0VwG/kFwjV+XxOPTg
- HjfVu0+KNrZscWWdph/AzQGxVPHszKPTejeBG/EkLjz20uwUFT1neQGiwf1l5A1ZosZd
- N6hA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Qm18g2EWN56tn+30WXhvjhc6Deqa0sfwyr6OO2dMMGc=;
- b=XEjXRlWghSZxiMeb0WzYv8dnYT8w/m9vpm2aUWN9X0c4LqaGj0+xHE2V2r5NOb1rS7
- ZK5ZhyJvn61Bf0qwvp5HC3PxfIzmTf3Py7NVui304GtS35MUyl0blkaZHIfJfEKiLxc6
- XkISk4ZNNWQaFM3rsBhJ1TK2nvNqDBcpWLYO1djG8e9x1/nsRDRywzRkotypiDMaS1bj
- q9KWCw5NyR0YPgHUKAr8vxiPjQCsOuUAyuU+iHDDeSbnQ9YQCcJvsxsmNcHHhDMDKS+w
- A5VJskdfWZLRbBQNOnTtSHVeqE6VBhhQkT9AfuUahZ+XbvPye1oEssPX7HMpuItGmAAj
- UtJw==
-X-Gm-Message-State: APjAAAV3o4LurdodGG9XYV9OEkdygHnH4INdtPsTjFke1Ydn+v6j5laU
- /R9c7aRKnRPOj0618WY3H7iU8IADjZo=
-X-Google-Smtp-Source: APXvYqzzgxYFOssxgDncS+tgpwltYQPncZLlvPo5Vj1BvECm+EaZeUf2qkpwOqD/qtwtgaGrzOHlmA==
-X-Received: by 2002:a63:5ca:: with SMTP id 193mr2657457pgf.232.1559545871531; 
- Mon, 03 Jun 2019 00:11:11 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id m7sm21245374pff.44.2019.06.03.00.11.10
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 03 Jun 2019 00:11:10 -0700 (PDT)
-Date: Mon, 3 Jun 2019 12:41:08 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH 3/3] cpufreq: Switch imx7d to imx-cpufreq-dt for speed
- grading
-Message-ID: <20190603071108.toainiom76pth4qs@vireshk-i7>
-References: <b6a9b9f80534af5c12db30a0bb699ec850f85be7.1559131365.git.leonard.crestez@nxp.com>
- <8787934ff35e7e55837f2caabc0d5bf65828d971.1559131365.git.leonard.crestez@nxp.com>
- <20190603053850.tkskdzcloir4k3kw@vireshk-i7>
- <VI1PR04MB50551BDB2D0AA64D7192D98CEE140@VI1PR04MB5055.eurprd04.prod.outlook.com>
+ id 1hXhGs-0006xM-Nb
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 07:20:44 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cf4ca480000>; Mon, 03 Jun 2019 00:20:40 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Mon, 03 Jun 2019 00:20:41 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Mon, 03 Jun 2019 00:20:41 -0700
+Received: from tbergstrom-lnx.Nvidia.com (10.124.1.5) by HQMAIL108.nvidia.com
+ (172.18.146.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Mon, 3 Jun 2019 07:20:40 +0000
+Received: by tbergstrom-lnx.Nvidia.com (Postfix, from userid 1000)
+ id 6EC0840FC6; Mon,  3 Jun 2019 10:20:38 +0300 (EEST)
+Date: Mon, 3 Jun 2019 10:20:38 +0300
+From: Peter De Schrijver <pdeschrijver@nvidia.com>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH 2/2] soc/tegra: pmc: Avoid crash for non-wake IRQs
+Message-ID: <20190603072038.GB29894@pdeschrijver-desktop.Nvidia.com>
+References: <20190529102654.14665-1-thierry.reding@gmail.com>
+ <20190529102654.14665-2-thierry.reding@gmail.com>
+ <27ffbfe6-1c88-63a1-aee1-7fe6ce252e54@nvidia.com>
+ <20190531102858.GA21355@ulmo>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <VI1PR04MB50551BDB2D0AA64D7192D98CEE140@VI1PR04MB5055.eurprd04.prod.outlook.com>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <20190531102858.GA21355@ulmo>
+X-NVConfidentiality: public
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ HQMAIL108.nvidia.com (172.18.146.13)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1559546440; bh=sIpzwEPaUIrtt8uotF4sQsXYS/qLmh8439n7BlRbcEU=;
+ h=X-PGP-Universal:Date:From:To:CC:Subject:Message-ID:References:
+ MIME-Version:Content-Type:Content-Disposition:In-Reply-To:
+ X-NVConfidentiality:User-Agent:X-Originating-IP:X-ClientProxiedBy;
+ b=o9/yoKCyUguYwntL/2Pt8BRjIY2CqPTUsnDMrLr/mPB/elEbiogXIrWMc3w9f2QmU
+ 6ojFgO8eNxNJXyxzx0Q1XIrApRqPBcLhluoMwqa/lJAsnANFiK0481/lOYFLjd8GE7
+ j0TOevo4swx2aT2NmmKp73x67g/R+imkVrDRSjMcAE/Wds0UuA2qBMPl+icAjUMC9E
+ M6r6I1Y5dzm2Af+f/vou0QRSxGZXUAtlbjpM9AqAUuoISQtOeDCfig3Ve0ZTz52otT
+ AJGwdTH59llElTHWlgdwjxQMPCQFL8T7BrzVP13sfzllSttkUzXfr8ts0InU51g+P1
+ 3FR54c1C7JoBQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_001112_537250_7F12C1E8 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190603_002042_781831_65DEC5F0 
+X-CRM114-Status: GOOD (  14.13  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -90,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,55 +95,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
+Cc: linux-tegra@vger.kernel.org, Bitan Biswas <bbiswas@nvidia.com>,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03-06-19, 07:01, Leonard Crestez wrote:
-> On 6/3/2019 8:39 AM, Viresh Kumar wrote:
-> > On 29-05-19, 12:03, Leonard Crestez wrote:
-> >> This driver can handle speed grading bits on imx7d just like on imx8mq
-> >> and imx8mm.
-> >>
-> >> diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
-> >> index 5061503cb0a1..ce26ffc18ce6 100644
-> >> --- a/drivers/cpufreq/imx-cpufreq-dt.c
-> >> +++ b/drivers/cpufreq/imx-cpufreq-dt.c
-> >> @@ -18,10 +18,11 @@
-> >>   #define OCOTP_CFG3_SPEED_GRADE_MASK	(0x3 << 8)
-> >>   #define OCOTP_CFG3_MKT_SEGMENT_SHIFT    6
-> >>   #define OCOTP_CFG3_MKT_SEGMENT_MASK     (0x3 << 6)
-> >>   
-> >>   static const struct of_device_id imx_cpufreq_dt_match_list[] = {
-> >> +	{ .compatible = "fsl,imx7d" },
-> >>   	{ .compatible = "fsl,imx8mm" },
-> >>   	{ .compatible = "fsl,imx8mq" }, >>   	{}
-> >>   };
+On Fri, May 31, 2019 at 12:28:58PM +0200, Thierry Reding wrote:
+> On Fri, May 31, 2019 at 10:32:40AM +0100, Jon Hunter wrote:
 > > 
-> > What is the purpose of this array and can we get rid of it instead ? I am asking
-> > as this driver gets probed only if the platform code has created the
-> > imx-cpufreq-dt device and it shouldn't get created for other machines than what
-> > is supported.
+> > 
+> > On 29/05/2019 11:26, Thierry Reding wrote:
+> > > From: Thierry Reding <treding@nvidia.com>
+> > > 
+> > > For interrupts that are not wakeup sources but that may end up getting
+> > > mapped through the PMC as interrupt parent (this can happen for GPIOs),
+> > > return early in order to avoid a subsequent crash from an out-of-bounds
+> > > access to the register region.
+> > 
+> > Maybe worth clarifying here what you mean by 'not wakeup sources'
+> > because the Tegra GPIO driver does have a set_wake() API to enable
+> > wakeup at the LIC IIRC. So maybe GPIOs that are not wakeup sources for
+> > what level of suspend?
 > 
-> Maybe it will be useful in the future to add .data here if a chip starts 
-> using 3 speed grading bits?
+> Wakeup sources in the context of PMC is always LP0 wakeup sources. At
+> that point I don't think LIC is enabled anymore. So LIC is to wake up
+> from LP1 (and perhaps LP2), while PMC wakeup sources need to be
+> configured in order to wake up from LP0.
 > 
-> It can be removed for now.
+> Adding Peter to confirm, I think he's more familiar with the power
+> states on earlier chips than I am.
 
-Yep, please remove it then for now. And it would be better to break the current
-patch into arch and cpufreq part, so I can apply only the cpufreq parts easily.
+Yes. LIC is in a domain which is off during SC7 so it can't trigger a
+wakeup.
 
--- 
-viresh
+Peter.
 
 _______________________________________________
 linux-arm-kernel mailing list
