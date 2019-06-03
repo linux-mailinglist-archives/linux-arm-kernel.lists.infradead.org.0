@@ -2,50 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0354632E8A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 13:23:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51EA832E8F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 13:24:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t1GW0LwWbG5dT+n7PJVd14SEi+p5zpfYunYhnpBM78k=; b=dLCh9t/4wv2DRK
-	oS3Za8QFOUEei22PkNWYreP0oV6IQt4X5YqwBQ834Gr71VvTFKuOvAoPCOC6pb2pu6VSo6xisbjq9
-	5LN/Xm216b9JY1165KxKmdhFhCQ3p71MNRxzCjxL/JSH0aN2Nwb6P6FaTjLeP0Ypj28vL1y4OlaVV
-	jzu8t8Lj9/AUvKrbTz4oqAN6vfNy2BEWZ1to4ASdS4hp0SeiasntxAtfep4wmdRgxbfsClsSNjwbO
-	iBzeuqCywjXgTLizR/LRGhugjYkT15JcoWMNz3Xzx0dHx42qI2zl8CoXJ2gaPhsDxOGlCYU10Cimq
-	RnUFjm6wk0aJ03ZECFfg==;
+	List-Owner; bh=N7O0QPcmo7CxorVu+4LidSQicB6QWI02M5n/bthSVRc=; b=ODKnPq5JHrzf20
+	/bhUO39Ya/6v2gRLmmlE9DqfkgjZS3TWqzFXQvq4KRZ1QwVPIbLtIaay+Rvh1zU3IGKVad6bo3oGX
+	gfQdC9Jtg/TJ0w76ZbDnKX5pIH6iSXFV6rAwA0TlNCXkhOzuvJyRoziTSKnP16b9CDAJ/eqwmyzz+
+	h/UnUXq36R77bfO2Vcv1Ro+8BpTeFSwdfEAs/YunX8sa1eHM9HF/5I4Vna7X+pPzsL0ZWK87p9hxG
+	vLSemojdwbaFRArxQ+cXe/WpwwmYXQZDuTng91AV+ByOUsG+dTFmFGx9nyL1xEka5G/1qzDHbl5OF
+	MA+2b4Mz0Zn4iNfnvdVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXl3a-00071q-CT; Mon, 03 Jun 2019 11:23:14 +0000
+	id 1hXl4X-0007I1-5q; Mon, 03 Jun 2019 11:24:13 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXl3T-00071M-Bp
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 11:23:09 +0000
+ id 1hXl4Q-0007HW-DG
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 11:24:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2B817A78;
- Mon,  3 Jun 2019 04:23:07 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB85DA78;
+ Mon,  3 Jun 2019 04:24:05 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E43B3F5AF;
- Mon,  3 Jun 2019 04:23:05 -0700 (PDT)
-Date: Mon, 3 Jun 2019 12:23:03 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH kvmtool v3 5/9] KVM: arm/arm64: Add a vcpu feature for
- pointer authentication
-Message-ID: <20190603112302.GN28398@e103592.cambridge.arm.com>
-References: <1559229194-3036-1-git-send-email-Dave.Martin@arm.com>
- <1559229194-3036-6-git-send-email-Dave.Martin@arm.com>
- <20190531180416.3e87f5ad@donnerap.cambridge.arm.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C56CF3F5AF;
+ Mon,  3 Jun 2019 04:24:02 -0700 (PDT)
+Date: Mon, 3 Jun 2019 12:23:54 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Ravi Bangoria <ravi.bangoria@linux.ibm.com>
+Subject: Re: [PATCH] perf: Fix oops when kthread execs user process
+Message-ID: <20190603112346.GA28296@fuggles.cambridge.arm.com>
+References: <20190528140103.GT2623@hirez.programming.kicks-ass.net>
+ <20190528153224.GE20758@fuggles.cambridge.arm.com>
+ <20190528173228.GW2623@hirez.programming.kicks-ass.net>
+ <20190529091733.GA4485@fuggles.cambridge.arm.com>
+ <20190529101042.GN2623@hirez.programming.kicks-ass.net>
+ <20190529102022.GC4485@fuggles.cambridge.arm.com>
+ <20190529125557.GU2623@hirez.programming.kicks-ass.net>
+ <efcd5cf4-3501-f3b6-bf47-145a9ef19a53@linux.ibm.com>
+ <8b55f79a-c324-0701-e85f-c7797a60a708@linux.ibm.com>
+ <20190531153703.GA21288@fuggles.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190531180416.3e87f5ad@donnerap.cambridge.arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190531153703.GA21288@fuggles.cambridge.arm.com>
+User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_042307_404868_84C5A4C2 
-X-CRM114-Status: GOOD (  23.61  )
+X-CRM114-CacheID: sfid-20190603_042406_454269_3B4543A4 
+X-CRM114-Status: GOOD (  13.91  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -66,77 +72,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <cdall@kernel.org>, Marc Zyngier <marc.zyngier@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Zhang Lei <zhang.lei@jp.fujitsu.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, Young Xiao <92siuyang@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>, mpe@ellerman.id.au, jolsa@redhat.com,
+ x86@kernel.org, linux@armlinux.org.uk, eranian@google.com,
+ linux-kernel@vger.kernel.org, acme@redhat.com, mingo@redhat.com, bp@alien8.de,
+ hpa@zytor.com, ravi.bangoria@linux.vnet.ibm.com, fweisbec@gmail.com,
+ linux-arm-kernel@lists.infradead.org, kan.liang@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 31, 2019 at 06:04:16PM +0100, Andre Przywara wrote:
-> On Thu, 30 May 2019 16:13:10 +0100
-> Dave Martin <Dave.Martin@arm.com> wrote:
+On Fri, May 31, 2019 at 04:37:15PM +0100, Will Deacon wrote:
+> Oh, nice! I think this happens because Power doesn't actually initialise
+> the regs after a kthread execs() until late in start_thread(). But the plot
+> thickens somewhat, since current_pt_regs() is different to
+> task_pt_regs(current) on Power (the former cannot return NULL).
 > 
-> > From: Amit Daniel Kachhap <amit.kachhap@arm.com>
-> > 
-> > This patch adds a runtime capabality for KVM tool to enable Arm64 8.3
-> > Pointer Authentication in guest kernel. Two vcpu features
-> > KVM_ARM_VCPU_PTRAUTH_[ADDRESS/GENERIC] are supplied together to enable
-> > Pointer Authentication in KVM guest after checking the capability.
-> > 
-> > Command line options --enable-ptrauth and --disable-ptrauth are added
-> > to use this feature. However, if those options are not provided then
-> > also this feature is enabled if host supports this capability.
+> So a really hideous hack on top of Peter's patch might be:
 > 
-> I don't really get the purpose of two options, I think that's quite
-> confusing. Should the first one either be dropped at all or called
-> something with "force"?
-> 
-> I guess the idea is to fail if pointer auth isn't available, but the
-> option is supplied?
-> 
-> Or maybe have one option with parameters?
-> --ptrauth[,=enable,=disable]
+> diff --git a/arch/arm64/kernel/perf_regs.c b/arch/arm64/kernel/perf_regs.c
+> index 0bbac612146e..5bde866024b6 100644
+> --- a/arch/arm64/kernel/perf_regs.c
+> +++ b/arch/arm64/kernel/perf_regs.c
+> @@ -57,6 +57,6 @@ void perf_get_regs_user(struct perf_regs *regs_user,
+>  			struct pt_regs *regs,
+>  			struct pt_regs *regs_user_copy)
+>  {
+> -	regs_user->regs = task_pt_regs(current);
+> +	regs_user->regs = current_pt_regs();
+>  	regs_user->abi = perf_reg_abi(current);
 
-So, I was following two principles here, either or both of which may be
-bogus:
+^^^ Bah, this was clearly supposed to be a change in the powerpc code, but
+you get the idea.
 
-1) There should be a way to determine whether KVM turns a given feature
-on or off (instead of magically defaulting to something).
-
-2) To a first approaximation, kvmtool should allow each major KVM ABI
-feature to be exercised.
-
-3) By default, kvmtool should offer the maximum feature set possible to
-the guest.
-
-
-(3) is well established, but (1) and (2) may be open to question?
-
-If we hold to both principles, it makes sense to have options
-functionally equivalent to what I suggested (where KVM provides the
-control in the first place), but there may be more convenient ways
-to respell the options.
-
-If we really can't decide, maybe it's better to drop the options
-altogether until we have a real use case.
-
-I've found the options very useful for testing and debugging on the SVE
-side, but I can't comment on ptrauth.  Maybe someone else has a view?
-
-> > The macros defined in the headers are not in sync and should be replaced
-> > from the upstream.
-> 
-> This is no longer true, I guess?
-
-Ah yes, that comment can go.
-
-Cheers
----Dave
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
