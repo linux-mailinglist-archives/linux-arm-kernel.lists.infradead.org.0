@@ -2,71 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CC2932ECC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 13:39:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F40C32ED7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 13:41:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UZK+XdZYDV6uvAV/hdmq2CqY1d/lA4Cly69QKrW9YQo=; b=dhVJUHtDEwZw5Z2iaoG16c/DS
-	zNM3kZLZahZn+uwMhlOCCxXCwNB0GsFSXyLuMBsuXMiyTG6I1Tr4WWlVS40+w+Neauh0PW8cTN44C
-	2R8kQmmKM2FibvggNtUw9f3yW+v8mZWUBBACHcApnSARaWl+88FzLS6MdRdBhqqZKCk2sQrQtd8cH
-	28SaXkY1cKHFh6Fwwg4u6PfBEBKIFLsJhhsf/Npit0WN78CEgs9c8ktDM4x/rVhXbyFoMwahsRcRg
-	y3yCBt5klkLIKdw+J6Re7Ofa1xhZkDz0Zji/dMSCoU/6sqQEYfI6FfId4pZuIIWd9rICCc0EUr2gw
-	e7KgO4UXQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oDfzbvMnqJx7HUMtpcsjekQNxNvgKgBmXRDgqP31OkU=; b=l1Gomhtcyf34iH
+	v0snHdlwmA0GzStTvie+qFAmbcZF4TtQ9GYHG6NRiFcUGnZbPzjOLFRIfycZHoqIGdOiFLkk2Kz6m
+	e2IgFWsI7+O7Yy/udXdq5YpEDEExks4aZ9oeQ5DtgoaLXDd+jJpn349ZVE9UHD1bhGZh1TBYuIWRC
+	fuX6Ckjdk3xy2Granyc4saQODmclAgYlVkVHph2s+cffBNgdX0gQVMQMlQXWBju7dRSZuYHv5ymeq
+	Qs7ZX541YWUAozh1va2sqxyX2khDRJnwhcZnwTnVikKizhUmk7jhD5gbFVnPfgqdVw6uAF1ZkI3b8
+	EODzvW9WX93es7giiXEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXlJ3-0003pN-6c; Mon, 03 Jun 2019 11:39:13 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hXlKi-0005L9-RZ; Mon, 03 Jun 2019 11:40:56 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXlIy-0003om-Be
- for linux-arm-kernel@bombadil.infradead.org; Mon, 03 Jun 2019 11:39:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JON4Vx8jXWcPchmEDzAJPtGWnbiiHo6HXcFPLepHvPI=; b=BjKe86d/n+qK9MUOkGGQlO2fd
- Suv/q1OT8pDy7T5sRHUMgFVnR+tFQEqhblwqq/L+ijaGQ85AT62j5TX4Ap+KCNHUn9ITi6Nq/WACz
- o7StyNccAj69VR9w8zK4y1VYLdM1Wh9Ul4Bq8koLeydv1ARKWS+UMVWdMzwEcuAF9yHicqrC0+bsp
- N09oS5qYH7TirY3T28ASD/Hnbf6nfM4jZYM839sEhneZwiB6LSO0hTJpQAtaUaUgSEaWKXWchzGRS
- /UzPhbUJQoBwlpMBZoyXXDB7h9/4dpn6Yelzq+iikze66wsl43pzRgfvaX5Acevs5+LPXgkFSfeQa
- +yw5Sxb0Q==;
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXlIt-0002Wt-Q4
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 11:39:05 +0000
-X-Originating-IP: 90.88.144.139
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id C3B3D20014;
- Mon,  3 Jun 2019 11:38:27 +0000 (UTC)
-Date: Mon, 3 Jun 2019 13:38:27 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 1/7] media: cedrus: Disable engine after each slice
- decoding
-Message-ID: <20190603113827.2nmm5wkycf44aqox@flea>
-References: <20190530211516.1891-1-jernej.skrabec@siol.net>
- <20190530211516.1891-2-jernej.skrabec@siol.net>
+ id 1hXlKb-0005KJ-IA; Mon, 03 Jun 2019 11:40:50 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost2.synopsys.com
+ [10.13.135.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 30711C1E73;
+ Mon,  3 Jun 2019 11:40:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1559562028; bh=JNgLsT7LPunYfej4pP5aCroqrdhvEaNr8asK8r1HI7Y=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=QnpyQMXRrAFzeVwuPSVQX9syBt+Hb02uRHs7Fs7uKpQolYd8MaUOTYFEKb3Tvkqt9
+ ryS1+FR7+e8qYxHQFmZexwW9ROZau/gsFbKRW8YZxLn2JNuZh0RFRNvE3Kww/Cahjm
+ /VUoCFFnV/yofaYRK2uhyZ+RJ7lRutTQ9dWPb1YmY7UW8cmdF60WTBv9hcvoxI4Aa1
+ tw6oUYRs/E7Xfe8+LHapSeLdJuzhzEiI2BZQ0K/HHKSB/fX0xsfVFNPqGQUdZIPVMS
+ dbyLdu/ckJRdYQAGzW7p+A4V8h3eT/bTrRTjx0LBuOmQ6nw2vvbDvdGQ7gKWFrOtEn
+ NrO2YR068NpfA==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 87BABA0067;
+ Mon,  3 Jun 2019 11:40:40 +0000 (UTC)
+Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
+ us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 3 Jun 2019 04:40:40 -0700
+Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
+ by DE02WEHTCA.internal.synopsys.com ([::1]) with mapi id
+ 14.03.0415.000; Mon, 3 Jun 2019 13:40:37 +0200
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Biao Huang <biao.huang@mediatek.com>, "davem@davemloft.net"
+ <davem@davemloft.net>, "andrew@lunn.ch" <andrew@lunn.ch>
+Subject: RE: [v2, PATCH 3/4] net: stmmac: modify default value of tx-frames
+Thread-Topic: [v2, PATCH 3/4] net: stmmac: modify default value of tx-frames
+Thread-Index: AQHVGa/XGYfQ4t70BkaeZd4pZlVHSKaJzoyA
+Date: Mon, 3 Jun 2019 11:40:37 +0000
+Message-ID: <78EB27739596EE489E55E81C33FEC33A0B93B6DF@DE02WEMBXB.internal.synopsys.com>
+References: <1559527086-7227-1-git-send-email-biao.huang@mediatek.com>
+ <1559527086-7227-4-git-send-email-biao.huang@mediatek.com>
+In-Reply-To: <1559527086-7227-4-git-send-email-biao.huang@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.107.19.176]
 MIME-Version: 1.0
-In-Reply-To: <20190530211516.1891-2-jernej.skrabec@siol.net>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_073903_948675_00144450 
-X-CRM114-Status: GOOD (  11.77  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-CacheID: sfid-20190603_044049_609017_AD0B96B8 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,75 +95,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, paul.kocialkowski@bootlin.com, wens@csie.org,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============8844744339296553413=="
+Cc: "jianguo.zhang@mediatek.com" <jianguo.zhang@mediatek.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "boon.leong.ong@intel.com" <boon.leong.ong@intel.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "yt.shen@mediatek.com" <yt.shen@mediatek.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Biao Huang <biao.huang@mediatek.com>
 
---===============8844744339296553413==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="jzwau3t2b77xs3xp"
-Content-Disposition: inline
+> the default value of tx-frames is 25, it's too late when
+> passing tstamp to stack, then the ptp4l will fail:
+> 
+> ptp4l -i eth0 -f gPTP.cfg -m
+> ptp4l: selected /dev/ptp0 as PTP clock
+> ptp4l: port 1: INITIALIZING to LISTENING on INITIALIZE
+> ptp4l: port 0: INITIALIZING to LISTENING on INITIALIZE
+> ptp4l: port 1: link up
+> ptp4l: timed out while polling for tx timestamp
+> ptp4l: increasing tx_timestamp_timeout may correct this issue,
+>        but it is likely caused by a driver bug
+> ptp4l: port 1: send peer delay response failed
+> ptp4l: port 1: LISTENING to FAULTY on FAULT_DETECTED (FT_UNSPECIFIED)
+> 
+> ptp4l tests pass when changing the tx-frames from 25 to 1 with
+> ethtool -C option.
+> It should be fine to set tx-frames default value to 1, so ptp4l will pass
+> by default.
 
+I'm not sure if this is the right approach ... What's the timeout value 
+you have for TX Timestamp ?
 
---jzwau3t2b77xs3xp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Thu, May 30, 2019 at 11:15:10PM +0200, Jernej Skrabec wrote:
-> libvdpau-sunxi always disables engine after each decoded slice.
-> Do same in Cedrus driver.
->
-> Presumably this also lowers power consumption which is always nice.
->
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-
-Is it fixing anything though?
-
-I indeed saw that cedar did disable it everytime, but I couldn't find
-a reason why.
-
-Also, the power management improvement would need to be measured, it
-can even create the opposite situation where the device will draw more
-current from being woken up than if it had just remained disabled.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---jzwau3t2b77xs3xp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPUGswAKCRDj7w1vZxhR
-xcoOAP9mzllurMZRL+0rmJfj1Ie1ewdM8HeuqLiB1e/Mm8M0VQD/ULwrfBAx5fRS
-/tgzkYR2nXRMpj0jQ6+7xa2pyZdkdw0=
-=lu1j
------END PGP SIGNATURE-----
-
---jzwau3t2b77xs3xp--
-
-
---===============8844744339296553413==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Jose Miguel Abreu
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8844744339296553413==--
-
