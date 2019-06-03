@@ -2,44 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26F1B3338C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 17:30:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8927D3338F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 17:31:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=m40A0EC2L1Kvm+7o12KOPwnzohjU7UCOdLn1i4+cTxY=; b=f6I
-	f+A3vA1QBZXvUAsFlUjDtVSJ1Qyqiwka54WG94CX/MPJT7D8llhf2whPAyhN8Dr3siauMswAQ8kIm
-	ZFFU+2Go95udWU/bj6D7i8ygNzMDTbkQOfL2sMktNPqdXLLC+s4/RfLs5VpEL4hIRKDotDFhxfsNx
-	aowM6XGF3CR8d7sYnBjUO0hr39AfoCgrCjabHUgrwOrZfpdxogKAolJgUhjnteWq/CcanZrEDzXB0
-	lpciA1qXWRowAONiELxWtmL7UXCKG4Ugdw6IkhEvRcu8gMjCMBti3gwev/+LZzqISk5NIocf/Z1Vb
-	w1obrdkZ36NoB7iVmVeSR+HvaJrzYyw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BEJuyYsir1PjXD79OOlfIHiYt/vlZME8dlQxs0tOr58=; b=fttWO0HLebpJ7k
+	3uzNNpd7qmJZRwEF+bEbJRa1yARhmZN0sGQdVm4XF/HX2EJyDNbL2F0B/9RPgwpDa8T8LM7drCE1E
+	xiiF7E7dKCAcGVbS/SkNSrnBxzuid/SHSR0ZZV0txwtncg8+bXuRxgbW924o4JQ350sJlx/q9dQda
+	7xvipU3ess6j9MIHuCPbDGpkmwXfA7AabRiJUEzNIMb3WwbroTkxqAoMj2Fhg8xh5bYamt6IOzGRh
+	K1koQi9R/yanCn3mcu0jNoMLk91T6gvNZ/M/LLIwpCS3XVoE4ywP/J5ycowS7HowHR+1DLSvdnH8j
+	6wuwUOtrasH6bgIIdpbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXov7-0007R4-9s; Mon, 03 Jun 2019 15:30:45 +0000
+	id 1hXovL-0007du-SI; Mon, 03 Jun 2019 15:30:59 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXov0-0007QA-Nv
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 15:30:40 +0000
+ id 1hXovB-0007bG-Qa
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 15:30:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DFF1A80D;
- Mon,  3 Jun 2019 08:30:37 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EA1123F246;
- Mon,  3 Jun 2019 08:30:36 -0700 (PDT)
-From: Dave Martin <Dave.Martin@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: Silence gcc warnings about arch ABI drift
-Date: Mon,  3 Jun 2019 16:30:30 +0100
-Message-Id: <1559575830-11941-1-git-send-email-Dave.Martin@arm.com>
-X-Mailer: git-send-email 2.1.4
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A80CD80D;
+ Mon,  3 Jun 2019 08:30:49 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 6C4453F246; Mon,  3 Jun 2019 08:30:47 -0700 (PDT)
+Subject: Re: [PATCH] arm: fix using smp_processor_id() in preemptible context
+To: gaoyongliang <gaoyongliang@huawei.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "rmk+kernel@armlinux.org.uk" <rmk+kernel@armlinux.org.uk>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "punitagrawal@gmail.com" <punitagrawal@gmail.com>,
+ "rafael.j.wysocki@intel.com" <rafael.j.wysocki@intel.com>,
+ "james.morse@arm.com" <james.morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+References: <d003bd4642aa44e1a51b83cd0bf1f04e@huawei.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <a66ef5b9-19d0-2c02-8d1b-7e9c90067a76@arm.com>
+Date: Mon, 3 Jun 2019 16:30:45 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <d003bd4642aa44e1a51b83cd0bf1f04e@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_083038_792975_5F07346A 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20190603_083049_870294_28A6F83D 
+X-CRM114-Status: GOOD (  20.51  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -60,54 +115,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Will Deacon <will.deacon@arm.com>
-MIME-Version: 1.0
+Cc: Shiwenlu <shiwenlu@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ Zengweilin <zengweilin@huawei.com>, Nixiaoming <nixiaoming@huawei.com>,
+ "Chenjie \(K\)" <chenjie6@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Linus Torvalds <torvalds@linux-foundation.org>
+On 03/06/2019 15:44, gaoyongliang wrote:
+> Hi Marc,
+> 
+> On 2019/6/3 18:17, Marc Zyngier wrote:
+>> On 27/05/2019 10:39, Yongliang Gao wrote:
+>>> harden_branch_predictor() call smp_processor_id() in preemptible
+>>> context, this would cause a bug messages.
+>>>
+>>> The bug messages is as follows:
+>>> BUG: using smp_processor_id() in preemptible [00000000] code: syz-executor0/17992
+>>> caller is harden_branch_predictor arch/arm/include/asm/system_misc.h:27 [inline]
+>>> caller is __do_user_fault+0x34/0x114 arch/arm/mm/fault.c:200
+>>> CPU: 1 PID: 17992 Comm: syz-executor0 Tainted: G O 4.4.176 #1
+>>> Hardware name: Hisilicon A9
+>>> [<c0114ae4>] (unwind_backtrace) from [<c010e6fc>] (show_stack+0x18/0x1c)
+>>> [<c010e6fc>] (show_stack) from [<c0379514>] (dump_stack+0xc8/0x118)
+>>> [<c0379514>] (dump_stack) from [<c039b5a0>] (check_preemption_disabled+0xf4/0x138)
+>>> [<c039b5a0>] (check_preemption_disabled) from [<c011abe4>] (__do_user_fault+0x34/0x114)
+>>> [<c011abe4>] (__do_user_fault) from [<c053b0d0>] (do_page_fault+0x3b4/0x3d8)
+>>> [<c053b0d0>] (do_page_fault) from [<c01013dc>] (do_DataAbort+0x58/0xf8)
+>>> [<c01013dc>] (do_DataAbort) from [<c053a880>] (__dabt_usr+0x40/0x60)
+>>>
+>>> Reported-by: Jingwen Qiu <qiujingwen@huawei.com>
+>>> Signed-off-by: Yongliang Gao <gaoyongliang@huawei.com>
+>>> Cc: <stable@vger.kernel.org>
+>>> ---
+>>>  arch/arm/include/asm/system_misc.h | 3 ++-
+>>>  1 file changed, 2 insertions(+), 1 deletion(-)
+>>>
+>>> diff --git a/arch/arm/include/asm/system_misc.h b/arch/arm/include/asm/system_misc.h
+>>> index 66f6a3a..4a55cfb 100644
+>>> --- a/arch/arm/include/asm/system_misc.h
+>>> +++ b/arch/arm/include/asm/system_misc.h
+>>> @@ -22,9 +22,10 @@
+>>>  static inline void harden_branch_predictor(void)
+>>>  {
+>>>  	harden_branch_predictor_fn_t fn = per_cpu(harden_branch_predictor_fn,
+>>> -						  smp_processor_id());
+>>> +						  get_cpu());
+>>>  	if (fn)
+>>>  		fn();
+>>> +	put_cpu();
+>>>  }
+>>>  #else
+>>>  #define harden_branch_predictor() do { } while (0)
+>>>
+>>
+>> This doesn't look like the right fix. If we're in a preemptible context,
+>> then we could invalidate the branch predictor on the wrong CPU.
+> 
+> Sorry, my bad, thanks a lot for the good catch.
+> 
+>>
+>> The right fix would be to move the call to a point where we haven't
+>> enabled preemption yet.
+> 
+> I took a look at the code, and find out that the caller of
+> harden_branch_predictor(), __do_user_fault(), is called by do_page_fault()
+> and do_bad_area(), those two function's context are both running with
+> preemption enabled, so I didn't find a good place to move the call,
+> could you please give some suggestion for my next step?
 
-Since GCC 9, the compiler warns about evolution of the
-platform-specific ABI, in particular relating for the marshaling of
-certain structures involving bitfields.
+Since we land here from do_page_fault, it seems natural to move the
+invalidation up there, probably before we re-enable interrupts.
 
-The kernel is a standalone binary, and of course nobody would be
-so stupid as to expose structs containing bitfields as function
-arguments in ABI.  (Passing a pointer to such a struct, however
-inadvisable, should be unaffected by this change.  perf and various
-drivers rely on that.)
+Thanks,
 
-So these warnings do more harm than good: turn them off.
-
-We may miss warnings about future ABI drift, but that's too bad.
-Future ABI breaks of this class will have to be debugged and fixed
-the traditional way unless the compiler evolves finer-grained
-diagnostics.
-
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
----
- arch/arm64/Makefile | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index b025304..8fbd583 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -51,6 +51,7 @@ endif
- 
- KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)
- KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
-+KBUILD_CFLAGS	+= -Wno-psabi
- KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst)
- 
- KBUILD_CFLAGS	+= $(call cc-option,-mabi=lp64)
+	M.
 -- 
-2.1.4
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
