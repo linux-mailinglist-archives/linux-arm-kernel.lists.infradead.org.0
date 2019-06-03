@@ -2,80 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74B7A32B02
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:42:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F2B032B0A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 10:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fROUaN1KHzzPcEYnLTNSCTgARF9AWv9OGZpUBoxxZ+c=; b=Y7z0egJXnMV+g1
-	z37ypJyUStbr6Sv42k9I4tY3F/spj1gy01PkFEVgLmJ38Vfp8nnYlXIMroBxtPx+nDJQJOO8vp/vf
-	PW3Dji93RfNcojG/dMOZPZYIf0Mm82k2lVGSmaLAXPpatdLX83TZkBgb1wj8nPT5ezULuX3WTsYjJ
-	o2+YD3Kfi8jW4/N5h/8S/Ce3ElIo8tchOw9OZRnm3wzl6GLkaNRNPpf2VKWVekCjW/YuRLOnlbycC
-	JKDCYBh+UW0hwdhryeKzbbw44AGCTK3xxXuK67Xc/dBVdfj8p4nKj6AnWMupIi/1cOPpvOtwTfDK0
-	NIvJHO5hnB3e60RegkQA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=rs9MSO6WqbCxAl2yCh791o4MdkC6mpmUJPL3QyJVv2A=; b=RlgaozKbPpO498
+	4Ors7gTFb29Mby1EP6FoWc+iIpUiEd1+bnKhIb5o96BZWFCM/COdTmvGkb4P+hYguSNzeDkZ4LWXi
+	1LwS6T8k4O4IlIBxIRW+URMZLwip5Z4EY+H9/GlIWAZi2MVEhlxVn4bOgz4nXaLga2rTSVcTnxNDa
+	Fff//dmCjZfN83OiJYUza7bjda0qV73bGZcn2EUhnTXeIZVYJl5iIZQXG2pvGWy/jx8hBudQnXghh
+	ThW6eNZkolk6fHZ4tp3fZcceGuYh2mYFgnyUj7nh3gzfPqBBotXgRdD9YfNLbZZxaVSGzFCm9+/lq
+	VzhRuVOfEERmVXHeaCpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXiXp-0001qa-PB; Mon, 03 Jun 2019 08:42:17 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hXiau-0003eC-4W; Mon, 03 Jun 2019 08:45:28 +0000
+Received: from mail-eopbgr60050.outbound.protection.outlook.com ([40.107.6.50]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXiXj-0001ps-7g
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:42:12 +0000
-Received: by mail-ot1-x342.google.com with SMTP id b7so1700149otl.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 01:42:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=v07iYjGp5nWV9CSxAvLDHJlP76eeAiLKXDinb2hN/Lw=;
- b=nHkL5geTJxbfuQTgK6/8G88ruDwULcnsHmwJzcmvL2oHp0myFdfE1FhPnKasmXKmIC
- Wfd3WTWIxsd+dUj98ycDxuRSzGLYPqt/VQNY/7pH+/qeqPhHcOI7KGX/GJ5FajyXLlW1
- cwF76Go8yIl0bRyDwUgpJp9tHHczY09bKqLsVeOfr9OrUvp6aHIjWYi3ldceuTVP2inL
- WZE18/rqHWgtq98O/eF6M9w5rWQWMDjCuZcQQtCrEn+iRPN0fjfXIXKdH9E0CUcthvzE
- kxxLecILJ6UbOTzN0sRITkxwwx6iP1LqU59LacFnojwKM4GslL38Fj+SBrn6mSIKkWV9
- F3FA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=v07iYjGp5nWV9CSxAvLDHJlP76eeAiLKXDinb2hN/Lw=;
- b=a7qL7nyfh/LURy+WHyrLbZRSO2pmnJZbDSZrrNwkDaZ0GZ2K8pe3KmKbFDZiH0UyFi
- ZURKzcozV1aOXrIp8pUIe4Ia15JgCchJFHfsrR4KyoePORIBfu4AQ6Fac3wHZGF1m/mq
- MHtJf4P2nWCYGu1xogqgDT0wiNjflqOHMElmVHWUpjqKSAD/TFRW8MiNVLjtXLxER1b/
- sT1NVWbJq8j5pCFV1cx6wPG/a8tqGTzgscdcUAZn3Amf72eEIhZOGE5FuF+Gm1Cv5p99
- twFsJoppQoiE2dttEZp5ajkwS/MLVjdoIiN8U0ig8ckindNnrKdYINX9R8L7nMz+V22H
- Se0g==
-X-Gm-Message-State: APjAAAWcf/u4xVobVEnDGe1NQ011m7BZJvKmsHs+ON7YANHklwTSEFc2
- l4blp9HIBfZ7ZQhnUC/zMFg96M05iaLTzmn16oVS/g==
-X-Google-Smtp-Source: APXvYqwYLd2dpHu6nvkvw3MVvAzbMJxHXUfJpurp+73sDV/UA282/GSNQJj+tD3erUPCO+itTcUjCH4KgWdFE0lty5s=
-X-Received: by 2002:a9d:529:: with SMTP id 38mr328019otw.145.1559551329341;
- Mon, 03 Jun 2019 01:42:09 -0700 (PDT)
+ id 1hXian-0003dh-02
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 08:45:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GsRZSm4Q5uwPKH6PCtg57Kl8pOILzAAs4yb0cXdQ9S4=;
+ b=SVJsieYMD3RVfQG3XIh8/o8j3wdB7AJ0XWb/Z0KbqLFJPZZKF/GYRciIAtdlwKs1Nn3Bw0UVgRVccwyJoIbYdkvjeHrln82D9RQCEJsAqxHnj+Ec0G0pgdWP/rUo1BqJoiZZS/CvSeWFAn/iDRE1QaxNot8CxR6x3bGhKh6prkk=
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
+ VI1PR04MB5405.eurprd04.prod.outlook.com (20.178.121.15) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1943.21; Mon, 3 Jun 2019 08:45:16 +0000
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1]) by VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1%7]) with mapi id 15.20.1943.018; Mon, 3 Jun 2019
+ 08:45:16 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "mturquette@baylibre.com"
+ <mturquette@baylibre.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will.deacon@arm.com"
+ <will.deacon@arm.com>, "maxime.ripard@bootlin.com"
+ <maxime.ripard@bootlin.com>, "olof@lixom.net" <olof@lixom.net>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>, "enric.balletbo@collabora.com"
+ <enric.balletbo@collabora.com>, Aisheng Dong <aisheng.dong@nxp.com>, Jacky
+ Bai <ping.bai@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH V2 2/3] clk: imx: Add support for i.MX8MN clock driver
+Thread-Topic: [PATCH V2 2/3] clk: imx: Add support for i.MX8MN clock driver
+Thread-Index: AQHVGaxdHZzNGD6lS0CX40Io7wcnXg==
+Date: Mon, 3 Jun 2019 08:45:16 +0000
+Message-ID: <VI1PR04MB5055D6EB38E84E370E881425EE140@VI1PR04MB5055.eurprd04.prod.outlook.com>
+References: <20190603013503.40626-1-Anson.Huang@nxp.com>
+ <20190603013503.40626-2-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [192.88.166.1]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 20ad664a-a97c-4f7d-92bd-08d6e7ffcd1f
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB5405; 
+x-ms-traffictypediagnostic: VI1PR04MB5405:
+x-microsoft-antispam-prvs: <VI1PR04MB54057A5A759C2315741C96B9EE140@VI1PR04MB5405.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:85;
+x-forefront-prvs: 0057EE387C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(346002)(396003)(39860400002)(366004)(136003)(199004)(189003)(73956011)(66946007)(5660300002)(8936002)(256004)(33656002)(53936002)(110136005)(81166006)(66476007)(64756008)(55016002)(66446008)(68736007)(4326008)(81156014)(66556008)(9686003)(229853002)(6246003)(316002)(186003)(76116006)(91956017)(6436002)(7416002)(26005)(8676002)(52536014)(99286004)(7736002)(53546011)(86362001)(486006)(305945005)(44832011)(14454004)(71200400001)(71190400001)(6506007)(4744005)(7696005)(102836004)(478600001)(2906002)(76176011)(74316002)(25786009)(3846002)(6116002)(446003)(2201001)(476003)(2501003)(66066001)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5405;
+ H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: b+cMDmjrLCiyDc+HtJ7JzACpOq1FoEPFi/g54Ze0MIGQlkBJcTYmhEyksME2cMiIujn+WrYBBroLp/PINgmv36VeS7BobFHKkKyQzkuUZOW7SUnKtcHf7adiJwWBgE3LJSR8IyhMeEIu3Dr6QmJBBwGerjf/nCQXbevFbn992mtIPDaVg7IUXA07lXZDNiWjaZOFkwjyIgWh1c0BBzgoEY35OWC8MUMTzHEixPPw4SqKlENVXAxiHozFghGyvPg7ODHBMKPggXWnkonrx7+5mmz2OkebyHE4/NbU1VZthuYiTiGbpnumN1j1Dn74vt31FsZuKuD8l3biTRKmcv2sEmJhkIpAihJubEaXhe7pjEZuGeSXRXyHBq6X0mgQB7HZ7iIhjc+slQppb8iOkMWafm8zUSTra7xHNt/VI9hENdc=
 MIME-Version: 1.0
-References: <cover.1558346019.git.baolin.wang@linaro.org>
-In-Reply-To: <cover.1558346019.git.baolin.wang@linaro.org>
-From: Baolin Wang <baolin.wang@linaro.org>
-Date: Mon, 3 Jun 2019 16:41:56 +0800
-Message-ID: <CAMz4ku+E=kFgWrvm_wzM2XQQUyYZhc5uokcGEAEbEKpNAYZQ7g@mail.gmail.com>
-Subject: Re: [PATCH 0/9] Add SD host controller support for SC9860 platform
-To: Adrian Hunter <adrian.hunter@intel.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, 
- Chunyan Zhang <zhang.lyra@gmail.com>, Orson Zhai <orsonzhai@gmail.com>, 
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 20ad664a-a97c-4f7d-92bd-08d6e7ffcd1f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jun 2019 08:45:16.2239 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5405
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_014211_343442_C5172D3A 
-X-CRM114-Status: GOOD (  13.56  )
+X-CRM114-CacheID: sfid-20190603_014521_172253_2A8216D0 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [40.107.6.50 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,49 +131,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, linux-mmc <linux-mmc@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, arm-soc <arm@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adrian & Ulf,
+On 6/3/2019 4:33 AM, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
+> 
+> This patch adds i.MX8MN clock driver support. 
 
-On Mon, 20 May 2019 at 18:12, Baolin Wang <baolin.wang@linaro.org> wrote:
->
-> This patch set adds optional clock support, HS400 enhanced strobe mode support,
-> PHY DLL configuration and other optimization to make the SD host controller
-> can work well on the Spreadtrum SC9860 platform.
+> +#include "clk.h"
+> +
+> +#define PLL_1416X_RATE(_rate, _m, _p, _s)		\
+> +	{						\
+> +		.rate	=	(_rate),		\
+> +		.mdiv	=	(_m),			\
+> +		.pdiv	=	(_p),			\
+> +		.sdiv	=	(_s),			\
+> +	}
+> +
+> +#define PLL_1443X_RATE(_rate, _m, _p, _s, _k)		\
+> +	{						\
+> +		.rate	=	(_rate),		\
+> +		.mdiv	=	(_m),			\
+> +		.pdiv	=	(_p),			\
+> +		.sdiv	=	(_s),			\
+> +		.kdiv	=	(_k),			\
+> +	}
 
-Do you have any comments for this patch set? Thanks.
-
->
-> Baolin Wang (9):
->   mmc: sdhci-sprd: Check the enable clock's return value correctly
->   dt-bindings: mmc: sprd: Add another optional clock documentation
->   mmc: sdhci-sprd: Add optional gate clock support
->   mmc: sdhci-sprd: Implement the get_max_timeout_count() interface
->   mmc: sdhci-sprd: Add HS400 enhanced strobe mode
->   mmc: sdhci-sprd: Enable PHY DLL to make clock stable
->   dt-bindings: mmc: sprd: Add PHY DLL delay documentation
->   mmc: sdhci-sprd: Add PHY DLL delay configuration
->   arm64: dts: sprd: Add Spreadtrum SD host controller support
->
->  .../devicetree/bindings/mmc/sdhci-sprd.txt         |   19 +++
->  arch/arm64/boot/dts/sprd/whale2.dtsi               |   35 ++++
->  drivers/mmc/host/sdhci-sprd.c                      |  171 +++++++++++++++++++-
->  3 files changed, 217 insertions(+), 8 deletions(-)
->
-> --
-> 1.7.9.5
->
-
-
--- 
-Baolin Wang
-Best Regards
+These macros are shared with clk-imx8mm (and perhaps some future chips) 
+so they should be moved to driver/clk/imx/clk.h
 
 _______________________________________________
 linux-arm-kernel mailing list
