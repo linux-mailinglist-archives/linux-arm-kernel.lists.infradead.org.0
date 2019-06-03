@@ -2,71 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F290533765
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 20:02:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 803C9337A3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 20:15:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=XwebS3GhFTSKWs50P3klXNuwa0KHzt4QjyvuZmImzAI=; b=qdY
-	SlzrV/6DuiZGPwl6OrQ93vutTCuPTykBJehSfEzUt7hZ300bRdHAGsUCfI/nQhGHPP9WeDUAXERh/
-	gX5D3xri3Y0ZIqKjhdkJ058M/b+N1LBEVJ+pNnIJrai0OyZm9/AtRxDGJ5qZyDzEQ7EocPAFejvcC
-	JaBo6Ii1jJN/KTVTDZhZYqkjX5vnM84/deGx0FtZDrqAcyd6bfB0wUwiri8isAqORPYRiGwQs8DwQ
-	/kL/X7MJjySzugyPTyXskzeYNUU8Sji6VAC62Eeny3tVG5hfkwZo38pr9RmN3mqfMsMWhnYVheatE
-	eYdzAsiL4ie5z3/Y9bq6B85oqgIk/Og==;
+	List-Owner; bh=uO6Td1vPDqj6ULV5TFK3JA+7hJg1h1LnSplFrvddHwI=; b=rNoodJZczicPtL
+	MwMk12po4XDmT0sf4SSmGGOS7bjj8ETVYbkA3eGoCo5qQ4J6YJRUPtq/+I1xt8ws4T3YrvZZbVd5V
+	7wMsJP8vAmz/7xccKlg+HnbQrRA1L6qxNU2ma+jYstsfYyDrnyMIkvtw0+JZE3gGYFGP167A9DvUo
+	oLKEeDxiD5SeRCJ/OkkDNKc5/KwFNKcPOIEQlbl4ICtLmiRDHoq+esZPTNE8fWIK1o1bpmehlfr8J
+	ERmHCE1LbGuYsRAgVp+z4chGuWIuN1lEymsvKtx4SJtTZTweiXvUyv/BFzlEQyAjuoVmAgDKNOi7+
+	lRGjBE2YMq1pvOOMrtVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXrHk-0008S9-Q6; Mon, 03 Jun 2019 18:02:16 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hXrU4-0003AF-3S; Mon, 03 Jun 2019 18:15:00 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXrHe-0008Rq-2G
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 18:02:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=UT0WlMnrjn93wF9k1eoMkng9Hqcae4T/R1b17iqUEyo=; b=xgNFhu4FNf+l
- rTQJgwiG3GAG7nW0pYQnG6AI5HzOjYl9SMT9iwfQ3C3HCX5zFCLHw+gGuUZtFMX1/7ZIP5cBsMS0j
- I1AaLjW2YPi83M9Kme0pMC1TheBZ3gs4DPgdwSTFeHJxfSN/ldcGMsU3IemfJktJVhcHjDv8KCHX1
- 4FDwk=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hXrHW-0003ZF-Tr; Mon, 03 Jun 2019 18:02:03 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 21C90440049; Mon,  3 Jun 2019 19:02:02 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: sai: manage identification registers" to the
- asoc tree
-In-Reply-To: <1559549794-7246-1-git-send-email-olivier.moysan@st.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190603180202.21C90440049@finisterre.sirena.org.uk>
-Date: Mon,  3 Jun 2019 19:02:02 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1hXrTv-00038o-JO; Mon, 03 Jun 2019 18:14:54 +0000
+Received: by mail-pl1-x641.google.com with SMTP id s24so7145556plr.8;
+ Mon, 03 Jun 2019 11:14:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=uYFWaQzFQ5snwyuhA5Wo9knUJ+dwDmCG5TOZVT/0Ues=;
+ b=GtvNLQI0UcMuSMxlxW8HfJaW8ruwYroak68XQJT5ZmOGW7u1P8sBpm8wL8BBUoEt6W
+ 7FzOBN3oDW6EzvG7h67WBTfUpnha5F011tZ3d00OqSeIYs0YgrNkx7c67FRWOBcq3/6A
+ lKRiJWj36QFBVeRiTQXC8xZdbpOyoMGFZLGGqH1340gBbX4d2yVey7ipvEP1rIluQbMb
+ 1KGZDvH1+lOCDqrwAZr7TRYDtMDthdyxPILd+9yDC1bPuV+RgJSqadGY0WyZ0GizQExh
+ 9ImCR1RzxozCbp1wSbSqmdgK/VG6f5ZryL60fPKOSAII/h5hSvDJRKYtBzO+xwNSlFl3
+ c3kw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=uYFWaQzFQ5snwyuhA5Wo9knUJ+dwDmCG5TOZVT/0Ues=;
+ b=HQqtmipsVnsQe83BOhfGHfI4wpMGB6vsqsnhOKixM6SXPyRvW8+MVMKrOkZKQnshN+
+ D64lpCkateh2XdZUGkkVAA0GdguzQYr8sWc31VSrh+g9KusOdXoAZLO0sbIrAoiuBMoZ
+ GXgGtKgL1oGHXxQi5hTdyDSgZ/JI3MomaK7gZiAm00mhPuosRj0DhxvC54QOCGCpExeR
+ YykxilJ2JGcCOksYb5BP0fNPtulLPSYQihwmtAPMXrXWWuljXDgksjtrhxIujxBf/emS
+ FlYi7lu2EgoWfevtXxIunt9ewN1XNZHsjgV8coBuoRe60WvfQk1Wy1HB7GmnCsstvRnx
+ kUXQ==
+X-Gm-Message-State: APjAAAW5Czq0sC8mLIAMMqRcxoS6Qw8exP3pomTALU+UfaPZAqsogZ20
+ YlHpK61j46nN1/cCUMsKjIg=
+X-Google-Smtp-Source: APXvYqxAq6k0HrANm+sE7CE/NmEXg9rSayXZbcrOQYq8ulhcVLYfja5V3QO7wBNbj8G9SGH4dlUopw==
+X-Received: by 2002:a17:902:2869:: with SMTP id
+ e96mr30606965plb.203.1559585690027; 
+ Mon, 03 Jun 2019 11:14:50 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id a5sm12544714pjo.29.2019.06.03.11.14.47
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Jun 2019 11:14:48 -0700 (PDT)
+Date: Mon, 3 Jun 2019 11:14:47 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [v3 6/7] drm/mediatek: change the dsi phytiming calculate method
+Message-ID: <20190603181447.GA6947@roeck-us.net>
+References: <20190519092537.69053-1-jitao.shi@mediatek.com>
+ <20190519092537.69053-7-jitao.shi@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190519092537.69053-7-jitao.shi@mediatek.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_110210_304808_B1B9A04F 
-X-CRM114-Status: GOOD (  19.25  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190603_111451_667711_7F5A2C8D 
+X-CRM114-Status: GOOD (  23.25  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,307 +103,261 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
- tiwai@suse.com, arnaud.pouliquen@st.com, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, Ajay Kumar <ajaykumar.rs@samsung.com>,
+ Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
+ bibby.hsieh@mediatek.com, ck.hu@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ Thierry Reding <treding@nvidia.com>, Sean Paul <seanpaul@chromium.org>,
+ linux-pwm@vger.kernel.org, Sascha Hauer <kernel@pengutronix.de>,
+ Pawel Moll <pawel.moll@arm.com>, Ian Campbell <ijc+devicetree@hellion.org.uk>,
+ Inki Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, yingjoe.chen@mediatek.com,
+ Matthias Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
+ srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, Kumar Gala <galak@codeaurora.org>,
+ Andy Yan <andy.yan@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Sun, May 19, 2019 at 05:25:36PM +0800, Jitao Shi wrote:
+> Change the method of frame rate calc which can get more accurate
+> frame rate.
+> 
+> data rate = pixel_clock * bit_per_pixel / lanes
+> Adjust hfp_wc to adapt the additional phy_data
+> 
+> if MIPI_DSI_MODE_VIDEO_BURST
+> 	hfp_wc = hfp * bpp - data_phy_cycles * lanes - 12 - 6;
+> else
+> 	hfp_wc = hfp * bpp - data_phy_cycles * lanes - 12;
+> 
+> Note:
+> //(2: 1 for sync, 1 for phy idle)
+> data_phy_cycles = T_hs_exit + T_lpx + T_hs_prepare + T_hs_zero + 2;
+> 
+> bpp: bit per pixel
+> 
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Tested-by: Ryan Case <ryandcase@chromium.org>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_dsi.c | 119 +++++++++++++++++++++--------
+>  1 file changed, 86 insertions(+), 33 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index 1165ff944889..3f51b2000c68 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -158,6 +158,25 @@
+>  	(type == MIPI_DSI_GENERIC_READ_REQUEST_2_PARAM) || \
+>  	(type == MIPI_DSI_DCS_READ))
+>  
+> +struct mtk_phy_timing {
+> +	u32 lpx;
+> +	u32 da_hs_prepare;
+> +	u32 da_hs_zero;
+> +	u32 da_hs_trail;
+> +
+> +	u32 ta_go;
+> +	u32 ta_sure;
+> +	u32 ta_get;
+> +	u32 da_hs_exit;
+> +
+> +	u32 clk_hs_zero;
+> +	u32 clk_hs_trail;
+> +
+> +	u32 clk_hs_prepare;
+> +	u32 clk_hs_post;
+> +	u32 clk_hs_exit;
+> +};
+> +
+>  struct phy;
+>  
+>  struct mtk_dsi_driver_data {
+> @@ -182,12 +201,13 @@ struct mtk_dsi {
+>  	struct clk *digital_clk;
+>  	struct clk *hs_clk;
+>  
+> -	u32 data_rate;
+> +	u64 data_rate;
 
-   ASoC: stm32: sai: manage identification registers
+This results in 64-bit divide operations and thus build failures
+with 32-bit builds. More on that below.
 
-has been applied to the asoc tree at
+>  
+>  	unsigned long mode_flags;
+>  	enum mipi_dsi_pixel_format format;
+>  	unsigned int lanes;
+>  	struct videomode vm;
+> +	struct mtk_phy_timing phy_timing;
+>  	int refcount;
+>  	bool enabled;
+>  	u32 irq_data;
+> @@ -221,17 +241,39 @@ static void mtk_dsi_phy_timconfig(struct mtk_dsi *dsi)
+>  {
+>  	u32 timcon0, timcon1, timcon2, timcon3;
+>  	u32 ui, cycle_time;
+> +	struct mtk_phy_timing *timing = &dsi->phy_timing;
+> +
+> +	ui = 1000000000 / dsi->data_rate;
+> +	cycle_time = 8000000000 / dsi->data_rate;
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
+This results in 64-bit divide operations. On top of that, 8000000000
+is larger than 0xffffffff, resulting in an integer overflow on 32-bit
+systems; it should be provided as 8000000000ULL. 
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+> +
+> +	timing->lpx = NS_TO_CYCLE(60, cycle_time);
+> +	timing->da_hs_prepare = NS_TO_CYCLE((40 + 5 * ui), cycle_time);
+> +	timing->da_hs_zero = NS_TO_CYCLE((110 + 6 * ui), cycle_time);
+> +	timing->da_hs_trail = NS_TO_CYCLE(((0x4 * ui) + 80), cycle_time);
+> +
+> +	if (timing->da_hs_zero > timing->da_hs_prepare)
+> +		timing->da_hs_zero -= timing->da_hs_prepare;
+> +
+> +	timing->ta_go = 4 * timing->lpx;
+> +	timing->ta_sure = 3 * timing->lpx / 2;
+> +	timing->ta_get = 5 * timing->lpx;
+> +	timing->da_hs_exit = 2 * timing->lpx;
+> +
+> +	timing->clk_hs_zero = NS_TO_CYCLE(0x150, cycle_time);
+> +	timing->clk_hs_trail = NS_TO_CYCLE(0x64, cycle_time) + 0xa;
+>  
+> -	ui = 1000 / dsi->data_rate + 0x01;
+> -	cycle_time = 8000 / dsi->data_rate + 0x01;
+> +	timing->clk_hs_prepare = NS_TO_CYCLE(0x40, cycle_time);
+> +	timing->clk_hs_post = NS_TO_CYCLE(80 + 52 * ui, cycle_time);
+> +	timing->clk_hs_exit = 2 * timing->lpx;
+>  
+> -	timcon0 = T_LPX | T_HS_PREP << 8 | T_HS_ZERO << 16 | T_HS_TRAIL << 24;
+> -	timcon1 = 4 * T_LPX | (3 * T_LPX / 2) << 8 | 5 * T_LPX << 16 |
+> -		  T_HS_EXIT << 24;
+> -	timcon2 = ((NS_TO_CYCLE(0x64, cycle_time) + 0xa) << 24) |
+> -		  (NS_TO_CYCLE(0x150, cycle_time) << 16);
+> -	timcon3 = NS_TO_CYCLE(0x40, cycle_time) | (2 * T_LPX) << 16 |
+> -		  NS_TO_CYCLE(80 + 52 * ui, cycle_time) << 8;
+> +	timcon0 = timing->lpx | timing->da_hs_prepare << 8 |
+> +		  timing->da_hs_zero << 16 | timing->da_hs_trail << 24;
+> +	timcon1 = timing->ta_go | timing->ta_sure << 8 |
+> +		  timing->ta_get << 16 | timing->da_hs_exit << 24;
+> +	timcon2 = 1 << 8 | timing->clk_hs_zero << 16 |
+> +		  timing->clk_hs_trail << 24;
+> +	timcon3 = timing->clk_hs_prepare | timing->clk_hs_post << 8 |
+> +		  timing->clk_hs_exit << 16;
+>  
+>  	writel(timcon0, dsi->regs + DSI_PHY_TIMECON0);
+>  	writel(timcon1, dsi->regs + DSI_PHY_TIMECON1);
+> @@ -418,7 +460,8 @@ static void mtk_dsi_config_vdo_timing(struct mtk_dsi *dsi)
+>  	u32 horizontal_sync_active_byte;
+>  	u32 horizontal_backporch_byte;
+>  	u32 horizontal_frontporch_byte;
+> -	u32 dsi_tmp_buf_bpp;
+> +	u32 dsi_tmp_buf_bpp, data_phy_cycles;
+> +	struct mtk_phy_timing *timing = &dsi->phy_timing;
+>  
+>  	struct videomode *vm = &dsi->vm;
+>  
+> @@ -433,7 +476,8 @@ static void mtk_dsi_config_vdo_timing(struct mtk_dsi *dsi)
+>  	writel(vm->vactive, dsi->regs + DSI_VACT_NL);
+>  
+>  	if (dsi->driver_data->has_size_ctl)
+> -		writel(vm->vactive << 16 | vm->hactive, dsi->regs + DSI_SIZE_CON);
+> +		writel(vm->vactive << 16 | vm->hactive,
+> +		       dsi->regs + DSI_SIZE_CON);
+>  
+>  	horizontal_sync_active_byte = (vm->hsync_len * dsi_tmp_buf_bpp - 10);
+>  
+> @@ -444,7 +488,34 @@ static void mtk_dsi_config_vdo_timing(struct mtk_dsi *dsi)
+>  		horizontal_backporch_byte = ((vm->hback_porch + vm->hsync_len) *
+>  			dsi_tmp_buf_bpp - 10);
+>  
+> -	horizontal_frontporch_byte = (vm->hfront_porch * dsi_tmp_buf_bpp - 12);
+> +	data_phy_cycles = timing->lpx + timing->da_hs_prepare +
+> +				  timing->da_hs_zero + timing->da_hs_exit + 2;
+> +
+> +	if (dsi->mode_flags & MIPI_DSI_MODE_VIDEO_BURST) {
+> +		if (vm->hfront_porch * dsi_tmp_buf_bpp >
+> +		    data_phy_cycles * dsi->lanes + 18) {
+> +			horizontal_frontporch_byte = vm->hfront_porch *
+> +						     dsi_tmp_buf_bpp -
+> +						     data_phy_cycles *
+> +						     dsi->lanes - 18;
+> +		} else {
+> +			DRM_WARN("HFP less than d-phy, FPS will under 60Hz\n");
+> +			horizontal_frontporch_byte = vm->hfront_porch *
+> +						     dsi_tmp_buf_bpp;
+> +		}
+> +	} else {
+> +		if (vm->hfront_porch * dsi_tmp_buf_bpp >
+> +		    data_phy_cycles * dsi->lanes + 12) {
+> +			horizontal_frontporch_byte = vm->hfront_porch *
+> +						     dsi_tmp_buf_bpp -
+> +						     data_phy_cycles *
+> +						     dsi->lanes - 12;
+> +		} else {
+> +			DRM_WARN("HFP less than d-phy, FPS will under 60Hz\n");
+> +			horizontal_frontporch_byte = vm->hfront_porch *
+> +						     dsi_tmp_buf_bpp;
+> +		}
+> +	}
+>  
+>  	writel(horizontal_sync_active_byte, dsi->regs + DSI_HSA_WC);
+>  	writel(horizontal_backporch_byte, dsi->regs + DSI_HBP_WC);
+> @@ -544,8 +615,7 @@ static int mtk_dsi_poweron(struct mtk_dsi *dsi)
+>  {
+>  	struct device *dev = dsi->dev;
+>  	int ret;
+> -	u64 pixel_clock, total_bits;
+> -	u32 htotal, htotal_bits, bit_per_pixel, overhead_cycles, overhead_bits;
+> +	u32 bit_per_pixel;
+>  
+>  	if (++dsi->refcount != 1)
+>  		return 0;
+> @@ -564,24 +634,7 @@ static int mtk_dsi_poweron(struct mtk_dsi *dsi)
+>  		break;
+>  	}
+>  
+> -	/**
+> -	 * htotal_time = htotal * byte_per_pixel / num_lanes
+> -	 * overhead_time = lpx + hs_prepare + hs_zero + hs_trail + hs_exit
+> -	 * mipi_ratio = (htotal_time + overhead_time) / htotal_time
+> -	 * data_rate = pixel_clock * bit_per_pixel * mipi_ratio / num_lanes;
+> -	 */
+> -	pixel_clock = dsi->vm.pixelclock;
+> -	htotal = dsi->vm.hactive + dsi->vm.hback_porch + dsi->vm.hfront_porch +
+> -			dsi->vm.hsync_len;
+> -	htotal_bits = htotal * bit_per_pixel;
+> -
+> -	overhead_cycles = T_LPX + T_HS_PREP + T_HS_ZERO + T_HS_TRAIL +
+> -			T_HS_EXIT;
+> -	overhead_bits = overhead_cycles * dsi->lanes * 8;
+> -	total_bits = htotal_bits + overhead_bits;
+> -
+> -	dsi->data_rate = DIV_ROUND_UP_ULL(pixel_clock * total_bits,
+> -					  htotal * dsi->lanes);
+> +	dsi->data_rate = dsi->vm.pixelclock * bit_per_pixel / dsi->lanes;
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+pixelclock and bit_per_pixel are not u64, and neither is dsi->lanes.
+The above will thus be a 32-bit operation on 32-bit systems, and never
+really assign a true 64-bit value to data_rate. On top of that,
+clk_set_rate() expects an unsigned long argument. Declaring data_rate
+as anything but unsigned long has therefore no value.
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+Note that the old code took possible overflow conditions due to interim
+results larger than u32 / unsigned long into account. This is no longer
+the case. I don't know if this is a concern, but it might be worth watching
+out for. If it is not a concern because the code is not anymore expected
+to run on 32-bit systems, it should be restricted to 64-bit builds.
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+Guenter
 
-Thanks,
-Mark
-
-From 1d9c95c1896256a64e3a8d825f9e78cc79d29ebb Mon Sep 17 00:00:00 2001
-From: Olivier Moysan <olivier.moysan@st.com>
-Date: Mon, 3 Jun 2019 10:16:34 +0200
-Subject: [PATCH] ASoC: stm32: sai: manage identification registers
-
-Add support of identification registers in STM32 SAI.
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- sound/soc/stm/stm32_sai.c     | 44 ++++++++++++++++++++++++----
- sound/soc/stm/stm32_sai.h     | 54 ++++++++++++++++++++++++++---------
- sound/soc/stm/stm32_sai_sub.c | 14 +++++----
- 3 files changed, 88 insertions(+), 24 deletions(-)
-
-diff --git a/sound/soc/stm/stm32_sai.c b/sound/soc/stm/stm32_sai.c
-index 7550d5f08be3..98b29f712831 100644
---- a/sound/soc/stm/stm32_sai.c
-+++ b/sound/soc/stm/stm32_sai.c
-@@ -30,13 +30,20 @@
- #include "stm32_sai.h"
- 
- static const struct stm32_sai_conf stm32_sai_conf_f4 = {
--	.version = SAI_STM32F4,
--	.has_spdif = false,
-+	.version = STM_SAI_STM32F4,
-+	.fifo_size = 8,
-+	.has_spdif_pdm = false,
- };
- 
-+/*
-+ * Default settings for stm32 H7 socs and next.
-+ * These default settings will be overridden if the soc provides
-+ * support of hardware configuration registers.
-+ */
- static const struct stm32_sai_conf stm32_sai_conf_h7 = {
--	.version = SAI_STM32H7,
--	.has_spdif = true,
-+	.version = STM_SAI_STM32H7,
-+	.fifo_size = 8,
-+	.has_spdif_pdm = true,
- };
- 
- static const struct of_device_id stm32_sai_ids[] = {
-@@ -157,6 +164,8 @@ static int stm32_sai_probe(struct platform_device *pdev)
- 	struct reset_control *rst;
- 	struct resource *res;
- 	const struct of_device_id *of_id;
-+	u32 val;
-+	int ret;
- 
- 	sai = devm_kzalloc(&pdev->dev, sizeof(*sai), GFP_KERNEL);
- 	if (!sai)
-@@ -169,7 +178,8 @@ static int stm32_sai_probe(struct platform_device *pdev)
- 
- 	of_id = of_match_device(stm32_sai_ids, &pdev->dev);
- 	if (of_id)
--		sai->conf = (struct stm32_sai_conf *)of_id->data;
-+		memcpy(&sai->conf, (const struct stm32_sai_conf *)of_id->data,
-+		       sizeof(struct stm32_sai_conf));
- 	else
- 		return -EINVAL;
- 
-@@ -208,6 +218,30 @@ static int stm32_sai_probe(struct platform_device *pdev)
- 		reset_control_deassert(rst);
- 	}
- 
-+	/* Enable peripheral clock to allow register access */
-+	ret = clk_prepare_enable(sai->pclk);
-+	if (ret) {
-+		dev_err(&pdev->dev, "failed to enable clock: %d\n", ret);
-+		return ret;
-+	}
-+
-+	val = FIELD_GET(SAI_IDR_ID_MASK,
-+			readl_relaxed(sai->base + STM_SAI_IDR));
-+	if (val == SAI_IPIDR_NUMBER) {
-+		val = readl_relaxed(sai->base + STM_SAI_HWCFGR);
-+		sai->conf.fifo_size = FIELD_GET(SAI_HWCFGR_FIFO_SIZE, val);
-+		sai->conf.has_spdif_pdm = !!FIELD_GET(SAI_HWCFGR_SPDIF_PDM,
-+						      val);
-+
-+		val = readl_relaxed(sai->base + STM_SAI_VERR);
-+		sai->conf.version = val;
-+
-+		dev_dbg(&pdev->dev, "SAI version: %lu.%lu registered\n",
-+			FIELD_GET(SAI_VERR_MAJ_MASK, val),
-+			FIELD_GET(SAI_VERR_MIN_MASK, val));
-+	}
-+	clk_disable_unprepare(sai->pclk);
-+
- 	sai->pdev = pdev;
- 	sai->set_sync = &stm32_sai_set_sync;
- 	platform_set_drvdata(pdev, sai);
-diff --git a/sound/soc/stm/stm32_sai.h b/sound/soc/stm/stm32_sai.h
-index 9c36a393ab7b..158c73f557f7 100644
---- a/sound/soc/stm/stm32_sai.h
-+++ b/sound/soc/stm/stm32_sai.h
-@@ -37,6 +37,12 @@
- #define STM_SAI_PDMCR_REGX	0x40
- #define STM_SAI_PDMLY_REGX	0x44
- 
-+/* Hardware configuration registers */
-+#define STM_SAI_HWCFGR		0x3F0
-+#define STM_SAI_VERR		0x3F4
-+#define STM_SAI_IDR		0x3F8
-+#define STM_SAI_SIDR		0x3FC
-+
- /******************** Bit definition for SAI_GCR register *******************/
- #define SAI_GCR_SYNCIN_SHIFT	0
- #define SAI_GCR_SYNCIN_WDTH	2
-@@ -82,7 +88,7 @@
- #define SAI_XCR1_NODIV		BIT(SAI_XCR1_NODIV_SHIFT)
- 
- #define SAI_XCR1_MCKDIV_SHIFT	20
--#define SAI_XCR1_MCKDIV_WIDTH(x)	(((x) == SAI_STM32F4) ? 4 : 6)
-+#define SAI_XCR1_MCKDIV_WIDTH(x)	(((x) == STM_SAI_STM32F4) ? 4 : 6)
- #define SAI_XCR1_MCKDIV_MASK(x) GENMASK((SAI_XCR1_MCKDIV_SHIFT + (x) - 1),\
- 				SAI_XCR1_MCKDIV_SHIFT)
- #define SAI_XCR1_MCKDIV_SET(x)	((x) << SAI_XCR1_MCKDIV_SHIFT)
-@@ -234,8 +240,33 @@
- #define SAI_PDMDLY_4R_MASK	GENMASK(30, SAI_PDMDLY_4R_SHIFT)
- #define SAI_PDMDLY_4R_WIDTH	3
- 
--#define STM_SAI_IS_F4(ip)	((ip)->conf->version == SAI_STM32F4)
--#define STM_SAI_IS_H7(ip)	((ip)->conf->version == SAI_STM32H7)
-+/* Registers below apply to SAI version 2.1 and more */
-+
-+/* Bit definition for SAI_HWCFGR register */
-+#define SAI_HWCFGR_FIFO_SIZE	GENMASK(7, 0)
-+#define SAI_HWCFGR_SPDIF_PDM	GENMASK(11, 8)
-+#define SAI_HWCFGR_REGOUT	GENMASK(19, 12)
-+
-+/* Bit definition for SAI_VERR register */
-+#define SAI_VERR_MIN_MASK	GENMASK(3, 0)
-+#define SAI_VERR_MAJ_MASK	GENMASK(7, 4)
-+
-+/* Bit definition for SAI_IDR register */
-+#define SAI_IDR_ID_MASK		GENMASK(31, 0)
-+
-+/* Bit definition for SAI_SIDR register */
-+#define SAI_SIDR_ID_MASK	GENMASK(31, 0)
-+
-+#define SAI_IPIDR_NUMBER	0x00130031
-+
-+/* SAI version numbers are 1.x for F4. Major version number set to 1 for F4 */
-+#define STM_SAI_STM32F4		BIT(4)
-+/* Dummy version number for H7 socs and next */
-+#define STM_SAI_STM32H7		0x0
-+
-+#define STM_SAI_IS_F4(ip)	((ip)->conf.version == STM_SAI_STM32F4)
-+#define STM_SAI_HAS_SPDIF_PDM(ip)\
-+				((ip)->pdata->conf.has_spdif_pdm)
- 
- enum stm32_sai_syncout {
- 	STM_SAI_SYNC_OUT_NONE,
-@@ -243,19 +274,16 @@ enum stm32_sai_syncout {
- 	STM_SAI_SYNC_OUT_B,
- };
- 
--enum stm32_sai_version {
--	SAI_STM32F4,
--	SAI_STM32H7
--};
--
- /**
-  * struct stm32_sai_conf - SAI configuration
-  * @version: SAI version
-- * @has_spdif: SAI S/PDIF support flag
-+ * @fifo_size: SAI fifo size as words number
-+ * @has_spdif_pdm: SAI S/PDIF and PDM features support flag
-  */
- struct stm32_sai_conf {
--	int version;
--	bool has_spdif;
-+	u32 version;
-+	u32 fifo_size;
-+	bool has_spdif_pdm;
- };
- 
- /**
-@@ -265,7 +293,7 @@ struct stm32_sai_conf {
-  * @pclk: SAI bus clock
-  * @clk_x8k: SAI parent clock for sampling frequencies multiple of 8kHz
-  * @clk_x11k: SAI parent clock for sampling frequencies multiple of 11kHz
-- * @version: SOC version
-+ * @conf: SAI hardware capabitilites
-  * @irq: SAI interrupt line
-  * @set_sync: pointer to synchro mode configuration callback
-  * @gcr: SAI Global Configuration Register
-@@ -276,7 +304,7 @@ struct stm32_sai_data {
- 	struct clk *pclk;
- 	struct clk *clk_x8k;
- 	struct clk *clk_x11k;
--	struct stm32_sai_conf *conf;
-+	struct stm32_sai_conf conf;
- 	int irq;
- 	int (*set_sync)(struct stm32_sai_data *sai,
- 			struct device_node *np_provider, int synco, int synci);
-diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
-index 2a74ce7c9440..7d27efb19380 100644
---- a/sound/soc/stm/stm32_sai_sub.c
-+++ b/sound/soc/stm/stm32_sai_sub.c
-@@ -45,7 +45,6 @@
- #define SAI_DATASIZE_24		0x6
- #define SAI_DATASIZE_32		0x7
- 
--#define STM_SAI_FIFO_SIZE	8
- #define STM_SAI_DAI_NAME_SIZE	15
- 
- #define STM_SAI_IS_PLAYBACK(ip)	((ip)->dir == SNDRV_PCM_STREAM_PLAYBACK)
-@@ -63,7 +62,8 @@
- #define SAI_SYNC_EXTERNAL	0x2
- 
- #define STM_SAI_PROTOCOL_IS_SPDIF(ip)	((ip)->spdif)
--#define STM_SAI_HAS_SPDIF(x)	((x)->pdata->conf->has_spdif)
-+#define STM_SAI_HAS_SPDIF(x)	((x)->pdata->conf.has_spdif_pdm)
-+#define STM_SAI_HAS_PDM(x)	((x)->pdata->conf.has_spdif_pdm)
- #define STM_SAI_HAS_EXT_SYNC(x) (!STM_SAI_IS_F4(sai->pdata))
- 
- #define SAI_IEC60958_BLOCK_FRAMES	192
-@@ -274,7 +274,7 @@ static int stm32_sai_get_clk_div(struct stm32_sai_sub_data *sai,
- 				 unsigned long input_rate,
- 				 unsigned long output_rate)
- {
--	int version = sai->pdata->conf->version;
-+	int version = sai->pdata->conf.version;
- 	int div;
- 
- 	div = DIV_ROUND_CLOSEST(input_rate, output_rate);
-@@ -295,7 +295,7 @@ static int stm32_sai_get_clk_div(struct stm32_sai_sub_data *sai,
- static int stm32_sai_set_clk_div(struct stm32_sai_sub_data *sai,
- 				 unsigned int div)
- {
--	int version = sai->pdata->conf->version;
-+	int version = sai->pdata->conf.version;
- 	int ret, cr1, mask;
- 
- 	if (div > SAI_XCR1_MCKDIV_MAX(version)) {
-@@ -1148,6 +1148,8 @@ static int stm32_sai_dai_probe(struct snd_soc_dai *cpu_dai)
- 	 * constraints).
- 	 */
- 	sai->dma_params.maxburst = 4;
-+	if (sai->pdata->conf.fifo_size < 8)
-+		sai->dma_params.maxburst = 1;
- 	/* Buswidth will be set by framework at runtime */
- 	sai->dma_params.addr_width = DMA_SLAVE_BUSWIDTH_UNDEFINED;
- 
-@@ -1315,8 +1317,8 @@ static int stm32_sai_sub_parse_of(struct platform_device *pdev,
- 	sai->phys_addr = res->start;
- 
- 	sai->regmap_config = &stm32_sai_sub_regmap_config_f4;
--	/* Note: PDM registers not available for H7 sub-block B */
--	if (STM_SAI_IS_H7(sai->pdata) && STM_SAI_IS_SUB_A(sai))
-+	/* Note: PDM registers not available for sub-block B */
-+	if (STM_SAI_HAS_PDM(sai) && STM_SAI_IS_SUB_A(sai))
- 		sai->regmap_config = &stm32_sai_sub_regmap_config_h7;
- 
- 	sai->regmap = devm_regmap_init_mmio_clk(&pdev->dev, "sai_ck",
--- 
-2.20.1
-
+>  
+>  	ret = clk_set_rate(dsi->hs_clk, dsi->data_rate);
+>  	if (ret < 0) {
 
 _______________________________________________
 linux-arm-kernel mailing list
