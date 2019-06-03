@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48FA0335D0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:58:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F3D9335D1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Jun 2019 18:58:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UZY0VfUWSmZsDq/BOoVWLSuOzrVFRAoSilZt/r2+D/c=; b=Rf5AhV+C/a5VuW
-	F5NZua6xMT8HwoSOJKMC1mGphWcE+VVNNOUgY99p2j0YduK8xVdEbUbnuQNH1joiGwKk+2etVq4cI
-	U8FRPnmIHy9U+ocPvEqyMKfygzeQI5nV7tLXofkV3RVv+VSNn7Ea3Bwat8qdBytmTvgchPPVpyZso
-	K1NaRGs50mYtDtSJsRKblYT8Fvu4z4eoIwR+Xvteb+4TVzd/Z8tFS9RO28OH7dcQn2tmmUzpzEZNk
-	41OZg1ZJfVZgo/ew5VHsSiD5jfqKLy3uXqpMKJMz2yN3m2fHn8CJYZoMyeYGQKJIhmCMbmcpsp0yZ
-	WEu4I17vnU/tnEuklRoQ==;
+	List-Owner; bh=r5zJkeER724JfbUv9blnyzGoZyrhZP9Pn6S+MCFoi1c=; b=BuFZfR5S5SGMNO
+	neTYPXMtj2q5KIHetslwS5ikawylSOtpuRaM3XXmqJ589G1sAGbcrIpLp5gHyDpO82vvUccLI3rky
+	wM4/sraA8f07lCzEFMSvXLEXix5jt2WpKD/2R5ois4MphiB4Z1mmxGxF7d+wHiOAcytDXELBvxKsv
+	f9S89fUWF6EJ+fGM5vZdHYH21ptmE2MtuoKyZOiVnZZ6G06Pyzp5Sjg3wAHDCNoz1etACK5lfUL6Y
+	/EsiCKdnA0zxJq2RCHIupIkbthZ/tJRLic7YsQjpyYR/DuzmdZQ1uI0ppXSnioK1pYbsCDPRTbMtM
+	WB8/7uGUvORTwdFYFfZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXqHq-0003C1-SK; Mon, 03 Jun 2019 16:58:18 +0000
-Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
+	id 1hXqI2-0003V3-9C; Mon, 03 Jun 2019 16:58:30 +0000
+Received: from mail-vk1-xa49.google.com ([2607:f8b0:4864:20::a49])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXqFh-0000VX-68
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 16:56:32 +0000
-Received: by mail-qt1-x84a.google.com with SMTP id 97so8086341qtb.16
+ id 1hXqFk-0000a6-1u
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Jun 2019 16:56:36 +0000
+Received: by mail-vk1-xa49.google.com with SMTP id x198so3114255vke.21
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 09:56:04 -0700 (PDT)
+ Mon, 03 Jun 2019 09:56:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=EspxEupGJGiWEDXD9P4jjgWKmcXH74NzvYIbJ/AWgMI=;
- b=TJVcn1cLKwrCDqfOoDXp30a4H6TaXBKiwiHjDAdwongHK/bKzo02AftS+NOLHZV2qk
- uaXFTsh7OP9kK6tBgKChXJ2KBusgSI13ByE5QAJT4opcCyHzVAEN7KnoiqvVvgIk9UeZ
- thbX5DYw+Ya/O9Bt8a5AL4KNqAUsZ4B4hEfnsQKdt+gJFBe02e/Gllpw40I3Eh8jjzXh
- yX2E6mPgl8q0tFyhEApdfs/i0GKdcLnrmq2mOZHSQm727N+W9pKIuuH8ohRLmjbmQDTf
- QCPeVpMCsS5AlW/faffrLj+KIOBAFryuyM2XhBVLl0qrMu2w3WMArdINiV+/WP+bh/um
- j3qg==
+ :cc; bh=Y8tRh8UuVncP1ncRA8ZfIPgOhX9+nAfsBu2vnbYNOEE=;
+ b=eFK1jtlEFrS3m2V50O3J5bSuSe+f8SF2oOEJcYGOiFDh2Xi4MGaW9nDUncCGVcGUyN
+ tYL5ptbIsLBKOxSfh5JEibNl8mgQflxa8qzQZCZGbKOMu+ue4btTZbmvk6Kxh+WcG+Wv
+ fn/kF4y9wQfMzaBiS9+LkicOpt8tKnLL/K7iTnBUbTxgKs5dHlS/ncUSuv8GobYsG6Cu
+ 6qM+L38/9FABz5BxD3BPgItX9XL5QdXg0jsVIbHzcM5qVU0wJRygy73ep5mkhIvjeckb
+ fTT0sIEfasP+T2Y6+uUP2P0imGCc2+QNF2QVC0kVT6BdFDtQ0zPTYlADXVtguKUh5EC4
+ AB9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=EspxEupGJGiWEDXD9P4jjgWKmcXH74NzvYIbJ/AWgMI=;
- b=j8A8wQM5Ia8etgCIyR+oS3XNY9T88Uf3/lXHHEgjIo/kbjKqUqDRfxMPtoQjJfHwgE
- V79A37TTbe8wrNchbkVo7HMGVHdYx1r/KezFcJO4Zft9YXn8/j5R4fbRHOa6eKg9UC6y
- 0miNKpqxD3Y2Qhad/wo90jfNNOjTmVeQ7yt0osZ32zpZdOneH/6jFpb8nUEYDqL9RYKY
- E3B/DG/hOErbn80MdP3OdqX17r59b49BErFevFKpPvAQmG+YtnUfE5mSC+Vm4HZ8TOGU
- 8QkGzqDFe3KMoHSyspHV2lGYtR0kddEUOooNfoNYwVuTOtlCDPjEnXbM6OpcnGSIuHcs
- i9Ng==
-X-Gm-Message-State: APjAAAXcCqALHpZ6d8UEgbBMCF3Rntd4c+o3EQpAle4cDKFnE7c7u2Pv
- toaxiM4GRkKNjapM0gTt0fp41fxjtsSIPl0czZAV/AIJR9QrxmTq/6F0hvPFcGjvCbGtw/GYAX/
- GsU/q2EnIdWkEeLiiMoUP/M2Cv5hhbmRnu50u6rl58/TQ6NuE8nPvBl3EbaLP5/RXyLyi8k+30Z
- e3f2igrtMhrgu7Kec=
-X-Google-Smtp-Source: APXvYqyTJQX58jIU+0IdRLMyhel9C9SXAf29MqpC57OIYMzhYLqjfoH2DhcsbA5oBHVd1rJqiIiEUBwjKZJxchdB
-X-Received: by 2002:a0c:be87:: with SMTP id n7mr3853859qvi.65.1559580963191;
- Mon, 03 Jun 2019 09:56:03 -0700 (PDT)
-Date: Mon,  3 Jun 2019 18:55:14 +0200
+ bh=Y8tRh8UuVncP1ncRA8ZfIPgOhX9+nAfsBu2vnbYNOEE=;
+ b=lnh7lpD8ibzhZuxFp8rRUK1hF6KS8Ib5EGngea/dRLPITodQwSbUMMamSdovpwpYhD
+ ZOixlUgEACA5anbErROpfawSUYRm19K4ynpADKz6Rzs7etbFMn0ey6Mf32TXBVSyYd3j
+ 70AePxzhCMbKbEWcOBEJt/62fYQpLpGFQWndTF/6LB4xjkYDsoPp5J9xiw+l7b01XU5u
+ 0oM2dAQUsEneSZe0JQT/Fmf1zgFFVR5IgaYMQ49qkLJPF/2TT3qLnCh+q2RBhTqqyy6t
+ +RNh3FdwjXQ+C94uPY3qlnFuS3zAOg/v/XvPWvojDEwQozNABvAY1CtT1QA6JWHNYQ3/
+ ZMBg==
+X-Gm-Message-State: APjAAAXrT9+tTv3Tszud6m9czozm8rZtJWzQa5uJ6UqHpzPS6SfVG5vl
+ s9JmKwa1yyoZumztymP/V7ckC+zARZV0/DKQwAJ9RHSQovUiNTTSdgEzbWhuEmfmBAnoOGU8560
+ O8OUO2Z2qZVGzzs+mwLpLdt7l7UHiIbaQQsgyk023Nxu5i32EZZUZnPi25qD0MsBcn+UkVYZtDH
+ lLn/wApBSxk65JLME=
+X-Google-Smtp-Source: APXvYqzz/ntPC10OZ0frdLABrSNi7hvZ/ytx4Ex3aaENCq428cafLYJMM+5BmbKZZkSR6QrCbMGhJA3iBNJvNJC5
+X-Received: by 2002:a9f:25c6:: with SMTP id 64mr157298uaf.36.1559580966349;
+ Mon, 03 Jun 2019 09:56:06 -0700 (PDT)
+Date: Mon,  3 Jun 2019 18:55:15 +0200
 In-Reply-To: <cover.1559580831.git.andreyknvl@google.com>
-Message-Id: <c829f93b19ad6af1b13be8935ce29baa8e58518f.1559580831.git.andreyknvl@google.com>
+Message-Id: <31821f3538ddacb7e57e0248e86a3d28f9789d2f.1559580831.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1559580831.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.22.0.rc1.311.g5d7573a151-goog
-Subject: [PATCH v16 12/16] IB,
- arm64: untag user pointers in ib_uverbs_(re)reg_mr()
+Subject: [PATCH v16 13/16] media/v4l2-core,
+ arm64: untag user pointers in videobuf_dma_contig_user_get
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +68,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_095605_657825_ADD1C3F4 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20190603_095608_644441_CB75C1E4 
+X-CRM114-Status: GOOD (  14.26  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a49 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -104,6 +104,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
  Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
  Felix Kuehling <Felix.Kuehling@amd.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
@@ -132,38 +133,56 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-ib_uverbs_(re)reg_mr() use provided user pointers for vma lookups (through
-e.g. mlx4_get_umem_mr()), which can only by done with untagged pointers.
+videobuf_dma_contig_user_get() uses provided user pointers for vma
+lookups, which can only by done with untagged pointers.
 
-Untag user pointers in these functions.
+Untag the pointers in this function.
 
+Acked-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/infiniband/core/uverbs_cmd.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/media/v4l2-core/videobuf-dma-contig.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/infiniband/core/uverbs_cmd.c b/drivers/infiniband/core/uverbs_cmd.c
-index 5a3a1780ceea..f88ee733e617 100644
---- a/drivers/infiniband/core/uverbs_cmd.c
-+++ b/drivers/infiniband/core/uverbs_cmd.c
-@@ -709,6 +709,8 @@ static int ib_uverbs_reg_mr(struct uverbs_attr_bundle *attrs)
- 	if (ret)
- 		return ret;
+diff --git a/drivers/media/v4l2-core/videobuf-dma-contig.c b/drivers/media/v4l2-core/videobuf-dma-contig.c
+index e1bf50df4c70..8a1ddd146b17 100644
+--- a/drivers/media/v4l2-core/videobuf-dma-contig.c
++++ b/drivers/media/v4l2-core/videobuf-dma-contig.c
+@@ -160,6 +160,7 @@ static void videobuf_dma_contig_user_put(struct videobuf_dma_contig_memory *mem)
+ static int videobuf_dma_contig_user_get(struct videobuf_dma_contig_memory *mem,
+ 					struct videobuf_buffer *vb)
+ {
++	unsigned long untagged_baddr = untagged_addr(vb->baddr);
+ 	struct mm_struct *mm = current->mm;
+ 	struct vm_area_struct *vma;
+ 	unsigned long prev_pfn, this_pfn;
+@@ -167,22 +168,22 @@ static int videobuf_dma_contig_user_get(struct videobuf_dma_contig_memory *mem,
+ 	unsigned int offset;
+ 	int ret;
  
-+	cmd.start = untagged_addr(cmd.start);
-+
- 	if ((cmd.start & ~PAGE_MASK) != (cmd.hca_va & ~PAGE_MASK))
- 		return -EINVAL;
+-	offset = vb->baddr & ~PAGE_MASK;
++	offset = untagged_baddr & ~PAGE_MASK;
+ 	mem->size = PAGE_ALIGN(vb->size + offset);
+ 	ret = -EINVAL;
  
-@@ -791,6 +793,8 @@ static int ib_uverbs_rereg_mr(struct uverbs_attr_bundle *attrs)
- 	if (ret)
- 		return ret;
+ 	down_read(&mm->mmap_sem);
  
-+	cmd.start = untagged_addr(cmd.start);
-+
- 	if (cmd.flags & ~IB_MR_REREG_SUPPORTED || !cmd.flags)
- 		return -EINVAL;
+-	vma = find_vma(mm, vb->baddr);
++	vma = find_vma(mm, untagged_baddr);
+ 	if (!vma)
+ 		goto out_up;
  
+-	if ((vb->baddr + mem->size) > vma->vm_end)
++	if ((untagged_baddr + mem->size) > vma->vm_end)
+ 		goto out_up;
+ 
+ 	pages_done = 0;
+ 	prev_pfn = 0; /* kill warning */
+-	user_address = vb->baddr;
++	user_address = untagged_baddr;
+ 
+ 	while (pages_done < (mem->size >> PAGE_SHIFT)) {
+ 		ret = follow_pfn(vma, user_address, &this_pfn);
 -- 
 2.22.0.rc1.311.g5d7573a151-goog
 
