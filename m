@@ -2,102 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6824234A67
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:28:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50A0D34A7A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:31:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tc3uZXLfra/fEmBk8SpCmJFf/fGQkczx2RqbuR3WB4o=; b=kAytaBamoARj3s
-	cMUAe45s+MglsaZ1kXV/kWL9we4Yz4lSazYCchFwN05fo5rqhfjoIpC3t6n4WyjAm1/2PiSXXXffl
-	GeqEbymvYpUKFP1EQOL6JBkTJXOscaW/ePngWLW2lwSfOk0p8nCAN5SVru8IowDXk3YBtQ0KT9c04
-	gLyT6FQYBJv8B3tSFwmjzvbk9kJUVRjas6oEptaJeItGeP0PmQLZDVTPbbhJVETDUFWjaCKZz+XXd
-	tIP4pG2ZLZsrJ/bnL1UBQpCCc8PUyXulQU3r/Hcq8obKP+mhQgdKTjzqhdSlLNIwJj2BSzuoGG+4i
-	aP4nuo7TC5PW8GwqZcvw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JwgPSoKsRhI5BC/mXoPgYlcqmW6utt8NSeLhP5A3NDk=; b=PZXmKkfp6hyL0f4sHEj4dV/0G
+	ACh1/zoNehV/8EbbXXIDKf6tUBxSGiB/LiYua0tGcvUFleIFryXg9zBjb2nie1EXBLLYZMmJSWn9M
+	OujkRMvmf0NRnfAzACR0Z33UKKdfsiAiqWmCBAC95V8dTVs3Ux/uda7uD3ZLmyc378oGoFdY7tMpG
+	juiVn6EiXsS/FyQFzabyExAsJP5AYxifZ0OZ5igLy+wHRZ5ikRne5/nUYLLApuxSqRoOJAev+qp3K
+	55v/RMvGmizW2SvAgEPmPeLX3jxOWiYt4+U3CBDEoVgoVeWzCgw/a+Olei0BFvJ7sYVZm92kMUhOn
+	AftR6q+tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAQe-0005z3-Am; Tue, 04 Jun 2019 14:28:44 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAQW-0005yS-QQ
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:28:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 90838341;
- Tue,  4 Jun 2019 07:28:35 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 5B8DF3F690; Tue,  4 Jun 2019 07:28:34 -0700 (PDT)
-Subject: Re: KVM Arm Device passthrough and linux-rt
-From: Marc Zyngier <marc.zyngier@arm.com>
-To: Steven Rostedt <rostedt@goodmis.org>, Julien Grall <julien.grall@arm.com>
-References: <26832850-37ee-ae07-08ca-cc3e90978867@arm.com>
- <20190604091607.2e87eb36@oasis.local.home>
- <f2fbc06b-373f-ee2a-b111-ea40848dc1c5@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- mQINBE6Jf0UBEADLCxpix34Ch3kQKA9SNlVQroj9aHAEzzl0+V8jrvT9a9GkK+FjBOIQz4KE
- g+3p+lqgJH4NfwPm9H5I5e3wa+Scz9wAqWLTT772Rqb6hf6kx0kKd0P2jGv79qXSmwru28vJ
- t9NNsmIhEYwS5eTfCbsZZDCnR31J6qxozsDHpCGLHlYym/VbC199Uq/pN5gH+5JHZyhyZiNW
- ozUCjMqC4eNW42nYVKZQfbj/k4W9xFfudFaFEhAf/Vb1r6F05eBP1uopuzNkAN7vqS8XcgQH
- qXI357YC4ToCbmqLue4HK9+2mtf7MTdHZYGZ939OfTlOGuxFW+bhtPQzsHiW7eNe0ew0+LaL
- 3wdNzT5abPBscqXWVGsZWCAzBmrZato+Pd2bSCDPLInZV0j+rjt7MWiSxEAEowue3IcZA++7
- ifTDIscQdpeKT8hcL+9eHLgoSDH62SlubO/y8bB1hV8JjLW/jQpLnae0oz25h39ij4ijcp8N
- t5slf5DNRi1NLz5+iaaLg4gaM3ywVK2VEKdBTg+JTg3dfrb3DH7ctTQquyKun9IVY8AsxMc6
- lxl4HxrpLX7HgF10685GG5fFla7R1RUnW5svgQhz6YVU33yJjk5lIIrrxKI/wLlhn066mtu1
- DoD9TEAjwOmpa6ofV6rHeBPehUwMZEsLqlKfLsl0PpsJwov8TQARAQABtCNNYXJjIFp5bmdp
- ZXIgPG1hcmMuenluZ2llckBhcm0uY29tPokCOwQTAQIAJQIbAwYLCQgHAwIGFQgCCQoLBBYC
- AwECHgECF4AFAk6NvYYCGQEACgkQI9DQutE9ekObww/+NcUATWXOcnoPflpYG43GZ0XjQLng
- LQFjBZL+CJV5+1XMDfz4ATH37cR+8gMO1UwmWPv5tOMKLHhw6uLxGG4upPAm0qxjRA/SE3LC
- 22kBjWiSMrkQgv5FDcwdhAcj8A+gKgcXBeyXsGBXLjo5UQOGvPTQXcqNXB9A3ZZN9vS6QUYN
- TXFjnUnzCJd+PVI/4jORz9EUVw1q/+kZgmA8/GhfPH3xNetTGLyJCJcQ86acom2liLZZX4+1
- 6Hda2x3hxpoQo7pTu+XA2YC4XyUstNDYIsE4F4NVHGi88a3N8yWE+Z7cBI2HjGvpfNxZnmKX
- 6bws6RQ4LHDPhy0yzWFowJXGTqM/e79c1UeqOVxKGFF3VhJJu1nMlh+5hnW4glXOoy/WmDEM
- UMbl9KbJUfo+GgIQGMp8mwgW0vK4HrSmevlDeMcrLdfbbFbcZLNeFFBn6KqxFZaTd+LpylIH
- bOPN6fy1Dxf7UZscogYw5Pt0JscgpciuO3DAZo3eXz6ffj2NrWchnbj+SpPBiH4srfFmHY+Y
- LBemIIOmSqIsjoSRjNEZeEObkshDVG5NncJzbAQY+V3Q3yo9og/8ZiaulVWDbcpKyUpzt7pv
- cdnY3baDE8ate/cymFP5jGJK++QCeA6u6JzBp7HnKbngqWa6g8qDSjPXBPCLmmRWbc5j0lvA
- 6ilrF8m5Ag0ETol/RQEQAM/2pdLYCWmf3rtIiP8Wj5NwyjSL6/UrChXtoX9wlY8a4h3EX6E3
- 64snIJVMLbyr4bwdmPKULlny7T/R8dx/mCOWu/DztrVNQiXWOTKJnd/2iQblBT+W5W8ep/nS
- w3qUIckKwKdplQtzSKeE+PJ+GMS+DoNDDkcrVjUnsoCEr0aK3cO6g5hLGu8IBbC1CJYSpple
- VVb/sADnWF3SfUvJ/l4K8Uk4B4+X90KpA7U9MhvDTCy5mJGaTsFqDLpnqp/yqaT2P7kyMG2E
- w+eqtVIqwwweZA0S+tuqput5xdNAcsj2PugVx9tlw/LJo39nh8NrMxAhv5aQ+JJ2I8UTiHLX
- QvoC0Yc/jZX/JRB5r4x4IhK34Mv5TiH/gFfZbwxd287Y1jOaD9lhnke1SX5MXF7eCT3cgyB+
- hgSu42w+2xYl3+rzIhQqxXhaP232t/b3ilJO00ZZ19d4KICGcakeiL6ZBtD8TrtkRiewI3v0
- o8rUBWtjcDRgg3tWx/PcJvZnw1twbmRdaNvsvnlapD2Y9Js3woRLIjSAGOijwzFXSJyC2HU1
- AAuR9uo4/QkeIrQVHIxP7TJZdJ9sGEWdeGPzzPlKLHwIX2HzfbdtPejPSXm5LJ026qdtJHgz
- BAb3NygZG6BH6EC1NPDQ6O53EXorXS1tsSAgp5ZDSFEBklpRVT3E0NrDABEBAAGJAh8EGAEC
- AAkFAk6Jf0UCGwwACgkQI9DQutE9ekMLBQ//U+Mt9DtFpzMCIHFPE9nNlsCm75j22lNiw6mX
- mx3cUA3pl+uRGQr/zQC5inQNtjFUmwGkHqrAw+SmG5gsgnM4pSdYvraWaCWOZCQCx1lpaCOl
- MotrNcwMJTJLQGc4BjJyOeSH59HQDitKfKMu/yjRhzT8CXhys6R0kYMrEN0tbe1cFOJkxSbV
- 0GgRTDF4PKyLT+RncoKxQe8lGxuk5614aRpBQa0LPafkirwqkUtxsPnarkPUEfkBlnIhAR8L
- kmneYLu0AvbWjfJCUH7qfpyS/FRrQCoBq9QIEcf2v1f0AIpA27f9KCEv5MZSHXGCdNcbjKw1
- 39YxYZhmXaHFKDSZIC29YhQJeXWlfDEDq6nIhvurZy3mSh2OMQgaIoFexPCsBBOclH8QUtMk
- a3jW/qYyrV+qUq9Wf3SKPrXf7B3xB332jFCETbyZQXqmowV+2b3rJFRWn5hK5B+xwvuxKyGq
- qDOGjof2dKl2zBIxbFgOclV7wqCVkhxSJi/QaOj2zBqSNPXga5DWtX3ekRnJLa1+ijXxmdjz
- hApihi08gwvP5G9fNGKQyRETePEtEAWt0b7dOqMzYBYGRVr7uS4uT6WP7fzOwAJC4lU7ZYWZ
- yVshCa0IvTtp1085RtT3qhh9mobkcZ+7cQOY+Tx2RGXS9WeOh2jZjdoWUv6CevXNQyOUXMM=
-Organization: ARM Ltd
-Message-ID: <68c8af25-3712-f259-6f52-c259bb61a66d@arm.com>
-Date: Tue, 4 Jun 2019 15:28:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hYASv-00084u-58; Tue, 04 Jun 2019 14:31:05 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYASp-00084i-S2
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 04 Jun 2019 14:31:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=7Q9LDiVWB9kPoAAAH7vvT7cxtxbPd41FlNJGS358wwU=; b=rbF352SkE29mVhbOxSueDKA3j
+ rBdPu7RtP6BwPIxKdGPlD4i5SLewPSZixvoA64Mi+EeALNvzt80l4T43WNpVq7447MP2jZB8hh2gl
+ fck4RzCJaHYGp0UnbnMM1Tr5yjd+7XvcwZuvxSoVjBMUkuVH1ZWYqcX200zjseF+1ZUSvl5VscRSM
+ 48jFU9nCXnQTUYi1mxdzzBqSHvOfJCNpMno+iPR+yUzScUnm2pEMkdT/CIT+FAYafYMXYQLasicHD
+ ZxKPXXWlmjeHE2EPr4D3zEMzBOdgD7ZkdjLWilQ+mgZ8AO1rsoCTr5mXHftNLQ4e8ZcwXqBQcEFOa
+ N9H+g58NQ==;
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYASl-0007ua-TO
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:30:58 +0000
+X-Originating-IP: 90.88.144.139
+Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
+ [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 2E1C41BF214;
+ Tue,  4 Jun 2019 14:30:16 +0000 (UTC)
+Date: Tue, 4 Jun 2019 16:30:16 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v10 04/11] drm/sun4i: tcon: Compute DCLK dividers based
+ on format, lanes
+Message-ID: <20190604143016.fcx3ezmga244xakp@flea>
+References: <20190520090318.27570-1-jagan@amarulasolutions.com>
+ <20190520090318.27570-5-jagan@amarulasolutions.com>
+ <20190523204823.mx7l4ozklzdh7npn@flea>
+ <CAMty3ZA0S=+8NBrQZvP6sFdzSYWqhNZL_KjkJAQ0jTc2RVivrw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <f2fbc06b-373f-ee2a-b111-ea40848dc1c5@arm.com>
-Content-Language: en-US
+In-Reply-To: <CAMty3ZA0S=+8NBrQZvP6sFdzSYWqhNZL_KjkJAQ0jTc2RVivrw@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_072836_869346_DB6B4815 
-X-CRM114-Status: GOOD (  20.54  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+X-CRM114-CacheID: sfid-20190604_153056_029334_C8E846AC 
+X-CRM114-Status: GOOD (  30.27  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.201 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,155 +80,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sebastian Andrzej Siewior <bigeasy@linutronix.de>, julia@ni.com,
- linux-rt-users <linux-rt-users@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- kvmarm@lists.cs.columbia.edu
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Bhushan Shah <bshah@mykolab.com>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ =?utf-8?B?5Z2a5a6a5YmN6KGM?= <powerpan@qq.com>, Chen-Yu Tsai <wens@csie.org>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============6755509508004274020=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/06/2019 14:53, Marc Zyngier wrote:
-> On 04/06/2019 14:16, Steven Rostedt wrote:
->> On Tue, 4 Jun 2019 13:58:51 +0100
->> Julien Grall <julien.grall@arm.com> wrote:
->>
->>> This is happening because vgic_v2_fold_lr_state() is expected
->>> to be called with interrupt disabled. However, some of the path
->>> (e.g eventfd) will take a spinlock.
->>>
->>> The spinlock is from the waitqueue, so using a raw_spin_lock cannot
->>> even be considered.
->>>
->>> Do you have any input on how this could be solved?
->>
->> What's the reason that vgic_v2_fold_lr_state() expects interrupts to be
->> disabled?
-> 
-> That's to prevent the injection of an interrupt firing on the same CPU
-> while we're saving the corresponding vcpu interrupt context, among other
-> things (the whole guest exit path runs with interrupt disabled in order
-> to avoid this kind of thing).
-> 
-> One possibility would be to accumulate the set of interrupt that require
-> resampling (which is bound to be small, the number of LRs at most) and
-> call kvm_notify_acked_irq on that set once interrupts are re-enabled.
-> 
-> I'll have a look...
 
-Julien,
+--===============6755509508004274020==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="bzh4hofc767vlzii"
+Content-Disposition: inline
 
-Here's what I have in mind, compile-tested only. Please let me know how
-it fares on your setup...
 
-Thanks,
+--bzh4hofc767vlzii
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-	M.
+On Fri, May 24, 2019 at 03:37:36PM +0530, Jagan Teki wrote:
+> On Fri, May 24, 2019 at 2:18 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> >
+> > On Mon, May 20, 2019 at 02:33:11PM +0530, Jagan Teki wrote:
+> > > pll-video => pll-mipi => tcon0 => tcon0-pixel-clock is the typical
+> > > MIPI clock topology in Allwinner DSI controller.
+> > >
+> > > TCON dotclock driver is computing the desired DCLK divider based on
+> > > panel pixel clock along with input DCLK min, max divider values from
+> > > tcon driver and that would eventually set the pll-mipi clock rate.
+> > >
+> > > The current code is passing dsi min and max divider value as 4 via
+> > > tcon driver which would ended-up triggering below vblank wait timed out
+> > > warning on "bananapi,s070wv20-ct16" panel.
+> > >
+> > >  WARNING: CPU: 0 PID: 31 at drivers/gpu/drm/drm_atomic_helper.c:1429 drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0
+> > >  [CRTC:46:crtc-0] vblank wait timed out
+> > >  Modules linked in:
+> > >  CPU: 0 PID: 31 Comm: kworker/0:1 Not tainted 5.1.0-next-20190514-00025-g5186cdf10757-dirty #6
+> > >  Hardware name: Allwinner sun8i Family
+> > >  Workqueue: events deferred_probe_work_func
+> > >  [<c010ed54>] (unwind_backtrace) from [<c010b76c>] (show_stack+0x10/0x14)
+> > >  [<c010b76c>] (show_stack) from [<c0688c70>] (dump_stack+0x84/0x98)
+> > >  [<c0688c70>] (dump_stack) from [<c011d9e4>] (__warn+0xfc/0x114)
+> > >  [<c011d9e4>] (__warn) from [<c011da40>] (warn_slowpath_fmt+0x44/0x68)
+> > >  [<c011da40>] (warn_slowpath_fmt) from [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1+0x298/0x2a0)
+> > >  [<c040cd50>] (drm_atomic_helper_wait_for_vblanks.part.1) from [<c040e694>] (drm_atomic_helper_commit_tail_rpm+0x5c/0x6c)
+> > >  [<c040e694>] (drm_atomic_helper_commit_tail_rpm) from [<c040e4dc>] (commit_tail+0x40/0x6c)
+> > >  [<c040e4dc>] (commit_tail) from [<c040e5cc>] (drm_atomic_helper_commit+0xbc/0x128)
+> > >  [<c040e5cc>] (drm_atomic_helper_commit) from [<c0411b64>] (restore_fbdev_mode_atomic+0x1cc/0x1dc)
+> > >  [<c0411b64>] (restore_fbdev_mode_atomic) from [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked+0x54/0xa0)
+> > >  [<c04156f8>] (drm_fb_helper_restore_fbdev_mode_unlocked) from [<c0415774>] (drm_fb_helper_set_par+0x30/0x54)
+> > >  [<c0415774>] (drm_fb_helper_set_par) from [<c03ad450>] (fbcon_init+0x560/0x5ac)
+> > >  [<c03ad450>] (fbcon_init) from [<c03eb8a0>] (visual_init+0xbc/0x104)
+> > >  [<c03eb8a0>] (visual_init) from [<c03ed1b8>] (do_bind_con_driver+0x1b0/0x390)
+> > >  [<c03ed1b8>] (do_bind_con_driver) from [<c03ed780>] (do_take_over_console+0x13c/0x1c4)
+> > >  [<c03ed780>] (do_take_over_console) from [<c03ad800>] (do_fbcon_takeover+0x74/0xcc)
+> > >  [<c03ad800>] (do_fbcon_takeover) from [<c013c9c8>] (notifier_call_chain+0x44/0x84)
+> > >  [<c013c9c8>] (notifier_call_chain) from [<c013cd20>] (__blocking_notifier_call_chain+0x48/0x60)
+> > >  [<c013cd20>] (__blocking_notifier_call_chain) from [<c013cd50>] (blocking_notifier_call_chain+0x18/0x20)
+> > >  [<c013cd50>] (blocking_notifier_call_chain) from [<c03a6e44>] (register_framebuffer+0x1e0/0x2f8)
+> > >  [<c03a6e44>] (register_framebuffer) from [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock+0x2fc/0x50c)
+> > >  [<c04153c0>] (__drm_fb_helper_initial_config_and_unlock) from [<c04158c8>] (drm_fbdev_client_hotplug+0xe8/0x1b8)
+> > >  [<c04158c8>] (drm_fbdev_client_hotplug) from [<c0415a20>] (drm_fbdev_generic_setup+0x88/0x118)
+> > >  [<c0415a20>] (drm_fbdev_generic_setup) from [<c043f060>] (sun4i_drv_bind+0x128/0x160)
+> > >  [<c043f060>] (sun4i_drv_bind) from [<c044b588>] (try_to_bring_up_master+0x164/0x1a0)
+> > >  [<c044b588>] (try_to_bring_up_master) from [<c044b658>] (__component_add+0x94/0x140)
+> > >  [<c044b658>] (__component_add) from [<c0445e0c>] (sun6i_dsi_probe+0x144/0x234)
+> > >  [<c0445e0c>] (sun6i_dsi_probe) from [<c0452ee4>] (platform_drv_probe+0x48/0x9c)
+> > >  [<c0452ee4>] (platform_drv_probe) from [<c04512bc>] (really_probe+0x1dc/0x2c8)
+> > >  [<c04512bc>] (really_probe) from [<c0451508>] (driver_probe_device+0x60/0x160)
+> > >  [<c0451508>] (driver_probe_device) from [<c044f794>] (bus_for_each_drv+0x74/0xb8)
+> > >  [<c044f794>] (bus_for_each_drv) from [<c045106c>] (__device_attach+0xd0/0x13c)
+> > >  [<c045106c>] (__device_attach) from [<c0450464>] (bus_probe_device+0x84/0x8c)
+> > >  [<c0450464>] (bus_probe_device) from [<c04508f0>] (deferred_probe_work_func+0x64/0x90)
+> > >  [<c04508f0>] (deferred_probe_work_func) from [<c0135970>] (process_one_work+0x204/0x420)
+> > >  [<c0135970>] (process_one_work) from [<c013690c>] (worker_thread+0x274/0x5a0)
+> > >  [<c013690c>] (worker_thread) from [<c013b3d8>] (kthread+0x11c/0x14c)
+> > >  [<c013b3d8>] (kthread) from [<c01010e8>] (ret_from_fork+0x14/0x2c)
+> > >  Exception stack(0xde539fb0 to 0xde539ff8)
+> > >  9fa0:                                     00000000 00000000 00000000 00000000
+> > >  9fc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+> > >  9fe0: 00000000 00000000 00000000 00000000 00000013 00000000
+> > >  ---[ end trace 4017fea4906ab391 ]---
+> > >
+> > > But accordingly to Allwinner A33, A64 BSP codes [1] [2] this divider
+> > > is clearly using 'format/lanes' for dsi divider value, dsi_clk.clk_div
+> > >
+> > > Which would compute the pll_freq and set a clock rate for it in
+> > > [3] and [4] respectively.
+> > >
+> > > The same issue has reproduced in A33, A64 with 4-lane and 2-lane devices
+> > > and got fixed with this computation logic 'format/lanes', so this patch
+> > > using dclk min and max dividers as per BSP.
+> > >
+> > > [1] https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L1106
+> > > [2] https://github.com/BPI-SINOVOIP/BPI-M64-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp2/disp/de/lowlevel_sun50iw1/disp_al.c#L213
+> > > [3] https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L1127
+> > > [4] https://github.com/BPI-SINOVOIP/BPI-M2M-bsp/blob/master/linux-sunxi/drivers/video/sunxi/disp/de/disp_lcd.c#L1161
+> >
+> > In that mail, I've pointed out that clk_div isn't used for the TCON dclk divider:
+> > http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/629596.html
+> >
+> > The only reply you've sent is that you indeed see that the divider is
+> > set to 4 in the BSP, but you're now saying that the BSP can change
+> > it. If so, then please point exactly the flaw in the explanation in
+> > that mail.
+>
+> Frankly, I have explained these details in commit message and previous
+> version patch[1] with print messages on the code.
+>
+> BSP has tcon_div and dsi_div. dsi_div is dynamic which depends on
+> bpp/lanes and it indeed depends on PLL computation (not tcon_div),
+> anyway I have explained again on this initial link you mentioned.
+> Please have a look and get back.
 
-diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-index c36c86f1ec9a..9e587f5d90fa 100644
---- a/include/kvm/arm_vgic.h
-+++ b/include/kvm/arm_vgic.h
-@@ -307,6 +307,10 @@ struct vgic_cpu {
- 	unsigned int used_lrs;
- 	struct vgic_irq private_irqs[VGIC_NR_PRIVATE_IRQS];
- 
-+	/* SPIs to be resampled by SW at EOI time */
-+	u16		spi_notify[VGIC_V2_MAX_LRS];
-+	int		spi_notify_count;
-+
- 	raw_spinlock_t ap_list_lock;	/* Protects the ap_list */
- 
- 	/*
-@@ -371,6 +375,7 @@ void kvm_vgic_put(struct kvm_vcpu *vcpu);
- bool kvm_vcpu_has_pending_irqs(struct kvm_vcpu *vcpu);
- void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu);
- void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu);
-+void kvm_vgic_process_resample(struct kvm_vcpu *vcpu);
- void kvm_vgic_reset_mapped_irq(struct kvm_vcpu *vcpu, u32 vintid);
- 
- void vgic_v3_dispatch_sgi(struct kvm_vcpu *vcpu, u64 reg, bool allow_group1);
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 7eeebe5e9da2..a95c46b2d723 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -827,6 +827,12 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
- 		guest_exit();
- 		trace_kvm_exit(ret, kvm_vcpu_trap_get_class(vcpu), *vcpu_pc(vcpu));
- 
-+		/*
-+		 * Now that interrupts are enabled, signal interrupts
-+		 * that require SW resampling.
-+		 */
-+		kvm_vgic_process_resample(vcpu);
-+
- 		/* Exit types that need handling before we can be preempted */
- 		handle_exit_early(vcpu, run, ret);
- 
-diff --git a/virt/kvm/arm/vgic/vgic-v2.c b/virt/kvm/arm/vgic/vgic-v2.c
-index d91a8938aa7c..9953e1742d65 100644
---- a/virt/kvm/arm/vgic/vgic-v2.c
-+++ b/virt/kvm/arm/vgic/vgic-v2.c
-@@ -79,8 +79,7 @@ void vgic_v2_fold_lr_state(struct kvm_vcpu *vcpu)
- 
- 		/* Notify fds when the guest EOI'ed a level-triggered SPI */
- 		if (lr_signals_eoi_mi(val) && vgic_valid_spi(vcpu->kvm, intid))
--			kvm_notify_acked_irq(vcpu->kvm, 0,
--					     intid - VGIC_NR_PRIVATE_IRQS);
-+			vgic_cpu->spi_notify[vgic_cpu->spi_notify_count++] = intid;
- 
- 		irq = vgic_get_irq(vcpu->kvm, vcpu, intid);
- 
-diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-index 9f87e58dbd4a..54b1e4ea5cfa 100644
---- a/virt/kvm/arm/vgic/vgic-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-v3.c
-@@ -69,8 +69,7 @@ void vgic_v3_fold_lr_state(struct kvm_vcpu *vcpu)
- 
- 		/* Notify fds when the guest EOI'ed a level-triggered IRQ */
- 		if (lr_signals_eoi_mi(val) && vgic_valid_spi(vcpu->kvm, intid))
--			kvm_notify_acked_irq(vcpu->kvm, 0,
--					     intid - VGIC_NR_PRIVATE_IRQS);
-+			vgic_cpu->spi_notify[vgic_cpu->spi_notify_count++] = intid;
- 
- 		irq = vgic_get_irq(vcpu->kvm, vcpu, intid);
- 		if (!irq)	/* An LPI could have been unmapped. */
-diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
-index 191deccf60bf..baa6aa494e86 100644
---- a/virt/kvm/arm/vgic/vgic.c
-+++ b/virt/kvm/arm/vgic/vgic.c
-@@ -880,6 +880,8 @@ void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu)
- {
- 	WARN_ON(vgic_v4_flush_hwstate(vcpu));
- 
-+	vcpu->arch.vgic_cpu.spi_notify_count = 0;
-+
- 	/*
- 	 * If there are no virtual interrupts active or pending for this
- 	 * VCPU, then there is no work to do and we can bail out without
-@@ -908,6 +910,16 @@ void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu)
- 		vgic_restore_state(vcpu);
- }
- 
-+void kvm_vgic_process_resample(struct kvm_vcpu *vcpu)
-+{
-+	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
-+	int i;
-+
-+	for (i = 0; i < vgic_cpu->spi_notify_count; i++)
-+		kvm_notify_acked_irq(vcpu->kvm, 0,
-+				     vgic_cpu->spi_notify[i] - VGIC_NR_PRIVATE_IRQS);
-+}
-+
- void kvm_vgic_load(struct kvm_vcpu *vcpu)
- {
- 	if (unlikely(!vgic_initialized(vcpu->kvm)))
+I'll have a look, thanks.
 
--- 
-Jazz is not dead. It just smells funny...
+I've given your patches a try on my setup though, and this patch
+breaks it with vblank timeouts and some horizontal lines that looks
+like what should be displayed, but blinking and on the right of the
+display. The previous ones are fine though.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--bzh4hofc767vlzii
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPaAeAAKCRDj7w1vZxhR
+xRsaAQD8VOHrkhTaroXSk/grjYaZthiT2ZmiYgFnpApMvxbCQwD8DKO1ICEMfDdJ
+8IfIf2TnCp47Y4ka5MCvLBLVomQQTwA=
+=zQDF
+-----END PGP SIGNATURE-----
+
+--bzh4hofc767vlzii--
+
+
+--===============6755509508004274020==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6755509508004274020==--
+
