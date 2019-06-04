@@ -2,107 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0555C34980
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:55:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57BD734995
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:57:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j5ZOyX0yPoa4YijJx1ryXaZ8u2g1UGYTkycgCK5TY3Y=; b=ePQfQPccG2rfV0
-	NTZGKBnfZY9kjH4y1lgAyOsXaMgCLD0uBM91Zeta23CQzB5NeFA7zzAs9mEXqnTzDC06IYR4DPTOZ
-	BwYRyHb9zkS350uS8+rp0rs4ZOtCsFnW2JVRB4o84yZra/7JGfMNy8e/1WZX8Wrg3l+q2Rb6e54xZ
-	w+b04tFBOWRkDBghgttdNBzDNFB0kHQvK/wvK2Zsco2exHy4kAnSf8GeIIwosKlNscObK5pPNTb2M
-	zTMizgLCG5FpqTgMfx62R1v8Jf2YV6sG384YPRx0xh1AX3J7Smac0akRndykEcxakX0RsC6ev/az8
-	/PS1pxumgW/uqsBGgk6Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fVgUWR62JKx1fMozv1HTAH/lCxJ4wRnTefpJDjYzKAw=; b=R2G0YIXfaOO1GR
+	HRzQM2Di4yKSARFiBmcJK+1a89W+B4CAfreAoJ6lVNHPPR8ZE8YT9LppCsSj09bcv32jfLdmTmVUV
+	hJrkcrXBAIdGgFr/5PTGMzEUxx0V6uNXogPAhTo3kVWBIlSNPOpegjO7akyDRoUBhm+yTNccgEdbH
+	R9WBw1zC2FKYFoGB+d6o1Gjg4gCItDLxhmQSyeapNp7ulFdmNNvpACZlpiqStO+h7tvz6vxpgP9dN
+	0XjtJn3tDTl1FkfxY9aCZ5IDx92zi2QhOHNfyu7KHELNldE6hDC0zwSw1VInqdorZK8vYSRO4kwEy
+	n+fp99i772weG5T8BJeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY9ut-00014R-2I; Tue, 04 Jun 2019 13:55:55 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1hY9w2-0001NR-7W; Tue, 04 Jun 2019 13:57:06 +0000
+Received: from mail-eopbgr760078.outbound.protection.outlook.com
+ ([40.107.76.78] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY9ul-00013r-IM
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:55:49 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x54DlLtO019052; Tue, 4 Jun 2019 15:55:44 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : references : in-reply-to : content-type : content-id :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=/l+I9/VrslMxF9koCf1mice5DTAFdPweFnW/HGgh+yI=;
- b=rv9CHvkXyrmpcAoDio1Pfc/MNx3qZ51DB0Q5F3hkUzvJKrd3xH1K+w4/qRbYM0SylD6d
- xN76Ltc2s9LmsGqKNES984we0hKcBkDGCGwoPd8aQCyUgW9Xfbo7N8FtEEItSeX1vNbz
- z/6HWuw55C/2E+LnHwa97k/59GASjfVM3WrEkh+D0scfNsIKRU0A1vhPdJvj4FJ0Mhnj
- F/kRxHd8fdO0TWjewwgHhWcUcMgyoJiDwKq8p5TVwPQDmw9ryk8/HjjzTfqtuJgfL4LZ
- N2CdQImk8Qx2n2ALqAFfLNMkD3E8jLRpDiFy1Es+aejds6vvLamHuljewox7UD+SLEkU AA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2sunds184k-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 04 Jun 2019 15:55:44 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 88BD738;
- Tue,  4 Jun 2019 13:55:43 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 666A12B3B;
- Tue,  4 Jun 2019 13:55:43 +0000 (GMT)
-Received: from SFHDAG3NODE1.st.com (10.75.127.7) by SFHDAG3NODE3.st.com
- (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 4 Jun
- 2019 15:55:43 +0200
-Received: from SFHDAG3NODE1.st.com ([fe80::1166:1abb:aad4:5f86]) by
- SFHDAG3NODE1.st.com ([fe80::1166:1abb:aad4:5f86%20]) with mapi id
- 15.00.1347.000; Tue, 4 Jun 2019 15:55:43 +0200
-From: Erwan LE RAY <erwan.leray@st.com>
-To: Borut Seljak <borut.seljak@t-2.net>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre TORGUE <alexandre.torgue@st.com>,
- "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>, Jiri Slaby
- <jslaby@suse.com>, "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: Re: Fwd: [PATCH] serial: stm32: fix a recursive locking in
- stm32_config_rs485
-Thread-Topic: Fwd: [PATCH] serial: stm32: fix a recursive locking in
- stm32_config_rs485
-Thread-Index: AQHVGr0egfGBr+I5bUuvhxEmcTN9eaaLX30AgAAD5wA=
-Date: Tue, 4 Jun 2019 13:55:42 +0000
-Message-ID: <33271a7e-644b-70e3-f84c-d019b394ce77@st.com>
-References: <20190604095452.6360-1-borut.seljak@t-2.net>
- <f2a264ac-e334-63b7-18c9-e45cde7bdf95@st.com>
- <41dddd5f-5c1c-3346-890a-8018f26ebd49@st.com>
-In-Reply-To: <41dddd5f-5c1c-3346-890a-8018f26ebd49@st.com>
-Accept-Language: en-US, fr-FR
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.46]
-Content-ID: <D7564DEF725C3147AC98F2B3035C4186@st.com>
+ id 1hY9vu-0001MI-8d
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:56:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=q3Iygo/ncemIGGHPeGIjb1WGfS9hiw/B9ZUHoA1GHJM=;
+ b=rtKVVYO9Bv0f9ZLmAa+LjumU7TOUqWPAV1kqeA35FTOuLop0GlE4PUaqb//ZPhqRDKwqB0gZhQjMZz1Php6Wo/agEd/hOsMjxc1FAqtbnJRcOJRpuQeCMOyfOVMkOb60TmhrpAMS8EV9rFRqnysEerHRnEdprylLO/sVS+1Ei4Q=
+Received: from DM6PR02CA0089.namprd02.prod.outlook.com (2603:10b6:5:1f4::30)
+ by DM6PR02MB4939.namprd02.prod.outlook.com (2603:10b6:5:11::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1943.21; Tue, 4 Jun
+ 2019 13:56:53 +0000
+Received: from BL2NAM02FT040.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::201) by DM6PR02CA0089.outlook.office365.com
+ (2603:10b6:5:1f4::30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1943.18 via Frontend
+ Transport; Tue, 4 Jun 2019 13:56:53 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
+Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
+ BL2NAM02FT040.mail.protection.outlook.com (10.152.77.193) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1943.19
+ via Frontend Transport; Tue, 4 Jun 2019 13:56:53 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66]:59406
+ helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+ (envelope-from <vishal.sagar@xilinx.com>)
+ id 1hY9vo-0008Ce-SP; Tue, 04 Jun 2019 06:56:52 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <vishal.sagar@xilinx.com>)
+ id 1hY9vj-00057J-P1; Tue, 04 Jun 2019 06:56:47 -0700
+Received: from xsj-pvapsmtp01 (mailman.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x54Dug3d029058; 
+ Tue, 4 Jun 2019 06:56:42 -0700
+Received: from [172.23.62.223] (helo=xhdrdevl203.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <vishal.sagar@xilinx.com>)
+ id 1hY9ve-00054P-3H; Tue, 04 Jun 2019 06:56:42 -0700
+From: Vishal Sagar <vishal.sagar@xilinx.com>
+To: Hyun Kwon <hyun.kwon@xilinx.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 0/2] Add support for Xilinx UHD-SDI Receiver subsystem
+Date: Tue,  4 Jun 2019 19:25:54 +0530
+Message-Id: <1559656556-79174-1-git-send-email-vishal.sagar@xilinx.com>
+X-Mailer: git-send-email 1.8.3.1
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(136003)(39860400002)(396003)(376002)(346002)(2980300002)(199004)(189003)(7696005)(81166006)(5660300002)(8936002)(110136005)(50226002)(8676002)(51416003)(14444005)(81156014)(70586007)(316002)(47776003)(86362001)(336012)(2616005)(476003)(63266004)(54906003)(426003)(70206006)(486006)(44832011)(26005)(77096007)(186003)(126002)(106002)(305945005)(9786002)(2906002)(107886003)(36756003)(16586007)(36386004)(6666004)(356004)(4720700003)(50466002)(4326008)(478600001)(48376002)(5001870100001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB4939; H:xsj-pvapsmtpgw02; FPR:;
+ SPF:Pass; LANG:en; PTR:xapps1.xilinx.com,unknown-60-100.xilinx.com; A:1; MX:1;
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-04_09:, , signatures=0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: f412097d-5a5d-4e6c-0cb9-08d6e8f48004
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:DM6PR02MB4939; 
+X-MS-TrafficTypeDiagnostic: DM6PR02MB4939:
+X-Microsoft-Antispam-PRVS: <DM6PR02MB4939D3B9F8E955C40828FBCAF6150@DM6PR02MB4939.namprd02.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
+X-Forefront-PRVS: 0058ABBBC7
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: Pc9kvjFIEV9XnbZuB448WcAFGUjlVOPygGyNVejBza5R4MJ4epogPakB4fHuu5Bn2pN9OIAI9poqGSWVz6aTZotpfZ2kezebYxtMXlq6KiNFk9cU+nO98U6W/3tRWxTy/mj+oFTH5lYDkVCeEWOr62S/Y2QzlN9goeXWWZIDk93cy17lJfUghhhnr7Dg7JRxPcKpE2hewekAAPAQdNM3C98Feacl4/O6C0HoSH22F9xdYUrhXMVDXSn91EGw+uxVeWSdOtrlf8Dz6tVgtVFaVAtv3m9l+2ALQIUl5fxX8bVDF8KOL+ID4Tphq+ZbKJX75DnqInI2LZPcwIVcXvl8J+KDihUDyavRvndB0yafApSGNFC4BP4EnH9t6GKj2P57/WLfMNp0Cg9NS0jChk0llXj0BRgU7t10J8XIbXdh6Mw=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Jun 2019 13:56:53.4535 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f412097d-5a5d-4e6c-0cb9-08d6e8f48004
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
+ Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4939
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_065547_887659_F4BF5E15 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190604_065658_310894_F79A4BC9 
+X-CRM114-Status: GOOD (  13.88  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.76.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -116,71 +131,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Cc: Sandip Kothari <sandipk@xilinx.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Vishal Sagar <vishal.sagar@xilinx.com>,
+ Dinesh Kumar <dineshk@xilinx.com>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Xilinx SMPTE UHD-SDI Receiver Subsystem
+----------------------------------------
 
-> Hi Borut,
->
-> Please add the following line in the commit message (before your =
+The SMPTE UHD-SDI Receiver (RX) Subsystem allows you to quickly create
+systems based on SMPTE SDI protocols. It receives unaligned native SDI
+streams from the SDI GT PHY and outputs an AXI4-Stream video stream,
+native video, or native SDI using Xilinx transceivers as the physical
+layer.
 
-> sign-off) in a V2 of your patch:
->
-> fixes: 1bcda09d291081 ("serial: stm32: add support for RS485 hardware =
+                SMPTE UHD-SDI Rx Subsystem AXI4-Stream Architecture
 
-> control mode")
->
-> I'm OK with the patch itself.
->
-> Erwan.
->
->
-> Subject: [PATCH] serial: stm32: fix a recursive locking in
->> stm32_config_rs485
->> Date: Tue,=A0 4 Jun 2019 11:54:51 +0200
->> From: Borut Seljak <borut.seljak@t-2.net>
->> CC: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
->> <alexandre.torgue@st.com>, Greg Kroah-Hartman
->> <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
->> borut.seljak@t-2.net, linux-serial@vger.kernel.org, Jiri Slaby
->> <jslaby@suse.com>, linux-stm32@st-md-mailman.stormreply.com,
->> linux-arm-kernel@lists.infradead.org
->>
->> Remove spin_lock_irqsave in stm32_config_rs485, it cause recursive =
+          +============================================================+
+	  |           Native SDI           Native Video                |
+SDI	  |   +=========+   |   +============+  |   +=============+    |AXI4
+Stream	  |   |  SMPTE  |   V   |   SDI Rx   |  V   | Video In    |    |Stream
+--------->|-->| UHD-SDI |------>|    to      |----->|   to        |--->|------->
+	  |   |   RX    |       |  Native    |      | AXI4-Stream |    |
+	  |   +=========+       |Video Bridge|      +=============+    |
+	  |      |  ^           +============+                         |
+   <------|------+  |                                                  |
+sdi_rx_irq|         |                                                  |
+	  +=====+===+==================================================+
+                    |                            ^              ^
+                    |                            |              |
+                 s_axi_aclk                   sdi_rx_clk   video_out_clk
 
->> locking.
->> Already locked in uart_set_rs485_config.
->>
->> Signed-off-by: Borut Seljak <borut.seljak@t-2.net>
->> ---
->> =A0 drivers/tty/serial/stm32-usart.c | 2 --
->> =A0 1 file changed, 2 deletions(-)
->>
->> diff --git a/drivers/tty/serial/stm32-usart.c
->> b/drivers/tty/serial/stm32-usart.c
->> index e8d7a7bb4339..da373a465f51 100644
->> --- a/drivers/tty/serial/stm32-usart.c
->> +++ b/drivers/tty/serial/stm32-usart.c
->> @@ -107,7 +107,6 @@ static int stm32_config_rs485(struct uart_port =
 
->> *port,
->> =A0=A0=A0=A0=A0 bool over8;
->> =A0=A0=A0=A0=A0 unsigned long flags;
->> =A0 -=A0=A0=A0 spin_lock_irqsave(&port->lock, flags);
->> =A0=A0=A0=A0=A0 stm32_clr_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit)=
-);
->> =A0=A0=A0=A0=A0=A0 port->rs485 =3D *rs485conf;
->> @@ -147,7 +146,6 @@ static int stm32_config_rs485(struct uart_port =
+The subsystem consists of the following subcores:
+- SMPTE UHD-SDI (RX)
+- SDI RX to Video Bridge
+- Video In to AXI4-Stream
 
->> *port,
->> =A0=A0=A0=A0=A0 }
->> =A0=A0=A0=A0=A0=A0 stm32_set_bits(port, ofs->cr1, BIT(cfg->uart_enable_b=
-it));
->> -=A0=A0=A0 spin_unlock_irqrestore(&port->lock, flags);
->> =A0=A0=A0=A0=A0=A0 return 0;
->> =A0 }
+At design time, this subsystem can be configured in 3Gbps, 6Gbps or
+12Gbps mode. It can also be configured to output
+- SDI Native stream
+- Native Video
+- AXI4-Stream
+
+This driver only supports the AXI4-Stream configuration as there is a
+corresponding media bus format for YUV 422 10 bits per component in
+MEDIA_BUS_FMT_UYVY10_1X20.
+
+Though the core also supports YUV 420 10 bits per component, this is
+not supported in driver due to lack of corresponding media bus format
+currently.
+
+The SDI core has detection modes where in it can be configured to detect
+one or more modes from SD (Standard Definition), HD (High Definition),
+3GA, 3GB, 6G and 12G modes. When the core has detected the format, it
+generates a video lock. In case the source is removed or there is data
+corruption, the video may unlock. This is intimated to the application
+via a V4L2 event. Other events which application can subscribe are for
+overflow and underflow of the video bridges.
+
+The driver gives out the stream properties like width, height, colorformat,
+frame interval and progressive/interlaced based on the ST352 packet in SDI
+stream. If the ST352 packet is absent, then the values detected by the
+SMPTE UHD-SDI Rx core are used.
+
+The SDI core detection modes and detected mode, errors, etc are all
+accessible via v4l controls. This driver has been tested with Omnitek
+Ultra4K HD, Phabrix Qx and Blackmagic SDI-HDMI convertors.
+
+This patch set is being sent on top of v8 of Xilinx MIPI CSI2-Rx Subsystem
+driver patches.
+
+Vishal Sagar (2):
+  media: dt-bindings: media: xilinx: Add Xilinx UHD-SDI Receiver
+    Subsystem
+  media: v4l: xilinx: Add Xilinx UHD-SDI Rx Subsystem driver
+
+ .../bindings/media/xilinx/xlnx,sdirxss.txt         |   80 +
+ drivers/media/platform/xilinx/Kconfig              |   11 +
+ drivers/media/platform/xilinx/Makefile             |    1 +
+ drivers/media/platform/xilinx/xilinx-sdirxss.c     | 1846 ++++++++++++++++++++
+ include/uapi/linux/xilinx-sdirxss.h                |   63 +
+ include/uapi/linux/xilinx-v4l2-controls.h          |   30 +
+ include/uapi/linux/xilinx-v4l2-events.h            |    9 +
+ 7 files changed, 2040 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/xilinx/xlnx,sdirxss.txt
+ create mode 100644 drivers/media/platform/xilinx/xilinx-sdirxss.c
+ create mode 100644 include/uapi/linux/xilinx-sdirxss.h
+
+-- 
+1.8.3.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
