@@ -2,57 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C97634953
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:49:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5137D34968
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:51:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ju39/slq08B6lIopb1c8pq0LF3eKaJ99XTvnGwsHT3Y=; b=G5W2A2kPe/gaun
-	PoEx5tCEPHUom0DUefSQCNLGjiMoahuSdR5uyDaujFRLwOwhJQQW+SuWd6Mef8V7HSuDD7mFj8GqO
-	k1U5bKcgwMpAm2mssrkU2sjW5glcAiJ01HNbsd5T8lS30GitGhoPMNqd7j+zOvFMN1RHKPqi7zI+w
-	X0QqC+W4OcDzBOWMkmamQcQSnxSjrVT/JlxKrfS8v/keNGc+8hAEhOKPN7yUhGUff2WDLSuGGBsoS
-	XZxpP0y9oCai66BeluQgZ5KbS8yBnaQlHGU/h+4iOUqfqueBwF8EhQ5+fOs2f+HL/pWStVrYRmmYR
-	AU9FrVRfexrz9MfDJhWQ==;
+	List-Owner; bh=XkE3IZ5lPNwNzGUbWLB7Y5skmIBEjnfMnYGx1wPrINM=; b=LTRe70P2Yh3quT
+	Vvv2aR7BbbgkT8m5W6WKaVkosFslK/m03NDYce+dfUvv1Ci1EVJoY+oXZbE0vfspFP0ragWrL2kAc
+	0zeYJpqymRlbTfl1CeYL/pFC37yYt1xCo/XvoBogSKU9YljXsRBlHZlsZWaqBy8K8dh9G0Kl8vGsp
+	11z14fev1yAjTjsa75slmJSuXuS/J/0eyfpZo6mF8K//kV8/zBTHR7omYXU15aGH83fO5tyTIQN7o
+	PysT8MBB7OLhwkrR8ibPTwfY4x+2FPgxi7RPjuS+is/IkrZ5YIFROWcSKqwdICznS9nEgfYXjDX/+
+	ItSJ36rjeQkyVmbjQ5zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY9oR-0004y6-QK; Tue, 04 Jun 2019 13:49:15 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY9oK-0004x9-Cu
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:49:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 46D20341;
- Tue,  4 Jun 2019 06:49:06 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 790F53F690; Tue,  4 Jun 2019 06:49:04 -0700 (PDT)
-Date: Tue, 4 Jun 2019 14:49:01 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
+	id 1hY9qA-0006o8-Jz; Tue, 04 Jun 2019 13:51:02 +0000
+Received: from galois.linutronix.de ([2a01:7a0:2:106d:700::1])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY9q2-0006mO-Rg
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:50:56 +0000
+Received: from bigeasy by Galois.linutronix.de with local (Exim 4.80)
+ (envelope-from <bigeasy@linutronix.de>)
+ id 1hY9pw-0001pl-94; Tue, 04 Jun 2019 15:50:48 +0200
+Date: Tue, 4 Jun 2019 15:50:48 +0200
+From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH] arm64/cpufeature: Convert hook_lock to raw_spin_lock_t
- in cpu_enable_ssbs()
-Message-ID: <20190604134901.GE6610@arrakis.emea.arm.com>
-References: <20190530113058.1988-1-julien.grall@arm.com>
+Subject: Re: KVM Arm Device passthrough and linux-rt
+Message-ID: <20190604135047.5bwclgkvvr642ucj@linutronix.de>
+References: <26832850-37ee-ae07-08ca-cc3e90978867@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190530113058.1988-1-julien.grall@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <26832850-37ee-ae07-08ca-cc3e90978867@arm.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_064908_441057_4C14BDD1 
-X-CRM114-Status: GOOD (  12.73  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190604_065055_031752_76CBD425 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:7a0:2:106d:700:0:0:1 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,32 +61,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rt-users@vger.kernel.org, suzuki.poulose@arm.com,
- bigeasy@linutronix.de, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- rostedt@goodmis.org, tglx@linutronix.de, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-rt-users <linux-rt-users@vger.kernel.org>, julia@ni.com,
+ Marc Zyngier <marc.zyngier@arm.com>, Steven Rostedt <rostedt@goodmis.org>,
+ kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 12:30:58PM +0100, Julien Grall wrote:
-> cpu_enable_ssbs() is called via stop_machine() as part of the cpu_enable
-> callback. A spin lock is used to ensure the hook is registered before
-> the rest of the callback is executed.
-> 
-> On -RT spin_lock() may sleep. However, all the callees in stop_machine()
-> are expected to not sleep. Therefore a raw_spin_lock() is required here.
-> 
-> Given this is already done under stop_machine() and the work done under
-> the lock is quite small, the latency should not increase too much.
-> 
-> Signed-off-by: Julien Grall <julien.grall@arm.com>
+On 2019-06-04 13:58:51 [+0100], Julien Grall wrote:
+> Hi,
+Hi,
 
-Queued for 5.3. Thanks.
+> This is happening because vgic_v2_fold_lr_state() is expected
+> to be called with interrupt disabled. However, some of the path
+> (e.g eventfd) will take a spinlock.
+> 
+> The spinlock is from the waitqueue, so using a raw_spin_lock cannot
+> even be considered.
+> 
+> Do you have any input on how this could be solved?
 
--- 
-Catalin
+There is swair (init_swait_queue_head() and friends) in case that works
+for you.
+
+> Cheers,
+
+Sebastian
 
 _______________________________________________
 linux-arm-kernel mailing list
