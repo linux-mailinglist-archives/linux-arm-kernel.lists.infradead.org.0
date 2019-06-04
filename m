@@ -2,56 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C592C341EB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:34:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4A17341FB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:37:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3dR0Ilhp80pk3xDI10mB+V6PmcWkV5qqRNPm5zO8bgU=; b=Dxvf2YqJ25jJfb
-	WGM2VsGQvd2AokV8mqgyLZn2tubRjZWRi9vEKi121AOze+gd7rHtFPdrY1RnzxChL1YL7Csy2jYxV
-	NOr+/tW/afZwKZU6od9iQxHILAbApZkcXVaY6HdTzQ87FGkzwLZu750IprAGH2fETN1aLv/hvraLQ
-	Hr8Hpn2rjcqKw++0JDuOEYYGp1roZK7r8iUTW6ypymMTZbOlFXalFEYkAe2s7uki++p57X4lHZjM8
-	RXd7tCLq9uPzGEmzjnoQ3XOtFmfFpNedDxycxqLPeq2CIZ6PEkbAio6mhEZ4NOb14LFNIsLnbAHPS
-	sTshCSaMA11aqbGj64Lg==;
+	List-Owner; bh=FO5H2WpbJMSnBiMoTqByr9KISdB+f0NaND1qmLIEkfo=; b=F4prG+1V2Hzsdv
+	7RfW/qiTQ27kE2BEsR0a3RXFSvOyBE0K95lDuvsNC216TUMtVNSmojnMYYPc9MhFKCkvlMcxKWnUs
+	75ynIq0d71xaOHhKmpdH75xhbsuEedvk3q075qdPqeK6yP6ujTw85/1T/0abo3+XDinqT6MauoNiV
+	A7IN0zxAcOm/AnhCUTZcKSnWXS4BZdAJZPMmHOAuSeCJrTClRhI4+4bVCyH/KJZW8/z8LEX83/OA/
+	tDDtkntGE9gsTgOLFQqAXQmyiZxpbHxXMN69tEuI+JdMaHNKinTtG26ghvqXncVQ2L+0ed94XZMyu
+	b7CAehfpIkm6xYWiVM9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY4ts-0002J0-NV; Tue, 04 Jun 2019 08:34:32 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hY4wW-00040n-M8; Tue, 04 Jun 2019 08:37:16 +0000
+Received: from mail-lf1-f67.google.com ([209.85.167.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY4tm-0002IV-BV; Tue, 04 Jun 2019 08:34:27 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 843A228527C;
- Tue,  4 Jun 2019 09:34:24 +0100 (BST)
-Date: Tue, 4 Jun 2019 10:34:22 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Helen Koike <helen.koike@collabora.com>
-Subject: Re: [PATCH v4 1/5] drm/rockchip: fix fb references in async update
-Message-ID: <20190604103422.63a61f46@collabora.com>
-In-Reply-To: <aecadca2-f67b-5d9d-550e-f90cbca5fd3f@collabora.com>
-References: <20190603165610.24614-1-helen.koike@collabora.com>
- <20190603165610.24614-2-helen.koike@collabora.com>
- <aecadca2-f67b-5d9d-550e-f90cbca5fd3f@collabora.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1hY4wN-0003zM-FX; Tue, 04 Jun 2019 08:37:08 +0000
+Received: by mail-lf1-f67.google.com with SMTP id p24so9313907lfo.6;
+ Tue, 04 Jun 2019 01:37:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=u9Nt6qozBUK6drcpof1+TwMEXL9WmUd9V+VggpiZn+A=;
+ b=kuEXVM4Upt0kiS2y0dYi0DDH91n/+AYXct2WLpoKuLGZrw7cxn6Aqa5uvqm21JwgMy
+ i1qfH7JKODgZzqQsZCLS3Y780oTLAddHFG7PFHCLOchAOBvAHnCyaM1SkSCqM1HyYTG3
+ v++REEQs9Z7cXvUJ4I+Kco3N1SRUIqMrLjDv4nW05y1f6TXjjSgKgscO3OLDMjPbBWyQ
+ TqpkEZA8uCXGhHGGhXEsCNm+yP4gInnJ2z1uKm8PGB93lBwmX+OdiIPKTGIKJ1bDPvrI
+ tPkoUp9/+G+f4EdDHqW/7TzLT4Q5oH3OPGw5UYJ87Kuw0dMtE9QxUjAfgu4rdvillV+U
+ bwnQ==
+X-Gm-Message-State: APjAAAXwR3pHt8hq+lINGt9mJSQEfdyT4Ak1ZH1bAhER/nscIdKXu8AT
+ epuZcjODdRBnEJHtyKE8y82BczaEAUiaOVyIREs=
+X-Google-Smtp-Source: APXvYqw93iUlXYu8dPqQcx+f3tfXZ72Q5ZS8GVxBMq0ItikCpS0IsuP0YnKL3t97ZoLH9sUbcmA4K/rRcZzJe16lhLU=
+X-Received: by 2002:ac2:5467:: with SMTP id e7mr15738576lfn.23.1559637424910; 
+ Tue, 04 Jun 2019 01:37:04 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190520143647.2503-1-narmstrong@baylibre.com>
+ <CAPDyKFoOHnYiYogjogRr=7PBjqHOseDDS6L0eirTo7Y+F449ow@mail.gmail.com>
+In-Reply-To: <CAPDyKFoOHnYiYogjogRr=7PBjqHOseDDS6L0eirTo7Y+F449ow@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 4 Jun 2019 10:36:53 +0200
+Message-ID: <CAMuHMdWHnyTWMToXU_DSezwYs_Lkxj+v0BC8PKXHZgX=e1N3ww@mail.gmail.com>
+Subject: Re: [PATCH 0/2] mmc: meson: update with SPDX Licence identifier
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_013426_521254_BC09531C 
-X-CRM114-Status: GOOD (  18.68  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190604_013707_527933_62EE405C 
+X-CRM114-Status: GOOD (  11.45  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [209.85.167.67 listed in list.dnswl.org]
+ -0.7 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.67 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,63 +80,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrey.grodzovsky@amd.com,
- =?UTF-8?B?U3TDqXBoYW5l?= Marchesin <marcheu@google.com>,
- Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>,
- Sean Paul <seanpaul@google.com>, David Airlie <airlied@linux.ie>,
- daniel.vetter@ffwll.ch, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Tomasz Figa <tfiga@chromium.org>,
- linux-rockchip@lists.infradead.org, Sandy Huang <hjc@rock-chips.com>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@collabora.com, harry.wentland@amd.com,
- nicholas.kazlauskas@amd.com, linux-arm-kernel@lists.infradead.org
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Greg KH <gregkh@linuxfoundation.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 3 Jun 2019 17:13:34 -0300
-Helen Koike <helen.koike@collabora.com> wrote:
+Hi Ulf, Neil,
 
-> On 6/3/19 1:56 PM, Helen Koike wrote:
-> > In the case of async update, modifications are done in place, i.e. in the
-> > current plane state, so the new_state is prepared and the new_state is
-> > cleaned up (instead of the old_state, unlike what happens in a
-> > normal sync update).
-> > To cleanup the old_fb properly, it needs to be placed in the new_state
-> > in the end of async_update, so cleanup call will unreference the old_fb
-> > correctly.
-> > 
-> > Also, the previous code had a:
-> > 
-> > 	plane_state = plane->funcs->atomic_duplicate_state(plane);
-> > 	...
-> > 	swap(plane_state, plane->state);
-> > 
-> > 	if (plane->state->fb && plane->state->fb != new_state->fb) {
-> > 	...
-> > 	}
-> > 
-> > Which was wrong, as the fb were just assigned to be equal, so this if
-> > statement nevers evaluates to true.
-> > 
-> > Another details is that the function drm_crtc_vblank_get() can only be
-> > called when vop->is_enabled is true, otherwise it has no effect and
-> > trows a WARN_ON().
-> > 
-> > Calling drm_atomic_set_fb_for_plane() (which get a referent of the new
-> > fb and pus the old fb) is not required, as it is taken care by
-> > drm_mode_cursor_universal() when calling
-> > drm_atomic_helper_update_plane().
-> > 
-> > Signed-off-by: Helen Koike <helen.koike@collabora.com>  
-> 
-> Cc: <stable@vger.kernel.org> # v4.20+
-> Fixes: 15609559a834 ("drm/rockchip: update cursors asynchronously
-> through atomic.")
+On Tue, May 28, 2019 at 10:53 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> On Mon, 20 May 2019 at 16:36, Neil Armstrong <narmstrong@baylibre.com> wrote:
+> > Update the SPDX Licence identifier for the Amlogic MMC drivers.
+> >
+> > Neil Armstrong (2):
+> >   mmc: meson-gx-mmc: update with SPDX Licence identifier
+> >   mmc: meson-mx-sdio: update with SPDX Licence identifier
+> >
+> >  drivers/mmc/host/meson-gx-mmc.c  | 15 +--------------
+> >  drivers/mmc/host/meson-mx-sdio.c |  6 +-----
+> >  2 files changed, 2 insertions(+), 19 deletions(-)
+>
+> Applied for next, thanks!
 
-One comment for next time you have to add such tags after the fact:
-please try to keep lines unwrapped, otherwise patchwork only gets what's
-on the first line.
+Please note this conflicts with commit 2874c5fd28426836 ("treewide:
+Replace GPLv2 boilerplate/reference with SPDX - rule 152") upstream,
+which added (different) tags.
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
