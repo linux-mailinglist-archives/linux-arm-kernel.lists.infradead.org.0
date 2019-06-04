@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D741634C33
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:28:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DC3734C40
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:30:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CKg+E6WDbExbeP7fqqAzs1c8EUnUnA0vp0OVMcXRYcg=; b=iNeJjNjjb+Y5Nz
-	ntM5bAEnIEq4KaPw5HFUuYDzh05jvAiO+exsrseelHBZkPXSf63hgdpdsUoWKMJuhjOvWsK2qQr/u
-	DihR1nUPGXvaCNEyv+CvZjmlvhfjnzEF3RtKp32RvUD+lDxlchmg31U9adKRUnp6hUy+x3FoydLgL
-	9edXK8Ad7xZdaK64siJ6inya7zBD2A1liB56GWbNfxivuSCgLEz8l2p59GCY2ptvThofcXmXa3yXM
-	B/lBCu4cn39OPXl+gbSiJGx6VEbCbeCPmo6tn4JO6DoPyTP6ZPlQE/SVmvJCpLJxK8OLT0PWpTxkX
-	h1Zv/PCvHeh248NiDo1g==;
+	List-Owner; bh=tG/QqnkSixmwlMDd6KEjLFHXK5I4fZI/lTj3XQ45+ZA=; b=s7AJLmuqnj5Z5e
+	I1gJJCHm4GjXxtqdbHoUZdUhVvlBQB8Cs8WmUXzDm3Erv1yPvj0JG7+Ag1uJrbXoOYCtBdbwDck6b
+	6KZ/8NZPECQj9lH2+AFyT1ZZQcOwvmbJFVrrN/t9cSyGPhJ1yhJMVdIDSvzdV4ztlvtfyLgEAEroG
+	a6yVBt2GwUW/JrDdxWD1kkn4bs2QCyCfdrn+lfdF+lKFNYv3qtBpOXuNXqRq6vkb+E3bgubMqa2Ng
+	5n36MCpSsDbKibqh42v1CS1UGf1VU5mo1zq3mEKUrwu/Y0OvhHPB0fo9WV/+JcosOT7bVw4DVxtUC
+	QlPn2x4++JjRJriW3vAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYBLx-00067s-5V; Tue, 04 Jun 2019 15:27:57 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1hYBOD-0007kk-Ax; Tue, 04 Jun 2019 15:30:17 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYBLo-0005zs-GB
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 15:27:50 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 04 Jun 2019 08:25:45 -0700
-X-ExtLoop1: 1
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by FMSMGA003.fm.intel.com with ESMTP; 04 Jun 2019 08:25:41 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id C5D4D20BEB; Tue,  4 Jun 2019 18:25:40 +0300 (EEST)
-Date: Tue, 4 Jun 2019 18:25:40 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Vishal Sagar <vishal.sagar@xilinx.com>
-Subject: Re: [PATCH v8 1/2] media: dt-bindings: media: xilinx: Add Xilinx
- MIPI CSI-2 Rx Subsystem
-Message-ID: <20190604152540.wd7c3scez2futh6z@paasikivi.fi.intel.com>
-References: <1559555971-193235-1-git-send-email-vishal.sagar@xilinx.com>
- <1559555971-193235-2-git-send-email-vishal.sagar@xilinx.com>
+ id 1hYBO5-0007gd-2a
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 15:30:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1559662207; bh=EBUXl+s33S8AB6wBM8DyjX689Iw/fnBpj5K0PxMl3hc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=r7FxsqcmSzyz9yU7eAEI5SIdsYykwQUb1wI++VZIMq9b9y3IiuL0qtydszvB90QUN
+ HHFiWbEGlTBBfwp/o7a0zOuFjEwrl1rP7xdzhAFSIn46cRehidkqSp6S/fhX42RZLr
+ sjE66aU8cpblErIEMIT+8YH7WR0EcdnA1uwnhLTs=
+Date: Tue, 4 Jun 2019 17:30:06 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [linux-sunxi] Re: [PATCH v3 10/12] arm64: dts: allwinner: h6:
+ Add IR receiver node
+Message-ID: <20190604153006.g53kzhnx3hzpg5qh@core.my.home>
+Mail-Followup-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-media@vger.kernel.org
+References: <20190528161440.27172-1-peron.clem@gmail.com>
+ <20190528161440.27172-11-peron.clem@gmail.com>
+ <20190530145550.amalnxmx7kpokykv@core.my.home>
+ <CAJiuCce7nHSktVsDKcR8GLRpD3WrN5yP3Nb_Hbu_Q9NjUQbSMw@mail.gmail.com>
+ <20190531124630.q2guo54kjfzr7rkn@core.my.home>
+ <CAJiuCcdMftAjCwk2_naE9VBGGqS=OY9xcqv6+5pDX2Z8O=L28w@mail.gmail.com>
+ <20190604123355.m47ufmhtzuzfvmp7@core.my.home>
+ <20190604144757.xvggmj6asyf44vuc@core.my.home>
+ <CAJiuCcf6gHP_G73w8Gf6QYOfvh9Frc9uQk7qpxbpsLY33PxL3w@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559555971-193235-2-git-send-email-vishal.sagar@xilinx.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <CAJiuCcf6gHP_G73w8Gf6QYOfvh9Frc9uQk7qpxbpsLY33PxL3w@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_082748_774204_CA149F72 
-X-CRM114-Status: GOOD (  26.17  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190604_083009_618970_B45AADC7 
+X-CRM114-Status: GOOD (  39.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,224 +86,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
- Hyun Kwon <hyunk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- Michal Simek <michals@xilinx.com>, laurent.pinchart@ideasonboard.com,
- Luca Ceresoli <luca@lucaceresoli.net>, hans.verkuil@cisco.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vishal,
-
-Thanks for the update. A few small issues below...
-
-On Mon, Jun 03, 2019 at 03:29:30PM +0530, Vishal Sagar wrote:
-> Add bindings documentation for Xilinx MIPI CSI-2 Rx Subsystem.
-> 
-> The Xilinx MIPI CSI-2 Rx Subsystem consists of a CSI-2 Rx controller, a
-> DPHY in Rx mode, an optional I2C controller and a Video Format Bridge.
-> 
-> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
-> Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Reviewed-by: Luca Ceresoli <luca@lucaceresoli.net>
-> ---
-> v8
-> - Added reset-gpios optional property to assert video_aresetn
-> 
-> v7
-> - Removed the control name from dt bindings
-> - Updated the example dt node name to csi2rx
-> 
-> v6
-> - Added "control" after V4L2_CID_XILINX_MIPICSISS_ACT_LANES as suggested by Luca
-> - Added reviewed by Rob Herring
-> 
-> v5
-> - Incorporated comments by Luca Cersoli
-> - Removed DPHY clock from description and example
-> - Removed bayer pattern from device tree MIPI CSI IP
->   doesn't deal with bayer pattern.
-> 
-> v4
-> - Added reviewed by Hyun Kwon
-> 
-> v3
-> - removed interrupt parent as suggested by Rob
-> - removed dphy clock
-> - moved vfb to optional properties
-> - Added required and optional port properties section
-> - Added endpoint property section
-> 
-> v2
-> - updated the compatible string to latest version supported
-> - removed DPHY related parameters
-> - added CSI v2.0 related property (including VCX for supporting upto 16
->   virtual channels).
-> - modified csi-pxl-format from string to unsigned int type where the value
->   is as per the CSI specification
-> - Defined port 0 and port 1 as sink and source ports.
-> - Removed max-lanes property as suggested by Rob and Sakari
-> 
->  .../bindings/media/xilinx/xlnx,csi2rxss.txt        | 119 +++++++++++++++++++++
->  1 file changed, 119 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.txt b/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.txt
-> new file mode 100644
-> index 0000000..fef8179
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.txt
-> @@ -0,0 +1,119 @@
-> +Xilinx MIPI CSI2 Receiver Subsystem Device Tree Bindings
-> +--------------------------------------------------------
-> +
-> +The Xilinx MIPI CSI2 Receiver Subsystem is used to capture MIPI CSI2 traffic
-> +from compliant camera sensors and send the output as AXI4 Stream video data
-> +for image processing.
-> +
-> +The subsystem consists of a MIPI DPHY in slave mode which captures the
-> +data packets. This is passed along the MIPI CSI2 Rx IP which extracts the
-> +packet data. The optional Video Format Bridge (VFB) converts this data to
-> +AXI4 Stream video data.
-> +
-> +For more details, please refer to PG232 Xilinx MIPI CSI-2 Receiver Subsystem.
-> +
-> +Required properties:
-> +--------------------
-> +- compatible: Must contain "xlnx,mipi-csi2-rx-subsystem-4.0".
-> +- reg: Physical base address and length of the registers set for the device.
-> +- interrupts: Property with a value describing the interrupt number.
-> +- clocks: List of phandles to AXI Lite and Video clocks.
-> +- clock-names: Must contain "lite_aclk" and "video_aclk" in the same order
-> +  as clocks listed in clocks property.
-> +- xlnx,csi-pxl-format: This denotes the CSI Data type selected in hw design.
-> +  Packets other than this data type (except for RAW8 and User defined data
-> +  types) will be filtered out. Possible values are as below -
-> +  0x1E - YUV4228B
-> +  0x1F - YUV42210B
-> +  0x20 - RGB444
-> +  0x21 - RGB555
-> +  0x22 - RGB565
-> +  0x23 - RGB666
-> +  0x24 - RGB888
-> +  0x28 - RAW6
-> +  0x29 - RAW7
-> +  0x2A - RAW8
-> +  0x2B - RAW10
-> +  0x2C - RAW12
-> +  0x2D - RAW14
-> +  0x2E - RAW16
-> +  0x2F - RAW20
-> +
-> +
-> +Optional properties:
-> +--------------------
-> +- xlnx,vfb: This is present when Video Format Bridge is enabled.
-> +  Without this property the driver won't be loaded as IP won't be able to generate
-> +  media bus format compliant stream output.
-> +- xlnx,en-csi-v2-0: Present if CSI v2 is enabled in IP configuration.
-> +- xlnx,en-vcx: When present, there are maximum 16 virtual channels, else
-> +  only 4. This is present only if xlnx,en-csi-v2-0 is present.
-> +- xlnx,en-active-lanes: present if the number of active lanes can be
-> +  re-configured at runtime in the Protocol Configuration Register.
-> +  Otherwise all lanes, as set in IP configuration, are always active.
-> +- reset-gpios: Optional specifier for a GPIO that asserts video_aresetn.
-> +
-> +Ports
-> +-----
-> +The device node shall contain two 'port' child nodes as defined in
-> +Documentation/devicetree/bindings/media/video-interfaces.txt.
-> +
-> +The port@0 is a sink port and shall connect to CSI2 source like camera.
-> +It must have the data-lanes property.
-
-Technically this is wrong as data-lanes is an endpoint property. I'd just
-leave it out here.
-
-> +
-> +The port@1 is a source port and can be connected to any video processing IP
-> +which can work with AXI4 Stream data.
-> +
-> +Required port properties:
-> +--------------------
-> +- reg: 0 - for sink port.
-> +       1 - for source port.
-> +
-> +Optional endpoint property:
-
-s/Optional/Required/
-
-> +---------------------------
-> +- data-lanes: specifies MIPI CSI-2 data lanes as covered in video-interfaces.txt.
-> +  This should be in the sink port endpoint which connects to MIPI CSI2 source
-> +  like sensor. The possible values are:
-
-And add here that it's only needed for port 0. Or put it to the heading.
-
-I think this is good with these changes.
-
-> +  1       - For 1 lane enabled in IP.
-> +  1 2     - For 2 lanes enabled in IP.
-> +  1 2 3   - For 3 lanes enabled in IP.
-> +  1 2 3 4 - For 4 lanes enabled in IP.
-> +
-> +Example:
-> +
-> +	xcsi2rxss_1: csi2rx@a0020000 {
-> +		compatible = "xlnx,mipi-csi2-rx-subsystem-4.0";
-> +		reg = <0x0 0xa0020000 0x0 0x10000>;
-> +		interrupt-parent = <&gic>;
-> +		interrupts = <0 95 4>;
-> +		xlnx,csi-pxl-format = <0x2a>;
-> +		xlnx,vfb;
-> +		xlnx,en-active-lanes;
-> +		xlnx,en-csi-v2-0;
-> +		xlnx,en-vcx;
-> +		clock-names = "lite_aclk", "video_aclk";
-> +		clocks = <&misc_clk_0>, <&misc_clk_1>;
-> +		reset-gpios = <&gpio 86 GPIO_ACTIVE_LOW>;
-> +
-> +		ports {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +
-> +			port@0 {
-> +				/* Sink port */
-> +				reg = <0>;
-> +				csiss_in: endpoint {
-> +					data-lanes = <1 2 3 4>;
-> +					/* MIPI CSI2 Camera handle */
-> +					remote-endpoint = <&camera_out>;
-> +				};
-> +			};
-> +			port@1 {
-> +				/* Source port */
-> +				reg = <1>;
-> +				csiss_out: endpoint {
-> +					remote-endpoint = <&vproc_in>;
-> +				};
-> +			};
-> +		};
-> +	};
-> -- 
-> 1.8.3.1
-
-How old is that? :-)
-
--- 
-Kind regards,
-
-Sakari Ailus
-sakari.ailus@linux.intel.com
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQ2zDqW1lbnQsCgpPbiBUdWUsIEp1biAwNCwgMjAxOSBhdCAwNTowNDowN1BNICswMjAwLCBD
+bMOpbWVudCBQw6lyb24gd3JvdGU6Cj4gSGkgT25kcmVqLAo+IAo+IE9uIFR1ZSwgNCBKdW4gMjAx
+OSBhdCAxNjo0NywgT25kxZllaiBKaXJtYW4gPG1lZ291c0BtZWdvdXMuY29tPiB3cm90ZToKPiA+
+Cj4gPiBIaSBDbMOpbWVudCwKPiA+Cj4gPiBPbiBUdWUsIEp1biAwNCwgMjAxOSBhdCAwMjozMzo1
+NVBNICswMjAwLCB2ZXJlam5hIHdyb3RlOgo+ID4gPiBIaSBDbMOpbWVudCwKPiA+ID4KPiA+ID4g
+T24gTW9uLCBKdW4gMDMsIDIwMTkgYXQgMDk6NTg6MjNQTSArMDIwMCwgQ2zDqW1lbnQgUMOpcm9u
+IHdyb3RlOgo+ID4gPiA+IEhpIE9uZHJlaiwKPiA+ID4gPgo+ID4gPiA+IE9uIEZyaSwgMzEgTWF5
+IDIwMTkgYXQgMTQ6NDYsIE9uZMWZZWogSmlybWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4gd3JvdGU6
+Cj4gPiA+ID4gPgo+ID4gPiA+ID4gSGVsbG8gQ2zDqW1lbnQsCj4gPiA+ID4gPgo+ID4gPiA+ID4g
+T24gRnJpLCBNYXkgMzEsIDIwMTkgYXQgMTI6MjU6MzJBTSArMDIwMCwgQ2zDqW1lbnQgUMOpcm9u
+IHdyb3RlOgo+ID4gPiA+ID4gPiBIaSBPbmRyZWosCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IE9u
+IFRodSwgMzAgTWF5IDIwMTkgYXQgMTY6NTUsIE9uZMWZZWogSmlybWFuIDxtZWdvdXNAbWVnb3Vz
+LmNvbT4gd3JvdGU6Cj4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiBIZWxsbyBDbMOpbWVudCwK
+PiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+IE9uIFR1ZSwgTWF5IDI4LCAyMDE5IGF0IDA2OjE0
+OjM4UE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+ID4gPiA+ID4gPiA+IEFsbHdp
+bm5lciBINiBJUiBpcyBzaW1pbGFyIHRvIEEzMSBhbmQgY2FuIHVzZSBzYW1lIGRyaXZlci4KPiA+
+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPiBBZGQgc3VwcG9ydCBmb3IgaXQuCj4gPiA+ID4g
+PiA+ID4gPgo+ID4gPiA+ID4gPiA+ID4gU2lnbmVkLW9mZi1ieTogQ2zDqW1lbnQgUMOpcm9uIDxw
+ZXJvbi5jbGVtQGdtYWlsLmNvbT4KPiA+ID4gPiA+ID4gPiA+IC0tLQo+ID4gPiA+ID4gPiA+ID4g
+IGFyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi5kdHNpIHwgMTkgKysrKysr
+KysrKysrKysrKysrKwo+ID4gPiA+ID4gPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxOSBpbnNlcnRp
+b25zKCspCj4gPiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+ID4gZGlmZiAtLWdpdCBhL2FyY2gv
+YXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi5kdHNpIGIvYXJjaC9hcm02NC9ib290
+L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LmR0c2kKPiA+ID4gPiA+ID4gPiA+IGluZGV4IDE2YzVj
+M2QwZmQ4MS4uNjQ5Y2JkZmU0NTJlIDEwMDY0NAo+ID4gPiA+ID4gPiA+ID4gLS0tIGEvYXJjaC9h
+cm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LmR0c2kKPiA+ID4gPiA+ID4gPiA+ICsr
+KyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1oNi5kdHNpCj4gPiA+ID4g
+PiA+ID4gPiBAQCAtNjQ3LDYgKzY0NywyNSBAQAo+ID4gPiA+ID4gPiA+ID4gICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgcGlucyA9ICJQTDAiLCAiUEwxIjsKPiA+ID4gPiA+ID4gPiA+ICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZ1bmN0aW9uID0gInNfaTJjIjsKPiA+ID4gPiA+
+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICB9Owo+ID4gPiA+ID4gPiA+ID4gKwo+ID4gPiA+
+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgIHJfaXJfcnhfcGluOiByLWlyLXJ4LXBpbiB7
+Cj4gPiA+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwaW5zID0gIlBM
+OSI7Cj4gPiA+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBmdW5jdGlv
+biA9ICJzX2Npcl9yeCI7Cj4gPiA+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgfTsK
+PiA+ID4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgfTsKPiA+ID4gPiA+ID4gPiA+ICsKPiA+ID4g
+PiA+ID4gPiA+ICsgICAgICAgICAgICAgcl9pcjogaXJANzA0MDAwMCB7Cj4gPiA+ID4gPiA+ID4g
+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb21wYXRpYmxlID0gImFsbHdpbm5lcixz
+dW41MGktaDYtaXIiLAo+ID4gPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICJhbGx3aW5uZXIsc3VuNmktYTMxLWlyIjsKPiA+ID4gPiA+ID4gPiA+
+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZyA9IDwweDA3MDQwMDAwIDB4NDAwPjsK
+PiA+ID4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGludGVycnVwdHMg
+PSA8R0lDX1NQSSAxMDkgSVJRX1RZUEVfTEVWRUxfSElHSD47Cj4gPiA+ID4gPiA+ID4gPiArICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICBjbG9ja3MgPSA8JnJfY2N1IENMS19SX0FQQjFfSVI+
+LAo+ID4gPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+PCZyX2NjdSBDTEtfSVI+Owo+ID4gPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgY2xvY2stbmFtZXMgPSAiYXBiIiwgImlyIjsKPiA+ID4gPiA+ID4gPiA+ICsgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIHJlc2V0cyA9IDwmcl9jY3UgUlNUX1JfQVBCMV9JUj47Cj4g
+PiA+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwaW5jdHJsLW5hbWVz
+ID0gImRlZmF1bHQiOwo+ID4gPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgcGluY3RybC0wID0gPCZyX2lyX3J4X3Bpbj47Cj4gPiA+ID4gPiA+ID4gPiArICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ID4gPiA+ID4gPiA+ID4g
+ICAgICAgICAgICAgICB9Owo+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gUGxlYXNlIG1ha2Ug
+YSBjb21tZW50IGhlcmUsIHRoYXQgdGhpcyBpcyBrbm93biBicm9rZW4gb24gc29tZSBib2FyZHMg
+YW5kIG1heQo+ID4gPiA+ID4gPiA+IHJlc3VsdCBJUlEgZmxvb2QgaWYgZW5hYmxlZC4gT3RoZXJ3
+aXNlIG5vb25lIHdpbGwga25vdy4KPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gSSdtIHBsYW5uaW5n
+IHRvIHNlbmQgYSB2NCBuZXh0IHdlZWsgd2l0aCB0aGUgSVJRX05PTkUgcmV0dXJuIGFzIE1heGlt
+ZQo+ID4gPiA+ID4gPiBzdWdnZXN0ZWQgaXQuCj4gPiA+ID4gPiA+IGh0dHBzOi8vZ2l0aHViLmNv
+bS9jbGVtZW50cGVyb24vbGludXgvdHJlZS9oNl9pcl92NAo+ID4gPiA+ID4gPgo+ID4gPiA+ID4g
+PiBCdXQgbWF5YmUgd2UgY291bGQgYWxzbyB1c2UgdGhlIGJpdCA1IG9mIHRoZSBJUlEgc3RhdHVz
+Lgo+ID4gPiA+ID4KPiA+ID4gPiA+IFRoYW5rcywgdGhhdCdzIG5pY2UsIGJ1dCB0aGF0IHdpbGwg
+bm90IG1ha2UgdGhlIEhXIHdvcmsuIFRoYXQgd2lsbCBqdXN0IGRpc2FibGUKPiA+ID4gPiA+IGl0
+LiBUaGUgY29tbWVudCBpcyBzdGlsbCBuZWNlc3NhcnkuCj4gPiA+ID4gSSBoYXZlIHB1c2hlZCBh
+IG5ldyB2ZXJzaW9uIG9uIG15IGdpdGh1Yi4KPiA+ID4gPiBodHRwczovL2dpdGh1Yi5jb20vY2xl
+bWVudHBlcm9uL2xpbnV4L2NvbW1pdHMvaDZfaXJfdjQKPiA+ID4gPgo+ID4gPiA+IEkgd2lsbCBz
+dWJtaXQgaXQsIGlmIHlvdSBhcmUgb2sgd2l0aCBpdC4KPiA+ID4KPiA+ID4gdGhlIGNoYW5nZXMg
+bWFrZSBpdCB3b3JzZS4gQ29uc29sZSBpcyBmbG9vZGVkIHdpdGggIlRlbXBvcmFyaWx5IGRpc2Fi
+bGUgSVJRIgo+ID4gPiBhbmQgb3RoZXIgc3ltcHRvbXMgYXJlIHRoZSBzYW1lIGFzIEkgZGVzY3Jp
+YmVkIGJlZm9yZS4gSW50ZXJydXB0cyBhcmUgbm90Cj4gPiA+IGRpc2FibGVkIGluIGEgYW55IHJl
+YXNvbmFibGUgdGltZS4gKEkndmUgd2FpdGVkIGZvciBtb3JlID4gNW1pbnMgYWxyZWFkeS4pCj4g
+PiA+Cj4gPiA+IFlvdSBwcm9iYWJseSBuZWVkIHRvIGRpc2FibGUgaW50ZXJydXB0cyByaWdodCBh
+d2F5LCBub3Qgd2FpdCBmb3IgMTAwayBmYWlsdXJlcy4KPiA+Cj4gPiBIbW0sIHRoaXMgaXMgd2hh
+dCB0aGUgcmVnaXN0ZXJzIGxvb2sgbGlrZSBwb3N0LXByb2JlOgo+ID4KPiA+IFJfQ0lSOgo+ID4g
+MHgwNzA0MDAwMCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDA0IDogMDAwMDAwMzAKPiA+IDB4MDcw
+NDAwMDggOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDAwYyA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDEw
+IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwMTQgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDAxOCA6IDAw
+MDAwMDMwCj4gPiAweDA3MDQwMDFjIDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwMjAgOiAwMDAwMDAz
+MAo+ID4gMHgwNzA0MDAyNCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDI4IDogMDAwMDAwMzAKPiA+
+IDB4MDcwNDAwMmMgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDAzMCA6IDAwMDAwMDMwCj4gPiAweDA3
+MDQwMDM0IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwMzggOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDAz
+YyA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDQwIDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwNDQgOiAw
+MDAwMDAzMAo+ID4gMHgwNzA0MDA0OCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDRjIDogMDAwMDAw
+MzAKPiA+IDB4MDcwNDAwNTAgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDA1NCA6IDAwMDAwMDMwCj4g
+PiAweDA3MDQwMDU4IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwNWMgOiAwMDAwMDAzMAo+ID4gMHgw
+NzA0MDA2MCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDY0IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAw
+NjggOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDA2YyA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDcwIDog
+MDAwMDAwMzAKPiA+IDB4MDcwNDAwNzQgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDA3OCA6IDAwMDAw
+MDMwCj4gPiAweDA3MDQwMDdjIDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwODAgOiAwMDAwMDAzMAo+
+ID4gMHgwNzA0MDA4NCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMDg4IDogMDAwMDAwMzAKPiA+IDB4
+MDcwNDAwOGMgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDA5MCA6IDAwMDAwMDMwCj4gPiAweDA3MDQw
+MDk0IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwOTggOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDA5YyA6
+IDAwMDAwMDMwCj4gPiAweDA3MDQwMGEwIDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwYTQgOiAwMDAw
+MDAzMAo+ID4gMHgwNzA0MDBhOCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMGFjIDogMDAwMDAwMzAK
+PiA+IDB4MDcwNDAwYjAgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDBiNCA6IDAwMDAwMDMwCj4gPiAw
+eDA3MDQwMGI4IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwYmMgOiAwMDAwMDAzMAo+ID4gMHgwNzA0
+MDBjMCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMGM0IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwYzgg
+OiAwMDAwMDAzMAo+ID4gMHgwNzA0MDBjYyA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMGQwIDogMDAw
+MDAwMzAKPiA+IDB4MDcwNDAwZDQgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDBkOCA6IDAwMDAwMDMw
+Cj4gPiAweDA3MDQwMGRjIDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwZTAgOiAwMDAwMDAzMAo+ID4g
+MHgwNzA0MDBlNCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMGU4IDogMDAwMDAwMzAKPiA+IDB4MDcw
+NDAwZWMgOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDBmMCA6IDAwMDAwMDMwCj4gPiAweDA3MDQwMGY0
+IDogMDAwMDAwMzAKPiA+IDB4MDcwNDAwZjggOiAwMDAwMDAzMAo+ID4gMHgwNzA0MDBmYyA6IDAw
+MDAwMDMwCj4gPgo+ID4gQ2xlYXJseSBub3QgcmlnaHQuIEl0J3MganVzdCB0aGUgUl9DSVIgbW9k
+dWxlLCBvdGhlciBtb2R1bGVzIGhhdmUgbm9ybWFsIHZhbHVlcy4KPiA+Cj4gPiBJJ3ZlIGNoZWNr
+ZWQ6Cj4gPiAweDA3MDEwMWMwIDogODEwMDAwMDIKPiA+IChJUiBjbG9jayBjb25maWcgcmVnaXN0
+ZXIpCj4gPiAweDA3MDEwMWNjIDogMDAwMTAwMDAKPiA+IChJUiByZXNldC9idXMgY2xrIGdhdGUg
+cmVnKQo+ID4KPiA+IHN0YXRpYyBjb25zdCBjaGFyICogY29uc3Qgcl9tb2QwX2RlZmF1bHRfcGFy
+ZW50c1tdID0geyAib3NjMzJrIiwgIm9zYzI0TSIgfTsKPiA+IHN0YXRpYyBTVU5YSV9DQ1VfTVBf
+V0lUSF9NVVhfR0FURShpcl9jbGssICJpciIsCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgcl9tb2QwX2RlZmF1bHRfcGFyZW50cywgMHgxYzAsCj4gPiAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgMCwgNSwgICAgICAgICAvKiBNICovCj4gPiAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgOCwgMiwgICAgICAgICAvKiBQICovCj4gPiAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgMjQsIDEsICAgICAgICAvKiBtdXggKi8KPiA+ICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBCSVQoMzEpLCAgICAgIC8qIGdhdGUgKi8K
+PiA+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwKTsKPiA+Cj4gPiBzdGF0aWMg
+U1VOWElfQ0NVX0dBVEUocl9hcGIxX2lyX2NsaywgICAgInItYXBiMS1pciIsICAgICJyLWFwYjEi
+LAo+ID4gICAgICAgICAgICAgICAgICAgICAgIDB4MWNjLCBCSVQoMCksIDApOwo+ID4KPiA+ICAg
+ICAgICAgW1JTVF9SX0FQQjFfSVJdICAgICAgICAgPSAgeyAweDFjYywgQklUKDE2KSB9LAo+ID4K
+PiA+IFNvIHBhcmVudCBjbG9jayBzZWVtcyB0byBiZSBPSy4gQnV0IGdhdGUgY2xvY2sgaXMgbm90
+IGVuYWJsZWQsIHNvIHRoZSBidXMKPiA+IGlzIG5vdCB3b3JraW5nLgo+ID4KPiA+IEFuZCBsb29r
+IGF0IHRoaXMhIToKPiA+Cj4gPiBzdGF0aWMgU1VOWElfQ0NVX0dBVEUocl9hcGIxX2lyX2Nsaywg
+ICAgInItYXBiMS1pciIsICAgICJyLWFwYjEiLAo+ID4gICAgICAgICAgICAgICAgICAgICAgIDB4
+MWNjLCBCSVQoMCksIDApOwo+ID4gc3RhdGljIFNVTlhJX0NDVV9HQVRFKHJfYXBiMV93MV9jbGss
+ICAgICJyLWFwYjEtdzEiLCAgICAici1hcGIxIiwKPiA+ICAgICAgICAgICAgICAgICAgICAgICAw
+eDFjYywgQklUKDApLCAwKTsKPiA+Cj4gPiBTbywgaXQncyB3cm9uZyB3MSBnYXRlIGNvbmZpZyEK
+PiA+Cj4gPiBZb3UgY2FuIGRyb3AgeW91ciBjaGFuZ2VzLCBiZWNhdXNlIEkndmUgcHJvYmJhYmx5
+IGZvdW5kIHRoZSByb290IGNhdXNlLgo+IAo+IE5pY2UgdG8gc2VlIHRoYXQgeW91IGhhdmUgZm91
+bmQgdGhlIGlzc3VlLCBidXQgSSBkb24ndCB1bmRlcnN0YW5kIHdoeQo+IEl0J3Mgd29ya2luZyBv
+biBteSBib2FyZCBvbiBub3Qgb24geW91cnMuCgpNYXliZSB5b3UgdXNlIG1vZHVsZXM/IEkgaGF2
+ZSBhIGJ1aWx0aW4gZHJpdmVyLgoKVGhhdCBtYXkgY2hhbmdlIGluaXRpYWxpemF0aW9uIG9yZGVy
+LiBJdCB3b3VsZCBkaXNhYmxlIHVudXNlZCBnYXRlcyBmaXJzdCwgYW5kCndoZW4geW91IGxvYWQg
+dGhlIG1vZHVsZSBsYXRlciBmcm9tIHVzZXJwc2FjZSB0aGVuIGl0IHdvdWxkIGVuYWJsZSB0aGUg
+Z2F0ZS4KCklmIGJ1aWx0aW4sIHRoZW4gaXQgd291bGQgZW5hYmxlIElSIGdhdGUgZmlyc3QsIGFu
+ZCB0aGVuIGRpc2FibGUgdGhlIHVudXNlZApnYXRlcyAoVzEgaW4gdGhpcyBjYXNlKSwgbGF0ZXIg
+b24gd2hlbiBlbnRlcmluZyB1c2Vyc3BhY2UuCgpBbnl3YXksIEkgY2FuIGNvbmZpcm0gdGhhdCBu
+b3csIHdoZW4gSSB0dXJuIG9uIHRoZSBsaWdodCBpbiB0aGUgcm9vbSwgSSBnZXQKYXJvdW5kIDEw
+IGludGVycnVwdHMgd2l0aCBlbXB0eSBGSUZPIGFuZCB0aGFuIGl0IHN0b3BzLgoKSXQgZG9lc24n
+dCBjYXVzZSB0aGUgZmxvb2QgYW55bW9yZS4KCnJlZ2FyZHMsCglvLgoKPiBSZWdhcmRzLAo+IENs
+w6ltZW50Cj4gCj4gPgo+ID4gcmVnYXJkcywKPiA+ICAgICAgICAgby4KPiA+Cj4gPiA+IHRoYW5r
+IHlvdSBhbmQgcmVnYXJkcywKPiA+ID4gICAgICAgby4KPiA+ID4KPiA+ID4gPiBUaGFua3MsCj4g
+PiA+ID4gQ2zDqW1lbnQKPiA+ID4gPgo+ID4gPiA+ID4KPiA+ID4gPiA+IHRoYW5rIHlvdSwKPiA+
+ID4gPiA+ICAgICAgICAgby4KPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IFJlZ2FyZHMsIENsZW1lbnQK
+PiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+IHRoYW5rcywKPiA+ID4gPiA+
+ID4gPiAgICAgICAgIG8uCj4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiA+ICAgICAgICAgICAg
+ICAgcl9pMmM6IGkyY0A3MDgxNDAwIHsKPiA+ID4gPiA+ID4gPiA+IC0tCj4gPiA+ID4gPiA+ID4g
+PiAyLjIwLjEKPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+ID4g
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiA+ID4gPiA+
+ID4gPiA+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cj4gPiA+ID4gPiA+ID4gPiBsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPiA+ID4gPiA+ID4gPiA+IGh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo+ID4g
+PiA+ID4gPgo+ID4gPiA+ID4gPiAtLQo+ID4gPiA+ID4gPiBZb3UgcmVjZWl2ZWQgdGhpcyBtZXNz
+YWdlIGJlY2F1c2UgeW91IGFyZSBzdWJzY3JpYmVkIHRvIHRoZSBHb29nbGUgR3JvdXBzICJsaW51
+eC1zdW54aSIgZ3JvdXAuCj4gPiA+ID4gPiA+IFRvIHVuc3Vic2NyaWJlIGZyb20gdGhpcyBncm91
+cCBhbmQgc3RvcCByZWNlaXZpbmcgZW1haWxzIGZyb20gaXQsIHNlbmQgYW4gZW1haWwgdG8gbGlu
+dXgtc3VueGkrdW5zdWJzY3JpYmVAZ29vZ2xlZ3JvdXBzLmNvbS4KPiA+ID4gPiA+ID4gVG8gdmll
+dyB0aGlzIGRpc2N1c3Npb24gb24gdGhlIHdlYiwgdmlzaXQgaHR0cHM6Ly9ncm91cHMuZ29vZ2xl
+LmNvbS9kL21zZ2lkL2xpbnV4LXN1bnhpL0NBSml1Q2NlN25IU2t0VnNES2NSOEdMUnBEM1dyTjV5
+UDNOYl9IYnVfUTlOalVRYlNNdyU0MG1haWwuZ21haWwuY29tLgo+ID4gPiA+ID4gPiBGb3IgbW9y
+ZSBvcHRpb25zLCB2aXNpdCBodHRwczovL2dyb3Vwcy5nb29nbGUuY29tL2Qvb3B0b3V0Lgo+ID4g
+PiA+Cj4gPiA+ID4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KPiA+ID4gPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+ID4gPiA+IGxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+ID4gPiA+IGh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo+ID4gPgo+ID4gPiBfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4gPiBsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdAo+ID4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKPiA+ID4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+IGxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
