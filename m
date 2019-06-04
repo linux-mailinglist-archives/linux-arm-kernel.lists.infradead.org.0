@@ -2,77 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA93E34655
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:12:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87F6F3465B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:13:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fGHN62iKsgz0DWJ9/hlWaFsWABP2V69Qh+rBJ0f206A=; b=YB4PmzRa160LNe
-	O3ZEkhypxQIhy3WCL8isw7avy3CrDvOtI2KeXn39GPTVtFdCP3VPAdWSzpd0r5K++G2Wk9dh9ru0s
-	f0lD8YJCyNf47sEU1x1Y4nkvYZ0u8cab/f0figmKMWQGacOii++BlaYbu5yEPUCoVTA//rvbU8AZB
-	fLjj+kf5n78aaY1Xv5yZPKHA5Nzl691XaXtEqYy8pPehlvWOSpP4Hz9nKyMZ22hhDk0Qz7IEZtIUC
-	YF92vT+qK8hq6c+/MxaMChlFft9RYz4DdnGcSGhNAp0ir/5qcYyXp1K5UTMTqPHXeWZetV0eqx9r7
-	dSesr+7w+OFOu8VTIh2A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=67JBF/Oejx7LiA9AkxY5glvkoUwx34zypUsWf1Z7n9o=; b=pi6MVK2VviQIaa
+	MJ08R5uHnDPYBGELTD+q/uGoso1freg8Z+EXcpWXG3I9nw8MRxMQywfNcGrYoUoRXZAu+LQ/50NlI
+	ZxGAcDqHodgu/p0G03wtAAxOHxPsvMWvkd/SZRCa6lEoDfP5QyFonjN+sn6Wew3nuLsu3Opn9wkQf
+	v9Z3CVL6hYxFRthIPYXT6VWH07YBt18dyDuigKk2hSPu3R6dx3jueVrFksdT8cWWDvAkYNRfhoh9P
+	ZoUuYlD0UfKTA7VZ8j0BDQE4A9huBV37k97YouxxsVeGVtNzB4W90kzh6t5pFijsx3K/kRnTybY3X
+	4v41J4OO5piqYHRcR5KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8J0-0003OS-FY; Tue, 04 Jun 2019 12:12:42 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8Is-0003NX-I5
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:12:36 +0000
-Received: by mail-qt1-f193.google.com with SMTP id z24so6231011qtj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 05:12:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=L+e5fjRWyUfLgL9OYMwlIZ20PAP5dcbx1HkuQ94d/d4=;
- b=FBMlh2oNPLL8U9juigzISCW3BYyWtp1DVhRf3eQDnE2i34v7kUyyNsFavLlAu65SR2
- O1gX+mU76gVG3p07gMVhbW4GA7O1QwDWtTpZ3EOjpT5jnlBo51FpNfXSrJui3K4FdxgW
- ERH9ZhupPY0wkBdbMulX7Psf5yO4y6JlEAaSqoLm6tzWyRGsPTwWVbed6P4rAX2E4MY9
- K4lxYdnsJVCAHMHz8iyPoDxYkYIx854F7dvkmBVGC/836gN/trvNXs+QcOKljsQVe5oL
- R83LCkFznml08dfwJJuWH54Skdu7sawRx50RVBkYgR+ZngQjVg86bH0/PL33pvAiJihE
- jrfw==
-X-Gm-Message-State: APjAAAWkK8eQ4BW3zdy3gCNEPfWaEJVrZx0VKUBb4r9i6MLbdQ2p/3E9
- oz0aGlcBqvvXqYD5VuM9XUTclB4vtzT7grcn+sU=
-X-Google-Smtp-Source: APXvYqwSfz7cbuyCa6Bus+YKHBZiY4Bkrj2BkzX6U2Y1NapOb+JxqSpgu6ZjrsyPagQKMEJ9lTV9O3R1/mJPh6++Fnw=
-X-Received: by 2002:aed:2bc1:: with SMTP id e59mr7929200qtd.7.1559650352510;
- Tue, 04 Jun 2019 05:12:32 -0700 (PDT)
-MIME-Version: 1.0
+	id 1hY8Jo-0003gQ-Hl; Tue, 04 Jun 2019 12:13:32 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY8Jg-0003fY-Fo
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:13:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2DD5980D;
+ Tue,  4 Jun 2019 05:13:24 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C1A9C3F690;
+ Tue,  4 Jun 2019 05:13:20 -0700 (PDT)
+Subject: Re: [PATCH v6 18/19] x86: Add support for generic vDSO
+To: Michael Kelley <mikelley@microsoft.com>,
+ "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>
 References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <CAK8P3a11DE0sXteZoaP_N=mDhx3tXitGKddn1ogtFqJBYO-SCA@mail.gmail.com>
- <d96667d5-e43b-d33a-fbd0-5acfb4904316@arm.com>
-In-Reply-To: <d96667d5-e43b-d33a-fbd0-5acfb4904316@arm.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 4 Jun 2019 14:12:16 +0200
-Message-ID: <CAK8P3a3nxd7F5zLyD1SVarKjjKC0qvMEN8wP6R7zHY9HKdoe0w@mail.gmail.com>
-Subject: Re: [PATCH v6 00/19] Unify vDSOs across more architectures
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+ <20190530141531.43462-19-vincenzo.frascino@arm.com>
+ <BYAPR21MB1221D54FCEC97509EEF7395CD7180@BYAPR21MB1221.namprd21.prod.outlook.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <97175325-1619-fd38-2a5c-c71b3b161808@arm.com>
+Date: Tue, 4 Jun 2019 13:13:19 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <BYAPR21MB1221D54FCEC97509EEF7395CD7180@BYAPR21MB1221.namprd21.prod.outlook.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_051234_598780_4D5FB308 
-X-CRM114-Status: GOOD (  21.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190604_051324_538665_B46D4E56 
+X-CRM114-Status: GOOD (  26.68  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -84,97 +72,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Huw Davies <huw@codeweavers.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
+Cc: Shuah Khan <shuah@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Ralf Baechle <ralf@linux-mips.org>,
+ Mark Salyzyn <salyzyn@android.com>, Paul Burton <paul.burton@mips.com>,
+ Dmitry Safonov <0x7f454c46@gmail.com>,
  Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 4, 2019 at 2:05 PM Vincenzo Frascino
-<vincenzo.frascino@arm.com> wrote:
-> On 31/05/2019 09:46, Arnd Bergmann wrote:
-> > On Thu, May 30, 2019 at 4:15 PM Vincenzo Frascino
-> > <vincenzo.frascino@arm.com> wrote:
-> > One open question I touched in my review is whether we want to
-> > have a vdso version of clock_getres() in all architectures or not.
-> > I'd prefer to leave it out because there is very little advantage to
-> > it over the system call (the results don't change at runtime and
-> > can easily be cached by libc if performance ever matters), and
-> > it takes up a small amount of memory for the implementation.
-> >
->
-> I thought about it and I ended up with what proposed in this patchset mainly for
-> symmetry across all the architectures since in the end they use the same common
-> code.
->
-> It seems also that there is some performance impact (i.e.):
->
-> clock-getres-monotonic:    libc(system call): 296 nsec/call
-> clock-getres-monotonic:    libc(vdso): 5 nsec/call
->
->
-> I agree with you though when you say that caching it in the libc is a
-> possibility to overcome the performance impact.
+Hi Michael,
 
-It's clear that the vdso version is much faster, my point was that
-I could not think of any use case that cared about it being fast.
+On 30/05/2019 16:41, Michael Kelley wrote:
+> From: Vincenzo Frascino <vincenzo.frascino@arm.com> On Thursday, May 30, 2019 7:16 AM
+>>
+>> The x86 vDSO library requires some adaptations to take advantage of the
+>> newly introduced generic vDSO library.
+>>
+>> Introduce the following changes:
+>>  - Modification of vdso.c to be compliant with the common vdso datapage
+>>  - Use of lib/vdso for gettimeofday
+>>
+>> Cc: Thomas Gleixner <tglx@linutronix.de>
+>> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>>
+>>
+>> diff --git a/arch/x86/include/asm/mshyperv-tsc.h b/arch/x86/include/asm/mshyperv-tsc.h
+>> new file mode 100644
+>> index 000000000000..99c98ccea0bf
+>> --- /dev/null
+>> +++ b/arch/x86/include/asm/mshyperv-tsc.h
+>> @@ -0,0 +1,76 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +#ifndef _ASM_X86_MSHYPER_TSCPAGE_H
+>> +#define _ASM_X86_MSHYPER_TSCPAGE_H
+>> +
+>> +#include <asm/hyperv-tlfs.h>
+>> +
+>> +#ifdef CONFIG_HYPERV_TSCPAGE
+>> +struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
+>> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+>> +				       u64 *cur_tsc)
+>> +{
+>> +	u64 scale, offset;
+>> +	u32 sequence;
+>> +
+>> +	/*
+>> +	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
+>> +	 * Top-Level Functional Specification ver. 3.0 and above. To get the
+>> +	 * reference time we must do the following:
+>> +	 * - READ ReferenceTscSequence
+>> +	 *   A special '0' value indicates the time source is unreliable and we
+>> +	 *   need to use something else. The currently published specification
+>> +	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
+>> +	 *   instead of '0' as the special value, see commit c35b82ef0294.
+>> +	 * - ReferenceTime =
+>> +	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
+>> +	 * - READ ReferenceTscSequence again. In case its value has changed
+>> +	 *   since our first reading we need to discard ReferenceTime and repeat
+>> +	 *   the whole sequence as the hypervisor was updating the page in
+>> +	 *   between.
+>> +	 */
+>> +	do {
+>> +		sequence = READ_ONCE(tsc_pg->tsc_sequence);
+>> +		if (!sequence)
+>> +			return U64_MAX;
+>> +		/*
+>> +		 * Make sure we read sequence before we read other values from
+>> +		 * TSC page.
+>> +		 */
+>> +		smp_rmb();
+>> +
+>> +		scale = READ_ONCE(tsc_pg->tsc_scale);
+>> +		offset = READ_ONCE(tsc_pg->tsc_offset);
+>> +		*cur_tsc = rdtsc_ordered();
+>> +
+>> +		/*
+>> +		 * Make sure we read sequence after we read all other values
+>> +		 * from TSC page.
+>> +		 */
+>> +		smp_rmb();
+>> +
+>> +	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
+>> +
+>> +	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
+>> +}
+>> +
+>> +static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
+>> +{
+>> +	u64 cur_tsc;
+>> +
+>> +	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
+>> +}
+>> +
+>> +#else
+>> +static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+>> +{
+>> +	return NULL;
+>> +}
+>> +
+>> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+>> +				       u64 *cur_tsc)
+>> +{
+>> +	BUG();
+>> +	return U64_MAX;
+>> +}
+>> +#endif
+>> +#endif
+>> diff --git a/arch/x86/include/asm/mshyperv.h b/arch/x86/include/asm/mshyperv.h
+>> index cc60e617931c..db095a992f3e 100644
+>> --- a/arch/x86/include/asm/mshyperv.h
+>> +++ b/arch/x86/include/asm/mshyperv.h
+>> @@ -7,6 +7,7 @@
+>>  #include <linux/nmi.h>
+>>  #include <asm/io.h>
+>>  #include <asm/hyperv-tlfs.h>
+>> +#include <asm/mshyperv-tsc.h>
+>>  #include <asm/nospec-branch.h>
+>>
+>>  #define VP_INVAL	U32_MAX
+>> @@ -387,73 +388,4 @@ static inline int hyperv_flush_guest_mapping_range(u64 as,
+>>  }
+>>  #endif /* CONFIG_HYPERV */
+>>
+>> -#ifdef CONFIG_HYPERV_TSCPAGE
+>> -struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
+>> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+>> -				       u64 *cur_tsc)
+>> -{
+>> -	u64 scale, offset;
+>> -	u32 sequence;
+>> -
+>> -	/*
+>> -	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
+>> -	 * Top-Level Functional Specification ver. 3.0 and above. To get the
+>> -	 * reference time we must do the following:
+>> -	 * - READ ReferenceTscSequence
+>> -	 *   A special '0' value indicates the time source is unreliable and we
+>> -	 *   need to use something else. The currently published specification
+>> -	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
+>> -	 *   instead of '0' as the special value, see commit c35b82ef0294.
+>> -	 * - ReferenceTime =
+>> -	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
+>> -	 * - READ ReferenceTscSequence again. In case its value has changed
+>> -	 *   since our first reading we need to discard ReferenceTime and repeat
+>> -	 *   the whole sequence as the hypervisor was updating the page in
+>> -	 *   between.
+>> -	 */
+>> -	do {
+>> -		sequence = READ_ONCE(tsc_pg->tsc_sequence);
+>> -		if (!sequence)
+>> -			return U64_MAX;
+>> -		/*
+>> -		 * Make sure we read sequence before we read other values from
+>> -		 * TSC page.
+>> -		 */
+>> -		smp_rmb();
+>> -
+>> -		scale = READ_ONCE(tsc_pg->tsc_scale);
+>> -		offset = READ_ONCE(tsc_pg->tsc_offset);
+>> -		*cur_tsc = rdtsc_ordered();
+>> -
+>> -		/*
+>> -		 * Make sure we read sequence after we read all other values
+>> -		 * from TSC page.
+>> -		 */
+>> -		smp_rmb();
+>> -
+>> -	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
+>> -
+>> -	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
+>> -}
+>> -
+>> -static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
+>> -{
+>> -	u64 cur_tsc;
+>> -
+>> -	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
+>> -}
+>> -
+>> -#else
+>> -static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
+>> -{
+>> -	return NULL;
+>> -}
+>> -
+>> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
+>> -				       u64 *cur_tsc)
+>> -{
+>> -	BUG();
+>> -	return U64_MAX;
+>> -}
+>> -#endif
+>>  #endif
+> 
+> Vincenzo -- these changes for Hyper-V are a subset of a larger patch set
+> I have that moves all of the Hyper-V clock/timer code into a separate
+> clocksource driver in drivers/clocksource, with an include file in
+> includes/clocksource.  That new include file should be able to work
+> instead of your new mshyperv-tsc.h.  It also has the benefit of being
+> ISA neutral, so it will work with my in-progress patch set to support
+> Linux on Hyper-V on ARM64.  See https://lkml.org/lkml/2019/5/27/231
+> for the new clocksource driver patch set.
+>
 
-If there is a good reason for it, I also don't mind adding a
-clock_getres_time64() vdso version everywhere.
+Thank you for pointing this out, I will rebase my changes on your patches.
 
-> > We shouldn't just need it for consistency because all callers
-> > would require implementing a fallback to the system call
-> > anyway, to deal with old kernels.
-> >
->
-> A way to address this issue would be to use versioning, which seems supported in
-> the vdso library (i.e. arch/x86/entry/vdso/vdso32/vdso32.lds.S).
->
-> For example for x86 (vdso32) we would have something like:
->
-> VERSION
-> {
->         LINUX_5.3 (being optimistic here :) ) {
->         global:
->                 __vdso_clock_getres;
->                 __vdso_clock_gettime64;
->         };
->         LINUX_2.6 {
->         global:
->                 __vdso_clock_gettime;
->                 __vdso_gettimeofday;
->                 __vdso_time;
->         };
->
->         LINUX_2.5 {
->         global:
->                 __kernel_vsyscall;
->                 __kernel_sigreturn;
->                 __kernel_rt_sigreturn;
->         local: *;
->         };
-> }
->
-> What do you think? Would this be a viable solution?
 
-I actually never understood the point of symbol versioning
-in the vdso. What does that gain us? Note that there are
-no conflicting symbol names between the versions, and
-that nothing enforces the kernel headers to match the
-symbol version used when linking.
+> Michael
+> 
 
-      Arnd
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
