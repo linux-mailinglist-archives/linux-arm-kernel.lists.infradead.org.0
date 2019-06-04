@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40B0F340EE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 09:58:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 731B334103
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:01:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Aw0pxXYtdOJZi3iE5EnRqGpAW9K3oJhKYOsrQjWYbtk=; b=Aqt6FhFdMWRAV6ghlIttc31tm
-	pqGAwUmrtIn4UiyySZcWT4150MVZnZWpQpAv8kmjA0UvEVCM9ut/b23OJQwTDAYF0WYIEgf/IdfAG
-	kVz7NRLpfcGtJQhKbtSCpLZkdO0YvCEzj1uDrENICfecGXTbyJdk+AfPV+j+Yx3h+39fLbdy1L+4a
-	ZkiawqfvIcpl2BUbhUe3jqKvajAQ8RD4cClUY4KPP/MkMwRZ9GfGMDO/+yW3OFNmuwj1KmoJZcAc1
-	rXtUG8lpvYSzaH7KINGMuaOec27peQMxpDHSjQkun2TeDCmiY8+UHb3AQDWp2ZEh1ijfLr61nJXGg
-	tjHAaExTA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EhgoJo4wgTo1mYCRJyf1KlshTCsPvsgOLW8d7tMmxOQ=; b=Q5WeA9IIMDbk/4
+	uabh/4JQa7R25dfmQjnbyJlzydAvpQ1qVaPgklaIBF+EVtxgrbh1v7Uj+pJYTfDrZut7V7h8amvZ4
+	Bw47muzHPRDMJgTgAm/YCMaoV34JXJtWLyCTXlTrUbw6K1o5b3GAZ6xabuglCqlPohAnv6PMkav63
+	rTkGpTZ4b2tIjrZA7LFDRADQJoy/9hGowTALeB8yH8DxWoobODWbe8B9ktNDDIlDBi3XPcemwqCSx
+	YDApzg8ZnfIZT/49nc5T1emNgziPC04yj9zaIzAPlvieVK/prYaZdrD2qSPTU4q2lGTd/CrFbEaRJ
+	xkIVQeq00uuWUwzr8DWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY4LO-0001Bx-4g; Tue, 04 Jun 2019 07:58:54 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hY4NR-0002p6-31; Tue, 04 Jun 2019 08:01:01 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY4LE-0001Av-K1
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 07:58:46 +0000
-X-Originating-IP: 90.88.144.139
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id C485B1BF209;
- Tue,  4 Jun 2019 07:58:40 +0000 (UTC)
-Date: Tue, 4 Jun 2019 09:58:40 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: codekipper@gmail.com
-Subject: Re: [PATCH v4 6/9] ASoC: sun4i-i2s: Add multi-lane functionality
-Message-ID: <20190604075840.kquy3zcuckuzmvzr@flea>
-References: <20190603174735.21002-1-codekipper@gmail.com>
- <20190603174735.21002-7-codekipper@gmail.com>
+ id 1hY4NK-0002oY-45; Tue, 04 Jun 2019 08:00:55 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 76BB4260E1F;
+ Tue,  4 Jun 2019 09:00:52 +0100 (BST)
+Date: Tue, 4 Jun 2019 09:58:58 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Qii Wang <qii.wang@mediatek.com>
+Subject: Re: [PATCH 2/2] i3c: master: Add driver for MediaTek IP
+Message-ID: <20190604095858.38ed9a28@collabora.com>
+In-Reply-To: <1559533863-10292-3-git-send-email-qii.wang@mediatek.com>
+References: <1559533863-10292-1-git-send-email-qii.wang@mediatek.com>
+ <1559533863-10292-3-git-send-email-qii.wang@mediatek.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20190603174735.21002-7-codekipper@gmail.com>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_005844_984996_029E465D 
-X-CRM114-Status: GOOD (  24.80  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190604_010054_297721_A6D5653E 
+X-CRM114-Status: GOOD (  10.92  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,183 +62,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, lgirdwood@gmail.com, be17068@iperbole.bo.it,
- wens@csie.org, broonie@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4772946245134961320=="
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ bbrezillon@kernel.org, leilk.liu@mediatek.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
+ xinping.qian@mediatek.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============4772946245134961320==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="nyo2exzeeeog6q2h"
-Content-Disposition: inline
+On Mon, 3 Jun 2019 11:51:03 +0800
+Qii Wang <qii.wang@mediatek.com> wrote:
 
 
---nyo2exzeeeog6q2h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Jun 03, 2019 at 07:47:32PM +0200, codekipper@gmail.com wrote:
-> From: Marcus Cooper <codekipper@gmail.com>
->
-> The i2s block supports multi-lane i2s output however this functionality
-> is only possible in earlier SoCs where the pins are exposed and for
-> the i2s block used for HDMI audio on the later SoCs.
->
-> To enable this functionality, an optional property has been added to
-> the bindings.
->
-> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
-
-I'd like to have Mark's input on this, but I'm really worried about
-the interaction with the proper TDM support.
-
-Our fundamental issue is that the controller can have up to 8
-channels, but either on 4 lines (instead of 1), or 8 channels on 1
-(like proper TDM) (or any combination between the two, but that should
-be pretty rare).
-
-You're trying to do the first one, and I'm trying to do the second one.
-
-There's a number of assumptions later on that will break the TDM case,
-see below for examples
-
-> ---
->  sound/soc/sunxi/sun4i-i2s.c | 44 ++++++++++++++++++++++++++++++++-----
->  1 file changed, 39 insertions(+), 5 deletions(-)
->
-> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-> index bca73b3c0d74..75217fb52bfa 100644
-> --- a/sound/soc/sunxi/sun4i-i2s.c
-> +++ b/sound/soc/sunxi/sun4i-i2s.c
-> @@ -23,7 +23,7 @@
->
->  #define SUN4I_I2S_CTRL_REG		0x00
->  #define SUN4I_I2S_CTRL_SDO_EN_MASK		GENMASK(11, 8)
-> -#define SUN4I_I2S_CTRL_SDO_EN(sdo)			BIT(8 + (sdo))
-> +#define SUN4I_I2S_CTRL_SDO_EN(lines)		(((1 << lines) - 1) << 8)
->  #define SUN4I_I2S_CTRL_MODE_MASK		BIT(5)
->  #define SUN4I_I2S_CTRL_MODE_SLAVE			(1 << 5)
->  #define SUN4I_I2S_CTRL_MODE_MASTER			(0 << 5)
-> @@ -355,14 +355,23 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
->  	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
->  	int sr, wss, channels;
->  	u32 width;
-> +	int lines;
->
->  	channels = params_channels(params);
-> -	if (channels != 2) {
-> +	if ((channels > dai->driver->playback.channels_max) ||
-> +		(channels < dai->driver->playback.channels_min)) {
->  		dev_err(dai->dev, "Unsupported number of channels: %d\n",
->  			channels);
->  		return -EINVAL;
->  	}
->
-> +	lines = (channels + 1) / 2;
+> +static int mtk_i3c_master_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct mtk_i3c_master *master;
+> +	struct resource *res;
+> +	int ret, irqnr;
 > +
-> +	/* Enable the required output lines */
-> +	regmap_update_bits(i2s->regmap, SUN4I_I2S_CTRL_REG,
-> +			   SUN4I_I2S_CTRL_SDO_EN_MASK,
-> +			   SUN4I_I2S_CTRL_SDO_EN(lines));
+> +	master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
+> +	if (!master)
+> +		return -ENOMEM;
 > +
-
-This has the assumption that each line will have 2 channels, which is wrong.
-
->  	if (i2s->variant->is_h3_i2s_based) {
->  		regmap_update_bits(i2s->regmap, SUN8I_I2S_CHAN_CFG_REG,
->  				   SUN8I_I2S_CHAN_CFG_TX_SLOT_NUM_MASK,
-> @@ -373,8 +382,19 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
->  	}
->
->  	/* Map the channels for playback and capture */
-> -	regmap_field_write(i2s->field_txchanmap, 0x76543210);
->  	regmap_field_write(i2s->field_rxchanmap, 0x00003210);
-> +	regmap_field_write(i2s->field_txchanmap, 0x10);
-> +	if (i2s->variant->is_h3_i2s_based) {
-> +		if (channels > 2)
-> +			regmap_write(i2s->regmap,
-> +				     SUN8I_I2S_TX_CHAN_MAP_REG+4, 0x32);
-> +		if (channels > 4)
-> +			regmap_write(i2s->regmap,
-> +				     SUN8I_I2S_TX_CHAN_MAP_REG+8, 0x54);
-> +		if (channels > 6)
-> +			regmap_write(i2s->regmap,
-> +				     SUN8I_I2S_TX_CHAN_MAP_REG+12, 0x76);
-> +	}
-
-And this creates a mapping matching that.
-
->  	/* Configure the channels */
->  	regmap_field_write(i2s->field_txchansel,
-> @@ -1057,9 +1077,10 @@ static int sun4i_i2s_init_regmap_fields(struct device *dev,
->  static int sun4i_i2s_probe(struct platform_device *pdev)
->  {
->  	struct sun4i_i2s *i2s;
-> +	struct snd_soc_dai_driver *soc_dai;
->  	struct resource *res;
->  	void __iomem *regs;
-> -	int irq, ret;
-> +	int irq, ret, val;
->
->  	i2s = devm_kzalloc(&pdev->dev, sizeof(*i2s), GFP_KERNEL);
->  	if (!i2s)
-> @@ -1126,6 +1147,19 @@ static int sun4i_i2s_probe(struct platform_device *pdev)
->  	i2s->capture_dma_data.addr = res->start + SUN4I_I2S_FIFO_RX_REG;
->  	i2s->capture_dma_data.maxburst = 8;
->
-> +	soc_dai = devm_kmemdup(&pdev->dev, &sun4i_i2s_dai,
-> +			       sizeof(*soc_dai), GFP_KERNEL);
-> +	if (!soc_dai) {
-> +		ret = -ENOMEM;
-> +		goto err_pm_disable;
+> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "main");
+> +	master->regs = devm_ioremap_resource(dev, res);
+> +	if (IS_ERR(master->regs))
+> +		return PTR_ERR(master->regs);
+> +
+> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dma");
+> +	master->dma_regs = devm_ioremap_resource(dev, res);
+> +	if (IS_ERR(master->dma_regs))
+> +		return PTR_ERR(master->dma_regs);
+> +
+> +	irqnr = platform_get_irq(pdev, 0);
+> +	if (irqnr < 0)
+> +		return irqnr;
+> +
+> +	ret = devm_request_irq(dev, irqnr, mtk_i3c_master_irq,
+> +			       IRQF_TRIGGER_NONE, DRV_NAME, master);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Request I3C IRQ %d fail\n", irqnr);
+> +		return ret;
 > +	}
 > +
-> +	if (!of_property_read_u32(pdev->dev.of_node,
-> +				  "allwinner,playback-channels", &val)) {
-> +		if (val >= 2 && val <= 8)
-> +			soc_dai->playback.channels_max = val;
+> +	ret = of_property_read_u32(pdev->dev.of_node, "clock-div",
+> +				   &master->clk_src_div);
+
+You say in one comment that this clock divider is fixed in HW but might
+change on a per-SoC basis. If that's the case, you should get rid of
+this clock-div prop and attach the divider to the compatible (using an
+mtk_i3c_master_variant struct that contains a divider field).
+
+> +	if (ret < 0)
+> +		return -EINVAL;
+> +
+> +	spin_lock_init(&master->xferqueue.lock);
+> +	INIT_LIST_HEAD(&master->xferqueue.list);
+> +
+> +	if (dma_set_mask(dev, DMA_BIT_MASK(33))) {
+> +		dev_err(dev, "dma_set_mask return error.\n");
+> +		return -EINVAL;
 > +	}
 > +
-
-I'm not quite sure how this works.
-
-of_property_read_u32 will return 0, so you will enter in the
-condition. But what happens if the property is missing?
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---nyo2exzeeeog6q2h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPYksAAKCRDj7w1vZxhR
-xYBQAQCYX/Uu2lP7J+mcD5tFPBbgLuQ9PtE3e9B6ovbn9juZOQEA3+ZUzorIBacX
-S9cvpP0cRQzxe6STHA66H3PfQRHFDA0=
-=qzcv
------END PGP SIGNATURE-----
-
---nyo2exzeeeog6q2h--
-
-
---===============4772946245134961320==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +	master->clk_main = devm_clk_get(dev, "main");
+> +	if (IS_ERR(master->clk_main)) {
+> +		dev_err(dev, "cannot get main clock\n");
+> +		return PTR_ERR(master->clk_main);
+> +	}
+> +	master->clk_dma = devm_clk_get(dev, "dma");
+> +	if (IS_ERR(master->clk_dma)) {
+> +		dev_err(dev, "cannot get dma clock\n");
+> +		return PTR_ERR(master->clk_dma);
+> +	}
+> +
+> +	master->clk_arb = devm_clk_get_optional(dev, "arb");
+> +	if (IS_ERR(master->clk_arb))
+> +		return PTR_ERR(master->clk_arb);
+> +
+> +	ret = mtk_i3c_master_clock_enable(master);
+> +	if (ret) {
+> +		dev_err(dev, "clock enable failed!\n");
+> +		return ret;
+> +	}
+> +
+> +	master->dev = dev;
+> +	platform_set_drvdata(pdev, master);
+> +
+> +	ret = i3c_master_register(&master->mas_ctrler, dev,
+> +				  &mtk_i3c_master_ops, false);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to add i3c bus to i3c core\n");
+> +		mtk_i3c_master_clock_disable(master);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4772946245134961320==--
-
