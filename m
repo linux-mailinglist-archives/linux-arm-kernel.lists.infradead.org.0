@@ -2,86 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C79B034C9E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:52:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3452734CBE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 18:00:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W+oqZJ7QjaEWuj7T/46e81ZceAZ0JVg0v0Tlje4/mbU=; b=VfraZP1RdTA5ji
-	9YYPhDTj4Sr2l3gcVfyY8tVRLWuqpQW8voiuRxSD5QsjO0f+fkPBR7ezFwYYnSqtCwxFimhdoW0hj
-	iHUy4TES1SQEb87pf31klZaM0mjD7xgk8gT5/9gbw/8uO49OLjzxJbWGYWZWRAy6LN/c+0Wm7JBhw
-	Hogj72CdEvADHyHqH/XGxstJrNrbufsTjCUPPpQW76HzjlmSZsmdTEzC3uj050WNYuqUc+CqkDf4p
-	mkVVozyN7AsDvJcRbD/D4pTr1yceQJ3JtsVszrWg26OBS4F7AKvryj+iu5EsCFRGSrOXYxP9wLRtZ
-	uwXkp5aHjQDpDmDGDzaQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yLVumOPznGSzYDXKSAWtvqbf3triOQhhMY0b5aBBFgQ=; b=hcTktq6tRKw1Fd+gX1BnZ1MVP
+	ns168Uu4Q3Kpi50t+nubKnRv46VPPvp78Uli52H3hQH12I/fa7GUVdTRhlpXg+Vt4NZA9AJaf60gb
+	U/wUXt2/44MyC3LGnJp28y+AiiU9IiDR5hStXbIWwXepexK9698oiDCVmzvOXpMVZccU53ZSXvMH5
+	QUmUemccgZi10ZKks96JIaKrDXIkWNzMBAzGx/FIe2uvyQodvVeGmxqxSq+qchKo7/74by0ODF4xE
+	pZX92aRqMmsrDhJSdbLcArsFacRePz10SDEUGQ2gYPhNox3rMx8Muimz09uktKeS91LDfG/mBxyOi
+	m1uriqejQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYBjQ-0008WT-Gj; Tue, 04 Jun 2019 15:52:12 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hYBrQ-0003dE-Vz; Tue, 04 Jun 2019 16:00:28 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYBj1-0008AM-Je
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 15:51:49 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c6so617761wml.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 08:51:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Z+OhEzHhvUeJebIEatFExcxGd1KsR5MutbeuVcAmdiM=;
- b=IZoG5iQfhwH3WPZ7yI+hJljmBqEI9xfgXEgkUxl7gTycgWFGden7jqMKmTnTQvh+u2
- yMHOBvLA3h8oxxpysF/UgPQrSmeRxjSvx92v/YzblfFF4jRFuyXJHzWATLk/jsv5+O86
- bg4pNSi0dbnzBb070ToI5yPLMbPr4tMH25bK24rnfsfCLA5c7RxSSgq7n0WbXHVziroz
- WlQKYvRbvKpLvYjznY9TJsVjmwIJEdHMRhh5hY10oaM2+YSdXMvGsgkwJpjQc8N2JVXv
- WpNhN+W3C5O+JjEjhoumaTjIB9W7BNEjercK1MWRCXUW7m1uWOiTpP1AK268hRL2IK1b
- /hfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Z+OhEzHhvUeJebIEatFExcxGd1KsR5MutbeuVcAmdiM=;
- b=SbvXktFABLWfZA5En/YR0JdCphaf6LR4pwOGhRd/qOZEoMrKZIG93WDFWISKHKgR+a
- hi2HfCk4ZhUEBw/JUtxVe5lA5Pdry6PtCdm37QFjuHWLRnzyGCmMdzzf/i2Rzlim7fo4
- Ezx4qLyXn3XNFXmUNxCYgL1kZceK1fVNJyibZMqJwp17zT4C3EvHJBwfkjYBnL0BM+mB
- Hf+7M+UbM9aG5iLw9n2+H+fUaesGavF7zKPKfVcDidhLSxkE4VR2ZShhq8XKAmDPDMEw
- cn4pnkPZ92ya3pBtvxTLgxjFoj0kRlwYobCM60sSzbOOY2DRX+qXp4S3qFAJ7D4AMBvd
- tOlQ==
-X-Gm-Message-State: APjAAAVgNXvCsdFA/VKVPz+nthqpSxbzaAzkmXSBdMBd5bbLbnCNekki
- 7ASBhojmBUnMooZ1VFfv0ic=
-X-Google-Smtp-Source: APXvYqzipgasfebfDR/ejdqGH7KrYRMV/DH+W6zwO2QcBQ3VZMp4cnJ2vJlkoz7iUX8LbNQ0GZifUg==
-X-Received: by 2002:a1c:a848:: with SMTP id r69mr17095918wme.12.1559663506048; 
- Tue, 04 Jun 2019 08:51:46 -0700 (PDT)
-Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id d18sm3512155wrn.26.2019.06.04.08.51.45
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 04 Jun 2019 08:51:45 -0700 (PDT)
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH v2 3/3] soc/tegra: pmc: Add comments clarifying wake events
-Date: Tue,  4 Jun 2019 17:51:35 +0200
-Message-Id: <20190604155135.25390-3-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190604155135.25390-1-thierry.reding@gmail.com>
-References: <20190604155135.25390-1-thierry.reding@gmail.com>
+ id 1hYBrK-0003co-PH
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 16:00:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=uBZ3QnhWu98kJQiat9L0PeoNpIYCmdNp7OssQ/cTY7E=; b=a3QI9+OphW/f0GNMiWE5jZbJ4
+ AkPfWmPn+TgoAapbIU4UPv+HVxXg9GjNLaT+QyIWT8SscxEBJM+O3tzvdOgQxnBOeqnJuqtwyl3t6
+ Q+WpmlwQbKTGnNghWgerxVOcQ4Vxy4Aj8GtY51jgPRtZHdnZeaWhCm5TCYbHKPKJQ7ddo=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hYBrH-0006MC-8B; Tue, 04 Jun 2019 16:00:19 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id 58E5B440046; Tue,  4 Jun 2019 17:00:18 +0100 (BST)
+Date: Tue, 4 Jun 2019 17:00:18 +0100
+From: Mark Brown <broonie@kernel.org>
+To: =?iso-8859-1?Q?Beno=EEt?= Cousson <bcousson@baylibre.com>,
+ Tony Lindgren <tony@atomide.com>
+Subject: Re: next/master boot: 257 boots: 11 failed, 229 passed with 16
+ offline, 1 conflict (next-20190604)
+Message-ID: <20190604160018.GI2456@sirena.org.uk>
+References: <5cf685d0.1c69fb81.e3d89.43ae@mx.google.com>
 MIME-Version: 1.0
+In-Reply-To: <5cf685d0.1c69fb81.e3d89.43ae@mx.google.com>
+X-Cookie: The other line moves faster.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_085147_641383_44329B25 
-X-CRM114-Status: GOOD (  12.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190604_090022_970237_B434E9EA 
+X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,72 +81,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, Bitan Biswas <bbiswas@nvidia.com>,
- linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-omap@vger.kernel.org, linux-next@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6948661190777777510=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
 
-Add some comments to clarify the purpose of the wake event support
-implemented in the PMC driver.
+--===============6948661190777777510==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="boT9Oj39GmgPxYhu"
+Content-Disposition: inline
 
-Signed-off-by: Thierry Reding <treding@nvidia.com>
----
- drivers/soc/tegra/pmc.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
 
-diff --git a/drivers/soc/tegra/pmc.c b/drivers/soc/tegra/pmc.c
-index 6e66b5e293be..af8f63a844cd 100644
---- a/drivers/soc/tegra/pmc.c
-+++ b/drivers/soc/tegra/pmc.c
-@@ -241,6 +241,11 @@ struct tegra_pmc_soc {
- 	const char * const *reset_levels;
- 	unsigned int num_reset_levels;
- 
-+	/*
-+	 * These describe events that can wake the system from sleep (i.e.
-+	 * LP0 or SC7). Wakeup from other sleep states (such as LP1 or LP2)
-+	 * are dealt with in the LIC.
-+	 */
- 	const struct tegra_wake_event *wake_events;
- 	unsigned int num_wake_events;
- };
-@@ -1906,6 +1911,11 @@ static int tegra_pmc_irq_alloc(struct irq_domain *domain, unsigned int virq,
- 		}
- 	}
- 
-+	/*
-+	 * For interrupts that don't have associated wake events, assign a
-+	 * dummy hardware IRQ number. This is used in the ->irq_set_type()
-+	 * and ->irq_set_wake() callbacks to return early for these IRQs.
-+	 */
- 	if (i == soc->num_wake_events)
- 		err = irq_domain_set_hwirq_and_chip(domain, virq, ULONG_MAX,
- 						    &pmc->irq, pmc);
-@@ -1924,6 +1934,7 @@ static int tegra_pmc_irq_set_wake(struct irq_data *data, unsigned int on)
- 	unsigned int offset, bit;
- 	u32 value;
- 
-+	/* nothing to do if there's no associated wake event */
- 	if (WARN_ON(data->hwirq == ULONG_MAX))
- 		return 0;
- 
-@@ -1954,6 +1965,7 @@ static int tegra_pmc_irq_set_type(struct irq_data *data, unsigned int type)
- 	struct tegra_pmc *pmc = irq_data_get_irq_chip_data(data);
- 	u32 value;
- 
-+	/* nothing to do if there's no associated wake event */
- 	if (data->hwirq == ULONG_MAX)
- 		return 0;
- 
--- 
-2.21.0
+--boT9Oj39GmgPxYhu
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+On Tue, Jun 04, 2019 at 07:53:04AM -0700, kernelci.org bot wrote:
+
+Today's -next fails to boot omap2plus_defconfig on Beagle XM:
+
+>     omap2plus_defconfig:
+>         gcc-8:
+>           omap3-beagle-xm:
+>               lab-baylibre: failing since 1 day (last pass: next-20190531 - first fail: next-20190603)
+
+The boot fails silently with no output after the bootloader:
+
+    https://kernelci.org/boot/id/5cf655fc59b5149acad51504/
+
+which isn't much to go on, it does seem to have been OK in
+multi_v7_defconfig though.
+
+--boT9Oj39GmgPxYhu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlz2lZEACgkQJNaLcl1U
+h9BmWQf6AoY5VMMkCTmC1WC0Xuomm1kiC7szNoyymcavNs7I8BPlfTssjnJMZTQP
+JOCRjldsXBmPY8PF4YTpuBK6ANNTWE1n0WgbNgZEuOPWt2nCOT1QRvfHagOE31Eb
+OAvG19faDLlh3ivrj32ACTXd/bbBudESyYXsKBC/P2JJ7KyYmSf99cPw1bqeDm49
+7FAHWdODlE86i3VxYGjFseO2WLatjOf55opyVmUhsL65dX8vyssf1kWmq4iDGCgs
+p4a6btnaVbHdYUBmSMuhlevIHRJAubRAaxG70XP+cnNsvTO1hUM5ITNVHemNUIPB
+gAs7N1rUmpjROjkN+QGwRNN1wECBSg==
+=3tvl
+-----END PGP SIGNATURE-----
+
+--boT9Oj39GmgPxYhu--
+
+
+--===============6948661190777777510==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6948661190777777510==--
+
