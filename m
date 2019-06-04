@@ -2,87 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 984D133F3C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:53:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4015733F3D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:54:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/hqp7KriFZ/YKrhyAYIatCy4zi8RSKyXrQX5pX6bNfA=; b=OCrRUEcs1pMblC
-	WmB4b+EpW2uItIJEq3goSfQyaNZyknA05KVRsA+kqeseVt2sH3Pisr5bPLu/9bQJHzaqvk4LxsQGr
-	TlaX6xh4THvd6EAt5PYNH1Bu7J9tCSdm6fHL5q9L05GnEw5WpHe2824Wxz3WdbsaEDrzVciuTpNGc
-	8LOuqbqPVYcapJpTtztAm2EGsAPB+SDdVoFCw9FwG5AjoYzu3LP5vArTsArak/xPcKs2ROzG8K5fB
-	tROPilq4vv9k+st37UqALBZiy+DEPBon4/Rf7Q6aFClsSdrf5V/EH3wVUF2iuAIcCdUSpmceDwz2l
-	0ShELgqpdlZfKlfKvwEw==;
+	List-Owner; bh=642YLisH0TvAA0uT1Bwd/MOJS/TFq6Ho6jEd0hd2WQU=; b=cR6/oLjdvgXwqC
+	leZM8GM0MY+y5nUxOSos7GtzjEKxhw8Nyb3C3giCXi2y0VVyepzQxS6VdkGBAA2Z76dM1GhzwOecR
+	lJB6JXtJv78ZNn/u2FtjZUN2SImKxWq1jpaPnGEpNlsTtF69NqmqrNk+a/Xl58cdHDtQK63bD9nT7
+	XyfSZT4tdUXXZF4z2GD+iOzMYwI4f/oAdjIuDfmDMvkJ/UKodie7p/OeyxhoE3J9dbGNW9g8lptLK
+	cUkC22SD/G8RoyJn1KBGfcHYVq7RoOI6htLT4xGgapUuuhr9LTX4vKLi+lu/I1pD8OkDuJkIMmfhz
+	ew/qlmnLxmbalXylCNnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY3KJ-0001Ev-GA; Tue, 04 Jun 2019 06:53:43 +0000
-Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY3KC-0001EC-Dh
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 06:53:38 +0000
-Received: by mail-ua1-x941.google.com with SMTP id s4so303235uad.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Jun 2019 23:53:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LaDWiHPR9JRMc5dM2JBiUlOrVRUD/jYSdR+XH2uU4Co=;
- b=vJV/Z6ZXeWZX0q82NAqhljJbpDA+WvULjbfDIx58hTaojW2K0l7Kk0sm9KjHyb17DT
- kuQoWD7xepb9d29mYUK6sx3XuMTFm1+GXWLg6nVQ2oWiCNk/5C3QPsfK04iXuJez/HU8
- Lg6ijXWEgAa/nOQk5u/YKkwG31S3B1VcGxD1vkh2lRVwcpjKlOUoDc/bfI4xvVQfpk88
- 4Wzhi5FxG5ihgAv3geCktS3P8DUmC3G3OeXsYVY+VtRDR9zodAhlb51H8IDnvZhbbfPf
- bnroEVDnDKPMsceW+ac5lih3IBV7ksqtWW7kaDIFQurKU1ZVgIB7Hip3Rq+CaoUpErFh
- nMlA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LaDWiHPR9JRMc5dM2JBiUlOrVRUD/jYSdR+XH2uU4Co=;
- b=hOTd8WE6zYVM56oH0OoAYIK31Pqi2K3SI3/+dSu4Fxrbw/JGInfYOLfWfDyc2kFv1H
- 2q4zatQ+UYjjnFB0TooHt0VIVVvzhsNj7nkSCuLJTox8luWKuwxt52XfVS1ef3K4KHCJ
- bq1ct+jVFEtnNcP8taGXUO2MJLje1jrhdOJcxzWwgB5z+0uDPV9D/NE4zgwA0jzrAaeE
- g8iYwHAC8h9tquXCF6Gx6QO9DGdPtn43+R4ZKXKRpsp6Ymd+yKnS67L1B+OZcc79fV5c
- +hSl3OVJXtceldr2oNg/NMmXBxMjuEy+fTAlUMDm7UjYNAq7m82+QjSj6NAfCkLUvQM3
- B3tA==
-X-Gm-Message-State: APjAAAVy20X+NAedE6ODUdOZfdnumxlyr4qDjFj84MEb7iQvsUKfbrX2
- oBR+9hDJLqK/q6GDMmIZa402wgNAZN3NgQAIZXMpzw==
-X-Google-Smtp-Source: APXvYqwOrrnYuan4kp6oT+cECdrmvG/OzTSJGNeXrjAnq+W5vLQh750wxVsaDLCIudNnKnWn328F87yP/49E98Xs9EA=
-X-Received: by 2002:ab0:4a97:: with SMTP id s23mr871475uae.19.1559631214438;
- Mon, 03 Jun 2019 23:53:34 -0700 (PDT)
+	id 1hY3Km-0001UC-6j; Tue, 04 Jun 2019 06:54:12 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=hirez.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY3Ke-0001TW-0y; Tue, 04 Jun 2019 06:54:04 +0000
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 9627520761B5F; Tue,  4 Jun 2019 08:54:01 +0200 (CEST)
+Date: Tue, 4 Jun 2019 08:54:01 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [RFC V2] mm: Generalize notify_page_fault()
+Message-ID: <20190604065401.GE3402@hirez.programming.kicks-ass.net>
+References: <1559630046-12940-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
-References: <cover.1558346019.git.baolin.wang@linaro.org>
- <ee4ad0e7e131e4d639dbf6bd25ad93726648ce1c.1558346019.git.baolin.wang@linaro.org>
- <CAPDyKFrWiG3KJad+L3NOQ-dC2XnBM-8mQGVEsVB_Qg0ACTfVag@mail.gmail.com>
- <CAMz4kuK+yX=V2zp-C4Xb-6ZjgLOY+ON2iHZU=HwONeXcJCkk4w@mail.gmail.com>
-In-Reply-To: <CAMz4kuK+yX=V2zp-C4Xb-6ZjgLOY+ON2iHZU=HwONeXcJCkk4w@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 4 Jun 2019 08:52:57 +0200
-Message-ID: <CAPDyKFrfMWomOe1QgizbfG+4=vHOix8UH3+MbZicMKWusE8Tsw@mail.gmail.com>
-Subject: Re: [PATCH 2/9] dt-bindings: mmc: sprd: Add another optional clock
- documentation
-To: Baolin Wang <baolin.wang@linaro.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_235336_525079_3708DF80 
-X-CRM114-Status: GOOD (  22.03  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Content-Disposition: inline
+In-Reply-To: <1559630046-12940-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,62 +46,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- arm-soc <arm@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Chunyan Zhang <zhang.lyra@gmail.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Olof Johansson <olof@lixom.net>,
- Orson Zhai <orsonzhai@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
+ Ingo Molnar <mingo@redhat.com>, Fenghua Yu <fenghua.yu@intel.com>,
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ Andrey Konovalov <andreyknvl@google.com>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 4 Jun 2019 at 04:33, Baolin Wang <baolin.wang@linaro.org> wrote:
->
-> Hi Ulf,
->
-> On Mon, 3 Jun 2019 at 21:34, Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> >
-> > On Mon, 20 May 2019 at 12:12, Baolin Wang <baolin.wang@linaro.org> wrote:
-> > >
-> > > For some Spreadtrum platforms like SC9860 platform, we should enable another
-> > > gate clock '2x_enable' to make the SD host controller work well. Thus add
-> > > documentation for this optional clock.
-> > >
-> > > Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
-> > > ---
-> > >  .../devicetree/bindings/mmc/sdhci-sprd.txt         |    1 +
-> > >  1 file changed, 1 insertion(+)
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt b/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt
-> > > index 45c9978..a285c77 100644
-> > > --- a/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt
-> > > +++ b/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt
-> > > @@ -14,6 +14,7 @@ Required properties:
-> > >  - clock-names: Should contain the following:
-> > >         "sdio" - SDIO source clock (required)
-> > >         "enable" - gate clock which used for enabling/disabling the device (required)
-> > > +       "2x_enable" - gate clock controlling the device for some special platforms (optional)
-> >
-> > This is a bit vague, could you please elaborate (and fold in that
-> > information to the doc) on what kind of clock this is?
->
-> Sorry for confusing. For some Spreadtrum platfroms like SC9860
-> platform, we should enable 2 gate clocks to enable SD host controller,
-> that means we have 2 serialized clock gates. I know that's a little
-> weird, but that's our clock's design.
+On Tue, Jun 04, 2019 at 12:04:06PM +0530, Anshuman Khandual wrote:
+> diff --git a/mm/memory.c b/mm/memory.c
+> index ddf20bd..b6bae8f 100644
+> --- a/mm/memory.c
+> +++ b/mm/memory.c
+> @@ -52,6 +52,7 @@
+>  #include <linux/pagemap.h>
+>  #include <linux/memremap.h>
+>  #include <linux/ksm.h>
+> +#include <linux/kprobes.h>
+>  #include <linux/rmap.h>
+>  #include <linux/export.h>
+>  #include <linux/delayacct.h>
+> @@ -141,6 +142,21 @@ static int __init init_zero_pfn(void)
+>  core_initcall(init_zero_pfn);
+>  
+>  
+> +int __kprobes notify_page_fault(struct pt_regs *regs, unsigned int trap)
+> +{
+> +	int ret = 0;
+> +
+> +	/*
+> +	 * To be potentially processing a kprobe fault and to be allowed
+> +	 * to call kprobe_running(), we have to be non-preemptible.
+> +	 */
+> +	if (kprobes_built_in() && !preemptible() && !user_mode(regs)) {
+> +		if (kprobe_running() && kprobe_fault_handler(regs, trap))
+> +			ret = 1;
+> +	}
+> +	return ret;
+> +}
 
-Okay, just wanted to make sure this new clock isn't something that
-should be modeled through the clock tree.
-
-Thanks for explaining, then I am happy with the patch as is.
-
-Kind regards
-Uffe
+That thing should be called kprobe_page_fault() or something,
+notify_page_fault() is a horribly crap name for this function.
 
 _______________________________________________
 linux-arm-kernel mailing list
