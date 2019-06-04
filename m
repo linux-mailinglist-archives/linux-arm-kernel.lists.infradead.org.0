@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66E7834EA6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 19:22:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5746834EA8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 19:22:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FB56TLXyCRIYBEqGOnbRvDGNQs+mNX8oHmTcGC5Lu68=; b=FJ5L5SZocr1JyF
-	z5eMkMY4y4MZwF6y5ZCtYq9WjghZkqgpTwKRTtipRPqNlKiKqctsOPnIVvvyoOrOqhJzh1T1cP6Az
-	RfLX59nVlP31khIEkVSV0AZKZTN+YYrxST7unKkud/y/VMGlXZqTrTrpwYaAjtLnnIbPqyBhduRzg
-	orUgdB0V7BHrPtsXKeW6uVvai4bZr2wOseXHw72AjFbM8q+NK3wLPvAunDlm8pEoUXN+sueRO++0c
-	ZPW+f1mf1IO8MxhqtCM8SymQovEbzGkqeJLE4wxpEW0mapGEztlutMZfUhH/jg/9TJm857xDZuLJ9
-	DOyg0mzaNv0HwIfwaARg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5s//MoxtwhmYy85qW/0QedusToJg2ONmq77xrrxQABQ=; b=Kk1LOEP7Pxohoz
+	yrXIjASHv7sJokyRd2FTxbEvhh2WweH3UqtyXjDFZyTbuEymF8ZRhmqu/GxYC6GmATRh3oI9JpHPO
+	8BQ1a/NSWQWbwJs8fByD8GMgMVeek/L601kT6NOSKv+iKtEDk2N3zcVpgjHy9Gkq371Fvo1VayxxA
+	CAIoZIzC/E+HO9QbXsxJ7hS+hoqiOjUtRFqCVjtD2ftD4Ua/f8XgEh/6BzC4bvRLrKQSxDwojrZ+N
+	Vvw1gWn/4zViZ3AwXzwZumqx2rhfyj+aBOhz1je9Xf+3+P6xyRq0gch1aOaflAg7boDKt9yPYhJBe
+	+UmlYjQZk8Lyw4YX4xtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYD8d-0005sN-DS; Tue, 04 Jun 2019 17:22:19 +0000
+	id 1hYD8m-0005yu-CS; Tue, 04 Jun 2019 17:22:28 +0000
 Received: from mail.z3ntu.xyz ([128.199.32.197])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYD8W-0005rS-HP
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 17:22:13 +0000
+ id 1hYD8W-0005rT-Qv
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 17:22:14 +0000
 Received: from localhost.localdomain (80-110-121-20.cgn.dynamic.surfer.at
  [80.110.121.20])
- by mail.z3ntu.xyz (Postfix) with ESMTPSA id 4C04BC62EF;
- Tue,  4 Jun 2019 17:22:09 +0000 (UTC)
+ by mail.z3ntu.xyz (Postfix) with ESMTPSA id 1AB48C637C;
+ Tue,  4 Jun 2019 17:22:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=z3ntu.xyz; s=z3ntu;
- t=1559668929; bh=cSocZErgHFfym8KO8Z5rspnCN1hcPRcdht1ciFTlVhE=;
- h=From:To:Cc:Subject:Date;
- b=O1YSYu+F5veWrPj/0ckhF8FFjnzZdHt2Izv9JJOKnYa8IUkEpfT3nlpp94xD8O3zv
- IDoK0r4PDmCrwazCNfg40Z0G4L98LSaqpDJUvr9dM3qLZw0X1y4Az+5QUZP0HJ61sL
- WhTpWOANLHN4Et6lbYu3NNdmhVNZA2NMGLlm0lxI=
+ t=1559668930; bh=BiJVO+igEvB/BvDV1guw1BMUA9XYdzPpn3R1VKC8Wmg=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=gr/cp8Ekax3nNSNz0bYu9BJ8eO9tpM8CvlbQwKB5VZRzVNIpTf7cplSa6bXNIlcEG
+ pgYfG0wmJ6UWmXgkjMEM/t4z79l/gyzQvwseGu815a2FD7la7THMd3kMg9wGRWQE/z
+ WOqPbWGEd/i3o5v7M6C6qxKuwZpyg1ksnkW5MDZM=
 From: Luca Weiss <luca@z3ntu.xyz>
 To: 
-Subject: [PATCH v2 1/2] dt-bindings: input: sun4i-lradc-keys: Add A64
- compatible
-Date: Tue,  4 Jun 2019 19:21:53 +0200
-Message-Id: <20190604172154.25472-1-luca@z3ntu.xyz>
+Subject: [PATCH v2 2/2] arm64: dts: allwinner: a64: Add lradc node
+Date: Tue,  4 Jun 2019 19:21:54 +0200
+Message-Id: <20190604172154.25472-2-luca@z3ntu.xyz>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190604172154.25472-1-luca@z3ntu.xyz>
+References: <20190604172154.25472-1-luca@z3ntu.xyz>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_102212_796228_D7DF14E5 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190604_102213_006143_03EC7400 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
@@ -87,28 +87,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the A64 compatible with a fallback to the A83T compatible.
+Add a node describing the KEYADC on the A64.
 
 Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
 ---
-Changes from v1:
- - New patch. Document new compatible string.
+Changes since v1:
+ - Use a a64 compatible with a fallback to the a83t one (the A64 also
+   uses a 3/4 voltage divider, as is the case with the A83T)
+ - Correct the reg property (size 0x100 => 0x400)
 
- Documentation/devicetree/bindings/input/sun4i-lradc-keys.txt | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/input/sun4i-lradc-keys.txt b/Documentation/devicetree/bindings/input/sun4i-lradc-keys.txt
-index 496125c6bfb7..507b737612ea 100644
---- a/Documentation/devicetree/bindings/input/sun4i-lradc-keys.txt
-+++ b/Documentation/devicetree/bindings/input/sun4i-lradc-keys.txt
-@@ -5,6 +5,7 @@ Required properties:
-  - compatible: should be one of the following string:
- 		"allwinner,sun4i-a10-lradc-keys"
- 		"allwinner,sun8i-a83t-r-lradc"
-+		"allwinner,sun50i-a64-lradc", "allwinner,sun8i-a83t-r-lradc"
-  - reg: mmio address range of the chip
-  - interrupts: interrupt to which the chip is connected
-  - vref-supply: powersupply for the lradc reference voltage
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index 8c5b521e6389..ba0ab1045e00 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -730,6 +730,14 @@
+ 			status = "disabled";
+ 		};
+ 
++		lradc: lradc@1c21800 {
++			compatible = "allwinner,sun50i-a64-lradc",
++				     "allwinner,sun8i-a83t-r-lradc";
++			reg = <0x01c21800 0x400>;
++			interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
++			status = "disabled";
++		};
++
+ 		i2s0: i2s@1c22000 {
+ 			#sound-dai-cells = <0>;
+ 			compatible = "allwinner,sun50i-a64-i2s",
 -- 
 2.21.0
 
