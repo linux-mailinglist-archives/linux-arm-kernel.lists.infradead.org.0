@@ -2,77 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54A0835280
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 00:03:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D36A3528A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 00:07:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PzBnSYHiTyAdC6JXr58ugOV3RkMyiT97y13ipUOdrGY=; b=Np0NshR1JEEuXX
-	Q/llK7sY1oIyVwWG8Qiv97eeL/qadvcPttO3e67tZonDWcltrxT+e80GV39Acu222AUs0qdVRJcva
-	OfCENL/kdd/NXql0cGOmsjenHp57P9VBjLGRu4EGPIw2QrPLNi+Gmb5t0oTI5C73DTLw5eJBXtqwa
-	rF0HD2+gOGNtUHCdXKO2P5S5xcy1NXliKL1sjmjnF/rfhE0zjk1mLBzxKOKRabgxd/5ZhIHACmRhO
-	cnH8YbTqnrPiALx5gDmLmnaF+larpa1o1kg2mKSPyZyc16iYQhM1oijI2x1OqAS36DgtVJUAY0Mg+
-	ON8bwcwErDVUvu3pwY3w==;
+	List-Owner; bh=K2dqUUTDWxfaLUGr6gnIda4JPKCsw0eNbu4wOtay9nY=; b=CRqe2KGFjWh252
+	KHkqxS/8m8ZEKtPXrS2fEdIp9nd8rhgPCFjPoSqtRA2KX530+vC5+YD3ophVajfRGyqF+wdnWVRjK
+	+ttYayNlLrml/VM4F5BEVArOLmFYHLNSRwO9xT1Yxfs1h2fyb5LrHETx4T+ebigd7oYxsm6bMoJWn
+	fv8ceEefturJj2RVOjzGiT0DUiCZ6DUqrhVh6JYGXlrW3xbjkEeC+9mn9NDTCNRvT0qEExCHx+J1c
+	MSyV/S0i05g6Zdv2UVmHlgQznlQwtANdQHNGk4PAT4jfdo7uqS5eZU8xedlVh3PdBBdOsJT62U0af
+	L6Lf8PQ6+JHx1XlvxVjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYHX2-0002Gg-2V; Tue, 04 Jun 2019 22:03:48 +0000
-Received: from atlmailgw1.ami.com ([63.147.10.40])
+	id 1hYHaZ-0003tx-Fm; Tue, 04 Jun 2019 22:07:27 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYHWu-0002Fd-Ih
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 22:03:42 +0000
-X-AuditID: ac1060b2-2cbff70000003d86-4a-5cf6eab90d42
-Received: from atlms2.us.megatrends.com (atlms2.us.megatrends.com
- [172.16.96.152])
- (using TLS with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by atlmailgw1.ami.com (Symantec Messaging Gateway) with SMTP id
- 4B.AE.15750.9BAE6FC5; Tue,  4 Jun 2019 18:03:37 -0400 (EDT)
-Received: from ATLMS1.us.megatrends.com ([fe80::8c55:daf0:ef05:5605]) by
- atlms2.us.megatrends.com ([fe80::29dc:a91e:ea0c:cdeb%12]) with mapi id
- 14.03.0415.000; Tue, 4 Jun 2019 18:03:37 -0400
-From: Hongwei Zhang <Hongweiz@ami.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: RE: [PATCH linux dev-5.1 v1] ARM: dts: aspeed: Add SGPM pinmux
-Thread-Topic: [PATCH linux dev-5.1 v1] ARM: dts: aspeed: Add SGPM pinmux
-Thread-Index: AQHVGl3d/v6MjHMzm0SmoLtXRU7xKqaK0JyAgAE8dbA=
-Date: Tue, 4 Jun 2019 22:03:37 +0000
-Message-ID: <14D3C8298A3B0F42A1EB31EE961CFF8231E4AA@atlms1.us.megatrends.com>
-References: <1559601789-27121-1-git-send-email-hongweiz@ami.com>
- <CACRpkdYPHw994Ov0xCfK6tCg60tiuWrRwTcYpMSfOr4G0VKu_Q@mail.gmail.com>
-In-Reply-To: <CACRpkdYPHw994Ov0xCfK6tCg60tiuWrRwTcYpMSfOr4G0VKu_Q@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.16.100.241]
+ id 1hYHaQ-0003tX-QK
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 22:07:20 +0000
+Received: by mail-ed1-x544.google.com with SMTP id h9so1259134edr.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 15:07:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:reply-to:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=PpKRuZzE7T8mOmzox/3fZWCQGJE/CKE/yKMFRhJ3Gf8=;
+ b=r8eh4EReBOdbIPu4A1NNDGdXjFzs0/kcbitZHKKZAYaKNhXocwZblb/UDa/qHzpM4n
+ H2elaGGk/e0gnNHPNwXKeHcAQnQ8whjG7luxPB1MehVQyRYd3L+0WhuLTmYgNONF0vQW
+ /gT+d74vRjcqjUKUEja8QETsFhVds03K5SF2Vi+Gp28hsN/co8yAmDLlQo3XBDCsBx2t
+ f10hoB3oefeCwKc/mwr3FNtMVXdQwW6jVfZhmt0IMWacdGBiHQOhNJfFHpgBzQfAMbQK
+ Rzmp33l1qbOkzsE3obd4pS9v0hxJDLo8arS3ayyMB+ypJKFinJf8JyWlCou/md606BC2
+ cf8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:reply-to
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=PpKRuZzE7T8mOmzox/3fZWCQGJE/CKE/yKMFRhJ3Gf8=;
+ b=Zn+FHCE1QjaJfCFZ8obxAH5hcY6aDxCYgmXX4fBJZb3sAYKPiUt90a0jluERuKxUMb
+ RlUYUVjX0c+TJQG3jDkoVihtKBtytMpcVFA9PHs0gBC1O3fv+XgvrxGBtmJUwEpMzD/u
+ 4wdD0ZkVcyIStJONBqphaNt+CPFYmeEu5CX2IcZu8ctCEw95rKAQvv5H791vRUcM0jq0
+ AR7bhF3IcSVqQMEru3gAWbKo59Wjm1jNx/eA9MJlynG6hyNfX0Sorcx4cVVu80Iq7OWH
+ R7SWUiIQnUSITmbgQLREH7EN0UQzhDpNLoQn0J967lehFq5Xd+owApmD4P7wu3NGr1AB
+ Fuiw==
+X-Gm-Message-State: APjAAAWNntO4mskJZddmdPp4Aw/bA7u06uaQQ9DqNxPcigaW0MhI4plA
+ 4GjO/B8JQH6VzgD1mUv0Uis=
+X-Google-Smtp-Source: APXvYqylJIv8N/2T6SjJp9NjY4VYtrcjtyg9w7oKoH7rUr1NCX7/8z5VGMCfO72kUy5fqWBqTC3/4A==
+X-Received: by 2002:aa7:c3c9:: with SMTP id l9mr30726945edr.23.1559686037033; 
+ Tue, 04 Jun 2019 15:07:17 -0700 (PDT)
+Received: from localhost ([185.92.221.13])
+ by smtp.gmail.com with ESMTPSA id g18sm5036344edh.13.2019.06.04.15.07.16
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 04 Jun 2019 15:07:16 -0700 (PDT)
+Date: Tue, 4 Jun 2019 22:07:15 +0000
+From: Wei Yang <richard.weiyang@gmail.com>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v3 09/11] mm/memory_hotplug: Remove memory block devices
+ before arch_remove_memory()
+Message-ID: <20190604220715.d4d2ctwjk25vd5sq@master>
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-10-david@redhat.com>
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrHIsWRmVeSWpSXmKPExsWyRiBhhu7OV99iDN5tULDYdZnDYv6Rc6wW
- v8//ZbaY8mc5k8Wmx9dYLZpXn2O22Dz/D6PF5V1z2CyWXr/IZNG69wi7A5fH1fZd7B5r5q1h
- 9Lj48Rizx6ZVnWwed67tYfPYvKTe4/yMhYwenzfJBXBEcdmkpOZklqUW6dslcGW8m3iTpWAF
- f8Wj27tZGxi/8HUxcnJICJhI/Py6h7WLkYtDSGAXk8TlpzugnEOMEv97FrCAVLEJqEk8/dPA
- DmKLCOhIdG/7CVbELHCPWWLO55dADgeHsIC7xIJ1tRA1HhLTp/9jg7CtJDa9/8YEYrMIqEhc
- P/cdLM4r4Ctx/dBudohl7YwSbbv/gS3gFAiUuLJyOlgDo4CYxPdTa8BsZgFxiVtP5jNBnC0g
- sWTPeWYIW1Ti5eN/rBC2kkTDin9MIPcwC2hKrN+lD9GqKDGl+yE7xF5BiZMzn7BMYBSdhWTq
- LISOWUg6ZiHpWMDIsopRKLEkJzcxMye93FAvMTdTLzk/dxMjJE437WBsuWh+iJGJgxEYdhzM
- SiK8ibe/xAjxpiRWVqUW5ccXleakFh9ilOZgURLnXbnmW4yQQHpiSWp2ampBahFMlomDU6qB
- cdKihp/iwvaPZuYmcTMt/X8jRP/yRpYqY2ZnNv9Gz1OhOj+W6Mg80VE42X19YctqyakLd7mf
- CZzledFnRmnQovvFVUsibs/8nBXw22/9S9uX9QzPHH3dwoR/dQafOy6TXbi3WuC1F3f+7EXG
- kx/f2pCRlHsvpZt5Xj3jvx/2R7Xqel+sZ3jXr8RSnJFoqMVcVJwIAJ80j6fBAgAA
+Content-Disposition: inline
+In-Reply-To: <20190527111152.16324-10-david@redhat.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_150340_689993_7681C186 
-X-CRM114-Status: GOOD (  12.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190604_150718_857500_3238D517 
+X-CRM114-Status: GOOD (  16.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.147.10.40 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (richard.weiyang[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -84,48 +101,218 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, "open list:OPEN FIRMWARE
- AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "open
- list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Reply-To: Wei Yang <richard.weiyang@gmail.com>
+Cc: Michal Hocko <mhocko@suse.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
+ linux-mm@kvack.org, Arun KS <arunks@codeaurora.org>,
+ Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Pavel Tatashin <pavel.tatashin@microsoft.com>,
+ "mike.travis@hpe.com" <mike.travis@hpe.com>, Mark Brown <broonie@kernel.org>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Chris Wilson <chris@chris-wilson.co.uk>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Andrew Banman <andrew.banman@hpe.com>,
+ Mathieu Malaterre <malat@debian.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Alex Deucher <alexander.deucher@amd.com>, Igor Mammedov <imammedo@redhat.com>,
+ akpm@linux-foundation.org, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
------Original Message-----
-From: Linus Walleij <linus.walleij@linaro.org> 
-Sent: Monday, June 3, 2019 7:08 PM
-To: Hongwei Zhang <Hongweiz@ami.com>
-Cc: Joel Stanley <joel@jms.id.au>; Andrew Jeffery <andrew@aj.id.au>; Rob Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>; open list:GPIO SUBSYSTEM <linux-gpio@vger.kernel.org>; open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS <devicetree@vger.kernel.org>; Linux ARM <linux-arm-kernel@lists.infradead.org>; linux-aspeed@lists.ozlabs.org; linux-kernel@vger.kernel.org
-Subject: Re: [PATCH linux dev-5.1 v1] ARM: dts: aspeed: Add SGPM pinmux
-
-Hi Hongwei,
-
-On Tue, Jun 4, 2019 at 12:44 AM Hongwei Zhang <hongweiz@ami.com> wrote:
+On Mon, May 27, 2019 at 01:11:50PM +0200, David Hildenbrand wrote:
+>Let's factor out removing of memory block devices, which is only
+>necessary for memory added via add_memory() and friends that created
+>memory block devices. Remove the devices before calling
+>arch_remove_memory().
 >
-> Add SGPM pinmux to ast2500-pinctrl function and group, to prepare for 
-> supporting SGPIO in AST2500 SoC.
+>This finishes factoring out memory block device handling from
+>arch_add_memory() and arch_remove_memory().
 >
-> Signed-off-by: Hongwei Zhang <hongweiz@ami.com>
-> ---
->  Documentation/devicetree/bindings/pinctrl/pinctrl-aspeed.txt | 2 +-
->  arch/arm/boot/dts/aspeed-g5.dtsi                             | 5 +++++
->  drivers/pinctrl/aspeed/pinctrl-aspeed-g5.c                   | 4 ++++
+>Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+>Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+>Cc: David Hildenbrand <david@redhat.com>
+>Cc: "mike.travis@hpe.com" <mike.travis@hpe.com>
+>Cc: Andrew Morton <akpm@linux-foundation.org>
+>Cc: Andrew Banman <andrew.banman@hpe.com>
+>Cc: Ingo Molnar <mingo@kernel.org>
+>Cc: Alex Deucher <alexander.deucher@amd.com>
+>Cc: "David S. Miller" <davem@davemloft.net>
+>Cc: Mark Brown <broonie@kernel.org>
+>Cc: Chris Wilson <chris@chris-wilson.co.uk>
+>Cc: Oscar Salvador <osalvador@suse.de>
+>Cc: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+>Cc: Michal Hocko <mhocko@suse.com>
+>Cc: Pavel Tatashin <pavel.tatashin@microsoft.com>
+>Cc: Arun KS <arunks@codeaurora.org>
+>Cc: Mathieu Malaterre <malat@debian.org>
+>Reviewed-by: Dan Williams <dan.j.williams@intel.com>
+>Signed-off-by: David Hildenbrand <david@redhat.com>
+>---
+> drivers/base/memory.c  | 37 ++++++++++++++++++-------------------
+> drivers/base/node.c    | 11 ++++++-----
+> include/linux/memory.h |  2 +-
+> include/linux/node.h   |  6 ++----
+> mm/memory_hotplug.c    |  5 +++--
+> 5 files changed, 30 insertions(+), 31 deletions(-)
+>
+>diff --git a/drivers/base/memory.c b/drivers/base/memory.c
+>index 5a0370f0c506..f28efb0bf5c7 100644
+>--- a/drivers/base/memory.c
+>+++ b/drivers/base/memory.c
+>@@ -763,32 +763,31 @@ int create_memory_block_devices(unsigned long start, unsigned long size)
+> 	return ret;
+> }
+> 
+>-void unregister_memory_section(struct mem_section *section)
+>+/*
+>+ * Remove memory block devices for the given memory area. Start and size
+>+ * have to be aligned to memory block granularity. Memory block devices
+>+ * have to be offline.
+>+ */
+>+void remove_memory_block_devices(unsigned long start, unsigned long size)
+> {
+>+	const int start_block_id = pfn_to_block_id(PFN_DOWN(start));
+>+	const int end_block_id = pfn_to_block_id(PFN_DOWN(start + size));
+> 	struct memory_block *mem;
+>+	int block_id;
+> 
+>-	if (WARN_ON_ONCE(!present_section(section)))
+>+	if (WARN_ON_ONCE(!IS_ALIGNED(start, memory_block_size_bytes()) ||
+>+			 !IS_ALIGNED(size, memory_block_size_bytes())))
+> 		return;
+> 
+> 	mutex_lock(&mem_sysfs_mutex);
+>-
+>-	/*
+>-	 * Some users of the memory hotplug do not want/need memblock to
+>-	 * track all sections. Skip over those.
+>-	 */
+>-	mem = find_memory_block(section);
+>-	if (!mem)
+>-		goto out_unlock;
+>-
+>-	unregister_mem_sect_under_nodes(mem, __section_nr(section));
+>-
+>-	mem->section_count--;
+>-	if (mem->section_count == 0)
+>+	for (block_id = start_block_id; block_id != end_block_id; block_id++) {
+>+		mem = find_memory_block_by_id(block_id, NULL);
+>+		if (WARN_ON_ONCE(!mem))
+>+			continue;
+>+		mem->section_count = 0;
 
-Please try to separate out the change to arch/arm/boot/dts/aspeed-g5.dtsi into a separate patch that goes through ARM SoC.
+Is this step necessary?
 
-Just committed the DT patch to _https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git , please help to review. Thanks!
+>+		unregister_memory_block_under_nodes(mem);
+> 		unregister_memory(mem);
+>-	else
+>-		put_device(&mem->dev);
+>-
+>-out_unlock:
+>+	}
+> 	mutex_unlock(&mem_sysfs_mutex);
+> }
+> 
+>diff --git a/drivers/base/node.c b/drivers/base/node.c
+>index 8598fcbd2a17..04fdfa99b8bc 100644
+>--- a/drivers/base/node.c
+>+++ b/drivers/base/node.c
+>@@ -801,9 +801,10 @@ int register_mem_sect_under_node(struct memory_block *mem_blk, void *arg)
+> 	return 0;
+> }
+> 
+>-/* unregister memory section under all nodes that it spans */
+>-int unregister_mem_sect_under_nodes(struct memory_block *mem_blk,
+>-				    unsigned long phys_index)
+>+/*
+>+ * Unregister memory block device under all nodes that it spans.
+>+ */
+>+int unregister_memory_block_under_nodes(struct memory_block *mem_blk)
+> {
+> 	NODEMASK_ALLOC(nodemask_t, unlinked_nodes, GFP_KERNEL);
+> 	unsigned long pfn, sect_start_pfn, sect_end_pfn;
+>@@ -816,8 +817,8 @@ int unregister_mem_sect_under_nodes(struct memory_block *mem_blk,
+> 		return -ENOMEM;
+> 	nodes_clear(*unlinked_nodes);
+> 
+>-	sect_start_pfn = section_nr_to_pfn(phys_index);
+>-	sect_end_pfn = sect_start_pfn + PAGES_PER_SECTION - 1;
+>+	sect_start_pfn = section_nr_to_pfn(mem_blk->start_section_nr);
+>+	sect_end_pfn = section_nr_to_pfn(mem_blk->end_section_nr);
+> 	for (pfn = sect_start_pfn; pfn <= sect_end_pfn; pfn++) {
+> 		int nid;
+> 
+>diff --git a/include/linux/memory.h b/include/linux/memory.h
+>index db3e8567f900..f26a5417ec5d 100644
+>--- a/include/linux/memory.h
+>+++ b/include/linux/memory.h
+>@@ -112,7 +112,7 @@ extern void unregister_memory_notifier(struct notifier_block *nb);
+> extern int register_memory_isolate_notifier(struct notifier_block *nb);
+> extern void unregister_memory_isolate_notifier(struct notifier_block *nb);
+> int create_memory_block_devices(unsigned long start, unsigned long size);
+>-extern void unregister_memory_section(struct mem_section *);
+>+void remove_memory_block_devices(unsigned long start, unsigned long size);
+> extern int memory_dev_init(void);
+> extern int memory_notify(unsigned long val, void *v);
+> extern int memory_isolate_notify(unsigned long val, void *v);
+>diff --git a/include/linux/node.h b/include/linux/node.h
+>index 1a557c589ecb..02a29e71b175 100644
+>--- a/include/linux/node.h
+>+++ b/include/linux/node.h
+>@@ -139,8 +139,7 @@ extern int register_cpu_under_node(unsigned int cpu, unsigned int nid);
+> extern int unregister_cpu_under_node(unsigned int cpu, unsigned int nid);
+> extern int register_mem_sect_under_node(struct memory_block *mem_blk,
+> 						void *arg);
+>-extern int unregister_mem_sect_under_nodes(struct memory_block *mem_blk,
+>-					   unsigned long phys_index);
+>+extern int unregister_memory_block_under_nodes(struct memory_block *mem_blk);
+> 
+> extern int register_memory_node_under_compute_node(unsigned int mem_nid,
+> 						   unsigned int cpu_nid,
+>@@ -176,8 +175,7 @@ static inline int register_mem_sect_under_node(struct memory_block *mem_blk,
+> {
+> 	return 0;
+> }
+>-static inline int unregister_mem_sect_under_nodes(struct memory_block *mem_blk,
+>-						  unsigned long phys_index)
+>+static inline int unregister_memory_block_under_nodes(struct memory_block *mem_blk)
+> {
+> 	return 0;
+> }
+>diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+>index 9a92549ef23b..82136c5b4c5f 100644
+>--- a/mm/memory_hotplug.c
+>+++ b/mm/memory_hotplug.c
+>@@ -520,8 +520,6 @@ static void __remove_section(struct zone *zone, struct mem_section *ms,
+> 	if (WARN_ON_ONCE(!valid_section(ms)))
+> 		return;
+> 
+>-	unregister_memory_section(ms);
+>-
+> 	scn_nr = __section_nr(ms);
+> 	start_pfn = section_nr_to_pfn((unsigned long)scn_nr);
+> 	__remove_zone(zone, start_pfn);
+>@@ -1845,6 +1843,9 @@ void __ref __remove_memory(int nid, u64 start, u64 size)
+> 	memblock_free(start, size);
+> 	memblock_remove(start, size);
+> 
+>+	/* remove memory block devices before removing memory */
+>+	remove_memory_block_devices(start, size);
+>+
+> 	arch_remove_memory(nid, start, size, NULL);
+> 	__release_memory_resource(start, size);
+> 
+>-- 
+>2.20.1
 
+-- 
+Wei Yang
+Help you, Help me
 
-Other than that it looks fine to me.
-
-Yours,
-Linus Walleij
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
