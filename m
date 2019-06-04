@@ -2,94 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ED9A34333
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:32:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B28A83433C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:33:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kXmTbSCzIj+FG0D8+LKb02D9gfrFrTs64CWNTHmxkGo=; b=fA1OmO026qU9Sr
-	dFqYwBlf6LQbq4e3K8vjKHOZN3T1WNYexhIMLNQh5z8LIwWuuNmHJMBZwa+ZeGENUD9ItoUXcSTJz
-	MAFYbDfKYUvvLrzVHaeIISUMkgHJoBWn88fUW+2/gSn0kCcQOA0fN2C2z50a9O6cFkgxc5/Sijlrc
-	+xhP6Fc8EJ4BjQ0FQrZOgVrDkMbp/NmV2v79VxmpyiNKYTzoGjgusgwbGELoernE+NbZYFySxvCcA
-	2g+OL4YUSwfVkDMCae2SVa6ZltUr0+M/kIZmP5+xBxCfhbtMYmUvqt3HBR/3VFEuDH/J31oSUoW/r
-	NjQZ0hV/adhyMSi3MnBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WGnem55b7vbAaM2TuavdOHCB8rotwdKCuRGG+tG2sf0=; b=O99lyirG2e6CSo
+	SmmI03YKTdqqAC920Z4dSVaJX37i8cTxetuBJYGwdi/9bAEO2EM++/3Sl0CAFG3exuMekD6spOKOW
+	vAVPHA6bHv8bYxsHp+zojXqtB6PBcWSY9lrFtZIP/yyej+xrHoQgZJ3GrkyU1vRNiWgfAfX8XbTAr
+	VNv7Gd2VOGYphWeVgEVCYv60oA3Tg4Q/Gdlza0SpJ1iowqQ9JjuGW32ukZZxSCxK11VPnNNCmMLWG
+	VYsLgas38u/nKIgnMaXd+cmpFER3PBzo/c8al3E5V38Nz5VXV7HuF56pGrPuiZr3wLVBaAV1bs0LT
+	ugncgnjsMvSgFcCJn3Sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY5nY-0006V3-3v; Tue, 04 Jun 2019 09:32:04 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hY5oa-0006mu-Tr; Tue, 04 Jun 2019 09:33:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY5nR-0006Uk-Hm
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 09:31:59 +0000
-Received: by mail-pf1-x441.google.com with SMTP id i189so327843pfg.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 02:31:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=MimY8E6RzMP+Xm09/RStVcP0kJblyDIRLMNiKjGKR1U=;
- b=jxJdMBDIJRCbNIZuMnUELhdpEn41VADNgzlplcmAXJynP+m5d5YB4HbguZiv5hotqh
- l9w0GY8FrukKhQunBoGC3tAk0TlFur1DY+UTBOFMtEibcehQBzR0/478UnelnBdK/V6A
- civ0aWuPhTj2Lwrl6dlU8QQhiKIrTdiBTJx5LpmBsvNbpvea8RzLiWd+RM62SI1//lOZ
- yUk4JVITz3zKEWBmVqO8Y91afvJI7gLRH7sNlStVxUs/iSwo5FYEqRV3GrEhSEkLmf7U
- pI79hFjf/o2dlic8f0PYj/PwMYEMLQwYNb+R9/B1m1R3PcNiX5lysTh/prELjaTBLH7G
- 7OvQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=MimY8E6RzMP+Xm09/RStVcP0kJblyDIRLMNiKjGKR1U=;
- b=TkFfO+JihbQrTqsljDAkvAcXH4hyORCGwcDl+05d3AzUiO464ObSwkmnCGaTJwUKLT
- UuARd70dAhRILbYIFQzQ8NA2euX1HWkcBk1T+jTwnqTXaG3gzW8FEJ8YvZQmEMoS+x59
- AQYhYPhAVIhSCmb2w0ptrHVbjlM2IC3uYJcHrtyZbpbHIb3aLyvegJkZwXZK7VGN4w8i
- ergdcE2aVPsEJ8V3hShz4otTP/rqzLJjarDTdcOSIwiwlrT7RkiYCN7XvJGP+6gdgTl4
- QosptAxLbEUciJYdeZ2Amp6llSGaHKAnktPFfydPF21m3OPR2GawC+q//Dw8R/lVo0Cx
- EXww==
-X-Gm-Message-State: APjAAAXDUv9w+w1DG9RObcnTYKTzWDWKScH8//h4qpmAbxczr/KChCIq
- YIIGEUKQvJucMwlRm21w4GOdNA==
-X-Google-Smtp-Source: APXvYqzkBCd15WCdDavN2+OthVD2LAb86dzXlH0Ye+ZreCxe0UdK/8MuhKMRME3oQVp6Fs1Cw+s2oQ==
-X-Received: by 2002:aa7:92da:: with SMTP id k26mr36714866pfa.70.1559640716355; 
- Tue, 04 Jun 2019 02:31:56 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id b16sm17600287pfd.12.2019.06.04.02.31.55
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 04 Jun 2019 02:31:55 -0700 (PDT)
-Date: Tue, 4 Jun 2019 15:01:53 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH] KVM: arm64: Drop 'const' from argument of vq_present()
-Message-ID: <20190604093153.2pzv55knl6axugrv@vireshk-i7>
-References: <699121e5c938c6f4b7b14a7e2648fa15af590a4a.1559623368.git.viresh.kumar@linaro.org>
- <20190604084349.prnnvjvjaeuhsmgs@mbp>
- <20190604085545.hsmxfqkpt2cbrhtw@vireshk-i7>
- <20190604092639.GS28398@e103592.cambridge.arm.com>
+ id 1hY5oT-0006li-9E; Tue, 04 Jun 2019 09:33:02 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EDA46249CF;
+ Tue,  4 Jun 2019 09:32:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559640780;
+ bh=fv30zCd+ya4eAbJ4qBlKi6F+W7utOftCbI5ndSkbhZo=;
+ h=Date:From:To:Cc:Subject:From;
+ b=opKQBg1EmjmuiDNAy8aOnEBCvJP3Ac5iFVNmMiAYHI80Eiwt8JcsTxSJtKzOpmazr
+ kIh/7ratqm4vMuGT7y34esEVCWWub0gyxE03Q0QLX0ZY0agYtaWXFjboWzPdQY9SeD
+ P75Ocf07Mw2YSeXlHqhoW0TUmwyAqqREHqZNluLE=
+Date: Tue, 4 Jun 2019 11:32:58 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Felipe Balbi <felipe.balbi@linux.intel.com>
+Subject: [PATCH] USB: move usb debugfs directory creation to the usb common
+ core
+Message-ID: <20190604093258.GB30054@kroah.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190604092639.GS28398@e103592.cambridge.arm.com>
-User-Agent: NeoMutt/20180716-391-311a52
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_023157_728324_39C2330E 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190604_023301_342058_AD5688BD 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,37 +71,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04-06-19, 10:26, Dave Martin wrote:
-> I'm in two minds about whether this is worth fixing, but if you want to
-> post a patch to remove the extra const (or convert vq_present() to a
-> macro), I'll take a look at it.
+The USB gadget subsystem wants to use the USB debugfs root directory, so
+move it to the common "core" USB code so that it is properly initialized
+and removed as needed.
 
-This patch already does what you are asking for (remove the extra
-const), isn't it ?
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
-I looked at my textbook (The C programming Language, By Brian W.
-Kernighan and Dennis M. Ritchie.) and it says:
+---
 
-"
-The const declaration can also be used with array arguments, to
-indicate that the function does not change that array:
+This should be the "correct" version of this, Chunfeng, can you test
+this to verify it works for you?
 
-int strlen(const char[]);
-"
 
-and so this patch isn't necessary for sure.
-
--- 
-viresh
+diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+index 18f5dcf58b0d..3b5e4263ffef 100644
+--- a/drivers/usb/common/common.c
++++ b/drivers/usb/common/common.c
+@@ -15,6 +15,7 @@
+ #include <linux/usb/of.h>
+ #include <linux/usb/otg.h>
+ #include <linux/of_platform.h>
++#include <linux/debugfs.h>
+ 
+ static const char *const ep_type_names[] = {
+ 	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
+@@ -291,4 +292,21 @@ struct device *usb_of_get_companion_dev(struct device *dev)
+ EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
+ #endif
+ 
++struct dentry *usb_debug_root;
++EXPORT_SYMBOL_GPL(usb_debug_root);
++
++static int usb_common_init(void)
++{
++	usb_debug_root = debugfs_create_dir("usb", NULL);
++	return 0;
++}
++
++static void usb_common_exit(void)
++{
++	debugfs_remove_recursive(usb_debug_root);
++}
++
++module_init(usb_common_init);
++module_exit(usb_common_exit);
++
+ MODULE_LICENSE("GPL");
+diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
+index 7fcb9f782931..f3d6b1ab80cb 100644
+--- a/drivers/usb/core/usb.c
++++ b/drivers/usb/core/usb.c
+@@ -1185,19 +1185,17 @@ static struct notifier_block usb_bus_nb = {
+ 	.notifier_call = usb_bus_notify,
+ };
+ 
+-struct dentry *usb_debug_root;
+-EXPORT_SYMBOL_GPL(usb_debug_root);
++static struct dentry *usb_devices_root;
+ 
+ static void usb_debugfs_init(void)
+ {
+-	usb_debug_root = debugfs_create_dir("usb", NULL);
+-	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
+-			    &usbfs_devices_fops);
++	usb_devices_root = debugfs_create_file("devices", 0444, usb_debug_root,
++					       NULL, &usbfs_devices_fops);
+ }
+ 
+ static void usb_debugfs_cleanup(void)
+ {
+-	debugfs_remove_recursive(usb_debug_root);
++	debugfs_remove_recursive(usb_devices_root);
+ }
+ 
+ /*
 
 _______________________________________________
 linux-arm-kernel mailing list
