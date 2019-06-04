@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B293D34A71
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:30:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78DE634AA0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:42:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pbExej2KRys312xus0/phobizHY25xaJMWBJiDAWZVA=; b=fDo5rwYKA9keJM
-	gwLHK4tE/6vGuEQQK4Dfbe7R+9XO50ts6fhxKo2mm55dA1Qy7WBOqfaB7VlRlk3tH2MpF0VjGoTjy
-	j5pM4b+lfqKzLwbGmSSNLBIQkO3ukQJ4QhFDPfauw3g1dLQ6VdfOkyDhPEhtmw5QI5J2Xuksy4IEH
-	DZU2IzKMUCKBSXxSCl8heOif8X76vcoM8jFIsO1oQRdr/M80ePMio/LFg9ka3ofRm1lLQZKObCqlD
-	x0MJnFqCvycvKfQaiV5FaaCzsCkVxdk7zePCerR1TEs0NpUHJNBe3neSdQ1YUsZTydUmaNs77ky+/
-	btWC8t9Ba2Zi4eBcQi5A==;
+	List-Owner; bh=ozbdYFPF7FxAU6NzCFMee/pkltcD3nI97uPXwG5wp1c=; b=JsTUGAuKOcU2iD
+	KTz4ax+JHPu0PQX9pm8khTmoSrKG574JVB57jA0yEgt/0CcolDz3WbNoytqqL2e9FRvsOrH9uXvsa
+	ecugu66bajkFofWyTYJIE5xrq5s7y9nZZeB1eEuegeRxwH+syPAls1hYMN9oihAjJN1I599SJN913
+	Bl6xhymVSjD9gruAKPIDSrxmLGLKt7vuO+3zxOsPmgt+e8Dr1emh6Rr60vzmRjywr9UMDS7K7GJWJ
+	BHWns6J0XrI55W3KykN9i544R85jZyVpUVAlAkcBxwUa5Dkd0Ljd3va8BiJGcUCd/PJ6Z3xVUCSEM
+	Bs75nD9j+VyXE1JePdkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYASO-0007ce-8c; Tue, 04 Jun 2019 14:30:32 +0000
+	id 1hYAdp-000473-HD; Tue, 04 Jun 2019 14:42:21 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYASH-0007cJ-HE
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:30:26 +0000
+ id 1hYAdi-00046c-P8
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:42:15 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 41343341;
- Tue,  4 Jun 2019 07:30:25 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2C5B83F690;
- Tue,  4 Jun 2019 07:30:23 -0700 (PDT)
-Date: Tue, 4 Jun 2019 15:30:20 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Qian Cai <cai@lca.pw>, rppt@linux.ibm.com
-Subject: Re: [PATCH -next] arm64/mm: fix a bogus GFP flag in pgd_alloc()
-Message-ID: <20190604143020.GD24467@lakrids.cambridge.arm.com>
-References: <1559656836-24940-1-git-send-email-cai@lca.pw>
- <20190604142338.GC24467@lakrids.cambridge.arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F094A78;
+ Tue,  4 Jun 2019 07:42:13 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 4656E3F690; Tue,  4 Jun 2019 07:42:12 -0700 (PDT)
+Date: Tue, 4 Jun 2019 15:42:09 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2 3/4] arm64/mm: Consolidate page fault information
+ capture
+Message-ID: <20190604144209.GJ6610@arrakis.emea.arm.com>
+References: <1559544085-7502-1-git-send-email-anshuman.khandual@arm.com>
+ <1559544085-7502-4-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190604142338.GC24467@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <1559544085-7502-4-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_073025_594688_81355058 
-X-CRM114-Status: GOOD (  18.94  )
+X-CRM114-CacheID: sfid-20190604_074214_825900_3242152C 
+X-CRM114-Status: GOOD (  15.81  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -64,74 +64,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- mhocko@kernel.org, linux-mm@kvack.org, vdavydov.dev@gmail.com,
- hannes@cmpxchg.org, cgroups@vger.kernel.org, akpm@linux-foundation.org,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 03:23:38PM +0100, Mark Rutland wrote:
-> On Tue, Jun 04, 2019 at 10:00:36AM -0400, Qian Cai wrote:
-> > The commit "arm64: switch to generic version of pte allocation"
-> > introduced endless failures during boot like,
-> > 
-> > kobject_add_internal failed for pgd_cache(285:chronyd.service) (error:
-> > -2 parent: cgroup)
-> > 
-> > It turns out __GFP_ACCOUNT is passed to kernel page table allocations
-> > and then later memcg finds out those don't belong to any cgroup.
-> 
-> Mike, I understood from [1] that this wasn't expected to be a problem,
-> as the accounting should bypass kernel threads.
-> 
-> Was that assumption wrong, or is something different happening here?
-> 
-> > backtrace:
-> >   kobject_add_internal
-> >   kobject_init_and_add
-> >   sysfs_slab_add+0x1a8
-> >   __kmem_cache_create
-> >   create_cache
-> >   memcg_create_kmem_cache
-> >   memcg_kmem_cache_create_func
-> >   process_one_work
-> >   worker_thread
-> >   kthread
-> > 
-> > Signed-off-by: Qian Cai <cai@lca.pw>
-> > ---
-> >  arch/arm64/mm/pgd.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/arch/arm64/mm/pgd.c b/arch/arm64/mm/pgd.c
-> > index 769516cb6677..53c48f5c8765 100644
-> > --- a/arch/arm64/mm/pgd.c
-> > +++ b/arch/arm64/mm/pgd.c
-> > @@ -38,7 +38,7 @@ pgd_t *pgd_alloc(struct mm_struct *mm)
-> >  	if (PGD_SIZE == PAGE_SIZE)
-> >  		return (pgd_t *)__get_free_page(gfp);
-> >  	else
-> > -		return kmem_cache_alloc(pgd_cache, gfp);
-> > +		return kmem_cache_alloc(pgd_cache, GFP_PGTABLE_KERNEL);
-> 
-> This is used to allocate PGDs for both user and kernel pagetables (e.g.
-> for the efi runtime services), so while this may fix the regression, I'm
-> not sure it's the right fix.
+On Mon, Jun 03, 2019 at 12:11:24PM +0530, Anshuman Khandual wrote:
+> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+> index da02678..4bb65f3 100644
+> --- a/arch/arm64/mm/fault.c
+> +++ b/arch/arm64/mm/fault.c
+> @@ -435,6 +435,14 @@ static bool is_el0_instruction_abort(unsigned int esr)
+>  	return ESR_ELx_EC(esr) == ESR_ELx_EC_IABT_LOW;
+>  }
+>  
+> +/*
+> + * This is applicable only for EL0 write aborts.
+> + */
+> +static bool is_el0_write_abort(unsigned int esr)
+> +{
+> +	return (esr & ESR_ELx_WNR) && !(esr & ESR_ELx_CM);
+> +}
 
-I see that since [1], pgd_alloc() was updated to special-case the
-init_mm, which is not sufficient for cases like:
+What makes this EL0 only?
 
-	efi_mm.pgd = pgd_alloc(&efi_mm)
+> +
+>  static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+>  				   struct pt_regs *regs)
+>  {
+> @@ -443,6 +451,9 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+>  	vm_fault_t fault, major = 0;
+>  	unsigned long vm_flags = VM_READ | VM_WRITE;
+>  	unsigned int mm_flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
+> +	bool is_user = user_mode(regs);
+> +	bool is_el0_exec = is_el0_instruction_abort(esr);
+> +	bool is_el0_write = is_el0_write_abort(esr);
+>  
+>  	if (notify_page_fault(regs, esr))
+>  		return 0;
+> @@ -454,12 +465,12 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+>  	if (faulthandler_disabled() || !mm)
+>  		goto no_context;
+>  
+> -	if (user_mode(regs))
+> +	if (is_user)
+>  		mm_flags |= FAULT_FLAG_USER;
+>  
+> -	if (is_el0_instruction_abort(esr)) {
+> +	if (is_el0_exec) {
+>  		vm_flags = VM_EXEC;
+> -	} else if ((esr & ESR_ELx_WNR) && !(esr & ESR_ELx_CM)) {
+> +	} else if (is_el0_write) {
+>  		vm_flags = VM_WRITE;
+>  		mm_flags |= FAULT_FLAG_WRITE;
+>  	}
 
-... which occurs in a kthread.
+This can be triggered by an EL1 write to a user mapping, so is_el0_write
+is misleading.
 
-So let's have a pgd_alloc_kernel() to make that explicit.
-
-Thanks,
-Mark.
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
