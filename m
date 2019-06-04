@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45F7A34B27
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:59:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0E8034B32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:59:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=GF1CBRk4QYqRCZm6xRVOr0hY/Ah2l9Jix3ZN02Bd3n0=; b=Io/
-	oHB4Pt6hFxlTDbH9SFRpHsx5KVG20E2Vi08pqBJwhi0ejDK/DvdDGLbppAdveJsKq/D7el64Dm5PS
-	VJp+5MDn/Q2ctcTLrardRCr37iGCZhkL5b+DY4TBm4UsYmr2O0ovcWqDLcwgN+C4+SSgtCPh0l4/R
-	J+SaHkU9QF7lYX07tfY0U+VY6cf7ig+Q/Hj23kpuUoRLtzF/+hSv+pG3kl88JvRbcv1cj1sC29KWz
-	b4pf/gzkNvzpqw94hfaXl89RKjf9dDRobLBJFoUzZoxpIB4KDsK7nPV4VZEzO1aDvA65Kt350HJjn
-	NO7p9XwG2NQw1Lk6jwmJiv0S2h0jJfg==;
+	References:List-Owner; bh=JI/GkALFv4ls9psm8DyPVpP1iTdcAWrBHjmmzpFwbTo=; b=IN1
+	mVLtIlk6oAPDkXU9GRP2pxzEo487000CcSICMii0/VOUaaAezEb+VbOSptc0/RBxSiL9FqBFCELCd
+	4/QQmgD5eH3ClkRB+8ofVOREVzcIhLV66qn5RATIzdetH9ZTwSyhYqEsPQC/oXhqA/fpmnoIKdOC+
+	EDP7UcDi1zpQ6xTfsj0v29+JoJmNpK0Jh7Fm9BK9ejE+hBV3105XkLJ7BqxCm3UB8WBaxgCzMlzm0
+	9KeLpvSgNOLSdbHSWXhI/moesy3Vu7vf2oWzUuWOYBX/N4nFKFiWwp79NtCqGLOzy4TtaT6QW8CxV
+	7dfv8ZjT+L55FfA+IoaPSOQgvV2dR0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAuH-0007Ai-NE; Tue, 04 Jun 2019 14:59:21 +0000
+	id 1hYAuX-0007Xj-Cu; Tue, 04 Jun 2019 14:59:37 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAu2-00073I-0k; Tue, 04 Jun 2019 14:59:07 +0000
+ id 1hYAu2-00073O-Gf; Tue, 04 Jun 2019 14:59:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=Z6xN0yGWulWekvwXXiRFtdPpBCls+d5un3yiyvhzWJA=; b=X7BkEqWKl2vx
- eFmyzsSa+3DadoZ9AeZmxFZ05FVHdT+qL8M5kDSju8lXI3UFKy4JHg+lLuRoRdyEVDmkzf0ukwtFx
- iYlhRxTA7rRNXC3AWCSQR75rXxTBWXW7smwMat7oBzlxZB2UFlUmUtOOpXD+1g+rC2cJh0hKWHeYH
- 5e/48=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ List-Archive; bh=H/ZcNeXJodL5Cb2bnUP5HmMZO4APpeQuHpnxJOQLxfk=; b=whxSdku8q/zL
+ lOLDiPZC2Yeb3aEsSRQyxXApgSYlPeIxbaBAg/2QQ2J/tHSTd5cHMjOFOuRulT2I9DIS1UkAde92w
+ fuPcrjbaZ3+dfqvYA8W4HtR0yw/lZDy7rpkTeLNCXOhMxOQjfbgB/nIpvTAxzUCG8hIwO3qXPODa0
+ 1fd1M=;
+Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
+ (helo=finisterre.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
  (envelope-from <broonie@sirena.org.uk>)
- id 1hYAtv-0006ER-2y; Tue, 04 Jun 2019 14:58:59 +0000
+ id 1hYAtw-0006Eg-SR; Tue, 04 Jun 2019 14:59:01 +0000
 Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id A0D11440049; Tue,  4 Jun 2019 15:58:58 +0100 (BST)
+ id 5CA98440046; Tue,  4 Jun 2019 15:59:00 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: YueHaibing <yuehaibing@huawei.com>
-Subject: Applied "ASoC: da7219: Fix build error without CONFIG_I2C" to the
- asoc tree
-In-Reply-To: <20190601085144.13832-1-yuehaibing@huawei.com>
+Subject: Applied "ASoC: mediatek: Make some symbols static" to the asoc tree
+In-Reply-To: <20190529150437.19004-1-yuehaibing@huawei.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190604145858.A0D11440049@finisterre.sirena.org.uk>
-Date: Tue,  4 Jun 2019 15:58:58 +0100 (BST)
+Message-Id: <20190604145900.5CA98440046@finisterre.sirena.org.uk>
+Date: Tue,  4 Jun 2019 15:59:00 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_075906_200543_664988D6 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20190604_075906_694071_51C67381 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.1 points)
@@ -80,8 +79,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: alsa-devel@alsa-project.org, tiwai@suse.com, lgirdwood@gmail.com,
  linux-kernel@vger.kernel.org, Hulk Robot <hulkci@huawei.com>,
  Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- shunli.wang@mediatek.com, matthias.bgg@gmail.com, perex@perex.cz,
- linux-arm-kernel@lists.infradead.org
+ matthias.bgg@gmail.com, perex@perex.cz, linux-arm-kernel@lists.infradead.org,
+ kaichieh.chuang@mediatek.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -90,11 +89,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: da7219: Fix build error without CONFIG_I2C
+   ASoC: mediatek: Make some symbols static
 
 has been applied to the asoc tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.2
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -115,41 +114,71 @@ to this mail.
 Thanks,
 Mark
 
-From cbc0fa7b6e8c6180c18fd951d28197281a526330 Mon Sep 17 00:00:00 2001
+From 52194513ba1388443a067cee9606d6fe27e7650e Mon Sep 17 00:00:00 2001
 From: YueHaibing <yuehaibing@huawei.com>
-Date: Sat, 1 Jun 2019 16:51:44 +0800
-Subject: [PATCH] ASoC: da7219: Fix build error without CONFIG_I2C
+Date: Wed, 29 May 2019 23:04:37 +0800
+Subject: [PATCH] ASoC: mediatek: Make some symbols static
 
-Fix gcc build error while CONFIG_I2C is not set
+Fix sparse warnings:
 
-sound/soc/codecs/da7219.c:2640:1: warning: data definition has no type or storage class
- module_i2c_driver(da7219_i2c_driver);
- ^~~~~~~~~~~~~~~~~
-sound/soc/codecs/da7219.c:2640:1: error: type defaults to int in declaration of module_i2c_driver [-Werror=implicit-int]
-sound/soc/codecs/da7219.c:2640:1: warning: parameter names (without types) in function declaration
-sound/soc/codecs/da7219.c:2629:26: warning: da7219_i2c_driver defined but not used [-Wunused-variable]
+sound/soc/mediatek/common/mtk-btcvsd.c:410:5: warning: symbol 'mtk_btcvsd_write_to_bt' was not declared. Should it be static?
+sound/soc/mediatek/common/mtk-btcvsd.c:698:9: warning: symbol 'mtk_btcvsd_snd_read' was not declared. Should it be static?
+sound/soc/mediatek/common/mtk-btcvsd.c:779:9: warning: symbol 'mtk_btcvsd_snd_write' was not declared. Should it be static?
 
 Reported-by: Hulk Robot <hulkci@huawei.com>
-Fixes: 6d817c0e9fd7 ("ASoC: codecs: Add da7219 codec driver")
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/mediatek/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ sound/soc/mediatek/common/mtk-btcvsd.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/sound/soc/mediatek/Kconfig b/sound/soc/mediatek/Kconfig
-index f70b7109f2b6..59980df5add6 100644
---- a/sound/soc/mediatek/Kconfig
-+++ b/sound/soc/mediatek/Kconfig
-@@ -132,7 +132,7 @@ config SND_SOC_MT8183_MT6358_TS3A227E_MAX98357A
+diff --git a/sound/soc/mediatek/common/mtk-btcvsd.c b/sound/soc/mediatek/common/mtk-btcvsd.c
+index bd55c546e790..c7a81c4be068 100644
+--- a/sound/soc/mediatek/common/mtk-btcvsd.c
++++ b/sound/soc/mediatek/common/mtk-btcvsd.c
+@@ -407,11 +407,11 @@ static int mtk_btcvsd_read_from_bt(struct mtk_btcvsd_snd *bt,
+ 	return 0;
+ }
  
- config SND_SOC_MT8183_DA7219_MAX98357A
- 	tristate "ASoC Audio driver for MT8183 with DA7219 MAX98357A codec"
--	depends on SND_SOC_MT8183
-+	depends on SND_SOC_MT8183 && I2C
- 	select SND_SOC_MT6358
- 	select SND_SOC_MAX98357A
- 	select SND_SOC_DA7219
+-int mtk_btcvsd_write_to_bt(struct mtk_btcvsd_snd *bt,
+-			   enum bt_sco_packet_len packet_type,
+-			   unsigned int packet_length,
+-			   unsigned int packet_num,
+-			   unsigned int blk_size)
++static int mtk_btcvsd_write_to_bt(struct mtk_btcvsd_snd *bt,
++				  enum bt_sco_packet_len packet_type,
++				  unsigned int packet_length,
++				  unsigned int packet_num,
++				  unsigned int blk_size)
+ {
+ 	unsigned int i;
+ 	unsigned long flags;
+@@ -695,9 +695,9 @@ static int wait_for_bt_irq(struct mtk_btcvsd_snd *bt,
+ 	return 0;
+ }
+ 
+-ssize_t mtk_btcvsd_snd_read(struct mtk_btcvsd_snd *bt,
+-			    char __user *buf,
+-			    size_t count)
++static ssize_t mtk_btcvsd_snd_read(struct mtk_btcvsd_snd *bt,
++				   char __user *buf,
++				   size_t count)
+ {
+ 	ssize_t read_size = 0, read_count = 0, cur_read_idx, cont;
+ 	unsigned int cur_buf_ofs = 0;
+@@ -776,9 +776,9 @@ ssize_t mtk_btcvsd_snd_read(struct mtk_btcvsd_snd *bt,
+ 	return read_count;
+ }
+ 
+-ssize_t mtk_btcvsd_snd_write(struct mtk_btcvsd_snd *bt,
+-			     char __user *buf,
+-			     size_t count)
++static ssize_t mtk_btcvsd_snd_write(struct mtk_btcvsd_snd *bt,
++				    char __user *buf,
++				    size_t count)
+ {
+ 	int written_size = count, avail = 0, cur_write_idx, write_size, cont;
+ 	unsigned int cur_buf_ofs = 0;
 -- 
 2.20.1
 
