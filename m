@@ -2,53 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED7F633F59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:56:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5F5233F5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:56:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iuhQvXzyjz8Vr8m7LmUNK1BztZiCKzlaMRwQz6QHbbA=; b=XLAV1/ISa1D0+0
-	+5Oe01cE59wVWXBr/wgmO2Z3id25q6+AaXO9jZW/PteCeoz82YSeD0XE+LMieHQiSSTexnPDmiqcO
-	/huNkgFSF3a3YmAsC5brhF2kohCRqTc4n9lv3Wh6poLq66fJhm0PaneO7itCX4E0Vm/UsUQ3mBRXh
-	nSQAFxx5EDYpiYKuOxA60qWUJWHWOYG4brjqVxm+wrldnKWsLkUb14O2a42sHU8WfQqPuP3aVURyp
-	d6+66GK+QmCCMH6hK73pTaB6beGeXgLzX1Pxq2zN+aql5UBCiuHvqXrfd8jQpCxGl5ZscIjEB7/Qo
-	mXrAnyLk5Mb237PzRxQw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ufxj2sRFxjPfWvGeAmg+wH4bLMWTm8VdL3YuLa3XY2M=; b=ShQtE4pQ18tbIh
+	LEi1UHiPjVuM5aVByKu0HMTeryV+tLQntWr04WVGhttvZc41lvwzSO3ocGwUX6l9KHyHbs+7HOCxV
+	f090YZpocVAnP4/KFkXLUDcBv522p8habh+9+av4qpItb7PdLpOfWTE07kOjlUrTk67G8aYKw9eMT
+	z2poxavGg7fEkUsghmiJ5c1LXMiTB11ZwKcGwgkSWXn2j6lm1reOefYJ9tjVQiLtABN+Mhv6djFSg
+	OKc73zgdgZnj9Efu+1ngw3ph61e0WILoOGHBA4hs2NUzSNwZEvpRX2Zy3X4+apAQbBrnlJx0Nw5o9
+	Cf371wYljfJcoSFalEMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY3Mu-0004iJ-GX; Tue, 04 Jun 2019 06:56:24 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1hY3N9-0004zc-BT; Tue, 04 Jun 2019 06:56:39 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY3Mn-0004hB-Bs
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 06:56:19 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x546u4cN002022;
- Tue, 4 Jun 2019 01:56:05 -0500
-Message-ID: <cb98d303c09d802f4173a33b4c33ece5d25f9748.camel@kernel.crashing.org>
-Subject: Re: [RFC] ARM64 PCI resource survey issue(s)
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Date: Tue, 04 Jun 2019 16:56:04 +1000
-In-Reply-To: <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
-References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
- <20190604014945.GE189360@google.com>
- <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1hY3My-0004ti-NL
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 06:56:31 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 7D37F75727;
+ Tue,  4 Jun 2019 06:56:22 +0000 (UTC)
+Received: from [10.36.117.37] (ovpn-117-37.ams2.redhat.com [10.36.117.37])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A151510013D9;
+ Tue,  4 Jun 2019 06:56:16 +0000 (UTC)
+Subject: Re: [PATCH v3 04/11] arm64/mm: Add temporary arch_remove_memory()
+ implementation
+To: Wei Yang <richard.weiyang@gmail.com>
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-5-david@redhat.com>
+ <20190603214139.mercn5hol2yyfl2s@master>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <5059f68d-45d2-784e-0770-ee67060773c7@redhat.com>
+Date: Tue, 4 Jun 2019 08:56:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <20190603214139.mercn5hol2yyfl2s@master>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.25]); Tue, 04 Jun 2019 06:56:22 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_235617_554382_EE3674FB 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190603_235629_014323_19D0BE2C 
+X-CRM114-Status: GOOD (  22.24  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,118 +117,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
- Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
- Ali" <alisaidi@amazon.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, Yu Zhao <yuzhao@google.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Jun Yao <yaojun8558363@gmail.com>, linux-mm@kvack.org,
+ Chintan Pandya <cpandya@codeaurora.org>, Igor Mammedov <imammedo@redhat.com>,
+ akpm@linux-foundation.org, linuxppc-dev@lists.ozlabs.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-04 at 13:32 +1000, Benjamin Herrenschmidt wrote:
+On 03.06.19 23:41, Wei Yang wrote:
+> On Mon, May 27, 2019 at 01:11:45PM +0200, David Hildenbrand wrote:
+>> A proper arch_remove_memory() implementation is on its way, which also
+>> cleanly removes page tables in arch_add_memory() in case something goes
+>> wrong.
 > 
-> > I would like to handle these individual devices that cannot be moved
-> > the same way we handle legacy (IDE, VGA) devices, i.e., mark the BARs
-> > with IORESOURCE_IO_FIXED.
+> Would this be better to understand?
 > 
-> A bit more messy but doable. However....
+>     removes page tables created in arch_add_memory
 
-Sooo.... I spent some quality whisky getting my head around the current
-state of setup-bus.c and setup-res.c ... gosh, what a mess ! Anyway, I
-have some concerns about the use of IORESOURCE_IO_FIXED in the context
-of an arch like arm64 that just blindly does:
+That's not what this sentence expresses. Have a look at
+arch_add_memory(), in case  __add_pages() fails, the page tables are not
+removed. This will also be fixed by Anshuman in the same shot.
 
-        pci_bus_size_bridges(bus);
-        pci_bus_assign_resources(bus);
+> 
+>>
+>> As we want to use arch_remove_memory() in case something goes wrong
+>> during memory hotplug after arch_add_memory() finished, let's add
+>> a temporary hack that is sufficient enough until we get a proper
+>> implementation that cleans up page table entries.
+>>
+>> We will remove CONFIG_MEMORY_HOTREMOVE around this code in follow up
+>> patches.
+>>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will.deacon@arm.com>
+>> Cc: Mark Rutland <mark.rutland@arm.com>
+>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+>> Cc: Chintan Pandya <cpandya@codeaurora.org>
+>> Cc: Mike Rapoport <rppt@linux.ibm.com>
+>> Cc: Jun Yao <yaojun8558363@gmail.com>
+>> Cc: Yu Zhao <yuzhao@google.com>
+>> Cc: Robin Murphy <robin.murphy@arm.com>
+>> Cc: Anshuman Khandual <anshuman.khandual@arm.com>
+>> Signed-off-by: David Hildenbrand <david@redhat.com>
+>> ---
+>> arch/arm64/mm/mmu.c | 19 +++++++++++++++++++
+>> 1 file changed, 19 insertions(+)
+>>
+>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>> index a1bfc4413982..e569a543c384 100644
+>> --- a/arch/arm64/mm/mmu.c
+>> +++ b/arch/arm64/mm/mmu.c
+>> @@ -1084,4 +1084,23 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>> 	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
+>> 			   restrictions);
+>> }
+>> +#ifdef CONFIG_MEMORY_HOTREMOVE
+>> +void arch_remove_memory(int nid, u64 start, u64 size,
+>> +			struct vmem_altmap *altmap)
+>> +{
+>> +	unsigned long start_pfn = start >> PAGE_SHIFT;
+>> +	unsigned long nr_pages = size >> PAGE_SHIFT;
+>> +	struct zone *zone;
+>> +
+>> +	/*
+>> +	 * FIXME: Cleanup page tables (also in arch_add_memory() in case
+>> +	 * adding fails). Until then, this function should only be used
+>> +	 * during memory hotplug (adding memory), not for memory
+>> +	 * unplug. ARCH_ENABLE_MEMORY_HOTREMOVE must not be
+>> +	 * unlocked yet.
+>> +	 */
+>> +	zone = page_zone(pfn_to_page(start_pfn));
+> 
+> Compared with arch_remove_memory in x86. If altmap is not NULL, zone will be
+> retrieved from page related to altmap. Not sure why this is not the same?
 
-Unless I'm missing something (please correct me if I am), this is all
-extremely fragile and will only work under some very specific
-circumstances:
+This is a minimal implementation, sufficient for this use case here. A
+full implementation is in the works. For now, this function will not be
+used with an altmap (ZONE_DEVICE is not esupported for arm64 yet).
 
-First, the big issue is that having individual devices with such
-"Fixed" BAR doesn't work in isolation. There is no chance in hell the
-code in setup-bus.c will manage to configure the enclosing bridges
-etc... to accomodate such fixed devices, it would require a major
-refactoring of our entire resource allocation scheme.
+Thanks!
 
-pci_bus_size_bridges() does all the calculation for sizing up bridges
-and ... completely ignores fixed BARs. Later pci_bus_assign_resources()
-will assign bridges a location, again, completely ignoring children
-fixed BARs if any.
-
-Chances that we successfully land the fixed BARs in the resulting
-allocation are slim at best.
-
-So at the very least, to have a chance of working, if any endpoint has
-fixed BARs, then all of it's parent chain must also be fixed, because
-we won't be able to deal with it otherwise, at least not via the
-"blunt" assignment code path.
-
-But there seem to be more damage here (though that one maybe easier to
-fix) from looking at the code: Unless I'm mistaken in my reading of the
-code, for a given "level" of the bus tree, __pci_bus_assign_resources()
-will *first* assign all the non-fixed devices by calling
-pbus_assign_resources_sorted(), and *then* try to claim the fixed
-resources of any device at that level using
-pdev_assign_fixed_resources().
-
-Again, even if we had the parent bridge by design (fixed too) or by
-chance, covering the space where the fixed BAR is, chances that a
-sibling non-fixed device will be given that slot before we have a
-chance to claim it.
-
-So in practice, IORESOURCE_IO_FIXED only works if all parents and
-siblings are also IORESOURCE_IO_FIXED (either that or I just
-misunderstood the code). The sibling case might be fixable by changing
-the order inside __pci_bus_assign_resources().
-
-There's more gunk too ... for example for IORESOURCE_IO_FIXED to work
-on bridges one must call pci_read_bridge_bases() first which the
-generic code doesn't do. So here comes an arch pcibios_fixup_bus ...
-yuck.
-
-There's also an oddball test about enabled bridges in
-__pci_bus_assign_resources() that __pci_bridge_assign_resources()
-doesn't have (yet another almost identical but not quite set of
-functions just to confuse people) which might make snse
-
-I looked at Lorenzo patches in his git repo for trying to deal with
-_DSM #5 via IORESOURCE_IO_FIXED and I don't like what I see in that
-context either :)
-
-So at this stage, I think we are better off solving the immediate
-issues of platforms that have good allocations coming from FW by using
-Ard's old patch at the host brigde level (possibly changing the default
-in absence of _DSM #5).
-
-Taking on step back here and trying to think more long term, I am
-concerned that we have how many different methods of doing the resource
-allocation depending on the arch that go through different (sometime
-majorly, sometimes subltly) path in the generic code, this doesn't seem
-particularily maintainable...
-
-It used to be that pci_bus_assign_resources() basically meant "force
-reassign everything". If you throw IORESOURCE_IO_FIXED in the mix then
-it's no longer that. It's now starting to look a bit more (but not
-quite) like pci_assign_unassigned_bus_resources() except that we don't
-have a generic 2-pass survey of existing resources like x86 has.
-
-We do have pci_bus_claim_resources() but that one seems more targetted
-as the opposite where we trust everything setup by FW and don't
-reassign anything. It doesn't seem to have provisions for detecting
-unsassigned resources unless I missed another bit here.
-
-Then we have pci_host_probe() that some archs use (but not arm64),
-which seems to be yet a different combination, which either trusts
-firmware completely (pci_bus_claim_resources) or not at all
-(pci_bus_size_bridges+pci_bus_assign_resources) based on a single
-global flag (shouldn't it be per-host bridge ?).
-
-Cheers,
-Ben.
+> 
+>> +	__remove_pages(zone, start_pfn, nr_pages, altmap);
+>> +}
+>> +#endif
+>> #endif
+>> -- 
+>> 2.20.1
+> 
 
 
+-- 
+
+Thanks,
+
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
