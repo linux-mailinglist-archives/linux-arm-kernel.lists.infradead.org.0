@@ -2,91 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C980E348E8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:34:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42359348E4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:34:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DJu04s6Vam2+5d2lyxU2huHaw3K7MxVZgQ5bisHk+mg=; b=XUse2QYGSV8iwe
-	csItoGAo4/ar5A5gRc2O+RuJ7pnNAnfdWEzUjeRm36geo3aGMYhp14AzC1scuzQZIsl4CQLOZVrMp
-	XZ5AKc0lT2RxFxSMnCtK5JCFKnwsCo21e4TiFd1geiAB1p2TKtikBznEvj0WwCGu0W3dDPuoo6mnd
-	UmAWd8JBHO2U7kXa+vtM4fmfTaFa9vHcFI/dyaXP/IOVLKRsi1LsQzEdmx+GAsQxhPZlM1p9oqMXS
-	bToV2wOwsvjoEryFAt2n0iCZhdRlE19HQ5zO1fGLHVpfOaDoMM1YkjFza8nIX88sx32I882O+1GRd
-	pRXXXYwqaUQBZUwzeIEA==;
+	List-Owner; bh=wD8c4QTG0howy6o8oo4qDHQgQ9kGDRqJTl9WGVvJySA=; b=CI3Xs+dtNKHfTC
+	S8hywFncSLKtz5wBwuk5Zs4e+GcDGUabnB8g/i5pMTw7MCQSplRurPt1ETIhopSprcw/5k3NzY/6l
+	X44KTF8U+RmoowazcJ6XTwAAREML9YRBCVjicjiaRSyXHEO3JI6nB5HLh7lEukHGukp46H3Rf7dbg
+	fpB+og5KV54azKQ1kuwgy6BxX2owNPBLTwyr9OiCoSAw6GpIB4ZJ92+dzl5I4Lf0Sgn86JU9XZD7Y
+	uQvLGBiMADkxodDdQ5GLeSC+ZjvXY6Ez7ZoaY8KahUAFvTb+P7EfKKq4RnI1Z+3XoSB1F0fRwkvcC
+	V/hvwoQA63ZxancyduNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY9a8-0007Jt-4l; Tue, 04 Jun 2019 13:34:28 +0000
+	id 1hY9Zx-000734-7y; Tue, 04 Jun 2019 13:34:17 +0000
 Received: from casper.infradead.org ([85.118.1.10])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY9Yf-0004oC-5x; Tue, 04 Jun 2019 13:32:57 +0000
+ id 1hY9Ye-0004oD-CO; Tue, 04 Jun 2019 13:32:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Type:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=t0jA6IyzaKFpaRxG+xMzbQ3TeSZ/biJLiuqhdnBH3TQ=; b=cxhgsQDdtjvS28TIUfV8xi09G
- Rzcn1fPdVpMlFf3OPRUIcPR6PitHnT6bzPBlBTNsihpu4xuzOivOWO8FrdS1f7Jqrrj4xm2yA95F/
- w58RAvDI1cXwdqySHXLkaXiksRfVb/UmiItde50kbmo1mfl4okKaY4QJhpo3yfHe4yhDMitEqNbuK
- NGOLfvRMwt0XY4hRn1A6fuWvxXsSdS6xP8CaacD7joDzBtZ3HBAywqjcHEpM2AlSQ4yjoqXCwT9NC
- mKGqXA0+s3oS9D2gvQ6saovfdOIWvI3EQNbQqpspDn/zF9cplln+AYsQNgq/76sFNJ2I+W6XAPFMO
- W76T++A+Q==;
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+ bh=tBDM4Tz2keIVpXtq26vbu3y4+Vw3eoGfX9HaWTYVoeQ=; b=jLHh3/fGuVmLEXb/InDQzy1Qi
+ n/Os5bTtGibgWEETWDaESUe0FNdYoHopd8R7yJbOw0oyYlOQNbU+fOk4ctz/Iwa55mpVZsIXSBWJ9
+ ZeHfRcj3deJg0aisRIdxQGersyeaLvMFivlqWYFi1OSxza6DxdhiPZLVYdNKlE4Otu9Gpr2m6C67Q
+ ZiEqB6joT/vLQar1sunzuUIYQGHYGtppIpkHBHcC+YIXM40v8VmlWGtJf4Ow7vVZZdldmELK56TbM
+ 1qXdXlfOF+vsE/9TSEkDEjWfJUdhNnLOQiQxPtUJeBobJHEI7xwqiptGfPY5Ne86vYseUvtzWCJFC
+ Yk3Mp+3uw==;
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY9KB-000494-8d; Tue, 04 Jun 2019 13:18:03 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x54DHktZ082389;
- Tue, 4 Jun 2019 08:17:46 -0500
+ id 1hY9KD-0004AF-Ee; Tue, 04 Jun 2019 13:18:03 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x54DHqo6028086;
+ Tue, 4 Jun 2019 08:17:52 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559654266;
- bh=t0jA6IyzaKFpaRxG+xMzbQ3TeSZ/biJLiuqhdnBH3TQ=;
+ s=ti-com-17Q1; t=1559654272;
+ bh=tBDM4Tz2keIVpXtq26vbu3y4+Vw3eoGfX9HaWTYVoeQ=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=KZr/Yb1n2JCx1xdXk+5fWxz251JLI16pKngaDfG2QC6hGXVLV4i5gvy6cCgIsJMjP
- c4WNdd1kbTd+yYCRuS/k+h6OJjnmI4OPZi0H3EJWyU1J15IIwDqImxqx57wu5Udo9Z
- bvFpZC/srm1v2Mm4BAhsZsXo0/fnO3zxZwm++kmk=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x54DHkn2042937
+ b=R+8zqLaxd2c02V5uk6F4Sppd2D+1gsFYEkhM62sv+mxRho62Gx4HsxMmbgDSTsIG7
+ 2KQHA8NCWHr299PML9hkzkXL402hArTl9rKprSd4RFTVcHr5T6xwtloib6PitOt4U3
+ v1gZhJGxWsVfEk/FMed58unQBaGz0DF2Sx8860bM=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x54DHqGl052946
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 4 Jun 2019 08:17:46 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 4 Jun 2019 08:17:52 -0500
+Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 4 Jun
- 2019 08:17:46 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 08:17:51 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 4 Jun 2019 08:17:46 -0500
+ Frontend Transport; Tue, 4 Jun 2019 08:17:51 -0500
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x54DGdGR098972;
- Tue, 4 Jun 2019 08:17:41 -0500
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x54DGdGS098972;
+ Tue, 4 Jun 2019 08:17:46 -0500
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Tom Joseph <tjoseph@cadence.com>, Bjorn Helgaas <bhelgaas@google.com>, Rob
  Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Lorenzo
  Pieralisi <lorenzo.pieralisi@arm.com>, Arnd Bergmann <arnd@arndb.de>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-Subject: [RFC PATCH 11/30] PCI: cadence: Add support to drive PERST# line
- using GPIO
-Date: Tue, 4 Jun 2019 18:44:57 +0530
-Message-ID: <20190604131516.13596-12-kishon@ti.com>
+Subject: [RFC PATCH 12/30] PCI: cadence: Make "mem" an optional memory resource
+Date: Tue, 4 Jun 2019 18:44:58 +0530
+Message-ID: <20190604131516.13596-13-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190604131516.13596-1-kishon@ti.com>
 References: <20190604131516.13596-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_141759_524756_A6DF9336 
-X-CRM114-Status: GOOD (  16.23  )
+X-CRM114-CacheID: sfid-20190604_141801_712558_278700BF 
+X-CRM114-Status: GOOD (  16.04  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-2.5 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -118,75 +117,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In platforms like TI's J721E EVM, the PERST# line is connected to a
-GPIO line and PERST# should be driven high to indicate the clocks are
-stable (As per Figure 2-10: Power Up of the PCIe CEM spec 3.0).
-
-Add support to make GPIO drive PERST# line.
+Cadence driver uses "mem" memory resource to obtain the offset of
+configuration space address region, memory space address region and
+message space address region. The obtained offset is used to program
+the Address Translation Unit (ATU). However certain platforms like TI's
+J721E SoC require the absolute address to be programmed in the and not
+just the offset. Make "mem" an optional memory resource and use it
+only for platforms that populate it.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- drivers/pci/controller/pcie-cadence-host.c | 26 ++++++++++++++++++++++
- 1 file changed, 26 insertions(+)
+ drivers/pci/controller/pcie-cadence-ep.c   | 6 ++----
+ drivers/pci/controller/pcie-cadence-host.c | 5 +++--
+ drivers/pci/controller/pcie-cadence.c      | 6 ++++--
+ 3 files changed, 9 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/pci/controller/pcie-cadence-host.c b/drivers/pci/controller/pcie-cadence-host.c
-index 4ad8f2ece6e2..8b3b9827a8d6 100644
---- a/drivers/pci/controller/pcie-cadence-host.c
-+++ b/drivers/pci/controller/pcie-cadence-host.c
-@@ -3,6 +3,8 @@
- // Cadence PCIe host controller driver.
- // Author: Cyrille Pitchen <cyrille.pitchen@free-electrons.com>
- 
-+#include <linux/delay.h>
-+#include <linux/gpio/consumer.h>
- #include <linux/kernel.h>
- #include <linux/of_address.h>
- #include <linux/of_device.h>
-@@ -287,6 +289,7 @@ static int cdns_pcie_host_probe(struct platform_device *pdev)
- 	struct pci_host_bridge *bridge;
- 	struct list_head resources;
- 	struct cdns_pcie_rc *rc;
-+	struct gpio_desc *gpiod;
- 	struct cdns_pcie *pcie;
- 	struct resource *res;
- 	int ret;
-@@ -349,13 +352,36 @@ static int cdns_pcie_host_probe(struct platform_device *pdev)
- 		dev_err(dev, "missing \"mem\"\n");
- 		return -EINVAL;
+diff --git a/drivers/pci/controller/pcie-cadence-ep.c b/drivers/pci/controller/pcie-cadence-ep.c
+index 825a515821c3..23aa5aba1c86 100644
+--- a/drivers/pci/controller/pcie-cadence-ep.c
++++ b/drivers/pci/controller/pcie-cadence-ep.c
+@@ -489,10 +489,8 @@ static int cdns_pcie_ep_probe(struct platform_device *pdev)
  	}
-+
+ 
+ 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "mem");
+-	if (!res) {
+-		dev_err(dev, "missing \"mem\"\n");
+-		return -EINVAL;
+-	}
++	if (!res)
++		dev_dbg(dev, "missing \"mem\"\n");
  	pcie->mem_res = res;
  
-+	gpiod = devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_LOW);
-+	if (IS_ERR(gpiod)) {
-+		ret = PTR_ERR(gpiod);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(dev, "Failed to get reset GPIO\n");
-+		return ret;
-+	}
-+
- 	ret = cdns_pcie_init_phy(dev, pcie);
- 	if (ret) {
- 		dev_err(dev, "failed to init phy\n");
- 		return ret;
- 	}
-+
-+	/*
-+	 * "Power Sequencing and Reset Signal Timings" table in
-+	 * PCI EXPRESS CARD ELECTROMECHANICAL SPECIFICATION, REV. 3.0
-+	 * indicates PERST# should be deasserted after minimum of 100us
-+	 * once REFCLK is stable. The REFCLK to the connector in RC
-+	 * mode is selected while enabling the PHY. So deassert PERST#
-+	 * after 100 us.
-+	 */
-+	if (gpiod) {
-+		usleep_range(100, 200);
-+		gpiod_set_value_cansleep(gpiod, 1);
-+	}
-+
- 	platform_set_drvdata(pdev, pcie);
+ 	ret = of_property_read_u32(np, "cdns,max-outbound-regions",
+diff --git a/drivers/pci/controller/pcie-cadence-host.c b/drivers/pci/controller/pcie-cadence-host.c
+index 8b3b9827a8d6..14a54f6a11de 100644
+--- a/drivers/pci/controller/pcie-cadence-host.c
++++ b/drivers/pci/controller/pcie-cadence-host.c
+@@ -188,9 +188,9 @@ static int cdns_pcie_host_init_address_translation(struct cdns_pcie_rc *rc)
+ 	struct device *dev = rc->dev;
+ 	struct device_node *np = dev->of_node;
+ 	struct of_pci_range_parser parser;
++	u64 cpu_addr = cfg_res->start;
+ 	struct of_pci_range range;
+ 	u32 addr0, addr1, desc1;
+-	u64 cpu_addr;
+ 	int r, err;
  
- 	pm_runtime_enable(dev);
+ 	/*
+@@ -203,7 +203,8 @@ static int cdns_pcie_host_init_address_translation(struct cdns_pcie_rc *rc)
+ 	cdns_pcie_writel(pcie, CDNS_PCIE_AT_OB_REGION_PCI_ADDR1(0), addr1);
+ 	cdns_pcie_writel(pcie, CDNS_PCIE_AT_OB_REGION_DESC1(0), desc1);
+ 
+-	cpu_addr = cfg_res->start - mem_res->start;
++	if (mem_res)
++		cpu_addr -= mem_res->start;
+ 	addr0 = CDNS_PCIE_AT_OB_REGION_CPU_ADDR0_NBITS(12) |
+ 		(lower_32_bits(cpu_addr) & GENMASK(31, 8));
+ 	addr1 = upper_32_bits(cpu_addr);
+diff --git a/drivers/pci/controller/pcie-cadence.c b/drivers/pci/controller/pcie-cadence.c
+index 5ac42b19bb63..86282e9a26f7 100644
+--- a/drivers/pci/controller/pcie-cadence.c
++++ b/drivers/pci/controller/pcie-cadence.c
+@@ -154,7 +154,8 @@ void cdns_pcie_set_outbound_region(struct cdns_pcie *pcie, u8 fn,
+ 	cdns_pcie_writel(pcie, CDNS_PCIE_AT_OB_REGION_DESC1(r), desc1);
+ 
+ 	/* Set the CPU address */
+-	cpu_addr -= pcie->mem_res->start;
++	if (pcie->mem_res)
++		cpu_addr -= pcie->mem_res->start;
+ 	addr0 = CDNS_PCIE_AT_OB_REGION_CPU_ADDR0_NBITS(nbits) |
+ 		(lower_32_bits(cpu_addr) & GENMASK(31, 8));
+ 	addr1 = upper_32_bits(cpu_addr);
+@@ -181,7 +182,8 @@ void cdns_pcie_set_outbound_region_for_normal_msg(struct cdns_pcie *pcie, u8 fn,
+ 	}
+ 
+ 	/* Set the CPU address */
+-	cpu_addr -= pcie->mem_res->start;
++	if (pcie->mem_res)
++		cpu_addr -= pcie->mem_res->start;
+ 	addr0 = CDNS_PCIE_AT_OB_REGION_CPU_ADDR0_NBITS(17) |
+ 		(lower_32_bits(cpu_addr) & GENMASK(31, 8));
+ 	addr1 = upper_32_bits(cpu_addr);
 -- 
 2.17.1
 
