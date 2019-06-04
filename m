@@ -2,109 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87F6D34970
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:52:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6B4B34979
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:53:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GF8gkyDRhuRZajp6cLVgYKswsEf4KAUkF8fZ2SAlkSs=; b=npuK4Usi0Yt+aa
-	fmeqJ27KmAYcKfRO1Zs38zlBO4jkLeUbe5MpoROWi+jM1BzTETSYek5dScgOw9RkybL+5/82mppVZ
-	7HSeeC1aYIvOgfJe9mmHhKf5sbF15uE4aMKH+NwZN5q6BbpWQkORy+NtQvH6LXpPTezOdR76mcqCj
-	yHrDX8T0o+lG5YkSKzrTYU5pvQU5cOueY4ZI7Yl7KhK/fveL9Kq2iSlEWivKennNjapu4cfjAFTXK
-	hbG40dDLO5McytRp3f17w8QqgqlJTFb/AIqKSUQq6ds8YMhqOYKo7M/1qX7+2maWSuGlvqQQlCFLO
-	hLL+0lIVsS2sR1lCoaWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NYwEpAhQIwpjSXUJWq2aWfvxJOTviQK04qVQ+MdJyOU=; b=Ehxxy1lbdsDSCA
+	BX1qb4VeEPCZtScL/lnEzJKMHoWfzMXFn0PozH+78QrW+aGdY6BpT3RFG2q9uM8nAKoMGwJ9CyBEc
+	01b3bICopsFBvVB5iEPO0c8jVNVUdjlGwXtFAnt0nyP/Q/OKih0iu2SvFl+X44azgGMOPkPC9MBjP
+	hQg8IKS8cs4FG6aaFkZXKH26zujFaRI322e26P1BNjnH8iujgowt0uTAXKI9hzDf0FSxawvQcds5Z
+	gBw9idZ4s/hioSI2z0Q3XE/+yyYn/CqKWDcJl8boo/z3foj6FXekRISZiYpge+tyXQubsmwaQ4VBp
+	B1dy8Dou9Qj0tVE5eNfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY9rO-0007Im-Nn; Tue, 04 Jun 2019 13:52:18 +0000
-Received: from mail-eopbgr30054.outbound.protection.outlook.com ([40.107.3.54]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY9rG-0007I1-J1
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:52:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Wc4I6lHiikeaBfwPmfX3O8sT7n60F1R+malBQwuCTVM=;
- b=tGzTcLzhaNL+75gHC/gXtt7L3YdPNRq8ZUPkdpZelfSg3jnmN1ojrnkasNgpmncwrq8rMW7r0uzorRV27B64djX1KlkdAjtPCwP4K5K14sODlDt6xzhvqgM0ZNRTi2EBchChMDIvjlq8n/ztPZveorTIOFuO8j0LzB8LwgGlw3w=
-Received: from DB7PR08MB3865.eurprd08.prod.outlook.com (20.178.84.149) by
- DB7PR08MB3547.eurprd08.prod.outlook.com (20.177.120.85) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1943.22; Tue, 4 Jun 2019 13:52:05 +0000
-Received: from DB7PR08MB3865.eurprd08.prod.outlook.com
- ([fe80::1c44:4e1b:c1e1:543e]) by DB7PR08MB3865.eurprd08.prod.outlook.com
- ([fe80::1c44:4e1b:c1e1:543e%7]) with mapi id 15.20.1943.018; Tue, 4 Jun 2019
- 13:52:05 +0000
-From: Luke Cheeseman <Luke.Cheeseman2@arm.com>
-To: Will Deacon <Will.Deacon@arm.com>, Kees Cook <keescook@chromium.org>
-Subject: Re: [RFC v2 0/7] arm64: return address signing
-Thread-Topic: [RFC v2 0/7] arm64: return address signing
-Thread-Index: AQHVFpUc/rgDNN2VskO3NnZrQSLUJKaDbxPOgABkqICAAAF0IIAAIh2AgAEAJQCAA49dgIABPYAAgAHGiNQ=
-Date: Tue, 4 Jun 2019 13:52:05 +0000
-Message-ID: <DB7PR08MB386551397577B574DBA7F874BF150@DB7PR08MB3865.eurprd08.prod.outlook.com>
-References: <20190529190332.29753-1-kristina.martsenko@arm.com>
- <201905292004.3809FBAA66@keescook>
- <DB7PR08MB3865C4AA36C9C465B2A687DABF180@DB7PR08MB3865.eurprd08.prod.outlook.com>
- <201905300851.4A68705B0@keescook>
- <DB7PR08MB3865A83066179CE419D171EDBF180@DB7PR08MB3865.eurprd08.prod.outlook.com>
- <201905301058.CA55245A0@keescook>
- <20190531092202.GA19208@fuggles.cambridge.arm.com>
- <201906020843.140EC55FB@keescook>,
- <20190603104018.GA27947@fuggles.cambridge.arm.com>
-In-Reply-To: <20190603104018.GA27947@fuggles.cambridge.arm.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-GB
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Luke.Cheeseman2@arm.com; 
-x-originating-ip: [217.140.106.49]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 35f9a32c-ca80-4676-7613-08d6e8f3d46b
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB7PR08MB3547; 
-x-ms-traffictypediagnostic: DB7PR08MB3547:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <DB7PR08MB354777283E18BE354568B17DBF150@DB7PR08MB3547.eurprd08.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0058ABBBC7
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(366004)(396003)(136003)(376002)(39860400002)(51914003)(40434004)(189003)(199004)(71200400001)(71190400001)(110136005)(478600001)(9686003)(229853002)(2906002)(6306002)(446003)(256004)(6436002)(33656002)(53936002)(55016002)(7736002)(11346002)(54906003)(316002)(305945005)(5024004)(14444005)(86362001)(486006)(476003)(14454004)(81156014)(7696005)(8936002)(72206003)(966005)(66446008)(73956011)(66946007)(66476007)(66556008)(64756008)(68736007)(186003)(74316002)(3846002)(6116002)(4326008)(52536014)(8676002)(25786009)(99286004)(26005)(5660300002)(66066001)(81166006)(6506007)(102836004)(76176011)(6246003)(53546011)(76116006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR08MB3547;
- H:DB7PR08MB3865.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 0G5EBpcbOrmnLvar3gwpgPyILavxDU0iHSX/uQFC20IFpCGMKcFXiAvSk3A+qKiACDSOc2WzC5tn/3/SqG1bHrMo1EG8TWvW1uTeD+6U8sb0FE295cwnpme7nGRlcHAohWZeXin7g8n7h9/wfztEJFqKaAyuAN2PTMYJP/gtfMtqEE0lEKI1SFPdwYgNmwmX3NU4wnWyRNyrq8lYEMqC8I3SbZe+7sGN3aWS8l3CBiykKzsg50esf5H6inAb/ummlsmbr6jJ0epO8ruKs+JnLn+vfrgGAYqLYb1vwpoh7N5fI5++1v4LYhA/jQXzFNk7r1qU/+ZaUUlxe8GGzwcsC1ZYz3CWYPWzCfs43aYOs0/3IP4c1mEWxpf3y420Gks4JMSmyuKmiz5jjJaq+JCJW58TOMXDBHQeL2xI254tx0Y=
+	id 1hY9se-0007kW-WD; Tue, 04 Jun 2019 13:53:37 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY9sY-0007jr-1i
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:53:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E5E4341;
+ Tue,  4 Jun 2019 06:53:29 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 5A74F3F690; Tue,  4 Jun 2019 06:53:28 -0700 (PDT)
+Subject: Re: KVM Arm Device passthrough and linux-rt
+To: Steven Rostedt <rostedt@goodmis.org>, Julien Grall <julien.grall@arm.com>
+References: <26832850-37ee-ae07-08ca-cc3e90978867@arm.com>
+ <20190604091607.2e87eb36@oasis.local.home>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <f2fbc06b-373f-ee2a-b111-ea40848dc1c5@arm.com>
+Date: Tue, 4 Jun 2019 14:53:26 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 35f9a32c-ca80-4676-7613-08d6e8f3d46b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jun 2019 13:52:05.6364 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Luke.Cheeseman2@arm.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR08MB3547
+In-Reply-To: <20190604091607.2e87eb36@oasis.local.home>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_065210_669349_BEBF26C3 
-X-CRM114-Status: GOOD (  23.53  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190604_065330_095287_ABE43122 
+X-CRM114-Status: GOOD (  14.75  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.54 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,93 +109,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Diogo Sampaio <Diogo.Sampaio@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- Luke Cheeseman <luke.cheeseman@arm.com>,
- Kristina Martsenko <Kristina.Martsenko@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Amit Kachhap <Amit.Kachhap@arm.com>, Kristof Beyls <Kristof.Beyls@arm.com>,
- Christof Douma <Christof.Douma@arm.com>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, Dave P Martin <Dave.Martin@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Sebastian Andrzej Siewior <bigeasy@linutronix.de>, julia@ni.com,
+ linux-rt-users <linux-rt-users@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ kvmarm@lists.cs.columbia.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On 04/06/2019 14:16, Steven Rostedt wrote:
+> On Tue, 4 Jun 2019 13:58:51 +0100
+> Julien Grall <julien.grall@arm.com> wrote:
+> 
+>> This is happening because vgic_v2_fold_lr_state() is expected
+>> to be called with interrupt disabled. However, some of the path
+>> (e.g eventfd) will take a spinlock.
+>>
+>> The spinlock is from the waitqueue, so using a raw_spin_lock cannot
+>> even be considered.
+>>
+>> Do you have any input on how this could be solved?
+> 
+> What's the reason that vgic_v2_fold_lr_state() expects interrupts to be
+> disabled?
 
-It was suggested to me that forcing the compiler to inline the function may be another way to avoid writing the function in a separate file and not have the concerns of switching keys in a function. For example:
+That's to prevent the injection of an interrupt firing on the same CPU
+while we're saving the corresponding vcpu interrupt context, among other
+things (the whole guest exit path runs with interrupt disabled in order
+to avoid this kind of thing).
 
-void __attribute__((always_inline)) switch_keys() {
-  // do something
-}
+One possibility would be to accumulate the set of interrupt that require
+resampling (which is bound to be small, the number of LRs at most) and
+call kvm_notify_acked_irq on that set once interrupts are re-enabled.
 
+I'll have a look...
 
-int main() {
-  switch_keys(42);
-}
-
-
-switch_keys is always inlined so you don't get the pac/aut pair. Is this something that is useful?
-
-For the feature request for disabling branch protection (https://bugs.llvm.org/show_bug.cgi?id=42095) is there a time frame you need this within?
-
-Thanks,
-Luke
-
-
-From: Will Deacon <will.deacon@arm.com>
-Sent: 03 June 2019 11:40
-To: Kees Cook
-Cc: Luke Cheeseman; Kristina Martsenko; Luke Cheeseman; Diogo Sampaio; linux-arm-kernel@lists.infradead.org; Amit Kachhap; Ard Biesheuvel; Catalin Marinas; Dave P Martin; Mark Rutland; Ramana Radhakrishnan; Suzuki Poulose; Kristof Beyls; Christof Douma
-Subject: Re: [RFC v2 0/7] arm64: return address signing
-
-
-On Sun, Jun 02, 2019 at 08:43:55AM -0700, Kees Cook wrote:
-> On Fri, May 31, 2019 at 10:22:02AM +0100, Will Deacon wrote:
-> > On Thu, May 30, 2019 at 11:05:15AM -0700, Kees Cook wrote:
-> > > On Thu, May 30, 2019 at 04:55:08PM +0000, Luke Cheeseman wrote:
-> > > > The semantics of this attribute are straightforward enough but it
-> > > > raises some questions. One question being why would I want to turn off
-> > > > BTI (also controlled by this option) for one function in a file? Which
-> > > > gets a bit odd.
-> > >
-> > > It's about leaving very early CPU startup functions in the kernel from
-> > > getting marked up (since they are running before or during the PAC setup).
-> > >
-> > > > I don't know if the alternatives have been suggested but it's
-> > > > possible to achieve the result you seem to be after (a function without
-> > > > return address signing) in a couple of ways. First and foremost,
-> > > > separating the function out into it's own file and compiling with
-> > > > -mbranch-protection=none. Alternatively, writing the function in assembly
-> > > > or perhaps even a naked function with inline assembly.
-> > >
-> > > Fair enough. :) Thanks for the clarification. Yeah, split on compilation
-> > > unit could work. (In the future, though, having the attribute flexibility
-> > > would be nice.)
-> > >
-> > > Kristina, would it be feasible to split these functions into a separate
-> > > source file? (There doesn't seem to be a need to inline them, given
-> > > they're not performance sensitive and only used once, etc?)
-> >
-> > Right, and we could call it kernel.c
-> >
-> > Sarcasm aside, please fix this in the toolchain. Moving logically unrelated
-> > functions into one file just because the toolchain doesn't yet support this
-> > feature just messes up the codebase and removes the incentive to get this
-> > implemented properly. After all, you need something to do now that asm goto
-> > is out of the way, right? ;)
->
-> LLVM tracking bug created...
-> https://bugs.llvm.org/show_bug.cgi?id=42095
-
-Thanks, Kees!
-
-Will
-
-IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
