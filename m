@@ -2,65 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87F6F3465B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:13:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FD7434669
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:18:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=67JBF/Oejx7LiA9AkxY5glvkoUwx34zypUsWf1Z7n9o=; b=pi6MVK2VviQIaa
-	MJ08R5uHnDPYBGELTD+q/uGoso1freg8Z+EXcpWXG3I9nw8MRxMQywfNcGrYoUoRXZAu+LQ/50NlI
-	ZxGAcDqHodgu/p0G03wtAAxOHxPsvMWvkd/SZRCa6lEoDfP5QyFonjN+sn6Wew3nuLsu3Opn9wkQf
-	v9Z3CVL6hYxFRthIPYXT6VWH07YBt18dyDuigKk2hSPu3R6dx3jueVrFksdT8cWWDvAkYNRfhoh9P
-	ZoUuYlD0UfKTA7VZ8j0BDQE4A9huBV37k97YouxxsVeGVtNzB4W90kzh6t5pFijsx3K/kRnTybY3X
-	4v41J4OO5piqYHRcR5KQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8Ml/Eu6xabNJnjneapk9vSbS11y7B3Yl+wySuOLqsjg=; b=uZx+2QsJC1sy5W
+	EoIdvkEzcLVEtz9JEO8IC36ypDB+hdzc32bXBXjgphsLgdJplQfgIyo11in0D1fpeNUumWe37Q1k5
+	unEisg/vRlyGjzj896QiOuffpcHyMXNprEJ732Msh9458NlA3zwsRPRoG5K/Us4JU8qC3ckBVK0ID
+	4xCj8dYNCmqR1UiKkYEJEe5M9No8+L+WSVEpX4WGwCoEOMN5g5yCkEIhe5RH9YP2R9SiaYiOhhknq
+	75uzTFQANVWnfF2qe5ZP0FdI1CsTDAclto2p9DstMHKyPj2Bejp3cTkOLdX7iyFkzC+DS2rHCV370
+	flgOLQMU72S7NiB9CACQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8Jo-0003gQ-Hl; Tue, 04 Jun 2019 12:13:32 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8Jg-0003fY-Fo
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:13:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2DD5980D;
- Tue,  4 Jun 2019 05:13:24 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C1A9C3F690;
- Tue,  4 Jun 2019 05:13:20 -0700 (PDT)
-Subject: Re: [PATCH v6 18/19] x86: Add support for generic vDSO
-To: Michael Kelley <mikelley@microsoft.com>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-19-vincenzo.frascino@arm.com>
- <BYAPR21MB1221D54FCEC97509EEF7395CD7180@BYAPR21MB1221.namprd21.prod.outlook.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <97175325-1619-fd38-2a5c-c71b3b161808@arm.com>
-Date: Tue, 4 Jun 2019 13:13:19 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hY8Ol-0006Wz-5v; Tue, 04 Jun 2019 12:18:39 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY8Od-0006Wb-Uz
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:18:33 +0000
+Received: by mail-pg1-x544.google.com with SMTP id f25so10254799pgv.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 05:18:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=izP2xVkH+lJ1XiJaz25EL/2sjI5XZqFKPi8rAth3/y8=;
+ b=anXrne3zDdmEVildSzDwGKYMdshtpWiEi/bSjfUgHwDoCg62X8GEgJ1oLKPrpJDBTp
+ sCO27Nd8vGOH1LG/aPfklMvFylAFcLd0duV9qTE0Uw2bgUkgehc21vjcK8KjtBKBSIeh
+ hbrrSVL1q8qPT28KLxALn+5w5v0FjrGnKuEQGLgwne0GhOjJGw91IA05Yw5AYbDH2v2V
+ eAfpEy7jnKgsdj8ID/iHcGjtOrlCN+u9PocCqqNSQrn/Xx8uaOQ0ef5ELA37nbSJameE
+ 4YvdhcrfbGwQSFgLEIgyOhrMQbK4CtUaCUAqm4fpOOKP+JqNZLGloD+rwiN3Vuf1ojqO
+ poUA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=izP2xVkH+lJ1XiJaz25EL/2sjI5XZqFKPi8rAth3/y8=;
+ b=F3VaEwsFH4zS4RmvQ1HPiLOe2AoteuKakQFamfyyLqN3tjMuIMLCpUea8N8jLmzrk0
+ DnWrFOw1IYv6eFaWG6jVsw68JG6Xa4SAlWhKS4f8vQmoYh1NV7Tairmh64IGEklj9/CI
+ yV7Pu9qrrsESOwHtd9lk26+U0iP0PSwSSF4rwpYGgTulKLuYJFc9U9PNe08PTvzhpkRd
+ vTbc7nXwrpHj9rIxxsCephbWt6Otgi7Kehw/ybBkUjwBkdglYQDQmFXLDGK3SCg2BHoS
+ m8nsxQ3XN/WnW5sZU+urIUB/1jE+kjevw2BN6JSmr4slXGKDuxd8ZFLRFW+ndvbsScWn
+ ggig==
+X-Gm-Message-State: APjAAAUjhQ+zO2NliT+sQ1gwmMOuhaTq4NV2mHYDsmgCG8UWgkWSThod
+ GiQvzAHJ1DzpV27nosFeSIvCfIA2vRibwBiySkcqKA==
+X-Google-Smtp-Source: APXvYqz1BnXRogJ38HsJg+YXXm2v0kW8wf81Q7/M4AVfD5zoRhp7qhUtn8D86raEkRJz58lLKdDFOynhTkL7EDkBRUg=
+X-Received: by 2002:a63:1919:: with SMTP id z25mr35448936pgl.440.1559650710127; 
+ Tue, 04 Jun 2019 05:18:30 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <BYAPR21MB1221D54FCEC97509EEF7395CD7180@BYAPR21MB1221.namprd21.prod.outlook.com>
-Content-Language: en-US
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <c829f93b19ad6af1b13be8935ce29baa8e58518f.1559580831.git.andreyknvl@google.com>
+ <20190603174619.GC11474@ziepe.ca>
+In-Reply-To: <20190603174619.GC11474@ziepe.ca>
+From: Andrey Konovalov <andreyknvl@google.com>
+Date: Tue, 4 Jun 2019 14:18:19 +0200
+Message-ID: <CAAeHK+xy-dx4dLDLLj9dRzRNSVG9H5nDPPnjpYF38qKZNNCh_g@mail.gmail.com>
+Subject: Re: [PATCH v16 12/16] IB,
+ arm64: untag user pointers in ib_uverbs_(re)reg_mr()
+To: Jason Gunthorpe <jgg@ziepe.ca>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_051324_538665_B46D4E56 
-X-CRM114-Status: GOOD (  26.68  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190604_051832_022008_2F7BEB88 
+X-CRM114-Status: GOOD (  25.28  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,223 +99,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shuah Khan <shuah@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- Russell King <linux@armlinux.org.uk>, Ralf Baechle <ralf@linux-mips.org>,
- Mark Salyzyn <salyzyn@android.com>, Paul Burton <paul.burton@mips.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michael,
-
-On 30/05/2019 16:41, Michael Kelley wrote:
-> From: Vincenzo Frascino <vincenzo.frascino@arm.com> On Thursday, May 30, 2019 7:16 AM
->>
->> The x86 vDSO library requires some adaptations to take advantage of the
->> newly introduced generic vDSO library.
->>
->> Introduce the following changes:
->>  - Modification of vdso.c to be compliant with the common vdso datapage
->>  - Use of lib/vdso for gettimeofday
->>
->> Cc: Thomas Gleixner <tglx@linutronix.de>
->> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
->>
->>
->> diff --git a/arch/x86/include/asm/mshyperv-tsc.h b/arch/x86/include/asm/mshyperv-tsc.h
->> new file mode 100644
->> index 000000000000..99c98ccea0bf
->> --- /dev/null
->> +++ b/arch/x86/include/asm/mshyperv-tsc.h
->> @@ -0,0 +1,76 @@
->> +/* SPDX-License-Identifier: GPL-2.0 */
->> +#ifndef _ASM_X86_MSHYPER_TSCPAGE_H
->> +#define _ASM_X86_MSHYPER_TSCPAGE_H
->> +
->> +#include <asm/hyperv-tlfs.h>
->> +
->> +#ifdef CONFIG_HYPERV_TSCPAGE
->> +struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
->> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
->> +				       u64 *cur_tsc)
->> +{
->> +	u64 scale, offset;
->> +	u32 sequence;
->> +
->> +	/*
->> +	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
->> +	 * Top-Level Functional Specification ver. 3.0 and above. To get the
->> +	 * reference time we must do the following:
->> +	 * - READ ReferenceTscSequence
->> +	 *   A special '0' value indicates the time source is unreliable and we
->> +	 *   need to use something else. The currently published specification
->> +	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
->> +	 *   instead of '0' as the special value, see commit c35b82ef0294.
->> +	 * - ReferenceTime =
->> +	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
->> +	 * - READ ReferenceTscSequence again. In case its value has changed
->> +	 *   since our first reading we need to discard ReferenceTime and repeat
->> +	 *   the whole sequence as the hypervisor was updating the page in
->> +	 *   between.
->> +	 */
->> +	do {
->> +		sequence = READ_ONCE(tsc_pg->tsc_sequence);
->> +		if (!sequence)
->> +			return U64_MAX;
->> +		/*
->> +		 * Make sure we read sequence before we read other values from
->> +		 * TSC page.
->> +		 */
->> +		smp_rmb();
->> +
->> +		scale = READ_ONCE(tsc_pg->tsc_scale);
->> +		offset = READ_ONCE(tsc_pg->tsc_offset);
->> +		*cur_tsc = rdtsc_ordered();
->> +
->> +		/*
->> +		 * Make sure we read sequence after we read all other values
->> +		 * from TSC page.
->> +		 */
->> +		smp_rmb();
->> +
->> +	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
->> +
->> +	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
->> +}
->> +
->> +static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
->> +{
->> +	u64 cur_tsc;
->> +
->> +	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
->> +}
->> +
->> +#else
->> +static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
->> +{
->> +	return NULL;
->> +}
->> +
->> +static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
->> +				       u64 *cur_tsc)
->> +{
->> +	BUG();
->> +	return U64_MAX;
->> +}
->> +#endif
->> +#endif
->> diff --git a/arch/x86/include/asm/mshyperv.h b/arch/x86/include/asm/mshyperv.h
->> index cc60e617931c..db095a992f3e 100644
->> --- a/arch/x86/include/asm/mshyperv.h
->> +++ b/arch/x86/include/asm/mshyperv.h
->> @@ -7,6 +7,7 @@
->>  #include <linux/nmi.h>
->>  #include <asm/io.h>
->>  #include <asm/hyperv-tlfs.h>
->> +#include <asm/mshyperv-tsc.h>
->>  #include <asm/nospec-branch.h>
->>
->>  #define VP_INVAL	U32_MAX
->> @@ -387,73 +388,4 @@ static inline int hyperv_flush_guest_mapping_range(u64 as,
->>  }
->>  #endif /* CONFIG_HYPERV */
->>
->> -#ifdef CONFIG_HYPERV_TSCPAGE
->> -struct ms_hyperv_tsc_page *hv_get_tsc_page(void);
->> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
->> -				       u64 *cur_tsc)
->> -{
->> -	u64 scale, offset;
->> -	u32 sequence;
->> -
->> -	/*
->> -	 * The protocol for reading Hyper-V TSC page is specified in Hypervisor
->> -	 * Top-Level Functional Specification ver. 3.0 and above. To get the
->> -	 * reference time we must do the following:
->> -	 * - READ ReferenceTscSequence
->> -	 *   A special '0' value indicates the time source is unreliable and we
->> -	 *   need to use something else. The currently published specification
->> -	 *   versions (up to 4.0b) contain a mistake and wrongly claim '-1'
->> -	 *   instead of '0' as the special value, see commit c35b82ef0294.
->> -	 * - ReferenceTime =
->> -	 *        ((RDTSC() * ReferenceTscScale) >> 64) + ReferenceTscOffset
->> -	 * - READ ReferenceTscSequence again. In case its value has changed
->> -	 *   since our first reading we need to discard ReferenceTime and repeat
->> -	 *   the whole sequence as the hypervisor was updating the page in
->> -	 *   between.
->> -	 */
->> -	do {
->> -		sequence = READ_ONCE(tsc_pg->tsc_sequence);
->> -		if (!sequence)
->> -			return U64_MAX;
->> -		/*
->> -		 * Make sure we read sequence before we read other values from
->> -		 * TSC page.
->> -		 */
->> -		smp_rmb();
->> -
->> -		scale = READ_ONCE(tsc_pg->tsc_scale);
->> -		offset = READ_ONCE(tsc_pg->tsc_offset);
->> -		*cur_tsc = rdtsc_ordered();
->> -
->> -		/*
->> -		 * Make sure we read sequence after we read all other values
->> -		 * from TSC page.
->> -		 */
->> -		smp_rmb();
->> -
->> -	} while (READ_ONCE(tsc_pg->tsc_sequence) != sequence);
->> -
->> -	return mul_u64_u64_shr(*cur_tsc, scale, 64) + offset;
->> -}
->> -
->> -static inline u64 hv_read_tsc_page(const struct ms_hyperv_tsc_page *tsc_pg)
->> -{
->> -	u64 cur_tsc;
->> -
->> -	return hv_read_tsc_page_tsc(tsc_pg, &cur_tsc);
->> -}
->> -
->> -#else
->> -static inline struct ms_hyperv_tsc_page *hv_get_tsc_page(void)
->> -{
->> -	return NULL;
->> -}
->> -
->> -static inline u64 hv_read_tsc_page_tsc(const struct ms_hyperv_tsc_page *tsc_pg,
->> -				       u64 *cur_tsc)
->> -{
->> -	BUG();
->> -	return U64_MAX;
->> -}
->> -#endif
->>  #endif
-> 
-> Vincenzo -- these changes for Hyper-V are a subset of a larger patch set
-> I have that moves all of the Hyper-V clock/timer code into a separate
-> clocksource driver in drivers/clocksource, with an include file in
-> includes/clocksource.  That new include file should be able to work
-> instead of your new mshyperv-tsc.h.  It also has the benefit of being
-> ISA neutral, so it will work with my in-progress patch set to support
-> Linux on Hyper-V on ARM64.  See https://lkml.org/lkml/2019/5/27/231
-> for the new clocksource driver patch set.
+On Mon, Jun 3, 2019 at 7:46 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
 >
+> On Mon, Jun 03, 2019 at 06:55:14PM +0200, Andrey Konovalov wrote:
+> > This patch is a part of a series that extends arm64 kernel ABI to allow to
+> > pass tagged user pointers (with the top byte set to something else other
+> > than 0x00) as syscall arguments.
+> >
+> > ib_uverbs_(re)reg_mr() use provided user pointers for vma lookups (through
+> > e.g. mlx4_get_umem_mr()), which can only by done with untagged pointers.
+> >
+> > Untag user pointers in these functions.
+> >
+> > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> >  drivers/infiniband/core/uverbs_cmd.c | 4 ++++
+> >  1 file changed, 4 insertions(+)
+> >
+> > diff --git a/drivers/infiniband/core/uverbs_cmd.c b/drivers/infiniband/core/uverbs_cmd.c
+> > index 5a3a1780ceea..f88ee733e617 100644
+> > +++ b/drivers/infiniband/core/uverbs_cmd.c
+> > @@ -709,6 +709,8 @@ static int ib_uverbs_reg_mr(struct uverbs_attr_bundle *attrs)
+> >       if (ret)
+> >               return ret;
+> >
+> > +     cmd.start = untagged_addr(cmd.start);
+> > +
+> >       if ((cmd.start & ~PAGE_MASK) != (cmd.hca_va & ~PAGE_MASK))
+> >               return -EINVAL;
+>
+> I feel like we shouldn't thave to do this here, surely the cmd.start
+> should flow unmodified to get_user_pages, and gup should untag it?
+>
+> ie, this sort of direction for the IB code (this would be a giant
+> patch, so I didn't have time to write it all, but I think it is much
+> saner):
 
-Thank you for pointing this out, I will rebase my changes on your patches.
+Hi Jason,
 
+ib_uverbs_reg_mr() passes cmd.start to mlx4_get_umem_mr(), which calls
+find_vma(), which only accepts untagged addresses. Could you explain
+how your patch helps?
 
-> Michael
-> 
+Thanks!
 
--- 
-Regards,
-Vincenzo
+>
+> diff --git a/drivers/infiniband/core/umem.c b/drivers/infiniband/core/umem.c
+> index 54628ef879f0ce..7b3b736c87c253 100644
+> --- a/drivers/infiniband/core/umem.c
+> +++ b/drivers/infiniband/core/umem.c
+> @@ -193,7 +193,7 @@ EXPORT_SYMBOL(ib_umem_find_best_pgsz);
+>   * @access: IB_ACCESS_xxx flags for memory being pinned
+>   * @dmasync: flush in-flight DMA when the memory region is written
+>   */
+> -struct ib_umem *ib_umem_get(struct ib_udata *udata, unsigned long addr,
+> +struct ib_umem *ib_umem_get(struct ib_udata *udata, void __user *addr,
+>                             size_t size, int access, int dmasync)
+>  {
+>         struct ib_ucontext *context;
+> @@ -201,7 +201,7 @@ struct ib_umem *ib_umem_get(struct ib_udata *udata, unsigned long addr,
+>         struct page **page_list;
+>         unsigned long lock_limit;
+>         unsigned long new_pinned;
+> -       unsigned long cur_base;
+> +       void __user *cur_base;
+>         struct mm_struct *mm;
+>         unsigned long npages;
+>         int ret;
+> diff --git a/drivers/infiniband/core/uverbs_cmd.c b/drivers/infiniband/core/uverbs_cmd.c
+> index 5a3a1780ceea4d..94389e7f12371f 100644
+> --- a/drivers/infiniband/core/uverbs_cmd.c
+> +++ b/drivers/infiniband/core/uverbs_cmd.c
+> @@ -735,7 +735,8 @@ static int ib_uverbs_reg_mr(struct uverbs_attr_bundle *attrs)
+>                 }
+>         }
+>
+> -       mr = pd->device->ops.reg_user_mr(pd, cmd.start, cmd.length, cmd.hca_va,
+> +       mr = pd->device->ops.reg_user_mr(pd, u64_to_user_ptr(cmd.start),
+> +                                        cmd.length, cmd.hca_va,
+>                                          cmd.access_flags,
+>                                          &attrs->driver_udata);
+>         if (IS_ERR(mr)) {
+> diff --git a/drivers/infiniband/hw/mlx5/mr.c b/drivers/infiniband/hw/mlx5/mr.c
+> index 4d033796dcfcc2..bddbb952082fc5 100644
+> --- a/drivers/infiniband/hw/mlx5/mr.c
+> +++ b/drivers/infiniband/hw/mlx5/mr.c
+> @@ -786,7 +786,7 @@ static int mr_cache_max_order(struct mlx5_ib_dev *dev)
+>  }
+>
+>  static int mr_umem_get(struct mlx5_ib_dev *dev, struct ib_udata *udata,
+> -                      u64 start, u64 length, int access_flags,
+> +                      void __user *start, u64 length, int access_flags,
+>                        struct ib_umem **umem, int *npages, int *page_shift,
+>                        int *ncont, int *order)
+>  {
+> @@ -1262,8 +1262,8 @@ struct ib_mr *mlx5_ib_reg_dm_mr(struct ib_pd *pd, struct ib_dm *dm,
+>                                  attr->access_flags, mode);
+>  }
+>
+> -struct ib_mr *mlx5_ib_reg_user_mr(struct ib_pd *pd, u64 start, u64 length,
+> -                                 u64 virt_addr, int access_flags,
+> +struct ib_mr *mlx5_ib_reg_user_mr(struct ib_pd *pd, void __user *start,
+> +                                 u64 length, u64 virt_addr, int access_flags,
+>                                   struct ib_udata *udata)
+>  {
+>         struct mlx5_ib_dev *dev = to_mdev(pd->device);
+> diff --git a/include/rdma/ib_verbs.h b/include/rdma/ib_verbs.h
+> index ec6446864b08e9..b3c8eaaa35c760 100644
+> --- a/include/rdma/ib_verbs.h
+> +++ b/include/rdma/ib_verbs.h
+> @@ -2464,8 +2464,8 @@ struct ib_device_ops {
+>         struct ib_mr *(*reg_user_mr)(struct ib_pd *pd, u64 start, u64 length,
+>                                      u64 virt_addr, int mr_access_flags,
+>                                      struct ib_udata *udata);
+> -       int (*rereg_user_mr)(struct ib_mr *mr, int flags, u64 start, u64 length,
+> -                            u64 virt_addr, int mr_access_flags,
+> +       int (*rereg_user_mr)(struct ib_mr *mr, int flags, void __user *start,
+> +                            u64 length, u64 virt_addr, int mr_access_flags,
+>                              struct ib_pd *pd, struct ib_udata *udata);
+>         int (*dereg_mr)(struct ib_mr *mr, struct ib_udata *udata);
+>         struct ib_mr *(*alloc_mr)(struct ib_pd *pd, enum ib_mr_type mr_type,
 
 _______________________________________________
 linux-arm-kernel mailing list
