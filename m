@@ -2,76 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1206345C2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 13:45:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DD1A345C8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 13:45:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kR//3pNQ3nMqf9DzEMrWUkQqIBijL8G34StG4MY06OQ=; b=n0geXjN2u/fQjS
-	56hJM3ZW6IOY7e6VRxEcLNhfWi/Vf+xbM/xDs9X5isoGyBOlcRf76NYUIDQnZQeo/4Dz+8aFmSffR
-	fkBi6DiPgG9VJXK+whp/Yq/DQrW/x0ViDuQBifDLkzr7X9PayFq9dL2ObbeDtKrZuIc6WYA8l4rqZ
-	2u/r4s1IxSKhV58lvrd5V7bwRSlHCYdwLDRaHnRQKv/Z8UgqM+RToSzICXGTIL1pY/p+YFGTpsFde
-	D9OGSSggEWFb02voZ4lTYESBibv5YkiPPRkKl5KqaVUauZWMFcJM1cXQuxD/DYhcDwHQG4Kc1RmCX
-	VBvvkL0p53fNaWo/GAtA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H6NGU5Fb+qs+tQBpEM3Z5f7JBLdisZoyfq7kPv53x10=; b=lbHUzEAc/naty4
+	YN+Ep797i66s4lPnDp4Yiwg4uIsrQ1LqjYYjiJ4l6Ly2ICXVrq0RYTTIAEKxBCTe6+yrgK5OYZKnT
+	YMfC7saQNKrI2stP/8LBa1f0TbjzSm2k0AdvGm4MaHnPQFjPPK3X1c6IKRz2T0OFGygZaSV5ftalq
+	1lwSOa0QymHIzpqzTY491iAJkfZ0AEjDUB8RHsF1kwPeagh4j4xwk0wjS+YCar6DofNwIK8M396wO
+	I+k5Hq/dEqWhLmj+aH/ZImKJleXaqqVHGrUfRsFpKXhfkkPmyGyaGsQk7LwhTnkifjhEVV9ee65SZ
+	QDn2edGOIYiVX4ozwY4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY7sC-0007Gk-9S; Tue, 04 Jun 2019 11:45:00 +0000
-Received: from mail-ot1-x349.google.com ([2607:f8b0:4864:20::349])
+	id 1hY7su-0000I1-5q; Tue, 04 Jun 2019 11:45:44 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY7s5-0007Fp-53
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 11:44:54 +0000
-Received: by mail-ot1-x349.google.com with SMTP id p7so3049426otk.22
+ id 1hY7sn-0000Gr-2i
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 11:45:38 +0000
+Received: by mail-pl1-x644.google.com with SMTP id cl9so3141520plb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 04:44:50 -0700 (PDT)
+ Tue, 04 Jun 2019 04:45:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=XCrbwdAiEJS3sao46jIToUSxgqStqSIKmjosXIycN10=;
- b=OQowASfC1DkZBD6ZzOOewK6YqgU2ZfNgbzHcLMXLm94xATdoL7pRsYoq0Ca983wUlW
- 1AzHjVsjPZzLOSw/EYwBC5zTDiT3rRisFVr0otD4kGjI5Q1J+eBrFP3oWQBc3R8o7rZS
- +nEENWNe0lpacPo8kwRr2Cz7TDEttnz9npQcNVZJmeIO9eL9YROdUfyY9G7dPjCT5G4S
- n3vggAvgZl5bnPFVyY5V8gpZBFjsU9LmOWcovr1/jb8oFePv4CCtwEGaE9uoVlfJANln
- MTN/BlGEha/hwcouVsL2ZU5SkLr7wvck5RykyLLoKj5+diBYr1ixXCNWeLnwmH0fmyZF
- THpA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ROpXrP+r2OC9uJKtrd7VeU5I2GEkuLFi73TKRyEYr3w=;
+ b=YbXtk1gZpPouwSYE2Vhs1oY1Y4f37CPgCl4rhCDKDXOACPNCfLr9np6wKfbnqxvNqK
+ net1HG8o5wBQb4vNApxrOerpg8MX7Frcm0nkoJCRedOp4gIlsU8B+szPQLnyAp7uDFz6
+ 18a5z5D1t2cCXPLwVyjN57+1xoFuuaOeWrZS3QYEL6m6NSRbpHdyTtJVRsjz8hDvO7ay
+ x4MfN3T0GXyhVOPDl8Cb4swrSICIbrgdMT9k5w6B73MKVGcGVf0T8Ojj0gm6GQdck4bi
+ ehe9TCYVm49T6ewlmRPV9pTGt0imE7M4Hg2EyyudgsziWrwS3zmaj416nN50DFpNVxSV
+ 8gRg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=XCrbwdAiEJS3sao46jIToUSxgqStqSIKmjosXIycN10=;
- b=LTlYDYTjnjrdDBDBiUHirV0sJOE0ydDtbNHaYOIYWAWGkcjVVsyDeVn2l6MSUumOV3
- RWeaglvrmfvw2B+GSh8WmFwCid+1nLZHa9G4Jbu8V9L455AhTiSZS5xMU/FXTawY2I8H
- xooZyVeOKxKpdFAfG6UJzoevOHdkvu8m7hykTcQ0GDAuAb+eFFTsUCdSM1qUCG94Pu+R
- caGYvZBI7Az2ttVlQ466eJuGQaE6M2cJqIUdEBHCUSmprGpzFZEjVbXPMD2VtdQfJZcN
- rq0BtcfhH4fWKVkjnqK5aF5Y1OGQZBxFTfQjpdObuQ2hKjNbZAWYW6GA1KjQb55EDUtz
- tj7g==
-X-Gm-Message-State: APjAAAVcVHsQwmBJunnNmZRKztr8roSLSSPrSeEiZw2L5TWrYh5GwpVn
- YLKGjPsvjwaAjcZsty+0vHVYQxpF+Om7iR+t
-X-Google-Smtp-Source: APXvYqwXsyeZ/z4p68zy0w3OgwmszH6BSy/5gFuyx/JVk90VXHjFqwFwXGlvbDPhexYH3Gb/pFc8t/if0dU8diyp
-X-Received: by 2002:aca:b108:: with SMTP id a8mr4013564oif.81.1559648689594;
- Tue, 04 Jun 2019 04:44:49 -0700 (PDT)
-Date: Tue,  4 Jun 2019 13:44:45 +0200
-Message-Id: <8ab5cd1813b0890f8780018e9784838456ace49e.1559648669.git.andreyknvl@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.22.0.rc1.311.g5d7573a151-goog
-Subject: [PATCH] uaccess: add noop untagged_addr definition
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ROpXrP+r2OC9uJKtrd7VeU5I2GEkuLFi73TKRyEYr3w=;
+ b=DYDk06GBiZZhgQvHHD3vsxjvZNvZUfqqMZTA6HD2XHiXsfEnsOcke60+k5CkCcDwxN
+ AMeRebaXBRFGFiEg+P8bMdAdgN7pIk4hXzIbW4z1d+GapTVjUngVXDP9g4IyVfyCHgZS
+ l+NbiiIl0bbcH7DmC0TFWU+ob0lK1LB7385E0JFnxQlyoDbZELnDTldkwiIPIg86F1vn
+ BeW3HZ+YeFI9nFGWhzbIOGjSN02G1cCs5j6d0gej4dD3cYhTtnRqPown3HX94vCSRIRX
+ Ti0htvLFROaBeFY7lkeIoDGMXcSsIsSljL7D/Pm0QYF0YCDN2KKeIVl8i+cSBAZv7e+v
+ 1gfw==
+X-Gm-Message-State: APjAAAUXDg6ZGPEPT/mgGrKfg2p/LAIA8e0JZ1/UdZPlISEe7tYzU5hu
+ 3Ci/if1bnoje1DlnAic+3BGaWJQr2R0/67wk+1gDqQXLN0I=
+X-Google-Smtp-Source: APXvYqw/MEeiL2bhH+9bBygV1lo6Im71uAjcUSVWx84fFkrTwjlzF36BIb4PZCfj0/vMKrfmiVx/F/2QMSAp/3q5QEs=
+X-Received: by 2002:a17:902:8609:: with SMTP id
+ f9mr33680584plo.252.1559648735444; 
+ Tue, 04 Jun 2019 04:45:35 -0700 (PDT)
+MIME-Version: 1.0
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <097bc300a5c6554ca6fd1886421bb2e0adb03420.1559580831.git.andreyknvl@google.com>
+ <8ff5b0ff-849a-1e0b-18da-ccb5be85dd2b@oracle.com>
+ <CAAeHK+xX2538e674Pz25unkdFPCO_SH0pFwFu=8+DS7RzfYnLQ@mail.gmail.com>
+ <f6711d31-e52c-473a-d7ad-b2d63131d7a5@oracle.com>
+ <20190603172916.GA5390@infradead.org>
+ <7a687a26-fc3e-2caa-1d6a-464f1f7e684c@oracle.com>
+In-Reply-To: <7a687a26-fc3e-2caa-1d6a-464f1f7e684c@oracle.com>
 From: Andrey Konovalov <andreyknvl@google.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, 
- sparclinux@vger.kernel.org, linux-mm@kvack.org, linux-kernel@vger.kernel.org
+Date: Tue, 4 Jun 2019 13:45:24 +0200
+Message-ID: <CAAeHK+wccK1upfOWxNbZBR0BUWT23VFUFEqRTEp3H+8hXN8yzw@mail.gmail.com>
+Subject: Re: [PATCH v16 01/16] uaccess: add untagged_addr definition for other
+ arches
+To: Khalid Aziz <khalid.aziz@oracle.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_044453_195525_9C45C885 
-X-CRM114-Status: GOOD (  10.28  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190604_044537_116877_D11E6581 
+X-CRM114-Status: GOOD (  17.98  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:349 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,7 +90,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,22 +104,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
  Felix Kuehling <Felix.Kuehling@amd.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
  Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
  Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
  Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
  Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
  Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
  Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
  Alexander Deucher <Alexander.Deucher@amd.com>,
  Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
@@ -119,37 +137,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Architectures that support memory tagging have a need to perform untagging
-(stripping the tag) in various parts of the kernel. This patch adds an
-untagged_addr() macro, which is defined as noop for architectures that do
-not support memory tagging. The oncoming patch series will define it at
-least for sparc64 and arm64.
+On Mon, Jun 3, 2019 at 8:17 PM Khalid Aziz <khalid.aziz@oracle.com> wrote:
+>
+> On 6/3/19 11:29 AM, Christoph Hellwig wrote:
+> > On Mon, Jun 03, 2019 at 11:24:35AM -0600, Khalid Aziz wrote:
+> >> On 6/3/19 11:06 AM, Andrey Konovalov wrote:
+> >>> On Mon, Jun 3, 2019 at 7:04 PM Khalid Aziz <khalid.aziz@oracle.com> wrote:
+> >>>> Andrey,
+> >>>>
+> >>>> This patch has now become part of the other patch series Chris Hellwig
+> >>>> has sent out -
+> >>>> <https://lore.kernel.org/lkml/20190601074959.14036-1-hch@lst.de/>. Can
+> >>>> you coordinate with that patch series?
+> >>>
+> >>> Hi!
+> >>>
+> >>> Yes, I've seen it. How should I coordinate? Rebase this series on top
+> >>> of that one?
+> >>
+> >> That would be one way to do it. Better yet, separate this patch from
+> >> both patch series, make it standalone and then rebase the two patch
+> >> series on top of it.
+> >
+> > I think easiest would be to just ask Linus if he could make an exception
+> > and include this trivial prep patch in 5.2-rc.
+> >
+>
+> Andrey,
+>
+> Would you mind updating the commit log to make it not arm64 specific and
+> sending this patch out by itself. We can then ask Linus if he can
+> include just this patch in the next rc.
 
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
-Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
----
- include/linux/mm.h | 4 ++++
- 1 file changed, 4 insertions(+)
+Sure! Just sent it out.
 
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 0e8834ac32b7..949d43e9c0b6 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -99,6 +99,10 @@ extern int mmap_rnd_compat_bits __read_mostly;
- #include <asm/pgtable.h>
- #include <asm/processor.h>
- 
-+#ifndef untagged_addr
-+#define untagged_addr(addr) (addr)
-+#endif
-+
- #ifndef __pa_symbol
- #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
- #endif
--- 
-2.22.0.rc1.311.g5d7573a151-goog
-
+>
+> Thanks,
+> Khalid
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
