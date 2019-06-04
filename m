@@ -2,49 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D2F9349DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:14:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FE37349EF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:18:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HXghNu+WgmfQ51wP6SeMo7dPeuzIFSOeGYWKIDFksHc=; b=VuPEsXNwNhL46t
-	Bp28zr+gUwjFJkfxId2lgTBK50bp+ijrRXxbAe7FFws2tGH+RIhvgH7W57s7a6hHLxLQjE1ZnEjBM
-	Td+AA8X/QE2+Fj8F3yZ2XzGYWG5iTy66TSq8BPBzBwX5Y4qi0MoVxYpsN6N6LSzKaCugwqD30zc7c
-	HNKIdmvP/jgELXVAu2l/z9Ky9lQNJWcFScLsi1yQzEsa3iXT2hYSEFG2r5m6Gii46XMlgJ6LLnCJT
-	XRGi0F9PJ4rNDu8Ebzj8WW+/J+7QOo05XmhBreHfykPHs2s9BhOfxuodwcWZKkNk/3dYX4x/KlDZQ
-	v8G5o6vOwE8JLYxON5tw==;
+	List-Owner; bh=mIQhNee6s2PGlQWWZEVTZim1P2ulaRw51tx7lZN8Fso=; b=fIy+xuxpSfG2Ym
+	hqf2ej0fXhJps13mw9aYVgaiUvAZKMJeWvR1pX47H6HgaGLzRw6h/D+uFbAYl5hzB5OsNsF7hQhKS
+	b/cEIpqjuEaOblknkZ9xPstt7bPbT7lQqm80w4VKMJhEHCJ4//01xCIQ1/edOoAKl6BlpeVPenO76
+	X83JyG6PSfCUxHXCEs99cSP22x5tO49xR9B6kRPNQgAcP1EU65JQaA9EVLVLGGM4IV5zgKI+Erffa
+	QSbf5OzVbuATo+Pts2vHqZEc05jLGBR4U/885qH7pbAAWzgt9Q4EV3TG2Uk4MB28T7KFIG5kjgG4F
+	4T7I0Nk5IxuT4Ts4+L7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAD8-0008JB-DX; Tue, 04 Jun 2019 14:14:46 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAD1-0008I3-25; Tue, 04 Jun 2019 14:14:40 +0000
-Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hYACw-0001Zj-Uz; Tue, 04 Jun 2019 16:14:34 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] ARM: dts: rockchip: Add pin names for rk3288-veyron jaq,
- mickey, speedy
-Date: Tue, 04 Jun 2019 16:14:34 +0200
-Message-ID: <1748246.UnQIR8Fo6l@phil>
-In-Reply-To: <20190524233309.45420-1-dianders@chromium.org>
-References: <20190524233309.45420-1-dianders@chromium.org>
+	id 1hYAGa-0001fA-8w; Tue, 04 Jun 2019 14:18:20 +0000
+Received: from [179.182.172.34] (helo=bombadil.infradead.org)
+ by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYAGH-0001Rw-UE; Tue, 04 Jun 2019 14:18:01 +0000
+Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
+ (envelope-from <mchehab@bombadil.infradead.org>)
+ id 1hYAGE-0002kz-LE; Tue, 04 Jun 2019 11:17:58 -0300
+From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH v2 06/22] docs: mark orphan documents as such
+Date: Tue,  4 Jun 2019 11:17:40 -0300
+Message-Id: <4afa83787acec906c383978dc01f286940e28616.1559656538.git.mchehab+samsung@kernel.org>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <cover.1559656538.git.mchehab+samsung@kernel.org>
+References: <cover.1559656538.git.mchehab+samsung@kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_071439_254172_C3598F8B 
-X-CRM114-Status: GOOD (  15.40  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -56,44 +45,177 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- briannorris@chromium.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-rockchip@lists.infradead.org,
- mka@chromium.org, ryandcase@chromium.org, linux-arm-kernel@lists.infradead.org
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ dri-devel@lists.freedesktop.org, platform-driver-x86@vger.kernel.org,
+ Paul Mackerras <paulus@samba.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Alexandre Torgue <alexandre.torgue@st.com>, Jonathan Corbet <corbet@lwn.net>,
+ Michael Ellerman <mpe@ellerman.id.au>, David Airlie <airlied@linux.ie>,
+ Andrew Donnellan <ajd@linux.ibm.com>, linux-pm@vger.kernel.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Matan Ziv-Av <matan@svgalib.org>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Frederic Barrat <fbarrat@linux.ibm.com>, linuxppc-dev@lists.ozlabs.org,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Samstag, 25. Mai 2019, 01:33:09 CEST schrieb Douglas Anderson:
-> This is like commit 0ca87bd5baa6 ("ARM: dts: rockchip: Add pin names
-> for rk3288-veyron-jerry") and commit ca3516b32cd9 ("ARM: dts:
-> rockchip: Add pin names for rk3288-veyron-minnie") but for 3 more
-> veyron boards.
-> 
-> A few notes:
-> - While there is most certainly duplication between all the veyron
->   boards, it still feels like it is sane to just have each board have
->   a full list of its pin names.  The format of "gpio-line-names" does
->   not lend itself to one-off overriding and besides it seems sane to
->   more fully match schematic names.  Also note that the extra
->   duplication here is only in source code and is unlikely to ever
->   change (since these boards are shipped).  Duplication in the .dtb
->   files is unavoidable.
-> - veyron-jaq and veyron-mighty are very closely related and so I have
->   shared a single list for them both with comments on how they are
->   different.  This is just a typo fix on one of the boards, a possible
->   missing signal on one of the boards (or perhaps I was never given
->   the most recent schematics?) and dealing with the fact that one of
->   the two boards has full sized SD.
-> 
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Sphinx doesn't like orphan documents:
 
-applied for 5.3 with Matthias Rb.
+    Documentation/accelerators/ocxl.rst: WARNING: document isn't included in any toctree
+    Documentation/arm/stm32/overview.rst: WARNING: document isn't included in any toctree
+    Documentation/arm/stm32/stm32f429-overview.rst: WARNING: document isn't included in any toctree
+    Documentation/arm/stm32/stm32f746-overview.rst: WARNING: document isn't included in any toctree
+    Documentation/arm/stm32/stm32f769-overview.rst: WARNING: document isn't included in any toctree
+    Documentation/arm/stm32/stm32h743-overview.rst: WARNING: document isn't included in any toctree
+    Documentation/arm/stm32/stm32mp157-overview.rst: WARNING: document isn't included in any toctree
+    Documentation/gpu/msm-crash-dump.rst: WARNING: document isn't included in any toctree
+    Documentation/interconnect/interconnect.rst: WARNING: document isn't included in any toctree
+    Documentation/laptops/lg-laptop.rst: WARNING: document isn't included in any toctree
+    Documentation/powerpc/isa-versions.rst: WARNING: document isn't included in any toctree
+    Documentation/virtual/kvm/amd-memory-encryption.rst: WARNING: document isn't included in any toctree
+    Documentation/virtual/kvm/vcpu-requests.rst: WARNING: document isn't included in any toctree
 
-Thanks
-Heiko
+So, while they aren't on any toctree, add :orphan: to them, in order
+to silent this warning.
 
+Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+---
+ Documentation/accelerators/ocxl.rst             | 2 ++
+ Documentation/arm/stm32/overview.rst            | 2 ++
+ Documentation/arm/stm32/stm32f429-overview.rst  | 2 ++
+ Documentation/arm/stm32/stm32f746-overview.rst  | 2 ++
+ Documentation/arm/stm32/stm32f769-overview.rst  | 2 ++
+ Documentation/arm/stm32/stm32h743-overview.rst  | 2 ++
+ Documentation/arm/stm32/stm32mp157-overview.rst | 2 ++
+ Documentation/gpu/msm-crash-dump.rst            | 2 ++
+ Documentation/interconnect/interconnect.rst     | 2 ++
+ Documentation/laptops/lg-laptop.rst             | 2 ++
+ Documentation/powerpc/isa-versions.rst          | 2 ++
+ 11 files changed, 22 insertions(+)
+
+diff --git a/Documentation/accelerators/ocxl.rst b/Documentation/accelerators/ocxl.rst
+index 14cefc020e2d..b1cea19a90f5 100644
+--- a/Documentation/accelerators/ocxl.rst
++++ b/Documentation/accelerators/ocxl.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ ========================================================
+ OpenCAPI (Open Coherent Accelerator Processor Interface)
+ ========================================================
+diff --git a/Documentation/arm/stm32/overview.rst b/Documentation/arm/stm32/overview.rst
+index 85cfc8410798..f7e734153860 100644
+--- a/Documentation/arm/stm32/overview.rst
++++ b/Documentation/arm/stm32/overview.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ ========================
+ STM32 ARM Linux Overview
+ ========================
+diff --git a/Documentation/arm/stm32/stm32f429-overview.rst b/Documentation/arm/stm32/stm32f429-overview.rst
+index 18feda97f483..65bbb1c3b423 100644
+--- a/Documentation/arm/stm32/stm32f429-overview.rst
++++ b/Documentation/arm/stm32/stm32f429-overview.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ STM32F429 Overview
+ ==================
+ 
+diff --git a/Documentation/arm/stm32/stm32f746-overview.rst b/Documentation/arm/stm32/stm32f746-overview.rst
+index b5f4b6ce7656..42d593085015 100644
+--- a/Documentation/arm/stm32/stm32f746-overview.rst
++++ b/Documentation/arm/stm32/stm32f746-overview.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ STM32F746 Overview
+ ==================
+ 
+diff --git a/Documentation/arm/stm32/stm32f769-overview.rst b/Documentation/arm/stm32/stm32f769-overview.rst
+index 228656ced2fe..f6adac862b17 100644
+--- a/Documentation/arm/stm32/stm32f769-overview.rst
++++ b/Documentation/arm/stm32/stm32f769-overview.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ STM32F769 Overview
+ ==================
+ 
+diff --git a/Documentation/arm/stm32/stm32h743-overview.rst b/Documentation/arm/stm32/stm32h743-overview.rst
+index 3458dc00095d..c525835e7473 100644
+--- a/Documentation/arm/stm32/stm32h743-overview.rst
++++ b/Documentation/arm/stm32/stm32h743-overview.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ STM32H743 Overview
+ ==================
+ 
+diff --git a/Documentation/arm/stm32/stm32mp157-overview.rst b/Documentation/arm/stm32/stm32mp157-overview.rst
+index 62e176d47ca7..2c52cd020601 100644
+--- a/Documentation/arm/stm32/stm32mp157-overview.rst
++++ b/Documentation/arm/stm32/stm32mp157-overview.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ STM32MP157 Overview
+ ===================
+ 
+diff --git a/Documentation/gpu/msm-crash-dump.rst b/Documentation/gpu/msm-crash-dump.rst
+index 757cd257e0d8..240ef200f76c 100644
+--- a/Documentation/gpu/msm-crash-dump.rst
++++ b/Documentation/gpu/msm-crash-dump.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ =====================
+ MSM Crash Dump Format
+ =====================
+diff --git a/Documentation/interconnect/interconnect.rst b/Documentation/interconnect/interconnect.rst
+index c3e004893796..56e331dab70e 100644
+--- a/Documentation/interconnect/interconnect.rst
++++ b/Documentation/interconnect/interconnect.rst
+@@ -1,5 +1,7 @@
+ .. SPDX-License-Identifier: GPL-2.0
+ 
++:orphan:
++
+ =====================================
+ GENERIC SYSTEM INTERCONNECT SUBSYSTEM
+ =====================================
+diff --git a/Documentation/laptops/lg-laptop.rst b/Documentation/laptops/lg-laptop.rst
+index aa503ee9b3bc..f2c2ffe31101 100644
+--- a/Documentation/laptops/lg-laptop.rst
++++ b/Documentation/laptops/lg-laptop.rst
+@@ -1,5 +1,7 @@
+ .. SPDX-License-Identifier: GPL-2.0+
+ 
++:orphan:
++
+ LG Gram laptop extra features
+ =============================
+ 
+diff --git a/Documentation/powerpc/isa-versions.rst b/Documentation/powerpc/isa-versions.rst
+index 812e20cc898c..66c24140ebf1 100644
+--- a/Documentation/powerpc/isa-versions.rst
++++ b/Documentation/powerpc/isa-versions.rst
+@@ -1,3 +1,5 @@
++:orphan:
++
+ CPU to ISA Version Mapping
+ ==========================
+ 
+-- 
+2.21.0
 
 
 _______________________________________________
