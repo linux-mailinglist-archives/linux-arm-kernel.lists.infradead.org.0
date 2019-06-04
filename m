@@ -2,72 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 230E534AB4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:45:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B116834ABE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:46:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3C8SLgL+ONUGUHFaJUCvoFVpeoOhw+qNDsWpaf128bU=; b=HaCIRto/TzeX8xnl9UOei2Y0q
-	T3RUPSliy1SO50/K77qPI3BhlbyAWtetRtZPU9P4vc+UvRJvAKQ1r46/5dYYlHBQqyaYC9/NtUvpF
-	urLkPWAkvph3tde5YOZfEduK7y9VIOJ8nE29CqPJoGYMdezHVFWHl+1kW/IAfjlUjXmFeTDVs/ALE
-	oHmtiTtUQwCa9FZwnfar/bGSBV5JKwma5N6l9+iSRGFtQEoy3iJ3d5/nsTEi1l5Y+cQUAjB4+UpiH
-	Tu28xfAVLAiPgt7iIX2yqa6DxHFxp7R0wJFk7mBarNARyWwAocVqha+KFuyX4DszP+xQSUQ9B7NdQ
-	aw5Oqum5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xLyhMY5GiG/iFq5ojxlMSusa8Fpvml80c++sw22QOcM=; b=ulOnkV/2Mi881O
+	d/FUYkOiVPMMPICLteFtcAKHzhHbnSIE0UXHuff4UAu9e1tHI9p1LR+PtLDngUzsnBjQwu/G3M8fx
+	rIPEmhDUZ4U0aj2MvSM4iLX6MsJtWPlH2Oab3GSzf4qzZ+X1TmBb72gfJJDUtJYbR7PbPskS5DYZw
+	0gYW3Sh8UTVqpVhFX6vRJXgZo+plKg8KEoOOnBuiIZ6PEe0A0qW3z9iIg0P9F2XpsSQHou+BEYuZ5
+	Os7FmKJtyFU2EXk58YciFo6DEa7HoZplEOKD0nLDQtlZm4xcX9UfMIU0h5Wl0lKFPdykd+W+aL2Ni
+	6kHDCarKM74Um2ECN4bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAh6-0006WC-Ef; Tue, 04 Jun 2019 14:45:44 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAgp-0006Ir-IR
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:45:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=N28LjJkz/Mx7r43eirlH7u4WWvO5iyeKXFG3ckomDW0=; b=IINgz0Wv1nxvpFB4EdBRt3GPR
- BIgOEMg69TUSP8LNtkgFxC5fQtoAn7quvxOvuYgNCQn8VE21LD84sKKNii1mNXZu3NxcigGTLP13L
- Nv6NmS0WC3v7cTI0CWqgzKX6MQkEPW0ADhZMT5kjmtn3smBZkvsLBO8mmASeuS3hPweM4=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hYAgg-0006D5-Eu; Tue, 04 Jun 2019 14:45:18 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id AD932440046; Tue,  4 Jun 2019 15:45:17 +0100 (BST)
-Date: Tue, 4 Jun 2019 15:45:17 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH] ASoC: sun4i-i2s: Change SR and WSS computation
-Message-ID: <20190604144517.GF2456@sirena.org.uk>
-References: <20190604085449.13195-1-maxime.ripard@bootlin.com>
+	id 1hYAhs-0006sc-KR; Tue, 04 Jun 2019 14:46:32 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYAhj-0006rR-Nk
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:46:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BC93C341;
+ Tue,  4 Jun 2019 07:46:21 -0700 (PDT)
+Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 41CE73F690;
+ Tue,  4 Jun 2019 07:46:20 -0700 (PDT)
+From: James Morse <james.morse@arm.com>
+To: linux-arm-kernel@lists.infradead.org,
+	kvmarm@lists.cs.columbia.edu
+Subject: [PATCH v1 0/6] KVM: arm64: Account host/guest SError more precisely
+ (Neoverse-N1 #1349291)
+Date: Tue,  4 Jun 2019 15:45:45 +0100
+Message-Id: <20190604144551.188107-1-james.morse@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190604085449.13195-1-maxime.ripard@bootlin.com>
-X-Cookie: The other line moves faster.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_074528_117587_34C73218 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190604_074623_787882_89EEDB00 
+X-CRM114-Status: GOOD (  13.17  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,76 +61,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
- Marcus Cooper <codekipper@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3270520772289476369=="
+Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
+ James Morse <james.morse@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello!
 
---===============3270520772289476369==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="PLVMksexArUZ/iL3"
-Content-Disposition: inline
+v1? Yes: I intend to repost this with/without the last two patches
+depending on whether anyone thinks they are needed, and should be considered
+as part of this series, or separate.
 
+This series started as a workaround for Neoverse-N1 #1349291, but has
+become an improvement in RAS error accounting for KVM on arm64.
 
---PLVMksexArUZ/iL3
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Neoverse-N1 affected by #1349291 may report an Uncontained RAS Errors
+as Unrecoverable. [0] This is the difference between killing the thread and
+killing the machine.
+The workaround is to treat all Unrecoverable SError as Uncontained.
+The arch code's SError handling already does this, due to its nascent
+kernel-first support.
 
-On Tue, Jun 04, 2019 at 10:54:49AM +0200, Maxime Ripard wrote:
-> The current computation for the SR (sample resolution) and the WSS (word
-> slot size) register parameters is based on a switch returning the matching
-> parameters for a given params width.
-
-This doesn't build for me with current code:
-
-  CC      sound/soc/sunxi/sun4i-i2s.o
-sound/soc/sunxi/sun4i-i2s.c:169:28: warning: =E2=80=98struct sun4i_i2s=E2=
-=80=99 declared inside parameter list will not be visible outside of this d=
-efinition or declaration
-  s8 (*get_sr)(const struct sun4i_i2s *, int);
-                            ^~~~~~~~~
-sound/soc/sunxi/sun4i-i2s.c:170:29: warning: =E2=80=98struct sun4i_i2s=E2=
-=80=99 declared inside parameter list will not be visible outside of this d=
-efinition or declaration
-  s8 (*get_wss)(const struct sun4i_i2s *, int);
-                             ^~~~~~~~~
-
-and lots of similar stuff.
-
---PLVMksexArUZ/iL3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlz2g/wACgkQJNaLcl1U
-h9BCIgf/WLTKo7F+GH5yembRxj+jHQz35TZZPqb9mhx/Hyogn+/+bF5LeqEi8hKq
-L7Mpzf0KyzhKz/VDRGc3TlsLihsQ0okqybE+/PlOS3Y7DRvd115KYLsOdfVYOucD
-bF48im6bMWWARcoIyK6B2vAYx9y28Z4qUgLcJGOcLVwwCC1K/nq6A9kFul0lXXs6
-44SRqWz911MOpt3VCP2FHpMnjiHcJP9nZ0pRZTmaV057lQCthPaCNuz+r5nzGy/Z
-Oh8Q+0DbkTmOriia5YZ6OY83lRYHBKFEPtc3nf3zuxgesObEJdvPVRur6ZGZSNDL
-tKXQOFITXAVWrTfyE+Z809Bz1jgX5g==
-=cwPD
------END PGP SIGNATURE-----
-
---PLVMksexArUZ/iL3--
+So only KVM needs some work as it has its own SError handling as we want
+KVM to handle guest:SError and the host to handle host:SError.
 
 
---===============3270520772289476369==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Instead of working around the errata in KVM, we account SError as precisely
+as we can instead. This means moving the ESB-instruction into the guest-exit
+vectors, and deferring guest-entry if there is an SError pending. (so that the
+host's existing handling takes it).
+
+This is all good stuff, but it comes with the cost of a dsb in the
+world-switch code. It's the non-RAS non-VHE systems that will see this
+as costly. Benchmarked using kvm-ws-tests's do_hvc [1] on Seattle:
+
+| v5.2-rc1            mean:4339 stddev:33
+| v5.2-rc1+patches1-4 mean:4476 stddev: 2
+| with series 3.15% slower
+
+
+Patch 5 replaces this dsb with a nop if the system doesn't have v8.2
+as these systems are unlikely to report errors in a way that we can
+handle.
+
+| 5.2-rc1+patches1-5 mean:4405 stddev:31
+| with series 1.53% slower
+
+
+Patch 6 applies the same ISR_EL1 trick to avoid unmasking SError on
+guest-exit, which avoids a pstate-write and more system register reads.
+I'm aware 'vaxorcism' isn't an english word...)
+
+After all this:
+| v5.2-rc1+patches1-6 mean:4309 stddev:26
+| with series 0.69% faster
+
+
+So for hardware that doesn't benefit from the extra work, we are back where
+we started.
+
+If the performance-game is valid, I intend to squash patch 5 into patch 3,
+and post patch 6 independently. I don't think patch 6 should be backported,
+but patch 5 would be fair game if its squashed in.
+
+
+Thanks,
+
+James
+
+[0] account-required: https://developer.arm.com/docs/sden885747/latest/arm-neoverse-n1-mp050-software-developer-errata-notice
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/maz/kvm-ws-tests.git/
+
+James Morse (6):
+  KVM: arm64: Abstract the size of the HYP vectors pre-amble
+  KVM: arm64: Consume pending SError as early as possible
+  KVM: arm64: Defer guest entry when an asynchronous exception is
+    pending
+  arm64: Update silicon-errata.txt for Neoverse-N1 #1349291
+  KVM: arm64: nop out dsb in __guest_enter() unless we have v8.2 RAS
+  KVM: arm64: Skip more of the SError vaxorcism
+
+ Documentation/arm64/silicon-errata.txt |  1 +
+ arch/arm64/include/asm/kvm_asm.h       |  6 +++++
+ arch/arm64/kernel/traps.c              |  4 ++++
+ arch/arm64/kvm/hyp/entry.S             | 33 ++++++++++++++++++++------
+ arch/arm64/kvm/hyp/hyp-entry.S         | 12 +++++++++-
+ arch/arm64/kvm/va_layout.c             |  7 +++---
+ 6 files changed, 51 insertions(+), 12 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3270520772289476369==--
-
