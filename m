@@ -2,99 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE27235312
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 01:22:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CB503547B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 01:41:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5iAzo0RNrXxSliu/6ykolu3axygMEtZajuU+uNZh/OM=; b=Y5LLGkkqXfmXsS
-	56GZ4jomGuFAP+1WAn5tlpx+z2LWzjQznGCQ/mvybIfJRDmg91SV1u8i26jsG2bnZcZEcMLt3Xos6
-	5GbPLvt4tT7xYDf4GMuf8ziYHICjGiH+5gwkoxCGMcJGYI9SC7uTzvbILpBbXtVYGboqzTTxuCNXs
-	tI1HIAUEXAmhbh1rVphQnqYh221+bXC2YTav3nZKSXwqUkLalYdNaVZsbq/rIWXUgqertHqtBPT6b
-	tXA5vWog6m/Ak00qmQjPfBEzxWlZKmQ/x++aAYgLzDXsRi6MhspIp7mx+EGVV0kzwgexVQq1rcocf
-	9jATEqt3tWlU4kJ/dRkg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J9TkM01qUt8BnBBswH6CM5JbEyLRvccvo50XVcZhDD0=; b=i2nKTm9sJzbabE
+	bj8asafzbOKwlo1Z410yodO3fMyPTEvLZygyK8xerwY7xVIzWKKp6SraqzuG4/Uyh5VtXj3/t16bd
+	Z5iZSQzwSTkpImzGq8fCbZ52JxHUyGXNeQzlISL2eo1rPeSGVXlX74SJ6airi5vUkHL/lLqJCyDeT
+	8jxOywIahiPvPMLjNEop6dG0jnGbIjxUwqwFdIGDwkpd4RYDbYzKhisnthqHV7yTO/bNiDmil6wpI
+	qfldO5RwFIfLWrBep3qnTAgpCJrv4D0zTLCQdexDOm4aywnHruoEnPeTyX1EfwvVZXWPymwKRDCfJ
+	XDa56oBBohuY0ElDjFtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYIlG-0000my-TD; Tue, 04 Jun 2019 23:22:34 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1hYJ3L-0000Vu-5t; Tue, 04 Jun 2019 23:41:15 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYIl9-0000ls-GM
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 23:22:29 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x54NE9sa117761;
- Tue, 4 Jun 2019 23:21:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2018-07-02; bh=YXvYIW/TW5gVwJgPNuplVdUZS0b4Nt48gIxbsBj1q/A=;
- b=RtHIB50u7sCZX9RPoLJf0ZHJkpch7IXBg43GqRPBZNwQNAKIZ1Fe1PhgpNlRK+DGJQo8
- lSVGhzJjuIVibp+vRd2n7xvFHcA0mUp+yl6zRpu/O1SdhEbRN8KVPNzg3MuJ665wOt8D
- OXBjmWQJtRpmguu4bIch0Rtht6EHlilGvOM6jgxv+O/87WyMCwGCZo6Xse+EXPa8teDX
- rjR995hOuZyKMICZD2fQse9ORiTlNsim1r28tHpjiESTwKW8UAdpG+JsMg+tDWtWmsBh
- 96TEzBexMUmmKxxluIaxbJWn0djN0qPyA3q+05GNXykuOBeveW8FJpcOUIDfWQCPvZxz Pg== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 2suj0qfuae-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 04 Jun 2019 23:21:29 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x54NKbcE183651;
- Tue, 4 Jun 2019 23:21:28 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2swnhbvdnw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 04 Jun 2019 23:21:28 +0000
-Received: from abhmp0020.oracle.com (abhmp0020.oracle.com [141.146.116.26])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x54NLFRu018591;
- Tue, 4 Jun 2019 23:21:15 GMT
-Received: from [172.16.8.192] (/206.166.194.194)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 04 Jun 2019 16:21:15 -0700
-Mime-Version: 1.0 (Mac OS X Mail 10.2 \(3259\))
-Subject: Re: [PATCH v2 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-From: Alex Kogan <alex.kogan@oracle.com>
-In-Reply-To: <20190403160112.GK4038@hirez.programming.kicks-ass.net>
-Date: Tue, 4 Jun 2019 19:21:13 -0400
-Message-Id: <C0BC44A5-875C-4BED-A616-D380F6CF25D5@oracle.com>
-References: <20190329152006.110370-1-alex.kogan@oracle.com>
- <20190329152006.110370-4-alex.kogan@oracle.com>
- <60a3a2d8-d222-73aa-2df1-64c9d3fa3241@redhat.com>
- <20190402094320.GM11158@hirez.programming.kicks-ass.net>
- <6AEDE4F2-306A-4DF9-9307-9E3517C68A2B@oracle.com>
- <20190403160112.GK4038@hirez.programming.kicks-ass.net>
-To: Peter Zijlstra <peterz@infradead.org>, Waiman Long <longman@redhat.com>
-X-Mailer: Apple Mail (2.3259)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9278
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=998
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906040147
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9278
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906040147
+ id 1hYJ3D-0000Uv-IA
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 23:41:09 +0000
+Received: by mail-pl1-x643.google.com with SMTP id bh12so2885369plb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 16:41:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=PEW0YI52v17ROAEu88+lgWes0aNQUTZHMT31ckUQV0Y=;
+ b=k97nBHkWVfd4b6neMJHJ1ikRwOa0Dnrb283GaiQ9vr42eeTi4Bzx6eCgd+XwXVRSHQ
+ +onY9F03ZXXkt961UHeohcEMV+3oVQjVMP8xX5A5k2iFczJ8DXypJQjgkI6Y0qM4JS/K
+ X6xlrAgYcrnXayME8/5i7jtCSAS9PDoDxUXeIuPik6D3MpMv/zhxeVc2gd9oChlT0ywk
+ WLa+Ici1IoaTqRUddVaU+Bo3ZPhwVoZEoTDhExOOelm9e4OIM3C7JYQ+uXAByKwZJAdQ
+ j8E891XgJw6IGm1muVCiqTp+SlMuul/l0INLSkvimO8nHpLf8Va+JU3vk4R98MYNb2xr
+ CbWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=PEW0YI52v17ROAEu88+lgWes0aNQUTZHMT31ckUQV0Y=;
+ b=HuxsoNmC8aGidqXFEbxavv7eYvpJyQ0O6xl0aWL0UHi995K8Wcbs9AsDWA+yaAUzDY
+ iAlRg8Ixz2HEYRyGAq0fDMiBTAe0zpJurmyUojN7xSUF000NsEC02hhoTz/wJpdI7nI3
+ aecNt2JwXlXyqbiiBMMrpDZitrIAU85vi3OiArb8kVn7dIyX1//0gV3slmotF4SL9RJ8
+ wrQqWQrbq1PHUT3ZO2heHT6+dfqd4xW74lX4XpVxP9LSKjRQpDYRodI1AbyO5F07QJwv
+ pN0MwmsWKAKO92Zq1RHbQC5xhmMvFN4ogqdadK2AbXLc9dY/oTZw692r7XtSSKZtz4Xt
+ 3zHw==
+X-Gm-Message-State: APjAAAWycno55+KgSAyIZHeuhhWexEthHePQbPEUlQk9wu3Hjfo46HQa
+ VNq+MB+ijCL9BdpLDkRR0Am8zw==
+X-Google-Smtp-Source: APXvYqwB9Rs6qdMKX9gf7PQIrUTJvFAVQlDRxbVsBIYlA6lXkdsejqKkUUFki/Do31p/eXmdrr7tew==
+X-Received: by 2002:a17:902:d916:: with SMTP id
+ c22mr14264492plz.195.1559691666284; 
+ Tue, 04 Jun 2019 16:41:06 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id a9sm17192793pgw.72.2019.06.04.16.41.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 04 Jun 2019 16:41:05 -0700 (PDT)
+Date: Tue, 4 Jun 2019 16:41:03 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Will Deacon <will.deacon@arm.com>, Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iommu: io-pgtable: Support non-coherent page tables
+Message-ID: <20190604234103.GH4814@minitux>
+References: <20190515233234.22990-1-bjorn.andersson@linaro.org>
+ <CAFp+6iEMQd1uAWdkLysYWt0et8eRojoivG6+e78y0DU+4=H+_g@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAFp+6iEMQd1uAWdkLysYWt0et8eRojoivG6+e78y0DU+4=H+_g@mail.gmail.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_162227_692990_7DD00BE4 
-X-CRM114-Status: GOOD (  17.27  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190604_164107_608016_5AD73FF8 
+X-CRM114-Status: GOOD (  18.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -102,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,51 +100,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, arnd@arndb.de, dave.dice@oracle.com,
- x86@kernel.org, will.deacon@arm.com, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, Rahul Yadav <rahul.x.yadav@oracle.com>,
- mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- Steven Sistare <steven.sistare@oracle.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Daniel Jordan <daniel.m.jordan@oracle.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Vivek Gautam <vgautam@qti.qualcomm.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Vivek Gautam <vivek.gautam@codeaurora.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIFBldGVyLCBMb25nbWFuLCAKCj4gT24gQXByIDMsIDIwMTksIGF0IDEyOjAxIFBNLCBQZXRl
-ciBaaWpsc3RyYSA8cGV0ZXJ6QGluZnJhZGVhZC5vcmc+IHdyb3RlOgo+IAo+IE9uIFdlZCwgQXBy
-IDAzLCAyMDE5IGF0IDExOjM5OjA5QU0gLTA0MDAsIEFsZXggS29nYW4gd3JvdGU6Cj4gCj4+Pj4g
-VGhlIHBhdGNoIHRoYXQgSSBhbSBsb29raW5nIGZvciBpcyB0byBoYXZlIGEgc2VwYXJhdGUKPj4+
-PiBudW1hX3F1ZXVlZF9zcGlubG9ja19zbG93cGF0aCgpIHRoYXQgY29leGlzdHMgd2l0aAo+Pj4+
-IG5hdGl2ZV9xdWV1ZWRfc3BpbmxvY2tfc2xvd3BhdGgoKSBhbmQKPj4+PiBwYXJhdmlydF9xdWV1
-ZWRfc3BpbmxvY2tfc2xvd3BhdGgoKS4gQXQgYm9vdCB0aW1lLCB3ZSBzZWxlY3QgdGhlIG1vc3QK
-Pj4+PiBhcHByb3ByaWF0ZSBvbmUgZm9yIHRoZSBzeXN0ZW0gYXQgaGFuZC4KPj4gSXMgdGhpcyBo
-b3cgdGhpcyBzZWxlY3Rpb24gd29ya3MgdG9kYXkgZm9yIHBhcmF2aXJ0Pwo+PiBJIHNlZSBhIFBB
-UkFWSVJUX1NQSU5MT0NLUyBjb25maWcgb3B0aW9uLCBidXQgSUlVQyB5b3UgYXJlIHRhbGtpbmcg
-YWJvdXQgYSBkaWZmZXJlbnQgbWVjaGFuaXNtIGhlcmUuCj4+IENhbiB5b3UsIHBsZWFzZSwgZWxh
-Ym9yYXRlIG9yIGdpdmUgbWUgYSBsaW5rIHRvIGEgcGFnZSB0aGF0IGV4cGxhaW5zIHRoYXQ/Cj4g
-Cj4gT2ggbWFuLCB5b3UgYXNrIHVzIHRvIGV4cGxhaW4gaG93IHBhcmF2aXJ0IHBhdGNoaW5nIHdv
-cmtzLi4uIHRoYXQncwo+IG1hZ2ljIDotKQo+IAo+IEJhc2ljYWxseSwgdGhlIGNvbXBpbGVyIHdp
-bGwgZW1pdCBhIGJ1bmNoIG9mIGluZGlyZWN0IGNhbGxzIHRvIHRoZQo+IHZhcmlvdXMgcHZfb3Bz
-LiouKiBmdW5jdGlvbnMuCj4gCj4gVGhlbiwgYXQgYWx0ZXJuYXRpdmVfaW5zdHJ1Y3Rpb25zKCkg
-PC0gYXBwbHlfcGFyYXZpcnQoKSBpdCB3aWxsIHJld3JpdGUKPiBhbGwgdGhlc2UgaW5kaXJlY3Qg
-Y2FsbHMgdG8gZGlyZWN0IGNhbGxzIHRvIHRoZSBmdW5jdGlvbiBwb2ludGVycyB0aGF0Cj4gYXJl
-IGluIHRoZSBwdl9vcHMgc3RydWN0dXJlIGF0IHRoYXQgdGltZSAoKy0gbW9yZSBtYWdpYykuClRy
-eWluZyB0byByZXN1bWUgdGhpcyB3b3JrLCBJIGFtIGxvb2tpbmcgZm9yIGNvbmNyZXRlIHN0ZXBz
-IHJlcXVpcmVkIHRvIGludGVncmF0ZSBDTkEgd2l0aCB0aGUgcGFyYXZpcnQgcGF0Y2hpbmcuCgpM
-b29raW5nIGF0IGFsdGVybmF0aXZlX2luc3RydWN0aW9ucygpLCBJIHdvbmRlciBpZiBJIG5lZWQg
-dG8gYWRkIGFub3RoZXIgY2FsbCwgc29tZXRoaW5nIGxpa2UgYXBwbHlfbnVtYSgpIHNpbWlsYXIg
-dG8gYXBwbHlfcGFyYXZpcnQoKSwgYW5kIGRvIHRoZSBwYXRjaCB3b3JrIHRoZXJlLgpPciBwZXJo
-YXBzIEkgc2hvdWxkIOKAnGp1c3QiIGluaXRpYWxpemUgdGhlIHB2X29wcyBzdHJ1Y3R1cmUgd2l0
-aCB0aGUgY29ycmVzcG9uZGluZyBudW1hX3F1ZXVlZF9zcGlubG9ja19zbG93cGF0aCgpIGluIHBh
-cmF2aXJ0LmM/CgpBbHNvLCB0aGUgcGFyYXZpcnQgY29kZSBpcyB1bmRlciBhcmNoL3g4Niwgd2hp
-bGUgQ05BIGlzIGdlbmVyaWMgKG5vdCB4ODYtc3BlY2lmaWMpLgpEbyB5b3Ugc3RpbGwgd2FudCB0
-byBzZWUgQ05BLXJlbGF0ZWQgcGF0Y2hpbmcgcmVzaWRpbmcgdW5kZXIgYXJjaC94ODY/CgpXZSBz
-dGlsbCBuZWVkIGEgY29uZmlnIG9wdGlvbiAoc29tZXRoaW5nIGxpa2UgTlVNQV9BV0FSRV9TUElO
-TE9DS1MpIHRvIGVuYWJsZSBDTkEgcGF0Y2hpbmcgdW5kZXIgdGhpcyBjb25maWcgb25seSwgY29y
-cmVjdD8KClRoYW5rcyBpbiBhZHZhbmNlLArigJQgQWxleAoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed 15 May 23:47 PDT 2019, Vivek Gautam wrote:
+
+> On Thu, May 16, 2019 at 5:03 AM Bjorn Andersson
+> <bjorn.andersson@linaro.org> wrote:
+> >
+> > Describe the memory related to page table walks as non-cachable for iommu
+> > instances that are not DMA coherent.
+> >
+> > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+> > ---
+> >  drivers/iommu/io-pgtable-arm.c | 12 +++++++++---
+> >  1 file changed, 9 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> > index 4e21efbc4459..68ff22ffd2cb 100644
+> > --- a/drivers/iommu/io-pgtable-arm.c
+> > +++ b/drivers/iommu/io-pgtable-arm.c
+> > @@ -803,9 +803,15 @@ arm_64_lpae_alloc_pgtable_s1(struct io_pgtable_cfg *cfg, void *cookie)
+> >                 return NULL;
+> >
+> >         /* TCR */
+> > -       reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+> > -             (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
+> > -             (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
+> > +       if (cfg->quirks & IO_PGTABLE_QUIRK_NO_DMA) {
+> > +               reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+> > +                     (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_IRGN0_SHIFT) |
+> > +                     (ARM_LPAE_TCR_RGN_WBWA << ARM_LPAE_TCR_ORGN0_SHIFT);
+> > +       } else {
+> > +               reg = (ARM_LPAE_TCR_SH_IS << ARM_LPAE_TCR_SH0_SHIFT) |
+> > +                     (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_IRGN0_SHIFT) |
+> > +                     (ARM_LPAE_TCR_RGN_NC << ARM_LPAE_TCR_ORGN0_SHIFT);
+> > +       }
+> 
+> This looks okay to me based on the discussion that we had on a similar
+> patch that I
+> posted. So,
+> Reviewed-by: Vivek Gautam <vivek.gautam@codeaurora.org>
+> 
+> [1] https://lore.kernel.org/patchwork/patch/1032939/
+> 
+
+Will, Robin, any input on this patch?
+
+Regards,
+Bjorn
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
