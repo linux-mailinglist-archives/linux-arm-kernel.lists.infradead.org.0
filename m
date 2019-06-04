@@ -2,69 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4768B34412
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 12:14:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 135B43443D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 12:17:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8eHu3yrYNGT6oCykw1yHsAsiaaK9ucBfuzGbM3VdMtE=; b=nQ14nM0QKtvBSK
-	kicTXbGoURpNiHEIX5bITwu3oFq4XEnzeSeNPSyfaLc+TuMdrydrhi/ye06/0LzafFnqbihO2mxiE
-	6XfulIDfT1VWa8Q+f3KnVH7BQKCuAw6Fg4/bHvVka6YOXmDlxJwUV7B/oiwLDMplQ5YpIT9cqhMmr
-	HIfhVWrWTgACQ6hWcd0H3mnIg4s/KrNM6wfetIRNgkGYO+5898dEzW7XdODgJCU4FNRhlO8hgrtdC
-	0Q5dfFlGkGnn37VgGAHcYH5CX+mcNQeIY7w4CUphDS/XRFaLRp85K7nb4mgBuMJusncI6FC2k7Exo
-	2Hz9yIJKas/Y1+93vRtg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eBTWdijQYHAWIpPxAaxu1Ydif9nw60iZE1Bm22iX/rw=; b=Hn3xV/iVrU7pPS
+	dTzBJRVdKo+7FfGLj2muK5Drwom2pHzZo1j/o+YcWEGPwTDWaktbixyeTXQMM3DBPBbdXl79T/S+9
+	F+NlOW73BkQR2S9Tz9JA90DuioK30p6wYVCRp7PAD9YqirfKnOJ66UqtUXthEKHKD4vS0m+6fBn0j
+	0tnnJyAOSgClW+B64lUR3IPH3nWZDNmZ1snufB0BJAqc5pV+ybSb/+3CulKwGDY+bHXWDlx/KznSS
+	OcVidKPjMxe/L+1/O71l0JUaCwthrvM58rUrQ6U7IUC8WRMq4CkgfP2/sCId5O1h5/H1sBFAnyYGY
+	1FwfKt07nGe3JYKXlRzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY6Sz-0001Kf-9Q; Tue, 04 Jun 2019 10:14:53 +0000
+	id 1hY6Vr-0004Gx-Tj; Tue, 04 Jun 2019 10:17:51 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY6Ro-0008Cx-Nn
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 10:14:06 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x54ADcX7047415;
- Tue, 4 Jun 2019 05:13:38 -0500
+ id 1hY6Vl-0004Ge-FI
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 10:17:46 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x54AHT8A048287;
+ Tue, 4 Jun 2019 05:17:29 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559643218;
- bh=tY23XJDB0NJObEvJ+JKUNGWwJpDuXmdSbiQXCKOBmSw=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=QsAwEU9SpFJ/NE3opF1L83hsqKm+l56T261NzOlk5UWrwIFaqiti8FDx9SnCWrpQ6
- Pw4oDgt9X8YrC6LdH2JUj4GvHKzQySdRRQMTTANyfTfHK+mlaDCDDKruRslTHRDyOB
- 9pYF2zPzSFFJmN9E3I+0Aqc3RpTD8dg0rrJon/lA=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x54ADcU7099617
+ s=ti-com-17Q1; t=1559643449;
+ bh=P7u/0x1ABNz4IJDSe4vcOUhEhDTUB7ePRAMjbKE0Eww=;
+ h=From:To:CC:Subject:Date;
+ b=Ok7kdjYQ0Gfe6RfSkA3iOuxKo7k3WaFEDlfDgmYs3KTba/qaOFGyvVGgNI66/jA1O
+ oG3AHr03unXKCn9SkdmlSIhw+UNTr0WRPEQp63Zqd7TrEV9oZn3VLgGEVzqc5lYwDO
+ i1JXf3m7Un7+JkDqSrdTcQfg3zTk4wdpJpeQK79U=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x54AHTnf064832
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 4 Jun 2019 05:13:38 -0500
-Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 4 Jun 2019 05:17:29 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 4 Jun
- 2019 05:13:38 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE111.ent.ti.com
- (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 05:17:27 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 4 Jun 2019 05:13:38 -0500
-Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x54ADXbZ009574;
- Tue, 4 Jun 2019 05:13:35 -0500
-Subject: Re: [PATCH] firmware: ti_sci: Parse all resource ranges even if some
- is not available
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <nm@ti.com>, <t-kristo@ti.com>,
- <ssantosh@kernel.org>
-References: <20190604101000.6741-1-peter.ujfalusi@ti.com>
-From: Lokesh Vutla <lokeshvutla@ti.com>
-Message-ID: <4ff3a042-41a2-62d3-c899-7a62406ad6a4@ti.com>
-Date: Tue, 4 Jun 2019 15:43:01 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+ Frontend Transport; Tue, 4 Jun 2019 05:17:27 -0500
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x54AHOnc015021;
+ Tue, 4 Jun 2019 05:17:25 -0500
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <lokeshvutla@ti.com>, <tglx@linutronix.de>, <jason@lakedaemon.net>,
+ <marc.zyngier@arm.com>
+Subject: [PATCH] irqchip: ti-sci-inta: Fix kernel crash if
+ irq_create_fwspec_mapping fail
+Date: Tue, 4 Jun 2019 13:17:51 +0300
+Message-ID: <20190604101751.8265-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190604101000.6741-1-peter.ujfalusi@ti.com>
-Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_031341_754749_6030F039 
-X-CRM114-Status: GOOD (  14.94  )
+X-CRM114-CacheID: sfid-20190604_031745_547108_BD5040DE 
+X-CRM114-Status: GOOD (  12.61  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -93,41 +89,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: nm@ti.com, t-kristo@ti.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, ssantosh@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+irq_create_fwspec_mapping() can fail, returning 0 as parent_virq. In this
+case vint_desc is going to be NULL in ti_sci_inta_alloc_irq() which will
+cause NULL pointer dereference.
 
+Also note that irq_create_fwspec_mapping() returns 'unsigned int' so the
+check '<=' was wrong.
 
-On 04/06/19 3:40 PM, Peter Ujfalusi wrote:
-> Do not fail if any of the requested subtypes are not availabe, but set the
-> number of resources to 0 and continue parsing the resource ranges.
-> 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> ---
->  drivers/firmware/ti_sci.c | 11 +++++++++--
->  1 file changed, 9 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
-> index af3ebcdeab18..5d13ed724ff0 100644
-> --- a/drivers/firmware/ti_sci.c
-> +++ b/drivers/firmware/ti_sci.c
-> @@ -2783,6 +2783,7 @@ devm_ti_sci_get_of_resource(const struct ti_sci_handle *handle,
->  	struct ti_sci_resource *res;
->  	u32 resource_subtype;
->  	int i, ret;
-> +	bool valid_set = false;
+Use -EINVAL if irq_create_fwspec_mapping() returned with 0.
 
-Minor nit: Can you maintain the reverse Christmas tree here? It looks good :) No
-strong feelings though
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+---
+ drivers/irqchip/irq-ti-sci-inta.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Other than that:
-Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
+diff --git a/drivers/irqchip/irq-ti-sci-inta.c b/drivers/irqchip/irq-ti-sci-inta.c
+index 011b60a49e3f..ef4d625d2d80 100644
+--- a/drivers/irqchip/irq-ti-sci-inta.c
++++ b/drivers/irqchip/irq-ti-sci-inta.c
+@@ -159,9 +159,9 @@ static struct ti_sci_inta_vint_desc *ti_sci_inta_alloc_parent_irq(struct irq_dom
+ 	parent_fwspec.param[1] = vint_desc->vint_id;
+ 
+ 	parent_virq = irq_create_fwspec_mapping(&parent_fwspec);
+-	if (parent_virq <= 0) {
++	if (parent_virq == 0) {
+ 		kfree(vint_desc);
+-		return ERR_PTR(parent_virq);
++		return ERR_PTR(-EINVAL);
+ 	}
+ 	vint_desc->parent_virq = parent_virq;
+ 
+-- 
+Peter
 
-Thanks and regards,
-Lokesh
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
 
 _______________________________________________
 linux-arm-kernel mailing list
