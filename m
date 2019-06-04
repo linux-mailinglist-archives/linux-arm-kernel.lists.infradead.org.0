@@ -2,77 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D043A34116
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:03:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5656A34126
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:07:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7SO4h9fNiWK/DdKzr+ptn7GkytlSYfFtUaufLPLUAg4=; b=Wxj30TlUBYUzgG
-	tenESsjhDS9kt5z0GPAiTnpOV/uJ+XuvCE5D67X3DHHtCMdTCNWhK3ZXWH/WAPEiRUJPKOHrZGwDk
-	ptPbsT7a/BglAh4qW7zkwi/cw4G8quSDQhWCzGMP1TsVJMGOkZAoTU6JtPM8ZqkIyc06jVkleeyPu
-	CWZ5z6uwZrLXyu0d5WUL6/kkfHlfbEfPVsvyOFJbmnhgBpKUIEgN8fQC0ruNq7kFm+q1nXwwgtUiD
-	L+694EOIB+xakoTjMqnvf+NTpRhgw36cMX8naG7xuFXj/SrE8+aho8SZuYq4PyhB+6l2j9VYPdyZd
-	RGV110ZerUlSRf/xosBQ==;
+	List-Owner; bh=kaJxi72G9tdqDHTfa5z0D6PjsEQI3FELPiTyC2F98Ps=; b=FSOYEsmkK6/6LJ
+	7kqQ/5S6h9x4gchY9YjP9tRw084pIySYw64gBSBvBxDLtgW17q3+LoYw0O5bWXPWYDTyXX/KD9o3R
+	ql+CBGuh9A3Yfv78HdC9JKc1tVcidB5JNAjXJeiuxXmPpxZWQo6O3sK9YyPNn6eGlGGQ+2NW/QG70
+	g6H/2j1SyRdapoqbbmBFawnva8aI5cB917iU/pWgAndmtuOgwQZy+3TdYTx2+3j1HSdZqP3ZhPIjS
+	XilaDnOVP5e1ClUHQpGOQ7I8+IRUM8PR53CbolKXxARiXFjgX+e/UL3P5+vxkDiQc87YZdkEyU/nd
+	3X8kybNxEshK8nYNwdbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY4Pz-0003z0-Eg; Tue, 04 Jun 2019 08:03:39 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1hY4TJ-0005rQ-8S; Tue, 04 Jun 2019 08:07:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY4Ps-0003y8-4S
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:03:33 +0000
-Received: by mail-oi1-x241.google.com with SMTP id m202so3755705oig.6
+ id 1hY4TC-0005r4-AQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:06:59 +0000
+Received: from mail-lj1-f182.google.com (mail-lj1-f182.google.com
+ [209.85.208.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 95FCD24D43
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 01:03:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FKpO8H57h4hKIEfk4q7HqguHGPmqzEwBqOwZI4qAzTI=;
- b=wfSINV13HS4ZECgj4OMaDwgnjyqqftKSQPf9sdO3jpWk5j1d1uIYnzwIBGGtBcTCDK
- zBSONMDiI3qwFEuQMKa0jjfLZFJ6uOKnyLxMXNspWMojasO6ZMWT5S2I5sruP96xasLK
- kiKlOBW/QPWonXzYsXTsoouNR1QDK/aRZ5BcpWY6iSsOfR3OufY+Lxq9lWTXRctpL4Hy
- a/R24TK38s9dnK0/H1jtWs8kZ/wfjp6nZ1gf/evwTjwwCR71FDMKKzdc3zqiGbzX11Ef
- d4bFQKqCryQX4Rb3woxnz9UyLAX5WjN5SR2kBXptjQJ4yF804wcIcNR03xl5RNq6h/Ml
- 6qbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FKpO8H57h4hKIEfk4q7HqguHGPmqzEwBqOwZI4qAzTI=;
- b=VCyKXWA/KZ9KtHHM3CPnlmco2PFCPLjIrEvncM4A8VS5ATKX/zKMziGeo/HjAUpgM4
- 7X0FzZTsJ70k8PEal5sVhIzhZtMCKs0hnxkCaNYyq1VOOtLj9no5MOuy3tdkUjqtwnGj
- anHhcF7lvgZ4ra1Jm8T4zy6xqrMDy5omyJji3pwDLzRY8Yu7kFOddvmSXiw3tvHfwSzb
- ZIFv3pEnM370Cpse8BbLTlmRnjKn2x1uDtU5gFUHV4tDd/pbejE2Dv8TJRGLa9+i+42f
- a8FmK0g2Wf3RGMexJklN5fPO4A9rKdefM1VDmQIrT9RudmF1KB+fENoRI+i+KjxPcd8h
- U9LA==
-X-Gm-Message-State: APjAAAWiXSzM20nI5NdveCbSTP33fwf7JjvD8b00848bNINpqx9hhcjK
- MrxbptXWLrZT2FBEc/JQteFv+60FHjHWi9L8HeMkbQ==
-X-Google-Smtp-Source: APXvYqyMOpg92w6Qp+vhHVCi14htGNn1rx1iAOVrnv9ZgovV4gSotwygWRGsq+15o2Px5EQGrz+6VMFs1vGy8mmk3Fs=
-X-Received: by 2002:aca:dd08:: with SMTP id u8mr44390oig.27.1559635410647;
- Tue, 04 Jun 2019 01:03:30 -0700 (PDT)
+ Tue,  4 Jun 2019 08:06:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559635617;
+ bh=+8VTb/m2A2CCDruyuVZ7/nHOpXrJiBdMujVM78c/qNk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WtiyezHwfjvVAW4PyqQTGNpJeO1+l2DDMBdpZbHU7GIkGPdWANLrSriEXAfvzPsDI
+ orTCLfsXT2BeipO9PiRRmx8FmWWjmYUFBFX8mGsw+CEWJ06lNZtM44Eo4Upe5h2izO
+ j0WSi60kHjfNRfJ+r6h8mFyF+8hfvqbic2ocuHVM=
+Received: by mail-lj1-f182.google.com with SMTP id i21so4204107ljj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 01:06:57 -0700 (PDT)
+X-Gm-Message-State: APjAAAUXQxPb0KC8SKy52iZp2Z7M9v9AiYzOf/qQrSiP1jrdGQkyD1N1
+ 2zaN3LRDQRmeE7rSNEKk/hKh7o9eXXwMVtzuwB0=
+X-Google-Smtp-Source: APXvYqzAeIR9wWL/pNtypzfCB3ZurCMf1HHp2oEKPQN2LwTcqcq16KwBmsGE5nHPmenM4wYLrGO8nUU2gRa7kCX1ekw=
+X-Received: by 2002:a2e:568d:: with SMTP id k13mr15854428lje.194.1559635615901; 
+ Tue, 04 Jun 2019 01:06:55 -0700 (PDT)
 MIME-Version: 1.0
-References: <cover.1558346019.git.baolin.wang@linaro.org>
- <ae6e23d4de6bb25cd697412f1402036d5ecc9843.1558346019.git.baolin.wang@linaro.org>
- <ed5bdd08-7227-4d55-23de-e78e15d315c7@intel.com>
-In-Reply-To: <ed5bdd08-7227-4d55-23de-e78e15d315c7@intel.com>
-From: Baolin Wang <baolin.wang@linaro.org>
-Date: Tue, 4 Jun 2019 16:03:18 +0800
-Message-ID: <CAMz4kuKEOQwOK2Yh+y+-ZhZDndA2tf9V45J_o-OittuSRJcurQ@mail.gmail.com>
-Subject: Re: [PATCH 4/9] mmc: sdhci-sprd: Implement the get_max_timeout_count()
- interface
-To: Adrian Hunter <adrian.hunter@intel.com>
+References: <1559634833-19980-1-git-send-email-krzk@kernel.org>
+ <b5f2ad6a-cccc-9ca9-557f-0ce13e2ccc87@free.fr>
+In-Reply-To: <b5f2ad6a-cccc-9ca9-557f-0ce13e2ccc87@free.fr>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Tue, 4 Jun 2019 10:06:44 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfjKmqciquODRXJpEuzOBi2eFMFkMJbx_B3O-n_PSNDJA@mail.gmail.com>
+Message-ID: <CAJKOXPfjKmqciquODRXJpEuzOBi2eFMFkMJbx_B3O-n_PSNDJA@mail.gmail.com>
+Subject: Re: [PATCH] ARM: configs: Remove useless UEVENT_HELPER_PATH
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_010332_187858_C15F3BD5 
-X-CRM114-Status: GOOD (  17.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190604_010658_390191_6B62493A 
+X-CRM114-Status: GOOD (  13.13  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,71 +86,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, arm-soc <arm@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Chunyan Zhang <zhang.lyra@gmail.com>,
- linux-mmc <linux-mmc@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Olof Johansson <olof@lixom.net>,
- Orson Zhai <orsonzhai@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 3 Jun 2019 at 20:35, Adrian Hunter <adrian.hunter@intel.com> wrote:
+On Tue, 4 Jun 2019 at 09:57, Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
 >
-> On 20/05/19 1:11 PM, Baolin Wang wrote:
-> > Implement the get_max_timeout_count() interface to set the Spredtrum SD
-> > host controller actual maximum timeout count.
+> On 04/06/2019 09:53, Krzysztof Kozlowski wrote:
+>
+> > Remove the CONFIG_UEVENT_HELPER_PATH because:
+> > 1. It is disabled since commit 1be01d4a5714 ("driver: base: Disable
+> >    CONFIG_UEVENT_HELPER by default") as its dependency (UEVENT_HELPER) was
+> >    made default to 'n',
+> > 2. It is not recommended (help message: "This should not be used today
+> >    [...] creates a high system load") and was kept only for ancient
+> >    userland,
+> > 3. Certain userland specifically requests it to be disabled (systemd
+> >    README: "Legacy hotplug slows down the system and confuses udev").
 > >
-> > Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
->
-> Seems surprising that there isn't a custom ->set_timeout() as well.
-
-Until now we did not find issues when using sdhci_calc_timeout().
-Thanks for your reviewing.
-
-> Nevertheless:
->
-> Acked-by: Adrian Hunter <adrian.hunter@intel.com>
->
+> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 > > ---
-> >  drivers/mmc/host/sdhci-sprd.c |    7 +++++++
-> >  1 file changed, 7 insertions(+)
-> >
-> > diff --git a/drivers/mmc/host/sdhci-sprd.c b/drivers/mmc/host/sdhci-sprd.c
-> > index 31ba7d6..d91281d 100644
-> > --- a/drivers/mmc/host/sdhci-sprd.c
-> > +++ b/drivers/mmc/host/sdhci-sprd.c
-> > @@ -285,6 +285,12 @@ static void sdhci_sprd_hw_reset(struct sdhci_host *host)
-> >       usleep_range(300, 500);
-> >  }
-> >
-> > +static unsigned int sdhci_sprd_get_max_timeout_count(struct sdhci_host *host)
-> > +{
-> > +     /* The Spredtrum controller actual maximum timeout count is 1 << 31 */
-> > +     return 1 << 31;
-> > +}
-> > +
-> >  static struct sdhci_ops sdhci_sprd_ops = {
-> >       .read_l = sdhci_sprd_readl,
-> >       .write_l = sdhci_sprd_writel,
-> > @@ -296,6 +302,7 @@ static void sdhci_sprd_hw_reset(struct sdhci_host *host)
-> >       .reset = sdhci_reset,
-> >       .set_uhs_signaling = sdhci_sprd_set_uhs_signaling,
-> >       .hw_reset = sdhci_sprd_hw_reset,
-> > +     .get_max_timeout_count = sdhci_sprd_get_max_timeout_count,
-> >  };
-> >
-> >  static void sdhci_sprd_request(struct mmc_host *mmc, struct mmc_request *mrq)
-> >
->
+> >  arch/arm/configs/acs5k_defconfig          |   1 -
+> >  arch/arm/configs/acs5k_tiny_defconfig     |   1 -
+> >  arch/arm/configs/am200epdkit_defconfig    |   1 -
+> >  arch/arm/configs/aspeed_g4_defconfig      |   1 -
+> >  arch/arm/configs/aspeed_g5_defconfig      |   1 -
+> >  arch/arm/configs/at91_dt_defconfig        |   1 -
+> >  arch/arm/configs/axm55xx_defconfig        |   1 -
+> >  arch/arm/configs/cm_x2xx_defconfig        |   1 -
+> >  arch/arm/configs/cm_x300_defconfig        |   1 -
+> >  arch/arm/configs/cns3420vb_defconfig      |   1 -
+> >  arch/arm/configs/colibri_pxa270_defconfig |   1 -
+> >  arch/arm/configs/colibri_pxa300_defconfig |   1 -
+> >  arch/arm/configs/corgi_defconfig          |   1 -
+> >  arch/arm/configs/dove_defconfig           |   1 -
+> >  arch/arm/configs/em_x270_defconfig        |   1 -
+> >  arch/arm/configs/ep93xx_defconfig         |   1 -
+> >  arch/arm/configs/eseries_pxa_defconfig    |   1 -
+> >  arch/arm/configs/ezx_defconfig            |   1 -
+> >  arch/arm/configs/gemini_defconfig         |   1 -
+> >  arch/arm/configs/h3600_defconfig          |   1 -
+> >  arch/arm/configs/h5000_defconfig          |   1 -
+> >  arch/arm/configs/imote2_defconfig         |   1 -
+> >  arch/arm/configs/imx_v4_v5_defconfig      |   1 -
+> >  arch/arm/configs/iop13xx_defconfig        |   1 -
+> >  arch/arm/configs/iop32x_defconfig         |   1 -
+> >  arch/arm/configs/iop33x_defconfig         |   1 -
+> >  arch/arm/configs/ixp4xx_defconfig         |   1 -
+> >  arch/arm/configs/jornada720_defconfig     |   1 -
+> >  arch/arm/configs/keystone_defconfig       |   1 -
+> >  arch/arm/configs/ks8695_defconfig         |   1 -
+> >  arch/arm/configs/lpc32xx_defconfig        |   1 -
+> >  arch/arm/configs/magician_defconfig       |   1 -
+> >  arch/arm/configs/moxart_defconfig         |   1 -
+> >  arch/arm/configs/multi_v5_defconfig       |   1 -
+> >  arch/arm/configs/mv78xx0_defconfig        |   1 -
+> >  arch/arm/configs/mvebu_v5_defconfig       |   1 -
+> >  arch/arm/configs/mvebu_v7_defconfig       |   1 -
+> >  arch/arm/configs/nhk8815_defconfig        |   1 -
+> >  arch/arm/configs/nuc910_defconfig         |   1 -
+> >  arch/arm/configs/nuc950_defconfig         |   1 -
+> >  arch/arm/configs/nuc960_defconfig         |   1 -
+> >  arch/arm/configs/omap1_defconfig          |   1 -
+> >  arch/arm/configs/orion5x_defconfig        |   1 -
+> >  arch/arm/configs/palmz72_defconfig        |   1 -
+> >  arch/arm/configs/pcm027_defconfig         |   1 -
+> >  arch/arm/configs/prima2_defconfig         |   1 -
+> >  arch/arm/configs/proceq_vf_bck_defconfig  | 255 +++++++++++++++++++++++++++
+> >  arch/arm/configs/proceq_vf_crc_defconfig  | 278 ++++++++++++++++++++++++++++++
 
+Ooops, indeed. Thanks for spotting them.
 
--- 
-Baolin Wang
-Best Regards
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
