@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0664134E33
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 19:02:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8651134E3A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 19:02:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7hpHBc0BinWlaZnU9K7H5oYQI/2g8LCL4Cqu4IPRdR0=; b=ETrRqeCe4yWpSs
-	02ghTPFg027YXZWRT22r8XVbsmT5hzD4uos6wNLJHKIwickOsUmVVKg3LuLmUUd8D2YCgCxSIAZuu
-	devdFA9hXr6Ev22V7PM+o/n+dMdVwcQnvhtVsaVukoRb1K1q8RAPeeZe1HcNwZISTgwou1q+MM/wF
-	5NlzMAPldTF7H7A/QavCa/TBOvhDi6kMBCzrb6ge4sL/AFz7ySQpQ6bCg60C9SfRFJa3/Q8P6GAqf
-	rI0rYk+nHXOJcECg3B8HkShwXy1ZizZXW6bG4DRgcgqnxJJW4FoCGO3C/pDxYM7RLN28sSToStTtC
-	9wope5jAX1p2MJnzXl3Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=naaqmX1DdwKeSfRsbKMC7yh2u3oE+drPAtq256JYH7s=; b=b05dvg+ofnVol6
+	Y8gAS/QCKRsc1cnzahWa9zHxV3TPmxBvBNg0tc5cTP0syehnsPFUm3kIJFPEYjTLCXn39Cmqzebq3
+	dAcR6aW7OYu+cgskOlrA35s7mSou0TSkHpOUzZfJ30TJsDYw4PVbK9XRFx8bi2kwq08PdY7EFKRgR
+	F96+oyNFxoz0qUaAE6QaxN15VQY1fmo/RLz9kuSjLb7+HKELKb1PrfS4CCzwYV5GncpyhLAkMH9Fm
+	WbmlDwg1gGqL6eA0kUKiydeibrAeEXDDx/EMUYAp4IkEeMSz8ZxqVvRG4+LwHOm40xCK+wWQzJwnt
+	m1tNV9Nt+PzaguPl5tfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYCp4-00078S-50; Tue, 04 Jun 2019 17:02:06 +0000
+	id 1hYCpE-0007GB-6j; Tue, 04 Jun 2019 17:02:16 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYCov-00077v-PK
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 17:01:59 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x54H1rIA084228;
- Tue, 4 Jun 2019 12:01:53 -0500
+ id 1hYCoy-00078E-0w
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 17:02:01 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x54H1wwT084272;
+ Tue, 4 Jun 2019 12:01:58 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559667713;
- bh=tJUbaYS3PXeCQDqLVzPk13j5W5PyU3RKgopVrDFEeQg=;
- h=From:To:CC:Subject:Date;
- b=g99hBXdJ5Ku+pEdJSxXzrA8vje66HcnNOeFGe0pg44GMPt6l8TFdgsRYkfeaND30G
- RjY+YinDO2YOj+qvZze9b4cX1w4o9scy+3fZqMD7VW0gIYTvaY9OoQFMckdIvCHYVt
- O5u8a7GBMU4UEiXdbNyHF5o+0G8s8BfKwrY1cU0Y=
-Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x54H1qAO055469
+ s=ti-com-17Q1; t=1559667718;
+ bh=dl/p6s8i6dqi8lgl0FcgfjjgtFbawMFoVouR4+ILAS8=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=vhu7qZF9moABxdkT+aW9Ao645OiPV0zAnvEGNxabRKevyI4H8l6AwsNK6ICoPPm8/
+ cnThrC9STLT+G8rcS7468Lo+F5kjyR8K3ssXdLr3yeyeeJweFk1bUILQuh01Ur1DGi
+ Kgvrb8ev2LcBxY8c56sIGp0HNenjyxZgDdMZkH+s=
+Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x54H1w9f010922
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 4 Jun 2019 12:01:52 -0500
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 4 Jun 2019 12:01:58 -0500
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 4 Jun
- 2019 12:01:52 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 12:01:56 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 4 Jun 2019 12:01:52 -0500
+ Frontend Transport; Tue, 4 Jun 2019 12:01:56 -0500
 Received: from legion.dal.design.ti.com (legion.dal.design.ti.com
  [128.247.22.53])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x54H1qr7052476;
- Tue, 4 Jun 2019 12:01:52 -0500
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x54H1uDi040970;
+ Tue, 4 Jun 2019 12:01:56 -0500
 Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
- by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x54H1pm17287; 
- Tue, 4 Jun 2019 12:01:51 -0500 (CDT)
+ by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x54H1tm17348; 
+ Tue, 4 Jun 2019 12:01:55 -0500 (CDT)
 From: Suman Anna <s-anna@ti.com>
 To: Jassi Brar <jassisinghbrar@gmail.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 0/2] Add Mailbox support for TI K3 SoCs
-Date: Tue, 4 Jun 2019 12:01:44 -0500
-Message-ID: <20190604170146.12205-1-s-anna@ti.com>
+Subject: [PATCH 1/2] dt-bindings: mailbox: omap: Update bindings for TI K3 SoCs
+Date: Tue, 4 Jun 2019 12:01:45 -0500
+Message-ID: <20190604170146.12205-2-s-anna@ti.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190604170146.12205-1-s-anna@ti.com>
+References: <20190604170146.12205-1-s-anna@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_100157_928510_A783C819 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20190604_100200_144186_F5D19D1B 
+X-CRM114-Status: GOOD (  17.10  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -98,41 +100,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jassi,
+The TI K3 AM65x and J721E family of SoCs have a new Mailbox IP that
+is based on the existing Mailbox IP present in OMAP architecture based
+SoCs. Update the existing OMAP Mailbox bindings for this new IP present
+on TI K3 AM65x and J721E SoCs. The same compatible from AM65x SoCs is
+reused for J721E SoCs.
 
-The following series adds the support for the Mailbox IP present
-within the Main NavSS module on the newer TI K3 AM65x and J721E SoCs.
-
-The Mailbox IP is similar to the previous generation IP on OMAP SoCs
-with a few differences:
- - Multiple IP instances from previous DRA7/AM57 family each form a
-   cluster and are part of the same IP. The driver support will continue
-   to be based on a cluster.
- - The IP is present within a Main NaVSS, and interrupts have to go
-   through an Interrupt Router within Main NavSS before they reach the
-   respective processor sub-system's interrupt controllers.
- - The register layout is mostly same, with difference in two registers
-
-Support is added by enhancing the existing OMAP Mailbox driver to 
-support the K3 IP using a new compatible. The driver also has to be
-adjusted to deal with the 32-bit mailbox payloads vs the 64-bit 
-pointers used by the Mailbox API on these Arm v8 platforms.
-
-DT nodes will be posted separately once the binding is acked.
-
-regards
-Suman
-
-Suman Anna (2):
-  dt-bindings: mailbox: omap: Update bindings for TI K3 SoCs
-  mailbox/omap: Add support for TI K3 SoCs
-
+Signed-off-by: Suman Anna <s-anna@ti.com>
+---
  .../bindings/mailbox/omap-mailbox.txt         | 59 ++++++++++++++++---
- drivers/mailbox/Kconfig                       |  2 +-
- drivers/mailbox/omap-mailbox.c                | 43 ++++++++------
- include/linux/omap-mailbox.h                  |  4 +-
- 4 files changed, 80 insertions(+), 28 deletions(-)
+ 1 file changed, 50 insertions(+), 9 deletions(-)
 
+diff --git a/Documentation/devicetree/bindings/mailbox/omap-mailbox.txt b/Documentation/devicetree/bindings/mailbox/omap-mailbox.txt
+index 0ef372656a3e..35c3f56b7f7b 100644
+--- a/Documentation/devicetree/bindings/mailbox/omap-mailbox.txt
++++ b/Documentation/devicetree/bindings/mailbox/omap-mailbox.txt
+@@ -1,4 +1,4 @@
+-OMAP2+ Mailbox Driver
++OMAP2+ and K3 Mailbox
+ =====================
+ 
+ The OMAP mailbox hardware facilitates communication between different processors
+@@ -7,7 +7,7 @@ various processor subsystems and is connected on an interconnect bus. The
+ communication is achieved through a set of registers for message storage and
+ interrupt configuration registers.
+ 
+-Each mailbox IP block has a certain number of h/w fifo queues and output
++Each mailbox IP block/cluster has a certain number of h/w fifo queues and output
+ interrupt lines. An output interrupt line is routed to an interrupt controller
+ within a processor subsystem, and there can be more than one line going to a
+ specific processor's interrupt controller. The interrupt line connections are
+@@ -23,12 +23,16 @@ All the current OMAP SoCs except for the newest DRA7xx SoC has a single IP
+ instance. DRA7xx has multiple instances with different number of h/w fifo queues
+ and interrupt lines between different instances. The interrupt lines can also be
+ routed to different processor sub-systems on DRA7xx as they are routed through
+-the Crossbar, a kind of interrupt router/multiplexer.
++the Crossbar, a kind of interrupt router/multiplexer. The K3 AM65x and J721E
++SoCs has each of these instances form a cluster and combine multiple clusters
++into a single IP block present within the Main NavSS. The interrupt lines from
++all these clusters are multiplexed and routed to different processor subsystems
++over a limited number of common interrupt output lines of an Interrupt Router.
+ 
+ Mailbox Device Node:
+ ====================
+-A Mailbox device node is used to represent a Mailbox IP instance within a SoC.
+-The sub-mailboxes are represented as child nodes of this parent node.
++A Mailbox device node is used to represent a Mailbox IP instance/cluster within
++a SoC. The sub-mailboxes are represented as child nodes of this parent node.
+ 
+ Required properties:
+ --------------------
+@@ -37,12 +41,12 @@ Required properties:
+ 			    "ti,omap3-mailbox" for OMAP3430, OMAP3630 SoCs
+ 			    "ti,omap4-mailbox" for OMAP44xx, OMAP54xx, AM33xx,
+ 						   AM43xx and DRA7xx SoCs
++			    "ti,am654-mailbox" for K3 AM65x and J721E SoCs
+ - reg:			Contains the mailbox register address range (base
+ 			address and length)
+ - interrupts:		Contains the interrupt information for the mailbox
+ 			device. The format is dependent on which interrupt
+-			controller the OMAP device uses
+-- ti,hwmods:		Name of the hwmod associated with the mailbox
++			controller the Mailbox device uses
+ - #mbox-cells:		Common mailbox binding property to identify the number
+ 			of cells required for the mailbox specifier. Should be
+ 			1
+@@ -50,6 +54,23 @@ Required properties:
+ 			device can interrupt
+ - ti,mbox-num-fifos:	Number of h/w fifo queues within the mailbox IP block
+ 
++SoC-specific Required properties:
++---------------------------------
++The following are mandatory properties for the OMAP architecture based SoCs
++only:
++- ti,hwmods:		Name of the hwmod associated with the mailbox. This
++			should be defined in the mailbox node only if the node
++			is not defined as a child node of a corresponding sysc
++			interconnect node.
++
++The following are mandatory properties for the K3 AM65x and J721E SoCs only:
++- interrupt-parent:	Should contain a phandle to the TI-SCI interrupt
++			controller node that is used to dynamically program
++			the interrupt routes between the IP and the main GIC
++			controllers. See the following binding for additional
++			details,
++			Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
++
+ Child Nodes:
+ ============
+ A child node is used for representing the actual sub-mailbox device that is
+@@ -98,7 +119,7 @@ to be used by the client user.
+ Example:
+ --------
+ 
+-/* OMAP4 */
++1. /* OMAP4 */
+ mailbox: mailbox@4a0f4000 {
+ 	compatible = "ti,omap4-mailbox";
+ 	reg = <0x4a0f4000 0x200>;
+@@ -123,7 +144,7 @@ dsp {
+ 	...
+ };
+ 
+-/* AM33xx */
++2. /* AM33xx */
+ mailbox: mailbox@480c8000 {
+ 	compatible = "ti,omap4-mailbox";
+ 	reg = <0x480C8000 0x200>;
+@@ -137,3 +158,23 @@ mailbox: mailbox@480c8000 {
+ 		ti,mbox-rx = <0 0 3>;
+ 	};
+ };
++
++3. /* AM65x */
++&cbass_main {
++	cbass_main_navss: interconnect0 {
++		mailbox0_cluster0: mailbox@31f80000 {
++			compatible = "ti,am654-mailbox";
++			reg = <0x00 0x31f80000 0x00 0x200>;
++			#mbox-cells = <1>;
++			ti,mbox-num-users = <4>;
++			ti,mbox-num-fifos = <16>;
++			interrupt-parent = <&intr_main_navss>;
++			interrupts = <164 0>;
++
++			mbox_mcu_r5fss0_core0: mbox-mcu-r5fss0-core0 {
++				ti,mbox-tx = <1 0 0>;
++				ti,mbox-rx = <0 0 0>;
++			};
++		};
++	};
++};
 -- 
 2.21.0
 
