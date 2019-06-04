@@ -2,104 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7EA234B62
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:03:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71AD134AEA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:49:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CKRuiXyhoupOYXXQGpwd6XB2f2WJXOr1ytJnO5WmXEA=; b=ZSJJpGA4agZbb7mn/pQ7m/e0Ps
-	u+5gRc4963iXBIhmdVs0UuuJpue5jTuk9CGq/gOKExr0vfUBQ4hZi2utodDUwFrdkp5VdYrEMx5iz
-	XI1e1fCMK0ZN8aiLzZDiZfDsyuXfd76Q77rvgqXTibTIKJE7JkegStUe4iNDEsEsIMn+SPNuf3UT2
-	Gont6erUtHtT5WwTeqELDBFs/duZq4Kpk++rp1DUKdxY6d+X/3Ws8iWM4n35TphB9fNesQxFnPgo7
-	soq47LCneFkzZqftk2RdYpmJTo7QaEFfi2LZL3K+Ynt/bHfU67IgXVVG882XWFs3ypRRTPZXwDv8l
-	qASot2GA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ACPHYhVkMZik8quQS3iIWqF+7uHw7hucSCcs5isNBkQ=; b=Jly51Xy9gKQ+4s
+	GhUJgQJkWzE0BpfcAJKs3hdH7vhO6cIsBWfipV9b98KK8oIsU9N4r++wiBRRf31+itOeSBbcWhS/2
+	iQvvc07nXqosf6TQANLPgZ2eeQGVDiQLRcFwGRsTQq5zzH7erlDyOXO36DzDcP+cKFeR0AaPFRh9e
+	V2O8U4Q1WL2tkWbWc3T2yvcUgYdDm6zj4Dylgam9Hs6+qcGCMQDGcW1Sk5/cZ3AFpJrCzcZtYQaZI
+	sp0VB1eT31UPUPxhu+BcZroTVZJPlQzA/C2zWZVC2TJ6u8v1gdMYDmiJqRSKf/lC0y77eir6hU8x3
+	UvHqOIzOrnPvhYm94Z8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAy6-0002br-Vi; Tue, 04 Jun 2019 15:03:19 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hYAkP-00022R-MU; Tue, 04 Jun 2019 14:49:09 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAy0-00025e-OR
- for linux-arm-kernel@bombadil.infradead.org; Tue, 04 Jun 2019 15:03:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KFNX0x0uDiVEnACY7GX/xfcM9Z1YE5k1Hro/dmSU21U=; b=VecRhQv+SzOJAKZpf6duCA8/6
- bBH6jPYz/w31jo96e/sNQZQ623n1zVWI0uiC+SNe2vEe/GeM4Tl+qzXGogv+Qr0d+IbaZppGGkCqZ
- 4l4oMzCnWmqYg6OHLwoewx8u1fonTz94Gv6ojr+xlwWg7+blO+zxdV3vs7YauhmRBp1VizSeH+l0O
- HYEOB07tSj4QtKDxHkPEOjN9uqanFJRc/iz2aPd8L4tLPa8A5r3y8Xr/z9lDblor+4GAKHx6VB3mp
- 4k9IvHKDP9brr567txVH8SWf20FtMRdL8fyDDwz9jaArJNVUxjdirYsHhInFfeDzAom4MOjPrLHbG
- KFpuEf87w==;
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAie-0008PX-VB
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:47:23 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w13so16105436wru.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 07:47:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=KFNX0x0uDiVEnACY7GX/xfcM9Z1YE5k1Hro/dmSU21U=;
- b=tL9ZDb1HmSqQuR6YGGVWJKZZVio2W9Srq8Iq3w8+YQVB79OgI97cvGgjtA5qqIvLEq
- xpBtXIY+Bq+QVM+Hg3xmsa1Fw1ZvfJQ+iuTJ7AFEzdXWgdfXl4drvbHrOuWAEc1YrEuu
- q//R9SUG3TQjJelcxzvSjRZZ1xR3Mr7PCmLsJZfiTaa3MXJFQfLr8uN8gTgGNAyf9BFn
- Yn2ACvOu5w2DfO2rvRguXVXpSqKKThj+TxKbAdOySWiFds79a9M/ICZRWfl4uc8tfTOh
- wd+OW21degsYpfNBHJ7DEWDoh9UJqOlt/C4RFxD8wRYpCxFE4+l8TZj3NgLVLr7sw31o
- a9EA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=KFNX0x0uDiVEnACY7GX/xfcM9Z1YE5k1Hro/dmSU21U=;
- b=pTIodPnRk5tKlh+nSY9vjPTRCaeQNQirBmiPbGPUacOeISpLcnoN2vGfCCvctjYVCx
- X8yO/YhwtKJEJT2V4TIv/Dmb7SMYF2a2GbWAczng6AlpPaFgqHoFUa8F2EeqJICsap5x
- pZL99S1HCjfDQcGUn0OFuNp59OXqKdq1pg4k3/Xg5OOlAo1PSiSF0YyyyyzwGVLvMt1K
- QbgC0+FqRxRpTQ8LgY9Rdkfad5UsI2blKbJPCE/9S1MVOyxGq/IkjpOejQUCyhhk5HIm
- 92wIztfq2gFZF54XKzRrZfISBKKZW6bdhcRCrfPfWVXPf7QM7EWY0QKCgiSrN+tilySR
- nNbA==
-X-Gm-Message-State: APjAAAVC4ZRpuKvs+PClapzUemBw2ULpVyMxk098L34oen22GIPzKCwb
- pWP6TnCAFSGI3TwKzHwy5QlBzA==
-X-Google-Smtp-Source: APXvYqwnQlYmXdRjEl9h3Z01LMzU9Jkhig/p/oYJ+TOwizec2QZYooOw7KZ0UbRELLEhOW4YxXOzpw==
-X-Received: by 2002:a5d:518c:: with SMTP id k12mr21042838wrv.322.1559659639754; 
- Tue, 04 Jun 2019 07:47:19 -0700 (PDT)
-Received: from glaroque-ThinkPad-T480.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id v184sm3649639wme.10.2019.06.04.07.47.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 04 Jun 2019 07:47:19 -0700 (PDT)
-From: Guillaume La Roque <glaroque@baylibre.com>
-To: jic23@kernel.org,
-	khilman@baylibre.com
-Subject: [PATCH 3/3] iio: temperature: add a driver for the temperature sensor
- found in Amlogic Meson G12 SoCs
-Date: Tue,  4 Jun 2019 16:47:14 +0200
-Message-Id: <20190604144714.2009-4-glaroque@baylibre.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190604144714.2009-1-glaroque@baylibre.com>
-References: <20190604144714.2009-1-glaroque@baylibre.com>
+ id 1hYAjK-0000a2-1E
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:48:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1559659678; bh=m7FYiw/lRi8vxPdtVV/tO0Y5qL275wWEx2HUX5agu3M=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=NN4aIj1cwcxEh5mltj87MvcnHB3JrYZTga8oxK2lH8Kq1c0J6kYq9QdROaaTFvhnS
+ TZoH3knREI6iaWll87BLLt3ms9LWZdZLtxsWv4MXQj/CJbi14N8Swx2E8/4dTtWil+
+ 8oJhIxMN7qnZbhezw4k5NU9raQ141//OBr9EJNMs=
+Date: Tue, 4 Jun 2019 16:47:57 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-media@vger.kernel.org
+Subject: Re: [linux-sunxi] Re: [PATCH v3 10/12] arm64: dts: allwinner: h6:
+ Add IR receiver node
+Message-ID: <20190604144757.xvggmj6asyf44vuc@core.my.home>
+Mail-Followup-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-media@vger.kernel.org
+References: <20190528161440.27172-1-peron.clem@gmail.com>
+ <20190528161440.27172-11-peron.clem@gmail.com>
+ <20190530145550.amalnxmx7kpokykv@core.my.home>
+ <CAJiuCce7nHSktVsDKcR8GLRpD3WrN5yP3Nb_Hbu_Q9NjUQbSMw@mail.gmail.com>
+ <20190531124630.q2guo54kjfzr7rkn@core.my.home>
+ <CAJiuCcdMftAjCwk2_naE9VBGGqS=OY9xcqv6+5pDX2Z8O=L28w@mail.gmail.com>
+ <20190604123355.m47ufmhtzuzfvmp7@core.my.home>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190604123355.m47ufmhtzuzfvmp7@core.my.home>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_154721_200788_D4DAC092 
-X-CRM114-Status: GOOD (  29.68  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190604_074803_136625_01983C66 
+X-CRM114-Status: GOOD (  31.73  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,490 +92,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-iio@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The code is based on Amlogic source code. No public datasheet for this.
-Currently the G12A SoCs are supported.
-
-Supported features:
-- possibility to set an automatic reboot temperature
-
-Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
----
- drivers/iio/temperature/Kconfig         |  11 +
- drivers/iio/temperature/Makefile        |   1 +
- drivers/iio/temperature/meson_tsensor.c | 416 ++++++++++++++++++++++++
- 3 files changed, 428 insertions(+)
- create mode 100644 drivers/iio/temperature/meson_tsensor.c
-
-diff --git a/drivers/iio/temperature/Kconfig b/drivers/iio/temperature/Kconfig
-index 737faa0901fe..712a0062790d 100644
---- a/drivers/iio/temperature/Kconfig
-+++ b/drivers/iio/temperature/Kconfig
-@@ -34,6 +34,17 @@ config HID_SENSOR_TEMP
- 	  To compile this driver as a module, choose M here: the module
- 	  will be called hid-sensor-temperature.
- 
-+config MESON_TSENSOR
-+	tristate "Amlogic Meson temperature sensor Support"
-+	default ARCH_MESON
-+	depends on OF && ARCH_MESON
-+	help
-+	  If you say yess here you get support for Meson Temperature sensor
-+	  for G12 SoC Family.
-+
-+	  This driver can also be built as a module. If so, the module will
-+	  be called meson_tsensor.
-+
- config MLX90614
- 	tristate "MLX90614 contact-less infrared sensor"
- 	depends on I2C
-diff --git a/drivers/iio/temperature/Makefile b/drivers/iio/temperature/Makefile
-index baca4776ca0d..466d8c1c91d6 100644
---- a/drivers/iio/temperature/Makefile
-+++ b/drivers/iio/temperature/Makefile
-@@ -6,6 +6,7 @@
- obj-$(CONFIG_HID_SENSOR_TEMP) += hid-sensor-temperature.o
- obj-$(CONFIG_MAXIM_THERMOCOUPLE) += maxim_thermocouple.o
- obj-$(CONFIG_MAX31856) += max31856.o
-+obj-$(CONFIG_MESON_TSENSOR) += meson_tsensor.o
- obj-$(CONFIG_MLX90614) += mlx90614.o
- obj-$(CONFIG_MLX90632) += mlx90632.o
- obj-$(CONFIG_TMP006) += tmp006.o
-diff --git a/drivers/iio/temperature/meson_tsensor.c b/drivers/iio/temperature/meson_tsensor.c
-new file mode 100644
-index 000000000000..be0a8d073ba3
---- /dev/null
-+++ b/drivers/iio/temperature/meson_tsensor.c
-@@ -0,0 +1,416 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Amlogic Meson Temperature Sensor
-+ *
-+ * Copyright (C) 2017 Huan Biao <huan.biao@amlogic.com>
-+ * Copyright (C) 2019 Guillaume La Roque <glaroque@baylibre.com>
-+ *
-+ * Register value to celsius temperature formulas:
-+ *	Read_Val	    m * U
-+ * U = ---------, Uptat = ---------
-+ *	2^16		  1 + n * U
-+ *
-+ * Temperature = A * ( Uptat + u_efuse / 2^16 )- B
-+ *
-+ *  A B m n : calibration parameters
-+ *  u_efuse : fused calibration value, it's a signed 16 bits value
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/iio/iio.h>
-+#include <linux/io.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_address.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#define TSENSOR_CFG_REG1			0x4
-+	#define TSENSOR_CFG_REG1_RSET_VBG	BIT(12)
-+	#define TSENSOR_CFG_REG1_RSET_ADC	BIT(11)
-+	#define TSENSOR_CFG_REG1_VCM_EN		BIT(10)
-+	#define TSENSOR_CFG_REG1_VBG_EN		BIT(9)
-+	#define TSENSOR_CFG_REG1_OUT_CTL	BIT(6)
-+	#define TSENSOR_CFG_REG1_FILTER_EN	BIT(5)
-+	#define TSENSOR_CFG_REG1_DEM_EN		BIT(3)
-+	#define TSENSOR_CFG_REG1_CH_SEL		GENMASK(1, 0)
-+	#define TSENSOR_CFG_REG1_ENABLE		\
-+		(TSENSOR_CFG_REG1_FILTER_EN |	\
-+		 TSENSOR_CFG_REG1_VCM_EN |	\
-+		 TSENSOR_CFG_REG1_VBG_EN |	\
-+		 TSENSOR_CFG_REG1_DEM_EN |	\
-+		 TSENSOR_CFG_REG1_CH_SEL)
-+
-+#define TSENSOR_CFG_REG2				0x8
-+	#define TSENSOR_CFG_REG2_HITEMP_EN		BIT(31)
-+	#define TSENSOR_CFG_REG2_REBOOT_ALL_EN		BIT(30)
-+	#define TSENSOR_CFG_REG2_REBOOT_TIME		GENMASK(25, 16)
-+	#define TSENSOR_CFG_REG2_HITEMP_REBOOT_ENABLE	\
-+		(TSENSOR_CFG_REG2_HITEMP_EN |		\
-+		 TSENSOR_CFG_REG2_REBOOT_ALL_EN |	\
-+		 TSENSOR_CFG_REG2_REBOOT_TIME)
-+	#define TSENSOR_CFG_REG2_HITEMP_REBOOT_ENABLE_MASK		\
-+		(GENMASK(31, 30) | GENMASK(25, 4))
-+	#define TSENSOR_CFG_REG2_HITEMP_REBOOT_REG_MASK			\
-+		GENMASK(15, 4)
-+	#define TSENSOR_CFG_REG2_HITEMP_REG_VAL(_reg_val)		\
-+		(FIELD_PREP(TSENSOR_CFG_REG2_HITEMP_REBOOT_REG_MASK,	\
-+			    _reg_val) |					\
-+		 TSENSOR_CFG_REG2_HITEMP_REBOOT_ENABLE)
-+
-+#define TSENSOR_CFG_REG3		0xC
-+#define TSENSOR_CFG_REG4		0x10
-+#define TSENSOR_CFG_REG5		0x14
-+#define TSENSOR_CFG_REG6		0x18
-+#define TSENSOR_CFG_REG7		0x1C
-+#define TSENSOR_CFG_REG8		0x20
-+
-+#define TSENSOR_STAT0			0x40
-+
-+#define TSENSOR_STAT9			0x64
-+
-+#define TSENSOR_READ_TEMP_MASK		GENMASK(15, 0)
-+#define TSENSOR_TEMP_MASK		GENMASK(11, 0)
-+
-+#define TSENSOR_TRIM_SIGN_MASK		BIT(15)
-+#define TSENSOR_TRIM_TEMP_MASK		GENMASK(14, 0)
-+#define TSENSOR_TRIM_VERSION_MASK	GENMASK(31, 24)
-+
-+#define TSENSOR_TRIM_VERSION(_version) 	\
-+	FIELD_GET(TSENSOR_TRIM_VERSION_MASK, _version)
-+
-+#define TSENSOR_TRIM_CALIB_VALID_MASK	(GENMASK(3, 2) | BIT(7))
-+
-+#define TSENSOR_CALIB_OFFSET	1
-+#define TSENSOR_CALIB_SHIFT	4
-+
-+static const struct iio_chan_spec temperature_channel[] = {
-+	{
-+		.type = IIO_TEMP,
-+		.channel = 0,
-+		.address = 0,
-+		.info_mask_separate = BIT(IIO_CHAN_INFO_PROCESSED),
-+	},
-+};
-+
-+/**
-+ * struct meson_tsensor_soc_data
-+ * @A, B, m, n: calibration parameters
-+ * This structure is required for configuration of meson tsensor driver.
-+ */
-+struct meson_tsensor_soc_data {
-+	int A;
-+	int B;
-+	int m;
-+	int n;
-+};
-+
-+/**
-+ * struct meson_tsensor_data
-+ * @u_efuse_off: register offset to read fused calibration value
-+ * @soc: calibration parameters structure pointer
-+ * @regmap_config: regmap config for the device
-+ * This structure is required for configuration of meson tsensor driver.
-+ */
-+struct meson_tsensor_data {
-+	int u_efuse_off;
-+	const struct meson_tsensor_soc_data *soc;
-+	const struct regmap_config *regmap_config;
-+};
-+
-+struct meson_tsensor {
-+	int id;
-+	const struct meson_tsensor_data *data;
-+	struct regmap *regmap;
-+	struct regmap *sec_ao_map;
-+	struct clk *clk;
-+	u32 trim_info;
-+	void __iomem *base;
-+	int reboot_temp;
-+};
-+
-+/*
-+ * tsensor treats temperature as a mapped temperature code.
-+ * The temperature is converted differently depending on the calibration type.
-+ */
-+static u32 temp_to_code(struct meson_tsensor *priv, int temp)
-+{
-+	const struct meson_tsensor_soc_data *param = priv->data->soc;
-+	s64 divisor, factor, uefuse;
-+	u32 reg_code;
-+
-+	uefuse = priv->trim_info & TSENSOR_TRIM_SIGN_MASK ?
-+			 ~(priv->trim_info & TSENSOR_TRIM_TEMP_MASK) + 1 :
-+			 (priv->trim_info & TSENSOR_TRIM_TEMP_MASK);
-+
-+	factor = BIT(16) * (temp * 10 + param->B);
-+	factor = div_s64(factor, param->A);
-+	factor = factor + uefuse;
-+
-+	factor = factor * 100;
-+
-+	divisor = param->n * factor;
-+	divisor = div_s64(divisor, BIT(16));
-+	divisor = param->m - divisor;
-+
-+	reg_code = div_s64(factor, divisor);
-+	reg_code = ((reg_code >> TSENSOR_CALIB_SHIFT) & TSENSOR_TEMP_MASK) +
-+		   TSENSOR_CALIB_OFFSET;
-+
-+	return reg_code;
-+}
-+
-+/*
-+ * Calculate a temperature value from a temperature code.
-+ * The unit of the temperature is degree Celsius.
-+ */
-+static int code_to_temp(struct meson_tsensor *priv, int temp_code)
-+{
-+	const struct meson_tsensor_soc_data *param = priv->data->soc;
-+	int temp;
-+	s64 factor, Uptat, uefuse;
-+
-+	uefuse = priv->trim_info & TSENSOR_TRIM_SIGN_MASK ?
-+			     ~(priv->trim_info & TSENSOR_TRIM_TEMP_MASK) + 1 :
-+			     (priv->trim_info & TSENSOR_TRIM_TEMP_MASK);
-+
-+	factor = param->n * temp_code;
-+	factor = div_s64(factor, 100);
-+
-+	Uptat = temp_code * param->m;
-+	Uptat = div_s64(Uptat, 100);
-+	Uptat = Uptat * BIT(16);
-+	Uptat = div_s64(Uptat, BIT(16) + factor);
-+
-+	temp = (Uptat + uefuse) * param->A;
-+	temp = div_s64(temp, BIT(16));
-+	temp = (temp - param->B) * 100;
-+
-+	return temp;
-+}
-+
-+static int meson_tsensor_initialize(struct iio_dev *indio_dev)
-+{
-+	struct meson_tsensor *priv = iio_priv(indio_dev);
-+	u32 reg_val;
-+	int ret = 0;
-+	int ver;
-+
-+	regmap_read(priv->sec_ao_map, priv->data->u_efuse_off,
-+		    &priv->trim_info);
-+
-+	ver = TSENSOR_TRIM_VERSION(priv->trim_info);
-+
-+	if ((ver & TSENSOR_TRIM_CALIB_VALID_MASK) == 0) {
-+		ret = -EINVAL;
-+		dev_err(&indio_dev->dev,
-+			"tsensor thermal calibration not supported: 0x%x!\n",
-+			ver);
-+		goto out;
-+	}
-+
-+	/* init the ts reboot soc function */
-+	if (priv->reboot_temp) {
-+		/* register need value in celsius */
-+		reg_val = temp_to_code(priv, priv->reboot_temp / 1000);
-+		regmap_update_bits(priv->regmap, TSENSOR_CFG_REG2,
-+				   TSENSOR_CFG_REG2_HITEMP_REBOOT_ENABLE_MASK,
-+				   TSENSOR_CFG_REG2_HITEMP_REG_VAL(reg_val));
-+	}
-+
-+out:
-+	return ret;
-+}
-+
-+static int meson_tsensor_enable(struct iio_dev *indio_dev)
-+{
-+	struct meson_tsensor *priv = iio_priv(indio_dev);
-+
-+	clk_prepare_enable(priv->clk);
-+	regmap_update_bits(priv->regmap, TSENSOR_CFG_REG1,
-+			   TSENSOR_CFG_REG1_ENABLE, TSENSOR_CFG_REG1_ENABLE);
-+
-+	return 0;
-+}
-+
-+static int meson_tsensor_disable(struct iio_dev *indio_dev)
-+{
-+	struct meson_tsensor *priv = iio_priv(indio_dev);
-+
-+	regmap_update_bits(priv->regmap, TSENSOR_CFG_REG1,
-+			   TSENSOR_CFG_REG1_ENABLE, 0);
-+	clk_disable(priv->clk);
-+
-+	return 0;
-+}
-+
-+static int meson_tsensor_read(struct iio_dev *indio_dev,
-+			      struct iio_chan_spec const *chan, int *val,
-+			      int *val2, long mask)
-+{
-+	unsigned int tvalue;
-+	struct meson_tsensor *priv = iio_priv(indio_dev);
-+
-+	switch (mask) {
-+	case IIO_CHAN_INFO_PROCESSED:
-+		regmap_read(priv->regmap, TSENSOR_STAT0, &tvalue);
-+		*val = code_to_temp(priv,
-+				    tvalue & TSENSOR_READ_TEMP_MASK);
-+
-+		return IIO_VAL_INT;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static const struct iio_info meson_tsensor_iio_info = {
-+	.read_raw = &meson_tsensor_read,
-+};
-+
-+static const struct regmap_config meson_tsensor_regmap_config_g12a = {
-+	.reg_bits = 8,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+	.max_register = TSENSOR_STAT9,
-+};
-+
-+static const struct meson_tsensor_soc_data meson_tsensor_g12a = {
-+	.A = 9411,
-+	.B = 3159,
-+	.m = 424,
-+	.n = 324,
-+};
-+
-+static const struct meson_tsensor_data meson_tsensor_g12a_cpu_param = {
-+	.u_efuse_off = 0x128,
-+	.soc = &meson_tsensor_g12a,
-+	.regmap_config = &meson_tsensor_regmap_config_g12a,
-+};
-+
-+static const struct meson_tsensor_data meson_tsensor_g12a_ddr_param = {
-+	.u_efuse_off = 0xF0,
-+	.soc = &meson_tsensor_g12a,
-+	.regmap_config = &meson_tsensor_regmap_config_g12a,
-+};
-+
-+static const struct of_device_id meson_tsensor_of_match[] = {
-+	{
-+		.compatible = "amlogic,meson-g12a-ddr-tsensor",
-+		.data = &meson_tsensor_g12a_ddr_param,
-+	},
-+	{
-+		.compatible = "amlogic,meson-g12a-cpu-tsensor",
-+		.data = &meson_tsensor_g12a_cpu_param,
-+	},
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, meson_tsensor_of_match);
-+
-+static int meson_tsensor_probe(struct platform_device *pdev)
-+{
-+	struct meson_tsensor *priv;
-+	struct iio_dev *indio_dev;
-+	struct resource *res;
-+
-+	int ret;
-+
-+	indio_dev = devm_iio_device_alloc(&pdev->dev, sizeof(*priv));
-+	if (!indio_dev) {
-+		dev_err(&pdev->dev, "failed allocating iio device\n");
-+		return -ENOMEM;
-+	}
-+
-+	priv = iio_priv(indio_dev);
-+	priv->data = of_device_get_match_data(&pdev->dev);
-+	if (!priv->data) {
-+		dev_err(&pdev->dev, "failed to get match data\n");
-+		return -ENODEV;
-+	}
-+
-+	indio_dev->channels = temperature_channel;
-+	indio_dev->num_channels = ARRAY_SIZE(temperature_channel);
-+	indio_dev->name = dev_name(&pdev->dev);
-+	indio_dev->dev.parent = &pdev->dev;
-+	indio_dev->dev.of_node = pdev->dev.of_node;
-+	indio_dev->modes = INDIO_DIRECT_MODE;
-+	indio_dev->info = &meson_tsensor_iio_info;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	priv->base = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(priv->base))
-+		return PTR_ERR(priv->base);
-+
-+	priv->regmap = devm_regmap_init_mmio(&pdev->dev, priv->base,
-+					     priv->data->regmap_config);
-+	if (IS_ERR(priv->regmap))
-+		return PTR_ERR(priv->regmap);
-+
-+	priv->clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(priv->clk)) {
-+		if (PTR_ERR(priv->clk) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "failed to get clock\n");
-+		return PTR_ERR(priv->clk);
-+	}
-+
-+	if (of_property_read_u32(pdev->dev.of_node,
-+				 "amlogic,critical-temperature",
-+				 &priv->reboot_temp)) {
-+		priv->reboot_temp = 0;
-+	}
-+
-+	priv->sec_ao_map = syscon_regmap_lookup_by_phandle
-+		(pdev->dev.of_node, "amlogic,ao-secure");
-+	if (IS_ERR(priv->sec_ao_map)) {
-+		dev_err(&pdev->dev, "syscon regmap lookup failed.\n");
-+		return PTR_ERR(priv->sec_ao_map);
-+	}
-+
-+	ret = meson_tsensor_initialize(indio_dev);
-+	if (ret)
-+		return ret;
-+
-+	ret = meson_tsensor_enable(indio_dev);
-+	if (ret)
-+		goto err;
-+
-+	platform_set_drvdata(pdev, indio_dev);
-+	ret = iio_device_register(indio_dev);
-+	if (ret)
-+		goto err_hw;
-+
-+	return 0;
-+
-+err_hw:
-+	meson_tsensor_disable(indio_dev);
-+err:
-+	clk_unprepare(priv->clk);
-+
-+	return ret;
-+}
-+
-+static int meson_tsensor_remove(struct platform_device *pdev)
-+{
-+	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
-+
-+	iio_device_unregister(indio_dev);
-+
-+	return meson_tsensor_disable(indio_dev);
-+}
-+
-+static struct platform_driver meson_tsensor_driver = {
-+	.probe = meson_tsensor_probe,
-+	.remove = meson_tsensor_remove,
-+	.driver = {
-+			.name = "meson-tsensor",
-+			.of_match_table = meson_tsensor_of_match,
-+		},
-+};
-+
-+module_platform_driver(meson_tsensor_driver);
-+
-+MODULE_AUTHOR("Guillaume La Roque <glaroque@baylibre.com>");
-+MODULE_DESCRIPTION("Amlogic Meson Temperature Sensor Driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQ2zDqW1lbnQsCgpPbiBUdWUsIEp1biAwNCwgMjAxOSBhdCAwMjozMzo1NVBNICswMjAwLCB2
+ZXJlam5hIHdyb3RlOgo+IEhpIENsw6ltZW50LAo+IAo+IE9uIE1vbiwgSnVuIDAzLCAyMDE5IGF0
+IDA5OjU4OjIzUE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+IEhpIE9uZHJlaiwK
+PiA+IAo+ID4gT24gRnJpLCAzMSBNYXkgMjAxOSBhdCAxNDo0NiwgT25kxZllaiBKaXJtYW4gPG1l
+Z291c0BtZWdvdXMuY29tPiB3cm90ZToKPiA+ID4KPiA+ID4gSGVsbG8gQ2zDqW1lbnQsCj4gPiA+
+Cj4gPiA+IE9uIEZyaSwgTWF5IDMxLCAyMDE5IGF0IDEyOjI1OjMyQU0gKzAyMDAsIENsw6ltZW50
+IFDDqXJvbiB3cm90ZToKPiA+ID4gPiBIaSBPbmRyZWosCj4gPiA+ID4KPiA+ID4gPiBPbiBUaHUs
+IDMwIE1heSAyMDE5IGF0IDE2OjU1LCBPbmTFmWVqIEppcm1hbiA8bWVnb3VzQG1lZ291cy5jb20+
+IHdyb3RlOgo+ID4gPiA+ID4KPiA+ID4gPiA+IEhlbGxvIENsw6ltZW50LAo+ID4gPiA+ID4KPiA+
+ID4gPiA+IE9uIFR1ZSwgTWF5IDI4LCAyMDE5IGF0IDA2OjE0OjM4UE0gKzAyMDAsIENsw6ltZW50
+IFDDqXJvbiB3cm90ZToKPiA+ID4gPiA+ID4gQWxsd2lubmVyIEg2IElSIGlzIHNpbWlsYXIgdG8g
+QTMxIGFuZCBjYW4gdXNlIHNhbWUgZHJpdmVyLgo+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiBBZGQg
+c3VwcG9ydCBmb3IgaXQuCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IENs
+w6ltZW50IFDDqXJvbiA8cGVyb24uY2xlbUBnbWFpbC5jb20+Cj4gPiA+ID4gPiA+IC0tLQo+ID4g
+PiA+ID4gPiAgYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LmR0c2kgfCAx
+OSArKysrKysrKysrKysrKysrKysrCj4gPiA+ID4gPiA+ICAxIGZpbGUgY2hhbmdlZCwgMTkgaW5z
+ZXJ0aW9ucygrKQo+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02
+NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRz
+L2FsbHdpbm5lci9zdW41MGktaDYuZHRzaQo+ID4gPiA+ID4gPiBpbmRleCAxNmM1YzNkMGZkODEu
+LjY0OWNiZGZlNDUyZSAxMDA2NDQKPiA+ID4gPiA+ID4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0
+cy9hbGx3aW5uZXIvc3VuNTBpLWg2LmR0c2kKPiA+ID4gPiA+ID4gKysrIGIvYXJjaC9hcm02NC9i
+b290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWg2LmR0c2kKPiA+ID4gPiA+ID4gQEAgLTY0Nyw2ICs2
+NDcsMjUgQEAKPiA+ID4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGlucyA9
+ICJQTDAiLCAiUEwxIjsKPiA+ID4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ZnVuY3Rpb24gPSAic19pMmMiOwo+ID4gPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgfTsK
+PiA+ID4gPiA+ID4gKwo+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgcl9pcl9yeF9w
+aW46IHItaXItcngtcGluIHsKPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgcGlucyA9ICJQTDkiOwo+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICBmdW5jdGlvbiA9ICJzX2Npcl9yeCI7Cj4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAg
+ICB9Owo+ID4gPiA+ID4gPiArICAgICAgICAgICAgIH07Cj4gPiA+ID4gPiA+ICsKPiA+ID4gPiA+
+ID4gKyAgICAgICAgICAgICByX2lyOiBpckA3MDQwMDAwIHsKPiA+ID4gPiA+ID4gKyAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJhbGx3aW5uZXIsc3VuNTBpLWg2LWly
+IiwKPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICJhbGx3aW5uZXIsc3VuNmktYTMxLWlyIjsKPiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgcmVnID0gPDB4MDcwNDAwMDAgMHg0MDA+Owo+ID4gPiA+ID4gPiArICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICBpbnRlcnJ1cHRzID0gPEdJQ19TUEkgMTA5IElSUV9UWVBF
+X0xFVkVMX0hJR0g+Owo+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBj
+bG9ja3MgPSA8JnJfY2N1IENMS19SX0FQQjFfSVI+LAo+ID4gPiA+ID4gPiArICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICA8JnJfY2N1IENMS19JUj47Cj4gPiA+ID4gPiA+ICsg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsb2NrLW5hbWVzID0gImFwYiIsICJpciI7Cj4g
+PiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlc2V0cyA9IDwmcl9jY3Ug
+UlNUX1JfQVBCMV9JUj47Cj4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIHBpbmN0cmwtMCA9IDwmcl9pcl9yeF9waW4+Owo+ID4gPiA+ID4gPiArICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ID4gPiA+ID4g
+PiAgICAgICAgICAgICAgIH07Cj4gPiA+ID4gPgo+ID4gPiA+ID4gUGxlYXNlIG1ha2UgYSBjb21t
+ZW50IGhlcmUsIHRoYXQgdGhpcyBpcyBrbm93biBicm9rZW4gb24gc29tZSBib2FyZHMgYW5kIG1h
+eQo+ID4gPiA+ID4gcmVzdWx0IElSUSBmbG9vZCBpZiBlbmFibGVkLiBPdGhlcndpc2Ugbm9vbmUg
+d2lsbCBrbm93Lgo+ID4gPiA+Cj4gPiA+ID4gSSdtIHBsYW5uaW5nIHRvIHNlbmQgYSB2NCBuZXh0
+IHdlZWsgd2l0aCB0aGUgSVJRX05PTkUgcmV0dXJuIGFzIE1heGltZQo+ID4gPiA+IHN1Z2dlc3Rl
+ZCBpdC4KPiA+ID4gPiBodHRwczovL2dpdGh1Yi5jb20vY2xlbWVudHBlcm9uL2xpbnV4L3RyZWUv
+aDZfaXJfdjQKPiA+ID4gPgo+ID4gPiA+IEJ1dCBtYXliZSB3ZSBjb3VsZCBhbHNvIHVzZSB0aGUg
+Yml0IDUgb2YgdGhlIElSUSBzdGF0dXMuCj4gPiA+Cj4gPiA+IFRoYW5rcywgdGhhdCdzIG5pY2Us
+IGJ1dCB0aGF0IHdpbGwgbm90IG1ha2UgdGhlIEhXIHdvcmsuIFRoYXQgd2lsbCBqdXN0IGRpc2Fi
+bGUKPiA+ID4gaXQuIFRoZSBjb21tZW50IGlzIHN0aWxsIG5lY2Vzc2FyeS4KPiA+IEkgaGF2ZSBw
+dXNoZWQgYSBuZXcgdmVyc2lvbiBvbiBteSBnaXRodWIuCj4gPiBodHRwczovL2dpdGh1Yi5jb20v
+Y2xlbWVudHBlcm9uL2xpbnV4L2NvbW1pdHMvaDZfaXJfdjQKPiA+IAo+ID4gSSB3aWxsIHN1Ym1p
+dCBpdCwgaWYgeW91IGFyZSBvayB3aXRoIGl0Lgo+IAo+IHRoZSBjaGFuZ2VzIG1ha2UgaXQgd29y
+c2UuIENvbnNvbGUgaXMgZmxvb2RlZCB3aXRoICJUZW1wb3JhcmlseSBkaXNhYmxlIElSUSIKPiBh
+bmQgb3RoZXIgc3ltcHRvbXMgYXJlIHRoZSBzYW1lIGFzIEkgZGVzY3JpYmVkIGJlZm9yZS4gSW50
+ZXJydXB0cyBhcmUgbm90Cj4gZGlzYWJsZWQgaW4gYSBhbnkgcmVhc29uYWJsZSB0aW1lLiAoSSd2
+ZSB3YWl0ZWQgZm9yIG1vcmUgPiA1bWlucyBhbHJlYWR5LikKPiAKPiBZb3UgcHJvYmFibHkgbmVl
+ZCB0byBkaXNhYmxlIGludGVycnVwdHMgcmlnaHQgYXdheSwgbm90IHdhaXQgZm9yIDEwMGsgZmFp
+bHVyZXMuCgpIbW0sIHRoaXMgaXMgd2hhdCB0aGUgcmVnaXN0ZXJzIGxvb2sgbGlrZSBwb3N0LXBy
+b2JlOgoKUl9DSVI6CjB4MDcwNDAwMDAgOiAwMDAwMDAzMAoweDA3MDQwMDA0IDogMDAwMDAwMzAK
+MHgwNzA0MDAwOCA6IDAwMDAwMDMwCjB4MDcwNDAwMGMgOiAwMDAwMDAzMAoweDA3MDQwMDEwIDog
+MDAwMDAwMzAKMHgwNzA0MDAxNCA6IDAwMDAwMDMwCjB4MDcwNDAwMTggOiAwMDAwMDAzMAoweDA3
+MDQwMDFjIDogMDAwMDAwMzAKMHgwNzA0MDAyMCA6IDAwMDAwMDMwCjB4MDcwNDAwMjQgOiAwMDAw
+MDAzMAoweDA3MDQwMDI4IDogMDAwMDAwMzAKMHgwNzA0MDAyYyA6IDAwMDAwMDMwCjB4MDcwNDAw
+MzAgOiAwMDAwMDAzMAoweDA3MDQwMDM0IDogMDAwMDAwMzAKMHgwNzA0MDAzOCA6IDAwMDAwMDMw
+CjB4MDcwNDAwM2MgOiAwMDAwMDAzMAoweDA3MDQwMDQwIDogMDAwMDAwMzAKMHgwNzA0MDA0NCA6
+IDAwMDAwMDMwCjB4MDcwNDAwNDggOiAwMDAwMDAzMAoweDA3MDQwMDRjIDogMDAwMDAwMzAKMHgw
+NzA0MDA1MCA6IDAwMDAwMDMwCjB4MDcwNDAwNTQgOiAwMDAwMDAzMAoweDA3MDQwMDU4IDogMDAw
+MDAwMzAKMHgwNzA0MDA1YyA6IDAwMDAwMDMwCjB4MDcwNDAwNjAgOiAwMDAwMDAzMAoweDA3MDQw
+MDY0IDogMDAwMDAwMzAKMHgwNzA0MDA2OCA6IDAwMDAwMDMwCjB4MDcwNDAwNmMgOiAwMDAwMDAz
+MAoweDA3MDQwMDcwIDogMDAwMDAwMzAKMHgwNzA0MDA3NCA6IDAwMDAwMDMwCjB4MDcwNDAwNzgg
+OiAwMDAwMDAzMAoweDA3MDQwMDdjIDogMDAwMDAwMzAKMHgwNzA0MDA4MCA6IDAwMDAwMDMwCjB4
+MDcwNDAwODQgOiAwMDAwMDAzMAoweDA3MDQwMDg4IDogMDAwMDAwMzAKMHgwNzA0MDA4YyA6IDAw
+MDAwMDMwCjB4MDcwNDAwOTAgOiAwMDAwMDAzMAoweDA3MDQwMDk0IDogMDAwMDAwMzAKMHgwNzA0
+MDA5OCA6IDAwMDAwMDMwCjB4MDcwNDAwOWMgOiAwMDAwMDAzMAoweDA3MDQwMGEwIDogMDAwMDAw
+MzAKMHgwNzA0MDBhNCA6IDAwMDAwMDMwCjB4MDcwNDAwYTggOiAwMDAwMDAzMAoweDA3MDQwMGFj
+IDogMDAwMDAwMzAKMHgwNzA0MDBiMCA6IDAwMDAwMDMwCjB4MDcwNDAwYjQgOiAwMDAwMDAzMAow
+eDA3MDQwMGI4IDogMDAwMDAwMzAKMHgwNzA0MDBiYyA6IDAwMDAwMDMwCjB4MDcwNDAwYzAgOiAw
+MDAwMDAzMAoweDA3MDQwMGM0IDogMDAwMDAwMzAKMHgwNzA0MDBjOCA6IDAwMDAwMDMwCjB4MDcw
+NDAwY2MgOiAwMDAwMDAzMAoweDA3MDQwMGQwIDogMDAwMDAwMzAKMHgwNzA0MDBkNCA6IDAwMDAw
+MDMwCjB4MDcwNDAwZDggOiAwMDAwMDAzMAoweDA3MDQwMGRjIDogMDAwMDAwMzAKMHgwNzA0MDBl
+MCA6IDAwMDAwMDMwCjB4MDcwNDAwZTQgOiAwMDAwMDAzMAoweDA3MDQwMGU4IDogMDAwMDAwMzAK
+MHgwNzA0MDBlYyA6IDAwMDAwMDMwCjB4MDcwNDAwZjAgOiAwMDAwMDAzMAoweDA3MDQwMGY0IDog
+MDAwMDAwMzAKMHgwNzA0MDBmOCA6IDAwMDAwMDMwCjB4MDcwNDAwZmMgOiAwMDAwMDAzMAoKQ2xl
+YXJseSBub3QgcmlnaHQuIEl0J3MganVzdCB0aGUgUl9DSVIgbW9kdWxlLCBvdGhlciBtb2R1bGVz
+IGhhdmUgbm9ybWFsIHZhbHVlcy4KCkkndmUgY2hlY2tlZDoKMHgwNzAxMDFjMCA6IDgxMDAwMDAy
+CihJUiBjbG9jayBjb25maWcgcmVnaXN0ZXIpCjB4MDcwMTAxY2MgOiAwMDAxMDAwMAooSVIgcmVz
+ZXQvYnVzIGNsayBnYXRlIHJlZykKCnN0YXRpYyBjb25zdCBjaGFyICogY29uc3Qgcl9tb2QwX2Rl
+ZmF1bHRfcGFyZW50c1tdID0geyAib3NjMzJrIiwgIm9zYzI0TSIgfTsKc3RhdGljIFNVTlhJX0ND
+VV9NUF9XSVRIX01VWF9HQVRFKGlyX2NsaywgImlyIiwKICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIHJfbW9kMF9kZWZhdWx0X3BhcmVudHMsIDB4MWMwLAogICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgMCwgNSwgICAgICAgICAvKiBNICovCiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICA4LCAyLCAgICAgICAgIC8qIFAgKi8KICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIDI0LCAxLCAgICAgICAgLyogbXV4ICovCiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICBCSVQoMzEpLCAgICAgIC8qIGdhdGUgKi8KICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIDApOwoKc3RhdGljIFNVTlhJX0NDVV9HQVRFKHJfYXBiMV9pcl9j
+bGssICAgICJyLWFwYjEtaXIiLCAgICAici1hcGIxIiwKICAgICAgICAgICAgICAgICAgICAgIDB4
+MWNjLCBCSVQoMCksIDApOwoKICAgICAgICBbUlNUX1JfQVBCMV9JUl0gICAgICAgICA9ICB7IDB4
+MWNjLCBCSVQoMTYpIH0sCgpTbyBwYXJlbnQgY2xvY2sgc2VlbXMgdG8gYmUgT0suIEJ1dCBnYXRl
+IGNsb2NrIGlzIG5vdCBlbmFibGVkLCBzbyB0aGUgYnVzCmlzIG5vdCB3b3JraW5nLgoKQW5kIGxv
+b2sgYXQgdGhpcyEhOgoKc3RhdGljIFNVTlhJX0NDVV9HQVRFKHJfYXBiMV9pcl9jbGssICAgICJy
+LWFwYjEtaXIiLCAgICAici1hcGIxIiwKICAgICAgICAgICAgICAgICAgICAgIDB4MWNjLCBCSVQo
+MCksIDApOwpzdGF0aWMgU1VOWElfQ0NVX0dBVEUocl9hcGIxX3cxX2NsaywgICAgInItYXBiMS13
+MSIsICAgICJyLWFwYjEiLAogICAgICAgICAgICAgICAgICAgICAgMHgxY2MsIEJJVCgwKSwgMCk7
+CgpTbywgaXQncyB3cm9uZyB3MSBnYXRlIGNvbmZpZyEKCllvdSBjYW4gZHJvcCB5b3VyIGNoYW5n
+ZXMsIGJlY2F1c2UgSSd2ZSBwcm9iYmFibHkgZm91bmQgdGhlIHJvb3QgY2F1c2UuCgpyZWdhcmRz
+LAoJby4KCj4gdGhhbmsgeW91IGFuZCByZWdhcmRzLAo+IAlvLgo+IAo+ID4gVGhhbmtzLAo+ID4g
+Q2zDqW1lbnQKPiA+IAo+ID4gPgo+ID4gPiB0aGFuayB5b3UsCj4gPiA+ICAgICAgICAgby4KPiA+
+ID4KPiA+ID4gPiBSZWdhcmRzLCBDbGVtZW50Cj4gPiA+ID4KPiA+ID4gPiA+Cj4gPiA+ID4gPiB0
+aGFua3MsCj4gPiA+ID4gPiAgICAgICAgIG8uCj4gPiA+ID4gPgo+ID4gPiA+ID4gPiAgICAgICAg
+ICAgICAgIHJfaTJjOiBpMmNANzA4MTQwMCB7Cj4gPiA+ID4gPiA+IC0tCj4gPiA+ID4gPiA+IDIu
+MjAuMQo+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiBfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4gPiA+ID4gPiBsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdAo+ID4gPiA+ID4gPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKPiA+ID4gPiA+ID4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCj4gPiA+ID4KPiA+ID4gPiAtLQo+ID4gPiA+IFlvdSBy
+ZWNlaXZlZCB0aGlzIG1lc3NhZ2UgYmVjYXVzZSB5b3UgYXJlIHN1YnNjcmliZWQgdG8gdGhlIEdv
+b2dsZSBHcm91cHMgImxpbnV4LXN1bnhpIiBncm91cC4KPiA+ID4gPiBUbyB1bnN1YnNjcmliZSBm
+cm9tIHRoaXMgZ3JvdXAgYW5kIHN0b3AgcmVjZWl2aW5nIGVtYWlscyBmcm9tIGl0LCBzZW5kIGFu
+IGVtYWlsIHRvIGxpbnV4LXN1bnhpK3Vuc3Vic2NyaWJlQGdvb2dsZWdyb3Vwcy5jb20uCj4gPiA+
+ID4gVG8gdmlldyB0aGlzIGRpc2N1c3Npb24gb24gdGhlIHdlYiwgdmlzaXQgaHR0cHM6Ly9ncm91
+cHMuZ29vZ2xlLmNvbS9kL21zZ2lkL2xpbnV4LXN1bnhpL0NBSml1Q2NlN25IU2t0VnNES2NSOEdM
+UnBEM1dyTjV5UDNOYl9IYnVfUTlOalVRYlNNdyU0MG1haWwuZ21haWwuY29tLgo+ID4gPiA+IEZv
+ciBtb3JlIG9wdGlvbnMsIHZpc2l0IGh0dHBzOi8vZ3JvdXBzLmdvb2dsZS5jb20vZC9vcHRvdXQu
+Cj4gPiAKPiA+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Cj4gPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+ID4gbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCj4gPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwKPiAKPiBfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cj4g
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
