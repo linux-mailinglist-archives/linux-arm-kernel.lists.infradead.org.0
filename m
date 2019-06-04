@@ -2,91 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DE6034586
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 13:35:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC73B3459C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 13:40:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ywdY1JOdLAymoMmfagWQgR7OOocNzpSycGvc/v5Bzt4=; b=VdwyKFRCYO+tXp
-	JbZ6pwSC7tXhHqrceg1llhwyBbNYt//Xxepvv7FdvMTPgJ7/JrvkxX/ZBv/EttJtsDEqd0kb6/ERm
-	6KZf6OPhnqd28vrcgvgmldDdWpKfPTtBzssZhAf13HjFE5HNJXvJ+3rgwwKPro3lkdjGyv8OwHHqQ
-	hlV6QmXSSkg42P6NoA7W1iqebxrKg8FDrH8Wxhc56Z7+dXEf01uk59ItsIB8lesH7mZiPk9E+lFAU
-	cf2X57KZ2YFddvOOlpDMBHflYeVGrksXf2LgKAASux2hjKj9ATLCahFDcTHneiVbJ3F7ehnqYqUmy
-	j4nIvc6B837vKmtSRxOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=r2pIcKkZv4zoU9LxP0zdS7OiBHFeOmxPMXkLMLvoeXo=; b=oXNPIYJ3Eqnt1S
+	P5D4f011+tK12o+qIfea7Y9lH83FAFgmbWygYdSdfwxAymF5rIRgCS6eRUfpw9otQjGHvpSFzYXg+
+	Y1+8wy0tTavcb78pmy2IRtpDYvujcWo4lOYVDQ5PmtVnpSf9BDSveLSFpeW6llYttOssqegXF/3Qr
+	FW3Jtev7v9EvVulRChOFG+LQmdtiy4j4RD/k3DRFpzulNZHMuuwYeNzClmq7kVO4s8NrfNySS5uyX
+	pCP/uvgaVPBcqUND/vwlvlXZiI7OkoxhThnTpjsIuqma3FQUD1c1QVxI65QUh4Ifp3LVP+P4CNdrx
+	T/SqEPbn2Q5nqMssDdPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY7ip-0002JP-3u; Tue, 04 Jun 2019 11:35:19 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1hY7nT-0002xY-1b; Tue, 04 Jun 2019 11:40:07 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY7ii-0002Il-O1
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 11:35:14 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5cf6576e0000>; Tue, 04 Jun 2019 04:35:10 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 04 Jun 2019 04:35:11 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 04 Jun 2019 04:35:11 -0700
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL105.nvidia.com
- (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 4 Jun
- 2019 11:35:11 +0000
-Received: from [10.26.11.158] (172.20.13.39) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 4 Jun 2019
- 11:35:08 +0000
-Subject: Re: [PATCH 07/26] iommu/dma: move the arm64 wrappers to common code
-To: Christoph Hellwig <hch@lst.de>
-References: <20190422175942.18788-1-hch@lst.de>
- <20190422175942.18788-8-hch@lst.de>
- <06b331f0-7df7-a6cd-954c-789f89a0836d@arm.com>
- <acb46c7f-0855-de30-485f-a6242968f947@nvidia.com>
- <20190604060554.GA14536@lst.de>
-From: Jon Hunter <jonathanh@nvidia.com>
-Message-ID: <5e119919-bbfd-14a4-0258-93e8249d11c4@nvidia.com>
-Date: Tue, 4 Jun 2019 12:35:05 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hY7n6-0002lp-M9; Tue, 04 Jun 2019 11:39:46 +0000
+X-UUID: 25dec06c3e4f4eac965b5dfa09917efb-20190604
+X-UUID: 25dec06c3e4f4eac965b5dfa09917efb-20190604
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <min.guo@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1551673915; Tue, 04 Jun 2019 03:39:37 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 4 Jun 2019 04:39:35 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 4 Jun 2019 19:39:33 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 4 Jun 2019 19:39:32 +0800
+From: <min.guo@mediatek.com>
+To: Bin Liu <b-liu@ti.com>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v6 0/6] Add MediaTek MUSB Controller Driver
+Date: Tue, 4 Jun 2019 19:39:13 +0800
+Message-ID: <1559648359-6569-1-git-send-email-min.guo@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-In-Reply-To: <20190604060554.GA14536@lst.de>
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL106.nvidia.com (172.18.146.12) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1559648110; bh=VdqCX9RhIKbSosQO8ZrtJXPmMRZiVMAZh+LN9yQt9Zk=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=emCZJ7it6lQS53IGu3TzNnekDYJaA//l1h7EaXgGok72LlXH4v9jhBAOGQz59yBV4
- uYLIm9wA8pSFenLXo9wX7QKjEjv1kcJRtovDerKh6hs3he51kpHfqrKB19qfA8gG2N
- Y37awIOpATCkodK1yiiLnWKsYxhHzIPMofESI5qT+J2Pu+7R+6uDdYfIRE3tHij3LC
- wuYTsm1vWBrKeeJ3WgBQkWNLGs1mOxBO/NnkHfhYBVTqVNVhwNh3Eg49AVRVUD9SIR
- Uzr4wK1ElNJox0xa4xVXPelS4UcglZJJ7ebbiM61sRgdQ84RBEMjJqexYIaLMth4JY
- Lh71EqBvSMgrw==
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_043512_792936_AFFE9C62 
-X-CRM114-Status: GOOD (  13.56  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190604_043944_723072_F7185FA2 
+X-CRM114-Status: GOOD (  12.92  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,38 +68,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tom Lendacky <thomas.lendacky@amd.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-tegra <linux-tegra@vger.kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ hdegoede@redhat.com, tony@atomide.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Alan Stern <stern@rowland.harvard.edu>, Min Guo <min.guo@mediatek.com>,
+ chunfeng.yun@mediatek.com, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Min Guo <min.guo@mediatek.com>
 
-On 04/06/2019 07:05, Christoph Hellwig wrote:
-> On Mon, Jun 03, 2019 at 08:47:57PM +0100, Jon Hunter wrote:
->> Since next-20190529 one of our tests for MMC has started failing, where
->> the symptom is that the data written to the MMC does not match the
->> source. Bisecting this is pointing to this commit. Unfortunately, I am
->> not able to cleanly revert this on top of -next, but wanted to report
->> this if case you have any ideas.
-> 
-> Does this fix your problem?
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/joro/iommu.git/commit/?h=generic-dma-ops&id=1b961423158caaae49d3900b7c9c37477bbfa9b3
+These patches introduce the MediaTek MUSB controller driver.
 
-Yes I can confirm with this patch on today's -next the issue is no
-longer seen, and reverting this patch on top of today's -next causes the
-problem to occur again. So yes this fixes my problem.
+The driver can be configured as Dual-Role Device (DRD),
+Peripheral Only and Host Only modes. This has beed tested on
+MT2701 with a variety of devices in host mode and with the 
+f_mass gadget driver in peripheral mode, plugging otg cables
+in/out a lot of times in all possible imaginable plug orders.
 
-Thanks!
-Jon
+changes in v6:
+changes of dt-bindings:
+1. Modify usb connector child node
+changes of DTS:
+1. Modify usb connector child node
+changes of driver:
+1. Add of_platform_populate in probe to populate connector platform_devices
+   from device tree data
+2. Replace extcon with usb role switch mechanism to support dual-role mode,
+   depends on [1]
+3. Remove set vbus function
+
+    [1] [v6,09/10] usb: roles: add USB Type-B GPIO connector driver
+        https://patchwork.kernel.org/patch/10966361/
+
+changes in v5:
+changes of dt-bindings suggested by Rob:
+1. Modify compatible as 
+- compatible : should be one of:
+               "mediatek,mt-2701"
+               ...
+               followed by "mediatek,mtk-musb"
+2. Add usb connector child node
+changes of DTS:
+1. Add usb connector child node
+changes of driver suggested by Bin:
+1. Replace musb_readb() with musb_clearb() to clear dma pending interrupts
+2. Replace musb_readb() with musb_clearb() to clear common/tx/rx pending interrupts
+3. Make musb_clearb/w() return the value of musb_readb/w()
+
+changes in v4:
+changes of dt-bindings suggested by Sergei:
+1. String alignment
+changes of driver suggested by Tony and Bin:
+1. Add a new patch for set/get_toggle()
+2. Add a new patch for noirq type of dma
+3. Add a new patch musb_clearb/w()
+4. Abondon patch "usb: musb: Delete the const attribute of addr parameter in readb/w/l hooks"
+
+changes in v3:
+changes of driver suggested by Bin:
+1. Add a new patch for musb_readb/w/l() to remove const attribute 
+2. Use is_out as function parameter in set_toggle/get_toggle() hooks
+3. Remove 'u8/u16 data' parameter in clearb/w() hooks
+4. Remove musb_default_clearb/w()
+5. Replace musb_readb/w() with musb_clearb/w() to clear pending interrupts 
+6. Add comments to clearb/w() hooks
+7. Replace musb_save_toggle() with musb->io.get_toggle()
+8. Replace musb_set_toggle() with musb->io.set_toggle()
+
+changes in v2:
+changes of dt-bindings suggested by Rob and Bin:
+1. Modify DRC to DRD
+2. Drop the "<soc-model>-musb" in compatible
+3. Remove phy-names
+4. Add space after comma in clock-names
+dtsi:
+1. Remove phy-names
+changes of driver suggested by Bin:
+1. Add a new patch for musb_set_toggle
+2. Add summarize of MediaTek musb controller differences in the commit log
+3. Abondon patch "usb: musb: Move musbhsdma macro definition to musb_dma.h"
+4. Add "|| COMPILE_TEST" in Kconfig
+5. Add musb_clearb() and musb_clearw() hooks
+6. Add get_toggle() and set_toggle() hooks
+7. Replace musb_readl() with musb_readw() to read 16bit toggle register
+8. Move MediaTek's private toggle registers from musb_regs.h to mediatek.c
+9. Create musbhs_dma_controller_create_noirq()
+
+Min Guo (6):
+  dt-bindings: usb: musb: Add support for MediaTek musb controller
+  arm: dts: mt2701: Add usb2 device nodes
+  usb: musb: Add get/set toggle hooks
+  usb: musb: Add noirq type of dma create interface
+  usb: musb: Add musb_clearb/w() interface
+  usb: musb: Add support for MediaTek musb controller
+
+ .../devicetree/bindings/usb/mediatek,musb.txt      |  55 ++
+ arch/arm/boot/dts/mt2701-evb.dts                   |  21 +
+ arch/arm/boot/dts/mt2701.dtsi                      |  33 ++
+ drivers/usb/musb/Kconfig                           |   9 +-
+ drivers/usb/musb/Makefile                          |   1 +
+ drivers/usb/musb/mediatek.c                        | 582 +++++++++++++++++++++
+ drivers/usb/musb/musb_core.c                       |  74 ++-
+ drivers/usb/musb/musb_core.h                       |  13 +-
+ drivers/usb/musb/musb_dma.h                        |   9 +
+ drivers/usb/musb/musb_host.c                       |  46 +-
+ drivers/usb/musb/musb_io.h                         |  12 +-
+ drivers/usb/musb/musbhsdma.c                       |  56 +-
+ drivers/usb/musb/sunxi.c                           |   4 +-
+ drivers/usb/musb/tusb6010.c                        |   2 +-
+ 14 files changed, 845 insertions(+), 72 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/usb/mediatek,musb.txt
+ create mode 100644 drivers/usb/musb/mediatek.c
 
 -- 
-nvpublic
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
