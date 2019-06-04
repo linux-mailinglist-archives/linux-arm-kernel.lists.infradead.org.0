@@ -2,67 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1329342F2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:14:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4CDC34312
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:23:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vM65gCQ6GP4vwvsg2bfpS3wjtftDJ6293ZC3Y2ccfv0=; b=LbWl3GteaSmLUX
-	yalvY/9MkWRbWd+CQBZznTGef5QQfVMN/DrDOHn9khPkK+Fj+sMJyP51gr3+/ZJ/oqd3CHeKF7bwS
-	miTH9jD2cT7RGAIWcC9YRpHws6IP9gD9b+XJGLdwiXgubOfqpHfkAhkjDfv1qJwupEV6e21Rn3dnq
-	EGPNX7H2bAcKexedusqs//U42pQG8IWfR2GriY+SCViA93zIWd9RgYWfqEMroOjBeOWdCMkBb4GLk
-	OmhYPuqTn8G391lAqUW4jGpWNRap+nPHde6TE2rq8S4mgXorVPHiU9mWe/vg/zJTPwFmc819+xkju
-	XlDieXBBgVkFr75BIWTQ==;
+	List-Owner; bh=bUa4PWzQmpwP5rlQ0JCB3dZmHZrCyn/UNAMmLSZwuWg=; b=SOHgi2oU2g24gD
+	GwouO/qZwZiJR7lA+DUWPd3fFdq9drlWVWD2FO3O0XRSRcdrUdMmTW+kDcXZIy0RJbYL8Ah0c7EU1
+	z8VXZm1iDAQFnAZhHXUhgcc97E3liuEUi7o0DfuXszYI7Uxai+aLzrL7Tc1BZe1MTAORhKPx3Lns3
+	6AAGtOq9Ad60mk2mdnDu6J6CW109LcFNSG5xXwt8btoCLkHggpC4PUvjxa68M55+js+zHj9GwosTz
+	DUv7FV+huBsA2S2v9HGx8Yd9HCM/Q8e7f831VeH0AvQMbtoCFBNfUY/fumpSxzIonNP/zeLDWAvTa
+	otGpW1KsVeZfWeOfJIKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY5Ww-0007rU-VD; Tue, 04 Jun 2019 09:14:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hY5f5-0002b1-3U; Tue, 04 Jun 2019 09:23:19 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY5Wo-0007qV-Sx; Tue, 04 Jun 2019 09:14:48 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hY5ex-0002ai-HU
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 09:23:13 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4270D21976;
- Tue,  4 Jun 2019 09:14:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559639685;
- bh=jRInVvoH/Jp1WAAgsg3CtkKKgWZbOrkmzFm+ATVyo4g=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ItT/JG4j7Zw1Qmygon0KfYYZbV5gsZ0jmQm7Wq34OweZyE9lEUG9ikxPolTdHn/6+
- z3COdTJE5fN+MdHQ3HW4VnNmQ7yWQdfWxapfzxMzMiiHjO+WKC1SIku9tlhVJWgcPh
- Qft/vN8ZHEvD9vPc2rBKJyRY4xZRXicaqJKcbeQk=
-Date: Tue, 4 Jun 2019 11:14:43 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [PATCH v4] usb: create usb_debug_root for gadget only
-Message-ID: <20190604091443.GA458@kroah.com>
-References: <1559633647-29040-1-git-send-email-chunfeng.yun@mediatek.com>
- <20190604073706.GA25045@kroah.com>
- <1559638754.8487.71.camel@mhfsdcap03>
+ by mx1.redhat.com (Postfix) with ESMTPS id C49D930C3194;
+ Tue,  4 Jun 2019 09:23:05 +0000 (UTC)
+Received: from kamzik.brq.redhat.com (unknown [10.43.2.160])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 90BE7619C3;
+ Tue,  4 Jun 2019 09:23:03 +0000 (UTC)
+Date: Tue, 4 Jun 2019 11:23:01 +0200
+From: Andrew Jones <drjones@redhat.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH] KVM: arm64: Filter out invalid core register IDs in
+ KVM_GET_REG_LIST
+Message-ID: <20190604092301.26vbijfoapl4whp6@kamzik.brq.redhat.com>
+References: <1559580727-13444-1-git-send-email-Dave.Martin@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559638754.8487.71.camel@mhfsdcap03>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <1559580727-13444-1-git-send-email-Dave.Martin@arm.com>
+User-Agent: NeoMutt/20180716
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.40]); Tue, 04 Jun 2019 09:23:10 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_021446_974736_B1CA1432 
-X-CRM114-Status: GOOD (  21.15  )
+X-CRM114-CacheID: sfid-20190604_022311_611477_D2868906 
+X-CRM114-Status: GOOD (  32.16  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,109 +69,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Felipe Balbi <felipe.balbi@linux.intel.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <marc.zyngier@arm.com>, kvmarm@lists.cs.columbia.edu,
+ stable@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 04:59:14PM +0800, Chunfeng Yun wrote:
-> On Tue, 2019-06-04 at 09:37 +0200, Greg Kroah-Hartman wrote:
-> > On Tue, Jun 04, 2019 at 03:34:07PM +0800, Chunfeng Yun wrote:
-> > > When CONFIG_USB is not set, and CONFIG_USB_GADGET is set,
-> > > there is an issue, e.g.:
-> > > 
-> > > drivers/usb/mtu3/mtu3_debugfs.o: in function 'ssusb_debugfs_create_root':
-> > > mtu3_debugfs.c:(.text+0xba3): undefined reference to 'usb_debug_root'
-> > > 
-> > > usb_debug_root is currently only built when host is supported
-> > > (CONFIG_USB is set), for convenience, we also want it created when
-> > > gadget only is enabled, this patch try to support it.
-> > > 
-> > > Reported-by: Randy Dunlap <rdunlap@infradead.org>
-> > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > ---
-> > > v4:
-> > >   move common API into common.c suggested by Felipe
-> > > 
-> > > v3:
-> > >   1. still create usb_debug_root for gadget only
-> > >   2. abandon mtu3's change
-> > >   3. drop acked-by Randy
-> > > 
-> > > v2(resend): add acked-by Randy
-> > > 
-> > > v1: fix mtu3's build error, replace usb_debug_root by NULL;
-> > > ---
-> > >  drivers/usb/common/common.c   | 26 ++++++++++++++++++++++++++
-> > >  drivers/usb/core/usb.c        | 16 ++++------------
-> > >  drivers/usb/gadget/udc/core.c |  3 +++
-> > >  include/linux/usb.h           |  2 ++
-> > >  4 files changed, 35 insertions(+), 12 deletions(-)
-> > > 
-> > > diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
-> > > index 18f5dcf58b0d..c52e9c9f58ec 100644
-> > > --- a/drivers/usb/common/common.c
-> > > +++ b/drivers/usb/common/common.c
-> > > @@ -15,6 +15,7 @@
-> > >  #include <linux/usb/of.h>
-> > >  #include <linux/usb/otg.h>
-> > >  #include <linux/of_platform.h>
-> > > +#include <linux/debugfs.h>
-> > >  
-> > >  static const char *const ep_type_names[] = {
-> > >  	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
-> > > @@ -139,6 +140,31 @@ enum usb_dr_mode usb_get_dr_mode(struct device *dev)
-> > >  }
-> > >  EXPORT_SYMBOL_GPL(usb_get_dr_mode);
-> > >  
-> > > +struct dentry *usb_debug_root;
-> > > +EXPORT_SYMBOL_GPL(usb_debug_root);
-> > > +
-> > > +static atomic_t usb_debug_root_refcnt = ATOMIC_INIT(0);
-> > 
-> > Ick, no.
-> > 
-> > > +
-> > > +struct dentry *usb_debugfs_init(void)
-> > > +{
-> > > +	if (!usb_debug_root)
-> > > +		usb_debug_root = debugfs_create_dir("usb", NULL);
-> > > +
-> > > +	atomic_inc(&usb_debug_root_refcnt);
-> > > +
-> > > +	return usb_debug_root;
-> > > +}
-> > > +EXPORT_SYMBOL_GPL(usb_debugfs_init);
-> > > +
-> > > +void usb_debugfs_cleanup(void)
-> > > +{
-> > > +	if (atomic_dec_and_test(&usb_debug_root_refcnt)) {
-> > > +		debugfs_remove_recursive(usb_debug_root);
-> > > +		usb_debug_root = NULL;
-> > > +	}
-> > > +}
-> > > +EXPORT_SYMBOL_GPL(usb_debugfs_cleanup);
-> > 
-> > Only remove the debugfs subdir if the usbcore module is removed. 
-> Both usbcore module and gadget module will use this "usb" subdir now.
-> Gadget module may still use it when remove usbcore module.
+On Mon, Jun 03, 2019 at 05:52:07PM +0100, Dave Martin wrote:
+> Since commit d26c25a9d19b ("arm64: KVM: Tighten guest core register
+> access from userspace"), KVM_{GET,SET}_ONE_REG rejects register IDs
+> that do not correspond to a single underlying architectural register.
+> 
+> KVM_GET_REG_LIST was not changed to match however: instead, it
+> simply yields a list of 32-bit register IDs that together cover the
+> whole kvm_regs struct.  This means that if userspace tries to use
+> the resulting list of IDs directly to drive calls to KVM_*_ONE_REG,
+> some of those calls will now fail.
+> 
+> This was not the intention.  Instead, iterating KVM_*_ONE_REG over
+> the list of IDs returned by KVM_GET_REG_LIST should be guaranteed
+> to work.
+> 
+> This patch fixes the problem by splitting validate_core_offset()
+> into a backend core_reg_size_from_offset() which does all of the
+> work except for checking that the size field in the register ID
+> matches, and kvm_arm_copy_reg_indices() and num_core_regs() are
+> converted to use this to enumerate the valid offsets.
+> 
+> kvm_arm_copy_reg_indices() now also sets the register ID size field
+> appropriately based on the value returned, so the register ID
+> supplied to userspace is fully qualified for use with the register
+> access ioctls.
 
-Did you try to remove the usb-common module with the udc gadget module
-remaining loaded with this change in place?  I think you will find that
-it is impossible given that the udc gadget module now depends on a
-symbol in the usb-common code.
+Ah yes, I've seen this issue, but hadn't gotten around to fixing it.
 
-So again, just use the module reference counting logic to drive this
-functionality, don't create an atomic variable that duplicates the
-logic we already have in place today.
+> 
+> Cc: stable@vger.kernel.org
+> Fixes: d26c25a9d19b ("arm64: KVM: Tighten guest core register access from userspace")
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> 
+> ---
+> 
+> Changes since v3:
 
-thanks,
+Hmm, I didn't see a v1-v3.
 
-greg k-h
+> 
+>  * Rebased onto v5.2-rc1.
+> 
+>  * Tested with qemu by migrating from one qemu instance to another on
+>    ThunderX2.
+
+One of the reasons I was slow to fix this is because QEMU doesn't care
+about the core registers when it uses KVM_GET_REG_LIST. It just completely
+skips all core reg indices, so it never finds out that they're invalid.
+And kvmtool doesn't use KVM_GET_REG_LIST at all. But it's certainly good
+to fix this.
+
+> 
+> ---
+>  arch/arm64/kvm/guest.c | 53 +++++++++++++++++++++++++++++++++++++-------------
+>  1 file changed, 40 insertions(+), 13 deletions(-)
+> 
+> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> index 3ae2f82..6527c76 100644
+> --- a/arch/arm64/kvm/guest.c
+> +++ b/arch/arm64/kvm/guest.c
+> @@ -70,10 +70,8 @@ static u64 core_reg_offset_from_id(u64 id)
+>  	return id & ~(KVM_REG_ARCH_MASK | KVM_REG_SIZE_MASK | KVM_REG_ARM_CORE);
+>  }
+>  
+> -static int validate_core_offset(const struct kvm_vcpu *vcpu,
+> -				const struct kvm_one_reg *reg)
+> +static int core_reg_size_from_offset(const struct kvm_vcpu *vcpu, u64 off)
+>  {
+> -	u64 off = core_reg_offset_from_id(reg->id);
+>  	int size;
+>  
+>  	switch (off) {
+> @@ -103,8 +101,7 @@ static int validate_core_offset(const struct kvm_vcpu *vcpu,
+>  		return -EINVAL;
+>  	}
+>  
+> -	if (KVM_REG_SIZE(reg->id) != size ||
+> -	    !IS_ALIGNED(off, size / sizeof(__u32)))
+> +	if (!IS_ALIGNED(off, size / sizeof(__u32)))
+>  		return -EINVAL;
+>  
+>  	/*
+> @@ -115,6 +112,21 @@ static int validate_core_offset(const struct kvm_vcpu *vcpu,
+>  	if (vcpu_has_sve(vcpu) && core_reg_offset_is_vreg(off))
+>  		return -EINVAL;
+>  
+> +	return size;
+> +}
+> +
+> +static int validate_core_offset(const struct kvm_vcpu *vcpu,
+> +				const struct kvm_one_reg *reg)
+> +{
+> +	u64 off = core_reg_offset_from_id(reg->id);
+> +	int size = core_reg_size_from_offset(vcpu, off);
+> +
+> +	if (size < 0)
+> +		return -EINVAL;
+> +
+> +	if (KVM_REG_SIZE(reg->id) != size)
+> +		return -EINVAL;
+> +
+>  	return 0;
+>  }
+>  
+> @@ -453,19 +465,34 @@ static int copy_core_reg_indices(const struct kvm_vcpu *vcpu,
+>  {
+>  	unsigned int i;
+>  	int n = 0;
+> -	const u64 core_reg = KVM_REG_ARM64 | KVM_REG_SIZE_U64 | KVM_REG_ARM_CORE;
+>  
+>  	for (i = 0; i < sizeof(struct kvm_regs) / sizeof(__u32); i++) {
+> -		/*
+> -		 * The KVM_REG_ARM64_SVE regs must be used instead of
+> -		 * KVM_REG_ARM_CORE for accessing the FPSIMD V-registers on
+> -		 * SVE-enabled vcpus:
+> -		 */
+> -		if (vcpu_has_sve(vcpu) && core_reg_offset_is_vreg(i))
+> +		u64 reg = KVM_REG_ARM64 | KVM_REG_ARM_CORE | i;
+> +		int size = core_reg_size_from_offset(vcpu, i);
+> +
+> +		if (size < 0)
+> +			continue;
+> +
+> +		switch (size) {
+> +		case sizeof(__u32):
+> +			reg |= KVM_REG_SIZE_U32;
+> +			break;
+> +
+> +		case sizeof(__u64):
+> +			reg |= KVM_REG_SIZE_U64;
+> +			break;
+> +
+> +		case sizeof(__uint128_t):
+> +			reg |= KVM_REG_SIZE_U128;
+> +			break;
+> +
+> +		default:
+> +			WARN_ON(1);
+>  			continue;
+> +		}
+>  
+>  		if (uindices) {
+> -			if (put_user(core_reg | i, uindices))
+> +			if (put_user(reg, uindices))
+>  				return -EFAULT;
+>  			uindices++;
+>  		}
+> -- 
+> 2.1.4
+>
+
+Reviewed-by: Andrew Jones <drjones@redhat.com>
+
+I've also tested this using a kvm selftests test I wrote. I haven't posted
+that test yet because it needs some cleanup and I planned on getting back
+to that when getting back to fixing this issue. Anyway, before this patch
+every other 64-bit core reg index is invalid (because its indexing 32-bits
+but claiming a size of 64), all fp regs are invalid, and we were even
+providing a couple indices that mapped to struct padding. After this patch
+everything is right with the world.
+
+Tested-by: Andrew Jones <drjones@redhat.com>
+
+Thanks,
+drew
 
 _______________________________________________
 linux-arm-kernel mailing list
