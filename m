@@ -2,44 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30A4734C65
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:41:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 953E234C77
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:42:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VJqFSZZwhMS5NHEoeYTyEJ0ZuyijR/fMcfMgzqWLEls=; b=mFYEWeV206CSN7
-	e5HBvflfqWxMfm+NBmFYi7vW/xVkFbH2w8r5Cg4jjX3LU375rHkN/3l5BLE/N4uz+yZansKlH2hwP
-	n3JD8XLDytuQfNcADhs4bmmoAvVbODULTL3YgiluHsvbm6t+tT6mbUW/5LfcifVVVVXMnP+YOhbVG
-	rKBN8ng/tz8R58FmSw4cPeEHBxgUC1jgsMtmy82RtoIYre8cJTnMpDtKHZeyWHAFpgVdNOUuVvVTR
-	4MEldR60UNrVxVleUPnXNjrhALwMOjHatnkqoKSKXFScHyZ7L18VmCvUp5CIqgW99NaMU5gMC3VUp
-	RAWVhEI4+1uwG14ZugEQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c/yRdWY8cN7KCyF1b2ml2lIiarbSFcoIUfeAMXXGvrk=; b=ry9mG7EzIyrooe
+	9GhZQCxIGtloke0fvbklyMK37sQijV+ev/cfdWq4IuiMPeT2KCXEtfYSONeCVC3+NNfschS7svK5h
+	ZxXX8CKYm2GSqDTd3dZZVQlEbTFe/HkKcK4ELBb0z7GfErga8qbb3pgFSqCo1O6FLMDR2ZXUMiddp
+	KwknUCU1GntPXM1PkTBzMUHcNE6mp5iwmz3X0397IhUDPsICxTXXiv9r9BPDiJCsIUuZpn/3cFnFv
+	qz4DI/ZmEBw5P1npXdNTGayR+yf7FMwRQQPJSnrRoHUHamlrEiLgoMJisTlE60Wire2WFohD5WlGg
+	zTysJ9I3T5nUWSvzq0qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYBYW-0002zH-8X; Tue, 04 Jun 2019 15:40:56 +0000
+	id 1hYBZk-0004Uw-EA; Tue, 04 Jun 2019 15:42:12 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYBYO-0002yg-Uq
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 15:40:50 +0000
+ id 1hYBZ0-0003jc-4o
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 15:41:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1559662847; bh=ixO4OiS3QbgO7fFYohnpcpN7u8/7cH3Nz5L9p88LaWk=;
- h=From:To:Cc:Subject:Date:From;
- b=JdK3vq0qTtY0P1vh2J2iPVNVrt6oX1xCuB9PL2mWwwSoNsb/fzedpXZT8zeiSK5XC
- k6+m8i4vso6+HoTDxtS5OQCxRZqbbJuDIqxRmtlRS47msA6xOSbiU+GszvUCwGnmc1
- lOPJQI7X4rdtx9nWEjSzxZg7BOwHUFABmGzG2SAY=
-From: megous@megous.com
-To: linux-sunxi@googlegroups.com
-Subject: [PATCH v2] clk: sunxi-ng: sun50i-h6-r: Fix incorrect W1 clock gate
- register
-Date: Tue,  4 Jun 2019 17:40:36 +0200
-Message-Id: <20190604154036.23211-1-megous@megous.com>
+ t=1559662884; bh=QKcBPWY3CbkjfYN89rLEZysY97rw4wPAuVtD6U6xPrg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=m3ngXj4qq1GciQjkwDqUoYqSmjqED0N54diMTYXwe3lWOM52GaID2qkX7+cE/wroZ
+ KD+HABGKCwc431teBRH27R/UH8Yj2NZa2otOhUErymlHORylXTsDPB5gjmYltRSfVL
+ vqIlAry4sXUPqEW7ue6gnlmOHvTEkIC1u3qYXZKs=
+Date: Tue, 4 Jun 2019 17:41:24 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@gmail.com>
+Subject: Re: [linux-sunxi] [PATCH] clk: sunxi-ng: sun50i-h6-r: Fix incorrect
+ W1 clock gate register
+Message-ID: <20190604154124.lalh3uhshx43l3rs@core.my.home>
+Mail-Followup-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@gmail.com>, 
+ linux-sunxi@googlegroups.com,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+References: <20190604150054.17683-1-megous@megous.com>
+ <20522585.shqbOC0eQD@jernej-laptop>
+ <20190604153120.zcxfn4kh2qjfktgo@core.my.home>
+ <2504206.OUqqUFhxAD@jernej-laptop>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2504206.OUqqUFhxAD@jernej-laptop>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_084049_162341_1F095CA5 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190604_084127_148015_9B83DD7B 
+X-CRM114-Status: GOOD (  14.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -65,52 +79,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Michael Turquette <mturquette@baylibre.com>,
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Michael Turquette <mturquette@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
  open list <linux-kernel@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
+ linux-sunxi@googlegroups.com,
  "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
  "moderated list:ARM/Allwinner sunXi SoC support"
  <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ondrej Jirman <megous@megous.com>
-
-The current code defines W1 clock gate to be at 0x1cc, overlaying it
-with the IR gate.
-
-Clock gate for r-apb1-w1 is at 0x1ec. This fixes issues with IR receiver
-causing interrupt floods on H6 (because interrupt flags can't be cleared,
-due to IR module's bus being disabled).
-
-Signed-off-by: Ondrej Jirman <megous@megous.com>
-Fixes: b7c7b05065aa77ae ("clk: sunxi-ng: add support for H6 PRCM CCU")
----
- drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-index 27554eaf6929..8d05d4f1f8a1 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-@@ -104,7 +104,7 @@ static SUNXI_CCU_GATE(r_apb2_i2c_clk,	"r-apb2-i2c",	"r-apb2",
- static SUNXI_CCU_GATE(r_apb1_ir_clk,	"r-apb1-ir",	"r-apb1",
- 		      0x1cc, BIT(0), 0);
- static SUNXI_CCU_GATE(r_apb1_w1_clk,	"r-apb1-w1",	"r-apb1",
--		      0x1cc, BIT(0), 0);
-+		      0x1ec, BIT(0), 0);
- 
- /* Information of IR(RX) mod clock is gathered from BSP source code */
- static const char * const r_mod0_default_parents[] = { "osc32k", "osc24M" };
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8gSmVybmVqLAoKT24gVHVlLCBKdW4gMDQsIDIwMTkgYXQgMDU6MzU6NDhQTSArMDIwMCwg
+SmVybmVqIMWga3JhYmVjIHdyb3RlOgo+IEhpIQo+IAo+IERuZSB0b3JlaywgMDQuIGp1bmlqIDIw
+MTkgb2IgMTc6MzE6MjAgQ0VTVCBqZSAnT25kxZllaiBKaXJtYW4nIHZpYSBsaW51eC1zdW54aSAK
+PiBuYXBpc2FsKGEpOgo+ID4gSGkgSmVybmVqLAo+ID4gCj4gPiBPbiBUdWUsIEp1biAwNCwgMjAx
+OSBhdCAwNTowMzo1NVBNICswMjAwLCBKZXJuZWogxaBrcmFiZWMgd3JvdGU6Cj4gPiA+IERuZSB0
+b3JlaywgMDQuIGp1bmlqIDIwMTkgb2IgMTc6MDA6NTQgQ0VTVCBqZSBtZWdvdXMgdmlhIGxpbnV4
+LXN1bnhpCj4gPiA+IAo+ID4gPiBuYXBpc2FsKGEpOgo+ID4gPiA+IEZyb206IE9uZHJlaiBKaXJt
+YW4gPG1lZ291c0BtZWdvdXMuY29tPgo+ID4gPiA+IAo+ID4gPiA+IFRoZSBjdXJyZW50IGNvZGUg
+ZGVmaW5lcyBXMSBjbG9jayBnYXRlIHRvIGJlIGF0IDB4MWNjLCBvdmVybGF5aW5nIGl0Cj4gPiA+
+ID4gd2l0aCB0aGUgSVIgZ2F0ZS4KPiA+ID4gPiAKPiA+ID4gPiBDbG9jayBnYXRlIGZvciByLWFw
+YjEtdzEgaXMgYXQgMHgxZWMuIFRoaXMgZml4ZXMgaXNzdWVzIHdpdGggSVIgcmVjZWl2ZXIKPiA+
+ID4gPiBjYXVzaW5nIGludGVycnVwdCBmbG9vZHMgb24gSDYgKGJlY2F1c2UgaW50ZXJydXB0IGZs
+YWdzIGNhbid0IGJlCj4gPiA+ID4gY2xlYXJlZCwKPiA+ID4gPiBkdWUgdG8gSVIgbW9kdWxlJ3Mg
+YnVzIGJlaW5nIGRpc2FibGVkKS4KPiA+ID4gPiAKPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBPbmRy
+ZWogSmlybWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4KPiA+ID4gCj4gPiA+IFlvdSBzaG91bGQgYWRk
+IEZpeGVzIHRhZyBhbmQgQ0Mgc3RhYmxlIHdpdGggdGhpcy4KPiA+IAo+ID4gTm90IG5lY2Vzc2Fy
+eSwgc2luY2UgSDYgSVIgaXMgbm90IHlldCBzdXBwb3J0ZWQgb24gbWFpbmxpbmUuCj4gCj4gV2Vs
+bCwgQ0Npbmcgc3RhYmxlIGlzIHByb2JhYmx5IHJlYWxseSBub3QgbmVjZXNzYXJ5LCBidXQgeW91
+IGFyZSBmaXhpbmcgYnVnIGluIAo+IGV4aXN0aW5nIGRyaXZlciAoY2xrKSwgZml4ZXMgdGFnIHN0
+aWxsIGFwcGx5LgoKUmlnaHQsIHJlc2VudCB2Mi4KCnRoYW5rIHlvdSBhbmQgcmVnYXJkcywKCW8u
+Cgo+IEJlc3QgcmVnYXJkcywKPiBKZXJuZWoKPiAKPiA+IAo+ID4gcmVnYXJkcywKPiA+IAlvLgo+
+ID4gCj4gPiA+IEJlc3QgcmVnYXJkcywKPiA+ID4gSmVybmVqCj4gPiA+IAo+ID4gPiAKPiA+ID4g
+Cj4gPiA+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4g
+PiA+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cj4gPiA+IGxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwo+ID4gPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwKPiAKPiAKPiAKPiAKPiAKPiBfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0Cj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
