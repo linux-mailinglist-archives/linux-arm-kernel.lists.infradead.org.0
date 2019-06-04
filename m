@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 462F3346D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:32:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5757346D2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:31:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=uhn3s0/INOnjkO4a+BRo1R4jl0OKK7RiFx0ypc2oA3g=; b=sFZfvbCTDO3su7bHC2tu/jGJlH
-	GErYrQMV888PDRlSzTABJyBMsWbALp6Gr9135Pvh5X6aVm0cKj+PQ/8vpurXKAcGJ3mL+0Bh4C2OW
-	n7QWALa5rPmqxH9N9y+ExirQNmuWQ5Oxn18qZx6fnBtEP90MAAZ++3cyIRSKhNp92+KRmAyIplzHM
-	iAtHNATPnKepwZXPW30bNwILaWPjks9j6sAL0atpCh4qr0853kwSrRmAH6A11qr6C6y3rtVvBQZcz
-	97WeHaKuFF5CUVHBHKIJPYHi+WOcfJfy9wZvNdx7xuDD38IRp+09ad/SCWTT9lFkhLGcpQ/jy6K5A
-	4d32uceA==;
+	bh=U0lTvvxjt7tK2ToSzkP+MHWAx/3Rmch5Da8Wb/9VsGc=; b=eVV+2Ddmg9ygq8oKb2yuJaq/mw
+	MaHcd1iPzB3YFN3IljzH8/S82ve4lcKQMTLWycDYVBkVMlynMgfbuFGUxJ8OwiOOu/X0n9p6Cj6Eu
+	14vKrIuvNdNJv1xKWAMJrbX2U8EBouL2MVmmzZqxMTdHiKpybqRZYZU7Tl+aWyq6hRRg6CKGN7iyB
+	aVfgl5ZSgcLcsqjC/dt69/ZG/kxv1o5bXMw2yOXWz5gg90bIzfam9MVSut/+K4IwPf2N+rygddUOD
+	E07CL2D8LxuNrDpkWfrlo70TJKZW9cXddUhX9roSjdtJejo1/XQhBHlta2K778VgRx+3hh6fvfRcc
+	SSDlZ0PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8bd-0007kJ-He; Tue, 04 Jun 2019 12:31:57 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1hY8bU-0007UG-HN; Tue, 04 Jun 2019 12:31:48 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8b9-0007FL-V6
+ id 1hY8bA-0007Gj-EU
  for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:31:31 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3656D200F22;
- Tue,  4 Jun 2019 14:31:26 +0200 (CEST)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 35DF71A0F08;
+ Tue,  4 Jun 2019 14:31:27 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 471E2200F1C;
- Tue,  4 Jun 2019 14:31:20 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 844D21A0F12;
+ Tue,  4 Jun 2019 14:31:21 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 09F3B402D5;
- Tue,  4 Jun 2019 20:31:12 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4C2E4402DD;
+ Tue,  4 Jun 2019 20:31:14 +0800 (SGT)
 From: daniel.baluta@nxp.com
 To: shawnguo@kernel.org
-Subject: [PATCH v4 1/2] arm64: dts: imx8mm: Add SAI nodes
-Date: Tue,  4 Jun 2019 20:32:56 +0800
-Message-Id: <20190604123257.2920-2-daniel.baluta@nxp.com>
+Subject: [PATCH v4 2/2] arm64: dts: imx8mm-evk: Enable audio codec wm8524
+Date: Tue,  4 Jun 2019 20:32:57 +0800
+Message-Id: <20190604123257.2920-3-daniel.baluta@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190604123257.2920-1-daniel.baluta@nxp.com>
 References: <20190604123257.2920-1-daniel.baluta@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_053128_419610_D1615563 
-X-CRM114-Status: UNSURE (   6.35  )
+X-CRM114-CacheID: sfid-20190604_053128_787604_2354F684 
+X-CRM114-Status: UNSURE (   7.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -53,7 +53,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,102 +80,112 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Daniel Baluta <daniel.baluta@nxp.com>
 
-i.MX8MM has 5 SAI instances with the following base
-addresses according to RM.
+i.MX8MM has one wm8524 audio codec connected with
+SAI3 digital audio interface.
 
-SAI1 base address: 3001_0000h
-SAI2 base address: 3002_0000h
-SAI3 base address: 3003_0000h
-SAI5 base address: 3005_0000h
-SAI6 base address: 3006_0000h
+This patch uses simple-card machine driver in order
+to enable wm8524 codec.
+
+We need to set:
+	* SAI3 pinctrl configuration
+	* codec reset gpio pinctrl configuration
+	* clock hierarchy
+	* codec node
+	* simple-card configuration
 
 Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
 Reviewed-by: Fabio Estevam <festevam@gmail.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 66 +++++++++++++++++++++++
- 1 file changed, 66 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 55 ++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
 
-Shawn, although here https://lkml.org/lkml/2019/5/31/110 you 
-say this patch is applied I couldn't find it in any of your
-branches.
-
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 708d3c4c1389..321cd050e6f8 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -212,6 +212,72 @@
- 			#size-cells = <1>;
- 			ranges;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+index f8ff0a4b8961..7d2ec0326659 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
+@@ -37,6 +37,37 @@
+ 		gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
+ 	};
++
++	wm8524: audio-codec {
++		#sound-dai-cells = <0>;
++		compatible = "wlf,wm8524";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpio_wlf>;
++		wlf,mute-gpios = <&gpio5 21 GPIO_ACTIVE_LOW>;
++	};
++
++	sound-wm8524 {
++		compatible = "simple-audio-card";
++		simple-audio-card,name = "wm8524-audio";
++		simple-audio-card,format = "i2s";
++		simple-audio-card,frame-master = <&cpudai>;
++		simple-audio-card,bitclock-master = <&cpudai>;
++		simple-audio-card,widgets =
++			"Line", "Left Line Out Jack",
++			"Line", "Right Line Out Jack";
++		simple-audio-card,routing =
++			"Left Line Out Jack", "LINEVOUTL",
++			"Right Line Out Jack", "LINEVOUTR";
++
++		cpudai: simple-audio-card,cpu {
++			sound-dai = <&sai3>;
++		};
++
++		simple-audio-card,codec {
++			sound-dai = <&wm8524>;
++			clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
++		};
++	};
+ };
  
-+			sai1: sai@30010000 {
-+				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
-+				reg = <0x30010000 0x10000>;
-+				interrupts = <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&clk IMX8MM_CLK_SAI1_IPG>,
-+					 <&clk IMX8MM_CLK_SAI1_ROOT>,
-+					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
-+				clock-names = "bus", "mclk1", "mclk2", "mclk3";
-+				dmas = <&sdma2 0 2 0>, <&sdma2 1 2 0>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
+ &A53_0 {
+@@ -65,6 +96,15 @@
+ 	};
+ };
+ 
++&sai3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_sai3>;
++	assigned-clocks = <&clk IMX8MM_CLK_SAI3>;
++	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
++	assigned-clock-rates = <24576000>;
++	status = "okay";
++};
 +
-+			sai2: sai@30020000 {
-+				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
-+				reg = <0x30020000 0x10000>;
-+				interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&clk IMX8MM_CLK_SAI2_IPG>,
-+					<&clk IMX8MM_CLK_SAI2_ROOT>,
-+					<&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
-+				clock-names = "bus", "mclk1", "mclk2", "mclk3";
-+				dmas = <&sdma2 2 2 0>, <&sdma2 3 2 0>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
+ &uart2 { /* console */
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart2>;
+@@ -242,6 +282,12 @@
+ 		>;
+ 	};
+ 
++	pinctrl_gpio_wlf: gpiowlfgrp {
++		fsl,pins = <
++			MX8MM_IOMUXC_I2C4_SDA_GPIO5_IO21	0xd6
++		>;
++	};
 +
-+			sai3: sai@30030000 {
-+				#sound-dai-cells = <0>;
-+				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
-+				reg = <0x30030000 0x10000>;
-+				interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&clk IMX8MM_CLK_SAI3_IPG>,
-+					 <&clk IMX8MM_CLK_SAI3_ROOT>,
-+					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
-+				clock-names = "bus", "mclk1", "mclk2", "mclk3";
-+				dmas = <&sdma2 4 2 0>, <&sdma2 5 2 0>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
+ 	pinctrl_i2c1: i2c1grp {
+ 		fsl,pins = <
+ 			MX8MM_IOMUXC_I2C1_SCL_I2C1_SCL			0x400001c3
+@@ -261,6 +307,15 @@
+ 		>;
+ 	};
+ 
++	pinctrl_sai3: sai3grp {
++		fsl,pins = <
++			MX8MM_IOMUXC_SAI3_TXFS_SAI3_TX_SYNC     0xd6
++			MX8MM_IOMUXC_SAI3_TXC_SAI3_TX_BCLK      0xd6
++			MX8MM_IOMUXC_SAI3_MCLK_SAI3_MCLK        0xd6
++			MX8MM_IOMUXC_SAI3_TXD_SAI3_TX_DATA0     0xd6
++		>;
++	};
 +
-+			sai5: sai@30050000 {
-+				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
-+				reg = <0x30050000 0x10000>;
-+				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&clk IMX8MM_CLK_SAI5_IPG>,
-+					 <&clk IMX8MM_CLK_SAI5_ROOT>,
-+					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
-+				clock-names = "bus", "mclk1", "mclk2", "mclk3";
-+				dmas = <&sdma2 8 2 0>, <&sdma2 9 2 0>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
-+
-+			sai6: sai@30060000 {
-+				compatible = "fsl,imx8mm-sai", "fsl,imx8mq-sai";
-+				reg = <0x30060000 0x10000>;
-+				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&clk IMX8MM_CLK_SAI6_IPG>,
-+					 <&clk IMX8MM_CLK_SAI6_ROOT>,
-+					 <&clk IMX8MM_CLK_DUMMY>, <&clk IMX8MM_CLK_DUMMY>;
-+				clock-names = "bus", "mclk1", "mclk2", "mclk3";
-+				dmas = <&sdma2 10 2 0>, <&sdma2 11 2 0>;
-+				dma-names = "rx", "tx";
-+				status = "disabled";
-+			};
-+
- 			gpio1: gpio@30200000 {
- 				compatible = "fsl,imx8mm-gpio", "fsl,imx35-gpio";
- 				reg = <0x30200000 0x10000>;
+ 	pinctrl_uart2: uart2grp {
+ 		fsl,pins = <
+ 			MX8MM_IOMUXC_UART2_RXD_UART2_DCE_RX	0x140
 -- 
 2.17.1
 
