@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0225734184
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:16:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12E0534190
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:16:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0Fjrhw6JInr8iwpp2i9YsSQ5Q9FwzgHVX4Ggrl0Bzxc=; b=daOsHZLYosBU++NjBDmI+pKoJu
-	W8VxdzMjIx8ni7oZsZM10+D9lEro7UlQxQ1fT4/ouVrrqH5w7BIrW44xpMAJYp7PuRUnV9wN/8Srg
-	mUCqR1SUqJBibRDuvoVoIyl0i3ds6vUrp2HjlmzthsFN9invZDxtc88yNS8UyttKTvDAJmANoQJJn
-	pCBQz2GOXXMtAMDDPB22of0RVncWzm2pSyay7grVAZnILtjjgEEr0nALOAWq04jZVrwRVbWHzhDeu
-	EeZeoUel+Q62sWc3gapIQBkZrCCLfEbGbzZZr0lVx8RI4A3z9RGFzZW1ECWxHRJs/EgRqlIEFx6jD
-	/Szc/jaw==;
+	bh=M5sCbeu1JD9CSLboYKHL8DitJKLeEyy+QW4nJs8nJZs=; b=tmlaSH20oXwNq0jcxbjbMKFq1y
+	IXIDX0NUnF9sP17yZT5hUyqjlj1smUjDer3mHymjyNYwHUJf4xC0jLK9pfk7kXB2YrtoMFZWEJzPe
+	Y6KOHMI5g1S3poXXdwxeOOBVn1cKbrVrhTCborTQQANI5xE2yQdlxw53yunwZNpoXu4TT2ECGstnD
+	Z4qYCbM2Aghap1tKLh+gytj9IhsWJZRm43jss60OYepjvLqVgDlKKUSXyTxyiXo2pMhO68vFPeVuc
+	0z6NE8LyiKsKEKKlf7cSgshSruYMW6wEAAkr+9pjZ2DUdm4p6PAbr71J15pjiBwu3mf1S8FrNSZs7
+	o/2zlqXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY4c4-0002sM-7W; Tue, 04 Jun 2019 08:16:08 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hY4cF-00037h-2I; Tue, 04 Jun 2019 08:16:19 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY4bE-0001sr-Jl
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:15:35 +0000
-Received: by mail-pl1-x644.google.com with SMTP id g21so8050254plq.0
+ id 1hY4bJ-00022H-A0
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:15:43 +0000
+Received: by mail-pg1-x542.google.com with SMTP id v11so9896358pgl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 01:15:16 -0700 (PDT)
+ Tue, 04 Jun 2019 01:15:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=Fv2whIvWWtuvlrntuYk8WF1rR93EthhOFv6VYDGUqK0=;
- b=H3U36xsCUdBFRm3KPZyTSWH//zyS50ZT4XZXXWDgwO3Va81kNw7pvlth33eG7dWzrH
- omDFCLKePr2nlgYtOe4W0MyTeJ4hTspfMvXK5YJB64ESExZnjLJlF4IykS6Q6+qbySr0
- zZdBNXibIrWEfD6IroCEc0ndnzGDzqBeIt0hnnv2CuM8D9y+lSHrDjc1ZMTR/GHVCo8W
- t8xBkc6ke362zGEgylzJz4/lIqJ8LwGOolPoY+xSvA8VNzKy2m+syMXqzJNrYUu8XKZA
- IICbKWPnqI21SxfiOPG5/wasSwdfVBzvFuastyGFb12nknN9hTFgpcQM+85KeTbthNc6
- gK/g==
+ bh=psGipp4xyvA6ITMw9MQePCESgWaNPblRsxWV83tCX+4=;
+ b=Rk1RfYD3O1B47PXjsboBmdlUBgc8lREPnmsvxmlZ4K8tbkh9XtlFbnik9hg4P56Aue
+ vqCyok4QonGQdHkxZSSuuFS6jhSm/NPbnnsrHIUNGu0BDi0lEwrpQqGPtV9+JT6czANw
+ n6jjOqhPttUEOa8TtLKAQ9Eak8U0r9YB6rMRVZz+D4bWe6j738SSpVm3TR3OKtR/ICwX
+ FtnPJSEFPw9flefbuW7WCJ+xLAqJTcCte3FVf3L/rqnX2mYXrYhElN0tb0xYCnYU//c2
+ z1JGQfgT7b6nq/Z1fc3StiLbNMErzmcJ2zLaSjcx8Rswz5rPxDpQl1VFS2Oqjd5LnE6A
+ 4nwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:in-reply-to:references;
- bh=Fv2whIvWWtuvlrntuYk8WF1rR93EthhOFv6VYDGUqK0=;
- b=Yj4a3wbQCajsbodB4PVzm4G09BskJBElbISfrIddqxAyEyjX9Yo9Q+l15vEX15nOAl
- oaTpkVCBNpZFGFMDz5+3LtNqadCXniZ2bTk60qst57rNpA4lZ6kYsw5xdtwJ8uYFF1F1
- F3/rGgG2xQLVOWsb5evZ71EStI8ARwecSuH9yyWvNjjp7LhoI+bk50I9OJYwM2DaTh0G
- Eb57Txc3cDy4a+sZOUXRejzWci8MD+l/SJF5AMxG3BuXd/bbpv4J9EOVvtWVYV6wV47C
- t3ZqcnNo9IJ5yNTgcbiFU1Zp2iomMvsM3My1ozQs15ciJvD/psnvK6pFecm9FBNnR8vC
- fO8A==
-X-Gm-Message-State: APjAAAXjrfXNYQYzVCI4RgL8KVWrNR0kXuIW2hT8qdNNIY4PSug30A8q
- 9DpCH+o3GU/jrNLl0/myBtLcvg==
-X-Google-Smtp-Source: APXvYqyY2NQVzf09JwfhQjHqJ106rVkuXkui5CHCsJNhadMPvAeANQiapZZITmLH2ZerWGrncqNblw==
-X-Received: by 2002:a17:902:b584:: with SMTP id
- a4mr35666871pls.333.1559636116089; 
- Tue, 04 Jun 2019 01:15:16 -0700 (PDT)
+ bh=psGipp4xyvA6ITMw9MQePCESgWaNPblRsxWV83tCX+4=;
+ b=RYn84AjR25ZYh0dDm1VbtaqVdC+MEqYdrCG9g93m72mHglkp8qiBn+zArfkGrhEbQI
+ se8q2CXIQwOQF+2mxHK0sNKT22gK/qzw7PZJdl8ATAeK+snxH3oO9jBHACbQYfl21EhU
+ TDoWRZYsihrZ9ip/sjIGsiUrxXh3FqeTCTsClPogdigIxM5eXBUMPjnzKU1bx2Y1dWyp
+ /CRCbERiQxvzjHkt+vTvMNvmmw8RxAPfPBQEZ52ETNQrBuYPnvYH9vrrdkduGOIcgcgC
+ yc4FoOB/dt/+lQvyiR5U7mf7k+oPXceTrq12tKnawzA0VGWBfB/LQiu9+w+G8P4D/v3f
+ 1KNg==
+X-Gm-Message-State: APjAAAUCQEXHHJw05fb2ad0C75DHO0qlJ321r2Jxc7kAkkkG4/WYXtXj
+ jt8oICZjdmE6/t7G94REG7kdtA==
+X-Google-Smtp-Source: APXvYqw8S604f3AEfkc8EEZ0C+3dntoJhFVMgGRVMpVEZsSDNYKOAKmWI7L5sK+Tqxo8qYOOAAGJzg==
+X-Received: by 2002:a63:70f:: with SMTP id 15mr17140238pgh.432.1559636120682; 
+ Tue, 04 Jun 2019 01:15:20 -0700 (PDT)
 Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.82])
- by smtp.gmail.com with ESMTPSA id j4sm14818804pgc.56.2019.06.04.01.15.12
+ by smtp.gmail.com with ESMTPSA id j4sm14818804pgc.56.2019.06.04.01.15.16
  (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 04 Jun 2019 01:15:15 -0700 (PDT)
+ Tue, 04 Jun 2019 01:15:20 -0700 (PDT)
 From: Baolin Wang <baolin.wang@linaro.org>
 To: adrian.hunter@intel.com, ulf.hansson@linaro.org, zhang.lyra@gmail.com,
  orsonzhai@gmail.com, robh+dt@kernel.org, mark.rutland@arm.com,
  arnd@arndb.de, olof@lixom.net
-Subject: [PATCH v2 6/9] mmc: sdhci-sprd: Enable PHY DLL to make clock stable
-Date: Tue,  4 Jun 2019 16:14:26 +0800
-Message-Id: <c784bd147950d3534a92a9f55174c2406eedeb6e.1559635435.git.baolin.wang@linaro.org>
+Subject: [PATCH v2 7/9] dt-bindings: mmc: sprd: Add PHY DLL delay documentation
+Date: Tue,  4 Jun 2019 16:14:27 +0800
+Message-Id: <6caaa6afd1b69fc491c36c665a954becb50d616b.1559635435.git.baolin.wang@linaro.org>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <cover.1559635435.git.baolin.wang@linaro.org>
 References: <cover.1559635435.git.baolin.wang@linaro.org>
 In-Reply-To: <cover.1559635435.git.baolin.wang@linaro.org>
 References: <cover.1559635435.git.baolin.wang@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_011517_170231_6AC4C5BB 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20190604_011521_640458_A86E9C9B 
+X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,98 +110,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For the Spreadtrum SD host controller, when we changed the clock to be
-more than 52M, we should enable the PHY DLL which is used to track the
-clock frequency to make the clock work more stable. Otherwise deviation
-may occur of the higher clock.
+Introduce some PHY DLL delays properties to help to sample the PHY clock.
 
 Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
- drivers/mmc/host/sdhci-sprd.c |   44 ++++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 43 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/mmc/sdhci-sprd.txt         |   18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
-diff --git a/drivers/mmc/host/sdhci-sprd.c b/drivers/mmc/host/sdhci-sprd.c
-index edec197..e6eda13 100644
---- a/drivers/mmc/host/sdhci-sprd.c
-+++ b/drivers/mmc/host/sdhci-sprd.c
-@@ -22,6 +22,13 @@
- /* SDHCI_ARGUMENT2 register high 16bit */
- #define SDHCI_SPRD_ARG2_STUFF		GENMASK(31, 16)
+diff --git a/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt b/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt
+index a285c77..e675397 100644
+--- a/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt
++++ b/Documentation/devicetree/bindings/mmc/sdhci-sprd.txt
+@@ -20,6 +20,23 @@ Optional properties:
+ - assigned-clocks: the same with "sdio" clock
+ - assigned-clock-parents: the default parent of "sdio" clock
  
-+#define SDHCI_SPRD_REG_32_DLL_CFG	0x200
-+#define  SDHCI_SPRD_DLL_ALL_CPST_EN	(BIT(18) | BIT(24) | BIT(25) | BIT(26) | BIT(27))
-+#define  SDHCI_SPRD_DLL_EN		BIT(21)
-+#define  SDHCI_SPRD_DLL_SEARCH_MODE	BIT(16)
-+#define  SDHCI_SPRD_DLL_INIT_COUNT	0xc00
-+#define  SDHCI_SPRD_DLL_PHASE_INTERNAL	0x3
++PHY DLL delays are used to delay the data valid window, and align the window
++to sampling clock. PHY DLL delays can be configured by following properties,
++and each property contains 4 cells which are used to configure the clock data
++write line delay value, clock read command line delay value, clock read data
++positive edge delay value and clock read data negative edge delay value.
++Each cell's delay value unit is cycle of the PHY clock.
 +
- #define SDHCI_SPRD_REG_32_DLL_DLY_OFFSET	0x208
- #define  SDHCIBSPRD_IT_WR_DLY_INV		BIT(5)
- #define  SDHCI_SPRD_BIT_CMD_DLY_INV		BIT(13)
-@@ -56,6 +63,7 @@
- #define SDHCI_SPRD_CLK_MAX_DIV		1023
++- sprd,phy-delay-legacy: Delay value for legacy timing.
++- sprd,phy-delay-sd-highspeed: Delay value for SD high-speed timing.
++- sprd,phy-delay-sd-uhs-sdr50: Delay value for SD UHS SDR50 timing.
++- sprd,phy-delay-sd-uhs-sdr104: Delay value for SD UHS SDR50 timing.
++- sprd,phy-delay-mmc-highspeed: Delay value for MMC high-speed timing.
++- sprd,phy-delay-mmc-ddr52: Delay value for MMC DDR52 timing.
++- sprd,phy-delay-mmc-hs200: Delay value for MMC HS200 timing.
++- sprd,phy-delay-mmc-hs400: Delay value for MMC HS400 timing.
++- sprd,phy-delay-mmc-hs400es: Delay value for MMC HS400 enhanced strobe timing.
++
+ Examples:
  
- #define SDHCI_SPRD_CLK_DEF_RATE		26000000
-+#define SDHCI_SPRD_PHY_DLL_CLK		52000000
+ sdio0: sdio@20600000 {
+@@ -33,6 +50,7 @@ sdio0: sdio@20600000 {
+ 	assigned-clocks = <&ap_clk CLK_EMMC_2X>;
+ 	assigned-clock-parents = <&rpll CLK_RPLL_390M>;
  
- struct sdhci_sprd_host {
- 	u32 version;
-@@ -200,9 +208,33 @@ static inline void _sdhci_sprd_set_clock(struct sdhci_host *host,
- 	}
- }
- 
-+static void sdhci_sprd_enable_phy_dll(struct sdhci_host *host)
-+{
-+	u32 tmp;
-+
-+	tmp = sdhci_readl(host, SDHCI_SPRD_REG_32_DLL_CFG);
-+	tmp &= ~(SDHCI_SPRD_DLL_EN | SDHCI_SPRD_DLL_ALL_CPST_EN);
-+	sdhci_writel(host, tmp, SDHCI_SPRD_REG_32_DLL_CFG);
-+	/* wait 1ms */
-+	usleep_range(1000, 1250);
-+
-+	tmp = sdhci_readl(host, SDHCI_SPRD_REG_32_DLL_CFG);
-+	tmp |= SDHCI_SPRD_DLL_ALL_CPST_EN | SDHCI_SPRD_DLL_SEARCH_MODE |
-+		SDHCI_SPRD_DLL_INIT_COUNT | SDHCI_SPRD_DLL_PHASE_INTERNAL;
-+	sdhci_writel(host, tmp, SDHCI_SPRD_REG_32_DLL_CFG);
-+	/* wait 1ms */
-+	usleep_range(1000, 1250);
-+
-+	tmp = sdhci_readl(host, SDHCI_SPRD_REG_32_DLL_CFG);
-+	tmp |= SDHCI_SPRD_DLL_EN;
-+	sdhci_writel(host, tmp, SDHCI_SPRD_REG_32_DLL_CFG);
-+	/* wait 1ms */
-+	usleep_range(1000, 1250);
-+}
-+
- static void sdhci_sprd_set_clock(struct sdhci_host *host, unsigned int clock)
- {
--	bool en = false;
-+	bool en = false, clk_changed = false;
- 
- 	if (clock == 0) {
- 		sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
-@@ -214,9 +246,19 @@ static void sdhci_sprd_set_clock(struct sdhci_host *host, unsigned int clock)
- 			en = true;
- 		sdhci_sprd_set_dll_invert(host, SDHCI_SPRD_BIT_CMD_DLY_INV |
- 					  SDHCI_SPRD_BIT_POSRD_DLY_INV, en);
-+		clk_changed = true;
- 	} else {
- 		_sdhci_sprd_set_clock(host, clock);
- 	}
-+
-+	/*
-+	 * According to the Spreadtrum SD host specification, when we changed
-+	 * the clock to be more than 52M, we should enable the PHY DLL which
-+	 * is used to track the clock frequency to make the clock work more
-+	 * stable. Otherwise deviation may occur of the higher clock.
-+	 */
-+	if (clk_changed && clock > SDHCI_SPRD_PHY_DLL_CLK)
-+		sdhci_sprd_enable_phy_dll(host);
- }
- 
- static unsigned int sdhci_sprd_get_max_clock(struct sdhci_host *host)
++	sprd,phy-delay-sd-uhs-sdr104 = <0x3f 0x7f 0x2e 0x2e>;
+ 	bus-width = <8>;
+ 	non-removable;
+ 	no-sdio;
 -- 
 1.7.9.5
 
