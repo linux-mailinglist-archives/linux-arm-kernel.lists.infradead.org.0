@@ -2,95 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E3F734B09
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:55:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E0FC34B06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:54:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A7jopPi1tZQEI5QxVJuBreIvkYCpu5Szt1spjg2LQd8=; b=QKB7s/MnOCH4HA
-	g5BGwJE6XhMYAeBUu+DReeTJPomHnmZtN6VIHWG8VSIfKRTTvE4kQeuQJyXPRpCZAap+zvbLhMxhE
-	DN0Y87wriGN8g7rJBiwEZhl5DVHIYelvetfLhoNPDapBEfZ/r4N5MzXGkTAUtxGbEnhlT864werSR
-	pDF/UlwRMVA7LJxKqhTQojy/S6YTGEwYVdKnwrejU4iaeHApHSiMTsWAGGe142zx2EYuYZKBG5jg6
-	KQWG8BbKDvs3f3VJkG+SekyTX5MCxENNpNm4vb/+XkFc1DCtdhRyYOTbryu6bsmtzQn8YPBMVya1q
-	2qNZEca08AHdjgBtF50g==;
+	List-Owner; bh=ZCP/nEXdWkcy5nasnXZQcngsHFCYcSDXKYDXddf3WYQ=; b=loucFggK6IfU3y
+	CbYPdDMVHyjJX1pTvjEbGySTS+Yo0JbFWSiKPSy4ZzvhxK0JMx93+0YO+EezqqqWRUz94ZQnqUBIf
+	523OGBLCxqkYwpy0S1ilEEqeTeybaZh8cz3gY5UqtZkFGhYNkDCcTSmTBHi0otGEgrmxP8owdUBK3
+	LjKdBHy4In888YeiFtHdvsRWkZbU4K9+i4D+4b1Hv6DgLN+bSZKzehoyrBMFerS0FSeE3BW9k89es
+	G5ekdM8n/Hfyztgx/fQtdYfbNTbmwmRFYF5480UhSvdo49DB1aGdQPxQXO9fzOLwaxY24WBYuWGet
+	hBm1rE0oeSL126dS4xHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAq5-0004uN-4E; Tue, 04 Jun 2019 14:55:01 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1hYApo-0004aU-JS; Tue, 04 Jun 2019 14:54:44 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYApk-0004W6-PR
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:54:48 +0000
-Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x54EcMsq042140
- for <linux-arm-kernel@lists.infradead.org>; Tue, 4 Jun 2019 10:54:33 -0400
-Received: from e06smtp01.uk.ibm.com (e06smtp01.uk.ibm.com [195.75.94.97])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2swssckenr-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Tue, 04 Jun 2019 10:54:33 -0400
-Received: from localhost
- by e06smtp01.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
- Tue, 4 Jun 2019 15:54:30 +0100
-Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
- by e06smtp01.uk.ibm.com (192.168.101.131) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 4 Jun 2019 15:54:26 +0100
-Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
- [9.149.105.62])
- by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x54EsPk160882980
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 4 Jun 2019 14:54:25 GMT
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id A5A23AE045;
- Tue,  4 Jun 2019 14:54:25 +0000 (GMT)
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id A6587AE055;
- Tue,  4 Jun 2019 14:54:24 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.53])
- by d06av26.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Tue,  4 Jun 2019 14:54:24 +0000 (GMT)
-Date: Tue, 4 Jun 2019 17:54:22 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH -next] arm64/mm: fix a bogus GFP flag in pgd_alloc()
-References: <1559656836-24940-1-git-send-email-cai@lca.pw>
- <20190604142338.GC24467@lakrids.cambridge.arm.com>
+ id 1hYApd-0004VN-6j
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:54:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1559660071; bh=95GYOgwl829tExfkDRtkMvcWLHLqIMDdOvd0ItQBRPA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=lQ08PYzAowbpDALh/bdzfBKo2Glb31I+mPrDYyfuk3YUz7jUjP2TtF05N7MRU/ABy
+ ys6ZI84RcheuM7k2KhWKh1CcT2ElO9D+OfXrBtTR/YWsT7VFHVOTIUXA0gPdGnbJtF
+ tNWOQaooGXJWtgGvUEWRkvO6/e0ePeOF9ehbh9GQ=
+Date: Tue, 4 Jun 2019 16:54:30 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v3 03/12] media: rc: sunxi: Add A31 compatible
+Message-ID: <20190604145430.xqufpyosetgb4bo7@core.my.home>
+Mail-Followup-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+References: <20190528161440.27172-1-peron.clem@gmail.com>
+ <20190528161440.27172-4-peron.clem@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190604142338.GC24467@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-TM-AS-GCONF: 00
-x-cbid: 19060414-4275-0000-0000-0000033CA09A
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19060414-4276-0000-0000-0000384CB014
-Message-Id: <20190604145422.GG8417@rapoport-lnx>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-04_10:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=7 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1906040097
+In-Reply-To: <20190528161440.27172-4-peron.clem@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_075441_659635_E0207F98 
-X-CRM114-Status: GOOD (  28.02  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190604_075433_422163_D5043A1F 
+X-CRM114-Status: GOOD (  15.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,88 +75,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- mhocko@kernel.org, linux-mm@kvack.org, Qian Cai <cai@lca.pw>,
- vdavydov.dev@gmail.com, hannes@cmpxchg.org, cgroups@vger.kernel.org,
- akpm@linux-foundation.org, guro@fb.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 03:23:38PM +0100, Mark Rutland wrote:
-> On Tue, Jun 04, 2019 at 10:00:36AM -0400, Qian Cai wrote:
-> > The commit "arm64: switch to generic version of pte allocation"
-> > introduced endless failures during boot like,
-> > 
-> > kobject_add_internal failed for pgd_cache(285:chronyd.service) (error:
-> > -2 parent: cgroup)
-> > 
-> > It turns out __GFP_ACCOUNT is passed to kernel page table allocations
-> > and then later memcg finds out those don't belong to any cgroup.
-> 
-> Mike, I understood from [1] that this wasn't expected to be a problem,
-> as the accounting should bypass kernel threads.
-> 
-> Was that assumption wrong, or is something different happening here?
+On Tue, May 28, 2019 at 06:14:31PM +0200, Cl=E9ment P=E9ron wrote:
+> Allwiner A31 has a different memory mapping so add the compatible
+> we will need it later.
+> =
 
-I was under impression that all allocations are going through
-__memcg_kmem_charge() which does the bypass.
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> ---
+>  drivers/media/rc/sunxi-cir.c | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+> =
 
-Apparently, it's not the case :(
+> diff --git a/drivers/media/rc/sunxi-cir.c b/drivers/media/rc/sunxi-cir.c
+> index d02dcb6fd0a5..0504ebfc831f 100644
+> --- a/drivers/media/rc/sunxi-cir.c
+> +++ b/drivers/media/rc/sunxi-cir.c
+> @@ -343,6 +343,11 @@ static const struct sunxi_ir_quirks sun5i_a13_ir_qui=
+rks =3D {
+>  	.fifo_size =3D 64,
+>  };
+>  =
 
-> > 
-> > backtrace:
-> >   kobject_add_internal
-> >   kobject_init_and_add
-> >   sysfs_slab_add+0x1a8
-> >   __kmem_cache_create
-> >   create_cache
-> >   memcg_create_kmem_cache
-> >   memcg_kmem_cache_create_func
-> >   process_one_work
-> >   worker_thread
-> >   kthread
-> > 
-> > Signed-off-by: Qian Cai <cai@lca.pw>
-> > ---
-> >  arch/arm64/mm/pgd.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/arch/arm64/mm/pgd.c b/arch/arm64/mm/pgd.c
-> > index 769516cb6677..53c48f5c8765 100644
-> > --- a/arch/arm64/mm/pgd.c
-> > +++ b/arch/arm64/mm/pgd.c
-> > @@ -38,7 +38,7 @@ pgd_t *pgd_alloc(struct mm_struct *mm)
-> >  	if (PGD_SIZE == PAGE_SIZE)
-> >  		return (pgd_t *)__get_free_page(gfp);
-> >  	else
-> > -		return kmem_cache_alloc(pgd_cache, gfp);
-> > +		return kmem_cache_alloc(pgd_cache, GFP_PGTABLE_KERNEL);
-> 
-> This is used to allocate PGDs for both user and kernel pagetables (e.g.
-> for the efi runtime services), so while this may fix the regression, I'm
-> not sure it's the right fix.
+> +static const struct sunxi_ir_quirks sun6i_a31_ir_quirks =3D {
+> +	.has_reset =3D true,
+> +	.fifo_size =3D 64,
+> +};
+> +
 
-Me neither.
- 
-> Do we need a separate pgd_alloc_kernel()?
- 
-I'd like to take a closer look at memcg paths once again before adding
-pgd_alloc_kernel().
+BTW, H6 BSP uses FIFO size 40:
 
-Johannes, Roman, can you please advise anything?
+https://github.com/orangepi-xunlong/OrangePiH6_Linux4_9/blob/master/drivers=
+/media/rc/sunxi-ir-dev.c#L290
 
-> Thanks,
-> Mark.
-> 
-> [1] https://lkml.kernel.org/r/20190505061956.GE15755@rapoport-lnx
-> 
+Have you tried filling the fifo with over 40 words on H6, to see if it work=
+s?
 
--- 
-Sincerely yours,
-Mike.
+I know it's docummented as having 64 words in the manual, so maybe Allwiner
+just didn't care enough to make the driver configurable, and the H6
+FIFO really has that depth.
 
+regards,
+	o.
+
+>  static const struct of_device_id sunxi_ir_match[] =3D {
+>  	{
+>  		.compatible =3D "allwinner,sun4i-a10-ir",
+> @@ -352,6 +357,10 @@ static const struct of_device_id sunxi_ir_match[] =
+=3D {
+>  		.compatible =3D "allwinner,sun5i-a13-ir",
+>  		.data =3D &sun5i_a13_ir_quirks,
+>  	},
+> +	{
+> +		.compatible =3D "allwinner,sun6i-a31-ir",
+> +		.data =3D &sun6i_a31_ir_quirks,
+> +	},
+>  	{}
+>  };
+>  MODULE_DEVICE_TABLE(of, sunxi_ir_match);
+> -- =
+
+> 2.20.1
+> =
+
+> =
+
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
