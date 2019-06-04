@@ -2,50 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64B8934283
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:01:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3C3C34289
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:01:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UGRZQgkpv9tQR8g2PEJBvNZEepxPERzGfSs33vVdEdQ=; b=YGsbazETir98DD
-	nwDUP64BfGDGw0+wrB+kKEv8BI0PPBMgiMc/4AboIobrpAs7rR7ZLg7hlVmQB7BQv7euht6XGOVwo
-	gn6wIERI3IRw0hYE80ICKzpUGH5E/mfvXXTmtxpfnhGaX2pAXLr38i9zlwEVRRqspjkIhwcS8uK7K
-	y2GbtLp9dLm4lw5aToGU1WE+lrvXheb3SH4pF7ZVbeHtN4gTHLL6/+xge6dh7mHEsggobUtNEbMF6
-	ATorN+4W/VSPSP+hmIOyNaalv4CwzPP6Y2HHWgt0+jTcvDaffElyK669NeWLFSyAwhuE3xk084V30
-	mG1jimipssy6T61zc08A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0R2kJAQ8xwS2bX1fxuq7vaL4IrH71xO+4uRav3QgfsE=; b=AGEAD7JEvgMiyi
+	RIhpW33CDgURWM52uhhwT2ubbhHdAMmAsMWcjssWGwrUdNucqkcLt6M+5grw59m8AJsjGZXvu1wzI
+	OzIRPQRA9H3ye2IEUCD9GUuDvmmZjiM7Ys6/Vxcil4C/8oRM0gdZ9ANadvN8uYD5JHddQOce2mLBw
+	F+sgn7jrRBEOY9JXibmsY66rJ0mRY7YitTtxoGQcfwWsG726gb6blnQOXn0OZOLNfbqpE7Y8Lnqwy
+	FhoBibCxsmAGcgE2nfLvDeD1aCC4saZFmZrWIEOu36dkPO395t6pYIlCeXWNTaOLkinDoYdqORySK
+	T75qQjv/vj4jSp8BdQOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY5K4-0001Di-7c; Tue, 04 Jun 2019 09:01:36 +0000
+	id 1hY5KE-0001KW-GU; Tue, 04 Jun 2019 09:01:46 +0000
 Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
  helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY5Jx-0001DC-Ab
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 09:01:30 +0000
+ id 1hY5Jz-0001DB-0z
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 09:01:32 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3BB2315A2;
- Tue,  4 Jun 2019 02:01:29 -0700 (PDT)
-Received: from e107533-lin.cambridge.arm.com (unknown [10.37.9.40])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B45243F246;
- Tue,  4 Jun 2019 02:01:26 -0700 (PDT)
-Date: Tue, 4 Jun 2019 10:01:23 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>
-Subject: Re: [PATCH 1/6] mailbox: add support for doorbell/signal mode
- controllers
-Message-ID: <20190604090123.GC23250@e107533-lin.cambridge.arm.com>
-References: <20190531143320.8895-1-sudeep.holla@arm.com>
- <20190531143320.8895-2-sudeep.holla@arm.com>
- <CABb+yY2ON+etV_g+zBQUrV9x2_0QubUeEPuxs=EKw_JCt570BQ@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E6F97A78;
+ Tue,  4 Jun 2019 02:01:28 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 23BFD3F740; Tue,  4 Jun 2019 02:01:26 -0700 (PDT)
+Subject: Re: [PATCH] KVM: arm64: Drop 'const' from argument of vq_present()
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>
+References: <699121e5c938c6f4b7b14a7e2648fa15af590a4a.1559623368.git.viresh.kumar@linaro.org>
+ <20190604084349.prnnvjvjaeuhsmgs@mbp>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <9a7681c3-f09e-8b8d-35d7-051268ce6d54@arm.com>
+Date: Tue, 4 Jun 2019 10:01:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABb+yY2ON+etV_g+zBQUrV9x2_0QubUeEPuxs=EKw_JCt570BQ@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190604084349.prnnvjvjaeuhsmgs@mbp>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_020129_369710_88E307C6 
-X-CRM114-Status: GOOD (  16.97  )
+X-CRM114-CacheID: sfid-20190604_020131_074025_C17A7B08 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -66,49 +110,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Mark Brown <broonie@kernel.org>, Cristian Marussi <cristian.marussi@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ James Morse <james.morse@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 04:51:05PM -0500, Jassi Brar wrote:
-> On Fri, May 31, 2019 at 9:33 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+On 04/06/2019 09:43, Catalin Marinas wrote:
+> On Tue, Jun 04, 2019 at 10:13:19AM +0530, Viresh Kumar wrote:
+>> We currently get following compilation warning:
+>>
+>> arch/arm64/kvm/guest.c: In function 'set_sve_vls':
+>> arch/arm64/kvm/guest.c:262:18: warning: passing argument 1 of 'vq_present' from incompatible pointer type
+>> arch/arm64/kvm/guest.c:212:13: note: expected 'const u64 (* const)[8]' but argument is of type 'u64 (*)[8]'
 > 
-> > diff --git a/drivers/mailbox/mailbox.c b/drivers/mailbox/mailbox.c
-> > index 38d9df3fb199..e26a079f8223 100644
-> > --- a/drivers/mailbox/mailbox.c
-> > +++ b/drivers/mailbox/mailbox.c
-> > @@ -77,7 +77,10 @@ static void msg_submit(struct mbox_chan *chan)
-> >         if (chan->cl->tx_prepare)
-> >                 chan->cl->tx_prepare(chan->cl, data);
-> >         /* Try to submit a message to the MBOX controller */
-> > -       err = chan->mbox->ops->send_data(chan, data);
-> > +       if (chan->mbox->ops->send_data)
-> > +               err = chan->mbox->ops->send_data(chan, data);
-> > +       else
-> > +               err = chan->mbox->ops->send_signal(chan);
-> >         if (!err) {
-> >                 chan->active_req = data;
-> >                 chan->msg_count--;
-> >
-> The  'void *data'  parameter in send_data() is controller specific.
-> The doorbell controllers should simply ignore that.
-> 
-> So signal/doorbell controllers are already supported fine. See
-> drivers/mailbox/tegra-hsp.c for example.
->
+> Since the vq_present() function does not modify the vqs array, I don't
+> understand why this warning. Compiler bug?
 
-Agreed, I did have that. But then I thought this API makes it even
-clearer to the users that no data is expected. I am fine either way.
+Yeah, I'm a bit puzzled by that one. Also checked with clang, which is
+usually much more picky about things, but it didn't complain.
 
---
-Regards,
-Sudeep
+We could drop the const without much harm, but I really wish we weed out
+these ancient compilers...
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
