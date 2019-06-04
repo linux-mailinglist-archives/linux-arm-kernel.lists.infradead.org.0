@@ -2,59 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E42883464A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:10:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA93E34655
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:12:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mLa1rmXr3mettisfejvgXZleB5w0KVqO/LeFh0hvSnQ=; b=RTCu1TNkEaEgev
-	piLz0eq1Z2bM4MSngkTqumTdWvi8Ye+9j3b9vHMDd07XNTc2z3RZCM29A2XZS3U9hvQDoNqBRRzFO
-	D+auB0S3hGhCABuJpKWvOqlmQyygXzD41boy/94Uly2z2PDZvpLGZnTc0v/dObwrhP5V0D0UKeuzq
-	2FK34YKH2DA8PmviLldCFln7QihJsSGK1Xa1ap+UenCL8959+atlxaTnforMGf/Dqw/MXBuYmTarc
-	0s7a+hUrEtSDDCvbV/cxwdsnqvza6cKlmQJdEIRXgCFgHaVIbz95IuicnpeuV+LEU4xWm92TFOqpX
-	KZ3pNp2EnyzR9ax6lt+Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fGHN62iKsgz0DWJ9/hlWaFsWABP2V69Qh+rBJ0f206A=; b=YB4PmzRa160LNe
+	O3ZEkhypxQIhy3WCL8isw7avy3CrDvOtI2KeXn39GPTVtFdCP3VPAdWSzpd0r5K++G2Wk9dh9ru0s
+	f0lD8YJCyNf47sEU1x1Y4nkvYZ0u8cab/f0figmKMWQGacOii++BlaYbu5yEPUCoVTA//rvbU8AZB
+	fLjj+kf5n78aaY1Xv5yZPKHA5Nzl691XaXtEqYy8pPehlvWOSpP4Hz9nKyMZ22hhDk0Qz7IEZtIUC
+	YF92vT+qK8hq6c+/MxaMChlFft9RYz4DdnGcSGhNAp0ir/5qcYyXp1K5UTMTqPHXeWZetV0eqx9r7
+	dSesr+7w+OFOu8VTIh2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8H6-0002zh-G4; Tue, 04 Jun 2019 12:10:44 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8Gy-0002z9-Ld
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:10:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D48EF80D;
- Tue,  4 Jun 2019 05:10:35 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB3B43F690;
- Tue,  4 Jun 2019 05:10:32 -0700 (PDT)
-Subject: Re: [PATCH v6 15/19] arm64: Add vDSO compat support
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-16-vincenzo.frascino@arm.com>
- <20190601093830.GA13589@arrakis.emea.arm.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <2027e092-2d76-9350-6c5b-7d3debc6a93f@arm.com>
-Date: Tue, 4 Jun 2019 13:10:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hY8J0-0003OS-FY; Tue, 04 Jun 2019 12:12:42 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY8Is-0003NX-I5
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:12:36 +0000
+Received: by mail-qt1-f193.google.com with SMTP id z24so6231011qtj.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 05:12:33 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=L+e5fjRWyUfLgL9OYMwlIZ20PAP5dcbx1HkuQ94d/d4=;
+ b=FBMlh2oNPLL8U9juigzISCW3BYyWtp1DVhRf3eQDnE2i34v7kUyyNsFavLlAu65SR2
+ O1gX+mU76gVG3p07gMVhbW4GA7O1QwDWtTpZ3EOjpT5jnlBo51FpNfXSrJui3K4FdxgW
+ ERH9ZhupPY0wkBdbMulX7Psf5yO4y6JlEAaSqoLm6tzWyRGsPTwWVbed6P4rAX2E4MY9
+ K4lxYdnsJVCAHMHz8iyPoDxYkYIx854F7dvkmBVGC/836gN/trvNXs+QcOKljsQVe5oL
+ R83LCkFznml08dfwJJuWH54Skdu7sawRx50RVBkYgR+ZngQjVg86bH0/PL33pvAiJihE
+ jrfw==
+X-Gm-Message-State: APjAAAWkK8eQ4BW3zdy3gCNEPfWaEJVrZx0VKUBb4r9i6MLbdQ2p/3E9
+ oz0aGlcBqvvXqYD5VuM9XUTclB4vtzT7grcn+sU=
+X-Google-Smtp-Source: APXvYqwSfz7cbuyCa6Bus+YKHBZiY4Bkrj2BkzX6U2Y1NapOb+JxqSpgu6ZjrsyPagQKMEJ9lTV9O3R1/mJPh6++Fnw=
+X-Received: by 2002:aed:2bc1:: with SMTP id e59mr7929200qtd.7.1559650352510;
+ Tue, 04 Jun 2019 05:12:32 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190601093830.GA13589@arrakis.emea.arm.com>
-Content-Language: en-US
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <CAK8P3a11DE0sXteZoaP_N=mDhx3tXitGKddn1ogtFqJBYO-SCA@mail.gmail.com>
+ <d96667d5-e43b-d33a-fbd0-5acfb4904316@arm.com>
+In-Reply-To: <d96667d5-e43b-d33a-fbd0-5acfb4904316@arm.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 4 Jun 2019 14:12:16 +0200
+Message-ID: <CAK8P3a3nxd7F5zLyD1SVarKjjKC0qvMEN8wP6R7zHY9HKdoe0w@mail.gmail.com>
+Subject: Re: [PATCH v6 00/19] Unify vDSOs across more architectures
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_051036_715721_D02ECAEA 
-X-CRM114-Status: GOOD (  19.11  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190604_051234_598780_4D5FB308 
+X-CRM114-Status: GOOD (  21.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -66,61 +84,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
- Arnd Bergmann <arnd@arndb.de>, Huw Davies <huw@codeweavers.com>,
- Shuah Khan <shuah@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Huw Davies <huw@codeweavers.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
  Rasmus Villemoes <linux@rasmusvillemoes.dk>,
  Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
  Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
+On Tue, Jun 4, 2019 at 2:05 PM Vincenzo Frascino
+<vincenzo.frascino@arm.com> wrote:
+> On 31/05/2019 09:46, Arnd Bergmann wrote:
+> > On Thu, May 30, 2019 at 4:15 PM Vincenzo Frascino
+> > <vincenzo.frascino@arm.com> wrote:
+> > One open question I touched in my review is whether we want to
+> > have a vdso version of clock_getres() in all architectures or not.
+> > I'd prefer to leave it out because there is very little advantage to
+> > it over the system call (the results don't change at runtime and
+> > can easily be cached by libc if performance ever matters), and
+> > it takes up a small amount of memory for the implementation.
+> >
+>
+> I thought about it and I ended up with what proposed in this patchset mainly for
+> symmetry across all the architectures since in the end they use the same common
+> code.
+>
+> It seems also that there is some performance impact (i.e.):
+>
+> clock-getres-monotonic:    libc(system call): 296 nsec/call
+> clock-getres-monotonic:    libc(vdso): 5 nsec/call
+>
+>
+> I agree with you though when you say that caching it in the libc is a
+> possibility to overcome the performance impact.
 
-thank you for testing my patches and providing the scripts you used to reproduce
-the issue.
+It's clear that the vdso version is much faster, my point was that
+I could not think of any use case that cared about it being fast.
 
-On 01/06/2019 10:38, Catalin Marinas wrote:
-> On Thu, May 30, 2019 at 03:15:27PM +0100, Vincenzo Frascino wrote:
->> Add vDSO compat support to the arm64 building system.
->>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will.deacon@arm.com>
->> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
->> ---
->>  arch/arm64/Kconfig         |  1 +
->>  arch/arm64/Makefile        | 23 +++++++++++++++++++++--
->>  arch/arm64/kernel/Makefile |  6 +++++-
->>  3 files changed, 27 insertions(+), 3 deletions(-)
->>
->> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
->> index 952c9f8cf3b8..3e1d4f8347f4 100644
->> --- a/arch/arm64/Kconfig
->> +++ b/arch/arm64/Kconfig
->> @@ -108,6 +108,7 @@ config ARM64
->>  	select GENERIC_STRNLEN_USER
->>  	select GENERIC_TIME_VSYSCALL
->>  	select GENERIC_GETTIMEOFDAY
->> +	select GENERIC_COMPAT_VDSO if !CPU_BIG_ENDIAN
-> 
-> This select needs to also depend on COMPAT (or rather be selected from
-> the COMPAT menuconfig), otherwise, trying to build this series with 64K
-> pages where COMPAT is disabled, I get:
-> 
+If there is a good reason for it, I also don't mind adding a
+clock_getres_time64() vdso version everywhere.
 
-This is a very good catch, my bad, will definitely fix in v7.
+> > We shouldn't just need it for consistency because all callers
+> > would require implementing a fallback to the system call
+> > anyway, to deal with old kernels.
+> >
+>
+> A way to address this issue would be to use versioning, which seems supported in
+> the vdso library (i.e. arch/x86/entry/vdso/vdso32/vdso32.lds.S).
+>
+> For example for x86 (vdso32) we would have something like:
+>
+> VERSION
+> {
+>         LINUX_5.3 (being optimistic here :) ) {
+>         global:
+>                 __vdso_clock_getres;
+>                 __vdso_clock_gettime64;
+>         };
+>         LINUX_2.6 {
+>         global:
+>                 __vdso_clock_gettime;
+>                 __vdso_gettimeofday;
+>                 __vdso_time;
+>         };
+>
+>         LINUX_2.5 {
+>         global:
+>                 __kernel_vsyscall;
+>                 __kernel_sigreturn;
+>                 __kernel_rt_sigreturn;
+>         local: *;
+>         };
+> }
+>
+> What do you think? Would this be a viable solution?
 
-...
+I actually never understood the point of symbol versioning
+in the vdso. What does that gain us? Note that there are
+no conflicting symbol names between the versions, and
+that nothing enforces the kernel headers to match the
+symbol version used when linking.
 
--- 
-Regards,
-Vincenzo
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
