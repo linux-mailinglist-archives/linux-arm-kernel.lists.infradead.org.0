@@ -2,37 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EC03343DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 12:13:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 614B334404
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 12:13:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xqfXAKkGO28qzFN8Q+z2V8EDhmV+iqisaafyMq7DJ48=; b=aDr7D4QWZ6GLvE
-	I//JofQlcNdxKaXYjiE+YP3o0MDvVfyXQhi1I1ctx3ZAz8angv77bQigqw4uWUPrr9eKwqs0qjNe2
-	fxEvOb6GYzcZY5qCBMuJ3iCOI2bK0jRsRjRZ8dBjfVqwpEo3UlvBOwLI6s1muXXCOlRQdISZ3LFfU
-	TYSVr43zUH1oegZpKd9+QQNofpRpmTJIYxdcWj9lPY2Zr7ZENeSMBBekAWqAimldY2qSr/7S4xYlV
-	LU0xlwtCIXdYKBe1N1zV/3JCP67r+Rig/MWCVTEUY7M0BcJhQqiLOsmRU888lEbmulXdDKIpaTuYr
-	8Ea0DW54/Gkyd0woOJPw==;
+	List-Owner; bh=hK2eo4aKFBLzgOWMPEC50x5Fo6kAvq5vAziCpIOn/Po=; b=K+ek494YiIKtgk
+	UC3IDILVEOUzEM9CX8zvjo6OjuVpCZ4aM2Q8usgEWeP67RSfX0NJQbV+DulVKDP/jjnvcBUhFuXRg
+	AXTCvcjI6QAwnlbejtn40+/73eI/Ro2Q4pqj6lrB0L/9NuxbLa64PxFV4nLIRyxdJOZsakJT/FQLh
+	i3tWKN946C88XParFWw9+Q6MXo7AuAoKK+FbAYUXWXWfI+tAYglZpc2zUzG2fuWfNMa75adRsvzel
+	R8z9yYK6wZxUHRhceV0OQU6mYPb6q0KZgTPQO9atNX3AhHWRVjM2FP0bD4Zed1uWW3yf+VPrPmC2H
+	fm2O76MXNc5oRHXPWNyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY6RA-0007RE-G4; Tue, 04 Jun 2019 10:13:00 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hY6Rk-0007xv-FI; Tue, 04 Jun 2019 10:13:36 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY6QK-0006I2-Ll; Tue, 04 Jun 2019 10:12:14 +0000
-X-UUID: 17fdb43d944a467db8e5ac87c6442da9-20190604
-X-UUID: 17fdb43d944a467db8e5ac87c6442da9-20190604
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ id 1hY6RT-0007i8-BG; Tue, 04 Jun 2019 10:13:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=TG+V1h8FJvcWnBQjHliJTSPLicVnXNW+rX3YPWLVLAM=; b=nN4hykeaDtjNqMb3gRdpHiKwo
+ pARMiWuYksPQefmaRDUeZDDlTvpYTAHuxhACiVgG4yyVy2Y0UIzfhfMXjnSlb0+4NgTC6Zkbr9dJS
+ UxEqo22Danl2iG5QU5hJsczImMjwHnxQCfsFMK9IjZYATOydN2YEDkC4iuexPUfKl446E5ACPc9FZ
+ N+9N3JrVTmooJ9Cie9bktDSI0k+7P9kHwNYkUQCLfOdHVuX1bQb4+PHISybtY0DSVJHugkq8cF85P
+ YuDsDz7YgxJRxd8rD7T61eq1dz3STkscxCMumyQkLuAlhmKKxdSbCSR7PU9eQe1UlWKXkEgzVmzud
+ p3XjDcSxA==;
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY6RQ-0003Us-Iv; Tue, 04 Jun 2019 10:13:17 +0000
+X-UUID: 5ac0ef9e502c48738d9fa75a3798d253-20190604
+X-UUID: 5ac0ef9e502c48738d9fa75a3798d253-20190604
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <stu.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1799936232; Tue, 04 Jun 2019 02:12:04 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 4 Jun 2019 03:12:03 -0700
+ with ESMTP id 184279392; Tue, 04 Jun 2019 02:12:08 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 4 Jun 2019 03:12:07 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Tue, 4 Jun 2019 18:12:01 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -40,24 +55,25 @@ Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
 From: Stu Hsieh <stu.hsieh@mediatek.com>
 To: Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring
  <robh+dt@kernel.org>, CK Hu <ck.hu@mediatek.com>
-Subject: [PATCH v4 10/14] [media] mtk-mipicsi: set the output address in HW reg
-Date: Tue, 4 Jun 2019 18:11:51 +0800
-Message-ID: <1559643115-15124-11-git-send-email-stu.hsieh@mediatek.com>
+Subject: [PATCH v4 11/14] [media] mtk-mipicsi: add function to get the format
+Date: Tue, 4 Jun 2019 18:11:52 +0800
+Message-ID: <1559643115-15124-12-git-send-email-stu.hsieh@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1559643115-15124-1-git-send-email-stu.hsieh@mediatek.com>
 References: <1559643115-15124-1-git-send-email-stu.hsieh@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 7BC11625F8BEE179D9AC0E8DA4A31DA26767444232CAE16603219E92C146C7232000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_031209_027172_F5DCFE33 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20190604_061316_756652_18321702 
+X-CRM114-Status: GOOD (  13.11  )
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,80 +97,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch set the output address in HW reg when buffer queue and ISR.
+This patch add function to get the format
+
+This function can get the subdev format and host format.
+Calculate the number of format which intersection of subdev and host.
 
 Signed-off-by: Stu Hsieh <stu.hsieh@mediatek.com>
 ---
- .../media/platform/mtk-mipicsi/mtk_mipicsi.c  | 35 +++++++++++++++++++
- 1 file changed, 35 insertions(+)
+ drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
-index dc5c5c888914..9e45786a0282 100644
+index 9e45786a0282..aaaea5c6f280 100644
 --- a/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
 +++ b/drivers/media/platform/mtk-mipicsi/mtk_mipicsi.c
-@@ -100,6 +100,7 @@
- #define CAMSV_TG_SEN_GRAB_LIN				0x50C
- #define CAMSV_TG_PATH_CFG				0x510
+@@ -52,6 +52,7 @@
  
-+#define IMGO_BASE_ADDR					0x220
- #define IMGO_XSIZE					0x230
- #define IMGO_YSIZE					0x234
- #define IMGO_STRIDE					0x238
-@@ -538,6 +539,32 @@ static int mtk_mipicsi_vb2_prepare(struct vb2_buffer *vb)
- 	return 0;
- }
+ #define MTK_MIPICSI_DRV_NAME "mtk-mipicsi"
+ #define MTK_PLATFORM_STR "platform:mt2712"
++#define MTK_DATAWIDTH_8					(0x01U << 7U)
+ #define MAX_SUPPORT_WIDTH             4096U
+ #define MAX_SUPPORT_HEIGHT            4096U
+ #define MAX_BUFFER_NUM                  32U
+@@ -158,6 +159,7 @@ struct mtk_mipicsi_dev {
+ 	unsigned int			num_user_formats;
+ 	const struct mtk_format		**user_formats;
+ 	const struct mtk_format		*current_fmt;
++	u16			width_flags;	/* max 12 bits */
  
-+static void mtk_mipicsi_fill_buffer(void __iomem *base, dma_addr_t dma_handle)
-+{
-+	writel(dma_handle, base + IMGO_BASE_ADDR);
-+}
-+
-+static void mtk_mipicsi_write_camsv(struct mtk_mipicsi_dev *mipicsi,
-+				    unsigned int index,
-+				    unsigned int max_camsv_num)
-+{
-+	struct mtk_mipicsi_channel *ch = mipicsi->channel;
-+	unsigned int i = 0;
-+	u8 link_index = 0;
-+	u32 bytesperline = mipicsi->fmt.fmt.pix.bytesperline;
-+	u32 height = mipicsi->fmt.fmt.pix.height;
-+	u64 offset = 0;
-+
-+	for (i = 0; i < max_camsv_num; i++)
-+		if (((mipicsi->link_reg_val >> i) & 0x01) == 0x01) {
-+			offset = (u64)link_index * bytesperline * height;
-+			mtk_mipicsi_fill_buffer(ch[i].camsv,
-+				mipicsi->cam_buf[index].vb_dma_addr_phy
-+					+ offset);
-+			link_index++;
-+		}
-+}
-+
- static void mtk_mipicsi_vb2_queue(struct vb2_buffer *vb)
- {
- 	struct mtk_mipicsi_dev *mipicsi = vb2_get_drv_priv(vb->vb2_queue);
-@@ -546,6 +573,12 @@ static void mtk_mipicsi_vb2_queue(struct vb2_buffer *vb)
- 	list_add_tail(&(mipicsi->cam_buf[vb->index].queue),
- 		&(mipicsi->fb_list));
- 	spin_unlock(&mipicsi->queue_lock);
-+
-+	spin_lock(&mipicsi->irqlock);
-+	if (!mipicsi->streamon)
-+		mtk_mipicsi_write_camsv(mipicsi, vb->index, mipicsi->camsv_num);
-+
-+	spin_unlock(&mipicsi->irqlock);
- }
- 
- static void mtk_mipicsi_cmos_vf_enable(struct mtk_mipicsi_dev *mipicsi,
-@@ -875,6 +908,8 @@ static void mtk_mipicsi_irq_buf_process(struct mtk_mipicsi_dev *mipicsi)
- 		++i;
+ 	struct mtk_mipicsi_buf	cam_buf[MAX_BUFFER_NUM];
+ 	struct list_head	fb_list;
+@@ -1522,6 +1524,7 @@ static int mtk_mipicsi_probe(struct platform_device *pdev)
+ 		goto err_vb2_queue;
  	}
  
-+	mtk_mipicsi_write_camsv(mipicsi, next, mipicsi->camsv_num);
-+
- 	/*
- 	 * fb_list has one more buffer. Free the first buffer to user
- 	 * and fill the second buffer to HW.
++	mipicsi->width_flags = MTK_DATAWIDTH_8;
+ 	mipicsi->streamon = false;
+ 
+ 	ret = mtk_mipicsi_subdev_init(mipicsi);
 -- 
 2.18.0
 
