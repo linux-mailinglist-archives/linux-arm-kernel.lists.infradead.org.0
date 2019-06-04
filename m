@@ -2,65 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16B8C346A2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:27:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58372346AA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:27:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=scUDNuI585lCD3l/xm6JhK+9FjtEQf3xSXkFQjhGwSs=; b=soYODZ+KYJ1Hic
-	kOJBJZ9vtqSzXWFFRg6JLNfqzYGiJAE++DrxNnmWu+W/GLX7hU0+XpXuyoiRsseoa5ZxyGgBZQ2GR
-	1DSPMQoGP2GRvR+z16MMZk6x5gibpC/rF+XxaQT4mr+FvNrT5H9DkFfoFmrGeapd5jQvDZ4/hvz4i
-	fkk9kX0H08kGPY6J9G5+J/KZ8TdGDx4LzNDN5ejSuLkt2gDTzTJifWY9lKPcq8Ow5+fC1gjJjLqJD
-	Le1W/k7tsED/lVyMl2d/oK8UIXQqi0E1dXcjx1cNdAp+XMHncmtPi9fTmipt2tCkUO2xoRTNxKwf9
-	TvGOO6YM//yLhTq0yc1Q==;
+	List-Owner; bh=Qk3G/ED1AzaYpKqmqPGeBqjdER0Ykg/Z0/51Fb9KELE=; b=nUcdriIeSnBKN8
+	iVlk2HG9aHxxsFqWXwrtqrMClNHBmjf9j9wWJc826Zo//R8v3rDOyVm+nCF4EIZ+zpJJ0s9ZydyRN
+	uC/UhwHYw/QnvDrxGJSjrHIxXDL07nJvBvWW8NlKJqCqG095Lq8CgvD6+lJ4sMUyIdsbbLZtyeebr
+	BmgpsflRbTYstkEU3VAmNYD7t99RQCoirk5VLxT1rjdLFwtKIYXZHz4RvI7+nYYUWN4QZPCRis+Ak
+	g83UR52PmnkwaR+HJAwAYa2YOp1N1ISNAygn9ZAU+8GKPs2JFqMj7+w5QyPZ0eoyGcbE4Bs0Jslun
+	YY0yxciUOPX5fmodhF1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8Wo-0004MG-FK; Tue, 04 Jun 2019 12:26:58 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hY8XI-0004fR-Bo; Tue, 04 Jun 2019 12:27:28 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8Wg-0004LS-52; Tue, 04 Jun 2019 12:26:51 +0000
-X-UUID: e6779d9676684e4f85401e7848fa697e-20190604
-X-UUID: e6779d9676684e4f85401e7848fa697e-20190604
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <qii.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1980184098; Tue, 04 Jun 2019 04:26:44 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 4 Jun 2019 05:26:43 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 4 Jun 2019 20:26:41 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 4 Jun 2019 20:26:40 +0800
-Message-ID: <1559651200.5871.2.camel@mhfsdcap03>
-Subject: Re: [PATCH 2/2] i3c: master: Add driver for MediaTek IP
-From: Qii Wang <qii.wang@mediatek.com>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Date: Tue, 4 Jun 2019 20:26:40 +0800
-In-Reply-To: <20190604095858.38ed9a28@collabora.com>
-References: <1559533863-10292-1-git-send-email-qii.wang@mediatek.com>
- <1559533863-10292-3-git-send-email-qii.wang@mediatek.com>
- <20190604095858.38ed9a28@collabora.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hY8X8-0004eX-Ly
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:27:20 +0000
+Received: by mail-qt1-x841.google.com with SMTP id j19so9708856qtr.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 05:27:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=wnsJg5IBUcpd0uvGih9L7zWjhXAHb1EJO0yOEExZSzo=;
+ b=dcNC7UmtypwgYv25SVviVAOUG7URTCQh95rjKD+gc1HkGG0jrMjWKvaHqgOqnkLXCe
+ CmoljchytuIVIDVbprMz3tL0S5wF3BfmVPwpXMEcKwEKuopvqQDwmPbpLySBrTe+5P0P
+ +zjXSkVABYGjw15OrEI3UNK6X3hEEYJ5lmU4VodgY1OGgetHeu4xf6gu/Drrr5PoUFZD
+ NGszqORq933qFqUy4wxVOf9PkDJzNBd6Vt6SxvMrx9KcQhBJruI+UAnsanyndNgyFsW8
+ SfJHC+U7tiqZ4PP8CoYnZCXFGYoMymsmvspjQbzELX76TfLMwbqeFyJLFyTuqJIB4Dhp
+ ZF+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wnsJg5IBUcpd0uvGih9L7zWjhXAHb1EJO0yOEExZSzo=;
+ b=GMIlxi57/9yk+8Y3xW6nhMtJmwnNTGji0098SFEUdIUqWhJNYAkaREjaeUCVpFz0/4
+ 3U0o33Ml5WQeic41jfsR3OWuPqeH6MBpIvYtDHOPsmig8uCqq5rVh+NFwuueKjcURMN8
+ nc3Zo6PRXwdvZ+KHooFzoQSenPnI+Bga6MPG5MxJOjhq3kWP2uhld0K5mwJ2Q2cpW5yl
+ SGqw1HN/InYCYlYZdrc5rSUg5LVW3elHKx6BWnHzNwdkApIj8UsYEVpVu7lcUUP7jpAc
+ 4tpd7qXcTpRCPWAmAQr18MGH+XC5eR1x/AWBl+T7yXrtsWH+DyYsaPz96y9q0yDH4MWL
+ 03Og==
+X-Gm-Message-State: APjAAAWGfDfaQsJdPiq5IM5GsxYCAVJ7sC8n5DcF4DWPsVNsucYaiHll
+ ZX4zC6Hr53KL30XM8VO89zXpWg==
+X-Google-Smtp-Source: APXvYqyQKZsajkt/gWb5hfUpWdj5TzMt6KfoFh/bz/W6aTLwqi1dm4Rk21CH5MrcGrt3uoh1Lu64hg==
+X-Received: by 2002:aed:3a87:: with SMTP id o7mr27583430qte.310.1559651236150; 
+ Tue, 04 Jun 2019 05:27:16 -0700 (PDT)
+Received: from ziepe.ca
+ (hlfxns017vw-156-34-55-100.dhcp-dynamic.fibreop.ns.bellaliant.net.
+ [156.34.55.100])
+ by smtp.gmail.com with ESMTPSA id c18sm4454633qkm.78.2019.06.04.05.27.15
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 04 Jun 2019 05:27:15 -0700 (PDT)
+Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
+ (envelope-from <jgg@ziepe.ca>)
+ id 1hY8X4-000416-LN; Tue, 04 Jun 2019 09:27:14 -0300
+Date: Tue, 4 Jun 2019 09:27:14 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v16 12/16] IB, arm64: untag user pointers in
+ ib_uverbs_(re)reg_mr()
+Message-ID: <20190604122714.GA15385@ziepe.ca>
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <c829f93b19ad6af1b13be8935ce29baa8e58518f.1559580831.git.andreyknvl@google.com>
+ <20190603174619.GC11474@ziepe.ca>
+ <CAAeHK+xy-dx4dLDLLj9dRzRNSVG9H5nDPPnjpYF38qKZNNCh_g@mail.gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <CAAeHK+xy-dx4dLDLLj9dRzRNSVG9H5nDPPnjpYF38qKZNNCh_g@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_052650_202108_4602523A 
-X-CRM114-Status: GOOD (  13.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190604_052718_833079_FDDED957 
+X-CRM114-Status: GOOD (  25.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,112 +106,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- bbrezillon@kernel.org, leilk.liu@mediatek.com, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
- xinping.qian@mediatek.com
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-04 at 09:58 +0200, Boris Brezillon wrote:
-> On Mon, 3 Jun 2019 11:51:03 +0800
-> Qii Wang <qii.wang@mediatek.com> wrote:
+On Tue, Jun 04, 2019 at 02:18:19PM +0200, Andrey Konovalov wrote:
+> On Mon, Jun 3, 2019 at 7:46 PM Jason Gunthorpe <jgg@ziepe.ca> wrote:
+> >
+> > On Mon, Jun 03, 2019 at 06:55:14PM +0200, Andrey Konovalov wrote:
+> > > This patch is a part of a series that extends arm64 kernel ABI to allow to
+> > > pass tagged user pointers (with the top byte set to something else other
+> > > than 0x00) as syscall arguments.
+> > >
+> > > ib_uverbs_(re)reg_mr() use provided user pointers for vma lookups (through
+> > > e.g. mlx4_get_umem_mr()), which can only by done with untagged pointers.
+> > >
+> > > Untag user pointers in these functions.
+> > >
+> > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> > >  drivers/infiniband/core/uverbs_cmd.c | 4 ++++
+> > >  1 file changed, 4 insertions(+)
+> > >
+> > > diff --git a/drivers/infiniband/core/uverbs_cmd.c b/drivers/infiniband/core/uverbs_cmd.c
+> > > index 5a3a1780ceea..f88ee733e617 100644
+> > > +++ b/drivers/infiniband/core/uverbs_cmd.c
+> > > @@ -709,6 +709,8 @@ static int ib_uverbs_reg_mr(struct uverbs_attr_bundle *attrs)
+> > >       if (ret)
+> > >               return ret;
+> > >
+> > > +     cmd.start = untagged_addr(cmd.start);
+> > > +
+> > >       if ((cmd.start & ~PAGE_MASK) != (cmd.hca_va & ~PAGE_MASK))
+> > >               return -EINVAL;
+> >
+> > I feel like we shouldn't thave to do this here, surely the cmd.start
+> > should flow unmodified to get_user_pages, and gup should untag it?
+> >
+> > ie, this sort of direction for the IB code (this would be a giant
+> > patch, so I didn't have time to write it all, but I think it is much
+> > saner):
 > 
+> Hi Jason,
 > 
-> > +static int mtk_i3c_master_probe(struct platform_device *pdev)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct mtk_i3c_master *master;
-> > +	struct resource *res;
-> > +	int ret, irqnr;
-> > +
-> > +	master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
-> > +	if (!master)
-> > +		return -ENOMEM;
-> > +
-> > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "main");
-> > +	master->regs = devm_ioremap_resource(dev, res);
-> > +	if (IS_ERR(master->regs))
-> > +		return PTR_ERR(master->regs);
-> > +
-> > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dma");
-> > +	master->dma_regs = devm_ioremap_resource(dev, res);
-> > +	if (IS_ERR(master->dma_regs))
-> > +		return PTR_ERR(master->dma_regs);
-> > +
-> > +	irqnr = platform_get_irq(pdev, 0);
-> > +	if (irqnr < 0)
-> > +		return irqnr;
-> > +
-> > +	ret = devm_request_irq(dev, irqnr, mtk_i3c_master_irq,
-> > +			       IRQF_TRIGGER_NONE, DRV_NAME, master);
-> > +	if (ret < 0) {
-> > +		dev_err(dev, "Request I3C IRQ %d fail\n", irqnr);
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = of_property_read_u32(pdev->dev.of_node, "clock-div",
-> > +				   &master->clk_src_div);
-> 
-> You say in one comment that this clock divider is fixed in HW but might
-> change on a per-SoC basis. If that's the case, you should get rid of
-> this clock-div prop and attach the divider to the compatible (using an
-> mtk_i3c_master_variant struct that contains a divider field).
-> 
+> ib_uverbs_reg_mr() passes cmd.start to mlx4_get_umem_mr(), which calls
+> find_vma(), which only accepts untagged addresses. Could you explain
+> how your patch helps?
 
-ok, I will attach the divider to the compatible.
+That mlx4 is just a 'weird duck', it is not the normal flow, and I
+don't think the core code should be making special consideration for
+it.
 
-> > +	if (ret < 0)
-> > +		return -EINVAL;
-> > +
-> > +	spin_lock_init(&master->xferqueue.lock);
-> > +	INIT_LIST_HEAD(&master->xferqueue.list);
-> > +
-> > +	if (dma_set_mask(dev, DMA_BIT_MASK(33))) {
-> > +		dev_err(dev, "dma_set_mask return error.\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	master->clk_main = devm_clk_get(dev, "main");
-> > +	if (IS_ERR(master->clk_main)) {
-> > +		dev_err(dev, "cannot get main clock\n");
-> > +		return PTR_ERR(master->clk_main);
-> > +	}
-> > +	master->clk_dma = devm_clk_get(dev, "dma");
-> > +	if (IS_ERR(master->clk_dma)) {
-> > +		dev_err(dev, "cannot get dma clock\n");
-> > +		return PTR_ERR(master->clk_dma);
-> > +	}
-> > +
-> > +	master->clk_arb = devm_clk_get_optional(dev, "arb");
-> > +	if (IS_ERR(master->clk_arb))
-> > +		return PTR_ERR(master->clk_arb);
-> > +
-> > +	ret = mtk_i3c_master_clock_enable(master);
-> > +	if (ret) {
-> > +		dev_err(dev, "clock enable failed!\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	master->dev = dev;
-> > +	platform_set_drvdata(pdev, master);
-> > +
-> > +	ret = i3c_master_register(&master->mas_ctrler, dev,
-> > +				  &mtk_i3c_master_ops, false);
-> > +	if (ret) {
-> > +		dev_err(dev, "Failed to add i3c bus to i3c core\n");
-> > +		mtk_i3c_master_clock_disable(master);
-> > +		return ret;
-> > +	}
-> > +
-> > +	return 0;
-> > +}
-
-
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
