@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA63F34170
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:15:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC03B34180
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:15:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,75 +11,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=H292Kw9SwsODfPHExXD+oV4xEQU7BFv+kfIswCaNNFA=; b=is2Uyng9V5sIe1YApJUZRAMVXK
-	4Y33HuBjPQ0SPfBHNxpV2DSzuIsDDJWII5YTRQpsHBMsGHS9PmOu+DFHOX4mwkXc4pqa6wxMQxNe6
-	ts+MqB4NwsLaSDdUzxRz/nwWz1stWwOXkHjKrDZKgkTeJ4k5oevVUpZObGMsWY2LroHLJNf1jhV1i
-	pJosnZqrTq1YnQMwcyWpKGBU6Yb8ptpOo6SVNJ/M+weyyPmYrgpFWlFLl80qehkeWirobyGsW6v37
-	ik4Dizy1RkcfboDxiWQZb0pkyETaPR1zgF8fAOSjaBbVJSorUTrLtjoBHwZ3sq8+fd0VIETzYpLpK
-	1gEcigFA==;
+	bh=Z62X3q2GuaEv3Z5LX7uhOyDTPR543wTlGORsH/bnCYA=; b=fo2Vsp8ailHTGXsdX9IwbSoBHR
+	50cE39TKfHD8E3F1d1qNywYMvR1FzH9w3XfmoF4e0e0i5ozb2KMPHgDGG1yYYClnmyaqvv5KpSC4U
+	SK2xLAP3cHhglNHVG34M5kAJzvnEA53Uk1Ibs7Al1DK6I9b4ol7fyHr4xXkZ4hvvpVpCJhZw3GWtv
+	TlhtF0tXgTQ/4vmgy5YyAXVOlogoExND/zEGfiev5GEiFqJt2QMSy5j42q2WQOH3yOGpYzbfSO0J2
+	c2hZoVkL/HkVlkv+PXHHdi3Ofl93amj/2Pm37JK05kQN/5MDsJIZT3JflVFg6AXnIQLR2TvBS2RAW
+	SMD8jerA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY4bV-00026S-Mo; Tue, 04 Jun 2019 08:15:33 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hY4bj-0002Q9-8M; Tue, 04 Jun 2019 08:15:47 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY4b1-0000Vy-Ey
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:15:11 +0000
-Received: by mail-pl1-x644.google.com with SMTP id s24so7894457plr.8
+ id 1hY4b6-0000wG-FL
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:15:20 +0000
+Received: by mail-pg1-x541.google.com with SMTP id 20so9908203pgr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 01:15:03 -0700 (PDT)
+ Tue, 04 Jun 2019 01:15:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=FdrxifC9VKJDfmhJlZCtT+SJXQU8nyEdMzYOjCE23wE=;
- b=O+2GCVHo8+jdVe0br2gCJmuVnoyN4ac5Q7dhggvalzYPiUr+vQUkbbNC7rkfnG/DMc
- Po9EnLA2txYJNYbCrgFTev4bagodznF/DhZ9ndevRxjnCflMa2CwWoR1iVBRqmrNGZhr
- 6ajDgOfmCMYdyDcsNoyNSHvDeqsSB9N7tBPXRUpbID/7kXrqXOAlXM6/ujiDUcHeJ1Na
- Cl2K8MyOB4vbDBYM0Cg/SoLMUchkU1OA+KdEsjrCfciLpldwdMyZVr/j/L9QG5gSdY64
- bnykp/4rdv3o9rQoqFm+Y7Mzq++0RgDOJOy74UVZSB378K3GAr+Sh03UEiXRAIYzVGUE
- iGEw==
+ bh=628ZQKD9jdSHtWmvRCzFbwR4o1BOUbgB+F8276Myxy8=;
+ b=gzhVSfX/Bn6qb7Bn5lG6vK47YR/iVsd/HdMBg0jqihRl1oIgJUL0n2Rcr/GT6ZSNuc
+ 1aRUNkfNasPsc40XFopW34wVB0wEY9EGrsslh+r78Eawvrq0LxdAUUimuOx4t+msvwLO
+ uBqkjXbfx5Mxq2ZNzGt1nrr5C31jEDWO0kJeY6FO2Wj6WlshAoCOuxW1W0CrPlnaO526
+ 4So3Zm816GJgnVCMXFd2e19o3Ri7YmIrdFWkj0M4eZv3qQDUzvU3oBm66fGUFJM2acQn
+ My9WcvNPZLHe5Q0ufI3CEyUnhMO2419UK0hNaGZL5gajope7z52/G4Mpd9Wq0AWz0APz
+ haGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:in-reply-to:references;
- bh=FdrxifC9VKJDfmhJlZCtT+SJXQU8nyEdMzYOjCE23wE=;
- b=HQL5bc5SAtT/KRrDzgT/6FEtRDngvylLcGJDHtdIYAVGqYrYIkdksL1mmm0arCHizj
- VtJaABW4ge8YykvR7/TKK8dg35toZBVEcrDGFLHZ9pw3MhNlSJqkN7dEWyNnrtj0Ye5u
- fdbNMGMbl9+hjcnJOUhZYx7fLZr2XXgciI3pAb96vpcy7CUCX53wg9PUwAEHQLMM07ro
- LAOyO2Bf1AStlAn6OVFvsggA7yFbVnfdt2i0ocYIpcSZYawyNlJOEQnU6gz528Jtrqdx
- +NhVSJp6Kw2xKDyTi1O8Q4i8AyLxKEJtd6/9ZSWJh7FaHBU1y/TM5MK7j8KWB5fmfvsI
- 01iQ==
-X-Gm-Message-State: APjAAAXXO/QYNwFEUIdZwyBkFBS1f4wmM7DT5K7muvj5W38ZzPMlPPdM
- ITXuq1jnaRgetEwb/KRvhDdQBQ==
-X-Google-Smtp-Source: APXvYqz2jjWsddPWnn+pjc0wk/Ss7eehLdPZxkHhdASSNlIhF2ImTI/Mu4NCkGO5CgDpbsuTkVMbEQ==
-X-Received: by 2002:a17:902:7e0e:: with SMTP id
- b14mr9660980plm.257.1559636102504; 
- Tue, 04 Jun 2019 01:15:02 -0700 (PDT)
+ bh=628ZQKD9jdSHtWmvRCzFbwR4o1BOUbgB+F8276Myxy8=;
+ b=dHQlRxV/9V7ElOtNYUBH835vu+a8N3smvw4rtXNrstLCnAOM770U6sPmNsiDfiPR6e
+ t3EF7WDzs2N6KN0ZJlWr88oW622ufcUlkTFng5VwkS7DcNTSRn2bXPsFeli3ZCb1P9fi
+ rDijaKapQOirQADtU+AEjPO+J3diynI0YAy2mudPl5+BbPXpTwYVVXb6ANDw7EY84SfE
+ k9+9WDpSaNrlNAmZ7D0Pbinz1MQVLUl8jOSTHNqIDNinoloMW+qB+zqIVCFzOhXXi2C5
+ htZtGwmuBINosI1fd2XXeVPnpJN8HUoItEueTrddI/iZrxyCgGmBsUglEwEGC+EvN6WL
+ 18HA==
+X-Gm-Message-State: APjAAAWJbQRX7V/euD/tK/dxx39EYFgc0Qts4GoPIIIvfmy9uOWdN16t
+ 5aHiQrgvwnE/xuZf6fP3dWKVdQ==
+X-Google-Smtp-Source: APXvYqwpCoCmq59wFKEjIbjrTVby8p417ikbel/eUac3GvHTET9/FMzHRuPQWLns6Pqw0rSxaIT4AQ==
+X-Received: by 2002:a17:90b:d83:: with SMTP id
+ bg3mr21126762pjb.63.1559636107639; 
+ Tue, 04 Jun 2019 01:15:07 -0700 (PDT)
 Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.82])
- by smtp.gmail.com with ESMTPSA id j4sm14818804pgc.56.2019.06.04.01.14.58
+ by smtp.gmail.com with ESMTPSA id j4sm14818804pgc.56.2019.06.04.01.15.02
  (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 04 Jun 2019 01:15:02 -0700 (PDT)
+ Tue, 04 Jun 2019 01:15:06 -0700 (PDT)
 From: Baolin Wang <baolin.wang@linaro.org>
 To: adrian.hunter@intel.com, ulf.hansson@linaro.org, zhang.lyra@gmail.com,
  orsonzhai@gmail.com, robh+dt@kernel.org, mark.rutland@arm.com,
  arnd@arndb.de, olof@lixom.net
-Subject: [PATCH v2 3/9] mmc: sdhci-sprd: Add optional gate clock support
-Date: Tue,  4 Jun 2019 16:14:23 +0800
-Message-Id: <3bd7f5b0d4c78b75f8c4067a34f79396b4fd0a5c.1559635435.git.baolin.wang@linaro.org>
+Subject: [PATCH v2 4/9] mmc: sdhci-sprd: Implement the get_max_timeout_count()
+ interface
+Date: Tue,  4 Jun 2019 16:14:24 +0800
+Message-Id: <37b15ac756f9fca7c1f9382deb57648890bb141c.1559635435.git.baolin.wang@linaro.org>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <cover.1559635435.git.baolin.wang@linaro.org>
 References: <cover.1559635435.git.baolin.wang@linaro.org>
 In-Reply-To: <cover.1559635435.git.baolin.wang@linaro.org>
 References: <cover.1559635435.git.baolin.wang@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_011504_392634_D386005F 
-X-CRM114-Status: GOOD (  14.31  )
+X-CRM114-CacheID: sfid-20190604_011508_871435_C58C42AB 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,110 +111,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For the Spreadtrum SC9860 platform, we should enable another gate clock
-'2x_enable' to make the SD host controller work well.
+Implement the get_max_timeout_count() interface to set the Spredtrum SD
+host controller actual maximum timeout count.
 
 Signed-off-by: Baolin Wang <baolin.wang@linaro.org>
 Acked-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
- drivers/mmc/host/sdhci-sprd.c |   35 +++++++++++++++++++++++++++++------
- 1 file changed, 29 insertions(+), 6 deletions(-)
+ drivers/mmc/host/sdhci-sprd.c |    7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/mmc/host/sdhci-sprd.c b/drivers/mmc/host/sdhci-sprd.c
-index e741491..31ba7d6 100644
+index 31ba7d6..d91281d 100644
 --- a/drivers/mmc/host/sdhci-sprd.c
 +++ b/drivers/mmc/host/sdhci-sprd.c
-@@ -60,6 +60,7 @@ struct sdhci_sprd_host {
- 	u32 version;
- 	struct clk *clk_sdio;
- 	struct clk *clk_enable;
-+	struct clk *clk_2x_enable;
- 	u32 base_rate;
- 	int flags; /* backup of host attribute */
+@@ -285,6 +285,12 @@ static void sdhci_sprd_hw_reset(struct sdhci_host *host)
+ 	usleep_range(300, 500);
+ }
+ 
++static unsigned int sdhci_sprd_get_max_timeout_count(struct sdhci_host *host)
++{
++	/* The Spredtrum controller actual maximum timeout count is 1 << 31 */
++	return 1 << 31;
++}
++
+ static struct sdhci_ops sdhci_sprd_ops = {
+ 	.read_l = sdhci_sprd_readl,
+ 	.write_l = sdhci_sprd_writel,
+@@ -296,6 +302,7 @@ static void sdhci_sprd_hw_reset(struct sdhci_host *host)
+ 	.reset = sdhci_reset,
+ 	.set_uhs_signaling = sdhci_sprd_set_uhs_signaling,
+ 	.hw_reset = sdhci_sprd_hw_reset,
++	.get_max_timeout_count = sdhci_sprd_get_max_timeout_count,
  };
-@@ -364,6 +365,10 @@ static int sdhci_sprd_probe(struct platform_device *pdev)
- 	}
- 	sprd_host->clk_enable = clk;
  
-+	clk = devm_clk_get(&pdev->dev, "2x_enable");
-+	if (!IS_ERR(clk))
-+		sprd_host->clk_2x_enable = clk;
-+
- 	ret = clk_prepare_enable(sprd_host->clk_sdio);
- 	if (ret)
- 		goto pltfm_free;
-@@ -372,6 +377,10 @@ static int sdhci_sprd_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto clk_disable;
- 
-+	ret = clk_prepare_enable(sprd_host->clk_2x_enable);
-+	if (ret)
-+		goto clk_disable2;
-+
- 	sdhci_sprd_init_config(host);
- 	host->version = sdhci_readw(host, SDHCI_HOST_VERSION);
- 	sprd_host->version = ((host->version & SDHCI_VENDOR_VER_MASK) >>
-@@ -408,6 +417,9 @@ static int sdhci_sprd_probe(struct platform_device *pdev)
- 	pm_runtime_disable(&pdev->dev);
- 	pm_runtime_set_suspended(&pdev->dev);
- 
-+	clk_disable_unprepare(sprd_host->clk_2x_enable);
-+
-+clk_disable2:
- 	clk_disable_unprepare(sprd_host->clk_enable);
- 
- clk_disable:
-@@ -427,6 +439,7 @@ static int sdhci_sprd_remove(struct platform_device *pdev)
- 	mmc_remove_host(mmc);
- 	clk_disable_unprepare(sprd_host->clk_sdio);
- 	clk_disable_unprepare(sprd_host->clk_enable);
-+	clk_disable_unprepare(sprd_host->clk_2x_enable);
- 
- 	mmc_free_host(mmc);
- 
-@@ -449,6 +462,7 @@ static int sdhci_sprd_runtime_suspend(struct device *dev)
- 
- 	clk_disable_unprepare(sprd_host->clk_sdio);
- 	clk_disable_unprepare(sprd_host->clk_enable);
-+	clk_disable_unprepare(sprd_host->clk_2x_enable);
- 
- 	return 0;
- }
-@@ -459,19 +473,28 @@ static int sdhci_sprd_runtime_resume(struct device *dev)
- 	struct sdhci_sprd_host *sprd_host = TO_SPRD_HOST(host);
- 	int ret;
- 
--	ret = clk_prepare_enable(sprd_host->clk_enable);
-+	ret = clk_prepare_enable(sprd_host->clk_2x_enable);
- 	if (ret)
- 		return ret;
- 
-+	ret = clk_prepare_enable(sprd_host->clk_enable);
-+	if (ret)
-+		goto clk_2x_disable;
-+
- 	ret = clk_prepare_enable(sprd_host->clk_sdio);
--	if (ret) {
--		clk_disable_unprepare(sprd_host->clk_enable);
--		return ret;
--	}
-+	if (ret)
-+		goto clk_disable;
- 
- 	sdhci_runtime_resume_host(host);
--
- 	return 0;
-+
-+clk_disable:
-+	clk_disable_unprepare(sprd_host->clk_enable);
-+
-+clk_2x_disable:
-+	clk_disable_unprepare(sprd_host->clk_2x_enable);
-+
-+	return ret;
- }
- #endif
- 
+ static void sdhci_sprd_request(struct mmc_host *mmc, struct mmc_request *mrq)
 -- 
 1.7.9.5
 
