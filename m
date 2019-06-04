@@ -2,66 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D74D334727
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:44:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07D353472D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:45:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WH8fMff6I4oIGX0UPiKA7ZGpE+1pe/SOmUZ4zH72TQU=; b=opnxwpQKglv4k+
-	d+9r8rvyv1tlRaLGTywuJAHOfqqwjheuZAYi4fWoOwCdnJ2xNBZ8ALndc6OD7IdTV6me0c3b9lL4/
-	M4ouZ/ZfXSEhmwRj0BjLbxjsAF5nGUOvhEAozKOqbUp51IZ4rqnC23wmy1IJx7Xr5/dPnEYxVNEuq
-	KOzH7/+TnJeMVAOlw8zyXJDIlTNRzhOMaLUAxtRGtnlb2iqI0y2R/ZzrieW2Kb9s0HsQ33Yqc4WHt
-	IJvn1sqOcS6zBOGPVOSJ2g3ieN0XC/FFhs4WY2UVghZH7ZQClw81WDYCL9d2AbP0OfongZ+0I4+8h
-	mAUwG4DxYvopg69QlwLQ==;
+	List-Owner; bh=0q+ecq6Pl5tWttBYmYnH6HqLUFRWZrTj5ph/YX9HaqQ=; b=e9ZnGGQVCcB/Jw
+	rcHSixPAtZQACxjhiewlG05XqSQ9pmDvl9XpMosqxe4wdPiL+2W/hbTIpOuPD16VCNG5v8R9vFlXo
+	H1gs2hyocfQZ7XGO4fDew/U28NpWbO+1KhT1ogzXHdddj6fvtoUC/TxNqFCIOjRiysTPO5ZRmb8IR
+	qS9bshnydBgEKm9ICz4xGJAc+JpzsIG5ydY5WE0AxqrHDWrLChsVKMjSx9LGLSlERfjvrMVYGYNzf
+	1Fs8zMOltFSHd3Ssw5CPdDEsIfgMRU1V6lZsV9wJE6OjpzfYcfGbc/fqLbOR6zL/v8j9Yd29gt5tG
+	MeIelmWKtoRDlpJF41Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8nM-0004uI-Fr; Tue, 04 Jun 2019 12:44:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8nG-0004tr-B7; Tue, 04 Jun 2019 12:43:59 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7A13B24C04;
- Tue,  4 Jun 2019 12:43:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559652238;
- bh=nPRw0HfETQMVcRD5ybRNmzTgeO8OxtSmoQqELkBM3uo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Z9hbEB1IUVetlT27vitYUzRjwW/0AcgjeKWtZ8vrtzZa9RkfdAyq8RjoarqxM06og
- XJzP21fmq9Siqce4ULswG2d3mXAha3TKIt0fkw4fqbs5yGzNp3jkKo5/QoCYuNkKQ9
- rfqP07Ih5LBpto9QA/EvKL/xDyeqG1EV3i0DwXys=
-Date: Tue, 4 Jun 2019 14:43:49 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Felipe Balbi <felipe.balbi@linux.intel.com>
-Subject: Re: [PATCH] USB: move usb debugfs directory creation to the usb
- common core
-Message-ID: <20190604124349.GA10203@kroah.com>
-References: <20190604093258.GB30054@kroah.com> <87tvd5illh.fsf@linux.intel.com>
+	id 1hY8og-0006Z5-Tf; Tue, 04 Jun 2019 12:45:27 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY8oa-0006Yg-Ld
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:45:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CC7B8A78;
+ Tue,  4 Jun 2019 05:45:19 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 520933F690; Tue,  4 Jun 2019 05:45:18 -0700 (PDT)
+Date: Tue, 4 Jun 2019 13:45:15 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Shaokun Zhang <zhangshaokun@hisilicon.com>
+Subject: Re: [PATCH v4 1/2] drivers: base: cacheinfo: Add variable to record
+ max cache line size
+Message-ID: <20190604124515.GB6610@arrakis.emea.arm.com>
+References: <1559009814-17004-1-git-send-email-zhangshaokun@hisilicon.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87tvd5illh.fsf@linux.intel.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <1559009814-17004-1-git-send-email-zhangshaokun@hisilicon.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_054358_397920_35E48806 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20190604_054520_708376_9D5F616B 
+X-CRM114-Status: GOOD (  10.53  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,47 +63,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+Cc: "Rafael J. Wysocki" <rafael@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Jeremy Linton <jeremy.linton@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 03:25:14PM +0300, Felipe Balbi wrote:
+On Tue, May 28, 2019 at 10:16:53AM +0800, Shaokun Zhang wrote:
+> Add coherency_max_size variable to record the maximum cache line size
+> for different cache levels. If it is available, we will synchronize
+> it as cache line size, otherwise we will use CTR_EL0.CWG reporting
+> in cache_line_size() for arm64.
 > 
-> Hi,
-> 
-> Greg Kroah-Hartman <gregkh@linuxfoundation.org> writes:
-> > diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
-> > index 7fcb9f782931..f3d6b1ab80cb 100644
-> > --- a/drivers/usb/core/usb.c
-> > +++ b/drivers/usb/core/usb.c
-> > @@ -1185,19 +1185,17 @@ static struct notifier_block usb_bus_nb = {
-> >  	.notifier_call = usb_bus_notify,
-> >  };
-> >  
-> > -struct dentry *usb_debug_root;
-> > -EXPORT_SYMBOL_GPL(usb_debug_root);
-> > +static struct dentry *usb_devices_root;
-> >  
-> >  static void usb_debugfs_init(void)
-> >  {
-> > -	usb_debug_root = debugfs_create_dir("usb", NULL);
-> > -	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
-> > -			    &usbfs_devices_fops);
-> > +	usb_devices_root = debugfs_create_file("devices", 0444, usb_debug_root,
-> 
-> don't we have a race now? Can usbcore ever probe before usb common?
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Jeremy Linton <jeremy.linton@arm.com>
+> Cc: Will Deacon <will.deacon@arm.com>
+> Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
 
-How can that happen if usb_debug_root is in usb common?  The module
-loader will not let that happen.  Or it shouldn't :)
+Both patches queued for 5.3. Thanks.
 
-thanks,
-
-greg k-h
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
