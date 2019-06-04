@@ -2,87 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B632634BA5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:09:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D76334BFB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:19:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bkWMRONjDt5E95uER/K93eNfImtSe4BnMqZU8lXLyNU=; b=VmmrP3WPICVW0K
-	Mn6uFMQzkmh/NP+iV+tq8GTlBPHBdYtjCRzMxul0xnrrP7rlOb3bFlEh9Dsd5ncVMNxshWTtj/Now
-	Q5jX6loGl/KHVe0Tf20uC9kTxotUPFDbMb2LOe/axZWa/WzVyc7qJKZWacPkPBgDsXBbYgLP+W4/P
-	UaAyRQkOF2qHIoW8tcNCL+jDd5eNrVIan/S713FbK5FoTE9jnuIFOfTwEERf11Jw7ruGnFZMGfj4U
-	S2Pd9/Ik9XRlY2d+uXbqU33kubgRIWWJONzgrp40BlI0mo0g7WLv/coUKAnWPeyKdAIwt4dGwrxWg
-	L2bz6Sm5fQvtbaRvPOXw==;
+	List-Owner; bh=kq1yqIAEETtebJAVHC9X82csVGJK9F6YT6zHnEm8BYA=; b=oi8Qb74vUV7mN0
+	O9ZcRo3X0d0z7AZe81efiueWlsCEKlO2IorxrllDazSrQeGSFsurVzGtIMEWCicmaQWsmqUcKmV7f
+	Y8QuK0fAX7edoVJg73lXKR2goaSEZcoKausj921h8x9bRFrkKyQxJCwQHg346St71mFZdvh37ZBlH
+	83Q8sOaJblaFhAhYuvmDjyqj038oLiO3vrJG2B0fLDPmg3Djpy5J2sgoPznaYFvkaDdHoslspvUpn
+	L4JjFUvKTnNUcVGINJYLKbw3vfDIRujaxFYllpd0ZUxiCA+XZWxMhXWPfqLl9IuQhEDFdsznQTpkw
+	XF3IQrrvkDvqTfHyL8aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYB3t-0006jh-8t; Tue, 04 Jun 2019 15:09:17 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1hYBDR-0002PE-Ab; Tue, 04 Jun 2019 15:19:09 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYB3m-0006if-S8
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 15:09:12 +0000
-Received: by mail-ot1-x343.google.com with SMTP id n14so19874368otk.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 08:09:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XKSHYo9ctUMrD0sjylIwNb1es2ByOZKas8LIpRbYBmw=;
- b=iQ0KHhetCVR5IsqwtBICpgv+IF3ki1lApWvboK97GBOeFeF30aJpMMIc+Pv7G75AzY
- fbNFD0cVlFkARgRfffG0B0/ymhuaz58CPbPj1tRw3w/wzMKB/Q9gh9wimCyFPHETfFCB
- dIlApbe6rwG169C0YAk650uTa+EZqQlRNnBrNEBsmKxauoxatj6zeERRwK4njpSkGPQV
- Sda9jJhVREVTr/Wpb2Z+NAAcN0xOxA0sXnrZarbBM3lS0tAqTyWiI86aYo1/4ZcACEZ/
- B6v91CjdXTlpIAC3w9zSbHeDKu1YHNDQILpNAF6OD0np8sOXOnghUlUz0KHM/jlYzvDX
- hhZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XKSHYo9ctUMrD0sjylIwNb1es2ByOZKas8LIpRbYBmw=;
- b=SLJ9Sm8YvLiW+790tldvhbGaJrA8rCYEuQQTcKrqxy2Taep3KNUBId2sgGemV4kV8s
- KKzQosXitfv9yxyAjFbid7pB4pB88rLMZ8rCfXaiVveti91QuzOmIOWZkjGRJicsVRC1
- ylsXthZ29xYLX3LTsydhfOFejsClRY6o8LgbpUXyafRKMmNgxIG0oYy0wTixj+F8f/o6
- WgRiiwQLieK3src0Pv88hYE+V8e3++oJvICHW/aPCYCwmyH1H6qFKiAER4AB4abDsvaT
- h/upj/b6E0CBBc8IgT16GKNKotBs0HYdrKlAm5rMWj4Lk91A738AURbUzcqBZA+x7CCU
- mLuw==
-X-Gm-Message-State: APjAAAX8JhViS4SiXGiSZbDZXlVmJXOcUgrBCuXjgZnPz96/aQP2NjCF
- yl3enYwTaZu6Xer7desMeKZmGm6H3/iNIwwCNGA=
-X-Google-Smtp-Source: APXvYqwWBcudZPjaM9b9iqmRFgfE4JacyimajXEuFISTyDx4p3PP+AK36wMIWf9cNbNJe5l9iy35X4ISimTqp7AgU2I=
-X-Received: by 2002:a9d:d87:: with SMTP id 7mr5183267ots.263.1559660947275;
- Tue, 04 Jun 2019 08:09:07 -0700 (PDT)
+ id 1hYBDJ-0002Oq-VJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 15:19:03 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 254043087BA9;
+ Tue,  4 Jun 2019 15:18:37 +0000 (UTC)
+Received: from ovpn-112-67.rdu2.redhat.com (ovpn-112-67.rdu2.redhat.com
+ [10.10.112.67])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 08F1F52C4;
+ Tue,  4 Jun 2019 15:18:27 +0000 (UTC)
+Message-ID: <b26cf34c0d3fa1a7a700cee935244d7a2a7e1388.camel@redhat.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Dan Williams <dcbw@redhat.com>
+To: Arnd Bergmann <arnd@arndb.de>, Alex Elder <elder@linaro.org>
+Date: Tue, 04 Jun 2019 10:18:26 -0500
+In-Reply-To: <CAK8P3a2U=RzfpVaAgRP1QwPhRpZiBNsG5qdWjzwG=tCKZefYHA@mail.gmail.com>
+References: <20190531035348.7194-1-elder@linaro.org>
+ <e75cd1c111233fdc05f47017046a6b0f0c97673a.camel@redhat.com>
+ <065c95a8-7b17-495d-f225-36c46faccdd7@linaro.org>
+ <CAK8P3a05CevRBV3ym+pnKmxv+A0_T+AtURW2L4doPAFzu3QcJw@mail.gmail.com>
+ <a28c5e13-59bc-144d-4153-9d104cfa9188@linaro.org>
+ <20190531233306.GB25597@minitux>
+ <d76a710d45dd7df3a28afb12fc62cf14@codeaurora.org>
+ <CAK8P3a0brT0zyZGNWiS2R0RMHHFF2JG=_ixQyvjhj3Ky39o0UA@mail.gmail.com>
+ <040ce9cc-7173-d10a-a82c-5186d2fcd737@linaro.org>
+ <CAK8P3a2U=RzfpVaAgRP1QwPhRpZiBNsG5qdWjzwG=tCKZefYHA@mail.gmail.com>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
-References: <20190604122150.29D6468B05@newverein.lst.de>
- <20190604122308.98D4868B20@newverein.lst.de>
-In-Reply-To: <20190604122308.98D4868B20@newverein.lst.de>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Tue, 4 Jun 2019 08:08:40 -0700
-Message-ID: <CA+E=qVckHLqRngsfK=AcvstrD0ymEfRkYyhS_kBtZ3YWdE3L=g@mail.gmail.com>
-Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345 bridge
- on Teres-I
-To: Torsten Duwe <duwe@lst.de>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.45]); Tue, 04 Jun 2019 15:18:53 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_080910_904297_EFE35C7F 
-X-CRM114-Status: GOOD (  20.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190604_081902_052793_0FF0C4EA 
+X-CRM114-Status: GOOD (  43.03  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (anarsoul[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,145 +77,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Networking <netdev@vger.kernel.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, abhishek.esse@gmail.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, David Miller <davem@davemloft.net>,
+ cpratapa@codeaurora.org, Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 4, 2019 at 5:23 AM Torsten Duwe <duwe@lst.de> wrote:
->
-> Teres-I has an anx6345 bridge connected to the RGB666 LCD output, and
-> the I2C controlling signals are connected to I2C0 bus. eDP output goes
-> to an Innolux N116BGE panel.
->
-> Enable it in the device tree.
->
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> Signed-off-by: Torsten Duwe <duwe@suse.de>
-> ---
->  .../boot/dts/allwinner/sun50i-a64-teres-i.dts      | 65 ++++++++++++++++++++--
->  1 file changed, 61 insertions(+), 4 deletions(-)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> index 0ec46b969a75..a0ad438b037f 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
-> @@ -65,6 +65,21 @@
->                 };
->         };
->
-> +       panel: panel {
-> +               compatible ="innolux,n116bge", "simple-panel";
+On Tue, 2019-06-04 at 10:13 +0200, Arnd Bergmann wrote:
+> On Mon, Jun 3, 2019 at 3:32 PM Alex Elder <elder@linaro.org> wrote:
+> > On 6/3/19 5:04 AM, Arnd Bergmann wrote:
+> > > On Sat, Jun 1, 2019 at 1:59 AM Subash Abhinov Kasiviswanathan
+> > > 
+> > > - What I'm worried about most here is the flow control handling
+> > > on the
+> > >   transmit side. The IPA driver now uses the modern BQL method to
+> > >   control how much data gets submitted to the hardware at any
+> > > time.
+> > >   The rmnet driver also uses flow control using the
+> > >   rmnet_map_command() function, that blocks tx on the higher
+> > >   level device when the remote side asks us to.
+> > >   I fear that doing flow control for a single physical device on
+> > > two
+> > >   separate netdev instances is counterproductive and confuses
+> > >   both sides.
+> > 
+> > I understand what you're saying here, and instinctively I think
+> > you're right.
+> > 
+> > But BQL manages the *local* interface's ability to get rid of
+> > packets, whereas the QMAP flow control is initiated by the other
+> > end of the connection (the modem in this case).
+> > 
+> > With multiplexing, it's possible that one of several logical
+> > devices on the modem side has exhausted a resource and must
+> > ask the source of the data on the host side to suspend the
+> > flow.  Meanwhile the other logical devices sharing the physical
+> > link might be fine, and should not be delayed by the first one.
+> > 
+> > It is the multiplexing itself that confuses the BQL algorithm.
+> > The abstraction obscures the *real* rates at which individual
+> > logical connections are able to transmit data.
+> 
+> I would assume that the real rate constantly changes, at least
+> for wireless interfaces that are also shared with other users
+> on the same network. BQL is meant to deal with that, at least
+> when using a modern queuing algorithm.
+> 
+> > Even if the multiple logical interfaces implemented BQL, they
+> > would not get the feedback they need directly from the IPA
+> > driver, because transmitting over the physical interface might
+> > succeed even if the logical interface on the modem side can't
+> > handle more data.  So I think the flow control commands may be
+> > necessary, given multiplexing.
+> 
+> Can you describe what kind of multiplexing is actually going on?
+> I'm still unclear about what we actually use multiple logical
+> interfaces for here, and how they relate to one another.
 
-It's still "simple-panel". I believe I already mentioned that Rob
-asked it to be edp-connector.
+Each logical interface represents a different "connection" (PDP/EPS
+context) to the provider network with a distinct IP address and QoS.
+VLANs may be a suitable analogy but here they are L3+QoS.
 
-> +               status = "okay";
-> +               power-supply = <&reg_dcdc1>;
-> +               backlight = <&backlight>;
-> +
-> +               ports {
-> +                       panel_in: port {
-> +                               panel_in_edp: endpoint {
-> +                                       remote-endpoint = <&anx6345_out>;
-> +                               };
-> +                       };
-> +               };
-> +       };
-> +
->         reg_usb1_vbus: usb1-vbus {
->                 compatible = "regulator-fixed";
->                 regulator-name = "usb1-vbus";
-> @@ -81,20 +96,48 @@
->         };
->  };
->
-> +&de {
-> +       status = "okay";
-> +};
-> +
->  &ehci1 {
->         status = "okay";
->  };
->
->
-> -/* The ANX6345 eDP-bridge is on i2c0. There is no linux (mainline)
-> - * driver for this chip at the moment, the bootloader initializes it.
-> - * However it can be accessed with the i2c-dev driver from user space.
-> - */
->  &i2c0 {
->         clock-frequency = <100000>;
->         pinctrl-names = "default";
->         pinctrl-0 = <&i2c0_pins>;
->         status = "okay";
-> +
-> +       anx6345: anx6345@38 {
-> +               compatible = "analogix,anx6345";
-> +               reg = <0x38>;
-> +               reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
-> +               dvdd25-supply = <&reg_dldo2>;
-> +               dvdd12-supply = <&reg_dldo3>;
-> +
-> +               ports {
-> +                       #address-cells = <1>;
-> +                       #size-cells = <0>;
-> +
-> +                       port@0 {
-> +                               anx6345_in: endpoint {
-> +                                       remote-endpoint = <&tcon0_out_anx6345>;
-> +                               };
-> +                       };
-> +                       port@1 {
-> +                               anx6345_out: endpoint {
-> +                                       remote-endpoint = <&panel_in_edp>;
-> +                               };
-> +                       };
-> +               };
-> +       };
-> +};
-> +
-> +&mixer0 {
-> +       status = "okay";
->  };
->
->  &mmc0 {
-> @@ -279,6 +322,20 @@
->         vcc-hdmi-supply = <&reg_dldo1>;
->  };
->
-> +&tcon0 {
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&lcd_rgb666_pins>;
-> +
-> +       status = "okay";
-> +};
-> +
-> +&tcon0_out {
-> +       tcon0_out_anx6345: endpoint@0 {
-> +               reg = <0>;
-> +               remote-endpoint = <&anx6345_in>;
-> +       };
-> +};
-> +
->  &uart0 {
->         pinctrl-names = "default";
->         pinctrl-0 = <&uart0_pb_pins>;
-> --
-> 2.16.4
->
+In realistic example the main interface (say rmnet0) would be used for
+web browsing and have best-effort QoS. A second interface (say rmnet1)
+would be used for VOIP and have certain QoS guarantees from both the
+modem and the network itself.
+
+QMAP can also aggregate frames for a given channel (connection/EPS/PDP
+context/rmnet interface/etc) to better support LTE speeds.
+
+Dan
+
+> > The rmnet driver could use BQL, and could return NETDEV_TX_BUSY
+> > for a logical interface when its TX flow has been stopped by a
+> > QMAP command.  That way the feedback for BQL on the logical
+> > interfaces would be provided in the right place.
+> > 
+> > I have no good intuition about the interaction between
+> > two layered BQL managed queues though.
+> 
+> Returning NETDEV_TX_BUSY is usually a bad idea as that
+> leads to unnecessary frame drop.
+> 
+> I do think that using BQL and the QMAP flow command on
+> the /same/ device would be best, as that throttles the connection
+> when either of the two algorithms wants us to slow down.
+> 
+> The question is mainly which of the two devices that should be.
+> Doing it in the ipa driver is probably easier to implement here,
+> but ideally I think we'd only have a single queue visible to the
+> network stack, if we can come up with a way to do that.
+> 
+> > > - I was a little confused by the location of the rmnet driver in
+> > >   drivers/net/ethernet/... More conventionally, I think as a
+> > > protocol
+> > >   handler it should go into net/qmap/, with the ipa driver going
+> > >   into drivers/net/qmap/ipa/, similar to what we have fo
+> > > ethernet,
+> > >   wireless, ppp, appletalk, etc.
+> > > 
+> > > - The rx_handler uses gro_cells, which as I understand is meant
+> > >   for generic tunnelling setups and takes another loop through
+> > >   NAPI to aggregate data from multiple queues, but in case of
+> > >   IPA's single-queue receive calling gro directly would be
+> > > simpler
+> > >   and more efficient.
+> > 
+> > I have been planning to investigate some of the generic GRO
+> > stuff for IPA but was going to wait on that until the basic
+> > code was upstream.
+> 
+> That's ok, that part can easily be changed after the fact, as it
+> does not impact the user interface or the general design.
+> 
+> > >   From the overall design and the rmnet Kconfig description, it
+> > >   appears as though the intention as that rmnet could be a
+> > >   generic wrapper on top of any device, but from the
+> > >   implementation it seems that IPA is not actually usable that
+> > >   way and would always go through IPA.
+> > 
+> > As far as I know *nothing* upstream currently uses rmnet; the
+> > IPA driver will be the first, but as Bjorn said others seem to
+> > be on the way.  I'm not sure what you mean by "IPA is not
+> > usable that way."  Currently the IPA driver assumes a fixed
+> > configuration, and that configuration assumes the use of QMAP,
+> > and therefore assumes the rmnet driver is layered above it.
+> > That doesn't preclude rmnet from using a different back end.
+> 
+> Yes, that's what I meant above: IPA can only be used through
+> rmnet (I wrote "through IPA", sorry for the typo), but cannot be
+> used by itself.
+> 
+>        Arnd
+
 
 _______________________________________________
 linux-arm-kernel mailing list
