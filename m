@@ -2,79 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 315B034129
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:07:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0624934140
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:12:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lp2mHFF/2Ew8/AHYwy4ja2Umhe54gB8R8vtG/ACq+No=; b=FkFd7Mgeb64eFf
-	HYKOxzBV2yOmyq18JYU5tEpf35iMYW/Wl47liQHA8Gw7mFEmqwNyhYF11CgYMH4eBjsE8Au9sbQJN
-	nnBxZKuFoKB+bvgBbieWbMMfr/iQksgpguYwGoNjZ8gxB6r/CY14YTM41Z6njXkyCC4D0wxDTVfk8
-	mB9Yn6i+R1bmhaA7FgS/Y9+Gkrxr3S3mENPIredLyub14WeYbttoXMt+UMFeuPaJ+X2JrcA7f11G1
-	N4o6ehOZ4UU87+bwiijF2Mr656NF0okMkAGKg6199f8i0ZunMZjz7LQXoiJQNGvxnmV66sy+WKxPM
-	Q6WbCe9cK5g7bYDFKbaw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T+bgIu0WlUwoZgqx9C1qo86B9gTCgCgNIpRLTR3wo80=; b=d4JFhXmw0oWT6h
+	cOOjyrJRC1aQXPZpsWovL5ndRAkHCWrfvvF4EflyCs44/68fE52CyuIBOe8Ub/xnSv8XCYcqkv1mf
+	vfFhjEk9gF/pRts7Lj//BZBTZnS/cOAShVlOOBWwT4XtfHQHCg0jepzvaSNj3+hGtNhmXE2HOa13K
+	RNj/ce0TYIUyZVossNkx1uNNu/B75gUsw2gm/4Lbc6G9Z8KmDPUyKO1fG54FqEDKnqW6dmZuIcpmk
+	/nMx7IVGxVUMaseJjiMaONkE4+lq3ZwnCCZKpoTUTEa7YtH/zQXKVJuNlj0vLjUEuumnA5wLLMPz4
+	TmwVf41Cq1v/uLCor5Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY4Tb-00065o-2h; Tue, 04 Jun 2019 08:07:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY4TS-00064l-CN
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:07:15 +0000
-Received: from mail-lf1-f53.google.com (mail-lf1-f53.google.com
- [209.85.167.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE1E424DA9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue,  4 Jun 2019 08:07:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559635634;
- bh=sHyWfbwyAVw7JKk2CNcrCheYaj5lTlFffjTrjRb605w=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=GGHi7E3nS8InMHMm6Lj7RN831PK+c5synl+5o0YVe7bm5SxaPLGtnGoz4l1BXwrbL
- nrB7anSS2auYVBfNOXn5TaBjM+u0QlgIi0aO9jCZuDJLEUY/uUbueDcW+/MzwZGvaI
- F/d3zRm5/qUpj9AgXWQtZcdtXfsYe0qVak7mDQVg=
-Received: by mail-lf1-f53.google.com with SMTP id u10so8680435lfm.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 01:07:13 -0700 (PDT)
-X-Gm-Message-State: APjAAAVx3Q8YZwUabE1uryVzOEXVSf0lXKgnyxpXjbZjFCtCKYr5SDT5
- nVAZe2hkciKIuGigzd2rE6Q91sK+gKA3nsbq9zE=
-X-Google-Smtp-Source: APXvYqwADLP+VEgr6xpGA3YxOkg9TXBPTX2f2nBgdA2w5CaYXwC1dmD/WGKupuEPBt0UOCBg2XQaSrz1avbR+Ljmutk=
-X-Received: by 2002:ac2:4d1c:: with SMTP id r28mr1619692lfi.159.1559635629899; 
- Tue, 04 Jun 2019 01:07:09 -0700 (PDT)
+	id 1hY4YI-0007pW-FL; Tue, 04 Jun 2019 08:12:14 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY4YB-0007ob-2n
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:12:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 22F87A78;
+ Tue,  4 Jun 2019 01:12:06 -0700 (PDT)
+Received: from [10.162.40.144] (p8cg001049571a15.blr.arm.com [10.162.40.144])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 82BA43F246; Tue,  4 Jun 2019 01:11:55 -0700 (PDT)
+Subject: Re: [RFC V2] mm: Generalize notify_page_fault()
+To: Peter Zijlstra <peterz@infradead.org>
+References: <1559630046-12940-1-git-send-email-anshuman.khandual@arm.com>
+ <20190604065401.GE3402@hirez.programming.kicks-ass.net>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <afe886e5-8420-0c33-ed2f-159cd3d55882@arm.com>
+Date: Tue, 4 Jun 2019 13:42:10 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <1559634833-19980-1-git-send-email-krzk@kernel.org>
- <CAMuHMdV0RNdB3_n7J0FWfhUTvzq4390HVsuzxXhexZ_zX-+nvg@mail.gmail.com>
-In-Reply-To: <CAMuHMdV0RNdB3_n7J0FWfhUTvzq4390HVsuzxXhexZ_zX-+nvg@mail.gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 4 Jun 2019 10:06:58 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPcY8w7CVkwGWwhssPtz8=tgffzRoAN8-4SMSTYk2_yKEg@mail.gmail.com>
-Message-ID: <CAJKOXPcY8w7CVkwGWwhssPtz8=tgffzRoAN8-4SMSTYk2_yKEg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: configs: Remove useless UEVENT_HELPER_PATH
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+In-Reply-To: <20190604065401.GE3402@hirez.programming.kicks-ass.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_010714_454665_B7F03BD3 
-X-CRM114-Status: GOOD (  15.63  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190604_011207_129201_E9725664 
+X-CRM114-Status: GOOD (  18.24  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,60 +65,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Mans Rullgard <mans@mansr.com>, linux-aspeed@lists.ozlabs.org,
- Tony Lindgren <tony@atomide.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Aaro Koskinen <aaro.koskinen@iki.fi>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>,
- Ludovic Desroches <ludovic.desroches@microchip.com>, arm-soc <arm@kernel.org>,
- Joel Stanley <joel@jms.id.au>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, Sascha Hauer <s.hauer@pengutronix.de>,
- Vladimir Zapolskiy <vz@mleia.com>, NXP Linux Team <linux-imx@nxp.com>,
- "open list:TI ETHERNET SWITCH DRIVER \(CPSW\)" <linux-omap@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Andrew Jeffery <andrew@aj.id.au>, Dinh Nguyen <dinguyen@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sudeep Holla <sudeep.holla@arm.com>, Olof Johansson <olof@lixom.net>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
+ linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
+ Ingo Molnar <mingo@redhat.com>, Fenghua Yu <fenghua.yu@intel.com>,
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ Andrey Konovalov <andreyknvl@google.com>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 4 Jun 2019 at 09:57, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> On Tue, Jun 4, 2019 at 9:54 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > Remove the CONFIG_UEVENT_HELPER_PATH because:
-> > 1. It is disabled since commit 1be01d4a5714 ("driver: base: Disable
-> >    CONFIG_UEVENT_HELPER by default") as its dependency (UEVENT_HELPER) was
-> >    made default to 'n',
-> > 2. It is not recommended (help message: "This should not be used today
-> >    [...] creates a high system load") and was kept only for ancient
-> >    userland,
-> > 3. Certain userland specifically requests it to be disabled (systemd
-> >    README: "Legacy hotplug slows down the system and confuses udev").
-> >
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
->
-> Acked-by: Geert Uytterhoeven <geert+renesas@glider.be>
->
-> >  arch/arm/configs/proceq_vf_bck_defconfig  | 255 +++++++++++++++++++++++++++
-> >  arch/arm/configs/proceq_vf_crc_defconfig  | 278 ++++++++++++++++++++++++++++++
->
-> These look like unrelated changes? Please drop.
 
-Ooops, indeed. Thanks for spotting them.
 
-Best regards,
-Krzysztof
+On 06/04/2019 12:24 PM, Peter Zijlstra wrote:
+> On Tue, Jun 04, 2019 at 12:04:06PM +0530, Anshuman Khandual wrote:
+>> diff --git a/mm/memory.c b/mm/memory.c
+>> index ddf20bd..b6bae8f 100644
+>> --- a/mm/memory.c
+>> +++ b/mm/memory.c
+>> @@ -52,6 +52,7 @@
+>>  #include <linux/pagemap.h>
+>>  #include <linux/memremap.h>
+>>  #include <linux/ksm.h>
+>> +#include <linux/kprobes.h>
+>>  #include <linux/rmap.h>
+>>  #include <linux/export.h>
+>>  #include <linux/delayacct.h>
+>> @@ -141,6 +142,21 @@ static int __init init_zero_pfn(void)
+>>  core_initcall(init_zero_pfn);
+>>  
+>>  
+>> +int __kprobes notify_page_fault(struct pt_regs *regs, unsigned int trap)
+>> +{
+>> +	int ret = 0;
+>> +
+>> +	/*
+>> +	 * To be potentially processing a kprobe fault and to be allowed
+>> +	 * to call kprobe_running(), we have to be non-preemptible.
+>> +	 */
+>> +	if (kprobes_built_in() && !preemptible() && !user_mode(regs)) {
+>> +		if (kprobe_running() && kprobe_fault_handler(regs, trap))
+>> +			ret = 1;
+>> +	}
+>> +	return ret;
+>> +}
+> 
+> That thing should be called kprobe_page_fault() or something,
+> notify_page_fault() is a horribly crap name for this function.
+
+Agreed. kprobe_page_fault() sounds good.
 
 _______________________________________________
 linux-arm-kernel mailing list
