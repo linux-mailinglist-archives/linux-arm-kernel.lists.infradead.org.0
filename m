@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B116834ABE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:46:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 908CD34AC2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:46:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xLyhMY5GiG/iFq5ojxlMSusa8Fpvml80c++sw22QOcM=; b=ulOnkV/2Mi881O
-	d/FUYkOiVPMMPICLteFtcAKHzhHbnSIE0UXHuff4UAu9e1tHI9p1LR+PtLDngUzsnBjQwu/G3M8fx
-	rIPEmhDUZ4U0aj2MvSM4iLX6MsJtWPlH2Oab3GSzf4qzZ+X1TmBb72gfJJDUtJYbR7PbPskS5DYZw
-	0gYW3Sh8UTVqpVhFX6vRJXgZo+plKg8KEoOOnBuiIZ6PEe0A0qW3z9iIg0P9F2XpsSQHou+BEYuZ5
-	Os7FmKJtyFU2EXk58YciFo6DEa7HoZplEOKD0nLDQtlZm4xcX9UfMIU0h5Wl0lKFPdykd+W+aL2Ni
-	6kHDCarKM74Um2ECN4bw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qdrFrvf5UecItmA8G3HhLnqJ5sTgTuPEnA6PUMgEmtg=; b=YmDYlDE60sF3iD
+	Qb4OAucR3UClEPWRy9JI3BlHmk9jeyyp5WRan0bV8o1Z7nbo1yZMHBRchlKFdqnDDTvUqnWFMf/Ou
+	uI54AFa6ig2C2IMAmD57/agfqBqFUaE2FHvX3EdMBIxOtFE2IYqLq8Cv6Qly5Ce/8k3nkZZR0tX99
+	iGRxDut3apTxrZLcJ17fLVhOEq/xaS3Ii8XS79ZRtt1GJxlC2MDXbWF9tnuEKMyo7n46WdcRv/Fzs
+	9YiecNdhief2vX8+DrRx//KvUNroE1iB4+6YDnhcnkavV6yal2bvtEeMy4dRJuJZr1vkZpjeiew/L
+	q8PoSoinIL/mRJUlz79A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAhs-0006sc-KR; Tue, 04 Jun 2019 14:46:32 +0000
+	id 1hYAi2-000707-Vx; Tue, 04 Jun 2019 14:46:43 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAhj-0006rR-Nk
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:46:25 +0000
+ id 1hYAhm-0006sO-GZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:46:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BC93C341;
- Tue,  4 Jun 2019 07:46:21 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21AE3341;
+ Tue,  4 Jun 2019 07:46:26 -0700 (PDT)
 Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 41CE73F690;
- Tue,  4 Jun 2019 07:46:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9BD733F690;
+ Tue,  4 Jun 2019 07:46:24 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v1 0/6] KVM: arm64: Account host/guest SError more precisely
- (Neoverse-N1 #1349291)
-Date: Tue,  4 Jun 2019 15:45:45 +0100
-Message-Id: <20190604144551.188107-1-james.morse@arm.com>
+Subject: [PATCH v1 1/6] KVM: arm64: Abstract the size of the HYP vectors
+ pre-amble
+Date: Tue,  4 Jun 2019 15:45:46 +0100
+Message-Id: <20190604144551.188107-2-james.morse@arm.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190604144551.188107-1-james.morse@arm.com>
+References: <20190604144551.188107-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_074623_787882_89EEDB00 
-X-CRM114-Status: GOOD (  13.17  )
+X-CRM114-CacheID: sfid-20190604_074626_559421_18A26196 
+X-CRM114-Status: GOOD (  13.47  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -70,89 +72,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello!
+The EL2 vector hardening feature causes KVM to generate vectors for
+each type of CPU present in the system. The generated sequences already
+do some of the early guest-exit work (i.e. saving registers). To avoid
+duplication the generated vectors branch to the original vector just
+after the preamble. This size is hard coded.
 
-v1? Yes: I intend to repost this with/without the last two patches
-depending on whether anyone thinks they are needed, and should be considered
-as part of this series, or separate.
+Adding new instructions to the HYP vector causes strange side effects,
+which are difficult to debug as the affected code is patched in at
+runtime.
 
-This series started as a workaround for Neoverse-N1 #1349291, but has
-become an improvement in RAS error accounting for KVM on arm64.
+Add KVM_VECTOR_PREAMBLE to tell kvm_patch_vector_branch() how big
+the preamble is. The valid_vect macro can then validate this at
+build time.
 
-Neoverse-N1 affected by #1349291 may report an Uncontained RAS Errors
-as Unrecoverable. [0] This is the difference between killing the thread and
-killing the machine.
-The workaround is to treat all Unrecoverable SError as Uncontained.
-The arch code's SError handling already does this, due to its nascent
-kernel-first support.
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+ arch/arm64/include/asm/kvm_asm.h |  6 ++++++
+ arch/arm64/kvm/hyp/hyp-entry.S   | 10 +++++++++-
+ arch/arm64/kvm/va_layout.c       |  7 +++----
+ 3 files changed, 18 insertions(+), 5 deletions(-)
 
-So only KVM needs some work as it has its own SError handling as we want
-KVM to handle guest:SError and the host to handle host:SError.
-
-
-Instead of working around the errata in KVM, we account SError as precisely
-as we can instead. This means moving the ESB-instruction into the guest-exit
-vectors, and deferring guest-entry if there is an SError pending. (so that the
-host's existing handling takes it).
-
-This is all good stuff, but it comes with the cost of a dsb in the
-world-switch code. It's the non-RAS non-VHE systems that will see this
-as costly. Benchmarked using kvm-ws-tests's do_hvc [1] on Seattle:
-
-| v5.2-rc1            mean:4339 stddev:33
-| v5.2-rc1+patches1-4 mean:4476 stddev: 2
-| with series 3.15% slower
-
-
-Patch 5 replaces this dsb with a nop if the system doesn't have v8.2
-as these systems are unlikely to report errors in a way that we can
-handle.
-
-| 5.2-rc1+patches1-5 mean:4405 stddev:31
-| with series 1.53% slower
-
-
-Patch 6 applies the same ISR_EL1 trick to avoid unmasking SError on
-guest-exit, which avoids a pstate-write and more system register reads.
-I'm aware 'vaxorcism' isn't an english word...)
-
-After all this:
-| v5.2-rc1+patches1-6 mean:4309 stddev:26
-| with series 0.69% faster
-
-
-So for hardware that doesn't benefit from the extra work, we are back where
-we started.
-
-If the performance-game is valid, I intend to squash patch 5 into patch 3,
-and post patch 6 independently. I don't think patch 6 should be backported,
-but patch 5 would be fair game if its squashed in.
-
-
-Thanks,
-
-James
-
-[0] account-required: https://developer.arm.com/docs/sden885747/latest/arm-neoverse-n1-mp050-software-developer-errata-notice
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/maz/kvm-ws-tests.git/
-
-James Morse (6):
-  KVM: arm64: Abstract the size of the HYP vectors pre-amble
-  KVM: arm64: Consume pending SError as early as possible
-  KVM: arm64: Defer guest entry when an asynchronous exception is
-    pending
-  arm64: Update silicon-errata.txt for Neoverse-N1 #1349291
-  KVM: arm64: nop out dsb in __guest_enter() unless we have v8.2 RAS
-  KVM: arm64: Skip more of the SError vaxorcism
-
- Documentation/arm64/silicon-errata.txt |  1 +
- arch/arm64/include/asm/kvm_asm.h       |  6 +++++
- arch/arm64/kernel/traps.c              |  4 ++++
- arch/arm64/kvm/hyp/entry.S             | 33 ++++++++++++++++++++------
- arch/arm64/kvm/hyp/hyp-entry.S         | 12 +++++++++-
- arch/arm64/kvm/va_layout.c             |  7 +++---
- 6 files changed, 51 insertions(+), 12 deletions(-)
-
+diff --git a/arch/arm64/include/asm/kvm_asm.h b/arch/arm64/include/asm/kvm_asm.h
+index ff73f5462aca..9170c43b332f 100644
+--- a/arch/arm64/include/asm/kvm_asm.h
++++ b/arch/arm64/include/asm/kvm_asm.h
+@@ -41,6 +41,12 @@
+ 	{ARM_EXCEPTION_TRAP, 		"TRAP"		},	\
+ 	{ARM_EXCEPTION_HYP_GONE,	"HYP_GONE"	}
+ 
++/*
++ * Size of the HYP vectors preamble. kvm_patch_vector_branch() generates code
++ * that jumps over this.
++ */
++#define KVM_VECTOR_PREAMBLE	4
++
+ #ifndef __ASSEMBLY__
+ 
+ #include <linux/mm.h>
+diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
+index 2b1e686772bf..914036e6b6d7 100644
+--- a/arch/arm64/kvm/hyp/hyp-entry.S
++++ b/arch/arm64/kvm/hyp/hyp-entry.S
+@@ -229,8 +229,15 @@ ENDPROC(\label)
+ 
+ .macro valid_vect target
+ 	.align 7
++661:
+ 	stp	x0, x1, [sp, #-16]!
++662:
+ 	b	\target
++
++/* kvm_patch_vector_branch() generates code that jumps over the preamble. */
++.if ((662b-661b) != KVM_VECTOR_PREAMBLE)
++	.error "KVM vector preamble length mismatch"
++.endif
+ .endm
+ 
+ .macro invalid_vect target
+@@ -282,7 +289,8 @@ ENDPROC(__kvm_hyp_vector)
+  * movk	x0, #((addr >> 32) & 0xffff), lsl #32
+  * br	x0
+  *
+- * Where addr = kern_hyp_va(__kvm_hyp_vector) + vector-offset + 4.
++ * Where:
++ * addr = kern_hyp_va(__kvm_hyp_vector) + vector-offset + KVM_VECTOR_PREAMBLE.
+  * See kvm_patch_vector_branch for details.
+  */
+ alternative_cb	kvm_patch_vector_branch
+diff --git a/arch/arm64/kvm/va_layout.c b/arch/arm64/kvm/va_layout.c
+index c712a7376bc1..58b3a91db892 100644
+--- a/arch/arm64/kvm/va_layout.c
++++ b/arch/arm64/kvm/va_layout.c
+@@ -181,11 +181,10 @@ void kvm_patch_vector_branch(struct alt_instr *alt,
+ 	addr |= ((u64)origptr & GENMASK_ULL(10, 7));
+ 
+ 	/*
+-	 * Branch to the second instruction in the vectors in order to
+-	 * avoid the initial store on the stack (which we already
+-	 * perform in the hardening vectors).
++	 * Branch over the preamble in order to avoid the initial store on
++	 * the stack (which we already perform in the hardening vectors).
+ 	 */
+-	addr += AARCH64_INSN_SIZE;
++	addr += KVM_VECTOR_PREAMBLE;
+ 
+ 	/* stp x0, x1, [sp, #-16]! */
+ 	insn = aarch64_insn_gen_load_store_pair(AARCH64_INSN_REG_0,
 -- 
 2.20.1
 
