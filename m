@@ -2,65 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6FDF33F24
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:44:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C604133F2E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:48:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LnFVdOlAmrzu336eFypqMeCAHm/qHwnhcwp7Ya3Y8Uc=; b=dcmBMaP8mS0Ya+
-	UQh6KspP9JBmOu4PWUFlGI3KZG+sY9nlpaeovxWKeeCJNAJXN1e8Jcgu/rkqsmIh6Wb5DpMzxzx9v
-	7v5M+5gqErCQwEsTAK8RUkzzJBzbOKDwTPOqQ/DUOUtGMHF6icA6RD1YWncMdNmagjxAoxtEb+45W
-	ZPK3QUj/FGC1g8b8qIIJJE0JAEIlWRxee0LIhendAi+yKEzx3t0scZuAK8iWw6QUwsTsYZMQhQhRc
-	UPz4Skfo4I2O8Qj9CBKEkQFCQ0XAEfRdx3/lFwqhRGOnIKQlaD8zp5ynWG+MZQ6ACPjDzXJaJccq/
-	8VBtQzJzs/5y4MDnyaIQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+WQmRDUDDPAgb/KMlwpwc1fSe96ea4v0tHGO8GODkII=; b=tib3lKXUbs5Lr1
+	hFHV1kQ05cPD5dz0krze3+5ybYF0lybVM8/hJr5LZxI1QukvPLmDKpfLhO9IB4ZovIIl4g36xtAfN
+	3RWM3PsJFDmq1GSGF4HF3KWi7m7c0VoXY8t5SZ5AnMOQR8I62E4PxMg6otyLlpjTGI49q+/mLLOYY
+	OB19GR4o/b6jmhSGbSpp5IEvuU1XnV3ZtohplI57ZbYeemMM0FVQsQn0JPOvMbEbx2BCF9XumLo5Y
+	0TeK0gofBD5bn2xFru1dRPBBGh13/4PVhSHZDDeRbkp/HgfJW2yApslbspgu2kYfA/u7PeTY1c8j3
+	ZSNp3I0zQu0Tol3GmT/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY3BZ-0006QE-Fr; Tue, 04 Jun 2019 06:44:41 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hY3F1-0007yr-DG; Tue, 04 Jun 2019 06:48:15 +0000
+Received: from mx01.recaro-as.com ([80.154.95.232])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY3BS-0006PO-70; Tue, 04 Jun 2019 06:44:35 +0000
-X-UUID: a27ec159874c4855b627a31428f6f836-20190603
-X-UUID: a27ec159874c4855b627a31428f6f836-20190603
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 866147116; Mon, 03 Jun 2019 22:44:23 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 3 Jun 2019 23:44:21 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 4 Jun 2019 14:44:18 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 4 Jun 2019 14:44:18 +0800
-Message-ID: <1559630658.8487.61.camel@mhfsdcap03>
-Subject: Re: [v3 PATCH] usb: create usb_debug_root for gadget only
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Felipe Balbi <felipe.balbi@linux.intel.com>
-Date: Tue, 4 Jun 2019 14:44:18 +0800
-In-Reply-To: <87sgsv2n54.fsf@linux.intel.com>
-References: <cffd6d75f69e4d908c8f39b8a60ddae27d6b7c88.1559028752.git.chunfeng.yun@mediatek.com>
- <87k1ebj8vt.fsf@linux.intel.com> <1559201499.8487.40.camel@mhfsdcap03>
- <87sgsv2n54.fsf@linux.intel.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hY3Eu-0007yZ-SV
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 06:48:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=recaro-as.com; i=@recaro-as.com; q=dns/txt;
+ s=recaro-as; t=1559630888; x=1591166888;
+ h=from:to:subject:date:message-id:
+ content-transfer-encoding:mime-version;
+ bh=35f3eLN34+xpHtEBi1v4Dj/VDw/4IOnR03v2qPOLOGs=;
+ b=DpCKi63KOi4VZVAnS5SBkPca9X++JdGwm7b+waiA2fPCEtg+cYwRJkSH
+ zSfG4CC+1SBaaf91dKnNfvcpRAvmVeOSlBe13v/odQrYgsXZ7hmr17gno
+ cdwn7q/xZV2OLiL5PFlaL2OgCw1r6E8gmPqKQrTvXsIRRm6XaOihpM3NX
+ LYEN3Chz9j8CWiVpztbdIwDoIzDwEWdYuUYtzqY0rKOEVS2VZCfAilv77
+ 3MkvdJKXpsvAnHpPoL+k4aK4t7/b+7U1OGOnPjyv7ntaSbeqfGvm5gD/R
+ N22BJRiJr+Sk0s4FByUrnhNqdFJ68ic/Fjwqu2I+ie70J6zQlftalmtVM Q==;
+Received: from unknown (HELO shwex004.recaroas.local) ([10.7.1.201])
+ by mx01.recaro-as.com with ESMTP/TLS/AES256-SHA; 04 Jun 2019 08:48:06 +0200
+Received: from shwex004.recaroas.local (10.7.1.201) by shwex005.recaroas.local
+ (10.7.1.202) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Tue, 4 Jun 2019 08:48:07 +0200
+Received: from shwex004.recaroas.local ([fe80::d9f2:f172:96c9:b2d7]) by
+ shwex004.recaroas.local ([fe80::d9f2:f172:96c9:b2d7%14]) with mapi id
+ 15.00.1473.003; Tue, 4 Jun 2019 08:48:06 +0200
+From: "Klassen, Andreas" <Andreas.Klassen@recaro-as.com>
+To: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: AW: Linux ARM Patch Ethernet PHY driver
+Thread-Topic: Linux ARM Patch Ethernet PHY driver
+Thread-Index: AdUanq898FdzgS5cSxyH+o7hxbXV4wAAoGiA
+Date: Tue, 4 Jun 2019 06:48:06 +0000
+Message-ID: <c39c9ec06da84fa8b9170bb046192d66@shwex004.recaroas.local>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.41.50.229]
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_234434_263290_14FEEA28 
-X-CRM114-Status: GOOD (  18.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190603_234809_228545_2304BE39 
+X-CRM114-Status: UNSURE (   6.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.154.95.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,152 +89,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Randy Dunlap <rdunlap@infradead.org>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-05-31 at 08:44 +0300, Felipe Balbi wrote:
-> Hi,
-> 
-> Chunfeng Yun <chunfeng.yun@mediatek.com> writes:
-> 
-> > Hi Felipe,
-> > On Tue, 2019-05-28 at 11:11 +0300, Felipe Balbi wrote:
-> >> Hi,
-> >> 
-> >> Chunfeng Yun <chunfeng.yun@mediatek.com> writes:
-> >> > diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
-> >> > index 7fcb9f782931..88b3ee03a12d 100644
-> >> > --- a/drivers/usb/core/usb.c
-> >> > +++ b/drivers/usb/core/usb.c
-> >> > @@ -1190,7 +1190,7 @@ EXPORT_SYMBOL_GPL(usb_debug_root);
-> >> >  
-> >> >  static void usb_debugfs_init(void)
-> >> >  {
-> >> > -	usb_debug_root = debugfs_create_dir("usb", NULL);
-> >> > +	usb_debug_root = debugfs_create_dir(USB_DEBUG_ROOT_NAME, NULL);
-> >> >  	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
-> >> >  			    &usbfs_devices_fops);
-> >> >  }
-> >> 
-> >> might be a better idea to move this to usb common. Then have a function
-> >> which can be called by both host and gadget to maybe create the
-> >> directory:
-> >> 
-> >> static struct dentry *usb_debug_root;
-> >> 
-> >> struct dentry *usb_debugfs_init(void)
-> >> {
-> >> 	if (!usb_debug_root)
-> >>         	usb_debug_root = debugfs_create_dir("usb", NULL);
-> >> 
-> >> 	return usb_debug_root;
-> >> }
-> >> 
-> >> 
-> >> Then usb core would be updated to something like:
-> >> 
-> >> static void usb_core_debugfs_init(void)
-> >> {
-> >> 	struct dentry *root = usb_debugfs_init();
-> >> 
-> >> 	debugfs_create_file("devices", 0444, root, NULL, &usbfs_devices_fops);
-> >> }
-> >> 
-> > I find a problem when move usb_debugfs_init() and usb_debugfs_cleanup()
-> > into usb common, it's easy to create "usb" directory, but difficult to
-> > cleanup it:
-> >
-> > common/common.c
-> >
-> > struct dentry *usb_debugfs_init(void)
-> > {
-> >     if (!usb_debug_root)
-> >         usb_debug_root = debugfs_create_dir("usb", NULL);
-> >
-> >     return usb_debug_root;
-> > }
-> >
-> > void usb_debugfs_cleanup(void)
-> > {
-> >     debugfs_remove_recursive(usb_debug_root);
-> >     usb_debug_root = NULL;
-> > }
-> >
-> > core/usb.c
-> >
-> > static void usb_core_debugfs_init(void)
-> > {
-> >     struct dentry *root = usb_debugfs_init();
-> >
-> >     debugfs_create_file("devices", 0444, root, NULL,
-> > &usbfs_devices_fops);
-> > }
-> >
-> > static int __init usb_init(void)
-> > {
-> >     ...
-> >     usb_core_debugfs_init();
-> >     ...
-> > }
-> >
-> > static void __exit usb_exit(void)
-> > {
-> >     ...
-> >     usb_debugfs_cleanup();
-> >     // will be error, gadget may use it.
-> >     ...
-> > }
-> >
-> > gadget/udc/core.c
-> >
-> > static int __init usb_udc_init(void)
-> > {
-> >     ...
-> >     usb_debugfs_init();
-> >     ...
-> > }
-> >
-> > static void __exit usb_udc_exit(void)
-> > {
-> >     ...
-> >     usb_debugfs_cleanup();
-> >     // can't cleanup in fact, usb core may use it.
-> > }
-> >
-> > How to handle this case? introduce a reference count? do you have any
-> > suggestion?
-> 
-> I guess a simple refcount is the way to go:
-> 
-> struct dentry *usb_debugfs_init(void)
-> {
-> 	if (!usb_debug_root)
-> 		usb_debug_root = debugfs_create_dir("usb", NULL);
-> 
-> 	usb_debug_root_refcnt++;
-> 	return usb_debug_root;
-> }
-> 
-> void usb_debugfs_cleanup(void)
-> {
-> 	if (!(--usb_debug_root_refcnt)) {
-> 		debugfs_remove_recursive(usb_debug_root);
-> 		usb_debug_root = NULL;
-> 	}
-> }
-I'll try it, thanks
+Hello community,
 
-> 
-> Or something along those lines
-> 
+I found you via platform Linux4SAM and recognized you are developer for Linux ARM Kernel. I want to have access to the Ethernet PHY DP83TC811 from Texas Instruments, but this device is not available in kernel yet. Kernel 5.1 has implemented this driver, but I can't use it, because my processor is an ATMEL SAMA5D27, so this Kernel is not supported here. I started to bind this driver in Kernel 4.14, but there are too many depencies, primary in header files. Could you please write a patch for this device? On manufacturer site is published the device driver description:
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/phy/dp83tc811.c
+Any help will be appreciated.
 
 
+Kind regards,
+
+Andreas Klassen
+
+
+Follow RECARO at   www.stream.recaro.com<http://www.stream.recaro.com/>   |   www.facebook.com/recaro<http://www.facebook.com/recaro>   |   www.twitter.com/recaro_de<http://www.twitter.com/recaro_de>
 
 _______________________________________________
 linux-arm-kernel mailing list
