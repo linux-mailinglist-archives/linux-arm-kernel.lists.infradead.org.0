@@ -2,64 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A89A33CFE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 04:06:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E494733D00
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 04:09:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=01bV3NruxlHqzXw25NZHkpzMJyiHUuXXBHtgdtBFEDE=; b=S3yBlQrB5z/zUQ
-	mkRQCppbr2qjQ0GhCVeq1WPn4/647QykBv5hmIowyAG0JzyHo5seijzrpbJCXSqlSpRQ8NULHSIXO
-	fo17ANQ25aDeIkxo6CFXyf0CRB/sKGe3/bIx0XV4Vr2ybAIhi4gnx/95hl9hhplr00xpT3Goc5HMC
-	WcqsMYv76LkCvS6CKdsXu7aHyxvR334AdljZMaspx4MHZATB+eoc7hohgpbrmTuYeORcZLS6p7rAO
-	imU2jkhjWK1mLOniRTZ04foGRYD0jEt/kInDFMyR5bP1jjf7al5j/6ICzl4ivfySrr6i3d4r0glw1
-	2Hi4FX3+3JRuQl86dywg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ck4mxVaQIz5ApQxO3n1Jb57c8iqgYyMF/V+9ZkuNeMg=; b=Ke8DHRwq/qGVh1
+	E75X/eUelTXi1BzS+xH373xLRDcuuXiTHaGmRamj5+oF7h1JoyptCMG4cSvD7CZBPVsSvhZrkH2Gy
+	JkRSEoD7th72VS4xwrDy2DKIiRYV3ErE9cm/QMsw7a5AkzxofHxDtR/g7WT8sEtjAzEy2kyagi8C2
+	crIusMH4aZzVfelRt0H0ejaq1ULwmt926O+O023ZNQScj1jr8umXn2i1dBmy44csfCvd8r2+yvjCp
+	3XOqhTHBBfUdFKZuryeiT+nsMFGR9narIvUXaAQW/Gs09tFENrJgB4kyeS112YRDv91YsAleZh89c
+	JP9PT/r/5p+HkkObid7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXyps-00013Z-3c; Tue, 04 Jun 2019 02:06:00 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hXysv-0001NR-7D; Tue, 04 Jun 2019 02:09:09 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXypi-00012g-EF; Tue, 04 Jun 2019 02:05:52 +0000
-X-UUID: 4c2c30c7379640f3a4f5e35ac10f7218-20190603
-X-UUID: 4c2c30c7379640f3a4f5e35ac10f7218-20190603
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1279330952; Mon, 03 Jun 2019 18:05:43 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 3 Jun 2019 19:05:42 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by mtkcas08.mediatek.inc
- (172.21.101.126) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 4 Jun 2019 10:05:40 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 4 Jun 2019 10:05:40 +0800
-Message-ID: <1559613940.9975.0.camel@mtksdaap41>
-Subject: Re: [PATCH v4] gpu/drm: mediatek: call mtk_dsi_stop() after
- mtk_drm_crtc_atomic_disable()
-From: CK Hu <ck.hu@mediatek.com>
-To: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Tue, 4 Jun 2019 10:05:40 +0800
-In-Reply-To: <20190530091847.90263-1-hsinyi@chromium.org>
-References: <20190530091847.90263-1-hsinyi@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hXyso-0001Mo-3v
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 02:09:03 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id B6F40E578F138A30FD44;
+ Tue,  4 Jun 2019 10:08:51 +0800 (CST)
+Received: from [127.0.0.1] (10.133.213.239) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0;
+ Tue, 4 Jun 2019 10:08:48 +0800
+Subject: Re: [PATCH] ARM: mm: remove unused variables
+To: Krzysztof Kozlowski <krzk@kernel.org>
+References: <20190512114105.41792-1-yuehaibing@huawei.com>
+ <CAJKOXPeDRuvmHG=KUCYiPav2ODT4MC4hEgi5hAsy7s_+v-DB3g@mail.gmail.com>
+From: Yuehaibing <yuehaibing@huawei.com>
+Message-ID: <208eb75a-dda5-98d9-3cad-c4f67cbf267f@huawei.com>
+Date: Tue, 4 Jun 2019 10:08:47 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.2.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <CAJKOXPeDRuvmHG=KUCYiPav2ODT4MC4hEgi5hAsy7s_+v-DB3g@mail.gmail.com>
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_190550_491291_18821488 
-X-CRM114-Status: GOOD (  18.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190603_190902_390073_C58FD268 
+X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,88 +66,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: keescook@chromium.org, geert+renesas@glider.be,
+ linux-kernel@vger.kernel.org, linux@armlinux.org.uk, akpm@linux-foundation.org,
+ rppt@linux.ibm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Hsin-Yi:
-
-On Thu, 2019-05-30 at 17:18 +0800, Hsin-Yi Wang wrote:
-> mtk_dsi_stop() should be called after mtk_drm_crtc_atomic_disable(), which needs
-> ovl irq for drm_crtc_wait_one_vblank(), since after mtk_dsi_stop() is called,
-> ovl irq will be disabled. If drm_crtc_wait_one_vblank() is called after last
-> irq, it will timeout with this message: "vblank wait timed out on crtc 0". This
-> happens sometimes when turning off the screen.
+On 2019/6/4 2:45, Krzysztof Kozlowski wrote:
+> On Sun, 12 May 2019 at 13:51, YueHaibing <yuehaibing@huawei.com> wrote:
+>>
+>> Fix gcc warnings:
+>>
+>> arch/arm/mm/init.c: In function 'mem_init':
+>> arch/arm/mm/init.c:456:13: warning: unused variable 'itcm_end' [-Wunused-variable]
+>>   extern u32 itcm_end;
+>>              ^
+>> arch/arm/mm/init.c:455:13: warning: unused variable 'dtcm_end' [-Wunused-variable]
+>>   extern u32 dtcm_end;
+>>              ^
+>>
+>> They are not used any more since
+>> commit 1c31d4e96b8c ("ARM: 8820/1: mm: Stop printing the virtual memory layout")
+>>
+>> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+>> ---
+>>  arch/arm/mm/init.c | 6 ------
+>>  1 file changed, 6 deletions(-)
 > 
-> In drm_atomic_helper.c#disable_outputs(),
-> the calling sequence when turning off the screen is:
+> Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
 > 
-> 1. mtk_dsi_encoder_disable()
->      --> mtk_output_dsi_disable()
->        --> mtk_dsi_stop();  // sometimes make vblank timeout in atomic_disable
->        --> mtk_dsi_poweroff();
-> 2. mtk_drm_crtc_atomic_disable()
->      --> drm_crtc_wait_one_vblank();
->      ...
->        --> mtk_dsi_ddp_stop()
->          --> mtk_dsi_poweroff();
-> 
-> mtk_dsi_poweroff() has reference count design, change to make mtk_dsi_stop()
-> called in mtk_dsi_poweroff() when refcount is 0.
+> Did you submit it to Russell's patch system?
 
-Applied to mediatek-drm-fixes-5.2 [1], thanks.
-
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-fixes-5.2
-
-Regards,
-CK
+Thanks for your reminder, I will send it.
 
 > 
-> Fixes: 0707632b5bac ("drm/mediatek: update DSI sub driver flow for sending commands to panel")
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
-> change log v3->v4:
-> * add comment in code.
-> ---
->  drivers/gpu/drm/mediatek/mtk_dsi.c | 10 +++++++++-
->  1 file changed, 9 insertions(+), 1 deletion(-)
+> Best regards,
+> Krzysztof
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> index b00eb2d2e086..730594a91440 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> @@ -630,6 +630,15 @@ static void mtk_dsi_poweroff(struct mtk_dsi *dsi)
->  	if (--dsi->refcount != 0)
->  		return;
->  
-> +	/* 
-> +	 * mtk_dsi_stop() and mtk_dsi_start() is asymmetric, since
-> +	 * mtk_dsi_stop() should be called after mtk_drm_crtc_atomic_disable(),
-> +	 * which needs irq for vblank, and mtk_dsi_stop() will disable irq.
-> +	 * mtk_dsi_start() needs to be called in mtk_output_dsi_enable(),
-> +	 * after dsi is fully set.
-> +	 */
-> +	mtk_dsi_stop(dsi);
-> +
->  	if (!mtk_dsi_switch_to_cmd_mode(dsi, VM_DONE_INT_FLAG, 500)) {
->  		if (dsi->panel) {
->  			if (drm_panel_unprepare(dsi->panel)) {
-> @@ -696,7 +705,6 @@ static void mtk_output_dsi_disable(struct mtk_dsi *dsi)
->  		}
->  	}
->  
-> -	mtk_dsi_stop(dsi);
->  	mtk_dsi_poweroff(dsi);
->  
->  	dsi->enabled = false;
-
+> .
+> 
 
 
 _______________________________________________
