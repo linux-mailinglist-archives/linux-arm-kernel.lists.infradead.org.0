@@ -2,77 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 602C134897
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:23:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BD2C348ED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:34:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SjyBYdqJJlKqle1vHMY2Fq+Y8NmvkWROd6ZDKgj0JSs=; b=ssUA6GwJNLvazY5h8uiwvifLV
-	AcHbhkJ0rXRWCFhrvkmiG6svclwHPxbdcgrXn8bU94i26ZYz34QVcb2q43dip/c/W53SX8NREv0bF
-	Ez3/JhGMmaplI0zw6jmuD4fsxwANvwj7fiP01Uf4Q9L/cxca35jRVzxruAP/IPsL3y0efvjUSuuxJ
-	Pz/4adEvo3mrySXRF2yJN+zMxqTI+avZg5/I6PdnNsrhBOJXVLpsxE0513hhcRrU4aMeK1zjai9/P
-	Fr4cginElXh4y3dfeitBQ2po5O/gM3k6gyOO/lEJZzLjvFgXvjKT2Ene5ovMjYaQvihPg+X0hepff
-	qx8Deg4JQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Lix5rcRGRd0UZ0U5qadqIHLfX6e6iSQ1jedJYC6Fn9c=; b=CU7KtTuj8YLJu6
+	p4aSKvtcuEje1XQdNoa9PRubGugSmQacU2G2IkeCFkxgy8Gx9GQZZjVHxoSSsBSauLqQN1mO7iWR1
+	NgaAkZKYzbKrGz5FsF7rBnEcHrhAzAD3ta5TsECvqoIo3JW/+1ZxZSwRu8gvtiArYgzbhtHJVSd8d
+	DsobXMFnW9cOSHl22eIzaNtOV3CAN3WIUp5xXwJE3stqEgjvMbwYcLePw5f7j6nhLXSoiKuaEKXIP
+	xrfq6CZ8FYxzOD/pl7jSKv/dwOs8hADvNCaW17EUx2pjSVMXeWS/v4lmSZ37Sm9ymyBP/0wjj7tcS
+	16NpL1GNVm1R96nAaqWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY9PG-0001hq-3n; Tue, 04 Jun 2019 13:23:14 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hY9aW-0007qC-U9; Tue, 04 Jun 2019 13:34:52 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY9P9-0001hV-4R
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:23:08 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x54DMl4n121195;
- Tue, 4 Jun 2019 08:22:47 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559654567;
- bh=QmemnxW2n5NUE/qgZlfL+6iRsLZV0ClQaFreagH1yes=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=nKHJ41EBikRMi5vGzmffvE6MVHK7JXEl3pe752f6MhtcWcEPDcRTNDI0xMNxBwhFm
- caZzlTiKGpzRD5Oc78ONCIuzF7d9CNifx67t1lVgAqNFrocnafBFJXpj7AxfQ7GXEg
- 1Ek9HugNFf8C68L0OrDz/bbXX3VoXbE6KPlkhRLg=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x54DMls6058955
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 4 Jun 2019 08:22:47 -0500
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 4 Jun
- 2019 08:22:46 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 4 Jun 2019 08:22:46 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x54DMisS123230;
- Tue, 4 Jun 2019 08:22:44 -0500
-Subject: Re: [PATCH] arm64: arch_k3: Fix kconfig dependency warning
-To: Yuehaibing <yuehaibing@huawei.com>, <catalin.marinas@arm.com>,
- <will.deacon@arm.com>, <marc.zyngier@arm.com>, <lokeshvutla@ti.com>,
- <tony@atomide.com>
-References: <20190510035255.27568-1-yuehaibing@huawei.com>
- <a9ea9cf2-71d0-d8f8-3139-33f1945520c5@huawei.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <dd0e40b3-bf1d-12b4-3396-458c1aec9657@ti.com>
-Date: Tue, 4 Jun 2019 16:22:43 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hY9aH-0007ls-Se
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:34:44 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x54DM2T2031387; Tue, 4 Jun 2019 15:34:31 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=JYRJ+q63Fhy7zqvNhQoupVuURIhtdf05RxS1XTNxJFc=;
+ b=IbA//KFhtlwxSBdLo4g0/XuBdFuYQWXdReWU3Hc1ef4QyT7ZWrxo/wPObdJ0fENY2ICU
+ ypxi6Hh+/fL6YbfcB7n82uH4qeylBqKW/A27k0bORE/PAuzs4cUnd9CGcty1/yDyv/lc
+ UhQ0Ru6EfddKYLae17r/RYB8XsMKWy3v3EeQ8ybjUcMN8SHrLctLiDLOZu3UdbELEQz6
+ v4bnogFOOEeDMQQN1wh+qjsQCjISrVsHB0WVG/B3ZeMZm+cuL1vZTbZlI51dOH2VvLMY
+ oM4UKvuA1NaEv6b6U9ZckFvOuiUw0ygUlrZt4VdudSM50YEKCmitILn6xhwtgSYDRc2h yw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2sunmc8q5h-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 04 Jun 2019 15:34:31 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5413A31;
+ Tue,  4 Jun 2019 13:34:30 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 23D192AB6;
+ Tue,  4 Jun 2019 13:34:30 +0000 (GMT)
+Received: from localhost (10.75.127.45) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2;
+ Tue, 4 Jun 2019 15:34:29 +0200
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <wsa@the-dreams.de>, <robh+dt@kernel.org>
+Subject: [PATCH] dt-bindings: i2c-stm32: document optional dmas
+Date: Tue, 4 Jun 2019 15:34:13 +0200
+Message-ID: <1559655253-27008-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <a9ea9cf2-71d0-d8f8-3139-33f1945520c5@huawei.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-04_09:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_062307_251309_61354664 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190604_063438_363656_6EC4E473 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,55 +90,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com,
+ linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sorry, this has sort of slipped through. I can pick this up and queue 
-towards 5.2-rc fixes.
+Add missing documentation for "dmas" and "dma-names" properties that can be
+used on i2c-stm32.
 
--Tero
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ Documentation/devicetree/bindings/i2c/i2c-stm32.txt | 2 ++
+ 1 file changed, 2 insertions(+)
 
-On 04/06/2019 11:33, Yuehaibing wrote:
-> Hi all,
-> 
-> Friendly ping:
-> 
-> Who can take this?
-> 
-> On 2019/5/10 11:52, YueHaibing wrote:
->> Fix Kbuild warning when SOC_TI is not set
->>
->> WARNING: unmet direct dependencies detected for TI_SCI_INTA_IRQCHIP
->>    Depends on [n]: TI_SCI_PROTOCOL [=y] && SOC_TI [=n]
->>    Selected by [y]:
->>    - ARCH_K3 [=y]
->>
->> Fixes: 009669e74813 ("arm64: arch_k3: Enable interrupt controller drivers")
->> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
->> ---
->>   arch/arm64/Kconfig.platforms | 1 +
->>   1 file changed, 1 insertion(+)
->>
->> diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
->> index 42eca65..9d1292f 100644
->> --- a/arch/arm64/Kconfig.platforms
->> +++ b/arch/arm64/Kconfig.platforms
->> @@ -88,6 +88,7 @@ config ARCH_K3
->>   	bool "Texas Instruments Inc. K3 multicore SoC architecture"
->>   	select PM_GENERIC_DOMAINS if PM
->>   	select MAILBOX
->> +	select SOC_TI
->>   	select TI_MESSAGE_MANAGER
->>   	select TI_SCI_PROTOCOL
->>   	select TI_SCI_INTR_IRQCHIP
->>
-> 
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-stm32.txt b/Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+index f334738..ce3df2ff 100644
+--- a/Documentation/devicetree/bindings/i2c/i2c-stm32.txt
++++ b/Documentation/devicetree/bindings/i2c/i2c-stm32.txt
+@@ -21,6 +21,8 @@ Optional properties:
+   100000 and 400000.
+   For STM32F7, STM32H7 and STM32MP1 SoCs, Standard-mode, Fast-mode and Fast-mode
+   Plus are supported, possible values are 100000, 400000 and 1000000.
++- dmas: List of phandles to rx and tx DMA channels. Refer to stm32-dma.txt.
++- dma-names: List of dma names. Valid names are: "rx" and "tx".
+ - i2c-scl-rising-time-ns: I2C SCL Rising time for the board (default: 25)
+   For STM32F7, STM32H7 and STM32MP1 only.
+ - i2c-scl-falling-time-ns: I2C SCL Falling time for the board (default: 10)
+-- 
+2.7.4
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
