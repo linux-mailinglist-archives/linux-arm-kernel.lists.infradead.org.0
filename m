@@ -2,56 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F5F1341CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:28:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6E0D341D4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 10:30:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yukh7e49dyWvH+DFF+6JhSZ6CyNR3FRqt6OLZN9qKno=; b=S9K6eezqSo/l1es5n3FSV3IWD
-	heJOiCfW+WjouY6U9F8/WNF2lSAn6bmFna4kK+PqYixr0TLxV8J0vL4hUycu+Wdv6SW4K1pm0+B9c
-	9/zT3dnznN6Ke3a9iaojNMpAf/vt8rstkzSDmg0kK0mpqqh6suXjxGQ5xy5SkFj0ZrQJsCYCBLwYQ
-	7qsGIzSfrGqTgPtJZvQsm3tLoJDuug75uYP+fX4RvpuqxkYay0mgo0Qz94r1A8wmI+xU6SdrhyYF5
-	hwkgL2IU4ERO7r5biVNJmXLAfMDF7HYqhxMQUSRtvYQQ0k7z5r7bKrDTxDkt2WYSERB9L3A6NB3Fq
-	Ehjq25cDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JtGrKVd2AGP9pTGCofcKNguoearR22P1LeurIZZ5d98=; b=RDQ1ZxsXg/bSlf
+	P1kAdIDseHxAZfzpib+X3F6A9cPNMfeeU28fawz+jK5u3MrH48NeJFboYc4jse5zmnQ21wAUGqE6N
+	AE0osVnFtFYY7xQosc447LZ1fgzmrlwmyMVapYYGqhttEW5IOfCAn+DoRQLhGoMl6MasggzMWSIUX
+	b+m9HBf0p8V/FFTBV42ByITzBMpegseCKZN7T+BRaZV1BQu3FxwNXZV6ZG937kEIhSeh8ncuAFqr8
+	cSUpX/S4QFYFdaNMkRGdLn1aEzmhelKoaL5VApIBvHtTFDw5kOi7jSCpq0ZOcosI7A5/5guRVxlIT
+	JgYXxnCMsEwlDVFbK2Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY4no-0007tu-N8; Tue, 04 Jun 2019 08:28:16 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY4ni-0007tS-7G
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:28:11 +0000
-X-Originating-IP: 90.88.144.139
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 3117D6000D;
- Tue,  4 Jun 2019 08:28:06 +0000 (UTC)
-Date: Tue, 4 Jun 2019 10:28:06 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Luca Weiss <luca@z3ntu.xyz>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: Add lradc node
-Message-ID: <20190604082806.smght44dmhuoxw2u@flea>
-References: <20190518170929.24789-1-luca@z3ntu.xyz> <6901794.oDhxEVzEqc@g550jk>
- <20190603074247.hlayod2pxq55f6ci@flea> <3880268.VpfjThaCW4@g550jk>
+	id 1hY4q7-00016B-Nr; Tue, 04 Jun 2019 08:30:39 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY4q1-00015q-SZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 08:30:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B220EA78;
+ Tue,  4 Jun 2019 01:30:32 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ E23BE3F246; Tue,  4 Jun 2019 01:30:30 -0700 (PDT)
+Subject: Re: [PATCH] KVM: arm64: Drop 'const' from argument of vq_present()
+To: Viresh Kumar <viresh.kumar@linaro.org>, Dave Martin
+ <Dave.Martin@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>
+References: <699121e5c938c6f4b7b14a7e2648fa15af590a4a.1559623368.git.viresh.kumar@linaro.org>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <0adbeaff-bb5e-54cc-292e-62cb9f73cf50@arm.com>
+Date: Tue, 4 Jun 2019 09:30:29 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <3880268.VpfjThaCW4@g550jk>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <699121e5c938c6f4b7b14a7e2648fa15af590a4a.1559623368.git.viresh.kumar@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_012810_417468_02A536D5 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: -1.4 (-)
+X-CRM114-CacheID: sfid-20190604_013033_931993_E439508A 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.4 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.7 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,110 +112,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============5861948430095574893=="
+Cc: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 04/06/2019 05:43, Viresh Kumar wrote:
+> We currently get following compilation warning:
+> 
+> arch/arm64/kvm/guest.c: In function 'set_sve_vls':
+> arch/arm64/kvm/guest.c:262:18: warning: passing argument 1 of 'vq_present' from incompatible pointer type
+> arch/arm64/kvm/guest.c:212:13: note: expected 'const u64 (* const)[8]' but argument is of type 'u64 (*)[8]'
 
---===============5861948430095574893==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="rokvu4c2fxf472od"
-Content-Disposition: inline
+Using which toolchain? My GCC 8.3.0 doesn't say anything.
 
+Thanks,
 
---rokvu4c2fxf472od
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Jun 03, 2019 at 05:20:51PM +0200, Luca Weiss wrote:
-> On Montag, 3. Juni 2019 09:42:47 CEST Maxime Ripard wrote:
-> > Hi,
-> >
-> > On Fri, May 31, 2019 at 12:27:55PM +0200, Luca Weiss wrote:
-> > > On Freitag, 24. Mai 2019 11:20:01 CEST Maxime Ripard wrote:
-> > > > It would be great to drop the -keys from the compatible, and to
-> > > > document the bindings
-> > > >
-> > > > Looks good otherwise
-> > > >
-> > > > Maxime
-> > >
-> > > So I should just document the "allwinner,sun50i-a64-lradc" string in
-> > > Documentation/devicetree/bindings/input/sun4i-lradc-keys.txt ? Don't I
-> > > also
-> > > have to add the compatible to the driver code then? Just adding the a64
-> > > compatible to a dts wouldn't work without that.
-> >
-> > What I meant was that you needed both, something like:
-> >
-> > compatible = "allwinner,sun50i-a64-lradc", "allwinner,sun8i-a83t-lradc";
-> >
-> > That way, the OS will try to match a driver for the A64 compatible if
-> > any, and fallback to the A83's otherwise. And since we don't have any
-> > quirk at the moment, there's no change needed to the driver.
->
-> sorry for the long back and forth, I hope I understood you correctly now.
-> Here's what I would submit as v2 then (I'll split the two files into seperate
-> patches as the devicetree documentation suggests)
->
-> Documentation/devicetree/bindings/input/sun4i-lradc-keys.txt:
->   - compatible: should be one of the following string:
->                 "allwinner,sun4i-a10-lradc-keys"
->                 "allwinner,sun8i-a83t-r-lradc"
-> +               "allwinner,sun50i-a64-lradc", "allwinner,sun8i-a83t-r-lradc"
->
-> arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi:
-> +               lradc: lradc@1c21800 {
-> +                       compatible = "allwinner,sun50i-a64-lradc",
-> +                                    "allwinner,sun8i-a83t-r-lradc";
-> +                       reg = <0x01c21800 0x400>;
-> +                       interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
-> +                       status = "disabled";
-> +               };
-> +
->
-> Thanks,
-> Luca
-
-That looks correct :)
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---rokvu4c2fxf472od
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPYrlgAKCRDj7w1vZxhR
-xZ4wAQDYf4iwJpFsfR8XtFStVojYJ+87YKlwxsWeyc2AY+blqwD/bkhJERAV91vH
-je0Y6DGnu87Ep+qyk/Jh5W384aSsxgM=
-=Mcc7
------END PGP SIGNATURE-----
-
---rokvu4c2fxf472od--
-
-
---===============5861948430095574893==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5861948430095574893==--
-
