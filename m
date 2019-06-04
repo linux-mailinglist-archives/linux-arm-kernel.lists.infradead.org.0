@@ -2,90 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30D5A3436A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:39:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBA1334378
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 11:44:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=APz2iy2SsT+yXELuOEVel6P5kyPf9L8qB5K4G4gRbfw=; b=YMm0e1teqluejp
-	jc9Q3TofNZv4E8M6lfYnDatz55vAgxQoqpmadIwxiZeLZJSDdYyTh8ucOVqQouHTgUHO5mWsU0FUf
-	1YlUv8VGdQ4UTzzFIzKSUYWH52V/G8z1AHsm3Ogo8Lbj5ypLaTostPNGyczNNYpB3GXMF9rEGwbAg
-	aFljOsYV+RslyU+hmOgLa6sLTxTSYh5K7A1hsBDS8CGXgn2RRugLPZsvzwabXfjnFvpwGURuLXRvw
-	kERwOSq6x/8HicxQaQNF4/R+mzTndIeBY/osOTRdCcRGKA9vuoGNrHYcBcU+c9F+NYqgeuAGNpYOG
-	kAC9QhrtqRlCvgkkYI4w==;
+	List-Owner; bh=W0bZPukxnkgSNfai5f6IclFzs7R6pt7WYlhtnnkQ0eM=; b=hVcbpTg4YG+Fjm
+	bq/ReIk3+yjxwm9J1BphIhoET0eQ8/J3chvLgWEUbyThHw0qeWKqI+MWQVn8q9lxiRPZVRZa8l9Nn
+	2OXTTY3pvwlvM1Y9s/WcY6dpYuPHB8owsAtAoadCsjQ4AP4d4DxL99cpMtgPxjaTK1Hebs36pa16g
+	xBx48k1eeMJ3BTgYEnuXkoqDv9IyK/zKWug9kAN5nD+OvzyjIFdrIxOt0jyVme5WY6nO/DV/tZud3
+	WN0ZNbpzBI08eWMvMKodKuz1XqhD7IWcRcWAyMOg4KermUZHQyeUrm4zYrqMfdx2X7k3/cJ0uJcnE
+	Dfl6Rv4z4lK1JNuSMxvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY5uM-0001Jp-UC; Tue, 04 Jun 2019 09:39:06 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY5uD-0001Iy-Sf
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 09:39:01 +0000
-Received: by mail-lj1-x244.google.com with SMTP id 16so5419845ljv.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 02:38:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0p+QUllSWbb6IfUF0ciw23eu7sV22MgW/puri+CeCb8=;
- b=hb7rXrstdGiY0ZZmC64PPrQM9dGTY90IFqakAW521v6oSsVaMiEpNOt0P7/j+7n3UX
- O+nDNuDF0FYbZGt99SJEUsSmdIoJ2Kk2NrLkTioEmtnpJEOh4Po1rvl01QWxxrSrRxdR
- XFFYxf0/ZMZn3n6HFDTMfZo4MvruNCPuvTHveQ7j/XHxJHJKtpdQSD04RDwB00gPez+3
- s5wY1nShIzKhSm8UM3RDNcSH3hRzxCfYu6QLMFOYF9dNzosrIJhpto3Ja3/hjf3s8N2u
- ZZnBsuzUvjBdDBI/9pU8zPJZMwexgGG5bQZUll9aCD8xW9vvtNz3zRqkxhuwXAEzZMe4
- NhRg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0p+QUllSWbb6IfUF0ciw23eu7sV22MgW/puri+CeCb8=;
- b=iab3OwZ6LGS/eKRP9YRmk/mDjjxw2GVaG4znMHr5la6O5Cz/BFSyq/JG7h63wTjczW
- AbkHPG9dq5k+YZx0QcEEMSpyc6hY26v1hZNjTUs1Z3hWdE0/SZt8Yav5xxx/67C1bRNJ
- ahJYfqt+qX72GDKvhHpEcshdCgoxg/lFlaoxw1PLEUoDEdXVNqYXMS9JdLN5CGOb6ERD
- NDSSuYHiDTUsaW+c25dkm1fIv6q+ORtlAwP/R6CSSv0bSkJ4QplHKq0+ZoVS16vRbQCG
- VJRkFVQ+efAzZf1vxXd3HYPIXu5lpfr3XvVybInU7IzhQv5BUHtzgzfO+CgjYoeYIwg5
- qBWQ==
-X-Gm-Message-State: APjAAAVEZ0HyZyOc/+OMC9jx9MLecbSnRtFZcqD8f0ZncCXaVXXwRBMh
- n8PkZJuQl9t+YJGi2n6OC2vq+ifuRw5spqLpWrI=
-X-Google-Smtp-Source: APXvYqz8Fs0Utf9F/Lt7HEIPoitdiihSHsfsz4RU7NzGx/GZSyGjwih6it3Mw6Vl6Uxgf1A2UiY2hXFXe+AbfJ0cl9A=
-X-Received: by 2002:a2e:28d:: with SMTP id y13mr16086475lje.177.1559641136069; 
- Tue, 04 Jun 2019 02:38:56 -0700 (PDT)
+	id 1hY5zq-00036h-6e; Tue, 04 Jun 2019 09:44:46 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY5zi-000363-RE
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 09:44:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 98CB980D;
+ Tue,  4 Jun 2019 02:44:38 -0700 (PDT)
+Received: from e107533-lin.cambridge.arm.com (unknown [10.37.9.40])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A1203F246;
+ Tue,  4 Jun 2019 02:44:35 -0700 (PDT)
+Date: Tue, 4 Jun 2019 10:44:24 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 0/6] mailbox: arm_mhu: add support to use in doorbell mode
+Message-ID: <20190604093827.GA31069@e107533-lin.cambridge.arm.com>
+References: <20190531143320.8895-1-sudeep.holla@arm.com>
+ <CABb+yY1u5zdocgV=HhQcHWQa_R7ArtFqndU5_T=NsPHJ=jwseA@mail.gmail.com>
+ <20190531165326.GA18115@e107155-lin>
+ <20190603193946.GC2456@sirena.org.uk>
 MIME-Version: 1.0
-References: <20190603174735.21002-1-codekipper@gmail.com>
- <20190603174735.21002-7-codekipper@gmail.com>
- <20190604075840.kquy3zcuckuzmvzr@flea>
- <CAEKpxB=RdYF9eEvAJ+R7sT6OtdtBWjhMM1am+EhaN=9ZO9Gd2A@mail.gmail.com>
- <CAP03XepJVPge5sz4WcmK8pp2jHAPJdGb6v6A3R0DzSf5O6qj-g@mail.gmail.com>
-In-Reply-To: <CAP03XepJVPge5sz4WcmK8pp2jHAPJdGb6v6A3R0DzSf5O6qj-g@mail.gmail.com>
-From: Code Kipper <codekipper@gmail.com>
-Date: Tue, 4 Jun 2019 11:38:44 +0200
-Message-ID: <CAEKpxBmxAQKgDhvjpczAWwNtNhYRs07wjMSnr8nqHk1XxMT=nw@mail.gmail.com>
-Subject: Re: [linux-sunxi] Re: [PATCH v4 6/9] ASoC: sun4i-i2s: Add multi-lane
- functionality
-To: Christopher Obbard <chris@64studio.com>
+Content-Disposition: inline
+In-Reply-To: <20190603193946.GC2456@sirena.org.uk>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_023859_674322_10992918 
-X-CRM114-Status: GOOD (  42.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190604_024438_890004_9500B962 
+X-CRM114-Status: GOOD (  24.18  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (codekipper[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,206 +66,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- Liam Girdwood <lgirdwood@gmail.com>,
- "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Arnd Bergmann <arnd@arndb.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Cristian Marussi <cristian.marussi@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 4 Jun 2019 at 11:02, Christopher Obbard <chris@64studio.com> wrote:
+On Mon, Jun 03, 2019 at 08:39:46PM +0100, Mark Brown wrote:
+> On Fri, May 31, 2019 at 05:53:26PM +0100, Sudeep Holla wrote:
+> > On Fri, May 31, 2019 at 11:21:08AM -0500, Jassi Brar wrote:
+> > > On Fri, May 31, 2019 at 9:33 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
 >
-> On Tue, 4 Jun 2019 at 09:43, Code Kipper <codekipper@gmail.com> wrote:
-> >
-> > On Tue, 4 Jun 2019 at 09:58, Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > >
-> > > On Mon, Jun 03, 2019 at 07:47:32PM +0200, codekipper@gmail.com wrote:
-> > > > From: Marcus Cooper <codekipper@gmail.com>
-> > > >
-> > > > The i2s block supports multi-lane i2s output however this functionality
-> > > > is only possible in earlier SoCs where the pins are exposed and for
-> > > > the i2s block used for HDMI audio on the later SoCs.
-> > > >
-> > > > To enable this functionality, an optional property has been added to
-> > > > the bindings.
-> > > >
-> > > > Signed-off-by: Marcus Cooper <codekipper@gmail.com>
-> > >
-> > > I'd like to have Mark's input on this, but I'm really worried about
-> > > the interaction with the proper TDM support.
-> > >
-> > > Our fundamental issue is that the controller can have up to 8
-> > > channels, but either on 4 lines (instead of 1), or 8 channels on 1
-> > > (like proper TDM) (or any combination between the two, but that should
-> > > be pretty rare).
-> >
-> > I understand...maybe the TDM needs to be extended to support this to consider
-> > channel mapping and multiple transfer lines. I was thinking about the later when
-> > someone was requesting support on IIRC a while ago, I thought masking might
-> > of been a solution. These can wait as the only consumer at the moment is
-> > LibreELEC and we can patch it there.
+> > > > This is my another attempt to extend mailbox framework to support
+> > > > doorbell mode mailbox hardware. It also adds doorbell support to ARM
+> > > > MHU driver.
 >
-> Hi Marcus,
+> > > Nothing has really changed since the last time we discussed many months ago.
+> > > MHU remains same, and so are my points.
 >
-> FWIW, the TI McASP driver has support for TDM & (i think?) multiple
-> transfer lines which are called serializers.
-> Maybe this can help with inspiration?
-> see https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/sound/soc/ti/davinci-mcasp.c
-> sample DTS:
+> > Yes, I understand your concern.
 >
-> &mcasp0 {
->     #sound-dai-cells = <0>;
->     status = "okay";
->     pinctrl-names = "default";
->     pinctrl-0 = <&mcasp0_pins>;
+> > But as mentioned in the cover letter I did try the suggestions and have
+> > detailed reasoning why that's still an issue. In short I ended up
+> > re-inventing mailbox framework with all the queuing and similar APIs
+> > for this. Worse, we can't even add an extra node for that in DT to
+> > describe that. It can't be simple shim as we need to allow multiple
+> > users to access one physical channel at a time. We have use case
+> > where we can this for CPU DVFS fast switching in scheduler context.
 >
->     op-mode = <0>;
->     tdm-slots = <8>;
->     serial-dir = <
->         2 0 1 0
->         0 0 0 0
->         0 0 0 0
->         0 0 0 0
->     >;
->     tx-num-evt = <1>;
->     rx-num-evt = <1>;
-> };
->
->
-> Cheers!
+> Forgive me if I'm missing something here (this is partly based on
+> conversations from months ago so I may be misremembering things) but is
+> the issue here specifically the doorbell mode or is it the need to have
+> partly software defined mailboxes implemented using this hardware?
 
-Thanks, this looks good.
-CK
->
-> > Do you have any ideas Master?
-> > CK
-> > >
-> > > You're trying to do the first one, and I'm trying to do the second one.
-> > >
-> > > There's a number of assumptions later on that will break the TDM case,
-> > > see below for examples
-> > >
-> > > > ---
-> > > >  sound/soc/sunxi/sun4i-i2s.c | 44 ++++++++++++++++++++++++++++++++-----
-> > > >  1 file changed, 39 insertions(+), 5 deletions(-)
-> > > >
-> > > > diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-> > > > index bca73b3c0d74..75217fb52bfa 100644
-> > > > --- a/sound/soc/sunxi/sun4i-i2s.c
-> > > > +++ b/sound/soc/sunxi/sun4i-i2s.c
-> > > > @@ -23,7 +23,7 @@
-> > > >
-> > > >  #define SUN4I_I2S_CTRL_REG           0x00
-> > > >  #define SUN4I_I2S_CTRL_SDO_EN_MASK           GENMASK(11, 8)
-> > > > -#define SUN4I_I2S_CTRL_SDO_EN(sdo)                   BIT(8 + (sdo))
-> > > > +#define SUN4I_I2S_CTRL_SDO_EN(lines)         (((1 << lines) - 1) << 8)
-> > > >  #define SUN4I_I2S_CTRL_MODE_MASK             BIT(5)
-> > > >  #define SUN4I_I2S_CTRL_MODE_SLAVE                    (1 << 5)
-> > > >  #define SUN4I_I2S_CTRL_MODE_MASTER                   (0 << 5)
-> > > > @@ -355,14 +355,23 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
-> > > >       struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
-> > > >       int sr, wss, channels;
-> > > >       u32 width;
-> > > > +     int lines;
-> > > >
-> > > >       channels = params_channels(params);
-> > > > -     if (channels != 2) {
-> > > > +     if ((channels > dai->driver->playback.channels_max) ||
-> > > > +             (channels < dai->driver->playback.channels_min)) {
-> > > >               dev_err(dai->dev, "Unsupported number of channels: %d\n",
-> > > >                       channels);
-> > > >               return -EINVAL;
-> > > >       }
-> > > >
-> > > > +     lines = (channels + 1) / 2;
-> > > > +
-> > > > +     /* Enable the required output lines */
-> > > > +     regmap_update_bits(i2s->regmap, SUN4I_I2S_CTRL_REG,
-> > > > +                        SUN4I_I2S_CTRL_SDO_EN_MASK,
-> > > > +                        SUN4I_I2S_CTRL_SDO_EN(lines));
-> > > > +
-> > >
-> > > This has the assumption that each line will have 2 channels, which is wrong.
-> > >
-> > > >       if (i2s->variant->is_h3_i2s_based) {
-> > > >               regmap_update_bits(i2s->regmap, SUN8I_I2S_CHAN_CFG_REG,
-> > > >                                  SUN8I_I2S_CHAN_CFG_TX_SLOT_NUM_MASK,
-> > > > @@ -373,8 +382,19 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
-> > > >       }
-> > > >
-> > > >       /* Map the channels for playback and capture */
-> > > > -     regmap_field_write(i2s->field_txchanmap, 0x76543210);
-> > > >       regmap_field_write(i2s->field_rxchanmap, 0x00003210);
-> > > > +     regmap_field_write(i2s->field_txchanmap, 0x10);
-> > > > +     if (i2s->variant->is_h3_i2s_based) {
-> > > > +             if (channels > 2)
-> > > > +                     regmap_write(i2s->regmap,
-> > > > +                                  SUN8I_I2S_TX_CHAN_MAP_REG+4, 0x32);
-> > > > +             if (channels > 4)
-> > > > +                     regmap_write(i2s->regmap,
-> > > > +                                  SUN8I_I2S_TX_CHAN_MAP_REG+8, 0x54);
-> > > > +             if (channels > 6)
-> > > > +                     regmap_write(i2s->regmap,
-> > > > +                                  SUN8I_I2S_TX_CHAN_MAP_REG+12, 0x76);
-> > > > +     }
-> > >
-> > > And this creates a mapping matching that.
-> > >
-> > > >       /* Configure the channels */
-> > > >       regmap_field_write(i2s->field_txchansel,
-> > > > @@ -1057,9 +1077,10 @@ static int sun4i_i2s_init_regmap_fields(struct device *dev,
-> > > >  static int sun4i_i2s_probe(struct platform_device *pdev)
-> > > >  {
-> > > >       struct sun4i_i2s *i2s;
-> > > > +     struct snd_soc_dai_driver *soc_dai;
-> > > >       struct resource *res;
-> > > >       void __iomem *regs;
-> > > > -     int irq, ret;
-> > > > +     int irq, ret, val;
-> > > >
-> > > >       i2s = devm_kzalloc(&pdev->dev, sizeof(*i2s), GFP_KERNEL);
-> > > >       if (!i2s)
-> > > > @@ -1126,6 +1147,19 @@ static int sun4i_i2s_probe(struct platform_device *pdev)
-> > > >       i2s->capture_dma_data.addr = res->start + SUN4I_I2S_FIFO_RX_REG;
-> > > >       i2s->capture_dma_data.maxburst = 8;
-> > > >
-> > > > +     soc_dai = devm_kmemdup(&pdev->dev, &sun4i_i2s_dai,
-> > > > +                            sizeof(*soc_dai), GFP_KERNEL);
-> > > > +     if (!soc_dai) {
-> > > > +             ret = -ENOMEM;
-> > > > +             goto err_pm_disable;
-> > > > +     }
-> > > > +
-> > > > +     if (!of_property_read_u32(pdev->dev.of_node,
-> > > > +                               "allwinner,playback-channels", &val)) {
-> > > > +             if (val >= 2 && val <= 8)
-> > > > +                     soc_dai->playback.channels_max = val;
-> > > > +     }
-> > > > +
-> > >
-> > > I'm not quite sure how this works.
-> > >
-> > > of_property_read_u32 will return 0, so you will enter in the
-> > > condition. But what happens if the property is missing?
-> > >
-> > > Maxime
-> > >
-> > > --
-> > > Maxime Ripard, Bootlin
-> > > Embedded Linux and Kernel engineering
-> > > https://bootlin.com
-> >
-> > --
-> > You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
-> > To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
-> > To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/CAEKpxB%3DRdYF9eEvAJ%2BR7sT6OtdtBWjhMM1am%2BEhaN%3D9ZO9Gd2A%40mail.gmail.com.
-> > For more options, visit https://groups.google.com/d/optout.
+I can say it's partially both.
+
+1. The hardware is designed keeping in mind multiple transport protocols:
+   doorbell mode, single word and multiple work(only in newer versions)
+   Using that hardware capability provides access to multiple channels
+   to the software.
+
+2. I can also view this as software defined mailboxes if we go by
+   definition that each channel should have associated dedicated interrupt
+   as Jassi mentions.
+
+The main idea is that each bit in these 32-bit registers can be written
+atomically without the need of read-modify-write enabling software to
+implement multiple channels in lock-less way.
+
+> My understanding is that the hardware is more a component that's intended
+> to allow potentially multiple more complex mailboxes to be tied to a
+> single hardware block than a complete mailbox in and of itself.
+
+Correct.
+
+> It feels like the issues with sharing access to the hardware and with the
+> API for talking to doorbell hardware are getting tied together and
+> confusing things.  But like I say I might be missing something here.
+
+As I tried to simply in my cover letter, I will try to explain in simpler
+terms.
+
+ 1. This version of hardware has 3 blocks(one for secure and 2 non-secure)
+    Each block has 3 sets of 32-bit registers(SET, CLEAR and STATUS)
+    SET and CLEAR are write only and STATUS is read-only.
+
+    Each block has a dedicated interrupt line.
+
+2. The hardware was designed to cater 2 transport protocols. A single
+   word transfer(non-zero) or each bit in doorbell mode.
+
+3. The next version extends with each block having larger than 32-bit
+   window(up to 124 words) allowing it to used it for multiple
+   word as transport protocol. Mainly for some IoT usecase.
+
+So what I am trying to convey here is MHU controller hardware can be
+used choosing one of the  different transport protocols available and
+that's platform choice based on the use-case.
+
+The driver in the kernel should identify the same from the firmware/DT
+and configure it appropriately.
+
+It may get inefficient and sometime impossible to address all use-case
+if we stick to one transport protocol in the driver and try to build
+an abstraction on top to use in different transport mode.
+
+Hope this clarify things little bit more.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
