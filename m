@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9126633DE1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 06:24:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3526533DDA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 06:24:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GNeXoHxY7uWs+0Mg3y9dKU0QIbikdv95nzPUhVQlZHQ=; b=WJlZNJzmVUkqxh
-	9UekNL/WF2HVVivoMr2NGba4L85spmNQHX3U6qmdCG5KdU0U5Hm4vm2MUcnuJbZ+O7d1jaLA8ydLh
-	zm7pN01adRzlrWkrTp+h0BbKyoBwGUYR3PkHCnHJ3XFLAWHfG673G42TKHb4fZKJ5h97WrB+rThMp
-	R2J8HXJV7aWUjXih5kWx157oTIWPszRjBTsMFtMkH0u6M23XNBUmjlau8KWSwPrvLB26Rh6YgI8YM
-	2QOzb6dXYXEyyKUZleSrEyD6lb/2JaQyEB0iAmSltVYw/RkKmFfXudQEJ7kJrinU1CZew3cQNie27
-	meeD67+3XJuhvFjWfCEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=upuCxpCKiwIJoVQUNpTTrs60V/OCXLRY2L3INolyqi8=; b=X5EEWoj6wdkeFo
+	lKeBESRi0bR5txA6QBlBlQ2t9BehCiI9rW1qtdEFgSPj0nxV0ZA2CJWuQSTQT7jJAv28opFH4gpYf
+	M8Gh4M1JVdxvqTdVkAUiW4R0+EraOqsGwtfG0SVVG9FhbDXKOznNqSFGwGtrL8tUBKLSzJzeiJL6I
+	91J0+d6Iq4D8dDH0yQbVZs6LDLKPT/yjK6U0e6fjKchOOY1aMQNQBUIkXE/2OG0ISN/roL6/GeONI
+	Nb0/3t9X7Vu00BTksYtzStN3dLm/zQQU9IeJn5mEm8pq7HTBeyMxuGys1gsB/9UhqNVPfEWKNnGhb
+	uVy7/UOnozl8ZlSxiO+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY0zT-0000nY-UN; Tue, 04 Jun 2019 04:24:03 +0000
+	id 1hY0zK-0000hL-DM; Tue, 04 Jun 2019 04:23:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY0zD-0000g6-Ef
+ id 1hY0zD-0000g3-Ee
  for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 04:23:48 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C498D24CA4;
+ by mail.kernel.org (Postfix) with ESMTPSA id 8955D23D8E;
  Tue,  4 Jun 2019 04:23:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1559622226;
- bh=gLtAailyS6IJm8z2V2PeInJ4Zh8RQw5AhexkL1edZlQ=;
- h=From:To:Cc:Subject:Date:From;
- b=Cam4pLTngHKbpei8gF74EopX7nX49t8VOukQeGIYWDwfJxCUpn/HHzpXC/6yv3Lbi
- mD9+WZgi6RoCqqxVoYLpJTJxAwCO6UQqV89tXiAwC6xD/1tDPHs0ghtyCHW8ha9Kzn
- ENTn73F6Rk+QP+lOB42/QBxsDkFAKrCPa5JpXW2A=
+ bh=TA3ORGPusOAVXEJ7tR/bGFjdPY1t0Xg2lFwT8zhNkb8=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=svMGH/MF4gDI8GSS9P8qsFor88Pdh0Nye0AT1FhYmBF2EmCf9Xj7cc26EojX/NLF6
+ E+bz9AkmBIczle8sjjt/cgLKKndk3KSwRVTSH1edmYiXENR+QcipT4nQ/9UJmFF3d/
+ ZforGa8bb/j7LwPHiHr0XblHFo9XOrxFnJg0CpRQ=
 Received: by wens.tw (Postfix, from userid 1000)
- id 6A0A35FCDF; Tue,  4 Jun 2019 12:23:43 +0800 (CST)
+ id 7371E5F80C; Tue,  4 Jun 2019 12:23:43 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>,
  Alessandro Zummo <a.zummo@towertech.it>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: [PATCH 0/3] rtc: pcf8563: Fix unhandled interrupt storm
-Date: Tue,  4 Jun 2019 12:23:34 +0800
-Message-Id: <20190604042337.26129-1-wens@kernel.org>
+Subject: [PATCH 1/3] rtc: pcf8563: Fix interrupt trigger method
+Date: Tue,  4 Jun 2019 12:23:35 +0800
+Message-Id: <20190604042337.26129-2-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190604042337.26129-1-wens@kernel.org>
+References: <20190604042337.26129-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_212347_515318_C3713E43 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20190603_212347_515067_A05865EE 
+X-CRM114-Status: GOOD (  15.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,7 +81,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Vincent Donnefort <vdonnefort@gmail.com>,
- Chen-Yu Tsai <wens@kernel.org>, linux-arm-kernel@lists.infradead.org
+ Chen-Yu Tsai <wens@csie.org>, Chen-Yu Tsai <wens@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -87,31 +90,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-Hi everyone,
+The PCF8563 datasheet says the interrupt line is active low and stays
+active until the events are cleared, i.e. a level trigger interrupt.
 
-While bringing up my Pine H64, I encountered an interrupt storm from the
-pcf8563 RTC. The RTC chip's interrupt line is shared with the PMIC, and
-was not properly added to the device tree. Also, the driver was using an
-trigger method incompatible with the PMIC, preventing the interrupt line
-from being shared. Last, the driver only clears and masks the alarm
-interrupt, while leaving the timer interrupt untouched. This is a
-problem if previous systems left the timer interrupt enabled, and there
-was an interrupt pending.
+Fix the flags used to request the interrupt.
 
-This patch set fixes all three issues, one per patch.
+Fixes: ede3e9d47cca ("drivers/rtc/rtc-pcf8563.c: add alarm support")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
 
-Please have a look.
+Not sure if this would cause issues for other platforms. Ideally we'd
+take the flags from the device tree, but it seems not all platforms
+support this.
 
-Chen-Yu Tsai (3):
-  rtc: pcf8563: Fix interrupt trigger method
-  rtc: pcf8563: Clear event flags and disable interrupts before
-    requesting irq
-  arm64: dts: allwinner: h6: Pine H64: Add interrupt line for RTC
+---
+ drivers/rtc/rtc-pcf8563.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- .../arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts |  2 ++
- drivers/rtc/rtc-pcf8563.c                           | 13 ++++++-------
- 2 files changed, 8 insertions(+), 7 deletions(-)
-
+diff --git a/drivers/rtc/rtc-pcf8563.c b/drivers/rtc/rtc-pcf8563.c
+index 3efc86c25d27..e358313466f1 100644
+--- a/drivers/rtc/rtc-pcf8563.c
++++ b/drivers/rtc/rtc-pcf8563.c
+@@ -605,7 +605,7 @@ static int pcf8563_probe(struct i2c_client *client,
+ 	if (client->irq > 0) {
+ 		err = devm_request_threaded_irq(&client->dev, client->irq,
+ 				NULL, pcf8563_irq,
+-				IRQF_SHARED|IRQF_ONESHOT|IRQF_TRIGGER_FALLING,
++				IRQF_SHARED | IRQF_ONESHOT | IRQF_TRIGGER_LOW,
+ 				pcf8563_driver.driver.name, client);
+ 		if (err) {
+ 			dev_err(&client->dev, "unable to request IRQ %d\n",
 -- 
 2.20.1
 
