@@ -2,50 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52C3534F27
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 19:40:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B678534F06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 19:36:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J/DJoe8mtQ5uk0aX1NMah1qAUxBwr/lzzqRDd9LuVp8=; b=V0U7jXpN47gNs2
-	kjrsWGCvvnkiJ/1d2JCf7hSZZPEBbn5jGPgvfOjiXVZkvlJvNOF3cyhei/6/yd2rTTkiog2AdnMlY
-	X+n5YAjORD8oU3qyKHwdz7PcRv/IyTMeXUA0w3x/wrYho6wP+ps4TIMmAp4/x4d07+f3s5vsQTmiv
-	BIR3ouqWsmiCv/Mc4BvsL2eGu5qNfBzh0XVUFOdTr+m3W96A1vxDIWXVXEltkht00ERGPGhoTALw/
-	guetuIu71BM1IiCgZBSECxe8yQhKQe6npwCDShOcXfFFltQyJQBfvDNCAy3w9xqypSPPNdm4seeTq
-	7Z+8eR3eOx/k1Az5zKhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mwxXqdochMNe6wPQgeMG0p4pw1AaE7EzpXkOu/VH+vA=; b=fprOrYJMaMVjllQJK5CZSi0gh
+	OffjmvN2GhZ3Uq36zXXzKB6XeZwkh9I7zBf8YQV7qVE4SFttZgQQQ+7ukuCA0lJms2M4S16g/8Wjp
+	jDUPk4FvR6icsR2/IuQEQyVxzRUm/Xk5oPmsQiU3ZGRzUr94UnOyjDnk0J/2y13IiHgOTag/FSc4x
+	i8zzB47fsVqmuS8G1oM0kEzatNBCAAYYtN8p6onhO1fz9QrdOWmNbaoIhn4WtjfI7pd6L+8kGFfLT
+	b0oMS5uBpST1JXFaAOQbONid8NYt77bb16pOLJXuhrHE78XHQclAiXapGLx0g5fYI8x9E2N2VPn0c
+	DnwmeghGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYDQ2-0006va-QQ; Tue, 04 Jun 2019 17:40:18 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYDPv-0006v7-QC; Tue, 04 Jun 2019 17:40:13 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 72B2CAE05;
- Tue,  4 Jun 2019 17:40:10 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: stefan.wahren@i2se.com, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Viresh Kumar <viresh.kumar@linaro.org>
-Subject: [PATCH 4/4] cpufreq: add driver for Raspbery Pi
-Date: Tue,  4 Jun 2019 19:32:25 +0200
-Message-Id: <20190604173223.4229-5-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190604173223.4229-1-nsaenzjulienne@suse.de>
-References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
+	id 1hYDMC-0004SW-AW; Tue, 04 Jun 2019 17:36:20 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYDM4-0004Rm-EK
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 17:36:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 523C980D;
+ Tue,  4 Jun 2019 10:36:10 -0700 (PDT)
+Received: from [10.1.196.75] (e110467-lin.cambridge.arm.com [10.1.196.75])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0002F3F5AF;
+ Tue,  4 Jun 2019 10:36:05 -0700 (PDT)
+Subject: Re: [PATCH v3 04/11] arm64/mm: Add temporary arch_remove_memory()
+ implementation
+To: David Hildenbrand <david@redhat.com>, Wei Yang <richard.weiyang@gmail.com>
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-5-david@redhat.com>
+ <20190603214139.mercn5hol2yyfl2s@master>
+ <5059f68d-45d2-784e-0770-ee67060773c7@redhat.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <7a5b8c8d-f1bb-9c7e-9809-405af374fecd@arm.com>
+Date: Tue, 4 Jun 2019 18:36:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <5059f68d-45d2-784e-0770-ee67060773c7@redhat.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_104012_152387_D9BF35E0 
-X-CRM114-Status: GOOD (  16.90  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190604_103612_497034_4470D9AA 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -59,167 +67,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- ptesarik@suse.com, sboyd@kernel.org, mturquette@baylibre.com,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, Yu Zhao <yuzhao@google.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Jun Yao <yaojun8558363@gmail.com>, linux-mm@kvack.org,
+ Chintan Pandya <cpandya@codeaurora.org>, Igor Mammedov <imammedo@redhat.com>,
+ akpm@linux-foundation.org, linuxppc-dev@lists.ozlabs.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Raspberry Pi's firmware offers and interface though which update it's
-performance requirements. It allows us to request for specific runtime
-frequencies, which the firmware might or might not respect, depending on
-the firmware configuration and thermals.
+On 04/06/2019 07:56, David Hildenbrand wrote:
+> On 03.06.19 23:41, Wei Yang wrote:
+>> On Mon, May 27, 2019 at 01:11:45PM +0200, David Hildenbrand wrote:
+>>> A proper arch_remove_memory() implementation is on its way, which also
+>>> cleanly removes page tables in arch_add_memory() in case something goes
+>>> wrong.
+>>
+>> Would this be better to understand?
+>>
+>>      removes page tables created in arch_add_memory
+> 
+> That's not what this sentence expresses. Have a look at
+> arch_add_memory(), in case  __add_pages() fails, the page tables are not
+> removed. This will also be fixed by Anshuman in the same shot.
+> 
+>>
+>>>
+>>> As we want to use arch_remove_memory() in case something goes wrong
+>>> during memory hotplug after arch_add_memory() finished, let's add
+>>> a temporary hack that is sufficient enough until we get a proper
+>>> implementation that cleans up page table entries.
+>>>
+>>> We will remove CONFIG_MEMORY_HOTREMOVE around this code in follow up
+>>> patches.
+>>>
+>>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>>> Cc: Will Deacon <will.deacon@arm.com>
+>>> Cc: Mark Rutland <mark.rutland@arm.com>
+>>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>>> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+>>> Cc: Chintan Pandya <cpandya@codeaurora.org>
+>>> Cc: Mike Rapoport <rppt@linux.ibm.com>
+>>> Cc: Jun Yao <yaojun8558363@gmail.com>
+>>> Cc: Yu Zhao <yuzhao@google.com>
+>>> Cc: Robin Murphy <robin.murphy@arm.com>
+>>> Cc: Anshuman Khandual <anshuman.khandual@arm.com>
+>>> Signed-off-by: David Hildenbrand <david@redhat.com>
+>>> ---
+>>> arch/arm64/mm/mmu.c | 19 +++++++++++++++++++
+>>> 1 file changed, 19 insertions(+)
+>>>
+>>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>>> index a1bfc4413982..e569a543c384 100644
+>>> --- a/arch/arm64/mm/mmu.c
+>>> +++ b/arch/arm64/mm/mmu.c
+>>> @@ -1084,4 +1084,23 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>> 	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
+>>> 			   restrictions);
+>>> }
+>>> +#ifdef CONFIG_MEMORY_HOTREMOVE
+>>> +void arch_remove_memory(int nid, u64 start, u64 size,
+>>> +			struct vmem_altmap *altmap)
+>>> +{
+>>> +	unsigned long start_pfn = start >> PAGE_SHIFT;
+>>> +	unsigned long nr_pages = size >> PAGE_SHIFT;
+>>> +	struct zone *zone;
+>>> +
+>>> +	/*
+>>> +	 * FIXME: Cleanup page tables (also in arch_add_memory() in case
+>>> +	 * adding fails). Until then, this function should only be used
+>>> +	 * during memory hotplug (adding memory), not for memory
+>>> +	 * unplug. ARCH_ENABLE_MEMORY_HOTREMOVE must not be
+>>> +	 * unlocked yet.
+>>> +	 */
+>>> +	zone = page_zone(pfn_to_page(start_pfn));
+>>
+>> Compared with arch_remove_memory in x86. If altmap is not NULL, zone will be
+>> retrieved from page related to altmap. Not sure why this is not the same?
+> 
+> This is a minimal implementation, sufficient for this use case here. A
+> full implementation is in the works. For now, this function will not be
+> used with an altmap (ZONE_DEVICE is not esupported for arm64 yet).
 
-As the maximum and minimum frequencies are configurable in the firmware
-there is no way to know in advance their values. So the Raspberry Pi
-cpufreq driver queries them, builds an opp frequency table to then
-launch cpufreq-dt.
+FWIW the other pieces of ZONE_DEVICE are now due to land in parallel, 
+but as long as we don't throw the ARCH_ENABLE_MEMORY_HOTREMOVE switch 
+then there should still be no issue. Besides, given that we should 
+consistently ignore the altmap everywhere at the moment, it may even 
+work out regardless.
 
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
+One thing stands out about the failure path thing, though - if 
+__add_pages() did fail, can it still be guaranteed to have initialised 
+the memmap such that page_zone() won't return nonsense? Last time I 
+looked that was still a problem when removing memory which had been 
+successfully added, but never onlined (although I do know that 
+particular case was already being discussed at the time, and I've not 
+been paying the greatest attention since).
 
-Changes since RFC:
-  - Alphabetically ordered relevant stuff
-  - Updated Kconfig to select firmware interface
-  - Correctly unref clk_dev after use
-  - Remove all opps on failure
-  - Remove use of dev_pm_opp_set_sharing_cpus()
-
- drivers/cpufreq/Kconfig.arm           |  8 +++
- drivers/cpufreq/Makefile              |  1 +
- drivers/cpufreq/raspberrypi-cpufreq.c | 84 +++++++++++++++++++++++++++
- 3 files changed, 93 insertions(+)
- create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
-
-diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
-index f8129edc145e..556d432cc826 100644
---- a/drivers/cpufreq/Kconfig.arm
-+++ b/drivers/cpufreq/Kconfig.arm
-@@ -133,6 +133,14 @@ config ARM_QCOM_CPUFREQ_HW
- 	  The driver implements the cpufreq interface for this HW engine.
- 	  Say Y if you want to support CPUFreq HW.
- 
-+config ARM_RASPBERRYPI_CPUFREQ
-+	tristate "Raspberry Pi cpufreq support"
-+	select RASPBERRYPI_FIRMWARE
-+	help
-+	  This adds the CPUFreq driver for Raspberry Pi
-+
-+	  If in doubt, say N.
-+
- config ARM_S3C_CPUFREQ
- 	bool
- 	help
-diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
-index 689b26c6f949..121c1acb66c0 100644
---- a/drivers/cpufreq/Makefile
-+++ b/drivers/cpufreq/Makefile
-@@ -64,6 +64,7 @@ obj-$(CONFIG_ARM_PXA2xx_CPUFREQ)	+= pxa2xx-cpufreq.o
- obj-$(CONFIG_PXA3xx)			+= pxa3xx-cpufreq.o
- obj-$(CONFIG_ARM_QCOM_CPUFREQ_HW)	+= qcom-cpufreq-hw.o
- obj-$(CONFIG_ARM_QCOM_CPUFREQ_KRYO)	+= qcom-cpufreq-kryo.o
-+obj-$(CONFIG_ARM_RASPBERRYPI_CPUFREQ) 	+= raspberrypi-cpufreq.o
- obj-$(CONFIG_ARM_S3C2410_CPUFREQ)	+= s3c2410-cpufreq.o
- obj-$(CONFIG_ARM_S3C2412_CPUFREQ)	+= s3c2412-cpufreq.o
- obj-$(CONFIG_ARM_S3C2416_CPUFREQ)	+= s3c2416-cpufreq.o
-diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c b/drivers/cpufreq/raspberrypi-cpufreq.c
-new file mode 100644
-index 000000000000..2b3a195a9d37
---- /dev/null
-+++ b/drivers/cpufreq/raspberrypi-cpufreq.c
-@@ -0,0 +1,84 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Raspberry Pi cpufreq driver
-+ *
-+ * Copyright (C) 2019, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/cpu.h>
-+#include <linux/cpufreq.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_opp.h>
-+
-+static const struct of_device_id machines[] __initconst = {
-+	{ .compatible = "raspberrypi,3-model-b-plus" },
-+	{ .compatible = "raspberrypi,3-model-b" },
-+	{ .compatible = "raspberrypi,2-model-b" },
-+	{ /* sentinel */ }
-+};
-+
-+static int __init raspberrypi_cpufreq_driver_init(void)
-+{
-+	struct platform_device *pdev;
-+	struct device *cpu_dev;
-+	unsigned long min, max;
-+	unsigned long rate;
-+	struct clk *clk;
-+	int ret;
-+
-+	if (!of_match_node(machines, of_root))
-+		return -ENODEV;
-+
-+	cpu_dev = get_cpu_device(0);
-+	if (!cpu_dev) {
-+		pr_err("Cannot get CPU for cpufreq driver\n");
-+		return -ENODEV;
-+	}
-+
-+	clk = clk_get(cpu_dev, 0);
-+	if (IS_ERR(clk)) {
-+		dev_err(cpu_dev, "Cannot get clock for CPU0\n");
-+		return PTR_ERR(clk);
-+	}
-+
-+	/*
-+	 * The max and min frequencies are configurable in the Raspberry Pi
-+	 * firmware, so we query them at runtime
-+	 */
-+	min = clk_round_rate(clk, 0);
-+	max = clk_round_rate(clk, ULONG_MAX);
-+	clk_put(clk);
-+
-+	for (rate = min; rate < max; rate += 100000000) {
-+		ret = dev_pm_opp_add(cpu_dev, rate, 0);
-+		if (ret)
-+			goto remove_opp;
-+	}
-+
-+	ret = dev_pm_opp_add(cpu_dev, max, 0);
-+	if (ret)
-+		goto remove_opp;
-+
-+	pdev = platform_device_register_data(NULL, "cpufreq-dt", -1, NULL, 0);
-+	ret = PTR_ERR_OR_ZERO(pdev);
-+	if (ret) {
-+		dev_err(cpu_dev, "Failed to create platform device, %d\n", ret);
-+		goto remove_opp;
-+	}
-+
-+	return 0;
-+
-+remove_opp:
-+	dev_pm_opp_remove_all_dynamic(cpu_dev);
-+
-+	return ret;
-+}
-+
-+late_initcall(raspberrypi_cpufreq_driver_init);
-+
-+MODULE_AUTHOR("Nicolas Saenz Julienne <nsaenzjulienne@suse.de");
-+MODULE_DESCRIPTION("Raspberry Pi cpufreq driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.21.0
-
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
