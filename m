@@ -2,49 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 200E534911
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:39:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C97634953
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 15:49:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kQFxxcxQR9UHXQgUwcIy3KaU/IVID73eYBdXQqs58M4=; b=hLUchiCAI2jxfm
-	9TF9TKDwYiQs0qJMEdbczlvrb5589mA7jdBIvUsco+GHDo2qXmwr7REdp0iaylPNxazv6eue18PGk
-	qPVVBfm/hwkeEoEM9uFgLFXQneChIs1vwvG+mAEJK6Et34j/eXCMRn9OPf5TmCfxA6uVSQOS9PfbI
-	1HPOLo3MDZph+g50BhPd7dfr01oPuGL20Ixnje4AI3nEHlJcV7N3AsrAT7S9tKtQCHCzzp31Xrp4n
-	UNSpo9CvPI789b6R/9t7v6j9oEJ/WXj0/41/wppI90scjOGYlmWmLePDO8wAeMWaUjhDOq+e+fDYf
-	N9++aJ4usjmltqjS4VDg==;
+	List-Owner; bh=Ju39/slq08B6lIopb1c8pq0LF3eKaJ99XTvnGwsHT3Y=; b=G5W2A2kPe/gaun
+	PoEx5tCEPHUom0DUefSQCNLGjiMoahuSdR5uyDaujFRLwOwhJQQW+SuWd6Mef8V7HSuDD7mFj8GqO
+	k1U5bKcgwMpAm2mssrkU2sjW5glcAiJ01HNbsd5T8lS30GitGhoPMNqd7j+zOvFMN1RHKPqi7zI+w
+	X0QqC+W4OcDzBOWMkmamQcQSnxSjrVT/JlxKrfS8v/keNGc+8hAEhOKPN7yUhGUff2WDLSuGGBsoS
+	XZxpP0y9oCai66BeluQgZ5KbS8yBnaQlHGU/h+4iOUqfqueBwF8EhQ5+fOs2f+HL/pWStVrYRmmYR
+	AU9FrVRfexrz9MfDJhWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY9fB-0001m3-0K; Tue, 04 Jun 2019 13:39:41 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY9f4-0001kh-1n; Tue, 04 Jun 2019 13:39:35 +0000
-Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hY9ew-0001Qf-Fe; Tue, 04 Jun 2019 15:39:26 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Akash Gajjar <akash@openedev.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: add WiFi+BT support on ROCK Pi4
- board
-Date: Tue, 04 Jun 2019 15:39:25 +0200
-Message-ID: <1697100.2SMvg6TTVp@phil>
-In-Reply-To: <20190528184705.5240-1-akash@openedev.com>
-References: <20190528184705.5240-1-akash@openedev.com>
+	id 1hY9oR-0004y6-QK; Tue, 04 Jun 2019 13:49:15 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY9oK-0004x9-Cu
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 13:49:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 46D20341;
+ Tue,  4 Jun 2019 06:49:06 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 790F53F690; Tue,  4 Jun 2019 06:49:04 -0700 (PDT)
+Date: Tue, 4 Jun 2019 14:49:01 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Julien Grall <julien.grall@arm.com>
+Subject: Re: [PATCH] arm64/cpufeature: Convert hook_lock to raw_spin_lock_t
+ in cpu_enable_ssbs()
+Message-ID: <20190604134901.GE6610@arrakis.emea.arm.com>
+References: <20190530113058.1988-1-julien.grall@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190530113058.1988-1-julien.grall@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_063934_238333_5247B331 
-X-CRM114-Status: GOOD (  10.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190604_064908_441057_4C14BDD1 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -56,28 +64,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Klaus Goger <klaus.goger@theobroma-systems.com>,
- Ezequiel Garcia <ezequiel@collabora.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-rt-users@vger.kernel.org, suzuki.poulose@arm.com,
+ bigeasy@linutronix.de, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ rostedt@goodmis.org, tglx@linutronix.de, dave.martin@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Dienstag, 28. Mai 2019, 20:46:58 CEST schrieb Akash Gajjar:
-> Rock Pi 4 has a on board AP6256 WiFi/BT Module. enable wifi and bluetooth
-> support on Rock Pi 4 board.
+On Thu, May 30, 2019 at 12:30:58PM +0100, Julien Grall wrote:
+> cpu_enable_ssbs() is called via stop_machine() as part of the cpu_enable
+> callback. A spin lock is used to ensure the hook is registered before
+> the rest of the callback is executed.
 > 
-> Signed-off-by: Akash Gajjar <akash@openedev.com>
+> On -RT spin_lock() may sleep. However, all the callees in stop_machine()
+> are expected to not sleep. Therefore a raw_spin_lock() is required here.
+> 
+> Given this is already done under stop_machine() and the work done under
+> the lock is quite small, the latency should not increase too much.
+> 
+> Signed-off-by: Julien Grall <julien.grall@arm.com>
 
-applied for 5.3
+Queued for 5.3. Thanks.
 
-Thanks
-Heiko
-
-
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
