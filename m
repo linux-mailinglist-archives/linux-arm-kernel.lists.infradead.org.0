@@ -2,70 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E5B834068
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 09:37:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24B7034061
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 09:37:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3SUjFU2ry8iC3aSdEtCUTAJ3YjSBNVRGDucbsWsvcCc=; b=leVNLGT6C2NFMzYwVG6vW49Rl
-	Y46S6f1po9uig2/LvDA6JZo3SRSV4SCfUxZnVeLZHRLRGWpbtzfY51YQAt1D2AmdZAGF9oqBDYDpa
-	NO9TwqGqXnCo10c67h80oU/YCx9Fjvx9vJ9NWnp9tnQXwdOpWWIwd2mnkJWD67/x/1SzGJMJiNcM1
-	R1tygXtGBSJDP0nZ1/bOpAatgpd/p5Xelus310NTWTP9zIatRN48iY70DVvQUuHde44mnTrChY8qT
-	pIjs7d75Pu+u+KHfFO6Gid1FNXfuSZ0DLwiI3sjpjxnUF9NodMPy8pv2GxJZHEgRbPNBhzXRIjkAX
-	VU0FTmcpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U++jGhBDhqCrZX7tODxOMd4lDs+vpQW/2uR0IFgdEJ8=; b=i+wmxA14MmJ8gh
+	H/Wu9Ko7iQlN3i1DV0lvWTwTT19v3Yr6LzpefQZ6JWvuSaRWVIqGczKW/Ul+s8qQnh1SZMy7ai/0F
+	CLGIdY2v8MhRaOm7xGEyRNl0cg6hcqZWdc6crRFz6AD7+eGn38lwH/ClvRl0wM37Mk7vbCBedLDea
+	Gn6MUcpdqTwrjw61kfld2LPj69bxFwX0s6UBbTG7W20MuMJcr1KnwyaY6lL6uQ/H1PCy0/K/QKgHz
+	CYtuMg9bmYVxTOtW2Hp2HLw18iInOnU7a7R8KTBkBwZXKGBJALj2988FMKXbcq6GaOF1jJbcEEoIv
+	3KJjo+THijtIiXiqo5PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY40n-0006ck-KN; Tue, 04 Jun 2019 07:37:37 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hY40S-0006L3-6B; Tue, 04 Jun 2019 07:37:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY40h-0006cS-TA
- for linux-arm-kernel@bombadil.infradead.org; Tue, 04 Jun 2019 07:37:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=eM/eAttt+PEr5TuNqr/hgqkZQFOHxz45i5w6jUfnXcc=; b=pSBTA1UAauUtPZihSbKFtfY5E
- bFvi10t74hG55zCSScSbIujq0F+Eds7eIalZkqb14t0Bl39/zGCB+ZSNsQj44Aa8fU/bVX+U7V7E6
- 5vepIYHHiuKm0CQMQfujrP+uLNRVnUbhMDuFGHxgnwTTBGMz78PiByL/02YnhguE6u0t5gay0CxAm
- 0Zd84YnVl+j8cmrGtoD5uEPpd1wP3UieaTqaijpqzwsw910YuufKgfuOOmmA4UzWDl4wOBK+2ISOT
- 6g2bMugmZF9I0NquNtUNFqqvZiP3H99kHu0TYn0SbebHUS8JQgBtP06VyOGT90oHlSUZ7r94dfIFe
- Jz2sg5KQA==;
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY40e-00083O-FR
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 07:37:30 +0000
-X-Originating-IP: 90.88.144.139
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id D5E191BF212;
- Tue,  4 Jun 2019 07:36:51 +0000 (UTC)
-Date: Tue, 4 Jun 2019 09:36:51 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: codekipper@gmail.com
-Subject: Re: [PATCH v4 2/9] ASoC: sun4i-i2s: Add offset to RX channel select
-Message-ID: <20190604073651.gst57ki7ohzxcrqz@flea>
-References: <20190603174735.21002-1-codekipper@gmail.com>
- <20190603174735.21002-3-codekipper@gmail.com>
+ id 1hY40L-0006Kg-9t; Tue, 04 Jun 2019 07:37:10 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F2DA249F4;
+ Tue,  4 Jun 2019 07:37:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559633828;
+ bh=yYjY9dPy0rYXxHJBZ1dR1jEtdGG5VdpSBr1YZrJynDk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=DtKXT2B1mmCgfmSocSk422rsl4VwCBPwwgyDUn74Z9p1rd8VASnFg7wZ797DfmPo6
+ L76rjNkBWerw3wHawBdh2+nIVCt7FIxBYUL7nasWGYXLG+DS/jsLtTzzAxDcigSCqv
+ K1eZzEuWRcwO5TV5GhrOFWs/kPQkxzZSoG+m9z/I=
+Date: Tue, 4 Jun 2019 09:37:06 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH v4] usb: create usb_debug_root for gadget only
+Message-ID: <20190604073706.GA25045@kroah.com>
+References: <1559633647-29040-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20190603174735.21002-3-codekipper@gmail.com>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <1559633647-29040-1-git-send-email-chunfeng.yun@mediatek.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_083728_574115_BCFEE408 
-X-CRM114-Status: GOOD (  11.12  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-CRM114-CacheID: sfid-20190604_003709_370477_49B1A2A7 
+X-CRM114-Status: GOOD (  19.27  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,67 +72,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, lgirdwood@gmail.com, be17068@iperbole.bo.it,
- wens@csie.org, broonie@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5249391785278062348=="
+Cc: devicetree@vger.kernel.org, Felipe Balbi <felipe.balbi@linux.intel.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Jun 04, 2019 at 03:34:07PM +0800, Chunfeng Yun wrote:
+> When CONFIG_USB is not set, and CONFIG_USB_GADGET is set,
+> there is an issue, e.g.:
+> 
+> drivers/usb/mtu3/mtu3_debugfs.o: in function 'ssusb_debugfs_create_root':
+> mtu3_debugfs.c:(.text+0xba3): undefined reference to 'usb_debug_root'
+> 
+> usb_debug_root is currently only built when host is supported
+> (CONFIG_USB is set), for convenience, we also want it created when
+> gadget only is enabled, this patch try to support it.
+> 
+> Reported-by: Randy Dunlap <rdunlap@infradead.org>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> v4:
+>   move common API into common.c suggested by Felipe
+> 
+> v3:
+>   1. still create usb_debug_root for gadget only
+>   2. abandon mtu3's change
+>   3. drop acked-by Randy
+> 
+> v2(resend): add acked-by Randy
+> 
+> v1: fix mtu3's build error, replace usb_debug_root by NULL;
+> ---
+>  drivers/usb/common/common.c   | 26 ++++++++++++++++++++++++++
+>  drivers/usb/core/usb.c        | 16 ++++------------
+>  drivers/usb/gadget/udc/core.c |  3 +++
+>  include/linux/usb.h           |  2 ++
+>  4 files changed, 35 insertions(+), 12 deletions(-)
+> 
+> diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+> index 18f5dcf58b0d..c52e9c9f58ec 100644
+> --- a/drivers/usb/common/common.c
+> +++ b/drivers/usb/common/common.c
+> @@ -15,6 +15,7 @@
+>  #include <linux/usb/of.h>
+>  #include <linux/usb/otg.h>
+>  #include <linux/of_platform.h>
+> +#include <linux/debugfs.h>
+>  
+>  static const char *const ep_type_names[] = {
+>  	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
+> @@ -139,6 +140,31 @@ enum usb_dr_mode usb_get_dr_mode(struct device *dev)
+>  }
+>  EXPORT_SYMBOL_GPL(usb_get_dr_mode);
+>  
+> +struct dentry *usb_debug_root;
+> +EXPORT_SYMBOL_GPL(usb_debug_root);
+> +
+> +static atomic_t usb_debug_root_refcnt = ATOMIC_INIT(0);
 
---===============5249391785278062348==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="azthyenqniabzk6h"
-Content-Disposition: inline
+Ick, no.
 
+> +
+> +struct dentry *usb_debugfs_init(void)
+> +{
+> +	if (!usb_debug_root)
+> +		usb_debug_root = debugfs_create_dir("usb", NULL);
+> +
+> +	atomic_inc(&usb_debug_root_refcnt);
+> +
+> +	return usb_debug_root;
+> +}
+> +EXPORT_SYMBOL_GPL(usb_debugfs_init);
+> +
+> +void usb_debugfs_cleanup(void)
+> +{
+> +	if (atomic_dec_and_test(&usb_debug_root_refcnt)) {
+> +		debugfs_remove_recursive(usb_debug_root);
+> +		usb_debug_root = NULL;
+> +	}
+> +}
+> +EXPORT_SYMBOL_GPL(usb_debugfs_cleanup);
 
---azthyenqniabzk6h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Only remove the debugfs subdir if the usbcore module is removed.  Create
+the debugfs subdir when the usbcore module is loaded.  No need for any
+reference counting of any sort at all.  No need to overthink this :)
 
-On Mon, Jun 03, 2019 at 07:47:28PM +0200, codekipper@gmail.com wrote:
-> From: Marcus Cooper <codekipper@gmail.com>
->
-> Whilst testing the capture functionality of the i2s on the newer
-> SoCs it was noticed that the recording was somewhat distorted.
-> This was due to the offset not being set correctly on the receiver
-> side.
->
-> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+thanks,
 
-Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---azthyenqniabzk6h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPYfkwAKCRDj7w1vZxhR
-xZFqAP9C7z4TKS6sO/uThXEHeSEOFsVxLA+hFezA6ZHPPwE+owD/YRL3Nd9adWWD
-EG4ONA4mwLOBAc5utHFMpqL3ASmaTAA=
-=3Iua
------END PGP SIGNATURE-----
-
---azthyenqniabzk6h--
-
-
---===============5249391785278062348==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5249391785278062348==--
-
