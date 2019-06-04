@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E257A34672
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:22:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9903334676
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:23:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lQEpB1LLnb2yJy1JCMIPP/NWTu11LiD27w5I50TE/cM=; b=Tce
-	tEq0T/lU5AQ7Gb9Q3oCUAWZC9dK9B58+W/LuPPhJdAvx/WPsB7UE2tJceUu3S6xa7ZBDC940vuwtd
-	8bmNqSNwBfx6eHtlURJcPM8mQOkGc8sM39FUw+uhnHDcL3vSKaRIjCJO+XBmPfi756RHgRClqFHVd
-	HaRQu1OJRtfXNJ27aN4gW+ZkAtMhjC7KECs0xLb2iJDoIy/9CXxpWOeulZcU55rHC4ME1wadKwq2C
-	6r5SYIgbjqK9/kTVweLaBnN3PzLlG+mjIi2eqYzsAEPJwjZXvlgCRkWU8khiE41qfWqm/WCYbMC7o
-	zMaEu94+jBABnjwX/7vUqZn+ne/w+TQ==;
+	References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=lNOw4buhaVWKcZyWDdMz7rYICwjn7KB2GC5IP6nnY4o=; b=uK
+	l95OYr3KjzUvqoowplu0panzddku8AEGRsSsbZ39NOr8TcdargtP0KSauGw4uAz42ExLXiQsWP637
+	LZ5U9UFsgkd7VTFKja3KSyXIGmo9v5PJsRa6UzBX4eg46jlkxxtvrmQK6ortNenS+msWOvzjdFzVR
+	hI8zZJrkTxk94vaJqf1JLSZYsyR/0add1HBMJkTj0DvaG2NWlmNrtdPqpEk1y2rnx7xuz9CCD0bxn
+	54fsapd2PGvKpBw7HhQHL5KLq/KAG9a0lnD/JAr171oslOcXWcMn1YaIugv3ZXSZTieunCV/qH96h
+	Q79+x6XIl6xtYBW7HJ3tN8/qSvjMWDMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8SY-0008NJ-1k; Tue, 04 Jun 2019 12:22:34 +0000
+	id 1hY8TN-0000DI-1y; Tue, 04 Jun 2019 12:23:25 +0000
 Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8SQ-0008M9-2k
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:22:28 +0000
+ id 1hY8TF-0000Ca-9X
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:23:18 +0000
 Received: by newverein.lst.de (Postfix, from userid 2005)
- id 29D6468B05; Tue,  4 Jun 2019 14:21:50 +0200 (CEST)
+ id 676BF68B05; Tue,  4 Jun 2019 14:22:51 +0200 (CEST)
 From: Torsten Duwe <duwe@lst.de>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -36,13 +36,14 @@ To: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
  Vasily Khoruzhick <anarsoul@gmail.com>, Harald Geyer <harald@ccbib.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH v2 0/7] Add anx6345 DP/eDP bridge for Olimex Teres-I
-Message-Id: <20190604122150.29D6468B05@newverein.lst.de>
-Date: Tue,  4 Jun 2019 14:21:50 +0200 (CEST)
+Subject: [PATCH v2 1/7] drm/bridge: move ANA78xx driver to analogix
+ subdirectory
+References: <20190604122150.29D6468B05@newverein.lst.de>
+Message-Id: <20190604122251.676BF68B05@newverein.lst.de>
+Date: Tue,  4 Jun 2019 14:22:51 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_052226_266580_1578CAA2 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190604_052317_639401_CB5DCDF0 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,50 +72,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Icenowy Zheng <icenowy@aosc.io>
 
-ANX6345 LVTTL->eDP video bridge, driver with device tree bindings.
+As ANA78xx chips are designed and produced by Analogix Semiconductor,
+Inc, move their driver codes into analogix subdirectory.
 
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Torsten Duwe <duwe@suse.de>
+---
+ drivers/gpu/drm/bridge/Kconfig                           | 10 ----------
+ drivers/gpu/drm/bridge/Makefile                          |  4 ++--
+ drivers/gpu/drm/bridge/analogix/Kconfig                  | 10 ++++++++++
+ drivers/gpu/drm/bridge/analogix/Makefile                 |  1 +
+ drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.c |  0
+ drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.h |  0
+ 6 files changed, 13 insertions(+), 12 deletions(-)
+ rename drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.c (100%)
+ rename drivers/gpu/drm/bridge/{ => analogix}/analogix-anx78xx.h (100%)
 
-Changes from v1:
+diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+index ee777469293a..862789bf64a0 100644
+--- a/drivers/gpu/drm/bridge/Kconfig
++++ b/drivers/gpu/drm/bridge/Kconfig
+@@ -16,16 +16,6 @@ config DRM_PANEL_BRIDGE
+ menu "Display Interface Bridges"
+ 	depends on DRM && DRM_BRIDGE
+ 
+-config DRM_ANALOGIX_ANX78XX
+-	tristate "Analogix ANX78XX bridge"
+-	select DRM_KMS_HELPER
+-	select REGMAP_I2C
+-	---help---
+-	  ANX78XX is an ultra-low Full-HD SlimPort transmitter
+-	  designed for portable devices. The ANX78XX transforms
+-	  the HDMI output of an application processor to MyDP
+-	  or DisplayPort.
+-
+ config DRM_CDNS_DSI
+ 	tristate "Cadence DPI/DSI bridge"
+ 	select DRM_KMS_HELPER
+diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
+index 4934fcf5a6f8..a6c7dd7727ea 100644
+--- a/drivers/gpu/drm/bridge/Makefile
++++ b/drivers/gpu/drm/bridge/Makefile
+@@ -1,5 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
+-obj-$(CONFIG_DRM_ANALOGIX_ANX78XX) += analogix-anx78xx.o
+ obj-$(CONFIG_DRM_CDNS_DSI) += cdns-dsi.o
+ obj-$(CONFIG_DRM_DUMB_VGA_DAC) += dumb-vga-dac.o
+ obj-$(CONFIG_DRM_LVDS_ENCODER) += lvds-encoder.o
+@@ -12,8 +11,9 @@ obj-$(CONFIG_DRM_SII9234) += sii9234.o
+ obj-$(CONFIG_DRM_THINE_THC63LVD1024) += thc63lvd1024.o
+ obj-$(CONFIG_DRM_TOSHIBA_TC358764) += tc358764.o
+ obj-$(CONFIG_DRM_TOSHIBA_TC358767) += tc358767.o
+-obj-$(CONFIG_DRM_ANALOGIX_DP) += analogix/
+ obj-$(CONFIG_DRM_I2C_ADV7511) += adv7511/
+ obj-$(CONFIG_DRM_TI_SN65DSI86) += ti-sn65dsi86.o
+ obj-$(CONFIG_DRM_TI_TFP410) += ti-tfp410.o
++
++obj-y += analogix/
+ obj-y += synopsys/
+diff --git a/drivers/gpu/drm/bridge/analogix/Kconfig b/drivers/gpu/drm/bridge/analogix/Kconfig
+index e930ff9b5cd4..704fb0f41dc3 100644
+--- a/drivers/gpu/drm/bridge/analogix/Kconfig
++++ b/drivers/gpu/drm/bridge/analogix/Kconfig
+@@ -1,4 +1,14 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++config DRM_ANALOGIX_ANX78XX
++	tristate "Analogix ANX78XX bridge"
++	select DRM_KMS_HELPER
++	select REGMAP_I2C
++	help
++	  ANX78XX is an ultra-low Full-HD SlimPort transmitter
++	  designed for portable devices. The ANX78XX transforms
++	  the HDMI output of an application processor to MyDP
++	  or DisplayPort.
++
+ config DRM_ANALOGIX_DP
+ 	tristate
+ 	depends on DRM
+diff --git a/drivers/gpu/drm/bridge/analogix/Makefile b/drivers/gpu/drm/bridge/analogix/Makefile
+index fdbf3fd2f087..6fcbfd3ee560 100644
+--- a/drivers/gpu/drm/bridge/analogix/Makefile
++++ b/drivers/gpu/drm/bridge/analogix/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ analogix_dp-objs := analogix_dp_core.o analogix_dp_reg.o
++obj-$(CONFIG_DRM_ANALOGIX_ANX78XX) += analogix-anx78xx.o
+ obj-$(CONFIG_DRM_ANALOGIX_DP) += analogix_dp.o
+diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.c b/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.c
+similarity index 100%
+rename from drivers/gpu/drm/bridge/analogix-anx78xx.c
+rename to drivers/gpu/drm/bridge/analogix/analogix-anx78xx.c
+diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.h b/drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h
+similarity index 100%
+rename from drivers/gpu/drm/bridge/analogix-anx78xx.h
+rename to drivers/gpu/drm/bridge/analogix/analogix-anx78xx.h
+-- 
+2.16.4
 
-* fixed up copyright information. Most code changes are only moves and thus
-  retain copyright and module ownership. Even the new analogix-anx6345.c originates
-  from the old 1495-line analogix-anx78xx.c, with 306 insertions and 987 deletions
-  (ignoring the trivial anx78xx -> anx6345 replacements) 306 new vs. 508 old...
-
-* fixed all minor formatting issues brought up
-
-* merged previously separate new analogix_dp_i2c module into existing analogix_dp
-
-* split additional defines into a preparatory patch
-
-* renamed the factored-out common functions anx_aux_* -> anx_dp_aux_*, because
-  anx_...aux_transfer was exported globally. Besides, it is now GPL-only exported.
-
-* moved chip ID read into a separate function.
-
-* keep the chip powered after a successful probe.
-  (There's a good chance that this is the only display during boot!)
-
-* updated the binding document: LVTTL input is now required, only the output side
-  description is optional.
-
- Laurent: I have also looked into the drm_panel_bridge infrastructure,
- but it's not that trivial to convert these drivers to it.
-
-Changes from the respective previous versions:
-
-* the reset polarity is corrected in DT and the driver;
-  things should be clearer now.
-
-* as requested, add a panel (the known innolux,n116bge) and connect
-  the ports.
-
-* renamed dvdd?? to *-supply to match the established scheme
-
-* trivial update to the #include list, to make it compile in 5.2
-
-	Torsten
 
 _______________________________________________
 linux-arm-kernel mailing list
