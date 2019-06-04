@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44D1334AAC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:45:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DD3334AAF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:45:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EkaDtaaR7xlII5gena6gWfRA7wf74iNZ421PXHt9R5E=; b=oD3XhsxlSEBO0/
-	bWmS5NYy9Yl0F2F9l+DHfLj44smpY4G7fP+dkki7JPrcHgESqzxmRb20vKS5z6rj5GzQC8vhd5b9u
-	IhCENcyuMRix6q+88wDCslNDTesk3UbIacmo6ujwZoyVPTTINxdli/JF4A71UGw283BUsphL6YGyq
-	97Opz44Br/yxsZLo0VwYssN1YINzQvvtmaSwV00DkyFXzzG+ApXjy8iDQpHYsyNT6B2n2yn7w23vz
-	RbKhqmjuelOVcuCBh5HPLeYvLcndb9/NSVjH4cN03PQioNZVVgDdRYTa4Rr3v4KWhFIQBT5glTI96
-	Qh5DlNSbAzVt85D+FByA==;
+	List-Owner; bh=/07FXcn5P3Vw59w8SDMPDK9XKEp4dvMkaGr5Y2SysrY=; b=hQfsKzfw3Dj725
+	cwYYU6m+ZHr9fBGEaCiZuq+h4OW98442X11pQO+F+03PbKLGNj/gsJ7LAH8oPlIR/xxxtDFMwmzcR
+	I97hVudCa1XLaKVWfPCFFuVRkSWDBqzQSbYwaZvUmCIl+C2gat42jtXwLUqzBgAo+g1P2aF9fEaqB
+	WFzi8FBTsI4wHDhsq6bFZaA2o4mntxhi8hog8mUr9EpaKw9GKS1tzvAje7QbbBWZIuVQJMwvN1HCB
+	ql0D41435vITyDejeUns3JMz7hSqc7ur2jeaokh+3gCmuzGzTozKQp+Ey0+M0c452xh54Io2vCB4W
+	/Y6UftIoX9H0fea8EbUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAgS-0004fJ-Me; Tue, 04 Jun 2019 14:45:04 +0000
+	id 1hYAgh-00065v-Hs; Tue, 04 Jun 2019 14:45:19 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAgK-0004e4-6q
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:44:57 +0000
+ id 1hYAgX-0005Pv-7P
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:45:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12917341;
- Tue,  4 Jun 2019 07:44:55 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C03AD341;
+ Tue,  4 Jun 2019 07:45:08 -0700 (PDT)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- AF76F3F690; Tue,  4 Jun 2019 07:44:53 -0700 (PDT)
-Date: Tue, 4 Jun 2019 15:44:51 +0100
+ 6987D3F690; Tue,  4 Jun 2019 07:45:07 -0700 (PDT)
+Date: Tue, 4 Jun 2019 15:45:04 +0100
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2 1/4] arm64/mm: Drop mmap_sem before calling
- __do_kernel_fault()
-Message-ID: <20190604144450.GK6610@arrakis.emea.arm.com>
+Subject: Re: [PATCH V2 2/4] arm64/mm: Drop task_struct argument from
+ __do_page_fault()
+Message-ID: <20190604144504.GL6610@arrakis.emea.arm.com>
 References: <1559544085-7502-1-git-send-email-anshuman.khandual@arm.com>
- <1559544085-7502-2-git-send-email-anshuman.khandual@arm.com>
+ <1559544085-7502-3-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559544085-7502-2-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1559544085-7502-3-git-send-email-anshuman.khandual@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_074456_254300_01FFEDCD 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20190604_074509_445796_7DAC60B2 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -73,20 +74,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 12:11:22PM +0530, Anshuman Khandual wrote:
-> There is an inconsistency between down_read_trylock() success and failure
-> paths while dealing with kernel access for non exception table areas where
-> it calls __do_kernel_fault(). In case of failure it just bails out without
-> holding mmap_sem but when it succeeds it does so while holding mmap_sem.
-> Fix this inconsistency by just dropping mmap_sem in success path as well.
-> 
-> __do_kernel_fault() calls die_kernel_fault() which then calls show_pte().
-> show_pte() in this path might become bit more unreliable without holding
-> mmap_sem. But there are already instances [1] in do_page_fault() where
-> die_kernel_fault() gets called without holding mmap_sem. show_pte() can
-> be made more robust independently but in a later patch.
-> 
-> [1] Conditional block for (is_ttbr0_addr && is_el1_permission_fault)
+On Mon, Jun 03, 2019 at 12:11:23PM +0530, Anshuman Khandual wrote:
+> The task_struct argument is not getting used in __do_page_fault(). Hence
+> just drop it and use current or cuurent->mm instead where ever required.
+> This does not change any functionality.
 > 
 > Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 > Cc: Catalin Marinas <catalin.marinas@arm.com>
