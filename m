@@ -2,55 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE8FE34ACD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 16:47:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5159234B66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 17:03:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YZ7+QvSGkzcx/3edKsqlzV3Zb/lq6iEAFjcrp1wMAsQ=; b=hn38DsOZ+8LaYm
-	759ZlJBWfdBCFolPmtFNkHNSVtehmIm6udygFMlM6WgsJhm0PzhK15wYYyTnPWQd4jVtN88p/YxXX
-	vFUL/MgAa/dI+kXOL73n7c3ugn8b2Bb3GIRRS+D8mloJagWvksTQubN0/UDwiyuHgU7bVhPEdAcFj
-	A4pNCzN0TKlO+0LubziCXmJLs2gOspGjGu1nvXXCa9l2OKH+rybZcTnz5TezPTFyiRdb4rvXfJ9LW
-	DBoV9pn0pl1DAmsflgo9kz4PyfGmQ2J6uCIJLOkfINOQRX8t8eqmgxPENriOHcmGtfuHjfpsqrQ/b
-	lXJuehG6teWC4GTLGf/w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=lxRcQBuTzyiSb/6F6WAoC+KPqyjBl687YqjXyf+MZRA=; b=e/T
+	BseCiDPlRqxEG+AB6xBAshLHnReek5RXQMuv9mwyhgwOgfC2lCUTRy8HnBzsQuFxn3bikBj3CCIHm
+	AvpCoWoXst3rMwSZJYdXrxWoRFdDx0x1ZltryRLqFmWH+0qpXjhdm1zPLhgxmwl6UMBybQS9A6Sxd
+	dg/OjEWEKG+6aKKBOC+c9HsuK0DrzEzRjelShqElZf+PD59/sVEf1uub3aEkfNzmSOpMA2zJGz1MC
+	vQJS3Dv8sp4bBIPau9XPbACJnqu6UtQN38vJOFQ79sE1Hhu8RvLKSE2zxkPxrOZpZbgIBFrWEP6lU
+	YWyyGB07dyKSy/z2ZtRc+QXp8aLW0gA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYAiv-0008Di-Mg; Tue, 04 Jun 2019 14:47:37 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYAhx-000770-Jr
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:46:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 206B815A2;
- Tue,  4 Jun 2019 07:46:37 -0700 (PDT)
-Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9A42A3F690;
- Tue,  4 Jun 2019 07:46:35 -0700 (PDT)
-From: James Morse <james.morse@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v1 6/6] KVM: arm64: Skip more of the SError vaxorcism
-Date: Tue,  4 Jun 2019 15:45:51 +0100
-Message-Id: <20190604144551.188107-7-james.morse@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190604144551.188107-1-james.morse@arm.com>
-References: <20190604144551.188107-1-james.morse@arm.com>
-MIME-Version: 1.0
+	id 1hYAyW-00031c-9z; Tue, 04 Jun 2019 15:03:44 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYAy2-00025e-5K
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 04 Jun 2019 15:03:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=yt/EFsCTs+eDRjlI5s+86AEQql4J6OURFSWUEUgIwAY=; b=PMrh297b+xzW3tWChSGAMplz4
+ tFYrdGq6RfL8p8QlPOwv19Jd3y9pDCqTx0tfAXYq3zb1xum8ttSw4rrkLs0MupBeDjxPjwhN02WmO
+ 2XOieAEAzkuvRCMMuTPuYziL0IpLQxR2e9QuUQ/FWIQWT/ZUfLNFX+077UR7mK+vFpB8NCz5Hr1kG
+ r/NIh0N5U+1ndNfvqk5CyZygLE9cF+XcN3rAxB5jjM/g7HDmV/B1gBXJ1rntnfDy160bRPX8baHDY
+ 2fuhSwOKLJr7kHqWQ9jNG1hRlNAfUsxrEyYTYyYzh7f9Mi4tEbJcOussW0KmMpJ3eCcK1dXBiLFd6
+ ZW2KXBFZQ==;
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYAic-0008Og-6g
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 14:47:20 +0000
+Received: by mail-wr1-x442.google.com with SMTP id n4so10885491wrw.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 07:47:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=yt/EFsCTs+eDRjlI5s+86AEQql4J6OURFSWUEUgIwAY=;
+ b=baN6M5vHHdMEdDHA0nFhNKLj1v4lrLz/nftyieuU/YsutbB14+ZqYNEpKCERpyYdyY
+ KfEROAB6KrYiQaz93M0J8PVgz13m3NGtdNqWJ1xTE5o2foyUiaCSXV1JL/NRcBmGMvii
+ Igmta3mK59BorfpKlfs37UGYDEGK5rp0n81uMXCIiOgan1fD60rzo4kR5YisoxmAWia6
+ vzGYjx+CQtuzF1TmS9ujEEMpgUpHBYYjhhhq1ssiw9JXBe4+LuEAHms+mXr6Dm/R/pVW
+ vXIpo/MBppn4+0+HVYXy4hCWQl4om89a3HrTgOGakjpMG6DfKaviPoF+h4o3KgzIkCQc
+ FgLg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=yt/EFsCTs+eDRjlI5s+86AEQql4J6OURFSWUEUgIwAY=;
+ b=pdTXOwfVELg1fDshNwy6eKY+wK+eMOP/xLlJn29wgj5f5DjzDFpYTJwioBKcLz3PTG
+ J42a1/Gq7ceB+BJs81DhVd3p+bxvdmuFoAGZ5U3qu5ADIWrTfeHBLhzQ53jrF+vGU5Zv
+ kOb08t3d6YMCRXVQhbmK1pbWdeF+7k6i4v/dB8xnrfKbvJfyEL0SwA3LDQKU4ZD2q+G3
+ VMPJE0eMnyGcAVXR0sYyF3UnUz5K8A2y6SVmyQRef+qWYOM17EVLIPKtbIsWkM0t+jkg
+ qtxWh+/gFToTccOsVQPst7V9nglfaO6UVEHczjqjE5jzgQagU8D3FdOG1VnwSCIr6b1f
+ Yk9w==
+X-Gm-Message-State: APjAAAXxLZNB8fIXdRZO44ZXt1NdOK8CcYiPWIngGVCKVjTGmfcA4nY5
+ luOY9cBeRlPtwc7LCKWiZnxyhQ==
+X-Google-Smtp-Source: APXvYqyK0vyzpLP2eyzKVrPgI3zNMenfqmRUVBELbtN9DV8WNr9ZkE1mQYmA68w6uUDtIpRGyxFb0w==
+X-Received: by 2002:adf:8bc5:: with SMTP id w5mr6899078wra.132.1559659636696; 
+ Tue, 04 Jun 2019 07:47:16 -0700 (PDT)
+Received: from glaroque-ThinkPad-T480.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id v184sm3649639wme.10.2019.06.04.07.47.15
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 04 Jun 2019 07:47:15 -0700 (PDT)
+From: Guillaume La Roque <glaroque@baylibre.com>
+To: jic23@kernel.org,
+	khilman@baylibre.com
+Subject: [PATCH 0/3] Add support of New Amlogic temperature sensor for G12A
+ SoCs
+Date: Tue,  4 Jun 2019 16:47:11 +0200
+Message-Id: <20190604144714.2009-1-glaroque@baylibre.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_074638_373969_31A5385C 
-X-CRM114-Status: GOOD (  12.40  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+X-CRM114-CacheID: sfid-20190604_154718_305703_B2F368BC 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,80 +107,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
- James Morse <james.morse@arm.com>
+Cc: linux-iio@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we've taken isr_el1 out of the box, there are a few more places
-we could use it. During __guest_exit() we need to consume any SError left
-pending by the guest so it doesn't contaminate the host. With v8.2 we use
-the ESB-instruction. For systems without v8.2, we use dsb+isb and unmask
-SError. We do this on every guest exit.
+This patchs series add support of New Amlogic temperature sensor.
+This driver is based on IIO frameworks.
+formulas and calibration values come from amlogic.
 
-Use the same dsb+isr_el1 trick, this lets us know if an SError is pending
-after the dsb, allowing us to skip the isb and self-synchronising PSTATE
-write if its not.
+Dependencies :
+- patch 2: temperature sensor clock are needed [1]
 
-This means SError remains masked during KVM's world-switch, so any SError
-that occurs during this time is reported by the host, instead of causing
-a hyp-panic.
+[1] https://lkml.kernel.org/r/20190412100221.26740-1-glaroque@baylibre.com
 
-As we're benchmarking this code lets polish the layout. If you give gcc
-likely()/unlikely() hints in an if() condition, it shuffles the generated
-assembly so that the likely case is immediately after the branch. Lets
-do the same here.
+Guillaume La Roque (3):
+  Documentation: dt-bindings: add the Amlogic Meson Temperature Sensor
+  arm64: dts: meson: g12a: add temperature sensor node
+  iio: temperature: add a driver for the temperature sensor found in
+    Amlogic Meson G12 SoCs
 
-Signed-off-by: James Morse <james.morse@arm.com>
----
-Tested on A57 with v5.2-rc1, do_hvc from [0]
-v5.2-rc1            mean:4339 stddev:33
-v5.2-rc1+patches1-6 mean:4309 stddev:26
-with series 0.69% faster
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/maz/kvm-ws-tests.git/
+ .../iio/temperature/amlogic,meson-tsensor.txt |  31 ++
+ arch/arm64/boot/dts/amlogic/meson-g12a.dtsi   |  22 +
+ drivers/iio/temperature/Kconfig               |  11 +
+ drivers/iio/temperature/Makefile              |   1 +
+ drivers/iio/temperature/meson_tsensor.c       | 416 ++++++++++++++++++
+ 5 files changed, 481 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
+ create mode 100644 drivers/iio/temperature/meson_tsensor.c
 
- arch/arm64/kvm/hyp/entry.S | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
-
-diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
-index a5a4254314a1..c2de1a1faaf4 100644
---- a/arch/arm64/kvm/hyp/entry.S
-+++ b/arch/arm64/kvm/hyp/entry.S
-@@ -161,18 +161,24 @@ alternative_if ARM64_HAS_RAS_EXTN
- 	orr	x0, x0, #(1<<ARM_EXIT_WITH_SERROR_BIT)
- 1:	ret
- alternative_else
--	// If we have a pending asynchronous abort, now is the
--	// time to find out. From your VAXorcist book, page 666:
-+	dsb	sy		// Synchronize against in-flight ld/st
-+	mrs	x2, isr_el1
-+	and	x2, x2, #(1<<8)	// ISR_EL1.A
-+	cbnz	x2, 2f
-+	ret
-+
-+2:
-+	// We know we have a pending asynchronous abort, now is the
-+	// time to flush it out. From your VAXorcist book, page 666:
- 	// "Threaten me not, oh Evil one!  For I speak with
- 	// the power of DEC, and I command thee to show thyself!"
- 	mrs	x2, elr_el2
-+alternative_endif
- 	mrs	x3, esr_el2
- 	mrs	x4, spsr_el2
- 	mov	x5, x0
- 
--	dsb	sy		// Synchronize against in-flight ld/st
- 	msr	daifclr, #4	// Unmask aborts
--alternative_endif
- 
- 	// This is our single instruction exception window. A pending
- 	// SError is guaranteed to occur at the earliest when we unmask
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
