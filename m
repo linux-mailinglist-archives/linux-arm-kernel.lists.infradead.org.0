@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D48E33EF0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:21:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 824C433EED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 08:21:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CdyKTDsWa6n+TTJPdQe8c5H+WNNcUsfABvcy3gCl2cw=; b=YFNxgaGu4hA3g5
-	BnSsfg4SvcopBGihlc0S7GRcVzVNcIX7WDHX+q+7DmTNg/Q8M8x1qTYHG2QJ5w4twWKGHGySBs0BH
-	XF7dNtvHNKiKobPm6GJUpG+fWD3c5gBY+j/nIKAXNTrfExoCy6/3wNf+daV5s8ba5V/sWBSQlMb2L
-	suyHi2TQmsVf55D0xIST71i5exN9q8iZUx6F59w3TT3wPxmIWsEMsEUTR+ofLwwN3DVvZeaYa9xHT
-	3in7zjPeWMlpugMGJG1Q7Q3LqTV/x0RvWn8e4SthqadX/RSy0B3IL2lOG7rL962hCc0FQ5N2SmIGV
-	qXUNDoGPrHmSacM4tt1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5uQtk09oD1zp9MfO4hrr+BrluoudnPs23YUp5maRlxU=; b=qnDRSGlC48ar5JN8rWD8GUvP9
+	TfBef5va6D8rC8v25RwITRl8KyiEVDQmTzWO+SxByki2p9uP9+v/aN1Og5cwwIbdKXz3K1GMLvld5
+	qQ3dWzBEk9RCdI2bEpVBXNjKS5UOeYvW4Lq9r1y7aCLRrAYejSiT6YPjcfKmJWkHCWe8qCyUpTyiC
+	Wiyr31/QeUz3I8kEuQQXtHJhLtwNL0libUK7tOXYFsbgwWnAAsXTKtNqBb60K7Jgl3c+CXRl6Pm9C
+	NwCitb0UfrZK0R2fJgHuZZLcLzMFJWZi9e5CmJogeebmOuwpxW/X5XnzDHtlcWFAlFsiwA63QJs17
+	XoUu/5NTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY2pW-00063s-1W; Tue, 04 Jun 2019 06:21:54 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1hY2oi-0005lM-9M; Tue, 04 Jun 2019 06:21:04 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY2pN-00063D-Uf
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 06:21:49 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 138E72D886150BB2774;
- Tue,  4 Jun 2019 14:21:39 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Tue, 4 Jun 2019
- 14:21:32 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <patches@armlinux.org.uk>
-Subject: [PATCH] ARM: mm: remove unused variables
-Date: Tue, 4 Jun 2019 14:19:57 +0800
-Message-ID: <20190604061957.18704-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
-In-Reply-To: <CAJKOXPeDRuvmHG=KUCYiPav2ODT4MC4hEgi5hAsy7s_+v-DB3g@mail.gmail.com>
-References: <CAJKOXPeDRuvmHG=KUCYiPav2ODT4MC4hEgi5hAsy7s_+v-DB3g@mail.gmail.com>
+ id 1hY2ob-0005kQ-8l; Tue, 04 Jun 2019 06:20:58 +0000
+X-Originating-IP: 79.86.19.127
+Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
+ (Authenticated sender: alex@ghiti.fr)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 49FAD1C0009;
+ Tue,  4 Jun 2019 06:20:38 +0000 (UTC)
+Subject: Re: [PATCH v4 05/14] arm64, mm: Make randomization selected by
+ generic topdown mmap layout
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20190526134746.9315-1-alex@ghiti.fr>
+ <20190526134746.9315-6-alex@ghiti.fr>
+ <20190603174001.GL63283@arrakis.emea.arm.com>
+From: Alex Ghiti <alex@ghiti.fr>
+Message-ID: <e8dab94d-679e-8898-033e-3b5dbf0cc044@ghiti.fr>
+Date: Tue, 4 Jun 2019 02:20:38 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+In-Reply-To: <20190603174001.GL63283@arrakis.emea.arm.com>
+Content-Language: sv-FI
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_232147_536112_98D5B241 
-X-CRM114-Status: UNSURE (   8.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190603_232057_471318_5F3F8CF5 
+X-CRM114-Status: GOOD (  10.62  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,59 +64,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, geert+renesas@glider.be,
- YueHaibing <yuehaibing@huawei.com>, linux-kernel@vger.kernel.org,
- krzk@kernel.org, rppt@linux.ibm.com, rmk+kernel@armlinux.org.uk,
- geert@linux-m68k.org, linux@armlinux.org.uk, akpm@linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
+ James Hogan <jhogan@kernel.org>, Palmer Dabbelt <palmer@sifive.com>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Paul Burton <paul.burton@mips.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, linux-fsdevel@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-mips@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, Luis Chamberlain <mcgrof@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix gcc warnings:
-
-arch/arm/mm/init.c: In function 'mem_init':
-arch/arm/mm/init.c:456:13: warning: unused variable 'itcm_end' [-Wunused-variable]
-  extern u32 itcm_end;
-             ^
-arch/arm/mm/init.c:455:13: warning: unused variable 'dtcm_end' [-Wunused-variable]
-  extern u32 dtcm_end;
-             ^
-
-They are not used any more since
-commit 1c31d4e96b8c ("ARM: 8820/1: mm: Stop printing the virtual memory layout")
-
-Link: https://lkml.org/lkml/2019/5/12/82
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
----
-KernelVersion: 5.2-rc5
- arch/arm/mm/init.c | 6 ------
- 1 file changed, 6 deletions(-)
-
-diff --git a/arch/arm/mm/init.c b/arch/arm/mm/init.c
-index be0b42937888..c71ecbb04db8 100644
---- a/arch/arm/mm/init.c
-+++ b/arch/arm/mm/init.c
-@@ -450,12 +450,6 @@ static void __init free_highpages(void)
-  */
- void __init mem_init(void)
- {
--#ifdef CONFIG_HAVE_TCM
--	/* These pointers are filled in on TCM detection */
--	extern u32 dtcm_end;
--	extern u32 itcm_end;
--#endif
--
- 	set_max_mapnr(pfn_to_page(max_pfn) - mem_map);
- 
- 	/* this will put all unused low memory onto the freelists */
--- 
-2.20.1
+On 6/3/19 1:40 PM, Catalin Marinas wrote:
+> On Sun, May 26, 2019 at 09:47:37AM -0400, Alexandre Ghiti wrote:
+>> This commits selects ARCH_HAS_ELF_RANDOMIZE when an arch uses the generic
+>> topdown mmap layout functions so that this security feature is on by
+>> default.
+>> Note that this commit also removes the possibility for arm64 to have elf
+>> randomization and no MMU: without MMU, the security added by randomization
+>> is worth nothing.
+> Not planning on this anytime soon ;).
 
 
+Great :) Thanks for your time,
+
+Alex
+
+
+>
+> Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+>
+> _______________________________________________
+> linux-riscv mailing list
+> linux-riscv@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-riscv
 
 _______________________________________________
 linux-arm-kernel mailing list
