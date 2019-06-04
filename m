@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8145E3520B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 23:42:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2906A3522A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 23:48:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
 	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sru6D5X4UJZ4l/iUrcwPXCv3bGCU363LIRx073HjmvU=; b=svzNcSxBvD1VEM
-	MrDYjLXFcbu5N3FRUD3r6uavnNaC9moYq+MtsMcL/CyTqleHL2C4VGBWiweomG42HFIXbKVeH/BQ8
-	vj+M+fV6daoL65/ZddiVyr/UOVb766F8qis7fFZJA1WQztenY6y0mGdwY52Aw2zOqGoWT24J9YSLJ
-	exS7qORwLtTt5kpQt0W4cJ2gLl19yWGq6QVtsAoH+FiVhFUSNbhkMREj9heCxrAQdFreC6DPKDdlY
-	AvxnoAT4p1kNgXk+urpJZmGT1ywTvVlNBGl/J2BLE266dROmPMLBsj/OhYJalOifDl4fxiqGDZ3n8
-	FcuHOJR64VBCR3SxqhXg==;
+	List-Owner; bh=poxGw8R8HONI6jR0bM1MrY1h2qgIzuBlMad+CR/s6mQ=; b=tgcUaghBSagqXx
+	KSoJnAHN/YlYd97bcvJT130bK+IZNcHRcqgEMQBNjRwMnMJi1d5mNSlfLPg7WuOqdjCH/vEzXJNY0
+	Vjhta6iHi5V+iBWYI7TC1LyY4yPKA3XNkLssucIHftLxVLiamAAoCbGDQ2TMB2Is0MKbcFuTkU401
+	dXsKqMTKq122D0gQOfr/OI82X8hl364BZDqo8VHxbMgeRWEebQqE1zhTtLYnLpHr0GXRqg7HqeiP1
+	5a2/Hy+n27/d5DoMaYlSUPghZt0t2VmG9lABPUD628LXInDR1/0ny0Xg5ZBi3vC4GEEGS1RIQuIMl
+	74tU9xJuJ+YZfKlz4NAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYHCf-0003Oh-OH; Tue, 04 Jun 2019 21:42:45 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hYHHo-0005B8-Ot; Tue, 04 Jun 2019 21:48:04 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYHCX-0003O3-Lv
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 21:42:39 +0000
-Received: by mail-ed1-x543.google.com with SMTP id h9so1177888edr.0
+ id 1hYHHh-0005Af-8R
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 21:47:58 +0000
+Received: by mail-ed1-x542.google.com with SMTP id a8so2627117edx.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 14:42:37 -0700 (PDT)
+ Tue, 04 Jun 2019 14:47:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:reply-to:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=kGgg2cwccQhQ87BOLNQ19P0eOVj/IxJHAOcVaT8qQRo=;
- b=MvGpvha5uoaqY64DB9m3OiEBHBCB0j/M3ygCmk9qYPQh0e62kI5YP56dl+XWkyPnPj
- EG/cWmaZtCuz9hrmKDhu4vozWbJ9HCkn7M8Ttp4ZeNIEWR+kY0Xs1oHmqWMFnzgffAmo
- aey94bU9w8nbfa6XiE5SwjNNvKvkfk8p0vKyNskG+C2prnMXAnSjjP70FTRoflsXkKBc
- d4IfMDucbN7yQaPg6KW7aP3MSRkOfE5IhyOPp/ZbfuiWxjztb8ng2R3gwnFogtiBFUd5
- uMSDMlELCgRY0FjQycMIniwNmizvH+zAX04W5t/NFF3kWUW3eih44Ay8/4cnCTikeQeY
- whig==
+ bh=YAOiP57A01Sn4VN1p2tU0pXmqdLPIiJ4XRB9cBH/L60=;
+ b=LHVOjJU+PrWUKjw2La9VE1vPKl5KearF9vd1gx+fMOah0NIYnTCpk/hLPywmGuD7Qx
+ ubKVoOSXllgIIOtqhu2gVJ3x9B0/bsgZ7dOqAY3y5Ayi0qhLPf1tZQD8IUflfR/bo3b1
+ F4TaQlhPSFK4tf44OdTct45QOW1HbhpVKmRS1UPgsRmJ8ykiC6IB1kc0IjzAbHbpYgcW
+ XocfR253q6JmXmpbPH+wSLE5nYqYTiHdUq2ypGGmgfgczCsKHTbAbfTkEuh649zZZ9c/
+ Obhuc+H39gsisfGYj1xrWFrX2Lyh1bRdUjq62tExuKhoIe4zwnBrI2RwiYnmhdgPNIGz
+ bDHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:reply-to
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=kGgg2cwccQhQ87BOLNQ19P0eOVj/IxJHAOcVaT8qQRo=;
- b=O7JOOl+1w5cIH5SWzZzTt0x077RUD5bLJRzAY/a4wc+u/XecKD2DY93gBBaU9qRQsE
- sjIqJMgVEa/+ITNEfBl1AmxB4Qu0fbDoYFWPWPQ66Niv8EYrG7hT8MyD1GA7J5tWUUuj
- 5OnPJnWXhs6AFnz06/HQPbFp8n/QwiRUT5/TInw/g7qMjdLB0ko78/dbk8LssSkvyDZS
- I8jaPUSPcoTyDMtVbljNRGZhjyNe+jcesgOruOwHBBEa6i4LYk0SrD+wRbZOVwXywEPn
- 9hSSUWNKwaEDq4V8putujOgrvOy4nWI9O11DB6lownT2Msp9xdmvywZ1CBGnaHgAsCaJ
- evmg==
-X-Gm-Message-State: APjAAAUVreaJzv84k6Y0vsIr4dtKRdqpJbNwkh0IuCsfaJxwDovd/cAl
- L62HDFL6BfADOubka8hpqEQ=
-X-Google-Smtp-Source: APXvYqxAJB613MXS5SsQSAVAhyXKrrpfkgYY86Logu8BWUaW7EUGho3leJeBoyNfYrNBhWO+qVCbjg==
-X-Received: by 2002:a17:906:1303:: with SMTP id
- w3mr32002043ejb.196.1559684555972; 
- Tue, 04 Jun 2019 14:42:35 -0700 (PDT)
+ bh=YAOiP57A01Sn4VN1p2tU0pXmqdLPIiJ4XRB9cBH/L60=;
+ b=eSmUcQjA2Ec/7CLyOGIkCk/1zu6EZo4TCHWHQqovaMO/wSyd9RcK4KixLbgB7D3Vcu
+ QpU0HuPHkapAfg7sKAiykHO0KK8H2qrf7x+0PNUXFSjEAiR/mta3DHeXvUZ2b1cBXtMJ
+ tS6JEG7OyaTpQF0FVgT0C+TTKkrD+liRzBpfBcHHctRq/6831kaU/5fZ86/cmWDlpT2t
+ J1kc7AN9TJR/f2FVJ+oYsi315SVeFDCCF+AnuVHCPGzVZMBJ1pAj+XEkRGeOQeNMR263
+ 02yPUxvyjEugC3ng1KTokLObzT79qwg/GFqNagGQHOhN58NzZL+CwoxD9sk1Bh6y+qPA
+ veYA==
+X-Gm-Message-State: APjAAAXeM+YttR9UAkmpLRV4oxbfRkQg1Z96qNcevUWVQh/85SIlkei5
+ T1nPA+J2R0U5oiKJ0Gbo8qA=
+X-Google-Smtp-Source: APXvYqwDVoxJj2tIOxzLuK3nYNHPwTJ67OHC1d3ag5SDYh0bPqzR5f57ZgPalm+F2A4DDOJ5mfMHNQ==
+X-Received: by 2002:a50:bb24:: with SMTP id y33mr38369134ede.116.1559684875305; 
+ Tue, 04 Jun 2019 14:47:55 -0700 (PDT)
 Received: from localhost ([185.92.221.13])
- by smtp.gmail.com with ESMTPSA id r14sm3337551eja.77.2019.06.04.14.42.34
+ by smtp.gmail.com with ESMTPSA id n5sm2897404edt.65.2019.06.04.14.47.53
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 04 Jun 2019 14:42:34 -0700 (PDT)
-Date: Tue, 4 Jun 2019 21:42:34 +0000
+ Tue, 04 Jun 2019 14:47:54 -0700 (PDT)
+Date: Tue, 4 Jun 2019 21:47:53 +0000
 From: Wei Yang <richard.weiyang@gmail.com>
 To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v3 07/11] mm/memory_hotplug: Create memory block devices
- after arch_add_memory()
-Message-ID: <20190604214234.ltwtkcdoju2gxisx@master>
+Subject: Re: [PATCH v3 08/11] mm/memory_hotplug: Drop MHP_MEMBLOCK_API
+Message-ID: <20190604214753.utbdrjtjavgi7yhf@master>
 References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-8-david@redhat.com>
+ <20190527111152.16324-9-david@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190527111152.16324-8-david@redhat.com>
+In-Reply-To: <20190527111152.16324-9-david@redhat.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_144237_715584_7F8BCDA4 
-X-CRM114-Status: GOOD (  22.98  )
+X-CRM114-CacheID: sfid-20190604_144757_323105_254575F6 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,258 +101,96 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Reply-To: Wei Yang <richard.weiyang@gmail.com>
-Cc: Michal Hocko <mhocko@suse.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
- linux-mm@kvack.org, Arun KS <arunks@codeaurora.org>,
- Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Pavel Tatashin <pasha.tatashin@soleen.com>,
- "mike.travis@hpe.com" <mike.travis@hpe.com>, Qian Cai <cai@lca.pw>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, Andrew Banman <andrew.banman@hpe.com>,
- Mathieu Malaterre <malat@debian.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+Cc: Oscar Salvador <osalvador@suse.com>, linux-s390@vger.kernel.org,
+ Michal Hocko <mhocko@suse.com>, linux-ia64@vger.kernel.org,
+ Pavel Tatashin <pasha.tatashin@soleen.com>, linux-sh@vger.kernel.org,
+ Mathieu Malaterre <malat@debian.org>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ linux-kernel@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
+ linux-mm@kvack.org, Arun KS <arunks@codeaurora.org>, Qian Cai <cai@lca.pw>,
  Igor Mammedov <imammedo@redhat.com>, akpm@linux-foundation.org,
- linuxppc-dev@lists.ozlabs.org
+ linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 01:11:48PM +0200, David Hildenbrand wrote:
->Only memory to be added to the buddy and to be onlined/offlined by
->user space using /sys/devices/system/memory/... needs (and should have!)
->memory block devices.
+On Mon, May 27, 2019 at 01:11:49PM +0200, David Hildenbrand wrote:
+>No longer needed, the callers of arch_add_memory() can handle this
+>manually.
 >
->Factor out creation of memory block devices. Create all devices after
->arch_add_memory() succeeded. We can later drop the want_memblock parameter,
->because it is now effectively stale.
->
->Only after memory block devices have been added, memory can be onlined
->by user space. This implies, that memory is not visible to user space at
->all before arch_add_memory() succeeded.
->
->While at it
->- use WARN_ON_ONCE instead of BUG_ON in moved unregister_memory()
->- introduce find_memory_block_by_id() to search via block id
->- Use find_memory_block_by_id() in init_memory_block() to catch
->  duplicates
-
-Generally looks good to me besides two tiny comments.
-
->
->Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
->Cc: "Rafael J. Wysocki" <rafael@kernel.org>
->Cc: David Hildenbrand <david@redhat.com>
->Cc: "mike.travis@hpe.com" <mike.travis@hpe.com>
 >Cc: Andrew Morton <akpm@linux-foundation.org>
->Cc: Ingo Molnar <mingo@kernel.org>
->Cc: Andrew Banman <andrew.banman@hpe.com>
->Cc: Oscar Salvador <osalvador@suse.de>
+>Cc: David Hildenbrand <david@redhat.com>
 >Cc: Michal Hocko <mhocko@suse.com>
+>Cc: Oscar Salvador <osalvador@suse.com>
 >Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
->Cc: Qian Cai <cai@lca.pw>
 >Cc: Wei Yang <richard.weiyang@gmail.com>
+>Cc: Joonsoo Kim <iamjoonsoo.kim@lge.com>
+>Cc: Qian Cai <cai@lca.pw>
 >Cc: Arun KS <arunks@codeaurora.org>
 >Cc: Mathieu Malaterre <malat@debian.org>
 >Signed-off-by: David Hildenbrand <david@redhat.com>
+
+Reviewed-by: Wei Yang <richardw.yang@linux.intel.com>
+
 >---
-> drivers/base/memory.c  | 82 +++++++++++++++++++++++++++---------------
-> include/linux/memory.h |  2 +-
-> mm/memory_hotplug.c    | 15 ++++----
-> 3 files changed, 63 insertions(+), 36 deletions(-)
+> include/linux/memory_hotplug.h | 8 --------
+> mm/memory_hotplug.c            | 9 +++------
+> 2 files changed, 3 insertions(+), 14 deletions(-)
 >
->diff --git a/drivers/base/memory.c b/drivers/base/memory.c
->index ac17c95a5f28..5a0370f0c506 100644
->--- a/drivers/base/memory.c
->+++ b/drivers/base/memory.c
->@@ -39,6 +39,11 @@ static inline int base_memory_block_id(int section_nr)
-> 	return section_nr / sections_per_block;
-> }
+>diff --git a/include/linux/memory_hotplug.h b/include/linux/memory_hotplug.h
+>index 2d4de313926d..2f1f87e13baa 100644
+>--- a/include/linux/memory_hotplug.h
+>+++ b/include/linux/memory_hotplug.h
+>@@ -128,14 +128,6 @@ extern void arch_remove_memory(int nid, u64 start, u64 size,
+> extern void __remove_pages(struct zone *zone, unsigned long start_pfn,
+> 			   unsigned long nr_pages, struct vmem_altmap *altmap);
 > 
->+static inline int pfn_to_block_id(unsigned long pfn)
->+{
->+	return base_memory_block_id(pfn_to_section_nr(pfn));
->+}
->+
-> static int memory_subsys_online(struct device *dev);
-> static int memory_subsys_offline(struct device *dev);
-> 
->@@ -582,10 +587,9 @@ int __weak arch_get_memory_phys_device(unsigned long start_pfn)
->  * A reference for the returned object is held and the reference for the
->  * hinted object is released.
->  */
->-struct memory_block *find_memory_block_hinted(struct mem_section *section,
->-					      struct memory_block *hint)
->+static struct memory_block *find_memory_block_by_id(int block_id,
->+						    struct memory_block *hint)
-> {
->-	int block_id = base_memory_block_id(__section_nr(section));
-> 	struct device *hintdev = hint ? &hint->dev : NULL;
-> 	struct device *dev;
-> 
->@@ -597,6 +601,14 @@ struct memory_block *find_memory_block_hinted(struct mem_section *section,
-> 	return to_memory_block(dev);
-> }
-> 
->+struct memory_block *find_memory_block_hinted(struct mem_section *section,
->+					      struct memory_block *hint)
->+{
->+	int block_id = base_memory_block_id(__section_nr(section));
->+
->+	return find_memory_block_by_id(block_id, hint);
->+}
->+
-> /*
->  * For now, we have a linear search to go find the appropriate
->  * memory_block corresponding to a particular phys_index. If
->@@ -658,6 +670,11 @@ static int init_memory_block(struct memory_block **memory, int block_id,
-> 	unsigned long start_pfn;
-> 	int ret = 0;
-> 
->+	mem = find_memory_block_by_id(block_id, NULL);
->+	if (mem) {
->+		put_device(&mem->dev);
->+		return -EEXIST;
->+	}
-
-find_memory_block_by_id() is not that close to the main idea in this patch.
-Would it be better to split this part?
-
-> 	mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> 	if (!mem)
-> 		return -ENOMEM;
->@@ -699,44 +716,53 @@ static int add_memory_block(int base_section_nr)
-> 	return 0;
-> }
-> 
->+static void unregister_memory(struct memory_block *memory)
->+{
->+	if (WARN_ON_ONCE(memory->dev.bus != &memory_subsys))
->+		return;
->+
->+	/* drop the ref. we got via find_memory_block() */
->+	put_device(&memory->dev);
->+	device_unregister(&memory->dev);
->+}
->+
-> /*
->- * need an interface for the VM to add new memory regions,
->- * but without onlining it.
->+ * Create memory block devices for the given memory area. Start and size
->+ * have to be aligned to memory block granularity. Memory block devices
->+ * will be initialized as offline.
->  */
->-int hotplug_memory_register(int nid, struct mem_section *section)
->+int create_memory_block_devices(unsigned long start, unsigned long size)
-> {
->-	int block_id = base_memory_block_id(__section_nr(section));
->-	int ret = 0;
->+	const int start_block_id = pfn_to_block_id(PFN_DOWN(start));
->+	int end_block_id = pfn_to_block_id(PFN_DOWN(start + size));
-> 	struct memory_block *mem;
->+	unsigned long block_id;
->+	int ret = 0;
-> 
->-	mutex_lock(&mem_sysfs_mutex);
->+	if (WARN_ON_ONCE(!IS_ALIGNED(start, memory_block_size_bytes()) ||
->+			 !IS_ALIGNED(size, memory_block_size_bytes())))
->+		return -EINVAL;
-> 
->-	mem = find_memory_block(section);
->-	if (mem) {
->-		mem->section_count++;
->-		put_device(&mem->dev);
->-	} else {
->+	mutex_lock(&mem_sysfs_mutex);
->+	for (block_id = start_block_id; block_id != end_block_id; block_id++) {
-> 		ret = init_memory_block(&mem, block_id, MEM_OFFLINE);
-> 		if (ret)
->-			goto out;
->-		mem->section_count++;
->+			break;
->+		mem->section_count = sections_per_block;
->+	}
->+	if (ret) {
->+		end_block_id = block_id;
->+		for (block_id = start_block_id; block_id != end_block_id;
->+		     block_id++) {
->+			mem = find_memory_block_by_id(block_id, NULL);
->+			mem->section_count = 0;
->+			unregister_memory(mem);
->+		}
-> 	}
-
-Would it be better to do this in reverse order?
-
-And unregister_memory() would free mem, so it is still necessary to set
-section_count to 0?
-
+>-/*
+>- * Do we want sysfs memblock files created. This will allow userspace to online
+>- * and offline memory explicitly. Lack of this bit means that the caller has to
+>- * call move_pfn_range_to_zone to finish the initialization.
+>- */
 >-
->-out:
-> 	mutex_unlock(&mem_sysfs_mutex);
-> 	return ret;
-> }
-> 
->-static void
->-unregister_memory(struct memory_block *memory)
->-{
->-	BUG_ON(memory->dev.bus != &memory_subsys);
+>-#define MHP_MEMBLOCK_API               (1<<0)
 >-
->-	/* drop the ref. we got via find_memory_block() */
->-	put_device(&memory->dev);
->-	device_unregister(&memory->dev);
->-}
->-
-> void unregister_memory_section(struct mem_section *section)
-> {
-> 	struct memory_block *mem;
->diff --git a/include/linux/memory.h b/include/linux/memory.h
->index 474c7c60c8f2..db3e8567f900 100644
->--- a/include/linux/memory.h
->+++ b/include/linux/memory.h
->@@ -111,7 +111,7 @@ extern int register_memory_notifier(struct notifier_block *nb);
-> extern void unregister_memory_notifier(struct notifier_block *nb);
-> extern int register_memory_isolate_notifier(struct notifier_block *nb);
-> extern void unregister_memory_isolate_notifier(struct notifier_block *nb);
->-int hotplug_memory_register(int nid, struct mem_section *section);
->+int create_memory_block_devices(unsigned long start, unsigned long size);
-> extern void unregister_memory_section(struct mem_section *);
-> extern int memory_dev_init(void);
-> extern int memory_notify(unsigned long val, void *v);
+> /* reasonably generic interface to expand the physical pages */
+> extern int __add_pages(int nid, unsigned long start_pfn, unsigned long nr_pages,
+> 		       struct mhp_restrictions *restrictions);
 >diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
->index 4b9d2974f86c..b1fde90bbf19 100644
+>index b1fde90bbf19..9a92549ef23b 100644
 >--- a/mm/memory_hotplug.c
 >+++ b/mm/memory_hotplug.c
->@@ -259,13 +259,7 @@ static int __meminit __add_section(int nid, unsigned long phys_start_pfn,
-> 		return -EEXIST;
+>@@ -251,7 +251,7 @@ void __init register_page_bootmem_info_node(struct pglist_data *pgdat)
+> #endif /* CONFIG_HAVE_BOOTMEM_INFO_NODE */
 > 
-> 	ret = sparse_add_one_section(nid, phys_start_pfn, altmap);
->-	if (ret < 0)
->-		return ret;
->-
->-	if (!want_memblock)
->-		return 0;
->-
->-	return hotplug_memory_register(nid, __pfn_to_section(phys_start_pfn));
->+	return ret < 0 ? ret : 0;
-> }
+> static int __meminit __add_section(int nid, unsigned long phys_start_pfn,
+>-		struct vmem_altmap *altmap, bool want_memblock)
+>+				   struct vmem_altmap *altmap)
+> {
+> 	int ret;
 > 
-> /*
->@@ -1107,6 +1101,13 @@ int __ref add_memory_resource(int nid, struct resource *res)
-> 	if (ret < 0)
-> 		goto error;
+>@@ -294,8 +294,7 @@ int __ref __add_pages(int nid, unsigned long phys_start_pfn,
+> 	}
 > 
->+	/* create memory block devices after memory was added */
->+	ret = create_memory_block_devices(start, size);
->+	if (ret) {
->+		arch_remove_memory(nid, start, size, NULL);
->+		goto error;
->+	}
->+
-> 	if (new_node) {
-> 		/* If sysfs file of new node can't be created, cpu on the node
-> 		 * can't be hot-added. There is no rollback way now.
+> 	for (i = start_sec; i <= end_sec; i++) {
+>-		err = __add_section(nid, section_nr_to_pfn(i), altmap,
+>-				restrictions->flags & MHP_MEMBLOCK_API);
+>+		err = __add_section(nid, section_nr_to_pfn(i), altmap);
+> 
+> 		/*
+> 		 * EEXIST is finally dealt with by ioresource collision
+>@@ -1067,9 +1066,7 @@ static int online_memory_block(struct memory_block *mem, void *arg)
+>  */
+> int __ref add_memory_resource(int nid, struct resource *res)
+> {
+>-	struct mhp_restrictions restrictions = {
+>-		.flags = MHP_MEMBLOCK_API,
+>-	};
+>+	struct mhp_restrictions restrictions = {};
+> 	u64 start, size;
+> 	bool new_node = false;
+> 	int ret;
 >-- 
 >2.20.1
 
