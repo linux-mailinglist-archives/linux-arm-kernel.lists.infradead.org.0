@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40D6C3462C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:05:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2387234630
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Jun 2019 14:05:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=alJbmN1CtHEgRfAr/PmCUji/ZY2ZXWIpDj1gHhHPt0Q=; b=Y5haEoV505hdvb
-	v9G1bZBt4sx0xkw2lRhHrQhN+AdBC79mHMqJPbLyEjGWIYi6joJuKsXv0LD/trlicc65UA1t6v0qv
-	5g1X4NAVeONEpUubVUqj8nFAsHi87rUGOFf6VyzRQinRTqJ3jewPW4PTknIQn2+CeICNpeAMHwnBB
-	Xvkp1TefYkkbWgHawRWfnme72zhmNtdYRa8ImUEzVcZpaSBsWMgpzoZU6h8YTFTJEEbnkmFWD3pi5
-	hdQ6+tcp5jVz0zUAXlziyC92UlULDF8knTX5Rzi89CNkR8KtZzhv0KwRp/Fqes0GQMa/zr42L9shq
-	3HeCpDiVf6bwUE/DB/yw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DYV2wGUaMM6Hau6JKG6FUjne2QdSXWufRqhFiAP8yc0=; b=QWKkRVjs24W0XU
+	753LoRsfoFcHxcqxBBRNJ+gcwQt1bvDEkf1yPDMNFK3dacjr0EKS/yJNx1AMFVFa/UH7KETKkag6d
+	80H58SNEsfjIDeA9BxAZw6lXvXqIiwS37oDxwAgktBSXoJ9+/w80I5XtjmFvACwO2VqjpX+3mp8PB
+	rVKgcNgwNbhFhRFQPkK3AWLCjMHsOnOtEbP15sZy5sUnC3rlWMGtSF1mgN1hvi7/8H8rcDycu+AF8
+	CSbJ160mOdhYJicjlwa1+ovE5XgslQr978CNoLViEUt2ip2GlZIsvBboNbMxWI9MIcJte0YxIJnS4
+	q401HYQ8i6M1ngDxFGow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY8Bq-0000UG-Mt; Tue, 04 Jun 2019 12:05:18 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY8Be-0007oc-J2
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:05:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2AF3280D;
- Tue,  4 Jun 2019 05:05:03 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 348353F690;
- Tue,  4 Jun 2019 05:05:00 -0700 (PDT)
-Subject: Re: [PATCH v6 00/19] Unify vDSOs across more architectures
-To: Arnd Bergmann <arnd@arndb.de>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <CAK8P3a11DE0sXteZoaP_N=mDhx3tXitGKddn1ogtFqJBYO-SCA@mail.gmail.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <d96667d5-e43b-d33a-fbd0-5acfb4904316@arm.com>
-Date: Tue, 4 Jun 2019 13:04:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hY8C8-0000lA-S4; Tue, 04 Jun 2019 12:05:36 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hY8C0-0000jN-SA
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Jun 2019 12:05:30 +0000
+Received: by mail-pf1-x442.google.com with SMTP id c85so3774116pfc.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 05:05:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=j34LYUoJM4InkQPNFKh7Ow4BYIjL6/oVFRsfu7DIJqw=;
+ b=Q1qaT6guKN0cVPZ3I7m80z+l8td98w2uqIqeYi7AFZlLfwx0G3uMrYBq/J+BmnmOkM
+ atOxQZO2OZRPqsjN3jqBQv44CvwjPmxvlTBcPKmMi6XjoZEmV/fygK5lB45wakW1x509
+ lWKLza5Yda4CAzzaQyvI+9jrqysNJKJVvTJhllwO+UsWDQVgevJunQ8PW4WiDuXWRUXU
+ 7jLII5xQ27xFuA+YQ/J9v/BCfFu0O+m0Eo51qSbf6BhnxxvgwoGoytsvTWBHtF3OYNCG
+ 5xAYIJ3eDxoQdAcL8X0Di1QghLFbw2D39YI3GMMqxvSPlDl32yI9DfA4EynC+NBnx3BM
+ Md2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=j34LYUoJM4InkQPNFKh7Ow4BYIjL6/oVFRsfu7DIJqw=;
+ b=HZhytcbZRsZsMu/FH4U7EmanYwUfauoErcXL3lUBe7C57CVo5iDEyrsFOCbm7HJa1p
+ 3aMt9wDxsg0nWqVXvFF9yRCIVIZbc8ouapLLHVz+utzHABdpEDh1le9fLcKqo8dyYTUe
+ U24aNK4rRjSwwOOdZ+eNvh+0ZpZDfI3jysNuChURghPig3MQEReYzj9IQTfNWDwkGHLU
+ X5CcWIqZDb4AovW8nfiOvttOw0ekTlZUvo1PYODbMj++ccP8LWs7oLUMwFK/SHj3aqOm
+ 44BJpZo9dypp5nJNkhe/OZ3pjUHs/l2gD7mRfO0cdPBytvrHRuegW0ulBQm/J9JhfTy1
+ Xn6Q==
+X-Gm-Message-State: APjAAAWjJWI/ld32E7/r0V8tm3H2anWgdh1P5gUBFAdq/yph9ZluiOKY
+ +Ey4q9U+7x1Nvih29HRJWq1dKZSwjVSdMzSfM9jD+w==
+X-Google-Smtp-Source: APXvYqwvrt39xcYJfCMZYMz7iLhPbel6HsvYFhEAa8PCAaMa5qdXOZSee+ccpu58h4UkbZo4zcE90xOl7nDE7Qf6Y+o=
+X-Received: by 2002:a17:90a:2488:: with SMTP id
+ i8mr28700584pje.123.1559649927361; 
+ Tue, 04 Jun 2019 05:05:27 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a11DE0sXteZoaP_N=mDhx3tXitGKddn1ogtFqJBYO-SCA@mail.gmail.com>
-Content-Language: en-US
+References: <8ab5cd1813b0890f8780018e9784838456ace49e.1559648669.git.andreyknvl@google.com>
+ <d74b1621-70a2-94a0-e24b-dae32adc457d@amd.com>
+ <CAAeHK+w0_9QdxCJXEf=6nMgZpsb8NyrAaMO010Hh86TW75jJvw@mail.gmail.com>
+ <ff73058a-f57b-526b-af53-c0e30b7b1bc1@amd.com>
+In-Reply-To: <ff73058a-f57b-526b-af53-c0e30b7b1bc1@amd.com>
+From: Andrey Konovalov <andreyknvl@google.com>
+Date: Tue, 4 Jun 2019 14:05:16 +0200
+Message-ID: <CAAeHK+wfNbNz_AP8c4PqcpWXuLxx23D1coY0SS5ORM_tUewNFA@mail.gmail.com>
+Subject: Re: [PATCH] uaccess: add noop untagged_addr definition
+To: "Koenig, Christian" <Christian.Koenig@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_050506_920187_65BDEB2B 
-X-CRM114-Status: GOOD (  24.12  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190604_050528_909023_5600ECCC 
+X-CRM114-Status: GOOD (  18.34  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,117 +100,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Huw Davies <huw@codeweavers.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, linux-mips@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "sparclinux@vger.kernel.org" <sparclinux@vger.kernel.org>, "Kuehling,
+ Felix" <Felix.Kuehling@amd.com>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Lee Smith <Lee.Smith@arm.com>, "Deucher,
+ Alexander" <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+On Tue, Jun 4, 2019 at 1:49 PM Koenig, Christian
+<Christian.Koenig@amd.com> wrote:
+>
+> Am 04.06.19 um 13:48 schrieb Andrey Konovalov:
+> > On Tue, Jun 4, 2019 at 1:46 PM Koenig, Christian
+> > <Christian.Koenig@amd.com> wrote:
+> >> Am 04.06.19 um 13:44 schrieb Andrey Konovalov:
+> >>> Architectures that support memory tagging have a need to perform untagging
+> >>> (stripping the tag) in various parts of the kernel. This patch adds an
+> >>> untagged_addr() macro, which is defined as noop for architectures that do
+> >>> not support memory tagging. The oncoming patch series will define it at
+> >>> least for sparc64 and arm64.
+> >>>
+> >>> Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+> >>> Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
+> >>> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> >>> ---
+> >>>    include/linux/mm.h | 4 ++++
+> >>>    1 file changed, 4 insertions(+)
+> >>>
+> >>> diff --git a/include/linux/mm.h b/include/linux/mm.h
+> >>> index 0e8834ac32b7..949d43e9c0b6 100644
+> >>> --- a/include/linux/mm.h
+> >>> +++ b/include/linux/mm.h
+> >>> @@ -99,6 +99,10 @@ extern int mmap_rnd_compat_bits __read_mostly;
+> >>>    #include <asm/pgtable.h>
+> >>>    #include <asm/processor.h>
+> >>>
+> >>> +#ifndef untagged_addr
+> >>> +#define untagged_addr(addr) (addr)
+> >>> +#endif
+> >>> +
+> >> Maybe add a comment what tagging actually is? Cause that is not really
+> >> obvious from the context.
+> > Hi,
+> >
+> > Do you mean a comment in the code or an explanation in the patch description?
+>
+> The code, the patch description actually sounds good to me.
 
-thank you for your review.
+Sent v2, thanks!
 
-On 31/05/2019 09:46, Arnd Bergmann wrote:
-> On Thu, May 30, 2019 at 4:15 PM Vincenzo Frascino
-> <vincenzo.frascino@arm.com> wrote:
->>
->> vDSO (virtual dynamic shared object) is a mechanism that the Linux
->> kernel provides as an alternative to system calls to reduce where
->> possible the costs in terms of cycles.
->> This is possible because certain syscalls like gettimeofday() do
->> not write any data and return one or more values that are stored
->> in the kernel, which makes relatively safe calling them directly
->> as a library function.
-> 
-> Hi Vincento,
-> 
-> I've very happy with how this turned out overall, and as far as I can
-> tell you have addressed all my previous comments. I had another
-> look through the series and only noticed a few very minor issues.
-> 
-
-Thanks! I agree with what you pointed out in the single patches, I will wait for
-Thomas to review them as well and then will address all the comments in v7.
-
-...
-
-> 
-> One open question I touched in my review is whether we want to
-> have a vdso version of clock_getres() in all architectures or not.
-> I'd prefer to leave it out because there is very little advantage to
-> it over the system call (the results don't change at runtime and
-> can easily be cached by libc if performance ever matters), and
-> it takes up a small amount of memory for the implementation.
-> 
-
-I thought about it and I ended up with what proposed in this patchset mainly for
-symmetry across all the architectures since in the end they use the same common
-code.
-
-It seems also that there is some performance impact (i.e.):
-
-clock-getres-monotonic:    libc(system call): 296 nsec/call
-clock-getres-monotonic:    libc(vdso): 5 nsec/call
-
-
-I agree with you though when you say that caching it in the libc is a
-possibility to overcome the performance impact.
-
-> We shouldn't just need it for consistency because all callers
-> would require implementing a fallback to the system call
-> anyway, to deal with old kernels.
-> 
-
-A way to address this issue would be to use versioning, which seems supported in
-the vdso library (i.e. arch/x86/entry/vdso/vdso32/vdso32.lds.S).
-
-For example for x86 (vdso32) we would have something like:
-
-VERSION
-{
-	LINUX_5.3 (being optimistic here :) ) {
-	global:
-                __vdso_clock_getres;
-                __vdso_clock_gettime64;
-        };
-        LINUX_2.6 {
-        global:
-                __vdso_clock_gettime;
-                __vdso_gettimeofday;
-                __vdso_time;
-        };
-
-        LINUX_2.5 {
-        global:
-                __kernel_vsyscall;
-                __kernel_sigreturn;
-                __kernel_rt_sigreturn;
-        local: *;
-        };
-}
-
-What do you think? Would this be a viable solution?
-
-> If anyone comes up with a good reason why it should be added
-> after all, let me know and I'll stop mentioning it.
-> 
->       Arnd
-> 
-
--- 
-Regards,
-Vincenzo
+>
+> Christian.
+>
+> >
+> > Thanks!
+> >
+> >> Christian.
+> >>
+> >>>    #ifndef __pa_symbol
+> >>>    #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
+> >>>    #endif
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
