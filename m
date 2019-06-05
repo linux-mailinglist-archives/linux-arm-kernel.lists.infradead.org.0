@@ -2,70 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98E50357C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:33:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 820BF357E4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:34:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iRr7G7h/2la4xF0AaLGRj1DSDkQ8d/ifNh9wDCS3CUw=; b=K5LUpBaFnKHwCt
-	LkakFmSFwVojgwpxgOFoW0MmkZ3mwoV2FS8qR5/dn+CgYHzWJIrr33S+/1A1mQfVYj11Sfn5qcb31
-	jutY//yKmYojTEeUnwcQy0YHei83j7t6O6roMVkUbHA7jz4wf3Com6EKUXCGc3EDgLW+QXLr/zZwp
-	BbIPr6jlecWXSY4JC7axByqTUyOMhnrzp6DfZevUNDO1LD2box5RJ4blg2O2rl06TA2iFF13sXy1V
-	y2Xl630Q8Sgz2BXgFtHMzohSLRoYXGHPQo6Dz9/8qtsviHUBe3Sf4izUDOkTMwPd3ICAl6Wov815G
-	6oS76YKihwsXSz6uJo+g==;
+	List-Owner; bh=52NXOwkdyclPOPYZyseeGatsWiZ6ZYDT+IC13vitVdg=; b=Vchv2kA7WBRtMn
+	xdLi5vy3wtpOMqMry7z2lGCgEsMmU1nTL7UjBO+GdbsdqvagtRB9BA3uYkoAPnWjjoyLtq6F4fHe3
+	UwMd1DViI8b/1to+AWZk0gBLPtlXMxylthuHtfUBE5zhktoXh+JKuid1xXKHS/2lwCizP534aWJKV
+	QShVUU3dGiAB1RH5KX7MiinR8S7eTZ1bBM1oKttjkpY/uOLsYpIEjwRXRfijSHpNHreZrTbc4FTZJ
+	liA1scAtqMcI/Wl2FAtLyw+6ofB3cj8wTZ5v6Mu3BBqqse0fonYrEvwqGZ0Xkaeb0XVmMkIj0ItAc
+	a5E3PCPeoL7sCcO/6Cnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYQQL-0002vK-I9; Wed, 05 Jun 2019 07:33:29 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hYQQu-0003cz-Vz; Wed, 05 Jun 2019 07:34:05 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYQQC-0002uF-Hl
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:33:22 +0000
-Received: by mail-wr1-x444.google.com with SMTP id p11so13502858wre.7
+ id 1hYQQl-0003au-PH
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:33:57 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 22so1146292wmg.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 00:33:19 -0700 (PDT)
+ Wed, 05 Jun 2019 00:33:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=YPTS2xsh/hjYhEwvFzk/oKxMOw+hBEU6i+VA4Oa4RAA=;
- b=OrDK30H7kdT91LanmOxKm6qvImDyBgxCkbY4O9EqOoQfk5Y3p34xYg8bTwbWBNfb1e
- PwcKk44UE8KI63vCyDylyHJRFIGFVUQi0cZFTW0dRanSaYctxR3UwsGv+OA3Qb16HBmX
- 7MEuT7qgpFmQ7bY1MmdI/Hi+KN188zRf0KC9OcetZvyoexXM7zxSx0pYx5h1c/z58Kbf
- YI1Kv/msOOjZNXjizqlJkkSWf2AGmtHNvKwPZImHnwWUGCfUCJeuns4OQa5jQtgdZ6pa
- xpwnHCqb/t1nEllKcZVnkZ9rkFGl9Ik/SqYnXWcSSiKhp08G057yLONF0XoEXZQCgo8V
- 59iA==
+ bh=r/1g08aN72nLPoOQCgYhRuR32Th4NUdsdnYajwDb+xo=;
+ b=YXK/puEY6vFJMi/ZdVIGlLHtHsM3olrf2we0uPmy5aB2jmgXiuw0z7vV8aP0k+OZVM
+ MvP/xdG8FcB+t2EoiWCl3rDiANHhdWlF1rr/RqIBthtJVGfyh+cXF94BTFU8FJsfV5oC
+ K+iflc5faXfJCZ4Yj9zllPLzlHSUo75TiBxRys7fRu5MwZBe5YVFLBFnjzKzN1/QK9fa
+ cSxCXADFrzm+JRg8rMgHlPClJF8wgfD31UMhk9DHB9EfkmCyoUYfBK/VQwbC6NL7hdei
+ Arjg0Y7sUfR3Z9MAvCeLs13IKaomdiOnGMGMp8xHcTC6dH8+/6g45ISa+m0gDaUWzm3J
+ 4L8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=YPTS2xsh/hjYhEwvFzk/oKxMOw+hBEU6i+VA4Oa4RAA=;
- b=aFQTvMxHyzv0Iu/T4rpajoL0JpciLiPMneWGQkQHulHTBGKJgMROI9nQ94kKQOe45O
- W0zrKLBqNniTP3Ngo7PYVSohrU5d844Bgm+n5H1qdN2MQSGZ2TrLZQEw+TcyMfzZvQwt
- mo50Z6V8vvFGeToGNwGSjUJI2jTToEusDpXH65HOMF6jF1zijnR2U7/TxerMdbAxgDIb
- Ggf73ZBD59uXX9+4oyhQCqolRiP97Aic29Qz0dZt0X7krfZgrz4FsiYmQLTCQeWbZUOJ
- iBMVE3mpFfHG4iaKepHOzyiLZG+3TnV8QH8mCGv4wG0oYQQbUArcdhkB5omKqmxYVOVh
- ++Jg==
-X-Gm-Message-State: APjAAAX3jTnHxOBR3jqK6JyjdRzSHXaiEUf7jVd0bhGKvCSoY52l7pHZ
- AFiuzIt02ZbIPfy5Gq9TaLx5GaTD5DT7xA==
-X-Google-Smtp-Source: APXvYqw6UQCWXoI8gZfmDti0iTUpqFLPKezjP1/itouqgj21d7bWBCgUBJOyenF1OlqErQGXQ4h1nQ==
-X-Received: by 2002:a5d:4b4a:: with SMTP id w10mr7742698wrs.337.1559719998098; 
- Wed, 05 Jun 2019 00:33:18 -0700 (PDT)
+ bh=r/1g08aN72nLPoOQCgYhRuR32Th4NUdsdnYajwDb+xo=;
+ b=ZRdSftrhek89d/EZfL/VM4NxUI+TgpbFVAdqpTg9EVhlffH9PKO1LQCoI/5AOgrXfm
+ xN/dxN//6nOVdFRtyEFleg5cAOFL78ReA/1Du50+QcyAtM83d3Edq53nr43ojecfZXC8
+ 4zaTWsBWrYCn2+nWUYbPaRjK/9pO+Ll5PAYHwHGksnWRyiYgY8cIuKJNKD/Qdn1lhH8F
+ FLpspejgSg0tbHOmXCSwicu3Ws2JJtBRJm21u3IYm0hs+zj0jM0l1/TDdC+M0MShdlB/
+ BuhbWpudpNmxcIF9au8WDxJUtg6o4XxkI38g/6IZflfu+s1aJ79mReVrqHC24ZNmhR01
+ XVKQ==
+X-Gm-Message-State: APjAAAVx9Zd8z+aNqlNX6h1m6LTdBg6rtWn0acgO4qlaEoUIBDvyrR3V
+ AX3+YTjvNlH0UWsVJiN39829T1E062BNtw==
+X-Google-Smtp-Source: APXvYqwYahS0HiHiNb3L+F7q8Kw6vOZNq+sVlLeB/Nk1ohCtV9ocdNcdRulSxRlMZMRrW45ktqiEDw==
+X-Received: by 2002:a1c:9c08:: with SMTP id f8mr3412087wme.143.1559720034030; 
+ Wed, 05 Jun 2019 00:33:54 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id o3sm21074475wmo.6.2019.06.05.00.33.17
+ by smtp.gmail.com with ESMTPSA id b2sm7609802wrp.72.2019.06.05.00.33.53
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 00:33:17 -0700 (PDT)
-Subject: Re: [PATCH v5 3/3] arm64: dts: meson: Add minimal support for
- Odroid-N2
-To: Anand Moon <linux.amoon@gmail.com>
-References: <20190603091008.2382-1-narmstrong@baylibre.com>
- <20190603091008.2382-4-narmstrong@baylibre.com>
- <CANAwSgT964PY6OMkS-hoqBf39Np99-tzfGbpXGdLtxF600eDtQ@mail.gmail.com>
+ Wed, 05 Jun 2019 00:33:53 -0700 (PDT)
+Subject: Re: [PATCH 1/4] arm64: dts: meson: g12a: add SDIO controller
+To: Kevin Hilman <khilman@baylibre.com>
+References: <20190603100357.16799-1-narmstrong@baylibre.com>
+ <20190603100357.16799-2-narmstrong@baylibre.com>
+ <7hzhmygs9q.fsf@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -118,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <f1013078-5964-640e-de7a-4ad8b91ed005@baylibre.com>
-Date: Wed, 5 Jun 2019 09:33:16 +0200
+Message-ID: <e7da9888-a496-f39d-8a35-2da98450c200@baylibre.com>
+Date: Wed, 5 Jun 2019 09:33:52 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <CANAwSgT964PY6OMkS-hoqBf39Np99-tzfGbpXGdLtxF600eDtQ@mail.gmail.com>
+In-Reply-To: <7hzhmygs9q.fsf@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_003320_641747_589B7F36 
-X-CRM114-Status: GOOD (  21.43  )
+X-CRM114-CacheID: sfid-20190605_003355_819250_D6B14A2B 
+X-CRM114-Status: GOOD (  12.75  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -152,150 +151,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-amlogic@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/06/2019 14:00, Anand Moon wrote:
-> Hi Niel,
+On 04/06/2019 01:31, Kevin Hilman wrote:
+> Neil Armstrong <narmstrong@baylibre.com> writes:
 > 
-> On Mon, 3 Jun 2019 at 14:41, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>> From: Jerome Brunet <jbrunet@baylibre.com>
 >>
->> This patch adds basic support for :
->> - Amlogic G12B, which is very similar to G12A
->> - The HardKernel Odroid-N2 based on the S922X SoC
+>> The Amlogic G12A SDIO Controller has a bug preventing direct DDR access,
+>> add the port A (SDIO) pinctrl and controller nodes and mark this specific
+>> controller with the amlogic,dram-access-quirk property.
 >>
->> The Amlogic G12B SoC is very similar with the G12A SoC, sharing
->> most of the features and architecture, but with these differences :
->> - The first CPU cluster only has 2xCortex-A53 instead of 4
->> - G12B has a second cluster of 4xCortex-A73
->> - Both cluster can achieve 2GHz instead of 1,8GHz for G12A
->> - CPU Clock architecture is difference, thus needing a different
->>   compatible to handle this slight difference
->> - Supports a MIPI CSI input
->> - Embeds a Mali-G52 instead of a Mali-G31, but integration is the same
->>
->> Actual support is done in the same way as for the GXM support, including
->> the G12A dtsi and redefining the CPU clusters.
->> Unlike GXM, the first cluster is different, thus needing to remove
->> the last 2 cpu nodes of the first cluster.
->>
+>> Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
 >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
->> ---
->>  arch/arm64/boot/dts/amlogic/Makefile          |   1 +
->>  .../boot/dts/amlogic/meson-g12b-odroid-n2.dts | 289 ++++++++++++++++++
->>  arch/arm64/boot/dts/amlogic/meson-g12b.dtsi   |  82 +++++
->>  3 files changed, 372 insertions(+)
->>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
->>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
->>
->> diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
->> index e129c03ced14..07b861fe5fa5 100644
->> --- a/arch/arm64/boot/dts/amlogic/Makefile
->> +++ b/arch/arm64/boot/dts/amlogic/Makefile
->> @@ -3,6 +3,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-axg-s400.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-sei510.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-u200.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-x96-max.dtb
->> +dtb-$(CONFIG_ARCH_MESON) += meson-g12b-odroid-n2.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-nanopi-k2.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-nexbox-a95x.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-gxbb-odroidc2.dtb
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
->> new file mode 100644
->> index 000000000000..161d8f0ff4f3
->> --- /dev/null
->> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
->> @@ -0,0 +1,289 @@
->> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->> +/*
->> + * Copyright (c) 2019 BayLibre, SAS
->> + * Author: Neil Armstrong <narmstrong@baylibre.com>
->> + */
->> +
->> +/dts-v1/;
->> +
->> +#include "meson-g12b.dtsi"
->> +#include <dt-bindings/input/input.h>
->> +#include <dt-bindings/gpio/meson-g12a-gpio.h>
->> +
->> +/ {
->> +       compatible = "hardkernel,odroid-n2", "amlogic,g12b";
->> +       model = "Hardkernel ODROID-N2";
->> +
->> +       aliases {
->> +               serial0 = &uart_AO;
->> +               ethernet0 = &ethmac;
->> +       };
->> +
-
-[...]
-
->> +
->> +       main_12v: regulator-main_12v {
->> +               compatible = "regulator-fixed";
->> +               regulator-name = "12V";
->> +               regulator-min-microvolt = <12000000>;
->> +               regulator-max-microvolt = <12000000>;
->> +               regulator-always-on;
->> +       };
->> +
->> +       vcc_5v: regulator-vcc_5v {
->> +               compatible = "regulator-fixed";
->> +               regulator-name = "5V";
->> +               regulator-min-microvolt = <5000000>;
->> +               regulator-max-microvolt = <5000000>;
->> +               regulator-always-on;
 > 
-> As per odroid-n2_rev0.4_20190307 schematic its missing.
->                   vin-supply =  <&main_12v>;
+> I'm assuming this one should replace the one that was already sent with
+> the MMC quirks series?  Or maybe they identical (other than diff context?)
 > 
-> With this please add my.
-> Tested-by: Anand Moon <linux.amoon@gmail.com>
+> Kevin
+> 
 
-Good catch, thanks Anand.
-
-@Kevin, should I resend ?
+It's the same one but rebased on v5.3/dt64
 
 Neil
-
-> 
-> Best Regards
-> -Anand
->> +       };
->> +
->> +       vcc_1v8: regulator-vcc_1v8 {
->> +               compatible = "regulator-fixed";
->> +               regulator-name = "VCC_1V8";
->> +               regulator-min-microvolt = <1800000>;
->> +               regulator-max-microvolt = <1800000>;
->> +               vin-supply = <&vcc_3v3>;
->> +               regulator-always-on;
->> +       };
->> +
-
-[...]
-
->> +
->> +&clkc {
->> +       compatible = "amlogic,g12b-clkc";
->> +};
->> --
->> 2.21.0
->>
->>
->> _______________________________________________
->> linux-amlogic mailing list
->> linux-amlogic@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-amlogic
-
 
 _______________________________________________
 linux-arm-kernel mailing list
