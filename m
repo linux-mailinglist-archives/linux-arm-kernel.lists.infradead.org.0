@@ -2,55 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A416C36450
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 21:11:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A456536460
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 21:15:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y7mldgiBusbP1gLoHnN057fAuaQQEMGpdqNI0FIAyt0=; b=BPoSVTE94kqDVbxzRblTpNX++
-	+nufV/Suy4WMHDtGgOn/0ukwiP1FD9IPjIYwhC6icgnE2q8Q/UhB+W/B97QBP6ZUckFbcGjXxcpkO
-	FbZMQl1qdi+xBS1AFRBHsenWeAJniL+DP4PUJUs98pQFX0s6CYYI+M+mSOyqW8819O7j/LFvMivZc
-	ryCEeroFjXeIFkkIcTk4zbWlfqjMrF6wpPgwBzX9qGcsN5r/84uFRW8mPTR4yi3P3QPacTYWNUn0l
-	87j5oxWcnpjgXw3JLZzkAlMOaDPSnoMi//QYzBWGjj0DKyWyYs2OA5jzNPT0w+amCYJy8bLZNjAO6
-	dosNr1G4w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E1kMuM9SMwnRweYGDph2zyCmPEJCxP0QPHV8RwxeYuA=; b=CLFxGpHmV223SU
+	5TXa5rvPLFqEfLVLV1lyt+GMTxBrOnS5t9/FYwcUL7tl7Yjh+ij4lSMMkjYyuPZWcP1b08DUSDdKg
+	5G7jkDmSwzE9ZeLDs7BSRhG/DTr8UrgwkPJyWrxjx+NLXKz0QJPYs5FbbFv2FZuI+d/tew/WTMZce
+	LZG97gOAoeuHoUaNN9zIvHSU/u5GdzZMruYX5MqgOGDUoYGLor6ksp0Lq2qSNbRywCURUq4QQ/imh
+	kCh2ZAcLvOinISVqIgSl73FM+/u5TqDF2lowGa7QjOVLipKodQ7Cs0CF1TxUGeGK+G6SHMRBIjMze
+	ElBeZHcnHTEjlHfmPnqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYbJh-0000Ld-NQ; Wed, 05 Jun 2019 19:11:21 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1hYbNL-0000kQ-RS; Wed, 05 Jun 2019 19:15:07 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYbJa-0000LE-Ak; Wed, 05 Jun 2019 19:11:16 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 9FC83AF0C;
- Wed,  5 Jun 2019 19:11:10 +0000 (UTC)
-Message-ID: <6f40f43ed32c5c519761879245423f7c371e4ae6.camel@suse.de>
-Subject: Re: [PATCH 0/4] cpufreq support for the Raspberry Pi
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, linux-rpi-kernel@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
-Date: Wed, 05 Jun 2019 21:11:06 +0200
-In-Reply-To: <1c9708c9-a3c9-8a8f-4693-8f29d3e60634@gmx.net>
-References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
- <2ece3f20-ef8c-c39e-941c-76635ddbe185@gmx.net>
- <1a86637dad1d2f33450950143a82016beb91bdb6.camel@suse.de>
- <1c9708c9-a3c9-8a8f-4693-8f29d3e60634@gmx.net>
-User-Agent: Evolution 3.32.2 
+ id 1hYbNB-0000k1-3b
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 19:14:58 +0000
+Received: by mail-pl1-x644.google.com with SMTP id i2so5705060plt.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 12:14:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3Rc60lsJ3z1zOjfi7ksD28e6ywcaQlCBCKfGl8ThP5g=;
+ b=wl9zOlVGzsak3W0n9srNqt6xTicaVMXyvuV62ylpgplp0YgPU7AxCF2aoOl4RB2iC5
+ 6cPYPEmWEcxRkhSQT57mRJKRMLXCedtcqKwMwsOGUFlinvg03O+6j6DGB/fUMSIL09V+
+ wbvrFegoqrdRMWReviAaArKT1XKDv7Q3UdZInx0oUItNDGwcSfHj0y3P/XbhDxVRBZ0D
+ 1yCB6OValT1P7bMoLKXsiTopYfc7JTB1ixy+cTPwWdKa2YzQE2Wk+wXa6s4NUj8y8Dfc
+ D9FBIWE1C6kkbzPxlvNmqGmNa6Z9G3Xpa+E2YU9W+JqS/kkBUZJxb5rYvg85KIW0DsTX
+ h0Mw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3Rc60lsJ3z1zOjfi7ksD28e6ywcaQlCBCKfGl8ThP5g=;
+ b=K0zcM7Q0bnjxIcM2rXztUKJonJEVMOHJBv/tT6Ls4j0a/+jqXqZfugOpuS9pav3lUW
+ Y53wbCk/DJKoaY7n5BKnDk+CZP5oUgig5plihMT5NP5OS/Y6miimhd/dbx2ztppjPH9k
+ kv5rkhMYG3ib3gbjPnEh7sZr/xmC1xteAPqJGhdpfodxpoX9ul/pbEyOOuoEfkeoymud
+ SLC2MYFmEvsI54OJWLeFySNe0m21D5cNdumcWTbtf6amUOTWTBE2hkRAsKsfhTuC+QCT
+ B0qdXlwwsdYaUlZmH2sD6/H0kSSHjzzIJhWDFg6uZt2baPa3wJFJlg5bd7hvNhjeiZSC
+ pq7w==
+X-Gm-Message-State: APjAAAWH2hx0mr3NqIfBtkao0JKNTTA95SGjmGIII+SojuC3IK+0OVtV
+ Sw+TUj4oVN3SYv5308JEZp77mQ==
+X-Google-Smtp-Source: APXvYqz+h4aRHxX//DbbKSqnGBRk+YbQMFSEIS2PAURYu4NSWDUnLwqSRo+mFseHlHHDfgCMaf9Iyw==
+X-Received: by 2002:a17:902:2ba7:: with SMTP id
+ l36mr45371487plb.334.1559762096439; 
+ Wed, 05 Jun 2019 12:14:56 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id t15sm21182517pjb.6.2019.06.05.12.14.55
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 05 Jun 2019 12:14:55 -0700 (PDT)
+Date: Wed, 5 Jun 2019 12:14:53 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH 7/8] usb: dwc3: qcom: Start USB in 'host mode' on the
+ SDM845
+Message-ID: <20190605191453.GJ4814@minitux>
+References: <20190604104455.8877-1-lee.jones@linaro.org>
+ <20190604104455.8877-7-lee.jones@linaro.org>
+ <20190605070029.GN22737@tuxbook-pro> <20190605083454.GO4797@dell>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190605083454.GO4797@dell>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_121114_656300_5B37F6A2 
-X-CRM114-Status: GOOD (  24.48  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190605_121457_407330_E3A4E1EA 
+X-CRM114-Status: GOOD (  31.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,145 +102,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, ptesarik@suse.com, sboyd@kernel.org,
- viresh.kumar@linaro.org, mturquette@baylibre.com, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
-Content-Type: multipart/mixed; boundary="===============8441175972218786873=="
+Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
+ gregkh@linuxfoundation.org, linus.walleij@linaro.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ david.brown@linaro.org, alokc@codeaurora.org, kramasub@codeaurora.org,
+ linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed 05 Jun 01:34 PDT 2019, Lee Jones wrote:
 
---===============8441175972218786873==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-PJNAuTBnger31MKfSUoC"
+> On Wed, 05 Jun 2019, Bjorn Andersson wrote:
+> 
+> > On Tue 04 Jun 03:44 PDT 2019, Lee Jones wrote:
+> > 
+> > > When booting with Device Tree, the current default boot configuration
+> > > table option, the request to boot via 'host mode' comes from the
+> > > "dr_mode" property.
+> > 
+> > This has been the default on the MTP, but this is changing as this is
+> > causing issues when connected downstream from a hub (the typical
+> > development case for the primary USB port of a phone like device) and
+> > more importantly we don't have support for the PMIC blocks that control
+> > VBUS.
+> 
+> My point is not about which mode is currently chosen.  It's more about
+> the capability of choosing which mode is appropriate for a given
+> system via DT.
+> 
+> > Once these issues are resolved the dr_mode would be "otg".
+> 
+> OTG doesn't work on this H/W, so we need to specify "host" mode.
+> 
 
+My objection is that when you say "this H/W" you mean a particular
+product, but you're making this decision for all SDM845 based products
+using ACPI.
 
---=-PJNAuTBnger31MKfSUoC
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+I don't know if there is a Windows phone based on SDM845, but if there
+is then I don't think forcing it to host would be correct.
 
-On Wed, 2019-06-05 at 13:34 +0200, Stefan Wahren wrote:
-> Hi,
->=20
-> Am 05.06.19 um 13:00 schrieb Nicolas Saenz Julienne:
-> > Hi Stefan,
-> > thanks for the review, I took note of your code comments.
-> >=20
-> > On Wed, 2019-06-05 at 11:46 +0200, Stefan Wahren wrote:
-> > > Hi Nicolas,
-> > >=20
-> > > Am 04.06.19 um 19:32 schrieb Nicolas Saenz Julienne:
-> > > > Hi all,
-> > > > this series aims at adding cpufreq support to the Raspberry Pi fami=
-ly of
-> > > > boards.
-> > > >=20
-> > > > The previous revision can be found at:=20
-> > > > https://lkml.org/lkml/2019/5/20/431
-> > > >=20
-> > > > The series first factors out 'pllb' from clk-bcm2385 and creates a =
-new
-> > > > clk driver that operates it over RPi's firmware interface[1]. We ar=
-e
-> > > > forced to do so as the firmware 'owns' the pll and we're not allowe=
-d to
-> > > > change through the register interface directly as we might race wit=
-h the
-> > > > over-temperature and under-voltage protections provided by the firm=
-ware.
-> > > it would be nice to preserve such design decision in the driver as a
-> > > comment, because the cover letter usually get lost.
-> > > > Next it creates a minimal cpufreq driver that populates the CPU's o=
-pp
-> > > > table, and registers cpufreq-dt. Which is needed as the firmware
-> > > > controls the max and min frequencies available.
-> > > I tested your series on top of Linux 5.2-rc1 with multi_v7_defconfig =
-and
-> > > manually enable this drivers. During boot with Raspbian rootfs i'm
-> > > getting the following:
-> > >=20
-> > > [    1.177009] cpu cpu0: failed to get clock: -2
-> > > [    1.183643] cpufreq-dt: probe of cpufreq-dt failed with error -2
-> > This is surprising, who could be creating a platform_device for cpufreq=
--dt
-> > apart from raspberrypi-cpufreq? Just to make things clear, you're using=
- the
-> > device tree from v5.2-rc1 (as opposed to the Raspbian one)?
->=20
-> sorry my fault, i thought it already has been replaced. The behavior in
-> this unexpected case is fine, since it doesn't crash.
->=20
-> I replaced the the DTB with the mainline one, but now i'm getting this:
->=20
-> [    4.566068] cpufreq: cpufreq_online: CPU0: Running at unlisted freq:
-> 600000 KHz
-> [    4.580690] cpu cpu0: dev_pm_opp_set_rate: Invalid target frequency 0
-> [    4.594391] cpufreq: __target_index: Failed to change cpu frequency: -=
-22
+> > > A property of the same name can be used inside
+> > > ACPI tables too.  However it is missing from the SDM845's ACPI tables
+> > > so we have to supply this information using Platform Device Properites
+> > > instead.
+> > > 
+> > 
+> > Afaict this would install a fall-back property, so in the case that we
+> > have specified dr_mode in DT (or ACPI) that would take precedence. So
+> 
+> That's correct.
+> 
+> > the commit message should reflect that this redefines the default choice
+> > to be "host", rather than "otg".
+> 
+> No problem.
+> 
+> > Which is in conflict with what's described for dr_mode in
+> > Documentation/devicetree/bindings/usb/generic.txt
+> 
+> This implementation only affects ACPI based platforms.  When booting
+> with DT, the description in that DT related document is still
+> accurate.
+> 
 
-For the record this fixes it:
+You're right, I got lost between the patches and the sprinkled if
+(ACPI_HANDLE()) in the probe. This is only added for ACPI.
 
-diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-index aa51756fd4d6..edb71eefe9cf 100644
---- a/drivers/clk/clk.c
-+++ b/drivers/clk/clk.c
-@@ -1293,7 +1293,7 @@ static int clk_core_determine_round_nolock(struct clk=
-_core
-*core,
-        } else if (core->ops->round_rate) {
-                rate =3D core->ops->round_rate(core->hw, req->rate,
-                                             &req->best_parent_rate);
--               if (rate < 0)
-+               if (IS_ERR_VALUE(rate))
-                        return rate;
+> > And this driver is used on a range of different Qualcomm platforms, so I
+> > don't think this is SDM845 specific.
+> 
+> ACPI based platforms?
+> 
+> All the ones I've seen use the XHCI USB driver directly ("PNP0D10").
+>  
 
-                req->rate =3D rate;
-
-round_rate() returns a 'long' value, yet 'pllb' in rpi3b+ goes as high as
-2.8GHz, which only fits in an 'unsigned long'. This explains why I didn't s=
-ee
-this issue with RPI2b.
-
-I'll add the patch to the series.
+MSM8998 (835) has the same controller, so this should affect those
+laptops as well.
 
 Regards,
-Nicolas
+Bjorn
 
-
---=-PJNAuTBnger31MKfSUoC
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAlz4E8oACgkQlfZmHno8
-x/65VAf/fn1es6te2vdGehlcnMHV8inkQwAi0BEftzdL8s5w+Yv3WsJH3lwZM3sD
-DPZNWwlL/U2nVcKb997HnAcZm6CkosH87jzzF8n41F2LlzJGAzVDOZyxcbTJlK5V
-XtGsBvTkcqww24j6tKopUZ+9lWTSDTy2Jt3o/yxliP1oMFDrOVDQ0H20Qcprx32O
-lgev+7L7raIhmw8Fzy4DLU0nLe8kqkxGOHdorK7cRELAhys0rCx4WEX5MjJGUHQe
-TE9hQOG8bbGjvTtfE0MN837iw+S0D4XIyvjY5REPut2RTEcyf7uTea52DyXMeX5v
-vAGHR2WLM77yT5igIMv746NEBYT2SA==
-=2JhT
------END PGP SIGNATURE-----
-
---=-PJNAuTBnger31MKfSUoC--
-
-
-
---===============8441175972218786873==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> > > Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> > > ---
+> > >  drivers/usb/dwc3/dwc3-qcom.c | 12 ++++++++++++
+> > >  1 file changed, 12 insertions(+)
+> > > 
+> > > diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
+> > > index 349bf549ee44..f21fdd6cdd1a 100644
+> > > --- a/drivers/usb/dwc3/dwc3-qcom.c
+> > > +++ b/drivers/usb/dwc3/dwc3-qcom.c
+> > > @@ -468,6 +468,11 @@ static const struct acpi_device_id dwc3_qcom_acpi_match[] = {
+> > >  };
+> > >  MODULE_DEVICE_TABLE(acpi, dwc3_qcom_acpi_match);
+> > >  
+> > > +static const struct property_entry dwc3_qcom_acpi_properties[] = {
+> > > +	PROPERTY_ENTRY_STRING("dr_mode", "host"),
+> > > +	{}
+> > > +};
+> > > +
+> > >  static int dwc3_qcom_probe(struct platform_device *pdev)
+> > >  {
+> > >  	struct device_node	*np = pdev->dev.of_node, *dwc3_np;
+> > > @@ -603,6 +608,13 @@ static int dwc3_qcom_probe(struct platform_device *pdev)
+> > >  			goto platform_unalloc;
+> > >  		}
+> > >  
+> > > +		ret = platform_device_add_properties(qcom->dwc3,
+> > > +						     dwc3_qcom_acpi_properties);
+> > > +		if (ret < 0) {
+> > > +			dev_err(&pdev->dev, "failed to add properties\n");
+> > > +			goto platform_unalloc;
+> > > +		}
+> > > +
+> > >  		ret = platform_device_add(qcom->dwc3);
+> > >  		if (ret) {
+> > >  			dev_err(&pdev->dev, "failed to add device\n");
+> 
+> -- 
+> Lee Jones [?????????]
+> Linaro Services Technical Lead
+> Linaro.org ??? Open source software for ARM SoCs
+> Follow Linaro: Facebook | Twitter | Blog
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8441175972218786873==--
-
-
