@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88DA435920
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 10:59:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1703535926
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:00:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=25VN5doWt5g8d9bMjtSvMr7AOaWWgrc6KNuoCT67sSU=; b=quAhVmb0J0QDkm
-	5XrpQcy7g0Ru0PFJg2TVeJGlB+pvxve+oCDlwamqyo/2D7tawJO4A2ri94PrR6grjaj8uD4qMOipL
-	zZuWTa1EqAaa/P2CKD517tiHJYPk3OFcGxVRF0HQOuG3B1bh1JgkEcs/kvsUmIRDvByi8i6udi7Cm
-	cVIk36m0yYie6Ff8yvc+PPgMDMCASIcXhlPam4jFiK4IelQkCOROTLsE1dzgd02NWGl0g7HIOYyLz
-	QgrQNBXgcuAVgxEVi04au2P+ZNS7nApvAlv65Gl4aRX3Ps80R7Zbmg/CPjKu8gvSuuWABAX4U06rG
-	ZyOdVFz8M3TXUKQNVrfA==;
+	List-Owner; bh=w7J8yNv7zSMfBQzQa6TnEVgXC3q0slpn59MdGcNlZUY=; b=gzYERSVEk2ss9+
+	pnWJZddoOg+El6x5XTuBf4mUR26dbGbN5fqehRP6BrdhO6D/owAA6aTsJJtzMiUNOVmHsa35Q793j
+	gTyOM4O22HweUpcrvzHFhVFy+VH/ee5062CWcdhgzTA/eelGnElTnBnFc4rw3TEUn86BH39p69fLI
+	jaLudb8dPnUbuP+TuOXolV9jM+um2vQ5/H0q9fB5Ym2IJPSF/dSBmkRKDsixYh3DgXFDhiSCAWKtY
+	SKqiL8xZJ6ZBiCKx2kDatQyiWTZuNJljZRba8O50sY9wNlOchqxgfYrERF9vS99Bnop7hpbhkOOC/
+	bfqb2hr3mRQoVuUEAIjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYRlJ-0003PE-Uz; Wed, 05 Jun 2019 08:59:13 +0000
-Received: from foss.arm.com ([217.140.101.70])
+	id 1hYRmc-0004vW-6t; Wed, 05 Jun 2019 09:00:34 +0000
+Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
+ helo=foss.arm.com)
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYRlB-0003Gw-T8
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 08:59:07 +0000
+ id 1hYRmT-0004up-Rs
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 09:00:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 63AAFA78;
- Wed,  5 Jun 2019 01:59:03 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05B0AA78;
+ Wed,  5 Jun 2019 02:00:25 -0700 (PDT)
 Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E3ED3F690;
- Wed,  5 Jun 2019 01:59:02 -0700 (PDT)
-Subject: Re: [PATCH v1 1/6] KVM: arm64: Abstract the size of the HYP vectors
- pre-amble
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7A5123F690;
+ Wed,  5 Jun 2019 02:00:18 -0700 (PDT)
+Subject: Re: [PATCH v1 2/6] KVM: arm64: Consume pending SError as early as
+ possible
 To: James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
  kvmarm@lists.cs.columbia.edu
 References: <20190604144551.188107-1-james.morse@arm.com>
- <20190604144551.188107-2-james.morse@arm.com>
+ <20190604144551.188107-3-james.morse@arm.com>
 From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <34170392-528f-b57c-e50c-16eac02a5043@arm.com>
-Date: Wed, 5 Jun 2019 09:58:59 +0100
+Message-ID: <e8a742cd-9b37-c4b3-f34a-4663081a8529@arm.com>
+Date: Wed, 5 Jun 2019 10:00:13 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.2.1
 MIME-Version: 1.0
-In-Reply-To: <20190604144551.188107-2-james.morse@arm.com>
+In-Reply-To: <20190604144551.188107-3-james.morse@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_015905_953520_BC379810 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20190605_020025_915524_524D5764 
+X-CRM114-Status: GOOD (  22.67  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -77,48 +78,106 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi James,
 
 On 04/06/2019 15:45, James Morse wrote:
-> The EL2 vector hardening feature causes KVM to generate vectors for
-> each type of CPU present in the system. The generated sequences already
-> do some of the early guest-exit work (i.e. saving registers). To avoid
-> duplication the generated vectors branch to the original vector just
-> after the preamble. This size is hard coded.
+> On systems with v8.2 we switch the 'vaxorcism' of guest SError with an
+> alternative sequence that uses the ESB-instruction, then reads DISR_EL1.
+> This saves the unmasking and re-masking of asynchronous exceptions.
 > 
-> Adding new instructions to the HYP vector causes strange side effects,
-> which are difficult to debug as the affected code is patched in at
-> runtime.
+> We do this after we've saved the guest registers and restored the
+> host's. Any SError that becomes pending due to this will be accounted
+> to the guest, when it actually occurred during host-execution.
 > 
-> Add KVM_VECTOR_PREAMBLE to tell kvm_patch_vector_branch() how big
-> the preamble is. The valid_vect macro can then validate this at
-> build time.
+> Move the ESB-instruction as early as possible. Any guest SError
+> will become pending due to this ESB-instruction and then consumed to
+> DISR_EL1 before the host touches anything.
+> 
+
+Since you're moving the ESB from a HAS_RAS alternative location to a
+normal location, it might be worth noting in the commit message that the
+ESB is a NOP when RAS is not implemented, to clarify that we are not
+uselessly adding a barrier (or potentially undefined instruction).
+
+> This lets us account for host/guest SError precisely on the guest
+> exit exception boundary.
 > 
 > Signed-off-by: James Morse <james.morse@arm.com>
 > ---
->  arch/arm64/include/asm/kvm_asm.h |  6 ++++++
->  arch/arm64/kvm/hyp/hyp-entry.S   | 10 +++++++++-
->  arch/arm64/kvm/va_layout.c       |  7 +++----
->  3 files changed, 18 insertions(+), 5 deletions(-)
+> N.B. ESB-instruction is a nop on CPUs that don't support it.
+> 
+>  arch/arm64/include/asm/kvm_asm.h | 2 +-
+>  arch/arm64/kvm/hyp/entry.S       | 5 ++---
+>  arch/arm64/kvm/hyp/hyp-entry.S   | 2 ++
+>  3 files changed, 5 insertions(+), 4 deletions(-)
 > 
 > diff --git a/arch/arm64/include/asm/kvm_asm.h b/arch/arm64/include/asm/kvm_asm.h
-> index ff73f5462aca..9170c43b332f 100644
+> index 9170c43b332f..5c9548ae8fa7 100644
 > --- a/arch/arm64/include/asm/kvm_asm.h
 > +++ b/arch/arm64/include/asm/kvm_asm.h
-> @@ -41,6 +41,12 @@
->  	{ARM_EXCEPTION_TRAP, 		"TRAP"		},	\
->  	{ARM_EXCEPTION_HYP_GONE,	"HYP_GONE"	}
+> @@ -45,7 +45,7 @@
+>   * Size of the HYP vectors preamble. kvm_patch_vector_branch() generates code
+>   * that jumps over this.
+>   */
+> -#define KVM_VECTOR_PREAMBLE	4
+> +#define KVM_VECTOR_PREAMBLE	8
 >  
-> +/*
-> + * Size of the HYP vectors preamble. kvm_patch_vector_branch() generates code
-> + * that jumps over this.
-> + */
-> +#define KVM_VECTOR_PREAMBLE	4
+>  #ifndef __ASSEMBLY__
+>  
+> diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
+> index 93ba3d7ef027..7863ec5266e2 100644
+> --- a/arch/arm64/kvm/hyp/entry.S
+> +++ b/arch/arm64/kvm/hyp/entry.S
+> @@ -138,8 +138,8 @@ ENTRY(__guest_exit)
+>  
+>  alternative_if ARM64_HAS_RAS_EXTN
+>  	// If we have the RAS extensions we can consume a pending error
+> -	// without an unmask-SError and isb.
+> -	esb
+> +	// without an unmask-SError and isb. The ESB-instruction consumed any
+> +	// pending guest error when we took the exception from the guest.
+>  	mrs_s	x2, SYS_DISR_EL1
+>  	str	x2, [x1, #(VCPU_FAULT_DISR - VCPU_CONTEXT)]
+>  	cbz	x2, 1f
+> @@ -157,7 +157,6 @@ alternative_else
+>  	mov	x5, x0
+>  
+>  	dsb	sy		// Synchronize against in-flight ld/st
+> -	nop
+>  	msr	daifclr, #4	// Unmask aborts
+>  alternative_endif
+>  
+> diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
+> index 914036e6b6d7..b8d37a987b34 100644
+> --- a/arch/arm64/kvm/hyp/hyp-entry.S
+> +++ b/arch/arm64/kvm/hyp/hyp-entry.S
+> @@ -230,6 +230,7 @@ ENDPROC(\label)
+>  .macro valid_vect target
+>  	.align 7
+>  661:
+> +	esb
 
-Nit: I would use AARCH64_INSN_SIZE instead of 4 for the value if
-possible. Makes it clear what the value of the vectore preamble
-represent (and if we ad instruction we just multiply).
+Having said the above, if the kernel is built without RAS support (you
+have to disable some of options enabled by default to get to that) but
+runs on a CPU that does have the RAS extention, should we execute a nop
+instead of an esb (so have an alternative here)?
 
-Otherwise the patch seems a good improvement.
+Also, when we have the smccc workaround installed we do two esb, is that
+intentional/necessary?
 
-Reviewed-by: Julien Thierry <julien.thierry@arm.com>
+Could we have only one esb at the start of hyp_ventry (and "only" 26
+nops after it) for KVM_INDIRECT_VECTORS? Or does this not affect
+performance that much to be of interest?
+
+>  	stp	x0, x1, [sp, #-16]!
+>  662:
+>  	b	\target
+> @@ -320,6 +321,7 @@ ENTRY(__bp_harden_hyp_vecs_end)
+>  	.popsection
+>  
+>  ENTRY(__smccc_workaround_1_smc_start)
+> +	esb
+>  	sub	sp, sp, #(8 * 4)
+>  	stp	x2, x3, [sp, #(8 * 0)]
+>  	stp	x0, x1, [sp, #(8 * 2)]
+> 
 
 Thanks,
 
