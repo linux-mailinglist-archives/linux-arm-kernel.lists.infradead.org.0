@@ -2,55 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F4603615C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:32:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C53EB36168
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:34:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9YYvAN+8YnHFvuF31vLbCTNRbFUOHjha6qtosZi+4NE=; b=IUJm9EdOwpJp3W
-	QqbBmWkGtY4hZXsoje0m1uUIRXCJEeOBqe3abIo1hZQHmIdOXOC5wHZmlmyltTMOuytzt8cVMkz+E
-	ltE0LcrvNjmADMdQjDF1sDRmQx91phN1YVIgaAp7p20qRCZTZYkvGvxlTfm94r2REW9jI2p57OxAY
-	jAGRI+h8ZSD8oREiJIuuaY/BBz7c0OBH73S9RSfLATIxcviKQw3kfNdzU59+ELnFxNt44ohT1ZFse
-	eM+UMdZ7v1ni4oJNIsoxmlGmPE1Xdb7TJCoAuVCruw4TtH6qDK3sRJGh5MidfEmFEB0S4H0/6y2px
-	32QhP9+A+wKjyY6yunQA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=a8lforkQr0I5z4i1ijuN3NCVud4TyeutmkJ4e0i28F4=; b=XxeXWaM5doPcHT
+	WuyD+bBnUM/US6/NT+WfJW4MXRXaEhNse10MftB97DPMnxHB1Cj0JAGKy4+YrkpeoowZTuWclCwEi
+	6kJZw4txG8k2yZbk6UAyIw8dkyEN7SM4pMaszilem0KEKTHA1kx5DZo88CLlzsMy4uJHjNKYMmJNa
+	Zu+tvFfVh8pfuVWxucnwQKz4wAopdfrfEe+a3bx+4O5uGwhLKgPLFQaWloLzzc7lC9Hp95XvJv1q0
+	GB2lbbjLBnoy1AkV4cTCecn/A077dK9XUcF3lKzG/KZtFATQZA/tV5q5As6pEPPNHGAo3M7fQAk5D
+	7ZWKk0vSrhb3i1W6/UfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYYpl-0003iw-VZ; Wed, 05 Jun 2019 16:32:17 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYYpd-0003he-CK; Wed, 05 Jun 2019 16:32:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8EA8A374;
- Wed,  5 Jun 2019 09:32:08 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B9ED53F5AF;
- Wed,  5 Jun 2019 09:32:05 -0700 (PDT)
-Subject: Re: [PATCH 0/4] support reserving crashkernel above 4G on arm64 kdump
-To: Chen Zhou <chenzhou10@huawei.com>
-References: <20190507035058.63992-1-chenzhou10@huawei.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <51995efd-8469-7c15-0d5e-935b63fe2d9f@arm.com>
-Date: Wed, 5 Jun 2019 17:32:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hYYsI-0004Na-Me; Wed, 05 Jun 2019 16:34:54 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYYs1-0004F3-89
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 16:34:38 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x55GYaDV130355;
+ Wed, 5 Jun 2019 11:34:36 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559752476;
+ bh=EyRxgNDYnTkm/dfjnoK+S5JmanetNm6H7MORnEhgjec=;
+ h=From:To:CC:Subject:Date;
+ b=gOiBm9pBFHyqPy/yVhu0P83nh5IWbcq7xeovKvOoR6BKYUdPPMf2ZsjLfRPN7r9wc
+ 6Da9dtiw75MqhEMlvRiVsA5BYwEWaOQ+Bq7lUUTjVqNfeOMzX9MjqQ5gn6VlRuUw25
+ W3H+AKKgJe2pxfTHrhMMa4KswWIGm+d9M88gF4E4=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x55GYZco010398
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 5 Jun 2019 11:34:35 -0500
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 5 Jun
+ 2019 11:34:35 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 5 Jun 2019 11:34:35 -0500
+Received: from legion.dal.design.ti.com (legion.dal.design.ti.com
+ [128.247.22.53])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x55GYZlT023921;
+ Wed, 5 Jun 2019 11:34:35 -0500
+Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
+ by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x55GYZm10206; 
+ Wed, 5 Jun 2019 11:34:35 -0500 (CDT)
+From: Suman Anna <s-anna@ti.com>
+To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
+Subject: [PATCH 0/4] Add MCU SRAM nodes for TI K3 SoCs
+Date: Wed, 5 Jun 2019 11:34:30 -0500
+Message-ID: <20190605163434.23173-1-s-anna@ti.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190507035058.63992-1-chenzhou10@huawei.com>
-Content-Language: en-GB
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_093209_426818_2EC525F5 
-X-CRM114-Status: GOOD (  15.35  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_093437_339063_81871FA1 
+X-CRM114-Status: GOOD (  10.19  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,72 +91,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wangkefeng.wang@huawei.com, horms@verge.net.au, ard.biesheuvel@linaro.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- rppt@linux.ibm.com, linux-mm@kvack.org, takahiro.akashi@linaro.org,
- mingo@redhat.com, bp@alien8.de, ebiederm@xmission.com,
- kexec@lists.infradead.org, akpm@linux-foundation.org, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi!
+Hi Tero,
 
-On 07/05/2019 04:50, Chen Zhou wrote:
-> We use crashkernel=X to reserve crashkernel below 4G, which will fail
-> when there is no enough memory. Currently, crashkernel=Y@X can be used
-> to reserve crashkernel above 4G, in this case, if swiotlb or DMA buffers
-> are requierd, capture kernel will boot failure because of no low memory.
+The following series adds the DT nodes for the MCU SRAM present within
+the MCU domain for both AM65x and J721E SoCs. The first 2 patches enable
+the MCU SRAM node to be probed properly on AM65x SoCs, and the third
+patch the equivalent for J721E SoCs. The third patch depends on the
+base J721E support patch series from Nishanth [1].
 
-> When crashkernel is reserved above 4G in memory, kernel should reserve
-> some amount of low memory for swiotlb and some DMA buffers. So there may
-> be two crash kernel regions, one is below 4G, the other is above 4G.
+The last patch is not related to MCU SRAM, but adds the ranges for the
+R5F cluster that is also present in the MCU domain in preparation for
+the R5F nodes.
 
-This is a good argument for supporting the 'crashkernel=...,low' version.
-What is the 'crashkernel=...,high' version for?
+regards
+Suman
 
-Wouldn't it be simpler to relax the ARCH_LOW_ADDRESS_LIMIT if we see 'crashkernel=...,low'
-in the kernel cmdline?
+[1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=121189 
 
-I don't see what the 'crashkernel=...,high' variant is giving us, it just complicates the
-flow of reserve_crashkernel().
+Suman Anna (4):
+  arm64: dts: ti: k3-am65: Add MCU SRAM ranges in interconnect nodes
+  arm64: dts: ti: k3-am65-mcu: Add the MCU RAM node
+  arm64: dts: ti: k3-j721e: Add the MCU SRAM node
+  arm64: dts: ti: k3-am65: Add R5F ranges in interconnect nodes
 
-If we called reserve_crashkernel_low() at the beginning of reserve_crashkernel() we could
-use crashk_low_res.end to change some limit variable from ARCH_LOW_ADDRESS_LIMIT to
-memblock_end_of_DRAM().
-I think this is a simpler change that gives you what you want.
+ arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi         | 8 ++++++++
+ arch/arm64/boot/dts/ti/k3-am65.dtsi             | 6 ++++++
+ arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi | 8 ++++++++
+ 3 files changed, 22 insertions(+)
 
+-- 
+2.21.0
 
-> Then
-> Crash dump kernel reads more than one crash kernel regions via a dtb
-> property under node /chosen,
-> linux,usable-memory-range = <BASE1 SIZE1 [BASE2 SIZE2]>.
-
-Won't this break if your kdump kernel doesn't know what the extra parameters are?
-Or if it expects two ranges, but only gets one? These DT properties should be treated as
-ABI between kernel versions, we can't really change it like this.
-
-I think the 'low' region is an optional-extra, that is never mapped by the first kernel. I
-think the simplest thing to do is to add an 'linux,low-memory-range' that we
-memblock_add() after memblock_cap_memory_range() has been called.
-If its missing, or the new kernel doesn't know what its for, everything keeps working.
-
-
-> Besides, we need to modify kexec-tools:
->   arm64: support more than one crash kernel regions(see [1])
-
-> I post this patch series about one month ago. The previous changes and
-> discussions can be retrived from:
-
-Ah, this wasn't obvious as you've stopped numbering the series. Please label the next one
-'v6' so that we can describe this as 'v5'. (duplicate numbering would be even more confusing!)
-
-
-Thanks,
-
-James
 
 _______________________________________________
 linux-arm-kernel mailing list
