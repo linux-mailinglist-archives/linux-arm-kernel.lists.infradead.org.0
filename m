@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 880AB35A31
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:09:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 609D235A4D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:13:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=d4inPdaQLBaxhBrkg86YpiBroF3QfpFJvG3x5dtluG8=; b=cgtxP+41+HX9WL3c4MlDq283v
-	XfUPRArs4k4I8w0I//pqOSgMAZfvz2XAtBNra9furBB+Z3s9oAvJuvvWXIGvuY7hXBE5hYRXA97vE
-	HN6+qJIoKAM1itc+igZcPFE0jbUrV1GC0O2txWzK0wyS0R/hcqYEyyuq/8OZbQLdxRZhTIbhI++mQ
-	oDm6n2Y/DMGfVQf/Ox7VmFDx4ROGH/ePL2SXqzlZsuhMK5tTb7oZq3bMceAxqB2O9DoDyeGYurxcn
-	Trt8Q/vX+6NVCVgIU8H3gj6z78rGz38lbPpodRb7nKAOyCmsrli/1mZBoQY3tgLy4HzJxatB0dH1+
-	2HxLk70cg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XO83K8l1d8UmJLOkii4HeZ5fyOiqFwxh1PSl3tFC5p8=; b=B8W1NdKLmncra6
+	zbekB798YgDf5iWSl4nTLS/jchpXYiIs35UKzsheEMecRqkIMELn3OjZSweyawqrag0Epbd1pJ4ej
+	GPGENbZNIQ2PfF+osHQzoF5BTafI6byqYKQ2f8Ga0rabHfuccbppTTOVb1+Yf7EaxQGUrm+30jO5X
+	XtBtSqISJp/W0ahAkRslTQ9r3KIUyOTCvAtShSn/jHbJWvBTyQ0RB7vC7b53m1g63FYl1NmIbcVm5
+	ity2HlVi00yARpt2mo7Ai54oBom1moeO5yWbdHqGlDSt1NMyOVYSD4z5saLWZA6UGWUuAYuj1X5NL
+	cNJR8xFHDc7YTwe87fMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYSr3-0007Qn-NT; Wed, 05 Jun 2019 10:09:13 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1hYSva-0000sz-68; Wed, 05 Jun 2019 10:13:54 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYSqt-0007Jw-U7
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 10:09:05 +0000
-X-Originating-IP: 90.88.144.139
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 74011240005;
- Wed,  5 Jun 2019 10:08:45 +0000 (UTC)
-Date: Wed, 5 Jun 2019 12:08:44 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH] ASoC: sun4i-i2s: Change SR and WSS computation
-Message-ID: <20190605100844.kzaw7r3zasfqhnuu@flea>
-References: <20190604085449.13195-1-maxime.ripard@bootlin.com>
- <20190604144517.GF2456@sirena.org.uk>
+ id 1hYSvR-0000rr-Pk
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 10:13:47 +0000
+Received: by newverein.lst.de (Postfix, from userid 2005)
+ id 5F8F468B05; Wed,  5 Jun 2019 12:13:17 +0200 (CEST)
+Date: Wed, 5 Jun 2019 12:13:17 +0200
+From: Torsten Duwe <duwe@lst.de>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345
+ bridge on Teres-I
+Message-ID: <20190605101317.GA9345@lst.de>
+References: <20190604122150.29D6468B05@newverein.lst.de>
+ <20190604122308.98D4868B20@newverein.lst.de>
+ <CA+E=qVckHLqRngsfK=AcvstrD0ymEfRkYyhS_kBtZ3YWdE3L=g@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190604144517.GF2456@sirena.org.uk>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <CA+E=qVckHLqRngsfK=AcvstrD0ymEfRkYyhS_kBtZ3YWdE3L=g@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_030904_153940_E9BA7FE2 
-X-CRM114-Status: GOOD (  12.50  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190605_031345_984490_E2950D70 
+X-CRM114-Status: GOOD (  17.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,88 +61,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
- Marcus Cooper <codekipper@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6027104896691045339=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Jun 04, 2019 at 08:08:40AM -0700, Vasily Khoruzhick wrote:
+> On Tue, Jun 4, 2019 at 5:23 AM Torsten Duwe <duwe@lst.de> wrote:
+> >
+> > Teres-I has an anx6345 bridge connected to the RGB666 LCD output, and
+> > the I2C controlling signals are connected to I2C0 bus. eDP output goes
+> > to an Innolux N116BGE panel.
+> >
+> > Enable it in the device tree.
+> >
+> > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> > Signed-off-by: Torsten Duwe <duwe@suse.de>
+> > ---
+> >  .../boot/dts/allwinner/sun50i-a64-teres-i.dts      | 65 ++++++++++++++++++++--
+> >  1 file changed, 61 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > index 0ec46b969a75..a0ad438b037f 100644
+> > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > @@ -65,6 +65,21 @@
+> >                 };
+> >         };
+> >
+> > +       panel: panel {
+> > +               compatible ="innolux,n116bge", "simple-panel";
+> 
+> It's still "simple-panel". I believe I already mentioned that Rob
+> asked it to be edp-connector.
+> 
+For which there are neither bindings nor drivers.
 
---===============6027104896691045339==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qhomvzhpyiavwpcf"
-Content-Disposition: inline
+Is anybody seriously proposing to hold back support for existing
+(open source!) hardware in favour of an *imaginable* *possibly* better
+solution? Especially when this exact line is already used in some other places?
+(there's a space missing btw...)
 
+I'm more than glad to follow any constructive improvements towards better
+modularity. However there were none so far, and on top of that, it's a laptop.
+I see little advantage in mentioning an internal connector when the panel
+connected is always the same.
 
---qhomvzhpyiavwpcf
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+FWIW, Rob should also have received these patches.
 
-Hi,
+	Torsten
 
-On Tue, Jun 04, 2019 at 03:45:17PM +0100, Mark Brown wrote:
-> On Tue, Jun 04, 2019 at 10:54:49AM +0200, Maxime Ripard wrote:
-> > The current computation for the SR (sample resolution) and the WSS (word
-> > slot size) register parameters is based on a switch returning the match=
-ing
-> > parameters for a given params width.
->
-> This doesn't build for me with current code:
->
->   CC      sound/soc/sunxi/sun4i-i2s.o
-> sound/soc/sunxi/sun4i-i2s.c:169:28: warning: =E2=80=98struct sun4i_i2s=E2=
-=80=99 declared inside parameter list will not be visible outside of this d=
-efinition or declaration
->   s8 (*get_sr)(const struct sun4i_i2s *, int);
->                             ^~~~~~~~~
-> sound/soc/sunxi/sun4i-i2s.c:170:29: warning: =E2=80=98struct sun4i_i2s=E2=
-=80=99 declared inside parameter list will not be visible outside of this d=
-efinition or declaration
->   s8 (*get_wss)(const struct sun4i_i2s *, int);
->                              ^~~~~~~~~
->
-> and lots of similar stuff.
-
-Sigh, so much for sending a patch part of a branch...
-
-Sorry for wasting your time on this, I've sent a v2 with this fixed.
-
-Maxime
-
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---qhomvzhpyiavwpcf
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPeUrAAKCRDj7w1vZxhR
-xScXAPwN8ypur7UlU8bNKMKWbFc0f1dSEHVT5ZDOnsRZQKzswwEAi27OmMmw2FeN
-7aj+QHjqrk9psWgk+O/LHTS3NFkUcAM=
-=vzYH
------END PGP SIGNATURE-----
-
---qhomvzhpyiavwpcf--
-
-
---===============6027104896691045339==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6027104896691045339==--
-
