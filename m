@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DE1635BA9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:45:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABE8435BC9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:46:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vRlNPPFh7sEE8A1qdspb7uROcVJU9GtVhSXI5T6yDJ8=; b=tW6+i6jJLtyTKY
-	+WdVmXWQ094J0Z1BIz/fOqgKrAaopGSUpgDXizdCSvxZjAgdN5OTWKuGi2cOBj8FSMP7eJf3nMqqg
-	7ktElHcagWZiPKTFBhZtMx/QYifrvDkH5u8LKnrw08jKbON2aAU9NyFLiNdejeeKT2P3Sy6T/YjjE
-	v5owE8F1MhOnt9dB+2zYqsGEQPVNYnKiLIFiI3kcWGea72Fp16hB79HmEy5w32rM1ENTUrAafvUOR
-	78FTJhAw8MhKV2nyJzQKrZ5GZ9BX97p64h56k5KV06a8FWolkeY9z//kKKRO/w6OwCsexQDcIfUIO
-	enlQ0hR2T34jL2GdynIA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/1fmLZsHxy63/9rhip83BKSfFIeeSye9ePKvc4xQ2Uk=; b=NdRFETeajMJj/k
+	N+XlRJ2JzUa3vzaecgT7xgFdWx3fh1HuYdCRDgO/Cv0D1EN7vomGeFULVbFK2Y1fLAJKEeaGUmVrQ
+	OVtpo/c68fRY1/wT0iW7n9Bqj1Bsj3LUq82S9MHcL2ksOjl9xJSsJUy0Cv+wshl6lY3dBEb4vDXeH
+	Jo/T78eE40qqAhXgtLSjXKLOlpC243YSciuF8+bWjRDlCuMqr2D9Yo1GQL2ZzaHs5zLOF1PLPmzJ8
+	qwAUMBqQsfahDzfJeDHmZVVNjRtKZtjzpcOLs3DAqHE3XtM+3WHBEgHCTRSflbChRBwbyptDrCdEC
+	xygs6DNxqCOFjhJ61AGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYULg-0005HF-6E; Wed, 05 Jun 2019 11:44:56 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hYUMk-0007pT-1d; Wed, 05 Jun 2019 11:46:02 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYUKd-0004CU-4g; Wed, 05 Jun 2019 11:44:11 +0000
-X-UUID: 878ef95c85bf43e7a49fc9199fadb214-20190605
-X-UUID: 878ef95c85bf43e7a49fc9199fadb214-20190605
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1hYULF-0004TI-Om; Wed, 05 Jun 2019 11:44:44 +0000
+X-UUID: f50d39de3714480b97535614edc3a3a3-20190605
+X-UUID: f50d39de3714480b97535614edc3a3a3-20190605
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 338246934; Wed, 05 Jun 2019 03:43:30 -0800
+ with ESMTP id 784978707; Wed, 05 Jun 2019 03:43:35 -0800
 Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 04:43:29 -0700
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 5 Jun 2019 04:43:34 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
  mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 19:43:21 +0800
+ 15.0.1395.4; Wed, 5 Jun 2019 19:43:32 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 5 Jun 2019 19:43:20 +0800
+ Transport; Wed, 5 Jun 2019 19:43:31 +0800
 From: <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v3, 00/27] add drm support for MT8183
-Date: Wed, 5 Jun 2019 19:42:39 +0800
-Message-ID: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [PATCH v3,
+ 01/27] dt-bindings: mediatek: add binding for mt8183 display
+Date: Wed, 5 Jun 2019 19:42:40 +0800
+Message-ID: <1559734986-7379-2-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
+References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_044351_678936_C99893E1 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190605_044430_479274_57B79E31 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,59 +84,66 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-This series are based on 5.2-rc1 and provid 27 patch
-to support mediatek SOC MT8183
+Update device tree binding documention for the display subsystem for
+Mediatek MT8183 SOCs
 
-Change since v2
-- fix reviewed issue in v2
-- add mutex node into dts file
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+---
+ .../bindings/display/mediatek/mediatek,disp.txt    | 34 +++++++++++++---------
+ 1 file changed, 20 insertions(+), 14 deletions(-)
 
-Yongqiang Niu (27):
-  dt-bindings: mediatek: add binding for mt8183 display
-  dt-bindings: mediatek: add ovl_2l description for mt8183 display
-  dt-bindings: mediatek: add ccorr description for mt8183 display
-  dt-bindings: mediatek: add dither description for mt8183 display
-  arm64: dts: add display nodes for mt8183
-  drm/mediatek: add mutex mod into ddp private data
-  drm/mediatek: add mutex mod register offset into ddp private data
-  drm/mediatek: add mutex sof into ddp private data
-  drm/mediatek: add mutex sof register offset into ddp private data
-  drm/mediatek: split DISP_REG_CONFIG_DSI_SEL setting into another use
-    case
-  drm/mediatek: add mmsys private data for ddp path config
-  drm/mediatek: move rdma sout from mtk_ddp_mout_en into
-    mtk_ddp_sout_sel
-  drm/mediatek: add ddp component CCORR
-  drm/mediatek: add commponent OVL_2L0
-  drm/mediatek: add component OVL_2L1
-  drm/mediatek: add component DITHER
-  drm/mediatek: add gmc_bits for ovl private data
-  drm/medaitek: add layer_nr for ovl private data
-  drm/mediatek: add function to background color input select for
-    ovl/ovl_2l direct link
-  drm/mediatek: add background color input select function for
-    ovl/ovl_2l
-  drm/mediatek: add ovl0/ovl_2l0 usecase
-  drm/mediatek: distinguish ovl and ovl_2l by layer_nr
-  drm/mediatek: add connection from ovl0 to ovl_2l0
-  drm/mediatek: add connection from RDMA0 to COLOR0
-  drm/mediatek: add connection from RDMA1 to DSI0
-  drm/mediatek: add clock property check before get it
-  drm/mediatek: add support for mediatek SOC MT8183
-
- .../bindings/display/mediatek/mediatek,disp.txt    |  37 +-
- arch/arm64/boot/dts/mediatek/mt8183.dtsi           | 114 ++++++
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c            |  80 +++-
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c           |  12 +
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c            |  42 +-
- drivers/gpu/drm/mediatek/mtk_drm_ddp.c             | 429 ++++++++++++++++-----
- drivers/gpu/drm/mediatek/mtk_drm_ddp.h             |   6 +
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c        |  68 ++++
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h        |  23 ++
- drivers/gpu/drm/mediatek/mtk_drm_drv.c             |  52 +++
- drivers/gpu/drm/mediatek/mtk_drm_drv.h             |   4 +
- 11 files changed, 745 insertions(+), 122 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
+index 8469de5..70770fe 100644
+--- a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
++++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
+@@ -27,20 +27,20 @@ Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt.
+ 
+ Required properties (all function blocks):
+ - compatible: "mediatek,<chip>-disp-<function>", one of
+-	"mediatek,<chip>-disp-ovl"   - overlay (4 layers, blending, csc)
+-	"mediatek,<chip>-disp-rdma"  - read DMA / line buffer
+-	"mediatek,<chip>-disp-wdma"  - write DMA
+-	"mediatek,<chip>-disp-color" - color processor
+-	"mediatek,<chip>-disp-aal"   - adaptive ambient light controller
+-	"mediatek,<chip>-disp-gamma" - gamma correction
+-	"mediatek,<chip>-disp-merge" - merge streams from two RDMA sources
+-	"mediatek,<chip>-disp-split" - split stream to two encoders
+-	"mediatek,<chip>-disp-ufoe"  - data compression engine
+-	"mediatek,<chip>-dsi"        - DSI controller, see mediatek,dsi.txt
+-	"mediatek,<chip>-dpi"        - DPI controller, see mediatek,dpi.txt
+-	"mediatek,<chip>-disp-mutex" - display mutex
+-	"mediatek,<chip>-disp-od"    - overdrive
+-  the supported chips are mt2701, mt2712 and mt8173.
++	"mediatek,<chip>-disp-ovl"   		- overlay (4 layers, blending, csc)
++	"mediatek,<chip>-disp-rdma"  		- read DMA / line buffer
++	"mediatek,<chip>-disp-wdma"  		- write DMA
++	"mediatek,<chip>-disp-color" 		- color processor
++	"mediatek,<chip>-disp-aal"   		- adaptive ambient light controller
++	"mediatek,<chip>-disp-gamma" 		- gamma correction
++	"mediatek,<chip>-disp-merge" 		- merge streams from two RDMA sources
++	"mediatek,<chip>-disp-split" 		- split stream to two encoders
++	"mediatek,<chip>-disp-ufoe"  		- data compression engine
++	"mediatek,<chip>-dsi"        		- DSI controller, see mediatek,dsi.txt
++	"mediatek,<chip>-dpi"        		- DPI controller, see mediatek,dpi.txt
++	"mediatek,<chip>-disp-mutex" 		- display mutex
++	"mediatek,<chip>-disp-od"    		- overdrive
++  the supported chips are mt2701, mt2712, mt8173 and mt8183.
+ - reg: Physical base address and length of the function block register space
+ - interrupts: The interrupt signal from the function block (required, except for
+   merge and split function blocks).
+@@ -71,6 +71,12 @@ mmsys: clock-controller@14000000 {
+ 	#clock-cells = <1>;
+ };
+ 
++display_components: dispsys@14000000 {
++		compatible = "mediatek,mt8183-display";
++		reg = <0 0x14000000 0 0x1000>;
++		power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
++};
++
+ ovl0: ovl@1400c000 {
+ 	compatible = "mediatek,mt8173-disp-ovl";
+ 	reg = <0 0x1400c000 0 0x1000>;
 -- 
 1.8.1.1.dirty
 
