@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2C8535A96
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:39:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7089135AA1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:45:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yw6z5x+wAIZ4dqZlkDHD3Yw3asjnmfXtfQDGXCUPOYM=; b=qpVsZk/p6hFuUG
-	PWFnWuoHQnBNsuDZZnAR/tURlx+XaRbR1AfZYtHO6BMqYfClV5B0a+4KAq1N42eXk8wx74VDUliE2
-	Bt3YOLUZiLje8Ew82JUc1mFOJ87jCvpAtrhXf4vGqe8MxRs8DJwR5Jy64rEHzs4tUytY2l301qf7v
-	2n5vICd1LiQ7fl6bsgKModYIATpdwvKJnkiJ2DXHnSw3ffgCm4Q6J7XywRGz48sM6PI8/2PkRy8JD
-	X0mGMWa453V0DApnlgdM87oeGGq+aGIBkdmKuDM8Jjc+DdIpwyiUXesscevGSKearNAURJxoTdikH
-	o+JncWiSTQOOjaJWxUWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jphgGbdjbp2XI9jGEZMV2LLA6gfq/W/mxj7P3bRd/t8=; b=WmgcE1xGuuXnG6
+	Mpt13EkkKk/PK2+Yb3efBlR/2de9x+jgSAUJkxkoS4uJONcuY8iCaWrlO2Ba6jP0lI9yQsZeYj5jh
+	/fE0FF6vc7ue/1hmlwqAbtIfkJlljbJbf11sDD5C+BM/SIv7PXiORpYqfmQoc9gM/25uvThMrsWLu
+	v0aGER7t8lO1fXyyUz4Y4H1xiQ4SRKNvNpoucJJCuiU4l1mxjSUuslwjZM/kSM2PqbE7XXH5sQnH7
+	tlT7kyh/+hBXKyqYYW1sQDL2GUZF9BTZIXpOr3W87K/fSvPrMICBPjmEK/8M8TWNDlL4HSfMe7CFq
+	T27L/B6vnbclKeKwF33A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYTKE-0003oH-PF; Wed, 05 Jun 2019 10:39:22 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYTK8-0003nv-7o
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 10:39:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 42558374;
- Wed,  5 Jun 2019 03:39:15 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D56273F690;
- Wed,  5 Jun 2019 03:39:12 -0700 (PDT)
-Date: Wed, 5 Jun 2019 11:38:40 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH 2/3] arm64: export acpi_psci_use_hvc
-Message-ID: <20190605103840.GA30925@lakrids.cambridge.arm.com>
-References: <20190604203100.15050-1-alisaidi@amazon.com>
- <20190604203100.15050-3-alisaidi@amazon.com>
- <20190605094031.GB28613@e107155-lin>
+	id 1hYTPh-0006CJ-IJ; Wed, 05 Jun 2019 10:45:01 +0000
+Received: from mout.gmx.net ([212.227.15.18])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYTPY-0006BZ-PQ; Wed, 05 Jun 2019 10:44:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1559731474;
+ bh=sh1qIohboAjI8zx1h3HAngV41iu0wgn/neR3ClIblpQ=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=Rto7jdSL/BwkoR1CkTYGKskRXRBOLa8kunlf+b4pQT5AGXCdw+Ffh8QMX/RTqoEvZ
+ BcZN74ncla2W6FFri55rhU3XdzD4UdAaY21B/MIlBXlG4FF/eSYmOYYkF3TNxAmPjq
+ c1VR+U2NUGx3r+5CYLn8Arx5lscMUnXqOcjgU+ik=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.160]) by mail.gmx.com (mrgmx002
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0MNHqL-1hVyId2ZZZ-00703F; Wed, 05
+ Jun 2019 12:44:34 +0200
+Subject: Re: [PATCH 2/4] clk: bcm283x: add driver interfacing with Raspberry
+ Pi's firmware
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-kernel@vger.kernel.org
+References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
+ <20190604173223.4229-3-nsaenzjulienne@suse.de>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <7ff78cd1-3c39-925d-c66c-f7f295fe6d6e@gmx.net>
+Date: Wed, 5 Jun 2019 12:44:31 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190605094031.GB28613@e107155-lin>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190604173223.4229-3-nsaenzjulienne@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:f+MR9hVpZSEGtFXCFscm14tsRiDKqFasQNAcpatHhdNnsRTjyKZ
+ 2Dz0q6AzjVF3vadknEq/xaqPqvhPa+Bxa+f47OcLXHiV+7VYQYiJFtupwH8zccIvSAj6ha7
+ UZQYqjDAmEvh0+wB0s1wglBytkePXtw+dyKP1h2uqKlsWufG+KGmVFex0RKvwBBRNJ3kVVM
+ ZatY1tvXfCdJbyGmqh6KA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:DbqK99Qbwfs=:evDsDa7sabjJS9PpIqE0V5
+ Iwng5CNjFIBU7wPn60eWljsA6hzI31KEYOFZW6GzM+/D1YuK5UrRhIswvuNlekGXm1NSaSexe
+ Mb8cpNaWWM9aqU/0uk1jChkBxB2l4+yVllnIWPRLzVZpdwISgt26vIHbrONOM1DK/oQqp4H4Q
+ ogA4DA1KBkI+Jtv1JQdcmKkT1iwm38vPFXV7XZrk2GBYI1TgYz6boYqnBi7TFA4TMLaauQ2hh
+ wo6DuDAa5gW1+JfeN43u0opY/xpXC7DvoP1ip989ZFlzk/3i8vppedBkQkU3QKcz5mmWeg6Uu
+ o4+bNYDWm7AuuBzAw81nAP7kC5XMek9yE7o2wemjCwXBXnbMiSMs/yMZLsI6R8nBLEoVDpslF
+ v7o4aNcyES6Z7413lVcDHkUfgErt4VMiLsjGVPtx44JFZFyDafeFXznvwtbSJVYk2WxrRSRq5
+ aLTvrnZ+fi0pVQKKpUvUBq8oQqrZ6SXYaOTRvHdOprs9bh/TMA2V/6wS43Z7evkk9iL41nF6Z
+ Wu3wpPTWAOTGyUhF1Ez/zZw9sBUlCuWfVJMAIRZgXz0ioCZJrURLO12BCjmqe8fq0UrTCACNP
+ LP8aHg40xBGL/RcatJ/H4ueuHs3h+ifHwUsOes+n8I5d7D6rhg4//dHYYg/08vch8Af7EreT0
+ 9LWMdf0MHHTsNXwSw0HIsYhNu2UBnukYH+Q14DMeTWSNNTltoLQg4szqNrP3OJfTBuO1F+0JG
+ ti71QPUBFbHycgCyUbU3dOJT/oNcY4KHSW+MDknt9Y817K4aUHjkz+y7dYicwQQHb32gY83AK
+ r7cSKXjhjLgs7WjqtZEGgEO8xEeAFSHyF7LV+Wri9OaHurCo4YmELfLBtDHy5btVwZKz2AJV7
+ YC8Ru4Nuk30fa+yzWzXnLg2rfHv/DHGo0guN0r1IRfHm/J4Hns5DhnjB2Ft1oLbegH1gPmhIS
+ E+Qrq+1KWoDeQVDv6yEDshJ7ai9CeQb112gFw1jOmZVtJFekZbV0UHdYF8sAhQjVZlzVexLEe
+ 3w==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_033916_285541_04E429EC 
-X-CRM114-Status: GOOD (  19.50  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_034453_236270_BC39EF3A 
+X-CRM114-Status: GOOD (  26.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.18 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,67 +100,386 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Matt Mackall <mpm@selenic.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Ron Rindjunsky <ronrindj@amazon.com>,
- Ali Saidi <alisaidi@amazon.com>, Catalin Marinas <catalin.marinas@arm.com>,
- David Woodhouse <dwmw@amazon.co.uk>, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: f.fainelli@gmail.com, ptesarik@suse.com, sboyd@kernel.org,
+ viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
+ rjw@rjwysocki.net, mbrugger@suse.de, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ ssuloev@orpaltech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 05, 2019 at 10:40:31AM +0100, Sudeep Holla wrote:
-> On Tue, Jun 04, 2019 at 08:30:59PM +0000, Ali Saidi wrote:
-> > Allow a module that wants to make SMC calls to detect if it should be
-> > using smc or hvc.
-> >
-> > Signed-off-by: Ali Saidi <alisaidi@amazon.com>
-> > ---
-> >  arch/arm64/kernel/acpi.c | 1 +
-> >  1 file changed, 1 insertion(+)
-> >
-> > diff --git a/arch/arm64/kernel/acpi.c b/arch/arm64/kernel/acpi.c
-> > index 803f0494dd3e..ea41c6541d3c 100644
-> > --- a/arch/arm64/kernel/acpi.c
-> > +++ b/arch/arm64/kernel/acpi.c
-> > @@ -119,6 +119,7 @@ bool acpi_psci_use_hvc(void)
-> >  {
-> >  	return acpi_gbl_FADT.arm_boot_flags & ACPI_FADT_PSCI_USE_HVC;
-> >  }
-> > +EXPORT_SYMBOL_GPL(acpi_psci_use_hvc);
-> >
-> 
-> I would rather have this in drivers/firmware/psci/psci.c checking the
-> value of psci_ops.conduit so that it's not just ACPI specific and can
-> be used on DT platforms too if required.
+Hi Nicolas,
 
-I'd also like this to not hook into PSCI internals. This code cares
-about SMCCC, not PSCI. We also really shouldn't need to spread the
-conduit management everywhere, too. We should be abel to have probe code
-do:
-
-	if (!is_smccc_1_1_available())
-		goto fail_probe;
-
-... and runtime code do:
-
-	res = arm_smccc_1_1_call(...);
-
-... which is much clearner.
-
-I'd started cleaning that up [1], but I haven't had the chance to rebase
-and repost it.
-
-Ali, I assume your firmware has SMCCCv1.1+. Is that the case?
-
-Thanks,
-Mark.
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/smccc-cleanup
+Am 04.06.19 um 19:32 schrieb Nicolas Saenz Julienne:
+> Raspberry Pi's firmware offers and interface though which update it's
+> clock's frequencies. This is specially useful in order to change the CPU
+> clock (pllb_arm) which is 'owned' by the firmware and we're unable to
+> scale using the register interface.
+>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+>
+> Changes since RFC:
+>   - Moved firmware interface into own driver
+>   - Use of_find_compatible_node()
+>   - Remove error message on rpi_firmware_get() failure
+>   - Ratelimit messages on set_rate() failure
+>   - Use __le32 on firmware interface definition
+>
+>  drivers/clk/bcm/Makefile          |   1 +
+>  drivers/clk/bcm/clk-raspberrypi.c | 316 ++++++++++++++++++++++++++++++
+>  2 files changed, 317 insertions(+)
+>  create mode 100644 drivers/clk/bcm/clk-raspberrypi.c
+>
+> diff --git a/drivers/clk/bcm/Makefile b/drivers/clk/bcm/Makefile
+> index 002661d39128..07abe92df9d1 100644
+> --- a/drivers/clk/bcm/Makefile
+> +++ b/drivers/clk/bcm/Makefile
+> @@ -7,6 +7,7 @@ obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm21664.o
+>  obj-$(CONFIG_COMMON_CLK_IPROC)	+= clk-iproc-armpll.o clk-iproc-pll.o clk-iproc-asiu.o
+>  obj-$(CONFIG_ARCH_BCM2835)	+= clk-bcm2835.o
+>  obj-$(CONFIG_ARCH_BCM2835)	+= clk-bcm2835-aux.o
+> +obj-$(CONFIG_ARCH_BCM2835)	+= clk-raspberrypi.o
+Hm, on the one side it would be nice to avoid building this driver in
+case the firmware driver is disabled on the other side it would be good
+to keep compile test.
+>  obj-$(CONFIG_ARCH_BCM_53573)	+= clk-bcm53573-ilp.o
+>  obj-$(CONFIG_CLK_BCM_CYGNUS)	+= clk-cygnus.o
+>  obj-$(CONFIG_CLK_BCM_HR2)	+= clk-hr2.o
+> diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
+> new file mode 100644
+> index 000000000000..485c00288414
+> --- /dev/null
+> +++ b/drivers/clk/bcm/clk-raspberrypi.c
+> @@ -0,0 +1,316 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (C) 2019 Nicolas Saenz Julienne
+> + */
+> +
+> +#include <linux/clkdev.h>
+> +#include <linux/clk-provider.h>
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +
+> +#include <soc/bcm2835/raspberrypi-firmware.h>
+> +
+> +#define RPI_FIRMWARE_ARM_CLK_ID		0x000000003
+> +
+> +#define RPI_FIRMWARE_STATE_ENABLE_BIT	0x1
+> +#define RPI_FIRMWARE_STATE_WAIT_BIT	0x2
+how about using the BIT() macro?
+> +
+> +/*
+> + * Even though the firmware interface alters 'pllb' the frequencies are
+> + * provided as per 'pllb_arm'. We need to scale before passing them trough.
+> + */
+> +#define RPI_FIRMWARE_PLLB_ARM_DIV_RATE	2
+> +
+> +#define A2W_PLL_FRAC_BITS		20
+> +
+> +struct raspberrypi_clk {
+> +	struct device *dev;
+> +	struct rpi_firmware *firmware;
+> +
+> +	unsigned long min_rate;
+> +	unsigned long max_rate;
+> +
+> +	struct clk_hw pllb;
+> +	struct clk_hw *pllb_arm;
+> +	struct clk_lookup *pllb_arm_lookup;
+> +};
+> +
+> +/*
+> + * Structure of the message passed to Raspberry Pi's firmware in order to
+> + * change clock rates. The 'disable_turbo' option is only available to the ARM
+> + * clock (pllb) which we enable by default as turbo mode will alter multiple
+> + * clocks at once.
+> + *
+> + * Even though we're able to access the clock registers directly we're bound to
+> + * use the firmware interface as the firmware ultimately takes care of
+> + * mitigating overheating/undervoltage situations and we would be changing
+> + * frequencies behind his back.
+> + *
+> + * For more information on the firmware interface check:
+> + * https://github.com/raspberrypi/firmware/wiki/Mailbox-property-interface
+> + */
+> +struct raspberrypi_firmware_prop {
+> +	__le32 id;
+> +	__le32 val;
+> +	__le32 disable_turbo;
+> +} __packed;
+> +
+> +static int raspberrypi_clock_property(struct rpi_firmware *firmware, u32 tag,
+> +				      u32 clk, u32 *val)
+> +{
+> +	struct raspberrypi_firmware_prop msg = {
+> +		.id = clk,
+> +		.val = *val,
+> +		.disable_turbo = 1,
+> +	};
+> +	int ret;
+> +
+> +	ret = rpi_firmware_property(firmware, tag, &msg, sizeof(msg));
+> +	if (ret)
+> +		return ret;
+> +
+> +	*val = msg.val;
+> +
+> +	return 0;
+> +}
+> +
+> +static int raspberrypi_fw_pll_is_on(struct clk_hw *hw)
+> +{
+> +	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
+> +						   pllb);
+> +	u32 val = 0;
+> +	int ret;
+> +
+> +	ret = raspberrypi_clock_property(rpi->firmware,
+> +					 RPI_FIRMWARE_GET_CLOCK_STATE,
+> +					 RPI_FIRMWARE_ARM_CLK_ID, &val);
+> +	if (ret)
+> +		return 0;
+> +
+> +	return !!(val & RPI_FIRMWARE_STATE_ENABLE_BIT);
+> +}
+> +
+> +
+> +static unsigned long raspberrypi_fw_pll_get_rate(struct clk_hw *hw,
+> +						 unsigned long parent_rate)
+> +{
+> +	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
+> +						   pllb);
+> +	u32 val = 0;
+> +	int ret;
+> +
+> +	ret = raspberrypi_clock_property(rpi->firmware,
+> +					 RPI_FIRMWARE_GET_CLOCK_RATE,
+> +					 RPI_FIRMWARE_ARM_CLK_ID,
+> +					 &val);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return val * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
+> +}
+> +
+> +static int raspberrypi_fw_pll_on(struct clk_hw *hw)
+> +{
+> +	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
+> +						   pllb);
+> +	u32 val;
+> +	int ret;
+> +
+> +	val = RPI_FIRMWARE_STATE_ENABLE_BIT | RPI_FIRMWARE_STATE_WAIT_BIT;
+> +
+> +	ret = raspberrypi_clock_property(rpi->firmware,
+> +					 RPI_FIRMWARE_SET_CLOCK_STATE,
+> +					 RPI_FIRMWARE_ARM_CLK_ID, &val);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return 0;
+return ret;
+> +}
+> +
+> +static int raspberrypi_fw_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+> +				       unsigned long parent_rate)
+> +{
+> +	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
+> +						   pllb);
+> +	u32 new_rate = rate / RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
+> +	int ret;
+> +
+> +	ret = raspberrypi_clock_property(rpi->firmware,
+> +					 RPI_FIRMWARE_SET_CLOCK_RATE,
+> +					 RPI_FIRMWARE_ARM_CLK_ID,
+> +					 &new_rate);
+> +	if (ret)
+> +		dev_err_ratelimited(rpi->dev, "Failed to change %s frequency: %d",
+> +				    clk_hw_get_name(hw), ret);
+> +
+> +	return ret;
+> +}
+> +
+> +/*
+> + * Sadly there is no firmware rate rounding interface. We borred it from
+borrowed?
+> + * clk-bcm2835.
+> + */
+> +static long raspberrypi_pll_round_rate(struct clk_hw *hw, unsigned long rate,
+> +				       unsigned long *parent_rate)
+> +{
+> +	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
+> +						   pllb);
+> +	u64 div, final_rate;
+> +	u32 ndiv, fdiv;
+> +
+> +	rate = clamp(rate, rpi->min_rate, rpi->max_rate);
+> +
+> +	div = (u64)rate << A2W_PLL_FRAC_BITS;
+> +	do_div(div, *parent_rate);
+> +
+> +	ndiv = div >> A2W_PLL_FRAC_BITS;
+> +	fdiv = div & ((1 << A2W_PLL_FRAC_BITS) - 1);
+> +
+> +	/* We can't use rate directly as it would overflow */
+> +	final_rate = ((u64)*parent_rate * ((ndiv << A2W_PLL_FRAC_BITS) + fdiv));
+> +
+> +	return final_rate >> A2W_PLL_FRAC_BITS;
+> +}
+> +
+> +static void raspberrypi_fw_pll_off(struct clk_hw *hw)
+> +{
+> +	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
+> +						   pllb);
+> +	u32 val = RPI_FIRMWARE_STATE_WAIT_BIT;
+> +
+> +	raspberrypi_clock_property(rpi->firmware,
+> +				   RPI_FIRMWARE_SET_CLOCK_STATE,
+> +				   RPI_FIRMWARE_ARM_CLK_ID, &val);
+> +}
+I'm not sure. Does this operation really make sense?
+> +
+> +static const struct clk_ops raspberrypi_firmware_pll_clk_ops = {
+> +	.is_prepared = raspberrypi_fw_pll_is_on,
+> +	.prepare = raspberrypi_fw_pll_on,
+> +	.unprepare = raspberrypi_fw_pll_off,
+> +	.recalc_rate = raspberrypi_fw_pll_get_rate,
+> +	.set_rate = raspberrypi_fw_pll_set_rate,
+> +	.round_rate = raspberrypi_pll_round_rate,
+> +};
+> +
+> +static int raspberrypi_register_pllb(struct raspberrypi_clk *rpi)
+> +{
+> +	u32 min_rate = 0, max_rate = 0;
+> +	struct clk_init_data init;
+> +	int ret;
+> +
+> +	/* Get min & max rates set by the firmware */
+> +	ret = raspberrypi_clock_property(rpi->firmware,
+> +					 RPI_FIRMWARE_GET_MIN_CLOCK_RATE,
+> +					 RPI_FIRMWARE_ARM_CLK_ID,
+> +					 &min_rate);
+> +	if (ret) {
+> +		dev_err(rpi->dev, "Failed to get %s min freq: %d\n",
+> +			init.name, ret);
+at this point init isn't initialized
+> +		return ret;
+> +	}
+> +
+> +	ret = raspberrypi_clock_property(rpi->firmware,
+> +					 RPI_FIRMWARE_GET_MAX_CLOCK_RATE,
+> +					 RPI_FIRMWARE_ARM_CLK_ID,
+> +					 &max_rate);
+> +	if (ret) {
+> +		dev_err(rpi->dev, "Failed to get %s max freq: %d\n",
+> +			init.name, ret);
+> +		return ret;
+ditto
+> +	}
+> +
+> +	dev_info(rpi->dev, "CPU frequency range: min %u, max %u\n",
+> +		 min_rate, max_rate);
+> +
+> +	rpi->min_rate = min_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
+> +	rpi->max_rate = max_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
+I know we have to trust the firmware, but i would at least check that
+min_rate and max_rate are greater than zero.
+> +
+> +	memset(&init, 0, sizeof(init));
+> +
+> +	/* All of the PLLs derive from the external oscillator. */
+> +	init.parent_names = (const char *[]){ "osc" };
+> +	init.num_parents = 1;
+> +	init.name = "pllb";
+> +	init.ops = &raspberrypi_firmware_pll_clk_ops;
+> +	init.flags = CLK_GET_RATE_NOCACHE | CLK_IGNORE_UNUSED;
+> +
+> +	rpi->pllb.init = &init;
+> +
+> +	return devm_clk_hw_register(rpi->dev, &rpi->pllb);
+> +}
+> +
+> +static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
+> +{
+> +	rpi->pllb_arm = clk_hw_register_fixed_factor(rpi->dev,
+> +				"pllb_arm", "pllb",
+> +				CLK_SET_RATE_PARENT | CLK_GET_RATE_NOCACHE,
+> +				1, 2);
+> +	if (IS_ERR(rpi->pllb_arm)) {
+> +		dev_err(rpi->dev, "Failed to initialize pllb_arm\n");
+> +		return PTR_ERR(rpi->pllb_arm);
+> +	}
+> +
+> +	rpi->pllb_arm_lookup = clkdev_hw_create(rpi->pllb_arm, NULL, "cpu0");
+> +	if (!rpi->pllb_arm_lookup) {
+> +		dev_err(rpi->dev, "Failed to initialize pllb_arm_lookup\n");
+> +		clk_hw_unregister_fixed_factor(rpi->pllb_arm);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int raspberrypi_clk_probe(struct platform_device *pdev)
+> +{
+> +	struct device_node *firmware_node;
+> +	struct device *dev = &pdev->dev;
+> +	struct rpi_firmware *firmware;
+> +	struct raspberrypi_clk *rpi;
+> +	int ret;
+> +
+> +	firmware_node = of_find_compatible_node(NULL, NULL,
+> +					"raspberrypi,bcm2835-firmware");
+> +	if (!firmware_node) {
+> +		dev_err(dev, "Missing firmware node\n");
+> +		return -ENOENT;
+> +	}
+> +
+> +	firmware = rpi_firmware_get(firmware_node);
+> +	of_node_put(firmware_node);
+> +	if (!firmware)
+> +		return -EPROBE_DEFER;
+> +
+> +	rpi = devm_kzalloc(dev, sizeof(*rpi), GFP_KERNEL);
+> +	if (!rpi)
+> +		return -ENOMEM;
+> +
+> +	rpi->dev = dev;
+> +	rpi->firmware = firmware;
+> +
+> +	ret = raspberrypi_register_pllb(rpi);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to initialize pllb, %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = raspberrypi_register_pllb_arm(rpi);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to initialize pllb_arm, %d\n", ret);
+I think the error messages in raspberrypi_register_pllb_arm() are enough.
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static struct platform_driver raspberrypi_clk_driver = {
+> +	.driver = {
+> +		.name = "raspberrypi-clk",
+> +	},
+> +	.probe          = raspberrypi_clk_probe,
+> +};
+> +builtin_platform_driver(raspberrypi_clk_driver);
+> +
+> +MODULE_AUTHOR("Nicolas Saenz Julienne <nsaenzjulienne@suse.de>");
+> +MODULE_DESCRIPTION("Raspberry Pi firmware clock driver");
+> +MODULE_LICENSE("GPLv2");
 
 _______________________________________________
 linux-arm-kernel mailing list
