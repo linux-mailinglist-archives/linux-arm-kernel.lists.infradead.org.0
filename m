@@ -2,88 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B0BB35898
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 10:34:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1771735899
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 10:34:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y1jE+ukKD5e9jO9ZkoDHZDctRtWDEsBp4rjTOCuGTHM=; b=CHa2uzdyct13ZT
-	Nx5NdTu1IumVy3WMvXhgoyrBthD1ztHm/PQda9WgWBQymx2oyK/njMcL8DYNbrXjrqOCZAqtj6tsO
-	ie++A6H5q/F7elq3ktdM+x19+7/T04FduCSNm+bOQItlZseTYPzUqQGzvbaWrVJeTKY/TbzHlPXcq
-	QevaV/gbDI1cLSweotBhSIpNnJ6haHFIudlM9cRD1ozuoRLwS85Gyf4yWbRro3WLx0SDGdSRcYBAS
-	sJXSHZtWF5AlwxXpAw9niXtCAK1apGInPMVR2fk7S+hPK4+YqS8uirfsy5UBSgcV3jMoZDc6QwiwU
-	I2VTDgXY9sivxdpGt1PA==;
+	List-Owner; bh=BbshbgkfmwTSqzdBZ6uRsOp+f/HuMlSgGTvbfIGhSc4=; b=r06gIxAZVxn0vV
+	d3dsgP6GHKJk0L2cmJk5d6xs2VhZ95oRisbtf6Lp56ud6OhSocX/fwjM/0fUMJIIF1lGgsUh0em6A
+	pZsEf+AABeIam/DOf0mJHKfbF1ZSCy5bL0qGwzQ+E5aral0YwAbJU5g4WPy/HTE89SgFS4hSWKuqs
+	rlAfteZ73DrnYi/Gtv1U4Fgk99cVk1U/IZy3y1IaPUhaK+HGS+SYXyN3phm5NrV862VMm36X5YwV5
+	/UWCfc9Y/wcRDPiPiyXsg42Bvv/5l5t/2YrTjh+9eUYuLiliR4BGwMf0s4FYzeC+anUZwpvOHF4Ml
+	OfRSKpNhUlifPT/tFY3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYRN4-0001ZI-Ca; Wed, 05 Jun 2019 08:34:10 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hYRNJ-0001xF-9m; Wed, 05 Jun 2019 08:34:25 +0000
+Received: from mail-lf1-f66.google.com ([209.85.167.66])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYRMc-00018R-MF
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 08:33:44 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n9so6089718wru.0
+ id 1hYRMs-0001Sh-Fc
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 08:34:15 +0000
+Received: by mail-lf1-f66.google.com with SMTP id 136so6900155lfa.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 01:33:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=EhWbTT+5eo9QxU62r83O6HwrMSm/jGTQFiSriaCzgkM=;
- b=AK2aEHYTMTTgembsknTlJHO7cTfazErya1CARRNO412kTQtZZwciskduOJwC7xOvU5
- LqSiTAOhK8ce/VK/XaV+rETEZ/lUS+TGhvieAKZB0Zhl896sb+IMBTuiZUwZUuN5otCd
- Pp2GJgftRcEQF+/WtYrf/qotOCzuycu0CzOJqgbgHm8F0Dv1neTVLbY9U9uaHI9vbra0
- yYBE7e8LVz+yZH+qqPlZ1Rs89hKTknumavPZD0d1SZnGfKHf67Z795tuNv/VA6Z51PsV
- 4tWJ1VrFt6v54jCITuwRoM/06DImisumMC3flcJVFPzfSeAUTwWB3iqFTuZca3gwW5Ie
- +gTw==
+ Wed, 05 Jun 2019 01:33:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=EhWbTT+5eo9QxU62r83O6HwrMSm/jGTQFiSriaCzgkM=;
- b=oITSkOGoc4GiiVqTL47VvW716AxTeps3X6p2kx19KTceSxS2QSXSc0M4v7zH48Ikgg
- O+22+jPuMqSo8PzWKHVift+U3QqnShgOfqK5V/jA6A9sK9XFHT770Y3KpbiQ9fbu5Hqf
- EsUZiHiBnpV07Jxxqdhf8oenF5mR6B0P8Wl8A6UarZRVbupJX7LCWsQ79P4WjFNs6s0C
- JGPBl7OHXBm1us5/xmNOMoD93pjNQq0JYvD6hw8UchuLF8C811uu7oi/O10mS2qQm3LL
- adV/S2q8xWQ7Rj6ceW9pBXTXsxut6oF6bbxStNjfm4geHOqZFr3cb6NGmHVLUguD110u
- gIow==
-X-Gm-Message-State: APjAAAW0tkXeduwIcRGF4eYD2hWosCwbEgyWGs6Y/FPLrXtaQp6gH1Na
- dS1JvmUJ/s+n2v5PIBqvmOfzMg==
-X-Google-Smtp-Source: APXvYqyrCBsPATmm5vC/XIiRQElJ1rdn5hHqIVJpfncoQGU5Wr7iMS8GBrOw0qC/dDqJRRyumd++Sg==
-X-Received: by 2002:adf:b447:: with SMTP id v7mr24254105wrd.267.1559723621218; 
- Wed, 05 Jun 2019 01:33:41 -0700 (PDT)
-Received: from debian-brgl.home ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
- by smtp.gmail.com with ESMTPSA id b5sm15274471wrx.22.2019.06.05.01.33.39
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Q9tx+jcvIT26cZO2scmHbp4TeAN9yH+3bSlg5LwUoqc=;
+ b=LPz/JAAyuSetsr0yJSL6ZgoAMuZqpfabcIo8cMO1P7SUezqM6+MMc3vWg5zV9oNUlq
+ UJjUuwWEiO+NMuDoQ2T4Hj93Gr9Xyu07X1eFRZPB3HpR+ToTGcoCtfD1uY4fqeNsveTs
+ 5OIeMB9E9aA8pTL81zSPcso3oGU7Kavp0g2wO2iF333ndSyrlYxNRvL2iSUViyiBacfR
+ uYiZBKyODf0lXHRqh//BoCyAzlBjXIHLLsp25l7RhmSLfJAi1TtLdAeeawm5RpDNi5wU
+ +y+ER5t27SBvq7or8B8AGD/1x6qMJX28p7AU22Qq3X+A+dzsfVG7+AxhlqhqC8d2cP6Q
+ 2Ydg==
+X-Gm-Message-State: APjAAAUYqudCZtma8sAJ5dppquFKyQ7O0eNDVn2EspMRaEQaRyJfdgwM
+ gcreO2m6fcibhNkD6Bg1HVo=
+X-Google-Smtp-Source: APXvYqwtR8QAunhSjQP25Svspbkpa9nCnvW6tu0Kw7GQYZ2RLBSBlFAZRWmfA/bitG0hHGnEsRD1Tw==
+X-Received: by 2002:a19:f806:: with SMTP id a6mr15693187lff.102.1559723636153; 
+ Wed, 05 Jun 2019 01:33:56 -0700 (PDT)
+Received: from xi.terra (c-74bee655.07-184-6d6c6d4.bbcust.telenor.se.
+ [85.230.190.116])
+ by smtp.gmail.com with ESMTPSA id q2sm1856972lfj.25.2019.06.05.01.33.55
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 01:33:40 -0700 (PDT)
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>, David Lechner <david@lechnology.com>
-Subject: [RFC v3 2/2] clocksource: timer-davinci: add support for clocksource
-Date: Wed,  5 Jun 2019 10:33:34 +0200
-Message-Id: <20190605083334.22383-3-brgl@bgdev.pl>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190605083334.22383-1-brgl@bgdev.pl>
-References: <20190605083334.22383-1-brgl@bgdev.pl>
+ Wed, 05 Jun 2019 01:33:55 -0700 (PDT)
+Received: from johan by xi.terra with local (Exim 4.91)
+ (envelope-from <johan@kernel.org>)
+ id 1hYRMn-0006Ie-H7; Wed, 05 Jun 2019 10:33:53 +0200
+Date: Wed, 5 Jun 2019 10:33:53 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH 2/8] i2c: i2c-qcom-geni: Signify successful driver probe
+Message-ID: <20190605083353.GD29637@localhost>
+References: <20190604104455.8877-1-lee.jones@linaro.org>
+ <20190604104455.8877-2-lee.jones@linaro.org>
+ <20190605062020.GL22737@tuxbook-pro> <20190605071625.GK4797@dell>
+ <20190605075656.GC29637@localhost> <20190605082047.GM4797@dell>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190605082047.GM4797@dell>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_013342_722414_09AA561D 
-X-CRM114-Status: GOOD (  15.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190605_013359_171614_16481E6D 
+X-CRM114-Status: GOOD (  16.13  )
+X-Spam-Score: -0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.66 listed in list.dnswl.org]
+ -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.66 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jhovold[at]gmail.com)
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,142 +94,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, balbi@kernel.org,
+ david.brown@linaro.org, gregkh@linuxfoundation.org, linus.walleij@linaro.org,
+ linux-usb@vger.kernel.org, Johan Hovold <johan@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, wsa+renesas@sang-engineering.com,
+ alokc@codeaurora.org, kramasub@codeaurora.org, linux-i2c@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ andy.gross@linaro.org, jlhugo@gmail.com, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+On Wed, Jun 05, 2019 at 09:20:47AM +0100, Lee Jones wrote:
+> On Wed, 05 Jun 2019, Johan Hovold wrote:
 
-Extend the davinci-timer driver to also register a clock source.
+> > No, we don't add noise like this to the logs just because it may be
+> > useful while debugging. Even one-liners add up.
+> 
+> One line per device is should not cause an issue.
+> 
+> Problems occur when developers try to print all kinds of device
+> specifics to the boot log.  A simple, single line for such an
+> important device/controller has more benefits than drawbacks.
 
-Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
----
- drivers/clocksource/timer-davinci.c | 85 +++++++++++++++++++++++++++++
- 1 file changed, 85 insertions(+)
+What about the thousands of probe functions which do not currently spam
+the logs? If you want to see all successful probes reliably, you tell
+driver core to print it.
 
-diff --git a/drivers/clocksource/timer-davinci.c b/drivers/clocksource/timer-davinci.c
-index f8959dccae54..a9ca02390b66 100644
---- a/drivers/clocksource/timer-davinci.c
-+++ b/drivers/clocksource/timer-davinci.c
-@@ -43,6 +43,8 @@
- #define DAVINCI_TIMER_MIN_DELTA			0x01
- #define DAVINCI_TIMER_MAX_DELTA			0xfffffffe
- 
-+#define DAVINCI_TIMER_CLKSRC_BITS		32
-+
- #define DAVINCI_TIMER_TGCR_DEFAULT \
- 		(DAVINCI_TIMER_TIMMODE_32BIT_UNCHAINED | DAVINCI_TIMER_UNRESET)
- 
-@@ -52,6 +54,16 @@ struct davinci_clockevent {
- 	unsigned int cmp_off;
- };
- 
-+/*
-+ * This must be globally accessible by davinci_timer_read_sched_clock(), so
-+ * let's keep it here.
-+ */
-+static struct {
-+	struct clocksource dev;
-+	void __iomem *base;
-+	unsigned int tim_off;
-+} davinci_clocksource;
-+
- static struct davinci_clockevent *
- to_davinci_clockevent(struct clock_event_device *clockevent)
- {
-@@ -166,6 +178,53 @@ static irqreturn_t davinci_timer_irq_timer(int irq, void *data)
- 	return IRQ_HANDLED;
- }
- 
-+static u64 notrace davinci_timer_read_sched_clock(void)
-+{
-+	return readl_relaxed(davinci_clocksource.base +
-+			     davinci_clocksource.tim_off);
-+}
-+
-+static u64 davinci_clocksource_read(struct clocksource *dev)
-+{
-+	return davinci_timer_read_sched_clock();
-+}
-+
-+/*
-+ * Standard use-case: we're using tim12 for clockevent and tim34 for
-+ * clocksource. The default is making the former run in oneshot mode
-+ * and the latter in periodic mode.
-+ */
-+static void davinci_clocksource_init_tim34(void __iomem *base)
-+{
-+	int tcr;
-+
-+	tcr = DAVINCI_TIMER_ENAMODE_PERIODIC <<
-+		DAVINCI_TIMER_ENAMODE_SHIFT_TIM34;
-+	tcr |= DAVINCI_TIMER_ENAMODE_ONESHOT <<
-+		DAVINCI_TIMER_ENAMODE_SHIFT_TIM12;
-+
-+	writel_relaxed(0x0, base + DAVINCI_TIMER_REG_TIM34);
-+	writel_relaxed(UINT_MAX, base + DAVINCI_TIMER_REG_PRD34);
-+	writel_relaxed(tcr, base + DAVINCI_TIMER_REG_TCR);
-+}
-+
-+/*
-+ * Special use-case on da830: the DSP may use tim34. We're using tim12 for
-+ * both clocksource and clockevent. We set tim12 to periodic and don't touch
-+ * tim34.
-+ */
-+static void davinci_clocksource_init_tim12(void __iomem *base)
-+{
-+	unsigned int tcr;
-+
-+	tcr = DAVINCI_TIMER_ENAMODE_PERIODIC <<
-+		DAVINCI_TIMER_ENAMODE_SHIFT_TIM12;
-+
-+	writel_relaxed(0x0, base + DAVINCI_TIMER_REG_TIM12);
-+	writel_relaxed(UINT_MAX, base + DAVINCI_TIMER_REG_PRD12);
-+	writel_relaxed(tcr, base + DAVINCI_TIMER_REG_TCR);
-+}
-+
- static void davinci_timer_init(void __iomem *base)
- {
- 	/* Set clock to internal mode and disable it. */
-@@ -248,6 +307,32 @@ int __init davinci_timer_register(struct clk *clk,
- 					DAVINCI_TIMER_MIN_DELTA,
- 					DAVINCI_TIMER_MAX_DELTA);
- 
-+	davinci_clocksource.dev.rating = 300;
-+	davinci_clocksource.dev.read = davinci_clocksource_read;
-+	davinci_clocksource.dev.mask =
-+			CLOCKSOURCE_MASK(DAVINCI_TIMER_CLKSRC_BITS);
-+	davinci_clocksource.dev.flags = CLOCK_SOURCE_IS_CONTINUOUS;
-+	davinci_clocksource.base = base;
-+
-+	if (timer_cfg->cmp_off) {
-+		davinci_clocksource.dev.name = "tim12";
-+		davinci_clocksource.tim_off = DAVINCI_TIMER_REG_TIM12;
-+		davinci_clocksource_init_tim12(base);
-+	} else {
-+		davinci_clocksource.dev.name = "tim34";
-+		davinci_clocksource.tim_off = DAVINCI_TIMER_REG_TIM34;
-+		davinci_clocksource_init_tim34(base);
-+	}
-+
-+	rv = clocksource_register_hz(&davinci_clocksource.dev, tick_rate);
-+	if (rv) {
-+		pr_err("Unable to register clocksource");
-+		return rv;
-+	}
-+
-+	sched_clock_register(davinci_timer_read_sched_clock,
-+			     DAVINCI_TIMER_CLKSRC_BITS, tick_rate);
-+
- 	return 0;
- }
- 
--- 
-2.21.0
+> > There are plenty of options for debugging already ranging from adding a
+> > temporary dev_info() to the probe function in question to using dynamic
+> > debugging to have driver core log every successful probe.
+> 
+> This is what I ended up doing.  It was time consuming to parse though
+> a log of that size when you have no paging or keyboard.
 
+With the right command-line option to enable dynamic debugging you get
+one line per successful probe, just like you wanted. Or are you now
+saying that one-line per device is too much after all? ;)
+
+> > And in this case you say the driver was in fact already bound; that can
+> > easily be verified through sysfs too in case things aren't behaving the
+> > way you expect.
+> 
+> Not in a non-booting system with no keyboard you can't. ;)
+
+Fair enough, but the above would still work.
+
+Johan
 
 _______________________________________________
 linux-arm-kernel mailing list
