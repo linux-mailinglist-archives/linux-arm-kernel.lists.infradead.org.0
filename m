@@ -2,108 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0237236271
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 19:26:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92E0136276
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 19:27:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Message-ID:References:To:From:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pEWI4kDsVWxCH0FSDcVj69D/ChGQN4rPdL2VDJ6evlQ=; b=VTte+OPuTuToSDb8N5r3EXxb9w
-	iR4U1Dv9Yi0aCpChAEiJ2PYAD4cD0oFw6TAzEDRjvf1KQlndvH0mPswRF8XugY7hFTkUEsr9SPnTL
-	LiBu5fRvYLWCPi58Z6tqg7AX9KIWmYBQQGoU8zkk//+JDTXHqP7lWIzhRz7lgADAMQ4GbJHQWokBA
-	W2YVhG9+6GKRaHBZItwUyaaf9B5ZtNxEBbP5OCCt67G6XOR1Mp5SZWoXS0Br+MPTysOA/LSoU1IeQ
-	PD1WWUt8UH2lv1HsJbbUPnb+5ceXb3BMw11ahD3QLgIsyGKwDS7Azvm6dObM2kIc/23zENtNc0hY6
-	HDw3h7AQ==;
+	bh=b1llVWvW2Az320+YUoqJZ8KSGvlcQ+PLPheZb8sjzvo=; b=YTfxfrTdCMBIchQhV6z4rKtOAN
+	U8C54+uGDgkelm0S0txgn+ZQgKed+oJ0BUO8XGWK7NalqbHByVc31DGyZIcvrwXq5FY6PniRLG+nM
+	GcikL/4YNo6REwRKGJsmCLvhrTlZT6MH6m2d3i5TISwtpPfjqr29i9kBfCUVH6r+BXWWflHaw4H4B
+	QWoIZCY2cXe/4hdSw0ak7XFZ521/KU8WbR0a7J0dWl6K0NSwYwYxZY6s8ybN8TxB++CHtGjPzBy99
+	7u7UknXNENnXit/KHn1kEkVxZmTGZI61yak0dFd1L1jM9YMB70/v5wHi/3I1GMOc7GODDYbivmD3n
+	+RsYnEJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYZgD-0005b2-1N; Wed, 05 Jun 2019 17:26:29 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYZg6-0005aF-3r
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 17:26:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BDC00374;
- Wed,  5 Jun 2019 10:26:18 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 9998B3F5AF; Wed,  5 Jun 2019 10:26:16 -0700 (PDT)
-Subject: Re: [PATCH 5/6] arm64: dts: Add ipq6018 SoC and CP01 board support
-To: Sricharan R <sricharan@codeaurora.org>, robh+dt@kernel.org,
- sboyd@codeaurora.org, linus.walleij@linaro.org, agross@kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	id 1hYZgg-0005rS-6C; Wed, 05 Jun 2019 17:26:58 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYZgY-0005qw-IH
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 17:26:51 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id C237F60C72; Wed,  5 Jun 2019 17:26:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1559755609;
+ bh=2evWTxdFbkeUdR6ga+Ohoj6kOtwJ9cgbxQLfNdc1t1U=;
+ h=Subject:From:To:References:Date:In-Reply-To:From;
+ b=hgZ4nWw3bvopFQW6hDoRLvEyGiRohLWXZ9F0axpksO6Rh1AjgCyAya/NaKvZBDklQ
+ lKv76NaJCC8lBGBW7BYMlyo19zfky6jSOTbexjHbi07DBfNzFrFUT0osF1Eg1GiQaf
+ 35CiUrBe/pH6UtdKNJna53c3KEADgvsavVc3GixU=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [192.168.1.6] (unknown [122.164.184.234])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: sricharan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 2FF6760741;
+ Wed,  5 Jun 2019 17:26:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1559755609;
+ bh=2evWTxdFbkeUdR6ga+Ohoj6kOtwJ9cgbxQLfNdc1t1U=;
+ h=Subject:From:To:References:Date:In-Reply-To:From;
+ b=hgZ4nWw3bvopFQW6hDoRLvEyGiRohLWXZ9F0axpksO6Rh1AjgCyAya/NaKvZBDklQ
+ lKv76NaJCC8lBGBW7BYMlyo19zfky6jSOTbexjHbi07DBfNzFrFUT0osF1Eg1GiQaf
+ 35CiUrBe/pH6UtdKNJna53c3KEADgvsavVc3GixU=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 2FF6760741
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=sricharan@codeaurora.org
+Subject: Re: [PATCH 0/6] Add minimal boot support for IPQ6018
+From: Sricharan R <sricharan@codeaurora.org>
+To: robh+dt@kernel.org, sboyd@codeaurora.org, linus.walleij@linaro.org,
+ agross@kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, linux-soc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 References: <1559754961-26783-1-git-send-email-sricharan@codeaurora.org>
- <1559754961-26783-6-git-send-email-sricharan@codeaurora.org>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: ARM Ltd
-Message-ID: <d313bec5-1115-0ef7-0241-83e20672d2f1@arm.com>
-Date: Wed, 5 Jun 2019 18:26:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+Message-ID: <d6ccfaa6-bbcc-c0be-918b-d4c0ebda66bb@codeaurora.org>
+Date: Wed, 5 Jun 2019 22:56:42 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <1559754961-26783-6-git-send-email-sricharan@codeaurora.org>
+In-Reply-To: <1559754961-26783-1-git-send-email-sricharan@codeaurora.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_102622_173115_0476212B 
-X-CRM114-Status: GOOD (  20.22  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_102650_645022_910F847E 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,151 +102,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/06/2019 18:16, Sricharan R wrote:
-> Add initial device tree support for the Qualcomm IPQ6018 SoC and
-> CP01 evaluation board.
-> 
-> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
-> Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
-> ---
->  arch/arm64/boot/dts/qcom/Makefile            |   1 +
->  arch/arm64/boot/dts/qcom/ipq6018-cp01-c1.dts |  35 ++++
->  arch/arm64/boot/dts/qcom/ipq6018.dtsi        | 231 +++++++++++++++++++++++++++
->  3 files changed, 267 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/qcom/ipq6018-cp01-c1.dts
->  create mode 100644 arch/arm64/boot/dts/qcom/ipq6018.dtsi
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-> index 21d548f..ac22dbb 100644
-> --- a/arch/arm64/boot/dts/qcom/Makefile
-> +++ b/arch/arm64/boot/dts/qcom/Makefile
-> @@ -2,6 +2,7 @@
->  dtb-$(CONFIG_ARCH_QCOM)	+= apq8016-sbc.dtb
->  dtb-$(CONFIG_ARCH_QCOM)	+= apq8096-db820c.dtb
->  dtb-$(CONFIG_ARCH_QCOM)	+= ipq8074-hk01.dtb
-> +dtb-$(CONFIG_ARCH_QCOM)	+= ipq6018-cp01-c1.dtb
->  dtb-$(CONFIG_ARCH_QCOM)	+= msm8916-mtp.dtb
->  dtb-$(CONFIG_ARCH_QCOM)	+= msm8992-bullhead-rev-101.dtb
->  dtb-$(CONFIG_ARCH_QCOM)	+= msm8994-angler-rev-101.dtb
-> diff --git a/arch/arm64/boot/dts/qcom/ipq6018-cp01-c1.dts b/arch/arm64/boot/dts/qcom/ipq6018-cp01-c1.dts
-> new file mode 100644
-> index 0000000..ac7cb22
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/qcom/ipq6018-cp01-c1.dts
-> @@ -0,0 +1,35 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * IPQ6018 CP01 board device tree source
-> + *
-> + * Copyright (c) 2019, The Linux Foundation. All rights reserved.
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include "ipq6018.dtsi"
-> +
-> +/ {
-> +	#address-cells = <0x2>;
-> +	#size-cells = <0x2>;
-> +	model = "Qualcomm Technologies, Inc. IPQ6018/AP-CP01-C1";
-> +	compatible = "qcom,ipq6018-cp01", "qcom,ipq6018";
-> +	interrupt-parent = <&intc>;
-> +};
-> +
-> +&tlmm {
-> +	uart_pins: uart_pins {
-> +		mux {
-> +			pins = "gpio44", "gpio45";
-> +			function = "blsp2_uart";
-> +			drive-strength = <8>;
-> +			bias-pull-down;
-> +		};
-> +	};
-> +};
-> +
-> +&blsp1_uart3 {
-> +	pinctrl-0 = <&uart_pins>;
-> +	pinctrl-names = "default";
-> +	status = "ok";
-> +};
-> diff --git a/arch/arm64/boot/dts/qcom/ipq6018.dtsi b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-> new file mode 100644
-> index 0000000..79cccdd
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-> @@ -0,0 +1,231 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * IPQ6018 SoC device tree source
-> + *
-> + * Copyright (c) 2019, The Linux Foundation. All rights reserved.
-> + */
-> +
-> +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/clock/qcom,gcc-ipq6018.h>
-> +
-> +/ {
-> +	model = "Qualcomm Technologies, Inc. IPQ6018";
-> +	compatible = "qcom,ipq6018";
-> +
-> +	chosen {
-> +		bootargs = "console=ttyMSM0,115200,n8 rw init=/init";
-> +		bootargs-append = " swiotlb=1 clk_ignore_unused";
-> +	};
-> +
-> +	reserved-memory {
-> +		#address-cells = <2>;
-> +		#size-cells = <2>;
-> +		ranges;
-> +
-> +		tz:tz@48500000 {
-> +			no-map;
-> +			reg = <0x0 0x48500000 0x0 0x00200000>;
-> +		};
-> +	};
-> +
-> +	soc: soc {
-> +		#address-cells = <0x1>;
-> +		#size-cells = <0x1>;
-> +		ranges = <0 0 0 0xffffffff>;
-> +		dma-ranges;
-> +		compatible = "simple-bus";
-> +
-> +		intc: interrupt-controller@b000000 {
-> +			compatible = "qcom,msm-qgic2";
-> +			interrupt-controller;
-> +			#interrupt-cells = <0x3>;
-> +			reg = <0xb000000 0x1000>, <0xb002000 0x1000>;
-
-Where are the rest of the GICv2 MMIO regions, such as GICV and GICH? And
-the maintenance interrupt?
-
-> +		};
-> +
-> +		timer {
-> +			compatible = "arm,armv8-timer";
-> +			interrupts = <GIC_PPI 2 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-> +				     <GIC_PPI 3 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-> +				     <GIC_PPI 4 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-> +				     <GIC_PPI 1 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
-
-The fact that you expose the EL2 timer interrupt would tend to confirm
-the idea that this system supports virtualization... Hence my questions
-above.
-
-Thanks,
-
-	M.
-
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+U29ycnksIEdvdCBzYm95ZEBjb2RlYXVyb3JhLm9yZyB3cm9uZy4gV2lsbCBmaXggYW5kIHJlcG9z
+dAoKUmVnYXJkcywKIFNyaWNoYXJhbgoKT24gNi81LzIwMTkgMTA6NDUgUE0sIFNyaWNoYXJhbiBS
+IHdyb3RlOgo+IFRoZSBJUFE2MDE4IGlzIFF1YWxjb21t4oCZcyA4MDIuMTFheCBTb0MgZm9yIFJv
+dXRlcnMsCj4gR2F0ZXdheXMgYW5kIEFjY2VzcyBQb2ludHMuCj4gCj4gVGhpcyBzZXJpZXMgYWRk
+cyBtaW5pbWFsIGJvYXJkIGJvb3Qgc3VwcG9ydCBmb3IgaXBxNjAxOC1jcDAxCj4gYm9hcmQuCj4g
+Cj4gU3JpY2hhcmFuIFIgKDYpOgo+ICAgcGluY3RybDogcWNvbTogQWRkIGlwcTYwMTggcGluY3Ry
+bCBkcml2ZXIKPiAgIGR0LWJpbmRpbmdzOiBxY29tOiBBZGQgaXBxNjAxOCBiaW5kaW5ncwo+ICAg
+Y2xrOiBxY29tOiBBZGQgRFQgYmluZGluZ3MgZm9yIGlwcTYwMTggZ2NjIGNsb2NrIGNvbnRyb2xs
+ZXIKPiAgIGNsazogcWNvbTogQWRkIGlwcTYwMTggR2xvYmFsIENsb2NrIENvbnRyb2xsZXIgc3Vw
+cG9ydAo+ICAgYXJtNjQ6IGR0czogQWRkIGlwcTYwMTggU29DIGFuZCBDUDAxIGJvYXJkIHN1cHBv
+cnQKPiAgIGFybTY0OiBkZWZjb25maWc6IEVuYWJsZSBxY29tIGlwcTYwMTggY2xvY2sgYW5kIHBp
+bmN0cmwKPiAKPiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9xY29tLnlh
+bWwgICAgfCAgICAyICsKPiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3MvY2xvY2svcWNvbSxnY2Mu
+dHh0ICAgICAgICAgfCAgICAxICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL01ha2VmaWxl
+ICAgICAgICAgICAgICAgICAgfCAgICAxICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lw
+cTYwMTgtY3AwMS1jMS5kdHMgICAgICAgfCAgIDM1ICsKPiAgYXJjaC9hcm02NC9ib290L2R0cy9x
+Y29tL2lwcTYwMTguZHRzaSAgICAgICAgICAgICAgfCAgMjMxICsKPiAgYXJjaC9hcm02NC9jb25m
+aWdzL2RlZmNvbmZpZyAgICAgICAgICAgICAgICAgICAgICAgfCAgICAyICsKPiAgZHJpdmVycy9j
+bGsvcWNvbS9LY29uZmlnICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgICA5ICsKPiAgZHJp
+dmVycy9jbGsvcWNvbS9NYWtlZmlsZSAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgICAxICsK
+PiAgZHJpdmVycy9jbGsvcWNvbS9nY2MtaXBxNjAxOC5jICAgICAgICAgICAgICAgICAgICAgfCA1
+MjY3ICsrKysrKysrKysrKysrKysrKysrCj4gIGRyaXZlcnMvcGluY3RybC9xY29tL0tjb25maWcg
+ICAgICAgICAgICAgICAgICAgICAgIHwgICAxMCArCj4gIGRyaXZlcnMvcGluY3RybC9xY29tL01h
+a2VmaWxlICAgICAgICAgICAgICAgICAgICAgIHwgICAgMSArCj4gIGRyaXZlcnMvcGluY3RybC9x
+Y29tL3BpbmN0cmwtaXBxNjAxOC5jICAgICAgICAgICAgIHwgMTE4MyArKysrKwo+ICBpbmNsdWRl
+L2R0LWJpbmRpbmdzL2Nsb2NrL3Fjb20sZ2NjLWlwcTYwMTguaCAgICAgICB8ICA0MDUgKysKPiAg
+MTMgZmlsZXMgY2hhbmdlZCwgNzE0OCBpbnNlcnRpb25zKCspCj4gIGNyZWF0ZSBtb2RlIDEwMDY0
+NCBhcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vaXBxNjAxOC1jcDAxLWMxLmR0cwo+ICBjcmVhdGUg
+bW9kZSAxMDA2NDQgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTYwMTguZHRzaQo+ICBjcmVh
+dGUgbW9kZSAxMDA2NDQgZHJpdmVycy9jbGsvcWNvbS9nY2MtaXBxNjAxOC5jCj4gIGNyZWF0ZSBt
+b2RlIDEwMDY0NCBkcml2ZXJzL3BpbmN0cmwvcWNvbS9waW5jdHJsLWlwcTYwMTguYwo+ICBjcmVh
+dGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9kdC1iaW5kaW5ncy9jbG9jay9xY29tLGdjYy1pcHE2MDE4
+LmgKPiAKCi0tIAoiUVVBTENPTU0gSU5ESUEsIG9uIGJlaGFsZiBvZiBRdWFsY29tbSBJbm5vdmF0
+aW9uIENlbnRlciwgSW5jLiBpcyBhIG1lbWJlciBvZiBDb2RlIEF1cm9yYSBGb3J1bSwgaG9zdGVk
+IGJ5IFRoZSBMaW51eCBGb3VuZGF0aW9uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
