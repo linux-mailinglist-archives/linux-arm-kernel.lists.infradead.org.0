@@ -2,79 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75BA635CBF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:25:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F366535B72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RdWhj6wwzYIjYtsoCQrKAQgossJHGIOJ0sM/090LQEM=; b=Z853UQlkNIqmxi
-	Sqz4L/JItSRyGG9eFneEg1z8y8uOrCL/6vPUp0wGiUgeNbrXxpgnbdTwOvlo7y79SyZ3WAlsfcmbp
-	OlSVR1RJDIEUrLQX0le6gmS+JDFPyb4WIXJgMllcXpxolBHVGFL67fJRZw6PQ7wsbU3iG5wpbYEyI
-	TVU4sk9GQJxvyDLur1KZqGo3AAf9Sfc0DQQXMPlI6IaYUpBPfs4Mi081PuYg1i8x6SWHhtDULMep+
-	+d+Jaw++hYiU/iK2nXG3Gp1z6q4TRHfAioazi+BWmx1n1LtO7bS/tj1Eky5ipUd9qrnW4fe1dtE6N
-	vbvVUTqSE4vydfA1DlMA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=y7OiakOJTMF2t1p0giUt/ARk5S0lJwABZv11MpTXv6A=; b=TGL
+	VuvJ7TmIUBsJjMJkJgn4F3QrjrL4TBjbuyvlN4PKDEYBTu/IcycX2kkpg0toWbHi3ScIQ5dpBckuD
+	00c4U3920zcApyye7EYXWQhKDAQO8w3MVAxMFwXWBPZTuf2kLqVAa0maSKvxcg48D0RxZmIoz5AEM
+	KLIixiSxq8XSNbJP/7XtHwMJSObI2iTjqv2xUuvNe0RvX9zYpAdBn+dhkv6ZnKsb9Kn8TvTcJnx8H
+	J3+U1idrLmdLx4zvb94R6Cw2waClh7Km7BQKkVIBEHruuIm8gDNpZIG35sGDlp/4ZSzl6/1ezgmC6
+	r7eL6LRMh0qnMOqOMxZjY5GUYZYGQCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYUz5-0004t3-Qq; Wed, 05 Jun 2019 12:25:39 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hYUKH-0003Zw-W9; Wed, 05 Jun 2019 11:43:30 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYUxN-0001B3-Q2; Wed, 05 Jun 2019 12:23:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:References:
- In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7PFdHNASZuYOrWig6OsWhzY2f7Ux0e8129d6ZwnnRfo=; b=NCrnPub9JMX4UKrSWXrn/QCPZ
- B/ioPdkG7Xwrm1LIToP4Oc1316TZ+7yCKwBcv5pX/lvO0ojNFULRLK8eYtqZtu+x7vhZKJvh+0fbl
- PM3wWyIsrHOKVwnaevWgi3IrBDjY3uwb9jy+9dKQKVCXYEm2ZsAu2wh1CUx72IN60vD8ckmLg3Qkd
- 2NxXG6QVV5JBoaFeIu3XwsPwp8u9wUAJEQdvMBUOHLl8qfr5EMLLutfNwv7pi5ygaa7IP0WBmnY29
- nB5lTXmuOvaiu2K9UNzQRU/pbsx++J1fdK3J+hWFfVpPQj7qPs6Cq3pA8mYtA5GoB7J+cBxBibAPK
- hByk+O9EQ==;
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYUL9-0005xW-An; Wed, 05 Jun 2019 11:44:24 +0000
-X-UUID: 4f8ba20bcbb04a1ca74b34910ce2016c-20190605
-X-UUID: 4f8ba20bcbb04a1ca74b34910ce2016c-20190605
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1177056341; Wed, 05 Jun 2019 03:43:51 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 04:43:51 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 19:43:49 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 5 Jun 2019 19:43:49 +0800
-From: <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
- Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v3, 15/27] drm/mediatek: add component OVL_2L1
-Date: Wed, 5 Jun 2019 19:42:54 +0800
-Message-ID: <1559734986-7379-16-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
-References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
-MIME-Version: 1.0
-X-MTK: N
+ id 1hYUJz-0003Ob-HN
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 11:43:13 +0000
+Received: by mail-wr1-x443.google.com with SMTP id p11so14286540wre.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 04:43:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=nQjqkj1EN8NC8Ay0yEHmwn6X2HJX2TtkXyONunIjoOQ=;
+ b=RH78oA+NxoAk2QUd4m2HOQ8dyN2sCxrVo+FvNDasZKbmuqv5dUteK2nYHr3AU8dZY2
+ lL6O731jO9kBau+KvwCnnF2pv2zQNFqiUY9zOrc3A4LrxHgl9/zAkEPJlQwGcvHZMo/w
+ T5Q+bajSnI9mx+6X4Pf9VCvK19Rxr/TWdt13E2G4DlLn2iW89yA4kT0OaSSfHFXfqVw2
+ wsqz5uFfMcqQjg4rZ9X+5QJeBFThsy8V7siule0Y3MR04je8W6A0+CQYQsv0XPB0SH1t
+ zd6JjCDEnS9YTtARJbgAB90xZpf4QrVjQTx3SGk0eBWm1D1i41b7bUq302Rnt1ZCH8ac
+ ByZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=nQjqkj1EN8NC8Ay0yEHmwn6X2HJX2TtkXyONunIjoOQ=;
+ b=Su2q2gCncYA4/CyCgzrzh+ktjNQES+pBRB2PfEVHHjFwvOX3OURFoPMzMg5AC4Ebsb
+ iuAIDPNIIw82YbYO4RrbjMdXHg8nMzb7X8F4fW6lQ3MNA9iJS6H1ndNshD10KkRc9kU0
+ vjb9QdkBQ2iIsKoUF6IydiNvZ/hXJ1YRVIfwYh7udjTm+0GC+Q+2ubP14ExE8ENvIWPP
+ 5+4Jl3P8DI42VqgOq84raby1C0Q8Oh7PWZCRb1ss7KvFcvyx2e8d2fZidIAYrFAdRFmA
+ IfPxiQtQkQ5TlyF+Xsx8mkrcYb13BQZ6B2LtOQv8GVGxIHCSF9MXZIjyCAocPCYDyyIi
+ Oq3w==
+X-Gm-Message-State: APjAAAW+JBvlimB0p6CRhGBFEnEN5cVfRTJoXsaZgnBJBsWW2NkvmdP1
+ WvH3M6BPID9ocN/GvWoNsBgfcg==
+X-Google-Smtp-Source: APXvYqzW/Zk1QYpnjxkfpZRt3FJnFpmA3XMOWzcM86U3SMvvL1uOdSy1dK3RIaWGRhxFidbFe5xSCw==
+X-Received: by 2002:a5d:5702:: with SMTP id a2mr9341914wrv.89.1559734987545;
+ Wed, 05 Jun 2019 04:43:07 -0700 (PDT)
+Received: from localhost.localdomain ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id 34sm27718740wre.32.2019.06.05.04.43.06
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 05 Jun 2019 04:43:06 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
+ wsa+renesas@sang-engineering.com, bjorn.andersson@linaro.org,
+ linus.walleij@linaro.org, balbi@kernel.org, gregkh@linuxfoundation.org
+Subject: [PATCH 1/8] i2c: i2c-qcom-geni: Provide support for ACPI
+Date: Wed,  5 Jun 2019 12:42:55 +0100
+Message-Id: <20190605114302.22509-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_074423_503731_850A84E0 
-X-CRM114-Status: GOOD (  12.39  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190605_044311_704652_1F80094B 
+X-CRM114-Status: GOOD (  14.04  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,52 +93,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+Cc: linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-i2c@vger.kernel.org, jlhugo@gmail.com, Lee Jones <lee.jones@linaro.org>,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Add a match table to allow automatic probing of ACPI device
+QCOM0220.  Ignore clock attainment errors.  Set default clock
+frequency value.
 
-This patch add component OVL_2L1
-
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 1 +
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 1 +
- 2 files changed, 2 insertions(+)
+ drivers/i2c/busses/i2c-qcom-geni.c | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index 8094926..5a0ec0f 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -268,6 +268,7 @@ struct mtk_ddp_comp_match {
- 	[DDP_COMPONENT_OVL0]	= { MTK_DISP_OVL,	0, NULL },
- 	[DDP_COMPONENT_OVL1]	= { MTK_DISP_OVL,	1, NULL },
- 	[DDP_COMPONENT_OVL_2L0]	= { MTK_DISP_OVL_2L,	0, NULL },
-+	[DDP_COMPONENT_OVL_2L1]	= { MTK_DISP_OVL_2L,	1, NULL },
- 	[DDP_COMPONENT_PWM0]	= { MTK_DISP_PWM,	0, NULL },
- 	[DDP_COMPONENT_PWM1]	= { MTK_DISP_PWM,	1, NULL },
- 	[DDP_COMPONENT_PWM2]	= { MTK_DISP_PWM,	2, NULL },
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-index a81c322..d7ef480 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-@@ -60,6 +60,7 @@ enum mtk_ddp_comp_id {
- 	DDP_COMPONENT_OD1,
- 	DDP_COMPONENT_OVL0,
- 	DDP_COMPONENT_OVL_2L0,
-+	DDP_COMPONENT_OVL_2L1,
- 	DDP_COMPONENT_OVL1,
- 	DDP_COMPONENT_PWM0,
- 	DDP_COMPONENT_PWM1,
+diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-qcom-geni.c
+index db075bc0d952..0fa93b448e8d 100644
+--- a/drivers/i2c/busses/i2c-qcom-geni.c
++++ b/drivers/i2c/busses/i2c-qcom-geni.c
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0
+ // Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+ 
++#include <linux/acpi.h>
+ #include <linux/clk.h>
+ #include <linux/dma-mapping.h>
+ #include <linux/err.h>
+@@ -483,6 +484,12 @@ static const struct i2c_algorithm geni_i2c_algo = {
+ 	.functionality	= geni_i2c_func,
+ };
+ 
++static const struct acpi_device_id geni_i2c_acpi_match[] = {
++	{ "QCOM0220"},
++	{ },
++};
++MODULE_DEVICE_TABLE(acpi, geni_i2c_acpi_match);
++
+ static int geni_i2c_probe(struct platform_device *pdev)
+ {
+ 	struct geni_i2c_dev *gi2c;
+@@ -502,7 +509,7 @@ static int geni_i2c_probe(struct platform_device *pdev)
+ 		return PTR_ERR(gi2c->se.base);
+ 
+ 	gi2c->se.clk = devm_clk_get(&pdev->dev, "se");
+-	if (IS_ERR(gi2c->se.clk)) {
++	if (IS_ERR(gi2c->se.clk) && !ACPI_HANDLE(&pdev->dev)) {
+ 		ret = PTR_ERR(gi2c->se.clk);
+ 		dev_err(&pdev->dev, "Err getting SE Core clk %d\n", ret);
+ 		return ret;
+@@ -510,12 +517,19 @@ static int geni_i2c_probe(struct platform_device *pdev)
+ 
+ 	ret = device_property_read_u32(&pdev->dev, "clock-frequency",
+ 							&gi2c->clk_freq_out);
+-	if (ret) {
++	if (ret && !ACPI_HANDLE(&pdev->dev)) {
+ 		dev_info(&pdev->dev,
+ 			"Bus frequency not specified, default to 100kHz.\n");
+ 		gi2c->clk_freq_out = KHZ(100);
+ 	}
+ 
++	if (ACPI_HANDLE(&pdev->dev)) {
++		ACPI_COMPANION_SET(&gi2c->adap.dev, ACPI_COMPANION(&pdev->dev));
++
++		/* Using default, same as the !ACPI case above */
++		gi2c->clk_freq_out = KHZ(100);
++	}
++
+ 	gi2c->irq = platform_get_irq(pdev, 0);
+ 	if (gi2c->irq < 0) {
+ 		dev_err(&pdev->dev, "IRQ error for i2c-geni\n");
+@@ -660,6 +674,7 @@ static struct platform_driver geni_i2c_driver = {
+ 		.name = "geni_i2c",
+ 		.pm = &geni_i2c_pm_ops,
+ 		.of_match_table = geni_i2c_dt_match,
++		.acpi_match_table = ACPI_PTR(geni_i2c_acpi_match),
+ 	},
+ };
+ 
 -- 
-1.8.1.1.dirty
+2.17.1
 
 
 _______________________________________________
