@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F54C35711
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:35:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 825F63570B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:34:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2BtNgQGLSATixBW/YRq0jqOhRHoi4iaFnoDC8io+cFk=; b=QrOouPIkBqv4U/
-	uWeP6QzZcj+sy1gc7wQ/ljmz34n6h0+MQCN7cA2S9gg2jnLTIlArvl5AL9pM7lC/quzgY4dZsNC47
-	uSlK+PpG/RvNOMBEh0yjyzc8IBUPV94FAC2niCN44J5NGt35Hgdn2bd9QPKJn3Fh4Ar1IkLxc6Zm2
-	NaguDUUSP6k4JWR3GFVjeTyUTiJzy+7Wg8sxCPGyehgCx9B95AG9+g3jIrgW32A66u4Wm4p3zsua9
-	6ABItA8kaZXiBNLZenEDpUPkeRoHvu4QmduRKkxnD1iczf5j6aH7t4A6eGdyd+hejwZYlOdBrp+2A
-	3slW0d7dODd5icY4sTmQ==;
+	List-Owner; bh=9ZbeD0wJsbK6+WFPDdVqjq+WYDIGegenNO42IUkhxdQ=; b=ENuclNZLs0qgfO
+	8ZIOUs80OvW/O0XNl+TWodYacry1kRX49LiuZzslPUN5MufzjDVgyJJXTwVSFhzJSofBc0ztnE9Zh
+	rnGC19TqTLJWB1ihihsfUFA2Z0Ltbt1iDWDjjSbdYqyZhnwbmTjD0ieJGBvwTGU9XJa0kQp3dIq7N
+	krxh/3YT4lfZBOAmwE/N4u1flRc+JQ0U5sT6C8FIDZOMQqNiL6zKpEiHNk0IcSOUlAF0cNkx6nuLd
+	juGdQu1aXeH+EHvfSt667jeU0prEEgtCCEmGy9RoqZuu5HZKXAsWrX2aMFufib5SomxqoLCvY+hqm
+	/lgCWcOU/R3EsZKxsX2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYPVx-0007G1-OO; Wed, 05 Jun 2019 06:35:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hYPVL-0005kq-8v; Wed, 05 Jun 2019 06:34:35 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYPVr-0006yM-9X
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:35:08 +0000
-Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A0C5E2083E;
- Wed,  5 Jun 2019 06:35:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559716506;
- bh=G1fCjyvuMI8j4lJIOPDrdCk2asa1xcNItBYzsfAa+b8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RqRNxR+h7FMuAZfrxmvdDUYFY92bSMASxPOtEC8ZNn/Yd1Qw/C4Fe2BvN/f7Fd/BT
- rqgjDOQWs+K3DSzeCHuzfduZAxJ6Q/4c8Gl6idrwDC3T70CKVYe9uttwEfTI74Si+d
- kPn7wVGJ3T0glV1dXNU4ea9sk4EAuEj6GNUwxhds=
-Date: Wed, 5 Jun 2019 14:34:50 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Pramod Kumar <pramod.kumar_1@nxp.com>
-Subject: Re: [PATCH v3 1/3] dt-bindings: arm: nxp: Add device tree binding
- for ls1046a-frwy board
-Message-ID: <20190605063449.GG29853@dragon>
-References: <20190527123404.30858-1-pramod.kumar_1@nxp.com>
- <20190527123404.30858-2-pramod.kumar_1@nxp.com>
+ id 1hYPVA-0005cP-7l
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:34:28 +0000
+Received: by mail-pg1-x544.google.com with SMTP id v9so11811020pgr.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Jun 2019 23:34:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=MDnhT69i4+3igVNMGRO0Olac0iYlmd7+e9rYlDGKlMQ=;
+ b=b0zeeCKtZnHGuRksL/MviXPn9ETjzaS+XVRjInqPSn3MmRYG1h2xHNGblAhI+hwSgW
+ 27ZfCX1Gruevo4QQpULxZqIYe5C+Zgz/G1c55aHrsLCR1l4SuO6Zl2rqHMz/HhFh9Z9Q
+ QxMw+vu3nl1p1nftk6+cafNIaL0Qc2EIwNB2KxZMrgxWW1jAV1G6l5NzkuLcxcGZCAGE
+ 4WVEq1fL81w0hRjY+jxAYMV+Z8z5ugYVoDpGILoXwPvhIzQqgv5xTEOy7KxvxfLB+J1S
+ ODzal5jdUT/lQkiRAr2R384iYKbide9/PJ3H67SHJn10yNgF/PbuaKGoJUtwsqQIGR2B
+ g+0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=MDnhT69i4+3igVNMGRO0Olac0iYlmd7+e9rYlDGKlMQ=;
+ b=QUeB16ST388x8yf6nRzQyhHnUswO5Q7cikGVMyDHEHsqVs3hjDJVwu1PqY3wJgrAkG
+ umkGyqm/rP3t3MK1GxcnQ5889eaOWG0atz8FyKANFkWfp5+PsjF1wpd7qOdy80le9x6D
+ qUw73IDhhPR0NnB5A4Boz0i1qsaec4A+ABAZvCo1LiGXL4bHmHfRu1GJbx7/cimija+d
+ q/SZhdGh3ajglaIKWgCAxcfGeNb4Qa42lk9Pe+I89Ktyfis6HzCuuAbEHwobvt44RBkl
+ 1rv2pockNxTZc+jKHuf5gcBk+oX77gVZxRT8sbQuq3tHOuMKc5aN6wHBr8D1G+gbE95l
+ 6Whg==
+X-Gm-Message-State: APjAAAXgbRVPFTCNyTZ8g4POqhEBlTBVZthE8dw8kQDrLBUxebLlfiDQ
+ FPNrGoEB6pVLyRer5K4cc7glSA==
+X-Google-Smtp-Source: APXvYqy3bNsHWjS/PwRCl4JZk2sWXQhzg3FwJWCnisZBOEnbpp0qgkByrv0MfZW4pI4x2RdDmUP25g==
+X-Received: by 2002:a63:f146:: with SMTP id o6mr2228929pgk.179.1559716463205; 
+ Tue, 04 Jun 2019 23:34:23 -0700 (PDT)
+Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id k8sm8144854pfk.177.2019.06.04.23.34.21
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 04 Jun 2019 23:34:22 -0700 (PDT)
+Date: Tue, 4 Jun 2019 23:35:07 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH 6/8] usb: dwc3: qcom: Add support for booting with ACPI
+Message-ID: <20190605063507.GM22737@tuxbook-pro>
+References: <20190604104455.8877-1-lee.jones@linaro.org>
+ <20190604104455.8877-6-lee.jones@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190527123404.30858-2-pramod.kumar_1@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20190604104455.8877-6-lee.jones@linaro.org>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_233507_359095_F6B17850 
-X-CRM114-Status: GOOD (  13.93  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190604_233425_164335_33CA4B6C 
+X-CRM114-Status: GOOD (  14.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -66,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,53 +99,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "Michal.Vokac@ysoft.com" <Michal.Vokac@ysoft.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- Vabhav Sharma <vabhav.sharma@nxp.com>,
- "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
+ gregkh@linuxfoundation.org, linus.walleij@linaro.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ david.brown@linaro.org, alokc@codeaurora.org, kramasub@codeaurora.org,
+ linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 12:32:09PM +0000, Pramod Kumar wrote:
-> Add "fsl,ls1046a-frwy" bindings for ls1046afrwy board based on ls1046a SoC
-> 
-> Signed-off-by: Vabhav Sharma <vabhav.sharma@nxp.com>
-> Signed-off-by: Pramod Kumar <pramod.kumar_1@nxp.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-
-I cannot apply patch from message using 'Content-Transfer-Encoding: base64'.
-
-> ---
->  Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-> index 407138ebc0d0..09ff1999ce96 100644
-> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
-> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-> @@ -241,6 +241,7 @@ properties:
->            - enum:
->                - fsl,ls1046a-qds
->                - fsl,ls1046a-rdb
-> +              - fsl,ls1046a-frwy
-
-It might be better to keep the list alphabetically sorted.
-
-Shawn
-
->            - const: fsl,ls1046a
+On Tue 04 Jun 03:44 PDT 2019, Lee Jones wrote:
+> diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
+[..]
+> @@ -373,7 +416,7 @@ static int dwc3_qcom_clk_init(struct dwc3_qcom *qcom, int count)
 >  
->        - description: LS1088A based Boards
-> -- 
-> 2.17.1
-> 
+>  	qcom->num_clocks = count;
+>  
+> -	if (!count)
+> +	if (!count || ACPI_HANDLE(dev))
+>  		return 0;
+
+Afaict you call this with count = of_count_phandle_with_args(), which
+should be 0. But why not skip calling this at all?
+
+>  
+>  	qcom->clks = devm_kcalloc(dev, qcom->num_clocks,
+> @@ -409,12 +452,28 @@ static int dwc3_qcom_clk_init(struct dwc3_qcom *qcom, int count)
+>  	return 0;
+>  }
+>  
+> +static const struct dwc3_acpi_pdata sdm845_acpi_pdata = {
+> +	.qscratch_base_offset = SDM845_QSCRATCH_BASE_OFFSET,
+> +	.qscratch_base_size = SDM845_QSCRATCH_SIZE,
+> +	.dwc3_core_base_size = SDM845_DWC3_CORE_SIZE,
+> +	.hs_phy_irq_index = 1,
+> +	.dp_hs_phy_irq_index = 4,
+> +	.dm_hs_phy_irq_index = 3,
+> +	.ss_phy_irq_index = 2
+> +};
+> +
+> +static const struct acpi_device_id dwc3_qcom_acpi_match[] = {
+> +	{ "QCOM2430", (unsigned long)&sdm845_acpi_pdata },
+> +	{ },
+> +};
+> +MODULE_DEVICE_TABLE(acpi, dwc3_qcom_acpi_match);
+
+Analog to of_device_get_match_data() there seems to be a
+acpi_device_get_match_data(), if you use this you should be able to
+have you acpi_device_id array next to the of_device_id.
+
+> +
+>  static int dwc3_qcom_probe(struct platform_device *pdev)
+
+It seems that all that's left unconditional on ACPI_HANDLE() in this
+function are the optional pieces and the tail. Wouldn't it be cleaner to
+split it out in different functions?
+
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
