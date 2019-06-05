@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77AE43597C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:14:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D0A735987
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:17:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N2mPEboNNwR3hQmzyFs8Verhesg1kvLwByZmvvTwFt4=; b=ZB9/7pG+CcGuqF
-	EDhttE267aI99CkhySBERiH4/tl9ZJOhOEyiKKFt+UVwm/I+IgRSEK/cGIERQZE2sppySnssczmEo
-	NNEf97VokHSeJY0ENBMeGcwaOdwrUoRDvA252K0UgsgP0QWQ3aVAcFuAiP0IqkYyntUEtgjOcpdSB
-	ZGBuGbIjNsRyRI+psCgbS6dtDgKzKS/YGzHGoklDAJku0ltBf+bnO4f/a/g0o6K4TaezjpA7vMGVJ
-	0tyVbLGiEiXUm/jvuoBe0ZLEUevJ7JPdP3qwC4/QmDWBKbRxHckVBDoGrs7dg49dBNckR17zwZ3Qf
-	Gp2TmFpDhOorQLhsQUcA==;
+	List-Owner; bh=VRc/SK3srNjvE14xvE/wfIuLnQda7g4jDfNv87fj1wc=; b=I8sf3dgkhXuQZK
+	Ke/IDGMIwb+fE+DNwBW7O09HcItLQf2SB9cPn5sYlVqCEvac5tq217ejUb0dtT2+/J+w+qNChCiM3
+	cNe5arhNUi5ZGm24iwBCebxrXQM3TlER9WO35bbMOdivuO+iTSX6P8LtbIYFHRIK6ViKyz/TsOwQq
+	z+bSp4bLPUH/gKQmIZhiGO6jsfU1yOV2rgNrSe3TGAh4Of32TOTDdWnKQtxVrWeeDSZe7imV9C41B
+	RYiwaHgttzfRnqJ7N2ITT9NvXuq5zZRm4YgTdx88YQimUclcT218Iv/ZtXcfCUaKGEHlz6PlWkFMY
+	u6AtsHq3nnNuLiv+yUEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYS07-0003qQ-Aa; Wed, 05 Jun 2019 09:14:31 +0000
+	id 1hYS2v-0005Pj-FC; Wed, 05 Jun 2019 09:17:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYRzP-000321-7y
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 09:14:21 +0000
+ id 1hYS2n-0005P7-TQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 09:17:19 +0000
 Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 95C952075B;
- Wed,  5 Jun 2019 09:13:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 778E32075B;
+ Wed,  5 Jun 2019 09:17:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559726026;
- bh=ugnvfrerObdr6irJBT9ZKWwdBHjVG+IFha5p1e8wCmo=;
+ s=default; t=1559726237;
+ bh=cYxElpW0Vlv3r+RPbOHmetHZB85NQhgPvZ9XJjQHp8g=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1UP7t+wp8WHYKJ5E4f2nRSkiDA74ZP27IhTneVXklgBiLdo58GSsYKfIxtoYD5tQs
- GQoKLzxTqVLE2AnXpgmKEigOvfyCzh2oACMnsVN88vBIocvBBxoVkaUBzN5tx0vTBr
- na323wuNNY8F13GRGR44jOe0yuIGtGvExYrR19kQ=
-Date: Wed, 5 Jun 2019 17:13:32 +0800
+ b=q+Tom2tpYqySAyxKs/a5k8md0Kdcvyol+5i29ZMARg92tJkM3PfeCqA+tsVG0skgo
+ co5GY8aqSapFhci0wSKc4JAY/mHnqiHy2bgmxvyK1DNQDMtbe72W3QLD8x/r21/OI7
+ RZSVzUzgWfJMcNEkxHfoQB+TjMZNSZyB9zAHu05c=
+Date: Wed, 5 Jun 2019 17:17:01 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH v2 1/3] arm64: dts: imx8mm: Pass a unit name for the
- 'soc' node
-Message-ID: <20190605091331.GL29853@dragon>
-References: <20190528190023.7176-1-festevam@gmail.com>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH] ARM: dts: imx7d-sdb: Make SW2's voltage fixed
+Message-ID: <20190605091659.GM29853@dragon>
+References: <20190529065056.27516-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190528190023.7176-1-festevam@gmail.com>
+In-Reply-To: <20190529065056.27516-1-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_021347_734895_DAAD2532 
-X-CRM114-Status: UNSURE (   9.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190605_021717_967215_74DB1E58 
+X-CRM114-Status: GOOD (  10.91  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,26 +76,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- kernel@pengutronix.de
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 04:00:21PM -0300, Fabio Estevam wrote:
-> The 'soc' name needs a unit name to match its 'ranges' property.
+On Wed, May 29, 2019 at 02:50:56PM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> Pass the unit name in order to fix the following dtc build warning
-> with W=1:
+> On i.MX7D SDB board, SW2 supplies a lot of peripheral devices,
+> its voltage should be fixed at 1.8V. The commit 43967d9b5a7c
+> ("ARM: dts: imx7d-sdb: Assign corresponding power supply for LDOs")
+> assigns SW2 as the supplier of vdd1p0d, and when its comsumers
+> pcie-phy/mipi-phy try to set the vdd1p0d to 1.0V, regulator core
+> will also set SW2 to its best(min) voltage to 1.5V, and it will
+> lead to board reset.
 > 
-> arch/arm64/boot/dts/freescale/imx8mm.dtsi:203.6-754.4: Warning (unit_address_vs_reg): /soc: node has a reg or ranges property, but no unit name
+> This patch makes SW2's voltage fixed at 1.8V to avoid this issue.
 > 
-> This also aligns with imx8mq.dtsi.
-> 
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> Fixes: 43967d9b5a7c ("ARM: dts: imx7d-sdb: Assign corresponding power supply for LDOs")
+> Reported-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Applied all, thanks.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
