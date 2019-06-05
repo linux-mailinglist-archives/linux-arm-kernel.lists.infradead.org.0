@@ -2,67 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AB6B35D09
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:40:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7EF435D19
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:44:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9CPzw7CjrKCnOWPUjhKMxXmLbLLVW3XOIAg4helq6UY=; b=o3oUQrsS82qQl7
-	udcEKOiKodZBOHycaladY+ORV4txNOcRENXoxWyYiuLpjIq2L3sjYoToaZWyRsBz9D9zvAjLHLzFZ
-	gEiuui39hYWPIMsv9L+VLWeAyTr8SUTwKeH9ogIQcbPsYU9+7Swrrhw7Ti/zRGBfv9m6pkXDNKsEf
-	zZB8w5I5CFNKNeJuRq0TubJoVYsc7q9KoCgzpCAKxiX2eLqdk2R2OjS7oP2NPwZA8dP/4mOZjzIgq
-	vu52P9Jrp3dM1+jWHrq3jte+amC8vRgfBqXCXRV+uslqykZF9q/FzfKYQGbO7LZMzcdJSyv/xGgGI
-	MF6Bizf+nm6KOWPnE3mw==;
+	List-Owner; bh=BpRvVINtHtxsZ+nsrQcPGBF2IicCNpbkcyhibiFHNoU=; b=ShNnbD0E0WljAq
+	BrE/Q6qSs0qSkt5FFWktWmOrKcaxeerOqGis0qfJPGzvBAnwqAigwc3B1kUbbE1lOuLWkBICeE0ix
+	PV23sUUPDAeyrlWGCdPrxmOpGE7lfBEeUz6ye1OM45uNO9q2fOPew3aJY8VS1HKgF1ZFJXbXKu16O
+	yjgwJBielQm8PxjlydMMMeuZajrjCS8xAUdkBiiQWAK1ROp1SuHkRhjDQ/nJ7jSbNW6+8tvZHh6Qn
+	l4J8f9S3YViLPKDcXiHqMvZQvRYDQny6oK8nmaqb0pV7bAw4M1qeXss8X+GyUPlq6rnagkSZsdK2t
+	MdF6q7O6o29RXCk7IIsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYVDJ-0004HC-ER; Wed, 05 Jun 2019 12:40:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hYVHG-0004lF-4p; Wed, 05 Jun 2019 12:44:26 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYVDC-0004Gl-Fg; Wed, 05 Jun 2019 12:40:16 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1AE4C206BB;
- Wed,  5 Jun 2019 12:40:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559738413;
- bh=qdAUBbULazBNhStl1AcZ7Kv55Zf3/V9JNzSigkm1w7M=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=d+brviXoxz8rR+sa6s+nEnzxEORtvoSYychevSjfk+wLUWBEPtzNRxqQVfhQpZBCH
- nsrd7ag0lwuGki2SLtp21v2dlF9Z/igkVJeTqH1rw1VIBnseo0+90PB5RZLzcWFvBD
- CP24WIcSjTIE83sXdlJ1xmviw6Mu1b5JboF/7eb0=
-Date: Wed, 5 Jun 2019 14:40:11 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [PATCH v2] USB: move usb debugfs directory creation to the usb
- common core
-Message-ID: <20190605124011.GB17558@kroah.com>
-References: <20190605092816.GA23758@kroah.com>
- <1559732515.8487.106.camel@mhfsdcap03>
+ id 1hYVH9-0004kT-A9
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 12:44:20 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id c5so3473569ybk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 05:44:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=xi2EvDvX1o5a9FG2uTIFVqZhlEAgWZPRI+I6e9eKWDA=;
+ b=Fv7/k7a9r4amkCrKI+VwwbKV67Pg6mruQZNeLTqihnSgQaggIJUtMx2rmAl7PlxGml
+ 2oi+ybtMM6nhyiSI/NAC2ikNhDm3JyvTAE0bdi1xoAraGXyIOKAeCWEw0kx9plShaYRu
+ 73rVdnZAwsTNw0ZRvAxgqjUnXIZlCozkOXdibujrNjp+Gp3G2WadNfhkTXtXKd/uJRRJ
+ n6pM5OFFQ5CxiUlQA1nKorGAvXCzdE2ZD/bdQ4VzyST4XyV2Av0wV2g8rCKI1KYP4/hx
+ kSTvIi37vF429N2y3Y9rNWMwKfj1MA2RhMoOaSexaLVUKGjvAv46Sx+HHcT1HHu19vnB
+ UhwA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=xi2EvDvX1o5a9FG2uTIFVqZhlEAgWZPRI+I6e9eKWDA=;
+ b=TuS/WCdpleURt7ug7dbUiUJOB878c9c0p+/rOhHAlKuPwfJIpz9tzDAniP1yPhkQ7U
+ SdaJXj1nybsycR6wlqifugDb9Fc60C71H0Pm/7Jbhd4aCZVIxz9Xz6HkW7T3RhabuZKO
+ 9g8p1Hy3+uj+biTOrmUeFqfjp1+7mees4YEsk3RsWRkcTVfyO0uYToEsblX7VXqF3yKu
+ 38qJyerhMEr9Mz00eQ7OLsqjycouPMnneZaubD+vJ3O0b8Dbpo5qfcchijzqaKaHbH3+
+ SM71HWtj07MQ3rlQI4XOowhqZWT1+dazWgfMvAU87eW+bymIlSrgSWRXqIX6u36VFXmK
+ 6PBg==
+X-Gm-Message-State: APjAAAXQK6auIwiUaXgCSOrVDtYFGBGtT4Lvcnw2afJYapFvsE/GZyqO
+ 2lXurEamlC4IJgV4VDPpc9h/ScIWSOZtdYlSSP0=
+X-Google-Smtp-Source: APXvYqyNydPnvstKf3mleSA1trFVpSWc/CJWb4PuLa9jX2KFdsZOVXxyiG1PQefvl++ce+LJ3J7EvkwU6iNd8X+t88g=
+X-Received: by 2002:a25:9b47:: with SMTP id u7mr18656221ybo.396.1559738657457; 
+ Wed, 05 Jun 2019 05:44:17 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1559732515.8487.106.camel@mhfsdcap03>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+References: <20190604162959.29199-1-peron.clem@gmail.com>
+ <20190604162959.29199-5-peron.clem@gmail.com>
+ <20190605095141.psrq6mhk63zto77s@flea>
+In-Reply-To: <20190605095141.psrq6mhk63zto77s@flea>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Wed, 5 Jun 2019 14:44:06 +0200
+Message-ID: <CAJiuCceZa=WEiF8_LK+jDdiXOn1i8+z8Smr6YKCpo9_XftgueQ@mail.gmail.com>
+Subject: Re: [PATCH v4 04/13] media: rc: sunxi: Add RXSTA bits definition
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_054014_590969_2B0C8ADF 
-X-CRM114-Status: GOOD (  25.60  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_054419_372877_E2D28B59 
+X-CRM114-Status: GOOD (  19.17  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,131 +96,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Felipe Balbi <felipe.balbi@linux.intel.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 05, 2019 at 07:01:55PM +0800, Chunfeng Yun wrote:
-> Hi Greg,
-> On Wed, 2019-06-05 at 11:28 +0200, Greg Kroah-Hartman wrote:
-> > The USB gadget subsystem wants to use the USB debugfs root directory, so
-> > move it to the common "core" USB code so that it is properly initialized
-> > and removed as needed.
-> > 
-> > In order to properly do this, we need to load the common code before the
-> > usb core code, when everything is linked into the kernel, so reorder the
-> > link order of the code.
-> > 
-> > Also as the usb common code has the possibility of the led trigger logic
-> > to be merged into it, handle the build option properly by only having
-> > one module init/exit function and have the common code initialize the
-> > led trigger if needed.
-> > 
-> > Reported-by: From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > Cc: Felipe Balbi <felipe.balbi@linux.intel.com>
-> > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > ---
-> > 
-> > Chunfeng, can you test this version to verify it works for you when
-> > building the code into the kernel?
-> > 
-> > v2: handle led common code link error reported by kbuild
-> >     handle subsys_initcall issue pointed out by Chunfeng
-> > 
-> >  drivers/usb/Makefile        |  3 +--
-> >  drivers/usb/common/common.c | 21 +++++++++++++++++++++
-> >  drivers/usb/common/common.h | 14 ++++++++++++++
-> >  drivers/usb/common/led.c    |  9 +++------
-> >  drivers/usb/core/usb.c      | 10 ++++------
-> >  5 files changed, 43 insertions(+), 14 deletions(-)
-> >  create mode 100644 drivers/usb/common/common.h
-> > 
-> > diff --git a/drivers/usb/Makefile b/drivers/usb/Makefile
-> > index 7d1b8c82b208..ecc2de1ffaae 100644
-> > --- a/drivers/usb/Makefile
-> > +++ b/drivers/usb/Makefile
-> > @@ -5,6 +5,7 @@
-> >  
-> >  # Object files in subdirectories
-> >  
-> > +obj-$(CONFIG_USB_COMMON)	+= common/
-> >  obj-$(CONFIG_USB)		+= core/
-> >  obj-$(CONFIG_USB_SUPPORT)	+= phy/
-> >  
-> > @@ -60,8 +61,6 @@ obj-$(CONFIG_USB_CHIPIDEA)	+= chipidea/
-> >  obj-$(CONFIG_USB_RENESAS_USBHS)	+= renesas_usbhs/
-> >  obj-$(CONFIG_USB_GADGET)	+= gadget/
-> >  
-> > -obj-$(CONFIG_USB_COMMON)	+= common/
-> > -
-> >  obj-$(CONFIG_USBIP_CORE)	+= usbip/
-> >  
-> >  obj-$(CONFIG_TYPEC)		+= typec/
-> > diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
-> > index 18f5dcf58b0d..84a4423aaddf 100644
-> > --- a/drivers/usb/common/common.c
-> > +++ b/drivers/usb/common/common.c
-> > @@ -15,6 +15,8 @@
-> >  #include <linux/usb/of.h>
-> >  #include <linux/usb/otg.h>
-> >  #include <linux/of_platform.h>
-> > +#include <linux/debugfs.h>
-> > +#include "common.h"
-> >  
-> >  static const char *const ep_type_names[] = {
-> >  	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
-> > @@ -291,4 +293,23 @@ struct device *usb_of_get_companion_dev(struct device *dev)
-> >  EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
-> >  #endif
-> >  
-> > +struct dentry *usb_debug_root;
-> > +EXPORT_SYMBOL_GPL(usb_debug_root);
-> > +
-> > +static int usb_common_init(void)
-> > +{
-> > +	usb_debug_root = debugfs_create_dir("usb", NULL);
-> > +	ledtrig_usb_init();
-> > +	return 0;
-> > +}
-> > +
-> > +static void usb_common_exit(void)
-> > +{
-> > +	ledtrig_usb_exit();
-> > +	debugfs_remove_recursive(usb_debug_root);
-> > +}
-> > +
-> When enable CONFIG_LED_TRIGGER, there is a warning
-> 
->  MODPOST vmlinux.o
-> WARNING: vmlinux.o(.text+0x68e300): Section mismatch in reference from
-> the function usb_common_init() to the
-> function .init.text:ledtrig_usb_init()
-> The function usb_common_init() references
-> the function __init ledtrig_usb_init().
-> This is often because usb_common_init lacks a __init
-> annotation or the annotation of ledtrig_usb_init is wrong.
-> 
-> WARNING: vmlinux.o(.text+0x68e318): Section mismatch in reference from
-> the function usb_common_exit() to the
-> function .exit.text:ledtrig_usb_exit()
-> The function usb_common_exit() references a function in an exit section.
-> Often the function ledtrig_usb_exit() has valid usage outside the exit
-> section
-> and the fix is to remove the __exit annotation of ledtrig_usb_exit.
-> 
-> seems need add __init and __exit for usb_common_init/exit
-
-Yes, you are right, I'll go add those markings to those functions, good
-catch.
-
-greg k-h
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWF4aW1lLAoKT24gV2VkLCA1IEp1biAyMDE5IGF0IDExOjUxLCBNYXhpbWUgUmlwYXJkIDxt
+YXhpbWUucmlwYXJkQGJvb3RsaW4uY29tPiB3cm90ZToKPgo+IE9uIFR1ZSwgSnVuIDA0LCAyMDE5
+IGF0IDA2OjI5OjUwUE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+IFdlIGFyZSB1
+c2luZyBSWElOVCBiaXRzIGRlZmluaXRpb24gd2hlbiBsb29raW5nIGF0IFJYU1RBIHJlZ2lzdGVy
+Lgo+ID4KPiA+IFRoZXNlIGJpdHMgYXJlIGVxdWFsIGJ1dCBpdCdzIG5vdCByZWFsbHkgcHJvcGVy
+Lgo+ID4KPiA+IEludHJvZHVjZSB0aGUgUlhTVEEgYml0cyBhbmQgdXNlIHRoZW0gdG8gaGF2ZSBj
+b2hlcmVuY3kuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogQ2zDqW1lbnQgUMOpcm9uIDxwZXJvbi5j
+bGVtQGdtYWlsLmNvbT4KPiA+IC0tLQo+ID4gIGRyaXZlcnMvbWVkaWEvcmMvc3VueGktY2lyLmMg
+fCAxOCArKysrKysrKysrKystLS0tLS0KPiA+ICAxIGZpbGUgY2hhbmdlZCwgMTIgaW5zZXJ0aW9u
+cygrKSwgNiBkZWxldGlvbnMoLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZWRpYS9y
+Yy9zdW54aS1jaXIuYyBiL2RyaXZlcnMvbWVkaWEvcmMvc3VueGktY2lyLmMKPiA+IGluZGV4IDA1
+MDRlYmZjODMxZi4uNTcyYmQyMjU3ZDM1IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9tZWRpYS9y
+Yy9zdW54aS1jaXIuYwo+ID4gKysrIGIvZHJpdmVycy9tZWRpYS9yYy9zdW54aS1jaXIuYwo+ID4g
+QEAgLTQ4LDExICs0OCwxMSBAQAo+ID4KPiA+ICAvKiBSeCBJbnRlcnJ1cHQgRW5hYmxlICovCj4g
+PiAgI2RlZmluZSBTVU5YSV9JUl9SWElOVF9SRUcgICAgMHgyQwo+ID4gLS8qIFJ4IEZJRk8gT3Zl
+cmZsb3cgKi8KPiA+ICsvKiBSeCBGSUZPIE92ZXJmbG93IEludGVycnVwdCBFbmFibGUgKi8KPiA+
+ICAjZGVmaW5lIFJFR19SWElOVF9ST0lfRU4gICAgICAgICAgICAgQklUKDApCj4gPiAtLyogUngg
+UGFja2V0IEVuZCAqLwo+ID4gKy8qIFJ4IFBhY2tldCBFbmQgSW50ZXJydXB0IEVuYWJsZSAqLwo+
+ID4gICNkZWZpbmUgUkVHX1JYSU5UX1JQRUlfRU4gICAgICAgICAgICBCSVQoMSkKPiA+IC0vKiBS
+eCBGSUZPIERhdGEgQXZhaWxhYmxlICovCj4gPiArLyogUnggRklGTyBEYXRhIEF2YWlsYWJsZSBJ
+bnRlcnJ1cHQgRW5hYmxlICovCj4gPiAgI2RlZmluZSBSRUdfUlhJTlRfUkFJX0VOICAgICAgICAg
+ICAgIEJJVCg0KQo+ID4KPiA+ICAvKiBSeCBGSUZPIGF2YWlsYWJsZSBieXRlIGxldmVsICovCj4g
+PiBAQCAtNjAsNiArNjAsMTIgQEAKPiA+Cj4gPiAgLyogUnggSW50ZXJydXB0IFN0YXR1cyAqLwo+
+ID4gICNkZWZpbmUgU1VOWElfSVJfUlhTVEFfUkVHICAgIDB4MzAKPiA+ICsvKiBSeCBGSUZPIE92
+ZXJmbG93ICovCj4gPiArI2RlZmluZSBSRUdfUlhTVEFfUk9JICAgICAgICAgICAgICAgICAgICAg
+ICAgQklUKDApCj4gPiArLyogUnggUGFja2V0IEVuZCAqLwo+ID4gKyNkZWZpbmUgUkVHX1JYU1RB
+X1JQRSAgICAgICAgICAgICAgICAgICAgICAgIEJJVCgxKQo+ID4gKy8qIFJ4IEZJRk8gRGF0YSBB
+dmFpbGFibGUgKi8KPiA+ICsjZGVmaW5lIFJFR19SWFNUQV9SQSAgICAgICAgICAgICAgICAgQklU
+KDQpCj4KPiBJJ20gZmluZSB3aXRoIGl0IG9uIHByaW5jaXBsZSwgYnV0IGlmIHRoZSBjb25zaXN0
+ZW5jeSBuZWVkcyB0byBiZQo+IG1haW50YWluZWQgdGhlbiB3ZSBjb3VsZCBqdXN0IHJldXNlIHRo
+ZSBhYm92ZSBkZWZpbmVzCgpUaGVyZSBpcyBubyBjb21tZW50IHdoeSB3ZSBjYW4gcmV1c2UgdGhl
+bSwgdGhleSBjYW4gYWxzbyBiZSBzb21lIHdyb25nCmNhc2UgZm9yIGV4YW1wbGUgdGhlIFJYSU5U
+X0RSUV9FTiBiaXQgaXMgbm90IHByZXNlbnQgaW4gUlhTVEEgYW5kIHNhbWUKZm9yIFNUQVQgYml0
+IHByZXNlbnQgaW4gUlhTVEEgYW5kIG5vdCBwcmVzZW50IGluIFJYSU5ULgoKSSBoYXZlIGRpc2Nv
+dmVyIGFuZCByZWFkIHRoaXMgY29kZSBhIG1vbnRoIGFnbyBhbmQgdGhpcyBsb2dpYyBpcwpyZWFs
+bHkgbm90IG9idmlvdXMgbm9yIGV4cGxhaW4uCgpNYXliZSB0aGlzIGhhY2sgY291bGQgYmUgZG9u
+ZSB3aGVuIHdlIHdpbGwgaW50cm9kdWNlIGEgcXVpcmtzLCBidXQgZm9yCnRoZSBtb21lbnQgSSBy
+ZWFsbHkgdGhpbmsgdGhhdCBpdCdzIG1vcmUgcHJvcGVyIGFuZCByZWFkYWJsZSB0bwppbnRyb2R1
+Y2UgdGhlbSBwcm9wZXJseS4KClJlZ2FyZHMsCkNsw6ltZW50Cgo+Cj4gTWF4aW1lCj4KPiAtLQo+
+IE1heGltZSBSaXBhcmQsIEJvb3RsaW4KPiBFbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVuZ2lu
+ZWVyaW5nCj4gaHR0cHM6Ly9ib290bGluLmNvbQoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
