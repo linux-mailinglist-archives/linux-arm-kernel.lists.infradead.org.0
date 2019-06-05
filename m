@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DA38357EE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:36:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2DAB357F2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:36:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ef4qMCTvVTap8+wQnqVmuKPFMVM4C/gkv4uwgLjSOwM=; b=ACs2E2/uy0WEFB
-	xXYIyL96B+QIM6F+FuJB6MZw0WhlEUBXdWPnzornjdxSbjt96ufa+prnbu/23jAXtQFtlfEmmoN9x
-	po2qmuU3VsY8qxvYOFIkN1oVO/84ICMWNJ3j57xwamIxeZ+ZiIX6Cvuc9S7ykUtCsyxy+DE90Ra/c
-	paZUThfnQ9KxgMPXqW7HOOsASqzJ9nokqkTesTGpPvaaXJn0/KYA+lQfa9wI2bmG6KvZBUEf0sBWL
-	CRfveMxkUVkvnbi818nnzPp0UZj4fqwnEvlngjSLg0VVulK8R4Q+EBPKgS+T2/bmudPt6SuoJqUBz
-	BR+BQqjwSsKGHh+1G1Pw==;
+	List-Owner; bh=gCUCSEZFttqPwlfjN6hyAtVbWMgMP1cMCnl/KFyotSE=; b=IbRgXH+FlParYb
+	a0ejInJOUzxTrVJBWMm3V7ywFPsCqX/R+jTYQaqASOXpSaXdue93l5O2yTcuHj5f3EzrHQ9qK/FSk
+	Ijwqlgo4MXAz1u0UVWmmWf806HgpR0fEljBVkGk9zkt7kzGFXdiwqWgWpHcfmYpg2r++NDMia6x9d
+	pyUt9rg5ERHx4XryDdUXmiKyc+kpWThkE0poqcjJ9Kgf0895ka2Ptgbq37ueipTNCkfvEIRF+vic8
+	t3F7ZRPZmbWRB+Ftg3b2INm06qkf3l/1oLFZDqd+i2q2xTYq7yPFkk4sQoN9upHOS9JiVGahpaWY9
+	ol3kwvqg0W64dJ0x1HoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYQSp-0005Pz-43; Wed, 05 Jun 2019 07:36:03 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hYQT5-0005k5-5U; Wed, 05 Jun 2019 07:36:19 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYQSh-0005PK-0H
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:35:56 +0000
-Received: by mail-wm1-x344.google.com with SMTP id w9so1105509wmd.1
+ id 1hYQSu-0005dP-Es
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:36:10 +0000
+Received: by mail-wm1-x342.google.com with SMTP id w9so1105964wmd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 00:35:54 -0700 (PDT)
+ Wed, 05 Jun 2019 00:36:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=09jLm7W8JZChRPg+8H9NxgZt7oc9Vk0L3GoCiBU0uZ8=;
- b=d6AKX7aJySdHba4DSeoxsoAISweSJQ0CinNs4BdX5Jty6ugpsLKsGjK4kipKlQ8Vj9
- lIv6Q0MaNPuODWFwkwPes31iHEzz9+LhX/Ct1dek2nFpTgt9ERXvzkdxDiqylU11DWNe
- tCrn1xJZdK6eDFUPMnGsHqAlqfDe5mcEcIlUEkHX8sx8S7LB+0fPym58l3Qoz0XGEmV6
- X2Qjqkb0glfumd62csjh+Yl5mgp2csEC+aP9inFCqupg5J+EKyHEFIGjM6uRvbe7KWPO
- MFxTMXSx3GhHtH8S6vNjz4pC4Sy0og06VpmbpvujjGxT5cqmq8yCMOV9bccUeNAyeQZe
- sbZg==
+ bh=wU7x45PzeBWtVxHiaVKa0wWI18hA5Maz4gefEy0Ez8U=;
+ b=dQ9jnZq5OoFxuUyhWDKEqPmkRUvZqf6CZcyZJFCEfe9mPh6AgwL5PVmVOD9Vnvc/fc
+ YJR5hhisnjeaUcjysmARyZQfaGBSjMSl0x0wd0lcL5O0+7JdJ/2p0FDBZs2EgUkEd/MJ
+ Dz9Laz/9bLYBkqfREKh1CTyft8p5+dkwht0m2IfGhhE4QRFUCUzb8+edUZYiShxO5IpG
+ zLbE5Jz9y/TlmRdg1XEKjgpRZZeOTNo4+4GeGnyJdofYBOLRHE24H8N47kvIUWRDMxDh
+ lX/6tqhBPJNxdBZPa6ukV75J4NQRVWYttIcuaU5F3zJ3qd+6SYrlx5uegyi6kct/sEGE
+ Mo0Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=09jLm7W8JZChRPg+8H9NxgZt7oc9Vk0L3GoCiBU0uZ8=;
- b=BCNLIzYL+0Ugjh9hx9pIBjzDZqU6VuCATvqI6AwksZJd9WrL8aYb+xLfibXuBshrzr
- 81yhIAyS3maKaTejIRAT2buo7EFUqEfD+1CdFZYSyymi1CfTEcIhfrqW5QUkQq7STlRK
- otACi1NuUSt/5cDK0I6Nd9Rri8pJFftt60BoSe5INncjLHoh72D1crfpMlVLTvjo6qnM
- I0TRz6k2DMuHqG5aeYOWtybk82dZitped9UNSOiV+ZFYGDLk1mbx+eSaKTDVYjZXIH5o
- YzCK+DATIRUFQZlLE1yinLAtZzRjO+/Le+ttCtZLDppcfDjemaqmAtVd0lK98KABFGUk
- 9qiA==
-X-Gm-Message-State: APjAAAUAgkB7DnhN3/Rc2uo8kKDz56JcUxRQaxvUlyGstADjNIZhklNR
- ptizW/vb7R/SKRj4GtH0ieeVRw==
-X-Google-Smtp-Source: APXvYqxkcuXWwvzStuGW6Rb6pjReiWGLAHZnULJAlVwD65AGNNzMy46Zqy6jyyTXQHMm68bD+AGOeA==
-X-Received: by 2002:a1c:eb16:: with SMTP id j22mr8610828wmh.56.1559720153477; 
- Wed, 05 Jun 2019 00:35:53 -0700 (PDT)
+ bh=wU7x45PzeBWtVxHiaVKa0wWI18hA5Maz4gefEy0Ez8U=;
+ b=SLj1/Oz3+bThmaE1bWfPaSHGx1F8F6GVmNEWDo2rL8t0fOsAUBLuacVE+72SMIG7wF
+ YR+bbo38PzbjaPSjxeW9zcU4WMrJnDYKoUQbvspm2PEcCkxGCBVRXlQpdsXOqrqaFrse
+ WPHL8pgZ6cvo+IBFN2H5yI14bVsKaKzze8ka1mOugLbq2H57+lr9juC4CbYrw1foP3bg
+ K2vWtq31XoL0KaH+jkNiMQ36+ASmBwscx8M2/2yPDY/k/aC0KbCrV5PhKrU4nwE/lhrJ
+ EPypBAsFsBzcZ4SGBm0AhnFTdXwhzaUceBJXEkiVCPp4Sx8d5VCtdVgdulZDtEJZwPwf
+ rIEA==
+X-Gm-Message-State: APjAAAXsPZjXBE3YbYfukzu+IQoapcg9slZiwLmJuhwLOld/QL5kRGCP
+ KpzasGkMTG7DSS2oqoE+ORf98Q==
+X-Google-Smtp-Source: APXvYqxroyA6pGjIcaQXlQ7NCDQ+yWMiXWNfHslpBxOsOTGOeHsuNOBn7+LlBhtDWvxjkTAS+ZVR9Q==
+X-Received: by 2002:a1c:3886:: with SMTP id f128mr9986918wma.151.1559720166729; 
+ Wed, 05 Jun 2019 00:36:06 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id v63sm924859wmb.30.2019.06.05.00.35.52
+ by smtp.gmail.com with ESMTPSA id a3sm13399107wmb.35.2019.06.05.00.36.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 00:35:52 -0700 (PDT)
-Subject: Re: [PATCH 1/4] arm64: dts: meson-g12a-sei510: add 32k clock to
+ Wed, 05 Jun 2019 00:36:06 -0700 (PDT)
+Subject: Re: [PATCH 2/4] arm64: dts: meson-g12a-x96-max: add 32k clock to
  bluetooth node
 To: khilman@baylibre.com
 References: <20190603094740.12255-1-narmstrong@baylibre.com>
- <20190603094740.12255-2-narmstrong@baylibre.com>
+ <20190603094740.12255-3-narmstrong@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -117,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <f3abff32-5422-4693-759e-3e034e2f9d4c@baylibre.com>
-Date: Wed, 5 Jun 2019 09:35:52 +0200
+Message-ID: <86183881-4d2d-f94e-4057-51878777af0d@baylibre.com>
+Date: Wed, 5 Jun 2019 09:36:05 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190603094740.12255-2-narmstrong@baylibre.com>
+In-Reply-To: <20190603094740.12255-3-narmstrong@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_003555_048739_96ADBF69 
-X-CRM114-Status: GOOD (  18.05  )
+X-CRM114-CacheID: sfid-20190605_003608_999605_A629431B 
+X-CRM114-Status: GOOD (  17.86  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -163,26 +163,27 @@ On 03/06/2019 11:47, Neil Armstrong wrote:
 > combo module to initialize correctly, simply add the same clock we
 > use for the sdio pwrseq.
 > 
-> Fixes: d1c023af1988 ("arm64: dts: meson-g12a-sei510: Add ADC Key and BT support")
+> Fixes: c5c9c7cff269 ("arm64: dts: meson-g12a-x96-max: Enable BT Module")
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > ---
->  arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts | 2 ++
+>  arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts | 2 ++
 >  1 file changed, 2 insertions(+)
 > 
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-> index eac57d997e0b..3e0e119c13ce 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-g12a-sei510.dts
-> @@ -530,6 +530,8 @@
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
+> index 2c10ebfd9e7c..aa9da5de5c2d 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
+> +++ b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
+> @@ -206,6 +206,8 @@
 >  	bluetooth {
 >  		compatible = "brcm,bcm43438-bt";
 >  		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
 > +		clocks = <&wifi32k>;
 > +		clock-names = "lpo";
->  		vbat-supply = <&vddao_3v3>;
->  		vddio-supply = <&vddio_ao1v8>;
 >  	};
+>  };
+>  
 > 
+
 
 The Fixes is wrong... wifi32k was not present at this time.
 
