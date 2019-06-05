@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D315366B2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 23:21:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6B06366BD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 23:21:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
 	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9jpkN3M0310dqeVDD7nkIm7jWN6erqQKzBC6at4BZZM=; b=h2LKrcM97Zrhs5
-	71Fb2yUJ9jzBDo+C+dS1ZPmt68i+eB52XXtEpzzBzAEYa2xozE3cchjhwjw5t2eT8p4nH9trY6bW1
-	V2XfoGv4lAT3lcY6sBBk8oDrzAUbNMmU6dGjzVglgpAIlRuW7Yi93o++YhBObK1S0MwvW+M2BXJOG
-	q0Msm80LShyRtjpDQb7zssU8b2PzIeswGpZN1JLX77d7869dNevS6VWo+FvZmcnh5+h8Zf0m2FUDd
-	qUpyhmfIZEvjt00XRAe+5BXY7Ef+3RhybfnJChTeYOb/SIohacjt8P/DlLvik8Ej1gBBaTZyZ954G
-	vZOMqglEHugWnBOeeLbQ==;
+	List-Owner; bh=vDyw2RcFZAuD2jpY/dsQeQPHtHT3ToSHlc+aBhkm4RA=; b=VUYjejQbgGclh3
+	JuLpqQPTjg5TTTa3J7RaiK6lFUim+ozWnyxBDp25A59WSPWYVgMw1WpA3JPeFHhJP4UO10850gF1L
+	StldjK25JYgVdGI9WmRPGJPAj+YCRG1uKcibQsTcPtHhHpnOPr0Xkjc4BEXQ3HKxy0OuK3N9oia3Z
+	BcTLCBuB7PwaoVLxx84qCeiFa5Bko7gdDev1brJdOsonAWknSjhM3yTr1EfcPUOkE1zidk/YnN1Qs
+	zwR75PvwasvW/B0Ed3llvqLz1tQ5POIp3DHQuYPQycmHC6vA9b3RYhtcU6R/wdj6dFfXuiaKSqEIs
+	utddxScCHBazh3K6w/ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYdLT-00005b-Cv; Wed, 05 Jun 2019 21:21:19 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1hYdLn-0000Lc-Hm; Wed, 05 Jun 2019 21:21:39 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYdLK-000058-Kw
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 21:21:12 +0000
-Received: by mail-ed1-x541.google.com with SMTP id w13so10653eds.4
+ id 1hYdLe-0000JE-Qj
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 21:21:32 +0000
+Received: by mail-ed1-x542.google.com with SMTP id f20so7711128edt.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 14:21:09 -0700 (PDT)
+ Wed, 05 Jun 2019 14:21:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:reply-to:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=DbESKGjaSdEzS+8K4ZZpYJHwCVMJbIIgpVyCBcGmoDA=;
- b=uI2GOFinAV8sZvL+69rPUYkiOvfq/P6RaIvMP/TCLE7Eigu+OsAMxrlQ7M56dpfeaB
- KXnPuGlaLKfjVW4OK022oY9x2O84uuKCnTuTJ2Hy/rU4g60rDzrdLH9+Tx5dD+CSiY7P
- MZd6Gt4WuEMmALvkc+6OxkvqFlyqE8pj0B+RKWqsERmaO6rCiyUFNdAQJaK+bn+j6ZDo
- 3+Ozb7/fHxX66bj8rSxIxrArPzuRzb+SpAu32sfxsWnMui2GD+nbp3sZ5ByAMfIb0inB
- TyCDQNWvPlw0yG17KhNWZpYS35pRM3rqQaLlQ7Rzw4ggssD4+ZfqKxNNHceKsI3nMqCT
- +Ubw==
+ bh=jmqIL302FliKztrku23iEbel/vN8Om9KZr4KoJVUQBs=;
+ b=HtLdXNwlPpU1RFxmpHZq/rH78NiFyUbMRNR4XLHGl5DFaciTYXzczF+YOEaOthAltb
+ LzfrkniAfXeG9XfS8k8l9WWdWJTCb5t0Qydwrx9HDSWfQxVverG9o6eBxNShll611+Xk
+ D8MDiZNeQ9S8YaEkKYI92ohNxvxiKGjBgdANYmGfcUxcUcAmDq0kOuCUWCUGDd+d7T8p
+ u6tdGt0M3uFblUt67ApuYvpm2psLcK1H66EYwESimtXZEx5o8tKBJ+DBxrVlRNPstQNp
+ 2xk+bEsv5+yigah3/6Lj+npsGt7LKO/9d2Bkh2IRQhSgPxae7KCEIl0WkMOEkno6k2FP
+ 1Lng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:reply-to
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=DbESKGjaSdEzS+8K4ZZpYJHwCVMJbIIgpVyCBcGmoDA=;
- b=mSUGlwpSMsHn6xtTSHSrflC5qYjCJwC1P7Xuf+EvOBLvRjpQbtKPZkHL3dsZ66KhHn
- M1UjleAqEIVBQQKM+7EgZ3yxEUALpLq091LPgh2Ju0vxLb7gpBRRON2R8IZh8eN7OwAT
- Puyf5tLpM7VHbqrxK2L/nxwgXQ+1kIv0Zs9cvcXMfDLKFl/tLmD5A/9DmPpnRzkeXxPQ
- RWCMab9nYBrkWIsKFdV9ZJHtHf1bOCHIGlaQppan3Xdbt4208JMEF11Ie8bsem9014qc
- S4Db2ZifN69heysa9Lbxb5yK30XlXZyUiloM1uGyJBSfh6rPSs8hW6m9ocgvf1paQ8p+
- vVkg==
-X-Gm-Message-State: APjAAAU33qZ4UkUwPsb0fAFYyyy5lRXyk7CSIOczmPOwbXg5ThbJsGL4
- yyw95yW0OcuvXvsg+BjotvI=
-X-Google-Smtp-Source: APXvYqyuNRjvHNzTb2gEE1mIj1supSxm4qc3GPA7ju0Tg73FF069vkjl4Ke6VX7sPJnRrK6BAE1EDw==
-X-Received: by 2002:a50:b523:: with SMTP id y32mr38680719edd.209.1559769668613; 
- Wed, 05 Jun 2019 14:21:08 -0700 (PDT)
+ bh=jmqIL302FliKztrku23iEbel/vN8Om9KZr4KoJVUQBs=;
+ b=e9EXUqsza3le+HAgTGBBjbnO+zW0TfAs5VFiGbpiAmePj5f+9Dl9JB1lKoTA2IIo6G
+ 0Y4QEpPpjKNKRnFCfucgXXpHJP9ElfAlZYbWMTDpAjHUDMndiEM+9NJ/psSzjxiwgE0K
+ LOnw2MJPW8lsOCb7UX6VwFDln65pXuHvnixDdERDliSNMAcOvnRrk/xQkOteJsns114V
+ 0BT7W4i/O7BdUHqUjGrlhKoYFAOl4up1DUunaQZrCzmQW2cRM91Ig0vPG7jKXrxqji6P
+ ldxpRPY/7j4mDujrWYpn/ZJz5NoaMAIwqlftFBmqUEvg/7/21abAselCRaDxsbaocNUk
+ NlBQ==
+X-Gm-Message-State: APjAAAVKyNfvAeThkpRA6edfUSar/UvAX6/5SSzeGYIKBG540OMJ26rF
+ +OwRwHPvASHXPyj5MuomJuI=
+X-Google-Smtp-Source: APXvYqxldygk3PkHMpihOlAqhwTjzhXRQF4Z9tCxVu286QjlehnozfaHCkEEtI5NYMQPFpu5SuYeWg==
+X-Received: by 2002:a50:ca48:: with SMTP id e8mr45737760edi.101.1559769687081; 
+ Wed, 05 Jun 2019 14:21:27 -0700 (PDT)
 Received: from localhost ([185.92.221.13])
- by smtp.gmail.com with ESMTPSA id x19sm3180078edq.9.2019.06.05.14.21.07
+ by smtp.gmail.com with ESMTPSA id e19sm3550413edy.36.2019.06.05.14.21.26
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 05 Jun 2019 14:21:07 -0700 (PDT)
-Date: Wed, 5 Jun 2019 21:21:06 +0000
+ Wed, 05 Jun 2019 14:21:26 -0700 (PDT)
+Date: Wed, 5 Jun 2019 21:21:25 +0000
 From: Wei Yang <richard.weiyang@gmail.com>
 To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v3 10/11] mm/memory_hotplug: Make
- unregister_memory_block_under_nodes() never fail
-Message-ID: <20190605212106.6folqx2zawbvzzmm@master>
+Subject: Re: [PATCH v3 11/11] mm/memory_hotplug: Remove "zone" parameter from
+ sparse_remove_one_section
+Message-ID: <20190605212125.gwmvjjicylhp3wcz@master>
 References: <20190527111152.16324-1-david@redhat.com>
- <20190527111152.16324-11-david@redhat.com>
+ <20190527111152.16324-12-david@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190527111152.16324-11-david@redhat.com>
+In-Reply-To: <20190527111152.16324-12-david@redhat.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_142110_711660_C4178075 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20190605_142130_869279_07D15104 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,124 +103,73 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Reply-To: Wei Yang <richard.weiyang@gmail.com>
 Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
- linux-kernel@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
- linux-mm@kvack.org, "David S. Miller" <davem@davemloft.net>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Alex Deucher <alexander.deucher@amd.com>, Igor Mammedov <imammedo@redhat.com>,
- akpm@linux-foundation.org, Chris Wilson <chris@chris-wilson.co.uk>,
+ linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Wei Yang <richard.weiyang@gmail.com>, linux-mm@kvack.org,
+ Igor Mammedov <imammedo@redhat.com>, akpm@linux-foundation.org,
  linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 01:11:51PM +0200, David Hildenbrand wrote:
->We really don't want anything during memory hotunplug to fail.
->We always pass a valid memory block device, that check can go. Avoid
->allocating memory and eventually failing. As we are always called under
->lock, we can use a static piece of memory. This avoids having to put
->the structure onto the stack, having to guess about the stack size
->of callers.
+On Mon, May 27, 2019 at 01:11:52PM +0200, David Hildenbrand wrote:
+>The parameter is unused, so let's drop it. Memory removal paths should
+>never care about zones. This is the job of memory offlining and will
+>require more refactorings.
 >
->Patch inspired by a patch from Oscar Salvador.
->
->In the future, there might be no need to iterate over nodes at all.
->mem->nid should tell us exactly what to remove. Memory block devices
->with mixed nodes (added during boot) should properly fenced off and never
->removed.
->
->Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
->Cc: "Rafael J. Wysocki" <rafael@kernel.org>
->Cc: Alex Deucher <alexander.deucher@amd.com>
->Cc: "David S. Miller" <davem@davemloft.net>
->Cc: Mark Brown <broonie@kernel.org>
->Cc: Chris Wilson <chris@chris-wilson.co.uk>
->Cc: David Hildenbrand <david@redhat.com>
->Cc: Oscar Salvador <osalvador@suse.de>
->Cc: Andrew Morton <akpm@linux-foundation.org>
->Cc: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+>Reviewed-by: Dan Williams <dan.j.williams@intel.com>
 >Signed-off-by: David Hildenbrand <david@redhat.com>
 
 Reviewed-by: Wei Yang <richardw.yang@linux.intel.com>
 
 >---
-> drivers/base/node.c  | 18 +++++-------------
-> include/linux/node.h |  5 ++---
-> 2 files changed, 7 insertions(+), 16 deletions(-)
+> include/linux/memory_hotplug.h | 2 +-
+> mm/memory_hotplug.c            | 2 +-
+> mm/sparse.c                    | 4 ++--
+> 3 files changed, 4 insertions(+), 4 deletions(-)
 >
->diff --git a/drivers/base/node.c b/drivers/base/node.c
->index 04fdfa99b8bc..9be88fd05147 100644
->--- a/drivers/base/node.c
->+++ b/drivers/base/node.c
->@@ -803,20 +803,14 @@ int register_mem_sect_under_node(struct memory_block *mem_blk, void *arg)
+>diff --git a/include/linux/memory_hotplug.h b/include/linux/memory_hotplug.h
+>index 2f1f87e13baa..1a4257c5f74c 100644
+>--- a/include/linux/memory_hotplug.h
+>+++ b/include/linux/memory_hotplug.h
+>@@ -346,7 +346,7 @@ extern void move_pfn_range_to_zone(struct zone *zone, unsigned long start_pfn,
+> extern bool is_memblock_offlined(struct memory_block *mem);
+> extern int sparse_add_one_section(int nid, unsigned long start_pfn,
+> 				  struct vmem_altmap *altmap);
+>-extern void sparse_remove_one_section(struct zone *zone, struct mem_section *ms,
+>+extern void sparse_remove_one_section(struct mem_section *ms,
+> 		unsigned long map_offset, struct vmem_altmap *altmap);
+> extern struct page *sparse_decode_mem_map(unsigned long coded_mem_map,
+> 					  unsigned long pnum);
+>diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+>index 82136c5b4c5f..e48ec7b9dee2 100644
+>--- a/mm/memory_hotplug.c
+>+++ b/mm/memory_hotplug.c
+>@@ -524,7 +524,7 @@ static void __remove_section(struct zone *zone, struct mem_section *ms,
+> 	start_pfn = section_nr_to_pfn((unsigned long)scn_nr);
+> 	__remove_zone(zone, start_pfn);
 > 
-> /*
->  * Unregister memory block device under all nodes that it spans.
->+ * Has to be called with mem_sysfs_mutex held (due to unlinked_nodes).
->  */
->-int unregister_memory_block_under_nodes(struct memory_block *mem_blk)
->+void unregister_memory_block_under_nodes(struct memory_block *mem_blk)
-> {
->-	NODEMASK_ALLOC(nodemask_t, unlinked_nodes, GFP_KERNEL);
-> 	unsigned long pfn, sect_start_pfn, sect_end_pfn;
->+	static nodemask_t unlinked_nodes;
-> 
->-	if (!mem_blk) {
->-		NODEMASK_FREE(unlinked_nodes);
->-		return -EFAULT;
->-	}
->-	if (!unlinked_nodes)
->-		return -ENOMEM;
->-	nodes_clear(*unlinked_nodes);
->-
->+	nodes_clear(unlinked_nodes);
-> 	sect_start_pfn = section_nr_to_pfn(mem_blk->start_section_nr);
-> 	sect_end_pfn = section_nr_to_pfn(mem_blk->end_section_nr);
-> 	for (pfn = sect_start_pfn; pfn <= sect_end_pfn; pfn++) {
->@@ -827,15 +821,13 @@ int unregister_memory_block_under_nodes(struct memory_block *mem_blk)
-> 			continue;
-> 		if (!node_online(nid))
-> 			continue;
->-		if (node_test_and_set(nid, *unlinked_nodes))
->+		if (node_test_and_set(nid, unlinked_nodes))
-> 			continue;
-> 		sysfs_remove_link(&node_devices[nid]->dev.kobj,
-> 			 kobject_name(&mem_blk->dev.kobj));
-> 		sysfs_remove_link(&mem_blk->dev.kobj,
-> 			 kobject_name(&node_devices[nid]->dev.kobj));
-> 	}
->-	NODEMASK_FREE(unlinked_nodes);
->-	return 0;
+>-	sparse_remove_one_section(zone, ms, map_offset, altmap);
+>+	sparse_remove_one_section(ms, map_offset, altmap);
 > }
 > 
-> int link_mem_sections(int nid, unsigned long start_pfn, unsigned long end_pfn)
->diff --git a/include/linux/node.h b/include/linux/node.h
->index 02a29e71b175..548c226966a2 100644
->--- a/include/linux/node.h
->+++ b/include/linux/node.h
->@@ -139,7 +139,7 @@ extern int register_cpu_under_node(unsigned int cpu, unsigned int nid);
-> extern int unregister_cpu_under_node(unsigned int cpu, unsigned int nid);
-> extern int register_mem_sect_under_node(struct memory_block *mem_blk,
-> 						void *arg);
->-extern int unregister_memory_block_under_nodes(struct memory_block *mem_blk);
->+extern void unregister_memory_block_under_nodes(struct memory_block *mem_blk);
-> 
-> extern int register_memory_node_under_compute_node(unsigned int mem_nid,
-> 						   unsigned int cpu_nid,
->@@ -175,9 +175,8 @@ static inline int register_mem_sect_under_node(struct memory_block *mem_blk,
-> {
-> 	return 0;
-> }
->-static inline int unregister_memory_block_under_nodes(struct memory_block *mem_blk)
->+static inline void unregister_memory_block_under_nodes(struct memory_block *mem_blk)
-> {
->-	return 0;
+> /**
+>diff --git a/mm/sparse.c b/mm/sparse.c
+>index d1d5e05f5b8d..1552c855d62a 100644
+>--- a/mm/sparse.c
+>+++ b/mm/sparse.c
+>@@ -800,8 +800,8 @@ static void free_section_usemap(struct page *memmap, unsigned long *usemap,
+> 		free_map_bootmem(memmap);
 > }
 > 
-> static inline void register_hugetlbfs_with_node(node_registration_func_t reg,
+>-void sparse_remove_one_section(struct zone *zone, struct mem_section *ms,
+>-		unsigned long map_offset, struct vmem_altmap *altmap)
+>+void sparse_remove_one_section(struct mem_section *ms, unsigned long map_offset,
+>+			       struct vmem_altmap *altmap)
+> {
+> 	struct page *memmap = NULL;
+> 	unsigned long *usemap = NULL;
 >-- 
 >2.20.1
 
