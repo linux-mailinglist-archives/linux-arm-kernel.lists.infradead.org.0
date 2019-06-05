@@ -2,65 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABFB43580E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:50:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07F3035811
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:51:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9knTE/tmIZKvjz6mH1OO1PbPGdGgo6UH8kMGFnPUgMs=; b=SDOPokX456DfHu
-	Rtq8wY9x6ZLaUz3533hCWyoQRFXA2SPNz4UGkWUMpsuAhc3yCebbcwdZYGH30rNCU27agTnxobTI7
-	RHZKoL5tLWdOLU5VwHQCGvr7KME42sVFwYO7FGPn9pBQlZR9ZnlGuf7eEMjLOhI0dcjnqIY+TOhd3
-	UlO+jBH6vp+f1tGLOdNWX754rJtg4k+BtQ+uoI9yOr+HdSHilNlCbUf4fpTteZEUgQDK81EAJLiRU
-	r8GPkat/rcfJGAKWLzGx24R2GC6r5trvMUUP4ZWMmyKFSdu279r2XHTvyteToLOz427KsszwQc1o5
-	qHBCGPZLAt/Cpj7ChPpg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=d3VCO69gr5y46QiZ8JuGeVJ5QEYKT5YHO1hgB6H3zVA=; b=VpK/idQOBahl72rjJ8+QHbS4/
+	B77DhSyJBDTds6uCxcVvHseILx3DhJFA9dgxHjXEu0vusb0EQZ5BRBIImet4bHG9x6Dg+VHrHHo35
+	oAgG1xO4YCEd6O3+XqGVZpsvZKZpuswC7GyTsVTF9f/5f9EgT8e/KXnDWEcSVTQYt8fQBUCfw00I2
+	Y/E5VZ4n9VO2DrdfdaaZ6gxl2OmDILcrygtCGnoK2sbRmlG/srWR8GMe4pOG/+NL1pgTc1CVM26Vc
+	ZvaZmOGj2D0Rd5dJaM13hz9yNGDCag5X2QBecH/4AxyOr4AKpWg8IqmiNwNaCn82q/h99F3Llj+B4
+	qB8pq8IgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYQh8-0002xA-11; Wed, 05 Jun 2019 07:50:50 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hYQhU-0003E4-70; Wed, 05 Jun 2019 07:51:12 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYQgz-0002vW-L3; Wed, 05 Jun 2019 07:50:43 +0000
-X-UUID: 28537962f837437db2700ef715c20e0d-20190604
-X-UUID: 28537962f837437db2700ef715c20e0d-20190604
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1743603149; Tue, 04 Jun 2019 23:50:36 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 00:50:35 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Wed, 5 Jun 2019 15:50:32 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 5 Jun 2019 15:50:31 +0800
-Message-ID: <1559721031.8487.99.camel@mhfsdcap03>
-Subject: Re: [PATCH] USB: move usb debugfs directory creation to the usb
- common core
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Date: Wed, 5 Jun 2019 15:50:31 +0800
-In-Reply-To: <20190604115919.GA24346@kroah.com>
-References: <20190604093258.GB30054@kroah.com>
- <20190604115919.GA24346@kroah.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hYQhL-0003DM-PK
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:51:05 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x557p12c084053;
+ Wed, 5 Jun 2019 02:51:01 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559721061;
+ bh=Uii2Xjx5BpE3QqLNIntmpZQ4yu4iSLNPZaKQtbxCiAY=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Hc88SVJme67yYSFUQ8AZ4LQgi9Hmix2GgByP9AO6xlpDX7E+/b6lUai8mZ8R4+9Pu
+ TxFisOHqqlmSdRsUj8CYvFRgXNC90okDCcntgmQd356oZtxFInbWdtIUstOHRk678P
+ UINevnyr1FUuzPXtxSBrqieqzT/FiyFCxya3mUQc=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x557p1Lt115807
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 5 Jun 2019 02:51:01 -0500
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 5 Jun
+ 2019 02:51:00 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 5 Jun 2019 02:51:00 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x557owC0084384;
+ Wed, 5 Jun 2019 02:50:59 -0500
+Subject: Re: [PATCHv2 0/5] clk: keystone: clock optimizations / fixes
+To: <santosh.shilimkar@oracle.com>, <linux-clk@vger.kernel.org>,
+ <sboyd@kernel.org>, <mturquette@baylibre.com>, <ssantosh@kernel.org>,
+ <nm@ti.com>
+References: <1559049024-30872-1-git-send-email-t-kristo@ti.com>
+ <7d97db9a-71fd-0c44-a4ef-ef4d726cdb20@oracle.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <a0f19a9a-e06a-324b-82fe-ec0024f56fe0@ti.com>
+Date: Wed, 5 Jun 2019 10:50:57 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <7d97db9a-71fd-0c44-a4ef-ef4d726cdb20@oracle.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_005041_695377_6DED33BD 
-X-CRM114-Status: GOOD (  20.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190605_005103_876740_3B9271C8 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,144 +94,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Felipe Balbi <felipe.balbi@linux.intel.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-04 at 13:59 +0200, Greg Kroah-Hartman wrote:
-> On Tue, Jun 04, 2019 at 11:32:58AM +0200, Greg Kroah-Hartman wrote:
-> > The USB gadget subsystem wants to use the USB debugfs root directory, so
-> > move it to the common "core" USB code so that it is properly initialized
-> > and removed as needed.
-> > 
-> > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > 
-> > ---
-> > 
-> > This should be the "correct" version of this, Chunfeng, can you test
-> > this to verify it works for you?
-> > 
-> > 
-> > diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
-> > index 18f5dcf58b0d..3b5e4263ffef 100644
-> > --- a/drivers/usb/common/common.c
-> > +++ b/drivers/usb/common/common.c
-> > @@ -15,6 +15,7 @@
-> >  #include <linux/usb/of.h>
-> >  #include <linux/usb/otg.h>
-> >  #include <linux/of_platform.h>
-> > +#include <linux/debugfs.h>
-> >  
-> >  static const char *const ep_type_names[] = {
-> >  	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
-> > @@ -291,4 +292,21 @@ struct device *usb_of_get_companion_dev(struct device *dev)
-> >  EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
-> >  #endif
-> >  
-> > +struct dentry *usb_debug_root;
-> > +EXPORT_SYMBOL_GPL(usb_debug_root);
-> > +
-> > +static int usb_common_init(void)
-> > +{
-> > +	usb_debug_root = debugfs_create_dir("usb", NULL);
-> > +	return 0;
-> > +}
-> > +
-> > +static void usb_common_exit(void)
-> > +{
-> > +	debugfs_remove_recursive(usb_debug_root);
-> > +}
-> > +
-> > +module_init(usb_common_init);
-I tested this patch.
-
-Here use module_init() indeed have a race as Felipe said before.
-usbcore uses subsys_initcall(), and have a higher priority than
-module_init(), so when usbcore tries to create "devices" file,
-usb_debug_root is not created.
-
-after I replace it by postcore_initcall() (debugfs uses
-core_initcall()), test two cases:
-
-1. buildin usbcore/udc-core
-
-    "usb" directory is created, and usb/devices file is also created by
-usbcore
-
-2. build both usbcore and gadget as ko
-
-    usbcore.ko, udc-core.ko and usb-common.ko are created. 
-
-   2.1 
-       insmod usb-common.ko   // "usb" directory is created
-       insmod usb-core.ko   // usb/devices file is created
-
-   2.2
-       rmmod usb-common.ko  // failed, usb_common is in use by usb-core
-
-   2.3 
-       rmmod usb-core.ko   // usb/devices file is destroyed
-       rmmod usb-common.ko  // usb directory is destroyed
-
-   2.4 
-       insmod usb-common.ko   // "usb" directory is created
-       insmod udc-core.ko
-
-   2.5
-       rmmod usb-common.ko  // failed, usb_common is in use by udc-core
-
-   2.6 
-       rmmod udc-core.ko
-       rmmod usb-common.ko  // usb directory is destroyed
-
-they are all in line with expectations
-
-
-> > +module_exit(usb_common_exit);
-> > +
-> >  MODULE_LICENSE("GPL");
-> > diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
-> > index 7fcb9f782931..f3d6b1ab80cb 100644
-> > --- a/drivers/usb/core/usb.c
-> > +++ b/drivers/usb/core/usb.c
-> > @@ -1185,19 +1185,17 @@ static struct notifier_block usb_bus_nb = {
-> >  	.notifier_call = usb_bus_notify,
-> >  };
-> >  
-> > -struct dentry *usb_debug_root;
-> > -EXPORT_SYMBOL_GPL(usb_debug_root);
-> > +static struct dentry *usb_devices_root;
-> >  
-> >  static void usb_debugfs_init(void)
-> >  {
-> > -	usb_debug_root = debugfs_create_dir("usb", NULL);
-> > -	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
-> > -			    &usbfs_devices_fops);
-> > +	usb_devices_root = debugfs_create_file("devices", 0444, usb_debug_root,
-> > +					       NULL, &usbfs_devices_fops);
-> >  }
-> >  
-> >  static void usb_debugfs_cleanup(void)
-> >  {
-> > -	debugfs_remove_recursive(usb_debug_root);
-> > +	debugfs_remove_recursive(usb_devices_root);
-> 
-> That should just be debugfs_remove();
-> 
-> I'll fix it up after someone tests this :)
-> 
-> thanks,
-> 
-> greg k-h
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDQvMDYvMjAxOSAyMDo1NSwgc2FudG9zaC5zaGlsaW1rYXJAb3JhY2xlLmNvbSB3cm90ZToK
+PiBPbiA1LzI4LzE5IDY6MTAgQU0sIFRlcm8gS3Jpc3RvIHdyb3RlOgo+PiBIaSwKPj4KPj4gVGhp
+cyBpcyBhIHJlLWJhc2UgLyByZS1zcGluIG9mIHRoZSBLZXlzdG9uZSBjbG9jayBvcHRpbWl6YXRp
+b24gc2VyaWVzIAo+PiBbMV0uCj4+Cj4+IENoYW5nZXMgZnJvbSB2MToKPj4gLSByZWJhc2VkIG9u
+IHRvcCBvZiA1LjItcmMxCj4+IC0gYWRkZWQgc3VwcG9ydCBmb3IgY2xrLWlkcyAyNTUrCj4+IC0g
+Y2hhbmdlZCBwYXRjaCAjMyB0byBwYXJzZSBhbHNvICdhc3NpZ25lZC1jbG9ja3MnIGluIGFkZGl0
+aW9uIHRvIAo+PiAnY2xvY2tzJwo+PiDCoMKgIERUIG5vZGVzIG9ubHkuIFRoaXMgYWxsb3dzIGF1
+dG9tYXRpYyAoRFQgYmFzZWQpIHByb2dyYW1taW5nIG9mIGNsb2Nrcwo+PiDCoMKgIHRoYXQgYXJl
+IG5vdCBkaXJlY3RseSB0b3VjaGVkIGJ5IGFueSBkcml2ZXIuCj4+Cj4+IFBsZWFzZSBub3RlIHRo
+YXQgdGhlcmUgaXMgaGFyZCBkZXBlbmRlbmN5IGJldHdlZW4gcGF0Y2hlcyA0ICYgNSwgcGF0Y2gg
+IzUKPj4gbXVzdCBiZSBhcHBsaWVkIGFmdGVyIHBhdGNoICM0LCBvdGhlcndpc2UgYmFkIHRoaW5n
+cyB3aWxsIGhhcHBlbiAKPj4gKGJhc2ljYWxseQo+PiBib290IGJyZWFrcy4pIFRoZSBjYXN0IG1h
+Z2ljIGluIHBhdGNoICM0IGlzIGRvbmUgYWxzbyBzbyB0aGF0IHRoaXMgb3JkZXIKPj4gb2YgcGF0
+Y2hlcyBjYW4gYmUgdXNlZCBhbmQgYmlzZWN0YWJpbGl0eSBpcyByZXRhaW5lZC4KPj4KPiBBY2tl
+ZC1ieTogU2FudG9zaCBTaGlsaW1rYXIgPHNzYW50b3NoQGtlcm5lbC5vcmc+CgpUaGFua3MgU2Fu
+dG9zaCwKClN0ZXBoZW4sIGFyZSB5b3UgZ29pbmcgdG8gYmUgcGlja2luZyB0aGVzZSB1cCBkaXJl
+Y3RseSBvciBkbyB5b3Ugd2FudCBtZSAKdG8gc2VuZCBhIHB1bGwtcmVxPwoKLVRlcm8KLS0KVGV4
+YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwgMDAxODAgSGVsc2lu
+a2kuIFktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlra2EvRG9taWNpbGU6
+IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
