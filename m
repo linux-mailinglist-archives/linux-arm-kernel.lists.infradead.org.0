@@ -2,72 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 736EA36501
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 21:55:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 683603650A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 22:00:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7ghPAXKoMJlzIrWXATJVIhnp/nEJHXYHl9y6yw2Nfqo=; b=CJaaVCgEopza+R0L3bGrTma1c
-	BsBpi6b3Nsgly9DHSbYzF1lZtlDFnKlaLA3AQvG2sYZPBYYZSi9SjW6CizZEmLti0Ak8Ed4ulv+mE
-	HLKELxjDjiVlfATq73inkD1MKny9NcfkbyfuSkVjSuqRxyamfPEqaabNEPSFrgq5y/J8JPRaehEnX
-	f7lIVKn9fmwXGro/T/nbddsIOJNCcvGi2J57eL9naG0MFW2j312X1OlaX6Iv1nMghNTl128+e0T9m
-	dLuujyktCQ3mazwbFts3oJg+oq2BqE98XbAVSVfzCKcRgT5I+MJeou5+ZT2yfc31i5R2h3g4mEmwl
-	iMdR3ZxBQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a1Qrxn9evXpZMWoAzi7gZkLEFtoYQVUXJ370866tUS4=; b=LSKcMerkPhAwgu
+	1BV/Uqahd4eUH1Ez4GhAaBcexH79KlveT9Op/qKYvqJzwyuGsKjyZxq0d2w/hGfONX7H00SkILym5
+	eRq/5/rloK+X1Y8eTNJ1v3gze3zX1V9xfv4R0VggyqTxo3Stcb0E/CFx4dl70c3IeIDn+kPT5mTXe
+	ujspMpZMz6j75ETnqqV9bYJBk24B9ZyMA/IRG0glLOtLUuqL4lM/ffMtCBVETzC2JQ0/0L0bXjH7L
+	pHREVUX51rnZcJ1TIM8AsJaS4//JeIE8XxTS3uws/K0kE+KZyJ0/IAQiXbtgu0HjDq8GGiRUGGaZp
+	5CF3dIX344DXGhJumpsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYc0J-0000EW-SO; Wed, 05 Jun 2019 19:55:23 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hYc5R-0001vO-O5; Wed, 05 Jun 2019 20:00:41 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYc0C-0000E6-81; Wed, 05 Jun 2019 19:55:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KgTOG/MCFpTyXVOTj1ZuKkvtNmZGpkEpbnA949wWplg=; b=poiGgtvcOkWfzAHuVL95Men3L
- RyJsJbFdF5jvyHsVDjz+UFH1VX2AFLCeFGFxTcLT7kjna8inPhPEgFcf0DOSnNNim+PkYMgCrol36
- DXwfUOlPsXCYCu7DZy33rjRGAMDP7O8GtkdpVHMIYq6VWHk8G4ZZw+69OPy4tTmCUTJzk=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hYc08-0001Q6-5G; Wed, 05 Jun 2019 19:55:12 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 90214440046; Wed,  5 Jun 2019 20:55:11 +0100 (BST)
-Date: Wed, 5 Jun 2019 20:55:11 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Emil Renner Berthing <kernel@esmil.dk>
-Subject: Re: Applied "spi: rockchip: turn down tx dma bursts" to the spi tree
-Message-ID: <20190605195511.GX2456@sirena.org.uk>
-References: <20190412105320.2924-1-kernel@esmil.dk>
- <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
- <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
+ id 1hYc5K-0001uV-0l
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 20:00:35 +0000
+X-Originating-IP: 90.89.68.76
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id EA63FC0006;
+ Wed,  5 Jun 2019 20:00:21 +0000 (UTC)
+Date: Wed, 5 Jun 2019 22:00:20 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v4 04/13] media: rc: sunxi: Add RXSTA bits definition
+Message-ID: <20190605200020.tmyom3lg3inu6vvf@flea>
+References: <20190604162959.29199-1-peron.clem@gmail.com>
+ <20190604162959.29199-5-peron.clem@gmail.com>
+ <20190605095141.psrq6mhk63zto77s@flea>
+ <CAJiuCceZa=WEiF8_LK+jDdiXOn1i8+z8Smr6YKCpo9_XftgueQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
-X-Cookie: The other line moves faster.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <CAJiuCceZa=WEiF8_LK+jDdiXOn1i8+z8Smr6YKCpo9_XftgueQ@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_125516_442477_50D7CA01 
-X-CRM114-Status: GOOD (  12.48  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190605_130034_227170_A7B0780A 
+X-CRM114-Status: GOOD (  21.08  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,71 +66,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vicente Bergas <vicencb@gmail.com>, linux-spi@vger.kernel.org,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1806113091303662949=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jun 05, 2019 at 02:44:06PM +0200, Cl=E9ment P=E9ron wrote:
+> Hi Maxime,
+>
+> On Wed, 5 Jun 2019 at 11:51, Maxime Ripard <maxime.ripard@bootlin.com> wr=
+ote:
+> >
+> > On Tue, Jun 04, 2019 at 06:29:50PM +0200, Cl=E9ment P=E9ron wrote:
+> > > We are using RXINT bits definition when looking at RXSTA register.
+> > >
+> > > These bits are equal but it's not really proper.
+> > >
+> > > Introduce the RXSTA bits and use them to have coherency.
+> > >
+> > > Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> > > ---
+> > >  drivers/media/rc/sunxi-cir.c | 18 ++++++++++++------
+> > >  1 file changed, 12 insertions(+), 6 deletions(-)
+> > >
+> > > diff --git a/drivers/media/rc/sunxi-cir.c b/drivers/media/rc/sunxi-ci=
+r.c
+> > > index 0504ebfc831f..572bd2257d35 100644
+> > > --- a/drivers/media/rc/sunxi-cir.c
+> > > +++ b/drivers/media/rc/sunxi-cir.c
+> > > @@ -48,11 +48,11 @@
+> > >
+> > >  /* Rx Interrupt Enable */
+> > >  #define SUNXI_IR_RXINT_REG    0x2C
+> > > -/* Rx FIFO Overflow */
+> > > +/* Rx FIFO Overflow Interrupt Enable */
+> > >  #define REG_RXINT_ROI_EN             BIT(0)
+> > > -/* Rx Packet End */
+> > > +/* Rx Packet End Interrupt Enable */
+> > >  #define REG_RXINT_RPEI_EN            BIT(1)
+> > > -/* Rx FIFO Data Available */
+> > > +/* Rx FIFO Data Available Interrupt Enable */
+> > >  #define REG_RXINT_RAI_EN             BIT(4)
+> > >
+> > >  /* Rx FIFO available byte level */
+> > > @@ -60,6 +60,12 @@
+> > >
+> > >  /* Rx Interrupt Status */
+> > >  #define SUNXI_IR_RXSTA_REG    0x30
+> > > +/* Rx FIFO Overflow */
+> > > +#define REG_RXSTA_ROI                        BIT(0)
+> > > +/* Rx Packet End */
+> > > +#define REG_RXSTA_RPE                        BIT(1)
+> > > +/* Rx FIFO Data Available */
+> > > +#define REG_RXSTA_RA                 BIT(4)
+> >
+> > I'm fine with it on principle, but if the consistency needs to be
+> > maintained then we could just reuse the above defines
+>
+> There is no comment why we can reuse them, they can also be some wrong
+> case for example the RXINT_DRQ_EN bit is not present in RXSTA and same
+> for STAT bit present in RXSTA and not present in RXINT.
+>
+> I have discover and read this code a month ago and this logic is
+> really not obvious nor explain.
+>
+> Maybe this hack could be done when we will introduce a quirks, but for
+> the moment I really think that it's more proper and readable to
+> introduce them properly.
 
---===============1806113091303662949==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="dkgfGZfPp4OU3Le7"
-Content-Disposition: inline
+I don't think we understood each other :)
 
+I was talking about having something like
 
---dkgfGZfPp4OU3Le7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+#define REG_RXSTA_ROI  REG_RXINT_ROI_EN
 
-On Wed, Jun 05, 2019 at 09:36:44PM +0200, Emil Renner Berthing wrote:
-> On Wed, 8 May 2019 at 12:34, Mark Brown <broonie@kernel.org> wrote:
+Maxime
 
-> >    spi: rockchip: turn down tx dma bursts
-
-> I've tried looking in the for-next and for-5.x branches here, and I
-> can't seem to find this patch.
-> Am I missing something?
-
-> It fixes a problem introduced in 4.19, so it'd be nice if it could
-> make it to stable trees eventually.
-
-47300728fb213486a830565d2af49da967c9d16a is in my tree.  When it reaches
-Linus' tree send a request to Greg for it to be backported if none of
-the stable automation picks it up.
-
---dkgfGZfPp4OU3Le7
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAlz4Hh4ACgkQJNaLcl1U
-h9BxQgf+Ljplf8ZxX4pzMeNgr9s/Oik21N9dYZN14eGepFYn3eC2JAJ66qWR5ZDX
-q18JwvA6GyMsvntlko2y2HjEIJltQ06YGplOfVLtKkwtDWSbiBlV1nkkxpZGjmJd
-AC7LI2yRkoD35/DXj4r2x8ZatFl1W+i3isANRYtSFHUeKElyYCQ+fV4YTm8xUHjP
-zpRYGv65CG88hJmzygheI3viO+zlwsUxaJaz/jcNkoyZ4etUpz8FEYjtMeBV3SXX
-MxUncjiMX3d7HlRU4CY03FyMkUJ4d+8Pfw7YMyNbF2SMDqEbApXGhBG4XS1RcE6x
-ujRznnS4Wk9Lc6MdQbWFBAMoYrCUcw==
-=Y9+I
------END PGP SIGNATURE-----
-
---dkgfGZfPp4OU3Le7--
-
-
---===============1806113091303662949==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1806113091303662949==--
-
