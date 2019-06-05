@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A456536460
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 21:15:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58321364B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 21:29:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E1kMuM9SMwnRweYGDph2zyCmPEJCxP0QPHV8RwxeYuA=; b=CLFxGpHmV223SU
-	5TXa5rvPLFqEfLVLV1lyt+GMTxBrOnS5t9/FYwcUL7tl7Yjh+ij4lSMMkjYyuPZWcP1b08DUSDdKg
-	5G7jkDmSwzE9ZeLDs7BSRhG/DTr8UrgwkPJyWrxjx+NLXKz0QJPYs5FbbFv2FZuI+d/tew/WTMZce
-	LZG97gOAoeuHoUaNN9zIvHSU/u5GdzZMruYX5MqgOGDUoYGLor6ksp0Lq2qSNbRywCURUq4QQ/imh
-	kCh2ZAcLvOinISVqIgSl73FM+/u5TqDF2lowGa7QjOVLipKodQ7Cs0CF1TxUGeGK+G6SHMRBIjMze
-	ElBeZHcnHTEjlHfmPnqQ==;
+	List-Owner; bh=fm6LK9Kr9ADEMwdKR+y8otd5F3Mnq5Ikuf4gnn/xBLE=; b=atmaLVpmK/yanC
+	6ztDkP5RZWRKvxBHoj4J4g7IObFODkTZqFRfZVDc19fWYjbB8tyD0l9F1cEhjLvqk5+cMFw3p2AE+
+	/u91s/zbEBVQNH7opsD576rn/ioHSv3cpLI4iexHCYjZzePtHv0AropaR3zCGF/hX5yLQMjejm3cu
+	sUskYuryXauZl3XGecbB0d/rAkxR0GZWwu3z1dy/BYnR8uxyyUaj6yVngcZ/typHxjFDOFZQg7RTO
+	oGjoXUgw4g5W+H918lLaAWUbkzTbTIDbIBBDEOAZkD3xp43ZsCKLZ1kO+KaxZTMlKaooSdGaEYcm6
+	fsU5/H3iZ3zCS+n1oFJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYbNL-0000kQ-RS; Wed, 05 Jun 2019 19:15:07 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hYbbO-0006qW-Kv; Wed, 05 Jun 2019 19:29:38 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYbNB-0000k1-3b
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 19:14:58 +0000
-Received: by mail-pl1-x644.google.com with SMTP id i2so5705060plt.1
+ id 1hYbbH-0006pm-JC
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 19:29:32 +0000
+Received: by mail-wm1-x342.google.com with SMTP id f10so43686wmb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 12:14:57 -0700 (PDT)
+ Wed, 05 Jun 2019 12:29:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=3Rc60lsJ3z1zOjfi7ksD28e6ywcaQlCBCKfGl8ThP5g=;
- b=wl9zOlVGzsak3W0n9srNqt6xTicaVMXyvuV62ylpgplp0YgPU7AxCF2aoOl4RB2iC5
- 6cPYPEmWEcxRkhSQT57mRJKRMLXCedtcqKwMwsOGUFlinvg03O+6j6DGB/fUMSIL09V+
- wbvrFegoqrdRMWReviAaArKT1XKDv7Q3UdZInx0oUItNDGwcSfHj0y3P/XbhDxVRBZ0D
- 1yCB6OValT1P7bMoLKXsiTopYfc7JTB1ixy+cTPwWdKa2YzQE2Wk+wXa6s4NUj8y8Dfc
- D9FBIWE1C6kkbzPxlvNmqGmNa6Z9G3Xpa+E2YU9W+JqS/kkBUZJxb5rYvg85KIW0DsTX
- h0Mw==
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=D5NcDW+/WmQwqSB+Xi8h1sKYPuuI5ApOFt3kq9BvkTE=;
+ b=U4jgD3qb1TiWPeo0I0EQj9YVlGjsjBiUgv3hdUmrYuJZrUIMq1nNLAiutPQCj8EtAU
+ YcN2wBjP/xTv7tUdThX93VYX+jHZw5o551/dyZ5nHxveozxZb7mV7AnbhOP3Xm1aNcgb
+ zWPwwh4cUFyxAGVJHFgITDfzSo0Fijs3mzurFbu3Dxh9EE16inWaZaO31svsntXTWO+E
+ rfQ2q3CIc3i7jCGmbbwjZpRhYeLhJK8BD9iADSXBK+n0GDyNWmK+SIK+418dbmYGmH2y
+ bIn0iv+CbWqXWwlNmyM/unKrXJcIfcEAv7F48JcipbDFhbKp/iNFt0eUPUWKtO7DjtrJ
+ Jocw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3Rc60lsJ3z1zOjfi7ksD28e6ywcaQlCBCKfGl8ThP5g=;
- b=K0zcM7Q0bnjxIcM2rXztUKJonJEVMOHJBv/tT6Ls4j0a/+jqXqZfugOpuS9pav3lUW
- Y53wbCk/DJKoaY7n5BKnDk+CZP5oUgig5plihMT5NP5OS/Y6miimhd/dbx2ztppjPH9k
- kv5rkhMYG3ib3gbjPnEh7sZr/xmC1xteAPqJGhdpfodxpoX9ul/pbEyOOuoEfkeoymud
- SLC2MYFmEvsI54OJWLeFySNe0m21D5cNdumcWTbtf6amUOTWTBE2hkRAsKsfhTuC+QCT
- B0qdXlwwsdYaUlZmH2sD6/H0kSSHjzzIJhWDFg6uZt2baPa3wJFJlg5bd7hvNhjeiZSC
- pq7w==
-X-Gm-Message-State: APjAAAWH2hx0mr3NqIfBtkao0JKNTTA95SGjmGIII+SojuC3IK+0OVtV
- Sw+TUj4oVN3SYv5308JEZp77mQ==
-X-Google-Smtp-Source: APXvYqz+h4aRHxX//DbbKSqnGBRk+YbQMFSEIS2PAURYu4NSWDUnLwqSRo+mFseHlHHDfgCMaf9Iyw==
-X-Received: by 2002:a17:902:2ba7:: with SMTP id
- l36mr45371487plb.334.1559762096439; 
- Wed, 05 Jun 2019 12:14:56 -0700 (PDT)
-Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id t15sm21182517pjb.6.2019.06.05.12.14.55
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=D5NcDW+/WmQwqSB+Xi8h1sKYPuuI5ApOFt3kq9BvkTE=;
+ b=kqNQpNx5gJhxNzWo7RLqHSMMAP+ToGI3fRwYJ2AOQzS/ekBWI7A4yZ9c4Gjei5VHVN
+ urcjgoCNkBCFs6HkThYIf5z+4+p3soYfGnpBaKAPVF1BUjDVlqpoRjX++JgpTs5Uwm+s
+ T22vd+PrWUJqa/vaGR9Merg5DK+YvSJzyuVLLqbSuuNWpsxkceKHCvcBrKlctsC9gbJC
+ lMmmBEMg2vyD5nYaqovrPhBbXLPMmHDdgWAdWMN5/VbGk9qf7B2ob5Hj/Cgw34Np3NFL
+ XNTSzUko3TqB1Q26l0bXOoFKZ+AjLiYuiWNnLf0Jv+FKH1fZ0b+tcMofa0JW7eLvFjNE
+ w0tg==
+X-Gm-Message-State: APjAAAUOajLgmx7/AWC46zdod2WfFEQz3IdYGTvE9/Cg1IpZYvn3JOwK
+ oHVRJTnzZytjkv5gUSRVptZnaw==
+X-Google-Smtp-Source: APXvYqz8xLqEZUQ1bW9JTYYNxCZRI9YeEhZeMBTkaYKaXpxE3Ij1iNeqP9qVNZUnCX1dMi5d/0Ok/g==
+X-Received: by 2002:a1c:ca06:: with SMTP id a6mr23888475wmg.48.1559762968778; 
+ Wed, 05 Jun 2019 12:29:28 -0700 (PDT)
+Received: from dell ([2.31.167.229])
+ by smtp.gmail.com with ESMTPSA id w185sm20968659wma.39.2019.06.05.12.29.27
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 05 Jun 2019 12:14:55 -0700 (PDT)
-Date: Wed, 5 Jun 2019 12:14:53 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Lee Jones <lee.jones@linaro.org>
+ Wed, 05 Jun 2019 12:29:28 -0700 (PDT)
+Date: Wed, 5 Jun 2019 20:29:26 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
 Subject: Re: [PATCH 7/8] usb: dwc3: qcom: Start USB in 'host mode' on the
  SDM845
-Message-ID: <20190605191453.GJ4814@minitux>
+Message-ID: <20190605192926.GW4797@dell>
 References: <20190604104455.8877-1-lee.jones@linaro.org>
  <20190604104455.8877-7-lee.jones@linaro.org>
  <20190605070029.GN22737@tuxbook-pro> <20190605083454.GO4797@dell>
+ <20190605191453.GJ4814@minitux>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190605083454.GO4797@dell>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <20190605191453.GJ4814@minitux>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_121457_407330_E3A4E1EA 
-X-CRM114-Status: GOOD (  31.89  )
+X-CRM114-CacheID: sfid-20190605_122931_637050_439EB054 
+X-CRM114-Status: GOOD (  23.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,127 +109,51 @@ Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
  linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 05 Jun 01:34 PDT 2019, Lee Jones wrote:
-
-> On Wed, 05 Jun 2019, Bjorn Andersson wrote:
-> 
-> > On Tue 04 Jun 03:44 PDT 2019, Lee Jones wrote:
-> > 
-> > > When booting with Device Tree, the current default boot configuration
-> > > table option, the request to boot via 'host mode' comes from the
-> > > "dr_mode" property.
-> > 
-> > This has been the default on the MTP, but this is changing as this is
-> > causing issues when connected downstream from a hub (the typical
-> > development case for the primary USB port of a phone like device) and
-> > more importantly we don't have support for the PMIC blocks that control
-> > VBUS.
-> 
-> My point is not about which mode is currently chosen.  It's more about
-> the capability of choosing which mode is appropriate for a given
-> system via DT.
-> 
-> > Once these issues are resolved the dr_mode would be "otg".
-> 
-> OTG doesn't work on this H/W, so we need to specify "host" mode.
-> 
-
-My objection is that when you say "this H/W" you mean a particular
-product, but you're making this decision for all SDM845 based products
-using ACPI.
-
-I don't know if there is a Windows phone based on SDM845, but if there
-is then I don't think forcing it to host would be correct.
-
-> > > A property of the same name can be used inside
-> > > ACPI tables too.  However it is missing from the SDM845's ACPI tables
-> > > so we have to supply this information using Platform Device Properites
-> > > instead.
-> > > 
-> > 
-> > Afaict this would install a fall-back property, so in the case that we
-> > have specified dr_mode in DT (or ACPI) that would take precedence. So
-> 
-> That's correct.
-> 
-> > the commit message should reflect that this redefines the default choice
-> > to be "host", rather than "otg".
-> 
-> No problem.
-> 
-> > Which is in conflict with what's described for dr_mode in
-> > Documentation/devicetree/bindings/usb/generic.txt
-> 
-> This implementation only affects ACPI based platforms.  When booting
-> with DT, the description in that DT related document is still
-> accurate.
-> 
-
-You're right, I got lost between the patches and the sprinkled if
-(ACPI_HANDLE()) in the probe. This is only added for ACPI.
-
-> > And this driver is used on a range of different Qualcomm platforms, so I
-> > don't think this is SDM845 specific.
-> 
-> ACPI based platforms?
-> 
-> All the ones I've seen use the XHCI USB driver directly ("PNP0D10").
->  
-
-MSM8998 (835) has the same controller, so this should affect those
-laptops as well.
-
-Regards,
-Bjorn
-
-> > > Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> > > ---
-> > >  drivers/usb/dwc3/dwc3-qcom.c | 12 ++++++++++++
-> > >  1 file changed, 12 insertions(+)
-> > > 
-> > > diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-> > > index 349bf549ee44..f21fdd6cdd1a 100644
-> > > --- a/drivers/usb/dwc3/dwc3-qcom.c
-> > > +++ b/drivers/usb/dwc3/dwc3-qcom.c
-> > > @@ -468,6 +468,11 @@ static const struct acpi_device_id dwc3_qcom_acpi_match[] = {
-> > >  };
-> > >  MODULE_DEVICE_TABLE(acpi, dwc3_qcom_acpi_match);
-> > >  
-> > > +static const struct property_entry dwc3_qcom_acpi_properties[] = {
-> > > +	PROPERTY_ENTRY_STRING("dr_mode", "host"),
-> > > +	{}
-> > > +};
-> > > +
-> > >  static int dwc3_qcom_probe(struct platform_device *pdev)
-> > >  {
-> > >  	struct device_node	*np = pdev->dev.of_node, *dwc3_np;
-> > > @@ -603,6 +608,13 @@ static int dwc3_qcom_probe(struct platform_device *pdev)
-> > >  			goto platform_unalloc;
-> > >  		}
-> > >  
-> > > +		ret = platform_device_add_properties(qcom->dwc3,
-> > > +						     dwc3_qcom_acpi_properties);
-> > > +		if (ret < 0) {
-> > > +			dev_err(&pdev->dev, "failed to add properties\n");
-> > > +			goto platform_unalloc;
-> > > +		}
-> > > +
-> > >  		ret = platform_device_add(qcom->dwc3);
-> > >  		if (ret) {
-> > >  			dev_err(&pdev->dev, "failed to add device\n");
-> 
-> -- 
-> Lee Jones [?????????]
-> Linaro Services Technical Lead
-> Linaro.org ??? Open source software for ARM SoCs
-> Follow Linaro: Facebook | Twitter | Blog
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAwNSBKdW4gMjAxOSwgQmpvcm4gQW5kZXJzc29uIHdyb3RlOgoKPiBPbiBXZWQgMDUg
+SnVuIDAxOjM0IFBEVCAyMDE5LCBMZWUgSm9uZXMgd3JvdGU6Cj4gCj4gPiBPbiBXZWQsIDA1IEp1
+biAyMDE5LCBCam9ybiBBbmRlcnNzb24gd3JvdGU6Cj4gPiAKPiA+ID4gT24gVHVlIDA0IEp1biAw
+Mzo0NCBQRFQgMjAxOSwgTGVlIEpvbmVzIHdyb3RlOgo+ID4gPiAKPiA+ID4gPiBXaGVuIGJvb3Rp
+bmcgd2l0aCBEZXZpY2UgVHJlZSwgdGhlIGN1cnJlbnQgZGVmYXVsdCBib290IGNvbmZpZ3VyYXRp
+b24KPiA+ID4gPiB0YWJsZSBvcHRpb24sIHRoZSByZXF1ZXN0IHRvIGJvb3QgdmlhICdob3N0IG1v
+ZGUnIGNvbWVzIGZyb20gdGhlCj4gPiA+ID4gImRyX21vZGUiIHByb3BlcnR5Lgo+ID4gPiAKPiA+
+ID4gVGhpcyBoYXMgYmVlbiB0aGUgZGVmYXVsdCBvbiB0aGUgTVRQLCBidXQgdGhpcyBpcyBjaGFu
+Z2luZyBhcyB0aGlzIGlzCj4gPiA+IGNhdXNpbmcgaXNzdWVzIHdoZW4gY29ubmVjdGVkIGRvd25z
+dHJlYW0gZnJvbSBhIGh1YiAodGhlIHR5cGljYWwKPiA+ID4gZGV2ZWxvcG1lbnQgY2FzZSBmb3Ig
+dGhlIHByaW1hcnkgVVNCIHBvcnQgb2YgYSBwaG9uZSBsaWtlIGRldmljZSkgYW5kCj4gPiA+IG1v
+cmUgaW1wb3J0YW50bHkgd2UgZG9uJ3QgaGF2ZSBzdXBwb3J0IGZvciB0aGUgUE1JQyBibG9ja3Mg
+dGhhdCBjb250cm9sCj4gPiA+IFZCVVMuCj4gPiAKPiA+IE15IHBvaW50IGlzIG5vdCBhYm91dCB3
+aGljaCBtb2RlIGlzIGN1cnJlbnRseSBjaG9zZW4uICBJdCdzIG1vcmUgYWJvdXQKPiA+IHRoZSBj
+YXBhYmlsaXR5IG9mIGNob29zaW5nIHdoaWNoIG1vZGUgaXMgYXBwcm9wcmlhdGUgZm9yIGEgZ2l2
+ZW4KPiA+IHN5c3RlbSB2aWEgRFQuCj4gPiAKPiA+ID4gT25jZSB0aGVzZSBpc3N1ZXMgYXJlIHJl
+c29sdmVkIHRoZSBkcl9tb2RlIHdvdWxkIGJlICJvdGciLgo+ID4gCj4gPiBPVEcgZG9lc24ndCB3
+b3JrIG9uIHRoaXMgSC9XLCBzbyB3ZSBuZWVkIHRvIHNwZWNpZnkgImhvc3QiIG1vZGUuCj4gCj4g
+TXkgb2JqZWN0aW9uIGlzIHRoYXQgd2hlbiB5b3Ugc2F5ICJ0aGlzIEgvVyIgeW91IG1lYW4gYSBw
+YXJ0aWN1bGFyCj4gcHJvZHVjdCwgYnV0IHlvdSdyZSBtYWtpbmcgdGhpcyBkZWNpc2lvbiBmb3Ig
+YWxsIFNETTg0NSBiYXNlZCBwcm9kdWN0cwo+IHVzaW5nIEFDUEkuCj4gCj4gSSBkb24ndCBrbm93
+IGlmIHRoZXJlIGlzIGEgV2luZG93cyBwaG9uZSBiYXNlZCBvbiBTRE04NDUsIGJ1dCBpZiB0aGVy
+ZQo+IGlzIHRoZW4gSSBkb24ndCB0aGluayBmb3JjaW5nIGl0IHRvIGhvc3Qgd291bGQgYmUgY29y
+cmVjdC4KCllvdSBtZWFuIGlmIHNvbWVvbmUgd2FudGVkIHRvIGJvb3QgTGludXggb24gYSBXaW5k
+b3dzIHBob25lPyAgTm90IHN1cmUKaG93IGxpa2VseSB0aGF0IGlzLCBidXQgZXZlbiBpZiBhKSB0
+aGVyZSBpcyBhbiBTRE04NDUgYmFzZWQgV2luZG93cwpwaG9uZSBhbmQgYikgc29tZW9uZSBpcyBj
+cmF6eSBlbm91Z2ggdG8gcnVuIExpbnV4IG9uIGl0LCBpdCBzaG91bGQgYmUKdHJpdmlhbCBmb3Ig
+dGhlbSB0byBjb25kdWN0IHNvbWUgZGV2aWNlIG1hdGNoaW5nIGFuZCBjaG9vc2UgYQpkaWZmZXJl
+bnQgcHJvcGVydHkgYmFzZWQgb24gdGhlIHJlc3VsdC4KClsuLi5dCgo+ID4gPiBBbmQgdGhpcyBk
+cml2ZXIgaXMgdXNlZCBvbiBhIHJhbmdlIG9mIGRpZmZlcmVudCBRdWFsY29tbSBwbGF0Zm9ybXMs
+IHNvIEkKPiA+ID4gZG9uJ3QgdGhpbmsgdGhpcyBpcyBTRE04NDUgc3BlY2lmaWMuCj4gPiAKPiA+
+IEFDUEkgYmFzZWQgcGxhdGZvcm1zPwo+ID4gCj4gPiBBbGwgdGhlIG9uZXMgSSd2ZSBzZWVuIHVz
+ZSB0aGUgWEhDSSBVU0IgZHJpdmVyIGRpcmVjdGx5ICgiUE5QMEQxMCIpLgo+IAo+IE1TTTg5OTgg
+KDgzNSkgaGFzIHRoZSBzYW1lIGNvbnRyb2xsZXIsIHNvIHRoaXMgc2hvdWxkIGFmZmVjdCB0aG9z
+ZQo+IGxhcHRvcHMgYXMgd2VsbC4KClRoaXMgd291bGQgYWxzbyBiZSB0aGUgY29ycmVjdCBjb25m
+aWd1cmF0aW9uIGZvciB0aGVtIHRvby4gIE9URwpkb2Vzbid0IG1ha2UgbXVjaCBzZW5zZSBmb3Ig
+YSBsYXB0b3AgZm9ybSBmYWN0b3IuCgotLSAKTGVlIEpvbmVzIFvmnY7nkLzmlq9dCkxpbmFybyBT
+ZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0d2Fy
+ZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzogRmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxvZwoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
