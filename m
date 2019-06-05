@@ -2,61 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA0A235589
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 05:07:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D4993564D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 07:45:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A2jowLBA/3wCaa9eizeietJ4gyiF4TwyHcZyCUuf1SQ=; b=bICQtG4GxPPaKv
-	gSi35nlQDPnjq5sOO/NqjFOwPq1zuDsLyw7kstsCSI8ZMwSCb1gGgSdKm7Mw/V2zypFsTShOULQG6
-	alNXzetO1aieZFyv42IlVzl4/A1aldbCfRv0rIwxiUugfHSon6sWndVQ6wTYv3xUwMAMN55QC2fX3
-	TqjhmzIMIbsc+YIk3kA7h7H6qJTTjqJwFczm540hF5mXRGaS7UOQOPndI/43SeNQaA9Dr4rUq1BnB
-	giR9xNpMBZ3Hjt874/zJdgJ4CgPuJZKELLnLdunVrbpglRkHLcYnUwz6hWBudcrn5T7Bw7m3ex5gX
-	gt7OzyVodlJfNckPr7VA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n+qfvF48+kcjCe4XsI8ZSCRiAoxHzfp+QPehDJ8zc2M=; b=VaJWkhXFAN1Vqo
+	9AM0CfEuIpH824lrk04HIQIYWrnDJzzbWlxsS7B9cAYsfnEs3YtOZWfgCfTvI5L82E22SEEU53vfM
+	vMVFkOhbYxUss+r7U/bEWDhSMEx44waG4use396JbJKrCepyzuLkhEDab15vzNsfusTH4iZOUgVc8
+	SgS6Od1GPqybdx+tyqM1zFphqa9xbVX+uE0ZZR65p7EbDosi/lB9wA+reQOCwon5zyCH2JxagB9zv
+	HG935xLMYfhA4PfCW/qftlvxeqAOT5YyadOhh8Z4N54nEvHcd2+kcHiZA6Y8lnGWVm1TvkDGd39O2
+	EYSenp3idSC8DxL97hxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYMH1-0007R5-Kd; Wed, 05 Jun 2019 03:07:35 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hYOjV-0002cP-Lm; Wed, 05 Jun 2019 05:45:09 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYMGv-0007QZ-0P; Wed, 05 Jun 2019 03:07:30 +0000
-X-UUID: e59b73a029d9463fb00a2c0dfbf39250-20190604
-X-UUID: e59b73a029d9463fb00a2c0dfbf39250-20190604
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <leilk.liu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1934652754; Tue, 04 Jun 2019 19:07:26 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 4 Jun 2019 20:07:24 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 11:07:21 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 5 Jun 2019 11:07:20 +0800
-From: Leilk Liu <leilk.liu@mediatek.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: [PATCH] spi: mediatek: add SPI_LSB_FIRST support
-Date: Wed, 5 Jun 2019 11:07:04 +0800
-Message-ID: <1559704024-5369-1-git-send-email-leilk.liu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
+ id 1hYOjN-0002HF-Ly
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 05:45:03 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x555iw0g130550;
+ Wed, 5 Jun 2019 00:44:58 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559713498;
+ bh=mvC8ysoD2td/BeQzG9ByBP2PgmFd/m8oI3Fmb8eMEpo=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=rY4/PaDL5ijzjDIV/ORQwTNMjRADSarhGxBuRWiYH06xRqjebD3ncS3CKZ8tocHh5
+ +QURX0y2G6FdEourW/7MMkevjk/3RFm50yj4fTFVZ0N3k0z9ZrIoj3cw9QySKJDQ1N
+ +cdBQen0XT+mG/gWT7ImdZ5QvR2yDa+IeRYEp5Yc=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x555iwdV038153
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 5 Jun 2019 00:44:58 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 5 Jun
+ 2019 00:44:58 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 5 Jun 2019 00:44:57 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x555itoY125799;
+ Wed, 5 Jun 2019 00:44:56 -0500
+Subject: Re: [PATCH v3 3/5] soc: ti: ti_sci_pm_domains: Add support for
+ exclusive and shared access
+To: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>, Santosh
+ Shilimkar <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>
+References: <20190410053728.17374-1-lokeshvutla@ti.com>
+ <20190410053728.17374-4-lokeshvutla@ti.com>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <b6f005da-3c0a-ce73-79f0-eaa19c7da92c@ti.com>
+Date: Wed, 5 Jun 2019 11:14:22 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190410053728.17374-4-lokeshvutla@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_200729_059196_63DACFB5 
-X-CRM114-Status: GOOD (  11.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190604_224501_843621_B12BA89E 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,81 +94,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Leilk Liu <leilk.liu@mediatek.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, fparent@baylibre.com,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Sekhar Nori <nsekhar@ti.com>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-this patch add SPI_LSB_FIRST feature support.
+Santosh,
 
-Signed-off-by: Leilk Liu <leilk.liu@mediatek.com>
----
- drivers/spi/spi-mt65xx.c                 |   15 ++++++---------
- include/linux/platform_data/spi-mt65xx.h |    2 --
- 2 files changed, 6 insertions(+), 11 deletions(-)
+On 10/04/19 11:07 AM, Lokesh Vutla wrote:
+> TISCI protocol supports for enabling the device either with exclusive
+> permissions for the requesting host or with sharing across the hosts.
+> There are certain devices which are exclusive to Linux context and
+> there are certain devices that are shared across different host contexts.
+> So add support for getting this information from DT by increasing
+> the power-domain cells to 2.
+> 
+> For keeping the DT backward compatibility intact, defaulting the
+> device permissions to set the exclusive flag set. In this case the
+> power-domain-cells is 1.
+> 
+> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
 
-diff --git a/drivers/spi/spi-mt65xx.c b/drivers/spi/spi-mt65xx.c
-index 0cce6f0..7f4dc18 100644
---- a/drivers/spi/spi-mt65xx.c
-+++ b/drivers/spi/spi-mt65xx.c
-@@ -131,8 +131,6 @@ struct mtk_spi {
-  * supplies it.
-  */
- static const struct mtk_chip_config mtk_default_chip_info = {
--	.rx_mlsb = 1,
--	.tx_mlsb = 1,
- 	.cs_pol = 0,
- 	.sample_sel = 0,
- };
-@@ -203,14 +201,13 @@ static int mtk_spi_prepare_message(struct spi_master *master,
- 		reg_val &= ~SPI_CMD_CPOL;
- 
- 	/* set the mlsbx and mlsbtx */
--	if (chip_config->tx_mlsb)
--		reg_val |= SPI_CMD_TXMSBF;
--	else
-+	if (spi->mode & SPI_LSB_FIRST) {
- 		reg_val &= ~SPI_CMD_TXMSBF;
--	if (chip_config->rx_mlsb)
--		reg_val |= SPI_CMD_RXMSBF;
--	else
- 		reg_val &= ~SPI_CMD_RXMSBF;
-+	} else {
-+		reg_val |= SPI_CMD_TXMSBF;
-+		reg_val |= SPI_CMD_RXMSBF;
-+	}
- 
- 	/* set the tx/rx endian */
- #ifdef __LITTLE_ENDIAN
-@@ -607,7 +604,7 @@ static int mtk_spi_probe(struct platform_device *pdev)
- 
- 	master->auto_runtime_pm = true;
- 	master->dev.of_node = pdev->dev.of_node;
--	master->mode_bits = SPI_CPOL | SPI_CPHA;
-+	master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_LSB_FIRST;
- 
- 	master->set_cs = mtk_spi_set_cs;
- 	master->prepare_message = mtk_spi_prepare_message;
-diff --git a/include/linux/platform_data/spi-mt65xx.h b/include/linux/platform_data/spi-mt65xx.h
-index ba4e4bb..8d5df58 100644
---- a/include/linux/platform_data/spi-mt65xx.h
-+++ b/include/linux/platform_data/spi-mt65xx.h
-@@ -14,8 +14,6 @@
- 
- /* Board specific platform_data */
- struct mtk_chip_config {
--	u32 tx_mlsb;
--	u32 rx_mlsb;
- 	u32 cs_pol;
- 	u32 sample_sel;
- };
--- 
-1.7.9.5
+Any chance you can pick this patch? Tero is waiting for you to pick it up so
+that dts changes can be pulled. Or can you ack it so that Tero can pick the
+entire series?
+
+Thanks and regards,
+Lokesh
 
 
 _______________________________________________
