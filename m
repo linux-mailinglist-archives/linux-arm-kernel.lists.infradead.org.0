@@ -2,81 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A45B735CB5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:24:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59C5A35B8A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:43:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=in5lnlVrtfS/5jndoL9M9kl40F/ZJdXofIebZjfqoAU=; b=eBfy1nWbB9SQex
-	7OfBNcRLSF6psOowjGXGcTBGSLPypcQo9xXCXpFYDgwJRfeTDyPHhD1jC99JixBdso5PTKzp/GC1g
-	+U7mmXQJqBwREvrmatBD2kmXf/kcztk1SZAqW1d8n9PU4FZ6F1QjGwMf3wEOdPdY1kTaVULKM15wX
-	kDH6JCTrUktfTQ7mhLOdWa3c7soCIWXXluyTaDM5QdJ36G8NC6Mb5gWh79H7ssB/d7h/NHIsFrL/N
-	Y/vEBh7sxeDA+Y5sMrZgJGjeWVppbmdXcsgGfmbWbYk1lU2mVTmCOES0mFtZFwoYpNBzCQVq+mrrk
-	OK9iiP3ZziYdxjn61TDQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=OOdsJyckBQiJC1/m5sriwm9Lwlob6k0I0DqORIeLksI=; b=mA2w/vvzLI3F4oIzJlTqEwqNVv
+	Noz4kUWlzNcialZ9K1BKRQvnaDeJDgkqGPB/DE32Dl1Fv00fyScTG67rYR7q5NVPlXg4/T1INZccU
+	qBbN2hphx7bSdTCIk7kkJqWvm1TKz6+s9DfMPp4oAbQBl7i9sGCYw1qpt+DsosyVcrhOiW5PMwKny
+	fINTCmz87vd737SzBBuzfwqloDoB3VWaNvtqy5I6xSIexV776SCfLLgQ2vBq4QsfWoCGjDQPa/opF
+	1/YzCpnZzCikWY1lcs5sef8We8mIMjFUgM3lUQW3jW1jeZ0v5N6YVzmWn490YnphIxAqxwMvrsi4X
+	xhRI4t6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYUy8-0002X3-WA; Wed, 05 Jun 2019 12:24:41 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hYUKf-00044X-F0; Wed, 05 Jun 2019 11:43:53 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYUxJ-0001B3-HH; Wed, 05 Jun 2019 12:23:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:References:
- In-Reply-To:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EtYifDwH0RUvKGRBcD3w/P8CQ7zZEAHHPEJXyAE+8Ck=; b=EN2fNh8R6hZLnJqDNW2f5wPok
- staDoNWBqRNr7ryZ2zWe3eWR4arYRfKIacrc6WjfuMCyYw/fUUgktObT+Ir1m67cpwfflM6eVjoUo
- BmvJLMDx1y4ZRnsWPx+hN+Dt4jIG8KBTgeceHbtGY86YBgLHSKyuMHMuC+bxKRZgeD705YK15Yl7e
- Qz/RjJsU4GNhpVB5lI210rJ5OxxPPBw+9vgocKWReljNNVVfvKNutzbKzrfNR0njv4apATaWPtmVC
- pmNym+Mmjsm/rdSRC3N8f9oud1PczdsR2tkgYzndgc5moHYX1aV5oSKofzq/DqyU13tgKBg57Dg/0
- ou/+7m7vg==;
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYULD-0005xW-1V; Wed, 05 Jun 2019 11:44:27 +0000
-X-UUID: f26bd96ee75e41e2865be211abe4f089-20190605
-X-UUID: f26bd96ee75e41e2865be211abe4f089-20190605
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2098653337; Wed, 05 Jun 2019 03:43:57 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 04:43:55 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 19:43:54 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 5 Jun 2019 19:43:53 +0800
-From: <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
- Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v3,
- 20/27] drm/mediatek: add background color input select function for
- ovl/ovl_2l
-Date: Wed, 5 Jun 2019 19:42:59 +0800
-Message-ID: <1559734986-7379-21-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
-References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
-MIME-Version: 1.0
-X-MTK: N
+ id 1hYUK0-0003PI-WE
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 11:43:14 +0000
+Received: by mail-wm1-x343.google.com with SMTP id f204so1941731wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 04:43:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=Ixa6PZM7Qd3yNTQ1/2lb9UJukHzNBYD4+3OM8ec4OSs=;
+ b=Jp/JdV2yn/wqzzWfOfRwb4FDVYCujOYkpzb+HCTUS8NJcsoL4RrGPGuKPM8+By8ldP
+ jPZZn5cDvQZM4hPjpBYEHrh/IeOX0Z7r4dvWciU3vsimgp8YD0BNAI+Gw25gu1z4Gz8Y
+ D3ui/SE5BXLU3wep3K6tbv585rzPvuk4KGIyNY5pTZ73EYHFKqL0ETq7VHveP0ik1XbP
+ vRjdeVso0R3Qf3fg30cUV1JGbZ9rPnx5URfNBjQnyBqMB1vL7SrpnuPWfhxvEodve6a9
+ nxKo++m195buCgkzC5hyYHqa6Y2fqKDvoQRgatziZq1/c9ycvazbtDPQschW4lFDaiTC
+ 3eXA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=Ixa6PZM7Qd3yNTQ1/2lb9UJukHzNBYD4+3OM8ec4OSs=;
+ b=pQH5h2BY4UWvYpoMhT3IAoe/e63CqyrcXsQR46Axx72aB8CSaru84Jqt3UBbjKZHB5
+ Z2rJ8NndhnaQs1Sx/sZvw3o0b5pRA3zD0t7mKd9d9YP/GHRW2LmlXPCPknz5FzAAeB9q
+ Jhk0SroMSs607geslT9T3wEGXbvDoarWmLap62V3lMmY2ozC2j6t+CCGctFlUbfVcTa6
+ wrF9/UJuQBY+XpwDiQiQqB9v5QY2hN2GfoOQY5Mh2F/fR3Hqm5wHFBQCw4AtzX4Gkpy+
+ +a5RiyLh6vD4/5AQRl51D3XRxq0fZ8CP0zqb3lSvpyXW9gagwir4JsHHMGJPsbkE8k/V
+ DifQ==
+X-Gm-Message-State: APjAAAUmAbejGggLQwxjD4C1SXZQFyJRirKQ2sgzu4C0sdypQGq1x0bw
+ eLenMVNZ+JEvZWtfhpLu9GvF1Q==
+X-Google-Smtp-Source: APXvYqyl2gwOWbUGVEnYEh9X8OzB/jrJfkYNgjV/h4onDE5kOB10EdAyUcgxHPRB9QKTfy4UfkQugg==
+X-Received: by 2002:a1c:e3c1:: with SMTP id a184mr1175742wmh.24.1559734991651; 
+ Wed, 05 Jun 2019 04:43:11 -0700 (PDT)
+Received: from localhost.localdomain ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id 34sm27718740wre.32.2019.06.05.04.43.10
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 05 Jun 2019 04:43:11 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
+ wsa+renesas@sang-engineering.com, bjorn.andersson@linaro.org,
+ linus.walleij@linaro.org, balbi@kernel.org, gregkh@linuxfoundation.org
+Subject: [PATCH 5/8] soc: qcom: geni: Add support for ACPI
+Date: Wed,  5 Jun 2019 12:42:59 +0100
+Message-Id: <20190605114302.22509-5-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190605114302.22509-1-lee.jones@linaro.org>
+References: <20190605114302.22509-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_074427_224501_BBDBDFF7 
-X-CRM114-Status: GOOD (  13.53  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190605_044313_218411_5ECD0515 
+X-CRM114-Status: GOOD (  13.81  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,95 +97,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+Cc: linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-i2c@vger.kernel.org, jlhugo@gmail.com, Lee Jones <lee.jones@linaro.org>,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+When booting with ACPI as the active set of configuration tables,
+all; clocks, regulators, pin functions ect are expected to be at
+their ideal values/levels/rates, thus the associated frameworks
+are unavailable.  Ensure calls to these APIs are shielded when
+ACPI is enabled.
 
-This patch add background color input select function for ovl/ovl_2l
-
-ovl include 4 DRAM layer and 1 background color layer
-ovl_2l include 4 DRAM layer and 1 background color layer
-DRAM layer frame buffer data from render hardware, GPU for example.
-backgournd color layer is embed in ovl/ovl_2l, we can only set
-it color, but not support DRAM frame buffer.
-
-for ovl0->ovl0_2l direct link usecase,
-we need set ovl0_2l background color intput select from ovl0
-if render send DRAM buffer layer number <=4, all these layer read
-by ovl.
-layer0 is at the bottom of all layers.
-layer3 is at the top of all layers.
-if render send DRAM buffer layer numbfer >=4 && <=6
-ovl0 read layer0~3
-ovl0_2l read layer4~5
-layer5 is at the top ot all these layers.
-
-the decision of how to setting ovl0/ovl0_2l read these layer data
-is controlled in mtk crtc, which will be another patch
-
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
 ---
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ drivers/soc/qcom/qcom-geni-se.c | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-index a0ab760..b5a9907 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-@@ -27,6 +27,8 @@
- #define DISP_REG_OVL_EN				0x000c
- #define DISP_REG_OVL_RST			0x0014
- #define DISP_REG_OVL_ROI_SIZE			0x0020
-+#define DISP_REG_OVL_DATAPATH_CON		0x0024
-+#define OVL_BGCLR_SEL_IN				BIT(2)
- #define DISP_REG_OVL_ROI_BGCLR			0x0028
- #define DISP_REG_OVL_SRC_CON			0x002c
- #define DISP_REG_OVL_CON(n)			(0x0030 + 0x20 * (n))
-@@ -245,6 +247,25 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
- 		mtk_ovl_layer_on(comp, idx);
- }
+diff --git a/drivers/soc/qcom/qcom-geni-se.c b/drivers/soc/qcom/qcom-geni-se.c
+index 6b8ef01472e9..cff0a413e59a 100644
+--- a/drivers/soc/qcom/qcom-geni-se.c
++++ b/drivers/soc/qcom/qcom-geni-se.c
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0
+ // Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
  
-+static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp,
-+				enum mtk_ddp_comp_id prev)
-+{
-+	unsigned int reg;
-+
-+	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
-+	reg = reg | OVL_BGCLR_SEL_IN;
-+	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-+}
-+
-+static void mtk_ovl_bgclr_in_off(struct mtk_ddp_comp *comp)
-+{
-+	unsigned int reg;
-+
-+	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
-+	reg = reg & ~OVL_BGCLR_SEL_IN;
-+	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-+}
-+
- static const struct mtk_ddp_comp_funcs mtk_disp_ovl_funcs = {
- 	.config = mtk_ovl_config,
- 	.start = mtk_ovl_start,
-@@ -255,6 +276,8 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
- 	.layer_on = mtk_ovl_layer_on,
- 	.layer_off = mtk_ovl_layer_off,
- 	.layer_config = mtk_ovl_layer_config,
-+	.bgclr_in_on = mtk_ovl_bgclr_in_on,
-+	.bgclr_in_off = mtk_ovl_bgclr_in_off,
- };
++#include <linux/acpi.h>
+ #include <linux/clk.h>
+ #include <linux/slab.h>
+ #include <linux/dma-mapping.h>
+@@ -450,6 +451,9 @@ int geni_se_resources_off(struct geni_se *se)
+ {
+ 	int ret;
  
- static int mtk_disp_ovl_bind(struct device *dev, struct device *master,
++	if (ACPI_HANDLE(se->dev))
++		return 0;
++
+ 	ret = pinctrl_pm_select_sleep_state(se->dev);
+ 	if (ret)
+ 		return ret;
+@@ -487,6 +491,9 @@ int geni_se_resources_on(struct geni_se *se)
+ {
+ 	int ret;
+ 
++	if (ACPI_HANDLE(se->dev))
++		return 0;
++
+ 	ret = geni_se_clks_on(se);
+ 	if (ret)
+ 		return ret;
+@@ -724,12 +731,14 @@ static int geni_se_probe(struct platform_device *pdev)
+ 	if (IS_ERR(wrapper->base))
+ 		return PTR_ERR(wrapper->base);
+ 
+-	wrapper->ahb_clks[0].id = "m-ahb";
+-	wrapper->ahb_clks[1].id = "s-ahb";
+-	ret = devm_clk_bulk_get(dev, NUM_AHB_CLKS, wrapper->ahb_clks);
+-	if (ret) {
+-		dev_err(dev, "Err getting AHB clks %d\n", ret);
+-		return ret;
++	if (!ACPI_HANDLE(&pdev->dev)) {
++		wrapper->ahb_clks[0].id = "m-ahb";
++		wrapper->ahb_clks[1].id = "s-ahb";
++		ret = devm_clk_bulk_get(dev, NUM_AHB_CLKS, wrapper->ahb_clks);
++		if (ret) {
++			dev_err(dev, "Err getting AHB clks %d\n", ret);
++			return ret;
++		}
+ 	}
+ 
+ 	dev_set_drvdata(dev, wrapper);
 -- 
-1.8.1.1.dirty
+2.17.1
 
 
 _______________________________________________
