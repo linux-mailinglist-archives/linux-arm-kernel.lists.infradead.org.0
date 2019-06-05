@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEA33358C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 10:40:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFF94358DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 10:44:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J7/fRm+UJ5rCQnXZtNmP7+vtNAag66AN59/90fEm4Ig=; b=t7inLJtS8lEdMR
-	TY5ZVCPKyOy/FSjyminSqPBEEGuwcFAuBqMwYo6yc2s844KVHKIIGq7T0RY2ZRO8N9/uL2j6tGikc
-	ZPKlUPqsLM5ol6ycY3wgDYIZVyc99tnbv3KmGhO5g/Pz/+cE39ryylhXp4Vl+GY6auGc5CyiprV0w
-	ctPSV+kOPDHZEIUu9BweHHPJ8s1jO+K1q3X3Y0YoIwvDssD5Yly7MWk/Ml46AJEJnKRLnsNuuvVE6
-	0h8KxVluSvZeGC8j9cvb6tbvlvMNQaHtRCVYlBm5V/bv/BAvyDsf3j0ZYs5YmswIPH6Ky8j4gmRbv
-	V1oBNK/+dCOmgz2WTiSA==;
+	List-Owner; bh=m3vDMHu69ayEq1aJmRzCyuS3gqYri9iPyYtoqeUN2FE=; b=fOCSqTJASTalfZ
+	u17ccJL7UXgiDcjILniCngkr2STWdtor2tfEn5NTKjur8Fa1D+rVFARHmc1LioGeB15b3lq5WAtuM
+	XrD4/LzgHq38Vuv8SsACp2T+Zv+30o/XJ1ZTxTk3hHS47Zajt5p4a7N75jr9OLohN7eVJswslVLwF
+	TdwP+9TWhIC5N92qaeWel+dby3+wrh96zhvv/1YJvcFEvXSHJui5mG9a6cs0zg+YCYXpC0esWBhfQ
+	uplkv2dz8jr8Qlc8AvRHdURG2OTBpMNRmP6EdQxj/EycxifKepfzqC4jMjXmE/CQPLkkq8frYSAdO
+	0JOpEJDqcgUaFO8ftpLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYRSu-0005CR-PX; Wed, 05 Jun 2019 08:40:12 +0000
+	id 1hYRWn-0005qJ-C4; Wed, 05 Jun 2019 08:44:13 +0000
 Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYRSl-0004Hw-5G
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 08:40:06 +0000
+ id 1hYRWg-0005px-Ak
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 08:44:07 +0000
 Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,86 +45,85 @@ Authentication-Results: esa4.microchip.iphmx.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,550,1549954800"; d="scan'208";a="35658394"
+X-IronPort-AV: E=Sophos;i="5.60,550,1549954800"; d="scan'208";a="35658835"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 05 Jun 2019 01:40:00 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ 05 Jun 2019 01:44:04 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
  chn-vm-ex03.mchp-main.com (10.10.87.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 5 Jun 2019 01:39:59 -0700
-Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ 15.1.1713.5; Wed, 5 Jun 2019 01:43:57 -0700
+Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
  (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
- Transport; Wed, 5 Jun 2019 01:39:59 -0700
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Wed, 5 Jun 2019 01:43:57 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector1-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sZ4kuQTYUGt9Re2dSCz1OsSrPeQ3KrZk3vR8EDZGnjs=;
- b=mk3PlU3jHSkNsBs5aaz5xzCuVum11zhv3rE6OW/yeE+lGR5LzkjSaY2cUhU4ZOC0gngXYIpYmi1Je2xJjtwjfSc0PmugPcauYGF7Y0If92Te6ipv2WHnY4Pvk/D/XivfBGA+7OrPSRoTW9DURikH+vfopjVMdCNYyJbpW1UvXtM=
-Received: from MWHPR11MB1549.namprd11.prod.outlook.com (10.172.54.17) by
- MWHPR11MB1326.namprd11.prod.outlook.com (10.169.232.135) with Microsoft SMTP
+ bh=Ndpe7qI8Nn3TggX3YDVteH/xqjgGej+SPms7N5tbswo=;
+ b=Y/lJQXRoIz10k8JczUz0GlL8s90IOuHn6R3IqmNDUbeoRbrt3FzJi9XIm123ofChe6OKAfb9ctBaLm8j2+tX9kwN0tIzZ6ioKqeA8BTmrkm+n83oBAMwu3NoWdvtoUmxVvNbh6+uHJkEKyn+HP4ms2Yq+tv/ngW41ptfO2u6bgE=
+Received: from DM5PR11MB1547.namprd11.prod.outlook.com (10.172.37.15) by
+ DM5PR11MB1817.namprd11.prod.outlook.com (10.175.89.14) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.12; Wed, 5 Jun 2019 08:39:54 +0000
-Received: from MWHPR11MB1549.namprd11.prod.outlook.com
- ([fe80::316b:7774:8db6:30ec]) by MWHPR11MB1549.namprd11.prod.outlook.com
- ([fe80::316b:7774:8db6:30ec%7]) with mapi id 15.20.1943.018; Wed, 5 Jun 2019
- 08:39:54 +0000
+ 15.20.1943.22; Wed, 5 Jun 2019 08:43:37 +0000
+Received: from DM5PR11MB1547.namprd11.prod.outlook.com
+ ([fe80::11dc:d9db:1a6a:a0b8]) by DM5PR11MB1547.namprd11.prod.outlook.com
+ ([fe80::11dc:d9db:1a6a:a0b8%6]) with mapi id 15.20.1965.011; Wed, 5 Jun 2019
+ 08:43:37 +0000
 From: <Claudiu.Beznea@microchip.com>
-To: <sam@ravnborg.org>
+To: <lee.jones@linaro.org>
 Subject: Re: [RESEND][PATCH v3 0/6] add LCD support for SAM9X60
 Thread-Topic: [RESEND][PATCH v3 0/6] add LCD support for SAM9X60
-Thread-Index: AQHU+2NzxFOsw6p3b0iYuTBfPVB4RaZgDjOAgCvdRQCAAF3mAIAAtEsA
-Date: Wed, 5 Jun 2019 08:39:54 +0000
-Message-ID: <b0c867a3-4bb1-4e3d-cfa1-803c5a8bd607@microchip.com>
+Thread-Index: AQHU+2NzxFOsw6p3b0iYuTBfPVB4RaaM3vQAgAAfvgA=
+Date: Wed, 5 Jun 2019 08:43:36 +0000
+Message-ID: <0bf41938-b64c-b505-0a30-0abf4ad72a4b@microchip.com>
 References: <1556195748-11106-1-git-send-email-claudiu.beznea@microchip.com>
- <20190507182713.GA16862@ravnborg.org>
- <c361b013-2d98-76e3-d30f-cec83000933c@microchip.com>
- <20190604215424.GA1959@ravnborg.org>
-In-Reply-To: <20190604215424.GA1959@ravnborg.org>
+ <20190605064948.GI4797@dell>
+In-Reply-To: <20190605064948.GI4797@dell>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0701CA0035.eurprd07.prod.outlook.com
- (2603:10a6:800:90::21) To MWHPR11MB1549.namprd11.prod.outlook.com
- (2603:10b6:301:c::17)
+x-clientproxiedby: LO2P265CA0359.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:d::35) To DM5PR11MB1547.namprd11.prod.outlook.com
+ (2603:10b6:4:a::15)
 x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20190605113942134
+x-tagtoolbar-keys: D20190605114324182
 x-originating-ip: [94.177.32.154]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c743e925-6302-4e2f-aa4a-08d6e991616f
+x-ms-office365-filtering-correlation-id: 5689a2e9-6613-458f-e0ff-08d6e991e62e
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:MWHPR11MB1326; 
-x-ms-traffictypediagnostic: MWHPR11MB1326:
-x-microsoft-antispam-prvs: <MWHPR11MB1326D74F8A03D2FC0CDC7CFE87160@MWHPR11MB1326.namprd11.prod.outlook.com>
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DM5PR11MB1817; 
+x-ms-traffictypediagnostic: DM5PR11MB1817:
+x-ms-exchange-purlcount: 2
+x-microsoft-antispam-prvs: <DM5PR11MB1817A7928950917899D766C087160@DM5PR11MB1817.namprd11.prod.outlook.com>
 x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 00594E8DBA
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(396003)(136003)(39860400002)(376002)(366004)(199004)(189003)(51914003)(54534003)(99286004)(72206003)(25786009)(76176011)(102836004)(52116002)(53936002)(6246003)(54906003)(6436002)(386003)(3846002)(6506007)(53546011)(14454004)(86362001)(6116002)(4326008)(478600001)(31686004)(68736007)(6512007)(8676002)(81156014)(316002)(4744005)(5660300002)(2906002)(8936002)(229853002)(6916009)(81166006)(305945005)(7416002)(6486002)(7736002)(31696002)(66946007)(66556008)(476003)(66446008)(64756008)(486006)(11346002)(446003)(2616005)(26005)(186003)(71190400001)(71200400001)(66066001)(256004)(36756003)(14444005)(73956011)(66476007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1326;
- H:MWHPR11MB1549.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(136003)(366004)(376002)(346002)(396003)(39860400002)(199004)(189003)(6486002)(6436002)(11346002)(229853002)(53936002)(66556008)(5660300002)(966005)(2906002)(6306002)(54906003)(72206003)(8676002)(52116002)(2616005)(73956011)(446003)(486006)(66946007)(64756008)(71200400001)(31686004)(71190400001)(14444005)(256004)(14454004)(66446008)(66476007)(305945005)(76176011)(8936002)(6512007)(7416002)(7736002)(81156014)(476003)(316002)(36756003)(6116002)(3846002)(25786009)(6246003)(478600001)(4326008)(6916009)(102836004)(26005)(186003)(6506007)(99286004)(386003)(31696002)(66066001)(86362001)(53546011)(68736007)(81166006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1817;
+ H:DM5PR11MB1547.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: M1yxJD/fVKbJnYeHu3n+jVJgevYSam8IO4vG78CJ0uyYzDrupTg6oAmq73fJLejTzF5egI/R9hVx1fSB5WT5VMLaHBlFkereLI+/UmDzzyojkRn1SchKRyRb/ILXKWHnH74TiZoAy5fJDdnu9puYunoYDpjSE/v9ixLO9gtOCMJEK/xBKi+eUXJAFSa1bqqOp2RpRSGdrBiEdcgubzyK9IeB/WtaZ9SbjhKBpCFIdjEMrCxJgzZth5vZGDiTfGgn0ao1mx3mI3Bpj4IQzNyaCzO3Ni1OQt8XTUQvayzpzuJTak0A3UlBUtn204guwj7GEI8y9ZmoMPw0lPzsZz0xCn1rKgwnAt1w+n26lxHyTxmm7fnTp3SikuQJbOn2WWvQDhJQCxCUD5fQXTetKSUVXtWd18T/G0dWDmMzafJDQik=
-Content-ID: <FEB6224F58D15849822188E05B50093F@namprd11.prod.outlook.com>
+x-microsoft-antispam-message-info: jsG8GA5WR8GoKREzBSpi85d+12Ca0oHVBdnkKwv/+6iekxcgVAon7jjyi1KZjlpA7+uVJTh4wsj+NiEGWnC3MtFyALeiMzj2HJFr1ClTkC+BDfofAxeZyZ6K2Pg54RWyUdg127rTtQhbB36WrtONyy+pDpLwgjKaqvQF46+qV9d2MArtoLh5xn5u7bgmXudZOX/YJKSp7JzDK5OYzbDPgyMeIlieRboFICw2lMO5XLw5nA3WrNM854yYxqRUalBoPYo1P+iZ1xEMO1Uc7oFUkXjQIg4uqKX1KkoV0xWmOPPjzJufpQIy0lyoUzYVMKUqXkThoWCcfuXf7DU5ZjDhJSLlKv0q8ZXSL0dNSsTra/YcxKUV+aib0MmV6CsBPnNy3I03EXPjG+yAj7TUm59pEFTyGpTTu1phKO2xwma36Fo=
+Content-ID: <518B9938BFF0F946ADC161C9F98296A0@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: c743e925-6302-4e2f-aa4a-08d6e991616f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jun 2019 08:39:54.1417 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5689a2e9-6613-458f-e0ff-08d6e991e62e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jun 2019 08:43:37.3936 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: claudiu.beznea@microchip.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1326
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1817
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_014003_301013_F5C2BC96 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20190605_014406_409631_C1A2B902 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -160,38 +159,81 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 05.06.2019 00:54, Sam Ravnborg wrote:
-> Hi Claudiu.
+On 05.06.2019 09:49, Lee Jones wrote:
+> External E-Mail
 > 
-> On Tue, Jun 04, 2019 at 04:18:33PM +0000, Claudiu.Beznea@microchip.com wrote:
->> Hi Sam,
+> 
+> On Thu, 25 Apr 2019, Claudiu.Beznea@microchip.com wrote:
+> 
+>> From: Claudiu Beznea <claudiu.beznea@microchip.com>
 >>
->> On 07.05.2019 21:27, Sam Ravnborg wrote:
->>> External E-Mail
->>>
->>>
->>> Hi Thierry.
->>>
->>>>   pwm: atmel-hlcdc: add compatible for SAM9X60 HLCDC's PWM
->>> OK to add the "pwm: atmel-hlcdc: add compatible for SAM9X60 HLCDC's PWM"
->>> patch via drm-misc?
->>> Then we can add all 6 patches in one go.
+>> Hi,
 >>
->> Since we don't have an answer from Thierry till now, do you think it could
->> be feasible to take the rest of the patches in this series? After that I
->> will re-send the PWM patch to PWM list.
+>> These patches adds support for SAM9X60's LCD controller.
+>>
+>> First patches add option to specify if controller clock source is fixed.
+>> Second patch avoid a variable initialization in atmel_hlcdc_crtc_mode_set_nofb().
+>> The 3rd add compatibles in pwm-atmel-hlcdc driver.
+>> The 4th patch enables sys_clk in probe since SAM9X60 needs this.
+>> Specific support was added also in suspend/resume hooks.
+>> The 5th patch adds SAM9X60's LCD configuration and enabled it.
+>>
+>> I took the changes of this series and introduced also a fix
+>> (this is the 6th patch in this series) - if you want to send it separately
+>> I would gladly do it.
+>>
+>> I resend this to also include Lee Jones for pwm-atmel-hlcdc changes.
+>>
+>> Thank you,
+>> Claudiu Beznea
+>>
+>> Changes in v3:
+>> - keep compatible string on patch 3/6 on a single line (I keep here a tab
+>>   in front of ".compatible" to be aligned with the rest of the code in
+>>   atmel_hlcdc_dt_ids[])
+>> - patches 4/7 and 3/7 from v2 were applied so remove them from this version
+>> - add a fix for atmel_hlcdc (patch 6/6)
+>>
+>> Changes in v2:
+>> - use "|" operator in patch 1/7 to set ATMEL_HLCDC_CLKSEL on cfg
+>> - collect Acked-by, Reviewed-by tags
+>>
+>> Claudiu Beznea (4):
+>>   drm: atmel-hlcdc: add config option for clock selection
+>>   drm: atmel-hlcdc: avoid initializing cfg with zero
+>>   pwm: atmel-hlcdc: add compatible for SAM9X60 HLCDC's PWM
+>>   drm/atmel-hclcdc: revert shift by 8
+>>
+>> Sandeep Sheriker Mallikarjun (2):
+>>   drm: atmel-hlcdc: enable sys_clk during initalization.
+>>   drm: atmel-hlcdc: add sam9x60 LCD controller
+>>
+>>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c  |  18 ++--
+>>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c    | 120 +++++++++++++++++++++++-
+>>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.h    |   2 +
+>>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c |   2 +-
+>>  drivers/pwm/pwm-atmel-hlcdc.c                   |   1 +
+>>  5 files changed, 132 insertions(+), 11 deletions(-)
 > 
-> Thanks for the reminder.
-> 
-> Patches 1,2 and 4,5,6 applied to drm-misc-next.
-> 
-> Reworded changelog a bit in patch 6.
+> Why is this being sent to me?
+
+Sorry, you were in the original "to" list due to changes that you asked for
+in v2 on mfd part.
+
+Thierry suggested in v1 of this series to take pwm-atmel-hlcdc.c changes
+though MFD tree [1]. Then, in v2 you ask me to do update a bit the changes
+in pwm-atmel-hlcdc.c [2].
+
+And in this reply I forgot to remove your email as you previously
+suggested. My bad!
 
 Thank you,
-Claudiu
+Claudiu Beznea
 
-> 
-> 	Sam
+[1] https://lore.kernel.org/lkml/20190304110517.GB5121@ulmo/
+[2] https://lore.kernel.org/lkml/20190425083132.GD14758@dell/
+
+
 > 
 _______________________________________________
 linux-arm-kernel mailing list
