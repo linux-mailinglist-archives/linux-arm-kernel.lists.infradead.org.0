@@ -2,90 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59C5A35B8A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:43:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0483A35BF3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:47:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OOdsJyckBQiJC1/m5sriwm9Lwlob6k0I0DqORIeLksI=; b=mA2w/vvzLI3F4oIzJlTqEwqNVv
-	Noz4kUWlzNcialZ9K1BKRQvnaDeJDgkqGPB/DE32Dl1Fv00fyScTG67rYR7q5NVPlXg4/T1INZccU
-	qBbN2hphx7bSdTCIk7kkJqWvm1TKz6+s9DfMPp4oAbQBl7i9sGCYw1qpt+DsosyVcrhOiW5PMwKny
-	fINTCmz87vd737SzBBuzfwqloDoB3VWaNvtqy5I6xSIexV776SCfLLgQ2vBq4QsfWoCGjDQPa/opF
-	1/YzCpnZzCikWY1lcs5sef8We8mIMjFUgM3lUQW3jW1jeZ0v5N6YVzmWn490YnphIxAqxwMvrsi4X
-	xhRI4t6A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8wM2SXeTD3SNl2BG/KAKsOht3/rsSWjSZ9GYG278NmM=; b=RO6vNKxO6C78ZT
+	qDV1q9sW/daYcAtQTtzuUiXy+vqW0flF6RB+K+W4XBe/9G8GOrBBCUJKwjEVuuUazK2hxLN8Qe8To
+	sRzGs5eLThiQXpFyUCn4wmB0WkK5UUoX3DWx4rCcUxdD2PCQ5hZwk1Ovfc/u0TJseo/vZhaQvNzPn
+	W6/Hv+Y83S/dGEQ/+le7saVx+BT49cLBFVvMFapIQfwkO2M/tl4R8LF4aLR1bfeBZyNuDgqaRLdQJ
+	SIaJDIvi9d1jDDMG/uK1GUkE+TyhbtehxOs+7dhCCnhqwzGLUYYjD7y+RPqK/My6cBojT2DhBy6iE
+	KTjOyu8DvhlOoNmefP4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYUKf-00044X-F0; Wed, 05 Jun 2019 11:43:53 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hYUO9-0001II-Co; Wed, 05 Jun 2019 11:47:29 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYUK0-0003PI-WE
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 11:43:14 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f204so1941731wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 04:43:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Ixa6PZM7Qd3yNTQ1/2lb9UJukHzNBYD4+3OM8ec4OSs=;
- b=Jp/JdV2yn/wqzzWfOfRwb4FDVYCujOYkpzb+HCTUS8NJcsoL4RrGPGuKPM8+By8ldP
- jPZZn5cDvQZM4hPjpBYEHrh/IeOX0Z7r4dvWciU3vsimgp8YD0BNAI+Gw25gu1z4Gz8Y
- D3ui/SE5BXLU3wep3K6tbv585rzPvuk4KGIyNY5pTZ73EYHFKqL0ETq7VHveP0ik1XbP
- vRjdeVso0R3Qf3fg30cUV1JGbZ9rPnx5URfNBjQnyBqMB1vL7SrpnuPWfhxvEodve6a9
- nxKo++m195buCgkzC5hyYHqa6Y2fqKDvoQRgatziZq1/c9ycvazbtDPQschW4lFDaiTC
- 3eXA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Ixa6PZM7Qd3yNTQ1/2lb9UJukHzNBYD4+3OM8ec4OSs=;
- b=pQH5h2BY4UWvYpoMhT3IAoe/e63CqyrcXsQR46Axx72aB8CSaru84Jqt3UBbjKZHB5
- Z2rJ8NndhnaQs1Sx/sZvw3o0b5pRA3zD0t7mKd9d9YP/GHRW2LmlXPCPknz5FzAAeB9q
- Jhk0SroMSs607geslT9T3wEGXbvDoarWmLap62V3lMmY2ozC2j6t+CCGctFlUbfVcTa6
- wrF9/UJuQBY+XpwDiQiQqB9v5QY2hN2GfoOQY5Mh2F/fR3Hqm5wHFBQCw4AtzX4Gkpy+
- +a5RiyLh6vD4/5AQRl51D3XRxq0fZ8CP0zqb3lSvpyXW9gagwir4JsHHMGJPsbkE8k/V
- DifQ==
-X-Gm-Message-State: APjAAAUmAbejGggLQwxjD4C1SXZQFyJRirKQ2sgzu4C0sdypQGq1x0bw
- eLenMVNZ+JEvZWtfhpLu9GvF1Q==
-X-Google-Smtp-Source: APXvYqyl2gwOWbUGVEnYEh9X8OzB/jrJfkYNgjV/h4onDE5kOB10EdAyUcgxHPRB9QKTfy4UfkQugg==
-X-Received: by 2002:a1c:e3c1:: with SMTP id a184mr1175742wmh.24.1559734991651; 
- Wed, 05 Jun 2019 04:43:11 -0700 (PDT)
-Received: from localhost.localdomain ([2.27.167.43])
- by smtp.gmail.com with ESMTPSA id 34sm27718740wre.32.2019.06.05.04.43.10
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 04:43:11 -0700 (PDT)
-From: Lee Jones <lee.jones@linaro.org>
-To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
- wsa+renesas@sang-engineering.com, bjorn.andersson@linaro.org,
- linus.walleij@linaro.org, balbi@kernel.org, gregkh@linuxfoundation.org
-Subject: [PATCH 5/8] soc: qcom: geni: Add support for ACPI
-Date: Wed,  5 Jun 2019 12:42:59 +0100
-Message-Id: <20190605114302.22509-5-lee.jones@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190605114302.22509-1-lee.jones@linaro.org>
-References: <20190605114302.22509-1-lee.jones@linaro.org>
+ id 1hYUM5-0004E0-Sb; Wed, 05 Jun 2019 11:46:03 +0000
+X-UUID: a0f51425c92e47d39c1dc1ac23f71772-20190605
+X-UUID: a0f51425c92e47d39c1dc1ac23f71772-20190605
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <yongqiang.niu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1282554822; Wed, 05 Jun 2019 03:43:58 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 5 Jun 2019 04:43:57 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 5 Jun 2019 19:43:55 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 5 Jun 2019 19:43:54 +0800
+From: <yongqiang.niu@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
+ Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v3, 21/27] drm/mediatek: add ovl0/ovl_2l0 usecase
+Date: Wed, 5 Jun 2019 19:43:00 +0800
+Message-ID: <1559734986-7379-22-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
+References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: 4D14F41C5AF6C2B09CBEB1FC3B1957FEFD6C471C5AEE7AFAA708AACD1DFAB3972000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_044313_218411_5ECD0515 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190605_044522_590140_32F3317E 
+X-CRM114-Status: GOOD (  12.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,82 +72,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-i2c@vger.kernel.org, jlhugo@gmail.com, Lee Jones <lee.jones@linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When booting with ACPI as the active set of configuration tables,
-all; clocks, regulators, pin functions ect are expected to be at
-their ideal values/levels/rates, thus the associated frameworks
-are unavailable.  Ensure calls to these APIs are shielded when
-ACPI is enabled.
+From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
+This patch add ovl0/ovl_2l0 usecase
+in ovl->ovl_2l0 direct link usecase:
+1. the crtc support layer number will 4+2
+2. ovl_2l0 background color input select ovl0 when crtc init
+and disable it when crtc finish
+3. config ovl_2l0 layer, if crtc config layer number is
+bigger than ovl0 support layers(max is 4)
+
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 ---
- drivers/soc/qcom/qcom-geni-se.c | 21 +++++++++++++++------
- 1 file changed, 15 insertions(+), 6 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 38 +++++++++++++++++++++++++++++++--
+ 1 file changed, 36 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/soc/qcom/qcom-geni-se.c b/drivers/soc/qcom/qcom-geni-se.c
-index 6b8ef01472e9..cff0a413e59a 100644
---- a/drivers/soc/qcom/qcom-geni-se.c
-+++ b/drivers/soc/qcom/qcom-geni-se.c
-@@ -1,6 +1,7 @@
- // SPDX-License-Identifier: GPL-2.0
- // Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 11e3404..9c749c3 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -283,6 +283,15 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
  
-+#include <linux/acpi.h>
- #include <linux/clk.h>
- #include <linux/slab.h>
- #include <linux/dma-mapping.h>
-@@ -450,6 +451,9 @@ int geni_se_resources_off(struct geni_se *se)
- {
- 	int ret;
- 
-+	if (ACPI_HANDLE(se->dev))
-+		return 0;
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+ 		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[i];
++		enum mtk_ddp_comp_id prev;
 +
- 	ret = pinctrl_pm_select_sleep_state(se->dev);
- 	if (ret)
- 		return ret;
-@@ -487,6 +491,9 @@ int geni_se_resources_on(struct geni_se *se)
- {
- 	int ret;
- 
-+	if (ACPI_HANDLE(se->dev))
-+		return 0;
++		if (i > 0)
++			prev = mtk_crtc->ddp_comp[i - 1]->id;
++		else
++			prev = DDP_COMPONENT_ID_MAX;
 +
- 	ret = geni_se_clks_on(se);
- 	if (ret)
- 		return ret;
-@@ -724,12 +731,14 @@ static int geni_se_probe(struct platform_device *pdev)
- 	if (IS_ERR(wrapper->base))
- 		return PTR_ERR(wrapper->base);
++		if (prev == DDP_COMPONENT_OVL0)
++			mtk_ddp_comp_bgclr_in_on(comp, prev);
  
--	wrapper->ahb_clks[0].id = "m-ahb";
--	wrapper->ahb_clks[1].id = "s-ahb";
--	ret = devm_clk_bulk_get(dev, NUM_AHB_CLKS, wrapper->ahb_clks);
--	if (ret) {
--		dev_err(dev, "Err getting AHB clks %d\n", ret);
--		return ret;
-+	if (!ACPI_HANDLE(&pdev->dev)) {
-+		wrapper->ahb_clks[0].id = "m-ahb";
-+		wrapper->ahb_clks[1].id = "s-ahb";
-+		ret = devm_clk_bulk_get(dev, NUM_AHB_CLKS, wrapper->ahb_clks);
-+		if (ret) {
-+			dev_err(dev, "Err getting AHB clks %d\n", ret);
-+			return ret;
-+		}
+ 		mtk_ddp_comp_config(comp, width, height, vrefresh, bpc);
+ 		mtk_ddp_comp_start(comp);
+@@ -292,9 +301,18 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+ 		struct drm_plane *plane = &mtk_crtc->planes[i];
+ 		struct mtk_plane_state *plane_state;
++		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
++		unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
++		unsigned int local_layer;
+ 
+ 		plane_state = to_mtk_plane_state(plane->state);
+-		mtk_ddp_comp_layer_config(mtk_crtc->ddp_comp[0], i,
++
++		if (i >= comp_layer_nr) {
++			comp = mtk_crtc->ddp_comp[1];
++			local_layer = i - comp_layer_nr;
++		} else
++			local_layer = i;
++		mtk_ddp_comp_layer_config(comp , local_layer,
+ 					  plane_state);
  	}
  
- 	dev_set_drvdata(dev, wrapper);
+@@ -320,6 +338,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+ 					   mtk_crtc->ddp_comp[i]->id);
+ 	mtk_disp_mutex_disable(mtk_crtc->mutex);
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
++		mtk_ddp_comp_bgclr_in_off(mtk_crtc->ddp_comp[i]);
+ 		mtk_ddp_remove_comp_from_path(mtk_crtc->config_regs,
+ 					      mtk_crtc->mmsys_reg_data,
+ 					      mtk_crtc->ddp_comp[i]->id,
+@@ -340,6 +359,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+ 	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
+ 	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
+ 	unsigned int i;
++	unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
++	unsigned int local_layer;
+ 
+ 	/*
+ 	 * TODO: instead of updating the registers here, we should prepare
+@@ -362,7 +383,14 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+ 			plane_state = to_mtk_plane_state(plane->state);
+ 
+ 			if (plane_state->pending.config) {
+-				mtk_ddp_comp_layer_config(comp, i, plane_state);
++				if (i >= comp_layer_nr) {
++					comp = mtk_crtc->ddp_comp[1];
++					local_layer = i - comp_layer_nr;
++				} else
++					local_layer = i;
++
++				mtk_ddp_comp_layer_config(comp, local_layer,
++							  plane_state);
+ 				plane_state->pending.config = false;
+ 			}
+ 		}
+@@ -604,6 +632,12 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 	}
+ 
+ 	mtk_crtc->layer_nr = mtk_ddp_comp_layer_nr(mtk_crtc->ddp_comp[0]);
++	if (mtk_crtc->ddp_comp_nr > 1) {
++		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[1];
++
++		if (comp->funcs->bgclr_in_on)
++			mtk_crtc->layer_nr += mtk_ddp_comp_layer_nr(comp);
++	}
+ 	mtk_crtc->planes = devm_kcalloc(dev, mtk_crtc->layer_nr,
+ 					sizeof(struct drm_plane),
+ 					GFP_KERNEL);
 -- 
-2.17.1
+1.8.1.1.dirty
 
 
 _______________________________________________
