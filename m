@@ -2,70 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1824335944
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:06:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 285B73594F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:11:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BMMBwVd1EaNrJF+xv8Msz7wbXgP+qpT/xJzxUNgHL/A=; b=joUABSOciY9ktr
-	6zNTkMgCyjgV+I82rM+S8Eg0ergm6ZylPC6Eyh5i2WeZIh3kBX0z8sc2OGGiYOrek65WJNE6zyZ9f
-	MG0OsnmFQXXWL7bvW+S7xfMrgIhbW4TmkZ2dCePzYBMdUCcpQTVHb5eT39DaTT4Ih5jLC3pZl4d1j
-	deidaF29Vvw2eRyZ8smt+iTwMbmRo6LNOleBxgcnSJJ3hhbEjgdS3pzpNrlDimFgqhIbHbXWL2Xg5
-	sTrM9UMYilsGwv7cVnSbFbvPPCiIxFFxpRYHm2ygxllmctnsQ0DCYP552J4D3hP6XzB06LWrBDfmw
-	ydcjzskmUnHjpEBohk9w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kFNzTO8fVNFXr2YO4qYQ0b+eCI7d0Ofmx5E80KEIXQE=; b=WxBSHF8Fw+hyU7GyFPaMocHjE
+	ogcZYoqszATWp1TWPvu0F6YreKHApPVETFLA7QJzU/3Eyf3w4KlcotYHQvSIlTWAbGOTSZZFpH/6e
+	sHMTXCEavB35lt1ZTjfXrYndFU/n009NABtkjWf5xrRFV7aQgsRFH+Yztye2LS1mrpmCPMAewa9FF
+	5UlmKqBsgWI7+Htk0uvWnaskzrwSOH47Ohlq2ARwN+eAjFZ8eCnpR1DB4K92ZIryuHwjz/ozqnoki
+	YRywrrXTcsxKmXq3NwmuxPmekbNXbqnq1fVM9+k2z8LAabuvKTsTVCxESmSktYD7E4AbmGzvihZ6S
+	ezWmwTQ2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYRrs-0007f3-OL; Wed, 05 Jun 2019 09:06:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hYRx6-0001er-DO; Wed, 05 Jun 2019 09:11:24 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYRrm-0007ef-A4
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 09:05:55 +0000
-Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6DE1D2075C;
- Wed,  5 Jun 2019 09:05:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559725554;
- bh=Pz8YyhuVAwCFqXMPjBkm0rXnp/wYpoIIb3ZnyUKQR9U=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KXhfq/jef0DTyI4dpjhJOr/cbHlgFXdhlDWgp6xowWFON7r5FMh/3IF6Agq8QmeQz
- 4flXb7AgIdZRiCFrGMfXQD7vZ4XHbCsv5PHPV91oSLyOZDqxZs57ayVjrVXl8uRRLK
- fFOEhex0mtbrW+u1E6OnnEeicHHRPvBZ0CZe5lkg=
-Date: Wed, 5 Jun 2019 17:05:34 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: "Angus Ainslie (Purism)" <angus@akkea.ca>
-Subject: Re: [PATCH v2] arm64: dts: fsl: imx8mq: add the snvs power key node
-Message-ID: <20190605090533.GK29853@dragon>
-References: <20190528161101.28919-1-angus@akkea.ca>
+ id 1hYRwz-0001dX-Cj; Wed, 05 Jun 2019 09:11:18 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 627BEAE16;
+ Wed,  5 Jun 2019 09:11:14 +0000 (UTC)
+Message-ID: <17ea99902e4329db735080d1a8fc04f5c06c9bf0.camel@suse.de>
+Subject: Re: [PATCH 3/4] clk: bcm2835: register Raspberry Pi's firmware clk
+ device
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Eric Anholt <eric@anholt.net>, stefan.wahren@i2se.com, Florian Fainelli
+ <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>, Scott Branden
+ <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
+Date: Wed, 05 Jun 2019 11:11:12 +0200
+In-Reply-To: <87muiwzyrw.fsf@anholt.net>
+References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
+ <20190604173223.4229-4-nsaenzjulienne@suse.de> <87muiwzyrw.fsf@anholt.net>
+User-Agent: Evolution 3.32.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190528161101.28919-1-angus@akkea.ca>
-User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_020554_361365_1C18C5D7 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190605_021117_579317_74E74A94 
+X-CRM114-Status: GOOD (  10.60  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,29 +62,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Abel Vesa <abel.vesa@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
- Andrey Smirnov <andrew.smirnov@gmail.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, angus.ainslie@puri.sm,
- Fabio Estevam <festevam@gmail.com>,
- Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>,
- linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
+ viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ mbrugger@suse.de, ssuloev@orpaltech.com
+Content-Type: multipart/mixed; boundary="===============0327317674296771708=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 09:11:01AM -0700, Angus Ainslie (Purism) wrote:
-> Add a node for the snvs power key, "disabled" by default.
-> 
-> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 
-Applied, thanks.
+--===============0327317674296771708==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-Y0gkZzcIbprnY+sekDS2"
+
+
+--=-Y0gkZzcIbprnY+sekDS2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, 2019-06-04 at 17:00 -0700, Eric Anholt wrote:
+> Nicolas Saenz Julienne <nsaenzjulienne@suse.de> writes:
+>=20
+> > Registers clk-raspberrypi as a platform device as part of the driver's
+> > probe sequence.
+>=20
+> Similar to how we have VCHI register platform devices for the services
+> VCHI provides, shouldn't we have the firmware driver register the device
+> for clk_raspberrypi?  Or put the clk provider in the fw driver instead
+> of a separate driver (no opinion on my part).
+
+Makes sense to me, I'll move the platform driver registration into the firm=
+ware
+driver.
+
+
+--=-Y0gkZzcIbprnY+sekDS2
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAlz3hzAACgkQlfZmHno8
+x/5W0AgAk1lBDDOGbH2IxMCBbNMjMT+5XCPJUI+HhTTIY6r2lj0vF9v2mMl6idjj
+Dy1k0dx1BmB4S8bAAoLUO0AjOriCapLoDDwotUSpT5XPXABdmQyacS0hzbgNtdR2
+e/6Ks/dgPThgKTyWrFH5ebLK5GBqm+NtYUkFOIugECaL2oIAwaM7jFntdSin/42W
+1/ZInxhc6/yeMOGZqtfnOKlzxJQ2yO6kamz6neOY6prXtJSSjjVQ8NLRun5gj8xB
+FThb3WLHnZ3xUit7GnbhzzSkUAgdvTrRVesxViN+FtmGySqYeI3HVCHjjyBEu6CY
+yrDjYy0kizct4ZRNg3HEGeF3/kd+EA==
+=Ryff
+-----END PGP SIGNATURE-----
+
+--=-Y0gkZzcIbprnY+sekDS2--
+
+
+
+--===============0327317674296771708==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0327317674296771708==--
+
+
