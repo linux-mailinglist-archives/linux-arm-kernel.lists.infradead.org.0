@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0E4335CDE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:30:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8644635CE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:31:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CGgidZ7XJqsk1Jf2LmihAl3zIMj+Pm0yAuqzOxgObhI=; b=ZJ7X8T14oJmAJx
-	SO3u9/W2L1JIojfUj6Ye8dC7O+N42WMgput1Ect7FLY1J8qKdEovxnCTqIPYKJxFN4lhOGBZU6GYW
-	TE1bTHxzFoZq/76CvX58MF9YEyoxhbeDnSgr5PHs0aba9hHuLTZRUDD+d3M47Tc0ragkBbvbtXbSl
-	l8OqonVxyPWDa6csGSoLcubHf9Tj6yOs7DCcGLsiG7M+SIJGhtHa/8JIIrSTFV5g0wQ8X4q70s3LE
-	dGhxvUT4mttsRxX08IuZSpAn3oibplkMWxciSAX8T8V1zrQ9JOOUMtdcDFXBcMaBFEHRGws68vqBb
-	Th/zfD+baha84bsLfIew==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ARemk6zhpAR7SoJsU1BwrIv3L26Y8/Qkyw2Phnrpik4=; b=POw
+	ocVsW9aW9+QYri3ObLB4iJfKQSG39xKzq799+woKrj8xX2SIi68JMkmVfJancc2PSZlKVJ1CNKhye
+	Kzh0ZD+1/JSnnD11BT3ugtmKTPrP9dtfHQ+Wc++i6y4nESTINlZ+5KF3BOiDznwXllRp63uKak8k6
+	XlUoqfHyPILR954SxyWyIyNVXzAgG0aYrQHco7t7RsQLVTq++tM/vfEE/tR0pCyKEzPRz8ratq9uH
+	2pby4za2h6xg1YMkf9khnHLXEI+sJzAEG7gg/EQuTZTQ8DUKZamomXc8LbP4yaQQ36wgd9oXYcq7t
+	ijU2V8echhB2xc5voY4cI/PvEe+K7WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYV3Y-0007Uh-64; Wed, 05 Jun 2019 12:30:16 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1hYV51-0000SE-UA; Wed, 05 Jun 2019 12:31:47 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYV3H-00076M-Ln
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 12:30:02 +0000
-X-Originating-IP: 90.88.144.139
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id CE6B360019;
- Wed,  5 Jun 2019 12:29:45 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Wolfram Sang <wsa@the-dreams.de>, Mark Rutland <mark.rutland@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Gregory Clement <gregory.clement@bootlin.com>
-Subject: [PATCH v2 2/2] dt-bindings: i2c: mv64xxx: Add YAML schemas
-Date: Wed,  5 Jun 2019 14:29:36 +0200
-Message-Id: <20190605122936.11972-2-maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190605122936.11972-1-maxime.ripard@bootlin.com>
-References: <20190605122936.11972-1-maxime.ripard@bootlin.com>
-MIME-Version: 1.0
+ id 1hYV4u-0000Rc-2L
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 12:31:42 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 397A41A0869;
+ Wed,  5 Jun 2019 14:31:38 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2B9371A0867;
+ Wed,  5 Jun 2019 14:31:38 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net (gw_auto.ea.freescale.net
+ [10.171.94.100])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 4C7A2205FA;
+ Wed,  5 Jun 2019 14:31:37 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>, Anson Huang <Anson.Huang@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>
+Subject: [RFC] devfreq: Add generic devfreq-dt driver
+Date: Wed,  5 Jun 2019 15:31:33 +0300
+Message-Id: <e48d7e3d71166cea20c3c200300e0ffa6d26d085.1559737589.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_053000_175029_329E9A0D 
-X-CRM114-Status: GOOD (  16.96  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190605_053140_390560_EB238EA1 
+X-CRM114-Status: GOOD (  16.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.195 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,211 +65,263 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ linux-pm@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-clk@vger.kernel.org, Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch the DT binding to a YAML schema to enable the DT validation.
+This is a generic devfreq driver which switches frequencies from an OPP
+table based on userspace requests.
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+This can be used to testing frequency switching on buses or devices
+which can be manipulated with a single "clk" but don't otherwise have
+any smarter complex targeting logic or performance counters.
+
+It relies entirely on the dev_pm_opp subsystem and be used to test
+arbitrary opp tables.
+
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
 ---
+I used this to test imx8mm dram freq switching in complete isolation:
 
-Changes from v1:
-  - Fix the maintainers
----
- .../devicetree/bindings/i2c/i2c-mv64xxx.txt   |  64 -----------
- .../bindings/i2c/marvell,mv64xxx-i2c.yaml     | 105 ++++++++++++++++++
- 2 files changed, 105 insertions(+), 64 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
- create mode 100644 Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+    https://patchwork.kernel.org/patch/10968303/
 
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt b/Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
-deleted file mode 100644
-index 0ffe65a316ae..000000000000
---- a/Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
-+++ /dev/null
-@@ -1,64 +0,0 @@
--
--* Marvell MV64XXX I2C controller
--
--Required properties :
--
-- - reg             : Offset and length of the register set for the device
-- - compatible      : Should be either:
--                     - "allwinner,sun4i-a10-i2c"
--                     - "allwinner,sun6i-a31-i2c"
--                     - "marvell,mv64xxx-i2c"
--                     - "marvell,mv78230-i2c"
--                     - "marvell,mv78230-a0-i2c"
--                       * Note: Only use "marvell,mv78230-a0-i2c" for a
--                         very rare, initial version of the SoC which
--                         had broken offload support.  Linux
--                         auto-detects this and sets it appropriately.
-- - interrupts      : The interrupt number
--
--Optional properties :
--
-- - clock-frequency : Desired I2C bus clock frequency in Hz. If not set the
--default frequency is 100kHz
--
-- - resets          : phandle to the parent reset controller. Mandatory
--                     whenever you're using the "allwinner,sun6i-a31-i2c"
--                     compatible.
--
-- - clocks:	   : pointers to the reference clocks for this device, the
--		     first one is the one used for the clock on the i2c bus,
--		     the second one is the clock used to acces the registers
--		     of the controller
--
-- - clock-names	   : names of used clocks, mandatory if the second clock is
--		     used, the name must be "core", and "reg" (the latter is
--		     only for Armada 7K/8K).
--
--Examples:
--
--	i2c@11000 {
--		compatible = "marvell,mv64xxx-i2c";
--		reg = <0x11000 0x20>;
--		interrupts = <29>;
--		clock-frequency = <100000>;
--	};
--
--For the Armada XP:
--
--	i2c@11000 {
--		compatible = "marvell,mv78230-i2c", "marvell,mv64xxx-i2c";
--		reg = <0x11000 0x100>;
--		interrupts = <29>;
--		clock-frequency = <100000>;
--	};
--
--For the Armada 7040:
--
--	i2c@701000 {
--		compatible = "marvell,mv78230-i2c";
--		reg = <0x701000 0x20>;
--		interrupts = <29>;
--		clock-frequency = <100000>;
--		clock-names = "core", "reg";
--		clocks = <&core_clock>, <&reg_clock>;
--	};
-diff --git a/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+Perhaps it could be useful for others? It is somewhat analogous to
+cpufreq-dt.
+
+It might be possible to pair this with a generic devfreq event driver
+based entirely on perf.
+
+ drivers/devfreq/Kconfig      |  11 +++
+ drivers/devfreq/Makefile     |   3 +
+ drivers/devfreq/devfreq-dt.c | 166 +++++++++++++++++++++++++++++++++++
+ 3 files changed, 180 insertions(+)
+ create mode 100644 drivers/devfreq/devfreq-dt.c
+
+diff --git a/drivers/devfreq/Kconfig b/drivers/devfreq/Kconfig
+index ba98a4e3ad33..abfb3b8da1c2 100644
+--- a/drivers/devfreq/Kconfig
++++ b/drivers/devfreq/Kconfig
+@@ -112,8 +112,19 @@ config ARM_RK3399_DMC_DEVFREQ
+ 	help
+           This adds the DEVFREQ driver for the RK3399 DMC(Dynamic Memory Controller).
+           It sets the frequency for the memory controller and reads the usage counts
+           from hardware.
+ 
++config DEVFREQ_DT
++	tristate "Simple DT-based DEVFREQ Driver"
++	select DEVFREQ_GOV_USERSPACE
++	help
++	  This adds a generic DT based devfreq driver for frequency management
++	  of arbitrary devices with no special support.
++
++	  This can be used to test arbitrary OPP tables.
++
++	  Only supports the userspace governor.
++
+ source "drivers/devfreq/event/Kconfig"
+ 
+ endif # PM_DEVFREQ
+diff --git a/drivers/devfreq/Makefile b/drivers/devfreq/Makefile
+index 32b8d4d3f12c..3d57b007b6c2 100644
+--- a/drivers/devfreq/Makefile
++++ b/drivers/devfreq/Makefile
+@@ -10,7 +10,10 @@ obj-$(CONFIG_DEVFREQ_GOV_PASSIVE)	+= governor_passive.o
+ # DEVFREQ Drivers
+ obj-$(CONFIG_ARM_EXYNOS_BUS_DEVFREQ)	+= exynos-bus.o
+ obj-$(CONFIG_ARM_RK3399_DMC_DEVFREQ)	+= rk3399_dmc.o
+ obj-$(CONFIG_ARM_TEGRA_DEVFREQ)		+= tegra-devfreq.o
+ 
++# Generic DEVFREQ driver
++obj-$(CONFIG_DEVFREQ_DT)		+= devfreq-dt.o
++
+ # DEVFREQ Event Drivers
+ obj-$(CONFIG_PM_DEVFREQ_EVENT)		+= event/
+diff --git a/drivers/devfreq/devfreq-dt.c b/drivers/devfreq/devfreq-dt.c
 new file mode 100644
-index 000000000000..a1c631eaeafd
+index 000000000000..fa70fa216c23
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
-@@ -0,0 +1,105 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/i2c/marvell,mv64xxx-i2c.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/drivers/devfreq/devfreq-dt.c
+@@ -0,0 +1,166 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (c) 2019 NXP
++ */
 +
-+title: Marvell MV64XXX I2C Controller Device Tree Bindings
++#include <linux/clk.h>
++#include <linux/devfreq.h>
++#include <linux/devfreq-event.h>
++#include <linux/device.h>
++#include <linux/module.h>
++#include <linux/of_device.h>
++#include <linux/pm_opp.h>
++#include <linux/platform_device.h>
++#include <linux/regulator/consumer.h>
++#include <linux/slab.h>
 +
-+maintainers:
-+  - Gregory CLEMENT <gregory.clement@bootlin.com>
++// FIXME:
++#include <../opp/opp.h>
 +
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun4i-a10-i2c
-+      - items:
-+          - const: allwinner,sun7i-a20-i2c
-+          - const: allwinner,sun4i-a10-i2c
-+      - const: allwinner,sun6i-a31-i2c
-+      - items:
-+          - const: allwinner,sun8i-a23-i2c
-+          - const: allwinner,sun6i-a31-i2c
-+      - items:
-+          - const: allwinner,sun8i-a83t-i2c
-+          - const: allwinner,sun6i-a31-i2c
-+      - items:
-+          - const: allwinner,sun50i-a64-i2c
-+          - const: allwinner,sun6i-a31-i2c
++struct devfreq_dt {
++	struct device *dev;
++	struct devfreq *devfreq;
++	struct mutex lock;
 +
-+      - const: marvell,mv64xxx-i2c
-+      - const: marvell,mv78230-i2c
-+      - const: marvell,mv78230-a0-i2c
++	unsigned long curr_freq;
++};
 +
-+    description:
-+      Only use "marvell,mv78230-a0-i2c" for a very rare, initial
-+      version of the SoC which had broken offload support. Linux
-+      auto-detects this and sets it appropriately.
++/*
++ * Must necessary function for devfreq simple-ondemand governor
++ */
++static int devfreq_dt_target(struct device *dev, unsigned long *freq, u32 flags)
++{
++	struct devfreq_dt *priv = dev_get_drvdata(dev);
++	struct dev_pm_opp *new_opp;
++	unsigned long new_freq;
++	int ret = 0;
 +
-+  reg:
-+    maxItems: 1
++	mutex_lock(&priv->lock);
 +
-+  interrupts:
-+    maxItems: 1
++	new_opp = devfreq_recommended_opp(dev, freq, flags);
++	if (IS_ERR(new_opp)) {
++		ret = PTR_ERR(new_opp);
++		dev_err(dev, "failed to get recommended opp: %d\n", ret);
++		goto out;
++	}
 +
-+  clocks:
-+    minItems: 1
-+    maxItems: 2
-+    items:
-+      - description: Reference clock for the I2C bus
-+      - description: Bus clock (Only for Armada 7K/8K)
++	new_freq = dev_pm_opp_get_freq(new_opp);
++	dev_dbg(dev, "try frequency %luHz for %luHz", new_freq, *freq);
++	ret = dev_pm_opp_set_rate(priv->dev, new_freq);
++	if (ret == 0) {
++		dev_info(dev, "set frequency %luHz for %luHz", new_freq, *freq);
++		priv->curr_freq = new_freq;
++	} else {
++		dev_err(dev, "fail set frequency %luHz for %luHz", new_freq, *freq);
++	}
++out:
++	mutex_unlock(&priv->lock);
 +
-+  clock-names:
-+    minItems: 1
-+    maxItems: 2
-+    items:
-+      - const: core
-+      - const: reg
-+    description:
-+      Mandatory if two clocks are used (only for Armada 7k and 8k).
++	return ret;
++}
 +
-+  resets:
-+    maxItems: 1
++static int devfreq_dt_get_cur_freq(struct device *dev, unsigned long *freq)
++{
++	struct opp_table *tab;
++	struct clk* clk;
 +
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
++	tab = dev_pm_opp_get_opp_table(dev);
++	clk = tab->clk;
++	*freq = clk_get_rate(tab->clk);
 +
-+allOf:
-+  - $ref: /schemas/i2c/i2c-controller.yaml#
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - allwinner,sun4i-a10-i2c
-+              - allwinner,sun6i-a31-i2c
++	return 0;
++}
 +
-+    then:
-+      required:
-+        - clocks
++static int devfreq_dt_get_dev_status(struct device *dev,
++				     struct devfreq_dev_status *stat)
++{
++	struct devfreq_dt *priv = dev_get_drvdata(dev);
 +
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: allwinner,sun6i-a31-i2c
++	stat->current_frequency = priv->curr_freq;
++	stat->busy_time = 100;
++	stat->total_time = 0;
 +
-+    then:
-+      required:
-+        - resets
++	return 0;
++}
 +
-+# FIXME: We should set it, but it would report all the generic
-+# properties as additional properties.
-+# additionalProperties: false
++static void devfreq_dt_exit(struct device *dev)
++{
++	return dev_pm_opp_of_remove_table(dev);
++}
 +
-+examples:
-+  - |
-+    timer {
-+      compatible = "allwinner,sun4i-a10-timer";
-+      reg = <0x01c20c00 0x400>;
-+      interrupts = <22>;
-+      clocks = <&osc>;
-+    };
-+...
++static int devfreq_dt_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct devfreq_dev_profile *profile;
++	struct devfreq_dt *priv;
++	int ret;
++
++	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++	mutex_init(&priv->lock);
++	priv->dev = &pdev->dev;
++	platform_set_drvdata(pdev, priv);
++
++	/* Parse the device-tree to get the resource information */
++	/* Get the freq and voltage from OPP table to scale the priv freq */
++	ret = dev_pm_opp_of_add_table(dev);
++	if (ret < 0) {
++		dev_err(dev, "failed to get OPP table\n");
++		return ret;
++	}
++
++	profile = devm_kzalloc(dev, sizeof(*profile), GFP_KERNEL);
++	if (!profile) {
++		ret = -ENOMEM;
++		goto err_remove_table;
++	}
++
++	profile->polling_ms = 1000;
++	profile->target = devfreq_dt_target;
++	profile->get_dev_status = devfreq_dt_get_dev_status;
++	profile->exit = devfreq_dt_exit;
++	profile->get_cur_freq = devfreq_dt_get_cur_freq;
++	devfreq_dt_get_cur_freq(dev, &profile->initial_freq);
++
++	priv->devfreq = devm_devfreq_add_device(dev, profile,
++						DEVFREQ_GOV_USERSPACE,
++						NULL);
++	if (IS_ERR(priv->devfreq)) {
++		dev_err(dev, "failed to add devfreq device\n");
++		ret = PTR_ERR(priv->devfreq);
++		goto err_remove_table;
++	}
++
++	return 0;
++
++err_remove_table:
++	dev_pm_opp_of_remove_table(dev);
++	return ret;
++}
++
++static void devfreq_dt_shutdown(struct platform_device *pdev)
++{
++	struct devfreq_dt *priv = dev_get_drvdata(&pdev->dev);
++
++	devfreq_suspend_device(priv->devfreq);
++}
++
++static const struct of_device_id devfreq_dt_of_match[] = {
++	{ .compatible = "generic-devfreq", },
++	{ /* sentinel */ },
++};
++MODULE_DEVICE_TABLE(of, devfreq_dt_of_match);
++
++static struct platform_driver devfreq_dt_platdrv = {
++	.probe		= devfreq_dt_probe,
++	.shutdown	= devfreq_dt_shutdown,
++	.driver = {
++		.name	= "devfreq-dt",
++		.of_match_table = of_match_ptr(devfreq_dt_of_match),
++	},
++};
++module_platform_driver(devfreq_dt_platdrv);
++
++MODULE_DESCRIPTION("Generic devfreq-dt driver");
++MODULE_LICENSE("GPL v2");
 -- 
-2.21.0
+2.17.1
 
 
 _______________________________________________
