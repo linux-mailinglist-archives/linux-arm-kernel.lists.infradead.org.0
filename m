@@ -2,74 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 991BC36533
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 22:15:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC94B36538
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 22:16:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O6Y5U9oYsJ49GiaF+DkkppD9HGE9SiPbltLdIJD2VuQ=; b=AqOzZMOg4gO/gP
-	wAZnC9zuROjlxRpVh7U3Hi+OafUH5Zrj2D6G0pH6/i0Z+3Qpr7l99kUYfS4719w7OtgSw3yf2FW+O
-	+RY/LT++mC6UCQZ6vUA+7r1LRTYk/u/QTD+6CxX2c9oxsd0M6IvgkhRyr3/glPUmmEwk05FGZRrjV
-	04qp2OhdLAW9wu4UXNInAhT32qT9ZEvCrNgYdURjUQ8MH8PElpFPl0pk+xkB9dddF6V0wR6LK8m6N
-	sJwOLb4piY2Djf6uPrvZJfD1dC7l5WaQRu5cEqJ/ef3IjkPoHx2HQNL2ldv0CzowJsfG6WK93ovdw
-	/2+vLhO4Wcsrip21mhug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZjaUuV9UDUjqM/rfo4IxA1Opnrzokmr15GctoaKMY44=; b=TWCjkUuYyOTqA8
+	xUeqlfdDTYzuAd0dOctjE2eP5ODSABYy+SrRor+uF852Il/olVB99LvyCPKBiwJQboYP4s0p/Aln+
+	APtnm2XllUrGaz99oJ20NPHH+VfAESKap0eAhoqvTlYPBTfA60tauaPqFbrDH4BvfdIqqbmNhXOZC
+	N22FpoOps2C3SPqt4FTIfOYU6DsTsv7PzRYv/Z15xUMtK+0+sG8KgYGLc/27bUL1IGN5qWxJU26Ho
+	14Ym1FPQ6kLMuIDdqGSsPV36HPimlihtd0zheVlXEVOjqwTDT0TpLxTPciV6wfsURjy0oFW4nCgEq
+	QgGUG5kldrCsaIypUH0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYcJb-0006ea-7X; Wed, 05 Jun 2019 20:15:19 +0000
-Received: from mail-it1-f176.google.com ([209.85.166.176])
+	id 1hYcKi-0006yM-3l; Wed, 05 Jun 2019 20:16:28 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYcJU-0006dc-8X; Wed, 05 Jun 2019 20:15:13 +0000
-Received: by mail-it1-f176.google.com with SMTP id a186so5583533itg.0;
- Wed, 05 Jun 2019 13:15:11 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=THJJt/ZPhh8isKdn2NsQHGAKZfNn4iulXXsjjcZVkJk=;
- b=dlz7wkrjiC/bC/xubwrzJJ1CO8HNWpGnkFWwgJv+GyzrS9l/UAQiws9/ye4sacG6Ld
- sXi4EiQGsFCtMdzLBZclwrQJT2vuENfUTnKqqFbZAqLkSGFIF0Xf+N6KGjmhf8FIq0Cd
- bnBu6EyKOIsgmJNRSSzFxOVYyr+dyCakLdbjnhfdYJNitsAlaHwf2fIQe/bMfI6T8aU+
- 1hlUWYSncnjufwMQDP8a1fpRY8SZyw3O51vfMt7PAbvcf5C+DFgJaV1AQ4mpQaH+CsbN
- Q8VWwEBfNRr0/zh7TjDQpjN4iOcL2aaIIjqgCZ0vZh1pCZ6eXmNgD8mCiAJDkE4c/XY7
- fasQ==
-X-Gm-Message-State: APjAAAV6B2acVREHYm55SH1/2+et446op27Hfh3MsMVLPBevdobCbZwm
- M2iQHjI9kskGuJRWwsXSNkFxYUYF2kcNOEVs1QA=
-X-Google-Smtp-Source: APXvYqyrpsndryg2pdcv8bRbnFKvQOW5n7ws+8amqaHflUu9NqIphSTk1hfXgnbNdWzwKOBlue4Rts3JPGsdQ7vzs78=
-X-Received: by 2002:a02:a001:: with SMTP id a1mr28751687jah.115.1559765710777; 
- Wed, 05 Jun 2019 13:15:10 -0700 (PDT)
+ id 1hYcKZ-0006xU-FG; Wed, 05 Jun 2019 20:16:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1559765745;
+ bh=rijiQSXdFy2isPAAqnaADCu9R9ZY3RJXS+RUCx+UfTs=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=VJXJDhnDH3ex3dDL7itq0g4lKdjZcUZbtrGmw9d61c5zy5a8seGbh2HVSwNLRVvn5
+ koMKEj/v+1NXTABfa/sgn9ERg9rSf7dONwUE4mEkp31xzodKqguf7iGnsjyDfGOD4s
+ NXaaHUuBhOCCfD+ibFQy8puryJ8ldsnADt+ABVTA=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.160]) by mail.gmx.com (mrgmx001
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0MBVwM-1hRR2s3Qv8-00AVYp; Wed, 05
+ Jun 2019 22:15:45 +0200
+Subject: Re: [PATCH 0/4] cpufreq support for the Raspberry Pi
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Stefan Wahren <wahrenst@gmx.net>, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
+ <2ece3f20-ef8c-c39e-941c-76635ddbe185@gmx.net>
+ <1a86637dad1d2f33450950143a82016beb91bdb6.camel@suse.de>
+ <1c9708c9-a3c9-8a8f-4693-8f29d3e60634@gmx.net>
+ <6f40f43ed32c5c519761879245423f7c371e4ae6.camel@suse.de>
+From: Stefan Wahren <wahrenst@gmx.net>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <008bf9da-b2eb-8858-a58b-4252b7920856@gmx.net>
+Date: Wed, 5 Jun 2019 22:15:35 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190412105320.2924-1-kernel@esmil.dk>
- <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
- <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
- <20190605195511.GX2456@sirena.org.uk>
-In-Reply-To: <20190605195511.GX2456@sirena.org.uk>
-From: Emil Renner Berthing <kernel@esmil.dk>
-Date: Wed, 5 Jun 2019 22:14:59 +0200
-Message-ID: <CANBLGcwE_KfwJ=-FKNJ9RzrH58FVcmyxAR9niWQRubjM0pZgWA@mail.gmail.com>
-Subject: Re: Applied "spi: rockchip: turn down tx dma bursts" to the spi tree
-To: Mark Brown <broonie@kernel.org>
+In-Reply-To: <6f40f43ed32c5c519761879245423f7c371e4ae6.camel@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:TijECVh98arPrcmwN3J8EqR3bttBi4JP2mkLKSUCsKLttPAEda6
+ vgUKwT6larHeCrNof/v6AeWluYqdpyICbs1C6QLuSTvT6m6GHgZzHa4efCHhGr+9alKGNgJ
+ kspPB4/jMmsDDi94JiTvMhYqDguCkXj6gxGRHLJcy289xmKFRHqdU4t06wRU9aiAlpkLjYl
+ BeU3PI5fh+IsAUe8cZb2Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:wjRpJFh5V5Q=:sXUFJUqTYNiSwsF5XvN/yW
+ w+4gVP272Vh513kJHKFVldzPTVSDiUmTsQRLNaq29uvqusIl8hnEHaimvN7A0Ljfjkpc9+zke
+ aQIPueHWT2506vFI/YBANiZ3RoqyAX3n1wZChg7zfTHmgAq+8bV4cTxgvFCu44prF9/nI/Q3o
+ +Bonq/81uuNf/jPyqIv1+zfUXopiuiLPEqaFstodjh2gfWHf6qgd8lVSZtT8auEJf2x0VTcVQ
+ +iFffj5JbT+/XKMPXYLMJG6sCFs3US+po7KfJN2lxsRn3+r19K+F+XP2/8J06XlC+N/fc58X/
+ 4JtGgAR9Mp8G5FAC65XMTufHkdCBi7c+sdC3FR1e5I4PlN6Cl0Ya8Av2LKapzZ2b8eQRl4APo
+ 7gZsr2iTBVJaCQLhSPPaYbtrVwUm5AlBiAEv9wFOQ8zfbDTHB4ROFp+i1B7cG8MtdM8rFyAf3
+ hbGwv2gWDTxriHf4FpY1yWyDr6j9D7k4PvtQa9yior25PCNrULM0ySc8QC3WDZDowHkmeiRm4
+ z1v6bIalnMiHPdKB0EI+Py4lRynA+GZUnwZdLEPBTi86rnl7ulqmVskitd0HNxS2FPGrUChmx
+ OKE8epnMuizky9pEvj1s0N6bKPQy0497avYNBjaoUhbe7YCfVc2J12KNtdCnUDO5PxP4Bnorj
+ LeXmGuvkyzN3IMz+OPGd3Hm5fUJMCiKvRvIjJZqfAPYqVGaDMh734zPi6a2/2WV++JkcnwByP
+ qrEGHjy+V9CAgRaM0C1y844Sx4eDFvqNVExmvwEPXPH5zc/pOsWAJcZBnFfdTRzNwBvFvJ3jx
+ gRrAZvgjdGEj9/9weEKw67e55BuzZ3QCzkExCxZH/HwJObXxos9uVWk6DmxDEQzC6JjOFG/h5
+ 8vu7jyQII98OflI+C6k1GacIPu9rSFAlYyMv67Y1O8WxaM7P5KSSOew78X8VA6EbJeZeZCl+8
+ KB2n8TZcdCOE3hKQmtAP/97XpogPc9ikz7vkEYlhKYPCvyK1S8/hQ
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_131512_303175_DE743D52 
-X-CRM114-Status: GOOD (  12.50  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20190605_131619_911712_15BE2653 
+X-CRM114-Status: GOOD (  20.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.176 listed in list.dnswl.org]
+ no trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (emil.renner.berthing[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider (wahrenst[at]gmx.net)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,39 +145,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vicente Bergas <vicencb@gmail.com>, linux-spi@vger.kernel.org,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: f.fainelli@gmail.com, ptesarik@suse.com, sboyd@kernel.org,
+ viresh.kumar@linaro.org, mturquette@baylibre.com, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, linux-clk@vger.kernel.org,
+ mbrugger@suse.de, ssuloev@orpaltech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 5 Jun 2019 at 21:55, Mark Brown <broonie@kernel.org> wrote:
->
-> On Wed, Jun 05, 2019 at 09:36:44PM +0200, Emil Renner Berthing wrote:
-> > On Wed, 8 May 2019 at 12:34, Mark Brown <broonie@kernel.org> wrote:
->
-> > >    spi: rockchip: turn down tx dma bursts
->
-> > I've tried looking in the for-next and for-5.x branches here, and I
-> > can't seem to find this patch.
-> > Am I missing something?
->
-> > It fixes a problem introduced in 4.19, so it'd be nice if it could
-> > make it to stable trees eventually.
->
-> 47300728fb213486a830565d2af49da967c9d16a is in my tree.  When it reaches
-> Linus' tree send a request to Greg for it to be backported if none of
-> the stable automation picks it up.
+Hi Nicolas,
 
-You're absolutely right, sorry about the noise.
+>> Am 05.06.19 um 13:00 schrieb Nicolas Saenz Julienne:
+>>> Hi Stefan,
+>>> thanks for the review, I took note of your code comments.
+>>>
+>>> On Wed, 2019-06-05 at 11:46 +0200, Stefan Wahren wrote:
+>>>> Hi Nicolas,
+>>>>
+>>>> Am 04.06.19 um 19:32 schrieb Nicolas Saenz Julienne:
+>>>>> Hi all,
+>>>>> this series aims at adding cpufreq support to the Raspberry Pi family of
+>>>>> boards.
+>>>>>
+>>>>> The previous revision can be found at: 
+>>>>> https://lkml.org/lkml/2019/5/20/431
+>>>>>
+>>>>> The series first factors out 'pllb' from clk-bcm2385 and creates a new
+>>>>> clk driver that operates it over RPi's firmware interface[1]. We are
+>>>>> forced to do so as the firmware 'owns' the pll and we're not allowed to
+>>>>> change through the register interface directly as we might race with the
+>>>>> over-temperature and under-voltage protections provided by the firmware.
+>>>> it would be nice to preserve such design decision in the driver as a
+>>>> comment, because the cover letter usually get lost.
+>>>>> Next it creates a minimal cpufreq driver that populates the CPU's opp
+>>>>> table, and registers cpufreq-dt. Which is needed as the firmware
+>>>>> controls the max and min frequencies available.
+>>>> I tested your series on top of Linux 5.2-rc1 with multi_v7_defconfig and
+>>>> manually enable this drivers. During boot with Raspbian rootfs i'm
+>>>> getting the following:
+>>>>
+>>>> [    1.177009] cpu cpu0: failed to get clock: -2
+>>>> [    1.183643] cpufreq-dt: probe of cpufreq-dt failed with error -2
+>>> This is surprising, who could be creating a platform_device for cpufreq-dt
+>>> apart from raspberrypi-cpufreq? Just to make things clear, you're using the
+>>> device tree from v5.2-rc1 (as opposed to the Raspbian one)?
+>> sorry my fault, i thought it already has been replaced. The behavior in
+>> this unexpected case is fine, since it doesn't crash.
+>>
+>> I replaced the the DTB with the mainline one, but now i'm getting this:
+>>
+>> [    4.566068] cpufreq: cpufreq_online: CPU0: Running at unlisted freq:
+>> 600000 KHz
+>> [    4.580690] cpu cpu0: dev_pm_opp_set_rate: Invalid target frequency 0
+>> [    4.594391] cpufreq: __target_index: Failed to change cpu frequency: -22
+> For the record this fixes it:
+>
+> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+> index aa51756fd4d6..edb71eefe9cf 100644
+> --- a/drivers/clk/clk.c
+> +++ b/drivers/clk/clk.c
+> @@ -1293,7 +1293,7 @@ static int clk_core_determine_round_nolock(struct clk_core
+> *core,
+>         } else if (core->ops->round_rate) {
+>                 rate = core->ops->round_rate(core->hw, req->rate,
+>                                              &req->best_parent_rate);
+> -               if (rate < 0)
+> +               if (IS_ERR_VALUE(rate))
+>                         return rate;
+>
+>                 req->rate = rate;
+>
+> round_rate() returns a 'long' value, yet 'pllb' in rpi3b+ goes as high as
+> 2.8GHz, which only fits in an 'unsigned long'. This explains why I didn't see
+> this issue with RPI2b.
 
-Thanks.
-/Emil
+Okay, i understand the problem. But the patch doesn't look like the
+proper fix to me.
+
+Maybe the better way is to implement determine_rate instead of
+round_rate in the clock driver. AFAICS this provides the necessary
+unsigned long.
+
+>
+> I'll add the patch to the series.
+>
+> Regards,
+> Nicolas
+
 
 _______________________________________________
 linux-arm-kernel mailing list
