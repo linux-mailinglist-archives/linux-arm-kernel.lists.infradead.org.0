@@ -2,62 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A099935683
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:00:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B41E7356A0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:08:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F3sGnr7VgmOb21m5ZIQruo9RJpnDH1v/mwJsMa1h//8=; b=Jlhf/seymZywTO
-	ikkXnx12LzNQfR+AFJ7osQMJVzuE+TNi/FDg6lZbdKHBkC7XCowZGBu1H5982woF3fYdUiEtYuWCq
-	MGaq8VyH3FfF26d6S7s84SvgNuCGJCDM8sXtcUVdBFz9WGdGyNGfB1c6AOprINKU4+QD0Cih07FbW
-	o+ud6ZjEhDQQ5lshOHla8TIxdq4mriA/euAXvKnsQHt3H6HXu5fCPngFmS2J+BenUxvZsewzO+f9q
-	gADHAN0ud+gFlIDs7XX+ybUFYHtBRNTdvo5jHnV6GiP9Q3qEiQmksP3f1qRydSX7g7ZmzRV1937Ge
-	aQcIebmRhUqJfK68F39A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N2dXTmC0U91TAInFnlwCjsHxDVGyQALIn76fgvv9HD8=; b=DPNqrNvphdHswx
+	hu1ET3wwI4sxqMa7KF8r845cIpCxzkg7nWcPX1cFyZMGST+jftkQlNtaIFWSOxH6zzjutpn7Qad7v
+	wwEWAB2P801qCdziHKXJzlJL1HfIS6JwRXCAw4BnH0Pdk69sjediE10vCXfpjLfVAqUeU4MVInNEp
+	P2N8lVtzYfqwFnNcvDAWSYHwlEjzI55orr0UUiojlV5wHGa6CcqAvlDKV+BuR2FCYy2pFMchYPMfl
+	GXRwX6Y6z4Fmtd+5Ho5tJCabN2mR20DAL464RIH2V2pwm8ZHa/lk/Vb6lhCSJ4AD/J+PEKAJb0lj+
+	kr3JN9+ThIfUJ1oKpBIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYOyM-0008UE-UG; Wed, 05 Jun 2019 06:00:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hYP62-0001g7-PS; Wed, 05 Jun 2019 06:08:26 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYOyE-0008TR-2P
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:00:25 +0000
-Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ABB3F2075B;
- Wed,  5 Jun 2019 06:00:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559714421;
- bh=su8k6bM1KzrD1rvDqDrPDiZKbk24uNLXNFln/Ozpo1M=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JXHukabfHuZjrkXdPv62iMvyXZv1uWJ520l8/EWOms4QMQ2e/n7ostXn3475SbRLP
- SSCxjYxJGlvRXmj5oKOkx9dRu/BPE7kYHnUhCASi7bXfYV213sJXcLXZaWX9jCTbMP
- btHR7IFw0S5FmRIBmPdSkwdAT+hL73VDPMDHUb/g=
-Date: Wed, 5 Jun 2019 14:00:02 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH RESEND V4 2/3] arm64: dts: imx8qxp: Move watchdog node
- into scu node
-Message-ID: <20190605060000.GA29853@dragon>
-References: <1557655528-12816-1-git-send-email-Anson.Huang@nxp.com>
- <1557655528-12816-2-git-send-email-Anson.Huang@nxp.com>
- <DB3PR0402MB39162F3811484D90546B4CC2F5150@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ id 1hYP5u-0001fZ-Vb
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:08:20 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5568Gug005258;
+ Wed, 5 Jun 2019 01:08:16 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559714896;
+ bh=a94fUpioS4izc+o4g6o2VUCbyzE347IAgLbcvI3/KiI=;
+ h=From:To:CC:Subject:Date;
+ b=nsvXKu/2j0gD75zJgvrAysFGftWBmw6Eh9AkYKU1/j9CBgZqh232CdHqD6CQ3oVnZ
+ KOpAjSAbEsJPFdpbrO038G3xUwkyxd2n+Nnn6WWCibWulrScoij2zmrXH+NnZCP49L
+ g7hTfIjX6RIBV3+jJ8cfJxpQusLDn7ALh/SgAT0Y=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5568GtH129527
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 5 Jun 2019 01:08:16 -0500
+Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 5 Jun
+ 2019 01:08:16 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 5 Jun 2019 01:08:16 -0500
+Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5568Dlg066906;
+ Wed, 5 Jun 2019 01:08:13 -0500
+From: Keerthy <j-keerthy@ti.com>
+To: <t-kristo@ti.com>, <nm@ti.com>, <robh+dt@kernel.org>
+Subject: [RFC PATCH 0/3] arm64: dts: ti: am6: Add gpio nodes
+Date: Wed, 5 Jun 2019 11:38:43 +0530
+Message-ID: <20190605060846.25314-1-j-keerthy@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <DB3PR0402MB39162F3811484D90546B4CC2F5150@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_230023_894296_7C5C6DB9 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190604_230819_096371_607929A6 
+X-CRM114-Status: UNSURE (   7.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,92 +89,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux@roeck-us.net" <linux@roeck-us.net>, dl-linux-imx <linux-imx@nxp.com>
+Cc: lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 09:06:28AM +0000, Anson Huang wrote:
-> Hi, Shawn
-> 	The driver and binding doc are already reviewed and waiting for DT patch, will you help review this DT patch?
+K3 AM6 platform has 2 instances of gpio banks on main domain
+and 1 instance on wakeup domin. All are capable of generating
+banked interrupts.
 
-I'm fine with it.  Should I just pick this patch up, or is there any
-dependency we need to handle?
+This series also adds 2 goio_keys nodes connected to SW6 SW5
+switches and tested for gpio_keys interrupts.
 
-Shawn
+The series depends on:
+https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=112791
 
-> 
-> Thanks,
-> Anson
-> 
-> > -----Original Message-----
-> > From: Anson Huang
-> > Sent: Sunday, May 12, 2019 6:11 PM
-> > To: robh+dt@kernel.org; mark.rutland@arm.com; wim@linux-watchdog.org;
-> > linux@roeck-us.net; shawnguo@kernel.org; s.hauer@pengutronix.de;
-> > kernel@pengutronix.de; festevam@gmail.com; Aisheng Dong
-> > <aisheng.dong@nxp.com>; ulf.hansson@linaro.org; Daniel Baluta
-> > <daniel.baluta@nxp.com>; Peng Fan <peng.fan@nxp.com>;
-> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > watchdog@vger.kernel.org; linux-arm-kernel@lists.infradead.org
-> > Cc: dl-linux-imx <linux-imx@nxp.com>
-> > Subject: [PATCH RESEND V4 2/3] arm64: dts: imx8qxp: Move watchdog node
-> > into scu node
-> > 
-> > i.MX system controller watchdog has pretimeout function which depends on
-> > i.MX SCU driver, so it should be a subnode of SCU.
-> > 
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> > No change, just resend patch with correct encoding.
-> > ---
-> >  arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 10 +++++-----
-> >  1 file changed, 5 insertions(+), 5 deletions(-)
-> > 
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> > b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> > index 0683ee2..b17c22e 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> > @@ -149,6 +149,11 @@
-> >  		rtc: rtc {
-> >  			compatible = "fsl,imx8qxp-sc-rtc";
-> >  		};
-> > +
-> > +		watchdog {
-> > +			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
-> > +			timeout-sec = <60>;
-> > +		};
-> >  	};
-> > 
-> >  	timer {
-> > @@ -517,9 +522,4 @@
-> >  			power-domains = <&pd IMX_SC_R_GPIO_7>;
-> >  		};
-> >  	};
-> > -
-> > -	watchdog {
-> > -		compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
-> > -		timeout-sec = <60>;
-> > -	};
-> >  };
-> > --
-> > 2.7.4
-> 
+Posting as RFC as it has dependencies to be merged.
+
+Keerthy (3):
+  arm64: dts: ti: am6-wakeup: Add gpio node
+  arm64: dts: ti: am6-main: Add gpio nodes
+  arm64: dts: ti: am654-base-board: Add gpio_keys node
+
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 32 +++++++++++++++++++
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    | 15 +++++++++
+ .../arm64/boot/dts/ti/k3-am654-base-board.dts | 27 ++++++++++++++++
+ 3 files changed, 74 insertions(+)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
