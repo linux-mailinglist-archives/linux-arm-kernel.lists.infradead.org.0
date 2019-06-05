@@ -2,52 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6C4135CDB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:30:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0E4335CDE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 14:30:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rFJIBmbgERaxmTaNf/V5iZjgAxb2AEgHZZC2oLC5UJA=; b=X6ioSNNuYb2UDQ
-	xhmEzpy+K87ZlecPXXVzblgPza3MSzVuJhlDXvy+K9NLQEgwBbHs+FxlSNGk3KZXiFa67LmoO3W1q
-	ZJQhcbPMJOxYAUs87jqOwQSSjRgVaxQFwAuiv165mG/1rBfVEDacOcLrbtCcaaajIKpgse3758EBi
-	z3LlEbwEG3SCNODgusqauGd4NPUJ9HyTsoFU4pdms14n4P8eqc1E86gjfc9a83CsUVA/uNTwts699
-	eAb0mPR3PnV04eZblXSbQ5C/er3tmGX9vkupiTxsSi4Crq/fMM+MVJr3dlr6pFITnVAArlzg6YlOa
-	FJmJGsJwtfjL1SM9qV8Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CGgidZ7XJqsk1Jf2LmihAl3zIMj+Pm0yAuqzOxgObhI=; b=ZJ7X8T14oJmAJx
+	SO3u9/W2L1JIojfUj6Ye8dC7O+N42WMgput1Ect7FLY1J8qKdEovxnCTqIPYKJxFN4lhOGBZU6GYW
+	TE1bTHxzFoZq/76CvX58MF9YEyoxhbeDnSgr5PHs0aba9hHuLTZRUDD+d3M47Tc0ragkBbvbtXbSl
+	l8OqonVxyPWDa6csGSoLcubHf9Tj6yOs7DCcGLsiG7M+SIJGhtHa/8JIIrSTFV5g0wQ8X4q70s3LE
+	dGhxvUT4mttsRxX08IuZSpAn3oibplkMWxciSAX8T8V1zrQ9JOOUMtdcDFXBcMaBFEHRGws68vqBb
+	Th/zfD+baha84bsLfIew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYV3H-000768-Gt; Wed, 05 Jun 2019 12:29:59 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1hYV3Y-0007Uh-64; Wed, 05 Jun 2019 12:30:16 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYV38-00075l-VG
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 12:29:53 +0000
+ id 1hYV3H-00076M-Ln
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 12:30:02 +0000
 X-Originating-IP: 90.88.144.139
 Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
  [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 802BEE0006;
- Wed,  5 Jun 2019 12:29:39 +0000 (UTC)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id CE6B360019;
+ Wed,  5 Jun 2019 12:29:45 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Wolfram Sang <wsa@the-dreams.de>, Mark Rutland <mark.rutland@arm.com>,
  Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
  Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
  Gregory Clement <gregory.clement@bootlin.com>
-Subject: [PATCH v2 1/2] dt-bindings: i2c: sun6i-p2wi: Add YAML schemas
-Date: Wed,  5 Jun 2019 14:29:35 +0200
-Message-Id: <20190605122936.11972-1-maxime.ripard@bootlin.com>
+Subject: [PATCH v2 2/2] dt-bindings: i2c: mv64xxx: Add YAML schemas
+Date: Wed,  5 Jun 2019 14:29:36 +0200
+Message-Id: <20190605122936.11972-2-maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190605122936.11972-1-maxime.ripard@bootlin.com>
+References: <20190605122936.11972-1-maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_052951_322024_58E11BA8 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190605_053000_175029_329E9A0D 
+X-CRM114-Status: GOOD (  16.96  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
+ low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,43 +75,131 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Switch the DT binding to a YAML schema to enable the DT validation.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
----
- .../i2c/allwinner,sun6i-a31-p2wi.yaml         | 71 +++++++++++++++++++
- .../bindings/i2c/i2c-sun6i-p2wi.txt           | 41 -----------
- 2 files changed, 71 insertions(+), 41 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/i2c/allwinner,sun6i-a31-p2wi.yaml
- delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-sun6i-p2wi.txt
 
-diff --git a/Documentation/devicetree/bindings/i2c/allwinner,sun6i-a31-p2wi.yaml b/Documentation/devicetree/bindings/i2c/allwinner,sun6i-a31-p2wi.yaml
+---
+
+Changes from v1:
+  - Fix the maintainers
+---
+ .../devicetree/bindings/i2c/i2c-mv64xxx.txt   |  64 -----------
+ .../bindings/i2c/marvell,mv64xxx-i2c.yaml     | 105 ++++++++++++++++++
+ 2 files changed, 105 insertions(+), 64 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
+ create mode 100644 Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt b/Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
+deleted file mode 100644
+index 0ffe65a316ae..000000000000
+--- a/Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
++++ /dev/null
+@@ -1,64 +0,0 @@
+-
+-* Marvell MV64XXX I2C controller
+-
+-Required properties :
+-
+- - reg             : Offset and length of the register set for the device
+- - compatible      : Should be either:
+-                     - "allwinner,sun4i-a10-i2c"
+-                     - "allwinner,sun6i-a31-i2c"
+-                     - "marvell,mv64xxx-i2c"
+-                     - "marvell,mv78230-i2c"
+-                     - "marvell,mv78230-a0-i2c"
+-                       * Note: Only use "marvell,mv78230-a0-i2c" for a
+-                         very rare, initial version of the SoC which
+-                         had broken offload support.  Linux
+-                         auto-detects this and sets it appropriately.
+- - interrupts      : The interrupt number
+-
+-Optional properties :
+-
+- - clock-frequency : Desired I2C bus clock frequency in Hz. If not set the
+-default frequency is 100kHz
+-
+- - resets          : phandle to the parent reset controller. Mandatory
+-                     whenever you're using the "allwinner,sun6i-a31-i2c"
+-                     compatible.
+-
+- - clocks:	   : pointers to the reference clocks for this device, the
+-		     first one is the one used for the clock on the i2c bus,
+-		     the second one is the clock used to acces the registers
+-		     of the controller
+-
+- - clock-names	   : names of used clocks, mandatory if the second clock is
+-		     used, the name must be "core", and "reg" (the latter is
+-		     only for Armada 7K/8K).
+-
+-Examples:
+-
+-	i2c@11000 {
+-		compatible = "marvell,mv64xxx-i2c";
+-		reg = <0x11000 0x20>;
+-		interrupts = <29>;
+-		clock-frequency = <100000>;
+-	};
+-
+-For the Armada XP:
+-
+-	i2c@11000 {
+-		compatible = "marvell,mv78230-i2c", "marvell,mv64xxx-i2c";
+-		reg = <0x11000 0x100>;
+-		interrupts = <29>;
+-		clock-frequency = <100000>;
+-	};
+-
+-For the Armada 7040:
+-
+-	i2c@701000 {
+-		compatible = "marvell,mv78230-i2c";
+-		reg = <0x701000 0x20>;
+-		interrupts = <29>;
+-		clock-frequency = <100000>;
+-		clock-names = "core", "reg";
+-		clocks = <&core_clock>, <&reg_clock>;
+-	};
+diff --git a/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
 new file mode 100644
-index 000000000000..780a33080140
+index 000000000000..a1c631eaeafd
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/i2c/allwinner,sun6i-a31-p2wi.yaml
-@@ -0,0 +1,71 @@
++++ b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+@@ -0,0 +1,105 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/i2c/allwinner,sun6i-a31-p2wi.yaml#
++$id: http://devicetree.org/schemas/i2c/marvell,mv64xxx-i2c.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Allwinner A31 P2WI (Push/Pull 2 Wires Interface) Device Tree Bindings
++title: Marvell MV64XXX I2C Controller Device Tree Bindings
 +
 +maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+allOf:
-+  - $ref: /schemas/i2c/i2c-controller.yaml#
++  - Gregory CLEMENT <gregory.clement@bootlin.com>
 +
 +properties:
-+  "#address-cells":
-+    const: 1
-+
-+  "#size-cells":
-+    const: 0
-+
 +  compatible:
-+    const: allwinner,sun6i-a31-p2wi
++    oneOf:
++      - const: allwinner,sun4i-a10-i2c
++      - items:
++          - const: allwinner,sun7i-a20-i2c
++          - const: allwinner,sun4i-a10-i2c
++      - const: allwinner,sun6i-a31-i2c
++      - items:
++          - const: allwinner,sun8i-a23-i2c
++          - const: allwinner,sun6i-a31-i2c
++      - items:
++          - const: allwinner,sun8i-a83t-i2c
++          - const: allwinner,sun6i-a31-i2c
++      - items:
++          - const: allwinner,sun50i-a64-i2c
++          - const: allwinner,sun6i-a31-i2c
++
++      - const: marvell,mv64xxx-i2c
++      - const: marvell,mv78230-i2c
++      - const: marvell,mv78230-a0-i2c
++
++    description:
++      Only use "marvell,mv78230-a0-i2c" for a very rare, initial
++      version of the SoC which had broken offload support. Linux
++      auto-detects this and sets it appropriately.
 +
 +  reg:
 +    maxItems: 1
@@ -116,21 +208,52 @@ index 000000000000..780a33080140
 +    maxItems: 1
 +
 +  clocks:
-+    maxItems: 1
++    minItems: 1
++    maxItems: 2
++    items:
++      - description: Reference clock for the I2C bus
++      - description: Bus clock (Only for Armada 7K/8K)
++
++  clock-names:
++    minItems: 1
++    maxItems: 2
++    items:
++      - const: core
++      - const: reg
++    description:
++      Mandatory if two clocks are used (only for Armada 7k and 8k).
 +
 +  resets:
 +    maxItems: 1
-+
-+  clock-frequency:
-+    minimum: 1
-+    maximum: 6000000
 +
 +required:
 +  - compatible
 +  - reg
 +  - interrupts
-+  - clocks
-+  - resets
++
++allOf:
++  - $ref: /schemas/i2c/i2c-controller.yaml#
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - allwinner,sun4i-a10-i2c
++              - allwinner,sun6i-a31-i2c
++
++    then:
++      required:
++        - clocks
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: allwinner,sun6i-a31-i2c
++
++    then:
++      required:
++        - resets
 +
 +# FIXME: We should set it, but it would report all the generic
 +# properties as additional properties.
@@ -138,70 +261,13 @@ index 000000000000..780a33080140
 +
 +examples:
 +  - |
-+    p2wi@1f03400 {
-+      compatible = "allwinner,sun6i-a31-p2wi";
-+      reg = <0x01f03400 0x400>;
-+      interrupts = <0 39 4>;
-+      clocks = <&apb0_gates 3>;
-+      clock-frequency = <6000000>;
-+      resets = <&apb0_rst 3>;
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+
-+      axp221: pmic@68 {
-+        compatible = "x-powers,axp221";
-+        reg = <0x68>;
-+      };
++    timer {
++      compatible = "allwinner,sun4i-a10-timer";
++      reg = <0x01c20c00 0x400>;
++      interrupts = <22>;
++      clocks = <&osc>;
 +    };
-+
 +...
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-sun6i-p2wi.txt b/Documentation/devicetree/bindings/i2c/i2c-sun6i-p2wi.txt
-deleted file mode 100644
-index 49df0053347a..000000000000
---- a/Documentation/devicetree/bindings/i2c/i2c-sun6i-p2wi.txt
-+++ /dev/null
-@@ -1,41 +0,0 @@
--
--* Allwinner P2WI (Push/Pull 2 Wire Interface) controller
--
--Required properties :
--
-- - reg             : Offset and length of the register set for the device.
-- - compatible      : Should one of the following:
--                     - "allwinner,sun6i-a31-p2wi"
-- - interrupts      : The interrupt line connected to the P2WI peripheral.
-- - clocks          : The gate clk connected to the P2WI peripheral.
-- - resets          : The reset line connected to the P2WI peripheral.
--
--Optional properties :
--
-- - clock-frequency : Desired P2WI bus clock frequency in Hz. If not set the
--default frequency is 100kHz
--
--A P2WI may contain one child node encoding a P2WI slave device.
--
--Slave device properties:
--  Required properties:
--   - reg           : the I2C slave address used during the initialization
--                     process to switch from I2C to P2WI mode
--
--Example:
--
--	p2wi@1f03400 {
--		compatible = "allwinner,sun6i-a31-p2wi";
--		reg = <0x01f03400 0x400>;
--		interrupts = <0 39 4>;
--		clocks = <&apb0_gates 3>;
--		clock-frequency = <6000000>;
--		resets = <&apb0_rst 3>;
--
--		axp221: pmic@68 {
--			compatible = "x-powers,axp221";
--			reg = <0x68>;
--
--			/* ... */
--		};
--	};
 -- 
 2.21.0
 
