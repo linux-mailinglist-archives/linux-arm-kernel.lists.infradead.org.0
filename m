@@ -2,95 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 541CB358F7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 10:49:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9FD035901
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 10:52:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XySRhkc8RENd60Dw7I4b0aeSqgGYd3AULluTojwzl88=; b=RKvHTzd16q5y4/
-	7ls3puvdM5GNNfS4+RSlRGra6L712LQvIWQgba0aGRob4Azf5mSKkwI5v0NduCggMtvYtLOchpJDy
-	oHS9IoGBJwrNJpl8LdqjBvK30zNCzKXer1LBn9XbN758DCgC7dHFUZ7OLWefsAvuTI/m2xI4LHKGU
-	PD1pRQeaRkG3m8nSKLPymr7JqYZSwLKzA9B+/CcF4JJUwRYGdydvv/WxaH1Brs/yxkLheFa42yhkG
-	1FLRCi5pQRvSJABi/VOMQJVRcZ2I9+AGndPPo91CtC9kNnrd7NQz4X1ocv3Pg4YxyZvKcRrPWvgvS
-	0sGLnCc8k7zTLDSiY/zg==;
+	List-Owner; bh=5NXekTpIb6kTN6mSn/Iwr0krVcGWbz+8u3qyLqmNmH0=; b=KOSkt26jm6diql
+	Q+EWX0hnLbDU8p2lMb1SDM9AD63AjdqNgVh7eRzhWdxspgVXFgxGulzMvrOF8Yj3FSZTzhkgn0Pbw
+	HVhM58ftXnFY3R/blKTMnjCz3p5irNbLTWuvLhqiM0ufPi1a9LeIsX+MSZ5DNtdlXm1Npe6KBChFe
+	mPaszAypJ8gJXsctvkU4C6Pgoed+EOjDQoGf1xoJVu9/1zf+rsQQMzEMB/OlbpWCvXODkcdRdibG9
+	U0+pxnfnHLPrbSCQ5u3XV4CBs1kY1IcLJ1VhaEnNlgHVy3nzN2dDJBfpBhYoH4ZOuLVeAgY0JTkYR
+	S9hTegxZUAEpST7dm2VQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYRby-000843-6r; Wed, 05 Jun 2019 08:49:34 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hYRek-00019k-DC; Wed, 05 Jun 2019 08:52:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYRbq-00082s-Eh
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 08:49:27 +0000
-Received: by mail-wr1-x443.google.com with SMTP id f9so3848092wre.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 01:49:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=47X4zT30GaadHJDaOJJAh/DnRfU8HKGu6t7RX9pL/1E=;
- b=nRR+/O1w2hpos8U3WuMiH/3+BN6lTgWYnsbBoN6gkVLrZ1RHMizsu+4ZO9EuzH4TaB
- JaodAlZK3Kx2Q2WmB+EnEIN4wEJCqbyWdIq3GrjNrF/eMlNvvhbGv1T3/iQg83ufteRt
- Ty7tf9D0F1yh4O5vWOF1XlO7xgunN2POXJD12fUH+Orf9E4jk0Jg5oSY9sKLt7hLAeMU
- 8vwQ3faYAIOoLM5uZ1OAR9oHHJzWu0gZIUKOZNV4CWV3ujufMGwZx8Gei7yNZu6lnFos
- xpv7J1856IHDdO5sl9kIutepdd1VmglvBLZeIjZyX1J4L0DgbnVEE6f9z8GHgItLDDJu
- Krrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=47X4zT30GaadHJDaOJJAh/DnRfU8HKGu6t7RX9pL/1E=;
- b=COfvFsae/OwRFWUScSWdX+ad880o2/q6/+JKAJFBkRzqIV6kM8bFCkt5Gv+UJLemIX
- zmFGPHwxeRXkOAXGjQSB7XRmGTGm7UO1bmboukHm4DugGLtDkGwEpSNqRGFpu8N9jL5B
- n2kUC/GDmgiskk+gLnDWZ/HdV83+sjICeE5Q+eOt8cQc2QvN9t9SEho8t9AHnnVbrwK3
- txvQcS66iGUDDFwHcaYF9Ok2b4f6dze4JaDnZ2EkF4ODnpm8Lzdmxlimj+lbXs6hbOgh
- Yik27obbtc34Vc1q8QPvK6ZCiRJAWFyfgWfYS8QmatVBkqn0uQlmYXve2l0eWxJOCtZ2
- sftw==
-X-Gm-Message-State: APjAAAVHgG8MKjdSiJ56Xp++WE186bWTz6iLgdX/QjAzef28uJsVKd5y
- m+yU/NI3HJDqeI3whLPfLYUF1g==
-X-Google-Smtp-Source: APXvYqxKnUroo208CFyjzxg0auBl2QoUOj9T6CN3+LaoIlDzgTwijaRuwxToGpm9u7DR/bSrMEMWdA==
-X-Received: by 2002:adf:ab11:: with SMTP id q17mr10398482wrc.182.1559724563960; 
- Wed, 05 Jun 2019 01:49:23 -0700 (PDT)
-Received: from dell ([2.27.167.43])
- by smtp.gmail.com with ESMTPSA id y2sm32449365wra.58.2019.06.05.01.49.23
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 05 Jun 2019 01:49:23 -0700 (PDT)
-Date: Wed, 5 Jun 2019 09:49:21 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Johan Hovold <johan@kernel.org>
-Subject: Re: [PATCH 2/8] i2c: i2c-qcom-geni: Signify successful driver probe
-Message-ID: <20190605084921.GQ4797@dell>
-References: <20190604104455.8877-1-lee.jones@linaro.org>
- <20190604104455.8877-2-lee.jones@linaro.org>
- <20190605062020.GL22737@tuxbook-pro> <20190605071625.GK4797@dell>
- <20190605075656.GC29637@localhost> <20190605082047.GM4797@dell>
- <20190605083353.GD29637@localhost>
+ id 1hYRed-00018w-8X; Wed, 05 Jun 2019 08:52:20 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 01A322075C;
+ Wed,  5 Jun 2019 08:52:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559724738;
+ bh=33U2EKfjRS7h+XMGkmD3adAxfr6fGPYO5U7ZjaS/GaY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Jg8LNDdI0PoUYPg/zVrHza4ANwwsNV4xpyvG90wnOrXz6LjtnDwRiaa5W+ti7SflB
+ 7ATBvjKJU2WdvbuNwRTWRQPx0hbf1OrcQiHrmNoWTdDl+jVvYwWMzvNGvfBN/4HMx2
+ 44ObQkLWTyjt8JccrcHrk/wdy3CfHRaHp+UMDTTo=
+Date: Wed, 5 Jun 2019 10:52:16 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: Re: [PATCH] USB: move usb debugfs directory creation to the usb
+ common core
+Message-ID: <20190605085216.GB26984@kroah.com>
+References: <20190604093258.GB30054@kroah.com>
+ <20190604115919.GA24346@kroah.com>
+ <1559721031.8487.99.camel@mhfsdcap03>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190605083353.GD29637@localhost>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1559721031.8487.99.camel@mhfsdcap03>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_014926_538565_D5EF951F 
-X-CRM114-Status: GOOD (  18.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190605_015219_338348_3963C994 
+X-CRM114-Status: GOOD (  22.65  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,50 +75,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, david.brown@linaro.org, gregkh@linuxfoundation.org,
- linus.walleij@linaro.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- wsa+renesas@sang-engineering.com, alokc@codeaurora.org,
- kramasub@codeaurora.org, linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
+Cc: devicetree@vger.kernel.org, Felipe Balbi <felipe.balbi@linux.intel.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAwNSBKdW4gMjAxOSwgSm9oYW4gSG92b2xkIHdyb3RlOgoKPiBPbiBXZWQsIEp1biAw
-NSwgMjAxOSBhdCAwOToyMDo0N0FNICswMTAwLCBMZWUgSm9uZXMgd3JvdGU6Cj4gPiBPbiBXZWQs
-IDA1IEp1biAyMDE5LCBKb2hhbiBIb3ZvbGQgd3JvdGU6Cj4gCj4gPiA+IE5vLCB3ZSBkb24ndCBh
-ZGQgbm9pc2UgbGlrZSB0aGlzIHRvIHRoZSBsb2dzIGp1c3QgYmVjYXVzZSBpdCBtYXkgYmUKPiA+
-ID4gdXNlZnVsIHdoaWxlIGRlYnVnZ2luZy4gRXZlbiBvbmUtbGluZXJzIGFkZCB1cC4KPiA+IAo+
-ID4gT25lIGxpbmUgcGVyIGRldmljZSBpcyBzaG91bGQgbm90IGNhdXNlIGFuIGlzc3VlLgo+ID4g
-Cj4gPiBQcm9ibGVtcyBvY2N1ciB3aGVuIGRldmVsb3BlcnMgdHJ5IHRvIHByaW50IGFsbCBraW5k
-cyBvZiBkZXZpY2UKPiA+IHNwZWNpZmljcyB0byB0aGUgYm9vdCBsb2cuICBBIHNpbXBsZSwgc2lu
-Z2xlIGxpbmUgZm9yIHN1Y2ggYW4KPiA+IGltcG9ydGFudCBkZXZpY2UvY29udHJvbGxlciBoYXMg
-bW9yZSBiZW5lZml0cyB0aGFuIGRyYXdiYWNrcy4KPiAKPiBXaGF0IGFib3V0IHRoZSB0aG91c2Fu
-ZHMgb2YgcHJvYmUgZnVuY3Rpb25zIHdoaWNoIGRvIG5vdCBjdXJyZW50bHkgc3BhbQo+IHRoZSBs
-b2dzPyBJZiB5b3Ugd2FudCB0byBzZWUgYWxsIHN1Y2Nlc3NmdWwgcHJvYmVzIHJlbGlhYmx5LCB5
-b3UgdGVsbAo+IGRyaXZlciBjb3JlIHRvIHByaW50IGl0Lgo+IAo+ID4gPiBUaGVyZSBhcmUgcGxl
-bnR5IG9mIG9wdGlvbnMgZm9yIGRlYnVnZ2luZyBhbHJlYWR5IHJhbmdpbmcgZnJvbSBhZGRpbmcg
-YQo+ID4gPiB0ZW1wb3JhcnkgZGV2X2luZm8oKSB0byB0aGUgcHJvYmUgZnVuY3Rpb24gaW4gcXVl
-c3Rpb24gdG8gdXNpbmcgZHluYW1pYwo+ID4gPiBkZWJ1Z2dpbmcgdG8gaGF2ZSBkcml2ZXIgY29y
-ZSBsb2cgZXZlcnkgc3VjY2Vzc2Z1bCBwcm9iZS4KPiA+IAo+ID4gVGhpcyBpcyB3aGF0IEkgZW5k
-ZWQgdXAgZG9pbmcuICBJdCB3YXMgdGltZSBjb25zdW1pbmcgdG8gcGFyc2UgdGhvdWdoCj4gPiBh
-IGxvZyBvZiB0aGF0IHNpemUgd2hlbiB5b3UgaGF2ZSBubyBwYWdpbmcgb3Iga2V5Ym9hcmQuCj4g
-Cj4gV2l0aCB0aGUgcmlnaHQgY29tbWFuZC1saW5lIG9wdGlvbiB0byBlbmFibGUgZHluYW1pYyBk
-ZWJ1Z2dpbmcgeW91IGdldAo+IG9uZSBsaW5lIHBlciBzdWNjZXNzZnVsIHByb2JlLCBqdXN0IGxp
-a2UgeW91IHdhbnRlZC4gT3IgYXJlIHlvdSBub3cKPiBzYXlpbmcgdGhhdCBvbmUtbGluZSBwZXIg
-ZGV2aWNlIGlzIHRvbyBtdWNoIGFmdGVyIGFsbD8gOykKCldoaWNoIGNvbW1hbmQgbGluZSBvcHRp
-b24gYXJlIHlvdSBwZXJ0YWluaW5nIHRvPwoKPiA+ID4gQW5kIGluIHRoaXMgY2FzZSB5b3Ugc2F5
-IHRoZSBkcml2ZXIgd2FzIGluIGZhY3QgYWxyZWFkeSBib3VuZDsgdGhhdCBjYW4KPiA+ID4gZWFz
-aWx5IGJlIHZlcmlmaWVkIHRocm91Z2ggc3lzZnMgdG9vIGluIGNhc2UgdGhpbmdzIGFyZW4ndCBi
-ZWhhdmluZyB0aGUKPiA+ID4gd2F5IHlvdSBleHBlY3QuCj4gPiAKPiA+IE5vdCBpbiBhIG5vbi1i
-b290aW5nIHN5c3RlbSB3aXRoIG5vIGtleWJvYXJkIHlvdSBjYW4ndC4gOykKPiAKPiBGYWlyIGVu
-b3VnaCwgYnV0IHRoZSBhYm92ZSB3b3VsZCBzdGlsbCB3b3JrLgoKLS0gCkxlZSBKb25lcyBb5p2O
-55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3Bl
-biBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwg
-VHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, Jun 05, 2019 at 03:50:31PM +0800, Chunfeng Yun wrote:
+> On Tue, 2019-06-04 at 13:59 +0200, Greg Kroah-Hartman wrote:
+> > On Tue, Jun 04, 2019 at 11:32:58AM +0200, Greg Kroah-Hartman wrote:
+> > > The USB gadget subsystem wants to use the USB debugfs root directory, so
+> > > move it to the common "core" USB code so that it is properly initialized
+> > > and removed as needed.
+> > > 
+> > > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > > 
+> > > ---
+> > > 
+> > > This should be the "correct" version of this, Chunfeng, can you test
+> > > this to verify it works for you?
+> > > 
+> > > 
+> > > diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+> > > index 18f5dcf58b0d..3b5e4263ffef 100644
+> > > --- a/drivers/usb/common/common.c
+> > > +++ b/drivers/usb/common/common.c
+> > > @@ -15,6 +15,7 @@
+> > >  #include <linux/usb/of.h>
+> > >  #include <linux/usb/otg.h>
+> > >  #include <linux/of_platform.h>
+> > > +#include <linux/debugfs.h>
+> > >  
+> > >  static const char *const ep_type_names[] = {
+> > >  	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
+> > > @@ -291,4 +292,21 @@ struct device *usb_of_get_companion_dev(struct device *dev)
+> > >  EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
+> > >  #endif
+> > >  
+> > > +struct dentry *usb_debug_root;
+> > > +EXPORT_SYMBOL_GPL(usb_debug_root);
+> > > +
+> > > +static int usb_common_init(void)
+> > > +{
+> > > +	usb_debug_root = debugfs_create_dir("usb", NULL);
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +static void usb_common_exit(void)
+> > > +{
+> > > +	debugfs_remove_recursive(usb_debug_root);
+> > > +}
+> > > +
+> > > +module_init(usb_common_init);
+> I tested this patch.
+> 
+> Here use module_init() indeed have a race as Felipe said before.
+> usbcore uses subsys_initcall(), and have a higher priority than
+> module_init(), so when usbcore tries to create "devices" file,
+> usb_debug_root is not created.
+
+Ah, let me fix that, it should have the same init level and I'll ensure
+it comes first in the linking.
+
+> after I replace it by postcore_initcall() (debugfs uses
+> core_initcall()), test two cases:
+> 
+> 1. buildin usbcore/udc-core
+> 
+>     "usb" directory is created, and usb/devices file is also created by
+> usbcore
+> 
+> 2. build both usbcore and gadget as ko
+> 
+>     usbcore.ko, udc-core.ko and usb-common.ko are created. 
+> 
+>    2.1 
+>        insmod usb-common.ko   // "usb" directory is created
+>        insmod usb-core.ko   // usb/devices file is created
+> 
+>    2.2
+>        rmmod usb-common.ko  // failed, usb_common is in use by usb-core
+> 
+>    2.3 
+>        rmmod usb-core.ko   // usb/devices file is destroyed
+>        rmmod usb-common.ko  // usb directory is destroyed
+> 
+>    2.4 
+>        insmod usb-common.ko   // "usb" directory is created
+>        insmod udc-core.ko
+> 
+>    2.5
+>        rmmod usb-common.ko  // failed, usb_common is in use by udc-core
+> 
+>    2.6 
+>        rmmod udc-core.ko
+>        rmmod usb-common.ko  // usb directory is destroyed
+> 
+> they are all in line with expectations
+
+Wonderful!
+
+Let me fix up the init level, and the build issue tha kbuild found, and
+post a v2 patch.
+
+thanks,
+
+greg k-h
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
