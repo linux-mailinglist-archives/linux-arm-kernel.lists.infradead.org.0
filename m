@@ -2,66 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FE0E354AD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 02:19:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68DF7354CF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 02:48:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0cXa0iEOy8W+73PQJtxecKP2wVOBry+0YCHaCrUpQoM=; b=dB0sK0yAFE+iJxRaHxBF+81oQ
-	f3TaJ7zfloTZxt5WWFoYJkBPYjGmxLBO0ZNbayKRh+zuYEqmrNICcSvmGqxn/OgBG+INq7yhtKic4
-	XUZ+/SK8Z0/lCwl6xCZK4LXYWyL0ZifdViZXodDWXL1tPXdDSZWBNX/5N2ZMafbLfasdVE6bAARfb
-	aQ4BHYo/iv7hCXe6oiafi7OI8wBpCBoC0Er4Q7JUN7jeMRJMyVb6u76ffPacigQmXszNE9SKB8mMG
-	drHaOZS4DrHEkbyTaLECGQwHV9ZdY9oFOZgu13T4F0DYbLszj83tkGTCCvplYaiV9lG/sUiorKxab
-	5Fqlzu4uw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pBui0NIR0/Isc5w2FkCuj+dF4HeCWyBe9RHDRyIPbc0=; b=AUePR68wytVhKv
+	VWu5e9LhvDVcN693bo0QjZPAyjPXJPB1181CYAt69Y0xnN4Qra55L6oX6LPOe5KpsYiWycm8v/odr
+	SbnjIGf6OLMQ/YKsQncwN08iDi1takjTIEL8VqPO9dC8iN+4jzUt7HZueZMPCs02kUgoDgMyzhz1K
+	QgD52YXZyjgIf+meit1l+fvXKQTyKDYWNlkn77ycc32lFgsRxxo8GvGmU47NsNgcKieq7NtkSR4o9
+	Lw9ftvREsrV1a9cVCV8aTRiUKdzdrlpuhMtjr7c9WjM2Ifx5j+8BgwmDhPzxwWylLdadtYBRq3XeA
+	iQBAaQXVS7RubgG0f0pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYJe0-0003b4-FB; Wed, 05 Jun 2019 00:19:08 +0000
-Received: from anholt.net ([50.246.234.109])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYJds-0003Zv-MU; Wed, 05 Jun 2019 00:19:02 +0000
-Received: from localhost (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id F1D8510A04E7;
- Tue,  4 Jun 2019 17:18:57 -0700 (PDT)
-X-Virus-Scanned: Debian amavisd-new at anholt.net
-Received: from anholt.net ([127.0.0.1])
- by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
- with LMTP id v6jXS3FLFHVr; Tue,  4 Jun 2019 17:18:55 -0700 (PDT)
-Received: from eliezer.anholt.net (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id A54C710A288F;
- Tue,  4 Jun 2019 17:18:55 -0700 (PDT)
-Received: by eliezer.anholt.net (Postfix, from userid 1000)
- id 280592FE3AAE; Tue,  4 Jun 2019 17:18:55 -0700 (PDT)
-From: Eric Anholt <eric@anholt.net>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, stefan.wahren@i2se.com,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH 4/4] cpufreq: add driver for Raspbery Pi
-In-Reply-To: <20190604173223.4229-5-nsaenzjulienne@suse.de>
-References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
- <20190604173223.4229-5-nsaenzjulienne@suse.de>
-User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
- (x86_64-pc-linux-gnu)
-Date: Tue, 04 Jun 2019 17:18:54 -0700
-Message-ID: <87d0jszxxt.fsf@anholt.net>
+	id 1hYK6E-0004tv-DM; Wed, 05 Jun 2019 00:48:18 +0000
+Received: from mail7-215.sinamail.sina.com.cn ([202.108.7.215])
+ by bombadil.infradead.org with smtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYK67-0004rU-ST
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 00:48:14 +0000
+Received: from unknown (HELO localhost.localdomain)([123.112.52.63])
+ by sina.com with ESMTP
+ id 5CF7111B00004B92; Wed, 5 Jun 2019 08:47:25 +0800 (CST)
+X-Sender: hdanton@sina.com
+X-Auth-ID: hdanton@sina.com
+X-SMAIL-MID: 970774395166
+From: Hillf Danton <hdanton@sina.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 07/26] iommu/dma: move the arm64 wrappers to common code
+Date: Wed,  5 Jun 2019 08:47:17 +0800
+Message-Id: <20190422175942.18788-8-hch@lst.de>
+In-Reply-To: <20190422175942.18788-1-hch@lst.de>
+References: <20190422175942.18788-1-hch@lst.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+Precedence: bulk
+X-Mailing-List: linux-kernel@vger.kernel.org
+Archived-At: <https://lore.kernel.org/lkml/20190422175942.18788-8-hch@lst.de/>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_171900_774058_03B2C574 
-X-CRM114-Status: GOOD (  21.94  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190604_174812_103363_EACF161F 
+X-CRM114-Status: GOOD (  15.10  )
+X-Spam-Score: -1.7 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [50.246.234.109 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [202.108.7.215 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hdanton[at]sina.com)
+ -1.0 MAILING_LIST_MULTI     Multiple indicators imply a widely-seen list
+ manager
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -70,152 +67,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- ptesarik@suse.com, sboyd@kernel.org, mturquette@baylibre.com,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, mbrugger@suse.de, ssuloev@orpaltech.com
-Content-Type: multipart/mixed; boundary="===============7788511725489577666=="
+Cc: Tom Lendacky <thomas.lendacky@amd.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============7788511725489577666==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha512; protocol="application/pgp-signature"
 
---=-=-=
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
+Hi Christoph
 
-Nicolas Saenz Julienne <nsaenzjulienne@suse.de> writes:
-
-> Raspberry Pi's firmware offers and interface though which update it's
-> performance requirements. It allows us to request for specific runtime
-> frequencies, which the firmware might or might not respect, depending on
-> the firmware configuration and thermals.
->
-> As the maximum and minimum frequencies are configurable in the firmware
-> there is no way to know in advance their values. So the Raspberry Pi
-> cpufreq driver queries them, builds an opp frequency table to then
-> launch cpufreq-dt.
->
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
->
-> Changes since RFC:
->   - Alphabetically ordered relevant stuff
->   - Updated Kconfig to select firmware interface
->   - Correctly unref clk_dev after use
->   - Remove all opps on failure
->   - Remove use of dev_pm_opp_set_sharing_cpus()
->
->  drivers/cpufreq/Kconfig.arm           |  8 +++
->  drivers/cpufreq/Makefile              |  1 +
->  drivers/cpufreq/raspberrypi-cpufreq.c | 84 +++++++++++++++++++++++++++
->  3 files changed, 93 insertions(+)
->  create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
->
-> diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
-> index f8129edc145e..556d432cc826 100644
-> --- a/drivers/cpufreq/Kconfig.arm
-> +++ b/drivers/cpufreq/Kconfig.arm
-> @@ -133,6 +133,14 @@ config ARM_QCOM_CPUFREQ_HW
->  	  The driver implements the cpufreq interface for this HW engine.
->  	  Say Y if you want to support CPUFreq HW.
->=20=20
-> +config ARM_RASPBERRYPI_CPUFREQ
-> +	tristate "Raspberry Pi cpufreq support"
-> +	select RASPBERRYPI_FIRMWARE
-> +	help
-> +	  This adds the CPUFreq driver for Raspberry Pi
+On Mon, 22 Apr 2019 19:59:23 +0200 Christoph Hellwig wrote:
+> @@ -744,18 +816,22 @@ static void __invalidate_sg(struct scatterlist *sg, int nents)
+>   * impedance-matching, to be able to hand off a suitably-aligned list,
+>   * but still preserve the original offsets and sizes for the caller.
+>   */
+> -int iommu_dma_map_sg(struct device *dev, struct scatterlist *sg,
+> -		int nents, int prot)
+> +static int iommu_dma_map_sg(struct device *dev, struct scatterlist *sg,
+> +		int nents, enum dma_data_direction dir, unsigned long attrs)
+>  {
+>  	struct iommu_domain *domain = iommu_get_dma_domain(dev);
+>  	struct iommu_dma_cookie *cookie = domain->iova_cookie;
+>  	struct iova_domain *iovad = &cookie->iovad;
+>  	struct scatterlist *s, *prev = NULL;
+> +	int prot = dma_info_to_prot(dir, dev_is_dma_coherent(dev), attrs);
+>  	dma_addr_t iova;
+>  	size_t iova_len = 0;
+>  	unsigned long mask = dma_get_seg_boundary(dev);
+>  	int i;
+>  
+> +	if (!(attrs & DMA_ATTR_SKIP_CPU_SYNC))
+> +		iommu_dma_sync_sg_for_device(dev, sg, nents, dir);
 > +
-> +	  If in doubt, say N.
+>  	/*
+>  	 * Work out how much IOVA space we need, and align the segments to
+>  	 * IOVA granules for the IOMMU driver to handle. With some clever
+> @@ -815,12 +891,16 @@ int iommu_dma_map_sg(struct device *dev, struct scatterlist *sg,
+>  	return 0;
+>  }
+>  
+> -void iommu_dma_unmap_sg(struct device *dev, struct scatterlist *sg, int nents,
+> -		enum dma_data_direction dir, unsigned long attrs)
+> +static void iommu_dma_unmap_sg(struct device *dev, struct scatterlist *sg,
+> +		int nents, enum dma_data_direction dir, unsigned long attrs)
+>  {
+>  	dma_addr_t start, end;
+>  	struct scatterlist *tmp;
+>  	int i;
 > +
->  config ARM_S3C_CPUFREQ
->  	bool
->  	help
-> diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
-> index 689b26c6f949..121c1acb66c0 100644
-> --- a/drivers/cpufreq/Makefile
-> +++ b/drivers/cpufreq/Makefile
-> @@ -64,6 +64,7 @@ obj-$(CONFIG_ARM_PXA2xx_CPUFREQ)	+=3D pxa2xx-cpufreq.o
->  obj-$(CONFIG_PXA3xx)			+=3D pxa3xx-cpufreq.o
->  obj-$(CONFIG_ARM_QCOM_CPUFREQ_HW)	+=3D qcom-cpufreq-hw.o
->  obj-$(CONFIG_ARM_QCOM_CPUFREQ_KRYO)	+=3D qcom-cpufreq-kryo.o
-> +obj-$(CONFIG_ARM_RASPBERRYPI_CPUFREQ) 	+=3D raspberrypi-cpufreq.o
->  obj-$(CONFIG_ARM_S3C2410_CPUFREQ)	+=3D s3c2410-cpufreq.o
->  obj-$(CONFIG_ARM_S3C2412_CPUFREQ)	+=3D s3c2412-cpufreq.o
->  obj-$(CONFIG_ARM_S3C2416_CPUFREQ)	+=3D s3c2416-cpufreq.o
-> diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c b/drivers/cpufreq/rasp=
-berrypi-cpufreq.c
-> new file mode 100644
-> index 000000000000..2b3a195a9d37
-> --- /dev/null
-> +++ b/drivers/cpufreq/raspberrypi-cpufreq.c
-> @@ -0,0 +1,84 @@
-> +// SPDX-License-Identifier: GPL-2.0
+> +	if (!(attrs & DMA_ATTR_SKIP_CPU_SYNC) == 0)
+> +		iommu_dma_sync_sg_for_cpu(dev, sg, nents, dir);
+> +
+Is it a typo?
+
+>  	/*
+>  	 * The scatterlist segments are mapped into a single
+>  	 * contiguous IOVA allocation, so this is incredibly easy.
+[...]
+> +
 > +/*
-> + * Raspberry Pi cpufreq driver
-> + *
-> + * Copyright (C) 2019, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> + * The IOMMU core code allocates the default DMA domain, which the underlying
+> + * IOMMU driver needs to support via the dma-iommu layer.
 > + */
+Over comment.
+
+> +void iommu_setup_dma_ops(struct device *dev, u64 dma_base, u64 size)
+> +{
+> +	struct iommu_domain *domain = iommu_get_domain_for_dev(dev);
 > +
-> +#include <linux/clk.h>
-> +#include <linux/cpu.h>
-> +#include <linux/cpufreq.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/pm_opp.h>
+> +	if (!domain)
+> +		goto out_err;
 > +
-> +static const struct of_device_id machines[] __initconst =3D {
-> +	{ .compatible =3D "raspberrypi,3-model-b-plus" },
-> +	{ .compatible =3D "raspberrypi,3-model-b" },
-> +	{ .compatible =3D "raspberrypi,2-model-b" },
-> +	{ /* sentinel */ }
-> +};
+> +	/*
+> +	 * The IOMMU core code allocates the default DMA domain, which the
+> +	 * underlying IOMMU driver needs to support via the dma-iommu layer.
+> +	 */
+> +	if (domain->type == IOMMU_DOMAIN_DMA) {
+> +		if (iommu_dma_init_domain(domain, dma_base, size, dev))
+> +			goto out_err;
+> +		dev->dma_ops = &iommu_dma_ops;
+> +	}
+> +
+> +	return;
+> +out_err:
+> +	 pr_warn("Failed to set up IOMMU for device %s; retaining platform DMA ops\n",
+> +		 dev_name(dev));
+> +}
+> +
 
-I think I'd skip the compatible string check here.  The firmware's
-clock-management should be well-tested by folks playing with clocking in
-the downstream tree.  There aren't any firmware differences in the
-processing of these clock management packets, to my recollection.
+BR
+Hillf
 
-Other than that, I'm happy with the series and would give it my
-acked-by.
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAlz3Cm4ACgkQtdYpNtH8
-nugFjg/7BW+vK+pRjIN9r/4ejWmipNwzyurktOyEn+OwCgwTSTkdlvGm/SllSKHr
-3Y4BBLmSFf3xE87lNTkLmpkryi0LyBa1NokmCo0P21QoAkKpg4ZswtA+ti6o2cuR
-oHw+cZ9o0sC3HvBFQknojZ7k/y91lROfQb/0h0FgE+9fQwpf/tfzazbSGHj8BF4x
-Qil0ZEdJaw+dRzAJCSr250SGOqdifxcswEeIjesZZeR1uIOjgm74j9gEMrHagPQq
-86Nq5RqOEe9eIUv7tADT+pFHFqQwmoWp5FSCgGxXhTraJlEf0O2bOUVWE9tXvovl
-3Zz4vcEeyzUz5QTqVHERPyN4gbeHO+6x4QoRQeq7Z7GiIJKCMX74OkoGgNAIR0gT
-N2gnGxiAcSyY8crQkfa4kdf7jCGEWLIkBHo1R2N4ee3yYZP3ncCQeL4YoJ/jv2gG
-I6q9SzydecKAkQyQZaOElK3aJAIOdnuxs3H41r6lPhjB8B+ayevWUJL5ZkyVDlCr
-Ic1HXmyvoTLZQ6/doXsnu9DFSiZj45kUjyymVpvUpoygu8KhcSIdnuuYoidNkvnv
-bpSww6H3sFRU5b5CAPBM/kC7tnxzEK4kWIgZEqP7jA0vtv/2g08k0KwaqgPQDQDa
-sBQ2QqaHMXDXVaDMFEnDFDeFDl8UwhpZqvIhiKwy7iU9LkRH/mE=
-=V302
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============7788511725489577666==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7788511725489577666==--
-
