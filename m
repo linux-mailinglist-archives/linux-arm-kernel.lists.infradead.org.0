@@ -2,57 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84064357BB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:28:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0A09357C3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9+wMGg8bUdppx8EtoJkjDTtA6oZgVQ8KrB6OTrZ6oLI=; b=E0lXCYEZmvWCu/sFV4UWaTOAh
-	6sUa95yfS1sKgVjPgUwqQKjXwlVsSSa9S3oG+LfdphEokhuesG7QQqXj34ClQTVuVLLyokAqZkHg2
-	WPJmOo/kHjN5jOV8MLm5unmqrTxWS1FdOrQ8JR4ipjaJdCO3clax+XJHCg6NBp6WrSNiXSxAYMn30
-	CAgasG6yEcpYRGpfD6WJ80o3QLDyCynF3AcT8lZecupSPlT5P8SJVX9Q3APWpEsli4PRWuyToekoM
-	Ep26J6ZlSQDEK/z2XHmM2nq+xNxBLT1KJhEaX9dqUOfcCb6BNj8AoyqZnzoebTRuXuVQ8lhN1WEpA
-	6ybL6t9Jg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y9q4nLs1xgKXy/XRsI7QhmP7+NlMmZKxeFx9dPRHGgk=; b=R/SKpzJLlgN9JE
+	+EaYFPvE73g/5bMk3m74PMeaSFBdyli61QNHHkmIPA2KwEiiMWLQyA5Ss0f8lJHZ20V2+RgEQn/gZ
+	DDfWJiiPjVQ9o64Syt4cI6/uheXzPCSgA9f4hXsDtftcn7Raz8cDFTE5BL45py1eNrnsJMwYp5a4w
+	P0mruBubYVSwHQ6m+zgSnTv/MBA/G86mT9tCe71g/8SBg+qEXKT5TNGnCUVXEeYmPpOAJWTtAzhKM
+	7RpaSRzVfdkRF4UQPdhrGx9/RAVv6iVal3RMfXYpNP0RhgpaCAGciw42K+A2lU6WHYFRHTtNzyldz
+	CdrEr/4ve2cFq8LVKb0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYQLv-00012f-3i; Wed, 05 Jun 2019 07:28:55 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1hYQOf-0002cL-8m; Wed, 05 Jun 2019 07:31:45 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYQLn-00011k-D7; Wed, 05 Jun 2019 07:28:48 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 05 Jun 2019 00:28:46 -0700
-X-ExtLoop1: 1
-Received: from pipin.fi.intel.com (HELO pipin) ([10.237.72.175])
- by orsmga006.jf.intel.com with ESMTP; 05 Jun 2019 00:28:44 -0700
-From: Felipe Balbi <felipe.balbi@linux.intel.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH] USB: move usb debugfs directory creation to the usb
- common core
-In-Reply-To: <20190604124349.GA10203@kroah.com>
-References: <20190604093258.GB30054@kroah.com>
- <87tvd5illh.fsf@linux.intel.com> <20190604124349.GA10203@kroah.com>
-Date: Wed, 05 Jun 2019 10:28:12 +0300
-Message-ID: <871s08ebjn.fsf@linux.intel.com>
+ id 1hYQOY-0002br-P9
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:31:40 +0000
+Received: by mail-wm1-x342.google.com with SMTP id f204so1146662wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 00:31:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=IWnG5mk+FSYYj2lHa0zQw85I3E1T6olPRsvdmWWZtDA=;
+ b=LnC7DlOAeqIU6jCar36+vJfnaBNJe7XDi+C9PTCBaCI6KbsqmLbikd0R4ff2IsEJrd
+ KXDU+/9i/2/3H1156mWXbRspGIKTixZGHqqBSfwvQSbknV1dXCvlxMJcXa0bwG95q18r
+ Dvn1fLNcMEz8cnM83vCka5cC2NsTRflgoRIxCS58wYgGh6EIKIFolkHw6lC0zeqHhwoZ
+ C5WhuwIxioR/vJCvvBa8ptAsN2IQYEGK+45vS1tGxq2gI3LCo/PkEGHyPvTx+LBX3umY
+ i8BcoGDi3C3mbCMjmj75qj+L1JYcTf2IkZtDp57NqjuyLaG2qdUm2YtKhyXE/eHv5cxy
+ 4zeA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=IWnG5mk+FSYYj2lHa0zQw85I3E1T6olPRsvdmWWZtDA=;
+ b=EZgbpNuGZfKnXiSI9rZrj6IOnjr9s/xTydIh265nnPGZPNXXLb6PAcnUoPzn45d2Je
+ RtbfiKfkAs1inwX1KudiUvkXDjBbqEpBZQ3OSULUiPln0K6HjumTp6N9eJWtUvUzigOL
+ YNnjVd3cRWMTVstBaDlqI/PArqIiHNI1PrK6QzjOR2Ouook++Gh52wVXZkGDweRWcpya
+ 3+grfaB/LOJz2ZaCytNhmB7KnjVyn/l2DTqWKSYa2MQd8tyQ+YSWmfyg4p+HVDt6+EkZ
+ 75cygMMfwZ9C7S7Qyd5TeKUyzz9eYZ9g8i4ldMya+uja2THqzcUSiCMUQyhqI45Mdiw5
+ jmGw==
+X-Gm-Message-State: APjAAAXYLORekwlVyiMHVnmn+O8Zt9BfPXq2pjFP8QHpbNgkyYHujJ0N
+ qR7J6kdpvy8k4c5R01GoDSNiAg==
+X-Google-Smtp-Source: APXvYqyCnKW0jfvwBVA6aJcAK6VfcLrnJuvLPQVDIWk0oxlDsnBP0uEq+gISa827spE4AsPpgFfkTQ==
+X-Received: by 2002:a1c:6c08:: with SMTP id h8mr14401084wmc.62.1559719896073; 
+ Wed, 05 Jun 2019 00:31:36 -0700 (PDT)
+Received: from dell ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id u11sm13722491wrn.1.2019.06.05.00.31.34
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 05 Jun 2019 00:31:35 -0700 (PDT)
+Date: Wed, 5 Jun 2019 08:31:33 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: Re: [PATCH 4/8] pinctrl: qcom: sdm845: Provide ACPI support
+Message-ID: <20190605073133.GL4797@dell>
+References: <20190604104455.8877-1-lee.jones@linaro.org>
+ <20190604104455.8877-4-lee.jones@linaro.org>
+ <20190605061721.GK22737@tuxbook-pro>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190605061721.GK22737@tuxbook-pro>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_002847_515861_229BDC91 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_003138_841700_2C8EA61C 
+X-CRM114-Status: GOOD (  25.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,90 +100,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
+ gregkh@linuxfoundation.org, linus.walleij@linaro.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ david.brown@linaro.org, alokc@codeaurora.org, kramasub@codeaurora.org,
+ linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9177611604089989331=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============9177611604089989331==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha256; protocol="application/pgp-signature"
-
---=-=-=
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
-
-
-Hi,
-
-Greg Kroah-Hartman <gregkh@linuxfoundation.org> writes:
->> Greg Kroah-Hartman <gregkh@linuxfoundation.org> writes:
->> > diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
->> > index 7fcb9f782931..f3d6b1ab80cb 100644
->> > --- a/drivers/usb/core/usb.c
->> > +++ b/drivers/usb/core/usb.c
->> > @@ -1185,19 +1185,17 @@ static struct notifier_block usb_bus_nb =3D {
->> >  	.notifier_call =3D usb_bus_notify,
->> >  };
->> >=20=20
->> > -struct dentry *usb_debug_root;
->> > -EXPORT_SYMBOL_GPL(usb_debug_root);
->> > +static struct dentry *usb_devices_root;
->> >=20=20
->> >  static void usb_debugfs_init(void)
->> >  {
->> > -	usb_debug_root =3D debugfs_create_dir("usb", NULL);
->> > -	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
->> > -			    &usbfs_devices_fops);
->> > +	usb_devices_root =3D debugfs_create_file("devices", 0444, usb_debug_=
-root,
->>=20
->> don't we have a race now? Can usbcore ever probe before usb common?
->
-> How can that happen if usb_debug_root is in usb common?  The module
-> loader will not let that happen.  Or it shouldn't :)
-
-argh, indeed. The very fact that usbcore tries to resolve usb_debug_root
-already forces a dependency :-p
-
-=2D-=20
-balbi
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAlz3bwwACgkQzL64meEa
-mQYjnQ/9ERfLIDtB7Gh0eaevRNVrN6PGvd94Q4mu7LJ5qDfm/+UbfGucwDeINNVH
-CggpHymmca0HA3+OsdoUDf5x15oMPauyDulSrIK2Ldbvdupvq7MOsODxm0il0kO2
-ItTKb7gdV7k1oULdemrz3ONNTyB6glyAA1ed+6w0bbK88ZEmg1+el8ZHNA2w78Kx
-UnA5uHAa9P2eJ3fDDOw895EqD/NnZLO0hWVxEN+TvHc/iKI7afjejdwPgjcjF1f2
-yVeZXyJcMglpCc5zrzRPLzSBy3ysn99tQFWkuPUiDIaV8f795Zgb0m16YFjUCfZt
-/u3K71bO3b0rKgSsJgmuMFw8dZaf2Cz54uXvHY3tw2EBtSbQ1aMlRXJZjt2MXRJB
-zmyejHBzTC0zQVWsJpZZmL+dNXaIcSH/NU12CVzlo5F36vmbQ/lyfiEbvnfh/t7H
-VnliozWmqZxUI676WvFL/tRVsVLw6TtOLcD4ZRveIX6iUstun++SuKLw/tAj+jex
-2O04C/yPRCoerZ7HiWT6kBfcZlQsMua4BhM7jB0mdp3P3ReyqSsnUrRbE8/b1BEv
-aKm/SCbUdGo09YakAsVT2gRosjH6Aygd9NqsO+uyRCaA/sSvSit6wKNhQsC2apK2
-S7C3MnT6a8w1pyZ8kA3Fl3+VYub8N5Z22op6YYVM7FHS+Smtlpw=
-=88ax
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============9177611604089989331==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============9177611604089989331==--
-
+T24gVHVlLCAwNCBKdW4gMjAxOSwgQmpvcm4gQW5kZXJzc29uIHdyb3RlOgoKPiBPbiBUdWUgMDQg
+SnVuIDAzOjQ0IFBEVCAyMDE5LCBMZWUgSm9uZXMgd3JvdGU6Cj4gCj4gPiBUaGlzIHBhdGNoIHBy
+b3ZpZGVzIGJhc2ljIHN1cHBvcnQgZm9yIGJvb3Rpbmcgd2l0aCBBQ1BJIGluc3RlYWQKPiA+IG9m
+IHRoZSBjdXJyZW50bHkgc3VwcG9ydGVkIERldmljZSBUcmVlLiAgV2hlbiBkb2luZyBzbyB0aGVy
+ZSBhcmUgYQo+ID4gY291cGxlIG9mIGRpZmZlcmVuY2VzIHdoaWNoIHdlIG5lZWQgdG8gdGFrZW4g
+aW50byBjb25zaWRlcmF0aW9uLgo+ID4gCj4gPiBGaXJzdGx5LCB0aGUgU0RNODUwIEFDUEkgdGFi
+bGVzIG9taXQgaW5mb3JtYXRpb24gcGVydGFpbmluZyB0byB0aGUKPiA+IDQgcmVzZXJ2ZWQgR1BJ
+T3Mgb24gdGhlIHBsYXRmb3JtLiAgSWYgTGludXggYXR0ZW1wdHMgdG8gdG91Y2gvCj4gPiBpbml0
+aWFsaXNlIGFueSBvZiB0aGVzZSBsaW5lcywgdGhlIGZpcm13YXJlIHdpbGwgcmVzdGFydCB0aGUK
+PiA+IHBsYXRmb3JtLgo+ID4gCj4gPiBTZWNvbmRseSwgd2hlbiBib290aW5nIHdpdGggQUNQSSwg
+aXQgaXMgZXhwZWN0ZWQgdGhhdCB0aGUgZmlybXdhcmUKPiA+IHdpbGwgc2V0LXVwIHRoaW5ncyBs
+aWtlOyBSZWd1bGF0b3JzLCBDbG9ja3MsIFBpbiBGdW5jdGlvbnMsIGV0YyBpbgo+ID4gdGhlaXIg
+aWRlYWwgY29uZmlndXJhdGlvbi4gIFRodXMsIHRoZSBwb3NzaWJsZSBQaW4gRnVuY3Rpb25zCj4g
+PiBhdmFpbGFibGUgdG8gdGhpcyBwbGF0Zm9ybSBhcmUgbm90IGFkdmVydGlzZWQgd2hlbiBwcm92
+aWRpbmcgdGhlCj4gPiBoaWdoZXIgR1BJT0QvUGluY3RybCBBUElzIHdpdGggcGluIGluZm9ybWF0
+aW9uLgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBMZWUgSm9uZXMgPGxlZS5qb25lc0BsaW5hcm8u
+b3JnPgo+ID4gLS0tCj4gPiAgZHJpdmVycy9waW5jdHJsL3Fjb20vS2NvbmZpZyAgICAgICAgICB8
+ICAyICstCj4gPiAgZHJpdmVycy9waW5jdHJsL3Fjb20vcGluY3RybC1zZG04NDUuYyB8IDM1ICsr
+KysrKysrKysrKysrKysrKysrKysrKysrLQo+ID4gIDIgZmlsZXMgY2hhbmdlZCwgMzUgaW5zZXJ0
+aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKPiA+IAo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGlu
+Y3RybC9xY29tL0tjb25maWcgYi9kcml2ZXJzL3BpbmN0cmwvcWNvbS9LY29uZmlnCj4gPiBpbmRl
+eCAyZTY2YWI3MmMxMGIuLmFhZmJlOTMyNDI0ZiAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvcGlu
+Y3RybC9xY29tL0tjb25maWcKPiA+ICsrKyBiL2RyaXZlcnMvcGluY3RybC9xY29tL0tjb25maWcK
+PiA+IEBAIC0xNjgsNyArMTY4LDcgQEAgY29uZmlnIFBJTkNUUkxfU0RNNjYwCj4gPiAgCj4gPiAg
+Y29uZmlnIFBJTkNUUkxfU0RNODQ1Cj4gPiAgICAgICAgIHRyaXN0YXRlICJRdWFsY29tbSBUZWNo
+bm9sb2dpZXMgSW5jIFNETTg0NSBwaW4gY29udHJvbGxlciBkcml2ZXIiCj4gPiAtICAgICAgIGRl
+cGVuZHMgb24gR1BJT0xJQiAmJiBPRgo+ID4gKyAgICAgICBkZXBlbmRzIG9uIEdQSU9MSUIgJiYg
+KE9GIHx8IEFDUEkpCj4gPiAgICAgICAgIHNlbGVjdCBQSU5DVFJMX01TTQo+ID4gICAgICAgICBo
+ZWxwCj4gPiAgICAgICAgICAgVGhpcyBpcyB0aGUgcGluY3RybCwgcGlubXV4LCBwaW5jb25mIGFu
+ZCBncGlvbGliIGRyaXZlciBmb3IgdGhlCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waW5jdHJs
+L3Fjb20vcGluY3RybC1zZG04NDUuYyBiL2RyaXZlcnMvcGluY3RybC9xY29tL3BpbmN0cmwtc2Rt
+ODQ1LmMKPiA+IGluZGV4IGM5N2YyMGZjYTVmZC4uNzE4OGJlZTNjZjNlIDEwMDY0NAo+ID4gLS0t
+IGEvZHJpdmVycy9waW5jdHJsL3Fjb20vcGluY3RybC1zZG04NDUuYwo+ID4gKysrIGIvZHJpdmVy
+cy9waW5jdHJsL3Fjb20vcGluY3RybC1zZG04NDUuYwo+ID4gQEAgLTMsNiArMyw3IEBACj4gPiAg
+ICogQ29weXJpZ2h0IChjKSAyMDE2LTIwMTgsIFRoZSBMaW51eCBGb3VuZGF0aW9uLiBBbGwgcmln
+aHRzIHJlc2VydmVkLgo+ID4gICAqLwo+ID4gIAo+ID4gKyNpbmNsdWRlIDxsaW51eC9hY3BpLmg+
+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+ID4gICNpbmNsdWRlIDxsaW51eC9vZi5o
+Pgo+ID4gICNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiA+IEBAIC0xMjc3LDYg
+KzEyNzgsMTAgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBtc21fcGluZ3JvdXAgc2RtODQ1X2dyb3Vw
+c1tdID0gewo+ID4gIAlVRlNfUkVTRVQodWZzX3Jlc2V0LCAweDk5ZjAwMCksCj4gPiAgfTsKPiA+
+ICAKPiA+ICtzdGF0aWMgY29uc3QgaW50IHNkbTg0NV9hY3BpX3Jlc2VydmVkX2dwaW9zW10gPSB7
+Cj4gPiArCTAsIDEsIDIsIDMsIDgxLCA4MiwgODMsIDg0LCAtMQo+ID4gK307Cj4gPiArCj4gPiAg
+c3RhdGljIGNvbnN0IHN0cnVjdCBtc21fcGluY3RybF9zb2NfZGF0YSBzZG04NDVfcGluY3RybCA9
+IHsKPiA+ICAJLnBpbnMgPSBzZG04NDVfcGlucywKPiA+ICAJLm5waW5zID0gQVJSQVlfU0laRShz
+ZG04NDVfcGlucyksCj4gPiBAQCAtMTI4NCwxNCArMTI4OSw0MSBAQCBzdGF0aWMgY29uc3Qgc3Ry
+dWN0IG1zbV9waW5jdHJsX3NvY19kYXRhIHNkbTg0NV9waW5jdHJsID0gewo+ID4gIAkubmZ1bmN0
+aW9ucyA9IEFSUkFZX1NJWkUoc2RtODQ1X2Z1bmN0aW9ucyksCj4gPiAgCS5ncm91cHMgPSBzZG04
+NDVfZ3JvdXBzLAo+ID4gIAkubmdyb3VwcyA9IEFSUkFZX1NJWkUoc2RtODQ1X2dyb3VwcyksCj4g
+PiArCS5yZXNlcnZlZF9ncGlvcyA9IHNkbTg0NV9hY3BpX3Jlc2VydmVkX2dwaW9zLAo+IAo+IFRo
+ZSByZWFzb24gd2h5IHB1dCB0aGVzZSBpbiBEVCBpcyBiZWNhdXNlIHRoZSBsaXN0IGlzIGJvYXJk
+L2Zpcm13YXJlCj4gZGVwZW5kZW50LiBFLmcuIHRoZSBmaXJtd2FyZSBvbiBkYjg0NWMgZG9lcyBu
+b3Qgc3VwcG9ydCB0aGUgcGVyaXBoZXJhbHMKPiB0aGF0IHNpdHMgb24gdGhlc2UgOCBwaW5zIGFu
+ZCBhcyBzdWNoIHRoZXNlIGFyZSBub3QgcmVzZXJ2ZWQuCgpJZiB3ZSBuZWVkIHRvIGJlIG1vcmUg
+cGFydGljdWxhciBhYm91dCB3aGljaCBwbGF0Zm9ybShzKSB0aGlzIGFmZmVjdHMsCndlIGNvdWxk
+IGFkZCBtYXRjaGluZyBiYXNlZCBvbiB0aGVpciBkaWZmZXJlbmNlcyAoc29tZSBBQ1BJIEhJRCBv
+ciBGL1cKdmVyc2lvbi9kZXNjcmlwdG9yLCBldGMpIGFzIGFuZCB3aGVuIHdlIGVuYWJsZSB0aGVt
+IGZvciBib290aW5nIHdpdGgKQUNQSS4KCj4gQnV0IGdpdmVuIHRoYXQgdGhlIHR3byBzdHJ1Y3Rz
+IGxvb2tzIGlkZW50aWNhbCBub3csIGRpZCB5b3UgcGVyaGFwcyBub3QKPiBpbnRlbmQgdG8gYWRk
+LnJlc2VydmVkX2dwaW9zIGZvciB0aGUgbm9uLUFDUEkgY2FzZT8KCkdpdmVuIHlvdXIgZXhhbXBs
+ZSBhYm92ZSwgSSB0aGluayBpdCdzIGJlc3QgdGhhdCB3ZSBsZXQgdGhlCmNvbmZpZ3VyYXRpb24g
+dGFibGVzIGFkdmVydGlzZSB0aGVzZSBpbiB0aGUgZmlyc3QgaW5zdGFuY2UuICBJIG9ubHkKYWRk
+IHRoZW0gaGVyZSBiZWNhdXNlIGl0IGlzIG5vdCBwb3NzaWJsZSB0byBvYnRhaW4gdGhlbSBmcm9t
+CmVsc2V3aGVyZS4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRl
+Y2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0g
+U29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
