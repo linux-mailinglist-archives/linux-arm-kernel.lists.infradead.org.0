@@ -2,66 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42FC735992
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:20:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CF2F359A9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:28:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oa0px8B1q1NCsr07OZcDulmxYAsr/CaSp9nMnWAfAuA=; b=u4YFDGmAPF1xGF
-	Squ4HPN3yMe4/56hEzpFjJOvTD/HLMQWCiQeX1+8atQcHSLGmSafb4Gi6p9rUwrEqHOI1hUd/nlEy
-	y9ZKqqZMWC9aIGSGztoAOStm64bsb9s3dSbZzrGmF5FzHR0rXlx2W+dl5+YmWGUeLEns7e/rS7I0J
-	7n1W0PLg2etvHiSWESySel56khhjkqoJdxkguVn3AqjVcSPCaeRrWBgrrFj9yI4uK+Xtl8pvMovti
-	hQwYS2/EoPcCrnZAoeDTMcHvinjlEo4x4g9CBy7feutFQYtR4avPqVxGpPAbFzWlyFxW4i4LYPCaB
-	tOtGOhSjo77jxAMWZLeQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ryl8HU6TqaN8hmuILQ+PPWmtGCuO00AeenFcxaQvUkU=; b=MCEYB7kHDMrpgw
+	um8QGlFjVX4KrhMlvhhpYB660l+WpDzGuy5nvjiYTwI2DRdXoXoehv09VcM+1rU7ohQ0RIhoS72Gz
+	iQElezQlyh26+kC4G61guHA0WDwiXw5V3LrujJsjfCfGy9clyEqXRmXGL4YPvo1wgSsJKZw3QVePl
+	6KSmEsmyfmb+nFQdZQya6/tQefiAlcJJVTapcrYPPyIPki8GKBryK1dD9SmnsWMFkYnewoZdKku5i
+	AAFMr9YpWU1U/DRHKqe+aOvQU8dch1vmOps4ennBvPWwsCyGbT99lL6cwKQ418Qn5BcXKwT/VF0GQ
+	TotQ6fZIOjliuXqK9ufg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYS5a-00064e-5u; Wed, 05 Jun 2019 09:20:10 +0000
+	id 1hYSDb-0000Se-2g; Wed, 05 Jun 2019 09:28:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYS5P-0005rY-W3
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 09:20:01 +0000
-Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ id 1hYSDT-0000S7-Kj; Wed, 05 Jun 2019 09:28:21 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 59A5E2075B;
- Wed,  5 Jun 2019 09:19:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B1F8A20717;
+ Wed,  5 Jun 2019 09:28:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559726399;
- bh=FZid3iZIC4Rv5X+erq0U81RMe3PNMwfiFD1mq2Y047A=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jJBnlb9OnMtwF7KEkX4mRIJ3lu/ZzZitk7k4ZxZ6UqCOtaRX5psjR9ihBFO/iySqW
- xBwm1h9fTD4Sb2DmeQfavdYll0DKEsyD6RU5N7KkvAackLWQwWExUyhYEjbqC3voWx
- /34xIx6OjmaoIj/vBpFoMl0YSf8pqK40nLY6jk38=
-Date: Wed, 5 Jun 2019 17:19:44 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Andrey Smirnov <andrew.smirnov@gmail.com>
-Subject: Re: [PATCH] usb: phy: mxs: Disable external charger detect in
- mxs_phy_hw_init()
-Message-ID: <20190605091943.GN29853@dragon>
-References: <20190529065948.5492-1-andrew.smirnov@gmail.com>
+ s=default; t=1559726899;
+ bh=O8jFUaIHNHhFCwSgoimMNeuJKeLFh5boOF6WLICbEpQ=;
+ h=Date:From:To:Cc:Subject:From;
+ b=FiXrtfdl7Ez5iV/gHP9vjJGmvSqImAYHTPZMEwXuX9HgOC/7EXQ808E925fUEXosr
+ iOb5iAspD+AXB3OFxxpTeLoITqiwdnamIjK7cQO3haA6ZcV5k4vUZpJ+fvUTFBm9k5
+ FjZG1lzSn/o1kMfIytjRy87EU7xcqMFEKWY8rP2k=
+Date: Wed, 5 Jun 2019 11:28:16 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>
+Subject: [PATCH v2] USB: move usb debugfs directory creation to the usb
+ common core
+Message-ID: <20190605092816.GA23758@kroah.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190529065948.5492-1-andrew.smirnov@gmail.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_022000_047648_C16A0BC6 
-X-CRM114-Status: GOOD (  19.58  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190605_022819_777247_251BD25B 
+X-CRM114-Status: GOOD (  16.85  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -77,81 +72,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Chris Healy <cphealy@gmail.com>, Fabio Estevam <festevam@gmail.com>,
+Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 11:59:48PM -0700, Andrey Smirnov wrote:
-> Since this driver already handles changer detction state, copy the
-> workaround code currently residing in arch/arm/mach-imx/anatop.c into
-> this drier to consolidate the places modifying it.
-> 
-> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-> Cc: Chris Healy <cphealy@gmail.com>
-> Cc: Felipe Balbi <balbi@kernel.org>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: NXP Linux Team <linux-imx@nxp.com>
-> Cc: linux-usb@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
+The USB gadget subsystem wants to use the USB debugfs root directory, so
+move it to the common "core" USB code so that it is properly initialized
+and removed as needed.
 
-Acked-by: Shawn Guo <shawnguo@kernel.org>
+In order to properly do this, we need to load the common code before the
+usb core code, when everything is linked into the kernel, so reorder the
+link order of the code.
 
-> ---
-> 
-> The intent of this patch is to consolidate all of the code maipulating
-> charge detection state to a signle place and if this patch is agreed
-> upon I plan to follow it up with this change:
-> 
-> https://github.com/ndreys/linux/commit/7248f2b85b4706760fd33d2ff970e2ea12d3bea7
-> 
-> Thanks,
-> Andrey Smirnov
-> 
->  drivers/usb/phy/phy-mxs-usb.c | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
-> 
-> diff --git a/drivers/usb/phy/phy-mxs-usb.c b/drivers/usb/phy/phy-mxs-usb.c
-> index 1b1bb0ad40c3..6fa16ab31e2e 100644
-> --- a/drivers/usb/phy/phy-mxs-usb.c
-> +++ b/drivers/usb/phy/phy-mxs-usb.c
-> @@ -63,6 +63,7 @@
->  
->  #define ANADIG_USB1_CHRG_DETECT_SET		0x1b4
->  #define ANADIG_USB1_CHRG_DETECT_CLR		0x1b8
-> +#define ANADIG_USB2_CHRG_DETECT_SET		0x214
->  #define ANADIG_USB1_CHRG_DETECT_EN_B		BIT(20)
->  #define ANADIG_USB1_CHRG_DETECT_CHK_CHRG_B	BIT(19)
->  #define ANADIG_USB1_CHRG_DETECT_CHK_CONTACT	BIT(18)
-> @@ -250,6 +251,19 @@ static int mxs_phy_hw_init(struct mxs_phy *mxs_phy)
->  	if (mxs_phy->data->flags & MXS_PHY_NEED_IP_FIX)
->  		writel(BM_USBPHY_IP_FIX, base + HW_USBPHY_IP_SET);
->  
-> +	if (mxs_phy->regmap_anatop) {
-> +		unsigned int reg = mxs_phy->port_id ?
-> +			ANADIG_USB1_CHRG_DETECT_SET :
-> +			ANADIG_USB2_CHRG_DETECT_SET;
-> +		/*
-> +		 * The external charger detector needs to be disabled,
-> +		 * or the signal at DP will be poor
-> +		 */
-> +		regmap_write(mxs_phy->regmap_anatop, reg,
-> +			     ANADIG_USB1_CHRG_DETECT_EN_B |
-> +			     ANADIG_USB1_CHRG_DETECT_CHK_CHRG_B);
-> +	}
-> +
->  	mxs_phy_tx_init(mxs_phy);
->  
->  	return 0;
-> -- 
-> 2.21.0
-> 
+Also as the usb common code has the possibility of the led trigger logic
+to be merged into it, handle the build option properly by only having
+one module init/exit function and have the common code initialize the
+led trigger if needed.
+
+Reported-by: From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Cc: Felipe Balbi <felipe.balbi@linux.intel.com>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+---
+
+Chunfeng, can you test this version to verify it works for you when
+building the code into the kernel?
+
+v2: handle led common code link error reported by kbuild
+    handle subsys_initcall issue pointed out by Chunfeng
+
+ drivers/usb/Makefile        |  3 +--
+ drivers/usb/common/common.c | 21 +++++++++++++++++++++
+ drivers/usb/common/common.h | 14 ++++++++++++++
+ drivers/usb/common/led.c    |  9 +++------
+ drivers/usb/core/usb.c      | 10 ++++------
+ 5 files changed, 43 insertions(+), 14 deletions(-)
+ create mode 100644 drivers/usb/common/common.h
+
+diff --git a/drivers/usb/Makefile b/drivers/usb/Makefile
+index 7d1b8c82b208..ecc2de1ffaae 100644
+--- a/drivers/usb/Makefile
++++ b/drivers/usb/Makefile
+@@ -5,6 +5,7 @@
+ 
+ # Object files in subdirectories
+ 
++obj-$(CONFIG_USB_COMMON)	+= common/
+ obj-$(CONFIG_USB)		+= core/
+ obj-$(CONFIG_USB_SUPPORT)	+= phy/
+ 
+@@ -60,8 +61,6 @@ obj-$(CONFIG_USB_CHIPIDEA)	+= chipidea/
+ obj-$(CONFIG_USB_RENESAS_USBHS)	+= renesas_usbhs/
+ obj-$(CONFIG_USB_GADGET)	+= gadget/
+ 
+-obj-$(CONFIG_USB_COMMON)	+= common/
+-
+ obj-$(CONFIG_USBIP_CORE)	+= usbip/
+ 
+ obj-$(CONFIG_TYPEC)		+= typec/
+diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+index 18f5dcf58b0d..84a4423aaddf 100644
+--- a/drivers/usb/common/common.c
++++ b/drivers/usb/common/common.c
+@@ -15,6 +15,8 @@
+ #include <linux/usb/of.h>
+ #include <linux/usb/otg.h>
+ #include <linux/of_platform.h>
++#include <linux/debugfs.h>
++#include "common.h"
+ 
+ static const char *const ep_type_names[] = {
+ 	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
+@@ -291,4 +293,23 @@ struct device *usb_of_get_companion_dev(struct device *dev)
+ EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
+ #endif
+ 
++struct dentry *usb_debug_root;
++EXPORT_SYMBOL_GPL(usb_debug_root);
++
++static int usb_common_init(void)
++{
++	usb_debug_root = debugfs_create_dir("usb", NULL);
++	ledtrig_usb_init();
++	return 0;
++}
++
++static void usb_common_exit(void)
++{
++	ledtrig_usb_exit();
++	debugfs_remove_recursive(usb_debug_root);
++}
++
++subsys_initcall(usb_common_init);
++module_exit(usb_common_exit);
++
+ MODULE_LICENSE("GPL");
+diff --git a/drivers/usb/common/common.h b/drivers/usb/common/common.h
+new file mode 100644
+index 000000000000..424a91316a4b
+--- /dev/null
++++ b/drivers/usb/common/common.h
+@@ -0,0 +1,14 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++#ifndef __LINUX_USB_COMMON_H
++#define __LINUX_USB_COMMON_H
++
++#if defined(CONFIG_USB_LED_TRIG)
++void ledtrig_usb_init(void);
++void ledtrig_usb_exit(void);
++#else
++static inline void ledtrig_usb_init(void) { }
++static inline void ledtrig_usb_exit(void) { }
++#endif
++
++#endif	/* __LINUX_USB_COMMON_H */
+diff --git a/drivers/usb/common/led.c b/drivers/usb/common/led.c
+index 7bd81166b77d..0865dd44a80a 100644
+--- a/drivers/usb/common/led.c
++++ b/drivers/usb/common/led.c
+@@ -10,6 +10,7 @@
+ #include <linux/init.h>
+ #include <linux/leds.h>
+ #include <linux/usb.h>
++#include "common.h"
+ 
+ #define BLINK_DELAY 30
+ 
+@@ -36,18 +37,14 @@ void usb_led_activity(enum usb_led_event ev)
+ EXPORT_SYMBOL_GPL(usb_led_activity);
+ 
+ 
+-static int __init ledtrig_usb_init(void)
++void __init ledtrig_usb_init(void)
+ {
+ 	led_trigger_register_simple("usb-gadget", &ledtrig_usb_gadget);
+ 	led_trigger_register_simple("usb-host", &ledtrig_usb_host);
+-	return 0;
+ }
+ 
+-static void __exit ledtrig_usb_exit(void)
++void __exit ledtrig_usb_exit(void)
+ {
+ 	led_trigger_unregister_simple(ledtrig_usb_gadget);
+ 	led_trigger_unregister_simple(ledtrig_usb_host);
+ }
+-
+-module_init(ledtrig_usb_init);
+-module_exit(ledtrig_usb_exit);
+diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
+index 7fcb9f782931..5a0df527a8ca 100644
+--- a/drivers/usb/core/usb.c
++++ b/drivers/usb/core/usb.c
+@@ -1185,19 +1185,17 @@ static struct notifier_block usb_bus_nb = {
+ 	.notifier_call = usb_bus_notify,
+ };
+ 
+-struct dentry *usb_debug_root;
+-EXPORT_SYMBOL_GPL(usb_debug_root);
++static struct dentry *usb_devices_root;
+ 
+ static void usb_debugfs_init(void)
+ {
+-	usb_debug_root = debugfs_create_dir("usb", NULL);
+-	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
+-			    &usbfs_devices_fops);
++	usb_devices_root = debugfs_create_file("devices", 0444, usb_debug_root,
++					       NULL, &usbfs_devices_fops);
+ }
+ 
+ static void usb_debugfs_cleanup(void)
+ {
+-	debugfs_remove_recursive(usb_debug_root);
++	debugfs_remove(usb_devices_root);
+ }
+ 
+ /*
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
