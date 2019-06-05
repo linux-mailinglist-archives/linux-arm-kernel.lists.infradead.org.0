@@ -2,67 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C53EB36168
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:34:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC2E23616A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:35:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=a8lforkQr0I5z4i1ijuN3NCVud4TyeutmkJ4e0i28F4=; b=XxeXWaM5doPcHT
-	WuyD+bBnUM/US6/NT+WfJW4MXRXaEhNse10MftB97DPMnxHB1Cj0JAGKy4+YrkpeoowZTuWclCwEi
-	6kJZw4txG8k2yZbk6UAyIw8dkyEN7SM4pMaszilem0KEKTHA1kx5DZo88CLlzsMy4uJHjNKYMmJNa
-	Zu+tvFfVh8pfuVWxucnwQKz4wAopdfrfEe+a3bx+4O5uGwhLKgPLFQaWloLzzc7lC9Hp95XvJv1q0
-	GB2lbbjLBnoy1AkV4cTCecn/A077dK9XUcF3lKzG/KZtFATQZA/tV5q5As6pEPPNHGAo3M7fQAk5D
-	7ZWKk0vSrhb3i1W6/UfQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wHUbRRcE7uvG0LscZf/cgkEn4Uhx8ZTsxPUCsWpsqG4=; b=o/HL1IXeFH7tbw
+	LQmbZIDoNCw/xV5lVofbDxjFKr2nkoFQtBBNUm5yDbmYp7r4nYfnOUWCDZzTRCU7dP+KSjPkcHqIx
+	su9k2gcPv0TJ6BgY4QWVFbR3/96QMiWWJc9TcivTqEmE36a/ZsR37BsySyIW4vFvcYycDE2wXjh8a
+	PPdBraJ0queRYqHRsD7ZBhriY1SQe7UPwhiWc1UjHvBBKmUXMbz6ClXKfI2Plc9Ss0gvTgDCSsYho
+	r/Jerx/ut57Qkk8ERgFvqk8Lo5dE4GGo3VL3q6gDHTdpGWuj+Hlquaosm+cvBKcY6CsX3tUL1SClc
+	15MoIr0NKjKmhXBLhnLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYYsI-0004Na-Me; Wed, 05 Jun 2019 16:34:54 +0000
+	id 1hYYsk-0005lu-K7; Wed, 05 Jun 2019 16:35:22 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYYs1-0004F3-89
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 16:34:38 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x55GYaDV130355;
+ id 1hYYs1-0004F4-8B
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 16:34:39 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x55GYaY1130359;
  Wed, 5 Jun 2019 11:34:36 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
  s=ti-com-17Q1; t=1559752476;
- bh=EyRxgNDYnTkm/dfjnoK+S5JmanetNm6H7MORnEhgjec=;
- h=From:To:CC:Subject:Date;
- b=gOiBm9pBFHyqPy/yVhu0P83nh5IWbcq7xeovKvOoR6BKYUdPPMf2ZsjLfRPN7r9wc
- 6Da9dtiw75MqhEMlvRiVsA5BYwEWaOQ+Bq7lUUTjVqNfeOMzX9MjqQ5gn6VlRuUw25
- W3H+AKKgJe2pxfTHrhMMa4KswWIGm+d9M88gF4E4=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x55GYZco010398
+ bh=KUPgZFxEYXJVvTARjgbF0I31mcTUIGf5vw48nP64GK8=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=gow6AJMsYcdPwAz5xMJTyHmOnFJUXGnolX/Pz7NNX9mC+fKF+h5pHCDtQEZO5qYmU
+ kQRnF4XL9b9sl1++4XBwzLLk2J3IvpVItWCBmUegESjZAUXWfFQeqSJc+tGF8i+gJV
+ CoeDIFeOqewMZ9P/gBURt6JUjvRxPugg5TN7pDKE=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x55GYaxJ019127
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 5 Jun 2019 11:34:35 -0500
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ Wed, 5 Jun 2019 11:34:36 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 5 Jun
  2019 11:34:35 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
  Frontend Transport; Wed, 5 Jun 2019 11:34:35 -0500
 Received: from legion.dal.design.ti.com (legion.dal.design.ti.com
  [128.247.22.53])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x55GYZlT023921;
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x55GYZF7098238;
  Wed, 5 Jun 2019 11:34:35 -0500
 Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
- by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x55GYZm10206; 
+ by legion.dal.design.ti.com (8.11.7p1+Sun/8.11.7) with ESMTP id x55GYZm10210; 
  Wed, 5 Jun 2019 11:34:35 -0500 (CDT)
 From: Suman Anna <s-anna@ti.com>
 To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
-Subject: [PATCH 0/4] Add MCU SRAM nodes for TI K3 SoCs
-Date: Wed, 5 Jun 2019 11:34:30 -0500
-Message-ID: <20190605163434.23173-1-s-anna@ti.com>
+Subject: [PATCH 1/4] arm64: dts: ti: k3-am65: Add MCU SRAM ranges in
+ interconnect nodes
+Date: Wed, 5 Jun 2019 11:34:31 -0500
+Message-ID: <20190605163434.23173-2-s-anna@ti.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190605163434.23173-1-s-anna@ti.com>
+References: <20190605163434.23173-1-s-anna@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_093437_339063_81871FA1 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20190605_093437_412107_567D09E2 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -97,34 +100,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tero,
+Add the address space for the MCU SRAM memory to the ranges property
+of the cbass_mcu interconnect node so that the addresses within the
+mcu_sram nodes and its children can be translated properly by the
+relevant OF address API.
 
-The following series adds the DT nodes for the MCU SRAM present within
-the MCU domain for both AM65x and J721E SoCs. The first 2 patches enable
-the MCU SRAM node to be probed properly on AM65x SoCs, and the third
-patch the equivalent for J721E SoCs. The third patch depends on the
-base J721E support patch series from Nishanth [1].
+Signed-off-by: Suman Anna <s-anna@ti.com>
+---
+ arch/arm64/boot/dts/ti/k3-am65.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-The last patch is not related to MCU SRAM, but adds the ranges for the
-R5F cluster that is also present in the MCU domain in preparation for
-the R5F nodes.
-
-regards
-Suman
-
-[1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=121189 
-
-Suman Anna (4):
-  arm64: dts: ti: k3-am65: Add MCU SRAM ranges in interconnect nodes
-  arm64: dts: ti: k3-am65-mcu: Add the MCU RAM node
-  arm64: dts: ti: k3-j721e: Add the MCU SRAM node
-  arm64: dts: ti: k3-am65: Add R5F ranges in interconnect nodes
-
- arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi         | 8 ++++++++
- arch/arm64/boot/dts/ti/k3-am65.dtsi             | 6 ++++++
- arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi | 8 ++++++++
- 3 files changed, 22 insertions(+)
-
+diff --git a/arch/arm64/boot/dts/ti/k3-am65.dtsi b/arch/arm64/boot/dts/ti/k3-am65.dtsi
+index 68b3f954f1d1..abb085f5e784 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65.dtsi
+@@ -72,6 +72,7 @@
+ 			 /* MCUSS Range */
+ 			 <0x00 0x28380000 0x00 0x28380000 0x00 0x03880000>,
+ 			 <0x00 0x40200000 0x00 0x40200000 0x00 0x00900100>,
++			 <0x00 0x41c00000 0x00 0x41c00000 0x00 0x00080000>,
+ 			 <0x00 0x42040000 0x00 0x42040000 0x00 0x03ac2400>,
+ 			 <0x00 0x45100000 0x00 0x45100000 0x00 0x00c24000>,
+ 			 <0x00 0x46000000 0x00 0x46000000 0x00 0x00200000>,
+@@ -83,6 +84,7 @@
+ 			#size-cells = <2>;
+ 			ranges = <0x00 0x28380000 0x00 0x28380000 0x00 0x03880000>, /* MCU NAVSS*/
+ 				 <0x00 0x40200000 0x00 0x40200000 0x00 0x00900100>, /* First peripheral window */
++				 <0x00 0x41c00000 0x00 0x41c00000 0x00 0x00080000>, /* MCU SRAM */
+ 				 <0x00 0x42040000 0x00 0x42040000 0x00 0x03ac2400>, /* WKUP */
+ 				 <0x00 0x45100000 0x00 0x45100000 0x00 0x00c24000>, /* MMRs, remaining NAVSS */
+ 				 <0x00 0x46000000 0x00 0x46000000 0x00 0x00200000>, /* CPSW */
 -- 
 2.21.0
 
