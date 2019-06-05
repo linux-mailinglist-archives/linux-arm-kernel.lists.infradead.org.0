@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6C4E35A8D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:37:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46BB835A8E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:38:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=mdXnlaYFyShmINpZtCNgT+/d9hKjPU1z9jaGCPb7b5g=; b=ZAFwA8jUINlJ50WQSaNt8+4MqY
-	s79ConDbkknGSyFmdoPqkANbWHw6lZL3VVFZWsVrHZm4I91uzcif69aDWBBaLZPkIt2WEJpGHKWF3
-	qJoAT0kGMXqqAzRCGzPCm7X+ubzBecEfsGOKaeFJxGoQpvFbbpWbUwqn1gltQESaJkvBSnuZ8tx4b
-	Ue+E9uEP5JIz6JkGvIA5puPLzv5KBCarAt4KhlIuQ3aVFscIJ78dc2035aapCCk/r+mBmu9qLPpNZ
-	sXa74ROxjPw+Ck4steYb3lQ7iVp/+fjk4CfXIjVzRMxVAG1FUXB087orHyQ/Gdhvg8bbV+X4mpdOb
-	719EIXhw==;
+	bh=MCmoqFR4ARpGP4zBIeYUJk+/ek31eFAQNcbd91NzBAo=; b=UB+Tbb4R60fJmhFMToAlh7Y7I6
+	b/bNAHuHcs5icXubsj5bVbJcQ2Gk0BuDJxWVEgjqIcjdWJFzYXM2CfpUD/JsFyBpuMG5876BaZ4Ko
+	SB5PA9cRhQ3trqORkDFmSjCcGox47KJiH7RLzndbOtC3AhgeB8HtGFm8+WVTX2LZYS0Lpak41kysG
+	V3nStqT+51LstSsx/a9dBWoUGLVgoabZg/fx/J6dBB451xVIjPRSFY3X7tbnwC9I1BLHcn2PVFO/X
+	wa9AWDFp2d68UmnOZlXTOgQc34r+hMkLQpS//ywYqAF9xfIbj1p2cYXgQ9sFe8qWwRlf/bBrWKDhT
+	X0tItHLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYTIm-0002n1-MR; Wed, 05 Jun 2019 10:37:52 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1hYTIw-00031J-EJ; Wed, 05 Jun 2019 10:38:02 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYTIC-00029O-Bd
+ id 1hYTIC-00029b-FC
  for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 10:37:17 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B10B41A0838;
- Wed,  5 Jun 2019 12:37:14 +0200 (CEST)
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4437820077E;
+ Wed,  5 Jun 2019 12:37:15 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A46D51A00EA;
- Wed,  5 Jun 2019 12:37:14 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 37A56200787;
+ Wed,  5 Jun 2019 12:37:15 +0200 (CEST)
 Received: from jana.ea.freescale.net (gw_auto.ea.freescale.net [10.171.94.100])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 245E8205FA;
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B478A205FA;
  Wed,  5 Jun 2019 12:37:14 +0200 (CEST)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Viresh Kumar <viresh.kumar@linaro.org>,
 	Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v2 3/5] ARM: imx: Switch imx7d to imx-cpufreq-dt for
- speed-grading
-Date: Wed,  5 Jun 2019 13:37:07 +0300
-Message-Id: <12e267d1515b5c2cb9a07af4fd2598c4db94951a.1559730963.git.leonard.crestez@nxp.com>
+Subject: [PATCH v2 4/5] ARM: dts: imx7d: Update cpufreq OPP table
+Date: Wed,  5 Jun 2019 13:37:08 +0300
+Message-Id: <be47ecfba98b4adacd39e4a6a85897cd4ee0ec88.1559730963.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1559730963.git.leonard.crestez@nxp.com>
 References: <cover.1559730963.git.leonard.crestez@nxp.com>
@@ -48,8 +47,8 @@ In-Reply-To: <cover.1559730963.git.leonard.crestez@nxp.com>
 References: <cover.1559730963.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_033716_535009_5AD781FE 
-X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-CacheID: sfid-20190605_033716_654528_DCBC396A 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -57,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,44 +81,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The imx-cpufreq-dt driver can handle speed grading bits on imx7d just
-like on imx8mq and imx8mm.
+According to latest docs imx7d chips can go from 800 to 1200 mhz.
+Maximum frequency is determined from two speed grading bits present in
+OCOTP fuses at same location as other imx chips.
+
+Also update to "typical" voltages from latest datasheet, 25mv higher
+than current dts.
+
+All imx7s parts are still fixed at 800mhz
+
+Based on:
+* IMX7DCEC Rev. 6, 03/2019
+* IMX7SCEC Rev. 6, 03/2019
+* IMX7DRM Rev. 1, 01/2018 Page 1102
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- arch/arm/mach-imx/mach-imx7d.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm/boot/dts/imx7d.dtsi | 16 +++++++++++++---
+ arch/arm/boot/dts/imx7s.dtsi |  4 ++++
+ 2 files changed, 17 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/mach-imx/mach-imx7d.c b/arch/arm/mach-imx/mach-imx7d.c
-index 26ca744d3e2b..0b77412795c9 100644
---- a/arch/arm/mach-imx/mach-imx7d.c
-+++ b/arch/arm/mach-imx/mach-imx7d.c
-@@ -95,10 +95,16 @@ static void __init imx7d_init_machine(void)
+diff --git a/arch/arm/boot/dts/imx7d.dtsi b/arch/arm/boot/dts/imx7d.dtsi
+index f33b560821b8..42528d2812a2 100644
+--- a/arch/arm/boot/dts/imx7d.dtsi
++++ b/arch/arm/boot/dts/imx7d.dtsi
+@@ -10,10 +10,12 @@
+ 	cpus {
+ 		cpu0: cpu@0 {
+ 			clock-frequency = <996000000>;
+ 			operating-points-v2 = <&cpu0_opp_table>;
+ 			#cooling-cells = <2>;
++			nvmem-cells = <&cpu_speed_grade>;
++			nvmem-cell-names = "speed_grade";
+ 		};
  
- 	imx_anatop_init();
- 	imx7d_enet_init();
- }
+ 		cpu1: cpu@1 {
+ 			compatible = "arm,cortex-a7";
+ 			device_type = "cpu";
+@@ -37,19 +39,27 @@
+ 		compatible = "operating-points-v2";
+ 		opp-shared;
  
-+static void __init imx7d_init_late(void)
-+{
-+	if (IS_ENABLED(CONFIG_ARM_IMX_CPUFREQ_DT))
-+		platform_device_register_simple("imx-cpufreq-dt", -1, NULL, 0);
-+}
+ 		opp-792000000 {
+ 			opp-hz = /bits/ 64 <792000000>;
+-			opp-microvolt = <975000>;
++			opp-microvolt = <1000000>;
+ 			clock-latency-ns = <150000>;
++			opp-supported-hw = <0xf>, <0xf>;
+ 		};
+ 
+ 		opp-996000000 {
+ 			opp-hz = /bits/ 64 <996000000>;
+-			opp-microvolt = <1075000>;
++			opp-microvolt = <1100000>;
+ 			clock-latency-ns = <150000>;
+-			opp-suspend;
++			opp-supported-hw = <0xc>, <0xf>;
++		};
 +
- static void __init imx7d_init_irq(void)
- {
- 	imx_init_revision_from_anatop();
- 	imx_src_init();
- 	irqchip_init();
-@@ -111,7 +117,8 @@ static const char *const imx7d_dt_compat[] __initconst = {
- };
++		opp-1200000000 {
++			opp-hz = /bits/ 64 <1200000000>;
++			opp-microvolt = <1225000>;
++			clock-latency-ns = <150000>;
++			opp-supported-hw = <0x8>, <0xf>;
+ 		};
+ 	};
  
- DT_MACHINE_START(IMX7D, "Freescale i.MX7 Dual (Device Tree)")
- 	.init_irq	= imx7d_init_irq,
- 	.init_machine	= imx7d_init_machine,
-+	.init_late      = imx7d_init_late,
- 	.dt_compat	= imx7d_dt_compat,
- MACHINE_END
+ 	usbphynop2: usbphynop2 {
+ 		compatible = "usb-nop-xceiv";
+diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
+index d8b4eb67146d..5b8292670b4b 100644
+--- a/arch/arm/boot/dts/imx7s.dtsi
++++ b/arch/arm/boot/dts/imx7s.dtsi
+@@ -549,10 +549,14 @@
+ 				};
+ 
+ 				tempmon_temp_grade: temp-grade@10 {
+ 					reg = <0x10 0x4>;
+ 				};
++
++				cpu_speed_grade: speed-grade@10 {
++					reg = <0x10 0x4>;
++				};
+ 			};
+ 
+ 			anatop: anatop@30360000 {
+ 				compatible = "fsl,imx7d-anatop", "fsl,imx6q-anatop",
+ 					"syscon", "simple-bus";
 -- 
 2.7.4
 
