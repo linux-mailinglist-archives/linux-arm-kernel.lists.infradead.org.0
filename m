@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46BB835A8E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:38:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C45035A8F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:38:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=MCmoqFR4ARpGP4zBIeYUJk+/ek31eFAQNcbd91NzBAo=; b=UB+Tbb4R60fJmhFMToAlh7Y7I6
-	b/bNAHuHcs5icXubsj5bVbJcQ2Gk0BuDJxWVEgjqIcjdWJFzYXM2CfpUD/JsFyBpuMG5876BaZ4Ko
-	SB5PA9cRhQ3trqORkDFmSjCcGox47KJiH7RLzndbOtC3AhgeB8HtGFm8+WVTX2LZYS0Lpak41kysG
-	V3nStqT+51LstSsx/a9dBWoUGLVgoabZg/fx/J6dBB451xVIjPRSFY3X7tbnwC9I1BLHcn2PVFO/X
-	wa9AWDFp2d68UmnOZlXTOgQc34r+hMkLQpS//ywYqAF9xfIbj1p2cYXgQ9sFe8qWwRlf/bBrWKDhT
-	X0tItHLQ==;
+	bh=XERccKo5WLpGXF8njNLxl8hQF0PSeLs/djSYR1kyKRw=; b=s7emBBmjN6OVgB8HNPeaQMfZRh
+	gDPEi4nbuXFTM6kI12Ru5Fjjb5TT81IGDXpNvWF/nZqyrCwTVVmW9wmaZv7YW3y55CGroZp/wVeP0
+	V80+Qu1zoAKKxemv3ejG+7lC3aCcv5Jui9sY8mZzc+dlniigCHYQZO/3ONZaXzjxEgBJKGSODR5yx
+	8ZEGgubRUyYALsUyS0wweSxKqOuhIZgevq5lUk3dXO0H8nhqllbwsjX+lQVElt1Y9TOc+sQ7NE97b
+	EdcJ3g80s0l8pezEZaTjMbb0b2ZF02aBTpP11LH2gCK05yp5xXHxgUHGH1qwgxuRa1/fpPi/CPKtk
+	RcQy1qhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYTIw-00031J-EJ; Wed, 05 Jun 2019 10:38:02 +0000
+	id 1hYTJ4-0003Fa-8y; Wed, 05 Jun 2019 10:38:10 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYTIC-00029b-FC
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 10:37:17 +0000
+ id 1hYTID-00029f-2n
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 10:37:18 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4437820077E;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D459020077F;
  Wed,  5 Jun 2019 12:37:15 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 37A56200787;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C84F9200772;
  Wed,  5 Jun 2019 12:37:15 +0200 (CEST)
 Received: from jana.ea.freescale.net (gw_auto.ea.freescale.net [10.171.94.100])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B478A205FA;
- Wed,  5 Jun 2019 12:37:14 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 47FA7205FA;
+ Wed,  5 Jun 2019 12:37:15 +0200 (CEST)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Viresh Kumar <viresh.kumar@linaro.org>,
 	Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH v2 4/5] ARM: dts: imx7d: Update cpufreq OPP table
-Date: Wed,  5 Jun 2019 13:37:08 +0300
-Message-Id: <be47ecfba98b4adacd39e4a6a85897cd4ee0ec88.1559730963.git.leonard.crestez@nxp.com>
+Subject: [PATCH v2 5/5] ARM: imx_v6_v7_defconfig: Enable
+ CONFIG_ARM_IMX_CPUFREQ_DT
+Date: Wed,  5 Jun 2019 13:37:09 +0300
+Message-Id: <dac8ee814d4c8713191fcfd27e685411d8435edd.1559730963.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1559730963.git.leonard.crestez@nxp.com>
 References: <cover.1559730963.git.leonard.crestez@nxp.com>
@@ -47,8 +48,8 @@ In-Reply-To: <cover.1559730963.git.leonard.crestez@nxp.com>
 References: <cover.1559730963.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_033716_654528_DCBC396A 
-X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-CacheID: sfid-20190605_033717_378789_11E21EC0 
+X-CRM114-Status: UNSURE (   6.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -81,93 +82,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to latest docs imx7d chips can go from 800 to 1200 mhz.
-Maximum frequency is determined from two speed grading bits present in
-OCOTP fuses at same location as other imx chips.
-
-Also update to "typical" voltages from latest datasheet, 25mv higher
-than current dts.
-
-All imx7s parts are still fixed at 800mhz
-
-Based on:
-* IMX7DCEC Rev. 6, 03/2019
-* IMX7SCEC Rev. 6, 03/2019
-* IMX7DRM Rev. 1, 01/2018 Page 1102
+This is used for imx7d speed grading.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- arch/arm/boot/dts/imx7d.dtsi | 16 +++++++++++++---
- arch/arm/boot/dts/imx7s.dtsi |  4 ++++
- 2 files changed, 17 insertions(+), 3 deletions(-)
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/imx7d.dtsi b/arch/arm/boot/dts/imx7d.dtsi
-index f33b560821b8..42528d2812a2 100644
---- a/arch/arm/boot/dts/imx7d.dtsi
-+++ b/arch/arm/boot/dts/imx7d.dtsi
-@@ -10,10 +10,12 @@
- 	cpus {
- 		cpu0: cpu@0 {
- 			clock-frequency = <996000000>;
- 			operating-points-v2 = <&cpu0_opp_table>;
- 			#cooling-cells = <2>;
-+			nvmem-cells = <&cpu_speed_grade>;
-+			nvmem-cell-names = "speed_grade";
- 		};
- 
- 		cpu1: cpu@1 {
- 			compatible = "arm,cortex-a7";
- 			device_type = "cpu";
-@@ -37,19 +39,27 @@
- 		compatible = "operating-points-v2";
- 		opp-shared;
- 
- 		opp-792000000 {
- 			opp-hz = /bits/ 64 <792000000>;
--			opp-microvolt = <975000>;
-+			opp-microvolt = <1000000>;
- 			clock-latency-ns = <150000>;
-+			opp-supported-hw = <0xf>, <0xf>;
- 		};
- 
- 		opp-996000000 {
- 			opp-hz = /bits/ 64 <996000000>;
--			opp-microvolt = <1075000>;
-+			opp-microvolt = <1100000>;
- 			clock-latency-ns = <150000>;
--			opp-suspend;
-+			opp-supported-hw = <0xc>, <0xf>;
-+		};
-+
-+		opp-1200000000 {
-+			opp-hz = /bits/ 64 <1200000000>;
-+			opp-microvolt = <1225000>;
-+			clock-latency-ns = <150000>;
-+			opp-supported-hw = <0x8>, <0xf>;
- 		};
- 	};
- 
- 	usbphynop2: usbphynop2 {
- 		compatible = "usb-nop-xceiv";
-diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
-index d8b4eb67146d..5b8292670b4b 100644
---- a/arch/arm/boot/dts/imx7s.dtsi
-+++ b/arch/arm/boot/dts/imx7s.dtsi
-@@ -549,10 +549,14 @@
- 				};
- 
- 				tempmon_temp_grade: temp-grade@10 {
- 					reg = <0x10 0x4>;
- 				};
-+
-+				cpu_speed_grade: speed-grade@10 {
-+					reg = <0x10 0x4>;
-+				};
- 			};
- 
- 			anatop: anatop@30360000 {
- 				compatible = "fsl,imx7d-anatop", "fsl,imx6q-anatop",
- 					"syscon", "simple-bus";
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index 4daf807e6970..507c1fcca624 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -52,10 +52,11 @@ CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND=y
+ CONFIG_CPU_FREQ_GOV_POWERSAVE=y
+ CONFIG_CPU_FREQ_GOV_USERSPACE=y
+ CONFIG_CPU_FREQ_GOV_CONSERVATIVE=y
+ CONFIG_CPUFREQ_DT=y
+ CONFIG_ARM_IMX6Q_CPUFREQ=y
++CONFIG_ARM_IMX_CPUFREQ_DT=y
+ CONFIG_CPU_IDLE=y
+ CONFIG_ARM_CPUIDLE=y
+ CONFIG_VFP=y
+ CONFIG_NEON=y
+ CONFIG_PM_DEBUG=y
 -- 
 2.7.4
 
