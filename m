@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77953359FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:55:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 695BC35A10
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 12:02:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FglfkC+X51C8f9s/JAYpRO1MQANIdpocftRrBzdsdcU=; b=SojlSZgjEseSQv
-	TLRGk2bFVTx17AsTLlYZ2Bq5qXu3o/mdTwoVX/e0qiMIw3iBAYHwE1A6wOgF451qdUCAjpZRtAcW3
-	XAzwJvmR1GZ7hHSa6h5r611nCbiPmVHVnJuUhUQJOfWyH1zfUusBqfHblHXzZ2oimkkFSGCt3s+Dn
-	twPENqQKm9e5GU+wEWB9jIXM18UFG9Cw0TbA2W1ANTs2oAYf1jwM2IKXTj8U3LTWEwmU6M/Zp0iLo
-	nP4th5tzKw+S/aFnmMrlKG4PtuuQj6ynXznSANKX2LKcatilvxf/Xw8zI+Pwngwt1j9ejPtnn78Di
-	ty8ba1zvOjOw0ZvXLUZA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qDj8pwyHc/5wSX4I5kFWwUNbjgK2141+9BAp2vGg2rE=; b=mHY8K9T97tgOGy
+	Muoe1/Yb+smVhz/80u9fjE1LaZNRs54wDxKbGHHkbD6kax6YRmfiQG8/W1OLy6or4JSNuClL96oZb
+	QHTryiWy/zYLR7Q84WYpodOuc7siIO0dEfYszjXpzmVzoYuEDxu/PYMLzBzuTWZaK4+rDKCK3loo6
+	NrxWZbtnCVLjpRptQhPBqSV0ZsmoXqTvtq1EG4SkF+QaoplbMK1MB4rF1PG18/2ErU1wNKSE2W/ak
+	V9hovXNg0pxwgibxrC4rQ/Ns2CB+FOGPWyN6Gc3gVAGL2l9Qdg8FVXQhpiOkAL56QJvc0oRDV5Wbq
+	mo4dOYewWrIuhqrM9zFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYSdr-000330-Hl; Wed, 05 Jun 2019 09:55:35 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hYSk5-0004nk-4S; Wed, 05 Jun 2019 10:02:01 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYSdk-00032W-HS
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 09:55:29 +0000
-Received: by mail-wm1-x342.google.com with SMTP id z23so1587696wma.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 02:55:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=T2lb6BFKyo6qFGuGkYXia4Pk+2dP0QxKBCkXd6OlypE=;
- b=CPgOTuOq7c9MOvfUWJ5q/1+tOxgwn+XFG+0Um2QDTbUUUZanzLWDdj11nBOM2fIwB7
- kEstullEcq59rr+WijeSFS9WnI3Qt9gjYsTf935hVMLJqfnOazzwxLxIHcji5TjkcosG
- Y9XeYmQEDs6JbYlcEA7MiiEoYVV0BhB9r3suWTxQwm2++AJs9fMMbvBXj41wWMXxBHMd
- Jf9fOl3L6hWXn6ofOl5x36eliDoR4Kpmq+BhUX/CuX//P1ZfkmcraAPARmc95tEHq9iI
- iCz+Nm6D2SuuWiuOfBEm9CAkUqn9XEWtOrlUjSO+W80Dvqivdf9+b0ODE40uSn7iXy5B
- 3ZfA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=T2lb6BFKyo6qFGuGkYXia4Pk+2dP0QxKBCkXd6OlypE=;
- b=IKsz0V789iJ6AXblZ4uRbdjc+S1KwvI+HaH9SRKqxRJpSsHe5PowF3I05AgyvPXcTY
- xLA5gm5Sybhsxo3O3U1CVdESGl6G+fDpMGKQDufud3azzWi0SapY9ByWEptWjoumXNEo
- jyupJRJFV5as59jCqlTdUdaVzQIx8nrXN4iePQZhbNVzUZt8lYRbpeIKLspuy2iPeOxQ
- 3txKCKT+Tqcgm95m/sUJfpJKBcaDX/oCTS4RpuHUjLPI1FJ/pNThhnfI/wOPSNWlsjHE
- 2jlK7Xw5qD8vtLx2HLQ8JfMj+HiwpGawKgkhHOzKzH95FUgFx3fujhgcE6POvDtFQME5
- Fe9g==
-X-Gm-Message-State: APjAAAU8EjFPpRNNOI+tXJKX8nDs9qSMCDXAdXGmEy+YVQLXqiMbSsbY
- D88EknI9ZROBCPxWxenb/Jqp7A==
-X-Google-Smtp-Source: APXvYqwb15JLdo1InhCZA1cwpY0KvOYdXxpte37lxvn/nhB25qLp3J8HUS7DEBlgQIXew3zQcT8Cbw==
-X-Received: by 2002:a1c:dc07:: with SMTP id t7mr15208355wmg.164.1559728526806; 
- Wed, 05 Jun 2019 02:55:26 -0700 (PDT)
-Received: from dell ([2.27.167.43])
- by smtp.gmail.com with ESMTPSA id z14sm7127245wre.96.2019.06.05.02.55.25
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 05 Jun 2019 02:55:26 -0700 (PDT)
-Date: Wed, 5 Jun 2019 10:55:24 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH 6/8] usb: dwc3: qcom: Add support for booting with ACPI
-Message-ID: <20190605095524.GS4797@dell>
-References: <20190604104455.8877-1-lee.jones@linaro.org>
- <20190604104455.8877-6-lee.jones@linaro.org>
- <20190605063507.GM22737@tuxbook-pro> <20190605070928.GJ4797@dell>
+ id 1hYSjy-0004nF-A2; Wed, 05 Jun 2019 10:01:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1559728900;
+ bh=UsET9Lll5M+CoTqv+pj38b2HWnBKUKBonnb58LGMBT4=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=bZD59ZmWY0Ntwhnge76QXnUAewp8/FaivB+KFTadt2z1WLIpRJTlz9brY9UOo3mDL
+ sVe8Cr8xZ1m5qfcG/T1YyyBqb40gGEvMxtqaTVdFrbXtguM54zJJ9pQiJUS5kckjVr
+ FzcaSXguUpZX0EjeNG0El4SLnzdH1AAj42k2nCt4=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.160]) by mail.gmx.com (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1N1fn0-1gb2dQ1uGm-0124AV; Wed, 05
+ Jun 2019 12:01:40 +0200
+Subject: Re: [PATCH 3/4] clk: bcm2835: register Raspberry Pi's firmware clk
+ device
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com
+References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
+ <20190604173223.4229-4-nsaenzjulienne@suse.de> <87muiwzyrw.fsf@anholt.net>
+ <17ea99902e4329db735080d1a8fc04f5c06c9bf0.camel@suse.de>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <d4e0e290-5fa7-899b-c26b-691bfc32e864@gmx.net>
+Date: Wed, 5 Jun 2019 12:01:38 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190605070928.GJ4797@dell>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <17ea99902e4329db735080d1a8fc04f5c06c9bf0.camel@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:9f2lQD4Z7CpbaiYWLkTMJigUa1MziLg6+z/wwaBIURmsxQgOUS5
+ k2FYvw7vOfvcPi/PmfQ5fixRnOqThMuOv787Vl764hF59L8a6jmBs3NRYyoG5HAmJmv1b19
+ +yvY6j7zCQUeWKyarSDtHkN+zou8bvDUL9jpBSvvfE2bD/YQ3lvm5FBWwjvJQYKdwvyBmXc
+ V6NMtKpN71rZbBuSV6twg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:q4vxgRBg+Vk=:cSI8li99sc0SeLjZq6PBGa
+ QZ6f42LRJFJJLcLD3cqQ8mY9OEKdD44MaT+Er+v3fQmuJoT1RMTdK/A6F4hvNqYD6DywuhSi3
+ SaPRxALtUr+Jp8Fv3AkeUimHwzkgvjVgyZSMkef1mrCxUR1SF2WtZH5TX1wyITT77lYaQY/7b
+ bj2m1VkzdVei2lLjOs5R7JOSgQM8rnWjSZBTBf3I9lVQxdo4DtJQVHJm+dMFaMagUTr7P16Wt
+ EQRLvSSuISvwt0+t9lPSNz/WPyhNu9p+d/JPPEvNdTSWjLw3u54YIG2luGQkVwm68b6nSKUpj
+ rejoSwSaq1rF1Wj6ofqdiTzytKDTf1n9MIjU4f36vJ0W6+KW6Ns61IoBDksQ6zuEI6yWCNTPx
+ l/h0E8kgwSrVGvfEMVjCjtk384eYtQNYIwuLACSVtJ8r0JFcDcHNL1/mBPfhynGjTdvEKX4gw
+ qYV14E7sCt3VgpUARbVj09YuuYBGVtum9phmcLP30a/2GUNA+FDnIaW7WmAle/QcuKyOC2ve1
+ l7GEtohDJ9bYkv6HYiCbo8cde1FpaXWWcrLcdqnl8wg8jaWpbyhT5YZXRsPkiJIn4H0fIKuDt
+ tpDash5HSLSInyq365xvLH7gwPG3oqGltwG/jGQ8+cfWFZ2UMJf0s065E4Zcnuvo3vRf8/3yb
+ fM5KF4eLre3UJUebDgvSIz3PsguDzVEHxpc3kLrRAaR0YBXH1IO/ddwM1PZa88kZTAH62DOsi
+ 3fYq4DY8NaCvPXGyEjQQlgqITKRqGCYE806FquBDfKpn7taRiIeY3QkuYwmKZ1f/EsbSwGvj+
+ KzVe9aMC6XbYTzOpYpKTR2S/Ct6/Ll4KoaLySUJdExAdxfXJ85uFEkAvupGEamOJdryZE2IVy
+ 2sJq5Qt9Y9Yp8uRN4iJa2bSAGUOrjOAIYEsd6A5rdVpaBMeoMFi5q/ChR4IOWnafHIpXKCpxp
+ iYT9j/hHGM4FBvpD0s6Tuk7bFIsm1niuLu+E7jHnI2y7iRXyTdqdc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_025528_602775_42485830 
-X-CRM114-Status: GOOD (  23.28  )
+X-CRM114-CacheID: sfid-20190605_030154_642514_3C960AE9 
+X-CRM114-Status: GOOD (  11.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,70 +102,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
- gregkh@linuxfoundation.org, linus.walleij@linaro.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- david.brown@linaro.org, alokc@codeaurora.org, kramasub@codeaurora.org,
- linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-pm@vger.kernel.org, sboyd@kernel.org, viresh.kumar@linaro.org,
+ mturquette@baylibre.com, ptesarik@suse.com, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, mbrugger@suse.de,
+ linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, ssuloev@orpaltech.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAwNSBKdW4gMjAxOSwgTGVlIEpvbmVzIHdyb3RlOgoKPiBPbiBUdWUsIDA0IEp1biAy
-MDE5LCBCam9ybiBBbmRlcnNzb24gd3JvdGU6Cj4gCj4gPiBPbiBUdWUgMDQgSnVuIDAzOjQ0IFBE
-VCAyMDE5LCBMZWUgSm9uZXMgd3JvdGU6Cj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3VzYi9k
-d2MzL2R3YzMtcWNvbS5jIGIvZHJpdmVycy91c2IvZHdjMy9kd2MzLXFjb20uYwo+ID4gWy4uXQo+
-ID4gPiBAQCAtMzczLDcgKzQxNiw3IEBAIHN0YXRpYyBpbnQgZHdjM19xY29tX2Nsa19pbml0KHN0
-cnVjdCBkd2MzX3Fjb20gKnFjb20sIGludCBjb3VudCkKPiA+ID4gIAo+ID4gPiAgCXFjb20tPm51
-bV9jbG9ja3MgPSBjb3VudDsKPiA+ID4gIAo+ID4gPiAtCWlmICghY291bnQpCj4gPiA+ICsJaWYg
-KCFjb3VudCB8fCBBQ1BJX0hBTkRMRShkZXYpKQo+ID4gPiAgCQlyZXR1cm4gMDsKPiA+IAo+ID4g
-QWZhaWN0IHlvdSBjYWxsIHRoaXMgd2l0aCBjb3VudCA9IG9mX2NvdW50X3BoYW5kbGVfd2l0aF9h
-cmdzKCksIHdoaWNoCj4gPiBzaG91bGQgYmUgMC4gQnV0IHdoeSBub3Qgc2tpcCBjYWxsaW5nIHRo
-aXMgYXQgYWxsPwo+IAo+IEFjdHVhbGx5IGNvdW50IGNhbiBiZSA8MCwgd2hpY2ggaXMgd2h5IEkg
-bXVzdCBoYXZlIG5lZWRlZCBpdCBhdCB0aGUKPiBiZWdpbm5pbmcuICBUaGVyZSBpcyBhbm90aGVy
-IHBhdGNoIGluIHRoaXMgc2V0IHdoaWNoIGNoZWNrcyBmb3IKPiBlcnJvcnMsIHRodXMgdGhlIEFD
-UElfSEFORExFKCkgY2FsbCBzaG91bGQgbm93IGJlIHN1cGVyZmx1b3VzLiAgSQo+IHdpbGwgdGVz
-dCBhbmQgcmVtb3ZlIGl0LgoKSnVzdCBsb29rZWQgaW50byB0aGlzIC0gaXQgaXMgc3RpbGwgcmVx
-dWlyZWQuCgpvZl9jb3VudF9waGFuZGxlX3dpdGhfYXJncygpIHJldHVybnMgYW4gZXJyb3Igbm90
-IHRvIGJlIGhlZWRlZCBpbiB0aGUKQUNQSSBjYXNlLiAgU28gdGhlIGxvZ2ljIGdvZXM6CgpbVGhp
-cyBwYXRjaF0KICogSXQncyBmaW5lIHRvIGJvb3QgRFQgd2l0aCBubyBjbG9ja3MgdG8gaW5pdGlh
-bGlzZSAocmV0dXJuIDApCiAqIFRoZXJlIGFyZSBubyBjbG9ja3MgdG8gZW5hYmxlIHdoZW4gYm9v
-dGluZyBBQ1BJIChyZXR1cm4gMCkKCltBbm90aGVyIHBhdGNoXQogKiBJdCdzIG5vdCBmaW5lIHRv
-IGJvb3QgRFQgYW5kIGZvciAnY291bnQgPCAwJyAocmV0dXJuIGNvdW50KQoKPiA+ID4gIAlxY29t
-LT5jbGtzID0gZGV2bV9rY2FsbG9jKGRldiwgcWNvbS0+bnVtX2Nsb2NrcywKPiA+ID4gQEAgLTQw
-OSwxMiArNDUyLDI4IEBAIHN0YXRpYyBpbnQgZHdjM19xY29tX2Nsa19pbml0KHN0cnVjdCBkd2Mz
-X3Fjb20gKnFjb20sIGludCBjb3VudCkKPiA+ID4gIAlyZXR1cm4gMDsKPiA+ID4gIH0KPiA+ID4g
-IAo+ID4gPiArc3RhdGljIGNvbnN0IHN0cnVjdCBkd2MzX2FjcGlfcGRhdGEgc2RtODQ1X2FjcGlf
-cGRhdGEgPSB7Cj4gPiA+ICsJLnFzY3JhdGNoX2Jhc2Vfb2Zmc2V0ID0gU0RNODQ1X1FTQ1JBVENI
-X0JBU0VfT0ZGU0VULAo+ID4gPiArCS5xc2NyYXRjaF9iYXNlX3NpemUgPSBTRE04NDVfUVNDUkFU
-Q0hfU0laRSwKPiA+ID4gKwkuZHdjM19jb3JlX2Jhc2Vfc2l6ZSA9IFNETTg0NV9EV0MzX0NPUkVf
-U0laRSwKPiA+ID4gKwkuaHNfcGh5X2lycV9pbmRleCA9IDEsCj4gPiA+ICsJLmRwX2hzX3BoeV9p
-cnFfaW5kZXggPSA0LAo+ID4gPiArCS5kbV9oc19waHlfaXJxX2luZGV4ID0gMywKPiA+ID4gKwku
-c3NfcGh5X2lycV9pbmRleCA9IDIKPiA+ID4gK307Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBjb25z
-dCBzdHJ1Y3QgYWNwaV9kZXZpY2VfaWQgZHdjM19xY29tX2FjcGlfbWF0Y2hbXSA9IHsKPiA+ID4g
-Kwl7ICJRQ09NMjQzMCIsICh1bnNpZ25lZCBsb25nKSZzZG04NDVfYWNwaV9wZGF0YSB9LAo+ID4g
-PiArCXsgfSwKPiA+ID4gK307Cj4gPiA+ICtNT0RVTEVfREVWSUNFX1RBQkxFKGFjcGksIGR3YzNf
-cWNvbV9hY3BpX21hdGNoKTsKPiA+IAo+ID4gQW5hbG9nIHRvIG9mX2RldmljZV9nZXRfbWF0Y2hf
-ZGF0YSgpIHRoZXJlIHNlZW1zIHRvIGJlIGEKPiA+IGFjcGlfZGV2aWNlX2dldF9tYXRjaF9kYXRh
-KCksIGlmIHlvdSB1c2UgdGhpcyB5b3Ugc2hvdWxkIGJlIGFibGUgdG8KPiA+IGhhdmUgeW91IGFj
-cGlfZGV2aWNlX2lkIGFycmF5IG5leHQgdG8gdGhlIG9mX2RldmljZV9pZC4KPiAKPiBEbyB5b3Ug
-bWVhbiAiQW5hbG9nb3VzIj8KPiAKPiBJIHdpbGwgdHJ5IHRvIGdyb3VwIHRoZW0sIHRoYW5rcy4K
-PiAKPiA+ID4gKwo+ID4gPiAgc3RhdGljIGludCBkd2MzX3Fjb21fcHJvYmUoc3RydWN0IHBsYXRm
-b3JtX2RldmljZSAqcGRldikKPiA+IAo+ID4gSXQgc2VlbXMgdGhhdCBhbGwgdGhhdCdzIGxlZnQg
-dW5jb25kaXRpb25hbCBvbiBBQ1BJX0hBTkRMRSgpIGluIHRoaXMKPiA+IGZ1bmN0aW9uIGFyZSB0
-aGUgb3B0aW9uYWwgcGllY2VzIGFuZCB0aGUgdGFpbC4gV291bGRuJ3QgaXQgYmUgY2xlYW5lciB0
-bwo+ID4gc3BsaXQgaXQgb3V0IGluIGRpZmZlcmVudCBmdW5jdGlvbnM/Cj4gCj4gVGhlcmUgYXJl
-IH41MCBsaW5lcyBvZiBzaGFyZWQgY29kZSBpbiBkd2MzX3Fjb21fcHJvYmUoKSwgbW9zdCBvZiBp
-dCBpcwo+IGludGVyc3BlcnNlZCBiZXR3ZWVuIHRoZSBjb25maWd1cmF0aW9uIHRhYmxlIChEVCwg
-QUNQSSkgcGllY2VzLCB3aGljaAo+IGlzIHdoeSBpdCdzIGZvcm1hdHRlZCBpbiB0aGUgY3VycmVu
-dCB3YXkuCj4gCj4gSSBjYW4gc3BsaXQgYSBmZXcgdGhpbmdzIG91dCBpbnRvIHNlcGFyYXRlIGZ1
-bmN0aW9ucyBpZiB5b3UgdGhpbmsKPiBpdCdsbCBoZWxwLgo+IAoKLS0gCkxlZSBKb25lcyBb5p2O
-55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3Bl
-biBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwg
-VHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+Am 05.06.19 um 11:11 schrieb Nicolas Saenz Julienne:
+> On Tue, 2019-06-04 at 17:00 -0700, Eric Anholt wrote:
+>> Nicolas Saenz Julienne <nsaenzjulienne@suse.de> writes:
+>>
+>>> Registers clk-raspberrypi as a platform device as part of the driver's
+>>> probe sequence.
+>> Similar to how we have VCHI register platform devices for the services
+>> VCHI provides, shouldn't we have the firmware driver register the device
+>> for clk_raspberrypi?  Or put the clk provider in the fw driver instead
+>> of a separate driver (no opinion on my part).
+> Makes sense to me, I'll move the platform driver registration into the firmware
+> driver.
+Fine. Please keep in mind that you might need to add a MODULE_ALIAS
+otherwise autoload won't work.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
