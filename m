@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 642CF3549C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 02:03:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FE0E354AD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 02:19:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+qqt4wZA3sxBzvV6OfP+5y4XqSJ4i3BB1t1r9Rcb3o4=; b=FPy2UoiebzYIUPtyUEucjD5Pt
-	AcZOXG46T/6wXC2AdpRQOGH1pCpn0EfJ8tZ8Lvg+eXExx9wZgX+T/qba/zoD3lBDePCTx4PnbQuPf
-	QkCUiPUibNsRLJnGCEgc6egUGUDJUy1UT/MonLDSRqSsB2S73PhVXHNtHN14JtJdbBsCF3MJTh8mG
-	hlHBw4E86M4TjUPuYy5q5YaFqyblh9dmymbflRpyHVdKzx0xK5WvbG8G0GSh3Lo65diP3DMxpEQOI
-	l/xs3Flz+UtZVZsLwVONP0Ggze8ozSYV8FUWK66sGhIVv2/aXwydq157jbpozViaIwr3x55eMwzcM
-	DAO0pVl7A==;
+	 bh=0cXa0iEOy8W+73PQJtxecKP2wVOBry+0YCHaCrUpQoM=; b=dB0sK0yAFE+iJxRaHxBF+81oQ
+	f3TaJ7zfloTZxt5WWFoYJkBPYjGmxLBO0ZNbayKRh+zuYEqmrNICcSvmGqxn/OgBG+INq7yhtKic4
+	XUZ+/SK8Z0/lCwl6xCZK4LXYWyL0ZifdViZXodDWXL1tPXdDSZWBNX/5N2ZMafbLfasdVE6bAARfb
+	aQ4BHYo/iv7hCXe6oiafi7OI8wBpCBoC0Er4Q7JUN7jeMRJMyVb6u76ffPacigQmXszNE9SKB8mMG
+	drHaOZS4DrHEkbyTaLECGQwHV9ZdY9oFOZgu13T4F0DYbLszj83tkGTCCvplYaiV9lG/sUiorKxab
+	5Fqlzu4uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYJOn-0007mO-Tb; Wed, 05 Jun 2019 00:03:25 +0000
+	id 1hYJe0-0003b4-FB; Wed, 05 Jun 2019 00:19:08 +0000
 Received: from anholt.net ([50.246.234.109])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYJOh-0007m1-AY; Wed, 05 Jun 2019 00:03:20 +0000
+ id 1hYJds-0003Zv-MU; Wed, 05 Jun 2019 00:19:02 +0000
 Received: from localhost (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id 34DD110A288F;
- Tue,  4 Jun 2019 17:03:18 -0700 (PDT)
+ by anholt.net (Postfix) with ESMTP id F1D8510A04E7;
+ Tue,  4 Jun 2019 17:18:57 -0700 (PDT)
 X-Virus-Scanned: Debian amavisd-new at anholt.net
 Received: from anholt.net ([127.0.0.1])
  by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
- with LMTP id olrx2v55qpgq; Tue,  4 Jun 2019 17:03:17 -0700 (PDT)
+ with LMTP id v6jXS3FLFHVr; Tue,  4 Jun 2019 17:18:55 -0700 (PDT)
 Received: from eliezer.anholt.net (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id ED6F010A1128;
- Tue,  4 Jun 2019 17:03:16 -0700 (PDT)
+ by anholt.net (Postfix) with ESMTP id A54C710A288F;
+ Tue,  4 Jun 2019 17:18:55 -0700 (PDT)
 Received: by eliezer.anholt.net (Postfix, from userid 1000)
- id 7398A2FE3AAE; Tue,  4 Jun 2019 17:03:16 -0700 (PDT)
+ id 280592FE3AAE; Tue,  4 Jun 2019 17:18:55 -0700 (PDT)
 From: Eric Anholt <eric@anholt.net>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, stefan.wahren@i2se.com,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
-Subject: Re: [PATCH 1/4] clk: bcm2835: remove pllb
-In-Reply-To: <20190604173223.4229-2-nsaenzjulienne@suse.de>
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH 4/4] cpufreq: add driver for Raspbery Pi
+In-Reply-To: <20190604173223.4229-5-nsaenzjulienne@suse.de>
 References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
- <20190604173223.4229-2-nsaenzjulienne@suse.de>
+ <20190604173223.4229-5-nsaenzjulienne@suse.de>
 User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
  (x86_64-pc-linux-gnu)
-Date: Tue, 04 Jun 2019 17:03:16 -0700
-Message-ID: <87k1e0zynv.fsf@anholt.net>
+Date: Tue, 04 Jun 2019 17:18:54 -0700
+Message-ID: <87d0jszxxt.fsf@anholt.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_170319_429185_0A2BB805 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190604_171900_774058_03B2C574 
+X-CRM114-Status: GOOD (  21.94  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -71,57 +70,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
- viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
+ ptesarik@suse.com, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
-Content-Type: multipart/mixed; boundary="===============1299002827466724163=="
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, mbrugger@suse.de, ssuloev@orpaltech.com
+Content-Type: multipart/mixed; boundary="===============7788511725489577666=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============1299002827466724163==
+--===============7788511725489577666==
 Content-Type: multipart/signed; boundary="=-=-=";
 	micalg=pgp-sha512; protocol="application/pgp-signature"
 
 --=-=-=
 Content-Type: text/plain
+Content-Transfer-Encoding: quoted-printable
 
 Nicolas Saenz Julienne <nsaenzjulienne@suse.de> writes:
 
-> Raspberry Pi's firmware controls this pll, we should use the firmware
-> interface to access it.
+> Raspberry Pi's firmware offers and interface though which update it's
+> performance requirements. It allows us to request for specific runtime
+> frequencies, which the firmware might or might not respect, depending on
+> the firmware configuration and thermals.
+>
+> As the maximum and minimum frequencies are configurable in the firmware
+> there is no way to know in advance their values. So the Raspberry Pi
+> cpufreq driver queries them, builds an opp frequency table to then
+> launch cpufreq-dt.
 >
 > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+>
+> Changes since RFC:
+>   - Alphabetically ordered relevant stuff
+>   - Updated Kconfig to select firmware interface
+>   - Correctly unref clk_dev after use
+>   - Remove all opps on failure
+>   - Remove use of dev_pm_opp_set_sharing_cpus()
+>
+>  drivers/cpufreq/Kconfig.arm           |  8 +++
+>  drivers/cpufreq/Makefile              |  1 +
+>  drivers/cpufreq/raspberrypi-cpufreq.c | 84 +++++++++++++++++++++++++++
+>  3 files changed, 93 insertions(+)
+>  create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
+>
+> diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
+> index f8129edc145e..556d432cc826 100644
+> --- a/drivers/cpufreq/Kconfig.arm
+> +++ b/drivers/cpufreq/Kconfig.arm
+> @@ -133,6 +133,14 @@ config ARM_QCOM_CPUFREQ_HW
+>  	  The driver implements the cpufreq interface for this HW engine.
+>  	  Say Y if you want to support CPUFreq HW.
+>=20=20
+> +config ARM_RASPBERRYPI_CPUFREQ
+> +	tristate "Raspberry Pi cpufreq support"
+> +	select RASPBERRYPI_FIRMWARE
+> +	help
+> +	  This adds the CPUFreq driver for Raspberry Pi
+> +
+> +	  If in doubt, say N.
+> +
+>  config ARM_S3C_CPUFREQ
+>  	bool
+>  	help
+> diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
+> index 689b26c6f949..121c1acb66c0 100644
+> --- a/drivers/cpufreq/Makefile
+> +++ b/drivers/cpufreq/Makefile
+> @@ -64,6 +64,7 @@ obj-$(CONFIG_ARM_PXA2xx_CPUFREQ)	+=3D pxa2xx-cpufreq.o
+>  obj-$(CONFIG_PXA3xx)			+=3D pxa3xx-cpufreq.o
+>  obj-$(CONFIG_ARM_QCOM_CPUFREQ_HW)	+=3D qcom-cpufreq-hw.o
+>  obj-$(CONFIG_ARM_QCOM_CPUFREQ_KRYO)	+=3D qcom-cpufreq-kryo.o
+> +obj-$(CONFIG_ARM_RASPBERRYPI_CPUFREQ) 	+=3D raspberrypi-cpufreq.o
+>  obj-$(CONFIG_ARM_S3C2410_CPUFREQ)	+=3D s3c2410-cpufreq.o
+>  obj-$(CONFIG_ARM_S3C2412_CPUFREQ)	+=3D s3c2412-cpufreq.o
+>  obj-$(CONFIG_ARM_S3C2416_CPUFREQ)	+=3D s3c2416-cpufreq.o
+> diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c b/drivers/cpufreq/rasp=
+berrypi-cpufreq.c
+> new file mode 100644
+> index 000000000000..2b3a195a9d37
+> --- /dev/null
+> +++ b/drivers/cpufreq/raspberrypi-cpufreq.c
+> @@ -0,0 +1,84 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Raspberry Pi cpufreq driver
+> + *
+> + * Copyright (C) 2019, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/cpu.h>
+> +#include <linux/cpufreq.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_opp.h>
+> +
+> +static const struct of_device_id machines[] __initconst =3D {
+> +	{ .compatible =3D "raspberrypi,3-model-b-plus" },
+> +	{ .compatible =3D "raspberrypi,3-model-b" },
+> +	{ .compatible =3D "raspberrypi,2-model-b" },
+> +	{ /* sentinel */ }
+> +};
 
-Acked-by: Eric Anholt <eric@anholt.net>
+I think I'd skip the compatible string check here.  The firmware's
+clock-management should be well-tested by folks playing with clocking in
+the downstream tree.  There aren't any firmware differences in the
+processing of these clock management packets, to my recollection.
 
-If someone ever has a non-rpi 2835 to support, they can resurrect this.
+Other than that, I'm happy with the series and would give it my
+acked-by.
 
 --=-=-=
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAlz3BsQACgkQtdYpNtH8
-nuiUNhAAuusJeKijdAnVBRXypIxS17ZxosYDMGrz1+WmREQHh631IDfVAqcMvVQt
-OiXSpnJRSxZlqQt0ADMIu9khMLDekk+2k8BO5T84+86H4Hb0WIAswxV44lOeo5UR
-vNqVi/tuVVudMhAunv3i8xdK+2S+jx7yQ+1mv9APcBFJ45jQfKqlIirPsJ7Eo0Sj
-6yT2hutyzuhtepG1u6L8HvDYYbOoeuuNP4xh2u2z2pW1ZM4bjS89zDBsiRHOIW9l
-dJhN1zTObyO1S4QbiMNobNyE+vsjBf/X5jH/wOvxioswgVmlCUSbgUtUtw8Fj4I8
-wWmpprgXDWtOk8AsXE6t6IDHPv+4xZEOxR6e+ViQqfex26qq6Van0LXTO6TfC3H1
-A1F+SOG0e0HgyX2Y302k06gWAIvl9b03lZ5ixZFj4mLDJxXDXaLLTezYmNj24O76
-p6iAB1npEZnT0Olqw3K5Bexpj6XDdZImX0maFd+nA3Zg0W7xNqaqDialuhBmuatK
-lYyER2Fr23h0LOTSMfR9tCYzZo+jFrG4/0nNGN3vCRA84XaAtQXDrNfbFR94MuHr
-5MSv0HfzYrziJVjZJOaMKtbwjnNKU2RnnDuX6ZklP4ANCl70+/fvT8dgabEMFCA4
-d2pwStTbLeYA6b9MkZfyX6e5cO9b4VWvnhShEotiecpMfU0LC9o=
-=UhPx
+iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAlz3Cm4ACgkQtdYpNtH8
+nugFjg/7BW+vK+pRjIN9r/4ejWmipNwzyurktOyEn+OwCgwTSTkdlvGm/SllSKHr
+3Y4BBLmSFf3xE87lNTkLmpkryi0LyBa1NokmCo0P21QoAkKpg4ZswtA+ti6o2cuR
+oHw+cZ9o0sC3HvBFQknojZ7k/y91lROfQb/0h0FgE+9fQwpf/tfzazbSGHj8BF4x
+Qil0ZEdJaw+dRzAJCSr250SGOqdifxcswEeIjesZZeR1uIOjgm74j9gEMrHagPQq
+86Nq5RqOEe9eIUv7tADT+pFHFqQwmoWp5FSCgGxXhTraJlEf0O2bOUVWE9tXvovl
+3Zz4vcEeyzUz5QTqVHERPyN4gbeHO+6x4QoRQeq7Z7GiIJKCMX74OkoGgNAIR0gT
+N2gnGxiAcSyY8crQkfa4kdf7jCGEWLIkBHo1R2N4ee3yYZP3ncCQeL4YoJ/jv2gG
+I6q9SzydecKAkQyQZaOElK3aJAIOdnuxs3H41r6lPhjB8B+ayevWUJL5ZkyVDlCr
+Ic1HXmyvoTLZQ6/doXsnu9DFSiZj45kUjyymVpvUpoygu8KhcSIdnuuYoidNkvnv
+bpSww6H3sFRU5b5CAPBM/kC7tnxzEK4kWIgZEqP7jA0vtv/2g08k0KwaqgPQDQDa
+sBQ2QqaHMXDXVaDMFEnDFDeFDl8UwhpZqvIhiKwy7iU9LkRH/mE=
+=V302
 -----END PGP SIGNATURE-----
 --=-=-=--
 
 
---===============1299002827466724163==
+--===============7788511725489577666==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -132,5 +217,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1299002827466724163==--
+--===============7788511725489577666==--
 
