@@ -2,90 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14BA235B9D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:44:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61F8A35BEE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 13:47:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=FKFBWEx5q7gdioubksHzfRV4OPSZl17eZp1bzQ6vcOY=; b=jLOOaKfL2ufVak0DDW9qVGgYFr
-	wdBxPtUpkSfx2f9ZrqaFJaVsweCY9n5ryWal7307vambfwDsZeko1MwrcD+O3jVfy6w0Uas6cdYEo
-	DnyRgWc2EIsfKsjDZH9tJoO5Z/4ubE0xxCIf2zrox6CJXEG/QifsGzyZ6fDONB8TiZd+1UvAXQwng
-	NTT9/Rm+9SEzXyXUTX8oSLjMv2gDiGpiRzNOpB2DMjRPYQXgSMjxUvix9XSzlCbH05ne544MrbklA
-	3RXe39kmxI57Z1kdlNXfEZRjGyVGvjIGyXaIvqGxfidOxrv9/l4trpCm1l0PaXL6jbTRAMA3ld1fz
-	5KdicQSg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6FBXPWlzPYUC6DQj7sE6x+BnCACrQw6mOmJHJLMyOlk=; b=ELg7skLTYeD71j
+	+ltrm70t4SlJyilt57zVX14uQ5PxPv5nAQ0dAlfX4kzY3ZMLHgHz9XqIYTSzpNs7P8x0knqAHA0Dd
+	4zgj8b/nQdaqdJZJfUdFRc1KpgVkCR21vYjfJDbW2vHNTrlc3mU1DurU4tRTNWzX8g9daD/KlyJt/
+	LHx2WPN0nj4mws0QzjL2LAK8YKL9u6jRegzJQI8469xzlttCK7xo21unuP7aLSPS06N+2i7hdFNom
+	9ZL/lEu4kupvYVknbVKfXIWiN4TfGkX5YCQXJ57U89E1mZ94KhSkCRZSwJZSOwqb6N+AHzhHsdLbm
+	1rzGr97teUBZLmYxrtpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYULD-0004pi-Fr; Wed, 05 Jun 2019 11:44:27 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hYUNl-0000kj-DS; Wed, 05 Jun 2019 11:47:05 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYUK4-0003Rn-L5
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 11:43:18 +0000
-Received: by mail-wm1-x342.google.com with SMTP id t5so1935236wmh.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 04:43:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=FalRLEADzMPtGyW8NIPAA0F5olxzxXGnPVoGFb+myak=;
- b=QKMO16HzOa6yOl0TtOpHhtaz2SlgdqhYZJyTw38c30d4UIeX/UDQnVA2Q9d0ipicdD
- Emx8H2oabCuuVPEsxhBlwmfa+rkssHoxoqRU3YK8BQlbomqW5kzJbpEytzeiEhZgRzTj
- UuIbaCfiENidI6XCj4Q+ItiQk6OwNI+MlfHUM4Ee1wn3nAm4MbEgnWVI2SXMhsKUpm74
- uQFspWBHEtn7jRgazZmuN+pcHm22NJx+aTrImCUgcPsYActEEks62mCVCDgBdhq4xHqV
- aLwalHia+TPEdWi3LiXfCNf8Dzv+nwpo4e0Tsvy22vppNbw+xuPuEpZs6dyJHOhTwxZg
- pP/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=FalRLEADzMPtGyW8NIPAA0F5olxzxXGnPVoGFb+myak=;
- b=cydBsyLCFqigzb1+ERzOhZQ5Lb6NBU16BuGeiMtirxQGZHKtyWyecyxeZcQ/+fA1SK
- hCQM/ISM54HE1ZgwH9/Sr8oWqNI8BETs+ER3RsdwURHfdtH2JceF+1A9XeAjjje/hPir
- JQaIWYRhhNpiL1Wh98xHzLAdRBxr1xTahT/HJr3dwlx4Se+Y9Ou8y1q6ApVAn+0an6Zv
- T8I97dhsLUDwRNPHwoXQBIf3YX9bj80nfe1H5prohWTzWhhih9qeEelmisthuquGp/5C
- gPZt93AjDgceUCl0pQMhb7ROQDrsN96f/c2587Tlk+KnD3ihj6IpC9rku4JLDxKQMev7
- TW2Q==
-X-Gm-Message-State: APjAAAX+B3fAhyRENv/i9MpPgj9ljV9Qr1uQDX0kacpXzrRqtdnWufTb
- 5QhJzpFzADQExY28rtbtUTcZ0g==
-X-Google-Smtp-Source: APXvYqwEFvsfbNVarbCKn/CaPPWWGkVmIUJ55Mc+kqvQbIA3b9FWJAmPfuM+8mkgIFBS0YNQs5g27A==
-X-Received: by 2002:a7b:cb06:: with SMTP id u6mr10100159wmj.170.1559734994798; 
- Wed, 05 Jun 2019 04:43:14 -0700 (PDT)
-Received: from localhost.localdomain ([2.27.167.43])
- by smtp.gmail.com with ESMTPSA id 34sm27718740wre.32.2019.06.05.04.43.13
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 04:43:14 -0700 (PDT)
-From: Lee Jones <lee.jones@linaro.org>
-To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
- wsa+renesas@sang-engineering.com, bjorn.andersson@linaro.org,
- linus.walleij@linaro.org, balbi@kernel.org, gregkh@linuxfoundation.org
-Subject: [PATCH 8/8] usb: dwc3: qcom: Improve error handling
-Date: Wed,  5 Jun 2019 12:43:02 +0100
-Message-Id: <20190605114302.22509-8-lee.jones@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190605114302.22509-1-lee.jones@linaro.org>
-References: <20190605114302.22509-1-lee.jones@linaro.org>
+ id 1hYULy-0006qK-1m; Wed, 05 Jun 2019 11:45:45 +0000
+X-UUID: 80ee22093b5a49eab9004319d96fc254-20190605
+X-UUID: 80ee22093b5a49eab9004319d96fc254-20190605
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <yongqiang.niu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1657854378; Wed, 05 Jun 2019 03:43:59 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 5 Jun 2019 04:43:58 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 5 Jun 2019 19:43:56 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 5 Jun 2019 19:43:56 +0800
+From: <yongqiang.niu@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
+ Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v3, 23/27] drm/mediatek: add connection from ovl0 to ovl_2l0
+Date: Wed, 5 Jun 2019 19:43:02 +0800
+Message-ID: <1559734986-7379-24-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
+References: <1559734986-7379-1-git-send-email-yongqiang.niu@mediatek.com>
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_044316_907056_813DCAC3 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190605_044514_788295_BA715CA1 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,44 +72,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-i2c@vger.kernel.org, jlhugo@gmail.com, Lee Jones <lee.jones@linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dwc3_qcom_clk_init() is called with of_count_phandle_with_args() as an
-argument.  If of_count_phandle_with_args() returns an error, the number
-of clocks will be a negative value and will lead to undefined behaviour.
+From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-Ensure we check for an error before attempting to blindly use the value.
+This patch add connection from ovl0 to ovl_2l0
 
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 ---
- drivers/usb/dwc3/dwc3-qcom.c | 3 +++
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 3 +++
  1 file changed, 3 insertions(+)
 
-diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-index 55ba04254e38..e4dac82abd7d 100644
---- a/drivers/usb/dwc3/dwc3-qcom.c
-+++ b/drivers/usb/dwc3/dwc3-qcom.c
-@@ -409,6 +409,9 @@ static int dwc3_qcom_clk_init(struct dwc3_qcom *qcom, int count)
- 	if (!np || !count)
- 		return 0;
- 
-+	if (count < 0)
-+		return count;
-+
- 	qcom->num_clocks = count;
- 
- 	qcom->clks = devm_kcalloc(dev, qcom->num_clocks,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+index 872c744..f980826 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+@@ -322,6 +322,9 @@ static unsigned int mtk_ddp_mout_en(const struct mtk_mmsys_reg_data *data,
+ 	} else if (cur == DDP_COMPONENT_OD1 && next == DDP_COMPONENT_RDMA1) {
+ 		*addr = DISP_REG_CONFIG_DISP_OD_MOUT_EN;
+ 		value = OD1_MOUT_EN_RDMA1;
++	} else if (cur == DDP_COMPONENT_OVL0 && next == DDP_COMPONENT_OVL_2L0) {
++		*addr = DISP_REG_OVL0_MOUT_EN(data);
++		value = OVL0_MOUT_EN_OVL0_2L;
+ 	} else {
+ 		value = 0;
+ 	}
 -- 
-2.17.1
+1.8.1.1.dirty
 
 
 _______________________________________________
