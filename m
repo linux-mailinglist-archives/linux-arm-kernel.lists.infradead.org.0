@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 135A9361AE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:54:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5B35361DB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:56:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/vyV3onBjqqgYS619wyQAnpDhwrEhyN4art8LJO/J8Q=; b=IseFLxA+Ubyb7c
-	XV2RLnPkK1tGp/F3djAaaHUaxLSeNWuRcSOaPSefhfIl7ubmLJNIK0uReuzcpPWAE9Gdc2FmEdjpq
-	jcENDXmyEGsafsdxette05g0JM4gSgRtJQXCeGrqIHoui1HG2T65Y/Tz8uKNPzmMm7hV+YhJclOVH
-	knHiTXeDGCIGvvuGFw59MtmqCVy88+gTuYHtAMpRGR9I9TEYrHm1hIL9bRiiCAMibXnP2M6Iv/IVt
-	R7QMr1e4vaqLBhOxzrF3UQxhfL1cs7TQOtJflk0o01wK9gHFoBkmtUq6YWwAIVaMOHYh4xVxoYXO1
-	62jvi6UXmftzarLMGDNw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hexfJl02MOZQBpFSL+VlgfBrrodpfdCDJ3p1JFevuhs=; b=s3PixbJ+/aQLBxvbCpMuWoQ3e
+	4LRZzWbxUmV5oO7wi1OmixD4l0c3+RcljuTN7UBM8Wnxef9ERnkE5n93fz98EkQJPeSv7Tjbo6Um9
+	BZ05oQswbYfQl6ZSKO2HblchiqNkqgsv3+4aD0ux531oxMvyCkG2AIT1AxILAuq4caKT1LzqDdPL0
+	ZJ9I9dfCbil4qdQ0IhmsylUUMHV0sjRzXg9U1DiXqYzmvt1vU2fT2AQ65WW9RY4njf75GzDnFrQo7
+	Qmo4usCaBXBUf3+rz/aUx6eXWJWswfptWkp+zAlp/Vk2xmxc26BwDNCAhDMwTeIOeJ/LLiAuazKRu
+	amk59i8SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYZB1-0008Kb-IW; Wed, 05 Jun 2019 16:54:15 +0000
+	id 1hYZD0-0001k1-Ni; Wed, 05 Jun 2019 16:56:18 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYZAs-0008IC-4y
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 16:54:07 +0000
+ id 1hYZCr-0001jH-R6; Wed, 05 Jun 2019 16:56:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 621C0374;
- Wed,  5 Jun 2019 09:54:05 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 708623F5AF; Wed,  5 Jun 2019 09:54:03 -0700 (PDT)
-Date: Wed, 5 Jun 2019 17:54:00 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH v4 0/4] ptrace: cleanup PTRACE_SYSEMU handling and add
- support for arm64
-Message-ID: <20190605165400.GF50849@arrakis.emea.arm.com>
-References: <20190523090618.13410-1-sudeep.holla@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1912F374;
+ Wed,  5 Jun 2019 09:56:08 -0700 (PDT)
+Received: from [10.1.196.50] (e108454-lin.cambridge.arm.com [10.1.196.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EF56B3F5AF;
+ Wed,  5 Jun 2019 09:56:04 -0700 (PDT)
+Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, aou@eecs.berkeley.edu, gary@garyguo.net,
+ Atish.Patra@wdc.com, hch@infradead.org, paul.walmsley@sifive.com,
+ rppt@linux.ibm.com, linux-riscv@lists.infradead.org, anup.Patel@wdc.com
+References: <20190321163623.20219-1-julien.grall@arm.com>
+ <20190321163623.20219-12-julien.grall@arm.com>
+From: Julien Grall <julien.grall@arm.com>
+Message-ID: <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
+Date: Wed, 5 Jun 2019 17:56:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190523090618.13410-1-sudeep.holla@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190321163623.20219-12-julien.grall@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_095406_195581_92AB4070 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190605_095609_896849_E6494476 
+X-CRM114-Status: GOOD (  40.97  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -64,31 +67,627 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
- Richard Weinberger <richard@nod.at>, jdike@addtoit.com, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Oleg Nesterov <oleg@redhat.com>, Bin Lu <bin.lu@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: palmer@sifive.com, suzuki.poulose@arm.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, julien.thierry@arm.com, will.deacon@arm.com,
+ christoffer.dall@arm.com, james.morse@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 10:06:14AM +0100, Sudeep Holla wrote:
-> Sudeep Holla (4):
->   ptrace: move clearing of TIF_SYSCALL_EMU flag to core
->   x86: simplify _TIF_SYSCALL_EMU handling
->   arm64: add PTRACE_SYSEMU{,SINGLESTEP} definations to uapi headers
->   arm64: ptrace: add support for syscall emulation
+Hi,
 
-I queued patches 1, 3 and 4 through the arm64 tree. There is no
-dependency on patch 2 (just general clean-)up; happy to take it as well
-or it can go in via the x86 tree.
+I am CCing RISC-V folks to see if there are an interest to share the code.
 
-Thanks.
+@RISC-V: I noticed you are discussing about importing a version of ASID 
+allocator in RISC-V. At a first look, the code looks quite similar. Would the 
+library below helps you?
+
+Cheers,
+
+On 21/03/2019 16:36, Julien Grall wrote:
+> We will want to re-use the ASID allocator in a separate context (e.g
+> allocating VMID). So move the code in a new file.
+> 
+> The function asid_check_context has been moved in the header as a static
+> inline function because we want to avoid add a branch when checking if the
+> ASID is still valid.
+> 
+> Signed-off-by: Julien Grall <julien.grall@arm.com>
+> 
+> ---
+> 
+> This code will be used in the virt code for allocating VMID. I am not
+> entirely sure where to place it. Lib could potentially be a good place but I
+> am not entirely convinced the algo as it is could be used by other
+> architecture.
+> 
+> Looking at x86, it seems that it will not be possible to re-use because
+> the number of PCID (aka ASID) could be smaller than the number of CPUs.
+> See commit message 10af6235e0d327d42e1bad974385197817923dc1 "x86/mm:
+> Implement PCID based optimization: try to preserve old TLB entries using
+> PCI".
+> ---
+>   arch/arm64/include/asm/asid.h |  77 ++++++++++++++
+>   arch/arm64/lib/Makefile       |   2 +
+>   arch/arm64/lib/asid.c         | 185 +++++++++++++++++++++++++++++++++
+>   arch/arm64/mm/context.c       | 235 +-----------------------------------------
+>   4 files changed, 267 insertions(+), 232 deletions(-)
+>   create mode 100644 arch/arm64/include/asm/asid.h
+>   create mode 100644 arch/arm64/lib/asid.c
+> 
+> diff --git a/arch/arm64/include/asm/asid.h b/arch/arm64/include/asm/asid.h
+> new file mode 100644
+> index 000000000000..bb62b587f37f
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/asid.h
+> @@ -0,0 +1,77 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __ASM_ASM_ASID_H
+> +#define __ASM_ASM_ASID_H
+> +
+> +#include <linux/atomic.h>
+> +#include <linux/compiler.h>
+> +#include <linux/cpumask.h>
+> +#include <linux/percpu.h>
+> +#include <linux/spinlock.h>
+> +
+> +struct asid_info
+> +{
+> +	atomic64_t	generation;
+> +	unsigned long	*map;
+> +	atomic64_t __percpu	*active;
+> +	u64 __percpu		*reserved;
+> +	u32			bits;
+> +	/* Lock protecting the structure */
+> +	raw_spinlock_t		lock;
+> +	/* Which CPU requires context flush on next call */
+> +	cpumask_t		flush_pending;
+> +	/* Number of ASID allocated by context (shift value) */
+> +	unsigned int		ctxt_shift;
+> +	/* Callback to locally flush the context. */
+> +	void			(*flush_cpu_ctxt_cb)(void);
+> +};
+> +
+> +#define NUM_ASIDS(info)			(1UL << ((info)->bits))
+> +#define NUM_CTXT_ASIDS(info)		(NUM_ASIDS(info) >> (info)->ctxt_shift)
+> +
+> +#define active_asid(info, cpu)	*per_cpu_ptr((info)->active, cpu)
+> +
+> +void asid_new_context(struct asid_info *info, atomic64_t *pasid,
+> +		      unsigned int cpu);
+> +
+> +/*
+> + * Check the ASID is still valid for the context. If not generate a new ASID.
+> + *
+> + * @pasid: Pointer to the current ASID batch
+> + * @cpu: current CPU ID. Must have been acquired throught get_cpu()
+> + */
+> +static inline void asid_check_context(struct asid_info *info,
+> +				      atomic64_t *pasid, unsigned int cpu)
+> +{
+> +	u64 asid, old_active_asid;
+> +
+> +	asid = atomic64_read(pasid);
+> +
+> +	/*
+> +	 * The memory ordering here is subtle.
+> +	 * If our active_asid is non-zero and the ASID matches the current
+> +	 * generation, then we update the active_asid entry with a relaxed
+> +	 * cmpxchg. Racing with a concurrent rollover means that either:
+> +	 *
+> +	 * - We get a zero back from the cmpxchg and end up waiting on the
+> +	 *   lock. Taking the lock synchronises with the rollover and so
+> +	 *   we are forced to see the updated generation.
+> +	 *
+> +	 * - We get a valid ASID back from the cmpxchg, which means the
+> +	 *   relaxed xchg in flush_context will treat us as reserved
+> +	 *   because atomic RmWs are totally ordered for a given location.
+> +	 */
+> +	old_active_asid = atomic64_read(&active_asid(info, cpu));
+> +	if (old_active_asid &&
+> +	    !((asid ^ atomic64_read(&info->generation)) >> info->bits) &&
+> +	    atomic64_cmpxchg_relaxed(&active_asid(info, cpu),
+> +				     old_active_asid, asid))
+> +		return;
+> +
+> +	asid_new_context(info, pasid, cpu);
+> +}
+> +
+> +int asid_allocator_init(struct asid_info *info,
+> +			u32 bits, unsigned int asid_per_ctxt,
+> +			void (*flush_cpu_ctxt_cb)(void));
+> +
+> +#endif
+> diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
+> index 5540a1638baf..720df5ee2aa2 100644
+> --- a/arch/arm64/lib/Makefile
+> +++ b/arch/arm64/lib/Makefile
+> @@ -5,6 +5,8 @@ lib-y		:= clear_user.o delay.o copy_from_user.o		\
+>   		   memcmp.o strcmp.o strncmp.o strlen.o strnlen.o	\
+>   		   strchr.o strrchr.o tishift.o
+>   
+> +lib-y		+= asid.o
+> +
+>   ifeq ($(CONFIG_KERNEL_MODE_NEON), y)
+>   obj-$(CONFIG_XOR_BLOCKS)	+= xor-neon.o
+>   CFLAGS_REMOVE_xor-neon.o	+= -mgeneral-regs-only
+> diff --git a/arch/arm64/lib/asid.c b/arch/arm64/lib/asid.c
+> new file mode 100644
+> index 000000000000..72b71bfb32be
+> --- /dev/null
+> +++ b/arch/arm64/lib/asid.c
+> @@ -0,0 +1,185 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Generic ASID allocator.
+> + *
+> + * Based on arch/arm/mm/context.c
+> + *
+> + * Copyright (C) 2002-2003 Deep Blue Solutions Ltd, all rights reserved.
+> + * Copyright (C) 2012 ARM Ltd.
+> + */
+> +
+> +#include <linux/slab.h>
+> +
+> +#include <asm/asid.h>
+> +
+> +#define reserved_asid(info, cpu) *per_cpu_ptr((info)->reserved, cpu)
+> +
+> +#define ASID_MASK(info)			(~GENMASK((info)->bits - 1, 0))
+> +#define ASID_FIRST_VERSION(info)	(1UL << ((info)->bits))
+> +
+> +#define asid2idx(info, asid)		(((asid) & ~ASID_MASK(info)) >> (info)->ctxt_shift)
+> +#define idx2asid(info, idx)		(((idx) << (info)->ctxt_shift) & ~ASID_MASK(info))
+> +
+> +static void flush_context(struct asid_info *info)
+> +{
+> +	int i;
+> +	u64 asid;
+> +
+> +	/* Update the list of reserved ASIDs and the ASID bitmap. */
+> +	bitmap_clear(info->map, 0, NUM_CTXT_ASIDS(info));
+> +
+> +	for_each_possible_cpu(i) {
+> +		asid = atomic64_xchg_relaxed(&active_asid(info, i), 0);
+> +		/*
+> +		 * If this CPU has already been through a
+> +		 * rollover, but hasn't run another task in
+> +		 * the meantime, we must preserve its reserved
+> +		 * ASID, as this is the only trace we have of
+> +		 * the process it is still running.
+> +		 */
+> +		if (asid == 0)
+> +			asid = reserved_asid(info, i);
+> +		__set_bit(asid2idx(info, asid), info->map);
+> +		reserved_asid(info, i) = asid;
+> +	}
+> +
+> +	/*
+> +	 * Queue a TLB invalidation for each CPU to perform on next
+> +	 * context-switch
+> +	 */
+> +	cpumask_setall(&info->flush_pending);
+> +}
+> +
+> +static bool check_update_reserved_asid(struct asid_info *info, u64 asid,
+> +				       u64 newasid)
+> +{
+> +	int cpu;
+> +	bool hit = false;
+> +
+> +	/*
+> +	 * Iterate over the set of reserved ASIDs looking for a match.
+> +	 * If we find one, then we can update our mm to use newasid
+> +	 * (i.e. the same ASID in the current generation) but we can't
+> +	 * exit the loop early, since we need to ensure that all copies
+> +	 * of the old ASID are updated to reflect the mm. Failure to do
+> +	 * so could result in us missing the reserved ASID in a future
+> +	 * generation.
+> +	 */
+> +	for_each_possible_cpu(cpu) {
+> +		if (reserved_asid(info, cpu) == asid) {
+> +			hit = true;
+> +			reserved_asid(info, cpu) = newasid;
+> +		}
+> +	}
+> +
+> +	return hit;
+> +}
+> +
+> +static u64 new_context(struct asid_info *info, atomic64_t *pasid)
+> +{
+> +	static u32 cur_idx = 1;
+> +	u64 asid = atomic64_read(pasid);
+> +	u64 generation = atomic64_read(&info->generation);
+> +
+> +	if (asid != 0) {
+> +		u64 newasid = generation | (asid & ~ASID_MASK(info));
+> +
+> +		/*
+> +		 * If our current ASID was active during a rollover, we
+> +		 * can continue to use it and this was just a false alarm.
+> +		 */
+> +		if (check_update_reserved_asid(info, asid, newasid))
+> +			return newasid;
+> +
+> +		/*
+> +		 * We had a valid ASID in a previous life, so try to re-use
+> +		 * it if possible.
+> +		 */
+> +		if (!__test_and_set_bit(asid2idx(info, asid), info->map))
+> +			return newasid;
+> +	}
+> +
+> +	/*
+> +	 * Allocate a free ASID. If we can't find one, take a note of the
+> +	 * currently active ASIDs and mark the TLBs as requiring flushes.  We
+> +	 * always count from ASID #2 (index 1), as we use ASID #0 when setting
+> +	 * a reserved TTBR0 for the init_mm and we allocate ASIDs in even/odd
+> +	 * pairs.
+> +	 */
+> +	asid = find_next_zero_bit(info->map, NUM_CTXT_ASIDS(info), cur_idx);
+> +	if (asid != NUM_CTXT_ASIDS(info))
+> +		goto set_asid;
+> +
+> +	/* We're out of ASIDs, so increment the global generation count */
+> +	generation = atomic64_add_return_relaxed(ASID_FIRST_VERSION(info),
+> +						 &info->generation);
+> +	flush_context(info);
+> +
+> +	/* We have more ASIDs than CPUs, so this will always succeed */
+> +	asid = find_next_zero_bit(info->map, NUM_CTXT_ASIDS(info), 1);
+> +
+> +set_asid:
+> +	__set_bit(asid, info->map);
+> +	cur_idx = asid;
+> +	return idx2asid(info, asid) | generation;
+> +}
+> +
+> +/*
+> + * Generate a new ASID for the context.
+> + *
+> + * @pasid: Pointer to the current ASID batch allocated. It will be updated
+> + * with the new ASID batch.
+> + * @cpu: current CPU ID. Must have been acquired through get_cpu()
+> + */
+> +void asid_new_context(struct asid_info *info, atomic64_t *pasid,
+> +		      unsigned int cpu)
+> +{
+> +	unsigned long flags;
+> +	u64 asid;
+> +
+> +	raw_spin_lock_irqsave(&info->lock, flags);
+> +	/* Check that our ASID belongs to the current generation. */
+> +	asid = atomic64_read(pasid);
+> +	if ((asid ^ atomic64_read(&info->generation)) >> info->bits) {
+> +		asid = new_context(info, pasid);
+> +		atomic64_set(pasid, asid);
+> +	}
+> +
+> +	if (cpumask_test_and_clear_cpu(cpu, &info->flush_pending))
+> +		info->flush_cpu_ctxt_cb();
+> +
+> +	atomic64_set(&active_asid(info, cpu), asid);
+> +	raw_spin_unlock_irqrestore(&info->lock, flags);
+> +}
+> +
+> +/*
+> + * Initialize the ASID allocator
+> + *
+> + * @info: Pointer to the asid allocator structure
+> + * @bits: Number of ASIDs available
+> + * @asid_per_ctxt: Number of ASIDs to allocate per-context. ASIDs are
+> + * allocated contiguously for a given context. This value should be a power of
+> + * 2.
+> + */
+> +int asid_allocator_init(struct asid_info *info,
+> +			u32 bits, unsigned int asid_per_ctxt,
+> +			void (*flush_cpu_ctxt_cb)(void))
+> +{
+> +	info->bits = bits;
+> +	info->ctxt_shift = ilog2(asid_per_ctxt);
+> +	info->flush_cpu_ctxt_cb = flush_cpu_ctxt_cb;
+> +	/*
+> +	 * Expect allocation after rollover to fail if we don't have at least
+> +	 * one more ASID than CPUs. ASID #0 is always reserved.
+> +	 */
+> +	WARN_ON(NUM_CTXT_ASIDS(info) - 1 <= num_possible_cpus());
+> +	atomic64_set(&info->generation, ASID_FIRST_VERSION(info));
+> +	info->map = kcalloc(BITS_TO_LONGS(NUM_CTXT_ASIDS(info)),
+> +			    sizeof(*info->map), GFP_KERNEL);
+> +	if (!info->map)
+> +		return -ENOMEM;
+> +
+> +	raw_spin_lock_init(&info->lock);
+> +
+> +	return 0;
+> +}
+> diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+> index 678a57b77c91..95ee7711a2ef 100644
+> --- a/arch/arm64/mm/context.c
+> +++ b/arch/arm64/mm/context.c
+> @@ -22,47 +22,22 @@
+>   #include <linux/slab.h>
+>   #include <linux/mm.h>
+>   
+> +#include <asm/asid.h>
+>   #include <asm/cpufeature.h>
+>   #include <asm/mmu_context.h>
+>   #include <asm/smp.h>
+>   #include <asm/tlbflush.h>
+>   
+> -struct asid_info
+> -{
+> -	atomic64_t	generation;
+> -	unsigned long	*map;
+> -	atomic64_t __percpu	*active;
+> -	u64 __percpu		*reserved;
+> -	u32			bits;
+> -	raw_spinlock_t		lock;
+> -	/* Which CPU requires context flush on next call */
+> -	cpumask_t		flush_pending;
+> -	/* Number of ASID allocated by context (shift value) */
+> -	unsigned int		ctxt_shift;
+> -	/* Callback to locally flush the context. */
+> -	void			(*flush_cpu_ctxt_cb)(void);
+> -} asid_info;
+> -
+> -#define active_asid(info, cpu)	*per_cpu_ptr((info)->active, cpu)
+> -#define reserved_asid(info, cpu) *per_cpu_ptr((info)->reserved, cpu)
+> -
+>   static DEFINE_PER_CPU(atomic64_t, active_asids);
+>   static DEFINE_PER_CPU(u64, reserved_asids);
+>   
+> -#define ASID_MASK(info)			(~GENMASK((info)->bits - 1, 0))
+> -#define NUM_ASIDS(info)			(1UL << ((info)->bits))
+> -
+> -#define ASID_FIRST_VERSION(info)	NUM_ASIDS(info)
+> -
+>   #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
+>   #define ASID_PER_CONTEXT		2
+>   #else
+>   #define ASID_PER_CONTEXT		1
+>   #endif
+>   
+> -#define NUM_CTXT_ASIDS(info)		(NUM_ASIDS(info) >> (info)->ctxt_shift)
+> -#define asid2idx(info, asid)		(((asid) & ~ASID_MASK(info)) >> (info)->ctxt_shift)
+> -#define idx2asid(info, idx)		(((idx) << (info)->ctxt_shift) & ~ASID_MASK(info))
+> +struct asid_info asid_info;
+>   
+>   /* Get the ASIDBits supported by the current CPU */
+>   static u32 get_cpu_asid_bits(void)
+> @@ -102,178 +77,6 @@ void verify_cpu_asid_bits(void)
+>   	}
+>   }
+>   
+> -static void flush_context(struct asid_info *info)
+> -{
+> -	int i;
+> -	u64 asid;
+> -
+> -	/* Update the list of reserved ASIDs and the ASID bitmap. */
+> -	bitmap_clear(info->map, 0, NUM_CTXT_ASIDS(info));
+> -
+> -	for_each_possible_cpu(i) {
+> -		asid = atomic64_xchg_relaxed(&active_asid(info, i), 0);
+> -		/*
+> -		 * If this CPU has already been through a
+> -		 * rollover, but hasn't run another task in
+> -		 * the meantime, we must preserve its reserved
+> -		 * ASID, as this is the only trace we have of
+> -		 * the process it is still running.
+> -		 */
+> -		if (asid == 0)
+> -			asid = reserved_asid(info, i);
+> -		__set_bit(asid2idx(info, asid), info->map);
+> -		reserved_asid(info, i) = asid;
+> -	}
+> -
+> -	/*
+> -	 * Queue a TLB invalidation for each CPU to perform on next
+> -	 * context-switch
+> -	 */
+> -	cpumask_setall(&info->flush_pending);
+> -}
+> -
+> -static bool check_update_reserved_asid(struct asid_info *info, u64 asid,
+> -				       u64 newasid)
+> -{
+> -	int cpu;
+> -	bool hit = false;
+> -
+> -	/*
+> -	 * Iterate over the set of reserved ASIDs looking for a match.
+> -	 * If we find one, then we can update our mm to use newasid
+> -	 * (i.e. the same ASID in the current generation) but we can't
+> -	 * exit the loop early, since we need to ensure that all copies
+> -	 * of the old ASID are updated to reflect the mm. Failure to do
+> -	 * so could result in us missing the reserved ASID in a future
+> -	 * generation.
+> -	 */
+> -	for_each_possible_cpu(cpu) {
+> -		if (reserved_asid(info, cpu) == asid) {
+> -			hit = true;
+> -			reserved_asid(info, cpu) = newasid;
+> -		}
+> -	}
+> -
+> -	return hit;
+> -}
+> -
+> -static u64 new_context(struct asid_info *info, atomic64_t *pasid)
+> -{
+> -	static u32 cur_idx = 1;
+> -	u64 asid = atomic64_read(pasid);
+> -	u64 generation = atomic64_read(&info->generation);
+> -
+> -	if (asid != 0) {
+> -		u64 newasid = generation | (asid & ~ASID_MASK(info));
+> -
+> -		/*
+> -		 * If our current ASID was active during a rollover, we
+> -		 * can continue to use it and this was just a false alarm.
+> -		 */
+> -		if (check_update_reserved_asid(info, asid, newasid))
+> -			return newasid;
+> -
+> -		/*
+> -		 * We had a valid ASID in a previous life, so try to re-use
+> -		 * it if possible.
+> -		 */
+> -		if (!__test_and_set_bit(asid2idx(info, asid), info->map))
+> -			return newasid;
+> -	}
+> -
+> -	/*
+> -	 * Allocate a free ASID. If we can't find one, take a note of the
+> -	 * currently active ASIDs and mark the TLBs as requiring flushes.  We
+> -	 * always count from ASID #2 (index 1), as we use ASID #0 when setting
+> -	 * a reserved TTBR0 for the init_mm and we allocate ASIDs in even/odd
+> -	 * pairs.
+> -	 */
+> -	asid = find_next_zero_bit(info->map, NUM_CTXT_ASIDS(info), cur_idx);
+> -	if (asid != NUM_CTXT_ASIDS(info))
+> -		goto set_asid;
+> -
+> -	/* We're out of ASIDs, so increment the global generation count */
+> -	generation = atomic64_add_return_relaxed(ASID_FIRST_VERSION(info),
+> -						 &info->generation);
+> -	flush_context(info);
+> -
+> -	/* We have more ASIDs than CPUs, so this will always succeed */
+> -	asid = find_next_zero_bit(info->map, NUM_CTXT_ASIDS(info), 1);
+> -
+> -set_asid:
+> -	__set_bit(asid, info->map);
+> -	cur_idx = asid;
+> -	return idx2asid(info, asid) | generation;
+> -}
+> -
+> -static void asid_new_context(struct asid_info *info, atomic64_t *pasid,
+> -			     unsigned int cpu);
+> -
+> -/*
+> - * Check the ASID is still valid for the context. If not generate a new ASID.
+> - *
+> - * @pasid: Pointer to the current ASID batch
+> - * @cpu: current CPU ID. Must have been acquired throught get_cpu()
+> - */
+> -static void asid_check_context(struct asid_info *info,
+> -			       atomic64_t *pasid, unsigned int cpu)
+> -{
+> -	u64 asid, old_active_asid;
+> -
+> -	asid = atomic64_read(pasid);
+> -
+> -	/*
+> -	 * The memory ordering here is subtle.
+> -	 * If our active_asid is non-zero and the ASID matches the current
+> -	 * generation, then we update the active_asid entry with a relaxed
+> -	 * cmpxchg. Racing with a concurrent rollover means that either:
+> -	 *
+> -	 * - We get a zero back from the cmpxchg and end up waiting on the
+> -	 *   lock. Taking the lock synchronises with the rollover and so
+> -	 *   we are forced to see the updated generation.
+> -	 *
+> -	 * - We get a valid ASID back from the cmpxchg, which means the
+> -	 *   relaxed xchg in flush_context will treat us as reserved
+> -	 *   because atomic RmWs are totally ordered for a given location.
+> -	 */
+> -	old_active_asid = atomic64_read(&active_asid(info, cpu));
+> -	if (old_active_asid &&
+> -	    !((asid ^ atomic64_read(&info->generation)) >> info->bits) &&
+> -	    atomic64_cmpxchg_relaxed(&active_asid(info, cpu),
+> -				     old_active_asid, asid))
+> -		return;
+> -
+> -	asid_new_context(info, pasid, cpu);
+> -}
+> -
+> -/*
+> - * Generate a new ASID for the context.
+> - *
+> - * @pasid: Pointer to the current ASID batch allocated. It will be updated
+> - * with the new ASID batch.
+> - * @cpu: current CPU ID. Must have been acquired through get_cpu()
+> - */
+> -static void asid_new_context(struct asid_info *info, atomic64_t *pasid,
+> -			     unsigned int cpu)
+> -{
+> -	unsigned long flags;
+> -	u64 asid;
+> -
+> -	raw_spin_lock_irqsave(&info->lock, flags);
+> -	/* Check that our ASID belongs to the current generation. */
+> -	asid = atomic64_read(pasid);
+> -	if ((asid ^ atomic64_read(&info->generation)) >> info->bits) {
+> -		asid = new_context(info, pasid);
+> -		atomic64_set(pasid, asid);
+> -	}
+> -
+> -	if (cpumask_test_and_clear_cpu(cpu, &info->flush_pending))
+> -		info->flush_cpu_ctxt_cb();
+> -
+> -	atomic64_set(&active_asid(info, cpu), asid);
+> -	raw_spin_unlock_irqrestore(&info->lock, flags);
+> -}
+> -
+>   void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
+>   {
+>   	if (system_supports_cnp())
+> @@ -305,38 +108,6 @@ static void asid_flush_cpu_ctxt(void)
+>   	local_flush_tlb_all();
+>   }
+>   
+> -/*
+> - * Initialize the ASID allocator
+> - *
+> - * @info: Pointer to the asid allocator structure
+> - * @bits: Number of ASIDs available
+> - * @asid_per_ctxt: Number of ASIDs to allocate per-context. ASIDs are
+> - * allocated contiguously for a given context. This value should be a power of
+> - * 2.
+> - */
+> -static int asid_allocator_init(struct asid_info *info,
+> -			       u32 bits, unsigned int asid_per_ctxt,
+> -			       void (*flush_cpu_ctxt_cb)(void))
+> -{
+> -	info->bits = bits;
+> -	info->ctxt_shift = ilog2(asid_per_ctxt);
+> -	info->flush_cpu_ctxt_cb = flush_cpu_ctxt_cb;
+> -	/*
+> -	 * Expect allocation after rollover to fail if we don't have at least
+> -	 * one more ASID than CPUs. ASID #0 is always reserved.
+> -	 */
+> -	WARN_ON(NUM_CTXT_ASIDS(info) - 1 <= num_possible_cpus());
+> -	atomic64_set(&info->generation, ASID_FIRST_VERSION(info));
+> -	info->map = kcalloc(BITS_TO_LONGS(NUM_CTXT_ASIDS(info)),
+> -			    sizeof(*info->map), GFP_KERNEL);
+> -	if (!info->map)
+> -		return -ENOMEM;
+> -
+> -	raw_spin_lock_init(&info->lock);
+> -
+> -	return 0;
+> -}
+> -
+>   static int asids_init(void)
+>   {
+>   	u32 bits = get_cpu_asid_bits();
+> @@ -344,7 +115,7 @@ static int asids_init(void)
+>   	if (!asid_allocator_init(&asid_info, bits, ASID_PER_CONTEXT,
+>   				 asid_flush_cpu_ctxt))
+>   		panic("Unable to initialize ASID allocator for %lu ASIDs\n",
+> -		      1UL << bits);
+> +		      NUM_ASIDS(&asid_info));
+>   
+>   	asid_info.active = &active_asids;
+>   	asid_info.reserved = &reserved_asids;
+> 
 
 -- 
-Catalin
+Julien Grall
 
 _______________________________________________
 linux-arm-kernel mailing list
