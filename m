@@ -2,56 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91487362C3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 19:35:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD68A36392
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 20:50:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PwP0Pz/MZdefLv4vP/A0T/5BwlNWG7hw8XT28kSDyC0=; b=Lduxg9yx8j2hqB
-	kn9+0E9kLh1hWd43pLSDOCjHDqCK5KSHpsBDLh6a9R+PoDs1y8eBTKfmJW0Se4BhW8dVWJzfgJbQM
-	vau9/KbPfYt0MOHgAfVB/9+0YObFmhN4NgXpq/Yvcv5Svq8xVI1wb9cF7FYal0bAvS71nbL1qoNUX
-	/kC0LbES7FYhx1ETgaf6KMmcTSOvoElFjiuFnv42SW157s0Hze6+uux+fCx2j73MNQcCVU0JJ+hjJ
-	UXE0Zu5Jr0+TkX/Pwar/n0FHyujuO/pIfJ/7TL+zMs/TLPVD6iucwJFjHrFl5Cu1JKTje0+ez36pO
-	fdBAsA76h+5v0SyR/PsA==;
+	List-Owner; bh=4XtlLFFxxnhpiH3Nk8L2gHtpYQVmw3yj/81k3J9pp10=; b=Anws2TOt7GGggi
+	Sql7o2TFgbB3J+Y8vGnAdrzymz5CUJIeN4C5zqTfs8pVjtGxdbTA/chTwJ5JEhDB3B4O0T6FiY8fg
+	N/Reohojx7rbpveyJItpvrs9ny/5rFJ6P0T9L50wdhG5JZ+FHS6vYyzvE2XsFzHYNxoJLb1ByRlg0
+	qY1bl2aFR/mnP77RhQiNUEaBifmPs59Z+QYp3YaMxCAA7MFRlroNMVLBTcoJFvEG0scAZXV5B20sn
+	vf228TO1uEN0W+JNlxhhZaA2rMXUpQUFNVRRqNd+ieadhVI9HLCQdZTBO+WoGfEAvUAa2By9Nv+/r
+	LAVNCTf1bK9aPXLIOoPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYZoQ-0000pJ-Po; Wed, 05 Jun 2019 17:34:58 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYZoJ-0000ou-Qc
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 17:34:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 36C0E374;
- Wed,  5 Jun 2019 10:34:51 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F39383F5AF;
- Wed,  5 Jun 2019 10:34:48 -0700 (PDT)
-Date: Wed, 5 Jun 2019 18:34:42 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Sricharan R <sricharan@codeaurora.org>
-Subject: Re: [PATCH 5/6] arm64: dts: Add ipq6018 SoC and CP01 board support
-Message-ID: <20190605173441.GA9903@e107155-lin>
-References: <1559755738-28643-1-git-send-email-sricharan@codeaurora.org>
- <1559755738-28643-6-git-send-email-sricharan@codeaurora.org>
+	id 1hYayx-0006Pd-Ox; Wed, 05 Jun 2019 18:49:55 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYayq-0006Og-SX
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 18:49:50 +0000
+Received: by mail-wr1-x443.google.com with SMTP id f9so5816447wre.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 11:49:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=Fydr1IvWkVkzid+Y2c9d9epjwSMwkXEoLpbPP3duu6g=;
+ b=zEJKSGDwkWmja24SuoSG0/GhNWhVB0NTB6KUOwzuixKacNH1MkdRfN4Ngt3y+WLMIp
+ aCslUK4+4CF+ThC7NaOvB/iDkL+mdKF6ADpoMFuAacdi1GWjlNthODar6mzp5s+624B5
+ UJxRnfUVEAxMSwmyYJvZWzclwt4g+PnBkt8sLzIAHMbxtMLHqQiY6NU+d8LrhQvVXGml
+ InXoilY3MNIXL9EzadAwsfRDIGqwassxHYJwNfyYYXvWUMW2oXkckkCbkK5YhyKnWT2j
+ nj3kMf+BfiOEdBPcsCKgoq4ReonBmf6RqnkNxEt7WGQlzJnjd7cQcqo51U0stqXCzCSg
+ mc4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=Fydr1IvWkVkzid+Y2c9d9epjwSMwkXEoLpbPP3duu6g=;
+ b=Tx2p5mfleOwD07ar2/3JvjoBGCdPwW2K0/AHG1V1tsq+r8zpcYajQ8tCr1cYf7O39G
+ DkmqJr15RXsTgmj1iVnizBxKxzR1lvdFzdJr21vStUIa/iax4OYNNylSfrzP37iuLLgL
+ rAJCNwQkrLqLRv7kWsXgWbhvocl9uhOi5hBaVVKBrAo2FjH0ytq22g4KG1h9M9wRqLNB
+ nYMTAZNddHPMpClu2vGsgvGvWbBk+8FugIadJBH0X187X1IB8ky6AOxbcUzExIr2ponM
+ H0Rg13mp7sGhw5CUa2iD70Znd5nVVne1jI7etenbX6e+mVIQ7/Jqea7vBu3tay8TL3P5
+ fdOQ==
+X-Gm-Message-State: APjAAAXVbljqUvUQkrPdr5Kcz4Dvt+oGz2hDd2QYOME8Sz/HnjpCappa
+ PeCNUmXsnepJ1gBGImK4ipBAbQ==
+X-Google-Smtp-Source: APXvYqw+35EWc3ZT4bKVc2X4aWO6Q+WjMsFs/vEImJQxHpwstz9A3Ta5/2macrjRvIUbwUzb8lHfGA==
+X-Received: by 2002:adf:ea92:: with SMTP id s18mr3874120wrm.257.1559760583946; 
+ Wed, 05 Jun 2019 11:49:43 -0700 (PDT)
+Received: from dell ([2.27.167.43])
+ by smtp.gmail.com with ESMTPSA id h200sm29965448wme.11.2019.06.05.11.49.42
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 05 Jun 2019 11:49:43 -0700 (PDT)
+Date: Wed, 5 Jun 2019 19:49:41 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Wolfram Sang <wsa@the-dreams.de>
+Subject: Re: [PATCH 2/8] i2c: i2c-qcom-geni: Signify successful driver probe
+Message-ID: <20190605184941.GU4797@dell>
+References: <20190604104455.8877-1-lee.jones@linaro.org>
+ <20190604104455.8877-2-lee.jones@linaro.org>
+ <20190605062020.GL22737@tuxbook-pro> <20190605071625.GK4797@dell>
+ <20190605075656.GC29637@localhost> <20190605082047.GM4797@dell>
+ <20190605083353.GD29637@localhost> <20190605084921.GQ4797@dell>
+ <20190605085527.GE29637@localhost> <20190605141812.GA962@kunai>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559755738-28643-6-git-send-email-sricharan@codeaurora.org>
+In-Reply-To: <20190605141812.GA962@kunai>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_103451_870992_F9486B11 
-X-CRM114-Status: GOOD (  11.23  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_114948_940853_34785B17 
+X-CRM114-Status: GOOD (  11.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,58 +103,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, sboyd@kernel.org, linux-arm-msm@vger.kernel.org,
- linus.walleij@linaro.org, agross@kernel.org, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, robh+dt@kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, linux-soc@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, balbi@kernel.org,
+ david.brown@linaro.org, gregkh@linuxfoundation.org, linus.walleij@linaro.org,
+ linux-usb@vger.kernel.org, Johan Hovold <johan@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, wsa+renesas@sang-engineering.com,
+ alokc@codeaurora.org, kramasub@codeaurora.org, linux-i2c@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ andy.gross@linaro.org, jlhugo@gmail.com, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 05, 2019 at 10:58:57PM +0530, Sricharan R wrote:
-> Add initial device tree support for the Qualcomm IPQ6018 SoC and
-> CP01 evaluation board.
-> 
-> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
-> Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
-> ---
->  arch/arm64/boot/dts/qcom/Makefile            |   1 +
->  arch/arm64/boot/dts/qcom/ipq6018-cp01-c1.dts |  35 ++++
->  arch/arm64/boot/dts/qcom/ipq6018.dtsi        | 231 +++++++++++++++++++++++++++
->  3 files changed, 267 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/qcom/ipq6018-cp01-c1.dts
->  create mode 100644 arch/arm64/boot/dts/qcom/ipq6018.dtsi
-> 
-
-[...]
-
-> +
-> +		CPU3: cpu@3 {
-> +			device_type = "cpu";
-> +			compatible = "arm,cortex-a53";
-> +			enable-method = "psci";
-> +			reg = <0x3>;
-> +			next-level-cache = <&L2_0>;
-> +		};
-> +
-> +		L2_0: l2-cache {
-> +			compatible = "cache";
-> +			cache-level = <0x2>;
-> +		};
-> +	};
-> +
-> +	pmuv8: pmu {
-> +		compatible = "arm,armv8-pmuv3";
-
-We know these are Cortex-A53s, why not update these accordingly ?
-
---
-Regards,
-Sudeep
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAwNSBKdW4gMjAxOSwgV29sZnJhbSBTYW5nIHdyb3RlOgoKPiAKPiA+IFRvIGVuYWJs
+ZSBkeW5hbWljIGRlYnVnZ2luZyBpbiBkcml2ZXIgY29yZSB5b3UgY291bGQgdXNlIHNvbWV0aGlu
+ZyBsaWtlCj4gPiAKPiA+IAlDT05GSUdfQ01ETElORT0iZHluZGJnPVwiZnVuYyByZWFsbHlfcHJv
+YmUgPXBcIiIKPiA+IAo+ID4gVGhhdCBnaXZlcyB5b3UgdHdvIHByaW50b3V0cyBwZXIgc3VjY2Vz
+c2Z1bCBwcm9iZSwgZm9yIGV4YW1wbGU6Cj4gPiAKPiA+IAlidXM6ICd1c2Itc2VyaWFsJzogcmVh
+bGx5X3Byb2JlOiBwcm9iaW5nIGRyaXZlciBlZGdlcG9ydF90aV8xIHdpdGggZGV2aWNlIHR0eVVT
+QjAKPiA+IAlidXM6ICd1c2Itc2VyaWFsJzogcmVhbGx5X3Byb2JlOiBib3VuZCBkZXZpY2UgdHR5
+VVNCMCB0byBkcml2ZXIgZWRnZXBvcnRfdGlfMQo+IAo+IEkgYWdyZWUgdGhhdCB0aGlzIHNjYWxl
+cyBtdWNoIGJldHRlciB0aGFuIGFkZGluZyBzdHJpbmdzIHRvIGV2ZXJ5Cj4gZHJpdmVyLiBBbHNv
+LCB0aGUgZHJpdmVyIGNvcmUgd2lsbCByZXBvcnQgZmFpbGVkIHByb2JlcyBvdGhlciB0aGFuCj4g
+LUVOT0RFViwgb3I/Cj4gCj4gUmVnYXJkaW5nIHRoaXMgcGF0Y2gsIGhvd2V2ZXIsIEkgZG9uJ3Qg
+Y2FyZSBtdWNoLiBJJ2xsIGxldCB0aGUgZHJpdmVyCj4gbWFpbnRhaW5lcnMgZGVjaWRlLgoKSSd2
+ZSBkb3duZ3JhZGVkIHRoaXMgdG8gZGV2X2RiZygpIGluIHYyLgoKLS0gCkxlZSBKb25lcyBb5p2O
+55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3Bl
+biBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwg
+VHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
