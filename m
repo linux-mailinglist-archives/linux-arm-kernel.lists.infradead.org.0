@@ -2,71 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CC1C3551C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 04:03:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B6C735529
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 04:16:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=02YI+EDk95GGEIDqMQ25LL17jRofB6KWQ5p5bbvzZYY=; b=H/5zg7skUSKuEo
-	aSVn/ekbsjK2KfXA4I1Xa81wmy2gfCQeLStYEiG5bErzXjkaJDtjr0KPc8otrFmCrpkxAuVyTSlYu
-	lWwWRO8/VrTqkvFr/xd8MR2BMBS14S61VebhDEX8ZQf9ypAZ2Tk+n7Y2aDqLuaTgTpHlaq60ar4dp
-	Ro04Q0+aYIXxU36ZBne6dirvBH3TzXWofAI7WtnnZHiP5gw86ayedYAhC6jifiVJSmKc0s2OafUuN
-	gmy3C3hPM3RUEOyhDDGVz75CjIcRDiuOVNQR1W4P+B8dDrOVB28BVIDu8UvCjHLTKWmDgfG4JgiN/
-	QKyzluwj7pAi2K1YqLhw==;
+	List-Owner; bh=5kMhsS2BT68KpQvPFQy7ecntKaI/7sR/4oxScFuphy8=; b=EuTwajKePEQGTt
+	yvV7SGUQzs7KPDlr44sgjv+6EECBua83oRduM7RR4SxgsmPhWcJdEseIMhI/f24dSl6fRFWZV+s+8
+	gx3Ab1BkasCNmeaXAeq4Me4BN4wvlKaUQYtbKYocBsH40sUAMrv0u8O3ULLwE5UcgqUw701Aeu3wy
+	qkrOFuT16L0IjdEub52yevO18TXa2SxajBTc0QPf5CMRMoJbcjCrVRr1jzUY3f9mUAFYhbQaYlder
+	dUU74Z95cA/QOaGNGURMKl6SvpRBKQh9gGR5lTsbm6kbsytm7CrRxudbUhm18hyDypir48dZ0W6aO
+	2Edu8ZfVJXP6kawtbjsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYLGe-0003ia-4Y; Wed, 05 Jun 2019 02:03:08 +0000
-Received: from szxga02-in.huawei.com ([45.249.212.188] helo=huawei.com)
+	id 1hYLTY-0008GD-P4; Wed, 05 Jun 2019 02:16:28 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYLGX-0003fe-9l
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 02:03:03 +0000
-Received: from DGGEML403-HUB.china.huawei.com (unknown [172.30.72.54])
- by Forcepoint Email with ESMTP id C549CAC5FA6598B3CA3A;
- Wed,  5 Jun 2019 10:02:48 +0800 (CST)
-Received: from DGGEML421-HUB.china.huawei.com (10.1.199.38) by
- DGGEML403-HUB.china.huawei.com (10.3.17.33) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Wed, 5 Jun 2019 10:02:48 +0800
-Received: from DGGEML529-MBX.china.huawei.com ([169.254.6.38]) by
- dggeml421-hub.china.huawei.com ([10.1.199.38]) with mapi id 14.03.0439.000;
- Wed, 5 Jun 2019 10:02:40 +0800
-From: Duyanlin <duyanlin@huawei.com>
-To: "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "linux-imx@nxp.com"
- <linux-imx@nxp.com>
-Subject: [PATCH] drivers/usb/host/imx21-hcd.c: fix divide-by-zero in func
- nonisoc_etd_done
-Thread-Topic: [PATCH] drivers/usb/host/imx21-hcd.c: fix divide-by-zero in
- func nonisoc_etd_done
-Thread-Index: AQHVGgfcZ17K0unPU0i5TlbYCbNWX6aMUaEg
-Date: Wed, 5 Jun 2019 02:02:40 +0000
-Message-ID: <52727B2E0D7DFC4A945AFC14D2E3E5A92211C6FE@dggeml529-mbx.china.huawei.com>
-References: <1559564879-88739-1-git-send-email-duyanlin@huawei.com>
-In-Reply-To: <1559564879-88739-1-git-send-email-duyanlin@huawei.com>
-Accept-Language: zh-CN, en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.40.37.100]
+ id 1hYLTQ-0008FG-Rf; Wed, 05 Jun 2019 02:16:22 +0000
+X-UUID: 5688d7165b024c7eba6ff20e110d6bf7-20190604
+X-UUID: 5688d7165b024c7eba6ff20e110d6bf7-20190604
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1857944710; Tue, 04 Jun 2019 18:16:07 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 4 Jun 2019 19:16:05 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
+ (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Wed, 5 Jun 2019 10:16:00 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 5 Jun 2019 10:15:59 +0800
+Message-ID: <1559700959.8487.78.camel@mhfsdcap03>
+Subject: Re: [PATCH] USB: move usb debugfs directory creation to the usb
+ common core
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Date: Wed, 5 Jun 2019 10:15:59 +0800
+In-Reply-To: <20190604115919.GA24346@kroah.com>
+References: <20190604093258.GB30054@kroah.com>
+ <20190604115919.GA24346@kroah.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_190301_569700_959E079F 
-X-CRM114-Status: UNSURE (   7.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190604_191620_900808_4BFD0280 
+X-CRM114-Status: GOOD (  18.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [45.249.212.188 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,54 +72,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Zengweilin <zengweilin@huawei.com>
+Cc: devicetree@vger.kernel.org, Felipe Balbi <felipe.balbi@linux.intel.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 2019-06-04 at 13:59 +0200, Greg Kroah-Hartman wrote:
+> On Tue, Jun 04, 2019 at 11:32:58AM +0200, Greg Kroah-Hartman wrote:
+> > The USB gadget subsystem wants to use the USB debugfs root directory, so
+> > move it to the common "core" USB code so that it is properly initialized
+> > and removed as needed.
+> > 
+> > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > 
+> > ---
+> > 
+> > This should be the "correct" version of this, Chunfeng, can you test
+> > this to verify it works for you?
+I'll test it ASAP, thanks a lot
 
-If the function usb_maxpacket(urb->dev, urb->pipe, usb_pipeout(urb->pipe)) returns 0, that will cause a illegal divide-by-zero operation, unexpected results may occur.
-It is best to ensure that the denominator is non-zero before dividing by zero.
+> > 
+> > 
+> > diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
+> > index 18f5dcf58b0d..3b5e4263ffef 100644
+> > --- a/drivers/usb/common/common.c
+> > +++ b/drivers/usb/common/common.c
+> > @@ -15,6 +15,7 @@
+> >  #include <linux/usb/of.h>
+> >  #include <linux/usb/otg.h>
+> >  #include <linux/of_platform.h>
+> > +#include <linux/debugfs.h>
+> >  
+> >  static const char *const ep_type_names[] = {
+> >  	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
+> > @@ -291,4 +292,21 @@ struct device *usb_of_get_companion_dev(struct device *dev)
+> >  EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
+> >  #endif
+> >  
+> > +struct dentry *usb_debug_root;
+> > +EXPORT_SYMBOL_GPL(usb_debug_root);
+> > +
+> > +static int usb_common_init(void)
+> > +{
+> > +	usb_debug_root = debugfs_create_dir("usb", NULL);
+> > +	return 0;
+> > +}
+> > +
+> > +static void usb_common_exit(void)
+> > +{
+> > +	debugfs_remove_recursive(usb_debug_root);
+> > +}
+> > +
+> > +module_init(usb_common_init);
+> > +module_exit(usb_common_exit);
+> > +
+> >  MODULE_LICENSE("GPL");
+> > diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
+> > index 7fcb9f782931..f3d6b1ab80cb 100644
+> > --- a/drivers/usb/core/usb.c
+> > +++ b/drivers/usb/core/usb.c
+> > @@ -1185,19 +1185,17 @@ static struct notifier_block usb_bus_nb = {
+> >  	.notifier_call = usb_bus_notify,
+> >  };
+> >  
+> > -struct dentry *usb_debug_root;
+> > -EXPORT_SYMBOL_GPL(usb_debug_root);
+> > +static struct dentry *usb_devices_root;
+> >  
+> >  static void usb_debugfs_init(void)
+> >  {
+> > -	usb_debug_root = debugfs_create_dir("usb", NULL);
+> > -	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
+> > -			    &usbfs_devices_fops);
+> > +	usb_devices_root = debugfs_create_file("devices", 0444, usb_debug_root,
+> > +					       NULL, &usbfs_devices_fops);
+> >  }
+> >  
+> >  static void usb_debugfs_cleanup(void)
+> >  {
+> > -	debugfs_remove_recursive(usb_debug_root);
+> > +	debugfs_remove_recursive(usb_devices_root);
+> 
+> That should just be debugfs_remove();
+> 
+> I'll fix it up after someone tests this :)
+> 
+> thanks,
+> 
+> greg k-h
 
-Signed-off-by: Yanlin Du <duyanlin@huawei.com>
----
- drivers/usb/host/imx21-hcd.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/usb/host/imx21-hcd.c b/drivers/usb/host/imx21-hcd.c index 6e3dad1..6a47f78 100644
---- a/drivers/usb/host/imx21-hcd.c
-+++ b/drivers/usb/host/imx21-hcd.c
-@@ -1038,6 +1038,7 @@ static void nonisoc_etd_done(struct usb_hcd *hcd, int etd_num)
- 	int cc;
- 	u32 bytes_xfrd;
- 	int etd_done;
-+	unsigned int maxp;
- 
- 	disactivate_etd(imx21, etd_num);
- 
-@@ -1104,13 +1105,13 @@ static void nonisoc_etd_done(struct usb_hcd *hcd, int etd_num)
- 		break;
- 
- 	case PIPE_BULK:
-+		maxp = usb_maxpacket(urb->dev, urb->pipe,
-+				usb_pipeout(urb->pipe));
- 		urb->actual_length += bytes_xfrd;
- 		if ((urb_priv->state == US_BULK)
- 		    && (urb->transfer_flags & URB_ZERO_PACKET)
- 		    && urb->transfer_buffer_length > 0
--		    && ((urb->transfer_buffer_length %
--			 usb_maxpacket(urb->dev, urb->pipe,
--				       usb_pipeout(urb->pipe))) == 0)) {
-+		    && maxp && (urb->transfer_buffer_length % maxp == 0)) {
- 			/* need a 0-packet */
- 			urb_priv->state = US_BULK0;
- 		} else {
---
-1.8.5.6
 
 
 _______________________________________________
