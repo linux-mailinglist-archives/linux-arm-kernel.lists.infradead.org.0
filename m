@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96F9D3614C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:30:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F4603615C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:32:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Snib70lejWUBunsVzD7vt/X98tgYnIHy5q/e6glnr08=; b=nfILlyOdjbcfjI
-	vVHDLRjKMQRL2kxjc0910RZ165lm+xB+0vRVdFfVzKeRXzqz0xD12ajFGd5ATvYAx8ngNeRBdewyC
-	XkXy4RljWS9YLFutlhIrPJHNn6j2/XkDSHOQa4uNx4Mp40/J9nsFHpRa1IiwqxoSWai9IosuAWtXL
-	W/hX1C45YuYo46GP9d1XIEEnIzVFYt/nylKsD0qhQK4XrBd3GjQ7iT5VcoXCvI5MUmSRjlYzYQgwj
-	Gql9L3zN263ju5D2PIOu/D+cZj1Q+nwPsx9TyH6qPtWhExSIKkeJYUoADjv1/WCd5tVQjg7JNXhNn
-	bgK3dD4B+DpIvat/QyWg==;
+	List-Owner; bh=9YYvAN+8YnHFvuF31vLbCTNRbFUOHjha6qtosZi+4NE=; b=IUJm9EdOwpJp3W
+	QqbBmWkGtY4hZXsoje0m1uUIRXCJEeOBqe3abIo1hZQHmIdOXOC5wHZmlmyltTMOuytzt8cVMkz+E
+	ltE0LcrvNjmADMdQjDF1sDRmQx91phN1YVIgaAp7p20qRCZTZYkvGvxlTfm94r2REW9jI2p57OxAY
+	jAGRI+h8ZSD8oREiJIuuaY/BBz7c0OBH73S9RSfLATIxcviKQw3kfNdzU59+ELnFxNt44ohT1ZFse
+	eM+UMdZ7v1ni4oJNIsoxmlGmPE1Xdb7TJCoAuVCruw4TtH6qDK3sRJGh5MidfEmFEB0S4H0/6y2px
+	32QhP9+A+wKjyY6yunQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYYnk-0002Fr-Sh; Wed, 05 Jun 2019 16:30:12 +0000
+	id 1hYYpl-0003iw-VZ; Wed, 05 Jun 2019 16:32:17 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYYnY-00021N-0B; Wed, 05 Jun 2019 16:30:01 +0000
+ id 1hYYpd-0003he-CK; Wed, 05 Jun 2019 16:32:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 90C74374;
- Wed,  5 Jun 2019 09:29:59 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8EA8A374;
+ Wed,  5 Jun 2019 09:32:08 -0700 (PDT)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A90FC3F5AF;
- Wed,  5 Jun 2019 09:29:56 -0700 (PDT)
-Subject: Re: [PATCH 2/4] arm64: kdump: support reserving crashkernel above 4G
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B9ED53F5AF;
+ Wed,  5 Jun 2019 09:32:05 -0700 (PDT)
+Subject: Re: [PATCH 0/4] support reserving crashkernel above 4G on arm64 kdump
 To: Chen Zhou <chenzhou10@huawei.com>
 References: <20190507035058.63992-1-chenzhou10@huawei.com>
- <20190507035058.63992-3-chenzhou10@huawei.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <df2b659d-7406-fbfd-597d-be3a3f69abcb@arm.com>
-Date: Wed, 5 Jun 2019 17:29:54 +0100
+Message-ID: <51995efd-8469-7c15-0d5e-935b63fe2d9f@arm.com>
+Date: Wed, 5 Jun 2019 17:32:04 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190507035058.63992-3-chenzhou10@huawei.com>
+In-Reply-To: <20190507035058.63992-1-chenzhou10@huawei.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_093000_241230_E1F80EDF 
-X-CRM114-Status: GOOD (  25.65  )
+X-CRM114-CacheID: sfid-20190605_093209_426818_2EC525F5 
+X-CRM114-Status: GOOD (  15.35  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -74,140 +73,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Hi!
 
 On 07/05/2019 04:50, Chen Zhou wrote:
-> When crashkernel is reserved above 4G in memory, kernel should
-> reserve some amount of low memory for swiotlb and some DMA buffers.
+> We use crashkernel=X to reserve crashkernel below 4G, which will fail
+> when there is no enough memory. Currently, crashkernel=Y@X can be used
+> to reserve crashkernel above 4G, in this case, if swiotlb or DMA buffers
+> are requierd, capture kernel will boot failure because of no low memory.
 
-> Meanwhile, support crashkernel=X,[high,low] in arm64. When use
-> crashkernel=X parameter, try low memory first and fall back to high
-> memory unless "crashkernel=X,high" is specified.
+> When crashkernel is reserved above 4G in memory, kernel should reserve
+> some amount of low memory for swiotlb and some DMA buffers. So there may
+> be two crash kernel regions, one is below 4G, the other is above 4G.
 
-What is the 'unless crashkernel=...,high' for? I think it would be simpler to relax the
-ARCH_LOW_ADDRESS_LIMIT if reserve_crashkernel_low() allocated something.
+This is a good argument for supporting the 'crashkernel=...,low' version.
+What is the 'crashkernel=...,high' version for?
 
-This way "crashkernel=1G" tries to allocate 1G below 4G, but fails if there isn't enough
-memory. "crashkernel=1G crashkernel=16M,low" allocates 16M below 4G, which is more likely
-to succeed, if it does it can then place the 1G block anywhere.
+Wouldn't it be simpler to relax the ARCH_LOW_ADDRESS_LIMIT if we see 'crashkernel=...,low'
+in the kernel cmdline?
 
+I don't see what the 'crashkernel=...,high' variant is giving us, it just complicates the
+flow of reserve_crashkernel().
 
-> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-> index 413d566..82cd9a0 100644
-> --- a/arch/arm64/kernel/setup.c
-> +++ b/arch/arm64/kernel/setup.c
-> @@ -243,6 +243,9 @@ static void __init request_standard_resources(void)
->  			request_resource(res, &kernel_data);
->  #ifdef CONFIG_KEXEC_CORE
->  		/* Userspace will find "Crash kernel" region in /proc/iomem. */
-> +		if (crashk_low_res.end && crashk_low_res.start >= res->start &&
-> +		    crashk_low_res.end <= res->end)
-> +			request_resource(res, &crashk_low_res);
->  		if (crashk_res.end && crashk_res.start >= res->start &&
->  		    crashk_res.end <= res->end)
->  			request_resource(res, &crashk_res);
-
-With both crashk_low_res and crashk_res, we end up with two entries in /proc/iomem called
-"Crash kernel". Because its sorted by address, and kexec-tools stops searching when it
-find "Crash kernel", you are always going to get the kernel placed in the lower portion.
-
-I suspect this isn't what you want, can we rename crashk_low_res for arm64 so that
-existing kexec-tools doesn't use it?
+If we called reserve_crashkernel_low() at the beginning of reserve_crashkernel() we could
+use crashk_low_res.end to change some limit variable from ARCH_LOW_ADDRESS_LIMIT to
+memblock_end_of_DRAM().
+I think this is a simpler change that gives you what you want.
 
 
-> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> index d2adffb..3fcd739 100644
-> --- a/arch/arm64/mm/init.c
-> +++ b/arch/arm64/mm/init.c
-> @@ -74,20 +74,37 @@ phys_addr_t arm64_dma_phys_limit __ro_after_init;
->  static void __init reserve_crashkernel(void)
->  {
->  	unsigned long long crash_base, crash_size;
-> +	bool high = false;
->  	int ret;
->  
->  	ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
->  				&crash_size, &crash_base);
->  	/* no crashkernel= or invalid value specified */
-> -	if (ret || !crash_size)
-> -		return;
-> +	if (ret || !crash_size) {
-> +		/* crashkernel=X,high */
-> +		ret = parse_crashkernel_high(boot_command_line,
-> +				memblock_phys_mem_size(),
-> +				&crash_size, &crash_base);
-> +		if (ret || !crash_size)
-> +			return;
-> +		high = true;
-> +	}
->  
->  	crash_size = PAGE_ALIGN(crash_size);
->  
->  	if (crash_base == 0) {
-> -		/* Current arm64 boot protocol requires 2MB alignment */
-> -		crash_base = memblock_find_in_range(0, ARCH_LOW_ADDRESS_LIMIT,
-> -				crash_size, SZ_2M);
-> +		/*
-> +		 * Try low memory first and fall back to high memory
-> +		 * unless "crashkernel=size[KMG],high" is specified.
-> +		 */
-> +		if (!high)
-> +			crash_base = memblock_find_in_range(0,
-> +					ARCH_LOW_ADDRESS_LIMIT,
-> +					crash_size, CRASH_ALIGN);
-> +		if (!crash_base)
-> +			crash_base = memblock_find_in_range(0,
-> +					memblock_end_of_DRAM(),
-> +					crash_size, CRASH_ALIGN);
->  		if (crash_base == 0) {
->  			pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
->  				crash_size);
-> @@ -105,13 +122,18 @@ static void __init reserve_crashkernel(void)
->  			return;
->  		}
->  
-> -		if (!IS_ALIGNED(crash_base, SZ_2M)) {
-> +		if (!IS_ALIGNED(crash_base, CRASH_ALIGN)) {
->  			pr_warn("cannot reserve crashkernel: base address is not 2MB aligned\n");
->  			return;
->  		}
->  	}
->  	memblock_reserve(crash_base, crash_size);
->  
-> +	if (crash_base >= SZ_4G && reserve_crashkernel_low()) {
-> +		memblock_free(crash_base, crash_size);
-> +		return;
+> Then
+> Crash dump kernel reads more than one crash kernel regions via a dtb
+> property under node /chosen,
+> linux,usable-memory-range = <BASE1 SIZE1 [BASE2 SIZE2]>.
 
-This is going to be annoying on platforms that don't have, and don't need memory below 4G.
-A "crashkernel=...,low" on these system will break crashdump. I don't think we should
-expect users to know the memory layout. (I'm assuming distro's are going to add a low
-reservation everywhere, just in case)
+Won't this break if your kdump kernel doesn't know what the extra parameters are?
+Or if it expects two ranges, but only gets one? These DT properties should be treated as
+ABI between kernel versions, we can't really change it like this.
 
-I think the 'low' region should be a small optional/best-effort extra, that kexec-tools
-can't touch.
+I think the 'low' region is an optional-extra, that is never mapped by the first kernel. I
+think the simplest thing to do is to add an 'linux,low-memory-range' that we
+memblock_add() after memblock_cap_memory_range() has been called.
+If its missing, or the new kernel doesn't know what its for, everything keeps working.
 
 
-I'm afraid you've missed the ugly bit of the crashkernel reservation...
+> Besides, we need to modify kexec-tools:
+>   arm64: support more than one crash kernel regions(see [1])
 
-arch/arm64/mm/mmu.c::map_mem() marks the crashkernel as 'nomap' during the first pass of
-page-table generation. This means it isn't mapped in the linear map. It then maps it with
-page-size mappings, and removes the nomap flag.
+> I post this patch series about one month ago. The previous changes and
+> discussions can be retrived from:
 
-This is done so that arch_kexec_protect_crashkres() and
-arch_kexec_unprotect_crashkres() can remove the valid bits of the crashkernel mapping.
-This way the old-kernel can't accidentally overwrite the crashkernel. It also saves us if
-the old-kernel and the crashkernel use different memory attributes for the mapping.
-
-As your low-memory reservation is intended to be used for devices, having it mapped by the
-old-kernel as cacheable memory is going to cause problems if those CPUs aren't taken
-offline and go corrupting this memory. (we did crash for a reason after all)
-
-
-I think the simplest thing to do is mark the low region as 'nomap' in
-reserve_crashkernel() and always leave it unmapped. We can then describe it via a
-different string in /proc/iomem, something like "Crash kernel (low)". Older kexec-tools
-shouldn't use it, (I assume its not using strncmp() in a way that would do this by
-accident), and newer kexec-tools can know to describe it in the DT, but it can't write to it.
+Ah, this wasn't obvious as you've stopped numbering the series. Please label the next one
+'v6' so that we can describe this as 'v5'. (duplicate numbering would be even more confusing!)
 
 
 Thanks,
