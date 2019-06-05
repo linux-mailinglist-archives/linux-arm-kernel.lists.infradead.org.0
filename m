@@ -2,109 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1E2235544
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 04:30:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA0A235589
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 05:07:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QBKXU6PDMeNYDWLpbYsVW4zL0S3+/Z5J4pgtnHCcODQ=; b=r7fDruXxIiuk8s
-	Tt8wvhgqAr9rdFGwCCe4/VHi62qc2JLK6kO1orBgtHo2oLw5dT8yj0pm6GF1CzQBEtCrJbOFlVYXe
-	7x2WnRvsYgMabmmdihR7fKqYaL5ydJ6sMSTSAzOhvBScUFhClKd6o/CpkungCvL2hobQNvmsRBOvO
-	Vaz4dW3lRw6Wrl89uunlDnswJwzCPcUdGk+9J1ZbdQluyfn6y9UbysagTljoWNsMM2FR1Pzx+mi3r
-	a4v6gC/MSDQuuIgHQ6G1y5vrvrL2Su4t0H4CoDoltu14YxSKjdQG90+zcoyGazLAP133Oj9B654ei
-	bB4i4wO4HZszuwVL6Dgw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=A2jowLBA/3wCaa9eizeietJ4gyiF4TwyHcZyCUuf1SQ=; b=bICQtG4GxPPaKv
+	gSi35nlQDPnjq5sOO/NqjFOwPq1zuDsLyw7kstsCSI8ZMwSCb1gGgSdKm7Mw/V2zypFsTShOULQG6
+	alNXzetO1aieZFyv42IlVzl4/A1aldbCfRv0rIwxiUugfHSon6sWndVQ6wTYv3xUwMAMN55QC2fX3
+	TqjhmzIMIbsc+YIk3kA7h7H6qJTTjqJwFczm540hF5mXRGaS7UOQOPndI/43SeNQaA9Dr4rUq1BnB
+	giR9xNpMBZ3Hjt874/zJdgJ4CgPuJZKELLnLdunVrbpglRkHLcYnUwz6hWBudcrn5T7Bw7m3ex5gX
+	gt7OzyVodlJfNckPr7VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYLgi-0003nz-Jq; Wed, 05 Jun 2019 02:30:04 +0000
-Received: from mail-eopbgr30084.outbound.protection.outlook.com ([40.107.3.84]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1hYMH1-0007R5-Kd; Wed, 05 Jun 2019 03:07:35 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYLgY-0003nD-Vs
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 02:29:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E6qZGpI4QRBs3W02mzSiZc1GvSSv8/ZjCPUZaZjyAp4=;
- b=fN9xw8hSRnRF1OtFw4ULRBqi5Rer/6zI6isX+XCAN7pv1p5c+nL00ywauw5F9g+hB0ekDk1I6LJU4KMD6s3pe7FE6RLJAShW7PA6OGwz4U49sCJn+YRNsqImLxv3zTVG4lEXMLSHWYXOUKI1Ofc1ihheIG5aijn1SAO0EXsmm4o=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.235.81) by
- VE1PR04MB6622.eurprd04.prod.outlook.com (20.179.235.28) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1943.22; Wed, 5 Jun 2019 02:29:49 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::a13e:6f61:e9e6:16d7]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::a13e:6f61:e9e6:16d7%7]) with mapi id 15.20.1943.018; Wed, 5 Jun 2019
- 02:29:49 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: "vkoul@kernel.org" <vkoul@kernel.org>
-Subject: Re: [PATCH v3 7/8] dmaengine: fsl-edma: add i.mx7ulp edma2 version
- support
-Thread-Topic: [PATCH v3 7/8] dmaengine: fsl-edma: add i.mx7ulp edma2 version
- support
-Thread-Index: AQHVFf3w64fBGh9CDU+v4q34sjQaM6aLeIYAgAFvu4A=
-Date: Wed, 5 Jun 2019 02:29:49 +0000
-Message-ID: <1559730811.24019.18.camel@nxp.com>
-References: <20190529090848.34350-1-yibin.gong@nxp.com>
- <20190529090848.34350-8-yibin.gong@nxp.com>
- <20190604123722.GF15118@vkoul-mobl>
-In-Reply-To: <20190604123722.GF15118@vkoul-mobl>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.18.5.2-0ubuntu3.2 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: fb6c1cc3-bb8e-4a12-45e7-08d6e95daef4
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VE1PR04MB6622; 
-x-ms-traffictypediagnostic: VE1PR04MB6622:
-x-microsoft-antispam-prvs: <VE1PR04MB6622DEAC9561F3775D4A8C5489160@VE1PR04MB6622.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1443;
-x-forefront-prvs: 00594E8DBA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(376002)(136003)(39860400002)(396003)(346002)(199004)(189003)(73956011)(5640700003)(256004)(54906003)(66556008)(66946007)(53936002)(25786009)(6436002)(91956017)(76116006)(66446008)(66476007)(64756008)(11346002)(68736007)(446003)(316002)(6512007)(14444005)(478600001)(486006)(81166006)(1730700003)(14454004)(103116003)(66066001)(50226002)(8676002)(7736002)(4326008)(81156014)(8936002)(305945005)(2351001)(71200400001)(36756003)(71190400001)(3846002)(102836004)(6486002)(2616005)(6916009)(2501003)(6246003)(6116002)(229853002)(186003)(76176011)(86362001)(6506007)(7416002)(53546011)(99286004)(5660300002)(26005)(476003)(2906002)(99106002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6622;
- H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 4HKLtxUqrWLLNHvSE39mT73CU3beFmD39OuYD4B/f50e7/bYR1hwzhAV6kgH0rLoVakFuecPTW2hPfNGnfQdv1DOBXVumsu42461the1IYBIc89geYq/PobfuhzilLXpAH/bmd9bAiHXu/GVnLl5q/J7E+afE6K2NAVQ9Kw4g5yRttOOQtosKFUKrdylJ7bqjrriQCBwdty1WI9MTRs07d/Lb8GRRfM2NGeQbJr/vMLIKEXA4GnegBpJ1x5tOtcGh8Z9JbJLInb7SAn0kdT+XJ2GG5MxCLyIBhdhm3rvmLTkne+iFUdGMzB/yUGQuAQqHRwHHn4nGlkJhexT3lxwaZSDw1zEr/vEYSnov0ty4oMAlm3oMQrIDwQAd4h2u86x5dc434W3pV18IbYoHO85449TcwGVCDjl5YcFMfkXcrQ=
-Content-ID: <FCDB9CFC168A9744A7FADBCB85A023F5@eurprd04.prod.outlook.com>
+ id 1hYMGv-0007QZ-0P; Wed, 05 Jun 2019 03:07:30 +0000
+X-UUID: e59b73a029d9463fb00a2c0dfbf39250-20190604
+X-UUID: e59b73a029d9463fb00a2c0dfbf39250-20190604
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <leilk.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1934652754; Tue, 04 Jun 2019 19:07:26 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 4 Jun 2019 20:07:24 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 5 Jun 2019 11:07:21 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 5 Jun 2019 11:07:20 +0800
+From: Leilk Liu <leilk.liu@mediatek.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: [PATCH] spi: mediatek: add SPI_LSB_FIRST support
+Date: Wed, 5 Jun 2019 11:07:04 +0800
+Message-ID: <1559704024-5369-1-git-send-email-leilk.liu@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fb6c1cc3-bb8e-4a12-45e7-08d6e95daef4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jun 2019 02:29:49.5118 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: yibin.gong@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6622
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_192955_035051_657A5461 
-X-CRM114-Status: GOOD (  25.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190604_200729_059196_63DACFB5 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,140 +68,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "robh@kernel.org" <robh@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Leilk Liu <leilk.liu@mediatek.com>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, fparent@baylibre.com,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0wNi0wNCBhdCAxMjozNyArMDAwMCwgVmlub2QgS291bCB3cm90ZToNCj4gT24gMjkt
-MDUtMTksIDE3OjA4LCB5aWJpbi5nb25nQG54cC5jb20gd3JvdGU6DQo+ID4gDQo+ID4gRnJvbTog
-Um9iaW4gR29uZyA8eWliaW4uZ29uZ0BueHAuY29tPg0KPiA+IA0KPiA+IMKgIEFkZCBlZG1hMiBm
-b3IgaS5teDd1bHAgYnkgdmVyc2lvbiB2Mywgc2luY2UgdjIgaGFzIGFscmVhZHkNCj4gV2h5IGxl
-YWRpbmcgc3BhY2VzIGF0IHN0YXJ0IG9mIGxpbmU/DQpTb3JyeSBmb3IgdGhlIHR5cG8sIHdpbGwg
-Zml4IGluIG5leHQgdmVyc2lvbg0KPiANCj4gPiANCj4gPiBiZWVuIHVzZWQgYnkgbWNmLWVkbWEu
-DQo+ID4gVGhlIGJpZyBjaGFuZ2VzIGJhc2VkIG9uIHYxIGFyZSBiZWxvd3M6DQo+ID4gMS4gb25s
-eSBvbmUgZG1hbXV4Lg0KPiA+IDIuIGFub3RoZXIgY2xvY2sgZG1hX2NsayBleGNlcHQgZG1hbXV4
-IGNsay4NCj4gPiAzLiAxNiBpbmRlcGVuZGVudCBpbnRlcnJ1cHRzIGluc3RlYWQgb2Ygb25seSBv
-bmUgaW50ZXJydXB0IGZvcg0KPiA+IGFsbCBjaGFubmVscy4NCj4gPiANCj4gPiBTaWduZWQtb2Zm
-LWJ5OiBSb2JpbiBHb25nIDx5aWJpbi5nb25nQG54cC5jb20+DQo+ID4gLS0tDQo+ID4gwqBkcml2
-ZXJzL2RtYS9mc2wtZWRtYS1jb21tb24uYyB8IDE4ICsrKysrKysrKysrLQ0KPiA+IMKgZHJpdmVy
-cy9kbWEvZnNsLWVkbWEtY29tbW9uLmggfMKgwqAzICsrDQo+ID4gwqBkcml2ZXJzL2RtYS9mc2wt
-ZWRtYS5jwqDCoMKgwqDCoMKgwqDCoHwgNjcNCj4gPiArKysrKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrDQo+ID4gwqAzIGZpbGVzIGNoYW5nZWQsIDg3IGluc2VydGlvbnMo
-KyksIDEgZGVsZXRpb24oLSkNCj4gPiANCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9kbWEvZnNs
-LWVkbWEtY29tbW9uLmMgYi9kcml2ZXJzL2RtYS9mc2wtZWRtYS0NCj4gPiBjb21tb24uYw0KPiA+
-IGluZGV4IDQ1ZDcwZDMuLjBkOTkxNWMgMTAwNjQ0DQo+ID4gLS0tIGEvZHJpdmVycy9kbWEvZnNs
-LWVkbWEtY29tbW9uLmMNCj4gPiArKysgYi9kcml2ZXJzL2RtYS9mc2wtZWRtYS1jb21tb24uYw0K
-PiA+IEBAIC05MCw2ICs5MCwxOSBAQCBzdGF0aWMgdm9pZCBtdXhfY29uZmlndXJlOChzdHJ1Y3Qg
-ZnNsX2VkbWFfY2hhbg0KPiA+ICpmc2xfY2hhbiwgdm9pZCBfX2lvbWVtICphZGRyLA0KPiA+IMKg
-CWlvd3JpdGU4KHZhbDgsIGFkZHIgKyBvZmYpOw0KPiA+IMKgfQ0KPiA+IMKgDQo+ID4gK3ZvaWQg
-bXV4X2NvbmZpZ3VyZTMyKHN0cnVjdCBmc2xfZWRtYV9jaGFuICpmc2xfY2hhbiwgdm9pZCBfX2lv
-bWVtDQo+ID4gKmFkZHIsDQo+ID4gKwkJwqDCoMKgwqDCoHUzMiBvZmYsIHUzMiBzbG90LCBib29s
-IGVuYWJsZSkNCj4gPiArew0KPiA+ICsJdTMyIHZhbDsNCj4gPiArDQo+ID4gKwlpZiAoZW5hYmxl
-KQ0KPiA+ICsJCXZhbCA9IEVETUFNVVhfQ0hDRkdfRU5CTCA8PCAyNCB8IHNsb3Q7DQo+ID4gKwll
-bHNlDQo+ID4gKwkJdmFsID0gRURNQU1VWF9DSENGR19ESVM7DQo+ID4gKw0KPiA+ICsJaW93cml0
-ZTMyKHZhbCwgYWRkciArIG9mZiAqIDQpOw0KPiA+ICt9DQo+ID4gKw0KPiA+IMKgdm9pZCBmc2xf
-ZWRtYV9jaGFuX211eChzdHJ1Y3QgZnNsX2VkbWFfY2hhbiAqZnNsX2NoYW4sDQo+ID4gwqAJCQl1
-bnNpZ25lZCBpbnQgc2xvdCwgYm9vbCBlbmFibGUpDQo+ID4gwqB7DQo+ID4gQEAgLTEwMiw3ICsx
-MTUsMTAgQEAgdm9pZCBmc2xfZWRtYV9jaGFuX211eChzdHJ1Y3QgZnNsX2VkbWFfY2hhbg0KPiA+
-ICpmc2xfY2hhbiwNCj4gPiDCoAltdXhhZGRyID0gZnNsX2NoYW4tPmVkbWEtPm11eGJhc2VbY2gg
-LyBjaGFuc19wZXJfbXV4XTsNCj4gPiDCoAlzbG90ID0gRURNQU1VWF9DSENGR19TT1VSQ0Uoc2xv
-dCk7DQo+ID4gwqANCj4gPiAtCW11eF9jb25maWd1cmU4KGZzbF9jaGFuLCBtdXhhZGRyLCBjaF9v
-ZmYsIHNsb3QsIGVuYWJsZSk7DQo+ID4gKwlpZiAoZnNsX2NoYW4tPmVkbWEtPnZlcnNpb24gPT0g
-djMpDQo+ID4gKwkJbXV4X2NvbmZpZ3VyZTMyKGZzbF9jaGFuLCBtdXhhZGRyLCBjaF9vZmYsIHNs
-b3QsDQo+ID4gZW5hYmxlKTsNCj4gPiArCWVsc2UNCj4gPiArCQltdXhfY29uZmlndXJlOChmc2xf
-Y2hhbiwgbXV4YWRkciwgY2hfb2ZmLCBzbG90LA0KPiA+IGVuYWJsZSk7DQo+ID4gwqB9DQo+ID4g
-wqBFWFBPUlRfU1lNQk9MX0dQTChmc2xfZWRtYV9jaGFuX211eCk7DQo+ID4gwqANCj4gPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9kbWEvZnNsLWVkbWEtY29tbW9uLmggYi9kcml2ZXJzL2RtYS9mc2wt
-ZWRtYS0NCj4gPiBjb21tb24uaA0KPiA+IGluZGV4IDAxNGFiNzQuLjA3NDgyZDIgMTAwNjQ0DQo+
-ID4gLS0tIGEvZHJpdmVycy9kbWEvZnNsLWVkbWEtY29tbW9uLmgNCj4gPiArKysgYi9kcml2ZXJz
-L2RtYS9mc2wtZWRtYS1jb21tb24uaA0KPiA+IEBAIC0xMjUsNiArMTI1LDcgQEAgc3RydWN0IGZz
-bF9lZG1hX2NoYW4gew0KPiA+IMKgCWRtYV9hZGRyX3QJCQlkbWFfZGV2X2FkZHI7DQo+ID4gwqAJ
-dTMyCQkJCWRtYV9kZXZfc2l6ZTsNCj4gPiDCoAllbnVtIGRtYV9kYXRhX2RpcmVjdGlvbgkJZG1h
-X2RpcjsNCj4gPiArCWNoYXIJCQkJY2hhbl9uYW1lWzE2XTsNCj4gPiDCoH07DQo+ID4gwqANCj4g
-PiDCoHN0cnVjdCBmc2xfZWRtYV9kZXNjIHsNCj4gPiBAQCAtMTM5LDYgKzE0MCw3IEBAIHN0cnVj
-dCBmc2xfZWRtYV9kZXNjIHsNCj4gPiDCoGVudW0gZWRtYV92ZXJzaW9uIHsNCj4gPiDCoAl2MSwg
-LyogMzJjaCwgVnlicmlkLCBtcGM1N3gsIGV0YyAqLw0KPiA+IMKgCXYyLCAvKiA2NGNoIENvbGRm
-aXJlICovDQo+ID4gKwl2MywgLyogMzJjaCwgaS5teDd1bHAgKi8NCj4gPiDCoH07DQo+ID4gwqAN
-Cj4gPiDCoHN0cnVjdCBmc2xfZWRtYV9kcnZkYXRhIHsNCj4gPiBAQCAtMTU0LDYgKzE1Niw3IEBA
-IHN0cnVjdCBmc2xfZWRtYV9lbmdpbmUgew0KPiA+IMKgCXZvaWQgX19pb21lbQkJKm1lbWJhc2U7
-DQo+ID4gwqAJdm9pZCBfX2lvbWVtCQkqbXV4YmFzZVtETUFNVVhfTlJdOw0KPiA+IMKgCXN0cnVj
-dCBjbGsJCSptdXhjbGtbRE1BTVVYX05SXTsNCj4gPiArCXN0cnVjdCBjbGsJCSpkbWFjbGs7DQo+
-ID4gwqAJdTMyCQkJZG1hbXV4X25yOw0KPiA+IMKgCXN0cnVjdCBtdXRleAkJZnNsX2VkbWFfbXV0
-ZXg7DQo+ID4gwqAJY29uc3Qgc3RydWN0IGZzbF9lZG1hX2RydmRhdGEgKmRydmRhdGE7DQo+ID4g
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvZG1hL2ZzbC1lZG1hLmMgYi9kcml2ZXJzL2RtYS9mc2wtZWRt
-YS5jDQo+ID4gaW5kZXggY2YxODMwMS4uNDViMjZkNiAxMDA2NDQNCj4gPiAtLS0gYS9kcml2ZXJz
-L2RtYS9mc2wtZWRtYS5jDQo+ID4gKysrIGIvZHJpdmVycy9kbWEvZnNsLWVkbWEuYw0KPiA+IEBA
-IC0xNjUsNiArMTY1LDUxIEBAIGZzbF9lZG1hX2lycV9pbml0KHN0cnVjdCBwbGF0Zm9ybV9kZXZp
-Y2UNCj4gPiAqcGRldiwgc3RydWN0IGZzbF9lZG1hX2VuZ2luZSAqZnNsX2VkbWENCj4gPiDCoAly
-ZXR1cm4gMDsNCj4gPiDCoH0NCj4gPiDCoA0KPiA+ICtzdGF0aWMgaW50DQo+ID4gK2ZzbF9lZG1h
-Ml9pcnFfaW5pdChzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2LA0KPiA+ICsJCcKgwqDCoHN0
-cnVjdCBmc2xfZWRtYV9lbmdpbmUgKmZzbF9lZG1hKQ0KPiA+ICt7DQo+ID4gKwlzdHJ1Y3QgZGV2
-aWNlX25vZGUgKm5wID0gcGRldi0+ZGV2Lm9mX25vZGU7DQo+ID4gKwlpbnQgaSwgcmV0LCBpcnE7
-DQo+ID4gKwlpbnQgY291bnQgPSAwOw0KPiBTdXBlcmZsb3VzIGluaXRpYWxpemF0aW9uIG9mIGNv
-dW50IQ0KV291bGQgZml4IGl0IGluIHY0Lg0KPiANCj4gPiANCj4gPiArDQo+ID4gKwljb3VudCA9
-IG9mX2lycV9jb3VudChucCk7DQo+ID4gKwlkZXZfaW5mbygmcGRldi0+ZGV2LCAiJXMgRm91bmQg
-JWQgaW50ZXJydXB0c1xyXG4iLA0KPiA+IF9fZnVuY19fLCBjb3VudCk7DQo+IENvbnNpZGVyIHVz
-aW5nIGRlYnVnIGxldmVsLi4NCldvdWxkIGRvd25ncmFkZSBwcmludCBsZXZlbCBpbiB2NC4NCj4g
-DQo+ID4gDQo+ID4gKwlpZiAoY291bnQgPD0gMikgew0KPiA+ICsJCWRldl9lcnIoJnBkZXYtPmRl
-diwgIkludGVycnVwdHMgaW4gRFRTIG5vdA0KPiA+IGNvcnJlY3QuXG4iKTsNCj4gPiArCQlyZXR1
-cm4gLUVJTlZBTDsNCj4gPiArCX0NCj4gPiArCS8qDQo+ID4gKwnCoCogMTYgY2hhbm5lbCBpbmRl
-cGVuZGVudCBpbnRlcnJ1cHRzICsgMSBlcnJvciBpbnRlcnJ1cHQNCj4gPiBvbiBpLm14N3VscC4N
-Cj4gPiArCcKgKiAyIGNoYW5uZWwgc2hhcmUgb25lIGludGVycnVwdCwgZm9yIGV4YW1wbGUsIGNo
-MC9jaDE2LA0KPiA+IGNoMS9jaDE3Li4uDQo+ID4gKwnCoCogRm9yIG5vdywganVzdCBzaW1wbHkg
-cmVxdWVzdCBpcnEgd2l0aG91dCBJUlFGX1NIQVJFRA0KPiA+IGZsYWcsIHNpbmNlIDE2DQo+ID4g
-KwnCoCogY2hhbm5lbHMgYXJlIGVub3VnaCBvbiBpLm14N3VscCB3aG9zZSBNNCBkb21haW4gb3du
-DQo+ID4gc29tZSBwZXJpcGhlcmFscy4NCj4gPiArCcKgKi8NCj4gPiArCWZvciAoaSA9IDA7IGkg
-PCBjb3VudDsgaSsrKSB7DQo+ID4gKwkJaXJxID0gcGxhdGZvcm1fZ2V0X2lycShwZGV2LCBpKTsN
-Cj4gPiArCQlpZiAoaXJxIDwgMCkNCj4gPiArCQkJcmV0dXJuIC1FTlhJTzsNCj4gPiArDQo+ID4g
-KwkJc3ByaW50Zihmc2xfZWRtYS0+Y2hhbnNbaV0uY2hhbl9uYW1lLCAiZURNQTItDQo+ID4gQ0gl
-MDJkIiwgaSk7DQo+ID4gKw0KPiA+ICsJCS8qIFRoZSBsYXN0IElSUSBpcyBmb3IgZURNQSBlcnIg
-Ki8NCj4gPiArCQlpZiAoaSA9PSBjb3VudCAtIDEpDQo+ID4gKwkJCXJldCA9IGRldm1fcmVxdWVz
-dF9pcnEoJnBkZXYtPmRldiwgaXJxLA0KPiA+ICsJCQkJCQlmc2xfZWRtYV9lcnJfaGFuZGwNCj4g
-PiBlciwNCj4gPiArCQkJCQkJMCwgImVETUEyLUVSUiIsDQo+ID4gZnNsX2VkbWEpOw0KPiA+ICsJ
-CWVsc2UNCj4gPiArDQo+IGVtcHR5IGxpbmUgaXMgd2FzdGUgaGVyZQ0KPiANCj4gPiANCj4gPiAr
-CQkJcmV0ID0gZGV2bV9yZXF1ZXN0X2lycSgmcGRldi0+ZGV2LCBpcnEsDQo+ID4gKwkJCQkJCWZz
-bF9lZG1hX3R4X2hhbmRsZQ0KPiA+IHIsIDAsDQo+ID4gKwkJCQkJCWZzbF9lZG1hLQ0KPiA+ID5j
-aGFuc1tpXS5jaGFuX25hbWUsDQo+ID4gKwkJCQkJCWZzbF9lZG1hKTsNCj4gPiArCQlpZiAocmV0
-KQ0KPiA+ICsJCQlyZXR1cm4gcmV0Ow0KPiA+ICsJfQ0KPiA+ICsNCj4gPiArCXJldHVybiAwOw0K
-PiA+ICt9DQo+ID4gKw0KPiA+IMKgc3RhdGljIHZvaWQgZnNsX2VkbWFfaXJxX2V4aXQoDQo+ID4g
-wqAJCXN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYsIHN0cnVjdA0KPiA+IGZzbF9lZG1hX2Vu
-Z2luZSAqZnNsX2VkbWEpDQo+ID4gwqB7DQo+ID4gQEAgLTE5MSw4ICsyMzYsMTYgQEAgc3RhdGlj
-IHN0cnVjdCBmc2xfZWRtYV9kcnZkYXRhIHZmNjEwX2RhdGEgPSB7DQo+ID4gwqAJLnNldHVwX2ly
-cSA9IGZzbF9lZG1hX2lycV9pbml0LA0KPiA+IMKgfTsNCj4gPiDCoA0KPiA+ICtzdGF0aWMgc3Ry
-dWN0IGZzbF9lZG1hX2RydmRhdGEgaW14N3VscF9kYXRhID0gew0KPiA+ICsJLnZlcnNpb24gPSB2
-MywNCj4gPiArCS5kbWFtdXhzID0gMSwNCj4gPiArCS5oYXNfZG1hY2xrID0gdHJ1ZSwNCj4gPiAr
-CS5zZXR1cF9pcnEgPSBmc2xfZWRtYTJfaXJxX2luaXQsDQo+ID4gK307DQo+ID4gKw0KPiA+IMKg
-c3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgZnNsX2VkbWFfZHRfaWRzW10gPSB7DQo+
-ID4gwqAJeyAuY29tcGF0aWJsZSA9ICJmc2wsdmY2MTAtZWRtYSIsIC5kYXRhID0gJnZmNjEwX2Rh
-dGF9LA0KPiA+ICsJeyAuY29tcGF0aWJsZSA9ICJmc2wsaW14N3VscC1lZG1hIiwgLmRhdGEgPQ0K
-PiA+ICZpbXg3dWxwX2RhdGF9LA0KPiA+IMKgCXsgLyogc2VudGluZWwgKi8gfQ0KPiA+IMKgfTsN
-Cj4gPiDCoE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGZzbF9lZG1hX2R0X2lkcyk7DQo+ID4gQEAg
-LTI0Miw2ICsyOTUsMjAgQEAgc3RhdGljIGludCBmc2xfZWRtYV9wcm9iZShzdHJ1Y3QNCj4gPiBw
-bGF0Zm9ybV9kZXZpY2UgKnBkZXYpDQo+ID4gwqAJZnNsX2VkbWFfc2V0dXBfcmVncyhmc2xfZWRt
-YSk7DQo+ID4gwqAJcmVncyA9ICZmc2xfZWRtYS0+cmVnczsNCj4gPiDCoA0KPiA+ICsJaWYgKGRy
-dmRhdGEtPmhhc19kbWFjbGspIHsNCj4gPiArCQlmc2xfZWRtYS0+ZG1hY2xrID0gZGV2bV9jbGtf
-Z2V0KCZwZGV2LT5kZXYsDQo+ID4gImRtYSIpOw0KPiA+ICsJCWlmIChJU19FUlIoZnNsX2VkbWEt
-PmRtYWNsaykpIHsNCj4gPiArCQkJZGV2X2VycigmcGRldi0+ZGV2LCAiTWlzc2luZyBETUEgYmxv
-Y2sNCj4gPiBjbG9jay5cbiIpOw0KPiA+ICsJCQlyZXR1cm4gUFRSX0VSUihmc2xfZWRtYS0+ZG1h
-Y2xrKTsNCj4gPiArCQl9DQo+ID4gKw0KPiA+ICsJCXJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShm
-c2xfZWRtYS0+ZG1hY2xrKTsNCj4gPiArCQlpZiAocmV0KSB7DQo+ID4gKwkJCWRldl9lcnIoJnBk
-ZXYtPmRldiwgIkRNQSBjbGsgYmxvY2sNCj4gPiBmYWlsZWQuXG4iKTsNCj4gPiArCQkJcmV0dXJu
-IHJldDsNCj4gPiArCQl9DQo+ID4gKwl9DQo+ID4gKw0KPiA+IMKgCWZvciAoaSA9IDA7IGkgPCBm
-c2xfZWRtYS0+ZG1hbXV4X25yOyBpKyspIHsNCj4gPiDCoAkJY2hhciBjbGtuYW1lWzMyXTsNCj4g
-PiDCoA0KPiA+IC0twqANCj4gPiAyLjcuNApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+this patch add SPI_LSB_FIRST feature support.
+
+Signed-off-by: Leilk Liu <leilk.liu@mediatek.com>
+---
+ drivers/spi/spi-mt65xx.c                 |   15 ++++++---------
+ include/linux/platform_data/spi-mt65xx.h |    2 --
+ 2 files changed, 6 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/spi/spi-mt65xx.c b/drivers/spi/spi-mt65xx.c
+index 0cce6f0..7f4dc18 100644
+--- a/drivers/spi/spi-mt65xx.c
++++ b/drivers/spi/spi-mt65xx.c
+@@ -131,8 +131,6 @@ struct mtk_spi {
+  * supplies it.
+  */
+ static const struct mtk_chip_config mtk_default_chip_info = {
+-	.rx_mlsb = 1,
+-	.tx_mlsb = 1,
+ 	.cs_pol = 0,
+ 	.sample_sel = 0,
+ };
+@@ -203,14 +201,13 @@ static int mtk_spi_prepare_message(struct spi_master *master,
+ 		reg_val &= ~SPI_CMD_CPOL;
+ 
+ 	/* set the mlsbx and mlsbtx */
+-	if (chip_config->tx_mlsb)
+-		reg_val |= SPI_CMD_TXMSBF;
+-	else
++	if (spi->mode & SPI_LSB_FIRST) {
+ 		reg_val &= ~SPI_CMD_TXMSBF;
+-	if (chip_config->rx_mlsb)
+-		reg_val |= SPI_CMD_RXMSBF;
+-	else
+ 		reg_val &= ~SPI_CMD_RXMSBF;
++	} else {
++		reg_val |= SPI_CMD_TXMSBF;
++		reg_val |= SPI_CMD_RXMSBF;
++	}
+ 
+ 	/* set the tx/rx endian */
+ #ifdef __LITTLE_ENDIAN
+@@ -607,7 +604,7 @@ static int mtk_spi_probe(struct platform_device *pdev)
+ 
+ 	master->auto_runtime_pm = true;
+ 	master->dev.of_node = pdev->dev.of_node;
+-	master->mode_bits = SPI_CPOL | SPI_CPHA;
++	master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_LSB_FIRST;
+ 
+ 	master->set_cs = mtk_spi_set_cs;
+ 	master->prepare_message = mtk_spi_prepare_message;
+diff --git a/include/linux/platform_data/spi-mt65xx.h b/include/linux/platform_data/spi-mt65xx.h
+index ba4e4bb..8d5df58 100644
+--- a/include/linux/platform_data/spi-mt65xx.h
++++ b/include/linux/platform_data/spi-mt65xx.h
+@@ -14,8 +14,6 @@
+ 
+ /* Board specific platform_data */
+ struct mtk_chip_config {
+-	u32 tx_mlsb;
+-	u32 rx_mlsb;
+ 	u32 cs_pol;
+ 	u32 sample_sel;
+ };
+-- 
+1.7.9.5
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
