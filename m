@@ -2,77 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A3FE356FD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:31:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F54C35711
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:35:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QOr6VEM8Jbj78sx5ijKpwxvUJz0hGtkWkoFkON88zQA=; b=E7DpcUPL5SwH6Y8Ldani+JyEL
-	QzcPwDCItQhhYO6fVh9wghwxfewxprJsjGVYrRs+ut7E+WkMHee1Qdv2yMYS8wz/ozZ2kZFCJvvVc
-	1ayfJk1R8Ru18KbcPQnniyN/L8aMFqyk5Q7m/C3VbogG0/AY0d99IirDI7W7/X9r0xUFX1lD6/sWA
-	CK04SYjkUx8YZM4vQAupVKzW9hHuoq++sgYiebiUZ++oo0f+g8Y+XFnOoWVGCj72MhUOoFrFRzyHZ
-	bok4znfZiSZVcUYjANQ292vsxWcjzdvC04K4FIInN3kgw969tZat1X9ku86ZJKhb15bW6nwX1hx2M
-	C3Hoh5+qA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2BtNgQGLSATixBW/YRq0jqOhRHoi4iaFnoDC8io+cFk=; b=QrOouPIkBqv4U/
+	uWeP6QzZcj+sy1gc7wQ/ljmz34n6h0+MQCN7cA2S9gg2jnLTIlArvl5AL9pM7lC/quzgY4dZsNC47
+	uSlK+PpG/RvNOMBEh0yjyzc8IBUPV94FAC2niCN44J5NGt35Hgdn2bd9QPKJn3Fh4Ar1IkLxc6Zm2
+	NaguDUUSP6k4JWR3GFVjeTyUTiJzy+7Wg8sxCPGyehgCx9B95AG9+g3jIrgW32A66u4Wm4p3zsua9
+	6ABItA8kaZXiBNLZenEDpUPkeRoHvu4QmduRKkxnD1iczf5j6aH7t4A6eGdyd+hejwZYlOdBrp+2A
+	3slW0d7dODd5icY4sTmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYPRx-0004fs-8z; Wed, 05 Jun 2019 06:31:05 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1hYPVx-0007G1-OO; Wed, 05 Jun 2019 06:35:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYPRq-0004fF-05
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:30:59 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x556Uuiw065580;
- Wed, 5 Jun 2019 01:30:56 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559716256;
- bh=xufq4zsgyRLrZo2MfHTNUdK52WNJg8XUlkPMm4NwCMU=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=bJNL66q1skwWEDasM7A23VSi9/FGgddAKlsLfy+RLQbx52465XFfLWiAlv45qsdMN
- WH5Uo7Mky2HUuxGYMe1KVkiej4K0vTRmJqwlGohxQ4tCatCXt47XMtq04cuQKDVOLu
- 6+L80wogACHV2GEBOyLWdVta9v5SCYgB46WemDRU=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x556Uu09089926
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 5 Jun 2019 01:30:56 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 5 Jun
- 2019 01:30:55 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Wed, 5 Jun 2019 01:30:55 -0500
-Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x556UqLj110256;
- Wed, 5 Jun 2019 01:30:53 -0500
-Subject: Re: [RFC PATCH 1/3] arm64: dts: ti: am6-wakeup: Add gpio node
-To: Lokesh Vutla <lokeshvutla@ti.com>, <t-kristo@ti.com>, <nm@ti.com>,
- <robh+dt@kernel.org>
-References: <20190605060846.25314-1-j-keerthy@ti.com>
- <20190605060846.25314-2-j-keerthy@ti.com>
- <e6ec3894-4e3d-e721-c1bc-791263b2d309@ti.com>
-From: Keerthy <j-keerthy@ti.com>
-Message-ID: <bac5737a-3924-b59f-1d90-a2a9b3a390f1@ti.com>
-Date: Wed, 5 Jun 2019 12:01:35 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hYPVr-0006yM-9X
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:35:08 +0000
+Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A0C5E2083E;
+ Wed,  5 Jun 2019 06:35:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559716506;
+ bh=G1fCjyvuMI8j4lJIOPDrdCk2asa1xcNItBYzsfAa+b8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=RqRNxR+h7FMuAZfrxmvdDUYFY92bSMASxPOtEC8ZNn/Yd1Qw/C4Fe2BvN/f7Fd/BT
+ rqgjDOQWs+K3DSzeCHuzfduZAxJ6Q/4c8Gl6idrwDC3T70CKVYe9uttwEfTI74Si+d
+ kPn7wVGJ3T0glV1dXNU4ea9sk4EAuEj6GNUwxhds=
+Date: Wed, 5 Jun 2019 14:34:50 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Pramod Kumar <pramod.kumar_1@nxp.com>
+Subject: Re: [PATCH v3 1/3] dt-bindings: arm: nxp: Add device tree binding
+ for ls1046a-frwy board
+Message-ID: <20190605063449.GG29853@dragon>
+References: <20190527123404.30858-1-pramod.kumar_1@nxp.com>
+ <20190527123404.30858-2-pramod.kumar_1@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <e6ec3894-4e3d-e721-c1bc-791263b2d309@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190527123404.30858-2-pramod.kumar_1@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_233058_122799_BEECC4F9 
-X-CRM114-Status: GOOD (  14.86  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190604_233507_359095_F6B17850 
+X-CRM114-Status: GOOD (  13.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,63 +78,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "Michal.Vokac@ysoft.com" <Michal.Vokac@ysoft.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ Vabhav Sharma <vabhav.sharma@nxp.com>,
+ "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, May 27, 2019 at 12:32:09PM +0000, Pramod Kumar wrote:
+> Add "fsl,ls1046a-frwy" bindings for ls1046afrwy board based on ls1046a SoC
+> 
+> Signed-off-by: Vabhav Sharma <vabhav.sharma@nxp.com>
+> Signed-off-by: Pramod Kumar <pramod.kumar_1@nxp.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
 
+I cannot apply patch from message using 'Content-Transfer-Encoding: base64'.
 
-On 05/06/19 11:46 AM, Lokesh Vutla wrote:
+> ---
+>  Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> 
-> On 05/06/19 11:38 AM, Keerthy wrote:
->> Add gpio0 node under wakeup domain. This has 56 gpios
->> and all are capable of generating banked interrupts.
->>
->> Signed-off-by: Keerthy <j-keerthy@ti.com>
->> ---
->>   arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi | 15 +++++++++++++++
->>   1 file changed, 15 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
->> index f1ca171abdf8..8c6c99e7c6ed 100644
->> --- a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
->> +++ b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
->> @@ -74,4 +74,19 @@
->>   		ti,sci-dst-id = <56>;
->>   		ti,sci-rm-range-girq = <0x4>;
->>   	};
->> +
->> +	wkup_gpio0: wkup_gpio0@42110000 {
->> +		compatible = "ti,k2g-gpio", "ti,keystone-gpio";
-> 
-> This is not k2g. Can you either create a am6 specific compatible or just use
-> ti,keystone-gpio.
+> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+> index 407138ebc0d0..09ff1999ce96 100644
+> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
+> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+> @@ -241,6 +241,7 @@ properties:
+>            - enum:
+>                - fsl,ls1046a-qds
+>                - fsl,ls1046a-rdb
+> +              - fsl,ls1046a-frwy
 
-It seems practice is now to have separate compatible. I will add am6 
-specific compatible.
+It might be better to keep the list alphabetically sorted.
 
+Shawn
+
+>            - const: fsl,ls1046a
+>  
+>        - description: LS1088A based Boards
+> -- 
+> 2.17.1
 > 
-> Thanks and regards,
-> Lokesh
-> 
->> +		reg = <0x42110000 0x100>;
->> +		gpio-controller;
->> +		#gpio-cells = <2>;
->> +		interrupt-parent = <&intr_wkup_gpio>;
->> +		interrupts = <59 128>, <59 129>, <59 130>, <59 131>;
->> +		interrupt-controller;
->> +		#interrupt-cells = <2>;
->> +		ti,ngpio = <56>;
->> +		ti,davinci-gpio-unbanked = <0>;
->> +		clocks = <&k3_clks 59 0>;
->> +		clock-names = "gpio";
->> +	};
->>   };
->>
 
 _______________________________________________
 linux-arm-kernel mailing list
