@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7BD235498
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 02:01:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 642CF3549C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 02:03:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ob16uHCVLfSAGtofkiCanEbdGQm1pNefymkLlatgh30=; b=Q40vncwiK6J7a2Wxks0LglkoL
-	sCCboQFFMq9Bpr0yjJIkrzdiVE3RtAWa9Y/o5SjCRw5O/sgXJ0pyf+ofkvwitSm4D2RgNcmdhZ371
-	7NCYPtae+TIG1uYbFrK+xPsKsUYvkm0z5tlMcRMQHROo4F1fx92WmknSQZ0Iz0RyXylGRtvU9UfT2
-	xYnuWnRyDkAXQcMDYw8Cgb4gG5Md83xX5wS5XTGKPDJ4B78LJ605Z+9n7CLeRnYwsCUSVPAX+p7pD
-	9tU87on6q6ZPIJtQEgjN8yJi0JGubejNK/OV/Qq4DoqPRkY3OBwMYdmY2J89+DANqO6aY6kjQtkxh
-	4BcGsW1Tg==;
+	 bh=+qqt4wZA3sxBzvV6OfP+5y4XqSJ4i3BB1t1r9Rcb3o4=; b=FPy2UoiebzYIUPtyUEucjD5Pt
+	AcZOXG46T/6wXC2AdpRQOGH1pCpn0EfJ8tZ8Lvg+eXExx9wZgX+T/qba/zoD3lBDePCTx4PnbQuPf
+	QkCUiPUibNsRLJnGCEgc6egUGUDJUy1UT/MonLDSRqSsB2S73PhVXHNtHN14JtJdbBsCF3MJTh8mG
+	hlHBw4E86M4TjUPuYy5q5YaFqyblh9dmymbflRpyHVdKzx0xK5WvbG8G0GSh3Lo65diP3DMxpEQOI
+	l/xs3Flz+UtZVZsLwVONP0Ggze8ozSYV8FUWK66sGhIVv2/aXwydq157jbpozViaIwr3x55eMwzcM
+	DAO0pVl7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYJMX-0007RC-2e; Wed, 05 Jun 2019 00:01:05 +0000
+	id 1hYJOn-0007mO-Tb; Wed, 05 Jun 2019 00:03:25 +0000
 Received: from anholt.net ([50.246.234.109])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYJMQ-0007QP-Ab; Wed, 05 Jun 2019 00:00:59 +0000
+ id 1hYJOh-0007m1-AY; Wed, 05 Jun 2019 00:03:20 +0000
 Received: from localhost (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id 3FE4110A2DB7;
- Tue,  4 Jun 2019 17:00:55 -0700 (PDT)
+ by anholt.net (Postfix) with ESMTP id 34DD110A288F;
+ Tue,  4 Jun 2019 17:03:18 -0700 (PDT)
 X-Virus-Scanned: Debian amavisd-new at anholt.net
 Received: from anholt.net ([127.0.0.1])
  by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
- with LMTP id J5PPjNu5RML4; Tue,  4 Jun 2019 17:00:54 -0700 (PDT)
+ with LMTP id olrx2v55qpgq; Tue,  4 Jun 2019 17:03:17 -0700 (PDT)
 Received: from eliezer.anholt.net (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id 0254810A1128;
- Tue,  4 Jun 2019 17:00:53 -0700 (PDT)
+ by anholt.net (Postfix) with ESMTP id ED6F010A1128;
+ Tue,  4 Jun 2019 17:03:16 -0700 (PDT)
 Received: by eliezer.anholt.net (Postfix, from userid 1000)
- id 728A22FE3AAE; Tue,  4 Jun 2019 17:00:53 -0700 (PDT)
+ id 7398A2FE3AAE; Tue,  4 Jun 2019 17:03:16 -0700 (PDT)
 From: Eric Anholt <eric@anholt.net>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, stefan.wahren@i2se.com,
  Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
-Subject: Re: [PATCH 3/4] clk: bcm2835: register Raspberry Pi's firmware clk
- device
-In-Reply-To: <20190604173223.4229-4-nsaenzjulienne@suse.de>
+Subject: Re: [PATCH 1/4] clk: bcm2835: remove pllb
+In-Reply-To: <20190604173223.4229-2-nsaenzjulienne@suse.de>
 References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
- <20190604173223.4229-4-nsaenzjulienne@suse.de>
+ <20190604173223.4229-2-nsaenzjulienne@suse.de>
 User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
  (x86_64-pc-linux-gnu)
-Date: Tue, 04 Jun 2019 17:00:51 -0700
-Message-ID: <87muiwzyrw.fsf@anholt.net>
+Date: Tue, 04 Jun 2019 17:03:16 -0700
+Message-ID: <87k1e0zynv.fsf@anholt.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_170058_396940_F2D5BB43 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20190604_170319_429185_0A2BB805 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -77,11 +77,11 @@ Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
  mbrugger@suse.de, ssuloev@orpaltech.com
-Content-Type: multipart/mixed; boundary="===============5645396816605267694=="
+Content-Type: multipart/mixed; boundary="===============1299002827466724163=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============5645396816605267694==
+--===============1299002827466724163==
 Content-Type: multipart/signed; boundary="=-=-=";
 	micalg=pgp-sha512; protocol="application/pgp-signature"
 
@@ -90,37 +90,38 @@ Content-Type: text/plain
 
 Nicolas Saenz Julienne <nsaenzjulienne@suse.de> writes:
 
-> Registers clk-raspberrypi as a platform device as part of the driver's
-> probe sequence.
+> Raspberry Pi's firmware controls this pll, we should use the firmware
+> interface to access it.
+>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-Similar to how we have VCHI register platform devices for the services
-VCHI provides, shouldn't we have the firmware driver register the device
-for clk_raspberrypi?  Or put the clk provider in the fw driver instead
-of a separate driver (no opinion on my part).
+Acked-by: Eric Anholt <eric@anholt.net>
+
+If someone ever has a non-rpi 2835 to support, they can resurrect this.
 
 --=-=-=
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAlz3BjMACgkQtdYpNtH8
-nugXZxAApCxDEcQNUZSA82dd4rtrlp/1uMz/j6cXVe9KKGi7a52dfc8MEIvoZDbq
-PAN/yjpvQVJosHh+JOUmXzKOEd9seFx9/gZwzdb3/8VKNnkYAy0ugfAzAN6K1XFW
-eAV1rSbBAkAtrvL/FUK1WxMN+4yf/yMcY9ZVmKSML2A9KcwkQHpNISOidbfdMy5c
-NkqMl9lTD3XoE+VZgUUsLg440KidEOO5kKix7VhP5zQiQ9OG2RInZvhUthTz0qRS
-9j+4XCyC7IPe8QpejvK9eocR0CW7sVbEaujUsScR1xSFLWGI11fPgCjnGDzBxzkN
-jzofDEUVgfM8hzX+sIJ/DXI7WNNf01H51c8h0H7fxII2U3nNw5WgsQvU8BdoyRS5
-WZdWPUAwFMkdlZNqRL7WdJL15in11f5lfiSZjT+Hxp95y77Jf/esA5Wfg3N5KD5I
-MWfTvdku3c6IBNi7Iy+l1knz+FjyoV1wYgYtYrzjrZtrGsIssySU+ZrzIrECo/8s
-k8B5kM2CHq5GM1d82sqj1haF0IsfChjQQVfIzkKja/FHmpC1IJBAnYjGUas7L+Z8
-LVbsHuYZX+yH6k5cMe6f7cljlmeyjaHLDerVVnqlKO7ByYFgbGZUMP8acuBIIrzd
-LyNFmfuctdyaiwCnR/0wEmMAWlzn+HvxM7G31vBGo4ihTnlPaS0=
-=dVrD
+iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAlz3BsQACgkQtdYpNtH8
+nuiUNhAAuusJeKijdAnVBRXypIxS17ZxosYDMGrz1+WmREQHh631IDfVAqcMvVQt
+OiXSpnJRSxZlqQt0ADMIu9khMLDekk+2k8BO5T84+86H4Hb0WIAswxV44lOeo5UR
+vNqVi/tuVVudMhAunv3i8xdK+2S+jx7yQ+1mv9APcBFJ45jQfKqlIirPsJ7Eo0Sj
+6yT2hutyzuhtepG1u6L8HvDYYbOoeuuNP4xh2u2z2pW1ZM4bjS89zDBsiRHOIW9l
+dJhN1zTObyO1S4QbiMNobNyE+vsjBf/X5jH/wOvxioswgVmlCUSbgUtUtw8Fj4I8
+wWmpprgXDWtOk8AsXE6t6IDHPv+4xZEOxR6e+ViQqfex26qq6Van0LXTO6TfC3H1
+A1F+SOG0e0HgyX2Y302k06gWAIvl9b03lZ5ixZFj4mLDJxXDXaLLTezYmNj24O76
+p6iAB1npEZnT0Olqw3K5Bexpj6XDdZImX0maFd+nA3Zg0W7xNqaqDialuhBmuatK
+lYyER2Fr23h0LOTSMfR9tCYzZo+jFrG4/0nNGN3vCRA84XaAtQXDrNfbFR94MuHr
+5MSv0HfzYrziJVjZJOaMKtbwjnNKU2RnnDuX6ZklP4ANCl70+/fvT8dgabEMFCA4
+d2pwStTbLeYA6b9MkZfyX6e5cO9b4VWvnhShEotiecpMfU0LC9o=
+=UhPx
 -----END PGP SIGNATURE-----
 --=-=-=--
 
 
---===============5645396816605267694==
+--===============1299002827466724163==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -131,5 +132,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5645396816605267694==--
+--===============1299002827466724163==--
 
