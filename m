@@ -2,91 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CC7D35EB2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 16:08:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB78035ED1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 16:13:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vuNn87PzGjT4pP8hTZcB5m/TULg2Knu9KwLpTr6dG+4=; b=IuDjyYYUxt/JYFg9bqhsXAnRQ
-	l5lE9b4+oAaUPcllmBobdbWWoG6LdveUo3KA1PVHe4TCsNIaiVTwqDNOobgPzXlj3U5e9CKkZNrLI
-	R7p+VVgpDduS3EkDcsBeDPOFzOV5PtGyacySNcxVSV880AZ2bNvSgHeasu0o1OY8dWJ23LdDPz6fq
-	LC9bjBo+wqBlVYxSLg3YXIbyKn/m4Hu6KBbsH6n6HpakMd3Rr8OZQK+vXFH96bQSRV/50kKay42bN
-	p7ynHGPhLCbYmQU/hWwmXePzdcg4V5OsK94NEniLvCzzsCSNnW63C2SQo3cIWZZ5U1p76dUF/uHqU
-	Rmg4U2CNw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ogcCVo8PNNFHVLOErSy863r7nNDhwPzy8krjJhduVCU=; b=F0fv6cjt1JmCCG
+	Lweyu8EhkFyCSCvaF4pLi5cq+irDXKjuGsGcWfTK/7mBZnQIJ+cDwuk9fh3o8sMFu448VTE3sI86J
+	Cp3Mm4ElmJwcNO44mDWKI6Wy/sgzNQ1CMCuu5TOP4J2bK/z+Kwbke9HpXNzz0MxdM3on8DzIXYgLJ
+	QXygPG8zMKTBSuxq9Ksbbb3fngHK5sQr+vOxkqnc18TJdiqyTfUHtansHpmwYPfH8zrGDStoF9gNx
+	G+vg9J6aOThgyeY0RAcvpn2qDvajnePjRWS75V21k/5kuhCTDD8SfCEEos7Mhmc3v95s5PTD/7Gpw
+	QZeEV8SMh/USV8MDH/6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYWaD-00063U-IA; Wed, 05 Jun 2019 14:08:05 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1hYWf4-0007de-D4; Wed, 05 Jun 2019 14:13:06 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYWa6-000638-Cv
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 14:07:59 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id 634576083E; Wed,  5 Jun 2019 14:07:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1559743677;
- bh=NSod75b8DJcTQooBObsabB98SlwnE/yB22rLx7b7vo4=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=VzxwyZGNZQA4zeBv/BThAhOh4uQbB2NV8zcoA2TC+zvKtIofIn3LXJaG+ewtqJxvh
- NaTwokrhZVSDgQ7r2AAWTJteIzwF4ri0ToLKOXwp4hhtdIvNwZSizFetVFjbgNUTiG
- XPYs4T09OT0NHzPW3k2rr0/7uAAzuM3KmD0bJFKA=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
- version=3.4.0
-Received: from [10.226.58.28] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: jhugo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 37D4560213;
- Wed,  5 Jun 2019 14:07:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1559743676;
- bh=NSod75b8DJcTQooBObsabB98SlwnE/yB22rLx7b7vo4=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=AhttVGMIKT/YAg18mc+nO6i4RoK8LFyfN6scj22jM6vBiFF/l/SCvUpWt04O0KpV6
- +mUF+hnGMTEYjCt+Tb22tm+q3krR2EIA03Z09X19U2zXgJXI2dAaykEhNOFKJRgSXJ
- U++evfu2CgTkylaAVJE29JBFO0j69VAJJsdQLidw=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 37D4560213
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=jhugo@codeaurora.org
-Subject: Re: [PATCH 7/8] usb: dwc3: qcom: Start USB in 'host mode' on the
- SDM845
-To: Lee Jones <lee.jones@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <20190604104455.8877-1-lee.jones@linaro.org>
- <20190604104455.8877-7-lee.jones@linaro.org>
- <20190605070029.GN22737@tuxbook-pro> <20190605083454.GO4797@dell>
-From: Jeffrey Hugo <jhugo@codeaurora.org>
-Message-ID: <d9ba98e6-3caf-62fc-45ca-944cb718b7e4@codeaurora.org>
-Date: Wed, 5 Jun 2019 08:07:54 -0600
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hYWew-0007c1-4g
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 14:12:59 +0000
+Received: by mail-wr1-x444.google.com with SMTP id d18so19629703wrs.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 07:12:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=AycgXSGYqUAjsITGUjnhQpci5ICfquB/aTQgTSexg/Y=;
+ b=SAmYe+PChAGdpz3sq/wSWM30WEDKfSGzSN7aCEWwBeVVYwBTaYCsR8tqJy2F6mPhTx
+ UEEXrL7JujXQ6vElMFOuTPhlaA+BpBXz+2W1+aalkZh0k6taPWsHfWnYHGk7aAxSEbhT
+ LAjZNa1A1Fh6k9NaRNQGCpDiwd+CFSbmT8UB45Ry5bQjWLFCt2M1NcfMwMDX2rvdSo+P
+ GHZ/6io8pmjRFt1qxRcfPHuUZCj+xdzR+vt0Mb5u14YyACdNpab0HYjEGCpcJyJlwyAS
+ ZpWMHVaNsjXy5tt7nssu3TvOObOZt70/I6DejgUIR5PHEzNv5qHOEyq0RoZRM79oLKyh
+ UOcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=AycgXSGYqUAjsITGUjnhQpci5ICfquB/aTQgTSexg/Y=;
+ b=UZaqVs4Vo31lHW/YjYa48ssILGktY013qT2DnSXUpwzc/jVwpbz3IrjsWIXrpC6ZQT
+ LZBmZbVF1vdRhYh19FPQPt1KvQCS0IUL+wodr5qp9sXHiklaB+BuoO0SsAfCn5hO5vjH
+ 7GhMlHgVJSulVKVBt3pGyShXlnH+D50vJsqtg7JHba28VRB36nS0zc+oF6bRuDFXjmuz
+ u6uOqqRXMtEGluJ/ngNtuLOCnqXEuPBJD/53pljfOgymQHKUBNi0s0hkziioILDlIN39
+ 1Hs5+IyETE+E2XYNmbcI/uepBiJlK0RX/fUQVMIWH/MNIESFjcFEss4Z0U86MwQlLdu6
+ tZlA==
+X-Gm-Message-State: APjAAAUn1ZJjUOxYCrtI19L8QdXY3t1VTCzIPLAjRnm0rWKZ3agTHn2e
+ RMKw2+IPVDalBMRJkofCHmyOYOo1acPkEw==
+X-Google-Smtp-Source: APXvYqwt/qL/+dVCADHJ7VzKOX6wFacIr8smg4S+3JxBM+1fYpsjKCJgyKEX+SxU7TlspnyF/Abntg==
+X-Received: by 2002:a5d:67cd:: with SMTP id n13mr12845013wrw.138.1559743976264; 
+ Wed, 05 Jun 2019 07:12:56 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id s8sm36292546wra.55.2019.06.05.07.12.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 05 Jun 2019 07:12:55 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH 0/2] drm/meson: fix primary plane disabling
+Date: Wed,  5 Jun 2019 16:12:51 +0200
+Message-Id: <20190605141253.24165-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190605083454.GO4797@dell>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_070758_475858_A9D25B0C 
-X-CRM114-Status: GOOD (  25.32  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190605_071258_245686_1C30BBD5 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,116 +93,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, david.brown@linaro.org, gregkh@linuxfoundation.org,
- linus.walleij@linaro.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, wsa+renesas@sang-engineering.com,
- alokc@codeaurora.org, kramasub@codeaurora.org, linux-i2c@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- andy.gross@linaro.org, jlhugo@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/5/2019 2:34 AM, Lee Jones wrote:
-> On Wed, 05 Jun 2019, Bjorn Andersson wrote:
-> 
->> On Tue 04 Jun 03:44 PDT 2019, Lee Jones wrote:
->>
->>> When booting with Device Tree, the current default boot configuration
->>> table option, the request to boot via 'host mode' comes from the
->>> "dr_mode" property.
->>
->> This has been the default on the MTP, but this is changing as this is
->> causing issues when connected downstream from a hub (the typical
->> development case for the primary USB port of a phone like device) and
->> more importantly we don't have support for the PMIC blocks that control
->> VBUS.
-> 
-> My point is not about which mode is currently chosen.  It's more about
-> the capability of choosing which mode is appropriate for a given
-> system via DT.
-> 
->> Once these issues are resolved the dr_mode would be "otg".
-> 
-> OTG doesn't work on this H/W, so we need to specify "host" mode.
+The primary plane disabling logic is broken on all supported Amlogic
+SoCs, and the G12A primary plane disable register write is wrong.
 
-How have you made that determination?
+This patchset solves thse issues, and has been tested with the Baylibre
+ffmpeg-drm tool and modetest.
 
-> 
->>> A property of the same name can be used inside
->>> ACPI tables too.  However it is missing from the SDM845's ACPI tables
->>> so we have to supply this information using Platform Device Properites
->>> instead.
->>>
->>
->> Afaict this would install a fall-back property, so in the case that we
->> have specified dr_mode in DT (or ACPI) that would take precedence. So
-> 
-> That's correct.
-> 
->> the commit message should reflect that this redefines the default choice
->> to be "host", rather than "otg".
-> 
-> No problem. >
->> Which is in conflict with what's described for dr_mode in
->> Documentation/devicetree/bindings/usb/generic.txt
-> 
-> This implementation only affects ACPI based platforms.  When booting
-> with DT, the description in that DT related document is still
-> accurate.
-> 
->> And this driver is used on a range of different Qualcomm platforms, so I
->> don't think this is SDM845 specific.
-> 
-> ACPI based platforms?
-> 
-> All the ones I've seen use the XHCI USB driver directly ("PNP0D10").
->   
->>> Signed-off-by: Lee Jones <lee.jones@linaro.org>
->>> ---
->>>   drivers/usb/dwc3/dwc3-qcom.c | 12 ++++++++++++
->>>   1 file changed, 12 insertions(+)
->>>
->>> diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
->>> index 349bf549ee44..f21fdd6cdd1a 100644
->>> --- a/drivers/usb/dwc3/dwc3-qcom.c
->>> +++ b/drivers/usb/dwc3/dwc3-qcom.c
->>> @@ -468,6 +468,11 @@ static const struct acpi_device_id dwc3_qcom_acpi_match[] = {
->>>   };
->>>   MODULE_DEVICE_TABLE(acpi, dwc3_qcom_acpi_match);
->>>   
->>> +static const struct property_entry dwc3_qcom_acpi_properties[] = {
->>> +	PROPERTY_ENTRY_STRING("dr_mode", "host"),
->>> +	{}
->>> +};
->>> +
->>>   static int dwc3_qcom_probe(struct platform_device *pdev)
->>>   {
->>>   	struct device_node	*np = pdev->dev.of_node, *dwc3_np;
->>> @@ -603,6 +608,13 @@ static int dwc3_qcom_probe(struct platform_device *pdev)
->>>   			goto platform_unalloc;
->>>   		}
->>>   
->>> +		ret = platform_device_add_properties(qcom->dwc3,
->>> +						     dwc3_qcom_acpi_properties);
->>> +		if (ret < 0) {
->>> +			dev_err(&pdev->dev, "failed to add properties\n");
->>> +			goto platform_unalloc;
->>> +		}
->>> +
->>>   		ret = platform_device_add(qcom->dwc3);
->>>   		if (ret) {
->>>   			dev_err(&pdev->dev, "failed to add device\n");
-> 
+Neil Armstrong (2):
+  drm/meson: fix primary plane disabling
+  drm/meson: fix G12A primary plane disabling
 
+ drivers/gpu/drm/meson/meson_crtc.c  | 6 ++----
+ drivers/gpu/drm/meson/meson_plane.c | 8 +++++---
+ drivers/gpu/drm/meson/meson_viu.c   | 3 +--
+ 3 files changed, 8 insertions(+), 9 deletions(-)
 
 -- 
-Jeffrey Hugo
-Qualcomm Datacenter Technologies as an affiliate of Qualcomm 
-Technologies, Inc.
-Qualcomm Technologies, Inc. is a member of the
-Code Aurora Forum, a Linux Foundation Collaborative Project.
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
