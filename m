@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FF4935ED4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 16:13:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4DB135EDB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 16:13:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nlkA9M/gkjN4TUH/STRqfnvByFjIBL5tRyO8hk51gHM=; b=HoaibqcPPZbWUG
-	uSRxLJUPEllneDiDaGctC1qFTIblIj6jpRpr47RHyReqGCCIQwW4VItyH0QEwtGoZGYK6DPImFuBd
-	U49kCea3IQFjDarpc+bTIjk006ZkIiaVYzCz9O4AdSPGswgwTenvRImsezAhgwl6Jt0/KLOphvImF
-	TMktVo19urVquf8uvOaLhx+StukfCt5byfsyVvfss72cigoM4VzRM6FAyZJj6erJhRBa5YUU4KJcx
-	PtE7xYc275s+iLyZ61KW3r/JDJgx1PyCkg7BEE3qjrTB361CP+Vj/mx4uER71XPixDmk7vPryV40t
-	S72hA/jPyRnMDD1Op6bQ==;
+	List-Owner; bh=6CSe+TIEi+fTXV5Q7UTxdBGMGdBJ1RKizpL3hYpY3ck=; b=Eaf1iSEeiQsLUZ
+	WivlyHXsBnJne6e8WzN9fatK4HINHCCAvakgWxEjqCFVqLZTEBCyhP/Rh07DjRFD1sd0C+DCY4sDE
+	auERb8QQP30MxuUNPXfTDcipoqIOfp5R4htt9aHWvJSZPoM9s3OMXVBUgUu1nuQOSs72P3dX0MvYq
+	HeGc9XLHhPDf9CSHTe9D5au6a1Tx0OfHIOpD6Opuj0TuAA/ar/mw9OmNOGEFSIJFpUzn+omxex4CM
+	Dy/TGJYPhoi6KOTHIAi6Pw4U6uVwYreLqpDuIOuBnJf4K4zkAk2mmKX0Ah7jOg57UjznOg458dWAA
+	3sEB66Eowvrvn5i+DXdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYWfK-0007rZ-Dj; Wed, 05 Jun 2019 14:13:22 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hYWfZ-0008FO-Q4; Wed, 05 Jun 2019 14:13:37 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYWew-0007c4-Vo
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 14:13:01 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c6so2481458wml.0
+ id 1hYWf0-0007cF-R7
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 14:13:06 +0000
+Received: by mail-wr1-x441.google.com with SMTP id x17so1590406wrl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 07:12:58 -0700 (PDT)
+ Wed, 05 Jun 2019 07:12:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=CiicJKseqdKOg5DHKMcjVCBzkcBVtZ2N776bahkz4d8=;
- b=Asrc1pFrwP/vms/HaF6ahudawkZj7r6MSdAFZiQNwE+2rIPqYk39LYibggrg3PpASb
- Lxs45FxLnqC1K6Z/+7Qt29IjRcH8V0USApXqVIJh4XCCSi2Z/V/mSNnpJyrDyuj0XZz4
- qEF5f/ioRukigieqF0HWRUSDmdzxjPElHcPTn9y/2MPWUrxqfLK2lPsPJf0QpQjgrQ/V
- ZDzG5+XmDVDVT/CVqrOlrt0/1cB3v8Hp6w19zCN0YcksRErl4ZCUJcJaoMFkrkvOlwji
- SfSmivfvh6n+9o7pF6OSRL9rtTFVHzKJ3hcycaKKwx/ELndMtA0+ufNTmh2jnAMtY6RL
- UbYA==
+ bh=QJV2EelmzwU1/yznyPFkc/fxpPopz48+1zy1DsarmDE=;
+ b=TVdJqRZFfU5s0FX3DJNaUJBa2wh3dlpycCNSUJUcDpNztvmmX7eFg6a+jgjhjp3qbp
+ gQHVEwCL4w4ZnmBCCNQOzLmQ0xRkyb0gjzO6PQfC1KWeuZVPLOTTJfFXgbJfkEgqNm0L
+ WMPL2OgOFvdi39tuwXV61CrYn9Fl1MBkA6pFoEdnUXyk/pPydlqd/rJ+lc8ByEjTKuY3
+ u2dE2rGaX0W+8/+nrwyyqMzgBV2jkkmvxPC6u82FSHu8rvUtIBZnlJDfCYmtP3A9B2H+
+ FfqafncdaU4zneDGniLi5/V3HygLwRsR2wVPzsZBfwlD/LS/QOi259lfN7GnIZt5I0fq
+ KxJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=CiicJKseqdKOg5DHKMcjVCBzkcBVtZ2N776bahkz4d8=;
- b=dh4cHgN7YBpOLmJqbgjLpz+kluZEG2nBTRCam/JRLhNUARXaREq7G52I5RFNgiud2C
- KznADg2Iq6XktvQpf/K02x+U+Ti+J3D0EdU5StPWLiP+hww0Srv6kpp8+6HTZLtF4cnb
- JJF6FDYxkKfPuqWtrwDuowV+jOYnK47AZAb9smDWeeofYFv3+Y7PeupZNGLKWpgR6OAd
- IRaJteCuDwUpvj7LXXMGOpUc5MR182oBtxyLue37fSmkhsd8uMj+Mjee+BrxtEErwhBG
- MF+Skr43ZDLCwD6j7brbM2HCPXh+DlY0KR74AGA3N+MhR4mwRYgKIv60z50ecDRSLskn
- 1Zkg==
-X-Gm-Message-State: APjAAAUMTEPewdUn5eU5MO89t6YaJYF1IbKGoLRt4N09pQxCE/efPQr4
- rk+j4VkIrdhQcDnTM+jyvlGaLw==
-X-Google-Smtp-Source: APXvYqzI3IVVjrCS/CpME4PJLgA844fWjiI4G6tQsgpnScJPfDZYOVtvDPHviInkIWlgQ7OFwSUOYQ==
-X-Received: by 2002:a1c:48c5:: with SMTP id
- v188mr21902049wma.175.1559743976973; 
- Wed, 05 Jun 2019 07:12:56 -0700 (PDT)
+ bh=QJV2EelmzwU1/yznyPFkc/fxpPopz48+1zy1DsarmDE=;
+ b=XM4WFa+0nwznMG8r8mMh1OqfpNYq5KqEYkX6CjIw0PYIIBJH6qedFgyEx9Y9bJabCY
+ SO0Ox7+3pyIyIILfGxG78RTOJxS658G8kvqXFQxU5Uw4LTGeHLTcr+FdEpZhceOta82m
+ jM+wNOcnPGfAaTjp3fH2nPSXQn6fztofLukMr+S08jGmaIxfwjKw12axKDiffIQBrwqF
+ mOD5t+usp124jIpn8/t0FUqxWFXS/W970LRjr1R1Se/wUnGi7xvm5hQJFJkIwSPDPkoW
+ Qhwk0S4I0PknnbmohcWvC8xTbPtFc8SR7Miy0epSQ/68216vvwJfPGKY6NZQ8KSo6UQx
+ jeMw==
+X-Gm-Message-State: APjAAAWgTlMa5V6OHHHWWciPk3yl+ZfKE6xaP882T9dYN0fUWAxkHMqw
+ bHubnHJ65EBmJhGd2UmU5j5CLA==
+X-Google-Smtp-Source: APXvYqyfg6omR+ZPIC7qJMVZoiXxGQOWD9YskUpPvpHHMZWtFQOlsNcFXDkrbb+rAuRH69aSGBrBgA==
+X-Received: by 2002:adf:a38d:: with SMTP id l13mr19424196wrb.187.1559743977659; 
+ Wed, 05 Jun 2019 07:12:57 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id s8sm36292546wra.55.2019.06.05.07.12.56
+ by smtp.gmail.com with ESMTPSA id s8sm36292546wra.55.2019.06.05.07.12.57
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 05 Jun 2019 07:12:56 -0700 (PDT)
+ Wed, 05 Jun 2019 07:12:57 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 1/2] drm/meson: fix primary plane disabling
-Date: Wed,  5 Jun 2019 16:12:52 +0200
-Message-Id: <20190605141253.24165-2-narmstrong@baylibre.com>
+Subject: [PATCH 2/2] drm/meson: fix G12A primary plane disabling
+Date: Wed,  5 Jun 2019 16:12:53 +0200
+Message-Id: <20190605141253.24165-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190605141253.24165-1-narmstrong@baylibre.com>
 References: <20190605141253.24165-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_071259_022833_781C9C15 
-X-CRM114-Status: GOOD (  13.72  )
+X-CRM114-CacheID: sfid-20190605_071303_085717_2B1CB003 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,63 +101,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The primary plane disable logic is flawed, when the primary plane is
-disabled, it is re-enabled in the vsync irq when another plane is updated.
+The G12A Primary plane was disabled by writing in the OSD1 configuration
+registers, but this caused the plane blender to stall instead of continuing
+blended only the overlay plane.
 
-Handle the plane disabling correctly by handling the primary plane
-enable flag in the primary plane update & disable callbacks.
+Fix this by disabling the OSD1 plane in the blender registers, and also
+enabling it back using the same register.
 
 Fixes: 490f50c109d1 ("drm/meson: Add G12A support for OSD1 Plane")
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/gpu/drm/meson/meson_crtc.c  | 4 ----
- drivers/gpu/drm/meson/meson_plane.c | 4 +++-
- 2 files changed, 3 insertions(+), 5 deletions(-)
+ drivers/gpu/drm/meson/meson_crtc.c  | 2 ++
+ drivers/gpu/drm/meson/meson_plane.c | 4 ++--
+ drivers/gpu/drm/meson/meson_viu.c   | 3 +--
+ 3 files changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/gpu/drm/meson/meson_crtc.c b/drivers/gpu/drm/meson/meson_crtc.c
-index 685715144156..50a9a96720b9 100644
+index 50a9a96720b9..aa8ea107524e 100644
 --- a/drivers/gpu/drm/meson/meson_crtc.c
 +++ b/drivers/gpu/drm/meson/meson_crtc.c
-@@ -107,8 +107,6 @@ static void meson_g12a_crtc_atomic_enable(struct drm_crtc *crtc,
- 			priv->io_base + _REG(VPP_OUT_H_V_SIZE));
- 
- 	drm_crtc_vblank_on(crtc);
--
--	priv->viu.osd1_enabled = true;
+@@ -252,6 +252,8 @@ static void meson_g12a_crtc_enable_osd1(struct meson_drm *priv)
+ 	writel_relaxed(priv->viu.osb_blend1_size,
+ 		       priv->io_base +
+ 		       _REG(VIU_OSD_BLEND_BLEND1_SIZE));
++	writel_bits_relaxed(3 << 8, 3 << 8,
++			    priv->io_base + _REG(OSD1_BLEND_SRC_CTRL));
  }
  
- static void meson_crtc_atomic_enable(struct drm_crtc *crtc,
-@@ -137,8 +135,6 @@ static void meson_crtc_atomic_enable(struct drm_crtc *crtc,
- 			    priv->io_base + _REG(VPP_MISC));
- 
- 	drm_crtc_vblank_on(crtc);
--
--	priv->viu.osd1_enabled = true;
- }
- 
- static void meson_g12a_crtc_atomic_disable(struct drm_crtc *crtc,
+ static void meson_crtc_enable_vd1(struct meson_drm *priv)
 diff --git a/drivers/gpu/drm/meson/meson_plane.c b/drivers/gpu/drm/meson/meson_plane.c
-index 22490047932e..b788280895c6 100644
+index b788280895c6..d90427b93a51 100644
 --- a/drivers/gpu/drm/meson/meson_plane.c
 +++ b/drivers/gpu/drm/meson/meson_plane.c
-@@ -305,6 +305,8 @@ static void meson_plane_atomic_update(struct drm_plane *plane,
- 		meson_plane->enabled = true;
- 	}
+@@ -318,8 +318,8 @@ static void meson_plane_atomic_disable(struct drm_plane *plane,
  
-+	priv->viu.osd1_enabled = true;
-+
- 	spin_unlock_irqrestore(&priv->drm->event_lock, flags);
- }
- 
-@@ -323,7 +325,7 @@ static void meson_plane_atomic_disable(struct drm_plane *plane,
+ 	/* Disable OSD1 */
+ 	if (meson_vpu_is_compatible(priv, "amlogic,meson-g12a-vpu"))
+-		writel_bits_relaxed(BIT(0) | BIT(21), 0,
+-			priv->io_base + _REG(VIU_OSD1_CTRL_STAT));
++		writel_bits_relaxed(3 << 8, 0,
++				    priv->io_base + _REG(OSD1_BLEND_SRC_CTRL));
+ 	else
+ 		writel_bits_relaxed(VPP_OSD1_POSTBLEND, 0,
  				    priv->io_base + _REG(VPP_MISC));
- 
- 	meson_plane->enabled = false;
--
-+	priv->viu.osd1_enabled = false;
- }
- 
- static const struct drm_plane_helper_funcs meson_plane_helper_funcs = {
+diff --git a/drivers/gpu/drm/meson/meson_viu.c b/drivers/gpu/drm/meson/meson_viu.c
+index 462c7cb3e1bd..4b2b3024d371 100644
+--- a/drivers/gpu/drm/meson/meson_viu.c
++++ b/drivers/gpu/drm/meson/meson_viu.c
+@@ -405,8 +405,7 @@ void meson_viu_init(struct meson_drm *priv)
+ 				0 << 16 |
+ 				1,
+ 				priv->io_base + _REG(VIU_OSD_BLEND_CTRL));
+-		writel_relaxed(3 << 8 |
+-				1 << 20,
++		writel_relaxed(1 << 20,
+ 				priv->io_base + _REG(OSD1_BLEND_SRC_CTRL));
+ 		writel_relaxed(1 << 20,
+ 				priv->io_base + _REG(OSD2_BLEND_SRC_CTRL));
 -- 
 2.21.0
 
