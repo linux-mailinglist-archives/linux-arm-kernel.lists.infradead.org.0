@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45E31356A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:10:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D59B356AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 08:13:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v84m2jotQ/A9sgs9NxQ+p5a4XePKDmh1c2LN8kBlCwA=; b=A1rrCseRrXkO9D
-	mHvYN6/L8cBzBw0q3MdoSlqyb7QumCqPys/WcpeAUjPOb3BAj1wG8s36eAS+Wyd2xA6rUM9tAfFqX
-	aKwmSFQAyArFKVw6qw8VDVTc5f1SZxCXSREQb11P780dAM+SewsNjs7mZ1A1AWA1rz6jrrd9kSXmu
-	BhpkDTogia42HiQT+MRoUq0uPgnGZKVDaHmGp/xa3cJo5b7QRG9xs8y87UM9Q4vyx2cDaw91IIW/T
-	klv7O1MoGUbCy/yRgTR+IQL7JkqHv82DJWvPflTbm+BArhC5JoxmkRvgAJjga0K5t37+Eapwb7vWw
-	gXn0KGB/PpG+NxFx4mTQ==;
+	List-Owner; bh=n5QIGOlKoXnmI5yuiQnZC0A4mCjfITZYDU2jyHDsc5M=; b=tM1LmLwOkKvuhF
+	P0emaPq/eFJwM5kRarcHBDkkFPnomTMlCaFnJIFNAGItZzMgs8++mfVhjcCvztIeahZDdrnlDEcSL
+	ef46ToIyz851J3BjTcVCT4NvGcHYmP9mk1TvJ2MY0TQCzymOdo+PNxyi29MC54/AUjM1RUzDZGvGe
+	M4Z59LG3lRx76fXOwfAC8RcDUFdvIAIdJyDYuai68K2+5qcUsWX5Kbu5fsC4dlTrhzEgOKuu62Rdk
+	sHEcTd8/xpmxnEO4Oi3B7EQnlqZOIK/XVY0NIaizJYNZqAjRFcYpr4odV+JhbFpMGU8T4Ns/MUt4l
+	oe1fmllpLw54F+a8ldng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYP7j-0003Zw-84; Wed, 05 Jun 2019 06:10:11 +0000
+	id 1hYPAW-0004lZ-Vc; Wed, 05 Jun 2019 06:13:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYP7a-00035E-1e
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:10:03 +0000
+ id 1hYPAP-0004kh-Gd
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:12:58 +0000
 Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C9D3D2075C;
- Wed,  5 Jun 2019 06:09:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 011DB20673;
+ Wed,  5 Jun 2019 06:12:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559715001;
- bh=wTYwhYyVAwH/37258YCULY4b/DDUHUmOmKJEh2hkUE4=;
+ s=default; t=1559715177;
+ bh=irDCUXbnBDlPlmhz5zcjcndvEsXZZZcUc47h1fBL7fw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=twASdHOlRFsxs4nkKKw8rd0OyYEdxLC4gTqsSzQ0mLPfAHk84ARn1oy0XSQwuw4H8
- Jq+QAgMrqoIaTG1d4aBHc2zX/R4SADoWn50kWf3ZapEh6vmoqqzAuDeXtEgOdiZsYq
- XLbgypHFHC7Bq+d9YTWOuGC+4tHDU3ZkfMquJAkY=
-Date: Wed, 5 Jun 2019 14:09:45 +0800
+ b=KcHfwmcFrho2SGrruB5UjX2fRIX46+0x6zffq3Mxh5vseEXNEnJwSVsrpDkRT7rhF
+ VYxCR9TKKAyGC4DA7FpPKO5/9y7A86CcFkmTxYzVBVcUoVDrwK2pyUE7hLj3L5Nw82
+ 73CquITgGh7XLFlN5CxOh4ohzeEOOSL/zxOR7mys=
+Date: Wed, 5 Jun 2019 14:12:40 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH RESEND 1/2] soc: imx: soc-imx8: Avoid unnecessary
- of_node_put() in error handling
-Message-ID: <20190605060944.GB29853@dragon>
-References: <20190524055101.3424-1-Anson.Huang@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH RESEND V4 2/3] arm64: dts: imx8qxp: Move watchdog node
+ into scu node
+Message-ID: <20190605061238.GC29853@dragon>
+References: <1557655528-12816-1-git-send-email-Anson.Huang@nxp.com>
+ <1557655528-12816-2-git-send-email-Anson.Huang@nxp.com>
+ <DB3PR0402MB39162F3811484D90546B4CC2F5150@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190605060000.GA29853@dragon>
+ <DB3PR0402MB39161D679A11B05ADCA8A28BF5160@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190524055101.3424-1-Anson.Huang@nxp.com>
+In-Reply-To: <DB3PR0402MB39161D679A11B05ADCA8A28BF5160@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_231002_114467_3DB85F8D 
-X-CRM114-Status: UNSURE (   8.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190604_231257_569960_E9EC7853 
+X-CRM114-Status: GOOD (  15.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,27 +81,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: abel.vesa@nxp.com, viresh.kumar@linaro.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, hyc.nju@gmail.com, Linux-imx@nxp.com,
- kernel@pengutronix.de, leonard.crestez@nxp.com, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux@roeck-us.net" <linux@roeck-us.net>, dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 24, 2019 at 01:51:00PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On Wed, Jun 05, 2019 at 06:09:12AM +0000, Anson Huang wrote:
+> Hi, Shawn
 > 
-> of_node_put() is called after of_match_node() successfully called,
-> then in the following error handling, of_node_put() is called again
-> which is unnecessary, this patch adjusts the location of of_node_put()
-> to avoid such scenario.
+> > -----Original Message-----
+> > From: Shawn Guo <shawnguo@kernel.org>
+> > Sent: Wednesday, June 5, 2019 2:00 PM
+> > To: Anson Huang <anson.huang@nxp.com>
+> > Cc: robh+dt@kernel.org; mark.rutland@arm.com; wim@linux-watchdog.org;
+> > linux@roeck-us.net; s.hauer@pengutronix.de; kernel@pengutronix.de;
+> > festevam@gmail.com; Aisheng Dong <aisheng.dong@nxp.com>;
+> > ulf.hansson@linaro.org; Daniel Baluta <daniel.baluta@nxp.com>; Peng Fan
+> > <peng.fan@nxp.com>; devicetree@vger.kernel.org; linux-
+> > kernel@vger.kernel.org; linux-watchdog@vger.kernel.org; linux-arm-
+> > kernel@lists.infradead.org; dl-linux-imx <linux-imx@nxp.com>
+> > Subject: Re: [PATCH RESEND V4 2/3] arm64: dts: imx8qxp: Move watchdog
+> > node into scu node
+> > 
+> > On Tue, Jun 04, 2019 at 09:06:28AM +0000, Anson Huang wrote:
+> > > Hi, Shawn
+> > > 	The driver and binding doc are already reviewed and waiting for DT
+> > patch, will you help review this DT patch?
+> > 
+> > I'm fine with it.  Should I just pick this patch up, or is there any dependency
+> > we need to handle?
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
+> No dependency, it just makes more sense to move the node into SCU node as it is NOW depending on SCU
+> driver. Once you pick up this patch
 
-Applied both, thanks.
+Just applied.
+
+> (and maybe the dt-binding patch as well?),
+
+It makes more sense to have it go through watchdog tree.
+
+Shawn
+
+> I will notify the watchdog
+> maintainer to pick up the watchdog patch in this series.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
