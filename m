@@ -2,86 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C0203574A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:00:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 737273574D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:00:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fozFrYn5mkzDVXIRr5UEYZUc4dEhOEOQ0Nc2WwvvYAY=; b=ZxUsps2dIkh6q2
-	L33cHKWK6BjEt/SzVbPmlAKxd2d/9CvuY66MmHj9ckA029egMtEpKZRk9DNgCfQuJE5B21Yw+WAJV
-	9SX/G8QQaTGB/gS3FflomrGfCEE/9+TQIcSf2oYEh/AgdETkICqts2HsBZSFqUkiyF6uWSq/jhVZ1
-	/nWdt0FlYmNzO5R/SWrN5Kxnpvyqi2w4QtEu2sfW4r5NMMFm0NwWUCwKxl4qthGyJAzU6C3WluZcv
-	nN8MX4W2Fz55VxYynJ2R529tiJMr39ojY46MKu5BQw9nHqQ0ATqNsqqve2RCVzwuOefXxm2yKnD66
-	61QN4uLqmzPHypmSKuwA==;
+	List-Owner; bh=KH4keytS2e5Mv1NcICUD3PD3/a5+EJwzcwN4h7NHOIA=; b=X/cYTifPkjtR6H
+	s3R2kkRMYJIgV77nyenK5cJT/IyApbqybjrB0ER2oswyhDGggbgqHUFPZWhvHxFHpOu6SRkDJbnsk
+	9dxUYGtxfST3/onwIko1Wfiyr/L/t46YJyWS96yv2OMVXyIF1W3wFgsEkzD/2dgSz29BUyVuULAKT
+	5qUtb5TxCvx8GPJghB8ANmLAL+Idjsmn2LquKy+o5iC7jUSTLx64J4OiYvt99rImUSc0XKMNuW+Jc
+	U4fKjLFAKvP1X/0CH/D9oXlTZ/B0mocczaqj8e3eV7K4v6es1bIb9tN79DVJOAhT6VcxVqlQWeQek
+	vDpbGZOVJEdkW/aB6W4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYPts-0006W1-Iq; Wed, 05 Jun 2019 06:59:56 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hYPug-0007y9-Sh; Wed, 05 Jun 2019 07:00:46 +0000
+Received: from mail-eopbgr20044.outbound.protection.outlook.com ([40.107.2.44]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYPtl-0006Uv-CB
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 06:59:50 +0000
-Received: by mail-pg1-x541.google.com with SMTP id 83so5045132pgg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Jun 2019 23:59:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=kyvvb8Dpo+7r/hNh0Hasg4c/obIxKq733Zz2TyhyGfk=;
- b=hnjKuAO+7okYKXT89T/HbjNHxzesqyxbmXGKeWw/M0zwLzOfJJzpKp+dzmqoVSGqOt
- iDtduWPOOhMqRZ6X5vd3CEdo10NfJCUvGI9JQm/MdY9gjmE2kuH4LRETYHUrglfYxm8J
- VCjECmRAgTUl366uCinwIDOF69n2S5FaY6OJFhB2njA68JADokDFOWPoi928hFXfMxfB
- VH3bfVZX1XT/JVjKlUVWZJi68djN/YvQ0aFGC14/GD6WwBmQAobvm00Mwv4a1zw8aV6G
- TWWSXbzVPVAtUSPJfPtY03wapzuBJphxNZZ/50HL2mG/P3OXVXN4cflOO4fT/wy4Hbek
- 8vTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kyvvb8Dpo+7r/hNh0Hasg4c/obIxKq733Zz2TyhyGfk=;
- b=P4cOXJYIHr3Nu1hrKBoWAMVn2nLqGaDrM3mogcA+OYAyJFLWy2FTrDMqeX7QButCMh
- pQd9M640ViiM6Plqdp2k1CgFQo0wi2FVYGCADrnxQ5KxzOSW0PhHEYGi1djjaoVmb/pA
- 1sPjZ9IZk1a9IuhwDvzbuzMBNoHx402BES5kR5I64SiUO61sKWUpM/0MU64HKxTNp+Rn
- vYXbvjstqwX5ph+DrLoUtS7TUatpIH48x0d034Gz4M7CuVEwikzibWg6SgLwN6bcVgQ4
- uhbpIBLw3biPHrbt1zONxieXRGhm7dMnGJa+e+1ZGU53PPgKGnfSz7/w8m5WQ6zV2ovg
- tBQw==
-X-Gm-Message-State: APjAAAVfGDbiVTuEtMZd6yF9niYcsa9lhJEJCInq8/Xpzh/h8yI/+wDK
- qniARy9Kw4zKJe6b/vi+lAHlmQ==
-X-Google-Smtp-Source: APXvYqxpBjz9vh9WdULbhd//bFEmA+VYRSMMw3Z/uoePAdJidj7tnNGvl62YsQy5ZWMZmZn6F/RnRw==
-X-Received: by 2002:a62:648d:: with SMTP id y135mr35422233pfb.98.1559717985295; 
- Tue, 04 Jun 2019 23:59:45 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id e184sm28589093pfa.169.2019.06.04.23.59.43
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 04 Jun 2019 23:59:44 -0700 (PDT)
-Date: Wed, 5 Jun 2019 00:00:29 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 7/8] usb: dwc3: qcom: Start USB in 'host mode' on the
- SDM845
-Message-ID: <20190605070029.GN22737@tuxbook-pro>
-References: <20190604104455.8877-1-lee.jones@linaro.org>
- <20190604104455.8877-7-lee.jones@linaro.org>
+ id 1hYPuZ-0007xD-4j
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:00:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HccSg1pjcRa0jcE1T/DJWoI8g/5bbQ14TUp6NTIiDrI=;
+ b=o2anj2eb/cJD5rrk5FfRNzwe1Jo3iqge/vl69qkiYaLn/6QscB31EIkuBNUpbe3uHnzVDFyV+oWHm0GNmKBiBS/bNP8U7JOTSFvWjPG1UUgyrmpEyhZB5woMcqtMgMp9A8tpDS7q2vi2OOrAmNFjLVtNzpIdo0mByumU9BqagDk=
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
+ AM0PR04MB4321.eurprd04.prod.outlook.com (52.134.126.152) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.12; Wed, 5 Jun 2019 07:00:34 +0000
+Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::11e1:3bb9:156b:a3e4]) by AM0PR04MB4211.eurprd04.prod.outlook.com
+ ([fe80::11e1:3bb9:156b:a3e4%3]) with mapi id 15.20.1943.023; Wed, 5 Jun 2019
+ 07:00:33 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Pramod Kumar <pramod.kumar_1@nxp.com>
+Subject: RE: [PATCH v3 1/3] dt-bindings: arm: nxp: Add device tree binding for
+ ls1046a-frwy board
+Thread-Topic: [PATCH v3 1/3] dt-bindings: arm: nxp: Add device tree binding
+ for ls1046a-frwy board
+Thread-Index: AQHVFIg0QNRaL3LFI0OeuwRCFx28W6aMqHwAgAAF/gA=
+Date: Wed, 5 Jun 2019 07:00:33 +0000
+Message-ID: <AM0PR04MB42115435AD01AD6481C9D0B980160@AM0PR04MB4211.eurprd04.prod.outlook.com>
+References: <20190527123404.30858-1-pramod.kumar_1@nxp.com>
+ <20190527123404.30858-2-pramod.kumar_1@nxp.com>
+ <20190605063449.GG29853@dragon>
+In-Reply-To: <20190605063449.GG29853@dragon>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=aisheng.dong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 0b980fd1-edd5-4c32-f807-08d6e983815b
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4321; 
+x-ms-traffictypediagnostic: AM0PR04MB4321:
+x-microsoft-antispam-prvs: <AM0PR04MB4321EE0F54A312D44C0ADD4480160@AM0PR04MB4321.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 00594E8DBA
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(396003)(376002)(366004)(346002)(39860400002)(189003)(199004)(86362001)(6636002)(26005)(74316002)(5660300002)(6506007)(53546011)(71200400001)(102836004)(71190400001)(73956011)(66946007)(76116006)(66556008)(66476007)(64756008)(66446008)(53936002)(305945005)(7736002)(6436002)(99286004)(486006)(9686003)(52536014)(476003)(478600001)(7696005)(446003)(256004)(44832011)(76176011)(11346002)(55016002)(186003)(68736007)(14454004)(4326008)(3846002)(6116002)(110136005)(54906003)(66066001)(229853002)(6246003)(8676002)(81166006)(81156014)(8936002)(25786009)(33656002)(316002)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4321;
+ H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: S+B07aN9+xI+il/Rey/bivbsRBkyjdigNbMv2KWfwv/IQ9q2MwU73DuhQc+VLXqqJYdnHjbP8XJTExR8CSQQ43lCJ5GwGwV/1LG5qKEK3oGyjxdCVRk4BciDaPexxg20y6aFz3JS67SZNdlqNrJB5LnyK27tU0SRMhWiSDGl/q8nPpgUsEcE/2i926VOiwc4z+DcVt0gSia4bWQxuBSZ9e7Wt7LTZ6eC2//jjqS0aciBaGBPr0TTU5oyF4luaogBU/y4WXDfeodRZEgk5j7ELcOvsAJTU70FSXpHXz49P0IElugFOit/i1cIJzJQDYgkccnI9rig+2Ev9gRn7Zwlug5EOTaJgRdg4n5RITQHWB0hIws4wD6SE0Oi3atyTE75q8qvIaSCkDyBbW03glqgl9OpoAHYWtqAJJJtCSWFYJg=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190604104455.8877-7-lee.jones@linaro.org>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0b980fd1-edd5-4c32-f807-08d6e983815b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Jun 2019 07:00:33.8110 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: aisheng.dong@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4321
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_235949_422363_20CAF581 
-X-CRM114-Status: GOOD (  21.56  )
+X-CRM114-CacheID: sfid-20190605_000039_184550_09256FDB 
+X-CRM114-Status: GOOD (  16.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [40.107.2.44 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,92 +114,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
- gregkh@linuxfoundation.org, linus.walleij@linaro.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- david.brown@linaro.org, alokc@codeaurora.org, kramasub@codeaurora.org,
- linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "Michal.Vokac@ysoft.com" <Michal.Vokac@ysoft.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ Vabhav Sharma <vabhav.sharma@nxp.com>,
+ "manivannan.sadhasivam@linaro.org" <manivannan.sadhasivam@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 04 Jun 03:44 PDT 2019, Lee Jones wrote:
+Hi Pramod,
 
-> When booting with Device Tree, the current default boot configuration
-> table option, the request to boot via 'host mode' comes from the
-> "dr_mode" property.
-
-This has been the default on the MTP, but this is changing as this is
-causing issues when connected downstream from a hub (the typical
-development case for the primary USB port of a phone like device) and
-more importantly we don't have support for the PMIC blocks that control
-VBUS.
-
-Once these issues are resolved the dr_mode would be "otg".
-
-> A property of the same name can be used inside
-> ACPI tables too.  However it is missing from the SDM845's ACPI tables
-> so we have to supply this information using Platform Device Properites
-> instead.
+> From: Shawn Guo [mailto:shawnguo@kernel.org]
+> Sent: Wednesday, June 5, 2019 2:35 PM
+> Subject: Re: [PATCH v3 1/3] dt-bindings: arm: nxp: Add device tree binding for
+> ls1046a-frwy board
+> 
+> On Mon, May 27, 2019 at 12:32:09PM +0000, Pramod Kumar wrote:
+> > Add "fsl,ls1046a-frwy" bindings for ls1046afrwy board based on ls1046a SoC
+> >
+> > Signed-off-by: Vabhav Sharma <vabhav.sharma@nxp.com>
+> > Signed-off-by: Pramod Kumar <pramod.kumar_1@nxp.com>
+> > Reviewed-by: Rob Herring <robh@kernel.org>
+> 
+> I cannot apply patch from message using 'Content-Transfer-Encoding: base64'.
 > 
 
-Afaict this would install a fall-back property, so in the case that we
-have specified dr_mode in DT (or ACPI) that would take precedence. So
-the commit message should reflect that this redefines the default choice
-to be "host", rather than "otg".
+Which server are you using? Is it in the whitelist for using the specific SMTP?
+I remember DN server does not have this issue. Maybe using the wrong one?
 
-Which is in conflict with what's described for dr_mode in
-Documentation/devicetree/bindings/usb/generic.txt
+Regards
+Dong Aisheng
 
-
-And this driver is used on a range of different Qualcomm platforms, so I
-don't think this is SDM845 specific.
-
-Regards,
-Bjorn
-
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> ---
->  drivers/usb/dwc3/dwc3-qcom.c | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
+> > ---
+> >  Documentation/devicetree/bindings/arm/fsl.yaml | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml
+> b/Documentation/devicetree/bindings/arm/fsl.yaml
+> > index 407138ebc0d0..09ff1999ce96 100644
+> > --- a/Documentation/devicetree/bindings/arm/fsl.yaml
+> > +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+> > @@ -241,6 +241,7 @@ properties:
+> >            - enum:
+> >                - fsl,ls1046a-qds
+> >                - fsl,ls1046a-rdb
+> > +              - fsl,ls1046a-frwy
 > 
-> diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-> index 349bf549ee44..f21fdd6cdd1a 100644
-> --- a/drivers/usb/dwc3/dwc3-qcom.c
-> +++ b/drivers/usb/dwc3/dwc3-qcom.c
-> @@ -468,6 +468,11 @@ static const struct acpi_device_id dwc3_qcom_acpi_match[] = {
->  };
->  MODULE_DEVICE_TABLE(acpi, dwc3_qcom_acpi_match);
->  
-> +static const struct property_entry dwc3_qcom_acpi_properties[] = {
-> +	PROPERTY_ENTRY_STRING("dr_mode", "host"),
-> +	{}
-> +};
-> +
->  static int dwc3_qcom_probe(struct platform_device *pdev)
->  {
->  	struct device_node	*np = pdev->dev.of_node, *dwc3_np;
-> @@ -603,6 +608,13 @@ static int dwc3_qcom_probe(struct platform_device *pdev)
->  			goto platform_unalloc;
->  		}
->  
-> +		ret = platform_device_add_properties(qcom->dwc3,
-> +						     dwc3_qcom_acpi_properties);
-> +		if (ret < 0) {
-> +			dev_err(&pdev->dev, "failed to add properties\n");
-> +			goto platform_unalloc;
-> +		}
-> +
->  		ret = platform_device_add(qcom->dwc3);
->  		if (ret) {
->  			dev_err(&pdev->dev, "failed to add device\n");
-> -- 
-> 2.17.1
+> It might be better to keep the list alphabetically sorted.
 > 
-
+> Shawn
+> 
+> >            - const: fsl,ls1046a
+> >
+> >        - description: LS1088A based Boards
+> > --
+> > 2.17.1
+> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
