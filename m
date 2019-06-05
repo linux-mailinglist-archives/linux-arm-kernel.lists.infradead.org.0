@@ -2,55 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0ED936650
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 23:08:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6635636656
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 23:09:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jKRw+eu4gY7VXbIdz5iqhEg1SyOBFi77nHEMzISkyaU=; b=odldu3Uo2719FN
-	YVLvVEP9fiDtYkGqELKkCmGxlDjQD2WESmczQgRxVEsKoSu8wh3MJ4zvNIe+4sD8L6M6ACKukr1yp
-	hVYAIfWXCX98mbbxT/Js1CWxlGVypul/JrQRUC+HT/6gW6mEvXcCCHCOujVulAEGwlSV0Bn17eF3t
-	1h7Wv+GZOqTgFP0Ti5U/kLZHMG/0YDayUrzebwM0E2eh7tLnAXbA83KHaHJgHb3bBAKVjNWZxL+K4
-	sCcNl0fvqdZTbzkLP48a3mRyPB03+i3abGaY3bS9DTC4mqp2CPYFMC1lJoyAFNBh1+z2SKl/u6PY3
-	4BSA7l6GpNLGb2utsRjg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XXVF54E/2PGRAPT1NGV4Sh4CMeba2skkT9/vUx++XDo=; b=nJD
+	vEMT7Rbke7FjZs6KEoYDquuecBBY54Ym9XbFim4SfXIy5d06BnAFg+45gONgIAhHxTRR9q7z5GZlc
+	gFg7LaO0TRdyyOZIxbDa0pCEYinnD1okG2jjbXMPcUn3GYLe/Tgexo9QQCKdOvlycMA0YDbM6rJ0L
+	peowr2RXRee/K83K0XwQBlil7NCQm1X0uv64zOKFApx/NlsAqqBlkwzg181umrHHf3q+lgzJEsl1u
+	gNsm4ZIX2fTmjIW7QzPsUBDX4Zdxzfd5oM5ZZWAqwK97t3iS5U2xoJaWz2vJ8ePgI4fwiPp7Kq8p3
+	GJvbRqY+lbsvTh9zolxOdKRoNJvNmmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYd97-0002Au-QO; Wed, 05 Jun 2019 21:08:33 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1hYd9g-0002Rr-U0; Wed, 05 Jun 2019 21:09:08 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYd90-0002AP-9z
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 21:08:27 +0000
-X-Originating-IP: 93.29.109.196
-Received: from collins (196.109.29.93.rev.sfr.net [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 9B30F40003;
- Wed,  5 Jun 2019 21:08:07 +0000 (UTC)
-Message-ID: <5c2217a4e80eaaa6a8eefd8752ce9a86933d0a80.camel@bootlin.com>
-Subject: Re: [PATCH 5/7] media: cedrus: Don't set chroma size for scale &
- rotation
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Jernej Skrabec <jernej.skrabec@siol.net>, maxime.ripard@bootlin.com
-Date: Wed, 05 Jun 2019 23:08:07 +0200
-In-Reply-To: <20190530211516.1891-6-jernej.skrabec@siol.net>
-References: <20190530211516.1891-1-jernej.skrabec@siol.net>
- <20190530211516.1891-6-jernej.skrabec@siol.net>
-User-Agent: Evolution 3.32.1 
-MIME-Version: 1.0
+ id 1hYd9Z-0002QY-8h
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 21:09:02 +0000
+Received: by mail-pl1-x643.google.com with SMTP id bh12so7809plb.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Jun 2019 14:09:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=4SOiYMPDMgMZV+MKOdKKhmpmtWM686pXbSZfXaXr6YQ=;
+ b=Mi6HXX0anhGF/fyVD0TJ+rBoU8+/2sV4/6KT+SaA6jNtJ9nkggp1lNuo0OuYCkFXOf
+ UAKAU5OaYgB3G/z4dWJRiAxPtXuTAqQ823ljiGWmob2ec6SBKGrnOC00mjXuGJ3w9Bma
+ 5Qqp+z5ebZgLLFm+vUUbZihDioWTGxweObsUb42AoVL+YQqqR9HUYKD+t6Pa158pertg
+ ysierxBI6v9s7hTE0eAAaDfUmYePAKY9t34sOdNWUs4QctWbXrb1aXzCBWG0eEtuOENn
+ eWoj7rcX5OJIugbTFOwwDFUVKaZAI0nhwoRRcFn01hfhuL2MtkcOFcHcn0WVHzAgUyMM
+ CnfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=4SOiYMPDMgMZV+MKOdKKhmpmtWM686pXbSZfXaXr6YQ=;
+ b=oopRPFy9Gzkcyn7xeA2IKoL+zPnodtV9SNpz8LCadzaLnwzNdHyrefvvLhp4oFBcBz
+ vCWG8am1fvlQAAAaHpmGMMWBm19g5NikU43xo7dtVqbJWf5IlbNnRB/nBLv0S3VEdYg5
+ ABcT8ZKOvHS4QsV2m3pf7g6Xf2K35u1ML9eCWNLb8J2Qqc9a9TBzU0N9dQryqL886HFY
+ UoeZ1vDhJi4MI2h+Syrk/VHPM+aXWcaV5vPDqLK5S9D7DLW8gHUIRv1ToXANuMgiGYjX
+ M0o201OpGC+MVpcSGCq3UEM5lTOMaWMuT13UqWi/HDlf+/j5/G+r5QAIxlT8/JdDgqET
+ +3Eg==
+X-Gm-Message-State: APjAAAXMZ+RIKfZ5lt6yU0k1dliIpnFuegohdgfFITv9sk7pukJmU1VN
+ vYvYCe4jxM1BnSUF8MA6yKRAag==
+X-Google-Smtp-Source: APXvYqwvnaLGrRNt08GZmLk1bVNYK0cJLbYNoDQLhW3tjkGB1XdAbGb6FXGdS+HlXb7YWYAHFwIjNg==
+X-Received: by 2002:a17:902:e85:: with SMTP id 5mr7578262plx.202.1559768939617; 
+ Wed, 05 Jun 2019 14:08:59 -0700 (PDT)
+Received: from localhost.localdomain
+ (104-188-17-28.lightspeed.sndgca.sbcglobal.net. [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id z68sm5093374pfb.37.2019.06.05.14.08.58
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 05 Jun 2019 14:08:58 -0700 (PDT)
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>
+Subject: [RFC 0/2] iommu: arm-smmu: Inherit SMR and CB config during init
+Date: Wed,  5 Jun 2019 14:08:54 -0700
+Message-Id: <20190605210856.20677-1-bjorn.andersson@linaro.org>
+X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_140826_501123_96A4A454 
-X-CRM114-Status: GOOD (  10.44  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190605_140901_305984_5B2D3614 
+X-CRM114-Status: GOOD (  12.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,33 +93,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, wens@csie.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Patrick Daly <pdaly@codeaurora.org>, Jeffrey Hugo <jhugo@codeaurora.org>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Vivek Gautam <vivek.gautam@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpMZSBqZXVkaSAzMCBtYWkgMjAxOSDDoCAyMzoxNSArMDIwMCwgSmVybmVqIFNrcmFiZWMg
-YSDDqWNyaXQgOgo+IFNjYWxlIGFuZCByb3RhdGlvbiBhcmUgY3VycmVudGx5IG5vdCBpbXBsZW1l
-bnRlZCwgc28gaXQgbWFrZXMgbm8gc2Vuc2UgdG8KPiBzZXQgY2hyb21hIHNpemUgZm9yIGl0Lgo+
-IAo+IFNpZ25lZC1vZmYtYnk6IEplcm5laiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5l
-dD4KCkFja2VkLWJ5OiBQYXVsIEtvY2lhbGtvd3NraSA8cGF1bC5rb2NpYWxrb3dza2lAYm9vdGxp
-bi5jb20+CkNoZWVycywKClBhdWwKCj4gLS0tCj4gIGRyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54
-aS9jZWRydXMvY2VkcnVzX2h3LmMgfCAzIC0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgMyBkZWxldGlv
-bnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1
-cy9jZWRydXNfaHcuYyBiL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVz
-X2h3LmMKPiBpbmRleCA5YzU4MTlkZWYxODYuLjlkZTIwYWU0NzkxNiAxMDA2NDQKPiAtLS0gYS9k
-cml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1c19ody5jCj4gKysrIGIvZHJp
-dmVycy9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXNfaHcuYwo+IEBAIC03OSw5ICs3
-OSw2IEBAIHZvaWQgY2VkcnVzX2RzdF9mb3JtYXRfc2V0KHN0cnVjdCBjZWRydXNfZGV2ICpkZXYs
-Cj4gIAkJcmVnID0gVkVfUFJJTUFSWV9PVVRfRk1UX05WMTI7Cj4gIAkJY2VkcnVzX3dyaXRlKGRl
-diwgVkVfUFJJTUFSWV9PVVRfRk1ULCByZWcpOwo+ICAKPiAtCQlyZWcgPSBWRV9DSFJPTUFfQlVG
-X0xFTl9TRFJUKGNocm9tYV9zaXplIC8gMik7Cj4gLQkJY2VkcnVzX3dyaXRlKGRldiwgVkVfQ0hS
-T01BX0JVRl9MRU4sIHJlZyk7Cj4gLQo+ICAJCXJlZyA9IGNocm9tYV9zaXplIC8gMjsKPiAgCQlj
-ZWRydXNfd3JpdGUoZGV2LCBWRV9QUklNQVJZX0NIUk9NQV9CVUZfTEVOLCByZWcpOwo+ICAKCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+Qualcomm devices typically boot with some sort of splash screen on the display,
+or for some devices (i.e. recent Qualcomm laptops) an EFI framebuffer. For this
+the bootloader allocates a static framebuffer, configures the display hardware
+to output this on the display, sets up the SMMU for the display hardware and
+jumps to the kernel.
+
+But as the arm-smmu disables all SMRs the display hardware will no longer be
+able to access the framebuffer and the result is that the device resets.
+
+The given proposal reads back the SMR state at boot and for marks these
+contexts as busy. This ensures that the display hardware will have continued
+access to the framebuffer. Once a device is attached we try to match it to the
+predefined stream mapping, so that e.g. the display driver will inherit the
+particular SMRs/CBs.
+
+
+This has the positive side effect that on some Qualcomm platforms, e.g. QCS404,
+writes to the SMR registers are ignored. But as we inherit the preconfigured
+mapping from the bootloader we can use the arm-smmu driver on these platforms.
+
+Bjorn Andersson (2):
+  iommu: arm-smmu: Handoff SMR registers and context banks
+  iommu: arm-smmu: Don't blindly use first SMR to calculate mask
+
+ drivers/iommu/arm-smmu-regs.h |   2 +
+ drivers/iommu/arm-smmu.c      | 100 +++++++++++++++++++++++++++++++---
+ 2 files changed, 93 insertions(+), 9 deletions(-)
+
+-- 
+2.18.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
