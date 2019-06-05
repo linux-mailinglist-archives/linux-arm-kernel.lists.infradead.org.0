@@ -2,86 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 129193582A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:57:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AE5635822
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 09:57:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iltWMvEHRXuUxLKSEBmNM3i61/hnUG+cwntYhlBi17U=; b=ZH1NvKC6PkrbcD
-	5nZBOvZ/340ehGtIxJbzLSBu66mHwC/Vx7QScofdqNxN1/WzMENgXMntJLkCZUMeMJuE+1eBal2Ry
-	Q/cxWG9IGUAm7Lw7EfEAFea1T6RCtkvDXdsigNaMIBfm2O6Chc9Jq5Mne4bD6k6F6rg0JenU1tCEM
-	cu8Uu4wK7Rr6gSzDigtBceuOJI+yK4PAFRQrU+y3LiWd1HmFJxWoRUU8oyfX01s5KvBmFfv6HK7IY
-	0D65727wW62nTEg523Qk0iMOD7VnVvAW/Fiut4N/Jp9shmtIcF+zVSc2p1WdV8HJ/bzM76JsAM13q
-	/iULIZI6IjmVjrTtdwtg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bNh9fZcXyReFpNTwU+SBkNji+0qmGrMjnzda9qjaLq8=; b=pqtRflMbnop506
+	qVdLWc4EjLTc2kaNJN5g0vj+SVIHfMQaM6LVRq3HjEBpuBkAxY196hFq8VyP0DyrKVZUbviatedEZ
+	Scsvzk2HyQOUpl/44QrzJsxRe+s7eIYo486Al5a+rA/BoAbfhGGPW89RGauPh9EnCF9YQEzRO2wjU
+	hzQzmOyqLw/m3E7e4HaliPKbE97afdh0byzDvWAPQdmzxFEepMQeTeFoi4huC7X1isCkr0+4rGije
+	a4NxduGYkSveqOihIUffU1P3cx5jsM/DCnpeQIFRN8l2NReMg5J/YLWjEFIaaynnhVa7gSf/8kUqE
+	8jMKmNzgitjUZAfrQ4Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYQnO-00056y-AA; Wed, 05 Jun 2019 07:57:18 +0000
-Received: from mail-lf1-f65.google.com ([209.85.167.65])
+	id 1hYQnD-0004zm-5E; Wed, 05 Jun 2019 07:57:07 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYQn8-0004zQ-FK
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:57:04 +0000
-Received: by mail-lf1-f65.google.com with SMTP id y198so7882172lfa.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 00:57:01 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BIGkKcYfLrKZMcNofxFte/MwlnM+iUUU8rGg0Es0KCI=;
- b=rqYNtw2aGKc3+9OD5UmQa78jlsNjSC3nf79VrW61Hw3I1jPe4yez7rWIypkqXezm8Z
- 4SPehEcYoWLdq2G+ln9yQhlr35fEvWd7AqdX5+3blE08QunkXjTtA1cUEr/jSTuojfBj
- URvQJn8K0+lxROXWn5U7rxXH0O6wf0bWVxRDenEZUlpFdGFdSh8Xcm7q6erP+8NdJYc4
- yIQhqgVDMDkyc7mAIbuAGq5WTHO7A7g94zoCPRUURj5zqYJhMotClKPwnkDo9soFMYU7
- 6CpzEwDQ6pMJtaiii6hVwDHdQLWexcv2Dq3bf3Mp3GuGCPmtomm9e5Oi/O10hk6vMpbo
- pDSg==
-X-Gm-Message-State: APjAAAVRVYNtF7ZjD6qvptpJMWocgePzr3tCVg4yIfW/Q9dZhXYicR/F
- xImkhgnTQyhFzUio79+OF71McUB2hPw=
-X-Google-Smtp-Source: APXvYqyJTHFtU2ZPnYiQSPpENJAgbw8I3+7lh4a0s29uA2IVhDFXd/5pYXop0LCfMkGc18+7XLWDyw==
-X-Received: by 2002:a19:6a01:: with SMTP id u1mr17636778lfu.141.1559721419930; 
- Wed, 05 Jun 2019 00:56:59 -0700 (PDT)
-Received: from xi.terra (c-74bee655.07-184-6d6c6d4.bbcust.telenor.se.
- [85.230.190.116])
- by smtp.gmail.com with ESMTPSA id t22sm4189527lje.58.2019.06.05.00.56.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 00:56:59 -0700 (PDT)
-Received: from johan by xi.terra with local (Exim 4.91)
- (envelope-from <johan@kernel.org>)
- id 1hYQn2-00063e-Gt; Wed, 05 Jun 2019 09:56:57 +0200
-Date: Wed, 5 Jun 2019 09:56:56 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 2/8] i2c: i2c-qcom-geni: Signify successful driver probe
-Message-ID: <20190605075656.GC29637@localhost>
-References: <20190604104455.8877-1-lee.jones@linaro.org>
- <20190604104455.8877-2-lee.jones@linaro.org>
- <20190605062020.GL22737@tuxbook-pro> <20190605071625.GK4797@dell>
+ id 1hYQn6-0004zD-6g
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 07:57:01 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x557uwUu000812;
+ Wed, 5 Jun 2019 02:56:58 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1559721418;
+ bh=gYNLZ385lajEbx+E5yp06jfNtbTVTUN+kuz/RIevvJQ=;
+ h=From:To:CC:Subject:Date;
+ b=rrPaKBqrQtuadV5kAEmheIw4iam/vclAcOQkCpBovGPpwuEQSJjhOJ95D0tPbvrik
+ U5H8M3CfD0b2iL7qDG5lMXCF9GdJhzEnalDCQIZ3t++SDZ6XMVgbsoOWAe+Lq945Kg
+ ec4Wq2//pBz3dHx3jqQMwvpDwIBn8B56gow1DZNQ=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x557uwYf121971
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 5 Jun 2019 02:56:58 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Wed, 5 Jun
+ 2019 02:56:57 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Wed, 5 Jun 2019 02:56:57 -0500
+Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x557uqoO033893;
+ Wed, 5 Jun 2019 02:56:54 -0500
+From: Keerthy <j-keerthy@ti.com>
+To: <t-kristo@ti.com>, <nm@ti.com>, <robh+dt@kernel.org>
+Subject: [RFC PATCH v2 0/4] arm64: dts: ti: am6: Add gpio nodes
+Date: Wed, 5 Jun 2019 13:27:06 +0530
+Message-ID: <20190605075710.1691-1-j-keerthy@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190605071625.GK4797@dell>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_005702_507574_200EBD49 
-X-CRM114-Status: GOOD (  23.02  )
-X-Spam-Score: -0.6 (/)
+X-CRM114-CacheID: sfid-20190605_005700_281543_8DA81C19 
+X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.6 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.65 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jhovold[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,70 +89,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, david.brown@linaro.org, gregkh@linuxfoundation.org,
- linus.walleij@linaro.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- wsa+renesas@sang-engineering.com, alokc@codeaurora.org,
- kramasub@codeaurora.org, linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 05, 2019 at 08:16:25AM +0100, Lee Jones wrote:
-> On Tue, 04 Jun 2019, Bjorn Andersson wrote:
-> 
-> > On Tue 04 Jun 03:44 PDT 2019, Lee Jones wrote:
-> > 
-> > > The Qualcomm Geni I2C driver currently probes silently which can be
-> > > confusing when debugging potential issues.  Add a low level (INFO)
-> > > print when each I2C controller is successfully initially set-up.
-> > > 
-> > > Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> > > ---
-> > >  drivers/i2c/busses/i2c-qcom-geni.c | 2 ++
-> > >  1 file changed, 2 insertions(+)
-> > > 
-> > > diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-qcom-geni.c
-> > > index 0fa93b448e8d..e27466d77767 100644
-> > > --- a/drivers/i2c/busses/i2c-qcom-geni.c
-> > > +++ b/drivers/i2c/busses/i2c-qcom-geni.c
-> > > @@ -598,6 +598,8 @@ static int geni_i2c_probe(struct platform_device *pdev)
-> > >  		return ret;
-> > >  	}
-> > >  
-> > > +	dev_info(&pdev->dev, "Geni-I2C adaptor successfully added\n");
-> > > +
-> > 
-> > I would prefer that we do not add such prints, as it would be to accept
-> > the downstream behaviour of spamming the log to the point where no one
-> > will ever look through it.
-> 
-> We should be able to find a middle ground.  Spamming the log with all
-> sorts of device specific information/debug is obviously not
-> constructive, but a single liner to advertise that an important
-> device/controller has been successfully initialised is more helpful
-> than it is hinderous.
-> 
-> This print was added due to the silent initialisation costing me
-> several hours of debugging ACPI device/driver code (albeit learning a
-> lot about ACPI as I go) just to find out that it was already doing the
-> right thing - just very quietly.
+K3 AM6 platform has 2 instances of gpio banks on main domain
+and 1 instance on wakeup domin. All are capable of generating
+banked interrupts.
 
-No, we don't add noise like this to the logs just because it may be
-useful while debugging. Even one-liners add up.
+This series also adds 2 goio_keys nodes connected to SW6 SW5
+switches and tested for gpio_keys interrupts.
 
-There are plenty of options for debugging already ranging from adding a
-temporary dev_info() to the probe function in question to using dynamic
-debugging to have driver core log every successful probe.
+The series depends on:
+https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=112791
 
-And in this case you say the driver was in fact already bound; that can
-easily be verified through sysfs too in case things aren't behaving the
-way you expect.
+Posting as RFC as it has dependencies to be merged.
 
-Johan
+Changes in v2:
+
+  * Added a separate am654 compatible. 
+
+Keerthy (4):
+  dt-bindings: gpio: davinci: Add k3 am654 compatible
+  arm64: dts: ti: am6-wakeup: Add gpio node
+  arm64: dts: ti: am6-main: Add gpio nodes
+  arm64: dts: ti: am654-base-board: Add gpio_keys node
+
+ .../devicetree/bindings/gpio/gpio-davinci.txt | 18 +++++++++++
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 32 +++++++++++++++++++
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    | 15 +++++++++
+ .../arm64/boot/dts/ti/k3-am654-base-board.dts | 27 ++++++++++++++++
+ 4 files changed, 92 insertions(+)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
