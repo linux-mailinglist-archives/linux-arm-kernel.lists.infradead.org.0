@@ -2,74 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD418364D6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 21:37:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93BE0364E3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 21:45:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U01q7qceq6WGp/1k8oAg273c7Z1osYECmDb4RVxV7z0=; b=IWnVqCMBe+ACyd
-	Xm6YDhhvAlq5yr6RjAId0LR0S8QHbxKF1vXBwg8Gc6yRCVfegqnuq59whGt+//wf95mlCiqS7RY5S
-	x58+/LHNHvvP4ECBfe9Dc+exz4Wnw3+hmtuPJTy2TiMPhd2LfM8ZnBneJPPyoWYXutEylSdVQM53P
-	4iA9bns+EWND4upOoJIBZT35ZgMkJoYzgeM77MoHL9cF96/drYYMRPz+XoitZ3Xsf33U/X7APS16n
-	EXwuAdoE7I5Q1HD7YxSLk2WtPmjVQ2WNVWQbyNvlly2GFYS9JgdwfDz7w1UM4/0V1UzelB4KW+kyn
-	V/SMPTasPKnLRpoTsb2g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XDNLsh3Iv9p/slyGzO9zqP/SpBsxb2Fho2w/ornulSc=; b=V+H
+	1wFGW62JRc+I1LNN+m4GbTDm33huebm48PGtoAZsso8LVJ0zspll1I265ltxWxQ0u/TEnZO7XdnTt
+	tddlwWqjyN8W8iBmwP9j/9VNEed4pOHlJQ6WWeQQLBsm8O6nl35pqmp1Er37EZqFm9xf6PQc1Dkse
+	eO6u5m9MRf0ixD4lh0yBFdgZ4hMDmfGDmVzZltFuWJp+X/G+r9C091HwDmurDB7/7LVazERqZBSVu
+	VqKnFnxAezeNqU9y1TIZPONg52kNSimCEnQG8SLcq+TImeBiXYpUd34cy5+SE/mroFXo7RBYCHEK6
+	ZKT+vzrF9M9g7wxMZM7T4pVLLMeJjBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYbib-0001Wc-Vz; Wed, 05 Jun 2019 19:37:06 +0000
-Received: from mail-it1-f196.google.com ([209.85.166.196])
+	id 1hYbqk-0004jP-Oi; Wed, 05 Jun 2019 19:45:30 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYbiU-0001Vr-4q; Wed, 05 Jun 2019 19:37:00 +0000
-Received: by mail-it1-f196.google.com with SMTP id a186so5406226itg.0;
- Wed, 05 Jun 2019 12:36:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kwLHe6pw2ihYaqYwiNpoJsGqzozTnZa4V+fIZmXgIP4=;
- b=OUBvd39QETSt3/jGmgvOX+N3aKGB/wBnllY7dvrYEdZiiSRWCwbe9bpuljCGgr779s
- AEYmhF9kJ3w6ClF7aNMD0R9Lu6X6W9uWgK3SEs/O02XmlRPhFll6ZKT/dII8bHnfQkP1
- yisRJP1d/m/WvRBoAYW9gbqpbI1UskzJvqFfY8w6KtrV8qVkeqpSkM/QGxdC0kQAZEzw
- KsKEERYiWziDsFp+8ktTfjFHJBn7FRlsEF3nLr59uGq7ZMCaYYUCyK1PuajWYmSIRa2m
- v6oQduxKbgIR9ZdueHIyrx1j4q0+AYy2WWLS8j24oyRjDW2ark499MiE/kjX56XFt3Gs
- uwWQ==
-X-Gm-Message-State: APjAAAVOOAXzPeIlfNeU3X4/EmWcsUul2Bc/MYcjwYtDB72jvMIDfu8o
- zb+odnfsezw9Q2glEmdAkE1hLWZASLEHS82pdyM=
-X-Google-Smtp-Source: APXvYqx6Oah+YT6T5psZ1qhPIYRGZiWlfwqb5jPRk8MHOTrYaBqYOjTVp1LlSMJ3g0urFLpxp888Ebd0l1PeShpDBNg=
-X-Received: by 2002:a24:7f0d:: with SMTP id r13mr25805755itc.28.1559763415651; 
- Wed, 05 Jun 2019 12:36:55 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190412105320.2924-1-kernel@esmil.dk>
- <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
-In-Reply-To: <20190508103358.5C7EB440010@finisterre.sirena.org.uk>
-From: Emil Renner Berthing <kernel@esmil.dk>
-Date: Wed, 5 Jun 2019 21:36:44 +0200
-Message-ID: <CANBLGcxiXR7KqKn4U-2PgefuxpBFX=yR06cw6A5GEALuqa54FA@mail.gmail.com>
-Subject: Re: Applied "spi: rockchip: turn down tx dma bursts" to the spi tree
-To: Mark Brown <broonie@kernel.org>
+ id 1hYbqd-0004iC-O1
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 19:45:25 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D7FEC200860;
+ Wed,  5 Jun 2019 21:45:12 +0200 (CEST)
+Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
+ [134.27.49.11])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 80DDD20085A;
+ Wed,  5 Jun 2019 21:45:12 +0200 (CEST)
+Received: from someleo.am.freescale.net (someleo.am.freescale.net
+ [10.81.32.81])
+ by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id CC2CD40A55;
+ Wed,  5 Jun 2019 12:45:11 -0700 (MST)
+From: Li Yang <leoyang.li@nxp.com>
+To: arm@kernel.org
+Subject: [GIT PULL v2] updates to soc/fsl drivers for next(v5.3)
+Date: Wed,  5 Jun 2019 14:45:11 -0500
+Message-Id: <20190605194511.12127-1-leoyang.li@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_123658_192039_9BE6BACF 
-X-CRM114-Status: GOOD (  11.52  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20190605_124524_057237_4AB3D52D 
+X-CRM114-Status: GOOD (  13.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.6 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (emil.renner.berthing[at]gmail.com)
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -81,42 +64,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vicente Bergas <vicencb@gmail.com>, linux-spi@vger.kernel.org,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: shawnguo@kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark
+Hi arm-soc maintainers,
 
-On Wed, 8 May 2019 at 12:34, Mark Brown <broonie@kernel.org> wrote:
->
-> The patch
->
->    spi: rockchip: turn down tx dma bursts
->
-> has been applied to the spi tree at
->
->    https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git
->
-> All being well this means that it will be integrated into the linux-next
-> tree (usually sometime in the next 24 hours) and sent to Linus during
-> the next merge window (or sooner if it is a bug fix), however if
-> problems are discovered then the patch may be dropped or reverted.
+This is a rebase of patches that missed 5.2 merge window together with
+some new patches for QE.  Please help to review and merge it.  We would
+like this to be merged earlier because there are other patches depending
+on patches in this pull request.  After this is merged in arm-soc, we can
+ask other sub-system maintainers to pull from this tag and apply additional
+patches.  Thanks.
 
-I've tried looking in the for-next and for-5.x branches here, and I
-can't seem to find this patch.
-Am I missing something?
+Regards,
+Leo
 
-It fixes a problem introduced in 4.19, so it'd be nice if it could
-make it to stable trees eventually.
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
-/Emil
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/leo/linux.git tags/soc-fsl-next-v5.3-2
+
+for you to fetch changes up to 21560067fb1f5e87abedc3ecec5d46f67ac0c019:
+
+  soc: fsl: qe: fold qe_get_num_of_snums into qe_snums_init (2019-06-05 14:26:52 -0500)
+
+----------------------------------------------------------------
+NXP/FSL SoC driver updates for v5.3 (take 2)
+
+DPAA2 Console driver
+- Add driver to export two char devices to dump logs for MC and
+  AIOP
+
+DPAA2 DPIO driver
+- Add support for memory backed QBMan portals
+- Increase the timeout period to prevent false error
+- Add APIs to retrieve QBMan portal probing status
+
+DPAA Qman driver
+- Only make liodn fixup on powerpc SoCs with PAMU iommu
+
+QUICC Engine
+- Add support for importing qe-snums through device tree
+- Some cleanups and foot print optimzation
+
+----------------------------------------------------------------
+Colin Ian King (1):
+      soc: fsl: fix spelling mistake "Firmaware" -> "Firmware"
+
+Ioana Ciornei (2):
+      Documentation: DT: Add entry for DPAA2 console
+      soc: fsl: add DPAA2 console support
+
+Laurentiu Tudor (2):
+      soc: fsl: qman: fixup liodns only on ppc targets
+      soc: fsl: qbman_portals: add APIs to retrieve the probing status
+
+Rasmus Villemoes (6):
+      soc: fsl: qe: drop useless static qualifier
+      soc: fsl: qe: reduce static memory footprint by 1.7K
+      soc: fsl: qe: introduce qe_get_device_node helper
+      dt-bindings: soc: fsl: qe: document new fsl,qe-snums binding
+      soc: fsl: qe: support fsl,qe-snums property
+      soc: fsl: qe: fold qe_get_num_of_snums into qe_snums_init
+
+Roy Pledge (2):
+      bus: mc-bus: Add support for mapping shareable portals
+      soc: fsl: dpio: Add support for memory backed QBMan portals
+
+Vabhav Sharma (1):
+      soc: fsl: guts: Add definition for LX2160A
+
+Youri Querry (1):
+      soc: fsl: dpio: Increase timeout for QBMan Management Commands
+
+ .../devicetree/bindings/misc/fsl,dpaa2-console.txt |  11 +
+ .../devicetree/bindings/soc/fsl/cpm_qe/qe.txt      |  13 +-
+ MAINTAINERS                                        |   1 +
+ drivers/bus/fsl-mc/dprc.c                          |  30 +-
+ drivers/bus/fsl-mc/fsl-mc-bus.c                    |  15 +-
+ drivers/bus/fsl-mc/fsl-mc-private.h                |  17 +-
+ drivers/soc/fsl/Kconfig                            |  10 +
+ drivers/soc/fsl/Makefile                           |   1 +
+ drivers/soc/fsl/dpaa2-console.c                    | 329 +++++++++++++++++++++
+ drivers/soc/fsl/dpio/dpio-driver.c                 |  23 +-
+ drivers/soc/fsl/dpio/qbman-portal.c                | 148 +++++++--
+ drivers/soc/fsl/dpio/qbman-portal.h                |   9 +-
+ drivers/soc/fsl/guts.c                             |   6 +
+ drivers/soc/fsl/qbman/bman_portal.c                |  20 +-
+ drivers/soc/fsl/qbman/qman_ccsr.c                  |   2 +-
+ drivers/soc/fsl/qbman/qman_portal.c                |  21 +-
+ drivers/soc/fsl/qbman/qman_priv.h                  |   9 +-
+ drivers/soc/fsl/qe/qe.c                            | 163 ++++------
+ include/soc/fsl/bman.h                             |   8 +
+ include/soc/fsl/qman.h                             |   9 +
+ 20 files changed, 695 insertions(+), 150 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/misc/fsl,dpaa2-console.txt
+ create mode 100644 drivers/soc/fsl/dpaa2-console.c
 
 _______________________________________________
 linux-arm-kernel mailing list
