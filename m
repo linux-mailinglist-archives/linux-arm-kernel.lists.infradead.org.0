@@ -2,46 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 285B73594F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:11:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEB7935955
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 11:12:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kFNzTO8fVNFXr2YO4qYQ0b+eCI7d0Ofmx5E80KEIXQE=; b=WxBSHF8Fw+hyU7GyFPaMocHjE
-	ogcZYoqszATWp1TWPvu0F6YreKHApPVETFLA7QJzU/3Eyf3w4KlcotYHQvSIlTWAbGOTSZZFpH/6e
-	sHMTXCEavB35lt1ZTjfXrYndFU/n009NABtkjWf5xrRFV7aQgsRFH+Yztye2LS1mrpmCPMAewa9FF
-	5UlmKqBsgWI7+Htk0uvWnaskzrwSOH47Ohlq2ARwN+eAjFZ8eCnpR1DB4K92ZIryuHwjz/ozqnoki
-	YRywrrXTcsxKmXq3NwmuxPmekbNXbqnq1fVM9+k2z8LAabuvKTsTVCxESmSktYD7E4AbmGzvihZ6S
-	ezWmwTQ2g==;
+	 bh=6JrC5nR+9Y9Ta3rOgb1WT8Kr241fDfCt8KfxYlUe1TM=; b=VGCSF7c4Esv+mhc0x3SJz53Pe
+	MWpZ2cu3bD/aoOz71hqDi+rpZ5s6S4wZH/w+Bot9ROQo7oMnq//jShEYTLTCW85CefcE1Sua0NfrK
+	8TFnBY/8vT1ym9SXjSkVgn+fAQfNuoq0YOqehyHmcyaZwRjAWGOIUydNYdjQ9VfgRePOyng2UpNpK
+	Ou7AsPAJrHFN0vhuVOF+izJgzEMu3g+QIOz5AKBKgfU9yZ0+u+GsGGPkUmI0wWkgJyUwJnNucqLKv
+	3jFAGNZiJ8L6Rl95SeimJfBz39AtiFSnm3W/elytjoFFAwQ9tPMnKc0j9FyWF9H61PtfWhIY2SaKz
+	QoQbKwBEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYRx6-0001er-DO; Wed, 05 Jun 2019 09:11:24 +0000
+	id 1hYRyF-0001vX-QQ; Wed, 05 Jun 2019 09:12:35 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYRwz-0001dX-Cj; Wed, 05 Jun 2019 09:11:18 +0000
+ id 1hYRy8-0001v4-FP; Wed, 05 Jun 2019 09:12:30 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 627BEAE16;
- Wed,  5 Jun 2019 09:11:14 +0000 (UTC)
-Message-ID: <17ea99902e4329db735080d1a8fc04f5c06c9bf0.camel@suse.de>
-Subject: Re: [PATCH 3/4] clk: bcm2835: register Raspberry Pi's firmware clk
- device
+ by mx1.suse.de (Postfix) with ESMTP id 27ABFAE16;
+ Wed,  5 Jun 2019 09:12:27 +0000 (UTC)
+Message-ID: <98f49600aa5adea62308a6fa23bca9b3a8007500.camel@suse.de>
+Subject: Re: [PATCH 4/4] cpufreq: add driver for Raspbery Pi
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Eric Anholt <eric@anholt.net>, stefan.wahren@i2se.com, Florian Fainelli
- <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>, Scott Branden
- <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
-Date: Wed, 05 Jun 2019 11:11:12 +0200
-In-Reply-To: <87muiwzyrw.fsf@anholt.net>
+To: Eric Anholt <eric@anholt.net>, stefan.wahren@i2se.com, "Rafael J.
+ Wysocki" <rjw@rjwysocki.net>, Viresh Kumar <viresh.kumar@linaro.org>
+Date: Wed, 05 Jun 2019 11:12:25 +0200
+In-Reply-To: <87d0jszxxt.fsf@anholt.net>
 References: <20190604173223.4229-1-nsaenzjulienne@suse.de>
- <20190604173223.4229-4-nsaenzjulienne@suse.de> <87muiwzyrw.fsf@anholt.net>
+ <20190604173223.4229-5-nsaenzjulienne@suse.de> <87d0jszxxt.fsf@anholt.net>
 User-Agent: Evolution 3.32.2 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_021117_579317_74E74A94 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20190605_021228_805765_7AE69FC8 
+X-CRM114-Status: GOOD (  23.18  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,63 +60,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
- viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+Cc: f.fainelli@gmail.com, linux-pm@vger.kernel.org, sboyd@kernel.org,
+ mturquette@baylibre.com, ptesarik@suse.com, linux-kernel@vger.kernel.org,
+ mbrugger@suse.de, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
-Content-Type: multipart/mixed; boundary="===============0327317674296771708=="
+ linux-arm-kernel@lists.infradead.org, ssuloev@orpaltech.com
+Content-Type: multipart/mixed; boundary="===============8410548274253219249=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0327317674296771708==
+--===============8410548274253219249==
 Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-Y0gkZzcIbprnY+sekDS2"
+	protocol="application/pgp-signature"; boundary="=-YLOqxA/CMFHs8ZRZMhU9"
 
 
---=-Y0gkZzcIbprnY+sekDS2
+--=-YLOqxA/CMFHs8ZRZMhU9
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, 2019-06-04 at 17:00 -0700, Eric Anholt wrote:
+Hi Eric,
+
+On Tue, 2019-06-04 at 17:18 -0700, Eric Anholt wrote:
 > Nicolas Saenz Julienne <nsaenzjulienne@suse.de> writes:
 >=20
-> > Registers clk-raspberrypi as a platform device as part of the driver's
-> > probe sequence.
+> > Raspberry Pi's firmware offers and interface though which update it's
+> > performance requirements. It allows us to request for specific runtime
+> > frequencies, which the firmware might or might not respect, depending o=
+n
+> > the firmware configuration and thermals.
+> >=20
+> > As the maximum and minimum frequencies are configurable in the firmware
+> > there is no way to know in advance their values. So the Raspberry Pi
+> > cpufreq driver queries them, builds an opp frequency table to then
+> > launch cpufreq-dt.
+> >=20
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > ---
+> >=20
+> > Changes since RFC:
+> >   - Alphabetically ordered relevant stuff
+> >   - Updated Kconfig to select firmware interface
+> >   - Correctly unref clk_dev after use
+> >   - Remove all opps on failure
+> >   - Remove use of dev_pm_opp_set_sharing_cpus()
+> >=20
+> >  drivers/cpufreq/Kconfig.arm           |  8 +++
+> >  drivers/cpufreq/Makefile              |  1 +
+> >  drivers/cpufreq/raspberrypi-cpufreq.c | 84 +++++++++++++++++++++++++++
+> >  3 files changed, 93 insertions(+)
+> >  create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
+> >=20
+> > diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
+> > index f8129edc145e..556d432cc826 100644
+> > --- a/drivers/cpufreq/Kconfig.arm
+> > +++ b/drivers/cpufreq/Kconfig.arm
+> > @@ -133,6 +133,14 @@ config ARM_QCOM_CPUFREQ_HW
+> >  	  The driver implements the cpufreq interface for this HW engine.
+> >  	  Say Y if you want to support CPUFreq HW.
+> > =20
+> > +config ARM_RASPBERRYPI_CPUFREQ
+> > +	tristate "Raspberry Pi cpufreq support"
+> > +	select RASPBERRYPI_FIRMWARE
+> > +	help
+> > +	  This adds the CPUFreq driver for Raspberry Pi
+> > +
+> > +	  If in doubt, say N.
+> > +
+> >  config ARM_S3C_CPUFREQ
+> >  	bool
+> >  	help
+> > diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
+> > index 689b26c6f949..121c1acb66c0 100644
+> > --- a/drivers/cpufreq/Makefile
+> > +++ b/drivers/cpufreq/Makefile
+> > @@ -64,6 +64,7 @@ obj-$(CONFIG_ARM_PXA2xx_CPUFREQ)	+=3D pxa2xx-cpufreq.=
+o
+> >  obj-$(CONFIG_PXA3xx)			+=3D pxa3xx-cpufreq.o
+> >  obj-$(CONFIG_ARM_QCOM_CPUFREQ_HW)	+=3D qcom-cpufreq-hw.o
+> >  obj-$(CONFIG_ARM_QCOM_CPUFREQ_KRYO)	+=3D qcom-cpufreq-kryo.o
+> > +obj-$(CONFIG_ARM_RASPBERRYPI_CPUFREQ) 	+=3D raspberrypi-cpufreq.o
+> >  obj-$(CONFIG_ARM_S3C2410_CPUFREQ)	+=3D s3c2410-cpufreq.o
+> >  obj-$(CONFIG_ARM_S3C2412_CPUFREQ)	+=3D s3c2412-cpufreq.o
+> >  obj-$(CONFIG_ARM_S3C2416_CPUFREQ)	+=3D s3c2416-cpufreq.o
+> > diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c
+> > b/drivers/cpufreq/raspberrypi-cpufreq.c
+> > new file mode 100644
+> > index 000000000000..2b3a195a9d37
+> > --- /dev/null
+> > +++ b/drivers/cpufreq/raspberrypi-cpufreq.c
+> > @@ -0,0 +1,84 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Raspberry Pi cpufreq driver
+> > + *
+> > + * Copyright (C) 2019, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> > + */
+> > +
+> > +#include <linux/clk.h>
+> > +#include <linux/cpu.h>
+> > +#include <linux/cpufreq.h>
+> > +#include <linux/module.h>
+> > +#include <linux/of.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/pm_opp.h>
+> > +
+> > +static const struct of_device_id machines[] __initconst =3D {
+> > +	{ .compatible =3D "raspberrypi,3-model-b-plus" },
+> > +	{ .compatible =3D "raspberrypi,3-model-b" },
+> > +	{ .compatible =3D "raspberrypi,2-model-b" },
+> > +	{ /* sentinel */ }
+> > +};
 >=20
-> Similar to how we have VCHI register platform devices for the services
-> VCHI provides, shouldn't we have the firmware driver register the device
-> for clk_raspberrypi?  Or put the clk provider in the fw driver instead
-> of a separate driver (no opinion on my part).
+> I think I'd skip the compatible string check here.  The firmware's
+> clock-management should be well-tested by folks playing with clocking in
+> the downstream tree.  There aren't any firmware differences in the
+> processing of these clock management packets, to my recollection.
 
-Makes sense to me, I'll move the platform driver registration into the firm=
-ware
-driver.
+Fair enough, I'll remove it.
+
+> Other than that, I'm happy with the series and would give it my
+> acked-by.
+
+Thanks!
+
+Regads,
+Nicolas
 
 
---=-Y0gkZzcIbprnY+sekDS2
+--=-YLOqxA/CMFHs8ZRZMhU9
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: This is a digitally signed message part
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAlz3hzAACgkQlfZmHno8
-x/5W0AgAk1lBDDOGbH2IxMCBbNMjMT+5XCPJUI+HhTTIY6r2lj0vF9v2mMl6idjj
-Dy1k0dx1BmB4S8bAAoLUO0AjOriCapLoDDwotUSpT5XPXABdmQyacS0hzbgNtdR2
-e/6Ks/dgPThgKTyWrFH5ebLK5GBqm+NtYUkFOIugECaL2oIAwaM7jFntdSin/42W
-1/ZInxhc6/yeMOGZqtfnOKlzxJQ2yO6kamz6neOY6prXtJSSjjVQ8NLRun5gj8xB
-FThb3WLHnZ3xUit7GnbhzzSkUAgdvTrRVesxViN+FtmGySqYeI3HVCHjjyBEu6CY
-yrDjYy0kizct4ZRNg3HEGeF3/kd+EA==
-=Ryff
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAlz3h3kACgkQlfZmHno8
+x/6smgf/UUSqRVE6DWDoOngfdK1dV08nv36oNigDe6Wai1oez3OWjqVnoAwsgSRP
+opyBaH52l/mUFOt+yUSfMDzq38C1DhBpgOIc/8loIZNlckblnOM+vzLjGb9e/90K
+n2TevvBQhxHpjcA29ad/ss8kNdgDRxJYC8AXKCK/uUm0hjeAtuER2ZrBglGqwTmm
+ZP3FU2xNX9FCVkAhI24x1frJaTRvrko29wvnu95ulGMbA1eUB7fn/A6rcA+O8kdK
+oqzN7hSQdHaAWc3TFJvUwoP0RGFnMU/eTvPGghPyzOmQLg5th6fDsGTR7KFRYxeV
+lqE6qbb0cP8Vw+wwR5iWF4GX9PgCJQ==
+=W4hf
 -----END PGP SIGNATURE-----
 
---=-Y0gkZzcIbprnY+sekDS2--
+--=-YLOqxA/CMFHs8ZRZMhU9--
 
 
 
---===============0327317674296771708==
+--===============8410548274253219249==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -129,6 +220,6 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0327317674296771708==--
+--===============8410548274253219249==--
 
 
