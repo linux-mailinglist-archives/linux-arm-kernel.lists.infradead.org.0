@@ -2,61 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B054B360D2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:07:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CD35360D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Jun 2019 18:07:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xs3pUQjsfBeYVIP243ol7AFjiMm+94AckuOBJI5w5hI=; b=QF7M8yss+LCmfa
-	jII5Yqyox3hIvt8EuLrwkk+HgH78KUedZ+hFqHqSawxpXv4N5rFFdMVNjlqSjy8dIZoqhL1mgjodt
-	S7Ze2wmxFgR9VjdIMMMFhiZJj1DLSpZOeDIrI/Whq+J8XqtB4cj6uZTOluCF81Oiv1Y2r5L6OnT2Q
-	XKDpxfYdNiS7JW8dYWqbG+5DwojTP51e5/m4smrYmUx1NwHtRXnPuDDQyEKojQILKJtqG2eh0y4mK
-	fkRPiBzHEKJ/kMHAouHLcZOjgkykVomiLNUQub/JrFutyLVHfHmo647i547niIQtkbW49F29EjmYU
-	Rs1tjsM2j0J6nOvG2rKA==;
+	List-Owner; bh=s5XoDtTzxTa9vlkkJz2N39kdDXTrEbpFrwVPrTXGSBw=; b=MclCvwuwpNnTU/
+	F+/O8CAaw5gPSXIV0w0jUlLQ2BzXUxbDjN8XySxxrTEA5QCTPlLbECVcJXWrWKZrHwGoNzC4Lh90X
+	l9wJXo3Cfk8SfhnQ1HxTqfRIZqhplyrCD3SIF19fWrnsv0PEqVRPrGXQxozu4RDgApQ316s3UDi/X
+	gmGQ73l9bUAB7wJNHWqDbTPDGQf3K3K/HNfaWh/DF0DOFeUPCMbyzOnyAJU8oG/sf/efKpHpyCFaJ
+	YDDV+pI2f03XSHbhnrKHcWUUEsdcsitj4W5TolPNXXlyTfn5IuSZLBu4ve8RcVIy7amevLPCAHIKj
+	Ws/ljVg34YFe5AxfUbMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYYRX-00014C-Cb; Wed, 05 Jun 2019 16:07:15 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYYRR-00013m-A6
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 16:07:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C3CFD374;
- Wed,  5 Jun 2019 09:07:08 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C99B93F246;
- Wed,  5 Jun 2019 09:07:06 -0700 (PDT)
-Date: Wed, 5 Jun 2019 17:07:04 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Julien Thierry <julien.thierry@arm.com>
-Subject: Re: [PATCH v2 0/5] arm64: IRQ priority masking and Pseudo-NMI fixes
-Message-ID: <20190605160704.GP15030@fuggles.cambridge.arm.com>
-References: <1556553607-46531-1-git-send-email-julien.thierry@arm.com>
- <20190523165151.GB1716@fuggles.cambridge.arm.com>
+	id 1hYYRw-0001J9-O4; Wed, 05 Jun 2019 16:07:40 +0000
+Received: from smtp-fw-9102.amazon.com ([207.171.184.29])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYYRp-0001IO-3T
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Jun 2019 16:07:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1559750853; x=1591286853;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-id:content-transfer-encoding: mime-version;
+ bh=Z+5gkqiGLrc1+ckzFfGnbs6e2GkIHGZDRzA+b4QtS/Y=;
+ b=MipnjpWCZP32nnX89sxbZHpYMnmE2E2f0QzdW1cLMB1/Y63Joq/mlPZP
+ Lg0bDBbmOTGGSM6Y+wjuQsxi2C0L0b1pNEErpwiMAXflnBKfhXBMmL4d2
+ s7t+XpyKQUxMi6XSeOuasptMrzSJ6WwsFZp7bOeq9/rW6WmOMwPcWe6G6 c=;
+X-IronPort-AV: E=Sophos;i="5.60,550,1549929600"; d="scan'208";a="678327978"
+Received: from sea3-co-svc-lb6-vlan3.sea.amazon.com (HELO
+ email-inbound-relay-1e-c7c08562.us-east-1.amazon.com) ([10.47.22.38])
+ by smtp-border-fw-out-9102.sea19.amazon.com with ESMTP;
+ 05 Jun 2019 16:07:26 +0000
+Received: from EX13MTAUEB001.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
+ by email-inbound-relay-1e-c7c08562.us-east-1.amazon.com (Postfix) with ESMTPS
+ id 87368241DA6; Wed,  5 Jun 2019 16:07:23 +0000 (UTC)
+Received: from EX13D08UEB002.ant.amazon.com (10.43.60.107) by
+ EX13MTAUEB001.ant.amazon.com (10.43.60.129) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 5 Jun 2019 16:07:22 +0000
+Received: from EX13D02UWC004.ant.amazon.com (10.43.162.236) by
+ EX13D08UEB002.ant.amazon.com (10.43.60.107) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 5 Jun 2019 16:07:22 +0000
+Received: from EX13D02UWC004.ant.amazon.com ([10.43.162.236]) by
+ EX13D02UWC004.ant.amazon.com ([10.43.162.236]) with mapi id 15.00.1367.000;
+ Wed, 5 Jun 2019 16:07:21 +0000
+From: "Saidi, Ali" <alisaidi@amazon.com>
+To: Mark Rutland <mark.rutland@arm.com>, Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH 2/3] arm64: export acpi_psci_use_hvc
+Thread-Topic: [PATCH 2/3] arm64: export acpi_psci_use_hvc
+Thread-Index: AQHVGxR9cfXbpWZUwE2BXRlhLfgFYKaMz0WAgAAQPwCAAAgCAA==
+Date: Wed, 5 Jun 2019 16:07:21 +0000
+Message-ID: <8C0E3CF9-36FD-439A-8D65-0FC688BD5C80@amazon.com>
+References: <20190604203100.15050-1-alisaidi@amazon.com>
+ <20190604203100.15050-3-alisaidi@amazon.com>
+ <20190605094031.GB28613@e107155-lin>
+ <20190605103840.GA30925@lakrids.cambridge.arm.com>
+In-Reply-To: <20190605103840.GA30925@lakrids.cambridge.arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.43.161.148]
+Content-ID: <11CAE4E330D68C43AF225BE971716552@amazon.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190523165151.GB1716@fuggles.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+Precedence: Bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_090709_364603_99496C8B 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_090733_228287_0912D2E6 
+X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [207.171.184.29 listed in list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -65,39 +105,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, marc.zyngier@arm.com, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, rostedt@goodmis.org, james.morse@arm.com,
- yuzenghui@huawei.com, wanghaibin.wang@huawei.com, liwei391@huawei.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Herbert Xu <herbert@gondor.apana.org.au>, Arnd
+ Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, Matt
+ Mackall <mpm@selenic.com>, Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Rindjunsky, 
+ Ron" <ronrindj@amazon.com>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, "Woodhouse,
+ David" <dwmw@amazon.co.uk>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi again, Julien,
-
-On Thu, May 23, 2019 at 05:51:55PM +0100, Will Deacon wrote:
-> On Mon, Apr 29, 2019 at 05:00:02PM +0100, Julien Thierry wrote:
-> > [Changing the title to make it reflex more the status of the series.]
-> > 
-> > Version one[1] of this series attempted to fix the issue reported by
-> > Zenghui[2] when using the function_graph tracer with IRQ priority
-> > masking.
-> > 
-> > Since then, I realized that priority masking and the use of Pseudo-NMIs
-> > was more broken than I thought.
-> 
-> Do you plan to respin this in light of Marc's comments?
-
-For now, I marked this as depending on BROKEN in mainline, but please can
-you look at respinning these fixes so that we can get things fixed properly
-for 5.3?
-
-Thanks,
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQoNCu+7v09uIDYvNS8xOSwgNTo0MCBBTSwgIk1hcmsgUnV0bGFuZCIgPG1hcmsucnV0bGFuZEBh
+cm0uY29tPiB3cm90ZToNCg0KICAgIEFsaSwgSSBhc3N1bWUgeW91ciBmaXJtd2FyZSBoYXMgU01D
+Q0N2MS4xKy4gSXMgdGhhdCB0aGUgY2FzZT8NCiAgICANCg0KWWVzLCBpdCBkb2VzLiBJJ20gaGFw
+cHkgdG8gYmUgYWJsZSB0byBjYWxsIGEgZ2VuZXJpYyBmdW5jdGlvbiBpbnN0ZWFkIG9mIGhhdmlu
+ZyB0byBmaWd1cmUgb3V0IHdoaWNoIGNvbmR1aXQgdG8gdXNlLg0KDQpBbGkNCg0KICAgIA0KDQpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
