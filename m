@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F217537A7A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 19:05:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48E2037A97
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 19:10:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:Subject:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bdn49hw92XKDk1Q6VCTOeenE9wl22RlpRvKRwuBbUGM=; b=cs4BamSOsVC5ru
-	pmdIdjfsbp8ED7Sw11ukWYBmyfFwFI+ok3s3R/0mpRHQYDDFutVsAcOj1EiOdrzkQ8HS0IdO4aDyx
-	wuPUq18e/QBgd/V9ujJE+4q92KYUOwFFFu0rr2nG1qwfoNgrC1DxCEzEouceQo/PMoN2dv7YQNBZ3
-	ytSjxYvQoDBuF6cevHM+G73JVs3rTWkdoL0gsLn7drPqrO+02peb6GA0UNhA6D2OOIxqcHwLx+RMj
-	j/V6i/ao6miuAF7gDC8dkhZ9WAalbTyPll9rsOQ/k4wGRUF15pBJaVBaQmDFNt3gnr0Gku/PWT6dF
-	s1p/zuLP1Oc1AQ4LdbLg==;
+	List-Owner; bh=toxC479xj8S/PlHYEnbH9sbtnUtgxDiqAPpuBxwnZ6g=; b=pBowggNCNARnG1
+	n4leekG9N7uLmxbivOFg++KaIOyBvQtVkFUkUZ0oPS5wOIw98LUyfgc/OJNh1DpwWQUW6Fx3cm2rU
+	u+1k6uk9UKMIfcvjlNtZoQWAEjSM7qyekhmYJXLRU2Lr5iCLEA8wFC0Ij+9HYt9GNshSnMTLVlEeG
+	lPQtbivnq4uee/PkKAXUcCeqQlDk5QD91bl3DIEf/vNlu8Z2ccnnT/ch/G94Nxy4Vhzh983XsNMvh
+	tRyQnAHGIriM3zqA+h6yfcxnuvPe3fQYkEzqde1Ez5Uh+Z82N/XuIclye35ZGmcBXqHkcFU7KeTXg
+	b9W/22U64ErNR50oK8+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYvpB-0002Sw-CN; Thu, 06 Jun 2019 17:05:13 +0000
+	id 1hYvtl-0003Gf-04; Thu, 06 Jun 2019 17:09:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYvp3-00025E-L8; Thu, 06 Jun 2019 17:05:06 +0000
+ id 1hYvtd-0003FX-OE; Thu, 06 Jun 2019 17:09:50 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 39C5B20693;
- Thu,  6 Jun 2019 17:05:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4A46720652;
+ Thu,  6 Jun 2019 17:09:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559840705;
- bh=uHOnF18rQ1x4hUh7PQwXCuloLsMPslXGMYzeeFg/e18=;
+ s=default; t=1559840989;
+ bh=VJ78nIAOqbxKhvQ9fWU/8oqK8Ly4Neair/9DFPw853o=;
  h=In-Reply-To:References:To:Subject:From:Cc:Date:From;
- b=LJouhF834bm0oyjp4K3HMzEfmeO/CynTLHON+s66xYLMS9rlFer55d4RIjFRsHe0h
- sKukE1s08fJcwj3HnI+19EmuFXk7pOcCRuTS5VjlCZQhSB64usa6fFp9BL+hN4jdCs
- OtnljmrrtAcwblV5a0vLj2vb6pEVb4Bf3VNMrNAA=
+ b=vey45CAW9C6njeSvn2wtNwQSizkVfCIzbt/u6buG7aTNO2jr3w2AF7f3KI8o1O/Vv
+ 1MJmqEcfiW5KMdtPoUnvOL/IIuwZadTb4gQJek/tIaPZCdTnoHSWjLtjzdqGAnd5gV
+ BjpBe2l91Mg6icC09KsC9BIyncbX9KXf9u3snZd0=
 MIME-Version: 1.0
-In-Reply-To: <20190606142255.29454-6-nsaenzjulienne@suse.de>
+In-Reply-To: <20190606142255.29454-5-nsaenzjulienne@suse.de>
 References: <20190606142255.29454-1-nsaenzjulienne@suse.de>
- <20190606142255.29454-6-nsaenzjulienne@suse.de>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-kernel@vger.kernel.org, stefan.wahren@i2se.com
-Subject: Re: [PATCH v2 5/7] clk: raspberrypi: register platform device for
- raspberrypi-cpufreq
+ <20190606142255.29454-5-nsaenzjulienne@suse.de>
+To: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Viresh Kumar <viresh.kumar@linaro.org>, stefan.wahren@i2se.com
+Subject: Re: [PATCH v2 4/7] cpufreq: add driver for Raspbery Pi
 From: Stephen Boyd <sboyd@kernel.org>
 User-Agent: alot/0.8.1
-Date: Thu, 06 Jun 2019 10:05:04 -0700
-Message-Id: <20190606170505.39C5B20693@mail.kernel.org>
+Date: Thu, 06 Jun 2019 10:09:48 -0700
+Message-Id: <20190606170949.4A46720652@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_100505_717493_129E0F0C 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190606_100949_797875_DA01C41B 
+X-CRM114-Status: GOOD (  11.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,8 +78,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- ptesarik@suse.com, viresh.kumar@linaro.org, mturquette@baylibre.com,
- linux-pm@vger.kernel.org, rjw@rjwysocki.net, eric@anholt.net,
+ ptesarik@suse.com, mturquette@baylibre.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, eric@anholt.net,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
  mbrugger@suse.de, ssuloev@orpaltech.com
@@ -89,44 +88,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Nicolas Saenz Julienne (2019-06-06 07:22:58)
-> diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-> index b1365cf19f3a..052296b5fbe4 100644
-> --- a/drivers/clk/bcm/clk-raspberrypi.c
-> +++ b/drivers/clk/bcm/clk-raspberrypi.c
-> @@ -63,6 +63,8 @@ struct raspberrypi_firmware_prop {
->         __le32 disable_turbo;
->  } __packed;
->  
-> +static struct platform_device *rpi_cpufreq;
-
-Why can't this be stored in platform driver data?
-
+Quoting Nicolas Saenz Julienne (2019-06-06 07:22:56)
+> diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c b/drivers/cpufreq/raspberrypi-cpufreq.c
+> new file mode 100644
+> index 000000000000..99b59d5a50aa
+> --- /dev/null
+> +++ b/drivers/cpufreq/raspberrypi-cpufreq.c
+[...]
 > +
->  static int raspberrypi_clock_property(struct rpi_firmware *firmware, u32 tag,
->                                       u32 clk, u32 *val)
->  {
-> @@ -285,6 +287,17 @@ static int raspberrypi_clk_probe(struct platform_device *pdev)
->                 return ret;
->         }
->  
-> +       rpi_cpufreq = platform_device_register_data(dev, "raspberrypi-cpufreq",
-> +                                                   -1, NULL, 0);
-> +
-> +       return 0;
-> +}
-> +
-> +static int raspberrypi_clk_remove(struct platform_device *pdev)
-> +{
-> +       platform_device_unregister(rpi_cpufreq);
-> +       rpi_cpufreq = NULL;
+> +/*
+> + * Since the driver depends on clk-raspberrypi, which may return EPROBE_DEFER,
+> + * all the activity is performed in the probe, which may be defered as well.
+> + */
+> +static struct platform_driver raspberrypi_cpufreq_driver = {
+> +       .driver = {
+> +               .name = "raspberrypi-cpufreq",
+> +       },
+> +       .probe          = raspberrypi_cpufreq_probe,
+> +       .remove         = raspberrypi_cpufreq_remove,
+> +};
+> +module_platform_driver(raspberrypi_cpufreq_driver);
 
-This assignment to NULL looks unnecessary.
+How does this driver probe? Do you have a node in DT named
+raspberrypi-cpufreq that matches and probes this? I would think this
+would follow the drivers/cpufreq/cpufreq-dt-platdev.c design where it's
+an initcall that probes the board compatible string.
+
+Or, if it depends on clk-raspberrypi probing, maybe it could create the
+platform device in that drivers probe function.
 
 > +
->         return 0;
->  }
->  
+> +MODULE_AUTHOR("Nicolas Saenz Julienne <nsaenzjulienne@suse.de");
+> +MODULE_DESCRIPTION("Raspberry Pi cpufreq driver");
+> +MODULE_LICENSE("GPL");
+> +MODULE_ALIAS("platform:raspberrypi-cpufreq");
+
+I don't think the module alias is needed anymore.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
