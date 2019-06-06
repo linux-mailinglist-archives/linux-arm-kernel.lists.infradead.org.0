@@ -2,56 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D785B37DDA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 22:11:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62CE337EDA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 22:33:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JanLwKudOMVaVqon6i15Y5wHCAiO3IK7knvqZFWy3aw=; b=hzO/xDx/XL5XF2
-	K/Pth7Sc6ssc84YrBy0ofnaGTBwT0zGZ6lY7qqhzvAknQ83K0qt35EseNfKKbaA/DD/GKh/rBMiU5
-	AG4BLOgd7gFm02Ik94UwaR1zGstpeKSGBGMK5lHtoUq0mqIAGgtOBYB/EmVYgPEeKlvB8/bw977NL
-	2t4Dq/CrWgF0yiCX1ubGaj39AkqKQEMZ8uT+KsxMxm6uStsdaIjAxapF493wnc40xp6TB0fRT7lAF
-	8FhFiWNTeMs/TUgAFiEuC1iJTVxx3fI4RP5nPtWlg7f9oSZTdvIN4Iy8AkjbxFPtLbbdBM2vLVqG5
-	zeIp4VT0ozzDtFNoqZEQ==;
+	List-Owner; bh=BY2oCbFkpN6kkBHpiMEB9jzZtppCQ5V4sqr78AruOMw=; b=NP1dmox9g2mAa5
+	1E5d/1bsbWvVeEkihh5L2o1+W5OvrkgqaEEcDLQnkBghrzfwe6CvZ+4DvFsrxqMFPjDGjoKX8r00l
+	putqii0NQ3TepQp+L4Z+ioS1oXRw/F0rGwtQvZwwN990A3amGSoFdHgNw1JUHJww2kpH2DREXn74x
+	hSAt3QjqEGL+fhggprflr89/w8TCE/XsuhLT8k31hsC/8BlFi24uHjOzL3jzVOkHdRTZr49RsdC5x
+	TkUF1PyGzCJFDn41G270Qq6dCaf28moalYquqzBMUElSdZE/t8geYHtr8LEykefPlvkLk4tUeSQ3Z
+	CLYiqq7TJr1B8B+fmJ5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYyj5-0006NF-FO; Thu, 06 Jun 2019 20:11:07 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hYz4C-0004uv-Nk; Thu, 06 Jun 2019 20:32:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYyiz-0006N2-P9
- for linux-arm-kernel@bombadil.infradead.org; Thu, 06 Jun 2019 20:11:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=duYNpd7u6NCsl3zgH8XpP5ZaEHzH4usCoWirRor+tVo=; b=IjqYZZYq4+dfV/Anc1w3bBTif
- vGYMzDp6qJw2FWqFuUqwWCaHyoC4nHVXNffavdi6mEulkmqFQ530Q0zIvcT3RHKXxuzycyeBQoZBk
- L8Td/uVDlFIvOfI3i7zsncwVFYae/1Q9hrs7V6HoYoUX5dVfs4hl0fReghgGEHtP9B6uFfLJd2QbD
- DIVrz8C/s24DYZa6KrlYV6BWNdCtQzkXNhKXHfG9RnU/N4FTD1PXuCwCTFKcvcvoI4Rgk0ISG5toq
- yZXvXgpKrX7Wqfmw03NHF2saq2hE/PMdXaL7Gp6UNH3FLURl1tY1ZA3RgkRGgB48VInykFwkfIrXL
- qPeqLLF/Q==;
-Received: from [190.15.121.82] (helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYyix-0005fj-EY; Thu, 06 Jun 2019 20:10:59 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 0A63E41149; Thu,  6 Jun 2019 17:10:57 -0300 (-03)
-Date: Thu, 6 Jun 2019 17:10:56 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH] perf tools: Properly set the value of 'old' and 'head'
- in snapshot mode
-Message-ID: <20190606201056.GJ21245@kernel.org>
-References: <20190605161633.12245-1-mathieu.poirier@linaro.org>
+ id 1hYz43-0004uT-Am; Thu, 06 Jun 2019 20:32:50 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 859CE2083E;
+ Thu,  6 Jun 2019 20:32:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559853165;
+ bh=OounUXk+tiGTpkzzL2Iid2RFnzsNDeTISBGebz6VV+M=;
+ h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
+ b=BiLlxVjg9desT3+bE1paeuqsPhiUC04uM5H5zBTqsafuvc/bwzV9eKH+No2R6r91+
+ 0zZageNyUBF3QjjpIzDd6/bxki9FupkETWwUMm+kGLtHPNJNIqPxHDJ41VDsQRkqyO
+ 1EYJSUtWLBrZgQNcCHwOJ86g0OBw7rzj4s5DQhKU=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190605161633.12245-1-mathieu.poirier@linaro.org>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.11.3 (2019-02-01)
+In-Reply-To: <1556607888-10301-2-git-send-email-yong.liang@mediatek.com>
+References: <1556607888-10301-1-git-send-email-yong.liang@mediatek.com>
+ <1556607888-10301-2-git-send-email-yong.liang@mediatek.com>
+To: Yong Liang <yong.liang@mediatek.com>, chunhui.dai@mediatek.com,
+ drinkcat@chromium.org, eddie.huang@mediatek.com, erin.lo@mediatek.com,
+ jamesjj.liao@mediatek.com, jasu@njomotys.info, mark.rutland@arm.com,
+ matthias.bgg@gmail.com, mturquette@baylibre.com, owen.chen@mediatek.com,
+ p.zabel@pengutronix.de, robh+dt@kernel.org, weiyi.lu@mediatek.com
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v3 2/2] clk: reset: Modify reset-controller driver
+User-Agent: alot/0.8.1
+Date: Thu, 06 Jun 2019 13:32:44 -0700
+Message-Id: <20190606203245.859CE2083E@mail.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190606_133247_403787_AA1BF8E0 
+X-CRM114-Status: GOOD (  20.86  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -63,200 +79,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, peterz@infradead.org, linux-kernel@vger.kernel.org,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, leo.yan@linaro.org,
- jolsa@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: "yong.liang" <yong.liang@mediatek.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Wed, Jun 05, 2019 at 10:16:33AM -0600, Mathieu Poirier escreveu:
-> This patch adds the necessay intelligence to properly compute the value
-> of 'old' and 'head' when operating in snapshot mode.  That way we can get
-> the latest information in the AUX buffer and be compatible with the
-> generic AUX ring buffer mechanic.
-
-Leo, have you had the chance to test/review this one? Suzuki?
-
-I also changed the subject to:
-
-  [PATCH] perf cs-etm: Properly set the value of 'old' and 'head' in snapshot mode
-
-So that when looking at a 'git log --oneline' one can have the proper
-context and know that its about cs-etm.
-
-- Arnaldo
- 
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> ---
->  tools/perf/arch/arm/util/cs-etm.c | 127 +++++++++++++++++++++++++++++-
->  1 file changed, 123 insertions(+), 4 deletions(-)
+Quoting Yong Liang (2019-04-30 00:04:48)
+> From: "yong.liang" <yong.liang@mediatek.com>
 > 
-> diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-> index 911426721170..0a278bbcaba6 100644
-> --- a/tools/perf/arch/arm/util/cs-etm.c
-> +++ b/tools/perf/arch/arm/util/cs-etm.c
-> @@ -31,6 +31,8 @@ struct cs_etm_recording {
->  	struct auxtrace_record	itr;
->  	struct perf_pmu		*cs_etm_pmu;
->  	struct perf_evlist	*evlist;
-> +	int			wrapped_cnt;
-> +	bool			*wrapped;
->  	bool			snapshot_mode;
->  	size_t			snapshot_size;
+> Set reset signal by a register and clear reset signal by another register for 8183.
+
+Wrap this at the appropriate line length. Read the submitting patches
+doc for more help with this.
+
+> 
+> Signed-off-by: yong.liang <yong.liang@mediatek.com>
+> ---
+> 
+> Base on https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git branch clk-next and https://patchwork.kernel.org/patch/10856987/
+
+You can use git format-patch --base=<commit> with newer git to indicate
+this stuff. Please consider using that.
+
+> diff --git a/drivers/clk/mediatek/clk-mt8183.c b/drivers/clk/mediatek/clk-mt8183.c
+> index 9d86510..ea28587 100644
+> --- a/drivers/clk/mediatek/clk-mt8183.c
+> +++ b/drivers/clk/mediatek/clk-mt8183.c
+> @@ -1204,13 +1204,21 @@ static int clk_mt8183_infra_probe(struct platform_device *pdev)
+>  {
+>         struct clk_onecell_data *clk_data;
+>         struct device_node *node = pdev->dev.of_node;
+> +       int r;
+>  
+>         clk_data = mtk_alloc_clk_data(CLK_INFRA_NR_CLK);
+>  
+>         mtk_clk_register_gates(node, infra_clks, ARRAY_SIZE(infra_clks),
+>                 clk_data);
+>  
+> -       return of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
+> +       r = of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
+> +       if (r)
+> +               dev_err(&pdev->dev,
+> +                       "%s(): could not register clock provider: %d\n",__func__, r);
+> +
+> +       mtk_register_reset_controller_set_clr(node, 4, 0x120);
+
+We still do this if we can't register the clks? Why?
+
+> +
+> +       return r;
+>  }
+>  
+>  static int clk_mt8183_mcu_probe(struct platform_device *pdev)
+> diff --git a/drivers/clk/mediatek/clk-mtk.h b/drivers/clk/mediatek/clk-mtk.h
+> index 33ab173..7a74a54 100644
+> --- a/drivers/clk/mediatek/clk-mtk.h
+> +++ b/drivers/clk/mediatek/clk-mtk.h
+> @@ -248,4 +248,7 @@ struct clk *mtk_clk_register_ref2usb_tx(const char *name,
+>  void mtk_register_reset_controller(struct device_node *np,
+>                         unsigned int num_regs, int regofs);
+>  
+> +void mtk_register_reset_controller_set_clr(struct device_node *np,
+> +       unsigned int num_regs, int regofs);
+> +
+>  #endif /* __DRV_CLK_MTK_H */
+> diff --git a/drivers/clk/mediatek/reset.c b/drivers/clk/mediatek/reset.c
+> index d3551d5..ee70798 100644
+> --- a/drivers/clk/mediatek/reset.c
+> +++ b/drivers/clk/mediatek/reset.c
+> @@ -27,6 +27,21 @@ struct mtk_reset {
+>         struct reset_controller_dev rcdev;
 >  };
-> @@ -536,16 +538,131 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
->  	return 0;
->  }
 >  
-> -static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
-> +static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
+> +static int mtk_reset_assert_set_clr(struct reset_controller_dev *rcdev,
+> +       unsigned long id)
 > +{
-> +	bool *wrapped;
-> +	int cnt = ptr->wrapped_cnt;
-> +
-> +	/* Make @ptr->wrapped as big as @idx */
-> +	while (cnt <= idx)
-> +		cnt++;
-> +
-> +	/*
-> +	 * Free'ed in cs_etm_recording_free().  Using realloc() to avoid
-> +	 * cross compilation problems where the host's system supports
-> +	 * reallocarray() but not the target.
-> +	 */
-> +	wrapped = realloc(ptr->wrapped, cnt * sizeof(bool));
-> +	if (!wrapped)
-> +		return -ENOMEM;
-> +
-> +	wrapped[cnt - 1] = false;
-> +	ptr->wrapped_cnt = cnt;
-> +	ptr->wrapped = wrapped;
-> +
-> +	return 0;
+> +       struct mtk_reset *data = container_of(rcdev, struct mtk_reset, rcdev);
+> +       return regmap_write(data->regmap, data->regofs + ((id / 32) << 4), 1);
 > +}
 > +
-> +static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
-> +				      size_t buffer_size, u64 head)
+> +static int mtk_reset_deassert_set_clr(struct reset_controller_dev *rcdev,
+> +       unsigned long id)
 > +{
-> +	u64 i, watermark;
-> +	u64 *buf = (u64 *)buffer;
-> +	size_t buf_size = buffer_size;
+> +       struct mtk_reset *data = container_of(rcdev, struct mtk_reset, rcdev);
+> +       return regmap_write(data->regmap,
+> +               data->regofs + ((id / 32) << 4) + 0x4, 1);
+> +}
+
+Sorry, the above two are hard to read. Can you add some newlines?
+
+static int mtk_reset_assert_set_clr(struct reset_controller_dev *rcdev,
+       unsigned long id)
+{
+       struct mtk_reset *data = container_of(rcdev, struct mtk_reset, rcdev);
+       unsigned int reg = data->regofs + ((id / 32) << 4);
+
+       return regmap_write(data->regmap, reg, 1);
+}
+
+static int mtk_reset_deassert_set_clr(struct reset_controller_dev *rcdev,
+       unsigned long id)
+{
+       struct mtk_reset *data = container_of(rcdev, struct mtk_reset, rcdev);
+       unsigned int reg = data->regofs + ((id / 32) << 4) + 0x4;
+
+       return regmap_write(data->regmap, reg, 1);
+}
+
+
 > +
-> +	/*
-> +	 * We want to look the very last 512 byte (chosen arbitrarily) in
-> +	 * the ring buffer.
-> +	 */
-> +	watermark = buf_size - 512;
-> +
-> +	/*
-> +	 * @head is continuously increasing - if its value is equal or greater
-> +	 * than the size of the ring buffer, it has wrapped around.
-> +	 */
-> +	if (head >= buffer_size)
-> +		return true;
-> +
-> +	/*
-> +	 * The value of @head is somewhere within the size of the ring buffer.
-> +	 * This can be that there hasn't been enough data to fill the ring
-> +	 * buffer yet or the trace time was so long that @head has numerically
-> +	 * wrapped around.  To find we need to check if we have data at the very
-> +	 * end of the ring buffer.  We can reliably do this because mmap'ed
-> +	 * pages are zeroed out and there is a fresh mapping with every new
-> +	 * session.
-> +	 */
-> +
-> +	/* @head is less than 512 byte from the end of the ring buffer */
-> +	if (head > watermark)
-> +		watermark = head;
-> +
-> +	/*
-> +	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
-> +	 */
-> +	watermark >>= 3;
-> +	buf_size >>= 3;
-> +
-> +	/*
-> +	 * If we find trace data at the end of the ring buffer, @head has
-> +	 * been there and has numerically wrapped around at least once.
-> +	 */
-> +	for (i = watermark; i < buf_size; i++)
-> +		if (buf[i])
-> +			return true;
-> +
-> +	return false;
+>  static int mtk_reset_assert(struct reset_controller_dev *rcdev,
+>                               unsigned long id)
+>  {
+> @@ -57,14 +72,31 @@ static int mtk_reset(struct reset_controller_dev *rcdev,
+>         return mtk_reset_deassert(rcdev, id);
+>  }
+>  
+> +static int mtk_reset_set_clr(struct reset_controller_dev *rcdev,
+> +       unsigned long id)
+> +{
+> +       int ret;
+
+Nitpick: Add a newline between local variables and code.
+
+> +       ret = mtk_reset_assert_set_clr(rcdev, id);
+> +       if (ret)
+> +               return ret;
+> +       return mtk_reset_deassert_set_clr(rcdev, id);
 > +}
 > +
-> +static int cs_etm_find_snapshot(struct auxtrace_record *itr,
->  				int idx, struct auxtrace_mmap *mm,
-> -				unsigned char *data __maybe_unused,
-> +				unsigned char *data,
->  				u64 *head, u64 *old)
->  {
-> +	int err;
-> +	bool wrapped;
-> +	struct cs_etm_recording *ptr =
-> +			container_of(itr, struct cs_etm_recording, itr);
-> +
-> +	/*
-> +	 * Allocate memory to keep track of wrapping if this is the first
-> +	 * time we deal with this *mm.
-> +	 */
-> +	if (idx >= ptr->wrapped_cnt) {
-> +		err = cs_etm_alloc_wrapped_array(ptr, idx);
-> +		if (err)
-> +			return err;
-> +	}
-> +
-> +	/*
-> +	 * Check to see if *head has wrapped around.  If it hasn't only the
-> +	 * amount of data between *head and *old is snapshot'ed to avoid
-> +	 * bloating the perf.data file with zeros.  But as soon as *head has
-> +	 * wrapped around the entire size of the AUX ring buffer it taken.
-> +	 */
-> +	wrapped = ptr->wrapped[idx];
-> +	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
-> +		wrapped = true;
-> +		ptr->wrapped[idx] = true;
-> +	}
-> +
->  	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
->  		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
+>  static const struct reset_control_ops mtk_reset_ops = {
+>         .assert = mtk_reset_assert,
+>         .deassert = mtk_reset_deassert,
+>         .reset = mtk_reset,
+>  };
 >  
-> -	*old = *head;
-> -	*head += mm->len;
-> +	/* No wrap has occurred, we can just use *head and *old. */
-> +	if (!wrapped)
-> +		return 0;
-> +
-> +	/*
-> +	 * *head has wrapped around - adjust *head and *old to pickup the
-> +	 * entire content of the AUX buffer.
-> +	 */
-> +	if (*head >= mm->len) {
-> +		*old = *head - mm->len;
-> +	} else {
-> +		*head += mm->len;
-> +		*old = *head - mm->len;
-> +	}
->  
->  	return 0;
->  }
-> @@ -586,6 +703,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
->  {
->  	struct cs_etm_recording *ptr =
->  			container_of(itr, struct cs_etm_recording, itr);
-> +
-> +	zfree(&ptr->wrapped);
->  	free(ptr);
->  }
->  
-> -- 
-> 2.17.1
+> -void mtk_register_reset_controller(struct device_node *np,
+> -                       unsigned int num_regs, int regofs)
+> +static const struct reset_control_ops mtk_reset_ops_set_clr = {
+> +       .assert = mtk_reset_assert_set_clr,
+> +               .deassert = mtk_reset_deassert_set_clr,
+> +               .reset = mtk_reset_set_clr,
 
--- 
+Something weird happened to the tabs and spaces here.
 
-- Arnaldo
+> +};
+> +
+> +void mtk_register_reset_controller_common(struct device_node *np,
+> +                       unsigned int num_regs, int regofs,
+> +                       const struct reset_control_ops *reset_ops)
+>  {
+>         struct mtk_reset *data;
+>         int ret;
+> diff --git a/include/dt-bindings/reset-controller/mt8183-resets.h b/include/dt-bindings/reset-controller/mt8183-resets.h
+> new file mode 100644
+> index 0000000..f0d92af
+> --- /dev/null
+> +++ b/include/dt-bindings/reset-controller/mt8183-resets.h
+> @@ -0,0 +1,89 @@
+> +/*
+> + * Copyright (c) 2017 MediaTek Inc.
+> + * Author: Yong Liang, MediaTek
+> + *
+> + * This program is free software; you can redistribute it and/or modify
+> + * it under the terms of the GNU General Public License version 2 as
+> + * published by the Free Software Foundation.
+> + *
+> + * This program is distributed in the hope that it will be useful,
+> + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> + * GNU General Public License for more details.
+
+Please use SPDX tags instead of this boilerplate.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
