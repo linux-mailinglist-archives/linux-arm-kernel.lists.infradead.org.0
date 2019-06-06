@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BEFD3808A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 00:24:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A516380AD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 00:29:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=CgechnxVnRG/uLnorfc67nXoHwsJCKFBonKKy2+0Dms=; b=tkv
-	J/Iva2qr1k1zOHjsfyqtL+gBnVPexpZ9NdglNhPfPC0L9gux7BQYZZLZn8QxepiaDMf9O2jXcLkQQ
-	E46+Scbg0uy7V9ncsBZ/SklWNVWLH1GgPZjTrUyVkoTAY3YTofbC0g3MVnFFZB7ytaV8MwynMlYbv
-	h/fOSBURp5RcnZoDXVO75E98QPsalTEoZb/h8UV1r4+mCKD3edImkiwAx4drCstASIo6ai9x+CmSU
-	VRIU+n/cOHsj9bgRKss9Svegkvg1LmAAjNz6XBB6vu0CYMRpaiSFg87ZBp8NVHdcRDwBp1pAd3chX
-	5GKA+D4scQ438zPjlux3jGSgF49UdWQ==;
+	References:List-Owner; bh=XmnoKXpDNoVITl3JZXUSp4Cy+5aRyR12Y2VjQmy6wAw=; b=Cbm
+	FPi3LxhPBAoRGR//rOzBT7oT1zWD0HX/DtAc48RH2aZU/CDMQi0DQL/rHFmC1kuspMnqWCfjF6ecz
+	9oDBLjnMmnoH/Q+3WQdCc30EMfGxqc2J8aDcWQsdCDy/L6Hu7s+Soe3H2tGMCxGmdbOxrUNQJbyBe
+	6JqOn6j4cO0TvY8PmBI8JetwjaaEferTKNHvYC3Q4AKblhdBxAw659EE1CBq3xwJUYS8t1tOm0CKZ
+	Jjw8fs0COIk2xtbWiypVu0WOrQW7MRJ+SBiOp3c5TOB4XqwQ7vV4uxV82u0Ec1xEP4ll7wa/Y4z8R
+	28euAZoO2d6rxjyZ2nloa15hru7XqSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hZ0nj-0007w2-CK; Thu, 06 Jun 2019 22:24:03 +0000
+	id 1hZ0sT-0001Dq-8A; Thu, 06 Jun 2019 22:28:57 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hZ0mY-0007sc-NQ
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 22:23:05 +0000
-Received: by mail-wr1-x441.google.com with SMTP id p11so187974wre.7
+ id 1hZ0ru-0001CZ-LV
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 22:28:31 +0000
+Received: by mail-wr1-x441.google.com with SMTP id x17so190776wrl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 15:22:47 -0700 (PDT)
+ Thu, 06 Jun 2019 15:28:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=8HB0xFXnBLxUfHqZ0Zttc4lJLneDgdEO2LsiuqrZzHI=;
- b=iHFoH1CPPxQMvqhNtNSsB4gT8yIUlYxO6c9xUCJ5QUIiDcD9QRLx4J4IU+NZ/YEbo5
- Dcqw51z3f+GZ+aIyDYmtxeUmsAOuMhxqdQKtpQZ4K3rsZigN0XAIpAfC1QWyOSgYROft
- 8R+yPCn7F3KKpsZd7hNBXPP1sWE1atsQKeA8SRj4RuzsWrFdQcjd5O523KJA1jFiWlI5
- nsqPcxcU0NL6tD8a+Oycz/a2R4lB1iIKRUik0/i6fMrruvzLahhvH6XRKwFczDvbPjf+
- D+SjRUgjyL19OJAQ47oP0EwEoG6Qm6LAvpNhndd15T7apKSm7grur2mSEeIQ2ltVwKuk
- 7T5A==
+ bh=K8LRZAGyxTA91e565NC0WdxUL44tT7JJZTxvCh2Q5n0=;
+ b=AhtcL6cP7rZU1yX2Iu9vJzeoGJ0Bnz7Hl/floUOmKa4mZYwItJz8fNrF6Lbc1LB0fp
+ XY2xFcADNY2grLi+jPcrkgawo9jn1qz0FT/Rrx0r/48eRjvUUT7HCSzcZqd9NjNOAgKb
+ yfxFMAP0D9dhfRSmis03kKBUEwaL27NmtfHe6FoSxYedpmN2M4x/QzTDniI+ESEA8aXi
+ Rh/X6EyJJ0OarAYkJzf4t4k9RKjQaxvD3kk+sBMN5OBZBenMJ7zscvopNCMtORWprxdj
+ t7275r0jPEfhxV5JwohNn8pmb8hhTEI+k9Oc8FY/bqh2dVGkvA97qs3mvJFc/tXjTTg+
+ XeLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=8HB0xFXnBLxUfHqZ0Zttc4lJLneDgdEO2LsiuqrZzHI=;
- b=mL4SJJUHiaayVPLpM4BIv+I3qGwDBb8keSflXPgHWhzVShR/YKAEYLeyyP27Wyqduo
- xGpCT5BIsH5sK4CovDynsYBHPraG+wS+P4nwHk/4v+pfiHk2gNbp2uNY8dHTFoG8quuM
- CiMX01o+ZHfZPy74/mAqpB++TQNGkP1/AFIS5RPt2QngklBEyVXb6W8JSTeq9+YoUSg0
- IY2XUh4slY8LrKOMcshhhaFhaMUstU29PJzTj95g5dhXZIA4Xu5SRhPKwhk7koretBlI
- r96UGcxPWpwFE/FhsNcyYRkxZ4yNicPe5SprSmcsQUtKtKjYz9lxk/CXe+HZDhJbx3I5
- lOxQ==
-X-Gm-Message-State: APjAAAX/pJLNxEYT3Hi/efUDcAflTk99/8QV0lxChjp4psIQqG3Y1ezR
- /fVADqYnwZtnhB1GGKcpEzU=
-X-Google-Smtp-Source: APXvYqznYsxSJmLXAKRuSZLOPDjMkbTahz8S0FO9cJMGM0PrdRtqygVPkhlq8ja3EA3m8zhTTPbdZQ==
-X-Received: by 2002:adf:dd51:: with SMTP id u17mr16859197wrm.218.1559859764610; 
- Thu, 06 Jun 2019 15:22:44 -0700 (PDT)
+ bh=K8LRZAGyxTA91e565NC0WdxUL44tT7JJZTxvCh2Q5n0=;
+ b=uHeSAsGnkBinfcepbWqn49dd05VfT0Vn1g9CGvuEfPffCpXx35BT7RTyZXlNHVd6mt
+ IxWWSXmqF2eO2bBpC43MSxX1BJmcl9vWLPtgxxfvtWqOqpHETiJTFoKjsQ2Ipk1yVo/u
+ /NIP1zs3K6AXdwnPkYpxKIT4T4PD1GECNPL+LMiU4QFrg3IEHvFY2RJQBNm0MoZExaQ2
+ LhYMFdfLk0vjRgmW3xpWiSMvN0qZtOytLbG3DjhgSIfYSNm2trhfYJTIvKUr2pwiRKZ0
+ mT7+6VYBXUTDqDCuxeFLKleYNdwUD4PBdxR/3gaAKE3cfKn++Irs0YAADWT8pwTCO1cJ
+ TJeg==
+X-Gm-Message-State: APjAAAXOiPOm8atFpcIBFFtDow469YSML9bTj9I2ZAcmKWwO3D5nEz4q
+ lF0zYdhkK4Wv6vRiEDmpF2Y=
+X-Google-Smtp-Source: APXvYqyvuY1RelhcBhUggjE4fxrjJ4yul8towhNZkJtNFNc5/o2oigiFGX39aGq/51KA5rgSgLsrBw==
+X-Received: by 2002:adf:f50c:: with SMTP id q12mr4506022wro.300.1559860100607; 
+ Thu, 06 Jun 2019 15:28:20 -0700 (PDT)
 Received: from localhost.localdomain (5-12-124-26.residential.rdsnet.ro.
  [5.12.124.26])
- by smtp.gmail.com with ESMTPSA id o126sm236436wmo.31.2019.06.06.15.22.43
+ by smtp.gmail.com with ESMTPSA id v184sm220527wme.10.2019.06.06.15.28.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 06 Jun 2019 15:22:43 -0700 (PDT)
+ Thu, 06 Jun 2019 15:28:20 -0700 (PDT)
 From: Vladimir Oltean <olteanv@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH v3] ARM: dts: Introduce the NXP LS1021A-TSN board
-Date: Fri,  7 Jun 2019 01:21:30 +0300
-Message-Id: <20190606222130.27515-1-olteanv@gmail.com>
+Subject: [PATCH v4] ARM: dts: Introduce the NXP LS1021A-TSN board
+Date: Fri,  7 Jun 2019 01:28:17 +0300
+Message-Id: <20190606222817.14223-1-olteanv@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_152252_012342_E85E81A0 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20190606_152823_220078_8F55938C 
+X-CRM114-Status: GOOD (  15.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (olteanv[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -122,6 +122,9 @@ It also features:
 
 Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
 ---
+Changes from v3:
+- Not all nodes were alphabetically sorted ("d->i->e" vs "d->e->i")
+
 Changes from v2:
 - Sorted nodes alphabetically
 - Renamed SAI2 codec node into audio-codec
@@ -155,7 +158,7 @@ index dab2914fa293..a4eb4ca5e148 100644
  	vf500-colibri-eval-v3.dtb \
 diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
 new file mode 100644
-index 000000000000..ef4a0b1e4d47
+index 000000000000..5b7689094b70
 --- /dev/null
 +++ b/arch/arm/boot/dts/ls1021a-tsn.dts
 @@ -0,0 +1,289 @@
@@ -262,6 +265,35 @@ index 000000000000..ef4a0b1e4d47
 +	};
 +};
 +
++&enet0 {
++	tbi-handle = <&tbi0>;
++	phy-handle = <&sgmii_phy2>;
++	phy-mode = "sgmii";
++	status = "okay";
++};
++
++&enet1 {
++	tbi-handle = <&tbi1>;
++	phy-handle = <&sgmii_phy1>;
++	phy-mode = "sgmii";
++	status = "okay";
++};
++
++/* RGMII delays added via PCB traces */
++&enet2 {
++	phy-mode = "rgmii";
++	status = "okay";
++
++	fixed-link {
++		speed = <1000>;
++		full-duplex;
++	};
++};
++
++&esdhc {
++	status = "okay";
++};
++
 +&i2c0 {
 +	status = "okay";
 +
@@ -321,35 +353,6 @@ index 000000000000..ef4a0b1e4d47
 +
 +&ifc {
 +	status = "disabled";
-+};
-+
-+&enet0 {
-+	tbi-handle = <&tbi0>;
-+	phy-handle = <&sgmii_phy2>;
-+	phy-mode = "sgmii";
-+	status = "okay";
-+};
-+
-+&enet1 {
-+	tbi-handle = <&tbi1>;
-+	phy-handle = <&sgmii_phy1>;
-+	phy-mode = "sgmii";
-+	status = "okay";
-+};
-+
-+/* RGMII delays added via PCB traces */
-+&enet2 {
-+	phy-mode = "rgmii";
-+	status = "okay";
-+
-+	fixed-link {
-+		speed = <1000>;
-+		full-duplex;
-+	};
-+};
-+
-+&esdhc {
-+	status = "okay";
 +};
 +
 +&lpuart0 {
