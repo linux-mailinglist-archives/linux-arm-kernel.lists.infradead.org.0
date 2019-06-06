@@ -2,49 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD35F37132
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 12:03:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4367B3713F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 12:05:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q9v3BjiydB/P8HR/PWifDcQzq3K2iEaE4KnesW8yh5w=; b=IkhoJE4HyFD5oY
-	qfKJzuDiZgWVxjbZnPJaYPQkS8OlesZ36kiAVUPxsIUNLhNXzBUggPAgyV2WYIp0G1Ma7jr3p04b7
-	L1eOXO1ZS95oj7tAgw+LFcmfxKjV+o3EenIBlc4VIdrU1UaRF6vxbamxvT3YqgHqgsb2rPn23umT2
-	yXH8b4iAFg4jVxhQbrZheq6TTTeu5zEuZ0EwWS8L5wcWSFZJnnulwkYx4h1griZfNnm/ADcLm10s8
-	mNV8wtDJt/cC0wxXF6q5G/lx+TZ2diCgWbk7cDcTpjamw1chvRwSLIxp4XJ1mPyPnF48fXW7tmwwR
-	EocqNQlPCx7Tx9+Hs1fw==;
+	List-Owner; bh=XHqPUmcVauKiMJH+l1TcOC/N5/KmJ7QQQ21EAazRnZg=; b=J3iwl7XKHBeWHJ
+	C7gOAQ2c3ERFyj2vHB5CaTfILapeiaKHiz3ZJYgw6T9CFh9Z7sgysjEqtZDy9vHafTCGvl6wDE5j7
+	V/7Dfu1G364XdxFO14RvwDJiz4C+DGuUf7wHl6AZ2JnDjbgazt9vGbxz6KWlOlEusy2UlANPGy7Ce
+	RVV0/d67jlpJU2rsduU2X/1afUhVPvk/TRofVw6oPGTbNCNfPu4wjfba7CgHGIL2Qo9bDiXf+a0Yx
+	Dp5Un/Kj36nqggYf8/W49F+Y7lpUJmpl0ruWhRC6rCr1QD01wD7lZ62VRax/huLFsoXQ1wHzAMeng
+	H1kjMAuqMdYeimOWf+eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYpEh-0006RH-ON; Thu, 06 Jun 2019 10:03:07 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYpEZ-0006Qc-FX; Thu, 06 Jun 2019 10:03:01 +0000
-Received: from we0305.dip.tu-dresden.de ([141.76.177.49] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1hYpEW-0003Vv-Kz; Thu, 06 Jun 2019 12:02:56 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: "Leonidas P. Papadakos" <papadakospan@gmail.com>
-Subject: Re: [PATCH 1/2] clk: rockchip: add clock for the watchdog pclk on
- rk3328
-Date: Thu, 06 Jun 2019 12:02:56 +0200
-Message-ID: <3485393.4UdOu2YNQE@phil>
-In-Reply-To: <20190605235714.22432-1-papadakospan@gmail.com>
-References: <20190605235714.22432-1-papadakospan@gmail.com>
+	id 1hYpH2-0008T1-84; Thu, 06 Jun 2019 10:05:32 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYpGv-0008Sc-EV
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 10:05:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E4982341;
+ Thu,  6 Jun 2019 03:05:24 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8D11E3F690;
+ Thu,  6 Jun 2019 03:05:23 -0700 (PDT)
+Date: Thu, 6 Jun 2019 11:05:21 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: Race between MMIO writes and level IRQs
+Message-ID: <20190606100520.GC37430@lakrids.cambridge.arm.com>
+References: <459c9bd7-becd-e704-cc13-213770f17018@free.fr>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <459c9bd7-becd-e704-cc13-213770f17018@free.fr>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_030259_662113_3B2ECFED 
-X-CRM114-Status: GOOD (  20.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190606_030525_500526_F98FD4E3 
+X-CRM114-Status: GOOD (  22.64  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -56,94 +63,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <marc.zyngier@arm.com>, Will Deacon <will.deacon@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-Am Donnerstag, 6. Juni 2019, 01:57:13 CEST schrieb Leonidas P. Papadakos:
-> From: <itdaniher@gmail.com>
-
-Why is the From different from the Signed-off-by? Would also need a full name.
-If the patch is from you, please just use the same From as for the Signed-off-by.
-
+On Thu, Jun 06, 2019 at 11:53:05AM +0200, Marc Gonzalez wrote:
+> Hello everyone,
 > 
-> Following the discussion here:
-> https://github.com/rockchip-linux/kernel/issues/123
+> There's something about interrupts I have never quite understood,
+> which I'd like to clear up once and for all. What I'm about to write
+> will probably sound trivial to anyone's who's already figured it out,
+> but I need to walk through it.
 > 
-> it can be seen that these are the changes needed to enable the use of the hardware watchdog in the rk3328 SoC.
+> Consider a device, living on some peripheral bus, with an interrupt
+> line flowing from the device into some kind of interrupt controller.
 > 
-> This is in line with past changes for the rk3288:
-> http://lists.infradead.org/pipermail/linux-rockchip/2015-January/002314.html
+> I.e. there are two "communication channels"
+> 1) the peripheral bus, and 2) the "out-of-band" interrupt line.
 > 
-> Signed-off-by: Leonidas P. Papadakos <papadakospan@gmail.com>
-> ---
->  drivers/clk/rockchip/clk-rk3328.c      | 9 +++++++++
->  include/dt-bindings/clock/rk3328-cru.h | 1 +
->  2 files changed, 10 insertions(+)
+> At some point, the device requires the CPU to do $SOMETHING. It sends
+> a signal over the interrupt line (either a pulse for edge interrupts,
+> or keeping the line high for level interrupts). After some time, the
+> CPU will "take the interrupt", mask all(?) interrupts, and jump to the
+> proper interrupt service routine (ISR).
 > 
-> diff --git a/drivers/clk/rockchip/clk-rk3328.c b/drivers/clk/rockchip/clk-rk3328.c
-> index 076b9777a..546ee0ab7 100644
-> --- a/drivers/clk/rockchip/clk-rk3328.c
-> +++ b/drivers/clk/rockchip/clk-rk3328.c
-> @@ -876,6 +876,8 @@ static const char *const rk3328_critical_clocks[] __initconst = {
->  
->  static void __init rk3328_clk_init(struct device_node *np)
->  {
-> +	struct clk *clk;
-> +
->  	struct rockchip_clk_provider *ctx;
->  	void __iomem *reg_base;
->  
-> @@ -892,6 +894,13 @@ static void __init rk3328_clk_init(struct device_node *np)
->  		return;
->  	}
->  
-> +	clk = clk_register_fixed_factor(NULL, "pclk_wdt", "pclk_bus", 0, 1, 1);
-> +	if (IS_ERR(clk))
-> +		pr_warn("%s: could not register clock pclk_wdt: %ld\n",
-> +			__func__, PTR_ERR(clk));
-> +	else
-> +		rockchip_clk_add_lookup(ctx, clk, PCLK_WDT);
-> +
+> The CPU does whatever it's supposed to do, and then needs to inform
+> the device that "yes, the work is done, stop pestering me". Typically,
+> this is done by writing some value to one of the device's registers.
+> 
+> AFAICT, this is the part where things can go wrong:
+> 
+> The CPU issues the magic MMIO write, which will take some time to reach
+> the device over the peripheral bus. Meanwhile, the device maintains the
+> IRQ signal (assuming a level interrupt). Once the CPU leaves the ISR, the
+> framework will unmask IRQs. If the write has not yet reached the device,
+> the CPU will be needlessly interrupted again.
 
-I've just Cc'ed you on 2 patches adding a SGRF_GATE clock-type. Please
-use that as base for you rk3328-wdt-clock, so that we don't introduce more
-boilderplate code.
+Even if the write *has* reached the device, there can be a delay before
+the device de-sassert the interrupt line, and there can be a subsequent
+delay for each irqchip between the device and the CPU re-sampling the
+line and propagating this to its output.
 
+Thus it's always possible to take a spurious IRQ after an IRQ handler
+returns, even if the device de-asserted its interrupt line immediately.
 
->  	rockchip_clk_register_plls(ctx, rk3328_pll_clks,
->  				   ARRAY_SIZE(rk3328_pll_clks),
->  				   RK3328_GRF_SOC_STATUS0);
+Linux drivers are expected to be resilient to spurious IRQs.
 
-> diff --git a/include/dt-bindings/clock/rk3328-cru.h b/include/dt-bindings/clock/rk3328-cru.h
-> index afb811340..555b4ff66 100644
-> --- a/include/dt-bindings/clock/rk3328-cru.h
-> +++ b/include/dt-bindings/clock/rk3328-cru.h
-> @@ -164,6 +164,7 @@
->  #define PCLK_DCF		233
->  #define PCLK_SARADC		234
->  #define PCLK_ACODECPHY		235
-> +#define PCLK_WDT		236
->  
->  /* hclk gates */
->  #define HCLK_PERI		308
+> Basically, there's a race between the MMIO write and the IRQ unmasking.
+> We'd like to be able to guarantee that the MMIO write is complete before
+> unmasking interrupts, right?
 
-please split the addition of the clock-id into a separate patch only adding
-said id.
+This really depends on what you're doing. In many cases it's fine for
+the write to complete later, given cases like the above.
 
+> Some people use memory barriers, but my understanding is that this is
+> not sufficient. The memory barrier may guarantee that the MMIO write
+> has left the CPU "domain", but not that it has reached the device.
 
-Thanks
-Heiko
+IIUC, memory barriers cannot necessarily ensure that a write has reached
+a device.
 
+> So it looks like the only surefire way to guarantee that the MMIO write
+> has reached the device is to read the value back from the device?
 
+A read ensures that the device has accepted the prior write, but does
+not necessarily guarantee that it has changed internal state or
+triggered any externally visible effects.
 
+What exactly you need to do will depend on what you're trying to achieve
+and the behaviour of the specific device.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
