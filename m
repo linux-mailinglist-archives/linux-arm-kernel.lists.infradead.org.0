@@ -2,89 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DCB236F3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 10:57:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA0BE36F50
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:00:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EIm6Oem+Aj1S0z40WmdE+l5pbewPlSyTvRwZ48KHAoc=; b=GXwsKP5F/fQryU
-	s1EJJ7MpCZyCZFaz5B9Bc0oGMNZu7ObtwjVXm3VHwG8h7x1a27DrhZ4JIyjKWqe+WYqog0Z9qi1O4
-	RCzX8ecG0LvNTS+u5BYFz49IL815jfjsKqjIgUd+51YPLkwGPat19+q5CYVHalWviLrAZc5Ny7cah
-	LUuZwmynX/FPukXO9SWAa7we3ITlKg6w9MJbJYpKlXAW7q5qrPJx+/50g8jSOK7O3ph4rAITKaY1t
-	nxLY4pG5BvN4mu+zfZRNiWed4K5SF6t03j8QdMVBeRlvEoqmLxEG7CUpKUVjL1SrzeNflhO2g01e1
-	YGk26wWMcnWVfGgtdm1A==;
+	List-Owner; bh=KDCgXN/bqYWy7zf5oPQAFogoYuXxra+PCTbz4nsXBcA=; b=YA2AaMSwbeihXi
+	i+h1PCVfQigzFZHiY/RUv/HlBi61re4bcLFjT+Uio5+ukP3YuOXvbAl5MPPf5FFysqDG0qcC+GMba
+	fSFa9ALDqrZvLcV1FRKYB6ukm6OQwUByZgFKjVGU/bAZ/nI2iMDZ3iHnHJFzCRKGI5qkZf35aHZAg
+	N/2CRFm/T6uvDUzfbizC89QoqLqYz26bjVMuj0b1OiC5dog5BPXR3vngf2bMlvtzW13i7se0R6vzW
+	MFnQJYexmAwtq+JjjH2C/zA2cRluWLY19B6agS0HqBvZX8Me9XO6IU2sek2UlSajZolwXtDCsGoeJ
+	z/FUM7Dy1i7jdu486cyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYoDN-00011R-4J; Thu, 06 Jun 2019 08:57:41 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1hYoGD-0002lq-SD; Thu, 06 Jun 2019 09:00:37 +0000
+Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYoDG-000112-Ps; Thu, 06 Jun 2019 08:57:36 +0000
-Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id C37FA628550;
- Thu,  6 Jun 2019 10:57:32 +0200 (CEST)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
- (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 6 Jun 2019
- 10:57:32 +0200
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Thu, 6 Jun 2019 10:57:32 +0200
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v2 01/15] mtd: nand: Add max_bad_eraseblocks_per_lun info
- to memorg
-Thread-Topic: [PATCH v2 01/15] mtd: nand: Add max_bad_eraseblocks_per_lun info
- to memorg
-Thread-Index: AQHU0scN55ZCxKZqF0m+9YUbyTEVtKaLkFoAgAMr1oCAAAOKgIAAA36AgAABcoA=
-Date: Thu, 6 Jun 2019 08:57:32 +0000
-Message-ID: <e8131767-fce8-0041-5c23-7b8ed71857c3@kontron.de>
-References: <20190304201522.11323-1-miquel.raynal@bootlin.com>
- <20190304201522.11323-2-miquel.raynal@bootlin.com>
- <CAO1O6se5=FDf2YTEEzmFJ4K6HQp_2ayU=WubxGAQJdMA4V4m-Q@mail.gmail.com>
- <5e5d473b-2f08-4230-0920-247c2c463c55@kontron.de>
- <20190606103951.1d774b9a@collabora.com>
- <0e04c73d-13cd-4416-569b-ee9e7c19ea4d@kontron.de>
-In-Reply-To: <0e04c73d-13cd-4416-569b-ee9e7c19ea4d@kontron.de>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <8BA79DEF2D3462419E0C3481AECE33BB@snt-world.com>
-MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: C37FA628550.A0699
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: bbrezillon@kernel.org, boris.brezillon@collabora.com,
- computersforpeace@gmail.com, dwmw2@infradead.org,
- emil.lenngren@gmail.com, juliensu@mxic.com.tw,
- linux-arm-kernel@lists.infradead.org, linux-mtd@lists.infradead.org,
- marek.vasut@gmail.com, masonccyang@mxic.com.tw,
- miquel.raynal@bootlin.com, richard@nod.at,
- thomas.petazzoni@bootlin.com, tudor.ambarus@microchip.com,
- vigneshr@ti.com, yamada.masahiro@socionext.com
-X-Spam-Status: No
+ id 1hYoG5-0002lL-9E
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:00:31 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5690DKJ025744;
+ Thu, 6 Jun 2019 04:00:13 -0500
+Message-ID: <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+Subject: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Date: Thu, 06 Jun 2019 19:00:12 +1000
+In-Reply-To: <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
+ <20190604014945.GE189360@google.com>
+ <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
+ <20190604124959.GF189360@google.com>
+ <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_015735_155772_701FEACB 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20190606_020029_477721_EA7A1E82 
+X-CRM114-Status: GOOD (  16.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.69 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,66 +63,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>,
- Boris Brezillon <bbrezillon@kernel.org>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>, Emil Lenngren <emil.lenngren@gmail.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- Marek Vasut <marek.vasut@gmail.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
+ Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
+ Ali" <alisaidi@amazon.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDYuMDYuMTkgMTA6NTIsIEZyaWVkZXIgU2NocmVtcGYgd3JvdGU6DQo+IE9uIDA2LjA2LjE5
-IDEwOjM5LCBCb3JpcyBCcmV6aWxsb24gd3JvdGU6DQo+PiBPbiBUaHUsIDYgSnVuIDIwMTkgMDg6
-Mjc6MTEgKzAwMDANCj4+IFNjaHJlbXBmIEZyaWVkZXIgPGZyaWVkZXIuc2NocmVtcGZAa29udHJv
-bi5kZT4gd3JvdGU6DQo+Pg0KPj4+IEhpIEVtaWwsDQo+Pj4NCj4+PiBPbiAwNC4wNi4xOSAxMDow
-MSwgRW1pbCBMZW5uZ3JlbiB3cm90ZToNCj4+Pj4gSGkgTWlxdWVsLA0KPj4+Pj4gwqDCoCBzdGF0
-aWMgY29uc3Qgc3RydWN0IHNwaW5hbmRfaW5mbyBtYWNyb25peF9zcGluYW5kX3RhYmxlW10gPSB7
-DQo+Pj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgU1BJTkFORF9JTkZPKCJNWDM1TEYxR0U0QUIiLCAw
-eDEyLA0KPj4+Pj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIE5BTkRf
-TUVNT1JHKDEsIDIwNDgsIDY0LCA2NCwgMTAyNCwgMSwgMSwgMSksDQo+Pj4+PiArwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgTkFORF9NRU1PUkcoMSwgMjA0OCwgNjQsIDY0
-LCAxMDI0LCA0MCwgMSwgMSwgMSksDQo+Pj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBOQU5EX0VDQ1JFUSg0LCA1MTIpLA0KPj4+Pj4gwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgU1BJTkFORF9JTkZPX09QX1ZBUklBTlRT
-KCZyZWFkX2NhY2hlX3ZhcmlhbnRzLA0KPj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCAmd3JpdGVfY2FjaGVfdmFyaWFudHMsDQo+Pj4+PiBAQCAtMTAzLDcgKzEwMyw3
-IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc3BpbmFuZF9pbmZvIA0KPj4+Pj4gbWFjcm9uaXhfc3Bp
-bmFuZF90YWJsZVtdID0gew0KPj4+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgU1BJTkFORF9FQ0NJTkZPKCZteDM1bGZ4Z2U0YWJfb29ibGF5b3V0LA0KPj4+
-Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBteDM1bGYxZ2U0YWJfZWNjX2dldF9zdGF0dXMpKSwNCj4+
-Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBTUElOQU5EX0lORk8oIk1YMzVMRjJHRTRBQiIsIDB4MjIs
-DQo+Pj4+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgTkFORF9NRU1P
-UkcoMSwgMjA0OCwgNjQsIDY0LCAyMDQ4LCAyLCAxLCAxKSwNCj4+Pj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBOQU5EX01FTU9SRygxLCAyMDQ4LCA2NCwgNjQsIDIw
-NDgsIDIwLCAyLCAxLCAxKSwNCj4+Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIE5BTkRfRUNDUkVRKDQsIDUxMiksDQo+Pj4+DQo+Pj4+IE1heWJlIGEgYml0
-IGxhdGUgdG8gdGhlIGRpc2N1c3Npb24sIGJ1dCBzaG91bGRuJ3QgMjAgYW5kIDQwIGJlIHN3YXBw
-ZWQNCj4+Pj4gaGVyZSwgaS5lLiBpc24ndCBpdCB0aGUgbGFyZ2VyIGZsYXNoIHRoYXQgaGFzIG1v
-cmUgbWF4IGJhZCBibG9ja3MgdGhhbg0KPj4+PiB0aGUgc21hbGxlciBvbmU/DQo+Pj4NCj4+PiBJ
-IHRoaW5rIE1pcXVlbCBpcyBvdXQgb2Ygb2ZmaWNlIGZvciBzb21lIGRheXMsIHNvIEkganVzdCBj
-aGVja2VkIGFuZCB5b3UNCj4+PiBhcmUgcmlnaHQsIHRoZSBtYXhpbXVtIG51bWJlciBvZiBiYWQg
-YmxvY2tzIHNob3VsZCBiZSBzd2FwcGVkLg0KPj4+DQo+Pj4gQWN0dWFsbHkgdGhlcmUgaXMgYWxz
-byBhIHdyb25nIHZhbHVlIGluIHRoZSBHaWdhRGV2aWNlIGRyaXZlcjogRm9yIHRoZQ0KPj4+IEdE
-NUY0R1E0eEEgaXQgc2hvdWxkIGJlIDgwIGluc3RlYWQgb2YgNDAuDQo+Pg0KPj4gSGF2ZW4ndCBj
-aGVja2VkIHRoZSBkYXRhc2hlZXQsIGJ1dCBrZWVwIGluIG1pbmQgdGhhdCB0aGlzIGlzIHRoZSBt
-YXgNCj4+IG51bWJlciBvZiBlcmFzZWJsb2NrIHBlciBMVU4uDQo+IA0KPiBUaGUgZGF0YXNoZWV0
-IGdpdmVzIDIwIGZvciB0aGUgMUcgdHlwZSBhbmQgNDAgZm9yIHRoZSAyRyB0eXBlLiBCb3RoIA0K
-PiB0eXBlcyBoYXZlIG9ubHkgb25lIExVTi4gT25seSB0aGUgMkcgdHlwZSBoYXMgMiBwbGFuZXMs
-IGJ1dCB0aGF0IA0KPiBzaG91bGRuJ3QgbWFrZSBhIGRpZmZlcmVuY2UsIHJpZ2h0Pw0KDQpTb3Jy
-eSwgSSB3YXMgcmVmZXJyaW5nIHRvIHRoZSBNYWNyb25peCBjaGlwcy4gWW91IHdlcmUgcHJvYmFi
-bHkgdGFsa2luZyANCmFib3V0IHRoZSBHaWdhRGV2aWNlLiBCdXQgdGhleSBhbGwgaGF2ZSBvbmx5
-IG9uZSBMVU4sIHRvby4gU28gSSB0aGluayBJIA0KZ290IGl0IHJpZ2h0LgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+
+On arm64 ACPI systems, we unconditionally reconfigure the entire PCI
+hierarchy at boot. This is a departure from what is customary on ACPI
+systems, and may break assumptions in some places (e.g., EFIFB), that
+the kernel will leave BARs of enabled PCI devices where they are.
+
+Given that PCI already specifies a device specific ACPI method (_DSM)
+for PCI root bridge nodes that tells us whether the firmware thinks
+the configuration should be left alone, let's sidestep the entire
+policy debate about whether the PCI configuration should be preserved
+or not, and put it under the control of the firmware instead.
+
+[BenH: Added pci_assign_unassigned_root_bus_resources()]
+
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+---
+
+So I would like this variant rather than mucking around with
+IORESOURCE_PCI_FIXED at this stage to fix the problem with our platforms.
+
+See my other email, IORESOURCE_PCI_FIXED doesn't really work terribly well
+when using pci_bus_size_bridges and pci_bus_assign_resources, and the
+resulting patches are ugly and add more mess.
+
+Long run, I propose to start working on consolidating all those various
+resource survey mechanisms around what x86 does, unless people strongly
+object... (with the addition of the probe only and force reassign quirks
+so platforms can still chose that).
+
+Note: I haven't tested the effect of pci_assign_unassigned_root_bus_resources
+as our platforms don't leave anything unassigned. I'm not entirely sure how
+well pci_bus_claim_resources() will deal with a partially assigned setup...
+
+We do want to support partial assignment by BIOS though, it's a trend to
+reduce boot time, people seem to want BIOSes to only assign what's critical
+for booting.
+
+Bjorn: I haven't made the claim path the default in absence of _DSM #5 yet.
+I suggest we do that as a separate patch in case it breaks somebody, thus
+making bisection more meaningful. It will also make this one more palatable
+to distros since it won't change the behaviour on systems without _DSM #5,
+and we verified nobody has it except Seattle which returns 1. 
+
+ arch/arm64/kernel/pci.c  | 23 +++++++++++++++++++++--
+ include/linux/pci-acpi.h |  7 ++++---
+ 2 files changed, 25 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm64/kernel/pci.c b/arch/arm64/kernel/pci.c
+index bb85e2f4603f..6358e1cb4f9f 100644
+--- a/arch/arm64/kernel/pci.c
++++ b/arch/arm64/kernel/pci.c
+@@ -168,6 +168,7 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
+ 	struct acpi_pci_generic_root_info *ri;
+ 	struct pci_bus *bus, *child;
+ 	struct acpi_pci_root_ops *root_ops;
++	union acpi_object *obj;
+ 
+ 	ri = kzalloc(sizeof(*ri), GFP_KERNEL);
+ 	if (!ri)
+@@ -193,8 +194,26 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
+ 	if (!bus)
+ 		return NULL;
+ 
+-	pci_bus_size_bridges(bus);
+-	pci_bus_assign_resources(bus);
++	/*
++	 * Invoke the PCI device specific method (_DSM) #5 'Ignore PCI Boot
++	 * Configuration', which tells us whether the firmware wants us to
++	 * preserve the configuration of the PCI resource tree for this root
++	 * bridge.
++	 */
++	obj = acpi_evaluate_dsm(ACPI_HANDLE(bus->bridge), &pci_acpi_dsm_guid, 1,
++	                        IGNORE_PCI_BOOT_CONFIG_DSM, NULL);
++	if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
++		/* preserve existing resource assignment */
++		pci_bus_claim_resources(bus);
++
++		/* Assign anything that might have been left out */
++		pci_assign_unassigned_root_bus_resources(bus);
++	} else {
++		/* reconfigure the resource tree from scratch */
++		pci_bus_size_bridges(bus);
++		pci_bus_assign_resources(bus);
++	}
++	ACPI_FREE(obj);
+ 
+ 	list_for_each_entry(child, &bus->children, node)
+ 		pcie_bus_configure_settings(child);
+diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
+index 8082b612f561..62b7fdcc661c 100644
+--- a/include/linux/pci-acpi.h
++++ b/include/linux/pci-acpi.h
+@@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
+ #endif
+ 
+ extern const guid_t pci_acpi_dsm_guid;
+-#define DEVICE_LABEL_DSM	0x07
+-#define RESET_DELAY_DSM		0x08
+-#define FUNCTION_DELAY_DSM	0x09
++#define IGNORE_PCI_BOOT_CONFIG_DSM	0x05
++#define DEVICE_LABEL_DSM		0x07
++#define RESET_DELAY_DSM			0x08
++#define FUNCTION_DELAY_DSM		0x09
+ 
+ #else	/* CONFIG_ACPI */
+ static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
