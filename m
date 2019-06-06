@@ -2,85 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B0E83817A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 01:01:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7C29381B6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 01:17:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P1SQ/2brt/NOTL33Bqxt/XOduKWLgwBRup6MlDLpguw=; b=uwFDzmkCusJE0e
-	lI8oGtgpEa51nW94DotXPgwISzL6LX0Y9N2EJO9lXu+D0XksYlG/qohwT+a7EKqNn+JM6lh0nBn2W
-	uD0w4LT5hg6FJotDqjtOqJiaKM0qVCBjJU4uO+tKszPTOV7JQvPR5xbrbRR1WS8E3em+455UA3wG7
-	ErPbckPQt9dIU7y0HCdak88coC7UXJCUaVTlal025FDoD66iNegaZUXewiBuPgIfMCReOf7rxzJYl
-	FKCxD4Vx/tM6N44pyDEO+5+lFjTx6G6a3Yj7w0RZnq07c+GfIwvZY21lf7rzlb8a2HuYnj77oQU9W
-	9MDKXxsZ9fwdDszOmh8Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X+TMl5aENlMx38yJdDSKzUMXH/nzsYe14hw1qPXOnAI=; b=Mtln3SRdYG6FHX
+	yIPhANeB9BreeZXHafVsXAZ6Y1ZPK7fsY6ecgAS6ESkvtdkRgT2z1yO99eZfSIgytDtAGlBNrt8CH
+	HngMuSQFSG+u382mqKs+p1Iszm5c3OaaPNnaXEsgNxPVN9ALJC853ew6C4Qh/cRPDsx66TNx72D2m
+	IZIyhQ0nUnnitSEZwCXe8PoDQiFnaNlQMW5eXzkH5vD2Z+TyOhn1aVNR30h9YuydCSwayLi9K8XQ7
+	+xV6I7Pzr2TNAIDTZqRsjzbpYNDNp2uXUOiBv1AzqWGG7eH3rl6fJmr/akrVOGvMKmZcooryRGn/W
+	4Rw6GYGfg35V1+ktvmhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZ1O5-0006ZG-H5; Thu, 06 Jun 2019 23:01:37 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1hZ1cs-0000Yj-3T; Thu, 06 Jun 2019 23:16:56 +0000
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZ1LC-0004nj-N6
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 22:58:40 +0000
-Received: by mail-io1-xd42.google.com with SMTP id i10so1501437iol.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 15:58:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=nZyg+4+QNKbKPq0WwkGA+iMce1tFBIQolx/rr5mhJFU=;
- b=SQ6VQ7xXspnotBNh7TJpasqfkB9SD+WXfZFDbmWBNN4+1xeq/tt2vj7xg9kOfp8Jn+
- 2tqwB/HzqlKfvSfg7a25R8OwV1bJh1loaTbudTWz8QmBkGkLMkmobmKogKb/+FnTOa1g
- /sie1KrlCOWdVZiWWJLXrlxPkf/E1T1lI1Wqo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=nZyg+4+QNKbKPq0WwkGA+iMce1tFBIQolx/rr5mhJFU=;
- b=dcc5VNgRI+KGAyY99HBCgZKfBVorDCyvmNGQBx0F7O89HFqRVdQQtkYE6DgNm6DIoi
- Q+871THUXjglOZBlOY/P4njs+1E0OxBatd1EhWlWRIop+9SDvC39TUr3rtMW1IE2Qtte
- WrEe/U6o5bKP1BwbrgAVKx8BdgcQe0K1cMafYt60xKbceqWQPmbkPPSsUuVxa/j/e6eM
- VKTiJ9karGE6i9gH2urVu2P/v5FzqPZth6a1Qp+cw6G0rW4BvuyRyNqJJ8yRhPa6v+gB
- GLvs0FicI3AHu4z/j5d9taL28QdtRy/2PgLwwVO6P9XlLtgnTbwnvxwG99EThViYX+to
- vY9g==
-X-Gm-Message-State: APjAAAXg40oaEMgXt0s9prKMmBmoy/J9RRoHtp64BT4KDCN5qIRZOVnp
- KOHPKAWTO5L1y6Cf6SQzERin48JjBTY=
-X-Google-Smtp-Source: APXvYqwhEucZoch9FHrKImLkqLH6UFdDtm+1wd8OemfQx8WxzK/cg0mcOZzEh2Mb+0XLFKv5ZVxC4g==
-X-Received: by 2002:a6b:4e08:: with SMTP id c8mr12410884iob.217.1559861914452; 
- Thu, 06 Jun 2019 15:58:34 -0700 (PDT)
-Received: from mail-it1-f173.google.com (mail-it1-f173.google.com.
- [209.85.166.173])
- by smtp.gmail.com with ESMTPSA id r62sm79105ita.37.2019.06.06.15.58.32
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Thu, 06 Jun 2019 15:58:33 -0700 (PDT)
-Received: by mail-it1-f173.google.com with SMTP id l21so2679713ita.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 15:58:32 -0700 (PDT)
-X-Received: by 2002:a02:9143:: with SMTP id b3mr9564655jag.12.1559861912576;
- Thu, 06 Jun 2019 15:58:32 -0700 (PDT)
+ id 1hZ1Uw-0000Lb-19; Thu, 06 Jun 2019 23:08:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1559862522; x=1591398522;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=upVlQ+4Mne3aPfXOJDTzQOYL5IxlDk66p/UoaDlefbc=;
+ b=Sp0h06S8lyEmvtP5cHOV6F6DLiEn7TJ6T4LeOSLgOFZGLX6q7Vf8wYMx
+ jULeu393J3O9/UaIbc1RdJUQycLu2X5w2Y+NE9hea3k3jKQy/npggu/8f
+ qG5RFGv4W7sLNmLyVLo6CR75K42YeG8AbRipIPJgBURmRT5JxVjJK8E2g
+ KfuCY62OH48H2YXuLevUSg17KkhQL74wPzvSYdtsS4Zus3WXKu/gZCtWA
+ hoJHPGahv1zD9V6H0x+7hR0v+0oxNQsLzYtaVBFVFXukT+z6XzaAyWUeR
+ 0ShH224ofhGJ48YS8zlqfisqQP1UQYAiCRtU84wHP35rytvZ1Da3uxPgL A==;
+X-IronPort-AV: E=Sophos;i="5.63,561,1557158400"; d="scan'208";a="111654861"
+Received: from uls-op-cesaip02.wdc.com (HELO uls-op-cesaep02.wdc.com)
+ ([199.255.45.15])
+ by ob1.hgst.iphmx.com with ESMTP; 07 Jun 2019 07:08:37 +0800
+IronPort-SDR: NcoWzyAyhWG1f0JRTdbj5OBEdX+47sLlVoxrvWIt258+GnLjI6Lt9hSCKd0SDhXvRBn++A+Nyj
+ nopZyG3m+19XR8XHeM4JOgA4K/wDk318eBgbH1Y9muwU+beuUugd+HfisItjas76GeYS3imhDL
+ bctGp1FRRnN0AJ5T6vy/SQkXDnOZSPWmqAfVmCpcifEbA6lCH1Xp0t+MKn+YdhDRhclUZt1MC1
+ 42KQUe90zC9aBuu18H2QpXskl6ygARLvXsO7+67bFJNPeoaSjleqNCO/v+bg6nHdB54K5w9J9x
+ nHAtQ5tWgXOgO2bnRUzzosvy
+Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
+ by uls-op-cesaep02.wdc.com with ESMTP; 06 Jun 2019 15:45:55 -0700
+IronPort-SDR: PmVJQWYCE7E1REr5WsNdXw+8u4L3f2dGZ/EsgKEefImQGJxpfKc4hMHenITq0au7C9ZAGH24uz
+ 4TfVRI6Tu+IzUq/UkqoMI1ROhwBixmIwnTUV+bOpXJeDqbEZehzK4j7/bnRQ6dkA1SWa77B0JH
+ lSaWNxMYtG0ms8zwLAjBamviYMcg978SL3RBCqYlTc2E5mMZP2TiW5hEpnFhW00lfffSDw013k
+ BZGjL4VSr8Nl9TEqjmY6rnqy6kE96yCNgehUIZBZBpb3Hg+vVfm1PuxF9kTW56skrgoX2UMja8
+ Odc=
+Received: from jedi-01.sdcorp.global.sandisk.com (HELO
+ jedi-01.int.fusionio.com) ([10.11.143.218])
+ by uls-op-cesaip02.wdc.com with ESMTP; 06 Jun 2019 16:08:37 -0700
+From: Atish Patra <atish.patra@wdc.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v4] RISC-V: Add an Image header that boot loader can parse.
+Date: Thu,  6 Jun 2019 16:08:00 -0700
+Message-Id: <20190606230800.19932-1-atish.patra@wdc.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190604204207.168085-1-dianders@chromium.org>
- <20190604204207.168085-2-dianders@chromium.org>
- <20190606164221.GI17077@art_vandelay>
-In-Reply-To: <20190606164221.GI17077@art_vandelay>
-From: Doug Anderson <dianders@chromium.org>
-Date: Thu, 6 Jun 2019 15:58:21 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Xt6Oad9yQHZz+nwANV1MCvGc6XCgOf8HawimVQtwWsEg@mail.gmail.com>
-Message-ID: <CAD=FV=Xt6Oad9yQHZz+nwANV1MCvGc6XCgOf8HawimVQtwWsEg@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] drm/rockchip: dw_hdmi: Handle suspend/resume
-To: Sean Paul <sean@poorly.run>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_155838_804094_3AA13E5E 
-X-CRM114-Status: GOOD (  25.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190606_160844_511320_610A4978 
+X-CRM114-Status: GOOD (  24.04  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,7 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,147 +90,246 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- David Airlie <airlied@linux.ie>, Neil Armstrong <narmstrong@baylibre.com>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel <dri-devel@lists.freedesktop.org>,
- LKML <linux-kernel@vger.kernel.org>, Andrzej Hajda <a.hajda@samsung.com>,
- Matthias Kaehlcke <mka@chromium.org>, Sean Paul <seanpaul@chromium.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "trini@konsulko.com" <trini@konsulko.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Jonathan Corbet <corbet@lwn.net>, Kevin Hilman <khilman@baylibre.com>,
+ Anup Patel <Anup.Patel@wdc.com>, linux-doc@vger.kernel.org,
+ "will.deacon@arm.com" <will.deacon@arm.com>, Atish Patra <atish.patra@wdc.com>,
+ Nick Kossifidis <mick@ics.forth.gr>, Palmer Dabbelt <palmer@sifive.com>,
+ "paul.walmsley@sifive.com" <paul.walmsley@sifive.com>,
+ Karsten Merker <merker@debian.org>, linux-riscv@lists.infradead.org,
+ "marek.vasut@gmail.com" <marek.vasut@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Currently, the last stage boot loaders such as U-Boot can accept only
+uImage which is an unnecessary additional step in automating boot
+process.
 
-On Thu, Jun 6, 2019 at 9:42 AM Sean Paul <sean@poorly.run> wrote:
->
-> On Tue, Jun 04, 2019 at 01:42:07PM -0700, Douglas Anderson wrote:
-> > On Rockchip rk3288-based Chromebooks when you do a suspend/resume
-> > cycle:
-> >
-> > 1. You lose the ability to detect an HDMI device being plugged in.
-> >
-> > 2. If you're using the i2c bus built in to dw_hdmi then it stops
-> > working.
-> >
-> > Let's call the core dw-hdmi's suspend/resume functions to restore
-> > things.
-> >
-> > NOTE: in downstream Chrome OS (based on kernel 3.14) we used the
-> > "late/early" versions of suspend/resume because we found that the VOP
-> > was sometimes resuming before dw_hdmi and then calling into us before
-> > we were fully resumed.  For now I have gone back to the normal
-> > suspend/resume because I can't reproduce the problems.
-> >
-> > Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> > ---
-> >
-> > Changes in v3:
-> > - dw_hdmi_resume() is now a void function (Laurent)
-> >
-> > Changes in v2:
-> > - Add forgotten static (Laurent)
-> > - No empty stub for suspend (Laurent)
-> >
-> >  drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c | 14 ++++++++++++++
-> >  1 file changed, 14 insertions(+)
-> >
-> > diff --git a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-> > index 4cdc9f86c2e5..7bb0f922b303 100644
-> > --- a/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-> > +++ b/drivers/gpu/drm/rockchip/dw_hdmi-rockchip.c
-> > @@ -542,11 +542,25 @@ static int dw_hdmi_rockchip_remove(struct platform_device *pdev)
-> >       return 0;
-> >  }
-> >
-> > +static int __maybe_unused dw_hdmi_rockchip_resume(struct device *dev)
-> > +{
-> > +     struct rockchip_hdmi *hdmi = dev_get_drvdata(dev);
-> > +
-> > +     dw_hdmi_resume(hdmi->hdmi);
->
-> The rockchip driver is already using the atomic suspend/resume helpers (via the
-> modeset helpers). Would you be able to accomplish the same thing by just moving
-> this call into the encoder enable callback?
->
-> .enable is called on resume via the atomic commit framework, so everything is
-> ordered properly. Of course, this would reset the dw_hdmi bridge on each enable,
-> but I don't think that would be a problem?
+Add an image header that boot loader understands and boot Linux from
+flat Image directly.
 
-I tried and it sorta kinda half worked, but...
+This header is based on ARM64 boot image header and provides an
+opportunity to combine both ARM64 & RISC-V image headers in future.
 
-1. One of the problems solved by this patch is making "hot plug
-detect" work after suspend / resume.  AKA: if you have nothing plugged
-in to the HDMI port and then suspend/resume you need to be able to
-detect when something is plugged in.  When nothing is plugged in then
-the ".enable" isn't called at resume time.
+Also make sure that PE/COFF header can co-exist in the same image so
+that EFI stub can be supported for RISC-V in future. EFI specification
+needs PE/COFF image header in the beginning of the kernel image in order
+to load it as an EFI application. In order to support EFI stub, code0
+should be replaced with "MZ" magic string and res4(at offset 0x3c)
+should point to the rest of the PE/COFF header (which will be added
+during EFI support).
 
-2. I'm not so convinced about the whole ordering being correct.
-Unfortunately on my system (Chrome OS running the chromeos-4.19
-kernel) we end up getting an i2c transfer before the ".enable" is
-called.  I put a dump_stack() in the i2c transfer:
+Tested on both QEMU and HiFive Unleashed using OpenSBI + U-Boot + Linux.
 
-[   42.212516] CPU: 0 PID: 1479 Comm: DrmThread Tainted: G         C
-     4.19.47 #60
-[   42.221182] Hardware name: Rockchip (Device Tree)
-[   42.226449] [<c0211a64>] (unwind_backtrace) from [<c020cf0c>]
-(show_stack+0x20/0x24)
-[   42.235114] [<c020cf0c>] (show_stack) from [<c0a1b8d4>]
-(dump_stack+0x84/0xa4)
-[   42.243195] [<c0a1b8d4>] (dump_stack) from [<c067d7c4>]
-(dw_hdmi_i2c_wait+0x6c/0xa8)
-[   42.251858] [<c067d7c4>] (dw_hdmi_i2c_wait) from [<c067d9a8>]
-(dw_hdmi_i2c_xfer+0x1a8/0x30c)
-[   42.261298] [<c067d9a8>] (dw_hdmi_i2c_xfer) from [<c0798704>]
-(__i2c_transfer+0x3a8/0x5d8)
-[   42.270543] [<c0798704>] (__i2c_transfer) from [<c07989c8>]
-(i2c_transfer+0x94/0xc4)
-[   42.279204] [<c07989c8>] (i2c_transfer) from [<c064e6b0>]
-(drm_do_probe_ddc_edid+0xbc/0x11c)
-[   42.288642] [<c064e6b0>] (drm_do_probe_ddc_edid) from [<c064e744>]
-(drm_probe_ddc+0x34/0x5c)
-[   42.298081] [<c064e744>] (drm_probe_ddc) from [<c0651b98>]
-(drm_get_edid+0x60/0x2e0)
-[   42.306743] [<c0651b98>] (drm_get_edid) from [<c067d710>]
-(dw_hdmi_connector_get_modes+0x30/0x78)
-[   42.316669] [<c067d710>] (dw_hdmi_connector_get_modes) from
-[<c0634f38>] (drm_helper_probe_single_connector_modes+0x218/0x5c0)
-[   42.329413] [<c0634f38>] (drm_helper_probe_single_connector_modes)
-from [<c065b38c>] (drm_mode_getconnector+0x144/0x418)
-[   42.341573] [<c065b38c>] (drm_mode_getconnector) from [<c0646844>]
-(drm_ioctl_kernel+0xa0/0xf0)
-[   42.351303] [<c0646844>] (drm_ioctl_kernel) from [<c0646d34>]
-(drm_ioctl+0x32c/0x3c0)
-[   42.360063] [<c0646d34>] (drm_ioctl) from [<c03ed0cc>] (vfs_ioctl+0x28/0x44)
-[   42.367946] [<c03ed0cc>] (vfs_ioctl) from [<c03edee8>]
-(do_vfs_ioctl+0x718/0x8b0)
-[   42.376315] [<c03edee8>] (do_vfs_ioctl) from [<c03ee0dc>]
-(ksys_ioctl+0x5c/0x84)
-[   42.384587] [<c03ee0dc>] (ksys_ioctl) from [<c03ee11c>] (sys_ioctl+0x18/0x1c)
-[   42.392570] [<c03ee11c>] (sys_ioctl) from [<c02011d4>]
-(__sys_trace_return+0x0/0x10)
+Signed-off-by: Atish Patra <atish.patra@wdc.com>
+Reviewed-by: Karsten Merker <merker@debian.org>
+Tested-by: Karsten Merker <merker@debian.org> (QEMU+OpenSBI+U-Boot)
+Tested-by: Kevin Hilman <khilman@baylibre.com> (OpenSBI + U-Boot + Linux)
 
-...I see several transfers fail and then finally a few seconds later
-finally see the .enable call:
+---
+I have not sent out corresponding U-Boot patch as all the changes are
+compatible with current u-boot support. Once, the kernel header format
+is agreed upon, I will update the U-Boot patch.
 
-[   44.021501] DOUG: dw_hdmi_rockchip_encoder_enable start
-[   44.027792] DOUG: dw_hdmi_rockchip_encoder_enable end
+Changes from v4->v5
+1. Error if CONFIG_CPU_BIG_ENDIAN is enabled in kernel.
+2. Typo fix
 
-I can gather more info if it's useful.
+Changes from v3->v4
+1. Update the commit text to clarify about PE/COFF header.
 
-===
+Changes from v2->v3
+1. Modified reserved fields to define a header version.
+2. Added header documentation.
 
-...any chance we can keep the patch as-is, or do you have ideas of how
-to solve the above problems?
+Changes from v1-v2:
+1. Added additional reserved elements to make it fully PE compatible.
+---
+ Documentation/riscv/boot-image-header.txt | 50 ++++++++++++++++++
+ arch/riscv/include/asm/image.h            | 62 +++++++++++++++++++++++
+ arch/riscv/kernel/head.S                  | 32 ++++++++++++
+ 3 files changed, 144 insertions(+)
+ create mode 100644 Documentation/riscv/boot-image-header.txt
+ create mode 100644 arch/riscv/include/asm/image.h
 
+diff --git a/Documentation/riscv/boot-image-header.txt b/Documentation/riscv/boot-image-header.txt
+new file mode 100644
+index 000000000000..acbf3b4cacfe
+--- /dev/null
++++ b/Documentation/riscv/boot-image-header.txt
+@@ -0,0 +1,50 @@
++				Boot image header in RISC-V Linux
++			=============================================
++
++Author: Atish Patra <atish.patra@wdc.com>
++Date  : 20 May 2019
++
++This document only describes the boot image header details for RISC-V Linux.
++The complete booting guide will be available at Documentation/riscv/booting.txt.
++
++The following 64-byte header is present in decompressed Linux kernel image.
++
++	u32 code0;		  /* Executable code */
++	u32 code1; 		  /* Executable code */
++	u64 text_offset;	  /* Image load offset, little endian */
++	u64 image_size;		  /* Effective Image size, little endian */
++	u64 flags;		  /* kernel flags, little endian */
++	u32 version;		  /* Version of this header */
++	u32 res1  = 0;		  /* Reserved */
++	u64 res2  = 0;    	  /* Reserved */
++	u64 magic = 0x5643534952; /* Magic number, little endian, "RISCV" */
++	u32 res3;		  /* Reserved for additional RISC-V specific header */
++	u32 res4;		  /* Reserved for PE COFF offset */
++
++This header format is compliant with PE/COFF header and largely inspired from
++ARM64 header. Thus, both ARM64 & RISC-V header can be combined into one common
++header in future.
++
++Notes:
++- This header can also be reused to support EFI stub for RISC-V in future. EFI
++  specification needs PE/COFF image header in the beginning of the kernel image
++  in order to load it as an EFI application. In order to support EFI stub,
++  code0 should be replaced with "MZ" magic string and res5(at offset 0x3c) should
++  point to the rest of the PE/COFF header.
++
++- version field indicate header version number.
++ 	Bits 0:15  - Minor version
++	Bits 16:31 - Major version
++
++  This preserves compatibility across newer and older version of the header.
++  The current version is defined as 0.1.
++
++- res3 is reserved for offset to any other additional fields. This makes the
++  header extendible in future. One example would be to accommodate ISA
++  extension for RISC-V in future. For current version, it is set to be zero.
++
++- In current header, the flag field has only one field.
++	Bit 0: Kernel endianness. 1 if BE, 0 if LE.
++
++- Image size is mandatory for boot loader to load kernel image. Booting will
++  fail otherwise.
+diff --git a/arch/riscv/include/asm/image.h b/arch/riscv/include/asm/image.h
+new file mode 100644
+index 000000000000..13f4365d2dd6
+--- /dev/null
++++ b/arch/riscv/include/asm/image.h
+@@ -0,0 +1,62 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++#ifndef __ASM_IMAGE_H
++#define __ASM_IMAGE_H
++
++#define RISCV_IMAGE_MAGIC	"RISCV"
++
++#define RISCV_IMAGE_FLAG_BE_SHIFT	0
++#define RISCV_IMAGE_FLAG_BE_MASK	0x1
++
++#define RISCV_IMAGE_FLAG_LE		0
++#define RISCV_IMAGE_FLAG_BE		1
++
++#ifdef CONFIG_CPU_BIG_ENDIAN
++#error conversion of header fields to LE not yet implemented
++#else
++#define __HEAD_FLAG_BE		RISCV_IMAGE_FLAG_LE
++#endif
++
++#define __HEAD_FLAG(field)	(__HEAD_FLAG_##field << \
++				RISCV_IMAGE_FLAG_##field##_SHIFT)
++
++#define __HEAD_FLAGS		(__HEAD_FLAG(BE))
++
++#define RISCV_HEADER_VERSION_MAJOR 0
++#define RISCV_HEADER_VERSION_MINOR 1
++
++#define RISCV_HEADER_VERSION (RISCV_HEADER_VERSION_MAJOR << 16 | \
++			      RISCV_HEADER_VERSION_MINOR)
++
++#ifndef __ASSEMBLY__
++/*
++ * struct riscv_image_header - riscv kernel image header
++ *
++ * @code0:		Executable code
++ * @code1:		Executable code
++ * @text_offset:	Image load offset
++ * @image_size:		Effective Image size
++ * @flags:		kernel flags
++ * @version:		version
++ * @reserved:		reserved
++ * @reserved:		reserved
++ * @magic:		Magic number
++ * @reserved:		reserved (will be used for additional RISC-V specific header)
++ * @reserved:		reserved (will be used for PE COFF offset)
++ */
++
++struct riscv_image_header {
++	u32 code0;
++	u32 code1;
++	u64 text_offset;
++	u64 image_size;
++	u64 flags;
++	u32 version;
++	u32 res1;
++	u64 res2;
++	u64 magic;
++	u32 res3;
++	u32 res4;
++};
++#endif /* __ASSEMBLY__ */
++#endif /* __ASM_IMAGE_H */
+diff --git a/arch/riscv/kernel/head.S b/arch/riscv/kernel/head.S
+index 370c66ce187a..577893bb150d 100644
+--- a/arch/riscv/kernel/head.S
++++ b/arch/riscv/kernel/head.S
+@@ -19,9 +19,41 @@
+ #include <asm/thread_info.h>
+ #include <asm/page.h>
+ #include <asm/csr.h>
++#include <asm/image.h>
+ 
+ __INIT
+ ENTRY(_start)
++	/*
++	 * Image header expected by Linux boot-loaders. The image header data
++	 * structure is described in asm/image.h.
++	 * Do not modify it without modifying the structure and all bootloaders
++	 * that expects this header format!!
++	 */
++	/* jump to start kernel */
++	j _start_kernel
++	/* reserved */
++	.word 0
++	.balign 8
++#if __riscv_xlen == 64
++	/* Image load offset(2MB) from start of RAM */
++	.dword 0x200000
++#else
++	/* Image load offset(4MB) from start of RAM */
++	.dword 0x400000
++#endif
++	/* Effective size of kernel image */
++	.dword _end - _start
++	.dword __HEAD_FLAGS
++	.word RISCV_HEADER_VERSION
++	.word 0
++	.dword 0
++	.asciz RISCV_IMAGE_MAGIC
++	.word 0
++	.balign 4
++	.word 0
++
++.global _start_kernel
++_start_kernel:
+ 	/* Mask all interrupts */
+ 	csrw CSR_SIE, zero
+ 	csrw CSR_SIP, zero
+-- 
+2.21.0
 
-Thanks!
-
--Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
