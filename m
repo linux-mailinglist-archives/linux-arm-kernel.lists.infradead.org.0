@@ -2,93 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED6A1377FD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:32:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33F913780A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:33:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=V+5K5QOa4dRzOTn35P9Q2AkwblJnHWPbB4hosdszHls=; b=VeUaKRooiAG4HOJfhYvJqGn1b
-	aeQf5h9MnCX2rngkIpvo3J9EESyWEAqUwwwdka8tqZ0W1OuAkOZysiMyt8HO9l6/BasIROU308fMj
-	LufkkR8tjHpyyTlhd8J0aHlfumKQlHe7Ib5LixWW0rJGUECyRT4w4k5/apUWGsAag5MDT6WH+A7Bh
-	DfRU9v9pf1U5tMM6rH4L8QyRuwhEVrX3a9ZFvBWlZVHXlq90l6DReQXFZfCqLpg0hvo2e+YL+NQYM
-	aDL2oEzNGHgHPSeUZ4wQo76C4reTVzb1J8dLIMMc9NY9Bshh84YgNOaEpGChaXjWfcqHscs/X29tu
-	GjxGS+L6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p30NvbbuUQzBTp0LM9KoNmq/2hIJ8mwedSgR/Qg8jT4=; b=VW2032mvYD8R7U
+	eMZVQktLlyz2NXBZW7X190HtcLce6TeUp3rhF+wvq8GZCvD6nCOjM4SBqKu5Z/3B09FIugRyFnj5b
+	3gHesv84uCzgzvzYaquSUYQJz4Nu9+6g63ClieeB8Lnbp1suvbzRWhM8IGU+ama0VebmBPRR/XH1e
+	OGSdHb3apFyaJvFPHqxodlnM/R9wWgVvMYM84fIpYRNvMD4PxpLROPyEj0+GXQfKKsJogOARhZl77
+	DvM4tPQzOXiz0DkYb17Yy7/UPaGqzYKazUrVokeV+vaIx5m4tLOnPuR+wsfjkPIG68Y0wtMM2LE1t
+	DJITeAQrs88mN0GQahWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYuNQ-0003wb-FE; Thu, 06 Jun 2019 15:32:28 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hYuOO-0004Kz-0j; Thu, 06 Jun 2019 15:33:28 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYuNJ-0003vt-PI
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 15:32:23 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n4so2913929wrs.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 08:32:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=HX3M9WP/yryEwh7vX9+9JslPgp+IEmjuwN20Escc6kI=;
- b=EiUYU8vhWxjAAxHOvDowkjzPhStcE3hELrYCWJ27QKnAI3cJFbwKgtz7SyV1Nlh3G7
- aKbxXLDNqFCQSrvPmzI/x3zqIs0RocRokH+TItX8e6zy93V4TnYyK/nIP2w2Y6S7lRVo
- oZJ4TEeNTAS/ojkuEzag0RiCf4oljXXX0x2UYQCurM8wg06qcdiQEy4if80rprzE6bxU
- SF6cJPZYyqtGEpnSdRQA6IUtwIspXawWvs1aJfxPF+HOkXeQWSXbgX0pIGKa/VFQ8tlQ
- pzv9iGs8JLuDdIXwcI5hSvQC4MriQbkxesUfvwPoK6G4JUCi/wGL16z5n3RcdBgnCrVT
- fEVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HX3M9WP/yryEwh7vX9+9JslPgp+IEmjuwN20Escc6kI=;
- b=plv5F6Lu9RdIHM1c9lUZj/g1fz2IgabdmURHGQZtmdJLBHJhiIVKMFErELOdS1B0F2
- zr7IiYR6OVeQvxOjNJY04BwlqiIVNLzrHkwDtSyQY5uJJote1yqkUVjc7SHvIaBI+lZy
- Ff8egJcMwzG/duzmDSbt2y/v2BatbCyjsTvIdp3g+P9eTe7zD7I6V/+PWmqAmYUvvW0A
- gbKBV0/qzgpPJVPxzxaMblEbnfQjVmPaxohyvu5zMEYMsZaHDezKIBHFUqjRs9W9F7W+
- ZmLe7xnCE9wDHjDYXNi1Muq5INfyMEBD8XsceOts+seAtghepdV6nYOX1Ng6c9PO7mmf
- 8hgQ==
-X-Gm-Message-State: APjAAAUCim/tLzfxFHyz0tluHes8+L6R23MtASYbsTA3gVSmmQ5ct5+j
- dJYMVZANaBpYBbmgkEbK+KQ=
-X-Google-Smtp-Source: APXvYqxRHVyiOMsBJdAL9QEQxw+Px16GqdTmA3UJBr61U49dfLm6pC0vNkSsniND2XvWP2wLGn5EWw==
-X-Received: by 2002:adf:9dcc:: with SMTP id q12mr3836539wre.93.1559835139048; 
- Thu, 06 Jun 2019 08:32:19 -0700 (PDT)
-Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
- by smtp.gmail.com with ESMTPSA id c129sm2082954wma.27.2019.06.06.08.32.18
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 06 Jun 2019 08:32:18 -0700 (PDT)
-Date: Thu, 6 Jun 2019 17:32:16 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V8 05/15] PCI: dwc: Add ext config space capability
- search API
-Message-ID: <20190606153216.GA3338@ulmo>
-References: <20190526043751.12729-1-vidyas@nvidia.com>
- <20190526043751.12729-6-vidyas@nvidia.com>
+ id 1hYuOG-0004K5-Vv
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 15:33:22 +0000
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id D950C550BB;
+ Thu,  6 Jun 2019 15:32:54 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-85.bos.redhat.com [10.18.17.85])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B88DC7D901;
+ Thu,  6 Jun 2019 15:32:46 +0000 (UTC)
+Subject: Re: [PATCH v2 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>, Peter Zijlstra <peterz@infradead.org>
+References: <20190329152006.110370-1-alex.kogan@oracle.com>
+ <20190329152006.110370-4-alex.kogan@oracle.com>
+ <60a3a2d8-d222-73aa-2df1-64c9d3fa3241@redhat.com>
+ <20190402094320.GM11158@hirez.programming.kicks-ass.net>
+ <6AEDE4F2-306A-4DF9-9307-9E3517C68A2B@oracle.com>
+ <20190403160112.GK4038@hirez.programming.kicks-ass.net>
+ <C0BC44A5-875C-4BED-A616-D380F6CF25D5@oracle.com>
+ <20190605204003.GC3402@hirez.programming.kicks-ass.net>
+ <6426D627-77EE-471C-B02A-A85271B666E9@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <409b5d52-1f7d-7f60-04c7-e791e069239f@redhat.com>
+Date: Thu, 6 Jun 2019 11:32:46 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190526043751.12729-6-vidyas@nvidia.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <6426D627-77EE-471C-B02A-A85271B666E9@oracle.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.29]); Thu, 06 Jun 2019 15:33:01 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_083221_853827_FA01C650 
-X-CRM114-Status: GOOD (  11.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190606_083321_049458_E888E963 
+X-CRM114-Status: GOOD (  14.90  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,99 +79,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============7380976911823928269=="
+Cc: linux-arch@vger.kernel.org, arnd@arndb.de, dave.dice@oracle.com,
+ x86@kernel.org, will.deacon@arm.com, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Rahul Yadav <rahul.x.yadav@oracle.com>,
+ mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
+ Steven Sistare <steven.sistare@oracle.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Daniel Jordan <daniel.m.jordan@oracle.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 6/6/19 11:21 AM, Alex Kogan wrote:
+>>> Also, the paravirt code is under arch/x86, while CNA is generic (not
+>>> x86-specific).  Do you still want to see CNA-related patching residing
+>>> under arch/x86?
+>>>
+>>> We still need a config option (something like NUMA_AWARE_SPINLOCKS) to
+>>> enable CNA patching under this config only, correct?
+>> There is the static_call() stuff that could be generic; I posted a new
+>> version of that today (x86 only for now, but IIRC there's arm64 patches
+>> for that around somewhere too).
+> The static_call technique appears as the more desirable long-term approach, but I think it would be prudent to keep the patches decoupled for now so we can move forward with less entanglements.
+> So unless anyone objects, we will work on plugging into the existing patching for pv.
+> And we will keep that code under arch/x86, but will be open for any suggestion to move it elsewhere.
+>
+If you mean making the CNV code depends on PARAVIRT_SPINLOCKS for now,
+that is fine. The code should be under kernel/locking. You shouldn't put
+it somewhere under arch/x86.
 
---===============7380976911823928269==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="OgqxwSJOaUobr8KG"
-Content-Disposition: inline
+-Longman
 
-
---OgqxwSJOaUobr8KG
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Sun, May 26, 2019 at 10:07:41AM +0530, Vidya Sagar wrote:
-> Add extended configuration space capability search API using struct dw_pc=
-ie *
-> pointer
->=20
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-> ---
-> Changes since [v7]:
-> * Changed data types of return and arguments to be inline with data being=
- returned
->   and passed.
->=20
-> Changes since [v6]:
-> * None
->=20
-> Changes since [v5]:
-> * None
->=20
-> Changes since [v4]:
-> * None
->=20
-> Changes since [v3]:
-> * None
->=20
-> Changes since [v2]:
-> * None
->=20
-> Changes since [v1]:
-> * This is a new patch in v2 series
->=20
->  drivers/pci/controller/dwc/pcie-designware.c | 41 ++++++++++++++++++++
->  drivers/pci/controller/dwc/pcie-designware.h |  1 +
->  2 files changed, 42 insertions(+)
-
-Acked-by: Thierry Reding <treding@nvidia.com>
-
---OgqxwSJOaUobr8KG
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlz5MfsACgkQ3SOs138+
-s6GApw//TPvpvgBzP5P9ZA+voryvcGrZFDGOvZN3Ue1+gcsGJLKWkkyfdki8Xn4K
-pkOboAWOYl3FVFstorO6OlL+sToBPM7KSW3d1y8Xf4lCJG6pl6Wguq01rQiL+lgC
-SiHzhKaumTJ6cIiZICbExS0cnWwgNvglaMRV1enwe3SfAdqpiSBJYsJy/OFgUHMX
-e8P0PX0CY6pK+lGGi610SRhzorXOne+ukTGgm+qrAU/9XsJWkF9uwyaJF7BprSfq
-fjPGMQlZ+ezB9sZn+RAJT8qZpNsovOTLDWV6P4b+bR6hBbHNM3uOFlnpOUsKfiLL
-YJIBU00ZlbIIOMMCK/78Xg2i9GsndiLKmAF8XYeNcGKfHOyivoABLViL4eL98yZl
-VMEUTSMw97RhAoZ9DgD5M5ESFEAbD0qvy5GoGW7OcJ3JyvJam6hr2nFDIqyAuq5G
-W5w/opznB6oYuiyvTWbH2BYTKdpZv1IMZTLRsq1o8yQHCRt/L7GemvXGWm+7UhNJ
-hPIFoLR7bvYE/wHvnplHw72iXh55j3/Ku2oBCgs9Ikx8Q64XWDSJQBwqNXwT5pW4
-2qcCVbs9kcdOmuhadUJNE+Aeyz32+7GC9JS5PIrtgvCrS9GlYWg6pjGDqMy4lzJ0
-fVfLAxMTiKwPO9jr2SOY8TIfObb7fXzKGB31sBPvCV2tRUpK0OE=
-=DlKq
------END PGP SIGNATURE-----
-
---OgqxwSJOaUobr8KG--
-
-
---===============7380976911823928269==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7380976911823928269==--
-
