@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1128437844
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:40:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E94043784E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:41:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nj7gZ2wvluMXi4LHRfpC1IiJqgiAvhVVyRSXZFLgWho=; b=FMkswfu+yOxdbV
-	gszdzBqAVFDKzodKeHRAcwW3A6zDsw76cjZxLmfYwF4n03eAtaqbi94i0eeJqpA/sDKuCZKknk5tR
-	DEZAhU1EwyyNXXDJhi6qBCn0um8fSPbVQqd41426uROwCHfS3e1DOHIix2O2Za6JJaOxOMg7qdhyu
-	klokY9jCC2SD1HCW8sWknvaij4IgLaXzUyMNLDeWQ6WJGwjCfiofA/R8EMRaRg9NwCbn61lxFMEhO
-	gk4G9X46CZifcWA+jXQMXVzda5eKPkvayIQwp5Xm39d4g4VMuKtglP+my9yidb7FKkH4llXumf9oY
-	2bJ7oQVdQ46MqsDsMEGw==;
+	List-Owner; bh=de8ro4AxnpsN/YtJs21AxYKbIoTEvc0mrk+zuXY5yI0=; b=kET2K43+0MHMJH
+	OuZmhWNYTjiqTBWMJ/uFK0OlVgmvMnRGLfu5kKZ+TCcDKRVK9LB71O2X2Py0Hz/vd83c1FS9KV8xC
+	wwc/hP/iFbIwxUUem0B+rj8Ljl+2hUW+YVXaeaVOtJ/7rzp22G0iFUxwznHDTalXkwSNcZWkh+5H1
+	GiEwYkQGMrpkBU/kHwo/MR8jTJf3aVenfdo5o/qDmCu9FEqdaN+BBNmccfyafvb4cn1I8XtZINVcX
+	zNXAOQoIjhqwmsIBysqPvsNCsyyRy19CxIpGXe5YVHZ+kxu5OkF4g2ud09OyT1IiQkZBNpUjzDe5C
+	Y6IpX1KLmzyNt0h+jF7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYuUd-0007bD-MX; Thu, 06 Jun 2019 15:39:55 +0000
-Received: from 4.mo3.mail-out.ovh.net ([178.33.46.10])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYuUS-0007Zb-RE
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 15:39:46 +0000
-Received: from player697.ha.ovh.net (unknown [10.108.54.59])
- by mo3.mail-out.ovh.net (Postfix) with ESMTP id D2ABB214598
- for <linux-arm-kernel@lists.infradead.org>;
- Thu,  6 Jun 2019 17:39:41 +0200 (CEST)
-Received: from armadeus.com (lfbn-1-7591-179.w90-126.abo.wanadoo.fr
- [90.126.248.179])
- (Authenticated sender: sebastien.szymanski@armadeus.com)
- by player697.ha.ovh.net (Postfix) with ESMTPSA id 20984697A803;
- Thu,  6 Jun 2019 15:39:22 +0000 (UTC)
-From: =?UTF-8?q?S=C3=A9bastien=20Szymanski?= <sebastien.szymanski@armadeus.com>
-To: devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-media@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: [PATCH v2 3/3] media: dt-bindings: imx7-csi: add i.MX6UL/L support
-Date: Thu,  6 Jun 2019 17:38:25 +0200
-Message-Id: <20190606153825.8183-3-sebastien.szymanski@armadeus.com>
-X-Mailer: git-send-email 2.19.2
-In-Reply-To: <20190606153825.8183-1-sebastien.szymanski@armadeus.com>
-References: <20190606153825.8183-1-sebastien.szymanski@armadeus.com>
+	id 1hYuVj-0000fa-Od; Thu, 06 Jun 2019 15:41:03 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYuVb-0000et-OX
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 15:40:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0760DA78;
+ Thu,  6 Jun 2019 08:40:54 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5D8473F690;
+ Thu,  6 Jun 2019 08:40:52 -0700 (PDT)
+Date: Thu, 6 Jun 2019 16:40:45 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Jassi Brar <jassisinghbrar@gmail.com>
+Subject: Re: [PATCH 0/6] mailbox: arm_mhu: add support to use in doorbell mode
+Message-ID: <20190606154045.GA2429@e107155-lin>
+References: <20190531143320.8895-1-sudeep.holla@arm.com>
+ <CABb+yY1u5zdocgV=HhQcHWQa_R7ArtFqndU5_T=NsPHJ=jwseA@mail.gmail.com>
+ <20190531165326.GA18115@e107155-lin>
+ <20190603193946.GC2456@sirena.org.uk>
+ <20190604093827.GA31069@e107533-lin.cambridge.arm.com>
+ <20190605194636.GW2456@sirena.org.uk>
+ <CABb+yY27Xe7d5=drKUGg82rJXcRU3EfZkG9FygZoOiioY-BMyw@mail.gmail.com>
+ <20190606125140.GB26273@e107155-lin>
+ <CABb+yY06heJ5s5-2tvrDt9CdL+--YLG+P52e52YFPqTA=Nb3vw@mail.gmail.com>
 MIME-Version: 1.0
-X-Ovh-Tracer-Id: 3728136069398615236
-X-VR-SPAMSTATE: OK
-X-VR-SPAMSCORE: -100
-X-VR-SPAMCAUSE: gggruggvucftvghtrhhoucdtuddrgeduuddrudeggedgledvucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuqfggjfdpvefjgfevmfevgfenuceurghilhhouhhtmecuhedttdenucesvcftvggtihhpihgvnhhtshculddquddttddm
+Content-Disposition: inline
+In-Reply-To: <CABb+yY06heJ5s5-2tvrDt9CdL+--YLG+P52e52YFPqTA=Nb3vw@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_083945_043995_ED871BA9 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190606_084055_806463_D33EC451 
+X-CRM114-Status: GOOD (  21.91  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.33.46.10 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,34 +70,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Rui Miguel Silva <rmfrfs@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>, Fabio Estevam <festevam@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Arnd Bergmann <arnd@arndb.de>, Mark Brown <broonie@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Cristian Marussi <cristian.marussi@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RG9jdW1lbnQgImZzbCxpbXg2dWwtY3NpIiBlbnRyeS4KClNpZ25lZC1vZmYtYnk6IFPDqWJhc3Rp
-ZW4gU3p5bWFuc2tpIDxzZWJhc3RpZW4uc3p5bWFuc2tpQGFybWFkZXVzLmNvbT4KLS0tCgpDaGFu
-Z2VzIGZvciB2MjoKIC0gTmV3IHBhdGNoIHRvIGRvY3VtZW50IG5ldyAiZnNsLGlteDZ1bC1jc2ki
-IGVudHJ5LgoKIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS9pbXg3LWNz
-aS50eHQgfCAyICstCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24o
-LSkKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWVkaWEv
-aW14Ny1jc2kudHh0IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21lZGlhL2lt
-eDctY3NpLnR4dAppbmRleCAzYzA3YmM2NzZiYzMuLjQ5ZTlhZjE5YjNlYSAxMDA2NDQKLS0tIGEv
-RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL21lZGlhL2lteDctY3NpLnR4dAorKysg
-Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWVkaWEvaW14Ny1jc2kudHh0CkBA
-IC05LDcgKzksNyBAQCB0byBjb25uZWN0IGRpcmVjdGx5IHRvIGV4dGVybmFsIENNT1MgaW1hZ2Ug
-c2Vuc29ycy4KIAogUmVxdWlyZWQgcHJvcGVydGllczoKIAotLSBjb21wYXRpYmxlICAgIDogImZz
-bCxpbXg3LWNzaSI7CistIGNvbXBhdGlibGUgICAgOiAiZnNsLGlteDctY3NpIiBvciAiZnNsLGlt
-eDZ1bC1jc2kiOwogLSByZWcgICAgICAgICAgIDogYmFzZSBhZGRyZXNzIGFuZCBsZW5ndGggb2Yg
-dGhlIHJlZ2lzdGVyIHNldCBmb3IgdGhlIGRldmljZTsKIC0gaW50ZXJydXB0cyAgICA6IHNob3Vs
-ZCBjb250YWluIENTSSBpbnRlcnJ1cHQ7CiAtIGNsb2NrcyAgICAgICAgOiBsaXN0IG9mIGNsb2Nr
-IHNwZWNpZmllcnMsIHNlZQotLSAKMi4xOS4yCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Jun 06, 2019 at 10:20:40AM -0500, Jassi Brar wrote:
+> On Thu, Jun 6, 2019 at 7:51 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> >
+> > > BTW, this is not going to be the end of SCMI troubles (I believe
+> > > that's what his client is). SCMI will eventually have to be broken up
+> > > in layers (protocol and transport) for many legit platforms to use it.
+> > > That is mbox_send_message() will have to be replaced by, say,
+> > > platform_mbox_send()  in drivers/firmware/arm_scmi/driver.c  OR  the
+> > > platforms have to have shmem and each mailbox controller driver (that
+> > > could ever be used under scmi) will have to implement "doorbell
+> > > emulation" mode. That is the reason I am not letting the way paved for
+> > > such emulations.
+> > >
+> >
+> > While I don't dislike or disagree with separate transport in SCMI which
+> > I have invested time and realised that I will duplicate mailbox framework
+> > at the end.
+> >
+> Can you please share the code? Or is it no more available?
+>
+> > So I am against it only because of duplication and extra
+> > layer of indirection which has performance impact(we have this seen in
+> > sched governor for DVFS).
+> >
+> I don't see why the overhead should increase noticeably.
+>
+
+Simple, if 2 protocols share the same channel, then the requests are
+serialised. E.g. if bits 0 and 1 are allocated for protocol#1
+and bits 2 and 3 for protocol#2 and protocol#1 has higher latency
+requirements like sched-governor DVFS and there are 3-4 pending requests
+on protocol#2, then the incoming request for protocol#1 is blocked.
+
+> > So idea wise, it's good and I don't disagree
+> > with practically seen performance impact. Hence I thought it's sane to
+> > do something I am proposing.
+> >
+> Please suggest how is SCMI supposed to work on ~15 controllers
+> upstream (except tegra-hsp) ?
+>
+
+Do you mean we have to implement platform layer to make it work ?
+That's not necessary IMO.
+
+> > It also avoids coming up with virtual DT
+> > nodes for this layer of abstract which I am completely against.
+> >
+> I don't see why virtual DT nodes would be needed for platform layer.
+
+So how will 2 or more different users of the same mailbox identify the
+bits allocated for them ?
+
+--
+Regards,
+Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
