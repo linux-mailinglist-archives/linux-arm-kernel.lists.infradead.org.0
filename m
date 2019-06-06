@@ -2,83 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A49A536E45
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 10:15:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7CA836E95
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 10:27:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6V5g1fnDtmc1kxaQRcdox4HLqandmTVpocs9nJLGmYE=; b=c+iQV03mRXERoW
-	EWpeSf9Vvoh+NlPSl3lp5oAPvo1W1PsgrOzQxF+B0+eFSXMD6VL4eX2KTqGou7l0k/I1DYL35w/NH
-	i19I3XUsvEUoRZIDCPgdr7pmw8Yj1t8h0a7K38JF+7xRtx0IJUFiysCd5rMh5db7AZlZPuleXnlfX
-	sDl1/OiGVhWfdmbqPlAiaw9w2TsP9d6PEu6XIwwFipgn3MCSaw4BCW5GLtPP7wc7CaFlHuZeOdc5T
-	aDAXoINNDmrHilFvbh/kYPRe6wgd5usb83gaIkoy+P17nLBaWORSgDksxrpcquCSdd6Zk8oBQFl+j
-	uVkzjWwXVpbDfXMmJn+A==;
+	List-Owner; bh=KNA8Wrn8te9UtIzRoTWPt8EAqYgx+RGIyVmymQ/syR8=; b=pmK4b1y+gny51X
+	dOtH2NB93vHamnhvvc68l35NgGVPSqVp4/3Gx8Y2C92d3Z0Ev5lX486+79SdNj4smo5n8DTpkP/ug
+	qHDpv/MZmD59wJ5hGEgN+KUhIGUv+fCxu/T0QBj+rDLfORnwHq2y7i/sDd44i67sOy3PPeI0yWXSJ
+	ir6vvp2Z+wKjXH5aCpXy9BbBokf4hEXnrl7OUQslm2HtKFpDsXW4o+YRsUd+FMdNm5bB0J7pmD1kG
+	kt1rxi+Dl1dG+u3iuIarOr50Ivsaj290kyP6j6dHD0/nnJbtOLAiuTYnAm0l0xP9MzMe5f/bUEciY
+	h7/P9R7gL8mRdnJLCDYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYnYG-0007Oh-VL; Thu, 06 Jun 2019 08:15:12 +0000
-Received: from mx1.tq-group.com ([62.157.118.193])
+	id 1hYnk3-0003OB-So; Thu, 06 Jun 2019 08:27:23 +0000
+Received: from skedge04.snt-world.com ([91.208.41.69])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYnY8-0006Bt-Rp
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 08:15:06 +0000
-X-IronPort-AV: E=Sophos;i="5.60,558,1549926000"; 
-   d="scan'208";a="7719743"
-Received: from unknown (HELO tq-pgp-pr1.tq-net.de) ([192.168.6.15])
- by mx1-pgp.tq-group.com with ESMTP; 06 Jun 2019 10:14:55 +0200
-Received: from mx1.tq-group.com ([192.168.6.7])
- by tq-pgp-pr1.tq-net.de (PGP Universal service);
- Thu, 06 Jun 2019 10:14:55 +0200
-X-PGP-Universal: processed;
- by tq-pgp-pr1.tq-net.de on Thu, 06 Jun 2019 10:14:55 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
- t=1559808895; x=1591344895;
- h=message-id:subject:from:to:cc:date:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=gidmcEXWd6Fs9Jm1YrLEtSu1pDj6rxSgxAoUC5x632M=;
- b=Zf957eeRwDVqFX58P4ouQ+lHOtr5F0uv+gAZpioj0rzkycSca9xzfIfv
- qHpfpUq+bjV/HpJ1JtvAG8riB7JQql2EBVGc3o4qNXwn3Zs3+NCYhVJ+0
- lPF9us9u+JD5RL1xCY860HkUIa9HI5RxWbYWODoWSez3hJ+nQvTHr8QHa
- HUfoeamWPtbDjHvC7fywDx77ERXMfrnD7q2tEaihI4nWV/IbvUpVJXA9N
- DEBOKU7FnisGp9yUiKV5tOsd9VmEq+bxEz8SDYR5rUUvwELpfVdCpQf1z
- bIRAcKu/byIfTXKZJA1w0pg6YgGTLJL8ZbJwlliIT1GXfhgNlpyrPo9Y8 w==;
-X-IronPort-AV: E=Sophos;i="5.60,558,1549926000"; 
-   d="scan'208";a="7719742"
-Received: from vtuxmail01.tq-net.de ([10.115.0.20])
- by mx1.tq-group.com with ESMTP; 06 Jun 2019 10:14:55 +0200
-Received: from schifferm-ubuntu4.tq-net.de (schifferm-ubuntu4.tq-net.de
- [10.117.49.26])
- by vtuxmail01.tq-net.de (Postfix) with ESMTPA id 9F20E280074;
- Thu,  6 Jun 2019 10:15:01 +0200 (CEST)
-Message-ID: <61f233518ba863f9d5783dd10e468ee5bf22b69a.camel@ew.tq-group.com>
-Subject: Re: [PATCH modules 0/2] Fix handling of exit unwinding sections (on
- ARM)
-From: Matthias Schiffer <matthias.schiffer@ew.tq-group.com>
-To: Russell King <linux@armlinux.org.uk>, Jessica Yu <jeyu@kernel.org>
-Date: Thu, 06 Jun 2019 10:14:44 +0200
-In-Reply-To: <20190603105726.22436-1-matthias.schiffer@ew.tq-group.com>
-References: <20190603105726.22436-1-matthias.schiffer@ew.tq-group.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1hYnjw-0003Ng-7J; Thu, 06 Jun 2019 08:27:18 +0000
+Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge04.snt-world.com (Postfix) with ESMTPS id 88885661177;
+ Thu,  6 Jun 2019 10:27:12 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
+ (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Thu, 6 Jun 2019
+ 10:27:12 +0200
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1713.004; Thu, 6 Jun 2019 10:27:12 +0200
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Emil Lenngren <emil.lenngren@gmail.com>, Miquel Raynal
+ <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v2 01/15] mtd: nand: Add max_bad_eraseblocks_per_lun info
+ to memorg
+Thread-Topic: [PATCH v2 01/15] mtd: nand: Add max_bad_eraseblocks_per_lun info
+ to memorg
+Thread-Index: AQHU0scN55ZCxKZqF0m+9YUbyTEVtKaLkFoAgAMr1oA=
+Date: Thu, 6 Jun 2019 08:27:11 +0000
+Message-ID: <5e5d473b-2f08-4230-0920-247c2c463c55@kontron.de>
+References: <20190304201522.11323-1-miquel.raynal@bootlin.com>
+ <20190304201522.11323-2-miquel.raynal@bootlin.com>
+ <CAO1O6se5=FDf2YTEEzmFJ4K6HQp_2ayU=WubxGAQJdMA4V4m-Q@mail.gmail.com>
+In-Reply-To: <CAO1O6se5=FDf2YTEEzmFJ4K6HQp_2ayU=WubxGAQJdMA4V4m-Q@mail.gmail.com>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <91792C479013E34B9E52AEE7D1454831@snt-world.com>
+MIME-Version: 1.0
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 88885661177.AD12D
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: bbrezillon@kernel.org, computersforpeace@gmail.com,
+ dwmw2@infradead.org, emil.lenngren@gmail.com, juliensu@mxic.com.tw,
+ linux-arm-kernel@lists.infradead.org, linux-mtd@lists.infradead.org,
+ marek.vasut@gmail.com, masonccyang@mxic.com.tw,
+ miquel.raynal@bootlin.com, richard@nod.at,
+ thomas.petazzoni@bootlin.com, tudor.ambarus@microchip.com,
+ vigneshr@ti.com, yamada.masahiro@socionext.com
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_011505_224551_C33568F8 
-X-CRM114-Status: GOOD (  17.35  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190606_012716_588482_69D85FD5 
+X-CRM114-Status: GOOD (  14.08  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [62.157.118.193 listed in list.dnswl.org]
+ no trust [91.208.41.69 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,76 +93,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mason Yang <masonccyang@mxic.com.tw>, Vignesh R <vigneshr@ti.com>, Tudor
+ Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
+ Richard Weinberger <richard@nod.at>, Boris Brezillon <bbrezillon@kernel.org>,
+ Marek Vasut <marek.vasut@gmail.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>, Thomas
+ Petazzoni <thomas.petazzoni@bootlin.com>,
+ Brian Norris <computersforpeace@gmail.com>,
+ David Woodhouse <dwmw2@infradead.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-06-03 at 12:57 +0200, Matthias Schiffer wrote:
-> For some time (050d18d1c651 "ARM: 8650/1: module: handle negative
-> R_ARM_PREL31 addends correctly", v4.11+), building a kernel without
-> CONFIG_MODULE_UNLOAD would lead to module loads failing on ARM
-> systems with
-> certain memory layouts, with messages like:
-> 
->   imx_sdma: section 16 reloc 0 sym '': relocation 42 out of range
->   (0x7f015260 -> 0xc0f5a5e8)
-> 
-> (0x7f015260 is in the module load area, 0xc0f5a5e8 a regular vmalloc
-> address; relocation 42 is R_ARM_PREL31)
-> 
-> This is caused by relocatiosn in the .ARM.extab.exit.text and
-> .ARM.exidx.exit.text sections referencing the .exit.text section. As
-> the
-> module loader will omit loading .exit.text without
-> CONFIG_MODULE_UNLOAD,
-> there will be relocations from loaded to unloaded sections; the
-> resulting
-> huge offsets trigger the sanity checks added in 050d18d1c651.
-> 
-> IA64 might be affected by a similar issue - sections with names like
-> .IA_64.unwind.exit.text and .IA_64.unwind_info.exit.text appear in
-> the ld
-> script - but I don't know much about that arch.
-> 
-> Also, I'm not sure if this is stable-worthy - just enabling
-> CONFIG_MODULE_UNLOAD should be a viable workaround on affected
-> kernels.
-> 
-> 
-> Kind regards,
-> Matthias
+Hi Emil,
 
-
-Hi,
-any comments on these patches? If not, who is going to take them in
-their tree?
-
-Note that I'll be out of office for the next week, and I won't be able
-to read my mail during this period.
-
-
-Kind regards,
-Matthias
-
-
-
-
+On 04.06.19 10:01, Emil Lenngren wrote:
+> Hi Miquel,
 > 
+>>   static const struct spinand_info macronix_spinand_table[] = {
+>>          SPINAND_INFO("MX35LF1GE4AB", 0x12,
+>> -                    NAND_MEMORG(1, 2048, 64, 64, 1024, 1, 1, 1),
+>> +                    NAND_MEMORG(1, 2048, 64, 64, 1024, 40, 1, 1, 1),
+>>                       NAND_ECCREQ(4, 512),
+>>                       SPINAND_INFO_OP_VARIANTS(&read_cache_variants,
+>>                                                &write_cache_variants,
+>> @@ -103,7 +103,7 @@ static const struct spinand_info macronix_spinand_table[] = {
+>>                       SPINAND_ECCINFO(&mx35lfxge4ab_ooblayout,
+>>                                       mx35lf1ge4ab_ecc_get_status)),
+>>          SPINAND_INFO("MX35LF2GE4AB", 0x22,
+>> -                    NAND_MEMORG(1, 2048, 64, 64, 2048, 2, 1, 1),
+>> +                    NAND_MEMORG(1, 2048, 64, 64, 2048, 20, 2, 1, 1),
+>>                       NAND_ECCREQ(4, 512),
 > 
-> Matthias Schiffer (2):
->   module: allow arch overrides for .exit section names
->   ARM: module: recognize unwind exit sections
-> 
->  arch/arm/include/asm/module.h | 11 +++++++++++
->  include/linux/moduleloader.h  |  8 ++++++++
->  kernel/module.c               |  2 +-
->  3 files changed, 20 insertions(+), 1 deletion(-)
-> 
+> Maybe a bit late to the discussion, but shouldn't 20 and 40 be swapped
+> here, i.e. isn't it the larger flash that has more max bad blocks than
+> the smaller one?
 
+I think Miquel is out of office for some days, so I just checked and you 
+are right, the maximum number of bad blocks should be swapped.
 
+Actually there is also a wrong value in the GigaDevice driver: For the 
+GD5F4GQ4xA it should be 80 instead of 40.
+
+Would you mind sending a patch with a "Fixes:" tag, that fixes both, the 
+Macronix and the GigaDevice driver? Or should I send one?
+
+Thanks,
+Frieder
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
