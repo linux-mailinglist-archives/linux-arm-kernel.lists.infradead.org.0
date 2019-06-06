@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3DC537101
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:56:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C04C37102
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:56:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0/Yqzw2bJVOeG3qBc/x+vr7HeWkTNHQJfAdMUSQmx3Q=; b=oMK77Mviivmcy+
-	er0XHAzeDDHul0WIvBjF4BrGQ3+430b2OeoWuzIbeqP5ViipNUQXpaXzkkyGS7PW1zH6surrEYY7B
-	41z5LZdWl3BwqhxDD9OYSbGsC5zV3jGvc6nTrBrb5Z4j+hK5z0byWOw8Vsq1aD7+26ZRIl5ciM5ze
-	g2NhbH3tJJvjNFYX84Pfp9dObo9apShFR1JSJDuGV0t0QIqd9E7FEIJ+EWZx8/0yCRgaXuZNqF7yX
-	b/yBBCCy5Chi0LQZSJbak+KbhWxsp/6br5sekxmDIPQ/K9rjLRXJDLyFUOOydWZqUEbAT5FMklWOD
-	OOjFZaTY9/BWmmGic4Zw==;
+	List-Owner; bh=6Rll3/yqEcPYxnYu6NB6GcmnAUGL4Zf6+Nrc60Izfns=; b=Vbk8qpvK+xaPY0
+	lcuAOuGjBLStDZVqPSIU3PXhHhvSKv9ttqrLiInnEN7SZFhqQJw5mEbZ8aDbFD5gzk6ZXg6qKDi+C
+	+ItteCXY8cr7NAEKISUzaXmSEbFMmDR8VQ95TLdsD0lfHlhnHlps+tC7XbE81LxlFH1z5NbgXX8K8
+	bB9rFLhw9Qh9xzafQA2bfRULis60QXnj3QXnRnHwKLW/CWXdY9saagYYc9S3gWHNP+2uaOStzkmzy
+	O/Ddb17Rf57XhI9TXvD3P9oRaDWkz3Ocyyp2LnIA26i8Iq4iSllP1ZRkzNm878liFB90UlvMnoMGu
+	R2FxnXdVUuDRx8W/03dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYp8N-0002uH-Vy; Thu, 06 Jun 2019 09:56:36 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1hYp8Z-000390-AX; Thu, 06 Jun 2019 09:56:47 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYp7p-0002Mw-L6
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:56:05 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x569txIO004422;
- Thu, 6 Jun 2019 04:55:59 -0500
+ id 1hYp7t-0002TR-Qd
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:56:10 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x569u3Vm078863;
+ Thu, 6 Jun 2019 04:56:03 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559814959;
- bh=AFbZcGD05hnXKI5h5WdZTa40Gbo5LmksXVbRsgprfjs=;
+ s=ti-com-17Q1; t=1559814963;
+ bh=e23WnTYvUjw9k/zJtezvgJoxPPb3ZOXliq0JWnFHfqk=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=SZaZ7qlV/H0BkQpYCrqvW8UQn9ngDnj9a28A1vcAnhDZ+lPt9UebWRWd/swxnKg0B
- kEFv0aHafYcH4V8A/lW4z9MrcvN4ZYDukzxJ4uXMkJd5VSVomLA7KkWOMLh28pEXI8
- id5irsGtF9X3Hq/Vb/SMptd6xhB6vp8LSRqWYYCo=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x569txOK001996
+ b=kdhMAv/SIp7Oz5pW85x+hEflM9hQV60bFXhGgLRwlWb9Cck0v6eujqxbF6mwIdtrn
+ 5/l6frjbKgqM1wJyEMs+bnGLIVTQUTf+ftfoxdrwEye8eBlVUrljr0yMBD+v8alu1m
+ CrdX+c8aJvsjnP1QAOZ5RbMdlNoSL/EbS1tvY5QM=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x569u35f054665
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 6 Jun 2019 04:55:59 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ Thu, 6 Jun 2019 04:56:03 -0500
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 6 Jun
- 2019 04:55:59 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 04:56:03 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 6 Jun 2019 04:55:59 -0500
+ Frontend Transport; Thu, 6 Jun 2019 04:56:03 -0500
 Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x569thst016817;
- Thu, 6 Jun 2019 04:55:55 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x569thsu016817;
+ Thu, 6 Jun 2019 04:55:59 -0500
 From: Keerthy <j-keerthy@ti.com>
 To: <t-kristo@ti.com>, <nm@ti.com>, <robh+dt@kernel.org>
-Subject: [RFC RESEND PATCH v2 3/4] arm64: dts: ti: am6-main: Add gpio nodes
-Date: Thu, 6 Jun 2019 15:26:19 +0530
-Message-ID: <20190606095620.6211-4-j-keerthy@ti.com>
+Subject: [RFC RESEND PATCH v2 4/4] arm64: dts: ti: am654-base-board: Add
+ gpio_keys node
+Date: Thu, 6 Jun 2019 15:26:20 +0530
+Message-ID: <20190606095620.6211-5-j-keerthy@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190606095620.6211-1-j-keerthy@ti.com>
 References: <20190606095620.6211-1-j-keerthy@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_025601_998373_6A30A0AA 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20190606_025606_525945_E3A2BD8C 
+X-CRM114-Status: GOOD (  12.09  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,55 +99,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add gpio0/1 nodes under main domain. They have 96 and 90 gpios
-respectively and all are capable of generating banked interrupts.
+There are 2 push buttons: SW5 and SW6 that are basically connected to
+WKUP_GPIO0_24 and WKUP_GPIO0_27 respectively. Add the respective
+nodes and the pinctrl data to set the mode to GPIO and Input.
 
 Signed-off-by: Keerthy <j-keerthy@ti.com>
 ---
- arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 32 ++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+ .../arm64/boot/dts/ti/k3-am654-base-board.dts | 27 +++++++++++++++++++
+ 1 file changed, 27 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-index 22154f401930..182efe70402b 100644
---- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
-@@ -350,4 +350,36 @@
- 			ti,sci-rm-range-global-event = <0x1>;
+diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
+index cf1aa276a1ea..ea50b6e36eff 100644
+--- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
++++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
+@@ -6,6 +6,7 @@
+ /dts-v1/;
+ 
+ #include "k3-am654.dtsi"
++#include <dt-bindings/input/input.h>
+ 
+ / {
+ 	compatible =  "ti,am654-evm", "ti,am654";
+@@ -33,6 +34,25 @@
+ 			no-map;
  		};
  	};
 +
-+	main_gpio0:  main_gpio0@600000 {
-+		compatible = "ti,am654-gpio", "ti,keystone-gpio";
-+		reg = <0x0 0x600000 0x0 0x100>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		interrupt-parent = <&intr_main_gpio>;
-+		interrupts = <57 256>, <57 257>, <57 258>, <57 259>, <57 260>,
-+				<57 261>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
-+		ti,ngpio = <96>;
-+		ti,davinci-gpio-unbanked = <0>;
-+		clocks = <&k3_clks 57 0>;
-+		clock-names = "gpio";
-+	};
++	gpio-keys {
++		compatible = "gpio-keys";
++		autorepeat;
++		pinctrl-names = "default";
++		pinctrl-0 = <&push_button_pins_default>;
 +
-+	main_gpio1:  main_gpio1@601000 {
-+		compatible = "ti,am654-gpio", "ti,keystone-gpio";
-+		reg = <0x0 0x601000 0x0 0x100>;
-+		gpio-controller;
-+		#gpio-cells = <2>;
-+		interrupt-parent = <&intr_main_gpio>;
-+		interrupts = <58 256>, <58 257>, <58 258>, <58 259>, <58 260>,
-+				<58 261>;
-+		interrupt-controller;
-+			#interrupt-cells = <2>;
-+		ti,ngpio = <90>;
-+		ti,davinci-gpio-unbanked = <0>;
-+		clocks = <&k3_clks 58 0>;
-+		clock-names = "gpio";
++		sw5 {
++			label = "GPIO Key USER1";
++			linux,code = <BTN_0>;
++			gpios = <&wkup_gpio0 24 GPIO_ACTIVE_LOW>;
++		};
++
++		sw6 {
++			label = "GPIO Key USER2";
++			linux,code = <BTN_1>;
++			gpios = <&wkup_gpio0 27 GPIO_ACTIVE_LOW>;
++		};
 +	};
  };
+ 
+ &wkup_pmx0 {
+@@ -42,6 +62,13 @@
+ 			AM65X_WKUP_IOPAD(0x00e4, PIN_INPUT, 0) /* (AD6) WKUP_I2C0_SDA */
+ 		>;
+ 	};
++
++	push_button_pins_default: push_button__pins_default {
++		pinctrl-single,pins = <
++			AM65X_WKUP_IOPAD(0x0030, PIN_INPUT, 7) /* (R5) WKUP_GPIO0_24 */
++			AM65X_WKUP_IOPAD(0x003c, PIN_INPUT, 7) /* (P2) WKUP_GPIO0_27 */
++		>;
++	};
+ };
+ 
+ &main_pmx0 {
 -- 
 2.17.1
 
