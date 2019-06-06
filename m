@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4365A3795F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 18:17:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22AA137961
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 18:17:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jKSPyPOWS7UsTRWfbY8/5CAKBnPkXPK+VlJjO3zOUqM=; b=RNK2XxPRv52Sczx7g6bz6aCU6I
-	Godk5ZJsuCWixrnsIfCXym4XI1Djx0CcaLGaf2sgC8+AfvwYMG+/IdBJ7rtjv4PNdMpwaPpwPlK6B
-	2cnR/DvnBQSPcyUh8IU4ZPVzFSv24puSJdksGEv1ayVu97yZiag3yParCZFhGUYuYsfynBLaU67Ew
-	dtWv+hFAjpalxu4IBwySqc+E75vNcZhpKcJK0x3nlknXCx/FwrJ7QR2pEMSGGKcIa09yBU8IO3X52
-	aoVrhvZ1uvQSVALFcApjGp/p0+ok8d0WP4ZPKtWcaUwgiQAiNfscDBdBe2zckOfAcwCy5gYrJZwQU
-	fZSRu+qg==;
+	bh=+WcMDWS3kdsBvb08Gdw1Bm/vEP7bWANbaZHCYqfmQ34=; b=lvDEUceUQEYHMv1W8nx4G5YDjT
+	tFI7ccjBvt1ECEQ5XG1KtprrUq2+6r6/akVmr2B2YbbnxOmrZTT/wjxjHpTJckyzcA59kKQX/65nR
+	/geF5nP9pLUZsWNfO0n5LglgY7FadqKBqET/frNNnl1TO+OYIhCR/qE6J48aNqRnq3OrmCjhYgx/D
+	DSX41C+HJZ1dHzT10Bgu65RZIdYlIk5r49aEgYf1tCQoB+gV2OoeaCQAkum3XEIKeOTFXIqF6wWaf
+	1DX+kEvb2lwN1GUXwg2ZSKHcI4FgOwiO/cj3NnTZmOg060GRKsMV9xadSQXHp0T2h6VxXX30iMt28
+	Umc0N8gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYv4o-0007aL-HG; Thu, 06 Jun 2019 16:17:18 +0000
+	id 1hYv5C-00088D-3R; Thu, 06 Jun 2019 16:17:42 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYv4Y-0007Re-P9
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 16:17:04 +0000
+ id 1hYv4Z-0007SH-PD
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 16:17:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3AA6E15AB;
- Thu,  6 Jun 2019 09:17:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6373F15BF;
+ Thu,  6 Jun 2019 09:17:03 -0700 (PDT)
 Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- 4E85B3F690; Thu,  6 Jun 2019 09:17:01 -0700 (PDT)
+ 776EA3F690; Thu,  6 Jun 2019 09:17:02 -0700 (PDT)
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 2/4] coresight: tmc-etr: alloc_perf_buf: Do not call
- smp_processor_id from preemptible
-Date: Thu,  6 Jun 2019 17:16:45 +0100
-Message-Id: <1559837807-15447-3-git-send-email-suzuki.poulose@arm.com>
+Subject: [PATCH v4 3/4] coresight: tmc-etf: Do not call smp_processor_id from
+ preemptible
+Date: Thu,  6 Jun 2019 17:16:46 +0100
+Message-Id: <1559837807-15447-4-git-send-email-suzuki.poulose@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1559837807-15447-1-git-send-email-suzuki.poulose@arm.com>
 References: <1559837807-15447-1-git-send-email-suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_091702_817319_3D682A33 
-X-CRM114-Status: GOOD (  13.88  )
+X-CRM114-CacheID: sfid-20190606_091703_819395_824C757E 
+X-CRM114-Status: GOOD (  13.32  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,16 +75,16 @@ with the CPU the event is bound to. If it is not bound to a CPU, we
 use the current CPU node, using smp_processor_id(). However this is unsafe
 in a pre-emptible context and could generate the splats as below :
 
- BUG: using smp_processor_id() in preemptible [00000000] code: perf/1743
- caller is tmc_alloc_etr_buffer+0x1bc/0x1f0
- CPU: 1 PID: 1743 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
+ BUG: using smp_processor_id() in preemptible [00000000] code: perf/2544
+ caller is tmc_alloc_etf_buffer+0x5c/0x60
+ CPU: 2 PID: 2544 Comm: perf Not tainted 5.1.0-rc6-147786-g116841e #344
  Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Feb  1 2019
  Call trace:
   dump_backtrace+0x0/0x150
   show_stack+0x14/0x20
   dump_stack+0x9c/0xc4
   debug_smp_processor_id+0x10c/0x110
-  tmc_alloc_etr_buffer+0x1bc/0x1f0
+  tmc_alloc_etf_buffer+0x5c/0x60
   etm_setup_aux+0x1c4/0x230
   rb_alloc_aux+0x1b8/0x2b8
   perf_mmap+0x35c/0x478
@@ -99,34 +99,32 @@ in a pre-emptible context and could generate the splats as below :
 Use NUMA_NO_NODE hint instead of using the current node for events
 not bound to CPUs.
 
-Fixes: 22f429f19c4135d51e9 ("coresight: etm-perf: Add support for ETR backend")
+Fixes: 2e499bbc1a929ac ("coresight: tmc: implementing TMC-ETF AUX space API")
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 ---
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+ drivers/hwtracing/coresight/coresight-tmc-etf.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 7c81f63..5d2bf6d 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -1184,14 +1184,11 @@ static struct etr_buf *
- alloc_etr_buf(struct tmc_drvdata *drvdata, struct perf_event *event,
- 	      int nr_pages, void **pages, bool snapshot)
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+index b89e29c..23b7ff0 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
+@@ -377,12 +377,10 @@ static void *tmc_alloc_etf_buffer(struct coresight_device *csdev,
+ 				  struct perf_event *event, void **pages,
+ 				  int nr_pages, bool overwrite)
  {
 -	int node, cpu = event->cpu;
 +	int node;
- 	struct etr_buf *etr_buf;
- 	unsigned long size;
+ 	struct cs_buffers *buf;
  
 -	if (cpu == -1)
 -		cpu = smp_processor_id();
 -	node = cpu_to_node(cpu);
--
 +	node = (event->cpu == -1) ? NUMA_NO_NODE : cpu_to_node(event->cpu);
- 	/*
- 	 * Try to match the perf ring buffer size if it is larger
- 	 * than the size requested via sysfs.
+ 
+ 	/* Allocate memory structure for interaction with Perf */
+ 	buf = kzalloc_node(sizeof(struct cs_buffers), GFP_KERNEL, node);
 -- 
 2.7.4
 
