@@ -2,52 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4372336D78
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 09:41:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6884936D87
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 09:42:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SEaM4W4Plkws0gMCBmOOCu7m5HCSNi6kuCLbWldpqEE=; b=L4Uxu7nhBE1t2wHGH5O1ET/C9
-	EdUIZZ2k63JrwTnfMffwBLgi6kfVrWEaG7TlswU7HSBYvqnWMsvktx5qEjqZWQUR2AdCRZY4nWMe+
-	AsNVyDDzpciuPng32k+g7IPoAxFxl4H7jIEe5+yzF6vX8LCpYIlVqDTqhh8CP0VCLO0yrkxfeER8b
-	ogpgcRvs4/JvWJ3nT14ksQE0/ZSi4wSJ/6hTy6pHl6CAScgKqCmcE+8J6XbskQelPWWfHYY9kGKGc
-	BHfV2bPPZIipnDFOW8dRU2wpUIzokPntfv2ePZatg9Z2lhUOrDBdblTRnh0l7jasKXvznHZ+k/E0q
-	1FMMDj+oQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mDBgvIvx6yi+9AecMuMt7EQY7d45mfpiiS4c1oFPMss=; b=LiTzI+zzAm9Cd3
+	8PCxta1doyqiuR+OGbgz3YT5PJNzVMDiUeeQ66WrVmfgxRLQ4hpIeUW4NsMNlX+wNUZi1aaQq6bRQ
+	CeSz30CC6IcRBYfZygtYpn/GowSNb+ISsZubDu1qX9h4RKHCTOlJpLolobYc5M3AwJaBvXZm/MNfp
+	o0rPh+StF27To1vFeM4Ds105PDD9GY54/TXWP2FutFBXqooA1zkb6aL0xkAqd+qOKHpLyFz4GRGux
+	xs/AZ6OqjB8ZQOwBg/F6hkySWinqPlfg4YE7E/A/1l8QiOxyDjx9HoXAz0bpE9u3fegsgkC4oq1P3
+	qCE33hMOxEaehyZvRiOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYn1B-0002Wp-GL; Thu, 06 Jun 2019 07:41:01 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1hYn2q-0002zn-F7; Thu, 06 Jun 2019 07:42:44 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYn14-0002W8-Ko
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 07:40:56 +0000
-Received: from localhost (aaubervilliers-681-1-24-139.w90-88.abo.wanadoo.fr
- [90.88.144.139]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id 17C8310000E;
- Thu,  6 Jun 2019 07:40:36 +0000 (UTC)
-Date: Thu, 6 Jun 2019 09:40:36 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V4 1/4] dt-bindings: imx: Add clock binding doc for i.MX8MN
-Message-ID: <20190606074036.vx2smtauiwxy6wzx@flea>
-References: <20190606013323.3392-1-Anson.Huang@nxp.com>
+ id 1hYn2i-0002zU-Tz
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 07:42:38 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x567abQh026873; Thu, 6 Jun 2019 09:42:33 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=2pnG067CQBsFQ0nrqkBYXv+JxQO9bStpus+oiXJpQJw=;
+ b=npiXQKxLn1F0OQYGfqEjGS3tkWZ32IYOxnz7/JlRGJV+32nW+Duoh2f28aw3XPvV3VGA
+ /hXCI+ald6VWZ9GdEaO9tV8NIthSvQ1Yx22Fx7TUZwdoZ+yACuU4PfPiK0rvv2jzIkyR
+ fHqcnDS2Dq+p4YmZh/gzPbJyYqVXlZCtpFH6GQMpcv4EssZXnzAqWB9tG1KXhxN4DB/R
+ IznH7iJ88saRSQzbqefnIZ+WBF1rS564RZK/Iyf/FLVY5Xmpslu8tV1jpoZ5YMz4JC+2
+ 5F9OyB/kPx31QBHFBdrKHS99RsI9iw/hYMjUpAQ0BfHmeK/ipbeYIZQyL4/NjxS8+wcl gg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2sxqycst26-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 06 Jun 2019 09:42:33 +0200
+Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 68DC334;
+ Thu,  6 Jun 2019 07:42:32 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3A8F714EB;
+ Thu,  6 Jun 2019 07:42:32 +0000 (GMT)
+Received: from SFHDAG3NODE1.st.com (10.75.127.7) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 6 Jun
+ 2019 09:42:31 +0200
+Received: from SFHDAG3NODE1.st.com ([fe80::1166:1abb:aad4:5f86]) by
+ SFHDAG3NODE1.st.com ([fe80::1166:1abb:aad4:5f86%20]) with mapi id
+ 15.00.1347.000; Thu, 6 Jun 2019 09:42:31 +0200
+From: Erwan LE RAY <erwan.leray@st.com>
+To: Borut Seljak <borut.seljak@t-2.net>
+Subject: Re: Fwd: [PATCH] serial: stm32: fix a recursive locking in
+ stm32_config_rs485
+Thread-Topic: Fwd: [PATCH] serial: stm32: fix a recursive locking in
+ stm32_config_rs485
+Thread-Index: AQHVGr0egfGBr+I5bUuvhxEmcTN9eaaLX30AgAAD5wCAArxlgA==
+Date: Thu, 6 Jun 2019 07:42:31 +0000
+Message-ID: <78dfdaaf-d855-8913-b8c5-e4ab6774868a@st.com>
+References: <20190604095452.6360-1-borut.seljak@t-2.net>
+ <f2a264ac-e334-63b7-18c9-e45cde7bdf95@st.com>
+ <41dddd5f-5c1c-3346-890a-8018f26ebd49@st.com>
+ <33271a7e-644b-70e3-f84c-d019b394ce77@st.com>
+In-Reply-To: <33271a7e-644b-70e3-f84c-d019b394ce77@st.com>
+Accept-Language: en-US, fr-FR
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.49]
+Content-ID: <C476C30ECEF8184B9CEC2887624968A7@st.com>
 MIME-Version: 1.0
-In-Reply-To: <20190606013323.3392-1-Anson.Huang@nxp.com>
-User-Agent: NeoMutt/20180716
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-06_06:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_004054_998972_CD36E9C5 
-X-CRM114-Status: GOOD (  17.13  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190606_004237_291804_2B849A3E 
+X-CRM114-Status: GOOD (  15.31  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -59,209 +110,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peng.fan@nxp.com, ping.bai@nxp.com,
- catalin.marinas@arm.com, mturquette@baylibre.com, will.deacon@arm.com,
- bjorn.andersson@linaro.org, leonard.crestez@nxp.com, festevam@gmail.com,
- linux-clk@vger.kernel.org, abel.vesa@nxp.com, jagan@amarulasolutions.com,
- Linux-imx@nxp.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- olof@lixom.net, robh+dt@kernel.org, horms+renesas@verge.net.au,
- linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com, sboyd@kernel.org,
- linux-kernel@vger.kernel.org, dinguyen@kernel.org, kernel@pengutronix.de,
- enric.balletbo@collabora.com, shawnguo@kernel.org, l.stach@pengutronix.de
-Content-Type: multipart/mixed; boundary="===============7562383263305414709=="
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Borut,
 
---===============7562383263305414709==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="lbx5fpk47vlzcrms"
-Content-Disposition: inline
+Please remove unused "flags" variable declaration.
+
+Erwan.
 
 
---lbx5fpk47vlzcrms
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Thu, Jun 06, 2019 at 09:33:20AM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
+On 6/4/19 3:55 PM, Erwan LE RAY wrote:
 >
-> Add the clock binding doc for i.MX8MN.
->
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V3:
-> 	- switch binding doc from .txt to .yaml.
-> ---
->  .../devicetree/bindings/clock/imx8mn-clock.yaml    | 115 +++++++++++
->  include/dt-bindings/clock/imx8mn-clock.h           | 215 +++++++++++++++++++++
->  2 files changed, 330 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
->  create mode 100644 include/dt-bindings/clock/imx8mn-clock.h
->
-> diff --git a/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-> new file mode 100644
-> index 0000000..8cb8fcf
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-> @@ -0,0 +1,115 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/bindings/clock/imx8mn-clock.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP i.MX8M Nano Clock Control Module Binding
-> +
-> +maintainers:
-> +  - Anson Huang <Anson.Huang@nxp.com>
-> +
-> +description: |
-> +  NXP i.MX8M Nano clock control module is an integrated clock controller, which
-> +  generates and supplies to all modules.
-> +
-> +  This binding uses common clock bindings
-> +  [1] Documentation/devicetree/bindings/clock/clock-bindings.txt
+>> Hi Borut,
+>>
+>> Please add the following line in the commit message (before your =
 
-Which part exactly are you using?
+>> sign-off) in a V2 of your patch:
+>>
+>> Fixes: 1bcda09d291081 ("serial: stm32: add support for RS485 hardware =
 
-I'm not sure it's worth referring to. Any provider property should be
-listed here, and the consumer properties are already checked.
+>> control mode")
+>>
+>> I'm OK with the patch itself.
+>>
+>> Erwan.
+>>
+>>
+>> Subject: [PATCH] serial: stm32: fix a recursive locking in
+>>> stm32_config_rs485
+>>> Date: Tue,=A0 4 Jun 2019 11:54:51 +0200
+>>> From: Borut Seljak <borut.seljak@t-2.net>
+>>> CC: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
+>>> <alexandre.torgue@st.com>, Greg Kroah-Hartman
+>>> <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+>>> borut.seljak@t-2.net, linux-serial@vger.kernel.org, Jiri Slaby
+>>> <jslaby@suse.com>, linux-stm32@st-md-mailman.stormreply.com,
+>>> linux-arm-kernel@lists.infradead.org
+>>>
+>>> Remove spin_lock_irqsave in stm32_config_rs485, it cause recursive =
 
-> +properties:
-> +  compatible:
-> +    const: fsl,imx8mn-ccm
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: 32k osc
-> +      - description: 24m osc
-> +      - description: ext1 clock input
-> +      - description: ext2 clock input
-> +      - description: ext3 clock input
-> +      - description: ext4 clock input
-> +
-> +  clock-names:
-> +    items:
-> +      - const: osc_32k
-> +      - const: osc_24m
-> +      - const: clk_ext1
-> +      - const: clk_ext2
-> +      - const: clk_ext3
-> +      - const: clk_ext4
-> +
-> +  '#clock-cells':
-> +    const: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - '#clock-cells'
-> +
-> +examples:
-> +  # Clock Control Module node:
-> +  - |
-> +    clk: clock-controller@30380000 {
-> +        compatible = "fsl,imx8mn-ccm";
-> +        reg = <0x0 0x30380000 0x0 0x10000>;
-> +        #clock-cells = <1>;
-> +        clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>,
-> +                 <&clk_ext2>, <&clk_ext3>, <&clk_ext4>;
-> +        clock-names = "osc_32k", "osc_24m", "clk_ext1",
-> +                      "clk_ext2", "clk_ext3", "clk_ext4";
-> +    };
-> +
-> +  # Required external clocks for Clock Control Module node:
-> +  - |
-> +    osc_32k: clock-osc-32k {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <32768>;
-> +	clock-output-names = "osc_32k";
-> +    };
-> +
-> +    osc_24m: clock-osc-24m {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <24000000>;
-> +        clock-output-names = "osc_24m";
-> +    };
-> +
-> +    clk_ext1: clock-ext1 {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <133000000>;
-> +        clock-output-names = "clk_ext1";
-> +    };
-> +
-> +    clk_ext2: clock-ext2 {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <133000000>;
-> +        clock-output-names = "clk_ext2";
-> +    };
-> +
-> +    clk_ext3: clock-ext3 {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency = <133000000>;
-> +        clock-output-names = "clk_ext3";
-> +    };
-> +
-> +    clk_ext4: clock-ext4 {
-> +        compatible = "fixed-clock";
-> +        #clock-cells = <0>;
-> +        clock-frequency= <133000000>;
-> +        clock-output-names = "clk_ext4";
-> +    };
-> +
-> +  # The clock consumer should specify the desired clock by having the clock
-> +  # ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mn-clock.h
-> +  # for the full list of i.MX8M Nano clock IDs.
+>>> locking.
+>>> Already locked in uart_set_rs485_config.
+>>>
+>>> Signed-off-by: Borut Seljak <borut.seljak@t-2.net>
+>>> ---
+>>> =A0 drivers/tty/serial/stm32-usart.c | 2 --
+>>> =A0 1 file changed, 2 deletions(-)
+>>>
+>>> diff --git a/drivers/tty/serial/stm32-usart.c
+>>> b/drivers/tty/serial/stm32-usart.c
+>>> index e8d7a7bb4339..da373a465f51 100644
+>>> --- a/drivers/tty/serial/stm32-usart.c
+>>> +++ b/drivers/tty/serial/stm32-usart.c
+>>> @@ -107,7 +107,6 @@ static int stm32_config_rs485(struct uart_port =
 
-I guess this could be part of the clock-cells description.
+>>> *port,
+>>> =A0=A0=A0=A0=A0 bool over8;
+>>> =A0=A0=A0=A0=A0 unsigned long flags;
+- unsigned long flags;
+>>> =A0 - spin_lock_irqsave(&port->lock, flags);
+>>> =A0=A0=A0=A0=A0 stm32_clr_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit=
+));
+>>> =A0=A0=A0=A0=A0=A0 port->rs485 =3D *rs485conf;
+>>> @@ -147,7 +146,6 @@ static int stm32_config_rs485(struct uart_port =
 
-Once fixed,
-Reviewed-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---lbx5fpk47vlzcrms
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXPjDdAAKCRDj7w1vZxhR
-xQf4AQDGmVlx49YWe4vIu1dehv4zttFw3oRaIsMiDSi4vzwyMQEA+e7hg+RgrL4i
-6aPykXgdE5sTJox+CRpk+KGv3Ovk3AU=
-=kpoe
------END PGP SIGNATURE-----
-
---lbx5fpk47vlzcrms--
-
-
---===============7562383263305414709==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+>>> *port,
+>>> =A0=A0=A0=A0=A0 }
+>>> =A0=A0=A0=A0=A0=A0 stm32_set_bits(port, ofs->cr1, BIT(cfg->uart_enable_=
+bit));
+>>> -=A0=A0=A0 spin_unlock_irqrestore(&port->lock, flags);
+>>> =A0=A0=A0=A0=A0=A0 return 0;
+>>> =A0 }
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7562383263305414709==--
-
