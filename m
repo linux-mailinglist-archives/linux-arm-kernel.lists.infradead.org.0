@@ -2,58 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A15B37969
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 18:21:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE0A537977
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 18:25:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=l3QvwB94ULRmGwsVtGA6DcXPft76bCYgbclqDKPR8U4=; b=iTRKDh/H/LHq1l8c7YQkC8nt+
-	fuiIeJ9vBPx7ZEE5ZfAi1uPvB0WnCuRnHVzQV5NCyDI4ROTbLCZbFe2On8Zv40WKbpKX9JIRGDEux
-	DLlzW6zWd31wtGzGTB5SXVsGTTMKhQI+jALt86ezFFxe0xn8QfHnuoCL3KfRyNk2WZuEY0eQ/LLaM
-	hdZHpgnz5xOKCVEZ9tJiuiY1o/AGzx3o1Qvrc7slKHw+4j3pFvvzOKmIdH1+61BTTnv8dezfVsxgH
-	72tXcGMhtj240yPgOWpKoG7KpRHEayV1FMCKd4QIGZv0gzAxEr68iS6ewu8L+LNwsrEAVOC5FPN+n
-	rzRYZJaTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:Subject:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pgRBr+w/5JkPbvPy1RNTwOb5anv3b87LI9yMi1tj49E=; b=L8hzIFtyJrUPDd
+	6pVzRmtsuORkLUVO4syXpwliIpabPhXLOt3lDaBMGjCyl+EM00VXpM8yf5BzcZujJvcC/C4A2wibr
+	X45bhLxSA3oaZR0trhKEbhhdsXCGuLgecPcq2N5R0++I6S/04MU89xffg4YIMP6x82vD0Rz2l5Qd+
+	u9K2DnC3ebWeTuia7CXyILa9FvqjbdG2aODbJFVorfb4Z/iWx4npXkfks/GrmKnAlYkh9skwYR8Qm
+	ts6+cenl4+/zJMxfPvdH5PMWheMJfxjUFXSIijtohPvODjDb5+gWWn275vcfj/Fha6Uho/VgTjLt0
+	ykzUmjxQfQ0RqMs3bjBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYv8r-00027A-L0; Thu, 06 Jun 2019 16:21:29 +0000
-Received: from usa-sjc-mx-foss1.foss.arm.com ([217.140.101.70]
- helo=foss.arm.com)
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYv8k-00026j-72
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 16:21:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D6879A78;
- Thu,  6 Jun 2019 09:21:21 -0700 (PDT)
-Received: from [10.1.196.93] (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C4B963F690;
- Thu,  6 Jun 2019 09:21:20 -0700 (PDT)
-Subject: Re: [PATCH] Documentation: coresight: Update the generic device names
-To: mathieu.poirier@linaro.org
-References: <1559229077-26436-1-git-send-email-suzuki.poulose@arm.com>
- <20190603190133.GA20462@xps15>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <99055755-6525-694e-a15d-5de7318a80da@arm.com>
-Date: Thu, 6 Jun 2019 17:21:19 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hYvD6-00046j-D6; Thu, 06 Jun 2019 16:25:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYvCy-00046D-Sh
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 16:25:46 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EFFB820645;
+ Thu,  6 Jun 2019 16:25:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559838344;
+ bh=qyHzBivnLPb/+lw9r58rXcindZmclzeck6Tk1ntbfR8=;
+ h=In-Reply-To:References:To:Subject:From:Cc:Date:From;
+ b=deawRK9bcY7UvS2ygyKhywdOffS+3brvmGlW2SlvDOHttQaf7wnof7uHccsjyeatp
+ Gk+k7lIjZO8FcpKii4zkyaj9wtgTtS0DEFR6HxkE0Sl0EEtPsCFgBCE3fKFcuFywAc
+ 6D0cV/u/qkgXNd/su348kRgsPNygN/kkrBCFUkhE=
 MIME-Version: 1.0
-In-Reply-To: <20190603190133.GA20462@xps15>
-Content-Language: en-US
+In-Reply-To: <20190604015928.23157-3-Anson.Huang@nxp.com>
+References: <20190604015928.23157-1-Anson.Huang@nxp.com>
+ <20190604015928.23157-3-Anson.Huang@nxp.com>
+To: Anson.Huang@nxp.com, abel.vesa@nxp.com, aisheng.dong@nxp.com,
+ bjorn.andersson@linaro.org, catalin.marinas@arm.com,
+ devicetree@vger.kernel.org, dinguyen@kernel.org, enric.balletbo@collabora.com,
+ festevam@gmail.com, horms+renesas@verge.net.au, jagan@amarulasolutions.com,
+ kernel@pengutronix.de, l.stach@pengutronix.de, leonard.crestez@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mark.rutland@arm.com, maxime.ripard@bootlin.com,
+ mturquette@baylibre.com, olof@lixom.net, ping.bai@nxp.com, robh+dt@kernel.org,
+ s.hauer@pengutronix.de, shawnguo@kernel.org, will.deacon@arm.com
+Subject: Re: [PATCH V3 3/4] clk: imx: Add support for i.MX8MN clock driver
+From: Stephen Boyd <sboyd@kernel.org>
+User-Agent: alot/0.8.1
+Date: Thu, 06 Jun 2019 09:25:43 -0700
+Message-Id: <20190606162543.EFFB820645@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_092122_256930_13D40895 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190606_092544_941605_2B773C81 
+X-CRM114-Status: UNSURE (   6.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,69 +85,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, corbet@lwn.net, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, leo.yan@linaro.org
+Cc: Linux-imx@nxp.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
-
-On 03/06/2019 20:01, Mathieu Poirier wrote:
-> Hi Suzuki,
+Quoting Anson.Huang@nxp.com (2019-06-03 18:59:27)
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> On Thu, May 30, 2019 at 04:11:17PM +0100, Suzuki K Poulose wrote:
->> Update the documentation to reflect the new naming scheme with
->> latest changes.
->>
->> Reported-by: Leo Yan <leo.yan@linaro.org>
->> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
->> Cc: Jonathan Corbet <corbet@lwn.net>
->> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->> ---
->>   Documentation/trace/coresight.txt | 34 +++++++++++++++++++---------------
->>   1 file changed, 19 insertions(+), 15 deletions(-)
->>
->> diff --git a/Documentation/trace/coresight.txt b/Documentation/trace/coresight.txt
->> index efbc832..7b427cf 100644
->> --- a/Documentation/trace/coresight.txt
->> +++ b/Documentation/trace/coresight.txt
->> @@ -326,16 +326,20 @@ amount of processor cores), the "cs_etm" PMU will be listed only once.
->>   A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
->>   listed along with configuration options within forward slashes '/'.  Since a
->>   Coresight system will typically have more than one sink, the name of the sink to
->> -work with needs to be specified as an event option.  Names for sink to choose
->> -from are listed in sysFS under ($SYSFS)/bus/coresight/devices:
->> +work with needs to be specified as an event option.
->> +On newer kernels the available sinks are listed in sysFS under:
->> +($SYSFS)/bus/event_source/devices/cs_etm/sinks/
->>   
->> -	root@linaro-nano:~# ls /sys/bus/coresight/devices/
->> -		20010000.etf   20040000.funnel  20100000.stm  22040000.etm
->> -		22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu
->> -		20070000.etr     20120000.replicator  220c0000.funnel
->> -		23040000.etm  23140000.etm     23340000.etm
->> +	root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
->> +	tmc_etf0  tmc_etr0  tpiu0
->>   
->> -	root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
->> +On older kernels, this may need to be found from the list of coresight devices,
->> +available under ($SYSFS)/bus/coresight/devices/:
->> +
->> +	root@localhost:/sys/bus/coresight/devices# ls
->> +	etm0  etm1  etm2  etm3  etm4  etm5  funnel0  funnel1  funnel2  replicator0  stm0 tmc_etf0  tmc_etr0  tpiu0
->> +
->> +	root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
+> This patch adds i.MX8MN clock driver support.
 > 
-> On the "older" kernels you are referring to one would find the original naming
-> convention.  Everything else looks good to me.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> Changes since V2:
+>         - use platform driver model for this clock driver;
 
-True, but do we care what we see there ? All we care about is the location,
-where to find them. I could fix it, if you think thats needed.
+Can you also use platform device APIs like platform_*(),
+devm_ioremap_resource() and devmified clk registration?
 
-Cheers
-Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
