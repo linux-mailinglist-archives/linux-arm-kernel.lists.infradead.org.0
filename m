@@ -2,71 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D52F737852
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:42:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9515737873
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:46:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rjMed7BYIu0U2ewbQdty/jwNqGOSwYtI9DJhuQLRbNs=; b=PHMm8Yq78qhz0e
-	RK11N6ybANZCGk2xdGKRp0j76vB5Xt9kznjNMPHzKXLEW6b3saaiF/sfikjNC2EXk/5uq3MEKQuw0
-	ot5TxKAgIi0Oi6i1qGS+YiU8xIg/KwDbV2cmaXsM7+dF/vQjKW6fzMi1OMqRbjheT6x+kZTjQ79Y4
-	6voPwzC8UgA31+OCVIvKTJ6hZcD7tpqkFA4v2Ty0igNhRvrjJoQQQ5nVJFaP9F3yxI+gs5EU99/Qz
-	RUr37hwTU7cfNy+q0fhrc6XJZXh7QCVIJkm1EtGSwFCxjA+pQwlsKTA1GYyyP939vxNhA7VnGmzj2
-	YWgXQ8BM0y/9jLaEFTOA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1/qfRqgz5a8Z+L9ajzhBe/dbbv1nbewkJ8tyItrMbyA=; b=BAUDNqtK8qJbfM
+	H8SLd4H+ekmbxCkMHqKOyzQlCHF41mFrm2mkLTyoK9V2JZeBAegMmKufIDlOUVjGsZ3wJr5SxbPho
+	V5uyrj5r4TQtCgS3MrwdZ1uP3lgxL7zHHJuHcStWbg0LwXgrUewhmvFtQyX5dQrYB55gwY2LiwPLB
+	KBMMIS/X89Itu+Ac1n+d2tXvMotiKjAXocDP94CslH6lGImZhkOnwUM1nb5zMAgmcw0RYmFASQ1lj
+	keA8jEVJ13zsjdztsgXS4rkrTtXXn48MFf56AGKDLJULtLYzQCigvJnMELeu4I+h0qFG/9IbLznX7
+	RX1ekQP+5RUlQNoFFW3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYuX5-00018D-E7; Thu, 06 Jun 2019 15:42:27 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hYubF-0002nD-Vg; Thu, 06 Jun 2019 15:46:45 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYuWy-00017o-HE
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 15:42:21 +0000
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 0BB2830C31B7;
- Thu,  6 Jun 2019 15:42:16 +0000 (UTC)
-Received: from llong.remote.csb (dhcp-17-85.bos.redhat.com [10.18.17.85])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 1B2AF5F7D8;
- Thu,  6 Jun 2019 15:42:10 +0000 (UTC)
-Subject: Re: [PATCH v2 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-From: Waiman Long <longman@redhat.com>
-To: Alex Kogan <alex.kogan@oracle.com>, Peter Zijlstra <peterz@infradead.org>
-References: <20190329152006.110370-1-alex.kogan@oracle.com>
- <20190329152006.110370-4-alex.kogan@oracle.com>
- <60a3a2d8-d222-73aa-2df1-64c9d3fa3241@redhat.com>
- <20190402094320.GM11158@hirez.programming.kicks-ass.net>
- <6AEDE4F2-306A-4DF9-9307-9E3517C68A2B@oracle.com>
- <20190403160112.GK4038@hirez.programming.kicks-ass.net>
- <C0BC44A5-875C-4BED-A616-D380F6CF25D5@oracle.com>
- <20190605204003.GC3402@hirez.programming.kicks-ass.net>
- <6426D627-77EE-471C-B02A-A85271B666E9@oracle.com>
- <409b5d52-1f7d-7f60-04c7-e791e069239f@redhat.com>
-Organization: Red Hat
-Message-ID: <dc79105d-3f4d-d940-0313-cec9b3cf0680@redhat.com>
-Date: Thu, 6 Jun 2019 11:42:09 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hYub7-0002kF-KY; Thu, 06 Jun 2019 15:46:40 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 4D16868F10A3783AD570;
+ Thu,  6 Jun 2019 23:46:18 +0800 (CST)
+Received: from localhost (10.202.226.61) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Thu, 6 Jun 2019
+ 23:46:14 +0800
+Date: Thu, 6 Jun 2019 16:46:00 +0100
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+Subject: Re: [PATCH 3/4] iio: adc: mediatek: SET_LATE_SYSTEM_SLEEP_PM_OPS
+ support
+Message-ID: <20190606164600.000060b3@huawei.com>
+In-Reply-To: <1559041196.12867.3.camel@mtkswgap22>
+References: <1557994247-16739-1-git-send-email-chun-hung.wu@mediatek.com>
+ <1557994247-16739-4-git-send-email-chun-hung.wu@mediatek.com>
+ <20190518113527.5210b0bf@archlinux>
+ <1558332205.11080.6.camel@mtkswgap22>
+ <7838dcae-8a69-0297-718b-a061b14a456d@gmail.com>
+ <1559041196.12867.3.camel@mtkswgap22>
+Organization: Huawei
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-In-Reply-To: <409b5d52-1f7d-7f60-04c7-e791e069239f@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.40]); Thu, 06 Jun 2019 15:42:20 +0000 (UTC)
+X-Originating-IP: [10.202.226.61]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_084220_593247_5677CC9F 
-X-CRM114-Status: GOOD (  16.87  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190606_084638_403384_346D8C9E 
+X-CRM114-Status: GOOD (  22.08  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,43 +69,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, arnd@arndb.de, dave.dice@oracle.com,
- x86@kernel.org, will.deacon@arm.com, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, Rahul Yadav <rahul.x.yadav@oracle.com>,
- mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- Steven Sistare <steven.sistare@oracle.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Daniel Jordan <daniel.m.jordan@oracle.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lars-Peter Clausen <lars@metafoo.de>, wsd_upstream@mediatek.com,
+ linux-iio@vger.kernel.org, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, stanley.chu@mediatek.com,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>, jg_poxu@mediatek.com,
+ Jonathan Cameron <jic23@kernel.org>, peter.wang@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/6/19 11:32 AM, Waiman Long wrote:
-> On 6/6/19 11:21 AM, Alex Kogan wrote:
->>>> Also, the paravirt code is under arch/x86, while CNA is generic (not
->>>> x86-specific).  Do you still want to see CNA-related patching residing
->>>> under arch/x86?
->>>>
->>>> We still need a config option (something like NUMA_AWARE_SPINLOCKS) to
->>>> enable CNA patching under this config only, correct?
->>> There is the static_call() stuff that could be generic; I posted a new
->>> version of that today (x86 only for now, but IIRC there's arm64 patches
->>> for that around somewhere too).
->> The static_call technique appears as the more desirable long-term approach, but I think it would be prudent to keep the patches decoupled for now so we can move forward with less entanglements.
->> So unless anyone objects, we will work on plugging into the existing patching for pv.
->> And we will keep that code under arch/x86, but will be open for any suggestion to move it elsewhere.
->>
-> If you mean making the CNV code depends on PARAVIRT_SPINLOCKS for now,
-> that is fine. The code should be under kernel/locking. You shouldn't put
-> it somewhere under arch/x86.
+On Tue, 28 May 2019 18:59:56 +0800
+Chun-Hung Wu <chun-hung.wu@mediatek.com> wrote:
 
-I mean the core CNV code should be under kernel/locking. The paravirt
-specific code, however, should be close to the current paravirt code
-which is under arch/x86.
+> Hi Matthias:
+> 
+>   Thanks for your suggestion, I think device_links is a good way to
+> make dependency of module's suspend/resume order.
+> 
+> Hi Jonathan:
+> 
+>   Is it ok to keep using late_suspend and early_resume, or do you think
+> it's better to use device_links?
+I think device links would be preferable as the reasoning becomes explicit.
+As I understand them they are also a less fragile solution.
 
--Longman
+Thanks,
+
+Jonathan
+
+> 
+> Thanks,
+> Chun-Hung
+> On Wed, 2019-05-22 at 18:28 +0200, Matthias Brugger wrote:
+> > 
+> > On 20/05/2019 08:03, Chun-Hung Wu wrote:  
+> > > Hi Jonathan:
+> > > 
+> > >   Thanks for the prompt reply,
+> > > 
+> > > On Sat, 2019-05-18 at 11:35 +0100, Jonathan Cameron wrote:  
+> > >> On Thu, 16 May 2019 16:10:46 +0800
+> > >> Chun-Hung Wu <chun-hung.wu@mediatek.com> wrote:
+> > >>  
+> > >>>   Move suspend/resume to late_suspend and
+> > >>> early_resume to gurantee users can use auxadc  
+> > >> guarantee
+> > >>  
+> > > will fix it in next version.  
+> > >>> driver at suspend/resume stage.  
+> > >> No problem with the patch content, but we need a reason why they may
+> > >> want to do so?  
+> > > Our thermal drivers uses auxadc at suspend/resume stage.
+> > > In order to avoid auxadc suspended prior to thermal driver,
+> > > we move auxadc to late_suspend and early_resume.
+> > >   
+> > 
+> > That sounds like a user of device_links [1] to me.
+> > 
+> > [1] https://www.kernel.org/doc/html/latest/driver-api/device_link.html
+> >   
+> > > Thanks,
+> > > Chun-Hung  
+> > >>
+> > >> Thanks,
+> > >>
+> > >> Jonathan  
+> > >>>
+> > >>> Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+> > >>> ---
+> > >>>  drivers/iio/adc/mt6577_auxadc.c | 7 ++++---
+> > >>>  1 file changed, 4 insertions(+), 3 deletions(-)
+> > >>>
+> > >>> diff --git a/drivers/iio/adc/mt6577_auxadc.c b/drivers/iio/adc/mt6577_auxadc.c
+> > >>> index e1bdcc0..58d7cb2 100644
+> > >>> --- a/drivers/iio/adc/mt6577_auxadc.c
+> > >>> +++ b/drivers/iio/adc/mt6577_auxadc.c
+> > >>> @@ -326,9 +326,10 @@ static int mt6577_auxadc_remove(struct platform_device *pdev)
+> > >>>  	return 0;
+> > >>>  }
+> > >>>  
+> > >>> -static SIMPLE_DEV_PM_OPS(mt6577_auxadc_pm_ops,
+> > >>> -			 mt6577_auxadc_suspend,
+> > >>> -			 mt6577_auxadc_resume);
+> > >>> +static const struct dev_pm_ops mt6577_auxadc_pm_ops = {
+> > >>> +	SET_LATE_SYSTEM_SLEEP_PM_OPS(mt6577_auxadc_suspend,
+> > >>> +				     mt6577_auxadc_resume)
+> > >>> +};
+> > >>>  
+> > >>>  static const struct of_device_id mt6577_auxadc_of_match[] = {
+> > >>>  	{ .compatible = "mediatek,mt2701-auxadc", .data = &mt8173_compat},  
+> > >>  
+> > > 
+> > >   
+> 
+> 
+
 
 
 _______________________________________________
