@@ -2,81 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8550A377D3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:27:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED6A1377FD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 17:32:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ls1/kVnOaw3ZxZpazw/BjMTeRCsdH2O7vpg89aoNsBM=; b=JrrAUEhPjDyMsP
-	7iJyd/SChbJ4YFwFP4c8tykMzc179lqcekt3cTeC/ZXLpDBhIHYDbiYSTLRbCpFY6B0O93l+XKaz4
-	uH+dBHGs6tHT1H0iLcGnBiKPixl5CUHcKPZnlGe/V/6sdpHgjqbaWPSN3xBCDJHv2itV6P4xllIhM
-	PTM11D3DKTSXU1EjJJIWtKICYlmuTBsa/0bmp3G56k2Y6rWRHvKPujk3qH3uQ988HkKJChIHKuqqq
-	UFVisa8PRKM34/P7WU3TsDxLwDKxTsMiTv8FlJGTRC672auVnyyGFC5l6GC+kdlNACN8K29xE/04V
-	l1EF8vGmO7KmYEF4pV6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=V+5K5QOa4dRzOTn35P9Q2AkwblJnHWPbB4hosdszHls=; b=VeUaKRooiAG4HOJfhYvJqGn1b
+	aeQf5h9MnCX2rngkIpvo3J9EESyWEAqUwwwdka8tqZ0W1OuAkOZysiMyt8HO9l6/BasIROU308fMj
+	LufkkR8tjHpyyTlhd8J0aHlfumKQlHe7Ib5LixWW0rJGUECyRT4w4k5/apUWGsAag5MDT6WH+A7Bh
+	DfRU9v9pf1U5tMM6rH4L8QyRuwhEVrX3a9ZFvBWlZVHXlq90l6DReQXFZfCqLpg0hvo2e+YL+NQYM
+	aDL2oEzNGHgHPSeUZ4wQo76C4reTVzb1J8dLIMMc9NY9Bshh84YgNOaEpGChaXjWfcqHscs/X29tu
+	GjxGS+L6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYuIb-00029y-W8; Thu, 06 Jun 2019 15:27:30 +0000
-Received: from mx1.tq-group.com ([62.157.118.193])
+	id 1hYuNQ-0003wb-FE; Thu, 06 Jun 2019 15:32:28 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYuIU-000297-11
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 15:27:23 +0000
-X-IronPort-AV: E=Sophos;i="5.60,559,1549926000"; 
-   d="scan'208";a="7729995"
-Received: from unknown (HELO tq-pgp-pr1.tq-net.de) ([192.168.6.15])
- by mx1-pgp.tq-group.com with ESMTP; 06 Jun 2019 17:27:15 +0200
-Received: from mx1.tq-group.com ([192.168.6.7])
- by tq-pgp-pr1.tq-net.de (PGP Universal service);
- Thu, 06 Jun 2019 17:27:15 +0200
-X-PGP-Universal: processed;
- by tq-pgp-pr1.tq-net.de on Thu, 06 Jun 2019 17:27:15 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
- t=1559834835; x=1591370835;
- h=message-id:subject:from:to:cc:date:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=umqEwzb8oK5WtqI9yBT0F9jXzaGIhXB44Au/hCBtBs8=;
- b=ZChRgcFw7UzOc9rbXEfwLchuZ0/ellpXnHkPlHEpklCREXdKLBLabKEJ
- 6t03FegynYm2nVJvI1eJchD58VDBuWvCbkSps4rny6tMGvV3smC2c4kTc
- T/Xk2gl1hHt6Vfq8QDWvPjVuitT5wrIhHAb8PNnFwNcNHsv+uHFSBLCQm
- 2pGrVHlkP7xLYCtdsLYyjyzRyeGg/iJALy6AQWF8YUfnZ5cm89GLrT0cz
- KI6iZn00QI0TB1ENhJ0ELOEgnGbQgw95evctYzDh/mXEglNaDYT1LFHSN
- SZjzC34zR2d40ERgt+0T8AWC7V1C9MPX2St3MlmiVfEr+dCSWUIEltyB2 w==;
-X-IronPort-AV: E=Sophos;i="5.60,559,1549926000"; 
-   d="scan'208";a="7729994"
-Received: from vtuxmail01.tq-net.de ([10.115.0.20])
- by mx1.tq-group.com with ESMTP; 06 Jun 2019 17:27:15 +0200
-Received: from schifferm-ubuntu4.tq-net.de (schifferm-ubuntu4.tq-net.de
- [10.117.49.26])
- by vtuxmail01.tq-net.de (Postfix) with ESMTPA id 7FB7C280074;
- Thu,  6 Jun 2019 17:27:21 +0200 (CEST)
-Message-ID: <004bda07469769f8a6e0609efd0327f184307493.camel@ew.tq-group.com>
-Subject: Re: [PATCH modules 1/2] module: allow arch overrides for .exit
- section names
-From: Matthias Schiffer <matthias.schiffer@ew.tq-group.com>
-To: Jessica Yu <jeyu@kernel.org>
-Date: Thu, 06 Jun 2019 17:27:12 +0200
-In-Reply-To: <20190606150946.GA27669@linux-8ccs>
-References: <20190603105726.22436-1-matthias.schiffer@ew.tq-group.com>
- <20190603105726.22436-2-matthias.schiffer@ew.tq-group.com>
- <20190606150946.GA27669@linux-8ccs>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1hYuNJ-0003vt-PI
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 15:32:23 +0000
+Received: by mail-wr1-x442.google.com with SMTP id n4so2913929wrs.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Jun 2019 08:32:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=HX3M9WP/yryEwh7vX9+9JslPgp+IEmjuwN20Escc6kI=;
+ b=EiUYU8vhWxjAAxHOvDowkjzPhStcE3hELrYCWJ27QKnAI3cJFbwKgtz7SyV1Nlh3G7
+ aKbxXLDNqFCQSrvPmzI/x3zqIs0RocRokH+TItX8e6zy93V4TnYyK/nIP2w2Y6S7lRVo
+ oZJ4TEeNTAS/ojkuEzag0RiCf4oljXXX0x2UYQCurM8wg06qcdiQEy4if80rprzE6bxU
+ SF6cJPZYyqtGEpnSdRQA6IUtwIspXawWvs1aJfxPF+HOkXeQWSXbgX0pIGKa/VFQ8tlQ
+ pzv9iGs8JLuDdIXwcI5hSvQC4MriQbkxesUfvwPoK6G4JUCi/wGL16z5n3RcdBgnCrVT
+ fEVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=HX3M9WP/yryEwh7vX9+9JslPgp+IEmjuwN20Escc6kI=;
+ b=plv5F6Lu9RdIHM1c9lUZj/g1fz2IgabdmURHGQZtmdJLBHJhiIVKMFErELOdS1B0F2
+ zr7IiYR6OVeQvxOjNJY04BwlqiIVNLzrHkwDtSyQY5uJJote1yqkUVjc7SHvIaBI+lZy
+ Ff8egJcMwzG/duzmDSbt2y/v2BatbCyjsTvIdp3g+P9eTe7zD7I6V/+PWmqAmYUvvW0A
+ gbKBV0/qzgpPJVPxzxaMblEbnfQjVmPaxohyvu5zMEYMsZaHDezKIBHFUqjRs9W9F7W+
+ ZmLe7xnCE9wDHjDYXNi1Muq5INfyMEBD8XsceOts+seAtghepdV6nYOX1Ng6c9PO7mmf
+ 8hgQ==
+X-Gm-Message-State: APjAAAUCim/tLzfxFHyz0tluHes8+L6R23MtASYbsTA3gVSmmQ5ct5+j
+ dJYMVZANaBpYBbmgkEbK+KQ=
+X-Google-Smtp-Source: APXvYqxRHVyiOMsBJdAL9QEQxw+Px16GqdTmA3UJBr61U49dfLm6pC0vNkSsniND2XvWP2wLGn5EWw==
+X-Received: by 2002:adf:9dcc:: with SMTP id q12mr3836539wre.93.1559835139048; 
+ Thu, 06 Jun 2019 08:32:19 -0700 (PDT)
+Received: from localhost (p2E5BEF36.dip0.t-ipconnect.de. [46.91.239.54])
+ by smtp.gmail.com with ESMTPSA id c129sm2082954wma.27.2019.06.06.08.32.18
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 06 Jun 2019 08:32:18 -0700 (PDT)
+Date: Thu, 6 Jun 2019 17:32:16 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH V8 05/15] PCI: dwc: Add ext config space capability
+ search API
+Message-ID: <20190606153216.GA3338@ulmo>
+References: <20190526043751.12729-1-vidyas@nvidia.com>
+ <20190526043751.12729-6-vidyas@nvidia.com>
+MIME-Version: 1.0
+In-Reply-To: <20190526043751.12729-6-vidyas@nvidia.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_082722_387759_58DEED08 
-X-CRM114-Status: GOOD (  18.29  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190606_083221_853827_FA01C650 
+X-CRM114-Status: GOOD (  11.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [62.157.118.193 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thierry.reding[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,93 +100,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, linux-pci@vger.kernel.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ kthota@nvidia.com, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Type: multipart/mixed; boundary="===============7380976911823928269=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-06-06 at 17:09 +0200, Jessica Yu wrote:
-> +++ Matthias Schiffer [03/06/19 12:57 +0200]:
-> > Some archs like ARM store unwind information for .exit.text in
-> > sections
-> > with unusual names. As this unwind information refers to
-> > .exit.text, it
-> > must not be loaded when .exit.text is not loaded (when
-> > CONFIG_MODULE_UNLOAD
-> > is unset); otherwise, loading a module can fail due to relocation
-> > failures.
-> > 
-> > Signed-off-by: Matthias Schiffer <matthias.schiffer@ew.tq-group.com
-> > >
-> > ---
-> > include/linux/moduleloader.h | 8 ++++++++
-> > kernel/module.c              | 2 +-
-> > 2 files changed, 9 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/include/linux/moduleloader.h
-> > b/include/linux/moduleloader.h
-> > index 31013c2effd3..cddbd85fb659 100644
-> > --- a/include/linux/moduleloader.h
-> > +++ b/include/linux/moduleloader.h
-> > @@ -5,6 +5,7 @@
-> > 
-> > #include <linux/module.h>
-> > #include <linux/elf.h>
-> > +#include <linux/string.h>
-> > 
-> > /* These may be implemented by architectures that need to hook into
-> > the
-> >  * module loader code.  Architectures that don't need to do
-> > anything special
-> > @@ -93,4 +94,11 @@ void module_arch_freeing_init(struct module
-> > *mod);
-> > #define MODULE_ALIGN PAGE_SIZE
-> > #endif
-> > 
-> > +#ifndef HAVE_ARCH_MODULE_EXIT_SECTION
-> > +static inline bool module_exit_section(const char *name)
-> > +{
-> > +	return strstarts(name, ".exit");
-> > +}
-> > +#endif
-> > +
-> 
-> Hi Matthias,
-> 
-> For sake of consistency, could we implement this as an arch-
-> overridable
-> __weak symbol like the rest of the module arch-overrides in
-> moduleloader.h?
 
-Fine with me - making such a tiny function inlineable just seemed more
-appropriate to me. I can send a v2 tomorrow.
+--===============7380976911823928269==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="OgqxwSJOaUobr8KG"
+Content-Disposition: inline
 
 
-> 
-> > #endif
-> > diff --git a/kernel/module.c b/kernel/module.c
-> > index 6e6712b3aaf5..e8e4cd0a471f 100644
-> > --- a/kernel/module.c
-> > +++ b/kernel/module.c
-> > @@ -2924,7 +2924,7 @@ static int rewrite_section_headers(struct
-> > load_info *info, int flags)
-> > 
-> > #ifndef CONFIG_MODULE_UNLOAD
-> > 		/* Don't load .exit sections */
-> > -		if (strstarts(info->secstrings+shdr->sh_name, ".exit"))
-> > +		if (module_exit_section(info->secstrings+shdr-
-> > >sh_name))
-> > 			shdr->sh_flags &= ~(unsigned long)SHF_ALLOC;
-> > #endif
-> > 	}
-> > -- 
-> > 2.17.1
-> > 
+--OgqxwSJOaUobr8KG
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Sun, May 26, 2019 at 10:07:41AM +0530, Vidya Sagar wrote:
+> Add extended configuration space capability search API using struct dw_pc=
+ie *
+> pointer
+>=20
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+> ---
+> Changes since [v7]:
+> * Changed data types of return and arguments to be inline with data being=
+ returned
+>   and passed.
+>=20
+> Changes since [v6]:
+> * None
+>=20
+> Changes since [v5]:
+> * None
+>=20
+> Changes since [v4]:
+> * None
+>=20
+> Changes since [v3]:
+> * None
+>=20
+> Changes since [v2]:
+> * None
+>=20
+> Changes since [v1]:
+> * This is a new patch in v2 series
+>=20
+>  drivers/pci/controller/dwc/pcie-designware.c | 41 ++++++++++++++++++++
+>  drivers/pci/controller/dwc/pcie-designware.h |  1 +
+>  2 files changed, 42 insertions(+)
+
+Acked-by: Thierry Reding <treding@nvidia.com>
+
+--OgqxwSJOaUobr8KG
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAlz5MfsACgkQ3SOs138+
+s6GApw//TPvpvgBzP5P9ZA+voryvcGrZFDGOvZN3Ue1+gcsGJLKWkkyfdki8Xn4K
+pkOboAWOYl3FVFstorO6OlL+sToBPM7KSW3d1y8Xf4lCJG6pl6Wguq01rQiL+lgC
+SiHzhKaumTJ6cIiZICbExS0cnWwgNvglaMRV1enwe3SfAdqpiSBJYsJy/OFgUHMX
+e8P0PX0CY6pK+lGGi610SRhzorXOne+ukTGgm+qrAU/9XsJWkF9uwyaJF7BprSfq
+fjPGMQlZ+ezB9sZn+RAJT8qZpNsovOTLDWV6P4b+bR6hBbHNM3uOFlnpOUsKfiLL
+YJIBU00ZlbIIOMMCK/78Xg2i9GsndiLKmAF8XYeNcGKfHOyivoABLViL4eL98yZl
+VMEUTSMw97RhAoZ9DgD5M5ESFEAbD0qvy5GoGW7OcJ3JyvJam6hr2nFDIqyAuq5G
+W5w/opznB6oYuiyvTWbH2BYTKdpZv1IMZTLRsq1o8yQHCRt/L7GemvXGWm+7UhNJ
+hPIFoLR7bvYE/wHvnplHw72iXh55j3/Ku2oBCgs9Ikx8Q64XWDSJQBwqNXwT5pW4
+2qcCVbs9kcdOmuhadUJNE+Aeyz32+7GC9JS5PIrtgvCrS9GlYWg6pjGDqMy4lzJ0
+fVfLAxMTiKwPO9jr2SOY8TIfObb7fXzKGB31sBPvCV2tRUpK0OE=
+=DlKq
+-----END PGP SIGNATURE-----
+
+--OgqxwSJOaUobr8KG--
+
+
+--===============7380976911823928269==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7380976911823928269==--
+
