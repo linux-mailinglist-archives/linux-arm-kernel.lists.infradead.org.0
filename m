@@ -2,63 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 938B837165
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 12:13:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 412173718E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 12:24:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nadkuwmmUPWXp4Oj3ES8f7ZCChT9jDPrxRZsXBH+hV4=; b=WK2OMfTEV3qV9d
-	f6HRs+ZD94pafGTigWxuNAKim165cLWvty8K0QDrNwVzJiuspalUef/I+JD63nX8pfJUDKHBS9tkd
-	zAaM/kX1aIsWwd3c6MSIsu6J/ekQtOYY8zeOcvKZu1swhdMgIS8EZLH8SA1+0zjm3rGFzgdp9nIFi
-	c4jw5n1ucoUOwxSgFgd0QCksuU96XlLWPC0TZbhLM1CBwjksR6lB0WzubVtxl7D725AkfdSyc1xZX
-	MsDOdtod2rJQXd+5HaqUYTMsfPz5jtKlzx4G99IzQHJ/BUwaFZhADlIBODEqy3BPwKa6yg06voxYg
-	Zmy2imZz3VRgHjwwJjww==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=5c0YJfhYZV5CVdEuTTsa7LwJpS9keWM+KyTESjdGvTc=; b=A3Lx7/CmjPYJMXrGPgTCSNQgUo
+	Ti0jZe16WNxdOP7sbBzt7OKu5KRbd0E9bNWaIpWXJA7MEnigyEhpG8BvlX5fK5sXb7YF5XlC6obaE
+	1uKFiC+vfEpFBvW8FWR3X//l640FCEAEBt7vkG8tkqAaAH6Wgb0AMQ8rPZCzjt+5mx+/HhnSAsZWP
+	wUbwq9Kn0dnbIC4WULVj/+ZjD4TrNTmFlZHHcN2LVCUxqilKB7nVZDUPpBoS5A7z4Dv0fseU/DGbK
+	eZbBOc4dhCj/O4QDeSmYJbUmCNTwpr8VO3OJGjqMUcpD0kPl4XcutvuiQuXgXlOJXUSxYMV3N829O
+	9C0X+A5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYpOl-0002NF-3t; Thu, 06 Jun 2019 10:13:31 +0000
-Received: from lb3-smtp-cloud7.xs4all.net ([194.109.24.31])
+	id 1hYpYp-0006Cv-QY; Thu, 06 Jun 2019 10:23:55 +0000
+Received: from smtp-good-out-2.t-2.net ([2a01:260:1:4::2c])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYpOd-0002Mu-Ap
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 10:13:24 +0000
-Received: from [192.168.2.10] ([46.9.252.75])
- by smtp-cloud7.xs4all.net with ESMTPA
- id YpOXhyGU13qlsYpOahlotZ; Thu, 06 Jun 2019 12:13:21 +0200
-Subject: Re: [PATCH 5/8] drivers: media: coda: fix warning same module names
-To: Anders Roxell <anders.roxell@linaro.org>, mchehab@kernel.org,
- p.zabel@pengutronix.de
-References: <20190606094722.23816-1-anders.roxell@linaro.org>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <d6b79ee0-07c6-ad81-16b0-8cf929cc214d@xs4all.nl>
-Date: Thu, 6 Jun 2019 12:13:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20190606094722.23816-1-anders.roxell@linaro.org>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfF4tKlHxT213q5iKkMxyEhwvsl3wRabWeNLK5xiL8WKLAag63A3TOZyGmKvKw2GQ0WfyjxjXTEd9W8wEzukVk+psIlgFMWLll5pj2JsOATa9DeAuydvZ
- ddjJv6cbw+Yx00MItRjqmMci92xnhEnHpv1M2w59zA1NDNGjmRLSq3cAdtQxlM27/Up8XeGggGd09JeaXKionqZ4Ox8OkYGd75CEkMLwS0I9oFo2oaXlp2qm
- zHxHG7t/dsOA8w/WL8cjzmpNJprbOGialY+uHK0qhAd6ngo3E2+LWOtDMpiv8+29lafVg2h2MXmbJqTrD08YPp+dHbGmMooIEajhJOaXAsTO9DMXSW1DnGgb
- Mi+uPtNhxzXZNVHnKkgZylEAS1Gj9Btw1D2qstbFAGFqawel2DS7gaY7PnQwOyvQDUehTrtumQUrh09usYJrS95kgXOPsOuu9vdTrS9bCu3XLxvP83rFa7K4
- iRkei2i0QauBZ+765x4Q0YbU2MzvUEyEC/yU99imriRBIOT799HstalWgtztqFMWEOMUBGV6QT9McaXUQxxn1zJjzrhgJj6CwFejoRwRWeYKwsW9fgpwBWwy
- NgSZjZuEljrA0R8Der2ECk2NLkklIrPaIzz4+7f45/5Rg3AxiqHLmyd3gj/w7qDJjczZSXQntVVEXmhKhlGVziBa2olD9SYqZW5ea+F4y5ryBoJJXKeRqJdT
- tylLYuM7/v98g46LHLxat4QbrH4tbb0OQ6PVAoOzoPM+fU4eOOTZ318lqx8uL7K4w+bXwy6AyagH24lDBaWhhE6Ak0oPkTiWkzj+zIMgcHnUBVj2qyaZ+tGz
- 49QGEH34eopVfAjGrY27QDYRwjAXHkE34k/PrX5pFSdpYBaRZmp7Cy7hsJ65WK3Eqac5SwfaayWzyuqV27vo48JIPhsH5LTGMqwPFbq3mOKKvs5I0+GRKlB3
- Xzk7eNEZqr4/hN04KmzKR9jYfWw=
+ id 1hYpYi-0006CF-5S
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 10:23:50 +0000
+Received: from smtp-2.t-2.si (smtp-2.t-2.si [IPv6:2a01:260:1:4::1f])
+ by smtp-good-out-2.t-2.net (Postfix) with ESMTP id 45KMFS5byrzZG5;
+ Thu,  6 Jun 2019 12:23:40 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=t-2.net;
+ s=smtp-out-2; t=1559816620;
+ bh=be0m1mh0IVu6WZqXXkKj2KT0971wDCJEPqmo2Z4Dqlo=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=bXJMBBKOyGPE1Iz/ZgOJhixqj2KKwSy7W1bc6vy5iOJHevymr6kDdic8i1NsuiVBj
+ jp2tILAneZmB1LUHRd2ypE8pWnmnzK3IV0+iFCFlL4gMov7ysc9RUcpZtHCeKfQkHf
+ 17Y5eOxM61h8IjQIcAPX9qMQ5wVwKlC6+mR2lgTo=
+Received: from localhost (localhost [127.0.0.1])
+ by smtp-2.t-2.si (Postfix) with ESMTP id 45KMFS5MwzzMsJFD;
+ Thu,  6 Jun 2019 12:23:40 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at t-2.si
+Received: from smtp-2.t-2.si ([127.0.0.1])
+ by localhost (smtp-2.t-2.si [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id oGAyOBO-3v3y; Thu,  6 Jun 2019 12:23:40 +0200 (CEST)
+Received: from localhost.localdomain (unknown [89.212.35.59])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: borut_seljak@t-2.net)
+ by smtp-2.t-2.si (Postfix) with ESMTPSA;
+ Thu,  6 Jun 2019 12:23:11 +0200 (CEST)
+From: Borut Seljak <borut.seljak@t-2.net>
+To: erwan.leray@st.com
+Subject: [PATCH v3] serial: stm32: fix a recursive locking in
+ stm32_config_rs485
+Date: Thu,  6 Jun 2019 12:19:01 +0200
+Message-Id: <20190606101901.31151-1-borut.seljak@t-2.net>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <erwan.leray@st.com>
+References: <erwan.leray@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_031323_533351_E4487B0D 
-X-CRM114-Status: GOOD (  12.63  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190606_032348_362407_2CB3300F 
+X-CRM114-Status: GOOD (  10.54  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.31 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ low trust [2a01:260:1:4:0:0:0:2c listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,57 +86,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, linux-fbdev@vger.kernel.org, airlied@linux.ie,
- stefan@agner.ch, linux-kernel@vger.kernel.org, a.hajda@samsung.com,
- lee.jones@linaro.org, marex@denx.de, f.fainelli@gmail.com,
- vivien.didelot@gmail.com, linux-media@vger.kernel.org,
- b.zolnierkie@samsung.com, s.hauer@pengutronix.de, broonie@kernel.org,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- netdev@vger.kernel.org, lgirdwood@gmail.com, daniel@ffwll.ch,
- shawnguo@kernel.org, davem@davemloft.net, hkallweit1@gmail.com
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ borut.seljak@t-2.net, linux-serial@vger.kernel.org,
+ Jiri Slaby <jslaby@suse.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/6/19 11:47 AM, Anders Roxell wrote:
-> When building with CONFIG_VIDEO_CODA and CONFIG_CODA_FS enabled as
-> loadable modules, we see the following warning:
-> 
-> warning: same module names found:
->   fs/coda/coda.ko
->   drivers/media/platform/coda/coda.ko
-> 
-> Rework so media coda matches the config fragment. Leaving CODA_FS as is
-> since thats a well known module.
-> 
-> Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
-> ---
->  drivers/media/platform/coda/Makefile | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/media/platform/coda/Makefile b/drivers/media/platform/coda/Makefile
-> index 54e9a73a92ab..588e6bf7c190 100644
-> --- a/drivers/media/platform/coda/Makefile
-> +++ b/drivers/media/platform/coda/Makefile
-> @@ -1,6 +1,6 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->  
-> -coda-objs := coda-common.o coda-bit.o coda-gdi.o coda-h264.o coda-mpeg2.o coda-mpeg4.o coda-jpeg.o
-> +video-coda-objs := coda-common.o coda-bit.o coda-gdi.o coda-h264.o coda-mpeg2.o coda-mpeg4.o coda-jpeg.o
->  
-> -obj-$(CONFIG_VIDEO_CODA) += coda.o
-> +obj-$(CONFIG_VIDEO_CODA) += video-coda.o
+Remove spin_lock_irqsave in stm32_config_rs485, it cause recursive locking.
+Already locked in uart_set_rs485_config.
 
-How about imx-coda? video-coda suggests it is part of the video subsystem,
-which it isn't.
+fixes: 1bcda09d291081 ("serial: stm32: add support for RS485 hardware control mode")
 
-Regards,
+Signed-off-by: Borut Seljak <borut.seljak@t-2.net>
+---
+ drivers/tty/serial/stm32-usart.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-	Hans
-
->  obj-$(CONFIG_VIDEO_IMX_VDOA) += imx-vdoa.o
-> 
+diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
+index e8d7a7bb4339..5d072ec61071 100644
+--- a/drivers/tty/serial/stm32-usart.c
++++ b/drivers/tty/serial/stm32-usart.c
+@@ -105,9 +105,7 @@ static int stm32_config_rs485(struct uart_port *port,
+ 	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
+ 	u32 usartdiv, baud, cr1, cr3;
+ 	bool over8;
+-	unsigned long flags;
+ 
+-	spin_lock_irqsave(&port->lock, flags);
+ 	stm32_clr_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit));
+ 
+ 	port->rs485 = *rs485conf;
+@@ -147,7 +145,6 @@ static int stm32_config_rs485(struct uart_port *port,
+ 	}
+ 
+ 	stm32_set_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit));
+-	spin_unlock_irqrestore(&port->lock, flags);
+ 
+ 	return 0;
+ }
+-- 
+2.17.1
 
 
 _______________________________________________
