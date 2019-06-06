@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1098369D6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:11:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 602A5369F0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:18:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tS8vrlK16qK2n9jRxJVkfMUw6J9cMLhjzerLkh0TYLQ=; b=PI16Te1OIqn6Ny
-	RiPifIluSdOyRhsNKfRzKIiILn+BDHV8Tx1giknipJPwYSPLHgd5oh6Hc3P/rvVcvfQ5jTZysNJa1
-	/ZdmWg25BmtbuOxo5RLoXnIHi0dUAnn8O6UV/FIASGKUDVTfq7mxlbRV94Cd/EIztyejFWzsfGPkD
-	FvxKcHW+rKMiLeaq+2nXqqpVw0YCk/5KnOxuuY8AUkyatbRrpgsByVqumqJVNws6i3hB2Y0/+ox2F
-	R52JsZzTJpigyQgRq+uyMqNXw+8GcE75zn5nNBGqRV1nllcztWaq9KSw0kiYpq6R1rZfjiT1cye0u
-	Y6Wu6x4EOJSXvRdE8igQ==;
+	List-Owner; bh=4PWM3dTMVomX6JV3+2sGLGH8LZhX2ew094hDYTPLdz8=; b=VB9wb6epM0WrCj
+	y266p9BEakjbogTART8HuJey6cmVFOnRrI+hqMtrWXMGytPcoAvzcMP6NhSDQhR2wVGL+SIMRusZr
+	ewOHw94siYavFXKz/Nl5Ad6Pk3yDmA1Xqb6YKWMoygFynAadI0Mp6dDrReIG7IKdVYwacatWVMbpg
+	TwAhIJhiBEwlbZVocszgnbTK3MRdc+n3tAJzpIMUuNcTxTp6m/SW6Vf5qobXO1qDwwD5uddhe7lIM
+	TxejdkbH/nNEMdb9SaJbZZk9cHutm6NQr6M5MXM5uzMHDdgZVLNd+FGOC1xAl6vYSnpsdrQ7sZQSL
+	7RtZ9+8ReRVzDx3QYuqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYhrs-0000if-UC; Thu, 06 Jun 2019 02:11:04 +0000
+	id 1hYhzG-0002Nw-KA; Thu, 06 Jun 2019 02:18:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYhrm-0000iH-5I
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:10:59 +0000
+ id 1hYhz9-0002NX-Jj
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:18:36 +0000
 Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 943F920717;
- Thu,  6 Jun 2019 02:10:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E44EF2075B;
+ Thu,  6 Jun 2019 02:18:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559787057;
- bh=1wV4ExVvlN5EgzNFrCwIfBYS4g4614HuuxSdiSYaE/s=;
+ s=default; t=1559787515;
+ bh=jPhjz3SJtpJ0/jkTHGUxExTd7E6N9MYmbVa4lf1c1qU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=iaBgjkWHvEUB8xTxgpH7CYMJSqAEFJfcmI6o0nb7AXcneh+zDM86Ycr7Dgq2kb6yz
- mmwwCHGq64fFLsorar9SPLF5AZaKCC1oM+7C3300P/f7k+roVd1FB3O9wi4YsBL8w9
- X2EyQoBRKcUrQF+WyBrJQ4Y6VrM9A4SyL2ECfOYQ=
-Date: Thu, 6 Jun 2019 10:10:32 +0800
+ b=tx77BCu7F5RhelD9SSq0df4I0jWlsUT2lOTZRjCwaZqODpKUomkIQ26UWy8PfrQI1
+ eF/o76e5/W7yMBm40XVBo01ZxwtOAq+2sP3IpFZaNPZk2JU4+9rPg2sBPODr+0ea9i
+ RHb1wgcbAdGs8NkMV7xMZNOlMXV6wbbjeIErV08k=
+Date: Thu, 6 Jun 2019 10:18:16 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2] ARM: configs: Remove useless UEVENT_HELPER_PATH
-Message-ID: <20190606021027.GV29853@dragon>
-References: <1559636093-26005-1-git-send-email-krzk@kernel.org>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH] arm64: dts: imx8mm: Move gic node into soc node
+Message-ID: <20190606021803.GW29853@dragon>
+References: <20190603015020.41410-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559636093-26005-1-git-send-email-krzk@kernel.org>
+In-Reply-To: <20190603015020.41410-1-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_191058_222295_2305B3D3 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20190605_191835_712805_1736F4C4 
+X-CRM114-Status: GOOD (  14.91  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,55 +76,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Mans Rullgard <mans@mansr.com>, linux-aspeed@lists.ozlabs.org,
- Tony Lindgren <tony@atomide.com>, Liviu Dudau <liviu.dudau@arm.com>,
- linux-kernel@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Aaro Koskinen <aaro.koskinen@iki.fi>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>,
- Ludovic Desroches <ludovic.desroches@microchip.com>, arm@kernel.org,
- Joel Stanley <joel@jms.id.au>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, Sascha Hauer <s.hauer@pengutronix.de>,
- Vladimir Zapolskiy <vz@mleia.com>, NXP Linux Team <linux-imx@nxp.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Andrew Jeffery <andrew@aj.id.au>, Dinh Nguyen <dinguyen@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sudeep Holla <sudeep.holla@arm.com>, Olof Johansson <olof@lixom.net>
+Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, ping.bai@nxp.com,
+ devicetree@vger.kernel.org, viresh.kumar@linaro.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, leonard.crestez@nxp.com, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 10:14:53AM +0200, Krzysztof Kozlowski wrote:
-> Remove the CONFIG_UEVENT_HELPER_PATH because:
-> 1. It is disabled since commit 1be01d4a5714 ("driver: base: Disable
->    CONFIG_UEVENT_HELPER by default") as its dependency (UEVENT_HELPER) was
->    made default to 'n',
-> 2. It is not recommended (help message: "This should not be used today
->    [...] creates a high system load") and was kept only for ancient
->    userland,
-> 3. Certain userland specifically requests it to be disabled (systemd
->    README: "Legacy hotplug slows down the system and confuses udev").
+On Mon, Jun 03, 2019 at 09:50:20AM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> Acked-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> GIC is inside of SoC from architecture perspective, it should
+> be located inside of soc node in DT.
 > 
-> ---
-> 
-> Changes since v2:
-> 1. Remove unrelated files.
-> 2. Add Geert's ack.
-> ---
-...
->  arch/arm/configs/imx_v4_v5_defconfig      | 1 -
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Acked-by: Shawn Guo <shawnguo@kernel.org>
+It doesn't apply to my imx/dt64 branch.  Please generate it against that
+branch for my for-next.
+
+Shawn
+
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mm.dtsi | 18 +++++++++---------
+>  1 file changed, 9 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> index dc99f45..429312e 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> @@ -169,15 +169,6 @@
+>  		clock-output-names = "clk_ext4";
+>  	};
+>  
+> -	gic: interrupt-controller@38800000 {
+> -		compatible = "arm,gic-v3";
+> -		reg = <0x0 0x38800000 0 0x10000>, /* GIC Dist */
+> -		      <0x0 0x38880000 0 0xC0000>; /* GICR (RD_base + SGI_base) */
+> -		#interrupt-cells = <3>;
+> -		interrupt-controller;
+> -		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+> -	};
+> -
+>  	psci {
+>  		compatible = "arm,psci-1.0";
+>  		method = "smc";
+> @@ -739,6 +730,15 @@
+>  			dma-names = "rx-tx";
+>  			status = "disabled";
+>  		};
+> +
+> +		gic: interrupt-controller@38800000 {
+> +			compatible = "arm,gic-v3";
+> +			reg = <0x38800000 0x10000>, /* GIC Dist */
+> +			      <0x38880000 0xc0000>; /* GICR (RD_base + SGI_base) */
+> +			#interrupt-cells = <3>;
+> +			interrupt-controller;
+> +			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+> +		};
+>  	};
+>  
+>  	usbphynop1: usbphynop1 {
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
