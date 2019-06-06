@@ -2,65 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0C9D36A06
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:33:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DE7B36A0C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:34:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qkGyxEokzMsyhFKH7b6TFDUjXhKPlLZyEaVSmjIPyLw=; b=fU9QLyJcxzpE94
-	oYyRHhVCWPbGSr1ANvB0ndJ9D/kc7ePwGmYds/5XVdgy/4pCfudpKAixQY5t8wH+mXFpTf/TWRhp0
-	Y99dgNwDRdx0AG+xM3L53Zr3aWaVBZ3j/+6+aS9IieYVPI6QVkVP4ooTsmI91HX7L97uYzQpk/Do5
-	X1P7O1L4jq0eD5GjSknXPD2Qfxzv8nJgdJKo1hMLxxOKs5FWv0J/XTdwe0QWzzkljqWqn8KmXEALv
-	SlS9JZxmPYmrDl/2Swu63fB9hrvKTsfTheDZbddK25A1rGybkAfemNLH6uVYxcseMYc3bUoyeb5FV
-	lrCwAScoVM6Q8eQKtPcQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ld24IalSS8ngyXlK65dRYRNRsnw1zDRUFO6+vbWimsg=; b=AJsFg7u3Kg+zy1
+	29Np3jDttKjfPOM17b2x+2N3PZR+g4XD5/BfBvNyw31dx8G24OiyLBlk4u7+3ix1PtfuRT6HCnioU
+	p1feAA8cKsOLSutBZCAT3mjX2iHntYDV/dR13iDX6XwYz39uHC0oW+WLYUosSQHyw0kQs5eS/e31O
+	1pEmsTkZbp00e545mx3rtu4HhD9r16t5KlsYdsg85yNBEAHUoKwBKAeY97b8w8nlHpZ1jPpaVJSA5
+	XQDlAkYhBkKOxRvEBUJKTgEpUnVB00hOosb+vtZIHwNBL87j/6UB9fg6G6u0XCFBOArIWFClgfiQE
+	nwk1YWXInFtkl1p8j6dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYiDI-0006td-Ir; Thu, 06 Jun 2019 02:33:12 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYiDA-0006sL-0l; Thu, 06 Jun 2019 02:33:05 +0000
-X-UUID: 2d9475c7d9a846e8b0f93d23e6cbe818-20190605
-X-UUID: 2d9475c7d9a846e8b0f93d23e6cbe818-20190605
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 14950875; Wed, 05 Jun 2019 18:32:52 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Jun 2019 19:32:50 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 6 Jun 2019 10:32:48 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 6 Jun 2019 10:32:48 +0800
-Message-ID: <1559788368.8487.109.camel@mhfsdcap03>
-Subject: Re: [PATCH v3] USB: move usb debugfs directory creation to the usb
- common core
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Date: Thu, 6 Jun 2019 10:32:48 +0800
-In-Reply-To: <20190605124440.GD17558@kroah.com>
-References: <20190605092816.GA23758@kroah.com>
- <20190605124440.GD17558@kroah.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+	id 1hYiES-00081x-R6; Thu, 06 Jun 2019 02:34:24 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYiEK-00081E-LP
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:34:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C4CC980D;
+ Wed,  5 Jun 2019 19:34:15 -0700 (PDT)
+Received: from [10.162.43.122] (p8cg001049571a15.blr.arm.com [10.162.43.122])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B0AA13F690; Wed,  5 Jun 2019 19:34:05 -0700 (PDT)
+Subject: Re: [RFC V2] mm: Generalize notify_page_fault()
+To: Michael Ellerman <mpe@ellerman.id.au>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org
+References: <1559630046-12940-1-git-send-email-anshuman.khandual@arm.com>
+ <87sgsomg91.fsf@concordia.ellerman.id.au>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <6fdf7c1f-822b-22ec-f48c-cc0efc850644@arm.com>
+Date: Thu, 6 Jun 2019 08:04:21 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <87sgsomg91.fsf@concordia.ellerman.id.au>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_193304_068663_B55B6CD7 
-X-CRM114-Status: GOOD (  22.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190605_193416_725927_1161A9B0 
+X-CRM114-Status: GOOD (  22.63  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,195 +65,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Felipe Balbi <felipe.balbi@linux.intel.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ Matthew Wilcox <willy@infradead.org>, sparclinux@vger.kernel.org,
+ linux-s390@vger.kernel.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Will Deacon <will.deacon@arm.com>, Ingo Molnar <mingo@redhat.com>,
+ Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Andrey Konovalov <andreyknvl@google.com>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-06-05 at 14:44 +0200, Greg Kroah-Hartman wrote:
-> The USB gadget subsystem wants to use the USB debugfs root directory, so
-> move it to the common "core" USB code so that it is properly initialized
-> and removed as needed.
+On 06/05/2019 04:49 PM, Michael Ellerman wrote:
+> Anshuman Khandual <anshuman.khandual@arm.com> writes:
+>> Similar notify_page_fault() definitions are being used by architectures
+>> duplicating much of the same code. This attempts to unify them into a
+>> single implementation, generalize it and then move it to a common place.
+>> kprobes_built_in() can detect CONFIG_KPROBES, hence notify_page_fault()
+>> need not be wrapped again within CONFIG_KPROBES. Trap number argument can
+>> now contain upto an 'unsigned int' accommodating all possible platforms.
+> ...
+>> diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
+>> index 58f69fa..1bc3b18 100644
+>> --- a/arch/arm/mm/fault.c
+>> +++ b/arch/arm/mm/fault.c
+>> @@ -30,28 +30,6 @@
+>>  
+>>  #ifdef CONFIG_MMU
+>>  
+>> -#ifdef CONFIG_KPROBES
+>> -static inline int notify_page_fault(struct pt_regs *regs, unsigned int fsr)
+>> -{
+>> -	int ret = 0;
+>> -
+>> -	if (!user_mode(regs)) {
+>> -		/* kprobe_running() needs smp_processor_id() */
+>> -		preempt_disable();
+>> -		if (kprobe_running() && kprobe_fault_handler(regs, fsr))
+>> -			ret = 1;
+>> -		preempt_enable();
+>> -	}
+>> -
+>> -	return ret;
+>> -}
+>> -#else
 > 
-> In order to properly do this, we need to load the common code before the
-> usb core code, when everything is linked into the kernel, so reorder the
-> link order of the code.
+> You've changed several of the architectures from something like above,
+> where it disables preemption around the call into the below:
 > 
-> Also as the usb common code has the possibility of the led trigger logic
-> to be merged into it, handle the build option properly by only having
-> one module init/exit function and have the common code initialize the
-> led trigger if needed.
+>> +int __kprobes notify_page_fault(struct pt_regs *regs, unsigned int trap)
+>> +{
+>> +	int ret = 0;
+>> +
+>> +	/*
+>> +	 * To be potentially processing a kprobe fault and to be allowed
+>> +	 * to call kprobe_running(), we have to be non-preemptible.
+>> +	 */
+>> +	if (kprobes_built_in() && !preemptible() && !user_mode(regs)) {
+>> +		if (kprobe_running() && kprobe_fault_handler(regs, trap))
+>> +			ret = 1;
+>> +	}
+>> +	return ret;
+>> +}
 > 
-> Reported-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> Cc: Felipe Balbi <felipe.balbi@linux.intel.com>
-> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> ---
-> Chunfeng, can you try testing this again?
+> Which skips everything if we're preemptible. Is that an equivalent
 
-Tested-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Right.
 
-Thank you, Greg, Felipe
+> change? If so can you please explain why in more detail.
+
+It is probably not an equivalent change. The following explanation is extracted from
+RFC V1 discussions (https://patchwork.kernel.org/patch/10968273/). Will explain the
+rational for this behavior change in the commit message next time around.
+
+----------------------------
+a980c0ef9f6d ("x86/kprobes: Refactor kprobes_fault() like kprobe_exceptions_notify()")
+b506a9d08bae ("x86: code clarification patch to Kprobes arch code")
+
+In particular the later one (b506a9d08bae). It explains how the invoking context
+in itself should be non-preemptible for the kprobes processing context irrespective
+of whether kprobe_running() or perhaps smp_processor_id() is safe or not. Hence it
+does not make much sense to continue when original invoking context is preemptible.
+Instead just bail out earlier. This seems to be making more sense than preempt
+disable-enable pair. If there are no concerns about this change from other platforms,
+I will change the preemption behavior in proposed generic function next time around.
+----------------------------
+
+Do you see any concern changing preempt behavior in the x86 way ?
 
 > 
-> v3: Fix __init and __exit error when building into the tree as reported
->     by Chunfeng
->     Fix Reported-by: line as reported
-> v2: handle led common code link error reported by kbuild
->     handle subsys_initcall issue pointed out by Chunfeng
-> 
->  drivers/usb/Makefile        |  3 +--
->  drivers/usb/common/common.c | 21 +++++++++++++++++++++
->  drivers/usb/common/common.h | 14 ++++++++++++++
->  drivers/usb/common/led.c    |  9 +++------
->  drivers/usb/core/usb.c      | 10 ++++------
->  5 files changed, 43 insertions(+), 14 deletions(-)
->  create mode 100644 drivers/usb/common/common.h
-> 
-> diff --git a/drivers/usb/Makefile b/drivers/usb/Makefile
-> index 7d1b8c82b208..ecc2de1ffaae 100644
-> --- a/drivers/usb/Makefile
-> +++ b/drivers/usb/Makefile
-> @@ -5,6 +5,7 @@
->  
->  # Object files in subdirectories
->  
-> +obj-$(CONFIG_USB_COMMON)	+= common/
->  obj-$(CONFIG_USB)		+= core/
->  obj-$(CONFIG_USB_SUPPORT)	+= phy/
->  
-> @@ -60,8 +61,6 @@ obj-$(CONFIG_USB_CHIPIDEA)	+= chipidea/
->  obj-$(CONFIG_USB_RENESAS_USBHS)	+= renesas_usbhs/
->  obj-$(CONFIG_USB_GADGET)	+= gadget/
->  
-> -obj-$(CONFIG_USB_COMMON)	+= common/
-> -
->  obj-$(CONFIG_USBIP_CORE)	+= usbip/
->  
->  obj-$(CONFIG_TYPEC)		+= typec/
-> diff --git a/drivers/usb/common/common.c b/drivers/usb/common/common.c
-> index 18f5dcf58b0d..1433260d99b4 100644
-> --- a/drivers/usb/common/common.c
-> +++ b/drivers/usb/common/common.c
-> @@ -15,6 +15,8 @@
->  #include <linux/usb/of.h>
->  #include <linux/usb/otg.h>
->  #include <linux/of_platform.h>
-> +#include <linux/debugfs.h>
-> +#include "common.h"
->  
->  static const char *const ep_type_names[] = {
->  	[USB_ENDPOINT_XFER_CONTROL] = "ctrl",
-> @@ -291,4 +293,23 @@ struct device *usb_of_get_companion_dev(struct device *dev)
->  EXPORT_SYMBOL_GPL(usb_of_get_companion_dev);
->  #endif
->  
-> +struct dentry *usb_debug_root;
-> +EXPORT_SYMBOL_GPL(usb_debug_root);
-> +
-> +static int __init usb_common_init(void)
-> +{
-> +	usb_debug_root = debugfs_create_dir("usb", NULL);
-> +	ledtrig_usb_init();
-> +	return 0;
-> +}
-> +
-> +static void __exit usb_common_exit(void)
-> +{
-> +	ledtrig_usb_exit();
-> +	debugfs_remove_recursive(usb_debug_root);
-> +}
-> +
-> +subsys_initcall(usb_common_init);
-> +module_exit(usb_common_exit);
-> +
->  MODULE_LICENSE("GPL");
-> diff --git a/drivers/usb/common/common.h b/drivers/usb/common/common.h
-> new file mode 100644
-> index 000000000000..424a91316a4b
-> --- /dev/null
-> +++ b/drivers/usb/common/common.h
-> @@ -0,0 +1,14 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +
-> +#ifndef __LINUX_USB_COMMON_H
-> +#define __LINUX_USB_COMMON_H
-> +
-> +#if defined(CONFIG_USB_LED_TRIG)
-> +void ledtrig_usb_init(void);
-> +void ledtrig_usb_exit(void);
-> +#else
-> +static inline void ledtrig_usb_init(void) { }
-> +static inline void ledtrig_usb_exit(void) { }
-> +#endif
-> +
-> +#endif	/* __LINUX_USB_COMMON_H */
-> diff --git a/drivers/usb/common/led.c b/drivers/usb/common/led.c
-> index 7bd81166b77d..0865dd44a80a 100644
-> --- a/drivers/usb/common/led.c
-> +++ b/drivers/usb/common/led.c
-> @@ -10,6 +10,7 @@
->  #include <linux/init.h>
->  #include <linux/leds.h>
->  #include <linux/usb.h>
-> +#include "common.h"
->  
->  #define BLINK_DELAY 30
->  
-> @@ -36,18 +37,14 @@ void usb_led_activity(enum usb_led_event ev)
->  EXPORT_SYMBOL_GPL(usb_led_activity);
->  
-> 
-> -static int __init ledtrig_usb_init(void)
-> +void __init ledtrig_usb_init(void)
->  {
->  	led_trigger_register_simple("usb-gadget", &ledtrig_usb_gadget);
->  	led_trigger_register_simple("usb-host", &ledtrig_usb_host);
-> -	return 0;
->  }
->  
-> -static void __exit ledtrig_usb_exit(void)
-> +void __exit ledtrig_usb_exit(void)
->  {
->  	led_trigger_unregister_simple(ledtrig_usb_gadget);
->  	led_trigger_unregister_simple(ledtrig_usb_host);
->  }
-> -
-> -module_init(ledtrig_usb_init);
-> -module_exit(ledtrig_usb_exit);
-> diff --git a/drivers/usb/core/usb.c b/drivers/usb/core/usb.c
-> index 7fcb9f782931..5a0df527a8ca 100644
-> --- a/drivers/usb/core/usb.c
-> +++ b/drivers/usb/core/usb.c
-> @@ -1185,19 +1185,17 @@ static struct notifier_block usb_bus_nb = {
->  	.notifier_call = usb_bus_notify,
->  };
->  
-> -struct dentry *usb_debug_root;
-> -EXPORT_SYMBOL_GPL(usb_debug_root);
-> +static struct dentry *usb_devices_root;
->  
->  static void usb_debugfs_init(void)
->  {
-> -	usb_debug_root = debugfs_create_dir("usb", NULL);
-> -	debugfs_create_file("devices", 0444, usb_debug_root, NULL,
-> -			    &usbfs_devices_fops);
-> +	usb_devices_root = debugfs_create_file("devices", 0444, usb_debug_root,
-> +					       NULL, &usbfs_devices_fops);
->  }
->  
->  static void usb_debugfs_cleanup(void)
->  {
-> -	debugfs_remove_recursive(usb_debug_root);
-> +	debugfs_remove(usb_devices_root);
->  }
->  
->  /*
+> Also why not have it return bool?
 
-
+Just that all architectures (except powerpc) had 'int' as return type. But we can
+change that to 'bool'.
 
 _______________________________________________
 linux-arm-kernel mailing list
