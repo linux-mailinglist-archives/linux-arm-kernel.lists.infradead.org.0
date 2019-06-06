@@ -2,104 +2,140 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73D7236EA3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 10:29:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DFAB36EAC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 10:30:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKO+l3q8M4Q8YLhKLIYftBJ8Wuqe874I6GR+ZIXGw2g=; b=gPZrnGZajhiP7q
-	3zsOZkqzxIuq/Z3RmaclingqRyqbOo49ridYBxDX+TkhPJTMPHiYd3YtVu+3V1iPmcZSBIaWRzn5w
-	NjxJ4DLwLbzyGx0czp4H4L2e79Ny0IjXHsp9ogPfD4njzbkfx49+Mn+R0loQTTQ3aaY9VjwU1pX8e
-	L3gd7w6Iw9uGvohp5QSsHvLpwcFA7EuUm5bqBn3Y5wNILMFmCVE31q0RfxHPxT/up/pq/RtaPFpwj
-	sUGr0wxYuZs1C7ySadD/66XiBC7+gc5xa1DCcXy5hGpPT0GNIUsnDDjlHwFeii12WdPEWX0FYlyMO
-	a42gUaheazrOnjJ3u82A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:To:References:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yNQwkPC8XHx8ikyIy7FhjYmjoC4c0sDkkqLnQkzOv2A=; b=bM7XSN10lkdlV1
+	/I7+2KWoBGo6gJuwVCH95Z0U/F8c79/oflyOI5bBNL0QTUNwgsVLMca2pTqGqeyOBGPmgXk0REOWc
+	bFX8QxdFOQG2k64JV1/gr9JKlF/oAIH6houTFwq3Q4kjHzQN6B+mVIZr2fCuNhfhE/wmYrdOVTsKr
+	VlpuYuxPE0JGrxE8buvPhmK1F1LSPtFA3wa0E3AkVvvytCe1wwnmp/7ANeSF4DOhjkykBxtGr1jMB
+	eT/k139SlI8vUvHquIZCS6TTwYJqquNQ5GQbOMwtVb7wosiZipKvGs7nVMdb3+Q1BGLmC6ivQTtZX
+	I2TvDYiF8zGcIlQEmeSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYnm3-0004KX-0S; Thu, 06 Jun 2019 08:29:27 +0000
-Received: from mail-eopbgr70083.outbound.protection.outlook.com ([40.107.7.83]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1hYnn1-0005nz-FW; Thu, 06 Jun 2019 08:30:27 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYnlu-0004Jj-Kb
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 08:29:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=C8mBRO1MCnwWDV4bRO5YVT6jPtY8VhZYF2vzfSkXDO4=;
- b=greChKMy5gxKIdziq0jWVypC3sGBp32G/b++51vqAJJncnLSaeYttrJd5PTfou8IMQSKs3SB2NC1qJjbe81bqxQ38tRxPXrbHC++TVUZtS18qQD3iTsfH8J2Q5qpYt1EdKQkDmLThJRu/83qJhP8wLFrvk8P/GQlVTqEBfmlkoY=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3786.eurprd04.prod.outlook.com (52.134.71.21) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.12; Thu, 6 Jun 2019 08:29:13 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1965.011; Thu, 6 Jun 2019
- 08:29:13 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: RE: [PATCH V4 1/4] dt-bindings: imx: Add clock binding doc for i.MX8MN
-Thread-Topic: [PATCH V4 1/4] dt-bindings: imx: Add clock binding doc for
- i.MX8MN
-Thread-Index: AQHVHAeguECfjY+e10iOlRyz227+CqaOPjIAgAAMMnA=
-Date: Thu, 6 Jun 2019 08:29:13 +0000
-Message-ID: <DB3PR0402MB39160A7975F9D20EF77F6186F5170@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190606013323.3392-1-Anson.Huang@nxp.com>
- <20190606074036.vx2smtauiwxy6wzx@flea>
-In-Reply-To: <20190606074036.vx2smtauiwxy6wzx@flea>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 405427fd-aef5-43bd-6c0c-08d6ea590e9c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3786; 
-x-ms-traffictypediagnostic: DB3PR0402MB3786:
-x-ms-exchange-purlcount: 3
-x-microsoft-antispam-prvs: <DB3PR0402MB3786E57EC53809727D30CB5FF5170@DB3PR0402MB3786.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4502;
-x-forefront-prvs: 00603B7EEF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(39860400002)(376002)(346002)(366004)(13464003)(199004)(189003)(9686003)(7416002)(7736002)(478600001)(305945005)(25786009)(6916009)(186003)(4326008)(26005)(53936002)(66446008)(73956011)(5660300002)(81156014)(6246003)(81166006)(8936002)(8676002)(52536014)(68736007)(33656002)(316002)(53376002)(86362001)(74316002)(6506007)(99286004)(6436002)(229853002)(446003)(6306002)(66066001)(55016002)(486006)(11346002)(71190400001)(476003)(76116006)(54906003)(66946007)(966005)(66476007)(14454004)(2906002)(256004)(44832011)(102836004)(3846002)(6116002)(7696005)(71200400001)(76176011)(64756008)(53546011)(66556008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3786;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 7DWiVbykOzdMKFrgORxPRThhzszJM089GvGvpFOQ8yW5REMxwhBf4QNFHkAttMCdnS9Rbga6ZFbFoM0qRWyT/duewO7HWagFlkKZmsknVnSkiFCPCb/uz2hvQRPUZz1j0WOsdkbo/xwmPoiEl97KcPwb7BOvc+jRqaRQ97vCtrdV6PphxqF+zbcfz46z0SzG5Gf+KfV21sVXoSZiWy/p5F9Upi6ZNwnjuW+pLU5NMt6C6mgST9pWDLYFbh8axGFba3zJHFOaeAsYY78WpBSkmtp7v2+HTyla676YrB8EpmKOfReG5OyVy4cc9tNCZuW/02852BJv03ROTYpwxCeBYP3i4T3uY2lxwEgI72mycTTa8bDQo3+m7McHj6JfH0t8UOSh42OpNfeoPNKQDtmYt255KmjGkH9sjsbb4O0eG9E=
+ id 1hYnmt-0005ne-Gc
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 08:30:21 +0000
+Received: by mail-wm1-x342.google.com with SMTP id x15so803914wmj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Jun 2019 01:30:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:cc:references:to:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=pk4TP3jkzutsV/3BYmS7awVOTNmUuRDjlf79Ih7MWMY=;
+ b=z4+/xa5IUfyD3bpXieodfLwEeIVow8eIo9NeAx0ycCcILxxu/LBMb6sHNelSYIcuCf
+ HsxA39jCaziqR5chUnmnLyEiP3mosu6PRSZ/sdU7jRq2kJKCsQAsHj2EkFDX1o1gLA0p
+ eYAXllH486rM3q+Rx+7qyiyB2Py3cuUX1sylyi9a8YO8OxC3k7xUvYbwUwnoAUcuHnGZ
+ lsQhbfA5vg/02qFHDyFtqitqITTROFU9JvWaNbN3Yh+JFBF92DyL16uuuXZzCzXcIyiP
+ WEyjE3WzZLjlsQvRoukoWGo6egHSSLAGi07pL/N+Il1qLwSG+GlHcNXZ6m07OS2viULZ
+ RwzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:cc:references:to:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=pk4TP3jkzutsV/3BYmS7awVOTNmUuRDjlf79Ih7MWMY=;
+ b=J4W+2SygRYueQ5N9UfSB7c2a0K39p6R33GTlM2qSXRtYQwBpLbUZ0cBxHIyIoraQQ9
+ lNRKKf3UWFvMYRXPnRH+edFhPZCrJ3cE9a5FGosnwigYoVn88jIV2Wh4wPez6KAeVavR
+ PC9wdGGiZujvynSqjnTFqHMD9qtKd0Jka2wrDp27B8uyjxynrTAmjE4lAOXXXOyMZZnw
+ 3xCztTBtyxgVru8wOb/2U9JPabE7v6LVNsKQQnYb3Cj+EJT1aB/7ijZAQopp8rq07BYM
+ J3Fw25lT4ATXFkN+sqRaLZ6r34sMKzFfD/zkokMvljKkcqJgn194IJnqqDttBBHM+d2E
+ u+JQ==
+X-Gm-Message-State: APjAAAW0tHVmdNEUreRQvdEcWrdOM2aRhmSsVMwcpJFOEuNV6rablxWz
+ nrx+kQRS6xbv4JZfNTu3dD28Gw==
+X-Google-Smtp-Source: APXvYqzxhPHRm9++LnrexnxMr+PCPOW8aedrYUC4UmGtHedAFoF3unj4c8hp8FhONjydpohRGLayUQ==
+X-Received: by 2002:a1c:5f09:: with SMTP id t9mr26835150wmb.112.1559809817207; 
+ Thu, 06 Jun 2019 01:30:17 -0700 (PDT)
+Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id l12sm836614wmj.22.2019.06.06.01.30.16
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 06 Jun 2019 01:30:16 -0700 (PDT)
+Subject: Re: [PATCH 1/2] ARM: multi_v7_defconfig: add Panfrost driver
+References: <20190604112003.31813-1-tomeu.vizoso@collabora.com>
+To: arm@kernel.org
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <baffe48d-5228-55f5-694f-1d4d899a41be@baylibre.com>
+Date: Thu, 6 Jun 2019 10:30:15 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 405427fd-aef5-43bd-6c0c-08d6ea590e9c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jun 2019 08:29:13.6275 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3786
+In-Reply-To: <20190604112003.31813-1-tomeu.vizoso@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_012918_678699_157DC144 
-X-CRM114-Status: GOOD (  24.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190606_013019_696580_C4DF788A 
+X-CRM114-Status: GOOD (  18.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.83 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -113,224 +149,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Peng Fan <peng.fan@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, Tony Lindgren <tony@atomide.com>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ =?UTF-8?Q?Yannick_Fertr=c3=a9?= <yannick.fertre@st.com>,
+ Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Maxime
+Hi Olof, Arnd,
 
-> -----Original Message-----
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
-> Sent: Thursday, June 6, 2019 3:41 PM
-> To: Anson Huang <anson.huang@nxp.com>
-> Cc: mturquette@baylibre.com; sboyd@kernel.org; robh+dt@kernel.org;
-> mark.rutland@arm.com; shawnguo@kernel.org; s.hauer@pengutronix.de;
-> kernel@pengutronix.de; festevam@gmail.com; catalin.marinas@arm.com;
-> will.deacon@arm.com; olof@lixom.net; jagan@amarulasolutions.com;
-> horms+renesas@verge.net.au; bjorn.andersson@linaro.org; Leonard Crestez
-> <leonard.crestez@nxp.com>; dinguyen@kernel.org;
-> enric.balletbo@collabora.com; Aisheng Dong <aisheng.dong@nxp.com>;
-> Abel Vesa <abel.vesa@nxp.com>; Jacky Bai <ping.bai@nxp.com>;
-> l.stach@pengutronix.de; Peng Fan <peng.fan@nxp.com>; linux-
-> clk@vger.kernel.org; devicetree@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; dl-linux-imx
-> <linux-imx@nxp.com>
-> Subject: Re: [PATCH V4 1/4] dt-bindings: imx: Add clock binding doc for
-> i.MX8MN
-> 
-> Hi,
-> 
-> On Thu, Jun 06, 2019 at 09:33:20AM +0800, Anson.Huang@nxp.com wrote:
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> >
-> > Add the clock binding doc for i.MX8MN.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> > Changes since V3:
-> > 	- switch binding doc from .txt to .yaml.
-> > ---
-> >  .../devicetree/bindings/clock/imx8mn-clock.yaml    | 115 +++++++++++
-> >  include/dt-bindings/clock/imx8mn-clock.h           | 215
-> +++++++++++++++++++++
-> >  2 files changed, 330 insertions(+)
-> >  create mode 100644
-> > Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-> >  create mode 100644 include/dt-bindings/clock/imx8mn-clock.h
-> >
-> > diff --git a/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-> > b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-> > new file mode 100644
-> > index 0000000..8cb8fcf
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
-> > @@ -0,0 +1,115 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/bindings/clock/imx8mn-clock.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: NXP i.MX8M Nano Clock Control Module Binding
-> > +
-> > +maintainers:
-> > +  - Anson Huang <Anson.Huang@nxp.com>
-> > +
-> > +description: |
-> > +  NXP i.MX8M Nano clock control module is an integrated clock
-> > +controller, which
-> > +  generates and supplies to all modules.
-> > +
-> > +  This binding uses common clock bindings  [1]
-> > + Documentation/devicetree/bindings/clock/clock-bindings.txt
-> 
-> Which part exactly are you using?
-> 
-> I'm not sure it's worth referring to. Any provider property should be listed
-> here, and the consumer properties are already checked.
-
-Agreed, I will remove this reference statement in next version.
-
-> 
-> > +properties:
-> > +  compatible:
-> > +    const: fsl,imx8mn-ccm
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    items:
-> > +      - description: 32k osc
-> > +      - description: 24m osc
-> > +      - description: ext1 clock input
-> > +      - description: ext2 clock input
-> > +      - description: ext3 clock input
-> > +      - description: ext4 clock input
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: osc_32k
-> > +      - const: osc_24m
-> > +      - const: clk_ext1
-> > +      - const: clk_ext2
-> > +      - const: clk_ext3
-> > +      - const: clk_ext4
-> > +
-> > +  '#clock-cells':
-> > +    const: 1
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - clocks
-> > +  - clock-names
-> > +  - '#clock-cells'
-> > +
-> > +examples:
-> > +  # Clock Control Module node:
-> > +  - |
-> > +    clk: clock-controller@30380000 {
-> > +        compatible = "fsl,imx8mn-ccm";
-> > +        reg = <0x0 0x30380000 0x0 0x10000>;
-> > +        #clock-cells = <1>;
-> > +        clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>,
-> > +                 <&clk_ext2>, <&clk_ext3>, <&clk_ext4>;
-> > +        clock-names = "osc_32k", "osc_24m", "clk_ext1",
-> > +                      "clk_ext2", "clk_ext3", "clk_ext4";
-> > +    };
-> > +
-> > +  # Required external clocks for Clock Control Module node:
-> > +  - |
-> > +    osc_32k: clock-osc-32k {
-> > +        compatible = "fixed-clock";
-> > +        #clock-cells = <0>;
-> > +        clock-frequency = <32768>;
-> > +	clock-output-names = "osc_32k";
-> > +    };
-> > +
-> > +    osc_24m: clock-osc-24m {
-> > +        compatible = "fixed-clock";
-> > +        #clock-cells = <0>;
-> > +        clock-frequency = <24000000>;
-> > +        clock-output-names = "osc_24m";
-> > +    };
-> > +
-> > +    clk_ext1: clock-ext1 {
-> > +        compatible = "fixed-clock";
-> > +        #clock-cells = <0>;
-> > +        clock-frequency = <133000000>;
-> > +        clock-output-names = "clk_ext1";
-> > +    };
-> > +
-> > +    clk_ext2: clock-ext2 {
-> > +        compatible = "fixed-clock";
-> > +        #clock-cells = <0>;
-> > +        clock-frequency = <133000000>;
-> > +        clock-output-names = "clk_ext2";
-> > +    };
-> > +
-> > +    clk_ext3: clock-ext3 {
-> > +        compatible = "fixed-clock";
-> > +        #clock-cells = <0>;
-> > +        clock-frequency = <133000000>;
-> > +        clock-output-names = "clk_ext3";
-> > +    };
-> > +
-> > +    clk_ext4: clock-ext4 {
-> > +        compatible = "fixed-clock";
-> > +        #clock-cells = <0>;
-> > +        clock-frequency= <133000000>;
-> > +        clock-output-names = "clk_ext4";
-> > +    };
-> > +
-> > +  # The clock consumer should specify the desired clock by having the
-> > + clock  # ID in its "clocks" phandle cell. See
-> > + include/dt-bindings/clock/imx8mn-clock.h
-> > +  # for the full list of i.MX8M Nano clock IDs.
-> 
-> I guess this could be part of the clock-cells description.
-> 
-
-OK.
+Could you take these directly or an arm soc maintainer should take them in their trees ?
 
 Thanks,
-Anson.
+Neil
 
-> Once fixed,
-> Reviewed-by: Maxime Ripard <maxime.ripard@bootlin.com>
+On 04/06/2019 13:20, Tomeu Vizoso wrote:
+> With the goal of making it easier for CI services such as KernelCI to
+> run tests for it.
 > 
-> Maxime
+> Signed-off-by: Tomeu Vizoso <tomeu.vizoso@collabora.com>
+> ---
+>  arch/arm/configs/multi_v7_defconfig | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+> diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+> index 6b748f214eae..952dff9d39f2 100644
+> --- a/arch/arm/configs/multi_v7_defconfig
+> +++ b/arch/arm/configs/multi_v7_defconfig
+> @@ -656,6 +656,7 @@ CONFIG_DRM_VC4=m
+>  CONFIG_DRM_ETNAVIV=m
+>  CONFIG_DRM_MXSFB=m
+>  CONFIG_DRM_PL111=m
+> +CONFIG_DRM_PANFROST=m
+>  CONFIG_FB_EFI=y
+>  CONFIG_FB_WM8505=y
+>  CONFIG_FB_SH_MOBILE_LCDC=y
+> 
+
+And BTW :
+Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
