@@ -2,55 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49CBA369C9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:06:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1098369D6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:11:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mggi2l3xLCy864BwImzZ3rLBQlQGBFI0NiskE7hRobw=; b=KX/9TRSNg9XRf7
-	81GBAnqbhmZohztsJTr55XpEJk2lLD1xByXjCeui9VNQNG7pm4RVLScN1MP/C94LnwqVaIUi2s83T
-	W+j+Jok9/rhjMCr9uFOpJrcXdrMxez83Py+Pr15py/l6SsxsOzs/Mo7iORuVrBTAbtQ50GdYJCGm5
-	1LFpIU1PfV9YJyaCYZ/J72P3OlvzcAtZMaT/2Pg2fh0dyXxNwuoXquNacS89WoJj+jvT30agPfPfw
-	cunOHkOgbwgMZ2q30sl3KeslBKgqjNnzFOhKWUgTEnefKRvdaz8qhyxqh8SXtouogYFyuVP4NDbO2
-	dadLluNvorgSe4jfd0lA==;
+	List-Owner; bh=tS8vrlK16qK2n9jRxJVkfMUw6J9cMLhjzerLkh0TYLQ=; b=PI16Te1OIqn6Ny
+	RiPifIluSdOyRhsNKfRzKIiILn+BDHV8Tx1giknipJPwYSPLHgd5oh6Hc3P/rvVcvfQ5jTZysNJa1
+	/ZdmWg25BmtbuOxo5RLoXnIHi0dUAnn8O6UV/FIASGKUDVTfq7mxlbRV94Cd/EIztyejFWzsfGPkD
+	FvxKcHW+rKMiLeaq+2nXqqpVw0YCk/5KnOxuuY8AUkyatbRrpgsByVqumqJVNws6i3hB2Y0/+ox2F
+	R52JsZzTJpigyQgRq+uyMqNXw+8GcE75zn5nNBGqRV1nllcztWaq9KSw0kiYpq6R1rZfjiT1cye0u
+	Y6Wu6x4EOJSXvRdE8igQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYhnQ-0007QW-MU; Thu, 06 Jun 2019 02:06:28 +0000
+	id 1hYhrs-0000if-UC; Thu, 06 Jun 2019 02:11:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYhnJ-0007QF-Mr
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:06:23 +0000
+ id 1hYhrm-0000iH-5I
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:10:59 +0000
 Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 87F072083E;
- Thu,  6 Jun 2019 02:06:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 943F920717;
+ Thu,  6 Jun 2019 02:10:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559786781;
- bh=DEsewAl7DchdG5mLmaSMM4jw+TI9oz5CtU88XfxctO8=;
+ s=default; t=1559787057;
+ bh=1wV4ExVvlN5EgzNFrCwIfBYS4g4614HuuxSdiSYaE/s=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=S6qdHb+g0hwne9QhXK7didYcZvyT4/OZ9iGY/cpRgOP6bhtY4CjGGwCNcaJg4AZA+
- +d64pQOL5PGasF24/0V6slqoe+vBqFm09G0YP0GS8dkutNXAnZ55AcJAbDvl3NhOQB
- IKpinacWQS65dfc4v+4FrCdDs/YPsizhsee09cRo=
-Date: Thu, 6 Jun 2019 10:06:06 +0800
+ b=iaBgjkWHvEUB8xTxgpH7CYMJSqAEFJfcmI6o0nb7AXcneh+zDM86Ycr7Dgq2kb6yz
+ mmwwCHGq64fFLsorar9SPLF5AZaKCC1oM+7C3300P/f7k+roVd1FB3O9wi4YsBL8w9
+ X2EyQoBRKcUrQF+WyBrJQ4Y6VrM9A4SyL2ECfOYQ=
+Date: Thu, 6 Jun 2019 10:10:32 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH V2] ARM: dts: imx53: Bind CPLD on M53Menlo
-Message-ID: <20190606020605.GU29853@dragon>
-References: <20190601223050.27410-1-marex@denx.de>
- <20190606015451.GS29853@dragon>
- <CAOMZO5D7Y8rmROYd0cEnLTSi2bGhx2KDfCQ9iDP94bXeUui4ow@mail.gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2] ARM: configs: Remove useless UEVENT_HELPER_PATH
+Message-ID: <20190606021027.GV29853@dragon>
+References: <1559636093-26005-1-git-send-email-krzk@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAOMZO5D7Y8rmROYd0cEnLTSi2bGhx2KDfCQ9iDP94bXeUui4ow@mail.gmail.com>
+In-Reply-To: <1559636093-26005-1-git-send-email-krzk@kernel.org>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_190621_762926_9A288BE7 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190605_191058_222295_2305B3D3 
+X-CRM114-Status: GOOD (  12.51  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,32 +76,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, NXP Linux Team <linux-imx@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Mans Rullgard <mans@mansr.com>, linux-aspeed@lists.ozlabs.org,
+ Tony Lindgren <tony@atomide.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ linux-kernel@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>, arm@kernel.org,
+ Joel Stanley <joel@jms.id.au>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Vladimir Zapolskiy <vz@mleia.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Andrew Jeffery <andrew@aj.id.au>, Dinh Nguyen <dinguyen@kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Sudeep Holla <sudeep.holla@arm.com>, Olof Johansson <olof@lixom.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 05, 2019 at 10:57:54PM -0300, Fabio Estevam wrote:
-> Hi Shawn,
+On Tue, Jun 04, 2019 at 10:14:53AM +0200, Krzysztof Kozlowski wrote:
+> Remove the CONFIG_UEVENT_HELPER_PATH because:
+> 1. It is disabled since commit 1be01d4a5714 ("driver: base: Disable
+>    CONFIG_UEVENT_HELPER by default") as its dependency (UEVENT_HELPER) was
+>    made default to 'n',
+> 2. It is not recommended (help message: "This should not be used today
+>    [...] creates a high system load") and was kept only for ancient
+>    userland,
+> 3. Certain userland specifically requests it to be disabled (systemd
+>    README: "Legacy hotplug slows down the system and confuses udev").
 > 
-> On Wed, Jun 5, 2019 at 10:55 PM Shawn Guo <shawnguo@kernel.org> wrote:
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+> Acked-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > 
-> > Don't you get the following warning from kernel?
-> >
-> >   OF: buggy DT: spidev listed directly in DT
+> ---
 > 
-> I originally thought about that too, but then I saw this patch from
-> Marek, which avoids the warning:
-> https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/drivers/spi/spidev.c?h=next-20190605&id=c6e2d2c7ca4e6d09bc07ab5ced2e687cc842a860
+> Changes since v2:
+> 1. Remove unrelated files.
+> 2. Add Geert's ack.
+> ---
+...
+>  arch/arm/configs/imx_v4_v5_defconfig      | 1 -
 
-Okay.  Has compatible "menlo,m53cpld" been documented?  Also my
-understanding is that as long as "spidev" is on the compatible list,
-we will see this warning, no?
-
-Shawn
+Acked-by: Shawn Guo <shawnguo@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
