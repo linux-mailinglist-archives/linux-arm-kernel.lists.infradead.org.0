@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FB1036F78
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:06:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAED136F9D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:14:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XC9t+sa9cU5U0p6tSVqr/VoqxYlaUhWAQPfgiSsYJUs=; b=ea8
-	QEBILb1P/ZP1vBprUg/yHHvPJVktUtQ4w+Wy3nukNZUNC4CUv+UAkke0fIf5xBEJ6H4ORG/0NHjIy
-	SJSJm9MNa/WYNMkrH4vNtf2b8O152XJqqyIP/bskspNmvG5C6kt1XW+RarQ4JONBGe6ITDtfFalBG
-	wnF6ZptnwPpYD0iaLTWvYVH5BUSfxWXcXhFjw6P+uLEjf31SIZaX8viasdsQ7Qc3PxwSGx2DlV2k8
-	hZosKmZ3/lRf8BXjBeJO/+PiRM+j5Je3VuuMDlkwFfhbTKSPy66BFDwQqb9Jkr0N/vC02eEO/wgYG
-	RZW8a6CGIhLxk8GkVkaPN2qtMuZ6Lyg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0rduYcBkTblxzpWCb8HcmKMaVLu9d5Tne0Ca6l7tH8U=; b=SXnt/ZNdZ5eCFw
+	lzo1clUiYXipsh7xcm4cHcxSY5Za9DjzZOFQOisQpSEHa9J9EP+q076zwG6GXixWH+7v64GbpazkY
+	QtoH39SNY+jkRS/S6Ow6xaLvIuizTCzVxYJ35vqKczok2qiB/S49cqD/KshnkeqYyUPD7PM/rNY6l
+	QD0WCOZHG3jzwA8c+tmbDx2qbZYySQ0zRNwwCLgODpKuOfnhIgrrehdi03Xf/5NnLFSJKtxforkXd
+	wpm+45OWPuuEgTvcqf57SM4zAtU0puvgqyKl5SDIfT36KuftlCNjoj2dnaSptXNgxmeVJJBDPtCaQ
+	oCxMnMHxA7NOfCaIODHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYoLm-0005pH-T4; Thu, 06 Jun 2019 09:06:22 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hYoTF-0007zU-Uc; Thu, 06 Jun 2019 09:14:05 +0000
+Received: from mail-it1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYoLf-0005om-LD
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:06:17 +0000
-Received: by mail-wm1-x342.google.com with SMTP id f10so1587024wmb.1
+ id 1hYoT8-0007yp-At
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:13:59 +0000
+Received: by mail-it1-x144.google.com with SMTP id h20so2037582itk.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 02:06:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=KMQQNwJBTgO7c7d14ttHpXY/GIsLIp6HS6MARbf/Q9A=;
- b=gwzUTKuOOxDM5N4gR9q7gZ8bOecepQqD08QgZ0yVijx0Ju/rYVGf7KjDftPfukMR7t
- QFUBNjMFtH2/QoRb5hYPRakga4cmgfl3W+/4mNT7vNH2BtAYAlSZgpzK3JW9dxM0GT9o
- +g+kPZXyHE9ciXaUcbD1hxywy58F7xskKtQ+sJS6OR/DWBrDi5QgvcqiZsXbWVgYAut/
- mAIeswCbfTqvKMbSlJJ7hk/sjgaOLtQh4oGpZENf/+2jT7Dino9ekpD8QVLzOY7Ltx7u
- Q8i8xAh2UaxtRLCMBnkUqNLiGG9LsB8FzY294nXm4rhtB18/24bMYE+Di1iyoe5FkSFZ
- StlA==
+ Thu, 06 Jun 2019 02:13:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VT2noAdE4Dd/0JtGeEPEhO0YPMQ5D4GEDk/xscedmiE=;
+ b=UTtGTUpTXZ8eBIEf4gKK1bZ/8fCZDBNDsaH4d8pGmtyQ0TXf8bIl3VsPEnxVHxSvUK
+ AKc5YLcEa4Y6EMV1PvwKdiRl2yzG08IISbw2GdKhgq0fi8FgF3P4dedg7XqPDhO6hUQ/
+ 51aAmvj7ueKdWEhYV2CdUxhZNmeD/ttk/vrs6dX1Nrczy3JhG+3c7uawwnvexSB/3P1t
+ L4QdNa3VWDJLO+z9UrUsSlfAxzmuK5TiRN3Cq+bhkb92/1pk+IjXaq/SQlcRC2pM0QmF
+ bLJYoGi3YoaY5pK6YdKzzHQ5ILnbRR9hkswXtRIOJ27YGzQfxL0jz7BnVmqiMNoeh1re
+ NFCA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=KMQQNwJBTgO7c7d14ttHpXY/GIsLIp6HS6MARbf/Q9A=;
- b=baHXpAg8k4WhOOFbT8TxdUoLCn8bd5o4WhVddCqiUyy0oz9/2dBi056hXqy+SDxhPg
- STDje0YLzuXYCLuWD2hl3JJdjAchcolfKBvkwn7TswQBYISCWUSsJ/tZ/QMALiZkzCpL
- omF3/BCsgQ1qdcYWHtuKr/WR5w0spBAN6sDB023Zd7EE2lnhYT92RfhuYfHOZnO20pvy
- yfl2uCmxh29gSjlQxayXDyKRF2ng8JXTgI8xLmRCp8an+L6DEvJoepUURNYC1u0zXtHc
- VkpVzKFmbx3YxDFzjUSTk5ieDTpUnpK9NUfkfwz4zckTvg6ugpTXL1eXQRVK228w7q6f
- 8nUw==
-X-Gm-Message-State: APjAAAUVfQ7TCy/79fy34CP8lBQh9sA+0nogARU3odr0G0wNVbY1ZyZg
- JxD8IJXORImNWV7nmE3fh+U=
-X-Google-Smtp-Source: APXvYqyjBaJBEW6wEaIDQT6j7Ydz173felu88CUjXOpFlw3YjbC8P7qVoxTgBEZeOFdEoQ2P/QTknA==
-X-Received: by 2002:a1c:f001:: with SMTP id a1mr17028447wmb.130.1559811973647; 
- Thu, 06 Jun 2019 02:06:13 -0700 (PDT)
-Received: from localhost ([194.105.145.90])
- by smtp.gmail.com with ESMTPSA id k10sm1026662wmj.37.2019.06.06.02.06.12
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 06 Jun 2019 02:06:13 -0700 (PDT)
-From: Igor Opaniuk <igor.opaniuk@gmail.com>
-To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/1] ARM: dts: imx6ull-colibri: enable UHS-I for USDHC1
-Date: Thu,  6 Jun 2019 12:06:12 +0300
-Message-Id: <20190606090612.16685-1-igor.opaniuk@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VT2noAdE4Dd/0JtGeEPEhO0YPMQ5D4GEDk/xscedmiE=;
+ b=Swm9T6F7DmRse88ET9aikA2DCTmqXqCwP0gqAnyV3yL1witHDPYWnREztGDjezcjT3
+ 8EviGAvex+1AUusnega0+OhMzWcRNcwusLMrms7LxBULPJqfYjLR/ZHbc3BkBw9hMMtx
+ FROiHtuUrrNGLOQ0w4mlOZ5mQwBAMAr608KPhc6G+HphZuwh9vWaTHlQZPc0jJpOi2mB
+ nx7OuhEnpWrG59ecZsi7aKL3L1/4Ccu4QJZw6bJ4WV400PmcfoakslpkOT3KDHnfLUpM
+ 3MRNl0waimfV1BNnBk8fc7rgaAo/bfUCIUq+cX3VvUdxOKfG18JsVw/LT+XxMUebug/V
+ 7KEQ==
+X-Gm-Message-State: APjAAAUuie1tXCkVgC2BLMGTU/uS4YWKPfTk+s8i+sh1FEtED3QLu4m/
+ tAMMDXBgnETVlpg6GcgzHcvGckHYjYO8lgv7Md/2sQ==
+X-Google-Smtp-Source: APXvYqyCpGPCw2blWOGm1uM3ralbUHEpsLi1UzYSgf/YLXM/XkyAhmAYcyHLXPWgk1dLytRVGKnbEkPDrJ+a7+1S/aI=
+X-Received: by 2002:a05:660c:44a:: with SMTP id
+ d10mr9230969itl.153.1559812436942; 
+ Thu, 06 Jun 2019 02:13:56 -0700 (PDT)
+MIME-Version: 1.0
+References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
+ <20190604014945.GE189360@google.com>
+ <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
+ <20190604124959.GF189360@google.com>
+ <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+ <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+In-Reply-To: <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 6 Jun 2019 11:13:44 +0200
+Message-ID: <CAKv+Gu_3Nb5mPZgRfx+wQSz+eWM+FSbw_14fHm+u=v2EbuYoGQ@mail.gmail.com>
+Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_020615_717341_9A038697 
-X-CRM114-Status: GOOD (  14.00  )
+X-CRM114-CacheID: sfid-20190606_021358_374453_BFF2C39F 
+X-CRM114-Status: GOOD (  28.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (igor.opaniuk[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,97 +97,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, marcel.ziswiler@toradex.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, stefan@agner.ch, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com, marcel@ziswiler.com
-MIME-Version: 1.0
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-pci <linux-pci@vger.kernel.org>, Sinan Kaya <okaya@kernel.org>,
+ "Zilberman, Zeev" <zeev@amazon.com>, "Saidi, Ali" <alisaidi@amazon.com>,
+ Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Igor Opaniuk <igor.opaniuk@toradex.com>
+On Thu, 6 Jun 2019 at 11:00, Benjamin Herrenschmidt
+<benh@kernel.crashing.org> wrote:
+>
+> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+>
+> On arm64 ACPI systems, we unconditionally reconfigure the entire PCI
+> hierarchy at boot. This is a departure from what is customary on ACPI
+> systems, and may break assumptions in some places (e.g., EFIFB), that
+> the kernel will leave BARs of enabled PCI devices where they are.
+>
+> Given that PCI already specifies a device specific ACPI method (_DSM)
+> for PCI root bridge nodes that tells us whether the firmware thinks
+> the configuration should be left alone, let's sidestep the entire
+> policy debate about whether the PCI configuration should be preserved
+> or not, and put it under the control of the firmware instead.
+>
+> [BenH: Added pci_assign_unassigned_root_bus_resources()]
+>
+> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> ---
+>
+> So I would like this variant rather than mucking around with
+> IORESOURCE_PCI_FIXED at this stage to fix the problem with our platforms.
+>
+> See my other email, IORESOURCE_PCI_FIXED doesn't really work terribly well
+> when using pci_bus_size_bridges and pci_bus_assign_resources, and the
+> resulting patches are ugly and add more mess.
+>
+> Long run, I propose to start working on consolidating all those various
+> resource survey mechanisms around what x86 does, unless people strongly
+> object... (with the addition of the probe only and force reassign quirks
+> so platforms can still chose that).
+>
+> Note: I haven't tested the effect of pci_assign_unassigned_root_bus_resources
+> as our platforms don't leave anything unassigned. I'm not entirely sure how
+> well pci_bus_claim_resources() will deal with a partially assigned setup...
+>
+> We do want to support partial assignment by BIOS though, it's a trend to
+> reduce boot time, people seem to want BIOSes to only assign what's critical
+> for booting.
+>
+> Bjorn: I haven't made the claim path the default in absence of _DSM #5 yet.
+> I suggest we do that as a separate patch in case it breaks somebody, thus
+> making bisection more meaningful. It will also make this one more palatable
+> to distros since it won't change the behaviour on systems without _DSM #5,
+> and we verified nobody has it except Seattle which returns 1.
+>
 
-Allows to use the SD interface at a higher speed mode if the card
-supports it. For this the signaling voltage is switched from 3.3V to
-1.8V under the usdhc1's drivers control.
+FYI Seattle is broken in any case since it returns Package(1) rather
+than just an int.
 
-Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
----
- arch/arm/boot/dts/imx6ul.dtsi                  |  4 ++++
- arch/arm/boot/dts/imx6ull-colibri-eval-v3.dtsi | 11 +++++++++--
- arch/arm/boot/dts/imx6ull-colibri.dtsi         |  6 ++++++
- 3 files changed, 19 insertions(+), 2 deletions(-)
+The problem with this patch is that currently, the PCI fw spec permits
+_DSM #5 everywhere *except* on the host bridge device object itself,
+and this is in the process of being changed.
 
-diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-index fc388b84bf22..91a0ced44e27 100644
---- a/arch/arm/boot/dts/imx6ul.dtsi
-+++ b/arch/arm/boot/dts/imx6ul.dtsi
-@@ -857,6 +857,8 @@
- 					 <&clks IMX6UL_CLK_USDHC1>,
- 					 <&clks IMX6UL_CLK_USDHC1>;
- 				clock-names = "ipg", "ahb", "per";
-+				fsl,tuning-step= <2>;
-+				fsl,tuning-start-tap = <20>;
- 				bus-width = <4>;
- 				status = "disabled";
- 			};
-@@ -870,6 +872,8 @@
- 					 <&clks IMX6UL_CLK_USDHC2>;
- 				clock-names = "ipg", "ahb", "per";
- 				bus-width = <4>;
-+				fsl,tuning-step= <2>;
-+				fsl,tuning-start-tap = <20>;
- 				status = "disabled";
- 			};
- 
-diff --git a/arch/arm/boot/dts/imx6ull-colibri-eval-v3.dtsi b/arch/arm/boot/dts/imx6ull-colibri-eval-v3.dtsi
-index 006690ea98c0..7dc7770cf52c 100644
---- a/arch/arm/boot/dts/imx6ull-colibri-eval-v3.dtsi
-+++ b/arch/arm/boot/dts/imx6ull-colibri-eval-v3.dtsi
-@@ -145,13 +145,20 @@
- };
- 
- &usdhc1 {
--	pinctrl-names = "default";
-+	pinctrl-names = "default", "state_100mhz", "state_200mhz", "sleep";
- 	pinctrl-0 = <&pinctrl_usdhc1 &pinctrl_snvs_usdhc1_cd>;
--	no-1-8-v;
-+	pinctrl-1 = <&pinctrl_usdhc1_100mhz &pinctrl_snvs_usdhc1_cd>;
-+	pinctrl-2 = <&pinctrl_usdhc1_100mhz &pinctrl_snvs_usdhc1_cd>;
-+	pinctrl-3 = <&pinctrl_usdhc1 &pinctrl_snvs_usdhc1_sleep_cd>;
- 	cd-gpios = <&gpio5 0 GPIO_ACTIVE_LOW>;
- 	disable-wp;
- 	wakeup-source;
- 	keep-power-in-suspend;
- 	vmmc-supply = <&reg_3v3>;
-+	vqmmc-supply = <&reg_sd1_vmmc>;
-+	sd-uhs-sdr12;
-+	sd-uhs-sdr25;
-+	sd-uhs-sdr50;
-+	sd-uhs-sdr104;
- 	status = "okay";
- };
-diff --git a/arch/arm/boot/dts/imx6ull-colibri.dtsi b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-index 9ad1da159768..d56728f03c35 100644
---- a/arch/arm/boot/dts/imx6ull-colibri.dtsi
-+++ b/arch/arm/boot/dts/imx6ull-colibri.dtsi
-@@ -545,6 +545,12 @@
- 		>;
- 	};
- 
-+	pinctrl_snvs_usdhc1_sleep_cd: snvs-usdhc1-cd-grp-slp {
-+		fsl,pins = <
-+			MX6ULL_PAD_SNVS_TAMPER0__GPIO5_IO00	0x0
-+		>;
-+	};
-+
- 	pinctrl_snvs_wifi_pdn: snvs-wifi-pdn-grp {
- 		fsl,pins = <
- 			MX6ULL_PAD_BOOT_MODE1__GPIO5_IO11	0x14
--- 
-2.17.1
+I will leave it up to the maintainers to decide whether we can take
+this patch in anticipation of that, even though it doesn't deal with
+_DSM #5 on nodes anywhere else in the PCIe tree.
 
+>  arch/arm64/kernel/pci.c  | 23 +++++++++++++++++++++--
+>  include/linux/pci-acpi.h |  7 ++++---
+>  2 files changed, 25 insertions(+), 5 deletions(-)
+>
+> diff --git a/arch/arm64/kernel/pci.c b/arch/arm64/kernel/pci.c
+> index bb85e2f4603f..6358e1cb4f9f 100644
+> --- a/arch/arm64/kernel/pci.c
+> +++ b/arch/arm64/kernel/pci.c
+> @@ -168,6 +168,7 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
+>         struct acpi_pci_generic_root_info *ri;
+>         struct pci_bus *bus, *child;
+>         struct acpi_pci_root_ops *root_ops;
+> +       union acpi_object *obj;
+>
+>         ri = kzalloc(sizeof(*ri), GFP_KERNEL);
+>         if (!ri)
+> @@ -193,8 +194,26 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
+>         if (!bus)
+>                 return NULL;
+>
+> -       pci_bus_size_bridges(bus);
+> -       pci_bus_assign_resources(bus);
+> +       /*
+> +        * Invoke the PCI device specific method (_DSM) #5 'Ignore PCI Boot
+> +        * Configuration', which tells us whether the firmware wants us to
+> +        * preserve the configuration of the PCI resource tree for this root
+> +        * bridge.
+> +        */
+> +       obj = acpi_evaluate_dsm(ACPI_HANDLE(bus->bridge), &pci_acpi_dsm_guid, 1,
+> +                               IGNORE_PCI_BOOT_CONFIG_DSM, NULL);
+> +       if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
+> +               /* preserve existing resource assignment */
+> +               pci_bus_claim_resources(bus);
+> +
+> +               /* Assign anything that might have been left out */
+> +               pci_assign_unassigned_root_bus_resources(bus);
+> +       } else {
+> +               /* reconfigure the resource tree from scratch */
+> +               pci_bus_size_bridges(bus);
+> +               pci_bus_assign_resources(bus);
+> +       }
+> +       ACPI_FREE(obj);
+>
+>         list_for_each_entry(child, &bus->children, node)
+>                 pcie_bus_configure_settings(child);
+> diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
+> index 8082b612f561..62b7fdcc661c 100644
+> --- a/include/linux/pci-acpi.h
+> +++ b/include/linux/pci-acpi.h
+> @@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
+>  #endif
+>
+>  extern const guid_t pci_acpi_dsm_guid;
+> -#define DEVICE_LABEL_DSM       0x07
+> -#define RESET_DELAY_DSM                0x08
+> -#define FUNCTION_DELAY_DSM     0x09
+> +#define IGNORE_PCI_BOOT_CONFIG_DSM     0x05
+> +#define DEVICE_LABEL_DSM               0x07
+> +#define RESET_DELAY_DSM                        0x08
+> +#define FUNCTION_DELAY_DSM             0x09
+>
+>  #else  /* CONFIG_ACPI */
+>  static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
