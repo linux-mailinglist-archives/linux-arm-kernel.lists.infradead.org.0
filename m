@@ -2,72 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68874370AE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:48:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56295370B3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:48:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AE6MOJPNBkw5e40960Sv3dl1lKDV9IWbWhanwUtFhwA=; b=LRs0HxomPSue8E
-	4zUe3BWgBX50m5gH8edny2MMtyQfcwouhEXodjkfDukLap+ul5vToYjS4XakTIHt9m46IOx/WukmX
-	/8u1THjIuoJa+m8admw7u7jthHeMnaK0whLdBE9WOJkMMNqBh/kL2AOaBSG8FGgZirw7zZseYy7VY
-	ZzrD2vH1JfNn2m9r/vTrgq+8BKQpthEhCMsM/XlPnQe5wdnAVXEwxved+hGfBw2WsPlYlAv0enXpI
-	B87S7TJnK2P8/EzLh3NsdNfoIIdTdW9D8qR2XJojMn8JANQR/q9cXOKSxLZAu0oXffgtSmQ3gfhs6
-	VQCzGwIFz40OmfI+QskQ==;
+	List-Owner; bh=z2kv4ndsCkZz2fmob9QxYctSFyr/QKaSQfbzpHBlSF8=; b=AOEijmWyNh/sOK
+	HDqHoiCSTqGfIqMsdagaV/bAMPFoOOwxIe0tao/OV5e64YiUp9mhZfFVxo/5i1JAmVSWv+dverAOK
+	OLtk48xQEeo7SLCcROxP+dyHeOhPgnLR1hM5LkfKtaDtGtoFB5p/Il2Ma+w9nxwtW+Y3OvEa3ikjK
+	ug2jzHBpCePjcsHlBvlKOsjNGFlCj9wwAcq7y2sgQOUHFIGN1xtGzKgFYuKPyTkCVE+JTzj32b+Sh
+	rr9/EyH98948hxVHhNFZiw30kuqmKw6WwkC3krroUxUNPVPq8cPcH9w2RuaTisnlPUDdRVP3qVFVt
+	l2cpu9nb7mYb+/dz/RcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYp0B-0006pZ-36; Thu, 06 Jun 2019 09:48:07 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1hYp0O-000770-6c; Thu, 06 Jun 2019 09:48:20 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYozd-0006GS-44
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:47:49 +0000
-Received: by mail-lj1-x244.google.com with SMTP id m23so1344490lje.12
+ id 1hYozh-0006NG-Q4
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:48:01 +0000
+Received: by mail-lf1-x143.google.com with SMTP id r15so1053480lfm.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 02:47:32 -0700 (PDT)
+ Thu, 06 Jun 2019 02:47:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=J2Cqvkykb6IzlqW52A480gg6SUQ50ONET6S3EycqghE=;
- b=Ct2B8euOQrdzpG+cBAg47dgcUgrlI6vJX6UvUSSPeNwsKDpV+z4nSYOjKzI7W0wXTu
- r4jjtQhfwhUWEQvY5WPDdCcoU0aNZzPqjiQACNymjSE/whrVITUQW+sfJJRh67N7gAPV
- Y6aGOOnJIzpqaVpPjdK9zk+OILcF70TrXSnFDTE9d0Uy3ATZRk6SB8Wm0vsDLnuEgW9u
- Msd37JC1CJnUF4yMZWBh8aTUaup5fRhVX6rYUFH8B7T1WP2DESSOhwHMhzvxVFXo3gDL
- 7pyLCCCDkdbKjJb4GMB88KOLLQZUiiIkR93f5TCKdSUkMPxl4b0iKh4nvjQxFwzkSw/n
- PuYA==
+ bh=tqLAHFWcFPPRWg/WUmIKVQXRfjbKzLHes3un8tM9Gvg=;
+ b=vHUW3+ZZeGk/a3xl67ZoRzH2OeuOzTB13K64lPfM8o6ubuED7MfpLkMU42xD3KDTGG
+ htbekOtb95OTRxYqsJ57kJ+7eBDSb9YsOUmpEOfAcgfbUH9drA+CYkDRQb87juXm2gDt
+ PRFJrv4x5Ttdpe+wr/kbs1XGegjxwq3YM3U0+pItUlRiB/RsC1+ymGjhCv80Qtj5/TQ8
+ AqvCFqeTSw5zMAvuBjLvyf9ZiJ4xirXkcbH6DZ2pUywixzEe4js0aoa9r9FrXYnmpn5M
+ vZnPIw5AOdPXDPoJIijX0vfgQCekmdrDEIiznGfYyqbX9Z1nQdeDTa0Oszi4RPnzcCdd
+ nFmw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=J2Cqvkykb6IzlqW52A480gg6SUQ50ONET6S3EycqghE=;
- b=r/AomGeDlMntLNR1WK6fESF9nEE8V0TlF8BeOG0/4ClMhove5uG2ldoiWqFyNDErIx
- B2N0vKUPFor5ZvVOJLbcR4RHwR5E6voQtQQYe+9Tvsk4fQBWwnWcH9Nr2vPPSXzLQW7G
- PQ50dCtL1ggQNQgD7Gj8HstVhlS8hhLlMtxNACOmYHxCGR+lz4AeEgdiBVjFp8TM9Zgg
- poGfKwpCqUS2LGOjQb3HfPryr6iUzNzrSt5RFFr1e5ZRVySbNZPUanyowbquUEO84E4A
- /KRca9Sxd0K51DLBYuk3LbkC1ER31CGomA1s+Ppww7iXq19S2D2Chm4nV99gU4uumUUn
- EVDw==
-X-Gm-Message-State: APjAAAWaZTbgAqPuySBsnmFRtNFXCET/xzXvCHYP0eI+wCL3xyEKKpc9
- JOWId14l/kv5UwOeqeDHwjEHPQ==
-X-Google-Smtp-Source: APXvYqzYFWFgXwM4oVScr/7MwzKqnuStv9TQA+4YHbIIppvBW9LTDZNPdBEJzK7doqcYm4prjjpeQg==
-X-Received: by 2002:a2e:751c:: with SMTP id q28mr563236ljc.178.1559814451458; 
- Thu, 06 Jun 2019 02:47:31 -0700 (PDT)
+ bh=tqLAHFWcFPPRWg/WUmIKVQXRfjbKzLHes3un8tM9Gvg=;
+ b=lTcHLrwjKmCC7tuBSDoNFhLM/0mQ/zo4VmqUIMjlLQgqeSvR4g+uVIL/+xihIK9bBy
+ gud2DjowshWmonfhSsRTSDEfwpcaU+2QWS2NFgQYHrLZSyQcNcrCmwpDL62c9vIl64Wh
+ NBIWRwidgP9yd3i3GFwvdhs8NMNgOMpZ5CtvRn3gc5xFYM3sQPrMtFMQsJ7CVZ2y+DpI
+ NQCpCoboO0YUCHyLXxaJajQo2LdNIIVBJ2Fd4/SMAnquDCYi/xhPggsYPKiTVf9AsNnG
+ BRMmOsZ1Cpi/hG58l025e1wICQTkmJvW8e9F4zmn44w1hz2EAwP5M1cGZasqqITD2JPV
+ S4Qw==
+X-Gm-Message-State: APjAAAV9tW93V2slsXL65g3mR+uZZUTryCDJcrHzSE4DWm/UmdGm68mB
+ j4Xq48nTmwN1f29ghwr03T0O5g==
+X-Google-Smtp-Source: APXvYqzwnsLpfjtk0CIHJjGAd3PHOuMbYbXAW2joQUfJaemcbv8dWKNOhuhIygzLFkH6KdzB5dTdug==
+X-Received: by 2002:a19:e05c:: with SMTP id g28mr8736392lfj.167.1559814455812; 
+ Thu, 06 Jun 2019 02:47:35 -0700 (PDT)
 Received: from localhost (c-1c3670d5.07-21-73746f28.bbcust.telenor.se.
  [213.112.54.28])
- by smtp.gmail.com with ESMTPSA id y6sm256967ljj.20.2019.06.06.02.47.30
+ by smtp.gmail.com with ESMTPSA id u13sm220277lfl.61.2019.06.06.02.47.35
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 06 Jun 2019 02:47:30 -0700 (PDT)
+ Thu, 06 Jun 2019 02:47:35 -0700 (PDT)
 From: Anders Roxell <anders.roxell@linaro.org>
-To: andrew@lunn.ch, f.fainelli@gmail.com, hkallweit1@gmail.com,
- davem@davemloft.net
-Subject: [PATCH 6/8] drivers: net: phy: fix warning same module names
-Date: Thu,  6 Jun 2019 11:47:26 +0200
-Message-Id: <20190606094727.23868-1-anders.roxell@linaro.org>
+To: lee.jones@linaro.org
+Subject: [PATCH 7/8] drivers: mfd: 88pm800: fix warning same module names
+Date: Thu,  6 Jun 2019 11:47:31 +0200
+Message-Id: <20190606094731.23918-1-anders.roxell@linaro.org>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_024733_909376_D78A85B1 
-X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-CacheID: sfid-20190606_024738_618173_3323EC30 
+X-CRM114-Status: UNSURE (   7.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,48 +96,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marex@denx.de, linux-fbdev@vger.kernel.org,
- Anders Roxell <anders.roxell@linaro.org>, p.zabel@pengutronix.de,
- b.zolnierkie@samsung.com, airlied@linux.ie, lee.jones@linaro.org,
- s.hauer@pengutronix.de, lgirdwood@gmail.com, stefan@agner.ch,
- linux-kernel@vger.kernel.org, a.hajda@samsung.com, broonie@kernel.org,
- dri-devel@lists.freedesktop.org, daniel@ffwll.ch, netdev@vger.kernel.org,
- mchehab@kernel.org, shawnguo@kernel.org, vivien.didelot@gmail.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: andrew@lunn.ch, linux-fbdev@vger.kernel.org, airlied@linux.ie,
+ stefan@agner.ch, linux-kernel@vger.kernel.org, a.hajda@samsung.com,
+ marex@denx.de, f.fainelli@gmail.com, Anders Roxell <anders.roxell@linaro.org>,
+ vivien.didelot@gmail.com, linux-media@vger.kernel.org, daniel@ffwll.ch,
+ b.zolnierkie@samsung.com, s.hauer@pengutronix.de, broonie@kernel.org,
+ dri-devel@lists.freedesktop.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+ lgirdwood@gmail.com, p.zabel@pengutronix.de, shawnguo@kernel.org,
+ davem@davemloft.net, hkallweit1@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When building with CONFIG_ASIX_PHY and CONFIG_USB_NET_AX8817X enabled as
-loadable modules, we see the following warning:
+When building with CONFIG_MFD_88PM800 and CONFIG_REGULATOR_88PM800
+enabled as loadable modules, we see the following warning:
 
 warning: same module names found:
-  drivers/net/phy/asix.ko
-  drivers/net/usb/asix.ko
+  drivers/regulator/88pm800.ko
+  drivers/mfd/88pm800.ko
 
-Rework so media coda matches the config fragment. Leaving
-CONFIG_USB_NET_AX8817X as is since thats a well known module.
+Rework so the names matches the config fragment.
 
 Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
 ---
- drivers/net/phy/Makefile | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/mfd/Makefile | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/phy/Makefile b/drivers/net/phy/Makefile
-index 947c974bc69e..bab179b75a2a 100644
---- a/drivers/net/phy/Makefile
-+++ b/drivers/net/phy/Makefile
-@@ -52,7 +52,8 @@ ifdef CONFIG_HWMON
- aquantia-objs			+= aquantia_hwmon.o
- endif
- obj-$(CONFIG_AQUANTIA_PHY)	+= aquantia.o
--obj-$(CONFIG_ASIX_PHY)		+= asix.o
-+obj-$(CONFIG_ASIX_PHY)		+= asix-phy.o
-+asix-phy-objs			:= asix.o
- obj-$(CONFIG_AT803X_PHY)	+= at803x.o
- obj-$(CONFIG_BCM63XX_PHY)	+= bcm63xx.o
- obj-$(CONFIG_BCM7XXX_PHY)	+= bcm7xxx.o
+diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+index 52b1a90ff515..5e870eef6a20 100644
+--- a/drivers/mfd/Makefile
++++ b/drivers/mfd/Makefile
+@@ -5,8 +5,11 @@
+ 
+ 88pm860x-objs			:= 88pm860x-core.o 88pm860x-i2c.o
+ obj-$(CONFIG_MFD_88PM860X)	+= 88pm860x.o
+-obj-$(CONFIG_MFD_88PM800)	+= 88pm800.o 88pm80x.o
+-obj-$(CONFIG_MFD_88PM805)	+= 88pm805.o 88pm80x.o
++obj-$(CONFIG_MFD_88PM800)	+= mfd-88pm800.o mfd-88pm80x.o
++mfd-88pm800-objs		:= 88pm800.o
++obj-$(CONFIG_MFD_88PM805)	+= mfd-88pm805.o mfd-88pm80x.o
++mfd-88pm805-objs		:= 88pm805.o
++mfd-88pm80x-objs		:= 88pm80x.o
+ obj-$(CONFIG_MFD_ACT8945A)	+= act8945a.o
+ obj-$(CONFIG_MFD_SM501)		+= sm501.o
+ obj-$(CONFIG_MFD_ASIC3)		+= asic3.o tmio_core.o
 -- 
 2.20.1
 
