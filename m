@@ -2,71 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FE1B37C45
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 20:29:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4E3337C4D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 20:32:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OrXzwkVxxSoX7ftHS5c0jk4cRFA0p3IF1inJMdAkWaM=; b=oUAQfdBqvazTTc
-	gqkM2pN+Iuz7MPao8h9m13EpOKM8BuWMdToJ2p1TyymheWwBMO3RkXseBMj9GQ5fAyYmUAVprbjjz
-	jRUFw877fGkwNRp5+ZnmeC2SsfvTKcLYMWLxNyDTa0MmZ1zP3tfKdNReDF4lEYu3BOGOsKT+5k9Dp
-	ZRLQhBgyEJ6LuwIWeOXFByGLTr4xWbQsDypfvsUch+s2dBXuwmA+ub/AJZUw3gBf68nyaDxnI0Dtk
-	IxLTREl+ph40nKkXhTK3g/8LNwMfRlG1YUdS5uxfJHYlX+F8Dx39ZbawImGsqe8S+rod/oDYPfaCY
-	51kiT2AaGlJ57brekvdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=M0T2jWM5gX/NrQYGixTYzQv5PHbkUjGhEeLXWaxd6P4=; b=B7c1GMFZjwA+C2N/356m+bla9
+	UFXJQCk6QRMi54h5bxlqd0rJVFIdHBYt9Mx/xk/GBFymPFK81QDLgs3NRQcOZZkLnD3buRFs1wWvX
+	ug7wE79ECGJabNQzmQ8eNfBKXmHdYf+HuAQdHnKTZIo9awJvUkIjYkQdL0ft6AlwmVnonE/5vK4Kh
+	8Sr8ozCE0DoyabrMYC2B/NrLwMtPyioD2Jawk+aGhNbpapWMQxfXYu8wY1CfoZEGQIiHcnpSRBmod
+	mjMCSY+eGYBN7wgr7TdeuXubi0clfQgJOOoqnkM2wONjuH/MG3omJd0aAjsn/NUsB9aEilHDA4b4p
+	VBmV4Fnkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYx93-0007mx-3X; Thu, 06 Jun 2019 18:29:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hYxB9-0000qj-Gc; Thu, 06 Jun 2019 18:31:59 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYx8v-0007mL-Bt
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 18:29:42 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F0D8C20872;
- Thu,  6 Jun 2019 18:29:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559845781;
- bh=OoC4nuWJqWE5iN/x6Gw9nBBptIg/ze0etoB1mALTSr8=;
- h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=P94sqtESM6b3xMQNPs2CjFLVowQJbk6VUGVSpv8guH7GwtldZ6lxKUVT+sP2mIDVj
- iwvC1wIFrZn6j796btdt+p6I/JHv9PyFivw6RXrRx8dq91v3LSpB9w5J/Sc8Xsn0QG
- lWrA74hFBsg/O/8mabbl8C3pIsOAZlwnyBQNQmmE=
+ id 1hYxB2-0000q8-Jc; Thu, 06 Jun 2019 18:31:54 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id A10C1AE4D;
+ Thu,  6 Jun 2019 18:31:49 +0000 (UTC)
+Message-ID: <50edadb7b1b1d74c605d73d48518b5e20638b51a.camel@suse.de>
+Subject: Re: [PATCH v2 4/7] cpufreq: add driver for Raspbery Pi
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Stephen Boyd <sboyd@kernel.org>, "Rafael J. Wysocki"
+ <rjw@rjwysocki.net>,  Viresh Kumar <viresh.kumar@linaro.org>,
+ stefan.wahren@i2se.com
+Date: Thu, 06 Jun 2019 20:31:47 +0200
+In-Reply-To: <20190606182335.1D15F20872@mail.kernel.org>
+References: <20190606142255.29454-1-nsaenzjulienne@suse.de>
+ <20190606142255.29454-5-nsaenzjulienne@suse.de>
+ <20190606170949.4A46720652@mail.kernel.org>
+ <eb72a26b55cf17c29df6a7fd3c5def08182e00af.camel@suse.de>
+ <20190606173609.2C3952083D@mail.kernel.org>
+ <153579ddd7e6bd1e5c860a7a01115e47c78a1442.camel@suse.de>
+ <20190606182335.1D15F20872@mail.kernel.org>
+User-Agent: Evolution 3.32.2 
 MIME-Version: 1.0
-In-Reply-To: <1559132773-12884-1-git-send-email-abel.vesa@nxp.com>
-References: <1559132773-12884-1-git-send-email-abel.vesa@nxp.com>
-To: Abel Vesa <abel.vesa@nxp.com>, Mike Turquette <mturquette@baylibre.com>,
- Shawn Guo <shawnguo@kernel.org>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [RESEND v2 00/18] clk: imx: Switch the imx6 and imx7 to clk_hw
- based API
-User-Agent: alot/0.8.1
-Date: Thu, 06 Jun 2019 11:29:40 -0700
-Message-Id: <20190606182940.F0D8C20872@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_112941_427197_F1D46429 
-X-CRM114-Status: UNSURE (   6.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190606_113152_937996_12C2FA35 
+X-CRM114-Status: GOOD (  24.81  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,36 +66,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
+ ptesarik@suse.com, mturquette@baylibre.com, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, mbrugger@suse.de, ssuloev@orpaltech.com
+Content-Type: multipart/mixed; boundary="===============7165469943632309649=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Abel Vesa (2019-05-29 05:26:38)
-> Resend for the following:
-> 
-> https://lkml.org/lkml/2019/5/2/170
 
-What's left after this series to convert over to clk_hw based APIs? I'm
-happy to see this merge as long as we eventually delete the clk based
-versions of the code in the imx driver so that we can complete the task.
+--===============7165469943632309649==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-PCYUiltwEYfTM8wgpO12"
 
-I took a look over everything and nothing stuck out, so:
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+--=-PCYUiltwEYfTM8wgpO12
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-for the series.
+On Thu, 2019-06-06 at 11:23 -0700, Stephen Boyd wrote:
+> Quoting Nicolas Saenz Julienne (2019-06-06 11:10:04)
+> > On Thu, 2019-06-06 at 10:36 -0700, Stephen Boyd wrote:
+> > > Quoting Nicolas Saenz Julienne (2019-06-06 10:22:16)
+> > > > Hi Stephen,
+> > > > Thanks for the review.
+> > > >=20
+> > > > On Thu, 2019-06-06 at 10:09 -0700, Stephen Boyd wrote:
+> > > > > Quoting Nicolas Saenz Julienne (2019-06-06 07:22:56)
+> > > > > > diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c
+> > > > > > b/drivers/cpufreq/raspberrypi-cpufreq.c
+> > > > > > new file mode 100644
+> > > > > > index 000000000000..99b59d5a50aa
+> > > > > > --- /dev/null
+> > > > > > +++ b/drivers/cpufreq/raspberrypi-cpufreq.c
+> > > > > [...]
+> > > > > > +
+> > > > > > +/*
+> > > > > > + * Since the driver depends on clk-raspberrypi, which may retu=
+rn
+> > > > > > EPROBE_DEFER,
+> > > > > > + * all the activity is performed in the probe, which may be de=
+fered
+> > > > > > as
+> > > > > > well.
+> > > > > > + */
+> > > > > > +static struct platform_driver raspberrypi_cpufreq_driver =3D {
+> > > > > > +       .driver =3D {
+> > > > > > +               .name =3D "raspberrypi-cpufreq",
+> > > > > > +       },
+> > > > > > +       .probe          =3D raspberrypi_cpufreq_probe,
+> > > > > > +       .remove         =3D raspberrypi_cpufreq_remove,
+> > > > > > +};
+> > > > > > +module_platform_driver(raspberrypi_cpufreq_driver);
+> > > > >=20
+> > > > > How does this driver probe? Do you have a node in DT named
+> > > > > raspberrypi-cpufreq that matches and probes this? I would think t=
+his
+> > > > > would follow the drivers/cpufreq/cpufreq-dt-platdev.c design wher=
+e
+> > > > > it's
+> > > > > an initcall that probes the board compatible string.
+> > > > >=20
+> > > > > Or, if it depends on clk-raspberrypi probing, maybe it could crea=
+te
+> > > > > the
+> > > > > platform device in that drivers probe function.
+> > > >=20
+> > > > Well you just reviewed that patch :)
+> > >=20
+> > > Ok. So what's your plan?
+> >=20
+> > So as discussed previously with the RPi mantainers, they preferred for =
+the
+> > platform device for raspberrypi-clk to be created by the firmware inter=
+face
+> > driver. IIRC Stefan said it was more flexible and the approach used wit=
+h
+> > RPi's
+> > hwmon driver already. Also, it's not really clear whether this driver r=
+eally
+> > fits the device tree as it wouldn't be describing hardware.
+> >=20
+> > As far as raspberrypi-cpufreq is concerned the max and min frequencies =
+are
+> > configurable in the firmware. So we can't really integrate cpufreq into=
+ the
+> > device tree as we need to create the opp table dynamically. Hence the
+> > dedicated
+> > driver. On top of that the CPU might not have a clock during the init
+> > process,
+> > as both the firmware interface and raspberrypi-clk can be compiled as
+> > modules.
+> > So I decided the simplest solution was to create the raspberrypi-cpufre=
+q
+> > platform device at the end of raspberrypi-clk's probe.
+> >=20
+> > Once raspberrypi-cpufreq is loaded it queries the min/max frequencies,
+> > populates the CPU's opp table and creates an instance of cpufreq-dt. Wh=
+ich
+> > finally can operate, without the need of any dt info, as opp tables are
+> > populated and CPUs have a clock.
+> >=20
+> > I hope this makes it a little more clear :).
+> >=20
+>=20
+> Yes, thanks. I see that largely follows the commit description so it
+> looks OK to me.
+>=20
 
+Thanks!
+
+
+--=-PCYUiltwEYfTM8wgpO12
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAlz5XBMACgkQlfZmHno8
+x/7vFwgAnjzWaIFSw0AxW4nf31cfoR9r+HpJidC2eUQM6yOtUWsHYyQkO2rYhnko
+wEZ2B2agV3Ya0AE4xD4gklrTm5J2E/Wsd1jVX4SBWvlCuiKFSEad4zG0xeR+HvRP
+gMOArg11sPi4INEfqaDANfQyPoMdD9f7qVGlytyV5Fb2028FCJwVMe7VlXbTj2/K
+WdD5dIU/VXIEqqV5SelI5CoXt2J52kGDVg6+rIM/3fu+KNdUE/WS5sstEdKUksAF
+JxDel6WB/mVepEQ3lMDX0X22ThhqR984OJYPiIFfHzVafoN+1A1lGeWHa2DmcSyM
+QtCewkj8IzG0h6bz4O+0yyfFnqjZTA==
+=aEU8
+-----END PGP SIGNATURE-----
+
+--=-PCYUiltwEYfTM8wgpO12--
+
+
+
+--===============7165469943632309649==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7165469943632309649==--
+
+
