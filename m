@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2A3A36FE1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:32:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8403736FEA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:32:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fmFWrH6calXZ4iQx7qLeJyIyY4JChZYs0lmr7LPHidg=; b=uqGzkKSukM+dMBQJiS5oqpBkmC
-	vklpKeVjXbCsJV7BpnOO+pYrZj5ctO2G1i0wQLy4CwQAwbBF50HEDa2lnN2uKdJBgThd+utmNyIrv
-	NkcMPSqgzdqeumK7SLatWFvpcY4LJSQOHzYi0ujWtXQCjEKKfpcCOy4EDbkbmpLXZtqc/mvonzXYo
-	TI9KBuOjFQ6Dl8ccuMMv2gOyYL4uwZNhK/9wTjmy1ZnS1e1gQ7H+SWBDuXDqpRPMLkv8tDX21Q8lU
-	iHktVOOP0vTyhQbaWgYKMUf4tC9oUhJTHenaK8YKsJrpB+JTYYVSaifXTnKOEZBCGBqIN8bmPdxfK
-	F8Xru9Jw==;
+	bh=nz0A9kC07Jbp8sY3NRJtJqrM61U87xbGBJqwH0awR5Q=; b=S68mzBQgHV927DXH9Esdc+oEIH
+	bpu3QpIqQBjXf+rD5pV+p4GWA/NCWZx3BHzdxTHskRECfYfftrFVN4ZX14CF73cSjInqJGNPdvSqF
+	L+1cC382F0w+1TiSw3oSW3Q4mo1qt4K6HQv3Z5EE+OFekEV2aNmGy5zSLklPJTiQ2QSpQCVpMLVNp
+	yEYNnm7WRCpk6j58josYjeHoXs5oZA7o6PklB807bmEfQPYhJyr78uEdbqWNuTweqnqpYb3nBE3WV
+	b3SGuw4tD1lR5cMMk1ys7OuhCEnvoGfLZFzPDnRXLzB/qLuNHP6EnKDV90vf84H8XRwEjxX9coH5e
+	BadAEsbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYokz-0006Yg-0o; Thu, 06 Jun 2019 09:32:25 +0000
+	id 1hYolC-0006uh-AM; Thu, 06 Jun 2019 09:32:38 +0000
 Received: from foss.arm.com ([217.140.101.70])
  by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYokh-0006Qw-Tu
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:32:09 +0000
+ id 1hYokj-0006Rd-PH
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:32:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EEBE180D;
- Thu,  6 Jun 2019 02:32:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4C7EB15A2;
+ Thu,  6 Jun 2019 02:32:09 -0700 (PDT)
 Received: from e112298-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.72.51.249])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DB04C3F690;
- Thu,  6 Jun 2019 02:32:04 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 38E653F690;
+ Thu,  6 Jun 2019 02:32:07 -0700 (PDT)
 From: Julien Thierry <julien.thierry@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 1/8] arm64: Do not enable IRQs for ct_user_exit
-Date: Thu,  6 Jun 2019 10:31:50 +0100
-Message-Id: <1559813517-41540-2-git-send-email-julien.thierry@arm.com>
+Subject: [PATCH v3 2/8] arm64: irqflags: Pass flags as readonly operand to
+ restore instruction
+Date: Thu,  6 Jun 2019 10:31:51 +0100
+Message-Id: <1559813517-41540-3-git-send-email-julien.thierry@arm.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1559813517-41540-1-git-send-email-julien.thierry@arm.com>
 References: <1559813517-41540-1-git-send-email-julien.thierry@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_023207_968063_9925438A 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20190606_023209_822039_93482EFE 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -72,50 +73,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For el0_dbg and el0_error, DAIF bits get explicitly cleared before
-calling ct_user_exit.
-
-When context tracking is disabled, DAIF gets set (almost) immediately
-after. When context tracking is enabled, among the first things done
-is disabling IRQs.
-
-What is actually needed is:
-- PSR.D = 0 so the system can be debugged (should be already the case)
-- PSR.A = 0 so async error can be handled during context tracking
-
-Do not clear PSR.I in those two locations.
+Flags are only read by the instructions doing the irqflags restore
+operation. Pass the operand as read only to the asm inline instead of
+read-write.
 
 Signed-off-by: Julien Thierry <julien.thierry@arm.com>
-Cc:Catalin Marinas <catalin.marinas@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will.deacon@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Marc Zyngier <marc.zyngier@arm.com>
 ---
- arch/arm64/kernel/entry.S | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/include/asm/irqflags.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index cd0c7af..89ab6bd 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -870,7 +870,7 @@ el0_dbg:
- 	mov	x1, x25
- 	mov	x2, sp
- 	bl	do_debug_exception
--	enable_daif
-+	enable_da_f
- 	ct_user_exit
- 	b	ret_to_user
- el0_inv:
-@@ -922,7 +922,7 @@ el0_error_naked:
- 	enable_dbg
- 	mov	x0, sp
- 	bl	do_serror
--	enable_daif
-+	enable_da_f
- 	ct_user_exit
- 	b	ret_to_user
- ENDPROC(el0_error)
+diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
+index 62996318..9c93152 100644
+--- a/arch/arm64/include/asm/irqflags.h
++++ b/arch/arm64/include/asm/irqflags.h
+@@ -119,8 +119,8 @@ static inline void arch_local_irq_restore(unsigned long flags)
+ 			__msr_s(SYS_ICC_PMR_EL1, "%0")
+ 			"dsb	sy",
+ 			ARM64_HAS_IRQ_PRIO_MASKING)
+-		: "+r" (flags)
+ 		:
++		: "r" (flags)
+ 		: "memory");
+ }
+
 --
 1.9.1
 
