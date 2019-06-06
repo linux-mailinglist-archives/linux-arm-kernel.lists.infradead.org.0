@@ -2,61 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5DF236900
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 03:05:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E90E336911
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 03:14:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0x9l4oZJLa2Zi9Nr1Dfvre+Yo4A4mCV7QllPqxhPz2Q=; b=Kz5qVpwDzy4XI0
-	y0Kj2Y5KDTav/c4zb4K4d1wQ9vm91lrdrPkL+WBjB/ZE4trAvQceky/O8A0FSlXo6Nv7tt67LlwHm
-	cznHgekRJRZhuU2GnD5vxZiJybVhj6hKlqDZsGQj3NqcTYyJJukMveBXrM7M0zvBthgCqG6KRocGd
-	KT1FhkxB05ezNWnajXfzVk1SpdKT/W69yFTg6gHDOG65HO0cWzczBpsvjR6C9ucgAgbfX3VlTo5XV
-	1QBp41J7sSPa0l8IB/1s4A1RV+qzNdD3QuxJjYYVcpT/6pYwoMGbTAzgz9AaMz3cUpOM03WwzHOou
-	GzB5eIwSfgoWbx40qV/A==;
+	List-Owner; bh=QNlPPty38wKEK/9x/Wy49I73MwPgU44ArYcy+fES53c=; b=b0ku2KAe2i7YFm
+	prm/TD5iuePoPYgS9sYxfzcomfWUMDb1o8nBh36elAttB1aaFUgwoHwuQQJRX9T3+ogGyMm52XJT9
+	XOJx06MJzhqBSanp2XtadOM0no1P/RiezLGPqsEYm8a1X7WkleO7YvW+MqcloVhK5bdcFhDZlQiE7
+	e0Q5kPtDt/3FJmYaDTTeS1agi8e8CaFil6w4onYkhvvpNTQTpqlPfie1OfXgDUAw3u/wNltSf67G2
+	ZGgaq/p5Nb8LsKW1gZw7YRCt62zVZTBTpbrC+/O+SeR7H7HWi6UhlmSRh+aWgrSSoxxPyhfTO5wi3
+	Vmdr01YqXIuUQCzF6Ntg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYgps-000325-Tk; Thu, 06 Jun 2019 01:04:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hYgzT-000655-K0; Thu, 06 Jun 2019 01:14:51 +0000
+Received: from mail-eopbgr50050.outbound.protection.outlook.com ([40.107.5.50]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYgpk-00031j-Oo
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 01:04:50 +0000
-Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E6E4C20872;
- Thu,  6 Jun 2019 01:04:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559783088;
- bh=y9Y0nBtkXWOsuZydgoYTvSFfbBFosYnVEbiVlseLM8g=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=p31hObTrXcg6hWOauZjRUqsNHUY3x8RpYwXE80eyhKsmjbwDSMshcjY5iLZO52jZh
- ijE5QnTtbZH0NcmOC3ih2M2UjVHhM1ZwYBXV6/Kitupdfg82xufJEGudb7gpvsx2pC
- 2bIt+2F0W6eqxa00vNo3ud44TnUY5Hx6tS/uce88=
-Date: Thu, 6 Jun 2019 09:04:31 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Vladimir Oltean <olteanv@gmail.com>
-Subject: Re: [PATCH v2] ARM: dts: Introduce the NXP LS1021A-TSN board
-Message-ID: <20190606010429.GP29853@dragon>
-References: <20190529221222.19276-1-olteanv@gmail.com>
+ id 1hYgzL-00064H-RI
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 01:14:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=K7SEToEJJk2tohfv8HDvE6EhVhuGjgXvv5ERpyz5nAY=;
+ b=KJVONeQVlSf24n6pHrvHIt1EAsRLzi0mJvKUEBRIHLzlHFljbmNpokh6XW8ShlQUnEWjMC/Ilcob19IGptF5Zq7bbc+sHc9l8sFjj7lz38hgLxU3/ES+vcyMhRuEHV1GINYFzuHXqkbTLcmhB+AP9XEuI6Uh59LQ7M/BSyMVHJ8=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3756.eurprd04.prod.outlook.com (52.134.73.29) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.12; Thu, 6 Jun 2019 01:14:33 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1965.011; Thu, 6 Jun 2019
+ 01:14:33 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, Abel Vesa <abel.vesa@nxp.com>, Aisheng
+ Dong <aisheng.dong@nxp.com>, "bjorn.andersson@linaro.org"
+ <bjorn.andersson@linaro.org>, "catalin.marinas@arm.com"
+ <catalin.marinas@arm.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "festevam@gmail.com" <festevam@gmail.com>, "horms+renesas@verge.net.au"
+ <horms+renesas@verge.net.au>, "jagan@amarulasolutions.com"
+ <jagan@amarulasolutions.com>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
+ <linux-clk@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "maxime.ripard@bootlin.com"
+ <maxime.ripard@bootlin.com>, "mturquette@baylibre.com"
+ <mturquette@baylibre.com>, "olof@lixom.net" <olof@lixom.net>, Jacky Bai
+ <ping.bai@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "will.deacon@arm.com" <will.deacon@arm.com>
+Subject: RE: [PATCH V3 1/4] dt-bindings: imx: Add clock binding doc for i.MX8MN
+Thread-Topic: [PATCH V3 1/4] dt-bindings: imx: Add clock binding doc for
+ i.MX8MN
+Thread-Index: AQHVGnjyIW8h9e1Tqk6HjR2Mb0HIlaaNuSkAgAAcJNA=
+Date: Thu, 6 Jun 2019 01:14:33 +0000
+Message-ID: <DB3PR0402MB39165AC38B4F45CE74F57EE7F5170@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190604015928.23157-1-Anson.Huang@nxp.com>
+ <20190605233319.06CE62083E@mail.kernel.org>
+In-Reply-To: <20190605233319.06CE62083E@mail.kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7b76c38a-8ff6-4666-ffa8-08d6ea1c557e
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3756; 
+x-ms-traffictypediagnostic: DB3PR0402MB3756:
+x-microsoft-antispam-prvs: <DB3PR0402MB375610293996416E4B0349BEF5170@DB3PR0402MB3756.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2000;
+x-forefront-prvs: 00603B7EEF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(366004)(136003)(376002)(39860400002)(346002)(189003)(199004)(13464003)(14454004)(2906002)(486006)(52536014)(316002)(2201001)(44832011)(478600001)(86362001)(229853002)(256004)(5660300002)(6116002)(3846002)(33656002)(66066001)(2501003)(476003)(8936002)(7416002)(25786009)(446003)(8676002)(81166006)(81156014)(68736007)(110136005)(6246003)(76176011)(11346002)(7696005)(102836004)(4326008)(53546011)(53936002)(99286004)(6506007)(305945005)(6436002)(55016002)(73956011)(66946007)(66476007)(66556008)(64756008)(66446008)(9686003)(76116006)(186003)(26005)(74316002)(7736002)(71200400001)(71190400001)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3756;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Qed25KPv3TR+adJr8X1R6gAoYpR5Gk1/uwD12BW4+nQWaPqu55XKm2aVNG4Lfyo4brvWSl/7p9Y5pN6mxHxDzkcfmRqe5kL0/vWj8nUcKb67qAudx3yhGLQGL9Vl8s4SWpWGDocYBY/j660EJFrrUaSf5nMlgHkVLA2pGb4CnVmM5gCW4+8xYaqOXyvNGvFPz2dnud00crJsaEYpjlAgiQ44VhGzQwI2SvZwx36x5y8vG67SH2S/FykqugjKSQhL352IpMXj0WYX/FSde6/Ykai3hMCocNlSqgnDpuSJU+LeUnvwhkeHF8Taile2xx1YysMkcmTW7SlFhuYbXMCbAFY2vj295IwrFh/pBqzdfc1ZvaZfKBy1UAEMQk7tjQfzhuvlQ8YNZ+XBCKYCKVYY1MBiOVrCmtOF5jy9yI/unp8=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190529221222.19276-1-olteanv@gmail.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7b76c38a-8ff6-4666-ffa8-08d6ea1c557e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jun 2019 01:14:33.1805 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3756
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_180448_834891_00D8C872 
-X-CRM114-Status: GOOD (  19.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190605_181444_018351_CF70E795 
+X-CRM114-Status: GOOD (  13.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.5.50 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -64,7 +121,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,364 +132,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 01:12:22AM +0300, Vladimir Oltean wrote:
-> The LS1021A-TSN is a development board built by VVDN/Argonboards in
-> partnership with NXP.
-> 
-> It features the LS1021A SoC and the first-generation SJA1105T Ethernet
-> switch for prototyping implementations of a subset of IEEE 802.1 TSN
-> standards.
-> 
-> It has two regular Ethernet ports and four switched, TSN-capable ports.
-> 
-> It also features:
-> - One Arduino header
-> - One expansion header
-> - Two USB 3.0 ports
-> - One mini PCIe slot
-> - One SATA interface
-> - Accelerometer, gyroscope, temperature sensors
-> 
-> Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
-> ---
-> Changes from v1:
-> - Applied Shawn's feedback
-> - Introduced QSPI flash node
-> 
-> v1 patch available at:
-> https://patchwork.kernel.org/patch/10930451/
-> 
->  arch/arm/boot/dts/Makefile        |   1 +
->  arch/arm/boot/dts/ls1021a-tsn.dts | 288 ++++++++++++++++++++++++++++++
->  2 files changed, 289 insertions(+)
->  create mode 100644 arch/arm/boot/dts/ls1021a-tsn.dts
-> 
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index dab2914fa293..a4eb4ca5e148 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -602,6 +602,7 @@ dtb-$(CONFIG_SOC_IMX7ULP) += \
->  dtb-$(CONFIG_SOC_LS1021A) += \
->  	ls1021a-moxa-uc-8410a.dtb \
->  	ls1021a-qds.dtb \
-> +	ls1021a-tsn.dtb \
->  	ls1021a-twr.dtb
->  dtb-$(CONFIG_SOC_VF610) += \
->  	vf500-colibri-eval-v3.dtb \
-> diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
-> new file mode 100644
-> index 000000000000..b05774eac92e
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/ls1021a-tsn.dts
-> @@ -0,0 +1,288 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/* Copyright 2016-2018 NXP Semiconductors
-> + * Copyright 2019 Vladimir Oltean <olteanv@gmail.com>
-> + */
-> +
-> +/dts-v1/;
-> +#include "ls1021a.dtsi"
-> +
-> +/ {
-> +	model = "NXP LS1021A-TSN Board";
-> +
-> +	sys_mclk: clock-mclk {
-> +		compatible = "fixed-clock";
-> +		#clock-cells = <0>;
-> +		clock-frequency = <24576000>;
-> +	};
-> +
-> +	reg_vdda_codec: regulator-3V3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "3P3V";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	reg_vddio_codec: regulator-2V5 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "2P5V";
-> +		regulator-min-microvolt = <2500000>;
-> +		regulator-max-microvolt = <2500000>;
-> +		regulator-always-on;
-> +	};
-> +};
-> +
-> +&enet0 {
-> +	tbi-handle = <&tbi0>;
-> +	phy-handle = <&sgmii_phy2>;
-> +	phy-mode = "sgmii";
-> +	status = "okay";
-> +};
-> +
-> +&enet1 {
-> +	tbi-handle = <&tbi1>;
-> +	phy-handle = <&sgmii_phy1>;
-> +	phy-mode = "sgmii";
-> +	status = "okay";
-> +};
-> +
-> +/* RGMII delays added via PCB traces */
-> +&enet2 {
-> +	phy-mode = "rgmii";
-> +	status = "okay";
-> +
-> +	fixed-link {
-> +		speed = <1000>;
-> +		full-duplex;
-> +	};
-> +};
-> +
-> +&dspi0 {
-> +	bus-num = <0>;
-> +	status = "okay";
-> +
-> +	/* ADG704BRMZ 1:4 mux/demux */
-> +	sja1105: ethernet-switch@1 {
-> +		reg = <0x1>;
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		compatible = "nxp,sja1105t";
-> +		/* 12 MHz */
-> +		spi-max-frequency = <12000000>;
-> +		/* Sample data on trailing clock edge */
-> +		spi-cpha;
-> +		fsl,spi-cs-sck-delay = <1000>;
-> +		fsl,spi-sck-cs-delay = <1000>;
-> +
-> +		ports {
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +
-> +			port@0 {
-> +				/* ETH5 written on chassis */
-> +				label = "swp5";
-> +				phy-handle = <&rgmii_phy6>;
-> +				phy-mode = "rgmii-id";
-> +				reg = <0>;
-> +			};
-> +
-> +			port@1 {
-> +				/* ETH2 written on chassis */
-> +				label = "swp2";
-> +				phy-handle = <&rgmii_phy3>;
-> +				phy-mode = "rgmii-id";
-> +				reg = <1>;
-> +			};
-> +
-> +			port@2 {
-> +				/* ETH3 written on chassis */
-> +				label = "swp3";
-> +				phy-handle = <&rgmii_phy4>;
-> +				phy-mode = "rgmii-id";
-> +				reg = <2>;
-> +			};
-> +
-> +			port@3 {
-> +				/* ETH4 written on chassis */
-> +				label = "swp4";
-> +				phy-handle = <&rgmii_phy5>;
-> +				phy-mode = "rgmii-id";
-> +				reg = <3>;
-> +			};
-> +
-> +			port@4 {
-> +				/* Internal port connected to eth2 */
-> +				ethernet = <&enet2>;
-> +				phy-mode = "rgmii";
-> +				reg = <4>;
-> +
-> +				fixed-link {
-> +					speed = <1000>;
-> +					full-duplex;
-> +				};
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&mdio0 {
-> +	/* AR8031 */
-> +	sgmii_phy1: ethernet-phy@1 {
-> +		reg = <0x1>;
-> +	};
-> +
-> +	/* AR8031 */
-> +	sgmii_phy2: ethernet-phy@2 {
-> +		reg = <0x2>;
-> +	};
-> +
-> +	/* BCM5464 quad PHY */
-> +	rgmii_phy3: ethernet-phy@3 {
-> +		reg = <0x3>;
-> +	};
-> +
-> +	rgmii_phy4: ethernet-phy@4 {
-> +		reg = <0x4>;
-> +	};
-> +
-> +	rgmii_phy5: ethernet-phy@5 {
-> +		reg = <0x5>;
-> +	};
-> +
-> +	rgmii_phy6: ethernet-phy@6 {
-> +		reg = <0x6>;
-> +	};
-> +
-> +	/* SGMII PCS for enet0 */
-> +	tbi0: tbi-phy@1f {
-> +		reg = <0x1f>;
-> +		device_type = "tbi-phy";
-> +	};
-> +};
-> +
-> +&mdio1 {
-> +	/* SGMII PCS for enet1 */
-> +	tbi1: tbi-phy@1f {
-> +		reg = <0x1f>;
-> +		device_type = "tbi-phy";
-> +	};
-> +};
-> +
-> +&i2c0 {
-> +	status = "okay";
-> +
-> +	/* 3 axis accelerometer */
-> +	accelerometer@1e {
-> +		compatible = "fsl,fxls8471";
-> +		position = <0>;
-> +		reg = <0x1e>;
-> +	};
-> +
-> +	/* Audio codec (SAI2) */
-> +	codec@2a {
+Hi, Stephen
 
-audio-codec for node name.
-
-> +		compatible = "fsl,sgtl5000";
-> +		VDDIO-supply = <&reg_vddio_codec>;
-> +		VDDA-supply = <&reg_vdda_codec>;
-> +		#sound-dai-cells = <0>;
-> +		clocks = <&sys_mclk>;
-> +		reg = <0x2a>;
-> +	};
-> +
-> +	/* Current sensing circuit for 1V VDDCORE PMIC rail */
-> +	current-sensor@44 {
-> +		compatible = "ti,ina220";
-> +		shunt-resistor = <1000>;
-> +		reg = <0x44>;
-> +	};
-> +
-> +	/* Current sensing circuit for 12V VCC rail */
-> +	current-sensor@45 {
-> +		compatible = "ti,ina220";
-> +		shunt-resistor = <1000>;
-> +		reg = <0x45>;
-> +	};
-> +
-> +	/* Thermal monitor - case */
-> +	temperature-sensor@48 {
-> +		compatible = "national,lm75";
-> +		reg = <0x48>;
-> +	};
-> +
-> +	/* Thermal monitor - chip */
-> +	temperature-sensor@4c {
-> +		compatible = "ti,tmp451";
-> +		reg = <0x4c>;
-> +	};
-> +
-> +	eeprom@51 {
-> +		compatible = "atmel,24c32";
-> +		reg = <0x51>;
-> +	};
-> +
-> +	/* Unsupported devices:
-> +	 * - FXAS21002C Gyroscope at 0x20
-> +	 * - TI ADS7924 4-channel ADC at 0x49
-> +	 */
-> +};
-> +
-> +&qspi {
-> +	status = "okay";
-> +
-> +	flash@0 {
-> +		/* Rev. A uses 64MB flash, Rev. B & C use 32MB flash */
-> +		compatible = "jedec,spi-nor", "s25fl256s1", "s25fl512s";
-> +		spi-max-frequency = <20000000>;
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		reg = <0>;
-> +
-> +		partitions {
-> +			compatible = "fixed-partitions";
-> +			#address-cells = <1>;
-> +			#size-cells = <1>;
-> +
-> +			partition@0 {
-> +				label = "RCW";
-> +				reg = <0x0 0x40000>;
-> +			};
-> +
-> +			partition@40000 {
-> +				label = "U-Boot";
-> +				reg = <0x40000 0x300000>;
-> +			};
-> +
-> +			partition@340000 {
-> +				label = "U-Boot Env";
-> +				reg = <0x340000 0x100000>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&ifc {
-
-Please sort all these labelling nodes alphabetically.
-
-Shawn
-
-> +	status = "disabled";
-> +};
-> +
-> +&esdhc {
-> +	status = "okay";
-> +};
-> +
-> +&uart0 {
-> +	status = "okay";
-> +};
-> +
-> +&lpuart0 {
-> +	status = "okay";
-> +};
-> +
-> +&lpuart3 {
-> +	status = "okay";
-> +};
-> +
-> +&sai2 {
-> +	status = "okay";
-> +};
-> +
-> +&sata {
-> +	status = "okay";
-> +};
-> -- 
-> 2.17.1
+> -----Original Message-----
+> From: Stephen Boyd <sboyd@kernel.org>
+> Sent: Thursday, June 6, 2019 7:33 AM
+> To: Anson Huang <anson.huang@nxp.com>; Abel Vesa
+> <abel.vesa@nxp.com>; Aisheng Dong <aisheng.dong@nxp.com>;
+> bjorn.andersson@linaro.org; catalin.marinas@arm.com;
+> devicetree@vger.kernel.org; dinguyen@kernel.org;
+> enric.balletbo@collabora.com; festevam@gmail.com;
+> horms+renesas@verge.net.au; jagan@amarulasolutions.com;
+> kernel@pengutronix.de; l.stach@pengutronix.de; Leonard Crestez
+> <leonard.crestez@nxp.com>; linux-arm-kernel@lists.infradead.org; linux-
+> clk@vger.kernel.org; linux-kernel@vger.kernel.org; mark.rutland@arm.com;
+> maxime.ripard@bootlin.com; mturquette@baylibre.com; olof@lixom.net;
+> Jacky Bai <ping.bai@nxp.com>; robh+dt@kernel.org;
+> s.hauer@pengutronix.de; shawnguo@kernel.org; will.deacon@arm.com
+> Cc: dl-linux-imx <linux-imx@nxp.com>
+> Subject: Re: [PATCH V3 1/4] dt-bindings: imx: Add clock binding doc for
+> i.MX8MN
 > 
+> Quoting Anson.Huang@nxp.com (2019-06-03 18:59:25)
+> > From: Anson Huang <Anson.Huang@nxp.com>
+> >
+> > Add the clock binding doc for i.MX8MN.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> > No changes.
+> > ---
+> >  .../devicetree/bindings/clock/imx8mn-clock.txt     |  29 +++
+> 
+> Can this be yaml?
 
+OK, I will try to use yaml in V4.
+
+Thanks,
+Anson.
+
+> 
+> >  include/dt-bindings/clock/imx8mn-clock.h           | 215
+> +++++++++++++++++++++
+> >  2 files changed, 244 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/clock/imx8mn-
+> clock.txt
+> >  create mode 100644 include/dt-bindings/clock/imx8mn-clock.h
+> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
