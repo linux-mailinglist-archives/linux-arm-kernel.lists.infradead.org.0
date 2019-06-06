@@ -2,95 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87C1A37F7C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 23:22:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71F9437F87
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 23:27:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2UbbiHr/cjAiI+N42IY4cT55kH3gokWYWi5WzlgwxNw=; b=pnglaUwdF9yTr8
-	1rgEPjVBdRUUyN9bVbTg7OA84bCiif1+uMfELzMwVl9NquwZ2ffwnjtGVa8Wgt1KEpkq+YGdZxVk2
-	UzAW2iCkkvsPQsWcU/ng4mRV5S+Bwlx0qnqbWk6ysUOCyt6RsqilqH9QJ7XZBinoZv3VI3CxS4mbH
-	gtCqM3ZiW9U6h5MauYcX+mu7wziUCB83C4hjv/kOBBP5CHng6A2gd0AF2ClT0/uWikk9uDOVN/2zd
-	0ZiQR51XhBIJ9gFc9NMrbGXjlyhvS2mzBUVaJWfCIm36ZOn2KBieZJg4fXOiZUzzue+iWwNGV86TO
-	j1ty5a5pHK9zzB+tWN7A==;
+	References:List-Owner; bh=ebA+ElMozrPCfUb5Y4J0GjcaH85tVty4T6wme7qoCWs=; b=ciw
+	+RN805rw56ybMw4DXFlKlRrbTn3RkceTIOU/BLG8iF+XVh08gIgQrYbzs2I3Uar9GFuUySAv1u0vm
+	hbMy62zzQumNqRjrBa93LsERJ+j5ddKjKFerC6HScrIWQJyuDqMuzwJtYW+rlwdy3Mf0UclejulYB
+	VWVUAEgz+aCVSxnEPerw/fvhdV+o0R67wXI3GQVDL1u+488t3sBSOEjZ/84ODDpUItt1IUgF1FzxW
+	SB82sccboZcK6UH0I9hm3Ka1eza85jtxkicQUxP7Yb2wV0OFbubLAGFdLjyzfpk6+3QTgnJXmLIyG
+	DocGgjfWUx5uk05wniJa9BKqGwBXJyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYzqA-0004ak-FK; Thu, 06 Jun 2019 21:22:30 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hYzvC-0006Hw-0M; Thu, 06 Jun 2019 21:27:42 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYzq1-0004ZP-3R; Thu, 06 Jun 2019 21:22:22 +0000
-Received: by mail-pl1-x642.google.com with SMTP id x7so1406460plr.12;
- Thu, 06 Jun 2019 14:22:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=RBQnY16OoiSU9x2fTbRylbra8bvQfhJHveZ7KsLfXLE=;
- b=r8XX0OP59OQafz2qMA3prFHhtITzIOlZ9tRNin1PaPA5CRz3/Rmq6Gp1R0CCilbiQ5
- 9ah41993Yr8w0VBOaqbMcaz5gZrghaXz7dd9TfCi2k0ctANR7Vl7VwL/QtH8BoZL0Ojf
- gAcrDEb4VAuNbzVkL0jjpJzoTmWhj5x4WywG7yijizhplmGQFUkxWAIWZib+N1nvF4C+
- Oks7Dnca+eP8AhqzRHkpXPdFTIEOvRncvW1kFuJrqwUlC86oBSFN1oSRlYashgjYO3AD
- DsFuIRvZzlRrlXmDCjqkNCYlTAAMpmoYRWH5rkTSO+dji/GWII3FLXGZ8+9FtDs3XmbF
- AuOg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=RBQnY16OoiSU9x2fTbRylbra8bvQfhJHveZ7KsLfXLE=;
- b=rE2hUWKupvQrxW5tQ0/2EJ12351kiJRtYWp1WMl0HjSUuXI498gJNyHQkWtr2jHwEm
- 7wAciSaRcrSiJx9CpV3WOECKuBW0InHkFb6r95e7yOf1IUngwwrtSR5KLX8FSd7wAYDQ
- qklzIfOGZPPriKfP2O3xkqvgF3p+BIUrHpSzCvZ4780KOSgLqoIjLCr0+ejbnLcpPbMx
- iXIv+aD0c4b4wWx+M3tWqR4QvXGjeHPJUzWrMU5xRf8PHr06aoVK0VEeTYJtuF36E+MV
- BjB2xF3GfUBLjEoKb7ziJkcmO+o0a1XqhLPsJXEMMDLAm/FNXD+j5DmG0wCX6DlDTHgH
- WjNw==
-X-Gm-Message-State: APjAAAV9eZp7fgqf4XFgrmKr5GJNeS4g+Q4eZXZMlDkQ9jnXeyGNVHYN
- +Bpuys8T3MBfOSaPJx1jBk2kUZe+
-X-Google-Smtp-Source: APXvYqxBi6parEcN6dotMYwWVEm/YadS+PaoRNAtjRDPTr29165cicwhTFOnicMr2GAtIb9XE0WQNA==
-X-Received: by 2002:a17:902:2a69:: with SMTP id
- i96mr43521459plb.108.1559856140254; 
- Thu, 06 Jun 2019 14:22:20 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id k3sm88985pgo.81.2019.06.06.14.22.19
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 06 Jun 2019 14:22:19 -0700 (PDT)
-Date: Thu, 6 Jun 2019 14:22:18 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH] watchdog: meson_wdt: update with SPDX Licence identifier
-Message-ID: <20190606212218.GA1578@roeck-us.net>
-References: <20190520142847.442-1-narmstrong@baylibre.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190520142847.442-1-narmstrong@baylibre.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ id 1hYzv4-0006HE-4w
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 21:27:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=CStWQ/SRpZOEF3bSNUAK4dWBALmyIGSjwUJk+gDk7u0=; b=tPGaG1aWR67s
+ q6FM76qDdKDFpssWt/ro1o9jTg86kXq6T4bawpf5GZRhVsVWiCRprscW5P43gyldNgXAiCvQQYg+0
+ OJRJc+jcrYFeCDIWmNJTWETYRSslUAXfTiW2YEBOTy7QgKUC26EDdc4nlKWbAhQBB2TGnYQ86ueSW
+ 8bd3k=;
+Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
+ (helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hYzur-0007VR-Dn; Thu, 06 Jun 2019 21:27:21 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id D7CE5440046; Thu,  6 Jun 2019 22:27:20 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Applied "ASoC: sun4i-i2s: Change SR and WSS computation" to the asoc
+ tree
+In-Reply-To: <20190605100801.2488-1-maxime.ripard@bootlin.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190606212720.D7CE5440046@finisterre.sirena.org.uk>
+Date: Thu,  6 Jun 2019 22:27:20 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_142221_140660_6CE154B9 
-X-CRM114-Status: GOOD (  13.65  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190606_142734_620936_FDB4FE84 
+X-CRM114-Status: GOOD (  19.52  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,43 +78,245 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, wim@linux-watchdog.org,
- linux-watchdog@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Marcus Cooper <codekipper@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 20, 2019 at 04:28:47PM +0200, Neil Armstrong wrote:
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+The patch
 
-This change has been applied system-wide.
+   ASoC: sun4i-i2s: Change SR and WSS computation
 
-Guenter
+has been applied to the asoc tree at
 
-> ---
->  drivers/watchdog/meson_wdt.c | 6 +-----
->  1 file changed, 1 insertion(+), 5 deletions(-)
-> 
-> diff --git a/drivers/watchdog/meson_wdt.c b/drivers/watchdog/meson_wdt.c
-> index 01889cef81e1..3389f4c02603 100644
-> --- a/drivers/watchdog/meson_wdt.c
-> +++ b/drivers/watchdog/meson_wdt.c
-> @@ -1,12 +1,8 @@
-> +// SPDX-License-Identifier: GPL-2.0+
->  /*
->   *      Meson Watchdog Driver
->   *
->   *      Copyright (c) 2014 Carlo Caione
-> - *
-> - *      This program is free software; you can redistribute it and/or
-> - *      modify it under the terms of the GNU General Public License
-> - *      as published by the Free Software Foundation; either version
-> - *      2 of the License, or (at your option) any later version.
->   */
->  
->  #include <linux/clk.h>
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.3
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 619c15f7fac98fbeaae02d76a5529f5026a2b6d7 Mon Sep 17 00:00:00 2001
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+Date: Wed, 5 Jun 2019 12:08:01 +0200
+Subject: [PATCH] ASoC: sun4i-i2s: Change SR and WSS computation
+
+The current computation for the SR (sample resolution) and the WSS (word
+slot size) register parameters is based on a switch returning the matching
+parameters for a given params width.
+
+Later SoCs (A83t, H3, A64) changed that calculation, which was loosely the
+same with an offset. Therefore, an offset was added to adjust those
+parameters.
+
+However, the calculation is a bit less trivial than initially thought.
+Indeed, while we assumed that SR and WSS were always the same, on older
+SoCs, SR will max at 24 (since those SoCs do not support 32 bits formats),
+but the word size can be 32.
+
+Newer SoCs can also support a much larger range (8 bits to 32 bits, by
+increments of 4) of size than the older SoCs could.
+
+Finally, the A64 and A83t were never adjusted to have that offset in the
+first place, and were therefore broken from that point of view.
+
+In order to fix all those issues, let's introduce two functions, get_wss
+and get_sr, with their respective implementations for all the SoCs
+supported so far.
+
+Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
+Fixes: 66ecce332538 ("ASoC: sun4i-i2s: Add compatibility with A64 codec I2S")
+Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/sunxi/sun4i-i2s.c | 71 ++++++++++++++++++++++++++++---------
+ 1 file changed, 55 insertions(+), 16 deletions(-)
+
+diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+index d5ec1a20499d..03696f880080 100644
+--- a/sound/soc/sunxi/sun4i-i2s.c
++++ b/sound/soc/sunxi/sun4i-i2s.c
+@@ -118,6 +118,8 @@
+ #define SUN8I_I2S_RX_CHAN_SEL_REG	0x54
+ #define SUN8I_I2S_RX_CHAN_MAP_REG	0x58
+ 
++struct sun4i_i2s;
++
+ /**
+  * struct sun4i_i2s_quirks - Differences between SoC variants.
+  *
+@@ -131,7 +133,6 @@
+  * @sun4i_i2s_regmap: regmap config to use.
+  * @mclk_offset: Value by which mclkdiv needs to be adjusted.
+  * @bclk_offset: Value by which bclkdiv needs to be adjusted.
+- * @fmt_offset: Value by which wss and sr needs to be adjusted.
+  * @field_clkdiv_mclk_en: regmap field to enable mclk output.
+  * @field_fmt_wss: regmap field to set word select size.
+  * @field_fmt_sr: regmap field to set sample resolution.
+@@ -154,7 +155,6 @@ struct sun4i_i2s_quirks {
+ 	const struct regmap_config	*sun4i_i2s_regmap;
+ 	unsigned int			mclk_offset;
+ 	unsigned int			bclk_offset;
+-	unsigned int			fmt_offset;
+ 
+ 	/* Register fields for i2s */
+ 	struct reg_field		field_clkdiv_mclk_en;
+@@ -167,6 +167,9 @@ struct sun4i_i2s_quirks {
+ 	struct reg_field		field_rxchanmap;
+ 	struct reg_field		field_txchansel;
+ 	struct reg_field		field_rxchansel;
++
++	s8	(*get_sr)(const struct sun4i_i2s *, int);
++	s8	(*get_wss)(const struct sun4i_i2s *, int);
+ };
+ 
+ struct sun4i_i2s {
+@@ -349,6 +352,39 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
+ 	return 0;
+ }
+ 
++static s8 sun4i_i2s_get_sr(const struct sun4i_i2s *i2s, int width)
++{
++	if (width < 16 || width > 24)
++		return -EINVAL;
++
++	if (width % 4)
++		return -EINVAL;
++
++	return (width - 16) / 4;
++}
++
++static s8 sun4i_i2s_get_wss(const struct sun4i_i2s *i2s, int width)
++{
++	if (width < 16 || width > 32)
++		return -EINVAL;
++
++	if (width % 4)
++		return -EINVAL;
++
++	return (width - 16) / 4;
++}
++
++static s8 sun8i_i2s_get_sr_wss(const struct sun4i_i2s *i2s, int width)
++{
++	if (width % 4)
++		return -EINVAL;
++
++	if (width < 8 || width > 32)
++		return -EINVAL;
++
++	return (width - 8) / 4 + 1;
++}
++
+ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ 			       struct snd_pcm_hw_params *params,
+ 			       struct snd_soc_dai *dai)
+@@ -400,22 +436,16 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ 	}
+ 	i2s->playback_dma_data.addr_width = width;
+ 
+-	switch (params_width(params)) {
+-	case 16:
+-		sr = 0;
+-		wss = 0;
+-		break;
++	sr = i2s->variant->get_sr(i2s, params_width(params));
++	if (sr < 0)
++		return -EINVAL;
+ 
+-	default:
+-		dev_err(dai->dev, "Unsupported sample width: %d\n",
+-			params_width(params));
++	wss = i2s->variant->get_wss(i2s, params_width(params));
++	if (wss < 0)
+ 		return -EINVAL;
+-	}
+ 
+-	regmap_field_write(i2s->field_fmt_wss,
+-			   wss + i2s->variant->fmt_offset);
+-	regmap_field_write(i2s->field_fmt_sr,
+-			   sr + i2s->variant->fmt_offset);
++	regmap_field_write(i2s->field_fmt_wss, wss);
++	regmap_field_write(i2s->field_fmt_sr, sr);
+ 
+ 	return sun4i_i2s_set_clk_rate(dai, params_rate(params),
+ 				      params_width(params));
+@@ -891,6 +921,8 @@ static const struct sun4i_i2s_quirks sun4i_a10_i2s_quirks = {
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+ 	.field_rxchansel	= REG_FIELD(SUN4I_I2S_RX_CHAN_SEL_REG, 0, 2),
++	.get_sr			= sun4i_i2s_get_sr,
++	.get_wss		= sun4i_i2s_get_wss,
+ };
+ 
+ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
+@@ -908,6 +940,8 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+ 	.field_rxchansel	= REG_FIELD(SUN4I_I2S_RX_CHAN_SEL_REG, 0, 2),
++	.get_sr			= sun4i_i2s_get_sr,
++	.get_wss		= sun4i_i2s_get_wss,
+ };
+ 
+ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
+@@ -925,6 +959,8 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+ 	.field_rxchansel	= REG_FIELD(SUN4I_I2S_RX_CHAN_SEL_REG, 0, 2),
++	.get_sr			= sun8i_i2s_get_sr_wss,
++	.get_wss		= sun8i_i2s_get_sr_wss,
+ };
+ 
+ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
+@@ -933,7 +969,6 @@ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
+ 	.sun4i_i2s_regmap	= &sun8i_i2s_regmap_config,
+ 	.mclk_offset		= 1,
+ 	.bclk_offset		= 2,
+-	.fmt_offset		= 3,
+ 	.has_fmt_set_lrck_period = true,
+ 	.has_chcfg		= true,
+ 	.has_chsel_tx_chen	= true,
+@@ -948,6 +983,8 @@ static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
+ 	.field_rxchanmap	= REG_FIELD(SUN8I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN8I_I2S_TX_CHAN_SEL_REG, 0, 2),
+ 	.field_rxchansel	= REG_FIELD(SUN8I_I2S_RX_CHAN_SEL_REG, 0, 2),
++	.get_sr			= sun8i_i2s_get_sr_wss,
++	.get_wss		= sun8i_i2s_get_sr_wss,
+ };
+ 
+ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
+@@ -965,6 +1002,8 @@ static const struct sun4i_i2s_quirks sun50i_a64_codec_i2s_quirks = {
+ 	.field_rxchanmap	= REG_FIELD(SUN4I_I2S_RX_CHAN_MAP_REG, 0, 31),
+ 	.field_txchansel	= REG_FIELD(SUN4I_I2S_TX_CHAN_SEL_REG, 0, 2),
+ 	.field_rxchansel	= REG_FIELD(SUN4I_I2S_RX_CHAN_SEL_REG, 0, 2),
++	.get_sr			= sun8i_i2s_get_sr_wss,
++	.get_wss		= sun8i_i2s_get_sr_wss,
+ };
+ 
+ static int sun4i_i2s_init_regmap_fields(struct device *dev,
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
