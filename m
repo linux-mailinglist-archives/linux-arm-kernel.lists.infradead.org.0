@@ -2,83 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EAC036A6A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 05:15:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BB0636A7A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 05:24:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ts8xH2bVrtgD2E4JgwPipG8JHNuZ7wzVr4LYlsB432Y=; b=fEzp3AhWrxQ+Ia
-	bhKnFyJFnA5ekR4+ySYLcC38vkp+HcoJZMBw9IYQmEUD+n4k7ihy/1nAT/jDGBayidwWhvBDcP/TK
-	j0YLOYEyjYS3Qf7B82epS3RoPQ+QlKmVvDEk+IaxbKcyIa05EZkqqaIcKiofueCaCdnb/k2NwRb72
-	gOiUvzJSU6YdV/M/EK8VYTHrqCCrEm/KOA5IPoaScAQCbrZhW8deCRuYw0N1wnYW5unnbFaaVxA8i
-	fCL/C/T/GGt/GGy9AxA7AoXWKLKbG6Lu9LV90lHR/3iVGVbYQBlzxX/wd922OED0tuaqLI0W4lYl2
-	rTC9D7IcfW1T25MppCkw==;
+	List-Owner; bh=MuemClImW6TSCkbbgfF7jfcfTXblPlb5kCnTOe1OwT4=; b=p7TFyHpARLwe/T
+	l7IwHf9MjLyFNEWbGjhk4DgTLLKeJAlbgAHOiFiIa1Xct5HvEXYedwPC8Pb7A33T01xcnpdccrxXV
+	74lhbH9RngtB7ZKnWAkBeJFgJNwBql6ePZ6nsV72LhAxw0ZYR4bOBZpj7vN0jJeqoWBbYya6Um/yt
+	1Li+WUqAbZRtCE+QR20P6A7i8yMfZfQNEM6G6i7RGdUlKBqSzIcK9Tqi+dAvskx48Bg1PPVE3OBy0
+	vwXo+csDockPiXjd6LJGsTN1fMwbEnldJyu6VCekeD0yCo3gR/skNIyRIZazY+PLJrdK6XslbyNQB
+	5i0IP5AyLK/SXUf3hXLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYisL-0005cW-Vz; Thu, 06 Jun 2019 03:15:38 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1hYj1J-0007Et-Ia; Thu, 06 Jun 2019 03:24:53 +0000
+Received: from mail-eopbgr80047.outbound.protection.outlook.com ([40.107.8.47]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYisE-0005c8-8K
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 03:15:31 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id d126so579899pfd.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 20:15:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=aQaPbWDXavNRu7iOgwRHmYDUom2MXcE3ZI99h8uIByc=;
- b=WZ3Fvdh/fIOmKtwoVSjN3gj8nuE5cMhxReyGHL+oQM9kaT3bVtXy34TL5mC7J49hhU
- LRN13bJQACT1qMLH4c4haFMqz66iiDDvz2IzI/92IUs6DZlZyeMYecwylfSkvE3bS5Do
- ardjEJSLUx8yI5ggqluKPlCFYPju3HLQPq4YC6YZg2V+XZv/2FexM4CTFiEaU5L4uXvx
- aT4DAGPzbqf7v/OeXP1qDBZ8faJpWcR5eRqO+5Bov9N7XgwkDISA/BOef4xEO5MdkWE9
- lOpQBvnNxHrYGIHbyxMCtworrsd5yaMo5Cz5uphqlYeuM2nNJXgApz1k2XvmFha1hxCO
- Mv6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=aQaPbWDXavNRu7iOgwRHmYDUom2MXcE3ZI99h8uIByc=;
- b=SIeST1UiExMYh9kYAjdScTJ9UolBVEkMoY6NByzmA5MFo+pzEOvENLjuAF4Rfl0dW5
- 6Vt1Q4RFDzJ7Ar7GBlZt/pc/gXwIRfmbd7CJZKX0MCi7DLLeCilqBZ7FNqAec4CBDuue
- aF8R7JGLxuq46k2pkhl5EnfEEL+ORQDPQYGkFWVzr23EX29w0q/tZWthgZwCdWj0e7p7
- PjOu/M8aCdVeHU5BHnm6z4GxrZe0jZVa38K1WsluNpyT0IDULvcnDee0oWPq4DE0TP6p
- r4Lp2/vCBWPl/gTTC2Fv03oHvjTkRV3k0a+2oP1CCMDTKoyJNl1mBcn3zvHl5XxW2kdp
- 6DYg==
-X-Gm-Message-State: APjAAAUbuq1pYXf9irhKehRcSosTwD+VyhQztahPCLCRIEH1mxA0q593
- 86pExyI5J43PymEhr9GzzLF1bQ==
-X-Google-Smtp-Source: APXvYqx3naFQT7F/C/KDKO36iTavZgfZJHhHPggIkqir5gQYvj8f0p7/nEzDq+JMzQ8ZwOdj+E/eJQ==
-X-Received: by 2002:a65:6295:: with SMTP id f21mr1221471pgv.416.1559790928747; 
- Wed, 05 Jun 2019 20:15:28 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id o20sm258525pgj.70.2019.06.05.20.15.27
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Jun 2019 20:15:28 -0700 (PDT)
-Date: Thu, 6 Jun 2019 08:45:26 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [RFC] devfreq: Add generic devfreq-dt driver
-Message-ID: <20190606031526.xknv5qdoqufim6tr@vireshk-i7>
-References: <e48d7e3d71166cea20c3c200300e0ffa6d26d085.1559737589.git.leonard.crestez@nxp.com>
+ id 1hYj1B-0007E5-DX
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 03:24:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NOOuwUCUiVc6WZkaFHa4DL/UnHk2vuFFTUvIS+XE/yM=;
+ b=nHQPlhkitmnSLTH4moWsWcndSusPKuOpPyHadm23ouSdgc4pzjRV9vSQ1m7owB9aSQzwWdDUgwGKrgRs6oM9kpH5nhCyqGSDg5/C+Mo4M7wDaA/rnWGb2QQKmZwOX/Ya7++j8tIcy8lEx/fUSsXXBFmmxLn0AjNXcYOm8PogPRk=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB6484.eurprd04.prod.outlook.com (20.179.253.141) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.13; Thu, 6 Jun 2019 03:24:38 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6090:1f0b:b85b:8015]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6090:1f0b:b85b:8015%3]) with mapi id 15.20.1943.023; Thu, 6 Jun 2019
+ 03:24:38 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Andre Przywara <andre.przywara@arm.com>, Sudeep Holla
+ <sudeep.holla@arm.com>
+Subject: RE: [PATCH V2 1/2] DT: mailbox: add binding doc for the ARM SMC
+ mailbox
+Thread-Topic: [PATCH V2 1/2] DT: mailbox: add binding doc for the ARM SMC
+ mailbox
+Thread-Index: AQHVGeZSRIOE2F02XEeufaIbr7CheqaKHTcAgAAJqoCAAAYrAIADzXeQ
+Date: Thu, 6 Jun 2019 03:24:38 +0000
+Message-ID: <AM0PR04MB4481632406DF235996719C0788170@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <20190603083005.4304-1-peng.fan@nxp.com>
+ <20190603083005.4304-2-peng.fan@nxp.com>
+ <ae4c79f0-4aec-250e-e312-20aba5554665@gmail.com>
+ <20190603165651.GA12196@e107155-lin>
+ <20190603181856.34996aaa@donnerap.cambridge.arm.com>
+In-Reply-To: <20190603181856.34996aaa@donnerap.cambridge.arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 9a62be9d-0f03-48e8-cd66-08d6ea2e81bf
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB6484; 
+x-ms-traffictypediagnostic: AM0PR04MB6484:
+x-microsoft-antispam-prvs: <AM0PR04MB6484A7483A3A2076490127C788170@AM0PR04MB6484.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 00603B7EEF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(136003)(376002)(366004)(346002)(396003)(199004)(189003)(7696005)(33656002)(186003)(53546011)(102836004)(26005)(3846002)(6116002)(7416002)(6506007)(76176011)(66066001)(229853002)(6436002)(6246003)(8676002)(14454004)(15650500001)(74316002)(316002)(110136005)(5660300002)(54906003)(478600001)(71200400001)(71190400001)(99286004)(52536014)(4326008)(66556008)(25786009)(7736002)(256004)(53936002)(55016002)(2906002)(81156014)(86362001)(81166006)(8936002)(14444005)(68736007)(486006)(44832011)(446003)(11346002)(476003)(66476007)(66946007)(76116006)(73956011)(64756008)(66446008)(9686003)(305945005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6484;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: EANI2+MuLpqHK8Wycwtqs5ea69v7RjMfu3vwMzfrGpE/mf9lLQlFUK0CFJPD/VQ+WaMUhE/Dvgo6bLDEZXm7XayHXMzth84b0p2BVTK1/zQXBox8Njn9M9YVTagkV5ZvX4R1lB8x+tjhu2yXvdVRlWfPfnkaDahKKf8YXC0eI+a9uuFvuSqjGuRCDL/apRGRADEX/sE5mtqqYWuD6lTW4ejuKGwqr9NX6F5x8ytBzjwYVkgkl2syYN3PuPpZY1CSt9yuGwMarXitsJ7XOgUyg3L5XlJWP9A6PzjMXy1eDljjsOvRH9qus0i4nnL+bIkK/wS8wq4608JCgablQIPdDopUDiuHzx/Eazo+oMy8/yjM5pOeIQd/0pPB3w4YMFtE44B6xmlK+Fq8FFrsfbl3aNGIrQgMnHluxAnfxx7gxH8=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e48d7e3d71166cea20c3c200300e0ffa6d26d085.1559737589.git.leonard.crestez@nxp.com>
-User-Agent: NeoMutt/20180716-391-311a52
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9a62be9d-0f03-48e8-cd66-08d6ea2e81bf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jun 2019 03:24:38.4930 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: peng.fan@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6484
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_201530_677321_18AC633C 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20190605_202445_463116_3D6133FA 
+X-CRM114-Status: GOOD (  30.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:42e listed in]
- [list.dnswl.org]
+ no trust [40.107.8.47 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,50 +117,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-clk@vger.kernel.org, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
- linux-imx@nxp.com
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05-06-19, 15:31, Leonard Crestez wrote:
-> +static const struct of_device_id devfreq_dt_of_match[] = {
-> +	{ .compatible = "generic-devfreq", },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, devfreq_dt_of_match);
+> Subject: Re: [PATCH V2 1/2] DT: mailbox: add binding doc for the ARM SMC
+> mailbox
+> 
+> On Mon, 3 Jun 2019 17:56:51 +0100
+> Sudeep Holla <sudeep.holla@arm.com> wrote:
+> 
+> Hi,
+> 
+> > On Mon, Jun 03, 2019 at 09:22:16AM -0700, Florian Fainelli wrote:
+> > > On 6/3/19 1:30 AM, peng.fan@nxp.com wrote:
+> > > > From: Peng Fan <peng.fan@nxp.com>
+> > > >
+> > > > The ARM SMC mailbox binding describes a firmware interface to
+> > > > trigger actions in software layers running in the EL2 or EL3 exception
+> levels.
+> > > > The term "ARM" here relates to the SMC instruction as part of the
+> > > > ARM instruction set, not as a standard endorsed by ARM Ltd.
+> > > >
+> > > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > > > ---
+> > > >
+> > > > V2:
+> > > > Introduce interrupts as a property.
+> > > >
+> > > > V1:
+> > > > arm,func-ids is still kept as an optional property, because there
+> > > > is no defined SMC funciton id passed from SCMI. So in my test, I
+> > > > still use arm,func-ids for ARM SIP service.
+> > > >
+> > > >  .../devicetree/bindings/mailbox/arm-smc.txt        | 101
+> +++++++++++++++++++++
+> > > >  1 file changed, 101 insertions(+)  create mode 100644
+> > > > Documentation/devicetree/bindings/mailbox/arm-smc.txt
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.txt
+> > > > b/Documentation/devicetree/bindings/mailbox/arm-smc.txt
+> > > > new file mode 100644
+> > > > index 000000000000..401887118c09
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.txt
+> > > > @@ -0,0 +1,101 @@
+> >
+> > [...]
+> >
+> > > > +Optional properties:
+> > > > +- arm,func-ids		An array of 32-bit values specifying the function
+> > > > +			IDs used by each mailbox channel. Those function IDs
+> > > > +			follow the ARM SMC calling convention standard [1].
+> > > > +			There is one identifier per channel and the number
+> > > > +			of supported channels is determined by the length
+> > > > +			of this array.
+> > > > +- interrupts		SPI interrupts may be listed for notification,
+> > > > +			each channel should use a dedicated interrupt
+> > > > +			line.
+> > >
+> > > I would not go about defining a specific kind of interrupt, since
+> > > SPI is a GIC terminology, this firmware interface could be used in
+> > > premise with any parent interrupt controller, for which the concept
+> > > of a SPI/PPI/SGI may not be relevant.
+> > >
+> >
+> > While I agree the binding document may not contain specifics, I still
+> > don't see how to use SGI with this. Also note it's generally reserved
+> > for OS future use(IPC) and using this for other than IPC may be bit
+> > challenging IMO. It opens up lots of questions.
+> 
+> Well, a PPI might be possible to use, although it's somewhat dodgy to hijack
+> the GIC's (re-)distributor from EL3 to write to GICD_ISPENDR<n>. Need to ask
+> Marc about his feelings towards this. But it's definitely possible from a
+> hypervisor to inject arbitrary interrupts into a guest.
+> 
+> But more importantly: is there any actual reason this needs to be a GIC
+> interrupt? 
 
-DT can't contain nodes for any virtual devices, this will have similar
-problems to cpufreq-dt. How is this driver going to get probed ? Who
-will create the device ?
+No. I just test ATF with SPI when I posting out this. Should not restrict to be GIC.
 
-> +static struct platform_driver devfreq_dt_platdrv = {
-> +	.probe		= devfreq_dt_probe,
-> +	.shutdown	= devfreq_dt_shutdown,
-> +	.driver = {
-> +		.name	= "devfreq-dt",
-> +		.of_match_table = of_match_ptr(devfreq_dt_of_match),
-> +	},
-> +};
-> +module_platform_driver(devfreq_dt_platdrv);
-> +
-> +MODULE_DESCRIPTION("Generic devfreq-dt driver");
-> +MODULE_LICENSE("GPL v2");
-> -- 
-> 2.17.1
+If I understand the code correctly, this could just be any interrupt,
+> including one of an interrupt combiner or a GPIO chip. So why not just use the
+> standard wording of: "exactly one interrupt specifier for each channel"?
 
--- 
-viresh
+Agree.
+
+> 
+> By the way: Shouldn't new bindings use the YAML format instead?
+
+I'll convert to YAML in next version.
+
+Thanks,
+Peng.
+
+> 
+> Cheers,
+> Andre.
 
 _______________________________________________
 linux-arm-kernel mailing list
