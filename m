@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F10C63752F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 15:26:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB33737538
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 15:28:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P1rueDikDl+aQyGZXUBsK8nEmH78t2WU9jJ+Xdw/9NU=; b=bAtmGLrPcniXp/
-	ioFhk5EiQxTJvncoGJqZvvKe0sp85lcSZH8TrhWOTl7Lv6yztrhgRnSHi9BlLPd9VIm9N5YCx9gph
-	vp+BDCRhpL8f6m0DPSkqGLGLPZyKspI7OZXYCxc4Pe/5PAUzaDxdNWToM9Ir2Ha9hRmnDSDXtc+Il
-	vtD4+47mUwHOQZO07+ENtcNcYMLekAIJIF67cYZhRggt8pjWYDS49o1l7Parcpnka36WDvufcwZ7d
-	lBIDFxxIBd29I0RJM/PRFPALN2D0JR8mTPRBaeXa9zfSihEElomqPukbMeFDZCFb4kHhoiM6ozYwC
-	rdFs/z6cYiI6p5AJST+w==;
+	List-Owner; bh=NwIxdbOicSLHc4RcvtTuOIE+2sm+QfSLOYRaTGC3qRM=; b=dshXaScN/6DPZV
+	7/iFKU2daTfoNr+OMm2e8wv5aDM9bzkdmUcV4t9qpWMjmKTtlq/9cXPmf/2es7o8TCv2cxsEAHYiV
+	mQI09aCcw0Hw5elS8iN8yZScQqCLPGrvUBFbsni/c+yMsxw6D4xEYx9uujLTO3NDUtyT6LR9l9KAj
+	lj2n68TsSahLVCXHznRPxKG4+3+HnXH8M2Ney74KSz7rIRmMo3cuchynwEaNLqquZL36KSzUCfFPI
+	jZBdlIgqeMwV4Ghgh/m4APioVTJaaUZRMqsA4xaUOUzZaqHkZLiGC2l6fWnoaMEiUfElBImBkVwVF
+	yG1k/68mJYhCxozPuxXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYsPf-0007R3-Uy; Thu, 06 Jun 2019 13:26:39 +0000
+	id 1hYsRp-0007uZ-B5; Thu, 06 Jun 2019 13:28:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYsPY-0007QH-KX
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 13:26:33 +0000
+ id 1hYsRh-0007tq-Ey
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 13:28:46 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BEAA520866;
- Thu,  6 Jun 2019 13:26:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A539D20866;
+ Thu,  6 Jun 2019 13:28:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559827592;
- bh=+YFE5KfxRqfYtx6rWWzBRcfeTGDL0h4C05kyoVGm8/E=;
+ s=default; t=1559827725;
+ bh=UHWrtQgpvixRqPbEtkrChsh4DvWxscCBoV1YMgNBxGg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2TQ96GlbngiJ3UHV2MJizMMOMHTKuu8n0r9WABtfcnIaw3SsHmWEKeHcYck6Z0RpA
- ttXxBM44zNh+0vE0zX5s5CO3KrAj4B0NbxOBeU4p19sfHBxKUXPwFKHbn/tM2Vt/Qf
- rMegbanfCqBR641qvx9IOaLkNRj9FYuVpKos0x1o=
-Date: Thu, 6 Jun 2019 15:26:29 +0200
+ b=0yjG6Bddq99LhfiaYiI3rJevdiHeIpzCUmVUfkqh052ofns7xizCLJEEC9QW8AWiR
+ KwnSd5ZR1pPhnX7ZbkgIru9bVWnT57pk77L+901o8LE12SSIIYQfwZaXMVJHPetSEF
+ qLNBBwl2a5cdhPnL08ZRoTAHkkoZZn9s0Ju27f2w=
+Date: Thu, 6 Jun 2019 15:28:42 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
 To: Dragan Cvetic <dragan.cvetic@xilinx.com>
 Subject: Re: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
-Message-ID: <20190606132629.GB7943@kroah.com>
+Message-ID: <20190606132842.GC7943@kroah.com>
 References: <1558784245-108751-1-git-send-email-dragan.cvetic@xilinx.com>
  <1558784245-108751-5-git-send-email-dragan.cvetic@xilinx.com>
 MIME-Version: 1.0
@@ -48,8 +48,8 @@ Content-Disposition: inline
 In-Reply-To: <1558784245-108751-5-git-send-email-dragan.cvetic@xilinx.com>
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_062632_692956_72B162F3 
-X-CRM114-Status: GOOD (  14.10  )
+X-CRM114-CacheID: sfid-20190606_062845_512887_37C02D35 
+X-CRM114-Status: GOOD (  12.87  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -83,33 +83,56 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Sat, May 25, 2019 at 12:37:17PM +0100, Dragan Cvetic wrote:
-> Add char device interface per DT node present and support
-> file operations:
-> - open(),
-> - close(),
-> - unlocked_ioctl(),
-> - compat_ioctl().
-> 
-> Tested-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
-> Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
-> Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
-> ---
->  drivers/misc/xilinx_sdfec.c      | 57 +++++++++++++++++++++++++++++++++++++---
->  include/uapi/misc/xilinx_sdfec.h |  4 +++
->  2 files changed, 58 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-> index ff32d29..740b487 100644
-> --- a/drivers/misc/xilinx_sdfec.c
-> +++ b/drivers/misc/xilinx_sdfec.c
-> @@ -51,7 +51,6 @@ struct xsdfec_clks {
->   * @regs: device physical base address
->   * @dev: pointer to device struct
->   * @config: Configuration of the SDFEC device
-> - * @open_count: Count of char device being opened
+> +static int xsdfec_dev_open(struct inode *iptr, struct file *fptr)
+> +{
+> +	return 0;
+> +}
+> +
+> +static int xsdfec_dev_release(struct inode *iptr, struct file *fptr)
+> +{
+> +	return 0;
+> +}
 
-Why is this removed here?  You don't add something in one patch and then
-remove it in a later one if it's never needed :)
+empty open/close functions are never needed, just drop them.
+
+> +
+> +static long xsdfec_dev_ioctl(struct file *fptr, unsigned int cmd,
+> +			     unsigned long data)
+> +{
+> +	struct xsdfec_dev *xsdfec;
+> +	void __user *arg = NULL;
+> +	int rval = -EINVAL;
+> +
+> +	xsdfec = container_of(fptr->private_data, struct xsdfec_dev, miscdev);
+> +	if (!xsdfec)
+> +		return rval;
+
+It is impossible for container_of() to return NULL, unless something
+very magical and rare just happened.  It's just doing pointer math, you
+can never check the return value of it.
+
+> +
+> +	if (_IOC_TYPE(cmd) != XSDFEC_MAGIC)
+> +		return -ENOTTY;
+
+How can this happen?
+
+> +
+> +	/* check if ioctl argument is present and valid */
+> +	if (_IOC_DIR(cmd) != _IOC_NONE) {
+> +		arg = (void __user *)data;
+> +		if (!arg)
+> +			return rval;
+> +	}
+> +
+> +	switch (cmd) {
+> +	default:
+> +		/* Should not get here */
+> +		dev_warn(xsdfec->dev, "Undefined SDFEC IOCTL");
+
+Nice that userspace has a way to fill up the kernel log :(
+
+Just return the correct error here, don't log it.
 
 thanks,
 
