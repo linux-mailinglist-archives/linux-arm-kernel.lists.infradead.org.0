@@ -2,58 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DE7B36A0C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:34:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 695B436A16
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:38:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ld24IalSS8ngyXlK65dRYRNRsnw1zDRUFO6+vbWimsg=; b=AJsFg7u3Kg+zy1
-	29Np3jDttKjfPOM17b2x+2N3PZR+g4XD5/BfBvNyw31dx8G24OiyLBlk4u7+3ix1PtfuRT6HCnioU
-	p1feAA8cKsOLSutBZCAT3mjX2iHntYDV/dR13iDX6XwYz39uHC0oW+WLYUosSQHyw0kQs5eS/e31O
-	1pEmsTkZbp00e545mx3rtu4HhD9r16t5KlsYdsg85yNBEAHUoKwBKAeY97b8w8nlHpZ1jPpaVJSA5
-	XQDlAkYhBkKOxRvEBUJKTgEpUnVB00hOosb+vtZIHwNBL87j/6UB9fg6G6u0XCFBOArIWFClgfiQE
-	nwk1YWXInFtkl1p8j6dg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mIt1BD0L0mB0FuYbLLokJPsaHkbqSquD/XM8k1oVy/s=; b=L7WXaV0sNZdRMN
+	RVZY4I7ZyFddsdWg6zFJtqSIGtbUVxtIr0CB1U1ME6ZYfERCrKx6YCJsppeit/oqu8BWvsSHTpi3v
+	/DEVkspvjAhIn3LuEBh8ec36iR4708vq2DT0bRcusZf2+GXVBEK6OgH2O2LLjTLbTIzbtsYBiSJOQ
+	dal6G0Re5//JQk1f/FJQ+MyHYOWq3jvgvBSB6Rw9OlQphESEHBnZ6E0mTrSn+AtSDNEZgopfOcOnf
+	Kbkw+p9Q3LZbWpvxlNZmwfBUS8r/xKP0zoFNJAgrD07w70Ly03RuuT+KUIP0iaxg7vQNimxlt73FP
+	B9zMbcxf8N/jNOFJpijw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYiES-00081x-R6; Thu, 06 Jun 2019 02:34:24 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYiEK-00081E-LP
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:34:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C4CC980D;
- Wed,  5 Jun 2019 19:34:15 -0700 (PDT)
-Received: from [10.162.43.122] (p8cg001049571a15.blr.arm.com [10.162.43.122])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- B0AA13F690; Wed,  5 Jun 2019 19:34:05 -0700 (PDT)
-Subject: Re: [RFC V2] mm: Generalize notify_page_fault()
-To: Michael Ellerman <mpe@ellerman.id.au>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org
-References: <1559630046-12940-1-git-send-email-anshuman.khandual@arm.com>
- <87sgsomg91.fsf@concordia.ellerman.id.au>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <6fdf7c1f-822b-22ec-f48c-cc0efc850644@arm.com>
-Date: Thu, 6 Jun 2019 08:04:21 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <87sgsomg91.fsf@concordia.ellerman.id.au>
+	id 1hYiIl-0001Of-0o; Thu, 06 Jun 2019 02:38:51 +0000
+Received: from mail-eopbgr130077.outbound.protection.outlook.com
+ ([40.107.13.77] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYiIc-0001OF-TU
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:38:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jEfw2XP7woddP8jkb5yiTWjUQEYtKYxoGszP/xMn0K8=;
+ b=Um58YizCLjZ0MjMCRTAakRCeE0UnE9DDxUlG+G6Rxcd9tmbDD2ezaLqeEBJm2zGel0Ww3tOcdrT677/X8YEj6q81La1p2kD2XYm6BjRq0GZlWTDfdna8J4Thq6blkqkYYJLakx4W/bfKcdbLfupbbC+X4UNUeB7GFWmoDImKfPg=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3691.eurprd04.prod.outlook.com (52.134.66.150) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.14; Thu, 6 Jun 2019 02:38:38 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1965.011; Thu, 6 Jun 2019
+ 02:38:38 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: RE: [PATCH] arm64: dts: imx8mm: Move gic node into soc node
+Thread-Topic: [PATCH] arm64: dts: imx8mm: Move gic node into soc node
+Thread-Index: AQHVGa55LUfZhzUgv0u2mUng1o8nvaaN6NYAgAAFcuA=
+Date: Thu, 6 Jun 2019 02:38:38 +0000
+Message-ID: <DB3PR0402MB3916D9019F65E901DC4E6BDAF5170@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190603015020.41410-1-Anson.Huang@nxp.com>
+ <20190606021803.GW29853@dragon>
+In-Reply-To: <20190606021803.GW29853@dragon>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 8caeaf81-823d-465f-6d90-08d6ea2814b8
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3691; 
+x-ms-traffictypediagnostic: DB3PR0402MB3691:
+x-microsoft-antispam-prvs: <DB3PR0402MB3691523F8874F4B694BBD1CCF5170@DB3PR0402MB3691.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 00603B7EEF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(136003)(376002)(396003)(366004)(39860400002)(189003)(199004)(13464003)(53546011)(6506007)(102836004)(4326008)(76176011)(25786009)(33656002)(316002)(5660300002)(52536014)(74316002)(71200400001)(71190400001)(6246003)(6436002)(54906003)(73956011)(76116006)(55016002)(66946007)(7736002)(6916009)(81156014)(446003)(11346002)(476003)(305945005)(2906002)(229853002)(478600001)(86362001)(486006)(44832011)(26005)(186003)(6116002)(3846002)(7416002)(99286004)(256004)(68736007)(53936002)(14444005)(66066001)(7696005)(8676002)(81166006)(8936002)(66556008)(9686003)(64756008)(66446008)(66476007)(14454004)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3691;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: LucmTFVOC3Hkcc0lWN2hloCjeZIUJGNfzNF35pWZ1/QD0mcoQ3wAt/bMuyYxmkrzCx7seWhIWXTmq0Nm9hq9YrfspFJFOW7OHmUksX0ULN4AOO4ruUu/nIpSyQUZ9kUb2qNuIr+LvHuYU6H1GESlVesuQjXBHo0snoFTOFsBYB0AcbnGIRv2n6X+x/BLW1hVP1U3pz1qx5usBBBFBwG6INW3LhyK9rq3BEL83FXqhGX0B/7romfPwFBPkr97zqHLavPWnRzljAwR9PKjQ+oyCN2fyZ0hZcDodqgeDNNW6wVQYGszFETsR75Ty65m2Hwezafj4139Vj8eKnEuX8WgNJVlojNT5jETksaRZ47u4p1VCzybM6aKJRGM73vmIJvEq7W5vXeXbgqKXRzGBo3D5RM1+Mo5QKWzYORKD2yKQUo=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8caeaf81-823d-465f-6d90-08d6ea2814b8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jun 2019 02:38:38.5107 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3691
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_193416_725927_1161A9B0 
-X-CRM114-Status: GOOD (  22.63  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_193842_955228_8B607A6E 
+X-CRM114-Status: GOOD (  19.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.13.77 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,111 +111,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- Matthew Wilcox <willy@infradead.org>, sparclinux@vger.kernel.org,
- linux-s390@vger.kernel.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- Will Deacon <will.deacon@arm.com>, Ingo Molnar <mingo@redhat.com>,
- Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Andrey Konovalov <andreyknvl@google.com>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/05/2019 04:49 PM, Michael Ellerman wrote:
-> Anshuman Khandual <anshuman.khandual@arm.com> writes:
->> Similar notify_page_fault() definitions are being used by architectures
->> duplicating much of the same code. This attempts to unify them into a
->> single implementation, generalize it and then move it to a common place.
->> kprobes_built_in() can detect CONFIG_KPROBES, hence notify_page_fault()
->> need not be wrapped again within CONFIG_KPROBES. Trap number argument can
->> now contain upto an 'unsigned int' accommodating all possible platforms.
-> ...
->> diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
->> index 58f69fa..1bc3b18 100644
->> --- a/arch/arm/mm/fault.c
->> +++ b/arch/arm/mm/fault.c
->> @@ -30,28 +30,6 @@
->>  
->>  #ifdef CONFIG_MMU
->>  
->> -#ifdef CONFIG_KPROBES
->> -static inline int notify_page_fault(struct pt_regs *regs, unsigned int fsr)
->> -{
->> -	int ret = 0;
->> -
->> -	if (!user_mode(regs)) {
->> -		/* kprobe_running() needs smp_processor_id() */
->> -		preempt_disable();
->> -		if (kprobe_running() && kprobe_fault_handler(regs, fsr))
->> -			ret = 1;
->> -		preempt_enable();
->> -	}
->> -
->> -	return ret;
->> -}
->> -#else
+Hi, Shawn
+
+> -----Original Message-----
+> From: Shawn Guo <shawnguo@kernel.org>
+> Sent: Thursday, June 6, 2019 10:18 AM
+> To: Anson Huang <anson.huang@nxp.com>
+> Cc: robh+dt@kernel.org; mark.rutland@arm.com; s.hauer@pengutronix.de;
+> kernel@pengutronix.de; festevam@gmail.com; Leonard Crestez
+> <leonard.crestez@nxp.com>; Aisheng Dong <aisheng.dong@nxp.com>;
+> viresh.kumar@linaro.org; Jacky Bai <ping.bai@nxp.com>;
+> devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org; linux-
+> kernel@vger.kernel.org; dl-linux-imx <linux-imx@nxp.com>
+> Subject: Re: [PATCH] arm64: dts: imx8mm: Move gic node into soc node
 > 
-> You've changed several of the architectures from something like above,
-> where it disables preemption around the call into the below:
+> On Mon, Jun 03, 2019 at 09:50:20AM +0800, Anson.Huang@nxp.com wrote:
+> > From: Anson Huang <Anson.Huang@nxp.com>
+> >
+> > GIC is inside of SoC from architecture perspective, it should be
+> > located inside of soc node in DT.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > 
->> +int __kprobes notify_page_fault(struct pt_regs *regs, unsigned int trap)
->> +{
->> +	int ret = 0;
->> +
->> +	/*
->> +	 * To be potentially processing a kprobe fault and to be allowed
->> +	 * to call kprobe_running(), we have to be non-preemptible.
->> +	 */
->> +	if (kprobes_built_in() && !preemptible() && !user_mode(regs)) {
->> +		if (kprobe_running() && kprobe_fault_handler(regs, trap))
->> +			ret = 1;
->> +	}
->> +	return ret;
->> +}
-> 
-> Which skips everything if we're preemptible. Is that an equivalent
+> It doesn't apply to my imx/dt64 branch.  Please generate it against that
+> branch for my for-next.
 
-Right.
+OK, just resent the patch based on the correct branch.
 
-> change? If so can you please explain why in more detail.
-
-It is probably not an equivalent change. The following explanation is extracted from
-RFC V1 discussions (https://patchwork.kernel.org/patch/10968273/). Will explain the
-rational for this behavior change in the commit message next time around.
-
-----------------------------
-a980c0ef9f6d ("x86/kprobes: Refactor kprobes_fault() like kprobe_exceptions_notify()")
-b506a9d08bae ("x86: code clarification patch to Kprobes arch code")
-
-In particular the later one (b506a9d08bae). It explains how the invoking context
-in itself should be non-preemptible for the kprobes processing context irrespective
-of whether kprobe_running() or perhaps smp_processor_id() is safe or not. Hence it
-does not make much sense to continue when original invoking context is preemptible.
-Instead just bail out earlier. This seems to be making more sense than preempt
-disable-enable pair. If there are no concerns about this change from other platforms,
-I will change the preemption behavior in proposed generic function next time around.
-----------------------------
-
-Do you see any concern changing preempt behavior in the x86 way ?
+Thanks,
+Anson.
 
 > 
-> Also why not have it return bool?
-
-Just that all architectures (except powerpc) had 'int' as return type. But we can
-change that to 'bool'.
-
+> Shawn
+> 
+> > ---
+> >  arch/arm64/boot/dts/freescale/imx8mm.dtsi | 18 +++++++++---------
+> >  1 file changed, 9 insertions(+), 9 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > index dc99f45..429312e 100644
+> > --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+> > @@ -169,15 +169,6 @@
+> >  		clock-output-names = "clk_ext4";
+> >  	};
+> >
+> > -	gic: interrupt-controller@38800000 {
+> > -		compatible = "arm,gic-v3";
+> > -		reg = <0x0 0x38800000 0 0x10000>, /* GIC Dist */
+> > -		      <0x0 0x38880000 0 0xC0000>; /* GICR (RD_base +
+> SGI_base) */
+> > -		#interrupt-cells = <3>;
+> > -		interrupt-controller;
+> > -		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+> > -	};
+> > -
+> >  	psci {
+> >  		compatible = "arm,psci-1.0";
+> >  		method = "smc";
+> > @@ -739,6 +730,15 @@
+> >  			dma-names = "rx-tx";
+> >  			status = "disabled";
+> >  		};
+> > +
+> > +		gic: interrupt-controller@38800000 {
+> > +			compatible = "arm,gic-v3";
+> > +			reg = <0x38800000 0x10000>, /* GIC Dist */
+> > +			      <0x38880000 0xc0000>; /* GICR (RD_base +
+> SGI_base) */
+> > +			#interrupt-cells = <3>;
+> > +			interrupt-controller;
+> > +			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+> > +		};
+> >  	};
+> >
+> >  	usbphynop1: usbphynop1 {
+> > --
+> > 2.7.4
+> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
