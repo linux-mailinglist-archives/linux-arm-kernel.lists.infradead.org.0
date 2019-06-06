@@ -2,87 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADF1336913
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 03:15:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AE9B36942
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 03:32:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=APK36KT2Kbd9BfaXZbOzTRz595jbdu0RZ2Vug/UPgCM=; b=Gb3is79sxUB/nL
-	bVgZHHGa5i4zwrzpHqz7nrQYYXoVY8iFjGN3FtManzIHD55YUQhwzBWPnfFGEhBVb5o36RRkdXI3x
-	tdB727/DrQFrhZbuEJcXFPR9klkK8rfN3u/xqLvhbb4Nr9dfrGWbalt2hX+No5sx59GUguOg9Wt1k
-	pRilKcK1KBuhecdHI6KlMKtKa6xsTnxSN1YP+i03AopwNbqnYC7QQJZyNvnglT6aM7G53lmqjYWrp
-	i4hDt4n2ojanxDIALRlw3s9iZ11YVMRHOKckCklcPvJhRybcx89bB3v9zphSW0iZIlSli6MadsDmy
-	S8fc8l0VqXKB1OWKZG4A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xSc+VASZ+8zd9q+A0/KM4Pu/c9o9jS0v9PVZJg6w4Es=; b=tuo
+	5b8RkHwgwkDNqWTH7KDXrAj0OyMyXEgSmcyTvmw0ZpU0/0E94V9miikSP+qAEual8cc3jk/eDML+0
+	q1zPK+ETfpE05Bvd1f8sBT8qL0TedSCDjlGCw6tY3JfsPEuikQVVHufQuhA+jq8CBr7gYiKDRuHua
+	q5LdtDhWv8oFaIBsQhpwtzx62zTZZpwoSrC3ZJUE90x5InZ0b/XbZgSqI7TXJH/8vb3B9Jv4eicw4
+	MuY9cylXQKLod1uIDkx9EG1TJ6Z/vpS2AzvlKqiYhlzdAeG+4LavDsfchTAc4m457Yj/CthWMi0vv
+	eK421yws4vakbJoz0elpkcChx0uIXjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYgzy-0007X4-JL; Thu, 06 Jun 2019 01:15:22 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hYhGM-0003da-55; Thu, 06 Jun 2019 01:32:18 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYgzq-0007Vt-3P
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 01:15:15 +0000
-Received: by mail-ed1-x543.google.com with SMTP id a8so765789edx.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Jun 2019 18:15:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LQqlBhHTmz8x0FhJ39lBoK4w2qCKDb/ThTtYwto9ACI=;
- b=g8Ri3zij5o7vM+S3/dBGE3ZjRAtRQRnXddtn8tC5NUdADPnKpR7i4AnHKp4S7l5dQs
- aoekfrtZGVXTAXwkm4Ij3eZmDcKAOoeaQixbPDNKHkLtApJEzBvTsNKfIKy9LVh7i/RE
- rCgPhWvjTO7yxxoKPCRuDEcmDkPoLB3N0HPwECiiB0sLkG/dIYn05icc1q0ItNqxQXq0
- GOYi7H/vYslYCH4qqyB53cUiWuNtb8XnfU6JauzXFcKQfsUJEKWgqPRNUTPUlQUEAir3
- 602K1dAiml4FwbOHHbI01xXhLFgHQ7ofFL9ZzV7rr5fOOzk9vjB0y/GjksBIujPmT6Jm
- ju2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LQqlBhHTmz8x0FhJ39lBoK4w2qCKDb/ThTtYwto9ACI=;
- b=ShzKQPnBe3nl+nl1PfyDZEtF1vE8LF+r0ce9JlxK8JR+hdktyvv8OeNDmqb4dq/LMF
- iWsN73efiwUYDm4Z1J8t7nNRUKqZN8jD3JLfyd1KgloAj0ikW0NCj+KtZUkXbh06TsF3
- IBa9LixGjuo3+IjmMB/oYlXBkJu6X1JpsN8vi4K3WUogMxiSvc0jAVtDMyRN6S5rRW7d
- RfuHxLc2VXypjpYseK9VegP4lkFnlCn1eWpnyJZBZJazAmuxgoBRb36f+23zdj0mtW9l
- ZsTvdDDtj5J11893fMPdYiLxRJFdYdM+uc3eNtXcIPI9kS7DUqMD2MVk2APs6qaneLWx
- T1gg==
-X-Gm-Message-State: APjAAAXyycb9e20WbjEMIGwZSiLq9Qt+xLyLHBLYtnCBfu8CRVMOAuT6
- 01v0hDGmISc34xDMqyuj4gOUkRv/kLLUDZSRLIc=
-X-Google-Smtp-Source: APXvYqy2f8KwfmdxXdh1l6viqoO3HclEr1IG+M3FHJZqFBvsaZcsHyHPdwTKzWU0EeXu5e3EAhW6muJmxSZTxALBjIk=
-X-Received: by 2002:a17:906:6552:: with SMTP id
- u18mr5857012ejn.300.1559783711809; 
- Wed, 05 Jun 2019 18:15:11 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190529221222.19276-1-olteanv@gmail.com>
- <20190606010429.GP29853@dragon>
-In-Reply-To: <20190606010429.GP29853@dragon>
-From: Vladimir Oltean <olteanv@gmail.com>
-Date: Thu, 6 Jun 2019 04:15:00 +0300
-Message-ID: <CA+h21hr1ykigbEhVuqMMgcxNaiqDhiNuZiNURwHqOwEooU6jDQ@mail.gmail.com>
-Subject: Re: [PATCH v2] ARM: dts: Introduce the NXP LS1021A-TSN board
-To: Shawn Guo <shawnguo@kernel.org>
+ id 1hYhG3-0003V5-Up
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 01:32:02 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A99BD1A09D7;
+ Thu,  6 Jun 2019 03:31:53 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3251C1A0F76;
+ Thu,  6 Jun 2019 03:31:41 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 658A54029A;
+ Thu,  6 Jun 2019 09:31:27 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
+ mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, catalin.marinas@arm.com,
+ will.deacon@arm.com, maxime.ripard@bootlin.com, olof@lixom.net,
+ jagan@amarulasolutions.com, horms+renesas@verge.net.au,
+ bjorn.andersson@linaro.org, leonard.crestez@nxp.com, dinguyen@kernel.org,
+ enric.balletbo@collabora.com, aisheng.dong@nxp.com, abel.vesa@nxp.com,
+ ping.bai@nxp.com, l.stach@pengutronix.de, peng.fan@nxp.com,
+ linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH V4 1/4] dt-bindings: imx: Add clock binding doc for i.MX8MN
+Date: Thu,  6 Jun 2019 09:33:20 +0800
+Message-Id: <20190606013323.3392-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_181514_148200_7F0361DA 
-X-CRM114-Status: GOOD (  20.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190605_183200_275265_146E5A1B 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (olteanv[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,373 +72,373 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev <netdev@vger.kernel.org>,
- lkml <linux-kernel@vger.kernel.org>, leoyang.li@nxp.com, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 6 Jun 2019 at 04:04, Shawn Guo <shawnguo@kernel.org> wrote:
->
-> On Thu, May 30, 2019 at 01:12:22AM +0300, Vladimir Oltean wrote:
-> > The LS1021A-TSN is a development board built by VVDN/Argonboards in
-> > partnership with NXP.
-> >
-> > It features the LS1021A SoC and the first-generation SJA1105T Ethernet
-> > switch for prototyping implementations of a subset of IEEE 802.1 TSN
-> > standards.
-> >
-> > It has two regular Ethernet ports and four switched, TSN-capable ports.
-> >
-> > It also features:
-> > - One Arduino header
-> > - One expansion header
-> > - Two USB 3.0 ports
-> > - One mini PCIe slot
-> > - One SATA interface
-> > - Accelerometer, gyroscope, temperature sensors
-> >
-> > Signed-off-by: Vladimir Oltean <olteanv@gmail.com>
-> > ---
-> > Changes from v1:
-> > - Applied Shawn's feedback
-> > - Introduced QSPI flash node
-> >
-> > v1 patch available at:
-> > https://patchwork.kernel.org/patch/10930451/
-> >
-> >  arch/arm/boot/dts/Makefile        |   1 +
-> >  arch/arm/boot/dts/ls1021a-tsn.dts | 288 ++++++++++++++++++++++++++++++
-> >  2 files changed, 289 insertions(+)
-> >  create mode 100644 arch/arm/boot/dts/ls1021a-tsn.dts
-> >
-> > diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> > index dab2914fa293..a4eb4ca5e148 100644
-> > --- a/arch/arm/boot/dts/Makefile
-> > +++ b/arch/arm/boot/dts/Makefile
-> > @@ -602,6 +602,7 @@ dtb-$(CONFIG_SOC_IMX7ULP) += \
-> >  dtb-$(CONFIG_SOC_LS1021A) += \
-> >       ls1021a-moxa-uc-8410a.dtb \
-> >       ls1021a-qds.dtb \
-> > +     ls1021a-tsn.dtb \
-> >       ls1021a-twr.dtb
-> >  dtb-$(CONFIG_SOC_VF610) += \
-> >       vf500-colibri-eval-v3.dtb \
-> > diff --git a/arch/arm/boot/dts/ls1021a-tsn.dts b/arch/arm/boot/dts/ls1021a-tsn.dts
-> > new file mode 100644
-> > index 000000000000..b05774eac92e
-> > --- /dev/null
-> > +++ b/arch/arm/boot/dts/ls1021a-tsn.dts
-> > @@ -0,0 +1,288 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/* Copyright 2016-2018 NXP Semiconductors
-> > + * Copyright 2019 Vladimir Oltean <olteanv@gmail.com>
-> > + */
-> > +
-> > +/dts-v1/;
-> > +#include "ls1021a.dtsi"
-> > +
-> > +/ {
-> > +     model = "NXP LS1021A-TSN Board";
-> > +
-> > +     sys_mclk: clock-mclk {
-> > +             compatible = "fixed-clock";
-> > +             #clock-cells = <0>;
-> > +             clock-frequency = <24576000>;
-> > +     };
-> > +
-> > +     reg_vdda_codec: regulator-3V3 {
-> > +             compatible = "regulator-fixed";
-> > +             regulator-name = "3P3V";
-> > +             regulator-min-microvolt = <3300000>;
-> > +             regulator-max-microvolt = <3300000>;
-> > +             regulator-always-on;
-> > +     };
-> > +
-> > +     reg_vddio_codec: regulator-2V5 {
-> > +             compatible = "regulator-fixed";
-> > +             regulator-name = "2P5V";
-> > +             regulator-min-microvolt = <2500000>;
-> > +             regulator-max-microvolt = <2500000>;
-> > +             regulator-always-on;
-> > +     };
-> > +};
-> > +
-> > +&enet0 {
-> > +     tbi-handle = <&tbi0>;
-> > +     phy-handle = <&sgmii_phy2>;
-> > +     phy-mode = "sgmii";
-> > +     status = "okay";
-> > +};
-> > +
-> > +&enet1 {
-> > +     tbi-handle = <&tbi1>;
-> > +     phy-handle = <&sgmii_phy1>;
-> > +     phy-mode = "sgmii";
-> > +     status = "okay";
-> > +};
-> > +
-> > +/* RGMII delays added via PCB traces */
-> > +&enet2 {
-> > +     phy-mode = "rgmii";
-> > +     status = "okay";
-> > +
-> > +     fixed-link {
-> > +             speed = <1000>;
-> > +             full-duplex;
-> > +     };
-> > +};
-> > +
-> > +&dspi0 {
-> > +     bus-num = <0>;
-> > +     status = "okay";
-> > +
-> > +     /* ADG704BRMZ 1:4 mux/demux */
-> > +     sja1105: ethernet-switch@1 {
-> > +             reg = <0x1>;
-> > +             #address-cells = <1>;
-> > +             #size-cells = <0>;
-> > +             compatible = "nxp,sja1105t";
-> > +             /* 12 MHz */
-> > +             spi-max-frequency = <12000000>;
-> > +             /* Sample data on trailing clock edge */
-> > +             spi-cpha;
-> > +             fsl,spi-cs-sck-delay = <1000>;
-> > +             fsl,spi-sck-cs-delay = <1000>;
-> > +
-> > +             ports {
-> > +                     #address-cells = <1>;
-> > +                     #size-cells = <0>;
-> > +
-> > +                     port@0 {
-> > +                             /* ETH5 written on chassis */
-> > +                             label = "swp5";
-> > +                             phy-handle = <&rgmii_phy6>;
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <0>;
-> > +                     };
-> > +
-> > +                     port@1 {
-> > +                             /* ETH2 written on chassis */
-> > +                             label = "swp2";
-> > +                             phy-handle = <&rgmii_phy3>;
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <1>;
-> > +                     };
-> > +
-> > +                     port@2 {
-> > +                             /* ETH3 written on chassis */
-> > +                             label = "swp3";
-> > +                             phy-handle = <&rgmii_phy4>;
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <2>;
-> > +                     };
-> > +
-> > +                     port@3 {
-> > +                             /* ETH4 written on chassis */
-> > +                             label = "swp4";
-> > +                             phy-handle = <&rgmii_phy5>;
-> > +                             phy-mode = "rgmii-id";
-> > +                             reg = <3>;
-> > +                     };
-> > +
-> > +                     port@4 {
-> > +                             /* Internal port connected to eth2 */
-> > +                             ethernet = <&enet2>;
-> > +                             phy-mode = "rgmii";
-> > +                             reg = <4>;
-> > +
-> > +                             fixed-link {
-> > +                                     speed = <1000>;
-> > +                                     full-duplex;
-> > +                             };
-> > +                     };
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&mdio0 {
-> > +     /* AR8031 */
-> > +     sgmii_phy1: ethernet-phy@1 {
-> > +             reg = <0x1>;
-> > +     };
-> > +
-> > +     /* AR8031 */
-> > +     sgmii_phy2: ethernet-phy@2 {
-> > +             reg = <0x2>;
-> > +     };
-> > +
-> > +     /* BCM5464 quad PHY */
-> > +     rgmii_phy3: ethernet-phy@3 {
-> > +             reg = <0x3>;
-> > +     };
-> > +
-> > +     rgmii_phy4: ethernet-phy@4 {
-> > +             reg = <0x4>;
-> > +     };
-> > +
-> > +     rgmii_phy5: ethernet-phy@5 {
-> > +             reg = <0x5>;
-> > +     };
-> > +
-> > +     rgmii_phy6: ethernet-phy@6 {
-> > +             reg = <0x6>;
-> > +     };
-> > +
-> > +     /* SGMII PCS for enet0 */
-> > +     tbi0: tbi-phy@1f {
-> > +             reg = <0x1f>;
-> > +             device_type = "tbi-phy";
-> > +     };
-> > +};
-> > +
-> > +&mdio1 {
-> > +     /* SGMII PCS for enet1 */
-> > +     tbi1: tbi-phy@1f {
-> > +             reg = <0x1f>;
-> > +             device_type = "tbi-phy";
-> > +     };
-> > +};
-> > +
-> > +&i2c0 {
-> > +     status = "okay";
-> > +
-> > +     /* 3 axis accelerometer */
-> > +     accelerometer@1e {
-> > +             compatible = "fsl,fxls8471";
-> > +             position = <0>;
-> > +             reg = <0x1e>;
-> > +     };
-> > +
-> > +     /* Audio codec (SAI2) */
-> > +     codec@2a {
->
-> audio-codec for node name.
->
-> > +             compatible = "fsl,sgtl5000";
-> > +             VDDIO-supply = <&reg_vddio_codec>;
-> > +             VDDA-supply = <&reg_vdda_codec>;
-> > +             #sound-dai-cells = <0>;
-> > +             clocks = <&sys_mclk>;
-> > +             reg = <0x2a>;
-> > +     };
-> > +
-> > +     /* Current sensing circuit for 1V VDDCORE PMIC rail */
-> > +     current-sensor@44 {
-> > +             compatible = "ti,ina220";
-> > +             shunt-resistor = <1000>;
-> > +             reg = <0x44>;
-> > +     };
-> > +
-> > +     /* Current sensing circuit for 12V VCC rail */
-> > +     current-sensor@45 {
-> > +             compatible = "ti,ina220";
-> > +             shunt-resistor = <1000>;
-> > +             reg = <0x45>;
-> > +     };
-> > +
-> > +     /* Thermal monitor - case */
-> > +     temperature-sensor@48 {
-> > +             compatible = "national,lm75";
-> > +             reg = <0x48>;
-> > +     };
-> > +
-> > +     /* Thermal monitor - chip */
-> > +     temperature-sensor@4c {
-> > +             compatible = "ti,tmp451";
-> > +             reg = <0x4c>;
-> > +     };
-> > +
-> > +     eeprom@51 {
-> > +             compatible = "atmel,24c32";
-> > +             reg = <0x51>;
-> > +     };
-> > +
-> > +     /* Unsupported devices:
-> > +      * - FXAS21002C Gyroscope at 0x20
-> > +      * - TI ADS7924 4-channel ADC at 0x49
-> > +      */
-> > +};
-> > +
-> > +&qspi {
-> > +     status = "okay";
-> > +
-> > +     flash@0 {
-> > +             /* Rev. A uses 64MB flash, Rev. B & C use 32MB flash */
-> > +             compatible = "jedec,spi-nor", "s25fl256s1", "s25fl512s";
-> > +             spi-max-frequency = <20000000>;
-> > +             #address-cells = <1>;
-> > +             #size-cells = <1>;
-> > +             reg = <0>;
-> > +
-> > +             partitions {
-> > +                     compatible = "fixed-partitions";
-> > +                     #address-cells = <1>;
-> > +                     #size-cells = <1>;
-> > +
-> > +                     partition@0 {
-> > +                             label = "RCW";
-> > +                             reg = <0x0 0x40000>;
-> > +                     };
-> > +
-> > +                     partition@40000 {
-> > +                             label = "U-Boot";
-> > +                             reg = <0x40000 0x300000>;
-> > +                     };
-> > +
-> > +                     partition@340000 {
-> > +                             label = "U-Boot Env";
-> > +                             reg = <0x340000 0x100000>;
-> > +                     };
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&ifc {
->
-> Please sort all these labelling nodes alphabetically.
->
+From: Anson Huang <Anson.Huang@nxp.com>
 
-Hi Shawn,
+Add the clock binding doc for i.MX8MN.
 
-It's not entirely clear to me which nodes you mean.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V3:
+	- switch binding doc from .txt to .yaml.
+---
+ .../devicetree/bindings/clock/imx8mn-clock.yaml    | 115 +++++++++++
+ include/dt-bindings/clock/imx8mn-clock.h           | 215 +++++++++++++++++++++
+ 2 files changed, 330 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
+ create mode 100644 include/dt-bindings/clock/imx8mn-clock.h
 
-Regards,
--Vladimir
+diff --git a/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
+new file mode 100644
+index 0000000..8cb8fcf
+--- /dev/null
++++ b/Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
+@@ -0,0 +1,115 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bindings/clock/imx8mn-clock.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NXP i.MX8M Nano Clock Control Module Binding
++
++maintainers:
++  - Anson Huang <Anson.Huang@nxp.com>
++
++description: |
++  NXP i.MX8M Nano clock control module is an integrated clock controller, which
++  generates and supplies to all modules.
++
++  This binding uses common clock bindings
++  [1] Documentation/devicetree/bindings/clock/clock-bindings.txt
++
++properties:
++  compatible:
++    const: fsl,imx8mn-ccm
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: 32k osc
++      - description: 24m osc
++      - description: ext1 clock input
++      - description: ext2 clock input
++      - description: ext3 clock input
++      - description: ext4 clock input
++
++  clock-names:
++    items:
++      - const: osc_32k
++      - const: osc_24m
++      - const: clk_ext1
++      - const: clk_ext2
++      - const: clk_ext3
++      - const: clk_ext4
++
++  '#clock-cells':
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - '#clock-cells'
++
++examples:
++  # Clock Control Module node:
++  - |
++    clk: clock-controller@30380000 {
++        compatible = "fsl,imx8mn-ccm";
++        reg = <0x0 0x30380000 0x0 0x10000>;
++        #clock-cells = <1>;
++        clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>,
++                 <&clk_ext2>, <&clk_ext3>, <&clk_ext4>;
++        clock-names = "osc_32k", "osc_24m", "clk_ext1",
++                      "clk_ext2", "clk_ext3", "clk_ext4";
++    };
++
++  # Required external clocks for Clock Control Module node:
++  - |
++    osc_32k: clock-osc-32k {
++        compatible = "fixed-clock";
++        #clock-cells = <0>;
++        clock-frequency = <32768>;
++	clock-output-names = "osc_32k";
++    };
++
++    osc_24m: clock-osc-24m {
++        compatible = "fixed-clock";
++        #clock-cells = <0>;
++        clock-frequency = <24000000>;
++        clock-output-names = "osc_24m";
++    };
++
++    clk_ext1: clock-ext1 {
++        compatible = "fixed-clock";
++        #clock-cells = <0>;
++        clock-frequency = <133000000>;
++        clock-output-names = "clk_ext1";
++    };
++
++    clk_ext2: clock-ext2 {
++        compatible = "fixed-clock";
++        #clock-cells = <0>;
++        clock-frequency = <133000000>;
++        clock-output-names = "clk_ext2";
++    };
++
++    clk_ext3: clock-ext3 {
++        compatible = "fixed-clock";
++        #clock-cells = <0>;
++        clock-frequency = <133000000>;
++        clock-output-names = "clk_ext3";
++    };
++
++    clk_ext4: clock-ext4 {
++        compatible = "fixed-clock";
++        #clock-cells = <0>;
++        clock-frequency= <133000000>;
++        clock-output-names = "clk_ext4";
++    };
++
++  # The clock consumer should specify the desired clock by having the clock
++  # ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx8mn-clock.h
++  # for the full list of i.MX8M Nano clock IDs.
++
++...
+diff --git a/include/dt-bindings/clock/imx8mn-clock.h b/include/dt-bindings/clock/imx8mn-clock.h
+new file mode 100644
+index 0000000..5255b1c
+--- /dev/null
++++ b/include/dt-bindings/clock/imx8mn-clock.h
+@@ -0,0 +1,215 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright 2018-2019 NXP
++ */
++
++#ifndef __DT_BINDINGS_CLOCK_IMX8MN_H
++#define __DT_BINDINGS_CLOCK_IMX8MN_H
++
++#define IMX8MN_CLK_DUMMY			0
++#define IMX8MN_CLK_32K				1
++#define IMX8MN_CLK_24M				2
++#define IMX8MN_OSC_HDMI_CLK			3
++#define IMX8MN_CLK_EXT1				4
++#define IMX8MN_CLK_EXT2				5
++#define IMX8MN_CLK_EXT3				6
++#define IMX8MN_CLK_EXT4				7
++#define IMX8MN_AUDIO_PLL1_REF_SEL		8
++#define IMX8MN_AUDIO_PLL2_REF_SEL		9
++#define IMX8MN_VIDEO_PLL1_REF_SEL		10
++#define IMX8MN_DRAM_PLL_REF_SEL			11
++#define IMX8MN_GPU_PLL_REF_SEL			12
++#define IMX8MN_VPU_PLL_REF_SEL			13
++#define IMX8MN_ARM_PLL_REF_SEL			14
++#define IMX8MN_SYS_PLL1_REF_SEL			15
++#define IMX8MN_SYS_PLL2_REF_SEL			16
++#define IMX8MN_SYS_PLL3_REF_SEL			17
++#define IMX8MN_AUDIO_PLL1			18
++#define IMX8MN_AUDIO_PLL2			19
++#define IMX8MN_VIDEO_PLL1			20
++#define IMX8MN_DRAM_PLL				21
++#define IMX8MN_GPU_PLL				22
++#define IMX8MN_VPU_PLL				23
++#define IMX8MN_ARM_PLL				24
++#define IMX8MN_SYS_PLL1				25
++#define IMX8MN_SYS_PLL2				26
++#define IMX8MN_SYS_PLL3				27
++#define IMX8MN_AUDIO_PLL1_BYPASS		28
++#define IMX8MN_AUDIO_PLL2_BYPASS		29
++#define IMX8MN_VIDEO_PLL1_BYPASS		30
++#define IMX8MN_DRAM_PLL_BYPASS			31
++#define IMX8MN_GPU_PLL_BYPASS			32
++#define IMX8MN_VPU_PLL_BYPASS			33
++#define IMX8MN_ARM_PLL_BYPASS			34
++#define IMX8MN_SYS_PLL1_BYPASS			35
++#define IMX8MN_SYS_PLL2_BYPASS			36
++#define IMX8MN_SYS_PLL3_BYPASS			37
++#define IMX8MN_AUDIO_PLL1_OUT			38
++#define IMX8MN_AUDIO_PLL2_OUT			39
++#define IMX8MN_VIDEO_PLL1_OUT			40
++#define IMX8MN_DRAM_PLL_OUT			41
++#define IMX8MN_GPU_PLL_OUT			42
++#define IMX8MN_VPU_PLL_OUT			43
++#define IMX8MN_ARM_PLL_OUT			44
++#define IMX8MN_SYS_PLL1_OUT			45
++#define IMX8MN_SYS_PLL2_OUT			46
++#define IMX8MN_SYS_PLL3_OUT			47
++#define IMX8MN_SYS_PLL1_40M			48
++#define IMX8MN_SYS_PLL1_80M			49
++#define IMX8MN_SYS_PLL1_100M			50
++#define IMX8MN_SYS_PLL1_133M			51
++#define IMX8MN_SYS_PLL1_160M			52
++#define IMX8MN_SYS_PLL1_200M			53
++#define IMX8MN_SYS_PLL1_266M			54
++#define IMX8MN_SYS_PLL1_400M			55
++#define IMX8MN_SYS_PLL1_800M			56
++#define IMX8MN_SYS_PLL2_50M			57
++#define IMX8MN_SYS_PLL2_100M			58
++#define IMX8MN_SYS_PLL2_125M			59
++#define IMX8MN_SYS_PLL2_166M			60
++#define IMX8MN_SYS_PLL2_200M			61
++#define IMX8MN_SYS_PLL2_250M			62
++#define IMX8MN_SYS_PLL2_333M			63
++#define IMX8MN_SYS_PLL2_500M			64
++#define IMX8MN_SYS_PLL2_1000M			65
++
++/* CORE CLOCK ROOT */
++#define IMX8MN_CLK_A53_SRC			66
++#define IMX8MN_CLK_GPU_CORE_SRC			67
++#define IMX8MN_CLK_GPU_SHADER_SRC		68
++#define IMX8MN_CLK_A53_CG			69
++#define IMX8MN_CLK_GPU_CORE_CG			70
++#define IMX8MN_CLK_GPU_SHADER_CG		71
++#define IMX8MN_CLK_A53_DIV			72
++#define IMX8MN_CLK_GPU_CORE_DIV			73
++#define IMX8MN_CLK_GPU_SHADER_DIV		74
++
++/* BUS CLOCK ROOT */
++#define IMX8MN_CLK_MAIN_AXI			75
++#define IMX8MN_CLK_ENET_AXI			76
++#define IMX8MN_CLK_NAND_USDHC_BUS		77
++#define IMX8MN_CLK_DISP_AXI			78
++#define IMX8MN_CLK_DISP_APB			79
++#define IMX8MN_CLK_USB_BUS			80
++#define IMX8MN_CLK_GPU_AXI			81
++#define IMX8MN_CLK_GPU_AHB			82
++#define IMX8MN_CLK_NOC				83
++#define IMX8MN_CLK_AHB				84
++#define IMX8MN_CLK_AUDIO_AHB			85
++
++/* IPG CLOCK ROOT */
++#define IMX8MN_CLK_IPG_ROOT			86
++#define IMX8MN_CLK_IPG_AUDIO_ROOT		87
++
++/* IP */
++#define IMX8MN_CLK_DRAM_CORE			88
++#define IMX8MN_CLK_DRAM_ALT			89
++#define IMX8MN_CLK_DRAM_APB			90
++#define IMX8MN_CLK_DRAM_ALT_ROOT		91
++#define IMX8MN_CLK_DISP_PIXEL			92
++#define IMX8MN_CLK_SAI2				93
++#define IMX8MN_CLK_SAI3				94
++#define IMX8MN_CLK_SAI5				95
++#define IMX8MN_CLK_SAI6				96
++#define IMX8MN_CLK_SPDIF1			97
++#define IMX8MN_CLK_ENET_REF			98
++#define IMX8MN_CLK_ENET_TIMER			99
++#define IMX8MN_CLK_ENET_PHY_REF			100
++#define IMX8MN_CLK_NAND				101
++#define IMX8MN_CLK_QSPI				102
++#define IMX8MN_CLK_USDHC1			103
++#define IMX8MN_CLK_USDHC2			104
++#define IMX8MN_CLK_I2C1				105
++#define IMX8MN_CLK_I2C2				106
++#define IMX8MN_CLK_I2C3				107
++#define IMX8MN_CLK_I2C4				118
++#define IMX8MN_CLK_UART1			119
++#define IMX8MN_CLK_UART2			110
++#define IMX8MN_CLK_UART3			111
++#define IMX8MN_CLK_UART4			112
++#define IMX8MN_CLK_USB_CORE_REF			113
++#define IMX8MN_CLK_USB_PHY_REF			114
++#define IMX8MN_CLK_ECSPI1			115
++#define IMX8MN_CLK_ECSPI2			116
++#define IMX8MN_CLK_PWM1				117
++#define IMX8MN_CLK_PWM2				118
++#define IMX8MN_CLK_PWM3				119
++#define IMX8MN_CLK_PWM4				120
++#define IMX8MN_CLK_WDOG				121
++#define IMX8MN_CLK_WRCLK			122
++#define IMX8MN_CLK_CLKO1			123
++#define IMX8MN_CLK_CLKO2			124
++#define IMX8MN_CLK_DSI_CORE			125
++#define IMX8MN_CLK_DSI_PHY_REF			126
++#define IMX8MN_CLK_DSI_DBI			127
++#define IMX8MN_CLK_USDHC3			128
++#define IMX8MN_CLK_CAMERA_PIXEL			129
++#define IMX8MN_CLK_CSI1_PHY_REF			130
++#define IMX8MN_CLK_CSI2_PHY_REF			131
++#define IMX8MN_CLK_CSI2_ESC			132
++#define IMX8MN_CLK_ECSPI3			133
++#define IMX8MN_CLK_PDM				134
++#define IMX8MN_CLK_SAI7				135
++
++#define IMX8MN_CLK_ECSPI1_ROOT			136
++#define IMX8MN_CLK_ECSPI2_ROOT			137
++#define IMX8MN_CLK_ECSPI3_ROOT			138
++#define IMX8MN_CLK_ENET1_ROOT			139
++#define IMX8MN_CLK_GPIO1_ROOT			140
++#define IMX8MN_CLK_GPIO2_ROOT			141
++#define IMX8MN_CLK_GPIO3_ROOT			142
++#define IMX8MN_CLK_GPIO4_ROOT			143
++#define IMX8MN_CLK_GPIO5_ROOT			144
++#define IMX8MN_CLK_I2C1_ROOT			145
++#define IMX8MN_CLK_I2C2_ROOT			146
++#define IMX8MN_CLK_I2C3_ROOT			147
++#define IMX8MN_CLK_I2C4_ROOT			148
++#define IMX8MN_CLK_MU_ROOT			149
++#define IMX8MN_CLK_OCOTP_ROOT			150
++#define IMX8MN_CLK_PWM1_ROOT			151
++#define IMX8MN_CLK_PWM2_ROOT			152
++#define IMX8MN_CLK_PWM3_ROOT			153
++#define IMX8MN_CLK_PWM4_ROOT			154
++#define IMX8MN_CLK_QSPI_ROOT			155
++#define IMX8MN_CLK_NAND_ROOT			156
++#define IMX8MN_CLK_SAI2_ROOT			157
++#define IMX8MN_CLK_SAI2_IPG			158
++#define IMX8MN_CLK_SAI3_ROOT			159
++#define IMX8MN_CLK_SAI3_IPG			160
++#define IMX8MN_CLK_SAI5_ROOT			161
++#define IMX8MN_CLK_SAI5_IPG			162
++#define IMX8MN_CLK_SAI6_ROOT			163
++#define IMX8MN_CLK_SAI6_IPG			164
++#define IMX8MN_CLK_SAI7_ROOT			165
++#define IMX8MN_CLK_SAI7_IPG			166
++#define IMX8MN_CLK_SDMA1_ROOT			167
++#define IMX8MN_CLK_SDMA2_ROOT			168
++#define IMX8MN_CLK_UART1_ROOT			169
++#define IMX8MN_CLK_UART2_ROOT			170
++#define IMX8MN_CLK_UART3_ROOT			171
++#define IMX8MN_CLK_UART4_ROOT			172
++#define IMX8MN_CLK_USB1_CTRL_ROOT		173
++#define IMX8MN_CLK_USDHC1_ROOT			174
++#define IMX8MN_CLK_USDHC2_ROOT			175
++#define IMX8MN_CLK_WDOG1_ROOT			176
++#define IMX8MN_CLK_WDOG2_ROOT			177
++#define IMX8MN_CLK_WDOG3_ROOT			178
++#define IMX8MN_CLK_GPU_BUS_ROOT			179
++#define IMX8MN_CLK_ASRC_ROOT			180
++#define IMX8MN_CLK_GPU3D_ROOT			181
++#define IMX8MN_CLK_PDM_ROOT			182
++#define IMX8MN_CLK_PDM_IPG			183
++#define IMX8MN_CLK_DISP_AXI_ROOT		184
++#define IMX8MN_CLK_DISP_APB_ROOT		185
++#define IMX8MN_CLK_DISP_PIXEL_ROOT		186
++#define IMX8MN_CLK_CAMERA_PIXEL_ROOT		187
++#define IMX8MN_CLK_USDHC3_ROOT			188
++#define IMX8MN_CLK_SDMA3_ROOT			189
++#define IMX8MN_CLK_TMU_ROOT			190
++#define IMX8MN_CLK_ARM				191
++#define IMX8MN_CLK_NAND_USDHC_BUS_RAWNAND_CLK	192
++#define IMX8MN_CLK_GPU_CORE_ROOT		193
++
++#define IMX8MN_CLK_END				194
++
++#endif
+-- 
+2.7.4
 
-> Shawn
->
-> > +     status = "disabled";
-> > +};
-> > +
-> > +&esdhc {
-> > +     status = "okay";
-> > +};
-> > +
-> > +&uart0 {
-> > +     status = "okay";
-> > +};
-> > +
-> > +&lpuart0 {
-> > +     status = "okay";
-> > +};
-> > +
-> > +&lpuart3 {
-> > +     status = "okay";
-> > +};
-> > +
-> > +&sai2 {
-> > +     status = "okay";
-> > +};
-> > +
-> > +&sata {
-> > +     status = "okay";
-> > +};
-> > --
-> > 2.17.1
-> >
 
 _______________________________________________
 linux-arm-kernel mailing list
