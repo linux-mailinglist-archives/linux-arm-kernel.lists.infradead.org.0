@@ -2,88 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86787373BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 14:04:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CF8D373C6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 14:06:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hI4eVWa2oL5Sh0+IwWTAUZ8ewVGPc0oLJ+NGD7mqn3k=; b=h9Spj4wQPCJEso
-	+NXbix/vvt09aN14wIhHCQYai6PPa95RKrDKYQ61dLi4E7MvGfJ6wZ0lC0TU/9CxM7uZCO8ADbnwO
-	NDlAo9F6C4yqgAiGdlBmYqaPdpzoHuLBGz5QSKgpQX//00Kh7ACMMs14/TdLdb3UczwrM0IIXRy4x
-	x+obsVmrppc9dW7QSLgFWh1udFhCDEiHZgt5cDkViCHuNblqCfFjjbPxRTI2FxoE0CyPBdyzWb+su
-	9zDifUbjmOSziraT8q3GZigxAk30zxW2YX/cbFEa0dPf1KpJHwpNDLyP1l+F/bXL45on3TqGB8wfG
-	nzyTNVnH0EmNoo4XhwJA==;
+	List-Owner; bh=e+1SqXIl09k/jWN19XCJRbqKqrojzY73gs3zP/0JGDU=; b=H3a8rW1g+od9KQ
+	R7efjep7/tkVYy4tOdTtnGVIOcQHZxKO4Q+w5kNAqOu22uiT0K1/ENozQAqqLdQEkyTEY/lm96gzD
+	Vj4quPAzy//02b3Q5VfVjrc69mlZgdH4F3A8zqNKKvMi7TnfrnOo2/7GClYSXRxJwMNku5IXLhdMh
+	GM256IXAKRgJo7Qan7CsiFQ0HOg2wZttnn9ZwMIjzoe1iGi/b2jEHoKrtnWPn1MCN5URef33rGFVc
+	JfyLCxI5OemOT38C8zb6lzInnWBnjKB/Y6RVaRxsHlpQCW0f4DOatuZ7VDkipYw31mgdkyhcdEkf6
+	gfUsZZUjVUK2mbu9bCIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYr8J-0001Eh-OV; Thu, 06 Jun 2019 12:04:39 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYr8C-0001EI-GI
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 12:04:34 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x56C4Q8r021326;
- Thu, 6 Jun 2019 07:04:26 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559822666;
- bh=AvzxyZQyViAqtwQYq7pnaktuRRb4B8pnvEPR+rdnJvU=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Q8uBqHnU3UExbGChb9DO4sjnnhugmJsFrBP9iCTlHMLDf+xbcSW6AE99IIiCiqDJF
- Q9S3YKLmZfzTaVwlDUpPnzpF3UlZaqnM1sXs8nwWQdT/D+pe7ihHLHIDcbkfIGSrt2
- gdlF0IQQDu+iHtutHyDFYkRAKPN6moljaKzPs/Lo=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x56C4QpG010887
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 6 Jun 2019 07:04:26 -0500
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 6 Jun
- 2019 07:04:26 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 6 Jun 2019 07:04:26 -0500
-Received: from [192.168.2.10] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x56C4N15062131;
- Thu, 6 Jun 2019 07:04:23 -0500
-Subject: Re: [PATCH 01/16] firmware: ti_sci: Add resource management APIs for
- ringacc, psi-l and udma
-To: Lokesh Vutla <lokeshvutla@ti.com>, <vkoul@kernel.org>,
- <robh+dt@kernel.org>, <nm@ti.com>, <ssantosh@kernel.org>
-References: <20190506123456.6777-1-peter.ujfalusi@ti.com>
- <20190506123456.6777-2-peter.ujfalusi@ti.com>
- <f2056b18-3f65-b7ae-90ba-5ebf9ac425bc@ti.com>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <78a2d824-d730-4174-e80b-4153a2744427@ti.com>
-Date: Thu, 6 Jun 2019 15:04:51 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+	id 1hYrAL-0002nU-8n; Thu, 06 Jun 2019 12:06:45 +0000
+Received: from foss.arm.com ([217.140.101.70])
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYrAD-0002n7-3z
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 12:06:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C137374;
+ Thu,  6 Jun 2019 05:06:36 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.72.51.249])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 548053F5AF; Thu,  6 Jun 2019 05:06:35 -0700 (PDT)
+Subject: Re: [PATCH 2/2] KVM: arm/arm64: vgic: Fix irq refcount leak in
+ kvm_vgic_set_owner()
+To: Dave Martin <Dave.Martin@arm.com>, kvmarm@lists.cs.columbia.edu
+References: <1559818688-20638-1-git-send-email-Dave.Martin@arm.com>
+ <1559818688-20638-3-git-send-email-Dave.Martin@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: ARM Ltd
+Message-ID: <d6992e32-22ee-8467-171c-1699d52ba54b@arm.com>
+Date: Thu, 6 Jun 2019 13:06:33 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <f2056b18-3f65-b7ae-90ba-5ebf9ac425bc@ti.com>
+In-Reply-To: <1559818688-20638-3-git-send-email-Dave.Martin@arm.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_050432_625523_CA2EE1EE 
-X-CRM114-Status: GOOD (  19.18  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190606_050637_177777_4DDACE16 
+X-CRM114-Status: GOOD (  19.40  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.140.101.70 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,88 +109,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, tony@atomide.com,
- linux-kernel@vger.kernel.org, t-kristo@ti.com, dmaengine@vger.kernel.org,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTG9rZXNoLAoKT24gMDYvMDYvMjAxOSA5LjAwLCBMb2tlc2ggVnV0bGEgd3JvdGU6Cj4gSGkg
-UGV0ZXIsCj4gCj4gT24gMDYvMDUvMTkgNjowNCBQTSwgUGV0ZXIgVWpmYWx1c2kgd3JvdGU6Cj4+
-IFNpZ25lZC1vZmYtYnk6IFBldGVyIFVqZmFsdXNpIDxwZXRlci51amZhbHVzaUB0aS5jb20+Cj4g
-Cj4gUGF0Y2ggaGFzIHRoZSBmb2xsb3dpbmcgY2hlY2twYXRjaCB3YXJuaW5ncyBhbmQgY2hlY2tz
-IHdoaWNoIGNhbiBiZSBmaXhlZDoKPiAKPiBXQVJOSU5HOiBNaXNzaW5nIGNvbW1pdCBkZXNjcmlw
-dGlvbiAtIEFkZCBhbiBhcHByb3ByaWF0ZSBvbmUKCkhvdyBkaWQgSSBtaXNzZWQgaXQ/Cgo+IENI
-RUNLOiBMaW5lcyBzaG91bGQgbm90IGVuZCB3aXRoIGEgJygnCj4gIzI2MjogRklMRTogZHJpdmVy
-cy9maXJtd2FyZS90aV9zY2kuYzoyMjg2Ogo+ICtzdGF0aWMgaW50IHRpX3NjaV9jbWRfcm1fdWRt
-YXBfdHhfY2hfY2ZnKAo+IAo+IENIRUNLOiBMaW5lcyBzaG91bGQgbm90IGVuZCB3aXRoIGEgJygn
-Cj4gIzMyMzogRklMRTogZHJpdmVycy9maXJtd2FyZS90aV9zY2kuYzoyMzQ3Ogo+ICtzdGF0aWMg
-aW50IHRpX3NjaV9jbWRfcm1fdWRtYXBfcnhfY2hfY2ZnKAo+IAo+IENIRUNLOiBMaW5lcyBzaG91
-bGQgbm90IGVuZCB3aXRoIGEgJygnCj4gIzM4MzogRklMRTogZHJpdmVycy9maXJtd2FyZS90aV9z
-Y2kuYzoyNDA3Ogo+ICtzdGF0aWMgaW50IHRpX3NjaV9jbWRfcm1fdWRtYXBfcnhfZmxvd19jZmcx
-KAo+IAo+IENIRUNLOiBMaW5lcyBzaG91bGQgbm90IGVuZCB3aXRoIGEgJygnCj4gIzE0MTQ6IEZJ
-TEU6IGluY2x1ZGUvbGludXgvc29jL3RpL3RpX3NjaV9wcm90b2NvbC5oOjQ1NToKPiArCWludCAo
-KnJ4X2Zsb3dfY2ZnKSgKPiAKPiB0b3RhbDogMCBlcnJvcnMsIDIgd2FybmluZ3MsIDQgY2hlY2tz
-LCAxMzk5IGxpbmVzIGNoZWNrZWQKClRoZXJlIG11c3QgYmUgYSByZWFzb24gd2h5IHRoZXNlIGxl
-ZnQsIGJ1dCBJIHdpbGwgdGFrZSBhbm90aGVyIGxvb2suCgo+PiAtLS0KPj4gIGRyaXZlcnMvZmly
-bXdhcmUvdGlfc2NpLmMgICAgICAgICAgICAgIHwgNDM5ICsrKysrKysrKysrKysrKwo+PiAgZHJp
-dmVycy9maXJtd2FyZS90aV9zY2kuaCAgICAgICAgICAgICAgfCA3MDQgKysrKysrKysrKysrKysr
-KysrKysrKysrKwo+PiAgaW5jbHVkZS9saW51eC9zb2MvdGkvdGlfc2NpX3Byb3RvY29sLmggfCAy
-MTYgKysrKysrKysKPj4gIDMgZmlsZXMgY2hhbmdlZCwgMTM1OSBpbnNlcnRpb25zKCspCj4+Cj4+
-IGRpZmYgLS1naXQgYS9kcml2ZXJzL2Zpcm13YXJlL3RpX3NjaS5jIGIvZHJpdmVycy9maXJtd2Fy
-ZS90aV9zY2kuYwo+PiBpbmRleCA2NGQ4OTViODBiYzMuLmFmM2ViY2RlYWIxOCAxMDA2NDQKPj4g
-LS0tIGEvZHJpdmVycy9maXJtd2FyZS90aV9zY2kuYwo+PiArKysgYi9kcml2ZXJzL2Zpcm13YXJl
-L3RpX3NjaS5jCj4gCj4gWy4uc25pcC5dCj4gCj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyBpbnQgdGlf
-c2NpX2NtZF9ybV9wc2lsX3BhaXIoY29uc3Qgc3RydWN0IHRpX3NjaV9oYW5kbGUgKmhhbmRsZSwK
-Pj4gKwkJCQkgICB1MzIgbmF2X2lkLCB1MzIgc3JjX3RocmVhZCwgdTMyIGRzdF90aHJlYWQpCj4+
-ICt7Cj4gCj4gQWxsIHRoZSBwc2lsIG9wcyBkb2Vzbid0IGhhdmUgdGhlICBrZXJuZWwtZG9jIGZ1
-bmN0aW9uIGNvbW1lbnRzLiBKdXN0IGJlCj4gY29uc2lzdGVudCB3aXRoIG90aGVyIGZ1bmN0aW9u
-cyA6KQoKT0suCgo+PiArCXN0cnVjdCB0aV9zY2lfbXNnX2hkciAqcmVzcDsKPj4gKwlzdHJ1Y3Qg
-dGlfc2NpX21zZ19wc2lsX3BhaXIgKnJlcTsKPj4gKwlzdHJ1Y3QgdGlfc2NpX3hmZXIgKnhmZXI7
-Cj4+ICsJc3RydWN0IHRpX3NjaV9pbmZvICppbmZvOwo+PiArCXN0cnVjdCBkZXZpY2UgKmRldjsK
-Pj4gKwlpbnQgcmV0ID0gMDsKPj4gKwo+PiArCWlmIChJU19FUlIoaGFuZGxlKSkKPj4gKwkJcmV0
-dXJuIFBUUl9FUlIoaGFuZGxlKTsKPj4gKwlpZiAoIWhhbmRsZSkKPj4gKwkJcmV0dXJuIC1FSU5W
-QUw7Cj4+ICsKPj4gKwlpbmZvID0gaGFuZGxlX3RvX3RpX3NjaV9pbmZvKGhhbmRsZSk7Cj4+ICsJ
-ZGV2ID0gaW5mby0+ZGV2Owo+PiArCj4+ICsJeGZlciA9IHRpX3NjaV9nZXRfb25lX3hmZXIoaW5m
-bywgVElfU0NJX01TR19STV9QU0lMX1BBSVIsCj4+ICsJCQkJICAgVElfU0NJX0ZMQUdfUkVRX0FD
-S19PTl9QUk9DRVNTRUQsCj4+ICsJCQkJICAgc2l6ZW9mKCpyZXEpLCBzaXplb2YoKnJlc3ApKTsK
-Pj4gKwlpZiAoSVNfRVJSKHhmZXIpKSB7Cj4+ICsJCXJldCA9IFBUUl9FUlIoeGZlcik7Cj4+ICsJ
-CWRldl9lcnIoZGV2LCAiUk1fUFNJTDpNZXNzYWdlIHJlY29uZmlnIGZhaWxlZCglZClcbiIsIHJl
-dCk7Cj4+ICsJCXJldHVybiByZXQ7Cj4+ICsJfQo+PiArCXJlcSA9IChzdHJ1Y3QgdGlfc2NpX21z
-Z19wc2lsX3BhaXIgKil4ZmVyLT54ZmVyX2J1ZjsKPj4gKwlyZXEtPm5hdl9pZCA9IG5hdl9pZDsK
-Pj4gKwlyZXEtPnNyY190aHJlYWQgPSBzcmNfdGhyZWFkOwo+PiArCXJlcS0+ZHN0X3RocmVhZCA9
-IGRzdF90aHJlYWQ7Cj4+ICsKPj4gKwlyZXQgPSB0aV9zY2lfZG9feGZlcihpbmZvLCB4ZmVyKTsK
-Pj4gKwlpZiAocmV0KSB7Cj4+ICsJCWRldl9lcnIoZGV2LCAiUk1fUFNJTDpNYm94IHNlbmQgZmFp
-bCAlZFxuIiwgcmV0KTsKPj4gKwkJZ290byBmYWlsOwo+PiArCX0KPj4gKwo+PiArCXJlc3AgPSAo
-c3RydWN0IHRpX3NjaV9tc2dfaGRyICopeGZlci0+eGZlcl9idWY7Cj4+ICsJcmV0ID0gdGlfc2Np
-X2lzX3Jlc3BvbnNlX2FjayhyZXNwKSA/IDAgOiAtRUlOVkFMOwo+PiArCj4+ICtmYWlsOgo+PiAr
-CXRpX3NjaV9wdXRfb25lX3hmZXIoJmluZm8tPm1pbmZvLCB4ZmVyKTsKPj4gKwo+PiArCXJldHVy
-biByZXQ7Cj4+ICt9Cj4+ICsKPiAKPiBbLi5zbmlwLi5dCj4gCj4+ICsgKi8KPj4gK3N0cnVjdCB0
-aV9zY2lfbXNnX3JtX3JpbmdfY2ZnX3JlcSB7Cj4+ICsJc3RydWN0IHRpX3NjaV9tc2dfaGRyIGhk
-cjsKPj4gKwl1MzIgdmFsaWRfcGFyYW1zOwo+PiArCXUxNiBuYXZfaWQ7Cj4+ICsJdTE2IGluZGV4
-Owo+PiArCXUzMiBhZGRyX2xvOwo+PiArCXUzMiBhZGRyX2hpOwo+PiArCXUzMiBjb3VudDsKPj4g
-Kwl1OCBtb2RlOwo+PiArCXU4IHNpemU7Cj4+ICsJdTggb3JkZXJfaWQ7Cj4+ICt9IF9fcGFja2Vk
-Owo+PiArCj4+ICsvKioKPj4gKyAqIHN0cnVjdCB0aV9zY2lfbXNnX3JtX3JpbmdfY2ZnX3Jlc3Ag
-LSBSZXNwb25zZSB0byBjb25maWd1cmluZyBhIHJpbmcuCj4+ICsgKgo+PiArICogQGhkcjoJR2Vu
-ZXJpYyBIZWFkZXIKPj4gKyAqLwo+PiArc3RydWN0IHRpX3NjaV9tc2dfcm1fcmluZ19jZmdfcmVz
-cCB7Cj4+ICsJc3RydWN0IHRpX3NjaV9tc2dfaGRyIGhkcjsKPj4gK30gX19wYWNrZWQ7Cj4gCj4g
-SWYgaXQgaXMgYSBnZW5lcmljIEFDSywgTkFDSyByZXNwb25zZSwganVzdCB1c2UgdGhlIGhlYWRl
-ciBkaXJlY3RseS4KClN1cmUsIEknbGwgZml4IGl0IGFuZCBvdGhlciBwbGFjZXMgaWYgYW55LgoK
-PiAKPiBbLi5zbmlwLi5dCj4gCj4+ICsgKi8KPj4gK3N0cnVjdCB0aV9zY2lfbXNnX3JtX3VkbWFw
-X3J4X2NoX2NmZ19yZXEgewo+PiArCXN0cnVjdCB0aV9zY2lfbXNnX2hkciBoZHI7Cj4+ICsJdTMy
-IHZhbGlkX3BhcmFtczsKPj4gKwl1MTYgbmF2X2lkOwo+PiArCXUxNiBpbmRleDsKPj4gKwl1MTYg
-cnhfZmV0Y2hfc2l6ZTsKPj4gKwl1MTYgcnhjcV9xbnVtOwo+PiArCXU4IHJ4X3ByaW9yaXR5Owo+
-PiArCXU4IHJ4X3FvczsKPj4gKwl1OCByeF9vcmRlcmlkOwo+PiArCXU4IHJ4X3NjaGVkX3ByaW9y
-aXR5Owo+PiArCXUxNiBmbG93aWRfc3RhcnQ7Cj4+ICsJdTE2IGZsb3dpZF9jbnQ7Cj4+ICsJdTgg
-cnhfcGF1c2Vfb25fZXJyOwo+PiArCXU4IHJ4X2F0eXBlOwo+PiArCXU4IHJ4X2NoYW5fdHlwZTsK
-Pj4gKwl1OCByeF9pZ25vcmVfc2hvcnQ7Cj4+ICsJdTggcnhfaWdub3JlX2xvbmc7Cj4+ICsJdTgg
-cnhfYnVyc3Rfc2l6ZTsKPj4gKwo+IAo+IGV4dHJhIGxpbmU/CgpXaWxsIHJlbW92ZSBpdC4KPiAK
-Pj4gK30gX19wYWNrZWQ7Cj4+ICsKPj4gKy8qKgo+IAo+IAo+IFRoYW5rcyBhbmQgcmVnYXJkcywK
-PiBMb2tlc2gKPiAKClRoYW5rcywKLSBQw6l0ZXIKClRleGFzIEluc3RydW1lbnRzIEZpbmxhbmQg
-T3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtpLgpZLXR1bm51cy9CdXNpbmVzcyBJ
-RDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBIZWxzaW5raQoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 06/06/2019 11:58, Dave Martin wrote:
+> kvm_vgic_set_owner() leaks a reference on the vgic_irq descriptor,
+> which does not seem to match up with any vgic_put_irq() that I can
+> find.
+> 
+> Since the irq pointer is not passed out and the caller must anyway
+> subsequently use vgic_get_irq() when is wants a pointer, it is not
+> clear why we should have a dangling refcount here.
+> 
+> The refcount is still needed inside kvm_vgic_set_owner() to prevent
+> the vgic_irq struct from disappearing while while it is
+> manipulated.
+> 
+> So, keep it vgic_get_irq() here, but add the matching
+> vgic_put_irq() before returning.
+> 
+> unreferenced object 0xffff800b6365ab80 (size 128):
+>   comm "qemu-system-aar", pid 14414, jiffies 4300822606 (age 84.436s)
+>   hex dump (first 32 bytes):
+>     00 00 00 00 00 00 00 00 b0 e1 e0 38 00 00 ff ff  ...........8....
+>     b0 e1 e0 38 00 00 ff ff 78 e6 ad dd 0a 80 ff ff  ...8....x.......
+>   backtrace:
+>     [<00000000a08b80e2>] kmem_cache_alloc+0x178/0x208
+>     [<00000000114591cb>] vgic_add_lpi.part.5+0x34/0x190
+>     [<00000000ec1425ae>] vgic_its_cmd_handle_mapi+0x320/0x348
+>     [<00000000935c5c32>] vgic_its_process_commands.part.14+0x350/0x8b8
+>     [<00000000dc256d2c>] vgic_mmio_write_its_cwriter+0x78/0x98
+>     [<000000008659acd2>] dispatch_mmio_write+0xd4/0x120
+> 
+> [...]
+> 
+> Cc: Christoffer Dall <christoffer.dall@arm.com>
+> Fixes: c6ccd30e0de3 ("KVM: arm/arm64: Introduce an allocator for in-kernel irq lines")
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> 
+> ---
+> 
+> Based on the limited testing I've done so far, the patch _appears_ to
+> fix the bug.
+> 
+> However, I still don't understand which the bug is intermittent, or why
+> the arch_timer or pmu (the only apparent users of kvm_vgic_set_owner())
+> are claiming an LPI in the first place.
+> 
+> So there may be other bugs in the mix, or I may have misunderstood
+> something...
+
+Yeah, this doesn't make much sense. Both timer and PMU are using PPIs,
+which are not refcounted, so this vgic_put_irq() is effectively a NOP.
+It doesn't invalidate the patch itself, it is just that I seriously
+doubt it fixes anything.
+
+LPIs do not use the owner field so far, so we must have another get/put
+mismatch somewhere.
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
