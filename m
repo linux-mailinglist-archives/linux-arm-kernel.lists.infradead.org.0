@@ -2,82 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 739413751D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 15:24:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B80F337529
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 15:25:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m+slPU226dOcL0NSu4nak2+zZBqwHPoT7F0biTjOdDQ=; b=bQ/T7CCEYI8t1/
-	+kFVBtQRZ5M3rpA/jM+8/cVsDk8AzcWSYDtYiuRSnzGyvf03KBoHx9cfYRbBgwWELbzr4zEmURpUi
-	3vzz52V9f4y1Xre6KOMHUpebNtgK74W/YalZWt3NMLKBnxXaE3b3bt0cBOkjJX9dsZcy0k3qx56Ng
-	6BDSoosjxu5R9Bo7/COQj7dDS7c/Z/JVzOncpp56LBoj01z3lmmA8TrlOyJfvKGid8WFPvWO9FtCh
-	a7m7E3dSnKEonwTr7MctyJhJb96BzuWkxtPU6jC/lJ8jcONyVVR+ztTjYsusbFjw1//xNM8P8wr3P
-	KpetLfza00I46DX98xog==;
+	List-Owner; bh=uxLyUVoAK+V7N/DoucSOq3pcd+2Gdilhz2cK4Gn1qXk=; b=lSdAXXAZqVsdGm
+	EMvj0o7S3SIuCgCg4yul0Jc+SjXtsvSdsZRYQx9DDTqPXznHecoWmI64NKMtSyT/tJuj+3HNuV0Al
+	ydu91YPkkf+q4/ofcI1PLdyCFnJkBXTCwEj0yE1l0EoKCjwSZNMBtVUSBTO99cK1ff1dLe95m5ud7
+	tsvW3YGJT2dJykUwsD24XdTtT6HEPu7KkfQu8bXkihtwnDrUOm6APyJQyjq7UuogMoXNcCCqpr58P
+	VGUK6uaHXQN7yK31+Mawvgluzttu+VLIpqc4NM0Rx/kg3nl5QaP4m5ssjCR9Q86VSfDjKDSIUHkT1
+	JUKPT7m2fGww41T3HiVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYsNb-0005SD-TZ; Thu, 06 Jun 2019 13:24:31 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hYsOW-000797-QD; Thu, 06 Jun 2019 13:25:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYsNS-0005Qt-JC
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 13:24:24 +0000
-Received: by mail-wm1-x341.google.com with SMTP id s3so2441711wms.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 06:24:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QoGog8a3Wrsj5HuFdAVlHcSa7d9sUGcrDi4SC/3qBKY=;
- b=khY7Hzsl2mrL6XdXHgajw/IBA9cQipqEFv5h6jaAjYz/mPADIrsyBZAwk9MD2Zn0vB
- A6Tj3bVkdGPNk12lhKNwEYMDYFBUgDkNMOEqgnXpubbQg5OHgFE8Zvq8vkdKU/e/3az4
- 0M3o5ceFu7NZxuZAGuO65bv1Q/XaxqZNsN4WwlCclCVWWCIzvZmFf3MJcLBW/vzlxEoU
- 8tRlUsRzCu9eIj5PEBcIaDt9NEIXyHGJRjDdMhwl0T7ydGec7lnUQwmBJUf4EXCx6ujj
- X4lWk+dBys6IcpmxdtXXx3eO9h+S75BsDnZWgeZvYyPRF6CvL5RlvZpInusxsfYIkV27
- J+ng==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QoGog8a3Wrsj5HuFdAVlHcSa7d9sUGcrDi4SC/3qBKY=;
- b=KJEzC1I3XNAUUWEp7UckXUS6zJLY+1IScoivmuus3jAYNOcT3pxbnU8fyoOg4qfHbW
- Mpws6qk2aJoDTGBS76Y3XS+JcUFuXnz7nLkqUT99f+oWU9kQ3gk9nQNNDAGIebUTWvBj
- ppTOmbjK9z8Zb8vTcYc1nm2r/83Thrl+rkeQd8VrOBrGbatH4s2HX8tyS1CpD8TUpH7s
- qb+UYVk3s9NIXVsS3jGkrNXWzQGvuWfiFRtxHcR9C/o7cszwY0Ogmg77k1inbURAbSre
- pAr9+8qkEx7+i1cB/7mIyr0leTTT/giU6JajL0VcCAAHk0IZnXNeSTNJNWh6Ggyks1Cb
- aKfQ==
-X-Gm-Message-State: APjAAAV3udiqjKzDa/K9xJFUvAJ0va8wCKU2gUP9b1hFE5vtTFqfPCC1
- f2//+swSQm6hJNizrQjTl9IZSa67X5b3+8fSLRRKmA==
-X-Google-Smtp-Source: APXvYqx8KrJ+cP3MBQAozA03nDeKj75Rodf/KMjmNziao/G2SxLWllc4LLaFap1HssB7UjMSiD61t4uXPaACXGxsSWw=
-X-Received: by 2002:a1c:c706:: with SMTP id x6mr24472351wmf.162.1559827460800; 
- Thu, 06 Jun 2019 06:24:20 -0700 (PDT)
+ id 1hYsOP-00078X-53
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 13:25:22 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 997C620866;
+ Thu,  6 Jun 2019 13:25:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559827520;
+ bh=dp7g/H+79z/b4Sr+YnW8NJAD90DROpv/HAND1DJpnck=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=QZw7oLnA9JXkcfkQAe8weiwNqXZjf3cpoNhfBKK7qH0efI9qGEEePX/x6XXRNO+D6
+ IxCjI2UOkQXHJpqMbQZH/ldV8n31gHNCJHk89neX4A+6CteSwfnBsTYCcD2W8KrkAZ
+ Pz3kuo9I2ZEY6MA7Z15zLQ3g3f6wuk3zZ2bK6LGk=
+Date: Thu, 6 Jun 2019 15:25:17 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Dragan Cvetic <dragan.cvetic@xilinx.com>
+Subject: Re: [PATCH V4 02/12] misc: xilinx-sdfec: add core driver
+Message-ID: <20190606132517.GA7943@kroah.com>
+References: <1558784245-108751-1-git-send-email-dragan.cvetic@xilinx.com>
+ <1558784245-108751-3-git-send-email-dragan.cvetic@xilinx.com>
 MIME-Version: 1.0
-References: <20190605161858.29372-1-mjourdan@baylibre.com>
- <20190605161858.29372-3-mjourdan@baylibre.com>
- <a5676c4e-9c79-5ee4-fb3d-924602ef912e@xs4all.nl>
-In-Reply-To: <a5676c4e-9c79-5ee4-fb3d-924602ef912e@xs4all.nl>
-From: Maxime Jourdan <mjourdan@baylibre.com>
-Date: Thu, 6 Jun 2019 15:24:09 +0200
-Message-ID: <CAMO6naxtUA82inWZKhJ99zmcDiBZZXeDpgMYeOaqLH_cqso40Q@mail.gmail.com>
-Subject: Re: [PATCH v8 2/3] media: meson: add v4l2 m2m video decoder driver
-To: Hans Verkuil <hverkuil@xs4all.nl>
+Content-Disposition: inline
+In-Reply-To: <1558784245-108751-3-git-send-email-dragan.cvetic@xilinx.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_062422_695321_49AB0D92 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190606_062521_224038_FF7607E7 
+X-CRM114-Status: GOOD (  33.67  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,105 +74,322 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-media@vger.kernel.org,
- linux-kernel@vger.kernel.org, Hans Verkuil <hans.verkuil@cisco.com>,
- linux-amlogic@lists.infradead.org, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arnd@arndb.de,
+ michal.simek@xilinx.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Derek Kiernan <derek.kiernan@xilinx.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hans,
-On Thu, Jun 6, 2019 at 2:32 PM Hans Verkuil <hverkuil@xs4all.nl> wrote:
->
-> While preparing this series for merging I came across the following checkpatch
-> and sparse warnings:
->
-> checkpatch:
->
-> CHECK: Alignment should match open parenthesis
-> #159: FILE: drivers/staging/media/meson/vdec/codec_mpeg12.c:83:
-> +       ret = amvdec_set_canvases(sess, (u32[]){ AV_SCRATCH_0, 0 },
-> +                                       (u32[]){ 8, 0 });
->
-> HV: I think this doesn't need changing, this is easier to read.
->
-> CHECK: Alignment should match open parenthesis
-> #968: FILE: drivers/staging/media/meson/vdec/vdec.c:185:
-> +static int vdec_queue_setup(struct vb2_queue *q,
-> +               unsigned int *num_buffers, unsigned int *num_planes,
->
-> CHECK: Alignment should match open parenthesis
-> #1755: FILE: drivers/staging/media/meson/vdec/vdec.c:972:
-> +       core->regmap_ao = syscon_regmap_lookup_by_phandle(dev->of_node,
-> +                                                        "amlogic,ao-sysctrl");
->
-> CHECK: struct mutex definition without comment
-> #1949: FILE: drivers/staging/media/meson/vdec/vdec.h:85:
-> +       struct mutex lock;
->
-> CHECK: struct mutex definition without comment
-> #2085: FILE: drivers/staging/media/meson/vdec/vdec.h:221:
-> +       struct mutex lock;
->
-> CHECK: struct mutex definition without comment
-> #2116: FILE: drivers/staging/media/meson/vdec/vdec.h:252:
-> +       struct mutex bufs_recycle_lock;
->
-> CHECK: spinlock_t definition without comment
-> #2120: FILE: drivers/staging/media/meson/vdec/vdec.h:256:
-> +       spinlock_t ts_spinlock;
->
-> CHECK: Alignment should match open parenthesis
-> #2247: FILE: drivers/staging/media/meson/vdec/vdec_1.c:108:
-> +       amvdec_write_dos_bits(core, VLD_MEM_VIFIFO_CONTROL,
-> +               (0x11 << MEM_FIFO_CNT_BIT) | MEM_FILL_ON_LEVEL |
->
-> CHECK: usleep_range is preferred over udelay; see Documentation/timers/timers-howto.txt
-> #2313: FILE: drivers/staging/media/meson/vdec/vdec_1.c:174:
-> +       udelay(10);
->
-> CHECK: usleep_range is preferred over udelay; see Documentation/timers/timers-howto.txt
-> #2354: FILE: drivers/staging/media/meson/vdec/vdec_1.c:215:
-> +       udelay(10);
->
-> CHECK: Alignment should match open parenthesis
-> #2413: FILE: drivers/staging/media/meson/vdec/vdec_ctrls.c:19:
-> +       sess->ctrl_min_buf_capture = v4l2_ctrl_new_std(ctrl_handler, NULL,
-> +                               V4L2_CID_MIN_BUFFERS_FOR_CAPTURE, 1, 32, 1, 1);
->
->
-> sparse:
->
-> SPARSE:/home/hans/work/build/media-git/drivers/staging/media/meson/vdec/codec_mpeg12.c
-> /home/hans/work/build/media-git/drivers/staging/media/meson/vdec/codec_mpeg12.c:201:25:  warning: symbol 'codec_mpeg12_ops' was not
-> declared. Should it be static?
-> SPARSE:/home/hans/work/build/media-git/drivers/staging/media/meson/vdec/vdec.c
-> /home/hans/work/build/media-git/drivers/staging/media/meson/vdec/vdec.c:417:5:  warning: symbol 'vdec_vb2_buf_prepare' was not declared.
-> Should it be static?
-> SPARSE:/home/hans/work/build/media-git/drivers/staging/media/meson/vdec/vdec_1.c
-> /home/hans/work/build/media-git/drivers/staging/media/meson/vdec/vdec_1.c:85:5:  warning: symbol 'vdec_1_stbuf_power_up' was not declared.
-> Should it be static?
-> /home/hans/work/build/media-git/drivers/staging/media/meson/vdec/vdec_1.c:85:5: warning: no previous prototype for 'vdec_1_stbuf_power_up'
-> [-Wmissing-prototypes]
-> /home/hans/work/build/media-git/drivers/staging/media/meson/vdec/vdec.c:417:5: warning: no previous prototype for 'vdec_vb2_buf_prepare'
-> [-Wmissing-prototypes]
->
-> Can you fix these issues?
->
+On Sat, May 25, 2019 at 12:37:15PM +0100, Dragan Cvetic wrote:
+> Implements an platform driver that matches with xlnx,
+> sd-fec-1.1 device tree node and registers as a character
+> device, including:
+> - SD-FEC driver binds to sdfec DT node.
+> - creates and initialise an initial driver dev structure.
+> - add the driver in Linux build and Kconfig.
+> 
+> Tested-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+> Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
+> Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+> ---
+>  drivers/misc/Kconfig             |  12 ++++
+>  drivers/misc/Makefile            |   1 +
+>  drivers/misc/xilinx_sdfec.c      | 136 +++++++++++++++++++++++++++++++++++++++
+>  include/uapi/misc/xilinx_sdfec.h |  44 +++++++++++++
+>  4 files changed, 193 insertions(+)
+>  create mode 100644 drivers/misc/xilinx_sdfec.c
+>  create mode 100644 include/uapi/misc/xilinx_sdfec.h
+> 
+> diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
+> index 6a0365b..15d93a7 100644
+> --- a/drivers/misc/Kconfig
+> +++ b/drivers/misc/Kconfig
+> @@ -480,6 +480,18 @@ config PCI_ENDPOINT_TEST
+>             Enable this configuration option to enable the host side test driver
+>             for PCI Endpoint.
+>  
+> +config XILINX_SDFEC
+> +	tristate "Xilinx SDFEC 16"
+> +	help
 
-Sure, preparing a V9. I'll add sparse to my list of tools to use
-before sending a patch.
+No dependancies at all?  Nice!  Let's see what 0-day has to say about it :)
 
-Maxime
+> +	  This option enables support for the Xilinx SDFEC (Soft Decision
+> +	  Forward Error Correction) driver. This enables a char driver
+> +	  for the SDFEC.
+> +
+> +	  You may select this driver if your design instantiates the
+> +	  SDFEC(16nm) hardened block. To compile this as a module choose M.
+> +
+> +	  If unsure, say N.
+> +
+>  config MISC_RTSX
+>  	tristate
+>  	default MISC_RTSX_PCI || MISC_RTSX_USB
+> diff --git a/drivers/misc/Makefile b/drivers/misc/Makefile
+> index b9affcd..29fd1d7 100644
+> --- a/drivers/misc/Makefile
+> +++ b/drivers/misc/Makefile
+> @@ -49,6 +49,7 @@ obj-$(CONFIG_VMWARE_VMCI)	+= vmw_vmci/
+>  obj-$(CONFIG_LATTICE_ECP3_CONFIG)	+= lattice-ecp3-config.o
+>  obj-$(CONFIG_SRAM)		+= sram.o
+>  obj-$(CONFIG_SRAM_EXEC)		+= sram-exec.o
+> +obj-$(CONFIG_XILINX_SDFEC)	+= xilinx_sdfec.o
+>  obj-y				+= mic/
+>  obj-$(CONFIG_GENWQE)		+= genwqe/
+>  obj-$(CONFIG_ECHO)		+= echo/
+> diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
+> new file mode 100644
+> index 0000000..c437f78
+> --- /dev/null
+> +++ b/drivers/misc/xilinx_sdfec.c
+> @@ -0,0 +1,136 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Xilinx SDFEC
+> + *
+> + * Copyright (C) 2019 Xilinx, Inc.
+> + *
+> + * Description:
+> + * This driver is developed for SDFEC16 (Soft Decision FEC 16nm)
+> + * IP. It exposes a char device interface in sysfs and supports file
+> + * operations like  open(), close() and ioctl().
 
->
-> Regards,
->
->         Hans
+There are no "char device interfaces in sysfs".  What are you trying to
+say here?
+
+> + */
+> +
+> +#include <linux/miscdevice.h>
+> +#include <linux/io.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/poll.h>
+> +#include <linux/slab.h>
+> +#include <linux/clk.h>
+> +
+> +#include <uapi/misc/xilinx_sdfec.h>
+> +
+> +static atomic_t xsdfec_ndevs = ATOMIC_INIT(0);
+
+why an atomic variable?  What are you using this for?  Why not an idr?
+
+> +
+> +/**
+> + * struct xsdfec_dev - Driver data for SDFEC
+> + * @regs: device physical base address
+> + * @dev: pointer to device struct
+> + * @config: Configuration of the SDFEC device
+> + * @open_count: Count of char device being opened
+
+Ugh ugh ugh.  Don't try to count the number of times open is called.
+It's pointless and almost always wrong.  And it doesn't stop anyone from
+really accessing the device "twice".  If they do stupid things like
+that, they deserve the errors that it will cause...
+
+> + * @miscdev: Misc device handle
+> + * @irq_lock: Driver spinlock
+
+locks what?  The irq?
+
+> + *
+> + * This structure contains necessary state for SDFEC driver to operate
+> + */
+> +struct xsdfec_dev {
+> +	void __iomem *regs;
+> +	struct device *dev;
+
+Is this the parent pointer?  Or something else?
+
+> +	struct xsdfec_config config;
+> +	atomic_t open_count;
+> +	struct miscdevice miscdev;
+> +	/* Spinlock to protect state_updated and stats_updated */
+> +	spinlock_t irq_lock;
+> +};
+> +
+> +static const struct file_operations xsdfec_fops = {
+> +	.owner = THIS_MODULE,
+> +};
+
+empty fops?
+
+> +
+> +#define NAMEBUF_SIZE ((size_t)32)
+
+what is this for?
+
+> +static int xsdfec_probe(struct platform_device *pdev)
+> +{
+> +	struct xsdfec_dev *xsdfec;
+> +	struct device *dev;
+> +	struct resource *res;
+> +	int err;
+> +	char buf[NAMEBUF_SIZE];
+> +
+> +	xsdfec = devm_kzalloc(&pdev->dev, sizeof(*xsdfec), GFP_KERNEL);
+> +	if (!xsdfec)
+> +		return -ENOMEM;
+> +
+> +	xsdfec->dev = &pdev->dev;
+> +	xsdfec->config.fec_id = atomic_read(&xsdfec_ndevs);
+> +	spin_lock_init(&xsdfec->irq_lock);
+> +
+> +	dev = xsdfec->dev;
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	xsdfec->regs = devm_ioremap_resource(dev, res);
+> +	if (IS_ERR(xsdfec->regs)) {
+> +		dev_err(dev, "Unable to map resource");
+
+doesn't this call already print an error?
+
+> +		err = PTR_ERR(xsdfec->regs);
+> +		goto err_xsdfec_dev;
+> +	}
+> +
+> +	/* Save driver private data */
+> +	platform_set_drvdata(pdev, xsdfec);
+> +
+> +	snprintf(buf, NAMEBUF_SIZE, "xsdfec%d", xsdfec->config.fec_id);
+> +	xsdfec->miscdev.minor = MISC_DYNAMIC_MINOR;
+> +	xsdfec->miscdev.name = buf;
+> +	xsdfec->miscdev.fops = &xsdfec_fops;
+> +	xsdfec->miscdev.parent = dev;
+> +	err = misc_register(&xsdfec->miscdev);
+> +	if (err) {
+> +		dev_err(dev, "Unable to register device");
+
+Print the error number that was returned to you?
+
+> +		goto err_xsdfec_dev;
+> +	}
+> +
+> +	atomic_set(&xsdfec->open_count, 1);
+> +	dev_info(dev, "XSDFEC%d Probe Successful", xsdfec->config.fec_id);
+
+No need to be noisy when things work correctly, just keep on going.
+
+> +	atomic_inc(&xsdfec_ndevs);
+> +	return 0;
+> +
+> +	/* Failure cleanup */
+> +err_xsdfec_dev:
+> +	return err;
+
+You cleaned up nothing, not good at all :(
+
+> +}
+> +
+> +static int xsdfec_remove(struct platform_device *pdev)
+> +{
+> +	struct xsdfec_dev *xsdfec;
+> +
+> +	xsdfec = platform_get_drvdata(pdev);
+> +	if (!xsdfec)
+> +		return -ENODEV;
+
+How can this be null?
+
+> +
+> +	misc_deregister(&xsdfec->miscdev);
+> +	atomic_dec(&xsdfec_ndevs);
+> +	return 0;
+
+You free nothing?
+
+You are leaking resources like crazy here, this is not ok at all.
+
+> +}
+> +
+> +static const struct of_device_id xsdfec_of_match[] = {
+> +	{
+> +		.compatible = "xlnx,sd-fec-1.1",
+> +	},
+> +	{ /* end of table */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, xsdfec_of_match);
+> +
+> +static struct platform_driver xsdfec_driver = {
+> +	.driver = {
+> +		.name = "xilinx-sdfec",
+> +		.of_match_table = xsdfec_of_match,
+> +	},
+> +	.probe = xsdfec_probe,
+> +	.remove =  xsdfec_remove,
+> +};
+> +
+> +module_platform_driver(xsdfec_driver);
+> +
+> +MODULE_AUTHOR("Xilinx, Inc");
+> +MODULE_DESCRIPTION("Xilinx SD-FEC16 Driver");
+> +MODULE_LICENSE("GPL");
+> diff --git a/include/uapi/misc/xilinx_sdfec.h b/include/uapi/misc/xilinx_sdfec.h
+> new file mode 100644
+> index 0000000..1b8a63f
+> --- /dev/null
+> +++ b/include/uapi/misc/xilinx_sdfec.h
+> @@ -0,0 +1,44 @@
+> +/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
+> +/*
+> + * Xilinx SD-FEC
+> + *
+> + * Copyright (C) 2016 - 2017 Xilinx, Inc.
+> + *
+> + * Description:
+> + * This driver is developed for SDFEC16 IP. It provides a char device
+> + * in sysfs and supports file operations like open(), close() and ioctl().
+> + */
+> +#ifndef __XILINX_SDFEC_H__
+> +#define __XILINX_SDFEC_H__
+> +
+> +#include <linux/types.h>
+> +
+> +/**
+> + * enum xsdfec_state - State.
+> + * @XSDFEC_INIT: Driver is initialized.
+> + * @XSDFEC_STARTED: Driver is started.
+> + * @XSDFEC_STOPPED: Driver is stopped.
+> + * @XSDFEC_NEEDS_RESET: Driver needs to be reset.
+> + * @XSDFEC_PL_RECONFIGURE: Programmable Logic needs to be recofigured.
+> + *
+> + * This enum is used to indicate the state of the driver.
+> + */
+> +enum xsdfec_state {
+> +	XSDFEC_INIT = 0,
+> +	XSDFEC_STARTED,
+> +	XSDFEC_STOPPED,
+> +	XSDFEC_NEEDS_RESET,
+> +	XSDFEC_PL_RECONFIGURE,
+> +};
+
+This is not used in this patch, why have it?
+
+> +
+> +/**
+> + * struct xsdfec_config - Configuration of SD-FEC core.
+> + * @fec_id: ID of SD-FEC instance. ID is limited to the number of active
+> + *          SD-FEC's in the FPGA and is related to the driver instance
+> + *          Minor number.
+> + */
+> +struct xsdfec_config {
+> +	__s32 fec_id;
+
+Why signed?
+
+And you are NOT tieing this to the minor number at all, don't lie in the
+comment, that is only going to cause you major problems.
+
+Why does userspace care about this structure?
+
+Do I need to really review the rest of this series?
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
