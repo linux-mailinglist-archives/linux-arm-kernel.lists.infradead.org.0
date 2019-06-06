@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74A4C370FE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:56:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC63337100
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 11:56:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o7edddgz+5HoiNfgdIrgc/qh6igHD+jrcPk7PZnKhbg=; b=QF5BljTNCvnfjm
-	+qBLqSp9tZSB0IblOILCx9V0h57Q+5Een7mnoywQsa+VFPr9LmHa2FCtdzvpsnt+1+ZdarIk3PXz3
-	8+c8CRGff9M29RcxxWMM23/lf46nXL4xZ0H+kbxGR/eM/I8SjGi0ZqV5aSamToQOiB2cVzEi6wRr9
-	C+YYb9Zi1B7vGSMvbdV6vyb2HVYX2J++k1miHngEwkj9j5PtKsaD9+6Nsl/R2gycqZfhNFtI8IK1g
-	JAb1RAnPGSXdj3dGcQso6CnBswl8KD3KtYuShXqjxby3iAvdPN1bivehFyE5Tjp4L7CrkI8HfsuI+
-	vttH84QWWb58NOBCu57Q==;
+	List-Owner; bh=iXn2W2zDPRQDEvs/eROS5glL0e/476cf8SyKvHCye5E=; b=SOyZO4dy/pH0Ti
+	e/BTKfofIosOdf5dmoAraTglydZ3qJeE2yf5JStsu2QrRY8/FTuMDwiJD7/CA01Wf/rvQN4lllvZ4
+	helgSoYCER4Fak488x9FS4SpenhzstiJ+nufv6cCeGjeldxC/b8/49N/qsK3ElhYyD91/LeiiNDBI
+	MNFoMtmSGXOuiKdV0IwjKN8/yQU9aw7FkTq4DJM5YwvOV9jBuWavpguProMK04/34kCMWswBo2RXF
+	FCSSwZR36Odk67Oyok1DeBD6bfIrW0zs4ZWEZ4npR/QfsCw19h+Yk5JLLhNrmbxMR9qw+sLxF8Ki/
+	ndrZqyEYJC+Kx3F5dYQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYp7z-0002Oc-5U; Thu, 06 Jun 2019 09:56:11 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hYp8D-0002k7-Ct; Thu, 06 Jun 2019 09:56:25 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYp7j-0002Gf-5i
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:55:56 +0000
+ id 1hYp7l-0002HI-FW
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 09:55:59 +0000
 Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x569tprk078807;
- Thu, 6 Jun 2019 04:55:51 -0500
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x569ttIN004415;
+ Thu, 6 Jun 2019 04:55:55 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1559814951;
- bh=ALlSRG9PtHqP0CSYBVSNGSRcHisohKsxS4M0ZG0uyH0=;
+ s=ti-com-17Q1; t=1559814955;
+ bh=fqOkFgQf2asCwtN/sIi6jqXEdeCASBm4EnauDQ+LIjY=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=s+Eoj8GM9AuVu5uP5wPL21fGCOZlxlr2BbFYQkeFf/ePKkdnp4TRIBY2dH0QlT6sX
- Aes9Zrpc7ZIeos4kcBYMxAEAZsX94y5WS13DKcg0Vd/zbraADyAKZ3mCpJ0LIduQoE
- FrhFg/Z9amdhg+yLD07pht6Qe4vCXn08RlcXn4EY=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x569tpK4055573
+ b=VgcDyoJNCM3oMj8vWDEOIQdzQ6pUwspxwySGAe+2pzBRn857sU1PPUuLwOM9gGiRE
+ Ojlz22eiddheBGYdmX3eS/gxrUMWKNuQy5U/tXtVIwBGeKJ5iLerFl7lfAVx9bC7bq
+ Z4N8r/+xpiTkDmtTxzRNVQJJjXHTpzovq30/U9M0=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x569ttDN055598
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 6 Jun 2019 04:55:51 -0500
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ Thu, 6 Jun 2019 04:55:55 -0500
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 6 Jun
- 2019 04:55:51 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 04:55:55 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 6 Jun 2019 04:55:51 -0500
+ Frontend Transport; Thu, 6 Jun 2019 04:55:55 -0500
 Received: from a0393675ula.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x569thsr016817;
- Thu, 6 Jun 2019 04:55:47 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x569thss016817;
+ Thu, 6 Jun 2019 04:55:51 -0500
 From: Keerthy <j-keerthy@ti.com>
 To: <t-kristo@ti.com>, <nm@ti.com>, <robh+dt@kernel.org>
-Subject: [RFC RESEND PATCH v2 1/4] dt-bindings: gpio: davinci: Add k3 am654
- compatible
-Date: Thu, 6 Jun 2019 15:26:17 +0530
-Message-ID: <20190606095620.6211-2-j-keerthy@ti.com>
+Subject: [RFC RESEND PATCH v2 2/4] arm64: dts: ti: am6-wakeup: Add gpio node
+Date: Thu, 6 Jun 2019 15:26:18 +0530
+Message-ID: <20190606095620.6211-3-j-keerthy@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190606095620.6211-1-j-keerthy@ti.com>
 References: <20190606095620.6211-1-j-keerthy@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_025555_290331_854453AB 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20190606_025557_679603_1F8D9F8E 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,47 +98,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch adds k3 am654 compatible, specific properties and
-an example.
+Add gpio0 node under wakeup domain. This has 56 gpios
+and all are capable of generating banked interrupts.
 
 Signed-off-by: Keerthy <j-keerthy@ti.com>
 ---
- .../devicetree/bindings/gpio/gpio-davinci.txt  | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/gpio/gpio-davinci.txt b/Documentation/devicetree/bindings/gpio/gpio-davinci.txt
-index 553b92a7e87b..bc6b4b62df83 100644
---- a/Documentation/devicetree/bindings/gpio/gpio-davinci.txt
-+++ b/Documentation/devicetree/bindings/gpio/gpio-davinci.txt
-@@ -5,6 +5,7 @@ Required Properties:
- 			"ti,keystone-gpio": for Keystone 2 66AK2H/K, 66AK2L,
- 						66AK2E SoCs
- 			"ti,k2g-gpio", "ti,keystone-gpio": for 66AK2G
-+			"ti,am654-gpio", "ti,keystone-gpio": for TI K3 AM654
- 
- - reg: Physical base address of the controller and the size of memory mapped
-        registers.
-@@ -145,3 +146,20 @@ gpio0: gpio@260bf00 {
- 	ti,ngpio = <32>;
- 	ti,davinci-gpio-unbanked = <32>;
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+index f1ca171abdf8..9cf2c0849a24 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi
+@@ -74,4 +74,19 @@
+ 		ti,sci-dst-id = <56>;
+ 		ti,sci-rm-range-girq = <0x4>;
+ 	};
++
++	wkup_gpio0: wkup_gpio0@42110000 {
++		compatible = "ti,am654-gpio", "ti,keystone-gpio";
++		reg = <0x42110000 0x100>;
++		gpio-controller;
++		#gpio-cells = <2>;
++		interrupt-parent = <&intr_wkup_gpio>;
++		interrupts = <59 128>, <59 129>, <59 130>, <59 131>;
++		interrupt-controller;
++		#interrupt-cells = <2>;
++		ti,ngpio = <56>;
++		ti,davinci-gpio-unbanked = <0>;
++		clocks = <&k3_clks 59 0>;
++		clock-names = "gpio";
++	};
  };
-+
-+Example for K3 AM654:
-+
-+wkup_gpio0: wkup_gpio0@42110000 {
-+	compatible = "ti,am654-gpio", "ti,keystone-gpio";
-+	reg = <0x42110000 0x100>;
-+	gpio-controller;
-+	#gpio-cells = <2>;
-+	interrupt-parent = <&intr_wkup_gpio>;
-+	interrupts = <59 128>, <59 129>, <59 130>, <59 131>;
-+	interrupt-controller;
-+	#interrupt-cells = <2>;
-+	ti,ngpio = <56>;
-+	ti,davinci-gpio-unbanked = <0>;
-+	clocks = <&k3_clks 59 0>;
-+	clock-names = "gpio";
-+};
 -- 
 2.17.1
 
