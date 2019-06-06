@@ -2,58 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E67736A1E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:40:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EE9536A25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Jun 2019 04:48:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+KARIhbeOEed/onCiDvVAsyU9MI/usQxw+ThD6KfPns=; b=gvGfYh19fAUzeJ
-	q3YsfYvB2hbfs++l9Fb2efQpqFIuB51hyGrIoI2htz5Zfa48sM7LfNAosXkK2ScX7PRojGBHTYhzs
-	l2hEi8JK8cFRpSbaJO4zMtLcyfUt91ROQZdNiXVxEjaTU8wJwwLEgygjK6Kimyo4oJNTh1V65vnTY
-	7VGIZiuAL/Oum21tFKNCYh8KHOMaTwDDxsZyY5Qs//XM51W8/gXJHcx7eXh55xLIN4xmL2BSi/CgL
-	BGp94o+jeNCKP2oAWqEqecMnnc7/JggZAlXS6tMmqpDfzQF/5t1PkHODbj000S9+xQQHprXijjEBu
-	MepLWTeu6sGTqzfKaSPQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UVGdDI5fZIPgtwRY10SxWxttmivfRvZqNzVEmwCEM0Y=; b=MY5zjyq12uby+D
+	loI/DxoCSdRBeqgI+yZuXX6srzw4JtvStzM3ZWElMeG/7jwJFHaDaxzUkJOQ72C3cNai+GjGDu1Zy
+	XdCYqzdQfJPAiJ9mOobp8OfyG3p44rISNZu7aznIyjx2xlibElqBq5mrEZYi1jlh4e5ZxS3msHqkN
+	xyEaGAJDvRnJGtZJHYQSwUVZFj5JqFBCZNc/YU2UJjsfSTgT0zs+GNW4N8jlSyvOkHMXkUXet6XkP
+	WmWCK5rm1FFJLtNWZo3X3PsTvxER0hIrdWv26Uy6wjUzVUwSMdGAxXfnR2UgtMFONtIiuDcDpi87J
+	rpj6cS4JlSaQkW2Pk/lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYiKM-0002rr-CJ; Thu, 06 Jun 2019 02:40:30 +0000
-Received: from foss.arm.com ([217.140.101.70])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYiKF-0002rT-Ch
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:40:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.72.51.249])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B927480D;
- Wed,  5 Jun 2019 19:40:22 -0700 (PDT)
-Received: from [10.162.43.122] (p8cg001049571a15.blr.arm.com [10.162.43.122])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 881D23F690; Wed,  5 Jun 2019 19:40:12 -0700 (PDT)
-Subject: Re: [RFC V2] mm: Generalize notify_page_fault()
-To: Matthew Wilcox <willy@infradead.org>, Michael Ellerman <mpe@ellerman.id.au>
-References: <1559630046-12940-1-git-send-email-anshuman.khandual@arm.com>
- <87sgsomg91.fsf@concordia.ellerman.id.au>
- <20190605112328.GB2025@bombadil.infradead.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <bc89341a-a2b6-bd34-d342-b46f6e902a7c@arm.com>
-Date: Thu, 6 Jun 2019 08:10:28 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hYiRe-0004Zq-8M; Thu, 06 Jun 2019 02:48:02 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYiRW-0004Z6-UK
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Jun 2019 02:47:56 +0000
+Received: from dragon (li1264-180.members.linode.com [45.79.165.180])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A600A20684;
+ Thu,  6 Jun 2019 02:47:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559789274;
+ bh=+MwTvxbeyR43AvjkDTTFN/CTZFvCYYxViVY1qhfn7gg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=VnFq4myrIEwfsdgcKq8f7jMPDLWwi2QIWPzypddKAc8XmCbstWNFjlYAbiU3i4DQT
+ 7rpVlOww+ecBDtJyuCXN0Gr0jGpkraG+Pyy+rdE9QjpBLkLlYpBRhreYxJ6oTeivwD
+ Vix7ivQFZd19t5/IYR1x32aCBJSuVw55pVh2Ox5Q=
+Date: Thu, 6 Jun 2019 10:47:36 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson.Huang@nxp.com
+Subject: Re: [PATCH RESEND] arm64: dts: imx8mm: Move gic node into soc node
+Message-ID: <20190606024735.GX29853@dragon>
+References: <20190606023936.25543-1-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20190605112328.GB2025@bombadil.infradead.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190606023936.25543-1-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_194023_437528_2B1D4AD3 
-X-CRM114-Status: GOOD (  17.39  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190605_194754_997271_6E4ACE12 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.140.101.70 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,55 +77,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
- Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Andrey Konovalov <andreyknvl@google.com>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, ping.bai@nxp.com,
+ daniel.baluta@nxp.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ leonard.crestez@nxp.com, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 06/05/2019 04:53 PM, Matthew Wilcox wrote:
-> On Wed, Jun 05, 2019 at 09:19:22PM +1000, Michael Ellerman wrote:
->> Anshuman Khandual <anshuman.khandual@arm.com> writes:
->>> Similar notify_page_fault() definitions are being used by architectures
->>> duplicating much of the same code. This attempts to unify them into a
->>> single implementation, generalize it and then move it to a common place.
->>> kprobes_built_in() can detect CONFIG_KPROBES, hence notify_page_fault()
->>> need not be wrapped again within CONFIG_KPROBES. Trap number argument can
->>> now contain upto an 'unsigned int' accommodating all possible platforms.
->> ...
->>
->> You've changed several of the architectures from something like above,
->> where it disables preemption around the call into the below:
->>
->>
->> Which skips everything if we're preemptible. Is that an equivalent
->> change? If so can you please explain why in more detail.
+On Thu, Jun 06, 2019 at 10:39:36AM +0800, Anson.Huang@nxp.com wrote:
+> From: Anson Huang <Anson.Huang@nxp.com>
 > 
-> See the discussion in v1 of this patch, which you were cc'd on.
+> GIC is inside of SoC from architecture perspective, it should
+> be located inside of soc node in DT.
 > 
-> I agree the description here completely fails to mention why the change.
-> It should mention commit a980c0ef9f6d8c.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-I will update the commit message to include an explanation for this new
-preempt behavior in the generic definition.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
