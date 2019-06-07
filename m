@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5B123876B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 11:54:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0541C38775
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 11:57:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XESoSNvGOMCz3FfshM/QtKbbrlglR2dXlT746ydMiNo=; b=MbbKz1LFt0jto/
-	+Ce2iZ1iBot1Nhm748OTXxyjmeyJqdOJ7i23baKUWrfGxYHOSSWZ+VPa0X12eVoSkd+fFHYy3Juen
-	yVNuL5Z/OvVLTFp6eyyaI2eupWBDiOCZiawxsjq7H03Hx1N85pDF8IZK9/iIApnaVv2YQNwmE86S9
-	DU+8dxctF+wv7r7sDM6Vseyeyju66Sv8/YQQHvI6W3724tbSTnKAxI3buC7q81mYQ+JJO22k6iz/M
-	1mabbR5wFM64wGQVuKmQNAKwGa7U2dpRxPvrqybhugo9Bms77ARshmbywY1q3c3f4DnFIlUcHVQy7
-	vFTv9VjijQUUEhXM0hoA==;
+	List-Owner; bh=ilUYEpF7pxgtwldtRk9+VfMVY9Bg3ak2XnXohgTFvTM=; b=JMv95aRgTXwr+F
+	G7VcNHeqrkEE54TR1tsZ4SIMFdNbhwRrVyjjLX/pmiW9l7s6nykEHAr3rERNulHlh7f/vjqSVf38E
+	ich/U3uc94LCQuHjY3AoF+g8aMh529w1o9FO+kGUufmVPCuLz7+Cjo36xjxomb6JaNbSw6gSygs2I
+	FxwOrjNGt6YnEfoXCN9FmGuhun1G+JrRcY2vXo5+ORYZbqQfdBDIKlHvP7eyXNMMOBdn+R/0jVijL
+	ZMVayalWcul7l5kLXg1CPKbU8vjPxMoyZiPUioaq2bO1dUbcnH3dxDT3OZKCDNS5PSlk8AvaJ1mIx
+	sqjqU8vxDiHcIOKXCSMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZBZY-0006rL-QD; Fri, 07 Jun 2019 09:54:08 +0000
+	id 1hZBd5-0008Rd-HX; Fri, 07 Jun 2019 09:57:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZBZN-0006ql-CH
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 09:53:58 +0000
+ id 1hZBcr-0008R6-UZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 09:57:35 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C0767344;
- Fri,  7 Jun 2019 02:53:56 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7B9BA367;
+ Fri,  7 Jun 2019 02:57:33 -0700 (PDT)
 Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 947133F96A;
- Fri,  7 Jun 2019 02:55:35 -0700 (PDT)
-Date: Fri, 7 Jun 2019 10:53:53 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D0123F96A;
+ Fri,  7 Jun 2019 02:59:12 -0700 (PDT)
+Date: Fri, 7 Jun 2019 10:57:29 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Jeremy Linton <jeremy.linton@arm.com>
-Subject: Re: [PATCH v3 3/5] ACPI/PPTT: Modify node flag detection to find
- last IDENTICAL
-Message-ID: <20190607095353.GC2429@e107155-lin>
+Subject: Re: [PATCH v3 4/5] arm_pmu: acpi: spe: Add initial MADT/SPE probing
+Message-ID: <20190607095729.GD2429@e107155-lin>
 References: <20190503232407.37195-1-jeremy.linton@arm.com>
- <20190503232407.37195-4-jeremy.linton@arm.com>
+ <20190503232407.37195-5-jeremy.linton@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190503232407.37195-4-jeremy.linton@arm.com>
+In-Reply-To: <20190503232407.37195-5-jeremy.linton@arm.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_025357_506631_05198CDD 
-X-CRM114-Status: GOOD (  20.43  )
+X-CRM114-CacheID: sfid-20190607_025734_078726_81B2BDCC 
+X-CRM114-Status: GOOD (  21.43  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,92 +70,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 03, 2019 at 06:24:05PM -0500, Jeremy Linton wrote:
-> The ACPI specification implies that the IDENTICAL flag should be
-> set on all non leaf nodes where the children are identical.
-> This means that we need to be searching for the last node with
-> the identical flag set rather than the first one.
-> 
-> Since this flag is also dependent on the table revision, we
-> need to add a bit of extra code to verify the table revision,
-> and the next node's state in the traversal. Since we want to
-> avoid function pointers here, lets just special case
-> the IDENTICAL flag.
+On Fri, May 03, 2019 at 06:24:06PM -0500, Jeremy Linton wrote:
+> ACPI 6.3 adds additional fields to the MADT GICC
+> structure to describe SPE PPI's. We pick these out
+> of the cached reference to the madt_gicc structure
+> similarly to the core PMU code. We then create a platform
+> device referring to the IRQ and let the user/module loader
+> decide whether to load the SPE driver.
 > 
 > Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
 > ---
->  drivers/acpi/pptt.c | 28 +++++++++++++++++++++++++---
->  1 file changed, 25 insertions(+), 3 deletions(-)
+>  arch/arm64/include/asm/acpi.h |  3 ++
+>  drivers/perf/Kconfig          |  5 +++
+>  drivers/perf/arm_pmu_acpi.c   | 76 +++++++++++++++++++++++++++++++++++
+>  include/linux/perf/arm_pmu.h  |  2 +
+>  4 files changed, 86 insertions(+)
 > 
-> diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
-> index 1865515297ca..456e1c0a35ae 100644
-> --- a/drivers/acpi/pptt.c
-> +++ b/drivers/acpi/pptt.c
-> @@ -432,17 +432,39 @@ static void cache_setup_acpi_cpu(struct acpi_table_header *table,
->  	}
+> diff --git a/arch/arm64/include/asm/acpi.h b/arch/arm64/include/asm/acpi.h
+> index 7628efbe6c12..d10399b9f998 100644
+> --- a/arch/arm64/include/asm/acpi.h
+> +++ b/arch/arm64/include/asm/acpi.h
+> @@ -41,6 +41,9 @@
+>  	(!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LENGTH || \
+>  	(unsigned long)(entry) + (entry)->header.length > (end))
+>  
+> +#define ACPI_MADT_GICC_SPE  (ACPI_OFFSET(struct acpi_madt_generic_interrupt, \
+> +	spe_interrupt) + sizeof(u16))
+> +
+>  /* Basic configuration for ACPI */
+>  #ifdef	CONFIG_ACPI
+>  pgprot_t __acpi_get_mem_attribute(phys_addr_t addr);
+> diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
+> index af9bc178495d..bc2647c64c9d 100644
+> --- a/drivers/perf/Kconfig
+> +++ b/drivers/perf/Kconfig
+> @@ -52,6 +52,11 @@ config ARM_PMU_ACPI
+>  	depends on ARM_PMU && ACPI
+>  	def_bool y
+>  
+> +config ARM_SPE_ACPI
+> +	depends on ARM_PMU_ACPI && ARM_SPE_PMU
+> +	def_bool y
+> +
+> +
+>  config ARM_DSU_PMU
+>  	tristate "ARM DynamIQ Shared Unit (DSU) PMU"
+>  	depends on ARM64
+> diff --git a/drivers/perf/arm_pmu_acpi.c b/drivers/perf/arm_pmu_acpi.c
+> index 0f197516d708..b0244e1e8c91 100644
+> --- a/drivers/perf/arm_pmu_acpi.c
+> +++ b/drivers/perf/arm_pmu_acpi.c
+> @@ -74,6 +74,80 @@ static void arm_pmu_acpi_unregister_irq(int cpu)
+>  	acpi_unregister_gsi(gsi);
 >  }
 >  
-> +static bool flag_identical(struct acpi_table_header *table_hdr,
-> +			  struct acpi_pptt_processor *cpu)
-
-Not sure if it's email client problem, but I see quite a few mis-alignment
-with parenthesis like above one.
-
-> +{
-> +	struct acpi_pptt_processor *next;
-> +
-> +	/* heterogeneous machines must use PPTT revision > 1 */
-> +	if (table_hdr->revision < 2)
-> +		return false;
-> +
-> +	/* Locate the last node in the tree with IDENTICAL set */
-> +	if (cpu->flags & ACPI_PPTT_ACPI_IDENTICAL) {
-> +		next = fetch_pptt_node(table_hdr, cpu->parent);
-> +		if (!(next && next->flags & ACPI_PPTT_ACPI_IDENTICAL))
-> +			return true;
+> +#ifdef CONFIG_ARM_SPE_ACPI
+> +static struct resource spe_resources[] = {
+> +	{
+> +		/* irq */
+> +		.flags          = IORESOURCE_IRQ,
 > +	}
+> +};
 > +
-> +	return false;
-> +}
+> +static struct platform_device spe_dev = {
+> +	.name = ARMV8_SPE_PDEV_NAME,
+> +	.id = -1,
+> +	.resource = spe_resources,
+> +	.num_resources = ARRAY_SIZE(spe_resources)
+> +};
 > +
->  /* Passing level values greater than this will result in search termination */
->  #define PPTT_ABORT_PACKAGE 0xFF
->  
-> -static struct acpi_pptt_processor *acpi_find_processor_package_id(struct acpi_table_header *table_hdr,
-> +static struct acpi_pptt_processor *acpi_find_processor_tag_id(struct acpi_table_header *table_hdr,
->  								  struct acpi_pptt_processor *cpu,
->  								  int level, int flag)
->  {
->  	struct acpi_pptt_processor *prev_node;
->  
->  	while (cpu && level) {
-> -		if (cpu->flags & flag)
-> +		if (flag == ACPI_PPTT_ACPI_IDENTICAL) {
+> +/*
+> + * For lack of a better place, hook the normal PMU MADT walk
+> + * and create a SPE device if we detect a recent MADT with
+> + * a homogeneous PPI mapping.
+> + */
+> +static int arm_spe_acpi_register_device(void)
+> +{
+> +	int cpu, ret, irq;
+> +	int hetid;
+> +	u16 gsi = 0;
+> +	bool first = true;
+> +
+> +	struct acpi_madt_generic_interrupt *gicc;
+> +
+> +	/*
+> +	 * sanity check all the GICC tables for the same interrupt number
+> +	 * for now we only support homogeneous ACPI/SPE machines.
+> +	 */
+> +	for_each_possible_cpu(cpu) {
+> +		gicc = acpi_cpu_get_madt_gicc(cpu);
+> +
+> +		if (gicc->header.length < ACPI_MADT_GICC_SPE)
+> +			return -ENODEV;
+> +		if (first) {
+> +			gsi = gicc->spe_interrupt;
+> +			if (!gsi)
+> +				return -ENODEV;
+> +			hetid = find_acpi_cpu_topology_hetero_id(cpu);
+> +			first = false;
+> +		} else if ((gsi != gicc->spe_interrupt) ||
+> +			   (hetid != find_acpi_cpu_topology_hetero_id(cpu))) {
 
-flag_identical anyways check the flag, so I assume you can drop the above
-check.
+Sorry, I should have noticed this in patch 2 itself. Won't this break for
+multi-socket system ? The hetid in that case will be package id, no ?
 
-> +			if (flag_identical(table_hdr, cpu))
-> +				break;
-> +		} else if (cpu->flags & flag)
->  			break;
->  		pr_debug("level %d\n", level);
->  		prev_node = fetch_pptt_node(table_hdr, cpu->parent);
-> @@ -480,7 +502,7 @@ static int topology_get_acpi_cpu_tag(struct acpi_table_header *table,
->  
->  	cpu_node = acpi_find_processor_node(table, acpi_cpu_id);
->  	if (cpu_node) {
-> -		cpu_node = acpi_find_processor_package_id(table, cpu_node,
-> +		cpu_node = acpi_find_processor_tag_id(table, cpu_node,
->  							  level, flag);
-
-
-Again misaligned, may be that's because of renaming.
+Otherwise the patch looks good.
 
 --
 Regards,
 Sudeep
-
 
 _______________________________________________
 linux-arm-kernel mailing list
