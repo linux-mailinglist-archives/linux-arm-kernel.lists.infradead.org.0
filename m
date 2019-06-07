@@ -2,90 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C35438A79
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 14:38:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 895BB38A88
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 14:44:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bx9fXZnhA8VRFA8FhH663Dmy60ACi5tVyJ1QJm4Ifec=; b=VzMcSy9UrW5Gws
-	B4n8bggD7THkpfoAM3Ee1mjk67jl375BDB49FJmO/YpxAuFvI5DOKxOHoSmP8Y38XXavSKceIH0gU
-	LdQIecGVLTU7U0zUSq0bH0SHvIYkzdPVqjIL69vig9WwyMy9YCrH8fbGjJ9cVR3NeQt2Fm95bWcP0
-	9b1xMvTVJVQj3yl2UE7B5BsXyg8nIJilAqXzQOJ4XFz/7yKfFtMTAgDcntQbPwGwQvOEs/GKOPEAk
-	qLqT6a3rdbefcqmOZbfnSmJuil2jOMuQbXLn1js6Xj7jpcEXNhlCs9bj2Bb/+ZyuNQB5Gpu/gkxEL
-	IHg48rZdzq4FOgnkY8sA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mZYGCW0VGrMvkuv2aQPnh92pTNC3hEUlk+SqeNWjGno=; b=h6XhayvZ8kOHhP
+	Ywf4eMMXH17GtZgSiPjXWLkJA7w2zFkIZNigMeVdCa1btF9MeoC+JEHc07DHo9ROsS8qEs8nAfTA8
+	Np/VtnCT+PGu8i9r8kifxBp2o/vu9lEbLk9TjLYQoFGZu6rGdx+iwT+hBqkSDViLW2TmY93LIZGyu
+	c6t1arZjQw85q9zVl87Z/0gKoJy3IHhSLquSbjMT8An7fo0O0zRtqc9SQsJv9RCheM5b/pFT0sXyT
+	DRJqnhBwxfjH9OC2Ks2oRl2TFsO0fnV6ThZYHJIwF57YO5KJBv5dHkGUoM9Opo/tGm1WksFMRN1WL
+	PFueGoiwEBOAN6lTMkHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZE8t-0000GU-49; Fri, 07 Jun 2019 12:38:47 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZE8j-0000FJ-3S; Fri, 07 Jun 2019 12:38:38 +0000
-Received: by mail-qt1-x841.google.com with SMTP id s57so1986611qte.8;
- Fri, 07 Jun 2019 05:38:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6iGSfs58nJEWANfcqakVLDnIqBJN0sG2xeLAj5suBzA=;
- b=jpVVBJBgGBWvuVp1bgLIZ6kj6T33Jf3ZDqewzBsJiOkescpA4SpZIjK7BPSkEzPdjX
- 0dq7fPDipCzIibmPYHDj3PxkYUgh+sbcCivpbRLZqfEzd7Sw5gKo74I1ik2CIHi5dXN1
- foWiBBYiLqj5Mz0qdlPngVLRyuObhyodT8oAs5AybIXdvpuxZVd4kiIOFIHZNu61dGi+
- 59C4WoZTeq4RqmTOjxyGrJWQ+24MZh/KCs1mTxibbctjN66XCLo+2Gr5lomdghWEaW0i
- ZxHjciIn7nT6kBOcWVabp8qLR9Fc1yFkZZ9SubnkXwkiabJsu93GrTTxSVjwm5TRqTl/
- WQCw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6iGSfs58nJEWANfcqakVLDnIqBJN0sG2xeLAj5suBzA=;
- b=bT51aJw/hpoHwtB3Y0WV7SuqOGvxoX8IWwrPqc99gDYMOAF1DBegDcjL6YYkfowsJt
- AFIAIwlmLM1bVwlokxb4pIuRq3sLkRCMZTcxm/f8OQuW3L1eRaEhWPbZvhgrKSH6RhfQ
- HSi5mweu8KFnpeXDAxPVrIiUDk0ucxCvq6LweVaLJ/grlCUQnRuJDyuxlag2ZkO6CZoV
- KLPSvMmsPtbm6ZhSXF0AFUQ/mpuyB8hyH9sn47/C8yElYspKBL2PKXnChMujnvdVz1dx
- rjtli4cVaOz2g6UP57NoqlOz7iHkDXQyoDHce1Zt9CwWz026OS+DfXDUlzuZ6gjrzJDK
- xkhQ==
-X-Gm-Message-State: APjAAAVBDNuSA0cor1nQ+EBd50ZEjxwLwR3qRWM6j5Nxizewq5/xjwnr
- /ic9ax0YUXsHmrX+qhLblUk=
-X-Google-Smtp-Source: APXvYqy3lnFlY+YhZJzwKz2YNnsUjtvp2Q1p+GonECjpcMx9XDR0cb8cTW4wC/H47MjLRzYxMFcpFw==
-X-Received: by 2002:a05:6214:206:: with SMTP id
- i6mr16751479qvt.169.1559911115340; 
- Fri, 07 Jun 2019 05:38:35 -0700 (PDT)
-Received: from firefly.sparksnet ([2601:153:900:ebb::2])
- by smtp.gmail.com with ESMTPSA id o54sm1281963qtb.63.2019.06.07.05.38.34
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 07 Jun 2019 05:38:34 -0700 (PDT)
-From: Peter Geis <pgwipeout@gmail.com>
-To: "Leonidas P . Papadakos" <papadakospan@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Jose Abreu <jose.abreu@synopsys.com>, Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH] arm64: dts: rockchip: improve rk3328-roc-cc rgmii performance.
-Date: Fri,  7 Jun 2019 12:37:32 +0000
-Message-Id: <20190607123731.8737-1-pgwipeout@gmail.com>
-X-Mailer: git-send-email 2.20.1
+	id 1hZEEm-0002di-IE; Fri, 07 Jun 2019 12:44:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZEEf-0002dF-1f
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 12:44:46 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D51F367;
+ Fri,  7 Jun 2019 05:44:43 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ EBEA740151; Fri,  7 Jun 2019 05:44:41 -0700 (PDT)
+Subject: Re: [PATCH 1/8] KVM: arm/arm64: vgic: Add LPI translation cache
+ definition
+To: Auger Eric <eric.auger@redhat.com>, linux-arm-kernel@lists.infradead.org, 
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+References: <20190606165455.162478-1-marc.zyngier@arm.com>
+ <20190606165455.162478-2-marc.zyngier@arm.com>
+ <7b4a5bc3-8168-50bb-e2aa-3ff081199d04@redhat.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <856ab7bd-3ba1-e10e-1bf5-7a821c753a53@arm.com>
+Date: Fri, 7 Jun 2019 13:44:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <7b4a5bc3-8168-50bb-e2aa-3ff081199d04@redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_053837_166883_259F8DCB 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190607_054445_183616_E3C2BAA2 
+X-CRM114-Status: GOOD (  21.65  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pgwipeout[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,52 +110,187 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: Julien Thierry <julien.thierry@arm.com>, "Raslan,
+ KarimAllah" <karahmed@amazon.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ Zenghui Yu <yuzenghui@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently the rk3328-roc-cc ethernet is enabled using "snps,force_thresh_dma_mode".
-While this works, the performance leaves a lot to be desired.
-A previous attempt to improve performance used "snps,txpbl = <0x4>".
-This also allowed networking to function, but performance varied between boards.
+Hi Eric,
 
-This patch takes that one step further.
-Set txpbl and rxpbl to 0x4.
-This can also be accomplished with "snps,pbl =<0x4>" which affects both.
-Also set "snps,aal" which forces address aligned DMA mode.
+On 07/06/2019 13:09, Auger Eric wrote:
+> Hi Marc,
+> 
+> On 6/6/19 6:54 PM, Marc Zyngier wrote:
+>> Add the basic data structure that expresses an MSI to LPI
+>> translation as well as the allocation/release hooks.
+>>
+>> THe size of the cache is arbitrarily defined as 4*nr_vcpus.
+>>
+>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>> ---
+>>  include/kvm/arm_vgic.h        | 10 ++++++++++
+>>  virt/kvm/arm/vgic/vgic-init.c | 34 ++++++++++++++++++++++++++++++++++
+>>  virt/kvm/arm/vgic/vgic-its.c  |  2 ++
+>>  virt/kvm/arm/vgic/vgic.h      |  3 +++
+>>  4 files changed, 49 insertions(+)
+>>
+>> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
+>> index c36c86f1ec9a..5a0d6b07c5ef 100644
+>> --- a/include/kvm/arm_vgic.h
+>> +++ b/include/kvm/arm_vgic.h
+>> @@ -173,6 +173,14 @@ struct vgic_io_device {
+>>  	struct kvm_io_device dev;
+>>  };
+>>  
+>> +struct vgic_translation_cache_entry {
+>> +	struct list_head	entry;
+>> +	phys_addr_t		db;
+> it is not obvious to me why you do need the db field? Isn't the LPI
+> uniquely identfiied by the devid and eventid. If I recall correctly
+> theorically the architecture allows to handle LPIs even without ITS.
 
-On my board this achieves the best performance yet, however we need broad testing to ensure this works for everyone.
-Please test and provide feedback.
+Only having DID+EID is unfortunately not enough, and the translation has
+to be per ITS. Think of a system with two ITSs, and a PCI device in
+front of each of the ITSs. There is no reason why the two devices would
+have different IDs, as they belong to different PCI hierarchies.
 
-Signed-off-by: Peter Geis <pgwipeout@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+So the cache must take the source ITS into account. The alternative
+would be to keep a separate cache per ITS, but that would lead to more
+overhead on the fast path, having to lookup the ITS first.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts b/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts
-index 5d499c9086fb..8bcc08de82fb 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dts
-@@ -141,10 +141,12 @@
- 	phy-mode = "rgmii";
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&rgmiim1_pins>;
--	snps,force_thresh_dma_mode;
- 	snps,reset-gpio = <&gpio1 RK_PC2 GPIO_ACTIVE_LOW>;
- 	snps,reset-active-low;
- 	snps,reset-delays-us = <0 10000 50000>;
-+	snps,txpbl = <0x4>;
-+	snps,rxpbl = <0x4>;
-+	snps,aal;
- 	tx_delay = <0x24>;
- 	rx_delay = <0x18>;
- 	status = "okay";
+As for LPIs without ITS, that wouldn't need a cache at all.
+
+>> +	u32			devid;
+>> +	u32			eventid;
+>> +	struct vgic_irq		*irq;
+>> +};
+>> +
+>>  struct vgic_its {
+>>  	/* The base address of the ITS control register frame */
+>>  	gpa_t			vgic_its_base;
+>> @@ -260,6 +268,8 @@ struct vgic_dist {
+>>  	struct list_head	lpi_list_head;
+>>  	int			lpi_list_count;
+>>  
+>> +	struct list_head	lpi_translation_cache;
+>> +
+>>  	/* used by vgic-debug */
+>>  	struct vgic_state_iter *iter;
+>>  
+>> diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+>> index 3bdb31eaed64..25ae25694a28 100644
+>> --- a/virt/kvm/arm/vgic/vgic-init.c
+>> +++ b/virt/kvm/arm/vgic/vgic-init.c
+>> @@ -64,6 +64,7 @@ void kvm_vgic_early_init(struct kvm *kvm)
+>>  	struct vgic_dist *dist = &kvm->arch.vgic;
+>>  
+>>  	INIT_LIST_HEAD(&dist->lpi_list_head);
+>> +	INIT_LIST_HEAD(&dist->lpi_translation_cache);
+>>  	raw_spin_lock_init(&dist->lpi_list_lock);
+>>  }
+>>  
+>> @@ -260,6 +261,27 @@ static void kvm_vgic_vcpu_enable(struct kvm_vcpu *vcpu)
+>>  		vgic_v3_enable(vcpu);
+>>  }
+>>  
+>> +void vgic_lpi_translation_cache_init(struct kvm *kvm)
+>> +{
+>> +	struct vgic_dist *dist = &kvm->arch.vgic;
+>> +	int i;
+>> +
+>> +	if (!list_empty(&dist->lpi_translation_cache))
+>> +		return;
+>> +
+>> +	for (i = 0; i < LPI_CACHE_SIZE(kvm); i++) {
+>> +		struct vgic_translation_cache_entry *cte;
+>> +
+>> +		/* An allocation failure is not fatal */
+>> +		cte = kzalloc(sizeof(*cte), GFP_KERNEL);
+>> +		if (WARN_ON(!cte))
+>> +			break;
+>> +
+>> +		INIT_LIST_HEAD(&cte->entry);
+>> +		list_add(&cte->entry, &dist->lpi_translation_cache);
+>> +	}
+>> +}
+>> +
+>>  /*
+>>   * vgic_init: allocates and initializes dist and vcpu data structures
+>>   * depending on two dimensioning parameters:
+>> @@ -305,6 +327,7 @@ int vgic_init(struct kvm *kvm)
+>>  	}
+>>  
+>>  	if (vgic_has_its(kvm)) {
+>> +		vgic_lpi_translation_cache_init(kvm);
+>>  		ret = vgic_v4_init(kvm);
+>>  		if (ret)
+>>  			goto out;
+>> @@ -346,6 +369,17 @@ static void kvm_vgic_dist_destroy(struct kvm *kvm)
+>>  		INIT_LIST_HEAD(&dist->rd_regions);
+>>  	}
+>>  
+>> +	if (vgic_has_its(kvm)) {
+>> +		struct vgic_translation_cache_entry *cte, *tmp;
+>> +
+>> +		list_for_each_entry_safe(cte, tmp,
+>> +					 &dist->lpi_translation_cache, entry) {
+>> +			list_del(&cte->entry);
+>> +			kfree(cte);
+>> +		}
+>> +		INIT_LIST_HEAD(&dist->lpi_translation_cache);
+>> +	}
+>> +
+>>  	if (vgic_supports_direct_msis(kvm))
+>>  		vgic_v4_teardown(kvm);
+>>  }
+>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+>> index 44ceaccb18cf..5758504fd934 100644
+>> --- a/virt/kvm/arm/vgic/vgic-its.c
+>> +++ b/virt/kvm/arm/vgic/vgic-its.c
+>> @@ -1696,6 +1696,8 @@ static int vgic_its_create(struct kvm_device *dev, u32 type)
+>>  			kfree(its);
+>>  			return ret;
+>>  		}
+>> +
+>> +		vgic_lpi_translation_cache_init(dev->kvm);
+>>  	}
+>>  
+>>  	mutex_init(&its->its_lock);
+>> diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
+>> index abeeffabc456..a58e1b263dca 100644
+>> --- a/virt/kvm/arm/vgic/vgic.h
+>> +++ b/virt/kvm/arm/vgic/vgic.h
+>> @@ -316,6 +316,9 @@ int vgic_copy_lpi_list(struct kvm *kvm, struct kvm_vcpu *vcpu, u32 **intid_ptr);
+>>  int vgic_its_resolve_lpi(struct kvm *kvm, struct vgic_its *its,
+>>  			 u32 devid, u32 eventid, struct vgic_irq **irq);
+>>  struct vgic_its *vgic_msi_to_its(struct kvm *kvm, struct kvm_msi *msi);
+>> +void vgic_lpi_translation_cache_init(struct kvm *kvm);
+>> +
+>> +#define LPI_CACHE_SIZE(kvm)	(atomic_read(&(kvm)->online_vcpus) * 4)
+> Couldn't the cache be a function of the number of allocated lpis. We
+> could realloc the list accordingly. I miss why it is rather dependent on
+> the number of vcpus and not on the number of assigned devices/MSIs?
+
+How do you find out about the number of LPIs? That's really for the
+guest to decide what it wants to do. Also, KVM itself doesn't have much
+of a clue about the number of assigned devices or their MSI capability.
+That's why I've suggested that userspace could be involved here.
+
+So far, I've used the number of vcpus as MSIs are usually used to deal
+with per-CPU queues. This allows the cache to scale with the number of
+queues that the guest is expected to deal with. Ali's reply earlier seem
+to indicate that this is a common pattern, but it is the multiplying
+factor that is hard to express.
+
+Thanks,
+
+	M.
 -- 
-2.20.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
