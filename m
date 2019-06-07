@@ -2,55 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 665B638ED6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 17:21:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54B3338EDC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 17:22:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/8q6J+hGu5aF+8q7yrJV2SzdOBB75di0699qzQ16Hjg=; b=CZHjCP0UQOg6RD
-	QOTFh4FYv8Wxa9yjtDr+FmrXECLRANZZlHZjovJGfW0zOQjOYQIaptl/A+OUiKMmG8XO/I7kS/da0
-	1YyLh7CdQ4qkdM2RgOXdDOXdR0HX72SiVWW1UX1WwY+tki90aZ4OWoMYOQPnAXuWLIeWVjAht9SFV
-	tet/j7CJtqPhlpsYtJi/8/qD7BKq5uFXutryYOIQCnIUY56NfNlqNmMEPl1nplq8fMdZDzaEN9n4s
-	P0qPpGti1yc30uuA/S717U41vB8D3eT52IEiKoyE9VjEP+zGMgkxGh59lmFQ1mUWaV5uS0vAp9Ebj
-	H7kz9hcM1cleNBUHYlKA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=21Im1NoLVJK5LsWL/fDoS7jjU+iTYc06FWTm8InzvDc=; b=rPgxC9ky4txuTP
+	i/w6ZYeOQxKWDHqGN2DAcO2dwtAfEnKd8fgjDqbO/vrt6JNcPfkrNi38MaH9U3eLGXV9l2n9/b/fP
+	gWQCB84VX9bklOJmZ84s/641MIK4CNCGtJnbqYKSX2PT/WcGYhSto4dbC8D04C3JTLMZNy3tFSctk
+	f3U0EAL2KtOEMsdXDg6PeE5Ac28/+fU6Zk7tpbYcGj172Qj6tyWou97miACNhXgzbyaYP+bj6bMwU
+	n9QwgxrRlFuesIeYy62sVXCQa6A03shQM0Zv1+95vozydFEnfDbIvEMmAPJDnz4mjERR4akXEPugt
+	Rzqqy7i+rkqfHObEgJEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZGgL-00049D-St; Fri, 07 Jun 2019 15:21:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZGgC-00048r-SS
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 15:21:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 99207337;
- Fri,  7 Jun 2019 08:21:19 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E9EEB3F718;
- Fri,  7 Jun 2019 08:21:16 -0700 (PDT)
-Date: Fri, 7 Jun 2019 16:21:14 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 08/18] drivers: firmware: psci: Prepare to support PM
- domains
-Message-ID: <20190607152114.GG15577@e107155-lin>
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-9-ulf.hansson@linaro.org>
+	id 1hZGgr-0004en-JS; Fri, 07 Jun 2019 15:22:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZGgi-0004dD-0H
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 15:21:55 +0000
+Received: from [192.168.1.31] (cpe-70-114-128-244.austin.res.rr.com
+ [70.114.128.244])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4ACCB208C3;
+ Fri,  7 Jun 2019 15:21:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559920911;
+ bh=C4wSxFGlR6b9yxuGgWtjERfZiktf9Nic7InAMLS2vlc=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=f0Y+3vyWwKNie94rK4lNNs5Gjz8Njf4YDzV52+JvXjDibV6vA1j7g+A8+RGBRvj5T
+ aaSxRqJeEcqn1xYFeeR6+oHhuwoUYd3Ykl5qUZS+uRVrtj+BgoL4Wi95MUwVr4wQ7s
+ jMGhgXO4r5jl56S4D74j47sX5KRVgaB83H5rtT5g=
+Subject: Re: [PATCHv16 1/3] ARM:dt-bindings:display Intel FPGA Video and Image
+ Processing Suite
+To: "Hean-Loong, Ong" <hean.loong.ong@intel.com>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Randy Dunlap <rdunlap@infradead.org>
+References: <20190607143022.427-1-hean.loong.ong@intel.com>
+ <20190607143022.427-2-hean.loong.ong@intel.com>
+From: Dinh Nguyen <dinguyen@kernel.org>
+Openpgp: preference=signencrypt
+Autocrypt: addr=dinguyen@kernel.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <9695f3e1-92ab-23ce-5922-71fbb7d8149f@kernel.org>
+Date: Fri, 7 Jun 2019 10:21:49 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190513192300.653-9-ulf.hansson@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190607143022.427-2-hean.loong.ong@intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_082121_013512_730FA77F 
-X-CRM114-Status: GOOD (  21.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190607_082152_890169_B05667E5 
+X-CRM114-Status: GOOD (  21.32  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,135 +125,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, linux-pm@vger.kernel.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- linux-arm-msm@vger.kernel.org, Lina Iyer <ilina@codeaurora.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+Cc: devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ chin.liang.see@intel.com, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 13, 2019 at 09:22:50PM +0200, Ulf Hansson wrote:
-> Subsequent changes implements support for PM domains to PSCI. Those changes
-> are mainly implemented in a new separate c-file, hence a couple of the
-> internal PSCI functions needs to be shared to be accessible. Let's do that
-> via adding a new PSCI header file.
->
-> Moreover, to implement support for PM domains, switching the PSCI FW into
-> the OS initiated mode is sometimes needed. Therefore, let's share a new
-> function that implement this.
->
+Hi Hean-Loong:
 
-This looks fine.
+Please format your commit message like this:
 
---
-Regards,
-Sudeep
+<Commit message>
 
-> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Ong, Hean Loong <hean.loong.ong@intel.com>
+---
+V15:
+v14:
+
+
+The version history needs go after the ---
+
+Dinh
+
+On 6/7/19 9:30 AM, Hean-Loong, Ong wrote:
+> From: "Ong, Hean Loong" <hean.loong.ong@intel.com>
+> 
+> Device tree binding for Intel FPGA Video and Image Processing Suite.
+> The bindings would set the max width, max height,
+> bits per pixel and memory port width.
+> The device tree binding only supports the Intel
+> Arria10 devkit and its variants. Vendor name retained as altr.
+> 
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> 
+> V15:
+> Reviewed
+> 
+> V14:
+> No Change
+> 
+> V13:
+> No change
+> 
+> V12:
+> Wrap comments and fix commit message
+> 
+> V11:
+> No change
+> 
+> V10:
+> No change
+> 
+> V9:
+> Remove Display port node
+> 
+> V8:
+> *Add port to Display port decoder
+> 
+> V7:
+> *Fix OF graph for better description
+> *Add description for encoder
+> 
+> V6:
+> *Description have not describe DT device in general
+> 
+> V5:
+> *remove bindings for bits per symbol as it has only one value which is 8
+> 
+> V4:
+> *fix properties that does not describe the values
+> 
+> V3:
+> *OF graph not in accordance to graph.txt
+> 
+> V2:
+> *Remove Linux driver description
+> 
+> V1:
+> *Missing vendor prefix
+> 
+> Signed-off-by: Ong, Hean Loong <hean.loong.ong@intel.com>
 > ---
->
-> Changes:
-> 	- Convert psci_set_osi_mode() to return an int.
-> 	- Don't share psci_get_domain_state() as that's no longer needed.
-> 	- Update changelog.
->
-> ---
->  drivers/firmware/psci/psci.c | 17 ++++++++++++++---
->  drivers/firmware/psci/psci.h | 16 ++++++++++++++++
->  2 files changed, 30 insertions(+), 3 deletions(-)
->  create mode 100644 drivers/firmware/psci/psci.h
->
-> diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
-> index 4aec513136e4..0e91d864e346 100644
-> --- a/drivers/firmware/psci/psci.c
-> +++ b/drivers/firmware/psci/psci.c
-> @@ -34,6 +34,8 @@
->  #include <asm/smp_plat.h>
->  #include <asm/suspend.h>
->
-> +#include "psci.h"
-> +
->  /*
->   * While a 64-bit OS can make calls with SMC32 calling conventions, for some
->   * calls it is necessary to use SMC64 to pass or return 64-bit values.
-> @@ -96,7 +98,7 @@ static inline bool psci_has_ext_power_state(void)
->  				PSCI_1_0_FEATURES_CPU_SUSPEND_PF_MASK;
->  }
->
-> -static inline bool psci_has_osi_support(void)
-> +bool psci_has_osi_support(void)
->  {
->  	return psci_cpu_suspend_feature & PSCI_1_0_OS_INITIATED;
->  }
-> @@ -161,6 +163,15 @@ static u32 psci_get_version(void)
->  	return invoke_psci_fn(PSCI_0_2_FN_PSCI_VERSION, 0, 0, 0);
->  }
->
-> +int psci_set_osi_mode(void)
-> +{
-> +	int err;
-> +
-> +	err = invoke_psci_fn(PSCI_1_0_FN_SET_SUSPEND_MODE,
-> +			     PSCI_1_0_SUSPEND_MODE_OSI, 0, 0);
-> +	return psci_to_linux_errno(err);
-> +}
-> +
->  static int psci_cpu_suspend(u32 state, unsigned long entry_point)
->  {
->  	int err;
-> @@ -292,12 +303,12 @@ static inline u32 psci_get_domain_state(void)
->  	return __this_cpu_read(domain_state);
->  }
->
-> -static inline void psci_set_domain_state(u32 state)
-> +void psci_set_domain_state(u32 state)
->  {
->  	__this_cpu_write(domain_state, state);
->  }
->
-> -static int psci_dt_parse_state_node(struct device_node *np, u32 *state)
-> +int psci_dt_parse_state_node(struct device_node *np, u32 *state)
->  {
->  	int err = of_property_read_u32(np, "arm,psci-suspend-param", state);
->
-> diff --git a/drivers/firmware/psci/psci.h b/drivers/firmware/psci/psci.h
+>  .../bindings/display/altr,vip-fb2.txt         | 63 +++++++++++++++++++
+>  1 file changed, 63 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/altr,vip-fb2.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/display/altr,vip-fb2.txt b/Documentation/devicetree/bindings/display/altr,vip-fb2.txt
 > new file mode 100644
-> index 000000000000..f2277c3ad405
+> index 000000000000..89a3b9e166a8
 > --- /dev/null
-> +++ b/drivers/firmware/psci/psci.h
-> @@ -0,0 +1,16 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
+> +++ b/Documentation/devicetree/bindings/display/altr,vip-fb2.txt
+> @@ -0,0 +1,63 @@
+> +Intel Video and Image Processing(VIP) Frame Buffer II bindings
 > +
-> +#ifndef __PSCI_H
-> +#define __PSCI_H
+> +Supported hardware: Intel FPGA SoC Arria10 and above with display port IP
 > +
-> +struct device_node;
+> +The Video Frame Buffer II in Video Image Processing (VIP) suite is an IP core
+> +that interfaces between system memory and Avalon-ST video ports. The IP core
+> +can be configured to support the memory reader (from memory to Avalon-ST)
+> +and/or memory writer (from Avalon-ST to memory) interfaces.
 > +
-> +int psci_set_osi_mode(void);
-> +bool psci_has_osi_support(void);
+> +More information the FPGA video IP component can be acquired from
+> +https://www.altera.com/content/dam/altera-www/global/en_US/pdfs\
+> +/literature/ug/ug_vip.pdf
 > +
-> +#ifdef CONFIG_CPU_IDLE
-> +void psci_set_domain_state(u32 state);
-> +int psci_dt_parse_state_node(struct device_node *np, u32 *state);
-> +#endif
+> +DT-Bindings:
+> +=============
+> +Required properties:
+> +----------------------------
+> +- compatible: "altr,vip-frame-buffer-2.0"
+> +- reg: Physical base address and length of the framebuffer controller's
+> +	registers.
+> +- altr,max-width: The maximum width of the framebuffer in pixels.
+> +- altr,max-height: The maximum height of the framebuffer in pixels.
+> +- altr,mem-port-width = the bus width of the avalon master port
+> +	on the frame reader
 > +
-> +#endif /* __PSCI_H */
-> --
-> 2.17.1
->
-
+> +Optional sub-nodes:
+> +- ports: The connection to the encoder
+> +
+> +Connections between the Frame Buffer II and other video IP cores in the system
+> +are modelled using the OF graph DT bindings. The Frame Buffer II node has up
+> +to two OF graph ports. When the memory writer interface is enabled, port 0
+> +maps to the Avalon-ST Input (din) port. When the memory reader interface is
+> +enabled, port 1 maps to the Avalon-ST Output (dout) port.
+> +
+> +The encoder is built into the FPGA HW design and therefore would not
+> +be accessible from the DDR.
+> +
+> +		Port 0				Port1
+> +---------------------------------------------------------
+> +ARRIA10 AVALON_ST (DIN)		AVALON_ST (DOUT)
+> +
+> +Required Properties Example:
+> +----------------------------
+> +
+> +framebuffer@100000280 {
+> +		compatible = "altr,vip-frame-buffer-2.0";
+> +		reg = <0x00000001 0x00000280 0x00000040>;
+> +		altr,max-width = <1280>;
+> +		altr,max-height = <720>;
+> +		altr,mem-port-width = <128>;
+> +
+> +		ports {
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +
+> +			port@1 {
+> +				reg = <1>;
+> +					fb_output: endpoint {
+> +						remote-endpoint = <&dp_encoder_input>;
+> +					};
+> +			};
+> +		};
+> +};
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
