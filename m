@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80FA13886A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:03:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD30138887
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:08:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2RSjUpYadbd8gJf2MZkmM6ReZshsks86gZ4deBtkyl4=; b=ftA+MuMFxF9egk
-	EJKf9kqlW7kyFh6ETLxvcd7l3cd3JKqEaCO8SSq0S9l32b4fHFe2nort7PkmOI9NuG+VagxhEfQ61
-	dfUuyBxO7bRBdWkErAvD/eLtxhApCkR2hfmqpuV6eljDYot/2DdnUKeirmzs8VJvKwlksgYZSJnwd
-	i1EIzqi3nCgAi9TRpaq3GGKcm8CLimqtRUc6rORQlVdF4wLycz1OWVdM5xDFWm6VtGz7bQNT0Ntut
-	3Gh2eAnoFBzNMbU1eZfJn/3+X1SVb1n0soroSrSjcDLJnRADW1osWTKTslRz7fBDf3lMqXjbJPT9+
-	dO+kBC4H2Jo3TBdXyPSQ==;
+	List-Owner; bh=B/+7Gbt6MtYXCeA0S8rxRDanLlHVJ8LWDdNFXoCctoU=; b=jGZwanjAg8B9hB
+	jmt6bph2CQtk+DvsrsVDgZxyZY97jjPc5uo7LMwOc6mK6AE35Pyz451z++jk499EXAOatkIooidAm
+	wfks0vu9caWoR36R9kmHIT0g3tZupqbxWn/A3hHwxZjznOj6rvAOZHTOhVe6BncQgeXwcsul4YI3Y
+	1ytoxCawj+8CPtHf8R9pACdgcJqEivSN//vB8v7pnQD2/aScuzDZL3ipje1aLkSYw6ydAeWdQ7i3e
+	ZFEqQKtYlsLBk6Xegr7jS9vngSznY9tG0fZ5YXRgkL13ew6zFKRO0OKa+jtPzN0f6/WssTXwfwgfK
+	ZQSmzUM+WZoAwQSS4qqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZCeL-0006Ef-KK; Fri, 07 Jun 2019 11:03:09 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hZCjo-00085o-CU; Fri, 07 Jun 2019 11:08:48 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZCeC-0006E9-NJ
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:03:02 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id m8so911549vsj.0
+ id 1hZCje-000853-5j
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:08:39 +0000
+Received: by mail-io1-xd41.google.com with SMTP id k8so1093584iot.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 04:02:59 -0700 (PDT)
+ Fri, 07 Jun 2019 04:08:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WUmbq4ZzrfgjJ6I/bdvOaFhtKBJjK9tscZns2i4i8ls=;
- b=rbswCChLasSiMv/BxkP+oqC6iQQ5YnOz2jHk8PMbC0zI9S1v/bznWuilMUyjrXLufI
- tBofULNs3jx0Ow9VaFVaYGxRQvzU82XBOlfJq5ISmCxvw20vVp1FfCTxng7lgcVr/fDO
- 9wrhKxb2wX1Yw4awvXoH22X4YIcDGC6/cJSCWFxWFhrLqcAiXL7rOZA4rvSseDG3GeJK
- 31m3sVPpE6DB+jvHavpdf3g+3NF6N3xKjgE5q+umHY3ZNSGHOuODtFu5/PLVhF8yEkSj
- HarLC+t7Wt+PP1PnEAgWPPTvHxQkqLFcoM4i2QNtsCkOcRNrm5xargwrFL5jAii+1OSc
- 4kmA==
+ :cc; bh=GXA3Jr+Mhw7TJ/Zj0rrWncqBfBkrIy8iCvF3ptMXOGE=;
+ b=kKmWVm7KNq1gSBghKEw8JHjybhOI4fZHTnGfp2JTChD6SU08oV8twygIt6if0dSujm
+ YFYcFhgdSb4cTtmxOX8hlja4HscZv35gluhEq+WILhmLtf2CXLYanIgjfETslUG3AIee
+ 77sfg8QmheYJ1Y9FMyJqEHmU78MGah8K9YstGDvrZfeib4m1GrGI77FH36AgGhfNvtmE
+ 5XRu8K1G/HTl0HNGtTgagJfajtF11z8NCLRF/bWYbXO0Oyb+PhDvuHUiw0aPyucijghq
+ K7QZDmenykjrYN02pdjgCGLSvTWxLAYh1G8X164OxAHcifc+HYiAB0/+HlO43PpdrFIq
+ Rx3Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=WUmbq4ZzrfgjJ6I/bdvOaFhtKBJjK9tscZns2i4i8ls=;
- b=YzApngRxA/byH+kEAvzFSyjpu2CWD39azWWZ/vj8vZ4QEVidBd0DowMXMeRp6fd2++
- oov1yyT9mP4+KMUP7C5kr4AXqy4/d9sq1qiCgU+GtrIA9J0mOejxSbL6z0rq8QI5W86z
- 6Ff8HVejMo4JvyORUED0n8dF0ukQzrf6PgVOQUjm3F65VZ4G6KWV2yDej2eJk0r7q5aB
- upsQD2Wghz2KAXHOfuZ4rKrYLlULGGRYTWAuSyeqsKOrXgn7joh04yaeOc4V3ywC1/uM
- 1NTQXZjk91/SvkAQGqf1YG2p3lbcWzQ++zknObKg3ejUqKzWeI7CCn26UJfC++4MImVT
- oyvg==
-X-Gm-Message-State: APjAAAXvslJS0dgiN9Mb9IyPDSvtiGppLnu/QYLgMgP/y0CHHo5jUgTC
- c8fVyjnhcv47WXhW3WuM3BkpxsMnRSIRnjEYvcGhiw==
-X-Google-Smtp-Source: APXvYqzDuz5mV6Jsi2xrh1eBdn+z7KJtHM7z3KIMpeuQwSP0He+fkG995ke/oRmFwgQo/qgul6kuZ3xCxNzlcCOd13U=
-X-Received: by 2002:a67:706:: with SMTP id 6mr11457746vsh.200.1559905378848;
- Fri, 07 Jun 2019 04:02:58 -0700 (PDT)
+ bh=GXA3Jr+Mhw7TJ/Zj0rrWncqBfBkrIy8iCvF3ptMXOGE=;
+ b=dB1+6Jykaanb6FWBfMU48ke/mFH4T4+becHbHVBSASvMZ6/AnAf/VIN7k6/zjQmqFq
+ VMy58miXObZ0kkJUHC+EzNrW0beeXTtl9hGM4N0Rbt93NkdwBN8/G9R3pV1RgIDin10Q
+ IKiUuayP6ZCX4maHWOOBTTzbBAwpX4aos5S8duFpInTsM6rHwY2WD4baVmdEO4U6HCaW
+ FGi3Y5Oh/pV117oOw13wY3E/oLZPvB9Gga70iqu9ZS1ots2rqwn55dfbE/wNJic43Z1A
+ wknK7mNaXv5LAyAVRWiM73EB9+rvQsFYApuWNTGn1jLBRi1RdbNLxJv4DqQMZN4OzMjR
+ moUQ==
+X-Gm-Message-State: APjAAAWbSIcBY5d2Ewrdc0mKgy+2FwqFfY93zXnHpq3wL9v4n3FyoTzE
+ 4IGKmnNzq2vSsSp0KZHb8im2fU4gOe61mDNESI44GA==
+X-Google-Smtp-Source: APXvYqx+hd94b4UUsZSCPJJ96EY6XV+oXjukJZTTRGg/pxcsi1nOH4E1wPdCHkE5/rIixOEkqC0BmTndCcDQVsRhVM8=
+X-Received: by 2002:a05:6602:98:: with SMTP id h24mr300107iob.49.1559905716603; 
+ Fri, 07 Jun 2019 04:08:36 -0700 (PDT)
 MIME-Version: 1.0
-References: <cover.1559635435.git.baolin.wang@linaro.org>
-In-Reply-To: <cover.1559635435.git.baolin.wang@linaro.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 7 Jun 2019 13:02:22 +0200
-Message-ID: <CAPDyKFp+UXDrrferK0zP7nPFtvkq6UU29vhJu3HCEUiKcAOsJQ@mail.gmail.com>
-Subject: Re: [PATCH v2 0/9] Add SD host controller support for SC9860 platform
-To: Baolin Wang <baolin.wang@linaro.org>
+References: <20190607082901.6491-1-lee.jones@linaro.org>
+In-Reply-To: <20190607082901.6491-1-lee.jones@linaro.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 7 Jun 2019 13:08:25 +0200
+Message-ID: <CAKv+Gu_SP7qBggCrVkF41BimV3PnCQXb5OUKyCsE0bBxa68RZA@mail.gmail.com>
+Subject: Re: [PATCH v2 1/8] i2c: i2c-qcom-geni: Provide support for ACPI
+To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_040300_772720_6DC41CA2 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20190607_040838_223962_D86C93EA 
+X-CRM114-Status: GOOD (  20.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -90,56 +90,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- arm-soc <arm@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Chunyan Zhang <zhang.lyra@gmail.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
+Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ linux-usb <linux-usb@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Olof Johansson <olof@lixom.net>,
- Orson Zhai <orsonzhai@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ David Brown <david.brown@linaro.org>, alokc@codeaurora.org,
+ linux-i2c <linux-i2c@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Andy Gross <andy.gross@linaro.org>, Jeffrey Hugo <jlhugo@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 4 Jun 2019 at 10:14, Baolin Wang <baolin.wang@linaro.org> wrote:
+On Fri, 7 Jun 2019 at 10:29, Lee Jones <lee.jones@linaro.org> wrote:
 >
-> This patch set adds optional clock support, HS400 enhanced strobe mode support,
-> PHY DLL configuration and other optimization to make the SD host controller
-> can work well on the Spreadtrum SC9860 platform.
+> Add a match table to allow automatic probing of ACPI device
+> QCOM0220.  Ignore clock attainment errors.  Set default clock
+> frequency value.
 >
-> Changes from v1:
->  - Add acked-tags from Adrian.
->  - Fix one mistake by changing MMC_TIMING_MMC_HS to MMC_TIMING_SD_HS in patch 8.
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+>  drivers/i2c/busses/i2c-qcom-geni.c | 19 +++++++++++++++++--
+>  1 file changed, 17 insertions(+), 2 deletions(-)
 >
-> Baolin Wang (9):
->   mmc: sdhci-sprd: Check the enable clock's return value correctly
->   dt-bindings: mmc: sprd: Add another optional clock documentation
->   mmc: sdhci-sprd: Add optional gate clock support
->   mmc: sdhci-sprd: Implement the get_max_timeout_count() interface
->   mmc: sdhci-sprd: Add HS400 enhanced strobe mode
->   mmc: sdhci-sprd: Enable PHY DLL to make clock stable
->   dt-bindings: mmc: sprd: Add PHY DLL delay documentation
->   mmc: sdhci-sprd: Add PHY DLL delay configuration
->   arm64: dts: sprd: Add Spreadtrum SD host controller support
+> diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-qcom-geni.c
+> index db075bc0d952..0fa93b448e8d 100644
+> --- a/drivers/i2c/busses/i2c-qcom-geni.c
+> +++ b/drivers/i2c/busses/i2c-qcom-geni.c
+> @@ -1,6 +1,7 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  // Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 >
->  .../devicetree/bindings/mmc/sdhci-sprd.txt         |   19 +++
->  arch/arm64/boot/dts/sprd/whale2.dtsi               |   35 ++++
->  drivers/mmc/host/sdhci-sprd.c                      |  171 +++++++++++++++++++-
->  3 files changed, 217 insertions(+), 8 deletions(-)
+> +#include <linux/acpi.h>
+>  #include <linux/clk.h>
+>  #include <linux/dma-mapping.h>
+>  #include <linux/err.h>
+> @@ -483,6 +484,12 @@ static const struct i2c_algorithm geni_i2c_algo = {
+>         .functionality  = geni_i2c_func,
+>  };
+>
+> +static const struct acpi_device_id geni_i2c_acpi_match[] = {
+> +       { "QCOM0220"},
+> +       { },
+> +};
+> +MODULE_DEVICE_TABLE(acpi, geni_i2c_acpi_match);
+> +
+
+We usually put #ifdef CONFIG_ACPI/#endif around these, otherwise you
+end up with acpi:XXXX modaliases even though ACPI is not compiled in.
+
+>  static int geni_i2c_probe(struct platform_device *pdev)
+>  {
+>         struct geni_i2c_dev *gi2c;
+> @@ -502,7 +509,7 @@ static int geni_i2c_probe(struct platform_device *pdev)
+>                 return PTR_ERR(gi2c->se.base);
+>
+>         gi2c->se.clk = devm_clk_get(&pdev->dev, "se");
+
+Can we avoid this call altogether in ACPI mode? Also, please use
+'has_acpi_companion()' to test whether we are probing via ACPI.
+
+> -       if (IS_ERR(gi2c->se.clk)) {
+> +       if (IS_ERR(gi2c->se.clk) && !ACPI_HANDLE(&pdev->dev)) {
+
+
+>                 ret = PTR_ERR(gi2c->se.clk);
+>                 dev_err(&pdev->dev, "Err getting SE Core clk %d\n", ret);
+>                 return ret;
+> @@ -510,12 +517,19 @@ static int geni_i2c_probe(struct platform_device *pdev)
+>
+>         ret = device_property_read_u32(&pdev->dev, "clock-frequency",
+>                                                         &gi2c->clk_freq_out);
+> -       if (ret) {
+> +       if (ret && !ACPI_HANDLE(&pdev->dev)) {
+>                 dev_info(&pdev->dev,
+>                         "Bus frequency not specified, default to 100kHz.\n");
+>                 gi2c->clk_freq_out = KHZ(100);
+>         }
+>
+> +       if (ACPI_HANDLE(&pdev->dev)) {
+> +               ACPI_COMPANION_SET(&gi2c->adap.dev, ACPI_COMPANION(&pdev->dev));
+> +
+> +               /* Using default, same as the !ACPI case above */
+> +               gi2c->clk_freq_out = KHZ(100);
+> +       }
+> +
+
+You are overriding the speed to 100 kHz even if the ACPI device has a
+"clock-frequency" property.
+
+>         gi2c->irq = platform_get_irq(pdev, 0);
+>         if (gi2c->irq < 0) {
+>                 dev_err(&pdev->dev, "IRQ error for i2c-geni\n");
+> @@ -660,6 +674,7 @@ static struct platform_driver geni_i2c_driver = {
+>                 .name = "geni_i2c",
+>                 .pm = &geni_i2c_pm_ops,
+>                 .of_match_table = geni_i2c_dt_match,
+> +               .acpi_match_table = ACPI_PTR(geni_i2c_acpi_match),
+>         },
+>  };
 >
 > --
-> 1.7.9.5
+> 2.17.1
 >
-
-Patch 1 -> patch 8, applied for next, thanks!
-
-Patch 9 is for arm-soc.
-
-Kind regards
-Uffe
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
