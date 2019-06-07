@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FA8C38908
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:29:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF8D038907
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:29:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ograRHglmXq7YJe3jClO9IgclIZOVAT9ispGDFpzhpw=; b=LB4kBSc5RnlBbCEa6IjRE8mSMG
-	2DZltnF99dtATQ4IPbXGDTAB0RZ+86/yyWSnSl6zKU5dVBSVNvIetwcpPMUWhvuPBqfWh6HOEfRSx
-	+VO9cTiLdBs3CBDjt7tzHbcyF8/JtAP1XcHyPKzt5fOOxev24JzSYyTJj1Ni1l9C1qlV7rJ9lPgKx
-	srBk7+wSkvWJRCFAxm8y+16Abt1vO35VmD3/fNr6NUkUYZ759MvKKt5JxHqFR4DqMSBGneSkv2z1p
-	dxuYuAmRZU5NSH9v8Big37AOcnvmEg+CZbADlqFSJ2jLJjoLrw3KXimS4L51kwGPCCHmAIeSUq1mm
-	Thu+cBwA==;
+	bh=s1plfEVg+aaD4vSAyo1+glUsi8ONYs/d98/FU44jNSM=; b=GMQHf6ooBMudJyv4AXXi8P+9FN
+	EjbtXmth29dRST0b/b2vV/ne4zCIIiGBgkVVrBP9jxueMQc3qhnJcP2lkH9+p0ZZqNwNPdmXDuEmR
+	J81PSHvW0Jc5QePPvuzO68XnngBHk0FljY/psv5VJV4eQnL+5sqJDMy0aj78egtiFoiHj1NJDHQWl
+	0qJj+axmclBh3oO17LVwNi2yV4gL+Nt+CjXhRDJeMm8PX8AY5rLdddOKOwGIZ9hOny5IgnIAxxjGu
+	gDDK0rh7L1Te7GC6TWrj7wOvogDt2db638+ExTVG+QcM/Mqad2xs7xUJbrF+ZqulkuclJXS0h34fS
+	35JtwZKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZD3h-00016Z-FU; Fri, 07 Jun 2019 11:29:21 +0000
+	id 1hZD3K-0000oE-2Y; Fri, 07 Jun 2019 11:28:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZD1p-0007lq-9Z
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:27:27 +0000
+ id 1hZD1q-0007ni-UV
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:27:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 185086CC;
- Fri,  7 Jun 2019 04:27:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88D8E707;
+ Fri,  7 Jun 2019 04:27:26 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3DCDA3F246;
- Fri,  7 Jun 2019 04:29:04 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AD1BB3F246;
+ Fri,  7 Jun 2019 04:29:05 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH kvmtool v4 7/8] arm/arm64: Factor out ptrauth vcpu feature
- setup
-Date: Fri,  7 Jun 2019 12:26:28 +0100
-Message-Id: <1559906789-20936-8-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH kvmtool v4 8/8] arm64: Add SVE support
+Date: Fri,  7 Jun 2019 12:26:29 +0100
+Message-Id: <1559906789-20936-9-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
 References: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_042725_487561_7F1E6C87 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20190607_042727_094118_A99471E8 
+X-CRM114-Status: GOOD (  13.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,87 +73,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the interest of readability, factor out the vcpu feature setup
-for ptrauth into a separate function.
+This patch enables the Scalable Vector Extension for the guest when
+the host supports it.
 
-Also, because aarch32 doesn't have this feature or the related
-command line options anyway, move the actual code into aarch64/.
-
-Since ARM_VCPU_PTRAUTH_FEATURE is only there to make the ptrauth
-feature setup code compile on arm, it is no longer needed: inline
-and remove it.
+This requires use of the new KVM_ARM_VCPU_FINALIZE ioctl before the
+vcpu is runnable, so a new hook kvm_cpu__configure_features() is
+added to provide an appropriate place to do this work.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+
 ---
- arm/aarch32/include/kvm/kvm-cpu-arch.h |  3 ++-
- arm/aarch64/include/kvm/kvm-cpu-arch.h |  3 +--
- arm/aarch64/kvm-cpu.c                  | 10 ++++++++++
- arm/kvm-cpu.c                          |  5 +----
- 4 files changed, 14 insertions(+), 7 deletions(-)
+
+Changes since v3:
+
+ * Drop command-line options and simply default SVE to on where
+   supported.
+---
+ arm/aarch32/include/kvm/kvm-cpu-arch.h |  4 ++++
+ arm/aarch64/include/kvm/kvm-cpu-arch.h |  1 +
+ arm/aarch64/kvm-cpu.c                  | 18 ++++++++++++++++++
+ arm/kvm-cpu.c                          |  3 +++
+ 4 files changed, 26 insertions(+)
 
 diff --git a/arm/aarch32/include/kvm/kvm-cpu-arch.h b/arm/aarch32/include/kvm/kvm-cpu-arch.h
-index 3ec6f03..01983f0 100644
+index 01983f0..780e0e2 100644
 --- a/arm/aarch32/include/kvm/kvm-cpu-arch.h
 +++ b/arm/aarch32/include/kvm/kvm-cpu-arch.h
-@@ -13,6 +13,7 @@
- #define ARM_CPU_ID		0, 0, 0
- #define ARM_CPU_ID_MPIDR	5
+@@ -15,5 +15,9 @@
  
--#define ARM_VCPU_PTRAUTH_FEATURE	0
-+static inline void kvm_cpu__select_features(struct kvm *kvm,
-+					    struct kvm_vcpu_init *init) { }
+ static inline void kvm_cpu__select_features(struct kvm *kvm,
+ 					    struct kvm_vcpu_init *init) { }
++static inline int kvm_cpu__configure_features(struct kvm_cpu *vcpu)
++{
++	return 0;
++}
  
  #endif /* KVM__KVM_CPU_ARCH_H */
 diff --git a/arm/aarch64/include/kvm/kvm-cpu-arch.h b/arm/aarch64/include/kvm/kvm-cpu-arch.h
-index 9fa99fb..e6875fc 100644
+index e6875fc..8dfb82e 100644
 --- a/arm/aarch64/include/kvm/kvm-cpu-arch.h
 +++ b/arm/aarch64/include/kvm/kvm-cpu-arch.h
-@@ -17,7 +17,6 @@
- #define ARM_CPU_CTRL		3, 0, 1, 0
+@@ -18,5 +18,6 @@
  #define ARM_CPU_CTRL_SCTLR_EL1	0
  
--#define ARM_VCPU_PTRAUTH_FEATURE	((1UL << KVM_ARM_VCPU_PTRAUTH_ADDRESS) \
--					| (1UL << KVM_ARM_VCPU_PTRAUTH_GENERIC))
-+void kvm_cpu__select_features(struct kvm *kvm, struct kvm_vcpu_init *init);
+ void kvm_cpu__select_features(struct kvm *kvm, struct kvm_vcpu_init *init);
++int kvm_cpu__configure_features(struct kvm_cpu *vcpu);
  
  #endif /* KVM__KVM_CPU_ARCH_H */
 diff --git a/arm/aarch64/kvm-cpu.c b/arm/aarch64/kvm-cpu.c
-index 0aaefaf..8c29a21 100644
+index 8c29a21..9f3e858 100644
 --- a/arm/aarch64/kvm-cpu.c
 +++ b/arm/aarch64/kvm-cpu.c
-@@ -128,6 +128,16 @@ static void reset_vcpu_aarch64(struct kvm_cpu *vcpu)
+@@ -136,6 +136,24 @@ void kvm_cpu__select_features(struct kvm *kvm, struct kvm_vcpu_init *init)
+ 		init->features[0] |= 1UL << KVM_ARM_VCPU_PTRAUTH_ADDRESS;
+ 		init->features[0] |= 1UL << KVM_ARM_VCPU_PTRAUTH_GENERIC;
  	}
- }
- 
-+void kvm_cpu__select_features(struct kvm *kvm, struct kvm_vcpu_init *init)
-+{
-+	/* Enable pointer authentication if available */
-+	if (kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_ADDRESS) &&
-+	    kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_GENERIC)) {
-+		init->features[0] |= 1UL << KVM_ARM_VCPU_PTRAUTH_ADDRESS;
-+		init->features[0] |= 1UL << KVM_ARM_VCPU_PTRAUTH_GENERIC;
-+	}
++
++	/* Enable SVE if available */
++	if (kvm__supports_extension(kvm, KVM_CAP_ARM_SVE))
++		init->features[0] |= 1UL << KVM_ARM_VCPU_SVE;
 +}
 +
++int kvm_cpu__configure_features(struct kvm_cpu *vcpu)
++{
++	if (kvm__supports_extension(vcpu->kvm, KVM_CAP_ARM_SVE)) {
++		int feature = KVM_ARM_VCPU_SVE;
++
++		if (ioctl(vcpu->vcpu_fd, KVM_ARM_VCPU_FINALIZE, &feature)) {
++			pr_err("KVM_ARM_VCPU_FINALIZE: %s", strerror(errno));
++			return -1;
++		}
++	}
++
++	return 0;
+ }
+ 
  void kvm_cpu__reset_vcpu(struct kvm_cpu *vcpu)
- {
- 	if (vcpu->kvm->cfg.arch.aarch32_guest)
 diff --git a/arm/kvm-cpu.c b/arm/kvm-cpu.c
-index fff8494..1652f6f 100644
+index 1652f6f..554414f 100644
 --- a/arm/kvm-cpu.c
 +++ b/arm/kvm-cpu.c
-@@ -68,10 +68,7 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
- 		vcpu_init.features[0] |= (1UL << KVM_ARM_VCPU_PSCI_0_2);
- 	}
+@@ -124,6 +124,9 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
+ 	vcpu->cpu_compatible	= target->compatible;
+ 	vcpu->is_running	= true;
  
--	/* Enable pointer authentication if available */
--	if (kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_ADDRESS) &&
--	    kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_GENERIC))
--			vcpu_init.features[0] |= ARM_VCPU_PTRAUTH_FEATURE;
-+	kvm_cpu__select_features(kvm, &vcpu_init);
++	if (kvm_cpu__configure_features(vcpu))
++		die("Unable to configure requested vcpu features");
++
+ 	return vcpu;
+ }
  
- 	/*
- 	 * If the preferred target ioctl is successful then
 -- 
 2.1.4
 
