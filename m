@@ -2,93 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4111B385D4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 09:58:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B7BC385E2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 10:01:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZubI8maMGpvGzgPAFI4VmFt0KDRaJ60lZIgXhXOOWE8=; b=dHu+4JzgOwurdC
-	h22gHYpDmWj5il6rwPU1unFNYZFXbMVlYA0OPCTAT1oLBwNV4S0i3vI4Y8sVxbmp3Nh5ri/tOwQOw
-	npEr9+Y/iLSCoc/YO6ZmFVlNkGllRj1RucWIHsO2xrOZViu88nqTp5ysHLyZm/PS4jaRcYYr0wxRb
-	eSdU7fp6rpqGjvl6sbPD47hajGCJFNOocNB6z2M32TMgG56AgRnVesNrEv5zcBFCSUpMTMhfw3P+B
-	Tf047v71V4R+D9EGwsMuyCBUkUk0Kv+o9+PAQelf/BSf97rIkFGsCCWFLhZeDQrmYrO93MVL/imqA
-	OdEKDeBtrZTfdJJeXJQg==;
+	List-Owner; bh=Ti+HnIrNAhIiWGZn6wdxDB572++Z7T1T530HA4uJF3A=; b=k6oLkssOVENsww
+	B05wbieGaQBz3xkm+exgumxumcLt1tOd7xmdtGf0vUjRZmVdeWio4J+tpIruG1Tw4IHx5nRQrCx5t
+	eIFZYf7apCxW7AYJ2hlV8i/soU43grX8LmoxpAVVtdsrHt0Qpdg3t2Wsy6kqD/HbPCxx7xA3F/uz0
+	cikAJuC9NzoN0TyDiKkbheg/pOkdhpq9DALZ5zMKQ0NHzhyIWHJS+ix6ks4HhdoHKQKBOTLzKJzKY
+	DMG5uj9zBPdG+PYJJCz9J3EfwZ4aHMRuGmmRdtkwJ8OOO5PLNq8r2pd6QQzx+y2dUDiFeBVnJY64W
+	ANA09mIh2mtMNw0N1mdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZ9l7-0005ln-PV; Fri, 07 Jun 2019 07:57:57 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1hZ9oV-0007TZ-PQ; Fri, 07 Jun 2019 08:01:27 +0000
+Received: from mail-eopbgr40045.outbound.protection.outlook.com ([40.107.4.45]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZ9kj-0005l0-99
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 07:57:34 +0000
-Received: by mail-ed1-x541.google.com with SMTP id z25so1692385edq.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 00:57:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=1Y0dqNgN5GRlPumwnSwim+P7xV+jz6U0uadHjVytHrk=;
- b=KW+UbysjArNVACv4q6+549r7+cTv3EkG+0hIgp5Gzs8ersC7PVJ/arg0EbqcKW/BDT
- 7m/td0oX1nSkgEGBxV+/rFF94cYaaujJuBaZbnkb6j43aX9EoDSuUh2jbUn90a72Q1m6
- wWSpptOZ5QJhMjkYz1VNG/I1tEoevoc3dgNZE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=1Y0dqNgN5GRlPumwnSwim+P7xV+jz6U0uadHjVytHrk=;
- b=gG4MN/f3CxSqeZkb7H27vtMzhsKrJuV5LJtIP2zf6kZC3uB6EGH7P2OYrCdXyQrZpr
- lzHIquEA45q94NTlZkGs/bMDV8dvOzWYUUT2vwTYcVY0eVqLAVapO3UquDiBnuv9VyBZ
- +HFAeOJFHG5rUnmKC0rWG7kAVs+lUXHmnN+I934EcfqMTWIh5dsjPZPHpbhZvuUpTWXJ
- /y10kQxtAWZw1s16bhzR+iBxZKijAwh/D21X1Gvyexz66Xge+4IpT8LxIeX/ZhwMRnPF
- 5JpW1pCtwXQe2lVeWO0GRpx1wBgAq3RH+5v+aytrOq1gn4xY+UbI/JsAGKoHt4hJnh8I
- 9Z1w==
-X-Gm-Message-State: APjAAAWV+0ZhZgSqX+w5UMwARVsY8xvQlSDDfAGfBnF8uoZnuey3nhnN
- Iy9MRDlEn9RkUU+xTG8Sdqx5nA==
-X-Google-Smtp-Source: APXvYqxb9k77uDmPH+x6SZW7m5DzVGO6PSl0oSp7JXNVVPERM605KEjklDJiu0Eyo4Ib14+dHcCJGA==
-X-Received: by 2002:a17:906:4f8f:: with SMTP id
- o15mr45250693eju.129.1559894251343; 
- Fri, 07 Jun 2019 00:57:31 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
- by smtp.gmail.com with ESMTPSA id f3sm241948ejc.15.2019.06.07.00.57.29
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 07 Jun 2019 00:57:30 -0700 (PDT)
-Date: Fri, 7 Jun 2019 09:57:28 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Anders Roxell <anders.roxell@linaro.org>
-Subject: Re: [PATCH 3/8] drivers: (video|gpu): fix warning same module names
-Message-ID: <20190607075728.GE21222@phenom.ffwll.local>
-Mail-Followup-To: Anders Roxell <anders.roxell@linaro.org>, marex@denx.de,
- stefan@agner.ch, airlied@linux.ie, shawnguo@kernel.org,
- s.hauer@pengutronix.de, b.zolnierkie@samsung.com, andrew@lunn.ch,
- vivien.didelot@gmail.com, f.fainelli@gmail.com, a.hajda@samsung.com,
- mchehab@kernel.org, p.zabel@pengutronix.de, hkallweit1@gmail.com,
- lee.jones@linaro.org, lgirdwood@gmail.com, broonie@kernel.org,
- davem@davemloft.net, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-fbdev@vger.kernel.org,
- linux-media@vger.kernel.org
-References: <20190606094712.23715-1-anders.roxell@linaro.org>
+ id 1hZ9oH-0007SV-O7
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 08:01:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IhD6KAfmENVKs1I8m7GnQJtBJvxtKUEqLS/wTVNu5D4=;
+ b=CuYYBsFBAY+Lmu3xNFET7PHvA01T/wUVQntHFhjTUCyuL07ArM5yyEc7asadC4OksCDQsrJZmkRCSTSvboi1H6oCcK8x4Ax6vJp8oMRYzDdZgmi31GWFwa009q6iUE/hXZjFIRmCCrN6aEIseyOU2OHfscb1LiEPHAjrHqOmZxc=
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
+ AM0PR04MB6177.eurprd04.prod.outlook.com (20.179.34.23) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.14; Fri, 7 Jun 2019 08:01:06 +0000
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::5c91:9215:bcd9:49cc]) by AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::5c91:9215:bcd9:49cc%5]) with mapi id 15.20.1943.023; Fri, 7 Jun 2019
+ 08:01:06 +0000
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [RESEND v2 00/18] clk: imx: Switch the imx6 and imx7 to clk_hw
+ based API
+Thread-Topic: [RESEND v2 00/18] clk: imx: Switch the imx6 and imx7 to clk_hw
+ based API
+Thread-Index: AQHVFhnD3RH0i/2Cgk+sGoC+IpMb+qaO/2cAgADitAA=
+Date: Fri, 7 Jun 2019 08:01:06 +0000
+Message-ID: <20190607080104.72e2bigis56pb3e4@fsr-ub1664-175>
+References: <1559132773-12884-1-git-send-email-abel.vesa@nxp.com>
+ <20190606182940.F0D8C20872@mail.kernel.org>
+In-Reply-To: <20190606182940.F0D8C20872@mail.kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=abel.vesa@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1264e552-48cf-4623-fefa-08d6eb1e4b77
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB6177; 
+x-ms-traffictypediagnostic: AM0PR04MB6177:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-prvs: <AM0PR04MB6177535F52A88B382D3DA067F6100@AM0PR04MB6177.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0061C35778
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(7916004)(366004)(396003)(376002)(346002)(136003)(39860400002)(43544003)(189003)(199004)(478600001)(76116006)(91956017)(3846002)(45080400002)(476003)(186003)(76176011)(11346002)(316002)(33716001)(446003)(229853002)(66066001)(6506007)(5660300002)(86362001)(1076003)(4744005)(26005)(102836004)(66446008)(66476007)(66556008)(73956011)(64756008)(25786009)(53546011)(6116002)(66946007)(6916009)(99286004)(68736007)(256004)(53936002)(44832011)(4326008)(54906003)(14454004)(14444005)(966005)(6246003)(81166006)(81156014)(8676002)(8936002)(486006)(7736002)(305945005)(6306002)(9686003)(6436002)(2906002)(71200400001)(71190400001)(6486002)(6512007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6177;
+ H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: xEHeio7DfhAnbiTTXDq0m8yuFYDwU5xZMZY5DdL/ojEfzY8NiFpaO4zFzkMRNpV3RyRPJJeDNJ7f1KYidF0xxUKfQIDExUNt6MLDKSXBq2p6o2VJgPf+B0cfyvxjF66+iOve/ItAw8O/fVsGocfMz5FEpL4AQfG+mXE/R+p0xONi3ViaVoooBBMq3/Zo25Z45OPyQJPuZ0o6tGM/A+yQQIDEbImsDigI51hE+PzQpw5BfKvECrW6+3dxV+OmG8AkKQn91QN0xsIEI1Azy49LzN0fkXXZe13AQzqY9x5Y+QFJky/9+e/pOL8ffpZfua+ajzFEx/JcK8SUxWE1TRTL1OGrZEXoepSwCmi8AXH1oKxsmiIrEWoW6ghVoLByTcb3+UcMH1pF5pXvJuInIY316VNG2E5lj/JWpezL2u141SI=
+Content-ID: <1A2E6D7678CFF744B8E5EF3AADAB3A22@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190606094712.23715-1-anders.roxell@linaro.org>
-X-Operating-System: Linux phenom 4.14.0-3-amd64 
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1264e552-48cf-4623-fefa-08d6eb1e4b77
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jun 2019 08:01:06.5766 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: abel.vesa@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6177
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_005733_334731_E5031BEF 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20190607_010113_847605_3FE42289 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [40.107.4.45 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -107,75 +116,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, linux-fbdev@vger.kernel.org, airlied@linux.ie,
- stefan@agner.ch, linux-kernel@vger.kernel.org, a.hajda@samsung.com,
- lee.jones@linaro.org, marex@denx.de, f.fainelli@gmail.com,
- vivien.didelot@gmail.com, linux-media@vger.kernel.org, daniel@ffwll.ch,
- b.zolnierkie@samsung.com, s.hauer@pengutronix.de, broonie@kernel.org,
- dri-devel@lists.freedesktop.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- lgirdwood@gmail.com, p.zabel@pengutronix.de, shawnguo@kernel.org,
- davem@davemloft.net, hkallweit1@gmail.com
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Mike Turquette <mturquette@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 06, 2019 at 11:47:12AM +0200, Anders Roxell wrote:
-> When building with CONFIG_DRM_MXSFB and CONFIG_FB_MXS enabled as
-> loadable modules, we see the following warning:
+On 19-06-06 11:29:40, Stephen Boyd wrote:
+> Quoting Abel Vesa (2019-05-29 05:26:38)
+> > Resend for the following:
+> > 
+> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flkml.org%2Flkml%2F2019%2F5%2F2%2F170&amp;data=02%7C01%7Cabel.vesa%40nxp.com%7Ccd18ca91df204bd6f99408d6eaacf258%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C636954425864592743&amp;sdata=12O60IgeI2yxb2hJ5NmYyYxkE4o7VwH7rh1Zye%2BkT8E%3D&amp;reserved=0
 > 
-> warning: same module names found:
->   drivers/video/fbdev/mxsfb.ko
->   drivers/gpu/drm/mxsfb/mxsfb.ko
-> 
-> Rework so the names matches the config fragment.
-> 
-> Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
-
-Reviewed-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-
-I'm assuming Bart will pick this one up for fbdev.
--Daniel
-
-> ---
->  drivers/gpu/drm/mxsfb/Makefile | 4 ++--
->  drivers/video/fbdev/Makefile   | 3 ++-
->  2 files changed, 4 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mxsfb/Makefile b/drivers/gpu/drm/mxsfb/Makefile
-> index ff6e358088fa..5d49d7548e66 100644
-> --- a/drivers/gpu/drm/mxsfb/Makefile
-> +++ b/drivers/gpu/drm/mxsfb/Makefile
-> @@ -1,3 +1,3 @@
->  # SPDX-License-Identifier: GPL-2.0-only
-> -mxsfb-y := mxsfb_drv.o mxsfb_crtc.o mxsfb_out.o
-> -obj-$(CONFIG_DRM_MXSFB)	+= mxsfb.o
-> +drm-mxsfb-y := mxsfb_drv.o mxsfb_crtc.o mxsfb_out.o
-> +obj-$(CONFIG_DRM_MXSFB)	+= drm-mxsfb.o
-> diff --git a/drivers/video/fbdev/Makefile b/drivers/video/fbdev/Makefile
-> index 655f2537cac1..7ee967525af2 100644
-> --- a/drivers/video/fbdev/Makefile
-> +++ b/drivers/video/fbdev/Makefile
-> @@ -131,7 +131,8 @@ obj-$(CONFIG_FB_VGA16)            += vga16fb.o
->  obj-$(CONFIG_FB_OF)               += offb.o
->  obj-$(CONFIG_FB_MX3)		  += mx3fb.o
->  obj-$(CONFIG_FB_DA8XX)		  += da8xx-fb.o
-> -obj-$(CONFIG_FB_MXS)		  += mxsfb.o
-> +obj-$(CONFIG_FB_MXS)		  += fb-mxs.o
-> +fb-mxs-objs			  := mxsfb.o
->  obj-$(CONFIG_FB_SSD1307)	  += ssd1307fb.o
->  obj-$(CONFIG_FB_SIMPLE)           += simplefb.o
->  
-> -- 
-> 2.20.1
+> What's left after this series to convert over to clk_hw based APIs? I'm
+> happy to see this merge as long as we eventually delete the clk based
+> versions of the code in the imx driver so that we can complete the task.
 > 
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+The clk based defines will go away once there is no clk provider that needs it.
+The left clk providers are: all imx1 through imx5 and imx8.
 
+I will take care of this cleanup myself.
+
+> I took a look over everything and nothing stuck out, so:
+> 
+> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> 
+> for the series.
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
