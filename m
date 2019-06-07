@@ -2,56 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D80838BC4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 15:37:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C262638BDF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 15:43:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aDqCDvI8irU9j9m4lp9OARYJVt+eAerr1WchDmlONdQ=; b=RO7BaUIjR4FH9J
-	YxuhlqZkmV3nvXXwUKYJovsncnsMatGX2Oxoo1LNoWlCGvrS1n08eYxj67WRWvN8BzuxbJYl+8co3
-	/KQdkzKCQ1eAfsMgklZuBWU9PX1U7Mp92Q+rJXQETgqpGMdtEGVN3Fjv7oroWYSec2OFPZpzvgsew
-	YtaIcb/oC8ZZfGh2bZnXudCBI4Yn3Un7HtmUMjvZI9H4D16SMne1HvX75cd8grzdo0JfntZ3/+Rls
-	RbTOfICpqD5twdSqVYEbJwK/RjnyNiLGzkAYRO+viQPVVF9V/9jm6pPlTIx4yB9nERJktLKR6Vqx/
-	fUjhL6Gjw/YKGKINNAmA==;
+	List-Owner; bh=C31irzdIdXPsmEWzsm8A59zuTBC7K/Try5PB3cE0jWg=; b=qtlKUMIz4TXI8x
+	sxcPBe51Q/+8TwV96oapTjZCxviGbtzYXKSqd584ZQWH7HyKBY46L5FH7tguePXeJwEWaj7NW64tZ
+	E1HmQ4K57lSAhYTe5Nu8qjEAtiqKw9p7K+4Hl3B7dztaaHDtwCpBT/ydxbcjmS2FeG2Q8HJRy7GJY
+	jgTC6u1Fkb57l0nqL2Bk62RVLbH1LyLiUQidNM2NHgFrwkIH1pcJ/cnnWMPC4ZC5u0nZTzFl3FP04
+	cxXoXZP0qKGaW9SvFbCoUBF77BM0YGNMsH2qU4qOvkvyldm+dtTGT9dIErnGJ1a9+j2TawlQm86/y
+	rTdCRMUFNsFhcJyM1U4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZF3i-000585-Tw; Fri, 07 Jun 2019 13:37:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZF3b-00057i-G6
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 13:37:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64EDC346;
- Fri,  7 Jun 2019 06:37:21 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E8AA63F96A;
- Fri,  7 Jun 2019 06:37:19 -0700 (PDT)
-Date: Fri, 7 Jun 2019 14:37:14 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jeremy Linton <jeremy.linton@arm.com>
-Subject: Re: [PATCH v3 4/5] arm_pmu: acpi: spe: Add initial MADT/SPE probing
-Message-ID: <20190607133714.GA15577@e107155-lin>
-References: <20190503232407.37195-1-jeremy.linton@arm.com>
- <20190503232407.37195-5-jeremy.linton@arm.com>
- <20190607095729.GD2429@e107155-lin>
- <b4d7d954-5667-c32d-80ae-c45678d3f0e3@arm.com>
+	id 1hZF92-0006rW-Su; Fri, 07 Jun 2019 13:43:00 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZF8r-0006r3-Vf
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 13:42:51 +0000
+Received: by mail-qt1-x841.google.com with SMTP id i34so2266803qta.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 07 Jun 2019 06:42:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=3WofkuIu9igDLPAQnWn5qFH+FdgRGt2W5dGohyfL5bo=;
+ b=n1lnQGKkeKsiGRx9x7uI6LTN+EX3yAuiclsjYtuaV9QgzH5H2R3zrNbiuZAkVmtF5W
+ WHntmEZBrSJEVOz7HgVLx+C2H9Ovsr/y7PbdFquDC+wOkaSQQaYPbBY2L49iwXc//rlW
+ M2Rfi1KuameCfRdBGip+OvrCA9SXZA4gfspYu5F7ye4Dpg7wSJTd/6dvJ8rKyljga7Al
+ 7bE7zLDqoe7kMwCol673Fq9oKJW1/iPKomslzazl9QfJIzpD2gag0wSK9OShHlAcXBv2
+ sfL81E7/N+KKk5xEDZkPjiB3yaXMKXC5yMRtvM/RxMTMlaWIFTw9VfRhiY/tTQftsXgH
+ ECtQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3WofkuIu9igDLPAQnWn5qFH+FdgRGt2W5dGohyfL5bo=;
+ b=jYzg7eEuJpi1OHdsmMHBMKRpD17xWSGv4c9NbLkg2m/OslYoO3yQMr6AgHd2nEqRdo
+ 5zcX43Ffjnh2/+RU1dJSwqOpk/bm7wDdy2rQgtoXEszcElXI2QwjUr93zcCAKpgpW/YM
+ v7PM4c3Q9JBu9mjjde05XhD+J5fBuNPB1HNDNAAS7KwFJ4poSW7TAIkwpnucyPI0a7/M
+ iA+hptPqT4/mjfVTkLRIUFf6GtMU4YiINvxSi0A0siqp7h3X+lvh8UgPOkHBOvmwLrmI
+ ZLDoUdj9UXbjY12sDv8GGj6Ji8LxVauRm4ZkMwbwVo88pprhS+zkgzt2VFpZsKjPcw9b
+ D/2A==
+X-Gm-Message-State: APjAAAWX3fI1beQ4zdv6RxT7Ql1c3M1I+jRkWLCu+5Jr6pUB/h+dw75J
+ P0BAb9T59yepwNspYfjEPawA/Q==
+X-Google-Smtp-Source: APXvYqzHgv638dIvZYD6LkRLDpzgnhtAJFigmQgwYChIND2SwnM+zmbtS1QVchVJkw/zzaI8x8einA==
+X-Received: by 2002:ac8:2cbc:: with SMTP id 57mr44959069qtw.222.1559914968187; 
+ Fri, 07 Jun 2019 06:42:48 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li1322-146.members.linode.com.
+ [45.79.223.146])
+ by smtp.gmail.com with ESMTPSA id x2sm997287qke.92.2019.06.07.06.42.44
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 07 Jun 2019 06:42:47 -0700 (PDT)
+Date: Fri, 7 Jun 2019 21:42:39 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH] Documentation: coresight: Update the generic device names
+Message-ID: <20190607134239.GH5970@leoy-ThinkPad-X240s>
+References: <1559229077-26436-1-git-send-email-suzuki.poulose@arm.com>
+ <20190603190133.GA20462@xps15>
+ <99055755-6525-694e-a15d-5de7318a80da@arm.com>
+ <20190607022136.GE5970@leoy-ThinkPad-X240s>
+ <78c98c28-4f3f-825b-18e1-c71fb63a80eb@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b4d7d954-5667-c32d-80ae-c45678d3f0e3@arm.com>
+In-Reply-To: <78c98c28-4f3f-825b-18e1-c71fb63a80eb@arm.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_063723_629012_9D904C48 
-X-CRM114-Status: GOOD (  29.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190607_064250_034167_5D33D051 
+X-CRM114-Status: GOOD (  20.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,144 +102,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, will.deacon@arm.com,
- john.garry@huawei.com, rjw@rjwysocki.net, linuxarm@huawei.com,
- linux-acpi@vger.kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Cc: coresight@lists.linaro.org, corbet@lwn.net,
+ linux-arm-kernel@lists.infradead.org, mathieu.poirier@linaro.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 07, 2019 at 08:28:04AM -0500, Jeremy Linton wrote:
-> Hi,
+Hi Suzuki,
+
+On Fri, Jun 07, 2019 at 09:40:48AM +0100, Suzuki K Poulose wrote:
+> Hi Leo,
 > 
-> On 6/7/19 4:57 AM, Sudeep Holla wrote:
-> > On Fri, May 03, 2019 at 06:24:06PM -0500, Jeremy Linton wrote:
-> > > ACPI 6.3 adds additional fields to the MADT GICC
-> > > structure to describe SPE PPI's. We pick these out
-> > > of the cached reference to the madt_gicc structure
-> > > similarly to the core PMU code. We then create a platform
-> > > device referring to the IRQ and let the user/module loader
-> > > decide whether to load the SPE driver.
+> > > > >    A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
+> > > > >    listed along with configuration options within forward slashes '/'.  Since a
+> > > > >    Coresight system will typically have more than one sink, the name of the sink to
+> > > > > -work with needs to be specified as an event option.  Names for sink to choose
+> > > > > -from are listed in sysFS under ($SYSFS)/bus/coresight/devices:
+> > > > > +work with needs to be specified as an event option.
+> > > > > +On newer kernels the available sinks are listed in sysFS under:
+> > > > > +($SYSFS)/bus/event_source/devices/cs_etm/sinks/
+> > > > > -	root@linaro-nano:~# ls /sys/bus/coresight/devices/
+> > > > > -		20010000.etf   20040000.funnel  20100000.stm  22040000.etm
+> > > > > -		22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu
+> > > > > -		20070000.etr     20120000.replicator  220c0000.funnel
+> > > > > -		23040000.etm  23140000.etm     23340000.etm
+> > > > > +	root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
+> > > > > +	tmc_etf0  tmc_etr0  tpiu0
+> > > > > -	root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
+> > > > > +On older kernels, this may need to be found from the list of coresight devices,
+> > > > > +available under ($SYSFS)/bus/coresight/devices/:
+> > > > > +
+> > > > > +	root@localhost:/sys/bus/coresight/devices# ls
+> > > > > +	etm0  etm1  etm2  etm3  etm4  etm5  funnel0  funnel1  funnel2  replicator0  stm0 tmc_etf0  tmc_etr0  tpiu0
+> > > > > +
+> > > > > +	root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
+> > > > 
+> > > > On the "older" kernels you are referring to one would find the original naming
+> > > > convention.  Everything else looks good to me.
 > > > 
-> > > Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
-> > > ---
-> > >   arch/arm64/include/asm/acpi.h |  3 ++
-> > >   drivers/perf/Kconfig          |  5 +++
-> > >   drivers/perf/arm_pmu_acpi.c   | 76 +++++++++++++++++++++++++++++++++++
-> > >   include/linux/perf/arm_pmu.h  |  2 +
-> > >   4 files changed, 86 insertions(+)
-> > > 
-> > > diff --git a/arch/arm64/include/asm/acpi.h b/arch/arm64/include/asm/acpi.h
-> > > index 7628efbe6c12..d10399b9f998 100644
-> > > --- a/arch/arm64/include/asm/acpi.h
-> > > +++ b/arch/arm64/include/asm/acpi.h
-> > > @@ -41,6 +41,9 @@
-> > >   	(!(entry) || (entry)->header.length < ACPI_MADT_GICC_MIN_LENGTH || \
-> > >   	(unsigned long)(entry) + (entry)->header.length > (end))
-> > > +#define ACPI_MADT_GICC_SPE  (ACPI_OFFSET(struct acpi_madt_generic_interrupt, \
-> > > +	spe_interrupt) + sizeof(u16))
-> > > +
-> > >   /* Basic configuration for ACPI */
-> > >   #ifdef	CONFIG_ACPI
-> > >   pgprot_t __acpi_get_mem_attribute(phys_addr_t addr);
-> > > diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
-> > > index af9bc178495d..bc2647c64c9d 100644
-> > > --- a/drivers/perf/Kconfig
-> > > +++ b/drivers/perf/Kconfig
-> > > @@ -52,6 +52,11 @@ config ARM_PMU_ACPI
-> > >   	depends on ARM_PMU && ACPI
-> > >   	def_bool y
-> > > +config ARM_SPE_ACPI
-> > > +	depends on ARM_PMU_ACPI && ARM_SPE_PMU
-> > > +	def_bool y
-> > > +
-> > > +
-> > >   config ARM_DSU_PMU
-> > >   	tristate "ARM DynamIQ Shared Unit (DSU) PMU"
-> > >   	depends on ARM64
-> > > diff --git a/drivers/perf/arm_pmu_acpi.c b/drivers/perf/arm_pmu_acpi.c
-> > > index 0f197516d708..b0244e1e8c91 100644
-> > > --- a/drivers/perf/arm_pmu_acpi.c
-> > > +++ b/drivers/perf/arm_pmu_acpi.c
-> > > @@ -74,6 +74,80 @@ static void arm_pmu_acpi_unregister_irq(int cpu)
-> > >   	acpi_unregister_gsi(gsi);
-> > >   }
-> > > +#ifdef CONFIG_ARM_SPE_ACPI
-> > > +static struct resource spe_resources[] = {
-> > > +	{
-> > > +		/* irq */
-> > > +		.flags          = IORESOURCE_IRQ,
-> > > +	}
-> > > +};
-> > > +
-> > > +static struct platform_device spe_dev = {
-> > > +	.name = ARMV8_SPE_PDEV_NAME,
-> > > +	.id = -1,
-> > > +	.resource = spe_resources,
-> > > +	.num_resources = ARRAY_SIZE(spe_resources)
-> > > +};
-> > > +
-> > > +/*
-> > > + * For lack of a better place, hook the normal PMU MADT walk
-> > > + * and create a SPE device if we detect a recent MADT with
-> > > + * a homogeneous PPI mapping.
-> > > + */
-> > > +static int arm_spe_acpi_register_device(void)
-> > > +{
-> > > +	int cpu, ret, irq;
-> > > +	int hetid;
-> > > +	u16 gsi = 0;
-> > > +	bool first = true;
-> > > +
-> > > +	struct acpi_madt_generic_interrupt *gicc;
-> > > +
-> > > +	/*
-> > > +	 * sanity check all the GICC tables for the same interrupt number
-> > > +	 * for now we only support homogeneous ACPI/SPE machines.
-> > > +	 */
-> > > +	for_each_possible_cpu(cpu) {
-> > > +		gicc = acpi_cpu_get_madt_gicc(cpu);
-> > > +
-> > > +		if (gicc->header.length < ACPI_MADT_GICC_SPE)
-> > > +			return -ENODEV;
-> > > +		if (first) {
-> > > +			gsi = gicc->spe_interrupt;
-> > > +			if (!gsi)
-> > > +				return -ENODEV;
-> > > +			hetid = find_acpi_cpu_topology_hetero_id(cpu);
-> > > +			first = false;
-> > > +		} else if ((gsi != gicc->spe_interrupt) ||
-> > > +			   (hetid != find_acpi_cpu_topology_hetero_id(cpu))) {
+> > > True, but do we care what we see there ? All we care about is the location,
+> > > where to find them. I could fix it, if you think thats needed.
 > > 
-> > Sorry, I should have noticed this in patch 2 itself. Won't this break for
-> > multi-socket system ? The hetid in that case will be package id, no ?
+> > IIUC, either the old kernel or newer kernel, both we can find the event
+> > from ($SYSFS)/bus/event_source/devices/cs_etm/sinks/; the only
+> > difference between them is the naming convention.
 > 
-> Your assuming a PPTT with multiple trees, one for each socket? Yes it breaks
-> in that case, and is what I was complaining about in the cover letter
-> because there won't be a common node with the IDENTICAL flag set. OTOH, I
-> think it works fine for multi-socket given a single tree where the root has
-> IDENTICAL set (I did some very light testing on such a machine).
->
+> The cs_etm/sinks was only added with the CPU-wide trace support. So, if someone
+> refers to this document alone and then tries to do something on on older kernel,
+> which is quite possible for a production device running a stable kernel, {s,}he
+> might be surprised.
 
-Ah OK, so you are saying such system must have root with IDENTICAL flag
-set. Sounds fine, but is there any way to check that ? It's not mandated
-right. At least, I didn't have when I hacked up PPTT for Juno and no one
-complains(iasl/uefi/linux). But yes that's a different problem, at-least
-we know how to fix such PPTT topology.
+Okay, understand now.  Thanks for clarification.
 
-> I don't think there is a solution to this problem that won't break in the
-> case of a heterogeneous machine with multiple sockets populated with
-> differing cores.
->
+> > So the doc can use the same location to find event for both new and
+> > old kernel, and explain the naming convention difference?
+> 
+> My question is really, does the naming convention matter ? What you see
+> under the directory is the name. But yes, I am open to add a section to
+> explain the fact that we changed the naming scheme, if everyone agrees
+> to it.
 
-Agreed, I was worried about only about case, but having root node is
-feasible solution.
+The naming convention is not important for the developers who are
+familiar with CoreSight development; later who is the first time to
+access kernel CoreSight modules and don't know the history for naming
+scheme, the related documentation will be friendly and reduce the
+barrier for using it.
 
---
-Regards,
-Sudeep
+I have no strong opinion for this, seems to me another choice is to
+describe the older kernel with old naming scheme, something like below:
+
+On older kernels, this may need to be found from the list of coresight devices,
+available under ($SYSFS)/bus/coresight/devices/ with old naming scheme:
+
+    root@linaro-nano:~# ls /sys/bus/coresight/devices/
+    	20010000.etf   20040000.funnel  20100000.stm  22040000.etm> Cheers
+    	22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu > Suzuki
+    	20070000.etr     20120000.replicator  220c0000.funnel
+    	23040000.etm  23140000.etm     23340000.etm
+
+    root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
+
+
+Thanks,
+Leo Yan
 
 _______________________________________________
 linux-arm-kernel mailing list
