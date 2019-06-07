@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D26F385EA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 10:07:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9FFF385F3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 10:08:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wwiWE5X77dHvcDVuP8K0flZNMAqTylEiEJDxX5ABrq4=; b=FIrrp7Duqnxb6M
-	kip8jctkIcsdFbAiFX6+RuS2W5aDtMnVl9aOqTKJGR46nELUVRtTEYdy4s3/vmav+isK3bXMHEAmd
-	sSWt7oD8C4tCb2PklCsAgjNOv+gtXJvqVYJ0IQZtq/TmMgd19rV57gVMHEPkI+InGZb5/G6J7g6pH
-	hD3Rb+aSvmDbz0maBYZZzCNBhoMWD/jznQmAr0ztLkAXfd2kLdPj0gken+RfhjOtWKJ9RlyWPAqSk
-	TH1RdFp/zWPrE8LxTV3OpfixJbfP885iX5eEO+cY1VANE4rdKJPIL8lJsw2jIwVylk7mXWDMhdDJB
-	v6IXnp5jmfCwHHSlMEAA==;
+	List-Owner; bh=LOFELDTiz1Ld9UAZGQBPqh+awLmi1TA4m3nHAuOUNlo=; b=H1P4RDcDX/40Hi
+	LYu0+l2ZIRRMKouWCO4XaLks3lrRFwKhBNCvSuLsOalbMpfTX1poF8O17hVA2VPCeKVjnMVRTealS
+	JhrLqXRXvBrSxkNEAqBtDpI7sC3S0vuZERkmjep3zloli+G/mCGz85QmvnIaQ3kUFZiZneBndRtIR
+	kpHqNt+C/TTrGTL+ujHqlX/YhsJ8UxzgLeub8aSP8dyqlti+qHClaaH7KOVv6Y7yF50Jc+y2Cs4/N
+	+H+2NlIn1XZCcDNfZmvzo0AkKt3vAGuDhzm/8LWRJyCj3TqDRlzy7cALLDqcKvYbcNIJ1qR8imYfz
+	Exk3U/B48J8oaUYijlYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZ9uU-00016X-92; Fri, 07 Jun 2019 08:07:38 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hZ9uz-0001QG-EF; Fri, 07 Jun 2019 08:08:09 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZ9uA-00014X-P4
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 08:07:20 +0000
-Received: by mail-wr1-x443.google.com with SMTP id x17so1152399wrl.9
+ id 1hZ9uk-0001OQ-88
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 08:07:55 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a15so1008852wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 01:07:18 -0700 (PDT)
+ Fri, 07 Jun 2019 01:07:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=TGCe8fx0UlZO6OAeMwkeA0yuINCEOxz47WO8wDGstMo=;
- b=SfEXJXWvTlz+diRf4Umg411PBKsmUuZl6xYCzsst/EJAqneQX2hbgAgwUxfuS+TEWM
- GN/0OiTczR1pKMjdoZzQ4ZVuQCCM1JII3Yy7izyOYUr1GBTYve0GtZS9NtsuLa2DNBjY
- nEALnZBG8rW6QFyPsGn4JhRzV1NXZS1+wDn1Xw0yOuiK3BIqt0sB7rbwMBYXnLwZlpvi
- eEOIOcN4pEVTVYdFJIF56HRKIYzGu0pBMZoxyiQ9/yqLW139HdOEwH0Yc9OPHAZBioPa
- wCK8IVLApE09SSETwYvrPvlivgKvKhVu2puB4RDlQzmdzbV/blme6l5Na2R4uDP94y6o
- xudw==
+ bh=e207kpaiGZQcsYD8Rw0MT/mLe99N0is+Q2WZ2tzdO8Y=;
+ b=XvhNsV2WUvrNYkz4VUTLPQsP5/22Nu1CqNoyH4PauDBNj4OBnwLB92WiXft4n2hOfS
+ FCGQhoM8ATM1dzHW7t2pF1BLt7Px4eFkbAzFQXs3kk7dRphUvX5DODED0PQg/bJoUywX
+ Fvqf6dtCjeJqoaznktxknG8FRVC8BPq+CNQPXcnphQEVTO5LBwlI3xn3IMX2H4ToHSA2
+ 2TGApY3hIyIHDRSUWvjgeNca6yGxETeY9SJYFyrbyKWmtn42biSh7yPeC/A4SQPzme9C
+ wCVbdbruo/67vIS+SDbyYPLSCWAcJY/ItpxcUxQFOAQR+5Xlu+6hS7HelVf6cGS0TOmG
+ EqGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=TGCe8fx0UlZO6OAeMwkeA0yuINCEOxz47WO8wDGstMo=;
- b=mWNqsBrW68UeCNxDuS0KOz1j25JWfnpFRjM5SWRLw9SXaKK1mn0IcuQa7+tK+DUOAU
- zKedtx3hhW3+w6p+kB6priXkTpRbwjybpvBjc7bzF/6a9Y0vggs1ZMWsQbp9B8Bnl/Te
- GUPRu24h2uZaEJYicN4H5gPVOybt1jvBKI+dDgFjTlFz+gtbu4yPbe7hMV7YtL/Wm/qe
- 0waS6uQewH1Ois5MYwOLzEwZu6Our0792MTQq8llVD93ayF+5aenL4mkSjIGfPN2mBEN
- nA5EgiQoNu7a1lPfFnj3D4BAxPRFo9S8xJw1HBBeqlbUq/4tsdSCsjFdBtKCOhu3JEML
- hWGw==
-X-Gm-Message-State: APjAAAUwnz5GuZopCmWOpVPXAy6t+VBpASpM3clYkWSFc4v2yhg9XQtS
- xoyc+/m9uagNIebvZM46ETg5l96G/PmtQg==
-X-Google-Smtp-Source: APXvYqw8VeI7sYPeDbZt8y66RLpmx0sPvBbqUVE0pzN1pqhW4oGaKmdS2xW2cekmH3Yr1FQaSe74Xg==
-X-Received: by 2002:a5d:4886:: with SMTP id g6mr11412062wrq.108.1559894836951; 
- Fri, 07 Jun 2019 01:07:16 -0700 (PDT)
+ bh=e207kpaiGZQcsYD8Rw0MT/mLe99N0is+Q2WZ2tzdO8Y=;
+ b=dJVE9Vr9X8KoPhDDCDUCE1lvzZmeWtL7Vm0Sil0VR/ddKHDVZ46w5QY7XnpDUpwrbm
+ kxqYeF4y0/PzB0STK5VFW7WyS2HaiZlMVMFTkPn2f+KJk6o5VjmIGjeelfkR0+s6GyR2
+ TVH1cByjJR2jT79Yz7pToSDpcj/Sw0yRaYNHGAzg/y/dk+7SPa2ZT9uogSX0Si2veYUd
+ izIZlkG+cZRNty7+8gd+tMYzuNBmqt6R3rxkIt3nDYG6LvRx0GwowW4AN+jV/0BbGwfn
+ Dr+PTPvOIKBSYS2e3HGgxTthlPR6TnzFmhs99bJGPvokar2WAh4IfB6z6UR3fSSe99va
+ DfXQ==
+X-Gm-Message-State: APjAAAWQG/HrNI/GZvpC+NlohbwfkbwqOg3cm8MTLe7kmGhFc82yqjpy
+ 8hCzqY4R44VfzEQ9xRZgsN+rMvglOx2kBg==
+X-Google-Smtp-Source: APXvYqxeEKmv+oghi+kTvN/aNae/pwOVModQqEnv6UWccVO/rg4/bAlno9HsebuUVm61sD2tGy52EA==
+X-Received: by 2002:a1c:80c1:: with SMTP id b184mr2427660wmd.24.1559894872459; 
+ Fri, 07 Jun 2019 01:07:52 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id w6sm1181860wro.71.2019.06.07.01.07.15
+ by smtp.gmail.com with ESMTPSA id j7sm1646959wru.54.2019.06.07.01.07.51
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 07 Jun 2019 01:07:16 -0700 (PDT)
-Subject: Re: [PATCH 2/2] drm/meson: fix G12A primary plane disabling
+ Fri, 07 Jun 2019 01:07:52 -0700 (PDT)
+Subject: Re: [PATCH 1/2] drm/meson: fix primary plane disabling
 To: Kevin Hilman <khilman@baylibre.com>, dri-devel@lists.freedesktop.org
 References: <20190605141253.24165-1-narmstrong@baylibre.com>
- <20190605141253.24165-3-narmstrong@baylibre.com>
- <7h1s06ei58.fsf@baylibre.com>
+ <20190605141253.24165-2-narmstrong@baylibre.com>
+ <7h8sueeici.fsf@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -117,23 +117,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <c66e11b6-bf1b-8b6e-4110-42b20b879d3c@baylibre.com>
-Date: Fri, 7 Jun 2019 10:07:15 +0200
+Message-ID: <97126af5-56da-885a-5260-83dfaf85f738@baylibre.com>
+Date: Fri, 7 Jun 2019 10:07:51 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <7h1s06ei58.fsf@baylibre.com>
+In-Reply-To: <7h8sueeici.fsf@baylibre.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_010718_880115_7B46ED2F 
-X-CRM114-Status: GOOD (  14.17  )
+X-CRM114-CacheID: sfid-20190607_010754_287880_0A4E3B60 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -158,42 +158,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/06/2019 19:30, Kevin Hilman wrote:
+On 06/06/2019 19:25, Kevin Hilman wrote:
 > Neil Armstrong <narmstrong@baylibre.com> writes:
 > 
->> The G12A Primary plane was disabled by writing in the OSD1 configuration
->> registers, but this caused the plane blender to stall instead of continuing
->> blended only the overlay plane.
-> 
-> grammar nit: "...instead of continuing to blend only the overlay plane."
-
-Fixed while applying on drm-misc-fixes
-
-> 
->> Fix this by disabling the OSD1 plane in the blender registers, and also
->> enabling it back using the same register.
+>> The primary plane disable logic is flawed, when the primary plane is
+>> disabled, it is re-enabled in the vsync irq when another plane is updated.
+>>
+>> Handle the plane disabling correctly by handling the primary plane
+>> enable flag in the primary plane update & disable callbacks.
 >>
 >> Fixes: 490f50c109d1 ("drm/meson: Add G12A support for OSD1 Plane")
 >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 > 
 > Reviewed-by: Kevin Hilman <khilman@baylibre.com>
 > 
-> As noted elsewhere, this driver is also full of magic constants used in
-> register writes which makes reviewing this kind of change for
-> correctness that much more difficult, but since that's already been
-> pointed out elsewhere, and it's already on your TODO list, it should not
-> block this important fix.
 
-Yep, it's the top priority now.
+Applying to drm-misc-fixes
 
 Thanks,
 
 Neil
-
-> 
-> Kevin
-> 
-
 
 _______________________________________________
 linux-arm-kernel mailing list
