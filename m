@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89FEC38F76
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 17:42:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3066738F82
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 17:42:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l8rR9x3PwFjB6j4KPGwTq4bnoQwWt3a+Pgbwa++BMVw=; b=kBR4soyZNkhigJ
-	Kf5Ae8boyhyBS7W3dm4xPoN1aZkJBBDL/w+25bKp1d6AGhPTauuI7O+yND1C+mCtNd+4zOidrBKFw
-	dRZQRymb+RGepIrB1GluiAH5PXMQThmtsFNBnd3YDCw+HyY9WFR3GUgBvTEVYm7wL54UCkvfiHYRp
-	jJodcdko4ItndxkVon13I7OmntmJgiV0kzexNmIIglVvK6N/y5jqOKvCa94Y98tf185PV3qM/Lrz6
-	8uEXL51LZWGPeDDQYjw0/9PSNTYxTPACDPiJaLgYz6B1vmh6Y3TuIIup3BxREdMHswDfvKHtDBkdq
-	QeUB8v2SNdY422CE0NIg==;
+	List-Owner; bh=bUM1+jSeonavck5wI4xsxbDzV2y0Mc2jkYne7+Bsc+A=; b=AQDe2X1hBTFHUW
+	dmI2dZQbsLnO8SoCDsIjwixUaRW1GxgUU8rB/tF01TeRvlEjKwGCJffzioukV08PZp/jgHRFvhHJu
+	5FlY4dbYW+pi1Zn8QKPLAiiXD0DeQCQqGaDSpnvBhdbV7qezG97WmFfxe4tjW+XgzYwdPUode7T25
+	IVvfJd4/T7ULWoyKCH/fddZPsnMJuNqborYrr7GRy7nl5/ku8M9IL3ZOMqFNKZWoC6BYPkrSvWNwQ
+	GnQ20XuKCeutd2fqHORBRKFAtCVrQl98363UoKGXhRZIL2Um+NgAZ/W0+GNy4G0qQupCl0zZFd4Xe
+	qGXmQi1lAMo65ItPztJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZH0D-0005F9-TD; Fri, 07 Jun 2019 15:42:01 +0000
+	id 1hZH0c-0005WW-Qw; Fri, 07 Jun 2019 15:42:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZH04-0005EH-0B
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 15:41:53 +0000
+ id 1hZH0R-0005VQ-SD
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 15:42:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D456C337;
- Fri,  7 Jun 2019 08:41:50 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 98B363F718;
- Fri,  7 Jun 2019 08:41:49 -0700 (PDT)
-Date: Fri, 7 Jun 2019 16:41:47 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Nathan Chancellor <natechancellor@gmail.com>
-Subject: Re: "arm64: Silence gcc warnings about arch ABI drift" breaks clang
-Message-ID: <20190607154147.GD19862@fuggles.cambridge.arm.com>
-References: <1559920965.6132.56.camel@lca.pw>
- <20190607152517.GC19862@fuggles.cambridge.arm.com>
- <1559921171.6132.57.camel@lca.pw>
- <20190607154010.GA41392@archlinux-epyc>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 813E6337;
+ Fri,  7 Jun 2019 08:42:15 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B64CD3F718;
+ Fri,  7 Jun 2019 08:42:12 -0700 (PDT)
+Date: Fri, 7 Jun 2019 16:42:10 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 00/18] ARM/ARM64: Support hierarchical CPU arrangement
+ for PSCI
+Message-ID: <20190607154210.GJ15577@e107155-lin>
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <CAJZ5v0gbK3AFCVC1b9LyXeMOM8fKR1=ECXZwaeSYRSqcK0UgYA@mail.gmail.com>
+ <CAPDyKFpU3u248Gi+FnrVdY-EWXJQuu14uNV9d3Xs0W-K-EMEhg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190607154010.GA41392@archlinux-epyc>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <CAPDyKFpU3u248Gi+FnrVdY-EWXJQuu14uNV9d3Xs0W-K-EMEhg@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_084152_090189_80E05914 
-X-CRM114-Status: GOOD (  15.02  )
+X-CRM114-CacheID: sfid-20190607_084215_960290_CD1AA6FE 
+X-CRM114-Status: GOOD (  15.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,60 +63,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi@vger.kernel.org, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- clang-built-linux@googlegroups.com, Qian Cai <cai@lca.pw>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Lina Iyer <ilina@codeaurora.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Kevin Hilman <khilman@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Niklas Cassel <niklas.cassel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 07, 2019 at 08:40:10AM -0700, Nathan Chancellor wrote:
-> On Fri, Jun 07, 2019 at 11:26:11AM -0400, Qian Cai wrote:
-> > On Fri, 2019-06-07 at 16:25 +0100, Will Deacon wrote:
-> > > On Fri, Jun 07, 2019 at 11:22:45AM -0400, Qian Cai wrote:
-> > > > The linux-next commit "arm64: Silence gcc warnings about arch ABI drift" [1]
-> > > > breaks clang build where it screams that unknown option "-Wno-psabi" and
-> > > > generates errors below,
-> > > 
-> > > So that can be easily fixed with cc-option...
-> > > 
-> > > > [1] https://lore.kernel.org/linux-arm-kernel/1559817223-32585-1-git-send-ema
-> > > > il-D
-> > > > ave.Martin@arm.com/
-> > > > 
-> > > > ./drivers/firmware/efi/libstub/arm-stub.stub.o: In function
-> > > > `install_memreserve_table':
-> > > > ./linux/drivers/firmware/efi/libstub/arm-stub.c:73: undefined reference to
-> > > > `__efistub___stack_chk_guard'
-> > > > ./linux/drivers/firmware/efi/libstub/arm-stub.c:73: undefined reference to
-> > > > `__efistub___stack_chk_guard'
-> > > > ./linux/drivers/firmware/efi/libstub/arm-stub.c:93: undefined reference to
-> > > > `__efistub___stack_chk_guard'
-> > > > ./linux/drivers/firmware/efi/libstub/arm-stub.c:93: undefined reference to
-> > > > `__efistub___stack_chk_guard'
-> > > > ./linux/drivers/firmware/efi/libstub/arm-stub.c:94: undefined reference to
-> > > > `__efistub___stack_chk_fail
-> > > 
-> > > ... but this looks unrelated. Are you saying you don't see these errors if
-> > > you revert Dave's patch?
-> > 
-> > Yes.
-> 
-> I suspect the reason for this is -Wunknown-warning-option causes
-> cc-option to fail. I see some disabled warnings like
-> -Waddress-of-packed-member and -Wunused-const-variable when -Wno-psabi
-> is unconditionally added.
-> 
-> I'll do some further triage but I think the obvious fix as Will
-> suggested is to use cc-disable-warning. I'll send a patch.
+On Tue, May 14, 2019 at 10:58:04AM +0200, Ulf Hansson wrote:
+> On Tue, 14 May 2019 at 10:08, Rafael J. Wysocki <rafael@kernel.org> wrote:
+> >
+> > On Mon, May 13, 2019 at 9:23 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> > >
+> > > This series enables support for hierarchical CPU arrangement, managed by PSCI
+> > > for ARM/ARM64. It's based on using the generic PM domain (genpd), which
+> > > recently was extended to manage devices belonging to CPUs.
+> >
+> > ACK for the patches touching cpuidle in this series (from the
+> > framework perspective), but I'm assuming it to be taken care of by
+> > ARM/ARM64 maintainers.
+>
+> Thanks for the ack! Yes, this is for PSCI/ARM maintainers.
+>
+> BTW, apologize for sending this in the merge window, but wanted to
+> take the opportunity for people to have a look before OSPM Pisa next
+> week.
+>
 
-Cheers, Nathan. I've already sent the pull for -rc4, but I can send your
-fix for -rc5 next week.
+I will start looking at this series. But I would request PSCI/other
+maintainers to wait until we see some comparison data before we merge.
+If they are fine to merge w/o that, I am fine. As of now we have just
+1-2 platforms to test(that too not so simple to get started) and the
+long term support for them are questionable. Also with SDM845 supporting
+PC, we have excellent opportunity to compare and conclude the results
+found.
 
-Will
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
