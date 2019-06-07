@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CCCC3940E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:14:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 984C23941B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:17:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w5mSCaS6Mrszva/NMjII/t4lF7gVqzL0uFwj+VpIW0A=; b=qMumljrZ7H1QQp
-	N3vubFkQJrWl+CRxO4vt/7YbX1+4nX0MRk8eq3iAlQnjZHQXo/OdVRzq1Z1cX0NzSy5K07jBpVTyD
-	h/oQltyUQZw+gKzrDVLELb7SmE+FvmNAzv9QPA7rgznHWhEbjyUEhVkIx8vwjOZDCtaJ+PMxt2JlW
-	dxqxZqaGI5iX9hMGJnwDOtm4FwzmKs4GMZ1Rtyi2KYdDF8v5SyzBSb1AiqCi1ITPDc4/gvTCHJSyN
-	xf+xj9OA/9MERposhM6yxz22x58vDZ1HkLQc9ULZMwkq09jHDc2yyMRLY4grbfULOkWqAstgdB4OK
-	JSxcjGP6zenr25yqi8+g==;
+	List-Owner; bh=RtN6yeiX8MsQS0acnquZhgD/iF8I5f6aKF6//Ks4jik=; b=mOwPRVic+IcrBv
+	8Ms//PIKUTorny77jJUIZgOmhdJy8bp2hXSth88KDNm/pDl1hXpWIn3H8Q3l5fc1vY9kMY+xdYdbz
+	ldKEcZ25xpWvo7PKu2+WRlw6BrXvnGhHfWg8BX9QYlkv5EfXvqFHlmv61aM1CBq1IN6Q5wopc+10d
+	EeTZIJksIeuWgcioAGowD0571vD/QSbRLRT56kJ7MXYmSeDgBbjT/RaGZ02SySp7bFRVKwkvljY7N
+	5ll3XDEaF5IM/4C0l7DhGypYlkOFU91EkIbPlaYzP+rLSpbBwV3s1QZ5pL8cZr3Rv1KtfH3qEaXUP
+	WnJZ2CRmclQOXs/6iW8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZJNU-0000p2-Ja; Fri, 07 Jun 2019 18:14:12 +0000
+	id 1hZJQk-0002SH-4M; Fri, 07 Jun 2019 18:17:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZJNL-0000oh-7L
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 18:14:04 +0000
+ id 1hZJQb-0002Rz-Ei
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 18:17:26 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B3F9820868;
- Fri,  7 Jun 2019 18:14:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0086E20868;
+ Fri,  7 Jun 2019 18:17:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559931242;
- bh=UdznyVpRLBkTyuEoupaePTT33UjXWCnnxsQdTJKxo4Q=;
+ s=default; t=1559931445;
+ bh=avBGzeDVPLC9Ku4xRFNfHkrWVnK+12j3mF281rswmfs=;
  h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=T1E46J9x/Y3mc1Ns6Or3nqaANxl2yDrd3n+pp3KNPD/W7cmLkijwMwceya5LP2rBS
- u1Tn3hQQ9pgY9IxmdiTchSQCjo6raPxsaDGE1txJUZGwvOS3pn/oCCl9cTjnNy7tcV
- I889Nknlvh4dsJejPqUpv9s8bTtXfGUN1qbUQAfY=
+ b=Ds6bRfWQvpaGWItGBIQ2L+kHDmodlH1EYVF3q7lMDBTgqnuENK9g2pHSlExCOXG5X
+ a+pte8EbrOWyuTxeCw/a2lS6/ldaHVZ6kPB+YPcyl5Ama5fQXvJZs/RBhbqOgQL93m
+ i15dWegbnRDru6/8ThZdIe2Z8XTWmBKRA8rQLErs=
 MIME-Version: 1.0
-In-Reply-To: <20190520080421.12575-2-wens@kernel.org>
+In-Reply-To: <20190520080421.12575-3-wens@kernel.org>
 References: <20190520080421.12575-1-wens@kernel.org>
- <20190520080421.12575-2-wens@kernel.org>
+ <20190520080421.12575-3-wens@kernel.org>
 To: Chen-Yu Tsai <wens@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
  Michael Turquette <mturquette@baylibre.com>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 01/25] clk: Fix debugfs clk_possible_parents for clks
- without parent string names
+Subject: Re: [PATCH 02/25] clk: Add CLK_HW_INIT_* macros using .parent_hws
 User-Agent: alot/0.8.1
-Date: Fri, 07 Jun 2019 11:14:01 -0700
-Message-Id: <20190607181402.B3F9820868@mail.kernel.org>
+Date: Fri, 07 Jun 2019 11:17:24 -0700
+Message-Id: <20190607181725.0086E20868@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_111403_285364_DA0D3C7C 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20190607_111725_512828_77017297 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,41 +85,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Chen-Yu Tsai (2019-05-20 01:03:57)
-> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-> index aa51756fd4d6..bdb077ba59b9 100644
-> --- a/drivers/clk/clk.c
-> +++ b/drivers/clk/clk.c
-> @@ -3000,12 +3000,16 @@ DEFINE_SHOW_ATTRIBUTE(clk_flags);
->  static int possible_parents_show(struct seq_file *s, void *data)
->  {
->         struct clk_core *core = s->private;
-> +       struct clk_core *parent;
->         int i;
+Quoting Chen-Yu Tsai (2019-05-20 01:03:58)
+> A special CLK_HW_INIT_HWS macro is included, which takes an array of
+> struct clk_hw *, but sets .num_parents to 1. This variant is to allow
+> the reuse of the array, instead of having a compound literal allocated
+> for each clk sharing the same parent.
+> 
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+[...]
+> diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+> index bb6118f79784..0c241b43a802 100644
+> --- a/include/linux/clk-provider.h
+> +++ b/include/linux/clk-provider.h
+> @@ -904,6 +904,24 @@ extern struct of_device_id __clk_of_table;
+>                 .ops            = _ops,                         \
+>         })
 >  
-> -       for (i = 0; i < core->num_parents - 1; i++)
-> -               seq_printf(s, "%s ", core->parents[i].name);
-> +       for (i = 0; i < core->num_parents - 1; i++) {
-> +               parent = clk_core_get_parent_by_index(core, i);
-> +               seq_printf(s, "%s ", parent ? parent->name : NULL);
-> +       }
->  
-> -       seq_printf(s, "%s\n", core->parents[i].name);
-> +       parent = clk_core_get_parent_by_index(core, i);
-> +       seq_printf(s, "%s", parent ? parent->name : NULL);
+> +#define CLK_HW_INIT_HW(_name, _parent, _ops, _flags)                   \
+> +       (&(struct clk_init_data) {                                      \
+> +               .flags          = _flags,                               \
+> +               .name           = _name,                                \
+> +               .parent_hws     = (const struct clk_hw*[]) { _parent }, \
+> +               .num_parents    = 1,                                    \
+> +               .ops            = _ops,                                 \
+> +       })
+> +
+> +#define CLK_HW_INIT_HWS(_name, _parent, _ops, _flags)                  \
 
-What do we do if the parent won't appear on this system, but we've
-listed it as a possible parent with the '.fw_name' string? Is that not a
-"possible" parent because it won't ever appear?
+Minor nitpick, please add a comment here to indicate that this is here
+to share the same compound literal between multiple clks using the same
+parent.
 
-I'm mostly saying that we should try to detect these corner cases and
-print something besides NULL. Maybe we could even print the fallback
-'.name' if clk_core_get_parent_by_index() fails (and '.name' isn't
-NULL).  Then we're left with the case where even the fallback '.name' is
-NULL, and we can print something like "<fw_name> (fw)" to indicate that
-we're waiting for the kernel to probe a provider for that parent, but
-the firmware name is <fw_name> and that's all we know.
-
+> +       (&(struct clk_init_data) {                                      \
+> +               .flags          = _flags,                               \
+> +               .name           = _name,                                \
+> +               .parent_hws     = _parent,                              \
+> +               .num_parents    = 1,                                    \
+> +               .ops            = _ops,                                 \
+> +       })
 
 _______________________________________________
 linux-arm-kernel mailing list
