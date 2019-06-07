@@ -2,78 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5991538913
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:31:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E875B38944
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:43:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c8DpGSStB/ASFU6ZyYBpePq/lTSg+mD87Z0nEBRGJnA=; b=C//x3PseXecfY+
-	QHUHlvA4rEKEuz3771t5zjiftYg9AtYJx/Hu8G9EnnHCeFjZlM+CY0wJwlkXV0Q7z1o5nsl7uOPfb
-	WHVOy7wD2syQfhAfFSJT8AJal7RMBYPfv0UAfWYSHl6DD9dTiHdorb88bQDGdDmZOn6umvS3IpvJi
-	IfjGSfQMvWT0tNQm/DG9vV36mg95GGtm99U8Bhsgo+s7rXrKqULDp6MKiNSWlmwWmaW/zjU8vQkNg
-	YOYvZ8TGTs1RiUJJ/R2E0YFS9SjlHEVPd9YFgNY9x9iuGDhn+CeScNwIRXlRO2KcNjfG6aojoVGro
-	Fll8pJRH9aYpXU+FtbDg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c0vrCRyprXKK/MbRgRp0eqsCN4+Ixv9hIvfvmu4Mwis=; b=D8EOER8x2RM+mj
+	kIHRedjNzEiO4IOalXcsDj6c64EmdCwovGFUFftJ721deIvuMsFlOG+epJ0qIoZY6it0HYZWqCqiH
+	6fm8ShCmOLDR/gK+JYqCFBvaKrkuAtEUfZsGFyDMRL1csb6bLfFS3n37Edsha8/Pd/GR4r/Ij8V07
+	vEiMMgo8V4ZzATkrFQoCXdhFOxH2Y9HReFSmV6/8eX/ubECjY2qKbfiJgwKDgcvr0MUCu02EkFTdj
+	x/4Prw08iIZMteSGyi55gbz+CPPbPSye6i2FK75yIwD73EBkP1cputNtsvVhyy+fz+PHzMHRFSrjQ
+	I+4yIo6T16JShipV85WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZD5I-0003HZ-Em; Fri, 07 Jun 2019 11:31:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hZDGw-0006cM-5C; Fri, 07 Jun 2019 11:43:02 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZD57-0003Gn-J2
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:30:50 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 922F02146E
- for <linux-arm-kernel@lists.infradead.org>;
- Fri,  7 Jun 2019 11:30:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559907048;
- bh=1EiynZXBJ09Xyex7yNGzf9MajsV9BXqCLt+Ll+3jzl4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=FeOFbO6pw9QtkEA9BI2kcb+wWF+z1gyMDt9p3DQyfGrkhky44KslqbdRwipAlk+q9
- s1GXAX4HTgmtshZkAsk10lRU4oO/yfp4QCsW2jSqROpCaYFvW6RM1ib6kJsio1PRZK
- IUw6tCdqWQNvid4fJ6JTTQVQt1TesqUOh/GqH0a8=
-Received: by mail-qt1-f179.google.com with SMTP id d23so1791881qto.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 04:30:48 -0700 (PDT)
-X-Gm-Message-State: APjAAAWqE9oGlA7mO8qEhJtZtcegvlfPyHooSNErbl9a0hjKYOjxsYxt
- kw+HsQzvqHmu9scnJHPhSlECdt9kXC7Edl0J1F8=
-X-Google-Smtp-Source: APXvYqzq6hz47wuENBc7CYbuaprvc4LJh0Gx/+zUD5d9MN03IKHMQGe0Ih70VSfZZKmRdgdCOEqn/qj0SkFoGRE9ejY=
-X-Received: by 2002:ac8:45c1:: with SMTP id e1mr43529158qto.335.1559907047847; 
- Fri, 07 Jun 2019 04:30:47 -0700 (PDT)
+ id 1hZDGl-0006bi-8Z; Fri, 07 Jun 2019 11:42:53 +0000
+Received: from [192.168.1.162] ([37.4.249.160]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MIxmm-1hEn031Lb8-00KP1j; Fri, 07 Jun 2019 13:42:37 +0200
+Subject: Re: [PATCH v2 4/7] cpufreq: add driver for Raspbery Pi
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>
+References: <20190606142255.29454-1-nsaenzjulienne@suse.de>
+ <20190606142255.29454-5-nsaenzjulienne@suse.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <c967bbfd-ce83-7c89-7f18-98f2c66aa333@i2se.com>
+Date: Fri, 7 Jun 2019 13:42:34 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190530010230.4691-1-yibin.gong@nxp.com>
-In-Reply-To: <20190530010230.4691-1-yibin.gong@nxp.com>
-From: Josh Boyer <jwboyer@kernel.org>
-Date: Fri, 7 Jun 2019 07:30:36 -0400
-X-Gmail-Original-Message-ID: <CA+5PVA58ynuJJ=7792gK4kAa10NDmjVkOgYKrWuBQdWV1YfK_Q@mail.gmail.com>
-Message-ID: <CA+5PVA58ynuJJ=7792gK4kAa10NDmjVkOgYKrWuBQdWV1YfK_Q@mail.gmail.com>
-Subject: Re: [RESEND] imx: sdma: update firmware to v3.5/v4.5
-To: yibin.gong@nxp.com
+In-Reply-To: <20190606142255.29454-5-nsaenzjulienne@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:zQmMGIJsWXCJobgvt7sXrqeZUC5F3ZdZlaHzUDkfl5pqlyVm2RF
+ COW6iEVlLLOvUp4Hbe94SQqBSIf9lZq9BAe8HI3DpA46mkt1uZLBsn1L5M2bkLz5p+tgU3d
+ muqfwmPjoxbkoxLcPtbPi5eIEiRa1aP9N5STciv0Yit8otC8rEItW1QbykS93SDH2NZOLsF
+ hezAKvyhDX+eh84fqKnxw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:bEYCk2fNbjA=:74OnHcHZqQe/vLKd+aiGIF
+ 5MkTYrAqRcj86wx3GMY5CTbo9mjk14c92UzAGDucl55NtA2TzlWmHWp2HytEsRJnIA+SbdpJH
+ ILtwBvjdqY20tx1GA1QzjojJc3D7FtlRbiWmFqkCxdMXxhFjvWHKpThq2niUaXKzUM+h+MC5p
+ ckhh7348cciQgSdfDGqCEc1J6CrYS1bnU7T/zhWzhp9kU0586NcmFrseYBtaSLzFaQ74FVbJ9
+ 2vhmmMlZVgAE0jzHKyvUx6N5KjiWkgA9hUNc5OCnt6+PzCrUcMyw6DeaGskKQ4z4nZ+rD4qyB
+ Q5samanQ5nTgHRSorP3YB0rtrgtvRGUwHDJtOiRSU873wvy0TNY+dMA+rRtc2nypLBw5iBQn1
+ I1LOrnZi7gwt5brWQ/q6Fsls2EXQyQdTjkiN4dUy8/n3PjWF2rCivLmez9K/zw33gX+tsZc5m
+ QgWDrqZYk9ulB1GrYGIJF9PaMSEn6lF4qpW7xBlADjpHVBCwU4G0jNXxv5Pk6fDYzOnGR0IBo
+ krSRYAheH2aSXKNVGihMaiyzDZKhk5T4DoyGzBC2jxuLungN1tiBPZXpbYGO4YZ381jo+5f5S
+ 1z4Q8Yw93u9huE1ml5zncOUr8LGqCtNsuv2y3lUwmwu9yqoy7EG2WNEadSYaIDetuA/Th6IzR
+ 63qjMAab57vE8skR3uuR8wDNsXDg+mDIwnZoewIx1xlbQB22ngglDu4qkG8rhNmQTTr/Vy/4g
+ +PFU3ORhE2b8QbL5zIFc4A54392YZv2fwSeAIj+yvreurYgyNgeHKaDHwwo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_043049_639457_65B90D6A 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190607_044251_607492_19211D0D 
+X-CRM114-Status: GOOD (  23.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.75 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,35 +122,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>,
- Linux Firmware <linux-firmware@kernel.org>, linux-imx@nxp.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org,
- l.stach@pengutronix.de
+Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
+ ptesarik@suse.com, sboyd@kernel.org, mturquette@baylibre.com,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, eric@anholt.net,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, mbrugger@suse.de, ssuloev@orpaltech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 9:01 PM <yibin.gong@nxp.com> wrote:
+Hi Nicolas,
+
+Am 06.06.19 um 16:22 schrieb Nicolas Saenz Julienne:
+> Raspberry Pi's firmware offers and interface though which update it's
+> performance requirements. It allows us to request for specific runtime
+> frequencies, which the firmware might or might not respect, depending on
+> the firmware configuration and thermals.
 >
-> From: Robin Gong <yibin.gong@nxp.com>
+> As the maximum and minimum frequencies are configurable in the firmware
+> there is no way to know in advance their values. So the Raspberry Pi
+> cpufreq driver queries them, builds an opp frequency table to then
+> launch cpufreq-dt.
 >
-> Update sdma firmware to v3.5/v4.5:
->   -- add uart rom script address in header of sdma firmware to support
->      the uart driver of latest kernel working well while old firmware
->      assume ram script used for uart driver as NXP internal legacy
->      kernel.
->   -- add multi-fifo SAI/PDM scripts.
+> Also, as the firmware interface might be configured as a module, making
+> the cpu clock unavailable during init, this implements a full fledged
+> driver, as opposed to most drivers registering cpufreq-dt, which only
+> make use of an init routine.
 >
-> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Acked-by: Eric Anholt <eric@anholt.net>
+>
 > ---
->  imx/sdma/sdma-imx6q.bin | Bin 2196 -> 2746 bytes
->  imx/sdma/sdma-imx7d.bin | Bin 2302 -> 2862 bytes
->  2 files changed, 0 insertions(+), 0 deletions(-)
+>
+> Changes since v1:
+>   - Remove compatible checks
+>   - Add module support, now full fledged driver
+>   - Use NULL in clk_get()
+>
+>  drivers/cpufreq/Kconfig.arm           |   8 +++
+>  drivers/cpufreq/Makefile              |   1 +
+>  drivers/cpufreq/raspberrypi-cpufreq.c | 100 ++++++++++++++++++++++++++
+>  3 files changed, 109 insertions(+)
+>  create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
+>
+> diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
+> index f8129edc145e..5e9204d443ff 100644
+> --- a/drivers/cpufreq/Kconfig.arm
+> +++ b/drivers/cpufreq/Kconfig.arm
+> @@ -133,6 +133,14 @@ config ARM_QCOM_CPUFREQ_HW
+>  	  The driver implements the cpufreq interface for this HW engine.
+>  	  Say Y if you want to support CPUFreq HW.
+>  
+> +config ARM_RASPBERRYPI_CPUFREQ
+> +	tristate "Raspberry Pi cpufreq support"
+> +	depends on CLK_RASPBERRYPI || COMPILE_TEST
+> +	help
+> +	  This adds the CPUFreq driver for Raspberry Pi
+> +
+> +	  If in doubt, say N.
+> +
+>  config ARM_S3C_CPUFREQ
+>  	bool
+>  	help
+> diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
+> index 689b26c6f949..121c1acb66c0 100644
+> --- a/drivers/cpufreq/Makefile
+> +++ b/drivers/cpufreq/Makefile
+> @@ -64,6 +64,7 @@ obj-$(CONFIG_ARM_PXA2xx_CPUFREQ)	+= pxa2xx-cpufreq.o
+>  obj-$(CONFIG_PXA3xx)			+= pxa3xx-cpufreq.o
+>  obj-$(CONFIG_ARM_QCOM_CPUFREQ_HW)	+= qcom-cpufreq-hw.o
+>  obj-$(CONFIG_ARM_QCOM_CPUFREQ_KRYO)	+= qcom-cpufreq-kryo.o
+> +obj-$(CONFIG_ARM_RASPBERRYPI_CPUFREQ) 	+= raspberrypi-cpufreq.o
+>  obj-$(CONFIG_ARM_S3C2410_CPUFREQ)	+= s3c2410-cpufreq.o
+>  obj-$(CONFIG_ARM_S3C2412_CPUFREQ)	+= s3c2412-cpufreq.o
+>  obj-$(CONFIG_ARM_S3C2416_CPUFREQ)	+= s3c2416-cpufreq.o
+> diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c b/drivers/cpufreq/raspberrypi-cpufreq.c
+> new file mode 100644
+> index 000000000000..99b59d5a50aa
+> --- /dev/null
+> +++ b/drivers/cpufreq/raspberrypi-cpufreq.c
+> @@ -0,0 +1,100 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Raspberry Pi cpufreq driver
+> + *
+> + * Copyright (C) 2019, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/cpu.h>
+> +#include <linux/cpufreq.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_opp.h>
+> +
+> +static struct platform_device *cpufreq_dt;
+> +
+> +static int raspberrypi_cpufreq_probe(struct platform_device *pdev)
+> +{
+> +	struct device *cpu_dev;
+> +	unsigned long min, max;
+> +	unsigned long rate;
+> +	struct clk *clk;
+> +	int ret;
+> +
+> +	cpu_dev = get_cpu_device(0);
+> +	if (!cpu_dev) {
+> +		pr_err("Cannot get CPU for cpufreq driver\n");
+> +		return -ENODEV;
+> +	}
+> +
+> +	clk = clk_get(cpu_dev, NULL);
+> +	if (IS_ERR(clk)) {
+> +		dev_err(cpu_dev, "Cannot get clock for CPU0\n");
+> +		return PTR_ERR(clk);
+> +	}
+> +
+> +	/*
+> +	 * The max and min frequencies are configurable in the Raspberry Pi
+> +	 * firmware, so we query them at runtime
+> +	 */
+> +	min = clk_round_rate(clk, 0);
+> +	max = clk_round_rate(clk, ULONG_MAX);
+> +	clk_put(clk);
+> +
+> +	for (rate = min; rate < max; rate += 100000000) {
+> +		ret = dev_pm_opp_add(cpu_dev, rate, 0);
+> +		if (ret)
+> +			goto remove_opp;
+> +	}
 
-Applied and pushed out.
+i played a little bit with my Raspberry Pi Zero W and this series. Looks
+fine so far.
 
-josh
+Sorry for this nitpicking, but i expect user questions about the
+differences between sysfs and vcgencmd measure_clock.
+
+scaling_available_frequencies gives
+
+699999 799999 899999 999999
+
+but vcgencmd measure_clock return the rounded up values.
+
+I know we shouldn't fake anything, but adding the OPPs rounded up may
+avoid confusion.
+
+Stefan
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
