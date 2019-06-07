@@ -2,80 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B52163884A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 12:54:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8149038858
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 12:58:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=U/zXuqFbvE8sEufG9ku5wduanUd/l/vqZash6bCy0kA=; b=pFFfw5G0xsHop1X6C9zlfMrBMw
-	qUwCmn9ba8VmyhU6j5m1rA9gWlsmtxBijrENZoKtUKC9y3yn74iQLJzWQg3BKR1n+EgwEVMz9gPx1
-	l4dmwyx5sz3FbI8HBbVXKi5/bbcacZ+/wkhgWdO32TXOhEWW4gtiu9AeIM3JUl2YuuoFmQGdYlT6m
-	jFN53Gi1n3VhxVo+TaIs2b6L7t4T5YxWJhEX3tRR5Fgoau4Wbl46akKLD+54PrK3cnbG3dTJwI5RQ
-	JzRK+qz9anOSRyPsshRHV4kaGbjC7hxbLLjkL1W744wpJbzj5pS9azqBVhLax22ZP5yuSCg6fequK
-	HFAx1qHQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mZqJAZJqZ9W29j0EkfqEBj6jC8f/s/ZogMqIDHNclj4=; b=aHJlbf6IjErKse
+	JkeLT/QIeu2+PdHj8isNWrfJ92qCO/o0xL9mOZDzVB5yGldjBGpLb9YFukYcYnbi/Qw6mhmcQKIbP
+	Iszrhy/BoHC9KlwgKK1luAYld6ojoZOWeCmR26YkReLyRgFpVdxenb4RZ5eKDQ9VPqYrWnOCaTxvR
+	xTGdn9Gmj3u/qJjRBRZfTQ23PYiVGbwxbHHjivzFKC0e70C7hsrJ310u3/pF8rIibC3W/3KYQJL7P
+	IvndAgiye8U3AgFd/xzagOiFmn9QdUo5D/TPpjdS1MW6VszyG+8qB8Gg5kUbmKPsBsVgxogrR73oT
+	8eDjM1nm0Ozps9Fw60sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZCW8-0002zR-Uw; Fri, 07 Jun 2019 10:54:40 +0000
-Received: from smtp-good-out-2.t-2.net ([84.255.208.44])
+	id 1hZCa6-0004Yo-8A; Fri, 07 Jun 2019 10:58:46 +0000
+Received: from mail-eopbgr680055.outbound.protection.outlook.com
+ ([40.107.68.55] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZCW1-0002yX-5U
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 10:54:35 +0000
-Received: from smtp-2.t-2.si (smtp-2.t-2.si [84.255.208.31])
- by smtp-good-out-2.t-2.net (Postfix) with ESMTP id 45KztT5kt0z1Zxh;
- Fri,  7 Jun 2019 12:54:25 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=t-2.net;
- s=smtp-out-2; t=1559904865;
- bh=fUk0XkUlQdzlALymuAqAwf9BsyOqku2ixV/KDFYYH2w=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=CkpiVnTHhILcYNM8bLBTKukUMr6kDo6yCevSCHEzZo+skyMw1dXe2t7wZ0xyJkmZf
- leNWDKjtyy3aXHGMlcCxffa/wBktUV7h9BXMT/+Fyn7QGSOPoWtR1Js0T8t5RrJBFS
- bYU6/pa844MSuSvUNrgeKnle4sJu74slghAmVIh8=
-Received: from localhost (localhost [127.0.0.1])
- by smtp-2.t-2.si (Postfix) with ESMTP id 45KztT5X2tzMsJG1;
- Fri,  7 Jun 2019 12:54:25 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at t-2.si
-Received: from smtp-2.t-2.si ([127.0.0.1])
- by localhost (smtp-2.t-2.si [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id g9GBfN1ATuF1; Fri,  7 Jun 2019 12:54:25 +0200 (CEST)
-Received: from localhost.localdomain (unknown [89.212.35.59])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: borut_seljak@t-2.net)
- by smtp-2.t-2.si (Postfix) with ESMTPSA;
- Fri,  7 Jun 2019 12:53:56 +0200 (CEST)
-From: Borut Seljak <borut.seljak@t-2.net>
-To: erwan.leray@st.com
-Subject: [PATCH v4] serial: stm32: fix a recursive locking in
- stm32_config_rs485
-Date: Fri,  7 Jun 2019 12:53:06 +0200
-Message-Id: <20190607105307.31053-1-borut.seljak@t-2.net>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <e0f8d4b2-a622-3758-473b-b78bd8949323@st.com>
-References: <e0f8d4b2-a622-3758-473b-b78bd8949323@st.com>
+ id 1hZCZx-0004YU-Cx
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 10:58:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vt6qoelTKHrMvuE1NywSjFEzIxJLjE+/50Vli2jX3Tk=;
+ b=IV5rdcFL9DfmqcIuPodVD4DvWOZHCOIFMNgefbH4n1b4Ke0xrNZATedVODZJe7OPxB/LZQ2vAFnLnRwEgAgFLKDcBxWqIwl0JiDpctcJy1Dc8rjdwL6Ic8liW52aWQzSgSYdrEmzknGnGFzDsfmOvqAHG1421005mwb5gMTH9Io=
+Received: from CH2PR02MB6359.namprd02.prod.outlook.com (52.132.231.93) by
+ CH2PR02MB6071.namprd02.prod.outlook.com (52.132.228.29) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1943.22; Fri, 7 Jun 2019 10:58:34 +0000
+Received: from CH2PR02MB6359.namprd02.prod.outlook.com
+ ([fe80::b9dd:11e0:7fca:ba55]) by CH2PR02MB6359.namprd02.prod.outlook.com
+ ([fe80::b9dd:11e0:7fca:ba55%5]) with mapi id 15.20.1943.023; Fri, 7 Jun 2019
+ 10:58:34 +0000
+From: Dragan Cvetic <draganc@xilinx.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: RE: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+Thread-Topic: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+Thread-Index: AQHVEu5GErREaULonk+tvtDvF1CkjaaOsacAgAFm4tA=
+Date: Fri, 7 Jun 2019 10:58:34 +0000
+Message-ID: <CH2PR02MB6359747C72220A978CCA807BCB100@CH2PR02MB6359.namprd02.prod.outlook.com>
+References: <1558784245-108751-1-git-send-email-dragan.cvetic@xilinx.com>
+ <1558784245-108751-5-git-send-email-dragan.cvetic@xilinx.com>
+ <20190606132842.GC7943@kroah.com>
+In-Reply-To: <20190606132842.GC7943@kroah.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=draganc@xilinx.com; 
+x-originating-ip: [149.199.80.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d509c819-b61d-4030-ffa5-08d6eb3715ce
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:CH2PR02MB6071; 
+x-ms-traffictypediagnostic: CH2PR02MB6071:
+x-microsoft-antispam-prvs: <CH2PR02MB60715F8289A11E5E3EA43124CB100@CH2PR02MB6071.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0061C35778
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(376002)(366004)(396003)(346002)(39860400002)(189003)(199004)(3846002)(71200400001)(6116002)(14444005)(71190400001)(316002)(74316002)(66476007)(99286004)(14454004)(256004)(86362001)(305945005)(478600001)(6506007)(54906003)(7736002)(64756008)(73956011)(102836004)(66446008)(76116006)(66946007)(2906002)(9686003)(7696005)(76176011)(66556008)(186003)(6916009)(4326008)(8676002)(68736007)(6436002)(81156014)(81166006)(4744005)(53936002)(8936002)(229853002)(486006)(25786009)(26005)(476003)(446003)(5660300002)(11346002)(6246003)(52536014)(33656002)(66066001)(55016002)(107886003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6071;
+ H:CH2PR02MB6359.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: DTCTOtaFLVMVjg/MpBGLkAR86bmZd8vSP2g23e2ggu48E+FL2cC9WKBFU9cXAApevXkck9LoFapvLgUg8PZOC19fC/uvpAAQoNjiXvbu1GvvQ00d/2e84zWNsjqJrZrQZ7pVsztpZUxsy9BftkRI1ecYWYQTQcE4N34s4H2lTWkZGHqXEIXWB07Ky9U0a2IocOkoLfIKufBjy3dj1Eh6wKcRVSCkMhuTexI/Ll7Fb1r0NVs0A24qLB+86uLXy88Fyo/x9rM9Eiep2uMezVfQC4vXeVL0KAzUeyV7ApCvE6iXL221uFgGR2UDMEZa1fWfeVFvJWhvOAV+iI76DXD2v4dy+zWUYMMugpMfu0vc0jBM+po7zjOtaUzY03F6SsuB5d5kqDIujNDD4LCtoJP++oDiPb2oDrg13bZ5iaGondw=
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d509c819-b61d-4030-ffa5-08d6eb3715ce
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jun 2019 10:58:34.0280 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: draganc@xilinx.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_035433_368293_17BB5760 
-X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-CacheID: sfid-20190607_035837_439278_B8342880 
+X-CRM114-Status: UNSURE (   7.95  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [84.255.208.44 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.68.55 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,53 +111,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- borut.seljak@t-2.net, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove spin_lock_irqsave in stm32_config_rs485, it cause recursive locking.
-Already locked in uart_set_rs485_config.
+> On Sat, May 25, 2019 at 12:37:17PM +0100, Dragan Cvetic wrote:
+> > +static int xsdfec_dev_open(struct inode *iptr, struct file *fptr)
+> > +{
+> > +	return 0;
+> > +}
+> > +
+> > +static int xsdfec_dev_release(struct inode *iptr, struct file *fptr)
+> > +{
+> > +	return 0;
+> > +}
+> 
+> empty open/close functions are never needed, just drop them.
+> 
 
-Fixes: 1bcda09d291081 ("serial: stm32: add support for RS485 hardware control mode")
+open() is needed to allocate file descriptor eg.
+fd = open(dev_name, O_RDWR);
 
-Signed-off-by: Borut Seljak <borut.seljak@t-2.net>
----
- drivers/tty/serial/stm32-usart.c | 3 ---
- 1 file changed, 3 deletions(-)
+Please, advise if you have some other idea in mind
 
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index e8d7a7bb4339..5d072ec61071 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -105,9 +105,7 @@ static int stm32_config_rs485(struct uart_port *port,
- 	struct stm32_usart_config *cfg = &stm32_port->info->cfg;
- 	u32 usartdiv, baud, cr1, cr3;
- 	bool over8;
--	unsigned long flags;
- 
--	spin_lock_irqsave(&port->lock, flags);
- 	stm32_clr_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit));
- 
- 	port->rs485 = *rs485conf;
-@@ -147,7 +145,6 @@ static int stm32_config_rs485(struct uart_port *port,
- 	}
- 
- 	stm32_set_bits(port, ofs->cr1, BIT(cfg->uart_enable_bit));
--	spin_unlock_irqrestore(&port->lock, flags);
- 
- 	return 0;
- }
--- 
-2.17.1
-
+Thanks
+Dragan
 
 _______________________________________________
 linux-arm-kernel mailing list
