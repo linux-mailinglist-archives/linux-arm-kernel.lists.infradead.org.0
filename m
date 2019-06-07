@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2697383FD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 08:01:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AFC138451
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 08:28:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZfcQt73RbItDpWY7Nnaj6iucmxUbom8G++XdX2bR/50=; b=ThrBtgE+Nxt+Vi
-	DC3xh/EDxRIhvpqcxSQN/i3HstXe5i43uxxL83l27dimOalqMtTRFuAg/Q5oBxhNU/o/UYlum8veo
-	mY5mJSoewIMW1ghjxkg9fi7HheHIvCkn+flXLnB5rASJIsISaYTbSS83+N1C3IIQQnNOmq0w40eij
-	2jc0suNOEBKV/gBmF6ntqn17J49jF7BJv43Ajns038D9Ri8aS1w9MCTIQacyAcQoHAqNcRdg6ih9+
-	nrAIS9+ws7XYnSLGPqmEyNq+ccvHPyZpfu67xjTzc53vwwUlNegP2o9zqOCcwtD2irdkBcu47EYIC
-	ggAgIOy/IMhztRs0UbVg==;
+	List-Owner; bh=VcCCAayHUkSIXsex36gLnzizzvCN7lSaDe4T5AV0XJo=; b=uC+VSCmQAZhMqA
+	1m6GEj2/hjfhKLI3cnaMB87bJaEWKnXJ8mdA93ls1zCyEnUwqViUvpIrlFt0ihJfC/MKCOSc9hum4
+	DAQMzFXA/Rl4bFWXFvIGxCZckPrEswRRPEvs1lxO22Wj0VHnQqnlxgdcQWcUAeXDqm0KUiwcDhj/P
+	QUePAZsxf4uCpunThxDtEdBxQNOnSYhaEFOAmFQQ5x0tGiV+uBRcpszuAdBjRHQ1uigd2oMkNUgUI
+	H4Y8tOqN1sVhogI33wORHumMn1Y6YlriF0m+JufXcpyO5foU4cwjSHsoxJUACZkKDiLLtUQbE0tcc
+	r9G6noIavZm2UzCgwjxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZ7vx-00015c-AM; Fri, 07 Jun 2019 06:01:01 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hZ8Mm-0000Wk-J6; Fri, 07 Jun 2019 06:28:44 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZ7vh-00014W-0S
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 06:00:46 +0000
-Received: by mail-pl1-x644.google.com with SMTP id go2so388106plb.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 23:00:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=sNeYqqj7A5jsZjI23KJv1FicJVOUSHOJooPoBup8FeM=;
- b=I+DO+bXX3/U0c5/tJe9YZdOfd9awmUKsKrvLQ6RM5e7ZPbpVdNQ6p467NhbVoMoarQ
- ZTrXnuYi/GBo+EETAJBGN7Pbc4eyxedjJgINnFW2Ljv5sN9z7vOHs6OG+Gfjx+nUFata
- r/SNJ3fb38yconRfVgfs5zO505iUUyDV4G/jHwXknqC1Y7Z1U8rC0v+rvDJyZqa/2SDY
- dFJFBnKgq948wzi26ZcXJ+LY/RNrc3C7DV8bcYap3C5SQTdSlGOwcqCDiElfo5zU+Fni
- UXim+fepv1U8X+0j4guVpm6nZtJBCDBnu6scNE5hLkz6jskKt97gH5ftrO8QkfNEvFqD
- KgJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=sNeYqqj7A5jsZjI23KJv1FicJVOUSHOJooPoBup8FeM=;
- b=sRgwVHhiKXSxSNU2uBpHVNjNbR588w88FD63w/Hy4lJ29qK0gISZVYM3mbm3uzPzyT
- kO6jfArSX7ueW0dhDl330L4Kb+XvzwF2Bl7WDs6klMn1C4CiyY2QaaJGEVOyIENKCTfv
- etLiWUHfG7TGUSnjTnawr+HINNeObY69lg8p4HzBJxbHOtYVGYP6GzVMhkXoO3cYfBm8
- dQ69igW4XK/4KF/RZvCEQA5oYhuVG3vD40gBAZv38EtW1UzYhxEiZMWa4C3h4tRw2okg
- F1mbgqxOvej3RpJV1ZE+18zkDziBcLa241Wno1b6HZVr/2JuMdRe8+xQlnTxpB519mv4
- 4mvA==
-X-Gm-Message-State: APjAAAWtx04tR9weh+XBRcf/G9CLacnQ0Fh8TxtsxTCOmJBBRgRoLvnS
- 5tlP24BMdXThrSNJeU0VFrJu4FGuGiU=
-X-Google-Smtp-Source: APXvYqxOAWcArkn2cVZZlioTLt/qQbVmliWaDP7qBUla76loZRkDUMwoTY7MzTYQenlQtRiEFq12yQ==
-X-Received: by 2002:a17:902:6a4:: with SMTP id
- 33mr53039518plh.338.1559887241528; 
- Thu, 06 Jun 2019 23:00:41 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id s42sm1593160pjc.5.2019.06.06.23.00.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 06 Jun 2019 23:00:40 -0700 (PDT)
-Date: Fri, 7 Jun 2019 11:30:37 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH] KVM: arm64: Drop 'const' from argument of vq_present()
-Message-ID: <20190607060037.eaof3hllyombxlhc@vireshk-i7>
-References: <699121e5c938c6f4b7b14a7e2648fa15af590a4a.1559623368.git.viresh.kumar@linaro.org>
- <20190604095915.GW28398@e103592.cambridge.arm.com>
+ id 1hZ8MX-0000VN-UY
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 06:28:32 +0000
+X-Originating-IP: 90.89.68.76
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id A363840003;
+ Fri,  7 Jun 2019 06:28:03 +0000 (UTC)
+Date: Fri, 7 Jun 2019 08:28:02 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Harald Geyer <harald@ccbib.org>
+Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345 bridge
+ on Teres-I
+Message-ID: <20190607062802.m5wslx3imiqooq5a@flea>
+References: <20190604122150.29D6468B05@newverein.lst.de>
+ <20190604122308.98D4868B20@newverein.lst.de>
+ <CA+E=qVckHLqRngsfK=AcvstrD0ymEfRkYyhS_kBtZ3YWdE3L=g@mail.gmail.com>
+ <20190605101317.GA9345@lst.de>
+ <20190605120237.ekmytfxcwbjaqy3x@flea>
+ <E1hYsvP-0000PY-Pz@stardust.g4.wien.funkfeuer.at>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190604095915.GW28398@e103592.cambridge.arm.com>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <E1hYsvP-0000PY-Pz@stardust.g4.wien.funkfeuer.at>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_230045_060049_D8C278DD 
-X-CRM114-Status: GOOD (  16.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190606_232830_303000_7982C370 
+X-CRM114-Status: GOOD (  32.27  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,55 +67,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Sean Paul <seanpaul@chromium.org>,
+ David Airlie <airlied@linux.ie>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Torsten Duwe <duwe@lst.de>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Thierry Reding <thierry.reding@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04-06-19, 10:59, Dave Martin wrote:
-> On Tue, Jun 04, 2019 at 10:13:19AM +0530, Viresh Kumar wrote:
-> > We currently get following compilation warning:
-> > 
-> > arch/arm64/kvm/guest.c: In function 'set_sve_vls':
-> > arch/arm64/kvm/guest.c:262:18: warning: passing argument 1 of 'vq_present' from incompatible pointer type
-> > arch/arm64/kvm/guest.c:212:13: note: expected 'const u64 (* const)[8]' but argument is of type 'u64 (*)[8]'
-> > 
-> > The argument can't be const, as it is copied at runtime using
-> > copy_from_user(). Drop const from the prototype of vq_present().
-> > 
-> > Fixes: 9033bba4b535 ("KVM: arm64/sve: Add pseudo-register for the guest's vector lengths")
-> > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> > ---
-> >  arch/arm64/kvm/guest.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-> > index 3ae2f82fca46..78f5a4f45e0a 100644
-> > --- a/arch/arm64/kvm/guest.c
-> > +++ b/arch/arm64/kvm/guest.c
-> > @@ -209,7 +209,7 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
-> >  #define vq_mask(vq) ((u64)1 << ((vq) - SVE_VQ_MIN) % 64)
-> >  
-> >  static bool vq_present(
-> > -	const u64 (*const vqs)[KVM_ARM64_SVE_VLS_WORDS],
-> > +	u64 (*const vqs)[KVM_ARM64_SVE_VLS_WORDS],
-> >  	unsigned int vq)
-> >  {
-> >  	return (*vqs)[vq_word(vq)] & vq_mask(vq);
-> 
-> Ack, but maybe this should just be converted to a macro?
+On Thu, Jun 06, 2019 at 03:59:27PM +0200, Harald Geyer wrote:
+> Guys, this discussion is getting heated for no reason. Let's put
+> personal frustrations aside and discuss the issue on its merits:
+>
+> Maxime Ripard writes:
+> > On Wed, Jun 05, 2019 at 12:13:17PM +0200, Torsten Duwe wrote:
+> > > On Tue, Jun 04, 2019 at 08:08:40AM -0700, Vasily Khoruzhick wrote:
+> > > > On Tue, Jun 4, 2019 at 5:23 AM Torsten Duwe <duwe@lst.de> wrote:
+> > > > >
+> > > > > Teres-I has an anx6345 bridge connected to the RGB666 LCD output, and
+> > > > > the I2C controlling signals are connected to I2C0 bus. eDP output goes
+> > > > > to an Innolux N116BGE panel.
+> > > > >
+> > > > > Enable it in the device tree.
+> > > > >
+> > > > > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> > > > > Signed-off-by: Torsten Duwe <duwe@suse.de>
+> > > > > ---
+> > > > >  .../boot/dts/allwinner/sun50i-a64-teres-i.dts      | 65 ++++++++++++++++++++--
+> > > > >  1 file changed, 61 insertions(+), 4 deletions(-)
+> > > > >
+> > > > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > > > > index 0ec46b969a75..a0ad438b037f 100644
+> > > > > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > > > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-teres-i.dts
+> > > > > @@ -65,6 +65,21 @@
+> > > > >                 };
+> > > > >         };
+> > > > >
+> > > > > +       panel: panel {
+> > > > > +               compatible ="innolux,n116bge", "simple-panel";
+> > > >
+> > > > It's still "simple-panel". I believe I already mentioned that Rob
+> > > > asked it to be edp-connector.
+>
+> Actually just dropping the "simple-panel" compatible would be a poor
+> choice. Even if "edp-connector" is specified as binding and implemented in a
+> driver, there are older kernel versions and other operating systems to
+> keep in mind.
 
-I will send a patch with that if that's what you want.
+Which older kernels? This is a new binding, adding a new driver, so if
+an older kernel uses a separate driver with its own binding, good for
+them, but we don't have to support it.
 
-Thanks.
+> If the HW works with "simple-panel" driver satisfactorily,
+> we should definitely keep the compatible as a fall back for cases where
+> the edp-connector driver is unavailable.
+>
+> If think valid compatible properties would be:
+> compatible = "innolux,n116bge", "simple-panel";
+> compatible = "edp-connector", "simple-panel";
 
--- 
-viresh
+A connector isn't a panel.
+
+> compatible = "innolux,n116bge", "edp-connector", "simple-panel";
+
+And the innolux,n116bge is certainly not a connector either.
+
+> compatible = "edp-connector", "innolux,n116bge", "simple-panel";
+>
+> I can't make up my mind which one I prefere. However neither of these
+> variants requires actually implmenting an edp-connector driver.
+
+No-one asked to do an edp-connector driver. You should use it in your
+DT, but if you want to have some code in your driver that parses the
+DT directly, I'm totally fine with that.
+
+> And each of these variants is clearly preferable to shipping DTs
+> without description of the panel at all and complies with bindings
+> after adding a stub for "edp-connector".
+
+I guess you should describe why do you think it's "clear", because I'm
+not sure this is obvious for everyone here. eDP allows to discover
+which device is on the other side and its supported timings, just like
+HDMI for example (or regular DP, for that matter). Would you think
+it's clearly preferable to ship a DT with the DP/HDMI monitor
+connected on the other side exposed as a panel as well?
+
+> > And the DT is considered an ABI, so yeah, we will witheld everything
+> > that doesn't fit what we would like.
+>
+> I fail to see how the patch in discussion adds new ABI.
+
+The binding itself is the ABI, and we will have to support that
+binding for pretty much forever.
+
+> While I understand the need to pester contributors for more work,
+> outright blocking DTs, that properly describe the HW
+
+Properly is arguable.
+
+> and comply with existing bindings
+
+And that's bindings meant for another use-case.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
