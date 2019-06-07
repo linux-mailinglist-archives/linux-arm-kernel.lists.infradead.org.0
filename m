@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B7E939436
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:23:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DDB93946B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:34:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RuVgwgZra5Uc4oeBDheNV34HVFAQ61b7OSQkKc+uq0Y=; b=Jp9F4pA6XN1C90
-	6uiufNjqNPyACWcyM8P0em+qanwjA5j2mlct3Sl3p0l/Xl6DcjR+d3IfgYXJHb6rzAdFhZRgAVceT
-	t1pwPVUz4BPXPWe7EVYxUb9mvT7bXusXpqIOIrFn29NYVNVzHiI3bjNhIwhSA5CN1k0QIKurSx8eD
-	U11omu766v4Kgrv/+ixyhxL1xhyNsUYkwqW/CzTJfNc/MpGRMhTfmj2ZaDsbHd32/T1F9+0/HxKcd
-	Bvgb2kzMLUeq31cgt1ttqJ8Y4GbwhcITeCOWRCwOGVY5FnclLtXtcaOIwTZsegwXIoPmhHEvsFbAD
-	7mZHsX4khY2XTY1gtvQA==;
+	List-Owner; bh=l0VCD2/g0xIB8NNJqcOpHeOYCu4X2eSyvvwy3Bb/UHw=; b=L+I4vBice8OKIZ
+	QBvtNboUk6iketbos16PWdo8rInNwlbIAgV6mA/g6k/s58tvLJhBYUNglPss4jEGEcM/opgT7dpB2
+	vqvfUQgZJyi7cXHO5xY9gIyLuhgWdL89T0Yy+m+/zp+xlBF2U++yzjtG68CR6OnEmcMRPX2s6cv3O
+	c0f4KdmWMWK6pMMDIGdWnKq317SducUeQztV6Vhkb2+RqqsFOWHYaUSwU/q+AmnGSCKO3yUSr4w0t
+	WftOpfRSVF44ABFgmvIoZ44paQi9HIarGvDUL6zZMDdWguGVEGR646rZhgomzcfltO24oF72B+c61
+	byxTHN0zi8Nc2tvB1Z/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZJWf-0004Xu-Lg; Fri, 07 Jun 2019 18:23:41 +0000
+	id 1hZJhM-0007lz-BH; Fri, 07 Jun 2019 18:34:44 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZJWZ-0004XZ-97
- for linux-arm-kernel@bombadil.infradead.org; Fri, 07 Jun 2019 18:23:35 +0000
+ id 1hZJhH-0007lt-6j
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 07 Jun 2019 18:34:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=tsfr6umeVueoQ8nTR1ppqgNBP/xzgyeaPLGI8Cc6r4c=; b=rcVCqqvr4PR7ypAWazJtnLcub
- 7yFmwG67W4q8Cs2wa54tyS11VHkV9KE8VhBuG6iQv903/IIWmibJpn94S+hG+wjMHu8hkylDqh+y+
- zfFdepyFFFXT2N57rzl+Q314pp9YekgGjFziSYfB8e2Oj8GnG4H1VCNK+I8XMPPdKPdtUBwqMFHlb
- OEMdGufMldzMYvkztwpjcGE+Lrj0/Vl7nWh/1U8WVtWaBrpmzPj6N4IBfR4J3mv0V1GtYGULkH9Sd
- eFc4uQMuMUnRqkKtOHl15PlH22e3lthNRAlNdzueruBfbidYQ6Ap/3zhTs0Z4So4SxHF8dpW3w2gU
- AJCp+Z22A==;
+ bh=8FTavkhD/U3nEQ58jCZ6nyHW3BIZ3uQK2evEJdGyByI=; b=gT+vkwvwOp1nwsTQ9+8MSC+q/
+ DlEJZRgsGjdpov4kvJpPCWkJ/ssGRVVJ/oUfmfYmd2KDh2Hayb5uBUUyEptCjPvSEQHyw3gULRPDJ
+ RwPW9/NopoMfX2S9oo7fc1OtN416wc9N+WIlSqpHHSnHuB3puB9bpbPe10F11F5xkpTbggRtgOsiZ
+ pTmr2eDCH7PxrE61C2YV2Ey9zvvv/6a8FCqY9soskrTlYPAhpCJY/AK/ECAuJiT054lTWqRKNERdR
+ ItzBwS2ip7/4jL0UZ6/8jQiWCoi1EEw8CtrNgMYpPoom7AeoKudNG3kr7ocY2HcqqMmFQXE8wCqCn
+ meMjLZXHg==;
 Received: from 187-26-97-17.3g.claro.net.br ([187.26.97.17]
  helo=quaco.ghostprotocols.net)
  by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hZJWW-0004gI-N2; Fri, 07 Jun 2019 18:23:33 +0000
+ id 1hZJhE-0004uE-Tg; Fri, 07 Jun 2019 18:34:37 +0000
 Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id B36CA41149; Fri,  7 Jun 2019 15:23:25 -0300 (-03)
-Date: Fri, 7 Jun 2019 15:23:25 -0300
+ id D4DD441149; Fri,  7 Jun 2019 15:34:34 -0300 (-03)
+Date: Fri, 7 Jun 2019 15:34:34 -0300
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH] perf tools: Properly set the value of 'old' and 'head'
- in snapshot mode
-Message-ID: <20190607182325.GL21245@kernel.org>
-References: <20190605161633.12245-1-mathieu.poirier@linaro.org>
- <20190606201056.GJ21245@kernel.org>
- <20190607064425.GF5970@leoy-ThinkPad-X240s>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v2 02/17] perf tools: Configure timestsamp generation in
+ CPU-wide mode
+Message-ID: <20190607183434.GO21245@kernel.org>
+References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
+ <20190524173508.29044-3-mathieu.poirier@linaro.org>
+ <c1507e8b-9ec8-a5c4-a398-20dcc47acaa8@arm.com>
+ <CANLsYkx6o9xgxTh4s-o7tVxKKLu_SQc5CLtoHzHK=8WtNK4dbQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190607064425.GF5970@leoy-ThinkPad-X240s>
+In-Reply-To: <CANLsYkx6o9xgxTh4s-o7tVxKKLu_SQc5CLtoHzHK=8WtNK4dbQ@mail.gmail.com>
 X-Url: http://acmel.wordpress.com
 User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,232 +67,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>, suzuki.poulose@arm.com,
- peterz@infradead.org, Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- linux-kernel@vger.kernel.org, alexander.shishkin@linux.intel.com,
- mingo@redhat.com, jolsa@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Coresight ML <coresight@lists.linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Fri, Jun 07, 2019 at 02:44:25PM +0800, Leo Yan escreveu:
-> On Thu, Jun 06, 2019 at 05:10:56PM -0300, Arnaldo Carvalho de Melo wrote:
-> > Em Wed, Jun 05, 2019 at 10:16:33AM -0600, Mathieu Poirier escreveu:
-> > > This patch adds the necessay intelligence to properly compute the value
-> > > of 'old' and 'head' when operating in snapshot mode.  That way we can get
-> > > the latest information in the AUX buffer and be compatible with the
-> > > generic AUX ring buffer mechanic.
-> > 
-> > Leo, have you had the chance to test/review this one? Suzuki?
+Em Fri, Jun 07, 2019 at 11:46:32AM -0600, Mathieu Poirier escreveu:
+> On Fri, 7 Jun 2019 at 03:41, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
+> >
+> >
+> >
+> > On 24/05/2019 18:34, Mathieu Poirier wrote:
+> > > When operating in CPU-wide mode tracers need to generate timestamps in
+> > > order to correlate the code being traced on one CPU with what is executed
+> > > on other CPUs.
+> > >
+> > > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> > > ---
+> > >   tools/perf/arch/arm/util/cs-etm.c | 57 +++++++++++++++++++++++++++++++
+> > >   1 file changed, 57 insertions(+)
+> > >
+> > > diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+> > > index 3912f0bf04ed..be1e4f20affa 100644
+> > > --- a/tools/perf/arch/arm/util/cs-etm.c
+> > > +++ b/tools/perf/arch/arm/util/cs-etm.c
+> > > @@ -99,6 +99,54 @@ static int cs_etm_set_context_id(struct auxtrace_record *itr,
+> > >       return err;
+> > >   }
+> > >
+> > > +static int cs_etm_set_timestamp(struct auxtrace_record *itr,
+> > > +                             struct perf_evsel *evsel, int cpu)
+> > > +{
+> > > +     struct cs_etm_recording *ptr;
+> > > +     struct perf_pmu *cs_etm_pmu;
+> > > +     char path[PATH_MAX];
+> > > +     int err = -EINVAL;
+> > > +     u32 val;
+> > > +
+> > > +     ptr = container_of(itr, struct cs_etm_recording, itr);
+> > > +     cs_etm_pmu = ptr->cs_etm_pmu;
+> > > +
+> > > +     if (!cs_etm_is_etmv4(itr, cpu))
+> > > +             goto out;
+> > > +
+> > > +     /* Get a handle on TRCIRD0 */
+> > > +     snprintf(path, PATH_MAX, "cpu%d/%s",
+> > > +              cpu, metadata_etmv4_ro[CS_ETMV4_TRCIDR0]);
+> > > +     err = perf_pmu__scan_file(cs_etm_pmu, path, "%x", &val);
+> > > +
+> > > +     /* There was a problem reading the file, bailing out */
+> > > +     if (err != 1) {
+> > > +             pr_err("%s: can't read file %s\n",
+> > > +                    CORESIGHT_ETM_PMU_NAME, path);
+> > > +             goto out;
+> > > +     }
+> > > +
+> > > +     /*
+> > > +      * TRCIDR0.TSSIZE, bit [28-24], indicates whether global timestamping
+> > > +      * is supported:
+> > > +      *  0b00000 Global timestamping is not implemented
+> > > +      *  0b00110 Implementation supports a maximum timestamp of 48bits.
+> > > +      *  0b01000 Implementation supports a maximum timestamp of 64bits.
+> > > +      */
+> > > +     val &= GENMASK(28, 24);
+> > > +     if (!val) {
+> > > +             err = -EINVAL;
+> > > +             goto out;
+> > > +     }
+> > > +
+> > > +     /* All good, let the kernel know */
+> > > +     evsel->attr.config |= (1 << ETM_OPT_TS);
+> > > +     err = 0;
+> > > +
+> > > +out:
+> > > +     return err;
+> > > +}
+> > > +
+> > >   static int cs_etm_set_option(struct auxtrace_record *itr,
+> > >                            struct perf_evsel *evsel, u32 option)
+> > >   {
+> > > @@ -118,6 +166,11 @@ static int cs_etm_set_option(struct auxtrace_record *itr,
+> > >                       if (err)
+> > >                               goto out;
+> > >                       break;
+> > > +             case ETM_OPT_TS:
+> > > +                     err = cs_etm_set_timestamp(itr, evsel, i);
+> > > +                     if (err)
+> > > +                             goto out;
+> > > +                     break;
+> > >               default:
+> > >                       goto out;
+> > >               }
+> > > @@ -343,6 +396,10 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+> > >               err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_CTXTID);
+> > >               if (err)
+> > >                       goto out;
+> > > +
+> > > +             err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_TS);
+> > > +             if (err)
+> > > +                     goto out;
+> >
+> > nit: Could we not do this in one shot, say :
+> >
+> >         cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_TS | ETM_OPT_CTXTID) ?
+> >
+> > rather than iterating over the per-CPU events twice ? The cs_etm_set_option()
+> > could simply replace the switch() to :
+> >
+> >         if (option & ETM_OPT_1)
+> >                 do_something_for_1()
+> >         if (option & ETM_OPT_2)
+> >                 do_something_for_2();
+> >         if (option & ~(ETM_OPT_1 | ETM_OPT_2 |...))
+> >                 /* do unsupported option */
+> >
 > 
-> Sure.  I applied this patch on the perf/core branch (with latest
-> commit 3e4fbf36c1e3 'perf augmented_raw_syscalls: Move reading
-> filename to the loop') and passed testing with below steps:
+> Yes, that is a good optimization.
 > 
-> # perf record -e cs_etm/@tmc_etr0/ -S -m,64 --per-thread ./sort &
-> [1] 19097
-> Bubble sorting array of 30000 elements
-> 
-> # kill -USR2 19097
-> # kill -USR2 19097
-> # kill -USR2 19097
-> [ perf record: Woken up 4 times to write data ]
-> [ perf record: Captured and wrote 0.753 MB perf.data ]
-> 
-> FWIW:
-> 
-> Tested-by: Leo Yan <leo.yan@linaro.org>
+> Arnaldo, do you prefer a new set or another patch on top of this one?
 
-Thanks a lot, I've added your "Tester notes:" and also your Tested-by:.
+On top of it, as this isn't a fix just an optimization, so no need to go
+back and fix history to avoid bisection, etc.
 
-As I don't have hardware (yet) to test these patches, tests by people
-who can test on real hardware is always super appreciated.
-
-Any suggestions for a SBC that I could buy to be able to do so?
-
-Regards,
+Put it in your next set, no need to hurry.
 
 - Arnaldo
  
-> > I also changed the subject to:
-> > 
-> >   [PATCH] perf cs-etm: Properly set the value of 'old' and 'head' in snapshot mode
-> > 
-> > So that when looking at a 'git log --oneline' one can have the proper
-> > context and know that its about cs-etm.
-> > 
-> > - Arnaldo
-> >  
-> > > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > > ---
-> > >  tools/perf/arch/arm/util/cs-etm.c | 127 +++++++++++++++++++++++++++++-
-> > >  1 file changed, 123 insertions(+), 4 deletions(-)
-> > > 
-> > > diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-> > > index 911426721170..0a278bbcaba6 100644
-> > > --- a/tools/perf/arch/arm/util/cs-etm.c
-> > > +++ b/tools/perf/arch/arm/util/cs-etm.c
-> > > @@ -31,6 +31,8 @@ struct cs_etm_recording {
-> > >  	struct auxtrace_record	itr;
-> > >  	struct perf_pmu		*cs_etm_pmu;
-> > >  	struct perf_evlist	*evlist;
-> > > +	int			wrapped_cnt;
-> > > +	bool			*wrapped;
-> > >  	bool			snapshot_mode;
-> > >  	size_t			snapshot_size;
-> > >  };
-> > > @@ -536,16 +538,131 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
-> > >  	return 0;
-> > >  }
-> > >  
-> > > -static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
-> > > +static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
-> > > +{
-> > > +	bool *wrapped;
-> > > +	int cnt = ptr->wrapped_cnt;
-> > > +
-> > > +	/* Make @ptr->wrapped as big as @idx */
-> > > +	while (cnt <= idx)
-> > > +		cnt++;
-> > > +
-> > > +	/*
-> > > +	 * Free'ed in cs_etm_recording_free().  Using realloc() to avoid
-> > > +	 * cross compilation problems where the host's system supports
-> > > +	 * reallocarray() but not the target.
-> > > +	 */
-> > > +	wrapped = realloc(ptr->wrapped, cnt * sizeof(bool));
-> > > +	if (!wrapped)
-> > > +		return -ENOMEM;
-> > > +
-> > > +	wrapped[cnt - 1] = false;
-> > > +	ptr->wrapped_cnt = cnt;
-> > > +	ptr->wrapped = wrapped;
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
-> > > +				      size_t buffer_size, u64 head)
-> > > +{
-> > > +	u64 i, watermark;
-> > > +	u64 *buf = (u64 *)buffer;
-> > > +	size_t buf_size = buffer_size;
-> > > +
-> > > +	/*
-> > > +	 * We want to look the very last 512 byte (chosen arbitrarily) in
-> > > +	 * the ring buffer.
-> > > +	 */
-> > > +	watermark = buf_size - 512;
-> > > +
-> > > +	/*
-> > > +	 * @head is continuously increasing - if its value is equal or greater
-> > > +	 * than the size of the ring buffer, it has wrapped around.
-> > > +	 */
-> > > +	if (head >= buffer_size)
-> > > +		return true;
-> > > +
-> > > +	/*
-> > > +	 * The value of @head is somewhere within the size of the ring buffer.
-> > > +	 * This can be that there hasn't been enough data to fill the ring
-> > > +	 * buffer yet or the trace time was so long that @head has numerically
-> > > +	 * wrapped around.  To find we need to check if we have data at the very
-> > > +	 * end of the ring buffer.  We can reliably do this because mmap'ed
-> > > +	 * pages are zeroed out and there is a fresh mapping with every new
-> > > +	 * session.
-> > > +	 */
-> > > +
-> > > +	/* @head is less than 512 byte from the end of the ring buffer */
-> > > +	if (head > watermark)
-> > > +		watermark = head;
-> > > +
-> > > +	/*
-> > > +	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
-> > > +	 */
-> > > +	watermark >>= 3;
-> > > +	buf_size >>= 3;
-> > > +
-> > > +	/*
-> > > +	 * If we find trace data at the end of the ring buffer, @head has
-> > > +	 * been there and has numerically wrapped around at least once.
-> > > +	 */
-> > > +	for (i = watermark; i < buf_size; i++)
-> > > +		if (buf[i])
-> > > +			return true;
-> > > +
-> > > +	return false;
-> > > +}
-> > > +
-> > > +static int cs_etm_find_snapshot(struct auxtrace_record *itr,
-> > >  				int idx, struct auxtrace_mmap *mm,
-> > > -				unsigned char *data __maybe_unused,
-> > > +				unsigned char *data,
-> > >  				u64 *head, u64 *old)
-> > >  {
-> > > +	int err;
-> > > +	bool wrapped;
-> > > +	struct cs_etm_recording *ptr =
-> > > +			container_of(itr, struct cs_etm_recording, itr);
-> > > +
-> > > +	/*
-> > > +	 * Allocate memory to keep track of wrapping if this is the first
-> > > +	 * time we deal with this *mm.
-> > > +	 */
-> > > +	if (idx >= ptr->wrapped_cnt) {
-> > > +		err = cs_etm_alloc_wrapped_array(ptr, idx);
-> > > +		if (err)
-> > > +			return err;
-> > > +	}
-> > > +
-> > > +	/*
-> > > +	 * Check to see if *head has wrapped around.  If it hasn't only the
-> > > +	 * amount of data between *head and *old is snapshot'ed to avoid
-> > > +	 * bloating the perf.data file with zeros.  But as soon as *head has
-> > > +	 * wrapped around the entire size of the AUX ring buffer it taken.
-> > > +	 */
-> > > +	wrapped = ptr->wrapped[idx];
-> > > +	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
-> > > +		wrapped = true;
-> > > +		ptr->wrapped[idx] = true;
-> > > +	}
-> > > +
-> > >  	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
-> > >  		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
-> > >  
-> > > -	*old = *head;
-> > > -	*head += mm->len;
-> > > +	/* No wrap has occurred, we can just use *head and *old. */
-> > > +	if (!wrapped)
-> > > +		return 0;
-> > > +
-> > > +	/*
-> > > +	 * *head has wrapped around - adjust *head and *old to pickup the
-> > > +	 * entire content of the AUX buffer.
-> > > +	 */
-> > > +	if (*head >= mm->len) {
-> > > +		*old = *head - mm->len;
-> > > +	} else {
-> > > +		*head += mm->len;
-> > > +		*old = *head - mm->len;
-> > > +	}
-> > >  
-> > >  	return 0;
-> > >  }
-> > > @@ -586,6 +703,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
-> > >  {
-> > >  	struct cs_etm_recording *ptr =
-> > >  			container_of(itr, struct cs_etm_recording, itr);
-> > > +
-> > > +	zfree(&ptr->wrapped);
-> > >  	free(ptr);
-> > >  }
-> > >  
-> > > -- 
-> > > 2.17.1
-> > 
-> > -- 
-> > 
-> > - Arnaldo
+> Thanks,
+> Mathieu
+> 
+> >
+> > Cheers
+> > Suzuki
 
 -- 
 
