@@ -2,98 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DDDB3935D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 19:35:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBD163937A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 19:41:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p2vYa03FXE3Zx+oaj51iiyhFxFIt45tOqgYBhTIWVaE=; b=DsrmklQzafcqOk
-	0TGIMsZHDMvMQiKUyLNAP3V0n81F5e1rwXe7Fz/9cAlf/pibT5hJ136dOmFK6jzeKcQdnMQblqkRi
-	88Yy1LEbT7x2fpFMFXgJyfM4ccdx90Am8P8gmUdjF6bBUoZe9APTEIUBAHM5kfz5X3UTlgcCgtIA9
-	i1wMXylLFFyPPViujuavg8LWoLxw4TcSPTc3aVHw/iA6EGYvXJ4ZdR0h6T1FwZltQhsLhxD09DfyH
-	8PZbphqlnay2330dRL/FQI40SHT6WBEFcvrt94xJ1fV+sxEGjN4r9XJ0+c9OVl+YV6w05U1QB4P7I
-	5J7411tALB0KglfuZQkA==;
+	List-Owner; bh=KxKpg5MR21CL45RVmBWFZzluHjWO061Q3yrlmtudQAA=; b=HeHZ/Bj/xKB9zU
+	760Y40R31Kv+1KNx0NVKySPwvetqNNA6qmmIpucWtyqg0hPlIreMcRTWrqCZdTrAOsz87sF+061Jy
+	wj+t75P8IXio7vhGmlo2iBEBRHmUvbvJueEiRhPa/n7otMLlmkLwYXJ5t0q58mWLYm2gN+nuHXRuM
+	LEXsAwhdX1TriqF6DBtcgh2wfErY8V+Ve8Q6e+IDEwWEyY7edIbZSblbI3bXMkW4wq+DhgkPfFJOc
+	lz7A5DGNAaM+YseHOQKNi81Mh+sM2xN6oGSTTuTh0f6XBLUbWYGgeMOJkUrdFiGfkYujTMaFZRp63
+	KixpyxyKAD+u0oZ8j3RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZImF-0003u5-P8; Fri, 07 Jun 2019 17:35:43 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hZIrJ-0005z1-EJ; Fri, 07 Jun 2019 17:40:57 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZIm8-0003tZ-ST
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 17:35:38 +0000
-Received: by mail-pg1-x541.google.com with SMTP id w34so1499001pga.12
+ id 1hZIrA-0005ya-Us
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 17:40:50 +0000
+Received: by mail-io1-xd44.google.com with SMTP id n5so2044881ioc.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 10:35:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=d8Zhil16cCklev3Hhi9oIiyQQGrl2e9GqmCCwrtiXdk=;
- b=AZX6GDj6WfsIb1ibf7l1wAescvlPCsTMwGSKgulKl6tlJiq8ZgOKFU/hL+Z+WT5ife
- s8pK0rO7uXRdEOJV1uBl9qft27qSxNTwoGhxKVeguOn3h+Pi+7HP5IIbtWyyyLiOB4tL
- 5ZhdjOGdP5k0DPBDH38spUPUfzPWY/XkQBMkISY5mchqc4Bl9AKT6X3RK8WxI9XsOhXw
- ojNl/REyAvrlewhCdOMkQ0i4ivrtqjjDqTygitDkx3GB7OmibJ5/9JCQ4dpJi6Bd9FZ7
- ANWn+vlBglvp4EgG3hnQCIOZWVp26YrfxRj0ctfhOlbPU9LMzeVmEYYHEibi49VrZfSZ
- ko1A==
+ Fri, 07 Jun 2019 10:40:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=OlxCx0LcVRqEwUVpBa/0X4MAmO56cf6FlxJFEgvmnmc=;
+ b=io4ZHtOx+pe44IJE28hPvzsRLOIt0VwvSmyD7ESSJ9h8O27pk1n+Hu2xfBOvwNgSP0
+ A0qXMDL1mnGbV4WnCyav2N0tLJLbq4v/mT6AQDbTltZ0G9/gl+GSIW8rX8K7AQLt9XQl
+ 8vdSg87x62g2hXZTZjVmuhpcIqFjX6Lj1NY+K7gL075+JM7GVBcOPtyAAr7uM/Ydj2/S
+ BGA1YLbBlm+NOEuKupWaszdkWXxBmVFuUc3dbpGyqDCQCdgE2i2Iz3eDG10bb9P1+Rvi
+ twKS0O2ciONkTTOzsCLm6R4b4lAhv1H8P3Qt3IqVArTp7DyyNe36QpP3FOa7rkKzMW/R
+ LHSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=d8Zhil16cCklev3Hhi9oIiyQQGrl2e9GqmCCwrtiXdk=;
- b=ubnUt92SysyXp6G6oR00Ige6DGcIHSnjRGBAC7MqqG2eQ8dZrIa5Vu/l6RyRbvpe9z
- MbTE+hUDqpdr0NRjKPPblavH8W7A3tSPz6FWrwFq8y0n4FFcETVKS9NuFRzQcSV1F9dK
- r5CCe5+1/pC6GxJCDj87Jks85ObC0BlSlm+NzRS96e+cnwVkjAMnpN2gI4l/Oqdwcg1R
- LBEiATXwBYQcdXYJM8WfV5EHQpe4HB8ESTdnPE0UfGFArDG/cqfLWrIx9Gv5UTqdg3OS
- vXS2/sTcit7rXG2D3ebvdwAn+/k29Deai/t4HofkachA0h2wu8wRJ0P61j++drt2ROxW
- +E4A==
-X-Gm-Message-State: APjAAAVtmly6KlriQHlQGb4l1cmzTxLESySnc69vuZ0agS0HhKB9GddM
- YOEQZw9VOzOeWUwzdLSpVKOw2EVG
-X-Google-Smtp-Source: APXvYqye3uhb0jhDnBYaj8BRcBNlfbyR8esY3incoxAlfXi7sx2TjFLkz9Hiah13kkAa+WVq2sq6eg==
-X-Received: by 2002:a62:1692:: with SMTP id 140mr58660048pfw.166.1559928936179; 
- Fri, 07 Jun 2019 10:35:36 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id e184sm7419799pfa.169.2019.06.07.10.35.35
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 07 Jun 2019 10:35:35 -0700 (PDT)
-Date: Fri, 7 Jun 2019 10:35:34 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: =?iso-8859-1?Q?Cl=E9ment_P=E9ron?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v5 1/4] dt-bindings: watchdog: add Allwinner H6 watchdog
-Message-ID: <20190607173534.GA14933@roeck-us.net>
-References: <20190523151050.27302-1-peron.clem@gmail.com>
- <20190523151050.27302-2-peron.clem@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=OlxCx0LcVRqEwUVpBa/0X4MAmO56cf6FlxJFEgvmnmc=;
+ b=e7T8yjX/86Z0NjTL/sM4Axlx4tmiV5iUHjjpVJcWR9zDGSR6AjHuqcT6hNepSH9+zy
+ p/M72UIwPy1DWUQLzAnacNUf9W2gEAnddyToG8L6RAdKCxYoRwr6ScRK/0KDfF3lZ7FE
+ tJjM5t89ZeLoZpzsPqvU1AZEue5/FEvTjMlaWYX5ueCieEihLBR3pZA0CJLMzaakcxkT
+ AhKqAqPBI05+XxXtuVWf/PyooRyAfgQ9vxh5o1iWVYMqEe3ZO7YiYSA8HKHOa2nBUHKJ
+ gzzzcwz7CFvsJBE8rn3Xl2r9/bw92jigNiQDM0JrFvJ4oRJPPBnw2fezppBsO1CjJiiX
+ 2yjg==
+X-Gm-Message-State: APjAAAUFCRts8BmnQjGvzAA9Rt7NNyP2DizsbOU8wwVPEHAADoV5RRtj
+ 2lH4lGt4DLyzWo1lYWvHgddWURqq7tsBoiarmx/4lA==
+X-Google-Smtp-Source: APXvYqyS/7a9/Dz1ggiv03hBOU54xjqxDo1Iciw3ODbbVW7tjvpMqHtRefyhNI4gWQstaMZPH3Y3mM+VTfb1fXN7wps=
+X-Received: by 2002:a6b:7d49:: with SMTP id d9mr14036127ioq.50.1559929247404; 
+ Fri, 07 Jun 2019 10:40:47 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190523151050.27302-2-peron.clem@gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
+ <20190524173508.29044-2-mathieu.poirier@linaro.org>
+ <68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com>
+In-Reply-To: <68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Fri, 7 Jun 2019 11:40:36 -0600
+Message-ID: <CANLsYkwrsvSXOpaxL7mFxiJF5A53Xk+3XDK14r_Z=wBLzDZy9A@mail.gmail.com>
+Subject: Re: [PATCH v2 01/17] perf tools: Configure contextID tracing in
+ CPU-wide mode
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_103536_949109_A8F9E586 
-X-CRM114-Status: GOOD (  15.60  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190607_104049_059662_779F4635 
+X-CRM114-Status: GOOD (  32.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,48 +93,244 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Coresight ML <coresight@lists.linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 05:10:47PM +0200, Cl=E9ment P=E9ron wrote:
-> Allwinner H6 has a similar watchdog as the A64 which is already
-> a compatible of the A31.
-> =
+Hey Suzuki,
 
-> This commit add the H6 compatible.
-> =
+On Fri, 7 Jun 2019 at 03:21, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
+>
+> Hi Mathieu,
+>
+> On 24/05/2019 18:34, Mathieu Poirier wrote:
+> > When operating in CPU-wide mode being notified of contextID changes is
+> > required so that the decoding mechanic is aware of the process context
+> > switch.
+> >
+> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+>
+>
+> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>
+> I am sorry but, I don't remember reviewing this patch in the previous
+> postings. But here we go.
 
-> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
+We definitely misunderstood each other - apologies for that.
 
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+>
+> > ---
+> >   tools/perf/arch/arm/util/cs-etm.c | 126 +++++++++++++++++++++++++-----
+> >   tools/perf/util/cs-etm.h          |  12 +++
+> >   2 files changed, 119 insertions(+), 19 deletions(-)
+> >
+> > diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+> > index 911426721170..3912f0bf04ed 100644
+> > --- a/tools/perf/arch/arm/util/cs-etm.c
+> > +++ b/tools/perf/arch/arm/util/cs-etm.c
+> > @@ -35,8 +35,100 @@ struct cs_etm_recording {
+> >       size_t                  snapshot_size;
+> >   };
+> >
+>
+>
+> >   static bool cs_etm_is_etmv4(struct auxtrace_record *itr, int cpu);
+> >
+> > +static int cs_etm_set_context_id(struct auxtrace_record *itr,
+> > +                              struct perf_evsel *evsel, int cpu)
+> > +{
+> > +     struct cs_etm_recording *ptr;
+> > +     struct perf_pmu *cs_etm_pmu;
+> > +     char path[PATH_MAX];
+> > +     int err = -EINVAL;
+> > +     u32 val;
+> > +
+> > +     ptr = container_of(itr, struct cs_etm_recording, itr);
+> > +     cs_etm_pmu = ptr->cs_etm_pmu;
+> > +
+> > +     if (!cs_etm_is_etmv4(itr, cpu))
+> > +             goto out;
+> > +
+> > +     /* Get a handle on TRCIRD2 */
+> > +     snprintf(path, PATH_MAX, "cpu%d/%s",
+> > +              cpu, metadata_etmv4_ro[CS_ETMV4_TRCIDR2]);
+> > +     err = perf_pmu__scan_file(cs_etm_pmu, path, "%x", &val);
+> > +
+> > +     /* There was a problem reading the file, bailing out */
+> > +     if (err != 1) {
+> > +             pr_err("%s: can't read file %s\n",
+> > +                    CORESIGHT_ETM_PMU_NAME, path);
+> > +             goto out;
+> > +     }
+> > +
+> > +     /*
+> > +      * TRCIDR2.CIDSIZE, bit [9-5], indicates whether contextID tracing
+> > +      * is supported:
+> > +      *  0b00000 Context ID tracing is not supported.
+> > +      *  0b00100 Maximum of 32-bit Context ID size.
+> > +      *  All other values are reserved.
+> > +      */
+> > +     val = BMVAL(val, 5, 9);
+> > +     if (!val || val != 0x4) {
+> > +             err = -EINVAL;
+> > +             goto out;
+> > +     }
+> > +
+> > +     /* All good, let the kernel know */
+> > +     evsel->attr.config |= (1 << ETM_OPT_CTXTID);
+> > +     err = 0;
+> > +
+> > +out:
+> > +
+> > +     return err;
+> > +}
+> > +
+> > +static int cs_etm_set_option(struct auxtrace_record *itr,
+> > +                          struct perf_evsel *evsel, u32 option)
+> > +{
+> > +     int i, err = -EINVAL;
+> > +     struct cpu_map *event_cpus = evsel->evlist->cpus;
+> > +     struct cpu_map *online_cpus = cpu_map__new(NULL);
+> > +
+> > +     /* Set option of each CPU we have */
+> > +     for (i = 0; i < cpu__max_cpu(); i++) {
+> > +             if (!cpu_map__has(event_cpus, i) ||
+> > +                 !cpu_map__has(online_cpus, i))
+> > +                     continue;
+> > +
+> > +             switch (option) {
+> > +             case ETM_OPT_CTXTID:
+> > +                     err = cs_etm_set_context_id(itr, evsel, i);
+> > +                     if (err)
+> > +                             goto out;
+> > +                     break;
+> > +             default:
+> > +                     goto out;
+> > +             }
+> > +     }
+>
+> I am not too familiar with the perf tool code. But, isn't there a way
+> to force the config bit, right from the beginning when the events are
+> created, when we know that we are doing a CPU wide tracing, along with
+> the other config bits ?
+>
+>
 
-> ---
->  Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt | 1 +
->  1 file changed, 1 insertion(+)
-> =
+This code is ran just after the event list is created.  In order to
+avoid this step and have the config bits set right from the beginning
+one would have to explicitly specify the options within the '/' '/' of
+the cs_etm event on the command line, which would be cumbersome and
+error prone.  Instead this code guarantees that all options needed for
+a CPU-wide session are set properly.
 
-> diff --git a/Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt b/D=
-ocumentation/devicetree/bindings/watchdog/sunxi-wdt.txt
-> index 46055254e8dd..e65198d82a2b 100644
-> --- a/Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt
-> +++ b/Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt
-> @@ -6,6 +6,7 @@ Required properties:
->  	"allwinner,sun4i-a10-wdt"
->  	"allwinner,sun6i-a31-wdt"
->  	"allwinner,sun50i-a64-wdt","allwinner,sun6i-a31-wdt"
-> +	"allwinner,sun50i-h6-wdt","allwinner,sun6i-a31-wdt"
->  	"allwinner,suniv-f1c100s-wdt", "allwinner,sun4i-a10-wdt"
->  - reg : Specifies base physical address and size of the registers.
->  =
+>
+> > +     err = 0;
+> > +out:
+> > +     cpu_map__put(online_cpus);
+> > +     return err;
+> > +}
+> > +
+> >   static int cs_etm_parse_snapshot_options(struct auxtrace_record *itr,
+> >                                        struct record_opts *opts,
+> >                                        const char *str)
+> > @@ -105,8 +197,9 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+> >                               container_of(itr, struct cs_etm_recording, itr);
+> >       struct perf_pmu *cs_etm_pmu = ptr->cs_etm_pmu;
+> >       struct perf_evsel *evsel, *cs_etm_evsel = NULL;
+> > -     const struct cpu_map *cpus = evlist->cpus;
+> > +     struct cpu_map *cpus = evlist->cpus;
+> >       bool privileged = (geteuid() == 0 || perf_event_paranoid() < 0);
+> > +     int err = 0;
+> >
+> >       ptr->evlist = evlist;
+> >       ptr->snapshot_mode = opts->auxtrace_snapshot_mode;
+> > @@ -241,19 +334,24 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+> >
+> >       /*
+> >        * In the case of per-cpu mmaps, we need the CPU on the
+> > -      * AUX event.
+> > +      * AUX event.  We also need the contextID in order to be notified
+> > +      * when a context switch happened.
+> >        */
+> > -     if (!cpu_map__empty(cpus))
+> > +     if (!cpu_map__empty(cpus)) {
+> >               perf_evsel__set_sample_bit(cs_etm_evsel, CPU);
+> >
+> > +             err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_CTXTID);
+> > +             if (err)
+> > +                     goto out;
+> > +     }
+> > +
+> >       /* Add dummy event to keep tracking */
+> >       if (opts->full_auxtrace) {
+> >               struct perf_evsel *tracking_evsel;
+> > -             int err;
+> >
+> >               err = parse_events(evlist, "dummy:u", NULL);
+> >               if (err)
+> > -                     return err;
+> > +                     goto out;
+> >
+> >               tracking_evsel = perf_evlist__last(evlist);
+> >               perf_evlist__set_tracking_event(evlist, tracking_evsel);
+> > @@ -266,7 +364,8 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+> >                       perf_evsel__set_sample_bit(tracking_evsel, TIME);
+> >       }
+> >
+> > -     return 0;
+> > +out:
+> > +     return err;
+> >   }
+>
+>
+> > diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
+> > index 0e97c196147a..826c9eedaf5c 100644
+> > --- a/tools/perf/util/cs-etm.h
+> > +++ b/tools/perf/util/cs-etm.h
+> > @@ -103,6 +103,18 @@ struct intlist *traceid_list;
+> >   #define KiB(x) ((x) * 1024)
+> >   #define MiB(x) ((x) * 1024 * 1024)
+> >
+> > +/*
+> > + * Create a contiguous bitmask starting at bit position @l and ending at
+> > + * position @h. For example
+> > + * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
+> > + *
+> > + * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
+> > + */
+> > +#define GENMASK(h, l) \
+> > +     (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
+> > +
+>
+> minor nit: Could this be placed in a more generic header file for the other
+> parts of the perf tool to consume ?
 
+Back when I wrote this code my thinking was to keep it private since
+nobody else in the perf tools had a need for it.  But I now that
+Arnaldo added the header back in August [1] there is no need for a
+private version.
+
+Arnaldo, do you want a patch on top of the current patchset or a new set?
+
+[1]. ba4aa02b417f0 (Arnaldo Carvalho de Melo 2018-09-25 10:55:59 -0300
+17)  * GENMASK_ULL(39, 21)
+
+>
+> > +#define BMVAL(val, lsb, msb) ((val & GENMASK(msb, lsb)) >> lsb)
+> > +
+>
+>
+> Cheers
+> Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
