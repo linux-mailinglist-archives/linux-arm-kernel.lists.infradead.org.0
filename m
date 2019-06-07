@@ -2,104 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8149038858
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 12:58:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80FA13886A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:03:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mZqJAZJqZ9W29j0EkfqEBj6jC8f/s/ZogMqIDHNclj4=; b=aHJlbf6IjErKse
-	JkeLT/QIeu2+PdHj8isNWrfJ92qCO/o0xL9mOZDzVB5yGldjBGpLb9YFukYcYnbi/Qw6mhmcQKIbP
-	Iszrhy/BoHC9KlwgKK1luAYld6ojoZOWeCmR26YkReLyRgFpVdxenb4RZ5eKDQ9VPqYrWnOCaTxvR
-	xTGdn9Gmj3u/qJjRBRZfTQ23PYiVGbwxbHHjivzFKC0e70C7hsrJ310u3/pF8rIibC3W/3KYQJL7P
-	IvndAgiye8U3AgFd/xzagOiFmn9QdUo5D/TPpjdS1MW6VszyG+8qB8Gg5kUbmKPsBsVgxogrR73oT
-	8eDjM1nm0Ozps9Fw60sw==;
+	List-Owner; bh=2RSjUpYadbd8gJf2MZkmM6ReZshsks86gZ4deBtkyl4=; b=ftA+MuMFxF9egk
+	EJKf9kqlW7kyFh6ETLxvcd7l3cd3JKqEaCO8SSq0S9l32b4fHFe2nort7PkmOI9NuG+VagxhEfQ61
+	dfUuyBxO7bRBdWkErAvD/eLtxhApCkR2hfmqpuV6eljDYot/2DdnUKeirmzs8VJvKwlksgYZSJnwd
+	i1EIzqi3nCgAi9TRpaq3GGKcm8CLimqtRUc6rORQlVdF4wLycz1OWVdM5xDFWm6VtGz7bQNT0Ntut
+	3Gh2eAnoFBzNMbU1eZfJn/3+X1SVb1n0soroSrSjcDLJnRADW1osWTKTslRz7fBDf3lMqXjbJPT9+
+	dO+kBC4H2Jo3TBdXyPSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZCa6-0004Yo-8A; Fri, 07 Jun 2019 10:58:46 +0000
-Received: from mail-eopbgr680055.outbound.protection.outlook.com
- ([40.107.68.55] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
+	id 1hZCeL-0006Ef-KK; Fri, 07 Jun 2019 11:03:09 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZCZx-0004YU-Cx
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 10:58:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vt6qoelTKHrMvuE1NywSjFEzIxJLjE+/50Vli2jX3Tk=;
- b=IV5rdcFL9DfmqcIuPodVD4DvWOZHCOIFMNgefbH4n1b4Ke0xrNZATedVODZJe7OPxB/LZQ2vAFnLnRwEgAgFLKDcBxWqIwl0JiDpctcJy1Dc8rjdwL6Ic8liW52aWQzSgSYdrEmzknGnGFzDsfmOvqAHG1421005mwb5gMTH9Io=
-Received: from CH2PR02MB6359.namprd02.prod.outlook.com (52.132.231.93) by
- CH2PR02MB6071.namprd02.prod.outlook.com (52.132.228.29) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1943.22; Fri, 7 Jun 2019 10:58:34 +0000
-Received: from CH2PR02MB6359.namprd02.prod.outlook.com
- ([fe80::b9dd:11e0:7fca:ba55]) by CH2PR02MB6359.namprd02.prod.outlook.com
- ([fe80::b9dd:11e0:7fca:ba55%5]) with mapi id 15.20.1943.023; Fri, 7 Jun 2019
- 10:58:34 +0000
-From: Dragan Cvetic <draganc@xilinx.com>
-To: Greg KH <gregkh@linuxfoundation.org>
-Subject: RE: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
-Thread-Topic: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
-Thread-Index: AQHVEu5GErREaULonk+tvtDvF1CkjaaOsacAgAFm4tA=
-Date: Fri, 7 Jun 2019 10:58:34 +0000
-Message-ID: <CH2PR02MB6359747C72220A978CCA807BCB100@CH2PR02MB6359.namprd02.prod.outlook.com>
-References: <1558784245-108751-1-git-send-email-dragan.cvetic@xilinx.com>
- <1558784245-108751-5-git-send-email-dragan.cvetic@xilinx.com>
- <20190606132842.GC7943@kroah.com>
-In-Reply-To: <20190606132842.GC7943@kroah.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=draganc@xilinx.com; 
-x-originating-ip: [149.199.80.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: d509c819-b61d-4030-ffa5-08d6eb3715ce
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:CH2PR02MB6071; 
-x-ms-traffictypediagnostic: CH2PR02MB6071:
-x-microsoft-antispam-prvs: <CH2PR02MB60715F8289A11E5E3EA43124CB100@CH2PR02MB6071.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 0061C35778
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(376002)(366004)(396003)(346002)(39860400002)(189003)(199004)(3846002)(71200400001)(6116002)(14444005)(71190400001)(316002)(74316002)(66476007)(99286004)(14454004)(256004)(86362001)(305945005)(478600001)(6506007)(54906003)(7736002)(64756008)(73956011)(102836004)(66446008)(76116006)(66946007)(2906002)(9686003)(7696005)(76176011)(66556008)(186003)(6916009)(4326008)(8676002)(68736007)(6436002)(81156014)(81166006)(4744005)(53936002)(8936002)(229853002)(486006)(25786009)(26005)(476003)(446003)(5660300002)(11346002)(6246003)(52536014)(33656002)(66066001)(55016002)(107886003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6071;
- H:CH2PR02MB6359.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: DTCTOtaFLVMVjg/MpBGLkAR86bmZd8vSP2g23e2ggu48E+FL2cC9WKBFU9cXAApevXkck9LoFapvLgUg8PZOC19fC/uvpAAQoNjiXvbu1GvvQ00d/2e84zWNsjqJrZrQZ7pVsztpZUxsy9BftkRI1ecYWYQTQcE4N34s4H2lTWkZGHqXEIXWB07Ky9U0a2IocOkoLfIKufBjy3dj1Eh6wKcRVSCkMhuTexI/Ll7Fb1r0NVs0A24qLB+86uLXy88Fyo/x9rM9Eiep2uMezVfQC4vXeVL0KAzUeyV7ApCvE6iXL221uFgGR2UDMEZa1fWfeVFvJWhvOAV+iI76DXD2v4dy+zWUYMMugpMfu0vc0jBM+po7zjOtaUzY03F6SsuB5d5kqDIujNDD4LCtoJP++oDiPb2oDrg13bZ5iaGondw=
+ id 1hZCeC-0006E9-NJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:03:02 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id m8so911549vsj.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 07 Jun 2019 04:02:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WUmbq4ZzrfgjJ6I/bdvOaFhtKBJjK9tscZns2i4i8ls=;
+ b=rbswCChLasSiMv/BxkP+oqC6iQQ5YnOz2jHk8PMbC0zI9S1v/bznWuilMUyjrXLufI
+ tBofULNs3jx0Ow9VaFVaYGxRQvzU82XBOlfJq5ISmCxvw20vVp1FfCTxng7lgcVr/fDO
+ 9wrhKxb2wX1Yw4awvXoH22X4YIcDGC6/cJSCWFxWFhrLqcAiXL7rOZA4rvSseDG3GeJK
+ 31m3sVPpE6DB+jvHavpdf3g+3NF6N3xKjgE5q+umHY3ZNSGHOuODtFu5/PLVhF8yEkSj
+ HarLC+t7Wt+PP1PnEAgWPPTvHxQkqLFcoM4i2QNtsCkOcRNrm5xargwrFL5jAii+1OSc
+ 4kmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WUmbq4ZzrfgjJ6I/bdvOaFhtKBJjK9tscZns2i4i8ls=;
+ b=YzApngRxA/byH+kEAvzFSyjpu2CWD39azWWZ/vj8vZ4QEVidBd0DowMXMeRp6fd2++
+ oov1yyT9mP4+KMUP7C5kr4AXqy4/d9sq1qiCgU+GtrIA9J0mOejxSbL6z0rq8QI5W86z
+ 6Ff8HVejMo4JvyORUED0n8dF0ukQzrf6PgVOQUjm3F65VZ4G6KWV2yDej2eJk0r7q5aB
+ upsQD2Wghz2KAXHOfuZ4rKrYLlULGGRYTWAuSyeqsKOrXgn7joh04yaeOc4V3ywC1/uM
+ 1NTQXZjk91/SvkAQGqf1YG2p3lbcWzQ++zknObKg3ejUqKzWeI7CCn26UJfC++4MImVT
+ oyvg==
+X-Gm-Message-State: APjAAAXvslJS0dgiN9Mb9IyPDSvtiGppLnu/QYLgMgP/y0CHHo5jUgTC
+ c8fVyjnhcv47WXhW3WuM3BkpxsMnRSIRnjEYvcGhiw==
+X-Google-Smtp-Source: APXvYqzDuz5mV6Jsi2xrh1eBdn+z7KJtHM7z3KIMpeuQwSP0He+fkG995ke/oRmFwgQo/qgul6kuZ3xCxNzlcCOd13U=
+X-Received: by 2002:a67:706:: with SMTP id 6mr11457746vsh.200.1559905378848;
+ Fri, 07 Jun 2019 04:02:58 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d509c819-b61d-4030-ffa5-08d6eb3715ce
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jun 2019 10:58:34.0280 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: draganc@xilinx.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6071
+References: <cover.1559635435.git.baolin.wang@linaro.org>
+In-Reply-To: <cover.1559635435.git.baolin.wang@linaro.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 7 Jun 2019 13:02:22 +0200
+Message-ID: <CAPDyKFp+UXDrrferK0zP7nPFtvkq6UU29vhJu3HCEUiKcAOsJQ@mail.gmail.com>
+Subject: Re: [PATCH v2 0/9] Add SD host controller support for SC9860 platform
+To: Baolin Wang <baolin.wang@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_035837_439278_B8342880 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190607_040300_772720_6DC41CA2 
+X-CRM114-Status: GOOD (  13.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.68.55 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,39 +90,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
- Derek Kiernan <dkiernan@xilinx.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ arm-soc <arm@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Olof Johansson <olof@lixom.net>,
+ Orson Zhai <orsonzhai@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> On Sat, May 25, 2019 at 12:37:17PM +0100, Dragan Cvetic wrote:
-> > +static int xsdfec_dev_open(struct inode *iptr, struct file *fptr)
-> > +{
-> > +	return 0;
-> > +}
-> > +
-> > +static int xsdfec_dev_release(struct inode *iptr, struct file *fptr)
-> > +{
-> > +	return 0;
-> > +}
-> 
-> empty open/close functions are never needed, just drop them.
-> 
+On Tue, 4 Jun 2019 at 10:14, Baolin Wang <baolin.wang@linaro.org> wrote:
+>
+> This patch set adds optional clock support, HS400 enhanced strobe mode support,
+> PHY DLL configuration and other optimization to make the SD host controller
+> can work well on the Spreadtrum SC9860 platform.
+>
+> Changes from v1:
+>  - Add acked-tags from Adrian.
+>  - Fix one mistake by changing MMC_TIMING_MMC_HS to MMC_TIMING_SD_HS in patch 8.
+>
+> Baolin Wang (9):
+>   mmc: sdhci-sprd: Check the enable clock's return value correctly
+>   dt-bindings: mmc: sprd: Add another optional clock documentation
+>   mmc: sdhci-sprd: Add optional gate clock support
+>   mmc: sdhci-sprd: Implement the get_max_timeout_count() interface
+>   mmc: sdhci-sprd: Add HS400 enhanced strobe mode
+>   mmc: sdhci-sprd: Enable PHY DLL to make clock stable
+>   dt-bindings: mmc: sprd: Add PHY DLL delay documentation
+>   mmc: sdhci-sprd: Add PHY DLL delay configuration
+>   arm64: dts: sprd: Add Spreadtrum SD host controller support
+>
+>  .../devicetree/bindings/mmc/sdhci-sprd.txt         |   19 +++
+>  arch/arm64/boot/dts/sprd/whale2.dtsi               |   35 ++++
+>  drivers/mmc/host/sdhci-sprd.c                      |  171 +++++++++++++++++++-
+>  3 files changed, 217 insertions(+), 8 deletions(-)
+>
+> --
+> 1.7.9.5
+>
 
-open() is needed to allocate file descriptor eg.
-fd = open(dev_name, O_RDWR);
+Patch 1 -> patch 8, applied for next, thanks!
 
-Please, advise if you have some other idea in mind
+Patch 9 is for arm-soc.
 
-Thanks
-Dragan
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
