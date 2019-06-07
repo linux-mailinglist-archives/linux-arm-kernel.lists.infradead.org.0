@@ -2,77 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B517B3976A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 23:11:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99593397DD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 23:36:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Eu0xTruKGs7hFcA5YNdfhJRgolsVACq9MCOKCWDNxmE=; b=sdhJDqXZrywVVh
-	e0WDk3iqXjCzi2D2rvSHH83tyTMEnMI+tjP+1bShLzXWZ/Qczq2n9rPsxWVE1rllFjRbXRkwZLeXA
-	OuporFVw1VM9mhLrB1A+RhLyE0VUIx3EoabxtCDKJ/bnHcWTp31RYUNzyxeGJM6eWDjJ+stsJxVij
-	I/XeH5Hbu2wROhzNGHcEfNpGGT6vQMUK87/VM27KRrW0xiQIpjxbZeMcRHVZbf1u2OnPoIwss93Kl
-	cDeJAqo/I2vU92fmrKK+X4UZPJw+607WCnhosS8ZxA0dOWmS3VUjjQ9U+x/4uBaMZtW/EoY8neXIG
-	1OhU3y6tcrvHZXLlYUCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7iVo3mxZbm/PSFREnSFtBZWYc2J8ZqYU9Q5Zhhs0Bis=; b=k9DzjntH1T/VYz7RBBOF4GPcb
+	+eoGBp/k6TjLkUDJMXnOkfjqLkdpsdeAnO+opu/tYJETYawooUEBzScj0UUZyE1RWFldOwonDzPTc
+	hCnniIy9UrGuStrh1hxd3MBBQ+2EzgfXrNLr/IYOL9XxTtOvJY7vhSI2shR6y5Q+kMpVcB0ltcfWl
+	ZX4PYTF1RTRVou6T/xRsXRkj5ZD+gYnKA4Tu1zmiC0QO23tz9RQDhrzFG6Gb9/rdyWoFwSCcso1fc
+	kVcl1IsN/pgQOjnpXzKdNQUOgC9q7hNdnz9vxA7rmj65gx8AOt551anfvdyK0KB9+SrLmtvexjYiM
+	O09Z7zqZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZM8s-0000Y6-JZ; Fri, 07 Jun 2019 21:11:18 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hZMWu-0000yb-04; Fri, 07 Jun 2019 21:36:08 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZM8i-0000XB-FF
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 21:11:09 +0000
-Received: by mail-lf1-x143.google.com with SMTP id y198so2642535lfa.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 14:11:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GPc4uqgBsBwvM/V5yLC3GgSCS1qEGuH2AgCesOfjZVs=;
- b=Xj+2CqjydRXkCSQdyY7hh8PknmG976aSmUGB6M0CXKwV68YBSlt7lEEc+0Q42HLwWz
- Kra3lWvzcZx8eZY4JLM9mGD+VkNWxtwDyVXjTFTgP11NG2vkLXXXisA4gdEpta8GgDB2
- yxGporWlOf2R6G+iU1qVE/dS2KcDdPsOgzlWsQScxqbH7f/eMvtehgLWrh/1s1mMzjg1
- BK/0CrHmik6HkETFYVX4kcOMMJv106KemH4Z0D8fzGvw9Y3KVrowv8NuJWMIEnm7Eorb
- QD7hXFsgXb7V41En3COZDajj/mMY4wVVGLQ6hrmrSsj80bmLgb4VTYAq4+CJUHOuV9ia
- B5IA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GPc4uqgBsBwvM/V5yLC3GgSCS1qEGuH2AgCesOfjZVs=;
- b=HrO3w0HD+8wdRa5rui9/iSKtfgFrheV5Lx2rrKC1XExA3KU2t6Mieb8MW8TPyaztQs
- 9nDeIDRAGquDPTCE/HM7eySQXGdJhPV1BzWYHHNrzF1hOIygPEWrvB+p6ne0sdYY1K09
- rBuZhB6ySM442qU0gB0jWDoopBo+MGrFcWJKTd+xaMRicLMp+xR0cvuSJtsAOU6/UiWJ
- aQaa0cD2cXnm5sqtgttXDRwa2n60QXQzJq9LWD1clLWfRxOgNSPjKGUjjvBF5pRh1Vpr
- 9IiOsp/MlxUjFSSXrKBE2VGBdG7ha1BFOgzQHiqvWRQp4flXVok3aoXIcM65YutEA8hP
- Gd1Q==
-X-Gm-Message-State: APjAAAUYifThKPmWU8KW1Nx4IOhZe/Epbqtp6P+UjFAc+GeTVf+RqH/M
- 4MAkweHhRYD0EzYAANRxRQ/qPBTZNFkNlOyj9XRINw==
-X-Google-Smtp-Source: APXvYqwLMWoxXQVxSrAqsjepyHJHrlxKQondxww0aj1IMUZLcbBmaGIZOjMLnDuUtqzxjWJr+xi7qFr48fEF7tdb+eo=
-X-Received: by 2002:a19:6a01:: with SMTP id u1mr26200028lfu.141.1559941866676; 
- Fri, 07 Jun 2019 14:11:06 -0700 (PDT)
+ id 1hZMWm-0000y5-8P
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 21:36:01 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x57LYGAY170210;
+ Fri, 7 Jun 2019 21:35:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2018-07-02;
+ bh=NXJGCU3/W4wLfQGXPOA3m/uLCu+EtFoy0mWC4Jm7UAs=;
+ b=XsBucXSo93RbwXY84AGjQGH8v16k0Q2On6Ld0xxSfgo+N/oRrcQ3eoOjeEA7CTPrpTRs
+ LvdcG+hMeZ1sU4Hn+/IYWXWgU58+vQfEEoUDGnROnv4d0VE3MMZ5CwJLa4ZrzwAhCoGo
+ 1irPK3VQEybxyl0ya37Ai6OjnYDVhFqvN+ZARBQCaxQ+W1b3/SwyVzZ0ajf1cTGSkU0T
+ 5aWwhqYufdx7HEfjevomknREyFeb0Cryjt9Q0ewADigbHAbDKpik61qoCO1hUId1yq59
+ lYJfV5Tqf6p3jvfY+FClpSR6yZxqYsI9YyV80cBJU3FkF4wDdEftp1TvpRT4kMpfVknx 2Q== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2130.oracle.com with ESMTP id 2sugsu0mdv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 07 Jun 2019 21:35:52 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x57LYi48049381;
+ Fri, 7 Jun 2019 21:35:52 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3030.oracle.com with ESMTP id 2swnhdg3n8-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 07 Jun 2019 21:35:51 +0000
+Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x57LZpCl004451;
+ Fri, 7 Jun 2019 21:35:51 GMT
+Received: from [10.11.0.40] (/10.11.0.40)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 07 Jun 2019 14:35:51 -0700
+Subject: Re: [PATCH] firmware: ti_sci: Add support for processor control
+To: Suman Anna <s-anna@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Nishanth Menon <nm@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>
+References: <20190605223334.30428-1-s-anna@ti.com>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <4302c224-9e50-6320-2585-60bfe0aa2a32@oracle.com>
+Date: Fri, 7 Jun 2019 14:35:50 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:52.0)
+ Gecko/20100101 Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <20190603010455.17060-1-masneyb@onstation.org>
-In-Reply-To: <20190603010455.17060-1-masneyb@onstation.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 7 Jun 2019 23:10:58 +0200
-Message-ID: <CACRpkdYP2C1cUN9w9uguSbXV3vkCDrm3o84qNbpTiaD9TcdMog@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: dts: qcom: msm8974-hammerhead: add touchscreen
- support
-To: Brian Masney <masneyb@onstation.org>
+In-Reply-To: <20190605223334.30428-1-s-anna@ti.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9281
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=700
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906070142
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9281
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=746 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906070143
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_141108_523636_5FF73077 
-X-CRM114-Status: GOOD (  10.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190607_143600_388616_0EA79318 
+X-CRM114-Status: GOOD (  18.10  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,6 +100,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,38 +112,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jonathan Marek <jonathan@marek.ca>, MSM <linux-arm-msm@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Rob Herring <robh+dt@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- David Brown <david.brown@linaro.org>, absahu@codeaurora.org,
- Andy Gross <agross@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- =?UTF-8?Q?Miqu=C3=A8l_Raynal?= <miquel.raynal@bootlin.com>,
- frank.rowand@sony.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lokesh Vutla <lokeshvutla@ti.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 3, 2019 at 3:05 AM Brian Masney <masneyb@onstation.org> wrote:
+On 6/5/19 3:33 PM, Suman Anna wrote:
+> Texas Instrument's System Control Interface (TI-SCI) Message Protocol
+> is used in Texas Instrument's System on Chip (SoC) such as those
+> in K3 family AM654 SoC to communicate between various compute
+> processors with a central system controller entity.
+> 
+> The system controller provides various services including the control
+> of other compute processors within the SoC. Extend the TI-SCI protocol
+> support to add various TI-SCI commands to invoke services associated
+> with power and reset control, and boot vector management of the
+> various compute processors from the Linux kernel.
+> 
+> Signed-off-by: Suman Anna <s-anna@ti.com>
+> ---
+> Hi Santosh, Nishanth, Tero,
+> 
+> Appreciate it if this patch can be picked up for the 5.3 merge window.
+> This is a dependency patch for my various remoteproc drivers on TI K3
+> SoCs. Patch is on top of v5.2-rc1.
+> 
+I will pick this up for 5.3.
 
-> From: Jonathan Marek <jonathan@marek.ca>
->
-> Add support for the Synaptics RMI4 touchscreen that is found on the
-> Nexus 5.
->
-> Signed-off-by: Jonathan Marek <jonathan@marek.ca>
-> Signed-off-by: Brian Masney <masneyb@onstation.org>
-
-Looks good to me:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-
-Yours,
-Linus Walleij
+Regards,
+Santosh
 
 _______________________________________________
 linux-arm-kernel mailing list
