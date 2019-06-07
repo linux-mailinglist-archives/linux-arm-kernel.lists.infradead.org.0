@@ -2,70 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0287239275
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 18:45:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C54E392A4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 19:00:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=REkMAWu0clgvwGtsZCkYVvrAOdOysnH0ETzxO0fzGYQ=; b=qNv3KCUMi02ttg
-	ni/Eaq5KvoAuuHd/jGSmUyQ4o8Nbo6em8kBm2/usVIs4q5pvaYsJIUR2WTRddYUjDJYKSPojp60kB
-	L415LMKrjLcTQcjRL6ALQas6X0qNiOdBva8sdqtVxlf/9giy6OSqGgqJ6KlfRA4L6TOUs3eHp8VOO
-	h2LzSAz2lK7k2yypxLzcRa+RBemPvnPBP17xoh72D8Z1i8KhmfaDY/CFt/Reybl8xgSICh7Pa7iRG
-	Po+zrmcb+d0hH3h/LLV7V1s362QlF6gz5j+13PFrZ4x6PlYEE06P+5lDv5uBE6clxgCFg9KPWEM2u
-	8pWtpgtEbFV+NlGh314g==;
+	List-Owner; bh=r+b9WMUz/liNBDF1jmIbQ0IhKg1MJP31f/17LnHskcY=; b=oMZNN5I7tdgQcY
+	eYovdvRivLnE655aEtI6r/+qOiYqCMAqFjxlqWq+6hRKIkLN706/rYr4ZB0UcvaNbsDYnmdj2MVd2
+	8YAHi1fSRdevjrAY8joUKI9TCf9piq+PN8MBdXI04uSF577UgIGYTE4UipdSkXPexdg3i2jv3D073
+	aBJebFPRM9dYAFiufaOgSLxfff50kdeNJJimWrYAncJthApvusVJ5DerYRvc2Im/4SmM/VwDSZrqB
+	PE7+kQ6p53TFDcMHX9Kba7Z8syuYzjWd4cDVrXCpGIRPF/N1U7uLSLNzqeS/lDAyaM5CCdmsZsjYh
+	yi2PwqO1WJ2b+QlCAKlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZHzX-00007r-Mx; Fri, 07 Jun 2019 16:45:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hZIDt-0004o6-2C; Fri, 07 Jun 2019 17:00:13 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZHzN-00006Q-3J
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 16:45:14 +0000
-Subject: Re: [GIT PULL] arm64: fixes for -rc4
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559925912;
- bh=xHNLQKOgqwuG8+63U3xrvazYFXLVHXrx58xIhyZnOTM=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=lAdkBBwpj4Jm5PHEjNQlN7AVHASpYyOIzVHAcZds3Dwarz8PIPKSoZqS9Xgkvu37s
- 2bRRs5iioozoqds6qlgPaPm8JsVsnFLhGqyycotVSfpLZEf40WYj1F6DV+2LOzvl7O
- sWRO2KqXw9BPYamcX7DWUl5Da8YjMftzF7PpNJ0s=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20190607151316.GB19862@fuggles.cambridge.arm.com>
-References: <20190607151316.GB19862@fuggles.cambridge.arm.com>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20190607151316.GB19862@fuggles.cambridge.arm.com>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
- tags/arm64-fixes
-X-PR-Tracked-Commit-Id: ebcc5928c5d925b1c8d968d9c89cdb0d0186db17
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: a02a532c2a6c79a898cd6c430fe3ad011d9aece3
-Message-Id: <155992591208.2725.17227157802689192114.pr-tracker-bot@kernel.org>
-Date: Fri, 07 Jun 2019 16:45:12 +0000
-To: Will Deacon <will.deacon@arm.com>
+ id 1hZIDb-0004nT-4X
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 16:59:56 +0000
+Received: by mail-pg1-x541.google.com with SMTP id 20so1475123pgr.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 07 Jun 2019 09:59:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=MNcJZMA4q9Qof1r/YfMqt/g7trBAYJtueHwu9fzJ0WI=;
+ b=L4akB9WNfbBACsOjFsABrYcUMZ0d45A2WBoImzWXvmDzcQfL5Z9zXF5ol6MTI1/Igh
+ 7pKIWrGAuHb4n0nXZdg1NdjUDchGYPC9QOZxMuh5PCgJCTKwZsxN9o/q3Irps0B2LtlG
+ Lh2FWJdktH2VCUfpDaSfHxG62xGrNmB/kuoRpbzK4gS3dLpokLfSX2eW7ExInlFDuc1m
+ ziXEQzAH5J1A1ad/7Ud2x/Wii4u1RO/16chpf8v3a1Y4CSHsixCLtbRaPbd2B6RuCK4I
+ cMleBhOaoan2iZh3a0aZwuic7Cedsvi9+vfrLbNo3XN2Wp6J1kkJxyJ1Wgqj25K+yaSF
+ iUoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=MNcJZMA4q9Qof1r/YfMqt/g7trBAYJtueHwu9fzJ0WI=;
+ b=bV5dkqszvW3u/LHCvgclKhMS4/oF327EVRZhFMXeHVXP+4qJdzyzw/daT2KsKGRzAp
+ xElyHfA9KC9hf0ewH0wU6AmFCq9jjgdbvcTIWfcVQ3wfjcextqFPP2f0obfdSAHn30aw
+ Kvv3p3tiGeEagMinaelJWFhSux848hqSQHMtdG/t0aRvLA267EpjqLQ1X49gEOowwZjX
+ IrMkMPM5/S2dg0kbHLP5vGGdBkBXxIgdaIpyKncv/F1MD/6D7DuHuK8IECH51vHgOy+4
+ B69t6izF0z+G+jkC88vp6hM9eN/eMayF5T1wzh9dXuEyMLijSfG710Olm3tAuitfbg+B
+ F2Jw==
+X-Gm-Message-State: APjAAAWyzjqtDP8t2RKkQEqGlajTnoenAk1NoyNCJaujKPybirMHtDOs
+ lEtdJoGYixH8w+vP6HdVzKuUrkNdHW8=
+X-Google-Smtp-Source: APXvYqxjjfrU5qo3ODqkgEdkborlSAFDI2qtFKnUIi8CiMXFsJ1sXPjdIpXVmVAhK7v1FC47cE9/Hw==
+X-Received: by 2002:a62:640e:: with SMTP id y14mr57808577pfb.109.1559926794332; 
+ Fri, 07 Jun 2019 09:59:54 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.googlemail.com with ESMTPSA id k6sm3828350pfi.86.2019.06.07.09.59.53
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 07 Jun 2019 09:59:53 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH 01/10] arm64: dts: meson-gxm-khadas-vim2: fix
+ gpio-keys-polled node
+In-Reply-To: <c8144470-361b-ca26-71c7-d152f976ae19@baylibre.com>
+References: <20190527132200.17377-1-narmstrong@baylibre.com>
+ <20190527132200.17377-2-narmstrong@baylibre.com>
+ <7hy32ecwlu.fsf@baylibre.com>
+ <c8144470-361b-ca26-71c7-d152f976ae19@baylibre.com>
+Date: Fri, 07 Jun 2019 09:59:53 -0700
+Message-ID: <7hblz9covq.fsf@baylibre.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_094513_156746_FA4D0A51 
-X-CRM114-Status: UNSURE (   1.43  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190607_095955_183324_CBA53DD0 
+X-CRM114-Status: GOOD (  10.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,26 +96,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, torvalds@linux-foundation.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-amlogic@lists.infradead.org,
+ Christian Hewitt <christianshewitt@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Fri, 7 Jun 2019 16:13:16 +0100:
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+> On 06/06/2019 22:00, Kevin Hilman wrote:
+>> Neil Armstrong <narmstrong@baylibre.com> writes:
+>> 
+>>> From: Christian Hewitt <christianshewitt@gmail.com>
+>>>
+>>> Fix DTC warnings:
+>>>
+>>> meson-gxm-khadas-vim2.dtb: Warning (avoid_unnecessary_addr_size):
+>>>    /gpio-keys-polled: unnecessary #address-cells/#size-cells
+>>> 	without "ranges" or child "reg" property
+>>>
+>>> Fixes: b8b74dda3908 ("ARM64: dts: meson-gxm: Add support for Khadas VIM2")
+>>> Suggested-by: Christian Hewitt <christianshewitt@gmail.com>
+>>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+>> 
+>> This patch is missing a S-o-B from the author (Christian?)
+>> 
+>> The From, Suggested-by and Signed-off-by send mixed messages.  Please
+>> clarify if if this is missing a signoff from Christian or if the author
+>> is Neil.
+>> 
+>> Thanks,
+>> 
+>> Kevin
+>> 
+>
+> The author is Christian Hewitt <christianshewitt@gmail.com>
+>
+> so s/Suggested-by/Signed-off-by/
+>
+> Do you need a resend ?
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/a02a532c2a6c79a898cd6c430fe3ad011d9aece3
+No need, I'll fix up locally.
 
-Thank you!
+Thanks for clarifying,
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
