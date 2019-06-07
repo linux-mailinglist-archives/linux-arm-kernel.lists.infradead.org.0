@@ -2,77 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 481CE395C8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 21:34:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25764395CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 21:34:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yrf6RYRoHLtyAgw5zc4XjDo3EY7MIZePxM4cZPfAm0U=; b=rLeforykcH8a1z
-	d9ZcqGUTmpZIRh7ciXiljMJJsHZlVUBXZxFrguM4S+Kgy0EDoWxO+bjMoehXEWCSTzBSONAbo+X5t
-	mI0XignyYjuBOSB+fWpw6cYFpqrAuaO/VdvYYVkHwaDN+7oDz8bm+oX8p1VYddivEAheYoul5FhDP
-	vxEITtacwOYGkNJnoa4krroMMmg4fvJOVqynUWJ0m83G9ppmvK6vRLkQO+ke7lglWqr9Jzer3kjNW
-	klD60PPLPzFq5LXAxeL9FqDd7GTBiC2GgYBxQXmY2oadjDbkonv5Ns5mA5r0BBWLPu4IvYkbm+Y5g
-	t5b5SGWyGoPPfmX+zZVQ==;
+	List-Owner; bh=x46Lqaujkc/jGKxAgGwCjpf8bAia/MbVCcKPfUoeOjw=; b=L4IhrhJfx0OdDr
+	nelIVhbPP731VQJzRKyT7pmTnWNAbdA8DnkSE60lXA0Q4zabNFhWhakvhJzXf1KkYXiT0Uf9NEIRj
+	dHHsXkmNX1HQFjbwMJepSfib7IDk/6j+cHUScUkEoqIXYrTjK4u2xVcrjb8I3EoMGKdtixVkIG7hC
+	5fbPEDCqJn/NhZ6iifVQ4Nv9tk2d+ihdD8OEl6T5teprDwGoPSDnlOb2Se2iAGNURICsFpIb6dglB
+	5bS5Dpu//8EBe8YXaYM2105E/M45wfYADf/dzQuWPQwkmaFs+CgjUnbIlZcZY97hdTSEtTYgkj9Mn
+	vN46NsIp1rEnC2/yZxMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZKcn-000518-CX; Fri, 07 Jun 2019 19:34:05 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1hZKd7-0005Fw-8G; Fri, 07 Jun 2019 19:34:25 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZKcc-00050S-PM
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 19:33:56 +0000
-Received: by mail-it1-x142.google.com with SMTP id i21so4433126ita.5
+ id 1hZKct-0005DY-QK
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 19:34:14 +0000
+Received: by mail-pl1-x644.google.com with SMTP id bh12so1197317plb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 12:33:52 -0700 (PDT)
+ Fri, 07 Jun 2019 12:34:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=T9Tj5ZjKU2Dvst13bY90aPbdIlkQERL+pEiQI7+DM/c=;
- b=mtz4idoEP9NXZfE9sJM8pP6vJNipA8lG0eo3b6vZE463N7ghaR4SPIbPO4df8si5+5
- 3fkLPdcJgpbXp9SselTVLUujvNG11FWbCNvXzrK7OnCrJ3j4/XE6sHeNe8+aazuwc+hb
- g+DFf8m8/ddOHtgs7V63N3LBFT5CmEiKAqPaIGt7DI+XWQy5X+3GH5H0EYpD/WL9ES5O
- R85konXlva+litJbCpGnuCpnddqpWjrR6UJ4zhNUnu54+AWFGly1aQ5KbHDDX2XtB28b
- wpNtHXBqoNPapFl/4KEWxDZufDgKDyyfLmIMXEfX0Btx+yzpICT/UgAbdPuXd6hZdtgz
- Dq+Q==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=wpKUd2nT5fJdpxBIuy/BOsoGuLISr+yeuc18GcpDf6g=;
+ b=tf63b50aos3gIs6Uh0x0ZPeVIy4dEEbpe9EQmwGyT5+A2Gw+N/fvymG2EdZPGIy8L9
+ 5xNyeQKO8zT6AP0IKirJTEmIaiKb0OS22rDKMOn0xOxkquKtpLyow98OJ4nggW92g6My
+ 9pdMTgF13mlwfqUP3g8TWHhyUpxL9SbblVrXJdKjTdqxqojrU5td0HmAQ0uovPfbnxVC
+ drUELbnT0qtfXIoREosTwsWm+DTIQBTK17ZyUprcwTpWecwDd1KhtfUWf8qd3HewI/gj
+ yccWS8LfVbTTNCkPA7VUiFxQPzMCcZkELxdnOr46rMOQzYY/LSG5VMTANT0WWgP6jyeo
+ 1SaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=T9Tj5ZjKU2Dvst13bY90aPbdIlkQERL+pEiQI7+DM/c=;
- b=KkqtJR158dfiFrhcbDNJHRTRv7XSIw75ON9kXlhP88LaGGha61uhXvy7FqB9Aa2z/7
- rF92tIu3lt9HaB3bP25MY2XjPgN3F8NvCEV6G4VMh1Fp0HondCeBSMWr1I5avgaXjEvX
- oHpY1FxswW+usNhJ2RgOGzF5Gtl9kh0+qjoQkE6v/hKlWVzYXR9Mn6iVlA8eE7EbVP22
- lUnKOAo4fsSuI4lePd8KYxUcx1qrCIof8uHkhAbOwjbJ0fbAXBuqz/T5Dv58XxG6PaW4
- R5THyh75jiEWPF4q5D7QT6l7wJWLclWq2qXxPfDIx18nn43hKXsGd1cmTz4fWAYm6qht
- sCRg==
-X-Gm-Message-State: APjAAAX3jTknr4Wk+DJsnKQz3oDJkbXVfGBDiHCYeMNR7p3wJWIiE5ve
- MGK04lz+2D4Es/2uiD66mcCGMIeUiViLyD2jABO4Nw==
-X-Google-Smtp-Source: APXvYqyIzt+gS3ConXIodeeRJIgcUDgjzZUqKKTsCWXlpXgPJnTVfaLQpACElYgwvkNg6VfdHTgVBjvO2IaFejVJzgU=
-X-Received: by 2002:a24:14f:: with SMTP id 76mr5248389itk.115.1559936031969;
- Fri, 07 Jun 2019 12:33:51 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=wpKUd2nT5fJdpxBIuy/BOsoGuLISr+yeuc18GcpDf6g=;
+ b=V0ISo5loxHZhiQJ89xdRSGF0RjK/g1kZvE3Osd2APE8flqGCwtkSA1W9r2MAIVMv6C
+ FhuoIbY50+BbgDSfHqRLuQhUlLT9+oSmbvGD9/Lw5b/KC0VqW6iTTWvuWEwsCzYr37IO
+ 9YX/mVzoCQDGWP1unJV7SG8MvAOCaDrZasLr2kQuC+VMaMgHtQj3xtBB7iBetK8s2bvJ
+ 3SYCr6746sn2OwddbO+uQ2gFa3rZwwg7dnTFU5KOMXUTPuBE4hkJr2MW/9EddQdsX52X
+ QesR31lnLYIZ8VwEkLftOS5cb4kXMFdURF0GPOjWFYqdf38cz4N8BeDLmV4saLL6Pl6U
+ xEtg==
+X-Gm-Message-State: APjAAAXOqihhcXCheCyoN9JMQ/WhNjW7bBvCwkj+bosjf+aWMhpIFDa0
+ eHZIechC88XDWWyCw+w5A6qtIQ==
+X-Google-Smtp-Source: APXvYqxSC7rw05vLxn/PlSEW90GOUry7OdvPp1Qde6epr5HHI6UoO46GU4ItChia53NkMezfJO+8dA==
+X-Received: by 2002:a17:902:2883:: with SMTP id
+ f3mr57841151plb.111.1559936050681; 
+ Fri, 07 Jun 2019 12:34:10 -0700 (PDT)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id o26sm2726497pgv.47.2019.06.07.12.34.09
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 07 Jun 2019 12:34:10 -0700 (PDT)
+Date: Fri, 7 Jun 2019 12:34:07 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH 00/18] ARM/ARM64: Support hierarchical CPU arrangement
+ for PSCI
+Message-ID: <20190607193407.GB24059@builder>
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <CAJZ5v0gbK3AFCVC1b9LyXeMOM8fKR1=ECXZwaeSYRSqcK0UgYA@mail.gmail.com>
+ <CAPDyKFpU3u248Gi+FnrVdY-EWXJQuu14uNV9d3Xs0W-K-EMEhg@mail.gmail.com>
+ <20190607154210.GJ15577@e107155-lin>
 MIME-Version: 1.0
-References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
- <20190524173508.29044-2-mathieu.poirier@linaro.org>
- <68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com>
- <20190607182047.GK21245@kernel.org>
-In-Reply-To: <20190607182047.GK21245@kernel.org>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 7 Jun 2019 13:33:41 -0600
-Message-ID: <CANLsYkykW=rf_c6-ci=fV05u7TP9M3rrEUSdUn-bKw1PHvfoZQ@mail.gmail.com>
-Subject: Re: [PATCH v2 01/17] perf tools: Configure contextID tracing in
- CPU-wide mode
-To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190607154210.GJ15577@e107155-lin>
+User-Agent: Mutt/1.10.0 (2018-05-17)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_123354_832739_3FBE261B 
-X-CRM114-Status: GOOD (  22.06  )
+X-CRM114-CacheID: sfid-20190607_123411_859988_7A5B3705 
+X-CRM114-Status: GOOD (  21.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -94,142 +103,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Kevin Hilman <khilman@kernel.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Jiri Olsa <jolsa@kernel.org>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ Tony Lindgren <tony@atomide.com>, Lina Iyer <ilina@codeaurora.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Niklas Cassel <niklas.cassel@linaro.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 7 Jun 2019 at 12:20, Arnaldo Carvalho de Melo
-<arnaldo.melo@gmail.com> wrote:
->
-> Em Fri, Jun 07, 2019 at 10:21:36AM +0100, Suzuki K Poulose escreveu:
-> > Hi Mathieu,
-> >
-> > On 24/05/2019 18:34, Mathieu Poirier wrote:
-> > > When operating in CPU-wide mode being notified of contextID changes is
-> > > required so that the decoding mechanic is aware of the process context
-> > > switch.
+On Fri 07 Jun 08:42 PDT 2019, Sudeep Holla wrote:
+
+> On Tue, May 14, 2019 at 10:58:04AM +0200, Ulf Hansson wrote:
+> > On Tue, 14 May 2019 at 10:08, Rafael J. Wysocki <rafael@kernel.org> wrote:
 > > >
-> > > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> > > On Mon, May 13, 2019 at 9:23 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> > > >
+> > > > This series enables support for hierarchical CPU arrangement, managed by PSCI
+> > > > for ARM/ARM64. It's based on using the generic PM domain (genpd), which
+> > > > recently was extended to manage devices belonging to CPUs.
+> > >
+> > > ACK for the patches touching cpuidle in this series (from the
+> > > framework perspective), but I'm assuming it to be taken care of by
+> > > ARM/ARM64 maintainers.
 > >
+> > Thanks for the ack! Yes, this is for PSCI/ARM maintainers.
 > >
-> > > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > BTW, apologize for sending this in the merge window, but wanted to
+> > take the opportunity for people to have a look before OSPM Pisa next
+> > week.
 > >
-> > I am sorry but, I don't remember reviewing this patch in the previous
-> > postings. But here we go.
->
-> Can I keep it as is? I addressed one of your concerns below, please
-> check.
->
-> - Arnaldo
->
-> > > +++ b/tools/perf/util/cs-etm.h
-> > > @@ -103,6 +103,18 @@ struct intlist *traceid_list;
-> > >   #define KiB(x) ((x) * 1024)
-> > >   #define MiB(x) ((x) * 1024 * 1024)
-> > > +/*
-> > > + * Create a contiguous bitmask starting at bit position @l and ending at
-> > > + * position @h. For example
-> > > + * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
-> > > + *
-> > > + * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
-> > > + */
-> > > +#define GENMASK(h, l) \
-> > > +   (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
-> > > +
-> >
-> > minor nit: Could this be placed in a more generic header file for the other
-> > parts of the perf tool to consume ?
-> >
->
-> Yeah, since we have:
->
-> Good catch, we have it already:
->
-> [acme@quaco perf]$ tail tools/include/linux/bits.h
->  * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
->  */
-> #define GENMASK(h, l) \
->         (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
->
-> #define GENMASK_ULL(h, l) \
->         (((~0ULL) - (1ULL << (l)) + 1) & \
->          (~0ULL >> (BITS_PER_LONG_LONG - 1 - (h))))
->
-> #endif  /* __LINUX_BITS_H */
-> [acme@quaco perf]$
-> [acme@quaco perf]$
->
-> So I'm adding this to the pile with a Suggested-by: Suzuki, ok?
->
-> commit 3217a621248824fbff8563d8447fdafe69c5316d
-> Author: Arnaldo Carvalho de Melo <acme@redhat.com>
-> Date:   Fri Jun 7 15:14:27 2019 -0300
->
->     perf cs-etm: Remove duplicate GENMASK() define, use linux/bits.h instead
->
->     Suzuki noticed that this should be more useful in a generic header, and
->     after looking I noticed we have it already in our copy of
->     include/linux/bits.h in tools/include, so just use it, test built on
->     x86-64 and ubuntu 19.04 with:
->
->       perfbuilder@46646c9e848e:/$ aarch64-linux-gnu-gcc --version |& head -1
->       aarch64-linux-gnu-gcc (Ubuntu/Linaro 8.3.0-6ubuntu1) 8.3.0
->       perfbuilder@46646c9e848e:/$
->
->     Suggested-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->     Link: https://lkml.kernel.org/r/68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com
->     Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
->     Cc: Jiri Olsa <jolsa@redhat.com>
->     Cc: Leo Yan <leo.yan@linaro.org>
->     Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
->     Cc: Namhyung Kim <namhyung@kernel.org>
->     Cc: Peter Zijlstra <peterz@infradead.org>
->     Cc: coresight@lists.linaro.org
->     Cc: linux-arm-kernel@lists.infradead.org,
->     Link: https://lkml.kernel.org/n/tip-69pd3mqvxdlh2shddsc7yhyv@git.kernel.org
->     Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
->
-> diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
-> index 33b57e748c3d..bc848fd095f4 100644
-> --- a/tools/perf/util/cs-etm.h
-> +++ b/tools/perf/util/cs-etm.h
-> @@ -9,6 +9,7 @@
->
->  #include "util/event.h"
->  #include "util/session.h"
-> +#include <linux/bits.h>
->
->  /* Versionning header in case things need tro change in the future.  That way
->   * decoding of old snapshot is still possible.
-> @@ -161,16 +162,6 @@ struct cs_etm_packet_queue {
->
->  #define CS_ETM_INVAL_ADDR 0xdeadbeefdeadbeefUL
->
-> -/*
-> - * Create a contiguous bitmask starting at bit position @l and ending at
-> - * position @h. For example
-> - * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
-> - *
-> - * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
-> - */
-> -#define GENMASK(h, l) \
-> -       (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
-> -
+> 
+> I will start looking at this series. But I would request PSCI/other
+> maintainers to wait until we see some comparison data before we merge.
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+What comparison are you asking for here? Do you want to see the
+improvement this series gives or are you hoping to compare it with some
+other mechanism?
 
->  #define BMVAL(val, lsb, msb)   ((val & GENMASK(msb, lsb)) >> lsb)
->
->  #define CS_ETM_HEADER_SIZE (CS_HEADER_VERSION_0_MAX * sizeof(u64))
+> If they are fine to merge w/o that, I am fine. As of now we have just
+> 1-2 platforms to test(that too not so simple to get started) and the
+> long term support for them are questionable.
+
+Why is the support for these platforms questionable? People are actively
+working on these platforms and the feature set constantly improving.
+
+> Also with SDM845 supporting PC, we have excellent opportunity to
+> compare and conclude the results found.
+
+That's correct, ATF exists for SDM845. But with the standard choice of
+firmware you will get OSI and I don't know of a board out there where
+you can switch between them and do a apple to apple comparison.
+
+Devices such as RB3 (96boards SDM845), Pixel3 and the Windows laptops
+are all OSI only.
+
+
+So landing this support is not a question of PC or OSI being the better
+choice, it's a question of do we want to be able to enter these lower
+power states - with the upstream kernel - on any past, present or future
+Qualcomm devices.
+
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
