@@ -2,60 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6377338697
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 10:56:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6D20386B1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 11:02:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5GjbdJrjz/vCJVv5IdqYbhK2XSbn6jPmVw3+zyCPN+I=; b=rZQxd/+QFS5XAe
-	vLcOTS5EzqsB0p8DVrpJb3jHVJtUFm5YtrSZ6+5ToBQOrShePKz+9w8ZIOw5CrCoSlJlfC8YsjakU
-	H5krOwG+z6reR4K3RiTOVepUvlFGy4vrqBTh52fzHxJJulCrx0P9fB7x+c79FiA+Oi3Tvi8kSOMcR
-	9YShipIWBiWovpM56ApuBDs4Wum6DQrtBe0bn+FufVD9oU/vl5qXX5dqN/gwTUSZ88dWk9WIIpqch
-	7r1Hn0/+9eM43jNUuph+vtjsfnVTGhkxl+1Sd/EllXRqQ357JTRKIh8fc4C2P26f8NsCBIaaX/T7J
-	tig24MH0bQj4jrmsX9kQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=f4jyPI5M/pTiPq8f9YttDzINQkJaxoniKQh1HYfNz0A=; b=Q4Vc/UcVwOwNhi
+	l+n5ZMxP1P28Ku/XjcjrAAOErtAxgDLTN+B8ha2Rfw9sNwT1EpGr43afqbNiYR+3Ftx07reQel3p7
+	92kTQULHmWZeXTZj4IKRW3zpF86X/6OBSdmImOf3MUm6eMRTi88xztxp6CD4ItGKMycy6ySfO9Sf5
+	BIGpTfwZqTZiljwBasTJEMf7VUWSGvtW31pyuL8/N1EP+Vc0w+ZcS5dso4D8h47wvXUmB6zEnmwsK
+	4S8XYO1iIUb8VcCLGCNiYjcgh7ODxjsUCMWxieNQ/40Kl8f29DiRcM0v+MG5qG/sLLWtopnULdHId
+	L2LACF72kot04S+81swQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZAfr-0002vU-1W; Fri, 07 Jun 2019 08:56:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZAfg-0002v8-5h
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 08:56:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 526DD337;
- Fri,  7 Jun 2019 01:56:23 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 186583F246;
- Fri,  7 Jun 2019 01:56:20 -0700 (PDT)
-Subject: Re: [PATCH 3/8] KVM: arm/arm64: vgic-its: Cache successful MSI->LPI
- translation
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190606165455.162478-1-marc.zyngier@arm.com>
- <20190606165455.162478-4-marc.zyngier@arm.com>
- <d9849310-7ff9-2385-d0e2-ac1de2878517@arm.com>
- <1c81ab00-12d1-9921-e1ce-2e2233516bab@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <2baf731f-922c-c3b8-abe5-593047a8ba00@arm.com>
-Date: Fri, 7 Jun 2019 09:56:14 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+	id 1hZAlU-0004hJ-3V; Fri, 07 Jun 2019 09:02:24 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZAlH-0004gt-Py
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 09:02:13 +0000
+Received: by mail-wr1-x442.google.com with SMTP id x4so1333770wrt.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 07 Jun 2019 02:02:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D/xgR5j9++o/IJFaras/pmlOomePQdSslom82YUYeMA=;
+ b=LGNaJv5PZkTpfOgsh2GlidgQ+SwvbmP2ki//SLuYiaD8SMqxB+yTnXeFR0P+/Z+err
+ Aj3Ie4TJCW/CDIc/G9b6lEMG4S1yEO9M7y9OxEPT+n+DAAeC3PoZm6nMJk/WSbphkUGE
+ pe88nwmO5d+ZD80k1sbbEJy9ULn/qUQOz6CEo6lpciXWWiN2yzczXUzAon3btnYxhtsm
+ YIJPeGDylXB7SQyg+TZwvLaZvCTLkf/KNFy35TUISW5oIP6TnCrOoU3pNvmOQC09/zRX
+ I2dc8ovK1QBCSbbClg3+bgt4iDAprAXF54kC8uYvJs49pabKoVszun2PCBxFx+/iyLaW
+ H/4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D/xgR5j9++o/IJFaras/pmlOomePQdSslom82YUYeMA=;
+ b=lG9+hKz4qJAUu/9H89iXQ6v/Ox5GysTisBQHjgf5ZcSDlGAXnON5dEgzC/eLBPvGhT
+ REHoDP4gWxeR1Qe3q8nikyWaHajrrBk5YXGrSi/yg4HA3voGvW6MGUN4jfAmjd3xKwx7
+ zPZ2A0jJABzOXQLt6VR6sht5vCrvazw7FbXYkVCRSulzUD13ErCgEr8FOfy9f8D5QL3/
+ wC021YtRXXEfWOinYpZg6KZFjh5soQnOYNfi6fvCQEbuVO4W5J2DcryeSwdUKqr7w57d
+ DsVUQNPsVeV5pT3h/PywnczZ5q2Na4/6wZkqc5ELNW9/xRTo8Hz/FEQqi0ETnNSCMXsL
+ qdqA==
+X-Gm-Message-State: APjAAAWR/NZ/DKJj++eQt2kaNaA1cEj+yENZq/Dwp6TFGEky2gR3397R
+ B4G/QvPkExblhX4/9bWCgbjhqQ==
+X-Google-Smtp-Source: APXvYqxWxNSKoYoMGfHNmDh2K2l4SWVxASc8qfOvlvmrxrXJSe6LTdHa1sZFO8sV6S7XdvJQD713NQ==
+X-Received: by 2002:adf:83c5:: with SMTP id 63mr20099906wre.33.1559898129860; 
+ Fri, 07 Jun 2019 02:02:09 -0700 (PDT)
+Received: from localhost.localdomain
+ (amontpellier-652-1-281-69.w109-210.abo.wanadoo.fr. [109.210.96.69])
+ by smtp.gmail.com with ESMTPSA id a125sm1487444wmf.42.2019.06.07.02.02.08
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 07 Jun 2019 02:02:09 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Sekhar Nori <nsekhar@ti.com>, Kevin Hilman <khilman@kernel.org>,
+ David Lechner <david@lechnology.com>,
+ Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH] ARM: davinci: da850-evm: call regulator_has_full_constraints()
+Date: Fri,  7 Jun 2019 11:02:01 +0200
+Message-Id: <20190607090201.5995-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <1c81ab00-12d1-9921-e1ce-2e2233516bab@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_015624_263066_14B790DD 
-X-CRM114-Status: GOOD (  16.92  )
+X-CRM114-CacheID: sfid-20190607_020211_984403_7DD2902D 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,82 +95,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Christoffer Dall <christoffer.dall@arm.com>,
- Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
+The BB expander at 0x21 i2c bus 1 fails to probe on da850-evm because
+the board doesn't set has_full_constraints to true in the regulator
+API.
 
-On 07/06/2019 09:51, Marc Zyngier wrote:
-> On 07/06/2019 09:35, Julien Thierry wrote:
->> Hi Marc,
->>
->> On 06/06/2019 17:54, Marc Zyngier wrote:
->>> On a successful translation, preserve the parameters in the LPI
->>> translation cache. Each translation is reusing the last slot
->>> in the list, naturally evincting the least recently used entry.
->>>
->>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->>> ---
->>>  virt/kvm/arm/vgic/vgic-its.c | 41 ++++++++++++++++++++++++++++++++++++
->>>  1 file changed, 41 insertions(+)
->>>
->>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
->>> index 5758504fd934..bc370b6c5afa 100644
->>> --- a/virt/kvm/arm/vgic/vgic-its.c
->>> +++ b/virt/kvm/arm/vgic/vgic-its.c
->>> @@ -538,6 +538,45 @@ static unsigned long vgic_mmio_read_its_idregs(struct kvm *kvm,
->>>  	return 0;
->>>  }
->>>  
->>> +static void vgic_its_cache_translation(struct kvm *kvm, struct vgic_its *its,
->>> +				       u32 devid, u32 eventid,
->>> +				       struct vgic_irq *irq)
->>> +{
->>> +	struct vgic_dist *dist = &kvm->arch.vgic;
->>> +	struct vgic_translation_cache_entry *cte;
->>> +	unsigned long flags;
->>> +
->>> +	/* Do not cache a directly injected interrupt */
->>> +	if (irq->hw)
->>> +		return;
->>> +
->>> +	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
->>> +
->>> +	/* Always reuse the last entry (LRU policy) */
->>> +	cte = list_last_entry(&dist->lpi_translation_cache,
->>> +			      typeof(*cte), entry);
->>> +
->>> +	/*
->>> +	 * Caching the translation implies having an extra reference
->>> +	 * to the interrupt, so drop the potential reference on what
->>> +	 * was in the cache, and increment it on the new interrupt.
->>> +	 */
->>> +	if (cte->irq)
->>> +		__vgic_put_lpi_locked(kvm, cte->irq);
->>> +
->>> +	vgic_get_irq_kref(irq);
->>
->> If cte->irq == irq, can we avoid the ref putting and getting and just
->> move the list entry (and update cte)?
-> But in that case, we should have hit in the cache the first place, no?
-> Or is there a particular race I'm not thinking of just yet?
-> 
+Call regulator_has_full_constraints() at the end of board registration
+just like we do in da850-lcdk and da830-evm.
 
-Yes, I had not made it far enough in the series to see the cache hits
-and assumed this function would also be used to update the LRU policy.
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+---
+ arch/arm/mach-davinci/board-da850-evm.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-You can dismiss this comment, sorry for the noise.
-
-Cheers,
-
+diff --git a/arch/arm/mach-davinci/board-da850-evm.c b/arch/arm/mach-davinci/board-da850-evm.c
+index 4ee65a8a3b80..31ae3be5741d 100644
+--- a/arch/arm/mach-davinci/board-da850-evm.c
++++ b/arch/arm/mach-davinci/board-da850-evm.c
+@@ -1480,6 +1480,8 @@ static __init void da850_evm_init(void)
+ 	if (ret)
+ 		pr_warn("%s: dsp/rproc registration failed: %d\n",
+ 			__func__, ret);
++
++	regulator_has_full_constraints();
+ }
+ 
+ #ifdef CONFIG_SERIAL_8250_CONSOLE
 -- 
-Julien Thierry
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
