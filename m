@@ -2,58 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 983FC3841C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 08:07:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44CE338309
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 05:09:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s2LRRfqIKVzTUs4kgsektjfs/TZ3/lCOXtaguPmpfKE=; b=t3a3GlTx9KXdLN
-	Q1PU8yHxRYM0h0IwbvrizcZMMN9URckmTO095ex5YJu9ewpjYB9EuN/ftV7LVd1qzSUw06Wg4UTr9
-	7HP6H+9RNMnatzr5w1SNA0NbOD0Q9l7tcaWs193RCs4RyY8RH1A78A3NnSi1ymplUNB0QwByFbzdv
-	poXG6Z6Pb453lvxKT3hhXV1FFlrNQqnIt/VWKdiT72HXvjGi+fS+7Ut997GI4DWwVELgjLkjSAsTD
-	uprAMr0pDgC9agDiBa47NEeARdEolb2ud9SHXtlyoZRlJlPksGMRM8BGISVnS5kWsna4LeKAz7PSf
-	1oINHOjb0T9kOVgJ35GA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xdYApf+cgQ8rWgMJijrmbNTU3i2DitbzE/6h4sOfAtk=; b=FDB/vmB8o9Q658
+	I8GCRpfZPZNKSQEBKrvYc+nuh8mdPhHzWnWDIsMgpBv+QDdHIhPXEQhf9Y9y09CZuTLEJ8Eg+lHhB
+	CTDI3e3xGQuEzSUmvVhB8r55qV/iNmzcxTYTnT9rS0fFGQiF1xXR94CgLYcTo45/ztSVwPXniVqIo
+	sGL8ce+jCjezaJjhm1GTcl6LhDard7oG8xMjgktHXi5wLtSaExx7IFMqC0x+gDaybd3CAImOUgLN9
+	a740Nv75kTKydZMYFME/UyMWjzjyrfJMecFchvvKbAku1EYIbtpvYa+OuOZuKYy552l5zTpRq1IPU
+	ILFW/Pvm/JuvElxK8WZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZ81q-00032X-Vm; Fri, 07 Jun 2019 06:07:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZ81Y-00031I-6g
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 06:06:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E8DA941B5;
- Thu,  6 Jun 2019 23:06:44 -0700 (PDT)
-Received: from [10.162.42.131] (p8cg001049571a15.blr.arm.com [10.162.42.131])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 520C14029C; Thu,  6 Jun 2019 19:28:26 -0700 (PDT)
-Subject: Re: [PATCH V5 1/3] mm/hotplug: Reorder arch_remove_memory() call in
- __remove_memory()
-To: Mark Rutland <mark.rutland@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>
-References: <1559121387-674-1-git-send-email-anshuman.khandual@arm.com>
- <1559121387-674-2-git-send-email-anshuman.khandual@arm.com>
- <20190530103709.GB56046@lakrids.cambridge.arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <7d0538bb-aeef-f5f5-3371-db7b58dcb083@arm.com>
-Date: Fri, 7 Jun 2019 07:58:42 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1hZ5Fm-0001K5-BR; Fri, 07 Jun 2019 03:09:18 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZ5FZ-0001J7-Gt
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 03:09:06 +0000
+Received: by mail-pl1-x644.google.com with SMTP id e5so230268pls.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Jun 2019 20:09:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=l+eyft39Sxn5qe5vMNB20kZPpijDjrsF0Bx6tS0M+aU=;
+ b=jO3oZfMykEb2BKY03jwz+kXsoHKQu8zpBv3e9ZNS7BXIyYR/sEGVEFW9rSU68Zy1ot
+ IX0rtILNEioETVtdCXdqCOjaXhQ6/V04I0kMZnyT9uAFkUnJlsbn/FwJrqnKB2Os2ksT
+ R53jyDqUcEUCKxZhGJVubTxckdzTThcfvDdIz0S8HBVqukvgRLaV1siEQry2y5iZQAbl
+ vKBALUpv+YBPbjHlLhxwTRYoMGVBCwfChg8Ho7hryobzfamryOk1Du0IIkzBOZY3dsTX
+ JnQdwsgJ42i3qYhLFbv5re2YKfUGqR+mUm+ao0AZQrauGRw39/y/oWs7VXh57ppBrbIX
+ Wb7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=l+eyft39Sxn5qe5vMNB20kZPpijDjrsF0Bx6tS0M+aU=;
+ b=hh7iEI+m3HMVlMj1aQGs6hf4SP81WsZ+N3RAmsDdMuDKkGUBIur7+wy4JZFWihVVNb
+ eVVtLoQ31TsMoOdiBA1+abiBbAzUjOc+JIDL9QI2nwpZYYjG/VXq+A1rqlFiEH0Y2qGd
+ ng/RjGr/NoUVPNGIKIklhx8pm4TIUYQsOmhBa9XB8JSeVqHlal5CmkIk72zEzAAw46vz
+ z+cmt0KAwrTSm2wvPhfdM2fHFO7XXlB4br/87dNjYoT7/ZwrRAUR40xTvNnwkYFnAjEK
+ 6pk3/C9NMh0tHUNfyyBh+tpieb0W+NaQOOiS+CKNECkT7VMWIdhdADjEylUWo7UMvMwM
+ ijew==
+X-Gm-Message-State: APjAAAX50/X30JTVognnj0S1c1ANSrBJrSj5Oc7IAykSzXTO60gPW0CS
+ at64I8Wp4gx0lwLE7QbViWz00Q==
+X-Google-Smtp-Source: APXvYqxSqWXpBXwjcMAABVRmHPcPaj26pGvwVZ6X1iptlArZMPbZRpUwdAHAy4afbL5j8QWqG+Rk4Q==
+X-Received: by 2002:a17:902:15c5:: with SMTP id
+ a5mr54260265plh.39.1559876944294; 
+ Thu, 06 Jun 2019 20:09:04 -0700 (PDT)
+Received: from localhost ([122.172.66.84])
+ by smtp.gmail.com with ESMTPSA id e184sm537134pfa.169.2019.06.06.20.09.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 06 Jun 2019 20:09:03 -0700 (PDT)
+Date: Fri, 7 Jun 2019 08:39:01 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v2 4/7] cpufreq: add driver for Raspbery Pi
+Message-ID: <20190607030901.qdnjj7udw7ky3sfx@vireshk-i7>
+References: <20190606142255.29454-1-nsaenzjulienne@suse.de>
+ <20190606142255.29454-5-nsaenzjulienne@suse.de>
+ <20190606170949.4A46720652@mail.kernel.org>
+ <eb72a26b55cf17c29df6a7fd3c5def08182e00af.camel@suse.de>
+ <20190606173609.2C3952083D@mail.kernel.org>
+ <153579ddd7e6bd1e5c860a7a01115e47c78a1442.camel@suse.de>
+ <20190606182335.1D15F20872@mail.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20190530103709.GB56046@lakrids.cambridge.arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190606182335.1D15F20872@mail.kernel.org>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_230648_342042_ED37DF12 
-X-CRM114-Status: GOOD (  14.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190606_200905_564858_83AD8F77 
+X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,115 +105,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mhocko@suse.com, mgorman@techsingularity.net, david@redhat.com,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, logang@deltatee.com, arunks@codeaurora.org, cai@lca.pw,
- ard.biesheuvel@arm.com, cpandya@codeaurora.org, james.morse@arm.com,
- akpm@linux-foundation.org, ira.weiny@intel.com, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de
+Cc: stefan.wahren@i2se.com, f.fainelli@gmail.com, ptesarik@suse.com,
+ mturquette@baylibre.com, linux-pm@vger.kernel.org,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ mbrugger@suse.de, eric@anholt.net, bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, ssuloev@orpaltech.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 06-06-19, 11:23, Stephen Boyd wrote:
+> Yes, thanks. I see that largely follows the commit description so it
+> looks OK to me.
 
+Do you want to provide your Reviewed/Acked-by tag before I apply it ?
 
-On 05/30/2019 04:07 PM, Mark Rutland wrote:
-> On Wed, May 29, 2019 at 02:46:25PM +0530, Anshuman Khandual wrote:
->> Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
->> entries between memory block and node. It first checks pfn validity with
->> pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
->> (arm64 has this enabled) pfn_valid_within() calls pfn_valid().
->>
->> pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
->> which scans all mapped memblock regions with memblock_is_map_memory(). This
->> creates a problem in memory hot remove path which has already removed given
->> memory range from memory block with memblock_[remove|free] before arriving
->> at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
->> skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
->> sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
->> of existing sysfs entries.
->>
->> [   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
->> [   62.052517] ------------[ cut here ]------------
->> [   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
->> [   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
->> [   62.054589] Modules linked in:
->> [   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
->> [   62.056274] Hardware name: linux,dummy-virt (DT)
->> [   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
->> [   62.058083] pc : add_memory_resource+0x1cc/0x1d8
->> [   62.058961] lr : add_memory_resource+0x10c/0x1d8
->> [   62.059842] sp : ffff0000168b3ce0
->> [   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
->> [   62.061501] x27: 0000000000000000 x26: 0000000000000000
->> [   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
->> [   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
->> [   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
->> [   62.065558] x19: 0000000000680000 x18: 0000000000000024
->> [   62.066566] x17: 0000000000000000 x16: 0000000000000000
->> [   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
->> [   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
->> [   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
->> [   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
->> [   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
->> [   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
->> [   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
->> [   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
->> [   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
->> [   62.076930] Call trace:
->> [   62.077411]  add_memory_resource+0x1cc/0x1d8
->> [   62.078227]  __add_memory+0x70/0xa8
->> [   62.078901]  probe_store+0xa4/0xc8
->> [   62.079561]  dev_attr_store+0x18/0x28
->> [   62.080270]  sysfs_kf_write+0x40/0x58
->> [   62.080992]  kernfs_fop_write+0xcc/0x1d8
->> [   62.081744]  __vfs_write+0x18/0x40
->> [   62.082400]  vfs_write+0xa4/0x1b0
->> [   62.083037]  ksys_write+0x5c/0xc0
->> [   62.083681]  __arm64_sys_write+0x18/0x20
->> [   62.084432]  el0_svc_handler+0x88/0x100
->> [   62.085177]  el0_svc+0x8/0xc
->>
->> Re-ordering arch_remove_memory() with memblock_[free|remove] solves the
->> problem on arm64 as pfn_valid() behaves correctly and returns positive
->> as memblock for the address range still exists. arch_remove_memory()
->> removes applicable memory sections from zone with __remove_pages() and
->> tears down kernel linear mapping. Removing memblock regions afterwards
->> is safe because there is no other memblock (bootmem) allocator user that
->> late. So nobody is going to allocate from the removed range just to blow
->> up later. Also nobody should be using the bootmem allocated range else
->> we wouldn't allow to remove it. So reordering is indeed safe.
->>
->> Acked-by: Michal Hocko <mhocko@suse.com>
->> Reviewed-by: David Hildenbrand <david@redhat.com>
->> Reviewed-by: Oscar Salvador <osalvador@suse.de>
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> 
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
-
-Hello Andrew,
-
-Will it be possible for this particular patch of the series to be merged alone.
-I am still reworking arm64 hot-remove parts as per the suggestions from Mark.
-Just wondering if this patch which has been reviewed and acked for a while now
-can be out of our way.
-
-Also because this has some conflict with David's series which can be sorted out
-earlier before arm64 hot-remove V6 series comes in.
-
-From my previous response on this series last week, the following can resolve
-the conflict with David's [v3, 09/11] patch.
-
-C) Rebase (https://patchwork.kernel.org/patch/10962589/) [v3, 09/11]
-
-	- hot-remove series moves arch_remove_memory() before memblock_[free|remove]()
-	- So remove_memory_block_devices() should be moved before arch_remove_memory()
-	  in it's new position   
-
-It will be great if this patch can be merged alone.
-
-- Anshuman
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
