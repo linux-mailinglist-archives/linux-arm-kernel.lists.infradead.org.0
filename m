@@ -2,120 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB71238A35
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 14:26:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9ED038A41
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 14:28:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Date:Message-ID:To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B/XVTyy/rFg/VM5vATObjJYKhn6j/7zAUO/3REzGYjU=; b=bPz4K8UjWIXhN3
-	rSpsbqulnU3GeIGQnxVzakUMtj8qXPdM0mWfqvCc4f1GgjmHBNHbYbxW1bLvmy1cNFNTEgYZo8Py6
-	fDWAAuaxe/u064iDaq1tggvcqGZ3X48fZrXgX6xQy/WLzCc+rVVEs17DU5DmoBc+eYa7MgcKb5hPX
-	7kvfXXNzUtvL+MrKT2IEUg8PliAtoPlviTyCgJSq281gvNQfrzgELEqPZKTPI11qk3GNTDtX7RwIS
-	1fqDuY4w7m7vi4zsPs0oZFfCSaA+OBWiHSdqal18x7yXNEb28N9tKPXhcdL5hQc6Co+DjF9zaW7Uh
-	+V/miJ0ODdiH876EQiBg==;
+	List-Owner; bh=xUMU/AX2B2F44EIDMCfTlhTdn3oqXFG8xCz6WycD2/c=; b=YrL0B51L76++kJ
+	dqSc3bstDeJBsDOS7daPhmTsOsuRykSx4D+zQkB7+TJMKYa4V0xrxW3mheRgozIkE+O332Gx5o8M1
+	LFBXT+Q1Bdp7oJLdUTeZKbFVvJjcEPndQG6Ml6KpEOzifn/rZn4Rbq0CyFfYbTkTOHyJN075oFKI7
+	FSStvoAL1lyaLoF66UaxsD0cghnJsfv8kVCtQSX5YDgTQTRmmjoPwBz7U6wIdtzqnmqkGU8fICYLp
+	MEtbTovufkp/yA8WTrZzW0hTjpYDQH+PtNjXf2FQANWNVvi1TiPhMlIBlLXlV6MhYecyGECAagpEf
+	LRqxxEfwRlGTMPzOh30g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZDwj-0004a0-GW; Fri, 07 Jun 2019 12:26:13 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1hZDyo-0004yl-Oe; Fri, 07 Jun 2019 12:28:22 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZDwY-0004ZR-0E
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 12:26:03 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190607122559euoutp0172a92e0d4e1c37458626f52cdc124067~l6jUIu-A23070430704euoutp01N
+ id 1hZDyf-0004xy-EW
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 12:28:14 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190607122810euoutp028c0730084c61ef58ff513e710dca713a~l6lONJ0YV3199031990euoutp02o
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  7 Jun 2019 12:25:59 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190607122559euoutp0172a92e0d4e1c37458626f52cdc124067~l6jUIu-A23070430704euoutp01N
+ Fri,  7 Jun 2019 12:28:10 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190607122810euoutp028c0730084c61ef58ff513e710dca713a~l6lONJ0YV3199031990euoutp02o
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1559910359;
- bh=v55UW7qRKcueFOO4F7D06p3S+rnoOobSIhpjaAMDbnw=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=ajetDQ4u/o85Fuo7OgszrawNg6lMFIq6qjY9097sQx3y1rP6qGHGuKp3u5APbugaZ
- q45ujPeadoAkOgKxqXT00D60EkasrnnrxzvX3EVKm4D+W4+9xCPtWxhLWBWFBDH6AR
- ACCKsuPkrVLRWx67YskG6e7Q43L2ZfjOufEtdHBA=
+ s=mail20170921; t=1559910490;
+ bh=9ASUxj5X1jrQpmL6ymTtSaqw6S2iiehLeIZIb8+AUG0=;
+ h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
+ b=stzuUfiCzBPMrY/dOydbh/X7bUDcyYRE2aGiHbSXhWzJLgY75hG1onK2RiplkoE8q
+ PbFjt4pLuJdH1QRbs3jGtb4UVDAt0NzLZWhO07aCcorai2AAa1KiyC4B/c5BERT+DW
+ SuSb4Xe0Vo4IKBKFOrXKGAolkKrsoNrM+Ujg3NYM=
 Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190607122559eucas1p1d5c895dc98fbc36b3a6532d394d5158c~l6jTyfblQ0424004240eucas1p1h;
- Fri,  7 Jun 2019 12:25:59 +0000 (GMT)
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190607122810eucas1p23d355b67172644319b33da983470fa7b~l6lN44hFl1570215702eucas1p2F;
+ Fri,  7 Jun 2019 12:28:10 +0000 (GMT)
 Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 74.D4.04298.6D75AFC5; Fri,  7
- Jun 2019 13:25:58 +0100 (BST)
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 79.15.04298.9585AFC5; Fri,  7
+ Jun 2019 13:28:09 +0100 (BST)
 Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
  eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190607122558eucas1p147ed7c29bc60ff99073f4ba67375ad3e~l6jSy4Dd-0422904229eucas1p1c;
- Fri,  7 Jun 2019 12:25:58 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ 20190607122809eucas1p1d770153cc51e01ee04c531d35d22e32b~l6lNBRerP2586425864eucas1p1B;
+ Fri,  7 Jun 2019 12:28:09 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
  eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190607122557eusmtrp14c6b9319e71cfd1a95f35383f12c4bee~l6jSjXncA3225232252eusmtrp1V;
- Fri,  7 Jun 2019 12:25:57 +0000 (GMT)
-X-AuditID: cbfec7f2-f13ff700000010ca-f2-5cfa57d6fced
+ 20190607122808eusmtrp1b6c64dcb6fa45ee2bbdec3679166624a~l6lMr1xjQ0101101011eusmtrp1W;
+ Fri,  7 Jun 2019 12:28:08 +0000 (GMT)
+X-AuditID: cbfec7f2-f2dff700000010ca-5f-5cfa5859e5f6
 Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 2F.D7.04146.5D75AFC5; Fri,  7
- Jun 2019 13:25:57 +0100 (BST)
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 4D.52.04140.8585AFC5; Fri,  7
+ Jun 2019 13:28:08 +0100 (BST)
 Received: from [106.120.51.71] (unknown [106.120.51.71]) by
  eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190607122557eusmtip1f514c8a5b30bdfd4282244140bb9c9ff~l6jSNtPUm2114021140eusmtip1R;
- Fri,  7 Jun 2019 12:25:57 +0000 (GMT)
-Subject: Re: [PATCH v3] video: fbdev: atmel_lcdfb: add COMPILE_TEST support
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+ 20190607122808eusmtip196c285aad43a27f8e1d7abff8c48477f~l6lMNXgVS2223722237eusmtip1U;
+ Fri,  7 Jun 2019 12:28:08 +0000 (GMT)
+Subject: Re: [PATCH v2] video: fbdev: imxfb: add COMPILE_TEST support
 From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Message-ID: <7f6b5d26-de84-c38a-7510-fee1f7e7eea3@samsung.com>
-Date: Fri, 7 Jun 2019 14:25:59 +0200
+To: linux-fbdev@vger.kernel.org, dri-devel@lists.freedesktop.org
+Message-ID: <73094ead-2fbc-ba3e-3760-01918673ba30@samsung.com>
+Date: Fri, 7 Jun 2019 14:28:10 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190601210651.GB3558@piout.net>
+In-Reply-To: <33fc4837-599d-0d5c-c530-58b283c4c095@samsung.com>
 Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrNKsWRmVeSWpSXmKPExsWy7djPc7rXwn/FGHycZGDR/m4Zu8WVr+/Z
- LDY9vsZqcaLvA6vF5V1z2CxerL3OarF980JmB3aPeWuqPe53H2fy2Lyk3uPOj6WMHp83yQWw
- RnHZpKTmZJalFunbJXBlfH6wiK3gM3vFyg3PmRsYd7N1MXJySAiYSKxYeJGxi5GLQ0hgBaPE
- rNtXmCCcL4wSd199ZoZwPjNKnDs6iRmm5fvBF2wQieWMEqdalkC1vGWU2PLuBCtIlbCAt8Sy
- LxfBbBEBU4nWxl1gHcwCbxgl3uxaADaKTcBKYmL7KkYQm1fATqL/6l4WEJtFQEXi6LXP7CC2
- qECExP1jG1ghagQlTs58AlbDKaAncfx6J9gcZgFxiVtP5jNB2PIS29/OAbtbQmAbu8TbY2tZ
- IO52keg9txPqbWGJV8e3sEPYMhKnJ/ewQDSsY5T42/ECqns7o8Tyyf+gOqwlDh8H+YcDaIWm
- xPpd+hBhR4kfXR8ZQcISAnwSN94KQhzBJzFp23RmiDCvREebEES1msSGZRvYYNZ27VzJPIFR
- aRaS12YheWcWkndmIexdwMiyilE8tbQ4Nz212DAvtVyvODG3uDQvXS85P3cTIzAJnf53/NMO
- xq+Xkg4xCnAwKvHwerD/jBFiTSwrrsw9xCjBwawkwlt24UeMEG9KYmVValF+fFFpTmrxIUZp
- DhYlcd5qhgfRQgLpiSWp2ampBalFMFkmDk6pBsZI6cXfCprM0iWEdMWDfsc6f7KomPSJU+iD
- Qv4l610zVqlZtbCvTHiRVjo/usJOmkvYeOGz7XHrfh6omdAraxcWu7a/Z7WhfMH9rt+2ShdZ
- dRcy/bgyu61gthrbtO+TZt61L1z0aa73PqdLy7Y92H268d3EVdlcLx7bF33dnf7r4e4uk1ec
- T88osRRnJBpqMRcVJwIAoD56jT4DAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrDIsWRmVeSWpSXmKPExsVy+t/xu7pXw3/FGPw7rG3R/m4Zu8WVr+/Z
- LDY9vsZqcaLvA6vF5V1z2CxerL3OarF980JmB3aPeWuqPe53H2fy2Lyk3uPOj6WMHp83yQWw
- RunZFOWXlqQqZOQXl9gqRRtaGOkZWlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehlfH6w
- iK3gM3vFyg3PmRsYd7N1MXJySAiYSHw/+ALI5uIQEljKKLFsyyTGLkYOoISMxPH1ZRA1whJ/
- rnVB1bxmlHi68wY7SEJYwFti2ZeLrCC2iICpRGvjLrAiZoE3jBJ/zv9lhOjYxiixueEYE0gV
- m4CVxMT2VYwgNq+AnUT/1b0sIDaLgIrE0WufwaaKCkRInHm/ggWiRlDi5MwnYDangJ7E8eud
- zCA2s4C6xJ95l6BscYlbT+YzQdjyEtvfzmGewCg0C0n7LCQts5C0zELSsoCRZRWjSGppcW56
- brGhXnFibnFpXrpecn7uJkZgzG079nPzDsZLG4MPMQpwMCrx8Dow/IwRYk0sK67MPcQowcGs
- JMJbduFHjBBvSmJlVWpRfnxRaU5q8SFGU6DnJjJLiSbnA9NBXkm8oamhuYWlobmxubGZhZI4
- b4fAwRghgfTEktTs1NSC1CKYPiYOTqkGxpnOC6JDl8nMYZP4mrPC7NPKC6zXDm/IDbn5z/X3
- dM8baif/fTHZYS1qGXnKeZP91P8iDjGSJsFXTlx4svLxwyeOWwx/c65V6Fy77h8by5c/vrqh
- Lzs0YlPcZKTDcixNcu1L9t+RuTn98MT1C1h62q/M4H6jXzv/O/cCbzWR0+emz9x2esNSubNK
- LMUZiYZazEXFiQAbay/ZzwIAAA==
-X-CMS-MailID: 20190607122558eucas1p147ed7c29bc60ff99073f4ba67375ad3e
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrAKsWRmVeSWpSXmKPExsWy7djPc7qREb9iDE481LO48vU9m8XDq/4W
+ q6buZLHY9Pgaq8WJvg+sFl2/VjJbXN41h83i7/ZNLBYvtohb3J44mdGBy2PnrLvsHptWdbJ5
+ 3O8+zuSxeUm9x8Z3O5g8+v8aeHzeJBfAHsVlk5Kak1mWWqRvl8CV8fjEY+aCm0wV2/++ZWtg
+ nMfUxcjJISFgInHz/WfmLkYuDiGBFYwSX9s/giWEBL4wSvz6kQaR+Mwo0fbuGhtMx52L39kg
+ EssZJV53TYBqf8sosW7rBrAqYQFXiYnbuplBbDYBK4mJ7asYQWwRAQeJKTcmsIM0MAtcZpI4
+ /HMPWIJXwE7izcTFLCA2i4CKxN91J8HiogIREvePbWCFqBGUODnzCVgNp4C9xNtL88EWMAuI
+ S9x6Mp8JwpaX2P52DthFEgLX2CVuTdkC1MAB5LhIXJ/mAfGCsMSr41vYIWwZidOTe1gg6tcx
+ SvzteAHVvJ1RYvnkf1BPW0scPn6RFWQQs4CmxPpd+hBhR4kj/Z1MEPP5JG68FYS4gU9i0rbp
+ zBBhXomONiGIajWJDcs2sMGs7dq5knkCo9IsJJ/NQvLNLCTfzELYu4CRZRWjeGppcW56arFh
+ Xmq5XnFibnFpXrpecn7uJkZgujr97/inHYxfLyUdYhTgYFTi4fVg/xkjxJpYVlyZe4hRgoNZ
+ SYS37MKPGCHelMTKqtSi/Pii0pzU4kOM0hwsSuK81QwPooUE0hNLUrNTUwtSi2CyTBycUg2M
+ y1omdGhu9Ghd6vLlx99s2WDRJY837N+SUj+r6kr8lT+mBUwagYlPe7X/fHSJ3LpMNPgx3+Oc
+ fWv7Fn78+rYhxfo2K99KQaG5NTumRDoZXZZ6pB/ze+rvy2FOS1dvO79is9Fv3YDSqd5/rM7P
+ 2R7+bm5ljmvh+jcur2b/Wxfgw8NZt77PrJ1XR4mlOCPRUIu5qDgRACW5sLdTAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrIIsWRmVeSWpSXmKPExsVy+t/xu7oREb9iDM6eNbG48vU9m8XDq/4W
+ q6buZLHY9Pgaq8WJvg+sFl2/VjJbXN41h83i7/ZNLBYvtohb3J44mdGBy2PnrLvsHptWdbJ5
+ 3O8+zuSxeUm9x8Z3O5g8+v8aeHzeJBfAHqVnU5RfWpKqkJFfXGKrFG1oYaRnaGmhZ2RiqWdo
+ bB5rZWSqpG9nk5Kak1mWWqRvl6CX8fjEY+aCm0wV2/++ZWtgnMfUxcjJISFgInHn4ne2LkYu
+ DiGBpYwSlzufMnYxcgAlZCSOry+DqBGW+HOtiw3EFhJ4zSgx+48oiC0s4CoxcVs3M4jNJmAl
+ MbF9FSOILSLgIDHlxgR2kJnMAleZJB7tX8gK0WwnsfnmDnYQmxfIfjNxMQuIzSKgIvF33Umw
+ ZlGBCIkz71ewQNQISpyc+QTM5hSwl3h7aT7YMmYBdYk/8y5B2eISt57MZ4Kw5SW2v53DPIFR
+ aBaS9llIWmYhaZmFpGUBI8sqRpHU0uLc9NxiI73ixNzi0rx0veT83E2MwOjcduznlh2MXe+C
+ DzEKcDAq8fDOYPoZI8SaWFZcmXuIUYKDWUmEt+zCjxgh3pTEyqrUovz4otKc1OJDjKZAz01k
+ lhJNzgcmjrySeENTQ3MLS0NzY3NjMwslcd4OgYMxQgLpiSWp2ampBalFMH1MHJxSDYx7K/9/
+ NukVYVqdYlu9XSa6JOBE+3kBrbZb+uwlLEnCIgddHKWFD/mVS/IbSuitWPPuw+Nt3QL7nN7I
+ /xGTP6Pp9zLxvO21Z7Ms+re4na5nv/LyW2BF6pF559brq3c8Spu+OzygJFB7TUbkYrZDE1bs
+ 2XprxW3rf4uzzHdrJQdPmLZ+3eYGp21KLMUZiYZazEXFiQDUMIby5AIAAA==
+X-CMS-MailID: 20190607122809eucas1p1d770153cc51e01ee04c531d35d22e32b
 X-Msg-Generator: CA
-X-RootMTR: 20190530123016eucas1p2e18747b8ac1d156657232eab52876a61
+X-RootMTR: 20190607122809eucas1p1d770153cc51e01ee04c531d35d22e32b
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190530123016eucas1p2e18747b8ac1d156657232eab52876a61
-References: <CGME20190530123016eucas1p2e18747b8ac1d156657232eab52876a61@eucas1p2.samsung.com>
- <69cd6b8b-1fd1-86fa-2070-99d0ce15a868@samsung.com>
- <20190601210651.GB3558@piout.net>
+X-CMS-RootMailID: 20190607122809eucas1p1d770153cc51e01ee04c531d35d22e32b
+References: <33fc4837-599d-0d5c-c530-58b283c4c095@samsung.com>
+ <CGME20190607122809eucas1p1d770153cc51e01ee04c531d35d22e32b@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_052602_348676_71629681 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20190607_052813_618156_A7E16925 
+X-CRM114-Status: GOOD (  10.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -137,43 +136,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On 6/1/19 11:06 PM, Alexandre Belloni wrote:
-> On 30/05/2019 14:30:19+0200, Bartlomiej Zolnierkiewicz wrote:
->> Add COMPILE_TEST support to atmel_lcdfb driver for better compile
->> testing coverage.
->>
->> While at it fix improper use of UL (to silence build warnings on
->> x86_64).
->>
->> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-
-Thanks, I queued the patch for v5.3.
-
->> Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
->> Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
->> ---
->> v3: fix build warnings on x86_64
+On 5/21/19 12:47 PM, Bartlomiej Zolnierkiewicz wrote:
+> Add COMPILE_TEST support to imxfb driver for better compile
+> testing coverage.
 > 
-> Hopefully, no building errors anymore ;)
+> Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
 
-I hope so. :)
+I queued the patch for v5.3.
 
->> v2: add missing HAVE_CLK && HAS IOMEM dependencies
->>
->>  drivers/video/fbdev/Kconfig       |    3 ++-
->>  drivers/video/fbdev/atmel_lcdfb.c |    4 ++--
->>  2 files changed, 4 insertions(+), 3 deletions(-)
 Best regards,
 --
 Bartlomiej Zolnierkiewicz
