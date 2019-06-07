@@ -2,76 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9A0F383C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 07:34:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2697383FD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 08:01:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oB+KTX2mixGrT/NMEwKmDE0TYfnYUqGQCRBaNyXSdqU=; b=WTA5dIkwXHw16g
-	Xm8vhxWCXuz/vsKS+bkGQQGVWTZtbsQl3Kui14nQbwQ+2uO3Tp+YZtyhMgVaQ29QfEALZSGqK8Q7E
-	trjbj3bINxgKKgexN+LvQifwiJwq1sIJWC84T/kNpLJ3dDbulvnQoIjUXDkv1HZH2I2uQ1USo0TG4
-	UqcfenswXukn7+oKC672HafjT1qdfR3JdtmrH3HRptC0Azqwu0yb/EyrjOCqaS9LsySJlAz+HlSxD
-	/44CrEgPl2qpoua7H6TAiV1Sfp7palcjC8Yb1QoVKc3x8YEHiZzCZYyChn7Hl4Z+6QLwgzB+kH0j2
-	dJJkHIbVGrAKe+L1AWOg==;
+	List-Owner; bh=ZfcQt73RbItDpWY7Nnaj6iucmxUbom8G++XdX2bR/50=; b=ThrBtgE+Nxt+Vi
+	DC3xh/EDxRIhvpqcxSQN/i3HstXe5i43uxxL83l27dimOalqMtTRFuAg/Q5oBxhNU/o/UYlum8veo
+	mY5mJSoewIMW1ghjxkg9fi7HheHIvCkn+flXLnB5rASJIsISaYTbSS83+N1C3IIQQnNOmq0w40eij
+	2jc0suNOEBKV/gBmF6ntqn17J49jF7BJv43Ajns038D9Ri8aS1w9MCTIQacyAcQoHAqNcRdg6ih9+
+	nrAIS9+ws7XYnSLGPqmEyNq+ccvHPyZpfu67xjTzc53vwwUlNegP2o9zqOCcwtD2irdkBcu47EYIC
+	ggAgIOy/IMhztRs0UbVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZ7Vs-000131-FB; Fri, 07 Jun 2019 05:34:04 +0000
-Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1hZ7vx-00015c-AM; Fri, 07 Jun 2019 06:01:01 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZ7Vf-000127-Am
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 05:33:52 +0000
-Received: by mail-it1-x141.google.com with SMTP id m3so969717itl.1
+ id 1hZ7vh-00014W-0S
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 06:00:46 +0000
+Received: by mail-pl1-x644.google.com with SMTP id go2so388106plb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Jun 2019 22:33:50 -0700 (PDT)
+ Thu, 06 Jun 2019 23:00:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=I1Ohgac363EioDxzXpyXf7UN1ZgVyShBjggu94kceQ8=;
- b=k/GR7joJNJJ6Ve9R/aFsDJRsptZAid18wqkAKiXzRB6NlE5r0KsuMRDWBQiDjQE71p
- daD8j4DSrVfI6HVAkD5vCpZj39PQaq9fApbZACjRC0RDDKZIBpn7/PLmAhGU1uSNjV36
- ZPpnk1tioX9M+1EYWJoeTvWylBd+vbf5sKkC6jEafyQKFEFkOanMnEF7whEz4Nqwt4hG
- bE4l9bBTG0ogocOQzuioUmmPSF5w+Ho92/o1cceuVe444tHP69yQxu8DSewMXHLCqg4l
- Ja6TZAP9vQDDI+y+jUJx9i8y337VPVjbLYX5aoIkmB6O4W9ByhkvQ0wvmaFU4t1VIu/d
- h8DQ==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=sNeYqqj7A5jsZjI23KJv1FicJVOUSHOJooPoBup8FeM=;
+ b=I+DO+bXX3/U0c5/tJe9YZdOfd9awmUKsKrvLQ6RM5e7ZPbpVdNQ6p467NhbVoMoarQ
+ ZTrXnuYi/GBo+EETAJBGN7Pbc4eyxedjJgINnFW2Ljv5sN9z7vOHs6OG+Gfjx+nUFata
+ r/SNJ3fb38yconRfVgfs5zO505iUUyDV4G/jHwXknqC1Y7Z1U8rC0v+rvDJyZqa/2SDY
+ dFJFBnKgq948wzi26ZcXJ+LY/RNrc3C7DV8bcYap3C5SQTdSlGOwcqCDiElfo5zU+Fni
+ UXim+fepv1U8X+0j4guVpm6nZtJBCDBnu6scNE5hLkz6jskKt97gH5ftrO8QkfNEvFqD
+ KgJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=I1Ohgac363EioDxzXpyXf7UN1ZgVyShBjggu94kceQ8=;
- b=dfGMnEEXTGMlU1dkyYfEiw1jq1MDdUQfThY7vXaovEjVttTLNQC97W+R/x2T3gYYee
- V2L7C4rqxp65LevXqrMuWr21BDZZMxdhlMWZ78laI1wgBtKuDqR1u7f3A1XG8Z/c3LgC
- DOnWyBeqluW05zRa4PRRK1pyMjN3fE4124SNCJzT7KG9Ha3pRZq4wBfHjcOPzBjxZz5M
- zory/E5mRITPNHHk9H8fXpq32bjc8xRe0GtzNsTsPl3rUpmKZdrqdxz6BaqAuQLAqSS1
- PsFKXeK8VKxtuA0Yi4xu5qO+boC5SuiexO+IG9NrqIA5f99rmYjvIoFdqdlju5VUqPKB
- a+hg==
-X-Gm-Message-State: APjAAAWfUZCFHXMNrNzEoqqgHjZ92ahWp5D8IBMAmiLgW31BudXZQybe
- grIlSPNjdyNR2bU94zcgwEVLcWo5hKxmm7mjh+ktZQ==
-X-Google-Smtp-Source: APXvYqzO76FNbL4lc2mT5nAI8664+vPAEC2qxggUSScGxp/b2eT89TkEwyH+hzeEqr8qRCV6LZQ9VkHcX6jY2/9nElY=
-X-Received: by 2002:a05:660c:752:: with SMTP id
- a18mr2789419itl.63.1559885629583; 
- Thu, 06 Jun 2019 22:33:49 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sNeYqqj7A5jsZjI23KJv1FicJVOUSHOJooPoBup8FeM=;
+ b=sRgwVHhiKXSxSNU2uBpHVNjNbR588w88FD63w/Hy4lJ29qK0gISZVYM3mbm3uzPzyT
+ kO6jfArSX7ueW0dhDl330L4Kb+XvzwF2Bl7WDs6klMn1C4CiyY2QaaJGEVOyIENKCTfv
+ etLiWUHfG7TGUSnjTnawr+HINNeObY69lg8p4HzBJxbHOtYVGYP6GzVMhkXoO3cYfBm8
+ dQ69igW4XK/4KF/RZvCEQA5oYhuVG3vD40gBAZv38EtW1UzYhxEiZMWa4C3h4tRw2okg
+ F1mbgqxOvej3RpJV1ZE+18zkDziBcLa241Wno1b6HZVr/2JuMdRe8+xQlnTxpB519mv4
+ 4mvA==
+X-Gm-Message-State: APjAAAWtx04tR9weh+XBRcf/G9CLacnQ0Fh8TxtsxTCOmJBBRgRoLvnS
+ 5tlP24BMdXThrSNJeU0VFrJu4FGuGiU=
+X-Google-Smtp-Source: APXvYqxOAWcArkn2cVZZlioTLt/qQbVmliWaDP7qBUla76loZRkDUMwoTY7MzTYQenlQtRiEFq12yQ==
+X-Received: by 2002:a17:902:6a4:: with SMTP id
+ 33mr53039518plh.338.1559887241528; 
+ Thu, 06 Jun 2019 23:00:41 -0700 (PDT)
+Received: from localhost ([122.172.66.84])
+ by smtp.gmail.com with ESMTPSA id s42sm1593160pjc.5.2019.06.06.23.00.39
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 06 Jun 2019 23:00:40 -0700 (PDT)
+Date: Fri, 7 Jun 2019 11:30:37 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH] KVM: arm64: Drop 'const' from argument of vq_present()
+Message-ID: <20190607060037.eaof3hllyombxlhc@vireshk-i7>
+References: <699121e5c938c6f4b7b14a7e2648fa15af590a4a.1559623368.git.viresh.kumar@linaro.org>
+ <20190604095915.GW28398@e103592.cambridge.arm.com>
 MIME-Version: 1.0
-References: <cover.1559580831.git.andreyknvl@google.com>
- <dc3f3092abbc0d48e51b2e2a2ca8f4c4f69fa0f4.1559580831.git.andreyknvl@google.com>
-In-Reply-To: <dc3f3092abbc0d48e51b2e2a2ca8f4c4f69fa0f4.1559580831.git.andreyknvl@google.com>
-From: Jens Wiklander <jens.wiklander@linaro.org>
-Date: Fri, 7 Jun 2019 07:33:38 +0200
-Message-ID: <CAHUa44E+g3YTcja+7qgx+iABVd48DbrMMOm0sbyMwf0U6F5NPw@mail.gmail.com>
-Subject: Re: [PATCH v16 14/16] tee,
- arm64: untag user pointers in tee_shm_register
-To: Andrey Konovalov <andreyknvl@google.com>
+Content-Disposition: inline
+In-Reply-To: <20190604095915.GW28398@e103592.cambridge.arm.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_223351_405762_532A8415 
-X-CRM114-Status: GOOD (  16.70  )
+X-CRM114-CacheID: sfid-20190606_230045_060049_D8C278DD 
+X-CRM114-Status: GOOD (  16.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,73 +99,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Lee Smith <Lee.Smith@arm.com>, Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 3, 2019 at 6:56 PM Andrey Konovalov <andreyknvl@google.com> wrote:
->
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
->
-> tee_shm_register()->optee_shm_unregister()->check_mem_type() uses provided
-> user pointers for vma lookups (via __check_mem_type()), which can only by
-> done with untagged pointers.
->
-> Untag user pointers in this function.
->
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+On 04-06-19, 10:59, Dave Martin wrote:
+> On Tue, Jun 04, 2019 at 10:13:19AM +0530, Viresh Kumar wrote:
+> > We currently get following compilation warning:
+> > 
+> > arch/arm64/kvm/guest.c: In function 'set_sve_vls':
+> > arch/arm64/kvm/guest.c:262:18: warning: passing argument 1 of 'vq_present' from incompatible pointer type
+> > arch/arm64/kvm/guest.c:212:13: note: expected 'const u64 (* const)[8]' but argument is of type 'u64 (*)[8]'
+> > 
+> > The argument can't be const, as it is copied at runtime using
+> > copy_from_user(). Drop const from the prototype of vq_present().
+> > 
+> > Fixes: 9033bba4b535 ("KVM: arm64/sve: Add pseudo-register for the guest's vector lengths")
+> > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> > ---
+> >  arch/arm64/kvm/guest.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> > index 3ae2f82fca46..78f5a4f45e0a 100644
+> > --- a/arch/arm64/kvm/guest.c
+> > +++ b/arch/arm64/kvm/guest.c
+> > @@ -209,7 +209,7 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+> >  #define vq_mask(vq) ((u64)1 << ((vq) - SVE_VQ_MIN) % 64)
+> >  
+> >  static bool vq_present(
+> > -	const u64 (*const vqs)[KVM_ARM64_SVE_VLS_WORDS],
+> > +	u64 (*const vqs)[KVM_ARM64_SVE_VLS_WORDS],
+> >  	unsigned int vq)
+> >  {
+> >  	return (*vqs)[vq_word(vq)] & vq_mask(vq);
+> 
+> Ack, but maybe this should just be converted to a macro?
 
-Acked-by: Jens Wiklander <jens.wiklander@linaro.org>
+I will send a patch with that if that's what you want.
 
-> ---
->  drivers/tee/tee_shm.c | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/drivers/tee/tee_shm.c b/drivers/tee/tee_shm.c
-> index 49fd7312e2aa..96945f4cefb8 100644
-> --- a/drivers/tee/tee_shm.c
-> +++ b/drivers/tee/tee_shm.c
-> @@ -263,6 +263,7 @@ struct tee_shm *tee_shm_register(struct tee_context *ctx, unsigned long addr,
->         shm->teedev = teedev;
->         shm->ctx = ctx;
->         shm->id = -1;
-> +       addr = untagged_addr(addr);
->         start = rounddown(addr, PAGE_SIZE);
->         shm->offset = addr - start;
->         shm->size = length;
-> --
-> 2.22.0.rc1.311.g5d7573a151-goog
->
+Thanks.
+
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
