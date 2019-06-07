@@ -2,100 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0D393937D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 19:41:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 885853938A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 19:43:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HXQDcOHj3lBbMp2WydOniMrth0HC+yZC4lZGi35p9/I=; b=k9qn37Qoz+3pZ1
-	z9fPNj6Ttd0Q6fiC/ruU/G2OaQls/0XCdcrWRAV9FuyKI4DJCJd9sNh7LW1QIDBYbiZ7tTG5cPj1r
-	eJ3PtS8wBhkKl1VVUvz5IqPFJighZfJVIv+xeDYsQQcdEi1/5tUAZAarg6hbvchypR3mbfnA3Cb6r
-	3MUNYZO6LPtuY71sdOJJFGIwS9ER6czvIiwALHaBCKcT240aF3Ago//nMGC/gZAf6xICKxo/tQdXE
-	+PZdr45OG3975Y+f4SowDFmPt5mqNqqBKbA8efYaqBwGtLZ2VZaOCBq5GLV3e7JDhldck+xhWPGmA
-	miJf1iWEpSmHf80nBnpA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Msa/gKkW8YkGmpQgCz4Hn2VwC46Cu4hZJVYpizvyxos=; b=Gz6C7HmFRoiems
+	5NtM0rxLbgdFFH4H99lvzlBuPCFSgW6tgTwEmUby2pIWS2FiMyBHdrdpWqXh7Necz4uEXtW6P9rgW
+	odS8AOWcdBmLNqFGXpLp+GQub05kG5PT326is+cRCC/U9rRMGOTkOsWXQ4uknjF7eZN4hF1nsfk+K
+	FPavjSp//mxR3kh4n8rfDP2LWJcBvrjfSQ1hUkINCqDRgcz39HaPwFy4qTYMrt2yRxPys1JhpFvj+
+	AuLBgMn3E09LKerPSg3LlwWnzG+RhcJm/L5bkt9tkIV042s43ur6Lz4Owevfy1xJ73nKVwXcyl3PM
+	4mXKpS0bdgclwFycaG2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZIrg-0006Ac-LB; Fri, 07 Jun 2019 17:41:20 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hZItz-0006l8-NG; Fri, 07 Jun 2019 17:43:43 +0000
+Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZIrH-00064O-U7
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 17:40:58 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 81so1567692pfy.13
+ id 1hZItq-0006kh-9S
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 17:43:35 +0000
+Received: by mail-it1-x142.google.com with SMTP id n189so4036097itd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 10:40:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=0V/DIvCRbzkJddEXcA5wyYmclosO4j53pSlNS1OHge4=;
- b=P1hdLfqJ9bNPNS2TrvnTMlvTdY0CYkYcvVvjn9EH1gNmpz3Xa/8/ipOBmI/ibQYu8b
- 9aHrN1RX7kcml2htDeoD6zZTagSN0Afy/oMXJ/ozRn7T7sj5FbeIkE9X4SfGJ2fhLhA9
- OpaQkJ94YOS/lwi6/xlstdO+Y0ibYrIweUuBkVu2zV24Xu+DAQUiV0AVq6fOeSOryWXF
- sbmSRirkH6Hp0OwyAjUQzp0y3y14sZ8QEWUCLWrlZb+xUyiKXc0FIMpfCl/durvD7I8r
- 5lcR20ZGOk0s3xvrFDG7r1WDysG3k+XdctIa+lqdRrHrRcoeMgx7HRF1+OayrlNeAG8E
- kgZA==
+ Fri, 07 Jun 2019 10:43:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=L8Igv0c1kKwXXNn7veRB/74fSSY4c41NnqxruUQUijA=;
+ b=ULzubESKs6yWyTO1zfeKq3G6Nq9xzHsM2OnKkPgQEsyEZTlGMdRlATFbdFeu4Shw2I
+ UoTa4OmuP82t/QmuA215jTqrWDirqfr+3CZEruaA9pubDukMpsh0UktiDXbxqK46Uv4Z
+ ucHcId6UaJgMLbGn6b/lZAH1naIeByMpFAXueqW7QJma4l3auNckJrHlw02gg3kk0uOH
+ ckPMQYdQ8DxpQ/4Vk5gg+DaDFaqMREPnKb6re7paarLwDg2xpOvKJnflqnzGEn5LucM+
+ lL34QDBsfkQNwdMPzg93yeB6a701oUvFZNXsWMD9nutwq4CBHH8Bf5boK98J8MbtwBDf
+ 25ow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=0V/DIvCRbzkJddEXcA5wyYmclosO4j53pSlNS1OHge4=;
- b=krZZoDyT/auzegojhwxpC8HNdcsmlZESzq0i1nmXayuoBHpInQCqN5wX4ULfI8t1zF
- 1KF/nZS4wZrZVwdNDtv56IvMqxblXLhO++XmYUYt+q4Ai1cKYhuFAJSg/rnIdM4h3H90
- aHkfV4WuF/OvbEfUtmCQjRVmtTvIWlq2I/hpWQcKUMNRJJSDtQUNE+tFPVVbw9Oo4Rpn
- gXjr0iYQi23RGyQX15E/v81X5ZBfqp+sdC/+IBkPlPDJQ4JfOyfdHMwGfPNi6NDSkLWY
- aNTdJdJ5kJtQD+GtFJZUqsUz6JY8VG9MUyh2uMEOugNdKoXkWMptccW0NLpZw/Xf0T/7
- Y7yQ==
-X-Gm-Message-State: APjAAAVxfYXMPvXmyfLHw9JI2ShCcqhWJx2gDowBpkrbG7hSPzB7H9MO
- KRuW6m+3audebzx9kg5QxFQ=
-X-Google-Smtp-Source: APXvYqzcYtPwU3T8i78qheKrh7jr7ml3uzLreQGCaARqeK3wSzTdGjgOvhMxncF1eigqwFt1dkOd9A==
-X-Received: by 2002:a17:90a:bb94:: with SMTP id
- v20mr7143639pjr.88.1559929255290; 
- Fri, 07 Jun 2019 10:40:55 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id ds13sm2436877pjb.5.2019.06.07.10.40.54
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=L8Igv0c1kKwXXNn7veRB/74fSSY4c41NnqxruUQUijA=;
+ b=fB1TNOiGD5d/0TE+w07wkecu41Cs2zEPD7mpLIwSHzJOGUq7/eNMo0O4Yu5yIgNtUE
+ yxylAA32ArzrVqGKeoDO6zCK1jtmaOKELvZZMEcWXJZIf/l4R7+9bHkMY6NjskIZoID5
+ R5nfeXOiSZvTlSzaptyA/R928xlLB6HAmWNPobBf62ikUjDqffIRMmS6wYHjsREf4iPo
+ LJLCqxQ8OoaazoGGN7qI/URrhB21U/cgZLA6D++drYUit9AdpYYZ2eC6htWjzP56tzL+
+ 0m2tBWpbQ/y9ryXsIMsFvQfxZ87zwNng53AWEFZ5divdY+YsXHdOjuQZbA8uP+cHl6lv
+ 7CGw==
+X-Gm-Message-State: APjAAAU/DP6aPxv3BqYu5MQ0HnCy3C0FsP75BieXXu3MhHZAsXBet8a7
+ lXJz9TKlNr3AWbV77A/7H+HVgWOOWWQ=
+X-Google-Smtp-Source: APXvYqz5GAioF1jaAZlXaE9bF6pA/rBJ+Whdl1/UGL1j0bmacQDXQiLgL6o+fLiBjQwUbVx4mCXHuQ==
+X-Received: by 2002:a02:bb83:: with SMTP id g3mr36416773jan.139.1559929412746; 
+ Fri, 07 Jun 2019 10:43:32 -0700 (PDT)
+Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
+ [71.195.29.92])
+ by smtp.googlemail.com with ESMTPSA id z17sm879253iol.73.2019.06.07.10.43.31
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 07 Jun 2019 10:40:54 -0700 (PDT)
-Date: Fri, 7 Jun 2019 10:40:53 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH RESEND V4 3/3] watchdog: imx_sc: Add pretimeout support
-Message-ID: <20190607174053.GA15184@roeck-us.net>
-References: <1557655528-12816-1-git-send-email-Anson.Huang@nxp.com>
- <1557655528-12816-3-git-send-email-Anson.Huang@nxp.com>
- <e49148ed-82ba-0878-e5ab-933f78f161d6@roeck-us.net>
- <DB3PR0402MB3916B5E657800C92566047A0F5160@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ Fri, 07 Jun 2019 10:43:32 -0700 (PDT)
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Alex Elder <elder@linaro.org>
+To: Arnd Bergmann <arnd@arndb.de>
+References: <20190531035348.7194-1-elder@linaro.org>
+ <e75cd1c111233fdc05f47017046a6b0f0c97673a.camel@redhat.com>
+ <065c95a8-7b17-495d-f225-36c46faccdd7@linaro.org>
+ <CAK8P3a05CevRBV3ym+pnKmxv+A0_T+AtURW2L4doPAFzu3QcJw@mail.gmail.com>
+ <a28c5e13-59bc-144d-4153-9d104cfa9188@linaro.org>
+ <CAK8P3a2rkQd3t-yNdNGePW8E7rhObjAvUpW6Ga9AM6rJJ27BOw@mail.gmail.com>
+ <5ebccdbe-479d-2b7d-693c-0c412060d687@linaro.org>
+Message-ID: <cd408ff3-2884-3fc7-6154-4675bc865e0d@linaro.org>
+Date: Fri, 7 Jun 2019 12:43:30 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <DB3PR0402MB3916B5E657800C92566047A0F5160@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <5ebccdbe-479d-2b7d-693c-0c412060d687@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_104056_043855_DFE11AF8 
-X-CRM114-Status: GOOD (  28.57  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190607_104334_337894_5E585613 
+X-CRM114-Status: GOOD (  36.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,299 +106,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
+ Networking <netdev@vger.kernel.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, abhishek.esse@gmail.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ linux-soc@vger.kernel.org, David Miller <davem@davemloft.net>,
+ cpratapa@codeaurora.org, Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 05, 2019 at 06:24:33AM +0000, Anson Huang wrote:
-> Hi, Guenter
-> 
-> > -----Original Message-----
-> > From: Guenter Roeck <groeck7@gmail.com> On Behalf Of Guenter Roeck
-> > Sent: Sunday, May 12, 2019 9:28 PM
-> > To: Anson Huang <anson.huang@nxp.com>; robh+dt@kernel.org;
-> > mark.rutland@arm.com; wim@linux-watchdog.org; shawnguo@kernel.org;
-> > s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
-> > Aisheng Dong <aisheng.dong@nxp.com>; ulf.hansson@linaro.org; Daniel
-> > Baluta <daniel.baluta@nxp.com>; Peng Fan <peng.fan@nxp.com>;
-> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > watchdog@vger.kernel.org; linux-arm-kernel@lists.infradead.org
-> > Cc: dl-linux-imx <linux-imx@nxp.com>
-> > Subject: Re: [PATCH RESEND V4 3/3] watchdog: imx_sc: Add pretimeout
-> > support
-> > 
-> > On 5/12/19 3:10 AM, Anson Huang wrote:
-> > > i.MX system controller watchdog can support pretimeout IRQ via general
-> > > SCU MU IRQ, it depends on IMX_SCU and driver MUST be probed after SCU
-> > > IPC ready, then enable corresponding SCU IRQ group and register SCU
-> > > IRQ notifier, when watchdog pretimeout IRQ fires, SCU MU IRQ will be
-> > > handled and watchdog pretimeout notifier will be called to handle the
-> > > event.
-> > >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > 
-> > Revviewed-by: Guenter Roeck <linux@roeck-us.net>
-> > 
-> > Other patches waiting for DT review. IMX API feedback below.
-> 
-> Shaw just picked up the DT patch. Would you please pick up this driver and dt-binding patch
-> to you git repo?
-> 
-I'll pick up patch 3/3, but I can not pick up patches into arch/arm64/boot/;
-that is the responsibility of arm64 maintainers. I can only do that
-if I get an explicit Ack and permission to do so from an arm64 maintainer,
-and I don't recall getting that.
+On 5/31/19 5:08 PM, Alex Elder wrote:
+> On 5/31/19 4:12 PM, Arnd Bergmann wrote:
+>> On Fri, May 31, 2019 at 10:47 PM Alex Elder <elder@linaro.org> wrote:
+>>> On 5/31/19 2:19 PM, Arnd Bergmann wrote:
+>>>> On Fri, May 31, 2019 at 6:36 PM Alex Elder <elder@linaro.org> wrote:
+>>>>> On 5/31/19 9:58 AM, Dan Williams wrote:
+>>>>>> On Thu, 2019-05-30 at 22:53 -0500, Alex Elder wrote:
+>>>>
+>>>> Does this mean that IPA can only be used to back rmnet, and rmnet
+>>>> can only be used on top of IPA, or can or both of them be combined
+>>>> with another driver to talk to instead?
+>>>
+>>> No it does not mean that.
+>>>
+>>> As I understand it, one reason for the rmnet layer was to abstract
+>>> the back end, which would allow using a modem, or using something
+>>> else (a LAN?), without exposing certain details of the hardware.
+>>> (Perhaps to support multiplexing, etc. without duplicating that
+>>> logic in two "back-end" drivers?)
+>>>
+>>> To be perfectly honest, at first I thought having IPA use rmnet
+>>> was a cargo cult thing like Dan suggested, because I didn't see
+>>> the benefit.  I now see why one would use that pass-through layer
+>>> to handle the QMAP features.
+>>>
+>>> But back to your question.  The other thing is that I see no
+>>> reason the IPA couldn't present a "normal" (non QMAP) interface
+>>> for a modem.  It's something I'd really like to be able to do,
+>>> but I can't do it without having the modem firmware change its
+>>> configuration for these endpoints.  My access to the people who
+>>> implement the modem firmware has been very limited (something
+>>> I hope to improve), and unless and until I can get corresponding
+>>> changes on the modem side to implement connections that don't
+>>> use QMAP, I can't implement such a thing.
+>>
+>> Why would that require firmware changes? What I was thinking
+>> here is to turn the bits of the rmnet driver that actually do anything
+>> interesting on the headers into a library module (or a header file
+>> with inline functions) that can be called directly by the ipa driver,
+>> keeping the protocol unchanged.
 
-Guenter
+OK, I follow up below, but now that I re-read this I think I
+misunderstood what you were saying.  I now think you were just
+talking about having the QMAP parsing functionality provided
+by rmnet be put into a library that the IPA driver (and others)
+could use, rather than having them be two separate but stacked
+drivers.
 
-> Thanks,
-> Anson
+That seems like a very reasonable idea, and I don't think rmnet
+does anything particularly special that would preclude it.
+But:
+- I have not reviewed the rmnet driver in any detail
+- It's possible this wouldn't work with other back ends
+- This would also need to be considered as part of any
+  effort to create a generic WWAN framework (though it
+  wouldn't pose any problem as far as I can tell)
+
+> You know, it's possible you're right about not needing
+> firmware changes.  But it has always been my impression
+> they would be needed.  Here's why.
+
+Now I'm just following up on the above statement.
+
+First, what I was saying initially is that I would like to
+be able to configure a simple network device that does not
+implement any of the QMAP (rmnet) protocol.  That would
+allow IPA to be used standalone, without any need for what
+the rmnet driver provides.  This would suffice for the
+current use, because the driver currently supports *only*
+a single fixed-configuration data connection to the modem,
+and has no need for the logical channels (or aggregation)
+that QMAP provides.
+
+I have not done that, because it would require both the AP
+side and modem side endpoints to change their configuration
+to *not* use QMAP.  I can configure the AP endpoint, but I
+have no control over how the modem configures its endpoint.
+
+Something about your question made me think I might have
+been misunderstanding that requirement though.  I.e., I
+thought it might be possible for the local (AP side)
+endpoint to be configured to not use QMAP, regardless of
+what the modem side does.
+
+I didn't inquire, but I reviewed some documents, and I now
+conclude that my previous understanding was correct.  I
+can't configure an AP endpoint to not use QMAP without also
+having the modem configure its corresponding endpoint to
+not use QMAP.  The AP and modem need to agree on how their
+respective "connected" endpoints are configured.
+
+					-Alex
+
+> It looks like this:
 > 
-> > 
-> > Side note: This patch depends on 'firmware: imx: enable imx scu general irq
-> > function' which is not yet in mainline.
-> > 
-> > > ---
-> > > No change, just resend patch with correct encoding.
-> > > ---
-> > >   drivers/watchdog/Kconfig      |   1 +
-> > >   drivers/watchdog/imx_sc_wdt.c | 116
-> > +++++++++++++++++++++++++++++++++++-------
-> > >   2 files changed, 98 insertions(+), 19 deletions(-)
-> > >
-> > > diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig index
-> > > 7ea6037..e08238c 100644
-> > > --- a/drivers/watchdog/Kconfig
-> > > +++ b/drivers/watchdog/Kconfig
-> > > @@ -716,6 +716,7 @@ config IMX2_WDT
-> > >   config IMX_SC_WDT
-> > >   	tristate "IMX SC Watchdog"
-> > >   	depends on HAVE_ARM_SMCCC
-> > > +	depends on IMX_SCU
-> > >   	select WATCHDOG_CORE
-> > >   	help
-> > >   	  This is the driver for the system controller watchdog diff --git
-> > > a/drivers/watchdog/imx_sc_wdt.c b/drivers/watchdog/imx_sc_wdt.c index
-> > > 49848b6..6ecc03f 100644
-> > > --- a/drivers/watchdog/imx_sc_wdt.c
-> > > +++ b/drivers/watchdog/imx_sc_wdt.c
-> > > @@ -4,6 +4,7 @@
-> > >    */
-> > >
-> > >   #include <linux/arm-smccc.h>
-> > > +#include <linux/firmware/imx/sci.h>
-> > >   #include <linux/io.h>
-> > >   #include <linux/init.h>
-> > >   #include <linux/kernel.h>
-> > > @@ -33,11 +34,19 @@
-> > >
-> > >   #define SC_TIMER_WDOG_ACTION_PARTITION	0
-> > >
-> > > +#define SC_IRQ_WDOG			1
-> > > +#define SC_IRQ_GROUP_WDOG		1
-> > > +
-> > >   static bool nowayout = WATCHDOG_NOWAYOUT;
-> > >   module_param(nowayout, bool, 0000);
-> > >   MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once
-> > started (default="
-> > >   		 __MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
-> > >
-> > > +struct imx_sc_wdt_device {
-> > > +	struct watchdog_device wdd;
-> > > +	struct notifier_block wdt_notifier;
-> > > +};
-> > > +
-> > >   static int imx_sc_wdt_ping(struct watchdog_device *wdog)
-> > >   {
-> > >   	struct arm_smccc_res res;
-> > > @@ -85,24 +94,66 @@ static int imx_sc_wdt_set_timeout(struct
-> > watchdog_device *wdog,
-> > >   	return res.a0 ? -EACCES : 0;
-> > >   }
-> > >
-> > > +static int imx_sc_wdt_set_pretimeout(struct watchdog_device *wdog,
-> > > +				     unsigned int pretimeout)
-> > > +{
-> > > +	struct arm_smccc_res res;
-> > > +
-> > > +	arm_smccc_smc(IMX_SIP_TIMER,
-> > IMX_SIP_TIMER_SET_PRETIME_WDOG,
-> > > +		      pretimeout * 1000, 0, 0, 0, 0, 0, &res);
-> > > +	if (res.a0)
-> > > +		return -EACCES;
-> > > +
-> > > +	wdog->pretimeout = pretimeout;
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static int imx_sc_wdt_notify(struct notifier_block *nb,
-> > > +			     unsigned long event, void *group) {
-> > > +	struct imx_sc_wdt_device *imx_sc_wdd =
-> > > +				 container_of(nb,
-> > > +					      struct imx_sc_wdt_device,
-> > > +					      wdt_notifier);
-> > > +
-> > > +	if (event & SC_IRQ_WDOG &&
-> > > +	    *(u8 *)group == SC_IRQ_GROUP_WDOG)
-> > > +		watchdog_notify_pretimeout(&imx_sc_wdd->wdd);
-> > 
-> > This should really not be necessary. Event mask and target group (if needed
-> > with a wildcard for the group) should be parameters of
-> > imx_scu_irq_register_notifier(), and be handled in the imx code.
-> > 
-> > Also, passing 'group' as pointed seems excessive. Might as well pass it
-> > directly.
-> > 
-> > Guenter
-> > 
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > > +static void imx_sc_wdt_action(void *data) {
-> > > +	struct notifier_block *wdt_notifier = data;
-> > > +
-> > > +	imx_scu_irq_unregister_notifier(wdt_notifier);
-> > > +	imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
-> > > +				 SC_IRQ_WDOG,
-> > > +				 false);
-> > > +}
-> > > +
-> > >   static const struct watchdog_ops imx_sc_wdt_ops = {
-> > >   	.owner = THIS_MODULE,
-> > >   	.start = imx_sc_wdt_start,
-> > >   	.stop  = imx_sc_wdt_stop,
-> > >   	.ping  = imx_sc_wdt_ping,
-> > >   	.set_timeout = imx_sc_wdt_set_timeout,
-> > > +	.set_pretimeout = imx_sc_wdt_set_pretimeout,
-> > >   };
-> > >
-> > > -static const struct watchdog_info imx_sc_wdt_info = {
-> > > +static struct watchdog_info imx_sc_wdt_info = {
-> > >   	.identity	= "i.MX SC watchdog timer",
-> > >   	.options	= WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING |
-> > > -			  WDIOF_MAGICCLOSE | WDIOF_PRETIMEOUT,
-> > > +			  WDIOF_MAGICCLOSE,
-> > >   };
-> > >
-> > >   static int imx_sc_wdt_probe(struct platform_device *pdev)
-> > >   {
-> > > +	struct imx_sc_wdt_device *imx_sc_wdd;
-> > > +	struct watchdog_device *wdog;
-> > >   	struct device *dev = &pdev->dev;
-> > > -	struct watchdog_device *imx_sc_wdd;
-> > >   	int ret;
-> > >
-> > >   	imx_sc_wdd = devm_kzalloc(dev, sizeof(*imx_sc_wdd), GFP_KERNEL);
-> > @@
-> > > -111,42 +162,69 @@ static int imx_sc_wdt_probe(struct platform_device
-> > > *pdev)
-> > >
-> > >   	platform_set_drvdata(pdev, imx_sc_wdd);
-> > >
-> > > -	imx_sc_wdd->info = &imx_sc_wdt_info;
-> > > -	imx_sc_wdd->ops = &imx_sc_wdt_ops;
-> > > -	imx_sc_wdd->min_timeout = 1;
-> > > -	imx_sc_wdd->max_timeout = MAX_TIMEOUT;
-> > > -	imx_sc_wdd->parent = dev;
-> > > -	imx_sc_wdd->timeout = DEFAULT_TIMEOUT;
-> > > +	wdog = &imx_sc_wdd->wdd;
-> > > +	wdog->info = &imx_sc_wdt_info;
-> > > +	wdog->ops = &imx_sc_wdt_ops;
-> > > +	wdog->min_timeout = 1;
-> > > +	wdog->max_timeout = MAX_TIMEOUT;
-> > > +	wdog->parent = dev;
-> > > +	wdog->timeout = DEFAULT_TIMEOUT;
-> > >
-> > > -	watchdog_init_timeout(imx_sc_wdd, 0, dev);
-> > > -	watchdog_stop_on_reboot(imx_sc_wdd);
-> > > -	watchdog_stop_on_unregister(imx_sc_wdd);
-> > > +	watchdog_init_timeout(wdog, 0, dev);
-> > > +	watchdog_stop_on_reboot(wdog);
-> > > +	watchdog_stop_on_unregister(wdog);
-> > >
-> > > -	ret = devm_watchdog_register_device(dev, imx_sc_wdd);
-> > > +	ret = devm_watchdog_register_device(dev, wdog);
-> > >   	if (ret) {
-> > >   		dev_err(dev, "Failed to register watchdog device\n");
-> > >   		return ret;
-> > >   	}
-> > >
-> > > +	ret = imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
-> > > +				       SC_IRQ_WDOG,
-> > > +				       true);
-> > > +	if (ret) {
-> > > +		dev_warn(dev, "Enable irq failed, pretimeout NOT
-> > supported\n");
-> > > +		return 0;
-> > > +	}
-> > > +
-> > > +	imx_sc_wdd->wdt_notifier.notifier_call = imx_sc_wdt_notify;
-> > > +	ret = imx_scu_irq_register_notifier(&imx_sc_wdd->wdt_notifier);
-> > > +	if (ret) {
-> > > +		imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
-> > > +					 SC_IRQ_WDOG,
-> > > +					 false);
-> > > +		dev_warn(dev,
-> > > +			 "Register irq notifier failed, pretimeout NOT
-> > supported\n");
-> > > +		return 0;
-> > > +	}
-> > > +
-> > > +	ret = devm_add_action_or_reset(dev, imx_sc_wdt_action,
-> > > +				       &imx_sc_wdd->wdt_notifier);
-> > > +	if (!ret)
-> > > +		imx_sc_wdt_info.options |= WDIOF_PRETIMEOUT;
-> > > +	else
-> > > +		dev_warn(dev, "Add action failed, pretimeout NOT
-> > supported\n");
-> > > +
-> > >   	return 0;
-> > >   }
-> > >
-> > >   static int __maybe_unused imx_sc_wdt_suspend(struct device *dev)
-> > >   {
-> > > -	struct watchdog_device *imx_sc_wdd = dev_get_drvdata(dev);
-> > > +	struct imx_sc_wdt_device *imx_sc_wdd = dev_get_drvdata(dev);
-> > >
-> > > -	if (watchdog_active(imx_sc_wdd))
-> > > -		imx_sc_wdt_stop(imx_sc_wdd);
-> > > +	if (watchdog_active(&imx_sc_wdd->wdd))
-> > > +		imx_sc_wdt_stop(&imx_sc_wdd->wdd);
-> > >
-> > >   	return 0;
-> > >   }
-> > >
-> > >   static int __maybe_unused imx_sc_wdt_resume(struct device *dev)
-> > >   {
-> > > -	struct watchdog_device *imx_sc_wdd = dev_get_drvdata(dev);
-> > > +	struct imx_sc_wdt_device *imx_sc_wdd = dev_get_drvdata(dev);
-> > >
-> > > -	if (watchdog_active(imx_sc_wdd))
-> > > -		imx_sc_wdt_start(imx_sc_wdd);
-> > > +	if (watchdog_active(&imx_sc_wdd->wdd))
-> > > +		imx_sc_wdt_start(&imx_sc_wdd->wdd);
-> > >
-> > >   	return 0;
-> > >   }
-> > >
+>            GSI Channel   GSI Channel
+>                |             |         
+>   ----------   v   -------   v   -------------
+>   | AP (ep)|=======| IPA |=======|(ep) Modem |
+>   ----------       -------       -------------
 > 
+> The AP and Modem each have IPA endpoints (ep), which use GSI channels,
+> to communicate with the IPA. Each endpoint has configuration options
+> (such as checksum offload).  I *thought* that the configurations of
+> the two endpoints need to be compatible (e.g., they need to agree on
+> whether they're aggregating).  But with your questioning I now think
+> you may be right, that only the local endpoint's configuration matters.
+> 
+> I will inquire further on this.  I *know* that the AP and modem
+> exchange some information about IPA configuration, but looking more
+> closely that looks like it's all about the configuration of shared
+> IPA resources, not endpoints.
+> 
+> That said, the broader design (including the user space code)
+> surely assumes rmnet, and I don't have any sense of what impact
+> changing that would make.  I am sure that changing it would not
+> be well received.
+> 
+> 					-Alex
+> 
+>>>> Always passing data from one netdev to another both ways
+>>>> sounds like it introduces both direct CPU overhead, and
+>>>> problems with flow control when data gets buffered inbetween.
+>>>
+>>> My impression is the rmnet driver is a pretty thin layer,
+>>> so the CPU overhead is probably not that great (though
+>>> deaggregating a message is expensive).  I agree with you
+>>> on the flow control.
+>>
+>> The CPU overhead I mean is not from executing code in the
+>> rmnet driver, but from passing packets through the network
+>> stack between the two drivers, i.e. adding each frame to
+>> a queue and taking it back out. I'm not sure how this ends
+>> up working in reality but from a first look it seems like
+>> we might bounce in an out of the softirq handler inbetween.
+>>
+>>           Arnd
+>>
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
