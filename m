@@ -2,58 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6D6638600
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 10:12:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15E603863B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 10:29:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uTaOez+v5Qi/6Wr/HiTh/0OxdqVxymMz3+gtr2CHAD8=; b=DBZZuNY2wG+CON
-	ahT6C7mMBMdkF0cQYgWTixug7MbesB/S5GdxDP5xYeVpRkOOnBACiKowi5MwhI2f88c1lodI3F8dF
-	VCcmq0/yhO7Hg+sBagbPH9bGVujsRp+maHhJK0envFdQcmfZ89Xb78pyYjONHT0uUTvn9yr12fWlD
-	HiU8bAb7D5DzCxDBwjIqmrxgBMkKJ8C7nZDWnnwvsdIiw6XZxICWxx9VLe6hFvP3CVwTwjFKU02JR
-	MaNghgYt5hI3D5FI/T73Cwr7cC/EEOi43O4io7YLA7LwbCQoP9yHWiojNM9kzApHJyIFkwhNdKA5J
-	UaYduSWsRlb0onMPtq6g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=y7OiakOJTMF2t1p0giUt/ARk5S0lJwABZv11MpTXv6A=; b=s/3
+	0xX+he77aUjdLf708Wrns4l8Vm8MsCiQweukvPoeIeeUWHPVWK66ETQrI+0aK3xglYYxGYT1mlA+8
+	pCqEObGBdDpqwW+JweiwJkFFxGVfb3S+o+zFSoAMjXNaztVwGdtuEV8pf5Tnv0m6YuNth7NjAwja1
+	Qm427dUh/7PCCw1Boosnq9yg7UlKBSD+kBMtZ3i8ATuyI9LrJByHTOMR/lvj+04iVnFW4GPWOmLF7
+	kyCsaRuQa3Op2pvBU/rprbwh1nD3Z6Y6Nkz6rq6tUrI+5TWGz8vdzl4QTgmm3Whzoe7kw52dF9317
+	lAr9ymtPd32R/XhKViV3Xi7qYygzN1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZ9zR-0003TP-Df; Fri, 07 Jun 2019 08:12:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZ9zF-0003T6-Ic
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 08:12:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4B1F128;
- Fri,  7 Jun 2019 01:12:32 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5F32A3F246;
- Fri,  7 Jun 2019 01:12:27 -0700 (PDT)
-Subject: Re: [PATCH 1/8] KVM: arm/arm64: vgic: Add LPI translation cache
- definition
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190606165455.162478-1-marc.zyngier@arm.com>
- <20190606165455.162478-2-marc.zyngier@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <39841e6f-bdba-d2f8-0a68-8783d611dfb4@arm.com>
-Date: Fri, 7 Jun 2019 09:12:24 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
-MIME-Version: 1.0
-In-Reply-To: <20190606165455.162478-2-marc.zyngier@arm.com>
-Content-Language: en-US
+	id 1hZAFn-00086i-CF; Fri, 07 Jun 2019 08:29:39 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZAFF-0007tY-KT
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 08:29:06 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c2so1221883wrm.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 07 Jun 2019 01:29:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=nQjqkj1EN8NC8Ay0yEHmwn6X2HJX2TtkXyONunIjoOQ=;
+ b=jz5mKAbUNpc/2XrbWWbZCNJngHPyu1CFGXMDH3jsY6dBNiylltjRxlPmEIjFvwWsHB
+ G1s9vbvPWlTLMh5h0UuE5dNLrvZd8+Wp+SJU3n9JXQdMMbvR7PNj6ikzJHB6SWy9kpgw
+ 2Mbhc2hqW2YDw+8oPUxyi4UcJXUWflUNc9hFXsZ94aEJWUlNlJDXYQuOkr5ViQaBGfUO
+ Q/NM4GLddz0ePkHqkojIxiNV4cl1J5V09BxBngzM1H4LgO3x1dYkWq/fnUvODE4L8CQz
+ E2IOMdqvU91OVm2QCcLf6C6cvnHAO30XIzPYH8mVqqnIYhNEs6SVCDupXrCIZMxiYhz6
+ U6gg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=nQjqkj1EN8NC8Ay0yEHmwn6X2HJX2TtkXyONunIjoOQ=;
+ b=BMaqF/P+3tkpFtf+nAna5NndK/XLeTObujkVHB38vDmfhr5n0X/tAQ+Io9UQKb34Wt
+ KLG6oG9yaJRjQMdK3IsmT7SeAid54+z3aA6Myfcl7KjiSu6ZpLsCTfk3QevYvlvl6E7A
+ TuizQAYUztPYXMzLKdwt9SMw9yLdHLZkbnrGLah8cqaXMAQWYaB3EPUbSiwLVwAX3y0C
+ Tv5Cqt6vT9Wei7b5GDpyytRsxhsDeHvb0EjPU0FbfexVLoyjaAEURfGvJl7qtugGO1a8
+ srehFt1vp/y6AbX9fUpjrPb+KqK2Lk4viwj6tPgAC0L5NEVE41v6gC4WtSpjqnmgleBZ
+ 3cfg==
+X-Gm-Message-State: APjAAAUwVtpHI+Xv9LRNPV7KKMuuBf/+GYegvh2GrJYpFHHYLg1gXjy4
+ aImtWevy/rYQD4FGalrKGZUDww==
+X-Google-Smtp-Source: APXvYqw3tK85mPCJtNwImGvxXwtTRJVHn4uSWnyncRx2pOscbKR2RIrb27s86mnFP4xtyzHXWFKbKQ==
+X-Received: by 2002:adf:e691:: with SMTP id r17mr15939833wrm.67.1559896143573; 
+ Fri, 07 Jun 2019 01:29:03 -0700 (PDT)
+Received: from localhost.localdomain ([2.31.167.229])
+ by smtp.gmail.com with ESMTPSA id a3sm1092946wmb.35.2019.06.07.01.29.02
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 07 Jun 2019 01:29:02 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
+ wsa+renesas@sang-engineering.com, bjorn.andersson@linaro.org,
+ linus.walleij@linaro.org, balbi@kernel.org, gregkh@linuxfoundation.org
+Subject: [PATCH v2 1/8] i2c: i2c-qcom-geni: Provide support for ACPI
+Date: Fri,  7 Jun 2019 09:28:54 +0100
+Message-Id: <20190607082901.6491-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_011233_706288_2F2A8357 
-X-CRM114-Status: GOOD (  21.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190607_012905_681738_77400A53 
+X-CRM114-Status: GOOD (  14.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,173 +93,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Christoffer Dall <christoffer.dall@arm.com>,
- Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-i2c@vger.kernel.org, jlhugo@gmail.com, Lee Jones <lee.jones@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Add a match table to allow automatic probing of ACPI device
+QCOM0220.  Ignore clock attainment errors.  Set default clock
+frequency value.
 
-On 06/06/2019 17:54, Marc Zyngier wrote:
-> Add the basic data structure that expresses an MSI to LPI
-> translation as well as the allocation/release hooks.
-> 
-> THe size of the cache is arbitrarily defined as 4*nr_vcpus.
-> 
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+---
+ drivers/i2c/busses/i2c-qcom-geni.c | 19 +++++++++++++++++--
+ 1 file changed, 17 insertions(+), 2 deletions(-)
 
-Since this arbitrary and that people migh want to try it with different
-size, could the number of (per vCPU) ITS translation cache entries be
-passed as a kernel parameter?
-
-> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
-> ---
->  include/kvm/arm_vgic.h        | 10 ++++++++++
->  virt/kvm/arm/vgic/vgic-init.c | 34 ++++++++++++++++++++++++++++++++++
->  virt/kvm/arm/vgic/vgic-its.c  |  2 ++
->  virt/kvm/arm/vgic/vgic.h      |  3 +++
->  4 files changed, 49 insertions(+)
-> 
-> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-> index c36c86f1ec9a..5a0d6b07c5ef 100644
-> --- a/include/kvm/arm_vgic.h
-> +++ b/include/kvm/arm_vgic.h
-> @@ -173,6 +173,14 @@ struct vgic_io_device {
->  	struct kvm_io_device dev;
->  };
->  
-> +struct vgic_translation_cache_entry {
-> +	struct list_head	entry;
-> +	phys_addr_t		db;
-> +	u32			devid;
-> +	u32			eventid;
-> +	struct vgic_irq		*irq;
-> +};
-> +
->  struct vgic_its {
->  	/* The base address of the ITS control register frame */
->  	gpa_t			vgic_its_base;
-> @@ -260,6 +268,8 @@ struct vgic_dist {
->  	struct list_head	lpi_list_head;
->  	int			lpi_list_count;
->  
-> +	struct list_head	lpi_translation_cache;
-> +
->  	/* used by vgic-debug */
->  	struct vgic_state_iter *iter;
->  
-> diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
-> index 3bdb31eaed64..25ae25694a28 100644
-> --- a/virt/kvm/arm/vgic/vgic-init.c
-> +++ b/virt/kvm/arm/vgic/vgic-init.c
-> @@ -64,6 +64,7 @@ void kvm_vgic_early_init(struct kvm *kvm)
->  	struct vgic_dist *dist = &kvm->arch.vgic;
->  
->  	INIT_LIST_HEAD(&dist->lpi_list_head);
-> +	INIT_LIST_HEAD(&dist->lpi_translation_cache);
->  	raw_spin_lock_init(&dist->lpi_list_lock);
->  }
->  
-> @@ -260,6 +261,27 @@ static void kvm_vgic_vcpu_enable(struct kvm_vcpu *vcpu)
->  		vgic_v3_enable(vcpu);
->  }
->  
-> +void vgic_lpi_translation_cache_init(struct kvm *kvm)
-> +{
-> +	struct vgic_dist *dist = &kvm->arch.vgic;
-> +	int i;
-> +
-> +	if (!list_empty(&dist->lpi_translation_cache))
-> +		return;
-> +
-> +	for (i = 0; i < LPI_CACHE_SIZE(kvm); i++) {
-> +		struct vgic_translation_cache_entry *cte;
-> +
-> +		/* An allocation failure is not fatal */
-> +		cte = kzalloc(sizeof(*cte), GFP_KERNEL);
-> +		if (WARN_ON(!cte))
-> +			break;
-> +
-> +		INIT_LIST_HEAD(&cte->entry);
-> +		list_add(&cte->entry, &dist->lpi_translation_cache);
-> +	}
-> +}
-> +
->  /*
->   * vgic_init: allocates and initializes dist and vcpu data structures
->   * depending on two dimensioning parameters:
-> @@ -305,6 +327,7 @@ int vgic_init(struct kvm *kvm)
->  	}
->  
->  	if (vgic_has_its(kvm)) {
-> +		vgic_lpi_translation_cache_init(kvm);
->  		ret = vgic_v4_init(kvm);
->  		if (ret)
->  			goto out;
-> @@ -346,6 +369,17 @@ static void kvm_vgic_dist_destroy(struct kvm *kvm)
->  		INIT_LIST_HEAD(&dist->rd_regions);
->  	}
->  
-> +	if (vgic_has_its(kvm)) {
-> +		struct vgic_translation_cache_entry *cte, *tmp;
-> +
-> +		list_for_each_entry_safe(cte, tmp,
-> +					 &dist->lpi_translation_cache, entry) {
-> +			list_del(&cte->entry);
-> +			kfree(cte);
-> +		}
-> +		INIT_LIST_HEAD(&dist->lpi_translation_cache);
-
-I would expect that removing all entries from a list would leave that
-list as a "clean" empty list. Is INIT_LIST_HEAD() really needed here?
-
-> +	}
-> +
->  	if (vgic_supports_direct_msis(kvm))
->  		vgic_v4_teardown(kvm);
->  }
-> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-> index 44ceaccb18cf..5758504fd934 100644
-> --- a/virt/kvm/arm/vgic/vgic-its.c
-> +++ b/virt/kvm/arm/vgic/vgic-its.c
-> @@ -1696,6 +1696,8 @@ static int vgic_its_create(struct kvm_device *dev, u32 type)
->  			kfree(its);
->  			return ret;
->  		}
-> +
-> +		vgic_lpi_translation_cache_init(dev->kvm);
-
-I'm not sure I understand why we need to call that here. Isn't the
-single call in vgic_init() enough? Are there cases where the other call
-might come to late (I guess I might discover that in the rest of the
-series).
-
->  	}
->  
->  	mutex_init(&its->its_lock);
-> diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-> index abeeffabc456..a58e1b263dca 100644
-> --- a/virt/kvm/arm/vgic/vgic.h
-> +++ b/virt/kvm/arm/vgic/vgic.h
-> @@ -316,6 +316,9 @@ int vgic_copy_lpi_list(struct kvm *kvm, struct kvm_vcpu *vcpu, u32 **intid_ptr);
->  int vgic_its_resolve_lpi(struct kvm *kvm, struct vgic_its *its,
->  			 u32 devid, u32 eventid, struct vgic_irq **irq);
->  struct vgic_its *vgic_msi_to_its(struct kvm *kvm, struct kvm_msi *msi);
-> +void vgic_lpi_translation_cache_init(struct kvm *kvm);
-> +
-> +#define LPI_CACHE_SIZE(kvm)	(atomic_read(&(kvm)->online_vcpus) * 4)
->  
->  bool vgic_supports_direct_msis(struct kvm *kvm);
->  int vgic_v4_init(struct kvm *kvm);
-> 
-
-Cheers,
-
+diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-qcom-geni.c
+index db075bc0d952..0fa93b448e8d 100644
+--- a/drivers/i2c/busses/i2c-qcom-geni.c
++++ b/drivers/i2c/busses/i2c-qcom-geni.c
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0
+ // Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+ 
++#include <linux/acpi.h>
+ #include <linux/clk.h>
+ #include <linux/dma-mapping.h>
+ #include <linux/err.h>
+@@ -483,6 +484,12 @@ static const struct i2c_algorithm geni_i2c_algo = {
+ 	.functionality	= geni_i2c_func,
+ };
+ 
++static const struct acpi_device_id geni_i2c_acpi_match[] = {
++	{ "QCOM0220"},
++	{ },
++};
++MODULE_DEVICE_TABLE(acpi, geni_i2c_acpi_match);
++
+ static int geni_i2c_probe(struct platform_device *pdev)
+ {
+ 	struct geni_i2c_dev *gi2c;
+@@ -502,7 +509,7 @@ static int geni_i2c_probe(struct platform_device *pdev)
+ 		return PTR_ERR(gi2c->se.base);
+ 
+ 	gi2c->se.clk = devm_clk_get(&pdev->dev, "se");
+-	if (IS_ERR(gi2c->se.clk)) {
++	if (IS_ERR(gi2c->se.clk) && !ACPI_HANDLE(&pdev->dev)) {
+ 		ret = PTR_ERR(gi2c->se.clk);
+ 		dev_err(&pdev->dev, "Err getting SE Core clk %d\n", ret);
+ 		return ret;
+@@ -510,12 +517,19 @@ static int geni_i2c_probe(struct platform_device *pdev)
+ 
+ 	ret = device_property_read_u32(&pdev->dev, "clock-frequency",
+ 							&gi2c->clk_freq_out);
+-	if (ret) {
++	if (ret && !ACPI_HANDLE(&pdev->dev)) {
+ 		dev_info(&pdev->dev,
+ 			"Bus frequency not specified, default to 100kHz.\n");
+ 		gi2c->clk_freq_out = KHZ(100);
+ 	}
+ 
++	if (ACPI_HANDLE(&pdev->dev)) {
++		ACPI_COMPANION_SET(&gi2c->adap.dev, ACPI_COMPANION(&pdev->dev));
++
++		/* Using default, same as the !ACPI case above */
++		gi2c->clk_freq_out = KHZ(100);
++	}
++
+ 	gi2c->irq = platform_get_irq(pdev, 0);
+ 	if (gi2c->irq < 0) {
+ 		dev_err(&pdev->dev, "IRQ error for i2c-geni\n");
+@@ -660,6 +674,7 @@ static struct platform_driver geni_i2c_driver = {
+ 		.name = "geni_i2c",
+ 		.pm = &geni_i2c_pm_ops,
+ 		.of_match_table = geni_i2c_dt_match,
++		.acpi_match_table = ACPI_PTR(geni_i2c_acpi_match),
+ 	},
+ };
+ 
 -- 
-Julien Thierry
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
