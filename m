@@ -2,118 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 474EE386DB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 11:14:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FAAF386E2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 11:16:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F8Cen6tJ1XdHXR7TuTCuQ4+7jkxvsfyiBhLVwqkNwRk=; b=FyEH8uKYFrXfLz
-	h0oDBvyFhmC0IM7MoWREfoIpOlTJFaFn86/99VZ7taCCNAWDinNIgmPLHMVTIEENVBb0GbP56ffyt
-	y2QA7y+WxRJZsMDgBKEuBP11vmm0xMWjI4x5HLoiQZxQHAVOzvrPJaDvp9RTHtaLk6DuALASQH/O9
-	V1m6taRWFYQz4Q+WcRi5dInWm/zU7j6xEf8ujdfD6y0UQJkPeuYUEt+p0umc0CjxtzBsSDitLC/vb
-	fhqdFwUg2gOc/LBMu4qqg3/y+FhIHKNkg6VPvmzWVMVzhM89KqoVFa7fIB9wjY0nvHL/FUNe9cMTb
-	+uQe61yuaWpwu6DyRlGw==;
+	List-Owner; bh=SIXoTr5+axXu/rS+N4AAXCAGnMY8hvNWGegNj7IcVY4=; b=FuCy6aic+e7jyT
+	380z0kf4UF1oYU1F4GtvTgE9O6T4+PK6RUKel8gWBZy65uuls6iG27blSKLP6QXHXFaxuozHhKvY2
+	1fdJdgDc+hAkFRCOnZ2ZyTejpqH95+nO6X06z+Ufr5iseXBEsRv29BIsudiHEi+3KyLAoxI8eYfrh
+	/kHPevwBP6i/K2ZkpPqhZ+0U6aJ19z6eTIcZtXKr1DPfzEw0IX5tC9NmmDtWDKZxtyRwmP7qhp9/D
+	iD5eCFIDf3gf5I36QInteT1odgb9AYzvy14XH4R9QUrw9vltH2qGIfM8yByfkrwtEiauGRmI8yNtR
+	8fCX0u3PC4hTwHpALdbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZAxA-0000ia-T9; Fri, 07 Jun 2019 09:14:29 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZAwx-0000hh-Gx; Fri, 07 Jun 2019 09:14:17 +0000
-Received: from [192.168.1.162] ([37.4.249.160]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1M2etD-1hXnMu3tcN-0049CZ; Fri, 07 Jun 2019 11:14:00 +0200
-Subject: Re: [PATCH v2 4/7] cpufreq: add driver for Raspbery Pi
-To: Viresh Kumar <viresh.kumar@linaro.org>, Stephen Boyd <sboyd@kernel.org>
-References: <20190606142255.29454-1-nsaenzjulienne@suse.de>
- <20190606142255.29454-5-nsaenzjulienne@suse.de>
- <20190606170949.4A46720652@mail.kernel.org>
- <eb72a26b55cf17c29df6a7fd3c5def08182e00af.camel@suse.de>
- <20190606173609.2C3952083D@mail.kernel.org>
- <153579ddd7e6bd1e5c860a7a01115e47c78a1442.camel@suse.de>
- <20190606182335.1D15F20872@mail.kernel.org>
- <20190607030901.qdnjj7udw7ky3sfx@vireshk-i7>
-From: Stefan Wahren <stefan.wahren@i2se.com>
+	id 1hZAzD-0002Ov-7I; Fri, 07 Jun 2019 09:16:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZAyz-0002OF-Sp
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 09:16:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E318D28;
+ Fri,  7 Jun 2019 02:16:20 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ A738B3F96A; Fri,  7 Jun 2019 02:16:19 -0700 (PDT)
+Subject: Re: [PATCH 3/8] KVM: arm/arm64: vgic-its: Cache successful MSI->LPI
+ translation
+To: Julien Thierry <julien.thierry@arm.com>,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+References: <20190606165455.162478-1-marc.zyngier@arm.com>
+ <20190606165455.162478-4-marc.zyngier@arm.com>
+ <d9849310-7ff9-2385-d0e2-ac1de2878517@arm.com>
+ <1c81ab00-12d1-9921-e1ce-2e2233516bab@arm.com>
+ <2baf731f-922c-c3b8-abe5-593047a8ba00@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
 Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- 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 AQ==
-Message-ID: <b021ae9d-a38e-b300-d82e-d4f88fb0fe7a@i2se.com>
-Date: Fri, 7 Jun 2019 11:13:54 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <83f2b3d3-3697-b23d-1a20-09f84d3cca04@arm.com>
+Date: Fri, 7 Jun 2019 10:16:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190607030901.qdnjj7udw7ky3sfx@vireshk-i7>
+In-Reply-To: <2baf731f-922c-c3b8-abe5-593047a8ba00@arm.com>
 Content-Language: en-US
-X-Provags-ID: V03:K1:dzBHllwQoC6lRPpa8G8aP63JOKNkgZ8EY82JJv10u1tvsvxLq4U
- lw9QUuvcoVT3Fxo0s5Lo2EjjItN7dL6hC1ULxsyQhYUYKdpZMl7yD8G+PbRT5VyRVsrmRjy
- ooc3AdUOm9zahvJ0igUPAOMgz0kF0FPGCZCGeksV9TR9kLtX5E/XSHpF6gnndv1TtmKXwSu
- Oyo2zqU8T8fLX8kD4oFxA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ejinpiaIP6Q=:DxtkN/bF9QqcsKemJpIaaf
- b3C9RbiTpxDd+gZYBiCgU25OyMvyFF/sBOWoqL9oi2zU9OoV8k5BuocWnd4N8LitXFs9geHKu
- GszYHRVNhyRibl/3pphWE1kBvriVWIClPzk/OdEQY/UAlmHenrx8uhu52b84dguKO2RsheNHN
- dE/vOY/k4LMxPrPXjEsVyag2wSF8SSGt+RyIiD22hBc1pXIPBj5jpGj294JV9pdZu6/AwDHhh
- Vdk7U4uSctP2DqmvZw6AH6CxAGBN8lbPDvoRTja09FfZcBnNuxEUnCPmglTNzqVz7KZnF605A
- QTrWx7g6Dk4Fc/epONuurPrgfhPjpsIt5ClHGIrnB9wdDnHbIylIQstu+CekOjkiYoW6YuLX5
- hlstH8zB0arUHh2uHh43/3s2j9JMqcEhIGoUeYDe+ODnPBxtBf+FTDlMfj7tjjDiaRR+5U2QP
- /5vV7N0mfR4l4V5hvvq4Bz91jWQf4UlZm+eZjab93/xYlAQ2QVf4fg1eVGO38zfFBXJuHbvM1
- cJkk083WRhCC/NwENO3XsOhA4KMEXGO41U51f06hpdhfIe/CLZPZEwvNMkuZ1DBP2BS0A2kHj
- LfR3U3zbXFFFLPmNufYhhSEN/3C0Ty2Gq7XamA6asw4IiDDJMaRhflvrsf9J8GrmpwRWSNtF5
- YwZu7N5vV2zKgJ3h/0AFjdv4ESnXkcuKUvZGOCw61hoQOMD8jVPvp6UBcW/0l5WUo0VC/awNG
- 0sx+52QngNxlASWxTZbpwVyOwJSDWzJyydgVQ4NgyGHKOlPWGO3uNBbnY44=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_021415_855404_6BDB01E3 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190607_021622_027836_A29974F4 
+X-CRM114-Status: GOOD (  18.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -127,31 +113,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- f.fainelli@gmail.com, linux-pm@vger.kernel.org, mturquette@baylibre.com,
- ptesarik@suse.com, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
+ KarimAllah" <karahmed@amazon.de>, Christoffer Dall <christoffer.dall@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
+ Zenghui Yu <yuzenghui@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Viresh,
+On 07/06/2019 09:56, Julien Thierry wrote:
+> 
+> 
+> On 07/06/2019 09:51, Marc Zyngier wrote:
+>> On 07/06/2019 09:35, Julien Thierry wrote:
+>>> Hi Marc,
+>>>
+>>> On 06/06/2019 17:54, Marc Zyngier wrote:
+>>>> On a successful translation, preserve the parameters in the LPI
+>>>> translation cache. Each translation is reusing the last slot
+>>>> in the list, naturally evincting the least recently used entry.
+>>>>
+>>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>>>> ---
+>>>>  virt/kvm/arm/vgic/vgic-its.c | 41 ++++++++++++++++++++++++++++++++++++
+>>>>  1 file changed, 41 insertions(+)
+>>>>
+>>>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+>>>> index 5758504fd934..bc370b6c5afa 100644
+>>>> --- a/virt/kvm/arm/vgic/vgic-its.c
+>>>> +++ b/virt/kvm/arm/vgic/vgic-its.c
+>>>> @@ -538,6 +538,45 @@ static unsigned long vgic_mmio_read_its_idregs(struct kvm *kvm,
+>>>>  	return 0;
+>>>>  }
+>>>>  
+>>>> +static void vgic_its_cache_translation(struct kvm *kvm, struct vgic_its *its,
+>>>> +				       u32 devid, u32 eventid,
+>>>> +				       struct vgic_irq *irq)
+>>>> +{
+>>>> +	struct vgic_dist *dist = &kvm->arch.vgic;
+>>>> +	struct vgic_translation_cache_entry *cte;
+>>>> +	unsigned long flags;
+>>>> +
+>>>> +	/* Do not cache a directly injected interrupt */
+>>>> +	if (irq->hw)
+>>>> +		return;
+>>>> +
+>>>> +	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
+>>>> +
+>>>> +	/* Always reuse the last entry (LRU policy) */
+>>>> +	cte = list_last_entry(&dist->lpi_translation_cache,
+>>>> +			      typeof(*cte), entry);
+>>>> +
+>>>> +	/*
+>>>> +	 * Caching the translation implies having an extra reference
+>>>> +	 * to the interrupt, so drop the potential reference on what
+>>>> +	 * was in the cache, and increment it on the new interrupt.
+>>>> +	 */
+>>>> +	if (cte->irq)
+>>>> +		__vgic_put_lpi_locked(kvm, cte->irq);
+>>>> +
+>>>> +	vgic_get_irq_kref(irq);
+>>>
+>>> If cte->irq == irq, can we avoid the ref putting and getting and just
+>>> move the list entry (and update cte)?
+>> But in that case, we should have hit in the cache the first place, no?
+>> Or is there a particular race I'm not thinking of just yet?
+>>
+> 
+> Yes, I had not made it far enough in the series to see the cache hits
+> and assumed this function would also be used to update the LRU policy.
+> 
+> You can dismiss this comment, sorry for the noise.
 
-Am 07.06.19 um 05:09 schrieb Viresh Kumar:
-> On 06-06-19, 11:23, Stephen Boyd wrote:
->> Yes, thanks. I see that largely follows the commit description so it
->> looks OK to me.
-> Do you want to provide your Reviewed/Acked-by tag before I apply it ?
+Well, I think you're onto something here. Consider the following
+(slightly improbably, but not impossible scenario):
 
-Nicolas wanted to send a V3 of this series and as a platform maintainer
-i need some time for testing this version.
+CPU0:                        CPU1:
 
-Stefan
+interrupt arrives,
+cache miss
 
+<physical interrupt affinity change>
+
+                             interrupt arrives,
+                             cache miss
+
+                             resolve translation,
+                             cache allocation
+resolve translation,
+cache allocation
+
+Oh look, we have the same interrupt in the cache twice. Nothing really
+bad should result from that, but that's not really the anticipated
+behaviour. Which means the list_last_entry() is not the right thing to
+do, and we should lookup this particular interrupt in the cache before
+adding it. Probably indicates that a long list is not the best data
+structure for a cache (who would have thought?).
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
