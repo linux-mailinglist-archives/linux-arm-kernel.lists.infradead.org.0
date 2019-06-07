@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F5763873A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 11:42:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089C738757
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 11:49:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8KXgcHz23tp+09oTEQowJEbUpx/vB1fMaDbIKR4Ug2M=; b=EPyuX+pdQS/qQ8w2ZeZ/SbvUp
-	9Oq6lOqF2hZO01bayzmO5HkxNX5WTtnuht6nXam7lXz5Inin4fcoyRsklbV2RA6Gh4as89oA6Hlz8
-	XvokdCYcFRpE4BhCmCQN880tsth9fywtzyU2AzIw26f6fnpM2P2DZ4t0vhsrQDXsYEoPqEnh6mLDE
-	3tkl6K6nN4bd2oOhTHrcjzvZtFvzfc6m5Laq9ftLmKuxziEagMZq5CPYFi4ANVFe7TBss6xIBRLVu
-	XTZVdV0VZ9MluWvoF4uIshurwnNJR0XXjXIWqNzosZAiQ2OIy0gFuPnWQL0ykoRKGCMNlbmYQ7EMN
-	trBLtDNIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rKV+PabDbgGw1dCFmYZMIPLKXBC85wXnk8OtGGxdMNA=; b=dni0bbLxfykXxD
+	/Wu2a6MxGbQXMHgOiZDJeGr180g9xf/iFNz2r1XLt7N3M20/0XBbyWIqtq1zcy9azQo6fzx9w+mYQ
+	N0rtPtYfA/LD63pVrVJgQfAV135R8qj+tnwXaU+BQ169f1eAHybI/6VRBKHhGJaBViWkzEW5V34YV
+	Zz74Cbyp0C/c031YkF25swNt4uh/AmdmtKbDw7dplDl7jQGSNtgzMC87Cj7t4eHBGTOj6nHL50W2z
+	CVjC6KE9i3zCBB+dz+F72POkvhTUVBF2mtwHDjnTfnAbsZMsvZgPWoLpe1N849GvH2zI+umWQNo4P
+	9EPOVwTYVt38q0uHzkSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZBOg-0003JK-4Y; Fri, 07 Jun 2019 09:42:54 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZBOT-0003IO-NT; Fri, 07 Jun 2019 09:42:43 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 3CC5EAE15;
- Fri,  7 Jun 2019 09:42:37 +0000 (UTC)
-Message-ID: <5dccf2500f023ce2c78d9ff3f41b53e36843298b.camel@suse.de>
-Subject: Re: [PATCH v2 2/7] clk: bcm283x: add driver interfacing with
- Raspberry Pi's firmware
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, stefan.wahren@i2se.com, 
- linux-kernel@vger.kernel.org
-Date: Fri, 07 Jun 2019 11:42:34 +0200
-In-Reply-To: <3c4c8b56-eb02-be6f-9b3a-a94a895f10f0@gmx.net>
-References: <20190606142255.29454-1-nsaenzjulienne@suse.de>
- <20190606142255.29454-3-nsaenzjulienne@suse.de>
- <3c4c8b56-eb02-be6f-9b3a-a94a895f10f0@gmx.net>
-User-Agent: Evolution 3.32.2 
+	id 1hZBUy-0005AV-RP; Fri, 07 Jun 2019 09:49:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZBUn-00059r-0G
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 09:49:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 84F99337;
+ Fri,  7 Jun 2019 02:49:11 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 59F643F96A;
+ Fri,  7 Jun 2019 02:50:50 -0700 (PDT)
+Date: Fri, 7 Jun 2019 10:49:07 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Jeremy Linton <jeremy.linton@arm.com>
+Subject: Re: [PATCH v3 2/5] ACPI/PPTT: Add function to return ACPI 6.3
+ Identical tokens
+Message-ID: <20190607094907.GB2429@e107155-lin>
+References: <20190503232407.37195-1-jeremy.linton@arm.com>
+ <20190503232407.37195-3-jeremy.linton@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190503232407.37195-3-jeremy.linton@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_024242_056321_FFF43153 
-X-CRM114-Status: GOOD (  18.50  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190607_024913_094159_1A0C490D 
+X-CRM114-Status: GOOD (  16.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,139 +62,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, ptesarik@suse.com, sboyd@kernel.org,
- viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, mbrugger@suse.de, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- ssuloev@orpaltech.com
-Content-Type: multipart/mixed; boundary="===============6290961454860255849=="
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, will.deacon@arm.com,
+ john.garry@huawei.com, rjw@rjwysocki.net, linuxarm@huawei.com,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-acpi@vger.kernel.org,
+ catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, May 03, 2019 at 06:24:04PM -0500, Jeremy Linton wrote:
+> ACPI 6.3 adds a flag to indicate that child nodes are all
+> identical cores. This is useful to authoritatively determine
+> if a set of (possibly offline) cores are identical or not.
+> 
+> Since the flag doesn't give us a unique id we can generate
+> one and use it to create bitmaps of sibling nodes, or simply
+> in a loop to determine if a subset of cores are identical.
+>
 
---===============6290961454860255849==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-vYYrm15OHAAapvPJgPuT"
-
-
---=-vYYrm15OHAAapvPJgPuT
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, 2019-06-07 at 11:26 +0200, Stefan Wahren wrote:
-> Hi Nicolas,
->=20
-> Am 06.06.19 um 16:22 schrieb Nicolas Saenz Julienne:
-> > Raspberry Pi's firmware offers an interface though which update it's
-> > clock's frequencies. This is specially useful in order to change the CP=
-U
-> > clock (pllb_arm) which is 'owned' by the firmware and we're unable to
-> > scale using the register interface provided by clk-bcm2835.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> > Acked-by: Eric Anholt <eric@anholt.net>
-> >=20
-> > ---
-> >=20
-> > Changes since v1:
-> >   - Use BIT()
-> >   - Add Kconfig entry, with compile test
-> >   - remove prepare/unprepare
-> >   - Fix uninitialized init.name in pllb registration
-> >   - Add MODULE_ALIAS()
-> >   - Use determine_rate() instead of round_rate()
-> >   - Add small introduction explaining need for driver
-> >=20
-> >  drivers/clk/bcm/Kconfig           |   7 +
-> >  drivers/clk/bcm/Makefile          |   1 +
-> >  drivers/clk/bcm/clk-raspberrypi.c | 302 ++++++++++++++++++++++++++++++
-> >  3 files changed, 310 insertions(+)
-> >  create mode 100644 drivers/clk/bcm/clk-raspberrypi.c
-> >=20
-> > diff --git a/drivers/clk/bcm/Kconfig b/drivers/clk/bcm/Kconfig
-> > index 29ee7b776cd4..a4a2775d65e1 100644
-> > --- a/drivers/clk/bcm/Kconfig
-> > +++ b/drivers/clk/bcm/Kconfig
-> > @@ -64,3 +64,10 @@ config CLK_BCM_SR
-> >  	default ARCH_BCM_IPROC
-> >  	help
-> >  	  Enable common clock framework support for the Broadcom Stingray SoC
-> > +
-> > +config CLK_RASPBERRYPI
-> > +	tristate "Raspberry Pi firmware based clock support"
-> > +	depends on RASPBERRYPI_FIRMWARE || (COMPILE_TEST &&
-> > !RASPBERRYPI_FIRMWARE)
-> > +	help
-> > +	  Enable common clock framework support for Raspberry Pi's firmware
-> > +	  dependent clocks
-> > diff --git a/drivers/clk/bcm/Makefile b/drivers/clk/bcm/Makefile
-> > index 002661d39128..eb7159099d82 100644
-> > --- a/drivers/clk/bcm/Makefile
-> > +++ b/drivers/clk/bcm/Makefile
-> > @@ -7,6 +7,7 @@ obj-$(CONFIG_CLK_BCM_KONA)	+=3D clk-bcm21664.o
-> >  obj-$(CONFIG_COMMON_CLK_IPROC)	+=3D clk-iproc-armpll.o clk-iproc-pll.o
-> > clk-iproc-asiu.o
-> >  obj-$(CONFIG_ARCH_BCM2835)	+=3D clk-bcm2835.o
-> >  obj-$(CONFIG_ARCH_BCM2835)	+=3D clk-bcm2835-aux.o
-> > +obj-$(CONFIG_CLK_RASPBERRYPI)	+=3D clk-raspberrypi.o
-> >  obj-$(CONFIG_ARCH_BCM_53573)	+=3D clk-bcm53573-ilp.o
-> >  obj-$(CONFIG_CLK_BCM_CYGNUS)	+=3D clk-cygnus.o
-> >  obj-$(CONFIG_CLK_BCM_HR2)	+=3D clk-hr2.o
->=20
-> not your fault but you better rebase your next version on linux-next
-> because Florian's latest patches ("clk: bcm: Make BCM2835 clock drivers
-> selectable") collide with this patch.
->=20
-> Checkpatch gives the following output about this patch:
->=20
-> WARNING: 'harware' may be misspelled - perhaps 'hardware'?
->=20
-> #58: FILE: drivers/clk/bcm/clk-raspberrypi.c:5:
-> + * Even though clk-bcm2835 provides an interface to the harware
-> registers for
->=20
-> ERROR: code indent should use tabs where possible
-> #197: FILE: drivers/clk/bcm/clk-raspberrypi.c:144:
-> +^I^I^I^I           struct clk_rate_request *req)$
-
-Noted, thanks.
-
-As this seems fairly calm, should I send v3 or wait little more?
+If possible reorder this patch with next just to be sure.
+I know the user is not introduced until 4/5, but 3/5 kind of fixes
+the implementation.
 
 
---=-vYYrm15OHAAapvPJgPuT
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+Apart from that, this looks fine to me.
 
------BEGIN PGP SIGNATURE-----
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAlz6MYsACgkQlfZmHno8
-x/4cAgf8C0p+K3P3lwXzF2aerFWGjQdQ5MTyixpeAFG52zhaabNg97gJ1Id0m0pa
-DpW++g2ioGud8UyqpllRIVQYkdyCTMR2EpK7IQ29LN9nwS8SwKBg33HhYDUYgVY9
-7Bl4zb+IavOd74KzxP+VBhdRrGIh8TsI/mfS7d2udj121AKJtpy9eFx6KrT60sPn
-xAAgkcj490MpT3c4kihVMVPy/kLBQoHYWKpui23sTNyMKT7+2arsYrOgKcy6THbl
-/JI1MO+kCGIQUVmkHk8jzoQMOVAGQqnqLYmjQVntn6Esdujc2PBqu5fqzV3mWrks
-7LsAb94I/Y1BUed/JKAFjT5DJ0qLPA==
-=zWl2
------END PGP SIGNATURE-----
+> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+> ---
+>  drivers/acpi/pptt.c  | 26 ++++++++++++++++++++++++++
+>  include/linux/acpi.h |  5 +++++
+>  2 files changed, 31 insertions(+)
+> 
+> diff --git a/drivers/acpi/pptt.c b/drivers/acpi/pptt.c
+> index 83a026765faa..1865515297ca 100644
+> --- a/drivers/acpi/pptt.c
+> +++ b/drivers/acpi/pptt.c
+> @@ -660,3 +660,29 @@ int find_acpi_cpu_topology_package(unsigned int cpu)
+>  	return find_acpi_cpu_topology_tag(cpu, PPTT_ABORT_PACKAGE,
+>  					  ACPI_PPTT_PHYSICAL_PACKAGE);
+>  }
+> +
+> +/**
+> + * find_acpi_cpu_topology_hetero_id() - Get a core architecture tag
+> + * @cpu: Kernel logical CPU number
+> + *
+> + * Determine a unique heterogeneous tag for the given CPU. CPUs with the same
+> + * implementation should have matching tags.
+> + *
+> + * The returned tag can be used to group peers with identical implementation.
+> + *
+> + * The search terminates when a level is found with the identical implementation
+> + * flag set or we reach a root node.
+> + *
+> + * Due to limitations in the PPTT data structure, there may be rare situations
+> + * where two cores in a heterogeneous machine may be identical, but won't have
+> + * the same tag.
+> + *
 
---=-vYYrm15OHAAapvPJgPuT--
+Indeed, it's unfortunate. I gave some thoughts if we can find ways to
+avoid this. Hope we don't have to see such weird combinations with ACPI
+based systems.
 
-
-
---===============6290961454860255849==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6290961454860255849==--
-
-
