@@ -2,43 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02BA0388F3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:26:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80A5E388FC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:27:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=cjHz1NVcge8bKzAPp3niOOjIrxj4fCQtv5k7xVxfMvw=; b=s4g
-	7MyGem2OSficohmgCCsVosNsHWECvCZ6G6fK4XP/4ByEz9lYTOzuss9R3Fv6Ko3NcL79caCE4Txrv
-	whBgXLfzxoJ/vPn6m9+tJK/rqQEwZdeyok5yEotjx2MJk9EE9hXiaSXLcB0kgzRs9eYl5VS/cVRPL
-	aUkCTnOahHPZkZZWvr2ALze1Nlj3G9WgwMDe0jfZrEN3rBi9tJ4ctnDHyumK8wK1RZj2cV/fKRO3W
-	GAAxibEQouqi+wvD85XJbBgbhRc4sRwqc3g03D/id04N7wxmLHOreU4kFRL0gt3cFVmgCgiihoHrK
-	5dJ2/yrlxhVwxKscNjtaJVOnHC+QtfQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=KoGNpWk6f4qWE5uMoN+vSc/Ob/ghgn8v32k+zi7i3FI=; b=BsUR9Wot20i/Cbf2PT2QMWrUYm
+	E7ELppws2s00UxyNXELg17ToQ56SNXuASpFeSO9Pk0iuV6y9Yoz7FI3wVsfA5nUH6MBQ9Uz+Dxse9
+	RHUEi/HJf25uDKSVaTN06aB3BkC/cZ4koPA1GMLAwfFjT3KTJBlq+VU6VjSC+XjdG3Z4EGqd7x6nN
+	Mtk5rFe+pnMLPcBru80oSEqljYYE+OGWb5dP8MWJGNeqLNFfvas+38VsgDvYDGcXUgFwMWhEnRC0U
+	dU+xU2gGEad/286PAL0/MXkzHr53Nu3Z+cUV2WltW+HMdOcvyCLGxal0fvTPHIs1hhe0+EB+PGpHJ
+	lYoh0xzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZD1A-0007V1-9S; Fri, 07 Jun 2019 11:26:44 +0000
+	id 1hZD1w-0007lr-JP; Fri, 07 Jun 2019 11:27:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZD14-0007Ub-2d
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:26:39 +0000
+ id 1hZD1h-0007lH-2e
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:27:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 843F828;
- Fri,  7 Jun 2019 04:26:34 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1975B360;
+ Fri,  7 Jun 2019 04:27:16 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A7FEC3F246;
- Fri,  7 Jun 2019 04:28:13 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 240973F246;
+ Fri,  7 Jun 2019 04:28:55 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH kvmtool v4 0/8] arm64: Pointer Authentication and SVE support
-Date: Fri,  7 Jun 2019 12:26:21 +0100
-Message-Id: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH kvmtool v4 1/8] update_headers.sh: Add missing shell quoting
+Date: Fri,  7 Jun 2019 12:26:22 +0100
+Message-Id: <1559906789-20936-2-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
+In-Reply-To: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
+References: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_042638_209725_9B602511 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20190607_042717_162573_558FE40A 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,73 +74,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series, based on kvmtool master [1], implements basic support for
-pointer authentication and SVE for guests.  This superseded the
-previous v3 series [2].
+update_headers.sh can break if the current working directory has a
+funny name or if something odd is passed for LINUX_ROOT.
 
-A git tree is also available [3].
+In the interest of cleanliness, quote where appropriate.
 
-For pointer auth, I include Amit's v10 patch [4], with some additional
-refactoring to sit nicely alongside SVE, and some cosmetic / diagnostic
-tidyups discussed during review on-list.  (I've kept the extra changes
-separate for easier review, but they could be folded if desired.)
+Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+---
+ util/update_headers.sh | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-[Maintainer note: I'd like Amit to comment on my changes on top of his
-pointer auth patch so that that can be folded together as appropriate.]
-
-
-This series has been tested against Linux v5.2-rc1.
-
-After discussion with Will, the command-line options for controlling
-pointer auth and SVE support have all been dropped, since they are not
-useful to normal users: instead, we just default to the best
-configuration that the host supports.  There's always the option to add
-this functionality back in some more appropriate form later, if someone
-has a use for it.
-
-See the individual patches for other minor changes.
-
-[1] 
-git://git.kernel.org/pub/scm/linux/kernel/git/will/kvmtool.git master
-https://git.kernel.org/pub/scm/linux/kernel/git/will/kvmtool.git/log/
-eaeaf60808d6 ("virtio/blk: Avoid taking pointer to packed struct")
-
-[2] [PATCH kvmtool v3 0/9] arm64: Pointer Authentication and SVE support
-https://lists.cs.columbia.edu/pipermail/kvmarm/2019-May/036050.html
-
-[3] [PATCH v10 3/5] KVM: arm64: Add userspace flag to enable pointer authentication
-https://lore.kernel.org/linux-arm-kernel/1555994558-26349-6-git-send-email-amit.kachhap@arm.com/
-
-[4]
-git://linux-arm.org/kvmtool-dm.git sve/v4/head
-http://linux-arm.org/git?p=kvmtool-dm.git;a=shortlog;h=refs/heads/sve/v4/head
-
-
-Amit Daniel Kachhap (1):
-  KVM: arm/arm64: Add a vcpu feature for pointer authentication
-
-Dave Martin (7):
-  update_headers.sh: Add missing shell quoting
-  update_headers.sh: Cleanly report failure on error
-  update_headers.sh: arm64: Copy sve_context.h if available
-  update_headers: Sync kvm UAPI headers with linux v5.2-rc1
-  KVM: arm/arm64: Back out ptrauth command-line arguments
-  arm/arm64: Factor out ptrauth vcpu feature setup
-  arm64: Add SVE support
-
- arm/aarch32/include/kvm/kvm-cpu-arch.h |  7 +++++
- arm/aarch64/include/asm/kvm.h          | 43 +++++++++++++++++++++++++++
- arm/aarch64/include/asm/sve_context.h  | 53 ++++++++++++++++++++++++++++++++++
- arm/aarch64/include/kvm/kvm-cpu-arch.h |  3 ++
- arm/aarch64/kvm-cpu.c                  | 28 ++++++++++++++++++
- arm/kvm-cpu.c                          |  5 ++++
- include/linux/kvm.h                    | 15 ++++++++--
- powerpc/include/asm/kvm.h              | 48 ++++++++++++++++++++++++++++++
- util/update_headers.sh                 | 26 +++++++++++++----
- x86/include/asm/kvm.h                  |  1 +
- 10 files changed, 221 insertions(+), 8 deletions(-)
- create mode 100644 arm/aarch64/include/asm/sve_context.h
-
+diff --git a/util/update_headers.sh b/util/update_headers.sh
+index 2d93646..4ba1b9f 100755
+--- a/util/update_headers.sh
++++ b/util/update_headers.sh
+@@ -11,17 +11,17 @@ if [ "$#" -ge 1 ]
+ then
+ 	LINUX_ROOT="$1"
+ else
+-	LINUX_ROOT=/lib/modules/$(uname -r)/source
++	LINUX_ROOT="/lib/modules/$(uname -r)/source"
+ fi
+ 
+-if [ ! -d $LINUX_ROOT/include/uapi/linux ]
++if [ ! -d "$LINUX_ROOT/include/uapi/linux" ]
+ then
+ 	echo "$LINUX_ROOT does not seem to be valid Linux source tree."
+ 	echo "usage: $0 [path-to-Linux-source-tree]"
+ 	exit 1
+ fi
+ 
+-cp $LINUX_ROOT/include/uapi/linux/kvm.h include/linux
++cp -- "$LINUX_ROOT/include/uapi/linux/kvm.h" include/linux
+ 
+ for arch in arm arm64 mips powerpc x86
+ do
+@@ -30,6 +30,6 @@ do
+ 		arm64) KVMTOOL_PATH=arm/aarch64 ;;
+ 		*) KVMTOOL_PATH=$arch ;;
+ 	esac
+-	cp $LINUX_ROOT/arch/$arch/include/uapi/asm/kvm.h \
+-		$KVMTOOL_PATH/include/asm
++	cp -- "$LINUX_ROOT/arch/$arch/include/uapi/asm/kvm.h" \
++		"$KVMTOOL_PATH/include/asm"
+ done
 -- 
 2.1.4
 
