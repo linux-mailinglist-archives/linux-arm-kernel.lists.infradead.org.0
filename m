@@ -2,78 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1CB338D9A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 16:45:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B927238DA4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 16:47:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=30DWJPe3ik7+z9tUYgPAifqSJXLe9PsH3Y/792+BhOM=; b=dhvH0pIsGDnR+q
-	pf6LCIiblKeWXeBwZn9GeqUmAG1RhNTjCoU+Zc5+LRknLXLDuCb8jb+AlvUPoPK+hoG8evdUTOMn1
-	1OuDu6N8uZZYiE2E3SiOrN8Cr7eg2BylTM7y6tiElBxM1v4G7f03VLPIqFb++44+3QFaHbbFv9srW
-	Y6bYjRx1XV7vVHiZ9NRCrPIlA0szsEmp1qfS2vCDgu7f9P7JubRGLg2HRxBCPhpigFkz4CrCknS29
-	1fg2Ae+EQblnprHH0O2sK6+XdPT+ChDdqA/T5peOoQ5eJj++zvOZGPBmr+y4wBq6U0XAxji/VYPBx
-	BIvT3gCU274Vq09+vo2w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hHxMQB6r7rWFHBpr9GUQnhReETn5Ae49zcjzYFIVLzg=; b=M8RCSx0bbU4+dC
+	hlXNJoqn5RbuHYikJXSR8np9ARli80Wnk+Ws8gmPJdfbeNYKQOQQD/Tcga+xfg6i4hPeC0QE6KBcl
+	vCtIRAtsyYr/0DRSxzx6x9I3oShgiKU+RMHDrfMV5BjjgFqWPBSnjJ+XeCi2k7AxywnFqM+I/QRfA
+	bCdtBhS3jZtfk1dxchX/dConQertIitznjABZf19tW3C0HPjwDnbdwARyKFRIBmpsFHRMDv0Vucex
+	Fa9c3azaXtW32KpLJLmhBeJlYCZK0tEpmLP67iilXLYa+kuSIJIrP49d9syEarVGmgXXCDt9zBFUi
+	dDcahPyfPVoUybI8lqvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZG7G-00080o-4p; Fri, 07 Jun 2019 14:45:14 +0000
-Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1hZG90-0000Vn-O3; Fri, 07 Jun 2019 14:47:02 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZG74-0007Ny-QH
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 14:45:04 +0000
-Received: by mail-it1-x141.google.com with SMTP id a186so3095826itg.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 07:45:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0461UCKFoYu7Rdu8kwzbsR/mRhSFbTO2AAbs+xAqEe8=;
- b=Pda6oP3d4skdQ2p0gZWXIABX6SCh0/CQLL5/TN+p7/4QZ48etg+wtnhwMMUx6SKsoV
- kdKMUgzUAJPFEsyxhG80zygITwLxXK02Xc3gifTmplLjlf6UAevPd79GDDjRt6rNq59y
- aIjQy+WKPTdGmgkPnNXT6y7856CHhjMvSkCExgN1cxQ2KFgzTYdwi6gelqGN82ujKcRR
- 4xJjHdaIQvFJh1ywa3Mdse9m9AW0oqvKd5ac4ye1dtgL3/zSctxElomulabRHy1YCp7B
- hhOu8F5Wxu3q3S9hoXnEmn2HFR5JkddExLoOqUBGt0D4kiXaWS1AGL5YkmMeNBrOLBTG
- i6Yg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0461UCKFoYu7Rdu8kwzbsR/mRhSFbTO2AAbs+xAqEe8=;
- b=YH5pkkIN9gnXyJ9yp4BCrFDZULh/SFc195P5BXb5PmWsbg2SgPcBKTWrsgokUClNle
- tSIO22GQLuAWxKK4e7g7dxFaGy+/Et6wivNTR5UM+1/VnvLc3MvKyAZcr9zUno1qly+6
- u4xDYABQdlW+4rZO5lnIrSHgIeRtZJfHjGpbJyZ9V7mllMNioRHbGbXLrQmoENGQhTXE
- YOFPoNE+2WS0qbOZkmINwVY3m6+V+C1Tbh76XAuUILsi0zn8V30qW839k4qzL4pdW4yD
- 4mm+Z2FlNYfJhDn1tOncC8fdT7RBKz+v20IDKZwOnAq5E52OBW8c+WqnIrIso5hbg3gd
- 0NEA==
-X-Gm-Message-State: APjAAAUkDotHS2bmXGCJYV+vNo39dNP8ajDX5E2eaO5laqWmnfd8v/qw
- KKV5UWNt0MpBiP1+VlE0yi6d3zDisn6wiCOcDhTH3MJs
-X-Google-Smtp-Source: APXvYqzrKoOE+6wc8YTZ6KchVxmLj9eHPCQREDvKnJwJlTQngGpbtDOqcZsj2EHYvg5QTfN/Pdz0fvzzd0ENCF4PUAk=
-X-Received: by 2002:a24:c384:: with SMTP id s126mr4186373itg.1.1559918702032; 
- Fri, 07 Jun 2019 07:45:02 -0700 (PDT)
+ id 1hZG8r-0000VU-20
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 14:46:54 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cfa78db0000>; Fri, 07 Jun 2019 07:46:52 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Fri, 07 Jun 2019 07:46:52 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Fri, 07 Jun 2019 07:46:52 -0700
+Received: from HQMAIL107.nvidia.com (172.20.187.13) by HQMAIL103.nvidia.com
+ (172.20.187.11) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 7 Jun
+ 2019 14:46:50 +0000
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Fri, 7 Jun 2019 14:46:51 +0000
+Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
+ hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5cfa78d50000>; Fri, 07 Jun 2019 07:46:50 -0700
+From: Vidya Sagar <vidyas@nvidia.com>
+To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
+ <mark.rutland@arm.com>, <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
+ <kishon@ti.com>, <catalin.marinas@arm.com>, <will.deacon@arm.com>,
+ <jingoohan1@gmail.com>, <gustavo.pimentel@synopsys.com>
+Subject: [PATCH V9 00/15] Add Tegra194 PCIe support
+Date: Fri, 7 Jun 2019 20:16:25 +0530
+Message-ID: <20190607144640.13427-1-vidyas@nvidia.com>
+X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
-References: <20190605161633.12245-1-mathieu.poirier@linaro.org>
- <20190606201056.GJ21245@kernel.org>
-In-Reply-To: <20190606201056.GJ21245@kernel.org>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 7 Jun 2019 08:44:51 -0600
-Message-ID: <CANLsYky1XFBjO-F9Sf_Spkw+p_Cm5n+DDUaAbKMmHkc+GgeHMQ@mail.gmail.com>
-Subject: Re: [PATCH] perf tools: Properly set the value of 'old' and 'head' in
- snapshot mode
-To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1559918812; bh=w+RZiLEBEOZjbsMK8N679FNYBkSuyDWniXmfWfFxw/0=;
+ h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+ X-NVConfidentiality:MIME-Version:Content-Type;
+ b=GMH5Pk0QwJr5i8HHaqC5YRO7QfDwXcLN8FKgJm+wSbl04iv+w04bncroUIRtY22f6
+ uFVS+x7MNTDLWE0kenPUyrPYb1JLsmAsaP86CGSIpoHGOC3NkTokWFdAkc5AW5a3XO
+ P6JMBCL1iyC3CSkzG+K5N/LoXd7+mfiX4w5JfzBiOY3sUrQ/Q9VP+xGk+NK3a8DUT/
+ MI54yuKfbf8hRM1jrLDWx37GaQmBgasoXuh1lnCxTXoYC3PVw1f+puCADCGG/ta8t2
+ GYxd4vFhwqQ6aMQICedPb37mCQUZ7JsSES4UNUfRV0hB856STZBCIbbkHIcybV/80A
+ K/q0DgVRf5fEg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_074502_899216_F6BA06F4 
-X-CRM114-Status: GOOD (  31.01  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190607_074653_119589_08CC6B39 
+X-CRM114-Status: GOOD (  11.70  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,220 +92,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, mperttunen@nvidia.com,
+ linux-tegra@vger.kernel.org, digetx@gmail.com, vidyas@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 6 Jun 2019 at 14:11, Arnaldo Carvalho de Melo
-<arnaldo.melo@gmail.com> wrote:
->
-> Em Wed, Jun 05, 2019 at 10:16:33AM -0600, Mathieu Poirier escreveu:
-> > This patch adds the necessay intelligence to properly compute the value
-> > of 'old' and 'head' when operating in snapshot mode.  That way we can get
-> > the latest information in the AUX buffer and be compatible with the
-> > generic AUX ring buffer mechanic.
->
-> Leo, have you had the chance to test/review this one? Suzuki?
+Tegra194 has six PCIe controllers based on Synopsys DesignWare core.
+There are two Universal PHY (UPHY) blocks with each supporting 12(HSIO:
+Hisg Speed IO) and 8(NVHS: NVIDIA High Speed) lanes respectively.
+Controllers:0~4 use UPHY lanes from HSIO brick whereas Controller:5 uses
+UPHY lanes from NVHS brick. Lane mapping in HSIO UPHY brick to each PCIe
+controller (0~4) is controlled in XBAR module by BPMP-FW. Since PCIe
+core has PIPE interface, a glue module called PIPE-to-UPHY (P2U) is used
+to connect each UPHY lane (applicable to both HSIO and NVHS UPHY bricks)
+to PCIe controller
+This patch series
+- Adds support for P2U PHY driver
+- Adds support for PCIe host controller
+- Adds device tree nodes each PCIe controllers
+- Enables nodes applicable to p2972-0000 platform
+- Adds helper APIs in Designware core driver to get capability regs offset
+- Adds defines for new feature registers of PCIe spec revision 4
+- Makes changes in DesignWare core driver to get Tegra194 PCIe working
 
-Leo did test this before and added his Tested-by on the Coresight
-mailing list.  I did not carried it here because I changed the call to
-reallocarray() to realloc() in order to avoid cross compilation
-problems.  I think it is safe enough but other people's opinion may
-differ so I played it safe.  Leo, please test this again if/when you
-have the time.
+Testing done on P2972-0000 platform
+- Able to get PCIe link up with on-board Marvel eSATA controller
+- Able to get PCIe link up with NVMe cards connected to M.2 Key-M slot
+- Able to do data transfers with both SATA drives and NVMe cards
 
->
-> I also changed the subject to:
->
->   [PATCH] perf cs-etm: Properly set the value of 'old' and 'head' in snapshot mode
->
-> So that when looking at a 'git log --oneline' one can have the proper
-> context and know that its about cs-etm.
+Note
+- Enabling x8 slot on P2972-0000 platform requires pinmux driver for Tegra194.
+  It is being worked on currently and hence Controller:5 (i.e. x8 slot) is
+  disabled in this patch series. A future patch series would enable this.
+- This series is based on top of the following series
+  Jisheng's patches to add support to .remove() in Designware sub-system
+  https://patchwork.kernel.org/project/linux-pci/list/?series=98559
+  (Jisheng's patches are now accepted and applied for v5.2)
+  My patches made on top of Jisheng's patches to export various symbols
+  https://patchwork.kernel.org/project/linux-pci/list/?series=101259
 
-Very well.
+Changes since [v8]:
+* Made the drivers dependent on ARCH_TEGRA_194_SOC directly
+* Addressed review comments from Dmitry
 
-Mathieu
+Changes since [v7]:
+* Changed P2U driver file name from pcie-p2u-tegra194.c to phy-tegra194-p2u.c
+* Addressed review comments from Thierry and Rob
 
->
-> - Arnaldo
->
-> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > ---
-> >  tools/perf/arch/arm/util/cs-etm.c | 127 +++++++++++++++++++++++++++++-
-> >  1 file changed, 123 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-> > index 911426721170..0a278bbcaba6 100644
-> > --- a/tools/perf/arch/arm/util/cs-etm.c
-> > +++ b/tools/perf/arch/arm/util/cs-etm.c
-> > @@ -31,6 +31,8 @@ struct cs_etm_recording {
-> >       struct auxtrace_record  itr;
-> >       struct perf_pmu         *cs_etm_pmu;
-> >       struct perf_evlist      *evlist;
-> > +     int                     wrapped_cnt;
-> > +     bool                    *wrapped;
-> >       bool                    snapshot_mode;
-> >       size_t                  snapshot_size;
-> >  };
-> > @@ -536,16 +538,131 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
-> >       return 0;
-> >  }
-> >
-> > -static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
-> > +static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
-> > +{
-> > +     bool *wrapped;
-> > +     int cnt = ptr->wrapped_cnt;
-> > +
-> > +     /* Make @ptr->wrapped as big as @idx */
-> > +     while (cnt <= idx)
-> > +             cnt++;
-> > +
-> > +     /*
-> > +      * Free'ed in cs_etm_recording_free().  Using realloc() to avoid
-> > +      * cross compilation problems where the host's system supports
-> > +      * reallocarray() but not the target.
-> > +      */
-> > +     wrapped = realloc(ptr->wrapped, cnt * sizeof(bool));
-> > +     if (!wrapped)
-> > +             return -ENOMEM;
-> > +
-> > +     wrapped[cnt - 1] = false;
-> > +     ptr->wrapped_cnt = cnt;
-> > +     ptr->wrapped = wrapped;
-> > +
-> > +     return 0;
-> > +}
-> > +
-> > +static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
-> > +                                   size_t buffer_size, u64 head)
-> > +{
-> > +     u64 i, watermark;
-> > +     u64 *buf = (u64 *)buffer;
-> > +     size_t buf_size = buffer_size;
-> > +
-> > +     /*
-> > +      * We want to look the very last 512 byte (chosen arbitrarily) in
-> > +      * the ring buffer.
-> > +      */
-> > +     watermark = buf_size - 512;
-> > +
-> > +     /*
-> > +      * @head is continuously increasing - if its value is equal or greater
-> > +      * than the size of the ring buffer, it has wrapped around.
-> > +      */
-> > +     if (head >= buffer_size)
-> > +             return true;
-> > +
-> > +     /*
-> > +      * The value of @head is somewhere within the size of the ring buffer.
-> > +      * This can be that there hasn't been enough data to fill the ring
-> > +      * buffer yet or the trace time was so long that @head has numerically
-> > +      * wrapped around.  To find we need to check if we have data at the very
-> > +      * end of the ring buffer.  We can reliably do this because mmap'ed
-> > +      * pages are zeroed out and there is a fresh mapping with every new
-> > +      * session.
-> > +      */
-> > +
-> > +     /* @head is less than 512 byte from the end of the ring buffer */
-> > +     if (head > watermark)
-> > +             watermark = head;
-> > +
-> > +     /*
-> > +      * Speed things up by using 64 bit transactions (see "u64 *buf" above)
-> > +      */
-> > +     watermark >>= 3;
-> > +     buf_size >>= 3;
-> > +
-> > +     /*
-> > +      * If we find trace data at the end of the ring buffer, @head has
-> > +      * been there and has numerically wrapped around at least once.
-> > +      */
-> > +     for (i = watermark; i < buf_size; i++)
-> > +             if (buf[i])
-> > +                     return true;
-> > +
-> > +     return false;
-> > +}
-> > +
-> > +static int cs_etm_find_snapshot(struct auxtrace_record *itr,
-> >                               int idx, struct auxtrace_mmap *mm,
-> > -                             unsigned char *data __maybe_unused,
-> > +                             unsigned char *data,
-> >                               u64 *head, u64 *old)
-> >  {
-> > +     int err;
-> > +     bool wrapped;
-> > +     struct cs_etm_recording *ptr =
-> > +                     container_of(itr, struct cs_etm_recording, itr);
-> > +
-> > +     /*
-> > +      * Allocate memory to keep track of wrapping if this is the first
-> > +      * time we deal with this *mm.
-> > +      */
-> > +     if (idx >= ptr->wrapped_cnt) {
-> > +             err = cs_etm_alloc_wrapped_array(ptr, idx);
-> > +             if (err)
-> > +                     return err;
-> > +     }
-> > +
-> > +     /*
-> > +      * Check to see if *head has wrapped around.  If it hasn't only the
-> > +      * amount of data between *head and *old is snapshot'ed to avoid
-> > +      * bloating the perf.data file with zeros.  But as soon as *head has
-> > +      * wrapped around the entire size of the AUX ring buffer it taken.
-> > +      */
-> > +     wrapped = ptr->wrapped[idx];
-> > +     if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
-> > +             wrapped = true;
-> > +             ptr->wrapped[idx] = true;
-> > +     }
-> > +
-> >       pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
-> >                 __func__, idx, (size_t)*old, (size_t)*head, mm->len);
-> >
-> > -     *old = *head;
-> > -     *head += mm->len;
-> > +     /* No wrap has occurred, we can just use *head and *old. */
-> > +     if (!wrapped)
-> > +             return 0;
-> > +
-> > +     /*
-> > +      * *head has wrapped around - adjust *head and *old to pickup the
-> > +      * entire content of the AUX buffer.
-> > +      */
-> > +     if (*head >= mm->len) {
-> > +             *old = *head - mm->len;
-> > +     } else {
-> > +             *head += mm->len;
-> > +             *old = *head - mm->len;
-> > +     }
-> >
-> >       return 0;
-> >  }
-> > @@ -586,6 +703,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
-> >  {
-> >       struct cs_etm_recording *ptr =
-> >                       container_of(itr, struct cs_etm_recording, itr);
-> > +
-> > +     zfree(&ptr->wrapped);
-> >       free(ptr);
-> >  }
-> >
-> > --
-> > 2.17.1
->
-> --
->
-> - Arnaldo
+Changes since [v6]:
+* Took care of review comments from Rob
+* Added a quirk to disable MSI for root ports
+* Removed using pcie_pme_disable_msi() API in host controller driver
+
+Changes since [v5]:
+* Removed patch that exports pcie_bus_config symbol
+* Took care of review comments from Thierry and Rob
+
+Changes since [v4]:
+* Removed redundant APIs in pcie-designware-ep.c file after moving them
+  to pcie-designware.c file based on Bjorn's review comments
+
+Changes since [v3]:
+* Rebased on top of linux-next top of the tree
+* Addressed Gustavo's comments and added his Ack for some of the changes.
+
+Changes since [v2]:
+* Addressed review comments from Thierry
+
+Changes since [v1]:
+* Addressed review comments from Bjorn, Thierry, Jonathan, Rob & Kishon
+* Added more patches in v2 series
+
+Vidya Sagar (15):
+  PCI: Add #defines for some of PCIe spec r4.0 features
+  PCI: Disable MSI for Tegra194 root port
+  PCI: dwc: Perform dbi regs write lock towards the end
+  PCI: dwc: Move config space capability search API
+  PCI: dwc: Add ext config space capability search API
+  dt-bindings: PCI: designware: Add binding for CDM register check
+  PCI: dwc: Add support to enable CDM register check
+  dt-bindings: Add PCIe supports-clkreq property
+  dt-bindings: PCI: tegra: Add device tree support for Tegra194
+  dt-bindings: PHY: P2U: Add Tegra194 P2U block
+  arm64: tegra: Add P2U and PCIe controller nodes to Tegra194 DT
+  arm64: tegra: Enable PCIe slots in P2972-0000 board
+  phy: tegra: Add PCIe PIPE2UPHY support
+  PCI: tegra: Add Tegra194 PCIe support
+  arm64: Add Tegra194 PCIe driver to defconfig
+
+ .../bindings/pci/designware-pcie.txt          |    5 +
+ .../bindings/pci/nvidia,tegra194-pcie.txt     |  155 ++
+ Documentation/devicetree/bindings/pci/pci.txt |    5 +
+ .../bindings/phy/phy-tegra194-p2u.txt         |   28 +
+ .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |    2 +-
+ .../boot/dts/nvidia/tegra194-p2972-0000.dts   |   41 +
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  437 +++++
+ arch/arm64/configs/defconfig                  |    1 +
+ drivers/pci/controller/dwc/Kconfig            |   10 +
+ drivers/pci/controller/dwc/Makefile           |    1 +
+ .../pci/controller/dwc/pcie-designware-ep.c   |   37 +-
+ .../pci/controller/dwc/pcie-designware-host.c |   14 +-
+ drivers/pci/controller/dwc/pcie-designware.c  |   87 +
+ drivers/pci/controller/dwc/pcie-designware.h  |   12 +
+ drivers/pci/controller/dwc/pcie-tegra194.c    | 1621 +++++++++++++++++
+ drivers/pci/quirks.c                          |   23 +
+ drivers/phy/tegra/Kconfig                     |    7 +
+ drivers/phy/tegra/Makefile                    |    1 +
+ drivers/phy/tegra/phy-tegra194-p2u.c          |  109 ++
+ include/uapi/linux/pci_regs.h                 |   22 +-
+ 20 files changed, 2575 insertions(+), 43 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/phy-tegra194-p2u.txt
+ create mode 100644 drivers/pci/controller/dwc/pcie-tegra194.c
+ create mode 100644 drivers/phy/tegra/phy-tegra194-p2u.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
