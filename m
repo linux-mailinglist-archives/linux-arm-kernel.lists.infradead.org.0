@@ -2,60 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DDB93946B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:34:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0552F39496
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:46:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l0VCD2/g0xIB8NNJqcOpHeOYCu4X2eSyvvwy3Bb/UHw=; b=L+I4vBice8OKIZ
-	QBvtNboUk6iketbos16PWdo8rInNwlbIAgV6mA/g6k/s58tvLJhBYUNglPss4jEGEcM/opgT7dpB2
-	vqvfUQgZJyi7cXHO5xY9gIyLuhgWdL89T0Yy+m+/zp+xlBF2U++yzjtG68CR6OnEmcMRPX2s6cv3O
-	c0f4KdmWMWK6pMMDIGdWnKq317SducUeQztV6Vhkb2+RqqsFOWHYaUSwU/q+AmnGSCKO3yUSr4w0t
-	WftOpfRSVF44ABFgmvIoZ44paQi9HIarGvDUL6zZMDdWguGVEGR646rZhgomzcfltO24oF72B+c61
-	byxTHN0zi8Nc2tvB1Z/A==;
+	List-Owner; bh=pPmMMDfRXk9oxa3YGBCPPbjlhGiou+46x2DX/zqDR8s=; b=corIfSDHVXcMEw
+	QMCAdnOspJYLXdxQNs6CNdnOrLVKetqtvrVamxm1cidGixtt2Va/vZxnA/s9n1L1TcArW2ujxXizE
+	4g2cZ/PpuC/Nx3Rf0t5XUre/VQL1ccZBKSVvuKaUW7Tt0nGzl46z7y3Fv76hpJWQh5rL8f4Au35dy
+	o3q3nK61LkyJvhHy/RyMSiO2H5tw9vt+z+rjbBwl1e89JXq67hikmxus3jUdSU1lwmhklq2X0YNCq
+	Amu+aiGHV4/VtCk3wi8PzIDYJ/gM9Ct6YEbYdN2UmBziO1QDhk89kZwwPLMYeTEW7R+EKtc5fM+G+
+	yN3wOOEICFJLLAQwUXlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZJhM-0007lz-BH; Fri, 07 Jun 2019 18:34:44 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hZJsl-0003je-U2; Fri, 07 Jun 2019 18:46:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZJhH-0007lt-6j
- for linux-arm-kernel@bombadil.infradead.org; Fri, 07 Jun 2019 18:34:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8FTavkhD/U3nEQ58jCZ6nyHW3BIZ3uQK2evEJdGyByI=; b=gT+vkwvwOp1nwsTQ9+8MSC+q/
- DlEJZRgsGjdpov4kvJpPCWkJ/ssGRVVJ/oUfmfYmd2KDh2Hayb5uBUUyEptCjPvSEQHyw3gULRPDJ
- RwPW9/NopoMfX2S9oo7fc1OtN416wc9N+WIlSqpHHSnHuB3puB9bpbPe10F11F5xkpTbggRtgOsiZ
- pTmr2eDCH7PxrE61C2YV2Ey9zvvv/6a8FCqY9soskrTlYPAhpCJY/AK/ECAuJiT054lTWqRKNERdR
- ItzBwS2ip7/4jL0UZ6/8jQiWCoi1EEw8CtrNgMYpPoom7AeoKudNG3kr7ocY2HcqqMmFQXE8wCqCn
- meMjLZXHg==;
-Received: from 187-26-97-17.3g.claro.net.br ([187.26.97.17]
- helo=quaco.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hZJhE-0004uE-Tg; Fri, 07 Jun 2019 18:34:37 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id D4DD441149; Fri,  7 Jun 2019 15:34:34 -0300 (-03)
-Date: Fri, 7 Jun 2019 15:34:34 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v2 02/17] perf tools: Configure timestsamp generation in
- CPU-wide mode
-Message-ID: <20190607183434.GO21245@kernel.org>
-References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
- <20190524173508.29044-3-mathieu.poirier@linaro.org>
- <c1507e8b-9ec8-a5c4-a398-20dcc47acaa8@arm.com>
- <CANLsYkx6o9xgxTh4s-o7tVxKKLu_SQc5CLtoHzHK=8WtNK4dbQ@mail.gmail.com>
+ id 1hZJsd-0003iT-4N
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 18:46:24 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D5C3F212F5;
+ Fri,  7 Jun 2019 18:46:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559933181;
+ bh=J0nw1E2EN/TtoXc1Q4Yuy9LdBjugC1jeuRsyc4v7azA=;
+ h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
+ b=Z47c1q/I05xsmjxvEUBEAn9G+zpsYmIOQeKwpy7p4Btrw2EpCxb0q8fJGbpPHUUmU
+ aNTuF4bwgnnRPh1KEcMQ9msRSOofsnngKvr2604IcjxKCESd1FvjyA7KT3jARjeqSQ
+ 95Z/vIJbonxZgUyzNQ2EOd3GFUTSDOBC/uqGjPY0=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANLsYkx6o9xgxTh4s-o7tVxKKLu_SQc5CLtoHzHK=8WtNK4dbQ@mail.gmail.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.11.3 (2019-02-01)
+In-Reply-To: <CAGb2v64VnzXv1-fDDM1bBFWEH7NZp=s5Uw3qRP05WiDvbyqVJA@mail.gmail.com>
+References: <20190520080421.12575-1-wens@kernel.org>
+ <20190520090327.iejd3q7c3iwomzlz@flea>
+ <CAGb2v64VnzXv1-fDDM1bBFWEH7NZp=s5Uw3qRP05WiDvbyqVJA@mail.gmail.com>
+To: Chen-Yu Tsai <wens@kernel.org>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH 00/25] clk: sunxi-ng: clk parent rewrite part 1
+User-Agent: alot/0.8.1
+Date: Fri, 07 Jun 2019 11:46:21 -0700
+Message-Id: <20190607184621.D5C3F212F5@mail.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190607_114623_207346_DC529AF9 
+X-CRM114-Status: GOOD (  23.58  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,150 +77,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Fri, Jun 07, 2019 at 11:46:32AM -0600, Mathieu Poirier escreveu:
-> On Fri, 7 Jun 2019 at 03:41, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
-> >
-> >
-> >
-> > On 24/05/2019 18:34, Mathieu Poirier wrote:
-> > > When operating in CPU-wide mode tracers need to generate timestamps in
-> > > order to correlate the code being traced on one CPU with what is executed
-> > > on other CPUs.
-> > >
-> > > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > > ---
-> > >   tools/perf/arch/arm/util/cs-etm.c | 57 +++++++++++++++++++++++++++++++
-> > >   1 file changed, 57 insertions(+)
-> > >
-> > > diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-> > > index 3912f0bf04ed..be1e4f20affa 100644
-> > > --- a/tools/perf/arch/arm/util/cs-etm.c
-> > > +++ b/tools/perf/arch/arm/util/cs-etm.c
-> > > @@ -99,6 +99,54 @@ static int cs_etm_set_context_id(struct auxtrace_record *itr,
-> > >       return err;
-> > >   }
-> > >
-> > > +static int cs_etm_set_timestamp(struct auxtrace_record *itr,
-> > > +                             struct perf_evsel *evsel, int cpu)
-> > > +{
-> > > +     struct cs_etm_recording *ptr;
-> > > +     struct perf_pmu *cs_etm_pmu;
-> > > +     char path[PATH_MAX];
-> > > +     int err = -EINVAL;
-> > > +     u32 val;
-> > > +
-> > > +     ptr = container_of(itr, struct cs_etm_recording, itr);
-> > > +     cs_etm_pmu = ptr->cs_etm_pmu;
-> > > +
-> > > +     if (!cs_etm_is_etmv4(itr, cpu))
-> > > +             goto out;
-> > > +
-> > > +     /* Get a handle on TRCIRD0 */
-> > > +     snprintf(path, PATH_MAX, "cpu%d/%s",
-> > > +              cpu, metadata_etmv4_ro[CS_ETMV4_TRCIDR0]);
-> > > +     err = perf_pmu__scan_file(cs_etm_pmu, path, "%x", &val);
-> > > +
-> > > +     /* There was a problem reading the file, bailing out */
-> > > +     if (err != 1) {
-> > > +             pr_err("%s: can't read file %s\n",
-> > > +                    CORESIGHT_ETM_PMU_NAME, path);
-> > > +             goto out;
-> > > +     }
-> > > +
-> > > +     /*
-> > > +      * TRCIDR0.TSSIZE, bit [28-24], indicates whether global timestamping
-> > > +      * is supported:
-> > > +      *  0b00000 Global timestamping is not implemented
-> > > +      *  0b00110 Implementation supports a maximum timestamp of 48bits.
-> > > +      *  0b01000 Implementation supports a maximum timestamp of 64bits.
-> > > +      */
-> > > +     val &= GENMASK(28, 24);
-> > > +     if (!val) {
-> > > +             err = -EINVAL;
-> > > +             goto out;
-> > > +     }
-> > > +
-> > > +     /* All good, let the kernel know */
-> > > +     evsel->attr.config |= (1 << ETM_OPT_TS);
-> > > +     err = 0;
-> > > +
-> > > +out:
-> > > +     return err;
-> > > +}
-> > > +
-> > >   static int cs_etm_set_option(struct auxtrace_record *itr,
-> > >                            struct perf_evsel *evsel, u32 option)
-> > >   {
-> > > @@ -118,6 +166,11 @@ static int cs_etm_set_option(struct auxtrace_record *itr,
-> > >                       if (err)
-> > >                               goto out;
-> > >                       break;
-> > > +             case ETM_OPT_TS:
-> > > +                     err = cs_etm_set_timestamp(itr, evsel, i);
-> > > +                     if (err)
-> > > +                             goto out;
-> > > +                     break;
-> > >               default:
-> > >                       goto out;
-> > >               }
-> > > @@ -343,6 +396,10 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
-> > >               err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_CTXTID);
-> > >               if (err)
-> > >                       goto out;
-> > > +
-> > > +             err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_TS);
-> > > +             if (err)
-> > > +                     goto out;
-> >
-> > nit: Could we not do this in one shot, say :
-> >
-> >         cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_TS | ETM_OPT_CTXTID) ?
-> >
-> > rather than iterating over the per-CPU events twice ? The cs_etm_set_option()
-> > could simply replace the switch() to :
-> >
-> >         if (option & ETM_OPT_1)
-> >                 do_something_for_1()
-> >         if (option & ETM_OPT_2)
-> >                 do_something_for_2();
-> >         if (option & ~(ETM_OPT_1 | ETM_OPT_2 |...))
-> >                 /* do unsupported option */
-> >
+Quoting Chen-Yu Tsai (2019-06-03 09:38:22)
+> Hi Stephen,
 > 
-> Yes, that is a good optimization.
-> 
-> Arnaldo, do you prefer a new set or another patch on top of this one?
-
-On top of it, as this isn't a fix just an optimization, so no need to go
-back and fix history to avoid bisection, etc.
-
-Put it in your next set, no need to hurry.
-
-- Arnaldo
- 
-> Thanks,
-> Mathieu
-> 
+> On Mon, May 20, 2019 at 5:03 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 > >
-> > Cheers
-> > Suzuki
+> > On Mon, May 20, 2019 at 04:03:56PM +0800, Chen-Yu Tsai wrote:
+> > > From: Chen-Yu Tsai <wens@csie.org>
+> > >
+> > > Hi everyone,
+> > >
+> > > This is series is the first part of a large series (I haven't done the
+> > > rest) of patches to rewrite the clk parent relationship handling within
+> > > the sunxi-ng clk driver. This is based on Stephen's recent work allowing
+> > > clk drivers to specify clk parents using struct clk_hw * or parsing DT
+> > > phandles in the clk node.
+> > >
+> > > This series can be split into a few major parts:
+> > >
+> > > 1) The first patch is a small fix for clk debugfs representation. This
+> > >    was done before commit 1a079560b145 ("clk: Cache core in
+> > >    clk_fetch_parent_index() without names") was posted, so it might or
+> > >    might not be needed. Found this when checking my work using
+> > >    clk_possible_parents.
+> > >
+> > > 2) A bunch of CLK_HW_INIT_* helper macros are added. These cover the
+> > >    situations I encountered, or assume I will encounter, such as single
+> > >    internal (struct clk_hw *) parent, single DT (struct clk_parent_data
+> > >    .fw_name), multiple internal parents, and multiple mixed (internal +
+> > >    DT) parents. A special variant for just an internal single parent is
+> > >    added, CLK_HW_INIT_HWS, which lets the driver share the singular
+> > >    list, instead of having the compiler create a compound literal every
+> > >    time. It might even make sense to only keep this variant.
+> > >
+> > > 3) A bunch of CLK_FIXED_FACTOR_* helper macros are added. The rationale
+> > >    is the same as the single parent CLK_HW_INIT_* helpers.
+> > >
+> > > 4) Bulk conversion of CLK_FIXED_FACTOR to use local parent references,
+> > >    either struct clk_hw * or DT .fw_name types, whichever the hardware
+> > >    requires.
+> > >
+> > > 5) The beginning of SUNXI_CCU_GATE conversion to local parent
+> > >    references. This part is not done. They are included as justification
+> > >    and examples for the shared list of clk parents case.
+> >
+> > That series is pretty neat. As far as sunxi is concerned, you can add my
+> > Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> >
+> > > I realize this is going to be many patches every time I convert a clock
+> > > type. Going forward would the people involved prefer I send out
+> > > individual patches like this series, or squash them all together?
+> >
+> > For bisection, I guess it would be good to keep the approach you've
+> > had in this series. If this is really too much, I guess we can always
+> > change oru mind later on.
+> 
+> Any thoughts on this series and how to proceed?
+> 
 
--- 
+I have a few minor nitpicks but otherwise the series looks good to me.
+I'm perfectly happy to see the individual patches unless you want to
+squash them into one big patch. I can review the conversions either way.
 
-- Arnaldo
+Did you need me to apply any patches here? Or can I assume you'll resend
+with a pull request so it can be merged into clk-next?
+
+BTW, did you have to update any DT bindings or documentation? I didn't
+see anything, so I'm a little surprised that all that stuff was already
+in place.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
