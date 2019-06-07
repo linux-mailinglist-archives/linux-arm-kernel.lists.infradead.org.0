@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51D3F38EC9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 17:17:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 665B638ED6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 17:21:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RMxxQwOKcJy0RqquHicHtA+FcuiyVJqqrNDMmIuDp1M=; b=bKz2DwXokKGMDl
-	DmWy0tnQi6bYi8BxqCtQg5qttmfdetq+82fIiSkOuH70XoN3ffxfpJPrdu/sTfpgVJqpjTuXsUnpS
-	Aye0jljPsIO9wJbt8UOO7NhpAiCQay05y2+azbSfsX4r3SuUHs3dEY0sHoMpNdlI6q7s+NB/S8nXe
-	iSeSnnwfTPJHNGIyjZgMd0s/1hLr3qt0KwKSESR4u29rjk72czvwBBuy2jB1ueq6krYE65JWLX412
-	7jWPC4yyf7qnKWGQ5rHoD2Em90da+YaCPeZUVBq5W1yQhKaXdcAAwvZLyaakKU5/WTg9QTGfP4jwc
-	pBibsMa749yrFXqMtRIg==;
+	List-Owner; bh=/8q6J+hGu5aF+8q7yrJV2SzdOBB75di0699qzQ16Hjg=; b=CZHjCP0UQOg6RD
+	QOTFh4FYv8Wxa9yjtDr+FmrXECLRANZZlHZjovJGfW0zOQjOYQIaptl/A+OUiKMmG8XO/I7kS/da0
+	1YyLh7CdQ4qkdM2RgOXdDOXdR0HX72SiVWW1UX1WwY+tki90aZ4OWoMYOQPnAXuWLIeWVjAht9SFV
+	tet/j7CJtqPhlpsYtJi/8/qD7BKq5uFXutryYOIQCnIUY56NfNlqNmMEPl1nplq8fMdZDzaEN9n4s
+	P0qPpGti1yc30uuA/S717U41vB8D3eT52IEiKoyE9VjEP+zGMgkxGh59lmFQ1mUWaV5uS0vAp9Ebj
+	H7kz9hcM1cleNBUHYlKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZGcW-00023m-1n; Fri, 07 Jun 2019 15:17:32 +0000
+	id 1hZGgL-00049D-St; Fri, 07 Jun 2019 15:21:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZGcM-000238-Vg
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 15:17:24 +0000
+ id 1hZGgC-00048r-SS
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 15:21:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3B5A6367;
- Fri,  7 Jun 2019 08:17:21 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 99207337;
+ Fri,  7 Jun 2019 08:21:19 -0700 (PDT)
 Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6F0F83F718;
- Fri,  7 Jun 2019 08:17:18 -0700 (PDT)
-Date: Fri, 7 Jun 2019 16:17:16 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E9EEB3F718;
+ Fri,  7 Jun 2019 08:21:16 -0700 (PDT)
+Date: Fri, 7 Jun 2019 16:21:14 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 07/18] drivers: firmware: psci: Prepare to use OS
- initiated suspend mode
-Message-ID: <20190607151716.GF15577@e107155-lin>
+Subject: Re: [PATCH 08/18] drivers: firmware: psci: Prepare to support PM
+ domains
+Message-ID: <20190607152114.GG15577@e107155-lin>
 References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-8-ulf.hansson@linaro.org>
+ <20190513192300.653-9-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190513192300.653-8-ulf.hansson@linaro.org>
+In-Reply-To: <20190513192300.653-9-ulf.hansson@linaro.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_081723_075803_573434AE 
-X-CRM114-Status: GOOD (  14.83  )
+X-CRM114-CacheID: sfid-20190607_082121_013512_730FA77F 
+X-CRM114-Status: GOOD (  21.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,54 +63,134 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>, Tony Lindgren <tony@atomide.com>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Lina Iyer <ilina@codeaurora.org>,
- Lina Iyer <lina.iyer@linaro.org>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Kevin Hilman <khilman@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ linux-arm-msm@vger.kernel.org, Lina Iyer <ilina@codeaurora.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
  "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>, linux-pm@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Stephen Boyd <sboyd@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, Amit Kucheria <amit.kucheria@linaro.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Niklas Cassel <niklas.cassel@linaro.org>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 13, 2019 at 09:22:49PM +0200, Ulf Hansson wrote:
-> The per CPU variable psci_power_state, contains an array of fixed values,
-> which reflects the corresponding arm,psci-suspend-param parsed from DT, for
-> each of the available CPU idle states.
+On Mon, May 13, 2019 at 09:22:50PM +0200, Ulf Hansson wrote:
+> Subsequent changes implements support for PM domains to PSCI. Those changes
+> are mainly implemented in a new separate c-file, hence a couple of the
+> internal PSCI functions needs to be shared to be accessible. Let's do that
+> via adding a new PSCI header file.
 >
-> This isn't sufficient when using the hierarchical CPU topology in DT in
-> combination with having PSCI OS initiated (OSI) mode enabled. More
-> precisely, in OSI mode, Linux is responsible of telling the PSCI FW what
-> idle state the cluster (a group of CPUs) should enter, while in PSCI
-> Platform Coordinated (PC) mode, each CPU independently votes for an idle
-> state of the cluster.
->
-> For this reason, let's introduce an additional per CPU variable called
-> domain_state and implement two helper functions to read/write its values.
-> Following patches, which implements PM domain support for PSCI, will use
-> the domain_state variable and set it to corresponding bits that represents
-> the selected idle state for the cluster.
->
-> Finally, in psci_cpu_suspend_enter() and psci_suspend_finisher(), let's
-> take into account the values in the domain_state, as to get the complete
-> suspend parameter.
+> Moreover, to implement support for PM domains, switching the PSCI FW into
+> the OS initiated mode is sometimes needed. Therefore, let's share a new
+> function that implement this.
 >
 
-I understand it was split to ease review, but this patch also does
-nothing as domain_state = 0 always. I was trying hard to find where it's
-set, but I assume it will be done in later patches. Again may be this
-can be squashed into the first caller of psci_set_domain_state
+This looks fine.
 
 --
 Regards,
 Sudeep
+
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> ---
+>
+> Changes:
+> 	- Convert psci_set_osi_mode() to return an int.
+> 	- Don't share psci_get_domain_state() as that's no longer needed.
+> 	- Update changelog.
+>
+> ---
+>  drivers/firmware/psci/psci.c | 17 ++++++++++++++---
+>  drivers/firmware/psci/psci.h | 16 ++++++++++++++++
+>  2 files changed, 30 insertions(+), 3 deletions(-)
+>  create mode 100644 drivers/firmware/psci/psci.h
+>
+> diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+> index 4aec513136e4..0e91d864e346 100644
+> --- a/drivers/firmware/psci/psci.c
+> +++ b/drivers/firmware/psci/psci.c
+> @@ -34,6 +34,8 @@
+>  #include <asm/smp_plat.h>
+>  #include <asm/suspend.h>
+>
+> +#include "psci.h"
+> +
+>  /*
+>   * While a 64-bit OS can make calls with SMC32 calling conventions, for some
+>   * calls it is necessary to use SMC64 to pass or return 64-bit values.
+> @@ -96,7 +98,7 @@ static inline bool psci_has_ext_power_state(void)
+>  				PSCI_1_0_FEATURES_CPU_SUSPEND_PF_MASK;
+>  }
+>
+> -static inline bool psci_has_osi_support(void)
+> +bool psci_has_osi_support(void)
+>  {
+>  	return psci_cpu_suspend_feature & PSCI_1_0_OS_INITIATED;
+>  }
+> @@ -161,6 +163,15 @@ static u32 psci_get_version(void)
+>  	return invoke_psci_fn(PSCI_0_2_FN_PSCI_VERSION, 0, 0, 0);
+>  }
+>
+> +int psci_set_osi_mode(void)
+> +{
+> +	int err;
+> +
+> +	err = invoke_psci_fn(PSCI_1_0_FN_SET_SUSPEND_MODE,
+> +			     PSCI_1_0_SUSPEND_MODE_OSI, 0, 0);
+> +	return psci_to_linux_errno(err);
+> +}
+> +
+>  static int psci_cpu_suspend(u32 state, unsigned long entry_point)
+>  {
+>  	int err;
+> @@ -292,12 +303,12 @@ static inline u32 psci_get_domain_state(void)
+>  	return __this_cpu_read(domain_state);
+>  }
+>
+> -static inline void psci_set_domain_state(u32 state)
+> +void psci_set_domain_state(u32 state)
+>  {
+>  	__this_cpu_write(domain_state, state);
+>  }
+>
+> -static int psci_dt_parse_state_node(struct device_node *np, u32 *state)
+> +int psci_dt_parse_state_node(struct device_node *np, u32 *state)
+>  {
+>  	int err = of_property_read_u32(np, "arm,psci-suspend-param", state);
+>
+> diff --git a/drivers/firmware/psci/psci.h b/drivers/firmware/psci/psci.h
+> new file mode 100644
+> index 000000000000..f2277c3ad405
+> --- /dev/null
+> +++ b/drivers/firmware/psci/psci.h
+> @@ -0,0 +1,16 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +
+> +#ifndef __PSCI_H
+> +#define __PSCI_H
+> +
+> +struct device_node;
+> +
+> +int psci_set_osi_mode(void);
+> +bool psci_has_osi_support(void);
+> +
+> +#ifdef CONFIG_CPU_IDLE
+> +void psci_set_domain_state(u32 state);
+> +int psci_dt_parse_state_node(struct device_node *np, u32 *state);
+> +#endif
+> +
+> +#endif /* __PSCI_H */
+> --
+> 2.17.1
+>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
