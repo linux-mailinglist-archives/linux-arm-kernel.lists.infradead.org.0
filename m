@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28C8E39543
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 21:05:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90EDD39576
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 21:21:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=05/iuRu+vFX+yuR8hB1u5v6RPqgkBr0h9r8T2gqwUeU=; b=Bg+30V/xbyIrpy
-	PVwnmZX1unhVUMqQXtoX6qiturUFI1fNy37G/77nXBLOrr0V0qox1+fxV6JZsVJcK+UQOyfy1m+qJ
-	t7Qpht2hTYwlqtNfTS5htliSbqzkfhMeyiwpU7JemQgFAvCGnyOws8JyTedsZCn0fLWkVOlYhESUs
-	4oIfHuw3/8j5uFJ4sSjywHXxyq2zxUrwucB9PQ7X/GsVx/FFDyi8s4NMRBgkBUd1zLO9rg7wzQd8O
-	jHfEqLAb9lGqPmxul4fbAoh5Q/8aKUbFmpy77DSRQmeFfPAryXFvovEMXwjjgF3npB460q/KlReY4
-	e9zVVljthpRghTo/NMgw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zHcEIzuCBkfYFv0TaUhl5WShHppYsUU54zV/VlWe2aI=; b=JtNo6nJP9zkDYKB+bdOosbyNK
+	GB9A5WYxhQpc/moqQd5DBmY/T9gg7UAG1XBT/50qgBJSh1EQ63Ytpi3w2gIZwLA8ZANFu58saNfag
+	vhQqyuR6kDWwFY//95DuNqTAAf2JZgbauL0Si/q4+LhYersyTJkav+C/srb4C+4PduJ9tKogVq1An
+	LkvWtUH+Vbpgik4vHE/6XVAzqAUEoehXwl7q5bx80+gfFQMGW+19nB3crWPApjveLTrdD2YQ+pcpc
+	f+BdON9WKqH8K5slASauk/vsRAmUqVwCjCsjETMkaYg4WV6YDWrapoCJ4iClKv0NAN3uyabPiHyNd
+	DVf15vt8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZKB7-0004Ca-UN; Fri, 07 Jun 2019 19:05:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZKB1-0004C8-7M
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 19:05:24 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D276520868;
- Fri,  7 Jun 2019 19:05:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559934322;
- bh=TxSMtx6lLGs98uGXIiVyUk0DVMENnYc/2yJw23Hmcd8=;
- h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=DO3KFOM6eAnUf9YpBWbM86cXXPo/lHeb4x74qBQ43Qyrc9+tJCGSgMhZZVs3VaBfv
- HmLWGzcJ50XbgMn9cGFyKSReHWy2/oC6smGjWIczLbtn0cz+ko5Kf2eopNN/cOkwan
- G9nYHPrtmjpO2Sy9lwJmh2kHarxQCIQcE1FwL7Lo=
+	id 1hZKQv-0000zj-2X; Fri, 07 Jun 2019 19:21:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZKQk-0000zF-I9
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 19:21:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C42DC2B;
+ Fri,  7 Jun 2019 12:21:35 -0700 (PDT)
+Received: from [192.168.100.221] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F99A3F718;
+ Fri,  7 Jun 2019 12:21:35 -0700 (PDT)
+Subject: Re: [PATCH 2/2] arm64: topology: Use PPTT to determine if PE is a
+ thread
+To: John Garry <john.garry@huawei.com>, linux-arm-kernel@lists.infradead.org
+References: <20190523224015.56270-1-jeremy.linton@arm.com>
+ <20190523224015.56270-3-jeremy.linton@arm.com>
+ <be03d428-b543-0233-a98b-233f367a6bd0@huawei.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <24541261-f86d-0d19-6275-6e110144e761@arm.com>
+Date: Fri, 7 Jun 2019 14:21:34 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <057720844e78e615e46de34a73b16ffaf7dbfc10.1558686047.git.leonard.crestez@nxp.com>
-References: <057720844e78e615e46de34a73b16ffaf7dbfc10.1558686047.git.leonard.crestez@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH] clk: Add clk_parent entry in debugfs
-User-Agent: alot/0.8.1
-Date: Fri, 07 Jun 2019 12:05:22 -0700
-Message-Id: <20190607190522.D276520868@mail.kernel.org>
+In-Reply-To: <be03d428-b543-0233-a98b-233f367a6bd0@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_120523_285965_47A0F151 
-X-CRM114-Status: GOOD (  10.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190607_122138_646459_A382E890 
+X-CRM114-Status: GOOD (  24.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,64 +64,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter De Schrijver <pdeschrijver@nvidia.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Michael Turquette <mturquette@baylibre.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: catalin.marinas@arm.com, will.deacon@arm.com,
+ "Guohanjun \(Hanjun Guo\)" <guohanjun@huawei.com>, rjw@rjwysocki.net,
+ Linuxarm <linuxarm@huawei.com>, linux-acpi@vger.kernel.org,
+ yaohongbo@huawei.com, sudeep.holla@arm.com,
+ wanghuiqiang <wanghuiqiang@huawei.com>, lenb@kernel.org
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Leonard Crestez (2019-05-24 01:25:25)
-> diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-> index aa51756fd4d6..94a93b07dd37 100644
-> --- a/drivers/clk/clk.c
-> +++ b/drivers/clk/clk.c
-> @@ -3009,10 +3009,21 @@ static int possible_parents_show(struct seq_file *s, void *data)
->  
->         return 0;
->  }
->  DEFINE_SHOW_ATTRIBUTE(possible_parents);
->  
-> +static int current_parent_show(struct seq_file *s, void *data)
-> +{
-> +       struct clk_core *core = s->private;
-> +
-> +       if (core->parent)
-> +               seq_printf(s, "%s\n", core->parent->name);
-> +
-> +       return 0;
-> +}
-> +DEFINE_SHOW_ATTRIBUTE(current_parent);
+Hi,
 
-Looks OK.
+Thanks for testing and looking at this.
 
-> +
->  static int clk_duty_cycle_show(struct seq_file *s, void *data)
->  {
->         struct clk_core *core = s->private;
->         struct clk_duty *duty = &core->duty;
->  
-> @@ -3040,10 +3051,11 @@ static void clk_debug_create_one(struct clk_core *core, struct dentry *pdentry)
->         debugfs_create_u32("clk_enable_count", 0444, root, &core->enable_count);
->         debugfs_create_u32("clk_protect_count", 0444, root, &core->protect_count);
->         debugfs_create_u32("clk_notifier_count", 0444, root, &core->notifier_count);
->         debugfs_create_file("clk_duty_cycle", 0444, root, core,
->                             &clk_duty_cycle_fops);
-> +       debugfs_create_file("clk_parent", 0444, root, core, &current_parent_fops);
+On 6/6/19 3:49 AM, John Garry wrote:
+> On 23/05/2019 23:40, Jeremy Linton wrote:
+>> ACPI 6.3 adds a thread flag to represent if a CPU/PE is
+>> actually a thread. Given that the MPIDR_MT bit may not
+>> represent this information consistently on homogeneous machines
+>> we should prefer the PPTT flag if its available.
+>>
+> =
 
-Shouldn't we skip creation of this file if core->num_parents == 0? So
-put this under the if condition below?
+> Hi Jeremy,
+> =
 
->  
->         if (core->num_parents > 1)
->                 debugfs_create_file("clk_possible_parents", 0444, root, core,
->                                     &possible_parents_fops);
->  
+> I was just wondering if we should look to get this support backported =
+
+> (when merged)?
+
+I imagine that will happen..
+
+> =
+
+> I worry about the case of a system with the CPU having MT bit in the =
+
+> MPIDR (while not actually threaded), i.e. the system for which these =
+
+> PPTT flags were added (as I understand).
+
+I have tested this patch on DAWN which happens to have the MT bit set, =
+
+but isn't threaded, and it appears to work.
+
+> =
+
+>> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+>> ---
+>> =A0arch/arm64/kernel/topology.c | 8 +++++---
+>> =A01 file changed, 5 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/arch/arm64/kernel/topology.c b/arch/arm64/kernel/topology.c
+>> index 0825c4a856e3..cbbedb53cf06 100644
+>> --- a/arch/arm64/kernel/topology.c
+>> +++ b/arch/arm64/kernel/topology.c
+>> @@ -346,11 +346,9 @@ void remove_cpu_topology(unsigned int cpu)
+>> =A0 */
+>> =A0static int __init parse_acpi_topology(void)
+>> =A0{
+>> -=A0=A0=A0 bool is_threaded;
+>> +=A0=A0=A0 int is_threaded;
+>> =A0=A0=A0=A0 int cpu, topology_id;
+>>
+>> -=A0=A0=A0 is_threaded =3D read_cpuid_mpidr() & MPIDR_MT_BITMASK;
+>> -
+>> =A0=A0=A0=A0 for_each_possible_cpu(cpu) {
+>> =A0=A0=A0=A0=A0=A0=A0=A0 int i, cache_id;
+>>
+>> @@ -358,6 +356,10 @@ static int __init parse_acpi_topology(void)
+>> =A0=A0=A0=A0=A0=A0=A0=A0 if (topology_id < 0)
+>> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return topology_id;
+>>
+>> +=A0=A0=A0=A0=A0=A0=A0 is_threaded =3D acpi_pptt_cpu_is_thread(cpu);
+>> +=A0=A0=A0=A0=A0=A0=A0 if (is_threaded < 0)
+>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 is_threaded =3D read_cpuid_mpidr() & =
+MPIDR_MT_BITMASK;
+>> +
+>> =A0=A0=A0=A0=A0=A0=A0=A0 if (is_threaded) {
+>> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpu_topology[cpu].thread_id =3D top=
+ology_id;
+> =
+
+> For described above scenario, this seems wrong.
+
+I'm not sure I understand the concern.
+
+This is going to ignore the MPIDR_MT bit on any machine with a PPTT =
+
+revision > 1. Are you worried about the topology_id assignment?
+
+
+> =
+
+>> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 topology_id =3D find_acpi_cpu_topol=
+ogy(cpu, 1);
+>>
+> =
+
+> BTW, we did test an old kernel with 6.3 PPTT bios for this on D06 (some =
+
+> versions have MT bit set), and it looked ok. But I am still a bit =
+
+> skeptical.
+> =
+
+> Thanks,
+> John
+> =
+
+> =
+
+
+
+Thanks,
 
 _______________________________________________
 linux-arm-kernel mailing list
