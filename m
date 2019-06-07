@@ -2,86 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBD163937A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 19:41:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0D393937D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 19:41:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KxKpg5MR21CL45RVmBWFZzluHjWO061Q3yrlmtudQAA=; b=HeHZ/Bj/xKB9zU
-	760Y40R31Kv+1KNx0NVKySPwvetqNNA6qmmIpucWtyqg0hPlIreMcRTWrqCZdTrAOsz87sF+061Jy
-	wj+t75P8IXio7vhGmlo2iBEBRHmUvbvJueEiRhPa/n7otMLlmkLwYXJ5t0q58mWLYm2gN+nuHXRuM
-	LEXsAwhdX1TriqF6DBtcgh2wfErY8V+Ve8Q6e+IDEwWEyY7edIbZSblbI3bXMkW4wq+DhgkPfFJOc
-	lz7A5DGNAaM+YseHOQKNi81Mh+sM2xN6oGSTTuTh0f6XBLUbWYGgeMOJkUrdFiGfkYujTMaFZRp63
-	KixpyxyKAD+u0oZ8j3RQ==;
+	List-Owner; bh=HXQDcOHj3lBbMp2WydOniMrth0HC+yZC4lZGi35p9/I=; b=k9qn37Qoz+3pZ1
+	z9fPNj6Ttd0Q6fiC/ruU/G2OaQls/0XCdcrWRAV9FuyKI4DJCJd9sNh7LW1QIDBYbiZ7tTG5cPj1r
+	eJ3PtS8wBhkKl1VVUvz5IqPFJighZfJVIv+xeDYsQQcdEi1/5tUAZAarg6hbvchypR3mbfnA3Cb6r
+	3MUNYZO6LPtuY71sdOJJFGIwS9ER6czvIiwALHaBCKcT240aF3Ago//nMGC/gZAf6xICKxo/tQdXE
+	+PZdr45OG3975Y+f4SowDFmPt5mqNqqBKbA8efYaqBwGtLZ2VZaOCBq5GLV3e7JDhldck+xhWPGmA
+	miJf1iWEpSmHf80nBnpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZIrJ-0005z1-EJ; Fri, 07 Jun 2019 17:40:57 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1hZIrg-0006Ac-LB; Fri, 07 Jun 2019 17:41:20 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZIrA-0005ya-Us
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 17:40:50 +0000
-Received: by mail-io1-xd44.google.com with SMTP id n5so2044881ioc.7
+ id 1hZIrH-00064O-U7
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 17:40:58 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 81so1567692pfy.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 10:40:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OlxCx0LcVRqEwUVpBa/0X4MAmO56cf6FlxJFEgvmnmc=;
- b=io4ZHtOx+pe44IJE28hPvzsRLOIt0VwvSmyD7ESSJ9h8O27pk1n+Hu2xfBOvwNgSP0
- A0qXMDL1mnGbV4WnCyav2N0tLJLbq4v/mT6AQDbTltZ0G9/gl+GSIW8rX8K7AQLt9XQl
- 8vdSg87x62g2hXZTZjVmuhpcIqFjX6Lj1NY+K7gL075+JM7GVBcOPtyAAr7uM/Ydj2/S
- BGA1YLbBlm+NOEuKupWaszdkWXxBmVFuUc3dbpGyqDCQCdgE2i2Iz3eDG10bb9P1+Rvi
- twKS0O2ciONkTTOzsCLm6R4b4lAhv1H8P3Qt3IqVArTp7DyyNe36QpP3FOa7rkKzMW/R
- LHSw==
+ Fri, 07 Jun 2019 10:40:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=0V/DIvCRbzkJddEXcA5wyYmclosO4j53pSlNS1OHge4=;
+ b=P1hdLfqJ9bNPNS2TrvnTMlvTdY0CYkYcvVvjn9EH1gNmpz3Xa/8/ipOBmI/ibQYu8b
+ 9aHrN1RX7kcml2htDeoD6zZTagSN0Afy/oMXJ/ozRn7T7sj5FbeIkE9X4SfGJ2fhLhA9
+ OpaQkJ94YOS/lwi6/xlstdO+Y0ibYrIweUuBkVu2zV24Xu+DAQUiV0AVq6fOeSOryWXF
+ sbmSRirkH6Hp0OwyAjUQzp0y3y14sZ8QEWUCLWrlZb+xUyiKXc0FIMpfCl/durvD7I8r
+ 5lcR20ZGOk0s3xvrFDG7r1WDysG3k+XdctIa+lqdRrHrRcoeMgx7HRF1+OayrlNeAG8E
+ kgZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OlxCx0LcVRqEwUVpBa/0X4MAmO56cf6FlxJFEgvmnmc=;
- b=e7T8yjX/86Z0NjTL/sM4Axlx4tmiV5iUHjjpVJcWR9zDGSR6AjHuqcT6hNepSH9+zy
- p/M72UIwPy1DWUQLzAnacNUf9W2gEAnddyToG8L6RAdKCxYoRwr6ScRK/0KDfF3lZ7FE
- tJjM5t89ZeLoZpzsPqvU1AZEue5/FEvTjMlaWYX5ueCieEihLBR3pZA0CJLMzaakcxkT
- AhKqAqPBI05+XxXtuVWf/PyooRyAfgQ9vxh5o1iWVYMqEe3ZO7YiYSA8HKHOa2nBUHKJ
- gzzzcwz7CFvsJBE8rn3Xl2r9/bw92jigNiQDM0JrFvJ4oRJPPBnw2fezppBsO1CjJiiX
- 2yjg==
-X-Gm-Message-State: APjAAAUFCRts8BmnQjGvzAA9Rt7NNyP2DizsbOU8wwVPEHAADoV5RRtj
- 2lH4lGt4DLyzWo1lYWvHgddWURqq7tsBoiarmx/4lA==
-X-Google-Smtp-Source: APXvYqyS/7a9/Dz1ggiv03hBOU54xjqxDo1Iciw3ODbbVW7tjvpMqHtRefyhNI4gWQstaMZPH3Y3mM+VTfb1fXN7wps=
-X-Received: by 2002:a6b:7d49:: with SMTP id d9mr14036127ioq.50.1559929247404; 
- Fri, 07 Jun 2019 10:40:47 -0700 (PDT)
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=0V/DIvCRbzkJddEXcA5wyYmclosO4j53pSlNS1OHge4=;
+ b=krZZoDyT/auzegojhwxpC8HNdcsmlZESzq0i1nmXayuoBHpInQCqN5wX4ULfI8t1zF
+ 1KF/nZS4wZrZVwdNDtv56IvMqxblXLhO++XmYUYt+q4Ai1cKYhuFAJSg/rnIdM4h3H90
+ aHkfV4WuF/OvbEfUtmCQjRVmtTvIWlq2I/hpWQcKUMNRJJSDtQUNE+tFPVVbw9Oo4Rpn
+ gXjr0iYQi23RGyQX15E/v81X5ZBfqp+sdC/+IBkPlPDJQ4JfOyfdHMwGfPNi6NDSkLWY
+ aNTdJdJ5kJtQD+GtFJZUqsUz6JY8VG9MUyh2uMEOugNdKoXkWMptccW0NLpZw/Xf0T/7
+ Y7yQ==
+X-Gm-Message-State: APjAAAVxfYXMPvXmyfLHw9JI2ShCcqhWJx2gDowBpkrbG7hSPzB7H9MO
+ KRuW6m+3audebzx9kg5QxFQ=
+X-Google-Smtp-Source: APXvYqzcYtPwU3T8i78qheKrh7jr7ml3uzLreQGCaARqeK3wSzTdGjgOvhMxncF1eigqwFt1dkOd9A==
+X-Received: by 2002:a17:90a:bb94:: with SMTP id
+ v20mr7143639pjr.88.1559929255290; 
+ Fri, 07 Jun 2019 10:40:55 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id ds13sm2436877pjb.5.2019.06.07.10.40.54
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 07 Jun 2019 10:40:54 -0700 (PDT)
+Date: Fri, 7 Jun 2019 10:40:53 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH RESEND V4 3/3] watchdog: imx_sc: Add pretimeout support
+Message-ID: <20190607174053.GA15184@roeck-us.net>
+References: <1557655528-12816-1-git-send-email-Anson.Huang@nxp.com>
+ <1557655528-12816-3-git-send-email-Anson.Huang@nxp.com>
+ <e49148ed-82ba-0878-e5ab-933f78f161d6@roeck-us.net>
+ <DB3PR0402MB3916B5E657800C92566047A0F5160@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
- <20190524173508.29044-2-mathieu.poirier@linaro.org>
- <68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com>
-In-Reply-To: <68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 7 Jun 2019 11:40:36 -0600
-Message-ID: <CANLsYkwrsvSXOpaxL7mFxiJF5A53Xk+3XDK14r_Z=wBLzDZy9A@mail.gmail.com>
-Subject: Re: [PATCH v2 01/17] perf tools: Configure contextID tracing in
- CPU-wide mode
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Disposition: inline
+In-Reply-To: <DB3PR0402MB3916B5E657800C92566047A0F5160@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_104049_059662_779F4635 
-X-CRM114-Status: GOOD (  32.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190607_104056_043855_DFE11AF8 
+X-CRM114-Status: GOOD (  28.57  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,244 +107,299 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey Suzuki,
+On Wed, Jun 05, 2019 at 06:24:33AM +0000, Anson Huang wrote:
+> Hi, Guenter
+> 
+> > -----Original Message-----
+> > From: Guenter Roeck <groeck7@gmail.com> On Behalf Of Guenter Roeck
+> > Sent: Sunday, May 12, 2019 9:28 PM
+> > To: Anson Huang <anson.huang@nxp.com>; robh+dt@kernel.org;
+> > mark.rutland@arm.com; wim@linux-watchdog.org; shawnguo@kernel.org;
+> > s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
+> > Aisheng Dong <aisheng.dong@nxp.com>; ulf.hansson@linaro.org; Daniel
+> > Baluta <daniel.baluta@nxp.com>; Peng Fan <peng.fan@nxp.com>;
+> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
+> > watchdog@vger.kernel.org; linux-arm-kernel@lists.infradead.org
+> > Cc: dl-linux-imx <linux-imx@nxp.com>
+> > Subject: Re: [PATCH RESEND V4 3/3] watchdog: imx_sc: Add pretimeout
+> > support
+> > 
+> > On 5/12/19 3:10 AM, Anson Huang wrote:
+> > > i.MX system controller watchdog can support pretimeout IRQ via general
+> > > SCU MU IRQ, it depends on IMX_SCU and driver MUST be probed after SCU
+> > > IPC ready, then enable corresponding SCU IRQ group and register SCU
+> > > IRQ notifier, when watchdog pretimeout IRQ fires, SCU MU IRQ will be
+> > > handled and watchdog pretimeout notifier will be called to handle the
+> > > event.
+> > >
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > 
+> > Revviewed-by: Guenter Roeck <linux@roeck-us.net>
+> > 
+> > Other patches waiting for DT review. IMX API feedback below.
+> 
+> Shaw just picked up the DT patch. Would you please pick up this driver and dt-binding patch
+> to you git repo?
+> 
+I'll pick up patch 3/3, but I can not pick up patches into arch/arm64/boot/;
+that is the responsibility of arm64 maintainers. I can only do that
+if I get an explicit Ack and permission to do so from an arm64 maintainer,
+and I don't recall getting that.
 
-On Fri, 7 Jun 2019 at 03:21, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->
-> Hi Mathieu,
->
-> On 24/05/2019 18:34, Mathieu Poirier wrote:
-> > When operating in CPU-wide mode being notified of contextID changes is
-> > required so that the decoding mechanic is aware of the process context
-> > switch.
-> >
-> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
->
->
-> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->
-> I am sorry but, I don't remember reviewing this patch in the previous
-> postings. But here we go.
+Guenter
 
-We definitely misunderstood each other - apologies for that.
-
->
-> > ---
-> >   tools/perf/arch/arm/util/cs-etm.c | 126 +++++++++++++++++++++++++-----
-> >   tools/perf/util/cs-etm.h          |  12 +++
-> >   2 files changed, 119 insertions(+), 19 deletions(-)
-> >
-> > diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-> > index 911426721170..3912f0bf04ed 100644
-> > --- a/tools/perf/arch/arm/util/cs-etm.c
-> > +++ b/tools/perf/arch/arm/util/cs-etm.c
-> > @@ -35,8 +35,100 @@ struct cs_etm_recording {
-> >       size_t                  snapshot_size;
-> >   };
-> >
->
->
-> >   static bool cs_etm_is_etmv4(struct auxtrace_record *itr, int cpu);
-> >
-> > +static int cs_etm_set_context_id(struct auxtrace_record *itr,
-> > +                              struct perf_evsel *evsel, int cpu)
-> > +{
-> > +     struct cs_etm_recording *ptr;
-> > +     struct perf_pmu *cs_etm_pmu;
-> > +     char path[PATH_MAX];
-> > +     int err = -EINVAL;
-> > +     u32 val;
-> > +
-> > +     ptr = container_of(itr, struct cs_etm_recording, itr);
-> > +     cs_etm_pmu = ptr->cs_etm_pmu;
-> > +
-> > +     if (!cs_etm_is_etmv4(itr, cpu))
-> > +             goto out;
-> > +
-> > +     /* Get a handle on TRCIRD2 */
-> > +     snprintf(path, PATH_MAX, "cpu%d/%s",
-> > +              cpu, metadata_etmv4_ro[CS_ETMV4_TRCIDR2]);
-> > +     err = perf_pmu__scan_file(cs_etm_pmu, path, "%x", &val);
-> > +
-> > +     /* There was a problem reading the file, bailing out */
-> > +     if (err != 1) {
-> > +             pr_err("%s: can't read file %s\n",
-> > +                    CORESIGHT_ETM_PMU_NAME, path);
-> > +             goto out;
-> > +     }
-> > +
-> > +     /*
-> > +      * TRCIDR2.CIDSIZE, bit [9-5], indicates whether contextID tracing
-> > +      * is supported:
-> > +      *  0b00000 Context ID tracing is not supported.
-> > +      *  0b00100 Maximum of 32-bit Context ID size.
-> > +      *  All other values are reserved.
-> > +      */
-> > +     val = BMVAL(val, 5, 9);
-> > +     if (!val || val != 0x4) {
-> > +             err = -EINVAL;
-> > +             goto out;
-> > +     }
-> > +
-> > +     /* All good, let the kernel know */
-> > +     evsel->attr.config |= (1 << ETM_OPT_CTXTID);
-> > +     err = 0;
-> > +
-> > +out:
-> > +
-> > +     return err;
-> > +}
-> > +
-> > +static int cs_etm_set_option(struct auxtrace_record *itr,
-> > +                          struct perf_evsel *evsel, u32 option)
-> > +{
-> > +     int i, err = -EINVAL;
-> > +     struct cpu_map *event_cpus = evsel->evlist->cpus;
-> > +     struct cpu_map *online_cpus = cpu_map__new(NULL);
-> > +
-> > +     /* Set option of each CPU we have */
-> > +     for (i = 0; i < cpu__max_cpu(); i++) {
-> > +             if (!cpu_map__has(event_cpus, i) ||
-> > +                 !cpu_map__has(online_cpus, i))
-> > +                     continue;
-> > +
-> > +             switch (option) {
-> > +             case ETM_OPT_CTXTID:
-> > +                     err = cs_etm_set_context_id(itr, evsel, i);
-> > +                     if (err)
-> > +                             goto out;
-> > +                     break;
-> > +             default:
-> > +                     goto out;
-> > +             }
-> > +     }
->
-> I am not too familiar with the perf tool code. But, isn't there a way
-> to force the config bit, right from the beginning when the events are
-> created, when we know that we are doing a CPU wide tracing, along with
-> the other config bits ?
->
->
-
-This code is ran just after the event list is created.  In order to
-avoid this step and have the config bits set right from the beginning
-one would have to explicitly specify the options within the '/' '/' of
-the cs_etm event on the command line, which would be cumbersome and
-error prone.  Instead this code guarantees that all options needed for
-a CPU-wide session are set properly.
-
->
-> > +     err = 0;
-> > +out:
-> > +     cpu_map__put(online_cpus);
-> > +     return err;
-> > +}
-> > +
-> >   static int cs_etm_parse_snapshot_options(struct auxtrace_record *itr,
-> >                                        struct record_opts *opts,
-> >                                        const char *str)
-> > @@ -105,8 +197,9 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
-> >                               container_of(itr, struct cs_etm_recording, itr);
-> >       struct perf_pmu *cs_etm_pmu = ptr->cs_etm_pmu;
-> >       struct perf_evsel *evsel, *cs_etm_evsel = NULL;
-> > -     const struct cpu_map *cpus = evlist->cpus;
-> > +     struct cpu_map *cpus = evlist->cpus;
-> >       bool privileged = (geteuid() == 0 || perf_event_paranoid() < 0);
-> > +     int err = 0;
-> >
-> >       ptr->evlist = evlist;
-> >       ptr->snapshot_mode = opts->auxtrace_snapshot_mode;
-> > @@ -241,19 +334,24 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
-> >
-> >       /*
-> >        * In the case of per-cpu mmaps, we need the CPU on the
-> > -      * AUX event.
-> > +      * AUX event.  We also need the contextID in order to be notified
-> > +      * when a context switch happened.
-> >        */
-> > -     if (!cpu_map__empty(cpus))
-> > +     if (!cpu_map__empty(cpus)) {
-> >               perf_evsel__set_sample_bit(cs_etm_evsel, CPU);
-> >
-> > +             err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_CTXTID);
-> > +             if (err)
-> > +                     goto out;
-> > +     }
-> > +
-> >       /* Add dummy event to keep tracking */
-> >       if (opts->full_auxtrace) {
-> >               struct perf_evsel *tracking_evsel;
-> > -             int err;
-> >
-> >               err = parse_events(evlist, "dummy:u", NULL);
-> >               if (err)
-> > -                     return err;
-> > +                     goto out;
-> >
-> >               tracking_evsel = perf_evlist__last(evlist);
-> >               perf_evlist__set_tracking_event(evlist, tracking_evsel);
-> > @@ -266,7 +364,8 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
-> >                       perf_evsel__set_sample_bit(tracking_evsel, TIME);
-> >       }
-> >
-> > -     return 0;
-> > +out:
-> > +     return err;
-> >   }
->
->
-> > diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
-> > index 0e97c196147a..826c9eedaf5c 100644
-> > --- a/tools/perf/util/cs-etm.h
-> > +++ b/tools/perf/util/cs-etm.h
-> > @@ -103,6 +103,18 @@ struct intlist *traceid_list;
-> >   #define KiB(x) ((x) * 1024)
-> >   #define MiB(x) ((x) * 1024 * 1024)
-> >
-> > +/*
-> > + * Create a contiguous bitmask starting at bit position @l and ending at
-> > + * position @h. For example
-> > + * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
-> > + *
-> > + * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
-> > + */
-> > +#define GENMASK(h, l) \
-> > +     (((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
-> > +
->
-> minor nit: Could this be placed in a more generic header file for the other
-> parts of the perf tool to consume ?
-
-Back when I wrote this code my thinking was to keep it private since
-nobody else in the perf tools had a need for it.  But I now that
-Arnaldo added the header back in August [1] there is no need for a
-private version.
-
-Arnaldo, do you want a patch on top of the current patchset or a new set?
-
-[1]. ba4aa02b417f0 (Arnaldo Carvalho de Melo 2018-09-25 10:55:59 -0300
-17)  * GENMASK_ULL(39, 21)
-
->
-> > +#define BMVAL(val, lsb, msb) ((val & GENMASK(msb, lsb)) >> lsb)
-> > +
->
->
-> Cheers
-> Suzuki
+> Thanks,
+> Anson
+> 
+> > 
+> > Side note: This patch depends on 'firmware: imx: enable imx scu general irq
+> > function' which is not yet in mainline.
+> > 
+> > > ---
+> > > No change, just resend patch with correct encoding.
+> > > ---
+> > >   drivers/watchdog/Kconfig      |   1 +
+> > >   drivers/watchdog/imx_sc_wdt.c | 116
+> > +++++++++++++++++++++++++++++++++++-------
+> > >   2 files changed, 98 insertions(+), 19 deletions(-)
+> > >
+> > > diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig index
+> > > 7ea6037..e08238c 100644
+> > > --- a/drivers/watchdog/Kconfig
+> > > +++ b/drivers/watchdog/Kconfig
+> > > @@ -716,6 +716,7 @@ config IMX2_WDT
+> > >   config IMX_SC_WDT
+> > >   	tristate "IMX SC Watchdog"
+> > >   	depends on HAVE_ARM_SMCCC
+> > > +	depends on IMX_SCU
+> > >   	select WATCHDOG_CORE
+> > >   	help
+> > >   	  This is the driver for the system controller watchdog diff --git
+> > > a/drivers/watchdog/imx_sc_wdt.c b/drivers/watchdog/imx_sc_wdt.c index
+> > > 49848b6..6ecc03f 100644
+> > > --- a/drivers/watchdog/imx_sc_wdt.c
+> > > +++ b/drivers/watchdog/imx_sc_wdt.c
+> > > @@ -4,6 +4,7 @@
+> > >    */
+> > >
+> > >   #include <linux/arm-smccc.h>
+> > > +#include <linux/firmware/imx/sci.h>
+> > >   #include <linux/io.h>
+> > >   #include <linux/init.h>
+> > >   #include <linux/kernel.h>
+> > > @@ -33,11 +34,19 @@
+> > >
+> > >   #define SC_TIMER_WDOG_ACTION_PARTITION	0
+> > >
+> > > +#define SC_IRQ_WDOG			1
+> > > +#define SC_IRQ_GROUP_WDOG		1
+> > > +
+> > >   static bool nowayout = WATCHDOG_NOWAYOUT;
+> > >   module_param(nowayout, bool, 0000);
+> > >   MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once
+> > started (default="
+> > >   		 __MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
+> > >
+> > > +struct imx_sc_wdt_device {
+> > > +	struct watchdog_device wdd;
+> > > +	struct notifier_block wdt_notifier;
+> > > +};
+> > > +
+> > >   static int imx_sc_wdt_ping(struct watchdog_device *wdog)
+> > >   {
+> > >   	struct arm_smccc_res res;
+> > > @@ -85,24 +94,66 @@ static int imx_sc_wdt_set_timeout(struct
+> > watchdog_device *wdog,
+> > >   	return res.a0 ? -EACCES : 0;
+> > >   }
+> > >
+> > > +static int imx_sc_wdt_set_pretimeout(struct watchdog_device *wdog,
+> > > +				     unsigned int pretimeout)
+> > > +{
+> > > +	struct arm_smccc_res res;
+> > > +
+> > > +	arm_smccc_smc(IMX_SIP_TIMER,
+> > IMX_SIP_TIMER_SET_PRETIME_WDOG,
+> > > +		      pretimeout * 1000, 0, 0, 0, 0, 0, &res);
+> > > +	if (res.a0)
+> > > +		return -EACCES;
+> > > +
+> > > +	wdog->pretimeout = pretimeout;
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +static int imx_sc_wdt_notify(struct notifier_block *nb,
+> > > +			     unsigned long event, void *group) {
+> > > +	struct imx_sc_wdt_device *imx_sc_wdd =
+> > > +				 container_of(nb,
+> > > +					      struct imx_sc_wdt_device,
+> > > +					      wdt_notifier);
+> > > +
+> > > +	if (event & SC_IRQ_WDOG &&
+> > > +	    *(u8 *)group == SC_IRQ_GROUP_WDOG)
+> > > +		watchdog_notify_pretimeout(&imx_sc_wdd->wdd);
+> > 
+> > This should really not be necessary. Event mask and target group (if needed
+> > with a wildcard for the group) should be parameters of
+> > imx_scu_irq_register_notifier(), and be handled in the imx code.
+> > 
+> > Also, passing 'group' as pointed seems excessive. Might as well pass it
+> > directly.
+> > 
+> > Guenter
+> > 
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +static void imx_sc_wdt_action(void *data) {
+> > > +	struct notifier_block *wdt_notifier = data;
+> > > +
+> > > +	imx_scu_irq_unregister_notifier(wdt_notifier);
+> > > +	imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
+> > > +				 SC_IRQ_WDOG,
+> > > +				 false);
+> > > +}
+> > > +
+> > >   static const struct watchdog_ops imx_sc_wdt_ops = {
+> > >   	.owner = THIS_MODULE,
+> > >   	.start = imx_sc_wdt_start,
+> > >   	.stop  = imx_sc_wdt_stop,
+> > >   	.ping  = imx_sc_wdt_ping,
+> > >   	.set_timeout = imx_sc_wdt_set_timeout,
+> > > +	.set_pretimeout = imx_sc_wdt_set_pretimeout,
+> > >   };
+> > >
+> > > -static const struct watchdog_info imx_sc_wdt_info = {
+> > > +static struct watchdog_info imx_sc_wdt_info = {
+> > >   	.identity	= "i.MX SC watchdog timer",
+> > >   	.options	= WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING |
+> > > -			  WDIOF_MAGICCLOSE | WDIOF_PRETIMEOUT,
+> > > +			  WDIOF_MAGICCLOSE,
+> > >   };
+> > >
+> > >   static int imx_sc_wdt_probe(struct platform_device *pdev)
+> > >   {
+> > > +	struct imx_sc_wdt_device *imx_sc_wdd;
+> > > +	struct watchdog_device *wdog;
+> > >   	struct device *dev = &pdev->dev;
+> > > -	struct watchdog_device *imx_sc_wdd;
+> > >   	int ret;
+> > >
+> > >   	imx_sc_wdd = devm_kzalloc(dev, sizeof(*imx_sc_wdd), GFP_KERNEL);
+> > @@
+> > > -111,42 +162,69 @@ static int imx_sc_wdt_probe(struct platform_device
+> > > *pdev)
+> > >
+> > >   	platform_set_drvdata(pdev, imx_sc_wdd);
+> > >
+> > > -	imx_sc_wdd->info = &imx_sc_wdt_info;
+> > > -	imx_sc_wdd->ops = &imx_sc_wdt_ops;
+> > > -	imx_sc_wdd->min_timeout = 1;
+> > > -	imx_sc_wdd->max_timeout = MAX_TIMEOUT;
+> > > -	imx_sc_wdd->parent = dev;
+> > > -	imx_sc_wdd->timeout = DEFAULT_TIMEOUT;
+> > > +	wdog = &imx_sc_wdd->wdd;
+> > > +	wdog->info = &imx_sc_wdt_info;
+> > > +	wdog->ops = &imx_sc_wdt_ops;
+> > > +	wdog->min_timeout = 1;
+> > > +	wdog->max_timeout = MAX_TIMEOUT;
+> > > +	wdog->parent = dev;
+> > > +	wdog->timeout = DEFAULT_TIMEOUT;
+> > >
+> > > -	watchdog_init_timeout(imx_sc_wdd, 0, dev);
+> > > -	watchdog_stop_on_reboot(imx_sc_wdd);
+> > > -	watchdog_stop_on_unregister(imx_sc_wdd);
+> > > +	watchdog_init_timeout(wdog, 0, dev);
+> > > +	watchdog_stop_on_reboot(wdog);
+> > > +	watchdog_stop_on_unregister(wdog);
+> > >
+> > > -	ret = devm_watchdog_register_device(dev, imx_sc_wdd);
+> > > +	ret = devm_watchdog_register_device(dev, wdog);
+> > >   	if (ret) {
+> > >   		dev_err(dev, "Failed to register watchdog device\n");
+> > >   		return ret;
+> > >   	}
+> > >
+> > > +	ret = imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
+> > > +				       SC_IRQ_WDOG,
+> > > +				       true);
+> > > +	if (ret) {
+> > > +		dev_warn(dev, "Enable irq failed, pretimeout NOT
+> > supported\n");
+> > > +		return 0;
+> > > +	}
+> > > +
+> > > +	imx_sc_wdd->wdt_notifier.notifier_call = imx_sc_wdt_notify;
+> > > +	ret = imx_scu_irq_register_notifier(&imx_sc_wdd->wdt_notifier);
+> > > +	if (ret) {
+> > > +		imx_scu_irq_group_enable(SC_IRQ_GROUP_WDOG,
+> > > +					 SC_IRQ_WDOG,
+> > > +					 false);
+> > > +		dev_warn(dev,
+> > > +			 "Register irq notifier failed, pretimeout NOT
+> > supported\n");
+> > > +		return 0;
+> > > +	}
+> > > +
+> > > +	ret = devm_add_action_or_reset(dev, imx_sc_wdt_action,
+> > > +				       &imx_sc_wdd->wdt_notifier);
+> > > +	if (!ret)
+> > > +		imx_sc_wdt_info.options |= WDIOF_PRETIMEOUT;
+> > > +	else
+> > > +		dev_warn(dev, "Add action failed, pretimeout NOT
+> > supported\n");
+> > > +
+> > >   	return 0;
+> > >   }
+> > >
+> > >   static int __maybe_unused imx_sc_wdt_suspend(struct device *dev)
+> > >   {
+> > > -	struct watchdog_device *imx_sc_wdd = dev_get_drvdata(dev);
+> > > +	struct imx_sc_wdt_device *imx_sc_wdd = dev_get_drvdata(dev);
+> > >
+> > > -	if (watchdog_active(imx_sc_wdd))
+> > > -		imx_sc_wdt_stop(imx_sc_wdd);
+> > > +	if (watchdog_active(&imx_sc_wdd->wdd))
+> > > +		imx_sc_wdt_stop(&imx_sc_wdd->wdd);
+> > >
+> > >   	return 0;
+> > >   }
+> > >
+> > >   static int __maybe_unused imx_sc_wdt_resume(struct device *dev)
+> > >   {
+> > > -	struct watchdog_device *imx_sc_wdd = dev_get_drvdata(dev);
+> > > +	struct imx_sc_wdt_device *imx_sc_wdd = dev_get_drvdata(dev);
+> > >
+> > > -	if (watchdog_active(imx_sc_wdd))
+> > > -		imx_sc_wdt_start(imx_sc_wdd);
+> > > +	if (watchdog_active(&imx_sc_wdd->wdd))
+> > > +		imx_sc_wdt_start(&imx_sc_wdd->wdd);
+> > >
+> > >   	return 0;
+> > >   }
+> > >
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
