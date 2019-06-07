@@ -2,64 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EF4F38813
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 12:40:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58D6F38831
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 12:48:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LIHXlGDllLjdVZCgEuC6YWaBUTVzN9Avu6XHg008V0w=; b=VXaVX4uc1rSeg9
-	IrehBWfbsrxjxCQ+nyq90JQHbQWgN/wR1fNMrisfDA6LXh5VgMXqPpL++PpUP3GbNaLaDunCGi6I7
-	7DZi16qHMf+u/yYMbV6ZLSu3Po2T885EOC/cxZ3fgj1gMsYv2Oo7JzBryyDhzFrOBB7vu7NGm+FNl
-	4iarkXbNKAjioOvmy3hYyNRs2z1qY+miPXbJhl/EpMZg6kxd0FbBIOjku+p8YIQzMqT0Hm1vsZ23H
-	ueVI0qPTTtuaB0xMjXA6ECWzVnjGuINlz/Xm4bgl0gA5bmB5pbHxL++oVpsyGpiftuzZi7lu5+qsH
-	37UmLHZEWbTJ6apTmoaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pVEmnobn12M6oY+d+dXzZEhJCP1zBTrajQ6bqVDUENE=; b=hq57kFvCqzCEyy
+	pLqF+ioIBlnVCpnJggTUet+Alu/EjmYCf5vQsdomwSPnRvp9w8QCSdZkOgqWYPUwgECuH+eiDLZ5g
+	gp/GNW5mOiPn/9GNYKvuq3Br3XRRdvApjB9Loh3VIDac0MmIzoJi6q7hNELTeqWqoT5FHU6k4z1ii
+	+w8wlqF4x6MUJRN9qXCsupb9GrzF28mwflmU1XmQfv79wii3s8zoWXFQJz3SuI5QW5JdzUaanUkYT
+	iLajM08sfHyC0CEP/wSBWhLGDttGVIBR3op7lWTyYia6xIhlFRsa4RRs+Ye8F/1iGRg7W9byCEcvd
+	5680X6GTw93SPOICnCbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZCIM-0006x4-Gu; Fri, 07 Jun 2019 10:40:26 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1hZCQ2-0000SF-8y; Fri, 07 Jun 2019 10:48:22 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZCI7-0006jS-NJ
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 10:40:13 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 28F4F1FFF7;
- Fri,  7 Jun 2019 12:40:06 +0200 (CEST)
-Received: from [192.168.108.49] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 1176D1FF7C;
- Fri,  7 Jun 2019 12:40:06 +0200 (CEST)
-Subject: Re: [PATCH v3] iommu/arm-smmu: Avoid constant zero in TLBI writes
-To: Joerg Roedel <joro@8bytes.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <f523effd-ef81-46fe-1f9e-1a0cb42c8b7b@free.fr>
- <20190529130559.GB11023@fuggles.cambridge.arm.com>
- <84791515-e0ae-0322-78aa-02ca0b40d157@free.fr>
- <09a290f1-27a0-5ee3-16b9-659ef2ba99dc@free.fr>
- <20190605121900.GJ15030@fuggles.cambridge.arm.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <f7b2e799-e3b1-ad40-c7b7-153f00323636@free.fr>
-Date: Fri, 7 Jun 2019 12:40:05 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hZCPu-0000R9-Pr; Fri, 07 Jun 2019 10:48:16 +0000
+Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
+ by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+ (Exim 4.76) (envelope-from <colin.king@canonical.com>)
+ id 1hZCNJ-0000V3-NL; Fri, 07 Jun 2019 10:45:54 +0000
+From: Colin King <colin.king@canonical.com>
+To: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, Eric Anholt <eric@anholt.net>,
+ Stefan Wahren <stefan.wahren@i2se.com>, linux-clk@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH][next] clk: bcm2835: fix memork leak on unfree'd pll struct
+Date: Fri,  7 Jun 2019 11:45:33 +0100
+Message-Id: <20190607104533.14700-1-colin.king@canonical.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190605121900.GJ15030@fuggles.cambridge.arm.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Fri Jun  7 12:40:06 2019 +0200 (CEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_034011_909730_D6CDC296 
-X-CRM114-Status: GOOD (  12.66  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190607_034814_985281_235A6F70 
+X-CRM114-Status: GOOD (  10.83  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -72,61 +61,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
- MSM <linux-arm-msm@vger.kernel.org>, Will Deacon <will.deacon@arm.com>,
- iommu <iommu@lists.linux-foundation.org>, Andy Gross <agross@kernel.org>,
- AngeloGioacchino Del Regno <kholk11@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/06/2019 14:19, Will Deacon wrote:
+From: Colin Ian King <colin.king@canonical.com>
 
-> On Mon, Jun 03, 2019 at 02:15:37PM +0200, Marc Gonzalez wrote:
->
->> From: Robin Murphy <robin.murphy@arm.com>
->>
->> Apparently, some Qualcomm arm64 platforms which appear to expose their
->> SMMU global register space are still, in fact, using a hypervisor to
->> mediate it by trapping and emulating register accesses. Sadly, some
->> deployed versions of said trapping code have bugs wherein they go
->> horribly wrong for stores using r31 (i.e. XZR/WZR) as the source
->> register.
->>
->> While this can be mitigated for GCC today by tweaking the constraints
->> for the implementation of writel_relaxed(), to avoid any potential
->> arms race with future compilers more aggressively optimising register
->> allocation, the simple way is to just remove all the problematic
->> constant zeros. For the write-only TLB operations, the actual value is
->> irrelevant anyway and any old nearby variable will provide a suitable
->> GPR to encode. The one point at which we really do need a zero to clear
->> a context bank happens before any of the TLB maintenance where crashes
->> have been reported, so is apparently not a problem... :/
->>
->> Reported-by: AngeloGioacchino Del Regno <kholk11@gmail.com>
->> Tested-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
->> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-> 
-> Acked-by: Will Deacon <will.deacon@arm.com>
-> 
-> Joerg -- Please can you take this as a fix for 5.2, with a Cc stable?
+The pll struct is being allocated but not kfree'd on an error return
+path when devm_clk_hw_register fails.  Fix this with a kfree on pll
+if an error occurs.
 
-Hello Joerg,
+Addresses-Coverity: ("Resource leak")
+Fixes: b19f009d4510 ("clk: bcm2835: Migrate to clk_hw based registration and OF APIs")
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
+---
+ drivers/clk/bcm/clk-bcm2835.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-Can you ping this thread once this patch hits linux-next, so I can
-ask Bjorn to pick up the 8998 ANOC1 DT node, and the PCIe DT node
-that requires ANOC1.
+diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
+index 770bb01f523e..90584deaf416 100644
+--- a/drivers/clk/bcm/clk-bcm2835.c
++++ b/drivers/clk/bcm/clk-bcm2835.c
+@@ -1310,8 +1310,10 @@ static struct clk_hw *bcm2835_register_pll(struct bcm2835_cprman *cprman,
+ 	pll->hw.init = &init;
+ 
+ 	ret = devm_clk_hw_register(cprman->dev, &pll->hw);
+-	if (ret)
++	if (ret) {
++		kfree(pll);
+ 		return NULL;
++	}
+ 	return &pll->hw;
+ }
+ 
+-- 
+2.20.1
 
-Bjorn: for ANOC1, a small fixup: s/arm,smmu/iommu/
-
-https://patchwork.kernel.org/project/linux-arm-msm/list/?series=99701
-https://patchwork.kernel.org/patch/10895341/
-
-Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
