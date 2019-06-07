@@ -2,71 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 984C23941B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:17:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA22E39428
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 20:21:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RtN6yeiX8MsQS0acnquZhgD/iF8I5f6aKF6//Ks4jik=; b=mOwPRVic+IcrBv
-	8Ms//PIKUTorny77jJUIZgOmhdJy8bp2hXSth88KDNm/pDl1hXpWIn3H8Q3l5fc1vY9kMY+xdYdbz
-	ldKEcZ25xpWvo7PKu2+WRlw6BrXvnGhHfWg8BX9QYlkv5EfXvqFHlmv61aM1CBq1IN6Q5wopc+10d
-	EeTZIJksIeuWgcioAGowD0571vD/QSbRLRT56kJ7MXYmSeDgBbjT/RaGZ02SySp7bFRVKwkvljY7N
-	5ll3XDEaF5IM/4C0l7DhGypYlkOFU91EkIbPlaYzP+rLSpbBwV3s1QZ5pL8cZr3Rv1KtfH3qEaXUP
-	WnJZ2CRmclQOXs/6iW8A==;
+	List-Owner; bh=jBMQAK89sh7cFq+m335/B3+KQMDgi5GEQ9rI6fxbxE0=; b=OG84nEwZIec2pK
+	O3LWpvt6pUn9rem+Kj1qWBXo33JFPogkTD20lStHa899jPRFW62oWNwOBcIZO+I3lvE8XsSXsnbFB
+	Z3bpkh2A8W+3CK3lx6Yikd049gVoWkCD+fOLyFH85boCUQgw1shHq6CamOtUXWS/HzVa8x8QvWE07
+	n1GuEn2T2zg80D8DlSXUPx4J0Gs3Fsvtim+E64GoLzoIYdtBzniPMUu3z3hELTV4uH0VuP2sZgOqo
+	FdeDVdxAGRJxFdEQ4bWGO1zoFjtUMIaQ4ADYuIXZFK+sSADk+IjaBUtXxxWYZXfIYEIeN2SxtxiIl
+	wPQO8oFu9TuRniwig0Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZJQk-0002SH-4M; Fri, 07 Jun 2019 18:17:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZJQb-0002Rz-Ei
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 18:17:26 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0086E20868;
- Fri,  7 Jun 2019 18:17:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559931445;
- bh=avBGzeDVPLC9Ku4xRFNfHkrWVnK+12j3mF281rswmfs=;
- h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
- b=Ds6bRfWQvpaGWItGBIQ2L+kHDmodlH1EYVF3q7lMDBTgqnuENK9g2pHSlExCOXG5X
- a+pte8EbrOWyuTxeCw/a2lS6/ldaHVZ6kPB+YPcyl5Ama5fQXvJZs/RBhbqOgQL93m
- i15dWegbnRDru6/8ThZdIe2Z8XTWmBKRA8rQLErs=
+	id 1hZJU5-00046J-Qv; Fri, 07 Jun 2019 18:21:01 +0000
+Received: from 187-26-97-17.3g.claro.net.br ([187.26.97.17]
+ helo=quaco.ghostprotocols.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZJTz-00045i-QI; Fri, 07 Jun 2019 18:20:56 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id CEE8441149; Fri,  7 Jun 2019 15:20:47 -0300 (-03)
+Date: Fri, 7 Jun 2019 15:20:47 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v2 01/17] perf tools: Configure contextID tracing in
+ CPU-wide mode
+Message-ID: <20190607182047.GK21245@kernel.org>
+References: <20190524173508.29044-1-mathieu.poirier@linaro.org>
+ <20190524173508.29044-2-mathieu.poirier@linaro.org>
+ <68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190520080421.12575-3-wens@kernel.org>
-References: <20190520080421.12575-1-wens@kernel.org>
- <20190520080421.12575-3-wens@kernel.org>
-To: Chen-Yu Tsai <wens@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Michael Turquette <mturquette@baylibre.com>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 02/25] clk: Add CLK_HW_INIT_* macros using .parent_hws
-User-Agent: alot/0.8.1
-Date: Fri, 07 Jun 2019 11:17:24 -0700
-Message-Id: <20190607181725.0086E20868@mail.kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_111725_512828_77017297 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+Content-Disposition: inline
+In-Reply-To: <68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.11.3 (2019-02-01)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,51 +50,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: mathieu.poirier@linaro.org, Peter Zijlstra <peterz@infradead.org>,
+ coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Jiri Olsa <jolsa@kernel.org>, leo.yan@linaro.org,
+ Namhyung Kim <namhyung@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Chen-Yu Tsai (2019-05-20 01:03:58)
-> A special CLK_HW_INIT_HWS macro is included, which takes an array of
-> struct clk_hw *, but sets .num_parents to 1. This variant is to allow
-> the reuse of the array, instead of having a compound literal allocated
-> for each clk sharing the same parent.
+Em Fri, Jun 07, 2019 at 10:21:36AM +0100, Suzuki K Poulose escreveu:
+> Hi Mathieu,
 > 
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-[...]
-> diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
-> index bb6118f79784..0c241b43a802 100644
-> --- a/include/linux/clk-provider.h
-> +++ b/include/linux/clk-provider.h
-> @@ -904,6 +904,24 @@ extern struct of_device_id __clk_of_table;
->                 .ops            = _ops,                         \
->         })
->  
-> +#define CLK_HW_INIT_HW(_name, _parent, _ops, _flags)                   \
-> +       (&(struct clk_init_data) {                                      \
-> +               .flags          = _flags,                               \
-> +               .name           = _name,                                \
-> +               .parent_hws     = (const struct clk_hw*[]) { _parent }, \
-> +               .num_parents    = 1,                                    \
-> +               .ops            = _ops,                                 \
-> +       })
-> +
-> +#define CLK_HW_INIT_HWS(_name, _parent, _ops, _flags)                  \
+> On 24/05/2019 18:34, Mathieu Poirier wrote:
+> > When operating in CPU-wide mode being notified of contextID changes is
+> > required so that the decoding mechanic is aware of the process context
+> > switch.
+> > 
+> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> 
+> 
+> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> 
+> I am sorry but, I don't remember reviewing this patch in the previous
+> postings. But here we go.
 
-Minor nitpick, please add a comment here to indicate that this is here
-to share the same compound literal between multiple clks using the same
-parent.
+Can I keep it as is? I addressed one of your concerns below, please
+check.
 
-> +       (&(struct clk_init_data) {                                      \
-> +               .flags          = _flags,                               \
-> +               .name           = _name,                                \
-> +               .parent_hws     = _parent,                              \
-> +               .num_parents    = 1,                                    \
-> +               .ops            = _ops,                                 \
-> +       })
+- Arnaldo
+ 
+> > +++ b/tools/perf/util/cs-etm.h
+> > @@ -103,6 +103,18 @@ struct intlist *traceid_list;
+> >   #define KiB(x) ((x) * 1024)
+> >   #define MiB(x) ((x) * 1024 * 1024)
+> > +/*
+> > + * Create a contiguous bitmask starting at bit position @l and ending at
+> > + * position @h. For example
+> > + * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
+> > + *
+> > + * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
+> > + */
+> > +#define GENMASK(h, l) \
+> > +	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
+> > +
+> 
+> minor nit: Could this be placed in a more generic header file for the other
+> parts of the perf tool to consume ?
+> 
+
+Yeah, since we have:
+
+Good catch, we have it already:
+
+[acme@quaco perf]$ tail tools/include/linux/bits.h
+ * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
+ */
+#define GENMASK(h, l) \
+	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
+
+#define GENMASK_ULL(h, l) \
+	(((~0ULL) - (1ULL << (l)) + 1) & \
+	 (~0ULL >> (BITS_PER_LONG_LONG - 1 - (h))))
+
+#endif	/* __LINUX_BITS_H */
+[acme@quaco perf]$
+[acme@quaco perf]$
+
+So I'm adding this to the pile with a Suggested-by: Suzuki, ok?
+
+commit 3217a621248824fbff8563d8447fdafe69c5316d
+Author: Arnaldo Carvalho de Melo <acme@redhat.com>
+Date:   Fri Jun 7 15:14:27 2019 -0300
+
+    perf cs-etm: Remove duplicate GENMASK() define, use linux/bits.h instead
+    
+    Suzuki noticed that this should be more useful in a generic header, and
+    after looking I noticed we have it already in our copy of
+    include/linux/bits.h in tools/include, so just use it, test built on
+    x86-64 and ubuntu 19.04 with:
+    
+      perfbuilder@46646c9e848e:/$ aarch64-linux-gnu-gcc --version |& head -1
+      aarch64-linux-gnu-gcc (Ubuntu/Linaro 8.3.0-6ubuntu1) 8.3.0
+      perfbuilder@46646c9e848e:/$
+    
+    Suggested-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+    Link: https://lkml.kernel.org/r/68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com
+    Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+    Cc: Jiri Olsa <jolsa@redhat.com>
+    Cc: Leo Yan <leo.yan@linaro.org>
+    Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+    Cc: Namhyung Kim <namhyung@kernel.org>
+    Cc: Peter Zijlstra <peterz@infradead.org>
+    Cc: coresight@lists.linaro.org
+    Cc: linux-arm-kernel@lists.infradead.org,
+    Link: https://lkml.kernel.org/n/tip-69pd3mqvxdlh2shddsc7yhyv@git.kernel.org
+    Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+
+diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
+index 33b57e748c3d..bc848fd095f4 100644
+--- a/tools/perf/util/cs-etm.h
++++ b/tools/perf/util/cs-etm.h
+@@ -9,6 +9,7 @@
+ 
+ #include "util/event.h"
+ #include "util/session.h"
++#include <linux/bits.h>
+ 
+ /* Versionning header in case things need tro change in the future.  That way
+  * decoding of old snapshot is still possible.
+@@ -161,16 +162,6 @@ struct cs_etm_packet_queue {
+ 
+ #define CS_ETM_INVAL_ADDR 0xdeadbeefdeadbeefUL
+ 
+-/*
+- * Create a contiguous bitmask starting at bit position @l and ending at
+- * position @h. For example
+- * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
+- *
+- * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
+- */
+-#define GENMASK(h, l) \
+-	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
+-
+ #define BMVAL(val, lsb, msb)	((val & GENMASK(msb, lsb)) >> lsb)
+ 
+ #define CS_ETM_HEADER_SIZE (CS_HEADER_VERSION_0_MAX * sizeof(u64))
 
 _______________________________________________
 linux-arm-kernel mailing list
