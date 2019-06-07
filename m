@@ -2,88 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C262638BDF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 15:43:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A2EC38BE7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 15:45:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C31irzdIdXPsmEWzsm8A59zuTBC7K/Try5PB3cE0jWg=; b=qtlKUMIz4TXI8x
-	sxcPBe51Q/+8TwV96oapTjZCxviGbtzYXKSqd584ZQWH7HyKBY46L5FH7tguePXeJwEWaj7NW64tZ
-	E1HmQ4K57lSAhYTe5Nu8qjEAtiqKw9p7K+4Hl3B7dztaaHDtwCpBT/ydxbcjmS2FeG2Q8HJRy7GJY
-	jgTC6u1Fkb57l0nqL2Bk62RVLbH1LyLiUQidNM2NHgFrwkIH1pcJ/cnnWMPC4ZC5u0nZTzFl3FP04
-	cxXoXZP0qKGaW9SvFbCoUBF77BM0YGNMsH2qU4qOvkvyldm+dtTGT9dIErnGJ1a9+j2TawlQm86/y
-	rTdCRMUFNsFhcJyM1U4w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xO2R4TSp8oh21D4zJ2+Njs6KrvzKP4agN2ulE71QNgY=; b=oHXXL20jbOhaz1zDKc5otq5Q6
+	N7+1cnoNpjPeYoBDLeL5gpbDle5+u5wTu1y8iI97O4wMRRa+BYXb5rILcNTnIm9rhi9Y3Ev6Ie3av
+	spvscwdTW//h+VMrHFD3YEd1kJOlWi5SziYpMXje4ocMjdjO3r7gZDI5+xz/6PDGiYWfi2J8eM1hx
+	hgR3nxF15E+9Dsk9SFhgkYFwxDKeYbPTXKqqMgqsnv3fbVEzicFHMvUgrrlA1KUU5ouvcBDafvReN
+	DdI0iMljAtsGYtI9b8k2O52+o9NOy9HYJZosqxWotkdfe3ePohTOgAhmo9igNXhF9qqIlewtaCmmj
+	PELLdZIcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZF92-0006rW-Su; Fri, 07 Jun 2019 13:43:00 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hZFBn-0008TE-PR; Fri, 07 Jun 2019 13:45:51 +0000
+Received: from hqemgate16.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZF8r-0006r3-Vf
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 13:42:51 +0000
-Received: by mail-qt1-x841.google.com with SMTP id i34so2266803qta.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 06:42:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=3WofkuIu9igDLPAQnWn5qFH+FdgRGt2W5dGohyfL5bo=;
- b=n1lnQGKkeKsiGRx9x7uI6LTN+EX3yAuiclsjYtuaV9QgzH5H2R3zrNbiuZAkVmtF5W
- WHntmEZBrSJEVOz7HgVLx+C2H9Ovsr/y7PbdFquDC+wOkaSQQaYPbBY2L49iwXc//rlW
- M2Rfi1KuameCfRdBGip+OvrCA9SXZA4gfspYu5F7ye4Dpg7wSJTd/6dvJ8rKyljga7Al
- 7bE7zLDqoe7kMwCol673Fq9oKJW1/iPKomslzazl9QfJIzpD2gag0wSK9OShHlAcXBv2
- sfL81E7/N+KKk5xEDZkPjiB3yaXMKXC5yMRtvM/RxMTMlaWIFTw9VfRhiY/tTQftsXgH
- ECtQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3WofkuIu9igDLPAQnWn5qFH+FdgRGt2W5dGohyfL5bo=;
- b=jYzg7eEuJpi1OHdsmMHBMKRpD17xWSGv4c9NbLkg2m/OslYoO3yQMr6AgHd2nEqRdo
- 5zcX43Ffjnh2/+RU1dJSwqOpk/bm7wDdy2rQgtoXEszcElXI2QwjUr93zcCAKpgpW/YM
- v7PM4c3Q9JBu9mjjde05XhD+J5fBuNPB1HNDNAAS7KwFJ4poSW7TAIkwpnucyPI0a7/M
- iA+hptPqT4/mjfVTkLRIUFf6GtMU4YiINvxSi0A0siqp7h3X+lvh8UgPOkHBOvmwLrmI
- ZLDoUdj9UXbjY12sDv8GGj6Ji8LxVauRm4ZkMwbwVo88pprhS+zkgzt2VFpZsKjPcw9b
- D/2A==
-X-Gm-Message-State: APjAAAWX3fI1beQ4zdv6RxT7Ql1c3M1I+jRkWLCu+5Jr6pUB/h+dw75J
- P0BAb9T59yepwNspYfjEPawA/Q==
-X-Google-Smtp-Source: APXvYqzHgv638dIvZYD6LkRLDpzgnhtAJFigmQgwYChIND2SwnM+zmbtS1QVchVJkw/zzaI8x8einA==
-X-Received: by 2002:ac8:2cbc:: with SMTP id 57mr44959069qtw.222.1559914968187; 
- Fri, 07 Jun 2019 06:42:48 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li1322-146.members.linode.com.
- [45.79.223.146])
- by smtp.gmail.com with ESMTPSA id x2sm997287qke.92.2019.06.07.06.42.44
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 07 Jun 2019 06:42:47 -0700 (PDT)
-Date: Fri, 7 Jun 2019 21:42:39 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH] Documentation: coresight: Update the generic device names
-Message-ID: <20190607134239.GH5970@leoy-ThinkPad-X240s>
-References: <1559229077-26436-1-git-send-email-suzuki.poulose@arm.com>
- <20190603190133.GA20462@xps15>
- <99055755-6525-694e-a15d-5de7318a80da@arm.com>
- <20190607022136.GE5970@leoy-ThinkPad-X240s>
- <78c98c28-4f3f-825b-18e1-c71fb63a80eb@arm.com>
+ id 1hZFBe-0008S2-LI
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 13:45:44 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5cfa6a850000>; Fri, 07 Jun 2019 06:45:41 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Fri, 07 Jun 2019 06:45:41 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Fri, 07 Jun 2019 06:45:41 -0700
+Received: from [10.25.74.159] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 7 Jun
+ 2019 13:45:35 +0000
+Subject: Re: [PATCH V8 13/15] phy: tegra: Add PCIe PIPE2UPHY support
+To: Dmitry Osipenko <digetx@gmail.com>, <lorenzo.pieralisi@arm.com>,
+ <bhelgaas@google.com>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <thierry.reding@gmail.com>, <jonathanh@nvidia.com>, <kishon@ti.com>,
+ <catalin.marinas@arm.com>, <will.deacon@arm.com>, <jingoohan1@gmail.com>,
+ <gustavo.pimentel@synopsys.com>
+References: <20190526043751.12729-1-vidyas@nvidia.com>
+ <20190526043751.12729-14-vidyas@nvidia.com>
+ <c81c5d42-4292-ba6d-b5ab-afe1a604115f@gmail.com>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <5a5545c8-9e4c-b459-c40e-9e1c4e5daf5b@nvidia.com>
+Date: Fri, 7 Jun 2019 19:15:32 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <78c98c28-4f3f-825b-18e1-c71fb63a80eb@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <c81c5d42-4292-ba6d-b5ab-afe1a604115f@gmail.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1559915141; bh=X7YbyMYnPU4o/uuTsDoXMzQCmQIN7PmhE/enZhHNCbs=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=razz/z/YkMUuZJAs2q0s0SSZ/bUR5omne4pEFftfOU61dLcPqJXKCsGHE3NcpO35+
+ 8/F2iY2hVc46KAjY6gmEvqpg5fZ3KSxtuPhgOMOwYKMqeO9JIGY6v17MKg2Or+8u+H
+ KlITvD4TlEvUpP4ZaERzjMOe/Uw/MNFgiZuqHAY4aQAOWJUJ1FuVnWa356Z1OJu5RL
+ Y6R72p7/fJwuiWR/h3U5Eh8WMG0HEStRFp9Pr9OgZGW/VJAIAyZZoqfbqcIqzCExV0
+ phKG+yMITM2HvqQyAOuTLfbzBgJQSbyydm6e2I9WMYP+4QQY+Fq8/03gsOCNAchoQG
+ +1xx4qJ63FuHA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_064250_034167_5D33D051 
-X-CRM114-Status: GOOD (  20.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190607_064542_710544_F754B80A 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,93 +98,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, corbet@lwn.net,
- linux-arm-kernel@lists.infradead.org, mathieu.poirier@linaro.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, mperttunen@nvidia.com,
+ linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ sagar.tv@gmail.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
-
-On Fri, Jun 07, 2019 at 09:40:48AM +0100, Suzuki K Poulose wrote:
-> Hi Leo,
-> 
-> > > > >    A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
-> > > > >    listed along with configuration options within forward slashes '/'.  Since a
-> > > > >    Coresight system will typically have more than one sink, the name of the sink to
-> > > > > -work with needs to be specified as an event option.  Names for sink to choose
-> > > > > -from are listed in sysFS under ($SYSFS)/bus/coresight/devices:
-> > > > > +work with needs to be specified as an event option.
-> > > > > +On newer kernels the available sinks are listed in sysFS under:
-> > > > > +($SYSFS)/bus/event_source/devices/cs_etm/sinks/
-> > > > > -	root@linaro-nano:~# ls /sys/bus/coresight/devices/
-> > > > > -		20010000.etf   20040000.funnel  20100000.stm  22040000.etm
-> > > > > -		22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu
-> > > > > -		20070000.etr     20120000.replicator  220c0000.funnel
-> > > > > -		23040000.etm  23140000.etm     23340000.etm
-> > > > > +	root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
-> > > > > +	tmc_etf0  tmc_etr0  tpiu0
-> > > > > -	root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
-> > > > > +On older kernels, this may need to be found from the list of coresight devices,
-> > > > > +available under ($SYSFS)/bus/coresight/devices/:
-> > > > > +
-> > > > > +	root@localhost:/sys/bus/coresight/devices# ls
-> > > > > +	etm0  etm1  etm2  etm3  etm4  etm5  funnel0  funnel1  funnel2  replicator0  stm0 tmc_etf0  tmc_etr0  tpiu0
-> > > > > +
-> > > > > +	root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
-> > > > 
-> > > > On the "older" kernels you are referring to one would find the original naming
-> > > > convention.  Everything else looks good to me.
-> > > 
-> > > True, but do we care what we see there ? All we care about is the location,
-> > > where to find them. I could fix it, if you think thats needed.
-> > 
-> > IIUC, either the old kernel or newer kernel, both we can find the event
-> > from ($SYSFS)/bus/event_source/devices/cs_etm/sinks/; the only
-> > difference between them is the naming convention.
-> 
-> The cs_etm/sinks was only added with the CPU-wide trace support. So, if someone
-> refers to this document alone and then tries to do something on on older kernel,
-> which is quite possible for a production device running a stable kernel, {s,}he
-> might be surprised.
-
-Okay, understand now.  Thanks for clarification.
-
-> > So the doc can use the same location to find event for both new and
-> > old kernel, and explain the naming convention difference?
-> 
-> My question is really, does the naming convention matter ? What you see
-> under the directory is the name. But yes, I am open to add a section to
-> explain the fact that we changed the naming scheme, if everyone agrees
-> to it.
-
-The naming convention is not important for the developers who are
-familiar with CoreSight development; later who is the first time to
-access kernel CoreSight modules and don't know the history for naming
-scheme, the related documentation will be friendly and reduce the
-barrier for using it.
-
-I have no strong opinion for this, seems to me another choice is to
-describe the older kernel with old naming scheme, something like below:
-
-On older kernels, this may need to be found from the list of coresight devices,
-available under ($SYSFS)/bus/coresight/devices/ with old naming scheme:
-
-    root@linaro-nano:~# ls /sys/bus/coresight/devices/
-    	20010000.etf   20040000.funnel  20100000.stm  22040000.etm> Cheers
-    	22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu > Suzuki
-    	20070000.etr     20120000.replicator  220c0000.funnel
-    	23040000.etm  23140000.etm     23340000.etm
-
-    root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
-
-
-Thanks,
-Leo Yan
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNi82LzIwMTkgMTA6MDAgUE0sIERtaXRyeSBPc2lwZW5rbyB3cm90ZToKPiAyNi4wNS4yMDE5
+IDc6MzcsIFZpZHlhIFNhZ2FyINC/0LjRiNC10YI6Cj4+IFN5bm9wc3lzIERlc2lnbldhcmUgY29y
+ZSBiYXNlZCBQQ0llIGNvbnRyb2xsZXJzIGluIFRlZ3JhIDE5NCBTb0MgaW50ZXJmYWNlCj4+IHdp
+dGggVW5pdmVyc2FsIFBIWSAoVVBIWSkgbW9kdWxlIHRocm91Z2ggYSBQSVBFMlVQSFkgKFAyVSkg
+bW9kdWxlLgo+PiBGb3IgZWFjaCBQQ0llIGxhbmUgb2YgYSBjb250cm9sbGVyLCB0aGVyZSBpcyBh
+IFAyVSB1bml0IGluc3RhbnRpYXRlZCBhdAo+PiBoYXJkd2FyZSBsZXZlbC4gVGhpcyBkcml2ZXIg
+cHJvdmlkZXMgc3VwcG9ydCBmb3IgdGhlIHByb2dyYW1taW5nIHJlcXVpcmVkCj4+IGZvciBlYWNo
+IFAyVSB0aGF0IGlzIGdvaW5nIHRvIGJlIHVzZWQgZm9yIGEgUENJZSBjb250cm9sbGVyLgo+Pgo+
+PiBTaWduZWQtb2ZmLWJ5OiBWaWR5YSBTYWdhciA8dmlkeWFzQG52aWRpYS5jb20+Cj4+IC0tLQo+
+PiBDaGFuZ2VzIHNpbmNlIFt2N106Cj4+ICogQ2hhbmdlZCBQMlUgZHJpdmVyIGZpbGUgbmFtZSBm
+cm9tIHBjaWUtcDJ1LXRlZ3JhMTk0LmMgdG8gcGh5LXRlZ3JhMTk0LXAydS5jCj4+Cj4+IENoYW5n
+ZXMgc2luY2UgW3Y2XToKPj4gKiBOb25lCj4+Cj4+IENoYW5nZXMgc2luY2UgW3Y1XToKPj4gKiBB
+ZGRyZXNzZWQgcmV2aWV3IGNvbW1lbnRzIGZyb20gVGhpZXJyeQo+Pgo+PiBDaGFuZ2VzIHNpbmNl
+IFt2NF06Cj4+ICogTm9uZQo+Pgo+PiBDaGFuZ2VzIHNpbmNlIFt2M106Cj4+ICogUmViYXNlZCBv
+biB0b3Agb2YgbGludXgtbmV4dCB0b3Agb2YgdGhlIHRyZWUKPj4KPj4gQ2hhbmdlcyBzaW5jZSBb
+djJdOgo+PiAqIFJlcGxhY2VkIHNwYWNlcyB3aXRoIHRhYnMgaW4gS2NvbmZpZyBmaWxlCj4+ICog
+U29ydGVkIGhlYWRlciBmaWxlIGluY2x1c2lvbiBhbHBoYWJldGljYWxseQo+Pgo+PiBDaGFuZ2Vz
+IHNpbmNlIFt2MV06Cj4+ICogQWRkZWQgQ09NUElMRV9URVNUIGluIEtjb25maWcKPj4gKiBSZW1v
+dmVkIGVtcHR5IHBoeV9vcHMgaW1wbGVtZW50YXRpb25zCj4+ICogTW9kaWZpZWQgY29kZSBhY2Nv
+cmRpbmcgdG8gRFQgZG9jdW1lbnRhdGlvbiBmaWxlIG1vZGlmaWNhdGlvbnMKPj4KPj4gICBkcml2
+ZXJzL3BoeS90ZWdyYS9LY29uZmlnICAgICAgICAgICAgfCAgIDcgKysKPj4gICBkcml2ZXJzL3Bo
+eS90ZWdyYS9NYWtlZmlsZSAgICAgICAgICAgfCAgIDEgKwo+PiAgIGRyaXZlcnMvcGh5L3RlZ3Jh
+L3BoeS10ZWdyYTE5NC1wMnUuYyB8IDEwOSArKysrKysrKysrKysrKysrKysrKysrKysrKysKPj4g
+ICAzIGZpbGVzIGNoYW5nZWQsIDExNyBpbnNlcnRpb25zKCspCj4+ICAgY3JlYXRlIG1vZGUgMTAw
+NjQ0IGRyaXZlcnMvcGh5L3RlZ3JhL3BoeS10ZWdyYTE5NC1wMnUuYwo+Pgo+PiBkaWZmIC0tZ2l0
+IGEvZHJpdmVycy9waHkvdGVncmEvS2NvbmZpZyBiL2RyaXZlcnMvcGh5L3RlZ3JhL0tjb25maWcK
+Pj4gaW5kZXggYTNiMWRlOTUzZmI3Li5jNTZmYzg0NTJlMDMgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZl
+cnMvcGh5L3RlZ3JhL0tjb25maWcKPj4gKysrIGIvZHJpdmVycy9waHkvdGVncmEvS2NvbmZpZwo+
+PiBAQCAtNiwzICs2LDEwIEBAIGNvbmZpZyBQSFlfVEVHUkFfWFVTQgo+PiAgIAo+PiAgIAkgIFRv
+IGNvbXBpbGUgdGhpcyBkcml2ZXIgYXMgYSBtb2R1bGUsIGNob29zZSBNIGhlcmU6IHRoZSBtb2R1
+bGUgd2lsbAo+PiAgIAkgIGJlIGNhbGxlZCBwaHktdGVncmEteHVzYi4KPj4gKwo+PiArY29uZmln
+IFBIWV9URUdSQTE5NF9QMlUKPj4gKwl0cmlzdGF0ZSAiTlZJRElBIFRlZ3JhMTk0IFBJUEUyVVBI
+WSBQSFkgZHJpdmVyIgo+PiArCWRlcGVuZHMgb24gQVJDSF9URUdSQSB8fCBDT01QSUxFX1RFU1QK
+PiAKPiBBUkNIX1RFR1JBIGlzIGEgYml0IHRvbyBtdWNoLCBBUkNIX1RFR1JBXzE5NF9TT0Mgc2hv
+dWxkIGZpdCBiZXR0ZXIgaGVyZS4KPiAKT2suIEknbGwgdGFrZSBjYXJlIG9mIGl0IGluIHRoZSBu
+ZXh0IHBhdGNoIHNlcmllcy4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
