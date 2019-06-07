@@ -2,78 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A77B39158
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 17:59:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57A83391AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 18:12:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8h/CRwvjBGgOPJZBPkjuWi/w+ORmeGr5wO0zlCqt0J8=; b=KmNeCBzQnW5sXy
-	/a/q1SMCMfOAo0aXgTXKMzdmZ/ALem67f9VvyAxWWfdSWACl45mrVEojmXhJcZ00wfENiLROPgXVD
-	MvFKk90xbv8WQsHh0kWhgmnXkvL27I7OgVP4f6UYUsTUEdH4dyDY/bTQKwR9+/tHzCdguHHz1j+3F
-	VY9srSYtXloFx9Ig8doJWKnRMa6Z2vOdUck0j5d5fQ6MUGQvmKoNHem9Xe8bTaOBbWGHRv7c8tXCI
-	MQ4l4Cpf4JqYBCTzleLAPTuHF9zhrhOnK0/4Chg1xxbEIKBXyixUj81uBWiDbvXn+8dZdUZeFo62y
-	87txVIP0gS0EZBsIkfDg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7Re2ybl3od0gCSg4tCCXBWT2u1iqzhh4clssypypl4Y=; b=eIExbuxttaCM9h
+	KZV+DAWkKfrABUdWbDnENeBIJ048LVcX+6ck5ZgCHLsK9ZqaaDyldUG7dNq8qBbW7awdjdvPvTZEr
+	zQJTYaJfz25IH0C9BD2VL50yN/XY8ILcOl4WDTdAd1ct/5SOQnvvVnQLOIdeccJ1Y0BnCIz0sQBLf
+	lhjDF7AKpfyXcfbGIgGBAbFMqqFIGXuUH1+N903sAvTSkEQJ+IOwpV7cExvVDOonR6EPFN2pDWxNC
+	afKD8XVQsM92aCmAkF/WQWZR2nn0r7jdpzZnBUsqaQm88DUSPua4eaKdW4v9hMaFB3b0/TsxRbzFv
+	jl4WfMs5rNWspu4IJYPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZHGy-00059s-Oa; Fri, 07 Jun 2019 15:59:20 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hZHTR-0002t0-CA; Fri, 07 Jun 2019 16:12:13 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZHGm-000599-F0
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 15:59:09 +0000
-Received: by mail-io1-xd41.google.com with SMTP id i10so1777302iol.13
+ id 1hZHTK-0002sX-G5
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 16:12:08 +0000
+Received: by mail-ed1-x542.google.com with SMTP id a14so1878179edv.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 08:59:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ewMHrbrVvN4gVJpFfne3Ko4Ig9zBbFgoDweVZi80Iis=;
- b=ikGOtCEI2xkGJiF/rscqmIZGgmjsg2cG96nsYnWF+sShH8/2RPNrrxDEzNKw5puBJr
- CLnGqRjFGkyn7RGCJNhNxASebmtvirIhbTGFy8yS8IHJlPT1QYZkh3YI/fnCzw3C3oXE
- f3zJsVCqynVuZvcKa3O2bzpUsWxceyOPmQaQllIEX2yNH5I7Zj9/HcFMj7HbHPFEpwnG
- xbZ9PFiITzvbQARLu7xHvWWMXXixHxg1c8wkFzVpkPv/K2baTapbCa7nUoSVsxFPrOwY
- AZzZF1hlR0aZP0pb91FILI3U5DLWoL9NX6ga0IYnsPws9Y9Uhxpl/G21jCOVJ5hoORYA
- 1W+Q==
+ Fri, 07 Jun 2019 09:12:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0JpUdTsOa7EIqirFoRpEdJ3i1kEV+MZYFQgC803VPU4=;
+ b=JqR33tXvj7r3SHSdAHfYwNexD3XwyD1ZvtvYnpUh+WuFIqsP+hRuv63fN0FauVOcjj
+ RtW7VNOkguzUN+evgxN0vU5f6Utscp5VDT9uCSvFv9ErP39f1DoZVwUcEudOh1cCg4xf
+ tXEHhviwSiYhRa8OVpLjGGzNq1UZOdWKHbbxVqkr7wucaWqoqdi9VfXzJ2u3vOnrJ6T5
+ FFQajWDRxOgOQOxXqEJyUwGhAWYf8n9qUP7QiVrxOXxdsH/MO7OnaTDxomnk5pjOseKK
+ yTYkGnLAsm7mvkh4RoLf/xq8TfoJt46ZDhv8N6jrBWO+qUc1gTrp1g6Lf4hKfaVUQ+pg
+ pg6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ewMHrbrVvN4gVJpFfne3Ko4Ig9zBbFgoDweVZi80Iis=;
- b=fhHZlafKKxaS+t+PqHIUo7tM1iUSabWfbGnATKsFYTkVXPOScGQwFFgplxiCGEBxZm
- zvd7dPUrSD9RK3n1aU0+Tg8NT/hj3tVcALA/b8oC0BYu9azbiqitC+s7hghfXm0FX4q4
- Ybqt93pUFNwGGyhKPmFzvB/P2N7A2dNJtW6RH/r2pQDhq+A6WKKBGNupGPk7+/sfTt4p
- 3Dzsu8ublAGRyKaHgAgUxsMipXfAY3ZSa1BMhlyQ+UYXkYjbxksJ0G2ltJ4V+4dCWjnR
- 83Ho+qGPKYedxJfuaFbO8+SZfYPxcThpEkghRpQgXZE6ywxgHfa6Pe4Yca1wffilMw6g
- d3tQ==
-X-Gm-Message-State: APjAAAWXybFey2l5IvT6phFU0M2GEm+jI50uRCNmL/DRPyPGr4AzkTGC
- EJoES0+uUU+ce9ShnKicdhaoAUEK6pcKo5mEygI4Zg==
-X-Google-Smtp-Source: APXvYqwzayJ8qqte/5dnP1Isc+20qODkQw4i0F2UFenu7Y84bawQ8IDq2LnGM+SqRLI+C7+It91yrOyydVLiIKYpWj8=
-X-Received: by 2002:a6b:2c96:: with SMTP id s144mr19148570ios.57.1559923145932; 
- Fri, 07 Jun 2019 08:59:05 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0JpUdTsOa7EIqirFoRpEdJ3i1kEV+MZYFQgC803VPU4=;
+ b=gHXaFXbmBqDTaY1Ptv+FKfx2nN4DO5O+yLU0K2yHyqtmiZnS2V0+Ayb9uN4Kq3GOBa
+ PRGTMFvEzmnaRCm3LvYVL3YNvBrq+KvlbV0H4+LEUTZO51/kdLA0tk6Z8k0gUhjD2HRs
+ 85Hbj7Qs7yfZD9HXmQbGmOMXXoqjTFodfGt2T7aJJalzca4tE3j7aJ/kfUFaswMiKOkL
+ LyhjHTJYuw1MbrM2BSsetbg0i2bpqmJ5pMoBHbgd2VNcyEyvJJjxdMSJgMxSoDmTW3EV
+ RlIJR31kvp7LCrcSBDT9QCLrHss+UwhPla2YDW+l4BumMW7WqOdsKcY2UmTvOqfRYP28
+ XVzg==
+X-Gm-Message-State: APjAAAXRfgy36KFeE3QbqPNaED8Ywb1EMxZiSB+X3e7LRSl+XogS2Zmc
+ x//exhv91tw5rG5BRExHVQs=
+X-Google-Smtp-Source: APXvYqxaqFHNuIkJrpIMXSYPMvOKZbnkIur25HxoxqrDANRMZ9mZX+ezXOZ6faSEaGlGt95Y6uIsEQ==
+X-Received: by 2002:a17:906:53c8:: with SMTP id
+ p8mr48103973ejo.18.1559923925065; 
+ Fri, 07 Jun 2019 09:12:05 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:4f9:2b:2b15::2])
+ by smtp.gmail.com with ESMTPSA id q24sm440117ejr.35.2019.06.07.09.12.03
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 07 Jun 2019 09:12:04 -0700 (PDT)
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>
+Subject: [PATCH] arm64: Don't unconditionally add -Wno-psabi to KBUILD_CFLAGS
+Date: Fri,  7 Jun 2019 09:12:01 -0700
+Message-Id: <20190607161201.73430-1-natechancellor@gmail.com>
+X-Mailer: git-send-email 2.22.0.rc3
 MIME-Version: 1.0
-References: <1559229077-26436-1-git-send-email-suzuki.poulose@arm.com>
- <20190603190133.GA20462@xps15> <99055755-6525-694e-a15d-5de7318a80da@arm.com>
- <20190607022136.GE5970@leoy-ThinkPad-X240s>
- <78c98c28-4f3f-825b-18e1-c71fb63a80eb@arm.com>
-In-Reply-To: <78c98c28-4f3f-825b-18e1-c71fb63a80eb@arm.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 7 Jun 2019 09:58:54 -0600
-Message-ID: <CANLsYkxMeYK+XJYHRvixRL6pwfhP8KjMTi6i1syMEvwNbi5vkg@mail.gmail.com>
-Subject: Re: [PATCH] Documentation: coresight: Update the generic device names
-To: Suzuki K Poulose <suzuki.poulose@arm.com>
+X-Patchwork-Bot: notify
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_085908_510497_9371AFD5 
-X-CRM114-Status: GOOD (  19.24  )
+X-CRM114-CacheID: sfid-20190607_091206_540230_4AB7F471 
+X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,74 +99,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Coresight ML <coresight@lists.linaro.org>, Jon Corbet <corbet@lwn.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Leo Yan <leo.yan@linaro.org>
+Cc: Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Qian Cai <cai@lca.pw>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 7 Jun 2019 at 02:40, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->
-> Hi Leo,
->
-> >>>>    A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
-> >>>>    listed along with configuration options within forward slashes '/'.  Since a
-> >>>>    Coresight system will typically have more than one sink, the name of the sink to
-> >>>> -work with needs to be specified as an event option.  Names for sink to choose
-> >>>> -from are listed in sysFS under ($SYSFS)/bus/coresight/devices:
-> >>>> +work with needs to be specified as an event option.
-> >>>> +On newer kernels the available sinks are listed in sysFS under:
-> >>>> +($SYSFS)/bus/event_source/devices/cs_etm/sinks/
-> >>>> -  root@linaro-nano:~# ls /sys/bus/coresight/devices/
-> >>>> -          20010000.etf   20040000.funnel  20100000.stm  22040000.etm
-> >>>> -          22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu
-> >>>> -          20070000.etr     20120000.replicator  220c0000.funnel
-> >>>> -          23040000.etm  23140000.etm     23340000.etm
-> >>>> +  root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
-> >>>> +  tmc_etf0  tmc_etr0  tpiu0
-> >>>> -  root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
-> >>>> +On older kernels, this may need to be found from the list of coresight devices,
-> >>>> +available under ($SYSFS)/bus/coresight/devices/:
-> >>>> +
-> >>>> +  root@localhost:/sys/bus/coresight/devices# ls
-> >>>> +  etm0  etm1  etm2  etm3  etm4  etm5  funnel0  funnel1  funnel2  replicator0  stm0 tmc_etf0  tmc_etr0  tpiu0
-> >>>> +
-> >>>> +  root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
-> >>>
-> >>> On the "older" kernels you are referring to one would find the original naming
-> >>> convention.  Everything else looks good to me.
-> >>
-> >> True, but do we care what we see there ? All we care about is the location,
-> >> where to find them. I could fix it, if you think thats needed.
-> >
-> > IIUC, either the old kernel or newer kernel, both we can find the event
-> > from ($SYSFS)/bus/event_source/devices/cs_etm/sinks/; the only
-> > difference between them is the naming convention.
->
-> The cs_etm/sinks was only added with the CPU-wide trace support. So, if someone
-> refers to this document alone and then tries to do something on on older kernel,
-> which is quite possible for a production device running a stable kernel, {s,}he
-> might be surprised.
->
-> >
-> > So the doc can use the same location to find event for both new and
-> > old kernel, and explain the naming convention difference?
->
-> My question is really, does the naming convention matter ? What you see
-> under the directory is the name. But yes, I am open to add a section to
-> explain the fact that we changed the naming scheme, if everyone agrees
-> to it.
+This is a GCC only option, which warns about ABI changes within GCC, so
+unconditionally adding breaks Clang with tons of:
 
-I think it would be preferable to mention the change - just a small
-section that describes what happened and the reason for doing so will
-be fine.
+warning: unknown warning option '-Wno-psabi' [-Wunknown-warning-option]
 
->
-> Cheers
-> Suzuki
+and link time failures:
+
+ld.lld: error: undefined symbol: __efistub___stack_chk_guard
+>>> referenced by arm-stub.c:73
+(/home/nathan/cbl/linux/drivers/firmware/efi/libstub/arm-stub.c:73)
+>>>               arm-stub.stub.o:(__efistub_install_memreserve_table)
+in archive ./drivers/firmware/efi/libstub/lib.a
+
+I suspect the link time failure comes from some flags not being added
+via cc-option, which will always fail when an unknown flag is
+unconditionally added to KBUILD_CFLAGS because -Werror is added after
+commit c3f0d0bc5b01 ("kbuild, LLVMLinux: Add -Werror to cc-option to
+support clang").
+
+$ echo "int main() { return 0; }" | clang -Wno-psabi -o /dev/null -x c -
+warning: unknown warning option '-Wno-psabi' [-Wunknown-warning-option]
+1 warning generated.
+
+$ echo $?
+0
+
+$ echo "int main() { return 0; }" | clang -Werror -Wno-psabi -o /dev/null -x c -
+error: unknown warning option '-Wno-psabi' [-Werror,-Wunknown-warning-option]
+
+$ echo $?
+1
+
+This side effect is user visible (aside from the inordinate amount of
+-Wunknown-warning-option and build failure), as some warnings that are
+normally disabled like -Waddress-of-packed-member or
+-Wunused-const-variable show up.
+
+Use cc-disable-warning so that it gets disabled for GCC and does nothing
+for Clang.
+
+Fixes: ebcc5928c5d9 ("arm64: Silence gcc warnings about arch ABI drift")
+Link: https://github.com/ClangBuiltLinux/linux/issues/511
+Reported-by: Qian Cai <cai@lca.pw>
+Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+---
+ arch/arm64/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 8fbd583b18e1..e9d2e578cbe6 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -51,7 +51,7 @@ endif
+ 
+ KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)
+ KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
+-KBUILD_CFLAGS	+= -Wno-psabi
++KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
+ KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst)
+ 
+ KBUILD_CFLAGS	+= $(call cc-option,-mabi=lp64)
+-- 
+2.22.0.rc3
+
 
 _______________________________________________
 linux-arm-kernel mailing list
