@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33C4B38901
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:28:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C72F738902
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Jun 2019 13:28:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JN834TmaZQcQkYSjbkFBlzF5L1jg9u6TCvQOqi9/JQI=; b=aFO+6Tvk4s4E2MQso+y+dhdF3U
-	cU1vDQlSWX+vU0tyPovC7utGLk00fazp4+oXis+Lx6gGnkmzzvts3F+qFBgVcQAHhOytlO6m7YMlS
-	7wXmW066riJZ+jvUZjNsUkPZHwnPnCGWIF+/UEww1wAifJDBtDoL0HdpR+46vJSb1n/K7da0WbrSS
-	g5oQ3EkZnaFAGw3x8EhebenSI8k1xvAzxm4ZYHDvozECyGaWGtwMYnS2z2XKdW7DHtiYiTVwRD1tX
-	E89w2xwajrWjM+vCvWHugnsM5gY8vHAVu6iEF0Ef+YJKqWtjrX33yTM7pGX00TpJN/eunaCfOaU3S
-	BVRo/Gbg==;
+	bh=Zg5slGtBudBbH4V2aRklXoz0Go6V0dGs069bJ1577Q8=; b=gYyZv0FZ4qAWmP7asaL0admQ9G
+	6RAWmhI72SA3nZ7NEf+Mpf1P5d61S9wWj3jlBFt9pEq7Fk39FWPsSBDXIwcE9odcSlWCsYhErrrV1
+	DwCsXMdzT1fHs28e/WgaefvwYxpY8m93xEbbY1f9vPalA3NqRU5+xFU4APkqm45zWXtS1sChuxiFE
+	OugbjyEgRO76tXbSRyZKxMiL5MvVQMe+oCS3ko734KEbUOrfIJlLH5P9K8lg+QkhLVxJnVKRXYX7L
+	AGspa87g94+4pl9+ekDID2pNCJOg+mUK3RbNsu9rseATNt2gz5WOwjTagEv5j/kv6oqIjqt30w3tp
+	slOSyWWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZD2e-0008Qr-Js; Fri, 07 Jun 2019 11:28:16 +0000
+	id 1hZD2p-0000Jl-5h; Fri, 07 Jun 2019 11:28:27 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hZD1l-0007ni-6Q
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:27:23 +0000
+ id 1hZD1m-0007lq-Gi
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Jun 2019 11:27:24 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B2469458;
- Fri,  7 Jun 2019 04:27:20 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D9EF499;
+ Fri,  7 Jun 2019 04:27:22 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D7B5B3F246;
- Fri,  7 Jun 2019 04:28:59 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 533373F246;
+ Fri,  7 Jun 2019 04:29:01 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH kvmtool v4 4/8] update_headers: Sync kvm UAPI headers with
- linux v5.2-rc1
-Date: Fri,  7 Jun 2019 12:26:25 +0100
-Message-Id: <1559906789-20936-5-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH kvmtool v4 5/8] KVM: arm/arm64: Add a vcpu feature for pointer
+ authentication
+Date: Fri,  7 Jun 2019 12:26:26 +0100
+Message-Id: <1559906789-20936-6-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
 References: <1559906789-20936-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_042721_359327_E7CD96FE 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20190607_042722_673148_761E5BDF 
+X-CRM114-Status: GOOD (  13.64  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,287 +74,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Pull in upstream UAPI headers, for subsequent arm64 SVE / ptrauth
-support (among other things).
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+This patch adds a runtime capabality for KVM tool to enable Arm64 8.3
+Pointer Authentication in guest kernel. Two vcpu features
+KVM_ARM_VCPU_PTRAUTH_[ADDRESS/GENERIC] are supplied together to enable
+Pointer Authentication in KVM guest after checking the capability.
+
+Command line options --enable-ptrauth and --disable-ptrauth are added
+to use this feature. However, if those options are not provided then
+also this feature is enabled if host supports this capability.
+
+Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Signed-off-by: Dave Martin <Dave.Martin@arm.com> [merge new kernel heaers]
 ---
- arm/aarch64/include/asm/kvm.h         | 43 ++++++++++++++++++++++++++++
- arm/aarch64/include/asm/sve_context.h | 53 +++++++++++++++++++++++++++++++++++
- include/linux/kvm.h                   | 15 ++++++++--
- powerpc/include/asm/kvm.h             | 48 +++++++++++++++++++++++++++++++
- x86/include/asm/kvm.h                 |  1 +
- 5 files changed, 158 insertions(+), 2 deletions(-)
- create mode 100644 arm/aarch64/include/asm/sve_context.h
+ arm/aarch32/include/kvm/kvm-cpu-arch.h    |  2 ++
+ arm/aarch64/include/kvm/kvm-config-arch.h |  6 +++++-
+ arm/aarch64/include/kvm/kvm-cpu-arch.h    |  3 +++
+ arm/include/arm-common/kvm-config-arch.h  |  2 ++
+ arm/kvm-cpu.c                             | 20 ++++++++++++++++++--
+ 5 files changed, 30 insertions(+), 3 deletions(-)
 
-diff --git a/arm/aarch64/include/asm/kvm.h b/arm/aarch64/include/asm/kvm.h
-index 97c3478..7b7ac0f 100644
---- a/arm/aarch64/include/asm/kvm.h
-+++ b/arm/aarch64/include/asm/kvm.h
-@@ -35,6 +35,7 @@
- #include <linux/psci.h>
- #include <linux/types.h>
- #include <asm/ptrace.h>
-+#include <asm/sve_context.h>
+diff --git a/arm/aarch32/include/kvm/kvm-cpu-arch.h b/arm/aarch32/include/kvm/kvm-cpu-arch.h
+index d28ea67..3ec6f03 100644
+--- a/arm/aarch32/include/kvm/kvm-cpu-arch.h
++++ b/arm/aarch32/include/kvm/kvm-cpu-arch.h
+@@ -13,4 +13,6 @@
+ #define ARM_CPU_ID		0, 0, 0
+ #define ARM_CPU_ID_MPIDR	5
  
- #define __KVM_HAVE_GUEST_DEBUG
- #define __KVM_HAVE_IRQ_LINE
-@@ -102,6 +103,9 @@ struct kvm_regs {
- #define KVM_ARM_VCPU_EL1_32BIT		1 /* CPU running a 32bit VM */
- #define KVM_ARM_VCPU_PSCI_0_2		2 /* CPU uses PSCI v0.2 */
- #define KVM_ARM_VCPU_PMU_V3		3 /* Support guest PMUv3 */
-+#define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
-+#define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
-+#define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
++#define ARM_VCPU_PTRAUTH_FEATURE	0
++
+ #endif /* KVM__KVM_CPU_ARCH_H */
+diff --git a/arm/aarch64/include/kvm/kvm-config-arch.h b/arm/aarch64/include/kvm/kvm-config-arch.h
+index 04be43d..0279b13 100644
+--- a/arm/aarch64/include/kvm/kvm-config-arch.h
++++ b/arm/aarch64/include/kvm/kvm-config-arch.h
+@@ -8,7 +8,11 @@
+ 			"Create PMUv3 device"),				\
+ 	OPT_U64('\0', "kaslr-seed", &(cfg)->kaslr_seed,			\
+ 			"Specify random seed for Kernel Address Space "	\
+-			"Layout Randomization (KASLR)"),
++			"Layout Randomization (KASLR)"),		\
++	OPT_BOOLEAN('\0', "enable-ptrauth", &(cfg)->enable_ptrauth,	\
++			"Enables pointer authentication"),		\
++	OPT_BOOLEAN('\0', "disable-ptrauth", &(cfg)->disable_ptrauth,	\
++			"Disables pointer authentication"),
  
- struct kvm_vcpu_init {
- 	__u32 target;
-@@ -226,6 +230,45 @@ struct kvm_vcpu_events {
- 					 KVM_REG_ARM_FW | ((r) & 0xffff))
- #define KVM_REG_ARM_PSCI_VERSION	KVM_REG_ARM_FW_REG(0)
+ #include "arm-common/kvm-config-arch.h"
  
-+/* SVE registers */
-+#define KVM_REG_ARM64_SVE		(0x15 << KVM_REG_ARM_COPROC_SHIFT)
-+
-+/* Z- and P-regs occupy blocks at the following offsets within this range: */
-+#define KVM_REG_ARM64_SVE_ZREG_BASE	0
-+#define KVM_REG_ARM64_SVE_PREG_BASE	0x400
-+#define KVM_REG_ARM64_SVE_FFR_BASE	0x600
-+
-+#define KVM_ARM64_SVE_NUM_ZREGS		__SVE_NUM_ZREGS
-+#define KVM_ARM64_SVE_NUM_PREGS		__SVE_NUM_PREGS
-+
-+#define KVM_ARM64_SVE_MAX_SLICES	32
-+
-+#define KVM_REG_ARM64_SVE_ZREG(n, i)					\
-+	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_ZREG_BASE | \
-+	 KVM_REG_SIZE_U2048 |						\
-+	 (((n) & (KVM_ARM64_SVE_NUM_ZREGS - 1)) << 5) |			\
-+	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
-+
-+#define KVM_REG_ARM64_SVE_PREG(n, i)					\
-+	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_PREG_BASE | \
-+	 KVM_REG_SIZE_U256 |						\
-+	 (((n) & (KVM_ARM64_SVE_NUM_PREGS - 1)) << 5) |			\
-+	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
-+
-+#define KVM_REG_ARM64_SVE_FFR(i)					\
-+	(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | KVM_REG_ARM64_SVE_FFR_BASE | \
-+	 KVM_REG_SIZE_U256 |						\
-+	 ((i) & (KVM_ARM64_SVE_MAX_SLICES - 1)))
-+
-+#define KVM_ARM64_SVE_VQ_MIN __SVE_VQ_MIN
-+#define KVM_ARM64_SVE_VQ_MAX __SVE_VQ_MAX
-+
-+/* Vector lengths pseudo-register: */
-+#define KVM_REG_ARM64_SVE_VLS		(KVM_REG_ARM64 | KVM_REG_ARM64_SVE | \
-+					 KVM_REG_SIZE_U512 | 0xffff)
-+#define KVM_ARM64_SVE_VLS_WORDS	\
-+	((KVM_ARM64_SVE_VQ_MAX - KVM_ARM64_SVE_VQ_MIN) / 64 + 1)
-+
- /* Device Control API: ARM VGIC */
- #define KVM_DEV_ARM_VGIC_GRP_ADDR	0
- #define KVM_DEV_ARM_VGIC_GRP_DIST_REGS	1
-diff --git a/arm/aarch64/include/asm/sve_context.h b/arm/aarch64/include/asm/sve_context.h
-new file mode 100644
-index 0000000..754ab75
---- /dev/null
-+++ b/arm/aarch64/include/asm/sve_context.h
-@@ -0,0 +1,53 @@
-+/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-+/* Copyright (C) 2017-2018 ARM Limited */
-+
-+/*
-+ * For use by other UAPI headers only.
-+ * Do not make direct use of header or its definitions.
-+ */
-+
-+#ifndef _UAPI__ASM_SVE_CONTEXT_H
-+#define _UAPI__ASM_SVE_CONTEXT_H
-+
-+#include <linux/types.h>
-+
-+#define __SVE_VQ_BYTES		16	/* number of bytes per quadword */
-+
-+#define __SVE_VQ_MIN		1
-+#define __SVE_VQ_MAX		512
-+
-+#define __SVE_VL_MIN		(__SVE_VQ_MIN * __SVE_VQ_BYTES)
-+#define __SVE_VL_MAX		(__SVE_VQ_MAX * __SVE_VQ_BYTES)
-+
-+#define __SVE_NUM_ZREGS		32
-+#define __SVE_NUM_PREGS		16
-+
-+#define __sve_vl_valid(vl)			\
-+	((vl) % __SVE_VQ_BYTES == 0 &&		\
-+	 (vl) >= __SVE_VL_MIN &&		\
-+	 (vl) <= __SVE_VL_MAX)
-+
-+#define __sve_vq_from_vl(vl)	((vl) / __SVE_VQ_BYTES)
-+#define __sve_vl_from_vq(vq)	((vq) * __SVE_VQ_BYTES)
-+
-+#define __SVE_ZREG_SIZE(vq)	((__u32)(vq) * __SVE_VQ_BYTES)
-+#define __SVE_PREG_SIZE(vq)	((__u32)(vq) * (__SVE_VQ_BYTES / 8))
-+#define __SVE_FFR_SIZE(vq)	__SVE_PREG_SIZE(vq)
-+
-+#define __SVE_ZREGS_OFFSET	0
-+#define __SVE_ZREG_OFFSET(vq, n) \
-+	(__SVE_ZREGS_OFFSET + __SVE_ZREG_SIZE(vq) * (n))
-+#define __SVE_ZREGS_SIZE(vq) \
-+	(__SVE_ZREG_OFFSET(vq, __SVE_NUM_ZREGS) - __SVE_ZREGS_OFFSET)
-+
-+#define __SVE_PREGS_OFFSET(vq) \
-+	(__SVE_ZREGS_OFFSET + __SVE_ZREGS_SIZE(vq))
-+#define __SVE_PREG_OFFSET(vq, n) \
-+	(__SVE_PREGS_OFFSET(vq) + __SVE_PREG_SIZE(vq) * (n))
-+#define __SVE_PREGS_SIZE(vq) \
-+	(__SVE_PREG_OFFSET(vq, __SVE_NUM_PREGS) - __SVE_PREGS_OFFSET(vq))
-+
-+#define __SVE_FFR_OFFSET(vq) \
-+	(__SVE_PREGS_OFFSET(vq) + __SVE_PREGS_SIZE(vq))
-+
-+#endif /* ! _UAPI__ASM_SVE_CONTEXT_H */
-diff --git a/include/linux/kvm.h b/include/linux/kvm.h
-index 6d4ea4b..2fe12b4 100644
---- a/include/linux/kvm.h
-+++ b/include/linux/kvm.h
-@@ -986,8 +986,13 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_HYPERV_ENLIGHTENED_VMCS 163
- #define KVM_CAP_EXCEPTION_PAYLOAD 164
- #define KVM_CAP_ARM_VM_IPA_SIZE 165
--#define KVM_CAP_MANUAL_DIRTY_LOG_PROTECT 166
-+#define KVM_CAP_MANUAL_DIRTY_LOG_PROTECT 166 /* Obsolete */
- #define KVM_CAP_HYPERV_CPUID 167
-+#define KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 168
-+#define KVM_CAP_PPC_IRQ_XIVE 169
-+#define KVM_CAP_ARM_SVE 170
-+#define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
-+#define KVM_CAP_ARM_PTRAUTH_GENERIC 172
+diff --git a/arm/aarch64/include/kvm/kvm-cpu-arch.h b/arm/aarch64/include/kvm/kvm-cpu-arch.h
+index a9d8563..9fa99fb 100644
+--- a/arm/aarch64/include/kvm/kvm-cpu-arch.h
++++ b/arm/aarch64/include/kvm/kvm-cpu-arch.h
+@@ -17,4 +17,7 @@
+ #define ARM_CPU_CTRL		3, 0, 1, 0
+ #define ARM_CPU_CTRL_SCTLR_EL1	0
  
- #ifdef KVM_CAP_IRQ_ROUTING
- 
-@@ -1145,6 +1150,7 @@ struct kvm_dirty_tlb {
- #define KVM_REG_SIZE_U256	0x0050000000000000ULL
- #define KVM_REG_SIZE_U512	0x0060000000000000ULL
- #define KVM_REG_SIZE_U1024	0x0070000000000000ULL
-+#define KVM_REG_SIZE_U2048	0x0080000000000000ULL
- 
- struct kvm_reg_list {
- 	__u64 n; /* number of regs */
-@@ -1211,6 +1217,8 @@ enum kvm_device_type {
- #define KVM_DEV_TYPE_ARM_VGIC_V3	KVM_DEV_TYPE_ARM_VGIC_V3
- 	KVM_DEV_TYPE_ARM_VGIC_ITS,
- #define KVM_DEV_TYPE_ARM_VGIC_ITS	KVM_DEV_TYPE_ARM_VGIC_ITS
-+	KVM_DEV_TYPE_XIVE,
-+#define KVM_DEV_TYPE_XIVE		KVM_DEV_TYPE_XIVE
- 	KVM_DEV_TYPE_MAX,
++#define ARM_VCPU_PTRAUTH_FEATURE	((1UL << KVM_ARM_VCPU_PTRAUTH_ADDRESS) \
++					| (1UL << KVM_ARM_VCPU_PTRAUTH_GENERIC))
++
+ #endif /* KVM__KVM_CPU_ARCH_H */
+diff --git a/arm/include/arm-common/kvm-config-arch.h b/arm/include/arm-common/kvm-config-arch.h
+index 5734c46..1b4287d 100644
+--- a/arm/include/arm-common/kvm-config-arch.h
++++ b/arm/include/arm-common/kvm-config-arch.h
+@@ -10,6 +10,8 @@ struct kvm_config_arch {
+ 	bool		aarch32_guest;
+ 	bool		has_pmuv3;
+ 	u64		kaslr_seed;
++	bool		enable_ptrauth;
++	bool		disable_ptrauth;
+ 	enum irqchip_type irqchip;
+ 	u64		fw_addr;
  };
+diff --git a/arm/kvm-cpu.c b/arm/kvm-cpu.c
+index 7780251..acd1d5f 100644
+--- a/arm/kvm-cpu.c
++++ b/arm/kvm-cpu.c
+@@ -68,6 +68,18 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
+ 		vcpu_init.features[0] |= (1UL << KVM_ARM_VCPU_PSCI_0_2);
+ 	}
  
-@@ -1434,12 +1442,15 @@ struct kvm_enc_region {
- #define KVM_GET_NESTED_STATE         _IOWR(KVMIO, 0xbe, struct kvm_nested_state)
- #define KVM_SET_NESTED_STATE         _IOW(KVMIO,  0xbf, struct kvm_nested_state)
++	/* Check Pointer Authentication command line arguments. */
++	if (kvm->cfg.arch.enable_ptrauth && kvm->cfg.arch.disable_ptrauth)
++		die("Both enable-ptrauth and disable-ptrauth option cannot be present");
++	/*
++	 * Always enable Pointer Authentication if system supports
++	 * this extension unless disable-ptrauth option is present.
++	 */
++	if (kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_ADDRESS) &&
++	    kvm__supports_extension(kvm, KVM_CAP_ARM_PTRAUTH_GENERIC) &&
++	    !kvm->cfg.arch.disable_ptrauth)
++			vcpu_init.features[0] |= ARM_VCPU_PTRAUTH_FEATURE;
++
+ 	/*
+ 	 * If the preferred target ioctl is successful then
+ 	 * use preferred target else try each and every target type
+@@ -106,8 +118,12 @@ struct kvm_cpu *kvm_cpu__arch_init(struct kvm *kvm, unsigned long cpu_id)
+ 			die("Unable to find matching target");
+ 	}
  
--/* Available with KVM_CAP_MANUAL_DIRTY_LOG_PROTECT */
-+/* Available with KVM_CAP_MANUAL_DIRTY_LOG_PROTECT_2 */
- #define KVM_CLEAR_DIRTY_LOG          _IOWR(KVMIO, 0xc0, struct kvm_clear_dirty_log)
+-	if (err || target->init(vcpu))
+-		die("Unable to initialise vcpu");
++	if (err || target->init(vcpu)) {
++		if (kvm->cfg.arch.enable_ptrauth)
++			die("Unable to initialise vcpu with pointer authentication feature");
++		else
++			die("Unable to initialise vcpu");
++	}
  
- /* Available with KVM_CAP_HYPERV_CPUID */
- #define KVM_GET_SUPPORTED_HV_CPUID _IOWR(KVMIO, 0xc1, struct kvm_cpuid2)
- 
-+/* Available with KVM_CAP_ARM_SVE */
-+#define KVM_ARM_VCPU_FINALIZE	  _IOW(KVMIO,  0xc2, int)
-+
- /* Secure Encrypted Virtualization command */
- enum sev_cmd_id {
- 	/* Guest initialization commands */
-diff --git a/powerpc/include/asm/kvm.h b/powerpc/include/asm/kvm.h
-index 8c876c1..b0f72de 100644
---- a/powerpc/include/asm/kvm.h
-+++ b/powerpc/include/asm/kvm.h
-@@ -463,10 +463,12 @@ struct kvm_ppc_cpu_char {
- #define KVM_PPC_CPU_CHAR_BR_HINT_HONOURED	(1ULL << 58)
- #define KVM_PPC_CPU_CHAR_MTTRIG_THR_RECONF	(1ULL << 57)
- #define KVM_PPC_CPU_CHAR_COUNT_CACHE_DIS	(1ULL << 56)
-+#define KVM_PPC_CPU_CHAR_BCCTR_FLUSH_ASSIST	(1ull << 54)
- 
- #define KVM_PPC_CPU_BEHAV_FAVOUR_SECURITY	(1ULL << 63)
- #define KVM_PPC_CPU_BEHAV_L1D_FLUSH_PR		(1ULL << 62)
- #define KVM_PPC_CPU_BEHAV_BNDS_CHK_SPEC_BAR	(1ULL << 61)
-+#define KVM_PPC_CPU_BEHAV_FLUSH_COUNT_CACHE	(1ull << 58)
- 
- /* Per-vcpu XICS interrupt controller state */
- #define KVM_REG_PPC_ICP_STATE	(KVM_REG_PPC | KVM_REG_SIZE_U64 | 0x8c)
-@@ -480,6 +482,8 @@ struct kvm_ppc_cpu_char {
- #define  KVM_REG_PPC_ICP_PPRI_SHIFT	16	/* pending irq priority */
- #define  KVM_REG_PPC_ICP_PPRI_MASK	0xff
- 
-+#define KVM_REG_PPC_VP_STATE	(KVM_REG_PPC | KVM_REG_SIZE_U128 | 0x8d)
-+
- /* Device control API: PPC-specific devices */
- #define KVM_DEV_MPIC_GRP_MISC		1
- #define   KVM_DEV_MPIC_BASE_ADDR	0	/* 64-bit */
-@@ -675,4 +679,48 @@ struct kvm_ppc_cpu_char {
- #define  KVM_XICS_PRESENTED		(1ULL << 43)
- #define  KVM_XICS_QUEUED		(1ULL << 44)
- 
-+/* POWER9 XIVE Native Interrupt Controller */
-+#define KVM_DEV_XIVE_GRP_CTRL		1
-+#define   KVM_DEV_XIVE_RESET		1
-+#define   KVM_DEV_XIVE_EQ_SYNC		2
-+#define KVM_DEV_XIVE_GRP_SOURCE		2	/* 64-bit source identifier */
-+#define KVM_DEV_XIVE_GRP_SOURCE_CONFIG	3	/* 64-bit source identifier */
-+#define KVM_DEV_XIVE_GRP_EQ_CONFIG	4	/* 64-bit EQ identifier */
-+#define KVM_DEV_XIVE_GRP_SOURCE_SYNC	5       /* 64-bit source identifier */
-+
-+/* Layout of 64-bit XIVE source attribute values */
-+#define KVM_XIVE_LEVEL_SENSITIVE	(1ULL << 0)
-+#define KVM_XIVE_LEVEL_ASSERTED		(1ULL << 1)
-+
-+/* Layout of 64-bit XIVE source configuration attribute values */
-+#define KVM_XIVE_SOURCE_PRIORITY_SHIFT	0
-+#define KVM_XIVE_SOURCE_PRIORITY_MASK	0x7
-+#define KVM_XIVE_SOURCE_SERVER_SHIFT	3
-+#define KVM_XIVE_SOURCE_SERVER_MASK	0xfffffff8ULL
-+#define KVM_XIVE_SOURCE_MASKED_SHIFT	32
-+#define KVM_XIVE_SOURCE_MASKED_MASK	0x100000000ULL
-+#define KVM_XIVE_SOURCE_EISN_SHIFT	33
-+#define KVM_XIVE_SOURCE_EISN_MASK	0xfffffffe00000000ULL
-+
-+/* Layout of 64-bit EQ identifier */
-+#define KVM_XIVE_EQ_PRIORITY_SHIFT	0
-+#define KVM_XIVE_EQ_PRIORITY_MASK	0x7
-+#define KVM_XIVE_EQ_SERVER_SHIFT	3
-+#define KVM_XIVE_EQ_SERVER_MASK		0xfffffff8ULL
-+
-+/* Layout of EQ configuration values (64 bytes) */
-+struct kvm_ppc_xive_eq {
-+	__u32 flags;
-+	__u32 qshift;
-+	__u64 qaddr;
-+	__u32 qtoggle;
-+	__u32 qindex;
-+	__u8  pad[40];
-+};
-+
-+#define KVM_XIVE_EQ_ALWAYS_NOTIFY	0x00000001
-+
-+#define KVM_XIVE_TIMA_PAGE_OFFSET	0
-+#define KVM_XIVE_ESB_PAGE_OFFSET	4
-+
- #endif /* __LINUX_KVM_POWERPC_H */
-diff --git a/x86/include/asm/kvm.h b/x86/include/asm/kvm.h
-index dabfcf7..7a0e64c 100644
---- a/x86/include/asm/kvm.h
-+++ b/x86/include/asm/kvm.h
-@@ -381,6 +381,7 @@ struct kvm_sync_regs {
- #define KVM_X86_QUIRK_LINT0_REENABLED	(1 << 0)
- #define KVM_X86_QUIRK_CD_NW_CLEARED	(1 << 1)
- #define KVM_X86_QUIRK_LAPIC_MMIO_HOLE	(1 << 2)
-+#define KVM_X86_QUIRK_OUT_7E_INC_RIP	(1 << 3)
- 
- #define KVM_STATE_NESTED_GUEST_MODE	0x00000001
- #define KVM_STATE_NESTED_RUN_PENDING	0x00000002
+ 	coalesced_offset = ioctl(kvm->sys_fd, KVM_CHECK_EXTENSION,
+ 				 KVM_CAP_COALESCED_MMIO);
 -- 
 2.1.4
 
