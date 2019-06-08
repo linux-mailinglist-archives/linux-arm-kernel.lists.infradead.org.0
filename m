@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D122B3A132
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 20:11:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ABA23A131
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 20:11:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kq0+Rjofdk26Ft5XubyW/Da+j11l7SMctA3f7/cjFxk=; b=Xa+jVAfw6HXTvh
-	AeCKfOMhNJHYOvOvFibImueqd/OABlJfEIHpcN8+WIrQydd47QtL6OxiFhhMXRQHaORvTR3LQC8M8
-	6Cf1Xo/UucVHRKmveb1vaUkw5hy7j4xkpzDHT8t/BwUW869BZfhEwlzZELOFwMU/JJhN74L3TwpXG
-	7QFR+p6gZjwC/RRU24mTnHQ2iASu0u8wLM2lX5dQKFKgS3nMRgXIaGxF8oli4jmR0XO51rvtEcXKX
-	3oBslQoj9uaMfdjftrCFsTwbAszDXclkePuTDNCGppQ/iZ1PX3QgNtGYYV2PLWA5VQfK/vQ0riMsC
-	t0ovAWYYkNi0eDzE1jRg==;
+	List-Owner; bh=GW2Hws+Vnxmq5VpxpOCbcfZ16IvZw2qn1avfL+w+r8g=; b=YlqCBDlmdeJE+s
+	Ddynf1PZ8MPZR3xe2B2d7ZoEduC2wcm28NxhV6T+jzKc5FfVEKZ0mk3ZIYemicEx2yNYvThayispY
+	4JQ3R73W02TqaJ75Gi3qiu1AfvyNJE+y+rxDD/XwHIsTTAOgGX5xd7lUoe2ekRC83oLXgrZNAn7Fp
+	zlp6DCpTCY+yXc11qetk9ht+JyaO9ppAxkGnVqjRCL5FF07s0LVZcdA78iuJa0e3R/NYNNiv0dqEW
+	97+N5HRIPFdBmdn7MaCn4jHnZ9/FuomtZagqi7lMQBon9fWQaVXrW07qA4FYwdi5Bkewu2Su8Vrkk
+	NG6DImtTRpY56dTCo4eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZfoB-00061E-Oo; Sat, 08 Jun 2019 18:11:15 +0000
+	id 1hZfnu-0005m8-TG; Sat, 08 Jun 2019 18:10:58 +0000
 Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZfjt-0000uT-Dw; Sat, 08 Jun 2019 18:06:51 +0000
-Received: by mail-wm1-x341.google.com with SMTP id s15so2233017wmj.3;
- Sat, 08 Jun 2019 11:06:49 -0700 (PDT)
+ id 1hZfju-0000vY-BR; Sat, 08 Jun 2019 18:06:52 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z23so4679585wma.4;
+ Sat, 08 Jun 2019 11:06:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=gus9EVUSXiif9myhzplFWmWxo5iVjcg4L/R7PzfQr/4=;
- b=aC3QJv4yV2M2NgE+T6iUkKFAXQ4b82UbBPPWeG20gvtlZaDZHm3hTWpaeGbwCRPmnh
- tCrc1f60ZSqkOlQ7wiEvVW5FMKplDfQM6TJRDMM7fMvvbIBfRyf+Vq/Z0jQLJubciKMt
- kqTMk5ZpTVpEDBPQnRlznSLsUQ6wHGBe8LfcF6sWel+B/tfcmJlrXabelYHCkfjqpJmq
- sPFobFtjwwPwPpbw7ss0q3uaMjBfUFuGxp9gN33lDkGl+oJ7QRB0S+51GZQl4clO46vF
- EOtSTUEgT089LkWHdq5C0jFy1quBzOWByO2XO/EU0FcYpXn3kLcdyQlWRx8IiBIKs22z
- CLCQ==
+ bh=LcZp+XV+KTOIWOKJ0nzGbLimTWtElgIxN/UQOTUbAxg=;
+ b=f/hhHhhEKLF/T8vWu/eNekD7NioNE5HDoSUFzP/gNeNrARsZr9Xi3ToPkymnMBNLZY
+ APYc06sb5U4MeUqqXM/T7X5et0ZLwnLt1JMQKfD4h64GtQacBOHMVu/qioua03YGdzAQ
+ tbC/HILGO4JMyS8X5FWZbOIVWroxO7/upi1lg3GJwdjBXOM1gTNzTB2pHX6zg72iJ8tu
+ eMU9IbaZIQZ8Uzh9RCIvQhW+ULARcKPutH9Z5Ou4wvp4FV9RPuZFXvZ5fiMAjErb2dKx
+ MvcRRw7C6tC8eff1mfHn7v9gaRkQTLx4hA06QqrqJR1RskuMmP8Vgty1wUuYFRz46qmZ
+ fndA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=gus9EVUSXiif9myhzplFWmWxo5iVjcg4L/R7PzfQr/4=;
- b=lR+wA2s3cTdu3qweYByLJGMF3PgMJTzYfzI7vgSmEs+q7LUqdUcmdj8xtNqNJvzA1p
- tzpNC9xTNXrVSR48Uj4nL/5WFqGdje/AZEppG9Xd6qQ024SliLN+cN8+6ZDe4/z7H/2S
- 2RrHxIIljF5C4iauBNY0L2ISzsndLU29osDmS1ox+TSvYwT3T23qgHV4mPEqcB07c9Al
- aay+0JSN7v4a0fQZWDXoUbbZCIbIugg+AIyd/0DJDWyhySji75xY5pJhdRlOzTEqoDpf
- QBkLhr2RPkLd7k7ZuVTMVi8MRCNKtD1io0/u6+6JtauQp4Or6YasiHF/ghQJg2PNZRBj
- 2pKQ==
-X-Gm-Message-State: APjAAAUIh39+JiPjZZnjiCyw1tDXAvL7hLQcHFfUE3wzInYe8fPlYrBn
- ip8ChkEAcpFIXkN6Nqy773PN7P22
-X-Google-Smtp-Source: APXvYqzRGcVvHTQ7ACECA1v/MRk4nF9YNeywKueh0QL3/1P6th9zfIq6Kc07vu6eLxFOilV6x/wiNw==
-X-Received: by 2002:a1c:a019:: with SMTP id j25mr7924649wme.95.1560017207452; 
- Sat, 08 Jun 2019 11:06:47 -0700 (PDT)
+ bh=LcZp+XV+KTOIWOKJ0nzGbLimTWtElgIxN/UQOTUbAxg=;
+ b=Ph1HV6kySy5aX6Sg4rjFJe0q+f7jro6OUqA5r+TE8gp8zb2YMdTYxdR5BA6/smmMWI
+ /OnomBA3yWeiAoYpoYtUqdmki3gbV3K3R6rofTf2cTTOXQ9Kv4YxQRxLvOSjRrEHnLVF
+ CW63kKcIUuhmx7TxJqHQhg6DUTsKUfM52B+/P8xqMf8qUhicXiQE5weEA+MCgl5R6r3n
+ BaH6hFJNrmHADzODI3tzVHPGDGU/nbkdnO7uT1tF+kv/Sr9uRP3FC4/fHmx4mDW7Xv+Y
+ w6ePEtSnOpRrgN1M0zG2OUeX6/oTDeMCRm5lmD4kHf01r4G7ckOZYpyHLBjFJ/liGIhI
+ P3ig==
+X-Gm-Message-State: APjAAAV/+FrnSmO/kq3LUoxbmkEYaOJYb/rKBC1EuR6lgPfhNuFBAzZh
+ FwLYhSQVX8JUU2gXKMuJEqlYx4b0
+X-Google-Smtp-Source: APXvYqySdvCrYqBKMKqzayv7pE9NT7Fh66b0snU+rte5qZ39fRD1bSiBGfxJQPh0JknCKLonuMpUDA==
+X-Received: by 2002:a1c:7d13:: with SMTP id y19mr7493333wmc.21.1560017208453; 
+ Sat, 08 Jun 2019 11:06:48 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133DDA400D12EFF43FED1E981.dip0.t-ipconnect.de.
  [2003:f1:33dd:a400:d12e:ff43:fed1:e981])
- by smtp.googlemail.com with ESMTPSA id c7sm5143345wrp.57.2019.06.08.11.06.46
+ by smtp.googlemail.com with ESMTPSA id c7sm5143345wrp.57.2019.06.08.11.06.47
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 08 Jun 2019 11:06:46 -0700 (PDT)
+ Sat, 08 Jun 2019 11:06:47 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org, linux-pwm@vger.kernel.org,
  thierry.reding@gmail.com
-Subject: [PATCH v2 13/14] pwm: meson: add support PWM_POLARITY_INVERSED when
- disabling
-Date: Sat,  8 Jun 2019 20:06:25 +0200
-Message-Id: <20190608180626.30589-14-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 14/14] pwm: meson: add documentation to the driver
+Date: Sat,  8 Jun 2019 20:06:26 +0200
+Message-Id: <20190608180626.30589-15-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190608180626.30589-1-martin.blumenstingl@googlemail.com>
 References: <20190608180626.30589-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_110649_558232_BC34E160 
-X-CRM114-Status: GOOD (  17.09  )
+X-CRM114-CacheID: sfid-20190608_110650_470788_3076458B 
+X-CRM114-Status: GOOD (  13.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -104,78 +103,44 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, u.kleine-koenig@pengutronix.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-meson_pwm_apply() has to consider the PWM polarity when disabling the
-output.
-With enabled=false and polarity=PWM_POLARITY_NORMAL the output needs to
-be LOW. The driver already supports this.
-With enabled=false and polarity=PWM_POLARITY_INVERSED the output needs
-to be HIGH. Implement this in the driver by internally enabling the
-output with the same settings that we already use for "period == duty".
-
-This fixes a PWM API violation which expects that the driver honors the
-polarity also for enabled=false. Due to the IP block not supporting this
-natively we only get "an as close as possible" to 100% HIGH signal (in
-my test setup with input clock of 24MHz and measuring the output with a
-logic analyzer at 24MHz sampling rate I got a duty cycle of 99.998475%
-on a Khadas VIM).
-
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/pwm/pwm-meson.c | 23 ++++++++++++++++++++++-
- 1 file changed, 22 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/pwm/pwm-meson.c b/drivers/pwm/pwm-meson.c
-index 900d362ec3c9..bb48ba85f756 100644
---- a/drivers/pwm/pwm-meson.c
-+++ b/drivers/pwm/pwm-meson.c
-@@ -245,6 +245,7 @@ static void meson_pwm_disable(struct meson_pwm *meson, struct pwm_device *pwm)
- static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
- 			   struct pwm_state *state)
- {
-+	struct meson_pwm_channel *channel = pwm_get_chip_data(pwm);
- 	struct meson_pwm *meson = to_meson_pwm(chip);
- 	int err = 0;
- 
-@@ -252,7 +253,27 @@ static int meson_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
- 		return -EINVAL;
- 
- 	if (!state->enabled) {
--		meson_pwm_disable(meson, pwm);
-+		if (state->polarity == PWM_POLARITY_INVERSED) {
-+			/*
-+			 * This IP block revision doesn't have an "always high"
-+			 * setting which we can use for "inverted disabled".
-+			 * Instead we achieve this using the same settings
-+			 * that we use a pre_div of 0 (to get the shortest
-+			 * possible duration for one "count") and
-+			 * "period == duty_cycle". This results in a signal
-+			 * which is LOW for one "count", while being HIGH for
-+			 * the rest of the (so the signal is HIGH for slightly
-+			 * less than 100% of the period, but this is the best
-+			 * we can achieve).
-+			 */
-+			channel->pre_div = 0;
-+			channel->hi = ~0;
-+			channel->lo = 0;
-+
-+			meson_pwm_enable(meson, pwm);
-+		} else {
-+			meson_pwm_disable(meson, pwm);
-+		}
- 	} else {
- 		err = meson_pwm_calc(meson, pwm, state);
- 		if (err < 0)
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIGEgbGluayB0byB0aGUgZGF0YXNoZWV0IGFuZCBhIHNob3J0IHN1bW1hcnkgaG93IHRoZSBo
+YXJkd2FyZSB3b3Jrcy4KVGhlIGdvYWwgaXMgdG8gbWFrZSBpdCBlYXNpZXIgZm9yIG90aGVyIGRl
+dmVsb3BlcnMgdG8gdW5kZXJzdGFuZCB3aHkgdGhlCnB3bS1tZXNvbiBkcml2ZXIgaXMgaW1wbGVt
+ZW50ZWQgdGhlIHdheSBpdCBpcy4KClN1Z2dlc3RlZC1ieTogVXdlIEtsZWluZS1Lw7ZuaWcgPHUu
+a2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4KQ28tYXV0aG9yZWQtYnk6IE5laWwgQXJtc3Ry
+b25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT4KU2lnbmVkLW9mZi1ieTogTWFydGluIEJsdW1l
+bnN0aW5nbCA8bWFydGluLmJsdW1lbnN0aW5nbEBnb29nbGVtYWlsLmNvbT4KUmV2aWV3ZWQtYnk6
+IE5laWwgQXJtc3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT4KLS0tCiBkcml2ZXJzL3B3
+bS9wd20tbWVzb24uYyB8IDE4ICsrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDE4
+IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3B3bS9wd20tbWVzb24uYyBiL2Ry
+aXZlcnMvcHdtL3B3bS1tZXNvbi5jCmluZGV4IGJiNDhiYTg1Zjc1Ni4uNmE5NzhjYWJhNDgzIDEw
+MDY0NAotLS0gYS9kcml2ZXJzL3B3bS9wd20tbWVzb24uYworKysgYi9kcml2ZXJzL3B3bS9wd20t
+bWVzb24uYwpAQCAtMSw1ICsxLDIzIEBACiAvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BM
+LTIuMCBPUiBCU0QtMy1DbGF1c2UKIC8qCisgKiBQV00gY29udHJvbGxlciBkcml2ZXIgZm9yIEFt
+bG9naWMgTWVzb24gU29Dcy4KKyAqCisgKiBUaGlzIFBXTSBpcyBvbmx5IGEgc2V0IG9mIEdhdGVz
+LCBEaXZpZGVycyBhbmQgQ291bnRlcnM6CisgKiBQV00gb3V0cHV0IGlzIGFjaGlldmVkIGJ5IGNh
+bGN1bGF0aW5nIGEgY2xvY2sgdGhhdCBwZXJtaXRzIGNhbGN1bGF0aW5nCisgKiB0d28gcGVyaW9k
+cyAobG93IGFuZCBoaWdoKS4gVGhlIGNvdW50ZXIgdGhlbiBoYXMgdG8gYmUgc2V0IHRvIHN3aXRj
+aCBhZnRlcgorICogTiBjeWNsZXMgZm9yIHRoZSBmaXJzdCBoYWxmIHBlcmlvZC4KKyAqIFRoZSBo
+YXJkd2FyZSBoYXMgbm8gInBvbGFyaXR5IiBzZXR0aW5nLiBUaGlzIGRyaXZlciByZXZlcnNlcyB0
+aGUgcGVyaW9kCisgKiBjeWNsZXMgKHRoZSBsb3cgbGVuZ3RoIGlzIGludmVydGVkIHdpdGggdGhl
+IGhpZ2ggbGVuZ3RoKSBmb3IKKyAqIFBXTV9QT0xBUklUWV9JTlZFUlNFRC4gVGhpcyBtZWFucyB0
+aGF0IC5nZXRfc3RhdGUgY2Fubm90IHJlYWQgdGhlIHBvbGFyaXR5CisgKiBmcm9tIHRoZSBoYXJk
+d2FyZS4KKyAqIFNldHRpbmcgdGhlIGR1dHkgY3ljbGUgd2lsbCBkaXNhYmxlIGFuZCByZS1lbmFi
+bGUgdGhlIFBXTSBvdXRwdXQuCisgKiBEaXNhYmxpbmcgdGhlIFBXTSBzdG9wcyB0aGUgb3V0cHV0
+IGltbWVkaWF0ZWx5ICh3aXRob3V0IHdhaXRpbmcgZm9yIHRoZQorICogY3VycmVudCBwZXJpb2Qg
+dG8gY29tcGxldGUgZmlyc3QpLgorICoKKyAqIFRoZSBwdWJsaWMgUzkyMlggZGF0YXNoZWV0IGNv
+bnRhaW5zIHNvbWUgZG9jdW1lbnRhdGlvbiBmb3IgdGhpcyBQV00KKyAqIGNvbnRyb2xsZXIgc3Rh
+cnRpbmcgb24gcGFnZSAxMDg0OgorICogaHR0cHM6Ly9kbC5raGFkYXMuY29tL0hhcmR3YXJlL1ZJ
+TTIvRGF0YXNoZWV0L1M5MTJfRGF0YXNoZWV0X1YwLjIyMDE3MDMxNHB1YmxpY3ZlcnNpb24tV2Vz
+aW9uLnBkZgorICoKICAqIENvcHlyaWdodCAoYykgMjAxNiBCYXlMaWJyZSwgU0FTLgogICogQXV0
+aG9yOiBOZWlsIEFybXN0cm9uZyA8bmFybXN0cm9uZ0BiYXlsaWJyZS5jb20+CiAgKiBDb3B5cmln
+aHQgKEMpIDIwMTQgQW1sb2dpYywgSW5jLgotLSAKMi4yMS4wCgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
