@@ -2,76 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16D9539ACA
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 06:06:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F332D39ACB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 06:09:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pGX45lOk/eS63q5+xKXVUxau2SOf4KOpXgZaaHNsFvU=; b=BQr23G8CAQVeV4
-	1VdEseo6pEwKM3gdrW5XHXpjY3Pg0pTxYky7Hgm2Bw+ELVX2UvDzRp0otDZKCLAZ6IOc2Ojgrw5Vi
-	xmfG2alZsuRHA48Iv4yuIrQf90dGz9UHqOt/PD/76Yqvv7mZghJqMynZw9hhdSc0trZb4jl7A2eWM
-	zgKwVH/1O/kOz6r3w2QlYXvAlXPT4YoGpAgKSdWRsyOS/AsVrPIT8gom9XDC5y06BcV0NQqsszLhn
-	4e18pUh7gCPWOkNM6JKsmLA8zmPP/VW0K1rb1BbLOcpkE7UJI/qNtq/NHEC0UOCx1cV7noZZBpGRz
-	l6nd+HKYpfyhaLOEpH4Q==;
+	List-Owner; bh=o5Fj7jBIAb9mj61F8a2XzI6fa5SJDz0+swDRyEH3ago=; b=JEmfF2/XQ8VGEH
+	+pGso2uIUDA4fk5lfNqkbATPWiz7yUBzDq7HWj48iOKLSAW6HASsXR41rq2mm5l8918lwj/apoPlO
+	764kI2C4oQx0eYNsMb8FB7Q8cQer7LBrNAF+6V3K09ECFbsiScRwB/s5iLxYhGiY+SIHVd5pIgwZT
+	LO4NhtfO03pZwDAGajAgV+JsNpRd9sAyrvJ/NIB8H/Pcl59+samHuyzSF1zUi6D0JzDyLC5/rr7Er
+	eupb8G1AkEccHcqLyX9x++wRrPJjDHx9MV8UhDAiRGprs0W85lLgJd5/WzUIStsw8hWxuOT1x4tZa
+	lhzIiAZRiSn9CMBsQumg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZScg-00083z-MT; Sat, 08 Jun 2019 04:06:31 +0000
+	id 1hZSfY-0008Qa-Gr; Sat, 08 Jun 2019 04:09:28 +0000
 Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZScQ-00083P-4q
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 04:06:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id 20so2156052pgr.4
+ id 1hZSfH-0008QC-3i
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 04:09:12 +0000
+Received: by mail-pg1-x543.google.com with SMTP id e6so2143137pgd.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 21:06:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 07 Jun 2019 21:09:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=PyDG+UhX2LZRYYvLv1SMUrMAsUP6kJRuwP4hHbbu49Q=;
- b=oLKZl8BdcEWgS/7tCRrkGaQMn1rEE6eyguMA2c78pPAYogjbKRnBM1xcCeAfZACA9I
- NJV4ImdEnOXKA/I3EPaZORfJraLb/NutjShfO67Pqz0H7NtYZkJ2kPeg3tU4fvDfwcoK
- br3Z73zRlWDv2Y7oto2BUFTRcmhS/WJcydY4ZJhpRhAMCtpEqdZ4vsaeH37KCIFlSpH4
- BVF3w9RXQArA/DN7z3f4EP68SjpdeEJ2pgwbIpwoR+106HXUh3/jNFq8VYxDZzQSOaED
- n8qfxLKDWqJRevB7KEyW+qfYyCmFAUoPpouaJ0fXCOI7slFBh31W9jxCLpnFYXdNjXmi
- thGA==
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=qPrqDg7oK7vsJTtgKzXs0AFLXbWLZdHTZw09zO6uFIo=;
+ b=WhQH52Ngt/khZpl/5YC1NXDNo7eoeoJfe/6HSaqIlw2//y+AHr31smRrk45AiiuZXc
+ kWai6ZKn00/1tAiadq5M5zVV4PrApzWmXkumuJZuaCMuauD+b1JLcLMzjiisxV541q9g
+ EyzMb71SBSN5d0irt4yQRn3LaidlKJBGVxDQ0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=PyDG+UhX2LZRYYvLv1SMUrMAsUP6kJRuwP4hHbbu49Q=;
- b=d1G67oF83OyCe68Gq4xMUVfYaLMsxXfGgdOroilmWJOKPUwhNQGCXTpK5DWv7EuTrQ
- ANU+C0Wj3/WoFU5h0MmBb5ZBhrWQrYNt3jjiqn9vqsPWWYDyb24D7njdoZ/s7n0bS3xF
- ZOQJfBQBN1x46oiZicLv7VUbfEvhRkItuYzDxexDN8AZtlwNYL7C7+qPvIuhyF7l7Q7Y
- bFon5p0MeJQs4ZkKY64slciH2K2kOJC6uHmovOXf0omao4XQHouX2CIK0/nDHidwV4WH
- BMJgCb50AN0g/gCP5xmm60urD5AzW8cfalubg14aaAcqbnVgkfEspRwlStUI6GLyom4J
- CEIg==
-X-Gm-Message-State: APjAAAXWIzG3qNnlHOBL6pwV3TcXMyVMJ0MBvwRJ4OTCu5AQ/Fgnxmmp
- 2qHzxqyIorqPFb/Pg50J/b9KQw==
-X-Google-Smtp-Source: APXvYqxxX8LNDTro0dbkyH+JE1KcQfRwMQkC/TP2PYlKUX5c3Htw8meTgL4m1176HNvjepcvPVQ9RA==
-X-Received: by 2002:a62:e403:: with SMTP id r3mr31613379pfh.37.1559966773330; 
- Fri, 07 Jun 2019 21:06:13 -0700 (PDT)
-Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id y6sm6668288pfo.38.2019.06.07.21.06.12
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=qPrqDg7oK7vsJTtgKzXs0AFLXbWLZdHTZw09zO6uFIo=;
+ b=Wk2TdmEyIto0Uwg9b0v8a+JM2B2zfvRUN//WJvAtjDapYgaQdrupZbWxbfdIfKWiX5
+ 8UuBhKUiaQxg/RvFWhmjnSv1jnqihBGkHoaYC0oUi/T1fhv60DZEbaquRTK9PehmOI3y
+ OCym23/7jMcq5Pkcvhk8B9jhtAKI5nVsKVgDJmZWUmPu7qNvPv8IMubrQDZQO+x1K4Ti
+ O1nJIFnuinPNn4ciBA57RQ/lzXaYmEtz+vizJRNWGELKNCBPnf4A4mQKH3zVMwVGwgc4
+ mItFNcqk1WOIvViONnSoLBUsloI5jgvKJdMeuLyaBnJURFbR73QogPNY4xCkFkqVf4Sm
+ RB2g==
+X-Gm-Message-State: APjAAAUhPVeaGYq96TzLH10WmPi11tEWHQnMdZFApng1AqFHkzr3P/L9
+ 2xIKoYjE0QX9wLpNKzXwb8VduA==
+X-Google-Smtp-Source: APXvYqxOhUI4tWD34bKXtrZS0Ue52ge1JBEeiE6ubLBAVuQfGij1llHIfb+I4lJuWZWMRUS1z2Sjxw==
+X-Received: by 2002:a65:65c9:: with SMTP id y9mr5974733pgv.76.1559966949974;
+ Fri, 07 Jun 2019 21:09:09 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id s24sm3769979pfh.133.2019.06.07.21.09.08
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 07 Jun 2019 21:06:12 -0700 (PDT)
-Date: Fri, 7 Jun 2019 21:06:10 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 3/8] pinctrl: msm: Add ability for drivers to supply a
- reserved GPIO list
-Message-ID: <20190608040610.GJ24059@builder>
-References: <20190605114302.22509-1-lee.jones@linaro.org>
- <20190605114302.22509-3-lee.jones@linaro.org>
+ Fri, 07 Jun 2019 21:09:08 -0700 (PDT)
+Date: Fri, 7 Jun 2019 21:09:07 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Kristina Martsenko <kristina.martsenko@arm.com>
+Subject: Re: [RFC v2 0/7] arm64: return address signing
+Message-ID: <201906072107.395B38B@keescook>
+References: <20190529190332.29753-1-kristina.martsenko@arm.com>
+ <201905292004.3809FBAA66@keescook>
+ <333eb6ba-ae20-6469-0daf-583557bd66a3@arm.com>
+ <bf75504e-127c-3617-2e72-7bf45d5357d0@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190605114302.22509-3-lee.jones@linaro.org>
-User-Agent: Mutt/1.10.0 (2018-05-17)
+In-Reply-To: <bf75504e-127c-3617-2e72-7bf45d5357d0@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_210614_215245_6879F21E 
-X-CRM114-Status: GOOD (  22.31  )
+X-CRM114-CacheID: sfid-20190607_210911_177889_90457578 
+X-CRM114-Status: GOOD (  10.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -89,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,105 +98,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
- gregkh@linuxfoundation.org, linus.walleij@linaro.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- david.brown@linaro.org, alokc@codeaurora.org, linux-i2c@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- andy.gross@linaro.org, jlhugo@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Diogo Sampaio <Diogo.Sampaio@arm.com>,
+ Luke Cheeseman <luke.cheeseman@arm.com>,
+ Catalin Marinas <Catalin.Marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <Will.Deacon@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Amit Kachhap <Amit.Kachhap@arm.com>, nd <nd@arm.com>,
+ Suzuki Poulose <Suzuki.Poulose@arm.com>, Dave P Martin <Dave.Martin@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 05 Jun 04:42 PDT 2019, Lee Jones wrote:
+On Thu, Jun 06, 2019 at 06:44:41PM +0100, Kristina Martsenko wrote:
+> On 30/05/2019 10:12, Ramana Radhakrishnan wrote:
+> > =
 
-> When booting MSM based platforms with Device Tree or some ACPI
-> implementations, it is possible to provide a list of reserved pins
-> via the 'gpio-reserved-ranges' and 'gpios' properties respectively.
-> However some ACPI tables are not populated with this information,
-> thus it has to come from a knowledgable device driver instead.
-> 
-> Here we provide the MSM common driver with additional support to
-> parse this informtion and correctly populate the widely used
-> 'valid_mask'.
-> 
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> ---
->  drivers/pinctrl/qcom/pinctrl-msm.c | 18 ++++++++++++++++++
->  drivers/pinctrl/qcom/pinctrl-msm.h |  1 +
->  2 files changed, 19 insertions(+)
-> 
-> diff --git a/drivers/pinctrl/qcom/pinctrl-msm.c b/drivers/pinctrl/qcom/pinctrl-msm.c
-> index ee8119879c4c..3ac740b36508 100644
-> --- a/drivers/pinctrl/qcom/pinctrl-msm.c
-> +++ b/drivers/pinctrl/qcom/pinctrl-msm.c
-> @@ -607,8 +607,23 @@ static int msm_gpio_init_valid_mask(struct gpio_chip *chip)
->  	int ret;
->  	unsigned int len, i;
->  	unsigned int max_gpios = pctrl->soc->ngpios;
-> +	const int *reserved = pctrl->soc->reserved_gpios;
->  	u16 *tmp;
->  
-> +	/* Driver provided reserved list overrides DT and ACPI */
-> +	if (reserved) {
-> +		bitmap_fill(chip->valid_mask, max_gpios);
-> +		for (i = 0; reserved[i] >= 0; i++) {
-> +			if (i >= max_gpios || reserved[i] >= max_gpios) {
+> >>> =A0 - more testing
+> >>
+> >> Is PAC emulated in QEmu yet? (I assume I can't get real hardware to he=
+lp
+> >> test this yet...)
+> > =
 
-reserved is a list of GPIOs to reserve, I don't see a reason to check
-if that list is longer than the number of GPIOs (i.e. the first half of
-the condition).
+> > AFAIK, yes qemu trunk should have this.
+> =
 
-It wouldn't make sense to be, but there's no logical issue with it and I
-had to read the conditional a few extra times to be sure what was going
-on.
+> I've been testing on the ARM FastModels, but I tried out QEMU 4.0.0 and
+> it seems to support PAC with the "-cpu max" option.
 
+Ah-ha! I wasn't seeing it mentioned in dmesg (it should appear along
+with PAN, etc, yes?) but I guess I need a newer QEMU:
 
-Apart from that you have my
+$ qemu-system-aarch64 --version
+QEMU emulator version 3.1.0 (Debian 1:3.1+dfsg-2ubuntu3.1)
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+I will go build QEMU myself! :)
 
-Regards,
-Bjorn
+-- =
 
-> +				dev_err(pctrl->dev, "invalid list of reserved GPIOs\n");
-> +				return -EINVAL;
-> +			}
-> +			clear_bit(reserved[i], chip->valid_mask);
-> +		}
-> +
-> +		return 0;
-> +	}
-> +
->  	/* The number of GPIOs in the ACPI tables */
->  	len = ret = device_property_read_u16_array(pctrl->dev, "gpios", NULL,
->  						   0);
-> @@ -964,6 +979,9 @@ static void msm_gpio_irq_handler(struct irq_desc *desc)
->  
->  static bool msm_gpio_needs_valid_mask(struct msm_pinctrl *pctrl)
->  {
-> +	if (pctrl->soc->reserved_gpios)
-> +		return true;
-> +
->  	return device_property_read_u16_array(pctrl->dev, "gpios", NULL, 0) > 0;
->  }
->  
-> diff --git a/drivers/pinctrl/qcom/pinctrl-msm.h b/drivers/pinctrl/qcom/pinctrl-msm.h
-> index c12048e54a6f..23b93ae92269 100644
-> --- a/drivers/pinctrl/qcom/pinctrl-msm.h
-> +++ b/drivers/pinctrl/qcom/pinctrl-msm.h
-> @@ -121,6 +121,7 @@ struct msm_pinctrl_soc_data {
->  	bool pull_no_keeper;
->  	const char *const *tiles;
->  	unsigned int ntiles;
-> +	const int *reserved_gpios;
->  };
->  
->  extern const struct dev_pm_ops msm_pinctrl_dev_pm_ops;
-> -- 
-> 2.17.1
-> 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
