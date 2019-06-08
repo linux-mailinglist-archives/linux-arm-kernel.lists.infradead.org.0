@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F332D39ACB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 06:09:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49E3639AD1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 06:11:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o5Fj7jBIAb9mj61F8a2XzI6fa5SJDz0+swDRyEH3ago=; b=JEmfF2/XQ8VGEH
-	+pGso2uIUDA4fk5lfNqkbATPWiz7yUBzDq7HWj48iOKLSAW6HASsXR41rq2mm5l8918lwj/apoPlO
-	764kI2C4oQx0eYNsMb8FB7Q8cQer7LBrNAF+6V3K09ECFbsiScRwB/s5iLxYhGiY+SIHVd5pIgwZT
-	LO4NhtfO03pZwDAGajAgV+JsNpRd9sAyrvJ/NIB8H/Pcl59+samHuyzSF1zUi6D0JzDyLC5/rr7Er
-	eupb8G1AkEccHcqLyX9x++wRrPJjDHx9MV8UhDAiRGprs0W85lLgJd5/WzUIStsw8hWxuOT1x4tZa
-	lhzIiAZRiSn9CMBsQumg==;
+	List-Owner; bh=coYJR0B/DK+ijQspxRC6JYuPkqczcF+v8f9LYAPvDuQ=; b=eGvjZ2nTAzOWv4
+	z9a+G9CBTXWhGhkj1j0qyslcEbpF/nPrsWH45ZkU51ulh0HIpeDQGyzY3rOFYJ1dg4Rk5+SzJZ9HO
+	pUOWTK0Fm3poKxGeBpdns2hWdBwhHmP209DhSlhfUeVBny/ezF6ljBeYnPzVFK5damVGojqWbsFTm
+	0fwkO3wlVhNagPUrzQ6eErSbjVl59VyPiFDEInJCV6lTIlXYoykxDF/DmUKJHYyMJFoTmvTECKgs5
+	op1NP1QCFbkm+elAgUBXWZCuf/B+UdpqKbg6lVLylFdOSEESBiyQcAkP4tn0kAtrARrCv0QTUiq1P
+	1727/LWWQcb2jf0bnUrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZSfY-0008Qa-Gr; Sat, 08 Jun 2019 04:09:28 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hZSh5-0001TF-48; Sat, 08 Jun 2019 04:11:03 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZSfH-0008QC-3i
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 04:09:12 +0000
-Received: by mail-pg1-x543.google.com with SMTP id e6so2143137pgd.9
+ id 1hZSgq-0001Sj-Ff
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 04:10:49 +0000
+Received: by mail-pf1-x441.google.com with SMTP id i189so2230377pfg.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 21:09:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Fri, 07 Jun 2019 21:10:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=qPrqDg7oK7vsJTtgKzXs0AFLXbWLZdHTZw09zO6uFIo=;
- b=WhQH52Ngt/khZpl/5YC1NXDNo7eoeoJfe/6HSaqIlw2//y+AHr31smRrk45AiiuZXc
- kWai6ZKn00/1tAiadq5M5zVV4PrApzWmXkumuJZuaCMuauD+b1JLcLMzjiisxV541q9g
- EyzMb71SBSN5d0irt4yQRn3LaidlKJBGVxDQ0=
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=crP/L6ZX28vkkYT7tQbRmMKy/ZkhEnI0JhfxmVeFjC0=;
+ b=TxsNOhcUk2dUhjgJIcbkyLXBtKqvJpHTaNc+xRSs9moW2ndwxj0wvHpb7UdzZ8GIHB
+ kLyvVG7zidxP9IwSJaymt3F8UL/RjVnz25slMDWhjSipyy7NK5DrrZByM4hqIzNMUSwe
+ ps+y0MD8eWL3A3X5z+GVpgopfFtTJLERmnFQgsMBKRMuDXgI16xf4cX5zcQqBZ0JbZdv
+ UFvzSVX0RPSdSceNL453+7PL2y9nE2pm1Vr6heypDuiZ0SQFVNO8xElhZJO5HQFMq4N8
+ EQ3h/DKqO7j8gM2LNhNJd3H3U9/qGXBzsfz16WMsfUUgYOqNRTcZIB6THFxBwhxXZGjN
+ 8Dsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=qPrqDg7oK7vsJTtgKzXs0AFLXbWLZdHTZw09zO6uFIo=;
- b=Wk2TdmEyIto0Uwg9b0v8a+JM2B2zfvRUN//WJvAtjDapYgaQdrupZbWxbfdIfKWiX5
- 8UuBhKUiaQxg/RvFWhmjnSv1jnqihBGkHoaYC0oUi/T1fhv60DZEbaquRTK9PehmOI3y
- OCym23/7jMcq5Pkcvhk8B9jhtAKI5nVsKVgDJmZWUmPu7qNvPv8IMubrQDZQO+x1K4Ti
- O1nJIFnuinPNn4ciBA57RQ/lzXaYmEtz+vizJRNWGELKNCBPnf4A4mQKH3zVMwVGwgc4
- mItFNcqk1WOIvViONnSoLBUsloI5jgvKJdMeuLyaBnJURFbR73QogPNY4xCkFkqVf4Sm
- RB2g==
-X-Gm-Message-State: APjAAAUhPVeaGYq96TzLH10WmPi11tEWHQnMdZFApng1AqFHkzr3P/L9
- 2xIKoYjE0QX9wLpNKzXwb8VduA==
-X-Google-Smtp-Source: APXvYqxOhUI4tWD34bKXtrZS0Ue52ge1JBEeiE6ubLBAVuQfGij1llHIfb+I4lJuWZWMRUS1z2Sjxw==
-X-Received: by 2002:a65:65c9:: with SMTP id y9mr5974733pgv.76.1559966949974;
- Fri, 07 Jun 2019 21:09:09 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id s24sm3769979pfh.133.2019.06.07.21.09.08
+ :in-reply-to:user-agent;
+ bh=crP/L6ZX28vkkYT7tQbRmMKy/ZkhEnI0JhfxmVeFjC0=;
+ b=N2yr5uBJ6AEOpv4aKcuxsumcbA7WpSUf1ZU+KUau4wK0qjPFA/a7HTYDSnvU2wVHRc
+ msXdFzSYuu8iwoB28jcGEVTepj5Y4ybpAmvjQCr8oqYXNW6bmTsoAJjDMN71BM3TGP6f
+ D2k9IjAprJ/Wr5iA6+cU3EXsq8fWt7D1F5XWK719sL5Chp6yevCTY28k6N4tXzJ0MNEN
+ BXfiYE6vUjjliptpwQBjsyDPyeq/SnGil6YVDzvDp/J5tD6LnNW1IzT+QiF1LOFKt5C2
+ nRyhkQq1iWMI3bSYawpxT9AKMrxKdhD8l5AQS1PpfE3m43JNHMhDXvAQVo6TltI/Ynea
+ UFVQ==
+X-Gm-Message-State: APjAAAWeziotQjQ6pkx7G1fIBqnfJz3+X23RmnrgTnMvK663ivzHQxAr
+ CTPbB/39r0hUpjb4HVoICMqKEw==
+X-Google-Smtp-Source: APXvYqyqDR2r/6Uj2YzgTATzPBXHYoPMxcYRP/mHWDNK1dDw68dJRtVmbbW/lRrBdRydM7vET5JDPA==
+X-Received: by 2002:a63:ee0a:: with SMTP id e10mr5868676pgi.28.1559967047717; 
+ Fri, 07 Jun 2019 21:10:47 -0700 (PDT)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id b35sm3516670pjc.15.2019.06.07.21.10.46
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 07 Jun 2019 21:09:08 -0700 (PDT)
-Date: Fri, 7 Jun 2019 21:09:07 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Kristina Martsenko <kristina.martsenko@arm.com>
-Subject: Re: [RFC v2 0/7] arm64: return address signing
-Message-ID: <201906072107.395B38B@keescook>
-References: <20190529190332.29753-1-kristina.martsenko@arm.com>
- <201905292004.3809FBAA66@keescook>
- <333eb6ba-ae20-6469-0daf-583557bd66a3@arm.com>
- <bf75504e-127c-3617-2e72-7bf45d5357d0@arm.com>
+ Fri, 07 Jun 2019 21:10:46 -0700 (PDT)
+Date: Fri, 7 Jun 2019 21:10:44 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 3/8] pinctrl: msm: Add ability for drivers to supply a
+ reserved GPIO list
+Message-ID: <20190608041044.GK24059@builder>
+References: <20190605114302.22509-1-lee.jones@linaro.org>
+ <20190605114302.22509-3-lee.jones@linaro.org>
+ <CACRpkdaEe3uKAsSuhbToevXH1cMsuMUvwaopLPuD+JkDTnuEnQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <bf75504e-127c-3617-2e72-7bf45d5357d0@arm.com>
+In-Reply-To: <CACRpkdaEe3uKAsSuhbToevXH1cMsuMUvwaopLPuD+JkDTnuEnQ@mail.gmail.com>
+User-Agent: Mutt/1.10.0 (2018-05-17)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_210911_177889_90457578 
-X-CRM114-Status: GOOD (  10.69  )
+X-CRM114-CacheID: sfid-20190607_211048_549414_0307BE02 
+X-CRM114-Status: GOOD (  14.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -86,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,47 +102,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Diogo Sampaio <Diogo.Sampaio@arm.com>,
- Luke Cheeseman <luke.cheeseman@arm.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <Will.Deacon@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Amit Kachhap <Amit.Kachhap@arm.com>, nd <nd@arm.com>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, Dave P Martin <Dave.Martin@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Felipe Balbi <balbi@kernel.org>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Greg KH <gregkh@linuxfoundation.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ linux-usb@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ David Brown <david.brown@linaro.org>, alokc@codeaurora.org,
+ linux-i2c@vger.kernel.org, MSM <linux-arm-msm@vger.kernel.org>,
+ Andy Gross <andy.gross@linaro.org>, jlhugo@gmail.com,
+ Lee Jones <lee.jones@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 06, 2019 at 06:44:41PM +0100, Kristina Martsenko wrote:
-> On 30/05/2019 10:12, Ramana Radhakrishnan wrote:
-> > =
+On Fri 07 Jun 16:02 PDT 2019, Linus Walleij wrote:
 
-> >>> =A0 - more testing
-> >>
-> >> Is PAC emulated in QEmu yet? (I assume I can't get real hardware to he=
-lp
-> >> test this yet...)
-> > =
-
-> > AFAIK, yes qemu trunk should have this.
+> On Wed, Jun 5, 2019 at 1:43 PM Lee Jones <lee.jones@linaro.org> wrote:
 > =
 
-> I've been testing on the ARM FastModels, but I tried out QEMU 4.0.0 and
-> it seems to support PAC with the "-cpu max" option.
+> > When booting MSM based platforms with Device Tree or some ACPI
+> > implementations, it is possible to provide a list of reserved pins
+> > via the 'gpio-reserved-ranges' and 'gpios' properties respectively.
+> > However some ACPI tables are not populated with this information,
+> > thus it has to come from a knowledgable device driver instead.
+> >
+> > Here we provide the MSM common driver with additional support to
+> > parse this informtion and correctly populate the widely used
+> > 'valid_mask'.
+> >
+> > Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> =
 
-Ah-ha! I wasn't seeing it mentioned in dmesg (it should appear along
-with PAN, etc, yes?) but I guess I need a newer QEMU:
+> Exactly how we should use of the API, so if Bj=F6rn can supply an
+> ACK to patches 3 and 4 I'm happy to apply them.
+> =
 
-$ qemu-system-aarch64 --version
-QEMU emulator version 3.1.0 (Debian 1:3.1+dfsg-2ubuntu3.1)
+> Bj=F6rn?
+> =
 
-I will go build QEMU myself! :)
 
--- =
+I'm waiting for a version that does not specify the reserved_gpios for
+struct msm_pinctrl_soc_data sdm845_pinctrl {}, as this would override
+the ability of getting these from DT.
 
-Kees Cook
+I haven't seen such revision yet, will review it once I find it.
+
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
