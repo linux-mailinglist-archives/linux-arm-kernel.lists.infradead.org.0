@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCB513A15B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 21:04:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 096C63A167
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 21:05:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AzYZ9ZW+og6PV+zdM9/E6q8rp7rK6STlSiB9eLeNPqA=; b=FpDN+wL/dFZKfm
-	N0ELuhVeY7/CM5UWJCQptXgRwUBIiVl41p5jueWQ4xC+aqQSc+dIKx2RO4tf+N1y7uAXCYG7/qJwO
-	vaE2FCghJuZK4C0EKToa5dlXso3Vh4K4fA+edTQwraKzcF4/dFoqZABtyvjbMXNvDeDN6wwYJtt4e
-	UAWUVAxJ+6CvrBfcJ4Tda35BtoGHWzoTptl/oUOP+HIqGrTaT4Aw0gHs6S43VxcwZKDEf4gY3kyUg
-	metxxLERdXmOMCH/f3ZHpY3LmEeVTw+t8hymvn3xE8/0Zwk+wn1cvDta0onfys9vjk7PoIomprhjx
-	f7xSKGIMQYocII2MrlyA==;
+	List-Owner; bh=i2QKiyC1Jz/A8dCkBoxC1o8tmWHi1qMjCM0uqZ9ZwGw=; b=UdGtevFMrouZFa
+	d5OyjQtyYj+XqhF4RDhoVNXvh0iC5rk/D4FAi/pSA0IkWxaIRTMx9MZCYOmwAPIY7BieRbgaymr3W
+	dastEAaeW0InWHLH2ddFcVam7rEVVa6lo/wV3xYtphaDwpwBQ8SBGusQasFe5osgu0tVyvj25eCyV
+	H7B9E9ja6ysMIkkV9mYzbsXhkW2uIBS7mk8/MfXx3lDUAq4GlnDcNHEgSgqJffQqhFUT3ekkb4pNg
+	ktSSMNHsh09LYDzhj/awvxyGgxGveD2C35OgaC0UCIHPt8JFcxYaszeUbZa1XcNlMzRBDH05KdvhO
+	I+wUYbY04YD4xtpAvsqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZge4-0006uq-1i; Sat, 08 Jun 2019 19:04:52 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hZgeS-0007Gd-4f; Sat, 08 Jun 2019 19:05:16 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZgdX-0006f2-M8; Sat, 08 Jun 2019 19:04:20 +0000
-Received: by mail-wm1-x344.google.com with SMTP id h19so6291214wme.0;
- Sat, 08 Jun 2019 12:04:19 -0700 (PDT)
+ id 1hZgdZ-0006fP-52; Sat, 08 Jun 2019 19:04:22 +0000
+Received: by mail-wr1-x442.google.com with SMTP id p11so5286465wre.7;
+ Sat, 08 Jun 2019 12:04:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=hdxuEQn0STw1aQ9FCTiwldIwv18/WN0vzmjlgvEyWyw=;
- b=QZjMrwAW7hCZwc6hnQh84HpuiO6yrbow8vNYRKpEE9KI7iw2G+ykJX1PMWWU+N9jI9
- a00fgOVApYpMeyzxjRQa51vXYSakp8nSwddIhyGxS9Vne08/vL9jAlDJWGXOi5Mdrnaz
- fiIoCgRYSEHi7JkMwRRHlpIenmBp+axyv7i4vXoE+0hs9gW6n9jrQuppbmxf0I+83jLm
- p0u/IAtMr+I/DrmRLl6hIp3Vu4xIAjEAMzt2XVFtFmYNZxr/HoeZ4eQYx/fnpNd1DTRr
- yfy/5vG9azl+hA701qnzFjRvnShlwivzTzzKbEKkFNf82stauX/Q57AqkWLbWavRxlxN
- oMUA==
+ bh=0uN4hjdcek7T4CnTm0X7zhsU8Gz9i5WRbo0q2IpM0eE=;
+ b=K83QhhoMl7XG/s5R65AgUYKNczLOaFu5RhzAYBEZt9OrF+5boUd9Ty2rFKyTzucopf
+ iRgMlgPae3qmUXUMC3Ek5RrgGBRUWEIkEedcaFywYhr9Mcat8Tu8T1eSN7QYWjyJlXiw
+ rZQqvFM9QKSpPqal/OOA8a55JaTVZBxQoXNkp08OZ4KXZl9f1ci6wSztoY3LD39/gBw0
+ RP1cIVMf/jZPx8Mo23JPuw999aQgWEjjGCDghte/spyFR0kkkN0UqU0ZL0YD9zMMZI3N
+ 5cOY7M5FIpFBxo/hfynwjLHZ1quTlYSGMITJdawIv6LDMRzPeqq7Qg7px7lzwDiCjG+O
+ oZ6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hdxuEQn0STw1aQ9FCTiwldIwv18/WN0vzmjlgvEyWyw=;
- b=pSCh/8JB/rd90Vhe4uf7bqVhj3fMMHD4p4yeXEt7oLR1i0h9+VYfig+Ed9FBFPik5t
- 6wIKxXi+vUaVAj4YenT1D3zseLJLDGz9HjT01u+xX2VJUnuRF9qZQYfkpopbDwexaMxt
- j0b8MZXjCU9DWL++n44Bs/ZDGwDR3VhtKxwINVAw/hwiuTJGQTC5kYDjOdI65aeXFAI4
- HNbxn1CyAa3t1U1/ZoKwnYNu6iBycrUc589gKpiH246asMhdWSLs7GaclaR+auitCw4u
- r0gWwHnwGoOvLge8/0ukAdS95kDpvxNZ39HHfXs8/GVuPg3lHDmnTvhOx1/wukFpZ36A
- 25ww==
-X-Gm-Message-State: APjAAAVYk2lL9GEqb7GzqzwmAFok2PqPMCDqfqzIag09jV7CF7LJrWiu
- 17N+F0NmsaXMU7o4okXvcew=
-X-Google-Smtp-Source: APXvYqyk9WF0R161lhx1mz1DHCVnXYdH0tEiA9AwdCPfVQqF2JAODnTvW3Gp+I/yuDzam//4iu5drw==
-X-Received: by 2002:a7b:c8c3:: with SMTP id f3mr8372277wml.124.1560020658223; 
- Sat, 08 Jun 2019 12:04:18 -0700 (PDT)
+ bh=0uN4hjdcek7T4CnTm0X7zhsU8Gz9i5WRbo0q2IpM0eE=;
+ b=UpNmRXr7WFMMS2eXJB/ze45emW0wQexRrG22xA1NLQZlh7BBfZHkmZ5YKYol/m2alQ
+ pBOUZe0J+HGaJGnrjC26soIevb75vDZvZ+iVp5LhcPHtUMyf7S5NwwGRjQ3dibf0bY4U
+ 1eOm/TcWfQ+H6d4zPvcUkpjzJxGcW7V63N5EKDAgnLsTSZHc8oClwuwNrauSqA6UqboZ
+ zsAvypDj+plfIpQsvtMGRXvjxCAu7oW8f5YXlA6R4udzJvZuK/Jh+qafJ6OH6B0lniTu
+ kptPg4GbZ1JAcTb71X/53vmFt8h396O4iZRwC98CNRaNKyPUtG9gT/hNtHS0VJpZs/cA
+ CVfw==
+X-Gm-Message-State: APjAAAVxcdRRMNw52xjRnQR5mz/KAuzRJxOWf1RKcvpzbui8lrYTZGQE
+ XqPGwKMAy0oxyVMb9LdR6/U=
+X-Google-Smtp-Source: APXvYqxOMS9p0YK5H2hrquYQ7S5h/mFRESHFO+TjeSaqtatzIc19t054BVKriOz2LhSzH4Mg/Zfq5Q==
+X-Received: by 2002:a5d:4a82:: with SMTP id o2mr21766445wrq.154.1560020659418; 
+ Sat, 08 Jun 2019 12:04:19 -0700 (PDT)
 Received: from blackbox.darklights.net
  (p200300F133DDA400D12EFF43FED1E981.dip0.t-ipconnect.de.
  [2003:f1:33dd:a400:d12e:ff43:fed1:e981])
- by smtp.googlemail.com with ESMTPSA id t6sm5655062wmb.29.2019.06.08.12.04.17
+ by smtp.googlemail.com with ESMTPSA id t6sm5655062wmb.29.2019.06.08.12.04.18
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 08 Jun 2019 12:04:17 -0700 (PDT)
+ Sat, 08 Jun 2019 12:04:18 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
  tglx@linutronix.de, jason@lakedaemon.net, marc.zyngier@arm.com,
  robh+dt@kernel.org, mark.rutland@arm.com, khilman@baylibre.com
-Subject: [PATCH v3 1/3] dt-bindings: interrupt-controller: New binding for
- Meson-G12A SoC
-Date: Sat,  8 Jun 2019 21:04:09 +0200
-Message-Id: <20190608190411.14018-2-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v3 2/3] irqchip/meson-gpio: Add support for Meson-G12A SoC
+Date: Sat,  8 Jun 2019 21:04:10 +0200
+Message-Id: <20190608190411.14018-3-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190608190411.14018-1-martin.blumenstingl@googlemail.com>
 References: <20190608190411.14018-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_120419_720869_D31D9D72 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190608_120421_194113_9B08E716 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -113,28 +111,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Xingyu Chen <xingyu.chen@amlogic.com>
 
-Update the dt-binding document to support new compatible string for the
-GPIO interrupt controller which found in Amlogic's Meson-G12A SoC.
+The Meson-G12A SoC uses the same GPIO interrupt controller IP block as the
+other Meson SoCs, A totle of 100 pins can be spied on, which is the sum of:
+
+- 223:100 undefined (no interrupt)
+- 99:97   3 pins on bank GPIOE
+- 96:77   20 pins on bank GPIOX
+- 76:61   16 pins on bank GPIOA
+- 60:53   8 pins on bank GPIOC
+- 52:37   16 pins on bank BOOT
+- 36:28   9 pins on bank GPIOH
+- 27:12   16 pins on bank GPIOZ
+- 11:0    12 pins in the AO domain
 
 Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
 Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- .../bindings/interrupt-controller/amlogic,meson-gpio-intc.txt    | 1 +
+ drivers/irqchip/irq-meson-gpio.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/amlogic,meson-gpio-intc.txt b/Documentation/devicetree/bindings/interrupt-controller/amlogic,meson-gpio-intc.txt
-index 1502a51548bb..7d531d5fff29 100644
---- a/Documentation/devicetree/bindings/interrupt-controller/amlogic,meson-gpio-intc.txt
-+++ b/Documentation/devicetree/bindings/interrupt-controller/amlogic,meson-gpio-intc.txt
-@@ -15,6 +15,7 @@ Required properties:
-     "amlogic,meson-gxbb-gpio-intc" for GXBB SoCs (S905) or
-     "amlogic,meson-gxl-gpio-intc" for GXL SoCs (S905X, S912)
-     "amlogic,meson-axg-gpio-intc" for AXG SoCs (A113D, A113X)
-+    "amlogic,meson-g12a-gpio-intc" for G12A SoCs (S905D2, S905X2, S905Y2)
- - reg : Specifies base physical address and size of the registers.
- - interrupt-controller : Identifies the node as an interrupt controller.
- - #interrupt-cells : Specifies the number of cells needed to encode an
+diff --git a/drivers/irqchip/irq-meson-gpio.c b/drivers/irqchip/irq-meson-gpio.c
+index 7b531fd075b8..7599b10ecf09 100644
+--- a/drivers/irqchip/irq-meson-gpio.c
++++ b/drivers/irqchip/irq-meson-gpio.c
+@@ -73,6 +73,7 @@ static const struct of_device_id meson_irq_gpio_matches[] = {
+ 	{ .compatible = "amlogic,meson-gxbb-gpio-intc", .data = &gxbb_params },
+ 	{ .compatible = "amlogic,meson-gxl-gpio-intc", .data = &gxl_params },
+ 	{ .compatible = "amlogic,meson-axg-gpio-intc", .data = &axg_params },
++	{ .compatible = "amlogic,meson-g12a-gpio-intc", .data = &axg_params },
+ 	{ }
+ };
+ 
 -- 
 2.21.0
 
