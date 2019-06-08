@@ -2,53 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4366339C7F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 12:51:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D79F139C8E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 12:57:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8fkSWGfpAEz/mWooxcdy13d1eTXsyBZKEneoFxRAcf4=; b=QGl9+izewnnlRU
-	e+7YI/5oW15DxgbnUDHkIJCqQmD8U47jj2RgnTIc4ZHsBheW8ge22ZD12dhjM8Nde1keOHthCPQii
-	R3CQecVpm4Uu9JqA9xN7xPAhKJhuZQO+f4KXqET7VnmhfMIwlvfmwZH45X+MdYkB9KWZxKZlxdsal
-	Vbrtfs5n552tx2zbZDf5ZLKh/Sz+MIKhEuH/tPPsd0ErK9CoMq/EY+JxMheVoe+g94TGLOuG3Dh0+
-	xaB0ikbtLTUtbynV26kDoLMtQ4QIIzYODyv2XVLepyeX3J6UxqUWtQz0YbtG96cgfoe6wZW9G7KNW
-	QCDsdBm5NreMNKY3XX6Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/D3yjI9Phj8SgQF/S/WAGWN0ixm38ze0isCorPxPgWY=; b=FeiU+r4vu45P0M
+	r/31Zqpn0JtJsWnzYNm37JckCf0ay6ZvFNwwpJORmhLoPoCrijenfXJjm7hugWtS2pASNQWGzeVad
+	3vBRaInIQ/cRetmGT7MuyT7oeC+yiUL8xCnSQIo+eV60c8s4hmjNZg8YV+20Pg33hlrPObkg033+G
+	aIQlVVk7ZSfHak/mkRXuu0rD74uCqMZkb2wLTtlZtvPk95ClVqTK2iBaOGdVEb0VsYH/zL0SEb3sd
+	tYP00IEVVBxQi2IXZSNx9CZViAF0DsB0yr21zAXgY11ZRpIbkjCVToF4iWja186c7p3zMelaUXPzK
+	cpletmkkJ8kj3OU2bGyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZYwf-0007W5-RU; Sat, 08 Jun 2019 10:51:33 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZYwZ-0007Vs-I7; Sat, 08 Jun 2019 10:51:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mgeScMz6rj/dz5CujtnU7v335CfKeHECqxwDNtzgkgY=; b=GyrjwBj00gZE9eaLRKHfky58Co
- YsT7v1zKxGTRvz3OUQxC2wRK3KGwYNzVaJd373H4vT21rbQ+uXfQf4Fbu1PcDWukxtxDdy4EW14F/
- jFrRYnMRazPXuy3XfTL0BR39hlBuk5CA1M0gb8F4nCw4LMsdqfsVJAibH+ocVsdtyBqxlznRDB68R
- 7dqTfCETv2iBfVGkcAVSH85f5+Dd1+4flbQ+VBoWD6GJSXFYBHPZ7rnCcXLlObMLw84xH332yK0G9
- vxf9/2dI2KqhBMn8sWr67PA1PKVI2eFqEOQy0vU6C0DXIcf+ptS4nvZ6myRKE0bfWnXL9BkXQT2FN
- I5k5Swcg==;
-Received: from [179.181.119.115] (helo=coco.lan)
- by casper.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hZYwS-0002D7-9q; Sat, 08 Jun 2019 10:51:20 +0000
-Date: Sat, 8 Jun 2019 07:51:13 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v3 17/20] dt: bindings: fix some broken links from
- txt->yaml conversion
-Message-ID: <20190608075113.32f2c7bb@coco.lan>
-In-Reply-To: <20190607185728.GJ2456@sirena.org.uk>
-References: <ff457774d46d96e8fe56b45409aba39d87a8672a.1559933665.git.mchehab+samsung@kernel.org>
- <effeafed3023d8dc5f2440c8d5637ea31c02a533.1559933665.git.mchehab+samsung@kernel.org>
- <20190607185728.GJ2456@sirena.org.uk>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+	id 1hZZ1t-0000hq-7D; Sat, 08 Jun 2019 10:56:57 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZZ1h-0000gl-QY; Sat, 08 Jun 2019 10:56:48 +0000
+Received: from localhost (p5486CBCC.dip0.t-ipconnect.de [84.134.203.204])
+ by pokefinder.org (Postfix) with ESMTPSA id D0A142C3637;
+ Sat,  8 Jun 2019 12:56:40 +0200 (CEST)
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: linux-i2c@vger.kernel.org
+Subject: [PATCH 00/34] treewide: simplify getting the adapter of an I2C client
+Date: Sat,  8 Jun 2019 12:55:39 +0200
+Message-Id: <20190608105619.593-1-wsa+renesas@sang-engineering.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190608_035646_162389_3A3B5A1F 
+X-CRM114-Status: UNSURE (   6.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,46 +56,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, Olivier Moysan <olivier.moysan@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Jonathan Corbet <corbet@lwn.net>,
- Liam Girdwood <lgirdwood@gmail.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-kernel@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab@infradead.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Hugues Fruchet <hugues.fruchet@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, linux-rtc@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-iio@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-renesas-soc@vger.kernel.org,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-mtd@lists.infradead.org,
+ linux-leds@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Fri, 7 Jun 2019 19:57:28 +0100
-Mark Brown <broonie@kernel.org> escreveu:
+While preparing a refactoring series, I noticed that some drivers use a
+complicated way of determining the adapter of a client. The easy way is
+to use the intended pointer: client->adapter
 
-> On Fri, Jun 07, 2019 at 03:54:33PM -0300, Mauro Carvalho Chehab wrote:
-> > Some new files got converted to yaml, but references weren't
-> > updated accordingly.  
-> 
-> These should probably just be sent as normal patches rather than tied in
-> with the rest of this series...
+These drivers do:
+	to_i2c_adapter(client->dev.parent);
 
-Thanks for applying it!
+The I2C core populates the parent pointer as:
+	client->dev.parent = &client->adapter->dev;
 
-Yeah, but the problem with documentation patches is that sometimes
-the patches are merged via docs tree, and sometimes via maintainer's
-tree, depending on the subsystem.
+Now take into consideration that
+	to_i2c_adapter(&adapter->dev);
 
-Anyway, Jon merged this week a patch that should produce warnings
-on COMPILE_TEST builds when a file has a broken link.
+is a complicated way of saying 'adapter', then we can even formally
+prove that the complicated expression can be simplified by using
+client->adapter.
 
-Hopefully, this will help a lot to warn people against regressions
-related to it.
+The conversion was done using a coccinelle script with some manual
+indentation fixes applied on top.
+
+To avoid a brown paper bag mistake, I double checked this on a Renesas
+Salvator-XS board (R-Car M3N) and verified both expression result in the
+same pointer. Other than that, the series is only build tested.
+
+A branch can be found here:
+
+git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git i2c/no_to_adapter
+
+Please apply the patches to the individual subsystem trees. There are no
+dependencies.
+
+Thanks and kind regards,
+
+   Wolfram
 
 
-Thanks,
-Mauro
+Wolfram Sang (34):
+  clk: clk-cdce706: simplify getting the adapter of a client
+  gpu: drm: bridge: sii9234: simplify getting the adapter of a client
+  iio: light: bh1780: simplify getting the adapter of a client
+  leds: leds-pca955x: simplify getting the adapter of a client
+  leds: leds-tca6507: simplify getting the adapter of a client
+  media: i2c: ak881x: simplify getting the adapter of a client
+  media: i2c: mt9m001: simplify getting the adapter of a client
+  media: i2c: mt9m111: simplify getting the adapter of a client
+  media: i2c: mt9p031: simplify getting the adapter of a client
+  media: i2c: ov2640: simplify getting the adapter of a client
+  media: i2c: tw9910: simplify getting the adapter of a client
+  misc: fsa9480: simplify getting the adapter of a client
+  misc: isl29003: simplify getting the adapter of a client
+  misc: tsl2550: simplify getting the adapter of a client
+  mtd: maps: pismo: simplify getting the adapter of a client
+  power: supply: bq24190_charger: simplify getting the adapter of a client
+  power: supply: bq24257_charger: simplify getting the adapter of a client
+  power: supply: bq25890_charger: simplify getting the adapter of a client
+  power: supply: max14656_charger_detector: simplify getting the adapter
+    of a client
+  power: supply: max17040_battery: simplify getting the adapter of a client
+  power: supply: max17042_battery: simplify getting the adapter of a client
+  power: supply: rt5033_battery: simplify getting the adapter of a client
+  power: supply: rt9455_charger: simplify getting the adapter of a client
+  power: supply: sbs-manager: simplify getting the adapter of a client
+  regulator: max8952: simplify getting the adapter of a client
+  rtc: fm3130: simplify getting the adapter of a client
+  rtc: m41t80: simplify getting the adapter of a client
+  rtc: rv8803: simplify getting the adapter of a client
+  rtc: rx8010: simplify getting the adapter of a client
+  rtc: rx8025: simplify getting the adapter of a client
+  staging: media: soc_camera: imx074: simplify getting the adapter of a client
+  staging: media: soc_camera: mt9t031: simplify getting the adapter of a client
+  staging: media: soc_camera: soc_mt9v022: simplify getting the adapter
+    of a client
+  usb: typec: tcpm: fusb302: simplify getting the adapter of a client
+
+ drivers/clk/clk-cdce706.c                        | 2 +-
+ drivers/gpu/drm/bridge/sii9234.c                 | 4 ++--
+ drivers/iio/light/bh1780.c                       | 2 +-
+ drivers/leds/leds-pca955x.c                      | 2 +-
+ drivers/leds/leds-tca6507.c                      | 2 +-
+ drivers/media/i2c/ak881x.c                       | 2 +-
+ drivers/media/i2c/mt9m001.c                      | 2 +-
+ drivers/media/i2c/mt9m111.c                      | 2 +-
+ drivers/media/i2c/mt9p031.c                      | 2 +-
+ drivers/media/i2c/ov2640.c                       | 2 +-
+ drivers/media/i2c/tw9910.c                       | 3 +--
+ drivers/misc/fsa9480.c                           | 2 +-
+ drivers/misc/isl29003.c                          | 2 +-
+ drivers/misc/tsl2550.c                           | 2 +-
+ drivers/mtd/maps/pismo.c                         | 2 +-
+ drivers/power/supply/bq24190_charger.c           | 2 +-
+ drivers/power/supply/bq24257_charger.c           | 2 +-
+ drivers/power/supply/bq25890_charger.c           | 2 +-
+ drivers/power/supply/max14656_charger_detector.c | 2 +-
+ drivers/power/supply/max17040_battery.c          | 2 +-
+ drivers/power/supply/max17042_battery.c          | 2 +-
+ drivers/power/supply/rt5033_battery.c            | 2 +-
+ drivers/power/supply/rt9455_charger.c            | 2 +-
+ drivers/power/supply/sbs-manager.c               | 2 +-
+ drivers/regulator/max8952.c                      | 2 +-
+ drivers/rtc/rtc-fm3130.c                         | 8 +++-----
+ drivers/rtc/rtc-m41t80.c                         | 2 +-
+ drivers/rtc/rtc-rv8803.c                         | 2 +-
+ drivers/rtc/rtc-rx8010.c                         | 2 +-
+ drivers/rtc/rtc-rx8025.c                         | 2 +-
+ drivers/staging/media/soc_camera/imx074.c        | 2 +-
+ drivers/staging/media/soc_camera/mt9t031.c       | 2 +-
+ drivers/staging/media/soc_camera/soc_mt9v022.c   | 2 +-
+ drivers/usb/typec/tcpm/fusb302.c                 | 3 +--
+ 34 files changed, 37 insertions(+), 41 deletions(-)
+
+-- 
+2.19.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
