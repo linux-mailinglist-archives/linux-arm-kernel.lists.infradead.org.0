@@ -2,95 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABE673A168
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 21:05:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD7A13A18C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 21:41:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SNDSBwOGFJTLvsMNoWfBCJALudE4lsGPMPRboWm6umk=; b=XyDYPLnglE3Ay1
-	/rLo5zQd5qUiIiEOx2kLjye5QSF8mmivkPlewPfRxo1LEXLwkItKSOFKkoiN01LqRLmJp4JXZP7He
-	yjcXQBaWr+cXQeMVQy3qukLLsPOgFyxRtVPO+zAbyRq1sLSoxi5sWwNSt1bX5WzDQQVADOOXZSbrv
-	Q7unrXhQQ5D1mwk1e1sFcBpq1FqAeavzrSk4sJs7TmiwnnrTU7wz488UCNrak6tzMzogG06tlhhof
-	lUEB1nj773W7yBDDiDwHbUXYLlC+6xFXkIeeS/EopjqsTPbCS0mYMXM/2aLPj/xnhYLGW4xUNwCpQ
-	uej7IYlIEui//AktO7IQ==;
+	List-Owner; bh=pR4JHd5IwBQjAI4ydpQhRILjaRaLIKn/u4nNrdYdgLg=; b=gYrNu/cpX82Wtr
+	j84lEZC2xkR39rRfYy2s+0wfJYRDvQmnUKNNyMUKGLq5437GHfNcB0QDEzjAJh/FeDmaYyJuZhLY5
+	5ouzcwV6CU7V2chHYHIdFNPWul1WEoRLIEOFZREePXrNJmfyA1BSOwDTqBirDKDWxNuW1+icONuub
+	qGRudMK2dbxYNtwMWcQ5MH+HmZpxE3ztbdIxNm+IbTdeZ4fCwjCLCQkoOwWVngQ9m4vVnenzFzM1H
+	A2kvsYOf8co73415k4Yqt1QyYa0eqHosh+Y4aOFZ/8xEmW1kZVyV2nYyEuHcKZ1U48GboYPLT9jfy
+	UYddQxQahg4Llql3tR9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZgeh-0000Gm-AL; Sat, 08 Jun 2019 19:05:31 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hZhDH-0003QP-W5; Sat, 08 Jun 2019 19:41:16 +0000
+Received: from mail-eopbgr680074.outbound.protection.outlook.com
+ ([40.107.68.74] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZgda-0006fe-0F; Sat, 08 Jun 2019 19:04:23 +0000
-Received: by mail-wr1-x441.google.com with SMTP id e16so5321470wrn.1;
- Sat, 08 Jun 2019 12:04:21 -0700 (PDT)
+ id 1hZhD4-0003OW-15
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 19:41:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=aFV8wLAz1XUXEXzc85OBEqEUiMkenB8CQtS+Vt1/BiM=;
- b=W3GI02+AJAI/VaMVlY/zu2APCio3iURaaXWz00uebnZQF1i5wIck7r84AquCmwxoSm
- QVUQlITH04SsEk5yX4n1+Htt/S66k/8DnxhJT+Sj9JpTUeLmarHPrJyerC6uO4U7D+c9
- J9bEwz26MFRSk4K4LX/TvVmadvj7t+s/s/3HH1H/7RfWjKHe7yyPegf1WG7Nb/XAeoL9
- I1TkQgIozoFyBYKtBukYrp+Yg6NwDQA8pTvQacx3wup+DG6a2hAEcjA0ctQ8xZ6u1IXe
- xno9GYn9TZOBxaybhLSP6waj8uZcqRJoJL7xa2PTEX3AE7vOxbv1XKXC8iIl2QEIQIBE
- ExXg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=aFV8wLAz1XUXEXzc85OBEqEUiMkenB8CQtS+Vt1/BiM=;
- b=W7VdYwSlBxEl0+DQeM+sNA6DmQSSe4Kbpu2B4X5yxIQxQivaf0enXrCQzlc6zifkUE
- 4dtO8bmuZ6sisoICu+DPn8pmLijloezzco6vyizkF9hj+VGSct4t2i8TIwF7Fdm/+2yK
- 8PCWmlVnhpeCKVUv2aoV6BmjQLUdpInKBcRwlKWhg3HH6goXzVTx/b6lpMsTS2d3qEda
- c9TPsK93d7VJkPBXsJ4y/W3AZi9ITHk8j3ZQAaP7XhvGzDMTBovGCAZSzgliXsRMh+Ne
- jNff1ON0awFuiY/KvQ158yhRJEhEXRe+ZwzFHQJQN4Ozc1LetbZ+I3lSprFQfNRRC1QO
- vxAw==
-X-Gm-Message-State: APjAAAX4h7pzSoKOmhtamMmuOPT4CuIBH65OZpi2s+fUZtQddA2Q29KF
- W7pHBoVEDWoVeCiePkFpAXQ=
-X-Google-Smtp-Source: APXvYqxeWMqj9C2OusCvfves/EELauA2ecBxZT6qIcQg37NCmz0ahYkESZJeSIOqrDaeXSF3C0s2Eg==
-X-Received: by 2002:adf:da48:: with SMTP id r8mr18981182wrl.18.1560020660535; 
- Sat, 08 Jun 2019 12:04:20 -0700 (PDT)
-Received: from blackbox.darklights.net
- (p200300F133DDA400D12EFF43FED1E981.dip0.t-ipconnect.de.
- [2003:f1:33dd:a400:d12e:ff43:fed1:e981])
- by smtp.googlemail.com with ESMTPSA id t6sm5655062wmb.29.2019.06.08.12.04.19
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 08 Jun 2019 12:04:20 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
- tglx@linutronix.de, jason@lakedaemon.net, marc.zyngier@arm.com,
- robh+dt@kernel.org, mark.rutland@arm.com, khilman@baylibre.com
-Subject: [PATCH v3 3/3] arm64: dts: meson: g12a: add the GPIO interrupt
- controller
-Date: Sat,  8 Jun 2019 21:04:11 +0200
-Message-Id: <20190608190411.14018-4-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190608190411.14018-1-martin.blumenstingl@googlemail.com>
-References: <20190608190411.14018-1-martin.blumenstingl@googlemail.com>
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dduBsOtI3AySDNvyRkfFyB0uZnLrh6bMbc/SM/4UcEI=;
+ b=QlrQv8w57SOibc3keKogeSe5IO2EBQvtvaJwSr0qNX6P2ahX46KcfKsseui39wYwJfPG2haCk+wEJm0Xp1IAT4FmCSV7jeRGX67itUn3N/S5lmcOqjUJocq7fX3KUtf4SYfALukLW4sXcBPx2k93vqlZYW9w2LaYbiR3GJihjwQ=
+Received: from CH2PR02MB6359.namprd02.prod.outlook.com (52.132.231.93) by
+ CH2PR02MB6231.namprd02.prod.outlook.com (52.132.230.89) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.15; Sat, 8 Jun 2019 19:40:58 +0000
+Received: from CH2PR02MB6359.namprd02.prod.outlook.com
+ ([fe80::b9dd:11e0:7fca:ba55]) by CH2PR02MB6359.namprd02.prod.outlook.com
+ ([fe80::b9dd:11e0:7fca:ba55%5]) with mapi id 15.20.1965.017; Sat, 8 Jun 2019
+ 19:40:57 +0000
+From: Dragan Cvetic <draganc@xilinx.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: RE: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+Thread-Topic: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+Thread-Index: AQHVEu5GErREaULonk+tvtDvF1CkjaaOsacAgAFm4tCAAFUHgIABzWHQ
+Date: Sat, 8 Jun 2019 19:40:57 +0000
+Message-ID: <CH2PR02MB6359406779BEEC45AAB41A98CB110@CH2PR02MB6359.namprd02.prod.outlook.com>
+References: <1558784245-108751-1-git-send-email-dragan.cvetic@xilinx.com>
+ <1558784245-108751-5-git-send-email-dragan.cvetic@xilinx.com>
+ <20190606132842.GC7943@kroah.com>
+ <CH2PR02MB6359747C72220A978CCA807BCB100@CH2PR02MB6359.namprd02.prod.outlook.com>
+ <20190607155731.GB8752@kroah.com>
+In-Reply-To: <20190607155731.GB8752@kroah.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=draganc@xilinx.com; 
+x-originating-ip: [149.199.80.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7e2369b1-4268-41a8-fa02-08d6ec493a9e
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:CH2PR02MB6231; 
+x-ms-traffictypediagnostic: CH2PR02MB6231:
+x-microsoft-antispam-prvs: <CH2PR02MB62315EC2FB84405614DEA5DFCB110@CH2PR02MB6231.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:350;
+x-forefront-prvs: 0062BDD52C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(366004)(346002)(396003)(376002)(39850400004)(199004)(189003)(13464003)(33656002)(52536014)(81156014)(68736007)(229853002)(14454004)(8936002)(81166006)(99286004)(478600001)(7736002)(8676002)(74316002)(73956011)(66556008)(76116006)(64756008)(66946007)(2906002)(66446008)(66476007)(305945005)(55016002)(53936002)(66066001)(6916009)(6436002)(4326008)(6506007)(53546011)(14444005)(256004)(9686003)(476003)(76176011)(186003)(486006)(102836004)(54906003)(7696005)(6116002)(71190400001)(86362001)(26005)(71200400001)(3846002)(5660300002)(6246003)(25786009)(316002)(107886003)(446003)(11346002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6231;
+ H:CH2PR02MB6359.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: mDd9gNhw6PgbDZhHoPAel8CyA8tgln6Sku2zPy0/5jbT8SgMZKeblZHYRqC2NL+4+gbMifS+hJyugXyA3mX1CVMa1wodqgjLeACMwWEMm49ODrvuJH+clyUwYFh4lICS8MB7y2t32mt4RH4Rw5Zra0RrZ10DTHpsR/BBQShVTGyRrjl70jO6Zr7Od2gzkhoS5tA+TDOushlaRp58rdm/iqiDXsZ3ui48i+oplmfraLD9bDMfKaz6obDHXTlSyLUyKBry/w+T97w0HHApD+INqiapEnog590xXkNxq4zG+ALmQtv4M9BMxRi2Gf6SMiMIJAv6NU04bWvuP01EFUWAjlP0y8W/DRr3R3pOJrB5gCTJ1D+AsD7lRj8UnPUQIW1zLibBDZ4T155Tw+sdgPFKsYhvkntnnxgqmOny1BlnQzE=
 MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7e2369b1-4268-41a8-fa02-08d6ec493a9e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Jun 2019 19:40:57.4671 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: draganc@xilinx.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6231
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_120422_564533_B8246062 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190608_124102_069878_9E9EA2F0 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.68.74 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -103,45 +112,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-GPIO interrupts are used for the external Ethernet RGMII PHY interrupt
-line.
-Add the GPIO interrupt controller so we can describe that connection in
-the dts files.
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- arch/arm64/boot/dts/amlogic/meson-g12a.dtsi | 9 +++++++++
- 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-index 6aec4cf87350..50fcdb3e55bb 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-@@ -2222,6 +2222,15 @@
- 				#reset-cells = <1>;
- 			};
- 
-+			gpio_intc: interrupt-controller@f080 {
-+				compatible = "amlogic,meson-g12a-gpio-intc",
-+					     "amlogic,meson-gpio-intc";
-+				reg = <0x0 0xf080 0x0 0x10>;
-+				interrupt-controller;
-+				#interrupt-cells = <2>;
-+				amlogic,channel-interrupts = <64 65 66 67 68 69 70 71>;
-+			};
-+
- 			pwm_ef: pwm@19000 {
- 				compatible = "amlogic,meson-g12a-ee-pwm";
- 				reg = <0x0 0x19000 0x0 0x20>;
--- 
-2.21.0
+> -----Original Message-----
+> From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> Sent: Friday 7 June 2019 16:58
+> To: Dragan Cvetic <draganc@xilinx.com>
+> Cc: arnd@arndb.de; Michal Simek <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; robh+dt@kernel.org;
+> mark.rutland@arm.com; devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; Derek Kiernan <dkiernan@xilinx.com>
+> Subject: Re: [PATCH V4 04/12] misc: xilinx_sdfec: Add open, close and ioctl
+> 
+> On Fri, Jun 07, 2019 at 10:58:34AM +0000, Dragan Cvetic wrote:
+> > > On Sat, May 25, 2019 at 12:37:17PM +0100, Dragan Cvetic wrote:
+> > > > +static int xsdfec_dev_open(struct inode *iptr, struct file *fptr)
+> > > > +{
+> > > > +	return 0;
+> > > > +}
+> > > > +
+> > > > +static int xsdfec_dev_release(struct inode *iptr, struct file *fptr)
+> > > > +{
+> > > > +	return 0;
+> > > > +}
+> > >
+> > > empty open/close functions are never needed, just drop them.
+> > >
+> >
+> > open() is needed to allocate file descriptor eg.
+> > fd = open(dev_name, O_RDWR);
+> 
+> But you do nothing in those open/release callbacks.  Remove them and see
+> that the code works just fine :)
+> 
+
+Accepted.
+I will squash this commit with the first next which needs open/close, ioctal.
+
+> thanks,
+> 
+> greg k-h
+
+Thanks
+Dragan
 
 
 _______________________________________________
