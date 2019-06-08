@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33D8A39A40
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 05:28:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C5EC39A44
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 05:32:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H5eBlF32f6bH/zm4XHML7ReGe3Mn2lG8oCA/N94Kaa0=; b=cFTzE6hQ5TCMpf
-	ODBnidPPSz50UQ+SWIhT0ajNtyGflmi3EENbiMVQ++N6qPNmsfevN4RPgPZibuUSLlFGc5UIuH9fH
-	BwYx1zh7CSF5th6G4i3LQxzRl25W/FGlnFtvKidXcKCGUNXA/w1QmlZt1PImlJyf+uCL41419zNb5
-	52WTdiuU8bAYY6FEHC9+3MXUlOfQplSESMtdW3d01NnIxsYj/RsEzQ1GG7kqAWGuneht/66MQw92r
-	x0Ad7EMrpdLx+HOog6t2IuYfqdOXuN0osVcDrr8qbZxUIIYQJKQL6Dh+MqGD7Feky2avaYuL95MvH
-	2YcoeY2JDIyKGkU1P48Q==;
+	List-Owner; bh=zHAaWzya6Xe8OcRybjfg9IxRtZkuLea6W5JyHliegOo=; b=RVwj9rEZp4ELnD
+	JS9IEd+we/1AE2yx31OiGADh97RLGt60u5lz4mqNc7SOWKSKHIuy6IR4NaUvJ9xt/24MCMLthjXNq
+	lX8DBKL+PsWcC5nyTmR+W5Sx8SSAk6DgqsXKEPiF8wFdzP8lgONkGsrTm/tHQbgM09kPLq5bgSYMp
+	fo4K3hYclUlu4lO2er0QHbx6AI7DnP8rfK8OsuiuMN+lJTnUQU1zO7fvzxSVE2mKPOXgqLhhoGigM
+	HFmZv+IJaPZjPQD80iKKmvqcu6fd4wZDeP8bn+7Ls2YBBHAqfaFG9AnHVQnDP/sGdCgwpSb9AJOft
+	LJl3oC/VNKAZ7LWw96Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZS1X-0007nL-7a; Sat, 08 Jun 2019 03:28:07 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1hZS5x-00013r-Ny; Sat, 08 Jun 2019 03:32:41 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZS1N-0007mu-VZ
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 03:27:59 +0000
-Received: by mail-pg1-x541.google.com with SMTP id s27so2126681pgl.2
+ id 1hZS5p-00013H-BE
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 03:32:34 +0000
+Received: by mail-pf1-x442.google.com with SMTP id t16so2195724pfe.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 20:27:57 -0700 (PDT)
+ Fri, 07 Jun 2019 20:32:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=73rlx0Al8Bi2D+T3uFyrwNuDhtIRdfkSfNSwNdqApLY=;
- b=vZnuo1omaf1ebaOYnIivvcEKMipbWLSXSetiJzjAuMDkwFvEejTvw/LERyGnyTtTFD
- Ut/KBH2OgucYOakJ3plFjqVP2fvA4EA6KgyKv5PHmzdtl7dSUlO7jVHUCmNAk4zNViXh
- pKGSg82xwCrwAUhhUNdijgGe48Eal15iGLO+rrKF3pUswZcPEdRRUXAa7WX8c4x90r2a
- ibzcUYjSYhTrrD3IDphUlAXAX9JJvjekdKspwLeNpKUjPyFbTFB57z13q+YsY8RTEyW4
- djtelDTKb5XyY1rK5bbAxOwrhja/IYeH4U5HhA4o4Pu9+b9HFxOAh4wtCClptpI3FMnd
- CRaQ==
+ bh=w8yMs0A1kswOPadFYz1C2fi/C0+bcAjRjGc687sOHgM=;
+ b=c7n9thBGRp2TEdtjghoVzImcNhyBb/VGwjyjCm3JbuSUilHIelfibtChp8GIaE13ag
+ JNOGB+hr6YlznweL7qHBqLNQTVTGDtYKkRf2j18Y9qAdXrCG+GWCHjakZ6eG8owGdoxP
+ Nn0DnoxyIjpF/fzEmh2Sq+lKuLx2brgS3c4ic3En3Eok0EDpahGBcI8woeuCmztpX+hT
+ 1ynX7bvjVqIZXzxE5zt7kbq8TDS/HkU1IthcxKu99GeKRkqM7xbhzN3ypBD4GyqgshNP
+ hJR/Nc4drgs04AE64vN1B+FBz35vmQErDRSlXL+J5SMxFXd2xo/i0qA+X2/h6PjhUuOh
+ /tlg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=73rlx0Al8Bi2D+T3uFyrwNuDhtIRdfkSfNSwNdqApLY=;
- b=UV1GkyyIiQSaNldTcz2fYIXRCMA/z4zb8UVCy2MsvOeNdgxu5581dcplr5ibPjqDNQ
- AAcBD82odkkAfB93LMJbuU+GXYaWDPaZNyBLnirOrUs0PVAYunS/OeYAZMmV/51kLdYc
- H5docksxi5bL21jqui9u0POYsrpOBvfQl+BKaGxYtUHBcdsZzf6FbUTJyAkm3ZweU0S7
- 1yE4qM1HyXZ9jNsUKhuH5hVmV+DvfkGmWEugyYYtrrgss+xU78eFe4NvESZNRYjtXeIW
- JlC/RKZ8mei8dxxndSv9GYKXKVEFPKjKADhu/LZY6/d+ul/QqzR4ywj/GsQtjz4IF2dr
- trqw==
-X-Gm-Message-State: APjAAAXdhC6DHabt60xfJ3H86HWQpy/SiYIDOLpazUUQesvf97JneDQc
- 7ohEraYv4gMqNoQxwwz99+ODaA==
-X-Google-Smtp-Source: APXvYqzoWjPhd12ySZSr68F6QXinc6DRO2r16B7jrtAvC5fo2zqsmgssrm3j46hlC4Q0mg/vp7bIdw==
-X-Received: by 2002:a63:1650:: with SMTP id 16mr5875706pgw.164.1559964477334; 
- Fri, 07 Jun 2019 20:27:57 -0700 (PDT)
+ bh=w8yMs0A1kswOPadFYz1C2fi/C0+bcAjRjGc687sOHgM=;
+ b=Mqo7TdckFozzs0MLioqF+PFYeoXO2JXi1ASpZvs++2W4IGjVvfmnReZozM4CK5Decd
+ Qu+FcYCQhkRETMtPwRlQZS3aWEHq+mMy68dXK/gWkyZajvC63/SVqveU+/9BS8NdJCXl
+ 7ChzLzw0GCN6NBPySad7N7naYyRVojerLxwNFI1Lvru3kC6Mu6dMe8gNPbNA0h2OW7Vh
+ PgaZQv1w2i/kMtq9IWrvqp4r8le9/aNiIE1m2f838eG+Vj5reudSmoPWLO2OfJ243nYL
+ vqn7AHsZQxcn2CYpBv1VTYRXh/tLZM1G3epdaHZKtqqMI69we7nK8Xgp7B9phkLNxpJh
+ 1dXw==
+X-Gm-Message-State: APjAAAXehTKtfVtigfwlw8XT8pxWQwQddpnw41c64m3X35HhGvu+c3Eu
+ 7Lgj0uiuq7cUJl1Czkldf+BI9Q==
+X-Google-Smtp-Source: APXvYqzrB7QuXo0561fGi5AbE7OYmt8MLxD5Fo8pdCLTO0o6oJi2WGdEIJ2vz0ye4zuI2JWRQJG4IA==
+X-Received: by 2002:a65:5003:: with SMTP id f3mr5749817pgo.336.1559964752104; 
+ Fri, 07 Jun 2019 20:32:32 -0700 (PDT)
 Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id j37sm3189251pgj.58.2019.06.07.20.27.56
+ by smtp.gmail.com with ESMTPSA id p65sm7027057pfb.146.2019.06.07.20.32.30
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 07 Jun 2019 20:27:56 -0700 (PDT)
-Date: Fri, 7 Jun 2019 20:27:54 -0700
+ Fri, 07 Jun 2019 20:32:31 -0700 (PDT)
+Date: Fri, 7 Jun 2019 20:32:29 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Sricharan R <sricharan@codeaurora.org>
-Subject: Re: [PATCH 2/6] dt-bindings: qcom: Add ipq6018 bindings
-Message-ID: <20190608032754.GD24059@builder>
+Subject: Re: [PATCH 4/6] clk: qcom: Add ipq6018 Global Clock Controller support
+Message-ID: <20190608033229.GE24059@builder>
 References: <1559754961-26783-1-git-send-email-sricharan@codeaurora.org>
- <1559754961-26783-3-git-send-email-sricharan@codeaurora.org>
+ <1559754961-26783-5-git-send-email-sricharan@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559754961-26783-3-git-send-email-sricharan@codeaurora.org>
+In-Reply-To: <1559754961-26783-5-git-send-email-sricharan@codeaurora.org>
 User-Agent: Mutt/1.10.0 (2018-05-17)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_202758_017478_4AF96D4C 
-X-CRM114-Status: GOOD (  15.56  )
+X-CRM114-CacheID: sfid-20190607_203233_393049_5BB9D4E9 
+X-CRM114-Status: GOOD (  18.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,42 +111,94 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed 05 Jun 10:15 PDT 2019, Sricharan R wrote:
 
-> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
-> Signed-off-by: speriaka <speriaka@codeaurora.org>
-> ---
->  Documentation/devicetree/bindings/arm/qcom.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+> This patch adds support for the global clock controller found on
+> the ipq6018 based devices.
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
-> index f6316ab..7b19028 100644
-> --- a/Documentation/devicetree/bindings/arm/qcom.yaml
-> +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
-> @@ -36,6 +36,7 @@ description: |
->    	mdm9615
->    	ipq8074
->    	sdm845
-> +	ipq6018
+> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
+> Signed-off-by: anusha <anusharao@codeaurora.org>
+> Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
 
-It would be nice if these lists where sorted, but as that's not the
-case, please sort it wrt the other ipq at least.
+Please fix your s-o-b chain, as described in my reply to 1/8..
+
+> ---
+>  drivers/clk/qcom/Kconfig       |    9 +
+>  drivers/clk/qcom/Makefile      |    1 +
+>  drivers/clk/qcom/gcc-ipq6018.c | 5267 ++++++++++++++++++++++++++++++++++++++++
+>  3 files changed, 5277 insertions(+)
+>  create mode 100644 drivers/clk/qcom/gcc-ipq6018.c
+> 
+> diff --git a/drivers/clk/qcom/Kconfig b/drivers/clk/qcom/Kconfig
+> index e1ff83c..e5fb091 100644
+> --- a/drivers/clk/qcom/Kconfig
+> +++ b/drivers/clk/qcom/Kconfig
+> @@ -120,6 +120,15 @@ config IPQ_GCC_8074
+>  	  i2c, USB, SD/eMMC, etc. Select this for the root clock
+>  	  of ipq8074.
+>  
+> +config IPQ_GCC_6018
+
+Please maintain sort order.
+
+> +	tristate "IPQ6018 Global Clock Controller"
+> +	depends on COMMON_CLK_QCOM
+> +	help
+> +	  Support for global clock controller on ipq6018 devices.
+> +	  Say Y if you want to use peripheral devices such as UART, SPI,
+> +	  i2c, USB, SD/eMMC, etc. Select this for the root clock
+> +	  of ipq6018.
+> +
+>  config MSM_GCC_8660
+>  	tristate "MSM8660 Global Clock Controller"
+>  	help
+> diff --git a/drivers/clk/qcom/Makefile b/drivers/clk/qcom/Makefile
+> index f0768fb..025137d 100644
+> --- a/drivers/clk/qcom/Makefile
+> +++ b/drivers/clk/qcom/Makefile
+> @@ -22,6 +22,7 @@ obj-$(CONFIG_APQ_MMCC_8084) += mmcc-apq8084.o
+>  obj-$(CONFIG_IPQ_GCC_4019) += gcc-ipq4019.o
+>  obj-$(CONFIG_IPQ_GCC_806X) += gcc-ipq806x.o
+>  obj-$(CONFIG_IPQ_GCC_8074) += gcc-ipq8074.o
+> +obj-$(CONFIG_IPQ_GCC_6018) += gcc-ipq6018.o
+
+Ditto.
+
+>  obj-$(CONFIG_IPQ_LCC_806X) += lcc-ipq806x.o
+>  obj-$(CONFIG_MDM_GCC_9615) += gcc-mdm9615.o
+>  obj-$(CONFIG_MDM_LCC_9615) += lcc-mdm9615.o
+> diff --git a/drivers/clk/qcom/gcc-ipq6018.c b/drivers/clk/qcom/gcc-ipq6018.c
+[..]
+> +static int gcc_ipq6018_probe(struct platform_device *pdev)
+> +{
+> +	return qcom_cc_probe(pdev, &gcc_ipq6018_desc);
+> +}
+> +
+> +static int gcc_ipq6018_remove(struct platform_device *pdev)
+> +{
+> +	return 0;
+
+Just omit .remove from the gcc_ipq6018_driver instead of providing a
+dummy function.
+
+> +}
+> +
+> +static struct platform_driver gcc_ipq6018_driver = {
+> +	.probe = gcc_ipq6018_probe,
+> +	.remove = gcc_ipq6018_remove,
+> +	.driver = {
+> +		.name   = "qcom,gcc-ipq6018",
+> +		.owner  = THIS_MODULE,
+
+Don't specify .owner in platform drivers.
+
+[..]
+> +MODULE_DESCRIPTION("Qualcomm Technologies, Inc. GCC IPQ6018 Driver");
+> +MODULE_LICENSE("GPL v2");
+> +MODULE_ALIAS("platform:gcc-ipq6018");
+
+This modalias won't be used.
 
 Regards,
 Bjorn
-
->  
->    The 'board' element must be one of the following strings:
->  
-> @@ -45,6 +46,7 @@ description: |
->    	mtp
->    	sbc
->    	hk01
-> +	cp01-c1
->  
->    The 'soc_version' and 'board_version' elements take the form of v<Major>.<Minor>
->    where the minor number may be omitted when it's zero, i.e.  v1.0 is the same
-> -- 
-> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum, hosted by The Linux Foundation
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
