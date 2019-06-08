@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBBB539AA8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 06:01:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CBCB39AA9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 06:02:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/t2wBZl6Dv/Jq2TdQbsWq3BVIxi8oIN+x/Ls+g1ig1M=; b=IxCRv+11cEQ7kc
-	Equ+r3whawKk4GlLUUHpq86oCwLvbT0seqia+5djfNCFJdWvMPu1rLh9A3topSFUVpInwQY8tVGq2
-	IQYimabHjnIGzLdo/wwE20wXlvtDqPKI876NoUWq9wHQ1XbEQGhEEReqR7I+4tYiAP4zJ1zMOHArQ
-	AtyD3YBjRUsn81uQC1FEwkPK83FQbt8uyhFEq58JiYhx2MO+dCe2SrR0ptc+ybnVv1MvbGynUrbQt
-	XfsODdqhI8NqwgZgxI1VZ7jgsr8pB2dQXjPFFuk48UQ3cPtEhkk6wU7J5sflvg8Bhas5yYHQjjsws
-	q4obLddkNos9sLT/1l1g==;
+	List-Owner; bh=Ff5AK155glZ+JgLCAVzBpf2n6bRry5C+5RczlbYsevo=; b=NdV7i2lls9u7Vd
+	2D+dcDvK7U7HV2AVl9mDTIVGcCOvt30jgmHYbbaa1UT7l181jGe8whlG+kfgBJqvryn+3wzouFuh4
+	JDwkblfD7p1mIbV98VMiC/qVaYmu90RaxyA/Z4JVTyhjczNkYDxKlsm1KI96zU6XsihOGU21Iyq8z
+	Z1odbMy2C7GFA+hsWjFrTu05HeBgPLyNjERPkvdYyf6ae5F03UU8sptONVlUJk4QZ1vlNfR6KZnT0
+	OSa5poX1zSVThl4lO1zqTeA0Q3MisMDkT3b09sBNU12ibkPwtnlJpVt9Xtm60o9+XUiJ6nn0F0XAE
+	91EgQAfe+BOJJ07RiJJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZSXz-0003l7-Ry; Sat, 08 Jun 2019 04:01:40 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hZSYW-0005K9-Ml; Sat, 08 Jun 2019 04:02:12 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZSVv-0003dY-Q2
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 03:59:42 +0000
-Received: by mail-pf1-x443.google.com with SMTP id a186so2236639pfa.5
+ id 1hZSWq-0003oP-SY
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 04:00:30 +0000
+Received: by mail-pl1-x644.google.com with SMTP id go2so1529301plb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Jun 2019 20:59:30 -0700 (PDT)
+ Fri, 07 Jun 2019 21:00:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=rJIAAqD1NAp4Th9vkRNxbBLJIPc3y8ChkLIZvf3dmAk=;
- b=U7O6NbXBNIeRlPVLj5xwiYB9yIq5HbXkmt1o7eZLIHcCi1sfFtD4pKc4GGOrbqMYRh
- sgIk+ERejfY1WzlSSBSK2Vn9ctskkWUfC7d9RXEYuV+TF3EleJl2nI9tZYJCJJbjZfXj
- ev4abqGBRmVAB5Xa6TnqWXyvladDJfFjes7a4=
+ bh=YJBSSsNH8TcUO3Ycp4J72yQtEEm/T/jL9xlaGf6pvZI=;
+ b=SIGHIuBbHjdFD2NYvbt1juZyNlfYo8T13G3oRQwScPFyvz27E5QmOWxjQJHoK99WBn
+ Ze60epVcGs+lOMqYkRKqCgC9UKlerLVaaZ1FhvQY+1i8DraNj5oIlnKwiTKses761SQn
+ gTwBZBGZ3BV+37p5XRC1XuqiURHbiOTUskj5E=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=rJIAAqD1NAp4Th9vkRNxbBLJIPc3y8ChkLIZvf3dmAk=;
- b=bN7ch9majV7NtzD+R1zbhIcGdb8CPppZfjMOMxCQUV86zmvKHxoCqIubQbVbAw13Mu
- H2WHrnyE7jz3mGCI2TTOgUYZZjy+xk5UiXCS87pU/lIHtqBq/Cb3Ycc+qfGWAWN2oDaV
- +AnBS/jx50BzwNfs6TGDt9bIPhMcS/Xypf8N0v3InMT/73ydxCHa4/lZ8fdNy9091U93
- fNVxmmuRacqy7e3pWgEPQJ+Aw6uvJRE+0qQQmCh0Jr5KgCb+QHFAWLwBAvBduDrIOSpV
- xXZ5DOGi+PqeSW5U8V3tS7vf52HGgM5CwwIwp8CbEfmz/cgM2jcuvNg8t2G547x3LG7D
- Gw2w==
-X-Gm-Message-State: APjAAAWgu4ZxCs2e5X3E4pPLpF/VgFly3s9giTuNCmq931WMdvz0BYCH
- v0DyL1zh6yFIziKYtrQIhGUQ3g==
-X-Google-Smtp-Source: APXvYqwFvS5ZtgK4hv3bppgp+xNWkWaUdmJ6Dck4NUo25EMo4bji/jhdzX5h+4T1rhnDZmDRvB93qA==
-X-Received: by 2002:a17:90a:aa85:: with SMTP id
- l5mr8851590pjq.69.1559966359909; 
- Fri, 07 Jun 2019 20:59:19 -0700 (PDT)
+ bh=YJBSSsNH8TcUO3Ycp4J72yQtEEm/T/jL9xlaGf6pvZI=;
+ b=MGkyytsTh2nFxyqsCQ8qR7EuIFH2MQTRFFGFf7Vjf4LoyD1OHnQw5gMqG/W0+QwxgC
+ FMDVAgopc0ahCzNcEbag1b3ptoIUys4Usn06capZH8lU7ypzRN4QXHulLRmHtrcYdVNY
+ HH7ecTBKG582k4h/v5Qh/Ncma43ySvMuUi35ATK+E8/l9OK1mWL7OdQcLp39ar6HaquA
+ k4Bv3WgprzTG1lFsKTSfydksBu2LhRXo/87pLRYgpdC8Olxu1AMjtb6+C0K/NYRklbBd
+ 4X59yzyGlqZq0oOkgV/7Re7rI3rj7x0QO2/s0BQWvl0EAaFGlxZ0GJV8HEtaMyHWq5Ux
+ Wqdg==
+X-Gm-Message-State: APjAAAVBib/xldrZwS94hQ/Y8MDD2bgBI5zEQG3MdutkxR58KyXFXjPn
+ ixp69xVetuXc5cBDqAZUMKaljA==
+X-Google-Smtp-Source: APXvYqzHeK0TqpcqthfQS0PvnOaTM79D0qX0jOvsUb1vmxMb45KBYDAyFtX8G3vNYgX7ILuQ8oms2A==
+X-Received: by 2002:a17:902:a516:: with SMTP id
+ s22mr20509311plq.178.1559966427983; 
+ Fri, 07 Jun 2019 21:00:27 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id o70sm4127428pfo.33.2019.06.07.20.59.18
+ by smtp.gmail.com with ESMTPSA id q1sm6873405pfb.156.2019.06.07.21.00.27
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 07 Jun 2019 20:59:19 -0700 (PDT)
-Date: Fri, 7 Jun 2019 20:59:18 -0700
+ Fri, 07 Jun 2019 21:00:27 -0700 (PDT)
+Date: Fri, 7 Jun 2019 21:00:26 -0700
 From: Kees Cook <keescook@chromium.org>
 To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v16 06/16] mm, arm64: untag user pointers in mm/gup.c
-Message-ID: <201906072059.7D80BA0@keescook>
+Subject: Re: [PATCH v16 07/16] mm, arm64: untag user pointers in
+ get_vaddr_frames
+Message-ID: <201906072059.69C8284A0E@keescook>
 References: <cover.1559580831.git.andreyknvl@google.com>
- <e1f6d268135f683fd70c2af27e75f694d7ffaf48.1559580831.git.andreyknvl@google.com>
+ <da1d0e0f6d69c15a12987379e372182f416cbc02.1559580831.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e1f6d268135f683fd70c2af27e75f694d7ffaf48.1559580831.git.andreyknvl@google.com>
+In-Reply-To: <da1d0e0f6d69c15a12987379e372182f416cbc02.1559580831.git.andreyknvl@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_205933_842833_EE222718 
-X-CRM114-Status: GOOD (  19.20  )
+X-CRM114-CacheID: sfid-20190607_210029_098132_01107B86 
+X-CRM114-Status: GOOD (  16.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,8 +101,8 @@ Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
  Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
  dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
- Felix Kuehling <Felix.Kuehling@amd.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>, Matthew Wilcox <willy@infradead.org>,
+ linux-kselftest@vger.kernel.org, Felix Kuehling <Felix.Kuehling@amd.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
  linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
@@ -127,19 +128,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 06:55:08PM +0200, Andrey Konovalov wrote:
+On Mon, Jun 03, 2019 at 06:55:09PM +0200, Andrey Konovalov wrote:
 > This patch is a part of a series that extends arm64 kernel ABI to allow to
 > pass tagged user pointers (with the top byte set to something else other
 > than 0x00) as syscall arguments.
 > 
-> mm/gup.c provides a kernel interface that accepts user addresses and
-> manipulates user pages directly (for example get_user_pages, that is used
-> by the futex syscall). Since a user can provided tagged addresses, we need
-> to handle this case.
+> get_vaddr_frames uses provided user pointers for vma lookups, which can
+> only by done with untagged pointers. Instead of locating and changing
+> all callers of this function, perform untagging in it.
 > 
-> Add untagging to gup.c functions that use user addresses for vma lookups.
-> 
-> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 
 Reviewed-by: Kees Cook <keescook@chromium.org>
@@ -147,31 +144,22 @@ Reviewed-by: Kees Cook <keescook@chromium.org>
 -Kees
 
 > ---
->  mm/gup.c | 4 ++++
->  1 file changed, 4 insertions(+)
+>  mm/frame_vector.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/mm/gup.c b/mm/gup.c
-> index ddde097cf9e4..c37df3d455a2 100644
-> --- a/mm/gup.c
-> +++ b/mm/gup.c
-> @@ -802,6 +802,8 @@ static long __get_user_pages(struct task_struct *tsk, struct mm_struct *mm,
->  	if (!nr_pages)
->  		return 0;
+> diff --git a/mm/frame_vector.c b/mm/frame_vector.c
+> index c64dca6e27c2..c431ca81dad5 100644
+> --- a/mm/frame_vector.c
+> +++ b/mm/frame_vector.c
+> @@ -46,6 +46,8 @@ int get_vaddr_frames(unsigned long start, unsigned int nr_frames,
+>  	if (WARN_ON_ONCE(nr_frames > vec->nr_allocated))
+>  		nr_frames = vec->nr_allocated;
 >  
 > +	start = untagged_addr(start);
 > +
->  	VM_BUG_ON(!!pages != !!(gup_flags & FOLL_GET));
->  
->  	/*
-> @@ -964,6 +966,8 @@ int fixup_user_fault(struct task_struct *tsk, struct mm_struct *mm,
->  	struct vm_area_struct *vma;
->  	vm_fault_t ret, major = 0;
->  
-> +	address = untagged_addr(address);
-> +
->  	if (unlocked)
->  		fault_flags |= FAULT_FLAG_ALLOW_RETRY;
->  
+>  	down_read(&mm->mmap_sem);
+>  	locked = 1;
+>  	vma = find_vma_intersection(mm, start, start + 1);
 > -- 
 > 2.22.0.rc1.311.g5d7573a151-goog
 > 
