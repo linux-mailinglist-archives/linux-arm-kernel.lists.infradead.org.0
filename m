@@ -2,97 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C16539FD2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 15:05:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C24A39FD7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Jun 2019 15:08:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m5IPWGcX7OEvODscaPKJJBOk4wgjCO00YKNH8SGQ9r8=; b=bIO89RjaWlj2P5
-	wu3Ne0Zp5ldB5DxazOlOL3kRMxYtJEmlOSio6bkQpjGQzRcWq1yn4+tSJxSel4+1sDUTkpPTWpCik
-	o9hWKzSl4dqNKBqEaUu+dgB6/VSUG9LU8+sjnhKfdr4URTk9+YraTfrE/7R5o5b+rWmHoJii+6O92
-	XtAKp3x5VP6G5PFNNpX0I74R3/YLdfikEljTwXiHj/h8XOfLYsP08ghJz7+lHdpfEyfxW1XrRg3Kg
-	WR4UFuk0jAD/5k8fN5EAIFpzOithLQNRIBxkPdwQkQZzFFQ4hVuLurAUVFH8a/s/i38p07XmHEctf
-	sdOWU8AYj6W4jz6YQd5w==;
+	List-Owner; bh=suypQg1VPVf7oQoNfPKotl7BKlTHRrKMwZ6Q55eg7OU=; b=Pp0L2IpWfQx46Q
+	A8LUmLIgqaZuxyaoamF1suWzG9mj/xF/UdxEt3wL3rlbglQXnsIaMBPh3R0/95BFjf6s2rYufCAoj
+	igFbe3KnrRYel0iNG0D8YOJPDJ+vq8M/bLe8xYjSZjyy+ubCQg/rGfSrYqQPCLgKjrXir42xAhFqH
+	rwNpcYjb7MoYwSfp/wsdRzFNG+CnprnKJcJSWNc60INaIjk78pWp9YLG4BdYI5meqq0JNX1HMNsPI
+	9Z0pW7h/ob+zefHVTVNOUcm7//ylM1r09uyROXjX7zgadw/94bizW8ZIbxbPhXrJ2KWcSacVjxjFm
+	n7lcQsADTrfxoNu91dYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZb1y-0002FB-5Z; Sat, 08 Jun 2019 13:05:10 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hZb5Z-00040b-RR; Sat, 08 Jun 2019 13:08:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZb1j-0002ED-8B
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Jun 2019 13:04:56 +0000
-Received: by mail-pg1-x543.google.com with SMTP id v11so2599549pgl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 08 Jun 2019 06:04:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=T8Ya1o7hhHocdfUGkwSQa9Us1KpqtbBriW+VXdzuGQk=;
- b=YkK7jUNgGVVkZQu6CN2ro5kXiPOm55Koi65N+e63Nk1jeQHuB9FrgTxkFWU06/7kZ6
- rIFzAkGp/7pjO4FUbWrQmw6gnsKiLLk9kpFDOlwSblEcEZbQObVJGuO/EUFBMmfHpyJ1
- p3ZOEo4IGa9jac2tpr6iWIEemUI4K6X953EiM9qbEA6yV2y3TNmMzX7jVnFp08r37mYN
- K7/iza1lowAnvxxiM8Ygy1tqbznI3VtKBd2+zUrjzAp9kRKnlPm5vQ6lG5A8XtJiywvR
- WpVa2LrShvhacagMlJwhyR73FQuMRjB8svBHXIyTYhnoxwsJTTmQ2RjdEb7hXkghSilu
- CasA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=T8Ya1o7hhHocdfUGkwSQa9Us1KpqtbBriW+VXdzuGQk=;
- b=tYb2JW8wr5ParMtf3t/U2J/BneJyjJ1dtkdaXIqp/W2tWzrmPkLDs7sd+VcYINegXK
- SSoTKMlFsNBeqfGpf6d4OpW7qjk4IzQaXprFF0csPqO31LNFFzsg9JHJ/bu1Ix1fVklF
- oYIyf5/UWR8cN+4HQv4rSdfNRGbCh+IHxemZa5PjV+HbcQ+nfderU/jAb2gGuR1SJhwb
- Sw38pq0WNxKg8nCCIVpv3TyJpFKTFeFYB4Cg52QHd5rR94hADkN7U9AsWXis5F7wTwAq
- H+6vbpPidRpPX8S7rfIKJkVSw8MSMP40U6U2UzJaUNes0Geuge4Ty467gKJRHSV6kiLr
- xmYg==
-X-Gm-Message-State: APjAAAXHFiC1i5wM+/Nmh6KonnF9Lzo5nKTd3xOfsRI7FNDHfdS7LGt1
- vfDyoq6UvBOIcBHUMv34ywU=
-X-Google-Smtp-Source: APXvYqzaSSwafnMqzsoKd0z9DI5JL4+Rdt6pOO14OK6m1H70Ndr0j/nT4mOEqzMp2/NOC7C37xtK0A==
-X-Received: by 2002:a62:7d13:: with SMTP id y19mr6104431pfc.62.1559999094113; 
- Sat, 08 Jun 2019 06:04:54 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id q125sm8246038pfq.62.2019.06.08.06.04.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 08 Jun 2019 06:04:53 -0700 (PDT)
-Date: Sat, 8 Jun 2019 06:04:52 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Anson.Huang@nxp.com
-Subject: Re: [PATCH V4 RESEND 1/3] dt-bindings: watchdog: move i.MX system
- controller watchdog binding to SCU
-Message-ID: <20190608130452.GA22130@roeck-us.net>
-References: <20190527070317.16904-1-Anson.Huang@nxp.com>
+ id 1hZb5Q-0003zG-9K; Sat, 08 Jun 2019 13:08:45 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D235C214D8;
+ Sat,  8 Jun 2019 13:08:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1559999322;
+ bh=qibYb2+Tw2dU1CRX2K6Pe0fUHlSQcrMnJPszrmFTEhU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=kTRP1lkBO7Th+hJvCqVvf+XqzIVK/0uWu3eIEfvOUMeo08sbbZhNqAWA4tBhpRAAU
+ cxZT+WUFVo+JH59Hs5VOuMgzNoEe2MsbRoE+A3YnHo+I1inieh/m26DbgtMebGfp3g
+ QTlveRLXp53g509Wy8dIXpS6xQCnxcwBp/vZKkEw=
+Date: Sat, 8 Jun 2019 14:08:37 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Guillaume La Roque <glaroque@baylibre.com>
+Subject: Re: [PATCH 1/3] Documentation: dt-bindings: add the Amlogic Meson
+ Temperature Sensor
+Message-ID: <20190608140837.34a499a4@archlinux>
+In-Reply-To: <20190604144714.2009-2-glaroque@baylibre.com>
+References: <20190604144714.2009-1-glaroque@baylibre.com>
+ <20190604144714.2009-2-glaroque@baylibre.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190527070317.16904-1-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_060455_306392_079EF7D4 
-X-CRM114-Status: GOOD (  19.69  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190608_060844_344531_BDB03356 
+X-CRM114-Status: GOOD (  16.87  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,100 +77,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, aisheng.dong@nxp.com, ulf.hansson@linaro.org,
- linux-watchdog@vger.kernel.org, devicetree@vger.kernel.org, festevam@gmail.com,
- s.hauer@pengutronix.de, peng.fan@nxp.com, daniel.baluta@nxp.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, wim@linux-watchdog.org, shawnguo@kernel.org,
+Cc: devicetree@vger.kernel.org, linux-iio@vger.kernel.org, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 03:03:15PM +0800, Anson.Huang@nxp.com wrote:
-> From: Anson Huang <Anson.Huang@nxp.com>
-> 
-> i.MX system controller watchdog depends on SCU driver to support
-> interrupt function, so it needs to be subnode of SCU node in DT,
-> binding doc should be moved to fsl,scu.txt as well.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
+On Tue,  4 Jun 2019 16:47:12 +0200
+Guillaume La Roque <glaroque@baylibre.com> wrote:
 
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+> This adds the devicetree binding documentation for the Temperature
+> Sensor found in the Amlogic Meson G12 SoCs.
+> Currently only the G12A SoCs are supported.
+> 
+> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
+
+Hi Guillaume,
+
+I'm afraid we decided a month or so back that all new dt bindings proposed
+for IIO drivers should be in yaml format.
+
+Please reformat this appropriately for v2 and make sure to run
+make dt_bindings_check.
+
+There are a few examples in tree already, but we are deliberately
+not converting existing bindings too quickly to avoid overloading
+reviewers.
+
+Thanks,
+
+Jonathan
 
 > ---
-> No changes, just rebase the patch to top of linux-next.
-> ---
->  .../devicetree/bindings/arm/freescale/fsl,scu.txt  | 15 ++++++++++++++
->  .../bindings/watchdog/fsl-imx-sc-wdt.txt           | 24 ----------------------
->  2 files changed, 15 insertions(+), 24 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt
+>  .../iio/temperature/amlogic,meson-tsensor.txt | 31 +++++++++++++++++++
+>  1 file changed, 31 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> index f378922..a575e42 100644
-> --- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> @@ -145,6 +145,16 @@ Optional Child nodes:
->  - Data cells of ocotp:
->    Detailed bindings are described in bindings/nvmem/nvmem.txt
->  
-> +Watchdog bindings based on SCU Message Protocol
-> +------------------------------------------------------------
+> diff --git a/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
+> new file mode 100644
+> index 000000000000..d064db0e9cac
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
+> @@ -0,0 +1,31 @@
+> +* Amlogic Meson Temperature Sensor
 > +
 > +Required properties:
-> +- compatible: should be:
-> +              "fsl,imx8qxp-sc-wdt"
-> +              followed by "fsl,imx-sc-wdt";
+> +- compatible:	depending on the SoC and the position of the sensor,
+> +		this should be one of:
+> +		- "amlogic,meson-g12a-cpu-tsensor" for the CPU G12A SoC sensor
+> +		- "amlogic,meson-g12a-ddr-tsensor" for the DDR G12A SoC sensor
+> +		followed by the common :
+> +		- "amlogic,meson-g12a-tsensor" for G12A SoC family
+> +- reg:		the physical base address and length of the registers
+> +- interrupts:	the interrupt indicating end of sampling
+> +- clocks:	phandle identifier for the reference clock of temperature sensor
+> +- #io-channel-cells: must be 1, see ../iio-bindings.txt
+> +- amlogic,ao-secure: phandle to the ao-secure syscon
+> +
 > +Optional properties:
-> +- timeout-sec: contains the watchdog timeout in seconds.
+> +- amlogic,critical-temperature: temperature value in milli degrees Celsius
+> +	to set automatic reboot on too high temperature
 > +
->  Example (imx8qxp):
->  -------------
->  aliases {
-> @@ -207,6 +217,11 @@ firmware {
->  		rtc: rtc {
->  			compatible = "fsl,imx8qxp-sc-rtc";
->  		};
-> +
-> +		watchdog {
-> +			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
-> +			timeout-sec = <60>;
-> +		};
->  	};
->  };
->  
-> diff --git a/Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt b/Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt
-> deleted file mode 100644
-> index 02b87e9..0000000
-> --- a/Documentation/devicetree/bindings/watchdog/fsl-imx-sc-wdt.txt
-> +++ /dev/null
-> @@ -1,24 +0,0 @@
-> -* Freescale i.MX System Controller Watchdog
-> -
-> -i.MX system controller watchdog is for i.MX SoCs with system controller inside,
-> -the watchdog is managed by system controller, users can ONLY communicate with
-> -system controller from secure mode for watchdog operations, so Linux i.MX system
-> -controller watchdog driver will call ARM SMC API and trap into ARM-Trusted-Firmware
-> -for watchdog operations, ARM-Trusted-Firmware is running at secure EL3 mode and
-> -it will request system controller to execute the watchdog operation passed from
-> -Linux kernel.
-> -
-> -Required properties:
-> -- compatible:	Should be :
-> -		"fsl,imx8qxp-sc-wdt"
-> -		followed by "fsl,imx-sc-wdt";
-> -
-> -Optional properties:
-> -- timeout-sec : Contains the watchdog timeout in seconds.
-> -
-> -Examples:
-> -
-> -watchdog {
-> -	compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
-> -	timeout-sec = <60>;
-> -};
+> +Example:
+> +	cpu_temp: temperature-sensor@ff634800 {
+> +		compatible = "amlogic,meson-g12a-cpu-tsensor",
+> +			     "amlogic,meson-g12a-tsensor";
+> +		reg = <0x0 0xff634800 0x0 0x50>;
+> +		interrupts = <GIC_SPI 35 IRQ_TYPE_EDGE_RISING>;
+> +		clocks = <&clkc CLKID_TS>;
+> +		status = "okay";
+> +		#io-channel-cells = <1>;
+> +		amlogic,meson-ao-secure = <&sec_AO>;
+> +		amlogic,critical-temperature = <115000>;
+> +	};
+
 
 _______________________________________________
 linux-arm-kernel mailing list
