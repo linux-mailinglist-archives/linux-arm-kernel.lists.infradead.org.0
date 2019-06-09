@@ -2,67 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 927463A526
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 13:27:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CB6B3A534
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 13:51:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n2En5RFGbrXDRIlvfdwMtGSAlRcF7KMtG1RswPdYMWU=; b=eI1AW0WrZe5JgU
-	M+LEWaflooEkORfpRNtQvzBhNn9/lEUjB2vjaWph+vhmzjptjoJ9x2v6hqfu3yq2Zk8XL/jqNbnUi
-	gwyRxCaU1+69R49m3uX1VbLev9ZiAEIoA6F1xCe1t+oZFsfWrXRCqMjoO/5l0G34PhxMWk//xiT2S
-	GIOGUy9UkUtjDep+Dyv0c24P4jMF2VUbyFLDNDqVXCv5W3m5UZnOKLsd+N7qc6zQi8A0T3LIsz5wn
-	eZxwYIzjXeA+nKZ6RrX7T2z+e/tg+qiZKO5U4QPpAI823d0+mrtFuChjOTvYfVGbqzCFqYHwFg50c
-	4Dew/S7dO59NKNAvVe+w==;
+	List-Owner; bh=zqGcWPnwtlDgFrgUxyEYqVmX6sxA1UbhiQq5ty5CDIw=; b=rmco9xXHODDuTW
+	9Hff1i2gZUvdza0Y+qdQMA9IvhgKO5lNqtS8LjTOgfX+MdVAtRs3tBOxXCQtdiPj5ujHQTH0lQrSI
+	8tZSuoPx/L7T8qQzGtwirQQMXx00I2Uzxg+qIbuYGWXeMsC8AFAg7/emYygFi46/Wq/2H4bRPw6Vd
+	HptwF+HTijYjGqb0qLYk1aiYpdTiXD3c95ILxLwS8c8jOPoqxUNeqhRdgyaoEcbCn9LIcRnkhX10q
+	iKAWuv3U5Jq9e8mJNVgNnR5yzYYgVi2LtAV6Lv6J9C3M7TUA1lXroK5IkMW+nxnNcU8UY4nm7VT70
+	PjVK6387kgQufhYDXFuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZvzG-0008Hr-83; Sun, 09 Jun 2019 11:27:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hZwM6-0007gO-JU; Sun, 09 Jun 2019 11:51:22 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZvz6-0008HS-7S
- for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 11:27:38 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
+ id 1hZwLy-0007fb-8o; Sun, 09 Jun 2019 11:51:16 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 256BB20693;
- Sun,  9 Jun 2019 11:27:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560079655;
- bh=il2uZWxdZ4yBrY3rCDJSjTc4H6loEzjlxAbzilUrafw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=P4VNhiwNNsMpBnwi/cfMSj56D7BNgoJAjH7x5JBuDGZK4pNSXzkJbyRrD50OFvxrO
- cux5khwGG0a0AzDpj+Uc9i6xocOEigX8oGT3fN7eBnGPQLmmfs96dZfrMHeWGfRqfa
- XOBfGRyRKz0I52i2UQig9VU8iwKv0ROnldXL5X3Y=
-Date: Sun, 9 Jun 2019 13:27:32 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Dragan Cvetic <dragan.cvetic@xilinx.com>
-Subject: Re: [PATCH V5 04/11] misc: xilinx_sdfec: Store driver config and state
-Message-ID: <20190609112732.GA31438@kroah.com>
-References: <1560038656-380620-1-git-send-email-dragan.cvetic@xilinx.com>
- <1560038656-380620-5-git-send-email-dragan.cvetic@xilinx.com>
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 1658F20030;
+ Sun,  9 Jun 2019 13:51:07 +0200 (CEST)
+Date: Sun, 9 Jun 2019 13:51:05 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [2/2] drm/panel: support for AUO kd101n80-45na wuxga dsi video
+ mode panel
+Message-ID: <20190609115105.GA31079@ravnborg.org>
+References: <20190608112342.64416-1-jitao.shi@mediatek.com>
+ <20190608112342.64416-2-jitao.shi@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1560038656-380620-5-git-send-email-dragan.cvetic@xilinx.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <20190608112342.64416-2-jitao.shi@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=dqr19Wo4 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=mpaa-ttXAAAA:8
+ a=e5mUnYsNAAAA:8 a=3arX_EwEDu8COwomX1QA:9 a=CjuIK1q_8ugA:10
+ a=6heAxKwa5pAsJatQ0mat:22 a=Vxmtnl_E_bksehYqCbjh:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_042736_304180_E3B3E67A 
-X-CRM114-Status: GOOD (  28.98  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190609_045114_664021_DCED8C8D 
+X-CRM114-Status: GOOD (  24.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.14 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,516 +68,444 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, arnd@arndb.de,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- Derek Kiernan <derek.kiernan@xilinx.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, Ajay Kumar <ajaykumar.rs@samsung.com>,
+ Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
+ yingjoe.chen@mediatek.com, Thierry Reding <treding@nvidia.com>,
+ Sean Paul <seanpaul@chromium.org>, linux-pwm@vger.kernel.org,
+ Pawel Moll <pawel.moll@arm.com>, Ian Campbell <ijc+devicetree@hellion.org.uk>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ Matthias Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
+ srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 09, 2019 at 01:04:09AM +0100, Dragan Cvetic wrote:
-> Stores configuration based on parameters from the DT
-> node and values from the SD-FEC core plus reads
-> the default state from the SD-FEC core. To obtain
-> values from the core register read, write capabilities
-> have been added plus related register map details.
+Hi Jitao.
+
+Thanks for another panel driver.
+
+The comments for the panel-boe-tv101wum-nl6 diver to extent
+applies to this driver too.
+Please address these and I will do a proper review of the next version.
+
+I notice that error handlign is a little bit less in this driver.
+consier what approch to use and see if you can align between these
+drivers, and if in doubt use panel-simple as your role model.
+
+	Sam
+
+On Sat, Jun 08, 2019 at 07:23:42PM +0800, Jitao Shi wrote:
+> Add driver for AUO kd101n80-45na panel.
+> This panel supports the resolution 1200x1920, dsi video mode
+> and 4 lanes.
 > 
-> Tested-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
-> Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
-> Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 > ---
->  drivers/misc/xilinx_sdfec.c      | 293 +++++++++++++++++++++++++++++++++++++++
->  include/uapi/misc/xilinx_sdfec.h | 138 ++++++++++++++++++
->  2 files changed, 431 insertions(+)
->  create mode 100644 include/uapi/misc/xilinx_sdfec.h
+>  drivers/gpu/drm/panel/Kconfig                 |  10 +
+>  drivers/gpu/drm/panel/Makefile                |   1 +
+>  .../gpu/drm/panel/panel-auo-kd101n80-45na.c   | 352 ++++++++++++++++++
+>  3 files changed, 363 insertions(+)
+>  create mode 100644 drivers/gpu/drm/panel/panel-auo-kd101n80-45na.c
 > 
-> diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-> index 4524677..ddfca54 100644
-> --- a/drivers/misc/xilinx_sdfec.c
-> +++ b/drivers/misc/xilinx_sdfec.c
-> @@ -20,8 +20,89 @@
->  #include <linux/slab.h>
->  #include <linux/clk.h>
->  
-> +#include <uapi/misc/xilinx_sdfec.h>
+> diff --git a/drivers/gpu/drm/panel/Kconfig b/drivers/gpu/drm/panel/Kconfig
+> index e36dbb4df867..f5cd5af9ce42 100644
+> --- a/drivers/gpu/drm/panel/Kconfig
+> +++ b/drivers/gpu/drm/panel/Kconfig
+> @@ -272,4 +272,14 @@ config DRM_PANEL_TRULY_NT35597_WQXGA
+>  	help
+>  	  Say Y here if you want to enable support for Truly NT35597 WQXGA Dual DSI
+>  	  Video Mode panel
 > +
->  static int xsdfec_ndevs;
->  
-> +/* Xilinx SDFEC Register Map */
-> +/* CODE_WRI_PROTECT Register */
-> +#define XSDFEC_CODE_WR_PROTECT_ADDR (0x4)
+> +config DRM_PANEL_AUO_KD101N80_45NA
+> +	tristate "AUO KD101N80_45NA 1200x1920 panel"
+> +	depends on OF
+> +	depends on DRM_MIPI_DSI
+> +	depends on BACKLIGHT_CLASS_DEVICE
+> +	help
+> +	  Say Y here if you want to support for AUO KD101N80_45NA WUXGA PANEL
+> +	  DSI Video Mode panel
 > +
-> +/* ACTIVE Register */
-> +#define XSDFEC_ACTIVE_ADDR (0x8)
-> +#define XSDFEC_IS_ACTIVITY_SET (0x1)
-> +
-> +/* AXIS_WIDTH Register */
-> +#define XSDFEC_AXIS_WIDTH_ADDR (0xC)
-> +#define XSDFEC_AXIS_DOUT_WORDS_LSB (5)
-> +#define XSDFEC_AXIS_DOUT_WIDTH_LSB (3)
-> +#define XSDFEC_AXIS_DIN_WORDS_LSB (2)
-> +#define XSDFEC_AXIS_DIN_WIDTH_LSB (0)
-> +
-> +/* AXIS_ENABLE Register */
-> +#define XSDFEC_AXIS_ENABLE_ADDR (0x10)
-> +#define XSDFEC_AXIS_OUT_ENABLE_MASK (0x38)
-> +#define XSDFEC_AXIS_IN_ENABLE_MASK (0x7)
-> +#define XSDFEC_AXIS_ENABLE_MASK                                                \
-> +	(XSDFEC_AXIS_OUT_ENABLE_MASK | XSDFEC_AXIS_IN_ENABLE_MASK)
-> +
-> +/* FEC_CODE Register */
-> +#define XSDFEC_FEC_CODE_ADDR (0x14)
-> +
-> +/* ORDER Register Map */
-> +#define XSDFEC_ORDER_ADDR (0x18)
-> +
-> +/* Interrupt Status Register */
-> +#define XSDFEC_ISR_ADDR (0x1C)
-> +/* Interrupt Status Register Bit Mask */
-> +#define XSDFEC_ISR_MASK (0x3F)
-> +
-> +/* Write Only - Interrupt Enable Register */
-> +#define XSDFEC_IER_ADDR (0x20)
-> +/* Write Only - Interrupt Disable Register */
-> +#define XSDFEC_IDR_ADDR (0x24)
-> +/* Read Only - Interrupt Mask Register */
-> +#define XSDFEC_IMR_ADDR (0x28)
-> +
-> +/* ECC Interrupt Status Register */
-> +#define XSDFEC_ECC_ISR_ADDR (0x2C)
-> +/* Single Bit Errors */
-> +#define XSDFEC_ECC_ISR_SBE_MASK (0x7FF)
-> +/* PL Initialize Single Bit Errors */
-> +#define XSDFEC_PL_INIT_ECC_ISR_SBE_MASK (0x3C00000)
-> +/* Multi Bit Errors */
-> +#define XSDFEC_ECC_ISR_MBE_MASK (0x3FF800)
-> +/* PL Initialize Multi Bit Errors */
-> +#define XSDFEC_PL_INIT_ECC_ISR_MBE_MASK (0x3C000000)
-> +/* Multi Bit Error to Event Shift */
-> +#define XSDFEC_ECC_ISR_MBE_TO_EVENT_SHIFT (11)
-> +/* PL Initialize Multi Bit Error to Event Shift */
-> +#define XSDFEC_PL_INIT_ECC_ISR_MBE_TO_EVENT_SHIFT (4)
-> +/* ECC Interrupt Status Bit Mask */
-> +#define XSDFEC_ECC_ISR_MASK (XSDFEC_ECC_ISR_SBE_MASK | XSDFEC_ECC_ISR_MBE_MASK)
-> +/* ECC Interrupt Status PL Initialize Bit Mask */
-> +#define XSDFEC_PL_INIT_ECC_ISR_MASK                                            \
-> +	(XSDFEC_PL_INIT_ECC_ISR_SBE_MASK | XSDFEC_PL_INIT_ECC_ISR_MBE_MASK)
-> +/* ECC Interrupt Status All Bit Mask */
-> +#define XSDFEC_ALL_ECC_ISR_MASK                                                \
-> +	(XSDFEC_ECC_ISR_MASK | XSDFEC_PL_INIT_ECC_ISR_MASK)
-> +/* ECC Interrupt Status Single Bit Errors Mask */
-> +#define XSDFEC_ALL_ECC_ISR_SBE_MASK                                            \
-> +	(XSDFEC_ECC_ISR_SBE_MASK | XSDFEC_PL_INIT_ECC_ISR_SBE_MASK)
-> +/* ECC Interrupt Status Multi Bit Errors Mask */
-> +#define XSDFEC_ALL_ECC_ISR_MBE_MASK                                            \
-> +	(XSDFEC_ECC_ISR_MBE_MASK | XSDFEC_PL_INIT_ECC_ISR_MBE_MASK)
-> +
-> +/* Write Only - ECC Interrupt Enable Register */
-> +#define XSDFEC_ECC_IER_ADDR (0x30)
-> +/* Write Only - ECC Interrupt Disable Register */
-> +#define XSDFEC_ECC_IDR_ADDR (0x34)
-> +/* Read Only - ECC Interrupt Mask Register */
-> +#define XSDFEC_ECC_IMR_ADDR (0x38)
-> +
-> +/* BYPASS Register */
-> +#define XSDFEC_BYPASS_ADDR (0x3C)
-> +
->  /**
->   * struct xsdfec_clks - For managing SD-FEC clocks
->   * @core_clk: Main processing clock for core
-> @@ -48,6 +129,8 @@ struct xsdfec_clks {
->   * struct xsdfec_dev - Driver data for SDFEC
->   * @regs: device physical base address
->   * @dev: pointer to device struct
-> + * @state: State of the SDFEC device
-> + * @config: Configuration of the SDFEC device
->   * @miscdev: Misc device handle
->   * @error_data_lock: Error counter and states spinlock
->   * @clks: Clocks managed by the SDFEC driver
-> @@ -57,16 +140,220 @@ struct xsdfec_clks {
->  struct xsdfec_dev {
->  	void __iomem *regs;
->  	struct device *dev;
-> +	enum xsdfec_state state;
-> +	struct xsdfec_config config;
->  	struct miscdevice miscdev;
->  	/* Spinlock to protect state_updated and stats_updated */
->  	spinlock_t error_data_lock;
->  	struct xsdfec_clks clks;
->  };
->  
-> +static inline void xsdfec_regwrite(struct xsdfec_dev *xsdfec, u32 addr,
-> +				   u32 value)
-> +{
-> +	dev_dbg(xsdfec->dev, "Writing 0x%x to offset 0x%x", value, addr);
-> +	iowrite32(value, xsdfec->regs + addr);
-> +}
-> +
-> +static inline u32 xsdfec_regread(struct xsdfec_dev *xsdfec, u32 addr)
-> +{
-> +	u32 rval;
-> +
-> +	rval = ioread32(xsdfec->regs + addr);
-> +	dev_dbg(xsdfec->dev, "Read value = 0x%x from offset 0x%x", rval, addr);
-> +	return rval;
-> +}
-> +
-> +static void update_bool_config_from_reg(struct xsdfec_dev *xsdfec,
-> +					u32 reg_offset, u32 bit_num,
-> +					char *config_value)
-> +{
-> +	u32 reg_val;
-> +	u32 bit_mask = 1 << bit_num;
-> +
-> +	reg_val = xsdfec_regread(xsdfec, reg_offset);
-> +	*config_value = (reg_val & bit_mask) > 0;
-> +}
-> +
-> +static void update_config_from_hw(struct xsdfec_dev *xsdfec)
-> +{
-> +	u32 reg_value;
-> +	bool sdfec_started;
-> +
-> +	/* Update the Order */
-> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_ORDER_ADDR);
-> +	xsdfec->config.order = reg_value;
-> +
-> +	update_bool_config_from_reg(xsdfec, XSDFEC_BYPASS_ADDR,
-> +				    0, /* Bit Number, maybe change to mask */
-> +				    &xsdfec->config.bypass);
-> +
-> +	update_bool_config_from_reg(xsdfec, XSDFEC_CODE_WR_PROTECT_ADDR,
-> +				    0, /* Bit Number */
-> +				    &xsdfec->config.code_wr_protect);
-> +
-> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_IMR_ADDR);
-> +	xsdfec->config.irq.enable_isr = (reg_value & XSDFEC_ISR_MASK) > 0;
-> +
-> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_ECC_IMR_ADDR);
-> +	xsdfec->config.irq.enable_ecc_isr =
-> +		(reg_value & XSDFEC_ECC_ISR_MASK) > 0;
-> +
-> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_AXIS_ENABLE_ADDR);
-> +	sdfec_started = (reg_value & XSDFEC_AXIS_IN_ENABLE_MASK) > 0;
-> +	if (sdfec_started)
-> +		xsdfec->state = XSDFEC_STARTED;
-> +	else
-> +		xsdfec->state = XSDFEC_STOPPED;
-> +}
-> +
-> +static u32
-> +xsdfec_translate_axis_width_cfg_val(enum xsdfec_axis_width axis_width_cfg)
-> +{
-> +	u32 axis_width_field = 0;
-> +
-> +	switch (axis_width_cfg) {
-> +	case XSDFEC_1x128b:
-> +		axis_width_field = 0;
-> +		break;
-> +	case XSDFEC_2x128b:
-> +		axis_width_field = 1;
-> +		break;
-> +	case XSDFEC_4x128b:
-> +		axis_width_field = 2;
-> +		break;
-> +	}
-> +
-> +	return axis_width_field;
-> +}
-> +
-> +static u32 xsdfec_translate_axis_words_cfg_val(enum xsdfec_axis_word_include
-> +	axis_word_inc_cfg)
-> +{
-> +	u32 axis_words_field = 0;
-> +
-> +	if (axis_word_inc_cfg == XSDFEC_FIXED_VALUE ||
-> +	    axis_word_inc_cfg == XSDFEC_IN_BLOCK)
-> +		axis_words_field = 0;
-> +	else if (axis_word_inc_cfg == XSDFEC_PER_AXI_TRANSACTION)
-> +		axis_words_field = 1;
-> +
-> +	return axis_words_field;
-> +}
-> +
-> +static int xsdfec_cfg_axi_streams(struct xsdfec_dev *xsdfec)
-> +{
-> +	u32 reg_value;
-> +	u32 dout_words_field;
-> +	u32 dout_width_field;
-> +	u32 din_words_field;
-> +	u32 din_width_field;
-> +	struct xsdfec_config *config = &xsdfec->config;
-> +
-> +	/* translate config info to register values */
-> +	dout_words_field =
-> +		xsdfec_translate_axis_words_cfg_val(config->dout_word_include);
-> +	dout_width_field =
-> +		xsdfec_translate_axis_width_cfg_val(config->dout_width);
-> +	din_words_field =
-> +		xsdfec_translate_axis_words_cfg_val(config->din_word_include);
-> +	din_width_field =
-> +		xsdfec_translate_axis_width_cfg_val(config->din_width);
-> +
-> +	reg_value = dout_words_field << XSDFEC_AXIS_DOUT_WORDS_LSB;
-> +	reg_value |= dout_width_field << XSDFEC_AXIS_DOUT_WIDTH_LSB;
-> +	reg_value |= din_words_field << XSDFEC_AXIS_DIN_WORDS_LSB;
-> +	reg_value |= din_width_field << XSDFEC_AXIS_DIN_WIDTH_LSB;
-> +
-> +	xsdfec_regwrite(xsdfec, XSDFEC_AXIS_WIDTH_ADDR, reg_value);
-> +
-> +	return 0;
-> +}
-> +
->  static const struct file_operations xsdfec_fops = {
->  	.owner = THIS_MODULE,
->  };
->  
-> +static int xsdfec_parse_of(struct xsdfec_dev *xsdfec)
-> +{
-> +	struct device *dev = xsdfec->dev;
-> +	struct device_node *node = dev->of_node;
-> +	int rval;
-> +	const char *fec_code;
-> +	u32 din_width;
-> +	u32 din_word_include;
-> +	u32 dout_width;
-> +	u32 dout_word_include;
-> +
-> +	rval = of_property_read_string(node, "xlnx,sdfec-code", &fec_code);
-> +	if (rval < 0)
-> +		return rval;
-> +
-> +	if (!strcasecmp(fec_code, "ldpc"))
-> +		xsdfec->config.code = XSDFEC_LDPC_CODE;
-> +	else if (!strcasecmp(fec_code, "turbo"))
-> +		xsdfec->config.code = XSDFEC_TURBO_CODE;
-> +	else
-> +		return -EINVAL;
-> +
-> +	rval = of_property_read_u32(node, "xlnx,sdfec-din-words",
-> +				    &din_word_include);
-> +	if (rval < 0)
-> +		return rval;
-> +
-> +	if (din_word_include < XSDFEC_AXIS_WORDS_INCLUDE_MAX)
-> +		xsdfec->config.din_word_include = din_word_include;
-> +	else
-> +		return -EINVAL;
-> +
-> +	rval = of_property_read_u32(node, "xlnx,sdfec-din-width", &din_width);
-> +	if (rval < 0)
-> +		return rval;
-> +
-> +	switch (din_width) {
-> +	/* Fall through and set for valid values */
-> +	case XSDFEC_1x128b:
-> +	case XSDFEC_2x128b:
-> +	case XSDFEC_4x128b:
-> +		xsdfec->config.din_width = din_width;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	rval = of_property_read_u32(node, "xlnx,sdfec-dout-words",
-> +				    &dout_word_include);
-> +	if (rval < 0)
-> +		return rval;
-> +
-> +	if (dout_word_include < XSDFEC_AXIS_WORDS_INCLUDE_MAX)
-> +		xsdfec->config.dout_word_include = dout_word_include;
-> +	else
-> +		return -EINVAL;
-> +
-> +	rval = of_property_read_u32(node, "xlnx,sdfec-dout-width", &dout_width);
-> +	if (rval < 0)
-> +		return rval;
-> +
-> +	switch (dout_width) {
-> +	/* Fall through and set for valid values */
-> +	case XSDFEC_1x128b:
-> +	case XSDFEC_2x128b:
-> +	case XSDFEC_4x128b:
-> +		xsdfec->config.dout_width = dout_width;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	/* Write LDPC to CODE Register */
-> +	xsdfec_regwrite(xsdfec, XSDFEC_FEC_CODE_ADDR, xsdfec->config.code);
-> +
-> +	xsdfec_cfg_axi_streams(xsdfec);
-> +
-> +	return 0;
-> +}
-> +
->  static int xsdfec_clk_init(struct platform_device *pdev,
->  			   struct xsdfec_clks *clks)
->  {
-> @@ -247,6 +534,12 @@ static int xsdfec_probe(struct platform_device *pdev)
->  		goto err_xsdfec_dev;
->  	}
->  
-> +	err = xsdfec_parse_of(xsdfec);
-> +	if (err < 0)
-> +		goto err_xsdfec_dev;
-> +
-> +	update_config_from_hw(xsdfec);
-> +
->  	/* Save driver private data */
->  	platform_set_drvdata(pdev, xsdfec);
->  
-> diff --git a/include/uapi/misc/xilinx_sdfec.h b/include/uapi/misc/xilinx_sdfec.h
+>  endmenu
+> diff --git a/drivers/gpu/drm/panel/Makefile b/drivers/gpu/drm/panel/Makefile
+> index 78e3dc376bdd..1056933bdf2e 100644
+> --- a/drivers/gpu/drm/panel/Makefile
+> +++ b/drivers/gpu/drm/panel/Makefile
+> @@ -28,3 +28,4 @@ obj-$(CONFIG_DRM_PANEL_SITRONIX_ST7701) += panel-sitronix-st7701.o
+>  obj-$(CONFIG_DRM_PANEL_SITRONIX_ST7789V) += panel-sitronix-st7789v.o
+>  obj-$(CONFIG_DRM_PANEL_TPO_TPG110) += panel-tpo-tpg110.o
+>  obj-$(CONFIG_DRM_PANEL_TRULY_NT35597_WQXGA) += panel-truly-nt35597.o
+> +obj-$(CONFIG_DRM_PANEL_AUO_KD101N80_45NA) += panel-auo-kd101n80-45na.o
+> diff --git a/drivers/gpu/drm/panel/panel-auo-kd101n80-45na.c b/drivers/gpu/drm/panel/panel-auo-kd101n80-45na.c
 > new file mode 100644
-> index 0000000..7b47a4c
+> index 000000000000..ab7bfc059e8a
 > --- /dev/null
-> +++ b/include/uapi/misc/xilinx_sdfec.h
-> @@ -0,0 +1,138 @@
-> +/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
+> +++ b/drivers/gpu/drm/panel/panel-auo-kd101n80-45na.c
+> @@ -0,0 +1,352 @@
+> +// SPDX-License-Identifier: GPL-2.0
 > +/*
-> + * Xilinx SD-FEC
-> + *
-> + * Copyright (C) 2016 - 2017 Xilinx, Inc.
-> + *
-> + * Description:
-> + * This driver is developed for SDFEC16 IP. It provides a char device
-> + * in sysfs and supports file operations like open(), close() and ioctl().
+> + * Copyright (c) 2018 MediaTek Inc.
+> + * Author: Jitao Shi <jitao.shi@mediatek.com>
 > + */
-> +#ifndef __XILINX_SDFEC_H__
-> +#define __XILINX_SDFEC_H__
 > +
-> +#include <linux/types.h>
+> +#include <linux/backlight.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/regulator/consumer.h>
 > +
-> +/**
-> + * enum xsdfec_code - Code Type.
-> + * @XSDFEC_TURBO_CODE: Driver is configured for Turbo mode.
-> + * @XSDFEC_LDPC_CODE: Driver is configured for LDPC mode.
-> + *
-> + * This enum is used to indicate the mode of the driver. The mode is determined
-> + * by checking which codes are set in the driver. Note that the mode cannot be
-> + * changed by the driver.
-> + */
-> +enum xsdfec_code {
-> +	XSDFEC_TURBO_CODE = 0,
-> +	XSDFEC_LDPC_CODE,
+> +#include <drm/drmP.h>
+> +#include <drm/drm_crtc.h>
+> +#include <drm/drm_mipi_dsi.h>
+> +#include <drm/drm_panel.h>
+> +
+> +#include <video/mipi_display.h>
+> +
+> +struct auo_panel {
+> +	struct drm_panel base;
+> +	struct mipi_dsi_device *dsi;
+> +
+> +	struct backlight_device *backlight;
+> +	struct regulator *pp1800;
+> +	struct regulator *avee;
+> +	struct regulator *avdd;
+> +	struct gpio_desc *enable_gpio;
+> +
+> +	bool prepared;
+> +	bool enabled;
+> +
+> +	const struct drm_display_mode *mode;
 > +};
 > +
-> +/**
-> + * enum xsdfec_order - Order
-> + * @XSDFEC_MAINTAIN_ORDER: Maintain order execution of blocks.
-> + * @XSDFEC_OUT_OF_ORDER: Out-of-order execution of blocks.
-> + *
-> + * This enum is used to indicate whether the order of blocks can change from
-> + * input to output.
-> + */
-> +enum xsdfec_order {
-> +	XSDFEC_MAINTAIN_ORDER = 0,
-> +	XSDFEC_OUT_OF_ORDER,
+> +static inline struct auo_panel *to_auo_panel(struct drm_panel *panel)
+> +{
+> +	return container_of(panel, struct auo_panel, base);
+> +}
+> +
+> +static int auo_panel_init(struct auo_panel *auo)
+> +{
+> +	struct drm_panel *panel = &auo->base;
+> +	int err;
+> +
+> +	err = mipi_dsi_dcs_exit_sleep_mode(auo->dsi);
+> +	if (err < 0) {
+> +		DRM_DEV_ERROR(panel->dev, "failed to exit sleep mode: %d\n",
+> +			      err);
+> +		return err;
+> +	}
+> +
+> +	/* T3.1*/
+> +	msleep(120);
+> +
+> +	err = mipi_dsi_dcs_set_display_on(auo->dsi);
+> +	if (err < 0) {
+> +		DRM_DEV_ERROR(panel->dev, "failed to set display on: %d\n",
+> +			      err);
+> +	}
+> +	/* T3.1 + T3.2: > 200ms */
+> +	msleep(120);
+> +
+> +	return err;
+> +}
+> +
+> +static int auo_panel_off(struct auo_panel *auo)
+> +{
+> +	struct mipi_dsi_device *dsi = auo->dsi;
+> +	int ret;
+> +
+> +	dsi->mode_flags &= ~MIPI_DSI_MODE_LPM;
+> +
+> +	ret = mipi_dsi_dcs_set_display_off(dsi);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = mipi_dsi_dcs_enter_sleep_mode(dsi);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return 0;
+> +}
+> +
+> +static int auo_panel_disable(struct drm_panel *panel)
+> +{
+> +	struct auo_panel *auo = to_auo_panel(panel);
+> +
+> +	if (!auo->enabled)
+> +		return 0;
+> +
+> +	backlight_disable(auo->backlight);
+> +
+> +	auo->enabled = false;
+> +
+> +	return 0;
+> +}
+> +
+> +static int auo_panel_unprepare(struct drm_panel *panel)
+> +{
+> +	struct auo_panel *auo = to_auo_panel(panel);
+> +	int ret;
+> +
+> +	if (!auo->prepared)
+> +		return 0;
+> +
+> +	ret = auo_panel_off(auo);
+> +	if (ret < 0) {
+> +		dev_err(panel->dev, "failed to set panel off: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	msleep(150);
+> +	regulator_disable(auo->avee);
+> +	regulator_disable(auo->avdd);
+> +	usleep_range(5000, 7000);
+> +	regulator_disable(auo->pp1800);
+> +	if (auo->enable_gpio)
+> +		gpiod_set_value(auo->enable_gpio, 0);
+> +
+> +	auo->prepared = false;
+> +
+> +	return 0;
+> +}
+> +
+> +static int auo_panel_prepare(struct drm_panel *panel)
+> +{
+> +	struct auo_panel *auo = to_auo_panel(panel);
+> +	int ret;
+> +
+> +	if (auo->prepared)
+> +		return 0;
+> +
+> +	if (auo->enable_gpio) {
+> +		gpiod_set_value(auo->enable_gpio, 0);
+> +		usleep_range(1000, 1500);
+> +	}
+> +
+> +	ret = regulator_enable(auo->pp1800);
+> +	if (ret < 0)
+> +		return ret;
+> +	ret = regulator_enable(auo->avdd);
+> +	if (ret < 0)
+> +		goto poweroff1v8;
+> +	ret = regulator_enable(auo->avee);
+> +	if (ret < 0)
+> +		goto poweroffavdd;
+> +
+> +	if (auo->enable_gpio) {
+> +		gpiod_set_value(auo->enable_gpio, 1);
+> +		usleep_range(10000, 12000);
+> +	}
+> +
+> +	ret = auo_panel_init(auo);
+> +	if (ret < 0) {
+> +		dev_err(panel->dev, "failed to init panel: %d\n", ret);
+> +		goto poweroff;
+> +	}
+> +
+> +	auo->prepared = true;
+> +
+> +	return 0;
+> +
+> +poweroff:
+> +	regulator_disable(auo->avee);
+> +poweroffavdd:
+> +	regulator_disable(auo->avdd);
+> +poweroff1v8:
+> +	usleep_range(5000, 7000);
+> +	regulator_disable(auo->pp1800);
+> +	if (auo->enable_gpio)
+> +		gpiod_set_value(auo->enable_gpio, 0);
+> +	return ret;
+> +}
+> +
+> +static int auo_panel_enable(struct drm_panel *panel)
+> +{
+> +	struct auo_panel *auo = to_auo_panel(panel);
+> +	int ret;
+> +
+> +	if (auo->enabled)
+> +		return 0;
+> +
+> +	ret = backlight_enable(auo->backlight);
+> +	if (ret) {
+> +		DRM_DEV_ERROR(panel->drm->dev,
+> +			      "Failed to enable backlight %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	auo->enabled = true;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct drm_display_mode default_mode = {
+> +	.clock = 157000,
+> +	.hdisplay = 1200,
+> +	.hsync_start = 1200 + 80,
+> +	.hsync_end = 1200 + 80 + 24,
+> +	.htotal = 1200 + 80 + 24 + 36,
+> +	.vdisplay = 1920,
+> +	.vsync_start = 1920 + 16,
+> +	.vsync_end = 1920 + 16 + 4,
+> +	.vtotal = 1920 + 16 + 4 + 16,
+> +	.vrefresh = 60,
 > +};
 > +
-> +/**
-> + * enum xsdfec_state - State.
-> + * @XSDFEC_INIT: Driver is initialized.
-> + * @XSDFEC_STARTED: Driver is started.
-> + * @XSDFEC_STOPPED: Driver is stopped.
-> + * @XSDFEC_NEEDS_RESET: Driver needs to be reset.
-> + * @XSDFEC_PL_RECONFIGURE: Programmable Logic needs to be recofigured.
-> + *
-> + * This enum is used to indicate the state of the driver.
-> + */
-> +enum xsdfec_state {
-> +	XSDFEC_INIT = 0,
-> +	XSDFEC_STARTED,
-> +	XSDFEC_STOPPED,
-> +	XSDFEC_NEEDS_RESET,
-> +	XSDFEC_PL_RECONFIGURE,
+> +static int auo_panel_get_modes(struct drm_panel *panel)
+> +{
+> +	struct drm_display_mode *mode;
+> +
+> +	mode = drm_mode_duplicate(panel->drm, &default_mode);
+> +	if (!mode) {
+> +		dev_err(panel->drm->dev, "failed to add mode %ux%ux@%u\n",
+> +			default_mode.hdisplay, default_mode.vdisplay,
+> +			default_mode.vrefresh);
+> +		return -ENOMEM;
+> +	}
+> +
+> +	drm_mode_set_name(mode);
+> +
+> +	drm_mode_probed_add(panel->connector, mode);
+> +
+> +	panel->connector->display_info.width_mm = 135;
+> +	panel->connector->display_info.height_mm = 216;
+> +	panel->connector->display_info.bpc = 8;
+> +
+> +	return 1;
+> +}
+> +
+> +static const struct drm_panel_funcs auo_panel_funcs = {
+> +	.disable = auo_panel_disable,
+> +	.unprepare = auo_panel_unprepare,
+> +	.prepare = auo_panel_prepare,
+> +	.enable = auo_panel_enable,
+> +	.get_modes = auo_panel_get_modes,
 > +};
 > +
-> +/**
-> + * enum xsdfec_axis_width - AXIS_WIDTH.DIN Setting for 128-bit width.
-> + * @XSDFEC_1x128b: DIN data input stream consists of a 128-bit lane
-> + * @XSDFEC_2x128b: DIN data input stream consists of two 128-bit lanes
-> + * @XSDFEC_4x128b: DIN data input stream consists of four 128-bit lanes
-> + *
-> + * This enum is used to indicate the AXIS_WIDTH.DIN setting for 128-bit width.
-> + * The number of lanes of the DIN data input stream depends upon the
-> + * AXIS_WIDTH.DIN parameter.
-> + */
-> +enum xsdfec_axis_width {
-> +	XSDFEC_1x128b = 1,
-> +	XSDFEC_2x128b = 2,
-> +	XSDFEC_4x128b = 4,
-> +};
+> +static int auo_panel_add(struct auo_panel *auo)
+> +{
+> +	struct device *dev = &auo->dsi->dev;
 > +
-> +/**
-> + * enum xsdfec_axis_word_include - Words Configuration.
-> + * @XSDFEC_FIXED_VALUE: Fixed, the DIN_WORDS AXI4-Stream interface is removed
-> + *			from the IP instance and is driven with the specified
-> + *			number of words.
-> + * @XSDFEC_IN_BLOCK: In Block, configures the IP instance to expect a single
-> + *		     DIN_WORDS value per input code block. The DIN_WORDS
-> + *		     interface is present.
-> + * @XSDFEC_PER_AXI_TRANSACTION: Per Transaction, configures the IP instance to
-> + * expect one DIN_WORDS value per input transaction on the DIN interface. The
-> + * DIN_WORDS interface is present.
-> + * @XSDFEC_AXIS_WORDS_INCLUDE_MAX: Used to indicate out of bound Words
-> + *				   Configurations.
-> + *
-> + * This enum is used to specify the DIN_WORDS configuration.
-> + */
-> +enum xsdfec_axis_word_include {
-> +	XSDFEC_FIXED_VALUE = 0,
-> +	XSDFEC_IN_BLOCK,
-> +	XSDFEC_PER_AXI_TRANSACTION,
-> +	XSDFEC_AXIS_WORDS_INCLUDE_MAX,
-> +};
+> +	auo->avdd = devm_regulator_get(dev, "avdd");
+> +	if (IS_ERR(auo->avdd))
+> +		return PTR_ERR(auo->avdd);
 > +
-> +/**
-> + * struct xsdfec_irq - Enabling or Disabling Interrupts.
-> + * @enable_isr: If true enables the ISR
-> + * @enable_ecc_isr: If true enables the ECC ISR
-> + */
-> +struct xsdfec_irq {
-> +	__s8 enable_isr;
-> +	__s8 enable_ecc_isr;
-> +};
+> +	auo->avee = devm_regulator_get(dev, "avee");
+> +	if (IS_ERR(auo->avee))
+> +		return PTR_ERR(auo->avee);
 > +
-> +/**
-> + * struct xsdfec_config - Configuration of SD-FEC core.
-> + * @code: The codes being used by the SD-FEC instance
-> + * @order: Order of Operation
-> + * @bypass: Is the core being bypassed
-> + * @code_wr_protect: Is write protection of LDPC codes enabled
-> + * @din_width: Width of the DIN AXI4-Stream
-> + * @din_word_include: How DIN_WORDS are inputted
-> + * @dout_width: Width of the DOUT AXI4-Stream
-> + * @dout_word_include: HOW DOUT_WORDS are outputted
-> + * @irq: Enabling or disabling interrupts
-> + */
-> +struct xsdfec_config {
-> +	enum xsdfec_code code;
-> +	enum xsdfec_order order;
-> +	__s8 bypass;
-> +	__s8 code_wr_protect;
-> +	enum xsdfec_axis_width din_width;
-> +	enum xsdfec_axis_word_include din_word_include;
-> +	enum xsdfec_axis_width dout_width;
-> +	enum xsdfec_axis_word_include dout_word_include;
-
-You can't put an 'enum' in a structure that crosses the user/kernel
-boundry, as you really do not "know" what the size is going to be.  A
-compiler can pick whatever width it wants to here.
-
-So, if you "know" this is going to fit in 8 bits, then use __u8 for
-these and then cast on the kernel side if you care about trying to keep
-typesafe things.  If it is going to be bigger then 8 bits, then use the
-correct variable.
-
-thanks,
-
-greg k-h
+> +	auo->pp1800 = devm_regulator_get(dev, "pp1800");
+> +	if (IS_ERR(auo->pp1800))
+> +		return PTR_ERR(auo->pp1800);
+> +
+> +	auo->enable_gpio = devm_gpiod_get(dev, "enable", GPIOD_OUT_LOW);
+> +	if (IS_ERR(auo->enable_gpio)) {
+> +		dev_err(dev, "cannot get reset-gpios %ld\n",
+> +			PTR_ERR(auo->enable_gpio));
+> +		auo->enable_gpio = NULL;
+> +	} else {
+> +		gpiod_set_value(auo->enable_gpio, 0);
+> +	}
+> +
+> +	auo->backlight = devm_of_find_backlight(dev);
+> +	if (IS_ERR(auo->backlight))
+> +		return PTR_ERR(auo->backlight);
+> +
+> +	drm_panel_init(&auo->base);
+> +	auo->base.funcs = &auo_panel_funcs;
+> +	auo->base.dev = &auo->dsi->dev;
+> +
+> +	return drm_panel_add(&auo->base);
+> +}
+> +
+> +static void auo_panel_del(struct auo_panel *auo)
+> +{
+> +	if (auo->base.dev)
+> +		drm_panel_remove(&auo->base);
+> +}
+> +
+> +static int auo_panel_probe(struct mipi_dsi_device *dsi)
+> +{
+> +	struct auo_panel *auo;
+> +	int ret;
+> +
+> +	dsi->lanes = 4;
+> +	dsi->format = MIPI_DSI_FMT_RGB888;
+> +	dsi->mode_flags = MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_SYNC_PULSE |
+> +		 MIPI_DSI_MODE_LPM;
+> +
+> +	auo = devm_kzalloc(&dsi->dev, sizeof(*auo), GFP_KERNEL);
+> +	if (!auo)
+> +		return -ENOMEM;
+> +
+> +	mipi_dsi_set_drvdata(dsi, auo);
+> +
+> +	auo->dsi = dsi;
+> +
+> +	ret = auo_panel_add(auo);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return mipi_dsi_attach(dsi);
+> +}
+> +
+> +static int auo_panel_remove(struct mipi_dsi_device *dsi)
+> +{
+> +	struct auo_panel *auo = mipi_dsi_get_drvdata(dsi);
+> +	int ret;
+> +
+> +	ret = auo_panel_disable(&auo->base);
+> +	if (ret < 0)
+> +		dev_err(&dsi->dev, "failed to disable panel: %d\n", ret);
+> +
+> +	ret = mipi_dsi_detach(dsi);
+> +	if (ret < 0)
+> +		dev_err(&dsi->dev, "failed to detach from DSI host: %d\n", ret);
+> +
+> +	auo_panel_del(auo);
+> +
+> +	return 0;
+> +}
+> +
+> +static void auo_panel_shutdown(struct mipi_dsi_device *dsi)
+> +{
+> +	struct auo_panel *auo = mipi_dsi_get_drvdata(dsi);
+> +
+> +	auo_panel_disable(&auo->base);
+> +}
+> +
+> +static const struct of_device_id auo_of_match[] = {
+> +	{ .compatible = "auo,kd101n80-45na", },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, auo_of_match);
+> +
+> +static struct mipi_dsi_driver auo_panel_driver = {
+> +	.driver = {
+> +		.name = "panel-auo-kd101n80-45na",
+> +		.of_match_table = auo_of_match,
+> +	},
+> +	.probe = auo_panel_probe,
+> +	.remove = auo_panel_remove,
+> +	.shutdown = auo_panel_shutdown,
+> +};
+> +module_mipi_dsi_driver(auo_panel_driver);
+> +
+> +MODULE_AUTHOR("Jitao Shi <jitao.shi@mediatek.com>");
+> +MODULE_DESCRIPTION("AUO kd101n80-45na wuxga (1200x1920) video mode panel driver");
+> +MODULE_LICENSE("GPL v2");
+> +
+> -- 
+> 2.21.0
+> 
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
