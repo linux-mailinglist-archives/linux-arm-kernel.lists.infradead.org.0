@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35BA73A51C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 13:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 927463A526
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 13:27:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mD/iwwbh0/0FgZz2AP++rf1NSbJIdG6Jhdin3KjF7Uk=; b=Wg4Mrx0uWHy8WK
-	4FbLHbs9JimryV4fex6ep9lfGHuJaG/cKA2MNYv4PuqVPCxRlE2PdJMjg5wTJIv4S5VeIx0mKmhsn
-	MRuNmlLA9d/lrSzwCDqGQ22uVR8dYKQnaFlmUFkRaMTF988WGoz/rhk+ZX1sKNCsTm+fg12F8cibf
-	ZJFFkp0Fxfs33SSuJ9R6w3od/670RrH0I3ruMtRg22BtbFU4f4S2Beweo7kl2booWzTw1b5N/8Sra
-	hHJWF9uwS1qDdecgynVMX/TSX3jwSb5cL2Ks1ZYQP8BExW/nUvZUcSbKCtnYX91hDLw+MkH3CtXZX
-	XbEqZKwXOb1wmB+djj/Q==;
+	List-Owner; bh=n2En5RFGbrXDRIlvfdwMtGSAlRcF7KMtG1RswPdYMWU=; b=eI1AW0WrZe5JgU
+	M+LEWaflooEkORfpRNtQvzBhNn9/lEUjB2vjaWph+vhmzjptjoJ9x2v6hqfu3yq2Zk8XL/jqNbnUi
+	gwyRxCaU1+69R49m3uX1VbLev9ZiAEIoA6F1xCe1t+oZFsfWrXRCqMjoO/5l0G34PhxMWk//xiT2S
+	GIOGUy9UkUtjDep+Dyv0c24P4jMF2VUbyFLDNDqVXCv5W3m5UZnOKLsd+N7qc6zQi8A0T3LIsz5wn
+	eZxwYIzjXeA+nKZ6RrX7T2z+e/tg+qiZKO5U4QPpAI823d0+mrtFuChjOTvYfVGbqzCFqYHwFg50c
+	4Dew/S7dO59NKNAvVe+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZvuU-0004xW-7z; Sun, 09 Jun 2019 11:22:50 +0000
+	id 1hZvzG-0008Hr-83; Sun, 09 Jun 2019 11:27:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZvuK-0004wb-Tg
- for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 11:22:42 +0000
+ id 1hZvz6-0008HS-7S
+ for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 11:27:38 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 68C3320840;
- Sun,  9 Jun 2019 11:22:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 256BB20693;
+ Sun,  9 Jun 2019 11:27:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560079357;
- bh=ptu/UtjTcmnAD1z/pLhf3hslt2ujtQSdCDjEoDsQr5E=;
+ s=default; t=1560079655;
+ bh=il2uZWxdZ4yBrY3rCDJSjTc4H6loEzjlxAbzilUrafw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=NN9O7/gFk1Lu0voj3XZWaNIG3tO9qAqauL2HIr3aJNZYG6sErjLPD/exbvN6lYQiX
- bt8ZJM7fS52FYas4GwKAJpD71NzE+zmcpfiTEfC0+ZIbIASkYXNArIk6qOawWrFGB0
- 2y4LIYHF8XI3bqdCNw+Vn5/+T2UNaKu0jbs4HNs4=
-Date: Sun, 9 Jun 2019 13:22:35 +0200
+ b=P4VNhiwNNsMpBnwi/cfMSj56D7BNgoJAjH7x5JBuDGZK4pNSXzkJbyRrD50OFvxrO
+ cux5khwGG0a0AzDpj+Uc9i6xocOEigX8oGT3fN7eBnGPQLmmfs96dZfrMHeWGfRqfa
+ XOBfGRyRKz0I52i2UQig9VU8iwKv0ROnldXL5X3Y=
+Date: Sun, 9 Jun 2019 13:27:32 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
 To: Dragan Cvetic <dragan.cvetic@xilinx.com>
-Subject: Re: [PATCH V5 02/11] misc: xilinx-sdfec: add core driver
-Message-ID: <20190609112235.GA16574@kroah.com>
+Subject: Re: [PATCH V5 04/11] misc: xilinx_sdfec: Store driver config and state
+Message-ID: <20190609112732.GA31438@kroah.com>
 References: <1560038656-380620-1-git-send-email-dragan.cvetic@xilinx.com>
- <1560038656-380620-3-git-send-email-dragan.cvetic@xilinx.com>
+ <1560038656-380620-5-git-send-email-dragan.cvetic@xilinx.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1560038656-380620-3-git-send-email-dragan.cvetic@xilinx.com>
+In-Reply-To: <1560038656-380620-5-git-send-email-dragan.cvetic@xilinx.com>
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_042240_993053_DF2A7955 
-X-CRM114-Status: GOOD (  21.52  )
+X-CRM114-CacheID: sfid-20190609_042736_304180_E3B3E67A 
+X-CRM114-Status: GOOD (  28.98  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -82,98 +82,504 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 09, 2019 at 01:04:07AM +0100, Dragan Cvetic wrote:
-> Implement a platform driver that matches with xlnx,
-> sd-fec-1.1 device tree node and registers as a character
-> device, including:
-> - SD-FEC driver binds to sdfec DT node.
-> - creates and initialise an initial driver dev structure.
-> - add the driver in Linux build and Kconfig.
+On Sun, Jun 09, 2019 at 01:04:09AM +0100, Dragan Cvetic wrote:
+> Stores configuration based on parameters from the DT
+> node and values from the SD-FEC core plus reads
+> the default state from the SD-FEC core. To obtain
+> values from the core register read, write capabilities
+> have been added plus related register map details.
 > 
 > Tested-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 > Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
 > Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 > ---
->  drivers/misc/Kconfig        |  12 +++++
->  drivers/misc/Makefile       |   1 +
->  drivers/misc/xilinx_sdfec.c | 118 ++++++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 131 insertions(+)
->  create mode 100644 drivers/misc/xilinx_sdfec.c
+>  drivers/misc/xilinx_sdfec.c      | 293 +++++++++++++++++++++++++++++++++++++++
+>  include/uapi/misc/xilinx_sdfec.h | 138 ++++++++++++++++++
+>  2 files changed, 431 insertions(+)
+>  create mode 100644 include/uapi/misc/xilinx_sdfec.h
 > 
-> diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
-> index 6b0417b..319a6bf 100644
-> --- a/drivers/misc/Kconfig
-> +++ b/drivers/misc/Kconfig
-> @@ -471,6 +471,18 @@ config PCI_ENDPOINT_TEST
->             Enable this configuration option to enable the host side test driver
->             for PCI Endpoint.
->  
-> +config XILINX_SDFEC
-> +	tristate "Xilinx SDFEC 16"
-> +	help
-> +	  This option enables support for the Xilinx SDFEC (Soft Decision
-> +	  Forward Error Correction) driver. This enables a char driver
-> +	  for the SDFEC.
-> +
-> +	  You may select this driver if your design instantiates the
-> +	  SDFEC(16nm) hardened block. To compile this as a module choose M.
-> +
-> +	  If unsure, say N.
-> +
->  config MISC_RTSX
->  	tristate
->  	default MISC_RTSX_PCI || MISC_RTSX_USB
-> diff --git a/drivers/misc/Makefile b/drivers/misc/Makefile
-> index b9affcd..0cb3546 100644
-> --- a/drivers/misc/Makefile
-> +++ b/drivers/misc/Makefile
-> @@ -59,3 +59,4 @@ obj-$(CONFIG_OCXL)		+= ocxl/
->  obj-y				+= cardreader/
->  obj-$(CONFIG_PVPANIC)   	+= pvpanic.o
->  obj-$(CONFIG_HABANA_AI)		+= habanalabs/
-> +obj-$(CONFIG_XILINX_SDFEC)	+= xilinx_sdfec.o
 > diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-> new file mode 100644
-> index 0000000..75cc980
-> --- /dev/null
+> index 4524677..ddfca54 100644
+> --- a/drivers/misc/xilinx_sdfec.c
 > +++ b/drivers/misc/xilinx_sdfec.c
-> @@ -0,0 +1,118 @@
-> +// SPDX-License-Identifier: GPL-2.0
+> @@ -20,8 +20,89 @@
+>  #include <linux/slab.h>
+>  #include <linux/clk.h>
+>  
+> +#include <uapi/misc/xilinx_sdfec.h>
+> +
+>  static int xsdfec_ndevs;
+>  
+> +/* Xilinx SDFEC Register Map */
+> +/* CODE_WRI_PROTECT Register */
+> +#define XSDFEC_CODE_WR_PROTECT_ADDR (0x4)
+> +
+> +/* ACTIVE Register */
+> +#define XSDFEC_ACTIVE_ADDR (0x8)
+> +#define XSDFEC_IS_ACTIVITY_SET (0x1)
+> +
+> +/* AXIS_WIDTH Register */
+> +#define XSDFEC_AXIS_WIDTH_ADDR (0xC)
+> +#define XSDFEC_AXIS_DOUT_WORDS_LSB (5)
+> +#define XSDFEC_AXIS_DOUT_WIDTH_LSB (3)
+> +#define XSDFEC_AXIS_DIN_WORDS_LSB (2)
+> +#define XSDFEC_AXIS_DIN_WIDTH_LSB (0)
+> +
+> +/* AXIS_ENABLE Register */
+> +#define XSDFEC_AXIS_ENABLE_ADDR (0x10)
+> +#define XSDFEC_AXIS_OUT_ENABLE_MASK (0x38)
+> +#define XSDFEC_AXIS_IN_ENABLE_MASK (0x7)
+> +#define XSDFEC_AXIS_ENABLE_MASK                                                \
+> +	(XSDFEC_AXIS_OUT_ENABLE_MASK | XSDFEC_AXIS_IN_ENABLE_MASK)
+> +
+> +/* FEC_CODE Register */
+> +#define XSDFEC_FEC_CODE_ADDR (0x14)
+> +
+> +/* ORDER Register Map */
+> +#define XSDFEC_ORDER_ADDR (0x18)
+> +
+> +/* Interrupt Status Register */
+> +#define XSDFEC_ISR_ADDR (0x1C)
+> +/* Interrupt Status Register Bit Mask */
+> +#define XSDFEC_ISR_MASK (0x3F)
+> +
+> +/* Write Only - Interrupt Enable Register */
+> +#define XSDFEC_IER_ADDR (0x20)
+> +/* Write Only - Interrupt Disable Register */
+> +#define XSDFEC_IDR_ADDR (0x24)
+> +/* Read Only - Interrupt Mask Register */
+> +#define XSDFEC_IMR_ADDR (0x28)
+> +
+> +/* ECC Interrupt Status Register */
+> +#define XSDFEC_ECC_ISR_ADDR (0x2C)
+> +/* Single Bit Errors */
+> +#define XSDFEC_ECC_ISR_SBE_MASK (0x7FF)
+> +/* PL Initialize Single Bit Errors */
+> +#define XSDFEC_PL_INIT_ECC_ISR_SBE_MASK (0x3C00000)
+> +/* Multi Bit Errors */
+> +#define XSDFEC_ECC_ISR_MBE_MASK (0x3FF800)
+> +/* PL Initialize Multi Bit Errors */
+> +#define XSDFEC_PL_INIT_ECC_ISR_MBE_MASK (0x3C000000)
+> +/* Multi Bit Error to Event Shift */
+> +#define XSDFEC_ECC_ISR_MBE_TO_EVENT_SHIFT (11)
+> +/* PL Initialize Multi Bit Error to Event Shift */
+> +#define XSDFEC_PL_INIT_ECC_ISR_MBE_TO_EVENT_SHIFT (4)
+> +/* ECC Interrupt Status Bit Mask */
+> +#define XSDFEC_ECC_ISR_MASK (XSDFEC_ECC_ISR_SBE_MASK | XSDFEC_ECC_ISR_MBE_MASK)
+> +/* ECC Interrupt Status PL Initialize Bit Mask */
+> +#define XSDFEC_PL_INIT_ECC_ISR_MASK                                            \
+> +	(XSDFEC_PL_INIT_ECC_ISR_SBE_MASK | XSDFEC_PL_INIT_ECC_ISR_MBE_MASK)
+> +/* ECC Interrupt Status All Bit Mask */
+> +#define XSDFEC_ALL_ECC_ISR_MASK                                                \
+> +	(XSDFEC_ECC_ISR_MASK | XSDFEC_PL_INIT_ECC_ISR_MASK)
+> +/* ECC Interrupt Status Single Bit Errors Mask */
+> +#define XSDFEC_ALL_ECC_ISR_SBE_MASK                                            \
+> +	(XSDFEC_ECC_ISR_SBE_MASK | XSDFEC_PL_INIT_ECC_ISR_SBE_MASK)
+> +/* ECC Interrupt Status Multi Bit Errors Mask */
+> +#define XSDFEC_ALL_ECC_ISR_MBE_MASK                                            \
+> +	(XSDFEC_ECC_ISR_MBE_MASK | XSDFEC_PL_INIT_ECC_ISR_MBE_MASK)
+> +
+> +/* Write Only - ECC Interrupt Enable Register */
+> +#define XSDFEC_ECC_IER_ADDR (0x30)
+> +/* Write Only - ECC Interrupt Disable Register */
+> +#define XSDFEC_ECC_IDR_ADDR (0x34)
+> +/* Read Only - ECC Interrupt Mask Register */
+> +#define XSDFEC_ECC_IMR_ADDR (0x38)
+> +
+> +/* BYPASS Register */
+> +#define XSDFEC_BYPASS_ADDR (0x3C)
+> +
+>  /**
+>   * struct xsdfec_clks - For managing SD-FEC clocks
+>   * @core_clk: Main processing clock for core
+> @@ -48,6 +129,8 @@ struct xsdfec_clks {
+>   * struct xsdfec_dev - Driver data for SDFEC
+>   * @regs: device physical base address
+>   * @dev: pointer to device struct
+> + * @state: State of the SDFEC device
+> + * @config: Configuration of the SDFEC device
+>   * @miscdev: Misc device handle
+>   * @error_data_lock: Error counter and states spinlock
+>   * @clks: Clocks managed by the SDFEC driver
+> @@ -57,16 +140,220 @@ struct xsdfec_clks {
+>  struct xsdfec_dev {
+>  	void __iomem *regs;
+>  	struct device *dev;
+> +	enum xsdfec_state state;
+> +	struct xsdfec_config config;
+>  	struct miscdevice miscdev;
+>  	/* Spinlock to protect state_updated and stats_updated */
+>  	spinlock_t error_data_lock;
+>  	struct xsdfec_clks clks;
+>  };
+>  
+> +static inline void xsdfec_regwrite(struct xsdfec_dev *xsdfec, u32 addr,
+> +				   u32 value)
+> +{
+> +	dev_dbg(xsdfec->dev, "Writing 0x%x to offset 0x%x", value, addr);
+> +	iowrite32(value, xsdfec->regs + addr);
+> +}
+> +
+> +static inline u32 xsdfec_regread(struct xsdfec_dev *xsdfec, u32 addr)
+> +{
+> +	u32 rval;
+> +
+> +	rval = ioread32(xsdfec->regs + addr);
+> +	dev_dbg(xsdfec->dev, "Read value = 0x%x from offset 0x%x", rval, addr);
+> +	return rval;
+> +}
+> +
+> +static void update_bool_config_from_reg(struct xsdfec_dev *xsdfec,
+> +					u32 reg_offset, u32 bit_num,
+> +					char *config_value)
+> +{
+> +	u32 reg_val;
+> +	u32 bit_mask = 1 << bit_num;
+> +
+> +	reg_val = xsdfec_regread(xsdfec, reg_offset);
+> +	*config_value = (reg_val & bit_mask) > 0;
+> +}
+> +
+> +static void update_config_from_hw(struct xsdfec_dev *xsdfec)
+> +{
+> +	u32 reg_value;
+> +	bool sdfec_started;
+> +
+> +	/* Update the Order */
+> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_ORDER_ADDR);
+> +	xsdfec->config.order = reg_value;
+> +
+> +	update_bool_config_from_reg(xsdfec, XSDFEC_BYPASS_ADDR,
+> +				    0, /* Bit Number, maybe change to mask */
+> +				    &xsdfec->config.bypass);
+> +
+> +	update_bool_config_from_reg(xsdfec, XSDFEC_CODE_WR_PROTECT_ADDR,
+> +				    0, /* Bit Number */
+> +				    &xsdfec->config.code_wr_protect);
+> +
+> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_IMR_ADDR);
+> +	xsdfec->config.irq.enable_isr = (reg_value & XSDFEC_ISR_MASK) > 0;
+> +
+> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_ECC_IMR_ADDR);
+> +	xsdfec->config.irq.enable_ecc_isr =
+> +		(reg_value & XSDFEC_ECC_ISR_MASK) > 0;
+> +
+> +	reg_value = xsdfec_regread(xsdfec, XSDFEC_AXIS_ENABLE_ADDR);
+> +	sdfec_started = (reg_value & XSDFEC_AXIS_IN_ENABLE_MASK) > 0;
+> +	if (sdfec_started)
+> +		xsdfec->state = XSDFEC_STARTED;
+> +	else
+> +		xsdfec->state = XSDFEC_STOPPED;
+> +}
+> +
+> +static u32
+> +xsdfec_translate_axis_width_cfg_val(enum xsdfec_axis_width axis_width_cfg)
+> +{
+> +	u32 axis_width_field = 0;
+> +
+> +	switch (axis_width_cfg) {
+> +	case XSDFEC_1x128b:
+> +		axis_width_field = 0;
+> +		break;
+> +	case XSDFEC_2x128b:
+> +		axis_width_field = 1;
+> +		break;
+> +	case XSDFEC_4x128b:
+> +		axis_width_field = 2;
+> +		break;
+> +	}
+> +
+> +	return axis_width_field;
+> +}
+> +
+> +static u32 xsdfec_translate_axis_words_cfg_val(enum xsdfec_axis_word_include
+> +	axis_word_inc_cfg)
+> +{
+> +	u32 axis_words_field = 0;
+> +
+> +	if (axis_word_inc_cfg == XSDFEC_FIXED_VALUE ||
+> +	    axis_word_inc_cfg == XSDFEC_IN_BLOCK)
+> +		axis_words_field = 0;
+> +	else if (axis_word_inc_cfg == XSDFEC_PER_AXI_TRANSACTION)
+> +		axis_words_field = 1;
+> +
+> +	return axis_words_field;
+> +}
+> +
+> +static int xsdfec_cfg_axi_streams(struct xsdfec_dev *xsdfec)
+> +{
+> +	u32 reg_value;
+> +	u32 dout_words_field;
+> +	u32 dout_width_field;
+> +	u32 din_words_field;
+> +	u32 din_width_field;
+> +	struct xsdfec_config *config = &xsdfec->config;
+> +
+> +	/* translate config info to register values */
+> +	dout_words_field =
+> +		xsdfec_translate_axis_words_cfg_val(config->dout_word_include);
+> +	dout_width_field =
+> +		xsdfec_translate_axis_width_cfg_val(config->dout_width);
+> +	din_words_field =
+> +		xsdfec_translate_axis_words_cfg_val(config->din_word_include);
+> +	din_width_field =
+> +		xsdfec_translate_axis_width_cfg_val(config->din_width);
+> +
+> +	reg_value = dout_words_field << XSDFEC_AXIS_DOUT_WORDS_LSB;
+> +	reg_value |= dout_width_field << XSDFEC_AXIS_DOUT_WIDTH_LSB;
+> +	reg_value |= din_words_field << XSDFEC_AXIS_DIN_WORDS_LSB;
+> +	reg_value |= din_width_field << XSDFEC_AXIS_DIN_WIDTH_LSB;
+> +
+> +	xsdfec_regwrite(xsdfec, XSDFEC_AXIS_WIDTH_ADDR, reg_value);
+> +
+> +	return 0;
+> +}
+> +
+>  static const struct file_operations xsdfec_fops = {
+>  	.owner = THIS_MODULE,
+>  };
+>  
+> +static int xsdfec_parse_of(struct xsdfec_dev *xsdfec)
+> +{
+> +	struct device *dev = xsdfec->dev;
+> +	struct device_node *node = dev->of_node;
+> +	int rval;
+> +	const char *fec_code;
+> +	u32 din_width;
+> +	u32 din_word_include;
+> +	u32 dout_width;
+> +	u32 dout_word_include;
+> +
+> +	rval = of_property_read_string(node, "xlnx,sdfec-code", &fec_code);
+> +	if (rval < 0)
+> +		return rval;
+> +
+> +	if (!strcasecmp(fec_code, "ldpc"))
+> +		xsdfec->config.code = XSDFEC_LDPC_CODE;
+> +	else if (!strcasecmp(fec_code, "turbo"))
+> +		xsdfec->config.code = XSDFEC_TURBO_CODE;
+> +	else
+> +		return -EINVAL;
+> +
+> +	rval = of_property_read_u32(node, "xlnx,sdfec-din-words",
+> +				    &din_word_include);
+> +	if (rval < 0)
+> +		return rval;
+> +
+> +	if (din_word_include < XSDFEC_AXIS_WORDS_INCLUDE_MAX)
+> +		xsdfec->config.din_word_include = din_word_include;
+> +	else
+> +		return -EINVAL;
+> +
+> +	rval = of_property_read_u32(node, "xlnx,sdfec-din-width", &din_width);
+> +	if (rval < 0)
+> +		return rval;
+> +
+> +	switch (din_width) {
+> +	/* Fall through and set for valid values */
+> +	case XSDFEC_1x128b:
+> +	case XSDFEC_2x128b:
+> +	case XSDFEC_4x128b:
+> +		xsdfec->config.din_width = din_width;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	rval = of_property_read_u32(node, "xlnx,sdfec-dout-words",
+> +				    &dout_word_include);
+> +	if (rval < 0)
+> +		return rval;
+> +
+> +	if (dout_word_include < XSDFEC_AXIS_WORDS_INCLUDE_MAX)
+> +		xsdfec->config.dout_word_include = dout_word_include;
+> +	else
+> +		return -EINVAL;
+> +
+> +	rval = of_property_read_u32(node, "xlnx,sdfec-dout-width", &dout_width);
+> +	if (rval < 0)
+> +		return rval;
+> +
+> +	switch (dout_width) {
+> +	/* Fall through and set for valid values */
+> +	case XSDFEC_1x128b:
+> +	case XSDFEC_2x128b:
+> +	case XSDFEC_4x128b:
+> +		xsdfec->config.dout_width = dout_width;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	/* Write LDPC to CODE Register */
+> +	xsdfec_regwrite(xsdfec, XSDFEC_FEC_CODE_ADDR, xsdfec->config.code);
+> +
+> +	xsdfec_cfg_axi_streams(xsdfec);
+> +
+> +	return 0;
+> +}
+> +
+>  static int xsdfec_clk_init(struct platform_device *pdev,
+>  			   struct xsdfec_clks *clks)
+>  {
+> @@ -247,6 +534,12 @@ static int xsdfec_probe(struct platform_device *pdev)
+>  		goto err_xsdfec_dev;
+>  	}
+>  
+> +	err = xsdfec_parse_of(xsdfec);
+> +	if (err < 0)
+> +		goto err_xsdfec_dev;
+> +
+> +	update_config_from_hw(xsdfec);
+> +
+>  	/* Save driver private data */
+>  	platform_set_drvdata(pdev, xsdfec);
+>  
+> diff --git a/include/uapi/misc/xilinx_sdfec.h b/include/uapi/misc/xilinx_sdfec.h
+> new file mode 100644
+> index 0000000..7b47a4c
+> --- /dev/null
+> +++ b/include/uapi/misc/xilinx_sdfec.h
+> @@ -0,0 +1,138 @@
+> +/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
 > +/*
-> + * Xilinx SDFEC
+> + * Xilinx SD-FEC
 > + *
-> + * Copyright (C) 2019 Xilinx, Inc.
+> + * Copyright (C) 2016 - 2017 Xilinx, Inc.
 > + *
 > + * Description:
-> + * This driver is developed for SDFEC16 (Soft Decision FEC 16nm)
-> + * IP. It exposes a char device which supports file operations
-> + * like  open(), close() and ioctl().
+> + * This driver is developed for SDFEC16 IP. It provides a char device
+> + * in sysfs and supports file operations like open(), close() and ioctl().
 > + */
+> +#ifndef __XILINX_SDFEC_H__
+> +#define __XILINX_SDFEC_H__
 > +
-> +#include <linux/miscdevice.h>
-> +#include <linux/io.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/poll.h>
-> +#include <linux/slab.h>
-> +#include <linux/clk.h>
+> +#include <linux/types.h>
 > +
-> +static int xsdfec_ndevs;
+> +/**
+> + * enum xsdfec_code - Code Type.
+> + * @XSDFEC_TURBO_CODE: Driver is configured for Turbo mode.
+> + * @XSDFEC_LDPC_CODE: Driver is configured for LDPC mode.
+> + *
+> + * This enum is used to indicate the mode of the driver. The mode is determined
+> + * by checking which codes are set in the driver. Note that the mode cannot be
+> + * changed by the driver.
+> + */
+> +enum xsdfec_code {
+> +	XSDFEC_TURBO_CODE = 0,
+> +	XSDFEC_LDPC_CODE,
+> +};
+> +
+> +/**
+> + * enum xsdfec_order - Order
+> + * @XSDFEC_MAINTAIN_ORDER: Maintain order execution of blocks.
+> + * @XSDFEC_OUT_OF_ORDER: Out-of-order execution of blocks.
+> + *
+> + * This enum is used to indicate whether the order of blocks can change from
+> + * input to output.
+> + */
+> +enum xsdfec_order {
+> +	XSDFEC_MAINTAIN_ORDER = 0,
+> +	XSDFEC_OUT_OF_ORDER,
+> +};
+> +
+> +/**
+> + * enum xsdfec_state - State.
+> + * @XSDFEC_INIT: Driver is initialized.
+> + * @XSDFEC_STARTED: Driver is started.
+> + * @XSDFEC_STOPPED: Driver is stopped.
+> + * @XSDFEC_NEEDS_RESET: Driver needs to be reset.
+> + * @XSDFEC_PL_RECONFIGURE: Programmable Logic needs to be recofigured.
+> + *
+> + * This enum is used to indicate the state of the driver.
+> + */
+> +enum xsdfec_state {
+> +	XSDFEC_INIT = 0,
+> +	XSDFEC_STARTED,
+> +	XSDFEC_STOPPED,
+> +	XSDFEC_NEEDS_RESET,
+> +	XSDFEC_PL_RECONFIGURE,
+> +};
+> +
+> +/**
+> + * enum xsdfec_axis_width - AXIS_WIDTH.DIN Setting for 128-bit width.
+> + * @XSDFEC_1x128b: DIN data input stream consists of a 128-bit lane
+> + * @XSDFEC_2x128b: DIN data input stream consists of two 128-bit lanes
+> + * @XSDFEC_4x128b: DIN data input stream consists of four 128-bit lanes
+> + *
+> + * This enum is used to indicate the AXIS_WIDTH.DIN setting for 128-bit width.
+> + * The number of lanes of the DIN data input stream depends upon the
+> + * AXIS_WIDTH.DIN parameter.
+> + */
+> +enum xsdfec_axis_width {
+> +	XSDFEC_1x128b = 1,
+> +	XSDFEC_2x128b = 2,
+> +	XSDFEC_4x128b = 4,
+> +};
+> +
+> +/**
+> + * enum xsdfec_axis_word_include - Words Configuration.
+> + * @XSDFEC_FIXED_VALUE: Fixed, the DIN_WORDS AXI4-Stream interface is removed
+> + *			from the IP instance and is driven with the specified
+> + *			number of words.
+> + * @XSDFEC_IN_BLOCK: In Block, configures the IP instance to expect a single
+> + *		     DIN_WORDS value per input code block. The DIN_WORDS
+> + *		     interface is present.
+> + * @XSDFEC_PER_AXI_TRANSACTION: Per Transaction, configures the IP instance to
+> + * expect one DIN_WORDS value per input transaction on the DIN interface. The
+> + * DIN_WORDS interface is present.
+> + * @XSDFEC_AXIS_WORDS_INCLUDE_MAX: Used to indicate out of bound Words
+> + *				   Configurations.
+> + *
+> + * This enum is used to specify the DIN_WORDS configuration.
+> + */
+> +enum xsdfec_axis_word_include {
+> +	XSDFEC_FIXED_VALUE = 0,
+> +	XSDFEC_IN_BLOCK,
+> +	XSDFEC_PER_AXI_TRANSACTION,
+> +	XSDFEC_AXIS_WORDS_INCLUDE_MAX,
+> +};
+> +
+> +/**
+> + * struct xsdfec_irq - Enabling or Disabling Interrupts.
+> + * @enable_isr: If true enables the ISR
+> + * @enable_ecc_isr: If true enables the ECC ISR
+> + */
+> +struct xsdfec_irq {
+> +	__s8 enable_isr;
+> +	__s8 enable_ecc_isr;
+> +};
+> +
+> +/**
+> + * struct xsdfec_config - Configuration of SD-FEC core.
+> + * @code: The codes being used by the SD-FEC instance
+> + * @order: Order of Operation
+> + * @bypass: Is the core being bypassed
+> + * @code_wr_protect: Is write protection of LDPC codes enabled
+> + * @din_width: Width of the DIN AXI4-Stream
+> + * @din_word_include: How DIN_WORDS are inputted
+> + * @dout_width: Width of the DOUT AXI4-Stream
+> + * @dout_word_include: HOW DOUT_WORDS are outputted
+> + * @irq: Enabling or disabling interrupts
+> + */
+> +struct xsdfec_config {
+> +	enum xsdfec_code code;
+> +	enum xsdfec_order order;
+> +	__s8 bypass;
+> +	__s8 code_wr_protect;
+> +	enum xsdfec_axis_width din_width;
+> +	enum xsdfec_axis_word_include din_word_include;
+> +	enum xsdfec_axis_width dout_width;
+> +	enum xsdfec_axis_word_include dout_word_include;
 
-You should use an idr for this, not just a number you bump up and down.
-This will not work properly at all.
+You can't put an 'enum' in a structure that crosses the user/kernel
+boundry, as you really do not "know" what the size is going to be.  A
+compiler can pick whatever width it wants to here.
 
-Think about this situation:
-	probe device 0
-	xsdfec_ndevs = 1
-	probe device 1
-	xsdfec_ndevs = 2
-	remove device 0
-	xsdfec_ndevs = 0
-	probe another device
-	misc device fails due to duplicate name.
+So, if you "know" this is going to fit in 8 bits, then use __u8 for
+these and then cast on the kernel side if you care about trying to keep
+typesafe things.  If it is going to be bigger then 8 bits, then use the
+correct variable.
 
 thanks,
 
