@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F9A13AC0B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 23:29:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A76ED3AC13
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 23:36:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+vFsThx8yXFLGxtNQxQKQiIMWZ448oc8aeRAOJfw6wc=; b=nk0xrOth/1s/I1
-	HvjT8fsDcC0yBSXao0oQXi0BntSziTSRKScqODTIv/0BWFCU+rfQM1NHV638emKJNHNO7JAwk4Phn
-	DEqzn3HFAuys1TgLN8gLZSSwjtbdSSf5U4oNdKPdB8fu9K4sAPJ+KbR87/AcAdebVEY6QcI4VB40X
-	HKxfC90jyhSzIhoWg9v2sA2SxmqPwPAWJqCFxJuGzNzCRKOJmKw40jRSMYpIWKl8denvMn+b0YMAR
-	9PgnitrAk0C2/AhpND7dxYlU/JMaI4RJZ6DpyM/8NbxjwWzyHY9i1/hnNiDfqE6iRyePpI7SHICkl
-	C8vp2fcCSAKlwbbZreUg==;
+	List-Owner; bh=LksUN6hlHsFnq1Z0kkH9Uzma5vpvjJqEexKj1LPAEfY=; b=caSmfbqbVkfV6m
+	7HbJarS9uurK1Txjk4f0ihT7CzcoOVG2iibZUpTlz2y3vzwfr9MwzM0UXv26p9qBwkyBE+/BzUe89
+	YfDERKYHZW/LjkYdpcfIN3stpsF3aKyEkrm4E+8tJAPkm6FOf55t08nekMEbEbM1M42N4MMusM5Yu
+	ELPMBeO4c9FbmgoVhbmGc5zZxhvE6ub/jeFIc0sH3+IvrvUMJGJh5K8Wi8rNGsXlQX40lp7N0el4i
+	ImlBdGIxxonudBDp557Fbkjk6znRx7sS4Z75OMtl/71H75yAIfA2ylW/TLuR6sK2UXFURRmgvC2qI
+	9kqfjPki7xawvqrQ8h8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ha5Nb-0007YP-77; Sun, 09 Jun 2019 21:29:31 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1ha5Uf-0002TY-E2; Sun, 09 Jun 2019 21:36:49 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ha5NN-0007Wo-Uz
- for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 21:29:19 +0000
-Received: by mail-lj1-x242.google.com with SMTP id k18so6104465ljc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 09 Jun 2019 14:29:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ id 1ha5US-0002RD-Mb; Sun, 09 Jun 2019 21:36:38 +0000
+Received: by mail-ot1-x342.google.com with SMTP id z24so6577599oto.1;
+ Sun, 09 Jun 2019 14:36:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KlrRIE/V5p97wscV0kE0tjEI2tlj1dGG4/jhRhsQRG0=;
- b=SOfnaOissSEz9PzQM9mMat56H+3dTOhDdmHyybdevIOxcr2JCQbgWnlzcNKHngS1ar
- 6lN1VKkdZ7yRsOEp3hxL2mmnVB3bx7Bt3fbe68ItUxhUV/h8lH5jvN09txUIAd9HBDLE
- yOOfbglZUGy7zp+pLIy/Ti6rWwE+usRIvmnTmud3sfwtqzQKUHMYKqjtVmg24PXE3Mzm
- Pn8DnWXEw80qJN5Q6DxN+u/Wp9UeLNygpfrvD8EfJ4LhF+F6T8+6uT45UEmVss0EEoUa
- W/2popw6Ssix8aXzr8GK94RxD4Jtw8n9CeKclonaMsYy5s2V9HHbVhzr9bM+3qkt66Qj
- Iwng==
+ :cc; bh=ZiIIarVNYc+IPXqi3ZtMcJmmvmMmviVgkK+GA+EHbhA=;
+ b=YUw1qnx0j9Q6GWh+yYTbdK8KRLJ8DYZRAv2/6rqS18LKK2PYUFJNNBBxVO310T59MS
+ Q0i8zJFB3HY8cV5PD1VOHDjD/z+NFcnqah+3Q/zqm73sHRlLC1ASFZw0cX0VlhoshrKv
+ 2NdoPU57kcsbbb6cyiu31yotsMdoiKtyqUlk+oz0TSs2h3o9jxAedd8Wjh+6kd3N5Wg+
+ GNrG2ug/7KcCS8BCPGMHaK19XFYSvObeanbptGVJ6SWzWds4XUFordT+2Nw3RJbmbgoy
+ ZUyWpNRCOWJjFXG7qRElzCAT2CD5fnSwCiKEdSjLcMg4+7makbLxk9rKUHqbu6H2Bfo7
+ kFtw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=KlrRIE/V5p97wscV0kE0tjEI2tlj1dGG4/jhRhsQRG0=;
- b=Xpp3YYmuMexSKLWdH1Eyk3cyqsm4diTG1lgfyJ3sHYsY0B3yiMVsWrY0mm1wgBk+Pl
- xbjrUuOFHRzjksPQIzeIn6sNPP2nSXIrZ4kZY1zeRWTilnhqwn/YuXLJYiRd3p8q7fwY
- UyWpHdVYR8pGsbtHKUzeMcSCpyag7EkyLuO/BzgcNHeL2Ye5A4220Viag0tfQLL7Kcwn
- UqNV6MP4o/8cCz3fkDjSAcRbMfVmfIV4bhQB5/r4aBbM58WVERdmCKUjZw1S3Cuy59vB
- kICHuHltDD+cawI0cb6eGqLiFEVSuXhexl4Wg+ZnsYanaRlBozHJK8t818YjmERN5q+P
- P4pA==
-X-Gm-Message-State: APjAAAUzHec+D1duFcrpXxzww74uDmIu4vBjAL58Hmj9g6oBCx06b3v1
- 1167WD6TJYtN2jzBPQDxmvRZp72XOMhqGsS4Jr0p3A==
-X-Google-Smtp-Source: APXvYqwD8jFnBTiQeRvhyH1OObx2r8DdreQqyuGuLnn7YPW7qYYuahnntAMr1MNIp51bnR6Kfl+SJrOrjoX25IWmQoQ=
-X-Received: by 2002:a2e:8902:: with SMTP id d2mr34580225lji.94.1560115755209; 
- Sun, 09 Jun 2019 14:29:15 -0700 (PDT)
+ bh=ZiIIarVNYc+IPXqi3ZtMcJmmvmMmviVgkK+GA+EHbhA=;
+ b=uQWF849kJ6wC3VJ790J85JEoPHZXofSACM4SWtTJPDdUIoekZct9qx2y9xY8JITOkt
+ xxFhZK/s4AZrvWSUs2PXNzbodgpnHnY/BP0igOhtfHkqFDlGrgZeURWQ0QcOJ8Bq2sHg
+ JavThx0updjYVlks9EdJNqG0NGEQvZwqQdIHFY21LFdUx90zUhGLB5aEf+k9hcKwShsj
+ oO1nqtMTWl5QpvoKeCEhpviOVrM4pVKwMKoNU606Prv7jDP/BejYG00RLadFgdxRP0Ap
+ wz6WLXzmxVLyy6yj4WvwHpKiIJ0syG+NPojRrBRa1iLPU4AKlwXYhMtYS3unEVBFi+ER
+ rNoQ==
+X-Gm-Message-State: APjAAAVTxr2CKiPrAKLZFPO3xj7bfR25XJRhNr0SSVtdamyKzRFQPYt+
+ /Q+X8CV+gwU9ldDXgDsUhfJT4F5Wy4OaRe29nDE=
+X-Google-Smtp-Source: APXvYqyj9+ZRfTdLuN0mjg8NPOB46WOVRAt5cAu/Bhj4I4pqwq7IzgkWyjvVj6FI5s4pm42EnCqsEyqY25k+7COMUw8=
+X-Received: by 2002:a9d:6405:: with SMTP id h5mr16586195otl.42.1560116195631; 
+ Sun, 09 Jun 2019 14:36:35 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190609180621.7607-1-martin.blumenstingl@googlemail.com>
- <20190609180621.7607-3-martin.blumenstingl@googlemail.com>
- <20190609203828.GA8247@lunn.ch>
- <CAFBinCA1xp5+77DhYMFjX31D3DsaU7d9EqFkWbn+UFFx5LSqEw@mail.gmail.com>
-In-Reply-To: <CAFBinCA1xp5+77DhYMFjX31D3DsaU7d9EqFkWbn+UFFx5LSqEw@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sun, 9 Jun 2019 23:29:08 +0200
-Message-ID: <CACRpkdZ4n+nCip-uoqbDvQeT0ZpJUfHVnp-D8qCSKfgJEapM7w@mail.gmail.com>
-Subject: Re: [RFC next v1 2/5] gpio: of: parse stmmac PHY reset line specific
- active-low property
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+ <20190609180621.7607-6-martin.blumenstingl@googlemail.com>
+ <CACRpkdYzeiLB7Yuixv6NsnLJoa_FnGKRHHQm=t4gMH34NdFSYA@mail.gmail.com>
+In-Reply-To: <CACRpkdYzeiLB7Yuixv6NsnLJoa_FnGKRHHQm=t4gMH34NdFSYA@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sun, 9 Jun 2019 23:36:24 +0200
+Message-ID: <CAFBinCBgoLb+Hfdo-sZ_0H6ct=UJm7j6wD_C6udbA6BTRvFOWQ@mail.gmail.com>
+Subject: Re: [RFC next v1 5/5] arm64: dts: meson: g12a: x96-max: fix the
+ Ethernet PHY reset line
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_142918_004779_0B5C4828 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20190609_143636_765710_5CA54794 
+X-CRM114-Status: GOOD (  21.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,14 +94,13 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
  netdev <netdev@vger.kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jose Abreu <joabreu@synopsys.com>,
- Kevin Hilman <khilman@baylibre.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Jose Abreu <joabreu@synopsys.com>, Kevin Hilman <khilman@baylibre.com>,
  Giuseppe CAVALLARO <peppe.cavallaro@st.com>,
  "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
  "David S. Miller" <davem@davemloft.net>,
@@ -111,33 +110,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Jun 9, 2019 at 11:21 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
+Hi Linus,
 
-> my understanding that of_gpio_flags_quirks (which I'm touching with
-> this patch) is supposed to manage similar quirks to what we have in
-> stmmac (it also contains some regulator and MMC quirks too).
-> however, that's exactly the reason why I decided to mark this as RFC -
-> so I'm eager to hear Linus comments on this
+On Sun, Jun 9, 2019 at 11:17 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> On Sun, Jun 9, 2019 at 8:06 PM Martin Blumenstingl
+> <martin.blumenstingl@googlemail.com> wrote:
+>
+> > The PHY reset line and interrupt line are swapped on the X96 Max
+> > compared to the Odroid-N2 schematics. This means:
+> > - GPIOZ_14 is the interrupt line (on the Odroid-N2 it's the reset line)
+> > - GPIOZ_15 is the reset line (on the Odroid-N2 it's the interrupt line)
+> >
+> > Also the GPIOZ_14 and GPIOZ_15 pins are special. The datasheet describes
+> > that they are "3.3V input tolerant open drain (OD) output pins". This
+> > means the GPIO controller can drive the output LOW to reset the PHY. To
+> > release the reset it can only switch the pin to input mode. The output
+> > cannot be driven HIGH for these pins.
+> > This requires configuring the reset line as GPIO_OPEN_SOURCE because
+> > otherwise the PHY will be stuck in "reset" state (because driving the
+> > pin HIGH seeems to result in the same signal as driving it LOW).
+>
+> This far it seems all right.
+...except the "seeems" typo which I just noticed.
+thank you for sanity-checking this so far!
 
-The idea with the quirks in gpiolib-of.c is to make device drivers simpler,
-and phase them over to ignoring quirks for mistakes done in the early
-days of DT standardization. This feature of the gpiolib API is supposed
-to make it "narrow and deep": make the generic case simple
-and handle any hardware description languages (DT or ACPI or
-board files) and quirks (mostly historical) under the hood. Especially
-drivers should not need to worry about polarity inversion instead just
-grab a GPIO descriptor and play away with it, asserting it as
-1 and deasserting it as 0 whether that is the right polarity or not,
-the gpiolib should keep track of polarity no matter how that is described,
-even with historical weird bools like "snps,active-low" etc.
+> > Switch to GPIOZ_15 for the reset GPIO with the correct flags and drop
+> > the "snps,reset-active-low" property as this is now encoded in the
+> > GPIO_OPEN_SOURCE flag.
+>
+> Open source doesn't imply active low.
+>
+> We have this in stmmac_mdio_reset():
+>
+>                 gpio_direction_output(data->reset_gpio,
+>                                       data->active_low ? 1 : 0);
+>                 if (data->delays[0])
+>                         msleep(DIV_ROUND_UP(data->delays[0], 1000));
+>
+>                 gpio_set_value(data->reset_gpio, data->active_low ? 0 : 1);
+>                 if (data->delays[1])
+>                         msleep(DIV_ROUND_UP(data->delays[1], 1000));
+>
+>                 gpio_set_value(data->reset_gpio, data->active_low ? 1 : 0);
+>                 if (data->delays[2])
+>                         msleep(DIV_ROUND_UP(data->delays[2], 1000));
+>
+> If "snps,reset-active-low" was set it results in the sequence 1, 0, 1
+> if it is not set it results in the sequence 0, 1, 0.
+I'm changing this logic with earlier patches of this series.
+can you please look at these as well because GPIO_OPEN_SOURCE doesn't
+work with the old version of stmmac_mdio_reset() that you are showing.
 
-So I think you are probably doing the right thing here.
-This patch is:
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+> The high (reset) is asserted by switching the pin into high-z open drain
+> mode, which happens by switching the line into input mode in some
+> cases.
+>
+> I think the real reason it works now is that reset is actually active high.
+let me write down what I definitely know so far
 
-Yours,
-Linus Walleij
+the RTL8211F PHY wants the reset line to be LOW for a few milliseconds
+to put it into reset mode.
+driving the reset line HIGH again takes it out of reset.
+
+Odroid-N2's schematics [0] (page 30) shows that there's a pull-up for
+the PHYRSTB pin, which is also connected to the NRST signal which is
+GPIOZ_15
+
+> It makes a lot of sense, since if it resets the device when set as input
+> (open drain) it holds all devices on that line in reset, which is likely
+> what you want as most GPIOs come up as inputs (open drain).
+> A pull-up resistor will ascertain that the devices are in reset.
+my understanding is that the pull-up resistor holds it out of reset
+driving GPIOZ_15's (open drain) output LOW pulls the signal to ground
+and asserts the reset
+
+> Other than the commit message:
+> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+thank you for looking into this!
+
+
+Martin
+
+
+[0] https://dn.odroid.com/S922X/ODROID-N2/Schematic/odroid-n2_rev0.4_20190307.pdf
 
 _______________________________________________
 linux-arm-kernel mailing list
