@@ -2,87 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C6F53A40C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 08:51:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 520823A4C0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 12:33:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6DMh68Gke+m0vLF+X6SQjOPhNYkpLqaJ2p0Wq3ix+gE=; b=OG3TO4LiKlUo2V
-	vtJQhNc2ju9PljN3s9vA7zd2/V+Jd3TCzkcnGo+ZyrFweLjOvODRjWIlX7Mm7mbXWMa0NaAaVT65u
-	0arQp71chWWpdAIX13+aJH0muNyndmdohOvbQwbQWGpY90thYhUjZDYHY/XRItNW7rGDCf2GmjMmz
-	+YgnI/+IPJ2aG8cPV9DNqZiapj/XfkogTiU9Z05z+OFIuq8nrcsJsBajKpMiJfvPIQPM9vm6hzDP9
-	K4HAu9SoFY5Q55cIMu1LU9CCWHkFE0soUm+tSYLId0VlldHFxGO95WSkmlu54yfCFSnoLnYT4BrWl
-	1TY33ls25j7HyMOAZD2g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eElGwzAVVwu0aCYELRAmZIAcAoDNAbR/Vv6m+BxdOwg=; b=IxKTLauYCy+tbA
+	l23AD3CFeeb029kkbF5eygowD5tnfCAP4A9S0NwLeo5mwBKBUDpwAhphrMYXBDPrTswbnz5r6FSkW
+	5JfDoveG8Eve4aR0NmS4p8DOyZG2q2MUZzZx6K5MZ2049sk+or/D5MUEOLtHgFxwTCsomH74/VfoG
+	jRjhhfK16usY4aZ85ts0n5yHPU3OCoBcc+hUMuICLR0IEeHATpAmzezKNbZgDswe2HxlsRCqFkAW/
+	AwT7B/geHkJr+1XM8BNe1CggR0cMOuJZS1sj2gAzW0gz8/7Bf97ZCS3Sis1+zWMSlDplcwyrt/pNH
+	xYpZYsZQszdvpTq50Txw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZrg0-0006QC-L0; Sun, 09 Jun 2019 06:51:36 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1hZv8G-0001qO-2H; Sun, 09 Jun 2019 10:33:00 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZrfj-0006PS-EG
- for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 06:51:22 +0000
-Received: by mail-qk1-x744.google.com with SMTP id i125so3800294qkd.6
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 08 Jun 2019 23:51:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=heURi6LynaMTZ5g0eudG6hqYJ4FK/vscKytezEoes00=;
- b=l7YJ+BPKOJZr2S6Q56GRv9FJmqmdNu2ucZDnQVU1r8VMDrj2VQLwqz7N8EnbV9gaUi
- 4D2U2AaRfQsrg1uPiWf1byHDgk7FIR27EFAQb9bTZ+kpUkiD+FFbxC3O/GQ4v8stHhq0
- zxejTWDBmXWngOSq3QuxW5hc17jBJIkIR0iyKnc5VqJob4b4yU2fw5RZ4O0UhasQenWl
- qM69/ZJl+PHQd0W+Jrkba2VyNgl4K10JIiYVUkCOzlnrfzu9z5YvzOu+OCQIFE10jvfb
- /w4nwSaH3TzdDCzTWX226sGxP6vNzF0LOQknc9mnPBmmk8Nt0V9pxnCELAbFsOhbwaUc
- HbTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=heURi6LynaMTZ5g0eudG6hqYJ4FK/vscKytezEoes00=;
- b=q3U0RndI675trFzThv3dbmmkQ9OpZpXwA2Cc0oenWUxK7Ew3Tc8cWhssUgfHKPOr2T
- T8lbUeGjRB6Blqic6qXunZHtvsKQkm1Wu4H63ER4LYsf4zM2vkFBjp77icTcuRZUt57/
- y3cUbQG6vVmtG5mxz9LYeDXZ8CsfYs6oBmyXi1/Y+729aGL3BmxAxU6tx5M5MMg/lvfM
- tyeQJAuOf7HbdCJeZtpOqr0ype1vzG8cGieP66wY0T1zefMZi7UEtvwWMzzEva4911Un
- fAn155BTlxb28Wbcmo9ihlLHWmGWUpET7PuKRqc0q2EiVE9+D5apVWdd12awQWMhLr8B
- 60+w==
-X-Gm-Message-State: APjAAAXQowh4/j372TLX2M7IGZgQbCafnP1RZPCZ8vW1NF887hMQkC7l
- E1qG1WQ8a2wrfJkud/zJCu3vyQ==
-X-Google-Smtp-Source: APXvYqydZoqjFUbt/qIi2n0C1bU+sajFrIHxWpzcFSWVldpERYP3gQHwq/dydPovJzSrHBqbgEVSEw==
-X-Received: by 2002:a37:a98c:: with SMTP id
- s134mr49571604qke.176.1560063076471; 
- Sat, 08 Jun 2019 23:51:16 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li1322-146.members.linode.com.
- [45.79.223.146])
- by smtp.gmail.com with ESMTPSA id s44sm1432186qtc.8.2019.06.08.23.51.08
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 08 Jun 2019 23:51:15 -0700 (PDT)
-Date: Sun, 9 Jun 2019 14:51:01 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
-Subject: Re: [PATCH] perf tools: Properly set the value of 'old' and 'head'
- in snapshot mode
-Message-ID: <20190609065101.GA6357@leoy-ThinkPad-X240s>
-References: <20190605161633.12245-1-mathieu.poirier@linaro.org>
- <20190606201056.GJ21245@kernel.org>
- <20190607064425.GF5970@leoy-ThinkPad-X240s>
- <20190607182325.GL21245@kernel.org>
+ id 1hZv7P-0001MC-61; Sun, 09 Jun 2019 10:32:08 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x59AVjmu056720;
+ Sun, 9 Jun 2019 05:31:45 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560076305;
+ bh=JUTOF0iaHKolZrfDhhxHld15ADgTm5DXTKdsb+Ac8mA=;
+ h=From:To:CC:Subject:Date;
+ b=gfgSriCsYcnPnx2C/mRJAnRTh4eFUiY5DUEyOMZfPzNpBE7hFbDNNpIL8djh7VnzC
+ W46Tye0Map0O3aMsUW/AypwSj86tZHVmDjMPFv/Pd76tyYIjQzEWQ0hhWXeB30lfCk
+ WZ8hca02xCNhqNb+41gfEU62KsqP15+TQlxyNiSM=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x59AVjkK093046
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Sun, 9 Jun 2019 05:31:45 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Sun, 9 Jun
+ 2019 05:31:45 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Sun, 9 Jun 2019 05:31:45 -0500
+Received: from a0132425.india.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x59AVe1d049269;
+ Sun, 9 Jun 2019 05:31:40 -0500
+From: Vignesh Raghavendra <vigneshr@ti.com>
+To: Vignesh Raghavendra <vigneshr@ti.com>, David Woodhouse
+ <dwmw2@infradead.org>, Brian Norris <computersforpeace@gmail.com>, Boris
+ Brezillon <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>,
+ Richard Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v5 0/5] MTD: Add Initial Hyperbus support
+Date: Sun, 9 Jun 2019 16:02:22 +0530
+Message-ID: <20190609103227.24875-1-vigneshr@ti.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190607182325.GL21245@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_235119_511809_98C0D8BE 
-X-CRM114-Status: GOOD (  19.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190609_033207_304098_7C554BAF 
+X-CRM114-Status: GOOD (  15.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,88 +89,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>, suzuki.poulose@arm.com,
- peterz@infradead.org, linux-kernel@vger.kernel.org,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, jolsa@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>, linux-kernel@vger.kernel.org,
+ Joakim Tjernlund <Joakim.Tjernlund@infinera.com>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnaldo,
+Cypress HyperBus is Low Signal Count, High Performance Double Data Rate Bus
+interface between a host system master and one or more slave interfaces.
+HyperBus is used to connect microprocessor, microcontroller, or ASIC
+devices with random access NOR flash memory(called HyperFlash) or
+self refresh DRAM(called HyperRAM).
 
-On Fri, Jun 07, 2019 at 03:23:25PM -0300, Arnaldo Carvalho de Melo wrote:
-> Em Fri, Jun 07, 2019 at 02:44:25PM +0800, Leo Yan escreveu:
-> > On Thu, Jun 06, 2019 at 05:10:56PM -0300, Arnaldo Carvalho de Melo wrote:
-> > > Em Wed, Jun 05, 2019 at 10:16:33AM -0600, Mathieu Poirier escreveu:
-> > > > This patch adds the necessay intelligence to properly compute the value
-> > > > of 'old' and 'head' when operating in snapshot mode.  That way we can get
-> > > > the latest information in the AUX buffer and be compatible with the
-> > > > generic AUX ring buffer mechanic.
-> > > 
-> > > Leo, have you had the chance to test/review this one? Suzuki?
-> > 
-> > Sure.  I applied this patch on the perf/core branch (with latest
-> > commit 3e4fbf36c1e3 'perf augmented_raw_syscalls: Move reading
-> > filename to the loop') and passed testing with below steps:
-> > 
-> > # perf record -e cs_etm/@tmc_etr0/ -S -m,64 --per-thread ./sort &
-> > [1] 19097
-> > Bubble sorting array of 30000 elements
-> > 
-> > # kill -USR2 19097
-> > # kill -USR2 19097
-> > # kill -USR2 19097
-> > [ perf record: Woken up 4 times to write data ]
-> > [ perf record: Captured and wrote 0.753 MB perf.data ]
-> > 
-> > FWIW:
-> > 
-> > Tested-by: Leo Yan <leo.yan@linaro.org>
-> 
-> Thanks a lot, I've added your "Tester notes:" and also your Tested-by:.
-> 
-> As I don't have hardware (yet) to test these patches, tests by people
-> who can test on real hardware is always super appreciated.
+Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
+signal and either Single-ended clock(3.0V parts) or Differential clock
+(1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
+At bus level, it follows a separate protocol described in HyperBus
+specification[1].
 
-You are very welcome and it's my pleasure :)
+HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
+to that of existing parallel NORs. Since Hyperbus is x8 DDR bus,
+its equivalent to x16 parallel NOR flash wrt bits per clk. But Hyperbus
+operates at >166MHz frequencies.
+HyperRAM provides direct random read/write access to flash memory
+array.
+Framework is modelled along the lines of spi-nor framework. HyperBus
+memory controller(HBMC) drivers call hyperbus_register_device() to register a
+single HyperFlash device. HyperFlash core parses MMIO access
+information from DT, sets up the map_info struct, probes CFI flash and
+registers it with MTD framework.
 
-> Any suggestions for a SBC that I could buy to be able to do so?
+This is an early RFC, to know if its okay to use maps framework and existing
+CFI compliant flash support code to support Hyperflash
+Also would like input on different types of HBMC master IPs out there
+and their programming sequences.
+Would appreciate any testing/review.
 
-Below are several Arm development boards for referrence:
+Tested on modified TI AM654 EVM with Cypress Hyperflash S26KS512 by
+creating a UBIFS partition and writing and reading files to it.
+Stress tested by writing/reading 16MB flash repeatedly at different
+offsets using dd commmand.
 
-- DB410c [1]: This board is the first choice for myself, since this
-  board provides Debian (and Fedora :) support and it supports the
-  mainline kernel pretty well; the CoreSight also is well supported.
+HyperBus specification can be found at[1]
+HyperFlash datasheet can be found at[2]
+TI's HBMC controller details at[3]
 
-  This board is about 80 USD so the cost is not expensive; on the
-  other hand, please note one cons is the SDRAM is only 1GB, this will
-  be impossible if you build some big projects (e.g. LLVM/Clang and
-  BCC); but it's sufficient for perf related development and
-  verification.
+[1] https://www.cypress.com/file/213356/download
+[2] https://www.cypress.com/file/213346/download
+[3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
+    Table 12-5741. HyperFlash Access Sequence
 
-- There have other several boards are in my mind:
+Change log:
+Since v4:
+Fix Rob's comments on dt-bindings of TI HBMC driver
 
-  Raspberry Pi3 [2] and Hikey960 [3].
+Since v3:
+* Drop reading QRY string twice in hyperbus_calibrate()
+* Fix doc/misc comments on v3.
 
-  Raspberry Pi3 misses some features in the mainline kernel [4] and it
-  has not enabled CoreSight hardware tracing feature; Hikey960 also
-  have some patches are out of the mainline kenrel.
+Since RFC v2:
+* use map_word_xxx() for handling status register to support interleaved
+  flashes as suggested by Joakim Tjernlund <Joakim.Tjernlund@infinera.com>
+* Report error status/messages on erase/program failure by looking at
+  status register bits.
+* Add "cfi-flash" as fallback compatible for cypress,hyperflash
+* Add support to select between HyperBus and OSPI using mmio mux
 
-  Except you have special requirement (e.g. you want to use the board to
-  build LLVM/Clang/BCC with big DDR size, etc), these two boards can be
-  secondary choices.
+Since RFC v1:
+* Re-work Hyperbus core to provide separate struct representation for
+  controller and slave devices
+* Rename all files and func names to have hyperbus_ prefix
+* Provide default calibration routine for use by controller drivers
+* Fix up errors with patch spliting
+* Address comments by Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
 
-Please feel free let me know if you have questions for boards.
 
-Thanks,
-Leo Yan
+Vignesh Raghavendra (5):
+  mtd: cfi_cmdset_0002: Add support for polling status register
+  dt-bindings: mtd: Add binding documentation for HyperFlash
+  mtd: Add support for HyperBus memory devices
+  dt-bindings: mtd: Add bindings for TI's AM654 HyperBus memory
+    controller
+  mtd: hyperbus: Add driver for TI's HyperBus memory controller
 
-[1] https://www.96boards.org/product/dragonboard410c/
-[2] https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/
-[3] https://www.96boards.org/product/hikey960/
-[4] https://www.raspberrypi.org/forums/viewtopic.php?t=236568
+ .../bindings/mtd/cypress,hyperflash.txt       |  13 ++
+ .../devicetree/bindings/mtd/ti,am654-hbmc.txt |  51 +++++
+ MAINTAINERS                                   |   8 +
+ drivers/mtd/Kconfig                           |   2 +
+ drivers/mtd/Makefile                          |   1 +
+ drivers/mtd/chips/cfi_cmdset_0002.c           |  90 +++++++++
+ drivers/mtd/hyperbus/Kconfig                  |  23 +++
+ drivers/mtd/hyperbus/Makefile                 |   4 +
+ drivers/mtd/hyperbus/hbmc-am654.c             | 110 ++++++++++
+ drivers/mtd/hyperbus/hyperbus-core.c          | 191 ++++++++++++++++++
+ include/linux/mtd/cfi.h                       |   5 +
+ include/linux/mtd/hyperbus.h                  |  91 +++++++++
+ 12 files changed, 589 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/mtd/cypress,hyperflash.txt
+ create mode 100644 Documentation/devicetree/bindings/mtd/ti,am654-hbmc.txt
+ create mode 100644 drivers/mtd/hyperbus/Kconfig
+ create mode 100644 drivers/mtd/hyperbus/Makefile
+ create mode 100644 drivers/mtd/hyperbus/hbmc-am654.c
+ create mode 100644 drivers/mtd/hyperbus/hyperbus-core.c
+ create mode 100644 include/linux/mtd/hyperbus.h
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
