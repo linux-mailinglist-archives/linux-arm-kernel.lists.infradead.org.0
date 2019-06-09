@@ -2,39 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D7763A2E6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 04:28:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 923683A37E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 06:19:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FYMYs3gHW9/8TZOrH9zwBvN8G+ejK1gKocaUTFA26aM=; b=MQ/dzLiwyjAMsf
-	OHHbnvfKpCwKghvq2GMo0//aC5wzh9aofLr/ADei4Zu6rN6I4Dz2i83EvVbccCpr+pxiJ6QL/LkQt
-	1KvEYdX6c7l0WJMFqGIqXpTpAo4qyqsFPOuxXEdiBKijjX67+BUo6WwTa4/z+IJJ9x4Rctn4hNBi5
-	KBVOGBdO0UvfGENlAzO8QWGGL3HhvyQHQnr1YhW4U/lOrz1u6+VdrRXLBJz40p+zV74Z7mUvWXHpO
-	JAIV7zi5Y0RujzMP2YPossSeSvY6QW6hh626ukHP7tinKzzT3m8Hw8V9bbqmxq3UkDaLDc51ARnB2
-	O5okHM3p0rf8kfE/wDBA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=LAstBLV86xXZ48n/KviOL3eGa8sXTo7/ZFHi9IpEaqk=; b=tDA
+	COzCyP1RU/tS5jD/C6B6EyE8v8IjQZ2LYym0DUmnK7zu7tDb+oi16f0Bk0uxLaRP0Eb76Yj9xoWoh
+	Edfd4cbyLdiQwVs716QDeX4vsIW2TruYncUKPim/wdZY2mlDw3ePIAP+dlUqOHaaM8bLXGhnr3i3O
+	R2ZZbZjBIqv3xUbi152064lvraX92+BjRcXjpfcwnmYhJiI16sgKGcJGD/la2LN7USLZm8oUQmxgL
+	eatAe6Q+P+PGVjOjbHqSiroF3mF13zxcNlIoEsGGUJQn+ouSw7Jsil8/g5euxs5Nrv9zucHjYVLam
+	tZdZ3oTpaTRIM94OU863FqJ8V2lB8aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZnZi-0002Fl-O2; Sun, 09 Jun 2019 02:28:51 +0000
-Received: from 179.176.115.133.dynamic.adsl.gvt.net.br ([179.176.115.133]
- helo=bombadil.infradead.org)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hZnYS-0001nB-MO; Sun, 09 Jun 2019 02:27:32 +0000
-Received: from mchehab by bombadil.infradead.org with local (Exim 4.92)
- (envelope-from <mchehab@bombadil.infradead.org>)
- id 1hZnYL-0000Kd-NK; Sat, 08 Jun 2019 23:27:25 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH v3 31/33] docs: xilinx: convert eemi.txt to eemi.rst
-Date: Sat,  8 Jun 2019 23:27:21 -0300
-Message-Id: <1f3dfdcaa06e339791a86cf99918d7d0a2b52a67.1560045490.git.mchehab+samsung@kernel.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <cover.1560045490.git.mchehab+samsung@kernel.org>
-References: <cover.1560045490.git.mchehab+samsung@kernel.org>
-MIME-Version: 1.0
+	id 1hZpJA-0002i7-GU; Sun, 09 Jun 2019 04:19:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hZpIz-0002ho-GD
+ for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 04:19:42 +0000
+Received: from hector.attlocal.net
+ (107-207-74-175.lightspeed.austtx.sbcglobal.net [107.207.74.175])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B92CF208E3;
+ Sun,  9 Jun 2019 04:19:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560053976;
+ bh=ILMIKm6unfoX0sFWJ1A3LaSPMfGyKOUWY4kQZ8AaS0A=;
+ h=From:To:Cc:Subject:Date:From;
+ b=0aA2xqD0SLfZNVTPTxO6F7sJ5iWvdnlSeaNhAzr5uGtqJKNV8DETsmrkVuYRB87Dy
+ ZqCOZuse653Y5SwYrA/m8PootAso45zVBtIaxQ0V395yvVyXMLBImGtH+/+/7wTI01
+ /3+ZsFhH0AQyeBYM3vCuWk6oEzxAoJRzKU3pD8TA=
+From: Andy Gross <agross@kernel.org>
+To: linux-arm-msm@vger.kernel.org
+Subject: [PATCH] arm64: qcom: qcs404: Add reset-cells to GCC node
+Date: Sat,  8 Jun 2019 23:19:32 -0500
+Message-Id: <1560053972-32273-1-git-send-email-agross@kernel.org>
+X-Mailer: git-send-email 2.7.4
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190608_211941_562382_C92F355E 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -46,93 +74,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Michal Simek <michal.simek@xilinx.com>,
- linux-kernel@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Mauro Carvalho Chehab <mchehab@infradead.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: arm@kernel.org, Andy Gross <agross@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a very trivial conversion: adjust the title markup
-and add a few literal block markups to produce a better
-visual when parsed and avoid warnings.
+This patch adds a reset-cells property to the gcc controller on the QCS404.
+Without this in place, we get warnings like the following if nodes reference
+a gcc reset:
 
-As newer documents related to xilinx could be added in the future,
-create a new index file for it.
+arch/arm64/boot/dts/qcom/qcs404.dtsi:261.38-310.5: Warning (resets_property):
+/soc@0/remoteproc@b00000: Missing property '#reset-cells' in node
+/soc@0/clock-controller@1800000 or bad phandle (referred from resets[0])
+  also defined at arch/arm64/boot/dts/qcom/qcs404-evb.dtsi:82.18-84.3
+  DTC     arch/arm64/boot/dts/qcom/qcs404-evb-4000.dtb
+arch/arm64/boot/dts/qcom/qcs404.dtsi:261.38-310.5: Warning (resets_property):
+/soc@0/remoteproc@b00000: Missing property '#reset-cells' in node
+/soc@0/clock-controller@1800000 or bad phandle (referred from resets[0])
+  also defined at arch/arm64/boot/dts/qcom/qcs404-evb.dtsi:82.18-84.3
 
-At its new index.rst, let's add a :orphan: while this is not linked to
-the main index.rst file, in order to avoid build warnings.
-
-Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Signed-off-by: Andy Gross <agross@kernel.org>
 ---
- Documentation/xilinx/{eemi.txt => eemi.rst} |  8 ++++----
- Documentation/xilinx/index.rst              | 17 +++++++++++++++++
- 2 files changed, 21 insertions(+), 4 deletions(-)
- rename Documentation/xilinx/{eemi.txt => eemi.rst} (92%)
- create mode 100644 Documentation/xilinx/index.rst
+ arch/arm64/boot/dts/qcom/qcs404.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/xilinx/eemi.txt b/Documentation/xilinx/eemi.rst
-similarity index 92%
-rename from Documentation/xilinx/eemi.txt
-rename to Documentation/xilinx/eemi.rst
-index 5f39b4ffdcd4..9dcbc6f18d75 100644
---- a/Documentation/xilinx/eemi.txt
-+++ b/Documentation/xilinx/eemi.rst
-@@ -1,6 +1,6 @@
-----------------------------------------------------------------------
-+====================================
- Xilinx Zynq MPSoC EEMI Documentation
-----------------------------------------------------------------------
-+====================================
+diff --git a/arch/arm64/boot/dts/qcom/qcs404.dtsi b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+index 342788a..086cadb 100644
+--- a/arch/arm64/boot/dts/qcom/qcs404.dtsi
++++ b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+@@ -426,6 +426,7 @@
+ 			compatible = "qcom,gcc-qcs404";
+ 			reg = <0x01800000 0x80000>;
+ 			#clock-cells = <1>;
++			#reset-cells = <1>;
  
- Xilinx Zynq MPSoC Firmware Interface
- -------------------------------------
-@@ -21,7 +21,7 @@ The zynqmp-firmware driver maintain all EEMI APIs in zynqmp_eemi_ops
- structure. Any driver who want to communicate with PMC using EEMI APIs
- can call zynqmp_pm_get_eemi_ops().
- 
--Example of EEMI ops:
-+Example of EEMI ops::
- 
- 	/* zynqmp-firmware driver maintain all EEMI APIs */
- 	struct zynqmp_eemi_ops {
-@@ -34,7 +34,7 @@ Example of EEMI ops:
- 		.query_data = zynqmp_pm_query_data,
- 	};
- 
--Example of EEMI ops usage:
-+Example of EEMI ops usage::
- 
- 	static const struct zynqmp_eemi_ops *eemi_ops;
- 	u32 ret_payload[PAYLOAD_ARG_CNT];
-diff --git a/Documentation/xilinx/index.rst b/Documentation/xilinx/index.rst
-new file mode 100644
-index 000000000000..01cc1a0714df
---- /dev/null
-+++ b/Documentation/xilinx/index.rst
-@@ -0,0 +1,17 @@
-+:orphan:
-+
-+===========
-+Xilinx FPGA
-+===========
-+
-+.. toctree::
-+    :maxdepth: 1
-+
-+    eemi
-+
-+.. only::  subproject and html
-+
-+   Indices
-+   =======
-+
-+   * :ref:`genindex`
+ 			assigned-clocks = <&gcc GCC_APSS_AHB_CLK_SRC>;
+ 			assigned-clock-rates = <19200000>;
 -- 
-2.21.0
+2.7.4
 
 
 _______________________________________________
