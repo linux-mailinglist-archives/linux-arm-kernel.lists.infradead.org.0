@@ -2,81 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 464883A3FE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 07:57:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C6F53A40C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Jun 2019 08:51:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Zn8kmXUaAjxL98O0ZCP8Q+j9NvpiWc7c93EeOzQWGAU=; b=CQ5t2+iR4ouoYC
-	E640ORJkZjgT9qK9Y2oOIcMOTtqwXe0B8HvAR61UkIyD2k39pz4MfUM8AywBOQtIpi2RWNNvPC5XV
-	wpfw9tWXdzBBOt0qSUElgyuUao63V8iKFIYzyKaNIFiCnnALY4p9JQLnMDsLEQdxnp59iU000m2/x
-	Uz/dv0CwtQ/IHpDaEBZgzZaxTN89ZXDYDb2M7ycN3k8jyjXkXSxz8oUANXsXFfcNoA9eWndnTuHU6
-	rnP9ZHOgKsxTWQqRb6tMy7XHFzV7MAkFS2JYgBexDRST7ByTxHM94X6oh12YecOi4WuhNjNis+U/i
-	RljIl9UZqlBZnD8Hw5mw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6DMh68Gke+m0vLF+X6SQjOPhNYkpLqaJ2p0Wq3ix+gE=; b=OG3TO4LiKlUo2V
+	vtJQhNc2ju9PljN3s9vA7zd2/V+Jd3TCzkcnGo+ZyrFweLjOvODRjWIlX7Mm7mbXWMa0NaAaVT65u
+	0arQp71chWWpdAIX13+aJH0muNyndmdohOvbQwbQWGpY90thYhUjZDYHY/XRItNW7rGDCf2GmjMmz
+	+YgnI/+IPJ2aG8cPV9DNqZiapj/XfkogTiU9Z05z+OFIuq8nrcsJsBajKpMiJfvPIQPM9vm6hzDP9
+	K4HAu9SoFY5Q55cIMu1LU9CCWHkFE0soUm+tSYLId0VlldHFxGO95WSkmlu54yfCFSnoLnYT4BrWl
+	1TY33ls25j7HyMOAZD2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZqpZ-0005um-JR; Sun, 09 Jun 2019 05:57:25 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hZrg0-0006QC-L0; Sun, 09 Jun 2019 06:51:36 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZqpN-0005uH-1b
- for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 05:57:14 +0000
-Received: by mail-pg1-x543.google.com with SMTP id l19so685667pgh.9
+ id 1hZrfj-0006PS-EG
+ for linux-arm-kernel@lists.infradead.org; Sun, 09 Jun 2019 06:51:22 +0000
+Received: by mail-qk1-x744.google.com with SMTP id i125so3800294qkd.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 08 Jun 2019 22:57:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=mUYWP70RDTFI+93NFRrPVCzuklD/oeAhEhCx99S9U8o=;
- b=gXPEdV4gT7JPNVfY2who+GifPoiYdfH9sStCQa8uywQBc4gasuPJLjm8C1Kww+oo0F
- D3pTPP+wpxKbVNs+IdgpvODsnYyT/36N/Vs4zpljDjh740g2ffOsgslmAGq4HPg055Ab
- cBmX07Tt8C1YORsjQzEioUW+ar9HQqljpt4u3T9I13XC1wZQxgJKag4vHtvo+SmSBCCl
- aR54Klr2z9nhElopEv1Vtkxt51oRYM3fdsT+DfQzIGB7vnIm/cuBgd+fiCvmvGky5Bi5
- K8jZmkDiu5afRymh7NMX9kzzVuDcQ44K7/FOkF8MJnS9dJsV/SI2egDaaK2jqRz/+Xhi
- TbKw==
+ Sat, 08 Jun 2019 23:51:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=heURi6LynaMTZ5g0eudG6hqYJ4FK/vscKytezEoes00=;
+ b=l7YJ+BPKOJZr2S6Q56GRv9FJmqmdNu2ucZDnQVU1r8VMDrj2VQLwqz7N8EnbV9gaUi
+ 4D2U2AaRfQsrg1uPiWf1byHDgk7FIR27EFAQb9bTZ+kpUkiD+FFbxC3O/GQ4v8stHhq0
+ zxejTWDBmXWngOSq3QuxW5hc17jBJIkIR0iyKnc5VqJob4b4yU2fw5RZ4O0UhasQenWl
+ qM69/ZJl+PHQd0W+Jrkba2VyNgl4K10JIiYVUkCOzlnrfzu9z5YvzOu+OCQIFE10jvfb
+ /w4nwSaH3TzdDCzTWX226sGxP6vNzF0LOQknc9mnPBmmk8Nt0V9pxnCELAbFsOhbwaUc
+ HbTQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=mUYWP70RDTFI+93NFRrPVCzuklD/oeAhEhCx99S9U8o=;
- b=OF9h/hiG31hs/+DzcJtfIXl0FVHLv3itxRaveRKOgQXOxOk0Hk/smEkVuvFZzF5S8Y
- cs/+t5UE4tWw4ADCuwKyX2oh9rxYx4GGw/onrq3dBKXByQ35GqiJQCwkuQJZyYx7KHFj
- 50VfjYFjfqEd0MEMXapuRbzGtn+UtDJiRJv9ti4HkP2s6VJwlygjuBa51DbxmwMfM9Ls
- 7CTQvHdqemF615HvY8OASsSoGPRcqsS8R24FKxtEJvCjegPP28UmwZbsI+Uu2b4L9p5e
- rM8Du6re+GeFjKzP0TQlO6/aKOcVHtUkk5PkUUfWVOjV0CDyCAqKYW7C7YLybs6PyuCK
- YW/A==
-X-Gm-Message-State: APjAAAXah9ivVGxXJLs/wpwohVEwtYrlRjEgOmznZv4f+6y2nA50o4UB
- 0d88dIrFYkphRnPrqbyNjxdW4NtI/4Y=
-X-Google-Smtp-Source: APXvYqyoOiRJERFkarQP7/W9+vFK31hqsgl04tvV/3GDz3Xy3v0h2ZD+qJMBXPW31llsyNVW157QoQ==
-X-Received: by 2002:a63:1663:: with SMTP id 35mr10426201pgw.253.1560059831794; 
- Sat, 08 Jun 2019 22:57:11 -0700 (PDT)
-Received: from localhost.lan (c-24-22-235-96.hsd1.wa.comcast.net.
- [24.22.235.96])
- by smtp.gmail.com with ESMTPSA id 2sm7367848pff.174.2019.06.08.22.57.09
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 08 Jun 2019 22:57:10 -0700 (PDT)
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-To: linux-i2c@vger.kernel.org
-Subject: [PATCH] i2c: imx: Initialize DMA before registering I2C adapter
-Date: Sat,  8 Jun 2019 22:56:58 -0700
-Message-Id: <20190609055658.3446-1-andrew.smirnov@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=heURi6LynaMTZ5g0eudG6hqYJ4FK/vscKytezEoes00=;
+ b=q3U0RndI675trFzThv3dbmmkQ9OpZpXwA2Cc0oenWUxK7Ew3Tc8cWhssUgfHKPOr2T
+ T8lbUeGjRB6Blqic6qXunZHtvsKQkm1Wu4H63ER4LYsf4zM2vkFBjp77icTcuRZUt57/
+ y3cUbQG6vVmtG5mxz9LYeDXZ8CsfYs6oBmyXi1/Y+729aGL3BmxAxU6tx5M5MMg/lvfM
+ tyeQJAuOf7HbdCJeZtpOqr0ype1vzG8cGieP66wY0T1zefMZi7UEtvwWMzzEva4911Un
+ fAn155BTlxb28Wbcmo9ihlLHWmGWUpET7PuKRqc0q2EiVE9+D5apVWdd12awQWMhLr8B
+ 60+w==
+X-Gm-Message-State: APjAAAXQowh4/j372TLX2M7IGZgQbCafnP1RZPCZ8vW1NF887hMQkC7l
+ E1qG1WQ8a2wrfJkud/zJCu3vyQ==
+X-Google-Smtp-Source: APXvYqydZoqjFUbt/qIi2n0C1bU+sajFrIHxWpzcFSWVldpERYP3gQHwq/dydPovJzSrHBqbgEVSEw==
+X-Received: by 2002:a37:a98c:: with SMTP id
+ s134mr49571604qke.176.1560063076471; 
+ Sat, 08 Jun 2019 23:51:16 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li1322-146.members.linode.com.
+ [45.79.223.146])
+ by smtp.gmail.com with ESMTPSA id s44sm1432186qtc.8.2019.06.08.23.51.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 08 Jun 2019 23:51:15 -0700 (PDT)
+Date: Sun, 9 Jun 2019 14:51:01 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+Subject: Re: [PATCH] perf tools: Properly set the value of 'old' and 'head'
+ in snapshot mode
+Message-ID: <20190609065101.GA6357@leoy-ThinkPad-X240s>
+References: <20190605161633.12245-1-mathieu.poirier@linaro.org>
+ <20190606201056.GJ21245@kernel.org>
+ <20190607064425.GF5970@leoy-ThinkPad-X240s>
+ <20190607182325.GL21245@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190607182325.GL21245@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_225713_115626_78936390 
-X-CRM114-Status: GOOD (  14.10  )
+X-CRM114-CacheID: sfid-20190608_235119_511809_98C0D8BE 
+X-CRM114-Status: GOOD (  19.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,105 +103,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wolfram Sang <wsa@the-dreams.de>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Chris Healy <cphealy@gmail.com>, Fabio Estevam <festevam@gmail.com>,
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>, suzuki.poulose@arm.com,
+ peterz@infradead.org, linux-kernel@vger.kernel.org,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, jolsa@redhat.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allocating DMA after registering I2C adapter can lead to infinite
-probing loop, for example, consider the following scenario:
+Hi Arnaldo,
 
-    1. i2c_imx_probe() is called and successfully registers an I2C
-       adapter via i2c_add_numbered_adapter()
+On Fri, Jun 07, 2019 at 03:23:25PM -0300, Arnaldo Carvalho de Melo wrote:
+> Em Fri, Jun 07, 2019 at 02:44:25PM +0800, Leo Yan escreveu:
+> > On Thu, Jun 06, 2019 at 05:10:56PM -0300, Arnaldo Carvalho de Melo wrote:
+> > > Em Wed, Jun 05, 2019 at 10:16:33AM -0600, Mathieu Poirier escreveu:
+> > > > This patch adds the necessay intelligence to properly compute the value
+> > > > of 'old' and 'head' when operating in snapshot mode.  That way we can get
+> > > > the latest information in the AUX buffer and be compatible with the
+> > > > generic AUX ring buffer mechanic.
+> > > 
+> > > Leo, have you had the chance to test/review this one? Suzuki?
+> > 
+> > Sure.  I applied this patch on the perf/core branch (with latest
+> > commit 3e4fbf36c1e3 'perf augmented_raw_syscalls: Move reading
+> > filename to the loop') and passed testing with below steps:
+> > 
+> > # perf record -e cs_etm/@tmc_etr0/ -S -m,64 --per-thread ./sort &
+> > [1] 19097
+> > Bubble sorting array of 30000 elements
+> > 
+> > # kill -USR2 19097
+> > # kill -USR2 19097
+> > # kill -USR2 19097
+> > [ perf record: Woken up 4 times to write data ]
+> > [ perf record: Captured and wrote 0.753 MB perf.data ]
+> > 
+> > FWIW:
+> > 
+> > Tested-by: Leo Yan <leo.yan@linaro.org>
+> 
+> Thanks a lot, I've added your "Tester notes:" and also your Tested-by:.
+> 
+> As I don't have hardware (yet) to test these patches, tests by people
+> who can test on real hardware is always super appreciated.
 
-    2. As a part of i2c_add_numbered_adapter() new I2C slave devices
-       are added from DT which results in a call to
-       driver_deferred_probe_trigger()
+You are very welcome and it's my pleasure :)
 
-    3. i2c_imx_probe() continues and calls i2c_imx_dma_request() which
-       due to lack of proper DMA driver returns -EPROBE_DEFER
+> Any suggestions for a SBC that I could buy to be able to do so?
 
-    4. i2c_imx_probe() fails, removes I2C adapter and returns
-       -EPROBE_DEFER, which places it into deferred probe list
+Below are several Arm development boards for referrence:
 
-    5. Deferred probe work triggered in #2 above kicks in and calls
-       i2c_imx_probe() again thus bringing us to step #1
+- DB410c [1]: This board is the first choice for myself, since this
+  board provides Debian (and Fedora :) support and it supports the
+  mainline kernel pretty well; the CoreSight also is well supported.
 
-To avoid having this problem, move i2c_imx_dma_request() to happen
-before i2c_add_numbered_adapter().
+  This board is about 80 USD so the cost is not expensive; on the
+  other hand, please note one cons is the SDRAM is only 1GB, this will
+  be impossible if you build some big projects (e.g. LLVM/Clang and
+  BCC); but it's sufficient for perf related development and
+  verification.
 
-This problem was encountered on VF610 CFU1 board with
-CONFIG_FSL_EDMA=n.
+- There have other several boards are in my mind:
 
-Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-Cc: Chris Healy <cphealy@gmail.com>
-Cc: Wolfram Sang <wsa@the-dreams.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-Cc: linux-i2c@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/i2c/busses/i2c-imx.c | 19 ++++++++++---------
- 1 file changed, 10 insertions(+), 9 deletions(-)
+  Raspberry Pi3 [2] and Hikey960 [3].
 
-diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
-index b1b8b938d7f4..78a909f56f75 100644
---- a/drivers/i2c/busses/i2c-imx.c
-+++ b/drivers/i2c/busses/i2c-imx.c
-@@ -278,7 +278,7 @@ static int i2c_imx_dma_request(struct imx_i2c_struct *i2c_imx,
- {
- 	struct imx_i2c_dma *dma;
- 	struct dma_slave_config dma_sconfig;
--	struct device *dev = &i2c_imx->adapter.dev;
-+	struct device *dev = i2c_imx->adapter.dev.parent;
- 	int ret;
- 
- 	dma = devm_kzalloc(dev, sizeof(*dma), GFP_KERNEL);
-@@ -1153,10 +1153,15 @@ static int i2c_imx_probe(struct platform_device *pdev)
- 	if (ret == -EPROBE_DEFER)
- 		goto clk_notifier_unregister;
- 
-+	/* Init DMA config if supported */
-+	ret = i2c_imx_dma_request(i2c_imx, phy_addr);
-+	if (ret < 0)
-+		goto clk_notifier_unregister;
-+
- 	/* Add I2C adapter */
- 	ret = i2c_add_numbered_adapter(&i2c_imx->adapter);
- 	if (ret < 0)
--		goto clk_notifier_unregister;
-+		goto dma_free;
- 
- 	pm_runtime_mark_last_busy(&pdev->dev);
- 	pm_runtime_put_autosuspend(&pdev->dev);
-@@ -1166,16 +1171,12 @@ static int i2c_imx_probe(struct platform_device *pdev)
- 	dev_dbg(&i2c_imx->adapter.dev, "adapter name: \"%s\"\n",
- 		i2c_imx->adapter.name);
- 
--	/* Init DMA config if supported */
--	ret = i2c_imx_dma_request(i2c_imx, phy_addr);
--	if (ret < 0)
--		goto del_adapter;
--
- 	dev_info(&i2c_imx->adapter.dev, "IMX I2C adapter registered\n");
- 	return 0;   /* Return OK */
- 
--del_adapter:
--	i2c_del_adapter(&i2c_imx->adapter);
-+dma_free:
-+	if (i2c_imx->dma)
-+		i2c_imx_dma_free(i2c_imx);
- clk_notifier_unregister:
- 	clk_notifier_unregister(i2c_imx->clk, &i2c_imx->clk_change_nb);
- rpm_disable:
--- 
-2.21.0
+  Raspberry Pi3 misses some features in the mainline kernel [4] and it
+  has not enabled CoreSight hardware tracing feature; Hikey960 also
+  have some patches are out of the mainline kenrel.
 
+  Except you have special requirement (e.g. you want to use the board to
+  build LLVM/Clang/BCC with big DDR size, etc), these two boards can be
+  secondary choices.
+
+Please feel free let me know if you have questions for boards.
+
+Thanks,
+Leo Yan
+
+[1] https://www.96boards.org/product/dragonboard410c/
+[2] https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/
+[3] https://www.96boards.org/product/hikey960/
+[4] https://www.raspberrypi.org/forums/viewtopic.php?t=236568
 
 _______________________________________________
 linux-arm-kernel mailing list
