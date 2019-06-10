@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17CCC3B70D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:15:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AFFC3B717
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:18:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Cz58tBalrZpIY8C9T+zu0FmLWLg8TgvEqeFGfx5hgKU=; b=WjpntmYeh8CoHMyDMUNabONvS2
-	bPRG/BKmzXIgxPOv1b6CYJtobP6ZByuMjTZHKglBpg3/cOHKuh3ZXwBZqEpu9ANrkN5OJxZqHPhtF
-	27wCwaCTX/DzpjQ+fmLhaOJzT2XszbAtC6NfRYfmnZQCUDFrktksW2b1+cVIEhwLIPDIifIHk9qnG
-	M+6WEO/8OFmmvozDNOejGN/MfF6KJUrckgLqrMR+2E5Xx022k8WKC8AlK34SAuQ/Xzrl59wSNuhMs
-	wwan2QddBiXirV2NWG5xYGpB1zFf/qOMyVmrTVaK4xLauTFQRGRQM9ea9Mz+q85rPCvFJP5+VqGqv
-	RkemCPyQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RRkt6wLkqJsDS+Onn6ONeF9r3iUOfIJWx+NrfmFCqmY=; b=Xb0ICzx5xzltD6
+	QLnHTJgnYbcWj0mvYpkmtksThM/0N0nIovZH9+ojeWWrEnSw4KzsY18Xb+VrJmgrHtSrubE1VxqYb
+	4STg8/u/aBRqsIbFDyuja290krLVgAgw08O4euEJZWp2/SpiuKLdkTpIDfsA0nSkBstt1OzWuqfvO
+	RKjzWgStA8PSfbyH0XFL1yJBNHrvDLypeZngcGq8t0UT0vzu0/84/B8F1glplbPkzB1X4+4Hb5du8
+	K/JmHvFvtCOGCOK/c/OwnLz0Cuq+lmR7wGXtl/5xCMe41jn4ELwuqRU0hOlXT8nfcXTBUvYIVQwfW
+	a8aUwLDJdPR2FQy1viqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haL52-0003qf-Ky; Mon, 10 Jun 2019 14:15:24 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haL4F-0002fF-Ol
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:14:37 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 320542007DA;
- Mon, 10 Jun 2019 16:14:33 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 48C0E2007D5;
- Mon, 10 Jun 2019 16:14:28 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id F1B6A402FB;
- Mon, 10 Jun 2019 22:14:21 +0800 (SGT)
-From: daniel.baluta@nxp.com
-To: jassisinghbrar@gmail.com,
-	o.rempel@pengutronix.de
-Subject: [RFC PATCH 2/2] imx: mailbox: Introduce TX doorbell with ACK
-Date: Mon, 10 Jun 2019 22:16:09 +0800
-Message-Id: <20190610141609.17559-3-daniel.baluta@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190610141609.17559-1-daniel.baluta@nxp.com>
-References: <20190610141609.17559-1-daniel.baluta@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1haL7z-0005UP-JV; Mon, 10 Jun 2019 14:18:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haL7q-0005TQ-O6
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:18:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A786346;
+ Mon, 10 Jun 2019 07:18:18 -0700 (PDT)
+Received: from c02tf0j2hf1t.cambridge.arm.com (c02tf0j2hf1t.cambridge.arm.com
+ [10.1.32.192])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5D67E3F73C;
+ Mon, 10 Jun 2019 07:18:16 -0700 (PDT)
+Date: Mon, 10 Jun 2019 15:18:13 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Steve Capper <steve.capper@arm.com>
+Subject: Re: [PATCH v2 08/12] arm64: mm: Logic to make offset_ttbr1 conditional
+Message-ID: <20190610141813.GA10165@c02tf0j2hf1t.cambridge.arm.com>
+References: <20190528161026.13193-1-steve.capper@arm.com>
+ <20190528161026.13193-9-steve.capper@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190528161026.13193-9-steve.capper@arm.com>
+User-Agent: Mutt/1.11.2 (2019-01-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_071435_944803_82356A4C 
-X-CRM114-Status: UNSURE (   8.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190610_071818_832276_F748BB52 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,90 +62,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, Daniel Baluta <daniel.baluta@nxp.com>,
- linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, marc.zyngier@arm.com,
+ bhsharma@redhat.com, will.deacon@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Daniel Baluta <daniel.baluta@nxp.com>
+Hi Steve,
 
-TX doorbell with ACK will allow us to push the doorbell ring button
-(trigger GIR) and also will allow us to handle the response from DSP.
+On Tue, May 28, 2019 at 05:10:22PM +0100, Steve Capper wrote:
+> diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+> index 039fbd822ec6..a42c392ed1e1 100644
+> --- a/arch/arm64/include/asm/assembler.h
+> +++ b/arch/arm64/include/asm/assembler.h
+> @@ -548,6 +548,14 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+>  	.macro	offset_ttbr1, ttbr
+>  #ifdef CONFIG_ARM64_USER_VA_BITS_52
+>  	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
+> +#endif
+> +
+> +#ifdef CONFIG_ARM64_USER_KERNEL_VA_BITS_52
+> +alternative_if_not ARM64_HAS_52BIT_VA
+> +	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
+> +alternative_else
+> +	nop
+> +alternative_endif
+>  #endif
+>  	.endm
 
-DSP firmware found on i.MX8 boards implements a duplex
-communication protocol over MU channels.
+As a nitpick, you could write alternative_else_not_endif instead of the
+last three lines.
 
-On the host side (Linux) we need to plugin into Sound Open Firmware IPC
-communication infrastructure which handles all the details (e.g message
-queuing, tx/rx logic) [1] and the users are only required to provide the
-following callbacks:
+Anyway, we use offset_ttbr1 in a few early cases via
+idmap_cpu_replace_ttbr1 where the alternative framework hasn't got the
+chance to patch the instructions. I suggest you open-code the feature
+check in here, I don't think we use this on any fast path.
 
-  - send_msg (for Tx)
-  - irq_handler (Ack of Tx, request from DSP)
-
-In order to implement send_msg and irq_handler we will use two MU
-channels:
-	* channel #0, TX doorbell with ACK
-	* channel #1, RX doorbell
-
-Sending a request Host -> DSP (channel #0)
-  - send_msg callback
-	- write data into SHMEM
-	- push doorbell ring button (trigger GIR)
- - irq handler
-	- handle DSP request (channel #1)
-	  - read SHMEM and trigger SOF IPC state machine
-	  - send ACK (push doorbell ring button for channel #1)
-	- handle DSP response (ACK) (channel #0)
-	  - read SHMEM and trigger IPC state machine
-
-The easisest way to implement this is to directly access the MU
-registers but since the MU is abstracted using the mailbox interface
-we need to use that instead.
-
-[1] https://elixir.bootlin.com/linux/v5.2-rc4/source/sound/soc/sof/ipc.c
-
-Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
----
- drivers/mailbox/imx-mailbox.c | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-index 9f74dee1a58c..3a91611e17d2 100644
---- a/drivers/mailbox/imx-mailbox.c
-+++ b/drivers/mailbox/imx-mailbox.c
-@@ -42,6 +42,7 @@ enum imx_mu_chan_type {
- 	IMX_MU_TYPE_RX,		/* Rx */
- 	IMX_MU_TYPE_TXDB,	/* Tx doorbell */
- 	IMX_MU_TYPE_RXDB,	/* Rx doorbell */
-+	IMX_MU_TYPE_TXDB_ACK	/* Tx doorbell with Ack */
- };
- 
- struct imx_mu_con_priv {
-@@ -124,6 +125,7 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
- 			(ctrl & IMX_MU_xCR_RIEn(cp->idx));
- 		break;
- 	case IMX_MU_TYPE_RXDB:
-+	case IMX_MU_TYPE_TXDB_ACK:
- 		val &= IMX_MU_xSR_GIPn(cp->idx) &
- 			(ctrl & IMX_MU_xCR_GIEn(cp->idx));
- 		break;
-@@ -200,6 +202,7 @@ static int imx_mu_startup(struct mbox_chan *chan)
- 		imx_mu_xcr_rmw(priv, IMX_MU_xCR_RIEn(cp->idx), 0);
- 		break;
- 	case IMX_MU_TYPE_RXDB:
-+	case IMX_MU_TYPE_TXDB_ACK:
- 		imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIEn(cp->idx), 0);
- 		break;
- 	default:
 -- 
-2.17.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
