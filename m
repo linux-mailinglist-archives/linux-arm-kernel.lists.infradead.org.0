@@ -2,89 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5558D3BB54
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:48:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 486673BB6D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:54:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zSSUy1/iIYH9+zVGNNYIiaCqg0kQw7AtU8Y57ZBqFnQ=; b=FVmB7VIZ1tKjf9
-	tJ0cRZGmwjdQu+NjJgZXmPSnbiTwVEUCu9QM0s+3u3szRZe2qFVkdkhs3m+WhXBss5Hu/A6NRyVzO
-	apoGrdVl9S6K/jQg6fEe//c26IMjN/GMO+BUeyR1JQ6D0ZM8mJawPAc8yAuBkWQcCOrw5hBjxVi5N
-	gyHwQy8ZBX8PDy0fGNjqC1UtFiMNjoF7z6VsoYAd65Bhor78+qltC5u1jwBFAZbccGsIjulz4BgP7
-	K5vIFyfOVZOjlOx97vWIS3p0/vG4BPIuxPPsHbTB/UURDzHiGTGM0y3dE09htThFestKXs/BNbPFX
-	dHN++O/KHyQ+PDjwbwQw==;
+	List-Owner; bh=9V9R76pU2sjCf2SNyuQIQW771+Q05D9LXoEmnS07zpQ=; b=UpeJQ9P3lFzAek
+	hpljg++Sx7O7CU8chR5OrvZ73a0L9cW0JSy+rCjfSM3jMF9ExGJ1jGqs5nEzNPhkSvSysLERdhqsC
+	45DTCOpA2fTjiR6innin/Fd62Y8k6qXufrReNkYmFXQEKl7R/hAbWCpm+YEuxjAKlBKS2RRPsut7l
+	Uhg7aD1RVYiCH6rZsEBOO74FKPtEq/SvJeAohTDSPel1CPZSRP6P8jtUUaDoXN7KCNDZDOKR6BktC
+	6cyhUeJMlsnMGs/ESoN5K00BD3d6qrg0XrmcC+RvXtNO6gsHZLfPe9OO9lviq205rYKgrHDWUQbjd
+	DvL/5zBb0IyvyA99q3SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haOPN-0005DY-8c; Mon, 10 Jun 2019 17:48:37 +0000
-Received: from mail.codeweavers.com ([50.203.203.244])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haOOj-0005Cp-1L
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:47:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=codeweavers.com; s=6377696661; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=B+NQK0qQzwriFdGQRKl3qnBuYxHERXIyxTc267JOpl0=; b=ddQy0EE+r/As82BHbGL2enMiF
- +xSkrfjkaTQ0AJxemttV6by74YhcQ50DLiLC1sA3I03bUdF2mNxbHrY1p4ORkTzfe/rv/xfMgzol2
- SI2MK+71N2dyNCMb6kZwrM5MZdJ8KNTla+ziNnIZzH+w52ZzB0PpDi3xi3X39ShZeK5/E=;
-Received: from merlot.physics.ox.ac.uk ([163.1.241.98] helo=merlot)
- by mail.codeweavers.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <huw@codeweavers.com>)
- id 1haOPC-0004C2-Gt; Mon, 10 Jun 2019 12:48:27 -0500
-Received: from daviesh by merlot with local (Exim 4.90_1)
- (envelope-from <huw@codeweavers.com>)
- id 1haOOY-0003Rh-VS; Mon, 10 Jun 2019 18:47:47 +0100
-Date: Mon, 10 Jun 2019 18:47:46 +0100
-From: Huw Davies <huw@codeweavers.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v6 01/19] kernel: Standardize vdso_datapage
-Message-ID: <20190610174746.GA13224@merlot.physics.ox.ac.uk>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-2-vincenzo.frascino@arm.com>
- <CAK8P3a3EnvkLND2RJdZtEY64PhK5g0sbbuytQro=f0cPur2g9g@mail.gmail.com>
- <bb5253b2-623c-c927-27a2-1d3a2990d20f@arm.com>
+	id 1haOUa-0007CD-Rj; Mon, 10 Jun 2019 17:54:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haOUB-0007Ay-Ev
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:53:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ED62C337;
+ Mon, 10 Jun 2019 10:53:33 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 4ABC63F246; Mon, 10 Jun 2019 10:53:29 -0700 (PDT)
+Date: Mon, 10 Jun 2019 18:53:27 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
+ __uaccess_mask_ptr
+Message-ID: <20190610175326.GC25803@arrakis.emea.arm.com>
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <bb5253b2-623c-c927-27a2-1d3a2990d20f@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Spam-Score: -106.0
-X-Spam-Report: Spam detection software,
- running on the system "mail.codeweavers.com", 
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- the administrator of that system for details.
- Content preview:  On Tue, Jun 04, 2019 at 01:05:40PM +0100, Vincenzo Frascino
- wrote: > On 31/05/2019 09:16, Arnd Bergmann wrote: > > On Thu, May 30, 2019
- at 4:15 PM Vincenzo Frascino > > <vincenzo.frascino@arm.com> wro [...] 
- Content analysis details:   (-106.0 points, 5.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -100 USER_IN_WHITELIST      From: address is in the user's white-list
- -6.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+In-Reply-To: <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_104757_140727_B71E1319 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_105335_599396_DEC8A8F0 
+X-CRM114-Status: GOOD (  19.65  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,57 +62,207 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, Shuah Khan <shuah@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Paul Burton <paul.burton@mips.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 01:05:40PM +0100, Vincenzo Frascino wrote:
-> On 31/05/2019 09:16, Arnd Bergmann wrote:
-> > On Thu, May 30, 2019 at 4:15 PM Vincenzo Frascino
-> > <vincenzo.frascino@arm.com> wrote:
-> > 
-> >> + * vdso_data will be accessed by 64 bit and compat code at the same time
-> >> + * so we should be careful before modifying this structure.
-> >> + */
-> >> +struct vdso_data {
-> >> +       u32                     seq;
-> >> +
-> >> +       s32                     clock_mode;
-> >> +       u64                     cycle_last;
-> >> +       u64                     mask;
-> >> +       u32                     mult;
-> >> +       u32                     shift;
-> >> +
-> >> +       struct vdso_timestamp   basetime[VDSO_BASES];
-> >> +
-> >> +       s32                     tz_minuteswest;
-> >> +       s32                     tz_dsttime;
-> >> +       u32                     hrtimer_res;
-> >> +};
-> > 
-> > The structure contains four padding bytes at the end, which is
-> > something we try to avoid, at least if this ends up being used as
-> > an ABI. Maybe add "u32 __unused" at the end?
-> > 
-> 
-> Agreed, I will fix this in v7.
+On Mon, Jun 03, 2019 at 06:55:04PM +0200, Andrey Konovalov wrote:
+> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+> index e5d5f31c6d36..9164ecb5feca 100644
+> --- a/arch/arm64/include/asm/uaccess.h
+> +++ b/arch/arm64/include/asm/uaccess.h
+> @@ -94,7 +94,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+>  	return ret;
+>  }
+>  
+> -#define access_ok(addr, size)	__range_ok(addr, size)
+> +#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
 
-Note that this is also necessary to ensure that CLOCK_MONOTONIC_RAW
-works in the 32-bit vDSO on x86_64 kernels.
+I'm going to propose an opt-in method here (RFC for now). We can't have
+a check in untagged_addr() since this is already used throughout the
+kernel for both user and kernel addresses (khwasan) but we can add one
+in __range_ok(). The same prctl() option will be used for controlling
+the precise/imprecise mode of MTE later on. We can use a TIF_ flag here
+assuming that this will be called early on and any cloned thread will
+inherit this.
 
-Huw.
+Anyway, it's easier to paste some diff than explain but Vincenzo can
+fold them into his ABI patches that should really go together with
+these. I added a couple of MTE definitions for prctl() as an example,
+not used currently:
+
+------------------8<---------------------------------------------
+diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+index fcd0e691b1ea..2d4cb7e4edab 100644
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -307,6 +307,10 @@ extern void __init minsigstksz_setup(void);
+ /* PR_PAC_RESET_KEYS prctl */
+ #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
+ 
++/* PR_UNTAGGED_UADDR prctl */
++int untagged_uaddr_set_mode(unsigned long arg);
++#define SET_UNTAGGED_UADDR_MODE(arg)	untagged_uaddr_set_mode(arg)
++
+ /*
+  * For CONFIG_GCC_PLUGIN_STACKLEAK
+  *
+diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
+index c285d1ce7186..89ce77773c49 100644
+--- a/arch/arm64/include/asm/thread_info.h
++++ b/arch/arm64/include/asm/thread_info.h
+@@ -101,6 +101,7 @@ void arch_release_task_struct(struct task_struct *tsk);
+ #define TIF_SVE			23	/* Scalable Vector Extension in use */
+ #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
+ #define TIF_SSBD		25	/* Wants SSB mitigation */
++#define TIF_UNTAGGED_UADDR	26
+ 
+ #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
+ #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
+@@ -116,6 +117,7 @@ void arch_release_task_struct(struct task_struct *tsk);
+ #define _TIF_FSCHECK		(1 << TIF_FSCHECK)
+ #define _TIF_32BIT		(1 << TIF_32BIT)
+ #define _TIF_SVE		(1 << TIF_SVE)
++#define _TIF_UNTAGGED_UADDR	(1 << TIF_UNTAGGED_UADDR)
+ 
+ #define _TIF_WORK_MASK		(_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
+ 				 _TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
+diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+index 9164ecb5feca..54f5bbaebbc4 100644
+--- a/arch/arm64/include/asm/uaccess.h
++++ b/arch/arm64/include/asm/uaccess.h
+@@ -73,6 +73,9 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+ {
+ 	unsigned long ret, limit = current_thread_info()->addr_limit;
+ 
++	if (test_thread_flag(TIF_UNTAGGED_UADDR))
++		addr = untagged_addr(addr);
++
+ 	__chk_user_ptr(addr);
+ 	asm volatile(
+ 	// A + B <= C + 1 for all A,B,C, in four easy steps:
+@@ -94,7 +97,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+ 	return ret;
+ }
+ 
+-#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
++#define access_ok(addr, size)	__range_ok(addr, size)
+ #define user_addr_max			get_fs
+ 
+ #define _ASM_EXTABLE(from, to)						\
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index 3767fb21a5b8..fd191c5b92aa 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -552,3 +552,18 @@ void arch_setup_new_exec(void)
+ 
+ 	ptrauth_thread_init_user(current);
+ }
++
++/*
++ * Enable the relaxed ABI allowing tagged user addresses into the kernel.
++ */
++int untagged_uaddr_set_mode(unsigned long arg)
++{
++	if (is_compat_task())
++		return -ENOTSUPP;
++	if (arg)
++		return -EINVAL;
++
++	set_thread_flag(TIF_UNTAGGED_UADDR);
++
++	return 0;
++}
+diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+index 094bb03b9cc2..4afd5e2980ee 100644
+--- a/include/uapi/linux/prctl.h
++++ b/include/uapi/linux/prctl.h
+@@ -229,4 +229,9 @@ struct prctl_mm_map {
+ # define PR_PAC_APDBKEY			(1UL << 3)
+ # define PR_PAC_APGAKEY			(1UL << 4)
+ 
++/* Untagged user addresses for arm64 */
++#define PR_UNTAGGED_UADDR		55
++# define PR_MTE_IMPRECISE_CHECK		0
++# define PR_MTE_PRECISE_CHECK		1
++
+ #endif /* _LINUX_PRCTL_H */
+diff --git a/kernel/sys.c b/kernel/sys.c
+index 2969304c29fe..b1f67a8cffc4 100644
+--- a/kernel/sys.c
++++ b/kernel/sys.c
+@@ -124,6 +124,9 @@
+ #ifndef PAC_RESET_KEYS
+ # define PAC_RESET_KEYS(a, b)	(-EINVAL)
+ #endif
++#ifndef SET_UNTAGGED_UADDR_MODE
++# define SET_UNTAGGED_UADDR_MODE	(-EINVAL)
++#endif
+ 
+ /*
+  * this is where the system-wide overflow UID and GID are defined, for
+@@ -2492,6 +2495,11 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
+ 			return -EINVAL;
+ 		error = PAC_RESET_KEYS(me, arg2);
+ 		break;
++	case PR_UNTAGGED_UADDR:
++		if (arg3 || arg4 || arg5)
++			return -EINVAL;
++		error = SET_UNTAGGED_UADDR_MODE(arg2);
++		break;
+ 	default:
+ 		error = -EINVAL;
+ 		break;
+------------------8<---------------------------------------------
+
+The tag_ptr() function in the test library would become:
+
+static void *tag_ptr(void *ptr)
+{
+	static int tbi_enabled = 0;
+	unsigned long tag = 0;
+
+	if (!tbi_enabled) {
+		if (prctl(PR_UNTAGGED_UADDR, 0, 0, 0, 0) == 0)
+			tbi_enabled = 1;
+	}
+
+	if (!ptr)
+		return ptr;
+	if (tbi_enabled)
+		tag = rand() & 0xff;
+
+	return (void *)((unsigned long)ptr | (tag << TAG_SHIFT));
+}
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
