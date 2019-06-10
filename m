@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E0F43B20C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:27:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B63213B20B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:27:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MT1mstwDU4rO1h8UDzm5roEl9wonK1U2dIq5MdDmMjs=; b=Gv/OJtGuWyq1FG
-	mCB2JE85QwNwhYDGjDly+krwzwAzxCeMuhXwllLeTL1brDtWWI2jaTc/fTvFkdjgTRae5a/4ph14l
-	5TlSdcQtCfiA8FtEqNKi97MONFcmskYbBweRmHbMULBFfQwbBXojOIFeKth1QikdnP4f5knC906Jd
-	n4sFiB3tnzzoKOJDCo9bB0t/bRiB8xkm2Vk3r0u7YmLUTMluAZ3I0irErhBRiRwrOtKcOnSpR53Wu
-	mzPXmzjef8By83RXjM9vLGap/+NgtL1UVoW/zbH3sHspmuCWDZqX4mVIHAjvXTZCuaMCnbhUiE47Z
-	QewSdr4wOTf7KCQZXJlA==;
+	List-Owner; bh=oNglXytLowl1t5N+LXWb3TOEzflL4kdrcJJu1d+VcQs=; b=f2HMyDbIqAsLyQ
+	KIgXskuGEFyLsO70UeidCT3j401N+2k8TN2Ek2TQ7g3aaCfjvageK40YOHkOXejSgPkxsHuzLEbX2
+	xlPY3dNwpybwNRbDOd/j0ouRVPFNwjp/oLXesD5tGiMjasGkCXsrp3Y6BxFgBZvq7FWhGm/zF2EdO
+	1CzY3lqS6FwbgY3hxtDXUCx8Dvpg6opK1IybxG416q18J3lgsW3DKsgs5s9PYjn8TVUYMO/QHZON7
+	+XMAZxIDo9E8FL476nTaSyuHZF8awETAMixg0v3K4mIyKO7QJSnyANoJ65FnSnPXaAdDNui4Bi6NJ
+	eBKRmsWaZBKQ2ObhyKgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haGak-0006yf-Ns; Mon, 10 Jun 2019 09:27:50 +0000
+	id 1haGaT-0006k0-0x; Mon, 10 Jun 2019 09:27:33 +0000
 Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haGZS-0006IH-Of
+ id 1haGZS-0006II-Og
  for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:26:36 +0000
 X-Originating-IP: 90.88.159.246
 Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
  [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id B92A7FF811;
- Mon, 10 Jun 2019 09:26:07 +0000 (UTC)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 5C54FFF80A;
+ Mon, 10 Jun 2019 09:26:24 +0000 (UTC)
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>,
  "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
  Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH v2 03/11] MAINTAINERS: Add Ethernet PHY YAML file
-Date: Mon, 10 Jun 2019 11:25:42 +0200
-Message-Id: <2e9c285102cdca2d6f3e042ba4430032537b8835.1560158667.git-series.maxime.ripard@bootlin.com>
+Subject: [PATCH v2 04/11] dt-bindings: net: phy: The interrupt property is not
+ mandatory
+Date: Mon, 10 Jun 2019 11:25:43 +0200
+Message-Id: <19f160b6edf5a11171cea249305b7458c96a7187.1560158667.git-series.maxime.ripard@bootlin.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
 References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_022632_262274_4759631C 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20190610_022632_262298_5428D064 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -75,32 +77,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While the Ethernet PHY framework was marked as maintained, the device tree
-bindings associated to that framework was not listed under the maintained
-files. Fix that.
+Unlike what was initially claimed in the PHY binding, the interrupt
+property of a PHY can be omitted, and the OS will turn to polling instead.
+
+Document that.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
 ---
+ Documentation/devicetree/bindings/net/ethernet-phy.yaml | 1 -
+ 1 file changed, 1 deletion(-)
 
-Changes from v1:
-  - New patch
----
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 7ed4d54956a2..1cb1e4b6c473 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -5987,6 +5987,7 @@ M:	Heiner Kallweit <hkallweit1@gmail.com>
- L:	netdev@vger.kernel.org
- S:	Maintained
- F:	Documentation/ABI/testing/sysfs-bus-mdio
-+F:	Documentation/devicetree/bindings/net/ethernet-phy.yaml
- F:	Documentation/devicetree/bindings/net/mdio*
- F:	Documentation/networking/phy.rst
- F:	drivers/net/phy/
+diff --git a/Documentation/devicetree/bindings/net/ethernet-phy.yaml b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
+index 81d2016d7232..c77f97cbd54b 100644
+--- a/Documentation/devicetree/bindings/net/ethernet-phy.yaml
++++ b/Documentation/devicetree/bindings/net/ethernet-phy.yaml
+@@ -156,7 +156,6 @@ properties:
+ 
+ required:
+   - reg
+-  - interrupts
+ 
+ examples:
+   - |
 -- 
 git-series 0.9.1
 
