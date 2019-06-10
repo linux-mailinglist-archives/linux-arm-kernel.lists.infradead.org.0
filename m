@@ -2,64 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A1193BF09
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 23:59:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 821923BF24
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 00:08:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6B3W6NZQMH/hk6oMkFe3pnfWHw9TjuNwGo9wes2bO2I=; b=joUwB1r9XwljZ1
-	Pm0dMtOevJtOhYfz8GvVZOdhQOhZWP60J7QYdaO7gvyP4okPEXzLwg+cW9L4cG/iq+xYV7Y8txmM2
-	fOYwJWFsGEiHx+MxsQbuxXbYn8Bl3yrc8sbu4rkBnVT5urqHzW9EiOITLFp7Qzqy8Zx1YBoIH7u1y
-	izvzlXLThRqngP360z/wf9DRmb/UCEbh5d7vYrUZRDI4VZ1CeQKFaVPwyzWChC60rgwLr6pM3wNsx
-	bkVuQh5bBXyUtDglTRdx5n0qpQJ/avEyRzBw5XewWytJMQyB68L12B3OPO5yJwCBafMpj8fHbeE1b
-	w9juuv4nLeZYyvZ+/8hw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BQQBwgZRM6BztzAWDzEH0PN6FOL8mu7DBi4zyFvZ0iE=; b=HmJzvV2uwSAYYNRcTJ+UwabEH
+	BFxPyjPQSyGRGsXmqRi39HPMdk8oRRO9QTt7k39+Cclrv16sqJBhiVnNnRAH/LreU824fKdTrcczl
+	C7pDzUP72U9AlFKTFEKt/yO0pY8tWsSuKwT7V5VVgABk/jZ/yEzssB84rkliguPmcI24s2L83F+GI
+	Jn8cnv5Fm0IhaevqqHEPz3lsvfTSr5cmtmTNUpgAa+e8khqEtTRDkfsh0vOSJGPXt1Pfu8OcqGEgF
+	CXvjkZ9O1j9bWN3IW8/BPYIEDshBvG+MIVovweE9y2rx0R9vyRUzRHVkttw6BCt2pjtfYmwW2Xmr5
+	xdGYsdlAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haSJn-00027u-2n; Mon, 10 Jun 2019 21:59:07 +0000
+	id 1haSSp-0006Q7-U1; Mon, 10 Jun 2019 22:08:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haSJb-00026x-Ai
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 21:58:56 +0000
-Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
- [209.85.160.176])
+ id 1haSSc-0006PR-1G
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 22:08:15 +0000
+Received: from [192.168.1.112] (c-24-9-64-241.hsd1.co.comcast.net
+ [24.9.64.241])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E3B8E2146E
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 21:58:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 317032082E;
+ Mon, 10 Jun 2019 22:08:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560203935;
- bh=0PkPVdz5GVGKK3sk7TXqMD/2uCtfIwQXWAIEJPKPXS4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=vEfoYgbBq11nuojqIl5e9i7RXs8dtqVAB0ysyomiAsFQ60a3iO7+gRazCHpKv3+Hj
- d6Jk8KCJYSMSnVxDbznJoY7vuau7PB2vH0B4qYiipoC0DJtvfp0xKOURJglbDN1y8m
- CxMGrgGUwRyGnnzsA56KLz3KKAuNcrJE1e+3LTTY=
-Received: by mail-qt1-f176.google.com with SMTP id p15so4780184qtl.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 14:58:54 -0700 (PDT)
-X-Gm-Message-State: APjAAAU9Xg1k/sJV5ndBHgdmnDyclsBII8793ypa3sbGXn9sxnRvTs7l
- E/u4e6u99RBvz2kdIPMyaFC92dxzH3M8k5YVwQ==
-X-Google-Smtp-Source: APXvYqzYmsQ1fTULRa5HAKFvUASBSBcpANP6JQU7H9+hyVCTO/yhwj4BIvezOoVzR8ZhDpYU91B05EHec2kVcFmKG98=
-X-Received: by 2002:ac8:36b9:: with SMTP id a54mr61757193qtc.300.1560203934207; 
- Mon, 10 Jun 2019 14:58:54 -0700 (PDT)
+ s=default; t=1560204493;
+ bh=e8XjUFtZMStDPYS3FRKtj43AwF2CGKnQQ24s2uVvYvo=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=BIlELQVmQiXsINDdVkW14pOS9K8s3Gx2mingJ1IaepHxagdpMTpD4ZzyEKsLXADQu
+ LDDLzvbv2yQR2aXp8ujaMwhG5b7sVH+1JVNw3f8Wr643gACxp2ikFsJnG7lIjoeKQt
+ enV0L8Nd0qyRS4RKerZLlzNTADXiWwd0A8vbWeho=
+Subject: Re: [PATCH v16 16/16] selftests, arm64: add a selftest for passing
+ tagged pointers to kernel
+To: Kees Cook <keescook@chromium.org>, Andrey Konovalov <andreyknvl@google.com>
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <9e1b5998a28f82b16076fc85ab4f88af5381cf74.1559580831.git.andreyknvl@google.com>
+ <201906072055.7DFED7B@keescook>
+From: shuah <shuah@kernel.org>
+Message-ID: <2bc277f8-e67e-30e0-5824-8184c2b03237@kernel.org>
+Date: Mon, 10 Jun 2019 16:08:10 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190531063849.26142-1-manivannan.sadhasivam@linaro.org>
- <20190531063849.26142-4-manivannan.sadhasivam@linaro.org>
-In-Reply-To: <20190531063849.26142-4-manivannan.sadhasivam@linaro.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 10 Jun 2019 15:58:43 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLjKu_1Gep348-ERQgJrZ6vM2RxB2UW4heqGGg5syEFWw@mail.gmail.com>
-Message-ID: <CAL_JsqLjKu_1Gep348-ERQgJrZ6vM2RxB2UW4heqGGg5syEFWw@mail.gmail.com>
-Subject: Re: [PATCH v3 3/4] dt-bindings: arm: stm32: Document Avenger96
- devicetree binding
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+In-Reply-To: <201906072055.7DFED7B@keescook>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_145855_388164_1E4B2642 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190610_150814_100524_217A0B1E 
+X-CRM114-Status: GOOD (  15.69  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,30 +81,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- loic pallardy <loic.pallardy@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, shuah <shuah@kernel.org>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 31, 2019 at 12:39 AM Manivannan Sadhasivam
-<manivannan.sadhasivam@linaro.org> wrote:
->
-> This commit documents Avenger96 devicetree binding based on
-> STM32MP157 SoC.
->
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
->  Documentation/devicetree/bindings/arm/stm32/stm32.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+On 6/7/19 9:56 PM, Kees Cook wrote:
+> On Mon, Jun 03, 2019 at 06:55:18PM +0200, Andrey Konovalov wrote:
+>> This patch is a part of a series that extends arm64 kernel ABI to allow to
+>> pass tagged user pointers (with the top byte set to something else other
+>> than 0x00) as syscall arguments.
+>>
+>> This patch adds a simple test, that calls the uname syscall with a
+>> tagged user pointer as an argument. Without the kernel accepting tagged
+>> user pointers the test fails with EFAULT.
+>>
+>> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> 
+> I'm adding Shuah to CC in case she has some suggestions about the new
+> selftest.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Thanks Kees.
+
+> 
+> Reviewed-by: Kees Cook <keescook@chromium.org>
+> 
+> -Kees
+> 
+
+Looks good to me.
+
+Acked-by: Shuah Khan <skhan@linuxfoundation.org>
+
+thanks,
+-- Shuah
 
 _______________________________________________
 linux-arm-kernel mailing list
