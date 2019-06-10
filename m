@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0B5D3B0EC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 10:42:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FBD43B0ED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 10:43:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,51 +11,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dz/GB4TGeOzLq4iiOj8GEVOtQavu51VxpukWk6pv11Q=; b=HJMjtOKJfQog0MrHnX3yerVb2A
-	TjlZFUqDFVvavj927Pdsd2aoJH20zTiq7R6jdIMPVc9K90iIvek/RGrrkMN/zju+qbHFCI0Qr2Xsi
-	W7hbLA9AnxhySDvDploQlV7fXsju2Q0G7KhLKSI7yqg+ml8CJhFZGdEgAIxIKMjTPCURTwklxxmfL
-	Z0S2CZUsWZ2mMhgp61LLYB+rIs63ay1h64AMif5YwHyBFDKVSkRueLFhgImsG3T/E0u72GK027Kk0
-	tSyxDLrCH+dQCfxFIZ9D7bPuj9auT6crJeK4PCj03MBZ/GN2pgb/f9Sj8opa24NqyLn2jHxZ6oFCv
-	OaFRQgaQ==;
+	bh=aD3tUgfP7LxL0w2Q3d/XzSrVFZvuwOy13RJDcPVnkMM=; b=DL6PT2l26dF9WPBl97Q200ShR3
+	Nfx2+mnx3AbAlGFVO9x8NKiOJRLvzQMuIHwre6fsT2HJCU2t4pizGstM/6rDN6K09DXUmANUxdIO+
+	JYKCmzmy0seHO30Hh/Gq2+EpVA4xeZGGeHlsUzwcuAWYxJaToYDl64IptP5fopPS8U0x50wYjb6nt
+	bXnoMEfcyDPi5TicJpzYFkapuc02/EkZmdAhmutaiossGjBsaXC74gh9UZamVNWIBCKk0ogA8GhIP
+	tzzWhN1e4N/wRbnlJpbiOtDiTOf3TxILS5uGtwyEJ+2JmDOuRJXBJfBl/ah7OrC/ENhdj9DldLKy4
+	eqTaF8RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haFtG-0002RI-4l; Mon, 10 Jun 2019 08:42:54 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1haFte-0002ld-VU; Mon, 10 Jun 2019 08:43:19 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haFsg-0002BN-QF
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 08:42:20 +0000
-Received: by mail-wm1-x344.google.com with SMTP id x15so7613530wmj.3
+ id 1haFsh-0002C1-VK
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 08:42:21 +0000
+Received: by mail-wr1-x441.google.com with SMTP id x4so5596304wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 01:42:18 -0700 (PDT)
+ Mon, 10 Jun 2019 01:42:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=mEH54ZZbXqjz3IZT5KkSbAecLvKUPwRnXivpNaH2j5c=;
- b=a2GG33XgJn18Yol+PHCleaS0zfozddU3pDxE1VGccaW5e5KeVgXCQOZG45tjtfIcaC
- Lxh5LFI6v+7mSVN/0absvabDtYraYaClMC0Tox8yizarBHRZs5MMT7o+bwZAkx+UYwjc
- gn+dIt02WuGoIQ96ZxrJl58wiP7WJ81xUZFPZPNaBg1wxnoIeEYCAxMT/iFUVXuCYnHx
- bgfE+tWRBOGSJHQBya+sXoyJclZs/lcZZa354GRxGDtOM/PZh/447J170T9AjMgOaYBB
- +XsGQbBGjNMw9PD2U4ouSEzKgUYuRFUJi8Zjv+NXPiv+HQ26SXZwRdLnAsvct3gWghyD
- Ugfw==
+ bh=qYq7mFFCoR+D5QhtdnXfa7L63GrDNr+4aaRo7anMzNg=;
+ b=HAQGPWUrBC+m/uOp1ExdylTBwwXMRfgop11L7pNji5XWXcPZW+6ErRLi511mBcytaZ
+ W3UqLkpw33YmjBArJFkiHuEHbOEyKduZ+bAn1mEZaUDLiIz0ME6BhyAqU9BZvH7w4t+c
+ rfxKHG3Vi1cDONkuWZlhKKSyjl21utH0TeuiZXwU6bY4c5DqQm23B1Ij/Kf+CFiZQdZS
+ 1IreLq1aIZRV0ksEv4kfk4qGpXympkIsPxtlWW9qyKWS8h1amE5syenHSK7Z1CX4qH63
+ 7iKFPjYSg8pCpTER+gxm8AcOcrvXC8eg15KcJ/txMHz4kDbhbyfiQ5AM02XS+7GT4M7B
+ 8oMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=mEH54ZZbXqjz3IZT5KkSbAecLvKUPwRnXivpNaH2j5c=;
- b=gF24C3RUrO7CyoM1qOJGeB6FyAeUuzzN72Y7x8eK9V0S3Td3gSFPc8ZqYkGw8iiKJ9
- JlQKFPr/L2Rbbxlm6R2+W2rXaTCtMlTiCetQSEK7a9TK8cdBYZ8LOeIDnKp9nfPzNB5w
- 3VcV1rPV/xvAjVFUIErLuMbcValCOl8aqpQRv7XqAADsvCqdxvXaPt/A5CpNJM2VqSiO
- vRdsfbWu8SDjdPYE8Qb0Mg0qlixrPaa7BVDZxLV/xtiwt9ex+JZvYGg1orkrvW9gUrjC
- VSG06rHCr7xIbCpqMrklY/Sj/JRItvWV06O6zWIFareIfakhx6sicJsW3sRU4sw9itBY
- e/Ww==
-X-Gm-Message-State: APjAAAUAEcQAnBBzs3orxeUtEKLlNchWisPTX6O0pJztCkJsIoP71vrr
- zjisN4/Zw1BemhBZzsZkGsyL/A==
-X-Google-Smtp-Source: APXvYqy3EzeyzafpMZj28AeifpAxvXD7SUfAmQ4kAAkAt5yEYM9MwQsajAgi24GxBfJLBR5Hah0Qrg==
-X-Received: by 2002:a1c:e356:: with SMTP id a83mr13188870wmh.38.1560156137485; 
- Mon, 10 Jun 2019 01:42:17 -0700 (PDT)
+ bh=qYq7mFFCoR+D5QhtdnXfa7L63GrDNr+4aaRo7anMzNg=;
+ b=OOrJYQioRtA+3BW9HWKKqkhwVZkR8otHJY52yABkEqtG/RO+PBJgcj0B57nAwJPjZM
+ 1UePSbQoLN/h1HTq3GOfwAmZxjuCJRKdIbamD00zQySTxwPrLuhQyDeMOWGqKUMJrVsQ
+ 1hV4X9MkMvD5rTLVtlwex/FwjqhV1R7gbpB8JnsamlIHykkdYhn3dXC2nFCpmsdSuRy3
+ r2ijyw/PfrdOVzEzkmQyqKFjbW07LxZmVy+S1QJK1wtBMgLNSouoNVSOzxFP/eYFoebo
+ cviK0AnpvSqbskrjkBXd3Y1be51tegwmDd7tMoZts4HdAVsKFOIDy6MOxI6EzaCBkFUI
+ obcA==
+X-Gm-Message-State: APjAAAXSDVIVCw2TrPSiNzlytVngTQEVax9eERWDWl+r3VHzQyBmc398
+ 49NWQ0oqWdphbKp0W/B+6mftuA==
+X-Google-Smtp-Source: APXvYqzd94XuV2bw5qRr4c4SqMDr5KX6F6dDBrqoRThTieNRJaWBshe3NLdMg2h1vW6jj1+Btr9Plg==
+X-Received: by 2002:adf:ed41:: with SMTP id u1mr28476611wro.162.1560156138478; 
+ Mon, 10 Jun 2019 01:42:18 -0700 (PDT)
 Received: from localhost.localdomain ([2.31.167.229])
- by smtp.gmail.com with ESMTPSA id a125sm9929670wmf.42.2019.06.10.01.42.16
+ by smtp.gmail.com with ESMTPSA id a125sm9929670wmf.42.2019.06.10.01.42.17
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 01:42:17 -0700 (PDT)
+ Mon, 10 Jun 2019 01:42:18 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
  wsa+renesas@sang-engineering.com, bjorn.andersson@linaro.org,
@@ -63,22 +63,23 @@ To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
  ard.biesheuvel@linaro.org, jlhugo@gmail.com, linux-i2c@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, linux-gpio@vger.kernel.org,
  linux-usb@vger.kernel.org
-Subject: [PATCH v3 2/8] i2c: i2c-qcom-geni: Signify successful driver probe
-Date: Mon, 10 Jun 2019 09:42:07 +0100
-Message-Id: <20190610084213.1052-2-lee.jones@linaro.org>
+Subject: [PATCH v3 3/8] pinctrl: msm: Add ability for drivers to supply a
+ reserved GPIO list
+Date: Mon, 10 Jun 2019 09:42:08 +0100
+Message-Id: <20190610084213.1052-3-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190610084213.1052-1-lee.jones@linaro.org>
 References: <20190610084213.1052-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_014218_849078_9699828E 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20190610_014220_006718_1F1D3FDF 
+X-CRM114-Status: GOOD (  16.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,29 +109,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Qualcomm Geni I2C driver currently probes silently which can be
-confusing when debugging potential issues.  Add a low level (INFO)
-print when each I2C controller is successfully initially set-up.
+When booting MSM based platforms with Device Tree or some ACPI
+implementations, it is possible to provide a list of reserved pins
+via the 'gpio-reserved-ranges' and 'gpios' properties respectively.
+However some ACPI tables are not populated with this information,
+thus it has to come from a knowledgable device driver instead.
+
+Here we provide the MSM common driver with additional support to
+parse this informtion and correctly populate the widely used
+'valid_mask'.
 
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
-Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
- drivers/i2c/busses/i2c-qcom-geni.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/pinctrl/qcom/pinctrl-msm.c | 18 ++++++++++++++++++
+ drivers/pinctrl/qcom/pinctrl-msm.h |  1 +
+ 2 files changed, 19 insertions(+)
 
-diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-qcom-geni.c
-index 9e3b8a98688d..a89bfce5388e 100644
---- a/drivers/i2c/busses/i2c-qcom-geni.c
-+++ b/drivers/i2c/busses/i2c-qcom-geni.c
-@@ -596,6 +596,8 @@ static int geni_i2c_probe(struct platform_device *pdev)
- 		return ret;
- 	}
+diff --git a/drivers/pinctrl/qcom/pinctrl-msm.c b/drivers/pinctrl/qcom/pinctrl-msm.c
+index ee8119879c4c..3ac740b36508 100644
+--- a/drivers/pinctrl/qcom/pinctrl-msm.c
++++ b/drivers/pinctrl/qcom/pinctrl-msm.c
+@@ -607,8 +607,23 @@ static int msm_gpio_init_valid_mask(struct gpio_chip *chip)
+ 	int ret;
+ 	unsigned int len, i;
+ 	unsigned int max_gpios = pctrl->soc->ngpios;
++	const int *reserved = pctrl->soc->reserved_gpios;
+ 	u16 *tmp;
  
-+	dev_dbg(&pdev->dev, "Geni-I2C adaptor successfully added\n");
++	/* Driver provided reserved list overrides DT and ACPI */
++	if (reserved) {
++		bitmap_fill(chip->valid_mask, max_gpios);
++		for (i = 0; reserved[i] >= 0; i++) {
++			if (i >= max_gpios || reserved[i] >= max_gpios) {
++				dev_err(pctrl->dev, "invalid list of reserved GPIOs\n");
++				return -EINVAL;
++			}
++			clear_bit(reserved[i], chip->valid_mask);
++		}
 +
- 	return 0;
++		return 0;
++	}
++
+ 	/* The number of GPIOs in the ACPI tables */
+ 	len = ret = device_property_read_u16_array(pctrl->dev, "gpios", NULL,
+ 						   0);
+@@ -964,6 +979,9 @@ static void msm_gpio_irq_handler(struct irq_desc *desc)
+ 
+ static bool msm_gpio_needs_valid_mask(struct msm_pinctrl *pctrl)
+ {
++	if (pctrl->soc->reserved_gpios)
++		return true;
++
+ 	return device_property_read_u16_array(pctrl->dev, "gpios", NULL, 0) > 0;
  }
  
+diff --git a/drivers/pinctrl/qcom/pinctrl-msm.h b/drivers/pinctrl/qcom/pinctrl-msm.h
+index c12048e54a6f..23b93ae92269 100644
+--- a/drivers/pinctrl/qcom/pinctrl-msm.h
++++ b/drivers/pinctrl/qcom/pinctrl-msm.h
+@@ -121,6 +121,7 @@ struct msm_pinctrl_soc_data {
+ 	bool pull_no_keeper;
+ 	const char *const *tiles;
+ 	unsigned int ntiles;
++	const int *reserved_gpios;
+ };
+ 
+ extern const struct dev_pm_ops msm_pinctrl_dev_pm_ops;
 -- 
 2.17.1
 
