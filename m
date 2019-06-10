@@ -2,89 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41D883B2DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 12:19:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A4F13B311
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 12:21:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CJtzgjiqWjrWiNFD9exs1NCa4GYmZEOcOj1x0Kw+wL0=; b=WXewkZ6v90G1AB
-	ARchI4t49PeuNssxMlqgjGil2b5eh254sjqLnErWWik53zmiThl6uVpYBBmxrvcfE7e7TbVGLo3rI
-	zPjz+O8vdpCj2nx/9ESCPMYPM91sLV3f0b5hN+h9rOeutVu8Skd+ibU+5+2QfiQN26BWDZE+pB0Ra
-	gbvjiLDrPAfMw5pOJ2ABaM+rluRDUP3kFjKBIHNnxr52exIlL2rPtBn5Y+48Z0YGxAT1cGzBMszHC
-	npy5oeyiLk8tUBnqM/T4KvIdrpK+rp1pSQwcqoHGz7l9f+YjeYqL6xta0mOUHyJpMID6SRCp0WPGj
-	HSoqkjt1j77Xz3S+aFJA==;
+	List-Owner; bh=eTJyljRVe8j0wzNrRlpxarUhEBvQe9eCdJ+EPV/M/Ow=; b=rNmNEmN+nuyb15
+	olxu+3UpyXpaJiuL+5PY9YR/bZWU678F3gEzemb7UU6X7IBRSvR5OHnJO5zXEa49MFwzBCnT80UIV
+	di4+X0xFBSQnYZB8BT6yYsB98XU6hnFmrZQxRe1NVAherL0PSzhXPu96CeuC8BAxFj7KaSIYLbgSg
+	DoEwQPxycH8j2n1c3dHtkaz1VeSU902HURvgMhrCx3RC6dEeCFILKJHWwBvZkaU/i2vZmt/LNPMDT
+	Bj3Hg7HXQZakLt503753+jMvwFqaZwbRM7bEmU2jZSSVAecLCsES8rhuy1v6+T7y+V+EEhB9sOWgB
+	qwooSP3m4TYOetfEwH9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haHP5-0000zC-O4; Mon, 10 Jun 2019 10:19:51 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1haHQW-00031d-AM; Mon, 10 Jun 2019 10:21:21 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haHOb-0000m5-JQ
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 10:19:23 +0000
-Received: by mail-pf1-x444.google.com with SMTP id x15so5057208pfq.0
+ id 1haHQF-0002yx-4K
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 10:21:04 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id a186so3063899vsd.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 03:19:21 -0700 (PDT)
+ Mon, 10 Jun 2019 03:21:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Xl6v5F/D3VxC6oJtpVMTcWPj1WSUBStBszKQqnRd45o=;
- b=Zxke5XTXYzZ1WpIKENuUCvQiJugmF6xmPmbVa+fQbXPRt5NLXE3XHZUNoUGyv8aLFk
- 0rjG9L8UqFlU/U4gpMjRlgJ8X3nE6ri7wGy68f6iQ0YzmFvk4qUWjWrM+LidoPGkcYmC
- PQ9xxtOgJlxOvxLQsHD98QnhH9k+vQEifhuGZEw6YF5JG7SxcgV9Yrm+JHUTnexYbwAF
- kXuHYrgJkBfViN9xWMijKskkhxv4JJjHTYC543USXdVVRRCXXHLpuHefM1TguMusR2yy
- vc20X6vM3jkm2bt3gBKV0pla8vMhrOsmoUlAB2tkbEgoAhTb/u7PiuuxS5EVmWSF1W4W
- /vug==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=SP4C91hkmfb8nf4pEfeOT8GgXw6uPbDXmSTuJCq/gGc=;
+ b=NnLT/vHjyOBGZwlrcg6VlzgOH161C3LeV8WVy/Vu8rFpi3c/FRWMWJAgX1juq3HdBx
+ L8SvJdLZ3DJYOGXVVqnaHEP5aYAPVqmD06tmeB37f8Zd2tJkwL3EEk9U+CyW/i2cGMDn
+ /qbzJ3ipIzTlfQIz/Ku+Z+csNl5SVYR0z0h06poDeKOV3bCxAQ4+UPlvkgzYF3sHr6PW
+ fNIwoN7cDHj1MRQI75Wh16WPHdavqxIdQxDViUCNbS748aaCS+CSALai5WJM95xeE+Le
+ 5WlgNvBWmNkP0+IZOmesajCOvIc6FGL6UJrFm0O3ov8s+u1/KMEO8G01o2byn1gEeC98
+ E3dg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Xl6v5F/D3VxC6oJtpVMTcWPj1WSUBStBszKQqnRd45o=;
- b=iqZoWA7ZL3LMxaLZGOC7swT58j2OABG71e2AjSVpf09U4shj4dAsSDwYziCUZGK/va
- kJAwlz1yPtVT9T4UA2Qh4b8kewikcRYluYZ5HZtQSw69hDc6w6Sm9fsnGVREwpJ02aSN
- EROkxvy97TFPF4g4NNJz0F+1HAYvADrB2fGdMbW54cb+n76txazCzFHRqG6O+/GVzv19
- bn8dLIpFMgq4po6vF24ncto1/vN6+P4N9O4VpA/6VepuEmc4MINN+Iz5HpXU0CLz9f0U
- zLodF3uFMhBXEffxoRvEjeWHPO9zYFNAi0A41ywom0BEljARXtrrkP0OxyUzG/6leY1p
- 6NRg==
-X-Gm-Message-State: APjAAAVHXcqQ9NiooEArSzNWDvvZs346T6vATweP+mg39ZN5Lb8zN0P7
- jxyE2HBAU52uBGcpBOvlEqliJQ==
-X-Google-Smtp-Source: APXvYqz3SI+6kD/ZaeTpbKZtNgBi0rdKkLPqyJFXIcZSqv4cqHNVPe2yimUvsPw0UUlmdDCXEymP1A==
-X-Received: by 2002:a65:6495:: with SMTP id e21mr993356pgv.383.1560161960609; 
- Mon, 10 Jun 2019 03:19:20 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id f186sm13630525pfb.5.2019.06.10.03.19.19
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 03:19:19 -0700 (PDT)
-Date: Mon, 10 Jun 2019 15:49:18 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Gregory CLEMENT <gregory.clement@bootlin.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>
-Subject: Re: [PATCH] clk: mvebu: armada-37xx-periph: Fix initialization for
- cpu clocks
-Message-ID: <20190610101918.sypafywc6fn4jsbo@vireshk-i7>
-References: <20190314134428.GA24768@apalos> <874l85v8p6.fsf@FE-laptop>
- <20190318112844.GA1708@apalos> <87h8c0s955.fsf@FE-laptop>
- <20190318122113.GA4834@apalos>
- <20190424093015.rcr5auamfccxf6ei@vireshk-i7>
- <20190425123303.GA12659@apalos>
- <20190520112042.mpamnabxpwciih5m@vireshk-i7>
- <20190522070341.GA32613@apalos>
- <20190522070614.jhpo7nqrxinmlbcs@vireshk-i7>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SP4C91hkmfb8nf4pEfeOT8GgXw6uPbDXmSTuJCq/gGc=;
+ b=CwpKdq2CUsz+O56+CLOHmS/JPQNWkTi9/W5BZnnz6XfoMlarrKDZUjbSobvouktgjw
+ AMYMgjcc8qkX8jMn2FKAdVG0qmt9Q8uYSHT8Ynvpgcb4Mjpp0Iz090Vm6XDlWsAx1c+2
+ BhcyKSAGPaNcdlD6I/uB+IuwtoNk72RGEZ9rdrs+osEwYvBDroUQljEQ05BbaiVGsXUY
+ 7orzl/8IpljR9jDqGp3ozdvxf6GsOCQlGWtNVg2WnLHs2ufe17JZOLjBA7xSrFeUvI6N
+ RsGpLOAp/mRBYPRjMWb/jZWKbTugyztdTJolSbC3eOvt0vtYSH4g9Ez8kpJE+zrkeAif
+ 9eXg==
+X-Gm-Message-State: APjAAAXE3ClZc6wx05J17+rvkXIT4Lw6iZEjiX9J8WC7iH5ZXPH0hBbb
+ F5T2IEG6FLbjF9IiToJVH0cJRugXtHz4u0wAhI/y9g==
+X-Google-Smtp-Source: APXvYqyEELW5eYybi8NTzXTq1BaVxGi1afLoOiDPwggiWfgN/Ej4B4ujdWWHnp+5MIZ0eyrZ5ciJlutJA2qYMY6qJQA=
+X-Received: by 2002:a67:706:: with SMTP id 6mr19148665vsh.200.1560162061544;
+ Mon, 10 Jun 2019 03:21:01 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190522070614.jhpo7nqrxinmlbcs@vireshk-i7>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <20190513192300.653-5-ulf.hansson@linaro.org>
+ <20190607150052.GC15577@e107155-lin>
+In-Reply-To: <20190607150052.GC15577@e107155-lin>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 10 Jun 2019 12:20:25 +0200
+Message-ID: <CAPDyKFqYZwQq_rDpfuV0K2-6_4N0frcFZ5iDab1OS8og+=zqPQ@mail.gmail.com>
+Subject: Re: [PATCH 04/18] ARM/ARM64: cpuidle: Let back-end init ops take the
+ driver as input
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_031921_664077_5FF7FFEF 
-X-CRM114-Status: GOOD (  18.76  )
+X-CRM114-CacheID: sfid-20190610_032103_170367_3E9ACA36 
+X-CRM114-Status: GOOD (  14.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,57 +93,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- Christian Neubert <christian.neubert.86@gmail.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- Stephen Boyd <sboyd@codeaurora.org>, Mike Turquette <mturquette@baylibre.com>,
- linux-pm@vger.kernel.org, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- =?utf-8?Q?Miqu=C3=A8l?= Raynal <miquel.raynal@bootlin.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Tony Lindgren <tony@atomide.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ David Brown <david.brown@linaro.org>, Lina Iyer <ilina@codeaurora.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Kevin Hilman <khilman@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Catalin Marinas <catalin.marinas@arm.com>, Andy Gross <andy.gross@linaro.org>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ Linux PM <linux-pm@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Stephen Boyd <sboyd@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Niklas Cassel <niklas.cassel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22-05-19, 12:36, Viresh Kumar wrote:
-> On 22-05-19, 10:03, Ilias Apalodimas wrote:
-> > Hi Viresh, Gregory
-> > On Mon, May 20, 2019 at 04:50:42PM +0530, Viresh Kumar wrote:
-> > > On 25-04-19, 15:33, Ilias Apalodimas wrote:
-> > > > Hi Viresh,
-> > > > 
-> > > > > > > Also, during this week-end, Christian suggested that the issue might
-> > > > > > > come from the AVS support.
-> > > > > > > 
-> > > > > > > Could you disable it and check you still have the issue?
-> > > > > > > 
-> > > > > > > For this, you just have to remove the avs node in
-> > > > > > > arch/arm64/boot/dts/marvell/armada-37xx.dtsi and rebuild the dtb.
-> > > > > > Sure. You'll have to wait for a week though. Currently on a trip. I'll run that
-> > > > > >  once i return
-> > > > > 
-> > > > > @Ilias: Can you please try this now and confirm to Gregory ?
-> > > > I am more overloaded than usual and totally forgot about this. Apologies.
-> > > > I'll try finding some time and do this.
-> > > 
-> > > Ping Ilias.
-> > Sorry for the huge delay. 
-> > Applying this patch and removing tha 'avs' node from
-> > arch/arm64/boot/dts/marvell/armada-37xx.dtsi seems to work.
-> > Changing between governors does not freeze the board any more. I haven't checked
-> > the actual impact on the CPU speed but the values on 
-> > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor are correct
-> 
-> Thanks for testing it out. Lets see what Gregory has to say now.
+On Fri, 7 Jun 2019 at 17:01, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> On Mon, May 13, 2019 at 09:22:46PM +0200, Ulf Hansson wrote:
+> > To allow arch back-end init ops to operate on the cpuidle driver for the
+> > corresponding CPU, let's pass along a pointer to the struct cpuidle_driver*
+> > and forward it the relevant layers of callbacks for ARM/ARM64.
+> >
+>
+> I may be wrong, but I see drv is just used to get state_count mostly.
+> It's also used in flattening part, but that should not be here either.
 
-@Gregory: Do you have any further advice for Ilias ?
+Let me copy the note I added below the changelog for $subject patch,
+as hopefully that should clarify the reason to why this is needed.
 
--- 
-viresh
+"- This patch is needed by the subsequent patch, but more importantly,
+also by "[PATCH 10/18] drivers: firmware: psci: Add hierarchical
+domain idle states converter"."
+
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
