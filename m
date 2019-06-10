@@ -2,96 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18DDC3B96E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:28:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BDCA3B972
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:31:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=INtfyHaV6QYOH6L27wcR4RwTJatodL4nTdSyZt5HF2c=; b=KhPB0plztTmvvp
-	id9YNhPNJqH2g5giwrWeYjRlaOhQE8c5wjEmMi2XkNpu2tGEZgOYQJMlWchuf6zIbi02eKmLE8DDS
-	MdvvGcOBwQwJe9C59TIJxTmAppaVs/Ln4zFOQMBJz+h9v1CgTJWAdSbj/Hd/41vPuJAWc7ilK1gwg
-	D+l7nQOQ5N4lsIgh10py6wD8uXvrAZsyqz80adVO2vwvBbru7rnG2ouHPWhWJ+PBRnQh63ra6r9ZI
-	HPp4bDHUQUYuuJoT58xIkAn+iBT7RXxmemN2Q9JGM1Si6hJqqQNz7oaRcJZl2fJQWryDtLFRLfSWH
-	yJEamwsVgVAMvgXHlqNw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7ewmOKF+4ABc0qk28S5YA5p2ZKEb6qo+0EuTm/4Z4Ao=; b=g/AQjItxw3zvG2
+	YBTr9Q9iHGhjUSKw4REUM7IOvc12gq6oGMqeTJHv23c5yA4YVJBGpN/RkARJjy16phKgerPwbcq61
+	EDlq9L4ZFqo5NkdJ1jvIvWQ1JqX9BY5BafWWBi815KzekiDN4C9LSqTu5r/I6igyXCKqCt07XrV3J
+	4WlIR/gRdEldn9zx9xC1k9Vgf6ku1h4hpAa+UKP/cAydinxbH9p9NzL1cYYudfx9YSG9i7uJB13a1
+	CB+XEe6aouVy6KZ5+djX//b8PLvMS7ESOsA+k+zZHJPvLLmQTTiN3U3BuUegqpPELOWueGXgUYaH2
+	VFeWLWB+lnxhtMhT+9ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haN9z-0003Du-5V; Mon, 10 Jun 2019 16:28:39 +0000
-Received: from mail-pf1-x429.google.com ([2607:f8b0:4864:20::429])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haN9b-000370-Q2
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:28:17 +0000
-Received: by mail-pf1-x429.google.com with SMTP id s11so5587971pfm.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 09:28:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=pzj2b7hhZ6YD/6WjtCfGTasSPRqjwrp/TQaWna9lfxQ=;
- b=kXJKW/rTaV349rH2wd2kV6vNyJDRVZDsMUieB0amtC3z2MOtjzZbgDTCBZh5U5eSGS
- UxkGP6xS31s2n9lrkS+hvcUCsyD6X8O+nYZSPIWF+A6d/moRShUOf73RMiZsQNi3uq6Y
- bQtvKasAaLHPNTtI7oL1owlaJhtixBq1H3FOnMIye7VZDHUmKpBLD/IP7kvb8c9/yN7c
- sut9J6cyeFklUe+8T0UqEpTVVkFyOC+XTxdq+j6asKfP4bJwAWsJnLDQIuDEy3MO31T0
- ljyr4/C0QWt3Xe/J9v8peYKk2fSABVUaoMa2hTtvTRrQbO9tk3SUFEVLadOQgbFn1e7O
- fnAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=pzj2b7hhZ6YD/6WjtCfGTasSPRqjwrp/TQaWna9lfxQ=;
- b=K99fdb5IGZDqsOu3F7OO274Yz5Wos3Dt3woT2sG1wGvesqb7iJTU6Zd2cpZVb3SFxb
- T3p14DJ0CYPjuh+mvsBkWk1mfhR7uztqiBgm8AcVni3n4lDDAnxIzrGuzYePiS/Lermx
- 9RrqNLaLCrrlrcwQxMnRAbFlW4Fb+88gfkM0LGmFcsiIrIKzUPchyB/t6nVNGIRQtNOB
- O6IJ0BiU9De3uqo04ZuhUPPJp+UHbL7M7psPy0rt9HAPf2Y3ZsWclmH81vEOhYk4zsKa
- Sch/xVzwyI5E+QDD99e6Lg220/21kXz8bYAkt51isyQvKBpZOEShrDld5hfLq4zo6ODF
- Psgg==
-X-Gm-Message-State: APjAAAWKb/Vdw68JitlgsVG6RNaKWbflg2w6W1DhtBqg3MW1xZf0C2p5
- gCHKMZOC3nmhyGY/znlnsok=
-X-Google-Smtp-Source: APXvYqzTViCOZCWdvHqZEgftq3IgTD0jneFi/Mem0y2YPV1OcS6ucnGC/wdKzKKtq7K2fg6dqre64A==
-X-Received: by 2002:a63:5207:: with SMTP id g7mr15864200pgb.356.1560184094523; 
- Mon, 10 Jun 2019 09:28:14 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id m24sm13643054pgh.75.2019.06.10.09.28.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 09:28:13 -0700 (PDT)
-Date: Mon, 10 Jun 2019 09:28:11 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Ken Sloat <KSloat@aampglobal.com>
-Subject: Re: [RFE]: watchdog: atmel: atmel-sama5d4-wdt
-Message-ID: <20190610162811.GA11270@roeck-us.net>
-References: <BL0PR07MB41152EDB169FE9ED1AD3B4C9AD130@BL0PR07MB4115.namprd07.prod.outlook.com>
+	id 1haNCD-0005EO-HB; Mon, 10 Jun 2019 16:30:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haNC3-0005Ds-Ch
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:30:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4FBB0337;
+ Mon, 10 Jun 2019 09:30:46 -0700 (PDT)
+Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3083C3F246;
+ Mon, 10 Jun 2019 09:30:45 -0700 (PDT)
+From: James Morse <james.morse@arm.com>
+To: linux-arm-kernel@lists.infradead.org,
+	kvmarm@lists.cs.columbia.edu
+Subject: [PATCH v2] KVM: arm64: Skip more of the SError vaxorcism
+Date: Mon, 10 Jun 2019 17:30:34 +0100
+Message-Id: <20190610163034.116151-1-james.morse@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <BL0PR07MB41152EDB169FE9ED1AD3B4C9AD130@BL0PR07MB4115.namprd07.prod.outlook.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_092816_027007_65DBF8D1 
-X-CRM114-Status: GOOD (  23.88  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190610_093047_475906_6D4939EA 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:429 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,55 +58,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "wim@iguana.be" <wim@iguana.be>,
- "alexandre.belloni@free-electrons.com" <alexandre.belloni@free-electrons.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, Will Deacon <will.deacon@arm.com>,
+ James Morse <james.morse@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 03:51:52PM +0000, Ken Sloat wrote:
-> Hello Nicolas,
-> 
-> I wanted to open a discussion proposing new functionality to allow disabling of the watchdog timer upon entering 
-> suspend in the SAMA5D2/4.
-> 
-> Typical use case of a hardware watchdog timer in the kernel is a userspace application opens the watchdog timer and
-> periodically "kicks" it. If the application hits a deadlock somewhere and is no longer able to kick it, then the watchdog
-> intervenes and often resets the processor. Such is the case for the Atmel driver (which also allows a watchdog interrupt
-> to be asserted in lieu of a system reset). In most use cases, upon entering a low power/suspend state, the application 
-> will no longer be able to "kick" the watchdog. If the watchdog is not disabled or kicked via another method, then it will
-> reset the system. This is the current behavior of the Atmel driver as of today.
-> 
-> The watchdog peripheral itself does have a "WDIDLEHLT" bit however, and this is enabled via the "atmel,idle-halt" dt
-> property. However, this is not very useful, as it literally only makes the watchdog count when the CPU is active. This 
-> results in non-deterministic triggering of the WDT and means that if a critical application were to crash, it may be
-> quite a long time before the WDT would ever trigger. Below is a similar statement made in the device-tree doc for this
-> peripheral:
-> 
-> - atmel,idle-halt: present if you want to stop the watchdog when the CPU is
-> 		   in idle state.
-> 	CAUTION: This property should be used with care, it actually makes the
-> 	watchdog not counting when the CPU is in idle state, therefore the
-> 	watchdog reset time depends on mean CPU usage and will not reset at all
-> 	if the CPU stop working while it is in idle state, which is probably
-> 	not what you want.
-> 
-> It seems to me, that it would be logical and useful to introduce a new property that would cause the Atmel WDT
-> to disable on suspend and re-enable on resume. It also appears that the WDT is re-initialized anyways upon
-> resume, so the only piece missing here would really be a dt flag and a call to disable.
-> 
-Wondering - why would this need a dt property ? That would be quite unusual. Is
-there a condition where one would _not_ want the watchdog to stop on suspend ?
+During __guest_exit() we need to consume any SError left pending by the
+guest so it doesn't contaminate the host. With v8.2 we use the
+ESB-instruction. For systems without v8.2, we use dsb+isb and unmask
+SError. We do this on every guest exit.
 
-If anything I would suggest to drop atmel,idle-halt completely; it really looks
-like it would make the watchdog unreliable.
+Use the same dsb+isr_el1 trick, this lets us know if an SError is pending
+after the dsb, allowing us to skip the isb and self-synchronising PSTATE
+write if its not.
 
-Thanks,
-Guenter
+This means SError remains masked during KVM's world-switch, so any SError
+that occurs during this time is reported by the host, instead of causing
+a hyp-panic.
+
+If you give gcc likely()/unlikely() hints in an if() condition, it
+shuffles the generated assembly so that the likely case is immediately
+after the branch. Lets do the same here.
+
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+This patch was previously posted as part of:
+[v1] https://lore.kernel.org/linux-arm-kernel/20190604144551.188107-1-james.morse@arm.com/
+
+ arch/arm64/kvm/hyp/entry.S | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
+index a5a4254314a1..c2de1a1faaf4 100644
+--- a/arch/arm64/kvm/hyp/entry.S
++++ b/arch/arm64/kvm/hyp/entry.S
+@@ -161,18 +161,24 @@ alternative_if ARM64_HAS_RAS_EXTN
+ 	orr	x0, x0, #(1<<ARM_EXIT_WITH_SERROR_BIT)
+ 1:	ret
+ alternative_else
+-	// If we have a pending asynchronous abort, now is the
+-	// time to find out. From your VAXorcist book, page 666:
++	dsb	sy		// Synchronize against in-flight ld/st
++	mrs	x2, isr_el1
++	and	x2, x2, #(1<<8)	// ISR_EL1.A
++	cbnz	x2, 2f
++	ret
++
++2:
++	// We know we have a pending asynchronous abort, now is the
++	// time to flush it out. From your VAXorcist book, page 666:
+ 	// "Threaten me not, oh Evil one!  For I speak with
+ 	// the power of DEC, and I command thee to show thyself!"
+ 	mrs	x2, elr_el2
++alternative_endif
+ 	mrs	x3, esr_el2
+ 	mrs	x4, spsr_el2
+ 	mov	x5, x0
+ 
+-	dsb	sy		// Synchronize against in-flight ld/st
+ 	msr	daifclr, #4	// Unmask aborts
+-alternative_endif
+ 
+ 	// This is our single instruction exception window. A pending
+ 	// SError is guaranteed to occur at the earliest when we unmask
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
