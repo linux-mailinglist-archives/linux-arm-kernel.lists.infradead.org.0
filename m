@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B456A3BA14
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:54:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D53C3BA1E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:57:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Xjco9ewFxRSdJHb2d+2HiOaw/tPP3jl1hEOflReC+Ho=; b=hb0TXV6Mj5FfRfg1YpvpAVc59
-	myMag/wK/oFrgLE05DypjPxYu0tP/HPYJ3sIM/X013B3yieqCexajx25vKpoqPMAj1Ee3X1kS3/pH
-	TrMuZexap4hDgnuj1mpsn+vszpY2kqk/Uhyhkx8ggHjOQ3zOGsXntS080l8x7y9gdr7IpvuP9ydlo
-	O8ggEvhZEyYQuq90evsJkx77OSrVgYZ9aYcj0rny3bs6bP/6X5Gb6/WvLzRza/Vjxyf/56aAdCzxp
-	whqRabLj0YEGrN7IKObKKN6GVmlOb/VsYwFZi3pFMdlxCU5wSCkeyK7nQNOsa78bVYi4zU9tlhM6S
-	KECLJKFpQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=InBNR9myazWN9eDQHwDNxKWiLrOcxChu33pV9P4DV5U=; b=QVzpIPfjdw6Yv6
+	n8bOF9F7hj1pf/1owgaGPoV6jA3HaV3hEmz44x4onvoKU0PPjnZbe8DmBf2qycTqdCH47+S8apidf
+	5wa5Fe5biVwPd9KA1hOD8HlMhzs1zfJ2A+8pSmKayttjmaGvsU5gTkt280ZW886pGS1aAG6JL9dvO
+	v3iT/B2tES+/bKYwa01DhN79H4wUTDefU/g5TkimHuvlLU85BpiNxN65bHy7bDfRLmklllR6ThjGf
+	HWdlGSO7RDTboQyJ3xyAUUgSPRYMd06c4uQseXbBKlx75pVQ11ESk0cV1nT3SWIs4kpY3uV/Q79/n
+	i8u6frl7Uv4TT+pIopdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haNZG-0007oP-JP; Mon, 10 Jun 2019 16:54:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haNZ4-0007mt-Tx; Mon, 10 Jun 2019 16:54:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D9C1337;
- Mon, 10 Jun 2019 09:54:34 -0700 (PDT)
-Received: from [10.1.197.57] (bionic-guest.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E1473F246;
- Mon, 10 Jun 2019 09:54:33 -0700 (PDT)
-Subject: Re: [PATCH 3/4] arm64: dts: meson: use the generic Ethernet PHY reset
- GPIO bindings
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org, khilman@baylibre.com
-References: <20190610163736.6187-1-martin.blumenstingl@googlemail.com>
- <20190610163736.6187-4-martin.blumenstingl@googlemail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <8075d0ee-36fa-c4f3-f640-98cf54aba87b@arm.com>
-Date: Mon, 10 Jun 2019 17:54:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1haNbO-00010R-Fr; Mon, 10 Jun 2019 16:56:58 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haNbE-0000zo-IT
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:56:50 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id C303FAC3A;
+ Mon, 10 Jun 2019 16:56:46 +0000 (UTC)
+Date: Mon, 10 Jun 2019 18:56:43 +0200
+From: Oscar Salvador <osalvador@suse.de>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v3 10/11] mm/memory_hotplug: Make
+ unregister_memory_block_under_nodes() never fail
+Message-ID: <20190610165642.GB5643@linux>
+References: <20190527111152.16324-1-david@redhat.com>
+ <20190527111152.16324-11-david@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20190610163736.6187-4-martin.blumenstingl@googlemail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190527111152.16324-11-david@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_095435_053120_180EC5BE 
-X-CRM114-Status: GOOD (  22.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_095648_753306_01005497 
+X-CRM114-Status: GOOD (  11.81  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,364 +62,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org
+Cc: linux-s390@vger.kernel.org, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Mark Brown <broonie@kernel.org>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ linux-kernel@vger.kernel.org, Wei Yang <richard.weiyang@gmail.com>,
+ linux-mm@kvack.org, "David S. Miller" <davem@davemloft.net>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Alex Deucher <alexander.deucher@amd.com>, Igor Mammedov <imammedo@redhat.com>,
+ akpm@linux-foundation.org, Chris Wilson <chris@chris-wilson.co.uk>,
+ linuxppc-dev@lists.ozlabs.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Martin,
+On Mon, May 27, 2019 at 01:11:51PM +0200, David Hildenbrand wrote:
+> We really don't want anything during memory hotunplug to fail.
+> We always pass a valid memory block device, that check can go. Avoid
+> allocating memory and eventually failing. As we are always called under
+> lock, we can use a static piece of memory. This avoids having to put
+> the structure onto the stack, having to guess about the stack size
+> of callers.
+> 
+> Patch inspired by a patch from Oscar Salvador.
+> 
+> In the future, there might be no need to iterate over nodes at all.
+> mem->nid should tell us exactly what to remove. Memory block devices
+> with mixed nodes (added during boot) should properly fenced off and never
+> removed.
+> 
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> Cc: "Rafael J. Wysocki" <rafael@kernel.org>
+> Cc: Alex Deucher <alexander.deucher@amd.com>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Chris Wilson <chris@chris-wilson.co.uk>
+> Cc: David Hildenbrand <david@redhat.com>
+> Cc: Oscar Salvador <osalvador@suse.de>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> Signed-off-by: David Hildenbrand <david@redhat.com>
 
-On 10/06/2019 17:37, Martin Blumenstingl wrote:
-> The snps,reset-gpio bindings are deprecated in favour of the generic
-> "Ethernet PHY reset" bindings.
-> 
-> Replace snps,reset-gpio from the &ethmac node with reset-gpios in the
-> ethernet-phy node. The old snps,reset-active-low property is now encoded
-> directly as GPIO flag inside the reset-gpios property.
-> 
-> snps,reset-delays-us is converted to reset-assert-us and
-> reset-deassert-us. reset-assert-us is the second cell from
-> snps,reset-delays-us while reset-deassert-us was the third cell.
-> 
-> Instead of blindly copying the old values (which seems strange since
-> they gave the PHY one second to come out of reset) over this also
-> updates the delays based on the datasheets:
-> - the Realtek RTL8211F PHY needs a 10ms delay (this applies to the
->    following boards: GXBB NanoPi K2, GXBB Odroid-C2, GXBB Vega S95
->    variants, GXBB Wetek variants, GXL P230, GXM Khadas VIM2, GXM Nexbox
->    A1, GXM Q200, GXM RBox Pro)
+Reviewed-by: Oscar Salvador <osalvador@suse.de>
 
- From the datasheets I've seen, RTL8211E/F specify an assert delay of 
-10ms, but a deassert delay of 30ms.
-
-Robin.
-
-> - the ICPlus IP101GR PHY needs a 2.5ms delay (this applies to the GXBB
->    Nexbox A95X)
-> - the Micrel KSZ9031 seems to require a 100us delay but use the same
->    (seemingly safe) values from RTL8211F due to lack of a board to verify
->    this (this appleis to the GXBB P200)
-> 
-> The GXBB P201 board is left out from this conversion because it doesn't
-> have a dedicated PHY node (because it's not clear which PHY is used on
-> that board).
-> 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->   arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts  |  9 +++++----
->   .../arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts |  8 ++++----
->   arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts   |  9 +++++----
->   arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dts       |  9 +++++----
->   arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi  |  9 +++++----
->   arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi     |  8 ++++----
->   arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts  | 11 ++++++-----
->   arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts | 10 +++++-----
->   arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts   |  8 ++++----
->   arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts        | 11 ++++++-----
->   arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts    |  8 ++++----
->   11 files changed, 53 insertions(+), 47 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-> index 849c01650c4d..32e901538519 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts
-> @@ -154,10 +154,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	mdio {
->   		compatible = "snps,dwmac-mdio";
->   		#address-cells = <1>;
-> @@ -166,6 +162,11 @@
->   		eth_phy0: ethernet-phy@0 {
->   			/* Realtek RTL8211F (0x001cc916) */
->   			reg = <0>;
-> +
-> +			reset-assert-us = <10000>;
-> +			reset-deassert-us = <10000>;
-> +			reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
-> +
->   			interrupt-parent = <&gpio_intc>;
->   			/* MAC_INTR on GPIOZ_15 */
->   			interrupts = <29 IRQ_TYPE_LEVEL_LOW>;
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
-> index 3c54f26eef15..c2f619a6a96c 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts
-> @@ -162,10 +162,6 @@
->   	phy-handle = <&eth_phy0>;
->   	phy-mode = "rmii";
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	mdio {
->   		compatible = "snps,dwmac-mdio";
->   		#address-cells = <1>;
-> @@ -174,6 +170,10 @@
->   		eth_phy0: ethernet-phy@0 {
->   			/* IC Plus IP101GR (0x02430c54) */
->   			reg = <0>;
-> +
-> +			reset-assert-us = <2500>;
-> +			reset-deassert-us = <2500>;
-> +			reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
->   		};
->   	};
->   };
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-> index 5a139e7b1c60..fc0528a89b6c 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-> @@ -126,10 +126,6 @@
->   	phy-handle = <&eth_phy0>;
->   	phy-mode = "rgmii";
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	amlogic,tx-delay-ns = <2>;
->   
->   	mdio {
-> @@ -140,6 +136,11 @@
->   		eth_phy0: ethernet-phy@0 {
->   			/* Realtek RTL8211F (0x001cc916) */
->   			reg = <0>;
-> +
-> +			reset-assert-us = <10000>;
-> +			reset-deassert-us = <10000>;
-> +			reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
-> +
->   			interrupt-parent = <&gpio_intc>;
->   			/* MAC_INTR on GPIOZ_15 */
->   			interrupts = <29 IRQ_TYPE_LEVEL_LOW>;
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dts
-> index 9d2406a7c4fa..eeea17767cab 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dts
-> @@ -68,10 +68,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	mdio {
->   		compatible = "snps,dwmac-mdio";
->   		#address-cells = <1>;
-> @@ -80,6 +76,11 @@
->   		eth_phy0: ethernet-phy@3 {
->   			/* Micrel KSZ9031 (0x00221620) */
->   			reg = <3>;
-> +
-> +			reset-assert-us = <10000>;
-> +			reset-deassert-us = <10000>;
-> +			reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
-> +
->   			interrupt-parent = <&gpio_intc>;
->   			/* MAC_INTR on GPIOZ_15 */
->   			interrupts = <29 IRQ_TYPE_LEVEL_LOW>;
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
-> index 18856f28fd60..a7c2d8bfdd0b 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi
-> @@ -116,10 +116,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	mdio {
->   		compatible = "snps,dwmac-mdio";
->   		#address-cells = <1>;
-> @@ -128,6 +124,11 @@
->   		eth_phy0: ethernet-phy@0 {
->   			/* Realtek RTL8211F (0x001cc916) */
->   			reg = <0>;
-> +
-> +			reset-assert-us = <10000>;
-> +			reset-deassert-us = <10000>;
-> +			reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
-> +
->   			interrupt-parent = <&gpio_intc>;
->   			/* MAC_INTR on GPIOZ_15 */
->   			interrupts = <29 IRQ_TYPE_LEVEL_LOW>;
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
-> index 9ef6858779c1..dc0d8c3b4eff 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi
-> @@ -137,10 +137,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	mdio {
->   		compatible = "snps,dwmac-mdio";
->   		#address-cells = <1>;
-> @@ -149,6 +145,10 @@
->   		eth_phy0: ethernet-phy@0 {
->   			/* Realtek RTL8211F (0x001cc916) */
->   			reg = <0>;
-> +
-> +			reset-assert-us = <10000>;
-> +			reset-deassert-us = <10000>;
-> +			reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
->   		};
->   	};
->   };
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts
-> index 767b1763a612..003d6aa6964c 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts
-> @@ -70,11 +70,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	/* External PHY reset is shared with internal PHY Led signals */
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	/* External PHY is in RGMII */
->   	phy-mode = "rgmii";
->   };
-> @@ -84,6 +79,12 @@
->   		/* Realtek RTL8211F (0x001cc916) */
->   		reg = <0>;
->   		max-speed = <1000>;
-> +
-> +		/* External PHY reset is shared with internal PHY Led signal */
-> +		reset-assert-us = <10000>;
-> +		reset-deassert-us = <10000>;
-> +		reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
-> +
->   		interrupt-parent = <&gpio_intc>;
->   		interrupts = <29 IRQ_TYPE_LEVEL_LOW>;
->   		eee-broken-1000t;
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-> index ff4f0780824d..2b6003b605a4 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-> @@ -239,11 +239,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	/* External PHY reset is shared with internal PHY Led signals */
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	/* External PHY is in RGMII */
->   	phy-mode = "rgmii";
->   
-> @@ -254,6 +249,11 @@
->   	external_phy: ethernet-phy@0 {
->   		/* Realtek RTL8211F (0x001cc916) */
->   		reg = <0>;
-> +
-> +		reset-assert-us = <10000>;
-> +		reset-deassert-us = <10000>;
-> +		reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
-> +
->   		interrupt-parent = <&gpio_intc>;
->   		/* MAC_INTR on GPIOZ_15 */
->   		interrupts = <25 IRQ_TYPE_LEVEL_LOW>;
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
-> index 29715eae14a9..a2a7ec5c8fd6 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts
-> @@ -101,10 +101,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	/* External PHY is in RGMII */
->   	phy-mode = "rgmii";
->   };
-> @@ -114,6 +110,10 @@
->   		/* Realtek RTL8211F (0x001cc916) */
->   		reg = <0>;
->   		max-speed = <1000>;
-> +
-> +		reset-assert-us = <10000>;
-> +		reset-deassert-us = <10000>;
-> +		reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
->   	};
->   };
->   
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts
-> index 8939c0fc5b62..044668228ece 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts
-> @@ -52,11 +52,6 @@
->   
->   	amlogic,tx-delay-ns = <2>;
->   
-> -	/* External PHY reset is shared with internal PHY Led signals */
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	/* External PHY is in RGMII */
->   	phy-mode = "rgmii";
->   };
-> @@ -66,6 +61,12 @@
->   		/* Realtek RTL8211F (0x001cc916) */
->   		reg = <0>;
->   		max-speed = <1000>;
-> +
-> +		/* External PHY reset is shared with internal PHY Led signal */
-> +		reset-assert-us = <10000>;
-> +		reset-deassert-us = <10000>;
-> +		reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
-> +
->   		interrupt-parent = <&gpio_intc>;
->   		/* MAC_INTR on GPIOZ_15 */
->   		interrupts = <25 IRQ_TYPE_LEVEL_LOW>;
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts
-> index 13de1e8f58b5..04eae80585af 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts
-> @@ -101,10 +101,6 @@
->   	/* Select external PHY by default */
->   	phy-handle = <&external_phy>;
->   
-> -	snps,reset-gpio = <&gpio GPIOZ_14 0>;
-> -	snps,reset-delays-us = <0 10000 1000000>;
-> -	snps,reset-active-low;
-> -
->   	amlogic,tx-delay-ns = <2>;
->   
->   	/* External PHY is in RGMII */
-> @@ -116,6 +112,10 @@
->   		/* Realtek RTL8211F (0x001cc916) */
->   		reg = <0>;
->   		max-speed = <1000>;
-> +
-> +		reset-assert-us = <10000>;
-> +		reset-deassert-us = <10000>;
-> +		reset-gpios = <&gpio GPIOZ_14 GPIO_ACTIVE_LOW>;
->   	};
->   };
->   
-> 
+-- 
+Oscar Salvador
+SUSE L3
 
 _______________________________________________
 linux-arm-kernel mailing list
