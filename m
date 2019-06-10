@@ -2,117 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0176C3BDD4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 22:52:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B6793BDED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 23:01:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u14I3ZHrSQtYEEM1kmf3Zg4o23UdvCEfjWINFgDkNDc=; b=f0PuM/2XXUIrxL
-	o0+w81pjtSag0U9m2tVcssqPYiJKoIw2BFIAnnuzlQM5dch1SSFukttHBmoHqpfEvOhpmRUfxdhCM
-	hgtW2tPK0Tymofn7l4M5W7j14KXYMRirKvAA2yJh1evWolfyAlB4+CVh5pARPEOKlgDdIb5P1XPad
-	My6QW4db9NUktT6V0nBn34MiNJRvgqg3Pt4GXHu2ee8UZq4Q2HH+JPrntQBrEed005uoQeG4YJTc4
-	0KOiMaTuq0GFbLwdrg/VfyN3SGTPKPdxwEUZjrJt8kyJJj0Ma6fJYfwM2CZfZ6RtaQWQjpbSltt7H
-	KWediQD7kV/tUf8y0a9w==;
+	List-Owner; bh=xieUirZt5eMB+TbxpVNzVmnNBz1keAJKj1BTJsnCiMY=; b=M8/fiT5BT6oFdT
+	Kz0wfrZBJqtApzas8RVYyMYVvoGqdvPTzze6uK64Gq6Wfu5aWSd7RenJz9sYiHgGX5cz77QCyIb85
+	1Ca3bnkQEVaFL4gc8hZYWv6muu5Gmg6A5zFHh9ofN6IPg5ROAB57xUQ5EJjABxcbyEqjCKjmm/Ep3
+	6mB86Rc5HqXBaFMhLLu2XKfLG7FQKVZZ384JsVH3mSkkGrUEBZnVf1qiKxfPidMiG94lzWqgLUy/b
+	B/AzNKDIBwukGN1D3JSyNXCn4vuVx2yZdbwIIAcRZ1JHXAG4BNFrqQNcg5nxdoXJoYUoQCiWuzat2
+	zBNH2p48sd8xxvtcBubg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haRHf-0005th-36; Mon, 10 Jun 2019 20:52:51 +0000
-Received: from mail-eopbgr800094.outbound.protection.outlook.com
- ([40.107.80.94] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
+	id 1haRPv-0000TE-Kn; Mon, 10 Jun 2019 21:01:23 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haRHT-0005sx-Fv
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 20:52:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aampusa.onmicrosoft.com; s=selector2-aampusa-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jHHjKf6kuve4zZKO2RaUkh6/E14EwdUI1UTEoLj5Rs8=;
- b=uQ856U5Plqo8Ml5tA784FOMTvh5Kx/bcsa4vh4L6pXg0tHePIbLxVTVOzykaQb/PBgPHQ7TWYmuPFeg7S1w1gAg33djS1CQALxVgzNK/R3hC2ElyYH3mi6NHxLHCz0Nyk8ciBUhbmlzZ3F5xvhbRI9z9e0caROKyENksnK2YALU=
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com (52.132.10.149) by
- BL0PR07MB4082.namprd07.prod.outlook.com (52.132.10.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.12; Mon, 10 Jun 2019 20:52:33 +0000
-Received: from BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e]) by BL0PR07MB4115.namprd07.prod.outlook.com
- ([fe80::f064:5129:63c6:d3e%6]) with mapi id 15.20.1965.017; Mon, 10 Jun 2019
- 20:52:33 +0000
-From: Ken Sloat <KSloat@aampglobal.com>
-To: Guenter Roeck <linux@roeck-us.net>, Alexandre Belloni
- <alexandre.belloni@free-electrons.com>
-Subject: RE: [RFE]: watchdog: atmel: atmel-sama5d4-wdt
-Thread-Topic: [RFE]: watchdog: atmel: atmel-sama5d4-wdt
-Thread-Index: AdUfoOr5PB/8HxffRU28PtnqCbe4YAACJOOAAAfaK4AAAJMTAAAAjEEQ
-Date: Mon, 10 Jun 2019 20:52:33 +0000
-Message-ID: <BL0PR07MB41151D49B58CDF5E4A34D5A8AD130@BL0PR07MB4115.namprd07.prod.outlook.com>
-References: <BL0PR07MB41152EDB169FE9ED1AD3B4C9AD130@BL0PR07MB4115.namprd07.prod.outlook.com>
- <20190610162811.GA11270@roeck-us.net> <20190610201301.GH25472@piout.net>
- <20190610202928.GB13191@roeck-us.net>
-In-Reply-To: <20190610202928.GB13191@roeck-us.net>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=KSloat@aampglobal.com; 
-x-originating-ip: [100.3.71.115]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 15b3f4a5-7171-4754-3b69-08d6ede58ff1
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BL0PR07MB4082; 
-x-ms-traffictypediagnostic: BL0PR07MB4082:
-x-microsoft-antispam-prvs: <BL0PR07MB40828AEBC6764A830720DCB4AD130@BL0PR07MB4082.namprd07.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0064B3273C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(39850400004)(376002)(136003)(366004)(346002)(189003)(13464003)(199004)(6436002)(7696005)(99286004)(9686003)(68736007)(55016002)(66066001)(229853002)(5660300002)(14454004)(8676002)(72206003)(7736002)(305945005)(2906002)(71200400001)(81156014)(316002)(81166006)(8936002)(71190400001)(6116002)(3846002)(66946007)(478600001)(54906003)(25786009)(446003)(476003)(110136005)(186003)(11346002)(80792005)(486006)(73956011)(86362001)(64756008)(66446008)(107886003)(53936002)(66556008)(66476007)(6246003)(14444005)(76116006)(256004)(33656002)(74316002)(4326008)(6506007)(76176011)(53546011)(26005)(52536014)(102836004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:BL0PR07MB4082;
- H:BL0PR07MB4115.namprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: aampglobal.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: l7F8jaeIMOqhl1eszf4gtmU3fVCUGOLZsdNffOjw9oksNGYBRZCyGDrtu9oDwgjQAoaF2NL4q79wnOvRARNPH38wchCInVXCC6pyLgzZlU+8Bb4fSTgL+FcoFvHteWmGhgSrqBA5Mr9veOfcdlNAyvscpM+F8TU86BLRmCIW504u1zgEfk6jcvJDQ2V84UijwL864VvqVGGmVzjDqzjXm81U0fe+Jqpt0i3Ij3IaDDFz0RuS4xLDWcdEfWA0T7g6BWrhVB4GSEqUnllfyrPpXDJGmDqpH7Z3BH2QQ8w3GYIYhhdFOxJ8P6df9XcA8TlXs5oO3UESDaiJlvdSvn9cwRsvH8iigKtW9lFFRTtJaeMf60WHE2bxkvlYy/bonc2f/gko0qchFWkA5GsQRBDLT2f3xx7IPNzqgcSidIKqMp8=
+ id 1haRPi-0000SJ-77
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 21:01:12 +0000
+Received: by mail-qt1-x843.google.com with SMTP id x47so11979570qtk.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 14:01:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=UqCgGQyZZlSxx5SgJW9SrUIoWnGDiskvMNV5Y6IzA5U=;
+ b=TnsY2gy2t8T6oJR2NI5rn0xrKFn8c83sE2FbHV4Ff7/yiofHRTC4PlxeqE0xkSP30Y
+ 2dKRFGZifb57Ttg0K8kBpbpKl39O0xbA0jBuspRFuDN3YI3iPfQWVmdJH5nn9snV3lra
+ qKkENSOtOoT86TybIPkSWlcNvkyLD1dtG3oz0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UqCgGQyZZlSxx5SgJW9SrUIoWnGDiskvMNV5Y6IzA5U=;
+ b=Kt/PNJYIS8ooFPwi6EnmCsQHxF5MoAgp/27uK4PSQWFv+3PuhlWpqU78JV8lZugeUT
+ +/GO0VU2TE1b4MHoHRGYD8WVmVvoRVX2UctZ5s2VUQb8WqfWqMyHwT6KETxVXDD8M3D3
+ m7LwpmzJzfsL6L7iH1dl4vR++oSxdE6lRvx1LVvj9FkoeVGY+pfxU2Gj4UoGEvR1KUkj
+ 1iFWi25De55vBW5FvWG+JxjKOKePPUwJgX4mBaX9KSKXDRR3IQJWnXChfVqmvHFtpAKV
+ fRtGRnIwDc2CPoS3Z3E67LbfMIamgjZzPO1fF9dJ7iuCFH0weKlA/GjWn0yCXXPskdmt
+ x/LA==
+X-Gm-Message-State: APjAAAWoacl0Aqr9ztEd1mNPRNvq7pm3YZr8RwzVAovMCEgU7iGDG8pE
+ T5SXMaxDyF0iUDxMlEvsZ/QOUp1dnXtCdUNH8EDHYA==
+X-Google-Smtp-Source: APXvYqw48s3xmxnU0Sti89BGxqH6rlI/mLADpu1pFANnjJcaFHMMf7NvGi7oEGbnHPNOpkV5DH+MmrBr4pLVvqZiDBg=
+X-Received: by 2002:ac8:1a1c:: with SMTP id v28mr58301398qtj.270.1560200468411; 
+ Mon, 10 Jun 2019 14:01:08 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: aampglobal.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 15b3f4a5-7171-4754-3b69-08d6ede58ff1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2019 20:52:33.6589 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e20e3a66-8b9e-46e9-b859-cb654c1ec6ea
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ken.sloat@aampglobal.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR07MB4082
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 04
-X-MS-Exchange-CrossPremises-AuthSource: BL0PR07MB4115.namprd07.prod.outlook.com
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-TransportTrafficSubType: 
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-messagesource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-originalclientipaddress: 100.3.71.115
-X-MS-Exchange-CrossPremises-transporttraffictype: Email
-X-MS-Exchange-CrossPremises-transporttrafficsubtype: 
-X-MS-Exchange-CrossPremises-antispam-scancontext: DIR:Originating; SFV:NSPM;
- SKIP:0; 
-X-MS-Exchange-CrossPremises-processed-by-journaling: Journal Agent
-X-OrganizationHeadersPreserved: BL0PR07MB4082.namprd07.prod.outlook.com
+References: <1556614265-12745-1-git-send-email-henryc.chen@mediatek.com>
+ <1556614265-12745-7-git-send-email-henryc.chen@mediatek.com>
+In-Reply-To: <1556614265-12745-7-git-send-email-henryc.chen@mediatek.com>
+From: Ryan Case <ryandcase@chromium.org>
+Date: Mon, 10 Jun 2019 14:00:57 -0700
+Message-ID: <CACjz--=OPx06-pLdoKv_h+y=4nSW0O7zrHM5=hPqTBvMAfmpWA@mail.gmail.com>
+Subject: Re: [RFC V2 06/11] soc: mediatek: add MT8183 dvfsrc support
+To: Henry Chen <henryc.chen@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_135239_581837_15032939 
-X-CRM114-Status: GOOD (  31.51  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190610_140110_294145_FD0C5368 
+X-CRM114-Status: GOOD (  29.33  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.80.94 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,115 +89,493 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ken Sloat <KSloat@aampglobal.com>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "wim@iguana.be" <wim@iguana.be>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Nicolas Boichat <drinkcat@google.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, Viresh Kumar <vireshk@kernel.org>,
+ linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
+ Fan Chen <fan.chen@mediatek.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Guenter Roeck <groeck7@gmail.com> On Behalf Of Guenter Roeck
-> Sent: Monday, June 10, 2019 4:29 PM
-> To: Alexandre Belloni <alexandre.belloni@free-electrons.com>
-> Cc: Ken Sloat <KSloat@aampglobal.com>; Nicolas.Ferre@microchip.com;
-> wim@iguana.be; linux-arm-kernel@lists.infradead.org; linux-
-> watchdog@vger.kernel.org; linux-kernel@vger.kernel.org
-> Subject: Re: [RFE]: watchdog: atmel: atmel-sama5d4-wdt
-> 
-> [This is an EXTERNAL EMAIL]
-> ________________________________
-> 
-> On Mon, Jun 10, 2019 at 10:13:01PM +0200, Alexandre Belloni wrote:
-> > Hello,
-> >
-> > On 10/06/2019 09:28:11-0700, Guenter Roeck wrote:
-> > > On Mon, Jun 10, 2019 at 03:51:52PM +0000, Ken Sloat wrote:
-> > > > Hello Nicolas,
-> > > >
-> > > > I wanted to open a discussion proposing new functionality to allow
-> > > > disabling of the watchdog timer upon entering suspend in the
-> SAMA5D2/4.
-> > > >
-> > > > Typical use case of a hardware watchdog timer in the kernel is a
-> > > > userspace application opens the watchdog timer and periodically
-> > > > "kicks" it. If the application hits a deadlock somewhere and is no
-> > > > longer able to kick it, then the watchdog intervenes and often
-> > > > resets the processor. Such is the case for the Atmel driver (which
-> > > > also allows a watchdog interrupt to be asserted in lieu of a system
-> reset). In most use cases, upon entering a low power/suspend state, the
-> application will no longer be able to "kick" the watchdog. If the watchdog is
-> not disabled or kicked via another method, then it will reset the system. This
-> is the current behavior of the Atmel driver as of today.
-> > > >
-> > > > The watchdog peripheral itself does have a "WDIDLEHLT" bit
-> > > > however, and this is enabled via the "atmel,idle-halt" dt
-> > > > property. However, this is not very useful, as it literally only
-> > > > makes the watchdog count when the CPU is active. This results in
-> > > > non-deterministic triggering of the WDT and means that if a
-> > > > critical application were to crash, it may be quite a long time
-> > > > before the WDT would ever trigger. Below is a similar statement
-> > > > made in the device-tree doc for this
-> > > > peripheral:
-> > > >
-> > > > - atmel,idle-halt: present if you want to stop the watchdog when the
-> CPU is
-> > > >              in idle state.
-> > > >   CAUTION: This property should be used with care, it actually makes
-> the
-> > > >   watchdog not counting when the CPU is in idle state, therefore the
-> > > >   watchdog reset time depends on mean CPU usage and will not reset at
-> all
-> > > >   if the CPU stop working while it is in idle state, which is probably
-> > > >   not what you want.
-> > > >
-> > > > It seems to me, that it would be logical and useful to introduce a
-> > > > new property that would cause the Atmel WDT to disable on suspend
-> > > > and re-enable on resume. It also appears that the WDT is re-initialized
-> anyways upon resume, so the only piece missing here would really be a dt
-> flag and a call to disable.
-> > > >
-> > > Wondering - why would this need a dt property ? That would be quite
-> > > unusual. Is there a condition where one would _not_ want the watchdog
-> to stop on suspend ?
-> > >
-> >
-> > There are customers that protects suspend/resume using the watchdog.
-> > They wake up their platform every 15s to ping the watchdog.
-> >
-> 
-> Interesting use case.
-> 
-> > Also, I don't see why the application deciding to go to suspend
-> > wouldn't be able to disable the watchdog before do so if this is the wanted
-> policy.
-> >
-> 
-> Many watchdog drivers already implement suspend/resume support. Such a
-> platform specific functionality seems to be quite undesirable to me.
-> 
-> Besides (and pretty much all watchdog drivers implementing
-> suspend/resume do that wrong), you'd likely want to disable the watchog
-> late during suspend and early during resume to reduce the risk of a hang. I
-> don't think you can do that from userspace.
-> 
+Hi Henry,
 
-Agreed, there's also the risk if using something like wake_count where the 
-suspend process can be interrupted by the kernel. This just makes for more
-cases that the application has to try and handle, and what happens if the 
-application hangs/crashes some time between disabling the wdt and suspend?
+On Tue, Apr 30, 2019 at 2:45 AM Henry Chen <henryc.chen@mediatek.com> wrote:
+>
+> Add dvfsrc driver for MT8183
+>
+> Signed-off-by: Henry Chen <henryc.chen@mediatek.com>
+> ---
+>  drivers/soc/mediatek/Kconfig      |  15 ++
+>  drivers/soc/mediatek/Makefile     |   1 +
+>  drivers/soc/mediatek/mtk-dvfsrc.c | 347 ++++++++++++++++++++++++++++++++++++++
+>  include/soc/mediatek/mtk_dvfsrc.h |  22 +++
+>  4 files changed, 385 insertions(+)
+>  create mode 100644 drivers/soc/mediatek/mtk-dvfsrc.c
+>  create mode 100644 include/soc/mediatek/mtk_dvfsrc.h
+>
+> diff --git a/drivers/soc/mediatek/Kconfig b/drivers/soc/mediatek/Kconfig
+> index 17bd759..2721fd6 100644
+> --- a/drivers/soc/mediatek/Kconfig
+> +++ b/drivers/soc/mediatek/Kconfig
+> @@ -24,6 +24,21 @@ config MTK_INFRACFG
+>           INFRACFG controller contains various infrastructure registers not
+>           directly associated to any device.
+>
+> +config MTK_DVFSRC
+> +       bool "MediaTek DVFSRC Support"
+> +       depends on ARCH_MEDIATEK
+> +       default ARCH_MEDIATEK
+> +       select MTK_INFRACFG
+> +       select PM_GENERIC_DOMAINS if PM
+> +       depends on MTK_SCPSYS
+> +       help
+> +         Say yes here to add support for the MediaTek DVFSRC (dynamic voltage
+> +         and frequency scaling resource collector) found
+> +         on different MediaTek SoCs. The DVFSRC is a proprietary
+> +         hardware which is used to collect all the requests from
+> +         system and turn into the decision of minimum Vcore voltage
+> +         and minimum DRAM frequency to fulfill those requests.
+> +
+>  config MTK_PMIC_WRAP
+>         tristate "MediaTek PMIC Wrapper Support"
+>         depends on RESET_CONTROLLER
+> diff --git a/drivers/soc/mediatek/Makefile b/drivers/soc/mediatek/Makefile
+> index b9dbad6..cd9d63f 100644
+> --- a/drivers/soc/mediatek/Makefile
+> +++ b/drivers/soc/mediatek/Makefile
+> @@ -1,4 +1,5 @@
+>  obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
+> +obj-$(CONFIG_MTK_DVFSRC) += mtk-dvfsrc.o
+>  obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o mtk-scpsys-ext.o
+>  obj-$(CONFIG_MTK_PMIC_WRAP) += mtk-pmic-wrap.o
+>  obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o
+> diff --git a/drivers/soc/mediatek/mtk-dvfsrc.c b/drivers/soc/mediatek/mtk-dvfsrc.c
+> new file mode 100644
+> index 0000000..e54a654
+> --- /dev/null
+> +++ b/drivers/soc/mediatek/mtk-dvfsrc.c
+> @@ -0,0 +1,347 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (C) 2018 MediaTek Inc.
+> + */
+> +#include <linux/arm-smccc.h>
+> +#include <linux/clk.h>
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/notifier.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
+> +#include <soc/mediatek/mtk_dvfsrc.h>
+> +#include <soc/mediatek/mtk_sip.h>
+> +#include <dt-bindings/power/mt8183-power.h>
+> +#include <dt-bindings/soc/mtk,dvfsrc.h>
+> +#include <dt-bindings/soc/mtk,dvfsrc.h>
+> +#include "mtk-scpsys.h"
+> +
+> +#define DVFSRC_IDLE            0x00
+> +#define DVFSRC_GET_TARGET_LEVEL(x)     (((x) >> 0) & 0x0000ffff)
+> +#define DVFSRC_GET_CURRENT_LEVEL(x)    (((x) >> 16) & 0x0000ffff)
+> +
+> +#define MT8183_DVFSRC_OPP_LP4  0
+> +#define MT8183_DVFSRC_OPP_LP4X 1
+> +#define MT8183_DVFSRC_OPP_LP3  2
+> +
+> +struct dvfsrc_opp {
+> +       u32 vcore_opp;
+> +       u32 dram_opp;
+> +};
+> +
+> +struct dvfsrc_domain {
+> +       u32 id;
+> +       u32 state;
+> +};
+> +
+> +struct mtk_dvfsrc;
+> +struct dvfsrc_soc_data {
+> +       const int *regs;
+> +       u32 num_opp;
+> +       u32 num_domains;
+> +       const struct dvfsrc_opp **opps;
+> +       struct dvfsrc_domain *domains;
+> +       int (*get_target_level)(struct mtk_dvfsrc *dvfsrc);
+> +       int (*get_current_level)(struct mtk_dvfsrc *dvfsrc);
+> +       void (*set_dram_bw)(struct mtk_dvfsrc *dvfsrc, u64 bw);
+> +       void (*set_opp_level)(struct mtk_dvfsrc *dvfsrc, u32 level);
+> +};
+> +
+> +struct mtk_dvfsrc {
+> +       struct device *dev;
+> +       struct clk *clk_dvfsrc;
+> +       const struct dvfsrc_soc_data *dvd;
+> +       int dram_type;
+> +       void __iomem *regs;
+> +       struct mutex lock;
+> +       struct notifier_block scpsys_notifier;
+> +};
+> +
+> +static u32 dvfsrc_read(struct mtk_dvfsrc *dvfs, u32 offset)
+> +{
+> +       return readl(dvfs->regs + dvfs->dvd->regs[offset]);
+> +}
+> +
+> +static void dvfsrc_write(struct mtk_dvfsrc *dvfs, u32 offset, u32 val)
+> +{
+> +       writel(val, dvfs->regs + dvfs->dvd->regs[offset]);
+> +}
+> +
+> +enum dvfsrc_regs {
+> +       DVFSRC_SW_REQ,
+> +       DVFSRC_LEVEL,
+> +       DVFSRC_SW_BW_0,
+> +       DVFSRC_LAST,
+> +};
+> +
+> +static const int mt8183_regs[] = {
+> +       [DVFSRC_SW_REQ] =       0x4,
+> +       [DVFSRC_LEVEL] =        0xDC,
+> +       [DVFSRC_SW_BW_0] =      0x160,
+> +       [DVFSRC_LAST] =         0x308,
+> +};
+> +
+> +static bool dvfsrc_is_idle(struct mtk_dvfsrc *dvfsrc)
+> +{
+> +       if (!dvfsrc->dvd->get_target_level)
+> +               return true;
+> +
+> +       return dvfsrc->dvd->get_target_level(dvfsrc) == DVFSRC_IDLE;
+> +}
+> +
+> +static int dvfsrc_wait_for_idle(struct mtk_dvfsrc *dvfsrc)
+> +{
+> +       unsigned long timeout;
+> +
+> +       timeout = jiffies + usecs_to_jiffies(1000);
+> +
+> +       do {
+> +               if (dvfsrc_is_idle(dvfsrc))
+> +                       return 0;
+> +       } while (!time_after(jiffies, timeout));
 
-Right now, what probably is a very common case of devices that enter low power 
-mode for longer than 16 seconds are precluded from using this WDT.
+This all seems like it would be better handled by readx_poll_timeout
+rather than rolling your own.
 
-> Thanks,
-> Guenter
+> +
+> +       return -ETIMEDOUT;
+> +}
+> +
+> +static int mt8183_get_target_level(struct mtk_dvfsrc *dvfsrc)
+> +{
+> +       return DVFSRC_GET_TARGET_LEVEL(dvfsrc_read(dvfsrc, DVFSRC_LEVEL));
+> +}
+> +
+> +static int mt8183_get_current_level(struct mtk_dvfsrc *dvfsrc)
+> +{
+> +       return ffs(DVFSRC_GET_CURRENT_LEVEL(dvfsrc_read(dvfsrc, DVFSRC_LEVEL)));
+> +}
+> +
+> +static void mt8183_set_dram_bw(struct mtk_dvfsrc *dvfsrc, u64 bw)
+> +{
+> +       dvfsrc_write(dvfsrc, DVFSRC_SW_BW_0, bw);
+> +}
+> +
+> +static void mt8183_set_opp_level(struct mtk_dvfsrc *dvfsrc, u32 level)
+> +{
+> +       int vcore_opp, dram_opp;
+> +       const struct dvfsrc_opp *opp;
+> +
+> +       /* translate pstate to dvfsrc level, and set it to DVFSRC HW */
+> +       opp = &dvfsrc->dvd->opps[dvfsrc->dram_type][level - 1];
+> +       vcore_opp = opp->vcore_opp;
+> +       dram_opp = opp->dram_opp;
+> +
+> +       dev_dbg(dvfsrc->dev, "vcore_opp: %d, dram_opp: %d\n",
+> +               vcore_opp, dram_opp);
+> +       dvfsrc_write(dvfsrc, DVFSRC_SW_REQ, dram_opp | vcore_opp << 2);
+> +}
+> +
+> +void mtk_dvfsrc_send_request(const struct device *dev, u32 cmd, u64 data)
+> +{
+> +       struct mtk_dvfsrc *dvfsrc = dev_get_drvdata(dev);
+> +
+> +       dev_dbg(dvfsrc->dev, "cmd: %d, data: %llu\n", cmd, data);
+> +
+> +       mutex_lock(&dvfsrc->lock);
+> +
+> +       if (dvfsrc_wait_for_idle(dvfsrc)) {
+> +               dev_warn(dvfsrc->dev, "[%s] wait idle, last: %d -> %d\n",
+> +                        __func__, dvfsrc_read(dvfsrc, DVFSRC_LEVEL),
+> +               dvfsrc_read(dvfsrc, DVFSRC_LAST));
+> +               goto out;
+> +       }
+> +
+> +       switch (cmd) {
+> +       case MTK_DVFSRC_CMD_BW_REQUEST:
+> +               dvfsrc->dvd->set_dram_bw(dvfsrc, data);
+> +               goto out;
+> +       case MTK_DVFSRC_CMD_OPP_REQUEST:
+> +               dvfsrc->dvd->set_opp_level(dvfsrc, data);
+> +               break;
+> +       default:
+> +               dev_err(dvfsrc->dev, "unknown command: %d\n", cmd);
+> +               break;
+> +       }
+> +
+> +       if (dvfsrc_wait_for_idle(dvfsrc)) {
+> +               dev_warn(dvfsrc->dev, "[%s] wait idle, last: %d -> %d\n",
+> +                        __func__, dvfsrc_read(dvfsrc, DVFSRC_LEVEL),
+> +                        dvfsrc_read(dvfsrc, DVFSRC_LAST));
+> +               goto out;
+> +       }
+> +
+> +out:
+> +       mutex_unlock(&dvfsrc->lock);
+> +}
+> +EXPORT_SYMBOL(mtk_dvfsrc_send_request);
+> +
+> +static int dvfsrc_set_performance(struct notifier_block *b,
+> +                                 unsigned long l, void *v)
+> +{
+> +       int i, val, highest;
 
-Thanks,
-Ken
+Variable names could be improved. "val" is only ever used to store the
+current level, would be nice to make the name more specific. Similarly
+"l" looks like it would be better as something state related.
+
+val and highest at least should be u32.
+
+> +       struct mtk_dvfsrc *dvfsrc;
+> +       struct scp_event_data *sc = v;
+> +       struct dvfsrc_domain *d;
+> +
+> +       if (sc->event_type != MTK_SCPSYS_PSTATE)
+> +               return 0;
+> +
+> +       dvfsrc = container_of(b, struct mtk_dvfsrc, scpsys_notifier);
+> +
+> +       d = dvfsrc->dvd->domains;
+> +
+> +       if (l > dvfsrc->dvd->num_opp) {
+> +               dev_err(dvfsrc->dev, "pstate out of range = %ld\n", l);
+> +               goto out;
+
+Can just return 0;
+
+> +       }
+> +
+> +       for (i = 0, highest = 0; i < dvfsrc->dvd->num_domains - 1; i++, d++) {
+
+It's not immediately clear to me why a domain is skipped (the -1).
+This is either worth a comment or it may be a bug?
+
+> +               if (sc->domain_id == d->id)
+> +                       d->state = l;
+> +               if (d->state > highest)
+> +                       highest = d->state;
+> +       }
+> +
+> +       if (highest == 0) {
+> +               dev_err(dvfsrc->dev, "domain not match\n");
+
+This text is incorrect. You're checking whether all domains had a
+state of zero, not whether you found a domain match. Is this check
+actually needed?
+
+> +               goto out;
+
+return 0;
+
+> +       }
+> +
+> +       mtk_dvfsrc_send_request(dvfsrc->dev, MTK_DVFSRC_CMD_OPP_REQUEST,
+> +                               highest);
+> +
+> +       val = dvfsrc->dvd->get_current_level(dvfsrc);
+> +
+> +       dev_dbg(dvfsrc->dev, "DVFSRC_LEVEL: %x, val: %x, DVFSRC_SW_REQ: %x\n",
+> +               dvfsrc_read(dvfsrc, DVFSRC_LEVEL), val,
+> +               dvfsrc_read(dvfsrc, DVFSRC_SW_REQ));
+
+"val:" to "current level:" or something similarly descriptive.
+
+> +
+> +       if (val < highest) {
+> +               dev_err(dvfsrc->dev, "current: %d < highest: %x\n",
+> +                       val, highest);
+
+This message isn't clear and should be more explicit. Something like
+"Current level %d < highest requested %d"
+
+> +               goto out;
+
+return 0;
+
+> +       }
+> +
+> +out:
+
+Out label no longer needed.
+
+> +       return 0;
+> +}
+> +
+> +static void pstate_notifier_register(struct mtk_dvfsrc *dvfsrc)
+> +{
+> +       dvfsrc->scpsys_notifier.notifier_call = dvfsrc_set_performance;
+> +       register_scpsys_notifier(&dvfsrc->scpsys_notifier);
+> +}
+> +
+> +static int mtk_dvfsrc_probe(struct platform_device *pdev)
+> +{
+> +       struct arm_smccc_res ares;
+> +       struct resource *res;
+> +       struct mtk_dvfsrc *dvfsrc;
+> +       int ret;
+> +
+> +       dvfsrc = devm_kzalloc(&pdev->dev, sizeof(*dvfsrc), GFP_KERNEL);
+> +       if (!dvfsrc)
+> +               return -ENOMEM;
+> +
+> +       dvfsrc->dvd = of_device_get_match_data(&pdev->dev);
+> +       dvfsrc->dev = &pdev->dev;
+> +
+> +       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +       dvfsrc->regs = devm_ioremap_resource(&pdev->dev, res);
+> +       if (IS_ERR(dvfsrc->regs))
+> +               return PTR_ERR(dvfsrc->regs);
+> +
+> +       dvfsrc->clk_dvfsrc = devm_clk_get(dvfsrc->dev, "dvfsrc");
+> +       if (IS_ERR(dvfsrc->clk_dvfsrc)) {
+> +               dev_err(dvfsrc->dev, "failed to get clock: %ld\n",
+> +                       PTR_ERR(dvfsrc->clk_dvfsrc));
+> +               return PTR_ERR(dvfsrc->clk_dvfsrc);
+> +       }
+> +
+> +       ret = clk_prepare_enable(dvfsrc->clk_dvfsrc);
+> +       if (ret)
+> +               return ret;
+> +
+> +       mutex_init(&dvfsrc->lock);
+> +
+> +       arm_smccc_smc(MTK_SIP_SPM, MTK_SIP_SPM_DVFSRC_INIT, 0, 0, 0, 0, 0, 0,
+> +                     &ares);
+> +
+> +       if (!ares.a0) {
+> +               dvfsrc->dram_type = ares.a1;
+> +       } else {
+> +               dev_err(dvfsrc->dev, "init fails: %lu\n", ares.a0);
+> +               clk_disable_unprepare(dvfsrc->clk_dvfsrc);
+> +               return ares.a0;
+> +       }
+> +
+> +       platform_set_drvdata(pdev, dvfsrc);
+> +       pstate_notifier_register(dvfsrc);
+> +
+> +       return devm_of_platform_populate(&pdev->dev);
+> +}
+> +
+> +static const struct dvfsrc_opp dvfsrc_opp_mt8183_lp4[] = {
+> +       {0, 0}, {0, 1}, {0, 2}, {1, 2},
+> +};
+> +
+> +static const struct dvfsrc_opp dvfsrc_opp_mt8183_lp3[] = {
+> +       {0, 0}, {0, 1}, {1, 1}, {1, 2},
+> +};
+> +
+> +static const struct dvfsrc_opp *dvfsrc_opp_mt8183[] = {
+> +       [MT8183_DVFSRC_OPP_LP4] = dvfsrc_opp_mt8183_lp4,
+> +       [MT8183_DVFSRC_OPP_LP4X] = dvfsrc_opp_mt8183_lp3,
+> +       [MT8183_DVFSRC_OPP_LP3] = dvfsrc_opp_mt8183_lp3,
+> +};
+> +
+> +static struct dvfsrc_domain dvfsrc_domains_mt8183[] = {
+> +       { MT8183_POWER_DOMAIN_MFG_ASYNC, 0 },
+> +       { MT8183_POWER_DOMAIN_MFG, 0 },
+> +       { MT8183_POWER_DOMAIN_CAM, 0 },
+> +       { MT8183_POWER_DOMAIN_DISP, 0 },
+> +       { MT8183_POWER_DOMAIN_ISP, 0 },
+> +       { MT8183_POWER_DOMAIN_VDEC, 0 },
+> +       { MT8183_POWER_DOMAIN_VENC, 0 },
+> +};
+> +
+> +static const struct dvfsrc_soc_data mt8183_data = {
+> +       .opps = dvfsrc_opp_mt8183,
+> +       .num_opp = ARRAY_SIZE(dvfsrc_opp_mt8183_lp4),
+> +       .regs = mt8183_regs,
+> +       .domains = dvfsrc_domains_mt8183,
+> +       .num_domains = ARRAY_SIZE(dvfsrc_domains_mt8183),
+> +       .get_target_level = mt8183_get_target_level,
+> +       .get_current_level = mt8183_get_current_level,
+> +       .set_dram_bw = mt8183_set_dram_bw,
+> +       .set_opp_level = mt8183_set_opp_level,
+> +};
+> +
+> +static int mtk_dvfsrc_remove(struct platform_device *pdev)
+> +{
+> +       struct mtk_dvfsrc *dvfsrc = platform_get_drvdata(pdev);
+> +
+> +       clk_disable_unprepare(dvfsrc->clk_dvfsrc);
+> +
+> +       return 0;
+> +}
+> +
+> +static const struct of_device_id mtk_dvfsrc_of_match[] = {
+> +       {
+> +               .compatible = "mediatek,mt8183-dvfsrc",
+> +               .data = &mt8183_data,
+> +       }, {
+> +               /* sentinel */
+> +       },
+> +};
+> +
+> +static struct platform_driver mtk_dvfsrc_driver = {
+> +       .probe  = mtk_dvfsrc_probe,
+> +       .remove = mtk_dvfsrc_remove,
+> +       .driver = {
+> +               .name = "mtk-dvfsrc",
+> +               .of_match_table = of_match_ptr(mtk_dvfsrc_of_match),
+> +       },
+> +};
+> +
+> +builtin_platform_driver(mtk_dvfsrc_driver);
+> +
+> +MODULE_LICENSE("GPL v2");
+> +MODULE_DESCRIPTION("MTK DVFSRC driver");
+> diff --git a/include/soc/mediatek/mtk_dvfsrc.h b/include/soc/mediatek/mtk_dvfsrc.h
+> new file mode 100644
+> index 0000000..e759a65
+> --- /dev/null
+> +++ b/include/soc/mediatek/mtk_dvfsrc.h
+> @@ -0,0 +1,22 @@
+> +/* SPDX-License-Identifier: GPL-2.0
+> + *
+> + * Copyright (c) 2018 MediaTek Inc.
+> + */
+> +#ifndef __SOC_MTK_DVFSRC_H
+> +#define __SOC_MTK_DVFSRC_H
+> +
+> +#define MTK_DVFSRC_CMD_BW_REQUEST      0
+> +#define MTK_DVFSRC_CMD_OPP_REQUEST     1
+> +
+> +#if IS_ENABLED(CONFIG_MTK_DVFSRC)
+> +void mtk_dvfsrc_send_request(const struct device *dev, u32 cmd, u64 data);
+> +
+> +#else
+> +
+> +static inline void mtk_dvfsrc_send_request(const struct device *dev, u32 cmd,
+> +                                          u64 data)
+> +{ return -ENODEV; }
+> +
+> +#endif /* CONFIG_MTK_DVFSRC */
+> +
+> +#endif
+> --
+> 1.9.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
