@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52E7F3B959
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:24:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B970E3B95B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:25:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ml6fh8UE3DZBec5Uwewdvt7vToN4fvhRYbpBqqd+QTo=; b=BMqNSz1f65ffEX
-	Vi8jYJZFSUKEMrajkJNfSh1/U+Kz2BF5etdxZ4FihumeTosDatWrXfHjlYnTcvk6X8OrzS1RMLBSr
-	N8Yu4u1ZXAhettOhFq6kMSnt361rvWfDbbSUGUlOFFLC+v3S7g9A6vBqkOAI1MeBQog678vFhyT8G
-	A7GFogRqoQQvlPT+8aX80Ozg3SaQ7ded3ntQ+aIvj2v3BZejLUwyW2xsoqlWJKr+FaNqeBBaRwZAW
-	oK/gF4r8xXzrS7bCV1Wrn+fo3VX1OvpMrOnGIyV0M4+LXiAOvhmugqFIB/An/cvfqkUC0mje2g3uE
-	NQQkR0eJ+ALURW2iL3Vg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eJuWjs6qLjYSLkzX34LTOvPVIlYmtS6zRJvIedQCge4=; b=BTwwyg/A7jKnIM
+	rTXEgjojZzepRuP/HgBSiBhio0VdTwSn+3dFLB4r2OZv9DszCnwvQ0f2c0esgEuB0h+icWlgx1FFG
+	hWoTW5cXp/zvO1KtM94BxYSPF2qewQ2jhryvepzaPHQ5bJX4XqiPFTwNGwA+OsKOzAGcavbpW7OlS
+	IjdJIKQpLeBh0OCN277McWP+/H7IkE8EPS0i94kfD1B496JxkBNo/Aa77SCqK+AhY30VghlcNWqDy
+	OoFv4E48yd6xYW8BmlgMomOnDh9EXObHgP+ONuoKI9GtuTmKRYibRF98L7T6FteWs1g5+7ZinlQ9G
+	ceb8LONswVyuMICmPXDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haN6H-0007bg-8E; Mon, 10 Jun 2019 16:24:49 +0000
+	id 1haN6i-0007k6-57; Mon, 10 Jun 2019 16:25:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haN67-0007am-3g
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:24:40 +0000
+ id 1haN67-0007bF-TI
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:24:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10BDA337;
- Mon, 10 Jun 2019 09:24:37 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 844F2346;
+ Mon, 10 Jun 2019 09:24:39 -0700 (PDT)
 Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E5C183F246;
- Mon, 10 Jun 2019 09:24:35 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 65D583F246;
+ Mon, 10 Jun 2019 09:24:38 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v2 0/6] KVM: arm64: Account host/guest SError more precisely
- (Neoverse-N1 #1349291)
-Date: Mon, 10 Jun 2019 17:24:21 +0100
-Message-Id: <20190610162427.115910-1-james.morse@arm.com>
+Subject: [PATCH v2 1/6] arm64: assember: Switch ESB-instruction with a vanilla
+ nop if !ARM64_HAS_RAS
+Date: Mon, 10 Jun 2019 17:24:22 +0100
+Message-Id: <20190610162427.115910-2-james.morse@arm.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190610162427.115910-1-james.morse@arm.com>
+References: <20190610162427.115910-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_092439_213199_DE2602DC 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20190610_092439_987369_F9DB0430 
+X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,64 +71,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+The ESB-instruction is a nop on CPUs that don't implement the RAS
+extensions. This lets us use it in places like the vectors without
+having to use alternatives.
 
-This series started as a workaround for Neoverse-N1 #1349291, but has
-become an improvement in RAS error accounting for KVM on arm64.
+If someone disables CONFIG_ARM64_RAS_EXTN, this instruction still has
+its RAS extensions behaviour, but we no longer read DISR_EL1 as this
+register does depend on alternatives.
 
-Neoverse-N1 affected by #1349291 may report an Uncontained RAS Errors
-as Unrecoverable. [0] This is the difference between killing the thread and
-killing the machine.
-The workaround is to treat all Unrecoverable SError as Uncontained.
-The arch code's SError handling already does this, due to its nascent
-kernel-first support.
+This could go wrong if we want to synchronize an SError from a KVM
+guest. On a CPU that has the RAS extensions, but the KConfig option
+was disabled, we consume the pending SError with no chance of ever
+reading it.
 
-So only KVM needs some work as it has its own SError handling as we want
-KVM to handle guest:SError and the host to handle host:SError.
+Hide the ESB-instruction behind the CONFIG_ARM64_RAS_EXTN option,
+outputting a regular nop if the feature has been disabled.
 
-Instead of working around the errata in KVM, we account SError as precisely
-as we can instead. This means moving the ESB-instruction into the guest-exit
-vectors, and deferring guest-entry if there is an SError pending. (so that the
-host's existing handling takes it).
+Reported-by: Julien Thierry <julien.thierry@arm.com>
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+New for v2. The esb where this would be a problem is added later in
+this series, but there is no build-dependency.
 
+ arch/arm64/include/asm/assembler.h | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-Changes since v1:
- * Squashed v1:patch5 into v2:patch4. v1:patch6 to be posted separately.
- * Dropped all the performance numbers.
- * Added patch1, making the ESB macro emit a nop if the kconfig feature
-   is disabled.
- * Tried to formalise the indirect vectors preamble a little more to
-   make changes easier to review
- * Added preamble size checks to the invalid vector entries.
- * Pulled the size check out as a macro now there are two invocations.
-
-Thanks,
-
-James
-
-[0] account-required: https://developer.arm.com/docs/sden885747/latest/arm-neoverse-n1-mp050-software-developer-errata-notice
-
-[v1] https://lore.kernel.org/linux-arm-kernel/20190604144551.188107-1-james.morse@arm.com/
-
-James Morse (6):
-  arm64: assember: Switch ESB-instruction with a vanilla nop if
-    !ARM64_HAS_RAS
-  KVM: arm64: Abstract the size of the HYP vectors pre-amble
-  KVM: arm64: Make indirect vectors preamble behaviour symmetric
-  KVM: arm64: Consume pending SError as early as possible
-  KVM: arm64: Defer guest entry when an asynchronous exception is
-    pending
-  arm64: Update silicon-errata.txt for Neoverse-N1 #1349291
-
- Documentation/arm64/silicon-errata.txt |  1 +
- arch/arm64/include/asm/assembler.h     |  4 ++++
- arch/arm64/include/asm/kvm_asm.h       |  6 ++++++
- arch/arm64/kernel/traps.c              |  4 ++++
- arch/arm64/kvm/hyp/entry.S             | 19 +++++++++++++---
- arch/arm64/kvm/hyp/hyp-entry.S         | 30 +++++++++++++++++++++-----
- arch/arm64/kvm/va_layout.c             |  7 +++---
- 7 files changed, 59 insertions(+), 12 deletions(-)
-
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index 92b6b7cf67dd..2d2114b39846 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -107,7 +107,11 @@
+  * RAS Error Synchronization barrier
+  */
+ 	.macro  esb
++#ifdef CONFIG_ARM64_RAS_EXTN
+ 	hint    #16
++#else
++	nop
++#endif
+ 	.endm
+ 
+ /*
 -- 
 2.20.1
 
