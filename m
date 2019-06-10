@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D491B3BF02
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 23:58:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A1193BF09
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 23:59:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kDMj7mIDCx7WcSzSYod8a9hbXTkn7Uhjk7GILqnCGtI=; b=SortENSasfsdDS
-	FO4bMqmskz7DWsn/U/g1pt2fH+vfE8ipP6Z/FMcsXkZIgMdtUvdW2gmp52epzgx7ENaHbBKFwF18Z
-	Kn4rhaqUztlDmc3hhD/GGvCiHgihKQradqNBuuG83DbVrTWpP/sCeYJej/WeacznXfjR1tm6IoNWP
-	j3m2jA6UcxiNDLsvuHL7uvEegNTDkz82+XCpdUkOD1v512L0S9OY5AjVBw0Nryq43k7fndXxWGpW1
-	nny8kfFdRk8EYNvT7DJjjvQw1bh7dx8IXihIOrBxYaZmSMDl4gbqbrGLfyqADXyTWU+39/3JDtYDO
-	S9yN7RHGkO7L+S0mA7Vw==;
+	List-Owner; bh=6B3W6NZQMH/hk6oMkFe3pnfWHw9TjuNwGo9wes2bO2I=; b=joUwB1r9XwljZ1
+	Pm0dMtOevJtOhYfz8GvVZOdhQOhZWP60J7QYdaO7gvyP4okPEXzLwg+cW9L4cG/iq+xYV7Y8txmM2
+	fOYwJWFsGEiHx+MxsQbuxXbYn8Bl3yrc8sbu4rkBnVT5urqHzW9EiOITLFp7Qzqy8Zx1YBoIH7u1y
+	izvzlXLThRqngP360z/wf9DRmb/UCEbh5d7vYrUZRDI4VZ1CeQKFaVPwyzWChC60rgwLr6pM3wNsx
+	bkVuQh5bBXyUtDglTRdx5n0qpQJ/avEyRzBw5XewWytJMQyB68L12B3OPO5yJwCBafMpj8fHbeE1b
+	w9juuv4nLeZYyvZ+/8hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haSIp-0001p1-G4; Mon, 10 Jun 2019 21:58:07 +0000
+	id 1haSJn-00027u-2n; Mon, 10 Jun 2019 21:59:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haSId-0001ob-IO
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 21:57:56 +0000
-Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
- [209.85.160.180])
+ id 1haSJb-00026x-Ai
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 21:58:56 +0000
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
+ [209.85.160.176])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 174A820859
+ by mail.kernel.org (Postfix) with ESMTPSA id E3B8E2146E
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 21:57:55 +0000 (UTC)
+ Mon, 10 Jun 2019 21:58:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560203875;
- bh=g4mY100w2qgQoqrm9iHtxlwWj9iN/wYo4Hcn8OgqS8Y=;
+ s=default; t=1560203935;
+ bh=0PkPVdz5GVGKK3sk7TXqMD/2uCtfIwQXWAIEJPKPXS4=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=fO8OzSFz3yf/+buoGxsLocyYpw/2kZwneLtrMzQ05YDjIRyc2CdUqR1PIhjOLP5x/
- jvFdH7X9Uqd/8QErrXxULrDRJNIS7T+v9WXbPRP/d7ScW5DXaSbbrO3WHycdhZxgdR
- lftNaJOTMYM6k3XwuF9LnSP3XL1HG4cbXSzsrReg=
-Received: by mail-qt1-f180.google.com with SMTP id p15so4777243qtl.3
+ b=vEfoYgbBq11nuojqIl5e9i7RXs8dtqVAB0ysyomiAsFQ60a3iO7+gRazCHpKv3+Hj
+ d6Jk8KCJYSMSnVxDbznJoY7vuau7PB2vH0B4qYiipoC0DJtvfp0xKOURJglbDN1y8m
+ CxMGrgGUwRyGnnzsA56KLz3KKAuNcrJE1e+3LTTY=
+Received: by mail-qt1-f176.google.com with SMTP id p15so4780184qtl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 14:57:55 -0700 (PDT)
-X-Gm-Message-State: APjAAAUfUtlX290dRFOGcMQQqZD8HMGtiXpcpmjhVMym2mIt2fhFC1+C
- mOuibIcKmwel0A07J8Y8C81FtKq4KSwDUurgQQ==
-X-Google-Smtp-Source: APXvYqw1cfkjGTbC0jdIEGlyRcw4f3LBrmMrdCPBXItz9JGMvlPjCnQIatnqWLCFa+L6qVlKCb97ojLPMStDgnodVi8=
-X-Received: by 2002:a0c:8a43:: with SMTP id 3mr13015726qvu.138.1560203874386; 
- Mon, 10 Jun 2019 14:57:54 -0700 (PDT)
+ Mon, 10 Jun 2019 14:58:54 -0700 (PDT)
+X-Gm-Message-State: APjAAAU9Xg1k/sJV5ndBHgdmnDyclsBII8793ypa3sbGXn9sxnRvTs7l
+ E/u4e6u99RBvz2kdIPMyaFC92dxzH3M8k5YVwQ==
+X-Google-Smtp-Source: APXvYqzYmsQ1fTULRa5HAKFvUASBSBcpANP6JQU7H9+hyVCTO/yhwj4BIvezOoVzR8ZhDpYU91B05EHec2kVcFmKG98=
+X-Received: by 2002:ac8:36b9:: with SMTP id a54mr61757193qtc.300.1560203934207; 
+ Mon, 10 Jun 2019 14:58:54 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190531063849.26142-1-manivannan.sadhasivam@linaro.org>
- <20190531063849.26142-3-manivannan.sadhasivam@linaro.org>
-In-Reply-To: <20190531063849.26142-3-manivannan.sadhasivam@linaro.org>
+ <20190531063849.26142-4-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20190531063849.26142-4-manivannan.sadhasivam@linaro.org>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 10 Jun 2019 15:57:43 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+N7NA7m+dp+zpwFeZLM6B+OwRrqZdzKkJp2TRWi_e3Mw@mail.gmail.com>
-Message-ID: <CAL_Jsq+N7NA7m+dp+zpwFeZLM6B+OwRrqZdzKkJp2TRWi_e3Mw@mail.gmail.com>
-Subject: Re: [PATCH v3 2/4] dt-bindings: arm: stm32: Convert STM32 SoC
- bindings to DT schema
+Date: Mon, 10 Jun 2019 15:58:43 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLjKu_1Gep348-ERQgJrZ6vM2RxB2UW4heqGGg5syEFWw@mail.gmail.com>
+Message-ID: <CAL_JsqLjKu_1Gep348-ERQgJrZ6vM2RxB2UW4heqGGg5syEFWw@mail.gmail.com>
+Subject: Re: [PATCH v3 3/4] dt-bindings: arm: stm32: Document Avenger96
+ devicetree binding
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_145755_624199_63F3E370 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20190610_145855_388164_1E4B2642 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,55 +103,15 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Fri, May 31, 2019 at 12:39 AM Manivannan Sadhasivam
 <manivannan.sadhasivam@linaro.org> wrote:
 >
-> This commit converts STM32 SoC bindings to DT schema using jsonschema.
+> This commit documents Avenger96 devicetree binding based on
+> STM32MP157 SoC.
 >
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > ---
->  .../devicetree/bindings/arm/stm32/stm32.yaml  | 29 +++++++++++++++++++
->  1 file changed, 29 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/arm/stm32/stm32.yaml
+>  Documentation/devicetree/bindings/arm/stm32/stm32.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 
-Converting implies removal of something. The schema looks fine though.
-
->
-> diff --git a/Documentation/devicetree/bindings/arm/stm32/stm32.yaml b/Documentation/devicetree/bindings/arm/stm32/stm32.yaml
-> new file mode 100644
-> index 000000000000..f53dc0f2d7b3
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/arm/stm32/stm32.yaml
-> @@ -0,0 +1,29 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/arm/stm32/stm32.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32 Platforms Device Tree Bindings
-> +
-> +maintainers:
-> +  - Alexandre Torgue <alexandre.torgue@st.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - const: st,stm32f429
-> +
-> +      - items:
-> +          - const: st,stm32f469
-> +
-> +      - items:
-> +          - const: st,stm32f746
-> +
-> +      - items:
-> +          - const: st,stm32h743
-> +
-> +      - items:
-> +          - const: st,stm32mp157
-> +...
-> --
-> 2.17.1
->
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
