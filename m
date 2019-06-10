@@ -2,84 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD2EE3B882
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:50:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE48F3B887
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:51:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PUTC6LTCRTiWoVFFmL25Sa8HiF8B400Wk0S6TmYT7GQ=; b=icoKFyGLcUPExs
-	he+umTjb9BB+6aXrapRwoKIhf+h9rq0Y/zyZ0wOvjJSbGnMy0nPkWFdQyoNTqR1OzDOYvaOr1EbEI
-	yNeykOVlP3q4PipgEpl8dCSYbt+FECDuD2O97KJztyFvkMJVIgCDWurooMD71mrUb5ajS10WeRgnt
-	6K0zWAsAEN8uEn63+9VPG/H/cqdQ0+PGe/A3CUqotdWrjbW0aFH7BJeUDYHhYzEb0766AGGrDawMo
-	Zj4GD671EeJkROQ47OjnpC91gDBGq7LKBOrRKdLRYRT1v/TMFU//gGjdLTB74j0oyiB2jOKBVwHfk
-	IOhYqXp7+a2gi8GObORg==;
+	List-Owner; bh=2W6rmZCgAwh3U5uyF7Cbj1/RxNLDeHQUOB0lSyLhRjA=; b=k2dfrZW2Wz4d2k
+	f1j+qPYZRhal4HPc12LgsjLPZFx3fLfxU3MgS4eggCTZpP4z/td/v43Hu0fOeyRnWKmjlBgAqEySZ
+	/cLcF9K0QolSWizSoGLPvqgsV4LUPgMnNQmex7BbZLf2P9+xmZWuaWuYg1xxYvQfBLGJRidfZ30Bi
+	vQwSBCRYZXHyxxsK5Dw5tIu1BsJhkcHUvJKSgqy99DZreGEOx55xpXqb/O5BHu+s9YtaOm6Yj5lsg
+	gyEUsABWyqYsUo3pNoTek2ZbCl2z4e8hChNtVvrkVpYaNl8882uaG6lTO7pEXDutzrNJKqUEyrRyl
+	QUtxgQbY+NvxaKToFkhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haMZK-0002PP-9r; Mon, 10 Jun 2019 15:50:46 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1haMaM-0002hZ-CS; Mon, 10 Jun 2019 15:51:50 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haMZ8-0002Os-VP
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 15:50:36 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z23so8665425wma.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 08:50:34 -0700 (PDT)
+ id 1haMa9-0002g6-AH; Mon, 10 Jun 2019 15:51:38 +0000
+Received: by mail-oi1-x241.google.com with SMTP id q186so6613957oia.0;
+ Mon, 10 Jun 2019 08:51:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=j0cvrW0LiR2yAWHacC+paieH/BsPhO653fx0ilOqwbQ=;
- b=XrYcjT7N66H7PZl89qVvjkYy2lcUUR+p2y5QlMqTrKSYLfpAHr+5bhPvrKUDoDW2Gn
- gc8KQUOivmTgSCQR5PIvdxh3Np5UEb4HOX5Y/TgrcVFjLu1N/l6ZRZHcLQwZoZkFB2PK
- dnHDV+JZ8jRZwikhp0mK3D3c9YrIoYwTbrv+XI3t6hXqkMvOg/CU3HdRVKBqqbiWsoYb
- ZmrGKLaXtkNsJEc6GlFos05req6azeUDaSh/0lsYh1U2oaNxBegmv6xh+NlQSfkKDqss
- qqcF/nZdT+NcxD5fD2IRb0hwvT8zPzyEN97nHCywHGtE8NnApD9T/+hYylByZ803tbq9
- bqbA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZuHcFSp9RV6IeTzjDjOYf2cyyZ7YnVvyyWSJ347qo6A=;
+ b=Sl+8Rmb2SbYgcshM1Z0Js0gffJMpHV6iNwuBeKkftDEg6qJgrbJkm+yybg3CWqzJ2x
+ qR/7WtHww9+6woEtKc/YlVDtO0g8Y7A5kuCpvgscXSZXtgke0JyDjp7/Ew/b8W3AI/1n
+ gk/fXnfGrZlppgM50p9VnIWFn0op1rziV+e31gh6EDInrEX50Zgw9lXzNQTzACC4Jz4y
+ xuZfkn9Py55sJbkDpD6NHuD5fTNDddBbEKMWUsAunWtMuSUEU6AKzYsvxiPACEuq19TJ
+ TR+RMKGFu9vNaEkKqQAk3oVJ4ZRkCumfzKglVgjyGf5iNvXv1fklUHBgHDDTgVFNNHmA
+ 0rXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=j0cvrW0LiR2yAWHacC+paieH/BsPhO653fx0ilOqwbQ=;
- b=jvYpfpnZJphr13ALmxNM9qzx2vg065W0p5/nKXhgUNF5qqTI164eSLsOzoj6MUrbA4
- lrlnTdWI07HgJoN0EOD1GbTwOkA0XHetGCB6CjR5hgusJOdDcFqmdgsyaoibJssgYL1Q
- DTbxc48lhaUTbQ246FGQ749D/a4xbXD5K3pkh8J9BbwqKrrEPVN5RvXcreaKq6TjrKPl
- Egi/s/Qh0PkaxXFX0M63HUn51VXC+yZnS2D2Z1cNPq10ckf3LurZHZaIQ7Ui36QgAHmq
- 9TUi0RP3nA5r2qnNRwNTjdYJy91Q3ADoLIxwp8IdaAF6jMOmMzta3HwR1UTSpnDTl6In
- 4LEA==
-X-Gm-Message-State: APjAAAXgTF+B50xm+r1vupLpQ70jHI5U2fCp9ZpHc1erjPjEKleZOxIS
- qWIT3kPc2cSRzZJs6nf1G3o=
-X-Google-Smtp-Source: APXvYqzLna+aVnK3OUUKYltUUrEa4DJqameWzsVBUOMurnw3ZFvBDcb4Rdm+t6M1JqO46Sv5jxt2fg==
-X-Received: by 2002:a7b:c751:: with SMTP id w17mr14836813wmk.127.1560181833344; 
- Mon, 10 Jun 2019 08:50:33 -0700 (PDT)
-Received: from blackbox.darklights.net
- (p200300F133DDA40000C4C39937FBD289.dip0.t-ipconnect.de.
- [2003:f1:33dd:a400:c4:c399:37fb:d289])
- by smtp.googlemail.com with ESMTPSA id z17sm9711917wru.21.2019.06.10.08.50.31
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 10 Jun 2019 08:50:32 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: Maxime Ripard <maxime.ripard@bootlin.com>,
-	netdev@vger.kernel.org
-Subject: RE: [PATCH v2 10/11] dt-bindings: net: dwmac: Deprecate the PHY reset
- properties
-Date: Mon, 10 Jun 2019 17:50:11 +0200
-Message-Id: <20190610155011.4305-1-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <ff6306c71a6b6ad174007f9f2823499d3093e21c.1560158667.git-series.maxime.ripard@bootlin.com>
-References: <ff6306c71a6b6ad174007f9f2823499d3093e21c.1560158667.git-series.maxime.ripard@bootlin.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZuHcFSp9RV6IeTzjDjOYf2cyyZ7YnVvyyWSJ347qo6A=;
+ b=Q9yURTyO/0iLZYCbdjxPm4AW6oSL3yKT3yeu/f/DsSdqXOf9eeIpdrylgV6iH2iGXy
+ 2a+NlYvv4nsv/QOgo9Zbs+Uy38HrDyLjUeoF5KGgUniEcgkURri1xiIkp2oR7kavQIB2
+ ZN3cCi7bKX1tW7M8Yx1YTTpN1+Z8xsOkYGpyOqnNkNCiKZ0XS8kjrgpc9nUQXxXlx7M+
+ jVaj1ATax52KMoQ1eqbr+utwBDXzc3WnRkq+RT6BU6/kihAkFob1q08PRuwa3cVHWwwW
+ xdYFqSoN+LXUzEt7um2llBniRuocdwg/clqblSyPb4kpOVf7dQ4nOOS8ke7NZxvgzlZA
+ VMtA==
+X-Gm-Message-State: APjAAAWO4ctrUqXHzw04ePmLovtyTSaqa+2c0eiyzR/Pq3bY2o1kFyWn
+ ejny8e8Ikwu/ikeKTzRQASsR45Rml/weVZvgVbs=
+X-Google-Smtp-Source: APXvYqwamDEZ2pn1KOIAFzWrcT6R7MpvRaH+7gsnVBBoMuB1pYAjxIlbqNIxs3Use8vvJu0GGPKKrdLueixgJ+eH8z4=
+X-Received: by 2002:aca:4403:: with SMTP id r3mr12815875oia.39.1560181896310; 
+ Mon, 10 Jun 2019 08:51:36 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190609180621.7607-1-martin.blumenstingl@googlemail.com>
+ <20190609204510.GB8247@lunn.ch> <20190610114700.tymqzzax334ahtz4@flea>
+ <CAFBinCCs5pa1QmaV32Dk9rOADKGXXFpZsSK=LUk4CGWMrG5VUQ@mail.gmail.com>
+ <20190610135109.7alkvruvw2jbtwph@flea>
+In-Reply-To: <20190610135109.7alkvruvw2jbtwph@flea>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Mon, 10 Jun 2019 17:51:25 +0200
+Message-ID: <CAFBinCAy=YR+qV=vYtAV4p5ftcR-VuYTJz3wuMY-k6PWcmbDQQ@mail.gmail.com>
+Subject: Re: [RFC next v1 0/5] stmmac: honor the GPIO flags for the PHY reset
+ GPIO
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_085035_039812_C3C81519 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20190610_085137_352308_DE0DC0D4 
+X-CRM114-Status: GOOD (  19.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -103,32 +95,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
- =?UTF-8?q?Antoine=20T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, alexandre.torgue@st.com,
+ bgolaszewski@baylibre.com, netdev@vger.kernel.org, linus.walleij@linaro.org,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, devicetree@vger.kernel.org, joabreu@synopsys.com,
+ khilman@baylibre.com, peppe.cavallaro@st.com,
+ linux-amlogic@lists.infradead.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Even though the DWMAC driver uses some driver specific properties, the PHY
-> core has a bunch of generic properties and can deal with them nicely.
-> 
-> Let's deprecate our specific properties.
-> 
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-I am not sure about the yaml syntax for deprecated properties but
-the description inside the .yaml file looks good to me so:
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+On Mon, Jun 10, 2019 at 3:51 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> Hi Martin,
+>
+> On Mon, Jun 10, 2019 at 02:31:17PM +0200, Martin Blumenstingl wrote:
+> > On Mon, Jun 10, 2019 at 1:47 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > >
+> > > Hi Andrew,
+> > >
+> > > On Sun, Jun 09, 2019 at 10:45:10PM +0200, Andrew Lunn wrote:
+> > > > > Patch #1 and #4 are minor cleanups which follow the boyscout rule:
+> > > > > "Always leave the campground cleaner than you found it."
+> > > >
+> > > > > I
+> > > > > am also looking for suggestions how to handle these cross-tree changes
+> > > > > (patch #2 belongs to the linux-gpio tree, patches #1, 3 and #4 should
+> > > > > go through the net-next tree. I will re-send patch #5 separately as
+> > > > > this should go through Kevin's linux-amlogic tree).
+> > > >
+> > > > Patches 1 and 4 don't seem to have and dependencies. So i would
+> > > > suggest splitting them out and submitting them to netdev for merging
+> > > > independent of the rest.
+> > >
+> > > Jumping on the occasion of that series. These properties have been
+> > > defined to deal with phy reset, while it seems that the PHY core can
+> > > now handle that pretty easily through generic properties.
+> > >
+> > > Wouldn't it make more sense to just move to that generic properties
+> > > that already deals with the flags properly?
+> > thank you for bringing this up!
+> > if anyone else (just like me) doesn't know about it, there are generic
+> > bindings defined here: [0]
+> >
+> > I just tested this on my X96 Max by defining the following properties
+> > inside the PHY node:
+> >   reset-delay-us = <10000>;
+> >   reset-assert-us = <10000>;
+> >   reset-deassert-us = <10000>;
+> >   reset-gpios = <&gpio GPIOZ_15 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
+> >
+> > that means I don't need any stmmac patches which seems nice.
+>
+> I'm glad it works for you :)
+>
+> > instead I can submit a patch to mark the snps,reset-gpio properties in
+> > the dt-bindings deprecated (and refer to the generic bindings instead)
+> > what do you think?
+>
+> I already did as part of the binding reworks I did earlier today:
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-June/658427.html
+great, thank you - you have my Reviewed-by!
 
 _______________________________________________
 linux-arm-kernel mailing list
