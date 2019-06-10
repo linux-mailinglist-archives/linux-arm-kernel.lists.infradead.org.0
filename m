@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE2323B233
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:32:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C3E73B235
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:33:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IEt6R3pcI1scJii7RgYahtEG01UN+UtFes4sU+/j8s4=; b=LRvrXZxwCrXPHY
-	DQIgCgYVgxnGHxwOyiRoq9MTZeKODti1rVF25EJQGWFwHLnVjQGtJw9uGyh+V5tCjkDyhB18f/LaL
-	i8o0u+ThAzOcJwKL1WSBDkqLThTxK9UqYKzVkPCbTG0bzEabFUiNhxwlvD4L1e+saTjXkLmjthCHW
-	XaSelBjEBOJvZI00Rxx101kw1b8J2eYadj0h4jjBtIfVYXmGegELVqrGjfe7MWloqYmcTmLHZjsvP
-	3oyvBBHwFv9hWUBVNNU9oko4MEmrkieMKYOe/BO72Z+HD8eoQDKlBOcIpxzH3UH10W/lThgAn4Joa
-	LvyYP7EBq0MZYrQBh+rA==;
+	List-Owner; bh=eOyY22f2JNBlmZd3q+e5WIDLchm1VEbG2PaUMHAJtlU=; b=d+fnzy+EPFICXg
+	osHBb6R9f/yvj/LKM+uSOrzwZniUta/eEOpl081Q9sZjcp8NC0oVCG4IUSGiTbnVUYeLsZXYDubnk
+	1ka/t+05LvBEK/nFg22WZ9JXw/YMerI80DxsoXHhnDB4kOk98syWH7KTV0sKgEvxXIaDcj6KKh2F3
+	0YbfIS6oX2mY5M+V2AYB4dNzNid160fyX77wJUOUucZbS3fzqBSEAgVwqfgvrCK2PssARp79fqpl8
+	dw/tLGAO2M8TzN2eISM/x/28kUJcMeeMDnzdhYum9WSKk6t+OIipZiYJOQ1BHBg42Eki9zpnZRzIb
+	cW2XydK3ce8Yt766H4YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haGfH-0002jE-MR; Mon, 10 Jun 2019 09:32:31 +0000
+	id 1haGgF-0003Oc-2k; Mon, 10 Jun 2019 09:33:31 +0000
 Received: from mail.codeweavers.com ([50.203.203.244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haGay-0007Mj-G7
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:28:06 +0000
+ id 1haGed-0002dD-BQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:31:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=codeweavers.com; s=6377696661; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hvHEIsUHuFBpJysJSAh/TndXcB04oV4yePbtGuMBdHk=; b=ieSZLelSnKpjvNpvH2LPvshAf
- nDwm8iPPnsYNiFhs+BE5xIvXfmbYFHGIXXrH9fKXziYzO79y92u/Tbl/b0xHbZRw3KBWCC4dRA0do
- EK1YEYI5aUENNJlKGRA06BN33Vt+P+IJaLy8gJK1SBhS+F3ZahSFihKjyxiK2g3wlJj7M=;
+ bh=D3RBY8TIHtG5Pkuqx3E5W7zI7qjnd6MB9Gprngg5/i4=; b=OLK5H1IT1rEt2tLy4eGXNqedt
+ K7BKI6OvbDwSJuyOV8HVr8BsLOnlWwH47Mm13W/fiLWpqpCZo8i5PE9UIsu+7d98BlVKfOjkWrO4e
+ 8m08hWwR3Ha4tyLIO2w1GDqhoCUYsHMeHBj3nOC2kI9g/O9pxrpudmVTC0+Bec/lwOiOA=;
 Received: from merlot.physics.ox.ac.uk ([163.1.241.98] helo=merlot)
  by mail.codeweavers.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <huw@codeweavers.com>)
- id 1haGbQ-0003aw-G6; Mon, 10 Jun 2019 04:28:33 -0500
+ id 1haGfB-0003dE-8i; Mon, 10 Jun 2019 04:32:26 -0500
 Received: from daviesh by merlot with local (Exim 4.90_1)
  (envelope-from <huw@codeweavers.com>)
- id 1haGam-00039Z-E5; Mon, 10 Jun 2019 10:27:52 +0100
-Date: Mon, 10 Jun 2019 10:27:52 +0100
+ id 1haGeY-00039s-FG; Mon, 10 Jun 2019 10:31:46 +0100
+Date: Mon, 10 Jun 2019 10:31:46 +0100
 From: Huw Davies <huw@codeweavers.com>
 To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v6 01/19] kernel: Standardize vdso_datapage
-Message-ID: <20190610092751.GA11076@merlot.physics.ox.ac.uk>
+Subject: Re: [PATCH v6 02/19] kernel: Define gettimeofday vdso common code
+Message-ID: <20190610093146.GB11076@merlot.physics.ox.ac.uk>
 References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-2-vincenzo.frascino@arm.com>
+ <20190530141531.43462-3-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190530141531.43462-2-vincenzo.frascino@arm.com>
+In-Reply-To: <20190530141531.43462-3-vincenzo.frascino@arm.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-Spam-Score: -106.0
 X-Spam-Report: Spam detection software,
@@ -57,17 +57,19 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, May 30, 2019 at 03:15:13PM +0100, Vincenzo Frascino
- wrote: > --- /dev/null > +++ b/include/vdso/datapage.h > @@ -0,0 +1,91 @@
- > +/* SPDX-License-Identifier: GPL-2.0 */ > +#ifndef __VDSO_DATAPA [...] 
+ Content preview:  On Thu, May 30, 2019 at 03:15:14PM +0100, Vincenzo Frascino
+ wrote: > In the last few years we assisted to an explosion of vdso >
+ implementations
+ that mostly share similar code. This doesn't make much sense. Perhaps: "In
+ the last few years we have seen an explosion in vdso..." ? 
  Content analysis details:   (-106.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -100 USER_IN_WHITELIST      From: address is in the user's white-list
  -6.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_022804_884995_390DA8DC 
-X-CRM114-Status: UNSURE (   4.54  )
+X-CRM114-CacheID: sfid-20190610_023151_515848_321A87AC 
+X-CRM114-Status: UNSURE (   3.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -109,39 +111,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 03:15:13PM +0100, Vincenzo Frascino wrote:
-> --- /dev/null
-> +++ b/include/vdso/datapage.h
-> @@ -0,0 +1,91 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef __VDSO_DATAPAGE_H
-> +#define __VDSO_DATAPAGE_H
-> +
-> +#ifdef __KERNEL__
-> +
-> +#ifndef __ASSEMBLY__
-> +
-> +#include <linux/bits.h>
-> +#include <linux/time.h>
-> +#include <linux/types.h>
-> +
-> +#define VDSO_BASES	(CLOCK_TAI + 1)
-> +#define VDSO_HRES	(BIT(CLOCK_REALTIME)		| \
-> +			 BIT(CLOCK_MONOTONIC)		| \
-> +			 BIT(CLOCK_BOOTTIME)		| \
-> +			 BIT(CLOCK_TAI))
-> +#define VDSO_COARSE	(BIT(CLOCK_REALTIME_COARSE)	| \
-> +			 BIT(CLOCK_MONOTONIC_COARSE))
-> +#define VDSO_RAW	(BIT(CLOCK_MONOTONIC_RAW))
-> +
-> +#define CS_HRES_COARSE	0
-> +#define CS_RAW		1
+On Thu, May 30, 2019 at 03:15:14PM +0100, Vincenzo Frascino wrote:
+> In the last few years we assisted to an explosion of vdso
+> implementations that mostly share similar code.
 
-CS_HRES_COARSE seems like a confusing name choice to me.  What you
-really mean is not RAW.
-
-How about CS_ADJ to indicate that its updated by adjtime?
-CS_XTIME might be another option.
+This doesn't make much sense.  Perhaps: "In the last few years we
+have seen an explosion in vdso..." ?
 
 Huw.
 
