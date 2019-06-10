@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C2373B762
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:30:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A46D3B770
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:32:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zWzmAp9YNAwzcKKxNJ3TXWpMnAuq0kz+w7FWkpEIY98=; b=LUA9nctK65dR3P
-	ol17jMzeg6kSqYAes96NZCslVAdmC1glV8pW4CkO1MFMtOaA72v1Q4Q7vbqYUz/9EJ6v3umxLUqwA
-	EtABqubd1mtShMFk19EDcmp2J3ojfWU9UiNhTN8+bffZH09qHkyV6rRXeFYxTf2eKXBvLhUtlKOeQ
-	3HEe+RCJhtrImrQ9xLkAcXpSyv/LFsNbyes9HPxy1+Do5kC01txxahivn74HNSZ3GYJHhuA7XbsXX
-	+LTzfmBAth3Z3HPH+JE8bgqGap3QbJpfB9DwoLTcK6RQqr5Pt6G5FBISHt3Q/fOwakZXJIT6lvZFU
-	mGV3LvjLk49tx61hzHKg==;
+	List-Owner; bh=5RleffLhK37dPYNiPMIXPSMtdsGPgWmzPlf4hKK+Hyk=; b=G2A5w5sAEB9Z8f
+	F4RWkJGoxe99GsnAaYFHcTWSzN8ZGU3G8CEpkQqLPW10nFl/Htwmp+oWvT2BVeXKMDKPs6vvlrEg5
+	/L1XkHcIbo5uWh/zj603yxUxiOfMN93YLFz8gTt2sBJiBT9akjwxvTn8fL1+1Ozej+Gpr4VA8PcbG
+	2FHDui1iUBYETakp3ZBoLpPYhqyrD1l1rHAs4FwgswEZ6rzOD8cXBohuxaEVk57VWeGlW4DL7KmVl
+	oPxnpYoECusk/GGjfYNSpbzWDf1RqjWKIS7u6FFGn5hHgKvOQxq6jCL3O85JXNp2/8nsFbLj3ZioV
+	K0RNqbg6Rgith9WSgJrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLJK-00020I-2D; Mon, 10 Jun 2019 14:30:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haLIv-0001uI-3Z
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:29:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5041F346;
- Mon, 10 Jun 2019 07:29:44 -0700 (PDT)
-Received: from c02tf0j2hf1t.cambridge.arm.com (c02tf0j2hf1t.cambridge.arm.com
- [10.1.32.192])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 22B503F73C;
- Mon, 10 Jun 2019 07:29:36 -0700 (PDT)
-Date: Mon, 10 Jun 2019 15:29:34 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v16 07/16] mm, arm64: untag user pointers in
- get_vaddr_frames
-Message-ID: <20190610142933.GC10165@c02tf0j2hf1t.cambridge.arm.com>
-References: <cover.1559580831.git.andreyknvl@google.com>
- <da1d0e0f6d69c15a12987379e372182f416cbc02.1559580831.git.andreyknvl@google.com>
+	id 1haLL8-0003uC-KS; Mon, 10 Jun 2019 14:32:02 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haLKs-0003tK-NV
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:31:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=JRYueMLRQECogmZaB6ntHx4NwLFSr0m7XU9IdQBzel4=; b=m06qR7H0rnzOHJEwWUJ9aqNCao
+ yHKplEn/FE3sVKF8/vKlMlQq8dwQiN+HnzaDdA17NCQ6HIftnvxJAonp8myb6r9qOI0EY0bhzEx8S
+ cBOeIg3pl/zsC8/rW8TJMUcf1A7TMYAWVagSWhyTJUV1ElJpgOzXe+VGBh2nXURittk8=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1haLKl-0007g3-EW; Mon, 10 Jun 2019 16:31:39 +0200
+Date: Mon, 10 Jun 2019 16:31:39 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Re: [PATCH v2 05/11] dt-bindings: net: sun4i-emac: Convert the
+ binding to a schemas
+Message-ID: <20190610143139.GG28724@lunn.ch>
+References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
+ <d198d29119b37b2fdb700d8992b31963e98b6693.1560158667.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <da1d0e0f6d69c15a12987379e372182f416cbc02.1559580831.git.andreyknvl@google.com>
-User-Agent: Mutt/1.11.2 (2019-01-07)
+In-Reply-To: <d198d29119b37b2fdb700d8992b31963e98b6693.1560158667.git-series.maxime.ripard@bootlin.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_072945_640882_46AA2AA4 
-X-CRM114-Status: GOOD (  11.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_073146_921872_33E74AD5 
+X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,48 +78,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 06:55:09PM +0200, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
-> 
-> get_vaddr_frames uses provided user pointers for vma lookups, which can
-> only by done with untagged pointers. Instead of locating and changing
-> all callers of this function, perform untagging in it.
-> 
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - phy
+> +  - allwinner,sram
 
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+Quoting ethernet.txt:
+
+- phy: the same as "phy-handle" property, not recommended for new bindings.
+
+- phy-handle: phandle, specifies a reference to a node representing a PHY
+  device; this property is described in the Devicetree Specification and so
+  preferred;
+
+Can this be expressed in Yaml? Accept phy, but give a warning. Accept
+phy-handle without a warning? Enforce that one or the other is
+present?
+
+Thanks
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
