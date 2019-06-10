@@ -2,57 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58AC33B001
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 09:53:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55B2C3B012
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 09:57:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fzsmkVvRaIxRVQd4YQp45WCm2EuPsLIILgMMvGmjXMM=; b=UMTJ2Nsid93Fzs
-	3kxsWRDfEt77tTfpQLyT9MvUJOTlz2SGXb/yM3zcYBIfqMSt+a2/WgL5I6LljbL3Ce2t8UrXqF3n0
-	JbK/lXPJ5lG74aiYKrWMB26csYWAXKCqi0q1P83Cp3ZCAziBCw5YArgCXbKu+02+c/fNmnmutTOoE
-	alsbyl0z0IhuUvY9cfTDbFkous+D8kSU0QQ/vx73ex4z0iJEDi4jJbGCZyJoZLYM3wOTLyn0BNW1S
-	5b447M7ySN5h/27ydqqBZgoGeYe0oduPrNes1yNCo/vBe+q7Gpm4c6MLCkAwrr1jZ4jqEYMU1Nl38
-	43B5j9GHGG6Gmsl1QQEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h6tGJK3DKg6fYF084sZNQWwvHFm9L8e//rVWDABVASM=; b=h802rCSSa0ybwD
+	sk9CToS8gZisCYTbTq1Bk51Vrbn4gHkgv08seP8yxaocmegO9kB8GONG+cirvvu030s7RQujJ06Lb
+	Xn2s22J1iG7yXGZSMhZICjJd8gAxycKswx9kSzBP6rBcpZgnV17aP1F2wWMqvBO60Acc52sBsZuCO
+	nYVnzoF4n13JYi0FYzaIVBRZteH8PcnMlh5+5ySD3ZY/HVIIbghMli4GZJNQ4btQ4FbNDkBYxF4eu
+	q1oA28SF/DdlsVpBlCLtF3kk8LM5kpNYEOJRDbsevZ/bJJIWDhKvhKYMpAJYvOoqQ9SLTMrTLcKNr
+	/xxjCzLDQljspDRRqNdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haF7s-0003ky-TU; Mon, 10 Jun 2019 07:53:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haF7d-0003kS-Up
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 07:53:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7D961344;
- Mon, 10 Jun 2019 00:53:40 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 18E3A3F246;
- Mon, 10 Jun 2019 00:53:37 -0700 (PDT)
-Subject: Re: [PATCH v3 6/8] arm64: irqflags: Introduce explicit debugging for
- IRQ priorities
-To: Marc Zyngier <marc.zyngier@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <1559813517-41540-1-git-send-email-julien.thierry@arm.com>
- <1559813517-41540-7-git-send-email-julien.thierry@arm.com>
- <acc8bb85-04cb-f8af-5162-79788a5cacbb@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <e26f0761-b682-ef42-b510-53654bed1f4b@arm.com>
-Date: Mon, 10 Jun 2019 08:53:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+	id 1haFBb-0005L2-OM; Mon, 10 Jun 2019 07:57:47 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haFBO-0005Kh-L9
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 07:57:36 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c2so8098334wrm.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 00:57:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=xTVf10rNwhHdq0na/JiMNEiN+1J2gR7CZjLBDvBlZ9M=;
+ b=C/7BgS21M51i7i2CmNw0m1n793WHuwfoYQkS3WRWJWKQsQBxjw9CIy2+Faq9ymMTeV
+ U2GBuJzPbjKCHDCazNCv3EufybIeE1wUBtLZaPDWMGaINHWIIzfHC+0p9nVF7beZGSBd
+ //LURySsxd2kT8FOBdUsOWxnFZ+5dl+hoVq7XeFhuZowUdZd4O1UvhPIRq4tH0zazkBr
+ 3TnjUYgkVr92aniAKuyUF8QQKGfjozeMSXNOnfXAnZNynC+7HVoNCxcff8tCQ4ZbboQl
+ zVeN/hmZoEiKQoXh76n41vtHuJpPK1irmunendNLi9m6ZVhJKXOgCoZBuaGpKeVJspaT
+ PIVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=xTVf10rNwhHdq0na/JiMNEiN+1J2gR7CZjLBDvBlZ9M=;
+ b=LBxTv53CuI69AnzhY2/FQHTDIko6n+6NjdxWRCoW/OgxFpgVnWmY4Sld6xgrjtuDDw
+ lVPfg3ceTt5138xK6qklPeJIaiZqka0XPvJ/1XbM/Z+IfEKXAwK8w03Klsmy4yjUoRMo
+ yBGl8hZmUGzjiShNRhW+Iv7Vz3WID6i437QyRGLdxNfs+hhDcjwv5IDqAnFiuZA3rGvc
+ Ijc0kBQtmlOPYwWGJ+tb9M39soZ4yRJNt8eHfnrLv+KUozObiUykVkyIQtCAgXNspVZd
+ BZsJzFSLaTNTLkU5XowRo+C7QYi0pezCdzqCqtLwPzIRCjF9SIrydZzrBX4kvK3RTYk1
+ nfbw==
+X-Gm-Message-State: APjAAAVBwAaUsfJuSDfeRHZivKQh9BsrmY+OwrVnCE7rex5IMcDwgqyV
+ EdweB0iZujmdjM4U+QppKEvmiQ==
+X-Google-Smtp-Source: APXvYqwPND89CTG631SsvW5xJabNs8hX8frrZKJyV7VaYPuMk/7oG5ltYmF1iH5bZQdZa0Uy/r0eCA==
+X-Received: by 2002:a5d:6583:: with SMTP id q3mr47343484wru.184.1560153452753; 
+ Mon, 10 Jun 2019 00:57:32 -0700 (PDT)
+Received: from dell ([2.31.167.229])
+ by smtp.gmail.com with ESMTPSA id f13sm5796159wrt.27.2019.06.10.00.57.31
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 10 Jun 2019 00:57:32 -0700 (PDT)
+Date: Mon, 10 Jun 2019 08:57:30 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: Re: [PATCH 3/8] pinctrl: msm: Add ability for drivers to supply a
+ reserved GPIO list
+Message-ID: <20190610075730.GH4797@dell>
+References: <20190605114302.22509-1-lee.jones@linaro.org>
+ <20190605114302.22509-3-lee.jones@linaro.org>
+ <CACRpkdaEe3uKAsSuhbToevXH1cMsuMUvwaopLPuD+JkDTnuEnQ@mail.gmail.com>
+ <20190608041044.GK24059@builder>
 MIME-Version: 1.0
-In-Reply-To: <acc8bb85-04cb-f8af-5162-79788a5cacbb@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190608041044.GK24059@builder>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_005342_085550_5ACC8FB8 
-X-CRM114-Status: GOOD (  18.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_005734_694791_FF02D243 
+X-CRM114-Status: GOOD (  18.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,154 +102,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, rostedt@goodmis.org, james.morse@arm.com,
- yuzenghui@huawei.com, wanghaibin.wang@huawei.com, liwei391@huawei.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Felipe Balbi <balbi@kernel.org>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Greg KH <gregkh@linuxfoundation.org>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-usb@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ David Brown <david.brown@linaro.org>, alokc@codeaurora.org,
+ linux-i2c@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ MSM <linux-arm-msm@vger.kernel.org>, Andy Gross <andy.gross@linaro.org>,
+ jlhugo@gmail.com, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 07/06/2019 17:31, Marc Zyngier wrote:
-> On 06/06/2019 10:31, Julien Thierry wrote:
->> Using IRQ priority masking to enable/disable interrupts is a bit
->> sensitive as it requires to deal with both ICC_PMR_EL1 and PSR.I.
->>
->> Introduce some validity checks to both highlight the states in which
->> functions dealing with IRQ enabling/disabling can (not) be called, and
->> bark a warning when called in an unexpected state.
->>
->> Since these checks are done on hotpaths, introduce a build option to
->> choose whether to do the checking.
->>
->> Signed-off-by: Julien Thierry <julien.thierry@arm.com>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will.deacon@arm.com>
->> ---
->>  arch/arm64/Kconfig                  | 11 +++++++++++
->>  arch/arm64/include/asm/cpufeature.h |  6 ++++++
->>  arch/arm64/include/asm/daifflags.h  |  7 +++++++
->>  arch/arm64/include/asm/irqflags.h   | 14 +++++++++++++-
->>  4 files changed, 37 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
->> index 697ea05..8acc40e 100644
->> --- a/arch/arm64/Kconfig
->> +++ b/arch/arm64/Kconfig
->> @@ -1436,6 +1436,17 @@ config ARM64_PSEUDO_NMI
->>
->>  	  If unsure, say N
->>
->> +if ARM64_PSEUDO_NMI
->> +config ARM64_DEBUG_PRIORITY_MASKING
->> +	bool "Debug interrupt priority masking"
->> +	help
->> +	  This adds runtime checks to functions enabling/disabling
->> +	  interrupts when using priority masking. The additional checks verify
->> +	  the validity of ICC_PMR_EL1 when calling concerned functions.
->> +
->> +	  If unsure, say N
->> +endif
->> +
->>  config RELOCATABLE
->>  	bool
->>  	help
->> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
->> index bc895c8..693a086 100644
->> --- a/arch/arm64/include/asm/cpufeature.h
->> +++ b/arch/arm64/include/asm/cpufeature.h
->> @@ -617,6 +617,12 @@ static inline bool system_uses_irq_prio_masking(void)
->>  	       cpus_have_const_cap(ARM64_HAS_IRQ_PRIO_MASKING);
->>  }
->>
->> +static inline bool system_has_prio_mask_debugging(void)
->> +{
->> +	return IS_ENABLED(CONFIG_ARM64_DEBUG_PRIORITY_MASKING) &&
->> +	       system_uses_irq_prio_masking();
->> +}
->> +
->>  #define ARM64_SSBD_UNKNOWN		-1
->>  #define ARM64_SSBD_FORCE_DISABLE	0
->>  #define ARM64_SSBD_KERNEL		1
->> diff --git a/arch/arm64/include/asm/daifflags.h b/arch/arm64/include/asm/daifflags.h
->> index f93204f..eca5bee 100644
->> --- a/arch/arm64/include/asm/daifflags.h
->> +++ b/arch/arm64/include/asm/daifflags.h
->> @@ -28,6 +28,10 @@
->>  /* mask/save/unmask/restore all exceptions, including interrupts. */
->>  static inline void local_daif_mask(void)
->>  {
->> +	WARN_ON(system_has_prio_mask_debugging() &&
->> +		(read_sysreg_s(SYS_ICC_PMR_EL1) == (GIC_PRIO_IRQOFF |
->> +						    GIC_PRIO_PSR_I_SET)));
->> +
->>  	asm volatile(
->>  		"msr	daifset, #0xf		// local_daif_mask\n"
->>  		:
->> @@ -62,6 +66,9 @@ static inline void local_daif_restore(unsigned long flags)
->>  {
->>  	bool irq_disabled = flags & PSR_I_BIT;
->>
->> +	WARN_ON(system_has_prio_mask_debugging() &&
->> +		!(read_sysreg(daif) & PSR_I_BIT));
->> +
->>  	if (!irq_disabled) {
->>  		trace_hardirqs_on();
->>
->> diff --git a/arch/arm64/include/asm/irqflags.h b/arch/arm64/include/asm/irqflags.h
->> index b6f757f..cac2d2a 100644
->> --- a/arch/arm64/include/asm/irqflags.h
->> +++ b/arch/arm64/include/asm/irqflags.h
->> @@ -40,6 +40,12 @@
->>   */
->>  static inline void arch_local_irq_enable(void)
->>  {
->> +	if (system_has_prio_mask_debugging()) {
->> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
->> +
->> +		WARN_ON_ONCE(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
->> +	}
->> +
->>  	asm volatile(ALTERNATIVE(
->>  		"msr	daifclr, #2		// arch_local_irq_enable\n"
->>  		"nop",
->> @@ -53,6 +59,12 @@ static inline void arch_local_irq_enable(void)
->>
->>  static inline void arch_local_irq_disable(void)
->>  {
->> +	if (system_has_prio_mask_debugging()) {
->> +		u32 pmr = read_sysreg_s(SYS_ICC_PMR_EL1);
->> +
->> +		WARN_ON_ONCE(pmr != GIC_PRIO_IRQON && pmr != GIC_PRIO_IRQOFF);
->> +	}
->> +
->>  	asm volatile(ALTERNATIVE(
->>  		"msr	daifset, #2		// arch_local_irq_disable",
->>  		__msr_s(SYS_ICC_PMR_EL1, "%0"),
->> @@ -86,7 +98,7 @@ static inline int arch_irqs_disabled_flags(unsigned long flags)
->>
->>  	asm volatile(ALTERNATIVE(
->>  		"and	%w0, %w1, #" __stringify(PSR_I_BIT),
->> -		"eor	%w0, %w1, #" __stringify(GIC_PRIO_IRQOFF),
->> +		"eor	%w0, %w1, #" __stringify(GIC_PRIO_IRQON),
-> 
-> Err... Which version is the correct one? This one, or the previous one?
-> 
-
-Argh, bad fixup of the patches. This one is the correct one (any state
-!= GIC_PRIO_IRQON means interrupts are disabled), but the correct value
-should already be in use in the previous patch.
-
-Will fix that in the next posting.
-
-Thanks,
-
--- 
-Julien Thierry
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCAwNyBKdW4gMjAxOSwgQmpvcm4gQW5kZXJzc29uIHdyb3RlOgoKPiBPbiBGcmkgMDcg
+SnVuIDE2OjAyIFBEVCAyMDE5LCBMaW51cyBXYWxsZWlqIHdyb3RlOgo+IAo+ID4gT24gV2VkLCBK
+dW4gNSwgMjAxOSBhdCAxOjQzIFBNIExlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5vcmc+IHdy
+b3RlOgo+ID4gCj4gPiA+IFdoZW4gYm9vdGluZyBNU00gYmFzZWQgcGxhdGZvcm1zIHdpdGggRGV2
+aWNlIFRyZWUgb3Igc29tZSBBQ1BJCj4gPiA+IGltcGxlbWVudGF0aW9ucywgaXQgaXMgcG9zc2li
+bGUgdG8gcHJvdmlkZSBhIGxpc3Qgb2YgcmVzZXJ2ZWQgcGlucwo+ID4gPiB2aWEgdGhlICdncGlv
+LXJlc2VydmVkLXJhbmdlcycgYW5kICdncGlvcycgcHJvcGVydGllcyByZXNwZWN0aXZlbHkuCj4g
+PiA+IEhvd2V2ZXIgc29tZSBBQ1BJIHRhYmxlcyBhcmUgbm90IHBvcHVsYXRlZCB3aXRoIHRoaXMg
+aW5mb3JtYXRpb24sCj4gPiA+IHRodXMgaXQgaGFzIHRvIGNvbWUgZnJvbSBhIGtub3dsZWRnYWJs
+ZSBkZXZpY2UgZHJpdmVyIGluc3RlYWQuCj4gPiA+Cj4gPiA+IEhlcmUgd2UgcHJvdmlkZSB0aGUg
+TVNNIGNvbW1vbiBkcml2ZXIgd2l0aCBhZGRpdGlvbmFsIHN1cHBvcnQgdG8KPiA+ID4gcGFyc2Ug
+dGhpcyBpbmZvcm10aW9uIGFuZCBjb3JyZWN0bHkgcG9wdWxhdGUgdGhlIHdpZGVseSB1c2VkCj4g
+PiA+ICd2YWxpZF9tYXNrJy4KPiA+ID4KPiA+ID4gU2lnbmVkLW9mZi1ieTogTGVlIEpvbmVzIDxs
+ZWUuam9uZXNAbGluYXJvLm9yZz4KPiA+IAo+ID4gRXhhY3RseSBob3cgd2Ugc2hvdWxkIHVzZSBv
+ZiB0aGUgQVBJLCBzbyBpZiBCasO2cm4gY2FuIHN1cHBseSBhbgo+ID4gQUNLIHRvIHBhdGNoZXMg
+MyBhbmQgNCBJJ20gaGFwcHkgdG8gYXBwbHkgdGhlbS4KPiA+IAo+ID4gQmrDtnJuPwo+ID4gCj4g
+Cj4gSSdtIHdhaXRpbmcgZm9yIGEgdmVyc2lvbiB0aGF0IGRvZXMgbm90IHNwZWNpZnkgdGhlIHJl
+c2VydmVkX2dwaW9zIGZvcgo+IHN0cnVjdCBtc21fcGluY3RybF9zb2NfZGF0YSBzZG04NDVfcGlu
+Y3RybCB7fSwgYXMgdGhpcyB3b3VsZCBvdmVycmlkZQo+IHRoZSBhYmlsaXR5IG9mIGdldHRpbmcg
+dGhlc2UgZnJvbSBEVC4KPiAKPiBJIGhhdmVuJ3Qgc2VlbiBzdWNoIHJldmlzaW9uIHlldCwgd2ls
+bCByZXZpZXcgaXQgb25jZSBJIGZpbmQgaXQuCgpKdXN0IHRlc3RpbmcgaXQgbm93LiAgSXQgc2hv
+dWxkIGJlIG9uIHRoZSBsaXN0IGJ5IHRoZSB0aW1lIHlvdSBzdGFydC4KCi0tIApMZWUgSm9uZXMg
+W+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSC
+IE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9v
+ayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
