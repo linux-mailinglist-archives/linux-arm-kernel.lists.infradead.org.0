@@ -2,73 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35C1D3B395
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:01:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C0673B3A7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:01:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mTI+9pSiDUYitkbnQtZFoAQMlXEw/FTZsEYNoVwNNc8=; b=h7/Cs6ANCS7B62
-	xzB+EN8jLinR650IK900d/KxMWihVzibGybrpQbvIUK2E/bbXt3YfCw4r8n2s5cQZ1+7X7F5EnpA/
-	2EYmRzPoQs2QTUhTSqehPLt/UryokCg9OYc7zj6SIEXiAf5eVqH4Gd01U3zGuvZWjcPeqeTuxE8x9
-	9oBeULO63gy349SHM1mwoB/zJKDFqINfa8boIXM+Wm3ZcovRig8iSLJ73jrkoaqmGLHBsT5UOwgwJ
-	tzLkSYNN9mYJrBrgmAefWLCOFLljrZ80VGHw9MqsmUS0fkf3PRaZS0lWuqDVGI0CBmJ5e7PSH2dQ7
-	ya6IF/fpMzODshU1ikug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tfFI1DHpt4anQNq0+ZFHfh8N+Ru6YhBIavmKn6EJBM4=; b=PXehcRRysRB9H7
+	e6h1aMMdpyYGOBJJDgFqL9oFn7hjfWAUuCEPAPGJpQRTZ8tW0sTh/XAMQHsq4qr5TKYLfsirv1VWl
+	s7d8BdwWulEm/BIO032CnDLu370ekdNvDlf81afj8fjwYQggRcvKn+KaURZkefMzmDXzQlHJeMbsq
+	WAVbuq27Jt/r8JncTHVn5w194x1FLPnpmbC0YhpEcwsvH5EcKKQTNCtCk3oHwbNJNDNtM6ILDajRa
+	qYMGQEcfFOaXGdt/w8P35GKaCY5G+Y+4n9SVvHFLXKRWeJ9ChG5VrFDQNbC/9Zs29zekj1ndFi8ME
+	iVo2BM+pNK8DxbUltUqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haI31-0005cS-LU; Mon, 10 Jun 2019 11:01:07 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1haI3d-00062Q-Au; Mon, 10 Jun 2019 11:01:45 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haI1c-0004DF-Lv
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 10:59:42 +0000
-Received: by mail-qt1-x842.google.com with SMTP id m29so10017072qtu.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 03:59:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lYS873xwFvgHJlWnAlNcy3+738aq6TAuNgiiGGA4PYI=;
- b=DucPq623iXSUdIpU0sIAvsS6WoDxfPXDCI8M1Z/cLDSvAghOCQhzkn7n7CRUZTV+n4
- D7kno671l158zYXcQ5CcTKS//ZnxFCq2lAzzR8jkfMiXRI7qZOJ39ioMp2roV7C+XDeh
- 18gxi0DLvMAiIoesnOPgfWT/y6QIiThSsrAXQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=lYS873xwFvgHJlWnAlNcy3+738aq6TAuNgiiGGA4PYI=;
- b=EzublTX0r2i8MwsJf+7ohZ5toZN5yqxLc2KJmybabM70Z4y3uEBLQ+4qz3+PZExYDZ
- zsDSTH7DX3VX1dHnN3C6DymraxKaFd0kvfoD8MzZ2WitXiaLCo0jWPoalZw8MsfUAI67
- TVPJ6Lku2Psa5j3NaT7plaW+TqqYy/mxZSJh5P3/R3zjjvBoZkO2wG3tXRdc1IA9CaPi
- ugfb8x6SGmElxaZ4kDwP2LUGlvx600cnSS/HYmH7FB4hIwg1LwjRc6I03mQZbw1kbODB
- P8k4RW+RYTcssoy3dOgu9EkVo+TA9bH2HDEdSFNH0cC/vE7uf2Rxr7Eqt2ZqewoASBac
- creg==
-X-Gm-Message-State: APjAAAWsn4kj6ZDloCeT84jsw4X6I5/+c6JDeE4tqzbMqj3AZAPJT1Tl
- 2Jz8hxsLlWNdow+3FJZ4CqnmPBp5hjOFjGGc92vpJQ==
-X-Google-Smtp-Source: APXvYqwfm97Zg0Zz9VmQex8hsHuU/WItevpCJwgENnoSKs11e4b9vXzYpWawPLMtR9aoaRwrQ+h4hOapW5NQrVQbggk=
-X-Received: by 2002:ac8:42d4:: with SMTP id g20mr58845965qtm.78.1560164377769; 
- Mon, 10 Jun 2019 03:59:37 -0700 (PDT)
+ id 1haI32-0005w8-S4
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 11:01:10 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 18EEC60AD1; Mon, 10 Jun 2019 11:01:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1560164468;
+ bh=3trH4tk+FpSyNWsSjAcyso4X8iKz3q8bkwkkDW6kp0c=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=pNVPBhlZhv6vhzWvr+hfnO+7Mhj24WaDlw7eP5r+coLume7RU0Rgp3NRBudZ5Uble
+ Z+DuBuJaETbNvhLyAte6T0BOs3hpdHMutvPuKosQGtTpGFGU0QqLtp22w20Jbt20rV
+ 2HPZA11K4YySg2vGGsa1ambt9BKNjW7e15ltUDd0=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,SPF_NONE autolearn=no autolearn_force=no
+ version=3.4.0
+Received: from [10.201.2.161]
+ (blr-c-bdr-fw-01_globalnat_allzones-outside.qualcomm.com [103.229.19.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: sricharan@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id D3A9060271;
+ Mon, 10 Jun 2019 11:01:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1560164465;
+ bh=3trH4tk+FpSyNWsSjAcyso4X8iKz3q8bkwkkDW6kp0c=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=Zs7bRIFkXPtBEcVN0IE3hG8C/WidjWXVwfjfZUssqzofuOtu47AoMtEwzeR2ie/QY
+ GGAv5OEPk1Xt899aW9drGqPiVD2eARuuAaZU03W5qIMRxlGDvUZTBFZiaCM/1+kM6K
+ AGqozjHVsq4h9oAHisZKzuUAsj48PMm85Iz6xaCY=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org D3A9060271
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=sricharan@codeaurora.org
+Subject: Re: [PATCH 1/6] pinctrl: qcom: Add ipq6018 pinctrl driver
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+References: <1559754961-26783-1-git-send-email-sricharan@codeaurora.org>
+ <1559754961-26783-2-git-send-email-sricharan@codeaurora.org>
+ <20190608032613.GC24059@builder>
+From: Sricharan R <sricharan@codeaurora.org>
+Message-ID: <1766bee3-e4da-7c7c-9881-4a58885640dc@codeaurora.org>
+Date: Mon, 10 Jun 2019 16:30:59 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190527043336.112854-1-hsinyi@chromium.org>
- <20190527043336.112854-2-hsinyi@chromium.org>
- <5ced598d.1c69fb81.dabd8.339d@mx.google.com>
-In-Reply-To: <5ced598d.1c69fb81.dabd8.339d@mx.google.com>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Mon, 10 Jun 2019 18:59:11 +0800
-Message-ID: <CAJMQK-i0z1EHCMK3eTya+SmK6GD_C4Ljvb7BHvsaMWLDxxmwMg@mail.gmail.com>
-Subject: Re: [PATCH v5 2/3] fdt: add support for rng-seed
-To: Stephen Boyd <swboyd@chromium.org>
+In-Reply-To: <20190608032613.GC24059@builder>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_035940_978559_247DD5C4 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_040108_985779_5501E5FB 
+X-CRM114-Status: GOOD (  22.17  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,45 +100,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, Yu Zhao <yuzhao@google.com>,
- Kees Cook <keescook@chromium.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- lkml <linux-kernel@vger.kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
- Jun Yao <yaojun8558363@gmail.com>, Miles Chen <miles.chen@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ linux-arm-msm@vger.kernel.org, linus.walleij@linaro.org, agross@kernel.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, robh+dt@kernel.org,
+ linux-soc@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 28, 2019 at 11:53 PM Stephen Boyd <swboyd@chromium.org> wrote:
->
-> Quoting Hsin-Yi Wang (2019-05-26 21:33:35)
-> > Introducing a chosen node, rng-seed, which is an entropy that can be
-> > passed to kernel called very early to increase initial device
-> > randomness. Bootloader should provide this entropy and the value is
-> > read from /chosen/rng-seed in DT.
-> >
-> > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> > ---
->
-> Reviewed-by: Stephen Boyd <swboyd@chromium.org>
->
+Hi Bjorn,
 
-Hi Rob,
+On 6/8/2019 8:56 AM, Bjorn Andersson wrote:
+> On Wed 05 Jun 10:15 PDT 2019, Sricharan R wrote:
+> 
+>> Add initial pinctrl driver to support pin configuration with
+>> pinctrl framework for ipq6018.
+>>
+>> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
+>> Signed-off-by: Rajkumar Ayyasamy <arajkuma@codeaurora.org>
+>> Signed-off-by: speriaka <speriaka@codeaurora.org>
+> 
 
-Is this series accepted? Or is there any other related concern?
+ Thanks for the review !!
 
-If it's fine, I also have sent a patch for updating
-schemas/chosen.yaml document.
+> These should start with the author, then followed by each person that
+> handled the patch on its way to the list - so your name should probably
+> be last.  If you have more than one author add Co-developed-by, in
+> addition to the Signed-off-by.
+> 
+> And please spell our speriaka's first and last name.
+> 
+ 
+  ok, will fix it.
 
-Thanks
+> [..]
+>> diff --git a/Documentation/devicetree/bindings/pinctrl/qcom,ipq6018-pinctrl.txt b/Documentation/devicetree/bindings/pinctrl/qcom,ipq6018-pinctrl.txt
+> [..]
+>> +- #gpio-cells:
+>> +	Usage: required
+>> +	Value type: <u32>
+>> +	Definition: must be 2. Specifying the pin number and flags, as defined
+>> +		    in <dt-bindings/gpio/gpio.h>
+> 
+> You're missing the required "gpio-ranges" property.
+> 
+
+ ok, will add.
+
+>> +
+> [..]
+>> +- function:
+>> +	Usage: required
+>> +	Value type: <string>
+>> +	Definition: Specify the alternative function to be configured for the
+>> +		    specified pins. Functions are only valid for gpio pins.
+>> +		    Valid values are:
+>> +	adsp_ext, alsp_int, atest_bbrx0, atest_bbrx1, atest_char, atest_char0,
+> 
+> Please indent these.
+> 
+
+ ok.
+
+> [..]
+> 
+> The rest should be in a separate patch from the binding.
+> 
+>> diff --git a/drivers/pinctrl/qcom/Kconfig b/drivers/pinctrl/qcom/Kconfig
+> [..]
+>> +enum ipq6018_functions {
+> [..]
+>> +	msm_mux_NA,
+> 
+> I like when these are sorted, and if you make the last entry msm_mux__
+> the msm_pingroup array becomes easier to read.
+> 
+
+ ok.
+
+>> +};
+> [..]
+>> +static const struct msm_function ipq6018_functions[] = {
+> [..]
+>> +	FUNCTION(gcc_tlmm),
+> 
+> As above, please sort these.
+> 
+
+ ok.
+
+>> +};
+>> +
+>> +static const struct msm_pingroup ipq6018_groups[] = {
+>> +	PINGROUP(0, qpic_pad, wci20, qdss_traceclk_b, NA, burn0, NA, NA, NA,
+>> +		 NA),
+> 
+> Please ignore the 80-char and skip the line breaks.
+> 
+
+ ok.
+
+>> +	PINGROUP(1, qpic_pad, mac12, qdss_tracectl_b, NA, burn1, NA, NA, NA,
+>> +		 NA),
+>> +	PINGROUP(2, qpic_pad, wci20, qdss_tracedata_b, NA, NA, NA, NA, NA, NA),
+>> +	PINGROUP(3, qpic_pad, mac01, qdss_tracedata_b, NA, NA, NA, NA, NA, NA),
+>> +	PINGROUP(4, qpic_pad, mac01, qdss_tracedata_b, NA, NA, NA, NA, NA, NA),
+>> +	PINGROUP(5, qpic_pad4, mac21, qdss_tracedata_b, NA, NA, NA, NA, NA, NA),
+> 
+> Is there a reason to keep qpic_padN as separate functions from qpic_pad?
+> 
+  Hmm, the auto-gen scripts needs to be fixed. Will correct it.
+
+> [..]
+>> +static struct platform_driver ipq6018_pinctrl_driver = {
+>> +	.driver = {
+>> +		.name = "ipq6018-pinctrl",
+>> +		.owner = THIS_MODULE,
+> 
+> .owner is populated automagically by platform_driver_register, so please
+> omit this.
+> 
+
+ ok, missed it. will fix. 
+
+Regards,
+ Sricharan
+
+-- 
+"QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
