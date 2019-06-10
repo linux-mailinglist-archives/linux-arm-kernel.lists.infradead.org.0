@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3B9242D6C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:26:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41D5A3AFBF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 09:33:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -18,15 +18,15 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	emSZq11koXx5e4QepJaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb719-0005YM-40; Wed, 12 Jun 2019 17:26:35 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1haEoS-00058s-EL; Mon, 10 Jun 2019 07:33:52 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb70v-0005XM-RH
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:26:23 +0000
-Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ id 1haEoC-000583-1l
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 07:33:37 +0000
+Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Eugen.Hristev@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
  envelope-from="Eugen.Hristev@microchip.com";
  x-sender="Eugen.Hristev@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,27 +34,24 @@ Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa1.microchip.iphmx.com: no sender
+Received-SPF: None (esa4.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
  envelope-from="Eugen.Hristev@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa1.microchip.iphmx.com;
+Authentication-Results: esa4.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.63,366,1557212400"; d="scan'208";a="38684018"
+X-IronPort-AV: E=Sophos;i="5.63,573,1557212400"; d="scan'208";a="36272707"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 12 Jun 2019 10:24:58 -0700
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Jun 2019 00:33:28 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.87.151) by
- chn-vm-ex04.mchp-main.com (10.10.87.151) with ShadowRedundancy id
- 15.1.1713.5; Wed, 12 Jun 2019 17:23:35 +0000
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex04.mchp-main.com (10.10.87.151) with Microsoft SMTP Server
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
  15.1.1713.5; Mon, 10 Jun 2019 00:33:22 -0700
 Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
@@ -125,15 +122,15 @@ X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: eugen.hristev@microchip.com
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB0057
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_102622_025031_291D3EEC 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20190610_003336_135741_A57EC2C4 
+X-CRM114-Status: GOOD (  13.69  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
