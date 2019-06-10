@@ -2,96 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAA423BF3D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 00:13:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2DB33BF6A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 00:19:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=/vkpci/r9viL5oiiZHxb2fX31R8DvNZquteWGDTafJo=; b=tBBnEpfXWoxLI8
-	OBxVJPFhEDZ7Ug+21DsDr0o0SHBUwPW+xWJk6PDPBXMESN41g6t9cBD+wxqD3V5JD94v25vVBppSA
-	Y0zpDOS7vJhNoi3TcNOziVUbasG9Wx5gSL8bkCFG8u0hmejRpNSMjKsYJYoxzpGIB4wpBjXIRCJsP
-	IdS9hXwZoJ+XphCZjsTU4f8mOHySrhME9rRSV3mnL587A+e/jWwvq+Eze66xmaqHaV/5xYuumhM6w
-	pf81KYW8+FIptS4yh7w3Dlhp7WfX3In3BoXx4JWSHhAj6PGdbVxi0uOt3gRZr3KSueLH6qNR21lCo
-	RQUFkiC8yJoEX9LyCV2Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bAKiUERnxdUWevoxXvl1ipQyGVENIrrOnheUShuL7mA=; b=PKBE76fioHVICg
+	S+d59+NdqbSJQXt71UYB1ENYyYd9YyMY+qL1tI7xxh2SwtZ+U7MJM0UEW86Br8KyuYpq0j0j4jd0b
+	ECcliTKCLnHMPDEGkq4k4vyML0voYdtMLri71wQrhui1p6zwdqEuvspvuyTv+A+BG90OGZf35A9pD
+	TrQHSN8szC4Y9gJWVvKAZOAJb5TdurT0DCa6fTwmGUbrKGEPGbAv996lqRSJfeQNrX442Kow4uVsb
+	YlWBdpLwPpIOKJpuS5F9K4EZ6LDU+WeVvFK6R+RQPRTSS5rPVE4xvSxTVlvp+kPmcq/iO+ZaMxIyw
+	SfvhYJouAMm6hT43UY7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haSXm-0000io-HA; Mon, 10 Jun 2019 22:13:34 +0000
-Received: from mail-eopbgr00044.outbound.protection.outlook.com ([40.107.0.44]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1haSdB-0004Ww-2q; Mon, 10 Jun 2019 22:19:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haSXb-0000iF-9C
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 22:13:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fcs426KQQT8AXDvvtK2FT5l7jebrfloU1FwB22/C1sQ=;
- b=geYhGqRKcQd+2eoPyG0Dbno3r1z0JJ2TLeVU1oRhoBqpStCu2xDeo7jvP1uYDFtO2H3apxpqHzym0gnLtcKa/I83K8aOakZhuDcZQL+0t09pEK0uxBR1aCAgATT9qTpxGhzstuzprEEbVN49intuOFhMMeuL04f7Y58sWgPZT08=
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
- VI1PR04MB5903.eurprd04.prod.outlook.com (20.178.205.77) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.12; Mon, 10 Jun 2019 22:13:19 +0000
-Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::9577:379c:2078:19a1]) by VI1PR04MB5055.eurprd04.prod.outlook.com
- ([fe80::9577:379c:2078:19a1%7]) with mapi id 15.20.1965.017; Mon, 10 Jun 2019
- 22:13:19 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [RFC] devfreq: Add generic devfreq-dt driver
-Thread-Topic: [RFC] devfreq: Add generic devfreq-dt driver
-Thread-Index: AQHVG5qgW7bYhI77qEiHOX6sZ3/rjQ==
-Date: Mon, 10 Jun 2019 22:13:19 +0000
-Message-ID: <VI1PR04MB50558EF0387824D6AAEEB18EEE130@VI1PR04MB5055.eurprd04.prod.outlook.com>
-References: <e48d7e3d71166cea20c3c200300e0ffa6d26d085.1559737589.git.leonard.crestez@nxp.com>
- <20190606031526.xknv5qdoqufim6tr@vireshk-i7>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [192.88.166.1]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8ffef28a-33dd-4d16-dfde-08d6edf0d81c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5903; 
-x-ms-traffictypediagnostic: VI1PR04MB5903:
-x-microsoft-antispam-prvs: <VI1PR04MB5903257E21B0E87A5AE2BB5EEE130@VI1PR04MB5903.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 0064B3273C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(396003)(346002)(376002)(366004)(136003)(189003)(199004)(8676002)(73956011)(68736007)(66556008)(6506007)(53546011)(66066001)(6916009)(102836004)(81166006)(7416002)(66946007)(81156014)(229853002)(53936002)(99286004)(7696005)(66446008)(66476007)(76176011)(64756008)(33656002)(74316002)(6436002)(14454004)(54906003)(478600001)(71190400001)(71200400001)(256004)(76116006)(91956017)(8936002)(9686003)(55016002)(305945005)(3846002)(6116002)(186003)(25786009)(5660300002)(44832011)(86362001)(52536014)(26005)(6246003)(486006)(4326008)(446003)(316002)(2906002)(7736002)(476003)(41533002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5903;
- H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: BN0YsFUwBdM0S7X5dzwFSkrOD83UGMpiTsNBh0I+3GSjbFUcPLGcLNiI2i+2rW86dFlRk+0RAl58CLByRW50oavKZNkMEFgYMyEoTMcfpN9TfOW9MyXoLZkpwRyGJULM2Lyisz2DLD+3j3fHUS7y9cErtyX3LLWjEyMYjrMhLYD7R/29HgGoOBKyfWzbQDxBXGOsVeQDDyhorjWz4LhJzkKXXOPvXqFzTM+j8Pg4/YHeHDybF/e7KlpNBTSXfVa5BK3TCjL7mSO/8u4yLS5rhr/DKHpO5gCA1mMlydK0Bqlsyl4u39cXljEcZo9IGl9PjteOwQFpcEvbL7Ip1fDGjKnVUDMJ4NGJH/ejMdhhBaHjLvFoVGMFVfXSkSXKi9KkA0GdGAUDHUnlbQm5t/BdaeT7ofPTC7h4d8SoSMQjSEo=
+ id 1haScy-0004WH-DC
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 22:18:58 +0000
+Received: from mail-qk1-f180.google.com (mail-qk1-f180.google.com
+ [209.85.222.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D6B52086A
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 22:18:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560205133;
+ bh=6oBvEStZtvvcSHa/hKbHBQL0XCYfvecAsq+xsL7CezU=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=UqNct7SoRew3q8kG+U/4wxDUf3Uz0gRRx8FmBm1n9kH1HCOsXzLpgCA20D4rlYmf+
+ I3Qiow8v5X9KVOLpqWgBcz1xtieF0Buy2NCXaNN55sKAVvEnqtZ6fULELBAhcWPIIB
+ x/BtkjxKca9rqs7nNTp0k1/9NZYR8ymx2jfDEduQ=
+Received: by mail-qk1-f180.google.com with SMTP id m14so6417252qka.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 15:18:53 -0700 (PDT)
+X-Gm-Message-State: APjAAAU6GPQDWABnOYfPIU4+W9ty6MUCubspF8gzkHxLsedLFrm/i3zY
+ Apjk/hYINDPJihbDgGQgeJtva06ZAog2dAcCpA==
+X-Google-Smtp-Source: APXvYqwtK5gRog36IqvDqf3xV/jBsHyNH8quMrwPH46YRXXnXKt7aIIex6QqaZ1QtVf3YGBvRC0HBgMbjAqRP1Qggk4=
+X-Received: by 2002:a05:620a:13d1:: with SMTP id
+ g17mr2535263qkl.121.1560205132939; 
+ Mon, 10 Jun 2019 15:18:52 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8ffef28a-33dd-4d16-dfde-08d6edf0d81c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2019 22:13:19.2729 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5903
+References: <20190525134140.6220-1-maxime.ripard@bootlin.com>
+ <20190525134140.6220-3-maxime.ripard@bootlin.com>
+ <20190526160600.GA1399@bogus>
+ <20190528063401.7uikujzahuq4wlxm@flea>
+In-Reply-To: <20190528063401.7uikujzahuq4wlxm@flea>
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 10 Jun 2019 16:18:41 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ=5Ahr-h8Z+ORQ4ZJJzW0R8L9TKYOC8ouka57YvNGqFw@mail.gmail.com>
+Message-ID: <CAL_JsqJ=5Ahr-h8Z+ORQ4ZJJzW0R8L9TKYOC8ouka57YvNGqFw@mail.gmail.com>
+Subject: Re: [PATCH 3/5] dt-bindings: vendor: Add a bunch of vendors
+To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_151323_324294_E134895C 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_151856_464100_85470E9E 
+X-CRM114-Status: GOOD (  14.73  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.44 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -100,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,72 +89,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Krzysztof Kozlowski <krzk@kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Alexandre Bailon <abailon@baylibre.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/6/2019 6:15 AM, Viresh Kumar wrote:
-> On 05-06-19, 15:31, Leonard Crestez wrote:
->> +static const struct of_device_id devfreq_dt_of_match[] = {
->> +	{ .compatible = "generic-devfreq", },
->> +	{ /* sentinel */ },
->> +};
->> +MODULE_DEVICE_TABLE(of, devfreq_dt_of_match);
-> 
-> DT can't contain nodes for any virtual devices, this will have similar
-> problems to cpufreq-dt. How is this driver going to get probed ? Who
-> will create the device ?
+On Tue, May 28, 2019 at 12:34 AM Maxime Ripard
+<maxime.ripard@bootlin.com> wrote:
+>
+> Hi Rob,
+>
+> On Sun, May 26, 2019 at 11:06:00AM -0500, Rob Herring wrote:
+> > On Sat, 25 May 2019 15:41:38 +0200, Maxime Ripard wrote:
+> > > Add all the missing vendors used in Allwinner DTS.
+> > >
+> > > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> > > ---
+> > >  .../devicetree/bindings/vendor-prefixes.yaml  | 58 +++++++++++++++++++
+> > >  1 file changed, 58 insertions(+)
+> > >
+> >
+> > Applied, thanks.
+>
+> While the other patches are in your tree now, this one looks missing.
 
-CPUs are special devices, I'm not sure the same issues apply here.
+That's what I get for one foot out the door for vacation. Now fixed.
 
-If a SOC has multiple buses or frequency domains which can be scaled up 
-and down then those can be treated as "real" devices and probing them 
-from DT seems entirely reasonable. DT could look like this:
-
-+       noc1 {
-+               compatible = "fsl,imx8mm-noc", "generic-devfreq";
-+               clocks = <&clk IMX8MM_CLK_NOC1>;
-+               operating-points-v2 = <&noc1_opp_table>;
-+       };
-+
-+       noc1_opp_table: noc1-opp-table {
-+               compatible = "operating-points-v2";
-+
-+               opp-150M {
-+                       opp-hz = /bits/ 64 <150000000>;
-+               };
-+               opp-750M {
-+                       opp-hz = /bits/ 64 <750000000>;
-+               };
-+       };
-
-Instead of a "generic-devfreq" fallback the compatible list of 
-devfreq-dt could contain a large number of unrelated compat strings. 
-This would be vaguely similar to the white/black lists from cpufreq-dt-plat.
-
-There aren't really that many devfreq implementations so perhaps it's 
-not worth generalizing very much. I should rename this to "devfreq-imx" 
-even if there's nothing imx-specific inside it yet.
-
---
-Regards,
-Leonard
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
