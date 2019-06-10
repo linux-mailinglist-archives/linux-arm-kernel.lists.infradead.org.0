@@ -2,79 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12C6D3B30C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 12:20:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12CBB3B315
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 12:22:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d1U2Is+0baZh6FnmYwYilfdOxl11XtzEqovbpowXzDo=; b=nd0wB27LGKGHjB
-	m8ntISSdo5DWCGz1W/zPhQ9GQxXzvDOg4D/DyWOLea4TDgDHC7f56vbrBhQbtWbvX9IrvonpGhGiv
-	cJZdJUVCbsQF7lNgI64ubttDjfM98Z45SS+z8nM+H6Jy8hs7K4uzQ5Ndt8kq0/ryksr8jc90f5IcV
-	sbK1goJnsQXvokadMeVVjAwIi6HyT7p2jXSLU+n59SGcuiK68Da3NX6m7Z5ujoNNVg5Im6feHAMXO
-	HetqPeYdMcUE+bEr8quOCf2Ljeuyej/conTI9DVkprk9xDAoRhV/xUkTa1FNLNItvbshUw3wfP1Hq
-	FhhFXKVXBRA2RNvtHD/Q==;
+	List-Owner; bh=2+1vwSDokJq+kYCth6gh5JOOt++oouBYIkYUMNzBpQA=; b=TjA4QMLMGKNwf9
+	ehNcWhKrFXWdHwZJHr2d9S1TgnNvXMU5DfsptETPGwwBBUXrDFzQUcE+4dzc051HirhLM33WQ4w95
+	2/fMejmbIQ9lv7xVPguaxd4TSM+CYaZ47QyjcgG/IhXCxHezEJVESyjMKkZ4SoW9unVHw7TntK33T
+	VGjJSNX0ts0K/uvPnj1f9hGGRWcIDg4Wm6HnqICtTjn6DW17PSh8iPcD5DFvvQWU41Gi0fhJ8JdDt
+	Wz7Qd6gAwSpGNcFg0kHZFnCXwAh9HhjHWiQ0oYOo5Iq971buGrZbgrJg6dmwQjUj0neRSAjwdqmPX
+	QaEcMRoKHN8U2xl2SbHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haHQ4-0002h4-Ab; Mon, 10 Jun 2019 10:20:52 +0000
-Received: from mail-it1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1haHR5-0003VR-U2; Mon, 10 Jun 2019 10:21:55 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haHPw-0002gR-Oc
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 10:20:46 +0000
-Received: by mail-it1-x142.google.com with SMTP id i21so12358212ita.5
+ id 1haHQx-0003Ul-Rd
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 10:21:49 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id s16so1529894vke.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 03:20:44 -0700 (PDT)
+ Mon, 10 Jun 2019 03:21:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TD9nldu+Dkg66DtJL22FIFPPAtJrtLwLTy4JIGvUcQ0=;
- b=xGOZzIJLwgDnCGn+KlPHKMf5rhw1h6HPB+95GrnYpcFyME3d6inxxLyUdmnkUq34J+
- zIomGN+MLBR/oBWOe0ulrBE7Z4E32pfkipA+UvLZ1HSdKDy8GC6l8Mp9wJ803ogYGbAJ
- XkKTMgVLsEwE6FpWaaDwbvNxWnbiruke6qUOyB0ejNsZuBRBi3b43yVy4fvDCb91ewO2
- Zjef6VagFWfnsI0m34DKo41NNnLdVP9/Dyh1VbdA8PowiwZdyPE/WzmPhq03ic8Wi1/B
- bsA1uFFW4PNjaH9sgcjjZ0hpbNNQwDPdUAJ2P909ro09PZSJ1gys4wpgtKshS4+ctbrH
- zTDA==
+ :cc; bh=OJxNCKHBqEq8hxmgfzQAJLVDLncAAe7CM9ROe+/BeNA=;
+ b=ed47JMDehrtw98oo73hPrYOSdiClydVSZax5u/whwsvttI4jMeBg5r4kAaxNqyhRB5
+ BQFS+aUFK4fp9pg9m4ABxFL8f8WSLttgJ/crALrwhCsB3v1rjfIrckms9BqtJaYXtlqc
+ bzwWVino1iCNJq+uESFaHxZLWBnG33vgs3Qmd1+/6T3+zMmoiN7Dl812exIOVO1cl1F7
+ +J34mbVL1NKVBr2n6AaV5gn/vEQktUbl74lRvHydB7/VR5zEDH8WVmV5fmMUTqQq4oUo
+ jgFxnXWvvAWYApcTfNa6leYI+JjgeKGVBFkeuu7YRcJuNtctRfWgPTUPlWa5tSEu7aqi
+ JNnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=TD9nldu+Dkg66DtJL22FIFPPAtJrtLwLTy4JIGvUcQ0=;
- b=Ew7s7xjdSXJk47sAwOSW5SRhUdtz+BKwX7iLNM9FpwmbuwM+KpIZK6VEFD80tEha8e
- vziDurjGGvlpRphnTmx1HA/XQoLcXKtlKxc2oubKnLqnx5yXXkXCfd1JqxyXAquFzzf/
- OZxMVMQRIDUZSF8IUynsI9klLvtp8p/x6HNh6MvkvCJe80mYNC5ASfCjKJ3l321z06OU
- P+npQveCUCQI96U9x8qYNi7mnFB5GtBCvG/Vr5gRzKQFhDa1gEdZewBJxt6BdQtWdUul
- ZA8Rd/jAFwrOueVzhs9+sLOSP1Z/fDDWEPmfQsqOkvDkNsOzduxMluKmxB9xjPwOgHyi
- Fh9w==
-X-Gm-Message-State: APjAAAW/cYxQr4FYiWjpL6vxFos+RFHQYX0YTeqNeBNlLFxINC20bqOb
- TnrTsTKOFAh5bGk7v9WUDXkiOdA1LMs4PNrXtKAYGw==
-X-Google-Smtp-Source: APXvYqz8+9gsk4GZjuP3WNO3dIJxKVqLA91XwEqoIRkCKyS++7skP/Y8F+BITEkNQ+1mKDd2q8VehsdTmYGSs98dr0s=
-X-Received: by 2002:a05:660c:44a:: with SMTP id
- d10mr12222840itl.153.1560162043688; 
- Mon, 10 Jun 2019 03:20:43 -0700 (PDT)
+ bh=OJxNCKHBqEq8hxmgfzQAJLVDLncAAe7CM9ROe+/BeNA=;
+ b=g0PP1hoYAoqoXAi198g17LDjAiEAd12WeusgWN9LjPtC2Z7dysypr58oKzMaPsn99t
+ Rc0dtN3+gkcJdT1PJXpJwGMALc6Vvh/Nu/iH+0jF7YEuDtQ2JmgCTkllJQCwcXq8a9ai
+ x3VIgy3fclLTwJGqkheubVN3fB+U22E8K7zwg0OVEJBBWPVLt991YE6Nt0ktqjD/XyUs
+ L3Be6a+nFesMgksvAK9dZAamFIeYeRlAXL894nPy8UHxPG8kA82pp+liaTC+eMLBY4gi
+ ZiqUu5m5uHDmBVA0zpe6wk7+ozLVNwFury+4XfPP6kHrzihTOuVBHUjx4a1YPbbv8LU6
+ kOnw==
+X-Gm-Message-State: APjAAAXacF487TxLF8RkjA3JIyLGBjZ543rWHW848niQwzmetvFJ/V7y
+ PxZWLg+mKlMcF/tJvkB939Nd53tN9RowZYt0pdwVtQ==
+X-Google-Smtp-Source: APXvYqw85yEyPCfVXgt5WHExarvGTTNSk7I/nOG6fWausDPOCC8pBQhB+ownP2Y9XmGBJmpJYjtZLrkebjzWM3KbGXc=
+X-Received: by 2002:a1f:12d5:: with SMTP id 204mr12861074vks.4.1560162106571; 
+ Mon, 10 Jun 2019 03:21:46 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190610084213.1052-1-lee.jones@linaro.org>
- <20190610084213.1052-4-lee.jones@linaro.org>
- <CAKv+Gu_s7i8JC4cv-dJMvm1_0cGzzhzf+Dxu0rxcF7iugF=vHg@mail.gmail.com>
- <20190610085542.GL4797@dell>
- <CAKv+Gu8rhxciy1cOG3B3pda9+p4R_COGrrqa7S_Rj9y2HeBxYw@mail.gmail.com>
- <20190610092245.GN4797@dell>
-In-Reply-To: <20190610092245.GN4797@dell>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Mon, 10 Jun 2019 12:20:30 +0200
-Message-ID: <CAKv+Gu94ES4_SjkmAMaAgwCtsx_YmOn0=yaeM9GFjPCCxrANoQ@mail.gmail.com>
-Subject: Re: [PATCH v3 4/8] pinctrl: qcom: sdm845: Provide ACPI support
-To: Lee Jones <lee.jones@linaro.org>
+References: <20190513192300.653-1-ulf.hansson@linaro.org>
+ <20190513192300.653-8-ulf.hansson@linaro.org>
+ <20190607151716.GF15577@e107155-lin>
+In-Reply-To: <20190607151716.GF15577@e107155-lin>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 10 Jun 2019 12:21:10 +0200
+Message-ID: <CAPDyKFoKNLqLzVx8uj_-iuWAHGCvty28mVKnipFVgjKD8oDNkQ@mail.gmail.com>
+Subject: Re: [PATCH 07/18] drivers: firmware: psci: Prepare to use OS
+ initiated suspend mode
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_032044_804040_D6A73D9F 
-X-CRM114-Status: GOOD (  25.98  )
+X-CRM114-CacheID: sfid-20190610_032147_904918_BBB362A7 
+X-CRM114-Status: GOOD (  19.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -96,95 +93,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, wsa+renesas@sang-engineering.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- linux-usb <linux-usb@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- David Brown <david.brown@linaro.org>, alokc@codeaurora.org,
- linux-i2c <linux-i2c@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Amit Kucheria <amit.kucheria@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ Lina Iyer <ilina@codeaurora.org>,
  linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Andy Gross <andy.gross@linaro.org>, Jeffrey Hugo <jlhugo@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ Niklas Cassel <niklas.cassel@linaro.org>,
+ Souvik Chakravarty <souvik.chakravarty@arm.com>,
+ "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
+ Lina Iyer <lina.iyer@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Jun 2019 at 11:22, Lee Jones <lee.jones@linaro.org> wrote:
+On Fri, 7 Jun 2019 at 17:17, Sudeep Holla <sudeep.holla@arm.com> wrote:
 >
-> On Mon, 10 Jun 2019, Ard Biesheuvel wrote:
->
-> > On Mon, 10 Jun 2019 at 10:55, Lee Jones <lee.jones@linaro.org> wrote:
-> > >
-> > > On Mon, 10 Jun 2019, Ard Biesheuvel wrote:
-> > >
-> > > > On Mon, 10 Jun 2019 at 10:42, Lee Jones <lee.jones@linaro.org> wrote:
-> > > > >
-> > > > > This patch provides basic support for booting with ACPI instead
-> > > > > of the currently supported Device Tree.  When doing so there are a
-> > > > > couple of differences which we need to taken into consideration.
-> > > > >
-> > > > > Firstly, the SDM850 ACPI tables omit information pertaining to the
-> > > > > 4 reserved GPIOs on the platform.  If Linux attempts to touch/
-> > > > > initialise any of these lines, the firmware will restart the
-> > > > > platform.
-> > > > >
-> > > > > Secondly, when booting with ACPI, it is expected that the firmware
-> > > > > will set-up things like; Regulators, Clocks, Pin Functions, etc in
-> > > > > their ideal configuration.  Thus, the possible Pin Functions
-> > > > > available to this platform are not advertised when providing the
-> > > > > higher GPIOD/Pinctrl APIs with pin information.
-> > > > >
-> > > > > Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> > > >
-> > > > For the ACPI probing boilerplate:
-> > > > Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> > > >
-> > > > *However*, I really don't like hardcoding reserved GPIOs like this.
-> > > > What guarantee do we have that each and every ACPI system
-> > > > incorporating the QCOM0217 device has the exact same list of reserved
-> > > > GPIOs?
-> > >
-> > > This is SDM845 specific, so the chances are reduced.
+> On Mon, May 13, 2019 at 09:22:49PM +0200, Ulf Hansson wrote:
+> > The per CPU variable psci_power_state, contains an array of fixed values,
+> > which reflects the corresponding arm,psci-suspend-param parsed from DT, for
+> > each of the available CPU idle states.
 > >
-> > You don't know that.
->
-> All the evidence I have to hand tells me that this is the case.  Even
-> on very closely related variants Qualcomm uses different H/W blocks
-> for GPIO.
->
-> > > However, if another SDM845 variant does crop up, also lacking the
-> > > "gpios" property, we will have to find another differentiating factor
-> > > between them and conduct some matching.  What else can you do with
-> > > platforms supporting non-complete/non-forthcoming ACPI tables?
-> > >
+> > This isn't sufficient when using the hierarchical CPU topology in DT in
+> > combination with having PSCI OS initiated (OSI) mode enabled. More
+> > precisely, in OSI mode, Linux is responsible of telling the PSCI FW what
+> > idle state the cluster (a group of CPUs) should enter, while in PSCI
+> > Platform Coordinated (PC) mode, each CPU independently votes for an idle
+> > state of the cluster.
 > >
-> > Either we don't touch any pins at all if they are not referenced
-> > explicitly anywhere
+> > For this reason, let's introduce an additional per CPU variable called
+> > domain_state and implement two helper functions to read/write its values.
+> > Following patches, which implements PM domain support for PSCI, will use
+> > the domain_state variable and set it to corresponding bits that represents
+> > the selected idle state for the cluster.
+> >
+> > Finally, in psci_cpu_suspend_enter() and psci_suspend_finisher(), let's
+> > take into account the values in the domain_state, as to get the complete
+> > suspend parameter.
+> >
 >
-> I guess this would require an API change, which is out of scope of
-> this patch-set.  Happy to change this implementation later if the
-> subsystem allows for it though.
->
-> > or we parse the PEP tables, which seem to cover
-> > some of this information (if Bjorn's analysis is correct)
->
-> Maybe someone can conduct some further work on this when we start to
-> enable or write a driver for the PEP (Windows-compatible System Power
-> Management Controller).  The tables for the PEP look pretty complex,
-> so this task would be extremely difficult if not impossible without
-> Qualcomm's help.  I wouldn't even know how to extrapolate this
-> information from the tables.
->
-> > (if Bjorn's analysis is correct)
->
-> Bjorn is about to provide his Reviewed-by for this implementation.
->
+> I understand it was split to ease review, but this patch also does
+> nothing as domain_state = 0 always. I was trying hard to find where it's
+> set, but I assume it will be done in later patches. Again may be this
+> can be squashed into the first caller of psci_set_domain_state
 
-If Bjorn can live with it, then so can I.
+You have a point, but I am worried that it would look like this series
+is solely needed to support OSI mode. This is not the case. Let me
+explain.
+
+Having $subject patch separate shows the specific changes needed to
+support OSI mode. The first caller of psci_set_domain_state() is added
+in patch9, however, patch9 is useful no matter of OSI or PC mode.
+
+Moreover, if I squash $subject patch with patch9, I would have to
+squash also the subsequent patch (patch8), as it depends on $subject
+patch.
+
+So, to conclude, are you happy with this as is or do you want me to
+squash the patches?
+
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
