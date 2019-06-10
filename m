@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 496903B70A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:14:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57A853B70C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:15:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=JkLqHcYLaLvt0qF39pJ1NL9hE+3tO2hNmI+fLGYLcPA=; b=tXO
-	bGW4Nl2m6tMkjj9uX+HHq6XheARPJNp8mUNN9srS4KHQ7/DSoy59riDFnVGO1qL3WkKue2Dgqcaly
-	FlM8c87ixw4v8NYHADMu7FQ7GvPG6TcZJH87r6EoXEmbzSktqEeKIQN3ZTv7fA/3cWM6Yuc+6sp/b
-	HjIViinfIzES9bfyVrmHj7FJ5CK/Ud6iM+b0bU2DFgOernGQrwoxsSXHGA+DGnlT0/KiMXWs64J+f
-	RRoWbq+HCiniWL+ec2gthwg9B30RofM1IqFkYeyXZDx0VgXFk7EVKPkO8EpLIOd74hJLi7KF5RmX+
-	0O3pzAuiB0lgyEXEglebwwMkK51wy1A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=P//NuxSjX6YxHblsvw7teQ45dV4dn9q3QBnh+Wuie2A=; b=bLPYEQi290XXxeiMzz2Sy1H4er
+	wG3SjZPupjx8IH/P34lMrZ7qkBM0VhBc7dysOsXj/mErurjFuA8DGduU/Cm4cQonipXjGHxNg3sRY
+	2EwQYcKXWV8mELCEr8DqU8x7tuRBVpTzQUkKctzKIA5QGGU2ZtI54nKdDM0UrijZ7gBjVtbmC81OU
+	jmPZo25Q+0mdBSiAkuivWNx6rdWOJN3niohK+yIFiBVVo7Xgupb1pQkuMztuzet+ZPAj+ljuEa/B6
+	f0OQRmCi0iHuLVIPZWoe8ktZKXzZJaU2T2e9b9c4/ZgGk8beyYtOetJs//A3zQpA82F5QbqpUUbSS
+	s1FvQ3+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haL4P-0002gK-KD; Mon, 10 Jun 2019 14:14:45 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1haL4i-0002so-2Y; Mon, 10 Jun 2019 14:15:04 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haL4E-0002fD-DN
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:14:35 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E3FDF1A0854;
- Mon, 10 Jun 2019 16:14:30 +0200 (CEST)
+ id 1haL4F-0002fE-DR
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:14:36 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 12DB22007D8;
+ Mon, 10 Jun 2019 16:14:32 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0653F1A0855;
- Mon, 10 Jun 2019 16:14:26 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A5A22001D6;
+ Mon, 10 Jun 2019 16:14:27 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A4929402C0;
- Mon, 10 Jun 2019 22:14:19 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CA1EC402DD;
+ Mon, 10 Jun 2019 22:14:20 +0800 (SGT)
 From: daniel.baluta@nxp.com
 To: jassisinghbrar@gmail.com,
 	o.rempel@pengutronix.de
-Subject: [RFC PATCH 0/2] Introduce Tx doorbell with ACK
-Date: Mon, 10 Jun 2019 22:16:07 +0800
-Message-Id: <20190610141609.17559-1-daniel.baluta@nxp.com>
+Subject: [RFC PATCH 1/2] mailbox: imx: Clear GIEn bit at shutdown
+Date: Mon, 10 Jun 2019 22:16:08 +0800
+Message-Id: <20190610141609.17559-2-daniel.baluta@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190610141609.17559-1-daniel.baluta@nxp.com>
+References: <20190610141609.17559-1-daniel.baluta@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_071434_592750_C08769B3 
-X-CRM114-Status: UNSURE (   6.79  )
+X-CRM114-CacheID: sfid-20190610_071435_588714_39968D71 
+X-CRM114-Status: UNSURE (   7.85  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -51,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,29 +80,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Daniel Baluta <daniel.baluta@nxp.com>
 
-We need this in order to implement the communication protocol
-between Linux kernel SOF IPC layer and DSP firmware found on i.MX8 boards.
+GIEn is enabled at startup for RX doorbell mailboxes so
+we need to clear the bit at shutdown in order to avoid
+leaving the interrupt line enabled.
 
-First patch is just a bugfix and can be merged as it is.
+Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+---
+ drivers/mailbox/imx-mailbox.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-The second patch is just a RFC to open the discussion on how to use the i.MX
-mailbox API in order to communicate with the DSP. I want to know if this
-scenario can be supported by the mailbox abstraction of MU or should I
-go back and directly access MU registers.
-
-We need to have two MU channels:
-	- channel #0, Host sends notification (via GIR) to DSP and gets a reply (via GIP)
-	- channel #1, DSP sends message to Host (via GIR) and gets a reply (via GIP).
-
-The details of the protocol can be found in patch 2.
-
-Daniel Baluta (2):
-  mailbox: imx: Clear GIEn bit at shutdown
-  imx: mailbox: Introduce TX doorbell with ACK
-
- drivers/mailbox/imx-mailbox.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
+diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+index 25be8bb5e371..9f74dee1a58c 100644
+--- a/drivers/mailbox/imx-mailbox.c
++++ b/drivers/mailbox/imx-mailbox.c
+@@ -217,8 +217,8 @@ static void imx_mu_shutdown(struct mbox_chan *chan)
+ 	if (cp->type == IMX_MU_TYPE_TXDB)
+ 		tasklet_kill(&cp->txdb_tasklet);
+ 
+-	imx_mu_xcr_rmw(priv, 0,
+-		   IMX_MU_xCR_TIEn(cp->idx) | IMX_MU_xCR_RIEn(cp->idx));
++	imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx) |
++		       IMX_MU_xCR_RIEn(cp->idx) | IMX_MU_xCR_GIEn(cp->idx));
+ 
+ 	free_irq(priv->irq, chan);
+ }
 -- 
 2.17.1
 
