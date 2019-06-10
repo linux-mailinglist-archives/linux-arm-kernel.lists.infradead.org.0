@@ -2,92 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 650543B879
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:48:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD2EE3B882
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:50:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fuJoj3EE8Gp6chcHLmVLBH2KshvdUyDwSxrk1BkXGzU=; b=gvHT6oP/02Bl0F
-	ADAaKP05SsWhWuaHaLPY5uQ6vtisPS6R//WlHcSKCGURCXYF3t15Or/rqApZEXuPv0Xl4FDH8zUHs
-	N7LKBkPUsVX4z17ll2Ygd6K2TYwOMOt7SihuJT7nOvzK2n3mHRsJ/O9nek5Dwdfn0/9GQVcerxPI6
-	pad6mBZ1Vqs9QOKA3svBqE/x4sxFUBfsoI6sICp4XP633YjCwa4Qw4OPH0GoZDPJ/iZYohGLqlw/K
-	39I5cxD8ZSf4ors6u7iY8xsRThwjLfCQQIt6XZDMe9pnANeqT7n6VqDK7tk99B2PTI7wgASnbvXru
-	aem7uXNicKSCikhLSDAg==;
+	List-Owner; bh=PUTC6LTCRTiWoVFFmL25Sa8HiF8B400Wk0S6TmYT7GQ=; b=icoKFyGLcUPExs
+	he+umTjb9BB+6aXrapRwoKIhf+h9rq0Y/zyZ0wOvjJSbGnMy0nPkWFdQyoNTqR1OzDOYvaOr1EbEI
+	yNeykOVlP3q4PipgEpl8dCSYbt+FECDuD2O97KJztyFvkMJVIgCDWurooMD71mrUb5ajS10WeRgnt
+	6K0zWAsAEN8uEn63+9VPG/H/cqdQ0+PGe/A3CUqotdWrjbW0aFH7BJeUDYHhYzEb0766AGGrDawMo
+	Zj4GD671EeJkROQ47OjnpC91gDBGq7LKBOrRKdLRYRT1v/TMFU//gGjdLTB74j0oyiB2jOKBVwHfk
+	IOhYqXp7+a2gi8GObORg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haMWe-0000VG-Uc; Mon, 10 Jun 2019 15:48:01 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1haMZK-0002PP-9r; Mon, 10 Jun 2019 15:50:46 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haMWV-0000Tk-Sg
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 15:47:53 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5AFfYgf026022; Mon, 10 Jun 2019 17:47:32 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=LgERwqK45s8WxfYNJ2p/eCQHczqBFZZAr61TGRo2H+4=;
- b=gWnTJIR+98UCSxymsNwMRkgV+9V4yBZI5+4O8squ/S1WPag/BNss5IcSulDOH8T/qMqy
- q5rRWgjZh1+axSfpm4jGFsbHUXiEKvFm5yX1fVKRlgcGeUpMJ1UiBH3GQvUc006KNBYZ
- aaQBMZ5CoapQhFeAG4Xy6KLHH7l+oOyLUCEOe/V+gwEP4isq8+XLC7bW/5by5lGiK/x3
- XouigYxflqzytqopMhVNGFhEgQPEP7iffCr4OeoYE1zREws/pzQJfakAvhXlF3eR6ezU
- fzZSs6CeFFZkIWOMuauXgOa/ZhjVDilHLoY4vc8Z7eatw46qhvqsNEfDqCLJJMojWq9G AA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2t0256a973-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 10 Jun 2019 17:47:32 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B078D34;
- Mon, 10 Jun 2019 15:47:30 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7E94F4F1D;
- Mon, 10 Jun 2019 15:47:30 +0000 (GMT)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 10 Jun
- 2019 17:47:30 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Mon, 10 Jun 2019 17:47:30 +0200
-From: Erwan LE RAY <erwan.leray@st.com>
-To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, "Kevin
- Hilman" <khilman@baylibre.com>
-Subject: Re: [PATCH] ARM: debug: stm32: add UART early console configuration
-Thread-Topic: [PATCH] ARM: debug: stm32: add UART early console configuration
-Thread-Index: AQHU73OP100nvdfkikCtYg1KY+YHZqY1DV8AgC1naoCAMtJmgA==
-Date: Mon, 10 Jun 2019 15:47:30 +0000
-Message-ID: <ff48768c-83e3-55dc-16a0-bd0af4133c7c@st.com>
-References: <1554883239-12051-1-git-send-email-erwan.leray@st.com>
- <CAJiuCcd9884Kn2MAtLMzZpdSa-=xpCDKRLQSVC6NmRNC+YFtaA@mail.gmail.com>
- <deebc332-277b-76b9-421f-7f67c6bdacc8@st.com>
-In-Reply-To: <deebc332-277b-76b9-421f-7f67c6bdacc8@st.com>
-Accept-Language: en-US, fr-FR
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.49]
-Content-ID: <70F78C8ABFDF92458A8685FA5F79E676@st.com>
+ id 1haMZ8-0002Os-VP
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 15:50:36 +0000
+Received: by mail-wm1-x343.google.com with SMTP id z23so8665425wma.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 08:50:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=j0cvrW0LiR2yAWHacC+paieH/BsPhO653fx0ilOqwbQ=;
+ b=XrYcjT7N66H7PZl89qVvjkYy2lcUUR+p2y5QlMqTrKSYLfpAHr+5bhPvrKUDoDW2Gn
+ gc8KQUOivmTgSCQR5PIvdxh3Np5UEb4HOX5Y/TgrcVFjLu1N/l6ZRZHcLQwZoZkFB2PK
+ dnHDV+JZ8jRZwikhp0mK3D3c9YrIoYwTbrv+XI3t6hXqkMvOg/CU3HdRVKBqqbiWsoYb
+ ZmrGKLaXtkNsJEc6GlFos05req6azeUDaSh/0lsYh1U2oaNxBegmv6xh+NlQSfkKDqss
+ qqcF/nZdT+NcxD5fD2IRb0hwvT8zPzyEN97nHCywHGtE8NnApD9T/+hYylByZ803tbq9
+ bqbA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=j0cvrW0LiR2yAWHacC+paieH/BsPhO653fx0ilOqwbQ=;
+ b=jvYpfpnZJphr13ALmxNM9qzx2vg065W0p5/nKXhgUNF5qqTI164eSLsOzoj6MUrbA4
+ lrlnTdWI07HgJoN0EOD1GbTwOkA0XHetGCB6CjR5hgusJOdDcFqmdgsyaoibJssgYL1Q
+ DTbxc48lhaUTbQ246FGQ749D/a4xbXD5K3pkh8J9BbwqKrrEPVN5RvXcreaKq6TjrKPl
+ Egi/s/Qh0PkaxXFX0M63HUn51VXC+yZnS2D2Z1cNPq10ckf3LurZHZaIQ7Ui36QgAHmq
+ 9TUi0RP3nA5r2qnNRwNTjdYJy91Q3ADoLIxwp8IdaAF6jMOmMzta3HwR1UTSpnDTl6In
+ 4LEA==
+X-Gm-Message-State: APjAAAXgTF+B50xm+r1vupLpQ70jHI5U2fCp9ZpHc1erjPjEKleZOxIS
+ qWIT3kPc2cSRzZJs6nf1G3o=
+X-Google-Smtp-Source: APXvYqzLna+aVnK3OUUKYltUUrEa4DJqameWzsVBUOMurnw3ZFvBDcb4Rdm+t6M1JqO46Sv5jxt2fg==
+X-Received: by 2002:a7b:c751:: with SMTP id w17mr14836813wmk.127.1560181833344; 
+ Mon, 10 Jun 2019 08:50:33 -0700 (PDT)
+Received: from blackbox.darklights.net
+ (p200300F133DDA40000C4C39937FBD289.dip0.t-ipconnect.de.
+ [2003:f1:33dd:a400:c4:c399:37fb:d289])
+ by smtp.googlemail.com with ESMTPSA id z17sm9711917wru.21.2019.06.10.08.50.31
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 10 Jun 2019 08:50:32 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: Maxime Ripard <maxime.ripard@bootlin.com>,
+	netdev@vger.kernel.org
+Subject: RE: [PATCH v2 10/11] dt-bindings: net: dwmac: Deprecate the PHY reset
+ properties
+Date: Mon, 10 Jun 2019 17:50:11 +0200
+Message-Id: <20190610155011.4305-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <ff6306c71a6b6ad174007f9f2823499d3093e21c.1560158667.git-series.maxime.ripard@bootlin.com>
+References: <ff6306c71a6b6ad174007f9f2823499d3093e21c.1560158667.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-10_07:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_084752_264907_92528684 
-X-CRM114-Status: GOOD (  11.66  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190610_085035_039812_C3C81519 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,29 +103,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabrice
- GASNIER <fabrice.gasnier@st.com>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Uwe Kleine-Koenig <u.kleine-koenig@pengutronix.de>,
- Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Clement Peron <clement.peron@devialet.com>,
- =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Gerald
- BAEZA <gerald.baeza@st.com>, Simon Horman <horms+renesas@verge.net.au>,
- Bich HEMON <bich.hemon@st.com>, Biju Das <biju.das@bp.renesas.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
+ =?UTF-8?q?Antoine=20T=C3=A9nart?= <antoine.tenart@bootlin.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof, Arnd and Kevin,
+> Even though the DWMAC driver uses some driver specific properties, the PHY
+> core has a bunch of generic properties and can deal with them nicely.
+> 
+> Let's deprecate our specific properties.
+> 
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+I am not sure about the yaml syntax for deprecated properties but
+the description inside the .yaml file looks good to me so:
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-Gentle reminder on my feedback request.
-
-Best regards, Erwan.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
