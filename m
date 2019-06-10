@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD3623B28A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:53:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03A9B3B296
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:56:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vUERDKztOHGrQLLVtnHmDLORco66+M1MNlh+MkWBJSE=; b=KlNjum+9xVHRpzDytla4sFgs9
-	g/cpwNsastvtw2VM5oq6y0P64t/+gmRxuKW2vuGR7lY/g1wJ2o7IVNoy8oOjlyzsh8gAOGf1Lkv+0
-	sK9YVVlHnh4I1Y1YSoG0paUU9zdhGRNDxMNjydE0KFo6OIAfwB2HVZyB6OPeoPe7en09CTnsmupas
-	QkvoCXytOvXJMbdisT6sZcXO0O7cklF26eaJ3NK0AGMDEFYirfzoH1zwoaC7e3wbWzFzJ5pVd6yqX
-	ahLriM0g6rrO+5ycy1Ir/KYI7rpqORsyJmkpv2IP9hrhLg30iWjM3YFxm4T5ytjANLosdRBM4kRMG
-	6iz1xT9OA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YEBpj9vmGeJ5pIBaXQjEuUR7L+fDYXuhnbHh0SblKL4=; b=DOX2V94/bwnYwY
+	N93c5DGqv5CMO5PXY9FZX+u1NQEvga8ChdHzMsC04Zu2AH/WCfPCPRgxsDumicsTEZEgB+UEX2T13
+	KWdlGnqwEWQDaH84gcH+9RawvcT7gMKOmKDlWoXboH20RJPOFKXlRL4fuCb9Jl849ZcatvagDe/vc
+	64dsCG7g+wmpsG7gyVRsCVicDzPkafb+Rl4wPmykm4OOyB7nGbdB/ZQ8FoViTLJ64VT6BE9cSp4bD
+	vekcQdAGM70UjlFEln6rtoSx4w+GWpxvb0b5GNhE0ZINAC2w/SNPABldcd89cdq0ZzjUhBpda35O8
+	8MQ8AOZNXndoKMYrHOMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haGzA-0005bz-B3; Mon, 10 Jun 2019 09:53:04 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haGyt-0005bQ-M7
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:52:49 +0000
-Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
- [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 2FD22200018;
- Mon, 10 Jun 2019 09:52:44 +0000 (UTC)
-Date: Mon, 10 Jun 2019 11:52:43 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Subject: Re: [PATCH v5 04/13] media: rc: sunxi: Add RXSTA bits definition
-Message-ID: <20190610095243.7xwp4xhauds22qzw@flea>
-References: <20190607231100.5894-1-peron.clem@gmail.com>
- <20190607231100.5894-5-peron.clem@gmail.com>
+	id 1haH2H-0007Hl-Je; Mon, 10 Jun 2019 09:56:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haH24-0007H0-Io
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:56:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 61DC7344;
+ Mon, 10 Jun 2019 02:56:03 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 204573F246;
+ Mon, 10 Jun 2019 02:57:44 -0700 (PDT)
+Date: Mon, 10 Jun 2019 10:56:00 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH V2] KVM: arm64: Implement vq_present() as a macro
+Message-ID: <20190610095559.GL28398@e103592.cambridge.arm.com>
+References: <7c2590c4d8cc95cd40bbb05c0d0c5e2b0735a16b.1560145715.git.viresh.kumar@linaro.org>
+ <20190610090917.GK28398@e103592.cambridge.arm.com>
+ <20190610095030.yurzajuyylyo57h2@vireshk-i7>
 MIME-Version: 1.0
-In-Reply-To: <20190607231100.5894-5-peron.clem@gmail.com>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190610095030.yurzajuyylyo57h2@vireshk-i7>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_025247_878159_7C5AA099 
-X-CRM114-Status: UNSURE (   9.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190610_025604_669392_8CD42BF6 
+X-CRM114-Status: GOOD (  21.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,69 +63,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============5762687981191252134=="
+Cc: Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Jun 10, 2019 at 03:20:30PM +0530, Viresh Kumar wrote:
+> On 10-06-19, 10:09, Dave Martin wrote:
+> > You could drop the extra level of indirection on vqs now.  The only
+> > thing it achieves is to enforce the size of the array via type-
+> > checkout, but the macro can't easily do that (unless you can think
+> > of another way to do it).
+> > 
+> > Otherwise, looks good.
+> 
+> Below is what I wrote initially this morning and then moved to the
+> current version as I wasn't sure if you would want that :)
+> 
+> -- 
+> viresh
+> 
+> -------------------------8<-------------------------
+> 
+> From be823e68faffc82a6f621c16ce1bd45990d92791 Mon Sep 17 00:00:00 2001
+> Message-Id: <be823e68faffc82a6f621c16ce1bd45990d92791.1560160165.git.viresh.kumar@linaro.org>
+> From: Viresh Kumar <viresh.kumar@linaro.org>
+> Date: Mon, 10 Jun 2019 11:15:17 +0530
+> Subject: [PATCH] KVM: arm64: Implement vq_present() as a macro
+> 
+> This routine is a one-liner and doesn't really need to be function and
+> can be implemented as a macro.
+> 
+> Suggested-by: Dave Martin <Dave.Martin@arm.com>
+> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> ---
+>  arch/arm64/kvm/guest.c | 12 +++---------
+>  1 file changed, 3 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> index 3ae2f82fca46..ae734fcfd4ea 100644
+> --- a/arch/arm64/kvm/guest.c
+> +++ b/arch/arm64/kvm/guest.c
+> @@ -207,13 +207,7 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+>  
+>  #define vq_word(vq) (((vq) - SVE_VQ_MIN) / 64)
+>  #define vq_mask(vq) ((u64)1 << ((vq) - SVE_VQ_MIN) % 64)
+> -
+> -static bool vq_present(
+> -	const u64 (*const vqs)[KVM_ARM64_SVE_VLS_WORDS],
+> -	unsigned int vq)
+> -{
+> -	return (*vqs)[vq_word(vq)] & vq_mask(vq);
+> -}
+> +#define vq_present(vqs, vq) ((vqs)[vq_word(vq)] & vq_mask(vq))
+>  
+>  static int get_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+>  {
+> @@ -258,7 +252,7 @@ static int set_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+>  
+>  	max_vq = 0;
+>  	for (vq = SVE_VQ_MIN; vq <= SVE_VQ_MAX; ++vq)
+> -		if (vq_present(&vqs, vq))
+> +		if (vq_present(vqs, vq))
+>  			max_vq = vq;
+>  
+>  	if (max_vq > sve_vq_from_vl(kvm_sve_max_vl))
+> @@ -272,7 +266,7 @@ static int set_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+>  	 * maximum:
+>  	 */
+>  	for (vq = SVE_VQ_MIN; vq <= max_vq; ++vq)
+> -		if (vq_present(&vqs, vq) != sve_vq_available(vq))
+> +		if (vq_present(vqs, vq) != sve_vq_available(vq))
+>  			return -EINVAL;
 
---===============5762687981191252134==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ivt2koe4dst4bk6o"
-Content-Disposition: inline
+I think I prefer this version:
 
+Reviewed-by: Dave Martin <Dave.Martin@arm.com>
 
---ivt2koe4dst4bk6o
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Sat, Jun 08, 2019 at 01:10:51AM +0200, Cl=E9ment P=E9ron wrote:
-> We are using RXINT bits definition when looking at RXSTA register.
->
-> These bits are equal but it's not really proper.
->
-> Introduce the RXSTA bits and use them to have coherency.
->
-> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
-
-Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---ivt2koe4dst4bk6o
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXP4oawAKCRDj7w1vZxhR
-xczjAP9NhvNXW8RraDQEXB1eNk6zeYRoUohLhNFarH0MsVC7hQEAx0/R3cfra11q
-g8lAS+DDEk4kx5iSDIwC7EK1bfYB7Q0=
-=c9cn
------END PGP SIGNATURE-----
-
---ivt2koe4dst4bk6o--
-
-
---===============5762687981191252134==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5762687981191252134==--
-
