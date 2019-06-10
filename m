@@ -2,56 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 397643B3C0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:08:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 755EF3B3DE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:15:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EBPmK07Xr4zy/10ok4sDPxd1hrMSwjfgcJ9C1Ms75ps=; b=tiZH9emdwBK5BD
-	6jJBLSTBtH7amxw4BzUc4/c56CR3taSgUXhYg94QpoBBQUdMzxMX2+26KUqH6tbw6353Gie1pojMg
-	5bLqnh8ZFS4NsV2YUnK0FViGEi+RlTXIRH/ldbdt8bcz+b5F2Jfx/cXhFQc2rgX3evi2aQQA6GdMA
-	ebeLjkHQHzui92zNseqR/h6/iXm560fEJA+pGTYyxlPWrDLU6olW6Je+eb2mwn0rv7ypc0VcMQnJ6
-	22zXcvK4SAnc1yaLrmMcaVtZXCLzcxjz9QTIv9fSsv9AjSkCKVo2cdMU0a1Pn/A3hmo3JzEplj0Uz
-	XoEroRxv1mh+4PGpu0dQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9e/hBbBt7a1RXJz2UhPw6yjIWtTjSY90NyupN8KHoyI=; b=msUdC7+KMy3BR3
+	P0ZtnYGR73u/22byHvqIUbUzr90N63i14c7q9CPUMqt1b3tDodXJ5eSBcsrIAIom8TXq8KG5g1a6P
+	A1w4LjySQnKB4AUY5U0zzxr1JD5nDX5px8MuDBVJ2f1y+sW+OaNxfHn7aBxjIY/1mURvT0W+TrCGP
+	xalzd6m1DzFgd9UfzIE4mcQ32BsVEX1r8jcUUO3Pyo7xgT6W4kwOpJc8Aivu/oS5cYykmf6s2kYbh
+	wWUYuOh2v2AH1pCJlsV+oWbQt1DbK9T4RZVE6x1pk1DBU/+c5semrzxESno+ldkE/kVEDYwemw+Ro
+	iRXKmn6FTgqqA00Ltvlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haI9t-0000Sb-Bg; Mon, 10 Jun 2019 11:08:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haI9V-0000SF-SH
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 11:07:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C949C337;
- Mon, 10 Jun 2019 04:07:48 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D22E3F557;
- Mon, 10 Jun 2019 04:09:28 -0700 (PDT)
-Subject: Re: [PATCH v6 01/19] kernel: Standardize vdso_datapage
-To: Huw Davies <huw@codeweavers.com>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-2-vincenzo.frascino@arm.com>
- <20190610092751.GA11076@merlot.physics.ox.ac.uk>
- <58cedde2-0d54-7d2d-f519-77cb71f543fd@arm.com>
- <20190610103151.GD11076@merlot.physics.ox.ac.uk>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <83ab2758-0e8c-35d5-906a-0338bcee3310@arm.com>
-Date: Mon, 10 Jun 2019 12:07:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1haIH6-0004js-V4; Mon, 10 Jun 2019 11:15:40 +0000
+Received: from mail-lj1-f194.google.com ([209.85.208.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haIGq-0004j2-O3
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 11:15:26 +0000
+Received: by mail-lj1-f194.google.com with SMTP id x25so2943235ljh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 04:15:24 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SfxM0MNNGeeWbqtads2f1ME1VOG/Aj6l8MDO5yfiWbE=;
+ b=kDh8tegwL7Z5sViW6TIAQmkCGuhSidnRRK57pMAZdUllGAKr9srB8Ejee71tP+P0Aj
+ wyTYXlmnYLWBs1WgWbvFipUWW1Hnof5tHwkimgQpZEyGpLfQhbMgQLqNf0gAGWmddGI4
+ F7B7Y15Zl4hTD3+7JQzT8IiGPtQGsLzoKz82tGLgWHdcKpm1jb/u44Uiy0fGFM9nKLiE
+ 2WRvzFXDx94lPQr2yjcAOqHRz7tcb5+pVKmwPIBr6FFz+NnZ9VHxvP9CUFutUt5NBm5K
+ 2zZjZt4L1511Clk8oKExVfQxoJUwkhnfmOO/6UMnYiEtg7kwnkiONgsW4bdJBbgKwIpU
+ 0zuA==
+X-Gm-Message-State: APjAAAVX0cObbcdaX74r4jQp/DEszNsEjBjf0QsQTQhRr/IlKVWXsYXD
+ PasAn3s4p6h/7SU0tkpZd3Cp/8Mb1iu8FYAz70VVnw==
+X-Google-Smtp-Source: APXvYqyyiM5ns67LDipiZNn5s1xfztrTGt7GU1FcOcz5XuRyxGBFWbTi8d6ThIlPuDUIBspZrP9aFHRQVTxlFFvhIq8=
+X-Received: by 2002:a2e:6545:: with SMTP id z66mr36732710ljb.146.1560165322896; 
+ Mon, 10 Jun 2019 04:15:22 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190610103151.GD11076@merlot.physics.ox.ac.uk>
-Content-Language: en-US
+References: <20190528161026.13193-1-steve.capper@arm.com>
+ <762411c4-1148-a10e-2a79-d2c9e38bc46e@redhat.com>
+ <20190610105425.d4vubtcknc2wn5uk@mbp>
+In-Reply-To: <20190610105425.d4vubtcknc2wn5uk@mbp>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Mon, 10 Jun 2019 16:45:10 +0530
+Message-ID: <CACi5LpMpyNWEoX8oR-YpjDjO9XkvaA3KYiivozm=0hT+hkQ5sw@mail.gmail.com>
+Subject: Re: [PATCH v2 00/12] 52-bit kernel + user VAs
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_040749_959871_5292CEF8 
-X-CRM114-Status: GOOD (  16.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_041524_786943_93608CC7 
+X-CRM114-Status: GOOD (  15.64  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,80 +77,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- linux-mips@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
- Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Christoph von Recklinghausen <crecklin@redhat.com>,
+ Steve Capper <steve.capper@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Huw,
+Hi Catalin,
 
-On 10/06/2019 11:31, Huw Davies wrote:
-> On Mon, Jun 10, 2019 at 11:17:48AM +0100, Vincenzo Frascino wrote:
->> On 10/06/2019 10:27, Huw Davies wrote:
->>> On Thu, May 30, 2019 at 03:15:13PM +0100, Vincenzo Frascino wrote:
->>>> --- /dev/null
->>>> +++ b/include/vdso/datapage.h
->>>> @@ -0,0 +1,91 @@
->>>> +/* SPDX-License-Identifier: GPL-2.0 */
->>>> +#ifndef __VDSO_DATAPAGE_H
->>>> +#define __VDSO_DATAPAGE_H
->>>> +
->>>> +#ifdef __KERNEL__
->>>> +
->>>> +#ifndef __ASSEMBLY__
->>>> +
->>>> +#include <linux/bits.h>
->>>> +#include <linux/time.h>
->>>> +#include <linux/types.h>
->>>> +
->>>> +#define VDSO_BASES	(CLOCK_TAI + 1)
->>>> +#define VDSO_HRES	(BIT(CLOCK_REALTIME)		| \
->>>> +			 BIT(CLOCK_MONOTONIC)		| \
->>>> +			 BIT(CLOCK_BOOTTIME)		| \
->>>> +			 BIT(CLOCK_TAI))
->>>> +#define VDSO_COARSE	(BIT(CLOCK_REALTIME_COARSE)	| \
->>>> +			 BIT(CLOCK_MONOTONIC_COARSE))
->>>> +#define VDSO_RAW	(BIT(CLOCK_MONOTONIC_RAW))
->>>> +
->>>> +#define CS_HRES_COARSE	0
->>>> +#define CS_RAW		1
->>>
->>> CS_HRES_COARSE seems like a confusing name choice to me.  What you
->>> really mean is not RAW.
->>>
->>> How about CS_ADJ to indicate that its updated by adjtime?
->>> CS_XTIME might be another option.
->>>
->>
->> I divided the timers in 3 sets (HRES, COARSE, RAW), CS_HRES_COARSE refers to the
->> first two and CS_RAW to the third. I will ad a comment to explain the logic in
->> the next iteration.
-> 
-> I'm thinking ahead about a possible CLOCK_MONOTONIC_RAW_COARSE (which
-> would be useful at least for Wine).  In that case you'd have four clock
-> types non-raw and raw, each with either hres or coarse.
-> 
+On Mon, Jun 10, 2019 at 4:24 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+>
+> On Mon, Jun 10, 2019 at 04:10:50PM +0530, Bhupesh Sharma wrote:
+> > On 05/28/2019 09:40 PM, Steve Capper wrote:
+> > >   2) How can this memory map be advertised to kdump tools/documentation?
+> > >      I was planning on getting the kernel VA structure agreed on, then I
+> > >      would add the relevant exports/documentation.
+> >
+> > Indeed, in the absence of corresponding changes to the Documentation
+> > section, it is hard to visualize the changes being made in the memory
+> > map.
+>
+> We used to have some better documentation in the arm64 memory.txt until
+> commit 08375198b010 ("arm64: Determine the vmalloc/vmemmap space at
+> build time based on VA_BITS") which removed it in favour of what the
+> kernel was printing. Subsequently, the kernel VA layout printing was
+> also removed. It would be nice to bring back the memory.txt, even if it
+> is for a single configuration as per defconfig.
 
-Thanks for this, I was not aware of CLOCK_MONOTONIC_RAW_COARSE.
-I tried to find, though, some details, but I could not find any. Could you
-please provide some reference?
+Indeed, that's what I suggested during the v1 review as well. See
+<https://www.spinics.net/lists/arm-kernel/msg718096.html> for details.
 
-> Huw.
-> 
+Also, we may want to have a doc dedicated to 52-bit address space
+details on arm64, similar to what we have currently for x86 (see [1a]
+and [1b])
 
--- 
-Regards,
-Vincenzo
+[1a]. https://github.com/torvalds/linux/blob/master/Documentation/x86/x86_64/5level-paging.txt
+[1b].https://github.com/torvalds/linux/blob/master/Documentation/x86/x86_64/mm.txt
+
+Thanks,
+Bhupesh
 
 _______________________________________________
 linux-arm-kernel mailing list
