@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B1CA3B3AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:03:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70FA03B3BB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+q0hghLvb0cKt/MC81YvdcE1/aohB31gDpdk3ajT5pk=; b=ErZZeA0EcZUbKy
-	9t1Y+wAbAFPFT1qbImfrPC2Uu2QkWZt/1HeTl0Zn3C1gcSMhapP/8TpThfasT+XPh1N/PJpylk9vz
-	R2dl6001Dn9narRG9Z7CcN+d/S6PZG3h7Bv+A6vQ2A8s/lWRTPPyhkp2E9/7gsf4ylUTMslr1z8al
-	hzQg0qLt3zJI5Ns9fq1w6M72cGpMtPFS0UnGmiP/xUH6lEryCygiuQMWAuDwsC2bqMmn/ssEVS7KQ
-	ASinEWxlHT7KYNfdV2e54pXxJtII5993eghS5cuUqcfonI/0Ms3/1vbcU+h9S77mtwPwEaL1glman
-	UsnaiI8ql4zo/uZCZV6w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ooRch8RHE45p6wvQpVeGCNeU6ruGkPvMsX/OJfAU3oQ=; b=u9F
+	f0xXE4xglRZFaVrTa58ka3q4RWspotRaGF/+5pInmNO7X6ud2z3Zg6SgKOcceCvrSJnrFRl+vlGqx
+	Yang1TcMwYtgyacwUhBRXdz/IH5Srh/DEKU/4GZKK2IC9bcCPO9o/b2KEdW1MgsjdAIjJisAjuSAn
+	1qU0ZxL7WOuQSOwSMXTXgfZGZaZ2Lge4xQOzl7JKgPh6hkWFhHN53tX1lPsTd3lIxHvZ5t8SXUMen
+	Vp0IWAwg5+XLSFKevyYbcq3WmcAFCuzl6AwyiiRFHtzRgNI3Oa1ztAaBXaCdavKl5tgeJR+KK7R9s
+	q+luQ/cd29aiZ4mtRnI/Dep8Gv/yvMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haI53-0006xV-5U; Mon, 10 Jun 2019 11:03:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haI4m-0006wk-B2
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 11:02:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC8F6337;
- Mon, 10 Jun 2019 04:02:55 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB2553F557;
- Mon, 10 Jun 2019 04:04:34 -0700 (PDT)
-Date: Mon, 10 Jun 2019 12:02:50 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 15/18] drivers: firmware: psci: Support CPU hotplug for
- the hierarchical model
-Message-ID: <20190610110250.GD26602@e107155-lin>
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <20190513192300.653-16-ulf.hansson@linaro.org>
- <20190607153114.GI15577@e107155-lin>
- <CAPDyKFqooMww0B6vGL56BnG-L=13C3oWeDFx4v1cO9=W9QPwVQ@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFqooMww0B6vGL56BnG-L=13C3oWeDFx4v1cO9=W9QPwVQ@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+	id 1haI8i-0000Al-EY; Mon, 10 Jun 2019 11:07:00 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haI8S-00009d-Hz
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 11:06:46 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0C46A200775;
+ Mon, 10 Jun 2019 13:06:41 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F30E3200773;
+ Mon, 10 Jun 2019 13:06:40 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net (gw_auto.ea.freescale.net
+ [10.171.94.100])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 926D02061D;
+ Mon, 10 Jun 2019 13:06:40 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH v2] clk: Add clk_parent entry in debugfs
+Date: Mon, 10 Jun 2019 14:06:38 +0300
+Message-Id: <82d6e1d63959ecb23bdcd363e93a27d08eee6859.1560164542.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_040256_474765_B5D83D30 
-X-CRM114-Status: GOOD (  19.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_040644_732859_EB65650D 
+X-CRM114-Status: GOOD (  10.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,80 +65,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Kevin Hilman <khilman@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Peter De Schrijver <pdeschrijver@nvidia.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 12:21:47PM +0200, Ulf Hansson wrote:
-> On Fri, 7 Jun 2019 at 17:31, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Mon, May 13, 2019 at 09:22:57PM +0200, Ulf Hansson wrote:
-> > > When the hierarchical CPU topology is used and when a CPU has been put
-> > > offline (hotplug), that same CPU prevents its PM domain and thus also
-> > > potential master PM domains, from being powered off. This is because genpd
-> > > observes the CPU's attached device as being active from a runtime PM point
-> > > of view.
-> > >
-> > > To deal with this, let's decrease the runtime PM usage count by calling
-> > > pm_runtime_put_sync_suspend() of the attached struct device when putting
-> > > the CPU offline. Consequentially, we must then increase the runtime PM
-> > > usage count, while putting the CPU online again.
-> > >
-> >
-> > Why is this firmware/driver specific ? Why can't this be dealt in core
-> > pm-domain ? I am concerned that if any other architectures or firmware
-> > method decides to use this feature, this need to be duplicated there.
->
-> What is the core pm-domain? Do you refer to the generic PM domain (genpd), no?
->
+This allows to easily determine the parent in shell scripts without
+parsing more complex files.
 
-Sorry for my bad choice of names. I just wrote names as I understand
-rather than looking for exact match. But yes, I meant generic place
-where such ref-counting is done currently for other things.
+Add the clk_parent file for all clks which can have a parent, not just
+muxes. This way it can be used to determine the clk tree structure
+without parsing more complex files.
 
-> In such case, this is not the job of genpd, but rather the opposite
-> (to *monitor* the reference count).
->
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
-OK, I need to understand that then.
+---
+Changes since v1: Only add clk_parent if num_parents > 0
 
-> >
-> > The way I see this is pure reference counting and is hardware/firmware/
-> > driver agnostic and can be made generic.
->
-> As stated in the another reply, I would rather start with having more
-> things driver specific rather than generic. Later on we can always
-> consider to move/split things, when there are more users.
->
-> In this particular case, the runtime PM reference counting is done on
-> the struct device*, that genpd returned via
-> dev_pm_domain_attach_by_name(). And because
-> dev_pm_domain_attach_by_name() is called from PSCI code, I decided to
-> keep this struct device* internal to PSCI.
+It seems that num_parents is only initialized once and never changes so
+having a check here makes sense: skip the clk_parent file if the clk can
+never have parent (num_parent == 0) but keep it if the parent is
+constant (num_parents == 1).
 
-Sure, I understand your intent. I have just mentioned my thoughts/comments
-as I reviewed.
+It seems the parent can be set to NULL later so keep the check for
+(core->parent != NULL) in the show function.
 
---
-Regards,
-Sudeep
+Link to v1: https://patchwork.kernel.org/patch/10959347/
+---
+ drivers/clk/clk.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index aa51756fd4d6..d21a219deef8 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -3009,10 +3009,21 @@ static int possible_parents_show(struct seq_file *s, void *data)
+ 
+ 	return 0;
+ }
+ DEFINE_SHOW_ATTRIBUTE(possible_parents);
+ 
++static int current_parent_show(struct seq_file *s, void *data)
++{
++	struct clk_core *core = s->private;
++
++	if (core->parent)
++		seq_printf(s, "%s\n", core->parent->name);
++
++	return 0;
++}
++DEFINE_SHOW_ATTRIBUTE(current_parent);
++
+ static int clk_duty_cycle_show(struct seq_file *s, void *data)
+ {
+ 	struct clk_core *core = s->private;
+ 	struct clk_duty *duty = &core->duty;
+ 
+@@ -3041,10 +3052,14 @@ static void clk_debug_create_one(struct clk_core *core, struct dentry *pdentry)
+ 	debugfs_create_u32("clk_protect_count", 0444, root, &core->protect_count);
+ 	debugfs_create_u32("clk_notifier_count", 0444, root, &core->notifier_count);
+ 	debugfs_create_file("clk_duty_cycle", 0444, root, core,
+ 			    &clk_duty_cycle_fops);
+ 
++	if (core->num_parents > 0)
++		debugfs_create_file("clk_parent", 0444, root, core,
++				    &current_parent_fops);
++
+ 	if (core->num_parents > 1)
+ 		debugfs_create_file("clk_possible_parents", 0444, root, core,
+ 				    &possible_parents_fops);
+ 
+ 	if (core->ops->debug_init)
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
