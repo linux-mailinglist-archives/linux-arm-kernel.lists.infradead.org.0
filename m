@@ -2,66 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A9C93B7AD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:44:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A9BA3B7B5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:47:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
+	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1JOGq1sXbgwcMHMyAiXGVAh9Zr+7XMT1C9fEoUJIA+s=; b=Ma15lWiwvwF2HI
-	YRnPvcExYalfiQifwM8yjxNbFG58EbIvcm8Y3i0EoCjXEYp8/YUD4MAvI5wOnETtypTC702BFG5oB
-	PEzsRx8FUIS1ArBrctrw/wF8oedv5WF6YK+VzyxHtm+NHAEUYUP+zQEjpZ4b2zFO3iBlaRxjK7s5/
-	+gRbXDy9M/J69MMqk7DMu7Gc63e1En+6ue0I2fUsRcs16nUaB0JF6gx1SFn5Ck3hUWBvGoy11A4EC
-	p8xt+bGUHQeJ3wHlY6oaSKBnGUDg2KeI+OjiWTWgx/OEctO5L/dq5gBxRMtbUxxSnpXLGoNBcKcDj
-	hmzGZTQUn79Oj0EEpDQw==;
+	List-Owner; bh=Eun22Oaiigkm6xVwpknjV1t/kQ9kUtEa/g+LBXQgkjg=; b=mTYeo/a8W9vqT6
+	hBPUkkLqTXBllDY8FWYGrsUAd30kFp6QoFoVtMWdmcynVWxNGL4qx4m3P7TECM9aKmsQzT/Q54hwY
+	60puNHZVtFFE8XtcTD1KSAuQRP4o+CVxD/KIa+mQgFb5Xrim50MyLk85qyj/Glo0907f+Cguj17RL
+	H6/1F8k3J8/6usOTlxzW5WkAlyeIROoRSdbxK4Ph2opvmfG5QGx4+zB3FjJatTmyuWD6OuWkrrDm6
+	YQdcL0ZhRaxV3Ggg+0vvpjQELyMPXWcj3cE2I9vPqKae2Og7kYcgRU7R3zSEouKCLUUjr8FXrS2XJ
+	Av2vv0Bv/FmN99c9oM7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLXM-000879-0x; Mon, 10 Jun 2019 14:44:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1haLa2-0001V1-DQ; Mon, 10 Jun 2019 14:47:26 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haLXC-00086M-9H
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:44:31 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AA36820862;
- Mon, 10 Jun 2019 14:44:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560177868;
- bh=VLfM+wWmxpE5AULiFHFYRojFpTMl7cMl/hwlGcegjgQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Jc2MaiVDg2758MmQoWZbjHHQJDc/Xa2e2UsmDtfUj/SenOvyC3fjdQIpnmFeOQ8qN
- IHz38ARkQSI65W0TV3vjf1uuZp67HKX02i5VcaZwUdA8Fx0pGwXVGVy63MRSNGVqlJ
- sEsvHguvSjm/gUXMZwT94Bp/Oc3PcxlFoxO6Z03o=
-Date: Mon, 10 Jun 2019 16:44:25 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Michal Simek <michal.simek@xilinx.com>
-Subject: Re: [PATCH 1/2] serial: xilinx_uartps: Fix warnings in the driver
-Message-ID: <20190610144425.GC31086@kroah.com>
-References: <c6753260caf8b20cc002b15fcbf22b759c91d760.1560156294.git.michal.simek@xilinx.com>
+ id 1haLZs-0001Ts-Mx
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:47:17 +0000
+Received: by mail-pl1-x644.google.com with SMTP id e5so3744449pls.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 07:47:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:subject:to:cc:references:in-reply-to:mime-version
+ :user-agent:message-id:content-transfer-encoding;
+ bh=Wq53+njaY8Nizg87bnJv9I6awFz838NRdQghS0a7fkM=;
+ b=X5g0JAvdV1k6T8yY6ZUvrcraWM4yMrG/lxJCK+nAqRLcZyfzQtXY4ZbYz6fOYHWy3n
+ Ou8dcJ4J6pIL1UEocGoC4sPgamfUWIHesWmZ8UX6rEWSdzt9ISIcx9cBiIgBO1pLSbDQ
+ bhOBx/V93amqxNh29DiYEna/vlDWwPNSH0HP8kuGzL0W2dnDnjJk1o+mR2xDI146xllb
+ CGKw3KHTmadPXuq8gLrXsXWVk8oNjiQOOuOZXkERDlgP23OsxNnnrUkyJ5sqo3VO0K3v
+ NviZJEwFJwnWh80oqJu8/n12fYX46vxiYKwSmmxCyHZAabHAJNThB0WoxME22CohL67N
+ 7IJQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
+ :mime-version:user-agent:message-id:content-transfer-encoding;
+ bh=Wq53+njaY8Nizg87bnJv9I6awFz838NRdQghS0a7fkM=;
+ b=FaO7vam7XEjY/rsARYEQ4HqhGep0saFupnA00UmmSsb5sOgRElYO/V/iODfuCWRpho
+ mAQy50w9qMe++CTM/0+Xzl/KwYoFi0ZqXrsbtK1G+WAMUeQMwpS1OVIfPpQ5YRhTWk7h
+ tmQZo+/CsI4P4F2DYBQdC7P1wVGj+6f+xqDHem2pez2ipD+KmKKP+4EBisntlX8Lrv4U
+ G0pwn+LsgtCkTGLiaL0CkZNk+Xq+fe2snFA73B/0rbuhKRmpm1N222gEpKwoewtiDGBI
+ xsE3qLc1iVUHHvpwrXv+pok0vCHnSzRTdc/nYRH7zOffy9LE18kJmIiziUS2QBvExYrG
+ cCcg==
+X-Gm-Message-State: APjAAAXo3Je0XoY4Co3EuDIOumnfCkZ9gBe4UZLS24WqcLPUqriOj83I
+ jeetvKKfLJ+a9UlQtB0LsBVfeTOa
+X-Google-Smtp-Source: APXvYqzO+K5a5izxxRmZJDOMMeEKbiwUXCm3sWfTX0ai2WfHFHXOFTxBzy4ayjR/yFM/5mp8uqkfJw==
+X-Received: by 2002:a17:902:8f81:: with SMTP id
+ z1mr4934200plo.290.1560178036097; 
+ Mon, 10 Jun 2019 07:47:16 -0700 (PDT)
+Received: from localhost (60-241-56-246.tpgi.com.au. [60.241.56.246])
+ by smtp.gmail.com with ESMTPSA id p68sm4145337pfb.80.2019.06.10.07.47.14
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 10 Jun 2019 07:47:15 -0700 (PDT)
+Date: Tue, 11 Jun 2019 00:44:49 +1000
+From: Nicholas Piggin <npiggin@gmail.com>
+Subject: Re: [PATCH 4/4] mm/vmalloc: Hugepage vmalloc mappings
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20190610043838.27916-1-npiggin@gmail.com>
+ <20190610043838.27916-4-npiggin@gmail.com>
+ <20190610141036.GA16989@lakrids.cambridge.arm.com>
+In-Reply-To: <20190610141036.GA16989@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c6753260caf8b20cc002b15fcbf22b759c91d760.1560156294.git.michal.simek@xilinx.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+User-Agent: astroid/0.14.0 (https://github.com/astroidmail/astroid)
+Message-Id: <1560177786.t6c5cn5hw4.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_074430_344753_33EF045F 
-X-CRM114-Status: GOOD (  10.49  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190610_074716_778096_CE51A658 
+X-CRM114-Status: UNSURE (   8.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (npiggin[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,40 +102,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: monstr@monstr.eu, Nava kishore Manne <nava.manne@xilinx.com>,
- linux-kernel@vger.kernel.org, johan@kernel.org, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 10:44:55AM +0200, Michal Simek wrote:
-> From: Nava kishore Manne <nava.manne@xilinx.com>
+Mark Rutland's on June 11, 2019 12:10 am:
+> Hi,
 > 
-> This patch fixes the below warning
+> On Mon, Jun 10, 2019 at 02:38:38PM +1000, Nicholas Piggin wrote:
+>> For platforms that define HAVE_ARCH_HUGE_VMAP, have vmap allow vmalloc to
+>> allocate huge pages and map them
+>> 
+>> This brings dTLB misses for linux kernel tree `git diff` from 45,000 to
+>> 8,000 on a Kaby Lake KVM guest with 8MB dentry hash and mitigations=off
+>> (performance is in the noise, under 1% difference, page tables are likely
+>> to be well cached for this workload). Similar numbers are seen on POWER9.
 > 
->         -->Symbolic permissions 'S_IRUGO' are not preferred.
->            Consider using octal permissions '0444'.
->         -->macros should not use a trailing semicolon.
->         -->line over 80 characters.
->         -->void function return statements are not generally useful.
->         -->Prefer 'unsigned int' to bare use of 'unsigned'.
-> 
-> Signed-off-by: Nava kishore Manne <nava.manne@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> ---
-> 
-> Happy to split it if needed.
+> Do you happen to know which vmalloc mappings these get used for in the
+> above case? Where do we see vmalloc mappings that large?
 
-Please split.  Do not do more than one "logical thing" per patch.
+Large module vmalloc could be subject to huge mappings.
 
-And the subject is not correct, there are no general "warnings", these
-are all checkpatch warnings, not a build issue.
+> I'm worried as to how this would interact with the set_memory_*()
+> functions, as on arm64 those can only operate on page-granular mappings.
+> Those may need fixing up to handle huge mappings; certainly if the above
+> is all for modules.
 
-thanks,
+Good point, that looks like it would break on arm64 at least. I'll
+work on it. We may have to make this opt in beyond HUGE_VMAP.
 
-greg k-h
+Thanks,
+Nick
 
 _______________________________________________
 linux-arm-kernel mailing list
