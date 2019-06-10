@@ -2,55 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AFFC3B717
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:18:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F38153B739
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:24:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RRkt6wLkqJsDS+Onn6ONeF9r3iUOfIJWx+NrfmFCqmY=; b=Xb0ICzx5xzltD6
-	QLnHTJgnYbcWj0mvYpkmtksThM/0N0nIovZH9+ojeWWrEnSw4KzsY18Xb+VrJmgrHtSrubE1VxqYb
-	4STg8/u/aBRqsIbFDyuja290krLVgAgw08O4euEJZWp2/SpiuKLdkTpIDfsA0nSkBstt1OzWuqfvO
-	RKjzWgStA8PSfbyH0XFL1yJBNHrvDLypeZngcGq8t0UT0vzu0/84/B8F1glplbPkzB1X4+4Hb5du8
-	K/JmHvFvtCOGCOK/c/OwnLz0Cuq+lmR7wGXtl/5xCMe41jn4ELwuqRU0hOlXT8nfcXTBUvYIVQwfW
-	a8aUwLDJdPR2FQy1viqg==;
+	List-Owner; bh=DSAuoC9VMsON+tcEp/LwVyZ1pcuVbx2JbjyvR/9Tlrg=; b=UCjMCnSRWmMMYY
+	t0NwZXv1xnTqSXgoCuCi59CcwWGtTY7ljhzqg4PaS0dPVIvAJ/5/034XnNdCvFd/YH1RP09Yr+OzD
+	LaOr4N8G6pAoHgWFwx+r2IpcU2LeX2UhMWZNAad8SoXLYdQhDhlL6jxSGxPkVwdlpgmSB7njoomoy
+	9CuqHkTqgjq5JxM4UYFc1rjeBk2JNROEleoB6TEoTriXdh2Sv3bn1QPxhYL2KkWKALzWhg22CxLBP
+	iFY3SSOiCmVG58pj0nl7dUZYwbYC6jA0riFhhwAEzZMHovu0WJRKPt/FhlhKSEU0Xk4W6uP0jKYhV
+	MwyfDrOnO6+2Mb1v2odA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haL7z-0005UP-JV; Mon, 10 Jun 2019 14:18:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haL7q-0005TQ-O6
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:18:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A786346;
- Mon, 10 Jun 2019 07:18:18 -0700 (PDT)
-Received: from c02tf0j2hf1t.cambridge.arm.com (c02tf0j2hf1t.cambridge.arm.com
- [10.1.32.192])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5D67E3F73C;
- Mon, 10 Jun 2019 07:18:16 -0700 (PDT)
-Date: Mon, 10 Jun 2019 15:18:13 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Steve Capper <steve.capper@arm.com>
-Subject: Re: [PATCH v2 08/12] arm64: mm: Logic to make offset_ttbr1 conditional
-Message-ID: <20190610141813.GA10165@c02tf0j2hf1t.cambridge.arm.com>
-References: <20190528161026.13193-1-steve.capper@arm.com>
- <20190528161026.13193-9-steve.capper@arm.com>
+	id 1haLDP-00079n-PL; Mon, 10 Jun 2019 14:24:03 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haLDE-00079N-Tj
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:23:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=9OSybgnmQ91PoaXFVruGCEv1Em60aOgOJ3s88JwC90A=; b=JUHX3imtoLCTLucGaqpxbV3ecD
+ fDbWpXOLo+4pMwc7VsQeUy++5XgaTm20OURI7N1WnP6SHAUeCoU0JiRIjXbJSlBXVIcHEYkuyyLZF
+ ySOyOCEV+wodnQNbm2ZLDR7LUNNbMVbhd+9efQsZC290P/r4bz1095EI0z9ZJO/uSPN4=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
+ (envelope-from <andrew@lunn.ch>)
+ id 1haLD5-0007YS-3K; Mon, 10 Jun 2019 16:23:43 +0200
+Date: Mon, 10 Jun 2019 16:23:43 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+Subject: Re: [PATCH v2 02/11] dt-bindings: net: Add a YAML schemas for the
+ generic PHY options
+Message-ID: <20190610142343.GD28724@lunn.ch>
+References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
+ <b5c46cff5b59d021634be143cf559c597f0a0e1f.1560158667.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190528161026.13193-9-steve.capper@arm.com>
-User-Agent: Mutt/1.11.2 (2019-01-07)
+In-Reply-To: <b5c46cff5b59d021634be143cf559c597f0a0e1f.1560158667.git-series.maxime.ripard@bootlin.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_071818_832276_F748BB52 
-X-CRM114-Status: GOOD (  11.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_072353_115770_D6C6AFDF 
+X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,45 +78,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, marc.zyngier@arm.com,
- bhsharma@redhat.com, will.deacon@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Steve,
+> +required:
+> +  - reg
+> +  - interrupts
 
-On Tue, May 28, 2019 at 05:10:22PM +0100, Steve Capper wrote:
-> diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-> index 039fbd822ec6..a42c392ed1e1 100644
-> --- a/arch/arm64/include/asm/assembler.h
-> +++ b/arch/arm64/include/asm/assembler.h
-> @@ -548,6 +548,14 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
->  	.macro	offset_ttbr1, ttbr
->  #ifdef CONFIG_ARM64_USER_VA_BITS_52
->  	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
-> +#endif
-> +
-> +#ifdef CONFIG_ARM64_USER_KERNEL_VA_BITS_52
-> +alternative_if_not ARM64_HAS_52BIT_VA
-> +	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
-> +alternative_else
-> +	nop
-> +alternative_endif
->  #endif
->  	.endm
+Hi Maxime
 
-As a nitpick, you could write alternative_else_not_endif instead of the
-last three lines.
+Interrupts are not required. That is an error in the .txt binding
+document.
 
-Anyway, we use offset_ttbr1 in a few early cases via
-idmap_cpu_replace_ttbr1 where the alternative framework hasn't got the
-chance to patch the instructions. I suggest you open-code the feature
-check in here, I don't think we use this on any fast path.
+Otherwise, this looks good:
 
--- 
-Catalin
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
