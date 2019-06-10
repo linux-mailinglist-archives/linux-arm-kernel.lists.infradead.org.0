@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B328F3AEE5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 08:06:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 980943AEED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 08:17:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UayBuzOl4HaKxB79/xVd/7vXuRe8+omy+khjr2kV02k=; b=UtTf9yubZC0ApU
-	gOE4Q9aQizhJSXt3dvVwSUUw8IIQJsp9RgZ3/k6xvhnNRCizbrcDF4HwOrpXm199WaAiYtcAH1Kcq
-	kLX62aWsCcSWojJiny4dfwU5I5VKd7YVw7ZjkG45iBk314mGcbsvwS8kU3T6/LCCsRjk1JHK5J2TD
-	9UDWkmae1cuFaGAlcYZurohe00w44RhV9VoMaLWMlHsHoJJ2VpizkHCJP94tNCJGnJDSdYyipAOfY
-	bk/VplVGls4HHFBYZJNnzsMuS+6AtYmTl7gl45MDuyvuEpVOlbk1/1scqLUGSNYyfVR146qkmE7Z1
-	VGgcPtaXeFJLItnrXFRA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
+	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GOseda/y2VG8welFz0/WOhB9AK3O9HKUjfC3201Gl30=; b=nPvVRbClcJ1l7X
+	rwEr4Tit/zoDDchRYMlM6y0oiYRzuTvNDfJ4za0ROFxiW3BFc/qh71TskAUCYgCoRhb8o2F+TlkzV
+	CEgKv6GFRbb6TxKW8keqewtfHT6DLf4gathb05Wh1dHZyNUOwMUPkkgbWxoLV1Ckp7kgtj/xvllwP
+	YYefGG1WHYWGoBBM9AYuS51HAUaFy9e9pBD/UZO/Y/41nqtrKIHyT7nW7asu/T2bhcxIyoQJNi1hr
+	mMKo3o7gvLLvmSEj+JpcS2ypfmSnMmyylA+kaNUX0kS2C2w0pAaPvA36jGrgaHjjHTdwIpltm3nRu
+	yE6qu/N9Qof3hDJjq1YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haDSH-0007JC-Q6; Mon, 10 Jun 2019 06:06:53 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1haDcW-0002K9-Mb; Mon, 10 Jun 2019 06:17:28 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haDS5-0007Im-Jw
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 06:06:42 +0000
-Received: by mail-pf1-x444.google.com with SMTP id 19so3800693pfa.4
+ id 1haDcI-0002Jn-KH
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 06:17:16 +0000
+Received: by mail-pg1-x543.google.com with SMTP id d30so4445697pgm.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 09 Jun 2019 23:06:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/Dkvj991Uhw/1cfRgxPNcyrHB69xx77ySHEyTXjhqvA=;
- b=JivEgBVuc6FZ4RjN29MeUE/bi4q5QoB1acpQCvG8UpXZhGQxck6vFiqw3+HjTh4Z5W
- 2K4vQW/5irgR3BnFrr6hbyNMNs+TGlC5gFHh39gF46VAA6T3UWprM0IpMfaexBbj7klS
- C0Urd0dp0FU36novirPjriUnM1bK4c4qYvHL5ciE28lX6N/I6tkzuWewsiYx41IgwElK
- 8EN8i0ved+yvkXSHOyHWnRxljY31ztw1L4wSWA9XJg4P1lxb+WrzDxCzsVGJ9b6EpCpr
- lNF96CTDQxEDstXRPOrYiz/mixGYEg9zIzZHwEFO467O4vSldUCZJuNfgCWnHkneFL4s
- oaew==
+ Sun, 09 Jun 2019 23:17:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:subject:to:cc:references:in-reply-to:mime-version
+ :user-agent:message-id:content-transfer-encoding;
+ bh=QUcM2bfCpfs+CF5Q3MEY89CqL+kCuIGlPKR4lAGQQUE=;
+ b=gBDc6s5wefUKJtnMQTjQlBkkBMula3LNzwu5ME6utMbGVzJqi2ERsUVzab2XgCGaqv
+ DQJ7aci9f7H4UxABCmtK3IE2t8OCIG662iAbqbilxNeqS0dImhTkOdQHbMhey38dlu7s
+ PqfAltLOAHAzHYFnBJttsikw1L9OCZE32ELJUTXo6NbGTBY4EJWHKsIZWbjH8QdjZ4ji
+ mHYGdGjvjHo305WfGXJMbWPHUTRwh5L6q/9f5A5e71SrlX9R1JG594iKIVUHm0Sq/KGn
+ FcrgeoxtVcPtQACR+Fk9WCSjtKK/cisrT2gfbd54KXApIEX6H/VO8hAhENIFVIXdYOWv
+ T9hQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/Dkvj991Uhw/1cfRgxPNcyrHB69xx77ySHEyTXjhqvA=;
- b=MwtLxbYhoLitHyjiZE8dgf4Zl1YgLLK39IApem4kcXdYTFrnKZJkH1RVz5Attr9nfL
- PVoCKmIpmRpLrutbMW/vJiOn/8G4SdAK1+sGsLZiKFqIwrFEwheWdVWKpCbCz8EIz3S0
- 8jKXsBY7gwLAqVwNd4SaBoGlzrXMG+vb78Go5eFq8q1OcSrCkQBGuZF4loRFCeOBvQct
- cOhvrKZNYqWM6xyx9+OtkpDhpLWBBem78qO4UFgTEVr2I354tABzMdT/CPLxE6wynRLY
- X8b6gAZ5lCcZt98MvPHb81I3IFWYbEYIUfHhRvwD42FfoD0PM+eBbrYl7vnz9vFd7y9X
- ONPA==
-X-Gm-Message-State: APjAAAXAIxb3qkqtXwrfXkm6fy6kcTnOBuHMGPJyOiWpYncbLR31f9u1
- 87Qjmww2WvvFAlywP4qqMjoXuw==
-X-Google-Smtp-Source: APXvYqwLbTkJ83xIZQSN0X41sV2Qx5mmIUMQI8suaFwh1ovaQIunxZGLx5yEKCwIgFShFJqoprwhXg==
-X-Received: by 2002:a62:2643:: with SMTP id m64mr70607053pfm.46.1560146800022; 
- Sun, 09 Jun 2019 23:06:40 -0700 (PDT)
-Received: from localhost ([122.172.66.84])
- by smtp.gmail.com with ESMTPSA id 26sm9290214pfi.147.2019.06.09.23.06.38
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 09 Jun 2019 23:06:38 -0700 (PDT)
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Dave Martin <Dave.Martin@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
- James Morse <james.morse@arm.com>, Julien Thierry <julien.thierry@arm.com>,
- Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>
-Subject: [PATCH V2] KVM: arm64: Implement vq_present() as a macro
-Date: Mon, 10 Jun 2019 11:36:33 +0530
-Message-Id: <7c2590c4d8cc95cd40bbb05c0d0c5e2b0735a16b.1560145715.git.viresh.kumar@linaro.org>
-X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
+ h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
+ :mime-version:user-agent:message-id:content-transfer-encoding;
+ bh=QUcM2bfCpfs+CF5Q3MEY89CqL+kCuIGlPKR4lAGQQUE=;
+ b=TG4yH5gS61N+2ckJGZ901V+Q+PP5qn0dhfPhMCKlE0KUoSjg5RKJsz4V8IcMqVxzox
+ zpE0UDuygjtFLpdFSH7Gld9AgBTpf+PDQH8u8dghT2YN4tQ9x8W/qCW8ajE9KTLSDU9h
+ pHhCSMuZFeI/H0KZqBrWu58TT1avOGqkPLBNIipnEqrwrVVxNmx7e0gjBjcksVyvHas2
+ sMJ+bmzGmgnOngc/T/kZhT+ywKtVq7TAfESw5FgJQWqe2Si+0aNpTx7qchA+Y54vmkdm
+ zpfusr8z3zBzfY1pT8454uoJAPIM3WCwl4eK6p/BQSSER6AyfCfnhcl9KhE5sZcytysc
+ N3jg==
+X-Gm-Message-State: APjAAAUeasUJmeZdGw9T+1fcyjSRjpet9gwMgG4l3kxasSg80A+U1fiD
+ 9aeoUzQd1i74lO+jf6anIqG9ojE7
+X-Google-Smtp-Source: APXvYqw34wde3ng/Qx9tQNG4a1tJVYDA4kMn2ZLcc1X5fYZq17VRglbkiBgljRp0MRwhwJZOeiXzvg==
+X-Received: by 2002:a63:de43:: with SMTP id y3mr14823919pgi.271.1560147431601; 
+ Sun, 09 Jun 2019 23:17:11 -0700 (PDT)
+Received: from localhost (60-241-56-246.tpgi.com.au. [60.241.56.246])
+ by smtp.gmail.com with ESMTPSA id q1sm15483011pfb.156.2019.06.09.23.17.09
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 09 Jun 2019 23:17:10 -0700 (PDT)
+Date: Mon, 10 Jun 2019 16:14:48 +1000
+From: Nicholas Piggin <npiggin@gmail.com>
+Subject: Re: [PATCH 2/4] arm64: support huge vmap vmalloc
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
+References: <20190610043838.27916-1-npiggin@gmail.com>
+ <20190610043838.27916-2-npiggin@gmail.com>
+ <c49a8fa7-c700-b45b-31b8-1d49afc42136@arm.com>
+In-Reply-To: <c49a8fa7-c700-b45b-31b8-1d49afc42136@arm.com>
 MIME-Version: 1.0
+User-Agent: astroid/0.14.0 (https://github.com/astroidmail/astroid)
+Message-Id: <1560147087.rpy7pimoej.astroid@bobo.none>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_230641_660818_4657A326 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20190609_231714_692771_04D2F021 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (npiggin[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -98,51 +101,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Viresh Kumar <viresh.kumar@linaro.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This routine is a one-liner and doesn't really need to be function and
-should be rather implemented as a macro.
+Anshuman Khandual's on June 10, 2019 3:47 pm:
+> 
+> 
+> On 06/10/2019 10:08 AM, Nicholas Piggin wrote:
+>> Applying huge vmap to vmalloc requires vmalloc_to_page to walk huge
+>> pages. Define pud_large and pmd_large to support this.
+>> 
+>> Signed-off-by: Nicholas Piggin <npiggin@gmail.com>
+>> ---
+>>  arch/arm64/include/asm/pgtable.h | 2 ++
+>>  1 file changed, 2 insertions(+)
+>> 
+>> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+>> index 2c41b04708fe..30fe7b344bf7 100644
+>> --- a/arch/arm64/include/asm/pgtable.h
+>> +++ b/arch/arm64/include/asm/pgtable.h
+>> @@ -428,6 +428,7 @@ extern pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+>>  				 PMD_TYPE_TABLE)
+>>  #define pmd_sect(pmd)		((pmd_val(pmd) & PMD_TYPE_MASK) == \
+>>  				 PMD_TYPE_SECT)
+>> +#define pmd_large(pmd)		pmd_sect(pmd)
+>>  
+>>  #if defined(CONFIG_ARM64_64K_PAGES) || CONFIG_PGTABLE_LEVELS < 3
+>>  #define pud_sect(pud)		(0)
+>> @@ -438,6 +439,7 @@ extern pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+>>  #define pud_table(pud)		((pud_val(pud) & PUD_TYPE_MASK) == \
+>>  				 PUD_TYPE_TABLE)
+>>  #endif
+>> +#define pud_large(pud)		pud_sect(pud)
+>>  
+>>  extern pgd_t init_pg_dir[PTRS_PER_PGD];
+>>  extern pgd_t init_pg_end[];
+> 
+> Another series (I guess not merged yet) is trying to add these wrappers
+> on arm64 (https://patchwork.kernel.org/patch/10883887/).
+> 
 
-Suggested-by: Dave Martin <Dave.Martin@arm.com>
-Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
----
-V1->V2:
-- The previous implementation was fixing a compilation error that
-  occurred only with old compilers (from 2015) due to a bug in the
-  compiler itself.
+Okay good, I'll just cherry pick it for the series.
 
-- Dave suggested to rather implement this as a macro which made more
-  sense.
-
- arch/arm64/kvm/guest.c | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
-
-diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-index 3ae2f82fca46..a429ed36a6a0 100644
---- a/arch/arm64/kvm/guest.c
-+++ b/arch/arm64/kvm/guest.c
-@@ -207,13 +207,7 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
- 
- #define vq_word(vq) (((vq) - SVE_VQ_MIN) / 64)
- #define vq_mask(vq) ((u64)1 << ((vq) - SVE_VQ_MIN) % 64)
--
--static bool vq_present(
--	const u64 (*const vqs)[KVM_ARM64_SVE_VLS_WORDS],
--	unsigned int vq)
--{
--	return (*vqs)[vq_word(vq)] & vq_mask(vq);
--}
-+#define vq_present(vqs, vq) ((*(vqs))[vq_word(vq)] & vq_mask(vq))
- 
- static int get_sve_vls(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
- {
--- 
-2.21.0.rc0.269.g1a574e7a288b
+Thanks,
+Nick
 
 
 _______________________________________________
