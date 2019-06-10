@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70FA03B3BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:07:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 397643B3C0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 13:08:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ooRch8RHE45p6wvQpVeGCNeU6ruGkPvMsX/OJfAU3oQ=; b=u9F
-	f0xXE4xglRZFaVrTa58ka3q4RWspotRaGF/+5pInmNO7X6ud2z3Zg6SgKOcceCvrSJnrFRl+vlGqx
-	Yang1TcMwYtgyacwUhBRXdz/IH5Srh/DEKU/4GZKK2IC9bcCPO9o/b2KEdW1MgsjdAIjJisAjuSAn
-	1qU0ZxL7WOuQSOwSMXTXgfZGZaZ2Lge4xQOzl7JKgPh6hkWFhHN53tX1lPsTd3lIxHvZ5t8SXUMen
-	Vp0IWAwg5+XLSFKevyYbcq3WmcAFCuzl6AwyiiRFHtzRgNI3Oa1ztAaBXaCdavKl5tgeJR+KK7R9s
-	q+luQ/cd29aiZ4mtRnI/Dep8Gv/yvMw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EBPmK07Xr4zy/10ok4sDPxd1hrMSwjfgcJ9C1Ms75ps=; b=tiZH9emdwBK5BD
+	6jJBLSTBtH7amxw4BzUc4/c56CR3taSgUXhYg94QpoBBQUdMzxMX2+26KUqH6tbw6353Gie1pojMg
+	5bLqnh8ZFS4NsV2YUnK0FViGEi+RlTXIRH/ldbdt8bcz+b5F2Jfx/cXhFQc2rgX3evi2aQQA6GdMA
+	ebeLjkHQHzui92zNseqR/h6/iXm560fEJA+pGTYyxlPWrDLU6olW6Je+eb2mwn0rv7ypc0VcMQnJ6
+	22zXcvK4SAnc1yaLrmMcaVtZXCLzcxjz9QTIv9fSsv9AjSkCKVo2cdMU0a1Pn/A3hmo3JzEplj0Uz
+	XoEroRxv1mh+4PGpu0dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haI8i-0000Al-EY; Mon, 10 Jun 2019 11:07:00 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haI8S-00009d-Hz
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 11:06:46 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0C46A200775;
- Mon, 10 Jun 2019 13:06:41 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F30E3200773;
- Mon, 10 Jun 2019 13:06:40 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net (gw_auto.ea.freescale.net
- [10.171.94.100])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 926D02061D;
- Mon, 10 Jun 2019 13:06:40 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH v2] clk: Add clk_parent entry in debugfs
-Date: Mon, 10 Jun 2019 14:06:38 +0300
-Message-Id: <82d6e1d63959ecb23bdcd363e93a27d08eee6859.1560164542.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1haI9t-0000Sb-Bg; Mon, 10 Jun 2019 11:08:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haI9V-0000SF-SH
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 11:07:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C949C337;
+ Mon, 10 Jun 2019 04:07:48 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D22E3F557;
+ Mon, 10 Jun 2019 04:09:28 -0700 (PDT)
+Subject: Re: [PATCH v6 01/19] kernel: Standardize vdso_datapage
+To: Huw Davies <huw@codeweavers.com>
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-2-vincenzo.frascino@arm.com>
+ <20190610092751.GA11076@merlot.physics.ox.ac.uk>
+ <58cedde2-0d54-7d2d-f519-77cb71f543fd@arm.com>
+ <20190610103151.GD11076@merlot.physics.ox.ac.uk>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <83ab2758-0e8c-35d5-906a-0338bcee3310@arm.com>
+Date: Mon, 10 Jun 2019 12:07:45 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20190610103151.GD11076@merlot.physics.ox.ac.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_040644_732859_EB65650D 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190610_040749_959871_5292CEF8 
+X-CRM114-Status: GOOD (  16.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,86 +65,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter De Schrijver <pdeschrijver@nvidia.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This allows to easily determine the parent in shell scripts without
-parsing more complex files.
+Hi Huw,
 
-Add the clk_parent file for all clks which can have a parent, not just
-muxes. This way it can be used to determine the clk tree structure
-without parsing more complex files.
+On 10/06/2019 11:31, Huw Davies wrote:
+> On Mon, Jun 10, 2019 at 11:17:48AM +0100, Vincenzo Frascino wrote:
+>> On 10/06/2019 10:27, Huw Davies wrote:
+>>> On Thu, May 30, 2019 at 03:15:13PM +0100, Vincenzo Frascino wrote:
+>>>> --- /dev/null
+>>>> +++ b/include/vdso/datapage.h
+>>>> @@ -0,0 +1,91 @@
+>>>> +/* SPDX-License-Identifier: GPL-2.0 */
+>>>> +#ifndef __VDSO_DATAPAGE_H
+>>>> +#define __VDSO_DATAPAGE_H
+>>>> +
+>>>> +#ifdef __KERNEL__
+>>>> +
+>>>> +#ifndef __ASSEMBLY__
+>>>> +
+>>>> +#include <linux/bits.h>
+>>>> +#include <linux/time.h>
+>>>> +#include <linux/types.h>
+>>>> +
+>>>> +#define VDSO_BASES	(CLOCK_TAI + 1)
+>>>> +#define VDSO_HRES	(BIT(CLOCK_REALTIME)		| \
+>>>> +			 BIT(CLOCK_MONOTONIC)		| \
+>>>> +			 BIT(CLOCK_BOOTTIME)		| \
+>>>> +			 BIT(CLOCK_TAI))
+>>>> +#define VDSO_COARSE	(BIT(CLOCK_REALTIME_COARSE)	| \
+>>>> +			 BIT(CLOCK_MONOTONIC_COARSE))
+>>>> +#define VDSO_RAW	(BIT(CLOCK_MONOTONIC_RAW))
+>>>> +
+>>>> +#define CS_HRES_COARSE	0
+>>>> +#define CS_RAW		1
+>>>
+>>> CS_HRES_COARSE seems like a confusing name choice to me.  What you
+>>> really mean is not RAW.
+>>>
+>>> How about CS_ADJ to indicate that its updated by adjtime?
+>>> CS_XTIME might be another option.
+>>>
+>>
+>> I divided the timers in 3 sets (HRES, COARSE, RAW), CS_HRES_COARSE refers to the
+>> first two and CS_RAW to the third. I will ad a comment to explain the logic in
+>> the next iteration.
+> 
+> I'm thinking ahead about a possible CLOCK_MONOTONIC_RAW_COARSE (which
+> would be useful at least for Wine).  In that case you'd have four clock
+> types non-raw and raw, each with either hres or coarse.
+> 
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+Thanks for this, I was not aware of CLOCK_MONOTONIC_RAW_COARSE.
+I tried to find, though, some details, but I could not find any. Could you
+please provide some reference?
 
----
-Changes since v1: Only add clk_parent if num_parents > 0
+> Huw.
+> 
 
-It seems that num_parents is only initialized once and never changes so
-having a check here makes sense: skip the clk_parent file if the clk can
-never have parent (num_parent == 0) but keep it if the parent is
-constant (num_parents == 1).
-
-It seems the parent can be set to NULL later so keep the check for
-(core->parent != NULL) in the show function.
-
-Link to v1: https://patchwork.kernel.org/patch/10959347/
----
- drivers/clk/clk.c | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
-
-diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-index aa51756fd4d6..d21a219deef8 100644
---- a/drivers/clk/clk.c
-+++ b/drivers/clk/clk.c
-@@ -3009,10 +3009,21 @@ static int possible_parents_show(struct seq_file *s, void *data)
- 
- 	return 0;
- }
- DEFINE_SHOW_ATTRIBUTE(possible_parents);
- 
-+static int current_parent_show(struct seq_file *s, void *data)
-+{
-+	struct clk_core *core = s->private;
-+
-+	if (core->parent)
-+		seq_printf(s, "%s\n", core->parent->name);
-+
-+	return 0;
-+}
-+DEFINE_SHOW_ATTRIBUTE(current_parent);
-+
- static int clk_duty_cycle_show(struct seq_file *s, void *data)
- {
- 	struct clk_core *core = s->private;
- 	struct clk_duty *duty = &core->duty;
- 
-@@ -3041,10 +3052,14 @@ static void clk_debug_create_one(struct clk_core *core, struct dentry *pdentry)
- 	debugfs_create_u32("clk_protect_count", 0444, root, &core->protect_count);
- 	debugfs_create_u32("clk_notifier_count", 0444, root, &core->notifier_count);
- 	debugfs_create_file("clk_duty_cycle", 0444, root, core,
- 			    &clk_duty_cycle_fops);
- 
-+	if (core->num_parents > 0)
-+		debugfs_create_file("clk_parent", 0444, root, core,
-+				    &current_parent_fops);
-+
- 	if (core->num_parents > 1)
- 		debugfs_create_file("clk_possible_parents", 0444, root, core,
- 				    &possible_parents_fops);
- 
- 	if (core->ops->debug_init)
 -- 
-2.17.1
-
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
