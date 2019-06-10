@@ -2,95 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A9BA3B7B5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:47:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD30A3B7C8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:52:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
-	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Eun22Oaiigkm6xVwpknjV1t/kQ9kUtEa/g+LBXQgkjg=; b=mTYeo/a8W9vqT6
-	hBPUkkLqTXBllDY8FWYGrsUAd30kFp6QoFoVtMWdmcynVWxNGL4qx4m3P7TECM9aKmsQzT/Q54hwY
-	60puNHZVtFFE8XtcTD1KSAuQRP4o+CVxD/KIa+mQgFb5Xrim50MyLk85qyj/Glo0907f+Cguj17RL
-	H6/1F8k3J8/6usOTlxzW5WkAlyeIROoRSdbxK4Ph2opvmfG5QGx4+zB3FjJatTmyuWD6OuWkrrDm6
-	YQdcL0ZhRaxV3Ggg+0vvpjQELyMPXWcj3cE2I9vPqKae2Og7kYcgRU7R3zSEouKCLUUjr8FXrS2XJ
-	Av2vv0Bv/FmN99c9oM7w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ywe3wo8ZXuWk+5arbgTlHQK1JT5ELJsJDYZyJMp2MfQ=; b=b7kOza0cQj5QZ4
+	3QNSVZpKoGjMi9VEbp1mAMUZFMy0dzYNDvJtiOcHq6WVh1AogWjsX6GHIkIIR2uGSaPLFrOw5iW1f
+	36jJ9UydGOE7K0JRsv7xA1+Tqt+q2wGmaLMslqoEZKQHxl77jJNVjsGMaezT94FksZc9kljcB1rsz
+	ToIyfj7aS1Ee+1wF/6R7SuFJpcyPv6+WO7Fz4dM847HIFTfYjQoNaGJrIAS8qDPGxWbNe3WinzeHK
+	v9X2DM8BYtSBpXHcKVDMw1XN35VchpvpaJFLA+TaMhu5H40056XwaU8RyZ+eu0tYS7gRIxtDG6Bb4
+	QmzTGmk7LnDaBBNte1cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLa2-0001V1-DQ; Mon, 10 Jun 2019 14:47:26 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haLZs-0001Ts-Mx
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:47:17 +0000
-Received: by mail-pl1-x644.google.com with SMTP id e5so3744449pls.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 07:47:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:subject:to:cc:references:in-reply-to:mime-version
- :user-agent:message-id:content-transfer-encoding;
- bh=Wq53+njaY8Nizg87bnJv9I6awFz838NRdQghS0a7fkM=;
- b=X5g0JAvdV1k6T8yY6ZUvrcraWM4yMrG/lxJCK+nAqRLcZyfzQtXY4ZbYz6fOYHWy3n
- Ou8dcJ4J6pIL1UEocGoC4sPgamfUWIHesWmZ8UX6rEWSdzt9ISIcx9cBiIgBO1pLSbDQ
- bhOBx/V93amqxNh29DiYEna/vlDWwPNSH0HP8kuGzL0W2dnDnjJk1o+mR2xDI146xllb
- CGKw3KHTmadPXuq8gLrXsXWVk8oNjiQOOuOZXkERDlgP23OsxNnnrUkyJ5sqo3VO0K3v
- NviZJEwFJwnWh80oqJu8/n12fYX46vxiYKwSmmxCyHZAabHAJNThB0WoxME22CohL67N
- 7IJQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
- :mime-version:user-agent:message-id:content-transfer-encoding;
- bh=Wq53+njaY8Nizg87bnJv9I6awFz838NRdQghS0a7fkM=;
- b=FaO7vam7XEjY/rsARYEQ4HqhGep0saFupnA00UmmSsb5sOgRElYO/V/iODfuCWRpho
- mAQy50w9qMe++CTM/0+Xzl/KwYoFi0ZqXrsbtK1G+WAMUeQMwpS1OVIfPpQ5YRhTWk7h
- tmQZo+/CsI4P4F2DYBQdC7P1wVGj+6f+xqDHem2pez2ipD+KmKKP+4EBisntlX8Lrv4U
- G0pwn+LsgtCkTGLiaL0CkZNk+Xq+fe2snFA73B/0rbuhKRmpm1N222gEpKwoewtiDGBI
- xsE3qLc1iVUHHvpwrXv+pok0vCHnSzRTdc/nYRH7zOffy9LE18kJmIiziUS2QBvExYrG
- cCcg==
-X-Gm-Message-State: APjAAAXo3Je0XoY4Co3EuDIOumnfCkZ9gBe4UZLS24WqcLPUqriOj83I
- jeetvKKfLJ+a9UlQtB0LsBVfeTOa
-X-Google-Smtp-Source: APXvYqzO+K5a5izxxRmZJDOMMeEKbiwUXCm3sWfTX0ai2WfHFHXOFTxBzy4ayjR/yFM/5mp8uqkfJw==
-X-Received: by 2002:a17:902:8f81:: with SMTP id
- z1mr4934200plo.290.1560178036097; 
- Mon, 10 Jun 2019 07:47:16 -0700 (PDT)
-Received: from localhost (60-241-56-246.tpgi.com.au. [60.241.56.246])
- by smtp.gmail.com with ESMTPSA id p68sm4145337pfb.80.2019.06.10.07.47.14
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 10 Jun 2019 07:47:15 -0700 (PDT)
-Date: Tue, 11 Jun 2019 00:44:49 +1000
-From: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: [PATCH 4/4] mm/vmalloc: Hugepage vmalloc mappings
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20190610043838.27916-1-npiggin@gmail.com>
- <20190610043838.27916-4-npiggin@gmail.com>
- <20190610141036.GA16989@lakrids.cambridge.arm.com>
-In-Reply-To: <20190610141036.GA16989@lakrids.cambridge.arm.com>
+	id 1haLes-0003cQ-Be; Mon, 10 Jun 2019 14:52:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haLei-0003bt-Sw
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:52:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2FE2A344;
+ Mon, 10 Jun 2019 07:52:16 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 88BE73F73C; Mon, 10 Jun 2019 07:52:13 -0700 (PDT)
+Subject: Re: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
+To: Leonard Crestez <leonard.crestez@nxp.com>, Abel Vesa <abel.vesa@nxp.com>, 
+ Lucas Stach <l.stach@pengutronix.de>
+References: <20190610121346.15779-1-abel.vesa@nxp.com>
+ <20190610131921.GB14647@lakrids.cambridge.arm.com>
+ <20190610132910.srd4j2gtidjeppdx@fsr-ub1664-175>
+ <6f1052ea-623a-b2e8-9aa8-22aef5fab4ca@arm.com>
+ <20190610135514.xd5myavjsloos2y3@fsr-ub1664-175>
+ <7b86aa90-6d64-589c-f11e-d2ee6ab3fd54@arm.com>
+ <VI1PR04MB5055A808A08A1C47784E4332EE130@VI1PR04MB5055.eurprd04.prod.outlook.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <760bde51-f683-5975-4431-864f16e3365b@arm.com>
+Date: Mon, 10 Jun 2019 15:52:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-User-Agent: astroid/0.14.0 (https://github.com/astroidmail/astroid)
-Message-Id: <1560177786.t6c5cn5hw4.astroid@bobo.none>
+In-Reply-To: <VI1PR04MB5055A808A08A1C47784E4332EE130@VI1PR04MB5055.eurprd04.prod.outlook.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_074716_778096_CE51A658 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_075217_026809_60ECCFA9 
+X-CRM114-Status: GOOD (  25.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (npiggin[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,40 +113,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jacky Bai <ping.bai@nxp.com>,
+ Carlo Caione <ccaione@baylibre.com>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Abel Vesa <abelvesa@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Mark Rutland's on June 11, 2019 12:10 am:
-> Hi,
+On 10/06/2019 15:32, Leonard Crestez wrote:
+> On 6/10/2019 5:08 PM, Marc Zyngier wrote:
+>> On 10/06/2019 14:55, Abel Vesa wrote:
+>>> On 19-06-10 14:39:02, Marc Zyngier wrote:
+>>>> On 10/06/2019 14:29, Abel Vesa wrote:
+>>>>> On 19-06-10 14:19:21, Mark Rutland wrote:
+>>>>>> On Mon, Jun 10, 2019 at 03:13:44PM +0300, Abel Vesa wrote:
 > 
-> On Mon, Jun 10, 2019 at 02:38:38PM +1000, Nicholas Piggin wrote:
->> For platforms that define HAVE_ARCH_HUGE_VMAP, have vmap allow vmalloc to
->> allocate huge pages and map them
->> 
->> This brings dTLB misses for linux kernel tree `git diff` from 45,000 to
->> 8,000 on a Kaby Lake KVM guest with 8MB dentry hash and mitigations=off
->> (performance is in the noise, under 1% difference, page tables are likely
->> to be well cached for this workload). Similar numbers are seen on POWER9.
+>>>>>>> Basically, it 'hijacks' the registered gic_raise_softirq __smp_cross_call
+>>>>>>> handler and registers instead a wrapper which calls in the 'hijacked'
+>>>>>>> handler, after that calling into EL3 which will take care of the actual
+>>>>>>> wake up. This time, instead of expanding the PSCI ABI, we use a new vendor SIP.
+>>>>>>
+>>>>>> IIUC from last time [1,2], this erratum affects all interrupts
+>>>>>> targetting teh idle CPU, not just IPIs, so even if the bodge is more
+>>>>>> self-contained, it doesn't really solve the issue, and there are still
+>>>>>> cases where a CPU will not be woken from idle when it should be (e.g.
+>>>>>> upon receipt of an LPI).
+>>>>>
+>>>>> Wrong, this erratum does not affect any other type of interrupts, other
+>>>>> than IPIs. That is because all the other interrupts go through GPC,
+>>>>> which means the cores will wake up on any other type (again, other than IPI).
+>>>>
+>>>> Huh... Are you saying that LPIs and PPIs are going through the GPC, and
+>>>> will trigger the wake-up of the core? That's not the conclusion we
+>>>> reached last time.
+>>>
+>>> Hmm, I don't think that was the conclusion. Yes, Lucas was saying (IIRC)
+>>> that if you terminate the IRQs at GIC then all the other interrupts will be
+>>> in the same situation. But the performance improvement given by terminating
+>>> them at GIC might not be worth it when compared to the cpuidle support.
+>>
+>> PPIs are broken,
+>> relying on some other terrible hack for the timer (and only the timer,
+>> leaving other PPIs dead as a nail). It also implies that LPIs have never
+>> been looked into, and given that they aren't routed through the GPC, the
+>> conclusion is pretty easy to draw.
+>>
+>> Nobody is talking about performance here. It is strictly about
+>> correctness, and what I read about this system is that it cannot
+>> reliably use cpuidle.
+> My argument was that it's fine if PPIs and LPIs are broken as long as 
+> they're not used:
 > 
-> Do you happen to know which vmalloc mappings these get used for in the
-> above case? Where do we see vmalloc mappings that large?
+>   * PPIs are only used for local timer which is not used for wakeup.
 
-Large module vmalloc could be subject to huge mappings.
+How about the PMU and GIC maintenance interrupts? Any interrupt should
+get you out of idle.
 
-> I'm worried as to how this would interact with the set_memory_*()
-> functions, as on arm64 those can only operate on page-granular mappings.
-> Those may need fixing up to handle huge mappings; certainly if the above
-> is all for modules.
+>   * LPIs on imx are not currently implemented.
 
-Good point, that looks like it would break on arm64 at least. I'll
-work on it. We may have to make this opt in beyond HUGE_VMAP.
+Define "implemented". You don't have an ITS at all? Or is it that you
+currently don't expose the ITS in your firmware?
 
-Thanks,
-Nick
+> This workaround is only targeted at a very specific SOC with specific 
+> usecases and in that context it behaves correctly, as far as I can tell.
+
+And I still maintain that such specific use cases should be kept
+specific, and that the mainline kernel should be reliable in all
+circumstances.
+
+> As mentioned in another thread the HW issue was already solved in newer 
+> chips of the same family (like imx8mm). If there is a need for PPIs and 
+> LPIs on imx8mq in the future then maybe we can detect that scenario and 
+> disable cpuidle?
+
+I'd suggest it the other way around. No cpuidle unless you absolutely
+force it, tainting the kernel in the process.
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
