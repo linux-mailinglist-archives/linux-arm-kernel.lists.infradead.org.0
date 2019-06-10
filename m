@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B31C83B354
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 12:36:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2915C3B35A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 12:37:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VFXf/DEU+b7uY5D2by77iWoZjX+DzjNWCasasbzcxC4=; b=YY75PmlnKElMTX
-	+hZfA7F4D5UPAedZqRjlEclzYOwbONmZ/3e2Z7+NHitojZKWRBFNYVXiQnj4gzPX3rjErcOFIepbF
-	ujhMPnjyFDkhyVE49Y24PgfEFi28KfnMYKiwS4Vkj338dDfz6g1FQdeiis11NuJyxI/+vV1T7zfwU
-	+JJfY3obI3+sKNZWmfSvLD4q9Nw7SM+y9uPwNNcZrQxeWDf6uAJjzj3ZSIoBwqil0ukbrRsCbP+SL
-	HdXQ9/9MtHjk0xcvVS78Z20ax7wnvtqn5dD+xzWfm04MyS3FBtBU6ox+QIDQQiVJ/PlbgvV7rVftG
-	epIYBJoi2Z7iIulJF1yA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kCTIrQjA/qKmzWZXseaU/KFg5s29ylkE4K3/wOIiINc=; b=TvQOY+u0fHjHhy
+	33c2tm54C8YIKkHuB6DFaCtWLPSjF2CIFLVDlfSMejC0NuMDO4hIW8wDB07L7Z1sf00N/CDa4iRVr
+	vph6eFxSsakb0o1eG2G2o2JdRZ8+IB7JzntxJZu/yOzEq0ybfVO6/1SgcV3FB6F6VIWX38P6kVJk6
+	DaYWDUTgBm8LHF1eqnKj7yqFlNXxDD49NYhFMIGcJ5jP0Io5Uhm88SBPkEuU7tSw0LDi24dNopsnK
+	3cSWxtRzgwt7tviGNnEzmXi0RLvYHLRpdnFyRq7leBqf0WDn18Eg+XfFcittRzMqK/3V0AsOhKYWk
+	GwtxnHy7KFHRB/Um0hoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haHfb-0002aJ-Qv; Mon, 10 Jun 2019 10:36:55 +0000
+	id 1haHgU-0003cM-BW; Mon, 10 Jun 2019 10:37:50 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haHfN-0002Yt-Vt; Mon, 10 Jun 2019 10:36:43 +0000
-X-UUID: 0469867210da4811a5e3dbb24ee34949-20190610
-X-UUID: 0469867210da4811a5e3dbb24ee34949-20190610
+ id 1haHfZ-0002jD-Tc; Mon, 10 Jun 2019 10:36:55 +0000
+X-UUID: d66631e7966e4b268f90b172e098294d-20190610
+X-UUID: d66631e7966e4b268f90b172e098294d-20190610
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <neal.liu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 898115134; Mon, 10 Jun 2019 02:36:36 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Jun 2019 03:36:34 -0700
+ with ESMTP id 1084503431; Mon, 10 Jun 2019 02:36:42 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Jun 2019 03:36:41 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Mon, 10 Jun 2019 18:36:33 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -41,15 +41,18 @@ From: Neal Liu <neal.liu@mediatek.com>
 To: Matt Mackall <mpm@selenic.com>, Herbert Xu <herbert@gondor.apana.org.au>, 
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Sean Wang <sean.wang@kernel.org>
-Subject: [PATCH v3 0/3] MediaTek Security random number generator support
-Date: Mon, 10 Jun 2019 18:36:21 +0800
-Message-ID: <1560162984-26104-1-git-send-email-neal.liu@mediatek.com>
+Subject: [PATCH v3 1/3] soc: mediatek: add SMC fid table for SIP interface
+Date: Mon, 10 Jun 2019 18:36:22 +0800
+Message-ID: <1560162984-26104-2-git-send-email-neal.liu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1560162984-26104-1-git-send-email-neal.liu@mediatek.com>
+References: <1560162984-26104-1-git-send-email-neal.liu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: AB049FDEE81F782DF02F0C1296A73261E00F082DEA0E126DB98903FBC0B15F5C2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_033642_031151_6ED083A2 
-X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-CacheID: sfid-20190610_033653_979833_0700EE73 
+X-CRM114-Status: UNSURE (   9.82  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,45 +83,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These patch series introduce a generic rng driver for Trustzone
-based kernel driver which would like to communicate with ATF
-SIP services.
+1. Add a header file to provide SIP interface to ATF
+2. Add hwrng SMC fid
 
-Patch #1 initials SMC fid table for Mediatek SIP interfaces and
-adds HWRNG related SMC call.
-
-Patch #2..3 adds mtk-sec-rng kernel driver for Trustzone based SoCs.
-For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
-entropy sources is not accessible from normal world (linux) and
-rather accessible from secure world (ATF/TEE) only. This driver aims
-to provide a generic interface to ATF rng service.
-
-
-changes since v1:
-- rename mt67xx-rng to mtk-sec-rng since all MediaTek ARMv8 SoCs
-can reuse this driver.
-- refine coding style and unnecessary check.
-
-changes since v2:
-- remove unused comments.
-- remove redundant variable.
-
-Neal Liu (3):
-  soc: mediatek: add SMC fid table for SIP interface
-  dt-bindings: rng: update bindings for MediaTek ARMv8 SoCs
-  hwrng: add mtk-sec-rng driver
-
- .../devicetree/bindings/rng/mtk-rng.txt       | 15 ++-
- drivers/char/hw_random/Kconfig                | 16 +++
- drivers/char/hw_random/Makefile               |  1 +
- drivers/char/hw_random/mtk-sec-rng.c          | 97 +++++++++++++++++++
- include/linux/soc/mediatek/mtk_sip_svc.h      | 33 +++++++
- 5 files changed, 159 insertions(+), 3 deletions(-)
- create mode 100644 drivers/char/hw_random/mtk-sec-rng.c
+Signed-off-by: Neal Liu <neal.liu@mediatek.com>
+---
+ include/linux/soc/mediatek/mtk_sip_svc.h |   33 ++++++++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
  create mode 100644 include/linux/soc/mediatek/mtk_sip_svc.h
 
+diff --git a/include/linux/soc/mediatek/mtk_sip_svc.h b/include/linux/soc/mediatek/mtk_sip_svc.h
+new file mode 100644
+index 0000000..e70c325
+--- /dev/null
++++ b/include/linux/soc/mediatek/mtk_sip_svc.h
+@@ -0,0 +1,33 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2019 MediaTek Inc.
++ */
++
++#ifndef _MTK_SECURE_API_H_
++#define _MTK_SECURE_API_H_
++
++#include <linux/kernel.h>
++
++/* Error Code */
++#define SIP_SVC_E_SUCCESS		0
++#define SIP_SVC_E_NOT_SUPPORTED		-1
++#define SIP_SVC_E_INVALID_PARAMS	-2
++#define SIP_SVC_E_INVALID_RANGE		-3
++#define SIP_SVC_E_PERMISSION_DENY	-4
++
++#ifdef CONFIG_ARM64
++#define MTK_SIP_SMC_AARCH_BIT		BIT(30)
++#else
++#define MTK_SIP_SMC_AARCH_BIT		0
++#endif
++
++/*******************************************************************************
++ * Defines for Mediatek runtime services func ids
++ ******************************************************************************/
++
++/* Security related SMC call */
++/* HWRNG */
++#define MTK_SIP_KERNEL_GET_RND \
++	(0x82000206 | MTK_SIP_SMC_AARCH_BIT)
++
++#endif /* _MTK_SECURE_API_H_ */
 -- 
-2.18.0
+1.7.9.5
 
 
 _______________________________________________
