@@ -2,86 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08D633B7FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:05:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37C393B809
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:07:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SIPjpHAMkXcIJ6N95YJKqW9C/9+Hp6rM3Pa7lvOTFIs=; b=XVHp6cIieZSEEZ
-	h7R340wc9k22qwWEUBYq6jr/I7ZMzx81Wbp3qFIvEg/Q8u5bAP+DSbXZDGEirgit/dVo+FgzsORcv
-	AZU2aFl8rh1PltMSPoitJwXBQ1NGN4bEcL7wHqZHuqTyjHic1lnASTvouHfDetAzlHr+sg++3/Q55
-	k0UXPL/4kthuMzMK/A1+s6pa/rUEWz/M3UQhGwJF5G2vo4p32hiBchwkKIfdJ4D97XUUrD/KsmWIg
-	KkNKuKf6dCYbWQAT+v9GErVEBN3jq3IyoJ8VDBiOz7+HkopV0Kt8yYy6RGgSOPeuwHOq1uQk1QN2H
-	i6aNzCF2w+dhSWWjxwHw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E5OpNQ4utXSIfRERiHAaz7ypSH/lCOIUklrlkXQ1GUI=; b=NubTn2+9ljx5hD
+	V8jYbgY7ty7N4zYjXOf1a8aLSC07T1SwaatAMvAQLf2BYf8b/boC5jxv732knQDlvJrut+tevSfPF
+	FZlUU/4O3KO47YAaLGMDiDwW/rNxPbN56YeYnt4HEwlaiBOoJ0fTMIwjWYCSFS/w8gjHCqms7q+Vk
+	QWOu9W270kTBPLLui/4jJbILpMP3Jp7JWr3acvCb+vO3pxJ2KgQEKFmJPEgDhs9ySvsYG6eTi5syt
+	lDc2QIFwXr0QMOXdmNED4D1cDIKdWiIkDJ5FeFOV8pJggWSSSZNLlrThKHGi4D8dhE/gfjRLHuFi7
+	745SrqsBOUFxhKFPLaXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLrp-0000vY-Qm; Mon, 10 Jun 2019 15:05:49 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1haLtO-0001a9-GA; Mon, 10 Jun 2019 15:07:26 +0000
+Received: from mail-co1nam04on061b.outbound.protection.outlook.com
+ ([2a01:111:f400:fe4d::61b]
+ helo=NAM04-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haLrf-0000vA-2z
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 15:05:40 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u8so8525888wmm.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 08:05:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RkQ4CjPEDkGzkvOTsVe8hBovG/baYmxmmxTNcRwbQ6A=;
- b=cgDk7wTG4n038EhFmcAwzmy2sh3c3WnR4WUxrgOgCpgBWcRWcud2NzuopspUI5VY8y
- asGjnzPx86XbuC8jCJkrFmmlKwswDTLD365JhPYxCfBTpEv1B7izqOXPOuBeyR0OSp+E
- MpzXaxyZ36enUF41A16Z+IWIv5j0xfx0IzzIGjHTt4cNWQOvckBLLdOKwy4YJFsTfxVC
- Ko0ESWZYNyJjQ23Kjx/Rj+ii+91I2T//H9TLKgie9coGA9cGfZFiEehcSSiAEYxwJJvX
- /Bj2u6DWb8lpa6lJpqOMqp3XFwqmxkhgzVPV2yWbbeF/XJ2fbG44Mb02TBUJxx4SIe4i
- 3wKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RkQ4CjPEDkGzkvOTsVe8hBovG/baYmxmmxTNcRwbQ6A=;
- b=FNg872w7Y9Zjasv+mHQT8SfThBpq9qZWRloigqfzT9jGUR9bpnA5TS9o8KnlPCGgqV
- +emQYDpz6jnJ3tCB/U92dsH0PAfzRL1X8Zl5pJYiGAFeu89TkSqBdnYVCcXZP+zPqQlK
- VjczHO1Iw4dlA1+EaXM6x3Z45+9G9MKjcAYelAKbyk0YA3Wpo/pwI41QtfGPTKnco6pG
- Rh6x9EOSiqZgEYHCMUrudRUWtJHFIKq0CPdiSvypy21w+h2hwXez1R1i1VicPpj4eSLw
- yZa/ZiGaLcJG5U69KkNh4jPVxza67kVjiH6ucT9VaS5AanBgc2TEUSywjjS3bkrASPSD
- IaPw==
-X-Gm-Message-State: APjAAAWEFaZvDZcouZQ2Ua1HbhIiY24iFIulK1GensZr2nJ0NHEijSVk
- UYzh/AnlQq9x2/UKSOQNBl23og==
-X-Google-Smtp-Source: APXvYqxJg943SALFFymt1y12G7kifsXfVhOXdBnuXAcUNu5l9BSYevC2+qtkoLgUaxAp73ncfkfUeg==
-X-Received: by 2002:a1c:448b:: with SMTP id
- r133mr14454728wma.114.1560179136378; 
- Mon, 10 Jun 2019 08:05:36 -0700 (PDT)
-Received: from sudo.home ([2a01:cb1d:112:6f00:fc6b:c1c2:30ed:eca3])
- by smtp.gmail.com with ESMTPSA id e7sm8633054wmd.0.2019.06.10.08.05.35
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 08:05:35 -0700 (PDT)
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-To: linux-efi@vger.kernel.org
-Subject: [PATCH] efi/memreserve: deal with memreserve entries in unmapped
- memory
-Date: Mon, 10 Jun 2019 17:05:30 +0200
-Message-Id: <20190610150530.10306-1-ard.biesheuvel@linaro.org>
-X-Mailer: git-send-email 2.20.1
+ id 1haLtD-0001Zh-I1
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 15:07:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LlGbTDK0vCLS7MgntYsuF/kp19ce2eRMINisNYYRO6E=;
+ b=hYhK3OgVmpN6LoXdxxZNXDxZmEcp1MUz9TsT/u6uH4cjJ8Kor00/gtFsWBrbpI2HULiglAN9aSj8FxOvSS/M+CWU/JjcMf6kfuV5kYngWJJ4v4Ntd7T06tDV9xMf9YtYY1Yz0aVIhioO65YRDnncfbqdTh3JpwWYoxuJqDcyROQ=
+Received: from BL0PR02CA0082.namprd02.prod.outlook.com (2603:10b6:208:51::23)
+ by DM6PR02MB6233.namprd02.prod.outlook.com (2603:10b6:5:1d1::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.12; Mon, 10 Jun
+ 2019 15:07:12 +0000
+Received: from CY1NAM02FT063.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::208) by BL0PR02CA0082.outlook.office365.com
+ (2603:10b6:208:51::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1965.12 via Frontend
+ Transport; Mon, 10 Jun 2019 15:07:11 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+ smtp.mailfrom=xilinx.com; linuxfoundation.org; dkim=none (message not signed)
+ header.d=none;linuxfoundation.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
+Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
+ CY1NAM02FT063.mail.protection.outlook.com (10.152.75.161) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1965.12
+ via Frontend Transport; Mon, 10 Jun 2019 15:07:11 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66]:51802
+ helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1haLt8-0006nT-MQ; Mon, 10 Jun 2019 08:07:10 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1haLt3-0007JQ-KN; Mon, 10 Jun 2019 08:07:05 -0700
+Received: from xsj-pvapsmtp01 (maildrop.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x5AF70ek027439; 
+ Mon, 10 Jun 2019 08:07:00 -0700
+Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1haLsy-0007HS-Io; Mon, 10 Jun 2019 08:07:00 -0700
+Subject: Re: [PATCH 1/2] serial: xilinx_uartps: Fix warnings in the driver
+To: Greg KH <gregkh@linuxfoundation.org>,
+ Michal Simek <michal.simek@xilinx.com>
+References: <c6753260caf8b20cc002b15fcbf22b759c91d760.1560156294.git.michal.simek@xilinx.com>
+ <20190610144425.GC31086@kroah.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <888c7d0a-28dc-978c-662a-e96ee3863c41@xilinx.com>
+Date: Mon, 10 Jun 2019 17:06:57 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190610144425.GC31086@kroah.com>
+Content-Language: en-US
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(346002)(396003)(136003)(376002)(39860400002)(2980300002)(199004)(189003)(426003)(9786002)(65826007)(486006)(54906003)(26005)(70206006)(76176011)(186003)(70586007)(4326008)(478600001)(230700001)(305945005)(446003)(36386004)(44832011)(2906002)(476003)(336012)(11346002)(126002)(2616005)(50466002)(47776003)(6246003)(106002)(8676002)(229853002)(81156014)(31686004)(31696002)(81166006)(5660300002)(65806001)(63266004)(14444005)(2486003)(52146003)(23676004)(77096007)(316002)(6666004)(356004)(65956001)(8936002)(4744005)(64126003)(36756003)(58126008)(110136005)(5001870100001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB6233; H:xsj-pvapsmtpgw02; FPR:;
+ SPF:Pass; LANG:en; PTR:xapps1.xilinx.com,unknown-60-100.xilinx.com; A:1; MX:1;
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: cd0c7092-6051-4d85-cc11-08d6edb55094
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:DM6PR02MB6233; 
+X-MS-TrafficTypeDiagnostic: DM6PR02MB6233:
+X-LD-Processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-Microsoft-Antispam-PRVS: <DM6PR02MB62332E6009940D3ECE150114C6130@DM6PR02MB6233.namprd02.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2201;
+X-Forefront-PRVS: 0064B3273C
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: UDPpF2P9o2aYYqT9NtViTB4m4sUyOp1dNh+hSgBQyemya+F/gOVmWnLyNslU/uPmarkLIrG2MuTfAiI9WdKHYbbVp6fA35fl1kCzObKSlukGl5h47/vUPNEsL0W5phFF+VA6E4kvrqeajTLcXWqWaeSOPRBad+LbhhNWjSod82h2SFfqCqk3GwuwPb3Gujp2JvEFk0uYBV0jtEXZA7FyqjR6fIEaB2DxSxQU6uj8TJ1G001tZ6ddE/s0M5EaF19m2Re4xwf3NmxrRMbQzmtR26SJ27SsRi5TraUKp5IrRi5cvar3Yv7SsqoIm/CoWRkyFQU5pFKYpBImCVHorz/bCP5w0zNXDzyWcJNwDZfrmQfrusg6h8vdOoM+j4erBskNhFHsWwyD4BxTIsIh2OaiFbwDQ5qjug1hgZcTz3IR5ao=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jun 2019 15:07:11.1819 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: cd0c7092-6051-4d85-cc11-08d6edb55094
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
+ Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB6233
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_080539_197061_EB42DF50 
-X-CRM114-Status: GOOD (  13.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_080715_610211_E346C9B3 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,65 +133,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Richardson <jonathan.richardson@broadcom.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, marc.zyngier@arm.com,
- bhsharma@redhat.com, ray.jui@broadcom.com,
- linux-arm-kernel@lists.infradead.org
+Cc: monstr@monstr.eu, Nava kishore Manne <nava.manne@xilinx.com>,
+ linux-kernel@vger.kernel.org, johan@kernel.org, linux-serial@vger.kernel.org,
+ Jiri Slaby <jslaby@suse.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ensure that the EFI memreserve entries can be accessed, even if they
-are located in memory that the kernel (e.g., a crashkernel) omits from
-the linear map.
+On 10. 06. 19 16:44, Greg KH wrote:
+> On Mon, Jun 10, 2019 at 10:44:55AM +0200, Michal Simek wrote:
+>> From: Nava kishore Manne <nava.manne@xilinx.com>
+>>
+>> This patch fixes the below warning
+>>
+>>         -->Symbolic permissions 'S_IRUGO' are not preferred.
+>>            Consider using octal permissions '0444'.
+>>         -->macros should not use a trailing semicolon.
+>>         -->line over 80 characters.
+>>         -->void function return statements are not generally useful.
+>>         -->Prefer 'unsigned int' to bare use of 'unsigned'.
+>>
+>> Signed-off-by: Nava kishore Manne <nava.manne@xilinx.com>
+>> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+>> ---
+>>
+>> Happy to split it if needed.
+> 
+> Please split.  Do not do more than one "logical thing" per patch.
+> 
+> And the subject is not correct, there are no general "warnings", these
+> are all checkpatch warnings, not a build issue.
 
-Reported-by: Jonathan Richardson <jonathan.richardson@broadcom.com>
-Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
----
- drivers/firmware/efi/efi.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+ok. Will do. Any issue with second patch?
 
-diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index 16b2137d117c..4b7cf7bc0ded 100644
---- a/drivers/firmware/efi/efi.c
-+++ b/drivers/firmware/efi/efi.c
-@@ -1009,14 +1009,16 @@ int __ref efi_mem_reserve_persistent(phys_addr_t addr, u64 size)
- 
- 	/* first try to find a slot in an existing linked list entry */
- 	for (prsv = efi_memreserve_root->next; prsv; prsv = rsv->next) {
--		rsv = __va(prsv);
-+		rsv = memremap(prsv, sizeof(*rsv), MEMREMAP_WB);
- 		index = atomic_fetch_add_unless(&rsv->count, 1, rsv->size);
- 		if (index < rsv->size) {
- 			rsv->entry[index].base = addr;
- 			rsv->entry[index].size = size;
- 
-+			memunmap(rsv);
- 			return 0;
- 		}
-+		memunmap(rsv);
- 	}
- 
- 	/* no slot found - allocate a new linked list entry */
-@@ -1024,7 +1026,13 @@ int __ref efi_mem_reserve_persistent(phys_addr_t addr, u64 size)
- 	if (!rsv)
- 		return -ENOMEM;
- 
--	rsv->size = EFI_MEMRESERVE_COUNT(PAGE_SIZE);
-+	/*
-+	 * The memremap() call above assumes that a linux_efi_memreserve entry
-+	 * never crosses a page boundary, so let's ensure that this remains true
-+	 * even when kexec'ing a 4k pages kernel from a >4k pages kernel, by
-+	 * using SZ_4K explicitly in the size calculation below.
-+	 */
-+	rsv->size = EFI_MEMRESERVE_COUNT(SZ_4K);
- 	atomic_set(&rsv->count, 1);
- 	rsv->entry[0].base = addr;
- 	rsv->entry[0].size = size;
--- 
-2.20.1
-
+Thanks,
+Michal
 
 _______________________________________________
 linux-arm-kernel mailing list
