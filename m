@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D11C3B759
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:28:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C2373B762
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:30:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tzgJZ476sPW2DA9/Qii8fVPnd8MSZYg9prG4KTRxQiE=; b=npuPcaCjbXsj4g
-	zlMDYD4RImSk6ilMURdclBSKsRNe40YBdLauPt/31yG+nvgFxTxorh6BhzVxMA6pwbXH8DExA0MBw
-	wanSjSbIeQMG5StgwoQ8TxM0C+6ttMllNT1f4O0x63ZE+ptdxsYE1gXvnYw1L3s6Rxw5cOANGSs6P
-	POGkUeG4XV9eqG6iWocizuSgsn+zRj33G2qCJrkSm4VR+ghzuD7p6pSMM4bLEv7eurRDjpCgr/u1h
-	+Cvr4IQ6Tuq8FB9YgRYw6w15hpzKoZWTzebE/G5Wt/fDu64rB0D/5IZEX2VVwy4p3wpoJljawO7Zb
-	44I9CSgo8k1mPw3epDJw==;
+	List-Owner; bh=zWzmAp9YNAwzcKKxNJ3TXWpMnAuq0kz+w7FWkpEIY98=; b=LUA9nctK65dR3P
+	ol17jMzeg6kSqYAes96NZCslVAdmC1glV8pW4CkO1MFMtOaA72v1Q4Q7vbqYUz/9EJ6v3umxLUqwA
+	EtABqubd1mtShMFk19EDcmp2J3ojfWU9UiNhTN8+bffZH09qHkyV6rRXeFYxTf2eKXBvLhUtlKOeQ
+	3HEe+RCJhtrImrQ9xLkAcXpSyv/LFsNbyes9HPxy1+Do5kC01txxahivn74HNSZ3GYJHhuA7XbsXX
+	+LTzfmBAth3Z3HPH+JE8bgqGap3QbJpfB9DwoLTcK6RQqr5Pt6G5FBISHt3Q/fOwakZXJIT6lvZFU
+	mGV3LvjLk49tx61hzHKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLI7-000141-9z; Mon, 10 Jun 2019 14:28:55 +0000
+	id 1haLJK-00020I-2D; Mon, 10 Jun 2019 14:30:10 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haLHo-00012q-HZ
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:28:39 +0000
+ id 1haLIv-0001uI-3Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:29:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6C8A344;
- Mon, 10 Jun 2019 07:28:35 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5041F346;
+ Mon, 10 Jun 2019 07:29:44 -0700 (PDT)
 Received: from c02tf0j2hf1t.cambridge.arm.com (c02tf0j2hf1t.cambridge.arm.com
  [10.1.32.192])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF14A3F73C;
- Mon, 10 Jun 2019 07:28:27 -0700 (PDT)
-Date: Mon, 10 Jun 2019 15:28:25 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 22B503F73C;
+ Mon, 10 Jun 2019 07:29:36 -0700 (PDT)
+Date: Mon, 10 Jun 2019 15:29:34 +0100
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v16 05/16] arm64: untag user pointers passed to memory
- syscalls
-Message-ID: <20190610142824.GB10165@c02tf0j2hf1t.cambridge.arm.com>
+Subject: Re: [PATCH v16 07/16] mm, arm64: untag user pointers in
+ get_vaddr_frames
+Message-ID: <20190610142933.GC10165@c02tf0j2hf1t.cambridge.arm.com>
 References: <cover.1559580831.git.andreyknvl@google.com>
- <045a94326401693e015bf80c444a4d946a5c68ed.1559580831.git.andreyknvl@google.com>
+ <da1d0e0f6d69c15a12987379e372182f416cbc02.1559580831.git.andreyknvl@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <045a94326401693e015bf80c444a4d946a5c68ed.1559580831.git.andreyknvl@google.com>
+In-Reply-To: <da1d0e0f6d69c15a12987379e372182f416cbc02.1559580831.git.andreyknvl@google.com>
 User-Agent: Mutt/1.11.2 (2019-01-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_072836_663748_90F33688 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20190610_072945_640882_46AA2AA4 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -93,26 +93,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 06:55:07PM +0200, Andrey Konovalov wrote:
+On Mon, Jun 03, 2019 at 06:55:09PM +0200, Andrey Konovalov wrote:
 > This patch is a part of a series that extends arm64 kernel ABI to allow to
 > pass tagged user pointers (with the top byte set to something else other
 > than 0x00) as syscall arguments.
 > 
-> This patch allows tagged pointers to be passed to the following memory
-> syscalls: get_mempolicy, madvise, mbind, mincore, mlock, mlock2, mprotect,
-> mremap, msync, munlock.
+> get_vaddr_frames uses provided user pointers for vma lookups, which can
+> only by done with untagged pointers. Instead of locating and changing
+> all callers of this function, perform untagging in it.
 > 
 > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 
-I would add in the commit log (and possibly in the code with a comment)
-that mremap() and mmap() do not currently accept tagged hint addresses.
-Architectures may interpret the hint tag as a background colour for the
-corresponding vma. With this:
-
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-
--- 
-Catalin
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
