@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F38153B739
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:24:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E6DA3B73D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 16:24:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DSAuoC9VMsON+tcEp/LwVyZ1pcuVbx2JbjyvR/9Tlrg=; b=UCjMCnSRWmMMYY
-	t0NwZXv1xnTqSXgoCuCi59CcwWGtTY7ljhzqg4PaS0dPVIvAJ/5/034XnNdCvFd/YH1RP09Yr+OzD
-	LaOr4N8G6pAoHgWFwx+r2IpcU2LeX2UhMWZNAad8SoXLYdQhDhlL6jxSGxPkVwdlpgmSB7njoomoy
-	9CuqHkTqgjq5JxM4UYFc1rjeBk2JNROEleoB6TEoTriXdh2Sv3bn1QPxhYL2KkWKALzWhg22CxLBP
-	iFY3SSOiCmVG58pj0nl7dUZYwbYC6jA0riFhhwAEzZMHovu0WJRKPt/FhlhKSEU0Xk4W6uP0jKYhV
-	MwyfDrOnO6+2Mb1v2odA==;
+	List-Owner; bh=3qZJQbjcLOhXhUBe+t6++UMa4l9HICc1BNt0Y8HrePY=; b=R/jtqls3knGViE
+	TbGfgPLBD2IJ3ilnE3BeiezWmEn1+pGOwC6eCl0l7L5ogKgWDu4GYi86KXTKscRmOFiDmtEaDc9La
+	BBkicWq2Zd//VWey6YjtdgD7Uv2xZ9dlApE7qXHo7m+dgsfkYc8vlk93/44bDOfNYzWnGSQEKYSC/
+	da0YjRN5bVnx57SQHFmn3qZSbf2u5VyslsApNtHZuhAmPULzXLAqamjJU+Px8D2tmlBW9kEB6Kekg
+	k4CnK2yuo3dv8HW2IMd13M15T5Qi4Opzi3FEj93ZCmBjEfIwLpgOSjpd7ZHsM0hrplFclDKBK/xRU
+	MonW6AMV0fU7RG7NkzoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLDP-00079n-PL; Mon, 10 Jun 2019 14:24:03 +0000
+	id 1haLDi-0007O6-Og; Mon, 10 Jun 2019 14:24:23 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haLDE-00079N-Tj
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:23:54 +0000
+ id 1haLDX-0007N2-Qd
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 14:24:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=9OSybgnmQ91PoaXFVruGCEv1Em60aOgOJ3s88JwC90A=; b=JUHX3imtoLCTLucGaqpxbV3ecD
- fDbWpXOLo+4pMwc7VsQeUy++5XgaTm20OURI7N1WnP6SHAUeCoU0JiRIjXbJSlBXVIcHEYkuyyLZF
- ySOyOCEV+wodnQNbm2ZLDR7LUNNbMVbhd+9efQsZC290P/r4bz1095EI0z9ZJO/uSPN4=;
+ bh=4uDtPE5PcxyypfCh8bq4i/bFNL96TyC7s2xPN/RuX5w=; b=jVngoXcCUAFATRrXu+cBZV288M
+ 4Pxx8ntMtHm8BHQKanabhnOqho3YRWK2HqWpS8tHEN4CGGpIoTzxRjqOczpT+qJuDaPj4w6g3sLiY
+ 9pRdEbtisvXDqFm/5/9hIFc9eXhPLXzx9Zfh8JImH31burqajoG62Fx8T7xvix3W1jxM=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.89)
  (envelope-from <andrew@lunn.ch>)
- id 1haLD5-0007YS-3K; Mon, 10 Jun 2019 16:23:43 +0200
-Date: Mon, 10 Jun 2019 16:23:43 +0200
+ id 1haLDS-0007Ze-2B; Mon, 10 Jun 2019 16:24:06 +0200
+Date: Mon, 10 Jun 2019 16:24:06 +0200
 From: Andrew Lunn <andrew@lunn.ch>
 To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Re: [PATCH v2 02/11] dt-bindings: net: Add a YAML schemas for the
- generic PHY options
-Message-ID: <20190610142343.GD28724@lunn.ch>
+Subject: Re: [PATCH v2 03/11] MAINTAINERS: Add Ethernet PHY YAML file
+Message-ID: <20190610142406.GE28724@lunn.ch>
 References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
- <b5c46cff5b59d021634be143cf559c597f0a0e1f.1560158667.git-series.maxime.ripard@bootlin.com>
+ <2e9c285102cdca2d6f3e042ba4430032537b8835.1560158667.git-series.maxime.ripard@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b5c46cff5b59d021634be143cf559c597f0a0e1f.1560158667.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <2e9c285102cdca2d6f3e042ba4430032537b8835.1560158667.git-series.maxime.ripard@bootlin.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_072353_115770_D6C6AFDF 
-X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-CacheID: sfid-20190610_072412_029968_9A490D2F 
+X-CRM114-Status: UNSURE (   9.79  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,16 +93,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> +required:
-> +  - reg
-> +  - interrupts
-
-Hi Maxime
-
-Interrupts are not required. That is an error in the .txt binding
-document.
-
-Otherwise, this looks good:
+On Mon, Jun 10, 2019 at 11:25:42AM +0200, Maxime Ripard wrote:
+> While the Ethernet PHY framework was marked as maintained, the device tree
+> bindings associated to that framework was not listed under the maintained
+> files. Fix that.
+> 
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 
 Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 
