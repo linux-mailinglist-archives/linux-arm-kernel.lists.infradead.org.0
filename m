@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DCE23B4B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 14:21:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEA0C3B4AD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 14:21:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9frb/8JrrLOswau5WwZN6Bg/DxiFF5BqbUtDxIvy8eg=; b=qBzG15YIo8Mxuc
-	3ZFKC3WSfHgm4Yz4ar3WFp5MEtezCkIAOlV26sG3GcnXC64q2JTkdHcsc2/tC5+L84J9N2TZmo53A
-	bMQZjqOA5vsdWGEuCEQ1cDe2stPHch10bWQciW2H9UJC/NeGCQj8v7C7x8z9Ms3Q79gPWaqPef5FT
-	91Gdn77/BMKJWOOJubSwZurV+KMFebVsXDtnIYrGSWIWGp7otCU0TDiZ0O3MD3Q3cyS4+hHB1GDNe
-	rXKLruZl6PwGo1uvZrzOZ7sMTSWtCjb+H/IyTY3IUHDoVC6Bw08B1bBBOyiDX8bmT7AtwQrZ7R6Jz
-	z5siVU3rzdVNyn8AawfQ==;
+	List-Owner; bh=+wblV9Lwdnqx8cxLvN4ezzxojWnvtwt/XksI8iEUod4=; b=tdcnzyACZVD3Jt
+	nwhgSHF7yMZBe27VN7nO+uCQK61+QzGLMs/ZuUEZm2XFGxTUvedaBY4bEyLxqV1aKY+VO/O0KjBO4
+	/x8g2JQ8YzvJbDQ6L+D/gCAYADNEJ+TUe4gGjdcBd5yFqfByBRsX72+skDAErteFNsY+gNl0vgJHt
+	T7/qjedcgyIkouAeuDsO3whGkRyjecGGfdT4B3i0lPZlZHlZU4vMNr/0Id3iEGY9CPQzdFAB7aFjL
+	fk6sT7hzssfSrqfn0lIW9rBYqdBbi/xpqMnS0L7SfZeK2hiKFduDlBGCVvLLCwevb5Yp43CDQhu6g
+	tJg3/uYBH5H3FsGUqXQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haJJ3-0000JZ-8a; Mon, 10 Jun 2019 12:21:45 +0000
+	id 1haJIb-0008Pn-8s; Mon, 10 Jun 2019 12:21:17 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haJHH-0006VP-1Z; Mon, 10 Jun 2019 12:20:01 +0000
-X-UUID: 7dc4c9db9bae4d46b918e32f14aa0d08-20190610
-X-UUID: 7dc4c9db9bae4d46b918e32f14aa0d08-20190610
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1haJHI-0006Wk-5U; Mon, 10 Jun 2019 12:20:02 +0000
+X-UUID: 10adf004b3ae49129555706f3a8c322b-20190610
+X-UUID: 10adf004b3ae49129555706f3a8c322b-20190610
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1769234130; Mon, 10 Jun 2019 04:19:32 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Jun 2019 05:19:30 -0700
+ with ESMTP id 2101732113; Mon, 10 Jun 2019 04:19:44 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Jun 2019 05:19:42 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Jun 2019 20:19:29 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Jun 2019 20:19:42 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 10 Jun 2019 20:19:28 +0800
+ Transport; Mon, 10 Jun 2019 20:19:40 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
  Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v7 05/21] iommu/io-pgtable-arm-v7s: Add paddr_to_iopte and
- iopte_to_paddr helpers
-Date: Mon, 10 Jun 2019 20:17:44 +0800
-Message-ID: <1560169080-27134-6-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v7 06/21] iommu/io-pgtable-arm-v7s: Extend MediaTek 4GB Mode
+Date: Mon, 10 Jun 2019 20:17:45 +0800
+Message-ID: <1560169080-27134-7-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
 References: <1560169080-27134-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_051955_408033_84B06C91 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20190610_051956_330754_E4545D53 
+X-CRM114-Status: GOOD (  19.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,135 +84,199 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add two helper functions: paddr_to_iopte and iopte_to_paddr.
+MediaTek extend the arm v7s descriptor to support the dram over 4GB.
+
+In the mt2712 and mt8173, it's called "4GB mode", the physical address
+is from 0x4000_0000 to 0x1_3fff_ffff, but from EMI point of view, it
+is remapped to high address from 0x1_0000_0000 to 0x1_ffff_ffff, the
+bit32 is always enabled. thus, in the M4U, we always enable the bit9
+for all PTEs which means to enable bit32 of physical address.
+
+but in mt8183, M4U support the dram from 0x4000_0000 to 0x3_ffff_ffff
+which isn't remaped. We extend the PTEs: the bit9 represent bit32 of
+PA and the bit4 represent bit33 of PA. Meanwhile the iova still is
+32bits.
+
+In order to unify code, in the "4GB mode", we add the bit32 for the
+physical address manually in our driver.
+
+Correspondingly, Adding bit32 and bit33 for the PA in the iova_to_phys
+has to been moved into v7s.
+
+Regarding whether the pagetable address could be over 4GB, the mt8183
+support it while the previous mt8173 don't. thus keep it as is.
 
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 Reviewed-by: Evan Green <evgreen@chromium.org>
 ---
- drivers/iommu/io-pgtable-arm-v7s.c | 45 ++++++++++++++++++++++++++++----------
- 1 file changed, 33 insertions(+), 12 deletions(-)
+ drivers/iommu/io-pgtable-arm-v7s.c | 31 ++++++++++++++++++++++++-------
+ drivers/iommu/mtk_iommu.c          | 20 ++++++++++----------
+ drivers/iommu/mtk_iommu.h          |  1 +
+ 3 files changed, 35 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
-index 9a8a887..94c38db 100644
+index 94c38db..4077822 100644
 --- a/drivers/iommu/io-pgtable-arm-v7s.c
 +++ b/drivers/iommu/io-pgtable-arm-v7s.c
-@@ -180,18 +180,38 @@ struct arm_v7s_io_pgtable {
- 	spinlock_t		split_lock;
+@@ -123,7 +123,9 @@
+ #define ARM_V7S_TEX_MASK		0x7
+ #define ARM_V7S_ATTR_TEX(val)		(((val) & ARM_V7S_TEX_MASK) << ARM_V7S_TEX_SHIFT)
+ 
+-#define ARM_V7S_ATTR_MTK_4GB		BIT(9) /* MTK extend it for 4GB mode */
++/* MediaTek extend the two bits below for over 4GB mode */
++#define ARM_V7S_ATTR_MTK_PA_BIT32	BIT(9)
++#define ARM_V7S_ATTR_MTK_PA_BIT33	BIT(4)
+ 
+ /* *well, except for TEX on level 2 large pages, of course :( */
+ #define ARM_V7S_CONT_PAGE_TEX_SHIFT	6
+@@ -190,13 +192,22 @@ static dma_addr_t __arm_v7s_dma_addr(void *pages)
+ static arm_v7s_iopte paddr_to_iopte(phys_addr_t paddr, int lvl,
+ 				    struct io_pgtable_cfg *cfg)
+ {
+-	return paddr & ARM_V7S_LVL_MASK(lvl);
++	arm_v7s_iopte pte = paddr & ARM_V7S_LVL_MASK(lvl);
++
++	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB) {
++		if (paddr & BIT_ULL(32))
++			pte |= ARM_V7S_ATTR_MTK_PA_BIT32;
++		if (paddr & BIT_ULL(33))
++			pte |= ARM_V7S_ATTR_MTK_PA_BIT33;
++	}
++	return pte;
+ }
+ 
+ static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte, int lvl,
+ 				  struct io_pgtable_cfg *cfg)
+ {
+ 	arm_v7s_iopte mask;
++	phys_addr_t paddr;
+ 
+ 	if (ARM_V7S_PTE_IS_TABLE(pte, lvl))
+ 		mask = ARM_V7S_TABLE_MASK;
+@@ -205,7 +216,14 @@ static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte, int lvl,
+ 	else
+ 		mask = ARM_V7S_LVL_MASK(lvl);
+ 
+-	return pte & mask;
++	paddr = pte & mask;
++	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB) {
++		if (pte & ARM_V7S_ATTR_MTK_PA_BIT32)
++			paddr |= BIT_ULL(32);
++		if (pte & ARM_V7S_ATTR_MTK_PA_BIT33)
++			paddr |= BIT_ULL(33);
++	}
++	return paddr;
+ }
+ 
+ static arm_v7s_iopte *iopte_deref(arm_v7s_iopte pte, int lvl,
+@@ -326,9 +344,6 @@ static arm_v7s_iopte arm_v7s_prot_to_pte(int prot, int lvl,
+ 	if (lvl == 1 && (cfg->quirks & IO_PGTABLE_QUIRK_ARM_NS))
+ 		pte |= ARM_V7S_ATTR_NS_SECTION;
+ 
+-	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB)
+-		pte |= ARM_V7S_ATTR_MTK_4GB;
+-
+ 	return pte;
+ }
+ 
+@@ -515,7 +530,9 @@ static int arm_v7s_map(struct io_pgtable_ops *ops, unsigned long iova,
+ 	if (!(prot & (IOMMU_READ | IOMMU_WRITE)))
+ 		return 0;
+ 
+-	if (WARN_ON(upper_32_bits(iova) || upper_32_bits(paddr)))
++	if (WARN_ON(upper_32_bits(iova)) ||
++	    WARN_ON(upper_32_bits(paddr) &&
++		    !(iop->cfg.quirks & IO_PGTABLE_QUIRK_ARM_MTK_4GB)))
+ 		return -ERANGE;
+ 
+ 	ret = __arm_v7s_map(data, iova, paddr, size, prot, 1, data->pgd);
+diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+index 1ddb2b7..aff5004 100644
+--- a/drivers/iommu/mtk_iommu.c
++++ b/drivers/iommu/mtk_iommu.c
+@@ -271,7 +271,8 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+ 	dom->cfg = (struct io_pgtable_cfg) {
+ 		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
+ 			IO_PGTABLE_QUIRK_NO_PERMS |
+-			IO_PGTABLE_QUIRK_TLBI_ON_MAP,
++			IO_PGTABLE_QUIRK_TLBI_ON_MAP |
++			IO_PGTABLE_QUIRK_ARM_MTK_4GB,
+ 		.pgsize_bitmap = mtk_iommu_ops.pgsize_bitmap,
+ 		.ias = 32,
+ 		.oas = 32,
+@@ -279,9 +280,6 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+ 		.iommu_dev = data->dev,
+ 	};
+ 
+-	if (data->enable_4GB)
+-		dom->cfg.quirks |= IO_PGTABLE_QUIRK_ARM_MTK_4GB;
+-
+ 	dom->iop = alloc_io_pgtable_ops(ARM_V7S, &dom->cfg, data);
+ 	if (!dom->iop) {
+ 		dev_err(data->dev, "Failed to alloc io pgtable\n");
+@@ -367,12 +365,16 @@ static int mtk_iommu_map(struct iommu_domain *domain, unsigned long iova,
+ 			 phys_addr_t paddr, size_t size, int prot)
+ {
+ 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
++	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+ 	unsigned long flags;
+ 	int ret;
+ 
++	/* The "4GB mode" M4U physically can not use the lower remap of Dram. */
++	if (data->plat_data->has_4gb_mode && data->enable_4GB)
++		paddr |= BIT_ULL(32);
++
+ 	spin_lock_irqsave(&dom->pgtlock, flags);
+-	ret = dom->iop->map(dom->iop, iova, paddr & DMA_BIT_MASK(32),
+-			    size, prot);
++	ret = dom->iop->map(dom->iop, iova, paddr, size, prot);
+ 	spin_unlock_irqrestore(&dom->pgtlock, flags);
+ 
+ 	return ret;
+@@ -401,7 +403,6 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
+ 					  dma_addr_t iova)
+ {
+ 	struct mtk_iommu_domain *dom = to_mtk_domain(domain);
+-	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+ 	unsigned long flags;
+ 	phys_addr_t pa;
+ 
+@@ -409,9 +410,6 @@ static phys_addr_t mtk_iommu_iova_to_phys(struct iommu_domain *domain,
+ 	pa = dom->iop->iova_to_phys(dom->iop, iova);
+ 	spin_unlock_irqrestore(&dom->pgtlock, flags);
+ 
+-	if (data->enable_4GB)
+-		pa |= BIT_ULL(32);
+-
+ 	return pa;
+ }
+ 
+@@ -742,10 +740,12 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
+ 
+ static const struct mtk_iommu_plat_data mt2712_data = {
+ 	.m4u_plat     = M4U_MT2712,
++	.has_4gb_mode = true,
  };
  
-+static bool arm_v7s_pte_is_cont(arm_v7s_iopte pte, int lvl);
-+
- static dma_addr_t __arm_v7s_dma_addr(void *pages)
- {
- 	return (dma_addr_t)virt_to_phys(pages);
- }
+ static const struct mtk_iommu_plat_data mt8173_data = {
+ 	.m4u_plat     = M4U_MT8173,
++	.has_4gb_mode = true,
+ };
  
--static arm_v7s_iopte *iopte_deref(arm_v7s_iopte pte, int lvl)
-+static arm_v7s_iopte paddr_to_iopte(phys_addr_t paddr, int lvl,
-+				    struct io_pgtable_cfg *cfg)
- {
-+	return paddr & ARM_V7S_LVL_MASK(lvl);
-+}
-+
-+static phys_addr_t iopte_to_paddr(arm_v7s_iopte pte, int lvl,
-+				  struct io_pgtable_cfg *cfg)
-+{
-+	arm_v7s_iopte mask;
-+
- 	if (ARM_V7S_PTE_IS_TABLE(pte, lvl))
--		pte &= ARM_V7S_TABLE_MASK;
-+		mask = ARM_V7S_TABLE_MASK;
-+	else if (arm_v7s_pte_is_cont(pte, lvl))
-+		mask = ARM_V7S_LVL_MASK(lvl) * ARM_V7S_CONT_PAGES;
- 	else
--		pte &= ARM_V7S_LVL_MASK(lvl);
--	return phys_to_virt(pte);
-+		mask = ARM_V7S_LVL_MASK(lvl);
-+
-+	return pte & mask;
-+}
-+
-+static arm_v7s_iopte *iopte_deref(arm_v7s_iopte pte, int lvl,
-+				  struct arm_v7s_io_pgtable *data)
-+{
-+	return phys_to_virt(iopte_to_paddr(pte, lvl, &data->iop.cfg));
- }
+ static const struct of_device_id mtk_iommu_of_ids[] = {
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index 483d210..d7a001a 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -42,6 +42,7 @@ enum mtk_iommu_plat {
  
- static void *__arm_v7s_alloc_table(int lvl, gfp_t gfp,
-@@ -407,7 +427,7 @@ static int arm_v7s_init_pte(struct arm_v7s_io_pgtable *data,
- 	if (num_entries > 1)
- 		pte = arm_v7s_pte_to_cont(pte, lvl);
+ struct mtk_iommu_plat_data {
+ 	enum mtk_iommu_plat m4u_plat;
++	bool                has_4gb_mode;
+ };
  
--	pte |= paddr & ARM_V7S_LVL_MASK(lvl);
-+	pte |= paddr_to_iopte(paddr, lvl, cfg);
- 
- 	__arm_v7s_set_pte(ptep, pte, num_entries, cfg);
- 	return 0;
-@@ -473,7 +493,7 @@ static int __arm_v7s_map(struct arm_v7s_io_pgtable *data, unsigned long iova,
- 	}
- 
- 	if (ARM_V7S_PTE_IS_TABLE(pte, lvl)) {
--		cptep = iopte_deref(pte, lvl);
-+		cptep = iopte_deref(pte, lvl, data);
- 	} else if (pte) {
- 		/* We require an unmap first */
- 		WARN_ON(!selftest_running);
-@@ -523,7 +543,8 @@ static void arm_v7s_free_pgtable(struct io_pgtable *iop)
- 		arm_v7s_iopte pte = data->pgd[i];
- 
- 		if (ARM_V7S_PTE_IS_TABLE(pte, 1))
--			__arm_v7s_free_table(iopte_deref(pte, 1), 2, data);
-+			__arm_v7s_free_table(iopte_deref(pte, 1, data),
-+					     2, data);
- 	}
- 	__arm_v7s_free_table(data->pgd, 1, data);
- 	kmem_cache_destroy(data->l2_tables);
-@@ -593,7 +614,7 @@ static size_t arm_v7s_split_blk_unmap(struct arm_v7s_io_pgtable *data,
- 		if (!ARM_V7S_PTE_IS_TABLE(pte, 1))
- 			return 0;
- 
--		tablep = iopte_deref(pte, 1);
-+		tablep = iopte_deref(pte, 1, data);
- 		return __arm_v7s_unmap(data, iova, size, 2, tablep);
- 	}
- 
-@@ -652,7 +673,7 @@ static size_t __arm_v7s_unmap(struct arm_v7s_io_pgtable *data,
- 				io_pgtable_tlb_add_flush(iop, iova, blk_size,
- 					ARM_V7S_BLOCK_SIZE(lvl + 1), false);
- 				io_pgtable_tlb_sync(iop);
--				ptep = iopte_deref(pte[i], lvl);
-+				ptep = iopte_deref(pte[i], lvl, data);
- 				__arm_v7s_free_table(ptep, lvl + 1, data);
- 			} else if (iop->cfg.quirks & IO_PGTABLE_QUIRK_NON_STRICT) {
- 				/*
-@@ -677,7 +698,7 @@ static size_t __arm_v7s_unmap(struct arm_v7s_io_pgtable *data,
- 	}
- 
- 	/* Keep on walkin' */
--	ptep = iopte_deref(pte[0], lvl);
-+	ptep = iopte_deref(pte[0], lvl, data);
- 	return __arm_v7s_unmap(data, iova, size, lvl + 1, ptep);
- }
- 
-@@ -703,7 +724,7 @@ static phys_addr_t arm_v7s_iova_to_phys(struct io_pgtable_ops *ops,
- 	do {
- 		ptep += ARM_V7S_LVL_IDX(iova, ++lvl);
- 		pte = READ_ONCE(*ptep);
--		ptep = iopte_deref(pte, lvl);
-+		ptep = iopte_deref(pte, lvl, data);
- 	} while (ARM_V7S_PTE_IS_TABLE(pte, lvl));
- 
- 	if (!ARM_V7S_PTE_IS_VALID(pte))
-@@ -712,7 +733,7 @@ static phys_addr_t arm_v7s_iova_to_phys(struct io_pgtable_ops *ops,
- 	mask = ARM_V7S_LVL_MASK(lvl);
- 	if (arm_v7s_pte_is_cont(pte, lvl))
- 		mask *= ARM_V7S_CONT_PAGES;
--	return (pte & mask) | (iova & ~mask);
-+	return iopte_to_paddr(pte, lvl, &data->iop.cfg) | (iova & ~mask);
- }
- 
- static struct io_pgtable *arm_v7s_alloc_pgtable(struct io_pgtable_cfg *cfg,
+ struct mtk_iommu_domain;
 -- 
 1.9.1
 
