@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 286E73B23D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:35:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEDC03B255
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:43:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yLsY0X/VFcDafP8p8AfGdc7OZo1uIa9Vd0jm8nfzqNM=; b=jDwdVgAPVahcgy
-	xyQAcEm0Kv0ToO867ugN2U45p7Q79LZsi968P3oeaawoIZSIPPlCjNZCQvl6OETcBKHJmSUR0Z56w
-	CLk+aCSmrjHOx6A5zvG1mJQBWD0iJq3iHraKlLcBn32lS/8ew8OZeuFpclX4r/atweC4I7fCj975W
-	Lo693cadtQgiXSchfjfcpQHL7/q3jopy65lUMLLJexpRfcFeawWdLoxvUxgCkCdG55wwtAWtEkqTN
-	B0f3WzbB1Q26ipVuXHzMwAPatPxp1F5JGWZlvNWt/szMbgVcYpvCkjar/0JlqqXL0rM9E4HnRSjlr
-	uGK6iv6w8Zd3JmI9nSyA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aeE/jJCp+Y6TWmmogEoThI6flMmnBkCLGCpRjl09Qg4=; b=YbFvDo1PmMDJ/r
+	WhfZmrXsMFE3k7Kz7JiepMShmoGzXR0f6w6DlWIQtIJBj1vncKerhKDfMaOboLW9jZKTbAXTYFsWk
+	GHmSMfPCyh/1GW3sKLDwRUaNn6WbEsgXzztXwBM0Op3EtsRyS6zeSFyBW/DwvdvLDL7rTKEdl7226
+	gDAXPBQEU01rvOLa1MzsNNJ83aMYZnwYL15eSrjB24WO0f/EiH1tN7ZluCvImMhMHwAVYzR+96vyD
+	r5dP+R+qyL999mSTp82TaX8La7wVbWm7UTCfHm0rpXsjDJpvPKkW1aFSL8PnmpBpD06Bn3nApAoTK
+	zSb53z/xBJiqjPGyoX4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haGhx-0003sO-V4; Mon, 10 Jun 2019 09:35:18 +0000
-Received: from mail.codeweavers.com ([50.203.203.244])
+	id 1haGpR-000791-Rg; Mon, 10 Jun 2019 09:43:01 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haGhX-0003rt-RB
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:34:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=codeweavers.com; s=6377696661; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=4eGiVW2ASr/2wXgAHa/3aGTNnoVXeHPUusW8fdgt++Q=; b=M7VomCI51CoH28I3NAFr0m+ff
- rqBNddxfExXVFgwF3C5nLKikZV5mg+sHwE4Tfp//Q5KIcwLttOgWe4j5FZLf0gRBoD4HBCUpWzeqB
- 82VIznHDYb1TwtgXrLgjo6TNRmmHxh/dk6u5BF3NIhDBpENDuClzKGnPwIuaqNH5DM8Ao=;
-Received: from merlot.physics.ox.ac.uk ([163.1.241.98] helo=merlot)
- by mail.codeweavers.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <huw@codeweavers.com>)
- id 1haGi6-0003ej-Mm; Mon, 10 Jun 2019 04:35:27 -0500
-Received: from daviesh by merlot with local (Exim 4.90_1)
- (envelope-from <huw@codeweavers.com>)
- id 1haGhT-0003A6-MO; Mon, 10 Jun 2019 10:34:47 +0100
-Date: Mon, 10 Jun 2019 10:34:47 +0100
-From: Huw Davies <huw@codeweavers.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v6 03/19] kernel: Unify update_vsyscall implementation
-Message-ID: <20190610093447.GC11076@merlot.physics.ox.ac.uk>
-References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
- <20190530141531.43462-4-vincenzo.frascino@arm.com>
+ id 1haGpD-00077v-5l
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:42:48 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5A9gaKj000807;
+ Mon, 10 Jun 2019 04:42:36 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560159757;
+ bh=2oO3Xg8fMHPjnwmVSMmpy0PpqsvBXBoMDQCicgKTfPk=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=UwE6KsIJ1ugdmhMf4suETeKqxQlhSDaB1wwqcC739zqPIx258ODERDvuCt9ZXYacN
+ /+yAxJdgvZNMfKhaqjRcVOCoIytn30L32AfZq+EuuyOqvxGKquX4Z6SrdhlfKCf+tg
+ Y7/MCKLvymzo6iXJRJvQaahrTT6RybKMvHULjqjI=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5A9gaIB000883
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 10 Jun 2019 04:42:36 -0500
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 10
+ Jun 2019 04:42:36 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Mon, 10 Jun 2019 04:42:36 -0500
+Received: from [172.24.190.117] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5A9gWMT067517;
+ Mon, 10 Jun 2019 04:42:33 -0500
+Subject: Re: [PATCH v1.1] firmware: ti_sci: Add resource management APIs for
+ ringacc, psi-l and udma
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <vkoul@kernel.org>, <nm@ti.com>,
+ <ssantosh@kernel.org>
+References: <20190506123456.6777-2-peter.ujfalusi@ti.com>
+ <20190610091856.25502-1-peter.ujfalusi@ti.com>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <636f599a-cefa-ce70-d0ae-b5244edf14b2@ti.com>
+Date: Mon, 10 Jun 2019 15:11:59 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190530141531.43462-4-vincenzo.frascino@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Spam-Score: -106.0
-X-Spam-Report: Spam detection software,
- running on the system "mail.codeweavers.com", 
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- the administrator of that system for details.
- Content preview:  On Thu, May 30, 2019 at 03:15:15PM +0100, Vincenzo Frascino
- wrote: > With the definition of the unified vDSO library the implementations
- of > update_vsyscall and update_vsyscall_tz became quite simila [...] 
- Content analysis details:   (-106.0 points, 5.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -100 USER_IN_WHITELIST      From: address is in the user's white-list
- -6.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+In-Reply-To: <20190610091856.25502-1-peter.ujfalusi@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_023451_942495_F2ABFA73 
-X-CRM114-Status: UNSURE (   4.24  )
+X-CRM114-CacheID: sfid-20190610_024247_303655_B7D15B33 
+X-CRM114-Status: UNSURE (   9.01  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -83,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,32 +95,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- linux-mips@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
- Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+Cc: grygorii.strashko@ti.com, tony@atomide.com, linux-kernel@vger.kernel.org,
+ t-kristo@ti.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 30, 2019 at 03:15:15PM +0100, Vincenzo Frascino wrote:
-> With the definition of the unified vDSO library the implementations of
-> update_vsyscall and update_vsyscall_tz became quite similar across
-> architectures.
+
+
+On 10/06/19 2:48 PM, Peter Ujfalusi wrote:
+> Configuration of NAVSS resource, like rings, UDMAP channels, flows
+> and PSI-L thread management need to be done via TISCI.
 > 
-> Define a unified implementation of this two functions in kernel/vdso and
+> Add the needed structures and functions for NAVSS resource configuration of
+> the following:
+> Rings from Ring Accelerator
+> PSI-L thread management
+> UDMAP tchan, rchan and rflow configuration.
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 
-... of these two functions ...
+Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
 
-> provide the bindings that can be implemented by every architecture that
-> takes advantage of the unified vDSO library.
+Thanks and regards,
+Lokesh
 
 _______________________________________________
 linux-arm-kernel mailing list
