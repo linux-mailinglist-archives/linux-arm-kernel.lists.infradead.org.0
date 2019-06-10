@@ -2,79 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 150843B513
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 14:31:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB67E3B524
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 14:39:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a6wkWn6d2+P1VJqUzN8hRSksRh5Fd8cG1wRZ2FcNkSA=; b=mQaOAa7ZEngMq9
-	2v0Hph7TkxB1644Fpq6QzUOO04qiEiG0ZLipHFstRPIrv4lXT112fIsgNnXNcQBTuhyp3vltUvp9K
-	daVnkOqq75wsWGSeKj93lRz+7s/hJtbaZSEOpzXE49aqrOS793lCKDCFla9urfq7fDxGa5jwPkK8Q
-	h4vtOSpKgPatTi6z4aSEzPhXUszFZE9vABOxifWnnS3srSp/nHW8+WVl6POALEFRNsF9yBiGW9tBi
-	20K4AJBCf2Oa9/tM2FWfaOYjLMsViaYzb8GtkSeON+ch6shdIOCG9wvjxWwzT+uRTCy1iXqicjusS
-	XZ8qBO0xrxfj6X4eGkWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=oLnL6ktyoY1ST1S7+qkaEYJBl25AtTTCQm0qjm0lUGA=; b=urh1sQcuvs9Y7C
+	Wc8wb8R7upGzJKTDHzIRBvVtqkROLocwLazBmNqaINGPpftjstCCc+TgT7NEo4uu3Z47+uZZiwJUr
+	ECZ579iW+aXb/JqsU6jTV526oH/8SDvc8c7mwiE+rCpVgkA6vqpW95otYzxG48ry/AitKHFmqrpz7
+	Virp7pdjs/afQ4d1IafmCCxt7vXBXcWmtZL4Zm2Xb2musBzX7dds8qM7Zxi24XrIFk/C17bzu5lDf
+	PECWdrPEmF/31zrvkol3HNPIYME+5doJ2Y5nY8bcyzUnHAamWYGVd0TYM3TaOp8Z35HXwVj9u5Q3i
+	HZ60/kgxSbe2z4FIP2ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haJSl-0000MU-Nw; Mon, 10 Jun 2019 12:31:47 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1haJZv-0003LF-83; Mon, 10 Jun 2019 12:39:11 +0000
+Received: from mail-eopbgr130041.outbound.protection.outlook.com
+ ([40.107.13.41] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haJSU-0000KH-A3; Mon, 10 Jun 2019 12:31:31 +0000
-Received: by mail-oi1-x241.google.com with SMTP id w79so6062769oif.10;
- Mon, 10 Jun 2019 05:31:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=nFynJG6GkMrt4lyp8IC+dRaN8zX6LxP0uU9NEUWvbzI=;
- b=cXohEkVc0ZP8pvQlDl8p6OE4YZbfDSAvS5aWQeuKTLlZqlj7v78cTJ15xSpsOzjR22
- xqW8m8BQQTHBCyUybgg4cjc9zpHtLHToZBnVKwVpPrd2gMNZEaQEY+U2aASQmhONplHu
- xCN+NI806+E9j8cNzavcdXo5PAqDEEspH4deJbZqbsj2prDFodwaiUI3/We1XgFxezKC
- nUwyXdytL8UYR+4FW0gFx5nL4COz2G9KZnTvc6tRryCozSSCylWM6PxbPnrrKKLOPF4y
- QKkBohVJzmnYPPPYwQEoIC2AXqhhVVwSaWDLT5t/w7U2D7lWdPCdL9uK58kqqA82/8t4
- vL2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=nFynJG6GkMrt4lyp8IC+dRaN8zX6LxP0uU9NEUWvbzI=;
- b=Up+kWjnt7M+7Eopx7H/OF0UWIULE15cM4Rfk1yakGNVYoLbXFL6byVNkVPWrYy7Rjw
- afCfskDZrfWQm2KU6XfhRsfAvLrAD4rRNnoYga+QlpE/bgn6xUxImVUMpt2ms00oZVo3
- f8KB0cLeyXG2ri8nmPBFj23s97D+OFf7tm8RaRYYHfSK9L7HhblOlhhQytW/Mcxuae1/
- gAXRk0e8BgTz33J7fPRXjR+VKvEKB8HpN38OMWDrYp78voRBGMR6Pk+oeySfxt/Hcu2/
- REmTU48i1tFkWjNqftpUL5LkXJv8RWLjo1YHlSK46f4UXn9B5mT7Dffq9wm2kbpxF6Kw
- vZ8A==
-X-Gm-Message-State: APjAAAUDSW4OtNBqTv+Thn4KnGcIhkB+7PYVkBoPbzQAsAKlNEmuRPtq
- OkU0x+KjJjW+Oy0S6xiYejk3Qcf4uSLlat1c0vI=
-X-Google-Smtp-Source: APXvYqxpBiHP08OPhwvFiE1hD4gx+oq+4oIRwCJaMPkj/6FYkD61ABAJqXsC6FpliWoKBw4Uc0ZVvhgV6HFS3Jve/S4=
-X-Received: by 2002:aca:51cf:: with SMTP id
- f198mr10179250oib.140.1560169888423; 
- Mon, 10 Jun 2019 05:31:28 -0700 (PDT)
+ id 1haJZj-0003Kj-R9
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 12:39:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=x6YDDS76FnnAX7tfmPb+XcBAG8KMw0kWalvWiEA+O1c=;
+ b=dYu6AevxYuQDE6VwHdxTyBS/EPh5wTD9SVZJ9AU/2Dx0bL/T8fyOnAgX8xHwjoqYS96T/vkELL0T4tajyPwM39IHzkwXuDmhNfxOFjfTtiC1GCU2VZ2zCecK/waG1kn/n8duVRWiFRfClIhh4U5FEyHCLcJ/jT07/ZYTLwxj1gw=
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com (20.177.50.140) by
+ VI1PR04MB3965.eurprd04.prod.outlook.com (10.171.182.10) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.12; Mon, 10 Jun 2019 12:38:53 +0000
+Received: from VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1]) by VI1PR04MB5055.eurprd04.prod.outlook.com
+ ([fe80::9577:379c:2078:19a1%7]) with mapi id 15.20.1965.017; Mon, 10 Jun 2019
+ 12:38:53 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Abel Vesa <abelvesa@gmail.com>, Marc Zyngier <marc.zyngier@arm.com>, Lucas
+ Stach <l.stach@pengutronix.de>
+Subject: Re: [RFC 1/2] irqchip: irq-imx-gpcv2: Add workaround for i.MX8MQ
+ ERR11171
+Thread-Topic: [RFC 1/2] irqchip: irq-imx-gpcv2: Add workaround for i.MX8MQ
+ ERR11171
+Thread-Index: AQHVH4ZBRgLS0j7LSki7yl4lFQVwCA==
+Date: Mon, 10 Jun 2019 12:38:52 +0000
+Message-ID: <VI1PR04MB5055FD984F9BBA733B4D3503EE130@VI1PR04MB5055.eurprd04.prod.outlook.com>
+References: <20190610121346.15779-1-abel.vesa@nxp.com>
+ <20190610121346.15779-2-abel.vesa@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [192.88.166.1]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3f54b2d9-b204-4338-e5a7-08d6eda098e1
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB3965; 
+x-ms-traffictypediagnostic: VI1PR04MB3965:
+x-microsoft-antispam-prvs: <VI1PR04MB3965228D534AD46F8F67EAE4EE130@VI1PR04MB3965.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0064B3273C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(376002)(346002)(396003)(39860400002)(136003)(189003)(199004)(55016002)(6436002)(4326008)(14454004)(14444005)(256004)(7416002)(305945005)(316002)(6246003)(9686003)(33656002)(26005)(186003)(25786009)(229853002)(68736007)(53936002)(66066001)(52536014)(76176011)(6116002)(66446008)(64756008)(5660300002)(3846002)(7696005)(7736002)(102836004)(53546011)(6506007)(110136005)(54906003)(99286004)(66556008)(66476007)(478600001)(66946007)(476003)(81166006)(81156014)(8676002)(486006)(74316002)(73956011)(86362001)(8936002)(2906002)(446003)(71200400001)(71190400001)(91956017)(76116006)(44832011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3965;
+ H:VI1PR04MB5055.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: B64whN2MxXL4leNqNExf1XZgqekDJO8u1lPlu9g0iC12FOpqQ53+NgcbZBj9pawzIog/VNYMoOxJ5EWJEL17F6IsqqK3Uq7B9bLbE1X0rSff6pvmqqgAy9B3io/jdKQ93oXS7UtOR0NVuzt0RX+H6IuLKUtzrqVFdp6SGY0N0FDoApl7i0VZUR9ue6jm2ILmhvr6SkuQUQmbYkfIUm9fgYlFKwFGl2i4VGTvCtnEI7rEo0MA52q0BhToaNZNl6u+XgC0ZghlyuVezWUTL2zAf0HpcwMCfsHEW0L945Tiu7czEuYXwLvXVEaYcyW1pnXms3SHYGi901AfFg2eYzsrBVZujxtxTq8lU7VikJySEaBhhMi0x5BUfhJAsiqGqOolqycSPnrR+fuPzZX0VOUNBZGwTjNsGVsmwIBXNgPcokM=
 MIME-Version: 1.0
-References: <20190609180621.7607-1-martin.blumenstingl@googlemail.com>
- <20190609204510.GB8247@lunn.ch> <20190610114700.tymqzzax334ahtz4@flea>
-In-Reply-To: <20190610114700.tymqzzax334ahtz4@flea>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 10 Jun 2019 14:31:17 +0200
-Message-ID: <CAFBinCCs5pa1QmaV32Dk9rOADKGXXFpZsSK=LUk4CGWMrG5VUQ@mail.gmail.com>
-Subject: Re: [RFC next v1 0/5] stmmac: honor the GPIO flags for the PHY reset
- GPIO
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3f54b2d9-b204-4338-e5a7-08d6eda098e1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2019 12:38:53.1317 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: leonard.crestez@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3965
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_053130_376275_992D452A 
-X-CRM114-Status: GOOD (  15.38  )
+X-CRM114-CacheID: sfid-20190610_053859_942833_21937706 
+X-CRM114-Status: GOOD (  14.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.13.41 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,65 +113,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, alexandre.torgue@st.com,
- bgolaszewski@baylibre.com, netdev@vger.kernel.org, linus.walleij@linaro.org,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, devicetree@vger.kernel.org, joabreu@synopsys.com,
- khilman@baylibre.com, peppe.cavallaro@st.com,
- linux-amlogic@lists.infradead.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jacky Bai <ping.bai@nxp.com>,
+ Carlo Caione <ccaione@baylibre.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
+On 6/10/2019 3:15 PM, Abel Vesa wrote:
+> i.MX8MQ is missing the wake_request signals from GIC to GPCv2. This indirectly
+> breaks cpuidle support due to inability to wake target cores on IPIs.
+> 
+> Now, in order to fix this, we can trigger IRQ 32 (hwirq 0) to all the cores by
+> setting 12th bit in IOMUX_GPR1 register. In order to control the target cores
+> only, that is, not waking up all the cores every time, we can unmask/mask the
+> IRQ 32 in the first GPC IMR register.
+> 
+> Since EL3 is the one that deals with powering down/up the cores, and since the
+> cores wake up in EL3, EL3 should be the one to control the IMRs in this case.
+> This implies we need to get into EL3 on every IPI to do the unmasking, leaving
+> the masking to be done on the power-up sequence by the core itself.
 
-On Mon, Jun 10, 2019 at 1:47 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Hi Andrew,
->
-> On Sun, Jun 09, 2019 at 10:45:10PM +0200, Andrew Lunn wrote:
-> > > Patch #1 and #4 are minor cleanups which follow the boyscout rule:
-> > > "Always leave the campground cleaner than you found it."
-> >
-> > > I
-> > > am also looking for suggestions how to handle these cross-tree changes
-> > > (patch #2 belongs to the linux-gpio tree, patches #1, 3 and #4 should
-> > > go through the net-next tree. I will re-send patch #5 separately as
-> > > this should go through Kevin's linux-amlogic tree).
-> >
-> > Patches 1 and 4 don't seem to have and dependencies. So i would
-> > suggest splitting them out and submitting them to netdev for merging
-> > independent of the rest.
->
-> Jumping on the occasion of that series. These properties have been
-> defined to deal with phy reset, while it seems that the PHY core can
-> now handle that pretty easily through generic properties.
->
-> Wouldn't it make more sense to just move to that generic properties
-> that already deals with the flags properly?
-thank you for bringing this up!
-if anyone else (just like me) doesn't know about it, there are generic
-bindings defined here: [0]
+Manipulating same IMR registers in TF-A and Linux is racy so all IMR 
+manipulation (set_wake etc) needs to be done through SIP calls with 
+locking inside TF-A.
 
-I just tested this on my X96 Max by defining the following properties
-inside the PHY node:
-  reset-delay-us = <10000>;
-  reset-assert-us = <10000>;
-  reset-deassert-us = <10000>;
-  reset-gpios = <&gpio GPIOZ_15 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
+It would make sense to have an entirely separate SIP-based 
+irq-imx8mq-gpc.c driver based on what is used in NXP tree.
 
-that means I don't need any stmmac patches which seems nice.
-instead I can submit a patch to mark the snps,reset-gpio properties in
-the dt-bindings deprecated (and refer to the generic bindings instead)
-what do you think?
+> +	iomux_gpr = syscon_regmap_lookup_by_compatible("fsl,imx6q-iomuxc-gpr");
+> +	if (!IS_ERR(iomux_gpr))
+> +		regmap_update_bits(iomux_gpr, IOMUXC_GPR1, IMX6Q_GPR1_GINT,
+> +					IMX6Q_GPR1_GINT);
 
+Doesn't this initialization belong in TF-A? On boot enable the irq and 
+keep it masked until somebody calls "wake".
 
-Martin
-
-
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/net/phy.txt?id=b54dd90cab00f5b64ed8ce533991c20bf781a3cd#n58
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
