@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03E2A3B9EB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:48:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A9453B9FA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:49:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C6wAlNTugV87GO5P/y1oFg6/nx5Ic3cXO1hkVSFqKr0=; b=SpnfMBDu+lKmys
-	NCo/CAKjZzA/2L/mkhN5xJ2V7EkwYII9YkoEd9c7Hf4Iyes9zSp7eLmYp4y0hQiS8qODqPJ5EP86J
-	DPEqL/hLRtNA0EkAP5/1/yczLsrrNuU4w5SPQfszgZ/CXrsuqlDOiP0D9sfgua6CZdCd3jb4s8yXr
-	uWmb7tSngtTwZBzj4zf/Tg/6JG1k62fjfG8aMx1uwIaf7Pu3iplJMVrjPDZcV5jT/l+NjWIAa9sJr
-	V1hNfJhyDEkpJdx/AKDzmL6QrplrwaeH6ytDHgygBQm4MCDbXUAYHEMRgSHA3H8CLCmgVVZGMvdBw
-	1pUBbavss0ePjCzVM7GA==;
+	List-Owner; bh=ZjRordsYdSxQ8mhlCI544IF2/hnD2LJLmo6GfeAOB5A=; b=lyXXLmJIUEkxRW
+	qLF1xUxvxY1QMEuOy4NXgs4HWGHsHI+/eufAwS2Q1e/QxASgl18EoAvVrKVQZknOrV0L7rvH36fYp
+	3Lts75JKtn79gCe2ZPvZC4X6QCeq9nCf9LWR3wfiWytMm0OfnGLTbS7H1b33XwUtU1FoY128V+YlE
+	0S8wIBTaSlrN/HOAU+XUV8ARYKIGyfhEpUVA8RHagMgw4B9sScbIvOEiiPn/DLfuWR6hrulVWrgV0
+	E9XLBVr/y1UAvzcKkkmHLdV2RIKPGGGGdGJxAqV6iTri0a6Wa5FkqOH6HkmphET6Vxu5h2iLh0Hck
+	geq/wtGlyFvwUi8TV3pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haNTJ-0005NB-Du; Mon, 10 Jun 2019 16:48:37 +0000
+	id 1haNUN-0005kE-OO; Mon, 10 Jun 2019 16:49:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haNSr-0005Bd-IJ
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:48:10 +0000
+ id 1haNUD-0005jr-1B
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:49:34 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B062F21721;
- Mon, 10 Jun 2019 16:48:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3C0BC206C3;
+ Mon, 10 Jun 2019 16:49:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560185289;
- bh=3q0wdBIBloAaKbF30NNBcupNXjug5nIS2FnWZbNAe2g=;
+ s=default; t=1560185372;
+ bh=DJWzh4M4XAj7HnA5+HP6vbhzYDiXG0edcx1jVTCzodk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xewsbSbPxHoWDdWHAHP9sZybWLjLS7IliCL/Tc6Tya2fNau5BlSCNVvB6IKoCpTq3
- nE3MNfKlGZxuUduGprJf6rfo062bFn4e5pHJjgqdOPwN4qbdnRNCn0qsBcnFphAAka
- Jj1oP+oNoGSk4SxkQw6qOq0HqoIckotX3VhDXWvc=
-Date: Mon, 10 Jun 2019 18:48:07 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Erwan Le Ray <erwan.leray@st.com>
-Subject: Re: [PATCH 04/10] serial: stm32: add pm_runtime support
-Message-ID: <20190610164807.GA25660@kroah.com>
-References: <1559638519-6128-1-git-send-email-erwan.leray@st.com>
- <1559638519-6128-5-git-send-email-erwan.leray@st.com>
+ b=TN35St+LWALMFOUIbNZCi+b2AKvJT7luQr7HO7i0ZYDPGVHb/uaL6ku9c+pEHrNV9
+ aItkt+n3O5qsGddEuzo286gMrtLAE6RNGenXK2AfCNAOJ0wbArn700Fjx6zWdNeFlU
+ DP/D7Zm8gFmoa04wmmEJU8O0ce8DdSFxMXwc52Ro=
+Date: Mon, 10 Jun 2019 18:49:30 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: "sudheer.v" <open.sudheer@gmail.com>
+Subject: Re: [patch 1/5] AST2500 DMA UART driver
+Message-ID: <20190610164930.GA32085@kroah.com>
+References: <1559737395-28542-1-git-send-email-open.sudheer@gmail.com>
+ <1559737395-28542-2-git-send-email-open.sudheer@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1559638519-6128-5-git-send-email-erwan.leray@st.com>
+In-Reply-To: <1559737395-28542-2-git-send-email-open.sudheer@gmail.com>
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_094809_660890_A3DB4764 
-X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-CacheID: sfid-20190610_094933_090042_66C2E9CD 
+X-CRM114-Status: UNSURE (   7.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,27 +75,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- Bich Hemon <bich.hemon@st.com>, Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ sudheer.veliseti@aspeedtech.com, linux-aspeed@lists.ozlabs.org,
+ andrew@aj.id.au, benh@kernel.crashing.org,
+ shivahshankar.shankarnarayanrao@aspeedtech.com, robh+dt@kernel.org,
+ joel@jms.id.au, linux-serial@vger.kernel.org, jslaby@suse.com,
+ mchehab+samsung@kernel.org, linux-arm-kernel@lists.infradead.org,
+ sudheer Kumar veliseti <sudheer.open@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 04, 2019 at 10:55:13AM +0200, Erwan Le Ray wrote:
-> Use pm_runtime for clock management.
+On Wed, Jun 05, 2019 at 05:53:11PM +0530, sudheer.v wrote:
+> From: sudheer Kumar veliseti <sudheer.open@gmail.com>
 > 
-> Signed-off-by: Bich Hemon <bich.hemon@st.com>
-> Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
+> Signed-off-by: sudheer veliseti <sudheer.open@gmail.com>
+> ---
 
-Does not apply to my tree :(
+I can not take a patch without any changelog text at all, especially for
+one that is 1928 lines long :(
 
+Please provide a proper changelog and I will be glad to review it.
 
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
