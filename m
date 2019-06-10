@@ -2,60 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB9FF3BACF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:16:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CFF63BAD2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:17:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=toc4su+YOc/trQWz/c9olGM5wJVxUyVAHAb45nhbZ6o=; b=GRuz/VwG4HvbFd
-	an6HkVfopAjmTSA98wlg9NDZI8whEQJwVVZ4Fcm2ASdeLLJlsKuyXrRAdL9FIURtblXvXvQ+Uplba
-	NBNlHjRMnEPH6X5w/M/7P1/daxoNnVfwD9ByZpsYFwUXaVY75Ay0Otkwo0m2EQnNMD1rI/NDMzyQ0
-	3r2Cl3E28YK3BxcOVdfsWx29f7s2ursTOljU9qTFSX15ONc9CazvmAswPPdhpzYvYh60A10TgCLhP
-	cmPoVMG+fD9JqsAJ3ZlbTnOlueQMbTtWp7ojyOF2o+iIw0X829NwWFtyuYVo+XcpHY9fpg6IACXS9
-	36z3nVbloualq7uWM67w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NHq2oifPvN/SWs59abhgHF2+gzklhssqxCFQn9Kp9Lc=; b=nsM+DOfpKqKqzI9DALgP3LNxs
+	rRP7T0i9KZfmgpvMATPR01tFch4JpW3p5X9X7y59SyKOg4lopMmAdG7eK3KHP3D4NPj5V3e09pgPu
+	NoyDHh/XV3vbF337nKvz3WkoKg4mO0xNln403J6dQLVYhMM3ds9ANBajsPfEACOwsfqJj/7EzONwm
+	HU3YL2TZFDD1nCK0nJOodRmH2hlpLy867xmCs/H7TNqzGI8FmpyEyC/QLhwXCAGUangWKRBT0D1SC
+	rnZY3T/emlcTQQIUsXIFyAvrr89ci4vs1btNgWfL80DFRV9GRmnb7sBq8ERF/MgeNbnwdGelPhhQq
+	L4tySbDxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haNug-0001jE-Cc; Mon, 10 Jun 2019 17:16:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haNuE-0001YY-BX
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:16:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5CF56337;
- Mon, 10 Jun 2019 10:16:25 -0700 (PDT)
-Received: from redmoon (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB4803F246;
- Mon, 10 Jun 2019 10:16:22 -0700 (PDT)
-Date: Mon, 10 Jun 2019 18:16:08 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH 00/18] ARM/ARM64: Support hierarchical CPU arrangement
- for PSCI
-Message-ID: <20190610171557.GA4560@redmoon>
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <CAJZ5v0gbK3AFCVC1b9LyXeMOM8fKR1=ECXZwaeSYRSqcK0UgYA@mail.gmail.com>
- <CAPDyKFpU3u248Gi+FnrVdY-EWXJQuu14uNV9d3Xs0W-K-EMEhg@mail.gmail.com>
- <20190607154210.GJ15577@e107155-lin>
- <20190607193407.GB24059@builder>
- <20190610103225.GA26602@e107155-lin>
- <CAPDyKFr31SwmHHAREbR3dWMQ55LzzUyTc4M5FZvNsqWfX7SE8Q@mail.gmail.com>
+	id 1haNvE-00026k-Il; Mon, 10 Jun 2019 17:17:28 +0000
+Received: from aserp2130.oracle.com ([141.146.126.79])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haNv6-00026L-6V
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:17:21 +0000
+Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
+ by aserp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5AH9LVu063324;
+ Mon, 10 Jun 2019 17:17:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2018-07-02;
+ bh=9FkmUjvyN8H/QH8XIc5IIkwUov+U2wYpeDNQ6ZQm7Iw=;
+ b=o5/B+j0mMS1GI8a9zyhd+Ew+CzaKEU+uo65gCuv+P7MYBwqtr4077C4T9TDpZsrTPGaG
+ 2hPllZdfLnk7X9kEP7PBolZizmOJDzNFEdGbhHPx2bZMee1qe2vgUzxU8JMDW5N2t8zY
+ n1G6TJF95I+Mzeh+W/rN51jyTuz38NdirQcZ27xvid634A/MgiuViEOrc+oimCs3BQUS
+ vY2/xiZETMX1GfecJYLXgWkBGPrmRC8xImOcjQ0+afcweRDezusuATG2X3OJV1a62HLg
+ F+QZouIn0CZx1nZFCS2BegUsbaNCXd2+8wTDBWiiFBJOjI+4NCw0X78ecCXiMokSBV+9 qA== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by aserp2130.oracle.com with ESMTP id 2t02hegcq4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 10 Jun 2019 17:17:15 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5AHHFoU123791;
+ Mon, 10 Jun 2019 17:17:15 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 2t024txpmj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 10 Jun 2019 17:17:14 +0000
+Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5AHHC8E000308;
+ Mon, 10 Jun 2019 17:17:12 GMT
+Received: from [10.209.242.19] (/10.209.242.19)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 10 Jun 2019 10:17:11 -0700
+Subject: Re: [GIT PULL] clk: keystone: changes for 5.3
+To: Tero Kristo <t-kristo@ti.com>, linux-clk <linux-clk@vger.kernel.org>,
+ Stephen Boyd <sboyd@codeaurora.org>, Santosh Shilimkar
+ <ssantosh@kernel.org>, Michael Turquette <mturquette@baylibre.com>
+References: <3bd8aa21-60a5-f36a-b86f-425ce4f0163e@ti.com>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <fe1da566-d8f4-8f53-cad7-d3b2a6e2c638@oracle.com>
+Date: Mon, 10 Jun 2019 10:17:11 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:52.0)
+ Gecko/20100101 Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFr31SwmHHAREbR3dWMQ55LzzUyTc4M5FZvNsqWfX7SE8Q@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <3bd8aa21-60a5-f36a-b86f-425ce4f0163e@ti.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9284
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906100117
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9284
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906100117
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_101626_538413_5EE29F31 
-X-CRM114-Status: GOOD (  15.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_101720_327570_51CE5990 
+X-CRM114-Status: GOOD (  18.59  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.79 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,66 +113,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Kevin Hilman <khilman@kernel.org>,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 05:54:39PM +0200, Ulf Hansson wrote:
-
-[...]
-
-> My summary from the earlier ones, is that because the PSCI spec
-> includes support for OSI, we should also support it in the kernel (and
-> ATF). In a discussion offlist, Lorenzo agreed that it's okay to add,
-> without an apple to apple comparison. Maybe Lorenzo can fill in and
-> state this publicly, to save us all some time?
-
-The comparison should have been made before even requesting PSCI OSI
-mode changes to the specifications, so we have a chip on our shoulders
-anyway.
-
-We will enable PSCI OSI but that's not where the problem lies, enabling
-PSCI OSI from a firmware perspective should take 10 lines of code,
-not:
-
- drivers/firmware/psci/Makefile                |   2 +-
- drivers/firmware/psci/psci.c                  | 219 ++++++++--
- drivers/firmware/psci/psci.h                  |  29 ++
- drivers/firmware/psci/psci_pm_domain.c        | 403 ++++++++++++++++++
-
-I have some concerns about these changes that I will state in the
-relevant patches.
-
-> My final point in regards to the OSI mode support, it's a minor part
-> of the series. I don't see how that should hurt from a maintenance
-> point of view, or perhaps I am wrong? In any case, I offer my help
-> with review/maintenance in any form as you may see need/fit.
-
-I will go through the series but most of this code should move
-to core PM code, it has nothing to do with PSCI.
-
-BTW, apologies for the delay, I was away.
-
-Thanks,
-Lorenzo
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNi8xMC8xOSA1OjEzIEFNLCBUZXJvIEtyaXN0byB3cm90ZToKPiBIaSBTdGVwaGVuLCBNaWtl
+LCBTYW50b3NoLAo+IAo+IEhlcmUncyBhIHB1bGwgcmVxdWVzdCBmb3IgdGhlIGNsb2NrIGNoYW5n
+ZXMgZm9yIGtleXN0b25lIFNvQyBmb3IgNS4zLiAKPiBUaGUgcGF0Y2hlcyB3ZXJlIGFja2VkIGJ5
+IFNhbnRvc2gsIHNvIEkgdG9vayBsaWJlcnR5IHRvIGNyZWF0ZSBhIAo+IHB1bGwtcmVxdWVzdCBm
+b3IgdGhlc2UgYWxzby4gSSBzbmlwcGVkIHBhdGNoICM1IG91dCBvZiB0aGUgc2VyaWVzIChpdCBp
+cyAKPiBhZ2FpbnN0IGRyaXZlcnMvZmlybXdhcmUpIGFuZCBhbSBwbGFubmluZyB0byBzZW5kIGEg
+c2VwYXJhdGUgCj4gcHVsbC1yZXF1ZXN0IGZvciB0aGlzLCBvciBhbHRlcm5hdGl2ZWx5IGFncmVl
+IHdpdGggU2FudG9zaCBob3cgdG8gaGFuZGxlIAo+IGl0Lgo+IApbLi4uXQo+IAo+IFRoZSBmb2xs
+b3dpbmcgY2hhbmdlcyBzaW5jZSBjb21taXQgCj4gYTE4ODMzOWNhNWEzOTZhY2M1ODhlNTg1MWVk
+N2UxOWY2NmIwZWJkOToKPiAKPiAgwqAgTGludXggNS4yLXJjMSAoMjAxOS0wNS0xOSAxNTo0Nzow
+OSAtMDcwMCkKPiAKPiBhcmUgYXZhaWxhYmxlIGluIHRoZSBnaXQgcmVwb3NpdG9yeSBhdDoKPiAK
+PiAgwqAgZ2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2tyaXN0
+by9saW51eCAKPiB0YWdzL2tleXN0b25lLWNsay1mb3ItNS4zCj4gCkFtIGFzc3VtaW5nIE1pa2Uv
+U3RlcGhlbiB3aWxsIHBpY2sgdGhpcyB1cC4KClJlZ2FyZHMsClNhbnRvc2gKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
