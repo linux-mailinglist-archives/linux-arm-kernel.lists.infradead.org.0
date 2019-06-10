@@ -2,94 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E26213BD90
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 22:36:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0176C3BDD4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 22:52:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lK55zFRYqpB0y01uDnesj5PXDp8MHx80o0sH9xuhGv4=; b=nhBgTox7xy5prI
-	gENkKO3ShYaOHUwj3OH5OFKs6td71zuOQClz4FdQHdpr7Ht0pWHdK71/XFCynl2Ry+COujV8uNrAX
-	kMQmi+uUEHN+dsB2mFygx/MY+GudKG0APAmXxfVGtQKF0ao1CdVkKlhctD93KiQp6a1jDn0ZzQjMQ
-	4DhUbuB9hygXG6lek3nJTTat9YMYTUuE2Ukh+OflSbkLxjTEFvuyLAx3zu6ReR/RwPoMhTLUy2Hax
-	ZEwzOcYpILlg5ayURDlwFr+ibSnzmvTzLTWxif9RixPtyvgLIrA/I4yoIdKNs3ERfIE3VvHo6+7RW
-	Rnr1i/bfnu8xglPuG7ug==;
+	List-Owner; bh=u14I3ZHrSQtYEEM1kmf3Zg4o23UdvCEfjWINFgDkNDc=; b=f0PuM/2XXUIrxL
+	o0+w81pjtSag0U9m2tVcssqPYiJKoIw2BFIAnnuzlQM5dch1SSFukttHBmoHqpfEvOhpmRUfxdhCM
+	hgtW2tPK0Tymofn7l4M5W7j14KXYMRirKvAA2yJh1evWolfyAlB4+CVh5pARPEOKlgDdIb5P1XPad
+	My6QW4db9NUktT6V0nBn34MiNJRvgqg3Pt4GXHu2ee8UZq4Q2HH+JPrntQBrEed005uoQeG4YJTc4
+	0KOiMaTuq0GFbLwdrg/VfyN3SGTPKPdxwEUZjrJt8kyJJj0Ma6fJYfwM2CZfZ6RtaQWQjpbSltt7H
+	KWediQD7kV/tUf8y0a9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haR1l-00082i-9x; Mon, 10 Jun 2019 20:36:25 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1haRHf-0005th-36; Mon, 10 Jun 2019 20:52:51 +0000
+Received: from mail-eopbgr800094.outbound.protection.outlook.com
+ ([40.107.80.94] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haR1S-00082L-Re
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 20:36:08 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 196so5635846pgc.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 13:36:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=QIiaElKbYG7X2iRY6VXsdeM4+31zgx4vPIFfu4hUJug=;
- b=aypLgRrX0btLwkQ78UmSd30OW9UF0AUZJnAd3r2/5HqpTZB7t9pPjkr79taehwRSBe
- Uf3LjKJsRGeyWW7niEs4BHLmd/27Tp++YcV8xUIXVrHXkWkhfr39ad2bGk73/2ccXpRd
- Krrfs143htc/xGI+Ppm9VimNWGnjKhQyxh//k=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=QIiaElKbYG7X2iRY6VXsdeM4+31zgx4vPIFfu4hUJug=;
- b=FQKuorIuvG0vK9ESqqoL4CMmL6OKh6mBEwgYT4u3I6gnDOzUEh5VV4lG8gbLoeSVKG
- Kd0PQfDuDu7B3F9tsWPXDNYXuXtm9GGpsvDE2duOzVljQUXF170S7M/T+0IeSV/mO9C4
- lx9wk66QvHL7dg+aw0PU5bDVP5fEiS/sSDwWdSPrOygyyWPBvpoKiGGYvGDlIBBw0Mx1
- phhegN/wNDndL0fdykXHNHUjtQS6RlUKrAludxKhUFR6DqViU0qD5BVL7k+MDMKQyBwy
- d6iUQP/hHVThSMBMs15By3fSIHd5S4rvW3TOgjneE/i1pb40PmdqayYhonVuzjR8r9/I
- 5mVw==
-X-Gm-Message-State: APjAAAUjwq8YQ++eP7GLi4EGBeR4aJqWzIuMjcZ0zVTJe034v3fnQIS8
- 5kx3+sDeJ+TsHAeX9r5+iJFtFQ==
-X-Google-Smtp-Source: APXvYqz36v1zCKX0GRWb534Z9an9udGHI/NESxPlvuGqVOMCrwC97gsWY6mXQoFhLwcNndoWLde2ZA==
-X-Received: by 2002:a62:1b85:: with SMTP id
- b127mr76850297pfb.165.1560198965895; 
- Mon, 10 Jun 2019 13:36:05 -0700 (PDT)
-Received: from www.outflux.net
- (173-164-112-133-Oregon.hfc.comcastbusiness.net. [173.164.112.133])
- by smtp.gmail.com with ESMTPSA id k22sm11148457pfk.178.2019.06.10.13.36.04
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 10 Jun 2019 13:36:04 -0700 (PDT)
-Date: Mon, 10 Jun 2019 13:36:04 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
- __uaccess_mask_ptr
-Message-ID: <201906101335.DF80D631@keescook>
-References: <cover.1559580831.git.andreyknvl@google.com>
- <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
- <20190610175326.GC25803@arrakis.emea.arm.com>
- <201906101106.3CA50745E3@keescook>
- <20190610185329.xhjawzfy4uddrkrj@mbp>
+ id 1haRHT-0005sx-Fv
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 20:52:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=aampusa.onmicrosoft.com; s=selector2-aampusa-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=jHHjKf6kuve4zZKO2RaUkh6/E14EwdUI1UTEoLj5Rs8=;
+ b=uQ856U5Plqo8Ml5tA784FOMTvh5Kx/bcsa4vh4L6pXg0tHePIbLxVTVOzykaQb/PBgPHQ7TWYmuPFeg7S1w1gAg33djS1CQALxVgzNK/R3hC2ElyYH3mi6NHxLHCz0Nyk8ciBUhbmlzZ3F5xvhbRI9z9e0caROKyENksnK2YALU=
+Received: from BL0PR07MB4115.namprd07.prod.outlook.com (52.132.10.149) by
+ BL0PR07MB4082.namprd07.prod.outlook.com (52.132.10.140) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.12; Mon, 10 Jun 2019 20:52:33 +0000
+Received: from BL0PR07MB4115.namprd07.prod.outlook.com
+ ([fe80::f064:5129:63c6:d3e]) by BL0PR07MB4115.namprd07.prod.outlook.com
+ ([fe80::f064:5129:63c6:d3e%6]) with mapi id 15.20.1965.017; Mon, 10 Jun 2019
+ 20:52:33 +0000
+From: Ken Sloat <KSloat@aampglobal.com>
+To: Guenter Roeck <linux@roeck-us.net>, Alexandre Belloni
+ <alexandre.belloni@free-electrons.com>
+Subject: RE: [RFE]: watchdog: atmel: atmel-sama5d4-wdt
+Thread-Topic: [RFE]: watchdog: atmel: atmel-sama5d4-wdt
+Thread-Index: AdUfoOr5PB/8HxffRU28PtnqCbe4YAACJOOAAAfaK4AAAJMTAAAAjEEQ
+Date: Mon, 10 Jun 2019 20:52:33 +0000
+Message-ID: <BL0PR07MB41151D49B58CDF5E4A34D5A8AD130@BL0PR07MB4115.namprd07.prod.outlook.com>
+References: <BL0PR07MB41152EDB169FE9ED1AD3B4C9AD130@BL0PR07MB4115.namprd07.prod.outlook.com>
+ <20190610162811.GA11270@roeck-us.net> <20190610201301.GH25472@piout.net>
+ <20190610202928.GB13191@roeck-us.net>
+In-Reply-To: <20190610202928.GB13191@roeck-us.net>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=KSloat@aampglobal.com; 
+x-originating-ip: [100.3.71.115]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 15b3f4a5-7171-4754-3b69-08d6ede58ff1
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BL0PR07MB4082; 
+x-ms-traffictypediagnostic: BL0PR07MB4082:
+x-microsoft-antispam-prvs: <BL0PR07MB40828AEBC6764A830720DCB4AD130@BL0PR07MB4082.namprd07.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0064B3273C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(396003)(39850400004)(376002)(136003)(366004)(346002)(189003)(13464003)(199004)(6436002)(7696005)(99286004)(9686003)(68736007)(55016002)(66066001)(229853002)(5660300002)(14454004)(8676002)(72206003)(7736002)(305945005)(2906002)(71200400001)(81156014)(316002)(81166006)(8936002)(71190400001)(6116002)(3846002)(66946007)(478600001)(54906003)(25786009)(446003)(476003)(110136005)(186003)(11346002)(80792005)(486006)(73956011)(86362001)(64756008)(66446008)(107886003)(53936002)(66556008)(66476007)(6246003)(14444005)(76116006)(256004)(33656002)(74316002)(4326008)(6506007)(76176011)(53546011)(26005)(52536014)(102836004);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BL0PR07MB4082;
+ H:BL0PR07MB4115.namprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: aampglobal.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: l7F8jaeIMOqhl1eszf4gtmU3fVCUGOLZsdNffOjw9oksNGYBRZCyGDrtu9oDwgjQAoaF2NL4q79wnOvRARNPH38wchCInVXCC6pyLgzZlU+8Bb4fSTgL+FcoFvHteWmGhgSrqBA5Mr9veOfcdlNAyvscpM+F8TU86BLRmCIW504u1zgEfk6jcvJDQ2V84UijwL864VvqVGGmVzjDqzjXm81U0fe+Jqpt0i3Ij3IaDDFz0RuS4xLDWcdEfWA0T7g6BWrhVB4GSEqUnllfyrPpXDJGmDqpH7Z3BH2QQ8w3GYIYhhdFOxJ8P6df9XcA8TlXs5oO3UESDaiJlvdSvn9cwRsvH8iigKtW9lFFRTtJaeMf60WHE2bxkvlYy/bonc2f/gko0qchFWkA5GsQRBDLT2f3xx7IPNzqgcSidIKqMp8=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190610185329.xhjawzfy4uddrkrj@mbp>
+X-OriginatorOrg: aampglobal.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 15b3f4a5-7171-4754-3b69-08d6ede58ff1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2019 20:52:33.6589 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e20e3a66-8b9e-46e9-b859-cb654c1ec6ea
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ken.sloat@aampglobal.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR07MB4082
+X-MS-Exchange-CrossPremises-AuthAs: Internal
+X-MS-Exchange-CrossPremises-AuthMechanism: 04
+X-MS-Exchange-CrossPremises-AuthSource: BL0PR07MB4115.namprd07.prod.outlook.com
+X-MS-Exchange-CrossPremises-TransportTrafficType: Email
+X-MS-Exchange-CrossPremises-TransportTrafficSubType: 
+X-MS-Exchange-CrossPremises-SCL: 1
+X-MS-Exchange-CrossPremises-messagesource: StoreDriver
+X-MS-Exchange-CrossPremises-BCC: 
+X-MS-Exchange-CrossPremises-originalclientipaddress: 100.3.71.115
+X-MS-Exchange-CrossPremises-transporttraffictype: Email
+X-MS-Exchange-CrossPremises-transporttrafficsubtype: 
+X-MS-Exchange-CrossPremises-antispam-scancontext: DIR:Originating; SFV:NSPM;
+ SKIP:0; 
+X-MS-Exchange-CrossPremises-processed-by-journaling: Journal Agent
+X-OrganizationHeadersPreserved: BL0PR07MB4082.namprd07.prod.outlook.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_133606_928317_6FE2772D 
-X-CRM114-Status: GOOD (  16.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_135239_581837_15032939 
+X-CRM114-Status: GOOD (  31.51  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.80.94 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,80 +124,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Ken Sloat <KSloat@aampglobal.com>,
+ "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "wim@iguana.be" <wim@iguana.be>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 07:53:30PM +0100, Catalin Marinas wrote:
-> On Mon, Jun 10, 2019 at 11:07:03AM -0700, Kees Cook wrote:
-> > On Mon, Jun 10, 2019 at 06:53:27PM +0100, Catalin Marinas wrote:
-> > > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> > > index 3767fb21a5b8..fd191c5b92aa 100644
-> > > --- a/arch/arm64/kernel/process.c
-> > > +++ b/arch/arm64/kernel/process.c
-> > > @@ -552,3 +552,18 @@ void arch_setup_new_exec(void)
-> > >  
-> > >  	ptrauth_thread_init_user(current);
-> > >  }
-> > > +
-> > > +/*
-> > > + * Enable the relaxed ABI allowing tagged user addresses into the kernel.
-> > > + */
-> > > +int untagged_uaddr_set_mode(unsigned long arg)
-> > > +{
-> > > +	if (is_compat_task())
-> > > +		return -ENOTSUPP;
-> > > +	if (arg)
-> > > +		return -EINVAL;
-> > > +
-> > > +	set_thread_flag(TIF_UNTAGGED_UADDR);
-> > > +
-> > > +	return 0;
-> > > +}
-> > 
-> > I think this should be paired with a flag clearing in copy_thread(),
-> > yes? (i.e. each binary needs to opt in)
+> -----Original Message-----
+> From: Guenter Roeck <groeck7@gmail.com> On Behalf Of Guenter Roeck
+> Sent: Monday, June 10, 2019 4:29 PM
+> To: Alexandre Belloni <alexandre.belloni@free-electrons.com>
+> Cc: Ken Sloat <KSloat@aampglobal.com>; Nicolas.Ferre@microchip.com;
+> wim@iguana.be; linux-arm-kernel@lists.infradead.org; linux-
+> watchdog@vger.kernel.org; linux-kernel@vger.kernel.org
+> Subject: Re: [RFE]: watchdog: atmel: atmel-sama5d4-wdt
 > 
-> It indeed needs clearing though not in copy_thread() as that's used on
-> clone/fork but rather in flush_thread(), called on the execve() path.
+> [This is an EXTERNAL EMAIL]
+> ________________________________
+> 
+> On Mon, Jun 10, 2019 at 10:13:01PM +0200, Alexandre Belloni wrote:
+> > Hello,
+> >
+> > On 10/06/2019 09:28:11-0700, Guenter Roeck wrote:
+> > > On Mon, Jun 10, 2019 at 03:51:52PM +0000, Ken Sloat wrote:
+> > > > Hello Nicolas,
+> > > >
+> > > > I wanted to open a discussion proposing new functionality to allow
+> > > > disabling of the watchdog timer upon entering suspend in the
+> SAMA5D2/4.
+> > > >
+> > > > Typical use case of a hardware watchdog timer in the kernel is a
+> > > > userspace application opens the watchdog timer and periodically
+> > > > "kicks" it. If the application hits a deadlock somewhere and is no
+> > > > longer able to kick it, then the watchdog intervenes and often
+> > > > resets the processor. Such is the case for the Atmel driver (which
+> > > > also allows a watchdog interrupt to be asserted in lieu of a system
+> reset). In most use cases, upon entering a low power/suspend state, the
+> application will no longer be able to "kick" the watchdog. If the watchdog is
+> not disabled or kicked via another method, then it will reset the system. This
+> is the current behavior of the Atmel driver as of today.
+> > > >
+> > > > The watchdog peripheral itself does have a "WDIDLEHLT" bit
+> > > > however, and this is enabled via the "atmel,idle-halt" dt
+> > > > property. However, this is not very useful, as it literally only
+> > > > makes the watchdog count when the CPU is active. This results in
+> > > > non-deterministic triggering of the WDT and means that if a
+> > > > critical application were to crash, it may be quite a long time
+> > > > before the WDT would ever trigger. Below is a similar statement
+> > > > made in the device-tree doc for this
+> > > > peripheral:
+> > > >
+> > > > - atmel,idle-halt: present if you want to stop the watchdog when the
+> CPU is
+> > > >              in idle state.
+> > > >   CAUTION: This property should be used with care, it actually makes
+> the
+> > > >   watchdog not counting when the CPU is in idle state, therefore the
+> > > >   watchdog reset time depends on mean CPU usage and will not reset at
+> all
+> > > >   if the CPU stop working while it is in idle state, which is probably
+> > > >   not what you want.
+> > > >
+> > > > It seems to me, that it would be logical and useful to introduce a
+> > > > new property that would cause the Atmel WDT to disable on suspend
+> > > > and re-enable on resume. It also appears that the WDT is re-initialized
+> anyways upon resume, so the only piece missing here would really be a dt
+> flag and a call to disable.
+> > > >
+> > > Wondering - why would this need a dt property ? That would be quite
+> > > unusual. Is there a condition where one would _not_ want the watchdog
+> to stop on suspend ?
+> > >
+> >
+> > There are customers that protects suspend/resume using the watchdog.
+> > They wake up their platform every 15s to ping the watchdog.
+> >
+> 
+> Interesting use case.
+> 
+> > Also, I don't see why the application deciding to go to suspend
+> > wouldn't be able to disable the watchdog before do so if this is the wanted
+> policy.
+> >
+> 
+> Many watchdog drivers already implement suspend/resume support. Such a
+> platform specific functionality seems to be quite undesirable to me.
+> 
+> Besides (and pretty much all watchdog drivers implementing
+> suspend/resume do that wrong), you'd likely want to disable the watchog
+> late during suspend and early during resume to reduce the risk of a hang. I
+> don't think you can do that from userspace.
+> 
 
-Ah! Yes, thanks.
+Agreed, there's also the risk if using something like wake_count where the 
+suspend process can be interrupted by the kernel. This just makes for more
+cases that the application has to try and handle, and what happens if the 
+application hangs/crashes some time between disabling the wdt and suspend?
 
-> And a note to myself: I think PR_UNTAGGED_ADDR (not UADDR) looks better
-> in a uapi header, the user doesn't differentiate between uaddr and
-> kaddr.
+Right now, what probably is a very common case of devices that enter low power 
+mode for longer than 16 seconds are precluded from using this WDT.
 
-Good point. I would agree. :)
+> Thanks,
+> Guenter
 
--- 
-Kees Cook
+Thanks,
+Ken
 
 _______________________________________________
 linux-arm-kernel mailing list
