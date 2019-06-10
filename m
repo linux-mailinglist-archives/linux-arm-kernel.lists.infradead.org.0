@@ -2,81 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA1723BC47
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 20:58:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B25413BC4F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 20:59:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IOyEqdxqVsTssGR60efOL2ER06/N2hegZHlgM0Fh598=; b=BoG1BoOci9fe6d
-	2jTQ9A5EYc+bFPAjm0f1KvhUe11Trbz+cKROF051nXFe804ELV0PMecZBzr8L2cJdqH/OqX6vxBJ4
-	4m8nsy4kRd6qbQA9VRZCK8Xl2wsjHK1Z7RmSObloFa8Eu/929Kk4U0K6z0Z6AGIRflXuZidM2Le7p
-	riqQ8DDgn0LwuTtAtEDoJE9T1sz7xpsuLXxCnFyhggsOhSUyjUDZiMI+PUDeXEni3qiO33E+OM+87
-	WhaezIQVlJ96rwq+grtE0WDfnF4Pv8OyTdueyu5kznzLh75LHNIHY6ZJblejXjF2uBly5BqQQxBxT
-	+XCB0cx1rueAkAMy/jnQ==;
+	List-Owner; bh=01RgkBwFfK1rGZ64QGffmTGg8+lnD7FTDkY3xnxaUqk=; b=k0ezGMkdGb8Z1Q
+	9cMpTOaB6S7diFLerYOZKKR+3mgev/0/BcwqJoPntL+Ky9XQ8ZGBdyBI+9CkFsiDzkFgTN6Jk7Bl7
+	Zu/CMQzUl/OzcH4bQGNAWVC4BTUs2vP7J8JhS8bAfciamH3hQBSr1KPQU8QAHtn3/Qg3dwS1Uhw73
+	ctIrsWoiSp1BG6PDu3pnOQ6W6YkFFDa7bYmdRKXyD812MFNg7y2zsAWd4z5Nf2wiXYZTmNjxm7u+w
+	NX3Z8+ctaD/ox5QHJ/hwVjSwvHehChQeL9KTBJbeP6FJTUNSTXu46mCiodiA0l4HlVUONZXBsp71W
+	Vv63/+ec9USkbghpK8EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haPUT-0006Gp-Oi; Mon, 10 Jun 2019 18:57:57 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1haPWQ-0006cf-4Q; Mon, 10 Jun 2019 18:59:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haPUH-0006GG-0S
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 18:57:46 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id d128so6169792vsc.10
+ id 1haPWB-0006aK-Eh
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 18:59:44 +0000
+Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
+ [209.85.160.170])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A640E2086A
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 11:57:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hev5OwEACcFPK6C/FK48RMoXOAu7262fSU4AViD4u8w=;
- b=Kai5Z2EkT0zQjVLtISRnsn979fWob+Jsr+Kyg5eRj7CxJ7C+1El4hYerae8V2HnD10
- Vr4/J7G71YpP58NVfVe+X4DYJx2Izsxl0vEeKRtW4ySmvYYI5LNYwJUX7UhV6DWJPQjH
- mUMz6Ce5gPtIrO9yjGBJzdAJQWnFUjaqtBndYVPwHg9T7/wrirYFF33oBhoXNCWsQ0ly
- KLJeIWIl7AB5Hauw6t+B6m/FwhNQB7siy27tLNScZnfT0W34zAk5zCjZUXKcR+ZUDtyf
- nP3cEYZvjT/IvcQYnobXENvk1R8HugzTubIA/RSZDO0UaLZT8wV9gyrXBgrcgIRnElYH
- 7QnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hev5OwEACcFPK6C/FK48RMoXOAu7262fSU4AViD4u8w=;
- b=bUgn2qvJMO9/wUiphSRHImSPe07yoYxUU2FSCOq0HFZPZ3h9MAI/yEtU2EQT44P6yT
- 9igEysbTIHKPfwHC9KBHFORr+OYQbhH2sNQG1msSkwVzsCtR+7CjPYSjm17YSITiV370
- oCi6Msm2PSF5kSn+f+FQoDDMFEk++M19bS8VwcpsWvRNeZGmP9UousGJluC5PmYz3DN6
- CPL7DjZtBVJCzGti2+Gn375cKZYfrok8rMHq6B3foUucaxbKx7kq7GbTmwM4tLzCuYEd
- MV+CsXzXsPAlZ/IPchnDaCcf9dIHjEfoVlH5QdqcQjvdZVrpqz6C1LGoODTrwOZBQCvg
- KPtQ==
-X-Gm-Message-State: APjAAAX2oWSLh3bSpFVpykPo5ebUHWd/eePzItusocB96muGUOeob/HL
- ok/gHk+WoNTGgwK14MX6YS/QxMBn4E89pya/gBvtBw==
-X-Google-Smtp-Source: APXvYqwm/ynTvjQ+f9xLC1Cl7wUK4nvhtVIJf0TZpVpspEnFtpsiTVdCmUl3c7IKVyU5GWmfDB+ArZ52XPhJqykZu18=
-X-Received: by 2002:a67:ebc5:: with SMTP id y5mr26971295vso.34.1560193063536; 
- Mon, 10 Jun 2019 11:57:43 -0700 (PDT)
+ Mon, 10 Jun 2019 18:59:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560193181;
+ bh=NiQ6TSS68zMVARMk1UxtRrBtgarpzq8OIbKEFYq7Nyw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=PZy7xeMMzhmsda1hjKJ29ExmrhdZQYjnrUmbMWO8BP81vJK3DXvIkdTzD9GV/r1Ta
+ QEwqvvJUFE93GJeXm1+pobl+zg78XWx5FA1zDP9ROVKQooOyrpWOkm9JmoyVZS0fRR
+ MUiMJ+kawdHnnw7xPP3a2XNiVFIPhPOLiKhjgY48=
+Received: by mail-qt1-f170.google.com with SMTP id n11so9547679qtl.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 11:59:41 -0700 (PDT)
+X-Gm-Message-State: APjAAAUqFNt/qWh+bDmjeLZ+GwsK70x/hK8MvQ5uFOqbTa7juGfhKJng
+ Q73p5lfLEcthUs8TLbHJE3oPO6Lzn80O6iyCqg==
+X-Google-Smtp-Source: APXvYqwCmscLJYNa3hNvdJokj1iSTo/T0hJq/eoSYOtoTwBoqS29ewgLPnrTr6A8IxSA+xvJ3iYP3g7C2lZ8C89tCMA=
+X-Received: by 2002:ac8:36b9:: with SMTP id a54mr61317703qtc.300.1560193180904; 
+ Mon, 10 Jun 2019 11:59:40 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190513192300.653-1-ulf.hansson@linaro.org>
- <CAJZ5v0gbK3AFCVC1b9LyXeMOM8fKR1=ECXZwaeSYRSqcK0UgYA@mail.gmail.com>
- <CAPDyKFpU3u248Gi+FnrVdY-EWXJQuu14uNV9d3Xs0W-K-EMEhg@mail.gmail.com>
- <20190607154210.GJ15577@e107155-lin> <20190607193407.GB24059@builder>
- <20190610103225.GA26602@e107155-lin>
- <CAPDyKFr31SwmHHAREbR3dWMQ55LzzUyTc4M5FZvNsqWfX7SE8Q@mail.gmail.com>
- <20190610171557.GA4560@redmoon>
-In-Reply-To: <20190610171557.GA4560@redmoon>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 10 Jun 2019 20:57:07 +0200
-Message-ID: <CAPDyKFqC8+Sv5WRhwOxqphAt8tb_PDisy13Miz5e-PajvwS1ew@mail.gmail.com>
-Subject: Re: [PATCH 00/18] ARM/ARM64: Support hierarchical CPU arrangement for
- PSCI
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
+ <d198d29119b37b2fdb700d8992b31963e98b6693.1560158667.git-series.maxime.ripard@bootlin.com>
+ <20190610143139.GG28724@lunn.ch>
+In-Reply-To: <20190610143139.GG28724@lunn.ch>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 10 Jun 2019 12:59:29 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJahCJcdu=+fA=ewbGezuEJ2W6uwMVxkQpdY6w+1OWVVA@mail.gmail.com>
+Message-ID: <CAL_JsqJahCJcdu=+fA=ewbGezuEJ2W6uwMVxkQpdY6w+1OWVVA@mail.gmail.com>
+Subject: Re: [PATCH v2 05/11] dt-bindings: net: sun4i-emac: Convert the
+ binding to a schemas
+To: Andrew Lunn <andrew@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_115745_056720_BAE602D1 
-X-CRM114-Status: GOOD (  21.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_115943_513894_B8B9C82E 
+X-CRM114-Status: GOOD (  13.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,86 +88,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Kevin Hilman <khilman@kernel.org>,
- Amit Kucheria <amit.kucheria@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Niklas Cassel <niklas.cassel@linaro.org>,
- Souvik Chakravarty <souvik.chakravarty@arm.com>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev <netdev@vger.kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ =?UTF-8?Q?Antoine_T=C3=A9nart?= <antoine.tenart@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Jun 2019 at 19:16, Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
+On Mon, Jun 10, 2019 at 8:31 AM Andrew Lunn <andrew@lunn.ch> wrote:
 >
-> On Mon, Jun 10, 2019 at 05:54:39PM +0200, Ulf Hansson wrote:
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - interrupts
+> > +  - clocks
+> > +  - phy
+> > +  - allwinner,sram
 >
-> [...]
+> Quoting ethernet.txt:
 >
-> > My summary from the earlier ones, is that because the PSCI spec
-> > includes support for OSI, we should also support it in the kernel (and
-> > ATF). In a discussion offlist, Lorenzo agreed that it's okay to add,
-> > without an apple to apple comparison. Maybe Lorenzo can fill in and
-> > state this publicly, to save us all some time?
+> - phy: the same as "phy-handle" property, not recommended for new bindings.
 >
-> The comparison should have been made before even requesting PSCI OSI
-> mode changes to the specifications, so we have a chip on our shoulders
-> anyway.
+> - phy-handle: phandle, specifies a reference to a node representing a PHY
+>   device; this property is described in the Devicetree Specification and so
+>   preferred;
 >
-> We will enable PSCI OSI but that's not where the problem lies, enabling
-> PSCI OSI from a firmware perspective should take 10 lines of code,
-> not:
+> Can this be expressed in Yaml? Accept phy, but give a warning. Accept
+> phy-handle without a warning? Enforce that one or the other is
+> present?
 
-Thanks for confirming!
+The common schema could have 'phy: false'. This works as long as we've
+updated (or plan to) all the dts files to use phy-handle. The issue is
+how far back do you need kernels to work with newer dtbs.
 
->
->  drivers/firmware/psci/Makefile                |   2 +-
->  drivers/firmware/psci/psci.c                  | 219 ++++++++--
->  drivers/firmware/psci/psci.h                  |  29 ++
->  drivers/firmware/psci/psci_pm_domain.c        | 403 ++++++++++++++++++
->
-> I have some concerns about these changes that I will state in the
-> relevant patches.
-
-Most of the above changes isn't for solely for OSI, but to support a
-hierarchical topology described in the PSCI DT layout. This is for
-example needed when other resources shares the same power rail as the
-CPU cluster.
-
-In other words, the series is orthogonal to whether OSI or PC mode is
-used for PSCI, just to make that clear. BTW, this is what you
-requested me to change into, a while ago.
-
->
-> > My final point in regards to the OSI mode support, it's a minor part
-> > of the series. I don't see how that should hurt from a maintenance
-> > point of view, or perhaps I am wrong? In any case, I offer my help
-> > with review/maintenance in any form as you may see need/fit.
->
-> I will go through the series but most of this code should move
-> to core PM code, it has nothing to do with PSCI.
-
-I am looking forward to your review - and for sure, I am open to suggestions!
-
->
-> BTW, apologies for the delay, I was away.
->
-> Thanks,
-> Lorenzo
-
-Kind regards
-Uffe
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
