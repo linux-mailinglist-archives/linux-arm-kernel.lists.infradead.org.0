@@ -2,94 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF4BF3BA2D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 18:58:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A05A3BA44
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:01:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jHJoLyzjKrm02EPksTwkdZloyKwJKNv/vhIF4v6b3ig=; b=hUya6Z+7qhgJz/
-	R05uLa0XTW3kG84Y89LlnhC1/86Q6N7UuOWOoshhNPrRgrnp84p36vU60TOWchionbU9Pa8MJ3jQ6
-	H1TswZrMTmcPz6HWQ64DEiyoSqicPH7cPdwPbK9K4QjhzyBk9j7ZsOpkv7eUSzyAPC+QDggjPqmWz
-	GuIX9LFLsFsyj8X0X3W6XYS35WWi7AMRcPdGp7HcM3RNgH6nPX64EyFmsTKgRhhJ4LO6kMrtlxktj
-	h066FHaoccpjk9fkFhg/hc/Qi09akZFRJggyV75UQmd9AxF+Ta7YoEQk38QJOlEfo5JwFJ+o3t36g
-	3QDToMjtx8QNR+7Ujztg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SbwqPM3tElqjePJOvOqxOwNhZ+d4MIMQA7M+o2Wv3tg=; b=eEV+aL7C5g3ooX
+	rwtHj6qHsU7kuSvTUXrhdpZV5MZ1jiWN1JBgMPquWBgWs7/f8Kd6q/IW6gOSx7koo7uYjMT9yNIxf
+	YtQocf+BvKsmo2md3/T5oqRz1E8Vsl4FA3fvVPeBT/pIjTlIPxnePOObMF9kSis+feW+bIIfhM3qc
+	rJmDNoAVL2XsBaeMWF6WOfSzLFUiDDtYy0VTTdO1jzDqHGTOFkfuxn1FVIo9SRTm9NXqVgS9/+Q3+
+	D0DEmF2UecPJp3dEDze2zkmt1zHiV5w2mHBT/LJTB3vssQ20DsXdorpYK6izsvPtQpnv7OMFKbFAA
+	3o14dglgirQJCWYdHQJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haNcY-0001Rc-JR; Mon, 10 Jun 2019 16:58:10 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haNcO-0001RE-NB
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 16:58:02 +0000
-Received: by mail-pg1-x544.google.com with SMTP id n2so5337982pgp.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 09:58:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=02QlD+dQyEGO4EEKFz1uYHazBVRik/r7SAjjSQVxSs4=;
- b=r9/fS6LliK6b9sWK/JXRrCplVnHPfXh2dJwY828nS9aFx1N6M2Rh2OrZ45pBoNUz+6
- 63L0i4B6ANOoEgH5b0WSX0iqrBjWAHbZOq071SW5w1UWdAcvPXt8VxuhGzrk9if+tGIw
- 5e0WH98Og+FomJIfAkK0vKnnVblD2abzMxb3oRzmZqihkkCJlgErDdnomlw+kS7CB9rh
- KiEOeKyJ1maFp146hlz1gTOSHRt60wGOBfmBrhdO+UzW/IohTj3wiStbyB3w5WbpbkZ/
- BoK0X0O4fERQ6zcUNNdpuyGYzyUku+AaJdj4AYDSfNeBBQ9PVARyBxt+cyEqOth/ycO4
- viIg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=02QlD+dQyEGO4EEKFz1uYHazBVRik/r7SAjjSQVxSs4=;
- b=o8Kuz2n12DhEQj72erQgsSJNwk+d7r2eehY0iBUPxBjLXjjiWuMJKaMhyJCY0Eo4bB
- hmwhiMU0GH7FaW9f0Z2wLEg8on6PIYLP9PkG1Vvy3/7GgcPbZJXlxOQQGkxY1G6jUYZL
- azADaFxi8sRprx+U4reRU00KFL71ygauNKTkCK/VeH6WmDDVaAp8gShLeiURJvHXzxeY
- WwGY7siWBjO0zaSov+F9SfWHDbeGLlHPlX1AT8hqO4JRkr+lR1+jGjQVAhy7yNhZLv2d
- 9gs2cG669LqtznR5DMATm0IiFvJGghe849YCDKvRZEAnbQyct09oemGqRhhCdHtJdo5W
- 2qIw==
-X-Gm-Message-State: APjAAAXUPMz1SVhGtdvDoXJJD7cdDxxI6CqYvA0ls8YYKo4cRRkvyHaA
- 36efaaGa6SR+NiJWY2lQwFJ8Pw==
-X-Google-Smtp-Source: APXvYqzVfNPgK3styQsjXZr91PyrqVn2vP6x01Abxia0xpHcW5BIME9JyPDGk9UbFVDoMQ6TMxihtQ==
-X-Received: by 2002:a63:8841:: with SMTP id l62mr14744140pgd.246.1560185879548; 
- Mon, 10 Jun 2019 09:57:59 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id a192sm470040pfa.84.2019.06.10.09.57.57
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 10 Jun 2019 09:57:58 -0700 (PDT)
-Date: Mon, 10 Jun 2019 09:58:43 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Sricharan R <sricharan@codeaurora.org>
-Subject: Re: [PATCH 4/6] clk: qcom: Add ipq6018 Global Clock Controller support
-Message-ID: <20190610165843.GC22737@tuxbook-pro>
-References: <1559754961-26783-1-git-send-email-sricharan@codeaurora.org>
- <1559754961-26783-5-git-send-email-sricharan@codeaurora.org>
- <20190608033229.GE24059@builder>
- <6583f576-acf4-a71b-d691-bce548e2c008@codeaurora.org>
+	id 1haNfr-000442-Hl; Mon, 10 Jun 2019 17:01:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haNfi-00043b-QV
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:01:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5EA7B337;
+ Mon, 10 Jun 2019 10:01:26 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 548623F246; Mon, 10 Jun 2019 10:01:25 -0700 (PDT)
+Subject: Re: [PATCH v2 5/6] KVM: arm64: Defer guest entry when an asynchronous
+ exception is pending
+To: James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu
+References: <20190610162427.115910-1-james.morse@arm.com>
+ <20190610162427.115910-6-james.morse@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ Z46HaNmN2hZS/oJ69c1DI5Rcww==
+Organization: ARM Ltd
+Message-ID: <66f28d7f-0690-dd1f-f371-93dfb1827a9e@arm.com>
+Date: Mon, 10 Jun 2019 18:01:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6583f576-acf4-a71b-d691-bce548e2c008@codeaurora.org>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <20190610162427.115910-6-james.morse@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_095800_757190_B4B0D076 
-X-CRM114-Status: GOOD (  21.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_100126_954129_E6F76118 
+X-CRM114-Status: GOOD (  20.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,139 +109,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- linux-arm-msm@vger.kernel.org, linus.walleij@linaro.org, agross@kernel.org,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, robh+dt@kernel.org,
- linux-soc@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 10 Jun 04:47 PDT 2019, Sricharan R wrote:
-
-> Hi Bjorn,
+On 10/06/2019 17:24, James Morse wrote:
+> SError that occur during world-switch's entry to the guest will be
+> accounted to the guest, as the exception is masked until we enter the
+> guest... but we want to attribute the SError as precisely as possible.
 > 
-> On 6/8/2019 9:02 AM, Bjorn Andersson wrote:
-> > On Wed 05 Jun 10:15 PDT 2019, Sricharan R wrote:
-> > 
-> >> This patch adds support for the global clock controller found on
-> >> the ipq6018 based devices.
-> >>
-> >> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
-> >> Signed-off-by: anusha <anusharao@codeaurora.org>
-> >> Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
-> > 
-> > Please fix your s-o-b chain, as described in my reply to 1/8..
-> > 
+> Reading DISR_EL1 before guest entry requires free registers, and using
+> ESB+DISR_EL1 to consume and read back the ESR would leave KVM holding
+> a host SError... We would rather leave the SError pending and let the
+> host take it once we exit world-switch. To do this, we need to defer
+> guest-entry if an SError is pending.
 > 
->  ok.
+> Read the ISR to see if SError (or an IRQ) is pending. If so fake an
+> exit. Place this check between __guest_enter()'s save of the host
+> registers, and restore of the guest's. SError that occur between
+> here and the ERET into the guest must have affected the guest's
+> registers, which we can naturally attribute to the guest.
 > 
-> >> ---
-> >>  drivers/clk/qcom/Kconfig       |    9 +
-> >>  drivers/clk/qcom/Makefile      |    1 +
-> >>  drivers/clk/qcom/gcc-ipq6018.c | 5267 ++++++++++++++++++++++++++++++++++++++++
-> >>  3 files changed, 5277 insertions(+)
-> >>  create mode 100644 drivers/clk/qcom/gcc-ipq6018.c
-> >>
-> >> diff --git a/drivers/clk/qcom/Kconfig b/drivers/clk/qcom/Kconfig
-> >> index e1ff83c..e5fb091 100644
-> >> --- a/drivers/clk/qcom/Kconfig
-> >> +++ b/drivers/clk/qcom/Kconfig
-> >> @@ -120,6 +120,15 @@ config IPQ_GCC_8074
-> >>  	  i2c, USB, SD/eMMC, etc. Select this for the root clock
-> >>  	  of ipq8074.
-> >>  
-> >> +config IPQ_GCC_6018
-> > 
-> > Please maintain sort order.
-> > 
+> The DSB is needed to ensure any previous writes have been done before
+> we read ISR_EL1. On systems without the v8.2 RAS extensions this
+> doesn't give us anything as we can't contain errors, and the ESR bits
+> to describe the severity are all implementation-defined. Replace
+> this with a nop for these systems.
 > 
->  ok.
+> Signed-off-by: James Morse <james.morse@arm.com>
+> ---
+> Changes since v1:
+>  * Squashed later dsb/nop patch in here
 > 
-> >> +	tristate "IPQ6018 Global Clock Controller"
-> >> +	depends on COMMON_CLK_QCOM
-> >> +	help
-> >> +	  Support for global clock controller on ipq6018 devices.
-> >> +	  Say Y if you want to use peripheral devices such as UART, SPI,
-> >> +	  i2c, USB, SD/eMMC, etc. Select this for the root clock
-> >> +	  of ipq6018.
-> >> +
-> >>  config MSM_GCC_8660
-> >>  	tristate "MSM8660 Global Clock Controller"
-> >>  	help
-> >> diff --git a/drivers/clk/qcom/Makefile b/drivers/clk/qcom/Makefile
-> >> index f0768fb..025137d 100644
-> >> --- a/drivers/clk/qcom/Makefile
-> >> +++ b/drivers/clk/qcom/Makefile
-> >> @@ -22,6 +22,7 @@ obj-$(CONFIG_APQ_MMCC_8084) += mmcc-apq8084.o
-> >>  obj-$(CONFIG_IPQ_GCC_4019) += gcc-ipq4019.o
-> >>  obj-$(CONFIG_IPQ_GCC_806X) += gcc-ipq806x.o
-> >>  obj-$(CONFIG_IPQ_GCC_8074) += gcc-ipq8074.o
-> >> +obj-$(CONFIG_IPQ_GCC_6018) += gcc-ipq6018.o
-> > 
-> > Ditto.
-> > 
+>  arch/arm64/kvm/hyp/entry.S | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
 > 
->  ok.
-> 
-> >>  obj-$(CONFIG_IPQ_LCC_806X) += lcc-ipq806x.o
-> >>  obj-$(CONFIG_MDM_GCC_9615) += gcc-mdm9615.o
-> >>  obj-$(CONFIG_MDM_LCC_9615) += lcc-mdm9615.o
-> >> diff --git a/drivers/clk/qcom/gcc-ipq6018.c b/drivers/clk/qcom/gcc-ipq6018.c
-> > [..]
-> >> +static int gcc_ipq6018_probe(struct platform_device *pdev)
-> >> +{
-> >> +	return qcom_cc_probe(pdev, &gcc_ipq6018_desc);
-> >> +}
-> >> +
-> >> +static int gcc_ipq6018_remove(struct platform_device *pdev)
-> >> +{
-> >> +	return 0;
-> > 
-> > Just omit .remove from the gcc_ipq6018_driver instead of providing a
-> > dummy function.
-> > 
-> 
->  ok.
-> 
-> >> +}
-> >> +
-> >> +static struct platform_driver gcc_ipq6018_driver = {
-> >> +	.probe = gcc_ipq6018_probe,
-> >> +	.remove = gcc_ipq6018_remove,
-> >> +	.driver = {
-> >> +		.name   = "qcom,gcc-ipq6018",
-> >> +		.owner  = THIS_MODULE,
-> > 
-> > Don't specify .owner in platform drivers.
-> > 
-> 
->  ok.
-> 
-> > [..]
-> >> +MODULE_DESCRIPTION("Qualcomm Technologies, Inc. GCC IPQ6018 Driver");
-> >> +MODULE_LICENSE("GPL v2");
-> >> +MODULE_ALIAS("platform:gcc-ipq6018");
-> > 
-> > This modalias won't be used.
-> >
-> 
->  ok. But it looks to be there in other clk drivers as well.
+> diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
+> index 7863ec5266e2..a5a4254314a1 100644
+> --- a/arch/arm64/kvm/hyp/entry.S
+> +++ b/arch/arm64/kvm/hyp/entry.S
+> @@ -17,6 +17,7 @@
 >  
+>  #include <linux/linkage.h>
+>  
+> +#include <asm/alternative.h>
+>  #include <asm/asm-offsets.h>
+>  #include <asm/assembler.h>
+>  #include <asm/fpsimdmacros.h>
+> @@ -63,6 +64,19 @@ ENTRY(__guest_enter)
+>  	// Store the host regs
+>  	save_callee_saved_regs x1
+>  
+> +	// Now the host state is stored if we have a pending RAS SError it must
+> +	// affect the host. If any asyncronous exception is pending we defer
 
-It serves the purpose that the driver will be automatically modprobed if
-someone calls:
+nit: asynchronous
 
-  platform_device_register*(...,  "gcc-ipq6018", ...);
+> +	// the guest entry. The DSB isn't necessary before v8.2 as any SError
+> +	// would be fatal.
+> +alternative_if ARM64_HAS_RAS_EXTN
+> +	dsb	nshst
+> +alternative_else_nop_endif
+> +	mrs	x1, isr_el1
 
-So for everything that is only going be probed from DT (or ACPI) this
-does not add any value. As such there are several other places where
-these aliases should be dropped.
+I guess this suffers from the same issue as in your other patch (the MSR
+can complete before the completion of the DSB).
 
-Regards,
-Bjorn
+> +	cbz	x1,  1f
+> +	mov	x0, #ARM_EXCEPTION_IRQ
+> +	ret
+> +
+> +1:
+>  	add	x18, x0, #VCPU_CONTEXT
+>  
+>  	// Macro ptrauth_switch_to_guest format:
+> 
+
+Thanks,
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
