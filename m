@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC68A3BEC5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 23:37:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 194103BED4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 23:42:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jJo/hnnxh92bVDFq9E+mwTYbgtJw8IpngSV+laSXy4E=; b=RUmcBWeGT00EeS
-	Gfr6rZBa3nmLq1tmL4+IduVKyELJ1Jwpqh8DQhRi2eutkUoELfowkZ2zxPfncI7djlQ/msQqEMLS0
-	OHccv0r/2jsoJyRxhbUxyTdwBMpXj4wyb1LmRFe3N4h+MvP8ruKpDDEFplzaZKceHCbXWSU0XPz0d
-	53otblMHoiLvrlsBxXu47QzjXmsap/AuhYNVDp79aC4A681I0t9zUontXt5RGGpY6zA/B3Ty4TsYV
-	/KkF9oJ5C4o0bq4xRqAAH+N9c6cMmJ6Ubfd+8drtKtn+pN6S8aKtTT8wy9fQGEZaW4TtehaqteYKg
-	v/blvuY6pHusxqRkHZmQ==;
+	List-Owner; bh=NxOZ3hzfVBn7oIv6Cg0I90aqe6d8SjYSa6tBBW90Bzc=; b=hX2I/N7tot/+vp
+	vqsWV8MAr/FYULRg8+a+G0GUgkVIbSoeikUxtFxbaK3m0KiE7dXUo9ZwEt6TTkaaLQscxq2ozQaOq
+	orJceDODziW9IobcFhybLcKdixeQ0IiqTmkGz7km+sd7j+d6IGc8MXsjCn0PqLmNjTNIoF7rcLLKD
+	I4kcR3Rc74h8Y1F4aIb/JaviPbCK8/MBT2cFQyYouW26p9jLEUJ1xaun9V7NWWhNL64STfRX+f9J7
+	upMmMhooGHnj1+1SJPN5+xX5weeL6l2jVaGfDne3Va3b58JiCG33Nb0rHAuuR+CDVaKnHhLwak5KO
+	jB+Vj8BVehOe4AY/UM7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haRz5-0002Y3-3t; Mon, 10 Jun 2019 21:37:43 +0000
+	id 1haS3y-0004Rf-IM; Mon, 10 Jun 2019 21:42:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haRyr-0002XU-FB
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 21:37:31 +0000
-Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
- [209.85.222.169])
+ id 1haS3j-0004R5-Q0
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 21:42:32 +0000
+Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
+ [209.85.222.174])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0D61B214AF
+ by mail.kernel.org (Postfix) with ESMTPSA id 59E23212F5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 21:37:29 +0000 (UTC)
+ Mon, 10 Jun 2019 21:42:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560202649;
- bh=hwm8BXVTPPx56RnHFISfVUzMMTFIzzDuJaCG9+g8A5k=;
+ s=default; t=1560202951;
+ bh=F+4V9SOVQ4v75Ak6utykZfRgzCBn/IT6mnI8WtAlVhY=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=laDVFiBGqi4HuwrxOrPSUFr6iNx7cckBOF3iE9QdnfxoGGGeoEPCdNKzj4QkFP23z
- DivEeiNVuOf+3/MvBWPQIkLl98lCMMYjCwh2UZsFE3jvGNYKsVatSnUKCR5k9nVitC
- XeSH4bYbYDfs6TfRdk6jky3jOonHiVIjO6hVzr60=
-Received: by mail-qk1-f169.google.com with SMTP id m14so6354269qka.10
+ b=ILfeiq9bDt9sa/mNU2tx1noF7fSXMAMayhPvei97KNxQJGUq9GwKX/Sli4Wwv/ptf
+ Yb9IRFovTLfDL9cJk8YxSpo/p/WdAI2UX2fCiSh6o5Z5wrg7O/VBzKagLyChPhO9Q5
+ p7nsIE90E4lr3+5/Lp2jm+L+Z9IE2FEd6+ARjJPI=
+Received: by mail-qk1-f174.google.com with SMTP id d15so6379925qkl.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 14:37:29 -0700 (PDT)
-X-Gm-Message-State: APjAAAVmmmyfUPh+wE+XjJ0FrzyhHHl/V6C3YKflSdR2SYpTNS2+g1yG
- K3stRU2Sh3X0DvvOCK+xQjxp7dYMit3mvFT7Ng==
-X-Google-Smtp-Source: APXvYqygsQhHn+elnNZkh5cIWQUh8MlS+1h6UE8ebNU+fyz9UgkZS9LgE7CVDY0+GOg9rWGc9YTlLMA4WDHOl+KXPmA=
+ Mon, 10 Jun 2019 14:42:31 -0700 (PDT)
+X-Gm-Message-State: APjAAAXfmlNU3StvQl6/MJdbI0Z0Riw55oVJl3K1HYyG8tm+qzvLHVPi
+ woZzFc5u81tBp5CyXTPbWxd0ejWnrHUWnQSrMA==
+X-Google-Smtp-Source: APXvYqxCG6PLxtYipbTcy/F82w3PywXJMfmgHZG+LKSYUxD5Wl+vqLF/bPa9yqVS6XKUs9krDfuWVpe0odr5pfiYhMM=
 X-Received: by 2002:a05:620a:13d1:: with SMTP id
- g17mr2386998qkl.121.1560202648317; 
- Mon, 10 Jun 2019 14:37:28 -0700 (PDT)
+ g17mr2403350qkl.121.1560202950612; 
+ Mon, 10 Jun 2019 14:42:30 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190605122936.11972-1-maxime.ripard@bootlin.com>
- <20190605122936.11972-2-maxime.ripard@bootlin.com>
-In-Reply-To: <20190605122936.11972-2-maxime.ripard@bootlin.com>
+References: <20190603012747.38921-1-Anson.Huang@nxp.com>
+In-Reply-To: <20190603012747.38921-1-Anson.Huang@nxp.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 10 Jun 2019 15:37:17 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJczoTpq=8BS5FwL3TJmitZp9e4Mh4oXcvgOMdRmoURvQ@mail.gmail.com>
-Message-ID: <CAL_JsqJczoTpq=8BS5FwL3TJmitZp9e4Mh4oXcvgOMdRmoURvQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] dt-bindings: i2c: mv64xxx: Add YAML schemas
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+Date: Mon, 10 Jun 2019 15:42:19 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+HsrQkJpL1hja=NxyQ6qC8tZBDxc9yxKSfSSBo_SrX5w@mail.gmail.com>
+Message-ID: <CAL_Jsq+HsrQkJpL1hja=NxyQ6qC8tZBDxc9yxKSfSSBo_SrX5w@mail.gmail.com>
+Subject: Re: [PATCH V2 1/3] dt-bindings: arm: imx: Add the soc binding for
+ i.MX8MN
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_143729_545101_4C06A3C2 
-X-CRM114-Status: GOOD (  20.21  )
+X-CRM114-CacheID: sfid-20190610_144231_863382_D3CF64BD 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,153 +87,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Wolfram Sang <wsa@the-dreams.de>,
- Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Linux I2C <linux-i2c@vger.kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Bai Ping <ping.bai@nxp.com>,
+ Bhaskar Upadhaya <bhaskar.upadhaya@nxp.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ =?UTF-8?B?TWFyZWsgVmHFoXV0?= <marex@denx.de>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, NXP Linux Team <Linux-imx@nxp.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ devicetree@vger.kernel.org, Pramod Kumar <pramod.kumar_1@nxp.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Vabhav Sharma <vabhav.sharma@nxp.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+ <linux-arm-kernel@lists.infradead.org>, Dong Aisheng <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Yang-Leo Li <leoyang.li@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 5, 2019 at 6:29 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+On Sun, Jun 2, 2019 at 7:26 PM <Anson.Huang@nxp.com> wrote:
 >
-> Switch the DT binding to a YAML schema to enable the DT validation.
+> From: Anson Huang <Anson.Huang@nxp.com>
 >
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> This patch adds the soc & board binding for i.MX8MN.
 >
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
->
-> Changes from v1:
->   - Fix the maintainers
+> No changes.
 > ---
->  .../devicetree/bindings/i2c/i2c-mv64xxx.txt   |  64 -----------
->  .../bindings/i2c/marvell,mv64xxx-i2c.yaml     | 105 ++++++++++++++++++
->  2 files changed, 105 insertions(+), 64 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
->  create mode 100644 Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+>  Documentation/devicetree/bindings/arm/fsl.yaml | 6 ++++++
+>  1 file changed, 6 insertions(+)
 
-> diff --git a/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
-> new file mode 100644
-> index 000000000000..a1c631eaeafd
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
-> @@ -0,0 +1,105 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i2c/marvell,mv64xxx-i2c.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Marvell MV64XXX I2C Controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - Gregory CLEMENT <gregory.clement@bootlin.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - const: allwinner,sun4i-a10-i2c
-> +      - items:
-> +          - const: allwinner,sun7i-a20-i2c
-> +          - const: allwinner,sun4i-a10-i2c
-> +      - const: allwinner,sun6i-a31-i2c
-> +      - items:
-> +          - const: allwinner,sun8i-a23-i2c
-> +          - const: allwinner,sun6i-a31-i2c
-> +      - items:
-> +          - const: allwinner,sun8i-a83t-i2c
-> +          - const: allwinner,sun6i-a31-i2c
-> +      - items:
-> +          - const: allwinner,sun50i-a64-i2c
-> +          - const: allwinner,sun6i-a31-i2c
-> +
-> +      - const: marvell,mv64xxx-i2c
-> +      - const: marvell,mv78230-i2c
-> +      - const: marvell,mv78230-a0-i2c
-> +
-> +    description:
-> +      Only use "marvell,mv78230-a0-i2c" for a very rare, initial
-> +      version of the SoC which had broken offload support. Linux
-> +      auto-detects this and sets it appropriately.
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 1
-> +    maxItems: 2
-> +    items:
-> +      - description: Reference clock for the I2C bus
-> +      - description: Bus clock (Only for Armada 7K/8K)
-> +
-> +  clock-names:
-> +    minItems: 1
-> +    maxItems: 2
-> +    items:
-> +      - const: core
-> +      - const: reg
-> +    description:
-> +      Mandatory if two clocks are used (only for Armada 7k and 8k).
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +
-> +allOf:
-> +  - $ref: /schemas/i2c/i2c-controller.yaml#
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - allwinner,sun4i-a10-i2c
-> +              - allwinner,sun6i-a31-i2c
-> +
-> +    then:
-> +      required:
-> +        - clocks
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: allwinner,sun6i-a31-i2c
-> +
-> +    then:
-> +      required:
-> +        - resets
-> +
-> +# FIXME: We should set it, but it would report all the generic
-> +# properties as additional properties.
-> +# additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    timer {
-
-timer?
-
-(and missing unit-address)
-
-> +      compatible = "allwinner,sun4i-a10-timer";
-> +      reg = <0x01c20c00 0x400>;
-> +      interrupts = <22>;
-> +      clocks = <&osc>;
-> +    };
-> +...
-> --
-> 2.21.0
->
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
