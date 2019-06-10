@@ -2,64 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBEC33B818
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:12:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2201E3B820
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 17:14:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=znX+ZRiJoj/KktYuxl99ilAAG7o4K9HAXz1VEGhjZtY=; b=pNrq4KvtPHXPRI
-	3y24cB3qyikJBW/pUZNMmBYMEG3efd6KlkWGm0ldIo7PyICTLJ3DWjx1flxEypnhRM6XBJYllBYju
-	rwhbAsRb7EAvoe4h4cL2lMR5ajZB3ZZoWPNKOuqp0+llZ8J5y7jGYYrdtnhN5b0abjKhGDCF2XmBD
-	GvWv4aHsxCIPSlskZ1qAmAPo2EcTp5w6nsyIfhu+N6QjQ5o859cehDqwor5OAcY7jFIlSc87SDliu
-	towqy236bem+Wt/SCV3nb0mc4JrYdqJuXrChlfnOHQGR7bM+G6atrUwcGynpNKQqkCOBexHyjQmIn
-	TIZo+pMBcSLLqAQzblFA==;
+	List-Owner; bh=MAvTdYM0Jn19eD7e80+nwucyITTeA+yKcI5cVspTeYM=; b=udDV+/uNwmXGhh
+	FkPCbdV5+5BOUeB5sTl2JABWMj0PfnT/nq69/fH2mM5QLQlgqZQ4GaAlB64vJjPGyMi7HTdaRG/TK
+	vE5N6NNePPHBmavCD5I/uN++mveKj0LXzlkmZwWlk8wG8JXjeBBJcQrqSq0BSntFhnRSXZ5ZhNBQ1
+	FGSSe6lVRvOeRHFlAwjgoNka6EhgjurDCoTu2PiGm3krdJ2OhaN181i292FaEq2xBYlXextl3bSos
+	jOZuEeFSwsciVcvhvbsDEXkczud/BKZ7SXEmoW62Hbad/1BxJkp8xAi+VczGPEI0N8lcR9SmQ3snd
+	fo1A3TpZoTWcCLSNCw2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLyD-0003Ms-FA; Mon, 10 Jun 2019 15:12:25 +0000
+	id 1haM0O-0003gR-HX; Mon, 10 Jun 2019 15:14:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haLy4-0003MH-Mo
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 15:12:17 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
+ id 1haM0A-0003fw-BJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 15:14:27 +0000
+Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9D408207E0;
- Mon, 10 Jun 2019 15:12:15 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D8139207E0;
+ Mon, 10 Jun 2019 15:14:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560179536;
- bh=h7mmrFketdGrH+jhcRTn+JLEZxAETRUZZjfI6AMHvCA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hf0QAKqPWs3ENU591+37VscvqlxLG+/JbxsSF6qbnzU1/X5YVItVSaPjV2rM4rQ09
- B2uL15jg0n+qvd/+BGm0HDMCWtU1ZX9y71BYyMplT4kmo4siqp9sMlIAHDG9P9BcSE
- gwGJufDeL6oNOgTo8oiicRdA7nzeTfFWE1hgQOPk=
-Date: Mon, 10 Jun 2019 17:12:13 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Michal Simek <michal.simek@xilinx.com>
-Subject: Re: [PATCH 1/2] serial: xilinx_uartps: Fix warnings in the driver
-Message-ID: <20190610151213.GA7305@kroah.com>
-References: <c6753260caf8b20cc002b15fcbf22b759c91d760.1560156294.git.michal.simek@xilinx.com>
- <20190610144425.GC31086@kroah.com>
- <888c7d0a-28dc-978c-662a-e96ee3863c41@xilinx.com>
+ s=default; t=1560179666;
+ bh=P0dkD9ENiSJ+hO8sohQ82M4kCSPlYg9QTn6ACh1pGBM=;
+ h=In-Reply-To:References:To:From:Cc:Subject:Date:From;
+ b=t/3aX0FvHhHEPaDvxLC/Zt72Z7M8KIX/RV4nCGE26f5wvCqRAHSDFsqqyMKDezdSK
+ Xl2KSBSHTNZKMlEfsDGPkQTwOxV+jTJYQSxnTn5KPI5682IJHA0IEh2WBH09u9Pabp
+ UNDXWvPZA+0vbsuahyuhEOhz5rGFaIGoHZHPVXOY=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <888c7d0a-28dc-978c-662a-e96ee3863c41@xilinx.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <DB3PR0402MB391678C245944942EA2A7F62F5110@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190604015928.23157-1-Anson.Huang@nxp.com>
+ <20190604015928.23157-3-Anson.Huang@nxp.com>
+ <20190606162543.EFFB820645@mail.kernel.org>
+ <DB3PR0402MB391625A0B3D838CE88C53E33F5100@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20190607180039.611C7208C0@mail.kernel.org>
+ <DB3PR0402MB391678C245944942EA2A7F62F5110@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+To: "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "olof@lixom.net" <olof@lixom.net>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "s.hauer@pengutronix
+ .de" <s.hauer@pengutronix.de>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "will.deacon@arm.com" <will.deacon@arm.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Jacky Bai <ping.bai@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: RE: [PATCH V3 3/4] clk: imx: Add support for i.MX8MN clock driver
+User-Agent: alot/0.8.1
+Date: Mon, 10 Jun 2019 08:14:25 -0700
+Message-Id: <20190610151425.D8139207E0@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_081216_762067_913E3951 
-X-CRM114-Status: GOOD (  13.91  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190610_081426_427776_86CFF3AF 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -75,47 +101,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: monstr@monstr.eu, Nava kishore Manne <nava.manne@xilinx.com>,
- linux-kernel@vger.kernel.org, johan@kernel.org, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 05:06:57PM +0200, Michal Simek wrote:
-> On 10. 06. 19 16:44, Greg KH wrote:
-> > On Mon, Jun 10, 2019 at 10:44:55AM +0200, Michal Simek wrote:
-> >> From: Nava kishore Manne <nava.manne@xilinx.com>
-> >>
-> >> This patch fixes the below warning
-> >>
-> >>         -->Symbolic permissions 'S_IRUGO' are not preferred.
-> >>            Consider using octal permissions '0444'.
-> >>         -->macros should not use a trailing semicolon.
-> >>         -->line over 80 characters.
-> >>         -->void function return statements are not generally useful.
-> >>         -->Prefer 'unsigned int' to bare use of 'unsigned'.
-> >>
-> >> Signed-off-by: Nava kishore Manne <nava.manne@xilinx.com>
-> >> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> >> ---
-> >>
-> >> Happy to split it if needed.
-> > 
-> > Please split.  Do not do more than one "logical thing" per patch.
-> > 
-> > And the subject is not correct, there are no general "warnings", these
-> > are all checkpatch warnings, not a build issue.
+Quoting Anson Huang (2019-06-08 02:58:18)
+> Hi, Stephen
 > 
-> ok. Will do. Any issue with second patch?
+> > -----Original Message-----
+> > From: Stephen Boyd <sboyd@kernel.org>
+> > Sent: Saturday, June 8, 2019 2:01 AM
+> > To: bjorn.andersson@linaro.org; catalin.marinas@arm.com;
+> > devicetree@vger.kernel.org; dinguyen@kernel.org;
+> > enric.balletbo@collabora.com; festevam@gmail.com;
+> > horms+renesas@verge.net.au; jagan@amarulasolutions.com;
+> > kernel@pengutronix.de; l.stach@pengutronix.de; linux-arm-
+> > kernel@lists.infradead.org; linux-clk@vger.kernel.org; linux-
+> > kernel@vger.kernel.org; mark.rutland@arm.com;
+> > maxime.ripard@bootlin.com; mturquette@baylibre.com; olof@lixom.net;
+> > robh+dt@kernel.org; s.hauer@pengutronix .de <s.hauer@pengutronix.de>;
+> > shawnguo@kernel.org; will.deacon@arm.com; Abel Vesa
+> > <abel.vesa@nxp.com>; Aisheng Dong <aisheng.dong@nxp.com>; Anson
+> > Huang <anson.huang@nxp.com>; Jacky Bai <ping.bai@nxp.com>; Leonard
+> > Crestez <leonard.crestez@nxp.com>
+> > Cc: dl-linux-imx <linux-imx@nxp.com>
+> > Subject: RE: [PATCH V3 3/4] clk: imx: Add support for i.MX8MN clock driver
+> > 
+> > Quoting Anson Huang (2019-06-06 17:50:28)
+> > >
+> > > I will use devm_platform_ioremap_resource() instead of ioremap(), and
+> > > can you be more specific about devmified clk registration?
+> > >
+> > 
+> > I mean using things like devm_clk_hw_register().
+> 
+> Sorry, I am still a little confused, all the clock register(clk_register()) are via each different
+> clock types like imx_clk_gate4/imx_clk_pll14xx, if using clk_hw_register, means we need
+> to re-write the clock driver using different clk register method, that will make the driver
+> completely different from i.mx8mq/i.mx8mm, they are actually same series of SoC as i.mx8mn,
+> it will introduce many confusion, is my understanding correct? And is it OK to just keep what
+> it is and make them all aligned?
+> 
 
-It will change your user/kernel api but hey, it's your call, it looks
-like a nice fix to me :)
+Ok, the problem I'm trying to point out is that clk registrations need
+to be undone, i.e. clk_unregister() needs to be called, when the driver
+fails to probe. devm_*() is one way to do this, but if you have other
+ways of removing all the registered clks then that works too. Makes
+sense?
 
-thanks,
-
-greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
