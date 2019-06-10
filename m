@@ -2,74 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2734C3B465
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 14:13:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B83D3B472
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 14:16:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=yTkxUGyc8KWgKcF9Z9ScK9Pvmx1tBBxuVcqQydkdDvU=; b=SOLupNAOD0q6sf9MULkWUNaC2l
-	UnZa2ayf9TBgqBCaJViEunxV49788E/cZz5wjFG70266v9GTeNBkuyKsn4+y+tznDyn84IqdGg8Eq
-	gYHNSsGImVEwpYTVZl1yjYYdiwqglpNagdei58oVx/l11KJUf1bZeZ6JDV0Xqg1wfZd0AasYIpFMr
-	RA44/10dx036bRk5WsSFBLx0iUyTxE43/F99d7jZm4uMcmk3lVaHxfW8QTu/aUNAoKgvjfcv7amYO
-	+hMjUV6iBMGqc+6Ywp39fmXLI8x3oh4QZ1Uz939Tsq/HKEVrcL+E/4UbiSDazVGnLdCC3zqpRy8CM
-	DVKCi0cQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=qScIvuru6hSB9wdjSnAKFKTsAUvYxksvl1eOgv1Ao/I=; b=PK+
+	mFggnZdCTUehDBmwjDz7zU0jcWvXKrZWxL4nGpDqaN777YHhwYWylm/ufilrX1n2svresllZV+pFg
+	agoFPPi/ev+MSP1837ZnozLxraN5eOavjt2uFJPmQcZTFdj1WDA5U9VDpHvjzO21x7wzq/K6ouVqM
+	Ov42IWonJwBrBXCRJYYrOPL6Fws7Z1xC3NVKOYVUhO43LfVakZ1X1vjE70g7vjQfiV9yD+z6fsCLU
+	fS6aPrb8iwowTOLqxdKyAF6H5HEc5c4Ksdocz57nMny+Mn3zDcqwEQfgXdNY4ckLhy9Gtua3FgeFj
+	sT220tuO+ZuXoCvtE7L8vrg6Qjan4bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haJBT-0002HK-Lk; Mon, 10 Jun 2019 12:13:55 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1haJDh-0004MB-C4; Mon, 10 Jun 2019 12:16:13 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haJBG-0002Gg-BN
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 12:13:43 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5ACDagN037456;
- Mon, 10 Jun 2019 07:13:36 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560168816;
- bh=osAjUsWcdirwDiL6VFKp3uYcXBRHoQkePLbEhd8oePw=;
- h=To:CC:From:Subject:Date;
- b=K01tIZmpwlWUkHBndyup+SmEHWCoMTdxIZAy59z+agy8sOVLaV8Iy0rprwggndBW9
- OAD18cgsya4KcXf0HVW69ne+E7GF0QytR0xADcegLgtJXTptZjiHrcO6M4TUyRM+9r
- V+wutYy9RjBKWMUZUeiDBedmNrQybtYfXM9mfywA=
-Received: from DFLE107.ent.ti.com (dfle107.ent.ti.com [10.64.6.28])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5ACDaOI082558
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 10 Jun 2019 07:13:36 -0500
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 10
- Jun 2019 07:13:36 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 10 Jun 2019 07:13:36 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5ACDY0v129308;
- Mon, 10 Jun 2019 07:13:35 -0500
-To: linux-clk <linux-clk@vger.kernel.org>, Stephen Boyd <sboyd@codeaurora.org>,
- Santosh Shilimkar <ssantosh@kernel.org>, Michael
- Turquette <mturquette@baylibre.com>
-From: Tero Kristo <t-kristo@ti.com>
-Subject: [GIT PULL] clk: keystone: changes for 5.3
-Message-ID: <3bd8aa21-60a5-f36a-b86f-425ce4f0163e@ti.com>
-Date: Mon, 10 Jun 2019 15:13:29 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1haJDL-0004I7-8M
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 12:15:53 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 22so7939608wmg.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 05:15:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=G/jDmCEBdW+KnNnzIkI5FBxnykVJAEM3IcCO6wGYvxQ=;
+ b=VjIypT6jxNeDcP3wUSkxn+P8CxxAUuMUNzeZgTuyvcKeoibelkyyRwRwXo7aPfSjUQ
+ Q3v7OyN788mNnJacP6rY+JqmUhSABKuQjwGSKgdSIgNdHLdpPQiG4rtmNU1t7N7IHcmK
+ nKHcw+Tloj67CNuGvh8/mUeuS7GEic2+TdmmDjK8bjZkORCIZAYC6801bb8F1Mu/UT5F
+ F6yBHxWkYxGdneJVZ1cb6xAm5yVDez2tj2BC1zOA4h+/f03ff6iaj0CskD8DSNOOZsL1
+ I3zmkYmnRzyJg4TYipAau0Rqvbd2Mqn7JFZV+cg2TLmfJTOFkMY0MD4oDMOswXtX9aOg
+ ZL4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=G/jDmCEBdW+KnNnzIkI5FBxnykVJAEM3IcCO6wGYvxQ=;
+ b=GNSSN+qpmb4niT8HhU/irnKUbdQOArlKrPeCnymZlFGcG9LtOcUSMwNYlYjMuqc554
+ SPUp5EsoZvjhb96rdLtPa7EJh7C/bR5yjEPQlZ+wyYZpwe3cFWnl90kGhrlbww4mpcZD
+ nWWw/z+cr+y9I0LjgCPfZ6LuhU2CxNslVnZjH/d0p26hkDzh+y/IUn9nYfLFBFfWV+Jo
+ PLi5fvWdih4HiWHXrtNUqbY6eB1OZVDTDT9olKcOwQVH3oAbEbfF47A176Uhryj08/rv
+ uVivijrW10atTltSkJ6MAT96gpL5Z351b1iO9oB/aSlOUa44oDhMPL/LsJWPkX0mQd2U
+ 3FAQ==
+X-Gm-Message-State: APjAAAVq+WgnN+zE3Zlvbw47cmWsjKTmIwY9GE3UBnHnnCSd3LBvSqoj
+ H3YAiKC7QcYRt1aHg0NZtAs=
+X-Google-Smtp-Source: APXvYqxAzpVPFjmvXHC7Dyyt0DOCvzn4V9dg6udoS70h922GjJQFGyHYQYvnE4PoiIh4fnOVv7NBJw==
+X-Received: by 2002:a05:600c:228f:: with SMTP id
+ 15mr14125457wmf.31.1560168949128; 
+ Mon, 10 Jun 2019 05:15:49 -0700 (PDT)
+Received: from ryzen.lan (5-12-114-167.residential.rdsnet.ro. [5.12.114.167])
+ by smtp.gmail.com with ESMTPSA id
+ f21sm10385574wmb.2.2019.06.10.05.15.47
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 10 Jun 2019 05:15:48 -0700 (PDT)
+From: Abel Vesa <abelvesa@gmail.com>
+X-Google-Original-From: Abel Vesa <abel.vesa@nxp.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Marc Zyngier <marc.zyngier@arm.com>, Lucas Stach <l.stach@pengutronix.de>,
+ Bai Ping <ping.bai@nxp.com>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>
+Subject: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
+Date: Mon, 10 Jun 2019 15:13:44 +0300
+Message-Id: <20190610121346.15779-1-abel.vesa@nxp.com>
+X-Mailer: git-send-email 2.17.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_051342_498515_BFA1B3D6 
-X-CRM114-Status: GOOD (  16.11  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190610_051551_646613_87A9B675 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (abelvesa[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,66 +102,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Carlo Caione <ccaione@baylibre.com>,
+ NXP Linux Team <linux-imx@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephen, Mike, Santosh,
+This is another alternative for the RFC:
+https://lkml.org/lkml/2019/3/27/545
 
-Here's a pull request for the clock changes for keystone SoC for 5.3. 
-The patches were acked by Santosh, so I took liberty to create a 
-pull-request for these also. I snipped patch #5 out of the series (it is 
-against drivers/firmware) and am planning to send a separate 
-pull-request for this, or alternatively agree with Santosh how to handle it.
+This new workaround proposal is a little bit more hacky but more contained
+since everything is done within the irq-imx-gpcv2 driver.
 
--Tero
+Basically, it 'hijacks' the registered gic_raise_softirq __smp_cross_call
+handler and registers instead a wrapper which calls in the 'hijacked' 
+handler, after that calling into EL3 which will take care of the actual
+wake up. This time, instead of expanding the PSCI ABI, we use a new vendor SIP.
 
----
+I also have the patches ready for TF-A but I'll hold on to them until I see if
+this has a chance of getting in.
 
-The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+Abel Vesa (2):
+  irqchip: irq-imx-gpcv2: Add workaround for i.MX8MQ ERR11171
+  arm64: dts: imx8mq: Add idle states and gpcv2 wake_request broken
+    property
 
-   Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi | 20 +++++++++++++++
+ drivers/irqchip/irq-imx-gpcv2.c           | 42 +++++++++++++++++++++++++++++++
+ 2 files changed, 62 insertions(+)
 
-are available in the git repository at:
+-- 
+2.7.4
 
-   git://git.kernel.org/pub/scm/linux/kernel/git/kristo/linux 
-tags/keystone-clk-for-5.3
-
-for you to fetch changes up to 3f1f22d8009035a641a359a09239bcc6ffac7bb9:
-
-   clk: keystone: sci-clk: extend clock IDs to 32 bits (2019-06-07 
-12:11:41 +0300)
-
-----------------------------------------------------------------
-Keystone clk changes for 5.3 merge window.
-
-- Add support for 32 bit clock IDs for sci-clks, this is needed
-   for the new J721e SoC which has a few devices that have more than
-   255 clocks associated to them.
-- Clock probing done from DT by default instead of firmware side.
-   Scanning clocks from DT is much faster than firmware, and also we
-   can omit unnecessary clocks which saves even more time. This has been
-   done in the interest of saving boot time.
-- Remove the device tree node path from the registered sci-clk names.
-   This mainly makes the debugfs interface more readable.
-
-----------------------------------------------------------------
-Tero Kristo (4):
-       clk: keystone: sci-clk: cut down the clock name length
-       clk: keystone: sci-clk: split out the fw clock parsing to own 
-function
-       clk: keystone: sci-clk: probe clocks from DT instead of firmware
-       clk: keystone: sci-clk: extend clock IDs to 32 bits
-
-  drivers/clk/keystone/Kconfig   |  11 ++
-  drivers/clk/keystone/sci-clk.c | 239 
-++++++++++++++++++++++++++++++++++-------
-  2 files changed, 212 insertions(+), 38 deletions(-)
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
