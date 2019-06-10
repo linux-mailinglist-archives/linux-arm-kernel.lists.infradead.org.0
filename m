@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8F4B3B221
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:31:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE2323B233
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 11:32:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bhflnAnm7QxXTDlvvP2GREErWTLy8W/WoYEntsKYo98=; b=plhPWvHOyeKEC1
-	svfE/3Xh+nP1Yr5PyLTMt4j4RuaBCxPH3NPPLa3z9dXkBdK4DzlAZEVtedzIJXqrrzIe/gnZHUnZM
-	40kYRP32XSl5Yki7w55bt4lyDE4VgJbM+BNrD+UDNiHV3qwp/8OB3NxDKH3KhR7vZDAd5hBKtSocD
-	Z6+40ghBMY/8dLbNhychOoKhiQnc8yGzbRHKqt9/vcnWsMIrZBb3BfaK4z/csLFU6ld2WqZJRcvnl
-	C0x/RUUZsJXT8/Zvv013p5O64/y49ia7OaNembLlg98gFxwxd+62rJUye8kKiFvq6PTrdLolmoB0q
-	ssyUmPVBFX7DF4LNDmcQ==;
+	List-Owner; bh=IEt6R3pcI1scJii7RgYahtEG01UN+UtFes4sU+/j8s4=; b=LRvrXZxwCrXPHY
+	DQIgCgYVgxnGHxwOyiRoq9MTZeKODti1rVF25EJQGWFwHLnVjQGtJw9uGyh+V5tCjkDyhB18f/LaL
+	i8o0u+ThAzOcJwKL1WSBDkqLThTxK9UqYKzVkPCbTG0bzEabFUiNhxwlvD4L1e+saTjXkLmjthCHW
+	XaSelBjEBOJvZI00Rxx101kw1b8J2eYadj0h4jjBtIfVYXmGegELVqrGjfe7MWloqYmcTmLHZjsvP
+	3oyvBBHwFv9hWUBVNNU9oko4MEmrkieMKYOe/BO72Z+HD8eoQDKlBOcIpxzH3UH10W/lThgAn4Joa
+	LvyYP7EBq0MZYrQBh+rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haGeH-00024c-Po; Mon, 10 Jun 2019 09:31:29 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1haGfH-0002jE-MR; Mon, 10 Jun 2019 09:32:31 +0000
+Received: from mail.codeweavers.com ([50.203.203.244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haGZy-0006dM-Fd
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:27:08 +0000
-X-Originating-IP: 90.88.159.246
-Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
- [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 70C42E000C;
- Mon, 10 Jun 2019 09:26:45 +0000 (UTC)
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: [PATCH v2 11/11] ARM: dts: sunxi: Switch to the generic PHY properties
-Date: Mon, 10 Jun 2019 11:25:50 +0200
-Message-Id: <af3a342a6cba1dda27763c13093a8fc060946c1e.1560158667.git-series.maxime.ripard@bootlin.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
-References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
+ id 1haGay-0007Mj-G7
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 09:28:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=codeweavers.com; s=6377696661; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=hvHEIsUHuFBpJysJSAh/TndXcB04oV4yePbtGuMBdHk=; b=ieSZLelSnKpjvNpvH2LPvshAf
+ nDwm8iPPnsYNiFhs+BE5xIvXfmbYFHGIXXrH9fKXziYzO79y92u/Tbl/b0xHbZRw3KBWCC4dRA0do
+ EK1YEYI5aUENNJlKGRA06BN33Vt+P+IJaLy8gJK1SBhS+F3ZahSFihKjyxiK2g3wlJj7M=;
+Received: from merlot.physics.ox.ac.uk ([163.1.241.98] helo=merlot)
+ by mail.codeweavers.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <huw@codeweavers.com>)
+ id 1haGbQ-0003aw-G6; Mon, 10 Jun 2019 04:28:33 -0500
+Received: from daviesh by merlot with local (Exim 4.90_1)
+ (envelope-from <huw@codeweavers.com>)
+ id 1haGam-00039Z-E5; Mon, 10 Jun 2019 10:27:52 +0100
+Date: Mon, 10 Jun 2019 10:27:52 +0100
+From: Huw Davies <huw@codeweavers.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v6 01/19] kernel: Standardize vdso_datapage
+Message-ID: <20190610092751.GA11076@merlot.physics.ox.ac.uk>
+References: <20190530141531.43462-1-vincenzo.frascino@arm.com>
+ <20190530141531.43462-2-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_022703_274771_246EDB11 
-X-CRM114-Status: GOOD (  12.13  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+Content-Disposition: inline
+In-Reply-To: <20190530141531.43462-2-vincenzo.frascino@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Spam-Score: -106.0
+X-Spam-Report: Spam detection software,
+ running on the system "mail.codeweavers.com", 
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ the administrator of that system for details.
+ Content preview:  On Thu, May 30, 2019 at 03:15:13PM +0100, Vincenzo Frascino
+ wrote: > --- /dev/null > +++ b/include/vdso/datapage.h > @@ -0,0 +1,91 @@
+ > +/* SPDX-License-Identifier: GPL-2.0 */ > +#ifndef __VDSO_DATAPA [...] 
+ Content analysis details:   (-106.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -100 USER_IN_WHITELIST      From: address is in the user's white-list
+ -6.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190610_022804_884995_390DA8DC 
+X-CRM114-Status: UNSURE (   4.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,127 +94,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
- =?UTF-8?q?Antoine=20T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DWMAC specific properties to manage the PHY have been superseeded by
-the generic PHY properties. Let's move to it.
+On Thu, May 30, 2019 at 03:15:13PM +0100, Vincenzo Frascino wrote:
+> --- /dev/null
+> +++ b/include/vdso/datapage.h
+> @@ -0,0 +1,91 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __VDSO_DATAPAGE_H
+> +#define __VDSO_DATAPAGE_H
+> +
+> +#ifdef __KERNEL__
+> +
+> +#ifndef __ASSEMBLY__
+> +
+> +#include <linux/bits.h>
+> +#include <linux/time.h>
+> +#include <linux/types.h>
+> +
+> +#define VDSO_BASES	(CLOCK_TAI + 1)
+> +#define VDSO_HRES	(BIT(CLOCK_REALTIME)		| \
+> +			 BIT(CLOCK_MONOTONIC)		| \
+> +			 BIT(CLOCK_BOOTTIME)		| \
+> +			 BIT(CLOCK_TAI))
+> +#define VDSO_COARSE	(BIT(CLOCK_REALTIME_COARSE)	| \
+> +			 BIT(CLOCK_MONOTONIC_COARSE))
+> +#define VDSO_RAW	(BIT(CLOCK_MONOTONIC_RAW))
+> +
+> +#define CS_HRES_COARSE	0
+> +#define CS_RAW		1
 
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+CS_HRES_COARSE seems like a confusing name choice to me.  What you
+really mean is not RAW.
 
----
+How about CS_ADJ to indicate that its updated by adjtime?
+CS_XTIME might be another option.
 
-This patch should go through arm-soc.
-
-Changes from v1:
-  - New patch
----
- arch/arm/boot/dts/sun6i-a31-hummingbird.dts       |  6 +++---
- arch/arm/boot/dts/sun6i-a31s-sinovoip-bpi-m2.dts  |  6 +++---
- arch/arm/boot/dts/sun7i-a20-hummingbird.dts       |  9 ++++-----
- arch/arm/boot/dts/sun7i-a20-olimex-som204-evb.dts |  8 ++++----
- 4 files changed, 14 insertions(+), 15 deletions(-)
-
-diff --git a/arch/arm/boot/dts/sun6i-a31-hummingbird.dts b/arch/arm/boot/dts/sun6i-a31-hummingbird.dts
-index 09832b4e8fc8..2652d737fe7c 100644
---- a/arch/arm/boot/dts/sun6i-a31-hummingbird.dts
-+++ b/arch/arm/boot/dts/sun6i-a31-hummingbird.dts
-@@ -155,13 +155,13 @@
- 	pinctrl-0 = <&gmac_rgmii_pins>;
- 	phy = <&phy1>;
- 	phy-mode = "rgmii";
--	snps,reset-gpio = <&pio 0 21 GPIO_ACTIVE_HIGH>;
--	snps,reset-active-low;
--	snps,reset-delays-us = <0 10000 30000>;
- 	status = "okay";
- 
- 	phy1: ethernet-phy@1 {
- 		reg = <1>;
-+		reset-gpios = <&pio 0 21 GPIO_ACTIVE_LOW>;
-+		reset-assert-us = <10000>;
-+		reset-deassert-us = <30000>;
- 	};
- };
- 
-diff --git a/arch/arm/boot/dts/sun6i-a31s-sinovoip-bpi-m2.dts b/arch/arm/boot/dts/sun6i-a31s-sinovoip-bpi-m2.dts
-index 8e724c52feff..7899712400b2 100644
---- a/arch/arm/boot/dts/sun6i-a31s-sinovoip-bpi-m2.dts
-+++ b/arch/arm/boot/dts/sun6i-a31s-sinovoip-bpi-m2.dts
-@@ -95,13 +95,13 @@
- 	phy = <&phy1>;
- 	phy-mode = "rgmii";
- 	phy-supply = <&reg_dldo1>;
--	snps,reset-gpio = <&pio 0 21 GPIO_ACTIVE_HIGH>; /* PA21 */
--	snps,reset-active-low;
--	snps,reset-delays-us = <0 10000 30000>;
- 	status = "okay";
- 
- 	phy1: ethernet-phy@1 {
- 		reg = <1>;
-+		reset-gpios = <&pio 0 21 GPIO_ACTIVE_LOW>; /* PA21 */
-+		reset-assert-us = <10000>;
-+		reset-deassert-us = <30000>;
- 	};
- };
- 
-diff --git a/arch/arm/boot/dts/sun7i-a20-hummingbird.dts b/arch/arm/boot/dts/sun7i-a20-hummingbird.dts
-index fd0153f65685..b01d91d025ec 100644
---- a/arch/arm/boot/dts/sun7i-a20-hummingbird.dts
-+++ b/arch/arm/boot/dts/sun7i-a20-hummingbird.dts
-@@ -103,15 +103,14 @@
- 	phy = <&phy1>;
- 	phy-mode = "rgmii";
- 	phy-supply = <&reg_gmac_vdd>;
--	/* phy reset config */
--	snps,reset-gpio = <&pio 0 17 GPIO_ACTIVE_HIGH>; /* PA17 */
--	snps,reset-active-low;
--	/* wait 1s after reset, otherwise fail to read phy id */
--	snps,reset-delays-us = <0 10000 1000000>;
- 	status = "okay";
- 
- 	phy1: ethernet-phy@1 {
- 		reg = <1>;
-+		reset-gpios = <&pio 0 17 GPIO_ACTIVE_LOW>; /* PA17 */
-+		reset-assert-us = <10000>;
-+		/* wait 1s after reset, otherwise fail to read phy id */
-+		reset-deassert-us = <1000000>;
- 	};
- };
- 
-diff --git a/arch/arm/boot/dts/sun7i-a20-olimex-som204-evb.dts b/arch/arm/boot/dts/sun7i-a20-olimex-som204-evb.dts
-index c34a83f666c7..ca12cee27072 100644
---- a/arch/arm/boot/dts/sun7i-a20-olimex-som204-evb.dts
-+++ b/arch/arm/boot/dts/sun7i-a20-olimex-som204-evb.dts
-@@ -108,14 +108,14 @@
- 	phy = <&phy3>;
- 	phy-mode = "rgmii";
- 	phy-supply = <&reg_vcc3v3>;
--
--	snps,reset-gpio = <&pio 0 17 GPIO_ACTIVE_HIGH>;
--	snps,reset-active-low;
--	snps,reset-delays-us = <0 10000 1000000>;
- 	status = "okay";
- 
- 	phy3: ethernet-phy@3 {
- 		reg = <3>;
-+		reset-gpios = <&pio 0 17 GPIO_ACTIVE_LOW>; /* PA17 */
-+		reset-assert-us = <10000>;
-+		/* wait 1s after reset, otherwise fail to read phy id */
-+		reset-deassert-us = <1000000>;
- 	};
- };
- 
--- 
-git-series 0.9.1
+Huw.
 
 _______________________________________________
 linux-arm-kernel mailing list
