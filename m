@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D0403B5A4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 15:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68C793B591
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 15:00:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GVRBQtQbq5eM5ZPbHI/3UckjxF3DacNgTwV1B/BSip4=; b=kyK3rAYzpQ4+tC
-	HppjQiLSJ7mnlAfImz9NxW8wvpb/NowqzlvYbKXDCJFgNI5SzUswNxlng2rSv1xZYqH4viNdccLWJ
-	nR4q+fkGKqZVk0Fy70+fnq2DfD4tJcIJY/tG/o2EqbQX0WanvUh0eo6jvgi8JolhdJXRYZKkJh5/F
-	C4VsXijD79zi53Ee2R2kY/hWKtbMxBY4MLuYuHCjw/S9k1Ii+gwTLnGMU4j+HD9zoBwf2G8iSrdqd
-	UJkJ1bI3lE0vcNXGwpOSl7uqDZTuSK3gBBnxdc3V6FIPuQGLw/kKcpLwsvs0QSjthInPMVSN6dCl6
-	k+XgWIUtCgO3wNgaji5g==;
+	List-Owner; bh=JHYWfE/hbMQlbgk1uMjRhwyEJDf3c4ztoG+8xidcou4=; b=m13FvupPLHhclc
+	UA/cQMh5EIOviPwmgFjtkzqMmP4Rb1ZXBl6WHq3L71A+MFYykaL1cvZnm9EnxKWd1/4M8HHV6R9+c
+	p3I2L9ZouWsYegy/YWdRvnxPAPao/4R2c2i8TfRx4NywxYnYWWpHHhF/9oxZC+8G5dl9IjA6Ui5ik
+	/h3XZlqwkO6tejyDdzybp492vBJK03+hxlxzKmCEFF0xTCD+eax9XSX3+OgjiioqfUU3gehCfbbDM
+	1QcSMVc1u6Y+bGIjNI7pZyliUBPlnz16aE4VD9EWVpFn4OlXebjMbsRph8IPgGniSwrYuLn+MxfGU
+	EjvGysAMcqoGdKiNhK4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haJvf-0000sW-4U; Mon, 10 Jun 2019 13:01:39 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1haJu4-0006EE-J3; Mon, 10 Jun 2019 13:00:00 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haJt6-0005Zq-It; Mon, 10 Jun 2019 12:59:03 +0000
-X-UUID: 684e02f1eebc458d9367f31a732abcad-20190610
-X-UUID: 684e02f1eebc458d9367f31a732abcad-20190610
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1haJsu-0005SQ-Oc; Mon, 10 Jun 2019 12:58:51 +0000
+X-UUID: 73e67285dd0f4f4591e8f6f7e9a01547-20190610
+X-UUID: 73e67285dd0f4f4591e8f6f7e9a01547-20190610
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 644552433; Mon, 10 Jun 2019 04:57:28 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ with ESMTP id 228741770; Mon, 10 Jun 2019 04:57:35 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Jun 2019 05:57:26 -0700
+ 15.0.1395.4; Mon, 10 Jun 2019 05:57:34 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Jun 2019 20:57:12 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Jun 2019 20:57:32 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 10 Jun 2019 20:57:11 +0800
+ Transport; Mon, 10 Jun 2019 20:57:31 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v2 10/12] iommu/mediatek: Use builtin_platform_driver
-Date: Mon, 10 Jun 2019 20:55:11 +0800
-Message-ID: <1560171313-28299-11-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v2 11/12] arm: dts: mediatek: Get rid of mediatek,
+ larb for MM nodes
+Date: Mon, 10 Jun 2019 20:55:12 +0800
+Message-ID: <1560171313-28299-12-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1560171313-28299-1-git-send-email-yong.wu@mediatek.com>
 References: <1560171313-28299-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 0B4467784B60C69D2AAF2FE86A910E03F9188BE23B7075579B2F4AFD6A43305B2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_055900_842209_586D6FFB 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20190610_055848_858926_207FBD6A 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -84,114 +85,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MediaTek IOMMU should wait for smi larb which need wait for the
-power domain(mtk-scpsys.c) and the multimedia ccf who both are
-module init. Thus, subsys_initcall for MediaTek IOMMU is not helpful.
-Switch to builtin_platform_driver.
+After adding device_link between the IOMMU consumer and smi,
+the mediatek,larb is unnecessary now.
 
+CC: Matthias Brugger <matthias.bgg@gmail.com>
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
+Reviewed-by: Evan Green <evgreen@chromium.org>
 ---
- drivers/iommu/mtk_iommu.c    | 31 +------------------------------
- drivers/iommu/mtk_iommu_v1.c | 24 +-----------------------
- 2 files changed, 2 insertions(+), 53 deletions(-)
+ arch/arm/boot/dts/mt2701.dtsi | 1 -
+ arch/arm/boot/dts/mt7623.dtsi | 1 -
+ 2 files changed, 2 deletions(-)
 
-diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 7b70574..8459597 100644
---- a/drivers/iommu/mtk_iommu.c
-+++ b/drivers/iommu/mtk_iommu.c
-@@ -712,22 +712,6 @@ static int mtk_iommu_probe(struct platform_device *pdev)
- 	return component_master_add_with_match(dev, &mtk_iommu_com_ops, match);
- }
- 
--static int mtk_iommu_remove(struct platform_device *pdev)
--{
--	struct mtk_iommu_data *data = platform_get_drvdata(pdev);
--
--	iommu_device_sysfs_remove(&data->iommu);
--	iommu_device_unregister(&data->iommu);
--
--	if (iommu_present(&platform_bus_type))
--		bus_set_iommu(&platform_bus_type, NULL);
--
--	clk_disable_unprepare(data->bclk);
--	devm_free_irq(&pdev->dev, data->irq, data);
--	component_master_del(&pdev->dev, &mtk_iommu_com_ops);
--	return 0;
--}
--
- static int __maybe_unused mtk_iommu_suspend(struct device *dev)
- {
- 	struct mtk_iommu_data *data = dev_get_drvdata(dev);
-@@ -808,23 +792,10 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
- 
- static struct platform_driver mtk_iommu_driver = {
- 	.probe	= mtk_iommu_probe,
--	.remove	= mtk_iommu_remove,
- 	.driver	= {
- 		.name = "mtk-iommu",
- 		.of_match_table = of_match_ptr(mtk_iommu_of_ids),
- 		.pm = &mtk_iommu_pm_ops,
- 	}
- };
--
--static int __init mtk_iommu_init(void)
--{
--	int ret;
--
--	ret = platform_driver_register(&mtk_iommu_driver);
--	if (ret != 0)
--		pr_err("Failed to register MTK IOMMU driver\n");
--
--	return ret;
--}
--
--subsys_initcall(mtk_iommu_init)
-+builtin_platform_driver(mtk_iommu_driver);
-diff --git a/drivers/iommu/mtk_iommu_v1.c b/drivers/iommu/mtk_iommu_v1.c
-index 845e20b..1c0fb82 100644
---- a/drivers/iommu/mtk_iommu_v1.c
-+++ b/drivers/iommu/mtk_iommu_v1.c
-@@ -650,22 +650,6 @@ static int mtk_iommu_probe(struct platform_device *pdev)
- 	return component_master_add_with_match(dev, &mtk_iommu_com_ops, match);
- }
- 
--static int mtk_iommu_remove(struct platform_device *pdev)
--{
--	struct mtk_iommu_data *data = platform_get_drvdata(pdev);
--
--	iommu_device_sysfs_remove(&data->iommu);
--	iommu_device_unregister(&data->iommu);
--
--	if (iommu_present(&platform_bus_type))
--		bus_set_iommu(&platform_bus_type, NULL);
--
--	clk_disable_unprepare(data->bclk);
--	devm_free_irq(&pdev->dev, data->irq, data);
--	component_master_del(&pdev->dev, &mtk_iommu_com_ops);
--	return 0;
--}
--
- static int __maybe_unused mtk_iommu_suspend(struct device *dev)
- {
- 	struct mtk_iommu_data *data = dev_get_drvdata(dev);
-@@ -702,16 +686,10 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
- 
- static struct platform_driver mtk_iommu_driver = {
- 	.probe	= mtk_iommu_probe,
--	.remove	= mtk_iommu_remove,
- 	.driver	= {
- 		.name = "mtk-iommu-v1",
- 		.of_match_table = mtk_iommu_of_ids,
- 		.pm = &mtk_iommu_pm_ops,
- 	}
- };
--
--static int __init m4u_init(void)
--{
--	return platform_driver_register(&mtk_iommu_driver);
--}
--subsys_initcall(m4u_init);
-+builtin_platform_driver(mtk_iommu_driver);
+diff --git a/arch/arm/boot/dts/mt2701.dtsi b/arch/arm/boot/dts/mt2701.dtsi
+index 51e1305..57b5de3 100644
+--- a/arch/arm/boot/dts/mt2701.dtsi
++++ b/arch/arm/boot/dts/mt2701.dtsi
+@@ -564,7 +564,6 @@
+ 		clock-names = "jpgdec-smi",
+ 			      "jpgdec";
+ 		power-domains = <&scpsys MT2701_POWER_DOMAIN_ISP>;
+-		mediatek,larb = <&larb2>;
+ 		iommus = <&iommu MT2701_M4U_PORT_JPGDEC_WDMA>,
+ 			 <&iommu MT2701_M4U_PORT_JPGDEC_BSDMA>;
+ 	};
+diff --git a/arch/arm/boot/dts/mt7623.dtsi b/arch/arm/boot/dts/mt7623.dtsi
+index a79f0b6..cf22c58 100644
+--- a/arch/arm/boot/dts/mt7623.dtsi
++++ b/arch/arm/boot/dts/mt7623.dtsi
+@@ -783,7 +783,6 @@
+ 		clock-names = "jpgdec-smi",
+ 			      "jpgdec";
+ 		power-domains = <&scpsys MT2701_POWER_DOMAIN_ISP>;
+-		mediatek,larb = <&larb2>;
+ 		iommus = <&iommu MT2701_M4U_PORT_JPGDEC_WDMA>,
+ 			 <&iommu MT2701_M4U_PORT_JPGDEC_BSDMA>;
+ 	};
 -- 
 1.9.1
 
