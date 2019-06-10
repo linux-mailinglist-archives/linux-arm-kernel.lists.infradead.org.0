@@ -2,65 +2,143 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4085A3AFA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 09:28:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3B9242D6C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:26:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NYNGtLXc1+uVIK9xhvsOeiqWAGccs5Y9HNomKNHibSQ=; b=GGZH+n2/yVZo7T
-	zJCT2RKGTHbHL43B/brZa5fqNZYaZ2tKDPY1h0iKWaYFIWXOZiz7l2PWGn09TlK1X6lwhstHgvUA6
-	4f/2cMhSYTNNaw0Q3zu4HKKIS3xO7ONZ2JLiPZZw/nhVTkG7xbHotneFGKsml/SDJi2ay7SqaGql8
-	OgzdjlRlVqdwpLMEEYGG5AV0TSL85r08yBJKq/ngX4Mj/HU14blnUzRiSeFKygBgmZoJWgwclBO2R
-	mvZRN4ibIM9f1VcPMMrmoDdnSIpGhefGMHoD9vCmzA8V8CrxdHQVJD2sXZ+k7gHw7KctrkYeWN4qG
-	Pc37Gt5cTvdaHv9b39Mg==;
+	List-Owner; bh=sK+6NDb2cL2sbhh4qylrzDk5sSRIJKCpBOAgiHY8KJo=; b=Y8lH29C2nAp/e7
+	1bqxonth8BKRMTukz958BReMT5j15Ee0iW8pf8lVdDK1oaWQgfGSQwBj2EgGMz34JscldvdssxaAG
+	N3uFaU4fjgnMBK6v1qvy11NPQVrdk0RSfdIQ0oHo8W+PJmCZb//R78umil7KKWuLGrFVUMdvUQw/g
+	o8JtRG0ukAMGN6nCRz4xBVFcUvRONEuUToudalQL4EhB5JztF12eAPF0+Wt4wi+Rgb5CR2bKNAtNh
+	kK6WFGHQQv0OpEvVKq1v+l4ArrrqKIGH4chp1DwvGFbtD4L3+fSwNCvQGDII78syQu/j1xCaKI3kS
+	emSZq11koXx5e4QepJaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haEjW-0002uw-Pe; Mon, 10 Jun 2019 07:28:46 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hb719-0005YM-40; Wed, 12 Jun 2019 17:26:35 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haEjA-0002tC-CE; Mon, 10 Jun 2019 07:28:27 +0000
-X-UUID: 098f36fa672042ebb0cf6385f8cd4eae-20190609
-X-UUID: 098f36fa672042ebb0cf6385f8cd4eae-20190609
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1595202878; Sun, 09 Jun 2019 23:28:14 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Jun 2019 00:28:12 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Jun 2019 15:28:11 +0800
-Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 10 Jun 2019 15:28:10 +0800
-Message-ID: <1560151690.20384.3.camel@mtksdccf07>
-Subject: Re: [PATCH v2] kasan: add memory corruption identification for
- software tag-based mode
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Dmitry Vyukov <dvyukov@google.com>
-Date: Mon, 10 Jun 2019 15:28:10 +0800
-In-Reply-To: <CACT4Y+Y9_85YB8CCwmKerDWc45Z00hMd6Pc-STEbr0cmYSqnoA@mail.gmail.com>
-References: <1559651172-28989-1-git-send-email-walter-zh.wu@mediatek.com>
- <CACT4Y+Y9_85YB8CCwmKerDWc45Z00hMd6Pc-STEbr0cmYSqnoA@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hb70v-0005XM-RH
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:26:23 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.63,366,1557212400"; d="scan'208";a="38684018"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 12 Jun 2019 10:24:58 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.87.151) by
+ chn-vm-ex04.mchp-main.com (10.10.87.151) with ShadowRedundancy id
+ 15.1.1713.5; Wed, 12 Jun 2019 17:23:35 +0000
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex04.mchp-main.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 10 Jun 2019 00:33:22 -0700
+Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 10 Jun 2019 00:33:22 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector1-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nT/RvVOS7HfJX2mL2DWOBOc9Y3YwqCH10I3oKmMPLFg=;
+ b=iWjKQPuzh+1OnHuzGq4a+p03oE4pJV32+/M3K0SI82oB621G55DpS7h7ENQDxbvrrSSbWre0i0IArAbV1Q5MQakzVtLdCJwkkcKT6GIiSpksNu2ue2r4vqEqxLbGeMmFYRHD9hWMRZR07eYBfosDNwx/6K3IgMr8teDIZHDFyRk=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB0057.namprd11.prod.outlook.com (10.164.155.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.12; Mon, 10 Jun 2019 07:33:19 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::2807:f606:3b7c:cce9]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::2807:f606:3b7c:cce9%9]) with mapi id 15.20.1965.017; Mon, 10 Jun 2019
+ 07:33:19 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <hverkuil@xs4all.nl>, <linux-media@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <sakari.ailus@iki.fi>
+Subject: [PATCH v4 2/2] media: atmel: atmel-sama5d2-isc: fixed checkpatch
+ warnings
+Thread-Topic: [PATCH v4 2/2] media: atmel: atmel-sama5d2-isc: fixed checkpatch
+ warnings
+Thread-Index: AQHVH17GIKx4fa+Jn0q5K1bk3HE+OQ==
+Date: Mon, 10 Jun 2019 07:33:19 +0000
+Message-ID: <1560151741-2574-2-git-send-email-eugen.hristev@microchip.com>
+References: <1560151741-2574-1-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1560151741-2574-1-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: ro-RO, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR0901CA0102.eurprd09.prod.outlook.com
+ (2603:10a6:800:7e::28) To DM5PR11MB1242.namprd11.prod.outlook.com
+ (2603:10b6:3:14::8)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.7.4
+x-originating-ip: [94.177.32.154]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f878d904-1722-4c5c-47b8-08d6ed75e8d8
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DM5PR11MB0057; 
+x-ms-traffictypediagnostic: DM5PR11MB0057:
+x-microsoft-antispam-prvs: <DM5PR11MB005799BE2C50005B25D9091DE8130@DM5PR11MB0057.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0064B3273C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(346002)(366004)(136003)(396003)(376002)(51234002)(199004)(189003)(86362001)(3846002)(486006)(107886003)(2201001)(6436002)(14444005)(25786009)(6512007)(102836004)(6116002)(6506007)(386003)(256004)(66066001)(8676002)(110136005)(81166006)(476003)(6486002)(81156014)(76176011)(53936002)(316002)(64756008)(66446008)(72206003)(478600001)(11346002)(8936002)(99286004)(26005)(66556008)(446003)(66476007)(66946007)(2616005)(73956011)(4326008)(71190400001)(52116002)(2906002)(36756003)(71200400001)(50226002)(305945005)(2501003)(68736007)(186003)(7736002)(5660300002)(14454004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB0057;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 30LeaC8cXljPF6E2dyac45o9pStcdWc/zcbZU7aQKM21hGnfWyRwpx7bOhfTGgwWuQOEl6VWIY/sVVpJ5VY6cu95wDwcbEvNoB7t21pQ+6ZbBHdXNx8D1+ORrYoGKARKgaucZ8/tNWYi2/lwbM6vg2igHkudsnhlcV5CIPTqlxBi7ISx6aARjCKKGlG8kgdlbRVrHjkTZmrggXv2B2Yud95/AxGMpdv6VKZXAKvemFKTgr9k3T+UiD4DAFEXGbEwWnq3d4yZnjHtHSzb8h4eYOhTBXjZwWizsFL7MtQWyclS/gkUMue4RKIMXiQaVDoTi9G9zSFrYBOtL2ltbx47AMr0QyjHSLsAwCrFeGxUXBrSBD515oQL0E3LwLK1c14/89cR9ff5ig2Cbl6z5g+sshWvDgmH5iiAAohQLJT30Yc=
 MIME-Version: 1.0
-X-MTK: N
+X-MS-Exchange-CrossTenant-Network-Message-Id: f878d904-1722-4c5c-47b8-08d6ed75e8d8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2019 07:33:19.6261 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: eugen.hristev@microchip.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB0057
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_002824_432318_7C633944 
-X-CRM114-Status: GOOD (  31.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_102622_025031_291D3EEC 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,690 +150,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>, "Jason
- A. Donenfeld" <Jason@zx2c4.com>, Vasily
- Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
- Linux-MM <linux-mm@kvack.org>, Andrey Konovalov <andreyknvl@google.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- Pekka Enberg <penberg@kernel.org>, Martin
- Schwidefsky <schwidefsky@de.ibm.com>,
- Miles Chen =?UTF-8?Q?=28=E9=99=B3=E6=B0=91=E6=A8=BA=29?=
- <Miles.Chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
- David Rientjes <rientjes@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, Christoph Lameter <cl@linux.com>,
- Joonsoo Kim <iamjoonsoo.kim@lge.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Eugen.Hristev@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-06-07 at 21:18 +0800, Dmitry Vyukov wrote:
-> > diff --git a/include/linux/kasan.h b/include/linux/kasan.h
-> > index b40ea104dd36..be0667225b58 100644
-> > --- a/include/linux/kasan.h
-> > +++ b/include/linux/kasan.h
-> > @@ -164,7 +164,11 @@ void kasan_cache_shutdown(struct kmem_cache *cache);
-> >
-> >  #else /* CONFIG_KASAN_GENERIC */
-> >
-> > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
-> > +void kasan_cache_shrink(struct kmem_cache *cache);
-> > +#else
-> 
-> Please restructure the code so that we don't duplicate this function
-> name 3 times in this header.
-> 
-We have fixed it, Thank you for your reminder.
+From: Eugen Hristev <eugen.hristev@microchip.com>
+
+Checkpatch complaining that locks do not have comments,
+unaligned code and macro reuse of same argument in to_isc_clk.
+Fixed them by renaming, realigning and adding struct comments
+
+Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+---
+Changes in v4:
+- s/sync/serialize as requested by Sakari
+
+Changes in v3:
+- new patch, addresses the checkpatch issues that Hans asked to fix
 
 
-> >  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
-> > +#endif
-> >  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
-> >
-> >  #endif /* CONFIG_KASAN_GENERIC */
-> > diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
-> > index 9950b660e62d..17a4952c5eee 100644
-> > --- a/lib/Kconfig.kasan
-> > +++ b/lib/Kconfig.kasan
-> > @@ -134,6 +134,15 @@ config KASAN_S390_4_LEVEL_PAGING
-> >           to 3TB of RAM with KASan enabled). This options allows to force
-> >           4-level paging instead.
-> >
-> > +config KASAN_SW_TAGS_IDENTIFY
-> > +       bool "Enable memory corruption idenitfication"
-> 
-> s/idenitfication/identification/
-> 
-I should replace my glasses.
+ drivers/media/platform/atmel/atmel-isc.h         | 51 +++++++++++++++++++++---
+ drivers/media/platform/atmel/atmel-sama5d2-isc.c |  4 +-
+ 2 files changed, 48 insertions(+), 7 deletions(-)
 
-
-> > +       depends on KASAN_SW_TAGS
-> > +       help
-> > +         Now tag-based KASAN bug report always shows invalid-access error, This
-> > +         options can identify it whether it is use-after-free or out-of-bound.
-> > +         This will make it easier for programmers to see the memory corruption
-> > +         problem.
-> 
-> This description looks like a change description, i.e. it describes
-> the current behavior and how it changes. I think code comments should
-> not have such, they should describe the current state of the things.
-> It should also mention the trade-off, otherwise it raises reasonable
-> questions like "why it's not enabled by default?" and "why do I ever
-> want to not enable it?".
-> I would do something like:
-> 
-> This option enables best-effort identification of bug type
-> (use-after-free or out-of-bounds)
-> at the cost of increased memory consumption for object quarantine.
-> 
-I totally agree with your comments. Would you think we should try to add the cost?
-It may be that it consumes about 1/128th of available memory at full quarantine usage rate.
-
-
-> 
-> 
-> 
-> > +
-> >  config TEST_KASAN
-> >         tristate "Module for testing KASAN for bug detection"
-> >         depends on m && KASAN
-> > diff --git a/mm/kasan/Makefile b/mm/kasan/Makefile
-> > index 5d1065efbd47..d8540e5070cb 100644
-> > --- a/mm/kasan/Makefile
-> > +++ b/mm/kasan/Makefile
-> > @@ -19,3 +19,4 @@ CFLAGS_tags.o := $(call cc-option, -fno-conserve-stack -fno-stack-protector)
-> >  obj-$(CONFIG_KASAN) := common.o init.o report.o
-> >  obj-$(CONFIG_KASAN_GENERIC) += generic.o generic_report.o quarantine.o
-> >  obj-$(CONFIG_KASAN_SW_TAGS) += tags.o tags_report.o
-> > +obj-$(CONFIG_KASAN_SW_TAGS_IDENTIFY) += quarantine.o
-> > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
-> > index 80bbe62b16cd..e309fbbee831 100644
-> > --- a/mm/kasan/common.c
-> > +++ b/mm/kasan/common.c
-> > @@ -81,7 +81,7 @@ static inline depot_stack_handle_t save_stack(gfp_t flags)
-> >         return depot_save_stack(&trace, flags);
-> >  }
-> >
-> > -static inline void set_track(struct kasan_track *track, gfp_t flags)
-> > +void set_track(struct kasan_track *track, gfp_t flags)
-> 
-> If you make it non-static, it should get kasan_ prefix. The name is too generic.
-> 
-Ok, We will add it into next version.
-
-
-> 
-> >  {
-> >         track->pid = current->pid;
-> >         track->stack = save_stack(flags);
-> > @@ -457,7 +457,7 @@ static bool __kasan_slab_free(struct kmem_cache *cache, void *object,
-> >                 return false;
-> >
-> >         set_track(&get_alloc_info(cache, object)->free_track, GFP_NOWAIT);
-> > -       quarantine_put(get_free_info(cache, object), cache);
-> > +       quarantine_put(get_free_info(cache, tagged_object), cache);
-> >
-> >         return IS_ENABLED(CONFIG_KASAN_GENERIC);
-> >  }
-> > diff --git a/mm/kasan/kasan.h b/mm/kasan/kasan.h
-> > index 3e0c11f7d7a1..1be04abe2e0d 100644
-> > --- a/mm/kasan/kasan.h
-> > +++ b/mm/kasan/kasan.h
-> > @@ -98,6 +98,12 @@ struct kasan_alloc_meta {
-> >  struct qlist_node {
-> >         struct qlist_node *next;
-> >  };
-> > +struct qlist_object {
-> > +       unsigned long addr;
-> > +       unsigned int size;
-> > +       struct kasan_track free_track;
-> > +       struct qlist_node qnode;
-> > +};
-> >  struct kasan_free_meta {
-> >         /* This field is used while the object is in the quarantine.
-> >          * Otherwise it might be used for the allocator freelist.
-> > @@ -133,11 +139,12 @@ void kasan_report(unsigned long addr, size_t size,
-> >                 bool is_write, unsigned long ip);
-> >  void kasan_report_invalid_free(void *object, unsigned long ip);
-> >
-> > -#if defined(CONFIG_KASAN_GENERIC) && \
-> > -       (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
-> > +#if (defined(CONFIG_KASAN_GENERIC) || defined(CONFIG_KASAN_SW_TAGS_IDENTIFY)) \
-> > +       && (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
-> >  void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache);
-> >  void quarantine_reduce(void);
-> >  void quarantine_remove_cache(struct kmem_cache *cache);
-> > +void set_track(struct kasan_track *track, gfp_t flags);
-> >  #else
-> >  static inline void quarantine_put(struct kasan_free_meta *info,
-> >                                 struct kmem_cache *cache) { }
-> > @@ -151,6 +158,31 @@ void print_tags(u8 addr_tag, const void *addr);
-> >
-> >  u8 random_tag(void);
-> >
-> > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
-> > +bool quarantine_find_object(void *object,
-> > +               struct kasan_track *free_track);
-> > +
-> > +struct qlist_object *qobject_create(struct kasan_free_meta *info,
-> > +               struct kmem_cache *cache);
-> > +
-> > +void qobject_free(struct qlist_node *qlink, struct kmem_cache *cache);
-> > +#else
-> > +static inline bool quarantine_find_object(void *object,
-> > +               struct kasan_track *free_track)
-> > +{
-> > +       return false;
-> > +}
-> > +
-> > +static inline struct qlist_object *qobject_create(struct kasan_free_meta *info,
-> > +               struct kmem_cache *cache)
-> > +{
-> > +       return NULL;
-> > +}
-> > +
-> > +static inline void qobject_free(struct qlist_node *qlink,
-> > +               struct kmem_cache *cache) {}
-> > +#endif
-> > +
-> >  #else
-> >
-> >  static inline void print_tags(u8 addr_tag, const void *addr) { }
-> > @@ -160,6 +192,20 @@ static inline u8 random_tag(void)
-> >         return 0;
-> >  }
-> >
-> > +static inline bool quarantine_find_object(void *object,
-> 
-> 
-> Please restructure the code so that we don't duplicate this function
-> name 3 times in this header.
-> 
-We have fixed it.
-
-
-> > +               struct kasan_track *free_track)
-> > +{
-> > +       return false;
-> > +}
-> > +
-> > +static inline struct qlist_object *qobject_create(struct kasan_free_meta *info,
-> > +               struct kmem_cache *cache)
-> > +{
-> > +       return NULL;
-> > +}
-> > +
-> > +static inline void qobject_free(struct qlist_node *qlink,
-> > +               struct kmem_cache *cache) {}
-> >  #endif
-> >
-> >  #ifndef arch_kasan_set_tag
-> > diff --git a/mm/kasan/quarantine.c b/mm/kasan/quarantine.c
-> > index 978bc4a3eb51..43b009659d80 100644
-> > --- a/mm/kasan/quarantine.c
-> > +++ b/mm/kasan/quarantine.c
-> > @@ -61,12 +61,16 @@ static void qlist_init(struct qlist_head *q)
-> >  static void qlist_put(struct qlist_head *q, struct qlist_node *qlink,
-> >                 size_t size)
-> >  {
-> > -       if (unlikely(qlist_empty(q)))
-> > +       struct qlist_node *prev_qlink = q->head;
-> > +
-> > +       if (unlikely(qlist_empty(q))) {
-> >                 q->head = qlink;
-> > -       else
-> > -               q->tail->next = qlink;
-> > -       q->tail = qlink;
-> > -       qlink->next = NULL;
-> > +               q->tail = qlink;
-> > +               qlink->next = NULL;
-> > +       } else {
-> > +               q->head = qlink;
-> > +               qlink->next = prev_qlink;
-> > +       }
-> >         q->bytes += size;
-> >  }
-> >
-> > @@ -121,7 +125,11 @@ static unsigned long quarantine_batch_size;
-> >   * Quarantine doesn't support memory shrinker with SLAB allocator, so we keep
-> >   * the ratio low to avoid OOM.
-> >   */
-> > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
-> > +#define QUARANTINE_FRACTION 128
-> 
-> Explain in a comment why we use lower value for sw tags mode.
-> 
-The comment is below.
-"Tag-based KASAN only stores freed object information rather than the
-object itself. The quarantine in tag-based KASAN only needs less usage
-to achieve the same effect as generic KASAN. So We reduce the
-QUARANTINE_FRACTION value to slim the quarantine" 
-
-
-> > +#else
-> >  #define QUARANTINE_FRACTION 32
-> > +#endif
-> >
-> >  static struct kmem_cache *qlink_to_cache(struct qlist_node *qlink)
-> >  {
-> > @@ -139,16 +147,24 @@ static void *qlink_to_object(struct qlist_node *qlink, struct kmem_cache *cache)
-> >
-> >  static void qlink_free(struct qlist_node *qlink, struct kmem_cache *cache)
-> >  {
-> > -       void *object = qlink_to_object(qlink, cache);
-> >         unsigned long flags;
-> > +       struct kmem_cache *obj_cache;
-> > +       void *object;
-> >
-> > -       if (IS_ENABLED(CONFIG_SLAB))
-> > -               local_irq_save(flags);
-> > +       if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY)) {
-> > +               qobject_free(qlink, cache);
-> > +       } else {
-> > +               obj_cache = cache ? cache :     qlink_to_cache(qlink);
-> > +               object = qlink_to_object(qlink, obj_cache);
-> >
-> > -       ___cache_free(cache, object, _THIS_IP_);
-> > +               if (IS_ENABLED(CONFIG_SLAB))
-> > +                       local_irq_save(flags);
-> >
-> > -       if (IS_ENABLED(CONFIG_SLAB))
-> > -               local_irq_restore(flags);
-> > +               ___cache_free(obj_cache, object, _THIS_IP_);
-> > +
-> > +               if (IS_ENABLED(CONFIG_SLAB))
-> > +                       local_irq_restore(flags);
-> > +       }
-> >  }
-> >
-> >  static void qlist_free_all(struct qlist_head *q, struct kmem_cache *cache)
-> > @@ -160,11 +176,9 @@ static void qlist_free_all(struct qlist_head *q, struct kmem_cache *cache)
-> >
-> >         qlink = q->head;
-> >         while (qlink) {
-> > -               struct kmem_cache *obj_cache =
-> > -                       cache ? cache : qlink_to_cache(qlink);
-> >                 struct qlist_node *next = qlink->next;
-> >
-> > -               qlink_free(qlink, obj_cache);
-> > +               qlink_free(qlink, cache);
-> >                 qlink = next;
-> >         }
-> >         qlist_init(q);
-> > @@ -175,6 +189,8 @@ void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache)
-> >         unsigned long flags;
-> >         struct qlist_head *q;
-> >         struct qlist_head temp = QLIST_INIT;
-> > +       struct kmem_cache *qobject_cache;
-> > +       struct qlist_object *free_obj_info;
-> >
-> >         /*
-> >          * Note: irq must be disabled until after we move the batch to the
-> > @@ -187,7 +203,19 @@ void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache)
-> >         local_irq_save(flags);
-> >
-> >         q = this_cpu_ptr(&cpu_quarantine);
-> > -       qlist_put(q, &info->quarantine_link, cache->size);
-> > +       if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY)) {
-> > +               free_obj_info = qobject_create(info, cache);
-> > +               if (!free_obj_info) {
-> > +                       local_irq_restore(flags);
-> > +                       return;
-> > +               }
-> > +
-> > +               qobject_cache = qlink_to_cache(&free_obj_info->qnode);
-> > +               qlist_put(q, &free_obj_info->qnode, qobject_cache->size);
-> 
-> We could use sizeof(*free_obj_info), which looks simpler. Any reason
-> to do another hop through the cache?
-> 
-We originally thought we should store the whole slab usage(including metadata) 
-instead of qobject size.
-If we use sizeof(*free_obj_info), then below calculation is incorrect. 
-total quarantine size = (totalram_pages() << PAGE_SHIFT) / QUARANTINE_FRACTION
-- QUARANTINE_PERCPU_SIZE*num_online_cpus()
-
-> > +       } else {
-> > +               qlist_put(q, &info->quarantine_link, cache->size);
-> > +       }
-> > +
-> >         if (unlikely(q->bytes > QUARANTINE_PERCPU_SIZE)) {
-> >                 qlist_move_all(q, &temp);
-> >
-> > @@ -220,7 +248,6 @@ void quarantine_reduce(void)
-> >         if (likely(READ_ONCE(quarantine_size) <=
-> >                    READ_ONCE(quarantine_max_size)))
-> >                 return;
-> > -
-> >         /*
-> >          * srcu critical section ensures that quarantine_remove_cache()
-> >          * will not miss objects belonging to the cache while they are in our
-> > @@ -327,3 +354,90 @@ void quarantine_remove_cache(struct kmem_cache *cache)
-> >
-> >         synchronize_srcu(&remove_cache_srcu);
-> >  }
-> > +
-> > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
-> > +static noinline bool qlist_find_object(struct qlist_head *from, void *arg)
-> > +{
-> > +       struct qlist_node *curr;
-> > +       struct qlist_object *curr_obj;
-> > +       struct qlist_object *target = (struct qlist_object *)arg;
-> > +
-> > +       if (unlikely(qlist_empty(from)))
-> > +               return false;
-> > +
-> > +       curr = from->head;
-> > +       while (curr) {
-> > +               struct qlist_node *next = curr->next;
-> > +
-> > +               curr_obj = container_of(curr, struct qlist_object, qnode);
-> > +               if (unlikely((target->addr >= curr_obj->addr) &&
-> > +                       (target->addr < (curr_obj->addr + curr_obj->size)))) {
-> > +                       target->free_track = curr_obj->free_track;
-> > +                       return true;
-> > +               }
-> > +
-> > +               curr = next;
-> > +       }
-> > +       return false;
-> > +}
-> > +
-> > +static noinline int per_cpu_find_object(void *arg)
-> > +{
-> > +       struct qlist_head *q;
-> > +
-> > +       q = this_cpu_ptr(&cpu_quarantine);
-> > +       return qlist_find_object(q, arg);
-> > +}
-> > +
-> > +struct cpumask cpu_allowed_mask __read_mostly;
-> > +
-> > +bool quarantine_find_object(void *addr, struct kasan_track *free_track)
-> > +{
-> > +       unsigned long flags;
-> > +       bool find = false;
-> > +       int cpu, i;
-> > +       struct qlist_object target;
-> > +
-> > +       target.addr = (unsigned long)addr;
-> > +
-> > +       cpumask_copy(&cpu_allowed_mask, cpu_online_mask);
-> > +       for_each_cpu(cpu, &cpu_allowed_mask) {
-> > +               find = smp_call_on_cpu(cpu, per_cpu_find_object,
-> > +                               (void *)&target, true);
-> > +               if (find) {
-> > +                       if (free_track)
-> > +                               *free_track = target.free_track;
-> > +                       return true;
-> > +               }
-> > +       }
-> > +
-> > +       raw_spin_lock_irqsave(&quarantine_lock, flags);
-> > +       for (i = quarantine_tail; i >= 0; i--) {
-> > +               if (qlist_empty(&global_quarantine[i]))
-> > +                       continue;
-> > +               find = qlist_find_object(&global_quarantine[i],
-> > +                               (void *)&target);
-> > +               if (find) {
-> > +                       if (free_track)
-> > +                               *free_track = target.free_track;
-> > +                       raw_spin_unlock_irqrestore(&quarantine_lock, flags);
-> > +                       return true;
-> > +               }
-> > +       }
-> > +       for (i = QUARANTINE_BATCHES-1; i > quarantine_tail; i--) {
-> 
-> Find a way to calculate the right index using a single loop, rather
-> that copy-paste the whole loop body to do a small adjustment to index.
-> 
-single loop:
-
-    for (i = quarantine_tail, j = 1; i != quarantine_tail || j != 2;
-i--) {
-        if (i < 0) {
-            i = QUARANTINE_BATCHES;
-            j = 2;
-            continue;
-        }
-        if (qlist_empty(&global_quarantine[i]))
-            continue;
-        find = qlist_find_object(&global_quarantine[i],
-                (void *)&target);
-        if (find) {
-            if (free_track)
-                *free_track = target.free_track;
-            raw_spin_unlock_irqrestore(&quarantine_lock, flags);
-            return true;
-        }
-    }
-
-
-> > +               if (qlist_empty(&global_quarantine[i]))
-> > +                       continue;
-> > +               find = qlist_find_object(&global_quarantine[i],
-> > +                               (void *)&target);
-> > +               if (find) {
-> > +                       if (free_track)
-> > +                               *free_track = target.free_track;
-> > +                       raw_spin_unlock_irqrestore(&quarantine_lock, flags);
-> > +                       return true;
-> > +               }
-> > +       }
-> > +       raw_spin_unlock_irqrestore(&quarantine_lock, flags);
-> > +
-> > +       return false;
-> > +}
-> > +#endif
-> > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
-> > index ca9418fe9232..3cbc24cd3d43 100644
-> > --- a/mm/kasan/report.c
-> > +++ b/mm/kasan/report.c
-> > @@ -150,18 +150,27 @@ static void describe_object_addr(struct kmem_cache *cache, void *object,
-> >  }
-> >
-> >  static void describe_object(struct kmem_cache *cache, void *object,
-> > -                               const void *addr)
-> > +                               const void *tagged_addr)
-> >  {
-> > +       void *untagged_addr = reset_tag(tagged_addr);
-> >         struct kasan_alloc_meta *alloc_info = get_alloc_info(cache, object);
-> > +       struct kasan_track free_track;
-> >
-> >         if (cache->flags & SLAB_KASAN) {
-> > -               print_track(&alloc_info->alloc_track, "Allocated");
-> > -               pr_err("\n");
-> > -               print_track(&alloc_info->free_track, "Freed");
-> > -               pr_err("\n");
-> > +               if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY) &&
-> > +                       quarantine_find_object((void *)tagged_addr,
-> > +                               &free_track)) {
-> > +                       print_track(&free_track, "Freed");
-> > +                       pr_err("\n");
-> > +               } else {
-> > +                       print_track(&alloc_info->alloc_track, "Allocated");
-> > +                       pr_err("\n");
-> > +                       print_track(&alloc_info->free_track, "Freed");
-> > +                       pr_err("\n");
-> > +               }
-> >         }
-> >
-> > -       describe_object_addr(cache, object, addr);
-> > +       describe_object_addr(cache, object, untagged_addr);
-> >  }
-> >
-> >  static inline bool kernel_or_module_addr(const void *addr)
-> > @@ -180,23 +189,25 @@ static inline bool init_task_stack_addr(const void *addr)
-> >                         sizeof(init_thread_union.stack));
-> >  }
-> >
-> > -static void print_address_description(void *addr)
-> > +static void print_address_description(void *tagged_addr)
-> >  {
-> > -       struct page *page = addr_to_page(addr);
-> > +       void *untagged_addr = reset_tag(tagged_addr);
-> > +       struct page *page = addr_to_page(untagged_addr);
-> >
-> >         dump_stack();
-> >         pr_err("\n");
-> >
-> >         if (page && PageSlab(page)) {
-> >                 struct kmem_cache *cache = page->slab_cache;
-> > -               void *object = nearest_obj(cache, page, addr);
-> > +               void *object = nearest_obj(cache, page, untagged_addr);
-> >
-> > -               describe_object(cache, object, addr);
-> > +               describe_object(cache, object, tagged_addr);
-> >         }
-> >
-> > -       if (kernel_or_module_addr(addr) && !init_task_stack_addr(addr)) {
-> > +       if (kernel_or_module_addr(untagged_addr) &&
-> > +                       !init_task_stack_addr(untagged_addr)) {
-> >                 pr_err("The buggy address belongs to the variable:\n");
-> > -               pr_err(" %pS\n", addr);
-> > +               pr_err(" %pS\n", untagged_addr);
-> >         }
-> >
-> >         if (page) {
-> > @@ -314,7 +325,7 @@ void kasan_report(unsigned long addr, size_t size,
-> >         pr_err("\n");
-> >
-> >         if (addr_has_shadow(untagged_addr)) {
-> > -               print_address_description(untagged_addr);
-> > +               print_address_description(tagged_addr);
-> >                 pr_err("\n");
-> >                 print_shadow_for_address(info.first_bad_addr);
-> >         } else {
-> > diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
-> > index 63fca3172659..7804b48f760e 100644
-> > --- a/mm/kasan/tags.c
-> > +++ b/mm/kasan/tags.c
-> > @@ -124,6 +124,53 @@ void check_memory_region(unsigned long addr, size_t size, bool write,
-> >         }
-> >  }
-> >
-> > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
-> > +void kasan_cache_shrink(struct kmem_cache *cache)
-> > +{
-> > +       quarantine_remove_cache(cache);
-> 
-> This does not look to be necessary. There are no objects from that
-> cache in the quarantine in general. Let's not over-complicate this.
-> 
-Ok, we will remove it.
-
-> 
-> 
-> > +}
-> > +
-> > +struct qlist_object *qobject_create(struct kasan_free_meta *info,
-> > +                                               struct kmem_cache *cache)
-> > +{
-> > +       struct qlist_object *qobject_info;
-> > +       void *object;
-> > +
-> > +       object = ((void *)info) - cache->kasan_info.free_meta_offset;
-> > +       qobject_info = kmalloc(sizeof(struct qlist_object), GFP_NOWAIT);
-> > +       if (!qobject_info)
-> > +               return NULL;
-> > +       qobject_info->addr = (unsigned long) object;
-> > +       qobject_info->size = cache->object_size;
-> > +       set_track(&qobject_info->free_track, GFP_NOWAIT);
-> > +
-> > +       return qobject_info;
-> > +}
-> > +
-> > +static struct kmem_cache *qobject_to_cache(struct qlist_object *qobject)
-> > +{
-> > +       return virt_to_head_page(qobject)->slab_cache;
-> 
-> This looks identical to the existing qlink_to_cache, please use the
-> existing function.
-> 
-> > +}
-> > +
-> > +void qobject_free(struct qlist_node *qlink, struct kmem_cache *cache)
-> > +{
-> > +       struct qlist_object *qobject = container_of(qlink,
-> > +                       struct qlist_object, qnode);
-> > +       unsigned long flags;
-> > +
-> > +       struct kmem_cache *qobject_cache =
-> > +                       cache ? cache : qobject_to_cache(qobject);
-> 
-> I don't understand this part.
-> Will caller ever pass us the right cache? Or cache is always NULL? If
-> it's always NULL, why do we accept it at all?
-2 call flow at v2.
-a). kmalloc() -> quarantine_reduce() -> qlist_free_all(&to_free, NULL)
--> qlink_free(qlink, NULL) -> qobject_free(qlink, NULL)
-b). kmem_cache_shrink() -> kasan_cache_shrink(cache) ->
-quarantine_remove_cache() -> qlist_free_all(&to_free, cache); ->
-qlink_free(qlink, cache) -> qobject_free(qlink, cache)
-
-It passes the NULL parameter at flow a.
-It passes the cache of slab at flow b.
-
-We always need calculate the slab cache to If we remove flow b.
-
-> We also allocate qobjects with kmalloc always, so we must use kfree,
-> why do we even mess with caches?
-> 
-We call ___cache_free() to free the qobject instead of kfree(), because
-it should be out of quarantine.
-
-> > +
-> > +       if (IS_ENABLED(CONFIG_SLAB))
-> > +               local_irq_save(flags);
-> > +
-> > +       ___cache_free(qobject_cache, (void *)qobject, _THIS_IP_);
-> > +
-> > +       if (IS_ENABLED(CONFIG_SLAB))
-> > +               local_irq_restore(flags);
-> > +}
-> > +#endif
-> > +
-> >  #define DEFINE_HWASAN_LOAD_STORE(size)                                 \
-> >         void __hwasan_load##size##_noabort(unsigned long addr)          \
-> >         {                                                               \
-> > diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
-> > index 8eaf5f722271..63b0b1f381ff 100644
-> > --- a/mm/kasan/tags_report.c
-> > +++ b/mm/kasan/tags_report.c
-> > @@ -36,7 +36,13 @@
-> >
-> >  const char *get_bug_type(struct kasan_access_info *info)
-> >  {
-> > -       return "invalid-access";
-> > +       if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY)) {
-> > +               if (quarantine_find_object((void *)info->access_addr, NULL))
-> > +                       return "use-after-free";
-> > +               else
-> > +                       return "out-of-bounds";
-> > +       } else
-> > +               return "invalid-access";
-> >  }
-> >
-> >  void *find_first_bad_addr(void *addr, size_t size)
-> > diff --git a/mm/slub.c b/mm/slub.c
-> > index 1b08fbcb7e61..751429d02846 100644
-> > --- a/mm/slub.c
-> > +++ b/mm/slub.c
-> > @@ -3004,7 +3004,7 @@ static __always_inline void slab_free(struct kmem_cache *s, struct page *page,
-> >                 do_slab_free(s, page, head, tail, cnt, addr);
-> >  }
-> >
-> > -#ifdef CONFIG_KASAN_GENERIC
-> > +#if defined(CONFIG_KASAN_GENERIC) || defined(CONFIG_KASAN_SW_TAGS_IDENTIFY)
-> >  void ___cache_free(struct kmem_cache *cache, void *x, unsigned long addr)
-> >  {
-> >         do_slab_free(cache, virt_to_head_page(x), x, NULL, 1, addr);
-
-
-
+diff --git a/drivers/media/platform/atmel/atmel-isc.h b/drivers/media/platform/atmel/atmel-isc.h
+index f633e10..5be5b09 100644
+--- a/drivers/media/platform/atmel/atmel-isc.h
++++ b/drivers/media/platform/atmel/atmel-isc.h
+@@ -24,14 +24,14 @@ struct isc_clk {
+ 	struct clk_hw   hw;
+ 	struct clk      *clk;
+ 	struct regmap   *regmap;
+-	spinlock_t	lock;
++	spinlock_t	lock;	/* serialize access to clock registers */
+ 	u8		id;
+ 	u8		parent_id;
+ 	u32		div;
+ 	struct device	*dev;
+ };
+ 
+-#define to_isc_clk(hw) container_of(hw, struct isc_clk, hw)
++#define to_isc_clk(v) container_of(v, struct isc_clk, hw)
+ 
+ struct isc_buffer {
+ 	struct vb2_v4l2_buffer  vb;
+@@ -146,6 +146,47 @@ struct isc_ctrls {
+ 
+ #define ISC_PIPE_LINE_NODE_NUM	11
+ 
++/*
++ * struct isc_device - ISC device driver data/config struct
++ * @regmap:		Register map
++ * @hclock:		Hclock clock input (refer datasheet)
++ * @ispck:		iscpck clock (refer datasheet)
++ * @isc_clks:		ISC clocks
++ *
++ * @dev:		Registered device driver
++ * @v4l2_dev:		v4l2 registered device
++ * @video_dev:		registered video device
++ *
++ * @vb2_vidq:		video buffer 2 video queue
++ * @dma_queue_lock:	lock to serialize the dma buffer queue
++ * @dma_queue:		the queue for dma buffers
++ * @cur_frm:		current isc frame/buffer
++ * @sequence:		current frame number
++ * @stop:		true if isc is not streaming, false if streaming
++ * @comp:		completion reference that signals frame completion
++ *
++ * @fmt:		current v42l format
++ * @user_formats:	list of formats that are supported and agreed with sd
++ * @num_user_formats:	how many formats are in user_formats
++ *
++ * @config:		current ISC format configuration
++ * @try_config:		the current ISC try format , not yet activated
++ *
++ * @ctrls:		holds information about ISC controls
++ * @do_wb_ctrl:		control regarding the DO_WHITE_BALANCE button
++ * @awb_work:		workqueue reference for autowhitebalance histogram
++ *			analysis
++ *
++ * @lock:		lock for serializing userspace file operations
++ *			with ISC operations
++ * @awb_lock:		lock for serializing awb work queue operations
++ *			with DMA/buffer operations
++ *
++ * @pipeline:		configuration of the ISC pipeline
++ *
++ * @current_subdev:	current subdevice: the sensor
++ * @subdev_entities:	list of subdevice entitites
++ */
+ struct isc_device {
+ 	struct regmap		*regmap;
+ 	struct clk		*hclock;
+@@ -157,7 +198,7 @@ struct isc_device {
+ 	struct video_device	video_dev;
+ 
+ 	struct vb2_queue	vb2_vidq;
+-	spinlock_t		dma_queue_lock;
++	spinlock_t		dma_queue_lock; /* serialize access to dma queue */
+ 	struct list_head	dma_queue;
+ 	struct isc_buffer	*cur_frm;
+ 	unsigned int		sequence;
+@@ -175,8 +216,8 @@ struct isc_device {
+ 	struct v4l2_ctrl	*do_wb_ctrl;
+ 	struct work_struct	awb_work;
+ 
+-	struct mutex		lock;
+-	spinlock_t		awb_lock;
++	struct mutex		lock; /* serialize access to file operations */
++	spinlock_t		awb_lock; /* serialize access to DMA buffers from awb work queue */
+ 
+ 	struct regmap_field	*pipeline[ISC_PIPE_LINE_NODE_NUM];
+ 
+diff --git a/drivers/media/platform/atmel/atmel-sama5d2-isc.c b/drivers/media/platform/atmel/atmel-sama5d2-isc.c
+index 93fb839..127e79c 100644
+--- a/drivers/media/platform/atmel/atmel-sama5d2-isc.c
++++ b/drivers/media/platform/atmel/atmel-sama5d2-isc.c
+@@ -87,8 +87,8 @@ static int isc_parse_dt(struct device *dev, struct isc_device *isc)
+ 			break;
+ 		}
+ 
+-		subdev_entity = devm_kzalloc(dev,
+-					  sizeof(*subdev_entity), GFP_KERNEL);
++		subdev_entity = devm_kzalloc(dev, sizeof(*subdev_entity),
++					     GFP_KERNEL);
+ 		if (!subdev_entity) {
+ 			of_node_put(rem);
+ 			ret = -ENOMEM;
+-- 
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
