@@ -2,96 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F12C3B035
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 10:08:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 528963B0AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 10:22:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:
-	MIME-Version:References:Subject:To:From:Date:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lhVUd3D9KBXcquj+3Wr0vGITpK5fDjuF2Rr2NWaBJyY=; b=nYD6U+Pj0ktRDh
-	CQhSyc5VD1lG1GCjc+36QPWPDBHuxTJLlR26ogJKPXbkIV6E3uHJ0FcOu7kWuuw06UqMdASOtSNu5
-	TBhJcfNF8sl8btb7rV3Rz4MwJsZ6ADXNa7IJ2Ec1MC1ndlG9/2Ce2g+S1JXFIa7hZztdoHiXfmhvV
-	DpvW+wCkbKVY9al+0CVOu7I3O0p4NpZMsqb6t8tY9Pjn2jCDezJ8a09OksFM5e0VCk/P7+hVyleOy
-	XRSV3SNG1B3QCTEQVxxN4zImJ2S7Kq0MZx8CJAaUuIJcPpYT5917KA4h6VGSJOKEFe64pEs+Xjmjr
-	ppFfz88tWlLf/zQNn3lA==;
+	List-Owner; bh=iR54DoH8/ETeivJXTMPiHOOeDntotcndQkkk/qjCN1M=; b=ezy1IX/1eQaA/1
+	86Ah1Ya2oonmmTLjuNBRSrAIAkCe9o5WwZkF2szrlvItjh4+L55DYwBVxXM6ln320sW4qfuedckx7
+	XR074JCCEEivhqbbwPWozVwdQZxRC20dkGVyoeLiv7pi0BR3EbNd1VU13RDJ+pd4VdlXAu9QyuYbu
+	c4jvNx5lpl7sKyBszcm3dYCkMlgZuNw8oAzQiPn3gY5ul5ftU5iy5FLnCNXLHaxdQl3yCDVyKW3qp
+	9gYUzSJtjfoFdtV74Y8gMsYkxGcIEY2WWjV/1lVGUp9XZJLbicMfmiGu5sPUtobc8p7o3RGm5rVIQ
+	TTg3QerlYWThJtEeENEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haFMJ-0001g5-AT; Mon, 10 Jun 2019 08:08:51 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1haFZI-0002fQ-P3; Mon, 10 Jun 2019 08:22:16 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haFM7-0001fO-0W
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 08:08:40 +0000
-Received: from pps.filterd (m0098396.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5A86fco026644
- for <linux-arm-kernel@lists.infradead.org>; Mon, 10 Jun 2019 04:08:35 -0400
-Received: from e06smtp03.uk.ibm.com (e06smtp03.uk.ibm.com [195.75.94.99])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2t1k62gsb4-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Mon, 10 Jun 2019 04:08:34 -0400
-Received: from localhost
- by e06smtp03.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <sathnaga@linux.vnet.ibm.com>; 
- Mon, 10 Jun 2019 09:08:32 +0100
-Received: from b06avi18626390.portsmouth.uk.ibm.com (9.149.26.192)
- by e06smtp03.uk.ibm.com (192.168.101.133) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Mon, 10 Jun 2019 09:08:30 +0100
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com
- (b06wcsmtp001.portsmouth.uk.ibm.com [9.149.105.160])
- by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
- id x5A88N4l28639566
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 10 Jun 2019 08:08:23 GMT
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id B3098A4054;
- Mon, 10 Jun 2019 08:08:29 +0000 (GMT)
-Received: from b06wcsmtp001.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 2F757A405F;
- Mon, 10 Jun 2019 08:08:28 +0000 (GMT)
-Received: from sathnaga86 (unknown [9.85.68.20])
- by b06wcsmtp001.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Mon, 10 Jun 2019 08:08:27 +0000 (GMT)
-Date: Mon, 10 Jun 2019 13:38:25 +0530
-From: Satheesh Rajendran <sathnaga@linux.vnet.ibm.com>
-To: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: [PATCH 4/4] mm/vmalloc: Hugepage vmalloc mappings
-References: <20190610043838.27916-1-npiggin@gmail.com>
- <20190610043838.27916-4-npiggin@gmail.com>
- <1560145722.obq2bpepl8.astroid@bobo.none>
+ id 1haFUJ-0005hu-JB
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 08:17:09 +0000
+Received: by mail-lj1-x243.google.com with SMTP id i21so7068463ljj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 01:17:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=8pL4Nb1/9ZlimGeO+8nNRwwsw7KQDrO0bIiM5MijaHc=;
+ b=xSRPJR4uipKtcDFNkoGLAFNDSWpur+y8M24zd3LBMhsJYqFp5+eEkZJfeJ+mUfA3dP
+ AOCXEMkGnfQuGJ/8GlSeSupXJiRgFsrpX5P2P8bKbiNdUjiKo4WlyhCtuSvw6Fu3yuSp
+ JlvmWIg3qvk3YA8rP6ziRd3ISQI+W5g/+ujJ6HXbRxdsFHJtT2251n7emGu/ehyLDchW
+ orY44h5Uq6uCpZAKQTXbUabYUv0SFU0BU35hUEowS0A8IT+z44mEQpi7FOqyMObTxHXH
+ J1IZmwmz0qzlrtkOKVn+2r1ULZjLMdlZ4gxp72cwNG0SGpQVHYzj40UB6i/K8uRaz/6v
+ Oapg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=8pL4Nb1/9ZlimGeO+8nNRwwsw7KQDrO0bIiM5MijaHc=;
+ b=fOmuXUIa6F77sl0ypkD0EYqcvTjvn6OEnZvt73MzrU1T0HWS9G2DSh02PAsnV8+wd8
+ CSjepoOBxyE/5x+4FbZ6KDFi1PqWq/O45j84KkeBIgDGhG0OYbzr2DknS3PeVwVsqVI7
+ u7/KoDr6YednfPr40E/xVTf7LaaqGpY6gxzzbT5yqv6XAWfMjZpEF9EZPC6zC9cn8JI8
+ IfM5yTVtYCdURvQk/CXXGfy6gFkEytQ8aVOUif20tnUjeqLZDPspyrUbgofth6nfxyLM
+ KKbzWZ+tXY4Y8pdZ4CulsP4Vwp8WOM+IxwM4lxXYL9Su15TDvJ6+aez50lISXR/KZVDG
+ kCMA==
+X-Gm-Message-State: APjAAAVsAotn2lM6HFDaPgcDKHPv0+9wbfFgJ82pUq9fZnAYyC/Se4JS
+ TMv6ele4t0XHqx+Xuxx+dRMyAA==
+X-Google-Smtp-Source: APXvYqxdRKjHKNFtdU1RuLDegwe0z+Q9hzFQQCcTB/Mo0B6oh4MMv2rJa2+CBzMU9qD3w+1XRSlP9Q==
+X-Received: by 2002:a05:651c:87:: with SMTP id
+ 7mr18288402ljq.184.1560154624975; 
+ Mon, 10 Jun 2019 01:17:04 -0700 (PDT)
+Received: from centauri (m83-185-80-163.cust.tele2.se. [83.185.80.163])
+ by smtp.gmail.com with ESMTPSA id c1sm1892791lfh.13.2019.06.10.01.17.03
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Mon, 10 Jun 2019 01:17:04 -0700 (PDT)
+Date: Mon, 10 Jun 2019 10:17:01 +0200
+From: Niklas Cassel <niklas.cassel@linaro.org>
+To: Andy Gross <agross@kernel.org>
+Subject: Re: [PATCH] arm64: qcom: qcs404: Add reset-cells to GCC node
+Message-ID: <20190610081701.GA3152@centauri>
+References: <1560053972-32273-1-git-send-email-agross@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1560145722.obq2bpepl8.astroid@bobo.none>
+In-Reply-To: <1560053972-32273-1-git-send-email-agross@kernel.org>
 User-Agent: Mutt/1.11.4 (2019-03-13)
-X-TM-AS-GCONF: 00
-x-cbid: 19061008-0012-0000-0000-00000326DB75
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19061008-0013-0000-0000-0000215FCCDC
-Message-Id: <20190610080825.GA11397@sathnaga86>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-10_04:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=698 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1906100058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_010839_164951_6A9C5C7C 
-X-CRM114-Status: GOOD (  19.51  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190610_011707_663410_5D64D023 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,73 +98,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Satheesh Rajendran <sathnaga@linux.vnet.ibm.com>
-Cc: linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-msm@vger.kernel.org, arm@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 03:49:48PM +1000, Nicholas Piggin wrote:
-> Nicholas Piggin's on June 10, 2019 2:38 pm:
-> > +static int vmap_hpages_range(unsigned long start, unsigned long end,
-> > +			   pgprot_t prot, struct page **pages,
-> > +			   unsigned int page_shift)
-> > +{
-> > +	BUG_ON(page_shift != PAGE_SIZE);
-> > +	return vmap_pages_range(start, end, prot, pages);
-> > +}
+On Sat, Jun 08, 2019 at 11:19:32PM -0500, Andy Gross wrote:
+> This patch adds a reset-cells property to the gcc controller on the QCS404.
+> Without this in place, we get warnings like the following if nodes reference
+> a gcc reset:
 > 
-> That's a false positive BUG_ON for !HUGE_VMAP configs. I'll fix that
-> and repost after a round of feedback.
-
-Sure, Crash log for that false positive BUG_ON on Power8 Host.
-
-[    0.001718] pid_max: default: 163840 minimum: 1280
-[    0.010437] ------------[ cut here ]------------
-[    0.010461] kernel BUG at mm/vmalloc.c:473!
-[    0.010471] Oops: Exception in kernel mode, sig: 5 [#1]
-[    0.010481] LE PAGE_SIZE=64K MMU=Hash SMP NR_CPUS=2048 NUMA PowerNV
-[    0.010491] Modules linked in:
-[    0.010503] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.2.0-rc3-ga7ee9421d #1
-[    0.010515] NIP:  c00000000034dbd8 LR: c00000000034dc80 CTR: 0000000000000000
-[    0.010527] REGS: c0000000015bf9a0 TRAP: 0700   Not tainted  (5.2.0-rc3-ga7ee9421d)
-[    0.010537] MSR:  9000000002029033 <SF,HV,VEC,EE,ME,IR,DR,RI,LE>  CR: 22022422  XER: 20000000
-[    0.010559] CFAR: c00000000034dc88 IRQMASK: 0
-[    0.010559] GPR00: c00000000034dc80 c0000000015bfc30 c0000000015c2f00 c00c000001fd0e00
-[    0.010559] GPR04: 0000000000000000 0000000000002322 0000000000000000 0000000000000040
-[    0.010559] GPR08: c000000ff9080000 0000000000000400 0000000000000400 0000000000000100
-[    0.010559] GPR12: 0000000042022422 c0000000017a0000 00000001035ae7d8 0000000000000400
-[    0.010559] GPR16: 0000000004000000 800000000000018e c000000000ee08c8 0000000000000000
-[    0.010559] GPR20: 0000000000010000 0000000000002b22 0000000000000b20 0000000000000022
-[    0.010559] GPR24: c0000007f92c7880 0000000000000b22 0000000000010000 c00a000000000000
-[    0.010559] GPR28: c008000000000000 0000000004000000 ffffffffffffffff 0000000000000b20
-[    0.010664] NIP [c00000000034dbd8] __vmalloc_node_range+0x1f8/0x410
-[    0.010677] LR [c00000000034dc80] __vmalloc_node_range+0x2a0/0x410
-[    0.010686] Call Trace:
-[    0.010695] [c0000000015bfc30] [c00000000034dc80] __vmalloc_node_range+0x2a0/0x410 (unreliable)
-[    0.010711] [c0000000015bfd30] [c00000000034de40] __vmalloc+0x50/0x60
-[    0.010724] [c0000000015bfda0] [c00000000101e54c] alloc_large_system_hash+0x200/0x304
-[    0.010738] [c0000000015bfe60] [c0000000010235bc] vfs_caches_init+0xd8/0x138
-[    0.010752] [c0000000015bfee0] [c000000000fe428c] start_kernel+0x5c4/0x668
-[    0.010767] [c0000000015bff90] [c00000000000b774] start_here_common+0x1c/0x528
-[    0.010777] Instruction dump:
-[    0.010785] 60000000 7c691b79 418200dc e9180020 79ea1f24 7d28512a 40920170 8138002c
-[    0.010803] 394f0001 794f0020 7c095040 4181ffbc <0fe00000> 60000000 3f400001 4bfffedc
-[    0.010826] ---[ end trace dd0217488686d653 ]---
-[    0.010834]
-[    1.010946] Kernel panic - not syncing: Attempted to kill the idle task!
-[    1.011061] Rebooting in 10 seconds..
-
-Regards,
--Satheesh.
+> arch/arm64/boot/dts/qcom/qcs404.dtsi:261.38-310.5: Warning (resets_property):
+> /soc@0/remoteproc@b00000: Missing property '#reset-cells' in node
+> /soc@0/clock-controller@1800000 or bad phandle (referred from resets[0])
+>   also defined at arch/arm64/boot/dts/qcom/qcs404-evb.dtsi:82.18-84.3
+>   DTC     arch/arm64/boot/dts/qcom/qcs404-evb-4000.dtb
+> arch/arm64/boot/dts/qcom/qcs404.dtsi:261.38-310.5: Warning (resets_property):
+> /soc@0/remoteproc@b00000: Missing property '#reset-cells' in node
+> /soc@0/clock-controller@1800000 or bad phandle (referred from resets[0])
+>   also defined at arch/arm64/boot/dts/qcom/qcs404-evb.dtsi:82.18-84.3
 > 
-> Thanks,
-> Nick
+> Signed-off-by: Andy Gross <agross@kernel.org>
+> ---
+>  arch/arm64/boot/dts/qcom/qcs404.dtsi | 1 +
+>  1 file changed, 1 insertion(+)
 > 
+> diff --git a/arch/arm64/boot/dts/qcom/qcs404.dtsi b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+> index 342788a..086cadb 100644
+> --- a/arch/arm64/boot/dts/qcom/qcs404.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/qcs404.dtsi
+> @@ -426,6 +426,7 @@
+>  			compatible = "qcom,gcc-qcs404";
+>  			reg = <0x01800000 0x80000>;
+>  			#clock-cells = <1>;
+> +			#reset-cells = <1>;
+>  
+>  			assigned-clocks = <&gcc GCC_APSS_AHB_CLK_SRC>;
+>  			assigned-clock-rates = <19200000>;
+> -- 
+> 2.7.4
 > 
 
+Reviewed-by: Niklas Cassel <niklas.cassel@linaro.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
