@@ -2,55 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 486673BB6D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:54:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B84853BB79
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:58:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9V9R76pU2sjCf2SNyuQIQW771+Q05D9LXoEmnS07zpQ=; b=UpeJQ9P3lFzAek
-	hpljg++Sx7O7CU8chR5OrvZ73a0L9cW0JSy+rCjfSM3jMF9ExGJ1jGqs5nEzNPhkSvSysLERdhqsC
-	45DTCOpA2fTjiR6innin/Fd62Y8k6qXufrReNkYmFXQEKl7R/hAbWCpm+YEuxjAKlBKS2RRPsut7l
-	Uhg7aD1RVYiCH6rZsEBOO74FKPtEq/SvJeAohTDSPel1CPZSRP6P8jtUUaDoXN7KCNDZDOKR6BktC
-	6cyhUeJMlsnMGs/ESoN5K00BD3d6qrg0XrmcC+RvXtNO6gsHZLfPe9OO9lviq205rYKgrHDWUQbjd
-	DvL/5zBb0IyvyA99q3SQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6lB9H16iY61VWoanENSJLc0EegiGlvgusu+edDryxNw=; b=nZsNQq5hjnXJFO
+	2Xkm2pT4R0Vopi/+BmVvlNTVLN98AEgWrd02N5nmMHdd0tUIziPuU1vgNFPg3jprSXV42RxUQ/ZZH
+	Sh6puXjuoAsS8fyAzQjnSDuaCKPXA6nUqRG9jgLuKosGiQZ2vki+/Gxho2Yc4JAUaePvpkXBh75vN
+	mGEmfPjVerAed6rJynGL5XgQacmG7JMnxxzSp9BZrZ5KsJA61jbsxYfUJwgVRDtk3ucOW95k0CqNM
+	CB1HF1RqN3lyLnfoue+S1dnpl1trZcW2O706vPps7mos23iS2vxTyUJ4SP/4kOxRPo1GN1p4gyUNT
+	3kmAcF522DCo8sjC4XFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haOUa-0007CD-Rj; Mon, 10 Jun 2019 17:54:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haOUB-0007Ay-Ev
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:53:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ED62C337;
- Mon, 10 Jun 2019 10:53:33 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.78])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 4ABC63F246; Mon, 10 Jun 2019 10:53:29 -0700 (PDT)
-Date: Mon, 10 Jun 2019 18:53:27 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
- __uaccess_mask_ptr
-Message-ID: <20190610175326.GC25803@arrakis.emea.arm.com>
-References: <cover.1559580831.git.andreyknvl@google.com>
- <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
+	id 1haOYU-0000bZ-Ky; Mon, 10 Jun 2019 17:58:02 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haOXs-0000Qd-0e
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:57:26 +0000
+Received: by mail-lf1-x142.google.com with SMTP id y13so7257452lfh.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 10:57:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=w7LNYq90LegYhl8JEKETZX2CInF9InU6p6H+XwzSLUQ=;
+ b=RUH4yRcThZVn7Zyjif6ZYAxUy6j0clDjIXRWK0jKAO5EuHE8j66eMBFGw8dl9zh804
+ dk9HKmyGmlj9ucRM+1ifzEfbhD/QvO6eUL3HJlCXqedRmFXz9Ak3VvVtA1UiSpI9bfqP
+ raIRFrtBOIvWpgn3l0dhUeK+JQvBaok7qegy8RA2qDKH41TrfyIlUJ/4neVB3x1boS72
+ nxmfY75bdJh3l8Mxn+I9xoORqYGSUEzQuVYxwAPnzecByBmFCAEWjZpdF8Ea/NR/4tx3
+ C2X0/+Ku3DJ1eDh77TQLXGW4zANil+AuXmI3qz3pCc2/3/l7TKhRVYvKRgtpi4dp+X8e
+ jJCg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=w7LNYq90LegYhl8JEKETZX2CInF9InU6p6H+XwzSLUQ=;
+ b=ath+I5+DrKgQgQsnFPu4YfpuZudIKFk+V843YCQ4Xcc0kPSnhxCXUZEq44EczkiglY
+ dpf1DdtaIMIQ1exrDGcswlpKN7l0kslY/T/MtIEH5G9iPub7/chzUFpqGT+S9e2Gm1up
+ 26qfCTYBYV5Eb9nJ0J692K+cVU6Yi/FFSKeQg5tvMf0m3MqJd3HqKom64xwf/d0hBe1i
+ cXbz27HwWdiuf0+msMSzyuZZCdC8UkNL9JIJx/pWkTIuZTRMyw+RRz085mW87ayKGHH3
+ MQsPBjJzaEjOwC0d9dgqoaXnnz9kQyDAnwho6hyYsPBRAEs/NVc4IHyO2KRp1lqBcPLu
+ tyCg==
+X-Gm-Message-State: APjAAAXhb0C4RvJwu4aXYI9glV1G27nipOjbGQN7F1BZ3oRKaWJHnGO/
+ NLWTOgVxrBcE5DpfzpmHY8TNFQ==
+X-Google-Smtp-Source: APXvYqxgkqrqz+o4/aFAG4qef4L+/pAS2eHlqHU22llnCUuR5c3nRAfgYkKwP2HJYew5iQHb0XW4ZA==
+X-Received: by 2002:ac2:47fa:: with SMTP id b26mr1037662lfp.82.1560189441079; 
+ Mon, 10 Jun 2019 10:57:21 -0700 (PDT)
+Received: from wasted.cogentembedded.com ([31.173.86.166])
+ by smtp.gmail.com with ESMTPSA id h18sm2114160lfc.40.2019.06.10.10.57.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 10 Jun 2019 10:57:20 -0700 (PDT)
+Subject: Re: [PATCH v5 3/5] mtd: Add support for HyperBus memory devices
+To: Vignesh Raghavendra <vigneshr@ti.com>,
+ David Woodhouse <dwmw2@infradead.org>,
+ Brian Norris <computersforpeace@gmail.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, Marek Vasut
+ <marek.vasut@gmail.com>, Richard Weinberger <richard@nod.at>,
+ Rob Herring <robh+dt@kernel.org>
+References: <20190609103227.24875-1-vigneshr@ti.com>
+ <20190609103227.24875-4-vigneshr@ti.com>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Organization: Cogent Embedded
+Message-ID: <58e9608d-35ff-0436-6075-b2e4ed4b8594@cogentembedded.com>
+Date: Mon, 10 Jun 2019 20:57:18 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190609103227.24875-4-vigneshr@ti.com>
+Content-Language: en-MW
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_105335_599396_DEC8A8F0 
-X-CRM114-Status: GOOD (  19.65  )
+X-CRM114-CacheID: sfid-20190610_105724_167237_674A0BFD 
+X-CRM114-Status: GOOD (  32.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,207 +104,206 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: devicetree@vger.kernel.org, Tudor Ambarus <Tudor.Ambarus@microchip.com>,
+ linux-kernel@vger.kernel.org, Joakim Tjernlund <Joakim.Tjernlund@infinera.com>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 03, 2019 at 06:55:04PM +0200, Andrey Konovalov wrote:
-> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-> index e5d5f31c6d36..9164ecb5feca 100644
-> --- a/arch/arm64/include/asm/uaccess.h
-> +++ b/arch/arm64/include/asm/uaccess.h
-> @@ -94,7 +94,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
->  	return ret;
->  }
->  
-> -#define access_ok(addr, size)	__range_ok(addr, size)
-> +#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
+On 06/09/2019 01:32 PM, Vignesh Raghavendra wrote:
 
-I'm going to propose an opt-in method here (RFC for now). We can't have
-a check in untagged_addr() since this is already used throughout the
-kernel for both user and kernel addresses (khwasan) but we can add one
-in __range_ok(). The same prctl() option will be used for controlling
-the precise/imprecise mode of MTE later on. We can use a TIF_ flag here
-assuming that this will be called early on and any cloned thread will
-inherit this.
+> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
+> Bus interface between a host system master and one or more slave
+> interfaces. HyperBus is used to connect microprocessor, microcontroller,
+> or ASIC devices with random access NOR flash memory (called HyperFlash)
+> or self refresh DRAM (called HyperRAM).
+> 
+> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
+> signal and either Single-ended clock(3.0V parts) or Differential clock
+> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
+> At bus level, it follows a separate protocol described in HyperBus
+> specification[1].
+> 
+> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
+> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
+> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
+> HyperBus operates at >166MHz frequencies.
+> HyperRAM provides direct random read/write access to flash memory
+> array.
+> 
+> But, HyperBus memory controllers seem to abstract implementation details
+> and expose a simple MMIO interface to access connected flash.
+> 
+> Add support for registering HyperFlash devices with MTD framework. MTD
+> maps framework along with CFI chip support framework are used to support
+> communicating with flash.
+> 
+> Framework is modelled along the lines of spi-nor framework. HyperBus
+> memory controller (HBMC) drivers calls hyperbus_register_device() to
+> register a single HyperFlash device. HyperFlash core parses MMIO access
+> information from DT, sets up the map_info struct, probes CFI flash and
+> registers it with MTD framework.
+> 
+> Some HBMC masters need calibration/training sequence[3] to be carried
+> out, in order for DLL inside the controller to lock, by reading a known
+> string/pattern. This is done by repeatedly reading CFI Query
+> Identification String. Calibration needs to be done before trying to detect
+> flash as part of CFI flash probe.
+> 
+> HyperRAM is not supported at the moment.
+> 
+> HyperBus specification can be found at[1]
+> HyperFlash datasheet can be found at[2]
+> 
+> [1] https://www.cypress.com/file/213356/download
+> [2] https://www.cypress.com/file/213346/download
+> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
+>     Table 12-5741. HyperFlash Access Sequence
+> 
+> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+[...]
+> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
+> new file mode 100644
+> index 000000000000..df1f75e10b1a
+> --- /dev/null
+> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
+> @@ -0,0 +1,191 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +//
+> +// Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
+> +// Author: Vignesh Raghavendra <vigneshr@ti.com>
+> +
+> +#include <linux/err.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/mtd/hyperbus.h>
+> +#include <linux/mtd/map.h>
+> +#include <linux/mtd/mtd.h>
+> +#include <linux/mtd/cfi.h>
+> +#include <linux/of.h>
+> +#include <linux/of_address.h>
+> +#include <linux/types.h>
+> +
+> +#define HYPERBUS_CALIB_COUNT 25
 
-Anyway, it's easier to paste some diff than explain but Vincenzo can
-fold them into his ABI patches that should really go together with
-these. I added a couple of MTE definitions for prctl() as an example,
-not used currently:
+   Mhm, I think I've already protested about this being #define'd here...
 
-------------------8<---------------------------------------------
-diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-index fcd0e691b1ea..2d4cb7e4edab 100644
---- a/arch/arm64/include/asm/processor.h
-+++ b/arch/arm64/include/asm/processor.h
-@@ -307,6 +307,10 @@ extern void __init minsigstksz_setup(void);
- /* PR_PAC_RESET_KEYS prctl */
- #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
- 
-+/* PR_UNTAGGED_UADDR prctl */
-+int untagged_uaddr_set_mode(unsigned long arg);
-+#define SET_UNTAGGED_UADDR_MODE(arg)	untagged_uaddr_set_mode(arg)
-+
- /*
-  * For CONFIG_GCC_PLUGIN_STACKLEAK
-  *
-diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-index c285d1ce7186..89ce77773c49 100644
---- a/arch/arm64/include/asm/thread_info.h
-+++ b/arch/arm64/include/asm/thread_info.h
-@@ -101,6 +101,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define TIF_SVE			23	/* Scalable Vector Extension in use */
- #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
- #define TIF_SSBD		25	/* Wants SSB mitigation */
-+#define TIF_UNTAGGED_UADDR	26
- 
- #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
- #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
-@@ -116,6 +117,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define _TIF_FSCHECK		(1 << TIF_FSCHECK)
- #define _TIF_32BIT		(1 << TIF_32BIT)
- #define _TIF_SVE		(1 << TIF_SVE)
-+#define _TIF_UNTAGGED_UADDR	(1 << TIF_UNTAGGED_UADDR)
- 
- #define _TIF_WORK_MASK		(_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
- 				 _TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index 9164ecb5feca..54f5bbaebbc4 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -73,6 +73,9 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
- {
- 	unsigned long ret, limit = current_thread_info()->addr_limit;
- 
-+	if (test_thread_flag(TIF_UNTAGGED_UADDR))
-+		addr = untagged_addr(addr);
-+
- 	__chk_user_ptr(addr);
- 	asm volatile(
- 	// A + B <= C + 1 for all A,B,C, in four easy steps:
-@@ -94,7 +97,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
- 	return ret;
- }
- 
--#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
-+#define access_ok(addr, size)	__range_ok(addr, size)
- #define user_addr_max			get_fs
- 
- #define _ASM_EXTABLE(from, to)						\
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 3767fb21a5b8..fd191c5b92aa 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -552,3 +552,18 @@ void arch_setup_new_exec(void)
- 
- 	ptrauth_thread_init_user(current);
- }
-+
-+/*
-+ * Enable the relaxed ABI allowing tagged user addresses into the kernel.
-+ */
-+int untagged_uaddr_set_mode(unsigned long arg)
-+{
-+	if (is_compat_task())
-+		return -ENOTSUPP;
-+	if (arg)
-+		return -EINVAL;
-+
-+	set_thread_flag(TIF_UNTAGGED_UADDR);
-+
-+	return 0;
-+}
-diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
-index 094bb03b9cc2..4afd5e2980ee 100644
---- a/include/uapi/linux/prctl.h
-+++ b/include/uapi/linux/prctl.h
-@@ -229,4 +229,9 @@ struct prctl_mm_map {
- # define PR_PAC_APDBKEY			(1UL << 3)
- # define PR_PAC_APGAKEY			(1UL << 4)
- 
-+/* Untagged user addresses for arm64 */
-+#define PR_UNTAGGED_UADDR		55
-+# define PR_MTE_IMPRECISE_CHECK		0
-+# define PR_MTE_PRECISE_CHECK		1
-+
- #endif /* _LINUX_PRCTL_H */
-diff --git a/kernel/sys.c b/kernel/sys.c
-index 2969304c29fe..b1f67a8cffc4 100644
---- a/kernel/sys.c
-+++ b/kernel/sys.c
-@@ -124,6 +124,9 @@
- #ifndef PAC_RESET_KEYS
- # define PAC_RESET_KEYS(a, b)	(-EINVAL)
- #endif
-+#ifndef SET_UNTAGGED_UADDR_MODE
-+# define SET_UNTAGGED_UADDR_MODE	(-EINVAL)
-+#endif
- 
- /*
-  * this is where the system-wide overflow UID and GID are defined, for
-@@ -2492,6 +2495,11 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
- 			return -EINVAL;
- 		error = PAC_RESET_KEYS(me, arg2);
- 		break;
-+	case PR_UNTAGGED_UADDR:
-+		if (arg3 || arg4 || arg5)
-+			return -EINVAL;
-+		error = SET_UNTAGGED_UADDR_MODE(arg2);
-+		break;
- 	default:
- 		error = -EINVAL;
- 		break;
-------------------8<---------------------------------------------
+[...]
+> +int hyperbus_register_device(struct hyperbus_device *hbdev)
+> +{
+> +	const struct hyperbus_ops *ops;
+> +	struct hyperbus_ctlr *ctlr;
+> +	struct device_node *np;
+> +	struct map_info *map;
+> +	struct resource res;
+> +	struct device *dev;
+> +	int ret;
+> +
+> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
+> +		pr_err("hyperbus: please fill all the necessary fields!\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	np = hbdev->np;
+> +	ctlr = hbdev->ctlr;
+> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
+> +		return -ENODEV;
+> +
+> +	hbdev->memtype = HYPERFLASH;
+> +
+> +	if (of_address_to_resource(np, 0, &res))
+> +		return -EINVAL;
 
-The tag_ptr() function in the test library would become:
+   Why not just propagate the error upstream (yeah, I've noticed that
+it only can be -EINVAL)?
 
-static void *tag_ptr(void *ptr)
-{
-	static int tbi_enabled = 0;
-	unsigned long tag = 0;
+[...]
+> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
+> new file mode 100644
+> index 000000000000..ee2eefd822c9
+> --- /dev/null
+> +++ b/include/linux/mtd/hyperbus.h
+> @@ -0,0 +1,91 @@
+> +/* SPDX-License-Identifier: GPL-2.0
+> + *
+> + * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
+> + */
+> +
+> +#ifndef __LINUX_MTD_HYPERBUS_H__
+> +#define __LINUX_MTD_HYPERBUS_H__
+> +
+> +#include <linux/mtd/map.h>
+> +
+> +enum hyperbus_memtype {
+> +	HYPERFLASH,
+> +	HYPERRAM,
+> +};
+> +
+> +/**
+> + * struct hyperbus_device - struct representing HyperBus slave device
+> + * @map: map_info struct for accessing MMIO HyperBus flash memory
+> + * @np:	pointer to HyperBus slave device node
+          ^
+   Space needed here, not tab.
 
-	if (!tbi_enabled) {
-		if (prctl(PR_UNTAGGED_UADDR, 0, 0, 0, 0) == 0)
-			tbi_enabled = 1;
-	}
+> + * @mtd: pointer to MTD struct
+> + * @ctlr: pointer to HyperBus controller struct
+> + * @memtype: type of memory device: HyperFlash or HyperRAM
+> + * @registered: flag to indicate whether device is registered with MTD core
+> + */
+> +
+> +struct hyperbus_device {
+> +	struct map_info map;
+> +	struct device_node *np;
+> +	struct mtd_info *mtd;
+> +	struct hyperbus_ctlr *ctlr;
+> +	enum hyperbus_memtype memtype;
+> +	bool registered;
+> +};
+> +
+> +/**
+> + * struct hyperbus_ops - struct representing custom HyperBus operations
+> + * @read16: read 16 bit of data, usually from register/ID-CFI space
+> + * @write16: write 16 bit of data, usually to register/ID-CFI space
 
-	if (!ptr)
-		return ptr;
-	if (tbi_enabled)
-		tag = rand() & 0xff;
+   Usually? How to differ the register/memory transfers if both are possible?
 
-	return (void *)((unsigned long)ptr | (tag << TAG_SHIFT));
-}
+> + * @copy_from: copy data from flash memory
+> + * @copy_to: copy data to flash memory
+> + * @calibrate: calibrate HyperBus controller
+> + */
+> +
+> +struct hyperbus_ops {
+> +	u16 (*read16)(struct hyperbus_device *hbdev, unsigned long addr);
+> +	void (*write16)(struct hyperbus_device *hbdev,
+> +			unsigned long addr, u16 val);
+> +	void (*copy_from)(struct hyperbus_device *hbdev, void *to,
+> +			  unsigned long from, ssize_t len);
+> +	void (*copy_to)(struct hyperbus_device *dev, unsigned long to,
+> +			const void *from, ssize_t len);
+> +	int (*calibrate)(struct hyperbus_device *dev);
+> +};
+> +
+> +/**
+> + * struct hyperbus_ctlr - struct representing HyperBus controller
+> + * @calibrated: flag to indicate ctlr calibration sequence is complete
+> + * @ops: HyperBus controller ops
 
--- 
-Catalin
+   What about @dev?
+
+> + */
+> +struct hyperbus_ctlr {
+> +	struct device *dev;
+> +	bool calibrated;
+> +
+> +	const struct hyperbus_ops *ops;
+> +};
+[...]
+
+MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
