@@ -2,97 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B84853BB79
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 19:58:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 624143BB94
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 20:03:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6lB9H16iY61VWoanENSJLc0EegiGlvgusu+edDryxNw=; b=nZsNQq5hjnXJFO
-	2Xkm2pT4R0Vopi/+BmVvlNTVLN98AEgWrd02N5nmMHdd0tUIziPuU1vgNFPg3jprSXV42RxUQ/ZZH
-	Sh6puXjuoAsS8fyAzQjnSDuaCKPXA6nUqRG9jgLuKosGiQZ2vki+/Gxho2Yc4JAUaePvpkXBh75vN
-	mGEmfPjVerAed6rJynGL5XgQacmG7JMnxxzSp9BZrZ5KsJA61jbsxYfUJwgVRDtk3ucOW95k0CqNM
-	CB1HF1RqN3lyLnfoue+S1dnpl1trZcW2O706vPps7mos23iS2vxTyUJ4SP/4kOxRPo1GN1p4gyUNT
-	3kmAcF522DCo8sjC4XFw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5jcFsOmidGWn3Yis1S/2wowxDhHM1VVGtisv6Lgowq4=; b=eGi
+	hsDLp1E8TgKus3v4gKj7lJTWwv4pwtGxa+P1rNU/rxfXieL1capMsGlwJ+3CpTlos8WAxo8/0pgV8
+	u9rwoqsHq3+4baPkxXXXcubmSfR/X4p2Q0deDyNJXEsSt7U08exfz0FKADTISPRtakeHvYgueyM+O
+	pUG5NrV9A2JXIGYUVMbOUuHw7Jlvld6o8Vm1k5On82YoK07cImKT26dVJr3yoExhIqPep6AWODFsd
+	vkVesrh9P4VCG1kEIMPoBsPvEV1z6NzQItNn+sOGx1kYHFTtdHy55d91MLACDFaErdEtbq9vazqd7
+	6Z6Y0hcLb7NxPN8yeBa8Wh2xu5OCxog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haOYU-0000bZ-Ky; Mon, 10 Jun 2019 17:58:02 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haOXs-0000Qd-0e
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 17:57:26 +0000
-Received: by mail-lf1-x142.google.com with SMTP id y13so7257452lfh.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 10:57:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:organization:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=w7LNYq90LegYhl8JEKETZX2CInF9InU6p6H+XwzSLUQ=;
- b=RUH4yRcThZVn7Zyjif6ZYAxUy6j0clDjIXRWK0jKAO5EuHE8j66eMBFGw8dl9zh804
- dk9HKmyGmlj9ucRM+1ifzEfbhD/QvO6eUL3HJlCXqedRmFXz9Ak3VvVtA1UiSpI9bfqP
- raIRFrtBOIvWpgn3l0dhUeK+JQvBaok7qegy8RA2qDKH41TrfyIlUJ/4neVB3x1boS72
- nxmfY75bdJh3l8Mxn+I9xoORqYGSUEzQuVYxwAPnzecByBmFCAEWjZpdF8Ea/NR/4tx3
- C2X0/+Ku3DJ1eDh77TQLXGW4zANil+AuXmI3qz3pCc2/3/l7TKhRVYvKRgtpi4dp+X8e
- jJCg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=w7LNYq90LegYhl8JEKETZX2CInF9InU6p6H+XwzSLUQ=;
- b=ath+I5+DrKgQgQsnFPu4YfpuZudIKFk+V843YCQ4Xcc0kPSnhxCXUZEq44EczkiglY
- dpf1DdtaIMIQ1exrDGcswlpKN7l0kslY/T/MtIEH5G9iPub7/chzUFpqGT+S9e2Gm1up
- 26qfCTYBYV5Eb9nJ0J692K+cVU6Yi/FFSKeQg5tvMf0m3MqJd3HqKom64xwf/d0hBe1i
- cXbz27HwWdiuf0+msMSzyuZZCdC8UkNL9JIJx/pWkTIuZTRMyw+RRz085mW87ayKGHH3
- MQsPBjJzaEjOwC0d9dgqoaXnnz9kQyDAnwho6hyYsPBRAEs/NVc4IHyO2KRp1lqBcPLu
- tyCg==
-X-Gm-Message-State: APjAAAXhb0C4RvJwu4aXYI9glV1G27nipOjbGQN7F1BZ3oRKaWJHnGO/
- NLWTOgVxrBcE5DpfzpmHY8TNFQ==
-X-Google-Smtp-Source: APXvYqxgkqrqz+o4/aFAG4qef4L+/pAS2eHlqHU22llnCUuR5c3nRAfgYkKwP2HJYew5iQHb0XW4ZA==
-X-Received: by 2002:ac2:47fa:: with SMTP id b26mr1037662lfp.82.1560189441079; 
- Mon, 10 Jun 2019 10:57:21 -0700 (PDT)
-Received: from wasted.cogentembedded.com ([31.173.86.166])
- by smtp.gmail.com with ESMTPSA id h18sm2114160lfc.40.2019.06.10.10.57.19
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 10:57:20 -0700 (PDT)
-Subject: Re: [PATCH v5 3/5] mtd: Add support for HyperBus memory devices
-To: Vignesh Raghavendra <vigneshr@ti.com>,
- David Woodhouse <dwmw2@infradead.org>,
- Brian Norris <computersforpeace@gmail.com>,
- Boris Brezillon <bbrezillon@kernel.org>, Marek Vasut
- <marek.vasut@gmail.com>, Richard Weinberger <richard@nod.at>,
- Rob Herring <robh+dt@kernel.org>
-References: <20190609103227.24875-1-vigneshr@ti.com>
- <20190609103227.24875-4-vigneshr@ti.com>
-From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
-Organization: Cogent Embedded
-Message-ID: <58e9608d-35ff-0436-6075-b2e4ed4b8594@cogentembedded.com>
-Date: Mon, 10 Jun 2019 20:57:18 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.2.1
-MIME-Version: 1.0
-In-Reply-To: <20190609103227.24875-4-vigneshr@ti.com>
-Content-Language: en-MW
+	id 1haOdP-0002hK-2z; Mon, 10 Jun 2019 18:03:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haOd7-0002eP-90
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 18:02:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21D30337;
+ Mon, 10 Jun 2019 11:02:48 -0700 (PDT)
+Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
+ 399E83F246; Mon, 10 Jun 2019 11:02:47 -0700 (PDT)
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] Documentation: coresight: Update the generic device names
+Date: Mon, 10 Jun 2019 19:02:42 +0100
+Message-Id: <1560189762-5267-1-git-send-email-suzuki.poulose@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_105724_167237_674A0BFD 
-X-CRM114-Status: GOOD (  32.58  )
+X-CRM114-CacheID: sfid-20190610_110249_420204_41FC12CA 
+X-CRM114-Status: GOOD (  16.09  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,206 +56,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- linux-kernel@vger.kernel.org, Joakim Tjernlund <Joakim.Tjernlund@infinera.com>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: Jonathan Corbet <corbet@lwn.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-kernel@vger.kernel.org, mathieu.poirier@linaro.org, leo.yan@linaro.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/09/2019 01:32 PM, Vignesh Raghavendra wrote:
+Update the documentation to reflect the new naming scheme with
+latest changes.
 
-> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
-> Bus interface between a host system master and one or more slave
-> interfaces. HyperBus is used to connect microprocessor, microcontroller,
-> or ASIC devices with random access NOR flash memory (called HyperFlash)
-> or self refresh DRAM (called HyperRAM).
-> 
-> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
-> signal and either Single-ended clock(3.0V parts) or Differential clock
-> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
-> At bus level, it follows a separate protocol described in HyperBus
-> specification[1].
-> 
-> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
-> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
-> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
-> HyperBus operates at >166MHz frequencies.
-> HyperRAM provides direct random read/write access to flash memory
-> array.
-> 
-> But, HyperBus memory controllers seem to abstract implementation details
-> and expose a simple MMIO interface to access connected flash.
-> 
-> Add support for registering HyperFlash devices with MTD framework. MTD
-> maps framework along with CFI chip support framework are used to support
-> communicating with flash.
-> 
-> Framework is modelled along the lines of spi-nor framework. HyperBus
-> memory controller (HBMC) drivers calls hyperbus_register_device() to
-> register a single HyperFlash device. HyperFlash core parses MMIO access
-> information from DT, sets up the map_info struct, probes CFI flash and
-> registers it with MTD framework.
-> 
-> Some HBMC masters need calibration/training sequence[3] to be carried
-> out, in order for DLL inside the controller to lock, by reading a known
-> string/pattern. This is done by repeatedly reading CFI Query
-> Identification String. Calibration needs to be done before trying to detect
-> flash as part of CFI flash probe.
-> 
-> HyperRAM is not supported at the moment.
-> 
-> HyperBus specification can be found at[1]
-> HyperFlash datasheet can be found at[2]
-> 
-> [1] https://www.cypress.com/file/213356/download
-> [2] https://www.cypress.com/file/213346/download
-> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
->     Table 12-5741. HyperFlash Access Sequence
-> 
-> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
-[...]
-> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
-> new file mode 100644
-> index 000000000000..df1f75e10b1a
-> --- /dev/null
-> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
-> @@ -0,0 +1,191 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +//
-> +// Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
-> +// Author: Vignesh Raghavendra <vigneshr@ti.com>
-> +
-> +#include <linux/err.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/mtd/hyperbus.h>
-> +#include <linux/mtd/map.h>
-> +#include <linux/mtd/mtd.h>
-> +#include <linux/mtd/cfi.h>
-> +#include <linux/of.h>
-> +#include <linux/of_address.h>
-> +#include <linux/types.h>
-> +
-> +#define HYPERBUS_CALIB_COUNT 25
+Reported-by: Leo Yan <leo.yan@linaro.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Jonathan Corbet <corbet@lwn.net>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+---
+Changes since v1
+  - Add a section about the Device Naming scheme and add refer to
+    it in the examples.
+---
+ Documentation/trace/coresight.txt | 82 ++++++++++++++++++++++++++++++++-------
+ 1 file changed, 67 insertions(+), 15 deletions(-)
 
-   Mhm, I think I've already protested about this being #define'd here...
+diff --git a/Documentation/trace/coresight.txt b/Documentation/trace/coresight.txt
+index efbc832..b027d61 100644
+--- a/Documentation/trace/coresight.txt
++++ b/Documentation/trace/coresight.txt
+@@ -188,6 +188,49 @@ specific to that component only.  "Implementation defined" customisations are
+ expected to be accessed and controlled using those entries.
+ 
+ 
++Device Naming scheme
++------------------------
++The devices that appear on the "coresight" bus were named the same as their
++parent devices, i.e, the real devices that appears on AMBA bus or the platform bus.
++Thus the names were based on the Linux Open Firmware layer naming convention,
++which follows the base physical address of the device followed by the device
++type. e.g:
++
++root:~# ls /sys/bus/coresight/devices/
++ 20010000.etf  20040000.funnel      20100000.stm     22040000.etm
++ 22140000.etm  230c0000.funnel      23240000.etm     20030000.tpiu
++ 20070000.etr  20120000.replicator  220c0000.funnel
++ 23040000.etm  23140000.etm         23340000.etm
++
++However, with the introduction of ACPI support, the names of the real
++devices are a bit cryptic and non-obvious. Thus, a new naming scheme was
++introduced to use more generic names based on the type of the device. The
++following rules apply:
++
++  1) Devices that are bound to CPUs, are named based on the CPU logical
++     number.
++
++     e.g, ETM bound to CPU0 is named "etm0"
++
++  2) All other devices follow a pattern, "<device_type_prefix>N", where :
++
++	<device_type_prefix> 	- A prefix specific to the type of the device
++	N			- a sequential number assigned based on the order
++				  of probing.
++
++	e.g, tmc_etf0, tmc_etr0, funnel0, funnel1
++
++Thus, with the new scheme the devices could appear as :
++
++root:~# ls /sys/bus/coresight/devices/
++ etm0     etm1     etm2         etm3  etm4      etm5      funnel0
++ funnel1  funnel2  replicator0  stm0  tmc_etf0  tmc_etr0  tpiu0
++
++Some of the examples below might refer to old naming scheme and some
++to the newer scheme, to give a confirmation that what you see on your
++system is not unexpected. One must use the "names" as they appear on
++the system under specified locations.
++
+ How to use the tracer modules
+ -----------------------------
+ 
+@@ -326,16 +369,25 @@ amount of processor cores), the "cs_etm" PMU will be listed only once.
+ A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
+ listed along with configuration options within forward slashes '/'.  Since a
+ Coresight system will typically have more than one sink, the name of the sink to
+-work with needs to be specified as an event option.  Names for sink to choose
+-from are listed in sysFS under ($SYSFS)/bus/coresight/devices:
++work with needs to be specified as an event option.
++On newer kernels the available sinks are listed in sysFS under:
++($SYSFS)/bus/event_source/devices/cs_etm/sinks/
+ 
+-	root@linaro-nano:~# ls /sys/bus/coresight/devices/
+-		20010000.etf   20040000.funnel  20100000.stm  22040000.etm
+-		22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu
+-		20070000.etr     20120000.replicator  220c0000.funnel
+-		23040000.etm  23140000.etm     23340000.etm
++	root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
++	tmc_etf0  tmc_etr0  tpiu0
+ 
+-	root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
++On older kernels, this may need to be found from the list of coresight devices,
++available under ($SYSFS)/bus/coresight/devices/:
++
++	root:~# ls /sys/bus/coresight/devices/
++	 etm0     etm1     etm2         etm3  etm4      etm5      funnel0
++	 funnel1  funnel2  replicator0  stm0  tmc_etf0  tmc_etr0  tpiu0
++
++	root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
++
++As mentioned above in section "Device Naming scheme", the names of the devices could
++look different from what is used in the example above. One must use the device names
++as it appears under the sysFS.
+ 
+ The syntax within the forward slashes '/' is important.  The '@' character
+ tells the parser that a sink is about to be specified and that this is the sink
+@@ -352,7 +404,7 @@ perf can be used to record and analyze trace of programs.
+ Execution can be recorded using 'perf record' with the cs_etm event,
+ specifying the name of the sink to record to, e.g:
+ 
+-    perf record -e cs_etm/@20070000.etr/u --per-thread
++    perf record -e cs_etm/@tmc_etr0/u --per-thread
+ 
+ The 'perf report' and 'perf script' commands can be used to analyze execution,
+ synthesizing instruction and branch events from the instruction trace.
+@@ -381,7 +433,7 @@ sort example is from the AutoFDO tutorial (https://gcc.gnu.org/wiki/AutoFDO/Tuto
+ 	Bubble sorting array of 30000 elements
+ 	5910 ms
+ 
+-	$ perf record -e cs_etm/@20070000.etr/u --per-thread taskset -c 2 ./sort
++	$ perf record -e cs_etm/@tmc_etr0/u --per-thread taskset -c 2 ./sort
+ 	Bubble sorting array of 30000 elements
+ 	12543 ms
+ 	[ perf record: Woken up 35 times to write data ]
+@@ -405,7 +457,7 @@ than the program flow through the code.
+ As with any other CoreSight component, specifics about the STM tracer can be
+ found in sysfs with more information on each entry being found in [1]:
+ 
+-root@genericarmv8:~# ls /sys/bus/coresight/devices/20100000.stm
++root@genericarmv8:~# ls /sys/bus/coresight/devices/stm0
+ enable_source   hwevent_select  port_enable     subsystem       uevent
+ hwevent_enable  mgmt            port_select     traceid
+ root@genericarmv8:~#
+@@ -413,14 +465,14 @@ root@genericarmv8:~#
+ Like any other source a sink needs to be identified and the STM enabled before
+ being used:
+ 
+-root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/20010000.etf/enable_sink
+-root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/20100000.stm/enable_source
++root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/tmc_etf0/enable_sink
++root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/stm0/enable_source
+ 
+ From there user space applications can request and use channels using the devfs
+ interface provided for that purpose by the generic STM API:
+ 
+-root@genericarmv8:~# ls -l /dev/20100000.stm
+-crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/20100000.stm
++root@genericarmv8:~# ls -l /dev/stm0
++crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/stm0
+ root@genericarmv8:~#
+ 
+ Details on how to use the generic STM API can be found here [2].
+-- 
+2.7.4
 
-[...]
-> +int hyperbus_register_device(struct hyperbus_device *hbdev)
-> +{
-> +	const struct hyperbus_ops *ops;
-> +	struct hyperbus_ctlr *ctlr;
-> +	struct device_node *np;
-> +	struct map_info *map;
-> +	struct resource res;
-> +	struct device *dev;
-> +	int ret;
-> +
-> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
-> +		pr_err("hyperbus: please fill all the necessary fields!\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	np = hbdev->np;
-> +	ctlr = hbdev->ctlr;
-> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
-> +		return -ENODEV;
-> +
-> +	hbdev->memtype = HYPERFLASH;
-> +
-> +	if (of_address_to_resource(np, 0, &res))
-> +		return -EINVAL;
-
-   Why not just propagate the error upstream (yeah, I've noticed that
-it only can be -EINVAL)?
-
-[...]
-> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
-> new file mode 100644
-> index 000000000000..ee2eefd822c9
-> --- /dev/null
-> +++ b/include/linux/mtd/hyperbus.h
-> @@ -0,0 +1,91 @@
-> +/* SPDX-License-Identifier: GPL-2.0
-> + *
-> + * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
-> + */
-> +
-> +#ifndef __LINUX_MTD_HYPERBUS_H__
-> +#define __LINUX_MTD_HYPERBUS_H__
-> +
-> +#include <linux/mtd/map.h>
-> +
-> +enum hyperbus_memtype {
-> +	HYPERFLASH,
-> +	HYPERRAM,
-> +};
-> +
-> +/**
-> + * struct hyperbus_device - struct representing HyperBus slave device
-> + * @map: map_info struct for accessing MMIO HyperBus flash memory
-> + * @np:	pointer to HyperBus slave device node
-          ^
-   Space needed here, not tab.
-
-> + * @mtd: pointer to MTD struct
-> + * @ctlr: pointer to HyperBus controller struct
-> + * @memtype: type of memory device: HyperFlash or HyperRAM
-> + * @registered: flag to indicate whether device is registered with MTD core
-> + */
-> +
-> +struct hyperbus_device {
-> +	struct map_info map;
-> +	struct device_node *np;
-> +	struct mtd_info *mtd;
-> +	struct hyperbus_ctlr *ctlr;
-> +	enum hyperbus_memtype memtype;
-> +	bool registered;
-> +};
-> +
-> +/**
-> + * struct hyperbus_ops - struct representing custom HyperBus operations
-> + * @read16: read 16 bit of data, usually from register/ID-CFI space
-> + * @write16: write 16 bit of data, usually to register/ID-CFI space
-
-   Usually? How to differ the register/memory transfers if both are possible?
-
-> + * @copy_from: copy data from flash memory
-> + * @copy_to: copy data to flash memory
-> + * @calibrate: calibrate HyperBus controller
-> + */
-> +
-> +struct hyperbus_ops {
-> +	u16 (*read16)(struct hyperbus_device *hbdev, unsigned long addr);
-> +	void (*write16)(struct hyperbus_device *hbdev,
-> +			unsigned long addr, u16 val);
-> +	void (*copy_from)(struct hyperbus_device *hbdev, void *to,
-> +			  unsigned long from, ssize_t len);
-> +	void (*copy_to)(struct hyperbus_device *dev, unsigned long to,
-> +			const void *from, ssize_t len);
-> +	int (*calibrate)(struct hyperbus_device *dev);
-> +};
-> +
-> +/**
-> + * struct hyperbus_ctlr - struct representing HyperBus controller
-> + * @calibrated: flag to indicate ctlr calibration sequence is complete
-> + * @ops: HyperBus controller ops
-
-   What about @dev?
-
-> + */
-> +struct hyperbus_ctlr {
-> +	struct device *dev;
-> +	bool calibrated;
-> +
-> +	const struct hyperbus_ops *ops;
-> +};
-[...]
-
-MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
