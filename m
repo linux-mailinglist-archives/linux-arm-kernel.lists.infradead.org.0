@@ -2,49 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 624143BB94
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 20:03:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA14F3BBA2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 20:07:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5jcFsOmidGWn3Yis1S/2wowxDhHM1VVGtisv6Lgowq4=; b=eGi
-	hsDLp1E8TgKus3v4gKj7lJTWwv4pwtGxa+P1rNU/rxfXieL1capMsGlwJ+3CpTlos8WAxo8/0pgV8
-	u9rwoqsHq3+4baPkxXXXcubmSfR/X4p2Q0deDyNJXEsSt7U08exfz0FKADTISPRtakeHvYgueyM+O
-	pUG5NrV9A2JXIGYUVMbOUuHw7Jlvld6o8Vm1k5On82YoK07cImKT26dVJr3yoExhIqPep6AWODFsd
-	vkVesrh9P4VCG1kEIMPoBsPvEV1z6NzQItNn+sOGx1kYHFTtdHy55d91MLACDFaErdEtbq9vazqd7
-	6Z6Y0hcLb7NxPN8yeBa8Wh2xu5OCxog==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VAPffCQ7+cwdMiYZDVBb9yMSH50dJ92vd05Hl5XJvCM=; b=L1eIVr7htVRSUu
+	cDPg4+/zAXTTPQFo9/QW2sVRZL2scfxTJ4rlKM0Ij08vuT8yWfCvaXU8cksRY4PC3zHbCOM6ZBlri
+	hS0d1C+TVmKMLhiY0aKxMzXC+9ewr5KNvPLRHETnyouumYByJz5pbIzYzW46VIrG1ByC2IAi8mRZO
+	DLzVtA5bM18uxYZ6hBoCkhB4oYHJ29LNEbokX6V7o7t3ffBXT4skaBQGEQ5jTh99O7gWvM3umaM5Z
+	7qAUu9jaQDKfEVcY95tZwsZzmyQ5rc0bAE+dnGjKITwcHtKOvX4qQhTQfSP+1wjO8wMxNS9pfrYtB
+	jc7hEucsbmGdDI+vnhyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haOdP-0002hK-2z; Mon, 10 Jun 2019 18:03:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haOd7-0002eP-90
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 18:02:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21D30337;
- Mon, 10 Jun 2019 11:02:48 -0700 (PDT)
-Received: from en101.cambridge.arm.com (en101.cambridge.arm.com [10.1.196.93])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- 399E83F246; Mon, 10 Jun 2019 11:02:47 -0700 (PDT)
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2] Documentation: coresight: Update the generic device names
-Date: Mon, 10 Jun 2019 19:02:42 +0100
-Message-Id: <1560189762-5267-1-git-send-email-suzuki.poulose@arm.com>
-X-Mailer: git-send-email 2.7.4
+	id 1haOhk-0004YZ-7Q; Mon, 10 Jun 2019 18:07:36 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haOhH-0004XY-B6
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 18:07:08 +0000
+Received: by mail-pf1-x441.google.com with SMTP id d126so5762419pfd.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Jun 2019 11:07:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Qk1teTE+M+IujpCJ4fnOYjeYPWGwjvW8JXrxo/yH0Jc=;
+ b=bS38Kka2lRnznRWhG8/qOGDxKjllgWQ6UMeG3F2amaGnqe8pK0xiGk3vZdBB3YxIb3
+ SWpAwEtE9q/WxIcVXvPngtzttAwOIVkoldUG9+Ng+5o+FvKdQZW1HjakB3VBQBFOd4GH
+ 8QDt5M3wpL9e9LGdgrn8sofUH/zfBbAJ6Uge8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Qk1teTE+M+IujpCJ4fnOYjeYPWGwjvW8JXrxo/yH0Jc=;
+ b=iFK4A8wGtD19+B4ii7PF5/0MIsdo/AB/XEAxl3kICwVgXRSnfy2OvifofMvQ8TUhE0
+ oXI5erd15wStGR79jC8nT+zafrVVg+nDCOsQnC5m09OIw+5avMLQfqIV1Fm70jocYc39
+ 5qIH5shTM7aqIpfJP2ZEQP2M48bmW9v9VaJH7lRoLT9z5B/g5RuvFOS0k+CByAFz/lY3
+ gx8fJL/Td7BKhKswlvoQPl0Rfe7Em1D2Us/C8quEurfiBrCyMiCGmHjezGSL9YMwf4Mh
+ rJHlB/g4HfzzkLq4j/U4bx/nskX2KbKFYbeBAShD98Z+eIY7z4CAKrVpAx8CdEzRZ/0B
+ BTaQ==
+X-Gm-Message-State: APjAAAXcslCx1KbSvT+yIFlL04xT50M93ZntH2Qdr1r0nArOzQx2Z9Pq
+ Zn+3EicRB88hHtVxTOaz7m/hgw==
+X-Google-Smtp-Source: APXvYqwpdKpmgyrcHoPqfm2kAKseftWNyRK4QJdbz1OaJAD6dgVCG3NHvWUoe0J25QMfVAkrE6hAGQ==
+X-Received: by 2002:a65:6104:: with SMTP id z4mr16749806pgu.319.1560190025622; 
+ Mon, 10 Jun 2019 11:07:05 -0700 (PDT)
+Received: from www.outflux.net
+ (173-164-112-133-Oregon.hfc.comcastbusiness.net. [173.164.112.133])
+ by smtp.gmail.com with ESMTPSA id x7sm11154611pfm.82.2019.06.10.11.07.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 10 Jun 2019 11:07:04 -0700 (PDT)
+Date: Mon, 10 Jun 2019 11:07:03 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
+ __uaccess_mask_ptr
+Message-ID: <201906101106.3CA50745E3@keescook>
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
+ <20190610175326.GC25803@arrakis.emea.arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190610175326.GC25803@arrakis.emea.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_110249_420204_41FC12CA 
-X-CRM114-Status: GOOD (  16.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190610_110707_437113_5EB5ABFB 
+X-CRM114-Status: GOOD (  22.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,166 +98,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-kernel@vger.kernel.org, mathieu.poirier@linaro.org, leo.yan@linaro.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the documentation to reflect the new naming scheme with
-latest changes.
+On Mon, Jun 10, 2019 at 06:53:27PM +0100, Catalin Marinas wrote:
+> On Mon, Jun 03, 2019 at 06:55:04PM +0200, Andrey Konovalov wrote:
+> > diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+> > index e5d5f31c6d36..9164ecb5feca 100644
+> > --- a/arch/arm64/include/asm/uaccess.h
+> > +++ b/arch/arm64/include/asm/uaccess.h
+> > @@ -94,7 +94,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+> >  	return ret;
+> >  }
+> >  
+> > -#define access_ok(addr, size)	__range_ok(addr, size)
+> > +#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
+> 
+> I'm going to propose an opt-in method here (RFC for now). We can't have
+> a check in untagged_addr() since this is already used throughout the
+> kernel for both user and kernel addresses (khwasan) but we can add one
+> in __range_ok(). The same prctl() option will be used for controlling
+> the precise/imprecise mode of MTE later on. We can use a TIF_ flag here
+> assuming that this will be called early on and any cloned thread will
+> inherit this.
+> 
+> Anyway, it's easier to paste some diff than explain but Vincenzo can
+> fold them into his ABI patches that should really go together with
+> these. I added a couple of MTE definitions for prctl() as an example,
+> not used currently:
+> 
+> ------------------8<---------------------------------------------
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index fcd0e691b1ea..2d4cb7e4edab 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -307,6 +307,10 @@ extern void __init minsigstksz_setup(void);
+>  /* PR_PAC_RESET_KEYS prctl */
+>  #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
+>  
+> +/* PR_UNTAGGED_UADDR prctl */
+> +int untagged_uaddr_set_mode(unsigned long arg);
+> +#define SET_UNTAGGED_UADDR_MODE(arg)	untagged_uaddr_set_mode(arg)
+> +
+>  /*
+>   * For CONFIG_GCC_PLUGIN_STACKLEAK
+>   *
+> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
+> index c285d1ce7186..89ce77773c49 100644
+> --- a/arch/arm64/include/asm/thread_info.h
+> +++ b/arch/arm64/include/asm/thread_info.h
+> @@ -101,6 +101,7 @@ void arch_release_task_struct(struct task_struct *tsk);
+>  #define TIF_SVE			23	/* Scalable Vector Extension in use */
+>  #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
+>  #define TIF_SSBD		25	/* Wants SSB mitigation */
+> +#define TIF_UNTAGGED_UADDR	26
+>  
+>  #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
+>  #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
+> @@ -116,6 +117,7 @@ void arch_release_task_struct(struct task_struct *tsk);
+>  #define _TIF_FSCHECK		(1 << TIF_FSCHECK)
+>  #define _TIF_32BIT		(1 << TIF_32BIT)
+>  #define _TIF_SVE		(1 << TIF_SVE)
+> +#define _TIF_UNTAGGED_UADDR	(1 << TIF_UNTAGGED_UADDR)
+>  
+>  #define _TIF_WORK_MASK		(_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
+>  				 _TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
+> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+> index 9164ecb5feca..54f5bbaebbc4 100644
+> --- a/arch/arm64/include/asm/uaccess.h
+> +++ b/arch/arm64/include/asm/uaccess.h
+> @@ -73,6 +73,9 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+>  {
+>  	unsigned long ret, limit = current_thread_info()->addr_limit;
+>  
+> +	if (test_thread_flag(TIF_UNTAGGED_UADDR))
+> +		addr = untagged_addr(addr);
+> +
+>  	__chk_user_ptr(addr);
+>  	asm volatile(
+>  	// A + B <= C + 1 for all A,B,C, in four easy steps:
+> @@ -94,7 +97,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+>  	return ret;
+>  }
+>  
+> -#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
+> +#define access_ok(addr, size)	__range_ok(addr, size)
+>  #define user_addr_max			get_fs
+>  
+>  #define _ASM_EXTABLE(from, to)						\
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 3767fb21a5b8..fd191c5b92aa 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -552,3 +552,18 @@ void arch_setup_new_exec(void)
+>  
+>  	ptrauth_thread_init_user(current);
+>  }
+> +
+> +/*
+> + * Enable the relaxed ABI allowing tagged user addresses into the kernel.
+> + */
+> +int untagged_uaddr_set_mode(unsigned long arg)
+> +{
+> +	if (is_compat_task())
+> +		return -ENOTSUPP;
+> +	if (arg)
+> +		return -EINVAL;
+> +
+> +	set_thread_flag(TIF_UNTAGGED_UADDR);
+> +
+> +	return 0;
+> +}
 
-Reported-by: Leo Yan <leo.yan@linaro.org>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Jonathan Corbet <corbet@lwn.net>
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
----
-Changes since v1
-  - Add a section about the Device Naming scheme and add refer to
-    it in the examples.
----
- Documentation/trace/coresight.txt | 82 ++++++++++++++++++++++++++++++++-------
- 1 file changed, 67 insertions(+), 15 deletions(-)
+I think this should be paired with a flag clearing in copy_thread(),
+yes? (i.e. each binary needs to opt in)
 
-diff --git a/Documentation/trace/coresight.txt b/Documentation/trace/coresight.txt
-index efbc832..b027d61 100644
---- a/Documentation/trace/coresight.txt
-+++ b/Documentation/trace/coresight.txt
-@@ -188,6 +188,49 @@ specific to that component only.  "Implementation defined" customisations are
- expected to be accessed and controlled using those entries.
- 
- 
-+Device Naming scheme
-+------------------------
-+The devices that appear on the "coresight" bus were named the same as their
-+parent devices, i.e, the real devices that appears on AMBA bus or the platform bus.
-+Thus the names were based on the Linux Open Firmware layer naming convention,
-+which follows the base physical address of the device followed by the device
-+type. e.g:
-+
-+root:~# ls /sys/bus/coresight/devices/
-+ 20010000.etf  20040000.funnel      20100000.stm     22040000.etm
-+ 22140000.etm  230c0000.funnel      23240000.etm     20030000.tpiu
-+ 20070000.etr  20120000.replicator  220c0000.funnel
-+ 23040000.etm  23140000.etm         23340000.etm
-+
-+However, with the introduction of ACPI support, the names of the real
-+devices are a bit cryptic and non-obvious. Thus, a new naming scheme was
-+introduced to use more generic names based on the type of the device. The
-+following rules apply:
-+
-+  1) Devices that are bound to CPUs, are named based on the CPU logical
-+     number.
-+
-+     e.g, ETM bound to CPU0 is named "etm0"
-+
-+  2) All other devices follow a pattern, "<device_type_prefix>N", where :
-+
-+	<device_type_prefix> 	- A prefix specific to the type of the device
-+	N			- a sequential number assigned based on the order
-+				  of probing.
-+
-+	e.g, tmc_etf0, tmc_etr0, funnel0, funnel1
-+
-+Thus, with the new scheme the devices could appear as :
-+
-+root:~# ls /sys/bus/coresight/devices/
-+ etm0     etm1     etm2         etm3  etm4      etm5      funnel0
-+ funnel1  funnel2  replicator0  stm0  tmc_etf0  tmc_etr0  tpiu0
-+
-+Some of the examples below might refer to old naming scheme and some
-+to the newer scheme, to give a confirmation that what you see on your
-+system is not unexpected. One must use the "names" as they appear on
-+the system under specified locations.
-+
- How to use the tracer modules
- -----------------------------
- 
-@@ -326,16 +369,25 @@ amount of processor cores), the "cs_etm" PMU will be listed only once.
- A Coresight PMU works the same way as any other PMU, i.e the name of the PMU is
- listed along with configuration options within forward slashes '/'.  Since a
- Coresight system will typically have more than one sink, the name of the sink to
--work with needs to be specified as an event option.  Names for sink to choose
--from are listed in sysFS under ($SYSFS)/bus/coresight/devices:
-+work with needs to be specified as an event option.
-+On newer kernels the available sinks are listed in sysFS under:
-+($SYSFS)/bus/event_source/devices/cs_etm/sinks/
- 
--	root@linaro-nano:~# ls /sys/bus/coresight/devices/
--		20010000.etf   20040000.funnel  20100000.stm  22040000.etm
--		22140000.etm  230c0000.funnel  23240000.etm 20030000.tpiu
--		20070000.etr     20120000.replicator  220c0000.funnel
--		23040000.etm  23140000.etm     23340000.etm
-+	root@localhost:/sys/bus/event_source/devices/cs_etm/sinks# ls
-+	tmc_etf0  tmc_etr0  tpiu0
- 
--	root@linaro-nano:~# perf record -e cs_etm/@20070000.etr/u --per-thread program
-+On older kernels, this may need to be found from the list of coresight devices,
-+available under ($SYSFS)/bus/coresight/devices/:
-+
-+	root:~# ls /sys/bus/coresight/devices/
-+	 etm0     etm1     etm2         etm3  etm4      etm5      funnel0
-+	 funnel1  funnel2  replicator0  stm0  tmc_etf0  tmc_etr0  tpiu0
-+
-+	root@linaro-nano:~# perf record -e cs_etm/@tmc_etr0/u --per-thread program
-+
-+As mentioned above in section "Device Naming scheme", the names of the devices could
-+look different from what is used in the example above. One must use the device names
-+as it appears under the sysFS.
- 
- The syntax within the forward slashes '/' is important.  The '@' character
- tells the parser that a sink is about to be specified and that this is the sink
-@@ -352,7 +404,7 @@ perf can be used to record and analyze trace of programs.
- Execution can be recorded using 'perf record' with the cs_etm event,
- specifying the name of the sink to record to, e.g:
- 
--    perf record -e cs_etm/@20070000.etr/u --per-thread
-+    perf record -e cs_etm/@tmc_etr0/u --per-thread
- 
- The 'perf report' and 'perf script' commands can be used to analyze execution,
- synthesizing instruction and branch events from the instruction trace.
-@@ -381,7 +433,7 @@ sort example is from the AutoFDO tutorial (https://gcc.gnu.org/wiki/AutoFDO/Tuto
- 	Bubble sorting array of 30000 elements
- 	5910 ms
- 
--	$ perf record -e cs_etm/@20070000.etr/u --per-thread taskset -c 2 ./sort
-+	$ perf record -e cs_etm/@tmc_etr0/u --per-thread taskset -c 2 ./sort
- 	Bubble sorting array of 30000 elements
- 	12543 ms
- 	[ perf record: Woken up 35 times to write data ]
-@@ -405,7 +457,7 @@ than the program flow through the code.
- As with any other CoreSight component, specifics about the STM tracer can be
- found in sysfs with more information on each entry being found in [1]:
- 
--root@genericarmv8:~# ls /sys/bus/coresight/devices/20100000.stm
-+root@genericarmv8:~# ls /sys/bus/coresight/devices/stm0
- enable_source   hwevent_select  port_enable     subsystem       uevent
- hwevent_enable  mgmt            port_select     traceid
- root@genericarmv8:~#
-@@ -413,14 +465,14 @@ root@genericarmv8:~#
- Like any other source a sink needs to be identified and the STM enabled before
- being used:
- 
--root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/20010000.etf/enable_sink
--root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/20100000.stm/enable_source
-+root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/tmc_etf0/enable_sink
-+root@genericarmv8:~# echo 1 > /sys/bus/coresight/devices/stm0/enable_source
- 
- From there user space applications can request and use channels using the devfs
- interface provided for that purpose by the generic STM API:
- 
--root@genericarmv8:~# ls -l /dev/20100000.stm
--crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/20100000.stm
-+root@genericarmv8:~# ls -l /dev/stm0
-+crw-------    1 root     root       10,  61 Jan  3 18:11 /dev/stm0
- root@genericarmv8:~#
- 
- Details on how to use the generic STM API can be found here [2].
 -- 
-2.7.4
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
