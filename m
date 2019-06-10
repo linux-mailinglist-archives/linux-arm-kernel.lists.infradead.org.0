@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 181143B109
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 10:44:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 934E23B110
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Jun 2019 10:44:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,51 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=O7R4wgu6EMRXQW2Re/PU+DlNfBpxHnLDI44Gmq1v2Dw=; b=nYSSk7tEHtvHB1IJ8io4djBnFs
-	Ux4B0I1QWp0tUGWK3gYPMrMo6stYLgmHPa7tVX2b00TnE1HTzkp+jwi096A0Ng56XzuAAJmzVvYo2
-	o6jT+cl+MMzcEtg9wkBytIEd7vceA7K/ey6hnAjTHUk97/O00tUyhsqp1whAVhQw36VVeaQtx2Wh1
-	qAboxoBQHKQFURDJ1A0iTvNHHFYnyAYXArEDLv1vCNcuZiWGUYinPyE/F2oO+KmyAeLfgTu19x3uE
-	T23E2oF982Er1AYNhfnbY72IRUBJ5zXqw9yvPhRb+apm+Q19CcurGu1d9IxhwoFkrUb4sccw9ytPr
-	j1s3i4qg==;
+	bh=FKFBWEx5q7gdioubksHzfRV4OPSZl17eZp1bzQ6vcOY=; b=fhKQZVoklHmgYEdl6jPOX2vVXd
+	sB45IMU75NcKSzn4r8syDu31LBB3Ngc5TH3dl9n0chVJohud2vCxZiJ+HGcuwS60bCVj+hlBsc5qL
+	wYCrxoRCe75bh3nDDng7dcndhFN467jb0CasfyUvpW/62WGDIGTEZMN+tCDZgFSW2HmNJapbHVEog
+	L/Zeai/TFjHfhnZLJKAar17vhPIc9hW2yL7E3DvpBNXdNbhmeJY5A6DdalquZPkuZMZXJyR27wT9g
+	knRHZiW+ibc1f3MHFcO5bC6v3r7b8vnD8ctNlOd6X7HmTXdp+mKcaam8JSjZRpqGgCM2Lqh6amFGN
+	8Kx8H4OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haFuq-0003nf-AR; Mon, 10 Jun 2019 08:44:32 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1haFv9-000435-U5; Mon, 10 Jun 2019 08:44:51 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haFsl-0002Eh-R0
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 08:42:25 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c6so7306440wml.0
+ id 1haFsm-0002GC-Ow
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Jun 2019 08:42:26 +0000
+Received: by mail-wm1-x342.google.com with SMTP id g135so7608104wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 01:42:23 -0700 (PDT)
+ Mon, 10 Jun 2019 01:42:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=D1YI3KbYi08Gt53137zQUvYaTjAlj5pAkcVwiE+DyoM=;
- b=Fdh+cJirOeCPwca26GEwwWvQ3uzK3nNcYIOCYE8binAxIF/9nbOyMkwaed+EfuvQJy
- VqLf/0N0B9UWZzM3uwCXTlBxBRaoBDkNkBtGw3eXyQIiwzWCxJTeuq45QjmkejDndaV1
- LWduK1uypyuWZFT5a5FsEAgypHaOkHW6tLNHRGr+NmxAkJq2qKanIs8glRWS71UfhM9K
- LSkKBodguJ08qiQbcXIpbJw/ruLp8OSwuEIBXpd4Ux3Dz+qh0qLOOfskjggq/Oe7aqpn
- YFYA+qd7cTUnb474P8X/pSeXinKIyv1TCgXRw0/BnhwXM7fP47h3BtLQ8YmHeChyhPGZ
- mIhQ==
+ bh=FalRLEADzMPtGyW8NIPAA0F5olxzxXGnPVoGFb+myak=;
+ b=ErpuCgIKx7tdIhXc0Vgq27YYh5IdzYS8ZROzqkhZo992Lvnn19vfhbIqZzxfQ10161
+ q/yb5S3UOlu7jVewR6gPOHtopPzH2mIm47P8H5DIDXJkkAvu/fVLeYL+XDHodIfbmI/Q
+ CKa9e4AABXjZuSQiUwSxAL/oBnskNHq1jEInWN4Q5Tp+sQdhRKsiH2TxkMt482GTBNR7
+ aY1rlYW3/QXDuFLndlbV2tpu9/XuFDuowc7j5gTlPoBAZBoUbY32p3JHHxZM6+39iUMi
+ I88QsPzhpoQOgqfRr4ELN1VJv09S0GcBFZHzKYKYqObfTb0uzFEHbnk2tmqKPOZqSUBm
+ gHPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=D1YI3KbYi08Gt53137zQUvYaTjAlj5pAkcVwiE+DyoM=;
- b=TT7hcZs6EPjdZzj0EXyH1i3fHswPMoO314/XJxJ/YgSakBNCHWJHhPlQsgzkgo7nRg
- 1uoUP2t/SCtULkeD5bEG5ytc0hghDO26D4yyASGyzEb+nLdA7sQ1DqNpwqIAT6X/2d0x
- BOJZSM8ssb0ud0xep9SzbETAqHX6e752fZEpQ32u0NswW/OaPrfljxSTtoGtHuccKf2t
- jtpAoipnz0pcX93zrq31pgslpq/YWprgE4n1tyWCrJlG0xwldai+9MMwGiypKbfD9GIv
- k84OmP8zW0W01bUIRbhaZoSnH4GkbtiN4jTCnP5q/xzCgmOfPZ3vhUfgO8CFdAFzIxX/
- TZ4A==
-X-Gm-Message-State: APjAAAWe4NagK0+3opgEGHFWqnipwOednRLtSoK1WZEdlmTs5RJkOGXU
- KysrfNHqeCHUaoDSuQkCBK4juA==
-X-Google-Smtp-Source: APXvYqyHnsHDEi1fkEAIyNUAvCi58JRFoTK1I10cExECKSGoyLaT6+gdnSZIt3mwKxzj0hkM9/ajgw==
-X-Received: by 2002:a1c:3942:: with SMTP id g63mr11315348wma.61.1560156142556; 
- Mon, 10 Jun 2019 01:42:22 -0700 (PDT)
+ bh=FalRLEADzMPtGyW8NIPAA0F5olxzxXGnPVoGFb+myak=;
+ b=GP7XN/mhmPaxAW8XZ8nbsS/I3y8PMnPQ0eSIzpdPyKzpxO43WtN8s8Ya1cE+B8jmk/
+ hCyuXs3Tdb9pfzBTEali8Rf9FaP/B9nkOB4cJvUUqU2qa6Rfi4OeC9dQ3o9idSTvoEbZ
+ IGCU/zEw9RRIxDy7yBGRYvE9l7w9pyVFxP60HZHE5F1UUcaxLXIs4dLSNcFTR2hTHFTG
+ MDaNpW6yV0WJyPje9nSBR44CCP15lj+3NU7Nwi4yRz/KiIv8IT6gzPowmVf2WFTEev6N
+ 0+b8ceTPvb1PQ9Egsg0mJVwJan5z7CTKOJxfVSosOTuWlHfO6y6k8+/9/mloA6J7Jx6t
+ 5Efw==
+X-Gm-Message-State: APjAAAU2UXuQDNOToCERzvzOurISFDiJOQZ11FWsyZopqQwdZX3ozGFc
+ hN7mEJ9FGiHZeJ6LQM7jV6pNtg==
+X-Google-Smtp-Source: APXvYqyC2APpf/zAbitrU/BjHOuyVW/f2vbj2/AUhh+FVA31orPg+ghJwVZnl4+ZvUlYkGglrWpA1w==
+X-Received: by 2002:a1c:35c9:: with SMTP id
+ c192mr12941297wma.147.1560156143556; 
+ Mon, 10 Jun 2019 01:42:23 -0700 (PDT)
 Received: from localhost.localdomain ([2.31.167.229])
- by smtp.gmail.com with ESMTPSA id a125sm9929670wmf.42.2019.06.10.01.42.21
+ by smtp.gmail.com with ESMTPSA id a125sm9929670wmf.42.2019.06.10.01.42.22
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 01:42:22 -0700 (PDT)
+ Mon, 10 Jun 2019 01:42:23 -0700 (PDT)
 From: Lee Jones <lee.jones@linaro.org>
 To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
  wsa+renesas@sang-engineering.com, bjorn.andersson@linaro.org,
@@ -63,22 +64,22 @@ To: alokc@codeaurora.org, andy.gross@linaro.org, david.brown@linaro.org,
  ard.biesheuvel@linaro.org, jlhugo@gmail.com, linux-i2c@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, linux-gpio@vger.kernel.org,
  linux-usb@vger.kernel.org
-Subject: [PATCH v3 7/8] usb: dwc3: qcom: Start USB in 'host mode' on the SDM845
-Date: Mon, 10 Jun 2019 09:42:12 +0100
-Message-Id: <20190610084213.1052-7-lee.jones@linaro.org>
+Subject: [PATCH v3 8/8] usb: dwc3: qcom: Improve error handling
+Date: Mon, 10 Jun 2019 09:42:13 +0100
+Message-Id: <20190610084213.1052-8-lee.jones@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190610084213.1052-1-lee.jones@linaro.org>
 References: <20190610084213.1052-1-lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_014223_917623_8CB49341 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20190610_014224_834214_83258A92 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,60 +109,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When booting with Device Tree, the current default boot configuration
-table option, the request to boot via 'host mode' comes from the
-'dr_mode' property.  A property of the same name can be used inside
-ACPI tables too.  However it is missing from the SDM845's ACPI tables
-so we have to supply this information using Platform Device Properties
-instead.
+dwc3_qcom_clk_init() is called with of_count_phandle_with_args() as an
+argument.  If of_count_phandle_with_args() returns an error, the number
+of clocks will be a negative value and will lead to undefined behaviour.
 
-This does not change the behaviour of any currently supported devices.
-The property is only set on ACPI enabled platforms, thus for H/W
-booting DT, unless a 'dr_mode' property is present, the default is
-still OTG (On-The-Go) as per [0].  Any new ACPI devices added will
-also be able to over-ride this implementation by providing a 'dr_mode'
-property in their ACPI tables.  In cases where 'dr_mode' is omitted
-from the tables AND 'host mode' should not be the default (very
-unlikely), then we will have to add some way of choosing between them
-at run time - most likely by ACPI HID.
-
-[0] Documentation/devicetree/bindings/usb/generic.txt
+Ensure we check for an error before attempting to blindly use the value.
 
 Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
- drivers/usb/dwc3/dwc3-qcom.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ drivers/usb/dwc3/dwc3-qcom.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/usb/dwc3/dwc3-qcom.c b/drivers/usb/dwc3/dwc3-qcom.c
-index 1e1f12b7991d..55ba04254e38 100644
+index 55ba04254e38..e4dac82abd7d 100644
 --- a/drivers/usb/dwc3/dwc3-qcom.c
 +++ b/drivers/usb/dwc3/dwc3-qcom.c
-@@ -444,6 +444,11 @@ static int dwc3_qcom_clk_init(struct dwc3_qcom *qcom, int count)
- 	return 0;
- }
+@@ -409,6 +409,9 @@ static int dwc3_qcom_clk_init(struct dwc3_qcom *qcom, int count)
+ 	if (!np || !count)
+ 		return 0;
  
-+static const struct property_entry dwc3_qcom_acpi_properties[] = {
-+	PROPERTY_ENTRY_STRING("dr_mode", "host"),
-+	{}
-+};
++	if (count < 0)
++		return count;
 +
- static int dwc3_qcom_acpi_register_core(struct platform_device *pdev)
- {
- 	struct dwc3_qcom 	*qcom = platform_get_drvdata(pdev);
-@@ -488,6 +493,13 @@ static int dwc3_qcom_acpi_register_core(struct platform_device *pdev)
- 		goto out;
- 	}
+ 	qcom->num_clocks = count;
  
-+	ret = platform_device_add_properties(qcom->dwc3,
-+					     dwc3_qcom_acpi_properties);
-+	if (ret < 0) {
-+		dev_err(&pdev->dev, "failed to add properties\n");
-+		goto out;
-+	}
-+
- 	ret = platform_device_add(qcom->dwc3);
- 	if (ret)
- 		dev_err(&pdev->dev, "failed to add device\n");
+ 	qcom->clks = devm_kcalloc(dev, qcom->num_clocks,
 -- 
 2.17.1
 
