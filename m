@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D57173D67C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:08:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 673013D67D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:08:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kmKCj45N67r1Mwdt+fL1VoVvWh7RT8pYJFtRecNrR/E=; b=iHz0HysqdqxjLH
-	IGgGr357Bp5LQ7cIjTvb5Uus+2wP3W3sceNW9zxIt8y8XVFiWmX2wotnytfStbhAozvfRcmFcLVrx
-	WKdalDtQOfeVYb2XZH6zbsl8+mwHFgFulIXo4hBjqP2FDoPI6VkumyWRO6MABtO71uy9brYwdCXcw
-	/4LCPGys58+WH1deRYzRUsc1QnkMjm+U+7rM0ZeT/ixG8f+ltOxcZByOa9s2lrWTKvMmzdT5d2aTf
-	UShjLnQLUUw0rrlGhdM+qwmRcDj5tb6a0RD0cYneTRCCtN7eMU7ZIoGD4EbLT74+w9DD5yDxJgXIl
-	6L1Qz8vD8sFAMJuSwOtQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nvG1Ee5PfgiD3m/aQGVgFVOYZhfc0b3r4XsqIdsdWA4=; b=YU+V1wazAvgshXAPJnMkCrFgb
+	PohXHS5VbuxrKVhaj14YhVn31eqrhJhx91UK5M7CRCmcIKIYDnt+ecRmn0bFy506y1de+t6epREXz
+	KOm/QMlSv++qCz5We//uGizEXxZH8G/dHb2ZCMP5/9NxvLZyphKWGsBxvGcBr+qAH+zlADOcfi/7b
+	pCH4D+0cdJ1+oXlG7M3m0KQA+A+AqueZ2p1/jbFitymwMsPI7n4dVmJQbwv8+rvwULgQ8GDkCxEp3
+	LEBiZl+/u9g8tD+sVIxLfzPL1MrzX65Y0tVJMl9J/pi3Yp9yWWrZnQGLSjU98+oWlDh+MFuxBhvVI
+	8Gh24Tkfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ham8F-0002w1-7N; Tue, 11 Jun 2019 19:08:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ham3g-00060B-Cd
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:03:51 +0000
-Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EEEA9217D6;
- Tue, 11 Jun 2019 19:03:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560279827;
- bh=ZQd3IzTwaK/v9ig5rXc0mekftl21FY0IiQJFu3eVKLs=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=nxoVSDfCHABhnKaZGU46YaDqfJjSFqPz1RdhzZvUo7bKhMBpJEylram8Y2kGHRE0N
- sKF1AkfuP9n3o+v600+2uCPS67BIskObBiYjwyxTtpSjGBWY/UO5Stks6gOdF826v3
- aZPKyDlpXymrbfTzk97zvOLMa00H/CGpPAHDzvP4=
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Ingo Molnar <mingo@kernel.org>,
-	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 61/85] perf cs-etm: Remove duplicate GENMASK() define,
- use linux/bits.h instead
-Date: Tue, 11 Jun 2019 15:58:47 -0300
-Message-Id: <20190611185911.11645-62-acme@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190611185911.11645-1-acme@kernel.org>
-References: <20190611185911.11645-1-acme@kernel.org>
+	id 1ham8V-0003An-25; Tue, 11 Jun 2019 19:08:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1ham5p-0000xe-Vq
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:06:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDCE0344;
+ Tue, 11 Jun 2019 12:05:58 -0700 (PDT)
+Received: from [192.168.100.221] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA3D83F73C;
+ Tue, 11 Jun 2019 12:05:57 -0700 (PDT)
+Subject: Re: [PATCH 2/2] arm64: topology: Use PPTT to determine if PE is a
+ thread
+To: John Garry <john.garry@huawei.com>, linux-arm-kernel@lists.infradead.org
+References: <20190523224015.56270-1-jeremy.linton@arm.com>
+ <20190523224015.56270-3-jeremy.linton@arm.com>
+ <be03d428-b543-0233-a98b-233f367a6bd0@huawei.com>
+ <24541261-f86d-0d19-6275-6e110144e761@arm.com>
+ <4c8db8fa-de8e-d9b8-2de3-eda13651f223@huawei.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <cf0d9438-f2e9-493c-55e1-4a9ed27d1196@arm.com>
+Date: Tue, 11 Jun 2019 14:02:59 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <4c8db8fa-de8e-d9b8-2de3-eda13651f223@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_120348_567992_4F9CC450 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190611_120602_261525_057394F9 
+X-CRM114-Status: GOOD (  24.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,78 +66,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnaldo Carvalho de Melo <acme@redhat.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Clark Williams <williams@redhat.com>, coresight@lists.linaro.org,
- linux-kernel@vger.kernel.org, linux-perf-users@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
- Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
- Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: catalin.marinas@arm.com, will.deacon@arm.com,
+ "Guohanjun \(Hanjun Guo\)" <guohanjun@huawei.com>, rjw@rjwysocki.net,
+ Linuxarm <linuxarm@huawei.com>, linux-acpi@vger.kernel.org,
+ yaohongbo@huawei.com, sudeep.holla@arm.com,
+ wanghuiqiang <wanghuiqiang@huawei.com>, lenb@kernel.org
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Arnaldo Carvalho de Melo <acme@redhat.com>
+Hi,
 
-Suzuki noticed that this should be more useful in a generic header, and
-after looking I noticed we have it already in our copy of
-include/linux/bits.h in tools/include, so just use it, test built on
-x86-64 and ubuntu 19.04 with:
+On 6/10/19 3:30 AM, John Garry wrote:
+> On 07/06/2019 20:21, Jeremy Linton wrote:
+>> Hi,
+>>
+>> Thanks for testing and looking at this.
+>>
+>> On 6/6/19 3:49 AM, John Garry wrote:
+>>> On 23/05/2019 23:40, Jeremy Linton wrote:
+>>>> ACPI 6.3 adds a thread flag to represent if a CPU/PE is
+>>>> actually a thread. Given that the MPIDR_MT bit may not
+>>>> represent this information consistently on homogeneous machines
+>>>> we should prefer the PPTT flag if its available.
+>>>>
+>>>
+> =
 
-  perfbuilder@46646c9e848e:/$ aarch64-linux-gnu-gcc --version |& head -1
-  aarch64-linux-gnu-gcc (Ubuntu/Linaro 8.3.0-6ubuntu1) 8.3.0
-  perfbuilder@46646c9e848e:/$
+> Hi Jeremy,
+> =
 
-Suggested-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Link: https://lkml.kernel.org/r/68c1c548-33cd-31e8-100d-7ffad008c7b2@arm.com
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Leo Yan <leo.yan@linaro.org>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: coresight@lists.linaro.org
-Cc: linux-arm-kernel@lists.infradead.org,
-Link: https://lkml.kernel.org/n/tip-69pd3mqvxdlh2shddsc7yhyv@git.kernel.org
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
----
- tools/perf/util/cs-etm.h | 11 +----------
- 1 file changed, 1 insertion(+), 10 deletions(-)
+>>>
+>>> I was just wondering if we should look to get this support backported
+>>> (when merged)?
+>>
+>> I imagine that will happen..
+>>
+>>>
+>>> I worry about the case of a system with the CPU having MT bit in the
+>>> MPIDR (while not actually threaded), i.e. the system for which these
+>>> PPTT flags were added (as I understand).
+>>
+>> I have tested this patch on DAWN which happens to have the MT bit set,
+>> but isn't threaded, and it appears to work.
+> =
 
-diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
-index 33b57e748c3d..bc848fd095f4 100644
---- a/tools/perf/util/cs-etm.h
-+++ b/tools/perf/util/cs-etm.h
-@@ -9,6 +9,7 @@
- 
- #include "util/event.h"
- #include "util/session.h"
-+#include <linux/bits.h>
- 
- /* Versionning header in case things need tro change in the future.  That way
-  * decoding of old snapshot is still possible.
-@@ -161,16 +162,6 @@ struct cs_etm_packet_queue {
- 
- #define CS_ETM_INVAL_ADDR 0xdeadbeefdeadbeefUL
- 
--/*
-- * Create a contiguous bitmask starting at bit position @l and ending at
-- * position @h. For example
-- * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
-- *
-- * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
-- */
--#define GENMASK(h, l) \
--	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
--
- #define BMVAL(val, lsb, msb)	((val & GENMASK(msb, lsb)) >> lsb)
- 
- #define CS_ETM_HEADER_SIZE (CS_HEADER_VERSION_0_MAX * sizeof(u64))
--- 
-2.20.1
+> Can you describe your test?
+
+The positive test:
+
+Boot machine with/without patch, compare the output of lscpu & lstopo. =
+
+Manually check/compare /sys/devices/system/cpu/cpuX/topology/* and =
+
+/proc/schedstat domain masks. On DAWN we go from a system reporting 2 =
+
+cores with 2 thread per core to 4 cores.
+
+I've also built firmware or injected PPTT's with varying versions/etc to =
+
+sanity check cases that aren't representative of the hardware.
+
+
+
+> =
+
+>>
+>>>
+>>>> Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+>>>> ---
+>>>> =A0arch/arm64/kernel/topology.c | 8 +++++---
+>>>> =A01 file changed, 5 insertions(+), 3 deletions(-)
+>>>>
+>>>> diff --git a/arch/arm64/kernel/topology.c =
+
+>>>> b/arch/arm64/kernel/topology.c
+>>>> index 0825c4a856e3..cbbedb53cf06 100644
+>>>> --- a/arch/arm64/kernel/topology.c
+>>>> +++ b/arch/arm64/kernel/topology.c
+>>>> @@ -346,11 +346,9 @@ void remove_cpu_topology(unsigned int cpu)
+>>>> =A0 */
+>>>> =A0static int __init parse_acpi_topology(void)
+>>>> =A0{
+>>>> -=A0=A0=A0 bool is_threaded;
+>>>> +=A0=A0=A0 int is_threaded;
+>>>> =A0=A0=A0=A0 int cpu, topology_id;
+>>>>
+>>>> -=A0=A0=A0 is_threaded =3D read_cpuid_mpidr() & MPIDR_MT_BITMASK;
+>>>> -
+>>>> =A0=A0=A0=A0 for_each_possible_cpu(cpu) {
+>>>> =A0=A0=A0=A0=A0=A0=A0=A0 int i, cache_id;
+>>>>
+>>>> @@ -358,6 +356,10 @@ static int __init parse_acpi_topology(void)
+>>>> =A0=A0=A0=A0=A0=A0=A0=A0 if (topology_id < 0)
+>>>> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return topology_id;
+>>>>
+>>>> +=A0=A0=A0=A0=A0=A0=A0 is_threaded =3D acpi_pptt_cpu_is_thread(cpu);
+>>>> +=A0=A0=A0=A0=A0=A0=A0 if (is_threaded < 0)
+>>>> +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 is_threaded =3D read_cpuid_mpidr() =
+& MPIDR_MT_BITMASK;
+>>>> +
+>>>> =A0=A0=A0=A0=A0=A0=A0=A0 if (is_threaded) {
+>>>> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 cpu_topology[cpu].thread_id =3D t=
+opology_id;
+>>>
+>>> For described above scenario, this seems wrong.
+>>
+>> I'm not sure I understand the concern.
+> =
+
+> Maybe I wasn't clear enough previously. I am saying that without this =
+
+> patch, then this info would not be correct. Hence the request to =
+
+> backport to stable.
+> =
+
+> cheers,
+> =
+
+>>
+>> This is going to ignore the MPIDR_MT bit on any machine with a PPTT
+>> revision > 1. Are you worried about the topology_id assignment?
+>>
+>>
+>>>
+>>>> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 topology_id =3D find_acpi_cpu_top=
+ology(cpu, 1);
+>>>>
+>>>
+>>> BTW, we did test an old kernel with 6.3 PPTT bios for this on D06
+>>> (some versions have MT bit set), and it looked ok. But I am still a
+>>> bit skeptical.
+>>>
+>>> Thanks,
+>>> John
+>>>
+>>>
+>>
+>>
+>> Thanks,
+>>
+>> .
+>>
+> =
+
+> =
+
 
 
 _______________________________________________
