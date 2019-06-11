@@ -2,58 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 577DB3C74F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:37:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C26A03C753
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:38:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PEkGwQWkRbR5rlW6Dp9Ss/FxvXDyvi3+Pm/FXGvaYCU=; b=Uk8XTQYQt1bwuJ
-	3v4/ivhmCXjM3o67GbM3kyI6AEH9rfQVf6dBNeaBwj3L5jdy5BsEClZ1W3+Zrv1Kx2cFGY6bGmzTe
-	D5cMJGGrlc3nrWQW7DxV309VVZX0hSKVF/ae1534yK1P4Ol1O2kUWo99pSR1Qd75TAtgR/Mun0fDM
-	82AyPEfVwEZkr6hmjSL38/PMWNW5ya5QZrMT5fGRMovcAkVi6L2TSSNZdaWpM/w1Hh5XRBjE2yXuH
-	ix6WbDi8MKjNja4JBMh/oDqmyeyVB6R/PPO4KuDKmGpPAHm07XxYPNB6fLowvuMCoNe7WCLbmx4E/
-	n6fcFPIdHx4sjRtB6PsQ==;
+	List-Owner; bh=it8dH9/A8lQan9hXPVDgpPplIrYzc2AteAQ5UQ7MfY4=; b=Lz/YJ94LnK2C+3
+	XNNzzYkpf98NMvSq45TdHvJgyL62vj16rhLERyDmkRelEbtM/zpyPWK0li/Av9qm7p+jawVkBjmVi
+	KsM1gl/bRXDNL9pukOtBIshroyza/ukI7IX+j5jjEFKyMEeujcXF/s4B1+CKwPf1wFfhLHGX8d0Rj
+	XEywgS4yrAIJyUTsGZzsDWKY3lPLXVJJoRMivaxY8ktygKbl+V8jram/IZmK9xQe1aF9cBqEwJtQo
+	xyaRJUIJ6w69ZuGs+oEro0QwnwmyOhFt+Kd+KcQyRMykbmR6cAMPcKTi3UgvhGWtJ0hqNpNQJN4T0
+	dK5R56KSB3I506RiDcwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadDE-0006xT-CP; Tue, 11 Jun 2019 09:37:04 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1hadEL-0007L2-Fc; Tue, 11 Jun 2019 09:38:13 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadD1-0006th-H7
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 09:36:53 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 7E1052B1E12D93060B1E;
- Tue, 11 Jun 2019 17:36:40 +0800 (CST)
-Received: from localhost (10.202.226.61) by DGGEMS412-HUB.china.huawei.com
- (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0; Tue, 11 Jun 2019
- 17:36:35 +0800
-Date: Tue, 11 Jun 2019 10:36:25 +0100
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH 1/8] iommu: Add I/O ASID allocator
-Message-ID: <20190611103625.00001399@huawei.com>
-In-Reply-To: <20190610184714.6786-2-jean-philippe.brucker@arm.com>
-References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-2-jean-philippe.brucker@arm.com>
-Organization: Huawei
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1hadE0-0007KI-JU
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 09:37:53 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 20so6654714pgr.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Jun 2019 02:37:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=9agf1wB19p+J83b1VsLOfSDCvk5Iwih8vT9zIEbIhto=;
+ b=uoJ6xso6aov+5DAxvyb5o40wrZU1FXY+1+wAIyp/jryKLjiHMMBNtAgYzTdICid9EW
+ go3OVPwipJhta6jl7ptE0/WhIkeZiCfooS6SSugO1LaOXqML8eCmYzkZdul2b2Xfpmz+
+ gclHl8JJUL6HWpk8WO5AKmqkx5Q1wz6C8BWINY5aO24OO68z5tpL9w7ehYBSCWOO7PTd
+ psldWcpkoLBpx8667PB9lQ7Hl4xkX/Et3VKXKqqbb6JSkBTLLyJxb8Owby/IighLuBP6
+ QryTlp/APxF2h1MpIYTj0IxAOJH3NZ9/aeDzKcKsBH1oE2YkS2KFjvJfoqVePF3HWsAP
+ 5xrA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9agf1wB19p+J83b1VsLOfSDCvk5Iwih8vT9zIEbIhto=;
+ b=UN7aex2Em+U5NUEPNwQm3o/PqUxhX/4I+LrLuWVTciFUxt9xTY1YMhgFNQAXtm2fGB
+ lsJYlQcdpzox6+9wMuFEuhz7E8q0W+kPtwI2zbI0xBhpIGOMc5pEYOs1Snt5DFF9b9Lb
+ HpT7YmFrRa1Jyx7u29+HK6ZDnLhP1CCncQBNl0CAwtVgg8tRXf05eXyWf9fbJu+pRJcv
+ ecrhjLo+AKip/lkbkxWm1L1frhd1cptEFsTENp5mIAz48JB/sobZE5jIYm+OTmO5W5G5
+ RnG7HlGVju7d6Gt+3ZAGQzg/sqPX2tpUET+tAu4LRGcXUL3wiUb8J0XRzzSyHLZuRRxd
+ CmuQ==
+X-Gm-Message-State: APjAAAUnstOh75c1alIBF5maRUSg4OmXxFxKdjxVKPeMTm8rBPlLbZlU
+ w0Tlx7DXUIBPJ4BaxjJ3G/C7IWsYcJDlSg==
+X-Google-Smtp-Source: APXvYqwW7A1WbJwAEbMJSnf3kHqZzSWeA7fnuPpsGxWy3rdDIeIaKarnUVnZCU2Z96HhMWgjooUtYg==
+X-Received: by 2002:a65:5688:: with SMTP id v8mr19726836pgs.138.1560245871063; 
+ Tue, 11 Jun 2019 02:37:51 -0700 (PDT)
+Received: from ubuntu ([104.192.108.9])
+ by smtp.gmail.com with ESMTPSA id y22sm8563571pfm.70.2019.06.11.02.37.48
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 11 Jun 2019 02:37:50 -0700 (PDT)
+Date: Tue, 11 Jun 2019 02:37:44 -0700
+From: Gen Zhang <blackgod016574@gmail.com>
+To: ssantosh@kernel.org, marc.zyngier@arm.com, olof@lixom.net
+Subject: Re: [PATCH] knav_qmss_queue: fix a missing-check bug in
+ knav_pool_create()
+Message-ID: <20190611093744.GA9783@ubuntu>
+References: <20190530033949.GA8895@zhanggen-UX430UQ>
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.61]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190530033949.GA8895@zhanggen-UX430UQ>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_023651_792926_5E4F769E 
-X-CRM114-Status: GOOD (  25.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190611_023752_668352_892C9CE0 
+X-CRM114-Status: GOOD (  13.89  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (blackgod016574[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (blackgod016574[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,171 +102,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- robh+dt@kernel.org, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Jun 2019 19:47:07 +0100
-Jean-Philippe Brucker <jean-philippe.brucker@arm.com> wrote:
-
-> Some devices might support multiple DMA address spaces, in particular
-> those that have the PCI PASID feature. PASID (Process Address Space ID)
-> allows to share process address spaces with devices (SVA), partition a
-> device into VM-assignable entities (VFIO mdev) or simply provide
-> multiple DMA address space to kernel drivers. Add a global PASID
-> allocator usable by different drivers at the same time. Name it I/O ASID
-> to avoid confusion with ASIDs allocated by arch code, which are usually
-> a separate ID space.
+On Thu, May 30, 2019 at 11:39:49AM +0800, Gen Zhang wrote:
+> In knav_pool_create(), 'pool->name' is allocated by kstrndup(). It
+> returns NULL when fails. So 'pool->name' should be checked. And free
+> 'pool' when error.
 > 
-> The IOASID space is global. Each device can have its own PASID space,
-> but by convention the IOMMU ended up having a global PASID space, so
-> that with SVA, each mm_struct is associated to a single PASID.
-> 
-> The allocator is primarily used by IOMMU subsystem but in rare occasions
-> drivers would like to allocate PASIDs for devices that aren't managed by
-> an IOMMU, using the same ID space as IOMMU.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-> Signed-off-by: Jacob Pan <jacob.jun.pan@linux.intel.com>
-Hi,
-
-A few trivial comments inline.  May be more because I'm not that familiar
-with xa_array than anything else.
-
-Jonathan
-
+> Signed-off-by: Gen Zhang <blackgod016574@gmail.com>
 > ---
-> The most recent discussion on this patch was at:
-> https://lkml.kernel.org/lkml/1556922737-76313-4-git-send-email-jacob.jun.pan@linux.intel.com/
-> I fixed it up a bit following comments in that series, and removed the
-> definitions for the custom allocator for now.
-> 
-> There also is a new version that includes the custom allocator into this
-> patch, but is currently missing the RCU fixes, at:
-> https://lore.kernel.org/lkml/1560087862-57608-13-git-send-email-jacob.jun.pan@linux.intel.com/
-> ---
-
-...
-
-> +
-> +/**
-> + * ioasid_alloc - Allocate an IOASID
-> + * @set: the IOASID set
-> + * @min: the minimum ID (inclusive)
-> + * @max: the maximum ID (inclusive)
-> + * @private: data private to the caller
-> + *
-> + * Allocate an ID between @min and @max. The @private pointer is stored
-> + * internally and can be retrieved with ioasid_find().
-> + *
-> + * Return: the allocated ID on success, or %INVALID_IOASID on failure.
-> + */
-> +ioasid_t ioasid_alloc(struct ioasid_set *set, ioasid_t min, ioasid_t max,
-> +		      void *private)
-> +{
-> +	u32 id = INVALID_IOASID;
-> +	struct ioasid_data *data;
-> +
-> +	data = kzalloc(sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return INVALID_IOASID;
-> +
-> +	data->set = set;
-> +	data->private = private;
-> +
-> +	if (xa_alloc(&ioasid_xa, &id, data, XA_LIMIT(min, max), GFP_KERNEL)) {
-> +		pr_err("Failed to alloc ioasid from %d to %d\n", min, max);
-> +		goto exit_free;
+> diff --git a/drivers/soc/ti/knav_qmss_queue.c b/drivers/soc/ti/knav_qmss_queue.c
+> index 8b41837..0f8cb28 100644
+> --- a/drivers/soc/ti/knav_qmss_queue.c
+> +++ b/drivers/soc/ti/knav_qmss_queue.c
+> @@ -814,6 +814,12 @@ void *knav_pool_create(const char *name,
+>  	}
+>  
+>  	pool->name = kstrndup(name, KNAV_NAME_SIZE - 1, GFP_KERNEL);
+> +	if (!pool->name) {
+> +		dev_err(kdev->dev, "failed to duplicate for pool(%s)\n",
+> +			name);
+> +		ret = -ENOMEM;
+> +		goto err_name;
 > +	}
-> +	data->id = id;
-> +
-> +exit_free:
+>  	pool->kdev = kdev;
+>  	pool->dev = kdev->dev;
+>  
+> @@ -864,6 +870,7 @@ void *knav_pool_create(const char *name,
+>  	mutex_unlock(&knav_dev_lock);
+>  err:
+>  	kfree(pool->name);
+> +err_name:
+>  	devm_kfree(kdev->dev, pool);
+>  	return ERR_PTR(ret);
+>  }
+Can anyone look into this patch?
 
-This error flow is perhaps a little more confusing than it needs to be?
-
-My assumption (perhaps wrong) is that we only have an id == INVALID_IOASID
-if the xa_alloc fails, and that we will always have such an id value if
-it does (I'm not totally sure this second element is true in __xa_alloc).
-
-If I'm missing something perhaps a comment on how else we'd get here.
-
-> +	if (id == INVALID_IOASID) {
-> +		kfree(data);
-> +		return INVALID_IOASID;
-> +	}
-> +	return id;
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_alloc);
-> +
-> +/**
-> + * ioasid_free - Free an IOASID
-> + * @ioasid: the ID to remove
-> + */
-> +void ioasid_free(ioasid_t ioasid)
-> +{
-> +	struct ioasid_data *ioasid_data;
-> +
-> +	ioasid_data = xa_erase(&ioasid_xa, ioasid);
-> +
-> +	kfree_rcu(ioasid_data, rcu);
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_free);
-> +
-> +/**
-> + * ioasid_find - Find IOASID data
-> + * @set: the IOASID set
-> + * @ioasid: the IOASID to find
-> + * @getter: function to call on the found object
-> + *
-> + * The optional getter function allows to take a reference to the found object
-> + * under the rcu lock. The function can also check if the object is still valid:
-> + * if @getter returns false, then the object is invalid and NULL is returned.
-> + *
-> + * If the IOASID has been allocated for this set, return the private pointer
-> + * passed to ioasid_alloc. Private data can be NULL if not set. Return an error
-> + * if the IOASID is not found or does not belong to the set.
-
-Perhaps should make it clear that @set can be null.
-
-> + */
-> +void *ioasid_find(struct ioasid_set *set, ioasid_t ioasid,
-> +		  bool (*getter)(void *))
-> +{
-> +	void *priv = NULL;
-
-Set in all paths, so does need to be set here.
-
-> +	struct ioasid_data *ioasid_data;
-> +
-> +	rcu_read_lock();
-> +	ioasid_data = xa_load(&ioasid_xa, ioasid);
-> +	if (!ioasid_data) {
-> +		priv = ERR_PTR(-ENOENT);
-> +		goto unlock;
-> +	}
-> +	if (set && ioasid_data->set != set) {
-> +		/* data found but does not belong to the set */
-> +		priv = ERR_PTR(-EACCES);
-> +		goto unlock;
-> +	}
-> +	/* Now IOASID and its set is verified, we can return the private data */
-> +	priv = rcu_dereference(ioasid_data->private);
-> +	if (getter && !getter(priv))
-> +		priv = NULL;
-> +unlock:
-> +	rcu_read_unlock();
-> +
-> +	return priv;
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_find);
-> +
-> +MODULE_LICENSE("GPL");
-...
-
+Thanks
+Gen
 
 _______________________________________________
 linux-arm-kernel mailing list
