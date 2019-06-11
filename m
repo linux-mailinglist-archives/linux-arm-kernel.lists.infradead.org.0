@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A044C3C89D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:19:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 400393C894
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:18:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C1BcgYck3ZQSlLcgMQ5Uc5AfvmpgF4EXGwmyXPxmpP8=; b=UY8T0I2FcZ6Dcd
-	XlaQ05PSPpcevFCMdZ+FZMXYZ3PDrQ4Vyehz439O5Qi2WGf2ZA786WvPGX+c9ldp1RMfMcVZrvFOe
-	z98zyMmb8yGoKjZG0GDyMutmb1LxpYH98zI6qYR1VC1OfSXdaBzQuHRnkclHeRBxCuiETEBsFIotV
-	4E0UKn6k1swhjjLChh/it96Izb0Iu1sdrAi2FUDNaaA0C0jMehZQ/ZDpa/kb10cInpisKWu+TV2FG
-	rTh0igyp1ek7mewG8nRGVA4k8XN2ikyxA3yijJNvwuNqns1oAVZmEckporWgcHnsr1OXR7Y1N1Ann
-	kJQ+1NYnDjkEoHU7TXMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LLdZqhmBfVNKkNQM16OSqIeD1yBW9yW43hFbz6N/or4=; b=Md8hX+Q+0P1aDV
+	McZXuTB3CO8F+xcYQUUXuJq+D1qM+aHxEIWN4b0EjeftIWk9ob5yxDSjEhbWSnPhpFeJXqf7bimMV
+	or9ZtwtzZzrekpr7F3S106rErhbaZZCzb38wb0qIXjMNsPZpZUkMoz5mZo4jBPpXwSKpn8tlh/pfd
+	ixRQobaLTsbkgYhk1ZaeMhE1ytvHDczKrA4pLdhHC8SHbgPaYPOLGj2iwQWDY+Fp8aWDIgUko4p4C
+	2QcLRPchMczWoT5Z79LpHrXQF8kHWSxys1od8O1zbeeEMb6a/qdZOVD3m5pBY+pSGJ+9CEjB6br0/
+	vIx8BK/YTTa7XJm0q9Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadrs-0002h8-Jq; Tue, 11 Jun 2019 10:19:04 +0000
+	id 1hadrb-0002QQ-8C; Tue, 11 Jun 2019 10:18:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadqD-0001WT-Nj
+ id 1hadqD-0001WC-HZ
  for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:17:24 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 26ED72146E;
+ by mail.kernel.org (Postfix) with ESMTPSA id 0AA17208E3;
  Tue, 11 Jun 2019 10:17:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1560248241;
- bh=ECxRPjnnyOauLHhaZ2dGgISLKOhjT/mVaqEpGjVMnh0=;
- h=From:To:Cc:Subject:Date:From;
- b=K/6bUhwaYp9/MWjk2zZJtPZ8uEqONxLXgvGkOchuijFaSBSSr0b38F6VzmafLosY4
- NNHC8feiwpsi1pFLMlGJ88Kcl37Ht2W+yGRhGa5L+yTDweHtJ5XH/kaH4QYEPtPRtY
- e6C3Xo32z1ZqyJSL3c2n+7t2hiLliYvdYMQMjRVQ=
+ bh=525aOxhqLv6Y8ZrnilCkqiBQziTal4f1DRT+iqnr65Q=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=K2JiZayT9S16Wgegak2Fw9lid9oEzQHR0gVib6XgxqJO4cIpqXPXpuT9Mdi1JbmeM
+ 7rvC5A1n/JL8ggAaPY0SyaEx8vkqvkisLhvUUN2N/Yv2CzNAJ8UMm4D3PT6k+pb/jx
+ efL6jGN9V7erjha1KNNEgZrrGDsEfsRjXU4YFMQ4=
 Received: by wens.tw (Postfix, from userid 1000)
- id 0A2275FBB7; Tue, 11 Jun 2019 18:17:18 +0800 (CST)
+ id 102045F92C; Tue, 11 Jun 2019 18:17:18 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH v2 00/25] clk: sunxi-ng: clk parent rewrite part 1
-Date: Tue, 11 Jun 2019 18:16:33 +0800
-Message-Id: <20190611101658.23855-1-wens@kernel.org>
+Subject: [PATCH v2 01/25] clk: Fix debugfs clk_possible_parents for clks
+ without parent string names
+Date: Tue, 11 Jun 2019 18:16:34 +0800
+Message-Id: <20190611101658.23855-2-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190611101658.23855-1-wens@kernel.org>
+References: <20190611101658.23855-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_031721_814212_C3A06762 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20190611_031721_636254_FD951757 
+X-CRM114-Status: GOOD (  14.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,8 +79,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@kernel.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Chen-Yu Tsai <wens@csie.org>, Chen-Yu Tsai <wens@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -85,115 +89,82 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-Hi everyone,
+Following the commit fc0c209c147f ("clk: Allow parents to be specified
+without string names"), the parent name string is not always populated.
 
-This is v2 of the sunxi-ng clk parent rewrite part 1.
+Instead, fetch the parents clk_core struct using the appropriate helper,
+and read its name directly. If that fails, go through the possible
+sources of parent names. The order in which they are used is different
+from how parents are looked up, with the global name having precedence
+over local fw_name and indices. This makes more sense as a) the
+parent_maps structure does not differentiate between legacy global names
+and fallback global names, and b) global names likely provide more
+information than local fw_names.
 
-Changes since v1:
+Fixes: fc0c209c147f ("clk: Allow parents to be specified without string names")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+ drivers/clk/clk.c | 44 +++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 41 insertions(+), 3 deletions(-)
 
-  - Collected Maxime's Acked-by for sunxi patches
-  - Expanded possible_parents_show() to cover most cases
-  - Added comment to CLK_HW_INIT_HWS detailing usage for sharing
-    compound literal
-
-As mentioned in my reply to the cover letter of v1, I can merge all the
-patches through the sunxi tree and send a combined (with other sunxi
-stuff) PR, or as an independent branch, whichever is preferred.
-
-Excerpt from original cover letter follows:
-
-This is series is the first part of a large series (I haven't done the
-rest) of patches to rewrite the clk parent relationship handling within
-the sunxi-ng clk driver. This is based on Stephen's recent work allowing
-clk drivers to specify clk parents using struct clk_hw * or parsing DT
-phandles in the clk node.
-
-This series can be split into a few major parts:
-
-1) The first patch is a small fix for clk debugfs representation. This
-   was done before commit 1a079560b145 ("clk: Cache core in 
-   clk_fetch_parent_index() without names") was posted, so it might or
-   might not be needed. Found this when checking my work using
-   clk_possible_parents.
-
-2) A bunch of CLK_HW_INIT_* helper macros are added. These cover the
-   situations I encountered, or assume I will encounter, such as single
-   internal (struct clk_hw *) parent, single DT (struct clk_parent_data
-   .fw_name), multiple internal parents, and multiple mixed (internal +
-   DT) parents. A special variant for just an internal single parent is
-   added, CLK_HW_INIT_HWS, which lets the driver share the singular
-   list, instead of having the compiler create a compound literal every
-   time. It might even make sense to only keep this variant.
-
-3) A bunch of CLK_FIXED_FACTOR_* helper macros are added. The rationale
-   is the same as the single parent CLK_HW_INIT_* helpers.
-
-4) Bulk conversion of CLK_FIXED_FACTOR to use local parent references,
-   either struct clk_hw * or DT .fw_name types, whichever the hardware
-   requires.
-
-5) The beginning of SUNXI_CCU_GATE conversion to local parent
-   references. This part is not done. They are included as justification
-   and examples for the shared list of clk parents case.
-
-
-Thanks
-ChenYu
-
-
-Chen-Yu Tsai (25):
-  clk: Fix debugfs clk_possible_parents for clks without parent string
-    names
-  clk: Add CLK_HW_INIT_* macros using .parent_hws
-  clk: Add CLK_HW_INIT_FW_NAME macro using .fw_name in .parent_data
-  clk: Add CLK_HW_INIT_PARENT_DATA macro using .parent_data
-  clk: fixed-factor: Add CLK_FIXED_FACTOR_HW which takes clk_hw pointer
-    as parent
-  clk: fixed-factor: Add CLK_FIXED_FACTOR_HWS which takes list of struct
-    clk_hw *
-  clk: fixed-factor: Add CLK_FIXED_FACTOR_FW_NAME for DT clock-names
-    parent
-  clk: sunxi-ng: switch to of_clk_hw_register() for registering clks
-  clk: sunxi-ng: sun8i-r: Use local parent references for CLK_HW_INIT_*
-  clk: sunxi-ng: a10: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: sun5i: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: a31: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: a23: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: a33: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: h3: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: r40: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: v3s: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: sun8i-r: Use local parent references for
-    CLK_FIXED_FACTOR
-  clk: sunxi-ng: f1c100s: Use local parent references for
-    CLK_FIXED_FACTOR
-  clk: sunxi-ng: a64: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: h6: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: h6-r: Use local parent references for CLK_FIXED_FACTOR
-  clk: sunxi-ng: gate: Add macros for referencing local clock parents
-  clk: sunxi-ng: a80-usb: Use local parent references for SUNXI_CCU_GATE
-  clk: sunxi-ng: sun8i-r: Use local parent references for SUNXI_CCU_GATE
-
- drivers/clk/clk.c                        |  44 +++++++++-
- drivers/clk/sunxi-ng/ccu-sun4i-a10.c     |  39 ++++++---
- drivers/clk/sunxi-ng/ccu-sun50i-a64.c    |  41 +++++----
- drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c   |   2 +-
- drivers/clk/sunxi-ng/ccu-sun50i-h6.c     |  69 +++++++++------
- drivers/clk/sunxi-ng/ccu-sun5i.c         |  34 +++++---
- drivers/clk/sunxi-ng/ccu-sun6i-a31.c     |  39 ++++++---
- drivers/clk/sunxi-ng/ccu-sun8i-a23.c     |  34 +++++---
- drivers/clk/sunxi-ng/ccu-sun8i-a33.c     |  34 +++++---
- drivers/clk/sunxi-ng/ccu-sun8i-h3.c      |  29 ++++---
- drivers/clk/sunxi-ng/ccu-sun8i-r.c       | 104 +++++++++++------------
- drivers/clk/sunxi-ng/ccu-sun8i-r40.c     |  46 ++++++----
- drivers/clk/sunxi-ng/ccu-sun8i-v3s.c     |  29 ++++---
- drivers/clk/sunxi-ng/ccu-sun9i-a80-usb.c |  32 ++++---
- drivers/clk/sunxi-ng/ccu-suniv-f1c100s.c |  29 ++++---
- drivers/clk/sunxi-ng/ccu_common.c        |   2 +-
- drivers/clk/sunxi-ng/ccu_gate.h          |  53 ++++++++++++
- include/linux/clk-provider.h             |  89 +++++++++++++++++++
- 18 files changed, 526 insertions(+), 223 deletions(-)
-
+diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
+index aa51756fd4d6..093161ca4dcc 100644
+--- a/drivers/clk/clk.c
++++ b/drivers/clk/clk.c
+@@ -3000,12 +3000,50 @@ DEFINE_SHOW_ATTRIBUTE(clk_flags);
+ static int possible_parents_show(struct seq_file *s, void *data)
+ {
+ 	struct clk_core *core = s->private;
++	struct clk_core *parent;
+ 	int i;
+ 
+-	for (i = 0; i < core->num_parents - 1; i++)
+-		seq_printf(s, "%s ", core->parents[i].name);
++	/*
++	 * Go through the following options to fetch a parent's name.
++	 *
++	 * 1. Fetch the registered parent clock and use its name
++	 * 2. Use the global (fallback) name if specified
++	 * 3. Use the local fw_name if provided
++	 * 4. Fetch parent clock's clock-output-name if DT index was set
++	 *
++	 * This may still fail in some cases, such as when the parent is
++	 * specified directly via a struct clk_hw pointer, but it isn't
++	 * registered (yet).
++	 */
++	for (i = 0; i < core->num_parents - 1; i++) {
++		parent = clk_core_get_parent_by_index(core, i);
++		if (parent)
++			seq_printf(s, "%s ", parent->name);
++		else if (core->parents[i].name)
++			seq_printf(s, "%s ", core->parents[i].name);
++		else if (core->parents[i].fw_name)
++			seq_printf(s, "<%s>(fw) ", core->parents[i].fw_name);
++		else if (core->parents[i].index >= 0)
++			seq_printf(s, "%s ",
++				   of_clk_get_parent_name(core->of_node,
++							  core->parents[i].index));
++		else
++			seq_puts(s, "(missing) ");
++	}
+ 
+-	seq_printf(s, "%s\n", core->parents[i].name);
++	parent = clk_core_get_parent_by_index(core, i);
++	if (parent)
++		seq_printf(s, "%s", parent->name);
++	else if (core->parents[i].name)
++		seq_printf(s, "%s", core->parents[i].name);
++	else if (core->parents[i].fw_name)
++		seq_printf(s, "<%s>(fw)", core->parents[i].fw_name);
++	else if (core->parents[i].index >= 0)
++		seq_printf(s, "%s",
++			   of_clk_get_parent_name(core->of_node,
++						  core->parents[i].index));
++	else
++		seq_puts(s, "(missing)");
+ 
+ 	return 0;
+ }
 -- 
 2.20.1
 
