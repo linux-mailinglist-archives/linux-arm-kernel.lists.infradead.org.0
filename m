@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F7B83D677
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:07:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66E273D678
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:08:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ecQbhyBTVtzkrNFGWLG4DBg57N6d+3Mya1NFa/ikog8=; b=f5QXjmGeBPsQYs
-	yUIz1N1C4r2C3yk0Hq2/FPqPnrVFbst8dh3AhIRb9pVtoZA46A5jLH1prkrv7voZmISO0pbRMmJ7K
-	Z832D7GWQ1oTWPOuzWhueIQsGwzmKmb9ITJHylUvc8rl3AtM7MUkS6eVS9hNCMsN+55YpLGGL46+g
-	/YX816UjAgdfS5wS+Qhf6TH7VZTaYrWR6EAKwv7AjV2aXXn4liCBNBKzilM37LcHwGBxPKyjiKS86
-	6oqeiZNzZlLhEayIsYc7A9rKsD6zDqibptuxhX20PPXxx9550U02K/AA8B0it3GorRK686mhnY+G1
-	erHLGk7dzovY6PJvvkww==;
+	List-Owner; bh=roiVYtrGssBx3LmBAvGlSzC61BFqX3LLvEZFH7tv7MI=; b=Miz3c9bxRU4zNF
+	2zJnCsIVmkuxZx5d5KPLXopK3DufZdV3jhkYGU9MR+GEeDZGJ1VrZMvtZ6u72lWrI584ETS0HOQoy
+	6tDOa/NChnvAXK8qt14xZzgAlSMeocO8SVzE0H4Fd3GsnVT02D43k9ldB7K3E94x6E4zHATiUcTTY
+	Y2IXHBIgRz26j5Ze9J0HsvyzTVyFlRrypuv+dl8Cn1+2CU2QzkJPbfiUYXEor1zNv8ww2+X5fbDjL
+	hG8wF8g3s+ZWI9udRAiJdwhcrwlOEgvUIcg0MY06Cs2mMBRWGXeMAHmTNyGXxcz7wSoBbfvoqEaM5
+	UbPpjW/SacRY9k+xEdUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ham7f-0002Sa-BC; Tue, 11 Jun 2019 19:07:55 +0000
+	id 1ham7x-0002gH-A9; Tue, 11 Jun 2019 19:08:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ham3D-0005Yj-8e
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:03:22 +0000
+ id 1ham3c-0005w2-0z
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:03:47 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 158C121841;
- Tue, 11 Jun 2019 19:03:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 90D2E2184E;
+ Tue, 11 Jun 2019 19:03:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560279798;
- bh=yVVltIFuXXUA/CjtqNSVl1PIh+nqm9yCuBw/vB+EbZo=;
+ s=default; t=1560279823;
+ bh=429IScMO/Io5oeRatFJB21UoaJS0hAHMwwSu2wH52ss=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GHrPCDetFA1S9QvFFOOTqLfEF7wRnON5vp9F8a5C06lgM3idUAugLsX+7yDlphIsU
- I2DnFVQltaCS/prS0n8H874g/FKXHu6E8KyM1/Skl6qn3KAtaBQS4l0THXXt7s0IOQ
- y1kSQvS5HYbexhmWmRdmBK7awgvV9xYWgo1SUhcU=
+ b=cTrzAu9QJaHmFsMtw/dvGHtJf/TwCeJJMmZoL/oCDA/mnvHaJ6TVmYiW7ryzgmZUN
+ w7cqDXSFIRFRnKuvYS3A0+VdzHOmpTuTkAO6eLhXu0jnwyoTspfhwqUAMKkH4rKoD1
+ Li57H01XzVf4AZr+HqNfK61F9H/wDB7CsI9uN4N8=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 53/85] perf cs-etm: Add support for CPU-wide trace scenarios
-Date: Tue, 11 Jun 2019 15:58:39 -0300
-Message-Id: <20190611185911.11645-54-acme@kernel.org>
+Subject: [PATCH 60/85] perf cs-etm: Properly set the value of 'old' and 'head'
+ in snapshot mode
+Date: Tue, 11 Jun 2019 15:58:46 -0300
+Message-Id: <20190611185911.11645-61-acme@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190611185911.11645-1-acme@kernel.org>
 References: <20190611185911.11645-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_120319_530835_D9F2E27D 
-X-CRM114-Status: GOOD (  23.66  )
+X-CRM114-CacheID: sfid-20190611_120344_215230_97FFD1E7 
+X-CRM114-Status: GOOD (  21.75  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,8 +80,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Arnaldo Carvalho de Melo <acme@redhat.com>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
  Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- linux-perf-users@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-perf-users@vger.kernel.org,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
  Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
@@ -92,370 +92,198 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-Add support for CPU-wide trace scenarios by correlating range packets
-with timestamp packets.  That way range packets received on different
-ETMQ/traceID channels can be processed and synthesized in chronological
-order.
+This patch adds the necessary intelligence to properly compute the value
+of 'old' and 'head' when operating in snapshot mode.  That way we can
+get the latest information in the AUX buffer and be compatible with the
+generic AUX ring buffer mechanic.
+
+Tester notes:
+
+> Leo, have you had the chance to test/review this one? Suzuki?
+
+Sure.  I applied this patch on the perf/core branch (with latest
+commit 3e4fbf36c1e3 'perf augmented_raw_syscalls: Move reading
+filename to the loop') and passed testing with below steps:
+
+  # perf record -e cs_etm/@tmc_etr0/ -S -m,64 --per-thread ./sort &
+  [1] 19097
+  Bubble sorting array of 30000 elements
+
+  # kill -USR2 19097
+  # kill -USR2 19097
+  # kill -USR2 19097
+  [ perf record: Woken up 4 times to write data ]
+  [ perf record: Captured and wrote 0.753 MB perf.data ]
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Tested-by: Leo Yan <leo.yan@linaro.org>
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
 Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Peter Zijlstra <peterz@infradead.org>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: coresight@lists.linaro.org
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190524173508.29044-18-mathieu.poirier@linaro.org
+Link: http://lkml.kernel.org/r/20190605161633.12245-1-mathieu.poirier@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/util/cs-etm.c | 254 +++++++++++++++++++++++++++++++++++++--
- 1 file changed, 246 insertions(+), 8 deletions(-)
+ tools/perf/arch/arm/util/cs-etm.c | 127 +++++++++++++++++++++++++++++-
+ 1 file changed, 123 insertions(+), 4 deletions(-)
 
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 91496a3a2209..0c7776b51045 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -90,12 +90,26 @@ struct cs_etm_queue {
+diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+index cc7f1cd23b14..279c69caef91 100644
+--- a/tools/perf/arch/arm/util/cs-etm.c
++++ b/tools/perf/arch/arm/util/cs-etm.c
+@@ -31,6 +31,8 @@ struct cs_etm_recording {
+ 	struct auxtrace_record	itr;
+ 	struct perf_pmu		*cs_etm_pmu;
+ 	struct perf_evlist	*evlist;
++	int			wrapped_cnt;
++	bool			*wrapped;
+ 	bool			snapshot_mode;
+ 	size_t			snapshot_size;
  };
- 
- static int cs_etm__update_queues(struct cs_etm_auxtrace *etm);
-+static int cs_etm__process_queues(struct cs_etm_auxtrace *etm);
- static int cs_etm__process_timeless_queues(struct cs_etm_auxtrace *etm,
- 					   pid_t tid);
-+static int cs_etm__get_data_block(struct cs_etm_queue *etmq);
-+static int cs_etm__decode_data_block(struct cs_etm_queue *etmq);
- 
- /* PTMs ETMIDR [11:8] set to b0011 */
- #define ETMIDR_PTM_VERSION 0x00000300
- 
-+/*
-+ * A struct auxtrace_heap_item only has a queue_nr and a timestamp to
-+ * work with.  One option is to modify to auxtrace_heap_XYZ() API or simply
-+ * encode the etm queue number as the upper 16 bit and the channel as
-+ * the lower 16 bit.
-+ */
-+#define TO_CS_QUEUE_NR(queue_nr, trace_id_chan)	\
-+		      (queue_nr << 16 | trace_chan_id)
-+#define TO_QUEUE_NR(cs_queue_nr) (cs_queue_nr >> 16)
-+#define TO_TRACE_CHAN_ID(cs_queue_nr) (cs_queue_nr & 0x0000ffff)
-+
- static u32 cs_etm__get_v7_protocol_version(u32 etmidr)
- {
- 	etmidr &= ETMIDR_PTM_VERSION;
-@@ -147,6 +161,29 @@ void cs_etm__etmq_set_traceid_queue_timestamp(struct cs_etm_queue *etmq,
- 	etmq->pending_timestamp = trace_chan_id;
- }
- 
-+static u64 cs_etm__etmq_get_timestamp(struct cs_etm_queue *etmq,
-+				      u8 *trace_chan_id)
-+{
-+	struct cs_etm_packet_queue *packet_queue;
-+
-+	if (!etmq->pending_timestamp)
-+		return 0;
-+
-+	if (trace_chan_id)
-+		*trace_chan_id = etmq->pending_timestamp;
-+
-+	packet_queue = cs_etm__etmq_get_packet_queue(etmq,
-+						     etmq->pending_timestamp);
-+	if (!packet_queue)
-+		return 0;
-+
-+	/* Acknowledge pending status */
-+	etmq->pending_timestamp = 0;
-+
-+	/* See function cs_etm_decoder__do_{hard|soft}_timestamp() */
-+	return packet_queue->timestamp;
-+}
-+
- static void cs_etm__clear_packet_queue(struct cs_etm_packet_queue *queue)
- {
- 	int i;
-@@ -171,6 +208,20 @@ static void cs_etm__clear_packet_queue(struct cs_etm_packet_queue *queue)
- 	}
- }
- 
-+static void cs_etm__clear_all_packet_queues(struct cs_etm_queue *etmq)
-+{
-+	int idx;
-+	struct int_node *inode;
-+	struct cs_etm_traceid_queue *tidq;
-+	struct intlist *traceid_queues_list = etmq->traceid_queues_list;
-+
-+	intlist__for_each_entry(inode, traceid_queues_list) {
-+		idx = (int)(intptr_t)inode->priv;
-+		tidq = etmq->traceid_queues[idx];
-+		cs_etm__clear_packet_queue(&tidq->packet_queue);
-+	}
-+}
-+
- static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
- 				      struct cs_etm_traceid_queue *tidq,
- 				      u8 trace_chan_id)
-@@ -458,15 +509,15 @@ static int cs_etm__flush_events(struct perf_session *session,
- 	if (!tool->ordered_events)
- 		return -EINVAL;
- 
--	if (!etm->timeless_decoding)
--		return -EINVAL;
--
- 	ret = cs_etm__update_queues(etm);
- 
- 	if (ret < 0)
- 		return ret;
- 
--	return cs_etm__process_timeless_queues(etm, -1);
-+	if (etm->timeless_decoding)
-+		return cs_etm__process_timeless_queues(etm, -1);
-+
-+	return cs_etm__process_queues(etm);
- }
- 
- static void cs_etm__free_traceid_queues(struct cs_etm_queue *etmq)
-@@ -685,6 +736,9 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
- 			       unsigned int queue_nr)
- {
- 	int ret = 0;
-+	unsigned int cs_queue_nr;
-+	u8 trace_chan_id;
-+	u64 timestamp;
- 	struct cs_etm_queue *etmq = queue->priv;
- 
- 	if (list_empty(&queue->head) || etmq)
-@@ -702,6 +756,67 @@ static int cs_etm__setup_queue(struct cs_etm_auxtrace *etm,
- 	etmq->queue_nr = queue_nr;
- 	etmq->offset = 0;
- 
-+	if (etm->timeless_decoding)
-+		goto out;
-+
-+	/*
-+	 * We are under a CPU-wide trace scenario.  As such we need to know
-+	 * when the code that generated the traces started to execute so that
-+	 * it can be correlated with execution on other CPUs.  So we get a
-+	 * handle on the beginning of traces and decode until we find a
-+	 * timestamp.  The timestamp is then added to the auxtrace min heap
-+	 * in order to know what nibble (of all the etmqs) to decode first.
-+	 */
-+	while (1) {
-+		/*
-+		 * Fetch an aux_buffer from this etmq.  Bail if no more
-+		 * blocks or an error has been encountered.
-+		 */
-+		ret = cs_etm__get_data_block(etmq);
-+		if (ret <= 0)
-+			goto out;
-+
-+		/*
-+		 * Run decoder on the trace block.  The decoder will stop when
-+		 * encountering a timestamp, a full packet queue or the end of
-+		 * trace for that block.
-+		 */
-+		ret = cs_etm__decode_data_block(etmq);
-+		if (ret)
-+			goto out;
-+
-+		/*
-+		 * Function cs_etm_decoder__do_{hard|soft}_timestamp() does all
-+		 * the timestamp calculation for us.
-+		 */
-+		timestamp = cs_etm__etmq_get_timestamp(etmq, &trace_chan_id);
-+
-+		/* We found a timestamp, no need to continue. */
-+		if (timestamp)
-+			break;
-+
-+		/*
-+		 * We didn't find a timestamp so empty all the traceid packet
-+		 * queues before looking for another timestamp packet, either
-+		 * in the current data block or a new one.  Packets that were
-+		 * just decoded are useless since no timestamp has been
-+		 * associated with them.  As such simply discard them.
-+		 */
-+		cs_etm__clear_all_packet_queues(etmq);
-+	}
-+
-+	/*
-+	 * We have a timestamp.  Add it to the min heap to reflect when
-+	 * instructions conveyed by the range packets of this traceID queue
-+	 * started to execute.  Once the same has been done for all the traceID
-+	 * queues of each etmq, redenring and decoding can start in
-+	 * chronological order.
-+	 *
-+	 * Note that packets decoded above are still in the traceID's packet
-+	 * queue and will be processed in cs_etm__process_queues().
-+	 */
-+	cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_id_chan);
-+	ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
- out:
- 	return ret;
- }
-@@ -1846,6 +1961,28 @@ static int cs_etm__process_traceid_queue(struct cs_etm_queue *etmq,
- 	return ret;
- }
- 
-+static void cs_etm__clear_all_traceid_queues(struct cs_etm_queue *etmq)
-+{
-+	int idx;
-+	struct int_node *inode;
-+	struct cs_etm_traceid_queue *tidq;
-+	struct intlist *traceid_queues_list = etmq->traceid_queues_list;
-+
-+	intlist__for_each_entry(inode, traceid_queues_list) {
-+		idx = (int)(intptr_t)inode->priv;
-+		tidq = etmq->traceid_queues[idx];
-+
-+		/* Ignore return value */
-+		cs_etm__process_traceid_queue(etmq, tidq);
-+
-+		/*
-+		 * Generate an instruction sample with the remaining
-+		 * branchstack entries.
-+		 */
-+		cs_etm__flush(etmq, tidq);
-+	}
-+}
-+
- static int cs_etm__run_decoder(struct cs_etm_queue *etmq)
- {
- 	int err = 0;
-@@ -1913,6 +2050,105 @@ static int cs_etm__process_timeless_queues(struct cs_etm_auxtrace *etm,
+@@ -684,16 +686,131 @@ static int cs_etm_info_fill(struct auxtrace_record *itr,
  	return 0;
  }
  
-+static int cs_etm__process_queues(struct cs_etm_auxtrace *etm)
+-static int cs_etm_find_snapshot(struct auxtrace_record *itr __maybe_unused,
++static int cs_etm_alloc_wrapped_array(struct cs_etm_recording *ptr, int idx)
 +{
-+	int ret = 0;
-+	unsigned int cs_queue_nr, queue_nr;
-+	u8 trace_chan_id;
-+	u64 timestamp;
-+	struct auxtrace_queue *queue;
-+	struct cs_etm_queue *etmq;
-+	struct cs_etm_traceid_queue *tidq;
++	bool *wrapped;
++	int cnt = ptr->wrapped_cnt;
 +
-+	while (1) {
-+		if (!etm->heap.heap_cnt)
-+			goto out;
++	/* Make @ptr->wrapped as big as @idx */
++	while (cnt <= idx)
++		cnt++;
 +
-+		/* Take the entry at the top of the min heap */
-+		cs_queue_nr = etm->heap.heap_array[0].queue_nr;
-+		queue_nr = TO_QUEUE_NR(cs_queue_nr);
-+		trace_chan_id = TO_TRACE_CHAN_ID(cs_queue_nr);
-+		queue = &etm->queues.queue_array[queue_nr];
-+		etmq = queue->priv;
++	/*
++	 * Free'ed in cs_etm_recording_free().  Using realloc() to avoid
++	 * cross compilation problems where the host's system supports
++	 * reallocarray() but not the target.
++	 */
++	wrapped = realloc(ptr->wrapped, cnt * sizeof(bool));
++	if (!wrapped)
++		return -ENOMEM;
 +
-+		/*
-+		 * Remove the top entry from the heap since we are about
-+		 * to process it.
-+		 */
-+		auxtrace_heap__pop(&etm->heap);
++	wrapped[cnt - 1] = false;
++	ptr->wrapped_cnt = cnt;
++	ptr->wrapped = wrapped;
 +
-+		tidq  = cs_etm__etmq_get_traceid_queue(etmq, trace_chan_id);
-+		if (!tidq) {
-+			/*
-+			 * No traceID queue has been allocated for this traceID,
-+			 * which means something somewhere went very wrong.  No
-+			 * other choice than simply exit.
-+			 */
-+			ret = -EINVAL;
-+			goto out;
-+		}
-+
-+		/*
-+		 * Packets associated with this timestamp are already in
-+		 * the etmq's traceID queue, so process them.
-+		 */
-+		ret = cs_etm__process_traceid_queue(etmq, tidq);
-+		if (ret < 0)
-+			goto out;
-+
-+		/*
-+		 * Packets for this timestamp have been processed, time to
-+		 * move on to the next timestamp, fetching a new auxtrace_buffer
-+		 * if need be.
-+		 */
-+refetch:
-+		ret = cs_etm__get_data_block(etmq);
-+		if (ret < 0)
-+			goto out;
-+
-+		/*
-+		 * No more auxtrace_buffers to process in this etmq, simply
-+		 * move on to another entry in the auxtrace_heap.
-+		 */
-+		if (!ret)
-+			continue;
-+
-+		ret = cs_etm__decode_data_block(etmq);
-+		if (ret)
-+			goto out;
-+
-+		timestamp = cs_etm__etmq_get_timestamp(etmq, &trace_chan_id);
-+
-+		if (!timestamp) {
-+			/*
-+			 * Function cs_etm__decode_data_block() returns when
-+			 * there is no more traces to decode in the current
-+			 * auxtrace_buffer OR when a timestamp has been
-+			 * encountered on any of the traceID queues.  Since we
-+			 * did not get a timestamp, there is no more traces to
-+			 * process in this auxtrace_buffer.  As such empty and
-+			 * flush all traceID queues.
-+			 */
-+			cs_etm__clear_all_traceid_queues(etmq);
-+
-+			/* Fetch another auxtrace_buffer for this etmq */
-+			goto refetch;
-+		}
-+
-+		/*
-+		 * Add to the min heap the timestamp for packets that have
-+		 * just been decoded.  They will be processed and synthesized
-+		 * during the next call to cs_etm__process_traceid_queue() for
-+		 * this queue/traceID.
-+		 */
-+		cs_queue_nr = TO_CS_QUEUE_NR(queue_nr, trace_chan_id);
-+		ret = auxtrace_heap__add(&etm->heap, cs_queue_nr, timestamp);
-+	}
-+
-+out:
-+	return ret;
++	return 0;
 +}
 +
- static int cs_etm__process_itrace_start(struct cs_etm_auxtrace *etm,
- 					union perf_event *event)
- {
-@@ -1991,9 +2227,6 @@ static int cs_etm__process_event(struct perf_session *session,
- 		return -EINVAL;
- 	}
- 
--	if (!etm->timeless_decoding)
--		return -EINVAL;
--
- 	if (sample->time && (sample->time != (u64) -1))
- 		timestamp = sample->time;
- 	else
-@@ -2005,7 +2238,8 @@ static int cs_etm__process_event(struct perf_session *session,
- 			return err;
- 	}
- 
--	if (event->header.type == PERF_RECORD_EXIT)
-+	if (etm->timeless_decoding &&
-+	    event->header.type == PERF_RECORD_EXIT)
- 		return cs_etm__process_timeless_queues(etm,
- 						       event->fork.tid);
- 
-@@ -2014,6 +2248,10 @@ static int cs_etm__process_event(struct perf_session *session,
- 	else if (event->header.type == PERF_RECORD_SWITCH_CPU_WIDE)
- 		return cs_etm__process_switch_cpu_wide(etm, event);
- 
-+	if (!etm->timeless_decoding &&
-+	    event->header.type == PERF_RECORD_AUX)
-+		return cs_etm__process_queues(etm);
++static bool cs_etm_buffer_has_wrapped(unsigned char *buffer,
++				      size_t buffer_size, u64 head)
++{
++	u64 i, watermark;
++	u64 *buf = (u64 *)buffer;
++	size_t buf_size = buffer_size;
 +
++	/*
++	 * We want to look the very last 512 byte (chosen arbitrarily) in
++	 * the ring buffer.
++	 */
++	watermark = buf_size - 512;
++
++	/*
++	 * @head is continuously increasing - if its value is equal or greater
++	 * than the size of the ring buffer, it has wrapped around.
++	 */
++	if (head >= buffer_size)
++		return true;
++
++	/*
++	 * The value of @head is somewhere within the size of the ring buffer.
++	 * This can be that there hasn't been enough data to fill the ring
++	 * buffer yet or the trace time was so long that @head has numerically
++	 * wrapped around.  To find we need to check if we have data at the very
++	 * end of the ring buffer.  We can reliably do this because mmap'ed
++	 * pages are zeroed out and there is a fresh mapping with every new
++	 * session.
++	 */
++
++	/* @head is less than 512 byte from the end of the ring buffer */
++	if (head > watermark)
++		watermark = head;
++
++	/*
++	 * Speed things up by using 64 bit transactions (see "u64 *buf" above)
++	 */
++	watermark >>= 3;
++	buf_size >>= 3;
++
++	/*
++	 * If we find trace data at the end of the ring buffer, @head has
++	 * been there and has numerically wrapped around at least once.
++	 */
++	for (i = watermark; i < buf_size; i++)
++		if (buf[i])
++			return true;
++
++	return false;
++}
++
++static int cs_etm_find_snapshot(struct auxtrace_record *itr,
+ 				int idx, struct auxtrace_mmap *mm,
+-				unsigned char *data __maybe_unused,
++				unsigned char *data,
+ 				u64 *head, u64 *old)
+ {
++	int err;
++	bool wrapped;
++	struct cs_etm_recording *ptr =
++			container_of(itr, struct cs_etm_recording, itr);
++
++	/*
++	 * Allocate memory to keep track of wrapping if this is the first
++	 * time we deal with this *mm.
++	 */
++	if (idx >= ptr->wrapped_cnt) {
++		err = cs_etm_alloc_wrapped_array(ptr, idx);
++		if (err)
++			return err;
++	}
++
++	/*
++	 * Check to see if *head has wrapped around.  If it hasn't only the
++	 * amount of data between *head and *old is snapshot'ed to avoid
++	 * bloating the perf.data file with zeros.  But as soon as *head has
++	 * wrapped around the entire size of the AUX ring buffer it taken.
++	 */
++	wrapped = ptr->wrapped[idx];
++	if (!wrapped && cs_etm_buffer_has_wrapped(data, mm->len, *head)) {
++		wrapped = true;
++		ptr->wrapped[idx] = true;
++	}
++
+ 	pr_debug3("%s: mmap index %d old head %zu new head %zu size %zu\n",
+ 		  __func__, idx, (size_t)*old, (size_t)*head, mm->len);
+ 
+-	*old = *head;
+-	*head += mm->len;
++	/* No wrap has occurred, we can just use *head and *old. */
++	if (!wrapped)
++		return 0;
++
++	/*
++	 * *head has wrapped around - adjust *head and *old to pickup the
++	 * entire content of the AUX buffer.
++	 */
++	if (*head >= mm->len) {
++		*old = *head - mm->len;
++	} else {
++		*head += mm->len;
++		*old = *head - mm->len;
++	}
+ 
  	return 0;
+ }
+@@ -734,6 +851,8 @@ static void cs_etm_recording_free(struct auxtrace_record *itr)
+ {
+ 	struct cs_etm_recording *ptr =
+ 			container_of(itr, struct cs_etm_recording, itr);
++
++	zfree(&ptr->wrapped);
+ 	free(ptr);
  }
  
 -- 
