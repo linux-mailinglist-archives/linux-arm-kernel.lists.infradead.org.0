@@ -2,54 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45A363CC55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:56:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AA163CC68
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 15:02:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1G8bYIlvoOiXBDLH9o+YrLyzBVesvgeTK9f1QVstBbk=; b=kdAcIrl85MQT1rhU7iPksDlnQT
-	lQdRX9IqJ6q6ct2+iaPzAhVnr8D5QpENJ2Ay00wSdaAh38okzhoJ8yiUZ7owt1E9U6fxRUJNqHzBF
-	mz4YBwSS81yo4MdniKGEKLb3uyXCqhMe/m45bDiQW2F6/0qzoJJJMULjMVj0NV1qsE+LYdYNrO2zo
-	lGh0clBHegDVNLuyewqz1WB7kem14JVttGuI42ahzS1WS4rn6B0atcKsTtP52qoaYjDyQW6THnI2G
-	zVVeuNl9xiOCQtHH4A18M3KNEnSNTqcTJiALtts2NzFwjiehP8iFOfKsbe2ASUx6hi7zcBsTe1f86
-	oLcl+PcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JUfUnWx+WabYgkmLT0YRfUKkNNY/536biM6IX0KNNFQ=; b=gOoZrA97GbMnCF7svM9MhB70o
+	hePba498c6OcoBny0fgQM5zDWA5ylr+lFFAXl44W2oarQHxuSJbLupHPN4RVQGH1/C+DTFXsr+f4q
+	LFg/bIIkDTsRghBjVEfKFVBWN+qyePSgRoWIf7LamnDR8vY6iCQheJjHMTlynfKSi0jrSABEU83AR
+	2nqoqMO56WtTNeGJS87hyDbVGX4Fj6zy45pDMlRKU3bfK5sIhGfNh67o4ePxwU7Onj0ZrThpJJMU8
+	+5aQ+HeStQ+mUoVzGmmfCD9QdOiw5cKmGelOIOshyi2f3qzsuu5DA9iT/JZlOfIR5bZ78Bxf6izMn
+	7bOQDBtQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hagJv-0005Dj-6s; Tue, 11 Jun 2019 12:56:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hagHj-0002Py-A8
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 12:53:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 84AC5FEC;
- Tue, 11 Jun 2019 05:53:54 -0700 (PDT)
-Received: from e121650-lin.cambridge.arm.com (unknown [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4AE383F557;
- Tue, 11 Jun 2019 05:53:53 -0700 (PDT)
-From: Raphael Gault <raphael.gault@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH 7/7] Documentation: arm64: Document PMU counters access from
- userspace
-Date: Tue, 11 Jun 2019 13:53:15 +0100
-Message-Id: <20190611125315.18736-8-raphael.gault@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190611125315.18736-1-raphael.gault@arm.com>
-References: <20190611125315.18736-1-raphael.gault@arm.com>
+	id 1hagQI-0007xe-Sd; Tue, 11 Jun 2019 13:02:46 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hagQ4-0007vj-Ff; Tue, 11 Jun 2019 13:02:33 +0000
+Received: by mail-pg1-x543.google.com with SMTP id 83so6940772pgg.8;
+ Tue, 11 Jun 2019 06:02:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:subject:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=RYF8jmWoohaknAxpNSmkAVScav4AJcUimkVoJQxY0o4=;
+ b=oPZoz7UpspmDSRDP60yFZFTmgXjX4FyOYwKa4q4wZ/w/lcxofJ1bYofPYAVnjMjzNh
+ T1xSeHPQy/NF+HMNDHLcJPkcfMkJfU/RcaklDAK3s35nWtAcVv7JDueu9P85a7aCBC9k
+ F3CR+tVrxGah0e7BcVAvYWM3XpxAbCrN4VuuVy7F67t47vLln8oJGRYE4p+j3WEXt/2R
+ OOVG5FbU6/2xbMmHufaBHnyBRQjhPukeuPpsEfZQHAlkRQI1k5tcOHGAW39ClmkE1eHg
+ bEdWHKDHWxNhu/b1WlJg4lO9w4GuFwNLl6L5onMIq0QEamzcETftvpTFD4FXEgeUXlMO
+ 0XzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:subject:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=RYF8jmWoohaknAxpNSmkAVScav4AJcUimkVoJQxY0o4=;
+ b=XzEfZnjyQ+F4jEgXHXv+A3HswtNo5slBO0/JEkzZnRf5d+dwkQMi+qrZ6b528Xsb1I
+ JMSKVwMV2JEOTcVnM/d06M8HasSimn0dJ6OFgvbJnPgCyAlTnRPuKoSwYLO3IurI6lyj
+ RU0k4jj2g1i1suyL/n5LtCB/wkJ7cz45GbSSben74XaIEu/wphJqUR/65dQifunjTdSg
+ AEas+UH92oT4xcqtK/i6DG7AAeuZNYOh7ulbGqPPcqk09XuU4imVw81MuuiELHw7r8+Y
+ D5EnYP/vnJYWM+HPJiwBZfpL1072qTVOhwTpAvqmSre/gAlVWnz3SN4q6ap4YRPgs5M9
+ 6DZw==
+X-Gm-Message-State: APjAAAUIYXyXaQ1J+Mhd2NPo/FnjMi4ydCwCSNV6CHJ3MijkaCThKNtI
+ Upjhxgw234o9jfAHHpK1wBiuV0CNq/A=
+X-Google-Smtp-Source: APXvYqwOb0S95cl/7KsX0ESLaeUeaojcPDGOqXQQ0d6Vdvy+oGGi8WCHtt08DYRkCgQryg1VfwQ9MA==
+X-Received: by 2002:a63:c44f:: with SMTP id m15mr4501065pgg.34.1560258151007; 
+ Tue, 11 Jun 2019 06:02:31 -0700 (PDT)
+Received: from [10.44.0.192] ([103.48.210.53])
+ by smtp.gmail.com with ESMTPSA id g15sm27612945pfm.119.2019.06.11.06.02.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 11 Jun 2019 06:02:30 -0700 (PDT)
+From: Greg Ungerer <gregungerer00@gmail.com>
+X-Google-Original-From: Greg Ungerer <gerg@linux-m68k.org>
+Subject: Re: binfmt_flat cleanups and RISC-V support
+To: Christoph Hellwig <hch@lst.de>
+References: <20190610212015.9157-1-hch@lst.de>
+ <6e5fb7db-1d6f-7d49-553c-edc18f14f641@linux-m68k.org>
+ <20190611073802.GB21522@lst.de>
+Message-ID: <87039cee-925b-3f50-f29f-94e55ef6e985@linux-m68k.org>
+Date: Tue, 11 Jun 2019 23:02:24 +1000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20190611073802.GB21522@lst.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_055355_440337_43148D8E 
-X-CRM114-Status: GOOD (  13.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_060232_547774_C8D388B0 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: 2.5 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gregungerer00[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gregungerer00[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,74 +105,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- will.deacon@arm.com, acme@kernel.org, Raphael Gault <raphael.gault@arm.com>,
- mingo@redhat.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
+ linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-m68k@lists.linux-m68k.org, linux-riscv@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a documentation file to describe the access to the pmu hardware
-counters from userspace
 
-Signed-off-by: Raphael Gault <raphael.gault@arm.com>
----
- .../arm64/pmu_counter_user_access.txt         | 42 +++++++++++++++++++
- 1 file changed, 42 insertions(+)
- create mode 100644 Documentation/arm64/pmu_counter_user_access.txt
+On 11/6/19 5:38 pm, Christoph Hellwig wrote:
+> On Tue, Jun 11, 2019 at 04:51:02PM +1000, Greg Ungerer wrote:
+>> Hi Christoph,
+>>
+>> On 11/6/19 7:20 am, Christoph Hellwig wrote:
+>>> below is a larger stash of cleanups for the binfmt_misc code,
+>>> preparing for the last patch that now trivially adds RISC-V
+>>> support, which will be used for the RISC-V nommu series I am
+>>> about to post.
+>>
+>> Whole series looks pretty good. Just the one comment I made.
+>>
+>> I normally take these through the m68knommu git tree,
+>> if you have no problem with that I'll push it in there.
+>> It will hit linux-next from there.
+> 
+> Yes, that's fine.  We'll need it to bring up riscv nommu support,
+> but there is no actual dependency on the patches for it to compile,
+> just for it to actually be useful.
+> 
+> Btw, it seems like the uclinux-dev list is dead, is there a replacement
+> for it?
 
-diff --git a/Documentation/arm64/pmu_counter_user_access.txt b/Documentation/arm64/pmu_counter_user_access.txt
-new file mode 100644
-index 000000000000..6788b1107381
---- /dev/null
-+++ b/Documentation/arm64/pmu_counter_user_access.txt
-@@ -0,0 +1,42 @@
-+Access to PMU hardware counter from userspace
-+=============================================
-+
-+Overview
-+--------
-+The perf user-space tool relies on the PMU to monitor events. It offers an
-+abstraction layer over the hardware counters since the underlying
-+implementation is cpu-dependent.
-+Arm64 allows userspace tools to have access to the registers storing the
-+hardware counters' values directly.
-+
-+This targets specifically self-monitoring tasks in order to reduce the overhead
-+by directly accessing the registers without having to go through the kernel.
-+
-+How-to
-+------
-+The focus is set on the armv8 pmuv3 which makes sure that the access to the pmu
-+registers is enable and that the userspace have access to the relevent
-+information in order to use them.
-+
-+In order to have access to the hardware counter it is necessary to open the event
-+using the perf tool interface: the sys_perf_event_open syscall returns a fd which
-+can subsequently be used with the mmap syscall in order to retrieve a page of memory
-+containing information about the event.
-+The PMU driver uses this page to expose to the user the hardware counter's
-+index. Using this index enables the user to access the PMU registers using the
-+`mrs` instruction.
-+
-+Have a look `at tools/perf/arch/arm64/tests/user-events.c` for an example. It can be
-+run using the perf tool to check that the access to the registers works
-+correctly from userspace:
-+
-+./perf test -v
-+
-+About chained events
-+--------------------
-+When the user requests for an event to be counted on 64 bits, two hardware
-+counters are used and need to be combined to retrieve the correct value:
-+
-+val = read_counter(idx);
-+if ((event.attr.config1 & 0x1))
-+	val = (val << 32) | read_counter(idx - 1);
--- 
-2.17.1
+No, unfortunately no replacement. Generally I think anything that comes
+up goes to the architecture list that issues come up on. Probably not
+ideal, especially for things like this that are across all arches.
+
+Regards
+Greg
 
 
 _______________________________________________
