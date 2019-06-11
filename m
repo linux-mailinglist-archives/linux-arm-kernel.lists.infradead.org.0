@@ -2,53 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 874CD3D379
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:07:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DF4A3D391
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:09:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jNg2d2ReRUO+h+4pGeCYq8XHKTGMB4mFFObC8nOwD0A=; b=ZdlMGefYADt+Oa
-	UXXO2sAfXNnVsNxQgAzrDuNdm5y7kmvD9UzQMYtVHCd3OpX39ikLC8zuSN610sO0V1+e8/gk4FQMn
-	4B9wUzULIxvxafL+hBCTIk9RQxTnOVf+07XIr8RlVN1KUq0tBhNXeplbJDKhrgU7bHuxMJjNRVPCh
-	+C6tOYx9LXVeic4S1SRiGgBVwSVkJUw+j5pM4/JhNhDU56J+KohuZV+PR+mgrGWCjP0eU9LYA8bMz
-	QrIYN0RaIQ3hTH+nSO8wJctqnDVPayYHwV+WJOuiL0EJxAbo2j2+fUcif3FGUyyohoxtii5JGoIg7
-	Il70wDS33wMesYcmggrw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N0lUQykdJR+JOXHB4SiPyi4U1VmxZDrpc99WFQo2soQ=; b=VIwkdEWDSTb3uh
+	4/W9NTnGi429xQUgH6djBFdUDhkRCAjk1U7lnb9lpsEv7OFpH59QLS+3+LKBC/jkWwFjjGTaGoTS+
+	ktNK4TsZLRSoA0ke9ScLmT87oLYFpMJWw67H1d7oQmjoYEUNHA/f7Tn8R5F2M1RHlO26jKrMP5ZgW
+	A793foXNDHnXKXUiwO0N62s3UJxHMZ3M2hmfbZGpiXNS3SG/QNBK1IquZFNuPcuu3xRvw7HpzuAs5
+	z3FO8gF0A7++uTP4GaBiUncHaMaORx+QvBGP0wgJVLPdO1nEiOC6EB+RTt9rAIEZsH4tpXmWG1eqA
+	TFxi+FQGQIx4EN+YjEsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakEh-0004LO-Km; Tue, 11 Jun 2019 17:07:03 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hakCy-0002ya-Ci; Tue, 11 Jun 2019 17:05:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7Yq617plFowJ6SPqfSlFnXKBCkZMDSV9shNeKC4mMEY=; b=K0CsPURbcVID3VZgvAW0iTm3wR
- a4w5JgdjFouiUq0BWdslkyoBdxaVdGLJePyibi1Mog+r1AuYwR/+jqWtSVGIrgf6yzUg0z1U28CyG
- ZhJdIclAT572+X/UXggsJ8f8SVJMT/MisC//pgJXvXzFsvm9J+X3u1iSiUKWNx87KYuHGB3heK7cb
- r1U6atgMP9cSs7F68WdhTtVFB7a/r7PPkSHtsAXTs+U5GV1KWlGhJYzDFXrGHhlV1xt/wYfmrvWud
- Gs8cNb0zXmzCs1nXi+2dGANfmt3c8nyUKVKzyntwvyexURPTWIVP8gQmd/HhZ+q8RGBPy2CreqY6B
- yzJmGK5g==;
-Received: from 177.41.119.178.dynamic.adsl.gvt.net.br ([177.41.119.178]
- helo=coco.lan)
- by casper.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hakCs-0002PQ-Bo; Tue, 11 Jun 2019 17:05:10 +0000
-Date: Tue, 11 Jun 2019 14:05:01 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-Subject: Re: [PATCH v3 06/20] docs: mark orphan documents as such
-Message-ID: <20190611140501.11ba091b@coco.lan>
-In-Reply-To: <CAHp75VfTNJOGZx-PoUXLRvzghqf6bVUdJ+yFjE9hNtDLCQ1=UA@mail.gmail.com>
-References: <ff457774d46d96e8fe56b45409aba39d87a8672a.1559933665.git.mchehab+samsung@kernel.org>
- <0bea1c7c4fc06c7edabbf3185c0cbbc6e85eafd0.1559933665.git.mchehab+samsung@kernel.org>
- <CAHp75VfTNJOGZx-PoUXLRvzghqf6bVUdJ+yFjE9hNtDLCQ1=UA@mail.gmail.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+	id 1hakHE-0005Aa-E0; Tue, 11 Jun 2019 17:09:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hakGy-00058B-53
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:09:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D92B337;
+ Tue, 11 Jun 2019 10:09:16 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 800433F73C;
+ Tue, 11 Jun 2019 10:09:11 -0700 (PDT)
+Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
+ __uaccess_mask_ptr
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
+ <20190610175326.GC25803@arrakis.emea.arm.com>
+ <20190611145720.GA63588@arrakis.emea.arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <d3dc2b1f-e8c9-c60d-f648-0bc9b08f20e4@arm.com>
+Date: Tue, 11 Jun 2019 18:09:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190611145720.GA63588@arrakis.emea.arm.com>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190611_100924_753580_E80B624B 
+X-CRM114-Status: GOOD (  30.28  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,71 +66,276 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- dri-devel@lists.freedesktop.org,
- Platform Driver <platform-driver-x86@vger.kernel.org>,
- Paul Mackerras <paulus@samba.org>, linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@st.com>, Jonathan Corbet <corbet@lwn.net>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Andrew Donnellan <ajd@linux.ibm.com>, Linux PM <linux-pm@vger.kernel.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Matan Ziv-Av <matan@svgalib.org>,
- Mauro Carvalho Chehab <mchehab@infradead.org>, Daniel Vetter <daniel@ffwll.ch>,
- Sean Paul <sean@poorly.run>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Frederic Barrat <fbarrat@linux.ibm.com>, "open list:LINUX
- FOR POWERPC PA SEMI PWRFICIENT" <linuxppc-dev@lists.ozlabs.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ linux-kselftest@vger.kernel.org, Jacob Bramley <Jacob.Bramley@arm.com>,
+ Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Tue, 11 Jun 2019 19:52:04 +0300
-Andy Shevchenko <andy.shevchenko@gmail.com> escreveu:
+Hi Catalin,
 
-> On Fri, Jun 7, 2019 at 10:04 PM Mauro Carvalho Chehab
-> <mchehab+samsung@kernel.org> wrote:
-> > Sphinx doesn't like orphan documents:  
+...
+
+> ---------8<----------------
+> From 7c624777a4e545522dec1b34e60f0229cb2bd59f Mon Sep 17 00:00:00 2001
+> From: Catalin Marinas <catalin.marinas@arm.com>
+> Date: Tue, 11 Jun 2019 13:03:38 +0100
+> Subject: [PATCH] arm64: Introduce prctl() options to control the tagged user
+>  addresses ABI
 > 
-> >     Documentation/laptops/lg-laptop.rst: WARNING: document isn't included in any toctree  
+> It is not desirable to relax the ABI to allow tagged user addresses into
+> the kernel indiscriminately. This patch introduces a prctl() interface
+> for enabling or disabling the tagged ABI with a global sysctl control
+> for preventing applications from enabling the relaxed ABI (meant for
+> testing user-space prctl() return error checking without reconfiguring
+> the kernel). The ABI properties are inherited by threads of the same
+> application and fork()'ed children but cleared on execve().
 > 
-> >  Documentation/laptops/lg-laptop.rst             | 2 ++  
+> The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
+> MTE-specific settings like imprecise vs precise exceptions.
 > 
-> > diff --git a/Documentation/laptops/lg-laptop.rst b/Documentation/laptops/lg-laptop.rst
-> > index aa503ee9b3bc..f2c2ffe31101 100644
-> > --- a/Documentation/laptops/lg-laptop.rst
-> > +++ b/Documentation/laptops/lg-laptop.rst
-> > @@ -1,5 +1,7 @@
-> >  .. SPDX-License-Identifier: GPL-2.0+
-> >
-> > +:orphan:
-> > +
-> >  LG Gram laptop extra features
-> >  =============================
-> >  
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  arch/arm64/include/asm/processor.h   |  6 +++
+>  arch/arm64/include/asm/thread_info.h |  1 +
+>  arch/arm64/include/asm/uaccess.h     |  5 ++-
+>  arch/arm64/kernel/process.c          | 67 ++++++++++++++++++++++++++++
+>  include/uapi/linux/prctl.h           |  5 +++
+>  kernel/sys.c                         | 16 +++++++
+>  6 files changed, 99 insertions(+), 1 deletion(-)
 > 
-> Can we rather create a toc tree there?
-> It was a first document in reST format in that folder.
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index fcd0e691b1ea..fee457456aa8 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -307,6 +307,12 @@ extern void __init minsigstksz_setup(void);
+>  /* PR_PAC_RESET_KEYS prctl */
+>  #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
+>  
+> +/* PR_TAGGED_ADDR prctl */
+> +long set_tagged_addr_ctrl(unsigned long arg);
+> +long get_tagged_addr_ctrl(void);
+> +#define SET_TAGGED_ADDR_CTRL(arg)	set_tagged_addr_ctrl(arg)
+> +#define GET_TAGGED_ADDR_CTRL()		get_tagged_addr_ctrl()
+> +
+>  /*
+>   * For CONFIG_GCC_PLUGIN_STACKLEAK
+>   *
+> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
+> index c285d1ce7186..7263d4c973ce 100644
+> --- a/arch/arm64/include/asm/thread_info.h
+> +++ b/arch/arm64/include/asm/thread_info.h
+> @@ -101,6 +101,7 @@ void arch_release_task_struct(struct task_struct *tsk);
+>  #define TIF_SVE			23	/* Scalable Vector Extension in use */
+>  #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
+>  #define TIF_SSBD		25	/* Wants SSB mitigation */
+> +#define TIF_TAGGED_ADDR		26
+>
 
-Sure, but:
+Can you please put a comment here?
 
-1) I have a patch converting the other files on this dir to rst:
+>  #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
+>  #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
+> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+> index 9164ecb5feca..995b9ea11a89 100644
+> --- a/arch/arm64/include/asm/uaccess.h
+> +++ b/arch/arm64/include/asm/uaccess.h
+> @@ -73,6 +73,9 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+>  {
+>  	unsigned long ret, limit = current_thread_info()->addr_limit;
+>  
+> +	if (test_thread_flag(TIF_TAGGED_ADDR))
+> +		addr = untagged_addr(addr);
+> +
+>  	__chk_user_ptr(addr);
+>  	asm volatile(
+>  	// A + B <= C + 1 for all A,B,C, in four easy steps:
+> @@ -94,7 +97,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+>  	return ret;
+>  }
+>  
+> -#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
+> +#define access_ok(addr, size)	__range_ok(addr, size)
+>  #define user_addr_max			get_fs
+>>  #define _ASM_EXTABLE(from, to)						\
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 3767fb21a5b8..69d0be1fc708 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -30,6 +30,7 @@
+>  #include <linux/kernel.h>
+>  #include <linux/mm.h>
+>  #include <linux/stddef.h>
+> +#include <linux/sysctl.h>
+>  #include <linux/unistd.h>
+>  #include <linux/user.h>
+>  #include <linux/delay.h>
+> @@ -323,6 +324,7 @@ void flush_thread(void)
+>  	fpsimd_flush_thread();
+>  	tls_thread_flush();
+>  	flush_ptrace_hw_breakpoint(current);
+> +	clear_thread_flag(TIF_TAGGED_ADDR);
 
-	https://git.linuxtv.org/mchehab/experimental.git/commit/?h=convert_rst_renames_v4.1&id=abc13233035fdfdbc5ef2f2fbd3d127a1ab15530
+Nit: in line we the other functions in thread_flush we could have something like
+"tagged_addr_thread_flush", maybe inlined.
 
-2) It probably makes sense to move the entire dir to
-Documentation/admin-guide.
+>  }
+>  
+>  void release_thread(struct task_struct *dead_task)
+> @@ -552,3 +554,68 @@ void arch_setup_new_exec(void)
+>  
+>  	ptrauth_thread_init_user(current);
+>  }
+> +
+> +/*
+> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
+> + */
+> +static unsigned int tagged_addr_prctl_allowed = 1;
+> +
+> +long set_tagged_addr_ctrl(unsigned long arg)
+> +{
+> +	if (!tagged_addr_prctl_allowed)
+> +		return -EINVAL;
+> +	if (is_compat_task())
+> +		return -EINVAL;
+> +	if (arg & ~PR_TAGGED_ADDR_ENABLE)
+> +		return -EINVAL;
+> +
+> +	if (arg & PR_TAGGED_ADDR_ENABLE)
+> +		set_thread_flag(TIF_TAGGED_ADDR);
+> +	else
+> +		clear_thread_flag(TIF_TAGGED_ADDR);
+> +
+> +	return 0;
+> +}
+> +
+> +long get_tagged_addr_ctrl(void)
+> +{
+> +	if (!tagged_addr_prctl_allowed)
+> +		return -EINVAL;
+> +	if (is_compat_task())
+> +		return -EINVAL;
+> +
+> +	if (test_thread_flag(TIF_TAGGED_ADDR))
+> +		return PR_TAGGED_ADDR_ENABLE;
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * Global sysctl to disable the tagged user addresses support. This control
+> + * only prevents the tagged address ABI enabling via prctl() and does not
+> + * disable it for tasks that already opted in to the relaxed ABI.
+> + */
+> +static int zero;
+> +static int one = 1;
+> +
+> +static struct ctl_table tagged_addr_sysctl_table[] = {
+> +	{
+> +		.procname	= "tagged_addr",
+> +		.mode		= 0644,
+> +		.data		= &tagged_addr_prctl_allowed,
+> +		.maxlen		= sizeof(int),
+> +		.proc_handler	= proc_dointvec_minmax,
+> +		.extra1		= &zero,
+> +		.extra2		= &one,
+> +	},
+> +	{ }
+> +};
+> +
+> +static int __init tagged_addr_init(void)
+> +{
+> +	if (!register_sysctl("abi", tagged_addr_sysctl_table))
+> +		return -EINVAL;
+> +	return 0;
+> +}
+> +
+> +core_initcall(tagged_addr_init);
 
-So, I would prefer to have the :orphan: here while (1) is not merged.
+process.c seems already a bit "overcrowded". Probably we could move all the
+tagged_addr features in a separate file. What do you think? It would make easier
+the implementation of mte as well going forward.
 
-Thanks,
-Mauro
+> diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+> index 094bb03b9cc2..2e927b3e9d6c 100644
+> --- a/include/uapi/linux/prctl.h
+> +++ b/include/uapi/linux/prctl.h
+> @@ -229,4 +229,9 @@ struct prctl_mm_map {
+>  # define PR_PAC_APDBKEY			(1UL << 3)
+>  # define PR_PAC_APGAKEY			(1UL << 4)
+>  
+> +/* Tagged user address controls for arm64 */
+> +#define PR_SET_TAGGED_ADDR_CTRL		55
+> +#define PR_GET_TAGGED_ADDR_CTRL		56
+> +# define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
+> +
+>  #endif /* _LINUX_PRCTL_H */
+> diff --git a/kernel/sys.c b/kernel/sys.c
+> index 2969304c29fe..ec48396b4943 100644
+> --- a/kernel/sys.c
+> +++ b/kernel/sys.c
+> @@ -124,6 +124,12 @@
+>  #ifndef PAC_RESET_KEYS
+>  # define PAC_RESET_KEYS(a, b)	(-EINVAL)
+>  #endif
+> +#ifndef SET_TAGGED_ADDR_CTRL
+> +# define SET_TAGGED_ADDR_CTRL(a)	(-EINVAL)
+> +#endif
+> +#ifndef GET_TAGGED_ADDR_CTRL
+> +# define GET_TAGGED_ADDR_CTRL()		(-EINVAL)
+> +#endif
+>  
+>  /*
+>   * this is where the system-wide overflow UID and GID are defined, for
+> @@ -2492,6 +2498,16 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
+>  			return -EINVAL;
+>  		error = PAC_RESET_KEYS(me, arg2);
+>  		break;
+> +	case PR_SET_TAGGED_ADDR_CTRL:
+> +		if (arg3 || arg4 || arg5)
+> +			return -EINVAL;
+> +		error = SET_TAGGED_ADDR_CTRL(arg2);
+> +		break;
+> +	case PR_GET_TAGGED_ADDR_CTRL:
+> +		if (arg2 || arg3 || arg4 || arg5)
+> +			return -EINVAL;
+> +		error = GET_TAGGED_ADDR_CTRL();
+> +		break;
+
+Why do we need two prctl here? We could have only one and use arg2 as set/get
+and arg3 as a parameter. What do you think?
+
+>  	default:
+>  		error = -EINVAL;
+>  		break;
+> 
+
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
