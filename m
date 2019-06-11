@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B85D23D440
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:32:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB6913D43E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:32:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5UY13drdwQSBfjXYd1k8I1Xuag904YI2KB0oBNwfXpU=; b=pCsrohlB0Y+pTX
-	FF1hViZUvjb07taU+yptuK8ZCEI+sU+y2OtG9ZjojSdBAZ/DNcZNrLF4y3GoSmOlSiaWDgbunZKN/
-	KGn0RnCZzJuB9hQCfZyNkuc+As7CAFtznfTvRbuvL8D07G3vWn9bRUCBmb8hA7X3ehkmOQizhXGS2
-	5/e8XevI/8FPeI8tYUZWLaAtFQc5Y1xRR4d2OtquZGRIPzA5YAzpNJ+i6buYztwfoqPq7f0CNMGJH
-	sM8C4DWy40VXKhggkcX/BiVpDzeQ9ISOEU8avkyivFk/On9XhSxKEHFnxrcfFtsCTGviW6531Qt9E
-	uBhNirZISeMfl5Egfncw==;
+	List-Owner; bh=72NbRl78bjeW3nYSAvT/D5SMWcH0/pKcTpC2N52GCTw=; b=bPckNkOgcNfvoJ
+	/A8xfc31khkSwSktwVSzn3Zo7kazCWpNQF+7NxSlDFirmJfJT20aPmYS9LaorOZYNJ4ZHPzkiInIj
+	5XK7fG6jLd96UvbWOjNE4iaWwfITSF4STJBh+X0Oo41CQy3dYlx9bEut/dfqWqI1vEViLAEs/G+tX
+	7y6kTf6nSyG/+cTVGFnf81Due7g/ebkH7+Xn6M/C+aQAuIpYUCEWWwXBNcCLJMWb/imHxN8KOByv1
+	tye3Xt6bFgdBb2iU8jjRudkBiXflK696N4hH1jfRqZNP/Y+tC70W7pPaJZ5YjJAvERuy6ytzdcpHy
+	Hvr2hl1JCaX123f8d2Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakdH-0001I4-I4; Tue, 11 Jun 2019 17:32:27 +0000
-Received: from mail-co1nam03on062a.outbound.protection.outlook.com
- ([2a01:111:f400:fe48::62a]
- helo=NAM03-CO1-obe.outbound.protection.outlook.com)
+	id 1hakd1-0000xE-T4; Tue, 11 Jun 2019 17:32:12 +0000
+Received: from mail-eopbgr730075.outbound.protection.outlook.com
+ ([40.107.73.75] helo=NAM05-DM3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hakar-0006gS-3t
+ id 1hakaq-0006hK-QH
  for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:30:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=IS6cjG1C+6jVgFIqCGDdX4D7GaYYbMTHDsTRAaI+3A8=;
- b=CVaU31w8pkIT8vbrBHuuKL9WNjkH4dOAVqdx1TP3P96P1ZkUhz8+tZHYb1djkx8LC60Jp8g0ijpnWYIwTVtZhXYNJSGj+FAB6/pu428j0BLaqR1lILYEe0a2Yzlb/u5o/QESowNJH5kOphGRraI3c6CG+KrB3njX2D6M9HO68VI=
-Received: from BN6PR02CA0089.namprd02.prod.outlook.com (2603:10b6:405:60::30)
- by BYAPR02MB4935.namprd02.prod.outlook.com (2603:10b6:a03:47::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1987.10; Tue, 11 Jun
- 2019 17:29:51 +0000
-Received: from BL2NAM02FT035.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::200) by BN6PR02CA0089.outlook.office365.com
- (2603:10b6:405:60::30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1965.12 via Frontend
- Transport; Tue, 11 Jun 2019 17:29:51 +0000
+ bh=tI2vB49gwBMrj0B8x9WlnmTlrpSNJRpw2FVvnhx3ye0=;
+ b=eeXoG13PnkZw5RsIAGEV+KzLuXDDWcqs0T9A69PMWpxqccZ67wOkEk3vulAgDz1xRZ2Erpy0bB+gMqeQlGw8TWwqrCJUFGrEy8IYv0RbebhYoI6DsX3ZDVYm7iqe326ahMghzEIAOXuQkciCk4uoxuSXqDkRR2O3FDmVsM7bQJc=
+Received: from BL0PR02CA0083.namprd02.prod.outlook.com (2603:10b6:208:51::24)
+ by DM5PR02MB2683.namprd02.prod.outlook.com (2603:10b6:3:10e::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.15; Tue, 11 Jun
+ 2019 17:29:53 +0000
+Received: from SN1NAM02FT009.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::208) by BL0PR02CA0083.outlook.office365.com
+ (2603:10b6:208:51::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1965.14 via Frontend
+ Transport; Tue, 11 Jun 2019 17:29:53 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.80.198)
  smtp.mailfrom=xilinx.com; arndb.de; dkim=none (message not signed)
  header.d=none;arndb.de; dmarc=bestguesspass action=none
  header.from=xilinx.com;
 Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.80.198 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.80.198; helo=xir-pvapexch02.xlnx.xilinx.com;
-Received: from xir-pvapexch02.xlnx.xilinx.com (149.199.80.198) by
- BL2NAM02FT035.mail.protection.outlook.com (10.152.77.157) with Microsoft SMTP
+ client-ip=149.199.80.198; helo=xir-pvapexch01.xlnx.xilinx.com;
+Received: from xir-pvapexch01.xlnx.xilinx.com (149.199.80.198) by
+ SN1NAM02FT009.mail.protection.outlook.com (10.152.73.32) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
  15.20.1965.12 via Frontend Transport; Tue, 11 Jun 2019 17:29:51 +0000
 Received: from xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) by
- xir-pvapexch02.xlnx.xilinx.com (172.21.17.17) with Microsoft SMTP Server
+ xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
  15.1.1531.3; Tue, 11 Jun 2019 18:29:48 +0100
 Received: from smtp.xilinx.com (172.21.105.198) by
@@ -61,14 +60,14 @@ Received: from smtp.xilinx.com (172.21.105.198) by
 Received: from [149.199.110.15] (port=50346 helo=xirdraganc40.xilinx.com)
  by smtp.xilinx.com with esmtp (Exim 4.90)
  (envelope-from <dragan.cvetic@xilinx.com>)
- id 1hakai-0002MF-LG; Tue, 11 Jun 2019 18:29:48 +0100
+ id 1hakai-0002MF-Lz; Tue, 11 Jun 2019 18:29:48 +0100
 From: Dragan Cvetic <dragan.cvetic@xilinx.com>
 To: <arnd@arndb.de>, <gregkh@linuxfoundation.org>, <michal.simek@xilinx.com>, 
  <linux-arm-kernel@lists.infradead.org>, <robh+dt@kernel.org>,
  <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
-Subject: [PATCH V7 01/11] dt-bindings: xilinx-sdfec: Add SDFEC binding
-Date: Tue, 11 Jun 2019 18:29:35 +0100
-Message-ID: <1560274185-264438-2-git-send-email-dragan.cvetic@xilinx.com>
+Subject: [PATCH V7 02/11] misc: xilinx-sdfec: add core driver
+Date: Tue, 11 Jun 2019 18:29:36 +0100
+Message-ID: <1560274185-264438-3-git-send-email-dragan.cvetic@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
 References: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
@@ -77,41 +76,39 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.80.198; IPV:CAL; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(136003)(346002)(376002)(39860400002)(396003)(2980300002)(189003)(199004)(8676002)(7636002)(305945005)(71366001)(110136005)(54906003)(16586007)(316002)(60926002)(26826003)(246002)(478600001)(36906005)(50226002)(356004)(8936002)(6666004)(47776003)(5660300002)(50466002)(48376002)(476003)(426003)(70586007)(126002)(36756003)(70206006)(486006)(446003)(11346002)(956004)(2616005)(336012)(76130400001)(76176011)(7696005)(51416003)(26005)(9786002)(4326008)(44832011)(186003)(2906002)(107886003)(2201001)(28376004)(106002)(102446001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB4935; H:xir-pvapexch02.xlnx.xilinx.com;
+ SFS:(10009020)(396003)(376002)(39860400002)(346002)(136003)(2980300002)(189003)(199004)(186003)(36756003)(476003)(336012)(126002)(47776003)(28376004)(6666004)(356004)(426003)(14444005)(4326008)(5660300002)(44832011)(316002)(48376002)(70586007)(486006)(76130400001)(110136005)(107886003)(8676002)(36906005)(7636002)(70206006)(9786002)(106002)(305945005)(51416003)(54906003)(246002)(2201001)(7696005)(8936002)(76176011)(16586007)(50466002)(26826003)(478600001)(446003)(2616005)(71366001)(60926002)(26005)(956004)(11346002)(2906002)(50226002)(102446001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR02MB2683; H:xir-pvapexch01.xlnx.xilinx.com;
  FPR:; SPF:Pass; LANG:en; PTR:unknown-80-198.xilinx.com; MX:1; A:1; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 4669e56c-82c6-4150-fc19-08d6ee926913
+X-MS-Office365-Filtering-Correlation-Id: dcb8331f-9605-451d-cf23-08d6ee926964
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:BYAPR02MB4935; 
-X-MS-TrafficTypeDiagnostic: BYAPR02MB4935:
+ SRVR:DM5PR02MB2683; 
+X-MS-TrafficTypeDiagnostic: DM5PR02MB2683:
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-Microsoft-Antispam-PRVS: <BYAPR02MB4935AEEA9B8F92AA61511BF2CBED0@BYAPR02MB4935.namprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1122;
+X-Microsoft-Antispam-PRVS: <DM5PR02MB2683F05A174A794DBE69B900CBED0@DM5PR02MB2683.namprd02.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3383;
 X-Forefront-PRVS: 006546F32A
 X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: CMdVVQTtt12Le5PPXf9lyC5CidbdGi88zjIHEjE7IzhGxTDQDIy80rYgExFabzTD9mSTCsHjSUcNpnvQJZXtjQ4m32oPXyzzPngz+YG8K497bW+E2Bw9Vu+K3IQUPyyO7vmZ9vYnwKr0qF5j9YZ0Mrid/Wsxvsc9CqBbwxoF5vKqnbzm5qm8iKPqCTz6TIiQtMvgIhnVFMhOzhJU6bFvSwokp+jJEj3MJSPk6mlE1R4Dh86FjN48QtE3BOi3m+GVJ/F/9LeuVLhEqnvD14F+FNb9ojChvO28H4miDrBzE2AE7vQRgusDWazMCJ6/53HbQT+WJRfOeH1MYY74ODDKXYgXSW2ySQz54oCrrcCNRf8UijF7BJPUeNYP0jno6YWptNUPqXfWtVsXXh9hyd56dCSCKJNDT1H6zRluROsmYuI=
+X-Microsoft-Antispam-Message-Info: vv3CFlOMdfbTcZYba4Rbl546RnYr5cUBn3Rg4YJLnEfJtqUVZ5iUxSyQfITAyFvGCXaNrcvgguekKbPE03zM2enY1Sobvi/1r7n99F/2xt2yJk5ZFWYQ2u73qOLrjNFyWU1gc1PilgH1bVly9O+hxH4mcPLN3lTbmpwVnGGLriklRFFO84ex8ZRWRBrzsdC0TuE4i3Hmir1UrFNi2lFjFw9Y2VD8JA5A1RGzTRnNMP9F8Gwm4Ui3yRNHvf7Xyu0fL6wL2nQ8MwPbTEYQV0XjT8BXDpI9yyv2x2V7cJOOuZvrMD4hOfNN0kPQU7Sf7M6tQmi0UMztuBuaqrDQi5q3UFe+M9Eue3r7nhtlG1Xkl+ojb5oVRSZO5+RoZkmIBvUTm85Ios+13xKKbn0FiVw0Y7yOTPmfNJT/ODtDhDCORCE=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2019 17:29:51.3445 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4669e56c-82c6-4150-fc19-08d6ee926913
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2019 17:29:51.6611 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: dcb8331f-9605-451d-cf23-08d6ee926964
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.80.198];
- Helo=[xir-pvapexch02.xlnx.xilinx.com]
+ Helo=[xir-pvapexch01.xlnx.xilinx.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB4935
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR02MB2683
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_102957_202576_FAC7A492 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_102956_855670_F406F30F 
+X-CRM114-Status: GOOD (  17.91  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe48:0:0:0:62a listed in]
- [list.dnswl.org]
+ no trust [40.107.73.75 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -135,81 +132,223 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the Soft Decision Forward Error Correction (SDFEC) Engine
-bindings which is available for the Zynq UltraScale+ RFSoC
-FPGA's.
+Implement a platform driver that matches with xlnx,
+sd-fec-1.1 device tree node and registers as a character
+device, including:
+- SD-FEC driver binds to sdfec DT node.
+- creates and initialise an initial driver dev structure.
+- add the driver in Linux build and Kconfig.
 
-Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+Tested-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
+Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 ---
- .../devicetree/bindings/misc/xlnx,sd-fec.txt       | 58 ++++++++++++++++++++++
- 1 file changed, 58 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
+ drivers/misc/Kconfig        |  12 ++++
+ drivers/misc/Makefile       |   1 +
+ drivers/misc/xilinx_sdfec.c | 162 ++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 175 insertions(+)
+ create mode 100644 drivers/misc/xilinx_sdfec.c
 
-diff --git a/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt b/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
+diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
+index 6b0417b..319a6bf 100644
+--- a/drivers/misc/Kconfig
++++ b/drivers/misc/Kconfig
+@@ -471,6 +471,18 @@ config PCI_ENDPOINT_TEST
+            Enable this configuration option to enable the host side test driver
+            for PCI Endpoint.
+ 
++config XILINX_SDFEC
++	tristate "Xilinx SDFEC 16"
++	help
++	  This option enables support for the Xilinx SDFEC (Soft Decision
++	  Forward Error Correction) driver. This enables a char driver
++	  for the SDFEC.
++
++	  You may select this driver if your design instantiates the
++	  SDFEC(16nm) hardened block. To compile this as a module choose M.
++
++	  If unsure, say N.
++
+ config MISC_RTSX
+ 	tristate
+ 	default MISC_RTSX_PCI || MISC_RTSX_USB
+diff --git a/drivers/misc/Makefile b/drivers/misc/Makefile
+index b9affcd..0cb3546 100644
+--- a/drivers/misc/Makefile
++++ b/drivers/misc/Makefile
+@@ -59,3 +59,4 @@ obj-$(CONFIG_OCXL)		+= ocxl/
+ obj-y				+= cardreader/
+ obj-$(CONFIG_PVPANIC)   	+= pvpanic.o
+ obj-$(CONFIG_HABANA_AI)		+= habanalabs/
++obj-$(CONFIG_XILINX_SDFEC)	+= xilinx_sdfec.o
+diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
 new file mode 100644
-index 0000000..e328963
+index 0000000..ff0704b
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/misc/xlnx,sd-fec.txt
-@@ -0,0 +1,58 @@
-+* Xilinx SDFEC(16nm) IP *
++++ b/drivers/misc/xilinx_sdfec.c
+@@ -0,0 +1,162 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Xilinx SDFEC
++ *
++ * Copyright (C) 2019 Xilinx, Inc.
++ *
++ * Description:
++ * This driver is developed for SDFEC16 (Soft Decision FEC 16nm)
++ * IP. It exposes a char device which supports file operations
++ * like  open(), close() and ioctl().
++ */
 +
-+The Soft Decision Forward Error Correction (SDFEC) Engine is a Hard IP block
-+which provides high-throughput LDPC and Turbo Code implementations.
-+The LDPC decode & encode functionality is capable of covering a range of
-+customer specified Quasi-cyclic (QC) codes. The Turbo decode functionality
-+principally covers codes used by LTE. The FEC Engine offers significant
-+power and area savings versus implementations done in the FPGA fabric.
++#include <linux/miscdevice.h>
++#include <linux/io.h>
++#include <linux/interrupt.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/of_platform.h>
++#include <linux/poll.h>
++#include <linux/slab.h>
++#include <linux/clk.h>
 +
++#define DEV_NAME_LEN 12
 +
-+Required properties:
-+- compatible: Must be "xlnx,sd-fec-1.1"
-+- clock-names : List of input clock names from the following:
-+    - "core_clk", Main processing clock for processing core (required)
-+    - "s_axi_aclk", AXI4-Lite memory-mapped slave interface clock (required)
-+    - "s_axis_din_aclk", DIN AXI4-Stream Slave interface clock (optional)
-+    - "s_axis_din_words-aclk", DIN_WORDS AXI4-Stream Slave interface clock (optional)
-+    - "s_axis_ctrl_aclk",  Control input AXI4-Stream Slave interface clock (optional)
-+    - "m_axis_dout_aclk", DOUT AXI4-Stream Master interface clock (optional)
-+    - "m_axis_dout_words_aclk", DOUT_WORDS AXI4-Stream Master interface clock (optional)
-+    - "m_axis_status_aclk", Status output AXI4-Stream Master interface clock (optional)
-+- clocks : Clock phandles (see clock_bindings.txt for details).
-+- reg: Should contain Xilinx SDFEC 16nm Hardened IP block registers
-+  location and length.
-+- xlnx,sdfec-code : Should contain "ldpc" or "turbo" to describe the codes
-+  being used.
-+- xlnx,sdfec-din-words : A value 0 indicates that the DIN_WORDS interface is
-+  driven with a fixed value and is not present on the device, a value of 1
-+  configures the DIN_WORDS to be block based, while a value of 2 configures the
-+  DIN_WORDS input to be supplied for each AXI transaction.
-+- xlnx,sdfec-din-width : Configures the DIN AXI stream where a value of 1
-+  configures a width of "1x128b", 2 a width of "2x128b" and 4 configures a width
-+  of "4x128b".
-+- xlnx,sdfec-dout-words : A value 0 indicates that the DOUT_WORDS interface is
-+  driven with a fixed value and is not present on the device, a value of 1
-+  configures the DOUT_WORDS to be block based, while a value of 2 configures the
-+  DOUT_WORDS input to be supplied for each AXI transaction.
-+- xlnx,sdfec-dout-width : Configures the DOUT AXI stream where a value of 1
-+  configures a width of "1x128b", 2 a width of "2x128b" and 4 configures a width
-+  of "4x128b".
-+Optional properties:
-+- interrupts: should contain SDFEC interrupt number
++static struct idr dev_idr;
++static struct mutex dev_idr_lock;
 +
-+Example
-+---------------------------------------
-+	sd_fec_0: sd-fec@a0040000 {
-+		compatible = "xlnx,sd-fec-1.1";
-+		clock-names = "core_clk","s_axi_aclk","s_axis_ctrl_aclk","s_axis_din_aclk","m_axis_status_aclk","m_axis_dout_aclk";
-+		clocks = <&misc_clk_2>,<&misc_clk_0>,<&misc_clk_1>,<&misc_clk_1>,<&misc_clk_1>, <&misc_clk_1>;
-+		reg = <0x0 0xa0040000 0x0 0x40000>;
-+		interrupt-parent = <&axi_intc>;
-+		interrupts = <1 0>;
-+		xlnx,sdfec-code = "ldpc";
-+		xlnx,sdfec-din-words = <0>;
-+		xlnx,sdfec-din-width = <2>;
-+		xlnx,sdfec-dout-words = <0>;
-+		xlnx,sdfec-dout-width = <1>;
-+	};
++/**
++ * struct xsdfec_dev - Driver data for SDFEC
++ * @regs: device physical base address
++ * @dev: pointer to device struct
++ * @miscdev: Misc device handle
++ * @error_data_lock: Error counter and states spinlock
++ * @dev_name: Device name
++ * @dev_id: Device ID
++ *
++ * This structure contains necessary state for SDFEC driver to operate
++ */
++struct xsdfec_dev {
++	void __iomem *regs;
++	struct device *dev;
++	struct miscdevice miscdev;
++	/* Spinlock to protect state_updated and stats_updated */
++	spinlock_t error_data_lock;
++	char dev_name[DEV_NAME_LEN];
++	int dev_id;
++};
++
++static const struct file_operations xsdfec_fops = {
++	.owner = THIS_MODULE,
++};
++
++static void xsdfec_idr_remove(struct xsdfec_dev *xsdfec)
++{
++	mutex_lock(&dev_idr_lock);
++	idr_remove(&dev_idr, xsdfec->dev_id);
++	mutex_unlock(&dev_idr_lock);
++}
++
++static int xsdfec_probe(struct platform_device *pdev)
++{
++	struct xsdfec_dev *xsdfec;
++	struct device *dev;
++	struct resource *res;
++	int err;
++
++	xsdfec = devm_kzalloc(&pdev->dev, sizeof(*xsdfec), GFP_KERNEL);
++	if (!xsdfec)
++		return -ENOMEM;
++
++	xsdfec->dev = &pdev->dev;
++	spin_lock_init(&xsdfec->error_data_lock);
++
++	dev = xsdfec->dev;
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	xsdfec->regs = devm_ioremap_resource(dev, res);
++	if (IS_ERR(xsdfec->regs)) {
++		err = PTR_ERR(xsdfec->regs);
++		return err;
++	}
++
++	/* Save driver private data */
++	platform_set_drvdata(pdev, xsdfec);
++
++	mutex_lock(&dev_idr_lock);
++	err = idr_alloc(&dev_idr, xsdfec->dev_name, 0, 0, GFP_KERNEL);
++	mutex_unlock(&dev_idr_lock);
++	if (err < 0)
++		goto err_xsddev_idr;
++	xsdfec->dev_id = err;
++
++	snprintf(xsdfec->dev_name, DEV_NAME_LEN, "xsdfec%d", xsdfec->dev_id);
++	xsdfec->miscdev.minor = MISC_DYNAMIC_MINOR;
++	xsdfec->miscdev.name = xsdfec->dev_name;
++	xsdfec->miscdev.fops = &xsdfec_fops;
++	xsdfec->miscdev.parent = dev;
++	err = misc_register(&xsdfec->miscdev);
++	if (err) {
++		dev_err(dev, "error:%d. Unable to register device", err);
++		return err;
++	}
++	return 0;
++
++err_xsddev_idr:
++	xsdfec_idr_remove(xsdfec);
++
++	return err;
++}
++
++static int xsdfec_remove(struct platform_device *pdev)
++{
++	struct xsdfec_dev *xsdfec;
++
++	xsdfec = platform_get_drvdata(pdev);
++	misc_deregister(&xsdfec->miscdev);
++	xsdfec_idr_remove(xsdfec);
++	return 0;
++}
++
++static const struct of_device_id xsdfec_of_match[] = {
++	{
++		.compatible = "xlnx,sd-fec-1.1",
++	},
++	{ /* end of table */ }
++};
++MODULE_DEVICE_TABLE(of, xsdfec_of_match);
++
++static struct platform_driver xsdfec_driver = {
++	.driver = {
++		.name = "xilinx-sdfec",
++		.of_match_table = xsdfec_of_match,
++	},
++	.probe = xsdfec_probe,
++	.remove =  xsdfec_remove,
++};
++
++static int __init xsdfec_init(void)
++{
++	int err;
++
++	mutex_init(&dev_idr_lock);
++	idr_init(&dev_idr);
++	err = platform_driver_register(&xsdfec_driver);
++	if (err < 0) {
++		pr_err("%s Unabled to register SDFEC driver", __func__);
++		return err;
++	}
++	return 0;
++}
++
++static void __exit xsdfec_exit(void)
++{
++	platform_driver_unregister(&xsdfec_driver);
++	idr_destroy(&dev_idr);
++}
++
++module_init(xsdfec_init);
++module_exit(xsdfec_exit);
++
++MODULE_AUTHOR("Xilinx, Inc");
++MODULE_DESCRIPTION("Xilinx SD-FEC16 Driver");
++MODULE_LICENSE("GPL");
 -- 
 2.7.4
 
