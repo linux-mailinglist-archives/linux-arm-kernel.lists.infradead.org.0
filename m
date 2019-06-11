@@ -2,73 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ED623CA8C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:57:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B6BC3CA91
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:58:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CPTGVYzTO/pWOAlNDeNzKimxyOYQcM/ieI3IRbfTYfk=; b=kbieiOV/xpuqOq
-	UI4aMzNjW9kTK7u/zFRcJ0URw4Llr9DoCv/V8XcRgEEtbb4FvPt1EhhinjUgWLp+XVWI/F+qcScSQ
-	9vQQ1kl0IYwwviJyHaR4ftVYtsWVDvS6H0YHJL1toDVNRj9gUSxhsxKlYAxw1y5pz2uBn4aUFm1Gn
-	2ATlDnaKNft9aVhgXKS+Uf1f66HDz/UxsWq3wI4d+XF0Kl0e6myobuKAuuG/o+zXMekw5hCrxpQic
-	UcIw0ijnbM76HVdKXIXifxhU1Y9J0e0lSaHvaU71tBWPCRIaTmoZ/EaDyd7CXQxZB4PAmk2a6s6hm
-	Gura/4ofdVEkiA1TnbCA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O1D7Ovo9yFwiD8fxv98mCq4fyiLE1LotyWbKmNsMzmw=; b=PS/OoihSNmb4nV
+	1HmgnSCzxZfs8VhP7FbDMN9ByYXnPYRoWw4XpZqrGGEPSNQX5fe72C1beX0wpK/8If2hsNqvXa+nI
+	WAb3r0PaPxZiUQEK+688EKAcznfk+kBrdhWzQ6rXFCThiiIYBkRYDshPtooSKaTWx+GR7Uq4DqkyQ
+	GvSmyzSIqQLjw0lT6EYzUsnOdPN1aocwGduDwNmzY25jQk2yQabsR1PO5LOD3B2hKsjQwaa/hxE9k
+	LK2TvDsFW24hzHg7QZ64pS+QTBDo/UDrDh0FfF+pX6Dsu+cG9x2VJIobrSEjgZU8snhn28aPrqCz4
+	NLKdgHd0CJjBp4etNESA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hafP6-0004gR-Da; Tue, 11 Jun 2019 11:57:28 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1hafPp-00055D-AU; Tue, 11 Jun 2019 11:58:13 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hafOm-0004fZ-J4
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:57:10 +0000
-Received: by mail-qt1-f195.google.com with SMTP id a15so14092272qtn.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 04:57:07 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=K3Sm1X+d2sov0ITQpzgk6HQiz/Phckwgb6KD7DQ+q/M=;
- b=grbCN0utG5hfbUEScaRzLcrDPOQBaPoNEhdVxTWVq9e/mpe4ak2SKtSHq/OrXKSEr4
- +aH2r0DnIj5A/ZWdAjJYm4W98w0MGhi/EYpO+/7bsZKJAQ9zAR8XaQf/dpFsFp2XkLc8
- WaJKTJ09O5WBjWY/UKDgnq+Gtz2IxRZYO9acmD1kYFQlaifzununQfhHUdssQBicTiFi
- hPG/H9r3BdhcPG+Hc2Dsq8ccMcMgrmXp03X/acqyv8i5ug0LwgE+BsObPQhDlIzMQVi8
- 6pZyW7vtKiQHbs9SQ/9XYSUcrYc/vQpdUJ46/najpnZxgx+pQZn3iYbAEdP08Vtitjxn
- jElw==
-X-Gm-Message-State: APjAAAXUbuduLBY5eYaBXfQK1jy6aygpUm9FPj8uHgKQVsNpPDwOX14t
- 4R8apSPr2HCdGSlW64XqoMUY/cjnboeNWmvKgd0=
-X-Google-Smtp-Source: APXvYqwirPrDDDsMco7I6kepiNjDwf87AqZbyPYaRT4gsoLYAygjHsKyh9v3e1zX7J05MHnONK4y+Dh0Ic32yh7e2fg=
-X-Received: by 2002:ac8:2dae:: with SMTP id p43mr45188807qta.304.1560254226737; 
- Tue, 11 Jun 2019 04:57:06 -0700 (PDT)
+ id 1hafOm-0004fY-Gy; Tue, 11 Jun 2019 11:57:10 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5BBuhEc126815;
+ Tue, 11 Jun 2019 06:56:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560254203;
+ bh=pMoVVapOIW2ESz+4jX391PkjziL8+0IUeCu70eJHeHk=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=Uy8vh+ffYjEzKlnXvhhiWl3bj6a50/A/pOhsK7C8eELDCVJqP1/wRMfAnscEl3z3A
+ tsUWoaq8X6AqazLycDMqrjqhWp1bioJ7poDLJO+N+/InYUTVIjPT3jt6b+ZZS4hZ/J
+ J8a+6BBPg2V2WG5gbwIhfXvoxMi2NaoiXoqCX/CI=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5BBuhXD014880
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 11 Jun 2019 06:56:43 -0500
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 11
+ Jun 2019 06:56:42 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 11 Jun 2019 06:56:42 -0500
+Received: from [172.24.190.89] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5BBubJx076305;
+ Tue, 11 Jun 2019 06:56:38 -0500
+Subject: Re: [PATCH v5 3/5] mtd: Add support for HyperBus memory devices
+To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>, David Woodhouse
+ <dwmw2@infradead.org>, Brian Norris <computersforpeace@gmail.com>, Boris
+ Brezillon <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>,
+ Richard Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
+References: <20190609103227.24875-1-vigneshr@ti.com>
+ <20190609103227.24875-4-vigneshr@ti.com>
+ <58e9608d-35ff-0436-6075-b2e4ed4b8594@cogentembedded.com>
+From: Vignesh Raghavendra <vigneshr@ti.com>
+Message-ID: <f47d4d57-afb2-3b39-fae9-3ed740a2b8a6@ti.com>
+Date: Tue, 11 Jun 2019 17:27:25 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
-In-Reply-To: <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 11 Jun 2019 13:56:49 +0200
-Message-ID: <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-To: Johannes Berg <johannes@sipsolutions.net>
+In-Reply-To: <58e9608d-35ff-0436-6075-b2e4ed4b8594@cogentembedded.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_045708_628557_8671FD93 
-X-CRM114-Status: GOOD (  30.46  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190611_045708_644665_739E472D 
+X-CRM114-Status: GOOD (  28.88  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,127 +95,253 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
- linux-arm-msm@vger.kernel.org, abhishek.esse@gmail.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alex Elder <elder@linaro.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- Networking <netdev@vger.kernel.org>, linux-soc@vger.kernel.org,
- David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+Cc: devicetree@vger.kernel.org, Tudor Ambarus <Tudor.Ambarus@microchip.com>,
+ linux-kernel@vger.kernel.org, Joakim Tjernlund <Joakim.Tjernlund@infinera.com>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 10:12 AM Johannes Berg
-<johannes@sipsolutions.net> wrote:
 
-> > As I've made clear before, my work on this has been focused on the IPA transport,
-> > and some of this higher-level LTE architecture is new to me.  But it
-> > seems pretty clear that an abstracted WWAN subsystem is a good plan,
-> > because these devices represent a superset of what a "normal" netdev
-> > implements.
->
-> I'm not sure I'd actually call it a superset. By themselves, these
-> netdevs are actually completely useless to the network stack, AFAICT.
-> Therefore, the overlap with netdevs you can really use with the network
-> stack is pretty small?
 
-I think Alex meant the concept of having a type of netdev with a generic
-user space interface for wwan and similar to a wlan device, as I understood
-you had suggested as well, as opposed to a stacked device as in
-rmnet or those drivers it seems to be modeled after (vlan, ip tunnel, ...)/.
+On 10/06/19 11:27 PM, Sergei Shtylyov wrote:
+> On 06/09/2019 01:32 PM, Vignesh Raghavendra wrote:
+> 
+>> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
+>> Bus interface between a host system master and one or more slave
+>> interfaces. HyperBus is used to connect microprocessor, microcontroller,
+>> or ASIC devices with random access NOR flash memory (called HyperFlash)
+>> or self refresh DRAM (called HyperRAM).
+>>
+>> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
+>> signal and either Single-ended clock(3.0V parts) or Differential clock
+>> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
+>> At bus level, it follows a separate protocol described in HyperBus
+>> specification[1].
+>>
+>> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
+>> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
+>> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
+>> HyperBus operates at >166MHz frequencies.
+>> HyperRAM provides direct random read/write access to flash memory
+>> array.
+>>
+>> But, HyperBus memory controllers seem to abstract implementation details
+>> and expose a simple MMIO interface to access connected flash.
+>>
+>> Add support for registering HyperFlash devices with MTD framework. MTD
+>> maps framework along with CFI chip support framework are used to support
+>> communicating with flash.
+>>
+>> Framework is modelled along the lines of spi-nor framework. HyperBus
+>> memory controller (HBMC) drivers calls hyperbus_register_device() to
+>> register a single HyperFlash device. HyperFlash core parses MMIO access
+>> information from DT, sets up the map_info struct, probes CFI flash and
+>> registers it with MTD framework.
+>>
+>> Some HBMC masters need calibration/training sequence[3] to be carried
+>> out, in order for DLL inside the controller to lock, by reading a known
+>> string/pattern. This is done by repeatedly reading CFI Query
+>> Identification String. Calibration needs to be done before trying to detect
+>> flash as part of CFI flash probe.
+>>
+>> HyperRAM is not supported at the moment.
+>>
+>> HyperBus specification can be found at[1]
+>> HyperFlash datasheet can be found at[2]
+>>
+>> [1] https://www.cypress.com/file/213356/download
+>> [2] https://www.cypress.com/file/213346/download
+>> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
+>>     Table 12-5741. HyperFlash Access Sequence
+>>
+>> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
+> [...]
+>> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
+>> new file mode 100644
+>> index 000000000000..df1f75e10b1a
+>> --- /dev/null
+>> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
+>> @@ -0,0 +1,191 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +//
+>> +// Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
+>> +// Author: Vignesh Raghavendra <vigneshr@ti.com>
+>> +
+>> +#include <linux/err.h>
+>> +#include <linux/kernel.h>
+>> +#include <linux/module.h>
+>> +#include <linux/mtd/hyperbus.h>
+>> +#include <linux/mtd/map.h>
+>> +#include <linux/mtd/mtd.h>
+>> +#include <linux/mtd/cfi.h>
+>> +#include <linux/of.h>
+>> +#include <linux/of_address.h>
+>> +#include <linux/types.h>
+>> +
+>> +#define HYPERBUS_CALIB_COUNT 25
+> 
+>    Mhm, I think I've already protested about this being #define'd here...
+> 
 
-> > HOWEVER I disagree with your suggestion that the IPA code should
-> > not be committed until after that is all sorted out.  In part it's
-> > for selfish reasons, but I think there are legitimate reasons to
-> > commit IPA now *knowing* that it will need to be adapted to fit
-> > into the generic model that gets defined and developed.  Here
-> > are some reasons why.
->
-> I can't really argue with those, though I would point out that the
-> converse also holds - if we commit to this now, then we will have to
-> actually keep the API offered by IPA/rmnet today, so we cannot actually
-> remove the netdev again, even if we do migrate it to offer support for a
-> WWAN framework in the future.
+I thought you had agreed that default optional calibration routine can
+be part of core code and thus this #define.
 
-Right. The interface to support rmnet might be simple enough to keep
-next to what becomes the generic interface, but it will always continue
-to be an annoyance.
+Anyways, what is your preference here? Drop the constant and use a local
+variable in hyperbus_calibrate()?
+Or are you suggesting to move hyperbus_calibrate() TI's specific driver?
 
-> > Second, the IPA code has been out for review recently, and has been
-> > the subject of some detailed discussion in the past few weeks.  Arnd
-> > especially has invested considerable time in review and discussion.
-> > Delaying things until after a better generic model is settled on
-> > (which I'm guessing might be on the order of months)
->
->
-> I dunno if it really has to be months. I think we can cobble something
-> together relatively quickly that addresses the needs of IPA more
-> specifically, and then extend later?
->
-> But OTOH it may make sense to take a more paced approach and think
-> about the details more carefully than we have over in the other thread so far.
 
-I would hope that as soon as we can agree on a general approach, it
-would also be possible to merge a minimal implementation into the kernel
-along with IPA. Alex already mentioned that IPA in its current state does
-not actually support more than one data channel, so the necessary
-setup for it becomes even simpler.
+> [...]
+>> +int hyperbus_register_device(struct hyperbus_device *hbdev)
+>> +{
+>> +	const struct hyperbus_ops *ops;
+>> +	struct hyperbus_ctlr *ctlr;
+>> +	struct device_node *np;
+>> +	struct map_info *map;
+>> +	struct resource res;
+>> +	struct device *dev;
+>> +	int ret;
+>> +
+>> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
+>> +		pr_err("hyperbus: please fill all the necessary fields!\n");
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	np = hbdev->np;
+>> +	ctlr = hbdev->ctlr;
+>> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
+>> +		return -ENODEV;
+>> +
+>> +	hbdev->memtype = HYPERFLASH;
+>> +
+>> +	if (of_address_to_resource(np, 0, &res))
+>> +		return -EINVAL;
+> 
+>    Why not just propagate the error upstream (yeah, I've noticed that
+> it only can be -EINVAL)?
+> 
 
-At the moment, the rmnet configuration in include/uapi/linux/if_link.h
-is almost trivial, with the three pieces of information needed being
-an IFLA_LINK to point to the real device (not needed if there is only
-one device per channel, instead of two), the IFLA_RMNET_MUX_ID
-setting the ID of the muxing channel (not needed if there is only
-one channel ?), a way to specify software bridging between channels
-(not useful if there is only one channel) and a few flags that I assume
-must match the remote end:
+Ok.
 
-#define RMNET_FLAGS_INGRESS_DEAGGREGATION         (1U << 0)
-#define RMNET_FLAGS_INGRESS_MAP_COMMANDS          (1U << 1)
-#define RMNET_FLAGS_INGRESS_MAP_CKSUMV4           (1U << 2)
-#define RMNET_FLAGS_EGRESS_MAP_CKSUMV4            (1U << 3)
-enum {
-        IFLA_RMNET_UNSPEC,
-        IFLA_RMNET_MUX_ID,
-        IFLA_RMNET_FLAGS,
-        __IFLA_RMNET_MAX,
-};
-#define IFLA_RMNET_MAX  (__IFLA_RMNET_MAX - 1)
-struct ifla_rmnet_flags {
-        __u32   flags;
-        __u32   mask;
-};
+> [...]
+>> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
+>> new file mode 100644
+>> index 000000000000..ee2eefd822c9
+>> --- /dev/null
+>> +++ b/include/linux/mtd/hyperbus.h
+>> @@ -0,0 +1,91 @@
+>> +/* SPDX-License-Identifier: GPL-2.0
+>> + *
+>> + * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
+>> + */
+>> +
+>> +#ifndef __LINUX_MTD_HYPERBUS_H__
+>> +#define __LINUX_MTD_HYPERBUS_H__
+>> +
+>> +#include <linux/mtd/map.h>
+>> +
+>> +enum hyperbus_memtype {
+>> +	HYPERFLASH,
+>> +	HYPERRAM,
+>> +};
+>> +
+>> +/**
+>> + * struct hyperbus_device - struct representing HyperBus slave device
+>> + * @map: map_info struct for accessing MMIO HyperBus flash memory
+>> + * @np:	pointer to HyperBus slave device node
+>           ^
+>    Space needed here, not tab.
+> 
 
-> > Third, having the code upstream actually means the actual requirements
-> > for rmnet-over-IPA are clear and explicit.  This might not be a huge
-> > deal, but I think it's better to devise a generic WWAN scheme that
-> > can refer to actual code than to do so with assumptions about what
-> > will work with rmnet (and others).  As far as I know, the upstream
-> > rmnet has no other upstream back end; IPA will make it "real."
->
-> Is that really true? I had previously been told that rmnet actually does
-> have use with a few existing drivers.
->
->
-> If true though, then I think this would be the killer argument *in
-> favour* of *not* merging this - because that would mean we *don't* have
-> to actually keep the rmnet API around for all foreseeable future.
+Ok
 
-I would agree with that. From the code I can see no other driver
-including the rmnet protocol header (see the discussion about moving
-the header to include/linux in order to merge ipa), and I don't see
-any other driver referencing ETH_P_MAP either. My understanding
-is that any driver used by rmnet would require both, but they are
-all out-of-tree at the moment.
+>> + * @mtd: pointer to MTD struct
+>> + * @ctlr: pointer to HyperBus controller struct
+>> + * @memtype: type of memory device: HyperFlash or HyperRAM
+>> + * @registered: flag to indicate whether device is registered with MTD core
+>> + */
+>> +
+>> +struct hyperbus_device {
+>> +	struct map_info map;
+>> +	struct device_node *np;
+>> +	struct mtd_info *mtd;
+>> +	struct hyperbus_ctlr *ctlr;
+>> +	enum hyperbus_memtype memtype;
+>> +	bool registered;
+>> +};
+>> +
+>> +/**
+>> + * struct hyperbus_ops - struct representing custom HyperBus operations
+>> + * @read16: read 16 bit of data, usually from register/ID-CFI space
+>> + * @write16: write 16 bit of data, usually to register/ID-CFI space
+> 
+>    Usually? How to differ the register/memory transfers if both are possible?
+> 
 
-        Arnd
+CFI + map framework does not provide a way to differentiate b/w reg
+access vs memory access. read16()/write16() is used to either access
+registers or for sending various cmds like lock/unlock etc or for
+programming a single word.
+For regular read/writes copy_from() and copy_to() are used.
+
+Looking at HyperBus protocol, controllers would not need to
+differentiate b/w registers vs memory transfers for HyperFlash devices.
+So, I think I can drop read16/write16 and redirect these calls to
+copy_from()/copy_to()
+
+
+I mainly added these functions keeping HyperRAM in mind. Idea was
+drivers would look at hyperbus_device->memtype and set to register
+access mode for HyperRAM in case of write16()/read16(). Looks like the
+interface is not intuitive enough
+So, will drop these and add it back when adding HyperRAM support.
+
+Does that work for your HW as well?
+
+>> + * @copy_from: copy data from flash memory
+>> + * @copy_to: copy data to flash memory
+>> + * @calibrate: calibrate HyperBus controller
+>> + */
+>> +
+>> +struct hyperbus_ops {
+>> +	u16 (*read16)(struct hyperbus_device *hbdev, unsigned long addr);
+>> +	void (*write16)(struct hyperbus_device *hbdev,
+>> +			unsigned long addr, u16 val);
+>> +	void (*copy_from)(struct hyperbus_device *hbdev, void *to,
+>> +			  unsigned long from, ssize_t len);
+>> +	void (*copy_to)(struct hyperbus_device *dev, unsigned long to,
+>> +			const void *from, ssize_t len);
+>> +	int (*calibrate)(struct hyperbus_device *dev);
+>> +};
+>> +
+>> +/**
+>> + * struct hyperbus_ctlr - struct representing HyperBus controller
+>> + * @calibrated: flag to indicate ctlr calibration sequence is complete
+>> + * @ops: HyperBus controller ops
+> 
+>    What about @dev?
+> 
+
+Will add.
+
+>> + */
+>> +struct hyperbus_ctlr {
+>> +	struct device *dev;
+>> +	bool calibrated;
+>> +
+>> +	const struct hyperbus_ops *ops;
+>> +};
+> [...]
+> 
+> MBR, Sergei
+> 
+
+-- 
+Regards
+Vignesh
 
 _______________________________________________
 linux-arm-kernel mailing list
