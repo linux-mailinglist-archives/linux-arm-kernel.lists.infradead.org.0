@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DF4A3D391
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:09:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A78263D398
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:10:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N0lUQykdJR+JOXHB4SiPyi4U1VmxZDrpc99WFQo2soQ=; b=VIwkdEWDSTb3uh
-	4/W9NTnGi429xQUgH6djBFdUDhkRCAjk1U7lnb9lpsEv7OFpH59QLS+3+LKBC/jkWwFjjGTaGoTS+
-	ktNK4TsZLRSoA0ke9ScLmT87oLYFpMJWw67H1d7oQmjoYEUNHA/f7Tn8R5F2M1RHlO26jKrMP5ZgW
-	A793foXNDHnXKXUiwO0N62s3UJxHMZ3M2hmfbZGpiXNS3SG/QNBK1IquZFNuPcuu3xRvw7HpzuAs5
-	z3FO8gF0A7++uTP4GaBiUncHaMaORx+QvBGP0wgJVLPdO1nEiOC6EB+RTt9rAIEZsH4tpXmWG1eqA
-	TFxi+FQGQIx4EN+YjEsw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HaXbbqzzGz2Diwmcg56dUAk5v1MYqYP3zA7lJ1/4wiM=; b=qu1LukcKoTQatf
+	UOamhWYGfW49DdtL5/DC4d7kCX+FY5w7ReSLJGSjiMkQYIYhZsqU34dHqblwB/TRP1aR0bN4gg5m2
+	fm4r9FYLod6yVFhyLBVPI3FUHw++tUjp9YFBnmNCCQ0XLdsQpJ2jnfDBeYOxSO9To+Gao/WihQHhl
+	UyWuc+mVIXHPlsm2a0vRNTPQaSFcZ0SZlL4c90GoFPghXy0cFhJ+oBEpwI3/b77FlCDpK4cxXFg9q
+	wolaMV+08FW2FrFDtH0VwDX/R0S0HR1X3DbqNXE/PUuYRwok2TMkrGMAvZToJeOUj005s/Hbe1TRZ
+	kdF5RYEOpY4BfgnoGccg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakHE-0005Aa-E0; Tue, 11 Jun 2019 17:09:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hakGy-00058B-53
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:09:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D92B337;
- Tue, 11 Jun 2019 10:09:16 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 800433F73C;
- Tue, 11 Jun 2019 10:09:11 -0700 (PDT)
-Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
- __uaccess_mask_ptr
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>
-References: <cover.1559580831.git.andreyknvl@google.com>
- <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
- <20190610175326.GC25803@arrakis.emea.arm.com>
- <20190611145720.GA63588@arrakis.emea.arm.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <d3dc2b1f-e8c9-c60d-f648-0bc9b08f20e4@arm.com>
-Date: Tue, 11 Jun 2019 18:09:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hakHb-0005Oo-IB; Tue, 11 Jun 2019 17:10:03 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hakH0-00058K-5r
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:09:27 +0000
+Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
+ by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+ (Exim 4.76) (envelope-from <colin.king@canonical.com>)
+ id 1hakGn-0002YS-I1; Tue, 11 Jun 2019 17:09:13 +0000
+From: Colin King <colin.king@canonical.com>
+To: Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-fbdev@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH][next] video: fbdev: atmel_lcdfb: remove redundant
+ initialization to variable ret
+Date: Tue, 11 Jun 2019 18:09:13 +0100
+Message-Id: <20190611170913.20913-1-colin.king@canonical.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190611145720.GA63588@arrakis.emea.arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_100924_753580_E80B624B 
-X-CRM114-Status: GOOD (  30.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_100926_358212_C9261E34 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,276 +64,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
- linux-kselftest@vger.kernel.org, Jacob Bramley <Jacob.Bramley@arm.com>,
- Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
+From: Colin Ian King <colin.king@canonical.com>
 
-...
+Currently variable ret is being initialized with -ENOENT however that
+value is never read and ret is being re-assigned later on. Hence this
+assignment is redundant and can be removed.
 
-> ---------8<----------------
-> From 7c624777a4e545522dec1b34e60f0229cb2bd59f Mon Sep 17 00:00:00 2001
-> From: Catalin Marinas <catalin.marinas@arm.com>
-> Date: Tue, 11 Jun 2019 13:03:38 +0100
-> Subject: [PATCH] arm64: Introduce prctl() options to control the tagged user
->  addresses ABI
-> 
-> It is not desirable to relax the ABI to allow tagged user addresses into
-> the kernel indiscriminately. This patch introduces a prctl() interface
-> for enabling or disabling the tagged ABI with a global sysctl control
-> for preventing applications from enabling the relaxed ABI (meant for
-> testing user-space prctl() return error checking without reconfiguring
-> the kernel). The ABI properties are inherited by threads of the same
-> application and fork()'ed children but cleared on execve().
-> 
-> The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
-> MTE-specific settings like imprecise vs precise exceptions.
-> 
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> ---
->  arch/arm64/include/asm/processor.h   |  6 +++
->  arch/arm64/include/asm/thread_info.h |  1 +
->  arch/arm64/include/asm/uaccess.h     |  5 ++-
->  arch/arm64/kernel/process.c          | 67 ++++++++++++++++++++++++++++
->  include/uapi/linux/prctl.h           |  5 +++
->  kernel/sys.c                         | 16 +++++++
->  6 files changed, 99 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-> index fcd0e691b1ea..fee457456aa8 100644
-> --- a/arch/arm64/include/asm/processor.h
-> +++ b/arch/arm64/include/asm/processor.h
-> @@ -307,6 +307,12 @@ extern void __init minsigstksz_setup(void);
->  /* PR_PAC_RESET_KEYS prctl */
->  #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
->  
-> +/* PR_TAGGED_ADDR prctl */
-> +long set_tagged_addr_ctrl(unsigned long arg);
-> +long get_tagged_addr_ctrl(void);
-> +#define SET_TAGGED_ADDR_CTRL(arg)	set_tagged_addr_ctrl(arg)
-> +#define GET_TAGGED_ADDR_CTRL()		get_tagged_addr_ctrl()
-> +
->  /*
->   * For CONFIG_GCC_PLUGIN_STACKLEAK
->   *
-> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-> index c285d1ce7186..7263d4c973ce 100644
-> --- a/arch/arm64/include/asm/thread_info.h
-> +++ b/arch/arm64/include/asm/thread_info.h
-> @@ -101,6 +101,7 @@ void arch_release_task_struct(struct task_struct *tsk);
->  #define TIF_SVE			23	/* Scalable Vector Extension in use */
->  #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
->  #define TIF_SSBD		25	/* Wants SSB mitigation */
-> +#define TIF_TAGGED_ADDR		26
->
+Addresses-Coverity: ("Unused value")
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
+---
+ drivers/video/fbdev/atmel_lcdfb.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Can you please put a comment here?
-
->  #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
->  #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
-> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-> index 9164ecb5feca..995b9ea11a89 100644
-> --- a/arch/arm64/include/asm/uaccess.h
-> +++ b/arch/arm64/include/asm/uaccess.h
-> @@ -73,6 +73,9 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
->  {
->  	unsigned long ret, limit = current_thread_info()->addr_limit;
->  
-> +	if (test_thread_flag(TIF_TAGGED_ADDR))
-> +		addr = untagged_addr(addr);
-> +
->  	__chk_user_ptr(addr);
->  	asm volatile(
->  	// A + B <= C + 1 for all A,B,C, in four easy steps:
-> @@ -94,7 +97,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
->  	return ret;
->  }
->  
-> -#define access_ok(addr, size)	__range_ok(untagged_addr(addr), size)
-> +#define access_ok(addr, size)	__range_ok(addr, size)
->  #define user_addr_max			get_fs
->>  #define _ASM_EXTABLE(from, to)						\
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index 3767fb21a5b8..69d0be1fc708 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -30,6 +30,7 @@
->  #include <linux/kernel.h>
->  #include <linux/mm.h>
->  #include <linux/stddef.h>
-> +#include <linux/sysctl.h>
->  #include <linux/unistd.h>
->  #include <linux/user.h>
->  #include <linux/delay.h>
-> @@ -323,6 +324,7 @@ void flush_thread(void)
->  	fpsimd_flush_thread();
->  	tls_thread_flush();
->  	flush_ptrace_hw_breakpoint(current);
-> +	clear_thread_flag(TIF_TAGGED_ADDR);
-
-Nit: in line we the other functions in thread_flush we could have something like
-"tagged_addr_thread_flush", maybe inlined.
-
->  }
->  
->  void release_thread(struct task_struct *dead_task)
-> @@ -552,3 +554,68 @@ void arch_setup_new_exec(void)
->  
->  	ptrauth_thread_init_user(current);
->  }
-> +
-> +/*
-> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
-> + */
-> +static unsigned int tagged_addr_prctl_allowed = 1;
-> +
-> +long set_tagged_addr_ctrl(unsigned long arg)
-> +{
-> +	if (!tagged_addr_prctl_allowed)
-> +		return -EINVAL;
-> +	if (is_compat_task())
-> +		return -EINVAL;
-> +	if (arg & ~PR_TAGGED_ADDR_ENABLE)
-> +		return -EINVAL;
-> +
-> +	if (arg & PR_TAGGED_ADDR_ENABLE)
-> +		set_thread_flag(TIF_TAGGED_ADDR);
-> +	else
-> +		clear_thread_flag(TIF_TAGGED_ADDR);
-> +
-> +	return 0;
-> +}
-> +
-> +long get_tagged_addr_ctrl(void)
-> +{
-> +	if (!tagged_addr_prctl_allowed)
-> +		return -EINVAL;
-> +	if (is_compat_task())
-> +		return -EINVAL;
-> +
-> +	if (test_thread_flag(TIF_TAGGED_ADDR))
-> +		return PR_TAGGED_ADDR_ENABLE;
-> +
-> +	return 0;
-> +}
-> +
-> +/*
-> + * Global sysctl to disable the tagged user addresses support. This control
-> + * only prevents the tagged address ABI enabling via prctl() and does not
-> + * disable it for tasks that already opted in to the relaxed ABI.
-> + */
-> +static int zero;
-> +static int one = 1;
-> +
-> +static struct ctl_table tagged_addr_sysctl_table[] = {
-> +	{
-> +		.procname	= "tagged_addr",
-> +		.mode		= 0644,
-> +		.data		= &tagged_addr_prctl_allowed,
-> +		.maxlen		= sizeof(int),
-> +		.proc_handler	= proc_dointvec_minmax,
-> +		.extra1		= &zero,
-> +		.extra2		= &one,
-> +	},
-> +	{ }
-> +};
-> +
-> +static int __init tagged_addr_init(void)
-> +{
-> +	if (!register_sysctl("abi", tagged_addr_sysctl_table))
-> +		return -EINVAL;
-> +	return 0;
-> +}
-> +
-> +core_initcall(tagged_addr_init);
-
-process.c seems already a bit "overcrowded". Probably we could move all the
-tagged_addr features in a separate file. What do you think? It would make easier
-the implementation of mte as well going forward.
-
-> diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
-> index 094bb03b9cc2..2e927b3e9d6c 100644
-> --- a/include/uapi/linux/prctl.h
-> +++ b/include/uapi/linux/prctl.h
-> @@ -229,4 +229,9 @@ struct prctl_mm_map {
->  # define PR_PAC_APDBKEY			(1UL << 3)
->  # define PR_PAC_APGAKEY			(1UL << 4)
->  
-> +/* Tagged user address controls for arm64 */
-> +#define PR_SET_TAGGED_ADDR_CTRL		55
-> +#define PR_GET_TAGGED_ADDR_CTRL		56
-> +# define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
-> +
->  #endif /* _LINUX_PRCTL_H */
-> diff --git a/kernel/sys.c b/kernel/sys.c
-> index 2969304c29fe..ec48396b4943 100644
-> --- a/kernel/sys.c
-> +++ b/kernel/sys.c
-> @@ -124,6 +124,12 @@
->  #ifndef PAC_RESET_KEYS
->  # define PAC_RESET_KEYS(a, b)	(-EINVAL)
->  #endif
-> +#ifndef SET_TAGGED_ADDR_CTRL
-> +# define SET_TAGGED_ADDR_CTRL(a)	(-EINVAL)
-> +#endif
-> +#ifndef GET_TAGGED_ADDR_CTRL
-> +# define GET_TAGGED_ADDR_CTRL()		(-EINVAL)
-> +#endif
->  
->  /*
->   * this is where the system-wide overflow UID and GID are defined, for
-> @@ -2492,6 +2498,16 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
->  			return -EINVAL;
->  		error = PAC_RESET_KEYS(me, arg2);
->  		break;
-> +	case PR_SET_TAGGED_ADDR_CTRL:
-> +		if (arg3 || arg4 || arg5)
-> +			return -EINVAL;
-> +		error = SET_TAGGED_ADDR_CTRL(arg2);
-> +		break;
-> +	case PR_GET_TAGGED_ADDR_CTRL:
-> +		if (arg2 || arg3 || arg4 || arg5)
-> +			return -EINVAL;
-> +		error = GET_TAGGED_ADDR_CTRL();
-> +		break;
-
-Why do we need two prctl here? We could have only one and use arg2 as set/get
-and arg3 as a parameter. What do you think?
-
->  	default:
->  		error = -EINVAL;
->  		break;
-> 
-
+diff --git a/drivers/video/fbdev/atmel_lcdfb.c b/drivers/video/fbdev/atmel_lcdfb.c
+index fb117ccbeab3..930cc3f92e01 100644
+--- a/drivers/video/fbdev/atmel_lcdfb.c
++++ b/drivers/video/fbdev/atmel_lcdfb.c
+@@ -950,7 +950,7 @@ static int atmel_lcdfb_of_init(struct atmel_lcdfb_info *sinfo)
+ 	struct fb_videomode fb_vm;
+ 	struct gpio_desc *gpiod;
+ 	struct videomode vm;
+-	int ret = -ENOENT;
++	int ret;
+ 	int i;
+ 
+ 	sinfo->config = (struct atmel_lcdfb_config*)
 -- 
-Regards,
-Vincenzo
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
