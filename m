@@ -2,81 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CA123C56F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 09:53:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECE4E3C588
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 10:04:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SpzXVaaU/PnCRPC4dtZ9usbJhI7mumSoXNIHXABFhCA=; b=Z2IPNCK5GEYE5C
-	mtEGmecED8PzLSX6X8rewdemt8zd/1+BBLhy2kQtfSQg5uNVIS5kLota1y2gAQpCARlM5XUWlf2SI
-	0a9Fom1VemIwxAChW1vj2N5ZJV8gzJbdT+ov7cRe8Eytv4AFvZJt30WTCpiIPj2lP3hEx8FYFgW/B
-	j+d1W1HEIYKyDBBHVlocPAZDbBl1oIS7W2N+fdppI8gncrBKT+rsS9o/ogIDlP4Lz1MI/bYMH+sN+
-	/Xyt0CsqqQF2mzqF2sDl+lPMvNvWzxAGY9RhDKoDhGs05C1SHkkY9Aj23wIWrWulQOpOc9I32i2yP
-	alrE0qgdpZWidj27xeXw==;
+	List-Owner; bh=uFY2Bml/ycMgyo6DgYG5pI3bHeLgWZE7hbhBYfgw2pk=; b=CgC1PFWpXdwtY4
+	IuNQ2R+38Qj80S3eKEoYmj5gcFFRAr42qJXbIau0n+2pv+8/57peCRUkvjfeU2UcWN/9oU4Cl2qsb
+	1n3khbC/QAsQ7pzjCoCpeUXwQyZWwd8HsjQNtJBzlU/+Y1/ZHVUu7Yc3iCrDOgXAfS6+EqNPCosa1
+	s7OkoS/wH0uGkuoZXp3W5VFRQxLLcyIV3co2JMYiAEr7xi65tpjw1FjHsCkm1DOs9Idmeqx9Ad56C
+	jk6NexT/c54qQ+Z3ZSaut1SN6KeMhqvmwIVFFB5zCVG9fC3Eq0dT1UW76+R0EmVPU77UEti2ya+bH
+	hqUSJHoCQQi6L0bxVqvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haban-0003CX-Dd; Tue, 11 Jun 2019 07:53:17 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hably-0007Kt-PT; Tue, 11 Jun 2019 08:04:50 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1habaa-0003Bn-FC
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 07:53:06 +0000
-Received: by mail-wm1-x341.google.com with SMTP id u8so1737533wmm.1
+ id 1habll-0007KP-JA
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 08:04:39 +0000
+Received: by mail-ed1-x544.google.com with SMTP id h9so18679588edr.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 00:53:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9PsR1uMNskWCiaEKRGZYWd94CEQPhPEaiy0Vl1ILZFE=;
- b=mn2UBoenodifxg0P77dyoVoUnVeu4+uGvE+hcTxJytv8hOPa9T2vCglpsXT/cqqWtU
- y9FPAz+yMc6ryQhJLPq7N94QbOGDhm2iLCKoST+WRNtOac0TxcYo6RkAxi2sFX7M/evw
- 8iOj3cvE8UaBGXWJAQknwdfguvVCgZHvgo5WCRy1XKiZcIS3nX/3MvTVIjprUgymio/g
- MwtX8KX7w+GraVVSmch85QHq5s31505o+xryemWmTOndVteDzd/zBaLN9y3K3ZSqSvrm
- 4T7EqRUvMoARBaeszJuHO8SvdKlA5FIkfRYAIeGiCmgKHH1ONuDplh4aXqIlVPmNMeP/
- qlMA==
+ Tue, 11 Jun 2019 01:04:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:mail-followup-to
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1VpP4BQl0scWmMIfvVrIwxl9EaLNPQUpAZnq/R1E08A=;
+ b=ZIa8H2Jy5lWKWQz1TT7B/cBLsAJV/t0RUOsjzlAUmvjxv48OR/2G2Z3xwj89VqyCSC
+ Y7NCdLF+j+Zb7j9MlTsh2N8qAd9mQSkTkGybODE0RYNXFT6BGqim8aTZFx8ccV9Ema2X
+ VHizYVWLs+TJqJRySt+NsoMrmPz7kLRDwVbHA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9PsR1uMNskWCiaEKRGZYWd94CEQPhPEaiy0Vl1ILZFE=;
- b=EcqcuiR+DXHzApwOWaQbU/h/l2KW5nAruEfKRbWqiiWsI556lIXdz1j3fYMq3W109Q
- k/TiEoM/MFf+/4tUZf1A/Izlh+++5ixGQ0pJq7BSj0QYdsmHR+7/+5Ofnj1rLBX+EX15
- P/sGSd8zwrwcYDN4Cs/0qjk1F2Ch4bRPxBscMqvpgEE4fphdcsNiSfzwrsFI/riDGIle
- 982IJQOdKECQMWPWOc43dSsWm+2Lovs58yrofLR72R1RjHAJgYZ8pB0wK5W/eI24DEB5
- q6u4vUMscZu3lyqfVr8ix8MOyEl6cf4NYUkgFaailRrz9WLTMvP/38YcqsnYz6sKrCf6
- D1Hw==
-X-Gm-Message-State: APjAAAVnbxHH5sY2XW3wIDDRqEXsKmSrNxaIP4bAo6qMdz1o4zB4a5fj
- wZPPIyc0e3AcU9GKO5IFIrcYaDdpTQ/maukfNrQ=
-X-Google-Smtp-Source: APXvYqyF5SIUSHmvr/zUiXBYqwiUEUowRdzvH15L9I89xnXliAVBtDAbkb+4ZlrKEzxAwasxqqY7JX7xtKEdekYs5Rk=
-X-Received: by 2002:a05:600c:206:: with SMTP id
- 6mr15768111wmi.73.1560239578870; 
- Tue, 11 Jun 2019 00:52:58 -0700 (PDT)
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to:user-agent;
+ bh=1VpP4BQl0scWmMIfvVrIwxl9EaLNPQUpAZnq/R1E08A=;
+ b=T7IGVga9gQJT2cfQsr5SDqZn9x+gozXvbU4Ar2UOCSEX+AVTgrp5mDjddahCYGBZ4v
+ uzhPTtCIgOrAIJEZ28hAlTU45wEzi7aJeAOdqGOGonH/oNvviB7J5Lq6xeRgBShh1KRq
+ my4HeseOPcwerrji8OpqjkNwUSUo7ySpM3N7RNCuI1V5YlOLmSU9C7+unnBpQKKjAPMR
+ igB+5WX7WelCojetK6pDbDVEPRmsNNpD7OZhhwhvGIUMOAlrGO2sDPWA/GUeXJbHIzWb
+ hIY0W9c24wcXR1oLP5Z48mTp4OKaiSDA3M61ZyB7omRNHY0XHOryyXwpAvHihbJU+J5I
+ aSoA==
+X-Gm-Message-State: APjAAAWPS1ioA+0977TDuoh1tFSNSDw9NxQ4m++hIugyNmC04ksjjx4l
+ FKBsZnoKYeYxxxDeZpY+on4HTQ==
+X-Google-Smtp-Source: APXvYqxTt4reyZxOwFM7gpLn44B2/syN7stLMXz/LTQgDQdiH76jkBmOlBKjhtvaB3E/mb8+p5bIJQ==
+X-Received: by 2002:a17:906:ad86:: with SMTP id
+ la6mr44226340ejb.43.1560240275503; 
+ Tue, 11 Jun 2019 01:04:35 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
+ by smtp.gmail.com with ESMTPSA id y11sm3576596edj.96.2019.06.11.01.04.33
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 11 Jun 2019 01:04:34 -0700 (PDT)
+Date: Tue, 11 Jun 2019 10:04:31 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: syzbot <syzbot+2ff1e7cb738fd3c41113@syzkaller.appspotmail.com>
+Subject: Re: WARNING in bpf_jit_free
+Message-ID: <20190611080431.GP21222@phenom.ffwll.local>
+Mail-Followup-To: syzbot
+ <syzbot+2ff1e7cb738fd3c41113@syzkaller.appspotmail.com>, 
+ airlied@linux.ie, ast@kernel.org, bpf@vger.kernel.org,
+ daniel@iogearbox.net, davem@davemloft.net,
+ dri-devel@lists.freedesktop.org, hawk@kernel.org,
+ jakub.kicinski@netronome.com, john.fastabend@gmail.com,
+ kafai@fb.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, maxime.ripard@bootlin.com,
+ netdev@vger.kernel.org, paul.kocialkowski@bootlin.com,
+ songliubraving@fb.com, syzkaller-bugs@googlegroups.com,
+ wens@csie.org, xdp-newbies@vger.kernel.org, yhs@fb.com
+References: <000000000000e92d1805711f5552@google.com>
+ <000000000000381684058ace28e5@google.com>
 MIME-Version: 1.0
-References: <20190610141609.17559-1-daniel.baluta@nxp.com>
- <20190610141609.17559-3-daniel.baluta@nxp.com>
- <20190611055530.sl3krujmcqnq6ntt@pengutronix.de>
-In-Reply-To: <20190611055530.sl3krujmcqnq6ntt@pengutronix.de>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Tue, 11 Jun 2019 10:52:47 +0300
-Message-ID: <CAEnQRZB9irx7_AeYPCdv5WU3Q-MGt96BiUH8Yk8raeBDA0RjTQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 2/2] imx: mailbox: Introduce TX doorbell with ACK
-To: Oleksij Rempel <o.rempel@pengutronix.de>
+Content-Disposition: inline
+In-Reply-To: <000000000000381684058ace28e5@google.com>
+X-Operating-System: Linux phenom 4.14.0-3-amd64 
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_005304_539696_809D179F 
-X-CRM114-Status: GOOD (  37.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_010437_701905_56DB428F 
+X-CRM114-Status: GOOD (  12.75  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,212 +110,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- jassisinghbrar@gmail.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: xdp-newbies@vger.kernel.org, songliubraving@fb.com,
+ jakub.kicinski@netronome.com, hawk@kernel.org, daniel@iogearbox.net,
+ syzkaller-bugs@googlegroups.com, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, john.fastabend@gmail.com, ast@kernel.org,
+ dri-devel@lists.freedesktop.org, kafai@fb.com, paul.kocialkowski@bootlin.com,
+ maxime.ripard@bootlin.com, wens@csie.org, daniel@ffwll.ch,
+ netdev@vger.kernel.org, yhs@fb.com, bpf@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Oleksij,
+On Sat, Jun 08, 2019 at 04:22:06AM -0700, syzbot wrote:
+> syzbot has found a reproducer for the following crash on:
+> 
+> HEAD commit:    79c3ba32 Merge tag 'drm-fixes-2019-06-07-1' of git://anong..
+> git tree:       upstream
+> console output: https://syzkaller.appspot.com/x/log.txt?x=1201b971a00000
+> kernel config:  https://syzkaller.appspot.com/x/.config?x=60564cb52ab29d5b
+> dashboard link: https://syzkaller.appspot.com/bug?extid=2ff1e7cb738fd3c41113
+> compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
+> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=14a3bf51a00000
+> C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=120d19f2a00000
 
-On Tue, Jun 11, 2019 at 8:56 AM Oleksij Rempel <o.rempel@pengutronix.de> wrote:
->
-> Hi Daniel,
->
-> On Mon, Jun 10, 2019 at 10:16:09PM +0800, daniel.baluta@nxp.com wrote:
-> > From: Daniel Baluta <daniel.baluta@nxp.com>
-> >
-> > TX doorbell with ACK will allow us to push the doorbell ring button
-> > (trigger GIR) and also will allow us to handle the response from DSP.
-> >
-> > DSP firmware found on i.MX8 boards implements a duplex
-> > communication protocol over MU channels.
-> >
-> > On the host side (Linux) we need to plugin into Sound Open Firmware IPC
-> > communication infrastructure which handles all the details (e.g message
-> > queuing, tx/rx logic) [1] and the users are only required to provide the
-> > following callbacks:
-> >
-> >   - send_msg (for Tx)
-> >   - irq_handler (Ack of Tx, request from DSP)
-> >
-> > In order to implement send_msg and irq_handler we will use two MU
-> > channels:
-> >       * channel #0, TX doorbell with ACK
-> >       * channel #1, RX doorbell
-> >
-> > Sending a request Host -> DSP (channel #0)
-> >   - send_msg callback
-> >       - write data into SHMEM
-> >       - push doorbell ring button (trigger GIR)
-> >  - irq handler
-> >       - handle DSP request (channel #1)
-> >         - read SHMEM and trigger SOF IPC state machine
-> >         - send ACK (push doorbell ring button for channel #1)
-> >       - handle DSP response (ACK) (channel #0)
-> >         - read SHMEM and trigger IPC state machine
-> >
-> > The easisest way to implement this is to directly access the MU
-> > registers but since the MU is abstracted using the mailbox interface
-> > we need to use that instead.
-> >
-> > [1] https://elixir.bootlin.com/linux/v5.2-rc4/source/sound/soc/sof/ipc.c
-> >
-> > Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> > ---
-> >  drivers/mailbox/imx-mailbox.c | 3 +++
-> >  1 file changed, 3 insertions(+)
-> >
-> > diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-> > index 9f74dee1a58c..3a91611e17d2 100644
-> > --- a/drivers/mailbox/imx-mailbox.c
-> > +++ b/drivers/mailbox/imx-mailbox.c
-> > @@ -42,6 +42,7 @@ enum imx_mu_chan_type {
-> >       IMX_MU_TYPE_RX,         /* Rx */
-> >       IMX_MU_TYPE_TXDB,       /* Tx doorbell */
-> >       IMX_MU_TYPE_RXDB,       /* Rx doorbell */
-> > +     IMX_MU_TYPE_TXDB_ACK    /* Tx doorbell with Ack */
-> >  };
-> >
-> >  struct imx_mu_con_priv {
-> > @@ -124,6 +125,7 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
-> >                       (ctrl & IMX_MU_xCR_RIEn(cp->idx));
-> >               break;
-> >       case IMX_MU_TYPE_RXDB:
-> > +     case IMX_MU_TYPE_TXDB_ACK:
-> >               val &= IMX_MU_xSR_GIPn(cp->idx) &
-> >                       (ctrl & IMX_MU_xCR_GIEn(cp->idx));
-> >               break;
-> > @@ -200,6 +202,7 @@ static int imx_mu_startup(struct mbox_chan *chan)
-> >               imx_mu_xcr_rmw(priv, IMX_MU_xCR_RIEn(cp->idx), 0);
-> >               break;
-> >       case IMX_MU_TYPE_RXDB:
-> > +     case IMX_MU_TYPE_TXDB_ACK:
-> >               imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIEn(cp->idx), 0);
-> >               break;
-> >       default:
-> > --
-> > 2.17.1
->
-> If I see it correctly, with your implementation  the mbox client
-> communication on channel 0 will look as follow:
-> mbox_client -> send_msg()
->             /* sheduling of mbox_chan_txdone tasklet is avoided */
-> mbox_client <- cl->rx_callback()
-> mbox_client -> mbox_client_txdone()
-> mbox_client -> send_msg()
->
+Looking at the reproducer I don't see any calls to ioctl which could end
+up anywhere in drm.
+> 
+> The bug was bisected to:
+> 
+> commit 0fff724a33917ac581b5825375d0b57affedee76
+> Author: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> Date:   Fri Jan 18 14:51:13 2019 +0000
+> 
+>     drm/sun4i: backend: Use explicit fourcc helpers for packed YUV422 check
 
-Correct! But what I thought it is most important here is that
-send_msg and rx_callback are called on the same "connection"
-so that inside rx_callback I can figure out if I got an ACK or I got
-a request from the other side.
+And most definitely not in drm/sun4i. You can only hit this if you have
+sun4i and run on arm, which per your config isn't the case.
 
-> Without your patch you will need to register tx and rx doorbell
-> channels and the communication will looks like this:
-> mbox_client -> send_msg()
-> mbox_client <- mbox_chan_txdone() /* dummy notification, can be ignored */
-> mbox_client <- cl->rx_callback()
-> mbox_client -> send_msg()
->
-> I assume, you are trying to optimize it and avoid dummy
-> mbox_chan_txdone() notification. Correct?
+tldr; smells like bisect gone wrong.
+-Daniel
 
-TBH I am little bit confused about the role of txdb_tasklet. Is it there
-just to trigger the sending of the next message in the buffer?
+> 
+> bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=1467550f200000
+> final crash:    https://syzkaller.appspot.com/x/report.txt?x=1667550f200000
+> console output: https://syzkaller.appspot.com/x/log.txt?x=1267550f200000
+> 
+> IMPORTANT: if you fix the bug, please add the following tag to the commit:
+> Reported-by: syzbot+2ff1e7cb738fd3c41113@syzkaller.appspotmail.com
+> Fixes: 0fff724a3391 ("drm/sun4i: backend: Use explicit fourcc helpers for
+> packed YUV422 check")
+> 
+> WARNING: CPU: 0 PID: 8951 at kernel/bpf/core.c:851 bpf_jit_free+0x157/0x1b0
+> Kernel panic - not syncing: panic_on_warn set ...
+> CPU: 0 PID: 8951 Comm: kworker/0:0 Not tainted 5.2.0-rc3+ #23
+> Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS
+> Google 01/01/2011
+> Workqueue: events bpf_prog_free_deferred
+> Call Trace:
+>  __dump_stack lib/dump_stack.c:77 [inline]
+>  dump_stack+0x172/0x1f0 lib/dump_stack.c:113
+>  panic+0x2cb/0x744 kernel/panic.c:219
+>  __warn.cold+0x20/0x4d kernel/panic.c:576
+>  report_bug+0x263/0x2b0 lib/bug.c:186
+>  fixup_bug arch/x86/kernel/traps.c:179 [inline]
+>  fixup_bug arch/x86/kernel/traps.c:174 [inline]
+>  do_error_trap+0x11b/0x200 arch/x86/kernel/traps.c:272
+>  do_invalid_op+0x37/0x50 arch/x86/kernel/traps.c:291
+>  invalid_op+0x14/0x20 arch/x86/entry/entry_64.S:986
+> RIP: 0010:bpf_jit_free+0x157/0x1b0
+> Code: 00 fc ff df 48 89 fa 48 c1 ea 03 80 3c 02 00 75 5d 48 b8 00 02 00 00
+> 00 00 ad de 48 39 43 70 0f 84 05 ff ff ff e8 f9 b5 f4 ff <0f> 0b e9 f9 fe ff
+> ff e8 bd 53 2d 00 e9 d9 fe ff ff 48 89 7d e0 e8
+> RSP: 0018:ffff88808886fcb0 EFLAGS: 00010293
+> RAX: ffff88808cb6c480 RBX: ffff88809051d280 RCX: ffffffff817ae68d
+> RDX: 0000000000000000 RSI: ffffffff817bf0f7 RDI: ffff88809051d2f0
+> RBP: ffff88808886fcd0 R08: 1ffffffff14ccaa8 R09: fffffbfff14ccaa9
+> R10: fffffbfff14ccaa8 R11: ffffffff8a665547 R12: ffffc90001925000
+> R13: ffff88809051d2e8 R14: ffff8880a0e43900 R15: ffff8880ae834840
+>  bpf_prog_free_deferred+0x27a/0x350 kernel/bpf/core.c:1984
+>  process_one_work+0x989/0x1790 kernel/workqueue.c:2269
+>  worker_thread+0x98/0xe40 kernel/workqueue.c:2415
+>  kthread+0x354/0x420 kernel/kthread.c:255
+>  ret_from_fork+0x24/0x30 arch/x86/entry/entry_64.S:352
+> Kernel Offset: disabled
+> Rebooting in 86400 seconds..
+> 
 
-Using IMX mailbox with SOF IPC mechanism has a lot of overhead because
-I think they are both doing the same thing.
-
-E.g: On TX queuing the messages and then when ACK arrives it will send the
-next message.
-
->
-> The problem is, that current mailbox-framework will set txdone_method
-> inside of mbox_controller_register() for all channels even if
-> imx-mailbox has different types of channels.
->
-> The problem with your patch is, that it will silently merge two channels
-> (TXDB and RXDB) and not setting actual ACK by controller - mbox_chan_txdone().
-> Not sure, why we need to merge it in this case.
->
-> So, with current imx_mailbox implementation your firmware should work as
-> is. You will need to register two separate channels for TXDB and
-> RXDB. It will run with some overhead by triggering txdone tasklet in
-> imx-mailbox driver.
-
-I see your point. I think with the current imx_mailbox implementation SOF IPC
-should work as it is with some overhead (at least when Host (Linux) initiates
-the communication).
-
-The keypoint here (I figured it out now) is that the two channels
-TXDB and RXDB share the same IDX right? So, with
-this idx we can figure out that we have an ACK from DSP or a request from DSP.
-
-So we are set for communication when Host (Linux) starts the communication. It
-should just work.
-
-How about the case when DSP initiates the communication and Host needs to
-send an ACK.
-
-In this case we have:
-
-mbox_client <- cl->rx_callback()
-   mbox_client -> send_msg()
-
-The problem here is that the Host needs to call send_msg() from inside
-the rx_callback().
-Do you see any problems with that:
-
-Basically the pseudocode will be something like this:
-
-Create connection #0 (RXDB0, TXDB0) Host -> DSP (Host initiates
-communication, DSP sends ACK)
-Create connection #1 (RXDB1, TXDB1) DSP -> Host (DSP initiates
-communication, Host sends ACK).
-
-rx_callback:
- -> if (chan_id == 0) // this has to be an ACK from DSP
-      get_reply_from_shmem
-      trigger SOF IPC state machine (let them know we got a reply)
-    else if (chan_id == 1) // this has to be a request from DSP
-      get_request()
-       mbox_send_message(sc_chan->ch, NULL); //send back ACK
-
-
-
->
-> If this overhead is a problem, then this should be fixed.
-
-I need to have a working version with the current implementation
-and then tell if overhead is a problem.
-
-> Merging two doorbell  channels in to one with ACK support is nice,
-> but will introduce more issues if we need other doorbell channels
-> without ACK support on same controller
->
-> I personally would prefer to to extend mailbox framework to support
-> controllers with mixed channel types and remove dummy txdone tasklet
-> from imx-mailbox.
->
-> Since we already initialize part of &mbox->chans[i] by imx-mailbox driver,
-> we can set proper chan->txdone_method as well. So we need only to
-> prevent mbox_controller_register() to overwrite it.
-
-Thanks for your explanations! Thinks are much clearer now!
-
-Will try to work on implementing what I need with the current IMX mailbox
-support and send patches for review.
-
-thanks,
-Daniel.
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
