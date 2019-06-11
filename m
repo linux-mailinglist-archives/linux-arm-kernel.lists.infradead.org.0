@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7E453C8BA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:20:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 450F93C8AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:19:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ROk5ms8LR0JVT2Zfwns8g1k/Xh35KOa4y0VEXw7yyCg=; b=DIabTk75v1Hck0
-	8JNjey29OfqXJJd1RC8Dp2zhhluKhPMMjF1Gg/eT9wJmdG1CkJiTcAIJT9El87RaRfsxTGO3FQ8PS
-	wbyFj7+qPiop1VsPmUpiZSxrGYEYF+z42ssdWFZp3mSC2UPLYygp4WqnsxkXjqlaZXzVkXJSmkNkJ
-	jY6ZQJ9E+tmooYnzpa4Dw8K99Xr90//33ZwiPN6HdYngi5b+DrW48hXZJj4PFxUN+YYFesCg/qnFq
-	NvYyE//sccMy0197jCCGApCCplUYdBrfDM0z1Yn5b2w5K93qKZwd3htu4Xh8okDcJrGku2lWPFs7Q
-	gwX1RpyGUjGRo5V4ySGA==;
+	List-Owner; bh=jtEsJZBgDDgFdV7JgMjzt9HK/PT/guDopPWIlgb6VNA=; b=EOaF2PYqSQD1MF
+	PF6qeI2aD0IdTfdg9c6mXo7A3AiSw9kcqKFPaCIURSi2jmpuVKB8c62yLPZlzzIEC6lJlQebqqZo2
+	wZx+O5dmDtIviNfYb2rGzhPSNT3AQYpkreVmH0lpRG2O7IMtkJG0v0A2sijdSrzE6VPrQADmDQ7lH
+	DTwFPO3mbY/f+9Lbuz51rHieMWgv+LXEM5L2fZoA6jzBJTvo8KJBYQVh+exA9mkg0Dicjv2dp5RVm
+	Cr4k0yCrFQHuQNVczoYb3GVAvO7H39z8YBkiQ6bSSgYVyo+TA0mZcIXhAU4JxkaAu212XdAwFPeVy
+	dGIO0WTvllfX1jhRB7Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadtV-0005VM-VW; Tue, 11 Jun 2019 10:20:45 +0000
+	id 1hadsb-0003UY-UB; Tue, 11 Jun 2019 10:19:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadqF-0001Xt-Mj
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:17:27 +0000
+ id 1hadqF-0001Xq-Ku
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:17:26 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4183B21734;
+ by mail.kernel.org (Postfix) with ESMTPSA id 3DAA721721;
  Tue, 11 Jun 2019 10:17:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1560248243;
- bh=u1JIaWbBw7jLF/SO51gqMcCujMK9ivrexVBIBwQk8AU=;
+ bh=5ibFskqlI67kY2ECjyFXtnNVAtBdgqJg4Cz1K4oHnkk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Dc15pdDcRbiIxsMheF4DBHZcUmeF11i24qYVi4am2H/Rz1zVpt51FN7KwYbXfrxu7
- u6O9tfLFjNpxI/YZCOV9t4raa31aN8c7WpulftcgFpdjhbG4iyDqVkXwQlJINcmx1a
- 5rklujyJS2w3vFx1xL1K3aTMy99r6W8UWYZYkktQ=
+ b=ZLZgL84/hvhtUfknRDNFZCpiFQQEN7ynIGa6b+99iWePO7YUt/rK1e4ts3xKXam+X
+ KyHYcYNFi+WBHr/rkFPkhMR8wRVJeLuDkUnv9e42ySRtNHhcbz/4XNhGFsFEFW9rFU
+ a4VlUwc5yWsvpr7PuBxH2uWDPbLKsdxC+M3zYcTU=
 Received: by wens.tw (Postfix, from userid 1000)
- id 504596058A; Tue, 11 Jun 2019 18:17:18 +0800 (CST)
+ id 57E78606A0; Tue, 11 Jun 2019 18:17:18 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH v2 11/25] clk: sunxi-ng: sun5i: Use local parent references
- for CLK_FIXED_FACTOR
-Date: Tue, 11 Jun 2019 18:16:44 +0800
-Message-Id: <20190611101658.23855-12-wens@kernel.org>
+Subject: [PATCH v2 12/25] clk: sunxi-ng: a31: Use local parent references for
+ CLK_FIXED_FACTOR
+Date: Tue, 11 Jun 2019 18:16:45 +0800
+Message-Id: <20190611101658.23855-13-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190611101658.23855-1-wens@kernel.org>
 References: <20190611101658.23855-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_031723_762379_88CE1322 
+X-CRM114-CacheID: sfid-20190611_031723_724483_C3839ECF 
 X-CRM114-Status: GOOD (  12.06  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -100,15 +100,15 @@ external to the CCU.
 Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun5i.c | 34 +++++++++++++++++++++-----------
- 1 file changed, 22 insertions(+), 12 deletions(-)
+ drivers/clk/sunxi-ng/ccu-sun6i-a31.c | 39 ++++++++++++++++++----------
+ 1 file changed, 25 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun5i.c b/drivers/clk/sunxi-ng/ccu-sun5i.c
-index 813e9bf73cbf..d27f3e4c0147 100644
---- a/drivers/clk/sunxi-ng/ccu-sun5i.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun5i.c
-@@ -611,19 +611,29 @@ static struct ccu_common *sun5i_a10s_ccu_clks[] = {
- 	&iep_clk.common,
+diff --git a/drivers/clk/sunxi-ng/ccu-sun6i-a31.c b/drivers/clk/sunxi-ng/ccu-sun6i-a31.c
+index b494c4fe0b2c..048c0d75d0b0 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun6i-a31.c
++++ b/drivers/clk/sunxi-ng/ccu-sun6i-a31.c
+@@ -963,21 +963,32 @@ static struct ccu_common *sun6i_a31_ccu_clks[] = {
+ 	&out_c_clk.common,
  };
  
 +static const struct clk_hw *clk_parent_pll_audio[] = {
@@ -124,6 +124,8 @@ index 813e9bf73cbf..d27f3e4c0147 100644
 -			"pll-audio-base", 1, 1, CLK_SET_RATE_PARENT);
 -static CLK_FIXED_FACTOR(pll_audio_8x_clk, "pll-audio-8x",
 -			"pll-audio-base", 1, 2, CLK_SET_RATE_PARENT);
+-static CLK_FIXED_FACTOR(pll_periph_2x_clk, "pll-periph-2x",
+-			"pll-periph", 1, 2, 0);
 -static CLK_FIXED_FACTOR(pll_video0_2x_clk, "pll-video0-2x",
 -			"pll-video0", 1, 2, CLK_SET_RATE_PARENT);
 -static CLK_FIXED_FACTOR(pll_video1_2x_clk, "pll-video1-2x",
@@ -140,6 +142,9 @@ index 813e9bf73cbf..d27f3e4c0147 100644
 +static CLK_FIXED_FACTOR_HWS(pll_audio_8x_clk, "pll-audio-8x",
 +			    clk_parent_pll_audio,
 +			    1, 2, CLK_SET_RATE_PARENT);
++static CLK_FIXED_FACTOR_HW(pll_periph_2x_clk, "pll-periph-2x",
++			   &pll_periph_clk.common.hw,
++			   1, 2, 0);
 +static CLK_FIXED_FACTOR_HW(pll_video0_2x_clk, "pll-video0-2x",
 +			   &pll_video0_clk.common.hw,
 +			   1, 2, CLK_SET_RATE_PARENT);
@@ -147,7 +152,7 @@ index 813e9bf73cbf..d27f3e4c0147 100644
 +			   &pll_video1_clk.common.hw,
 +			   1, 2, CLK_SET_RATE_PARENT);
  
- static struct clk_hw_onecell_data sun5i_a10s_hw_clks = {
+ static struct clk_hw_onecell_data sun6i_a31_hw_clks = {
  	.hws	= {
 -- 
 2.20.1
