@@ -2,88 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23C503D4B2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:58:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D05703D4CD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:59:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mgbi2QJ+xK+KQ4kh6zMulPIXTcr54UTHetGTdvZgQIQ=; b=QHcwJbT3vdHiOg
-	DAl7KKJAjJlzDq9kB8S/RnAunU/Py7gYn0JF6NNDjvTjRP2z15WinfDu2uHFVSxHS0aZ0GSmSKy9V
-	hhi+gV06hdhL0Tw0dvhqfUhWYYX6RS/gx/3trhQCId+78MuGNvWhvfXXdefFTOzOILyTl5nQxiIBw
-	LbQxjPhxKMhOY3B/LgfNl1dWKN+kyE098bvcBJuVORi1QAbdAhfTug/WYewvJs9MZcHcJGLvFtkgG
-	bIQVfZ6AqtR6iaQ0XptuHvmBS40ZKWCtO6XeEeQKCtep/un86H4xcm/GgtRUW5sdWqVIBugVsNby8
-	Vv6ZRAZrjjyq5djHIS0Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MPeAbhLlt0B8JMlh9gYxA+dpCWc11SwB20YArbF2v2Q=; b=BM2WPBcV5CqN8R
+	LlcEC2WQS5xMC9d8skjt3mIPcCYUrX9DXhbRaWYvEiKrfySMNfu6ocDZ/wAz5QGPM8DLH0rm7VRgF
+	GICh18oS2vs6FE2w0EdVx42ziDUEfaUlpKj1RC3XVUdCGPBSx0DN9fnnplq1P2GUfgM9z2lc256Mq
+	rGhTAYdJMOT0BJy+tuZQ6Rz+Y3LxttUQKhB0M/r+3CUYblqvgFY4GVpyEyUxmKwZ+rfqgA7I0XpIg
+	zoWtrcBLuZvEqSQvRtgp7X4BHsytO4JG5ws9blYPo9Pi6PW2Cf0teTd6YZ6y3V0cIPtl/WAUGRh9O
+	YQwDGlhpY4CGkZl8LuxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hal2P-0006Vd-Kl; Tue, 11 Jun 2019 17:58:25 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hal34-00071J-5Z; Tue, 11 Jun 2019 17:59:06 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hal2C-0006UW-E1; Tue, 11 Jun 2019 17:58:13 +0000
-Received: by mail-ot1-x344.google.com with SMTP id z23so12754769ote.13;
- Tue, 11 Jun 2019 10:58:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VCk8yXyDlU45xhcdQhx1a6hD5bkWPN082lBz8bnOkUY=;
- b=P1UKhIYgxM+XqSIsgTb87emPKNlNd6xALypb/TZzyRb+jBUnC8i5Nd+y9bqj8zezw1
- PVLkE5srBChxTYeKSTiG/xzCtE2O39FMElMr++lFqkDifYYzZHHXxNVa6ZAUbKOpMyhe
- u6PlXZNboq4L0jgn7AkxtSd28W736ruhkywHshY+jyCzZvIMs1O56l0gflaBZ7UqhwQL
- x2RQMfu1NCl93I1mh4SAyT5fO5WxjcRqNVi6NdN2yKWoaWkd3acM80QLStmQWoTnX1v5
- 7M1JBXsMpTxCe4p9R78MjJh5v33YPLvhehDsyfHgqx7cuL09xlhmcldE4dAYPb/FmdZm
- 6TOw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VCk8yXyDlU45xhcdQhx1a6hD5bkWPN082lBz8bnOkUY=;
- b=OAXK36m3kBeR4/HkQbkMxcboBP0RUNUqj2Tb/9bfNH3Ow6ugC8MfvRI4iWT9oFHaYa
- Iy76zd6Ai1MXKhMWVMEHvQJFEn5pJXqUdpzV1ljoh1YVvF+E3eKDBYIruxoUFqCRLuoh
- EM2DjRUtPCqJMDC12k7oDEcVwaBYOUbLECKdkhQsBwsXtLNPmnIt6qiQ8yFM6lXps9eE
- afmDME303jfDD3lZWTi8u3M5xIYPNhvgFIQBNFBOcLQ9kQeicl2C8qh0WPi873WDWdKs
- Ro4vt1pyLFLkZbiP5HAckR4K4ed2h3JkksJM8bj+AQ9IJTkb2st2ZWnWCauHFTlWHScF
- mMGQ==
-X-Gm-Message-State: APjAAAVXeSHofPLiF8IJdDCzoKJ/VWHXa2bmwWjG3mcfnBaghwnAU8hk
- BktHXKIjd7iV3/nP0wRps6PHif4Xu58ZRqTWCUU=
-X-Google-Smtp-Source: APXvYqzoPj3Xa4uMgvBC9zsIyKzC4P0HF+b5cZAVaQucBLGJZkMH7tOH6JRC+xDDYFPIUVm3dwteObyR0yuyPX59K5A=
-X-Received: by 2002:a9d:32a6:: with SMTP id u35mr36257313otb.81.1560275890132; 
- Tue, 11 Jun 2019 10:58:10 -0700 (PDT)
+ id 1hal2s-0006y5-3d; Tue, 11 Jun 2019 17:58:55 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 9685EABE1;
+ Tue, 11 Jun 2019 17:58:50 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: stefan.wahren@i2se.com,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/7] cpufreq support for Raspberry Pi
+Date: Tue, 11 Jun 2019 19:58:32 +0200
+Message-Id: <20190611175839.28351-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190604144714.2009-1-glaroque@baylibre.com>
- <20190604144714.2009-2-glaroque@baylibre.com>
- <CAFBinCBN4QC2tPDEQmTW_c+PP5yu2qoK5M1eSye=SmvpieKWQg@mail.gmail.com>
- <d68aae23-f877-1f65-94a4-79e909ae111a@baylibre.com>
-In-Reply-To: <d68aae23-f877-1f65-94a4-79e909ae111a@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 11 Jun 2019 19:57:59 +0200
-Message-ID: <CAFBinCBCUxZjnrRxFHApp4iwPUCQQ+PU54V6zJew8Sr8La3u7w@mail.gmail.com>
-Subject: Re: [PATCH 1/3] Documentation: dt-bindings: add the Amlogic Meson
- Temperature Sensor
-To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_105812_499119_1DA0D9EB 
-X-CRM114-Status: GOOD (  22.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_105854_299635_2D6FB12C 
+X-CRM114-Status: GOOD (  12.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,98 +57,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-iio@vger.kernel.org, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, Guillaume La Roque <glaroque@baylibre.com>,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- jic23@kernel.org
+Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
+ ptesarik@suse.com, sboyd@kernel.org, viresh.kumar@linaro.org,
+ mturquette@baylibre.com, linux-pm@vger.kernel.org, rjw@rjwysocki.net,
+ eric@anholt.net, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
+ mbrugger@suse.de, ssuloev@orpaltech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
+Hi all,
+this aims at adding cpufreq support to the Raspberry Pi family of
+boards.
 
-On Tue, Jun 11, 2019 at 1:01 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> On 06/06/2019 21:16, Martin Blumenstingl wrote:
-> > Hi Guillaume,
-> >
-> > thank you for working on this!
-> >
-> > On Tue, Jun 4, 2019 at 4:47 PM Guillaume La Roque <glaroque@baylibre.com> wrote:
-> >>
-> >> This adds the devicetree binding documentation for the Temperature
-> >> Sensor found in the Amlogic Meson G12 SoCs.
-> >> Currently only the G12A SoCs are supported.
-> > so G12B is not supported (yet)?
->
-> G12B is 95% similar as G12A, it will certainly use slighly different values.
-OK, thank you for clarifying this
-as far as I can tell Guillaume's code is already prepared for that (as
-there's a per-instance specific struct with settings for the specific
-instance) which is good to know
+The series first factors out 'pllb' from clk-bcm2385 and creates a new
+clk driver that operates it over RPi's firmware interface[1]. We are
+forced to do so as the firmware 'owns' the pll and we're not allowed to
+change through the register interface directly as we might race with the
+over-temperature and under-voltage protections provided by the firmware.
 
-> >
-> >> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
-> >> ---
-> >>  .../iio/temperature/amlogic,meson-tsensor.txt | 31 +++++++++++++++++++
-> >>  1 file changed, 31 insertions(+)
-> >>  create mode 100644 Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
-> >> new file mode 100644
-> >> index 000000000000..d064db0e9cac
-> >> --- /dev/null
-> >> +++ b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
-> >> @@ -0,0 +1,31 @@
-> >> +* Amlogic Meson Temperature Sensor
-> >> +
-> >> +Required properties:
-> >> +- compatible:  depending on the SoC and the position of the sensor,
-> >> +               this should be one of:
-> >> +               - "amlogic,meson-g12a-cpu-tsensor" for the CPU G12A SoC sensor
-> >> +               - "amlogic,meson-g12a-ddr-tsensor" for the DDR G12A SoC sensor
-> >> +               followed by the common :
-> >> +               - "amlogic,meson-g12a-tsensor" for G12A SoC family
-> >> +- reg:         the physical base address and length of the registers
-> >> +- interrupts:  the interrupt indicating end of sampling
-> >> +- clocks:      phandle identifier for the reference clock of temperature sensor
-> >> +- #io-channel-cells: must be 1, see ../iio-bindings.txt
-> > have you considered using the thermal framework [0] instead of the iio
-> > framework (see below)?
->
-> Question: why thermal, and not hwmon ? what's the main difference ?
-this is what came to my mind why the thermal framework fits best (at
-least based on my current knowledge):
-a) the thermal-zones (see meson-gxm-khadas-vim2.dts for example) a
-"thermal-sensors" property. so for active (with a fan) or passive (by
-limiting the maximum frequency and thus the supply voltage) cooling we
-need a thermal device anyways
-b) the thermal bindings support multiple trip points. we can map them
-to one of the four interrupts which the IP block can generate
-c) defining a temperature where the chip will power off sounds like a
-use-case which may be implemented by other thermal IP blocks (in other
-words: maybe the thermal frameworks provides some generic property to
-replace the "amlogic,critical-temperature" property)
-d) as far as I know you can tell the thermal framework to create a
-hwmon device with only a couple (5?) lines of code
+Next it creates a minimal cpufreq driver that populates the CPU's opp
+table, and registers cpufreq-dt. Which is needed as the firmware
+controls the max and min frequencies available.
 
-as Guillaume has already shown we can implement c) with a custom
-property, but that's not limited to the underlying framework (IIO,
-hwmon, thermal, ...)
+This was tested on a RPi3b+ and RPI2b, both using multi_v7_defconfig and
+arm64's defconfig.
 
-use-case d) is not a strong one because I'm using iio-hwmon to create
-a hwmon device on the 32-bit SoCs.
-however, together with case a) using an IIO driver is going to be more
-difficult because currently there's "only" a "generic-adc-thermal"
-binding (but not a "generic-iio-temperature-thermal" binding)
+That's all,
+kind regards,
+Nicolas
 
-the initial driver version doesn't have to support everything I listed above.
-however, I believe with the thermal framework we don't limit ourselves
-to one use-case and can extend the driver in the future
+[1] https://github.com/raspberrypi/firmware/wiki/Mailbox-property-interface
 
+---
 
-Martin
+Changes since v2:
+  - Fixed configs to match Stefan's comments
+  - Round OPP frequencies
+  - Rebase onto linux-next
+  - Minor cleanups & checkpatch.pl
+
+Changes since v1:
+  - Enabled by default on the whole family of devices
+  - Added/Fixed module support
+  - clk device now registered by firmware driver
+  - raspberrypi-cpufreq device now registered by clk driver
+  - Reimplemented clk rounding unsing determine_rate()
+  - Enabled in configs for arm and arm64
+
+Changes since RFC:
+  - Move firmware clk device into own driver
+
+Nicolas Saenz Julienne (7):
+  clk: bcm2835: remove pllb
+  clk: bcm283x: add driver interfacing with Raspberry Pi's firmware
+  firmware: raspberrypi: register clk device
+  cpufreq: add driver for Raspbery Pi
+  clk: raspberrypi: register platform device for raspberrypi-cpufreq
+  ARM: defconfig: enable cpufreq driver for RPi
+  arm64: defconfig: enable cpufreq support for RPi3
+
+ arch/arm/configs/bcm2835_defconfig    |   9 +
+ arch/arm/configs/multi_v7_defconfig   |   2 +
+ arch/arm64/configs/defconfig          |   2 +
+ drivers/clk/bcm/Kconfig               |   7 +
+ drivers/clk/bcm/Makefile              |   1 +
+ drivers/clk/bcm/clk-bcm2835.c         |  28 +--
+ drivers/clk/bcm/clk-raspberrypi.c     | 315 ++++++++++++++++++++++++++
+ drivers/cpufreq/Kconfig.arm           |   8 +
+ drivers/cpufreq/Makefile              |   1 +
+ drivers/cpufreq/raspberrypi-cpufreq.c |  97 ++++++++
+ drivers/firmware/raspberrypi.c        |  10 +
+ 11 files changed, 456 insertions(+), 24 deletions(-)
+ create mode 100644 drivers/clk/bcm/clk-raspberrypi.c
+ create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
