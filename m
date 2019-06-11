@@ -2,64 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F4FB3C401
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 08:32:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AD743C47E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 08:51:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=i9kTXAk5gdKnUkgpancOmxxom38ZApsp2jH7iXY7dh4=; b=KKiaAlGYnpCVcQmw730kEd1Vnm
-	6DrDe9AzYLA5SdYsDqThmF8MdBcRKf+q79KqEIqvifZaUUpjHyW/9fhI6onuOPhle+bOrFrQ1tk/x
-	icZup1XSl2av4QFYmzr/incNWMJaT1v5SrAkBQ2e9/JRU3KXse98NGp1M3JZ179j5Ju/yBa4NsuPn
-	alXB0J3UuvgFCBzPKMwbfwAuqfvsSCdOHhKVT3vLXoXuTeJiQEe8I0RG8m49F7qfC5EVabcv92rSA
-	ZczkPLOpyb2BbucZPBaGQMbivzKeNCWLE2s1vixWZxGqZhUFgCKAxoDAptyknXAx4smfrSQnCYEfp
-	/evCluRw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VNTSYj8x5vxUNpH8BS7qiCx1j64QoEndg3iiPOqhcME=; b=Ohhn3fSkdfL9Bmau7Z5D4jB7b
+	TADgfAAZShaSycoEVBBB2BUs6+hVXa/h0Q5Fd2DLbfwmWXZNmppjDAktMcN+/Dwuq4b9d8mmiWY6M
+	cAghx5SbnHdwmqV/za+NrMckrbU39qekQeNuCK9Ma5w8CS9TlX4i9sqT5UKBdADKo++50FnGwWFId
+	CqWC24vb/8nIokwovh3vCDVd4KPZSE/ruse15laOaliC1TTGWbeQaeoWng8f363N9vcR65G4Hoqti
+	h+b9DPgM/G+xGjOJlNZby6VA08obUQYb0G1LE/holvz43GYquihUL1fMsibcUcLiMfGvdXzcI5fqe
+	uSHDpCijw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haaKX-0005DU-QP; Tue, 11 Jun 2019 06:32:25 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1haacp-0003mc-Ek; Tue, 11 Jun 2019 06:51:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haaK8-00050y-AO
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 06:32:01 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C75BD1A0EF1;
- Tue, 11 Jun 2019 08:31:57 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 932A21A0177;
- Tue, 11 Jun 2019 08:31:50 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 74AA7402FB;
- Tue, 11 Jun 2019 14:31:41 +0800 (SGT)
-From: Anson.Huang@nxp.com
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- a.zummo@towertech.it, alexandre.belloni@bootlin.com, aisheng.dong@nxp.com,
- ulf.hansson@linaro.org, peng.fan@nxp.com, daniel.baluta@nxp.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
-Subject: [PATCH 3/3] arm64: dts: imx8qxp: Add fallback compatible string for
- RTC node
-Date: Tue, 11 Jun 2019 14:33:33 +0800
-Message-Id: <20190611063333.48501-3-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190611063333.48501-1-Anson.Huang@nxp.com>
-References: <20190611063333.48501-1-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1haacd-0003mD-F5; Tue, 11 Jun 2019 06:51:08 +0000
+Received: from [10.44.0.22] (unknown [103.48.210.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0C20920896;
+ Tue, 11 Jun 2019 06:51:04 +0000 (UTC)
+Subject: Re: binfmt_flat cleanups and RISC-V support
+To: Christoph Hellwig <hch@lst.de>
+References: <20190610212015.9157-1-hch@lst.de>
+From: Greg Ungerer <gerg@linux-m68k.org>
+Message-ID: <6e5fb7db-1d6f-7d49-553c-edc18f14f641@linux-m68k.org>
+Date: Tue, 11 Jun 2019 16:51:02 +1000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <20190610212015.9157-1-hch@lst.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_233200_495482_1FF168F1 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190610_235107_523031_80060661 
+X-CRM114-Status: GOOD (  10.32  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,40 +64,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
+ linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-m68k@lists.linux-m68k.org, linux-riscv@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <Anson.Huang@nxp.com>
+Hi Christoph,
 
-The i.MX system controller RTC driver uses generic compatible
-string to support all i.MX SoCs with system controller inside,
-this patch adds the generic system controller RTC compatible
-string as fallback compatible string accordingly.
+On 11/6/19 7:20 am, Christoph Hellwig wrote:
+> below is a larger stash of cleanups for the binfmt_misc code,
+> preparing for the last patch that now trivially adds RISC-V
+> support, which will be used for the RISC-V nommu series I am
+> about to post.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Whole series looks pretty good. Just the one comment I made.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-index 12044be..40811a2 100644
---- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-@@ -162,7 +162,7 @@
- 		};
- 
- 		rtc: rtc {
--			compatible = "fsl,imx8qxp-sc-rtc";
-+			compatible = "fsl,imx8qxp-sc-rtc", "fsl,imx-sc-rtc";
- 		};
- 
- 		watchdog {
--- 
-2.7.4
+I normally take these through the m68knommu git tree,
+if you have no problem with that I'll push it in there.
+It will hit linux-next from there.
+
+Thanks
+Greg
+
 
 
 _______________________________________________
