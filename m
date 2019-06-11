@@ -2,93 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B77F03D5A3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 20:40:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69EFF3D5DC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 20:52:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F+9nDxNyJr4XjxcPTqQl1a71SSBsiyb2qRa/XGUsBmc=; b=HDFWVUsXeIdfgG
-	jrWmRYhizXrlLb/O9UCqLDpdx5ARhu2saW89MumUs6e7E37s41JNqP3WEQ2lrWpbSAptuWlHp/Kbn
-	O+qJ8OvX4eyWbMHK26XfuVfLgxij7gMZyvlkD7A4ZYh8pS7PCDMZd/26mWohqglw/RrNeJlQV2X0S
-	rspoPozAbJq6acdQ7MKvHXhd70M1wOrU/sWuNtuFZs4paO19zo+x/KswiGQla4fb44lH9NrkfnPUf
-	mrWeCS57sQTzXBR2LXLj6p9XY/6Jb1KkDDZxaTYqq+ZvGUpx2zYkud27iTOm4dM4xDpRGUNAIfaFK
-	ACBeU5EkQYG2VJFvL0bQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=WlDt24ZaOi5OnEVHbxMQjWufFDGOkDonPHfw5nnTSgQ=; b=keh
+	DAFJTeS+RutVA8q5RDl8PyVocRFpMIRHNMkdBv4ckohGRaJ1hWyEvErxoXCDKRUsPH0sQsKrnCZe8
+	1QLY3gd+s6sauNhXfla49lympZQdj1U3cnVd4xj53O3xc/Fwy9zAkqBRsiL91IlgxJJrqHggPudDL
+	J3HEAYrUIvIzXtGNJZtId8T7DI9f5d78UeBS4pG8kiSGu6GL993BxuWYENzhWoPCbq60homjGQ6f5
+	ag8GUo5naDD+w6zrFKVu9VVAFb0Mnx6gcWxacjdWkRYFnyq3JpMflN1f9as/aoJ8fQjsGfULyu79Q
+	6bLRG3QMzltUp+ntxxAS6ZNHT+lXbkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1halhL-0004V6-6M; Tue, 11 Jun 2019 18:40:43 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1halsU-0008Q0-Qo; Tue, 11 Jun 2019 18:52:14 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1halgv-0004HY-Em
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 18:40:20 +0000
-Received: by mail-pg1-x542.google.com with SMTP id n2so7434135pgp.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 11:40:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=uF3scc9KxW/hDBo9yixpL6JLeJpWpCyfDiMubViqV3w=;
- b=a/IwH23tLKxZG4tHXQYxewZQ8XALRw+eja67K+M5/z/FNEeQwad3oJrXDdqxeiXTN0
- JCAwohTOmYwVBqWlbh42hI790jxwWh4U7uRcx6iTsHcNG9GOMmvR7eRoOZHCF44GQkAc
- oBTcWSoDfgJNn8h6THvhoka1uM5v+sahJRRAWiy3tyw+ghRjdlPOV/RqYAp7i23/sYBV
- WdLTaSx1YeAeEKSHV86SZ4KKKcgaww9h2/1TcVgsPu9BPYuNOpvH/c9FRbJrA+UdQdT2
- ErF4h0gR+JelusMccEw/LhaR3SsZ6jvNo5sTT6OAgRUOneDLE7TtHLWu3tcBzFB8NTzf
- RtgA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uF3scc9KxW/hDBo9yixpL6JLeJpWpCyfDiMubViqV3w=;
- b=lnqaubf0Cxa1FOklb7VOfpcxrMRemb/1hKaH4J20dkWzjpzo6eJK0vK44VrUVwJzuF
- 8KCwqVO+bxWQpxPzcRHH+W4DiIm7dZqqNAOctaw1BSyZEIbVRLHAS63oWNv+c7H+eNCD
- td81U6gaE6ImBgPyrqEhld9FZ4G45RYveW2liNW4+/ZPZ5EtPf79SdT5BOX+rEVqW4Dd
- fgc85B4RvIpOJV8CvYhPIRluC7wxbOKQSgp9WoCe7elDgdfEE/T7z2dP4RB+VWkJDHm8
- Cs1D5q6Tvi24VaUn5xHUik7/A9ld9v9V5/gwnVhh7gPFawALPZaNPGdL7kKbe91FayJP
- tsGA==
-X-Gm-Message-State: APjAAAU4zFZ09eBcxOiaUJp/9jfHHzKkNKrj/bHEsx+LiIeAChFMEb8A
- 8k23dmQhYpBcIwa0+fRj7SVrHg==
-X-Google-Smtp-Source: APXvYqynYnWiv/cECcNpuyerUBO5l0k57vUwYWheEE66J+ItnSzBpP+OdXuYXnj2u0eHb908ZqL+nA==
-X-Received: by 2002:a62:3085:: with SMTP id
- w127mr78659179pfw.170.1560278416611; 
- Tue, 11 Jun 2019 11:40:16 -0700 (PDT)
-Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id a7sm13394893pgj.42.2019.06.11.11.40.15
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 11 Jun 2019 11:40:16 -0700 (PDT)
-Date: Tue, 11 Jun 2019 11:40:13 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 4/8] pinctrl: qcom: sdm845: Provide ACPI support
-Message-ID: <20190611184013.GQ4814@minitux>
-References: <20190610084213.1052-1-lee.jones@linaro.org>
- <20190610084213.1052-4-lee.jones@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190610084213.1052-4-lee.jones@linaro.org>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+ id 1halsK-0008PT-IF
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 18:52:06 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C6827200AB9;
+ Tue, 11 Jun 2019 20:52:00 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B8826200105;
+ Tue, 11 Jun 2019 20:52:00 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net (gw_auto.ea.freescale.net
+ [10.171.94.100])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 4582A20600;
+ Tue, 11 Jun 2019 20:52:00 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
+ Shawn Guo <shawnguo@kernel.org>, Dong Aisheng <aisheng.dong@nxp.com>
+Subject: [PATCH] soc: imx: Move imx_get_soc_revision from mach-imx
+Date: Tue, 11 Jun 2019 21:51:57 +0300
+Message-Id: <084f934192b7d245034ddd507f348fa13ae840ac.1560279028.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_114017_686968_77F898AD 
-X-CRM114-Status: GOOD (  22.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_115204_880144_D60868AA 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,132 +65,227 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, linux-usb@vger.kernel.org,
- wsa+renesas@sang-engineering.com, gregkh@linuxfoundation.org,
- linus.walleij@linaro.org, ard.biesheuvel@linaro.org,
- linux-kernel@vger.kernel.org, david.brown@linaro.org, alokc@codeaurora.org,
- linux-i2c@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, andy.gross@linaro.org, jlhugo@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ Lucas Stach <l.stach@pengutronix.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 10 Jun 01:42 PDT 2019, Lee Jones wrote:
+There are a few drivers which call imx_get_soc_revision in order to
+enable errata workarounds but this is only available on 32-bit arm.
 
-> This patch provides basic support for booting with ACPI instead
-> of the currently supported Device Tree.  When doing so there are a
-> couple of differences which we need to taken into consideration.
-> 
-> Firstly, the SDM850 ACPI tables omit information pertaining to the
-> 4 reserved GPIOs on the platform.  If Linux attempts to touch/
-> initialise any of these lines, the firmware will restart the
-> platform.
-> 
-> Secondly, when booting with ACPI, it is expected that the firmware
-> will set-up things like; Regulators, Clocks, Pin Functions, etc in
-> their ideal configuration.  Thus, the possible Pin Functions
-> available to this platform are not advertised when providing the
-> higher GPIOD/Pinctrl APIs with pin information.
-> 
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Move the current globals to drivers/soc/imx/revision.c so that they're
+also accessible on all imx8 with same name and semantics.
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
-> ---
->  drivers/pinctrl/qcom/Kconfig          |  2 +-
->  drivers/pinctrl/qcom/pinctrl-sdm845.c | 36 ++++++++++++++++++++++++++-
->  2 files changed, 36 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/pinctrl/qcom/Kconfig b/drivers/pinctrl/qcom/Kconfig
-> index 2e66ab72c10b..aafbe932424f 100644
-> --- a/drivers/pinctrl/qcom/Kconfig
-> +++ b/drivers/pinctrl/qcom/Kconfig
-> @@ -168,7 +168,7 @@ config PINCTRL_SDM660
->  
->  config PINCTRL_SDM845
->         tristate "Qualcomm Technologies Inc SDM845 pin controller driver"
-> -       depends on GPIOLIB && OF
-> +       depends on GPIOLIB && (OF || ACPI)
->         select PINCTRL_MSM
->         help
->           This is the pinctrl, pinmux, pinconf and gpiolib driver for the
-> diff --git a/drivers/pinctrl/qcom/pinctrl-sdm845.c b/drivers/pinctrl/qcom/pinctrl-sdm845.c
-> index c97f20fca5fd..98a438dba711 100644
-> --- a/drivers/pinctrl/qcom/pinctrl-sdm845.c
-> +++ b/drivers/pinctrl/qcom/pinctrl-sdm845.c
-> @@ -3,6 +3,7 @@
->   * Copyright (c) 2016-2018, The Linux Foundation. All rights reserved.
->   */
->  
-> +#include <linux/acpi.h>
->  #include <linux/module.h>
->  #include <linux/of.h>
->  #include <linux/platform_device.h>
-> @@ -1277,6 +1278,10 @@ static const struct msm_pingroup sdm845_groups[] = {
->  	UFS_RESET(ufs_reset, 0x99f000),
->  };
->  
-> +static const int sdm845_acpi_reserved_gpios[] = {
-> +	0, 1, 2, 3, 81, 82, 83, 84, -1
-> +};
-> +
->  static const struct msm_pinctrl_soc_data sdm845_pinctrl = {
->  	.pins = sdm845_pins,
->  	.npins = ARRAY_SIZE(sdm845_pins),
-> @@ -1287,11 +1292,39 @@ static const struct msm_pinctrl_soc_data sdm845_pinctrl = {
->  	.ngpios = 150,
->  };
->  
-> +static const struct msm_pinctrl_soc_data sdm845_acpi_pinctrl = {
-> +	.pins = sdm845_pins,
-> +	.npins = ARRAY_SIZE(sdm845_pins),
-> +	.groups = sdm845_groups,
-> +	.ngroups = ARRAY_SIZE(sdm845_groups),
-> +	.reserved_gpios = sdm845_acpi_reserved_gpios,
-> +	.ngpios = 150,
-> +};
-> +
->  static int sdm845_pinctrl_probe(struct platform_device *pdev)
->  {
-> -	return msm_pinctrl_probe(pdev, &sdm845_pinctrl);
-> +	int ret;
-> +
-> +	if (pdev->dev.of_node) {
-> +		ret = msm_pinctrl_probe(pdev, &sdm845_pinctrl);
-> +	} else if (has_acpi_companion(&pdev->dev)) {
-> +		ret = msm_pinctrl_probe(pdev, &sdm845_acpi_pinctrl);
-> +	} else {
-> +		dev_err(&pdev->dev, "DT and ACPI disabled\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	return ret;
->  }
->  
-> +#if CONFIG_ACPI
-> +static const struct acpi_device_id sdm845_pinctrl_acpi_match[] = {
-> +	{ "QCOM0217"},
-> +	{ },
-> +};
-> +MODULE_DEVICE_TABLE(acpi, sdm845_pinctrl_acpi_match);
-> +#endif
-> +
->  static const struct of_device_id sdm845_pinctrl_of_match[] = {
->  	{ .compatible = "qcom,sdm845-pinctrl", },
->  	{ },
-> @@ -1302,6 +1335,7 @@ static struct platform_driver sdm845_pinctrl_driver = {
->  		.name = "sdm845-pinctrl",
->  		.pm = &msm_pinctrl_dev_pm_ops,
->  		.of_match_table = sdm845_pinctrl_of_match,
-> +		.acpi_match_table = ACPI_PTR(sdm845_pinctrl_acpi_match),
->  	},
->  	.probe = sdm845_pinctrl_probe,
->  	.remove = msm_pinctrl_remove,
-> -- 
-> 2.17.1
-> 
+---
+This is not very pretty.
+
+ arch/arm/mach-imx/common.h    |  1 -
+ arch/arm/mach-imx/cpu.c       | 17 ++++-------------
+ drivers/soc/imx/Makefile      |  1 +
+ drivers/soc/imx/revision.c    | 19 +++++++++++++++++++
+ drivers/soc/imx/soc-imx-scu.c |  2 ++
+ drivers/soc/imx/soc-imx8.c    |  5 ++++-
+ include/soc/imx/revision.h    |  1 +
+ 7 files changed, 31 insertions(+), 15 deletions(-)
+ create mode 100644 drivers/soc/imx/revision.c
+
+diff --git a/arch/arm/mach-imx/common.h b/arch/arm/mach-imx/common.h
+index c51764a85fd7..5c06224986f4 100644
+--- a/arch/arm/mach-imx/common.h
++++ b/arch/arm/mach-imx/common.h
+@@ -49,11 +49,10 @@ void mxc_restart(enum reboot_mode, const char *);
+ void mxc_arch_reset_init(void __iomem *);
+ void imx1_reset_init(void __iomem *);
+ void imx_set_aips(void __iomem *);
+ void imx_aips_allow_unprivileged_access(const char *compat);
+ int mxc_device_init(void);
+-void imx_set_soc_revision(unsigned int rev);
+ void imx_init_revision_from_anatop(void);
+ struct device *imx_soc_device_init(void);
+ void imx6_enable_rbc(bool enable);
+ void imx_gpc_check_dt(void);
+ void imx_gpc_set_arm_power_in_lpm(bool power_off);
+diff --git a/arch/arm/mach-imx/cpu.c b/arch/arm/mach-imx/cpu.c
+index 0b137eeffb61..bfc84f5a1312 100644
+--- a/arch/arm/mach-imx/cpu.c
++++ b/arch/arm/mach-imx/cpu.c
+@@ -9,27 +9,16 @@
+ 
+ #include "hardware.h"
+ #include "common.h"
+ 
+ unsigned int __mxc_cpu_type;
+-static unsigned int imx_soc_revision;
+ 
+ void mxc_set_cpu_type(unsigned int type)
+ {
+ 	__mxc_cpu_type = type;
+ }
+ 
+-void imx_set_soc_revision(unsigned int rev)
+-{
+-	imx_soc_revision = rev;
+-}
+-
+-unsigned int imx_get_soc_revision(void)
+-{
+-	return imx_soc_revision;
+-}
+-
+ void imx_print_silicon_rev(const char *cpu, int srev)
+ {
+ 	if (srev == IMX_CHIP_REVISION_UNKNOWN)
+ 		pr_info("CPU identified as %s, unknown revision\n", cpu);
+ 	else
+@@ -77,10 +66,11 @@ struct device * __init imx_soc_device_init(void)
+ {
+ 	struct soc_device_attribute *soc_dev_attr;
+ 	struct soc_device *soc_dev;
+ 	struct device_node *root;
+ 	const char *soc_id;
++	int soc_rev;
+ 	int ret;
+ 
+ 	soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
+ 	if (!soc_dev_attr)
+ 		return NULL;
+@@ -151,13 +141,14 @@ struct device * __init imx_soc_device_init(void)
+ 	default:
+ 		soc_id = "Unknown";
+ 	}
+ 	soc_dev_attr->soc_id = soc_id;
+ 
++	soc_rev = imx_get_soc_revision();
+ 	soc_dev_attr->revision = kasprintf(GFP_KERNEL, "%d.%d",
+-					   (imx_soc_revision >> 4) & 0xf,
+-					   imx_soc_revision & 0xf);
++					   (soc_rev >> 4) & 0xf,
++					   soc_rev & 0xf);
+ 	if (!soc_dev_attr->revision)
+ 		goto free_soc;
+ 
+ 	soc_dev = soc_device_register(soc_dev_attr);
+ 	if (IS_ERR(soc_dev))
+diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
+index cf9ca42ff739..293a771127dd 100644
+--- a/drivers/soc/imx/Makefile
++++ b/drivers/soc/imx/Makefile
+@@ -1,5 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++obj-y += revision.o
+ obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
+ obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
+ obj-$(CONFIG_ARCH_MXC) += soc-imx8.o
+ obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
+diff --git a/drivers/soc/imx/revision.c b/drivers/soc/imx/revision.c
+new file mode 100644
+index 000000000000..fc4cea2f25bd
+--- /dev/null
++++ b/drivers/soc/imx/revision.c
+@@ -0,0 +1,19 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 NXP.
++ */
++#include <linux/module.h>
++#include <soc/imx/revision.h>
++
++static unsigned int imx_soc_revision = IMX_CHIP_REVISION_UNKNOWN;
++
++void imx_set_soc_revision(unsigned int rev)
++{
++	imx_soc_revision = rev;
++}
++
++unsigned int imx_get_soc_revision(void)
++{
++	return imx_soc_revision;
++}
++EXPORT_SYMBOL(imx_get_soc_revision);
+diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
+index 676f612f6488..7c4106ff3e0f 100644
+--- a/drivers/soc/imx/soc-imx-scu.c
++++ b/drivers/soc/imx/soc-imx-scu.c
+@@ -7,10 +7,11 @@
+ #include <linux/firmware/imx/sci.h>
+ #include <linux/slab.h>
+ #include <linux/sys_soc.h>
+ #include <linux/platform_device.h>
+ #include <linux/of.h>
++#include <soc/imx/revision.h>
+ 
+ #define IMX_SCU_SOC_DRIVER_NAME		"imx-scu-soc"
+ 
+ static struct imx_sc_ipc *soc_ipc_handle;
+ 
+@@ -85,10 +86,11 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
+ 		return -ENOMEM;
+ 
+ 	/* format revision value passed from SCU firmware */
+ 	val = (id >> 5) & 0xf;
+ 	val = (((val >> 2) + 1) << 4) | (val & 0x3);
++	imx_set_soc_revision(val);
+ 	soc_dev_attr->revision = kasprintf(GFP_KERNEL,
+ 					   "%d.%d",
+ 					   (val >> 4) & 0xf,
+ 					   val & 0xf);
+ 	if (!soc_dev_attr->revision) {
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+index 3842d096daf0..465d2c6c6905 100644
+--- a/drivers/soc/imx/soc-imx8.c
++++ b/drivers/soc/imx/soc-imx8.c
+@@ -8,10 +8,11 @@
+ #include <linux/of_address.h>
+ #include <linux/slab.h>
+ #include <linux/sys_soc.h>
+ #include <linux/platform_device.h>
+ #include <linux/of.h>
++#include <soc/imx/revision.h>
+ 
+ #define REV_B1				0x21
+ 
+ #define IMX8MQ_SW_INFO_B1		0x40
+ #define IMX8MQ_SW_MAGIC_B1		0xff0055aa
+@@ -118,12 +119,14 @@ static int __init imx8_soc_init(void)
+ 	}
+ 
+ 	data = id->data;
+ 	if (data) {
+ 		soc_dev_attr->soc_id = data->name;
+-		if (data->soc_revision)
++		if (data->soc_revision) {
+ 			soc_rev = data->soc_revision();
++			imx_set_soc_revision(soc_rev & 0xFF);
++		}
+ 	}
+ 
+ 	soc_dev_attr->revision = imx8_revision(soc_rev);
+ 	if (!soc_dev_attr->revision) {
+ 		ret = -ENOMEM;
+diff --git a/include/soc/imx/revision.h b/include/soc/imx/revision.h
+index 9ea346924c35..5e7e2aea10ff 100644
+--- a/include/soc/imx/revision.h
++++ b/include/soc/imx/revision.h
+@@ -30,8 +30,9 @@ int mx31_revision(void);
+ int mx35_revision(void);
+ int mx51_revision(void);
+ int mx53_revision(void);
+ 
+ unsigned int imx_get_soc_revision(void);
++void imx_set_soc_revision(unsigned int rev);
+ void imx_print_silicon_rev(const char *cpu, int srev);
+ 
+ #endif /* __SOC_IMX_REVISION_H__ */
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
