@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF52C3C7A1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:52:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F49D3C7AF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:53:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6weFJChUeZrKHW4Cz7gmacx/abLZpYFdY+vN0/JgJto=; b=ceu2iOHWOjfWHb
-	087k5Th/1rfLu9w2fd2mFHDen7VGXyvMCa4l1glk7hkGxVONvBC2I7bzYCrL8VW0EZA5pfleYt5Rr
-	d8RT6SQFqZJrB6Nw2m5B49Pj/Yj04uVWdSBleLJNLoY21JkDTlY+/XAjdNT2MwByXUrhttLaREArE
-	rzH884oHljDd4cfgPvP+c4H12p5VF6yrmlJn4zmvl7ZCZ64YSaEzgtnJczrz7nH1WP3TD61nZdYDL
-	O1I9BDFTFFxCg5BE0zoLAd+cRhfebyHZnZ2jPAbhRFwO66g0zvMPH4MiLpohYWjJgClbwQmCWAWAY
-	3I2j9P4+HkHWIbLNBh2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MebqkWS9Hey/CrpaGFZOQlI72X3cmjMo7S2ZMUMr8d4=; b=jlcnBNSpbYZYwoUyiqKxpNCM6
+	c5GkwuCGPzuulxOaAd/vNNdQ7e7bQjQO5A7HuIKb9yJg7C3w4VwncjLYOK87h0trKH8f3cRVfpVTZ
+	7b6bag/D75g4/i2a+wZZE0FcmQDu0zHXi/eiq5ojis7z3NUF6M52DtouORKYEZm5BYQXJMv7fClxn
+	InN2cbDcht/roWeiguSE2R0SGVPN9IqlKjHPwCKP9K2stIhDFijqL/fO4cAJ4pkksKF5FvwNxtYio
+	Sn36rA8LPqwWJ4NOMqhnu5pxPA1SR1cAS6i/BNFvQL6kIW4AiOIy0SucBRtNy3BjS1GwGPWFjlFLo
+	0DLawW2QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadRl-0001s6-Hm; Tue, 11 Jun 2019 09:52:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hadRZ-0001rJ-L3; Tue, 11 Jun 2019 09:51:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9E51C337;
- Tue, 11 Jun 2019 02:51:52 -0700 (PDT)
-Received: from [10.1.29.141] (e121487-lin.cambridge.arm.com [10.1.29.141])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 893B13F73C;
- Tue, 11 Jun 2019 02:53:33 -0700 (PDT)
-Subject: Re: [PATCH 06/15] binfmt_flat: remove the uapi <linux/flat.h> header
-To: Christoph Hellwig <hch@lst.de>, Greg Ungerer <gerg@linux-m68k.org>
-References: <20190610212015.9157-1-hch@lst.de>
- <20190610212015.9157-7-hch@lst.de>
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-Message-ID: <0971e6ed-524c-c9ee-b7d7-89126d742b8d@arm.com>
-Date: Tue, 11 Jun 2019 10:51:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hadTR-0002QW-H9; Tue, 11 Jun 2019 09:53:49 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hadTD-0002Pc-5y
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 09:53:37 +0000
+X-Originating-IP: 90.88.159.246
+Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
+ [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id C88DFC000B;
+ Tue, 11 Jun 2019 09:53:17 +0000 (UTC)
+Date: Tue, 11 Jun 2019 11:53:17 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [PATCH v2 06/11] dt-bindings: net: sun4i-mdio: Convert the
+ binding to a schemas
+Message-ID: <20190611095317.l55zjuomxqfvpqlo@flea>
+References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
+ <664da05aaf9a7029494d72d7c536baa192672fbe.1560158667.git-series.maxime.ripard@bootlin.com>
+ <20190610143730.GH28724@lunn.ch>
 MIME-Version: 1.0
-In-Reply-To: <20190610212015.9157-7-hch@lst.de>
-Content-Language: en-US
+In-Reply-To: <20190610143730.GH28724@lunn.ch>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_025153_786136_2F744825 
-X-CRM114-Status: GOOD (  24.65  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20190611_025335_377238_B2E61843 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,183 +65,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
- Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
- linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, linux-riscv@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Antoine =?utf-8?Q?T=C3=A9nart?= <antoine.tenart@bootlin.com>,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: multipart/mixed; boundary="===============3870004529938180784=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/10/19 10:20 PM, Christoph Hellwig wrote:
-> The split between the two flat.h files is completely arbitrary, and the
-> uapi version even contains CONFIG_ ifdefs that can't work in userspace.
-> The only userspace program known to use the header is elf2flt, and it
-> ships with its own version of the combined header.
-> 
-> Use the chance to move the <asm/flat.h> inclusion out of this file, as it
-> is in no way needed for the format defintion, but just for the binfmt
-> implementation.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->  fs/binfmt_flat.c          |  1 +
->  include/linux/flat.h      | 45 ++++++++++++++++++++++++++---
->  include/uapi/linux/flat.h | 59 ---------------------------------------
->  3 files changed, 42 insertions(+), 63 deletions(-)
->  delete mode 100644 include/uapi/linux/flat.h
 
-FWIW:
+--===============3870004529938180784==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="nt34jhbgjztm3vnl"
+Content-Disposition: inline
 
-Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
 
-> 
-> diff --git a/fs/binfmt_flat.c b/fs/binfmt_flat.c
-> index c09651087eda..6ae0f9af3fc9 100644
-> --- a/fs/binfmt_flat.c
-> +++ b/fs/binfmt_flat.c
-> @@ -42,6 +42,7 @@
->  #include <asm/unaligned.h>
->  #include <asm/cacheflush.h>
->  #include <asm/page.h>
-> +#include <asm/flat.h>
->  
->  #ifndef flat_get_relocate_addr
->  #define flat_get_relocate_addr(rel)	(rel)
-> diff --git a/include/linux/flat.h b/include/linux/flat.h
-> index 569b67d64d5c..21d901ba191b 100644
-> --- a/include/linux/flat.h
-> +++ b/include/linux/flat.h
-> @@ -10,8 +10,47 @@
->  #ifndef _LINUX_FLAT_H
->  #define _LINUX_FLAT_H
->  
-> -#include <uapi/linux/flat.h>
-> -#include <asm/flat.h>
-> +#define	FLAT_VERSION			0x00000004L
-> +
-> +#ifdef CONFIG_BINFMT_SHARED_FLAT
-> +#define	MAX_SHARED_LIBS			(4)
-> +#else
-> +#define	MAX_SHARED_LIBS			(1)
-> +#endif
-> +
-> +/*
-> + * To make everything easier to port and manage cross platform
-> + * development,  all fields are in network byte order.
-> + */
-> +
-> +struct flat_hdr {
-> +	char magic[4];
-> +	unsigned long rev;          /* version (as above) */
-> +	unsigned long entry;        /* Offset of first executable instruction
-> +	                               with text segment from beginning of file */
-> +	unsigned long data_start;   /* Offset of data segment from beginning of
-> +	                               file */
-> +	unsigned long data_end;     /* Offset of end of data segment
-> +	                               from beginning of file */
-> +	unsigned long bss_end;      /* Offset of end of bss segment from beginning
-> +	                               of file */
-> +
-> +	/* (It is assumed that data_end through bss_end forms the bss segment.) */
-> +
-> +	unsigned long stack_size;   /* Size of stack, in bytes */
-> +	unsigned long reloc_start;  /* Offset of relocation records from
-> +	                               beginning of file */
-> +	unsigned long reloc_count;  /* Number of relocation records */
-> +	unsigned long flags;
-> +	unsigned long build_date;   /* When the program/library was built */
-> +	unsigned long filler[5];    /* Reservered, set to zero */
-> +};
-> +
-> +#define FLAT_FLAG_RAM    0x0001 /* load program entirely into RAM */
-> +#define FLAT_FLAG_GOTPIC 0x0002 /* program is PIC with GOT */
-> +#define FLAT_FLAG_GZIP   0x0004 /* all but the header is compressed */
-> +#define FLAT_FLAG_GZDATA 0x0008 /* only data/relocs are compressed (for XIP) */
-> +#define FLAT_FLAG_KTRACE 0x0010 /* output useful kernel trace for debugging */
->  
->  /*
->   * While it would be nice to keep this header clean,  users of older
-> @@ -22,8 +61,6 @@
->   *        with the format above,  except to fix bugs with old format support.
->   */
->  
-> -#include <asm/byteorder.h>
-> -
->  #define	OLD_FLAT_VERSION			0x00000002L
->  #define OLD_FLAT_RELOC_TYPE_TEXT	0
->  #define OLD_FLAT_RELOC_TYPE_DATA	1
-> diff --git a/include/uapi/linux/flat.h b/include/uapi/linux/flat.h
-> deleted file mode 100644
-> index 27e595e44fb7..000000000000
-> --- a/include/uapi/linux/flat.h
-> +++ /dev/null
-> @@ -1,59 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-> -/*
-> - * Copyright (C) 2002-2003  David McCullough <davidm@snapgear.com>
-> - * Copyright (C) 1998       Kenneth Albanowski <kjahds@kjahds.com>
-> - *                          The Silver Hammer Group, Ltd.
-> - *
-> - * This file provides the definitions and structures needed to
-> - * support uClinux flat-format executables.
-> - */
-> -
-> -#ifndef _UAPI_LINUX_FLAT_H
-> -#define _UAPI_LINUX_FLAT_H
-> -
-> -
-> -#define	FLAT_VERSION			0x00000004L
-> -
-> -#ifdef CONFIG_BINFMT_SHARED_FLAT
-> -#define	MAX_SHARED_LIBS			(4)
-> -#else
-> -#define	MAX_SHARED_LIBS			(1)
-> -#endif
-> -
-> -/*
-> - * To make everything easier to port and manage cross platform
-> - * development,  all fields are in network byte order.
-> - */
-> -
-> -struct flat_hdr {
-> -	char magic[4];
-> -	unsigned long rev;          /* version (as above) */
-> -	unsigned long entry;        /* Offset of first executable instruction
-> -	                               with text segment from beginning of file */
-> -	unsigned long data_start;   /* Offset of data segment from beginning of
-> -	                               file */
-> -	unsigned long data_end;     /* Offset of end of data segment
-> -	                               from beginning of file */
-> -	unsigned long bss_end;      /* Offset of end of bss segment from beginning
-> -	                               of file */
-> -
-> -	/* (It is assumed that data_end through bss_end forms the bss segment.) */
-> -
-> -	unsigned long stack_size;   /* Size of stack, in bytes */
-> -	unsigned long reloc_start;  /* Offset of relocation records from
-> -	                               beginning of file */
-> -	unsigned long reloc_count;  /* Number of relocation records */
-> -	unsigned long flags;       
-> -	unsigned long build_date;   /* When the program/library was built */
-> -	unsigned long filler[5];    /* Reservered, set to zero */
-> -};
-> -
-> -#define FLAT_FLAG_RAM    0x0001 /* load program entirely into RAM */
-> -#define FLAT_FLAG_GOTPIC 0x0002 /* program is PIC with GOT */
-> -#define FLAT_FLAG_GZIP   0x0004 /* all but the header is compressed */
-> -#define FLAT_FLAG_GZDATA 0x0008 /* only data/relocs are compressed (for XIP) */
-> -#define FLAT_FLAG_KTRACE 0x0010 /* output useful kernel trace for debugging */
-> -
-> -
-> -
-> -#endif /* _UAPI_LINUX_FLAT_H */
-> 
+--nt34jhbgjztm3vnl
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+Hi Andrew,
+
+On Mon, Jun 10, 2019 at 04:37:30PM +0200, Andrew Lunn wrote:
+> On Mon, Jun 10, 2019 at 11:25:45AM +0200, Maxime Ripard wrote:
+> > Switch our Allwinner A10 MDIO controller binding to a YAML schema to enable
+> > the DT validation.
+> >
+> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+>
+> Should there be a generic part to cover what is listed in:
+>
+> Documentation/devicetree/bindings/net/mdio.txt
+
+Thanks for pointing that out, I'll convert it as well.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--nt34jhbgjztm3vnl
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXP96DQAKCRDj7w1vZxhR
+xemGAQDeKHYJUTJ7pEQdZKX1WZEmIhNHWPhuhjM7yYBI+DFawgEA5Hrj2kSgRSzG
+FFEkc4IqWkvbt0d584kNLqDInxO1VAY=
+=DaeR
+-----END PGP SIGNATURE-----
+
+--nt34jhbgjztm3vnl--
+
+
+--===============3870004529938180784==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3870004529938180784==--
+
