@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 900F63D61B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:02:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E47DC3D61C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:02:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=34nWJ3Mzfai6+Blpzwx8j/VNkXLlKw/MnoO/rB0tdBs=; b=Q3cOZXiNKR7fZ3
-	MOwQQa8BE1ipLw/CieOckZE31UPTqmrpQGnNXp3gGGn9PatPAfAvZNiEW78peahg2xuS6XTcsEEls
-	bIWAc09mXABOGwxDkP7CO7ZXt712yA0lNnthnj7VycgaekyE7/YETfcNFR8dIu+Fx/Mzy9FdskoI/
-	qOcv7ZaSHsDRM4vKgmUMRZC8nfZ9U5TBm3oBQlNi/Xfcoby+AyiGnXR/rEXW+9LpBumgD7kr57org
-	NctxhSEmmsoRgdJbQLjjscPGuufrZxARvOcgj35r7LAxOhnGUYR20FY72/xgjfSNl+nomGGgQgZWl
-	CSSTYEwFYgSNcmpheZBg==;
+	List-Owner; bh=ZzbvqQaHSjiJV28uL3lInxWJO0iHgnvPt5assZ0ggRk=; b=itNgBLxJrgfC4I
+	alFZWjL+QJZMz/52RmTX5YJYD1m1gjkNoSF6Pho7VEOM6T+qRvpss3mavPjsNkQ8DxQqIh3qUSP8J
+	gmtHd29XupOaDSG/V8Meq+DQugPjzaUj/oFYKZnQiiHF699Exq2gAXnc8LQdLzIE+wsA1eRO+0C9C
+	FebrnELidPprgtMwDBSFOwmMTbV8oNbK27OGxkoWr/LHuP+zUVOLRjBmEEbCoL6XGpb/53lFm0/B8
+	dGRcIWXap7Ytb79s9Z/StJwv5Bsod3mcKazG7Xbl7guqQrh/YvpK+i+1aZvm3kNwpcKb9j/lv0Ga2
+	OzKZjRHFfZmvoEzLKcDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1ham2M-0004cY-Aj; Tue, 11 Jun 2019 19:02:26 +0000
+	id 1ham2h-0004pG-Ag; Tue, 11 Jun 2019 19:02:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1ham26-0004bR-A4
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:02:12 +0000
+ id 1ham2A-0004cm-6f
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:02:16 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5FF7421841;
- Tue, 11 Jun 2019 19:02:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 20AF12183F;
+ Tue, 11 Jun 2019 19:02:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560279729;
- bh=WV8RbOS6lQTQntZS0EPqrmva7AHoKfiOwZcciJD8N+8=;
+ s=default; t=1560279733;
+ bh=cDrzeJSkXqGaacGcyOg5AohAub8v5Pm5EBqkuiQbOi0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Y55pUGQG0lsfPmIkGvGhab81nrkgQRjEX9JWBvKznZQ66SaQoJJisSTvkFDIa0N3n
- +3E9YixzQspiFhWVtO5SE+1icNS4t3UNZqfkW5tDInVxSj3pR8+FZIZV69RMG7Wg3n
- gCxErI0v3lb6E00r2tjk4NJofOIAvyV6Qo0e7OSI=
+ b=m7gJ7Cux9lSXuM4wOzBZpNj0jKbOfAcQmw1T1l59P6NrhcHyxkWQ3fEnv6RneNrLF
+ cdBwjHMOMtdEfU5TuzySss7YyCJmvODSTNY8yOSqU8dK6lxyDUXmS+wR5164OjqBS5
+ pyJ8ldTZ370yyHq40xv2LMz9lwmv1oX7u41+79I0=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 37/85] perf cs-etm: Configure contextID tracing in CPU-wide
+Subject: [PATCH 38/85] perf cs-etm: Configure timestamp generation in CPU-wide
  mode
-Date: Tue, 11 Jun 2019 15:58:23 -0300
-Message-Id: <20190611185911.11645-38-acme@kernel.org>
+Date: Tue, 11 Jun 2019 15:58:24 -0300
+Message-Id: <20190611185911.11645-39-acme@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190611185911.11645-1-acme@kernel.org>
 References: <20190611185911.11645-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_120210_385620_35A90F11 
-X-CRM114-Status: GOOD (  20.49  )
+X-CRM114-CacheID: sfid-20190611_120214_652966_59C69A52 
+X-CRM114-Status: GOOD (  13.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,12 +93,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-When operating in CPU-wide mode being notified of contextID changes is
-required so that the decoding mechanic is aware of the process context
-switch.
+When operating in CPU-wide mode tracers need to generate timestamps in
+order to correlate the code being traced on one CPU with what is executed
+on other CPUs.
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Reviewed-by: Suzuki Poulouse <suzuki.poulose@arm.com>
 Tested-by: Leo Yan <leo.yan@linaro.org>
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
 Cc: Jiri Olsa <jolsa@redhat.com>
@@ -107,38 +106,22 @@ Cc: Peter Zijlstra <peterz@infradead.org>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: coresight@lists.linaro.org
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/20190524173508.29044-2-mathieu.poirier@linaro.org
+Link: http://lkml.kernel.org/r/20190524173508.29044-3-mathieu.poirier@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/arch/arm/util/cs-etm.c | 126 +++++++++++++++++++++++++-----
- tools/perf/util/cs-etm.h          |  12 +++
- 2 files changed, 119 insertions(+), 19 deletions(-)
+ tools/perf/arch/arm/util/cs-etm.c | 57 +++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
 
 diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-index 911426721170..3912f0bf04ed 100644
+index 3912f0bf04ed..be1e4f20affa 100644
 --- a/tools/perf/arch/arm/util/cs-etm.c
 +++ b/tools/perf/arch/arm/util/cs-etm.c
-@@ -35,8 +35,100 @@ struct cs_etm_recording {
- 	size_t			snapshot_size;
- };
+@@ -99,6 +99,54 @@ static int cs_etm_set_context_id(struct auxtrace_record *itr,
+ 	return err;
+ }
  
-+static const char *metadata_etmv3_ro[CS_ETM_PRIV_MAX] = {
-+	[CS_ETM_ETMCCER]	= "mgmt/etmccer",
-+	[CS_ETM_ETMIDR]		= "mgmt/etmidr",
-+};
-+
-+static const char *metadata_etmv4_ro[CS_ETMV4_PRIV_MAX] = {
-+	[CS_ETMV4_TRCIDR0]		= "trcidr/trcidr0",
-+	[CS_ETMV4_TRCIDR1]		= "trcidr/trcidr1",
-+	[CS_ETMV4_TRCIDR2]		= "trcidr/trcidr2",
-+	[CS_ETMV4_TRCIDR8]		= "trcidr/trcidr8",
-+	[CS_ETMV4_TRCAUTHSTATUS]	= "mgmt/trcauthstatus",
-+};
-+
- static bool cs_etm_is_etmv4(struct auxtrace_record *itr, int cpu);
- 
-+static int cs_etm_set_context_id(struct auxtrace_record *itr,
-+				 struct perf_evsel *evsel, int cpu)
++static int cs_etm_set_timestamp(struct auxtrace_record *itr,
++				struct perf_evsel *evsel, int cpu)
 +{
 +	struct cs_etm_recording *ptr;
 +	struct perf_pmu *cs_etm_pmu;
@@ -152,9 +135,9 @@ index 911426721170..3912f0bf04ed 100644
 +	if (!cs_etm_is_etmv4(itr, cpu))
 +		goto out;
 +
-+	/* Get a handle on TRCIRD2 */
++	/* Get a handle on TRCIRD0 */
 +	snprintf(path, PATH_MAX, "cpu%d/%s",
-+		 cpu, metadata_etmv4_ro[CS_ETMV4_TRCIDR2]);
++		 cpu, metadata_etmv4_ro[CS_ETMV4_TRCIDR0]);
 +	err = perf_pmu__scan_file(cs_etm_pmu, path, "%x", &val);
 +
 +	/* There was a problem reading the file, bailing out */
@@ -165,162 +148,52 @@ index 911426721170..3912f0bf04ed 100644
 +	}
 +
 +	/*
-+	 * TRCIDR2.CIDSIZE, bit [9-5], indicates whether contextID tracing
++	 * TRCIDR0.TSSIZE, bit [28-24], indicates whether global timestamping
 +	 * is supported:
-+	 *  0b00000 Context ID tracing is not supported.
-+	 *  0b00100 Maximum of 32-bit Context ID size.
-+	 *  All other values are reserved.
++	 *  0b00000 Global timestamping is not implemented
++	 *  0b00110 Implementation supports a maximum timestamp of 48bits.
++	 *  0b01000 Implementation supports a maximum timestamp of 64bits.
 +	 */
-+	val = BMVAL(val, 5, 9);
-+	if (!val || val != 0x4) {
++	val &= GENMASK(28, 24);
++	if (!val) {
 +		err = -EINVAL;
 +		goto out;
 +	}
 +
 +	/* All good, let the kernel know */
-+	evsel->attr.config |= (1 << ETM_OPT_CTXTID);
++	evsel->attr.config |= (1 << ETM_OPT_TS);
 +	err = 0;
 +
 +out:
-+
 +	return err;
 +}
 +
-+static int cs_etm_set_option(struct auxtrace_record *itr,
-+			     struct perf_evsel *evsel, u32 option)
-+{
-+	int i, err = -EINVAL;
-+	struct cpu_map *event_cpus = evsel->evlist->cpus;
-+	struct cpu_map *online_cpus = cpu_map__new(NULL);
-+
-+	/* Set option of each CPU we have */
-+	for (i = 0; i < cpu__max_cpu(); i++) {
-+		if (!cpu_map__has(event_cpus, i) ||
-+		    !cpu_map__has(online_cpus, i))
-+			continue;
-+
-+		switch (option) {
-+		case ETM_OPT_CTXTID:
-+			err = cs_etm_set_context_id(itr, evsel, i);
+ static int cs_etm_set_option(struct auxtrace_record *itr,
+ 			     struct perf_evsel *evsel, u32 option)
+ {
+@@ -118,6 +166,11 @@ static int cs_etm_set_option(struct auxtrace_record *itr,
+ 			if (err)
+ 				goto out;
+ 			break;
++		case ETM_OPT_TS:
++			err = cs_etm_set_timestamp(itr, evsel, i);
 +			if (err)
 +				goto out;
 +			break;
-+		default:
-+			goto out;
-+		}
-+	}
+ 		default:
+ 			goto out;
+ 		}
+@@ -343,6 +396,10 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+ 		err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_CTXTID);
+ 		if (err)
+ 			goto out;
 +
-+	err = 0;
-+out:
-+	cpu_map__put(online_cpus);
-+	return err;
-+}
-+
- static int cs_etm_parse_snapshot_options(struct auxtrace_record *itr,
- 					 struct record_opts *opts,
- 					 const char *str)
-@@ -105,8 +197,9 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
- 				container_of(itr, struct cs_etm_recording, itr);
- 	struct perf_pmu *cs_etm_pmu = ptr->cs_etm_pmu;
- 	struct perf_evsel *evsel, *cs_etm_evsel = NULL;
--	const struct cpu_map *cpus = evlist->cpus;
-+	struct cpu_map *cpus = evlist->cpus;
- 	bool privileged = (geteuid() == 0 || perf_event_paranoid() < 0);
-+	int err = 0;
- 
- 	ptr->evlist = evlist;
- 	ptr->snapshot_mode = opts->auxtrace_snapshot_mode;
-@@ -241,19 +334,24 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
- 
- 	/*
- 	 * In the case of per-cpu mmaps, we need the CPU on the
--	 * AUX event.
-+	 * AUX event.  We also need the contextID in order to be notified
-+	 * when a context switch happened.
- 	 */
--	if (!cpu_map__empty(cpus))
-+	if (!cpu_map__empty(cpus)) {
- 		perf_evsel__set_sample_bit(cs_etm_evsel, CPU);
- 
-+		err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_CTXTID);
++		err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_TS);
 +		if (err)
 +			goto out;
-+	}
-+
- 	/* Add dummy event to keep tracking */
- 	if (opts->full_auxtrace) {
- 		struct perf_evsel *tracking_evsel;
--		int err;
- 
- 		err = parse_events(evlist, "dummy:u", NULL);
- 		if (err)
--			return err;
-+			goto out;
- 
- 		tracking_evsel = perf_evlist__last(evlist);
- 		perf_evlist__set_tracking_event(evlist, tracking_evsel);
-@@ -266,7 +364,8 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
- 			perf_evsel__set_sample_bit(tracking_evsel, TIME);
  	}
  
--	return 0;
-+out:
-+	return err;
- }
- 
- static u64 cs_etm_get_config(struct auxtrace_record *itr)
-@@ -314,6 +413,8 @@ static u64 cs_etmv4_get_config(struct auxtrace_record *itr)
- 	config_opts = cs_etm_get_config(itr);
- 	if (config_opts & BIT(ETM_OPT_CYCACC))
- 		config |= BIT(ETM4_CFG_BIT_CYCACC);
-+	if (config_opts & BIT(ETM_OPT_CTXTID))
-+		config |= BIT(ETM4_CFG_BIT_CTXTID);
- 	if (config_opts & BIT(ETM_OPT_TS))
- 		config |= BIT(ETM4_CFG_BIT_TS);
- 	if (config_opts & BIT(ETM_OPT_RETSTK))
-@@ -363,19 +464,6 @@ cs_etm_info_priv_size(struct auxtrace_record *itr __maybe_unused,
- 	       (etmv3 * CS_ETMV3_PRIV_SIZE));
- }
- 
--static const char *metadata_etmv3_ro[CS_ETM_PRIV_MAX] = {
--	[CS_ETM_ETMCCER]	= "mgmt/etmccer",
--	[CS_ETM_ETMIDR]		= "mgmt/etmidr",
--};
--
--static const char *metadata_etmv4_ro[CS_ETMV4_PRIV_MAX] = {
--	[CS_ETMV4_TRCIDR0]		= "trcidr/trcidr0",
--	[CS_ETMV4_TRCIDR1]		= "trcidr/trcidr1",
--	[CS_ETMV4_TRCIDR2]		= "trcidr/trcidr2",
--	[CS_ETMV4_TRCIDR8]		= "trcidr/trcidr8",
--	[CS_ETMV4_TRCAUTHSTATUS]	= "mgmt/trcauthstatus",
--};
--
- static bool cs_etm_is_etmv4(struct auxtrace_record *itr, int cpu)
- {
- 	bool ret = false;
-diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
-index 0e97c196147a..826c9eedaf5c 100644
---- a/tools/perf/util/cs-etm.h
-+++ b/tools/perf/util/cs-etm.h
-@@ -103,6 +103,18 @@ struct intlist *traceid_list;
- #define KiB(x) ((x) * 1024)
- #define MiB(x) ((x) * 1024 * 1024)
- 
-+/*
-+ * Create a contiguous bitmask starting at bit position @l and ending at
-+ * position @h. For example
-+ * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
-+ *
-+ * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
-+ */
-+#define GENMASK(h, l) \
-+	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
-+
-+#define BMVAL(val, lsb, msb)	((val & GENMASK(msb, lsb)) >> lsb)
-+
- #define CS_ETM_HEADER_SIZE (CS_HEADER_VERSION_0_MAX * sizeof(u64))
- 
- #define __perf_cs_etmv3_magic 0x3030303030303030ULL
+ 	/* Add dummy event to keep tracking */
 -- 
 2.20.1
 
