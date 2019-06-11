@@ -2,56 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D69C53C38B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 07:46:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26B083C38D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 07:48:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HUy//5w9IYRUodQi6apYY13+F/vsiKh8S7/KwONyIro=; b=Mrl256QOJKzKyf
-	vYqmCc5rx4fjbm90GsTc8tqOtqXZRGJYbyYo+FSi7h7425CXpOZl3V4LFqMDlDZJh7xUDURdy95qY
-	+ethMGyl+Au7LbWBna04BJPQAV7UMsHZbJ2QAKWVNCfrkSUsQItro2JT3PuuI570TRWkFkVQ1foX9
-	hhdKlidoRSDmnZR4exbxDMHnJbQ0ojW6ITklYzdfEyqqaXGLtDWKyQMvXEzfabTAl+OI0RjqzK2qr
-	JeX47eUQXCPLbHKO9iisRTtQxERggeCRjvjiHsd7HXg2lF7ycJVHdONpP0+XzNWwz4IdU02YOKQ0j
-	gB4/4/+vM9lwb5YPdDHQ==;
+	List-Owner; bh=fw++YBbbm3noJTf1d2WxpzbBp79tSBEbgYXLxJqPges=; b=IowO6jpKwFLq7h
+	C1FUoDVZuZSNxVjNrbK/BK42W8xFZifiJ9OjaXiuDuCqkwTDrDHPAV3rZnVTHirOYLitNHAgT01q1
+	iGEoHkhSW3dqfl6Njt3ON6tTbtNsZtkCh4RqRIBEVntn01RcCBrpJAThY2kSgK64WxE8GyYTb3ud9
+	sMjoxHNwpqL6a6h2+YMcj98O/pSb2ATrWnt4ftCCKtRGZKp2SCZw8YEPb4O2RqzWC8qbJ2C3gEgVl
+	klbjTq1e4fEVNh+405iFqR4f3nwzPjXdtVg7ASlu348LZTkNRMqhp2LY+wZ3R5Qf2tAeeGCSQkIcG
+	fF2bbBBN8e9oqlR6F13g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haZcR-0004cw-Ai; Tue, 11 Jun 2019 05:46:51 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1haZdi-0004zw-KD; Tue, 11 Jun 2019 05:48:10 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haZcE-0004cQ-NZ
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 05:46:40 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5B5kJLC028760;
- Tue, 11 Jun 2019 00:46:20 -0500
-Message-ID: <691ffca7e2cc5a2ea78a98e2c190502e0e14b108.camel@kernel.crashing.org>
-Subject: Re: [RFC] ARM64 PCI resource survey issue(s)
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Date: Tue, 11 Jun 2019 15:46:19 +1000
-In-Reply-To: <20190610101129.GC25976@redmoon>
-References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
- <20190604014945.GE189360@google.com>
- <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
- <20190604124959.GF189360@google.com>
- <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
- <20190610101129.GC25976@redmoon>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1haZdV-0004zY-H2; Tue, 11 Jun 2019 05:47:58 +0000
+X-UUID: ed9df2f352a9490188f89e4af398ed23-20190610
+X-UUID: ed9df2f352a9490188f89e4af398ed23-20190610
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 480250836; Mon, 10 Jun 2019 21:47:51 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Jun 2019 22:47:50 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 11 Jun 2019 13:47:48 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 11 Jun 2019 13:47:46 +0800
+Message-ID: <1560232066.8487.119.camel@mhfsdcap03>
+Subject: Re: [PATCH v6 09/10] usb: roles: add USB Type-B GPIO connector driver
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Tue, 11 Jun 2019 13:47:46 +0800
+In-Reply-To: <CAHp75VeWu+8H2=PRNud_MAoD9zozb2Ugh9b=9TCtYmGLVyCTpQ@mail.gmail.com>
+References: <1559115828-19146-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1559115828-19146-10-git-send-email-chunfeng.yun@mediatek.com>
+ <CAHp75VcbZwd0e6r38C2x7HLEHLr4oR7TjwdDXnDxRPRs3anwgA@mail.gmail.com>
+ <1559789630.8487.111.camel@mhfsdcap03>
+ <CAHp75VeWu+8H2=PRNud_MAoD9zozb2Ugh9b=9TCtYmGLVyCTpQ@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_224638_925749_954FC317 
-X-CRM114-Status: GOOD (  23.58  )
+X-CRM114-CacheID: sfid-20190610_224757_568305_FA5DE2F9 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,129 +74,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
- Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
- Ali" <alisaidi@amazon.com>, Bjorn Helgaas <helgaas@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, USB <linux-usb@vger.kernel.org>, Yu
+ Chen <chenyu56@huawei.com>, Linux
+ Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Biju Das <biju.das@bp.renesas.com>, Badhri Jagan
+ Sridharan <badhri@google.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>, Min Guo <min.guo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-06-10 at 11:11 +0100, Lorenzo Pieralisi wrote:
+On Thu, 2019-06-06 at 09:31 +0300, Andy Shevchenko wrote:
+> On Thu, Jun 6, 2019 at 5:53 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
+> >
+> > On Wed, 2019-06-05 at 11:45 +0300, Andy Shevchenko wrote:
+> > > On Wed, May 29, 2019 at 10:44 AM Chunfeng Yun <chunfeng.yun@mediatek.com> wrote:
+> > > >
+> > > > Due to the requirement of usb-connector.txt binding, the old way
+> > > > using extcon to support USB Dual-Role switch is now deprecated
+> > > > when use Type-B connector.
+> > > > This patch introduces a driver of Type-B connector which typically
+> > > > uses an input GPIO to detect USB ID pin, and try to replace the
+> > > > function provided by extcon-usb-gpio driver
+> > >
+> > > > +static SIMPLE_DEV_PM_OPS(usb_conn_pm_ops,
+> > > > +                        usb_conn_suspend, usb_conn_resume);
+> > > > +
+> > > > +#define DEV_PMS_OPS (IS_ENABLED(CONFIG_PM_SLEEP) ? &usb_conn_pm_ops : NULL)
+> > >
+> > > Why this macro is needed?
+> > Want to set .pm as NULL when CONFIG_PM_SLEEP is not enabled.
 > 
-> > I agree and I assume the problem stems from BIOSes creating either
-> > invalid or incomplete assignments but as I said, I don't know for sure
-> > as our platforms dont have that problem.
+> Doesn't SIMPLE_DEV_PM_OPS do this for you?
+Yes, you are right, it provides an empty dev_pm_ops struct, I'll remove
+DEV_PMS_OPS, thanks a lot
+
 > 
-> The first thing that I would like to agree on is what mechanism the
-> kernel has to ensure a BAR resource is not changed by the
-> PCI resource assignment mechanism.
-> 
-> (1) IORESOURCE_PCI_FIXED flag: I have *very* strong feelings that this
->     flag works because x86 kernel code claims all resources on probe
->     (which effectively makes them immutable). It does not work for
->     PCI bridges apertures and I am not sure it works for arches (eg
->     ARM64) that reassign everything, even for *devices*
-
-I'm pretty sure this flag generally doesn't work indeed, see my other
-messages on that subject. The only valid use I can see for this flag
-honestly is in a context where we do an x86-style claim pass, to
-prevent selected resources or bridge windows from being moved or
-resized due to conflicts (ie: move the *other* one if there's a
-conflict) but it's of very limited value.
-
-> (2) Claiming resources: this basically means assigning a parent to
->     a resource.
-
-Well yes, a claimed resource is immutable, that's a given.
-
-That and of course it's implied that there are no conflicts between
-claimed resources and/or the resources have valid existing assigned
-values. From my quick look last week, it doesn't seem like
-pci_bus_claim_resources() handle those edge cases terribly well.
-
-This is why I'm keen on trying to standardize around the x86 (and
-powerpc which is similar) method which deals with these partial
-assignments and some broken cases much better.
-
-> Kernel PCI resource assignment code is full of code I do not understand
-> and that in my opinion works because of (1). I *tried*, while posting
-> ACPI PCI code for ARM64, to do what x86 does:
-
-:-)
-
-> - Claim all resources
-> - Reassign the resources that could not be claimed
-> 
-> This led to:
-> 
-> a) Spurious dmesg logs (Eg Resources that could not be claimed)
-> b) If FW set-up bridge windows, it may lead to reassignment failures
->    if the bridge windows were sized *wrongly* but the kernel still
->    manage to claim them (because they fit in the parent window).
-> 
-> Hence, we reassign everything on ARM64 on ACPI (except for bus numbers
-> and that was, indeed, a mistake).
-
-Hrm... do you have example systems or the ability to give me access to
-systems where these problems occur ? The x86 code has some smarts to
-deal with BIOSes who didn't quite do the right thing that we might be
-able to port over. What I called the "2 pass survey followed by
-pci_assign_unassigned_resources". I've implemented something similar
-back in the days for powerpc and it served us well there too. I'd like
-to give a shot and making this generic and using it on arm64.
-
-> In short, this is a mess and one that I do not have much leeway to fix
-> because the PCI resource assignment code is as it is owing to legacy
-> that we can't touch unless we want to fix regressions for the next
-> year.
-
-Yes and no... We can try to make the x86 method work on arm64 and see
-what goes right or wrong. I wouldn't mind adding quirks to recognize
-existing broken amd64 firmwares if those really still don't work
-properly, if we can help getting future ones better as well.
-
-> And then there is _DSM #5.
-> 
-> The problem we have is that there is *no* specific way to tell what's
-> right or wrong and that's what _DSM #5 is supposed to fix. To implement
-> it to the letter it will take lots of work.
-
-Correct but I don't think we need fully "to the letter", it's almost
-impossible to support all possible cases of _DSM #5 values at arbitrary
-locations in the tree.
-
-> First thing is to answer and agree (1) vs (2) above, aka define what
-> an immutable resource is from a kernel point of view, one with a
-> parent != NULL OR one with IORESOURCE_PCI_FIXED flag.
-
-Well, I think (2) is a given. The issue however is that a resource
-can't be "fixed" in isolation. It's parent need to be sufficiently
-"fixed" to enclose that resource, and it's parent parent etc.... This
-is why random _DSM #5 on leaf nodes isn't going to fly terribly well if
-the FW hasn't already assigned sane windows to bridges.
-
-I think the key here is to try to claim what FW setup iff it doesn't
-conflict and looks like it's valid at all (assigned at all), using a
-similar kind of 2 pass mechanism as x86 and powrpc that favors already
-enabled devices (likely to be used by FW), and (re)assigns everything
-else.
-
-I can look at making x86 and powerpc common with reasonable ease as I
-wrote a lot of the powerpc code for that. I don't have all the HW at
-hand to test anymore but I still know who does :-)
-
-For ARM64, the difficulty is all I have access to at the moment are
-Amazon own systems which seem to have a reasonable FW assignment, and
-qemu. So I'll need help with testing against the bad guys.
-
-In the meantime, I'm still keen on getting in Ard patch that handles
-_DSM #5 at the host bridge level. It will help existing valid use cases
-and we are reasonably confident it won't break anything.
-
-Cheers,
-Ben.
 
 
 
