@@ -2,72 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F085F3CCB8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 15:13:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03E443CCD0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 15:21:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qOCRwKVsOOv58KJDmyvssgnIpgsijdXCoQTy/ugqn74=; b=hQDeHBSAKRQv00
-	FVmQgqYTd5XFGu+DrECCpx1VwPRYGrI1MFasfwKjh6YPpdmewk5aC7q07logAY+5DjxgGEVg/PhvO
-	8NKrJ+/qF/iGrAXvN/LEpEPIxYK5MGBTVnY34yS3n2WkX0MUyoDUIuOBYkgInAERTd05EHk6v1c5W
-	kJG+0BxFXy0sGZBDoklaPk9NWbqZ5FF0ydPXU4QWLrQISn0PTzoyOAKdHNKn7e1+vms71BAhQgdV7
-	yLucDzDYq3sp/0K1H+CAKOWYzrz1C8dS5f2fMLRnJA2px7PTBiG6AVwTiFNsyfa11DRnc7HcRanoU
-	CHxekLX12A0iJ2mfO12A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GPvkM2ZpBf+c/LO3jyQKzlqzJwQReX2fyTQFDnBpmOo=; b=Iq6QM16O2s3AkexfBXeb9tDfE
+	X0hA1eS6nk0jsb8GoMwJzDmS+njXwv00nJhdgP6NrDmIbVuBn/xzmCJButZuXVzu7jREnFObtPFGY
+	bY393knnVO5B5/1E7gRxvbJ9w9jQ7LEYUgF8L1t/Ig0U/N2wnUTboIzgeBPt4qmuPxsAfDR1bdFhD
+	y3FIpVTPq3x053wDI/0nbQ9fb+zoP02pdApJwm3jSzA1/ipnwZPWxSq+VMwBuXg83tYxq4e+BQksS
+	Gvqj8QdqgCkGiiWK0Y91m3OMxu8dgU44l7bgKYf9puZ4Tdyt2mDIsqJdq4Ol/j1e6KwQMWzyYriFT
+	Z1HIHE3Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hagaB-0004C4-Fs; Tue, 11 Jun 2019 13:12:59 +0000
-Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
+	id 1hagiF-0000FT-71; Tue, 11 Jun 2019 13:21:19 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hagZu-0004Aw-UL
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 13:12:44 +0000
-Received: from zn.tnic (p200300EC2F0A6800DC92A88D55C2D513.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f0a:6800:dc92:a88d:55c2:d513])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id E82661EC0911;
- Tue, 11 Jun 2019 15:12:34 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1560258755;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=EJ7VR9sUEWWF+ZecbxZGX04se8PAYDXjUb4dY5s/kD8=;
- b=KCHvj3ZYpkLfnoRKsXFvWYlmUSfvoaj1TEiKYWgNhqglSi/LYCDwov/V5k+8SIjqzvJoMI
- qIddH3YStkbgi4BPh7zrK+4/pIcOUOr/iFNHx27X3sBpwtEhkx8MCdrSE3yRUHWd8GXORE
- 2cxFoWi7Lw3vA5Z/gUeITH0YYX8UOo0=
-Date: Tue, 11 Jun 2019 15:12:29 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: "Stefan Schaeckeler (sschaeck)" <sschaeck@cisco.com>
-Subject: Re: [PATCH -next] EDAC: aspeed: Remove set but not used variable 'np'
-Message-ID: <20190611131229.GF31772@zn.tnic>
-References: <20190525144153.2028-1-yuehaibing@huawei.com>
- <04f103fb-54b1-4911-8164-44b20bfd1e72@www.fastmail.com>
- <960D5667-41E7-47F3-9C0A-726CA919B82D@cisco.com>
+ id 1haghv-0000En-2i
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 13:21:01 +0000
+X-Originating-IP: 90.88.159.246
+Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
+ [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 517D7E0003;
+ Tue, 11 Jun 2019 13:20:50 +0000 (UTC)
+Date: Tue, 11 Jun 2019 15:20:49 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Noralf =?utf-8?Q?Tr=C3=B8nnes?= <noralf@tronnes.org>
+Subject: Re: [PATCH v3 3/6] drm/modes: Allow to specify rotation and
+ reflection on the commandline
+Message-ID: <20190611132049.njlrgbtobzgyzyzh@flea>
+References: <cover.87b91639451f23d4ab68a7c9812f2dd158869025.1555591281.git-series.maxime.ripard@bootlin.com>
+ <ba320b3a13c4444102b77c4d00f7c1dc810adc3c.1555591281.git-series.maxime.ripard@bootlin.com>
+ <9ccb7573-d46e-4b90-7caa-7b8cd7b8e7a2@tronnes.org>
+ <e2edb1dc-f719-93f0-5205-ecb7b44b057e@tronnes.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <960D5667-41E7-47F3-9C0A-726CA919B82D@cisco.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <e2edb1dc-f719-93f0-5205-ecb7b44b057e@tronnes.org>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_061243_138418_6BF082DE 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_062059_445246_1BB60C48 
+X-CRM114-Status: GOOD (  19.66  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,44 +64,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>, YueHaibing <yuehaibing@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "james.morse@arm.com" <james.morse@arm.com>, Joel Stanley <joel@jms.id.au>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-edac@vger.kernel.org" <linux-edac@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel@lists.freedesktop.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Sean Paul <seanpaul@chromium.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4623659238584809610=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 29, 2019 at 03:10:54AM +0000, Stefan Schaeckeler (sschaeck) wrote:
-> On  Tuesday, May 28, 2019 at 6:27 PM, Andrew Jeffery wrote:
-> > On Sun, 26 May 2019, at 00:12, YueHaibing wrote:
-> > > Fixes gcc '-Wunused-but-set-variable' warning:
-> > >
-> > > drivers/edac/aspeed_edac.c: In function aspeed_probe:
-> > > drivers/edac/aspeed_edac.c:284:22: warning: variable np set but not
-> > > used [-Wunused-but-set-variable]
-> > >
-> > > It is never used and can be removed.
-> > >
-> > > Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+
+--===============4623659238584809610==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="mdnmry45awvilud2"
+Content-Disposition: inline
+
+
+--mdnmry45awvilud2
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Noralf,
+
+On Fri, Apr 19, 2019 at 10:53:28AM +0200, Noralf Tr=F8nnes wrote:
+> Den 18.04.2019 18.40, skrev Noralf Tr=F8nnes:
 > >
-> > Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
-> 
-> Reviewed-by: Stefan Schaeckeler <sschaeck@cisco.com>
+> >
+> > Den 18.04.2019 14.41, skrev Maxime Ripard:
+> >> Rotations and reflections setup are needed in some scenarios to initia=
+lise
+> >> properly the initial framebuffer. Some drivers already had a bunch of
+> >> quirks to deal with this, such as either a private kernel command line
+> >> parameter (omapdss) or on the device tree (various panels).
+> >>
+> >> In order to accomodate this, let's create a video mode parameter to de=
+al
+> >> with the rotation and reflexion.
+> >>
+> >> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> >> ---
+> >>  drivers/gpu/drm/drm_client_modeset.c |  10 +++-
+> >>  drivers/gpu/drm/drm_modes.c          | 110 ++++++++++++++++++++++----=
+--
+> >>  include/drm/drm_connector.h          |   9 ++-
+> >>  3 files changed, 109 insertions(+), 20 deletions(-)
+> >>
+> >> diff --git a/drivers/gpu/drm/drm_client_modeset.c b/drivers/gpu/drm/dr=
+m_client_modeset.c
+> >> index f2869c82510c..15145d2c86d5 100644
+> >> --- a/drivers/gpu/drm/drm_client_modeset.c
+> >> +++ b/drivers/gpu/drm/drm_client_modeset.c
+> >> @@ -823,6 +823,7 @@ EXPORT_SYMBOL(drm_client_modeset_probe);
+> >>  bool drm_client_panel_rotation(struct drm_mode_set *modeset, unsigned=
+ int *rotation)
+> >>  {
+> >>  	struct drm_connector *connector =3D modeset->connectors[0];
+> >> +	struct drm_cmdline_mode *cmdline;
+> >>  	struct drm_plane *plane =3D modeset->crtc->primary;
+> >>  	u64 valid_mask =3D 0;
+> >>  	unsigned int i;
+> >> @@ -844,6 +845,15 @@ bool drm_client_panel_rotation(struct drm_mode_se=
+t *modeset, unsigned int *rotat
+> >>  		*rotation =3D DRM_MODE_ROTATE_0;
+> >>  	}
+> >>
+> >> +	/**
+> >> +	 * We want the rotation on the command line to overwrite
+> >> +	 * whatever comes from the panel.
+> >> +	 */
+> >> +	cmdline =3D &connector->cmdline_mode;
+> >> +	if (cmdline->specified &&
+> >> +	    cmdline->rotation !=3D DRM_MODE_ROTATE_0)
+> >
+> > I believe you need to drop that second check, otherwise rotate=3D0 will
+> > not overwrite panel rotation.
+> >
+> >> +		*rotation =3D cmdline->rotation;
+>
+> I remembered that you wanted this to propagate to DRM userspace. That's
+> not happening here.
 
-Applied, thanks.
+It's propated to the userspace through the plane's rotation property,
+I just checked.
 
--- 
-Regards/Gruss,
-    Boris.
+> The only way I see for that to happen, is to set
+> ->panel_orientation. And to repeat myself, imo that makes
+> 'orientation' a better name for this video=3D option.
 
-Good mailing practices for 400: avoid top-posting and trim the reply.
+orientation and rotation are two different things to me. The
+orientation of a panel for example is absolute, while the rotation is
+a transformation. In this particular case, I think that both the
+orientation and the rotation should be taken into account, with the
+orientation being the default state, and the hardware / panel will
+tell us that, while the rotation would be a transformation from that
+default to whatever the user wants.
+
+More importantly, the orientation is a property of the hardware (ie,
+how the display has been assembled), while the rotation is a software
+construct.
+
+And if the property being used to expose that is the rotation, I guess
+it would make sense to just use the same name and remain consistent.
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--mdnmry45awvilud2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXP+qrAAKCRDj7w1vZxhR
+xe5PAQDCQaIDsixvc62mOwJmH8N2VDKLgwxZHb4VAkAg2RCODwD9GaVUIrYgsH4V
+8gU7LihF1xKwFgXm4nWPMTkv3/PVmAE=
+=ch9K
+-----END PGP SIGNATURE-----
+
+--mdnmry45awvilud2--
+
+
+--===============4623659238584809610==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4623659238584809610==--
+
