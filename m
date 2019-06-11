@@ -2,90 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 752AA3C830
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:09:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A4383C83A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:11:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PzgFLcXQI8GNtXnv42wQKIKMlhZTx7pbgKj8uNI4KSo=; b=CvjT1LZh0hpaQf
-	vAgzjORvYE4Uo5vQaerlQLeyQUiHyWqVIrnneZCK+ok+ktk4vv0C4Ng2xodzm9wH0iIMrG8/MZbCl
-	Lzb5PLO3xjoj+M5TM7g98NxbRoOjf07iuXKh1ZbCs/uXR7UYAI/dnaT2CEOgMrmVe/Y4TEL0tbF9M
-	94tcxyuMYaE/YumpOa7eczMdWLEczAfiFAVAIm7Cqii1g9Uozn8Mq6rqpiU8MY7L6JPUhIqjnenUT
-	BwVNEMnGJYOwP7qO8gdvw9O+CC5LXyiU1gvejSyOEGj27HJY8BPktM4xNmh9kt1m8GUeR3R7uGJQo
-	ljf3roTL4ksUb7+5zg8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OX8sSAPhR16F9zj6vue9FzthiEbdnWfEZNpBLalChJ4=; b=GBACQ+3o6R1Obe
+	E0cQ8693m28I1o4B+LkTnqOvrJVEggBLttUDX55NXqgLpn5VY0BkAsDv9duOMshDDO7DC0hOsAW8u
+	x2sTQkb+LNQl5jHQdml6zWiFv/G7dubM69OSDYM0J5/tKjp2abrjzT9S4MSNJDPjZHJ2XEJU1BwU1
+	0A++DaKhcOttkkgGeOBSJUwMbtF5Fd1N1T49tUZxmFaEJfq/RcshNG4kle8JZTd+7xYK7l3ITIoL2
+	4tXPU5BTFUny+HD2KT+RcXMmaOSQxZJbOGBSxKCSP+HMyecJQppaq7tCAkbaAzqdptOm4kFtVAD1L
+	vdtLulZ66ygbnMYcJTHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadiP-0004Pt-Mj; Tue, 11 Jun 2019 10:09:17 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1hadkO-000653-Ox; Tue, 11 Jun 2019 10:11:20 +0000
+Received: from mail-eopbgr760079.outbound.protection.outlook.com
+ ([40.107.76.79] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadhz-0004Dn-Lt
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:08:53 +0000
-Received: by mail-ed1-f65.google.com with SMTP id k8so19171601edr.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 03:08:50 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=upToNZmU1lMq7es+5zXvEQjyTF1NnvLf1/9ORQaZ1DE=;
- b=fJV6oehLgFv2fNgORuvMis5QVkWZpDNQo0wWpadfMCcXf/QNkYlLeKAFjq0HiiWDTt
- bPywRuNFXXA4Z/25x+D0W6Cqc5qMq6ja4NfPOX4KwxersNUE3HBw13+15gnaaUB09r38
- NWDNFp3DF7hwbChd/47yXHaGPLNCavVvDgRmg8VUz5fW+TH1tZv7hKe8sbvv64Q35JsD
- OObTzlQQSJYuVODtcDBtRdact1XrCqfPdLLIf/+pJfqvGwvnzBf4rMOwXPDyGYMRSDtI
- f066dtmNUxaemhv+uJSvYa2k/jxMAzF+EQkFbc683zFWXibkJXVztDtLDH4eyl/qAXbg
- VvBw==
-X-Gm-Message-State: APjAAAUr9j9h74J6EjH+JCVi5PrBatCMGgat0NuB+6DVt0Dr2XwQfZGs
- kV3a1aU9zB25E0isbM9ow+aYp+mYm8A=
-X-Google-Smtp-Source: APXvYqxHJcVxRCQN2BKww5w9JGlf30EDcG0YLaQB8Cx5FE2qIrhvnIYnGy7HFgEkp0nbIa5i8IXJVQ==
-X-Received: by 2002:a50:8a24:: with SMTP id i33mr44340888edi.118.1560247729118; 
- Tue, 11 Jun 2019 03:08:49 -0700 (PDT)
-Received: from mail-wr1-f43.google.com (mail-wr1-f43.google.com.
- [209.85.221.43])
- by smtp.gmail.com with ESMTPSA id l6sm3403007edk.8.2019.06.11.03.08.47
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 03:08:47 -0700 (PDT)
-Received: by mail-wr1-f43.google.com with SMTP id x17so12295899wrl.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 03:08:47 -0700 (PDT)
-X-Received: by 2002:adf:fd01:: with SMTP id e1mr23640588wrr.167.1560247727247; 
- Tue, 11 Jun 2019 03:08:47 -0700 (PDT)
+ id 1hadkA-00064d-Do
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:11:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=oHk81ag2Fs1KDQB6p35QTUeeBjjkkmIYRLGsS9gkdxc=;
+ b=Z+sici6MUnauhYQ8dB2BZStT5JVhnwAdAbRoyQQMfP1RA8Y2LOhObjLJtV+e+96E2MOLLGvhwsH8mpVVCKMiLZ94tEKNoyfUj1OYLfUZcF0U0c/sV65ByW2sK9ab5jhIutV0bLBE+67Q3BvPZPnXImmj9FD/Hi78qW9pRq7eEGQ=
+Received: from MWHPR0201CA0057.namprd02.prod.outlook.com
+ (2603:10b6:301:73::34) by MWHPR02MB2686.namprd02.prod.outlook.com
+ (2603:10b6:300:109::15) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.14; Tue, 11 Jun
+ 2019 10:11:03 +0000
+Received: from SN1NAM02FT041.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::201) by MWHPR0201CA0057.outlook.office365.com
+ (2603:10b6:301:73::34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.12 via Frontend
+ Transport; Tue, 11 Jun 2019 10:11:03 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+ smtp.mailfrom=xilinx.com; jmondi.org; dkim=none (message not signed)
+ header.d=none;jmondi.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
+Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
+ SN1NAM02FT041.mail.protection.outlook.com (10.152.72.217) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1965.12
+ via Frontend Transport; Tue, 11 Jun 2019 10:11:02 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66]:60944
+ helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+ (envelope-from <vishal.sagar@xilinx.com>)
+ id 1hadk5-00073o-Sh; Tue, 11 Jun 2019 03:11:01 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <vishal.sagar@xilinx.com>)
+ id 1hadk0-0002Cv-P2; Tue, 11 Jun 2019 03:10:56 -0700
+Received: from xsj-pvapsmtp01 (maildrop.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x5BAArBF020039; 
+ Tue, 11 Jun 2019 03:10:53 -0700
+Received: from [172.23.62.223] (helo=xhdrdevl203.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <vishal.sagar@xilinx.com>)
+ id 1hadjx-00029I-3o; Tue, 11 Jun 2019 03:10:53 -0700
+From: Vishal Sagar <vishal.sagar@xilinx.com>
+To: Hyun Kwon <hyunk@xilinx.com>, laurent.pinchart@ideasonboard.com,
+ mchehab@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
+ Michal Simek <michals@xilinx.com>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, hans.verkuil@cisco.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Dinesh Kumar <dineshk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
+ Luca Ceresoli <luca@lucaceresoli.net>, Jacopo Mondi <jacopo@jmondi.org>
+Subject: [PATCH v9 0/2] Add support for Xilinx CSI2 Receiver Subsystem
+Date: Tue, 11 Jun 2019 15:40:07 +0530
+Message-Id: <1560247809-117978-1-git-send-email-vishal.sagar@xilinx.com>
+X-Mailer: git-send-email 1.8.3.1
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(136003)(376002)(346002)(39860400002)(396003)(2980300002)(189003)(199004)(7416002)(478600001)(70586007)(70206006)(5660300002)(36756003)(2906002)(107886003)(63266004)(4326008)(9786002)(8936002)(36386004)(110136005)(305945005)(81156014)(16586007)(4720700003)(106002)(7696005)(50226002)(51416003)(8676002)(81166006)(426003)(47776003)(476003)(26005)(356004)(186003)(2616005)(44832011)(48376002)(50466002)(6666004)(86362001)(336012)(126002)(14444005)(77096007)(316002)(486006)(921003)(5001870100001)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR02MB2686; H:xsj-pvapsmtpgw02; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-100.xilinx.com,xapps1.xilinx.com; MX:1; A:1;
 MIME-Version: 1.0
-References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
- <af3a342a6cba1dda27763c13093a8fc060946c1e.1560158667.git-series.maxime.ripard@bootlin.com>
-In-Reply-To: <af3a342a6cba1dda27763c13093a8fc060946c1e.1560158667.git-series.maxime.ripard@bootlin.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 11 Jun 2019 18:08:34 +0800
-X-Gmail-Original-Message-ID: <CAGb2v66vKPeyvw56ROR-B=5Bzi7GVby1CXCjgQ5hnuUdPWX0cg@mail.gmail.com>
-Message-ID: <CAGb2v66vKPeyvw56ROR-B=5Bzi7GVby1CXCjgQ5hnuUdPWX0cg@mail.gmail.com>
-Subject: Re: [PATCH v2 11/11] ARM: dts: sunxi: Switch to the generic PHY
- properties
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 75db53b4-c5b2-4960-3b00-08d6ee551bec
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:MWHPR02MB2686; 
+X-MS-TrafficTypeDiagnostic: MWHPR02MB2686:
+X-Microsoft-Antispam-PRVS: <MWHPR02MB268623A8FBF301FC189ED32EF6ED0@MWHPR02MB2686.namprd02.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2958;
+X-Forefront-PRVS: 006546F32A
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: tH8YDYRYv91CDeXh4hjiI9KLcjQ/fb7Kx/Xf7S7qhKvE7vyt9QyRjJF+ujfsqC1BSqrt/GOhBHheAK533aYkxBHAnqGwl+d8v/DwViDMHBRFvG+R9Fa8h999r+YUUDZK9B2PdJpPGRHt+SVeESkdNi7kfzD4eyntcwLzxD9dd0zL0cwXvf2wOeu7wBZBASJFr8BaaYilFRkxVWOig3j8AQtIbreL3D9Woz1nnkb5RKz/SMMWqF3Kegxz6iwiuuF3EsNvDYFwAxcUPscXXEcEbLxUcoqfYJ2Hkbs98YjGzcbXRs6oXBUAP1p7ELwrxi+R9cGbbDsxgrSru/g+phK0l722utoNaK33iEptsYmRbGhhm2wm9ntZ8tUMp+RL+YKPkatvjiI9JsHq+6M0IeFLtYdCN/vgYo21k3CAKA3ejNw=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2019 10:11:02.2887 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 75db53b4-c5b2-4960-3b00-08d6ee551bec
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
+ Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR02MB2686
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_030851_734286_46E7A8AF 
-X-CRM114-Status: GOOD (  11.87  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190611_031106_477834_DA2927BB 
+X-CRM114-Status: GOOD (  15.76  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
+ no trust [40.107.76.79 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,40 +133,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
- =?UTF-8?Q?Antoine_T=C3=A9nart?= <antoine.tenart@bootlin.com>,
- netdev <netdev@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "David S . Miller" <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Vishal Sagar <vishal.sagar@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 5:26 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> The DWMAC specific properties to manage the PHY have been superseeded by
-> the generic PHY properties. Let's move to it.
->
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
->
-> ---
->
-> This patch should go through arm-soc.
->
-> Changes from v1:
->   - New patch
-> ---
->  arch/arm/boot/dts/sun6i-a31-hummingbird.dts       |  6 +++---
 
-Tested-by: Chen-Yu Tsai <wens@csie.org>
+Xilinx MIPI CSI-2 Receiver Subsystem
+------------------------------------
+
+The Xilinx MIPI CSI-2 Receiver Subsystem Soft IP consists of a DPHY which
+gets the data, an optional I2C, a CSI-2 Receiver which parses the data and
+converts it into AXIS data.
+This stream output maybe connected to a Xilinx Video Format Bridge.
+The maximum number of lanes supported is fixed in the design.
+The number of active lanes can be programmed.
+For e.g. the design may set maximum lanes as 4 but if the camera sensor has
+only 1 lane then the active lanes shall be set as 1.
+
+The pixel format set in design acts as a filter allowing only the selected
+data type or RAW8 data packets. The D-PHY register access can be gated in
+the design. The base address of the DPHY depends on whether the internal
+Xilinx I2C controller is enabled or not in design.
+
+The device driver registers the MIPI CSI2 Rx Subsystem as a V4L2 sub device
+having 2 pads. The sink pad is connected to the MIPI camera sensor and
+output pad is connected to the video node.
+Refer to xlnx,csi2rxss.txt for device tree node details.
+
+This driver helps configure the number of active lanes to be set, setting
+and handling interrupts and IP core enable. It logs the number of events
+occurring according to their type between streaming ON and OFF.
+
+It adds new V4L2 controls which are used to get the event counter values
+and reset the subsystem.
+
+The Xilinx CSI-2 Rx Subsystem outputs an AXI4 Stream data which can be
+used for image processing. This data follows the video formats mentioned
+in Xilinx UG934 when the Video Format Bridge is enabled.
+
+v9
+- 1/2
+  - Fix xlnx,vfb description.
+  - s/Optional/Required endpoint property.
+  - Move data-lanes description from Ports to endpoint property section.
+- 2/2
+  - Moved all controls and events to xilinx-csi2rxss.h
+  - Updated name and description of controls and events
+  - Get control base address from v4l2-controls.h (0x10c0)
+  - Fix KConfig for dependency on VIDEO_XILINX                                                                                   
+  - Added enum_mbus_code() support
+  - Added default format to be returned on open()
+  - Mark variables are const
+  - Remove references to short packet in comments
+  - Add check for streaming before setting active lanes control
+  - strlcpy -> strscpy
+  - Fix xcsi2rxss_set_format()
+
+v8
+- 1/2
+  - Added reset-gpios optional property
+- 2/2
+  - Use clk_bulk* APIs
+  - Add gpio reset for asserting video_aresetn when stream line buffer occurs
+  - Removed short packet related events and irq handling
+    - V4L2_EVENT_XLNXCSIRX_SPKT and V4L2_EVENT_XLNXCSIRX_SPKT_OVF removed
+  - Removed frame counter control V4L2_CID_XILINX_MIPICSISS_FRAME_COUNTER
+    and xcsi2rxss_g_volatile_ctrl()
+  - Minor formatting fixes
+
+v7
+- 1/2
+  - Removed the name of control from en-active-lanes as suggested by Sakari
+  - Updated the dt node name to csi2rx
+- 2/2
+  - No change
+
+v6
+- 1/2
+  - Added minor comment by Luca
+  - Added Reviewed by Rob Herring
+- 2/2
+  - No change
+
+v5
+- 1/2
+  - Removed the DPHY clock description and dt node.
+  - removed bayer pattern as CSI doesn't deal with it.
+- 2/2
+  - removed bayer pattern as CSI doesn't deal with it.
+  - add YUV422 10bpc media bus format.
+
+v4
+- 1/2
+  - Added reviewed by Hyun Kwon
+- 2/2
+  - Removed irq member from core structure
+  - Consolidated IP config prints in xcsi2rxss_log_ipconfig()
+  - Return -EINVAL in case of invalid ioctl
+  - Code formatting
+  - Added reviewed by Hyun Kwon
+
+v3
+- 1/2
+  - removed interrupt parent as suggested by Rob
+  - removed dphy clock
+  - moved vfb to optional properties
+  - Added required and optional port properties section
+  - Added endpoint property section
+- 2/2
+ - Fixed comments given by Hyun.
+ - Removed DPHY 200 MHz clock. This will be controlled by DPHY driver
+ - Minor code formatting
+ - en_csi_v20 and vfb members removed from struct and made local to dt parsing
+ - lock description updated
+ - changed to ratelimited type for all dev prints in irq handler
+ - Removed YUV 422 10bpc media format
+
+v2
+- 1/2
+  - updated the compatible string to latest version supported
+  - removed DPHY related parameters
+  - added CSI v2.0 related property (including VCX for supporting upto 16
+    virtual channels).
+  - modified csi-pxl-format from string to unsigned int type where the value
+    is as per the CSI specification
+  - Defined port 0 and port 1 as sink and source ports.
+  - Removed max-lanes property as suggested by Rob and Sakari
+
+- 2/2
+  - Fixed comments given by Hyun and Sakari.
+  - Made all bitmask using BIT() and GENMASK()
+  - Removed unused definitions
+  - Removed DPHY access. This will be done by separate DPHY PHY driver.
+  - Added support for CSI v2.0 for YUV 422 10bpc, RAW16, RAW20 and extra
+    virtual channels
+  - Fixed the ports as sink and source
+  - Now use the v4l2fwnode API to get number of data-lanes
+  - Added clock framework support
+  - Removed the close() function
+  - updated the set format function
+  - Support only VFB enabled config
+
+Vishal Sagar (2):
+  media: dt-bindings: media: xilinx: Add Xilinx MIPI CSI-2 Rx Subsystem
+  media: v4l: xilinx: Add Xilinx MIPI CSI-2 Rx Subsystem driver
+
+ .../bindings/media/xilinx/xlnx,csi2rxss.txt        |  116 ++
+ drivers/media/platform/xilinx/Kconfig              |   11 +
+ drivers/media/platform/xilinx/Makefile             |    1 +
+ drivers/media/platform/xilinx/xilinx-csi2rxss.c    | 1488 ++++++++++++++++++++
+ include/uapi/linux/v4l2-controls.h                 |    4 +
+ include/uapi/linux/xilinx-csi2rxss.h               |   52 +
+ 6 files changed, 1672 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.txt
+ create mode 100644 drivers/media/platform/xilinx/xilinx-csi2rxss.c
+ create mode 100644 include/uapi/linux/xilinx-csi2rxss.h
+
+-- 
+1.8.3.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
