@@ -2,102 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DED4D3DBBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 22:19:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5063B40143
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 22:32:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JB+nOjtQAcnlxTci0r87/FxCeLA0MZu4NlZ03OZffEY=; b=XC0KXQlPN+geGO
-	79hqlMwBOW5Cv00nrTZVlqVHZ8lfyYdfH5Nv0FTbGeSbrYkgAaqjbCRr3gIFlgGPRDx4W3AlQGhc2
-	dwXH4bUk6rI/QX/9UubnzUPtwniiTwUqjnnl87Ve2Nm0b/xvXIiMMt1L1JCvZS/9jhrVtZkEQWSEG
-	kuJhjVYP8sHzgpIxjM43oSdD4all7kzc7MVgQdcQK/BLs2GOLr5IhE3RiiOBTnGyJzzvphHBJJIlK
-	5sUqeeJMI4gGDWP7wI1RQw7IVIpgFtKGd56vZCvrIGMBc1O66pk9KDtQJYaiBl2CwIgfRakGWcP7E
-	tUlW7zRgYtlCDR1xoAOg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YQ+ePB12QvrAdPF5m5POrInt4uhUQHWYKL9qGGklq2A=; b=E5kdS5Q9pbVB6J
+	YrqrKxZKgj8tIN8b0/bv7u04I+FD1666dcR4BmHWF/7c+hghQCoalwqDfE1fMxRh2KR4TsXyN34qD
+	a8YODgWhcdyXl7mkDF5Cu0Ltg0zs+SMKI6oAoNfOoljBhO/QsqSiNPiVnP5N/OtT8qcEdddz/71+I
+	wDtazBaIqN3fRXsgxcYF8pMfU8T6BEQEEN52XZDos0p5fzcPRyyzApo90k0uJR/OyC4VD+0iLCuck
+	tKoa/xcrJKC6/ssSpwj78VJrh9uhPJMy+QVsR8BGzO+6pAEwhgQkA4nTNYsnWfkziMrTUzfd91EOT
+	Lh6a9P2xW8yCGO54uhfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hanES-0008Ia-14; Tue, 11 Jun 2019 20:19:00 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1hanRR-0004wm-8N; Tue, 11 Jun 2019 20:32:25 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hanEF-0008IC-Ei
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 20:18:48 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5BKIG4j188569;
- Tue, 11 Jun 2019 20:18:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2018-07-02;
- bh=pbmzGiYbk5X7Ese6X3ZnPOdFp3xt858d68MV4hL41o8=;
- b=aNfZmQbNP69ST1fFgutdWgNsoHsdTrxkUj7frUiu18XSvo5ty/Pn14NuvBXeongSeXs5
- W+/X6Zg80mFm1wMWd+zVCPCrQRP9QFtEH+cG0F7+uHlQwGnz+OWpR52bZNKpwSlJXUqv
- nMKBQhJ5HrsIVS6xiQg2bgHXLgu1p42NoCzZ/6Z08/cyHiS+fbUmTJNnXs/64PEUCVDy
- LuWVBuquORM9Cl3ljZsvAUUgUitqLMYyHC0GQkhfk1XGzvDOaXFduSfm+GFL8dwtAmDt
- oSfpqPsaE2SKGUeznCaVKxrCypUl2tuyIAul53FQXJZOqETR2JQgxWtw699nf/W05RQb Uw== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2130.oracle.com with ESMTP id 2t04etqhfn-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 11 Jun 2019 20:18:29 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5BKIAf4177892;
- Tue, 11 Jun 2019 20:18:28 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3030.oracle.com with ESMTP id 2t04hyj648-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 11 Jun 2019 20:18:28 +0000
-Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5BKIMpX015673;
- Tue, 11 Jun 2019 20:18:23 GMT
-Received: from [10.154.187.61] (/10.154.187.61)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 11 Jun 2019 13:18:22 -0700
-Subject: Re: [PATCH v16 04/16] mm: untag user pointers in do_pages_move
-To: Andrey Konovalov <andreyknvl@google.com>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org,
- linux-media@vger.kernel.org, kvm@vger.kernel.org,
- linux-kselftest@vger.kernel.org
-References: <cover.1559580831.git.andreyknvl@google.com>
- <e410843d00a4ecd7e525a7a949e605ffc6c394c4.1559580831.git.andreyknvl@google.com>
-From: Khalid Aziz <khalid.aziz@oracle.com>
-Organization: Oracle Corp
-Message-ID: <d0dffcf8-d7bf-a7b4-5766-3a6f87437851@oracle.com>
-Date: Tue, 11 Jun 2019 14:18:18 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hanRJ-0004wM-8J
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 20:32:18 +0000
+Received: by mail-lj1-x244.google.com with SMTP id p17so5717541ljg.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Jun 2019 13:32:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HG+Jj5aLWSzQxxzhDq7lYfn2XSZ1Scwtl7BQOvyxWdg=;
+ b=iyDoFK5Fqv4+mMjPk1rfviS2aSrrgTJJme217/trpc2PivuZtugt8R0+H01Lf4OscE
+ 4AGGya94adu38DxwHDJmsBPnZv/hSxxNFrZg8R1h60+fufDMbg/kElTC36aKEBsz9Xw2
+ 1rX6ELf2EIp9aukcNxr1UZUoE1yu65sMae/DQW/goAGDngTUI4ZOrL1XYdNWWBD8Abcz
+ Ptp0JFep8n5KiQefxnuADK9plHczZZXubz+nC8B3oJyk7U6ASqVc1RDigsaSPNYxiDo8
+ kXngM1xwEoXmra5iphF95M8qrpxiGtMjGZ0MBb02pnxTp/QZpcHe3XPz4Q6KFnDCNlHh
+ L0xw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HG+Jj5aLWSzQxxzhDq7lYfn2XSZ1Scwtl7BQOvyxWdg=;
+ b=iQDwiGVocC8Xj5qNdn195neu9byh28NPoYmWyAvQ3hHuSRLvjr/M+Qu+Hva0ZrFHNs
+ MjiJ/AWQXWn7biSyn+4Tl3AFGsKIzmfkEnQPG22MHMqZlz/GN0+zEzcUBMn9QJKMTsqp
+ 8i+UYa7uVPYki747jMf1i6gOxnV4Ix4PdkYbOeYVE7zMQPPA7/4QkkY34QiELheRDwQX
+ vgYEFuVj3X8AUNctgaxa3ltzpqPk++uV9SIIVu7/lkdSjY25keuo3dHQTnZL8PQHa2Kw
+ OuEfJo7yvndQ7QTxpwAFCHs+gI59JYCVClQ9GHy5ANFck69odhgwv0vgIZv85N6HKGhP
+ MYgg==
+X-Gm-Message-State: APjAAAXA9EwvrLNuQfgD0yYj1/AsY8w85URCHxSYkcRlXnPqATU5KCQz
+ v0F2PZAlghhdI5ExeQSTyJhDBvc3E9dbr09FNAlliWnzizQ=
+X-Google-Smtp-Source: APXvYqwH8mDirGvZFSQ++GGm3boVzKdaAPryfUMMKcxHOo7RgZUTNJsvQR5zKXzNZVh8HStluVu0VXpWSud2ZPpNp04=
+X-Received: by 2002:a2e:994:: with SMTP id 142mr11048542ljj.130.1560285134666; 
+ Tue, 11 Jun 2019 13:32:14 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <e410843d00a4ecd7e525a7a949e605ffc6c394c4.1559580831.git.andreyknvl@google.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9284
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906110131
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9284
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906110130
+References: <20190611063333.48501-1-Anson.Huang@nxp.com>
+ <20190611063333.48501-2-Anson.Huang@nxp.com>
+In-Reply-To: <20190611063333.48501-2-Anson.Huang@nxp.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Tue, 11 Jun 2019 17:32:13 -0300
+Message-ID: <CAOMZO5BCuBKHs1jXkm3qFD84_xcB=0NSwE3SLJHx9kq4Stbd_A@mail.gmail.com>
+Subject: Re: [PATCH 2/3] rtc: imx-sc: Make compatible string more generic
+To: Yongcai Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_131847_590226_265F713D 
-X-CRM114-Status: GOOD (  21.59  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190611_133217_321954_497EF6A8 
+X-CRM114-Status: GOOD (  16.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,61 +93,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kostya Serebryany <kcc@google.com>, Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>, alexandre.belloni@bootlin.com,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Daniel Baluta <daniel.baluta@nxp.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <Linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Peng Fan <peng.fan@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Dong Aisheng <aisheng.dong@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "open list:REAL TIME CLOCK \(RTC\) SUBSYSTEM" <linux-rtc@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/3/19 10:55 AM, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
-> 
-> do_pages_move() is used in the implementation of the move_pages syscall.
-> 
-> Untag user pointers in this function.
-> 
-> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+Hi Anson,
+
+On Tue, Jun 11, 2019 at 3:31 AM <Anson.Huang@nxp.com> wrote:
+>
+> From: Anson Huang <Anson.Huang@nxp.com>
+>
+> i.MX system controller RTC driver can support all i.MX SoCs
+> with system controller inside, this patch makes the compatible
+> string more generic to support other i.MX SoCs with system
+> controller inside, such as i.MX8QM etc..
+>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
->  mm/migrate.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/mm/migrate.c b/mm/migrate.c
-> index f2ecc2855a12..3930bb6fa656 100644
-> --- a/mm/migrate.c
-> +++ b/mm/migrate.c
-> @@ -1617,6 +1617,7 @@ static int do_pages_move(struct mm_struct *mm, nodemask_t task_nodes,
->  		if (get_user(node, nodes + i))
->  			goto out_flush;
->  		addr = (unsigned long)p;
-> +		addr = untagged_addr(addr);
+>  drivers/rtc/rtc-imx-sc.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/drivers/rtc/rtc-imx-sc.c b/drivers/rtc/rtc-imx-sc.c
+> index c933045..38ef3ca 100644
+> --- a/drivers/rtc/rtc-imx-sc.c
+> +++ b/drivers/rtc/rtc-imx-sc.c
+> @@ -178,7 +178,7 @@ static int imx_sc_rtc_probe(struct platform_device *pdev)
+>  }
+>
+>  static const struct of_device_id imx_sc_dt_ids[] = {
+> -       { .compatible = "fsl,imx8qxp-sc-rtc", },
+> +       { .compatible = "fsl,imx-sc-rtc", },
 
-Why not just "addr = (unsigned long)untagged_addr(p);"
+What is wrong with the current compatible string?
 
---
-Khalid
+If you want to support i.MX8QM just add in its dtsi:
 
+compatible = "fsl,imx8qm-sc-rtc", "fsl,imx8qxp-sc-rtc"
+
+and add a dt-bindings entry for "fsl,imx8qm-sc-rtc"
 
 _______________________________________________
 linux-arm-kernel mailing list
