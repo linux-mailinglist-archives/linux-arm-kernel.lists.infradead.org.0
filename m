@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02EA93CE4D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:16:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C4DA3CE56
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:17:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9LQoLLBXUZY2d8e2Vj6tC2Jsapv+hVo18GOT4A09LNs=; b=NjbYx4ra1oyQBp
-	fMk85Xtp9dhO7HH5vqM7py3cjMHopWrwavBKdv5SWKFRt3MNYe6xyB3U0oJlzXOGBfSZAlDcm86gL
-	sN/YGTvilrio7p8yB3aBYiQXrL+o81APMD5tIi/WZttvnIBI6e5mW9YoN2TGogoMllwlN8rH/D8Zw
-	1r6QFoghFeApBCKlV0mTrpokI+jwn8QrXJvgZ6+Sv55wL6ZT+EMg5/a3uy4RUQWIVNiEwCKbErys4
-	l74TB8rnJTx2dzqAxrcVsb1sq3E2/7kMsdJw3uUXVxXsZByLxYw8onHE035ZF+B2QQ8Z624kXmFyc
-	+TKUI3/zyNXd3sXvq12Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iSzzKt0PUMhTWFtZ+r/ieGsQkYF3y4SvLJp+nWkLwLQ=; b=tudGwQUA1BOXAK
+	rDvzCw96w9riXTGxV8s5LrJLPPn1KUluFGbS5vKZn81jOSSDY+1mZ3Jc/daGawPL3WdarUm4oB9Qh
+	cOqemO9lQxucRx90ss/PhYuClYr9kRfzTdnR5vJOqWMGc+Y0I3VQCsl5Mw74vdZ2SW8NNi9JyeIJ2
+	1RNU4337gUwn/S1mMDaVtafeTYsWOL3086nWDCpAijq3oG4um2PzVvZ0J4/5N1/l8uzx/ynuRViJF
+	3RMQILcgNWLCpZYKLn/VUSoidToj58RWTSdLybRbuiDRx4wAyI54A3EFTeMIPdjaEzZHe9J2oeoSI
+	WJ9zIBKb012kVsPw8M1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hahZQ-00085f-C1; Tue, 11 Jun 2019 14:16:16 +0000
+	id 1hahaG-0000Mf-Ee; Tue, 11 Jun 2019 14:17:08 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hahXa-000573-6e
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:14:24 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 50806A18E011A450749A;
+ id 1hahXc-000572-KI
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:14:28 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 5BA30558FDF9C701A7F5;
  Tue, 11 Jun 2019 22:14:12 +0800 (CST)
 Received: from localhost.localdomain (10.67.212.75) by
  DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
  14.3.439.0; Tue, 11 Jun 2019 22:14:06 +0800
 From: John Garry <john.garry@huawei.com>
 To: <bhelgaas@google.com>, <lorenzo.pieralisi@arm.com>, <arnd@arndb.de>
-Subject: [PATCH v4 0/3] Fix ARM64 crash for accessing unmapped IO port regions
-Date: Tue, 11 Jun 2019 22:12:51 +0800
-Message-ID: <1560262374-67875-1-git-send-email-john.garry@huawei.com>
+Subject: [PATCH v4 1/3] lib: logic_pio: Use logical PIO low-level accessors
+ for !CONFIG_INDIRECT_PIO
+Date: Tue, 11 Jun 2019 22:12:52 +0800
+Message-ID: <1560262374-67875-2-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
+In-Reply-To: <1560262374-67875-1-git-send-email-john.garry@huawei.com>
+References: <1560262374-67875-1-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.67.212.75]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_071422_482532_B18E40A9 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20190611_071425_307342_A0EAD756 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,55 +73,199 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It was reported some time ago that arm64 systems will crash if a driver
-attempts to access IO port addresses when the PCI IO port region has not
-been mapped [1].
+Currently we only use logical PIO low-level accessors for when
+CONFIG_INDIRECT_PIO is enabled.
 
-More recently, a similar crash is where the system PCI host probe fails,
-and the IPMI driver crashes the system while attempting to do some IO port
-accesses [2].
+Otherwise we just use inb/out et all directly.
 
-This patchset attempts to keep the kernel alive in such situations by
-rejecting logical PIO access to PCI IO regions until PCI IO port regions
-have been mapped. Accesses to unmapped regions fail silently, mimicking
-x86 behaviour.
+It is useful to now use logical PIO accessors for all cases, so we can add
+legality checks to accesses. Such a check would be for ensuring that the
+PCI IO port has been IO remapped prior to the access.
 
-The previous versions of this patchset also included a patch to reject IO
-port resource requests until PCI IO port regions have been mapped
-(in a pci_remap_iospace() call). However I decided to drop it since the
-validity of the patch was strongly in doubt - [3].
+Using the logical PIO accesses will add a little processing overhead, but
+that's ok as IO port accesses are relatively slow anyway.
 
-1. https://lore.kernel.org/linux-pci/56F209A9.4040304@huawei.com
-2. https://lore.kernel.org/linux-arm-kernel/e6995b4a-184a-d8d4-f4d4-9ce75d8f47c0@huawei.com/
-3. https://lore.kernel.org/linux-pci/20190326224810.GY24180@google.com/
+Some changes are also made to stop spilling so many lines under
+CONFIG_INDIRECT_PIO.
 
-Differences to v3 patchset:
-https://lkml.org/lkml/2019/4/4/1294
-- Drop patch to reject IO port requests
-- Make unmapped IO port accesses silent, mimicking x86
+Signed-off-by: John Garry <john.garry@huawei.com>
+---
+ include/linux/logic_pio.h |  7 ++--
+ lib/logic_pio.c           | 83 ++++++++++++++++++++++++++++-----------
+ 2 files changed, 63 insertions(+), 27 deletions(-)
 
-Differences to v2 patchset:
-https://lkml.org/lkml/2019/3/20/788
-- Add a patch to use logical PIO accessors for !CONFIG_INDIRECT_PIO
-- Some tidy-up according to Andy's review
-
-Differences to v1 patchset:
-https://lkml.org/lkml/2019/3/14/630
-- Drop f71805f fix - it can be done in a separate patchset
-- Change implementation in resource.c patch to check if parent of region
-  is ioport_resource
-- Add patch to fix some logic_pio.c prints
-
-John Garry (3):
-  lib: logic_pio: Use logical PIO low-level accessors for
-    !CONFIG_INDIRECT_PIO
-  lib: logic_pio: Reject accesses to unregistered CPU MMIO regions
-  lib: logic_pio: Fix up a print
-
- include/linux/logic_pio.h |   7 ++-
- lib/logic_pio.c           | 116 ++++++++++++++++++++++++++++----------
- 2 files changed, 90 insertions(+), 33 deletions(-)
-
+diff --git a/include/linux/logic_pio.h b/include/linux/logic_pio.h
+index cbd9d8495690..06d22b2ec99f 100644
+--- a/include/linux/logic_pio.h
++++ b/include/linux/logic_pio.h
+@@ -37,7 +37,7 @@ struct logic_pio_host_ops {
+ 		     size_t dwidth, unsigned int count);
+ };
+ 
+-#ifdef CONFIG_INDIRECT_PIO
++#if defined(PCI_IOBASE)
+ u8 logic_inb(unsigned long addr);
+ void logic_outb(u8 value, unsigned long addr);
+ void logic_outw(u16 value, unsigned long addr);
+@@ -102,6 +102,7 @@ void logic_outsl(unsigned long addr, const void *buffer, unsigned int count);
+ #define outsl logic_outsl
+ #endif
+ 
++#if defined(CONFIG_INDIRECT_PIO)
+ /*
+  * We reserve 0x4000 bytes for Indirect IO as so far this library is only
+  * used by the HiSilicon LPC Host. If needed, we can reserve a wider IO
+@@ -109,10 +110,10 @@ void logic_outsl(unsigned long addr, const void *buffer, unsigned int count);
+  */
+ #define PIO_INDIRECT_SIZE 0x4000
+ #define MMIO_UPPER_LIMIT (IO_SPACE_LIMIT - PIO_INDIRECT_SIZE)
+-#else
++#else /* CONFIG_INDIRECT_PIO */
+ #define MMIO_UPPER_LIMIT IO_SPACE_LIMIT
+ #endif /* CONFIG_INDIRECT_PIO */
+-
++#endif /* PCI_IOBASE */
+ struct logic_pio_hwaddr *find_io_range_by_fwnode(struct fwnode_handle *fwnode);
+ unsigned long logic_pio_trans_hwaddr(struct fwnode_handle *fwnode,
+ 			resource_size_t hw_addr, resource_size_t size);
+diff --git a/lib/logic_pio.c b/lib/logic_pio.c
+index feea48fd1a0d..40d9428010e1 100644
+--- a/lib/logic_pio.c
++++ b/lib/logic_pio.c
+@@ -191,7 +191,8 @@ unsigned long logic_pio_trans_cpuaddr(resource_size_t addr)
+ 	return ~0UL;
+ }
+ 
+-#if defined(CONFIG_INDIRECT_PIO) && defined(PCI_IOBASE)
++#if defined(PCI_IOBASE)
++#if defined(CONFIG_INDIRECT_PIO)
+ #define BUILD_LOGIC_IO(bw, type)					\
+ type logic_in##bw(unsigned long addr)					\
+ {									\
+@@ -200,11 +201,11 @@ type logic_in##bw(unsigned long addr)					\
+ 	if (addr < MMIO_UPPER_LIMIT) {					\
+ 		ret = read##bw(PCI_IOBASE + addr);			\
+ 	} else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) { \
+-		struct logic_pio_hwaddr *entry = find_io_range(addr);	\
++		struct logic_pio_hwaddr *range = find_io_range(addr);	\
++		size_t sz = sizeof(type);				\
+ 									\
+-		if (entry && entry->ops)				\
+-			ret = entry->ops->in(entry->hostdata,		\
+-					addr, sizeof(type));		\
++		if (range && range->ops)				\
++			ret = range->ops->in(range->hostdata, addr, sz);\
+ 		else							\
+ 			WARN_ON_ONCE(1);				\
+ 	}								\
+@@ -216,49 +217,83 @@ void logic_out##bw(type value, unsigned long addr)			\
+ 	if (addr < MMIO_UPPER_LIMIT) {					\
+ 		write##bw(value, PCI_IOBASE + addr);			\
+ 	} else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) {	\
+-		struct logic_pio_hwaddr *entry = find_io_range(addr);	\
++		struct logic_pio_hwaddr *range = find_io_range(addr);	\
++		size_t sz = sizeof(type);				\
+ 									\
+-		if (entry && entry->ops)				\
+-			entry->ops->out(entry->hostdata,		\
+-					addr, value, sizeof(type));	\
++		if (range && range->ops)				\
++			range->ops->out(range->hostdata,		\
++					addr, value, sz);		\
+ 		else							\
+ 			WARN_ON_ONCE(1);				\
+ 	}								\
+ }									\
+ 									\
+-void logic_ins##bw(unsigned long addr, void *buffer,		\
+-		   unsigned int count)					\
++void logic_ins##bw(unsigned long addr, void *buf, unsigned int cnt)	\
+ {									\
+ 	if (addr < MMIO_UPPER_LIMIT) {					\
+-		reads##bw(PCI_IOBASE + addr, buffer, count);		\
++		reads##bw(PCI_IOBASE + addr, buf, cnt);			\
+ 	} else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) {	\
+-		struct logic_pio_hwaddr *entry = find_io_range(addr);	\
++		struct logic_pio_hwaddr *range = find_io_range(addr);	\
++		size_t sz = sizeof(type);				\
+ 									\
+-		if (entry && entry->ops)				\
+-			entry->ops->ins(entry->hostdata,		\
+-				addr, buffer, sizeof(type), count);	\
++		if (range && range->ops)				\
++			range->ops->ins(range->hostdata,		\
++					addr, buf, sz, cnt);		\
+ 		else							\
+ 			WARN_ON_ONCE(1);				\
+ 	}								\
+ 									\
+ }									\
+ 									\
+-void logic_outs##bw(unsigned long addr, const void *buffer,		\
+-		    unsigned int count)					\
++void logic_outs##bw(unsigned long addr, const void *buf,		\
++		    unsigned int cnt)					\
+ {									\
+ 	if (addr < MMIO_UPPER_LIMIT) {					\
+-		writes##bw(PCI_IOBASE + addr, buffer, count);		\
++		writes##bw(PCI_IOBASE + addr, buf, cnt);		\
+ 	} else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) {	\
+-		struct logic_pio_hwaddr *entry = find_io_range(addr);	\
++		struct logic_pio_hwaddr *range = find_io_range(addr);	\
++		size_t sz = sizeof(type);				\
+ 									\
+-		if (entry && entry->ops)				\
+-			entry->ops->outs(entry->hostdata,		\
+-				addr, buffer, sizeof(type), count);	\
++		if (range && range->ops)				\
++			range->ops->outs(range->hostdata,		\
++					 addr, buf, sz, cnt);		\
+ 		else							\
+ 			WARN_ON_ONCE(1);				\
+ 	}								\
+ }
+ 
++#else /* CONFIG_INDIRECT_PIO */
++
++#define BUILD_LOGIC_IO(bw, type)					\
++type logic_in##bw(unsigned long addr)					\
++{									\
++	type ret = (type)~0;						\
++									\
++	if (addr < MMIO_UPPER_LIMIT)					\
++		ret = read##bw(PCI_IOBASE + addr);			\
++	return ret;							\
++}									\
++									\
++void logic_out##bw(type value, unsigned long addr)			\
++{									\
++	if (addr < MMIO_UPPER_LIMIT)					\
++		write##bw(value, PCI_IOBASE + addr);			\
++}									\
++									\
++void logic_ins##bw(unsigned long addr, void *buf, unsigned int cnt)	\
++{									\
++	if (addr < MMIO_UPPER_LIMIT)					\
++		reads##bw(PCI_IOBASE + addr, buf, cnt);			\
++}									\
++									\
++void logic_outs##bw(unsigned long addr, const void *buf,		\
++		    unsigned int cnt)					\
++{									\
++	if (addr < MMIO_UPPER_LIMIT)					\
++		writes##bw(PCI_IOBASE + addr, buf, cnt);		\
++}
++#endif /* CONFIG_INDIRECT_PIO */
++
+ BUILD_LOGIC_IO(b, u8)
+ EXPORT_SYMBOL(logic_inb);
+ EXPORT_SYMBOL(logic_insb);
+@@ -277,4 +312,4 @@ EXPORT_SYMBOL(logic_insl);
+ EXPORT_SYMBOL(logic_outl);
+ EXPORT_SYMBOL(logic_outsl);
+ 
+-#endif /* CONFIG_INDIRECT_PIO && PCI_IOBASE */
++#endif /* PCI_IOBASE */
 -- 
 2.17.1
 
