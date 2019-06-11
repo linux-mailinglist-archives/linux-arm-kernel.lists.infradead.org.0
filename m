@@ -2,80 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4154D3CF68
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:51:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D2143CFE4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:57:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KBg4yA3gBCZ5EOwpVWA0qZWp0lNDtstCJiyd3QbU4SI=; b=qDDyZm2UAekMAy
-	XsnCBxSQYwNQy+qNuAFgbTYRLADikiMld8eskSHzl34pjm3pgxeBJwJh1hjQslsazL786gjYbY9nD
-	14im3uhVkj6NHFX5i7+N6gZ+hzHbKlMleX1OxjURX6Bpp0GVXEFvgMsupiP5G/9PJ0bbp387ZfZzG
-	yjjc8k+ycvmAxtKKsNUD3AG4unN0BYiIIdFeIsIa2mNsUhu8qq6qokBnqz8ANB3xOkQcgPoI+HjwJ
-	Jar+oW4v0eox1V1QPu2OdQgX9k2njwUwN8MltY+7nSC0vwjL4JZxOjHMDXJZwBh/uzhCCZCpGRqV1
-	16uJg+LFKYf06qIzb63A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=NJXAL6kfFbG/J5Xpt8GeUVAajV9eDmpZEuAZvO7pjCU=; b=hwgNfpW2dw+jopUHNpBI0/U3sB
+	lAvCJjp32W9B87d1ftQ4/BOaSwD9s+bqRRd0cq1Do4Io+lL1JdpaItwqHlRFhlrbv5sICmOEm3i5u
+	zzpzhqAYOAMcR0G6G5GDYUBdByw49FiATnNElwXZDtiHpCaWln8uTkqh4v3DMD4HoP0Akv2CfiqGh
+	UT0hrzI+1mMLwSZnOze1nGLOJ+Koa+XPDtwkrgeze2Xr8KC1ZsJao7oEJMQuDAyMkmq0eVwIKpa3d
+	Bd+W/9eod9AreAdlQ6q1gKoBqJJjODd65W9JVOFgHiQrQ8+VFnjB5Cy1vDBac9RWEnoWVUtu63YSk
+	IStP/Btg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hai75-0003PL-M4; Tue, 11 Jun 2019 14:51:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hai6t-0003Oj-C1
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:50:52 +0000
-Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com
- [209.85.160.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BB0DA208E3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 14:50:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560264649;
- bh=MpYPAaIV13S2Yylnp2EyZ431PTaW/WjP6IAwHXeD6IY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ReLwKN5pZRc7uGT6tVskU8kc0sdNJCY1Vees7AqtPNFwL1R7wczuGjJknKJazUkuf
- Q+ovaZh+VQPHMBeChWR8c2NtMA4B3UKDWZh7FptmE3s7uAtmdq5INuouQ8bIoKctoc
- pzqV5z9FKyvOPMVFc9Kam+7v1hTM3NHsgDELh6aQ=
-Received: by mail-qt1-f173.google.com with SMTP id y57so14873942qtk.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 07:50:49 -0700 (PDT)
-X-Gm-Message-State: APjAAAWeAsNpcp//gDOHbHCO9aocB6zC6Lu00gFQ7afrc7nc+xAqTZUr
- 8qHZyOXs+wL8Mtce8Jq+OoqhGKgIe8+g08vIBQ==
-X-Google-Smtp-Source: APXvYqyJUBDtqhRg65MZJLGpagrESYWGxQEF/Opjh/WxDQ0lr19H2G/og3yzhLmg7b7P0Cv1k8sNGFJrHhVtjcNM90U=
-X-Received: by 2002:ac8:2ec3:: with SMTP id i3mr19914156qta.110.1560264648991; 
- Tue, 11 Jun 2019 07:50:48 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190605122936.11972-1-maxime.ripard@bootlin.com>
- <CAL_JsqKC7uP0J14A8_CvPhbZkoSRNWSpS1ee+Q4sG013jY=JeQ@mail.gmail.com>
- <20190611090641.byr6mpywkfmbhrbk@flea>
-In-Reply-To: <20190611090641.byr6mpywkfmbhrbk@flea>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 11 Jun 2019 08:50:37 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqL3cua3u2gNTzHEdgFU0On5J9ziPZeFNiTpu5HS=SJoDA@mail.gmail.com>
-Message-ID: <CAL_JsqL3cua3u2gNTzHEdgFU0On5J9ziPZeFNiTpu5HS=SJoDA@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: i2c: sun6i-p2wi: Add YAML schemas
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+	id 1haiCn-0008Jl-2u; Tue, 11 Jun 2019 14:56:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haiCX-0008GJ-0r
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:56:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A7FC3337;
+ Tue, 11 Jun 2019 07:56:38 -0700 (PDT)
+Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BB9203F246;
+ Tue, 11 Jun 2019 07:56:36 -0700 (PDT)
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: x86@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>
+Subject: [PATCH v5 2/4] x86/entry: Simplify _TIF_SYSCALL_EMU handling
+Date: Tue, 11 Jun 2019 15:56:27 +0100
+Message-Id: <20190611145627.23229-1-sudeep.holla@arm.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190523090618.13410-3-sudeep.holla@arm.com>
+References: <20190523090618.13410-3-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_075051_437870_5B8AB558 
-X-CRM114-Status: GOOD (  17.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190611_075641_127449_3C65CC39 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,63 +60,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Wolfram Sang <wsa@the-dreams.de>,
- Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- Linux I2C <linux-i2c@vger.kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Haibo Xu <haibo.xu@arm.com>, Steve Capper <Steve.Capper@arm.com>,
+ Richard Weinberger <richard@nod.at>, jdike@addtoit.com,
+ Will Deacon <will.deacon@arm.com>, Oleg Nesterov <oleg@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 3:06 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Hi Rob,
->
-> On Mon, Jun 10, 2019 at 03:34:18PM -0600, Rob Herring wrote:
-> > On Wed, Jun 5, 2019 at 6:29 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > +properties:
-> > > +  "#address-cells":
-> > > +    const: 1
-> > > +
-> > > +  "#size-cells":
-> > > +    const: 0
-> >
-> > These 2 are covered by i2c-controller.yaml, right?
->
-> Indeed, I've removed them.
->
-> > > +examples:
-> > > +  - |
-> > > +    p2wi@1f03400 {
-> >
-> > i2c@...
-> >
-> > That should fail on the schema (I need to get the schema checking of
-> > examples finished.)
->
-> That would be great :) The compilation of the examples alone already
-> caught a good number of examples that weren't even compiling.
+The usage of emulated and _TIF_SYSCALL_EMU flags in syscall_trace_enter
+is more complicated than required.
 
-I'm primarily waiting on a dtc change to be accepted[1]. Feel free to
-review/ack.
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Borislav Petkov <bp@alien8.de>
+Acked-by: Oleg Nesterov <oleg@redhat.com>
+Reviewed-by: Thomas Gleixner <tglx@linutronix.de>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+---
+ arch/x86/entry/common.c | 17 ++++++-----------
+ 1 file changed, 6 insertions(+), 11 deletions(-)
 
-> Speaking of examples, one thing that would be great too would be to
-> allow the usage of our C headers. It's not supported at the moment,
-> and this often ends up with an example that is less readable than the
-> actual DT.
+Hi Catalin,
 
-It should be. You just have to add them. See
-Documentation/devicetree/bindings/timer/intel,ixp4xx-timer.yaml for
-example.
+I assume you can now pick up this patch.
 
-Maybe the common interrupt and gpio ones should be added by default.
+Regards,
+Sudeep
 
-Rob
+v4->v5: Updated changelog as suggested by tglx and added his Reviewed-by
 
-[1] https://www.spinics.net/lists/devicetree-compiler/msg02709.html
+diff --git a/arch/x86/entry/common.c b/arch/x86/entry/common.c
+index a986b3c8294c..0a61705d62ec 100644
+--- a/arch/x86/entry/common.c
++++ b/arch/x86/entry/common.c
+@@ -72,23 +72,18 @@ static long syscall_trace_enter(struct pt_regs *regs)
+
+ 	struct thread_info *ti = current_thread_info();
+ 	unsigned long ret = 0;
+-	bool emulated = false;
+ 	u32 work;
+
+ 	if (IS_ENABLED(CONFIG_DEBUG_ENTRY))
+ 		BUG_ON(regs != task_pt_regs(current));
+
+-	work = READ_ONCE(ti->flags) & _TIF_WORK_SYSCALL_ENTRY;
++	work = READ_ONCE(ti->flags);
+
+-	if (unlikely(work & _TIF_SYSCALL_EMU))
+-		emulated = true;
+-
+-	if ((emulated || (work & _TIF_SYSCALL_TRACE)) &&
+-	    tracehook_report_syscall_entry(regs))
+-		return -1L;
+-
+-	if (emulated)
+-		return -1L;
++	if (work & (_TIF_SYSCALL_TRACE | _TIF_SYSCALL_EMU)) {
++		ret = tracehook_report_syscall_entry(regs);
++		if (ret || (work & _TIF_SYSCALL_EMU))
++			return -1L;
++	}
+
+ #ifdef CONFIG_SECCOMP
+ 	/*
+--
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
