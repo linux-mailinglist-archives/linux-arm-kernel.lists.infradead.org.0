@@ -2,48 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B665A3D0FA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:37:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38A353D106
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:37:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eoMiy9qf0mwqcBp1+puOBptZqPdAMZsaBZvKExWOkQw=; b=Bn9zxKpLs7Z8xN
-	HLv3wL/4FRwEjRT5lCE+ImX5kOC0M8+mrIE7opXmOpuuVDYXSiWkRRR1SO3z1HhACRrS16K4/nhTd
-	WGRyMOdPiLofnkUR6hjFgLGwP+V5LIp4+meuq19BakgdvlyBfteKrxeRzM8MRLTv1dLM29IzdTQMb
-	Ohq3YEPOeW5UZRhkb+tWG4lsCW9LICjWRQP5ChBmdylVsJOCm52Eciqcd6cvO0z7aK8fpE9ZNV5fy
-	HTYhNPkSZjJrjLr1WvDfHah8aqEOz0j/tvFq5NlAQHr61exFP/tAcSRgktDCR5avJ4EgYXlLGairL
-	c3K/3FWrxCPx7DSLBeFw==;
+	List-Owner; bh=iwWqG2XgtHiVd39oNwV3IuWZLWM1gpRBPZdK2+VtU1o=; b=cbhB6gKQecDhNb
+	+sAtmqTGEsDugf+JdLj9QhmoDHYVe9xT3D0Rot+gcHpI9NqGfyw3eJ+rVVSSkAL7GyBrc1SYOWTmE
+	1UNjaakQl3NKMz2uBmEL5YDUToX8JrVgiLRcoVY8i1tnJAU1HZDRckPtOhWbfr8Sw+m8kUpCFXlSJ
+	tmjOti2DPvFsrT5kWRkARnQ1jgQSHO7zQ4tCz5VzhcfLcMgVbq7BB9Vy+izX8/Yk0OMIGZeTTgdb5
+	YO8m3s9xRW5VsS/3iOetIM7rhp3X69CQ29Pmbkbq5qWaDes9i6syK1hpSyIY5Uyk4red9dIvAZbZ6
+	8j0o19wtfTFKYVRCiR1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haipf-0005uR-JH; Tue, 11 Jun 2019 15:37:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haipT-0005tq-FU
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:36:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9101E337;
- Tue, 11 Jun 2019 08:36:54 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F2713F246;
- Tue, 11 Jun 2019 08:36:52 -0700 (PDT)
-Date: Tue, 11 Jun 2019 16:36:50 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v8 02/20] arm64: mm: Add p?d_large() definitions
-Message-ID: <20190611153650.GB4324@fuggles.cambridge.arm.com>
-References: <20190403141627.11664-1-steven.price@arm.com>
- <20190403141627.11664-3-steven.price@arm.com>
+	id 1haiqA-0006Py-Q0; Tue, 11 Jun 2019 15:37:39 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haipy-0006Ol-PN
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:37:28 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1haipw-000382-M3; Tue, 11 Jun 2019 17:37:24 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1haipw-0004sA-4S; Tue, 11 Jun 2019 17:37:24 +0200
+Date: Tue, 11 Jun 2019 17:37:24 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH v2 02/14] pwm: meson: use devm_clk_get_optional() to get
+ the input clock
+Message-ID: <20190611153724.fg34zp6vof7lpcgl@pengutronix.de>
+References: <20190608180626.30589-1-martin.blumenstingl@googlemail.com>
+ <20190608180626.30589-3-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190403141627.11664-3-steven.price@arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <20190608180626.30589-3-martin.blumenstingl@googlemail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_083655_556912_2C9AC793 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20190611_083726_981955_2B16E8E8 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,36 +70,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, =?iso-8859-1?B?Suly9G1l?= Glisse <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, "Liang, Kan" <kan.liang@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, thierry.reding@gmail.com, kernel@pengutronix.de,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 03, 2019 at 03:16:09PM +0100, Steven Price wrote:
-> walk_page_range() is going to be allowed to walk page tables other than
-> those of user space. For this it needs to know when it has reached a
-> 'leaf' entry in the page tables. This information will be provided by the
-> p?d_large() functions/macros.
+On Sat, Jun 08, 2019 at 08:06:14PM +0200, Martin Blumenstingl wrote:
+> Simplify the code which fetches the input clock for a PWM channel by
+> using devm_clk_get_optional().
+> This comes with a small functional change: previously all errors except
+> EPROBE_DEFER were ignored. Now all other errors are also treated as
+> errors. If no input clock is present devm_clk_get_optional() will return
+> NULL instead of an error which matches the behavior of the old code.
+> =
 
-I've have thought p?d_leaf() might match better with your description above,
-but I'm not going to quibble on naming.
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
-For this patch:
+Nitpick: Put your S-o-b last. Otherwise this ends as
 
-Acked-by: Will Deacon <will.deacon@arm.com>
+	Sgned-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+	Rviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+	Sgned-off-by: Thierry Reding <thierry.reding@gmail.com>
 
-Will
+and this implies that Thierry added Neil's tag.  (Typos are done on
+purpose to not confuse patchwork.)
+
+Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
 
 _______________________________________________
 linux-arm-kernel mailing list
