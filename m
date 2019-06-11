@@ -2,93 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81F3A3C12B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 04:12:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B3343C147
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 04:37:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tgWyHNB6xz7+JAKF7rS9E1/Cwu1mnhxJcuF1qbfMX0o=; b=MRTOQv34DO7dAb
-	ZIB3IJU6tOOquijDLnFwKdy6f8mvS9qGc9shCNrtpiOxCRsSF+6frLwozqFN8y3Pbhy92+X25ZV29
-	Rl+jBSYukqPeZoupnfVNZG1AK5xOKNp7od5HF083BdAfh3rkZ4dzbrbPmxLSK+xfqSbgBAUWdsbRM
-	wFICu/8XkSpHHZIrD6zguF3xHViPaYdcRPNXfYFITtaeV3yCsVvxM4JI0+LnWrEEVCj5DJqHn/Gfw
-	kNZ6IpLgiPBSTjqy0oWY9Y3C/qkEO+4kcAMmQ9/8jnRRJ+MrMtwHkhZcbCOsGc6H8WMlqwd630BH/
-	aJGhpe/3cPfGfWiaP/Pw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dbbkOUkIgYIwlr88et+FyzBBqdsEG6u8aTE8bVwlh20=; b=OQhWzJH8Qp2oVi
+	nXSC3lUVGkHP+foDvN6Lo+h4Uke5KLFFZWe0C5Dz1XGIC0QEljUD07Xx9QhSrTUfgOI5KhjipE8Mb
+	vQUvzqd9drBwd9VXwie/elaExyNohtsh0UgmdSa2j0rU8RtJNd1gY79t5ecpcg9iEkCFQKTJ2QT9S
+	uPHr4plKebazy+3ATh1seUZPCvzzuwGEzChySa7wO82EVKVmHuxyc6ytGxck3NavLRa8nN5Q+FZha
+	HfRqXYWu+hYZhnpLjARuqAMJw+vSbppyCQxEymmRtBZnA3lQJAjcG7mpfT8YaeqwT4EpJnsl+mjP2
+	4ajFakYAZLkaO+xUYZxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haWGT-0000of-Ie; Tue, 11 Jun 2019 02:11:57 +0000
-Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1haWfL-0000lo-1a; Tue, 11 Jun 2019 02:37:39 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haWGI-0000o5-01
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 02:11:47 +0000
-Received: by mail-it1-x141.google.com with SMTP id l21so2346553ita.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 19:11:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ieee.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=8RcJD0etSUKCdAftUVogv11bxbo5C0KdF/jhN26WyyA=;
- b=OHXgU7noh57Sp/hq02aCQk7Iwul4QOdcr6UViwgqqgDaoPRzDl52iiE0cD1hek0we8
- 3IKvO+lUENBcxzsHodJAZnTuabLcoZmMcyQ9lslSwB3speirTQXPv14ltLT3sMs93Mo7
- sDeAhjdXkOwS9iJmOSINgqPbTWdBBDqiFERi0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=8RcJD0etSUKCdAftUVogv11bxbo5C0KdF/jhN26WyyA=;
- b=YqdHQLhUBEnhpyKJ/tcxdpu0/EfiqxVnBHjx0GeZnHB8I/9sp0VrhgrQf0uyQ/7fBg
- FZbrvgpyRAT3PzQoMLGbBbYyiu5fT63LoEO17bMJ7+Pd6VXUCye0PF7lNmN5FsdPKyka
- vZ8rueGV8EFOaD7rAMtXQ980HdBx5MsvFSzM+b1iQulMOhTHLieVrsYYtfUUPXpTotgC
- J310ohtkj93X75dcMwNuhfE24JdY+1UWDYUcUW7sGBX0IacRgSOXU/In+zqoyhRvSgun
- J6a6X7P6yj5K107epasWTp80OTUADHlMdEMQv3C5yVf/bBFmhsUDOmbUMhApjY/PT6KP
- uxkg==
-X-Gm-Message-State: APjAAAWHuq5rQiTK3MVztvhtSe2oRtSJVXG48DGAM/WqhtyVM3qfB1FW
- mv+jbbnXKWjOR2krzA1mUV+n7A==
-X-Google-Smtp-Source: APXvYqzXNReWPcWQtoTC/Q7rrGPSPe4wVuVRroQKGCnjVJi4KH9bhqO038VqJ1HbXbKZCJDyQffZMQ==
-X-Received: by 2002:a24:c384:: with SMTP id s126mr15705942itg.1.1560219102350; 
- Mon, 10 Jun 2019 19:11:42 -0700 (PDT)
-Received: from [172.22.22.26] (c-71-195-29-92.hsd1.mn.comcast.net.
- [71.195.29.92])
- by smtp.googlemail.com with ESMTPSA id c23sm4403415iod.11.2019.06.10.19.11.40
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Jun 2019 19:11:41 -0700 (PDT)
-Subject: Re: [PATCH v2 02/17] dt-bindings: soc: qcom: add IPA bindings
-To: Rob Herring <robh+dt@kernel.org>, Alex Elder <elder@linaro.org>
-References: <20190531035348.7194-1-elder@linaro.org>
- <20190531035348.7194-3-elder@linaro.org>
- <CAL_JsqLFk3=YN+V=RVxq9xWQTrPA9_0zW+eFrdXkGkCnM_sBkA@mail.gmail.com>
-From: Alex Elder <elder@ieee.org>
-Message-ID: <bcb7f599-3c22-da27-c92b-4c1903a5ea06@ieee.org>
-Date: Mon, 10 Jun 2019 21:11:38 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1haWez-0000jj-N1; Tue, 11 Jun 2019 02:37:20 +0000
+X-UUID: d69a8e51d35a43018db0574809120251-20190610
+X-UUID: d69a8e51d35a43018db0574809120251-20190610
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 715136675; Mon, 10 Jun 2019 18:37:12 -0800
+Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Jun 2019 19:37:10 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ MTKMBS33N1.mediatek.inc (172.27.4.75) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 10:37:08 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 11 Jun 2019 10:37:07 +0800
+Message-ID: <1560220627.32395.1.camel@mtksdaap41>
+Subject: Re: [v4 5/7] drm/mediatek: add mt8183 dsi driver support
+From: CK Hu <ck.hu@mediatek.com>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Date: Tue, 11 Jun 2019 10:37:07 +0800
+In-Reply-To: <20190601092615.67917-6-jitao.shi@mediatek.com>
+References: <20190601092615.67917-1-jitao.shi@mediatek.com>
+ <20190601092615.67917-6-jitao.shi@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqLFk3=YN+V=RVxq9xWQTrPA9_0zW+eFrdXkGkCnM_sBkA@mail.gmail.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_191146_044225_F051E1A1 
-X-CRM114-Status: GOOD (  15.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_193717_760325_299CD8D1 
+X-CRM114-Status: GOOD (  12.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,55 +72,70 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- syadagir@codeaurora.org, Eric Caruso <ejcaruso@google.com>,
- Arnd Bergmann <arnd@arndb.de>, netdev <netdev@vger.kernel.org>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Evan Green <evgreen@chromium.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, abhishek.esse@gmail.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, subashab@codeaurora.org,
- "open list:ARM/QUALCOMM SUPPORT" <linux-soc@vger.kernel.org>,
- David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
+ Ajay Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
+ cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>, Thierry
+ Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
+ Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki
+ Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Andy
+ Yan <andy.yan@rock-chips.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ Rahul Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>, Sean
+ Paul <seanpaul@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/10/19 5:08 PM, Rob Herring wrote:
-> On Thu, May 30, 2019 at 9:53 PM Alex Elder <elder@linaro.org> wrote:
->>
->> Add the binding definitions for the "qcom,ipa" device tree node.
->>
->> Signed-off-by: Alex Elder <elder@linaro.org>
->> ---
->>  .../devicetree/bindings/net/qcom,ipa.yaml     | 180 ++++++++++++++++++
->>  1 file changed, 180 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/net/qcom,ipa.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/net/qcom,ipa.yaml b/Documentation/devicetree/bindings/net/qcom,ipa.yaml
->> new file mode 100644
->> index 000000000000..0037fc278a61
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/net/qcom,ipa.yaml
->> @@ -0,0 +1,180 @@
->> +# SPDX-License-Identifier: GPL-2.0
-> 
-> New bindings are preferred to be dual GPL-2.0 and BSD-2-Clause. But
-> that's really a decision for the submitter.
+Hi, Jitao:
 
-Thanks Rob.  I'll ask Qualcomm if there's any problem
-with doing that; I presume not.  If I re-submit this
-with dual copyright, I will include your Reviewed-by
-despite the change, OK?
-
-					-Alex
-
+On Sat, 2019-06-01 at 17:26 +0800, Jitao Shi wrote:
+> Add mt8183 dsi driver data. Enable size control and
+> reg commit control.
 > 
-> Reviewed-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
 > 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index 18a192656a89..abf6ddec5db6 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -1225,11 +1225,19 @@ static const struct mtk_dsi_driver_data mt2701_dsi_driver_data = {
+>  	.reg_cmdq_off = 0x180,
+>  };
+>  
+> +static const struct mtk_dsi_driver_data mt8183_dsi_driver_data = {
+> +	.reg_cmdq_off = 0x200,
+> +	.has_shadow_ctl = true,
+> +	.has_size_ctl = true,
+> +};
+> +
+>  static const struct of_device_id mtk_dsi_of_match[] = {
+>  	{ .compatible = "mediatek,mt2701-dsi",
+>  	  .data = &mt2701_dsi_driver_data },
+>  	{ .compatible = "mediatek,mt8173-dsi",
+>  	  .data = &mt8173_dsi_driver_data },
+> +	{ .compatible = "mediatek,mt8183-dsi",
+
+I does not find "mediatek,mt8183-dsi" in binding document, so please
+send a patch to add this in binding document.
+
+Regards,
+CK
+
+> +	  .data = &mt8183_dsi_driver_data },
+>  	{ },
+>  };
+>  
+
 
 
 _______________________________________________
