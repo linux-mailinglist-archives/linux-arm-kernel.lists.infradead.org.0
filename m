@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5F8C417DC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:03:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8347F417EA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:08:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j4hRpnC2/4YcZlF2rMZUeG2+4eBj3fi9/n4yAXuZsNI=; b=tYDGYPztpljNwE
-	jO4frubBfWkd+t1YTrYVaCGcU8HCYPqAK6UHoVkyswr9+OZQnf6HCQmUywYFTUfZBc6USsp5adMzw
-	x0ns4HtHuJRaaOAPVXAiQkNVEexGES9jXuqBMDUULmoRzUQqx1WGVS1eYiBJExcw7r4FgNhAtS8+p
-	HKPZ4rc66+eaNqEaz1yc3uBri+wCuV+cVAWxVh6FyXr4Dl/mlBUfGQZ01yeT/XUYaXXS8lfrTR7F+
-	qtbCJwXiJxAlss83kETsASt5A+wStpauLxw2F8parCBtpZIybg2keTn8tJfXsagGhsSDUnBKIWTwK
-	ThyHJ3XGyyMIijYGChQQ==;
+	List-Owner; bh=Tz/sI07/p4QPmnEuOQtgWGOh9EmbcqesvxpcAeaVJ0I=; b=gCNb76e9ynCNrm
+	Qw6KFLfH+Qlz1qnrcsXji7anEMB2jUMpYbjLq77bvDEinWy4roeD99LLUUerPTrou4W/wFyj+UbEt
+	8pjcWL+Oojc8NEPlhtXikp3KQPWUaz9hyXRb6Y0CYxPN4zXs164c6y1DOiOxFU7fAIU5aLYtS1wy+
+	hOa/CmzCKaZ3+VVLZWzAaAJ0Sh97/6KjFHELgtM98v1Q0ukZ6Wh0PjGpiITvKH9huAOsqK6/kpxdP
+	cDqlBCOhIl3r8lTfTvraMl95iy+ekl8a2c2PtsXZU6hQh3Fojc3gBCH2/QYwtn+WR611Monau0z1V
+	lMFMrmVWwEIFlYnXy6uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haori-0006Mh-3C; Tue, 11 Jun 2019 22:03:38 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1haowb-00087m-1w; Tue, 11 Jun 2019 22:08:41 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haora-0006Lu-Bv
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:03:31 +0000
-Received: by mail-wm1-x343.google.com with SMTP id h19so2884637wme.0
+ id 1haowT-00087P-2P
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:08:34 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 196so7725015pgc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 15:03:29 -0700 (PDT)
+ Tue, 11 Jun 2019 15:08:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=xsjaJTjPOvoSqdpoRh9yjNgsub7YzEqeBwXzE0dDId8=;
- b=bHhzxps+pqM4qsqFT23puGG6dcLaQSVBJhzePQWYq/fgn1JkBy5ehOfQlQjThPKoHN
- 24gjTeee3xgtU1WfNxPKCqEYDk6WsTY2IVOQCFDVqWfJlRsrvnMst9VWbqYumWtTXen1
- NFw/mK9tVUGy/n076+B44pGTxFhgyoufS6AZZN9Thh4l2DuSdP/KvXeTnXrxGy5ZZMG4
- yLJSehPbROLDSbnSxa8D+S/SJqU/gJPiJNVX1GN99Z9eMZVnypcxVL3Lx/gugDY64jmB
- CNVIaBbQAHKrNmcx4rvuTrUvuXWtq0HupRfcNzB9iNMDb5QvzSvnfjuqElOEWVtbkkxo
- ud8Q==
+ bh=QYmVu7Nh4W0MeolwVO7YM0xZrXFwuxo+MvNj54r5DFI=;
+ b=V04Asub/oIIrYF6+VT1L4GjZO3YN5RWi9rFd6op5qhtYOIxhky/VEe7qC+jA9AzvxB
+ +Gej/5KEJDZZzULmeSg/PrjPuiFVaZUz1V016WIUG3rbdgVCCo3tNI+DJK8nYSKEfEuo
+ T5NxA9bJ133DtUVdisHqndqY9EiwefYIuOixqHDdNou3VTaEOoeIB5pUnRFEYF4YJHSZ
+ cBGQYGE4JNMhJe5Al2BDOsw7YXDZWgAPF2TFPEny6ezfswyr0dLv3+M0EQcRu2kY31FP
+ fZkipWKbwiwql2gdcZg7buZD87uMDImR42biyjiTuWSdn7R2cFLkf6fEd9fnayCZUsFC
+ dEUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=xsjaJTjPOvoSqdpoRh9yjNgsub7YzEqeBwXzE0dDId8=;
- b=Yf4ubhAbuGssG8T3w2qPjh7zFEcTjTYWErjYr3bRcGAfUvHgRk1GI/ovaeutJA80Ca
- SNIDsrPFvg3uwcPEHi0+H7ctQW2vbhlM+kp8Z9SMwQqfzFG2NiXtBjCP1UgKyUUU07Uo
- o2FFES9+CZqhQl0dz3Cm0GVqEPiIn2PVTLxVLkfZ3GEBEhZ6y0z7c8/pXV8/cJ2QkeK2
- j8kj0L30GjpHKuJE9RHLPnNvedDwLCuvfFrul7mGP2Xb24uardbqmAFE9IyKNIXGoaqR
- B92aVaijP5RPNVKLsOjki3WH6/TtsKFI5KqKCzF6iLWljlQtBbugLEHS46wJiapmvdU1
- mHgg==
-X-Gm-Message-State: APjAAAWdKaK/0sgyCqKEoJqwQigqznWOIvzq3C0I9BKxhB3WEbF7yhL5
- nf9QvoG47U+xvWDXmu1a6wZq7Jlq
-X-Google-Smtp-Source: APXvYqwxqClQArQcrhX/6Bmp9t2xUa8eD1JiNT4+wyrX/tS6Xo+SU59mKXN7qcw9L4cwsx3vgjcnkA==
-X-Received: by 2002:a05:600c:c4:: with SMTP id
- u4mr19681928wmm.96.1560290608768; 
- Tue, 11 Jun 2019 15:03:28 -0700 (PDT)
+ bh=QYmVu7Nh4W0MeolwVO7YM0xZrXFwuxo+MvNj54r5DFI=;
+ b=IebxJx93w16C6l0k9XMLR9xqVecxnAUrWit+NtNxPRA1/pbTvK1FBc6zUKMVxH+JFg
+ KpH6MnC7UAAtixllcv8mT5J6mjdPQaHOW71Vd+s0XY4t4idA09cHPGrkZAnO50QDnf0p
+ PHJRiQUf+OZ7ybjYEdo+UXtqVWnukfuI3Jmve9t8l4LZ0ASfWvAGkKEpAqaf0454hboT
+ inVMbJTEr966QVRaCt5x1jfcXgGTjAoixxAa/Ditb6OojcPpCyXO7uizw0XAyu0cqp2U
+ 9aNG3Yn1POQ/8Dbxch/3RoHsjcFcsdG6Vf92Zr+44Yij0qkThl5lKCK960YmVtjEP5Oi
+ aMMw==
+X-Gm-Message-State: APjAAAUI7WxH3oU89txuPNSEwUz+rsb/CYam65BfzeCYFySG1OYs5hHG
+ HGAzNj8b5iDfLkloMO0x0bQ=
+X-Google-Smtp-Source: APXvYqzwkIT55bFViDlmpLpucpRSQsot83hu5okTBB5Ska5wI1ee/oDJ3I8uqTblmwQD08sTMnLXvA==
+X-Received: by 2002:a63:26c7:: with SMTP id
+ m190mr22545113pgm.141.1560290912402; 
+ Tue, 11 Jun 2019 15:08:32 -0700 (PDT)
 Received: from [10.67.49.123] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id f10sm24561455wrg.24.2019.06.11.15.03.26
+ by smtp.googlemail.com with ESMTPSA id o26sm13715272pgv.47.2019.06.11.15.08.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 15:03:28 -0700 (PDT)
-Subject: Re: [PATCH 2/2] arm64: Enable BCM7038_L1_IRQ for ARCH_BRCMSTB
-To: linux-arm-kernel@lists.infradead.org
-References: <20190530230518.4334-1-f.fainelli@gmail.com>
- <20190530230518.4334-3-f.fainelli@gmail.com>
+ Tue, 11 Jun 2019 15:08:31 -0700 (PDT)
+Subject: Re: [PATCH 6/7] ARM: dts: BCM5301X: Fix most DTC W=1 warnings
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20190528230134.27007-1-f.fainelli@gmail.com>
+ <20190528230134.27007-7-f.fainelli@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -119,23 +120,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <3a82544e-389f-7d52-623d-d1b3ac3b5ba6@gmail.com>
-Date: Tue, 11 Jun 2019 15:03:20 -0700
+Message-ID: <75cc626c-743c-4bf9-7290-c9e8b5368159@gmail.com>
+Date: Tue, 11 Jun 2019 15:08:24 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190530230518.4334-3-f.fainelli@gmail.com>
+In-Reply-To: <20190528230134.27007-7-f.fainelli@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_150330_406720_73A8D50C 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20190611_150833_115116_0463E6EF 
+X-CRM114-Status: GOOD (  14.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -159,21 +160,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marc.zyngier@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, open list <linux-kernel@vger.kernel.org>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>,
+ =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>,
+ open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM IPROC ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, Gregory Fong <gregory.0xf0@gmail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Brian Norris <computersforpeace@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/30/19 4:05 PM, Florian Fainelli wrote:
-> ARCH_BRCMSTB makes use of the irq-bcm7038-l1.c irqchip driver, enable
-> it.
+On 5/28/19 4:01 PM, Florian Fainelli wrote:
+> Fix the bulk of the unit_address_vs_reg warnings and unnecessary
+> \#address-cells/#size-cells without "ranges" or child "reg" property
 > 
 > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> ---
 
-Applied to soc-arm64/next, thanks!
+Applied to devicetree/next, thanks!
 -- 
 Florian
 
