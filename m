@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 697303C524
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 09:31:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B78733C526
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 09:32:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=To4DUIM9l9leCwCfZVzglRQaxqzTV1rm2gYYbjzFsJ4=; b=EpQ6f2iyjXJBWA
-	jFB9YMlDNKn5t1TJgYxgxaPdc0IpHod/9U9RA+C6jxhBE62zTn7qMJZFaMFVJehjtDYEja0PpWjiw
-	16QhCDRkW4axib6GrUnjwqJA8Xs30mf5QyHmTGfs+3YrYiYtzwhmFQIsqsWTJpKMBN9UTt0k9VUcb
-	6lqdafVXnXuykwsO3Jo44mPjDTKiZ0De1L+IfyjJJo2Qh4KA2EKBjUwmRPQ0WFIviTwrAUutpIMp2
-	8CmXrTy/ecb5gCZwJb4SUm+ZnExbceaqdabCrXw+oNODbjs3wHiUeyxuJgNa8/PK7J3tw4lQZo3uR
-	v0SMjmsQmhTNuYL1gJLg==;
+	List-Owner; bh=XfIJBmvICHA0+RoKnka1Nbg69vg6+662hC1/LY1H330=; b=m+wBRK1hQ/OMVD
+	4+OOobzse3RPWGamZ28MSwqVJKbwIBN4pfV4loevRXGdPiCkgXUgGmcXK1xBEYoHXH+OJpDdkPHQh
+	SIdGUcuDrD/0oubU6moKGxnO+lrr8w8y6xCqjgO48HDDURVwDuC2xcJn/AlUZ6XzqSzVnSD2gLCyv
+	QgHUOt1X2zQnGTSvB5SQp0wKpTRSdF+kSjMT+UaPCRpgBVrxV1D6+/MIoQFo/9jlh0wkWz/wQVrdr
+	3HLcaUu9LcmlbnK/K1rIsMhRW7RxvByeFFSU1th5NMamU6vO9ENn2GvwcT/q9HDYQwhlh3C6N9U2B
+	GuuzzOihANFPqNzq7zyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1habFz-00042w-L3; Tue, 11 Jun 2019 07:31:48 +0000
+	id 1habGH-0004HO-CC; Tue, 11 Jun 2019 07:32:05 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1habE5-0001Cx-TU
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 07:29:51 +0000
+ id 1habE6-0001EM-GO
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 07:29:52 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 3A1EE104F7F;
+ by zimbra.v3.sk (Postfix) with ESMTP id F133F104F85;
  Tue, 11 Jun 2019 09:29:48 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id ykM-gJ9HGNYC; Tue, 11 Jun 2019 09:29:36 +0200 (CEST)
+ with ESMTP id HVHb10XKGsyh; Tue, 11 Jun 2019 09:29:36 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id E8CDB104F82;
- Tue, 11 Jun 2019 09:29:31 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 471B1104F87;
+ Tue, 11 Jun 2019 09:29:29 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id iCoJZXaH6guT; Tue, 11 Jun 2019 09:29:27 +0200 (CEST)
+ with ESMTP id Yxt4QUuLaodL; Tue, 11 Jun 2019 09:29:26 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id E5B7C104F81;
- Tue, 11 Jun 2019 09:29:24 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 2CDFB104F82;
+ Tue, 11 Jun 2019 09:29:25 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH 5/6] ARM: pxa: Switch to SPDX header
-Date: Tue, 11 Jun 2019 09:29:20 +0200
-Message-Id: <20190611072921.2979446-6-lkundrak@v3.sk>
+Subject: [PATCH 6/6] ARM: hisilicon: DT: Switch to SPDX header
+Date: Tue, 11 Jun 2019 09:29:21 +0200
+Message-Id: <20190611072921.2979446-7-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190611072921.2979446-1-lkundrak@v3.sk>
 References: <20190611072921.2979446-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_002950_267014_623174D5 
-X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-CacheID: sfid-20190611_002951_044058_797CCBE2 
+X-CRM114-Status: UNSURE (   7.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,87 +87,97 @@ to SPDX instead of fixing the wording.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- arch/arm/mach-pxa/littleton.c | 5 +----
- arch/arm/mach-pxa/pxa-dt.c    | 5 +----
- arch/arm/mach-pxa/saar.c      | 5 +----
- arch/arm/mach-pxa/tavorevb.c  | 5 +----
- 4 files changed, 4 insertions(+), 16 deletions(-)
+ arch/arm/boot/dts/hi3620-hi4511.dts  | 5 +----
+ arch/arm/boot/dts/hi3620.dtsi        | 5 +----
+ arch/arm/boot/dts/hip04-d01.dts      | 5 +----
+ arch/arm/boot/dts/hisi-x5hd2-dkb.dts | 5 +----
+ arch/arm/boot/dts/hisi-x5hd2.dtsi    | 5 +----
+ 5 files changed, 5 insertions(+), 20 deletions(-)
 
-diff --git a/arch/arm/mach-pxa/littleton.c b/arch/arm/mach-pxa/littleton.c
-index 464b8bd2bcb9..5c78bf53be5c 100644
---- a/arch/arm/mach-pxa/littleton.c
-+++ b/arch/arm/mach-pxa/littleton.c
+diff --git a/arch/arm/boot/dts/hi3620-hi4511.dts b/arch/arm/boot/dts/hi3620-hi4511.dts
+index a579fbf13b5f..86282e6a2eff 100644
+--- a/arch/arm/boot/dts/hi3620-hi4511.dts
++++ b/arch/arm/boot/dts/hi3620-hi4511.dts
+@@ -1,10 +1,7 @@
++// SPDX-License-Identifier: GPL-2.0
+ /*
+  *  Copyright (C) 2012-2013 Linaro Ltd.
+  *  Author: Haojian Zhuang <haojian.zhuang@linaro.org>
+- *
+- *  This program is free software; you can redistribute it and/or modify
+- *  it under the terms of the GNU General Public License version 2 as
+- *  publishhed by the Free Software Foundation.
+  */
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/hi3620.dtsi b/arch/arm/boot/dts/hi3620.dtsi
+index 541d70094544..d6aed21eaac5 100644
+--- a/arch/arm/boot/dts/hi3620.dtsi
++++ b/arch/arm/boot/dts/hi3620.dtsi
 @@ -1,3 +1,4 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  *  linux/arch/arm/mach-pxa/littleton.c
+  * Hisilicon Ltd. Hi3620 SoC
   *
-@@ -9,10 +10,6 @@
+@@ -5,10 +6,6 @@
+  * Copyright (C) 2012-2013 Linaro Ltd.
   *
-  *  2007-11-22  modified to align with latest kernel
-  *              eric miao <eric.miao@marvell.com>
+  * Author: Haojian Zhuang <haojian.zhuang@linaro.org>
 - *
-- *  This program is free software; you can redistribute it and/or modify
-- *  it under the terms of the GNU General Public License version 2 as
-- *  publishhed by the Free Software Foundation.
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License version 2 as
+- * publishhed by the Free Software Foundation.
   */
  
- #include <linux/init.h>
-diff --git a/arch/arm/mach-pxa/pxa-dt.c b/arch/arm/mach-pxa/pxa-dt.c
-index aa9b255f5570..e5508e04fadc 100644
---- a/arch/arm/mach-pxa/pxa-dt.c
-+++ b/arch/arm/mach-pxa/pxa-dt.c
-@@ -1,11 +1,8 @@
+ #include <dt-bindings/clock/hi3620-clock.h>
+diff --git a/arch/arm/boot/dts/hip04-d01.dts b/arch/arm/boot/dts/hip04-d01.dts
+index ca48641d0f48..157244dbd074 100644
+--- a/arch/arm/boot/dts/hip04-d01.dts
++++ b/arch/arm/boot/dts/hip04-d01.dts
+@@ -1,10 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  *  linux/arch/arm/mach-pxa/pxa-dt.c
-  *
-  *  Copyright (C) 2012 Daniel Mack
+  *  Copyright (C) 2013-2014 Linaro Ltd.
+  *  Author: Haojian Zhuang <haojian.zhuang@linaro.org>
 - *
 - *  This program is free software; you can redistribute it and/or modify
 - *  it under the terms of the GNU General Public License version 2 as
 - *  publishhed by the Free Software Foundation.
   */
  
- #include <linux/irq.h>
-diff --git a/arch/arm/mach-pxa/saar.c b/arch/arm/mach-pxa/saar.c
-index 834991034f30..a5f5bc5c20fb 100644
---- a/arch/arm/mach-pxa/saar.c
-+++ b/arch/arm/mach-pxa/saar.c
-@@ -1,13 +1,10 @@
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/hisi-x5hd2-dkb.dts b/arch/arm/boot/dts/hisi-x5hd2-dkb.dts
+index d13af8437d10..cb507e237068 100644
+--- a/arch/arm/boot/dts/hisi-x5hd2-dkb.dts
++++ b/arch/arm/boot/dts/hisi-x5hd2-dkb.dts
+@@ -1,10 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  *  linux/arch/arm/mach-pxa/saar.c
-  *
-  *  Support for the Marvell PXA930 Handheld Platform (aka SAAR)
-  *
-  *  Copyright (C) 2007-2008 Marvell International Ltd.
+  * Copyright (c) 2013-2014 Linaro Ltd.
+  * Copyright (c) 2013-2014 Hisilicon Limited.
 - *
 - *  This program is free software; you can redistribute it and/or modify
 - *  it under the terms of the GNU General Public License version 2 as
 - *  publishhed by the Free Software Foundation.
   */
  
- #include <linux/module.h>
-diff --git a/arch/arm/mach-pxa/tavorevb.c b/arch/arm/mach-pxa/tavorevb.c
-index 4b38e821ac9c..129b7de675a7 100644
---- a/arch/arm/mach-pxa/tavorevb.c
-+++ b/arch/arm/mach-pxa/tavorevb.c
-@@ -1,13 +1,10 @@
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/hisi-x5hd2.dtsi b/arch/arm/boot/dts/hisi-x5hd2.dtsi
+index 50d3f8426da1..2dd1d4fb0c27 100644
+--- a/arch/arm/boot/dts/hisi-x5hd2.dtsi
++++ b/arch/arm/boot/dts/hisi-x5hd2.dtsi
+@@ -1,10 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  *  linux/arch/arm/mach-pxa/tavorevb.c
-  *
-  *  Support for the Marvell PXA930 Evaluation Board
-  *
-  *  Copyright (C) 2007-2008 Marvell International Ltd.
+  * Copyright (c) 2013-2014 Linaro Ltd.
+  * Copyright (c) 2013-2014 Hisilicon Limited.
 - *
-- *  This program is free software; you can redistribute it and/or modify
-- *  it under the terms of the GNU General Public License version 2 as
-- *  publishhed by the Free Software Foundation.
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License version 2 as
+- * publishhed by the Free Software Foundation.
   */
  
- #include <linux/module.h>
+ #include <dt-bindings/clock/hix5hd2-clock.h>
 -- 
 2.21.0
 
