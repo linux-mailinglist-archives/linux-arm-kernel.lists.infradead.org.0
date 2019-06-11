@@ -2,60 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6434A3C0EA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 03:30:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E56F3C103
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 03:42:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/Iph4MmtH+XL/ZcHp3zfX7612b5G/L4UiLyAzRtyTC0=; b=VWX
-	jnHAJax878XyAj6RrtJ3Kskye8U0KrhlihAxYNUJT3NXmVGHbPuRUyGebBQb2DHW1ZjHT0PZr1a6j
-	jUZu0b7d32vfu4Kw2ql9LNL7KBR4BaY6YZ+E4poynb/hGBaKbgp+g9mF0Lxs22vN+DiI0w7wcrCsD
-	8W+GZdGUoJ4+/2yWFY0jNdcgf7LYVA2I8PXWlrv/Exm+imNYMNOzJx7IpBMQ9/DQODGH9/QM/YAr2
-	1REtqWKY2SPBzGA9sfcVq4sfbohkVr2WC2p6DjTwSEB/DeyiRdrQWbM12FYNiGtm0jNdIJsQbqOiB
-	byPYKFOWx56NwIjXlXsbYqHzz5XwNwQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k9ad33B3z4S7mzoxEf2h5WNApRJheKdNFy68wxGvi/k=; b=IHz6bUDxWKeYeB
+	zxJx/cDwuoz+rvHXMa3VIOcQ0lVk/4O/EjQTk4ME+gao5q9Hw05nUdKhhOyhJms5oP8SvxI+I7QFu
+	jtG5YyCv2MkjRxhUDCJoMLgddWnZtO2/d4wwHbkWkCEiVo7w5/80E03b1DmIbxZvtL6g5V7iMVOWy
+	itdAAaKaN5UnAFcE08u4OT4j/Fzsx5WpPaDPLhMAdmcLcRmYj6dmHQrC57o7uxZrTcOYySihw1uXM
+	xcZmx5MLbl76rMPU7gZgekZO2UMvt1lltqftAPoIbwXwlNLo9rz7MHLWhiyJFWtkmqdVCCZgo78vP
+	tbXlpOJStoMaD91j8Ctw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haVc3-0003GI-PM; Tue, 11 Jun 2019 01:30:11 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1haVoD-0007bw-PE; Tue, 11 Jun 2019 01:42:45 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haVbn-0003Fc-3S
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 01:29:56 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2E2A61A098E;
- Tue, 11 Jun 2019 03:29:48 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A3BA01A0990;
- Tue, 11 Jun 2019 03:29:43 +0200 (CEST)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CA9EB402DD;
- Tue, 11 Jun 2019 09:29:37 +0800 (SGT)
-From: Anson.Huang@nxp.com
-To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, leonard.crestez@nxp.com, viresh.kumar@linaro.org,
- abel.vesa@nxp.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] soc: imx: Add i.MX8MN SoC driver support
-Date: Tue, 11 Jun 2019 09:31:25 +0800
-Message-Id: <20190611013125.3434-1-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1haVo2-0007bT-DP; Tue, 11 Jun 2019 01:42:36 +0000
+X-UUID: b7502dfca4a9403f80b951525808f50e-20190610
+X-UUID: b7502dfca4a9403f80b951525808f50e-20190610
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1861550401; Mon, 10 Jun 2019 17:42:20 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Jun 2019 18:42:19 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 09:42:17 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 11 Jun 2019 09:42:17 +0800
+Message-ID: <1560217337.15546.1.camel@mtksdaap41>
+Subject: Re: [PATCH 5/5] drm/mtk: add panel orientation property
+From: CK Hu <ck.hu@mediatek.com>
+To: Derek Basehore <dbasehore@chromium.org>
+Date: Tue, 11 Jun 2019 09:42:17 +0800
+In-Reply-To: <20190611002256.186969-6-dbasehore@chromium.org>
+References: <20190611002256.186969-1-dbasehore@chromium.org>
+ <20190611002256.186969-6-dbasehore@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_182955_286347_B5E9D8BB 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190610_184234_458944_1E3D1B9C 
+X-CRM114-Status: GOOD (  12.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,70 +71,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: p.zabel@pengutronix.de, maxime.ripard@bootlin.com, sam@ravnborg.org,
+ intel-gfx@lists.freedesktop.org, joonas.lahtinen@linux.intel.com,
+ maarten.lankhorst@linux.intel.com, linux-kernel@vger.kernel.org,
+ jani.nikula@linux.intel.com, airlied@linux.ie, thierry.reding@gmail.com,
+ linux-mediatek@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ daniel@ffwll.ch, rodrigo.vivi@intel.com, matthias.bgg@gmail.com,
+ sean@poorly.run, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <Anson.Huang@nxp.com>
+Hi, Derek:
 
-This patch adds i.MX8MN SoC driver support:
+On Mon, 2019-06-10 at 17:22 -0700, Derek Basehore wrote:
+> This inits the panel orientation property for the mediatek dsi driver
+> if the panel orientation (connector.display_info.panel_orientation) is
+> not DRM_MODE_PANEL_ORIENTATION_UNKNOWN.
+> 
 
-root@imx8mnevk:~# cat /sys/devices/soc0/family
-Freescale i.MX
+Looks good to me,
 
-root@imx8mnevk:~# cat /sys/devices/soc0/machine
-NXP i.MX8MNano DDR4 EVK board
+Acked-by: CK Hu <ck.hu@mediatek.com>
 
-root@imx8mnevk:~# cat /sys/devices/soc0/soc_id
-i.MX8MN
+> Signed-off-by: Derek Basehore <dbasehore@chromium.org>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
+>  1 file changed, 8 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index 4a0b9150a7bb..08ffdc7526dd 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -782,10 +782,18 @@ static int mtk_dsi_create_connector(struct drm_device *drm, struct mtk_dsi *dsi)
+>  			DRM_ERROR("Failed to attach panel to drm\n");
+>  			goto err_connector_cleanup;
+>  		}
+> +
+> +		ret = drm_connector_init_panel_orientation_property(&dsi->conn);
+> +		if (ret) {
+> +			DRM_ERROR("Failed to init panel orientation\n");
+> +			goto err_panel_detach;
+> +		}
+>  	}
+>  
+>  	return 0;
+>  
+> +err_panel_detach:
+> +	drm_panel_detach(dsi->panel);
+>  err_connector_cleanup:
+>  	drm_connector_cleanup(&dsi->conn);
+>  	return ret;
 
-root@imx8mnevk:~# cat /sys/devices/soc0/revision
-1.0
-
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/soc/imx/soc-imx8.c | 13 ++++++++++++-
- 1 file changed, 12 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-index 3842d09..02309a2 100644
---- a/drivers/soc/imx/soc-imx8.c
-+++ b/drivers/soc/imx/soc-imx8.c
-@@ -55,7 +55,12 @@ static u32 __init imx8mm_soc_revision(void)
- 	void __iomem *anatop_base;
- 	u32 rev;
- 
--	np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-anatop");
-+	if (of_machine_is_compatible("fsl,imx8mm"))
-+		np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-anatop");
-+	else if (of_machine_is_compatible("fsl,imx8mn"))
-+		np = of_find_compatible_node(NULL, NULL, "fsl,imx8mn-anatop");
-+	else
-+		np = NULL;
- 	if (!np)
- 		return 0;
- 
-@@ -79,9 +84,15 @@ static const struct imx8_soc_data imx8mm_soc_data = {
- 	.soc_revision = imx8mm_soc_revision,
- };
- 
-+static const struct imx8_soc_data imx8mn_soc_data = {
-+	.name = "i.MX8MN",
-+	.soc_revision = imx8mm_soc_revision,
-+};
-+
- static const struct of_device_id imx8_soc_match[] = {
- 	{ .compatible = "fsl,imx8mq", .data = &imx8mq_soc_data, },
- 	{ .compatible = "fsl,imx8mm", .data = &imx8mm_soc_data, },
-+	{ .compatible = "fsl,imx8mn", .data = &imx8mn_soc_data, },
- 	{ }
- };
- 
--- 
-2.7.4
 
 
 _______________________________________________
