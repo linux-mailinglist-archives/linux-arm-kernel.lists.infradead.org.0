@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E422E3D376
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:06:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E18523D377
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:06:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C0Zx01+dWQfQJZPtDfde6uTBGolBBNE683DMH/YERLY=; b=T+N+kZ4gmF5JG4
-	RnxYgjBsSleKK000QypkamrtqADmEn/LGJ3xyzpsWPBBWNTcgQY80r/e25KtyX+BxQZ79Rrtlt/HC
-	tjJ/WqNLw55nQtocyCy2IA6E4EVlbCYcSlpEty9MQM62omgtRAWjvcwYgCFsrmlZaJBOzKqfA8119
-	r1xY/aehQOS4bPfy+rpNr70VQuUWBUbym+Ga2/w6uTis2AF7KxPIa/5gs/ejf1dI/dzHaHOCtMGXU
-	43at4m6F64Jysjma3VxUTRS9gKIMTLfLeCmivUokDz8GjuxIoGtXWc0f8rvIiTi9U+JQWWiQ6bSKZ
-	kngE7vIk5m+mf+y9K6Sw==;
+	List-Owner; bh=+NMvBCfwfoof4WkNKiGnclR2Y89Ur8deHbtIy5v5dv8=; b=dXEb3c8vGxiWB6
+	B7qasVBF5W3H6zB/fjf25mLDedlwGwRYseUdpL/qOP59af78ukooq4gi+7h3rU0wsUxZ2e5VAB98M
+	wQssMUNTyKBBLGNQSxwyKPm68hNbkulBnfNfXKWEM+Ac1nrztTJTNmzIpJzp52C2U05CTylQaIZx7
+	Z+1kD+kyCwSRZfYL4qIWc9noayVLQ7EFMEvjPxHFstFrMmYdBn50YnLQx5XFJPp/NOMkGZpM/fsnq
+	IVJjVdNo/LZjHcJdq/cmS3cFizoFyE3uOH4OBVUkpp9FiM3NCGQ7nd/UAnUJBCZZN3KcznTP9HLOy
+	Mvmy2xLfP20VRAzKH1Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakEC-0003qg-SS; Tue, 11 Jun 2019 17:06:32 +0000
+	id 1hakET-00044p-88; Tue, 11 Jun 2019 17:06:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hakBl-0000ie-Tv
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:04:03 +0000
+ id 1hakBn-0000jz-DL
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:04:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21131106F;
- Tue, 11 Jun 2019 10:04:01 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C54CC11B3;
+ Tue, 11 Jun 2019 10:04:02 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A61783F73C;
- Tue, 11 Jun 2019 10:03:59 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56A513F73C;
+ Tue, 11 Jun 2019 10:04:01 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 8/9] KVM: arm/arm64: vgic-its: Check the LPI translation
- cache on MSI injection
-Date: Tue, 11 Jun 2019 18:03:35 +0100
-Message-Id: <20190611170336.121706-9-marc.zyngier@arm.com>
+Subject: [PATCH v2 9/9] KVM: arm/arm64: vgic-irqfd: Implement
+ kvm_arch_set_irq_inatomic
+Date: Tue, 11 Jun 2019 18:03:36 +0100
+Message-Id: <20190611170336.121706-10-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190611170336.121706-1-marc.zyngier@arm.com>
 References: <20190611170336.121706-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_100402_148633_2BC0F5DC 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20190611_100403_539737_6A91219B 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,89 +72,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When performing an MSI injection, let's first check if the translation
-is already in the cache. If so, let's inject it quickly without
-going through the whole translation process.
+Now that we have a cache of MSI->LPI translations, it is pretty
+easy to implement kvm_arch_set_irq_inatomic (this cache can be
+parsed without sleeping).
+
+Hopefully, this will improve some LPI-heavy workloads.
 
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- virt/kvm/arm/vgic/vgic-its.c | 36 ++++++++++++++++++++++++++++++++++++
- virt/kvm/arm/vgic/vgic.h     |  1 +
- 2 files changed, 37 insertions(+)
+ virt/kvm/arm/vgic/vgic-irqfd.c | 36 ++++++++++++++++++++++++++++------
+ 1 file changed, 30 insertions(+), 6 deletions(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 62932458476a..83d80ec33473 100644
---- a/virt/kvm/arm/vgic/vgic-its.c
-+++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -577,6 +577,20 @@ static struct vgic_irq *__vgic_its_check_cache(struct vgic_dist *dist,
- 	return irq;
+diff --git a/virt/kvm/arm/vgic/vgic-irqfd.c b/virt/kvm/arm/vgic/vgic-irqfd.c
+index 99e026d2dade..9f203ed8c8f3 100644
+--- a/virt/kvm/arm/vgic/vgic-irqfd.c
++++ b/virt/kvm/arm/vgic/vgic-irqfd.c
+@@ -77,6 +77,15 @@ int kvm_set_routing_entry(struct kvm *kvm,
+ 	return r;
  }
  
-+static struct vgic_irq *vgic_its_check_cache(struct kvm *kvm, phys_addr_t db,
-+					     u32 devid, u32 eventid)
++static void kvm_populate_msi(struct kvm_kernel_irq_routing_entry *e,
++			     struct kvm_msi *msi)
 +{
-+	struct vgic_dist *dist = &kvm->arch.vgic;
-+	struct vgic_irq *irq;
-+	unsigned long flags;
-+
-+	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
-+	irq = __vgic_its_check_cache(dist, db, devid, eventid);
-+	raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
-+
-+	return irq;
++	msi->address_lo = e->msi.address_lo;
++	msi->address_hi = e->msi.address_hi;
++	msi->data = e->msi.data;
++	msi->flags = e->msi.flags;
++	msi->devid = e->msi.devid;
 +}
-+
- static void vgic_its_cache_translation(struct kvm *kvm, struct vgic_its *its,
- 				       u32 devid, u32 eventid,
- 				       struct vgic_irq *irq)
-@@ -736,6 +750,25 @@ static int vgic_its_trigger_msi(struct kvm *kvm, struct vgic_its *its,
- 	return 0;
+ /**
+  * kvm_set_msi: inject the MSI corresponding to the
+  * MSI routing entry
+@@ -90,21 +99,36 @@ int kvm_set_msi(struct kvm_kernel_irq_routing_entry *e,
+ {
+ 	struct kvm_msi msi;
+ 
+-	msi.address_lo = e->msi.address_lo;
+-	msi.address_hi = e->msi.address_hi;
+-	msi.data = e->msi.data;
+-	msi.flags = e->msi.flags;
+-	msi.devid = e->msi.devid;
+-
+ 	if (!vgic_has_its(kvm))
+ 		return -ENODEV;
+ 
+ 	if (!level)
+ 		return -1;
+ 
++	kvm_populate_msi(e, &msi);
+ 	return vgic_its_inject_msi(kvm, &msi);
  }
  
-+int vgic_its_inject_cached_translation(struct kvm *kvm, struct kvm_msi *msi)
++/**
++ * kvm_arch_set_irq_inatomic: fast-path for irqfd injection
++ *
++ * Currently only direct MSI injecton is supported.
++ */
++int kvm_arch_set_irq_inatomic(struct kvm_kernel_irq_routing_entry *e,
++			      struct kvm *kvm, int irq_source_id, int level,
++			      bool line_status)
 +{
-+	struct vgic_irq *irq;
-+	unsigned long flags;
-+	phys_addr_t db;
++	if (e->type == KVM_IRQ_ROUTING_MSI && vgic_has_its(kvm) && level) {
++		struct kvm_msi msi;
 +
-+	db = (u64)msi->address_hi << 32 | msi->address_lo;
-+	irq = vgic_its_check_cache(kvm, db, msi->devid, msi->data);
++		kvm_populate_msi(e, &msi);
++		if (!vgic_its_inject_cached_translation(kvm, &msi))
++			return 0;
++	}
 +
-+	if (!irq)
-+		return -1;
-+
-+	raw_spin_lock_irqsave(&irq->irq_lock, flags);
-+	irq->pending_latch = true;
-+	vgic_queue_irq_unlock(kvm, irq, flags);
-+
-+	return 0;
++	return -EWOULDBLOCK;
 +}
 +
- /*
-  * Queries the KVM IO bus framework to get the ITS pointer from the given
-  * doorbell address.
-@@ -747,6 +780,9 @@ int vgic_its_inject_msi(struct kvm *kvm, struct kvm_msi *msi)
- 	struct vgic_its *its;
- 	int ret;
- 
-+	if (!vgic_its_inject_cached_translation(kvm, msi))
-+		return 1;
-+
- 	its = vgic_msi_to_its(kvm, msi);
- 	if (IS_ERR(its))
- 		return PTR_ERR(its);
-diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-index 072f810dc441..ad6eba1e2beb 100644
---- a/virt/kvm/arm/vgic/vgic.h
-+++ b/virt/kvm/arm/vgic/vgic.h
-@@ -317,6 +317,7 @@ int vgic_copy_lpi_list(struct kvm *kvm, struct kvm_vcpu *vcpu, u32 **intid_ptr);
- int vgic_its_resolve_lpi(struct kvm *kvm, struct vgic_its *its,
- 			 u32 devid, u32 eventid, struct vgic_irq **irq);
- struct vgic_its *vgic_msi_to_its(struct kvm *kvm, struct kvm_msi *msi);
-+int vgic_its_inject_cached_translation(struct kvm *kvm, struct kvm_msi *msi);
- void vgic_lpi_translation_cache_init(struct kvm *kvm);
- void vgic_lpi_translation_cache_destroy(struct kvm *kvm);
- void vgic_its_invalidate_cache(struct kvm *kvm);
+ int kvm_vgic_setup_default_irq_routing(struct kvm *kvm)
+ {
+ 	struct kvm_irq_routing_entry *entries;
 -- 
 2.20.1
 
