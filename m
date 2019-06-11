@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 141DD3D34E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:04:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC4A73D35C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:04:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MOrcRTA15WtC2HbtHI6Ku11pi1SQa8i7GnNhHh6hy6Y=; b=nt8AVXi30YD1Um
-	HYeYe6sJyNFG8uUPPQuhIMc+UgPFsSG8o8HLyqOjXavQ8TxGg/mSPcbtUF6JFp1eeSlIa8NyNdNvn
-	Nzr4asZhuWvqMGoppcczoVn1NbPCG9Do4qFAL0931cKWNVM3mIS6vZPRvRekUd6i0bpooeBZ7D7/x
-	di+A0qcIpi6+KCY2dEGUwjmeco4TbsBEmSFtoSNpj4JNpm7cXfp4bG+QXSeUDmJRUeb4jWSYqrIOp
-	aNyRRTuddndLr0KCzjHTcMR+MZ2PRiRAjI6vIYm9z9DruwcMS2KZjgWTryL4IKOdID72ckqDGUble
-	URjSmwqPSPuF8A7MN80Q==;
+	List-Owner; bh=sOY+OC8l0JfTNcn/jj9+W5wHo7d96/OnKoP//l0rp7Q=; b=UiQqgEZYKM1fpO
+	fmJkXu5hF3DXOtvD5G/AFUfzKHVR/Hr45ISsEmjUQirmCcUV+SbIV1z2dZjf7AarRxdAMIlIevTvd
+	wmyODDR4J94SzQpa2+2l8B3Vzo0g767fUfxtGVSHKi0nzNGGOjf+B9UBLMOGM3/cHb60oCFsZfX8j
+	08MKo0vmJjbf9Xq/NkoTzotfDKLfB25QdaLQVPHBThT8/bbtUxZZcH9tTWYk3wOF1Zz4F03ph5ZdP
+	iaewh/AGpim/PzOd8k27BxBC4EHHyXnQbVNmT5ieoEYQPasbW8UQHC+SbiRRkpbDlmSvHdNL95QEz
+	8JbDhLxo25d9Q7vjFiSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakC7-0000iA-KW; Tue, 11 Jun 2019 17:04:23 +0000
+	id 1hakCM-00012P-PC; Tue, 11 Jun 2019 17:04:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hakBa-0000VV-9a
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:03:51 +0000
+ id 1hakBb-0000Vs-HU
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:03:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6BD07346;
- Tue, 11 Jun 2019 10:03:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1AC0AC1D;
+ Tue, 11 Jun 2019 10:03:51 -0700 (PDT)
 Received: from filthy-habits.cambridge.arm.com
  (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F18333F73C;
- Tue, 11 Jun 2019 10:03:47 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A09473F73C;
+ Tue, 11 Jun 2019 10:03:49 -0700 (PDT)
 From: Marc Zyngier <marc.zyngier@arm.com>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 1/9] KVM: arm/arm64: vgic: Add LPI translation cache
- definition
-Date: Tue, 11 Jun 2019 18:03:28 +0100
-Message-Id: <20190611170336.121706-2-marc.zyngier@arm.com>
+Subject: [PATCH v2 2/9] KVM: arm/arm64: vgic: Add __vgic_put_lpi_locked
+ primitive
+Date: Tue, 11 Jun 2019 18:03:29 +0100
+Message-Id: <20190611170336.121706-3-marc.zyngier@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190611170336.121706-1-marc.zyngier@arm.com>
 References: <20190611170336.121706-1-marc.zyngier@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_100350_422288_DF807D3B 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20190611_100351_646233_A312CA91 
+X-CRM114-Status: GOOD (  12.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,150 +72,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the basic data structure that expresses an MSI to LPI
-translation as well as the allocation/release hooks.
+Our LPI translation cache needs to be able to drop the refcount
+on an LPI whilst already holding the lpi_list_lock.
 
-THe size of the cache is arbitrarily defined as 4*nr_vcpus.
+Let's add a new primitive for this.
 
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 ---
- include/kvm/arm_vgic.h        |  3 +++
- virt/kvm/arm/vgic/vgic-init.c |  5 ++++
- virt/kvm/arm/vgic/vgic-its.c  | 49 +++++++++++++++++++++++++++++++++++
- virt/kvm/arm/vgic/vgic.h      |  2 ++
- 4 files changed, 59 insertions(+)
+ virt/kvm/arm/vgic/vgic.c | 26 +++++++++++++++++---------
+ virt/kvm/arm/vgic/vgic.h |  1 +
+ 2 files changed, 18 insertions(+), 9 deletions(-)
 
-diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-index c36c86f1ec9a..ca7bcf52dc85 100644
---- a/include/kvm/arm_vgic.h
-+++ b/include/kvm/arm_vgic.h
-@@ -260,6 +260,9 @@ struct vgic_dist {
- 	struct list_head	lpi_list_head;
- 	int			lpi_list_count;
- 
-+	/* LPI translation cache */
-+	struct list_head	lpi_translation_cache;
-+
- 	/* used by vgic-debug */
- 	struct vgic_state_iter *iter;
- 
-diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
-index 3bdb31eaed64..c7c4c77dd430 100644
---- a/virt/kvm/arm/vgic/vgic-init.c
-+++ b/virt/kvm/arm/vgic/vgic-init.c
-@@ -64,6 +64,7 @@ void kvm_vgic_early_init(struct kvm *kvm)
- 	struct vgic_dist *dist = &kvm->arch.vgic;
- 
- 	INIT_LIST_HEAD(&dist->lpi_list_head);
-+	INIT_LIST_HEAD(&dist->lpi_translation_cache);
- 	raw_spin_lock_init(&dist->lpi_list_lock);
+diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+index 191deccf60bf..376a297e2169 100644
+--- a/virt/kvm/arm/vgic/vgic.c
++++ b/virt/kvm/arm/vgic/vgic.c
+@@ -130,6 +130,22 @@ static void vgic_irq_release(struct kref *ref)
+ {
  }
  
-@@ -305,6 +306,7 @@ int vgic_init(struct kvm *kvm)
- 	}
- 
- 	if (vgic_has_its(kvm)) {
-+		vgic_lpi_translation_cache_init(kvm);
- 		ret = vgic_v4_init(kvm);
- 		if (ret)
- 			goto out;
-@@ -346,6 +348,9 @@ static void kvm_vgic_dist_destroy(struct kvm *kvm)
- 		INIT_LIST_HEAD(&dist->rd_regions);
- 	}
- 
-+	if (vgic_has_its(kvm))
-+		vgic_lpi_translation_cache_destroy(kvm);
-+
- 	if (vgic_supports_direct_msis(kvm))
- 		vgic_v4_teardown(kvm);
- }
-diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 44ceaccb18cf..ce9bcddeb7f1 100644
---- a/virt/kvm/arm/vgic/vgic-its.c
-+++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -149,6 +149,14 @@ struct its_ite {
- 	u32 event_id;
- };
- 
-+struct vgic_translation_cache_entry {
-+	struct list_head	entry;
-+	phys_addr_t		db;
-+	u32			devid;
-+	u32			eventid;
-+	struct vgic_irq		*irq;
-+};
-+
- /**
-  * struct vgic_its_abi - ITS abi ops and settings
-  * @cte_esz: collection table entry size
-@@ -1668,6 +1676,45 @@ static int vgic_register_its_iodev(struct kvm *kvm, struct vgic_its *its,
- 	return ret;
- }
- 
-+/* Default is 16 cached LPIs per vcpu */
-+#define LPI_DEFAULT_PCPU_CACHE_SIZE	16
-+
-+void vgic_lpi_translation_cache_init(struct kvm *kvm)
++/*
++ * Drop the refcount on the LPI. Must be called with lpi_list_lock held.
++ */
++void __vgic_put_lpi_locked(struct kvm *kvm, struct vgic_irq *irq)
 +{
 +	struct vgic_dist *dist = &kvm->arch.vgic;
-+	unsigned int sz;
-+	int i;
 +
-+	if (!list_empty(&dist->lpi_translation_cache))
++	if (!kref_put(&irq->refcount, vgic_irq_release))
 +		return;
 +
-+	sz = atomic_read(&kvm->online_vcpus) * LPI_DEFAULT_PCPU_CACHE_SIZE;
++	list_del(&irq->lpi_list);
++	dist->lpi_list_count--;
 +
-+	for (i = 0; i < sz; i++) {
-+		struct vgic_translation_cache_entry *cte;
-+
-+		/* An allocation failure is not fatal */
-+		cte = kzalloc(sizeof(*cte), GFP_KERNEL);
-+		if (WARN_ON(!cte))
-+			break;
-+
-+		INIT_LIST_HEAD(&cte->entry);
-+		list_add(&cte->entry, &dist->lpi_translation_cache);
-+	}
++	kfree(irq);
 +}
 +
-+void vgic_lpi_translation_cache_destroy(struct kvm *kvm)
-+{
-+	struct vgic_dist *dist = &kvm->arch.vgic;
-+	struct vgic_translation_cache_entry *cte, *tmp;
-+
-+	list_for_each_entry_safe(cte, tmp,
-+				 &dist->lpi_translation_cache, entry) {
-+		list_del(&cte->entry);
-+		kfree(cte);
-+	}
-+}
-+
- #define INITIAL_BASER_VALUE						  \
- 	(GIC_BASER_CACHEABILITY(GITS_BASER, INNER, RaWb)		| \
- 	 GIC_BASER_CACHEABILITY(GITS_BASER, OUTER, SameAsInner)		| \
-@@ -1696,6 +1743,8 @@ static int vgic_its_create(struct kvm_device *dev, u32 type)
- 			kfree(its);
- 			return ret;
- 		}
-+
-+		vgic_lpi_translation_cache_init(dev->kvm);
- 	}
+ void vgic_put_irq(struct kvm *kvm, struct vgic_irq *irq)
+ {
+ 	struct vgic_dist *dist = &kvm->arch.vgic;
+@@ -139,16 +155,8 @@ void vgic_put_irq(struct kvm *kvm, struct vgic_irq *irq)
+ 		return;
  
- 	mutex_init(&its->its_lock);
+ 	raw_spin_lock_irqsave(&dist->lpi_list_lock, flags);
+-	if (!kref_put(&irq->refcount, vgic_irq_release)) {
+-		raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
+-		return;
+-	};
+-
+-	list_del(&irq->lpi_list);
+-	dist->lpi_list_count--;
++	__vgic_put_lpi_locked(kvm, irq);
+ 	raw_spin_unlock_irqrestore(&dist->lpi_list_lock, flags);
+-
+-	kfree(irq);
+ }
+ 
+ void vgic_flush_pending_lpis(struct kvm_vcpu *vcpu)
 diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-index abeeffabc456..50aad705c4a9 100644
+index 50aad705c4a9..afac2fed7df4 100644
 --- a/virt/kvm/arm/vgic/vgic.h
 +++ b/virt/kvm/arm/vgic/vgic.h
-@@ -316,6 +316,8 @@ int vgic_copy_lpi_list(struct kvm *kvm, struct kvm_vcpu *vcpu, u32 **intid_ptr);
- int vgic_its_resolve_lpi(struct kvm *kvm, struct vgic_its *its,
- 			 u32 devid, u32 eventid, struct vgic_irq **irq);
- struct vgic_its *vgic_msi_to_its(struct kvm *kvm, struct kvm_msi *msi);
-+void vgic_lpi_translation_cache_init(struct kvm *kvm);
-+void vgic_lpi_translation_cache_destroy(struct kvm *kvm);
- 
- bool vgic_supports_direct_msis(struct kvm *kvm);
- int vgic_v4_init(struct kvm *kvm);
+@@ -172,6 +172,7 @@ vgic_get_mmio_region(struct kvm_vcpu *vcpu, struct vgic_io_device *iodev,
+ 		     gpa_t addr, int len);
+ struct vgic_irq *vgic_get_irq(struct kvm *kvm, struct kvm_vcpu *vcpu,
+ 			      u32 intid);
++void __vgic_put_lpi_locked(struct kvm *kvm, struct vgic_irq *irq);
+ void vgic_put_irq(struct kvm *kvm, struct vgic_irq *irq);
+ bool vgic_get_phys_line_level(struct vgic_irq *irq);
+ void vgic_irq_set_phys_pending(struct vgic_irq *irq, bool pending);
 -- 
 2.20.1
 
