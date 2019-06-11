@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89EA43CB32
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:25:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6172C3CB8A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:31:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u9QxHoUgeDZ8bElMZSlod+Uz/+vbpqEwRGboMFZSpuY=; b=OjLMRwDDbTkMlm
-	yP6Fd+F9XYY65/t2MLQm+BtvKo+cb51r4idrSV46IsJkL6TYdeNsRBDW7NrVkMqt9xCF/vRePZ1rA
-	YgVTaKX1X1vqU4UkSKeYwEvOMEK2zViZVdCgdzuZQVwe1o0OW9qiqsCly9J0291cLth5qgHKIYfAa
-	PU5M8dLL3L50Rk7F4oJkrzapuXJEcewAoDorWCcMl58bJSDS6HIHCG6yN/ZxijaB/YF5RvTEU5/Nk
-	Zxs4bA/XnPMV1yUDejmKFWwRyGdHS/+8NMDuumRRdZUEv8hDz1Na54jveWkYStpROt139QCvgFON/
-	AFYMd6QrObT71TOPE37A==;
+	List-Owner; bh=WvYQyd0lVV6D6gDh3SzcqcjlYAGWeorRyFkB/qKubZk=; b=JSaBboxpVlVvtR
+	vWUOq/V2RxghWaeWQwMqZHAjj6HaUHbrmq1PlI2I5f7slqSQcsM4EC//zFkqIgZyDAbDTM47kK+eJ
+	KcjBfX1sso2ZoUx9we+LFe2IpMoM+mAb0Lws2T0xDHWRm4BksFqz/HYlNv4gHK12epuchSHGSs2cJ
+	cb28v8qUCevggiw0xBgPeg5bJLkq4CNYyVIUU93hODBUwl6uUSZ5B+7oaT5l+2ceSDFSfDl2jiE73
+	U3+vMxtpTxTlMnkWXWXp9nDDBa2gFVwVa4n4XEnOxoH0PHWsBYDmnwDdXbPovnJU2frofcgfhrX1q
+	uw6Xiz8Ih4bxMpUzivuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hafqS-0001iE-6e; Tue, 11 Jun 2019 12:25:44 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1hafve-00076U-US; Tue, 11 Jun 2019 12:31:07 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hafq4-0007ub-5G
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 12:25:22 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 11 Jun 2019 05:23:18 -0700
-X-ExtLoop1: 1
-Received: from jacob-builder.jf.intel.com (HELO jacob-builder) ([10.7.199.155])
- by orsmga001.jf.intel.com with ESMTP; 11 Jun 2019 05:23:18 -0700
-Date: Tue, 11 Jun 2019 05:26:26 -0700
-From: Jacob Pan <jacob.jun.pan@linux.intel.com>
-To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH 1/8] iommu: Add I/O ASID allocator
-Message-ID: <20190611052626.20bed59a@jacob-builder>
-In-Reply-To: <20190610184714.6786-2-jean-philippe.brucker@arm.com>
-References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-2-jean-philippe.brucker@arm.com>
-Organization: OTC
-X-Mailer: Claws Mail 3.13.2 (GTK+ 2.24.30; x86_64-pc-linux-gnu)
+ id 1haftZ-0004OZ-S9; Tue, 11 Jun 2019 12:29:00 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id C1223285914;
+ Tue, 11 Jun 2019 13:28:52 +0100 (BST)
+Date: Tue, 11 Jun 2019 14:28:49 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Qii Wang <qii.wang@mediatek.com>
+Subject: Re: [PATCH 2/2] i3c: master: Add driver for MediaTek IP
+Message-ID: <20190611142849.43f6d1e4@collabora.com>
+In-Reply-To: <1560255922.12217.3.camel@mhfsdcap03>
+References: <1559533863-10292-1-git-send-email-qii.wang@mediatek.com>
+ <1559533863-10292-3-git-send-email-qii.wang@mediatek.com>
+ <20190604095858.38ed9a28@collabora.com>
+ <1559651200.5871.2.camel@mhfsdcap03>
+ <1560255922.12217.3.camel@mhfsdcap03>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_052520_250439_57EBF8DC 
-X-CRM114-Status: GOOD (  34.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190611_052858_105915_0F895514 
+X-CRM114-Status: GOOD (  16.54  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,325 +63,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- jacob.jun.pan@linux.intel.com, joro@8bytes.org, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, eric.auger@redhat.com,
- iommu@lists.linux-foundation.org, robh+dt@kernel.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ bbrezillon@kernel.org, leilk.liu@mediatek.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
+ xinping.qian@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Jun 2019 19:47:07 +0100
-Jean-Philippe Brucker <jean-philippe.brucker@arm.com> wrote:
+On Tue, 11 Jun 2019 20:25:22 +0800
+Qii Wang <qii.wang@mediatek.com> wrote:
 
-> Some devices might support multiple DMA address spaces, in particular
-> those that have the PCI PASID feature. PASID (Process Address Space
-> ID) allows to share process address spaces with devices (SVA),
-> partition a device into VM-assignable entities (VFIO mdev) or simply
-> provide multiple DMA address space to kernel drivers. Add a global
-> PASID allocator usable by different drivers at the same time. Name it
-> I/O ASID to avoid confusion with ASIDs allocated by arch code, which
-> are usually a separate ID space.
-> 
-> The IOASID space is global. Each device can have its own PASID space,
-> but by convention the IOMMU ended up having a global PASID space, so
-> that with SVA, each mm_struct is associated to a single PASID.
-> 
-> The allocator is primarily used by IOMMU subsystem but in rare
-> occasions drivers would like to allocate PASIDs for devices that
-> aren't managed by an IOMMU, using the same ID space as IOMMU.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-> Signed-off-by: Jacob Pan <jacob.jun.pan@linux.intel.com>
-> ---
-> The most recent discussion on this patch was at:
-> https://lkml.kernel.org/lkml/1556922737-76313-4-git-send-email-jacob.jun.pan@linux.intel.com/
-> I fixed it up a bit following comments in that series, and removed the
-> definitions for the custom allocator for now.
-> 
-> There also is a new version that includes the custom allocator into
-> this patch, but is currently missing the RCU fixes, at:
-> https://lore.kernel.org/lkml/1560087862-57608-13-git-send-email-jacob.jun.pan@linux.intel.com/
-> ---
->  drivers/iommu/Kconfig  |   4 ++
->  drivers/iommu/Makefile |   1 +
->  drivers/iommu/ioasid.c | 150
-> +++++++++++++++++++++++++++++++++++++++++ include/linux/ioasid.h |
-> 49 ++++++++++++++ 4 files changed, 204 insertions(+)
->  create mode 100644 drivers/iommu/ioasid.c
->  create mode 100644 include/linux/ioasid.h
-> 
-> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-> index 83664db5221d..9b45f70549a7 100644
-> --- a/drivers/iommu/Kconfig
-> +++ b/drivers/iommu/Kconfig
-> @@ -3,6 +3,10 @@
->  config IOMMU_IOVA
->  	tristate
->  
-> +# The IOASID library may also be used by non-IOMMU_API users
-> +config IOASID
-> +	tristate
-> +
->  # IOMMU_API always gets selected by whoever wants it.
->  config IOMMU_API
->  	bool
-> diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
-> index 8c71a15e986b..0efac6f1ec73 100644
-> --- a/drivers/iommu/Makefile
-> +++ b/drivers/iommu/Makefile
-> @@ -7,6 +7,7 @@ obj-$(CONFIG_IOMMU_DMA) += dma-iommu.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE) += io-pgtable.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE_ARMV7S) += io-pgtable-arm-v7s.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE_LPAE) += io-pgtable-arm.o
-> +obj-$(CONFIG_IOASID) += ioasid.o
->  obj-$(CONFIG_IOMMU_IOVA) += iova.o
->  obj-$(CONFIG_OF_IOMMU)	+= of_iommu.o
->  obj-$(CONFIG_MSM_IOMMU) += msm_iommu.o
-> diff --git a/drivers/iommu/ioasid.c b/drivers/iommu/ioasid.c
-> new file mode 100644
-> index 000000000000..bbb771214fa9
-> --- /dev/null
-> +++ b/drivers/iommu/ioasid.c
-> @@ -0,0 +1,150 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * I/O Address Space ID allocator. There is one global IOASID space,
-> split into
-> + * subsets. Users create a subset with DECLARE_IOASID_SET, then
-> allocate and
-> + * free IOASIDs with ioasid_alloc and ioasid_free.
-> + */
-> +#include <linux/ioasid.h>
-> +#include <linux/module.h>
-> +#include <linux/slab.h>
-> +#include <linux/spinlock.h>
-> +#include <linux/xarray.h>
-> +
-> +struct ioasid_data {
-> +	ioasid_t id;
-> +	struct ioasid_set *set;
-> +	void *private;
-> +	struct rcu_head rcu;
-> +};
-> +
-> +static DEFINE_XARRAY_ALLOC(ioasid_xa);
-> +
-> +/**
-> + * ioasid_set_data - Set private data for an allocated ioasid
-> + * @ioasid: the ID to set data
-> + * @data:   the private data
-> + *
-> + * For IOASID that is already allocated, private data can be set
-> + * via this API. Future lookup can be done via ioasid_find.
-> + */
-> +int ioasid_set_data(ioasid_t ioasid, void *data)
-> +{
-> +	struct ioasid_data *ioasid_data;
-> +	int ret = 0;
-> +
-> +	xa_lock(&ioasid_xa);
-Just wondering if this is necessary, since xa_load is under
-rcu_read_lock and we are not changing anything internal to xa. For
-custom allocator I still need to have the mutex against allocator
-removal.
-> +	ioasid_data = xa_load(&ioasid_xa, ioasid);
-> +	if (ioasid_data)
-> +		rcu_assign_pointer(ioasid_data->private, data);
-it is good to publish and have barrier here. But I just wonder even for
-weakly ordered machine, this pointer update is quite far away from its
-data update.
-> +	else
-> +		ret = -ENOENT;
-> +	xa_unlock(&ioasid_xa);
-> +
-> +	/*
-> +	 * Wait for readers to stop accessing the old private data,
-> so the
-> +	 * caller can free it.
-> +	 */
-> +	if (!ret)
-> +		synchronize_rcu();
-> +
-I will add that to my next version to check ret value.
+> On Tue, 2019-06-04 at 20:26 +0800, Qii Wang wrote:
+> > On Tue, 2019-06-04 at 09:58 +0200, Boris Brezillon wrote:  
+> > > On Mon, 3 Jun 2019 11:51:03 +0800
+> > > Qii Wang <qii.wang@mediatek.com> wrote:
+> > > 
+> > >   
+> > > > +static int mtk_i3c_master_probe(struct platform_device *pdev)
+> > > > +{
+> > > > +	struct device *dev = &pdev->dev;
+> > > > +	struct mtk_i3c_master *master;
+> > > > +	struct resource *res;
+> > > > +	int ret, irqnr;
+> > > > +
+> > > > +	master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
+> > > > +	if (!master)
+> > > > +		return -ENOMEM;
+> > > > +
+> > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "main");
+> > > > +	master->regs = devm_ioremap_resource(dev, res);
+> > > > +	if (IS_ERR(master->regs))
+> > > > +		return PTR_ERR(master->regs);
+> > > > +
+> > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dma");
+> > > > +	master->dma_regs = devm_ioremap_resource(dev, res);
+> > > > +	if (IS_ERR(master->dma_regs))
+> > > > +		return PTR_ERR(master->dma_regs);
+> > > > +
+> > > > +	irqnr = platform_get_irq(pdev, 0);
+> > > > +	if (irqnr < 0)
+> > > > +		return irqnr;
+> > > > +
+> > > > +	ret = devm_request_irq(dev, irqnr, mtk_i3c_master_irq,
+> > > > +			       IRQF_TRIGGER_NONE, DRV_NAME, master);
+> > > > +	if (ret < 0) {
+> > > > +		dev_err(dev, "Request I3C IRQ %d fail\n", irqnr);
+> > > > +		return ret;
+> > > > +	}
+> > > > +
+> > > > +	ret = of_property_read_u32(pdev->dev.of_node, "clock-div",
+> > > > +				   &master->clk_src_div);  
+> > > 
+> > > You say in one comment that this clock divider is fixed in HW but might
+> > > change on a per-SoC basis. If that's the case, you should get rid of
+> > > this clock-div prop and attach the divider to the compatible (using an
+> > > mtk_i3c_master_variant struct that contains a divider field).
+> > >   
+> > 
+> > ok, I will attach the divider to the compatible.
+> >   
+> I have rechecked your comment, maybe I have misunderstood what you mean.
+> "clock-div" changes according to i2c source clock, different project may
+> change i2c source clock, The previous dt-binding may be misleading, I
+> will modify it.
 
-Thanks,
-
-Jacob
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_set_data);
-> +
-> +/**
-> + * ioasid_alloc - Allocate an IOASID
-> + * @set: the IOASID set
-> + * @min: the minimum ID (inclusive)
-> + * @max: the maximum ID (inclusive)
-> + * @private: data private to the caller
-> + *
-> + * Allocate an ID between @min and @max. The @private pointer is
-> stored
-> + * internally and can be retrieved with ioasid_find().
-> + *
-> + * Return: the allocated ID on success, or %INVALID_IOASID on
-> failure.
-> + */
-> +ioasid_t ioasid_alloc(struct ioasid_set *set, ioasid_t min, ioasid_t
-> max,
-> +		      void *private)
-> +{
-> +	u32 id = INVALID_IOASID;
-> +	struct ioasid_data *data;
-> +
-> +	data = kzalloc(sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return INVALID_IOASID;
-> +
-> +	data->set = set;
-> +	data->private = private;
-> +
-> +	if (xa_alloc(&ioasid_xa, &id, data, XA_LIMIT(min, max),
-> GFP_KERNEL)) {
-> +		pr_err("Failed to alloc ioasid from %d to %d\n",
-> min, max);
-> +		goto exit_free;
-> +	}
-> +	data->id = id;
-> +
-> +exit_free:
-> +	if (id == INVALID_IOASID) {
-> +		kfree(data);
-> +		return INVALID_IOASID;
-> +	}
-> +	return id;
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_alloc);
-> +
-> +/**
-> + * ioasid_free - Free an IOASID
-> + * @ioasid: the ID to remove
-> + */
-> +void ioasid_free(ioasid_t ioasid)
-> +{
-> +	struct ioasid_data *ioasid_data;
-> +
-> +	ioasid_data = xa_erase(&ioasid_xa, ioasid);
-> +
-> +	kfree_rcu(ioasid_data, rcu);
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_free);
-> +
-> +/**
-> + * ioasid_find - Find IOASID data
-> + * @set: the IOASID set
-> + * @ioasid: the IOASID to find
-> + * @getter: function to call on the found object
-> + *
-> + * The optional getter function allows to take a reference to the
-> found object
-> + * under the rcu lock. The function can also check if the object is
-> still valid:
-> + * if @getter returns false, then the object is invalid and NULL is
-> returned.
-> + *
-> + * If the IOASID has been allocated for this set, return the private
-> pointer
-> + * passed to ioasid_alloc. Private data can be NULL if not set.
-> Return an error
-> + * if the IOASID is not found or does not belong to the set.
-> + */
-> +void *ioasid_find(struct ioasid_set *set, ioasid_t ioasid,
-> +		  bool (*getter)(void *))
-> +{
-> +	void *priv = NULL;
-> +	struct ioasid_data *ioasid_data;
-> +
-> +	rcu_read_lock();
-> +	ioasid_data = xa_load(&ioasid_xa, ioasid);
-> +	if (!ioasid_data) {
-> +		priv = ERR_PTR(-ENOENT);
-> +		goto unlock;
-> +	}
-> +	if (set && ioasid_data->set != set) {
-> +		/* data found but does not belong to the set */
-> +		priv = ERR_PTR(-EACCES);
-> +		goto unlock;
-> +	}
-> +	/* Now IOASID and its set is verified, we can return the
-> private data */
-> +	priv = rcu_dereference(ioasid_data->private);
-> +	if (getter && !getter(priv))
-> +		priv = NULL;
-> +unlock:
-> +	rcu_read_unlock();
-> +
-> +	return priv;
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_find);
-> +
-> +MODULE_LICENSE("GPL");
-> diff --git a/include/linux/ioasid.h b/include/linux/ioasid.h
-> new file mode 100644
-> index 000000000000..940212422b8f
-> --- /dev/null
-> +++ b/include/linux/ioasid.h
-> @@ -0,0 +1,49 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef __LINUX_IOASID_H
-> +#define __LINUX_IOASID_H
-> +
-> +#include <linux/types.h>
-> +
-> +#define INVALID_IOASID ((ioasid_t)-1)
-> +typedef unsigned int ioasid_t;
-> +
-> +struct ioasid_set {
-> +	int dummy;
-> +};
-> +
-> +#define DECLARE_IOASID_SET(name) struct ioasid_set name = { 0 }
-> +
-> +#if IS_ENABLED(CONFIG_IOASID)
-> +ioasid_t ioasid_alloc(struct ioasid_set *set, ioasid_t min, ioasid_t
-> max,
-> +		      void *private);
-> +void ioasid_free(ioasid_t ioasid);
-> +
-> +void *ioasid_find(struct ioasid_set *set, ioasid_t ioasid,
-> +		  bool (*getter)(void *));
-> +
-> +int ioasid_set_data(ioasid_t ioasid, void *data);
-> +
-> +#else /* !CONFIG_IOASID */
-> +static inline ioasid_t ioasid_alloc(struct ioasid_set *set, ioasid_t
-> min,
-> +				    ioasid_t max, void *private)
-> +{
-> +	return INVALID_IOASID;
-> +}
-> +
-> +static inline void ioasid_free(ioasid_t ioasid)
-> +{
-> +}
-> +
-> +static inline void *ioasid_find(struct ioasid_set *set, ioasid_t
-> ioasid,
-> +				bool (*getter)(void *))
-> +{
-> +	return NULL;
-> +}
-> +
-> +static inline int ioasid_set_data(ioasid_t ioasid, void *data)
-> +{
-> +	return -ENODEV;
-> +}
-> +
-> +#endif /* CONFIG_IOASID */
-> +#endif /* __LINUX_IOASID_H */
-
-[Jacob Pan]
+Is it fixed or configurable? Maybe it should be modeled as a clk
+driver. What's for sure is that we shouldn't have this divider defined
+in the DT.
 
 _______________________________________________
 linux-arm-kernel mailing list
