@@ -2,104 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A911E4164D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 22:46:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1730541654
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 22:46:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P2NWfurI8YM1TINPy5dCxvGvdOE9SQoYp1CQcJZOqOY=; b=N3gQ7/A1Vptg2d
-	ZCJlcmR85fxD+QTaXLLovBsOibRPzqNZYxLaIpeaNbo+qvUxclmvsF0CJZEqGnFj8M0d0cCaPlKvZ
-	joFgjIbLpfrnnhI3HqO+VUXM9VyQKBfklvD35PScPRfJ6Gb9UYQVxVfCWIJ6RYvLsUw4hlA9IUW4L
-	RyolW7UPeirCioHW7r2lXrRTC85cB3B7ZN8CsRoAEtKcEsycCPHy1B9xY1/DJ33hoflWQGNB8kdox
-	VrT9r0hMUJoMQ/QAnabTLZfuowvk1YJ5WU8DaZ5srKLVJdN2De1srJsCy8dPzA2Mb5GcGc05eb4ED
-	9gNVjDkmOSmDuI2MCxCQ==;
+	List-Owner; bh=isuAeQGQPVd4jO3weD3Pjps4uRAx+5Yx7fPauNviIDw=; b=pSYqls8dn9WrMV
+	7eTAT2SknO/xqTuV0BkQbdnnP4tzwVUeTaexmLAF1jwyn+yChzJlJJgiw+SCQ7+HSqnxEiUtfGaZs
+	FFO3IQsqJOf/uLTGRXA9NtqydLQ47jff08XEBneXsuJwfd5KCW6bZAvjNiBfZ2n+kuMi5kWdxoLfU
+	2FqaOhYadz8Oc/HvMh8ykCm0j0hVsdpn/Kopt8xYuVTSAHaWKGLpfg1i+LBdOtGrjcEjf+VphIXl+
+	/R+HOdati2aENc7Mles0o2RqPqv8B5euadGVu21WOvSCq9a3sGlkDtDf1EbH+PMXNZhc7Ebx8dAG1
+	Gz+MYfxWpFZJkq48lByg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haned-00035y-8m; Tue, 11 Jun 2019 20:46:03 +0000
-Received: from us-smtp-delivery-168.mimecast.com ([63.128.21.168])
+	id 1hanfO-0003cb-2P; Tue, 11 Jun 2019 20:46:50 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haneF-0002xf-4g
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 20:45:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=impinj.com;
- s=mimecast20190405; t=1560285936;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=tZJI8JGdaiRefhCxahVuZzeWNJpxVME+msCpQoaQ87U=;
- b=do6NO8w5C+0NTBnW18/m6Mq6CWPkQuu8PjTIO366kI9HGjDVnxCbAPSGzU2gp6hNSZPzpE
- 0Lky2rTxoIJZ368t4IMWMJpTejdMZhIBdUh00SS5YjyzKFG9hYLK7EjTlG/lLy37hYlKW+
- Qg2UFzfM7jDWy79Rr04bwylyfrQhRZI=
-Received: from NAM02-BL2-obe.outbound.protection.outlook.com
- (mail-bl2nam02lp2056.outbound.protection.outlook.com [104.47.38.56]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- us-mta-250-bdqTYNRGMlySrZspClMRyw-1; Tue, 11 Jun 2019 16:45:35 -0400
-Received: from MWHPR0601MB3708.namprd06.prod.outlook.com (10.167.236.38) by
- MWHPR0601MB3673.namprd06.prod.outlook.com (10.167.236.27) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1987.11; Tue, 11 Jun 2019 20:45:31 +0000
-Received: from MWHPR0601MB3708.namprd06.prod.outlook.com
- ([fe80::88d1:40e0:d1be:1daf]) by MWHPR0601MB3708.namprd06.prod.outlook.com
- ([fe80::88d1:40e0:d1be:1daf%7]) with mapi id 15.20.1965.017; Tue, 11 Jun 2019
- 20:45:31 +0000
-From: Trent Piepho <tpiepho@impinj.com>
-To: "festevam@gmail.com" <festevam@gmail.com>, "Anson.Huang@nxp.com"
- <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 2/3] rtc: imx-sc: Make compatible string more generic
-Thread-Topic: [PATCH 2/3] rtc: imx-sc: Make compatible string more generic
-Thread-Index: AQHVIB9pLfrzWsaWqUqp88lz3VFaBaaW6UGAgAADtgA=
-Date: Tue, 11 Jun 2019 20:45:31 +0000
-Message-ID: <1560285930.2354.8.camel@impinj.com>
-References: <20190611063333.48501-1-Anson.Huang@nxp.com>
- <20190611063333.48501-2-Anson.Huang@nxp.com>
- <CAOMZO5BCuBKHs1jXkm3qFD84_xcB=0NSwE3SLJHx9kq4Stbd_A@mail.gmail.com>
-In-Reply-To: <CAOMZO5BCuBKHs1jXkm3qFD84_xcB=0NSwE3SLJHx9kq4Stbd_A@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [216.207.205.253]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 53857865-7ec4-436d-3cd9-08d6eeadbecd
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MWHPR0601MB3673; 
-x-ms-traffictypediagnostic: MWHPR0601MB3673:
-x-microsoft-antispam-prvs: <MWHPR0601MB367358AF176EFC206A27CFC8D3ED0@MWHPR0601MB3673.namprd06.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4125;
-x-forefront-prvs: 006546F32A
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(979002)(396003)(366004)(39850400004)(376002)(136003)(346002)(189003)(199004)(86362001)(6506007)(53546011)(8676002)(81166006)(81156014)(102836004)(25786009)(478600001)(6486002)(26005)(68736007)(186003)(316002)(256004)(229853002)(99286004)(76176011)(14444005)(66066001)(6512007)(5660300002)(14454004)(8936002)(53936002)(54906003)(110136005)(6246003)(2906002)(6436002)(66946007)(76116006)(66556008)(64756008)(91956017)(66476007)(73956011)(66446008)(3846002)(6116002)(7416002)(446003)(4326008)(103116003)(476003)(486006)(2616005)(11346002)(71190400001)(2501003)(71200400001)(7736002)(36756003)(305945005)(41533002)(969003)(989001)(999001)(1009001)(1019001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR0601MB3673;
- H:MWHPR0601MB3708.namprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: nFppgJnFMfNsTzT7QOgDM8RaEWMgvIXCTUG7RUzqPPzP2/6BlOV9gkZOnGVrO7z35ws9LrMY/tOJyPt653iw83mK4uVLEw2VEDb/4Gr8m1jeiV49zS+gJjm10ScxrCoBioK1ejd8x2oaJjBEBRzyH/tsmKCpTOKc8k/h6ZAZaf7V5xsnGsqVD1DFbCqqCMFseK+pzzi44zb2EpeMZ2oZWWS37rhFJgyPzVCuzFFiAnu0+Reup6Irc7M6pvDGVo0Q+uvZGvk7F1LaGNeQLzLavPyKgmxTaUoU1p/vb6m7vemuoQ4eeREnmNEA1bx9pLGfjuQ3MaR9TbuHVjvtc4Q7ldlnLwIMQNvKJSrFDPaLC/9vsqBo6ko8//n9ClFiV+8hTSx0O4za5G4W1uWLWIjPxqvUaT26ZLqyvIpZJHO5XY8=
-Content-ID: <DC1328CED465FC4189CCE1BF075530CC@namprd06.prod.outlook.com>
+ id 1hanfA-0003br-8x
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 20:46:38 +0000
+Received: by mail-pf1-x443.google.com with SMTP id p184so4875747pfp.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Jun 2019 13:46:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=8BCrEWxENFI652njZuyMg7oU6st6d90fR1m0hvbHelQ=;
+ b=VLItlOM/U0/csHcUVmJtFGAA/3ks5F+OEZrSeoslGcAAJmtSlj+iB0/ek7AEsZLbtT
+ DpfHa5NTqWHmT15WxBDcExNmkFz9PBSNokh4XujZvPfdj5vxckL3Qf2i4YdJAdYbwQLI
+ Lm9eq3+Z4l4jXm61ETvS4xKC3CSnt7fx8hw+c=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=8BCrEWxENFI652njZuyMg7oU6st6d90fR1m0hvbHelQ=;
+ b=FMvchAuZ8pixDiPgQCRN6KOiV8YYhNNFd5xhvV5Yhv0F0bO3ksWHPCwdrSwsO9+TeX
+ Ts8hWWOSnx4Dl7wKj5oXwtlljyggwBunCI6Mx6de71W7Iosfw2z++jO1m7obDc+SNb19
+ v4vPNgiEAcjh/YanQbIXkKTmkef01B2hi184OQFzgfhGuyqnVHrdOdj8Bg3kxJiOcN+H
+ madNe32MEL/fww67x7HYNSsPfBY79n85p7vwKvUPVGkujxxJYJMabE/48odIXZmk23hE
+ rBNIpSP4OZGoqccaN28GHoypBGTisg6Dx2RdtcFqCBv53mS/vGUUpe8QHuFIN10J49Iv
+ ecUw==
+X-Gm-Message-State: APjAAAWeWBISryqa12sHxylWc68uHHmiyBZ9Y6NT96UYTBV4R50Bhkjq
+ 9CxjvNy70ecGUDK9qplsNlt0NyKY7IA=
+X-Google-Smtp-Source: APXvYqxVmscktUxOjSNmw0CUlKoqQbpfH4xGysEDq5ymBOLXo2+kCSblhcFdRPP/wDhMPjZXRG2wfQ==
+X-Received: by 2002:a62:ae01:: with SMTP id q1mr27321750pff.219.1560285995689; 
+ Tue, 11 Jun 2019 13:46:35 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id d3sm17055548pfa.176.2019.06.11.13.46.34
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 11 Jun 2019 13:46:34 -0700 (PDT)
+Date: Tue, 11 Jun 2019 13:46:34 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Shyam Saini <shyam.saini@amarulasolutions.com>
+Subject: Re: [PATCH V2] include: linux: Regularise the use of FIELD_SIZEOF
+ macro
+Message-ID: <201906111345.74AA9311F5@keescook>
+References: <20190611193836.2772-1-shyam.saini@amarulasolutions.com>
 MIME-Version: 1.0
-X-OriginatorOrg: impinj.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 53857865-7ec4-436d-3cd9-08d6eeadbecd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jun 2019 20:45:31.4759 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 6de70f0f-7357-4529-a415-d8cbb7e93e5e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: tpiepho@impinj.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR0601MB3673
-X-MC-Unique: bdqTYNRGMlySrZspClMRyw-1
-X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
+In-Reply-To: <20190611193836.2772-1-shyam.saini@amarulasolutions.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_134539_300944_CBEDF813 
-X-CRM114-Status: GOOD (  18.76  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190611_134636_319809_B39AA270 
+X-CRM114-Status: GOOD (  26.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [63.128.21.168 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -109,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,74 +95,454 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "aisheng.dong@nxp.com" <aisheng.dong@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "a.zummo@towertech.it" <a.zummo@towertech.it>,
- "daniel.baluta@nxp.com" <daniel.baluta@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "Linux-imx@nxp.com" <Linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "peng.fan@nxp.com" <peng.fan@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>
+Cc: kvm@vger.kernel.org, kernel-hardening@lists.openwall.com,
+ netdev@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ linux-mips@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, linux-sctp@vger.kernel.org,
+ devel@lists.orangefs.org, akpm@linux-foundation.org,
+ linux-ext4@vger.kernel.org, intel-gvt-dev@lists.freedesktop.org,
+ bpf@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ mayhs11saini@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-11 at 17:32 -0300, Fabio Estevam wrote:
-> Hi Anson,
+On Wed, Jun 12, 2019 at 01:08:36AM +0530, Shyam Saini wrote:
+> In favour of FIELD_SIZEOF, this patch also deprecates other two similar
+> macros sizeof_field and SIZEOF_FIELD.
 > 
-> On Tue, Jun 11, 2019 at 3:31 AM <Anson.Huang@nxp.com> wrote:
-> > 
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> > 
-> > i.MX system controller RTC driver can support all i.MX SoCs
-> > with system controller inside, this patch makes the compatible
-> > string more generic to support other i.MX SoCs with system
-> > controller inside, such as i.MX8QM etc..
-> > 
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> >  drivers/rtc/rtc-imx-sc.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/rtc/rtc-imx-sc.c b/drivers/rtc/rtc-imx-sc.c
-> > index c933045..38ef3ca 100644
-> > --- a/drivers/rtc/rtc-imx-sc.c
-> > +++ b/drivers/rtc/rtc-imx-sc.c
-> > @@ -178,7 +178,7 @@ static int imx_sc_rtc_probe(struct
-> > platform_device *pdev)
-> >  }
-> > 
-> >  static const struct of_device_id imx_sc_dt_ids[] = {
-> > -       { .compatible = "fsl,imx8qxp-sc-rtc", },
-> > +       { .compatible = "fsl,imx-sc-rtc", },
-> 
-> What is wrong with the current compatible string?
-> 
-> If you want to support i.MX8QM just add in its dtsi:
-> 
-> compatible = "fsl,imx8qm-sc-rtc", "fsl,imx8qxp-sc-rtc"
-> 
-> and add a dt-bindings entry for "fsl,imx8qm-sc-rtc"
+> For code compatibility reason, retain sizeof_field macro as a wrapper macro
+> to FIELD_SIZEOF
 
-Yes, I thought this is (was?) the recommended practice for IP blocks in
-SoCs that don't have their own version (vs something like a Synopsis
-block used many places):
+Can you explain this part? First sentence says you want to remove
+sizeof_field, and the second says you're keeping it? I thought the point
+was to switch all of these to FIELD_SIZEOF()?
 
-* Use the first SoC to have the block as the base compatible for the
-block.
-* Always add the current SoC, in additional to the base, in the SoC's
-dts's list of compatibles.  Even if unneeded at the present.
-* The driver will list the base compatible in the match table, and will
-add new ones for specific socs if/when there is a need for it.
+-Kees
+
+> 
+> Signed-off-by: Shyam Saini <shyam.saini@amarulasolutions.com>
+> ---
+> Changelog:
+> 
+> V1->V2
+> - Consolidate previous patch 1 and 2 into single patch
+> - For code compatibility reason, retain sizeof_field macro as a
+>   wrapper macro to FIELD_SIZEOF
+>  
+>  arch/arm64/include/asm/processor.h                 | 10 +++++-----
+>  arch/mips/cavium-octeon/executive/cvmx-bootmem.c   |  9 +--------
+>  drivers/gpu/drm/i915/gvt/scheduler.c               |  2 +-
+>  drivers/net/ethernet/mellanox/mlxsw/spectrum_fid.c |  4 ++--
+>  fs/befs/linuxvfs.c                                 |  2 +-
+>  fs/ext2/super.c                                    |  2 +-
+>  fs/ext4/super.c                                    |  2 +-
+>  fs/freevxfs/vxfs_super.c                           |  2 +-
+>  fs/orangefs/super.c                                |  2 +-
+>  fs/ufs/super.c                                     |  2 +-
+>  include/linux/kernel.h                             |  9 ---------
+>  include/linux/slab.h                               |  2 +-
+>  include/linux/stddef.h                             | 17 ++++++++++++++---
+>  kernel/fork.c                                      |  2 +-
+>  kernel/utsname.c                                   |  2 +-
+>  net/caif/caif_socket.c                             |  2 +-
+>  net/core/skbuff.c                                  |  2 +-
+>  net/ipv4/raw.c                                     |  2 +-
+>  net/ipv6/raw.c                                     |  2 +-
+>  net/sctp/socket.c                                  |  4 ++--
+>  tools/testing/selftests/bpf/bpf_util.h             | 22 +++++++++++++++++++---
+>  virt/kvm/kvm_main.c                                |  2 +-
+>  22 files changed, 58 insertions(+), 47 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index fcd0e691b1ea..ace906d887cc 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -164,13 +164,13 @@ static inline void arch_thread_struct_whitelist(unsigned long *offset,
+>  						unsigned long *size)
+>  {
+>  	/* Verify that there is no padding among the whitelisted fields: */
+> -	BUILD_BUG_ON(sizeof_field(struct thread_struct, uw) !=
+> -		     sizeof_field(struct thread_struct, uw.tp_value) +
+> -		     sizeof_field(struct thread_struct, uw.tp2_value) +
+> -		     sizeof_field(struct thread_struct, uw.fpsimd_state));
+> +	BUILD_BUG_ON(FIELD_SIZEOF(struct thread_struct, uw) !=
+> +		     FIELD_SIZEOF(struct thread_struct, uw.tp_value) +
+> +		     FIELD_SIZEOF(struct thread_struct, uw.tp2_value) +
+> +		     FIELD_SIZEOF(struct thread_struct, uw.fpsimd_state));
+>  
+>  	*offset = offsetof(struct thread_struct, uw);
+> -	*size = sizeof_field(struct thread_struct, uw);
+> +	*size = FIELD_SIZEOF(struct thread_struct, uw);
+>  }
+>  
+>  #ifdef CONFIG_COMPAT
+> diff --git a/arch/mips/cavium-octeon/executive/cvmx-bootmem.c b/arch/mips/cavium-octeon/executive/cvmx-bootmem.c
+> index ba8f82a29a81..44b506a14666 100644
+> --- a/arch/mips/cavium-octeon/executive/cvmx-bootmem.c
+> +++ b/arch/mips/cavium-octeon/executive/cvmx-bootmem.c
+> @@ -45,13 +45,6 @@ static struct cvmx_bootmem_desc *cvmx_bootmem_desc;
+>  /* See header file for descriptions of functions */
+>  
+>  /**
+> - * This macro returns the size of a member of a structure.
+> - * Logically it is the same as "sizeof(s::field)" in C++, but
+> - * C lacks the "::" operator.
+> - */
+> -#define SIZEOF_FIELD(s, field) sizeof(((s *)NULL)->field)
+> -
+> -/**
+>   * This macro returns a member of the
+>   * cvmx_bootmem_named_block_desc_t structure. These members can't
+>   * be directly addressed as they might be in memory not directly
+> @@ -65,7 +58,7 @@ static struct cvmx_bootmem_desc *cvmx_bootmem_desc;
+>  #define CVMX_BOOTMEM_NAMED_GET_FIELD(addr, field)			\
+>  	__cvmx_bootmem_desc_get(addr,					\
+>  		offsetof(struct cvmx_bootmem_named_block_desc, field),	\
+> -		SIZEOF_FIELD(struct cvmx_bootmem_named_block_desc, field))
+> +		FIELD_SIZEOF(struct cvmx_bootmem_named_block_desc, field))
+>  
+>  /**
+>   * This function is the implementation of the get macros defined
+> diff --git a/drivers/gpu/drm/i915/gvt/scheduler.c b/drivers/gpu/drm/i915/gvt/scheduler.c
+> index 0f919f0a43d4..820f95a52542 100644
+> --- a/drivers/gpu/drm/i915/gvt/scheduler.c
+> +++ b/drivers/gpu/drm/i915/gvt/scheduler.c
+> @@ -1243,7 +1243,7 @@ int intel_vgpu_setup_submission(struct intel_vgpu *vgpu)
+>  						  sizeof(struct intel_vgpu_workload), 0,
+>  						  SLAB_HWCACHE_ALIGN,
+>  						  offsetof(struct intel_vgpu_workload, rb_tail),
+> -						  sizeof_field(struct intel_vgpu_workload, rb_tail),
+> +						  FIELD_SIZEOF(struct intel_vgpu_workload, rb_tail),
+>  						  NULL);
+>  
+>  	if (!s->workloads) {
+> diff --git a/drivers/net/ethernet/mellanox/mlxsw/spectrum_fid.c b/drivers/net/ethernet/mellanox/mlxsw/spectrum_fid.c
+> index 46baf3b44309..c0447bf07fbb 100644
+> --- a/drivers/net/ethernet/mellanox/mlxsw/spectrum_fid.c
+> +++ b/drivers/net/ethernet/mellanox/mlxsw/spectrum_fid.c
+> @@ -49,13 +49,13 @@ struct mlxsw_sp_fid_8021d {
+>  };
+>  
+>  static const struct rhashtable_params mlxsw_sp_fid_ht_params = {
+> -	.key_len = sizeof_field(struct mlxsw_sp_fid, fid_index),
+> +	.key_len = FIELD_SIZEOF(struct mlxsw_sp_fid, fid_index),
+>  	.key_offset = offsetof(struct mlxsw_sp_fid, fid_index),
+>  	.head_offset = offsetof(struct mlxsw_sp_fid, ht_node),
+>  };
+>  
+>  static const struct rhashtable_params mlxsw_sp_fid_vni_ht_params = {
+> -	.key_len = sizeof_field(struct mlxsw_sp_fid, vni),
+> +	.key_len = FIELD_SIZEOF(struct mlxsw_sp_fid, vni),
+>  	.key_offset = offsetof(struct mlxsw_sp_fid, vni),
+>  	.head_offset = offsetof(struct mlxsw_sp_fid, vni_ht_node),
+>  };
+> diff --git a/fs/befs/linuxvfs.c b/fs/befs/linuxvfs.c
+> index 462d096ff3e9..06ffd4829e2e 100644
+> --- a/fs/befs/linuxvfs.c
+> +++ b/fs/befs/linuxvfs.c
+> @@ -438,7 +438,7 @@ befs_init_inodecache(void)
+>  					SLAB_ACCOUNT),
+>  				offsetof(struct befs_inode_info,
+>  					i_data.symlink),
+> -				sizeof_field(struct befs_inode_info,
+> +				FIELD_SIZEOF(struct befs_inode_info,
+>  					i_data.symlink),
+>  				init_once);
+>  	if (befs_inode_cachep == NULL)
+> diff --git a/fs/ext2/super.c b/fs/ext2/super.c
+> index 1d7ab73b1014..d9a6c81f4a47 100644
+> --- a/fs/ext2/super.c
+> +++ b/fs/ext2/super.c
+> @@ -220,7 +220,7 @@ static int __init init_inodecache(void)
+>  				(SLAB_RECLAIM_ACCOUNT|SLAB_MEM_SPREAD|
+>  					SLAB_ACCOUNT),
+>  				offsetof(struct ext2_inode_info, i_data),
+> -				sizeof_field(struct ext2_inode_info, i_data),
+> +				FIELD_SIZEOF(struct ext2_inode_info, i_data),
+>  				init_once);
+>  	if (ext2_inode_cachep == NULL)
+>  		return -ENOMEM;
+> diff --git a/fs/ext4/super.c b/fs/ext4/super.c
+> index 4079605d437a..b1b5856248bd 100644
+> --- a/fs/ext4/super.c
+> +++ b/fs/ext4/super.c
+> @@ -1148,7 +1148,7 @@ static int __init init_inodecache(void)
+>  				(SLAB_RECLAIM_ACCOUNT|SLAB_MEM_SPREAD|
+>  					SLAB_ACCOUNT),
+>  				offsetof(struct ext4_inode_info, i_data),
+> -				sizeof_field(struct ext4_inode_info, i_data),
+> +				FIELD_SIZEOF(struct ext4_inode_info, i_data),
+>  				init_once);
+>  	if (ext4_inode_cachep == NULL)
+>  		return -ENOMEM;
+> diff --git a/fs/freevxfs/vxfs_super.c b/fs/freevxfs/vxfs_super.c
+> index a89f68c3cbed..ffd22f85bbe0 100644
+> --- a/fs/freevxfs/vxfs_super.c
+> +++ b/fs/freevxfs/vxfs_super.c
+> @@ -329,7 +329,7 @@ vxfs_init(void)
+>  			sizeof(struct vxfs_inode_info), 0,
+>  			SLAB_RECLAIM_ACCOUNT|SLAB_MEM_SPREAD,
+>  			offsetof(struct vxfs_inode_info, vii_immed.vi_immed),
+> -			sizeof_field(struct vxfs_inode_info,
+> +			FIELD_SIZEOF(struct vxfs_inode_info,
+>  				vii_immed.vi_immed),
+>  			NULL);
+>  	if (!vxfs_inode_cachep)
+> diff --git a/fs/orangefs/super.c b/fs/orangefs/super.c
+> index ee5efdc35cc1..30f625059ad9 100644
+> --- a/fs/orangefs/super.c
+> +++ b/fs/orangefs/super.c
+> @@ -646,7 +646,7 @@ int orangefs_inode_cache_initialize(void)
+>  					ORANGEFS_CACHE_CREATE_FLAGS,
+>  					offsetof(struct orangefs_inode_s,
+>  						link_target),
+> -					sizeof_field(struct orangefs_inode_s,
+> +					FIELD_SIZEOF(struct orangefs_inode_s,
+>  						link_target),
+>  					orangefs_inode_cache_ctor);
+>  
+> diff --git a/fs/ufs/super.c b/fs/ufs/super.c
+> index 3d247c0d92aa..1e8bcd950f6d 100644
+> --- a/fs/ufs/super.c
+> +++ b/fs/ufs/super.c
+> @@ -1469,7 +1469,7 @@ static int __init init_inodecache(void)
+>  				(SLAB_RECLAIM_ACCOUNT|SLAB_MEM_SPREAD|
+>  					SLAB_ACCOUNT),
+>  				offsetof(struct ufs_inode_info, i_u1.i_symlink),
+> -				sizeof_field(struct ufs_inode_info,
+> +				FIELD_SIZEOF(struct ufs_inode_info,
+>  					i_u1.i_symlink),
+>  				init_once);
+>  	if (ufs_inode_cachep == NULL)
+> diff --git a/include/linux/kernel.h b/include/linux/kernel.h
+> index 74b1ee9027f5..4672391cdb5b 100644
+> --- a/include/linux/kernel.h
+> +++ b/include/linux/kernel.h
+> @@ -79,15 +79,6 @@
+>   */
+>  #define round_down(x, y) ((x) & ~__round_mask(x, y))
+>  
+> -/**
+> - * FIELD_SIZEOF - get the size of a struct's field
+> - * @t: the target struct
+> - * @f: the target struct's field
+> - * Return: the size of @f in the struct definition without having a
+> - * declared instance of @t.
+> - */
+> -#define FIELD_SIZEOF(t, f) (sizeof(((t*)0)->f))
+> -
+>  #define DIV_ROUND_UP __KERNEL_DIV_ROUND_UP
+>  
+>  #define DIV_ROUND_DOWN_ULL(ll, d) \
+> diff --git a/include/linux/slab.h b/include/linux/slab.h
+> index 9449b19c5f10..8bdfdd389b37 100644
+> --- a/include/linux/slab.h
+> +++ b/include/linux/slab.h
+> @@ -175,7 +175,7 @@ void memcg_destroy_kmem_caches(struct mem_cgroup *);
+>  			sizeof(struct __struct),			\
+>  			__alignof__(struct __struct), (__flags),	\
+>  			offsetof(struct __struct, __field),		\
+> -			sizeof_field(struct __struct, __field), NULL)
+> +			FIELD_SIZEOF(struct __struct, __field), NULL)
+>  
+>  /*
+>   * Common kmalloc functions provided by all allocators
+> diff --git a/include/linux/stddef.h b/include/linux/stddef.h
+> index 998a4ba28eba..a5960e2b4a8b 100644
+> --- a/include/linux/stddef.h
+> +++ b/include/linux/stddef.h
+> @@ -20,12 +20,23 @@ enum {
+>  #endif
+>  
+>  /**
+> - * sizeof_field(TYPE, MEMBER)
+> + * FIELD_SIZEOF - get the size of a struct's field
+> + * @t: the target struct
+> + * @f: the target struct's field
+> + * Return: the size of @f in the struct definition without having a
+> + * declared instance of @t.
+> + */
+> +#define FIELD_SIZEOF(t, f) (sizeof(((t *)0)->f))
+> +
+> +/*
+> + * For code compatibility
+>   *
+> + * sizeof_field(TYPE, MEMBER)
+>   * @TYPE: The structure containing the field of interest
+>   * @MEMBER: The field to return the size of
+>   */
+> -#define sizeof_field(TYPE, MEMBER) sizeof((((TYPE *)0)->MEMBER))
+> +
+> +#define sizeof_field(TYPE, MEMBER) FIELD_SIZEOF(TYPE, MEMBER)
+>  
+>  /**
+>   * offsetofend(TYPE, MEMBER)
+> @@ -34,6 +45,6 @@ enum {
+>   * @MEMBER: The member within the structure to get the end offset of
+>   */
+>  #define offsetofend(TYPE, MEMBER) \
+> -	(offsetof(TYPE, MEMBER)	+ sizeof_field(TYPE, MEMBER))
+> +	(offsetof(TYPE, MEMBER)	+ FIELD_SIZEOF(TYPE, MEMBER))
+>  
+>  #endif
+> diff --git a/kernel/fork.c b/kernel/fork.c
+> index 75675b9bf6df..ef40b95bf82c 100644
+> --- a/kernel/fork.c
+> +++ b/kernel/fork.c
+> @@ -2553,7 +2553,7 @@ void __init proc_caches_init(void)
+>  			mm_size, ARCH_MIN_MMSTRUCT_ALIGN,
+>  			SLAB_HWCACHE_ALIGN|SLAB_PANIC|SLAB_ACCOUNT,
+>  			offsetof(struct mm_struct, saved_auxv),
+> -			sizeof_field(struct mm_struct, saved_auxv),
+> +			FIELD_SIZEOF(struct mm_struct, saved_auxv),
+>  			NULL);
+>  	vm_area_cachep = KMEM_CACHE(vm_area_struct, SLAB_PANIC|SLAB_ACCOUNT);
+>  	mmap_init();
+> diff --git a/kernel/utsname.c b/kernel/utsname.c
+> index f0e491193009..28257c571553 100644
+> --- a/kernel/utsname.c
+> +++ b/kernel/utsname.c
+> @@ -174,6 +174,6 @@ void __init uts_ns_init(void)
+>  			"uts_namespace", sizeof(struct uts_namespace), 0,
+>  			SLAB_PANIC|SLAB_ACCOUNT,
+>  			offsetof(struct uts_namespace, name),
+> -			sizeof_field(struct uts_namespace, name),
+> +			FIELD_SIZEOF(struct uts_namespace, name),
+>  			NULL);
+>  }
+> diff --git a/net/caif/caif_socket.c b/net/caif/caif_socket.c
+> index 13ea920600ae..3306bbed77eb 100644
+> --- a/net/caif/caif_socket.c
+> +++ b/net/caif/caif_socket.c
+> @@ -1033,7 +1033,7 @@ static int caif_create(struct net *net, struct socket *sock, int protocol,
+>  		.owner = THIS_MODULE,
+>  		.obj_size = sizeof(struct caifsock),
+>  		.useroffset = offsetof(struct caifsock, conn_req.param),
+> -		.usersize = sizeof_field(struct caifsock, conn_req.param)
+> +		.usersize = FIELD_SIZEOF(struct caifsock, conn_req.param)
+>  	};
+>  
+>  	if (!capable(CAP_SYS_ADMIN) && !capable(CAP_NET_ADMIN))
+> diff --git a/net/core/skbuff.c b/net/core/skbuff.c
+> index 47c1aa9ee045..816bea0c4a8e 100644
+> --- a/net/core/skbuff.c
+> +++ b/net/core/skbuff.c
+> @@ -3983,7 +3983,7 @@ void __init skb_init(void)
+>  					      0,
+>  					      SLAB_HWCACHE_ALIGN|SLAB_PANIC,
+>  					      offsetof(struct sk_buff, cb),
+> -					      sizeof_field(struct sk_buff, cb),
+> +					      FIELD_SIZEOF(struct sk_buff, cb),
+>  					      NULL);
+>  	skbuff_fclone_cache = kmem_cache_create("skbuff_fclone_cache",
+>  						sizeof(struct sk_buff_fclones),
+> diff --git a/net/ipv4/raw.c b/net/ipv4/raw.c
+> index 0b8e06ca75d6..efa4c745f7b9 100644
+> --- a/net/ipv4/raw.c
+> +++ b/net/ipv4/raw.c
+> @@ -977,7 +977,7 @@ struct proto raw_prot = {
+>  	.unhash		   = raw_unhash_sk,
+>  	.obj_size	   = sizeof(struct raw_sock),
+>  	.useroffset	   = offsetof(struct raw_sock, filter),
+> -	.usersize	   = sizeof_field(struct raw_sock, filter),
+> +	.usersize	   = FIELD_SIZEOF(struct raw_sock, filter),
+>  	.h.raw_hash	   = &raw_v4_hashinfo,
+>  #ifdef CONFIG_COMPAT
+>  	.compat_setsockopt = compat_raw_setsockopt,
+> diff --git a/net/ipv6/raw.c b/net/ipv6/raw.c
+> index 70693bc7ad9d..257c71e22d74 100644
+> --- a/net/ipv6/raw.c
+> +++ b/net/ipv6/raw.c
+> @@ -1292,7 +1292,7 @@ struct proto rawv6_prot = {
+>  	.unhash		   = raw_unhash_sk,
+>  	.obj_size	   = sizeof(struct raw6_sock),
+>  	.useroffset	   = offsetof(struct raw6_sock, filter),
+> -	.usersize	   = sizeof_field(struct raw6_sock, filter),
+> +	.usersize	   = FIELD_SIZEOF(struct raw6_sock, filter),
+>  	.h.raw_hash	   = &raw_v6_hashinfo,
+>  #ifdef CONFIG_COMPAT
+>  	.compat_setsockopt = compat_rawv6_setsockopt,
+> diff --git a/net/sctp/socket.c b/net/sctp/socket.c
+> index 39ea0a37af09..6b648a6033b9 100644
+> --- a/net/sctp/socket.c
+> +++ b/net/sctp/socket.c
+> @@ -9377,7 +9377,7 @@ struct proto sctp_prot = {
+>  	.useroffset  =  offsetof(struct sctp_sock, subscribe),
+>  	.usersize    =  offsetof(struct sctp_sock, initmsg) -
+>  				offsetof(struct sctp_sock, subscribe) +
+> -				sizeof_field(struct sctp_sock, initmsg),
+> +				FIELD_SIZEOF(struct sctp_sock, initmsg),
+>  	.sysctl_mem  =  sysctl_sctp_mem,
+>  	.sysctl_rmem =  sysctl_sctp_rmem,
+>  	.sysctl_wmem =  sysctl_sctp_wmem,
+> @@ -9419,7 +9419,7 @@ struct proto sctpv6_prot = {
+>  	.useroffset	= offsetof(struct sctp6_sock, sctp.subscribe),
+>  	.usersize	= offsetof(struct sctp6_sock, sctp.initmsg) -
+>  				offsetof(struct sctp6_sock, sctp.subscribe) +
+> -				sizeof_field(struct sctp6_sock, sctp.initmsg),
+> +				FIELD_SIZEOF(struct sctp6_sock, sctp.initmsg),
+>  	.sysctl_mem	= sysctl_sctp_mem,
+>  	.sysctl_rmem	= sysctl_sctp_rmem,
+>  	.sysctl_wmem	= sysctl_sctp_wmem,
+> diff --git a/tools/testing/selftests/bpf/bpf_util.h b/tools/testing/selftests/bpf/bpf_util.h
+> index a29206ebbd13..571c35aac90f 100644
+> --- a/tools/testing/selftests/bpf/bpf_util.h
+> +++ b/tools/testing/selftests/bpf/bpf_util.h
+> @@ -58,13 +58,29 @@ static inline unsigned int bpf_num_possible_cpus(void)
+>  # define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+>  #endif
+>  
+> -#ifndef sizeof_field
+> -#define sizeof_field(TYPE, MEMBER) sizeof((((TYPE *)0)->MEMBER))
+> +/*
+> + * FIELD_SIZEOF - get the size of a struct's field
+> + * @t: the target struct
+> + * @f: the target struct's field
+> + * Return: the size of @f in the struct definition without having a
+> + * declared instance of @t.
+> + */
+> +#ifndef FIELD_SIZEOF
+> +#define FIELD_SIZEOF(t, f) (sizeof(((t *)0)->f))
+>  #endif
+>  
+> +/*
+> + * For code compatibility
+> + *
+> + * sizeof_field(TYPE, MEMBER)
+> + * @TYPE: The structure containing the field of interest
+> + * @MEMBER: The field to return the size of
+> + */
+> +#define sizeof_field(TYPE, MEMBER) FIELD_SIZEOF(TYPE, MEMBER)
+> +
+>  #ifndef offsetofend
+>  #define offsetofend(TYPE, MEMBER) \
+> -	(offsetof(TYPE, MEMBER)	+ sizeof_field(TYPE, MEMBER))
+> +	(offsetof(TYPE, MEMBER)	+ FIELD_SIZEOF(TYPE, MEMBER))
+>  #endif
+>  
+>  #endif /* __BPF_UTIL__ */
+> diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
+> index ca54b09adf5b..e43e3a26f6ab 100644
+> --- a/virt/kvm/kvm_main.c
+> +++ b/virt/kvm/kvm_main.c
+> @@ -4275,7 +4275,7 @@ int kvm_init(void *opaque, unsigned vcpu_size, unsigned vcpu_align,
+>  		kmem_cache_create_usercopy("kvm_vcpu", vcpu_size, vcpu_align,
+>  					   SLAB_ACCOUNT,
+>  					   offsetof(struct kvm_vcpu, arch),
+> -					   sizeof_field(struct kvm_vcpu, arch),
+> +					   FIELD_SIZEOF(struct kvm_vcpu, arch),
+>  					   NULL);
+>  	if (!kvm_vcpu_cache) {
+>  		r = -ENOMEM;
+> -- 
+> 2.11.0
+> 
+
+-- 
+Kees Cook
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
