@@ -2,68 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FE9B3C5DB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 10:21:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79B523C5DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 10:26:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZcUMLwuv2I1pzBEru9D3ey3Xf2Gl1ig89Dvc+RSidNE=; b=oaFuoSULTBzHQO
-	vi7hrsqk8lR9gdYCQHlO+C7dsu6BpTpYQEqnCbgHQb0WBzuTlUTPOneypBdpGI34qzIB/q2T0NE9R
-	cUAIG0qeFTw5N38wivbk2R/oNr5aFSwiupEuIJCGWjwvK+DfhYOjA4AUPzUK9pFl2r//2YvfA2Ke+
-	JT291Ye+OjAt31j+Z3hV1ozsGvzGXvgNohE1tIH9ccYCDRgUAEdvqSnXat3Y1zVSQ6sl7qL0Yifs5
-	I/RHhfO559Y0k92ZzD8YHH/zMhp3n6SogVdXl0vBQ9xemb5B8y77XkTqRLaz8elF8klezgwIhQEyR
-	Ng/rClkpnA3/7/Fkg3tg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O/lwcaVxkd473NuOCDauaZalEZRukJ/SYkC+dUqqm48=; b=tPLb2ZaADL+p89
+	82dJtILq9Q06Lc8zjjNGnrMesqCQHTzwX2avm2gDUq5sgYcxRk1je79CtEA/bO7NhvfkPSxRgHrXP
+	jBNL5ggaI+iWY5yqVK/nDjSqZvMJrHHluagRNs+aR+JVcD9uSO1a7Ze6Yuc85D34ZP1Qjb3L2WD+S
+	28LbsIbEfddInrojRjWZnWHT/WDJwjZfd3whXjS9uzu+XQ6hk2vvrsTCX1ryGRP/a+Ib0VGlySsb+
+	TCO5CjUXVerRtFtl0es0H847w85rwksroD3FZ1ZCoqPLVjxFrKgICYmUCdXeen3Pjy95onv/7bbKR
+	wHhOGrwyamsRvD2QUIlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hac2S-0000JM-PH; Tue, 11 Jun 2019 08:21:53 +0000
-Received: from lb3-smtp-cloud8.xs4all.net ([194.109.24.29])
+	id 1hac6h-00025Y-Fk; Tue, 11 Jun 2019 08:26:15 +0000
+Received: from mail-lj1-f194.google.com ([209.85.208.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hac2D-0000Hy-HE
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 08:21:39 +0000
-Received: from [192.168.2.10] ([46.9.252.75])
- by smtp-cloud8.xs4all.net with ESMTPA
- id ac1qhfdph41bFac1thCupM; Tue, 11 Jun 2019 10:21:30 +0200
-Subject: Re: [PATCH 5/8] drivers: media: coda: fix warning same module names
-To: Philipp Zabel <p.zabel@pengutronix.de>,
- Matt Redfearn <matt.redfearn@thinci.com>,
- Anders Roxell <anders.roxell@linaro.org>
-References: <20190606094722.23816-1-anders.roxell@linaro.org>
- <d6b79ee0-07c6-ad81-16b0-8cf929cc214d@xs4all.nl>
- <CADYN=9KY5=FzrkC7MKj9QnG-eM1NVuL00w8Xv4yU2r05rhr7WQ@mail.gmail.com>
- <c2ff2c77-5c14-4bc4-f59c-7012d272ec76@thinci.com>
- <1560240943.13886.1.camel@pengutronix.de>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <221c8ef8-7adc-4383-93c9-9031dca590f0@xs4all.nl>
-Date: Tue, 11 Jun 2019 10:21:14 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hac6T-00024v-Mk; Tue, 11 Jun 2019 08:26:04 +0000
+Received: by mail-lj1-f194.google.com with SMTP id 16so10658271ljv.10;
+ Tue, 11 Jun 2019 01:26:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fRmoMIsZBSVoYdlrURu/R5LpVklxWrnPow9T+scl1c8=;
+ b=jdbpkncoqRI/W9ytjI1keaCBTf3cfzJXRaimrLk+eTdJMJ6Wmio8TNnFXNXcaS8wBJ
+ G7FuL2qJlfqyINrTHUXQ1zcPJRHUOKgw8HZf9NIhzo2wEbOVQGWu2jbUeTUzcDf+ul/H
+ XATI7uG2pCmsnTcJyPS77y/p5FK2g3HJx+b7szPbKgRv40jG4yOjYAjgRw24fMo6e/3R
+ RAAVLtQ4tP/u5wO+AzH3WpjaFniRyfVmvWl3NixJvPYj1LwAwOKHfQK7+xsHaZIYeG+G
+ +dZRaLpY5NXXqEaERl0t153m3v8Nr61t8as4Snup46F2JQvRB5su1S4slWc1H4R9X6M4
+ vk5g==
+X-Gm-Message-State: APjAAAVDe8PzUupru1xhJA4M2zkRPm/I8P5npWN5k9l9CIy7CXYYNWzm
+ hhf9vNDTy4pPh7E/gSCgRcI4kWwZ+ztCTCuUy7uMgWLZ
+X-Google-Smtp-Source: APXvYqz5wc/joiy06FOa5+5LASjye7tJKfWbnZfpusW+8Da+RGItpfdSQao+YuZntnzQUcnhkK8gdEsZWI/Z5YLEf6g=
+X-Received: by 2002:a2e:91c5:: with SMTP id u5mr28381055ljg.65.1560241559914; 
+ Tue, 11 Jun 2019 01:25:59 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1560240943.13886.1.camel@pengutronix.de>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfF4l958gFcXbV6p95xz+ivCMsV6s4588moNOs9xu2Iu97gq8E8gpQpJUwHv+LkhfdxwpeLJQXiKUx1AlyFqxgT1gA/7wWLItAOSIJiLQdmwKpWc+fKFG
- vgDVAUCC1cZ5stiYDkUqlh2EcAWqi7Md5RRcCmEXm+8tYSNg7ISwK4efXRTEoVW+I2hyFPVUagqURLbJjEHp7pP3NnPKy/31ZBETWX+oQtaxu1L/JuO7dgPf
- HnNSYxRiWghAhGKyI62h1BpN1w42uc7cQ/oXIBCiaAgS1eJcxOPiu326GTdnuN9Kx92iuMp7/n6vKpnBQPtR/qLOg8JPRgUhpRSa0zqt4djY9V5mQS96lJKz
- f2rH+YlTJL7CmaaSGOeTqdiUiT38QtxmsSL7i8X+kcrLMk/EcGT+tj0AQyDmDRjspjsgFZA1mSsLUsOkNUYiWkr+hdrd1GsXkgOz2PjXGTukYJzJeaQVoSqe
- d60XFTDTbLgStGivDZdX7UNH8PzRRVaOtyLSAG3t3AO+qlhY4dy4sxkZ8G/NhLkDqsMh8B71+/zBo8rSUSrq5M8ZXkCdaii8SMkssCHGQ6+Vv2FAY2I6fbmx
- Xid/liFV0KXCTUzeN7CzTYM4AAa46DnSAQ/0T1QT6pPbCpbK2gX/gZTvJ5cZgmWDrg8JOkBFjD+Pi1oWHQBsSHz6qibIVsZfsI/CgaK9NSRFtvTEp7ifwfAc
- geBvs8P2gZmQHGj8Ju+w+QrHQ+R3mvF8yzEKjhUR9xrQS/1pD8MRZy4EUvBFJgjuxT6so14qzZAOm+JHvhULAxlG6OPFrvg2ZpHhoUY47YPJbEiIBYIsv/IE
- teJbVQgtWRv9SBf2e6uP15ECcp65KaAsnUtq1UySLHJYiTXhfptY9WRsvCwbK5Ft3KwaiNCpmHGOE5Fhr8Y7ZrFIS081K3OeEhfJL6J0GJq9qc4QQKC02EFJ
- KKueZgpH2AuUJhfG/GxasVo2z5POtJFu7M6QSx11WjThU8995eci5lvaMj4+QzckJISsRw==
+References: <20190610212015.9157-1-hch@lst.de>
+ <20190610212015.9157-8-hch@lst.de>
+In-Reply-To: <20190610212015.9157-8-hch@lst.de>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 11 Jun 2019 10:25:46 +0200
+Message-ID: <CAMuHMdXvbA=+=AQ6fYV2zRUc6CWtZ_GzEN7D5b8QNYwLEd6OjA@mail.gmail.com>
+Subject: Re: [PATCH 07/15] binfmt_flat: use __be32 for the on-disk format
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_012137_739863_961789F0 
-X-CRM114-Status: GOOD (  14.13  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190611_012601_745557_FA60A4D0 
+X-CRM114-Status: GOOD (  13.94  )
+X-Spam-Score: 3.0 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (3.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.29 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.194 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,93 +81,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "andrew@lunn.ch" <andrew@lunn.ch>,
- "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, "stefan@agner.ch" <stefan@agner.ch>,
+Cc: "moderated list:H8/300 ARCHITECTURE"
+ <uclinux-h8-devel@lists.sourceforge.jp>, linux-xtensa@linux-xtensa.org,
+ Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
+ Linux-sh list <linux-sh@vger.kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "a.hajda@samsung.com" <a.hajda@samsung.com>, Lee Jones <lee.jones@linaro.org>,
- "marex@denx.de" <marex@denx.de>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "vivien.didelot@gmail.com" <vivien.didelot@gmail.com>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
- "b.zolnierkie@samsung.com" <b.zolnierkie@samsung.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- Mark Brown <broonie@kernel.org>, dri-devel <dri-devel@lists.freedesktop.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Networking <netdev@vger.kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- David Miller <davem@davemloft.net>,
- "hkallweit1@gmail.com" <hkallweit1@gmail.com>
+ linux-m68k <linux-m68k@lists.linux-m68k.org>, linux-riscv@lists.infradead.org,
+ Greg Ungerer <gerg@linux-m68k.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/11/19 10:15 AM, Philipp Zabel wrote:
-> Hi,
-> 
-> On Mon, 2019-06-10 at 13:14 +0000, Matt Redfearn wrote:
->>
->> On 10/06/2019 14:03, Anders Roxell wrote:
->>> On Thu, 6 Jun 2019 at 12:13, Hans Verkuil <hverkuil@xs4all.nl> wrote:
->>>>
->>>> On 6/6/19 11:47 AM, Anders Roxell wrote:
->>>>> When building with CONFIG_VIDEO_CODA and CONFIG_CODA_FS enabled as
->>>>> loadable modules, we see the following warning:
->>>>>
->>>>> warning: same module names found:
->>>>>    fs/coda/coda.ko
->>>>>    drivers/media/platform/coda/coda.ko
->>>>>
->>>>> Rework so media coda matches the config fragment. Leaving CODA_FS as is
->>>>> since thats a well known module.
->>>>>
->>>>> Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
->>>>> ---
->>>>>   drivers/media/platform/coda/Makefile | 4 ++--
->>>>>   1 file changed, 2 insertions(+), 2 deletions(-)
->>>>>
->>>>> diff --git a/drivers/media/platform/coda/Makefile b/drivers/media/platform/coda/Makefile
->>>>> index 54e9a73a92ab..588e6bf7c190 100644
->>>>> --- a/drivers/media/platform/coda/Makefile
->>>>> +++ b/drivers/media/platform/coda/Makefile
->>>>> @@ -1,6 +1,6 @@
->>>>>   # SPDX-License-Identifier: GPL-2.0-only
->>>>>
->>>>> -coda-objs := coda-common.o coda-bit.o coda-gdi.o coda-h264.o coda-mpeg2.o coda-mpeg4.o coda-jpeg.o
->>>>> +video-coda-objs := coda-common.o coda-bit.o coda-gdi.o coda-h264.o coda-mpeg2.o coda-mpeg4.o coda-jpeg.o
->>>>>
->>>>> -obj-$(CONFIG_VIDEO_CODA) += coda.o
->>>>> +obj-$(CONFIG_VIDEO_CODA) += video-coda.o
->>>>
->>>> How about imx-coda? video-coda suggests it is part of the video subsystem,
->>>> which it isn't.
->>>
->>> I'll resend a v2 shortly with imx-coda instead.
-> 
-> I'd be in favor of calling it "coda-vpu" instead.
+Hi Christoph,
 
-Fine by me!
+On Mon, Jun 10, 2019 at 11:21 PM Christoph Hellwig <hch@lst.de> wrote:
+> So far binfmt_flat has onl been supported on 32-bit platforms, so the
+> variable size of the fields didn't matter.  But the upcoming RISC-V
+> nommu port supports 64-bit CPUs, and we now have a conflict between
+> the elf2flt creation tool that always uses 32-bit fields and the kernel
+> that uses (unsigned) long field.  Switch to the userspace view as the
+> rest of the binfmt_flat format is completely architecture neutral,
+> and binfmt_flat isn't the right binary format for huge executables to
+> start with.
+>
+> While we're at it also ensure these fields are using __be types as
+> they big endian and are byteswapped when loaded.
+>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-> 
->> What about other vendor SoCs implementing the Coda IP block which are 
->> not an imx? I'd prefer a more generic name - maybe media-coda.
-> 
-> Right, this driver can be used on other SoCs [1].
+> --- a/include/linux/flat.h
+> +++ b/include/linux/flat.h
 
-Good point.
+> @@ -67,19 +67,19 @@ struct flat_hdr {
+>  #define OLD_FLAT_RELOC_TYPE_BSS                2
+>
+>  typedef union {
+> -       unsigned long   value;
+> +       u32             value;
+>         struct {
+>  # if defined(mc68000) && !defined(CONFIG_COLDFIRE)
+> -               signed long offset : 30;
+> -               unsigned long type : 2;
+> +               s32     offset : 30;
+> +               u32     type : 2;
+>  #      define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
+>  # elif defined(__BIG_ENDIAN_BITFIELD)
+> -               unsigned long type : 2;
+> -               signed long offset : 30;
+> +               u32     type : 2;
+> +               s32     offset : 30;
+>  #      define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
+>  # elif defined(__LITTLE_ENDIAN_BITFIELD)
+> -               signed long offset : 30;
+> -               unsigned long type : 2;
+> +               s32     offset : 30;
+> +               u32     type : 2;
+>  #      define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
 
-Regards,
+The definitions of OLD_FLAT_FLAG_RAM are identical, so could be
+factored out.
+However, they appear to be unused.
 
-	Hans
+>  # else
+>  #      error "Unknown bitfield order for flat files."
 
-> 
-> [1] https://www.mail-archive.com/linux-media@vger.kernel.org/msg146498.html
-> 
-> regards
-> Philipp
-> 
+Gr{oetje,eeting}s,
 
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
