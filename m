@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52E473C9F1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:26:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 942FA3C9F6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:29:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=/OgVjXXV73xCEEeZyad003CmQzHX/2g26FklgcFvaeo=; b=o9i+kKqLQHpoqRc1eM/qR015cO
-	zwyzYJ7lt51aNkw6YC6c4U4ZrywjgN0KvYwGuGOTj8S5V8BxAi8AnLNPKlhnmpQYV7WZbdGcGtM92
-	Tx4rZT5la7nY0l5qiSA2J2zUphHXNkLF5tbIF/+14s63t4rJ1Uog35yXcVO7Ub8R6S2i/aLvU7cqE
-	PiLhuX+Pxxda7h+XnYc9H1OjsKTz92Eo2iZIrFpcUY4lfa7AfT9+SLe/dmxp1Jwuq32km78XvHpYO
-	h2i43vPORRSv0IeKgdIIbqpvmiQNe2AsK2fPNClgqpdm5fDWjEmOFoIJlKzBVF+FVfYuPRyrmdPMS
-	vXaxBrNg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2L8bP/FhIptj7ix/2q7cLs+I+WiXWe8tNZZkc4q11E0=; b=d5zgUGiputhtmEOR0MuXl8RLQ
+	y27XEDLQHqLs/IZxLVT9pmXYIoiqvodmlKX45c1H8imakG8okDH4cUb9wPQEuY4VtWGWQtOZ4tsKO
+	usm5JNr8VyAWz0CJVKAzyDX7CY7A04sp/h5UidwLeNESEhXcEnVgdIjEY+i5iAiohrIfdzOwdE6nm
+	6cAce5NijGy8Z8PghAMVYFoatcPq7ljwQObfTAnQZW1xMIP5O9KA1S9ttgdHdVTzRR5sdJWXu7TbA
+	kzruHESd4UBi9fTjurQCTOU6F1o/47GPJ8b1SAyTyH0xeF252BwPf6isNEx02EgF0awshPDIwuC83
+	RP5FxlCCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haeup-00077r-F3; Tue, 11 Jun 2019 11:26:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haeug-00077S-9I
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:26:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 102A3344;
- Tue, 11 Jun 2019 04:26:00 -0700 (PDT)
-Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
- [10.162.43.135])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5A08F3F557;
- Tue, 11 Jun 2019 04:27:39 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: akpm@linux-foundation.org, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- catalin.marinas@arm.com, will.deacon@arm.com, ard.biesheuvel@arm.com
-Subject: [PATCH V5 - Rebased] mm/hotplug: Reorder memblock_[free|remove]()
- calls in try_remove_memory()
-Date: Tue, 11 Jun 2019 16:56:13 +0530
-Message-Id: <1560252373-3230-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <36e0126f-e2d1-239c-71f3-91125a49e019@redhat.com>
-References: <36e0126f-e2d1-239c-71f3-91125a49e019@redhat.com>
+	id 1haexq-0007uL-Vn; Tue, 11 Jun 2019 11:29:19 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haexG-0007tm-Du
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:28:44 +0000
+X-Originating-IP: 90.88.159.246
+Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
+ [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 950021C0009;
+ Tue, 11 Jun 2019 11:28:28 +0000 (UTC)
+Date: Tue, 11 Jun 2019 13:28:28 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v2 07/11] dt-bindings: net: stmmac: Convert the binding
+ to a schemas
+Message-ID: <20190611112828.nstilhcyflpuyt3g@flea>
+References: <91618c7e9a5497462afa74c6d8a947f709f54331.1560158667.git-series.maxime.ripard@bootlin.com>
+ <40b91798a807cc3c232119ec74285325ebb6692a.1560158667.git-series.maxime.ripard@bootlin.com>
+ <CAL_JsqJ_Y4nzN+BCKcUu7jBDwtT+6w5FFOR5S1eYtLm-uUjGqA@mail.gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <CAL_JsqJ_Y4nzN+BCKcUu7jBDwtT+6w5FFOR5S1eYtLm-uUjGqA@mail.gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_042602_417067_F58FDCB2 
-X-CRM114-Status: GOOD (  12.40  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_042842_918490_4852D660 
+X-CRM114-Status: GOOD (  11.60  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,120 +63,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, david@redhat.com, mhocko@suse.com, osalvador@suse.de
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Andrew Lunn <andrew@lunn.ch>,
+ Antoine =?utf-8?Q?T=C3=A9nart?= <antoine.tenart@bootlin.com>,
+ netdev <netdev@vger.kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: multipart/mixed; boundary="===============2385164325050844369=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
-entries between memory block and node. It first checks pfn validity with
-pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
-(arm64 has this enabled) pfn_valid_within() calls pfn_valid().
 
-pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
-which scans all mapped memblock regions with memblock_is_map_memory(). This
-creates a problem in memory hot remove path which has already removed given
-memory range from memory block with memblock_[remove|free] before arriving
-at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
-skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
-sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
-of existing sysfs entries.
+--===============2385164325050844369==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="qew5pxuoqrxydleq"
+Content-Disposition: inline
 
-[   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
-[   62.052517] ------------[ cut here ]------------
-[   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
-[   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-[   62.054589] Modules linked in:
-[   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
-[   62.056274] Hardware name: linux,dummy-virt (DT)
-[   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
-[   62.058083] pc : add_memory_resource+0x1cc/0x1d8
-[   62.058961] lr : add_memory_resource+0x10c/0x1d8
-[   62.059842] sp : ffff0000168b3ce0
-[   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
-[   62.061501] x27: 0000000000000000 x26: 0000000000000000
-[   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
-[   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
-[   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
-[   62.065558] x19: 0000000000680000 x18: 0000000000000024
-[   62.066566] x17: 0000000000000000 x16: 0000000000000000
-[   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
-[   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
-[   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
-[   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
-[   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
-[   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
-[   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
-[   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
-[   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
-[   62.076930] Call trace:
-[   62.077411]  add_memory_resource+0x1cc/0x1d8
-[   62.078227]  __add_memory+0x70/0xa8
-[   62.078901]  probe_store+0xa4/0xc8
-[   62.079561]  dev_attr_store+0x18/0x28
-[   62.080270]  sysfs_kf_write+0x40/0x58
-[   62.080992]  kernfs_fop_write+0xcc/0x1d8
-[   62.081744]  __vfs_write+0x18/0x40
-[   62.082400]  vfs_write+0xa4/0x1b0
-[   62.083037]  ksys_write+0x5c/0xc0
-[   62.083681]  __arm64_sys_write+0x18/0x20
-[   62.084432]  el0_svc_handler+0x88/0x100
-[   62.085177]  el0_svc+0x8/0xc
 
-Re-ordering memblock_[free|remove]() with arch_remove_memory() solves the
-problem on arm64 as pfn_valid() behaves correctly and returns positive
-as memblock for the address range still exists. arch_remove_memory()
-removes applicable memory sections from zone with __remove_pages() and
-tears down kernel linear mapping. Removing memblock regions afterwards
-is safe because there is no other memblock (bootmem) allocator user that
-late. So nobody is going to allocate from the removed range just to blow
-up later. Also nobody should be using the bootmem allocated range else
-we wouldn't allow to remove it. So reordering is indeed safe.
+--qew5pxuoqrxydleq
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Reviewed-by: David Hildenbrand <david@redhat.com>
-Reviewed-by: Oscar Salvador <osalvador@suse.de>
-Acked-by: Mark Rutland <mark.rutland@arm.com>
-Acked-by: Michal Hocko <mhocko@suse.com>
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
-Changes in PATCH V5 - Rebased (from V5)
+On Mon, Jun 10, 2019 at 01:13:25PM -0600, Rob Herring wrote:
+> On Mon, Jun 10, 2019 at 3:26 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+> > +    then:
+> > +      properties:
+> > +        snps,pbl:
+> > +          allOf:
+> > +            - $ref: /schemas/types.yaml#definitions/uint32-array
+> > +            - enum: [2, 4, 8]
+>
+> As this is an array, I think this needs to be:
+>
+> - items:
+>     enum: [2, 4, 8]
+>
+>
+> And the next 2, too.
 
-- Rebased on linux-next (next-20190611)
-- s/__remove_memory/try_remove_memory in the subject line
-- s/arch_remove_memory/memblock_[free|remove] in the subject line
-- A small change in the commit message as re-order happens now for
-  memblock remove functions not arch_remove_memory()
+This was actually an error on the types, those properties are not
+arrays. I've changed the type, thanks!
 
- mm/memory_hotplug.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+maxime
 
-diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-index a88c5f334e5a..cfa5facf1b38 100644
---- a/mm/memory_hotplug.c
-+++ b/mm/memory_hotplug.c
-@@ -1831,13 +1831,13 @@ static int __ref try_remove_memory(int nid, u64 start, u64 size)
- 
- 	/* remove memmap entry */
- 	firmware_map_remove(start, start + size, "System RAM");
--	memblock_free(start, size);
--	memblock_remove(start, size);
- 
- 	/* remove memory block devices before removing memory */
- 	remove_memory_block_devices(start, size);
- 
- 	arch_remove_memory(nid, start, size, NULL);
-+	memblock_free(start, size);
-+	memblock_remove(start, size);
- 	__release_memory_resource(start, size);
- 
- 	try_offline_node(nid);
--- 
-2.20.1
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
+--qew5pxuoqrxydleq
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXP+QXAAKCRDj7w1vZxhR
+xV9cAQD5L7HheHjAdvoGBNb7CPTPUZI4imYlYaEM5mHnERlzhQD/UsXNJZh1LLwq
+3lzUjzZeUKdRAytJJAPH9N/9JIEjOAA=
+=10ZG
+-----END PGP SIGNATURE-----
+
+--qew5pxuoqrxydleq--
+
+
+--===============2385164325050844369==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2385164325050844369==--
+
