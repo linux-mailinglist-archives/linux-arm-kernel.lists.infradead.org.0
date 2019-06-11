@@ -2,66 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6EC1417FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:19:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4726041802
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:20:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RTSSzwCE8kMR6PbNEghl5dFcwc2DzUrEn1WmQ2SkvsQ=; b=bOdhnM5JMGSgaK
-	+i4iy+wSqGnIfxoa/Uv2tesfKdaGYds2J9ikSCsT0iwUjEah77CHGSo/ozTvdvbdeqY8swwQk7qUL
-	vHXpIP5FPK/LaKs6TseeuKuv6VAbqHDcGkIqGFE5ZxhFxLFofu1pbeQLT3FfOCjgNegjxEn9g7VTp
-	Bn83gMLLcJywSc1Bi56Ic3gJePN/1Nfie/mFCrGgP/habyWJo72+OhLw9O94qWLS4HIeaTQUl2xdl
-	gcYbvBCO93PojibMAFfjPixO4G0oyX7uLn6CPXMkaA0ynn1PZNj3n9dcuZBnCpyPslYGsbkfgyF8M
-	0ZtYEgFw8qhb/GOj6OCg==;
+	List-Owner; bh=dNpOlr9++dG36OrGtHh87QtZdJYkXuWNNJhmmlwTcVI=; b=h23W30c0r/JelR
+	mjSHJj3d9VSu0mmskZVCMm2TO9VI/43m/oOB/EmabtTvpQeLPdF0pjzo+kZvSVEvwZ/JqVdR1XZ7b
+	VQj5HmFtDMa54H61rcwy3KN3X9/AsTwR3p3KSRwhkBi+rYY8XJRB6P+qbo9fzRgA+Jx5eWaa0u1SY
+	H0hzEynXn/F24b+XfEuqLKeuH4Xy+dn/yuMONWYoTXXiwyZnVkxYocejLOAIj1tZ0cYMRB8m94LSP
+	DWH6stdt/CtzMvBjAsbpIRQbQdPRmINWpOjTgYKBhD72bDLgkqmYi7lcAQNUIEz80orMevrdzp029
+	Ic3HVCJlOc2GZMD6xQPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hap6u-00045T-96; Tue, 11 Jun 2019 22:19:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hap7n-0004Mk-3N; Tue, 11 Jun 2019 22:20:15 +0000
+Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hap6k-000450-7Z
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:19:11 +0000
-Received: from akpm3.svl.corp.google.com (unknown [104.133.8.65])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AE6802086D;
- Tue, 11 Jun 2019 22:19:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560291549;
- bh=JRnontjDmVMLabiF6n7OXpnQaHOmJ0mPnBv9JJmBYHQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=MmAm/Rlq9xHW4QftY68w195BiVipJj7BtYU46+bxK1b6KmlDNAfwO9DhQg05xARCu
- FEqfWAw+qoktRhbWY3KD/8J8BYYdnL1bEpW3I++EHV7Ci44iqPz0amWpf/bVcshNmA
- +PpL5Jv9DPHAHQwerlof7S5AdLJlA4FWjEP1NbEs=
-Date: Tue, 11 Jun 2019 15:19:08 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V5 - Rebased] mm/hotplug: Reorder
- memblock_[free|remove]() calls in try_remove_memory()
-Message-Id: <20190611151908.cdd6b73fd17fda09b1b3b65b@linux-foundation.org>
-In-Reply-To: <1560252373-3230-1-git-send-email-anshuman.khandual@arm.com>
-References: <36e0126f-e2d1-239c-71f3-91125a49e019@redhat.com>
- <1560252373-3230-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1hap7S-0004MN-VD
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:19:56 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5BMJerb020316;
+ Tue, 11 Jun 2019 17:19:41 -0500
+Message-ID: <5b5199b008d6c8831175018975f09599081dc5e4.camel@kernel.crashing.org>
+Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Date: Wed, 12 Jun 2019 08:19:40 +1000
+In-Reply-To: <20190611145832.GB11736@redmoon>
+References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
+ <20190604014945.GE189360@google.com>
+ <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
+ <20190604124959.GF189360@google.com>
+ <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+ <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+ <20190611145832.GB11736@redmoon>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
 Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_151910_305429_7458D597 
-X-CRM114-Status: GOOD (  13.53  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190611_151955_155763_EAD23034 
+X-CRM114-Status: GOOD (  15.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,93 +65,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, david@redhat.com,
- catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, ard.biesheuvel@arm.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
+ Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
+ Ali" <alisaidi@amazon.com>, Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 11 Jun 2019 16:56:13 +0530 Anshuman Khandual <anshuman.khandual@arm.com> wrote:
-
-> Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
-> entries between memory block and node. It first checks pfn validity with
-> pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
-> (arm64 has this enabled) pfn_valid_within() calls pfn_valid().
+On Tue, 2019-06-11 at 15:58 +0100, Lorenzo Pieralisi wrote:
 > 
-> pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
-> which scans all mapped memblock regions with memblock_is_map_memory(). This
-> creates a problem in memory hot remove path which has already removed given
-> memory range from memory block with memblock_[remove|free] before arriving
-> at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
-> skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
-> sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
-> of existing sysfs entries.
 > 
-> [   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
-> [   62.052517] ------------[ cut here ]------------
-> [   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
-> [   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-> [   62.054589] Modules linked in:
-> [   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
-> [   62.056274] Hardware name: linux,dummy-virt (DT)
-> [   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
-> [   62.058083] pc : add_memory_resource+0x1cc/0x1d8
-> [   62.058961] lr : add_memory_resource+0x10c/0x1d8
-> [   62.059842] sp : ffff0000168b3ce0
-> [   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
-> [   62.061501] x27: 0000000000000000 x26: 0000000000000000
-> [   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
-> [   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
-> [   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
-> [   62.065558] x19: 0000000000680000 x18: 0000000000000024
-> [   62.066566] x17: 0000000000000000 x16: 0000000000000000
-> [   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
-> [   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
-> [   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
-> [   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
-> [   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
-> [   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
-> [   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
-> [   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
-> [   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
-> [   62.076930] Call trace:
-> [   62.077411]  add_memory_resource+0x1cc/0x1d8
-> [   62.078227]  __add_memory+0x70/0xa8
-> [   62.078901]  probe_store+0xa4/0xc8
-> [   62.079561]  dev_attr_store+0x18/0x28
-> [   62.080270]  sysfs_kf_write+0x40/0x58
-> [   62.080992]  kernfs_fop_write+0xcc/0x1d8
-> [   62.081744]  __vfs_write+0x18/0x40
-> [   62.082400]  vfs_write+0xa4/0x1b0
-> [   62.083037]  ksys_write+0x5c/0xc0
-> [   62.083681]  __arm64_sys_write+0x18/0x20
-> [   62.084432]  el0_svc_handler+0x88/0x100
-> [   62.085177]  el0_svc+0x8/0xc
-
-This seems like a serious problem.  Once which should be fixed in 5.2
-and perhaps the various -stable kernels as well.
-
-> Re-ordering memblock_[free|remove]() with arch_remove_memory() solves the
-> problem on arm64 as pfn_valid() behaves correctly and returns positive
-> as memblock for the address range still exists. arch_remove_memory()
-> removes applicable memory sections from zone with __remove_pages() and
-> tears down kernel linear mapping. Removing memblock regions afterwards
-> is safe because there is no other memblock (bootmem) allocator user that
-> late. So nobody is going to allocate from the removed range just to blow
-> up later. Also nobody should be using the bootmem allocated range else
-> we wouldn't allow to remove it. So reordering is indeed safe.
+> 	if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
+> 		/* preserve existing resource assignment */
+> 		pci_bus_claim_resources(bus);
+> 	}
 > 
-> ...
->
+> 	pci_bus_size_bridges(bus);
+> 	pci_bus_assign_resources(bus);
+
+So that makes me nervous... my understanding is that the pair
+
+	pci_bus_size_bridges(bus);
+ 	pci_bus_assign_resources(bus);
+
+Is intended for full reassignment. Now they will try to skip resources
+that already have a parent, but that's yet another code path. What's
+wrong with pci_unassigned_* ? That's what it's meant for...
+
+> That's how it should be I think:
 > 
-> - Rebased on linux-next (next-20190611)
+> 1) we do not want pci_assign_unassigned_root_bus_resources(bus) to
+>    reallocate resources already claimed (see realloc parameter), do we ?
 
-Yet the patch you've prepared is designed for 5.3.  Was that
-deliberate, or should we be targeting earlier kernels?
+Well, realloc is useful to handle SR_IOV when the BIOS doesn't do it
+right (common case). That said, at this point, we should be able to
+honor IORESOURCE_PCI_FIXED for things that have _DSM #5 since they have
+been claimed. I don't see that realloc logic being a problem for us,
+and I want to avoid gratuitous differences with x86, but maybe I'm
+missing something here...
 
+> 2) pci_bus_size_bridges(bus) and pci_bus_assign_resources(bus) should
+>    not interfere with resources already claimed so it *should* be safe
+>    to call them anyway
+
+Sure, *should* and here we introduce yet another way of doing things
+though... Any reason we don't want to do what x86 does here ?
+
+> Most importantly: I want everyone to agree that claiming is equivalent
+> to making a resource immutable (except for realloc, see (1) above)
+> because that's what we are doing by claiming on _DSM #5 == 0.
+
+I think the combination of claiming *and* IORESOURCE_PCI_FIXED is what
+makes it *really* immutable. I'm a bit confused by the realloc logic
+right now, I'll need more quality time looking at it after ingesting
+more caffeing but I'm under the impression that it will honor the flag.
+
+> There are too many ways to make a resource immutable in the kernel
+> and this is confusing and prone to bugs.
+
+It is, but I don't want to create new ways of doing things, and what
+you seem to propose is a new way imho :-)
+
+Cheers,
+Ben.
+
+> Thanks,
+> Lorenzo
+> 
+> > +	ACPI_FREE(obj);
+> >  
+> >  	list_for_each_entry(child, &bus->children, node)
+> >  		pcie_bus_configure_settings(child);
+> > diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
+> > index 8082b612f561..62b7fdcc661c 100644
+> > --- a/include/linux/pci-acpi.h
+> > +++ b/include/linux/pci-acpi.h
+> > @@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
+> >  #endif
+> >  
+> >  extern const guid_t pci_acpi_dsm_guid;
+> > -#define DEVICE_LABEL_DSM	0x07
+> > -#define RESET_DELAY_DSM		0x08
+> > -#define FUNCTION_DELAY_DSM	0x09
+> > +#define IGNORE_PCI_BOOT_CONFIG_DSM	0x05
+> > +#define DEVICE_LABEL_DSM		0x07
+> > +#define RESET_DELAY_DSM			0x08
+> > +#define FUNCTION_DELAY_DSM		0x09
+> >  
+> >  #else	/* CONFIG_ACPI */
+> >  static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
+> > 
+> > 
 
 
 _______________________________________________
