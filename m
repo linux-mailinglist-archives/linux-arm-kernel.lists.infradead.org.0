@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 092463CEBE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:32:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E90013CEBA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:31:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gMbshiXsNYVqwdNrxkay/WSVbF4p3hitMf9FZYEuBFw=; b=T8rcpoAQW59Vzt
-	dIFsmWW1EhJJZ4r2uKSogwQDtahnmzlgimXirAWyVUnwzMx+hxqM/CHuLXoR0znnGZN1IMa8R9PXp
-	fjg9ctS1z1GBChmtNbPnP1jUIuSXrThY6zFLNekKpxVaLJTZu9JzZs5+O/ui4NL7P3AGaWk1ktVpH
-	l+X9/EePw4Z+pm+RB2Up3iV9wwB6uJsVGcDwcDH3KGTcLOWFmIbYp9nOFeJA5MgrMN64jutMYQJn7
-	3dE4Yk0ByC8JLYyWN4XcTRjkoLT189swMnxuz9Ph1gZJEyo9ZG+m8vN4PmxdwHMx5ifHGNIOktPF8
-	xsM1CzFK/WBMIUPNlVIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p4rO3m/Lt2HA54+biqG5wOF4g+jJa2rRDDbMpnQ02pU=; b=RAbWQAr/8UYhbu
+	pDHXlU29AxWCf9t1MLxt8bQI4I7ghs//miTflN0dEqnFHT0wjKQ+nhBgNx1BISDaFjbA//8f5tiUc
+	TVf1GOYzTzVFvajgZPaCp3ZksuvTyxwYZCfA3fXAUiTd6Aa1xIGcnhWy/wQjSI0n4p9uNNk4YY4Sn
+	9AVdTxomwnC5TACcfKaqUMP6ymfmC/TOneWaXID+WDGDpdwu4jNGDwEcXUu+70iYkf52DDwDniVNT
+	Axjtqj6QX3UdFM1vM597bM5QD720KShyJ61xoFDy+kSmq4b74APtjYXcGs4HnU/LKynL/ZhcTU+4V
+	3bJT4xbMUAlMbsTJu28w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hahok-0007N9-Ab; Tue, 11 Jun 2019 14:32:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hahoM-0007KA-12
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:31:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 56DB9337;
- Tue, 11 Jun 2019 07:31:40 -0700 (PDT)
-Received: from redmoon (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 367DE3F557;
- Tue, 11 Jun 2019 07:31:39 -0700 (PDT)
-Date: Tue, 11 Jun 2019 15:31:19 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
- firmware PCI setup
-Message-ID: <20190611143111.GA11736@redmoon>
-References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
- <20190604014945.GE189360@google.com>
- <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
- <20190604124959.GF189360@google.com>
- <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
- <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
- <CAKv+Gu_3Nb5mPZgRfx+wQSz+eWM+FSbw_14fHm+u=v2EbuYoGQ@mail.gmail.com>
- <4b956e0679b4b4f4d0f0967522590324d15593fb.camel@kernel.crashing.org>
+	id 1hahoK-00077Y-Co; Tue, 11 Jun 2019 14:31:40 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haho4-0006xg-Pp
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:31:26 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z23so3182352wma.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Jun 2019 07:31:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=I+b0ODQnts8tdntKoRjN83DkfLZxsjTT5tP4ANFK0k4=;
+ b=H1Rp4asAc/hZnrIK3cSDkXVRv+QZjJckPEeF2q/uTMemu80KOX67ebHjCifYvVvnHK
+ qlpRK/E+rZUqmXitAbYXycopEbSc1T02FYsVbUdbaCJeqXKwM1IGM8EaWjmVe6eGuBDC
+ xooTOTX4XsptGZOm9gumVueKn7ZlQ44b2Q9Lemy51VObASpSRRyaP76mHUBSDzjvYVtl
+ 6l/XuxLLT1FfuXmrWk6UEIcFg5MeCHSJjE/AcvtvhPdyDdsL5YbiNO9PLJCmv526UZIZ
+ 2DtX3zCDbQAhrA5gD8F+xvVHvWv9iynL4BmgoEId1oJZispnKUNwCoFd+uFFavMjuqE5
+ LnHA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=I+b0ODQnts8tdntKoRjN83DkfLZxsjTT5tP4ANFK0k4=;
+ b=C7j2k6t5wIsD9vbBA4wygx/2KdKx5RGRkqgUjBz1nr8ECFEVT1LEvq+pS7eNMszRrn
+ NmXTTDY7n5cVMct50Sl9kg5bJH/25Ph5CKFLGBIyOzlPVQGbIrKY95FlkboakG6daRWw
+ Zv9coVi5qWDgGVkJXzqVLULSf/zwHyI76mZqmPj4Xk5si/8WmoAEaADJcGD1b+1Hzzru
+ NjGjiEryRGoxf3vj21dY+Yr7ZLgXaLLp65LUWQvrRxF5B2yr+6+eLbua5xXenYbkKIqc
+ mIGr2cNH+I0/wU1YzV8R/RIAmPZL/jGO4hoMzhkxvRVUz8yBSWo8kIctjsokBhT3+kZT
+ uzBg==
+X-Gm-Message-State: APjAAAVF8E9mb5Yr5jd32Zwn0q1RL/+u7hreaS+XMc/r5tTosfhnisEB
+ eTUOKDV5rXgo7oigFeRs7MnA0Q==
+X-Google-Smtp-Source: APXvYqx5tAOnKxTMOzMeeFvPPj0lnS6ngD12iizSOqlCEd/5eXH8GUPWfzhko832DOcAeL8z5bH+xg==
+X-Received: by 2002:a1c:67c2:: with SMTP id b185mr17212929wmc.98.1560263482948; 
+ Tue, 11 Jun 2019 07:31:22 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id w14sm13427258wrk.44.2019.06.11.07.31.22
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Tue, 11 Jun 2019 07:31:22 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com,
+	jbrunet@baylibre.com
+Subject: [PATCH] arm64: dts: meson-g12b-odroid-n2: add sound card
+Date: Tue, 11 Jun 2019 16:31:20 +0200
+Message-Id: <20190611143120.25074-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4b956e0679b4b4f4d0f0967522590324d15593fb.camel@kernel.crashing.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_073142_118512_C15636E6 
-X-CRM114-Status: GOOD (  32.43  )
+X-CRM114-CacheID: sfid-20190611_073124_842243_75F8CAD1 
+X-CRM114-Status: GOOD (  13.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,128 +93,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- linux-pci <linux-pci@vger.kernel.org>, Sinan Kaya <okaya@kernel.org>,
- "Zilberman, Zeev" <zeev@amazon.com>, "Saidi, Ali" <alisaidi@amazon.com>,
- Bjorn Helgaas <helgaas@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 06, 2019 at 08:55:07PM +1000, Benjamin Herrenschmidt wrote:
-> On Thu, 2019-06-06 at 11:13 +0200, Ard Biesheuvel wrote:
-> > > Bjorn: I haven't made the claim path the default in absence of _DSM #5 yet.
-> > > I suggest we do that as a separate patch in case it breaks somebody, thus
-> > > making bisection more meaningful. It will also make this one more palatable
-> > > to distros since it won't change the behaviour on systems without _DSM #5,
-> > > and we verified nobody has it except Seattle which returns 1.
-> > > 
-> > 
-> > FYI Seattle is broken in any case since it returns Package(1) rather
-> > than just an int.
-> 
-> Great .... not. Do we care ?
-> 
-> > The problem with this patch is that currently, the PCI fw spec permits
-> > _DSM #5 everywhere *except* on the host bridge device object itself,
-> > and this is in the process of being changed.
-> 
-> Yes, I'm indirectly aware of that :)
-> 
-> > I will leave it up to the maintainers to decide whether we can take
-> > this patch in anticipation of that, even though it doesn't deal with
-> > _DSM #5 on nodes anywhere else in the PCIe tree.
-> 
-> Right, so the problem at this point is that dealing with it elsewhere
-> in the tree is very fragile and problematic (see my other messages).
-> Doing it at the host bridge level fixes the immediate problem for us
-> (provided we are ok anticipating the spec update), and doesn't preclude
-> also honoring it for individual devices later on.
+Enable the sound card on the Hardkernel Odroid-N2, enabling HDMI output
+using the TDM interface B, being aligned on other boards sound cards.
 
-True, minus specs update schedule, I can't change that and merging
-this patch (and firmware thereof) relies on specifications that
-are intent changes till they become an ECN (~another merge window,
-so this patch could land at v5.4).
+The internal DAC connected to the audio jack will be added later on, when
+driver support is added.
 
-The other option is doing what this patch does *without* relying
-on _DSM #5, we may have regressions unfortunately though.
+Tested by running:
+tinymix set "FRDDR_A SRC 1 EN Switch" 1
+tinymix set "FRDDR_A SINK 1 SEL" "OUT 1"
+tinymix set "FRDDR_B SRC 1 EN Switch" 1
+tinymix set "FRDDR_B SINK 1 SEL" "OUT 1"
+tinymix set "FRDDR_C SRC 1 EN Switch" 1
+tinymix set "FRDDR_C SINK 1 SEL" "OUT 1"
+tinymix set "TOHDMITX I2S SRC" "I2S B"
+tinymix set "TOHDMITX Switch" 1
 
-It is kind of orthogonal (but not really), bus numbers assignment
-is _not_ in line with resource assignment at the moment and I want
-to change it.
+then:
+tinymix set "TDMOUT_B SRC SEL" "IN 0"
+speaker-test -Dhw:0,0 -c2
 
-Since ACPI on ARM64 is still at its inception maybe we should have
-a stab at patching the kernel so that it reassigns bus numbers by
-default and toggle that behaviour on _DSM #5 == 0 detection.
+then:
+tinymix set "TDMOUT_B SRC SEL" "IN 1"
+speaker-test -Dhw:0,1 -c2
 
-I doubt that reassigning bus numbers by default can trigger
-regressions on existing platforms but the only way to figure
-it out is by testing it.
+then:
+tinymix set "TDMOUT_B SRC SEL" "IN 2"
+speaker-test -Dhw:0,2 -c2
 
-> My thinking is if we converge everybody toward the x86 method of doing
-> a 2 pass survey of existing resources followed by assign_unassigned,
+testing HDMI audio output from the all 3 ASoC playback interfaces.
 
-I am not entirely sure we need a 2-pass survey,
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ .../boot/dts/amlogic/meson-g12b-odroid-n2.dts | 88 +++++++++++++++++++
+ 1 file changed, 88 insertions(+)
 
-pci_bus_claim_resources()
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+index 4146cd84989c..c3e0735e6d9f 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts
+@@ -9,6 +9,7 @@
+ #include "meson-g12b.dtsi"
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/gpio/meson-g12a-gpio.h>
++#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
+ 
+ / {
+ 	compatible = "hardkernel,odroid-n2", "amlogic,g12b";
+@@ -165,6 +166,65 @@
+ 			};
+ 		};
+ 	};
++
++	sound {
++		compatible = "amlogic,axg-sound-card";
++		model = "G12A-ODROIDN2";
++		audio-aux-devs = <&tdmout_b>;
++		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
++				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
++				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
++				"TDM_B Playback", "TDMOUT_B OUT";
++
++		assigned-clocks = <&clkc CLKID_MPLL2>,
++				  <&clkc CLKID_MPLL0>,
++				  <&clkc CLKID_MPLL1>;
++		assigned-clock-parents = <0>, <0>, <0>;
++		assigned-clock-rates = <294912000>,
++				       <270950400>,
++				       <393216000>;
++		status = "okay";
++
++		dai-link-0 {
++			sound-dai = <&frddr_a>;
++		};
++
++		dai-link-1 {
++			sound-dai = <&frddr_b>;
++		};
++
++		dai-link-2 {
++			sound-dai = <&frddr_c>;
++		};
++
++		/* 8ch hdmi interface */
++		dai-link-3 {
++			sound-dai = <&tdmif_b>;
++			dai-format = "i2s";
++			dai-tdm-slot-tx-mask-0 = <1 1>;
++			dai-tdm-slot-tx-mask-1 = <1 1>;
++			dai-tdm-slot-tx-mask-2 = <1 1>;
++			dai-tdm-slot-tx-mask-3 = <1 1>;
++			mclk-fs = <256>;
++
++			codec {
++				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_B>;
++			};
++		};
++
++		/* hdmi glue */
++		dai-link-4 {
++			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
++
++			codec {
++				sound-dai = <&hdmi_tx>;
++			};
++		};
++	};
++};
++
++&arb {
++	status = "okay";
+ };
+ 
+ &cec_AO {
+@@ -181,6 +241,10 @@
+ 	hdmi-phandle = <&hdmi_tx>;
+ };
+ 
++&clkc_audio {
++	status = "okay";
++};
++
+ &ext_mdio {
+ 	external_phy: ethernet-phy@0 {
+ 		/* Realtek RTL8211F (0x001cc916) */	
+@@ -198,6 +262,18 @@
+ 	amlogic,tx-delay-ns = <2>;
+ };
+ 
++&frddr_a {
++	status = "okay";
++};
++
++&frddr_b {
++	status = "okay";
++};
++
++&frddr_c {
++	status = "okay";
++};
++
+ &gpio {
+ 	/*
+ 	 * WARNING: The USB Hub on the Odroid-N2 needs a reset signal
+@@ -269,6 +345,18 @@
+ 	vqmmc-supply = <&flash_1v8>;
+ };
+ 
++&tdmif_b {
++	status = "okay";
++};
++
++&tdmout_b {
++	status = "okay";
++};
++
++&tohdmitx {
++	status = "okay";
++};
++
+ &uart_AO {
+ 	status = "okay";
+ 	pinctrl-0 = <&uart_ao_a_pins>;
+-- 
+2.21.0
 
-should be enough; if it is not we update it.
-
-> and have that the main generic code path (with added quirks to force a
-> full assignment and keeping probe_only around but that's easy, we have
-> that on powerpc and our code is originally based on the x86 one), then
-> we'll have a much easier time supporting IORESOURCE_PCI_FIXED on
-> portions of the tree as well (though it also becomes less critical to
-> do so since we will no longer reallocate unless we have to).
-> 
-> That said we need to understand what "fixed" means and why we do it.
-
-Agree, totally and I want to make it clear how a BAR is fixed in
-the kernel, there are too many discrepancies in the resource management
-code already.
-
-> IE, If an endpoint somehere has "fixed" BARs for example, that means
-> all parent bridge must be setup to enclose that range.
-> 
-> Now our allocator for bridge windows cannot handle that and probably
-> never will, so we have to rely on the existing window established by
-> the FW being reasonable and use it. We can still *extend" bridge
-> windows (and we have code to do that) if necessary but we cannot move
-> them if they contain a fixed BAR device.
-> 
-> There is a much bigger discussion to be had around that concept of
-> fixed device anyway, maybe at Plumbers ? Why is the BAR fixed ? Because
-> the EFI FB is on it ? Because HW bugs ? Because FW might access it from
-> SMM or ARM equivalent ? Because ACPI will poke at it based on its
-> initial address ? etc...
-
-Consider a slot booked at LPC PCI uconf for this discussion.
-
-> Some of the answers to the above questions imply more than the need to
-> fix the BAR: Does it also mean that disabling access to that BAR, even
-> temporarily, isn't safe ? However that's what we do today when we
-> probe, if anything, to do the BAR sizing...
-
-Eh, another question that came up already should be debated.
-
-> This isn't a new problem. We had issues like that dating back 15 years
-> on powerpc for example, where a big ASIC hanging off PCI had all the
-> Apple gunk including the interrupt controller, which was initialized
-> from the DT way before PCI probing. If you took an interrupt at the
-> "wrong" time during BAR sizing, kaboom ! If you had debug printk's in
-> the wrong place in the PCI probing code, kaboom ! etc....
-> 
-> If we want to solve that properly in the long run, we'll probably want
-> ACPI to tell us the BAR sizes and use that instead of doing manual
-> sizing on such "system" devices. We similarily have ways to "construct"
-> pci_dev's from the OF tree on sparc64 and powerpc, limiting direct
-> config access to populate stuff we can't get from FW.
-
-https://lore.kernel.org/linux-pci/20190121174225.15835-1-mr.nuke.me@gmail.com/
-
-?
 
 _______________________________________________
 linux-arm-kernel mailing list
