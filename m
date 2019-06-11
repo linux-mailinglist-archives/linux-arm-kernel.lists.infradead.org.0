@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 859323CB73
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:28:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDBDA3CB76
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:29:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9t+B5NNVU/+4QDBZfAXITLq9F3Gzglawpgak0MzZYV0=; b=TpG4K+devC2AKM
-	UqXg/CjneXyUul8pYYdBR+sKrWw2cLpX5vTGLl/fZFNwbvt7g59qGN9DVQQ3Kod8l6I+qfQNtdV8v
-	8e2RWGfBjWvKXKJsBrf7USX53viEzICbYcGbW3vN5kFjZP2TfGw938VIqX2qm9D1DVYzaIg5ACdb8
-	CmUpZraZLOcHn80vEdc4txgdXiId/2nvVzsxb9w+H6l47EmuqWrFr7POQ3uH1/znUrJVsN4LvFUl1
-	LbsD4BxsyPvFjZUJ6njVmsN5w/G2ldYR2MpPDzRuuIDLFv9TRUf80JgLVoM9EXdHwnPdGUXxlOH/g
-	KkjQwhQUkxz24Egjteew==;
+	List-Owner; bh=qoDi6WKuzhEeXQQ/AWNNFSBPYWOwfIdr42hb83Xt18c=; b=hY+jQuuZMtBZrk
+	EqQUiERPhU21ehS0h8rwkMWNpoFseUCBLjgIpFZGqrfhiLlQTQq32ugyFFz4AxxvchPKhAHRFnqqX
+	odnMlXeqNYgE2X9F+o+B7OuVxf5+HkMq/idAWPWxFcQQMPcuqdWGw8QCrsphItK+Va76Ik14TFLKG
+	jKlJ4zGtuktqzgIaifmozJ7QWs/qUSJU4N3KHe0menWaF2jDDQS0sWffbRwoffHQRKegn+IR4pnsj
+	y070EGjXcvUN3wKzPbxhdDKnBDKsif40WF5Y6X9sPrs/p8ew2F32crPyxvdeviYB78sT4E35YqBhl
+	p9519ohj6OeBwWollNWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haftP-00044e-RA; Tue, 11 Jun 2019 12:28:47 +0000
+	id 1haftl-0004Jk-31; Tue, 11 Jun 2019 12:29:09 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hafqj-00029G-Aj
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 12:26:03 +0000
+ id 1hafqk-00029r-5A
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 12:26:04 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5BCN52Z024862; Tue, 11 Jun 2019 14:25:56 +0200
+ x5BCN3H3024849; Tue, 11 Jun 2019 14:25:56 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=c3Zd6dL5MxcQw3Ref30L3L2qWk7ypqOTnS2TbnWiQhs=;
- b=dn7XWWvDTODculAnfPxrB/I8//viPH9zF49Oi90oJikmQJNGnR1t2ehttAPqWkXW/jKn
- j0x/wKUiaB78X6bBmJuqEENfTJIwh8tzuy64EehqFjwbGs+pHydLW3bymhkvR3g3hEaK
- a6liRryndHFtdwZogYPkEMMzxUhOzAFiud8eft8qHQq66N8hGzdSV/CywU5IpJTfxHkN
- yAerKdaUVr2kqbBdSS9R2gEj+qkk5oAjItQ0Pkdb1pqoDLp7ZEjDZx35Fji8Z3w2/1BR
- 1CRcD4KtvWQTuuooM789QlccXgGLLmqlVaqMbre8jzUpNjom3nWf01G4Qv4+iMm3Ithv 5g== 
+ bh=7dQ+9lqtmTtedvp/b3rgO/AqPLUdhqousiUICsfwmlU=;
+ b=nJ+GFYS/tRfQ4m0vYKMLBcQatrCLLr5lZIoY3NS4LgabDMlfXSaJ7GYJTwFnvJb1pOJS
+ HyivsLdSo0ghbNsIPEBvKZ04JlHY1PzioQgieZzdSZYvdtFgF0JSZKJ0U3peXZnuPtwx
+ eApQ4RwJvpm7TfJPyJrpjU8b4TS0Q8QALZ/woHhFiDMSvhtyIYKG1W90tiKL8JuCxKN8
+ 893dWu8+ECXqtJid9hO/jqswmA0pGf3bEnOIaQsSe7FWz2EfsVbsMZtYPMd6oRt9V8RU
+ Qv4Wdj6SZLaDB3F/OT0sR4Gdw7MmwL1isyPmU7+yrZW1Gq8QrSe510zMgT5YX9yUEYY2 2g== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t26rjsvb5-1
+ by mx07-00178001.pphosted.com with ESMTP id 2t26rjsvb9-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 11 Jun 2019 14:25:55 +0200
+ Tue, 11 Jun 2019 14:25:56 +0200
 Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E91E138;
- Tue, 11 Jun 2019 12:25:53 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C74622A2C;
- Tue, 11 Jun 2019 12:25:53 +0000 (GMT)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 11 Jun
- 2019 14:25:53 +0200
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E1F9434;
+ Tue, 11 Jun 2019 12:25:55 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
+ by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C87ED2A29;
+ Tue, 11 Jun 2019 12:25:55 +0000 (GMT)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by Safex1hubcas24.st.com
+ (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 11 Jun
+ 2019 14:25:55 +0200
 Received: from localhost (10.201.23.31) by Webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 11 Jun 2019 14:25:52
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Tue, 11 Jun 2019 14:25:54
  +0200
 From: Erwan Le Ray <erwan.leray@st.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
  <jslaby@suse.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, "Alexandre
  Torgue" <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, "Mark
  Rutland" <mark.rutland@arm.com>
-Subject: [PATCH v2 06/10] serial: stm32: add support for no_console_suspend
-Date: Tue, 11 Jun 2019 14:25:26 +0200
-Message-ID: <1560255930-22554-7-git-send-email-erwan.leray@st.com>
+Subject: [PATCH v2 07/10] ARM: dts: stm32: update uart4 pin configurations for
+ low power
+Date: Tue, 11 Jun 2019 14:25:27 +0200
+Message-ID: <1560255930-22554-8-git-send-email-erwan.leray@st.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1560255930-22554-1-git-send-email-erwan.leray@st.com>
 References: <1560255930-22554-1-git-send-email-erwan.leray@st.com>
@@ -68,8 +69,8 @@ X-Originating-IP: [10.201.23.31]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-06-11_06:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_052601_711154_DEDB3FD6 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20190611_052602_543860_F7D0A132 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -107,99 +108,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to display console messages in low power mode, console pins
-must be kept active after suspend call.
+Currently, pinctrl states defines only one "sleep" configuration for pins,
+no matter the possible uart low power modes (Rx pin always kept active).
+
+Sleep pin configuration is refined for low power modes:
+- "sleep" (no wakeup & console suspend enabled): put pins in analog state
+  to optimize power
+- "idle" (wakeup capability): keep Rx pin in alternate function
+- "default" state remains untouched, to be used while the UART is active
+  or in case the no_console_suspend mode is enabled
 
 Signed-off-by: Bich Hemon <bich.hemon@st.com>
 Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
 
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index 0d43711..00e4d7a 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -24,6 +24,8 @@
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/of_platform.h>
-+#include <linux/pinctrl/consumer.h>
-+#include <linux/pinctrl/devinfo.h>
- #include <linux/platform_device.h>
- #include <linux/pm_runtime.h>
- #include <linux/pm_wakeirq.h>
-@@ -846,6 +848,7 @@ static int stm32_init_port(struct stm32_port *stm32port,
- {
- 	struct uart_port *port = &stm32port->port;
- 	struct resource *res;
-+	struct pinctrl *uart_pinctrl;
- 	int ret;
- 
- 	port->iotype	= UPIO_MEM;
-@@ -879,6 +882,24 @@ static int stm32_init_port(struct stm32_port *stm32port,
- 
- 	stm32port->fifoen = stm32port->info->cfg.has_fifo;
- 
-+	uart_pinctrl = devm_pinctrl_get(&pdev->dev);
-+	if (IS_ERR(uart_pinctrl)) {
-+		ret = PTR_ERR(uart_pinctrl);
-+		if (ret != -ENODEV) {
-+			dev_err(&pdev->dev, "Can't get pinctrl, error %d\n",
-+				ret);
-+			return ret;
-+		}
-+		stm32port->console_pins = ERR_PTR(-ENODEV);
-+	} else {
-+		stm32port->console_pins = pinctrl_lookup_state
-+			(uart_pinctrl, "no_console_suspend");
-+	}
+diff --git a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+index 85c417d..2e1ab1b 100644
+--- a/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32mp157-pinctrl.dtsi
+@@ -599,6 +599,23 @@
+ 					bias-disable;
+ 				};
+ 			};
 +
-+	if (IS_ERR(stm32port->console_pins) && PTR_ERR(stm32port->console_pins)
-+	    != -ENODEV)
-+		return PTR_ERR(stm32port->console_pins);
++			uart4_idle_pins_a: uart4-idle-0 {
++				pins1 {
++					pinmux = <STM32_PINMUX('G', 11, ANALOG)>; /* UART4_TX */
++				};
++				pins2 {
++					pinmux = <STM32_PINMUX('B', 2, AF8)>; /* UART4_RX */
++					bias-disable;
++				};
++			};
 +
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	port->membase = devm_ioremap_resource(&pdev->dev, res);
- 	if (IS_ERR(port->membase))
-@@ -1303,6 +1324,7 @@ static void __maybe_unused stm32_serial_enable_wakeup(struct uart_port *port,
- static int __maybe_unused stm32_serial_suspend(struct device *dev)
- {
- 	struct uart_port *port = dev_get_drvdata(dev);
-+	struct stm32_port *stm32_port = to_stm32_port(port);
++			uart4_sleep_pins_a: uart4-sleep-0 {
++				pins {
++					pinmux = <STM32_PINMUX('G', 11, ANALOG)>, /* UART4_TX */
++						 <STM32_PINMUX('B', 2, ANALOG)>; /* UART4_RX */
++				};
++			};
+ 		};
  
- 	uart_suspend_port(&stm32_usart_driver, port);
- 
-@@ -1311,7 +1333,19 @@ static int __maybe_unused stm32_serial_suspend(struct device *dev)
- 	else
- 		stm32_serial_enable_wakeup(port, false);
- 
--	pinctrl_pm_select_sleep_state(dev);
-+	if (uart_console(port) && !console_suspend_enabled) {
-+		if (IS_ERR(stm32_port->console_pins)) {
-+			dev_err(dev, "no_console_suspend pinctrl not found\n");
-+			return PTR_ERR(stm32_port->console_pins);
-+		}
-+
-+		pinctrl_select_state(dev->pins->p, stm32_port->console_pins);
-+	} else {
-+		if (device_may_wakeup(dev))
-+			pinctrl_pm_select_idle_state(dev);
-+		else
-+			pinctrl_pm_select_sleep_state(dev);
-+	}
- 
- 	return 0;
- }
-diff --git a/drivers/tty/serial/stm32-usart.h b/drivers/tty/serial/stm32-usart.h
-index 30d2433..050fe04 100644
---- a/drivers/tty/serial/stm32-usart.h
-+++ b/drivers/tty/serial/stm32-usart.h
-@@ -255,6 +255,7 @@ struct stm32_port {
- 	bool fifoen;
- 	int wakeirq;
- 	int rdr_mask;		/* receive data register mask */
-+	struct pinctrl_state *console_pins;
- };
- 
- static struct stm32_port stm32_ports[STM32_MAX_PORTS];
+ 		pinctrl_z: pin-controller-z@54004000 {
 -- 
 1.9.1
 
