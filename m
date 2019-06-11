@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6CA03C778
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:43:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 311973C77D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:44:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z4LN/FGEc1BQPMOMlrea0sJnljWpqVetlyuK3rdIIPY=; b=NlDS6UjbBpPOKM
-	Fxbj+7/iR+8A8t1cKRkeanMO/k5i4FGeYC1fLOC5JKSN5PH/pritsYS1TaQRyNzuAGIjmWqmiaH7S
-	QfnUhwHMMdisANKaju9H6A81nTNYA4OlYj5em5N6zjOhr6Z8ivKJdGu0+Dim7uoMinOOahdwvYJaR
-	X5/ZJHsk7VXEZaFulCOXPjFNPlQealtoQ1v/GAk6QQt8jnXFoGMlcQuJBxDgeX/+Pi8+s7Hv0JAEw
-	3IaIqq2x6HrEzezOfmI8wPaXazOIkpZL/mb+K+PuykTfZ8ISG9v/VfqQOuKaD7q7go5lh4xUrXRIe
-	RAExaiMx+fxCX0qFSMDQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hdEtyBgouHRfTx46lIBt8RshBFcA6Hen+JzMM75twFw=; b=nQj8ws7IsD57rG
+	AseV1BN3sbbQl39YfRGMYS5WLSokOW+JOWNtGZKJTMcxPSdtiHBtqcFN1Q5fG8gupnKGc28zhGv7c
+	zE40vU59+x95TA/usJ4loNGk242SbZNSKgLF8Zj67dtDPjP2nPFfWVUIvoXWgba+ImbKlRKqfysBz
+	mPKTWNoqE9D0EhDjzAP5q1Ha/QcanLsCGfILf3phrlV6x3WERjzRFSg1EWlpZ/Nxrra5oycr+Clrx
+	YBHgf1UWY02DVrzynWxwfS3wUP2JbwXfhVYoAN4NAOiKVZgLN4Lnbb3mEIiaHIDiM1GC7o2WKhYvX
+	62vI94itimCxvlilGkcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadJ5-0003pS-SE; Tue, 11 Jun 2019 09:43:07 +0000
+	id 1hadKS-0004i6-Pt; Tue, 11 Jun 2019 09:44:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hadIk-0003k2-3K
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 09:42:50 +0000
+ id 1hadKE-0004h9-AP; Tue, 11 Jun 2019 09:44:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A8A5337;
- Tue, 11 Jun 2019 02:42:45 -0700 (PDT)
-Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A31DE3F73C;
- Tue, 11 Jun 2019 02:44:26 -0700 (PDT)
-Date: Tue, 11 Jun 2019 10:42:29 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH v2] firmware/psci: psci_checker: Park kthreads before
- stopping them
-Message-ID: <20190611094229.GA6235@e107155-lin>
-References: <20190610173829.4741-1-jean-philippe.brucker@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DA080337;
+ Tue, 11 Jun 2019 02:44:17 -0700 (PDT)
+Received: from [10.1.29.141] (e121487-lin.cambridge.arm.com [10.1.29.141])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C9EE73F73C;
+ Tue, 11 Jun 2019 02:45:58 -0700 (PDT)
+Subject: Re: [PATCH 01/15] binfmt_flat: remove flat_reloc_valid
+To: Christoph Hellwig <hch@lst.de>, Greg Ungerer <gerg@linux-m68k.org>
+References: <20190610212015.9157-1-hch@lst.de>
+ <20190610212015.9157-2-hch@lst.de>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <885910f9-9153-4ea6-d060-996b099c520d@arm.com>
+Date: Tue, 11 Jun 2019 10:44:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190610173829.4741-1-jean-philippe.brucker@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190610212015.9157-2-hch@lst.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_024246_238694_3B14BEBC 
-X-CRM114-Status: GOOD (  10.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_024418_447493_B5D4D88C 
+X-CRM114-Status: GOOD (  16.54  )
+X-Spam-Score: 2.5 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,43 +62,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
+Cc: uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
+ linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-m68k@lists.linux-m68k.org, linux-riscv@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 06:38:29PM +0100, Jean-Philippe Brucker wrote:
-> Since commit 85f1abe0019f ("kthread, sched/wait: Fix kthread_parkme()
-> completion issue"), kthreads that are bound to a CPU must be parked
-> before being stopped. At the moment the PSCI checker calls
-> kthread_stop() directly on the suspend kthread, which triggers the
-> following warning:
+On 6/10/19 10:20 PM, Christoph Hellwig wrote:
+> This helper is the same for all architectures, open code it in the only
+> caller.
 > 
-> [    6.068288] WARNING: CPU: 1 PID: 1 at kernel/kthread.c:398 __kthread_bind_mask+0x20/0x78
->                ...
-> [    6.190151] Call trace:
-> [    6.192566]  __kthread_bind_mask+0x20/0x78
-> [    6.196615]  kthread_unpark+0x74/0x80
-> [    6.200235]  kthread_stop+0x44/0x1d8
-> [    6.203769]  psci_checker+0x3bc/0x484
-> [    6.207389]  do_one_initcall+0x48/0x260
-> [    6.211180]  kernel_init_freeable+0x2c8/0x368
-> [    6.215488]  kernel_init+0x10/0x100
-> [    6.218935]  ret_from_fork+0x10/0x1c
-> [    6.222467] ---[ end trace e05e22863d043cd3 ]---
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/arm/include/asm/flat.h        | 1 -
+>  arch/c6x/include/asm/flat.h        | 1 -
+>  arch/h8300/include/asm/flat.h      | 1 -
+>  arch/m68k/include/asm/flat.h       | 1 -
+>  arch/microblaze/include/asm/flat.h | 1 -
+>  arch/sh/include/asm/flat.h         | 1 -
+>  arch/xtensa/include/asm/flat.h     | 1 -
+>  fs/binfmt_flat.c                   | 2 +-
+>  8 files changed, 1 insertion(+), 8 deletions(-)
+
+For ARM bits:
+
+Tested-by: Vladimir Murzin <vladimir.murzin@arm.com>
+Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
+
+
 > 
-> kthread_unpark() tries to bind the thread to its CPU and aborts with a
-> WARN() if the thread wasn't in TASK_PARKED state. Park the kthreads
-> before stopping them.
+> diff --git a/arch/arm/include/asm/flat.h b/arch/arm/include/asm/flat.h
+> index f0c75ddeea23..10cce9ecf151 100644
+> --- a/arch/arm/include/asm/flat.h
+> +++ b/arch/arm/include/asm/flat.h
+> @@ -10,7 +10,6 @@
+>  
+>  #define	flat_argvp_envp_on_stack()		1
+>  #define	flat_old_ram_flag(flags)		(flags)
+> -#define	flat_reloc_valid(reloc, size)		((reloc) <= (size))
+>  
+>  static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
+>  					u32 *addr, u32 *persistent)
+> diff --git a/arch/c6x/include/asm/flat.h b/arch/c6x/include/asm/flat.h
+> index 76fd0bb962a3..ecc6aea6606c 100644
+> --- a/arch/c6x/include/asm/flat.h
+> +++ b/arch/c6x/include/asm/flat.h
+> @@ -6,7 +6,6 @@
+>  
+>  #define flat_argvp_envp_on_stack()			0
+>  #define flat_old_ram_flag(flags)			(flags)
+> -#define flat_reloc_valid(reloc, size)			((reloc) <= (size))
+>  static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
+>  					u32 *addr, u32 *persistent)
+>  {
+> diff --git a/arch/h8300/include/asm/flat.h b/arch/h8300/include/asm/flat.h
+> index f4cdfcbdd2ba..dcc7775115dd 100644
+> --- a/arch/h8300/include/asm/flat.h
+> +++ b/arch/h8300/include/asm/flat.h
+> @@ -10,7 +10,6 @@
+>  
+>  #define	flat_argvp_envp_on_stack()		1
+>  #define	flat_old_ram_flag(flags)		1
+> -#define	flat_reloc_valid(reloc, size)		((reloc) <= (size))
+>  #define	flat_set_persistent(relval, p)		0
+>  
+>  /*
+> diff --git a/arch/m68k/include/asm/flat.h b/arch/m68k/include/asm/flat.h
+> index 4f1d1e373420..a631caf5e18f 100644
+> --- a/arch/m68k/include/asm/flat.h
+> +++ b/arch/m68k/include/asm/flat.h
+> @@ -10,7 +10,6 @@
+>  
+>  #define	flat_argvp_envp_on_stack()		1
+>  #define	flat_old_ram_flag(flags)		(flags)
+> -#define	flat_reloc_valid(reloc, size)		((reloc) <= (size))
+>  static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
+>  					u32 *addr, u32 *persistent)
+>  {
+> diff --git a/arch/microblaze/include/asm/flat.h b/arch/microblaze/include/asm/flat.h
+> index 3d2747d4c967..34be5ed011be 100644
+> --- a/arch/microblaze/include/asm/flat.h
+> +++ b/arch/microblaze/include/asm/flat.h
+> @@ -15,7 +15,6 @@
+>  
+>  #define	flat_argvp_envp_on_stack()	0
+>  #define	flat_old_ram_flag(flags)	(flags)
+> -#define	flat_reloc_valid(reloc, size)	((reloc) <= (size))
+>  #define	flat_set_persistent(relval, p)		0
+>  
+>  /*
+> diff --git a/arch/sh/include/asm/flat.h b/arch/sh/include/asm/flat.h
+> index 843d458b8329..8f2929b32f2e 100644
+> --- a/arch/sh/include/asm/flat.h
+> +++ b/arch/sh/include/asm/flat.h
+> @@ -13,7 +13,6 @@
+>  
+>  #define	flat_argvp_envp_on_stack()		0
+>  #define	flat_old_ram_flag(flags)		(flags)
+> -#define	flat_reloc_valid(reloc, size)		((reloc) <= (size))
+>  static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
+>  					u32 *addr, u32 *persistent)
+>  {
+> diff --git a/arch/xtensa/include/asm/flat.h b/arch/xtensa/include/asm/flat.h
+> index b8532d7877b3..6ee5a35eb0ec 100644
+> --- a/arch/xtensa/include/asm/flat.h
+> +++ b/arch/xtensa/include/asm/flat.h
+> @@ -6,7 +6,6 @@
+>  
+>  #define flat_argvp_envp_on_stack()			0
+>  #define flat_old_ram_flag(flags)			(flags)
+> -#define flat_reloc_valid(reloc, size)			((reloc) <= (size))
+>  static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
+>  					u32 *addr, u32 *persistent)
+>  {
+> diff --git a/fs/binfmt_flat.c b/fs/binfmt_flat.c
+> index 82a48e830018..afddea583999 100644
+> --- a/fs/binfmt_flat.c
+> +++ b/fs/binfmt_flat.c
+> @@ -345,7 +345,7 @@ calc_reloc(unsigned long r, struct lib_info *p, int curid, int internalp)
+>  	start_code = p->lib_list[id].start_code;
+>  	text_len = p->lib_list[id].text_len;
+>  
+> -	if (!flat_reloc_valid(r, start_brk - start_data + text_len)) {
+> +	if (r > start_brk - start_data + text_len) {
+>  		pr_err("reloc outside program 0x%lx (0 - 0x%lx/0x%lx)",
+>  		       r, start_brk-start_data+text_len, text_len);
+>  		goto failed;
 > 
 
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-
---
-Regards,
-Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
