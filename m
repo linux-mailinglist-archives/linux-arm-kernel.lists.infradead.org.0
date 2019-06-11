@@ -2,127 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4ADDE3C997
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:00:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 182AD3C99D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:01:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0JNO/SvhtPuiXJVEfjT/9EYNf+EbVfhRemI59ug8ICI=; b=OQPI5M3E/WGgDS
-	zbi6rSq/ZtTQPIQXSf4utaLaIS5PGl83AlqZSumlu5YxcaQHpDt4ubW0hUFy4srDA8oftn+qE4Eas
-	Rh6ZuFWImPEwCeuBMUZsGzzD3W0fjADbNnz8fkcG3tw+HL60He2VGbH5dYSchoW2jdoy0GtUZT6uY
-	xhm2vvvEaPuTfcQ/58Wmaz7pKEjiIslA/U+iq1D+GZD/N6Zf6HI8l8/RnVqrBn4ntzkTUXvW8jYxd
-	M0JAkzESnsTwoGeUx8B+OTStkVGB6wH58X8PKne9c22PKTQmXqrnGWRoyuOVHNW3MR4peYBvl1sXN
-	9eJaLw9KvcOIUlJ+l5Xg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U0Epr9nn3lgonywHfjG8E5O0OExUrse3c/+/Hgmn9c0=; b=DLPkj8pl5I++Fp
+	Fc7+E31N8T7QssMLB+qygfvf6w83Wh4QYMglT3dxeWOsjXk2GWQKRKPv2whznwNUmacLKIEeVe7Nd
+	2oTzXeJykx5qF9XzPcZLP+TRiLfjlvCeEr9oXidQNNS0loMrr2D++23OknuPHNrKkQcXEf//Vt8Cc
+	XFc5pt9VGrz4j25oithraH1eBJndNw+nOM/cfL3t8p8gWEnMqfCwP6wHt5tCUu+UFj1AU7ORzbUHJ
+	TwscqbQtoJpIOpSQ35tGl0xsXrRfLimK4Lcmfg2yTsoWx4FBNTTc3nq5HT3rFyZZwJHdZ1rmcylHA
+	dwYSu/igpGFGdFuzwS2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haeWJ-0005Bl-M8; Tue, 11 Jun 2019 11:00:51 +0000
-Received: from mail-eopbgr00076.outbound.protection.outlook.com ([40.107.0.76]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1haeXF-0005Yy-AD; Tue, 11 Jun 2019 11:01:49 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haeWA-0005B6-Dt
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:00:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fT8pjQngHVRU6TLjykPGtJTaf00Z65BmSzEW9J+cJv4=;
- b=bUPaNwIVxorzfdE7hMw+e2dHMy+ho4d7lTV6WjNuKE+Riu1z2O+suzqPoEvhMNxhndJV+1kcCFg3x80TH3gN7zRbXnDVt0Gn1AxWKYoSkgshYTjtZYREvZgJ4OKikEzdY9JWV8GglJRLEW2jxzMMYQcPl4Rdwkdf0uXsyfKnun4=
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
- AM0PR04MB5844.eurprd04.prod.outlook.com (20.178.118.217) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.14; Tue, 11 Jun 2019 11:00:38 +0000
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::11e1:3bb9:156b:a3e4]) by AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::11e1:3bb9:156b:a3e4%3]) with mapi id 15.20.1965.017; Tue, 11 Jun 2019
- 11:00:38 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "corbet@lwn.net" <corbet@lwn.net>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>, "rui.zhang@intel.com"
- <rui.zhang@intel.com>, "edubezval@gmail.com" <edubezval@gmail.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, Peng Fan
- <peng.fan@nxp.com>, "mchehab+samsung@kernel.org"
- <mchehab+samsung@kernel.org>, "linux@roeck-us.net" <linux@roeck-us.net>,
- Daniel Baluta <daniel.baluta@nxp.com>, "maxime.ripard@bootlin.com"
- <maxime.ripard@bootlin.com>, "olof@lixom.net" <olof@lixom.net>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>, Leonard Crestez
- <leonard.crestez@nxp.com>, "bjorn.andersson@linaro.org"
- <bjorn.andersson@linaro.org>, "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
- <linux-pm@vger.kernel.org>
-Subject: RE: [PATCH V14 1/5] dt-bindings: fsl: scu: add thermal binding
-Thread-Topic: [PATCH V14 1/5] dt-bindings: fsl: scu: add thermal binding
-Thread-Index: AQHVHzds3B6qJhqXrUKDEg49ewd/b6aWSyaQ
-Date: Tue, 11 Jun 2019 11:00:37 +0000
-Message-ID: <AM0PR04MB4211D325B1AE944F68EA7F5C80ED0@AM0PR04MB4211.eurprd04.prod.outlook.com>
-References: <20190610025254.23940-1-Anson.Huang@nxp.com>
-In-Reply-To: <20190610025254.23940-1-Anson.Huang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=aisheng.dong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a071d497-05c9-41e2-919a-08d6ee5c095d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB5844; 
-x-ms-traffictypediagnostic: AM0PR04MB5844:
-x-microsoft-antispam-prvs: <AM0PR04MB5844A069D21AF3FD3736F51080ED0@AM0PR04MB5844.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1417;
-x-forefront-prvs: 006546F32A
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(346002)(39860400002)(396003)(366004)(376002)(199004)(189003)(4326008)(4744005)(8676002)(81156014)(81166006)(2906002)(7736002)(99286004)(73956011)(3846002)(44832011)(66446008)(64756008)(66556008)(66476007)(68736007)(25786009)(33656002)(476003)(66946007)(5660300002)(76116006)(52536014)(7416002)(8936002)(446003)(11346002)(486006)(6246003)(186003)(53936002)(6116002)(6506007)(229853002)(256004)(86362001)(6436002)(66066001)(55016002)(9686003)(14454004)(26005)(71190400001)(71200400001)(2201001)(7696005)(2501003)(305945005)(76176011)(316002)(110136005)(102836004)(478600001)(74316002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5844;
- H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: w4uCYPxyenv3+SSwz73XSCi6fFAqEOUz9O+L8VniRLckLT12y7w6pL7Ot62gairj7O4BT750tU62M7vLbJs7L1i0zfpjtBSX7CaGFuvgefXVAxNop9jpt0Di1I78terKgmTcFaKBUAS8bnB6aaEY0F9Sihzf5NEx4niYBQm89H0kEjPyRPvei4iX6ScPygDwLbT6HnfTVM2XjGIQzZfewXf5+uvsVVpoVuZl+6ms/Vbiveb5BHMCKaAWzViDpsoMbpD5JoZkcrueFqdln0Vpc65THhqrl9ITXvi93d408b8rY9akBFYwnow3oPNfyNfD7Z4v4lHj3Hz8KJ7FwZTw1hJTYugFxho42auY1di0KRtt/3fiOp5PC873vQu1oKNrpTyJTpAkuFTM194OknqnqAoTDG0XzrNSJwwtzN7ewIo=
+ id 1haeX4-0005YC-Mx
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:01:40 +0000
+Received: by mail-wm1-x344.google.com with SMTP id g135so2445707wme.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Jun 2019 04:01:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=HGCftkSHpKLWELmSFAK/o0qPA0nwcHk8AkL38CX0UA8=;
+ b=KkrrTS1Clu1/ToalKbEGPTeGgoETAQ3joz8xJqvsmRl/kyhvR7hP8TWT+G7kdNygHG
+ cmqq3qdoUmYU1oRmb1P+LCMc0+Fal0R+NzaMrjCUAun6Wud2V36w2hRwbywGU/GRw7vB
+ EUpME2yr6RVyYgroFW9ziBVW+qNJfgQvIO9E0gTtSJukvJQcqw2W++2cpLo9hkL6f0xC
+ PWAFeT8YO0mUj6eWDEIEjVkh+NgzHSLctCDs14JxKyWfeKHRdfc0cq5Rh+1VbnqvBCkX
+ o1tJ21iM6xnmIzZ1oBgULEjaBI/adlliZQv458VEaaaVSWfcX1xenW7weqn+fqx5TY2X
+ Bz6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=HGCftkSHpKLWELmSFAK/o0qPA0nwcHk8AkL38CX0UA8=;
+ b=o2HVtFfshGjaFPtr4ZIOC+WfJbYXUtJcUiCRNfVs0AeFtO9wWH4wJe08Y8ZGGnDyBM
+ jyc5ImnAgEPD41+ObqpuJkvyTJpacvDJYygvNRrEkLnNpS+B8vKSzB9qIvaggM9kqOAh
+ Uln5VqFnZfyslbD2wqCkdGC0LMsBlWmFGKq9rbkr3u9+cOjY7vg8lnHv4v6pCX5qvHWW
+ ZlM1L42UXdIbRJRCRCwD2NuR/GSWuYvh5eCsGGju0NsyPbv/63/8jMn4zwNw+0Am5BB7
+ 3Hl6BBhDdiwdxipeAP0mqZPvoEo1UaJfBaeg9S3lqkBQ+Xho6iAL5AI8dKem2o9/5enW
+ QbCQ==
+X-Gm-Message-State: APjAAAUHznHKBTISmmmDsMb6YAFuv+PXauw7Luxt+RfljaU81b0vvdoR
+ HQLZivmEI+hGhbFxyGFcVj7fBNUXwIMJUQ==
+X-Google-Smtp-Source: APXvYqyPiVk7Saf5lzMmnLLvD5VpZ3bXVkhTXya27VP/rsiz2+NET+l11ahDPVnTAcen3/TtwdPGWA==
+X-Received: by 2002:a1c:ddd6:: with SMTP id u205mr16651562wmg.54.1560250896605; 
+ Tue, 11 Jun 2019 04:01:36 -0700 (PDT)
+Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id u1sm2360393wml.14.2019.06.11.04.01.35
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 11 Jun 2019 04:01:35 -0700 (PDT)
+Subject: Re: [PATCH 1/3] Documentation: dt-bindings: add the Amlogic Meson
+ Temperature Sensor
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Guillaume La Roque <glaroque@baylibre.com>
+References: <20190604144714.2009-1-glaroque@baylibre.com>
+ <20190604144714.2009-2-glaroque@baylibre.com>
+ <CAFBinCBN4QC2tPDEQmTW_c+PP5yu2qoK5M1eSye=SmvpieKWQg@mail.gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <d68aae23-f877-1f65-94a4-79e909ae111a@baylibre.com>
+Date: Tue, 11 Jun 2019 13:01:35 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a071d497-05c9-41e2-919a-08d6ee5c095d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jun 2019 11:00:37.9943 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: aisheng.dong@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5844
+In-Reply-To: <CAFBinCBN4QC2tPDEQmTW_c+PP5yu2qoK5M1eSye=SmvpieKWQg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_040042_464011_68949B7E 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_040138_757431_7DB5E832 
+X-CRM114-Status: GOOD (  24.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.76 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -135,28 +153,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: devicetree@vger.kernel.org, linux-iio@vger.kernel.org, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, jic23@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson.Huang@nxp.com [mailto:Anson.Huang@nxp.com]
-> Sent: Monday, June 10, 2019 10:53 AM
+On 06/06/2019 21:16, Martin Blumenstingl wrote:
+> Hi Guillaume,
 > 
-> NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as system
-> controller, the system controller is in charge of system power, clock and
-> thermal sensors etc. management, Linux kernel has to communicate with
-> system controller via MU (message unit) IPC to get temperature from thermal
-> sensors, this patch adds binding doc for i.MX system controller thermal driver.
+> thank you for working on this!
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
+> On Tue, Jun 4, 2019 at 4:47 PM Guillaume La Roque <glaroque@baylibre.com> wrote:
+>>
+>> This adds the devicetree binding documentation for the Temperature
+>> Sensor found in the Amlogic Meson G12 SoCs.
+>> Currently only the G12A SoCs are supported.
+> so G12B is not supported (yet)?
 
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+G12B is 95% similar as G12A, it will certainly use slighly different values.
 
-Regards
-Dong Aisheng
+> 
+>> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
+>> ---
+>>  .../iio/temperature/amlogic,meson-tsensor.txt | 31 +++++++++++++++++++
+>>  1 file changed, 31 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
+>>
+>> diff --git a/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
+>> new file mode 100644
+>> index 000000000000..d064db0e9cac
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
+>> @@ -0,0 +1,31 @@
+>> +* Amlogic Meson Temperature Sensor
+>> +
+>> +Required properties:
+>> +- compatible:  depending on the SoC and the position of the sensor,
+>> +               this should be one of:
+>> +               - "amlogic,meson-g12a-cpu-tsensor" for the CPU G12A SoC sensor
+>> +               - "amlogic,meson-g12a-ddr-tsensor" for the DDR G12A SoC sensor
+>> +               followed by the common :
+>> +               - "amlogic,meson-g12a-tsensor" for G12A SoC family
+>> +- reg:         the physical base address and length of the registers
+>> +- interrupts:  the interrupt indicating end of sampling
+>> +- clocks:      phandle identifier for the reference clock of temperature sensor
+>> +- #io-channel-cells: must be 1, see ../iio-bindings.txt
+> have you considered using the thermal framework [0] instead of the iio
+> framework (see below)?
+
+Question: why thermal, and not hwmon ? what's the main difference ?
+
+> 
+>> +- amlogic,ao-secure: phandle to the ao-secure syscon
+> the driver has some "u_efuse_off" access. do we need to get some
+> calibration values from the AO syscon or can we also fetch it from the
+> eFuse? you can look at arch/arm/boot/dts/meson8.dtsi where I'm passing
+> the temperature sensor calibration data to the SAR ADC (there's no
+> dedicated temperature sensor IP block prior to G12A) while reading the
+> data from the eFuse
+> 
+>> +Optional properties:
+>> +- amlogic,critical-temperature: temperature value in milli degrees Celsius
+>> +       to set automatic reboot on too high temperature
+> as far as I can tell the thermal framework supports multiple trip
+> points. I'm seeing this as a benefit because the hardware can raise
+> interrupts at four different temperatures (defined by the driver)
+
+Theoretically, but the implementation code differs a lot from the datasheet.
+
+> 
+>> +Example:
+>> +       cpu_temp: temperature-sensor@ff634800 {
+>> +               compatible = "amlogic,meson-g12a-cpu-tsensor",
+>> +                            "amlogic,meson-g12a-tsensor";
+>> +               reg = <0x0 0xff634800 0x0 0x50>;
+>> +               interrupts = <GIC_SPI 35 IRQ_TYPE_EDGE_RISING>;
+>> +               clocks = <&clkc CLKID_TS>;
+>> +               status = "okay";
+> as far as I know the dt-bindings should not have a status property in
+> the examples
+> 
+> 
+> Martin
+> 
+> _______________________________________________
+> linux-amlogic mailing list
+> linux-amlogic@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-amlogic
+> 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
