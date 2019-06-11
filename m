@@ -2,62 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47FF43D2F2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 18:48:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3D583D2F4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 18:49:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:References:In-Reply-To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gj4MPZSnrtJj35a4RUiGTj3gEsLZY22WgKGFy6ZYhhM=; b=AB/Z7uCkbFadql
-	Gun9eQgUdkW+xVU/nR1SNPs95/6kAGKNt2nZWLRF7oDZQBCQPluwFPezOOLoMqgvU64AKqQcDDqqT
-	F5rbUBJtsxREqcs5swIlMH9xR4ZjsJbS03Z8Pe56A4tQVYr6mSjx0Sh6KBnd9YozLzgbYWKeaAmJ8
-	Bi3w4z2Wcut0cl7cH/j5KtaIqAgOIT98YqAzznKlkZqxVstAMmYQKFfAaw3b2MBpChkemYMKsU/gf
-	zWQ3/2RIBllW/jmt4uF749kTYYFO+ToFerRr31yAn6kdTFkk1ESkyZYG5sK82yrGChwRZyue1q77c
-	Hf5eeDrEB2dxmObZaYsw==;
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=phOgSc+4W0kry7U1MIdTSQ4FW1P1A8SaSbS0VofYuz4=; b=pog6JgaDzdJQoU
+	hkJtO8TxUt5T2JBNBxffNTi12QY+foOv0yHW41esbaKHZE2cdoaHPxYgCczL6RiI36wUnY8jjiDUk
+	TXe0xdIX6pagHqkMBa87SA4YV3Q4BXNy8Xa1Z3/pPyxo/n2yW2ea6mu+M5BYkC2ZK283Ay6zSgyne
+	l4AA7h7QOIW0eDSu9NAgunUGeiJqz5N72PUoXJCgGe9Z7vZGYnlrwFCMSGRUrcfUsW3nJXT1fCsm9
+	1XlKRZ56PJArovf5kBL18rM+UzhLbS/gjZkwmgiV+ifkQnNcPbmdm6kwHzSU37EgtgpDrcJI4y1BP
+	w3LXtr0DFDOWkblxkDFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hajwz-0001Yw-EZ; Tue, 11 Jun 2019 16:48:45 +0000
+	id 1hajxH-0001p5-Ei; Tue, 11 Jun 2019 16:49:03 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hajvi-0000bN-MU
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 16:47:28 +0000
+ id 1hajwf-0001Rl-Gj
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 16:48:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:To:From:References:In-Reply-To
- :Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ Content-Transfer-Encoding:MIME-Version:Subject:To:From:Reply-To:Cc:Content-ID
+ :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
+ Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=fuWP8KIPU1y+fTRas4cU4hh0TWX1KLczQSZzU0tPKno=; b=vIrW43b3XmXhQ56nxTa7PBVJI1
- /ywr19IEstfuboHbKQvt6OAUd88v9kLgy8qnTZFWL1npyLAf9pk/x8Eb48MUb4FFh1cbyMOP7ZICE
- gHsWrZ91lS+awykO/ONVWDW63yfLbMYf9DGekSfGKTCq0S/H3CfhZ/tc+htqDNbMPcuTU4/xKtYCN
- /zVPhGF47+4bzUHmVqC8BZ0popza3B38uwieMlGiT2i0eC0shlpfYpWcq9jz4Z6k4YUOBk+YZmyMl
- je6J69gDlCUu6oSMzvOLUsC/ZT27jXH11Aa8l50/1OLoicQhOnjxO0AaA7sswLcm02S/uTFqAypxF
- pVKrGCSw==;
+ bh=IdZ8MhLjTQ3+GmMDTWNfRq37QvDLfsqCS7lnrzKdDxw=; b=rOHlwKZfvwMPWkj197Y71Ok63g
+ enp+nSpl5Ht+HL5Trdje8qlYfKzR0HOrDg6Q7jBKhPYnmd892qyAX9HovGQiFUqk6Y43mboza36/9
+ mj+cZNruqD/H120hC7J2Fj12iO7KzI1kGzglFfpKZrTYFyY36IzaCbU/ruTlXgcWfgT9+vU6etpTk
+ bfmZgNN6oT/nTZI+RTvGO0ziXeXlAichK0cDhywNj9X3EppzIhSR21G6Y5ocXVf28GCvlQLkgVbXp
+ wT/YbCQ7LMpl6odexl2KnznYavNUcnL8CKWFXBrdbjSxafleJj0Ms/qCESuCwpd+0kHeHjmAYJp7c
+ zEVYtvgg==;
 Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2002:4e20:1eda:1:222:68ff:fe15:37dd]:36664 helo=rmk-PC.armlinux.org.uk)
+ ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:55468 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1hajvc-0006s1-RY; Tue, 11 Jun 2019 17:47:20 +0100
+ id 1hajwZ-0006sl-9Q; Tue, 11 Jun 2019 17:48:19 +0100
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
  4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
- id 1hajvb-00037n-KA; Tue, 11 Jun 2019 17:47:19 +0100
-In-Reply-To: <20190611164634.lojmqu3ojfteeyet@shell.armlinux.org.uk>
-References: <20190611164634.lojmqu3ojfteeyet@shell.armlinux.org.uk>
+ id 1hajwY-0003Aj-OD; Tue, 11 Jun 2019 17:48:18 +0100
 From: Russell King <rmk+kernel@armlinux.org.uk>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/5] ARM: riscpc: enable chained scatterlist support
+To: linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] i2c: acorn: fix i2c warning
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1hajvb-00037n-KA@rmk-PC.armlinux.org.uk>
-Date: Tue, 11 Jun 2019 17:47:19 +0100
+Message-Id: <E1hajwY-0003Aj-OD@rmk-PC.armlinux.org.uk>
+Date: Tue, 11 Jun 2019 17:48:18 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_094726_840063_9E4D9B7E 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_094825_602365_43F2DEDC 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -91,26 +88,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There's no reason why we can't enable chained scatterlist for RiscPC,
-we already support chained scatterlists in the IOMD DMA support code.
+The Acorn i2c driver (for RiscPC) triggers the "i2c adapter has no name"
+warning in the I2C core driver, resulting in the RTC being inaccessible.
+Fix this.
 
+Fixes: 2236baa75f70 ("i2c: Sanity checks on adapter registration")
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- arch/arm/Kconfig | 1 +
+ drivers/i2c/busses/i2c-acorn.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 08a4915a69d2..e94619684a82 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -528,6 +528,7 @@ config ARCH_RPC
- 	select ARCH_ACORN
- 	select ARCH_MAY_HAVE_PC_FDC
- 	select ARCH_SPARSEMEM_ENABLE
-+	select ARM_HAS_SG_CHAIN
- 	select CPU_SA110
- 	select FIQ
- 	select HAVE_IDE
+diff --git a/drivers/i2c/busses/i2c-acorn.c b/drivers/i2c/busses/i2c-acorn.c
+index f4a5ae69bf6a..fa3763e4b3ee 100644
+--- a/drivers/i2c/busses/i2c-acorn.c
++++ b/drivers/i2c/busses/i2c-acorn.c
+@@ -81,6 +81,7 @@ static struct i2c_algo_bit_data ioc_data = {
+ 
+ static struct i2c_adapter ioc_ops = {
+ 	.nr			= 0,
++	.name			= "ioc",
+ 	.algo_data		= &ioc_data,
+ };
+ 
 -- 
 2.7.4
 
