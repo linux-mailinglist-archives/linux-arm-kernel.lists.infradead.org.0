@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7AF83D443
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:32:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB77A3D44B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:34:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+rprnQS48va9rvg/GLKHzVdr4ozYvHvAxH0XI7RWEV0=; b=qpNA2buz7BFksF
-	iY9qtu87XQcEgsZs0eWep6lxVs7lIua7uRUGP3IDeg3SEO/7qNkew3pBK9CUHu3IfrvT1PjgZpLEl
-	4UQSKywpDKSyh3XDOIDWy8VdfDiARpO6QRCL3d3z/i1+Ptc9zXfMrG0DCiqHcELI6F5P6IoGTq4yx
-	cki3IyKtVHU0JtyaihpZpn/EwR9aq4VKUiLjpC6ZP9hg8gQViXRyjLi8GDF6DKWanI2tR82Jdv+PT
-	Tu68iRJa8L+JwbfxcQ+e2t5/NZCAVGU3jDPkqcNHeR7J7/8C9liTyzNEbhv7J0egLVY7LZ1R6am+e
-	i9PEy2x6XkUKMDV5Yn8g==;
+	List-Owner; bh=hUw/jxxKmdqhdGYSnQh2U6tKhYhj+JJ2Og/VYmjqdxQ=; b=HLMOUmO9Z5Czlq
+	55d+7EkJEX24wBBECatdWiaxgHgZCC+PBPgDUZhioNIprsZVbJl463+JutFDkZHfYfNrkxTmEecDD
+	dUejdF141hanoL6nSfTZ+ERxFCNRIDtSxHf1bcEzyGcrWfO4mzESb9OOpT4HO2C+1LNF2ywOLbX4h
+	7TpEm3KX359IfkdZ/QKViPwUt56/Hxypz1l7WFS4aep/jL7G1VM27wiHBRfovGuFpGszFmwbfrHE2
+	Nfjbf7uq4haBVUqxsileG75YenMlUc86PGkAcTE5NWiRJSfaGPrYpPzi6fHH9e3799MYX2WKiXufR
+	eR9hZziTNOafhf614qBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakdZ-0001Vo-5a; Tue, 11 Jun 2019 17:32:45 +0000
-Received: from mail-eopbgr740044.outbound.protection.outlook.com
- ([40.107.74.44] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+	id 1haken-0002WU-57; Tue, 11 Jun 2019 17:34:01 +0000
+Received: from mail-eopbgr710060.outbound.protection.outlook.com
+ ([40.107.71.60] helo=NAM05-BY2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hakar-0006hP-2D
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:30:01 +0000
+ id 1hakaw-0006m9-4U
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:30:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hqSg3uwfEeJT4i0tUuoppYKyv4p61NDtIEiq6slG/90=;
- b=VhFhVRszy+xfQtGh8g/9X5Sjp4hfHLEY8QTBNKN0Zj37lDCqKaL/MRdR0FQr8NwOeMAYcWzlCs+eGyO7JpXWUOZmDMXqk+O8yK8aONNfvUbi7/4zDQ9c9mwaolaSI15nuSbVAtHYilCnmdaF4UjWvNsl4nQjuPROosOc8s1nnuE=
+ bh=Ni2pMQlbbSch/fYIupMUfohMs/GLrUKvtYqUZZB6lhc=;
+ b=nqcRHJUpSRkPyUCUovk77OgkGp3U5B18cCam0Kxj/vJrrLaKbRceDtl8n9tOsa+uTCoCFvM8EOucOes1hzUKyIeCqUiBvpjNPO/oLRmFzjQ4dAoPlBlCYS7iOkvvlZ3IUZHACD5uMquxPlHnxywSxgutfhHEsJxJTf0Q+HoSQUo=
 Received: from BL0PR02CA0083.namprd02.prod.outlook.com (2603:10b6:208:51::24)
- by BN6PR02MB2676.namprd02.prod.outlook.com (2603:10b6:404:fa::14)
+ by BL0PR02MB4932.namprd02.prod.outlook.com (2603:10b6:208:53::29)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1987.11; Tue, 11 Jun
- 2019 17:29:54 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.17; Tue, 11 Jun
+ 2019 17:29:59 +0000
 Received: from SN1NAM02FT009.eop-nam02.prod.protection.outlook.com
  (2a01:111:f400:7e44::208) by BL0PR02CA0083.outlook.office365.com
  (2603:10b6:208:51::24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1965.14 via Frontend
- Transport; Tue, 11 Jun 2019 17:29:54 +0000
+ Transport; Tue, 11 Jun 2019 17:29:59 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.80.198)
  smtp.mailfrom=xilinx.com; arndb.de; dkim=none (message not signed)
  header.d=none;arndb.de; dmarc=bestguesspass action=none
@@ -49,7 +49,7 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
 Received: from xir-pvapexch01.xlnx.xilinx.com (149.199.80.198) by
  SN1NAM02FT009.mail.protection.outlook.com (10.152.73.32) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.1965.12 via Frontend Transport; Tue, 11 Jun 2019 17:29:54 +0000
+ 15.20.1965.12 via Frontend Transport; Tue, 11 Jun 2019 17:29:58 +0000
 Received: from xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) by
  xir-pvapexch01.xlnx.xilinx.com (172.21.17.15) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
@@ -60,14 +60,14 @@ Received: from smtp.xilinx.com (172.21.105.198) by
 Received: from [149.199.110.15] (port=50346 helo=xirdraganc40.xilinx.com)
  by smtp.xilinx.com with esmtp (Exim 4.90)
  (envelope-from <dragan.cvetic@xilinx.com>)
- id 1hakai-0002MF-OG; Tue, 11 Jun 2019 18:29:48 +0100
+ id 1hakai-0002MF-PK; Tue, 11 Jun 2019 18:29:48 +0100
 From: Dragan Cvetic <dragan.cvetic@xilinx.com>
 To: <arnd@arndb.de>, <gregkh@linuxfoundation.org>, <michal.simek@xilinx.com>, 
  <linux-arm-kernel@lists.infradead.org>, <robh+dt@kernel.org>,
  <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
-Subject: [PATCH V7 05/11] misc: xilinx_sdfec: Add ability to configure turbo
-Date: Tue, 11 Jun 2019 18:29:39 +0100
-Message-ID: <1560274185-264438-6-git-send-email-dragan.cvetic@xilinx.com>
+Subject: [PATCH V7 06/11] misc: xilinx_sdfec: Add ability to configure LDPC
+Date: Tue, 11 Jun 2019 18:29:40 +0100
+Message-ID: <1560274185-264438-7-git-send-email-dragan.cvetic@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
 References: <1560274185-264438-1-git-send-email-dragan.cvetic@xilinx.com>
@@ -76,39 +76,39 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.80.198; IPV:CAL; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(136003)(376002)(396003)(346002)(39850400004)(2980300002)(189003)(199004)(54906003)(36906005)(26005)(14444005)(316002)(106002)(70586007)(4326008)(478600001)(110136005)(16586007)(26826003)(6666004)(70206006)(36756003)(76130400001)(476003)(28376004)(76176011)(486006)(2201001)(107886003)(126002)(7696005)(51416003)(47776003)(44832011)(50466002)(446003)(8676002)(246002)(9786002)(305945005)(2616005)(11346002)(956004)(60926002)(426003)(336012)(5660300002)(48376002)(356004)(50226002)(186003)(8936002)(2906002)(7636002)(71366001)(102446001)(461764006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN6PR02MB2676; H:xir-pvapexch01.xlnx.xilinx.com;
- FPR:; SPF:Pass; LANG:en; PTR:unknown-80-198.xilinx.com; MX:1; A:1; 
+ SFS:(10009020)(39860400002)(136003)(346002)(396003)(376002)(2980300002)(199004)(189003)(426003)(486006)(7636002)(476003)(70586007)(70206006)(11346002)(305945005)(28376004)(107886003)(956004)(126002)(246002)(8676002)(50226002)(446003)(8936002)(44832011)(336012)(2616005)(9786002)(16586007)(316002)(36756003)(110136005)(54906003)(106002)(186003)(76176011)(2906002)(51416003)(7696005)(71366001)(26005)(26826003)(47776003)(60926002)(50466002)(6666004)(356004)(30864003)(14444005)(5660300002)(2201001)(478600001)(48376002)(76130400001)(4326008)(102446001)(461764006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4932; H:xir-pvapexch01.xlnx.xilinx.com;
+ FPR:; SPF:Pass; LANG:en; PTR:unknown-80-198.xilinx.com; A:1; MX:1; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 44ad6735-62ba-44fc-1f92-08d6ee926ace
+X-MS-Office365-Filtering-Correlation-Id: ef28973a-8a6e-4c1c-0216-08d6ee926d36
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
- SRVR:BN6PR02MB2676; 
-X-MS-TrafficTypeDiagnostic: BN6PR02MB2676:
+ SRVR:BL0PR02MB4932; 
+X-MS-TrafficTypeDiagnostic: BL0PR02MB4932:
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-Microsoft-Antispam-PRVS: <BN6PR02MB26764D79B31FB3CD0ECDB1ACCBED0@BN6PR02MB2676.namprd02.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-Microsoft-Antispam-PRVS: <BL0PR02MB4932CA6C6D5180E7C06DF57DCBED0@BL0PR02MB4932.namprd02.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1923;
 X-Forefront-PRVS: 006546F32A
 X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: Hj4a7PZ7ly6W6H0cpSI3aqU5dhA+5+4T5gaKl9kKol9MgcFUcuvzv44VXrq/j5jU2L0Rv/ru2BVUwIGqOKFJ/gQ/G6GAz//lseIlSEwAzMAHeueDGRIVSBYdcEzvNx7zCIVFl9IpKqrcvaGso5T2f6lQgc1CUkACNkZexiGVifCXRfSVL2MjDPVN8HXG55Cwsmxb911Kzc8rVPqJlWLHKSVmOjXkHJQpHrHwVw4MECv8SpEWDx9I4psggKwnXfDeyDcXXZUDg9VRi075EJ9Xu5nEZeZLOHqTukjKVt1/YZVGsR5csqbNRM0iMX1Jvxf/WbcvYaf5OhXyeDV04jFfITFLMMx6JeOTFtFdZd0m9vw45iGUOLlDVS2kYYULtKSjs0NE5kZHPq8b2K66SDuDQ8lWg+s9qaf78t2TluU+ITY=
+X-Microsoft-Antispam-Message-Info: nxHvqitUXJF9VsTT9hfLhy9cvOHv5UVGRA5xZjil7rbPY8Sh3wvI/G4T6w/V3lEpZjL7RxOaHhq6znBM+CeL7Cc4QZiwrRX9H+SSiZ8HdrNZ1o16p38LkHsExi1Ca5wkQR40iX/1ybbRjzHclXxyVbCX/qtFa/q6waK3LdpBB9iYAcTzYLuLV0s6POwsedN1I9zyo27QAhFMLU97gz50GRaqpyr707h5QA7jUteDICpU+9Mba4HKT4o/+9sEwNPtPtbUY7BSHgasCLqrykqLjh3PCDxfyBPWcj43u8Ot7VfbvudjXH0KbMD/k+38MAa2zxyVq+fb/wlHXgaCrLbaYO2WNus1xFoLZcavZoddOY5xoshTTHixRTP3PBWdNL1w+kisXEKnNNR/fxSwYKe6qUQlaghEgbrGP7oER4eQTmg=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2019 17:29:54.0290 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 44ad6735-62ba-44fc-1f92-08d6ee926ace
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2019 17:29:58.0632 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ef28973a-8a6e-4c1c-0216-08d6ee926d36
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.80.198];
  Helo=[xir-pvapexch01.xlnx.xilinx.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2676
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4932
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_102957_144540_C2621D36 
-X-CRM114-Status: GOOD (  16.20  )
+X-CRM114-CacheID: sfid-20190611_103002_702721_50C939B8 
+X-CRM114-Status: GOOD (  16.15  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.74.44 listed in list.dnswl.org]
+ no trust [40.107.71.60 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -132,257 +132,503 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the capability to configure and retrieve turbo mode
-via the ioctls XSDFEC_SET_TURBO and XSDFEC_GET_TURBO.
-Add char device interface per DT node present and support
-file operations:
-- open(),
-- close(),
-- unlocked_ioctl(),
-- compat_ioctl().
+Add the capability to configure LDPC mode via the ioctl
+XSDFEC_ADD_LDPC_CODE_PARAMS.
 
 Tested-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 Signed-off-by: Derek Kiernan <derek.kiernan@xilinx.com>
 Signed-off-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 ---
- drivers/misc/xilinx_sdfec.c      | 110 +++++++++++++++++++++++++++++++++++++++
- include/uapi/misc/xilinx_sdfec.h |  67 ++++++++++++++++++++++++
- 2 files changed, 177 insertions(+)
+ drivers/misc/xilinx_sdfec.c      | 324 +++++++++++++++++++++++++++++++++++++++
+ include/uapi/misc/xilinx_sdfec.h |  98 ++++++++++++
+ 2 files changed, 422 insertions(+)
 
 diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-index 3b031c6..37107dd 100644
+index 37107dd..b2b16771 100644
 --- a/drivers/misc/xilinx_sdfec.c
 +++ b/drivers/misc/xilinx_sdfec.c
-@@ -19,6 +19,7 @@
- #include <linux/poll.h>
+@@ -20,6 +20,7 @@
  #include <linux/slab.h>
  #include <linux/clk.h>
-+#include <linux/compat.h>
+ #include <linux/compat.h>
++#include <linux/highmem.h>
  
  #include <uapi/misc/xilinx_sdfec.h>
  
-@@ -106,6 +107,12 @@ static struct mutex dev_idr_lock;
- /* BYPASS Register */
- #define XSDFEC_BYPASS_ADDR (0x3C)
+@@ -113,6 +114,57 @@ static struct mutex dev_idr_lock;
+ #define XSDFEC_TURBO_SCALE_BIT_POS (8)
+ #define XSDFEC_TURBO_SCALE_MAX (15)
  
-+/* Turbo Code Register */
-+#define XSDFEC_TURBO_ADDR (0x100)
-+#define XSDFEC_TURBO_SCALE_MASK (0xFFF)
-+#define XSDFEC_TURBO_SCALE_BIT_POS (8)
-+#define XSDFEC_TURBO_SCALE_MAX (15)
++/* REG0 Register */
++#define XSDFEC_LDPC_CODE_REG0_ADDR_BASE (0x2000)
++#define XSDFEC_LDPC_CODE_REG0_ADDR_HIGH (0x27F0)
++#define XSDFEC_REG0_N_MIN (4)
++#define XSDFEC_REG0_N_MAX (32768)
++#define XSDFEC_REG0_N_MUL_P (256)
++#define XSDFEC_REG0_N_LSB (0)
++#define XSDFEC_REG0_K_MIN (2)
++#define XSDFEC_REG0_K_MAX (32766)
++#define XSDFEC_REG0_K_MUL_P (256)
++#define XSDFEC_REG0_K_LSB (16)
++
++/* REG1 Register */
++#define XSDFEC_LDPC_CODE_REG1_ADDR_BASE (0x2004)
++#define XSDFEC_LDPC_CODE_REG1_ADDR_HIGH (0x27f4)
++#define XSDFEC_REG1_PSIZE_MIN (2)
++#define XSDFEC_REG1_PSIZE_MAX (512)
++#define XSDFEC_REG1_NO_PACKING_MASK (0x400)
++#define XSDFEC_REG1_NO_PACKING_LSB (10)
++#define XSDFEC_REG1_NM_MASK (0xFF800)
++#define XSDFEC_REG1_NM_LSB (11)
++#define XSDFEC_REG1_BYPASS_MASK (0x100000)
++
++/* REG2 Register */
++#define XSDFEC_LDPC_CODE_REG2_ADDR_BASE (0x2008)
++#define XSDFEC_LDPC_CODE_REG2_ADDR_HIGH (0x27f8)
++#define XSDFEC_REG2_NLAYERS_MIN (1)
++#define XSDFEC_REG2_NLAYERS_MAX (256)
++#define XSDFEC_REG2_NNMQC_MASK (0xFFE00)
++#define XSDFEC_REG2_NMQC_LSB (9)
++#define XSDFEC_REG2_NORM_TYPE_MASK (0x100000)
++#define XSDFEC_REG2_NORM_TYPE_LSB (20)
++#define XSDFEC_REG2_SPECIAL_QC_MASK (0x200000)
++#define XSDFEC_REG2_SPEICAL_QC_LSB (21)
++#define XSDFEC_REG2_NO_FINAL_PARITY_MASK (0x400000)
++#define XSDFEC_REG2_NO_FINAL_PARITY_LSB (22)
++#define XSDFEC_REG2_MAX_SCHEDULE_MASK (0x1800000)
++#define XSDFEC_REG2_MAX_SCHEDULE_LSB (23)
++
++/* REG3 Register */
++#define XSDFEC_LDPC_CODE_REG3_ADDR_BASE (0x200C)
++#define XSDFEC_LDPC_CODE_REG3_ADDR_HIGH (0x27FC)
++#define XSDFEC_REG3_LA_OFF_LSB (8)
++#define XSDFEC_REG3_QC_OFF_LSB (16)
++
++#define XSDFEC_LDPC_REG_JUMP (0x10)
++#define XSDFEC_REG_WIDTH_JUMP (4)
++
++/* The maximum number of pinned pages */
++#define MAX_NUM_PAGES ((XSDFEC_QC_TABLE_DEPTH / PAGE_SIZE) + 1)
 +
  /**
   * struct xsdfec_clks - For managing SD-FEC clocks
   * @core_clk: Main processing clock for core
-@@ -214,6 +221,55 @@ static void update_config_from_hw(struct xsdfec_dev *xsdfec)
- 		xsdfec->state = XSDFEC_STOPPED;
+@@ -270,6 +322,275 @@ static int xsdfec_get_turbo(struct xsdfec_dev *xsdfec, void __user *arg)
+ 	return err;
  }
  
-+static int xsdfec_set_turbo(struct xsdfec_dev *xsdfec, void __user *arg)
++static int xsdfec_reg0_write(struct xsdfec_dev *xsdfec, u32 n, u32 k, u32 psize,
++			     u32 offset)
 +{
-+	struct xsdfec_turbo turbo;
-+	int err;
-+	u32 turbo_write;
++	u32 wdata;
 +
-+	err = copy_from_user(&turbo, arg, sizeof(turbo));
-+	if (err)
-+		return -EFAULT;
-+
-+	if (turbo.alg >= XSDFEC_TURBO_ALG_MAX)
++	if (n < XSDFEC_REG0_N_MIN || n > XSDFEC_REG0_N_MAX ||
++	    (n > XSDFEC_REG0_N_MUL_P * psize) || n <= k || ((n % psize) != 0)) {
++		dev_dbg(xsdfec->dev, "N value is not in range");
 +		return -EINVAL;
++	}
++	n <<= XSDFEC_REG0_N_LSB;
 +
-+	if (turbo.scale > XSDFEC_TURBO_SCALE_MAX)
++	if (k < XSDFEC_REG0_K_MIN || k > XSDFEC_REG0_K_MAX ||
++	    (k > XSDFEC_REG0_K_MUL_P * psize) || ((k % psize) != 0)) {
++		dev_dbg(xsdfec->dev, "K value is not in range");
 +		return -EINVAL;
++	}
++	k = k << XSDFEC_REG0_K_LSB;
++	wdata = k | n;
 +
-+	/* Check to see what device tree says about the FEC codes */
-+	if (xsdfec->config.code == XSDFEC_LDPC_CODE)
-+		return -EIO;
-+
-+	turbo_write = ((turbo.scale & XSDFEC_TURBO_SCALE_MASK)
-+		       << XSDFEC_TURBO_SCALE_BIT_POS) |
-+		      turbo.alg;
-+	xsdfec_regwrite(xsdfec, XSDFEC_TURBO_ADDR, turbo_write);
-+	return err;
++	if (XSDFEC_LDPC_CODE_REG0_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
++	    XSDFEC_LDPC_CODE_REG0_ADDR_HIGH) {
++		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg0 space 0x%x",
++			XSDFEC_LDPC_CODE_REG0_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP));
++		return -EINVAL;
++	}
++	xsdfec_regwrite(xsdfec,
++			XSDFEC_LDPC_CODE_REG0_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP),
++			wdata);
++	return 0;
 +}
 +
-+static int xsdfec_get_turbo(struct xsdfec_dev *xsdfec, void __user *arg)
++static int xsdfec_reg1_write(struct xsdfec_dev *xsdfec, u32 psize,
++			     u32 no_packing, u32 nm, u32 offset)
 +{
-+	u32 reg_value;
-+	struct xsdfec_turbo turbo_params;
-+	int err;
++	u32 wdata;
 +
-+	if (xsdfec->config.code == XSDFEC_LDPC_CODE)
-+		return -EIO;
++	if (psize < XSDFEC_REG1_PSIZE_MIN || psize > XSDFEC_REG1_PSIZE_MAX) {
++		dev_dbg(xsdfec->dev, "Psize is not in range");
++		return -EINVAL;
++	}
 +
-+	reg_value = xsdfec_regread(xsdfec, XSDFEC_TURBO_ADDR);
++	if (no_packing != 0 && no_packing != 1)
++		dev_dbg(xsdfec->dev, "No-packing bit register invalid");
++	no_packing = ((no_packing << XSDFEC_REG1_NO_PACKING_LSB) &
++		      XSDFEC_REG1_NO_PACKING_MASK);
 +
-+	turbo_params.scale = (reg_value & XSDFEC_TURBO_SCALE_MASK) >>
-+			     XSDFEC_TURBO_SCALE_BIT_POS;
-+	turbo_params.alg = reg_value & 0x1;
++	if (nm & ~(XSDFEC_REG1_NM_MASK >> XSDFEC_REG1_NM_LSB))
++		dev_dbg(xsdfec->dev, "NM is beyond 10 bits");
++	nm = (nm << XSDFEC_REG1_NM_LSB) & XSDFEC_REG1_NM_MASK;
 +
-+	err = copy_to_user(arg, &turbo_params, sizeof(turbo_params));
-+	if (err)
-+		err = -EFAULT;
++	wdata = nm | no_packing | psize;
++	if (XSDFEC_LDPC_CODE_REG1_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
++	    XSDFEC_LDPC_CODE_REG1_ADDR_HIGH) {
++		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg1 space 0x%x",
++			XSDFEC_LDPC_CODE_REG1_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP));
++		return -EINVAL;
++	}
++	xsdfec_regwrite(xsdfec,
++			XSDFEC_LDPC_CODE_REG1_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP),
++			wdata);
++	return 0;
++}
 +
-+	return err;
++static int xsdfec_reg2_write(struct xsdfec_dev *xsdfec, u32 nlayers, u32 nmqc,
++			     u32 norm_type, u32 special_qc, u32 no_final_parity,
++			     u32 max_schedule, u32 offset)
++{
++	u32 wdata;
++
++	if (nlayers < XSDFEC_REG2_NLAYERS_MIN ||
++	    nlayers > XSDFEC_REG2_NLAYERS_MAX) {
++		dev_dbg(xsdfec->dev, "Nlayers is not in range");
++		return -EINVAL;
++	}
++
++	if (nmqc & ~(XSDFEC_REG2_NNMQC_MASK >> XSDFEC_REG2_NMQC_LSB))
++		dev_dbg(xsdfec->dev, "NMQC exceeds 11 bits");
++	nmqc = (nmqc << XSDFEC_REG2_NMQC_LSB) & XSDFEC_REG2_NNMQC_MASK;
++
++	if (norm_type > 1)
++		dev_dbg(xsdfec->dev, "Norm type is invalid");
++	norm_type = ((norm_type << XSDFEC_REG2_NORM_TYPE_LSB) &
++		     XSDFEC_REG2_NORM_TYPE_MASK);
++	if (special_qc > 1)
++		dev_dbg(xsdfec->dev, "Special QC in invalid");
++	special_qc = ((special_qc << XSDFEC_REG2_SPEICAL_QC_LSB) &
++		      XSDFEC_REG2_SPECIAL_QC_MASK);
++
++	if (no_final_parity > 1)
++		dev_dbg(xsdfec->dev, "No final parity check invalid");
++	no_final_parity =
++		((no_final_parity << XSDFEC_REG2_NO_FINAL_PARITY_LSB) &
++		 XSDFEC_REG2_NO_FINAL_PARITY_MASK);
++	if (max_schedule &
++	    ~(XSDFEC_REG2_MAX_SCHEDULE_MASK >> XSDFEC_REG2_MAX_SCHEDULE_LSB))
++		dev_dbg(xsdfec->dev, "Max Schdule exceeds 2 bits");
++	max_schedule = ((max_schedule << XSDFEC_REG2_MAX_SCHEDULE_LSB) &
++			XSDFEC_REG2_MAX_SCHEDULE_MASK);
++
++	wdata = (max_schedule | no_final_parity | special_qc | norm_type |
++		 nmqc | nlayers);
++
++	if (XSDFEC_LDPC_CODE_REG2_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
++	    XSDFEC_LDPC_CODE_REG2_ADDR_HIGH) {
++		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg2 space 0x%x",
++			XSDFEC_LDPC_CODE_REG2_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP));
++		return -EINVAL;
++	}
++	xsdfec_regwrite(xsdfec,
++			XSDFEC_LDPC_CODE_REG2_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP),
++			wdata);
++	return 0;
++}
++
++static int xsdfec_reg3_write(struct xsdfec_dev *xsdfec, u8 sc_off, u8 la_off,
++			     u16 qc_off, u32 offset)
++{
++	u32 wdata;
++
++	wdata = ((qc_off << XSDFEC_REG3_QC_OFF_LSB) |
++		 (la_off << XSDFEC_REG3_LA_OFF_LSB) | sc_off);
++	if (XSDFEC_LDPC_CODE_REG3_ADDR_BASE + (offset * XSDFEC_LDPC_REG_JUMP) >
++	    XSDFEC_LDPC_CODE_REG3_ADDR_HIGH) {
++		dev_dbg(xsdfec->dev, "Writing outside of LDPC reg3 space 0x%x",
++			XSDFEC_LDPC_CODE_REG3_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP));
++		return -EINVAL;
++	}
++	xsdfec_regwrite(xsdfec,
++			XSDFEC_LDPC_CODE_REG3_ADDR_BASE +
++				(offset * XSDFEC_LDPC_REG_JUMP),
++			wdata);
++	return 0;
++}
++
++static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
++			      u32 *src_ptr, u32 len, const u32 base_addr,
++			      const u32 depth)
++{
++	u32 reg = 0;
++	u32 res;
++	u32 n, i;
++	u32 *addr = NULL;
++	struct page *page[MAX_NUM_PAGES];
++
++	/*
++	 * Writes that go beyond the length of
++	 * Shared Scale(SC) table should fail
++	 */
++	if ((XSDFEC_REG_WIDTH_JUMP * (offset + len)) > depth) {
++		dev_dbg(xsdfec->dev, "Write exceeds SC table length");
++		return -EINVAL;
++	}
++
++	n = (len * XSDFEC_REG_WIDTH_JUMP) / PAGE_SIZE;
++	if ((len * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE)
++		n += 1;
++
++	res = get_user_pages_fast((unsigned long)src_ptr, n, 0, page);
++	if (res < n) {
++		for (i = 0; i < res; i++)
++			put_page(page[i]);
++		return -EINVAL;
++	}
++
++	for (i = 0; i < n; i++) {
++		addr = kmap(page[i]);
++		do {
++			xsdfec_regwrite(xsdfec,
++					base_addr + ((offset + reg) *
++						     XSDFEC_REG_WIDTH_JUMP),
++					addr[reg]);
++			reg++;
++		} while ((reg < len) &&
++			 ((reg * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE));
++		put_page(page[i]);
++	}
++	return reg;
++}
++
++static int xsdfec_add_ldpc(struct xsdfec_dev *xsdfec, void __user *arg)
++{
++	struct xsdfec_ldpc_params *ldpc;
++	int ret, n;
++
++	ldpc = kzalloc(sizeof(*ldpc), GFP_KERNEL);
++	if (!ldpc)
++		return -ENOMEM;
++
++	ret = copy_from_user(ldpc, arg, sizeof(*ldpc));
++	if (ret)
++		goto err_out;
++
++	if (xsdfec->config.code == XSDFEC_TURBO_CODE) {
++		ret = -EIO;
++		goto err_out;
++	}
++
++	/* Verify Device has not started */
++	if (xsdfec->state == XSDFEC_STARTED) {
++		ret = -EIO;
++		goto err_out;
++	}
++
++	if (xsdfec->config.code_wr_protect) {
++		ret = -EIO;
++		goto err_out;
++	}
++
++	/* Write Reg 0 */
++	ret = xsdfec_reg0_write(xsdfec, ldpc->n, ldpc->k, ldpc->psize,
++				ldpc->code_id);
++	if (ret)
++		goto err_out;
++
++	/* Write Reg 1 */
++	ret = xsdfec_reg1_write(xsdfec, ldpc->psize, ldpc->no_packing, ldpc->nm,
++				ldpc->code_id);
++	if (ret)
++		goto err_out;
++
++	/* Write Reg 2 */
++	ret = xsdfec_reg2_write(xsdfec, ldpc->nlayers, ldpc->nmqc,
++				ldpc->norm_type, ldpc->special_qc,
++				ldpc->no_final_parity, ldpc->max_schedule,
++				ldpc->code_id);
++	if (ret)
++		goto err_out;
++
++	/* Write Reg 3 */
++	ret = xsdfec_reg3_write(xsdfec, ldpc->sc_off, ldpc->la_off,
++				ldpc->qc_off, ldpc->code_id);
++	if (ret)
++		goto err_out;
++
++	/* Write Shared Codes */
++	n = ldpc->nlayers / 4;
++	if (ldpc->nlayers % 4)
++		n++;
++
++	ret = xsdfec_table_write(xsdfec, ldpc->sc_off, ldpc->sc_table, n,
++				 XSDFEC_LDPC_SC_TABLE_ADDR_BASE,
++				 XSDFEC_SC_TABLE_DEPTH);
++	if (ret < 0)
++		goto err_out;
++
++	ret = xsdfec_table_write(xsdfec, 4 * ldpc->la_off, ldpc->la_table,
++				 ldpc->nlayers, XSDFEC_LDPC_LA_TABLE_ADDR_BASE,
++				 XSDFEC_LA_TABLE_DEPTH);
++	if (ret < 0)
++		goto err_out;
++
++	ret = xsdfec_table_write(xsdfec, 4 * ldpc->qc_off, ldpc->qc_table,
++				 ldpc->nqc, XSDFEC_LDPC_QC_TABLE_ADDR_BASE,
++				 XSDFEC_QC_TABLE_DEPTH);
++	if (ret > 0)
++		ret = 0;
++err_out:
++	kfree(ldpc);
++	return ret;
 +}
 +
  static u32
  xsdfec_translate_axis_width_cfg_val(enum xsdfec_axis_width axis_width_cfg)
  {
-@@ -277,8 +333,62 @@ static int xsdfec_cfg_axi_streams(struct xsdfec_dev *xsdfec)
- 	return 0;
- }
- 
-+static int xsdfec_dev_open(struct inode *iptr, struct file *fptr)
-+{
-+	return 0;
-+}
-+
-+static int xsdfec_dev_release(struct inode *iptr, struct file *fptr)
-+{
-+	return 0;
-+}
-+
-+static long xsdfec_dev_ioctl(struct file *fptr, unsigned int cmd,
-+			     unsigned long data)
-+{
-+	struct xsdfec_dev *xsdfec;
-+	void __user *arg = NULL;
-+	int rval = -EINVAL;
-+
-+	xsdfec = container_of(fptr->private_data, struct xsdfec_dev, miscdev);
-+
-+	/* check if ioctl argument is present and valid */
-+	if (_IOC_DIR(cmd) != _IOC_NONE) {
-+		arg = (void __user *)data;
-+		if (!arg)
-+			return rval;
-+	}
-+
-+	switch (cmd) {
-+	case XSDFEC_SET_TURBO:
-+		rval = xsdfec_set_turbo(xsdfec, arg);
+@@ -366,6 +687,9 @@ static long xsdfec_dev_ioctl(struct file *fptr, unsigned int cmd,
+ 	case XSDFEC_GET_TURBO:
+ 		rval = xsdfec_get_turbo(xsdfec, arg);
+ 		break;
++	case XSDFEC_ADD_LDPC_CODE_PARAMS:
++		rval = xsdfec_add_ldpc(xsdfec, arg);
 +		break;
-+	case XSDFEC_GET_TURBO:
-+		rval = xsdfec_get_turbo(xsdfec, arg);
-+		break;
-+	default:
-+		/* Should not get here */
-+		break;
-+	}
-+	return rval;
-+}
-+
-+#ifdef CONFIG_COMPAT
-+static long xsdfec_dev_compat_ioctl(struct file *file, unsigned int cmd,
-+				    unsigned long data)
-+{
-+	return xsdfec_dev_ioctl(file, cmd, (unsigned long)compat_ptr(data));
-+}
-+#endif
-+
- static const struct file_operations xsdfec_fops = {
- 	.owner = THIS_MODULE,
-+	.open = xsdfec_dev_open,
-+	.release = xsdfec_dev_release,
-+	.unlocked_ioctl = xsdfec_dev_ioctl,
-+#ifdef CONFIG_COMPAT
-+	.compat_ioctl = xsdfec_dev_compat_ioctl,
-+#endif
- };
- 
- static int xsdfec_parse_of(struct xsdfec_dev *xsdfec)
+ 	default:
+ 		/* Should not get here */
+ 		break;
 diff --git a/include/uapi/misc/xilinx_sdfec.h b/include/uapi/misc/xilinx_sdfec.h
-index aec26b3..8be14cf 100644
+index 8be14cf..7443ed8 100644
 --- a/include/uapi/misc/xilinx_sdfec.h
 +++ b/include/uapi/misc/xilinx_sdfec.h
-@@ -41,6 +41,22 @@ enum xsdfec_order {
+@@ -13,6 +13,22 @@
+ 
+ #include <linux/types.h>
+ 
++/* Shared LDPC Tables */
++#define XSDFEC_LDPC_SC_TABLE_ADDR_BASE (0x10000)
++#define XSDFEC_LDPC_SC_TABLE_ADDR_HIGH (0x10400)
++#define XSDFEC_LDPC_LA_TABLE_ADDR_BASE (0x18000)
++#define XSDFEC_LDPC_LA_TABLE_ADDR_HIGH (0x19000)
++#define XSDFEC_LDPC_QC_TABLE_ADDR_BASE (0x20000)
++#define XSDFEC_LDPC_QC_TABLE_ADDR_HIGH (0x28000)
++
++/* LDPC tables depth */
++#define XSDFEC_SC_TABLE_DEPTH                                                  \
++	(XSDFEC_LDPC_SC_TABLE_ADDR_HIGH - XSDFEC_LDPC_SC_TABLE_ADDR_BASE)
++#define XSDFEC_LA_TABLE_DEPTH                                                  \
++	(XSDFEC_LDPC_LA_TABLE_ADDR_HIGH - XSDFEC_LDPC_LA_TABLE_ADDR_BASE)
++#define XSDFEC_QC_TABLE_DEPTH                                                  \
++	(XSDFEC_LDPC_QC_TABLE_ADDR_HIGH - XSDFEC_LDPC_QC_TABLE_ADDR_BASE)
++
+ /**
+  * enum xsdfec_code - Code Type.
+  * @XSDFEC_TURBO_CODE: Driver is configured for Turbo mode.
+@@ -127,6 +143,53 @@ struct xsdfec_turbo {
  };
  
  /**
-+ * enum xsdfec_turbo_alg - Turbo Algorithm Type.
-+ * @XSDFEC_MAX_SCALE: Max Log-Map algorithm with extrinsic scaling. When
-+ *		      scaling is set to this is equivalent to the Max Log-Map
-+ *		      algorithm.
-+ * @XSDFEC_MAX_STAR: Log-Map algorithm.
-+ * @XSDFEC_TURBO_ALG_MAX: Used to indicate out of bound Turbo algorithms.
++ * struct xsdfec_ldpc_params - User data for LDPC codes.
++ * @n: Number of code word bits
++ * @k: Number of information bits
++ * @psize: Size of sub-matrix
++ * @nlayers: Number of layers in code
++ * @nqc: Quasi Cyclic Number
++ * @nmqc: Number of M-sized QC operations in parity check matrix
++ * @nm: Number of M-size vectors in N
++ * @norm_type: Normalization required or not
++ * @no_packing: Determines if multiple QC ops should be performed
++ * @special_qc: Sub-Matrix property for Circulant weight > 0
++ * @no_final_parity: Decide if final parity check needs to be performed
++ * @max_schedule: Experimental code word scheduling limit
++ * @sc_off: SC offset
++ * @la_off: LA offset
++ * @qc_off: QC offset
++ * @sc_table: Pointer to SC Table which must be page aligned
++ * @la_table: Pointer to LA Table which must be page aligned
++ * @qc_table: Pointer to QC Table which must be page aligned
++ * @code_id: LDPC Code
 + *
-+ * This enum specifies which Turbo Decode algorithm is in use.
++ * This structure describes the LDPC code that is passed to the driver by the
++ * application.
 + */
-+enum xsdfec_turbo_alg {
-+	XSDFEC_MAX_SCALE = 0,
-+	XSDFEC_MAX_STAR,
-+	XSDFEC_TURBO_ALG_MAX,
++struct xsdfec_ldpc_params {
++	__u32 n;
++	__u32 k;
++	__u32 psize;
++	__u32 nlayers;
++	__u32 nqc;
++	__u32 nmqc;
++	__u32 nm;
++	__u32 norm_type;
++	__u32 no_packing;
++	__u32 special_qc;
++	__u32 no_final_parity;
++	__u32 max_schedule;
++	__u32 sc_off;
++	__u32 la_off;
++	__u32 qc_off;
++	__u32 *sc_table;
++	__u32 *la_table;
++	__u32 *qc_table;
++	__u16 code_id;
 +};
 +
 +/**
-  * enum xsdfec_state - State.
-  * @XSDFEC_INIT: Driver is initialized.
-  * @XSDFEC_STARTED: Driver is started.
-@@ -98,6 +114,29 @@ enum xsdfec_axis_word_include {
+  * struct xsdfec_status - Status of SD-FEC core.
+  * @state: State of the SD-FEC core
+  * @activity: Describes if the SD-FEC instance is Active
+@@ -170,6 +233,20 @@ struct xsdfec_config {
+ 	struct xsdfec_irq irq;
  };
  
- /**
-+ * struct xsdfec_turbo - User data for Turbo codes.
-+ * @alg: Specifies which Turbo decode algorithm to use
-+ * @scale: Specifies the extrinsic scaling to apply when the Max Scale algorithm
-+ *	   has been selected
-+ *
-+ * Turbo code structure to communicate parameters to XSDFEC driver.
++/**
++ * struct xsdfec_ldpc_param_table_sizes - Used to store sizes of SD-FEC table
++ *					  entries for an individual LPDC code
++ *					  parameter.
++ * @sc_size: Size of SC table used
++ * @la_size: Size of LA table used
++ * @qc_size: Size of QC table used
 + */
-+struct xsdfec_turbo {
-+	__u32 alg;
-+	__u8 scale;
++struct xsdfec_ldpc_param_table_sizes {
++	__u32 sc_size;
++	__u32 la_size;
++	__u32 qc_size;
 +};
 +
-+/**
-+ * struct xsdfec_status - Status of SD-FEC core.
-+ * @state: State of the SD-FEC core
-+ * @activity: Describes if the SD-FEC instance is Active
-+ */
-+struct xsdfec_status {
-+	__u32 state;
-+	__s8 activity;
-+};
-+
-+/**
-  * struct xsdfec_irq - Enabling or Disabling Interrupts.
-  * @enable_isr: If true enables the ISR
-  * @enable_ecc_isr: If true enables the ECC ISR
-@@ -135,4 +174,32 @@ struct xsdfec_config {
+ /*
   * XSDFEC IOCTL List
   */
- #define XSDFEC_MAGIC 'f'
-+/**
-+ * DOC: XSDFEC_SET_TURBO
+@@ -190,6 +267,27 @@ struct xsdfec_config {
+  */
+ #define XSDFEC_SET_TURBO _IOW(XSDFEC_MAGIC, 4, struct xsdfec_turbo)
+ /**
++ * DOC: XSDFEC_ADD_LDPC_CODE_PARAMS
 + * @Parameters
 + *
-+ * @struct xsdfec_turbo *
-+ *	Pointer to the &struct xsdfec_turbo that contains the Turbo decode
-+ *	settings for the SD-FEC core
++ * @struct xsdfec_ldpc_params *
++ *	Pointer to the &struct xsdfec_ldpc_params that contains the LDPC code
++ *	parameters to be added to the SD-FEC Block
 + *
 + * @Description
++ * ioctl to add an LDPC code to the SD-FEC LDPC codes
 + *
-+ * ioctl that sets the SD-FEC Turbo parameter values
++ * This can only be used when:
 + *
-+ * This can only be used when the driver is in the XSDFEC_STOPPED state
++ * - Driver is in the XSDFEC_STOPPED state
++ *
++ * - SD-FEC core is configured as LPDC
++ *
++ * - SD-FEC Code Write Protection is disabled
 + */
-+#define XSDFEC_SET_TURBO _IOW(XSDFEC_MAGIC, 4, struct xsdfec_turbo)
++#define XSDFEC_ADD_LDPC_CODE_PARAMS                                            \
++	_IOW(XSDFEC_MAGIC, 5, struct xsdfec_ldpc_params)
 +/**
-+ * DOC: XSDFEC_GET_TURBO
-+ * @Parameters
-+ *
-+ * @struct xsdfec_turbo *
-+ *	Pointer to the &struct xsdfec_turbo that contains the current Turbo
-+ *	decode settings of the SD-FEC Block
-+ *
-+ * @Description
-+ *
-+ * ioctl that returns SD-FEC turbo param values
-+ */
-+#define XSDFEC_GET_TURBO _IOR(XSDFEC_MAGIC, 7, struct xsdfec_turbo)
- #endif /* __XILINX_SDFEC_H__ */
+  * DOC: XSDFEC_GET_TURBO
+  * @Parameters
+  *
 -- 
 2.7.4
 
