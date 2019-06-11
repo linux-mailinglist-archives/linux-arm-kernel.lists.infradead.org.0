@@ -2,63 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3531A3D0E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:34:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 153853D0E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:34:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fE3XkpPvgwhajqjZWq/sLF6uZ7bawRlHecMz8BM7fRA=; b=FhscP8dQexdbsk
-	kJ5vfMnRL8QrNXU/kit1Ftugz/u/vAzmBg+RNsXP2j24wfEAhFh/DWfu1hmr95+DINYXHQHizLCjN
-	5/SmMMCLOGieonJy5+OUgbRWSIe673qfpAanAv1koBx2DbZoXe3cjViHqgfpdyy/5Xyih7KWzjfNJ
-	YlFwKBi/hQ68dEGtZt2vQJrfgyQl6BeSx1QxQUfC5gha3KqgS6KL0iYIOETWuLs66t58WXIu0v1To
-	R326+0oEyGrN27/2uMtZSTadvr3kb3bZIQ3WwfW1D97kPCbpsI8T8MxyYfuu0kawwGOYoIZMEiLaa
-	NPJx88dYp6XnGlrx5O2Q==;
+	List-Owner; bh=Jgtg+LvwRiichWv0Pp4B8qzA0ge987U2n5ppEQXs6wQ=; b=m8yZx+J6Dw4Ct/
+	g3p8xy983k1WuHKgdn6ohyyQKGwhgnNzRADqDutMbGeSK9XS96+CoC1REvfSp2WzzeYTtjK80FfLK
+	zKgIlk7FuznjjOrzzi2Zd4gX/YlVrWpN9A8zPLvQvKwZzHBHsLqChsi76AlT54pHmScjhmMTGxkAK
+	52AZ1uskLij1ZlKJ0fJlrOj/CIlqLSgOd6ZIo5rSUXeBkm+lq3Xi8sh9eo4rSF/s/rfaBrRRZc4Vo
+	qawtypA0CqEpqZ2uHE/UzHVFI1IJmFobq40a4V4xL+cS7rh1oqM9dDbeWrvUqsrjijYTxPX/DCtJ2
+	Js8HG82q+KUAxk+vt/PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiml-0003AD-D3; Tue, 11 Jun 2019 15:34:07 +0000
+	id 1hainP-0003WO-QM; Tue, 11 Jun 2019 15:34:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haimZ-00039f-Vs
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:33:57 +0000
-Received: from mail-qt1-f178.google.com (mail-qt1-f178.google.com
- [209.85.160.178])
+ id 1hainD-0003Vm-D6
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:34:36 +0000
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
+ [209.85.160.176])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8B4922175B
+ by mail.kernel.org (Postfix) with ESMTPSA id 06267214AF
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 15:33:55 +0000 (UTC)
+ Tue, 11 Jun 2019 15:34:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560267235;
- bh=/D29hR8xaH+fI3Kqe7nKroDdw+Tyiq+obsj9qSH1T1Y=;
+ s=default; t=1560267275;
+ bh=EIcAIZ/5jQEzsABeTR+aC7PKVrq9xNtOvhCECCAOhjo=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=myT6eu70PDvKi56Pg6USbutKzLV9f4VqqOPSS4yJz2aO1yRgz2F0N0G9gERDVSkqP
- sqdmU6AWKfHaqqH2rxxiqjQOdAX/Z5a0A8ar7LQBV8DJSH75AmsxGicIDHwoBf9ypf
- MxctkGU6B7VPByjcpnw4wd5rnXUP4xDeWMKAkxXY=
-Received: by mail-qt1-f178.google.com with SMTP id 33so6878462qtr.8
+ b=2Ogg9gJ/CYlSDlMcbqVkJHH5oo+Tf0jE47tYWydzdt4mFoTMuYTcuhWE869ebEtb7
+ J1nPQsMEtCCZ27ZQzz0zRxESbZkpv3MdpqfNUNIkRZF9j5M1cjUN7B1Ph6DCLGp7Pq
+ zQNc77IZ4hIAeBoH/G76FhHmgM7u7nC3qJVpyMBk=
+Received: by mail-qt1-f176.google.com with SMTP id j19so15012785qtr.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 08:33:55 -0700 (PDT)
-X-Gm-Message-State: APjAAAUUCCpzl7FfVS8k4wi77b3u1fIW8CY6qFzgmrF8Qvbc8LYwhf1N
- bp1yjUOZAMRw+wv6zOYrLEqzbIyWAFUZAjTULA==
-X-Google-Smtp-Source: APXvYqyPTmUTsnof7sPqxoX0Xap7odWWFNRm5z+QuRuINCRzXktgjnJpHwXSC5zbgDayMd0UUX7EQmT9RghDRo6Zt6s=
-X-Received: by 2002:a05:6214:248:: with SMTP id
- k8mr29780000qvt.200.1560267234626; 
- Tue, 11 Jun 2019 08:33:54 -0700 (PDT)
+ Tue, 11 Jun 2019 08:34:34 -0700 (PDT)
+X-Gm-Message-State: APjAAAWnQI62r+ju0cdRuMZUIBC8R77x56l4DzWKq4AJ/cJXH5q/NAXd
+ jDR3CNrUgVoy0haIHWWpdwJyQI3vvnEvqN/srA==
+X-Google-Smtp-Source: APXvYqxHE0iAyuzqP4GlfYljLhcmiHNIV4RBb1i3p8OE6draWdzReILUB1955qUO5N63UUi+1XWDV8PkRg1hqqwYAPs=
+X-Received: by 2002:aed:3fb0:: with SMTP id s45mr11888081qth.136.1560267274275; 
+ Tue, 11 Jun 2019 08:34:34 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190611090309.7930-1-maxime.ripard@bootlin.com>
- <20190611090309.7930-2-maxime.ripard@bootlin.com>
-In-Reply-To: <20190611090309.7930-2-maxime.ripard@bootlin.com>
+In-Reply-To: <20190611090309.7930-1-maxime.ripard@bootlin.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 11 Jun 2019 09:33:42 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLXFaDsfrzBc6dUwsuBrhWs=w2m-pXjFBdQ_sm685kf2Q@mail.gmail.com>
-Message-ID: <CAL_JsqLXFaDsfrzBc6dUwsuBrhWs=w2m-pXjFBdQ_sm685kf2Q@mail.gmail.com>
-Subject: Re: [PATCH v3 2/2] dt-bindings: i2c: mv64xxx: Add YAML schemas
+Date: Tue, 11 Jun 2019 09:34:22 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqK7F+6W_GGAtkjv-tiou9s1tMDcB+2yshrDqoTU1V65KQ@mail.gmail.com>
+Message-ID: <CAL_JsqK7F+6W_GGAtkjv-tiou9s1tMDcB+2yshrDqoTU1V65KQ@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] dt-bindings: i2c: sun6i-p2wi: Add YAML schemas
 To: Maxime Ripard <maxime.ripard@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_083356_042339_DCFE1D18 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20190611_083435_460731_8694B64E 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -106,17 +104,15 @@ On Tue, Jun 11, 2019 at 3:03 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
 >
 > ---
 >
-> Changes from v2:
->   - Remove the copy/pasted example and use the one we had before
->
-> Changes from v1:
->   - Fix the maintainers
+> Changes from v2
+>   - Remove redundant constraints on address-cells and size-cells
+>   - Fix the example
 > ---
->  .../devicetree/bindings/i2c/i2c-mv64xxx.txt   |  64 ---------
->  .../bindings/i2c/marvell,mv64xxx-i2c.yaml     | 124 ++++++++++++++++++
->  2 files changed, 124 insertions(+), 64 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-mv64xxx.txt
->  create mode 100644 Documentation/devicetree/bindings/i2c/marvell,mv64xxx-i2c.yaml
+>  .../i2c/allwinner,sun6i-a31-p2wi.yaml         | 65 +++++++++++++++++++
+>  .../bindings/i2c/i2c-sun6i-p2wi.txt           | 41 ------------
+>  2 files changed, 65 insertions(+), 41 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/i2c/allwinner,sun6i-a31-p2wi.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-sun6i-p2wi.txt
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
