@@ -2,58 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4726041802
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:20:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C92C04181D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:25:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dNpOlr9++dG36OrGtHh87QtZdJYkXuWNNJhmmlwTcVI=; b=h23W30c0r/JelR
-	mjSHJj3d9VSu0mmskZVCMm2TO9VI/43m/oOB/EmabtTvpQeLPdF0pjzo+kZvSVEvwZ/JqVdR1XZ7b
-	VQj5HmFtDMa54H61rcwy3KN3X9/AsTwR3p3KSRwhkBi+rYY8XJRB6P+qbo9fzRgA+Jx5eWaa0u1SY
-	H0hzEynXn/F24b+XfEuqLKeuH4Xy+dn/yuMONWYoTXXiwyZnVkxYocejLOAIj1tZ0cYMRB8m94LSP
-	DWH6stdt/CtzMvBjAsbpIRQbQdPRmINWpOjTgYKBhD72bDLgkqmYi7lcAQNUIEz80orMevrdzp029
-	Ic3HVCJlOc2GZMD6xQPQ==;
+	List-Owner; bh=Om1md+OXafUTmmQZlOuWlpy06excOxPTSIHdh4LXKJM=; b=ZlRJ0HpZMwfADb
+	XFn3xYpq6CkUuet0s9OeTlycftAPsygSlcZi4aWNltYrptMNj30oPvrkTJUYTzr/Kd2QKhAFYx2M4
+	nImMn1iiFPq82Qakvl66vks/tmQalczX6nhtShq+3SxkdhW7nd/xspI9vuhjMIN/iiLuAXE8rZZrt
+	jFoT0a/roHWrl9laL5MykygSqJUWd9WMRphzllyxXWnXNub0MYnZudRNLVyjYNtsas1fMM99u+krL
+	94copatONVnBnIpihpEe3DQRehVHNZ3Z90OiT8iM1bQcfJ2HzSrWumEGdO1msRoG2CBBalfZz7X/I
+	Hofz29n2DeAeqig+gqXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hap7n-0004Mk-3N; Tue, 11 Jun 2019 22:20:15 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1hapDF-0007em-54; Tue, 11 Jun 2019 22:25:53 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hap7S-0004MN-VD
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:19:56 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5BMJerb020316;
- Tue, 11 Jun 2019 17:19:41 -0500
-Message-ID: <5b5199b008d6c8831175018975f09599081dc5e4.camel@kernel.crashing.org>
-Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
- firmware PCI setup
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Date: Wed, 12 Jun 2019 08:19:40 +1000
-In-Reply-To: <20190611145832.GB11736@redmoon>
-References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
- <20190604014945.GE189360@google.com>
- <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
- <20190604124959.GF189360@google.com>
- <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
- <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
- <20190611145832.GB11736@redmoon>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1hapD6-0007dc-4e
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:25:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1560291939; bh=u1xRqcipnjQfdrJT1iMxqmCOWzuFT5iSpjmBJ/NwAng=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=iUogNK2F3RyjngMx4djQtjKewbxnn+Nvf/e84Jaqj+b4bz0KfhOo3Ucmsc62ArP91
+ AnN9RXuB+r50eNOnii91OJYHduVuqj5nTyOUHPDIYkXghBU6tFTYtNYz9GqOvxApED
+ F0Y3GKdyuZXdNlSiqbjhmi4AahsEzFRbhTeWdtDA=
+Date: Wed, 12 Jun 2019 00:25:39 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v6 4/6] dt-bindings: display: hdmi-connector: Support DDC
+ bus enable
+Message-ID: <20190611222539.msviqrbptjd5vdji@core.my.home>
+Mail-Followup-To: Rob Herring <robh@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ devicetree@vger.kernel.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, dri-devel@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ linux-sunxi@googlegroups.com, Jose Abreu <joabreu@synopsys.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>
+References: <20190527162237.18495-1-megous@megous.com>
+ <20190527162237.18495-5-megous@megous.com>
+ <20190611215206.GA17759@bogus>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190611215206.GA17759@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_151955_155763_EAD23034 
-X-CRM114-Status: GOOD (  15.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_152544_353447_1F020466 
+X-CRM114-Status: GOOD (  13.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,100 +83,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
- Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
- Ali" <alisaidi@amazon.com>, Bjorn Helgaas <helgaas@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, netdev@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, "David S. Miller" <davem@davemloft.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Jose Abreu <joabreu@synopsys.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-11 at 15:58 +0100, Lorenzo Pieralisi wrote:
-> 
-> 
-> 	if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
-> 		/* preserve existing resource assignment */
-> 		pci_bus_claim_resources(bus);
-> 	}
-> 
-> 	pci_bus_size_bridges(bus);
-> 	pci_bus_assign_resources(bus);
-
-So that makes me nervous... my understanding is that the pair
-
-	pci_bus_size_bridges(bus);
- 	pci_bus_assign_resources(bus);
-
-Is intended for full reassignment. Now they will try to skip resources
-that already have a parent, but that's yet another code path. What's
-wrong with pci_unassigned_* ? That's what it's meant for...
-
-> That's how it should be I think:
-> 
-> 1) we do not want pci_assign_unassigned_root_bus_resources(bus) to
->    reallocate resources already claimed (see realloc parameter), do we ?
-
-Well, realloc is useful to handle SR_IOV when the BIOS doesn't do it
-right (common case). That said, at this point, we should be able to
-honor IORESOURCE_PCI_FIXED for things that have _DSM #5 since they have
-been claimed. I don't see that realloc logic being a problem for us,
-and I want to avoid gratuitous differences with x86, but maybe I'm
-missing something here...
-
-> 2) pci_bus_size_bridges(bus) and pci_bus_assign_resources(bus) should
->    not interfere with resources already claimed so it *should* be safe
->    to call them anyway
-
-Sure, *should* and here we introduce yet another way of doing things
-though... Any reason we don't want to do what x86 does here ?
-
-> Most importantly: I want everyone to agree that claiming is equivalent
-> to making a resource immutable (except for realloc, see (1) above)
-> because that's what we are doing by claiming on _DSM #5 == 0.
-
-I think the combination of claiming *and* IORESOURCE_PCI_FIXED is what
-makes it *really* immutable. I'm a bit confused by the realloc logic
-right now, I'll need more quality time looking at it after ingesting
-more caffeing but I'm under the impression that it will honor the flag.
-
-> There are too many ways to make a resource immutable in the kernel
-> and this is confusing and prone to bugs.
-
-It is, but I don't want to create new ways of doing things, and what
-you seem to propose is a new way imho :-)
-
-Cheers,
-Ben.
-
-> Thanks,
-> Lorenzo
-> 
-> > +	ACPI_FREE(obj);
-> >  
-> >  	list_for_each_entry(child, &bus->children, node)
-> >  		pcie_bus_configure_settings(child);
-> > diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
-> > index 8082b612f561..62b7fdcc661c 100644
-> > --- a/include/linux/pci-acpi.h
-> > +++ b/include/linux/pci-acpi.h
-> > @@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
-> >  #endif
-> >  
-> >  extern const guid_t pci_acpi_dsm_guid;
-> > -#define DEVICE_LABEL_DSM	0x07
-> > -#define RESET_DELAY_DSM		0x08
-> > -#define FUNCTION_DELAY_DSM	0x09
-> > +#define IGNORE_PCI_BOOT_CONFIG_DSM	0x05
-> > +#define DEVICE_LABEL_DSM		0x07
-> > +#define RESET_DELAY_DSM			0x08
-> > +#define FUNCTION_DELAY_DSM		0x09
-> >  
-> >  #else	/* CONFIG_ACPI */
-> >  static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
+On Tue, Jun 11, 2019 at 03:52:06PM -0600, Rob Herring wrote:
+> On Mon, 27 May 2019 18:22:35 +0200, megous@megous.com wrote:
+> > From: Ondrej Jirman <megous@megous.com>
 > > 
+> > Some Allwinner SoC using boards (Orange Pi 3 for example) need to enable
+> > on-board voltage shifting logic for the DDC bus using a gpio to be able
+> > to access DDC bus. Use ddc-en-gpios property on the hdmi-connector to
+> > model this.
 > > 
+> > Add binding documentation for optional ddc-en-gpios property.
+> > 
+> > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> > ---
+> >  .../devicetree/bindings/display/connector/hdmi-connector.txt     | 1 +
+> >  1 file changed, 1 insertion(+)
+> > 
+> 
+> Please add Acked-by/Reviewed-by tags when posting new versions. However,
+> there's no need to repost patches *only* to add the tags. The upstream
+> maintainer will do that for acks received on the version they apply.
+> 
+> If a tag was not added on purpose, please state why and what changed.
 
+Sorry, it was some mistake. Thanks for the note.
+
+regards,
+	Ondrej
+
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
