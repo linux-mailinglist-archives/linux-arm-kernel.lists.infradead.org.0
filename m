@@ -2,153 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8347F417EA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:08:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8232B417EC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:09:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tz/sI07/p4QPmnEuOQtgWGOh9EmbcqesvxpcAeaVJ0I=; b=gCNb76e9ynCNrm
-	Qw6KFLfH+Qlz1qnrcsXji7anEMB2jUMpYbjLq77bvDEinWy4roeD99LLUUerPTrou4W/wFyj+UbEt
-	8pjcWL+Oojc8NEPlhtXikp3KQPWUaz9hyXRb6Y0CYxPN4zXs164c6y1DOiOxFU7fAIU5aLYtS1wy+
-	hOa/CmzCKaZ3+VVLZWzAaAJ0Sh97/6KjFHELgtM98v1Q0ukZ6Wh0PjGpiITvKH9huAOsqK6/kpxdP
-	cDqlBCOhIl3r8lTfTvraMl95iy+ekl8a2c2PtsXZU6hQh3Fojc3gBCH2/QYwtn+WR611Monau0z1V
-	lMFMrmVWwEIFlYnXy6uA==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yy6Ofb+toqQv3kLM1v7TxY1IJNkEWOmHneYL6AeH0+w=; b=mPNIXVxd+4XAyX
+	7oiSZym5R/E4SZ15YAH1PqjChemS7Dt45iZMaftvyPnLe+oiE97p2rjVq7joq3NaPijOElkn2sQTW
+	418LgpUdGpzs6oJ891/qDGYU5s/3N6ntTc6SpUlcF/VxJUr/n9N7Xh661gRl4P1ige11kISl6WGgu
+	8H/5K8DeurttEuurZzkCSEFVPnnrkFKT2izgAhyCwXGQ4kIoUCC8J+BkETrIuk9qDEyfs6fQ8OcSf
+	YhEIVvMScwc7/4zDweStZRGBFxr1gkSMWTkdqPDPRIee/m3eyvctAlZ36qHnhaRekb0F2Fj8ozyaB
+	f2QNHnJJA+h9fyvD0odg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haowb-00087m-1w; Tue, 11 Jun 2019 22:08:41 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1haoxQ-0008OM-GU; Tue, 11 Jun 2019 22:09:32 +0000
+Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haowT-00087P-2P
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:08:34 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 196so7725015pgc.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 15:08:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=QYmVu7Nh4W0MeolwVO7YM0xZrXFwuxo+MvNj54r5DFI=;
- b=V04Asub/oIIrYF6+VT1L4GjZO3YN5RWi9rFd6op5qhtYOIxhky/VEe7qC+jA9AzvxB
- +Gej/5KEJDZZzULmeSg/PrjPuiFVaZUz1V016WIUG3rbdgVCCo3tNI+DJK8nYSKEfEuo
- T5NxA9bJ133DtUVdisHqndqY9EiwefYIuOixqHDdNou3VTaEOoeIB5pUnRFEYF4YJHSZ
- cBGQYGE4JNMhJe5Al2BDOsw7YXDZWgAPF2TFPEny6ezfswyr0dLv3+M0EQcRu2kY31FP
- fZkipWKbwiwql2gdcZg7buZD87uMDImR42biyjiTuWSdn7R2cFLkf6fEd9fnayCZUsFC
- dEUg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=QYmVu7Nh4W0MeolwVO7YM0xZrXFwuxo+MvNj54r5DFI=;
- b=IebxJx93w16C6l0k9XMLR9xqVecxnAUrWit+NtNxPRA1/pbTvK1FBc6zUKMVxH+JFg
- KpH6MnC7UAAtixllcv8mT5J6mjdPQaHOW71Vd+s0XY4t4idA09cHPGrkZAnO50QDnf0p
- PHJRiQUf+OZ7ybjYEdo+UXtqVWnukfuI3Jmve9t8l4LZ0ASfWvAGkKEpAqaf0454hboT
- inVMbJTEr966QVRaCt5x1jfcXgGTjAoixxAa/Ditb6OojcPpCyXO7uizw0XAyu0cqp2U
- 9aNG3Yn1POQ/8Dbxch/3RoHsjcFcsdG6Vf92Zr+44Yij0qkThl5lKCK960YmVtjEP5Oi
- aMMw==
-X-Gm-Message-State: APjAAAUI7WxH3oU89txuPNSEwUz+rsb/CYam65BfzeCYFySG1OYs5hHG
- HGAzNj8b5iDfLkloMO0x0bQ=
-X-Google-Smtp-Source: APXvYqzwkIT55bFViDlmpLpucpRSQsot83hu5okTBB5Ska5wI1ee/oDJ3I8uqTblmwQD08sTMnLXvA==
-X-Received: by 2002:a63:26c7:: with SMTP id
- m190mr22545113pgm.141.1560290912402; 
- Tue, 11 Jun 2019 15:08:32 -0700 (PDT)
-Received: from [10.67.49.123] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id o26sm13715272pgv.47.2019.06.11.15.08.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 15:08:31 -0700 (PDT)
-Subject: Re: [PATCH 6/7] ARM: dts: BCM5301X: Fix most DTC W=1 warnings
-To: Florian Fainelli <f.fainelli@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20190528230134.27007-1-f.fainelli@gmail.com>
- <20190528230134.27007-7-f.fainelli@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <75cc626c-743c-4bf9-7290-c9e8b5368159@gmail.com>
-Date: Tue, 11 Jun 2019 15:08:24 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190528230134.27007-7-f.fainelli@gmail.com>
-Content-Language: en-US
+ id 1haoxC-0008Nn-LD
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:09:20 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5BM92s4019938;
+ Tue, 11 Jun 2019 17:09:03 -0500
+Message-ID: <f1d610d79fbb3a98c9cc80210c64cb21679daf33.camel@kernel.crashing.org>
+Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Date: Wed, 12 Jun 2019 08:09:01 +1000
+In-Reply-To: <20190611143111.GA11736@redmoon>
+References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
+ <20190604014945.GE189360@google.com>
+ <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
+ <20190604124959.GF189360@google.com>
+ <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+ <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+ <CAKv+Gu_3Nb5mPZgRfx+wQSz+eWM+FSbw_14fHm+u=v2EbuYoGQ@mail.gmail.com>
+ <4b956e0679b4b4f4d0f0967522590324d15593fb.camel@kernel.crashing.org>
+ <20190611143111.GA11736@redmoon>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_150833_115116_0463E6EF 
-X-CRM114-Status: GOOD (  14.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_150918_932921_0367137F 
+X-CRM114-Status: GOOD (  36.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -160,30 +67,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>,
- =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM IPROC ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>, Gregory Fong <gregory.0xf0@gmail.com>,
- Hauke Mehrtens <hauke@hauke-m.de>, Brian Norris <computersforpeace@gmail.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ linux-pci <linux-pci@vger.kernel.org>, Sinan Kaya <okaya@kernel.org>,
+ "Zilberman, Zeev" <zeev@amazon.com>, "Saidi, Ali" <alisaidi@amazon.com>,
+ Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/28/19 4:01 PM, Florian Fainelli wrote:
-> Fix the bulk of the unit_address_vs_reg warnings and unnecessary
-> \#address-cells/#size-cells without "ranges" or child "reg" property
+On Tue, 2019-06-11 at 15:31 +0100, Lorenzo Pieralisi wrote:
 > 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
+> True, minus specs update schedule, I can't change that and merging
+> this patch (and firmware thereof) relies on specifications that
+> are intent changes till they become an ECN (~another merge window,
+> so this patch could land at v5.4).
 
-Applied to devicetree/next, thanks!
--- 
-Florian
+Hrm... annoying for us but I understand your reasoning.
+
+> The other option is doing what this patch does *without* relying
+> on _DSM #5, we may have regressions unfortunately though.
+
+We could work around regressions with quirks I suppose. It does make
+sense to assume that if you have ACPI and UEFI, you have a decent PCI
+BAR assignment at boot in the "general case". That said, we need to
+double check first that pci_bus_claim_resources() will not do horrible
+things on partially assigned setups, since there's a real interest in
+doing that in the field.
+
+> It is kind of orthogonal (but not really), bus numbers assignment
+> is _not_ in line with resource assignment at the moment and I want
+> to change it.
+
+Hrm. We should probably reassign bus numbers if we reassign resources
+yes, but then I'd like us to not reassign resources unless we have to
+:-)
+
+> Since ACPI on ARM64 is still at its inception maybe we should have
+> a stab at patching the kernel so that it reassigns bus numbers by
+> default and toggle that behaviour on _DSM #5 == 0 detection.
+> 
+> I doubt that reassigning bus numbers by default can trigger
+> regressions on existing platforms but the only way to figure
+> it out is by testing it.
+>
+> > My thinking is if we converge everybody toward the x86 method of
+> > doing
+> > a 2 pass survey of existing resources followed by
+> > assign_unassigned,
+> 
+> I am not entirely sure we need a 2-pass survey,
+>
+> pci_bus_claim_resources()
+> 
+> should be enough; if it is not we update it.
+
+So it's not so much about the 2 passes per-se, though they have value,
+it's more about consolidating archs to do the same thing. Chances that
+we change x86 are nil. But we can change powerpc and arm64 to do like
+x86 and move that code to generic.
+
+pci_bus_claim_resources() seems to be a "lightweight" variant of the
+survey done by x86. The main differences I can see are:
+
+ - The 2 passes thing which we may or may not care about, its main
+purpose is to favor resources that are already enabled by the BIOS in
+case of conflicts as far as I understand.
+
+ - pci_read_bridge_bases() is done by pci_bus_claim_resources(), while
+x86 (and powerpc and others) do it in their pcibios_fixup_bus. That one
+is interesting... Any reason why we shouldn't unconditionally read the
+bridges while probing ? Bjorn ?
+
+ - When allocating bridge resources, there are interesting differences:
+
+  * x86 (and powerpc to some extent): If one has a 0 start or we fail
+to claim it, x86 will wipe out the resource struct (including flags). I
+assume that pci_assign_unassign_* will restore bridges when needed but
+I haven't verified. 
+
+  * pci_bus_claim_resources() is dumber in that regard. It will call
+pci_claim_bridge_resources() blindly try to claim whatever is there
+even if res->start is 0. This could be a problem with partially
+assigned trees. It also doesn't wipe the resource in case of failure to
+claim which could be a problem going down the tree and letting children
+attach to the non-claimed resource, thus potentially causing the
+reassign pass to fail.
+
+The r->start == 0 test is interesting ... the generic claim code will
+honor IORESOURCE_UNSET but we don't seem to set that generically unless
+we hit some of the specific pass for explicit resource alignment, or
+during the reassignment phases.
+
+ - When allocating device resources, the main difference other than the
+2 passes is that x86 will "0 base" the resource (r->end -= r->start; r-
+>start = 0) for later reassignment. The claim path we use won't do
+that. Note: none sets IORESOURCE_UNSET... Additionally x86 has some
+oddball code to save the original FW values and restore them if
+assignment later fails, which is somewhat odd since there's a conflict
+but probably helps really broken setups.
+
+ - x86 will not claim ROMs in that pass, it does a 3rd pass just for
+them (it's common I think to not have room for all the ROMs). It also
+disables them in config space during the survey.
+pci_bus_claim_resources() will claim everything and leave ROMs enabled.
+
+So as a somewhat temprary conclusion, I think the main difference here
+is what happens when claim fails (also the res->start = 0 case which we
+need to look at more closely) and whether we should make the generic
+code also "0-base" the resource.
+
+The question for me really is, do we want to just "upgrade" (if
+necessary) pci_bus_claim_resources() and continue having x86 do its own
+thing for ever, or do we want to consolidate around what is probably
+the most tested platform when it comes to PCI :-)
+
+And if we consolidate, I think that won't be by changing what x86 does,
+that code is the result of decades of fiddling to get things right with
+all sorts of broken BIOSes...
+
+> > and have that the main generic code path (with added quirks to force a
+> > full assignment and keeping probe_only around but that's easy, we have
+> > that on powerpc and our code is originally based on the x86 one), then
+> > we'll have a much easier time supporting IORESOURCE_PCI_FIXED on
+> > portions of the tree as well (though it also becomes less critical to
+> > do so since we will no longer reallocate unless we have to).
+> > 
+> > That said we need to understand what "fixed" means and why we do it.
+> 
+> Agree, totally and I want to make it clear how a BAR is fixed in
+> the kernel, there are too many discrepancies in the resource
+> management code already.
+> 
+> > IE, If an endpoint somehere has "fixed" BARs for example, that means
+> > all parent bridge must be setup to enclose that range.
+> > 
+> > Now our allocator for bridge windows cannot handle that and probably
+> > never will, so we have to rely on the existing window established by
+> > the FW being reasonable and use it. We can still *extend" bridge
+> > windows (and we have code to do that) if necessary but we cannot move
+> > them if they contain a fixed BAR device.
+> > 
+> > There is a much bigger discussion to be had around that concept of
+> > fixed device anyway, maybe at Plumbers ? Why is the BAR fixed ? Because
+> > the EFI FB is on it ? Because HW bugs ? Because FW might access it from
+> > SMM or ARM equivalent ? Because ACPI will poke at it based on its
+> > initial address ? etc...
+> 
+> Consider a slot booked at LPC PCI uconf for this discussion.
+
+Excellent.
+
+> > Some of the answers to the above questions imply more than the need to
+> > fix the BAR: Does it also mean that disabling access to that BAR, even
+> > temporarily, isn't safe ? However that's what we do today when we
+> > probe, if anything, to do the BAR sizing...
+> 
+> Eh, another question that came up already should be debated.
+
+Yup.
+
+> > This isn't a new problem. We had issues like that dating back 15 years
+> > on powerpc for example, where a big ASIC hanging off PCI had all the
+> > Apple gunk including the interrupt controller, which was initialized
+> > from the DT way before PCI probing. If you took an interrupt at the
+> > "wrong" time during BAR sizing, kaboom ! If you had debug printk's in
+> > the wrong place in the PCI probing code, kaboom ! etc....
+> > 
+> > If we want to solve that properly in the long run, we'll probably want
+> > ACPI to tell us the BAR sizes and use that instead of doing manual
+> > sizing on such "system" devices. We similarily have ways to "construct"
+> > pci_dev's from the OF tree on sparc64 and powerpc, limiting direct
+> > config access to populate stuff we can't get from FW.
+> 
+> https://lore.kernel.org/linux-pci/20190121174225.15835-1-mr.nuke.me@gmail.com/
+> 
+> ?
+
+Ah I don't know enough about ACPI yet, on my reading list :-)
+
+Cheers,
+Ben.
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
