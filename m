@@ -2,62 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A159F4184D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:40:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2157C41851
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:41:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tIIb6AuKXVgN+Yjv9oXcULU8mbJCQR7rBy5U7Tn95OM=; b=FbzANUzyKAyq7t
-	+1fWEHsa59X757wsxDjsBCMh4hXljJUQ1cWfUOifZPsGUA+lEk0yBYhTP5wcy1b3a/+VdTA+nCLpH
-	jwrJ8Sb1eLci6pyxGDnxt8b5nQaFHrln62UOqtFMQWRq/D0X1OkAUoAkr/bqDK1TSGNQzGNfJLqR/
-	TbkW1mnXtucUYdDXuD1BHLc6N47hxAyUd13UHfIu9ZdIfjvTmL2lRUgBYauX4QE346kJ8h+YwoCUu
-	ViUKGOoGHhc59Ov3uiz7f9zB/KrJqbVNRWdPi4h+yCX3OW+W2vW8IJJ1hJ6Te6MrZFYSHf3BcOdVC
-	ejsyZffX8dsBKlwmhSDg==;
+	List-Owner; bh=yc0taYP1vVAv78UBkQ+sUvaYbQkg7k7VWllqrjk3Jo8=; b=qws9nzNSqkA0b1
+	3ZQqf2CnKgLuOsXqCkdCZGo5YktNgR47jqY7IbtHnnFS+WzG/vuheK39GBu2F/lCVZZhEpDk/FZdq
+	sQt66+H0I1mHq6fUNC8oDxR/CQyo87JuW5Tel0Jx5GnU2o4ZHA8GJqrRGKWiQSDg6G+wUKaF4Zmw+
+	myeRNsUVkIwFDhjbILSL3YOROsvLPfxW5KoS9ALa2wbhL++5a8cU9n9HPg1LBjPeu7BP3ineG6Kcw
+	RvJbu3IT7mGN9B2X29vcuLFx9hIHf8YUSMjPqm0+FpEXY1Ylu7D8eMIhwZhR1Y5Vrel0kIQW9einq
+	nLmhjl1gee+v3wcA+AWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hapRc-0005co-PQ; Tue, 11 Jun 2019 22:40:44 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1hapS4-0005wr-MS; Tue, 11 Jun 2019 22:41:12 +0000
+Received: from mail-it1-f193.google.com ([209.85.166.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hapRP-0005cR-0p
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:40:33 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5BMeIum021056;
- Tue, 11 Jun 2019 17:40:19 -0500
-Message-ID: <27b895a87e4ee2df98663fb15d59889eb57131c2.camel@kernel.crashing.org>
-Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
- firmware PCI setup
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 12 Jun 2019 08:40:18 +1000
-In-Reply-To: <CAKv+Gu_bPW8otGWotA7R6HGEvWUuAozF-r1CeZN9fGEiV0iroA@mail.gmail.com>
-References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
- <20190604014945.GE189360@google.com>
- <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
- <20190604124959.GF189360@google.com>
- <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
- <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
- <CAKv+Gu_3Nb5mPZgRfx+wQSz+eWM+FSbw_14fHm+u=v2EbuYoGQ@mail.gmail.com>
- <4b956e0679b4b4f4d0f0967522590324d15593fb.camel@kernel.crashing.org>
- <20190611143111.GA11736@redmoon>
- <f1d610d79fbb3a98c9cc80210c64cb21679daf33.camel@kernel.crashing.org>
- <CAKv+Gu_bPW8otGWotA7R6HGEvWUuAozF-r1CeZN9fGEiV0iroA@mail.gmail.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1hapRe-0005nM-Te; Tue, 11 Jun 2019 22:40:48 +0000
+Received: by mail-it1-f193.google.com with SMTP id x22so7529667itl.2;
+ Tue, 11 Jun 2019 15:40:46 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=HI3rHUK26/S2B0LA3WlM09q3Q/jcQRPOrltE5Dys4vg=;
+ b=SubqXtmy5xBdt95Eqnsu5NFkjrylz3sRlabPHuSnSnXpnMO/czwfAGPXhTyYI67dOf
+ BpDswP+WUVPyQLbEcIEMaQhUnSNn3gqai52L8Sfj5Cr0sHomr1tUaAfvJnsFW/NoIlws
+ pjawxanXcB8O0NNo1vJi36hRFyRMP7R1ZpE4e3FnPQJUmorcO3//SLlUzRmIPebqSw2Y
+ OZLu59WQn1fxBSQO/aZgJ6TzRFX8oyd/AbbazgT+g5clubuGDMAmR4fXFRlnfgdTi4+R
+ O+qLfZ1Bbu1YtEoU3i2RKmBUc8/HiHS+Wm55KMHzVR4FxmSMlb90w8PFZ8llrRUTLvpX
+ 2KdQ==
+X-Gm-Message-State: APjAAAWTcXgDrFmYk96keHVP1eWO5DA7S2f36mpeH6z4sZ+zSh/SM0nL
+ x6Bb0LXIxOUrNC6KPAw2Ow==
+X-Google-Smtp-Source: APXvYqyYN7ZbEDoYi00MhHLqHL7FwPdCa2uF9Kv/WyYmja0MIBn3v9bIz1f2IeqAvvSfdbDWHNDRAg==
+X-Received: by 2002:a24:b303:: with SMTP id e3mr18466988itf.170.1560292845706; 
+ Tue, 11 Jun 2019 15:40:45 -0700 (PDT)
+Received: from localhost (ip-174-149-252-64.englco.spcsdns.net.
+ [174.149.252.64])
+ by smtp.gmail.com with ESMTPSA id p10sm5553716iob.54.2019.06.11.15.40.44
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 11 Jun 2019 15:40:45 -0700 (PDT)
+Date: Tue, 11 Jun 2019 16:40:41 -0600
+From: Rob Herring <robh@kernel.org>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [1/2] dt-bindngs: display: panel: Add BOE tv101wum-nl6 panel
+ bindings
+Message-ID: <20190611224041.GA407@bogus>
+References: <20190608070230.55381-1-jitao.shi@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190608070230.55381-1-jitao.shi@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_154031_297712_D4BCA658 
-X-CRM114-Status: GOOD (  43.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_154047_024691_B95CD850 
+X-CRM114-Status: GOOD (  14.45  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ no trust [209.85.166.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.193 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,264 +89,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-pci <linux-pci@vger.kernel.org>, Sinan Kaya <okaya@kernel.org>,
- "Zilberman, Zeev" <zeev@amazon.com>, "Saidi, Ali" <alisaidi@amazon.com>,
- Bjorn Helgaas <helgaas@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, stonea168@163.com,
+ dri-devel@lists.freedesktop.org, Ajay Kumar <ajaykumar.rs@samsung.com>,
+ Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
+ yingjoe.chen@mediatek.com, Thierry Reding <treding@nvidia.com>,
+ Sean Paul <seanpaul@chromium.org>, linux-pwm@vger.kernel.org,
+ Pawel Moll <pawel.moll@arm.com>, Ian Campbell <ijc+devicetree@hellion.org.uk>,
+ linux-mediatek@lists.infradead.org, Russell King <rmk+kernel@arm.linux.org.uk>,
+ Matthias Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
+ srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Sascha Hauer <kernel@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-06-12 at 00:34 +0200, Ard Biesheuvel wrote:
+On Sat, Jun 08, 2019 at 03:02:29PM +0800, Jitao Shi wrote:
+> Add documentation for boe tv101wum-n16 panel.
 
-> EDK2 based code is typically very fork heavy, in the sense that,
-> instead of upstreaming a change, a driver gets forked and changes are
-> applied locally, which then need to be carried into perpetuity. That
-> means that 'recent' ports could still display behavior that was
-> removed from the generic code a long time ago. All the open source
-> arm64 platforms now use the generic PCI host bridge driver (which is
-> in charge of the bus enumeration and resource allocation) and so
-> hopefully, future platforms will not deviate too much from that.
+Typo in the subject and checkpatch complains about trailing whitespace.
+
 > 
-> In particular, EDK2 has some PCD tunables for things like PCIe
-> hotplug
-> and SR-IOV support, which affects the number of spare buses that get
-> allocated for hotplug capable root ports, and for SR-IOV capable
-> endpoints.
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  .../display/panel/boe,tv101wum-nl6.txt        | 34 +++++++++++++++++++
+>  1 file changed, 34 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt
 > 
-> As Lorenzo mentions, we don't actively reassign bus numbers from
-> scratch, but I am not sure if that is 100% true. I think you do get
-> some errors when booting with hotplug capable root ports that don't
-> have 'pci_hotplug_bus_size' spare bus numbers available.
-> 
-> Also note that EDK2 leaves ROM BARs unassigned.
+> diff --git a/Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt b/Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt
+> new file mode 100644
+> index 000000000000..2a84735d742d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt
+> @@ -0,0 +1,34 @@
+> +Boe Corporation 10.1" WUXGA TFT LCD panel
+> +
+> +Required properties:
+> +- compatible: should be "boe,tv101wum"
+> +- reg: the virtual channel number of a DSI peripheral
+> +- enable-gpios: a GPIO spec for the enable pin
+> +- pp1800-supply: core voltage supply
+> +- avdd-supply: 
+> +- avee-supply: 
+> +- backlight: phandle of the backlight device attached to the panel
+> +
+> +The device node can contain one 'port' child node with one child
+> +'endpoint' node, according to the bindings defined in
+> +media/video-interfaces.txt. This node should describe panel's video bus.
+> +
+> +Example:
+> +&dsi {
+> +	...
+> +	panel@0 {
+> +		compatible = "boe,tv101wum-nl6";
+> +		reg = <0>;
+> +		enable-gpios = <&pio 45 0>;
+> +		avdd-supply = <&ppvarn_lcd>;
+> +		avee-supply = <&ppvarp_lcd>;
+> +		pp1800-supply = <&pp1800_lcd>;
+> +		backlight = <&backlight_lcd0>;
+> +		status = "okay";
+> +		port {
+> +			panel_in: endpoint {
+> +				remote-endpoint = <&dsi_out>;
+> +			};
+> +		};
+> +	};
+> +};
+> \ No newline at end of file
 
-This is all somewhat reasonable. x86 is in the same situation which is
-why I'm really keen on trying to consolidate the two approaches.
-
-> > > It is kind of orthogonal (but not really), bus numbers assignment
-> > > is _not_ in line with resource assignment at the moment and I
-> > > want
-> > > to change it.
-> > 
-> > Hrm. We should probably reassign bus numbers if we reassign
-> > resources
-> > yes, but then I'd like us to not reassign resources unless we have
-> > to
-> > :-)
-> > 
-> > > Since ACPI on ARM64 is still at its inception maybe we should
-> > > have
-> > > a stab at patching the kernel so that it reassigns bus numbers by
-> > > default and toggle that behaviour on _DSM #5 == 0 detection.
-> > > 
-> > > I doubt that reassigning bus numbers by default can trigger
-> > > regressions on existing platforms but the only way to figure
-> > > it out is by testing it.
-> > > 
-> > > > My thinking is if we converge everybody toward the x86 method
-> > > > of
-> > > > doing
-> > > > a 2 pass survey of existing resources followed by
-> > > > assign_unassigned,
-> > > 
-> > > I am not entirely sure we need a 2-pass survey,
-> > > 
-> > > pci_bus_claim_resources()
-> > > 
-> > > should be enough; if it is not we update it.
-> > 
-> > So it's not so much about the 2 passes per-se, though they have
-> > value,
-> > it's more about consolidating archs to do the same thing. Chances
-> > that
-> > we change x86 are nil. But we can change powerpc and arm64 to do
-> > like
-> > x86 and move that code to generic.
-> > 
-> > pci_bus_claim_resources() seems to be a "lightweight" variant of
-> > the
-> > survey done by x86. The main differences I can see are:
-> > 
-> >  - The 2 passes thing which we may or may not care about, its main
-> > purpose is to favor resources that are already enabled by the BIOS
-> > in
-> > case of conflicts as far as I understand.
-> > 
-> >  - pci_read_bridge_bases() is done by pci_bus_claim_resources(),
-> > while
-> > x86 (and powerpc and others) do it in their pcibios_fixup_bus. That
-> > one
-> > is interesting... Any reason why we shouldn't unconditionally read
-> > the
-> > bridges while probing ? Bjorn ?
-> > 
-> >  - When allocating bridge resources, there are interesting
-> > differences:
-> > 
-> >   * x86 (and powerpc to some extent): If one has a 0 start or we
-> > fail
-> > to claim it, x86 will wipe out the resource struct (including
-> > flags). I
-> > assume that pci_assign_unassign_* will restore bridges when needed
-> > but
-> > I haven't verified.
-> > 
-> >   * pci_bus_claim_resources() is dumber in that regard. It will
-> > call
-> > pci_claim_bridge_resources() blindly try to claim whatever is there
-> > even if res->start is 0. This could be a problem with partially
-> > assigned trees. It also doesn't wipe the resource in case of
-> > failure to
-> > claim which could be a problem going down the tree and letting
-> > children
-> > attach to the non-claimed resource, thus potentially causing the
-> > reassign pass to fail.
-> > 
-> > The r->start == 0 test is interesting ... the generic claim code
-> > will
-> > honor IORESOURCE_UNSET but we don't seem to set that generically
-> > unless
-> > we hit some of the specific pass for explicit resource alignment,
-> > or
-> > during the reassignment phases.
-> > 
-> >  - When allocating device resources, the main difference other than
-> > the
-> > 2 passes is that x86 will "0 base" the resource (r->end -= r-
-> > >start; r-
-> > > start = 0) for later reassignment. The claim path we use won't do
-> > 
-> > that. Note: none sets IORESOURCE_UNSET... Additionally x86 has some
-> > oddball code to save the original FW values and restore them if
-> > assignment later fails, which is somewhat odd since there's a
-> > conflict
-> > but probably helps really broken setups.
-> > 
-> >  - x86 will not claim ROMs in that pass, it does a 3rd pass just
-> > for
-> > them (it's common I think to not have room for all the ROMs). It
-> > also
-> > disables them in config space during the survey.
-> > pci_bus_claim_resources() will claim everything and leave ROMs
-> > enabled.
-> > 
-> > So as a somewhat temprary conclusion, I think the main difference
-> > here
-> > is what happens when claim fails (also the res->start = 0 case
-> > which we
-> > need to look at more closely) and whether we should make the
-> > generic
-> > code also "0-base" the resource.
-> > 
-> > The question for me really is, do we want to just "upgrade" (if
-> > necessary) pci_bus_claim_resources() and continue having x86 do its
-> > own
-> > thing for ever, or do we want to consolidate around what is
-> > probably
-> > the most tested platform when it comes to PCI :-)
-> > 
-> > And if we consolidate, I think that won't be by changing what x86
-> > does,
-> > that code is the result of decades of fiddling to get things right
-> > with
-> > all sorts of broken BIOSes...
-> > 
-> > > > and have that the main generic code path (with added quirks to
-> > > > force a
-> > > > full assignment and keeping probe_only around but that's easy,
-> > > > we have
-> > > > that on powerpc and our code is originally based on the x86
-> > > > one), then
-> > > > we'll have a much easier time supporting IORESOURCE_PCI_FIXED
-> > > > on
-> > > > portions of the tree as well (though it also becomes less
-> > > > critical to
-> > > > do so since we will no longer reallocate unless we have to).
-> > > > 
-> > > > That said we need to understand what "fixed" means and why we
-> > > > do it.
-> > > 
-> > > Agree, totally and I want to make it clear how a BAR is fixed in
-> > > the kernel, there are too many discrepancies in the resource
-> > > management code already.
-> > > 
-> > > > IE, If an endpoint somehere has "fixed" BARs for example, that
-> > > > means
-> > > > all parent bridge must be setup to enclose that range.
-> > > > 
-> > > > Now our allocator for bridge windows cannot handle that and
-> > > > probably
-> > > > never will, so we have to rely on the existing window
-> > > > established by
-> > > > the FW being reasonable and use it. We can still *extend"
-> > > > bridge
-> > > > windows (and we have code to do that) if necessary but we
-> > > > cannot move
-> > > > them if they contain a fixed BAR device.
-> > > > 
-> > > > There is a much bigger discussion to be had around that concept
-> > > > of
-> > > > fixed device anyway, maybe at Plumbers ? Why is the BAR fixed ?
-> > > > Because
-> > > > the EFI FB is on it ? Because HW bugs ? Because FW might access
-> > > > it from
-> > > > SMM or ARM equivalent ? Because ACPI will poke at it based on
-> > > > its
-> > > > initial address ? etc...
-> > > 
-> > > Consider a slot booked at LPC PCI uconf for this discussion.
-> > 
-> > Excellent.
-> > 
-> > > > Some of the answers to the above questions imply more than the
-> > > > need to
-> > > > fix the BAR: Does it also mean that disabling access to that
-> > > > BAR, even
-> > > > temporarily, isn't safe ? However that's what we do today when
-> > > > we
-> > > > probe, if anything, to do the BAR sizing...
-> > > 
-> > > Eh, another question that came up already should be debated.
-> > 
-> > Yup.
-> > 
-> > > > This isn't a new problem. We had issues like that dating back
-> > > > 15 years
-> > > > on powerpc for example, where a big ASIC hanging off PCI had
-> > > > all the
-> > > > Apple gunk including the interrupt controller, which was
-> > > > initialized
-> > > > from the DT way before PCI probing. If you took an interrupt at
-> > > > the
-> > > > "wrong" time during BAR sizing, kaboom ! If you had debug
-> > > > printk's in
-> > > > the wrong place in the PCI probing code, kaboom ! etc....
-> > > > 
-> > > > If we want to solve that properly in the long run, we'll
-> > > > probably want
-> > > > ACPI to tell us the BAR sizes and use that instead of doing
-> > > > manual
-> > > > sizing on such "system" devices. We similarily have ways to
-> > > > "construct"
-> > > > pci_dev's from the OF tree on sparc64 and powerpc, limiting
-> > > > direct
-> > > > config access to populate stuff we can't get from FW.
-> > > 
-> > > 
-https://lore.kernel.org/linux-pci/20190121174225.15835-1-mr.nuke.me@gmail.com/
-> > > 
-> > > ?
-> > 
-> > Ah I don't know enough about ACPI yet, on my reading list :-)
-> > 
-> > Cheers,
-> > Ben.
-> > 
-> > 
-
+Fix this.
 
 _______________________________________________
 linux-arm-kernel mailing list
