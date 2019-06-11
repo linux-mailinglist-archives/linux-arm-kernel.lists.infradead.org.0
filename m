@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 324B441741
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 23:54:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37FEC41747
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 23:55:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,62 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=cvMOLmN2OR/6DKLOWDXfR+lnT5EAHOFt3x6V0cx4vtM=; b=hlQEfek6lfQqzUuTFH7kpvKerr
-	TQhT/q4f43eUy1dgCuBTwUpWPLKtzo1j12o74iFRF+26KEfq/ZiKPpdbkZo9EtH8HEwxZt7P0YFky
-	mz/EFEmo1Djey1VhQI8Y+THfTQCOnkFhVAg7g1z5+XQIZTJoVWGBcTk9Z3X0K7ApZzJG355+p6bKM
-	/WKOa0bXy8B8t25TgU4jCnDxVhUq9PmR3caWcChHkFYfKMeqV8V6R9Wt/T5CN8RFDYSmyEYOOSRev
-	qv4We/zOc1XISqTGjLmw+TMk3qzjAIg09fDW8sN2kWsUa3Ge3L6z2AW5Fk4PS/ViDOF56xvXeL3Vd
-	dURZi5jw==;
+	bh=glQ4yrRxY1d9L3Efx/PjrO7LlJSc7Srv3VIkVF9V8LY=; b=OL3krKaAU0/8DFIWE8idwv63f1
+	tVomOjQFbvnoYrY4NYJzklROx4XOAmMlTWXKN/6DYWd3HY2aOr4afDe/PbCU7us6uCwEypdtl4nb4
+	FRBhMDD/kjNfRVhK3eOmH+9ltmImtFlxFJRRVKOGIpP8Q6aaIKDVW9n1Mnlqx6M0+Zkixu2Szuwm8
+	nXXZQNIpE4H1oGu+LHjtWG6NisVOueUKkGnbQEJB5hEra5SdNDDrBDbtyZxZDJH4kjZWF14ntFlrx
+	+JaZTooDJnXzpD+4XxTs7luNmOChM1F19bc2ZF0yg4aLeqFdQBqBscvqTog0FKu1aHwzsOlGJJ1Rz
+	JMcMjspA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haoj1-0000MK-R9; Tue, 11 Jun 2019 21:54:39 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1haojL-0000bT-Hc; Tue, 11 Jun 2019 21:54:59 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haois-0000LY-Uz
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 21:54:32 +0000
-Received: by mail-ed1-x544.google.com with SMTP id c26so22351391edt.1
+ id 1haoj6-0000Yy-3V
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 21:54:45 +0000
+Received: by mail-pf1-x443.google.com with SMTP id m30so7755358pff.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 14:54:30 -0700 (PDT)
+ Tue, 11 Jun 2019 14:54:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=DHhMjd1fNN7IkriGi8xv0Blych3KQHIWLAG6ekYhHaU=;
- b=e8LUQDA0ucs+NpZtWxD/LJWddlKnLuSOXGX6Y6zjx9R6JyJVLVfwfq86T9reM2rrNC
- 2ohulDkuA89z/5oTEbIIr9mwlhpN9nJVXWdYYlenHvLRdz5rht0bdymhI8/yu3D2ktL0
- x1kg/JxPRzw6LW0cKKHEfePtwxbsBcPSNnpvEDZESa4f0VcxHYpV+GZzFnYHmEd+CC1h
- 2+ftkUN8WQ/VWse3L/CA+lPsPLR3RWNGM7Z9b4i3KHAs182b//CbCV5mkwllk1JR83ld
- ZNyNEbE5/CjvgRgvFNHxBwDLdcCHj3rzO8h6nvfFkoEkXaH2JKjt2QZFajDfMOgYN8cZ
- 1x9w==
+ bh=gqlg9mlQrzOnNuGBRs6FVMKN07w9DfmWW8w0BvZncyA=;
+ b=FisnbY9x5/R5pS7dhi82yjpYpTWMxnbt50rgYFFiOXlaGRBQNXa5MoQajQeqKJQ8xA
+ 8AktdSCbhDpwyp2ClVkrupNm3ZLwmg1G8cjUaC0oT0x0toXuG8Bl6pgmhXfrlrE9sG0z
+ u0ozBRjPrd7bF83MaU7l0DcOPNKgLpzU1w/PizmmiQ8+6uF21BEg96I+rVusWt1klboy
+ MKSIVvJ994JaCOBDAVy+MGcR6LCeTj7oTuvjC76/vVDqeCbfd2tsbBE5t+KAzrYyKao0
+ beq9gMaBB1N6tSGNcuX5M7uysmk0W1wVJG1g86OLS11qCcKjJGoCRpU9WYjSXH1SOls7
+ mKBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=DHhMjd1fNN7IkriGi8xv0Blych3KQHIWLAG6ekYhHaU=;
- b=YIChQYOh0D66/JpR0ZrcVtOi1oBTkdPIIYtDsV+gBfcG3NDIzfEWvhYna6ya7pR/wY
- GP05CqTqJ7cChkfKM5jKWziR+sO1bTUeG3t8Hp7S9J2Z4QY4O37Jpo4mLeN3kuLA5Pdp
- isXnKtxRR5j5GYkuT/EOk1B+JJGV0sIiDC4INTYhwX9QxtFLvGJaD3DTcw4HBnPH1XVU
- zo6AXBYFYzjcfjVwzFWk4exYk1KhUvgMkTQAuq9nkPt2n71tZyzkzFjuYAAzSvy+a/YA
- Hsk4kF8hiMVBnsuMANt1vBZm3+7rN+LOUO3X4t83ZIX5mdk1YOOGZhQeXggVhWu8HDSU
- cq6w==
-X-Gm-Message-State: APjAAAUWq44pwxDvBGH8ijQT9px/W6Kenyb05Ib8Fa1Z9DBlFG28Cr/G
- l5zpam4EClcNfKNQyupwt0o=
-X-Google-Smtp-Source: APXvYqxa6B3yBQfXiX0KGyiJzxI3jbaWqHZPyTOBf9DKR2bvaQfBCmkV0iVTPijvFqtSl/LUQm5zqQ==
-X-Received: by 2002:a50:a784:: with SMTP id i4mr14433341edc.3.1560290069503;
- Tue, 11 Jun 2019 14:54:29 -0700 (PDT)
+ bh=gqlg9mlQrzOnNuGBRs6FVMKN07w9DfmWW8w0BvZncyA=;
+ b=Nf/zkh6Qx9eDr9Iq9wQdqpk1e9fkcF3g16/cPTjmv/ulvWXXk1wRkSmjZo/ovdKCIW
+ a+D1gVwGlHUhmcqlr1jFqiQ41WR4AVzQpcpD3WtvOoV0cpKjNKkiqf2glv6drsmft4en
+ 3Icrq1DQA63wbHNxK8Kks24PFJl1A2ndnfez8r45xYa7KJQZLiUHEXqvgEY2/74MhK6O
+ vAlRLdqXmFFSEb1sQmFXWyQSaMBvZBaaqEzA4657ep0ZvJOf4u8MlBvGShJQm+yjfrbr
+ 0DKSyT3h/0FhR89hKGaXZCqiUCYlVXqe7oUzYxNFaGmFCKaKFuRuDJ/dLyeM9x0R/myp
+ zltQ==
+X-Gm-Message-State: APjAAAXdJPgMPV9aBynTC45VLHmRNoZ1v1SLoUUucQrlFg55SNoiNRmO
+ Rp3WNICCMpNGCN8O+y1tkK0=
+X-Google-Smtp-Source: APXvYqxmglgJRzn1GsRQX6RoSwxGtXaN/sU/gd2Qldf0Z6oLMgeyABURq9p9hQ/BaVqb5FMTq03zPg==
+X-Received: by 2002:a17:90a:d151:: with SMTP id
+ t17mr28842001pjw.60.1560290083167; 
+ Tue, 11 Jun 2019 14:54:43 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id 23sm2498119eji.42.2019.06.11.14.54.26
+ by smtp.gmail.com with ESMTPSA id c9sm18829165pfn.3.2019.06.11.14.54.41
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 11 Jun 2019 14:54:28 -0700 (PDT)
+ Tue, 11 Jun 2019 14:54:42 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 2/7] ARM: dts: Cygnus: Fix most DTC W=1 warnings
-Date: Tue, 11 Jun 2019 14:54:19 -0700
-Message-Id: <20190611215419.10109-1-f.fainelli@gmail.com>
+Subject: Re: [PATCH 3/7] ARM: dts: bcm-mobile: Fix most DTC W=1 warnings
+Date: Tue, 11 Jun 2019 14:54:40 -0700
+Message-Id: <20190611215440.10245-1-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190528230134.27007-3-f.fainelli@gmail.com>
+In-Reply-To: <20190528230134.27007-4-f.fainelli@gmail.com>
 References: <20190528230134.27007-1-f.fainelli@gmail.com>
- <20190528230134.27007-3-f.fainelli@gmail.com>
+ <20190528230134.27007-4-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_145430_995078_3A7800D6 
+X-CRM114-CacheID: sfid-20190611_145444_148128_C05A332F 
 X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -112,7 +113,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 May 2019 16:01:29 -0700, Florian Fainelli <f.fainelli@gmail.com> wrote:
+On Tue, 28 May 2019 16:01:30 -0700, Florian Fainelli <f.fainelli@gmail.com> wrote:
 > Fix the bulk of the unit_address_vs_reg warnings and unnecessary
 > \#address-cells/#size-cells without "ranges" or child "reg" property
 > 
