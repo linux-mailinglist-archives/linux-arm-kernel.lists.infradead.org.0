@@ -2,85 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAD403CEC0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:33:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87A993CECE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:33:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DwE5jEgVVv8l35jVZvlBt1SVE/lGF5vxsdGZxUCmKF0=; b=n0u7M6XDRxh6y9
-	1uiY/lMX8RP0nWcCRT0qXxYqBeYAGK+QhG+AHkLklVWuEtpZGH7bPmYOmTPtN7D7xoGCI7bkwBAVZ
-	nFBeEHCipC/XefXnW8FkwSpVOm0xjZFsV+zA2J27jwCihkjRpZ9+Jp7bgzGJCWNuRA5B6fWV7WOCp
-	ninRM3fDIYfHLHgzL3IztSR+jdsxdFYsLZ/z3NsrszZTiEQEL/ktTlUkw1c6CVF4i6Mgj1AG/JEc1
-	zmQKwSjnqyo2SZWjlL5hzUL+Y7M0YrX99KfIW01CYybfghrsn59dyPw7ZgX8Am6S061IpViDdt9ow
-	irHiFR/Ut2jABWQ8jL+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bfBpNfj/eM5DxnuuhS1qDiBPMJrvATJ8BbF2W2Ce74o=; b=FBhwDUfdA3wE4FKqtobg3hglo
+	DNwpoHgP/qbKGHf8Aq1hdINRdGsRAxJBh74rKmvV6JyqdQGQdaKhrTgblK7nGE32+l3cJGy5F3GUv
+	tMPP5E/A47yuiNUrR/n2oMFV235kqZExW+pBTGWscDvxgCp6AE2BB+id8hQiZPMrEh9EG3vkTIrr1
+	NDPJAz6GYTi8meDIlGV75hfCEKCrddF3toTtib7yBtRmwa8LjDCK+bqzf4Flr5Zjx/rXfaSQIMVVh
+	/fytBK4hZpGMVVsFEjLszjEIxXIr9WC7Z43y5oz2++o3v5ZdjiKx17i489mmLXCsbct9mKZJ2n4gW
+	PTWn5EkBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hahpf-0007hv-Kc; Tue, 11 Jun 2019 14:33:03 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hahq2-0007xp-Kx; Tue, 11 Jun 2019 14:33:26 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hahpR-0007gZ-B1
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:32:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
- Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=0ysm0ZI8hujjt+D76xSkaRSjMqQR8Ejr/MWUooVbSPo=; b=aeyxqHJTKtBbVvtGhT+Z2zRUq
- ELp1/5lx6aTkESZueqTYa3Uu9ArbwMWfB3Brzlj+j+2zOJj0NS32bmKwZsCcMNlkgsZ1iXQQ4Ngsv
- i16SuLXdG00oFU2obsHbQInz3BGh/Je5XDuQVxNPgFM07CtDiOv3HW1JBKe7RSZxhIz7PZYsr+QfY
- 9iqJTodZSPEbh0/yweaHuGqY38Km3x50XnxbVMohl7ZYtCG/nUc+u/E4k3ERpdffsRqfWn9SwlkYF
- 4vdIdVRObrzfX5zRc2wOALoSb18lKDdiacWViOwT44Ti+QLpPDCvl+JAD6pLaC8PaAatooQ0qzevr
- uP7LMQr8g==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:38608)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hahpL-00063s-1J; Tue, 11 Jun 2019 15:32:43 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hahpH-0007vX-VI; Tue, 11 Jun 2019 15:32:39 +0100
-Date: Tue, 11 Jun 2019 15:32:39 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
-Subject: Re: [PATCH] ARM: mvebu_v7_defconfig: fix Ethernet on Clearfog
-Message-ID: <20190611143239.3v2cpg5o4u5gxzzw@shell.armlinux.org.uk>
-References: <8f2f4c517f1664f362badc2a0f9af8e3531cba87.1558105715.git.jan.kundrat@cesnet.cz>
- <87pnogzxmy.fsf@FE-laptop>
- <871fc85b-5f0a-40a4-ade2-0701796bcd9a@cesnet.cz>
- <87mujkzwkr.fsf@FE-laptop>
- <0609d750-de5e-49cb-97b5-43772c5bbe0d@cesnet.cz>
- <0f5e7886-f722-44ac-b64f-1f372a52938d@cesnet.cz>
- <87wohspdi7.fsf@FE-laptop>
+ id 1hahpe-0007mu-4C
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:33:04 +0000
+X-Originating-IP: 90.88.159.246
+Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
+ [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 5C50FFF812;
+ Tue, 11 Jun 2019 14:32:45 +0000 (UTC)
+Date: Tue, 11 Jun 2019 16:32:39 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: Icenowy Zheng <icenowy@aosc.io>
+Subject: Re: [PATCH v2 11/11] ARM: dts: sun8i: s3: add devicetree for Lichee
+ zero plus w/ S3
+Message-ID: <20190611143239.zvganlwaiku3bs63@flea>
+References: <20190611140940.14357-1-icenowy@aosc.io>
+ <20190611140940.14357-12-icenowy@aosc.io>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87wohspdi7.fsf@FE-laptop>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190611140940.14357-12-icenowy@aosc.io>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_073249_382513_EA9FC7DA 
-X-CRM114-Status: GOOD (  27.60  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190611_073302_530414_75F2D45A 
+X-CRM114-Status: GOOD (  18.12  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,72 +62,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jan =?iso-8859-1?Q?Kundr=E1t?= <jan.kundrat@cesnet.cz>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Baruch Siach <baruch@tkos.co.il>, linux-arm-kernel@lists.infradead.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7683147994567360976=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKdW4gMTEsIDIwMTkgYXQgMDE6Mjg6MzJQTSArMDIwMCwgR3JlZ29yeSBDTEVNRU5U
-IHdyb3RlOgo+IEphbiBLdW5kcsOhdCA8amFuLmt1bmRyYXRAY2VzbmV0LmN6PiB3cml0ZXM6Cj4g
-Cj4gPiBPbiBzb2JvdGEgMTguIGt2xJt0bmEgMjAxOSAwOjUwOjI4IENFU1QsIEphbiBLdW5kcsOh
-dCB3cm90ZToKPiA+Pj4gV2VsbCwgdGhpcyBpcyBqdXN0IGFib3V0IGNvbmZpZ3VyYXRpb24sIEkg
-ZG9uJ3QgY29uc2lkZXIgdGhpcyBpcwo+ID4+PiBzb21ldGhpbmcgdGhhdCBpcyBhIGNhbmRpZGF0
-ZSBmb3IgYSBmaXguCj4gPj4+IAo+ID4+PiBJZiB0aGVyZSBpcyBhIHJlZ3Jlc3Npb24sIHRoZW4s
-IGl0IGlzIG1heWJlIGxvY2F0ZWQgaW4gdGhlIEtjb25maWcKPiA+Pj4gZGVwZW5kZW5jeS4KPiA+
-Pj4gCj4gPj4+IE9mIGNvdXJzZSBJIGNhbiBjaGFuZ2UgbXkgbWluZCB3aXRoIGdvb2QgYXJndW1l
-bnRzIDopCj4gPj4KPiA+PiBIaSBHcmVnb3J5LAo+ID4+IEkgYWdyZWUgdGhhdCBpdCdzIGp1c3Qg
-YSBjb25maWcgYnVnLCBidXQgaXQncyBhbHNvIHNvbWV0aGluZyAKPiA+PiB3aGljaCBjYW4gc2ls
-ZW50bHkgcHJvZHVjZSBicm9rZW4gc3lzdGVtcy4gSWYgdGhpcyBpcyBub3QgZml4ZWQsIAo+ID4+
-IHBlb3BsZSBidWlsZGluZyB0aGVpciA1LjIga2VybmVscyB3aWxsIG5vdCBoYXZlIHdvcmtpbmcg
-bmV0d29yayAKPiA+PiBvbiBDbGVhcmZvZyB1bmxlc3MgdGhleSB0YWtlIGFuIGV4dHJhIGFjdGlv
-bi4gRm9yIGV4YW1wbGUsIGEgCj4gPj4gQnVpbGRyb290IGRlZmNvbmZpZyB0aGF0J3MgYmVlbiBh
-dmFpbGFibGUgZm9yIHF1aXRlIHNvbWUgdGltZSAKPiA+PiAoYW5kIHdoaWNoIHVzZXMganVzdCBg
-bXZlYnVfdjdfZGVmY29uZmlnYCBmb3Iga2VybmVsKSBzdWRkZW5seSAKPiA+PiBiZWNvbWVzIGJy
-b2tlbi4KPiA+Pgo+ID4+IElzbid0IHRoZSB3aG9sZSBwb2ludCBvZiB0aGUgLXJjIHJlbGVhc2Ug
-dG8gZmluZCAqYW5kKiBmaXggYnVncyAKPiA+PiBlYXJseT8gVGhpcyB0cml2aWFsIHBhdGNoIGRv
-ZXMgbm90IGludHJvZHVjZSBhbnkgbmV3IG9yIHVudGVzdGVkIAo+ID4+IGNvZGUuIEkgbWFkZSBh
-IGNob2ljZSB0byB0ZXN0IGEgcHJlLXJlbGVhc2Uga2VybmVsLCBJIGhpdCBhIGJ1ZyAKPiA+PiAt
-LSBubyBiaWcgZGVhbC4gSSBmb3VuZCB0aGUgcm9vdCBjYXVzZSwgSSBzZW50IGEgdHJpdmlhbCBm
-aXggCj4gPj4gdXBzdHJlYW0sIGFuZCBub3cgSSdtIHRvbGQgYnkgYSBtYWludGFpbmVyIHRoYXQg
-dGhleSB3aWxsIGxldCAKPiA+PiB0aGUgbmV4dCBrZXJuZWwgdmVyc2lvbiwgd2hpY2ggaXMgYWJv
-dXQgc2V2ZW4gLXJjIHJlbGVhc2VzIGF3YXksIAo+ID4+IGJlIHJlbGVhc2VkIHdpdGhvdXQgYSBm
-dWxseSBmdW5jdGlvbmluZyBuZXR3b3JrLCBJIGFtIHN1cnByaXNlZCAKPiA+PiBieSB0aGF0LiBJ
-IHdvdWxkIGhhdmUgdW5kZXJzdG9vZCB0aGlzIGJldHRlciBpZiB3ZSB3ZXJlIGF0IHRoZSAKPiA+
-PiBmaW5hbCAtcmMgc3RhZ2UsIGJ1dCBkdXJpbmcgdGhlIG1lcmdlIHdpbmRvdz8gT3IgaXMgdGhh
-dCBwZXJoYXBzIAo+ID4+IGEgbWlzdW5kZXJzdGFuZGluZyBhbmQgeW91J3JlIHBsYW5uaW5nIHRv
-IHNlbmQgdGhpcyBpbiB0aW1lIAo+ID4+IGFmdGVyIC1yYzE/Cj4gPgo+ID4gSGkgR3JlZ29yeSwK
-PiA+IHdhcyBJIHN1Y2Nlc3NmdWwgaW4gcGVyc3VhZGluZyB5b3UgdGhhdCB0aGlzIHBhdGNoIHNo
-b3VsZCBiZSBpbmNsdWRlZCBpbiAKPiA+IHRoZSA1LjIgdHJlZSwgc28gdGhhdCBDbGVhcmZvZyBC
-YXNlIGhhcyBhbGwgdGhyZWUgRXRoZXJuZXQgaW50ZXJmYWNlcz8KPiAKPiBGaW5hbGx5IEkgbW92
-ZWQgdGhlIGNvbW1pdCBmcm9tIG12ZWJ1L2FybSB0byBtdmVidS9maXhlcy4gSSBzdGlsbCB0aGlu
-awo+IHRoZSBwcm9ibGVtIGlzIGF0IGRyaXZlciBsZXZlbCwgYnV0IEkgZGlkbid0IHRha2UgZW5v
-dWdoIHRpbWUgdG8gZmluZAo+IHdoZXJlIGFuZCB3ZSBkaWRuJ3QgaGF2ZSBhbnkgZmVlZGJhY2sg
-ZnJvbSB0aGUgYXV0aG9yIG9mIHRoZSBpbml0aWxhCj4gcGF0Y2guCgpJIGRvbid0IHNlZSB0aGF0
-IHRoZXJlJ3MgbXVjaCB0aGF0IEkgbmVlZCB0byBzYXksIGFuZCBJJ20gYXQgYSB0b3RhbApsb3Nz
-IHRvIHdvcmsgb3V0IHdoeSB5b3UgdGhpbmsgaXQncyBhIHByb2JsZW0gYXQgZHJpdmVyIGxldmVs
-LgoKV2h5IGRvIHlvdSB0aGluayBpdCdzIGFwcHJvcHJpYXRlIGZvciBtdm5ldGEgdG8ga25vdyB3
-aGV0aGVyIHRoZSBhMzh4CmNvbXBoeSBkcml2ZXIgaXMgY29uZmlndXJlZCBmb3IgdGhlIGN1cnJl
-bnQga2VybmVsIG9yIG5vdCwgZ2l2ZW4gdGhhdAptdm5ldGEgaXMgbm90IGV4Y2x1c2l2ZWx5IHVz
-ZWQgb24gQXJtYWRhIDM4eCBzeXN0ZW1zPwoKV2UncmUgYWxyZWFkeSBkb2luZyB0aGUgYmVzdCB3
-ZSBjYW4gZG8gd2l0aCBpZ25vcmluZyB0aGUgY29tcGh5IGlmCm5vdCBwcmVzZW50OyB0aGUgb25s
-eSBjYXNlIHRoYXQgd2UgZGVmZXIgcHJvYmUgaXMgd2hlbgpkZXZtX29mX3BoeV9nZXQoKSByZXR1
-cm5zIC1FUFJPQkVfREVGRVIsIHdoaWNoIGNvdWxkIG1lYW4gInRoZSBjb21waHkKZHJpdmVyIGlz
-IGEgbW9kdWxlIGJ1dCBpcyBub3QgbG9hZGVkIHlldCIgb3IgInRoZSBjb21waHkgZHJpdmVyIGhh
-cwpub3QgYmVlbiBwcm9iZWQgeWV0IiAtIHdlIGNhbid0IGlnbm9yZSB0aG9zZS4KCj4gU28gbGV0
-J3MgdHJ5IHRvIHB1c2ggaXQgdG8gZml4ZXMsIEkgd2lsbCBkbyB0aGUgcHVsbCByZXF1ZXN0IGZv
-ciBhcm0tc29jCj4gYmVmb3JlIGVuZCBvZiB0aGUgd2Vlay4KClRoYXQncyB0aGUgY29ycmVjdCBz
-b2x1dGlvbiwgYW5kIGl0IHNob3VsZCBhbHNvIGhhdmUgYSBGaXhlczogdGFnIG9uCml0LiAgVW5m
-b3J0dW5hdGVseSwga2VlcGluZyB0aGUgZGVmY29uZmlncyB1cCB0byBkYXRlIGlzIHF1aXRlIGEg
-aGFyZApwcm9ibGVtIHVubGVzcyB5b3UgaGF2ZSBsb3RzIG9mIGNvbXB1dGluZyBwb3dlciB0byBi
-dWlsZCBhbmQgYm9vdCBhbGwKdGhlIGRlZmNvbmZpZ3Mgb24gYWxsIHBsYXRmb3JtcyAoSSBkb24n
-dC4pCgotLSAKUk1LJ3MgUGF0Y2ggc3lzdGVtOiBodHRwczovL3d3dy5hcm1saW51eC5vcmcudWsv
-ZGV2ZWxvcGVyL3BhdGNoZXMvCkZUVEMgYnJvYWRiYW5kIGZvciAwLjhtaWxlIGxpbmUgaW4gc3Vi
-dXJiaWE6IHN5bmMgYXQgMTIuMU1icHMgZG93biA2MjJrYnBzIHVwCkFjY29yZGluZyB0byBzcGVl
-ZHRlc3QubmV0OiAxMS45TWJwcyBkb3duIDUwMGticHMgdXAKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+--===============7683147994567360976==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="6e3io72tcrt3erkz"
+Content-Disposition: inline
+
+
+--6e3io72tcrt3erkz
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Tue, Jun 11, 2019 at 10:09:40PM +0800, Icenowy Zheng wrote:
+> Lichee zero plus is a core board made by Sipeed, which includes on-board
+> TF slot or SMT SD NAND, and optional SPI NOR or eMMC, a UART debug
+> header, a microUSB slot and a gold finger connector for expansion. It
+> can use either Sochip S3 or Allwinner S3L SoC.
+>
+> Add the basic device tree for the core board, w/o optional onboard
+> storage, and with S3 SoC.
+>
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> ---
+> New patch in v2.
+>
+>  arch/arm/boot/dts/Makefile                    |  1 +
+>  .../boot/dts/sun8i-s3-lichee-zero-plus.dts    |  8 ++++
+>  .../dts/sun8i-s3-s3l-lichee-zero-plus.dtsi    | 39 +++++++++++++++++++
+>  3 files changed, 48 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts
+>  create mode 100644 arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi
+>
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 5559028b770e..2b5e6a1d20ff 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -1110,6 +1110,7 @@ dtb-$(CONFIG_MACH_SUN8I) += \
+>  	sun8i-r16-nintendo-super-nes-classic.dtb \
+>  	sun8i-r16-parrot.dtb \
+>  	sun8i-r40-bananapi-m2-ultra.dtb \
+> +	sun8i-s3-lichee-zero-plus.dtb \
+>  	sun8i-t3-cqa3t-bv3.dtb \
+>  	sun8i-v3s-licheepi-zero.dtb \
+>  	sun8i-v3s-licheepi-zero-dock.dtb \
+> diff --git a/arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts b/arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts
+> new file mode 100644
+> index 000000000000..7d2f6b145190
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/sun8i-s3-lichee-zero-plus.dts
+> @@ -0,0 +1,8 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (C) 2019 Icenowy Zheng <icenowy@aosc.io>
+> + */
+> +
+> +/dts-v1/;
+> +#include "sun8i-s3.dtsi"
+> +#include "sun8i-s3-s3l-lichee-zero-plus.dtsi"
+> diff --git a/arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi b/arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi
+> new file mode 100644
+> index 000000000000..bb148e796df7
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/sun8i-s3-s3l-lichee-zero-plus.dtsi
+> @@ -0,0 +1,39 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (C) 2019 Icenowy Zheng <icenowy@aosc.io>
+> + */
+> +
+> +#include "sunxi-common-regulators.dtsi"
+
+If possible, you should get rid of that include. What are you using it
+for?
+
+Maxime
+
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+--6e3io72tcrt3erkz
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXP+7hwAKCRDj7w1vZxhR
+xXD5AQDzzGjJuMYqZOH2bt2UEka6SvuIrYluNOH8x3D+7GOsJAEA2rH3UjHc3GPu
+kpIKRxDM2YMRW103wJicTaDDoRvXeQc=
+=ySX5
+-----END PGP SIGNATURE-----
+
+--6e3io72tcrt3erkz--
+
+
+--===============7683147994567360976==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7683147994567360976==--
+
