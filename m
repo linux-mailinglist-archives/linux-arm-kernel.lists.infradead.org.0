@@ -2,88 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B6BC3CA91
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:58:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF3CC3CAA4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:01:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O1D7Ovo9yFwiD8fxv98mCq4fyiLE1LotyWbKmNsMzmw=; b=PS/OoihSNmb4nV
-	1HmgnSCzxZfs8VhP7FbDMN9ByYXnPYRoWw4XpZqrGGEPSNQX5fe72C1beX0wpK/8If2hsNqvXa+nI
-	WAb3r0PaPxZiUQEK+688EKAcznfk+kBrdhWzQ6rXFCThiiIYBkRYDshPtooSKaTWx+GR7Uq4DqkyQ
-	GvSmyzSIqQLjw0lT6EYzUsnOdPN1aocwGduDwNmzY25jQk2yQabsR1PO5LOD3B2hKsjQwaa/hxE9k
-	LK2TvDsFW24hzHg7QZ64pS+QTBDo/UDrDh0FfF+pX6Dsu+cG9x2VJIobrSEjgZU8snhn28aPrqCz4
-	NLKdgHd0CJjBp4etNESA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0y1wXDyUJa2PLYMKn9sFLhVP0gCekTbvD6ybeF0tJdQ=; b=SrjFr4zOYpLKQd
+	45gCTHvGW+4xMM/D2WSduPi5h/KxPvClNZ9iozvzpRMI3EABLh5F8hYP9dqVYm42da7JbYEGYrqr9
+	7s8M3jx7T+pDrl77hjc1BYc3T5gEPQDKjvnDZym3nhQn6Y6KPl8YozAu0HKt4a0nc4KCn3qPW6LcL
+	DrW7cTod0ovE/qY54Xm4qOZVDZ/CukPHSPFxreKoW9o0BCd0dn99JGqJOW+H9TjV7wa7+beSrHMmq
+	WE974seQGlul5BoaKaGTj/RIjKGnVTIPZtAg+RU6FAhNybi1byNtg/MzxYhD8eLL0GpCew2hHJqJn
+	W/35XgcMIhjnFqTT2WxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hafPp-00055D-AU; Tue, 11 Jun 2019 11:58:13 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1hafTB-0007Sn-F3; Tue, 11 Jun 2019 12:01:41 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hafOm-0004fY-Gy; Tue, 11 Jun 2019 11:57:10 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5BBuhEc126815;
- Tue, 11 Jun 2019 06:56:43 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560254203;
- bh=pMoVVapOIW2ESz+4jX391PkjziL8+0IUeCu70eJHeHk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Uy8vh+ffYjEzKlnXvhhiWl3bj6a50/A/pOhsK7C8eELDCVJqP1/wRMfAnscEl3z3A
- tsUWoaq8X6AqazLycDMqrjqhWp1bioJ7poDLJO+N+/InYUTVIjPT3jt6b+ZZS4hZ/J
- J8a+6BBPg2V2WG5gbwIhfXvoxMi2NaoiXoqCX/CI=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5BBuhXD014880
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 11 Jun 2019 06:56:43 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 11
- Jun 2019 06:56:42 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 11 Jun 2019 06:56:42 -0500
-Received: from [172.24.190.89] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5BBubJx076305;
- Tue, 11 Jun 2019 06:56:38 -0500
-Subject: Re: [PATCH v5 3/5] mtd: Add support for HyperBus memory devices
-To: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>, David Woodhouse
- <dwmw2@infradead.org>, Brian Norris <computersforpeace@gmail.com>, Boris
- Brezillon <bbrezillon@kernel.org>, Marek Vasut <marek.vasut@gmail.com>,
- Richard Weinberger <richard@nod.at>, Rob Herring <robh+dt@kernel.org>
-References: <20190609103227.24875-1-vigneshr@ti.com>
- <20190609103227.24875-4-vigneshr@ti.com>
- <58e9608d-35ff-0436-6075-b2e4ed4b8594@cogentembedded.com>
-From: Vignesh Raghavendra <vigneshr@ti.com>
-Message-ID: <f47d4d57-afb2-3b39-fae9-3ed740a2b8a6@ti.com>
-Date: Tue, 11 Jun 2019 17:27:25 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hafSs-0007RR-Og; Tue, 11 Jun 2019 12:01:24 +0000
+X-UUID: 61d042873d744cb48340f9e2da33cd18-20190611
+X-UUID: 61d042873d744cb48340f9e2da33cd18-20190611
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1289692212; Tue, 11 Jun 2019 04:01:17 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 05:01:16 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 20:01:14 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 11 Jun 2019 20:01:14 +0800
+Message-ID: <1560254473.29153.16.camel@mtksdccf07>
+Subject: Re: [PATCH v2] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Tue, 11 Jun 2019 20:01:13 +0800
+In-Reply-To: <CACT4Y+bNQCa_h158Hhug_DgF3X-8Uoc6Ar7p5vFvHE7uThQmjg@mail.gmail.com>
+References: <1559651172-28989-1-git-send-email-walter-zh.wu@mediatek.com>
+ <CACT4Y+Y9_85YB8CCwmKerDWc45Z00hMd6Pc-STEbr0cmYSqnoA@mail.gmail.com>
+ <1560151690.20384.3.camel@mtksdccf07>
+ <CACT4Y+aetKEM9UkfSoVf8EaDNTD40mEF0xyaRiuw=DPEaGpTkQ@mail.gmail.com>
+ <1560236742.4832.34.camel@mtksdccf07>
+ <CACT4Y+YNG0OGT+mCEms+=SYWA=9R3MmBzr8e3QsNNdQvHNt9Fg@mail.gmail.com>
+ <1560249891.29153.4.camel@mtksdccf07>
+ <CACT4Y+aXqjCMaJego3yeSG1eR1+vkJkx5GB+xsy5cpGvAtTnDA@mail.gmail.com>
+ <CACT4Y+bNQCa_h158Hhug_DgF3X-8Uoc6Ar7p5vFvHE7uThQmjg@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <58e9608d-35ff-0436-6075-b2e4ed4b8594@cogentembedded.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_045708_644665_739E472D 
-X-CRM114-Status: GOOD (  28.88  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190611_050122_809993_14AB8835 
+X-CRM114-Status: GOOD (  34.43  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,253 +79,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- linux-kernel@vger.kernel.org, Joakim Tjernlund <Joakim.Tjernlund@infinera.com>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, "Jason
+ A. Donenfeld" <Jason@zx2c4.com>, Vasily
+ Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Linux-MM <linux-mm@kvack.org>, Andrey Konovalov <andreyknvl@google.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ Pekka Enberg <penberg@kernel.org>, Martin
+ Schwidefsky <schwidefsky@de.ibm.com>,
+ Miles Chen =?UTF-8?Q?=28=E9=99=B3=E6=B0=91=E6=A8=BA=29?=
+ <Miles.Chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Christoph Lameter <cl@linux.com>,
+ Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 2019-06-11 at 13:39 +0200, Dmitry Vyukov wrote:
+> I should have been asked this earlier, but: what is your use-case?
+We need KASAN to help us to detect memory corruption at mobile phone. It
+is powerful tool.
 
-
-On 10/06/19 11:27 PM, Sergei Shtylyov wrote:
-> On 06/09/2019 01:32 PM, Vignesh Raghavendra wrote:
+> Could you use CONFIG_KASAN_GENERIC instead? Why not?
+> CONFIG_KASAN_GENERIC already has quarantine.
 > 
->> Cypress' HyperBus is Low Signal Count, High Performance Double Data Rate
->> Bus interface between a host system master and one or more slave
->> interfaces. HyperBus is used to connect microprocessor, microcontroller,
->> or ASIC devices with random access NOR flash memory (called HyperFlash)
->> or self refresh DRAM (called HyperRAM).
->>
->> Its a 8-bit data bus (DQ[7:0]) with  Read-Write Data Strobe (RWDS)
->> signal and either Single-ended clock(3.0V parts) or Differential clock
->> (1.8V parts). It uses ChipSelect lines to select b/w multiple slaves.
->> At bus level, it follows a separate protocol described in HyperBus
->> specification[1].
->>
->> HyperFlash follows CFI AMD/Fujitsu Extended Command Set (0x0002) similar
->> to that of existing parallel NORs. Since HyperBus is x8 DDR bus,
->> its equivalent to x16 parallel NOR flash wrt bits per clock cycle. But
->> HyperBus operates at >166MHz frequencies.
->> HyperRAM provides direct random read/write access to flash memory
->> array.
->>
->> But, HyperBus memory controllers seem to abstract implementation details
->> and expose a simple MMIO interface to access connected flash.
->>
->> Add support for registering HyperFlash devices with MTD framework. MTD
->> maps framework along with CFI chip support framework are used to support
->> communicating with flash.
->>
->> Framework is modelled along the lines of spi-nor framework. HyperBus
->> memory controller (HBMC) drivers calls hyperbus_register_device() to
->> register a single HyperFlash device. HyperFlash core parses MMIO access
->> information from DT, sets up the map_info struct, probes CFI flash and
->> registers it with MTD framework.
->>
->> Some HBMC masters need calibration/training sequence[3] to be carried
->> out, in order for DLL inside the controller to lock, by reading a known
->> string/pattern. This is done by repeatedly reading CFI Query
->> Identification String. Calibration needs to be done before trying to detect
->> flash as part of CFI flash probe.
->>
->> HyperRAM is not supported at the moment.
->>
->> HyperBus specification can be found at[1]
->> HyperFlash datasheet can be found at[2]
->>
->> [1] https://www.cypress.com/file/213356/download
->> [2] https://www.cypress.com/file/213346/download
->> [3] http://www.ti.com/lit/ug/spruid7b/spruid7b.pdf
->>     Table 12-5741. HyperFlash Access Sequence
->>
->> Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
-> [...]
->> diff --git a/drivers/mtd/hyperbus/hyperbus-core.c b/drivers/mtd/hyperbus/hyperbus-core.c
->> new file mode 100644
->> index 000000000000..df1f75e10b1a
->> --- /dev/null
->> +++ b/drivers/mtd/hyperbus/hyperbus-core.c
->> @@ -0,0 +1,191 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +//
->> +// Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
->> +// Author: Vignesh Raghavendra <vigneshr@ti.com>
->> +
->> +#include <linux/err.h>
->> +#include <linux/kernel.h>
->> +#include <linux/module.h>
->> +#include <linux/mtd/hyperbus.h>
->> +#include <linux/mtd/map.h>
->> +#include <linux/mtd/mtd.h>
->> +#include <linux/mtd/cfi.h>
->> +#include <linux/of.h>
->> +#include <linux/of_address.h>
->> +#include <linux/types.h>
->> +
->> +#define HYPERBUS_CALIB_COUNT 25
-> 
->    Mhm, I think I've already protested about this being #define'd here...
-> 
-
-I thought you had agreed that default optional calibration routine can
-be part of core code and thus this #define.
-
-Anyways, what is your preference here? Drop the constant and use a local
-variable in hyperbus_calibrate()?
-Or are you suggesting to move hyperbus_calibrate() TI's specific driver?
+We hope to use tag-based KASAN, because it consumes more less
+memory(1/16) than generic KASAN(1/8), but we also hope the tag-based
+KASAN report is easy read and able to identify the use-after-free or
+out-of-bound.
 
 
-> [...]
->> +int hyperbus_register_device(struct hyperbus_device *hbdev)
->> +{
->> +	const struct hyperbus_ops *ops;
->> +	struct hyperbus_ctlr *ctlr;
->> +	struct device_node *np;
->> +	struct map_info *map;
->> +	struct resource res;
->> +	struct device *dev;
->> +	int ret;
->> +
->> +	if (!hbdev || !hbdev->np || !hbdev->ctlr || !hbdev->ctlr->dev) {
->> +		pr_err("hyperbus: please fill all the necessary fields!\n");
->> +		return -EINVAL;
->> +	}
->> +
->> +	np = hbdev->np;
->> +	ctlr = hbdev->ctlr;
->> +	if (!of_device_is_compatible(np, "cypress,hyperflash"))
->> +		return -ENODEV;
->> +
->> +	hbdev->memtype = HYPERFLASH;
->> +
->> +	if (of_address_to_resource(np, 0, &res))
->> +		return -EINVAL;
-> 
->    Why not just propagate the error upstream (yeah, I've noticed that
-> it only can be -EINVAL)?
-> 
+> On Tue, Jun 11, 2019 at 1:32 PM Dmitry Vyukov <dvyukov@google.com> wrote:
+> >
+> > On Tue, Jun 11, 2019 at 12:44 PM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > >
+> > > On Tue, 2019-06-11 at 10:47 +0200, Dmitry Vyukov wrote:
+> > > > On Tue, Jun 11, 2019 at 9:05 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > > >
+> > > > > On Mon, 2019-06-10 at 13:46 +0200, Dmitry Vyukov wrote:
+> > > > > > On Mon, Jun 10, 2019 at 9:28 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > > > > >
+> > > > > > > On Fri, 2019-06-07 at 21:18 +0800, Dmitry Vyukov wrote:
+> > > > > > > > > diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> > > > > > > > > index b40ea104dd36..be0667225b58 100644
+> > > > > > > > > --- a/include/linux/kasan.h
+> > > > > > > > > +++ b/include/linux/kasan.h
+> > > > > > > > > @@ -164,7 +164,11 @@ void kasan_cache_shutdown(struct kmem_cache *cache);
+> > > > > > > > >
+> > > > > > > > >  #else /* CONFIG_KASAN_GENERIC */
+> > > > > > > > >
+> > > > > > > > > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > > > > > > +void kasan_cache_shrink(struct kmem_cache *cache);
+> > > > > > > > > +#else
+> > > > > > > >
+> > > > > > > > Please restructure the code so that we don't duplicate this function
+> > > > > > > > name 3 times in this header.
+> > > > > > > >
+> > > > > > > We have fixed it, Thank you for your reminder.
+> > > > > > >
+> > > > > > >
+> > > > > > > > >  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
+> > > > > > > > > +#endif
+> > > > > > > > >  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
+> > > > > > > > >
+> > > > > > > > >  #endif /* CONFIG_KASAN_GENERIC */
+> > > > > > > > > diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+> > > > > > > > > index 9950b660e62d..17a4952c5eee 100644
+> > > > > > > > > --- a/lib/Kconfig.kasan
+> > > > > > > > > +++ b/lib/Kconfig.kasan
+> > > > > > > > > @@ -134,6 +134,15 @@ config KASAN_S390_4_LEVEL_PAGING
+> > > > > > > > >           to 3TB of RAM with KASan enabled). This options allows to force
+> > > > > > > > >           4-level paging instead.
+> > > > > > > > >
+> > > > > > > > > +config KASAN_SW_TAGS_IDENTIFY
+> > > > > > > > > +       bool "Enable memory corruption idenitfication"
+> > > > > > > >
+> > > > > > > > s/idenitfication/identification/
+> > > > > > > >
+> > > > > > > I should replace my glasses.
+> > > > > > >
+> > > > > > >
+> > > > > > > > > +       depends on KASAN_SW_TAGS
+> > > > > > > > > +       help
+> > > > > > > > > +         Now tag-based KASAN bug report always shows invalid-access error, This
+> > > > > > > > > +         options can identify it whether it is use-after-free or out-of-bound.
+> > > > > > > > > +         This will make it easier for programmers to see the memory corruption
+> > > > > > > > > +         problem.
+> > > > > > > >
+> > > > > > > > This description looks like a change description, i.e. it describes
+> > > > > > > > the current behavior and how it changes. I think code comments should
+> > > > > > > > not have such, they should describe the current state of the things.
+> > > > > > > > It should also mention the trade-off, otherwise it raises reasonable
+> > > > > > > > questions like "why it's not enabled by default?" and "why do I ever
+> > > > > > > > want to not enable it?".
+> > > > > > > > I would do something like:
+> > > > > > > >
+> > > > > > > > This option enables best-effort identification of bug type
+> > > > > > > > (use-after-free or out-of-bounds)
+> > > > > > > > at the cost of increased memory consumption for object quarantine.
+> > > > > > > >
+> > > > > > > I totally agree with your comments. Would you think we should try to add the cost?
+> > > > > > > It may be that it consumes about 1/128th of available memory at full quarantine usage rate.
+> > > > > >
+> > > > > > Hi,
+> > > > > >
+> > > > > > I don't understand the question. We should not add costs if not
+> > > > > > necessary. Or you mean why we should add _docs_ regarding the cost? Or
+> > > > > > what?
+> > > > > >
+> > > > > I mean the description of option. Should it add the description for
+> > > > > memory costs. I see KASAN_SW_TAGS and KASAN_GENERIC options to show the
+> > > > > memory costs. So We originally think it is possible to add the
+> > > > > description, if users want to enable it, maybe they want to know its
+> > > > > memory costs.
+> > > > >
+> > > > > If you think it is not necessary, we will not add it.
+> > > >
+> > > > Full description of memory costs for normal KASAN mode and
+> > > > KASAN_SW_TAGS should probably go into
+> > > > Documentation/dev-tools/kasan.rst rather then into config description
+> > > > because it may be too lengthy.
+> > > >
+> > > Thanks your reminder.
+> > >
+> > > > I mentioned memory costs for this config because otherwise it's
+> > > > unclear why would one ever want to _not_ enable this option. If it
+> > > > would only have positive effects, then it should be enabled all the
+> > > > time and should not be a config option at all.
+> > >
+> > > Sorry, I don't get your full meaning.
+> > > You think not to add the memory costs into the description of config ?
+> > > or need to add it? or make it not be a config option(default enabled)?
+> >
+> > Yes, I think we need to include mention of additional cost into _this_
+> > new config.
 
-Ok.
 
-> [...]
->> diff --git a/include/linux/mtd/hyperbus.h b/include/linux/mtd/hyperbus.h
->> new file mode 100644
->> index 000000000000..ee2eefd822c9
->> --- /dev/null
->> +++ b/include/linux/mtd/hyperbus.h
->> @@ -0,0 +1,91 @@
->> +/* SPDX-License-Identifier: GPL-2.0
->> + *
->> + * Copyright (C) 2019 Texas Instruments Incorporated - http://www.ti.com/
->> + */
->> +
->> +#ifndef __LINUX_MTD_HYPERBUS_H__
->> +#define __LINUX_MTD_HYPERBUS_H__
->> +
->> +#include <linux/mtd/map.h>
->> +
->> +enum hyperbus_memtype {
->> +	HYPERFLASH,
->> +	HYPERRAM,
->> +};
->> +
->> +/**
->> + * struct hyperbus_device - struct representing HyperBus slave device
->> + * @map: map_info struct for accessing MMIO HyperBus flash memory
->> + * @np:	pointer to HyperBus slave device node
->           ^
->    Space needed here, not tab.
-> 
-
-Ok
-
->> + * @mtd: pointer to MTD struct
->> + * @ctlr: pointer to HyperBus controller struct
->> + * @memtype: type of memory device: HyperFlash or HyperRAM
->> + * @registered: flag to indicate whether device is registered with MTD core
->> + */
->> +
->> +struct hyperbus_device {
->> +	struct map_info map;
->> +	struct device_node *np;
->> +	struct mtd_info *mtd;
->> +	struct hyperbus_ctlr *ctlr;
->> +	enum hyperbus_memtype memtype;
->> +	bool registered;
->> +};
->> +
->> +/**
->> + * struct hyperbus_ops - struct representing custom HyperBus operations
->> + * @read16: read 16 bit of data, usually from register/ID-CFI space
->> + * @write16: write 16 bit of data, usually to register/ID-CFI space
-> 
->    Usually? How to differ the register/memory transfers if both are possible?
-> 
-
-CFI + map framework does not provide a way to differentiate b/w reg
-access vs memory access. read16()/write16() is used to either access
-registers or for sending various cmds like lock/unlock etc or for
-programming a single word.
-For regular read/writes copy_from() and copy_to() are used.
-
-Looking at HyperBus protocol, controllers would not need to
-differentiate b/w registers vs memory transfers for HyperFlash devices.
-So, I think I can drop read16/write16 and redirect these calls to
-copy_from()/copy_to()
-
-
-I mainly added these functions keeping HyperRAM in mind. Idea was
-drivers would look at hyperbus_device->memtype and set to register
-access mode for HyperRAM in case of write16()/read16(). Looks like the
-interface is not intuitive enough
-So, will drop these and add it back when adding HyperRAM support.
-
-Does that work for your HW as well?
-
->> + * @copy_from: copy data from flash memory
->> + * @copy_to: copy data to flash memory
->> + * @calibrate: calibrate HyperBus controller
->> + */
->> +
->> +struct hyperbus_ops {
->> +	u16 (*read16)(struct hyperbus_device *hbdev, unsigned long addr);
->> +	void (*write16)(struct hyperbus_device *hbdev,
->> +			unsigned long addr, u16 val);
->> +	void (*copy_from)(struct hyperbus_device *hbdev, void *to,
->> +			  unsigned long from, ssize_t len);
->> +	void (*copy_to)(struct hyperbus_device *dev, unsigned long to,
->> +			const void *from, ssize_t len);
->> +	int (*calibrate)(struct hyperbus_device *dev);
->> +};
->> +
->> +/**
->> + * struct hyperbus_ctlr - struct representing HyperBus controller
->> + * @calibrated: flag to indicate ctlr calibration sequence is complete
->> + * @ops: HyperBus controller ops
-> 
->    What about @dev?
-> 
-
-Will add.
-
->> + */
->> +struct hyperbus_ctlr {
->> +	struct device *dev;
->> +	bool calibrated;
->> +
->> +	const struct hyperbus_ops *ops;
->> +};
-> [...]
-> 
-> MBR, Sergei
-> 
-
--- 
-Regards
-Vignesh
 
 _______________________________________________
 linux-arm-kernel mailing list
