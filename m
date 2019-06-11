@@ -2,68 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC96C3C20D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 06:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B6BD3C240
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 06:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5EKm6pht0u+8Hlv///hkFrWL3xOw1a2v6AOCp6QpDAI=; b=U0rYN9qSpzWiNp
-	mwdIV1PLmQWk3sJ9jwMh1j6l0ofFIXcf/Ctj3P0cJpPVcuoHM9JhBNrrbY0bGroMUP/V/VzToD0jM
-	09CEoY2vcv0BJq7cZp8AF0X2hjXQyHzkZUn1U/83VPYALk3OUcYFraHjW7Dasm2sqqefzOVFrXiPb
-	3wh6wpbcSAXHN++dkyyp+jZU+ACqtsesuNHj/O0iosLm354BRxbomkMUI9bXJVixIFkC2NciL0cH0
-	NNpWMGQk/E4UNJjZ75tji6aS1nYY4puDfIH4VpgahjhzRyyw+LmEfD+pNfL/7CIPoC5KKYyxsb4mZ
-	DopXy3P1i9xAqi/zSsoA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=by3WDJDBr04Fpkmckzdh5QdinNRv5s/RzDNj6KpeW38=; b=IYT4z+IgraG+ii
+	PQyV9d6F/qZ+4Z3hER6FO5sDY1ayJmx1Ql+Ph6GHdApO4aZ/NBhthgzAJdoPswuaUvgxSzIbxsQDq
+	Dn6v88/2PQvD2HBNNQkWyxKjfZIarpeht6rQ2xpsX7Eq/wggCtw8/cht3d6soBFeQCxiri0xwahhh
+	BZ02obNRJZcn3iRMmG6BAhPybF29/X5kOaOhHw/I7gTsA5BphmdhLR1RRG018j0pLSF2EP6Qd6kSL
+	dujbb4SO1QdxG8mwBXxvmM5X5+chXw8aptNXfpEzuJP5uAcToMSwF1twWJfhvQBH0stYX2sHeVit8
+	pki9Bw85rV6MyM0ma79Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haYJA-0004tN-BI; Tue, 11 Jun 2019 04:22:52 +0000
-Received: from szxga01-in.huawei.com ([45.249.212.187] helo=huawei.com)
+	id 1haYTZ-0008AV-Mp; Tue, 11 Jun 2019 04:33:37 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haYIu-0004sD-Pt
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 04:22:38 +0000
-Received: from DGGEMM406-HUB.china.huawei.com (unknown [172.30.72.54])
- by Forcepoint Email with ESMTP id 2B09EFC6017021BD9648;
- Tue, 11 Jun 2019 12:22:26 +0800 (CST)
-Received: from dggeme754-chm.china.huawei.com (10.3.19.100) by
- DGGEMM406-HUB.china.huawei.com (10.3.20.214) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Tue, 11 Jun 2019 12:22:25 +0800
-Received: from [127.0.0.1] (10.184.212.80) by dggeme754-chm.china.huawei.com
- (10.3.19.100) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1591.10; Tue, 11
- Jun 2019 12:22:24 +0800
-Subject: Re: [PATCH v2 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-To: Alex Kogan <alex.kogan@oracle.com>, <linux@armlinux.org.uk>,
- <peterz@infradead.org>, <mingo@redhat.com>, <will.deacon@arm.com>,
- <arnd@arndb.de>, <longman@redhat.com>, <linux-arch@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <tglx@linutronix.de>, <bp@alien8.de>, <hpa@zytor.com>, <x86@kernel.org>
-References: <20190329152006.110370-1-alex.kogan@oracle.com>
- <20190329152006.110370-4-alex.kogan@oracle.com>
-From: "liwei (GF)" <liwei391@huawei.com>
-Message-ID: <cc3eee8c-5212-7af5-c932-897ab8f3f8bf@huawei.com>
-Date: Tue, 11 Jun 2019 12:22:05 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1haYTP-00089l-2s
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 04:33:28 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1haYTE-0005Bb-BD; Tue, 11 Jun 2019 06:33:16 +0200
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1haYTD-0005xx-CH; Tue, 11 Jun 2019 06:33:15 +0200
+Date: Tue, 11 Jun 2019 06:33:15 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: daniel.baluta@nxp.com
+Subject: Re: [RFC PATCH 1/2] mailbox: imx: Clear GIEn bit at shutdown
+Message-ID: <20190611043315.mr72owvjrxkegdww@pengutronix.de>
+References: <20190610141609.17559-1-daniel.baluta@nxp.com>
+ <20190610141609.17559-2-daniel.baluta@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20190329152006.110370-4-alex.kogan@oracle.com>
-X-Originating-IP: [10.184.212.80]
-X-ClientProxiedBy: dggeme714-chm.china.huawei.com (10.1.199.110) To
- dggeme754-chm.china.huawei.com (10.3.19.100)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190610141609.17559-2-daniel.baluta@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 06:27:45 up 24 days, 10:45, 45 users,  load average: 0.10, 0.05, 0.01
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_212237_074020_195FE11F 
-X-CRM114-Status: GOOD (  18.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190610_213327_296773_3222F126 
+X-CRM114-Status: GOOD (  15.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -76,83 +74,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
- daniel.m.jordan@oracle.com
+Cc: aisheng.dong@nxp.com, festevam@gmail.com, s.hauer@pengutronix.de,
+ jassisinghbrar@gmail.com, linux-kernel@vger.kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alex,
+On Mon, Jun 10, 2019 at 10:16:08PM +0800, daniel.baluta@nxp.com wrote:
+> From: Daniel Baluta <daniel.baluta@nxp.com>
+> 
+> GIEn is enabled at startup for RX doorbell mailboxes so
+> we need to clear the bit at shutdown in order to avoid
+> leaving the interrupt line enabled.
+> 
+> Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
 
-On 2019/3/29 23:20, Alex Kogan wrote:
-> In CNA, spinning threads are organized in two queues, a main queue for
-> threads running on the same node as the current lock holder, and a
-> secondary queue for threads running on other nodes. At the unlock time,
-> the lock holder scans the main queue looking for a thread running on
-> the same node. If found (call it thread T), all threads in the main queue
-> between the current lock holder and T are moved to the end of the
-> secondary queue, and the lock is passed to T. If such T is not found, the
-> lock is passed to the first node in the secondary queue. Finally, if the
-> secondary queue is empty, the lock is passed to the next thread in the
-> main queue. For more details, see https://arxiv.org/abs/1810.05600.
-> 
-> Note that this variant of CNA may introduce starvation by continuously
-> passing the lock to threads running on the same node. This issue
-> will be addressed later in the series.
-> 
-> Enabling CNA is controlled via a new configuration option
-> (NUMA_AWARE_SPINLOCKS), which is enabled by default if NUMA is enabled.
-> 
-> Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
-> Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
+Please send  bug fixes separately from RFC patches.
+
+You can add my
+Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de>
+
 > ---
->  arch/x86/Kconfig                      |  14 +++
->  include/asm-generic/qspinlock_types.h |  13 +++
->  kernel/locking/mcs_spinlock.h         |  10 ++
->  kernel/locking/qspinlock.c            |  29 +++++-
->  kernel/locking/qspinlock_cna.h        | 173 ++++++++++++++++++++++++++++++++++
->  5 files changed, 236 insertions(+), 3 deletions(-)
->  create mode 100644 kernel/locking/qspinlock_cna.h
+>  drivers/mailbox/imx-mailbox.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-(SNIP)
-> +
-> +static __always_inline int get_node_index(struct mcs_spinlock *node)
-> +{
-> +	return decode_count(node->node_and_count++);
-When nesting level is > 4, it won't return a index >= 4 here and the numa node number
-is changed by mistake. It will go into a wrong way instead of the following branch.
+> diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+> index 25be8bb5e371..9f74dee1a58c 100644
+> --- a/drivers/mailbox/imx-mailbox.c
+> +++ b/drivers/mailbox/imx-mailbox.c
+> @@ -217,8 +217,8 @@ static void imx_mu_shutdown(struct mbox_chan *chan)
+>  	if (cp->type == IMX_MU_TYPE_TXDB)
+>  		tasklet_kill(&cp->txdb_tasklet);
+>  
+> -	imx_mu_xcr_rmw(priv, 0,
+> -		   IMX_MU_xCR_TIEn(cp->idx) | IMX_MU_xCR_RIEn(cp->idx));
+> +	imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx) |
+> +		       IMX_MU_xCR_RIEn(cp->idx) | IMX_MU_xCR_GIEn(cp->idx));
+>  
+>  	free_irq(priv->irq, chan);
+>  }
+> -- 
+> 2.17.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
-
-	/*
-	 * 4 nodes are allocated based on the assumption that there will
-	 * not be nested NMIs taking spinlocks. That may not be true in
-	 * some architectures even though the chance of needing more than
-	 * 4 nodes will still be extremely unlikely. When that happens,
-	 * we fall back to spinning on the lock directly without using
-	 * any MCS node. This is not the most elegant solution, but is
-	 * simple enough.
-	 */
-	if (unlikely(idx >= MAX_NODES)) {
-		while (!queued_spin_trylock(lock))
-			cpu_relax();
-		goto release;
-	}
-
-> +}
-> +
-> +static __always_inline void release_mcs_node(struct mcs_spinlock *node)
-> +{
-> +	__this_cpu_dec(node->node_and_count);
-> +}
-> +
-> +static __always_inline void cna_init_node(struct mcs_spinlock *node, int cpuid,
-> +					  u32 tail)
-> +{
-
-Thanks,
-Wei
-
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
