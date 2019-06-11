@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78F203C3BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 08:04:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1675A3C3DB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 08:17:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+NOWorTB0JUHSHUBt3Y8TjzlkmyZ43OZfUb/PVM5Q+g=; b=t0R8aUryg03/enrl8R/qIQxie
-	WssuBmvVqRJHR/BlQGI12xAmU160RjxXU8K9KYQU3mKqllaHMLjEG0RXAQLVszIT8nT9ckpDUOF7Q
-	20EPkox81jRmTuH9AVRIymEnlMOJu7PNOKRZd9GKhWRa7/N5u4y5RiKl7HwOQxQ/rwptIjJxyIXwb
-	T3+4cy1ZII4mYZz+IrAq8R+B0wk64VmfnPmJQkKkB1kO2HDLIS/barCSMrwi4VSVieoYEdXTejgM/
-	tp5eqKS0eH/mDMG8WCZ4Ok2bLUqp1NS5OnqaPxT4/hlz4pztoyteEOXqBzeE0aiMVirfzO0LF4oFs
-	jJRweP5Rg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=arHrarGs7E1w+bcwVO7x7GfIsjvvb+740IVHtvHvnlg=; b=BsrV4KaCPbxRKq
+	A482SzskHl2LwDo2nWdqIrNVZSIph4t+A2VOC2YOLveMnhMANUka3aDVljBpPCGTiBU6tCBf+MZLM
+	OEfHtTWtjfNlalgP7Q7b4+MxoV0e/npmqeSUbxLEwEO8Dm6j3P/srWoICPNvHECkXTFTpgqFoR7Nn
+	mMG3/fJnRm2KUSRfjFZSg7ASovH+aBX2ixbk2tk8RS+4c+zbtoiTUInMnnsqPvWWnbNC0vZt7pq/+
+	KGsnnPcjKmLlqBcN9autXptnRsRcVn9XqHxguK4SPtRRU+6amKkcLl+1TVFTgm+VHPMj/DO62EFa8
+	4xbzh0P+AWs1+oktwuHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haZtt-00039z-W2; Tue, 11 Jun 2019 06:04:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haZtk-00039S-JN; Tue, 11 Jun 2019 06:04:46 +0000
-Received: from [10.44.0.22] (unknown [103.48.210.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 90ED520679;
- Tue, 11 Jun 2019 06:04:41 +0000 (UTC)
-Subject: Re: [PATCH 04/15] binfmt_flat: remove flat_old_ram_flag
-To: Christoph Hellwig <hch@lst.de>
-References: <20190610212015.9157-1-hch@lst.de>
- <20190610212015.9157-5-hch@lst.de>
-From: Greg Ungerer <gerg@linux-m68k.org>
-Message-ID: <b1ce6fc6-343c-7686-b4f4-35a305dc2adb@linux-m68k.org>
-Date: Tue, 11 Jun 2019 16:04:39 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1haa69-00089q-T5; Tue, 11 Jun 2019 06:17:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haa5z-00089V-Ry
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 06:17:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 04483344;
+ Mon, 10 Jun 2019 23:17:22 -0700 (PDT)
+Received: from [10.162.43.135] (p8cg001049571a15.blr.arm.com [10.162.43.135])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 847F13F73C; Mon, 10 Jun 2019 23:17:20 -0700 (PDT)
+Subject: Re: [PATCH 4/4] mm/vmalloc: Hugepage vmalloc mappings
+To: Nicholas Piggin <npiggin@gmail.com>, Mark Rutland <mark.rutland@arm.com>
+References: <20190610043838.27916-1-npiggin@gmail.com>
+ <20190610043838.27916-4-npiggin@gmail.com>
+ <20190610141036.GA16989@lakrids.cambridge.arm.com>
+ <1560177786.t6c5cn5hw4.astroid@bobo.none>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <a1747247-f4f6-ea9a-149c-07c7eb9193d8@arm.com>
+Date: Tue, 11 Jun 2019 11:47:39 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <20190610212015.9157-5-hch@lst.de>
+In-Reply-To: <1560177786.t6c5cn5hw4.astroid@bobo.none>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_230444_668928_29834824 
-X-CRM114-Status: GOOD (  18.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190610_231723_944592_97CEDE1D 
+X-CRM114-Status: GOOD (  12.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,164 +64,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
- Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
- linux-sh@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, linux-riscv@lists.infradead.org,
+Cc: linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christoph,
 
-On 11/6/19 7:20 am, Christoph Hellwig wrote:
-> Instead add a Kconfig variable that only h8300 selects.
+
+On 06/10/2019 08:14 PM, Nicholas Piggin wrote:
+> Mark Rutland's on June 11, 2019 12:10 am:
+>> Hi,
+>>
+>> On Mon, Jun 10, 2019 at 02:38:38PM +1000, Nicholas Piggin wrote:
+>>> For platforms that define HAVE_ARCH_HUGE_VMAP, have vmap allow vmalloc to
+>>> allocate huge pages and map them
+>>>
+>>> This brings dTLB misses for linux kernel tree `git diff` from 45,000 to
+>>> 8,000 on a Kaby Lake KVM guest with 8MB dentry hash and mitigations=off
+>>> (performance is in the noise, under 1% difference, page tables are likely
+>>> to be well cached for this workload). Similar numbers are seen on POWER9.
+>>
+>> Do you happen to know which vmalloc mappings these get used for in the
+>> above case? Where do we see vmalloc mappings that large?
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-> ---
->   arch/arm/include/asm/flat.h        | 1 -
->   arch/c6x/include/asm/flat.h        | 1 -
->   arch/h8300/Kconfig                 | 1 +
->   arch/h8300/include/asm/flat.h      | 1 -
->   arch/m68k/include/asm/flat.h       | 1 -
->   arch/microblaze/include/asm/flat.h | 1 -
->   arch/sh/include/asm/flat.h         | 1 -
->   arch/xtensa/include/asm/flat.h     | 1 -
->   fs/Kconfig.binfmt                  | 3 +++
->   fs/binfmt_flat.c                   | 3 ++-
->   10 files changed, 6 insertions(+), 8 deletions(-)
+> Large module vmalloc could be subject to huge mappings.
 > 
-> diff --git a/arch/arm/include/asm/flat.h b/arch/arm/include/asm/flat.h
-> index a185fe023b60..acf162111ee2 100644
-> --- a/arch/arm/include/asm/flat.h
-> +++ b/arch/arm/include/asm/flat.h
-> @@ -9,7 +9,6 @@
->   #include <linux/uaccess.h>
->   
->   #define	flat_argvp_envp_on_stack()		1
-> -#define	flat_old_ram_flag(flags)		(flags)
->   
->   static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
->   					u32 *addr, u32 *persistent)
-> diff --git a/arch/c6x/include/asm/flat.h b/arch/c6x/include/asm/flat.h
-> index c4d703b454c6..353e4d06e8c0 100644
-> --- a/arch/c6x/include/asm/flat.h
-> +++ b/arch/c6x/include/asm/flat.h
-> @@ -5,7 +5,6 @@
->   #include <asm/unaligned.h>
->   
->   #define flat_argvp_envp_on_stack()			0
-> -#define flat_old_ram_flag(flags)			(flags)
->   static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
->   					u32 *addr, u32 *persistent)
->   {
-> diff --git a/arch/h8300/Kconfig b/arch/h8300/Kconfig
-> index ecfc4b4b6373..d30e8727b02d 100644
-> --- a/arch/h8300/Kconfig
-> +++ b/arch/h8300/Kconfig
-> @@ -2,6 +2,7 @@
->   config H8300
->           def_bool y
->   	select ARCH_32BIT_OFF_T
-> +	select BINFMT_FLAT_OLD_ALWAYS_RAM
->   	select GENERIC_ATOMIC64
->   	select HAVE_UID16
->   	select VIRT_TO_BUS
-> diff --git a/arch/h8300/include/asm/flat.h b/arch/h8300/include/asm/flat.h
-> index 7ef7eefded3d..14cc928d5478 100644
-> --- a/arch/h8300/include/asm/flat.h
-> +++ b/arch/h8300/include/asm/flat.h
-> @@ -9,7 +9,6 @@
->   #include <asm/unaligned.h>
->   
->   #define	flat_argvp_envp_on_stack()		1
-> -#define	flat_old_ram_flag(flags)		1
->   
->   /*
->    * on the H8 a couple of the relocations have an instruction in the
-> diff --git a/arch/m68k/include/asm/flat.h b/arch/m68k/include/asm/flat.h
-> index 217fa89c8e34..7b1fb5c2809e 100644
-> --- a/arch/m68k/include/asm/flat.h
-> +++ b/arch/m68k/include/asm/flat.h
-> @@ -9,7 +9,6 @@
->   #include <linux/uaccess.h>
->   
->   #define	flat_argvp_envp_on_stack()		1
-> -#define	flat_old_ram_flag(flags)		(flags)
->   static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
->   					u32 *addr, u32 *persistent)
->   {
-> diff --git a/arch/microblaze/include/asm/flat.h b/arch/microblaze/include/asm/flat.h
-> index 846084fa7f04..1cd8d7f4cf12 100644
-> --- a/arch/microblaze/include/asm/flat.h
-> +++ b/arch/microblaze/include/asm/flat.h
-> @@ -14,7 +14,6 @@
->   #include <asm/unaligned.h>
->   
->   #define	flat_argvp_envp_on_stack()	0
-> -#define	flat_old_ram_flag(flags)	(flags)
->   
->   /*
->    * Microblaze works a little differently from other arches, because
-> diff --git a/arch/sh/include/asm/flat.h b/arch/sh/include/asm/flat.h
-> index 0d520b4cc5ea..015678d7b771 100644
-> --- a/arch/sh/include/asm/flat.h
-> +++ b/arch/sh/include/asm/flat.h
-> @@ -12,7 +12,6 @@
->   #include <asm/unaligned.h>
->   
->   #define	flat_argvp_envp_on_stack()		0
-> -#define	flat_old_ram_flag(flags)		(flags)
->   static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
->   					u32 *addr, u32 *persistent)
->   {
-> diff --git a/arch/xtensa/include/asm/flat.h b/arch/xtensa/include/asm/flat.h
-> index a1d88aa3ef8a..b215c1e66958 100644
-> --- a/arch/xtensa/include/asm/flat.h
-> +++ b/arch/xtensa/include/asm/flat.h
-> @@ -5,7 +5,6 @@
->   #include <asm/unaligned.h>
->   
->   #define flat_argvp_envp_on_stack()			0
-> -#define flat_old_ram_flag(flags)			(flags)
->   static inline int flat_get_addr_from_rp(u32 __user *rp, u32 relval, u32 flags,
->   					u32 *addr, u32 *persistent)
->   {
-> diff --git a/fs/Kconfig.binfmt b/fs/Kconfig.binfmt
-> index f87ddd1b6d72..5658e12ad944 100644
-> --- a/fs/Kconfig.binfmt
-> +++ b/fs/Kconfig.binfmt
-> @@ -97,6 +97,9 @@ config BINFMT_FLAT
->   	help
->   	  Support uClinux FLAT format binaries.
->   
-> +config BINFMT_FLAT_OLD_ALWAYS_RAM
-> +	bool
-> +
->   config BINFMT_ZFLAT
->   	bool "Enable ZFLAT support"
->   	depends on BINFMT_FLAT
-> diff --git a/fs/binfmt_flat.c b/fs/binfmt_flat.c
-> index c0e4535dc1ec..18d82fd5f57c 100644
-> --- a/fs/binfmt_flat.c
-> +++ b/fs/binfmt_flat.c
-> @@ -488,7 +488,8 @@ static int load_flat_file(struct linux_binprm *bprm,
->   	 * fix up the flags for the older format,  there were all kinds
->   	 * of endian hacks,  this only works for the simple cases
->   	 */
-> -	if (rev == OLD_FLAT_VERSION && flat_old_ram_flag(flags))
-> +	if (IS_ENABLED(CONFIG_BINFMT_FLAT_OLD_ALWAYS_RAM) &&
-> +	    rev == OLD_FLAT_VERSION)
+>> I'm worried as to how this would interact with the set_memory_*()
+>> functions, as on arm64 those can only operate on page-granular mappings.
+>> Those may need fixing up to handle huge mappings; certainly if the above
+>> is all for modules.
+> 
+> Good point, that looks like it would break on arm64 at least. I'll
+> work on it. We may have to make this opt in beyond HUGE_VMAP.
 
-The flags are from the binary file header here, so this is going to lose
-that check for most platforms (except h8300 where it would always have
-been true).
-
-Regards
-Greg
-
+This is another reason we might need to have an arch opt-ins like the one
+I mentioned before.
 
 _______________________________________________
 linux-arm-kernel mailing list
