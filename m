@@ -2,65 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0E43416A5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 23:09:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 749F2416B5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 23:11:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hw5epgjkNm7Z8HOc0pYZ/F519fSNBGSiLAa4o8Pn5BE=; b=OSH+YH6fSTSP+R
-	m9jix8M19qUZpfPrTTmPlBuopxhclhBIpAbAaOrTVUgrJnJl5JiOlddJDmTVeyvuIR0t0KvCSRBlw
-	DiR+q1ZR7BnyrLrrcNGhcP0ZR8do6veMQb9VfY6/YxMJ8kCxA7pziWhpqlwFxbLEQZm3Qd4NH/ffR
-	clYw15vWSradrysGCwgNykAfkip6BwswLPG3QQrbUC04IjJCYUgUP7Ii5YYbFOsxdeUTT/wY4n2rD
-	0w0LlTD74dp5SwVEINWcxH8uMRZG075C9steG6VVY6d+0erDWq+xHizbNkmbiBHjojaFISDOYMXpF
-	nOQ8kCg/3HTDKRdRFpuQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GQfwI/DKGgANwzAZIkph4R1zDcsIz8t78VYh8MpNN7I=; b=axTOmlxi/nf78YSqQYf92W652
+	JwjOTZn71BETuP95oUdadjluU3ErxUR5afw4w1C6or1Cnt8pbHTT/nBm1emAG+cXUC7PP4hH955cC
+	y27mJ+3M1pgv6WVIIqMvZgke3/y8AN1YKBYN47A/KO+FK3Yw3N38GJ7hOofNQNDrU17yIIlaCwCpL
+	BfvcgIvMjJtE801iu1fAw77DcQU1O+OTXia7TOBtTOFdBP3Ll7G1prL0qU00BIleBtlL59xrBEGFW
+	ChLiojWPXzPdFI7BDPWy+5g2Vg1tz4Xf9FBw0kyUCiwkOmoDYS+C5g+yBXaHK34wWb1kVKEstMDRn
+	O8rkXJPgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hao18-00074D-FP; Tue, 11 Jun 2019 21:09:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hao3A-0000FM-10; Tue, 11 Jun 2019 21:11:24 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hao0z-00073m-Kl
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 21:09:10 +0000
-Received: from akpm3.svl.corp.google.com (unknown [104.133.8.65])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 542412080A;
- Tue, 11 Jun 2019 21:09:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560287348;
- bh=qmpEoNXO99XPF9xd/5iv2nDwyZYxG+9HqzTYNPT4KTw=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=EzYSNQ5VopjCkhJxjwzVG+3NUfKcn1X9cU/Ns4PV5yZIsnow5MRHYB73/Tl3T81K/
- SbRRApw7C7MWKpiNZqE5wCHVmQlPPOHtSxjsrM3RebqPsIl/mcOR/W6a0jpkC0UwOz
- rSPkBbLzTQO7F5VSs5bcQHmoWK/bst5kRMcBgC7c=
-Date: Tue, 11 Jun 2019 14:09:07 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Andreas Dilger <adilger@dilger.ca>
-Subject: Re: [PATCH V2] include: linux: Regularise the use of FIELD_SIZEOF
- macro
-Message-Id: <20190611140907.899bebb12a3d731da24a9ad1@linux-foundation.org>
-In-Reply-To: <6DCAE4F8-3BEC-45F2-A733-F4D15850B7F3@dilger.ca>
-References: <20190611193836.2772-1-shyam.saini@amarulasolutions.com>
- <20190611134831.a60c11f4b691d14d04a87e29@linux-foundation.org>
- <6DCAE4F8-3BEC-45F2-A733-F4D15850B7F3@dilger.ca>
-X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1hao2w-0000Eq-4N
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 21:11:11 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5BL8nZQ041453;
+ Tue, 11 Jun 2019 21:10:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2018-07-02;
+ bh=r4oU8QezePFqpSYiESryQs3UL8DYpfD9CLF3sY86YKg=;
+ b=W5fommkpxEPMSUSkVfY8pwZefZojBn0xB2CG8mlaX+Xw8Hgm05RcUbft179SKF6cYNWm
+ 0pxi29x0S8RghwTRE5muCQO1CYvZ+Nw8mYq1yR7wj2gj2ta+Vo7EoHat4vmSwwwi6tiS
+ XO95cemCe4QcK4yj0sga3quvQOIEghDLIkT7vKYBl9PL9C6Fdpwm+piz1xSXkEZ7yvYu
+ 1VHxxYrO5xwWLpsCNzy6MihKOgV0fMtsvHSCfgZs0x19Y+CPtpKS1kuaOeT0STLJhnnl
+ jN4nnfQwcVFwy6Hxcrsm8bw9t7gAhpgYG3gxGAPf1jlDSlhaYauB36vDAQyly87SK4YZ Ag== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 2t05nqqmr4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 11 Jun 2019 21:10:53 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5BLApJI032408;
+ Tue, 11 Jun 2019 21:10:53 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2t1jphntch-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 11 Jun 2019 21:10:53 +0000
+Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x5BLAoEe011760;
+ Tue, 11 Jun 2019 21:10:50 GMT
+Received: from [10.209.243.59] (/10.209.243.59)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 11 Jun 2019 14:10:50 -0700
+Subject: Re: [PATCH] knav_qmss_queue: fix a missing-check bug in
+ knav_pool_create()
+To: Gen Zhang <blackgod016574@gmail.com>, Marc Zyngier <marc.zyngier@arm.com>
+References: <20190530033949.GA8895@zhanggen-UX430UQ>
+ <20190611093744.GA9783@ubuntu> <56a08bd2-6b94-457f-99f7-91ef3fca8804@arm.com>
+ <20190611100819.GA10185@ubuntu>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <b1e3623f-b908-363c-041c-0b9fb96412d8@oracle.com>
+Date: Tue, 11 Jun 2019 14:10:49 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:52.0)
+ Gecko/20100101 Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <20190611100819.GA10185@ubuntu>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9284
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906110137
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9284
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906110137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_140909_704030_79A01CB2 
-X-CRM114-Status: GOOD (  15.25  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190611_141110_260565_057FB731 
+X-CRM114-Status: GOOD (  24.93  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,53 +114,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: keescook@chromium.org, kvm@vger.kernel.org,
- kernel-hardening@lists.openwall.com, netdev@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, devel@lists.orangefs.org,
- linux-mips@vger.kernel.org, Shyam Saini <shyam.saini@amarulasolutions.com>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, linux-sctp@vger.kernel.org,
- dri-devel@lists.freedesktop.org, bpf@vger.kernel.org,
- linux-ext4 <linux-ext4@vger.kernel.org>, intel-gvt-dev@lists.freedesktop.org,
- Alexey Dobriyan <adobriyan@gmail.com>, linux-arm-kernel@lists.infradead.org,
- mayhs11saini@gmail.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: olof@lixom.net, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, ssantosh@kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 11 Jun 2019 15:00:10 -0600 Andreas Dilger <adilger@dilger.ca> wrote:
 
-> >> to FIELD_SIZEOF
-> > 
-> > As Alexey has pointed out, C structs and unions don't have fields -
-> > they have members.  So this is an opportunity to switch everything to
-> > a new member_sizeof().
-> > 
-> > What do people think of that and how does this impact the patch footprint?
+
+On 6/11/19 3:08 AM, Gen Zhang wrote:
+> On Tue, Jun 11, 2019 at 10:54:15AM +0100, Marc Zyngier wrote:
+>> Hi Gen,
+>>
+>> No idea why I'm being cc'd on this but hey... ;-)
+> I copied email address ftom thid commit:-)
+> https://github.com/torvalds/linux/commit/832ad0e3da4510fd17f98804abe512ea9a747035#diff-f2a24befc247191f4b81af93e9336785
+>>
+>> On 11/06/2019 10:37, Gen Zhang wrote:
+>>> On Thu, May 30, 2019 at 11:39:49AM +0800, Gen Zhang wrote:
+>>>> In knav_pool_create(), 'pool->name' is allocated by kstrndup(). It
+>>>> returns NULL when fails. So 'pool->name' should be checked. And free
+>>>> 'pool' when error.
+>>>>
+>>>> Signed-off-by: Gen Zhang <blackgod016574@gmail.com>
+>>>> ---
+>>>> diff --git a/drivers/soc/ti/knav_qmss_queue.c b/drivers/soc/ti/knav_qmss_queue.c
+>>>> index 8b41837..0f8cb28 100644
+>>>> --- a/drivers/soc/ti/knav_qmss_queue.c
+>>>> +++ b/drivers/soc/ti/knav_qmss_queue.c
+>>>> @@ -814,6 +814,12 @@ void *knav_pool_create(const char *name,
+>>>>   	}
+>>>>   
+>>>>   	pool->name = kstrndup(name, KNAV_NAME_SIZE - 1, GFP_KERNEL);
+>>>> +	if (!pool->name) {
+>>>> +		dev_err(kdev->dev, "failed to duplicate for pool(%s)\n",
+>>>> +			name);
+>>
+>> There is no need to output anything, the kernel will be loud enough if
+>> you run out of memory.
+> Thanks for your comments.
+>>
+>>>> +		ret = -ENOMEM;
+>>>> +		goto err_name;
+>>>> +	}
+>>>>   	pool->kdev = kdev;
+>>>>   	pool->dev = kdev->dev;
+>>>>   
+>>>> @@ -864,6 +870,7 @@ void *knav_pool_create(const char *name,
+>>>>   	mutex_unlock(&knav_dev_lock);
+>>>>   err:
+>>>>   	kfree(pool->name);
+>>>> +err_name:
+>>
+>> kfree(NULL) is perfectly valid, there is no need to create a second
+>> label. Just branch to the existing error label.
+> Sure, better not to add redundant codes.
+>>
+>>>>   	devm_kfree(kdev->dev, pool);
+>>>>   	return ERR_PTR(ret);
+>>>>   }
+>>> Can anyone look into this patch?
+>>>
+>>> Thanks
+>>> Gen
+>>>
+>>
+>> The real question is whether this is actually an error at all.
+>> pool->name doesn't seem to be used for anything but debug information,
+>> and the printing code can perfectly accommodate a NULL pointer.
+> That sounds reasonable. This patch just fixes a *theoretical* bug.
 > 
-> I did a check, and FIELD_SIZEOF() is used about 350x, while sizeof_field()
-> is about 30x, and SIZEOF_FIELD() is only about 5x.
-
-Erk.  Sorry, I should have grepped.
-
-> That said, I'm much more in favour of "sizeof_field()" or "sizeof_member()"
-> than FIELD_SIZEOF().  Not only does that better match "offsetof()", with
-> which it is closely related, but is also closer to the original "sizeof()".
-> 
-> Since this is a rather trivial change, it can be split into a number of
-> patches to get approval/landing via subsystem maintainers, and there is no
-> huge urgency to remove the original macros until the users are gone.  It
-> would make sense to remove SIZEOF_FIELD() and sizeof_field() quickly so
-> they don't gain more users, and the remaining FIELD_SIZEOF() users can be
-> whittled away as the patches come through the maintainer trees.
-
-In that case I'd say let's live with FIELD_SIZEOF() and remove
-sizeof_field() and SIZEOF_FIELD().
-
-I'm a bit surprised that the FIELD_SIZEOF() definition ends up in
-stddef.h rather than in kernel.h where such things are normally
-defined.  Why is that?
-
+Not even theoretical bug.
 
 _______________________________________________
 linux-arm-kernel mailing list
