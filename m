@@ -2,94 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45E323C9E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:20:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52E473C9F1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:26:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XcjExMlavw27H9+0tGGWkBlqA+McpnEWbwAMIwP9gxA=; b=DeVd0yLxobBBMx
-	U03oJptSo2sNZEXuUqPkXjY7npJuJu6KRrzqASCEYPX6F9aoMLEKhZqHFtmWGdiPS7TzwGRb3EwGQ
-	KEa2/7ftGi6Eecdp7kNGN/nAIXxRJLkHFv2aetUsGgC3O15oZxaBNZBk4W15dgoXQV4ks399tM3GL
-	zBd6tIqHJ23DsQ1O9uF0U7FF8E4yk6RNBYyJ0r+8Qf0X+VbkAdIIcC+QCPw/e9zXhlACGM+cO+b63
-	bXnEgWq4Ruo1pORt1iZoJ9cShfkceqc7lxvGQHIoTNVQncqZWnc2qmY2bnkJXEUcMcoow9hYWTAh5
-	qAH8AemT2eK8dkFo6SBw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=/OgVjXXV73xCEEeZyad003CmQzHX/2g26FklgcFvaeo=; b=o9i+kKqLQHpoqRc1eM/qR015cO
+	zwyzYJ7lt51aNkw6YC6c4U4ZrywjgN0KvYwGuGOTj8S5V8BxAi8AnLNPKlhnmpQYV7WZbdGcGtM92
+	Tx4rZT5la7nY0l5qiSA2J2zUphHXNkLF5tbIF/+14s63t4rJ1Uog35yXcVO7Ub8R6S2i/aLvU7cqE
+	PiLhuX+Pxxda7h+XnYc9H1OjsKTz92Eo2iZIrFpcUY4lfa7AfT9+SLe/dmxp1Jwuq32km78XvHpYO
+	h2i43vPORRSv0IeKgdIIbqpvmiQNe2AsK2fPNClgqpdm5fDWjEmOFoIJlKzBVF+FVfYuPRyrmdPMS
+	vXaxBrNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haepS-0005Qe-Mu; Tue, 11 Jun 2019 11:20:38 +0000
+	id 1haeup-00077r-F3; Tue, 11 Jun 2019 11:26:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haepG-0005Oc-30; Tue, 11 Jun 2019 11:20:27 +0000
+ id 1haeug-00077S-9I
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:26:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85669344;
- Tue, 11 Jun 2019 04:20:25 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 7DBA03F557; Tue, 11 Jun 2019 04:22:06 -0700 (PDT)
-Subject: Re: [PATCH v3 0/3] meson-gpio-irqc: Add support for the Meson-G12A SoC
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org,
- tglx@linutronix.de, jason@lakedaemon.net, robh+dt@kernel.org,
- mark.rutland@arm.com, khilman@baylibre.com
-References: <20190608190411.14018-1-martin.blumenstingl@googlemail.com>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- mQINBE6Jf0UBEADLCxpix34Ch3kQKA9SNlVQroj9aHAEzzl0+V8jrvT9a9GkK+FjBOIQz4KE
- g+3p+lqgJH4NfwPm9H5I5e3wa+Scz9wAqWLTT772Rqb6hf6kx0kKd0P2jGv79qXSmwru28vJ
- t9NNsmIhEYwS5eTfCbsZZDCnR31J6qxozsDHpCGLHlYym/VbC199Uq/pN5gH+5JHZyhyZiNW
- ozUCjMqC4eNW42nYVKZQfbj/k4W9xFfudFaFEhAf/Vb1r6F05eBP1uopuzNkAN7vqS8XcgQH
- qXI357YC4ToCbmqLue4HK9+2mtf7MTdHZYGZ939OfTlOGuxFW+bhtPQzsHiW7eNe0ew0+LaL
- 3wdNzT5abPBscqXWVGsZWCAzBmrZato+Pd2bSCDPLInZV0j+rjt7MWiSxEAEowue3IcZA++7
- ifTDIscQdpeKT8hcL+9eHLgoSDH62SlubO/y8bB1hV8JjLW/jQpLnae0oz25h39ij4ijcp8N
- t5slf5DNRi1NLz5+iaaLg4gaM3ywVK2VEKdBTg+JTg3dfrb3DH7ctTQquyKun9IVY8AsxMc6
- lxl4HxrpLX7HgF10685GG5fFla7R1RUnW5svgQhz6YVU33yJjk5lIIrrxKI/wLlhn066mtu1
- DoD9TEAjwOmpa6ofV6rHeBPehUwMZEsLqlKfLsl0PpsJwov8TQARAQABtCNNYXJjIFp5bmdp
- ZXIgPG1hcmMuenluZ2llckBhcm0uY29tPokCTwQTAQIAOQIbAwYLCQgHAwIGFQgCCQoLBBYC
- AwECHgECF4AWIQSf1RxT4LVjGP2VnD0j0NC60T16QwUCXO+WxgAKCRAj0NC60T16QzfuEACd
- oPsSJdUg3nm61VKq86Pp0mfCC5IVyD/vTDw3jDErsmtT7t8mMVgidSJe9cMEudLO5xske/mY
- sC7ZZ4GFNRRsFs3wY5g+kg4yk2UY6q18HXRQJwzWCug2bkJPUxbh71nS3KPsvq4BBOeQiTIX
- Xr0lTyReFAp+JZ0HpanAU/iD2usEZLDNLXYLRjaHlfkwouxt02XcTKbqRWNtKl3Ybj+mz5IA
- qEQnA5Z8Nt9ZQmlZ4ASiXVVCbZKIR3RewBL6BP4OhYrvcPCtkoqlqKWZoHBs3ZicRXvcVUr/
- nqUyZpqhmfht2mIE063L3kTfBqxJ1SQqPc0ZIModTh4ATEjC44x8ObQvtnmgL8EKJBhxJfjY
- EUYLnwSejH1h+qgj94vn7n1RMVqXpCrWHyF7pCDBqq3gBxtDu6TWgi4iwh4CtdOzXBw2V39D
- LlnABnrZl5SdVbRwV+Ek1399s/laceH8e4uNea50ho89WmP9AUCrXlawHohfDE3GMOV4BdQ2
- DbJAtZnENQXaRK9gr86jbGQBga9VDvsBbRd+uegEmQ8nPspryWIz/gDRZLXIG8KE9Jj9OhwE
- oiusVTLsw7KS4xKDK2Ixb/XGtJPLtUXbMM1n9YfLsB5JPZ3B08hhrv+8Vmm734yCXtxI0+7B
- F1V4T2njuJKWTsmJWmx+tIY8y9muUK9rabkCDQROiX9FARAAz/al0tgJaZ/eu0iI/xaPk3DK
- NIvr9SsKFe2hf3CVjxriHcRfoTfriycglUwtvKvhvB2Y8pQuWfLtP9Hx3H+YI5a78PO2tU1C
- JdY5Momd3/aJBuUFP5blbx6n+dLDepQhyQrAp2mVC3NIp4T48n4YxL4Og0MORytWNSeygISv
- Rordw7qDmEsa7wgFsLUIlhKmmV5VVv+wAOdYXdJ9S8n+XgrxSTgHj5f3QqkDtT0yG8NMLLmY
- kZpOwWoMumeqn/KppPY/uTIwbYTD56q1UirDDB5kDRL626qm63nF00ByyPY+6BXH22XD8smj
- f2eHw2szECG/lpD4knYjxROIctdC+gLRhz+Nlf8lEHmvjHgiErfgy/lOIf+AV9lvDF3bztjW
- M5oP2WGeR7VJfkxcXt4JPdyDIH6GBK7jbD7bFiXf6vMiFCrFeFo/bfa39veKUk7TRlnX13go
- gIZxqR6IvpkG0PxOu2RGJ7Aje/SjytQFa2NwNGCDe1bH89wm9mfDW3BuZF1o2+y+eVqkPZj0
- mzfChEsiNIAY6KPDMVdInILYdTUAC5H26jj9CR4itBUcjE/tMll0n2wYRZ14Y/PM+UosfAhf
- YfN9t2096M9JebksnTbqp20keDMEBvc3KBkboEfoQLU08NDo7ncReitdLW2xICCnlkNIUQGS
- WlFVPcTQ2sMAEQEAAYkCHwQYAQIACQUCTol/RQIbDAAKCRAj0NC60T16QwsFD/9T4y30O0Wn
- MwIgcU8T2c2WwKbvmPbaU2LDqZebHdxQDemX65EZCv/NALmKdA22MVSbAaQeqsDD5KYbmCyC
- czilJ1i+tpZoJY5kJALHWWloI6Uyi2s1zAwlMktAZzgGMnI55Ifn0dAOK0p8oy7/KNGHNPwJ
- eHKzpHSRgysQ3S1t7VwU4mTFJtXQaBFMMXg8rItP5GdygrFB7yUbG6TnrXhpGkFBrQs9p+SK
- vCqRS3Gw+dquQ9QR+QGWciEBHwuSad5gu7QC9taN8kJQfup+nJL8VGtAKgGr1AgRx/a/V/QA
- ikDbt/0oIS/kxlIdcYJ01xuMrDXf1jFhmGZdocUoNJkgLb1iFAl5daV8MQOrqciG+6tnLeZK
- HY4xCBoigV7E8KwEE5yUfxBS0yRreNb+pjKtX6pSr1Z/dIo+td/sHfEHffaMUIRNvJlBeqaj
- BX7ZveskVFafmErkH7HC+7ErIaqoM4aOh/Z0qXbMEjFsWA5yVXvCoJWSHFImL9Bo6PbMGpI0
- 9eBrkNa1fd6RGcktrX6KNfGZ2POECmKGLTyDC8/kb180YpDJERN48S0QBa3Rvt06ozNgFgZF
- Wvu5Li5PpY/t/M7AAkLiVTtlhZnJWyEJrQi9O2nXTzlG1PeqGH2ahuRxn7txA5j5PHZEZdL1
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <07bd74d6-0e6b-324e-20cf-00db54166b56@arm.com>
-Date: Tue, 11 Jun 2019 12:20:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <20190608190411.14018-1-martin.blumenstingl@googlemail.com>
-Content-Language: en-US
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 102A3344;
+ Tue, 11 Jun 2019 04:26:00 -0700 (PDT)
+Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
+ [10.162.43.135])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5A08F3F557;
+ Tue, 11 Jun 2019 04:27:39 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: akpm@linux-foundation.org, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, ard.biesheuvel@arm.com
+Subject: [PATCH V5 - Rebased] mm/hotplug: Reorder memblock_[free|remove]()
+ calls in try_remove_memory()
+Date: Tue, 11 Jun 2019 16:56:13 +0530
+Message-Id: <1560252373-3230-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <36e0126f-e2d1-239c-71f3-91125a49e019@redhat.com>
+References: <36e0126f-e2d1-239c-71f3-91125a49e019@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_042026_225044_679CE57A 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20190611_042602_417067_F58FDCB2 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -108,56 +63,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, david@redhat.com, mhocko@suse.com, osalvador@suse.de
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/06/2019 20:04, Martin Blumenstingl wrote:
-> This series adds GPIO interrupt controller support for Meson-G12A SoCs.
-> Although the total number of pins is the same as the Meson-AXG SoC, the
-> GPIO banks and IRQ numbers are different. Add a new compatible string
-> to avoid confusion when using it.
-> 
-> I am re-sending this update because v2 looked good in my opinion (Xingyu
-> Chen did good work here) but it never made it into mainline.
-> 
-> 
-> Changes since v1 at [1]:
-> - share the device data with Meson-AXG
-> 
-> Changes since v2 at [2]:
-> - dropped "Change-Id" from patch #2
-> - added .dts patch #3 - this should go through Kevin's linux-amlogic
->   tree. if required I can re-send it in a separate series
-> 
-> 
-> [1] https://lore.kernel.org/lkml/20181203061324.36248-1-xingyu.chen@amlogic.com
-> [2] https://lore.kernel.org/patchwork/cover/1021232/
-> 
-> 
-> Martin Blumenstingl (1):
->   arm64: dts: meson: g12a: add the GPIO interrupt controller
-> 
-> Xingyu Chen (2):
->   dt-bindings: interrupt-controller: New binding for Meson-G12A SoC
->   irqchip/meson-gpio: Add support for Meson-G12A SoC
-> 
->  .../interrupt-controller/amlogic,meson-gpio-intc.txt     | 1 +
->  arch/arm64/boot/dts/amlogic/meson-g12a.dtsi              | 9 +++++++++
->  drivers/irqchip/irq-meson-gpio.c                         | 1 +
->  3 files changed, 11 insertions(+)
-> 
+Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
+entries between memory block and node. It first checks pfn validity with
+pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
+(arm64 has this enabled) pfn_valid_within() calls pfn_valid().
 
-I've taken patches 1 and 2 into the irqchip tree. Please route patch 3
-though armsoc.
+pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
+which scans all mapped memblock regions with memblock_is_map_memory(). This
+creates a problem in memory hot remove path which has already removed given
+memory range from memory block with memblock_[remove|free] before arriving
+at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
+skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
+sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
+of existing sysfs entries.
 
-Thanks,
+[   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
+[   62.052517] ------------[ cut here ]------------
+[   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
+[   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+[   62.054589] Modules linked in:
+[   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
+[   62.056274] Hardware name: linux,dummy-virt (DT)
+[   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
+[   62.058083] pc : add_memory_resource+0x1cc/0x1d8
+[   62.058961] lr : add_memory_resource+0x10c/0x1d8
+[   62.059842] sp : ffff0000168b3ce0
+[   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
+[   62.061501] x27: 0000000000000000 x26: 0000000000000000
+[   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
+[   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
+[   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
+[   62.065558] x19: 0000000000680000 x18: 0000000000000024
+[   62.066566] x17: 0000000000000000 x16: 0000000000000000
+[   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
+[   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
+[   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
+[   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
+[   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
+[   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
+[   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
+[   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
+[   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
+[   62.076930] Call trace:
+[   62.077411]  add_memory_resource+0x1cc/0x1d8
+[   62.078227]  __add_memory+0x70/0xa8
+[   62.078901]  probe_store+0xa4/0xc8
+[   62.079561]  dev_attr_store+0x18/0x28
+[   62.080270]  sysfs_kf_write+0x40/0x58
+[   62.080992]  kernfs_fop_write+0xcc/0x1d8
+[   62.081744]  __vfs_write+0x18/0x40
+[   62.082400]  vfs_write+0xa4/0x1b0
+[   62.083037]  ksys_write+0x5c/0xc0
+[   62.083681]  __arm64_sys_write+0x18/0x20
+[   62.084432]  el0_svc_handler+0x88/0x100
+[   62.085177]  el0_svc+0x8/0xc
 
-	M.
+Re-ordering memblock_[free|remove]() with arch_remove_memory() solves the
+problem on arm64 as pfn_valid() behaves correctly and returns positive
+as memblock for the address range still exists. arch_remove_memory()
+removes applicable memory sections from zone with __remove_pages() and
+tears down kernel linear mapping. Removing memblock regions afterwards
+is safe because there is no other memblock (bootmem) allocator user that
+late. So nobody is going to allocate from the removed range just to blow
+up later. Also nobody should be using the bootmem allocated range else
+we wouldn't allow to remove it. So reordering is indeed safe.
+
+Reviewed-by: David Hildenbrand <david@redhat.com>
+Reviewed-by: Oscar Salvador <osalvador@suse.de>
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+Acked-by: Michal Hocko <mhocko@suse.com>
+Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+---
+Changes in PATCH V5 - Rebased (from V5)
+
+- Rebased on linux-next (next-20190611)
+- s/__remove_memory/try_remove_memory in the subject line
+- s/arch_remove_memory/memblock_[free|remove] in the subject line
+- A small change in the commit message as re-order happens now for
+  memblock remove functions not arch_remove_memory()
+
+ mm/memory_hotplug.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+index a88c5f334e5a..cfa5facf1b38 100644
+--- a/mm/memory_hotplug.c
++++ b/mm/memory_hotplug.c
+@@ -1831,13 +1831,13 @@ static int __ref try_remove_memory(int nid, u64 start, u64 size)
+ 
+ 	/* remove memmap entry */
+ 	firmware_map_remove(start, start + size, "System RAM");
+-	memblock_free(start, size);
+-	memblock_remove(start, size);
+ 
+ 	/* remove memory block devices before removing memory */
+ 	remove_memory_block_devices(start, size);
+ 
+ 	arch_remove_memory(nid, start, size, NULL);
++	memblock_free(start, size);
++	memblock_remove(start, size);
+ 	__release_memory_resource(start, size);
+ 
+ 	try_offline_node(nid);
 -- 
-Jazz is not dead. It just smells funny...
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
