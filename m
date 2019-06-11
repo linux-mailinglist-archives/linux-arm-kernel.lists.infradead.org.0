@@ -2,55 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED0213D109
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:38:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C0523D11E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:41:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ETDE4VhBNqO+AZgNfHiY5VWDt3go82DtWWSCrMWgYas=; b=Rkgr02qCKEmVsy
-	wogqHadPkunlRv3K+Ddgbenvm9kp0kElmxbijWvsxZNUcr7wiEXu8ayko22C8s7D3Tk+BdsVUjTG1
-	2VPLTh7prdN9qynYbtY5hKJ3PAUSMzXxnyjsIrvHioXxoqUcUV1R6P1dtC4Krf33Av0gEzN97e1YF
-	cnbqiqCWg4AiC6kj8vJz0OO15F4TDcSs1dvkXV+y9yQmM9Tt8onK0Zzedi+LEsW2Ud13e7SbrPegb
-	+3U7DUQGJ1IefWpeKf/l5QHRjL7hZSfFDoaJigFPOaKfexueT6AkDw3tBJWksEmHIIrWrWekloLLV
-	R+L/CpI7J9V9Wyzu6sww==;
+	List-Owner; bh=Wi3jqet0imlM2hWSUPf5L+2G8amLz01G9+hS82FMj24=; b=Ag2AD328NYJGKQ
+	vYX/mKegGH6bQKeqc3A9URS24csyW532JrS3Ao7FnXS4ED40Pyf/VonqEqVKHtckQ61AgVNzcUjI8
+	TlzvqD8eQTJjwrenr63VqfACrQOhxpiqEtZ9EWqCttVYUrTPUXV0etCzYezwO0MgfL3yxXRxZKeE2
+	zmD61jCySYJprGbFL0DMmwE7zT9549wm0hAWBwG/EVdB5O0Mz6I8TV6g5zO/m2lFbHRD9LDPYeuqw
+	Boc08K30XMtGHGozOPgRpxhZUVhi9gblCYtfPxoUBnYC/sstF5xB7MWbtFK0pqp0nqXXxwuX4b69X
+	6P6MsRRJmMsINqNP/Ffw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haiqu-0006nz-C5; Tue, 11 Jun 2019 15:38:24 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haiqg-0006mx-Bp
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:38:11 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1haiqe-0003Ik-F4; Tue, 11 Jun 2019 17:38:08 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1haiqe-0004sJ-5Y; Tue, 11 Jun 2019 17:38:08 +0200
-Date: Tue, 11 Jun 2019 17:38:08 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH v2 03/14] pwm: meson: use GENMASK and FIELD_PREP for the
- lo and hi values
-Message-ID: <20190611153808.oljoea7ohzpm26zy@pengutronix.de>
-References: <20190608180626.30589-1-martin.blumenstingl@googlemail.com>
- <20190608180626.30589-4-martin.blumenstingl@googlemail.com>
+	id 1haits-0000Pp-Qy; Tue, 11 Jun 2019 15:41:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haitg-0000Ox-LA
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:41:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3BA47337;
+ Tue, 11 Jun 2019 08:41:15 -0700 (PDT)
+Received: from c02tf0j2hf1t.cambridge.arm.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 793AC3F246;
+ Tue, 11 Jun 2019 08:41:11 -0700 (PDT)
+Date: Tue, 11 Jun 2019 16:41:06 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Masayoshi Mizuma <msys.mizuma@gmail.com>
+Subject: Re: [PATCH 2/2] arm64/mm: show TAINT_CPU_OUT_OF_SPEC warning if the
+ cache size is over the spec.
+Message-ID: <20190611154105.GE10165@c02tf0j2hf1t.cambridge.arm.com>
+References: <20190611151731.6135-1-msys.mizuma@gmail.com>
+ <20190611151731.6135-3-msys.mizuma@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190608180626.30589-4-martin.blumenstingl@googlemail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190611151731.6135-3-msys.mizuma@gmail.com>
+User-Agent: Mutt/1.11.2 (2019-01-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_083810_568360_C8CA63A7 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20190611_084116_737616_C16C27B4 
+X-CRM114-Status: UNSURE (   8.31  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,40 +63,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- linux-kernel@vger.kernel.org, thierry.reding@gmail.com,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Zhang Lei <zhang.lei@jp.fujitsu.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 08, 2019 at 08:06:15PM +0200, Martin Blumenstingl wrote:
-> meson_pwm_calc() ensures that "lo" is always less than 16 bits wide
-> (otherwise it would overflow into the "hi" part of the REG_PWM_{A,B}
-> register).
-> Use GENMASK and FIELD_PREP for the lo and hi values to make it easier to
-> spot how wide these are internally. Additionally this is a preparation
-> step for the .get_state() implementation where the GENMASK() for lo and
-> hi becomes handy because it can be used with FIELD_GET() to extract the
-> values from the register REG_PWM_{A,B} register.
-> =
+On Tue, Jun 11, 2019 at 11:17:31AM -0400, Masayoshi Mizuma wrote:
+> From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> 
+> Show the warning and taints as TAINT_CPU_OUT_OF_SPEC if the cache line
+> size is greater than the maximum.
 
-> No functional changes intended.
-> =
+In general the "out of spec" part is a misnomer, we tend to apply it to
+CPU features that are not supported by the kernel rather than some CPU
+feature not compliant with the architecture (we call the latter errata).
 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+I suggest you drop this patch.
 
-Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
