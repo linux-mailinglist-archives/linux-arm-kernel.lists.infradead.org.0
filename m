@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99F433C8B1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:20:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E7D03C8BD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:21:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rzWccR01AJigP1clw5zBMYjFxNRiQ3cOF8JoAwEKXj8=; b=Y/3qPRSBDYJpzO
-	kEfAp7c5So6qXrAGyIAiy5eGXP0PDZmRDihn2XEB55mc1mnBRDFJ2xyuQCVp7t4sg4ujFFoVBYvUt
-	mKs2beGy8nzWEGNoBSHR9BBwb7L+Yhcg83zwQLPAK8j1SXSodd5N7SOFMF+jtQkLiwPJi4oQhVPKR
-	4+a75P5TFRLA8ZErIsYlAr/4XUHsCmXAz0a7Jt1ndS1SLWs+CtuhrIvnO14/zC5B0qslJx3r62Llc
-	9Xd6E+yej4DhSwEBd0gZZhoPx3Q3tTQoL5856iwP5PVs+tR4wYvEi57ImMB7xEWYYw7Z69VOVuxg2
-	zVTBnTBOgg3tWeV6D9eQ==;
+	List-Owner; bh=epGkS/mW3TSeoNTjp6iNpUgF6u5impJHOyFSDxXlnvM=; b=u1VBMwd8/KGQ+X
+	f0UG5goKjDTVHwpxgTiUNMNE2KxcCkehXXYnLzWA+ZS7WoqrVDXpuE0CBU8ptgsnQx2XC2gQzhUke
+	q0sWHz69npXm9ALMMGSrszCSFDkNXJGOJ8e3ZByouB2w5NDVbFfkT70ZhTj+gJwnymR/sljUldk4f
+	EXV18PT9i0wNfyhCQXbfGoHw1AL2XL8rmHDCasRP4P28l3R0ni6eNmEKXLJPoQW9uZ/aCBuaHesu8
+	HRNwQjfkrIky1LVN6zhTTMyOeSvKT7twxjaRenZdgf4suyQ6Q3iXdrYRVxlxf7msTSaMZfrPhTsAz
+	yhLiR6LIgSBUVGp9mLjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadt6-0003nP-Q5; Tue, 11 Jun 2019 10:20:20 +0000
+	id 1hadu8-0006Az-VD; Tue, 11 Jun 2019 10:21:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadqG-0001Z1-Iv
+ id 1hadqG-0001Z2-KT
  for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:17:27 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5353E2173B;
+ by mail.kernel.org (Postfix) with ESMTPSA id 5C2C321743;
  Tue, 11 Jun 2019 10:17:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1560248243;
- bh=i0B2yKWgFIEvAKMI/QmOeIMqDZsEa7g7GDicC8lryn0=;
+ bh=9pP3OKj38O5IkaCOSE4CREy2A/7c7sgJ1J4PosN60ag=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Drz0VCn5Hmx5zfQP1b0rziWP4CDB+dhNluMzjRB9YHIbY6e99bX1G060yBDFLYcxX
- Fw/pfmH0zyzmPBwXxSNy6buCAK1W+1LjPbJRnPUSg1rUm/Uccft5YG6BdQw4gZWjQF
- ML4TGu6j+skip6u8wwq9XlHA8vZ2KcjkEEoO8Ogk=
+ b=I3WfUcUXiekWEAT+fNA59IZv43uoQI5NzkILbpcZcSRa1AvEEitV9A8yetlJIF8bJ
+ X9nxNOXD66Xf4uSGP+UYZ2sFBPyFj5pe4tYyiA+AXftwlUZyi4UTxp2lph4Wx5mibv
+ IWQ4neS/eqfTKhGPb2sm67ULS8LtIivQ8oFhUE9s=
 Received: by wens.tw (Postfix, from userid 1000)
- id 2EE09600FD; Tue, 11 Jun 2019 18:17:18 +0800 (CST)
+ id 35F6F602B7; Tue, 11 Jun 2019 18:17:18 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>, Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH v2 05/25] clk: fixed-factor: Add CLK_FIXED_FACTOR_HW which
- takes clk_hw pointer as parent
-Date: Tue, 11 Jun 2019 18:16:38 +0800
-Message-Id: <20190611101658.23855-6-wens@kernel.org>
+Subject: [PATCH v2 06/25] clk: fixed-factor: Add CLK_FIXED_FACTOR_HWS which
+ takes list of struct clk_hw *
+Date: Tue, 11 Jun 2019 18:16:39 +0800
+Message-Id: <20190611101658.23855-7-wens@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190611101658.23855-1-wens@kernel.org>
 References: <20190611101658.23855-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_031724_669736_D727EEA0 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20190611_031724_720006_863CA5D8 
+X-CRM114-Status: GOOD (  11.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,31 +92,38 @@ From: Chen-Yu Tsai <wens@csie.org>
 With the new clk parenting code, clk_init_data was expanded to include
 .parent_hws, for clk drivers to directly reference parents by clk_hw.
 
-Add a new macro, CLK_FIXED_FACTOR_HW, that can take a struct clk_hw
-pointer, instead of a string, as its parent.
+Add a new macro, CLK_FIXED_FACTOR_HWS, that can take an array of pointers
+to struct clk_hw, instead of a string, as its parent. Taking an array
+instead of a direct pointer allows the reuse of the array for multiple
+clks, rather than having one compound literal with the same contents
+allocated for each clk declaration.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- include/linux/clk-provider.h | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ include/linux/clk-provider.h | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
 diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
-index 0fd14c4874d6..c85e9f3809f2 100644
+index c85e9f3809f2..146a6859969e 100644
 --- a/include/linux/clk-provider.h
 +++ b/include/linux/clk-provider.h
-@@ -985,6 +985,17 @@ extern struct of_device_id __clk_of_table;
- 					      _flags),			\
+@@ -996,6 +996,21 @@ extern struct of_device_id __clk_of_table;
+ 						 _flags),		\
  	}
  
-+#define CLK_FIXED_FACTOR_HW(_struct, _name, _parent,			\
-+			    _div, _mult, _flags)			\
++/*
++ * This macro allows the driver to reuse the _parent array for multiple
++ * fixed factor clk declarations.
++ */
++#define CLK_FIXED_FACTOR_HWS(_struct, _name, _parent,			\
++			     _div, _mult, _flags)			\
 +	struct clk_fixed_factor _struct = {				\
 +		.div		= _div,					\
 +		.mult		= _mult,				\
-+		.hw.init	= CLK_HW_INIT_HW(_name,			\
-+						 _parent,		\
-+						 &clk_fixed_factor_ops,	\
-+						 _flags),		\
++		.hw.init	= CLK_HW_INIT_HWS(_name,		\
++						  _parent,		\
++						  &clk_fixed_factor_ops, \
++						  _flags),	\
 +	}
 +
  #ifdef CONFIG_OF
