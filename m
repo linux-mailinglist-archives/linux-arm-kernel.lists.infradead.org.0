@@ -2,78 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 303433D532
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 20:09:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B89C93D534
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 20:10:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zLcNj2I7hL+nFkO+61hpXggkT7MJTu+Ti0cAhZ/C5Do=; b=Ker76itbleomX8
-	VW9CtJaaT7nktzFQCjhyoRw4v42Tn478WmHhMOWFOFf6D9ToR17eyIHTLA7DauuGYIN7pt+NQRbDe
-	gMShvwxO1KCEVKX0Y/5V6Si2SmiCBW0FSwjuSkpdazYa7k2JFLYWkm1gpfxeG155vgCdiHEcrPrl9
-	XvDB+T/nTu8wR4c0l65G1p/hyo3LBo0mAHCZucN3vigV5LxmvbuCGtBGTGqMu4zPWipI5AtPRC0rN
-	4B8n14C4o9j/iwSdVQmgCy4WA/T63JpapEz+//96YgkdKaWqho8a+g2XGp/Gp7D0IKC6hGIGsd17Y
-	3ptZx8/mV2ryfxa4NvYw==;
+	List-Owner; bh=G38hRMEP0mr2jYi3PH1PGXZnlqeV7Oygo4HNTjbZBQo=; b=fMQYS13gsMg72P
+	PolUdQFSqLvKyfXpFiSHuWIfcRWleYJmE1UE7MrASJqzZ5SadjjjetUkp+JB2fbxFemNrWgpuls4v
+	F6+63SPuzzSE4JWpbIAl3Ok9Gy5qbzcih2kmFSA/AgRRGx9477NcA6rzUvOj5NpMUOGjES+NwhWra
+	T5Ycd1Fgp0vNS2fpx5lBfskW8asatR3PbLrMtPhaFbrrNr+qle3vGJvAiir/UOUFsrn0P6YuKF5d2
+	d9Pzb8hIn5OXNXW55TGz+KA6RvkUe7sD82TSdaD6SGb+GdO06NswYWyqyqoCfbby2YAHHuLhZeFT2
+	cWn8YYAP1/PifWmAFxlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1halCf-00059J-CE; Tue, 11 Jun 2019 18:09:01 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1halDs-0006Ju-DL; Tue, 11 Jun 2019 18:10:16 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1halCN-00054K-GS; Tue, 11 Jun 2019 18:08:45 +0000
-Received: by mail-ot1-x341.google.com with SMTP id z23so12787842ote.13;
- Tue, 11 Jun 2019 11:08:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=O89jlWqoEX7q/G6CiVxiDDmlI/FOM0sB6BHEXW+0fFM=;
- b=cHdSLiwdTyZbPGVz/qYnZJJCYplwKEbE0QdVdYmjqez+GGasa8TA9GEaZeZf+/Q/yc
- 8TIaqOiIijHlpQPN+b0BBZvmxtMd47x/uYK7Vk5XPD8mYxbl+yUPaIuF7vI0M7QzRtm0
- HNeafuVGHu/sa/BCqZcATKXmtS7Eag+BS6pOHP7N3/7dY0uWHKLKUSLT34TY6AzMuvGD
- Nr42TPWl2pxEfX5qbCwSGwJadJSQJ9gNcRUKKGUG7vKQZCsm/m8sJ9YWSh2bYRWL5CwC
- TqB5iiaGNo0Yp7KTmdwXVV/+fDhjaVwXeP064+XZo1StqFJ682mO7SEdwmnKHz22qWhC
- eMcA==
+ id 1halDf-0005W3-AD
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 18:10:05 +0000
+Received: by mail-qt1-x844.google.com with SMTP id m29so15685803qtu.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Jun 2019 11:10:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=eOLu2pv3ntr03fF23gOdX13Tk7BC8vZXwUsKPiu9VxE=;
+ b=gYk4MhssKmkwQZ19maJBR4bE6vwfma3JhBXgQSnIYj0auCMAoMj8ot7V9VWKvTZsjC
+ 7JelP45rZXY/mVLwsNEB1C3Vzmy/XspjXapX/oefVGwUWli2PQo651u6o0qR1PcRDcpe
+ sch0Q9D/9u+y9bD3NynRW9bm/r8Adw7KDRO/lkV7bMyhG6fOC/s7DChSw0SMrK/Q2QB1
+ Cq4kBIoBmG9zf1lGcVJhO/Zr+/C9UQrYRsHpyRMphNNz3+AuQqz1KWI/ZR66dS/Fzi+j
+ KtLimPwVEQhLndQPxDYqpjpbuOb9fMG8uWOmevXlRztOe9uh3GylXQvV+4NLRTh+8aIL
+ liNg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=O89jlWqoEX7q/G6CiVxiDDmlI/FOM0sB6BHEXW+0fFM=;
- b=STqRoHxEyXnzZupT7GoGBIlrUGb7NSyl3yhwZdWeh1ZWqXTKe9nFOpC9SGmRJheH2X
- uqPSRxWHLaL3FQJQcvWER+s5QZUFCAvRWA1YBUJrcHCN0TmksOhwM9EHtVeBpFIhS+cr
- nNCgPziq35+U7cG5n2Jj3MUyUj2FRD0LWTjg6HQmYSW1yN8fVtEbSZZPFDhgU0bw0I1z
- RM8HxtFOMui7iHLUkG4xbB4SH0sKvQeavT71bjUqLGaGxcClHhp6p4h+YLoaw+QI13R7
- H99hiD1ndsqyYVKcyTvRNevJyRAKBZt1EgRqLPkgkW/HLdQi/04chuM76wga2WrZvjqI
- fO0w==
-X-Gm-Message-State: APjAAAXyAeYQc1GSXzVNzlZ4ZWdhDuxtteThErI7qJnR2ABlJtwFWl8D
- 4ywVGPskEUHiptKvelVedETXufRRrYk7nLYbc5M=
-X-Google-Smtp-Source: APXvYqx6SoLuddvsSFbGwWXlHsKKnRFjZOzVnVqvxNNOkTK4cQ1P337c36bckWzk3tAMnUuN46R+aOyOVrxZcNZhBbc=
-X-Received: by 2002:a9d:32a6:: with SMTP id u35mr36300662otb.81.1560276522291; 
- Tue, 11 Jun 2019 11:08:42 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=eOLu2pv3ntr03fF23gOdX13Tk7BC8vZXwUsKPiu9VxE=;
+ b=tIe4G+KJlxO95hLCNhOQe/4/TpXzNXkXi+hza6a/dPFoXnanvDOkNi3QGT71lLj1rh
+ IhRvNWPwOk6V6smmK1YyidXepJT9DPsbLRC26BQU2MnvavpSdIB3pwksfgwwiPwhRYXd
+ 9SwY9QGH4jWtdTDR/O0e/eCH41IcL1uvMwPhPxxIO3SedvnuMZU1Ij2hUVmRjM9KSLy/
+ stYxfVcdTFpdhYMnHDeEHiwP/x7mqhGGiycSGhqMQzxGY1GT1GTcpqqStUrkfUk+PwXF
+ C+Y1IqXHlUT2he+RjD4hMNRM3V4h21UOxUl5kbvbAK+R0c6TxIWlK6SabFc5PKlzPqY0
+ DB3g==
+X-Gm-Message-State: APjAAAWlEtFFoyqO9s1xzZMMK2qeVwC+2+3XJJbEwH67weY/EaKiS+hw
+ 8+E/niAvD919L6PRqOxDtQKA9qh6NuI=
+X-Google-Smtp-Source: APXvYqyvHdYPwZQmrTxT8DJFd42e4zwEUFfGqYqxQepII7ckzuHdwqYG+6QLY0hYZ4Ekq1LfdXqfUA==
+X-Received: by 2002:aed:2fe7:: with SMTP id m94mr63059235qtd.191.1560276601090; 
+ Tue, 11 Jun 2019 11:10:01 -0700 (PDT)
+Received: from localhost ([2620:0:1013:11:89c6:2139:5435:371d])
+ by smtp.gmail.com with ESMTPSA id z57sm6848564qta.62.2019.06.11.11.10.00
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 11 Jun 2019 11:10:00 -0700 (PDT)
+Date: Tue, 11 Jun 2019 14:09:59 -0400
+From: Sean Paul <sean@poorly.run>
+To: Daniel Vetter <daniel@ffwll.ch>
+Subject: Re: [PATCH v5 06/11] drm/rockchip: Use dirtyfb helper
+Message-ID: <20190611180719.GB179831@art_vandelay>
+References: <20190611160844.257498-1-sean@poorly.run>
+ <20190611160844.257498-7-sean@poorly.run>
+ <20190611173912.GL2458@phenom.ffwll.local>
 MIME-Version: 1.0
-References: <20190611135842.8396-1-narmstrong@baylibre.com>
-In-Reply-To: <20190611135842.8396-1-narmstrong@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 11 Jun 2019 20:08:31 +0200
-Message-ID: <CAFBinCAkwjf9oDV6AGPi2PzzQ2KNTXXDHW6FTfN3kXpDT6cFpg@mail.gmail.com>
-Subject: Re: [PATCH] usb: dwc3: meson-g12a: Add support for IRQ based OTG
- switching
-To: Neil Armstrong <narmstrong@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <20190611173912.GL2458@phenom.ffwll.local>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_110843_640173_24F5783A 
-X-CRM114-Status: GOOD (  19.62  )
+X-CRM114-CacheID: sfid-20190611_111003_508490_41B31921 
+X-CRM114-Status: GOOD (  22.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,93 +99,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, Sean Paul <seanpaul@chromium.org>,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
+On Tue, Jun 11, 2019 at 07:39:12PM +0200, Daniel Vetter wrote:
+> On Tue, Jun 11, 2019 at 12:08:20PM -0400, Sean Paul wrote:
+> > From: Sean Paul <seanpaul@chromium.org>
+> > 
+> > Instead of flushing all vops every time we get a dirtyfb call, use the
+> > damage helper to kick off an atomic commit. Even though we don't use
+> > damage clips, the helper commit will force us through the normal
+> > psr_inhibit_get/put sequence.
+> > 
+> > Changes in v3:
+> > - Added to the set
+> > Changes in v4:
+> > - None
+> > Changes in v5:
+> > - None
+> > 
+> > Link to v3: https://patchwork.freedesktop.org/patch/msgid/20190502194956.218441-7-sean@poorly.run
+> > Link to v4: https://patchwork.freedesktop.org/patch/msgid/20190508160920.144739-7-sean@poorly.run
+> > 
+> > Suggested-by: Daniel Vetter <daniel@ffwll.ch>
+> > Tested-by: Heiko Stuebner <heiko@sntech.de>
+> > Signed-off-by: Sean Paul <seanpaul@chromium.org>
+> 
+> Reviewed-by: Daniel Vetter <daniel.vetter@ffwll.ch>
 
-On Tue, Jun 11, 2019 at 3:58 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> Add support for the OTG ID change interrupt to switch between Host
-> and Device mode.
->
-> Tested on the Hardkernel Odroid-N2 board.
->
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-with the three questions/comments below answered/addressed:
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Thanks!
 
-> ---
->  drivers/usb/dwc3/dwc3-meson-g12a.c | 32 ++++++++++++++++++++++++++++--
->  1 file changed, 30 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
-> index 2aec31a2eacb..e5c5ad0d529e 100644
-> --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
-> +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
-the comment block at the start of the driver file also contains a
-"TOFIX" which points to the missing IRQ handling
-can you please also drop that TOFIX comment in lines 15/16?
+> 
+> btw somewhat bigger fish to fry, but imo also very much worth it:
+> Switching over to the generic fbdev emulation.
 
-> @@ -348,6 +348,22 @@ static enum usb_role dwc3_meson_g12a_role_get(struct device *dev)
->                 USB_ROLE_HOST : USB_ROLE_DEVICE;
->  }
->
-> +static irqreturn_t dwc3_meson_g12a_irq_thread(int irq, void *data)
-> +{
-> +       struct dwc3_meson_g12a *priv = data;
-> +       enum phy_mode otg_id;
-> +
-> +       otg_id = dwc3_meson_g12a_get_id(priv);
-> +       if (otg_id != priv->otg_phy_mode) {
-> +               if (dwc3_meson_g12a_otg_mode_set(priv, otg_id))
-> +                       dev_warn(priv->dev, "Failed to switch OTG mode\n");
-> +       }
-> +
-> +       regmap_update_bits(priv->regmap, USB_R5, USB_R5_ID_DIG_IRQ, 0);
-> +
-> +       return IRQ_HANDLED;
-> +}
-> +
->  static struct device *dwc3_meson_g12_find_child(struct device *dev,
->                                                 const char *compatible)
->  {
-> @@ -374,7 +390,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->         void __iomem *base;
->         struct resource *res;
->         enum phy_mode otg_id;
-> -       int ret, i;
-> +       int ret, i, irq;
->
->         priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
->         if (!priv)
-> @@ -436,6 +452,19 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->         /* Get dr_mode */
->         priv->otg_mode = usb_get_dr_mode(dev);
->
-> +       if (priv->otg_mode == USB_DR_MODE_OTG) {
-> +               /* Ack irq before registering */
-> +               regmap_update_bits(priv->regmap, USB_R5,
-> +                                  USB_R5_ID_DIG_IRQ, 0);
-I assume that either the IRQ line is:
-- always enabled
-- enabled when (USB_R5_ID_DIG_EN_0 | USB_R5_ID_DIG_EN_1 |
-USB_R5_ID_DIG_TH_MASK) are set (which we already do in
-dwc3_meson_g12a_usb_init)
+Agreed, this tends to get swept under the rug on CrOS devices since we don't use
+fbdev :/
 
-> +               irq = platform_get_irq(pdev, 0);
-do we need to check the IRQ before trying to request it?
-drivers/gpu/drm/meson/meson_dw_hdmi.c and drivers/usb/dwc3/host.c for
-example error out if irq number is lower than 0
+> 
+> Also, since everything up to this one is reviewed I think would be good to
+> land that part already. So I can go around and haggle this to other
+> drivers :-)
 
-(it's great to see that this only required a small patch to make it work :))
+Sounds good to me, it'll be nice to offload some of the patches I've been
+carrying.
 
+Thanks again for the reviews,
 
-Martin
+Sean
+
+> -Daniel
+> 
+> > ---
+> >  drivers/gpu/drm/rockchip/rockchip_drm_fb.c | 13 ++-----------
+> >  1 file changed, 2 insertions(+), 11 deletions(-)
+> > 
+> > diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+> > index 31030cf81bc97..a888e31aa545a 100644
+> > --- a/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+> > +++ b/drivers/gpu/drm/rockchip/rockchip_drm_fb.c
+> > @@ -16,6 +16,7 @@
+> >  #include <drm/drm.h>
+> >  #include <drm/drmP.h>
+> >  #include <drm/drm_atomic.h>
+> > +#include <drm/drm_damage_helper.h>
+> >  #include <drm/drm_fb_helper.h>
+> >  #include <drm/drm_gem_framebuffer_helper.h>
+> >  #include <drm/drm_probe_helper.h>
+> > @@ -25,20 +26,10 @@
+> >  #include "rockchip_drm_gem.h"
+> >  #include "rockchip_drm_psr.h"
+> >  
+> > -static int rockchip_drm_fb_dirty(struct drm_framebuffer *fb,
+> > -				 struct drm_file *file,
+> > -				 unsigned int flags, unsigned int color,
+> > -				 struct drm_clip_rect *clips,
+> > -				 unsigned int num_clips)
+> > -{
+> > -	rockchip_drm_psr_flush_all(fb->dev);
+> > -	return 0;
+> > -}
+> > -
+> >  static const struct drm_framebuffer_funcs rockchip_drm_fb_funcs = {
+> >  	.destroy       = drm_gem_fb_destroy,
+> >  	.create_handle = drm_gem_fb_create_handle,
+> > -	.dirty	       = rockchip_drm_fb_dirty,
+> > +	.dirty	       = drm_atomic_helper_dirtyfb,
+> >  };
+> >  
+> >  static struct drm_framebuffer *
+> > -- 
+> > Sean Paul, Software Engineer, Google / Chromium OS
+> > 
+> 
+> -- 
+> Daniel Vetter
+> Software Engineer, Intel Corporation
+> http://blog.ffwll.ch
+
+-- 
+Sean Paul, Software Engineer, Google / Chromium OS
 
 _______________________________________________
 linux-arm-kernel mailing list
