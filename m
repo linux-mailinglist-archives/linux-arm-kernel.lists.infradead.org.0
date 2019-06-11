@@ -2,152 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA3A6417CE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:01:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68999417D2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:02:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OiLsT2PEqgpMbdk/PVIr72DwZWQJ2B0/BfknoApKUKg=; b=fWlRSVBKixSVPz
-	blnIDR9JT9ybTUgJ8CDpIQEeDb6k0/6U3zXTAs9s3SwUBF6ZNHtfEYjDZcl3S4ajOk5hXeaJ+ys0s
-	g1EhyMEGjAfsLEBWwHtwOPTTb2FXiPXpxJYqY87pfaz0KF8VKW1qrjw+yuVf1BhLvTmE4JXtOQEoC
-	gC80vkK3gKgPaIYbbBl1djR+6YzSkBJL9KV7dbPEDG4VrxQezya5OL1zVDI0S+RupXh/zLXGF1L8V
-	vPHm+yndV8eNyDPC0ENaJcJgs96wib+4H6WI3lO+tVjQyaTUBY55G+UhoLtNypKHHZl4KgT2oDSwu
-	ymQ0bbzf9YK+xTUCiF3g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UaVGzpIMcy0Nfh+4YX5z2V4NJK5LAbo4wBfiK9mspQo=; b=IZ2Fw7aAgNKgBq
+	eleegX+lolykF4tHmUm7NudHwX14Ok0eH8dpObuy55kJRU/xMcDCFWI0LK/51s4/KxshXaJe/K6U2
+	BoDytpjhFdi0C1W9q2n0w6LjMHKTn0bvX4w7ohjhVN5mVa0PS+eYveOGrPk8nFYuqnAj9otGsB+mp
+	Sap9eH8O9lf/nodquP/bNCcDKUst3BaHxW9FrXHRDhB2j1rbHnCAfw51rg1/2AI+8SCfempEof6aK
+	heQwjHl7KjeLLgjDUjjN1B7wfA0FY7Qv3K+CG05gX8OQPcCW4wKQIFF1/uezuhalZM//v6Ku8k5ER
+	T7IVuPEVR0+TIlrjlUlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haops-0005Re-92; Tue, 11 Jun 2019 22:01:44 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1haoqP-0005hl-4O; Tue, 11 Jun 2019 22:02:17 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haopi-0005RK-Us
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:01:36 +0000
-Received: by mail-pf1-x443.google.com with SMTP id t16so8268416pfe.11
+ id 1haoqC-0005gR-Ds
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:02:05 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id q64so8982008vsd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 15:01:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=pVB8okrnsDyiGji+BnXjf1PI+ZDkvJnitsYE9kXcUMM=;
- b=ijNz78kSZ1MMLF2W0pdEOcWXc1XlEN4ynTCz7XaYSKIAd47Rx59dqactMvu3m0jjvh
- LM/86dQCmOFuxGPOdhbVDuZjDc0qH9r2lRRIamoSAh8mwYoQHATi7c/e5YTJ9Osgxild
- 0K4kSl1ev6BBQuL/ThsOgYtYbORO3AT7Jc6GXf8CStbRR/zSFfIopgDzXHJSMofnNRHg
- 3GdLEp53EqeciG+OGg9qSIgjaqelwxmjOwpuEeT0lBihg+K0jJt8ZhepH0Ms6tafrs5l
- 8qpuy6AyKhOL3Tko6P6Gz5tnpnEiRnVe3UVlY1x9lcVuhLRRnpuJENqsLtuqJPP8hVgj
- rIaA==
+ Tue, 11 Jun 2019 15:02:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=R9aK4K+mYhxsBGuDL1wSkT9a9QdB+QJqvCcQqCRoZqk=;
+ b=jynV4LeLSkp8mY/yMLs3t4Pg5sizpYJiXBSRzIWuITTAmY09IkU049XMUREkVXni+g
+ JYmm1KjaWGlZolbGVaL1OfPnf3JRGs5E9Tzrgf9suFhpZzr0hUOGtfsAg/LWhL40oakz
+ 62yF0xRTAYPtIkJav7muvoNoGgY8jAOJHKSgg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=pVB8okrnsDyiGji+BnXjf1PI+ZDkvJnitsYE9kXcUMM=;
- b=B8WiG4XUIywjjrgWmvu1ZH1F+81n9jUtQSN0BH8wbbl8ORvcl0Lq/RppvYXSBa0VVf
- E5oU24lTsiwe37hZ7fRED/F3dmQ37qs93yEOih+sWvXAFeM+YLH5z3kkhDzvw0GiQKva
- 86VnRLM3u+vT23JulpuchGTGVFYxOz9Bt5eum0p8vzcA2wDPKR7OexsZwA7/gflKPluE
- 7yOXWVl/RxGbBuL7bv0Zpps03pT5mn50cza8SIkGjouYm/y3pSATXR8/TvEee18NSP8Y
- ABacd55THEbeZZCGB4ES49oIxPnm0c6HkhYl5Hj2GkpoIXvxpEQ4QApXWDmeJG2AvgfB
- 1xdQ==
-X-Gm-Message-State: APjAAAVAPzIDy4kv71C2h+rmYPtojXsLJ7c0OckGSNuDuNl6epB4zM3Q
- 4ntLOIjTVOX8Ac3dfddI60jTnr/G
-X-Google-Smtp-Source: APXvYqyMTk0jogvrxq3k6iF8NfjO7F2sreKBQEfiyrrho4XA24fypgqkkui87zLNFmDcvNuT8Jg0PA==
-X-Received: by 2002:a17:90a:24ac:: with SMTP id
- i41mr6868047pje.124.1560290494409; 
- Tue, 11 Jun 2019 15:01:34 -0700 (PDT)
-Received: from [10.67.49.123] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id m19sm237396pjl.0.2019.06.11.15.01.32
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 15:01:33 -0700 (PDT)
-Subject: Re: [PATCH 0/2] arm64: Enable reset and pinctrl for ARCH_BRCMSTB
-To: Florian Fainelli <f.fainelli@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20190531173826.6729-1-f.fainelli@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <fc9a8c07-480b-dd2d-2bee-ae1d99cdb999@gmail.com>
-Date: Tue, 11 Jun 2019 15:01:32 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=R9aK4K+mYhxsBGuDL1wSkT9a9QdB+QJqvCcQqCRoZqk=;
+ b=R0+5DbO3kIUcs7b4Y+Q0/O81C//Tfb9U1CuYZhbg+YgerJtdClq8BSXjKFxRLKltF8
+ sEod4shZlHsbg/i+bRJTNoxiJ+ZBNHGFLakzbPFim3TCMFNVpGMJCrxrDb0lJ1Ebamnv
+ KdOTmWsDqG0iHs0WB5NbMWNLh+pgENKcs8WprHwIQXUZR2CBo/fzOp79EwRtdoWyLksI
+ H7OGUlPA/dfNBfciS8m946NeZKiMhc11tKfmXzhZw0Xvn/Udz9EsjghhxglNcy+1hN6A
+ rD97zcEg7tYcELFLUEK5KejaiSIroVbrMJGwYg4tUFoRFOzpZ2dkGr9XeLYSgX/hS3gr
+ e3Pw==
+X-Gm-Message-State: APjAAAVbdlVxpJo7wCg31LfyQggdHN5lzx5NHYvn93pL4sSFFcb0jkRH
+ FvnC6rvR+pXaKbhVVSNPEXzUFsRk1QRT5zRcRuatbA==
+X-Google-Smtp-Source: APXvYqw0envY6zW+Lz/LpkpAKuJuPPY1ZENACuLJfRT4NvK+IVqHR36Y7gi5Vlqk+iKUf5BiCUj6/+NTISBNAEyEhIk=
+X-Received: by 2002:a67:d384:: with SMTP id b4mr9315081vsj.152.1560290519746; 
+ Tue, 11 Jun 2019 15:01:59 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190531173826.6729-1-f.fainelli@gmail.com>
-Content-Language: en-US
+References: <20190611040350.90064-1-dbasehore@chromium.org>
+ <20190611040350.90064-3-dbasehore@chromium.org>
+ <CAL_JsqLM1CikZ8+NPjLk2CEW-z9vPynZpVG20x0jsa7hVq0LvA@mail.gmail.com>
+In-Reply-To: <CAL_JsqLM1CikZ8+NPjLk2CEW-z9vPynZpVG20x0jsa7hVq0LvA@mail.gmail.com>
+From: "dbasehore ." <dbasehore@chromium.org>
+Date: Tue, 11 Jun 2019 15:01:48 -0700
+Message-ID: <CAGAzgsoWGqf0JQPNyRFnv2xZTMxje6idce7Dy5FZzuxj30mQyw@mail.gmail.com>
+Subject: Re: [PATCH 2/5] dt-bindings: display/panel: Expand rotation
+ documentation
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_150135_000321_9CC37F3A 
-X-CRM114-Status: GOOD (  12.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_150204_465058_B671C6E8 
+X-CRM114-Status: GOOD (  25.07  )
+X-Spam-Score: -7.3 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -159,26 +93,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jim Quinlan <jim2101024@gmail.com>, opendmb@gmail.com,
- bcm-kernel-feedback-list@broadcom.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ Sean Paul <sean@poorly.run>, Intel Graphics <intel-gfx@lists.freedesktop.org>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jani Nikula <jani.nikula@linux.intel.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Rodrigo Vivi <rodrigo.vivi@intel.com>, CK Hu <ck.hu@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Sam Ravnborg <sam@ravnborg.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/31/19 10:38 AM, Florian Fainelli wrote:
-> This patch series enabled PINCTRL and ARCH_HAS_RESET_CONTROLLER for
-> ARCH_BRCMSTB since we have platforms that require these two subsystems.
-> 
-> Doug Berger (1):
->   arm64: Enable PINCTRL for ARCH_BRCMSTB
-> 
-> Jim Quinlan (1):
->   arm64: Enable ARCH_HAS_RESET_CONTROLLER for ARCH_BRCMSTB
+On Tue, Jun 11, 2019 at 8:25 AM Rob Herring <robh+dt@kernel.org> wrote:
+>
+> On Mon, Jun 10, 2019 at 10:03 PM Derek Basehore <dbasehore@chromium.org> wrote:
+> >
+> > This adds to the rotation documentation to explain how drivers should
+> > use the property and gives an example of the property in a devicetree
+> > node.
+> >
+> > Signed-off-by: Derek Basehore <dbasehore@chromium.org>
+> > ---
+> >  .../bindings/display/panel/panel.txt          | 32 +++++++++++++++++++
+> >  1 file changed, 32 insertions(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/display/panel/panel.txt b/Documentation/devicetree/bindings/display/panel/panel.txt
+> > index e2e6867852b8..f35d62d933fc 100644
+> > --- a/Documentation/devicetree/bindings/display/panel/panel.txt
+> > +++ b/Documentation/devicetree/bindings/display/panel/panel.txt
+> > @@ -2,3 +2,35 @@ Common display properties
+> >  -------------------------
+> >
+> >  - rotation:    Display rotation in degrees counter clockwise (0,90,180,270)
+> > +
+> > +Property read from the device tree using of of_drm_get_panel_orientation
+>
+> Don't put kernel specifics into bindings.
 
-Series applied to soc-arm64/next, thanks!
--- 
-Florian
+Will remove that. I'll clean up the documentation to indicate that
+this binding creates a panel orientation property unless the rotation
+is handled in the Timing Controller on the panel if that sounds fine.
+
+>
+> > +
+> > +The panel driver may apply the rotation at the TCON level, which will
+>
+> What's TCON? Something Mediatek specific IIRC.
+
+The TCON is the Timing controller, which is on the panel. Every panel
+has one. I'll add to the doc that the TCON is in the panel, etc.
+
+>
+> > +make the panel look like it isn't rotated to the kernel and any other
+> > +software.
+> > +
+> > +If not, a panel orientation property should be added through the SoC
+> > +vendor DRM code using the drm_connector_init_panel_orientation_property
+> > +function.
+>
+> The 'rotation' property should be defined purely based on how the
+> panel is mounted relative to a device's orientation. If the display
+> pipeline has some ability to handle rotation, that's a feature of the
+> display pipeline and not the panel.
+
+This is how the panel orientation property is already handled in the
+kernel. See drivers/gpu/drm/i915/vlv_dsi.c for more details.
+
+>
+> > +
+> > +Example:
+>
+> This file is a collection of common properties. It shouldn't have an
+> example especially as this example is mostly non-common properties.
+
+Just copied one of our DTS entries that uses the property. I'll remove
+everything under compatible except for rotation and status.
+
+>
+> > +       panel: panel@0 {
+> > +               compatible = "boe,himax8279d8p";
+> > +               reg = <0>;
+> > +               enable-gpios = <&pio 45 0>;
+>
+> > +               pp33-gpios = <&pio 35 0>;
+> > +               pp18-gpios = <&pio 36 0>;
+>
+> BTW, are these upstream because they look like GPIO controlled
+> supplies which we model with gpio-regulator binding typically.
+
+The boe,himax8279 driver was sent upstream, but it doesn't appear to
+be merged. I'll look into it on that thread.
+
+>
+> > +               pinctrl-names = "default", "state_3300mv", "state_1800mv";
+> > +               pinctrl-0 = <&panel_pins_default>;
+> > +               pinctrl-1 = <&panel_pins_3300mv>;
+> > +               pinctrl-2 = <&panel_pins_1800mv>;
+> > +               backlight = <&backlight_lcd0>;
+> > +               rotation = <180>;
+> > +               status = "okay";
+> > +
+> > +               port {
+> > +                       panel_in: endpoint {
+> > +                               remote-endpoint = <&dsi_out>;
+> > +                       };
+> > +               };
+> > +       };
+> > --
+> > 2.22.0.rc2.383.gf4fbbf30c2-goog
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
