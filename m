@@ -2,104 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 677223D44F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:35:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9679F3D44E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:34:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Message-Id:MIME-Version:References:In-Reply-To:Date:To:From:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XWlejw8mFAf6kBOKo6NZA4AwxRhXCF/drtruVpQVN4c=; b=ssTeq2XOIroyQRTnnQRqR6FDd
-	sxCuSodD6quMi7rFQIS2u55Gz3AjmnjCFttQC8FcUYoO6gPXJjs4BKw/KJsrphwMurHmz3vDryaW9
-	5rSTN027crzdrANuTTvcRmCiGnhqK2MTDpTOzr6edOxBXCCwsT64I6YFtwqbWOZgyYuPKIMiXEA7/
-	eESoXeE7XsDO6ldLptO/d066uXfLSpWVawEFcwHcdrGkcPgGwE8D42dB5CU1VtW+Y8+nivebJ2WU2
-	R7IDftUrAAKP1KOKRljLBNscv39MtDynBAwxynGZOdrgEFSdjvubFibhQqF7w5pjWrjE5lKMMEn/X
-	x5F78hCHA==;
+	 bh=WTJGvqRcm1qgKLrE+QLGUyFDToo0xFvx0qcT6J8y/Dk=; b=dYdOfbmE0Vyj2D19GvlGFde8D
+	bZAiFm2VZtstsxFSlDYkvLhCHPQ+JIYsMbqANOXI/D45RrPPnHvDWwWDWMVGXar56MdACkyXHFTgz
+	baatcV06vPFyVaQCI0T8u+7V0bz1CNXD4j6GGgFqdf3x1clccx0xlH9cgohhS9klg+3t3JGTChswf
+	SdGdV6RH9Ec/mwVf3Gi7BUMRsEG19J8qn6vUNYW/Ihfdajb+eiDbW/XA15jRHWK6nm1UYcbmbvppP
+	sDefg44nvyZdyKRwZKLegmg2UcCe0vIMpXyPeqUjwszDIjpENdaRoDVaF28E34+ZHWWmRFrHYHv5K
+	C3d1C2v4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakg1-0003UN-2g; Tue, 11 Jun 2019 17:35:17 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1hakfb-0003DY-GT; Tue, 11 Jun 2019 17:34:51 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hakcW-0000it-Ba
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:31:44 +0000
-Received: from pps.filterd (m0098419.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5BHJx9j109506
- for <linux-arm-kernel@lists.infradead.org>; Tue, 11 Jun 2019 13:31:36 -0400
-Received: from e13.ny.us.ibm.com (e13.ny.us.ibm.com [129.33.205.203])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2t2emjem83-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Tue, 11 Jun 2019 13:31:36 -0400
-Received: from localhost
- by e13.ny.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <leonardo@linux.ibm.com>;
- Tue, 11 Jun 2019 18:31:35 +0100
-Received: from b01cxnp22035.gho.pok.ibm.com (9.57.198.25)
- by e13.ny.us.ibm.com (146.89.104.200) with IBM ESMTP SMTP Gateway: Authorized
- Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Tue, 11 Jun 2019 18:31:27 +0100
-Received: from b01ledav004.gho.pok.ibm.com (b01ledav004.gho.pok.ibm.com
- [9.57.199.109])
- by b01cxnp22035.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x5BHVPUl15401272
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 11 Jun 2019 17:31:25 GMT
-Received: from b01ledav004.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 5393F112061;
- Tue, 11 Jun 2019 17:31:25 +0000 (GMT)
-Received: from b01ledav004.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 89B10112065;
- Tue, 11 Jun 2019 17:31:18 +0000 (GMT)
-Received: from leobras.br.ibm.com (unknown [9.86.24.233])
- by b01ledav004.gho.pok.ibm.com (Postfix) with ESMTP;
- Tue, 11 Jun 2019 17:31:18 +0000 (GMT)
-Subject: Re: [RFC V3] mm: Generalize and rename notify_page_fault() as
- kprobe_page_fault()
-From: Leonardo Bras <leonardo@linux.ibm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>, Christophe Leroy
- <christophe.leroy@c-s.fr>, linux-kernel@vger.kernel.org, linux-mm@kvack.org
-Date: Tue, 11 Jun 2019 14:31:12 -0300
-In-Reply-To: <7b0a7afd-2776-0d95-19c5-3e15959744eb@arm.com>
-References: <1559903655-5609-1-git-send-email-anshuman.khandual@arm.com>
- <ec764ff4-f68a-fce5-ac1e-a4664e1123c7@c-s.fr>
- <97e9c9b3-89c8-d378-4730-841a900e6800@arm.com>
- <8dd6168592437378ff4a7c204e0f2962d002b44f.camel@linux.ibm.com>
- <7b0a7afd-2776-0d95-19c5-3e15959744eb@arm.com>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ id 1hakcC-0000SP-5i
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:31:21 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5BHVIg2080041;
+ Tue, 11 Jun 2019 12:31:18 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560274278;
+ bh=1RmvW+AZ9FteTp3r96qSO0PelKVyqe7ED4AJeEZJgPM=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=leILpbnQMLwVrBDDDmI4QvLvPFV/ZSJVE1jkZFENg6NcTx20XqpF38FNIjqyXEYN+
+ 5lJvMtgyyw+s7pWxUn0E9lVdyQ4DL2TqZeN9ilWPFhp8tla3DxuZunYtxOoBNGOh/+
+ Tf7N3GzyDgbLO9U2J/8iVfANsSiEi20J/iuzZaT0=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5BHVIU1078820
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 11 Jun 2019 12:31:18 -0500
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 11
+ Jun 2019 12:31:17 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 11 Jun 2019 12:31:17 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5BHVG9t054946;
+ Tue, 11 Jun 2019 12:31:16 -0500
+Subject: Re: [PATCH v2] firmware: ti_sci: Always request response from firmware
+To: "Andrew F. Davis" <afd@ti.com>, Nishanth Menon <nm@ti.com>, Santosh
+ Shilimkar <ssantosh@kernel.org>
+References: <20190528155510.373-1-afd@ti.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <034a2922-1ee2-53b8-04ed-a05a66fda066@ti.com>
+Date: Tue, 11 Jun 2019 20:31:15 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-x-cbid: 19061117-0064-0000-0000-000003ECE701
-X-IBM-SpamModules-Scores: 
-X-IBM-SpamModules-Versions: BY=3.00011247; HX=3.00000242; KW=3.00000007;
- PH=3.00000004; SC=3.00000286; SDB=6.01216523; UDB=6.00639641; IPR=6.00997622; 
- MB=3.00027266; MTD=3.00000008; XFM=3.00000015; UTC=2019-06-11 17:31:34
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19061117-0065-0000-0000-00003DDA7110
-Message-Id: <bec5983d50e37953b3962a6e53fca0a243c7158b.camel@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-11_08:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=667 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1906110111
+In-Reply-To: <20190528155510.373-1-afd@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_103140_733104_15A53456 
-X-CRM114-Status: GOOD (  25.26  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190611_103120_337437_8FF71E0A 
+X-CRM114-Status: GOOD (  18.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,107 +92,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
- Ingo Molnar <mingo@redhat.com>, Andrey Konovalov <andreyknvl@google.com>,
- Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Will Deacon <will.deacon@arm.com>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: multipart/mixed; boundary="===============6837732580358446525=="
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 28/05/2019 18:55, Andrew F. Davis wrote:
+> TI-SCI firmware will only respond to messages when the
+> TI_SCI_FLAG_REQ_ACK_ON_PROCESSED flag is set. Most messages already do
+> this, set this for the ones that do not.
+> 
+> This will be enforced in future firmware that better match the TI-SCI
+> specifications, this patch will not break users of existing firmware.
+> 
+> Fixes: aa276781a64a ("firmware: Add basic support for TI System Control Interface (TI-SCI) protocol")
+> Signed-off-by: Andrew F. Davis <afd@ti.com>
+> Acked-by: Nishanth Menon <nm@ti.com>
+> Tested-by: Alejandro Hernandez <ajhernandez@ti.com>
+> ---
+> 
+> Changes from v1:
+>   - Rebased on v5.2-rc2
 
---===============6837732580358446525==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-+TvBOjv046XEorglXBMQ"
+Thanks, queuing up for 5.3.
 
+-Tero
 
---=-+TvBOjv046XEorglXBMQ
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+> 
+>   drivers/firmware/ti_sci.c | 8 ++++----
+>   1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
+> index ef93406ace1b..36ce11a67235 100644
+> --- a/drivers/firmware/ti_sci.c
+> +++ b/drivers/firmware/ti_sci.c
+> @@ -466,9 +466,9 @@ static int ti_sci_cmd_get_revision(struct ti_sci_info *info)
+>   	struct ti_sci_xfer *xfer;
+>   	int ret;
+>   
+> -	/* No need to setup flags since it is expected to respond */
+>   	xfer = ti_sci_get_one_xfer(info, TI_SCI_MSG_VERSION,
+> -				   0x0, sizeof(struct ti_sci_msg_hdr),
+> +				   TI_SCI_FLAG_REQ_ACK_ON_PROCESSED,
+> +				   sizeof(struct ti_sci_msg_hdr),
+>   				   sizeof(*rev_info));
+>   	if (IS_ERR(xfer)) {
+>   		ret = PTR_ERR(xfer);
+> @@ -596,9 +596,9 @@ static int ti_sci_get_device_state(const struct ti_sci_handle *handle,
+>   	info = handle_to_ti_sci_info(handle);
+>   	dev = info->dev;
+>   
+> -	/* Response is expected, so need of any flags */
+>   	xfer = ti_sci_get_one_xfer(info, TI_SCI_MSG_GET_DEVICE_STATE,
+> -				   0, sizeof(*req), sizeof(*resp));
+> +				   TI_SCI_FLAG_REQ_ACK_ON_PROCESSED,
+> +				   sizeof(*req), sizeof(*resp));
+>   	if (IS_ERR(xfer)) {
+>   		ret = PTR_ERR(xfer);
+>   		dev_err(dev, "Message alloc failed(%d)\n", ret);
+> 
 
-On Tue, 2019-06-11 at 10:44 +0530, Anshuman Khandual wrote:
->=20
-> On 06/10/2019 08:57 PM, Leonardo Bras wrote:
-> > On Mon, 2019-06-10 at 08:09 +0530, Anshuman Khandual wrote:
-> > > > > +    /*
-> > > > > +     * To be potentially processing a kprobe fault and to be all=
-owed
-> > > > > +     * to call kprobe_running(), we have to be non-preemptible.
-> > > > > +     */
-> > > > > +    if (kprobes_built_in() && !preemptible() && !user_mode(regs)=
-) {
-> > > > > +        if (kprobe_running() && kprobe_fault_handler(regs, trap)=
-)
-> > > >=20
-> > > > don't need an 'if A if B', can do 'if A && B'
-> > >=20
-> > > Which will make it a very lengthy condition check.
-> >=20
-> > Well, is there any problem line-breaking the if condition?
-> >=20
-> > if (A && B && C &&
-> >     D && E )
-> >=20
-> > Also, if it's used only to decide the return value, maybe would be fine
-> > to do somethink like that:
-> >=20
-> > return (A && B && C &&
-> >         D && E );=20
->=20
-> Got it. But as Dave and Matthew had pointed out earlier, the current x86
-> implementation has better readability. Hence will probably stick with it.
->=20
-Sure, I agree with them. It's way more readable.
-
---=-+TvBOjv046XEorglXBMQ
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEMdeUgIzgjf6YmUyOlQYWtz9SttQFAlz/5WAACgkQlQYWtz9S
-ttSg4A/6A45T2BOxIm5qp+PJ+LwF0fbX0ZI762cE3X6nXDk5fJuRrjyQifBfrD0V
-IVWSUrnOXqarYOmPT3CxT33rW05vGtDWObX+OI6J/QW6qU7jSOD1Db1ZUHL0W3WL
-7B27RA3gNmEMugnjmM+JvtMkf5SwTdk3ZLr2IA22revoOBxOF5b8iICzA0HfaXg6
-8lFSegTY8C2nNQipkeSS4d3KiObNEA1TVJUFqhwJ/VA6qYMnOpKD6WR58QCOxFaF
-NIP4ln+HJccwleioGnQ+Q7jFGRD8Hb9zqLKNccpN1MfuZdE9OXcbFB5MXVuPyE/h
-JVYbITwMXbIxpZe8o6/Yoc875Tz1phA2GeprZlEF3FDbw/tH0tyb6U5o+8UNpOXp
-YdrNxy1oJRK6ZzhW0+FqgMJVo/BBh/8OV3r9ECwYxR3o8ELPVFAcyqrx2XEU7E6p
-fBWN/cYXuZFizM0/b2yKd3kO/JIemEdz58/aPOTgJevEb996p7JohS8H8/3lm4gu
-VcnlAsH9ivKDmkoFzz6JuXWJB19OSohPW8j2p9fqP5LA5snz8o+ehsewTjaVQsPJ
-eNlp1HQzVumviM07wrZmXzVc0zoUb3YhWHrUL26xcfvtfDZVQ+gIOCH9baNsgcoe
-U0uI1HQuuUreC4L10sgC2qrlYqbWMUmK5uj6T8fjTRaHlzP1UX8=
-=i2hD
------END PGP SIGNATURE-----
-
---=-+TvBOjv046XEorglXBMQ--
-
-
-
---===============6837732580358446525==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6837732580358446525==--
-
-
