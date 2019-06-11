@@ -2,79 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4717B3CBD4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:35:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31D623CBDC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 14:37:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eQCXOySO2geLht/EkqxQwBZq9Lumdq/vufU2a5C/2Qc=; b=NEpITqYqpOqgDSOYKGzuKXQyp
-	g1xJfNuJrKgc7ISFoaAt3IcYw3NXneQ9HZrVoXK3vVW5v8yCmLZK8fpjxhzT2nAOxVdVP1COAXTL3
-	wGx+Wdx5S/46IKwwOx+gjUYIoDuvNY/V23s/4I4UxpugaZtTTCQgLHMY/z0C3gx+FMbgl9pJAcQVK
-	J18gfcC84Hun6/yVe3ip1mQTTlnDT77w5IbxyirzP31fboH+Zu7/C8g3JO5WdIUHqOBKqQBB9FRNW
-	AvyggoTEs/2dMAKgrWUxe66iIwPZAGrifAOlMrksJzMRuSh5m7nAWb/RKruFIOlkASMA8cewcfEwG
-	Ik6g+zW8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0SOG3NyQ35kmtDnxIeYwfT5dhC29o6LmVqCXxBWrs1I=; b=RFp2i7ngqWb+gz
+	uImGBeyq4sUPCd1qt7xLgBbSQw4o5fi7OKbcms4Dqels5WhbGh2e78Zy88kYJKe/9X4DtHLUnB0ye
+	YtazJ2dK+TM+0VApwg4jRDqoZh45a7GkbS/TxOaaUK7BlG5PSSdHmCrYEPvEm6UpQaQhUNgyXDQHZ
+	ug1T+XsL06mAH9c/kjvRYpan9OsqHObMVXVjFztLkOW+2VMZF0+0RoETVtX730ZzxUFTDO5ZIx4DK
+	f9te3uNVI2n53tOnSpurjFTgROqDhBCu3ghWW1nugHOm2KRw5ShExjYo8V4SskQ48+m4hZrJkXjWY
+	5jOffeJ/vVsec+CCBFxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hag0J-0002qH-Ba; Tue, 11 Jun 2019 12:35:55 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1hag1p-0003Ek-6b; Tue, 11 Jun 2019 12:37:29 +0000
+Received: from mail-eopbgr140058.outbound.protection.outlook.com
+ ([40.107.14.58] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hafzV-0001YY-I7
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 12:35:08 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5BCZ2cq070648;
- Tue, 11 Jun 2019 07:35:02 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560256502;
- bh=zxW57rDxzLYqIutv31Adren8VVEhkYqoxchlfyq541o=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=OvhYcBVRTQ09BqDJrj+C244DNQeSta+Fjr6GUROjQwA2FXpVtIDpHQLgFPyBq0yNE
- kb9YnRHUfdfLb1eIXZOchUmQRusnvcSLdoC0xIM/J5yU3NN3QQ+G6V2BUifne5Vv+t
- zapWr3Sa36hnLa99Ke8agEjKcWY0/vnNr3UK0qjg=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5BCZ2ev092398
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 11 Jun 2019 07:35:02 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 11
- Jun 2019 07:35:02 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 11 Jun 2019 07:35:02 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5BCZ0V6124749;
- Tue, 11 Jun 2019 07:35:00 -0500
-Subject: Re: [PATCH v3 2/5] dt-bindings: ti_sci_pm_domains: Add support for
- exclusive and shared access
-From: Tero Kristo <t-kristo@ti.com>
-To: Lokesh Vutla <lokeshvutla@ti.com>, Nishanth Menon <nm@ti.com>, Santosh
- Shilimkar <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>
-References: <20190410053728.17374-1-lokeshvutla@ti.com>
- <20190410053728.17374-3-lokeshvutla@ti.com>
- <9fe962b7-0500-6916-1dc3-04db0e11cd4d@ti.com>
-Message-ID: <31dfd9ed-159f-95e7-f5a8-bcf6afec4eaa@ti.com>
-Date: Tue, 11 Jun 2019 15:34:59 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <9fe962b7-0500-6916-1dc3-04db0e11cd4d@ti.com>
+ id 1hag1Z-0003EB-HZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 12:37:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=H23z4g/U0EsTzeTd6dLkP7piLsBF2/NZ0/RjmsrY5T0=;
+ b=O1ROo3YVUhxa6Q+Vdm/L25MntIYE1+1ybL9XMUvXcjVGzjQ4UZ51q5KP8p2EblI0nvK0fIzlFgveQ+gTWvYmZxlgDPSJC73mYhJnhkTjDMoyxEvHGSKnzlAX4f+SOyfM1Ib/KvgZ+VR1EHCQtfHRUO0pU+Hoso5b97Sgr9PbpTE=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3835.eurprd04.prod.outlook.com (52.134.65.158) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.14; Tue, 11 Jun 2019 12:37:07 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::5835:e874:bd94:fec%5]) with mapi id 15.20.1965.017; Tue, 11 Jun 2019
+ 12:37:07 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "corbet@lwn.net" <corbet@lwn.net>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>, "rui.zhang@intel.com"
+ <rui.zhang@intel.com>, "edubezval@gmail.com" <edubezval@gmail.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, Peng Fan
+ <peng.fan@nxp.com>, "mchehab+samsung@kernel.org"
+ <mchehab+samsung@kernel.org>, "linux@roeck-us.net" <linux@roeck-us.net>,
+ Daniel Baluta <daniel.baluta@nxp.com>, "maxime.ripard@bootlin.com"
+ <maxime.ripard@bootlin.com>, "olof@lixom.net" <olof@lixom.net>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>, Leonard Crestez
+ <leonard.crestez@nxp.com>, "bjorn.andersson@linaro.org"
+ <bjorn.andersson@linaro.org>, "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>
+Subject: RE: [PATCH V14 2/5] thermal: of-thermal: add API for getting sensor
+ ID from DT
+Thread-Topic: [PATCH V14 2/5] thermal: of-thermal: add API for getting sensor
+ ID from DT
+Thread-Index: AQHVHzdukfa79SJ0YU+EW6tI7WFhPKaWWD6AgAANPiA=
+Date: Tue, 11 Jun 2019 12:37:06 +0000
+Message-ID: <DB3PR0402MB39169A1897B33DC6C3522E08F5ED0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190610025254.23940-1-Anson.Huang@nxp.com>
+ <20190610025254.23940-2-Anson.Huang@nxp.com>
+ <AM0PR04MB42118F3F8E87A72758D4A7B780ED0@AM0PR04MB4211.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB42118F3F8E87A72758D4A7B780ED0@AM0PR04MB4211.eurprd04.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: dba9489d-bb22-4d65-59d3-08d6ee6983e9
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3835; 
+x-ms-traffictypediagnostic: DB3PR0402MB3835:
+x-microsoft-antispam-prvs: <DB3PR0402MB38358F5C13BB91A5B49D9A82F5ED0@DB3PR0402MB3835.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 006546F32A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(39860400002)(136003)(396003)(376002)(366004)(13464003)(189003)(199004)(305945005)(26005)(2201001)(33656002)(186003)(110136005)(7736002)(76116006)(73956011)(8936002)(81166006)(8676002)(66946007)(25786009)(81156014)(11346002)(2501003)(64756008)(66556008)(478600001)(446003)(68736007)(66446008)(476003)(14454004)(66476007)(52536014)(6506007)(71190400001)(256004)(102836004)(2906002)(14444005)(71200400001)(316002)(76176011)(4326008)(86362001)(53546011)(66066001)(9686003)(3846002)(6246003)(44832011)(99286004)(53936002)(5660300002)(486006)(55016002)(7416002)(6116002)(229853002)(7696005)(74316002)(6436002)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3835;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: gY8iD16PGcS7UKVEDBRlSGDpeuP0mdr/A9044scw9qhuREsXl2l3FcqTv52SEIx+UV1TzpnnoCcxRjMQhtba/y9SDTq5LSJ/PLcyUj9jg1Ih3GiE440K9Gxf/t/vsxwxm6SvLvGd2+0KFM0SJzoXcc45sYq/OsgyDTmi4D9c9+NCI4fC3ACYwK+x5C0HSqjZPmKD1xMZW3SFgxLPgcSscQNpsPFRi7DtK24M0cnuwzgK9SQ4bGa7QwR5gLdyQGTzhp2iP99Z1RPMY9iX6uFsTiWtUAN4p6snsGtFtPjrwWHyS22ylLn2YLFOl1Gl6RiAPi9QxO+W+2REC+czWwi7i7Gt+AGNM8w1dq0WYhDlBeiRK6fI/cMxWfBlafZQ+h73GsIDwrMBm/VzXn4urXVy6jRe+oMaQHOyCdK5zlehpxw=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dba9489d-bb22-4d65-59d3-08d6ee6983e9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jun 2019 12:37:06.8810 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: anson.huang@nxp.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3835
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_053505_715947_0F858304 
-X-CRM114-Status: GOOD (  19.21  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190611_053713_746689_73613DC6 
+X-CRM114-Status: GOOD (  30.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.14.58 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -83,7 +127,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,80 +138,255 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Device Tree Mailing List <devicetree@vger.kernel.org>,
- Sekhar Nori <nsekhar@ti.com>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDIvMDUvMjAxOSAxMjoyNCwgVGVybyBLcmlzdG8gd3JvdGU6Cj4gT24gMTAvMDQvMjAxOSAw
-ODozNywgTG9rZXNoIFZ1dGxhIHdyb3RlOgo+PiBUSVNDSSBwcm90b2NvbCBzdXBwb3J0cyBmb3Ig
-ZW5hYmxpbmcgdGhlIGRldmljZSBlaXRoZXIgd2l0aCBleGNsdXNpdmUKPj4gcGVybWlzc2lvbnMg
-Zm9yIHRoZSByZXF1ZXN0aW5nIGhvc3Qgb3Igd2l0aCBzaGFyaW5nIGFjcm9zcyB0aGUgaG9zdHMu
-Cj4+IFRoZXJlIGFyZSBjZXJ0YWluIGRldmljZXMgd2hpY2ggYXJlIGV4Y2x1c2l2ZSB0byBMaW51
-eCBjb250ZXh0IGFuZAo+PiB0aGVyZSBhcmUgY2VydGFpbiBkZXZpY2VzIHRoYXQgYXJlIHNoYXJl
-ZCBhY3Jvc3MgZGlmZmVyZW50IGhvc3QgY29udGV4dHMuCj4+IFNvIGFkZCBzdXBwb3J0IGZvciBn
-ZXR0aW5nIHRoaXMgaW5mb3JtYXRpb24gZnJvbSBEVCBieSBpbmNyZWFzaW5nCj4+IHRoZSBwb3dl
-ci1kb21haW4gY2VsbHMgdG8gMi4KPj4KPj4gU2lnbmVkLW9mZi1ieTogTG9rZXNoIFZ1dGxhIDxs
-b2tlc2h2dXRsYUB0aS5jb20+Cj4gCj4gQmFzZWQgb24gc29tZSBvZmZsaW5lIGRpc2N1c3Npb25z
-IHdpdGggUm9iLCBJIGFtIHdpdGhkcmF3aW5nIG15IGNvbmNlcm5zIAo+IG9uIHRoaXMgcGF0Y2gs
-IHRodXM6Cj4gCj4gQWNrZWQtYnk6IFRlcm8gS3Jpc3RvIDx0LWtyaXN0b0B0aS5jb20+Cj4gCj4g
-V2Ugd291bGQgc3RpbGwgbmVlZCBhY2sgZnJvbSBSb2IgdGhvdWdoLgoKUm9iPyBBbnkgY2hhbmNl
-IHRvIGdldCBhY2sgb24gdGhpcz8KCi1UZXJvCgo+IAo+PiAtLS0KPj4gwqAgLi4uL2RldmljZXRy
-ZWUvYmluZGluZ3Mvc29jL3RpL3NjaS1wbS1kb21haW4udHh0wqDCoMKgwqDCoCB8IDExICsrKysr
-KysrKy0tCj4+IMKgIE1BSU5UQUlORVJTwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzCoCAx
-ICsKPj4gwqAgaW5jbHVkZS9kdC1iaW5kaW5ncy9zb2MvdGksc2NpX3BtX2RvbWFpbi5owqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCB8wqAgOSArKysrKysrKysKPj4gwqAgMyBmaWxlcyBjaGFuZ2VkLCAx
-OSBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+PiDCoCBjcmVhdGUgbW9kZSAxMDA2NDQg
-aW5jbHVkZS9kdC1iaW5kaW5ncy9zb2MvdGksc2NpX3BtX2RvbWFpbi5oCj4+Cj4+IGRpZmYgLS1n
-aXQgCj4+IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3NvYy90aS9zY2ktcG0t
-ZG9tYWluLnR4dCAKPj4gYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvc29jL3Rp
-L3NjaS1wbS1kb21haW4udHh0Cj4+IGluZGV4IGY3YjAwYTdjMGY2OC4uZjU0MWQxZjc3NmEyIDEw
-MDY0NAo+PiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvc29jL3RpL3Nj
-aS1wbS1kb21haW4udHh0Cj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9zb2MvdGkvc2NpLXBtLWRvbWFpbi50eHQKPj4gQEAgLTE5LDggKzE5LDE1IEBAIGNoaWxkIG9m
-IHRoZSBwbW1jIG5vZGUuCj4+IMKgIFJlcXVpcmVkIFByb3BlcnRpZXM6Cj4+IMKgIC0tLS0tLS0t
-LS0tLS0tLS0tLS0tCj4+IMKgIC0gY29tcGF0aWJsZTogc2hvdWxkIGJlICJ0aSxzY2ktcG0tZG9t
-YWluIgo+PiAtLSAjcG93ZXItZG9tYWluLWNlbGxzOiBNdXN0IGJlIDEgc28gdGhhdCBhbiBpZCBj
-YW4gYmUgcHJvdmlkZWQgaW4gZWFjaAo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBk
-ZXZpY2Ugbm9kZS4KPj4gKy0gI3Bvd2VyLWRvbWFpbi1jZWxsczogQ2FuIGJlIG9uZSBvZiB0aGUg
-Zm9sbG93aW5nOgo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAxOiBDb250YWluaW5nIHRoZSBk
-ZXZpY2UgaWQgb2YgZWFjaCBub2RlCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIDI6IEZpcnN0
-IGVudHJ5IHNob3VsZCBiZSBkZXZpY2UgaWQKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgU2Vjb25kIGVudHJ5IHNob3VsZCBiZSBvbmUgb2YgdGhlIGZsb293aW5nOgo+PiArwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBUSV9TQ0lfUERfRVhDTFVTSVZFOiBUbyBhbGxvdyBkZXZp
-Y2UgdG8gYmUKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgZXhjbHVzaXZlbHkgY29udHJvbGxlZCBieQo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB0aGUgcmVxdWVzdGluZyBob3N0cy4KPj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgVElfU0NJX1BEX1NIQVJFRDogVG8gYWxsb3cgZGV2aWNlIHRv
-IGJlIHNoYXJlZAo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIGJ5IG11bHRpcGxlIGhvc3RzLgo+PiDCoCBFeGFtcGxlIChLMkcpOgo+PiDCoCAtLS0t
-LS0tLS0tLS0tCj4+IGRpZmYgLS1naXQgYS9NQUlOVEFJTkVSUyBiL01BSU5UQUlORVJTCj4+IGlu
-ZGV4IDIzNTllMTJlNGM0MS4uZGM3YTE5Y2MxODMxIDEwMDY0NAo+PiAtLS0gYS9NQUlOVEFJTkVS
-Uwo+PiArKysgYi9NQUlOVEFJTkVSUwo+PiBAQCAtMTUzNDUsNiArMTUzNDUsNyBAQCBGOsKgwqDC
-oCBkcml2ZXJzL2Zpcm13YXJlL3RpX3NjaSoKPj4gwqAgRjrCoMKgwqAgaW5jbHVkZS9saW51eC9z
-b2MvdGkvdGlfc2NpX3Byb3RvY29sLmgKPj4gwqAgRjrCoMKgwqAgRG9jdW1lbnRhdGlvbi9kZXZp
-Y2V0cmVlL2JpbmRpbmdzL3NvYy90aS9zY2ktcG0tZG9tYWluLnR4dAo+PiDCoCBGOsKgwqDCoCBk
-cml2ZXJzL3NvYy90aS90aV9zY2lfcG1fZG9tYWlucy5jCj4+ICtGOsKgwqDCoCBpbmNsdWRlL2R0
-LWJpbmRpbmdzL3NvYy90aSxzY2lfcG1fZG9tYWluLmgKPj4gwqAgRjrCoMKgwqAgRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Jlc2V0L3RpLHNjaS1yZXNldC50eHQKPj4gwqAgRjrC
-oMKgwqAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Nsb2NrL3RpLHNjaS1jbGsu
-dHh0Cj4+IMKgIEY6wqDCoMKgIGRyaXZlcnMvY2xrL2tleXN0b25lL3NjaS1jbGsuYwo+PiBkaWZm
-IC0tZ2l0IGEvaW5jbHVkZS9kdC1iaW5kaW5ncy9zb2MvdGksc2NpX3BtX2RvbWFpbi5oIAo+PiBi
-L2luY2x1ZGUvZHQtYmluZGluZ3Mvc29jL3RpLHNjaV9wbV9kb21haW4uaAo+PiBuZXcgZmlsZSBt
-b2RlIDEwMDY0NAo+PiBpbmRleCAwMDAwMDAwMDAwMDAuLjhmMmE3MzYwYjY1ZQo+PiAtLS0gL2Rl
-di9udWxsCj4+ICsrKyBiL2luY2x1ZGUvZHQtYmluZGluZ3Mvc29jL3RpLHNjaV9wbV9kb21haW4u
-aAo+PiBAQCAtMCwwICsxLDkgQEAKPj4gKy8qIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwt
-Mi4wICovCj4+ICsKPj4gKyNpZm5kZWYgX19EVF9CSU5ESU5HU19USV9TQ0lfUE1fRE9NQUlOX0gK
-Pj4gKyNkZWZpbmUgX19EVF9CSU5ESU5HU19USV9TQ0lfUE1fRE9NQUlOX0gKPj4gKwo+PiArI2Rl
-ZmluZSBUSV9TQ0lfUERfRVhDTFVTSVZFwqDCoMKgIDEKPj4gKyNkZWZpbmUgVElfU0NJX1BEX1NI
-QVJFRMKgwqDCoCAwCj4+ICsKPj4gKyNlbmRpZiAvKiBfX0RUX0JJTkRJTkdTX1RJX1NDSV9QTV9E
-T01BSU5fSCAqLwo+Pgo+IAoKLS0KVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2th
-bGFua2F0dSAyMiwgMDAxODAgSGVsc2lua2kuIFktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIx
-LTQuIEtvdGlwYWlra2EvRG9taWNpbGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi, Aisheng
+
+> -----Original Message-----
+> From: Aisheng Dong
+> Sent: Tuesday, June 11, 2019 7:47 PM
+> To: Anson Huang <anson.huang@nxp.com>; robh+dt@kernel.org;
+> mark.rutland@arm.com; corbet@lwn.net; shawnguo@kernel.org;
+> s.hauer@pengutronix.de; kernel@pengutronix.de; festevam@gmail.com;
+> catalin.marinas@arm.com; will.deacon@arm.com; rui.zhang@intel.com;
+> edubezval@gmail.com; daniel.lezcano@linaro.org; ulf.hansson@linaro.org;
+> Peng Fan <peng.fan@nxp.com>; mchehab+samsung@kernel.org;
+> linux@roeck-us.net; Daniel Baluta <daniel.baluta@nxp.com>;
+> maxime.ripard@bootlin.com; olof@lixom.net; jagan@amarulasolutions.com;
+> horms+renesas@verge.net.au; Leonard Crestez <leonard.crestez@nxp.com>;
+> bjorn.andersson@linaro.org; dinguyen@kernel.org;
+> enric.balletbo@collabora.com; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-doc@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-pm@vger.kernel.org
+> Cc: dl-linux-imx <linux-imx@nxp.com>
+> Subject: RE: [PATCH V14 2/5] thermal: of-thermal: add API for getting sensor
+> ID from DT
+> 
+> Hi Anson,
+> 
+> The implementation looks good to me.
+> A few minor comments on the doc:
+
+This patch is pending for so long and even till now I am NOT sure if everyone is OK for
+this change, so I will wait for some comments if there is any, and will improve the doc
+together in next version.
+
+Thanks,
+Anson
+
+> 
+> > From: Anson.Huang@nxp.com [mailto:Anson.Huang@nxp.com]
+> > Sent: Monday, June 10, 2019 10:53 AM
+> >
+> > On some platforms like i.MX8QXP, the thermal driver needs a real HW
+> > sensor ID from DT thermal zone, the HW sensor ID is used to get
+> > temperature from SCU firmware, and the virtual sensor ID starting from
+> > 0 to N is NOT used at all,
+> 
+> This API is unware of HW ID or Virtual ID. So we probably no need to
+> mention It here.
+> 
+> > this patch adds new API thermal_zone_of_get_sensor_id() to provide the
+> > feature of getting sensor ID from DT thermal zone's node.
+> >
+> 
+> "It's useful for thermal driver to register the specific thermal zone devices
+> from DT in a common way."
+> 
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> > Changes since V13:
+> > 	- add new API into the thermal API doc.
+> > ---
+> >  Documentation/thermal/sysfs-api.txt |  8 +++++
+> >  drivers/thermal/of-thermal.c        | 66
+> > ++++++++++++++++++++++++++++---------
+> >  include/linux/thermal.h             | 10 ++++++
+> >  3 files changed, 68 insertions(+), 16 deletions(-)
+> >
+> > diff --git a/Documentation/thermal/sysfs-api.txt
+> > b/Documentation/thermal/sysfs-api.txt
+> > index c3fa500..8d7f1b1 100644
+> > --- a/Documentation/thermal/sysfs-api.txt
+> > +++ b/Documentation/thermal/sysfs-api.txt
+> > @@ -159,6 +159,14 @@ temperature) and throttle appropriate devices.
+> >  	for the thermal zone device, which might be useful for platform
+> >  	drivers for temperature calculations.
+> >
+> > +1.1.9 int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> > +		struct device_node *sensor_np,
+> > +		u32 *id)
+> > +
+> > +	This interface is used to get the sensor id from thermal sensor's
+> > +	phandle argument, it might be necessary for some platforms which
+> > +	have specific sensor ID rather than virtual ID from 0 - N.
+> 
+> Does below one look better?
+> 
+> "This interface is used to get the sensor id from the given thermal zone in DT,
+> which might be useful for thermal drivers to register specific thermal zone
+> device in a common way."
+> 
+> > +
+> >  1.2 thermal cooling device interface
+> >  1.2.1 struct thermal_cooling_device
+> > *thermal_cooling_device_register(char
+> > *name,
+> >  		void *devdata, struct thermal_cooling_device_ops *) diff --git
+> > a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c index
+> > dc5093b..a53792b 100644
+> > --- a/drivers/thermal/of-thermal.c
+> > +++ b/drivers/thermal/of-thermal.c
+> > @@ -449,6 +449,54 @@ thermal_zone_of_add_sensor(struct device_node
+> > *zone,  }
+> >
+> >  /**
+> > + * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal
+> > + zone
+> > + * @tz_np: a valid thermal zone device node.
+> > + * @sensor_np: a sensor node of a valid sensor device.
+> > + * @id: a sensor ID pointer will be passed back.
+> 
+> the sensor ID returned if success
+> 
+> > + *
+> > + * This function will get sensor ID from a given thermal zone node,
+> > + use
+> > + * "thermal-sensors" as list name, and get sensor ID from first
+> > + phandle's
+> > + * argument.
+> 
+> "This function will get sensor ID from a given thermal zone node and the
+> sensor get must match the temperature providers @sensor_np."
+> 
+> Regards
+> Dong Aisheng
+> 
+> > + *
+> > + * Return: 0 on success, proper error code otherwise.
+> > + */
+> > +
+> > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> > +				  struct device_node *sensor_np,
+> > +				  u32 *id)
+> > +{
+> > +	struct of_phandle_args sensor_specs;
+> > +	int ret;
+> > +
+> > +	ret = of_parse_phandle_with_args(tz_np,
+> > +					 "thermal-sensors",
+> > +					 "#thermal-sensor-cells",
+> > +					 0,
+> > +					 &sensor_specs);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	if (sensor_specs.np != sensor_np) {
+> > +		of_node_put(sensor_specs.np);
+> > +		return -ENODEV;
+> > +	}
+> > +
+> > +	if (sensor_specs.args_count >= 1) {
+> > +		*id = sensor_specs.args[0];
+> > +		WARN(sensor_specs.args_count > 1,
+> > +		     "%pOFn: too many cells in sensor specifier %d\n",
+> > +		     sensor_specs.np, sensor_specs.args_count);
+> > +	} else {
+> > +		*id = 0;
+> > +	}
+> > +
+> > +	of_node_put(sensor_specs.np);
+> > +
+> > +	return 0;
+> > +}
+> > +EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
+> > +
+> > +/**
+> >   * thermal_zone_of_sensor_register - registers a sensor to a DT thermal
+> zone
+> >   * @dev: a valid struct device pointer of a sensor device. Must contain
+> >   *       a valid .of_node, for the sensor node.
+> > @@ -499,36 +547,22 @@ thermal_zone_of_sensor_register(struct device
+> > *dev, int sensor_id, void *data,
+> >  	sensor_np = of_node_get(dev->of_node);
+> >
+> >  	for_each_available_child_of_node(np, child) {
+> > -		struct of_phandle_args sensor_specs;
+> >  		int ret, id;
+> >
+> >  		/* For now, thermal framework supports only 1 sensor per
+> zone */
+> > -		ret = of_parse_phandle_with_args(child, "thermal-sensors",
+> > -						 "#thermal-sensor-cells",
+> > -						 0, &sensor_specs);
+> > +		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
+> >  		if (ret)
+> >  			continue;
+> >
+> > -		if (sensor_specs.args_count >= 1) {
+> > -			id = sensor_specs.args[0];
+> > -			WARN(sensor_specs.args_count > 1,
+> > -			     "%pOFn: too many cells in sensor specifier %d\n",
+> > -			     sensor_specs.np, sensor_specs.args_count);
+> > -		} else {
+> > -			id = 0;
+> > -		}
+> > -
+> > -		if (sensor_specs.np == sensor_np && id == sensor_id) {
+> > +		if (id == sensor_id) {
+> >  			tzd = thermal_zone_of_add_sensor(child, sensor_np,
+> >  							 data, ops);
+> >  			if (!IS_ERR(tzd))
+> >  				tzd->ops->set_mode(tzd,
+> THERMAL_DEVICE_ENABLED);
+> >
+> > -			of_node_put(sensor_specs.np);
+> >  			of_node_put(child);
+> >  			goto exit;
+> >  		}
+> > -		of_node_put(sensor_specs.np);
+> >  	}
+> >  exit:
+> >  	of_node_put(sensor_np);
+> > diff --git a/include/linux/thermal.h b/include/linux/thermal.h index
+> > 15a4ca5..5edffe6 100644
+> > --- a/include/linux/thermal.h
+> > +++ b/include/linux/thermal.h
+> > @@ -375,6 +375,9 @@ struct thermal_trip {
+> >
+> >  /* Function declarations */
+> >  #ifdef CONFIG_THERMAL_OF
+> > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> > +				  struct device_node *sensor_np,
+> > +				  u32 *id);
+> >  struct thermal_zone_device *
+> >  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+> >  				const struct thermal_zone_of_device_ops
+> *ops); @@
+> > -386,6 +389,13 @@ struct thermal_zone_device
+> > *devm_thermal_zone_of_sensor_register(
+> >  void devm_thermal_zone_of_sensor_unregister(struct device *dev,
+> >  					    struct thermal_zone_device *tz);
+> #else
+> > +
+> > +static int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
+> > +					 struct device_node *sensor_np,
+> > +					 u32 *id)
+> > +{
+> > +	return -ENOENT;
+> > +}
+> >  static inline struct thermal_zone_device *
+> > thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
+> >  				const struct thermal_zone_of_device_ops
+> *ops)
+> > --
+> > 2.7.4
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
