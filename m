@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02CF23C8E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:26:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B5D73C93D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=diZNNv60fJZzz+79BHv1liwUHgBObca5kehAdh1ZonY=; b=QjtZTUU3sznHTo
-	B/qCK2f+ik4F3ODBq+XqzB6mA4f/slp6VF5vH8e8awtw5akOyp2gN3tPQAfAPbNx7GF0FgNNZcedV
-	VWkP8d6usc+1q4b/7KJxR9c1107lvNeEHMDkTuvCgVCVH+Iu9M3m568A6dHNc0dWtRBSSKnSUKz13
-	bm3q6AZEXVanjxA8u/hsCZ8M4Xl2FSufV17LgO1dDMrvJw6zJ3y+kUYAx+7moSBrAfKFSK7zajBYB
-	RJHXfCnP9aujEhyP/qgHO8SeU6SD+YO0v9k1B+4oBiyI3CM7lC/FeUMrp8nM57yAlgBqbxMKhoqNY
-	oql7YTV/+14aKpdj6mYQ==;
+	List-Owner; bh=8XFpB8hbNwhuCx655jAf8CzSuon72qQ8BjmPHYgfqAU=; b=K/TiH+7YSAVH0o
+	D7v2EZRbbRBC9E57wuvCpXadJyCW2ywYI9dGDjVRuxbjDdFPuUnmlo5vypgn0dinKrhyedYWmmoI1
+	pH/l4DYAhDjGEbu+DWYvaoRnKKYaiQmZ8MML/RmJ7enesluAid1Hy6KFZ8PuI/WdtZYJvU4GherrI
+	0FyfdJ6z7wckywnBP9nvkMCeBUe2MHAzAuitAjFDAz2Sa89kdEEpgR6FK9hDz4zhl94ERZS29vtCg
+	JvGWNuwaDcxiEEYH7IwIwMRnzwir9rIlywVP35K/LEB3BKkjsaFhLRiBkEweKElmW0PT366gqItlm
+	mhcyIv5SYTl8q/VJj35g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadzO-0005LA-CQ; Tue, 11 Jun 2019 10:26:50 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1haeHO-0005OP-HW; Tue, 11 Jun 2019 10:45:26 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadxg-0002oh-P1
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:25:09 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 9F707D3A5FA93713C97B;
- Tue, 11 Jun 2019 18:24:59 +0800 (CST)
-Received: from localhost (10.202.226.61) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Tue, 11 Jun 2019
- 18:24:55 +0800
-Date: Tue, 11 Jun 2019 11:24:44 +0100
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH 5/8] iommu/arm-smmu-v3: Add second level of context
- descriptor table
-Message-ID: <20190611112444.00002f4a@huawei.com>
-In-Reply-To: <20190610184714.6786-6-jean-philippe.brucker@arm.com>
-References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-6-jean-philippe.brucker@arm.com>
-Organization: Huawei
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1haeH8-0005Aj-3o; Tue, 11 Jun 2019 10:45:12 +0000
+X-UUID: 90eb4b276d6b4681b6da52a2dbe6ba43-20190611
+X-UUID: 90eb4b276d6b4681b6da52a2dbe6ba43-20190611
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1812829475; Tue, 11 Jun 2019 02:45:07 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 03:45:05 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 18:44:51 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 11 Jun 2019 18:44:51 +0800
+Message-ID: <1560249891.29153.4.camel@mtksdccf07>
+Subject: Re: [PATCH v2] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Tue, 11 Jun 2019 18:44:51 +0800
+In-Reply-To: <CACT4Y+YNG0OGT+mCEms+=SYWA=9R3MmBzr8e3QsNNdQvHNt9Fg@mail.gmail.com>
+References: <1559651172-28989-1-git-send-email-walter-zh.wu@mediatek.com>
+ <CACT4Y+Y9_85YB8CCwmKerDWc45Z00hMd6Pc-STEbr0cmYSqnoA@mail.gmail.com>
+ <1560151690.20384.3.camel@mtksdccf07>
+ <CACT4Y+aetKEM9UkfSoVf8EaDNTD40mEF0xyaRiuw=DPEaGpTkQ@mail.gmail.com>
+ <1560236742.4832.34.camel@mtksdccf07>
+ <CACT4Y+YNG0OGT+mCEms+=SYWA=9R3MmBzr8e3QsNNdQvHNt9Fg@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.61]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_032505_577050_F7AC34DA 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190611_034510_163416_7BFC9607 
+X-CRM114-Status: GOOD (  31.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,254 +76,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- robh+dt@kernel.org, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, "Jason
+ A. Donenfeld" <Jason@zx2c4.com>, Vasily
+ Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Linux-MM <linux-mm@kvack.org>, Andrey Konovalov <andreyknvl@google.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ Pekka Enberg <penberg@kernel.org>, Martin
+ Schwidefsky <schwidefsky@de.ibm.com>,
+ Miles Chen =?UTF-8?Q?=28=E9=99=B3=E6=B0=91=E6=A8=BA=29?=
+ <Miles.Chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Christoph Lameter <cl@linux.com>,
+ Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Jun 2019 19:47:11 +0100
-Jean-Philippe Brucker <jean-philippe.brucker@arm.com> wrote:
-
-> The SMMU can support up to 20 bits of SSID. Add a second level of page
-> tables to accommodate this. Devices that support more than 1024 SSIDs now
-> have a table of 1024 L1 entries (8kB), pointing to tables of 1024 context
-> descriptors (64kB), allocated on demand.
+On Tue, 2019-06-11 at 10:47 +0200, Dmitry Vyukov wrote:
+> On Tue, Jun 11, 2019 at 9:05 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> >
+> > On Mon, 2019-06-10 at 13:46 +0200, Dmitry Vyukov wrote:
+> > > On Mon, Jun 10, 2019 at 9:28 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > >
+> > > > On Fri, 2019-06-07 at 21:18 +0800, Dmitry Vyukov wrote:
+> > > > > > diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> > > > > > index b40ea104dd36..be0667225b58 100644
+> > > > > > --- a/include/linux/kasan.h
+> > > > > > +++ b/include/linux/kasan.h
+> > > > > > @@ -164,7 +164,11 @@ void kasan_cache_shutdown(struct kmem_cache *cache);
+> > > > > >
+> > > > > >  #else /* CONFIG_KASAN_GENERIC */
+> > > > > >
+> > > > > > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > > > +void kasan_cache_shrink(struct kmem_cache *cache);
+> > > > > > +#else
+> > > > >
+> > > > > Please restructure the code so that we don't duplicate this function
+> > > > > name 3 times in this header.
+> > > > >
+> > > > We have fixed it, Thank you for your reminder.
+> > > >
+> > > >
+> > > > > >  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
+> > > > > > +#endif
+> > > > > >  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
+> > > > > >
+> > > > > >  #endif /* CONFIG_KASAN_GENERIC */
+> > > > > > diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+> > > > > > index 9950b660e62d..17a4952c5eee 100644
+> > > > > > --- a/lib/Kconfig.kasan
+> > > > > > +++ b/lib/Kconfig.kasan
+> > > > > > @@ -134,6 +134,15 @@ config KASAN_S390_4_LEVEL_PAGING
+> > > > > >           to 3TB of RAM with KASan enabled). This options allows to force
+> > > > > >           4-level paging instead.
+> > > > > >
+> > > > > > +config KASAN_SW_TAGS_IDENTIFY
+> > > > > > +       bool "Enable memory corruption idenitfication"
+> > > > >
+> > > > > s/idenitfication/identification/
+> > > > >
+> > > > I should replace my glasses.
+> > > >
+> > > >
+> > > > > > +       depends on KASAN_SW_TAGS
+> > > > > > +       help
+> > > > > > +         Now tag-based KASAN bug report always shows invalid-access error, This
+> > > > > > +         options can identify it whether it is use-after-free or out-of-bound.
+> > > > > > +         This will make it easier for programmers to see the memory corruption
+> > > > > > +         problem.
+> > > > >
+> > > > > This description looks like a change description, i.e. it describes
+> > > > > the current behavior and how it changes. I think code comments should
+> > > > > not have such, they should describe the current state of the things.
+> > > > > It should also mention the trade-off, otherwise it raises reasonable
+> > > > > questions like "why it's not enabled by default?" and "why do I ever
+> > > > > want to not enable it?".
+> > > > > I would do something like:
+> > > > >
+> > > > > This option enables best-effort identification of bug type
+> > > > > (use-after-free or out-of-bounds)
+> > > > > at the cost of increased memory consumption for object quarantine.
+> > > > >
+> > > > I totally agree with your comments. Would you think we should try to add the cost?
+> > > > It may be that it consumes about 1/128th of available memory at full quarantine usage rate.
+> > >
+> > > Hi,
+> > >
+> > > I don't understand the question. We should not add costs if not
+> > > necessary. Or you mean why we should add _docs_ regarding the cost? Or
+> > > what?
+> > >
+> > I mean the description of option. Should it add the description for
+> > memory costs. I see KASAN_SW_TAGS and KASAN_GENERIC options to show the
+> > memory costs. So We originally think it is possible to add the
+> > description, if users want to enable it, maybe they want to know its
+> > memory costs.
+> >
+> > If you think it is not necessary, we will not add it.
 > 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-One trivial typo.
-
-Thanks,
-
-Jonathan
-> ---
->  drivers/iommu/arm-smmu-v3.c | 136 +++++++++++++++++++++++++++++++++---
->  1 file changed, 128 insertions(+), 8 deletions(-)
+> Full description of memory costs for normal KASAN mode and
+> KASAN_SW_TAGS should probably go into
+> Documentation/dev-tools/kasan.rst rather then into config description
+> because it may be too lengthy.
 > 
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index d90eb604b65d..326b71793336 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -216,6 +216,8 @@
->  
->  #define STRTAB_STE_0_S1FMT		GENMASK_ULL(5, 4)
->  #define STRTAB_STE_0_S1FMT_LINEAR	0
-> +#define STRTAB_STE_0_S1FMT_4K_L2	1
-> +#define STRTAB_STE_0_S1FMT_64K_L2	2
->  #define STRTAB_STE_0_S1CTXPTR_MASK	GENMASK_ULL(51, 6)
->  #define STRTAB_STE_0_S1CDMAX		GENMASK_ULL(63, 59)
->  
-> @@ -255,6 +257,18 @@
->  
->  #define STRTAB_STE_3_S2TTB_MASK		GENMASK_ULL(51, 4)
->  
-> +/*
-> + * Linear: when less than 1024 SSIDs are supported
-> + * 2lvl: at most 1024 L1 entrie,
+Thanks your reminder.
 
-entries?
+> I mentioned memory costs for this config because otherwise it's
+> unclear why would one ever want to _not_ enable this option. If it
+> would only have positive effects, then it should be enabled all the
+> time and should not be a config option at all.
 
-> + *      1024 lazy entries per table.
-> + */
-> +#define CTXDESC_SPLIT			10
-> +#define CTXDESC_NUM_L2_ENTRIES		(1 << CTXDESC_SPLIT)
-> +
-> +#define CTXDESC_L1_DESC_DWORD		1
-> +#define CTXDESC_L1_DESC_VALID		1
-> +#define CTXDESC_L1_DESC_L2PTR_MASK	GENMASK_ULL(51, 12)
-> +
->  /* Context descriptor (stage-1 only) */
->  #define CTXDESC_CD_DWORDS		8
->  #define CTXDESC_CD_0_TCR_T0SZ		GENMASK_ULL(5, 0)
-> @@ -530,7 +544,10 @@ struct arm_smmu_ctx_desc {
->  struct arm_smmu_s1_cfg {
->  	u8				s1fmt;
->  	u8				s1cdmax;
-> -	struct arm_smmu_cd_table	table;
-> +	struct arm_smmu_cd_table	*tables;
-> +	size_t				num_tables;
-> +	__le64				*l1ptr;
-> +	dma_addr_t			l1ptr_dma;
->  
->  	/* Context descriptor 0, when substreams are disabled or s1dss = 0b10 */
->  	struct arm_smmu_ctx_desc	cd;
-> @@ -1118,12 +1135,51 @@ static void arm_smmu_free_cd_leaf_table(struct arm_smmu_device *smmu,
->  {
->  	size_t size = num_entries * (CTXDESC_CD_DWORDS << 3);
->  
-> +	if (!table->ptr)
-> +		return;
->  	dmam_free_coherent(smmu->dev, size, table->ptr, table->ptr_dma);
->  }
->  
-> -static __le64 *arm_smmu_get_cd_ptr(struct arm_smmu_s1_cfg *cfg, u32 ssid)
-> +static void arm_smmu_write_cd_l1_desc(__le64 *dst,
-> +				      struct arm_smmu_cd_table *table)
->  {
-> -	return cfg->table.ptr + ssid * CTXDESC_CD_DWORDS;
-> +	u64 val = (table->ptr_dma & CTXDESC_L1_DESC_L2PTR_MASK) |
-> +		  CTXDESC_L1_DESC_VALID;
-> +
-> +	*dst = cpu_to_le64(val);
-> +}
-> +
-> +static __le64 *arm_smmu_get_cd_ptr(struct arm_smmu_domain *smmu_domain,
-> +				   u32 ssid)
-> +{
-> +	unsigned int idx;
-> +	struct arm_smmu_cd_table *table;
-> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
-> +	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
-> +
-> +	if (cfg->s1fmt == STRTAB_STE_0_S1FMT_LINEAR) {
-> +		table = &cfg->tables[0];
-> +		idx = ssid;
-> +	} else {
-> +		idx = ssid >> CTXDESC_SPLIT;
-> +		if (idx >= cfg->num_tables)
-> +			return NULL;
-> +
-> +		table = &cfg->tables[idx];
-> +		if (!table->ptr) {
-> +			__le64 *l1ptr = cfg->l1ptr + idx * CTXDESC_L1_DESC_DWORD;
-> +
-> +			if (arm_smmu_alloc_cd_leaf_table(smmu, table,
-> +							 CTXDESC_NUM_L2_ENTRIES))
-> +				return NULL;
-> +
-> +			arm_smmu_write_cd_l1_desc(l1ptr, table);
-> +			/* An invalid L1 entry is allowed to be cached */
-> +			arm_smmu_sync_cd(smmu_domain, ssid, false);
-> +		}
-> +		idx = ssid & (CTXDESC_NUM_L2_ENTRIES - 1);
-> +	}
-> +	return table->ptr + idx * CTXDESC_CD_DWORDS;
->  }
->  
->  static u64 arm_smmu_cpu_tcr_to_cd(u64 tcr)
-> @@ -1149,7 +1205,7 @@ static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
->  	u64 val;
->  	bool cd_live;
->  	struct arm_smmu_device *smmu = smmu_domain->smmu;
-> -	__le64 *cdptr = arm_smmu_get_cd_ptr(&smmu_domain->s1_cfg, ssid);
-> +	__le64 *cdptr = arm_smmu_get_cd_ptr(smmu_domain, ssid);
->  
->  	/*
->  	 * This function handles the following cases:
-> @@ -1213,20 +1269,81 @@ static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
->  static int arm_smmu_alloc_cd_tables(struct arm_smmu_domain *smmu_domain,
->  				    struct arm_smmu_master *master)
->  {
-> +	int ret;
-> +	size_t size = 0;
-> +	size_t max_contexts, num_leaf_entries;
->  	struct arm_smmu_device *smmu = smmu_domain->smmu;
->  	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
->  
->  	cfg->s1fmt = STRTAB_STE_0_S1FMT_LINEAR;
->  	cfg->s1cdmax = master->ssid_bits;
-> -	return arm_smmu_alloc_cd_leaf_table(smmu, &cfg->table, 1 << cfg->s1cdmax);
-> +
-> +	max_contexts = 1 << cfg->s1cdmax;
-> +	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB) ||
-> +	    max_contexts <= CTXDESC_NUM_L2_ENTRIES) {
-> +		cfg->s1fmt = STRTAB_STE_0_S1FMT_LINEAR;
-> +		cfg->num_tables = 1;
-> +		num_leaf_entries = max_contexts;
-> +	} else {
-> +		cfg->s1fmt = STRTAB_STE_0_S1FMT_64K_L2;
-> +		/*
-> +		 * SSID[S1CDmax-1:10] indexes 1st-level table, SSID[9:0] indexes
-> +		 * 2nd-level
-> +		 */
-> +		cfg->num_tables = max_contexts / CTXDESC_NUM_L2_ENTRIES;
-> +
-> +		size = cfg->num_tables * (CTXDESC_L1_DESC_DWORD << 3);
-> +		cfg->l1ptr = dmam_alloc_coherent(smmu->dev, size,
-> +						 &cfg->l1ptr_dma,
-> +						 GFP_KERNEL | __GFP_ZERO);
-> +		if (!cfg->l1ptr) {
-> +			dev_warn(smmu->dev, "failed to allocate L1 context table\n");
-> +			return -ENOMEM;
-> +		}
-> +
-> +		num_leaf_entries = CTXDESC_NUM_L2_ENTRIES;
-> +	}
-> +
-> +	cfg->tables = devm_kzalloc(smmu->dev, sizeof(struct arm_smmu_cd_table) *
-> +				   cfg->num_tables, GFP_KERNEL);
-> +	if (!cfg->tables)
-> +		return -ENOMEM;
-> +
-> +	ret = arm_smmu_alloc_cd_leaf_table(smmu, &cfg->tables[0], num_leaf_entries);
-> +	if (ret)
-> +		goto err_free_l1;
-> +
-> +	if (cfg->l1ptr)
-> +		arm_smmu_write_cd_l1_desc(cfg->l1ptr, &cfg->tables[0]);
-> +
-> +	return 0;
-> +
-> +err_free_l1:
-> +	if (cfg->l1ptr)
-> +		dmam_free_coherent(smmu->dev, size, cfg->l1ptr, cfg->l1ptr_dma);
-> +	devm_kfree(smmu->dev, cfg->tables);
-> +	return ret;
->  }
->  
->  static void arm_smmu_free_cd_tables(struct arm_smmu_domain *smmu_domain)
->  {
-> +	int i;
->  	struct arm_smmu_device *smmu = smmu_domain->smmu;
->  	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
-> +	size_t num_leaf_entries = 1 << cfg->s1cdmax;
-> +	struct arm_smmu_cd_table *table = cfg->tables;
-> +
-> +	if (cfg->l1ptr) {
-> +		size_t size = cfg->num_tables * (CTXDESC_L1_DESC_DWORD << 3);
->  
-> -	arm_smmu_free_cd_leaf_table(smmu, &cfg->table, 1 << cfg->s1cdmax);
-> +		dmam_free_coherent(smmu->dev, size, cfg->l1ptr,
-> +				   cfg->l1ptr_dma);
-> +		num_leaf_entries = CTXDESC_NUM_L2_ENTRIES;
-> +	}
-> +
-> +	for (i = 0; i < cfg->num_tables; i++, table++)
-> +		arm_smmu_free_cd_leaf_table(smmu, table, num_leaf_entries);
-> +	devm_kfree(smmu->dev, cfg->tables);
->  }
->  
->  /* Stream table manipulation functions */
-> @@ -1346,6 +1463,9 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
->  	}
->  
->  	if (s1_cfg) {
-> +		dma_addr_t ptr_dma = s1_cfg->l1ptr ? s1_cfg->l1ptr_dma :
-> +			             s1_cfg->tables[0].ptr_dma;
-> +
->  		BUG_ON(ste_live);
->  		dst[1] = cpu_to_le64(
->  			 FIELD_PREP(STRTAB_STE_1_S1DSS, STRTAB_STE_1_S1DSS_SSID0) |
-> @@ -1358,7 +1478,7 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
->  		   !(smmu->features & ARM_SMMU_FEAT_STALL_FORCE))
->  			dst[1] |= cpu_to_le64(STRTAB_STE_1_S1STALLD);
->  
-> -		val |= (s1_cfg->table.ptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
-> +		val |= (ptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
->  			FIELD_PREP(STRTAB_STE_0_CFG, STRTAB_STE_0_CFG_S1_TRANS) |
->  			FIELD_PREP(STRTAB_STE_0_S1CDMAX, s1_cfg->s1cdmax) |
->  			FIELD_PREP(STRTAB_STE_0_S1FMT, s1_cfg->s1fmt);
-> @@ -1815,7 +1935,7 @@ static void arm_smmu_domain_free(struct iommu_domain *domain)
->  	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1) {
->  		struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
->  
-> -		if (cfg->table.ptr) {
-> +		if (cfg->tables) {
->  			arm_smmu_free_cd_tables(smmu_domain);
->  			arm_smmu_bitmap_free(smmu->asid_map, cfg->cd.asid);
->  		}
+Sorry, I don't get your full meaning.
+You think not to add the memory costs into the description of config ?
+or need to add it? or make it not be a config option(default enabled)?
 
 
 
