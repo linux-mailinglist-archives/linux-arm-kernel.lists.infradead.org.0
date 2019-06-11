@@ -2,73 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBFCD417B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 23:58:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 264C5417C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:01:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Cn8hjfLmMPKLOqiXh0pRUCtH6EMg9pYWZBQaP1dIYFA=; b=Pxk3YsyT0/2q/0JV3WWYhQkuo4
-	bVFIlhqbaLz1J9j/krIL5lmn7oCGdZZ5Z3rs9G/+xi/tEl7DNunjHUhNomF84xtmfPltJ1rZTIyJm
-	pW8wTb6SQrixoO1n6eEGkK/B9GUIvHDKE/UvpvXgAjW3AzCPvI6OQ51DXiKb/yh8fvJtFUvcYDDex
-	VyNwEjqwrioJaiARa9gQSXUNcOefbyv06DZdLRr/UNkxYx/Pme12tmdQKYgOV+op/pxuD8H1qC+6Q
-	PA3nTskDsfl7sX4JFkVPaJwKDxR2AIAV+e5MSCZConnY7tbgaKD4M8KFF5xOcyK4HJyhObI087cbB
-	z3oatj5g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AXRdwdkkcER2+k7cKbS4NWQ/vUO3AVAP7Bka4clrfuU=; b=MvfpJSaxYC2l/O
+	XhnM5SfU1VyAca1Zt9Craf9bSv57Dp0me31mZ/LMGbplZmWlwWiq34PKpYacA/PuxhJVZfo3d9tht
+	bzJKIsKCipITHnKYpeQqamBjGU0zbiAlDxC42/bV/ourlCllICUS0Czo4BJNTNxtnQK0fRuW6oxR7
+	B8a600b4LZA83k0TgbYfWMkk7VAqfsoL3vHReQkDjBhU06sv491UtHNhGAdFYdO9RN4c4WHBH49mD
+	OSCVNOao28CRRh6xHqPyZgvT7ST9CB4EZ6IxP5ztKW9tZ8v6nDQRSp/DCNdRvzD9lzt8dOZJlQBf7
+	xtJmzU530/9JIbKvYT5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haon5-0002vq-GJ; Tue, 11 Jun 2019 21:58:51 +0000
+	id 1haop8-0005At-Ea; Tue, 11 Jun 2019 22:00:58 +0000
 Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haomw-0002vI-E0
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 21:58:43 +0000
-Received: by mail-pg1-x542.google.com with SMTP id v11so7700261pgl.5
+ id 1haoox-0005AX-Ru
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:00:49 +0000
+Received: by mail-pg1-x542.google.com with SMTP id s27so7715697pgl.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 14:58:41 -0700 (PDT)
+ Tue, 11 Jun 2019 15:00:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=gJy35TgHH/v0hDshZHQdSlMIZMSrmjDdOipXSskBwzU=;
- b=i7WYzZyuIyUtNcO9F5iEujjMLDNtr/r8dUs6BFd2R/eAaJOxtr/0O1Wi+23stB3f56
- 5BlZDrkhgGdUKU0HJejPus03Nojdf+dbNqTsbR8fO6QjeWKmPOoGB3Brdz0a3DbPv3CN
- XysKmCFYO8rJSumUiZm3FhZw6MHwhPn5x3djN339fZL873VWsqI1Yc9tOGRpd/tnS2k9
- +/cRJUy8TTDoSA0znxrQaJtQl7xjDy2qrq4tcz2bqSNo/wY9zRal5+csvEvHTot8yADw
- BiqTQ+cO45jW+MHRsxvA+SzR+x5EV1peCXQ1SeMsHJA2nqzlezWLavFN+PZYbFc59Hz6
- ut9g==
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=amPSYCUXQGiOLBjXa7xVgK8F8Q0Sx3NfqMbvVya4MnU=;
+ b=YcdbzefnJ+6xlTqfaOL/pr4SJaGASt3LiY5VrSEnRWR1TIHOy/xGh4eqLF0wZf5Uim
+ /1hin0nwbx2qW2Y5umhEh1dYCPuUs2d9OMJtpqdj2reF3vhgpidLUjLPds+Hp0i2XEbi
+ heYBcm+FN549FeRtOAifa/8siXvHlKgWvCUhD4cSV6Amwglv4NjoW61iLuqv1eFJ2t3n
+ 8Ofsrcg+YCdB6CG7r99Yg8dZ8JVx879DAMCJH4GYpndvbqkgzc+HbIGvN1C/WpfUsgZg
+ 5htx8eu0nmE9ERM8lxHoxiJjYXAK9asu0ZxNhHn46NzyNie0gOnoBda4rLpxS6+9/cWG
+ BGqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=gJy35TgHH/v0hDshZHQdSlMIZMSrmjDdOipXSskBwzU=;
- b=phnl02TUt5kbwlI6qRWVD50iUNo8dCF3ZmUR6v163C1Lnq1Dz+D3HR1y1eZeS7zDOz
- rI+c5thR1yhV9Z9xHir+jMvCJzQWRNNGZ3bVoU1hYOCZ5gxumKs8oINW2Hm1h2jnwBny
- LWUM6Mn6bwxtp5I7MKRYXAFlyGe2PcPMEW55n/rND1yb75gGKlN7FWHLUNWSCoxkWPT6
- Ioy7b9YdJXwQqduEqVhK3j9V+B49H28eBWm5plogm4ie+VmqYBOo19TZq57qyKzPTy5z
- 7LvIt7JrvXBG/FRJC9cLCHyLcvgSE2o3wHUJy15/ryvILpFPP25t+klHWiJbK/4LRzff
- 57+w==
-X-Gm-Message-State: APjAAAUwaanip94jSwMQFpvoy6ejG7f6MgPxBjfcNwLHa6HhXW///Ngb
- W1CBWF7Koo/p1h5rRgSpewo=
-X-Google-Smtp-Source: APXvYqzkJHyddK7zVr84/ggWzaAIw8IL0RXuzddrzRjQxYgcia42pynxjQJg16MqYp7/tM48McjzmQ==
-X-Received: by 2002:a63:2bd1:: with SMTP id
- r200mr22130911pgr.202.1560290321397; 
- Tue, 11 Jun 2019 14:58:41 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id z126sm16434754pfb.100.2019.06.11.14.58.39
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 11 Jun 2019 14:58:40 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=amPSYCUXQGiOLBjXa7xVgK8F8Q0Sx3NfqMbvVya4MnU=;
+ b=cW5V6nmthKUIHzQL7Gk1gN/j/QH8F6+80HqheIg0nlT0RsUrPjtrmT+dSj1Gfy98V6
+ 8IbMa34K9HQDxzfIyU8y/7sgOz0FBi5E1EZRnqWOELPLR4XrsSExvjXl7shUAGp2vDmr
+ McdigqxsvDTECmY9cwpH720rRxGP43EH3YT56GsRrDtqGuUpcJp6RU50ygRyC7t5fNbj
+ NGA6qEyTqYbPjUcDOCiCsl7Bayka3uxpGxR1debExKLHkow1KA5e8XHcwKfAh3JpWG3h
+ cAOxM7lKKuA1Bd1QuawjQ27cllOxnZWwULmJD5w6F2lV7+gEWv6ODlc+Tun2CkSgRF7V
+ XBhQ==
+X-Gm-Message-State: APjAAAUE+l7BbeD87EaSqzXivuYsWNPUFXY5+dKfaewjgAHEoAyc2OFa
+ WB5FZ8/2G1IqDUWoYqhb1o4oHGyt
+X-Google-Smtp-Source: APXvYqwd0oUSpjG9fupWh9dDKW4i+0aut8agUOzra1leUBn8lgo8aBEiwZi0zN+cKM4iJIr2gHGwKA==
+X-Received: by 2002:a17:90a:b294:: with SMTP id
+ c20mr29498044pjr.16.1560290446830; 
+ Tue, 11 Jun 2019 15:00:46 -0700 (PDT)
+Received: from [10.67.49.123] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id a12sm9184418pje.3.2019.06.11.15.00.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 11 Jun 2019 15:00:45 -0700 (PDT)
+Subject: Re: [PATCH 0/2] arm: bcm: Enable reset and pinctrl for ARCH_BRCMSTB
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20190531174129.6974-1-f.fainelli@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
-To: bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 7/7] ARM: dts: NSP: Fix the bulk of W=1 DTC warnings
-Date: Tue, 11 Jun 2019 14:58:38 -0700
-Message-Id: <20190611215838.10758-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190528230134.27007-8-f.fainelli@gmail.com>
-References: <20190528230134.27007-1-f.fainelli@gmail.com>
- <20190528230134.27007-8-f.fainelli@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <c25eb475-b5ac-0622-27f0-51b583a30919@gmail.com>
+Date: Tue, 11 Jun 2019 15:00:44 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <20190531174129.6974-1-f.fainelli@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_145842_477607_98580D37 
-X-CRM114-Status: GOOD (  10.89  )
+X-CRM114-CacheID: sfid-20190611_150047_905653_26D47B63 
+X-CRM114-Status: GOOD (  12.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,29 +159,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>,
- =?iso-8859-2?q?Rafa=B3_Mi=B3ecki?= <zajec5@gmail.com>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Gregory Fong <gregory.0xf0@gmail.com>, Hauke Mehrtens <hauke@hauke-m.de>,
- Brian Norris <computersforpeace@gmail.com>
-MIME-Version: 1.0
+Cc: Jim Quinlan <jim2101024@gmail.com>, opendmb@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 May 2019 16:01:34 -0700, Florian Fainelli <f.fainelli@gmail.com> wrote:
-> Fix the bulk of the unit_address_vs_reg warnings and unnecessary
-> \#address-cells/#size-cells without "ranges" or child "reg" property
+On 5/31/19 10:41 AM, Florian Fainelli wrote:
+> This patch series enabled PINCTRL and ARCH_HAS_RESET_CONTROLLER for
+> ARCH_BRCMSTB since we have platforms that require these two subsystems.
 > 
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
+> Doug Berger (1):
+>   ARM: bcm: Enable PINCTRL for ARCH_BRCMSTB
+> 
+> Jim Quinlan (1):
+>   ARM: bcm: Enable ARCH_HAS_RESET_CONTROLLER for ARCH_BRCMSTB
 
-Applied to devicetree/next, thanks!
---
+Series applied to soc/next, thanks!
+-- 
+-- 
 Florian
 
 _______________________________________________
