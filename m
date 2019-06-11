@@ -2,99 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1283E3CA80
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:56:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ED623CA8C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:57:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=pfDp0ymYbw0uCfWV7uz0bCGIkg423RGBc6jYu1i9jqQ=; b=f/I6RUnhuOI3xlqvZbER/shVz4
-	7JRcHitTcBVe/gXUM0XRc/OEnUEmN4uvHOfHuTkqSKAus2RBPiuEeBEQeBSLJG5ffZA4IH91pVyHn
-	Dk+DLxu8cqUvLmPoKfZdrGdegb/YFEOit+Yz63fH7fV0uEuFzg0qSC2ntCbuAuOcbbxKuDhponCzk
-	9umzJh7vwHj7t93QGTFST9h/WAGFJ6GUXb91wrtx404YJWLe5b8Aa7556VehCAHkvU6B5wozsG3YK
-	boM0gRzYn99sPwNFnmZGr+sqf3BaxICyaahzUz34cLi41Qk9UUb8qy1h0/harK48tfKvwp/GdR6Yh
-	i/bexxQQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CPTGVYzTO/pWOAlNDeNzKimxyOYQcM/ieI3IRbfTYfk=; b=kbieiOV/xpuqOq
+	UI4aMzNjW9kTK7u/zFRcJ0URw4Llr9DoCv/V8XcRgEEtbb4FvPt1EhhinjUgWLp+XVWI/F+qcScSQ
+	9vQQ1kl0IYwwviJyHaR4ftVYtsWVDvS6H0YHJL1toDVNRj9gUSxhsxKlYAxw1y5pz2uBn4aUFm1Gn
+	2ATlDnaKNft9aVhgXKS+Uf1f66HDz/UxsWq3wI4d+XF0Kl0e6myobuKAuuG/o+zXMekw5hCrxpQic
+	UcIw0ijnbM76HVdKXIXifxhU1Y9J0e0lSaHvaU71tBWPCRIaTmoZ/EaDyd7CXQxZB4PAmk2a6s6hm
+	Gura/4ofdVEkiA1TnbCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hafOH-0004O8-Qi; Tue, 11 Jun 2019 11:56:37 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hafP6-0004gR-Da; Tue, 11 Jun 2019 11:57:28 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hafO4-0004ND-Ry
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:56:26 +0000
-Received: by mail-wm1-x344.google.com with SMTP id s3so2639720wms.2
+ id 1hafOm-0004fZ-J4
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:57:10 +0000
+Received: by mail-qt1-f195.google.com with SMTP id a15so14092272qtn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 04:56:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version:content-transfer-encoding;
- bh=/1MOR3QrJTEFCWZFdMC/DEmdNjlMHoHLCzjdZO2gpas=;
- b=tcCqahQKRNFhSuKKuHrTgh9xgWvINKKr8cpRQhx4Hpyyd/GqIFYa8WYkfhryWCySGV
- fXpSxyEUYa0GTYifC3QOrFgE7O2aykspKEIhLGjdVPQIxijuhkP5erdLaqg0/8T+3YTZ
- SGcI0Wo0yFCpV9uhSmch6O1dUkBakEXXfc93hjViYyPp/68ElEYh+Oq2YXlcLCrvNHS/
- Y5u6OoYTTKHrASe/hvFVEtRhPoEEmG2n1pFaH5x3wn1KIZcap5NdLvQHcez/Syl3bfX7
- /D6Kq+S0ev02u9kU/fluZWdvIpLkDjqks1Fgytrdmh2b4HTuw82vc6JXlR/aEaIRr8fJ
- 1cIw==
+ Tue, 11 Jun 2019 04:57:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version:content-transfer-encoding;
- bh=/1MOR3QrJTEFCWZFdMC/DEmdNjlMHoHLCzjdZO2gpas=;
- b=OXjEM1S5tAjGF4tlJcL1TLgGL9U+pk9rQAmQt5X7UJEr5wBbdMzqTa3x/q3FIy3JRd
- KvOw9q2dPituCE/p6lPkGRrzGMZ3bLY2R2C1D88r+6MsE1M5apRZzbxhAs98JpSxPiRm
- NFtC99QgXgB8/Yrt0IIPdCrCHlvf/duerxH10ngkHVKkucoRHCwfJq8Jg2SVx34Jp7S0
- O4XGIUKDwWDTmZVcbPr4w1yzQfiILwiSkyZGHR/FvW55DLiVy9YwFe1FBXCyeUtg4+0D
- aU8ivEyiWKcBCP0jwMtGrRyFzDufeHEPcKzH9Ze2cU+OWdrKYly55KzXRT4hIjUE/Aog
- rAvQ==
-X-Gm-Message-State: APjAAAXhIyMV9JlGR8nTsNAlB3U0Cn0reS6MGGvUdermL1BNYL+llWRN
- FodxyqIstbPU7VDtO1/DcP8=
-X-Google-Smtp-Source: APXvYqxKri0XmDaxau9DHr8vE7hTxWlAaPas+KdgSz6qoWEf0HDsPLpL8qzdgKkW6IuAvF6QL7KoxA==
-X-Received: by 2002:a1c:630a:: with SMTP id x10mr13608161wmb.113.1560254182345; 
- Tue, 11 Jun 2019 04:56:22 -0700 (PDT)
-Received: from arch-late (a109-49-46-234.cpe.netcabo.pt. [109.49.46.234])
- by smtp.gmail.com with ESMTPSA id f10sm22568606wrg.24.2019.06.11.04.56.20
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 11 Jun 2019 04:56:21 -0700 (PDT)
-References: <20190606153825.8183-1-sebastien.szymanski@armadeus.com>
- <20190606153825.8183-2-sebastien.szymanski@armadeus.com>
- <m34l4xpweh.fsf@gmail.com>
- <722336d1-c7f7-1796-95d5-7bba1fac7968@armadeus.com>
- <m3zhmo1mux.fsf@gmail.com>
- <df32fe2e-d9b1-8b09-686c-7f6970aa8e0c@armadeus.com>
-User-agent: mu4e 1.2.0; emacs 27.0.50
-From: Rui Miguel Silva <rmfrfs@gmail.com>
-To: =?utf-8?Q?S=C3=A9bastien?= Szymanski <sebastien.szymanski@armadeus.com>
-Subject: Re: [PATCH v2 2/3] media: imx7-media-csi: add i.MX6UL support
-In-reply-to: <df32fe2e-d9b1-8b09-686c-7f6970aa8e0c@armadeus.com>
-Date: Tue, 11 Jun 2019 12:56:19 +0100
-Message-ID: <m3wohs1gkc.fsf@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=K3Sm1X+d2sov0ITQpzgk6HQiz/Phckwgb6KD7DQ+q/M=;
+ b=grbCN0utG5hfbUEScaRzLcrDPOQBaPoNEhdVxTWVq9e/mpe4ak2SKtSHq/OrXKSEr4
+ +aH2r0DnIj5A/ZWdAjJYm4W98w0MGhi/EYpO+/7bsZKJAQ9zAR8XaQf/dpFsFp2XkLc8
+ WaJKTJ09O5WBjWY/UKDgnq+Gtz2IxRZYO9acmD1kYFQlaifzununQfhHUdssQBicTiFi
+ hPG/H9r3BdhcPG+Hc2Dsq8ccMcMgrmXp03X/acqyv8i5ug0LwgE+BsObPQhDlIzMQVi8
+ 6pZyW7vtKiQHbs9SQ/9XYSUcrYc/vQpdUJ46/najpnZxgx+pQZn3iYbAEdP08Vtitjxn
+ jElw==
+X-Gm-Message-State: APjAAAXUbuduLBY5eYaBXfQK1jy6aygpUm9FPj8uHgKQVsNpPDwOX14t
+ 4R8apSPr2HCdGSlW64XqoMUY/cjnboeNWmvKgd0=
+X-Google-Smtp-Source: APXvYqwirPrDDDsMco7I6kepiNjDwf87AqZbyPYaRT4gsoLYAygjHsKyh9v3e1zX7J05MHnONK4y+Dh0Ic32yh7e2fg=
+X-Received: by 2002:ac8:2dae:: with SMTP id p43mr45188807qta.304.1560254226737; 
+ Tue, 11 Jun 2019 04:57:06 -0700 (PDT)
 MIME-Version: 1.0
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+In-Reply-To: <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 11 Jun 2019 13:56:49 +0200
+Message-ID: <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Johannes Berg <johannes@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_045624_940819_087691A8 
-X-CRM114-Status: GOOD (  22.78  )
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20190611_045708_628557_8671FD93 
+X-CRM114-Status: GOOD (  30.46  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
- 1.0 HK_RANDOM_FROM         From username looks random
+ no trust [209.85.160.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rmfrfs[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ provider (arndbergmann[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,151 +80,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, devicetree@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>, Mark Rutland <mark.rutland@arm.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, Dan Williams <dcbw@redhat.com>,
+ linux-arm-msm@vger.kernel.org, abhishek.esse@gmail.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Networking <netdev@vger.kernel.org>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU2ViYXN0aWVuLApPbiBUdWUgMTEgSnVuIDIwMTkgYXQgMTE6MDMsIFPDqWJhc3RpZW4gU3p5
-bWFuc2tpIHdyb3RlOgo+IE9uIDYvMTEvMTkgMTE6NDAgQU0sIFJ1aSBNaWd1ZWwgU2lsdmEgd3Jv
-dGU6Cj4+IEhpIFNlYmFzdGllbiwKPj4gT24gVHVlIDExIEp1biAyMDE5IGF0IDA5OjE2LCBTw6li
-YXN0aWVuIFN6eW1hbnNraSB3cm90ZToKPj4+IEhpIFJ1aSwKPj4+Cj4+PiB0aGFua3MgZm9yIHRo
-ZSByZXZpZXchCj4+Pgo+Pj4gT24gNi8xMC8xOSAxMjoyOCBQTSwgUnVpIE1pZ3VlbCBTaWx2YSB3
-cm90ZToKPj4+PiBIaSBTZWJhc3RpZW4sCj4+Pj4gVGhhbmtzIGZvciB0aGUgcGF0Y2guCj4+Pj4K
-Pj4+PiBPbiBUaHUgMDYgSnVuIDIwMTkgYXQgMTY6MzgsIFPDqWJhc3RpZW4gU3p5bWFuc2tpIHdy
-b3RlOgo+Pj4+PiBpLk1YNyBhbmQgaS5NWDZVTC9MIGhhdmUgdGhlIHNhbWUgQ1NJIGNvbnRyb2xs
-ZXIuIFNvIGFkZCBpLk1YNlVML0wgc3VwcG9ydAo+Pj4+PiB0byBpbXg3LW1lZGlhLWNzaSBkcml2
-ZXIuCj4+Pj4+Cj4+Pj4+IFNpZ25lZC1vZmYtYnk6IFPDqWJhc3RpZW4gU3p5bWFuc2tpIDxzZWJh
-c3RpZW4uc3p5bWFuc2tpQGFybWFkZXVzLmNvbT4KPj4+Pj4gLS0tCj4+Pj4+Cj4+Pj4+IENoYW5n
-ZXMgZm9yIHYyOgo+Pj4+PiAgLSByZWJhc2Ugb24gdG9wIG9mIGxpbnV4dHYvbWFzdGVyCj4+Pj4+
-ICAtIG1lbnRpb24gaS5NWDZVTC9MIGluIGhlYWRlciBhbmQgS2NvbmZpZyBoZWxwIHRleHQKPj4+
-Pj4gIC0gcmVuYW1lIGNzaV90eXBlIHRvIGNzaV9zb2NfaWQKPj4+Pj4KPj4+Pj4gIGRyaXZlcnMv
-c3RhZ2luZy9tZWRpYS9pbXgvS2NvbmZpZyAgICAgICAgICB8ICA0ICstCj4+Pj4+ICBkcml2ZXJz
-L3N0YWdpbmcvbWVkaWEvaW14L2lteDctbWVkaWEtY3NpLmMgfCA2MiArKysrKysrKysrKysrKysr
-LS0tLS0tCj4+Pj4+ICAyIGZpbGVzIGNoYW5nZWQsIDQ5IGluc2VydGlvbnMoKyksIDE3IGRlbGV0
-aW9ucygtKQo+Pj4+Pgo+Pj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lt
-eC9LY29uZmlnIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9LY29uZmlnCj4+Pj4+IGluZGV4
-IGFkM2Q3ZGY2YmIzYy4uOGI2ZGM0MmMzOWUwIDEwMDY0NAo+Pj4+PiAtLS0gYS9kcml2ZXJzL3N0
-YWdpbmcvbWVkaWEvaW14L0tjb25maWcKPj4+Pj4gKysrIGIvZHJpdmVycy9zdGFnaW5nL21lZGlh
-L2lteC9LY29uZmlnCj4+Pj4+IEBAIC0yMiwxMSArMjIsMTEgQEAgY29uZmlnIFZJREVPX0lNWF9D
-U0kKPj4+Pj4gIAkgIEEgdmlkZW80bGludXggY2FtZXJhIHNlbnNvciBpbnRlcmZhY2UgZHJpdmVy
-IGZvciBpLk1YNS82Lgo+Pj4+Pgo+Pj4+PiAgY29uZmlnIFZJREVPX0lNWDdfQ1NJCj4+Pj4+IC0J
-dHJpc3RhdGUgImkuTVg3IENhbWVyYSBTZW5zb3IgSW50ZXJmYWNlIGRyaXZlciIKPj4+Pj4gKwl0
-cmlzdGF0ZSAiaS5NWDZVTC9MIC8gaS5NWDcgQ2FtZXJhIFNlbnNvciBJbnRlcmZhY2UgZHJpdmVy
-Igo+Pj4+PiAgCWRlcGVuZHMgb24gVklERU9fSU1YX01FRElBICYmIFZJREVPX0RFViAmJiBJMkMK
-Pj4+Pj4gIAlkZWZhdWx0IHkKPj4+Pj4gIAloZWxwCj4+Pj4+ICAJICBFbmFibGUgc3VwcG9ydCBm
-b3IgdmlkZW80bGludXggY2FtZXJhIHNlbnNvciBpbnRlcmZhY2UgZHJpdmVyIGZvcgo+Pj4+PiAt
-CSAgaS5NWDcuCj4+Pj4+ICsJICBpLk1YNlVML0wgb3IgaS5NWDcuCj4+Pj4+ICBlbmRtZW51Cj4+
-Pj4+ICBlbmRpZgo+Pj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9p
-bXg3LW1lZGlhLWNzaS5jIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9pbXg3LW1lZGlhLWNz
-aS5jCj4+Pj4+IGluZGV4IDkxMDE1NjZmM2Y2Ny4uOTAyYmRjZTU5NGNmIDEwMDY0NAo+Pj4+PiAt
-LS0gYS9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvaW14L2lteDctbWVkaWEtY3NpLmMKPj4+Pj4gKysr
-IGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL2lteC9pbXg3LW1lZGlhLWNzaS5jCj4+Pj4+IEBAIC0x
-LDYgKzEsNiBAQAo+Pj4+PiAgLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKPj4+
-Pj4gIC8qCj4+Pj4+IC0gKiBWNEwyIENhcHR1cmUgQ1NJIFN1YmRldiBmb3IgRnJlZXNjYWxlIGku
-TVg3IFNPQwo+Pj4+PiArICogVjRMMiBDYXB0dXJlIENTSSBTdWJkZXYgZm9yIEZyZWVzY2FsZSBp
-Lk1YNlVML0wgLyBpLk1YNyBTT0MKPj4+Pj4gICAqCj4+Pj4+ICAgKiBDb3B5cmlnaHQgKGMpIDIw
-MTkgTGluYXJvIEx0ZAo+Pj4+PiAgICoKPj4+Pj4gQEAgLTE1Miw2ICsxNTIsMTEgQEAKPj4+Pj4g
-ICNkZWZpbmUgQ1NJX0NTSUNSMTgJCTB4NDgKPj4+Pj4gICNkZWZpbmUgQ1NJX0NTSUNSMTkJCTB4
-NGMKPj4+Pj4KPj4+Pj4gK2VudW0gY3NpX3NvY19pZCB7Cj4+Pj4+ICsJSU1YNywKPj4+Pj4gKwlJ
-TVg2VUwKPj4+Pj4gK307Cj4+Pj4+ICsKPj4+Pj4gIHN0cnVjdCBpbXg3X2NzaSB7Cj4+Pj4+ICAJ
-c3RydWN0IGRldmljZSAqZGV2Owo+Pj4+PiAgCXN0cnVjdCB2NGwyX3N1YmRldiBzZDsKPj4+Pj4g
-QEAgLTE5MSw2ICsxOTYsNyBAQCBzdHJ1Y3QgaW14N19jc2kgewo+Pj4+PiAgCWJvb2wgaXNfaW5p
-dDsKPj4+Pj4gIAlib29sIGlzX3N0cmVhbWluZzsKPj4+Pj4gIAlib29sIGlzX2NzaTI7Cj4+Pj4+
-ICsJZW51bSBjc2lfc29jX2lkIHNvY19pZDsKPj4+Pj4KPj4+Pj4gIAlzdHJ1Y3QgY29tcGxldGlv
-biBsYXN0X2VvZl9jb21wbGV0aW9uOwo+Pj4+PiAgfTsKPj4+Pj4gQEAgLTU0OCw2ICs1NTQsMTQg
-QEAgc3RhdGljIGludCBpbXg3X2NzaV9wYWRfbGlua192YWxpZGF0ZShzdHJ1Y3QgdjRsMl9zdWJk
-ZXYgKnNkLAo+Pj4+PiAgCWlmIChyZXQpCj4+Pj4+ICAJCXJldHVybiByZXQ7Cj4+Pj4+Cj4+Pj4+
-ICsJaWYgKGNzaS0+c29jX2lkID09IElNWDZVTCkgewo+Pj4+PiArCQltdXRleF9sb2NrKCZjc2kt
-PmxvY2spOwo+Pj4+PiArCQljc2ktPmlzX2NzaTIgPSBmYWxzZTsKPj4+Pj4gKwkJbXV0ZXhfdW5s
-b2NrKCZjc2ktPmxvY2spOwo+Pj4+PiArCj4+Pj4+ICsJCXJldHVybiAwOwo+Pj4+PiArCX0KPj4+
-Pj4gKwo+Pj4+PiAgCXJldCA9IGlteDdfY3NpX2dldF91cHN0cmVhbV9lbmRwb2ludChjc2ksICZ1
-cHN0cmVhbV9lcCwgdHJ1ZSk7Cj4+Pj4+ICAJaWYgKHJldCkgewo+Pj4+PiAgCQl2NGwyX2Vycigm
-Y3NpLT5zZCwgImZhaWxlZCB0byBmaW5kIHVwc3RyZWFtIGVuZHBvaW50XG4iKTsKPj4+Pj4gQEAg
-LTc1Nyw2ICs3NzEsNyBAQCBzdGF0aWMgaW50IGlteDdfY3NpX2NvbmZpZ3VyZShzdHJ1Y3QgaW14
-N19jc2kgKmNzaSkKPj4+Pj4gIAlzdHJ1Y3QgdjRsMl9waXhfZm9ybWF0ICpvdXRfcGl4ID0gJnZk
-ZXYtPmZtdC5mbXQucGl4Owo+Pj4+PiAgCV9fdTMyIGluX2NvZGUgPSBjc2ktPmZvcm1hdF9tYnVz
-W0lNWDdfQ1NJX1BBRF9TSU5LXS5jb2RlOwo+Pj4+PiAgCXUzMiBjcjEsIGNyMTg7Cj4+Pj4+ICsJ
-aW50IHdpZHRoID0gb3V0X3BpeC0+d2lkdGg7Cj4+Pj4+Cj4+Pj4+ICAJaWYgKG91dF9waXgtPmZp
-ZWxkID09IFY0TDJfRklFTERfSU5URVJMQUNFRCkgewo+Pj4+PiAgCQlpbXg3X2NzaV9kZWludGVy
-bGFjZV9lbmFibGUoY3NpLCB0cnVlKTsKPj4+Pj4gQEAgLTc2NiwxNSArNzgxLDI3IEBAIHN0YXRp
-YyBpbnQgaW14N19jc2lfY29uZmlndXJlKHN0cnVjdCBpbXg3X2NzaSAqY3NpKQo+Pj4+PiAgCQlp
-bXg3X2NzaV9idWZfc3RyaWRlX3NldChjc2ksIDApOwo+Pj4+PiAgCX0KPj4+Pj4KPj4+Pj4gLQlp
-bXg3X2NzaV9zZXRfaW1hZ3BhcmEoY3NpLCBvdXRfcGl4LT53aWR0aCwgb3V0X3BpeC0+aGVpZ2h0
-KTsKPj4+Pj4gKwljcjE4ID0gaW14N19jc2lfcmVnX3JlYWQoY3NpLCBDU0lfQ1NJQ1IxOCk7Cj4+
-Pj4+ICsKPj4+Pj4gKwlpZiAoIWNzaS0+aXNfY3NpMikgewo+Pj4+PiArCQlpZiAob3V0X3BpeC0+
-cGl4ZWxmb3JtYXQgPT0gVjRMMl9QSVhfRk1UX1VZVlkgfHwKPj4+Pj4gKwkJICAgIG91dF9waXgt
-PnBpeGVsZm9ybWF0ID09IFY0TDJfUElYX0ZNVF9ZVVlWKQo+Pj4+PiArCQkJd2lkdGggKj0gMjsK
-Pj4+Pj4gKwo+Pj4+PiArCQlpbXg3X2NzaV9zZXRfaW1hZ3BhcmEoY3NpLCB3aWR0aCwgb3V0X3Bp
-eC0+aGVpZ2h0KTsKPj4+Pj4gKwo+Pj4+PiArCQljcjE4IHw9IChCSVRfQkFTRUFERFJfU1dJVENI
-X0VOIHwgQklUX0JBU0VBRERSX1NXSVRDSF9TRUwgfAo+Pj4+PiArCQkJQklUX0JBU0VBRERSX0NI
-R19FUlJfRU4pOwo+Pj4+PiArCQlpbXg3X2NzaV9yZWdfd3JpdGUoY3NpLCBjcjE4LCBDU0lfQ1NJ
-Q1IxOCk7Cj4+Pj4+Cj4+Pj4+IC0JaWYgKCFjc2ktPmlzX2NzaTIpCj4+Pj4+ICAJCXJldHVybiAw
-Owo+Pj4+PiArCX0KPj4+Pj4gKwo+Pj4+PiArCWlteDdfY3NpX3NldF9pbWFncGFyYShjc2ksIHdp
-ZHRoLCBvdXRfcGl4LT5oZWlnaHQpOwo+Pj4+Pgo+Pj4+PiAgCWNyMSA9IGlteDdfY3NpX3JlZ19y
-ZWFkKGNzaSwgQ1NJX0NTSUNSMSk7Cj4+Pj4+ICAJY3IxICY9IH5CSVRfR0NMS19NT0RFOwo+Pj4+
-Pgo+Pj4+PiAtCWNyMTggPSBpbXg3X2NzaV9yZWdfcmVhZChjc2ksIENTSV9DU0lDUjE4KTsKPj4+
-Pj4gIAljcjE4ICY9IEJJVF9NSVBJX0RBVEFfRk9STUFUX01BU0s7Cj4+Pj4+ICAJY3IxOCB8PSBC
-SVRfREFUQV9GUk9NX01JUEk7Cj4+Pj4+Cj4+Pj4+IEBAIC04MDksMTEgKzgzNiw5IEBAIHN0YXRp
-YyB2b2lkIGlteDdfY3NpX2VuYWJsZShzdHJ1Y3QgaW14N19jc2kgKmNzaSkKPj4+Pj4gIHsKPj4+
-Pj4gIAlpbXg3X2NzaV9zd19yZXNldChjc2kpOwo+Pj4+Pgo+Pj4+PiAtCWlmIChjc2ktPmlzX2Nz
-aTIpIHsKPj4+Pj4gLQkJaW14N19jc2lfZG1hcmVxX3JmZl9lbmFibGUoY3NpKTsKPj4+Pj4gLQkJ
-aW14N19jc2lfaHdfZW5hYmxlX2lycShjc2kpOwo+Pj4+PiAtCQlpbXg3X2NzaV9od19lbmFibGUo
-Y3NpKTsKPj4+Pj4gLQl9Cj4+Pj4+ICsJaW14N19jc2lfZG1hcmVxX3JmZl9lbmFibGUoY3NpKTsK
-Pj4+Pj4gKwlpbXg3X2NzaV9od19lbmFibGVfaXJxKGNzaSk7Cj4+Pj4+ICsJaW14N19jc2lfaHdf
-ZW5hYmxlKGNzaSk7Cj4+Pj4+ICB9Cj4+Pj4+Cj4+Pj4+ICBzdGF0aWMgdm9pZCBpbXg3X2NzaV9k
-aXNhYmxlKHN0cnVjdCBpbXg3X2NzaSAqY3NpKQo+Pj4+PiBAQCAtMTE2NiwxOSArMTE5MSwzMiBA
-QCBzdGF0aWMgaW50IGlteDdfY3NpX3BhcnNlX2VuZHBvaW50KHN0cnVjdCBkZXZpY2UgKmRldiwK
-Pj4+Pj4gIAlyZXR1cm4gZndub2RlX2RldmljZV9pc19hdmFpbGFibGUoYXNkLT5tYXRjaC5md25v
-ZGUpID8gMCA6IC1FSU5WQUw7Cj4+Pj4+ICB9Cj4+Pj4+Cj4+Pj4+ICtzdGF0aWMgY29uc3Qgc3Ry
-dWN0IG9mX2RldmljZV9pZCBpbXg3X2NzaV9vZl9tYXRjaFtdID0gewo+Pj4+PiArCXsgLmNvbXBh
-dGlibGUgPSAiZnNsLGlteDctY3NpIiwgLmRhdGEgPSAodm9pZCAqKUlNWDcgfSwKPj4+Pj4gKwl7
-IC5jb21wYXRpYmxlID0gImZzbCxpbXg2dWwtY3NpIiwgLmRhdGEgPSAodm9pZCAqKUlNWDZVTCB9
-LAo+Pj4+Cj4+Pj4gbG9va2luZyBhdCB0aGlzIGFnYWluIEkgdGhpbmsgd2UgY2FuIGRvIHRoaXMg
-aXMgYSBkaWZmZXJlbnQgd2F5Lgo+Pj4+IEluc3RlYWQgZGF0YSBiZWluZyB0aGUgc29jX2lkLCBq
-dXN0IHNldCBoZXJlIGlmIGl0IGlzX2NzaTIgb3Igbm90Lgo+Pj4+Cj4+Pj4gVGhpcyB3b3VsZCBh
-dm9pZCB0byBhZGQgYSBzb2NfaWQgIHRvIHRoZSBzdHJ1Y3QgdGhhdCBpdCByZWFsbHkgaXQKPj4+
-PiBpcyB1c2VkIG9ubHkgdG8gc2V0dXAgdGhlIGlzX2NzaTIgdmFyLiBJIHRoaW5rIHRoaXMgd2ls
-bCBtYWtlIHRoaXMKPj4+PiBwYXRjaCBhIGxvdCBzaW1wbGVyLgo+Pj4KPj4+IFdlbGwsIEkgaGF2
-ZSBhZGRlZCB0aGlzIHNvY19pZCBiZWNhdXNlIGlteDdfY3NpX2dldF91cHN0cmVhbV9lbmRwb2lu
-dCBpbgo+Pj4gaW14N19jc2lfcGFkX2xpbmtfdmFsaWRhdGUgZmFpbHM6Cj4+Pgo+Pj4gWyAgMzY2
-LjU0OTc2OF0gY3NpOiBmYWlsZWQgdG8gZmluZCB1cHN0cmVhbSBlbmRwb2ludAo+Pj4gWyAgMzY2
-LjU1NjI3NF0gY3NpOiBwaXBlbGluZSBzdGFydCBmYWlsZWQgd2l0aCAtMTkKPj4+Cj4+Cj4+IEkg
-dGhpbmsgdGhpcyBmYWlscyBiZWNhdXNlIHlvdSBkbyBub3QgZGVmaW5lIGFueSBlbmRwb2ludCBm
-b3IgdGhlCj4+IGNzaSBpbiB5b3VyIGJvYXJkIGR0cyBmaWxlLiBJIHNlZSBpbiBwYXRjaCAxLzMg
-dGhlIHNldHVwIG9mIGNzaSwKPj4gZGlzYWJsZWQsIGJ1dCBub3QgdGhlIGVuZHBvaW50IGNvbm5l
-Y3RpbmcgY3NpIHdpdGggdGhlIG92NTY0MCBpbgo+PiB5b3VyIGJvYXJkIGZpbGUgKHNlZSB0aGUg
-Y29ubmVjdGlvbiBiZXR3ZWVuIG1pcGkgaW14NyBhbmQgb3YyNjgwCj4+IGluIHRoZSBpbXg3LXdh
-cnAuZHRzLCBvciB0aGUgb3Y1NjQwLnR4dCBmaWxlKS4KPgo+IEkgYWN0dWFsbHkgZG8sIGluIHRo
-ZSBkZXZpY2UgdHJlZSBvZiBteSBib2FyZCBJIGhhdmU6CgpZZWFoLCBJIHRob3VnaHQgeW91IGRp
-ZCB0aGlzLCBiZWNhdXNlIGlmIG5vdCBpdCBkaWQgbm90IHdvcmsgaW4KdGhlIGZpcnN0IHBsYWNl
-LiBJIHdpbGwgdGFrZSBhIGxvb2sgYXQgd2h5IHRoZSBmZXRjaCBvZiB0aGUKdXBzdHJlYW0gZW5k
-cG9pbnQgaXMgbm90IHdvcmtpbmcuIGl0IHNob3VsZCA6KS4KClRoYW5rcyBmb3IgdGhlIGZlZWRi
-YWNrLiBJIHdpbGwgbGV0IHlvdSBrbm93LgoKLS0tCkNoZWVycywKCVJ1aQoKPgo+ICZjc2kgewo+
-IAlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+IAlwaW5jdHJsLTAgPSA8JnBpbmN0cmxfY3Np
-PjsKPiAJc3RhdHVzID0gIm9rYXkiOwo+Cj4gCXBvcnQgewo+IAkJY3NpX2VwOiBlbmRwb2ludCB7
-Cj4gCQkJcmVtb3RlLWVuZHBvaW50ID0gPCZvdjU2NDBfZXA+Owo+IAkJCWJ1cy10eXBlID0gPDU+
-OyAvLyBWNEwyX0ZXTk9ERV9CVVNfVFlQRV9QQVJBTExFTAo+IAkJfTsKPiAJfTsKPiB9Owo+Cj4g
-YW5kCj4KPiAmaTJjMiB7Cj4gLi4KPiAJb3Y1NjQwOiBjYW1lcmFAM2Mgewo+IAkJLi4uCj4gCQlw
-b3J0IHsKPiAgICAgICAgICAgICAgICAgICAgICAgICBvdjU2NDBfZXA6IGVuZHBvaW50IHsKPiAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9IDwmY3NpX2Vw
-PjsKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJ1cy13aWR0aCA9IDw4PjsKPiAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRhdGEtc2hpZnQgPSA8Mj47IC8qIGxpbmVz
-IDk6MiBhcmUgdXNlZCAqLwo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaHN5bmMt
-YWN0aXZlID0gPDA+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdnN5bmMtYWN0
-aXZlID0gPDE+Owo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGNsay1zYW1wbGUg
-PSA8MD47Cj4gICAgICAgICAgICAgICAgICAgICAgICAgfTsKPiAgICAgICAgICAgICAgICAgfTsK
-PiAJfTsKPiB9Owo+Cj4gUmVnYXJkcywKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Jun 11, 2019 at 10:12 AM Johannes Berg
+<johannes@sipsolutions.net> wrote:
+
+> > As I've made clear before, my work on this has been focused on the IPA transport,
+> > and some of this higher-level LTE architecture is new to me.  But it
+> > seems pretty clear that an abstracted WWAN subsystem is a good plan,
+> > because these devices represent a superset of what a "normal" netdev
+> > implements.
+>
+> I'm not sure I'd actually call it a superset. By themselves, these
+> netdevs are actually completely useless to the network stack, AFAICT.
+> Therefore, the overlap with netdevs you can really use with the network
+> stack is pretty small?
+
+I think Alex meant the concept of having a type of netdev with a generic
+user space interface for wwan and similar to a wlan device, as I understood
+you had suggested as well, as opposed to a stacked device as in
+rmnet or those drivers it seems to be modeled after (vlan, ip tunnel, ...)/.
+
+> > HOWEVER I disagree with your suggestion that the IPA code should
+> > not be committed until after that is all sorted out.  In part it's
+> > for selfish reasons, but I think there are legitimate reasons to
+> > commit IPA now *knowing* that it will need to be adapted to fit
+> > into the generic model that gets defined and developed.  Here
+> > are some reasons why.
+>
+> I can't really argue with those, though I would point out that the
+> converse also holds - if we commit to this now, then we will have to
+> actually keep the API offered by IPA/rmnet today, so we cannot actually
+> remove the netdev again, even if we do migrate it to offer support for a
+> WWAN framework in the future.
+
+Right. The interface to support rmnet might be simple enough to keep
+next to what becomes the generic interface, but it will always continue
+to be an annoyance.
+
+> > Second, the IPA code has been out for review recently, and has been
+> > the subject of some detailed discussion in the past few weeks.  Arnd
+> > especially has invested considerable time in review and discussion.
+> > Delaying things until after a better generic model is settled on
+> > (which I'm guessing might be on the order of months)
+>
+>
+> I dunno if it really has to be months. I think we can cobble something
+> together relatively quickly that addresses the needs of IPA more
+> specifically, and then extend later?
+>
+> But OTOH it may make sense to take a more paced approach and think
+> about the details more carefully than we have over in the other thread so far.
+
+I would hope that as soon as we can agree on a general approach, it
+would also be possible to merge a minimal implementation into the kernel
+along with IPA. Alex already mentioned that IPA in its current state does
+not actually support more than one data channel, so the necessary
+setup for it becomes even simpler.
+
+At the moment, the rmnet configuration in include/uapi/linux/if_link.h
+is almost trivial, with the three pieces of information needed being
+an IFLA_LINK to point to the real device (not needed if there is only
+one device per channel, instead of two), the IFLA_RMNET_MUX_ID
+setting the ID of the muxing channel (not needed if there is only
+one channel ?), a way to specify software bridging between channels
+(not useful if there is only one channel) and a few flags that I assume
+must match the remote end:
+
+#define RMNET_FLAGS_INGRESS_DEAGGREGATION         (1U << 0)
+#define RMNET_FLAGS_INGRESS_MAP_COMMANDS          (1U << 1)
+#define RMNET_FLAGS_INGRESS_MAP_CKSUMV4           (1U << 2)
+#define RMNET_FLAGS_EGRESS_MAP_CKSUMV4            (1U << 3)
+enum {
+        IFLA_RMNET_UNSPEC,
+        IFLA_RMNET_MUX_ID,
+        IFLA_RMNET_FLAGS,
+        __IFLA_RMNET_MAX,
+};
+#define IFLA_RMNET_MAX  (__IFLA_RMNET_MAX - 1)
+struct ifla_rmnet_flags {
+        __u32   flags;
+        __u32   mask;
+};
+
+> > Third, having the code upstream actually means the actual requirements
+> > for rmnet-over-IPA are clear and explicit.  This might not be a huge
+> > deal, but I think it's better to devise a generic WWAN scheme that
+> > can refer to actual code than to do so with assumptions about what
+> > will work with rmnet (and others).  As far as I know, the upstream
+> > rmnet has no other upstream back end; IPA will make it "real."
+>
+> Is that really true? I had previously been told that rmnet actually does
+> have use with a few existing drivers.
+>
+>
+> If true though, then I think this would be the killer argument *in
+> favour* of *not* merging this - because that would mean we *don't* have
+> to actually keep the rmnet API around for all foreseeable future.
+
+I would agree with that. From the code I can see no other driver
+including the rmnet protocol header (see the discussion about moving
+the header to include/linux in order to merge ipa), and I don't see
+any other driver referencing ETH_P_MAP either. My understanding
+is that any driver used by rmnet would require both, but they are
+all out-of-tree at the moment.
+
+        Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
