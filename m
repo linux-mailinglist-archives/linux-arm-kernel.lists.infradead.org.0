@@ -2,54 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACDE63D15A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:50:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 654663D17F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 17:54:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vC2JZwMFjHC/MKxUTyBaeSJJXh7Hl7YJARaYca663U4=; b=O3e/TXBwVSFsDL
-	YXoegvcqcWESh7adK3G0h7N0y98P1mdKYddcV7EU+oy2N9N8oYmSs1eezDGry0Xowss38FN4x+KrS
-	JUNBabzLvpqCP3USZbXSIW8VJUuKJawN4Cc9p1Gt/uTDmxu0LRZHfNAAhAQVf1qcFtIGqkaH+axvT
-	FX+fhb50VPI7CMYzRFuEYuYu13FVM8h3WS4e53rhQxmXKtvZuIn6/cCQ/ABRZ4AuSnQ6uxJ1iFP2C
-	ZnGtWev2CfHAmcgmKUDyRy24YI+YXe4NZpNGfwUqr3zt56mquO6F9J+lwnUQ9dL6KQFhT5RhpRtaR
-	o4BytBr46lwMsw7kPiiA==;
+	List-Owner; bh=K/tCjaz0RZVfthu8PZXyQQc8Uy89tOgQBeKspzTDbmw=; b=m9vN37g+GBqyLZ
+	CRjWRWqREwjKTwPHAfFskv2xp1SKaKaDmoIJwBL4vEf9kdP5W2ZdnIKHSgD/X3/PIWCMnrmjhIurt
+	gkJrGcg3ojmAEVA4wdUtaBEC/+9eIVMJfwTqz8oSa9m+Jr0ULdq9mbyNu51LD9kTv+F2eZaaV26Ux
+	+LDeapMkk3PSKEmRXR/gLoI6vt8bgqWb7+RMdSbn9Lv29Dh8uI6fo4GYGFsMaEYGWVGtoofgME0f7
+	2m/J2yzWrx933C3e2r++VPs7m7RoxRRjDf+TVp16DqtrIJ9L+yzL1TomsAE3pRf/bUFVhROzQY3Ov
+	470FF6JTu7hBpgOqyuhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haj2l-00066x-5n; Tue, 11 Jun 2019 15:50:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haj2a-00066S-Ma
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:50:29 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 09939337;
- Tue, 11 Jun 2019 08:50:28 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3C6CF3F246;
- Tue, 11 Jun 2019 08:50:27 -0700 (PDT)
-Date: Tue, 11 Jun 2019 16:50:25 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Laura Abbott <labbott@redhat.com>
-Subject: Re: CONFIG_OPTIMIZE_INLINING breaks atomic64 test on arm64
-Message-ID: <20190611155025.GI4324@fuggles.cambridge.arm.com>
-References: <ba33029c-64f6-6908-a098-b543f0851fb7@redhat.com>
- <20190529112956.GE4485@fuggles.cambridge.arm.com>
+	id 1haj6X-0006kV-KU; Tue, 11 Jun 2019 15:54:33 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haj6J-0006jm-TH
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 15:54:22 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 8D9A48CB56;
+ Tue, 11 Jun 2019 15:54:08 +0000 (UTC)
+Received: from ovpn-112-53.rdu2.redhat.com (ovpn-112-53.rdu2.redhat.com
+ [10.10.112.53])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id EEFE619C70;
+ Tue, 11 Jun 2019 15:53:58 +0000 (UTC)
+Message-ID: <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+From: Dan Williams <dcbw@redhat.com>
+To: Arnd Bergmann <arnd@arndb.de>, Johannes Berg <johannes@sipsolutions.net>
+Date: Tue, 11 Jun 2019 10:53:57 -0500
+In-Reply-To: <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190529112956.GE4485@fuggles.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.26]); Tue, 11 Jun 2019 15:54:13 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_085028_784505_25C3F7D1 
-X-CRM114-Status: GOOD (  11.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_085419_989774_819D9CEF 
+X-CRM114-Status: GOOD (  40.47  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,30 +70,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <yamada.masahiro@socionext.com>, Andrew.Murray@arm.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, linux-arm-msm@vger.kernel.org,
+ abhishek.esse@gmail.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Networking <netdev@vger.kernel.org>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laura,
-
-On Wed, May 29, 2019 at 12:30:00PM +0100, Will Deacon wrote:
-> On Tue, May 28, 2019 at 05:42:04PM -0400, Laura Abbott wrote:
-> > CONFIG_OPTIMIZE_INLINING is a selectable option on arm64 now. It currently
-> > triggers a bug on the CONFIG_ATOMIC64_SELFTEST:
+On Tue, 2019-06-11 at 13:56 +0200, Arnd Bergmann wrote:
+> On Tue, Jun 11, 2019 at 10:12 AM Johannes Berg
+> <johannes@sipsolutions.net> wrote:
 > 
-> At this point, I'd be inclined to raise something in the GCC bugzilla
-> with the result of --save-temps for the failing atomic64_test.c. Maybe
-> they will have a better opinion as to whether we're doing something wrong
-> here. Is that something you're willing to do, or shall I do it?
+> > > As I've made clear before, my work on this has been focused on
+> > > the IPA transport,
+> > > and some of this higher-level LTE architecture is new to me.  But
+> > > it
+> > > seems pretty clear that an abstracted WWAN subsystem is a good
+> > > plan,
+> > > because these devices represent a superset of what a "normal"
+> > > netdev
+> > > implements.
+> > 
+> > I'm not sure I'd actually call it a superset. By themselves, these
+> > netdevs are actually completely useless to the network stack,
+> > AFAICT.
+> > Therefore, the overlap with netdevs you can really use with the
+> > network
+> > stack is pretty small?
+> 
+> I think Alex meant the concept of having a type of netdev with a
+> generic
+> user space interface for wwan and similar to a wlan device, as I
+> understood
+> you had suggested as well, as opposed to a stacked device as in
+> rmnet or those drivers it seems to be modeled after (vlan, ip tunnel,
+> ...)/.
+> 
+> > > HOWEVER I disagree with your suggestion that the IPA code should
+> > > not be committed until after that is all sorted out.  In part
+> > > it's
+> > > for selfish reasons, but I think there are legitimate reasons to
+> > > commit IPA now *knowing* that it will need to be adapted to fit
+> > > into the generic model that gets defined and developed.  Here
+> > > are some reasons why.
+> > 
+> > I can't really argue with those, though I would point out that the
+> > converse also holds - if we commit to this now, then we will have
+> > to
+> > actually keep the API offered by IPA/rmnet today, so we cannot
+> > actually
+> > remove the netdev again, even if we do migrate it to offer support
+> > for a
+> > WWAN framework in the future.
+> 
+> Right. The interface to support rmnet might be simple enough to keep
+> next to what becomes the generic interface, but it will always
+> continue
+> to be an annoyance.
+> 
+> > > Second, the IPA code has been out for review recently, and has
+> > > been
+> > > the subject of some detailed discussion in the past few
+> > > weeks.  Arnd
+> > > especially has invested considerable time in review and
+> > > discussion.
+> > > Delaying things until after a better generic model is settled on
+> > > (which I'm guessing might be on the order of months)
+> > 
+> > I dunno if it really has to be months. I think we can cobble
+> > something
+> > together relatively quickly that addresses the needs of IPA more
+> > specifically, and then extend later?
+> > 
+> > But OTOH it may make sense to take a more paced approach and think
+> > about the details more carefully than we have over in the other
+> > thread so far.
+> 
+> I would hope that as soon as we can agree on a general approach, it
+> would also be possible to merge a minimal implementation into the
+> kernel
+> along with IPA. Alex already mentioned that IPA in its current state
+> does
+> not actually support more than one data channel, so the necessary
+> setup for it becomes even simpler.
+> 
+> At the moment, the rmnet configuration in
+> include/uapi/linux/if_link.h
+> is almost trivial, with the three pieces of information needed being
+> an IFLA_LINK to point to the real device (not needed if there is only
+> one device per channel, instead of two), the IFLA_RMNET_MUX_ID
+> setting the ID of the muxing channel (not needed if there is only
+> one channel ?), a way to specify software bridging between channels
+> (not useful if there is only one channel) and a few flags that I
+> assume
+> must match the remote end:
+> 
+> #define RMNET_FLAGS_INGRESS_DEAGGREGATION         (1U << 0)
+> #define RMNET_FLAGS_INGRESS_MAP_COMMANDS          (1U << 1)
+> #define RMNET_FLAGS_INGRESS_MAP_CKSUMV4           (1U << 2)
+> #define RMNET_FLAGS_EGRESS_MAP_CKSUMV4            (1U << 3)
+> enum {
+>         IFLA_RMNET_UNSPEC,
+>         IFLA_RMNET_MUX_ID,
+>         IFLA_RMNET_FLAGS,
+>         __IFLA_RMNET_MAX,
+> };
+> #define IFLA_RMNET_MAX  (__IFLA_RMNET_MAX - 1)
+> struct ifla_rmnet_flags {
+>         __u32   flags;
+>         __u32   mask;
+> };
+> 
+> > > Third, having the code upstream actually means the actual
+> > > requirements
+> > > for rmnet-over-IPA are clear and explicit.  This might not be a
+> > > huge
+> > > deal, but I think it's better to devise a generic WWAN scheme
+> > > that
+> > > can refer to actual code than to do so with assumptions about
+> > > what
+> > > will work with rmnet (and others).  As far as I know, the
+> > > upstream
+> > > rmnet has no other upstream back end; IPA will make it "real."
+> > 
+> > Is that really true? I had previously been told that rmnet actually
+> > does
+> > have use with a few existing drivers.
+> > 
+> > 
+> > If true though, then I think this would be the killer argument *in
+> > favour* of *not* merging this - because that would mean we *don't*
+> > have
+> > to actually keep the rmnet API around for all foreseeable future.
+> 
+> I would agree with that. From the code I can see no other driver
+> including the rmnet protocol header (see the discussion about moving
+> the header to include/linux in order to merge ipa), and I don't see
+> any other driver referencing ETH_P_MAP either. My understanding
+> is that any driver used by rmnet would require both, but they are
+> all out-of-tree at the moment.
 
-Did you file a GCC bugzilla entry for this, or shall I go ahead and make
-a new one (assuming I can remember my credentials for that thing)?
+The general plan (and I believe Daniele Palmas was working on it) was
+to eventually make qmi_wwan use rmnet rather than its internal sysfs-
+based implementation. qmi_wwan and ipa are at essentially the same
+level and both could utilize rmnet on top.
 
-Will
+*That's* what I'd like to see. I don't want to see two different ways
+to get QMAP packets to modem firmware from two different drivers that
+really could use the same code.
+
+Dan
+
 
 _______________________________________________
 linux-arm-kernel mailing list
