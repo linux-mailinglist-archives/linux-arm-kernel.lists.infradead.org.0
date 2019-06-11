@@ -2,58 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69EFF3D5DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 20:52:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 900F63D61B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:02:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=WlDt24ZaOi5OnEVHbxMQjWufFDGOkDonPHfw5nnTSgQ=; b=keh
-	DAFJTeS+RutVA8q5RDl8PyVocRFpMIRHNMkdBv4ckohGRaJ1hWyEvErxoXCDKRUsPH0sQsKrnCZe8
-	1QLY3gd+s6sauNhXfla49lympZQdj1U3cnVd4xj53O3xc/Fwy9zAkqBRsiL91IlgxJJrqHggPudDL
-	J3HEAYrUIvIzXtGNJZtId8T7DI9f5d78UeBS4pG8kiSGu6GL993BxuWYENzhWoPCbq60homjGQ6f5
-	ag8GUo5naDD+w6zrFKVu9VVAFb0Mnx6gcWxacjdWkRYFnyq3JpMflN1f9as/aoJ8fQjsGfULyu79Q
-	6bLRG3QMzltUp+ntxxAS6ZNHT+lXbkw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=34nWJ3Mzfai6+Blpzwx8j/VNkXLlKw/MnoO/rB0tdBs=; b=Q3cOZXiNKR7fZ3
+	MOwQQa8BE1ipLw/CieOckZE31UPTqmrpQGnNXp3gGGn9PatPAfAvZNiEW78peahg2xuS6XTcsEEls
+	bIWAc09mXABOGwxDkP7CO7ZXt712yA0lNnthnj7VycgaekyE7/YETfcNFR8dIu+Fx/Mzy9FdskoI/
+	qOcv7ZaSHsDRM4vKgmUMRZC8nfZ9U5TBm3oBQlNi/Xfcoby+AyiGnXR/rEXW+9LpBumgD7kr57org
+	NctxhSEmmsoRgdJbQLjjscPGuufrZxARvOcgj35r7LAxOhnGUYR20FY72/xgjfSNl+nomGGgQgZWl
+	CSSTYEwFYgSNcmpheZBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1halsU-0008Q0-Qo; Tue, 11 Jun 2019 18:52:14 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1ham2M-0004cY-Aj; Tue, 11 Jun 2019 19:02:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1halsK-0008PT-IF
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 18:52:06 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C6827200AB9;
- Tue, 11 Jun 2019 20:52:00 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B8826200105;
- Tue, 11 Jun 2019 20:52:00 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net (gw_auto.ea.freescale.net
- [10.171.94.100])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 4582A20600;
- Tue, 11 Jun 2019 20:52:00 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
- Shawn Guo <shawnguo@kernel.org>, Dong Aisheng <aisheng.dong@nxp.com>
-Subject: [PATCH] soc: imx: Move imx_get_soc_revision from mach-imx
-Date: Tue, 11 Jun 2019 21:51:57 +0300
-Message-Id: <084f934192b7d245034ddd507f348fa13ae840ac.1560279028.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1ham26-0004bR-A4
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:02:12 +0000
+Received: from quaco.ghostprotocols.net (unknown [179.97.35.11])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5FF7421841;
+ Tue, 11 Jun 2019 19:02:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560279729;
+ bh=WV8RbOS6lQTQntZS0EPqrmva7AHoKfiOwZcciJD8N+8=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Y55pUGQG0lsfPmIkGvGhab81nrkgQRjEX9JWBvKznZQ66SaQoJJisSTvkFDIa0N3n
+ +3E9YixzQspiFhWVtO5SE+1icNS4t3UNZqfkW5tDInVxSj3pR8+FZIZV69RMG7Wg3n
+ gCxErI0v3lb6E00r2tjk4NJofOIAvyV6Qo0e7OSI=
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Ingo Molnar <mingo@kernel.org>,
+	Thomas Gleixner <tglx@linutronix.de>
+Subject: [PATCH 37/85] perf cs-etm: Configure contextID tracing in CPU-wide
+ mode
+Date: Tue, 11 Jun 2019 15:58:23 -0300
+Message-Id: <20190611185911.11645-38-acme@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190611185911.11645-1-acme@kernel.org>
+References: <20190611185911.11645-1-acme@kernel.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_115204_880144_D60868AA 
-X-CRM114-Status: GOOD (  13.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190611_120210_385620_35A90F11 
+X-CRM114-Status: GOOD (  20.49  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,226 +77,252 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, linux-arm-kernel@lists.infradead.org,
- Lucas Stach <l.stach@pengutronix.de>
-MIME-Version: 1.0
+Cc: Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
+ coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ linux-perf-users@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are a few drivers which call imx_get_soc_revision in order to
-enable errata workarounds but this is only available on 32-bit arm.
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-Move the current globals to drivers/soc/imx/revision.c so that they're
-also accessible on all imx8 with same name and semantics.
+When operating in CPU-wide mode being notified of contextID changes is
+required so that the decoding mechanic is aware of the process context
+switch.
 
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Suzuki Poulouse <suzuki.poulose@arm.com>
+Tested-by: Leo Yan <leo.yan@linaro.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: coresight@lists.linaro.org
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lkml.kernel.org/r/20190524173508.29044-2-mathieu.poirier@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
-This is not very pretty.
+ tools/perf/arch/arm/util/cs-etm.c | 126 +++++++++++++++++++++++++-----
+ tools/perf/util/cs-etm.h          |  12 +++
+ 2 files changed, 119 insertions(+), 19 deletions(-)
 
- arch/arm/mach-imx/common.h    |  1 -
- arch/arm/mach-imx/cpu.c       | 17 ++++-------------
- drivers/soc/imx/Makefile      |  1 +
- drivers/soc/imx/revision.c    | 19 +++++++++++++++++++
- drivers/soc/imx/soc-imx-scu.c |  2 ++
- drivers/soc/imx/soc-imx8.c    |  5 ++++-
- include/soc/imx/revision.h    |  1 +
- 7 files changed, 31 insertions(+), 15 deletions(-)
- create mode 100644 drivers/soc/imx/revision.c
-
-diff --git a/arch/arm/mach-imx/common.h b/arch/arm/mach-imx/common.h
-index c51764a85fd7..5c06224986f4 100644
---- a/arch/arm/mach-imx/common.h
-+++ b/arch/arm/mach-imx/common.h
-@@ -49,11 +49,10 @@ void mxc_restart(enum reboot_mode, const char *);
- void mxc_arch_reset_init(void __iomem *);
- void imx1_reset_init(void __iomem *);
- void imx_set_aips(void __iomem *);
- void imx_aips_allow_unprivileged_access(const char *compat);
- int mxc_device_init(void);
--void imx_set_soc_revision(unsigned int rev);
- void imx_init_revision_from_anatop(void);
- struct device *imx_soc_device_init(void);
- void imx6_enable_rbc(bool enable);
- void imx_gpc_check_dt(void);
- void imx_gpc_set_arm_power_in_lpm(bool power_off);
-diff --git a/arch/arm/mach-imx/cpu.c b/arch/arm/mach-imx/cpu.c
-index 0b137eeffb61..bfc84f5a1312 100644
---- a/arch/arm/mach-imx/cpu.c
-+++ b/arch/arm/mach-imx/cpu.c
-@@ -9,27 +9,16 @@
+diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+index 911426721170..3912f0bf04ed 100644
+--- a/tools/perf/arch/arm/util/cs-etm.c
++++ b/tools/perf/arch/arm/util/cs-etm.c
+@@ -35,8 +35,100 @@ struct cs_etm_recording {
+ 	size_t			snapshot_size;
+ };
  
- #include "hardware.h"
- #include "common.h"
++static const char *metadata_etmv3_ro[CS_ETM_PRIV_MAX] = {
++	[CS_ETM_ETMCCER]	= "mgmt/etmccer",
++	[CS_ETM_ETMIDR]		= "mgmt/etmidr",
++};
++
++static const char *metadata_etmv4_ro[CS_ETMV4_PRIV_MAX] = {
++	[CS_ETMV4_TRCIDR0]		= "trcidr/trcidr0",
++	[CS_ETMV4_TRCIDR1]		= "trcidr/trcidr1",
++	[CS_ETMV4_TRCIDR2]		= "trcidr/trcidr2",
++	[CS_ETMV4_TRCIDR8]		= "trcidr/trcidr8",
++	[CS_ETMV4_TRCAUTHSTATUS]	= "mgmt/trcauthstatus",
++};
++
+ static bool cs_etm_is_etmv4(struct auxtrace_record *itr, int cpu);
  
- unsigned int __mxc_cpu_type;
--static unsigned int imx_soc_revision;
++static int cs_etm_set_context_id(struct auxtrace_record *itr,
++				 struct perf_evsel *evsel, int cpu)
++{
++	struct cs_etm_recording *ptr;
++	struct perf_pmu *cs_etm_pmu;
++	char path[PATH_MAX];
++	int err = -EINVAL;
++	u32 val;
++
++	ptr = container_of(itr, struct cs_etm_recording, itr);
++	cs_etm_pmu = ptr->cs_etm_pmu;
++
++	if (!cs_etm_is_etmv4(itr, cpu))
++		goto out;
++
++	/* Get a handle on TRCIRD2 */
++	snprintf(path, PATH_MAX, "cpu%d/%s",
++		 cpu, metadata_etmv4_ro[CS_ETMV4_TRCIDR2]);
++	err = perf_pmu__scan_file(cs_etm_pmu, path, "%x", &val);
++
++	/* There was a problem reading the file, bailing out */
++	if (err != 1) {
++		pr_err("%s: can't read file %s\n",
++		       CORESIGHT_ETM_PMU_NAME, path);
++		goto out;
++	}
++
++	/*
++	 * TRCIDR2.CIDSIZE, bit [9-5], indicates whether contextID tracing
++	 * is supported:
++	 *  0b00000 Context ID tracing is not supported.
++	 *  0b00100 Maximum of 32-bit Context ID size.
++	 *  All other values are reserved.
++	 */
++	val = BMVAL(val, 5, 9);
++	if (!val || val != 0x4) {
++		err = -EINVAL;
++		goto out;
++	}
++
++	/* All good, let the kernel know */
++	evsel->attr.config |= (1 << ETM_OPT_CTXTID);
++	err = 0;
++
++out:
++
++	return err;
++}
++
++static int cs_etm_set_option(struct auxtrace_record *itr,
++			     struct perf_evsel *evsel, u32 option)
++{
++	int i, err = -EINVAL;
++	struct cpu_map *event_cpus = evsel->evlist->cpus;
++	struct cpu_map *online_cpus = cpu_map__new(NULL);
++
++	/* Set option of each CPU we have */
++	for (i = 0; i < cpu__max_cpu(); i++) {
++		if (!cpu_map__has(event_cpus, i) ||
++		    !cpu_map__has(online_cpus, i))
++			continue;
++
++		switch (option) {
++		case ETM_OPT_CTXTID:
++			err = cs_etm_set_context_id(itr, evsel, i);
++			if (err)
++				goto out;
++			break;
++		default:
++			goto out;
++		}
++	}
++
++	err = 0;
++out:
++	cpu_map__put(online_cpus);
++	return err;
++}
++
+ static int cs_etm_parse_snapshot_options(struct auxtrace_record *itr,
+ 					 struct record_opts *opts,
+ 					 const char *str)
+@@ -105,8 +197,9 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+ 				container_of(itr, struct cs_etm_recording, itr);
+ 	struct perf_pmu *cs_etm_pmu = ptr->cs_etm_pmu;
+ 	struct perf_evsel *evsel, *cs_etm_evsel = NULL;
+-	const struct cpu_map *cpus = evlist->cpus;
++	struct cpu_map *cpus = evlist->cpus;
+ 	bool privileged = (geteuid() == 0 || perf_event_paranoid() < 0);
++	int err = 0;
  
- void mxc_set_cpu_type(unsigned int type)
- {
- 	__mxc_cpu_type = type;
+ 	ptr->evlist = evlist;
+ 	ptr->snapshot_mode = opts->auxtrace_snapshot_mode;
+@@ -241,19 +334,24 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+ 
+ 	/*
+ 	 * In the case of per-cpu mmaps, we need the CPU on the
+-	 * AUX event.
++	 * AUX event.  We also need the contextID in order to be notified
++	 * when a context switch happened.
+ 	 */
+-	if (!cpu_map__empty(cpus))
++	if (!cpu_map__empty(cpus)) {
+ 		perf_evsel__set_sample_bit(cs_etm_evsel, CPU);
+ 
++		err = cs_etm_set_option(itr, cs_etm_evsel, ETM_OPT_CTXTID);
++		if (err)
++			goto out;
++	}
++
+ 	/* Add dummy event to keep tracking */
+ 	if (opts->full_auxtrace) {
+ 		struct perf_evsel *tracking_evsel;
+-		int err;
+ 
+ 		err = parse_events(evlist, "dummy:u", NULL);
+ 		if (err)
+-			return err;
++			goto out;
+ 
+ 		tracking_evsel = perf_evlist__last(evlist);
+ 		perf_evlist__set_tracking_event(evlist, tracking_evsel);
+@@ -266,7 +364,8 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
+ 			perf_evsel__set_sample_bit(tracking_evsel, TIME);
+ 	}
+ 
+-	return 0;
++out:
++	return err;
  }
  
--void imx_set_soc_revision(unsigned int rev)
--{
--	imx_soc_revision = rev;
--}
+ static u64 cs_etm_get_config(struct auxtrace_record *itr)
+@@ -314,6 +413,8 @@ static u64 cs_etmv4_get_config(struct auxtrace_record *itr)
+ 	config_opts = cs_etm_get_config(itr);
+ 	if (config_opts & BIT(ETM_OPT_CYCACC))
+ 		config |= BIT(ETM4_CFG_BIT_CYCACC);
++	if (config_opts & BIT(ETM_OPT_CTXTID))
++		config |= BIT(ETM4_CFG_BIT_CTXTID);
+ 	if (config_opts & BIT(ETM_OPT_TS))
+ 		config |= BIT(ETM4_CFG_BIT_TS);
+ 	if (config_opts & BIT(ETM_OPT_RETSTK))
+@@ -363,19 +464,6 @@ cs_etm_info_priv_size(struct auxtrace_record *itr __maybe_unused,
+ 	       (etmv3 * CS_ETMV3_PRIV_SIZE));
+ }
+ 
+-static const char *metadata_etmv3_ro[CS_ETM_PRIV_MAX] = {
+-	[CS_ETM_ETMCCER]	= "mgmt/etmccer",
+-	[CS_ETM_ETMIDR]		= "mgmt/etmidr",
+-};
 -
--unsigned int imx_get_soc_revision(void)
--{
--	return imx_soc_revision;
--}
+-static const char *metadata_etmv4_ro[CS_ETMV4_PRIV_MAX] = {
+-	[CS_ETMV4_TRCIDR0]		= "trcidr/trcidr0",
+-	[CS_ETMV4_TRCIDR1]		= "trcidr/trcidr1",
+-	[CS_ETMV4_TRCIDR2]		= "trcidr/trcidr2",
+-	[CS_ETMV4_TRCIDR8]		= "trcidr/trcidr8",
+-	[CS_ETMV4_TRCAUTHSTATUS]	= "mgmt/trcauthstatus",
+-};
 -
- void imx_print_silicon_rev(const char *cpu, int srev)
+ static bool cs_etm_is_etmv4(struct auxtrace_record *itr, int cpu)
  {
- 	if (srev == IMX_CHIP_REVISION_UNKNOWN)
- 		pr_info("CPU identified as %s, unknown revision\n", cpu);
- 	else
-@@ -77,10 +66,11 @@ struct device * __init imx_soc_device_init(void)
- {
- 	struct soc_device_attribute *soc_dev_attr;
- 	struct soc_device *soc_dev;
- 	struct device_node *root;
- 	const char *soc_id;
-+	int soc_rev;
- 	int ret;
+ 	bool ret = false;
+diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
+index 0e97c196147a..826c9eedaf5c 100644
+--- a/tools/perf/util/cs-etm.h
++++ b/tools/perf/util/cs-etm.h
+@@ -103,6 +103,18 @@ struct intlist *traceid_list;
+ #define KiB(x) ((x) * 1024)
+ #define MiB(x) ((x) * 1024 * 1024)
  
- 	soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
- 	if (!soc_dev_attr)
- 		return NULL;
-@@ -151,13 +141,14 @@ struct device * __init imx_soc_device_init(void)
- 	default:
- 		soc_id = "Unknown";
- 	}
- 	soc_dev_attr->soc_id = soc_id;
- 
-+	soc_rev = imx_get_soc_revision();
- 	soc_dev_attr->revision = kasprintf(GFP_KERNEL, "%d.%d",
--					   (imx_soc_revision >> 4) & 0xf,
--					   imx_soc_revision & 0xf);
-+					   (soc_rev >> 4) & 0xf,
-+					   soc_rev & 0xf);
- 	if (!soc_dev_attr->revision)
- 		goto free_soc;
- 
- 	soc_dev = soc_device_register(soc_dev_attr);
- 	if (IS_ERR(soc_dev))
-diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
-index cf9ca42ff739..293a771127dd 100644
---- a/drivers/soc/imx/Makefile
-+++ b/drivers/soc/imx/Makefile
-@@ -1,5 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0-only
-+obj-y += revision.o
- obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
- obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
- obj-$(CONFIG_ARCH_MXC) += soc-imx8.o
- obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
-diff --git a/drivers/soc/imx/revision.c b/drivers/soc/imx/revision.c
-new file mode 100644
-index 000000000000..fc4cea2f25bd
---- /dev/null
-+++ b/drivers/soc/imx/revision.c
-@@ -0,0 +1,19 @@
-+// SPDX-License-Identifier: GPL-2.0
 +/*
-+ * Copyright 2019 NXP.
++ * Create a contiguous bitmask starting at bit position @l and ending at
++ * position @h. For example
++ * GENMASK_ULL(39, 21) gives us the 64bit vector 0x000000ffffe00000.
++ *
++ * Carbon copy of implementation found in $KERNEL/include/linux/bitops.h
 + */
-+#include <linux/module.h>
-+#include <soc/imx/revision.h>
++#define GENMASK(h, l) \
++	(((~0UL) - (1UL << (l)) + 1) & (~0UL >> (BITS_PER_LONG - 1 - (h))))
 +
-+static unsigned int imx_soc_revision = IMX_CHIP_REVISION_UNKNOWN;
++#define BMVAL(val, lsb, msb)	((val & GENMASK(msb, lsb)) >> lsb)
 +
-+void imx_set_soc_revision(unsigned int rev)
-+{
-+	imx_soc_revision = rev;
-+}
-+
-+unsigned int imx_get_soc_revision(void)
-+{
-+	return imx_soc_revision;
-+}
-+EXPORT_SYMBOL(imx_get_soc_revision);
-diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
-index 676f612f6488..7c4106ff3e0f 100644
---- a/drivers/soc/imx/soc-imx-scu.c
-+++ b/drivers/soc/imx/soc-imx-scu.c
-@@ -7,10 +7,11 @@
- #include <linux/firmware/imx/sci.h>
- #include <linux/slab.h>
- #include <linux/sys_soc.h>
- #include <linux/platform_device.h>
- #include <linux/of.h>
-+#include <soc/imx/revision.h>
+ #define CS_ETM_HEADER_SIZE (CS_HEADER_VERSION_0_MAX * sizeof(u64))
  
- #define IMX_SCU_SOC_DRIVER_NAME		"imx-scu-soc"
- 
- static struct imx_sc_ipc *soc_ipc_handle;
- 
-@@ -85,10 +86,11 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 
- 	/* format revision value passed from SCU firmware */
- 	val = (id >> 5) & 0xf;
- 	val = (((val >> 2) + 1) << 4) | (val & 0x3);
-+	imx_set_soc_revision(val);
- 	soc_dev_attr->revision = kasprintf(GFP_KERNEL,
- 					   "%d.%d",
- 					   (val >> 4) & 0xf,
- 					   val & 0xf);
- 	if (!soc_dev_attr->revision) {
-diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
-index 3842d096daf0..465d2c6c6905 100644
---- a/drivers/soc/imx/soc-imx8.c
-+++ b/drivers/soc/imx/soc-imx8.c
-@@ -8,10 +8,11 @@
- #include <linux/of_address.h>
- #include <linux/slab.h>
- #include <linux/sys_soc.h>
- #include <linux/platform_device.h>
- #include <linux/of.h>
-+#include <soc/imx/revision.h>
- 
- #define REV_B1				0x21
- 
- #define IMX8MQ_SW_INFO_B1		0x40
- #define IMX8MQ_SW_MAGIC_B1		0xff0055aa
-@@ -118,12 +119,14 @@ static int __init imx8_soc_init(void)
- 	}
- 
- 	data = id->data;
- 	if (data) {
- 		soc_dev_attr->soc_id = data->name;
--		if (data->soc_revision)
-+		if (data->soc_revision) {
- 			soc_rev = data->soc_revision();
-+			imx_set_soc_revision(soc_rev & 0xFF);
-+		}
- 	}
- 
- 	soc_dev_attr->revision = imx8_revision(soc_rev);
- 	if (!soc_dev_attr->revision) {
- 		ret = -ENOMEM;
-diff --git a/include/soc/imx/revision.h b/include/soc/imx/revision.h
-index 9ea346924c35..5e7e2aea10ff 100644
---- a/include/soc/imx/revision.h
-+++ b/include/soc/imx/revision.h
-@@ -30,8 +30,9 @@ int mx31_revision(void);
- int mx35_revision(void);
- int mx51_revision(void);
- int mx53_revision(void);
- 
- unsigned int imx_get_soc_revision(void);
-+void imx_set_soc_revision(unsigned int rev);
- void imx_print_silicon_rev(const char *cpu, int srev);
- 
- #endif /* __SOC_IMX_REVISION_H__ */
+ #define __perf_cs_etmv3_magic 0x3030303030303030ULL
 -- 
-2.17.1
+2.20.1
 
 
 _______________________________________________
