@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40B893C511
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 09:31:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C3E63C510
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 09:30:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IxumNJSDzJ1gaod240GPgqO8AV2dy1dTl3fLwuNlQSs=; b=d4E6phbqJjeDg5
-	LBs7I8xNpiP7kzjKDmliRFE3JbyY9Jng6/hu4j3w2X3DBsCRoubAOmw+kD6lk1BTNoQ6laXJzMKus
-	MhvCLT8k8w7FfBCDQYr7+frUQziNxku2t702kgxm7x83WBhlADUSj+EJ4p8VARxvSCe2VOsBj+7yv
-	oUUgKzbpdpD8vIy3OHfjUWjD7J7WKYV8b1GZumTonTyo97cIzuVV4oHFkZeUkYXwDYqkJNpx5xJp2
-	RRTqr7IkqLDZXAYug9bpHBcDx4T6gLFCG96FEQio++4dMwqi/bPzlVfSCcIoZfS2300qfW1evgEhj
-	DUk8Jg8w+PMsVRmT+jkQ==;
+	List-Owner; bh=6VwxOvaE6uXz/ebSX6XJJIvVXop9I78M3z96PYrudyo=; b=M0C6MA62CAZLE0
+	+WO3PE3+LRUuoXyl+QsrOJR/V4pkwvYa8ZdwdQJ9guljT4H20MuXkxdzt3rIUFMaz09PYVCIrHW2H
+	YpZF8Px4elAZd/yC1CL9/fqNjSPHUMp0C/ItIFoq3BVb6wwSzYf18KisLT+rRdl/DY+nwPcWcgKJd
+	yeuYWlHgxQr5SVNUFYHB9sow0remINVDR8M3trvJhPkkteyFUjIvnPyKD6rmfK8+SMxqgzWqEbpFm
+	uRb7iIAty56zTLp6ytIi3LNUgLkD5SKNCGWq6U2Pcm50efizvimK+8+Z4EpNxqkpeOsR6nq8kn8E6
+	qsrirv7lEcI1Cugp+zPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1habFK-0003Lz-ER; Tue, 11 Jun 2019 07:31:06 +0000
+	id 1habEx-000337-6a; Tue, 11 Jun 2019 07:30:43 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1habE0-0000s3-Bq
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 07:29:46 +0000
+ id 1habDy-0000qn-AN
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 07:29:44 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id C34D9104F73;
- Tue, 11 Jun 2019 09:29:42 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id E4B1D104F8A;
+ Tue, 11 Jun 2019 09:29:40 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id UQ0Bb_68C3u1; Tue, 11 Jun 2019 09:29:27 +0200 (CEST)
+ with ESMTP id H9bUyAD6xQxw; Tue, 11 Jun 2019 09:29:27 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 32A5F104F88;
- Tue, 11 Jun 2019 09:29:26 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 079DC104F74;
+ Tue, 11 Jun 2019 09:29:27 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id C7D_2HtN1agj; Tue, 11 Jun 2019 09:29:24 +0200 (CEST)
+ with ESMTP id w_OpdEUor2aH; Tue, 11 Jun 2019 09:29:24 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id E8414104F74;
- Tue, 11 Jun 2019 09:29:23 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 33BCE104F77;
+ Tue, 11 Jun 2019 09:29:24 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH 1/6] ARM: dts: STi: Switch to SPDX header
-Date: Tue, 11 Jun 2019 09:29:16 +0200
-Message-Id: <20190611072921.2979446-2-lkundrak@v3.sk>
+Subject: [PATCH 2/6] ARM: dts: pxa: Switch to SPDX header
+Date: Tue, 11 Jun 2019 09:29:17 +0200
+Message-Id: <20190611072921.2979446-3-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190611072921.2979446-1-lkundrak@v3.sk>
 References: <20190611072921.2979446-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_002944_754441_DF04A678 
-X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-CacheID: sfid-20190611_002942_689772_3629A924 
+X-CRM114-Status: UNSURE (   7.85  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,110 +87,76 @@ to SPDX instead of fixing the wording.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- arch/arm/boot/dts/stih407-family.dtsi  | 5 +----
- arch/arm/boot/dts/stih407-pinctrl.dtsi | 5 +----
- arch/arm/boot/dts/stih407.dtsi         | 5 +----
- arch/arm/boot/dts/stih410-pinctrl.dtsi | 5 +----
- arch/arm/boot/dts/stih410.dtsi         | 5 +----
- arch/arm/boot/dts/stih418.dtsi         | 5 +----
- 6 files changed, 6 insertions(+), 24 deletions(-)
+ arch/arm/boot/dts/pxa168-aspenite.dts | 5 +----
+ arch/arm/boot/dts/pxa168.dtsi         | 5 +----
+ arch/arm/boot/dts/pxa910-dkb.dts      | 5 +----
+ arch/arm/boot/dts/pxa910.dtsi         | 5 +----
+ 4 files changed, 4 insertions(+), 16 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stih407-family.dtsi b/arch/arm/boot/dts/stih407-family.dtsi
-index 9e29a4499938..2ff2542bf335 100644
---- a/arch/arm/boot/dts/stih407-family.dtsi
-+++ b/arch/arm/boot/dts/stih407-family.dtsi
+diff --git a/arch/arm/boot/dts/pxa168-aspenite.dts b/arch/arm/boot/dts/pxa168-aspenite.dts
+index 0a988b3fb248..4928a109557d 100644
+--- a/arch/arm/boot/dts/pxa168-aspenite.dts
++++ b/arch/arm/boot/dts/pxa168-aspenite.dts
 @@ -1,10 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * Copyright (C) 2014 STMicroelectronics Limited.
-  * Author: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+  *  Copyright (C) 2012 Marvell Technology Group Ltd.
+  *  Author: Haojian Zhuang <haojian.zhuang@marvell.com>
 - *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * publishhed by the Free Software Foundation.
+- *  This program is free software; you can redistribute it and/or modify
+- *  it under the terms of the GNU General Public License version 2 as
+- *  publishhed by the Free Software Foundation.
   */
- #include "stih407-pinctrl.dtsi"
- #include <dt-bindings/mfd/st-lpc.h>
-diff --git a/arch/arm/boot/dts/stih407-pinctrl.dtsi b/arch/arm/boot/dts/stih407-pinctrl.dtsi
-index e393519fb84c..db174019626f 100644
---- a/arch/arm/boot/dts/stih407-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stih407-pinctrl.dtsi
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/pxa168.dtsi b/arch/arm/boot/dts/pxa168.dtsi
+index 7137f3550183..ad6f428a33ea 100644
+--- a/arch/arm/boot/dts/pxa168.dtsi
++++ b/arch/arm/boot/dts/pxa168.dtsi
 @@ -1,10 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * Copyright (C) 2014 STMicroelectronics Limited.
-  * Author: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+  *  Copyright (C) 2012 Marvell Technology Group Ltd.
+  *  Author: Haojian Zhuang <haojian.zhuang@marvell.com>
 - *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * publishhed by the Free Software Foundation.
+- *  This program is free software; you can redistribute it and/or modify
+- *  it under the terms of the GNU General Public License version 2 as
+- *  publishhed by the Free Software Foundation.
   */
- #include "st-pincfg.h"
- #include <dt-bindings/interrupt-controller/arm-gic.h>
-diff --git a/arch/arm/boot/dts/stih407.dtsi b/arch/arm/boot/dts/stih407.dtsi
-index 5b7951ffc350..242ac72e4d4a 100644
---- a/arch/arm/boot/dts/stih407.dtsi
-+++ b/arch/arm/boot/dts/stih407.dtsi
+ 
+ #include <dt-bindings/clock/marvell,pxa168.h>
+diff --git a/arch/arm/boot/dts/pxa910-dkb.dts b/arch/arm/boot/dts/pxa910-dkb.dts
+index c82f2810ec73..a43a51d2ae81 100644
+--- a/arch/arm/boot/dts/pxa910-dkb.dts
++++ b/arch/arm/boot/dts/pxa910-dkb.dts
 @@ -1,10 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * Copyright (C) 2015 STMicroelectronics Limited.
-  * Author: Gabriel Fernandez <gabriel.fernandez@linaro.org>
+  *  Copyright (C) 2012 Marvell Technology Group Ltd.
+  *  Author: Haojian Zhuang <haojian.zhuang@marvell.com>
 - *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * publishhed by the Free Software Foundation.
+- *  This program is free software; you can redistribute it and/or modify
+- *  it under the terms of the GNU General Public License version 2 as
+- *  publishhed by the Free Software Foundation.
   */
- #include "stih407-clock.dtsi"
- #include "stih407-family.dtsi"
-diff --git a/arch/arm/boot/dts/stih410-pinctrl.dtsi b/arch/arm/boot/dts/stih410-pinctrl.dtsi
-index 5ae1fd66c0b8..8532ae3f61e8 100644
---- a/arch/arm/boot/dts/stih410-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stih410-pinctrl.dtsi
+ 
+ /dts-v1/;
+diff --git a/arch/arm/boot/dts/pxa910.dtsi b/arch/arm/boot/dts/pxa910.dtsi
+index c88553a8ee29..69d152c2d52c 100644
+--- a/arch/arm/boot/dts/pxa910.dtsi
++++ b/arch/arm/boot/dts/pxa910.dtsi
 @@ -1,10 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * Copyright (C) 2014 STMicroelectronics Limited.
-  * Author: Peter Griffin <peter.griffin@linaro.org>
+  *  Copyright (C) 2012 Marvell Technology Group Ltd.
+  *  Author: Haojian Zhuang <haojian.zhuang@marvell.com>
 - *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * publishhed by the Free Software Foundation.
+- *  This program is free software; you can redistribute it and/or modify
+- *  it under the terms of the GNU General Public License version 2 as
+- *  publishhed by the Free Software Foundation.
   */
- #include "st-pincfg.h"
- / {
-diff --git a/arch/arm/boot/dts/stih410.dtsi b/arch/arm/boot/dts/stih410.dtsi
-index 888548ea9b5c..23b494a13c47 100644
---- a/arch/arm/boot/dts/stih410.dtsi
-+++ b/arch/arm/boot/dts/stih410.dtsi
-@@ -1,10 +1,7 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-  * Copyright (C) 2014 STMicroelectronics Limited.
-  * Author: Peter Griffin <peter.griffin@linaro.org>
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * publishhed by the Free Software Foundation.
-  */
- #include "stih410-clock.dtsi"
- #include "stih407-family.dtsi"
-diff --git a/arch/arm/boot/dts/stih418.dtsi b/arch/arm/boot/dts/stih418.dtsi
-index 0efb3cd6a86e..f3f0a0e0f23c 100644
---- a/arch/arm/boot/dts/stih418.dtsi
-+++ b/arch/arm/boot/dts/stih418.dtsi
-@@ -1,10 +1,7 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-  * Copyright (C) 2014 STMicroelectronics Limited.
-  * Author: Peter Griffin <peter.griffin@linaro.org>
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * publishhed by the Free Software Foundation.
-  */
- #include "stih418-clock.dtsi"
- #include "stih407-family.dtsi"
+ 
+ #include <dt-bindings/clock/marvell,pxa910.h>
 -- 
 2.21.0
 
