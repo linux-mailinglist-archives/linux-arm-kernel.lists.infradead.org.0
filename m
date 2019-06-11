@@ -2,74 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79B523C5DD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 10:26:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C6B63C5ED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 10:28:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/lwcaVxkd473NuOCDauaZalEZRukJ/SYkC+dUqqm48=; b=tPLb2ZaADL+p89
-	82dJtILq9Q06Lc8zjjNGnrMesqCQHTzwX2avm2gDUq5sgYcxRk1je79CtEA/bO7NhvfkPSxRgHrXP
-	jBNL5ggaI+iWY5yqVK/nDjSqZvMJrHHluagRNs+aR+JVcD9uSO1a7Ze6Yuc85D34ZP1Qjb3L2WD+S
-	28LbsIbEfddInrojRjWZnWHT/WDJwjZfd3whXjS9uzu+XQ6hk2vvrsTCX1ryGRP/a+Ib0VGlySsb+
-	TCO5CjUXVerRtFtl0es0H847w85rwksroD3FZ1ZCoqPLVjxFrKgICYmUCdXeen3Pjy95onv/7bbKR
-	wHhOGrwyamsRvD2QUIlg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6SNn6FA5dSBLw+3jowJaZFsx+rd1RWNrYObWba3/EAU=; b=Zr+MiAM75PhBEjM2sGpvfko1L
+	lwvUxjeIN3h5Hn02ZCxbTiF0/dH9WyXrFNfZJUK4glECmi3uWMlRsmTtHtcZ+DHiU3Fhx1PYLCzwR
+	iXTJod1h1JE36/b67qT1Ace+I1FBjg4jX3jXt4iDfs7WEpkD76vbUz9zGluml8unoMny98ecjPTEE
+	u0HkC1ToFHLHalmH87mzbYCvn2u52meIBg3VhuJHBSijS/dap1ASGKDaBgcCRjM3PhgHhspGw+zTx
+	DLI4Oac+SNvQ/9FPuQKVXjjIClWcbSIZHMAjHt5MusCBPA7pmtObdu7d9opOKGkQHgTv7tc0sqjTR
+	ya5KJVCwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hac6h-00025Y-Fk; Tue, 11 Jun 2019 08:26:15 +0000
-Received: from mail-lj1-f194.google.com ([209.85.208.194])
+	id 1hac8n-0002VI-P5; Tue, 11 Jun 2019 08:28:25 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hac6T-00024v-Mk; Tue, 11 Jun 2019 08:26:04 +0000
-Received: by mail-lj1-f194.google.com with SMTP id 16so10658271ljv.10;
- Tue, 11 Jun 2019 01:26:01 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=fRmoMIsZBSVoYdlrURu/R5LpVklxWrnPow9T+scl1c8=;
- b=jdbpkncoqRI/W9ytjI1keaCBTf3cfzJXRaimrLk+eTdJMJ6Wmio8TNnFXNXcaS8wBJ
- G7FuL2qJlfqyINrTHUXQ1zcPJRHUOKgw8HZf9NIhzo2wEbOVQGWu2jbUeTUzcDf+ul/H
- XATI7uG2pCmsnTcJyPS77y/p5FK2g3HJx+b7szPbKgRv40jG4yOjYAjgRw24fMo6e/3R
- RAAVLtQ4tP/u5wO+AzH3WpjaFniRyfVmvWl3NixJvPYj1LwAwOKHfQK7+xsHaZIYeG+G
- +dZRaLpY5NXXqEaERl0t153m3v8Nr61t8as4Snup46F2JQvRB5su1S4slWc1H4R9X6M4
- vk5g==
-X-Gm-Message-State: APjAAAVDe8PzUupru1xhJA4M2zkRPm/I8P5npWN5k9l9CIy7CXYYNWzm
- hhf9vNDTy4pPh7E/gSCgRcI4kWwZ+ztCTCuUy7uMgWLZ
-X-Google-Smtp-Source: APXvYqz5wc/joiy06FOa5+5LASjye7tJKfWbnZfpusW+8Da+RGItpfdSQao+YuZntnzQUcnhkK8gdEsZWI/Z5YLEf6g=
-X-Received: by 2002:a2e:91c5:: with SMTP id u5mr28381055ljg.65.1560241559914; 
- Tue, 11 Jun 2019 01:25:59 -0700 (PDT)
+ id 1hac8Z-0002UP-7b
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 08:28:13 +0000
+X-Originating-IP: 90.88.159.246
+Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
+ [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 9B65EFF80D;
+ Tue, 11 Jun 2019 08:27:58 +0000 (UTC)
+Date: Tue, 11 Jun 2019 10:27:58 +0200
+From: Maxime Ripard <maxime.ripard@bootlin.com>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v3 6/7] arm64: dts: allwinner: h6: Add DMA node
+Message-ID: <20190611082758.raznfgrshvbc7lh4@flea>
+References: <20190527201459.20130-1-peron.clem@gmail.com>
+ <20190527201459.20130-7-peron.clem@gmail.com>
 MIME-Version: 1.0
-References: <20190610212015.9157-1-hch@lst.de>
- <20190610212015.9157-8-hch@lst.de>
-In-Reply-To: <20190610212015.9157-8-hch@lst.de>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 11 Jun 2019 10:25:46 +0200
-Message-ID: <CAMuHMdXvbA=+=AQ6fYV2zRUc6CWtZ_GzEN7D5b8QNYwLEd6OjA@mail.gmail.com>
-Subject: Re: [PATCH 07/15] binfmt_flat: use __be32 for the on-disk format
-To: Christoph Hellwig <hch@lst.de>
+In-Reply-To: <20190527201459.20130-7-peron.clem@gmail.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_012601_745557_FA60A4D0 
-X-CRM114-Status: GOOD (  13.94  )
-X-Spam-Score: 3.0 (+++)
+X-CRM114-CacheID: sfid-20190611_012811_434538_AFF830EB 
+X-CRM114-Status: GOOD (  16.74  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.194 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,84 +61,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:H8/300 ARCHITECTURE"
- <uclinux-h8-devel@lists.sourceforge.jp>, linux-xtensa@linux-xtensa.org,
- Michal Simek <monstr@monstr.eu>, linux-c6x-dev@linux-c6x.org,
- Linux-sh list <linux-sh@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>, linux-riscv@lists.infradead.org,
- Greg Ungerer <gerg@linux-m68k.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0661548505494679399=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christoph,
 
-On Mon, Jun 10, 2019 at 11:21 PM Christoph Hellwig <hch@lst.de> wrote:
-> So far binfmt_flat has onl been supported on 32-bit platforms, so the
-> variable size of the fields didn't matter.  But the upcoming RISC-V
-> nommu port supports 64-bit CPUs, and we now have a conflict between
-> the elf2flt creation tool that always uses 32-bit fields and the kernel
-> that uses (unsigned) long field.  Switch to the userspace view as the
-> rest of the binfmt_flat format is completely architecture neutral,
-> and binfmt_flat isn't the right binary format for huge executables to
-> start with.
+--===============0661548505494679399==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="hgbw2pta2w7pzljd"
+Content-Disposition: inline
+
+
+--hgbw2pta2w7pzljd
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+I tried applying this patch, and it conflicts.
+
+There's also a minor issue that sohuld be fixed
+
+On Mon, May 27, 2019 at 10:14:58PM +0200, Cl=E9ment P=E9ron wrote:
+> From: Jernej Skrabec <jernej.skrabec@siol.net>
 >
-> While we're at it also ensure these fields are using __be types as
-> they big endian and are byteswapped when loaded.
+> H6 has DMA controller which supports 16 channels.
 >
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-
-> --- a/include/linux/flat.h
-> +++ b/include/linux/flat.h
-
-> @@ -67,19 +67,19 @@ struct flat_hdr {
->  #define OLD_FLAT_RELOC_TYPE_BSS                2
+> Add a node for it.
 >
->  typedef union {
-> -       unsigned long   value;
-> +       u32             value;
->         struct {
->  # if defined(mc68000) && !defined(CONFIG_COLDFIRE)
-> -               signed long offset : 30;
-> -               unsigned long type : 2;
-> +               s32     offset : 30;
-> +               u32     type : 2;
->  #      define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
->  # elif defined(__BIG_ENDIAN_BITFIELD)
-> -               unsigned long type : 2;
-> -               signed long offset : 30;
-> +               u32     type : 2;
-> +               s32     offset : 30;
->  #      define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
->  # elif defined(__LITTLE_ENDIAN_BITFIELD)
-> -               signed long offset : 30;
-> -               unsigned long type : 2;
-> +               s32     offset : 30;
-> +               u32     type : 2;
->  #      define OLD_FLAT_FLAG_RAM    0x1 /* load program entirely into RAM */
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> ---
+>  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/bo=
+ot/dts/allwinner/sun50i-h6.dtsi
+> index 16c5c3d0fd81..f4ea596c82ce 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
+> @@ -208,6 +208,18 @@
+>  			reg =3D <0x03006000 0x400>;
+>  		};
+>
+> +		dma: dma-controller@3002000 {
+> +			compatible =3D "allwinner,sun50i-h6-dma";
+> +			reg =3D <0x03002000 0x1000>;
+> +			interrupts =3D <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks =3D <&ccu CLK_BUS_DMA>, <&ccu CLK_MBUS_DMA>;
+> +			clock-names =3D "bus", "mbus";
+> +			dma-channels =3D <16>;
+> +			dma-requests =3D <46>;
+> +			resets =3D <&ccu RST_BUS_DMA>;
+> +			#dma-cells =3D <1>;
+> +		};
+> +
+>  		pio: pinctrl@300b000 {
+>  			compatible =3D "allwinner,sun50i-h6-pinctrl";
+>  			reg =3D <0x0300b000 0x400>;
 
-The definitions of OLD_FLAT_FLAG_RAM are identical, so could be
-factored out.
-However, they appear to be unused.
+DT nodes are ordered by increasing physical addresses, so this node
+shouldn't be there.
 
->  # else
->  #      error "Unknown bitfield order for flat files."
+Thanks!
+Maxime
 
-Gr{oetje,eeting}s,
+--
+Maxime Ripard, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
-                        Geert
+--hgbw2pta2w7pzljd
+Content-Type: application/pgp-signature; name="signature.asc"
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+-----BEGIN PGP SIGNATURE-----
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXP9mDgAKCRDj7w1vZxhR
+xeglAPwIW36bLSAE8g46D6JILsJk6w6C0BIIbR0gS4UHeOmtswEAnm9PNial2hiQ
+BhIQ8CM9gowudS/CZB7KUSMsrInbXAo=
+=PF9a
+-----END PGP SIGNATURE-----
+
+--hgbw2pta2w7pzljd--
+
+
+--===============0661548505494679399==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0661548505494679399==--
+
