@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24EA5418F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 01:32:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5F30418FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 01:35:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MmNbViuJo9G+960b6sMAr+GWg8cvOdNI7lCw9z1er4E=; b=MLZrAitpRGBV7u
-	qUcJ++K+Cn9wNEgLxhg0o+inthdCfKqE75HlGrwBTHEZSCv80pFYcfX+9HA8KzoYEKh502JsM82OA
-	VowUb8SZJPcxWsrZozchMhNuxrkwlVONrBvJASeCF2Z2FMWBHmAkHSBK98bMfr7sFWcSvG2CiGK+n
-	B8KbawaNCvAdOBNFfv/fVI9LsHU7sPv3up64I7SaHYBL5B9KjNSWgg5GCHlDkQc/aQ/qAHtxtCpIC
-	14KKWT75oNpM7Tgg70YGol48I8DTRK7zpCXeBJOBfVX8B1ErvSTo/YYLibqo7T7h5ewkb32kthwcy
-	A5yhkqYEIob2/KVdYIcw==;
+	List-Owner; bh=wEpdJvj2kKwUmGdMRKojIYwoc73kXkN6WAwuqqfQOqU=; b=XjWD52WiuuoK6R
+	ittEgGn1UuIoqVzjEaTh2r9KF2IED5HoDAgoi7wxXykCO9SPh4ec/KmMbAzsVoK9Y5+Y/zA6AHCsL
+	dE6Nhn0PZHDePu3NuqCoaUHj23Op1rQ+6PVVrRVwm8EhtB5GUtbNwVEyhtl9w0GV4Y9f9fgM70qTA
+	TjZ7l4vpLeNlUDgPT0m6Ts0LgVJaYeXcM5IIQal9JlQ+7bEiSCADtKqKQ/IncOkG0LpOrKmYVFDGr
+	QkFSXQXA72DKvjyoPnQix2/8fsHidkwQEGGwurimydYW1cPwQUFFXVrPaVUh+ey8UdfbSLQeO+35P
+	7QDe6oi5aDUEAH/oioMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haqFZ-0002wc-Ot; Tue, 11 Jun 2019 23:32:21 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1haqIL-0003a5-3a; Tue, 11 Jun 2019 23:35:13 +0000
+Received: from mail-it1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haqFQ-0002v4-4Y
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 23:32:13 +0000
-Received: by mail-pf1-x443.google.com with SMTP id r7so2521957pfl.3
+ id 1haqI8-0003Ln-GB
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 23:35:01 +0000
+Received: by mail-it1-f196.google.com with SMTP id m138so7868420ita.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 16:32:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=n4utO1qIjYj4MGuS7hIfGXs+tpiAYsWzBnQD5g4fpBU=;
- b=OWHL9uXMvXBp4WyP6XbYf8ngdd9BOGYtfKlznowe2eZXC8BTT87VlB0/rYBBnjrDKD
- pvCvc3dKtXEt2ccEl+5tO3LuvjVUteL52BK0k4m/G6hGBfSyL8JdLtXGCfGhVgHD5/hZ
- zXTEVipfe5LP1ChUjH+6SDLz2sScHI72x/NfbZmtV1mznhwunG7ogeC3xqpQwsRHsAud
- Lr6bHi0YxzMX7vIUYMvbbg/Bvcxz7PYvRK3hGd0DnhD285skUhCFS+YNvY6WycsnwuwC
- SLC69nfTolSPUMIXbkdaINLayG9V2CC1rDYPMC2S1/r0245/ibabd9IxaQCT86cP1u2D
- irpg==
+ Tue, 11 Jun 2019 16:35:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=n4utO1qIjYj4MGuS7hIfGXs+tpiAYsWzBnQD5g4fpBU=;
- b=B0E5qBKQQKcDv01O5OiYmNP3NLZyNghwqVWcEnQyb8kUcIQeIvaWtwZSK1kC51K2eD
- X77YeGBvhA8bGoGrdP0rqRuJhd9CGA+4eBReRGoK9bO2O6TudVyeZmXpI/NnUsMUmdio
- 9cUfe2Y3tAce479R1/93x7jIJfS6ZwAeUAwc//MnMpS/kzJMiJVM3UjrSCq1y9gNfcrw
- z61fVcgl7ZF/wq0iGIYhg6CM601tjrwpZwolJAtMkYhFKf7Bvk3uZSPDcVUJjwgLlUEX
- XN4X2t4EaDe4FNBpO/hhklqsk8ANrVJRvC07Iy+i9xRUez6hP0eEEGyekrOUtD48loQt
- kAkQ==
-X-Gm-Message-State: APjAAAUbSxoeWlNwlryiA453BVCgsrDo4yQOgODoB2KGMItZI6HCNbmp
- tjeGaaSBXLRmRObmpuYXpfhqwQ==
-X-Google-Smtp-Source: APXvYqwWX/bN3QMS+ZSVHnHRL4KnDn8A/IIaaCNAM7jGCzy6OnJYRwGBmJaNVgi34cIXq1tip8qnTw==
-X-Received: by 2002:a62:d0:: with SMTP id 199mr51540334pfa.253.1560295931319; 
- Tue, 11 Jun 2019 16:32:11 -0700 (PDT)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.googlemail.com with ESMTPSA id w36sm14250463pgl.62.2019.06.11.16.32.10
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 11 Jun 2019 16:32:10 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH 0/4] ARM: dts: meson8b: add VDDEE / mali-supply
-In-Reply-To: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
-References: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
-Date: Tue, 11 Jun 2019 16:32:10 -0700
-Message-ID: <7htvcv3dhh.fsf@baylibre.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=m12BEF6aoD8sKKRDjXmfbkhom6wFfuNMaUfEfaPontI=;
+ b=hkbaXOU5gi5MuaUqbdLZakJlMG6t7Rlj68BOQ/WZ8Ewm5ToCzTlRnzAuJKIg6L93JD
+ 4X1aTf3krMWzdI61rbvaI5l1LkIYkUoYsT6PxlPPJX/jjlLn5qwnn1GS2D/ZYzgLaKsd
+ Agr/+RMhkEhSTzrbIczQxSlKIPEXaeK1v44ml3eXqwHHuLnLL6umqkHVnm+Yt62VK6p6
+ N1tgFl435yDg8W7NgWg4dQTcCwmlW6wnz0BYi9th9uyebNMOSomXXl8tgKMOjF5VWAAY
+ rBnjVDG3p5PlYNOMijCcg1afFUdZsCjx5NNx5QaTkE7nqp+xaVP7ONzZkQxjNzK/OnAi
+ CSQA==
+X-Gm-Message-State: APjAAAUoqvHoEm3kOdYEpyTRidN2p9beLa1Ux7RGeY1tp/EEpJ23kJTp
+ sm1KLVqXMNrJs141Dnb4IiGy4l8=
+X-Google-Smtp-Source: APXvYqye7O0X80ue+IvTi1olrle0IaMnhZvFUdN3Pu38l2XXIz46k5UuwXpGJfD3KkSIfO+KTcA/TQ==
+X-Received: by 2002:a24:4754:: with SMTP id t81mr21499151itb.106.1560296099482; 
+ Tue, 11 Jun 2019 16:34:59 -0700 (PDT)
+Received: from localhost (ip-174-149-252-64.englco.spcsdns.net.
+ [174.149.252.64])
+ by smtp.gmail.com with ESMTPSA id q79sm2082456itb.15.2019.06.11.16.34.56
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 11 Jun 2019 16:34:58 -0700 (PDT)
+Date: Tue, 11 Jun 2019 17:34:53 -0600
+From: Rob Herring <robh@kernel.org>
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+Subject: Re: [PATCH v5 2/3] fdt: add support for rng-seed
+Message-ID: <20190611233453.GA14130@bogus>
+References: <20190527043336.112854-1-hsinyi@chromium.org>
+ <20190527043336.112854-2-hsinyi@chromium.org>
+ <5ced598d.1c69fb81.dabd8.339d@mx.google.com>
+ <CAJMQK-i0z1EHCMK3eTya+SmK6GD_C4Ljvb7BHvsaMWLDxxmwMg@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAJMQK-i0z1EHCMK3eTya+SmK6GD_C4Ljvb7BHvsaMWLDxxmwMg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_163212_181218_178B9375 
-X-CRM114-Status: GOOD (  12.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_163500_540005_8A5120FF 
+X-CRM114-Status: GOOD (  15.53  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [209.85.166.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,36 +93,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Laura Abbott <labbott@redhat.com>, Yu Zhao <yuzhao@google.com>,
+ Kees Cook <keescook@chromium.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ lkml <linux-kernel@vger.kernel.org>, Stephen Boyd <swboyd@chromium.org>,
+ Jun Yao <yaojun8558363@gmail.com>, Miles Chen <miles.chen@mediatek.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, James Morse <james.morse@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Mike Rapoport <rppt@linux.ibm.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
+On Mon, Jun 10, 2019 at 06:59:11PM +0800, Hsin-Yi Wang wrote:
+> On Tue, May 28, 2019 at 11:53 PM Stephen Boyd <swboyd@chromium.org> wrote:
+> >
+> > Quoting Hsin-Yi Wang (2019-05-26 21:33:35)
+> > > Introducing a chosen node, rng-seed, which is an entropy that can be
+> > > passed to kernel called very early to increase initial device
+> > > randomness. Bootloader should provide this entropy and the value is
+> > > read from /chosen/rng-seed in DT.
+> > >
+> > > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> > > ---
+> >
+> > Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+> >
+> 
+> Hi Rob,
+> 
+> Is this series accepted? Or is there any other related concern?
+> 
+> If it's fine, I also have sent a patch for updating
+> schemas/chosen.yaml document.
 
-> EC-100 and Odroid-C1 use a "copy" of the VCCK regulator as "VDDEE"
-> regulator. VDDEE supplies the Mali GPU and various other bits within
-> the SoC.
->
-> The VDDEE regulator is not exclusive to the Mali GPU so it must not
-> change it's voltage. The GPU OPP table has a fixed voltage for all
-> frequencies of 1.10V. This matches with what u-boot sets on my EC-100
-> and Odroid-C1.
->
-> Dependencies:
-> - compile time: patch #4 depends on my other patch "ARM: meson8b-mxq:
->   better support for the TRONFY MXQ" from [0]
-> - runtime: we don't want the kernel to change the output of the VDDEE
->   regulator to the maximum value. Thus the PWM driver has to be able
->   to read the PWM period and duty cycle from u-boot. This is supported
->   with my series called "pwm-meson: cleanups and improvements" from [1]
+The kernel change is fine, but please put the documentation change into 
+the schema doc (in github.com/devicetree-org/dt-schema) and don't modify 
+chosen.txt.
 
-Just FYI... unless I hear otherwise, I'll wait for the PWM cleanups to
-land before queuing this series.
-
-Kevin
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
