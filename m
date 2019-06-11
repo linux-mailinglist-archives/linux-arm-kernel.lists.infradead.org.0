@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E18523D377
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:06:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 874CD3D379
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:07:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+NMvBCfwfoof4WkNKiGnclR2Y89Ur8deHbtIy5v5dv8=; b=dXEb3c8vGxiWB6
-	B7qasVBF5W3H6zB/fjf25mLDedlwGwRYseUdpL/qOP59af78ukooq4gi+7h3rU0wsUxZ2e5VAB98M
-	wQssMUNTyKBBLGNQSxwyKPm68hNbkulBnfNfXKWEM+Ac1nrztTJTNmzIpJzp52C2U05CTylQaIZx7
-	Z+1kD+kyCwSRZfYL4qIWc9noayVLQ7EFMEvjPxHFstFrMmYdBn50YnLQx5XFJPp/NOMkGZpM/fsnq
-	IVJjVdNo/LZjHcJdq/cmS3cFizoFyE3uOH4OBVUkpp9FiM3NCGQ7nd/UAnUJBCZZN3KcznTP9HLOy
-	Mvmy2xLfP20VRAzKH1Vw==;
+	List-Owner; bh=jNg2d2ReRUO+h+4pGeCYq8XHKTGMB4mFFObC8nOwD0A=; b=ZdlMGefYADt+Oa
+	UXXO2sAfXNnVsNxQgAzrDuNdm5y7kmvD9UzQMYtVHCd3OpX39ikLC8zuSN610sO0V1+e8/gk4FQMn
+	4B9wUzULIxvxafL+hBCTIk9RQxTnOVf+07XIr8RlVN1KUq0tBhNXeplbJDKhrgU7bHuxMJjNRVPCh
+	+C6tOYx9LXVeic4S1SRiGgBVwSVkJUw+j5pM4/JhNhDU56J+KohuZV+PR+mgrGWCjP0eU9LYA8bMz
+	QrIYN0RaIQ3hTH+nSO8wJctqnDVPayYHwV+WJOuiL0EJxAbo2j2+fUcif3FGUyyohoxtii5JGoIg7
+	Il70wDS33wMesYcmggrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakET-00044p-88; Tue, 11 Jun 2019 17:06:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hakBn-0000jz-DL
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:04:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C54CC11B3;
- Tue, 11 Jun 2019 10:04:02 -0700 (PDT)
-Received: from filthy-habits.cambridge.arm.com
- (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56A513F73C;
- Tue, 11 Jun 2019 10:04:01 -0700 (PDT)
-From: Marc Zyngier <marc.zyngier@arm.com>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: [PATCH v2 9/9] KVM: arm/arm64: vgic-irqfd: Implement
- kvm_arch_set_irq_inatomic
-Date: Tue, 11 Jun 2019 18:03:36 +0100
-Message-Id: <20190611170336.121706-10-marc.zyngier@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190611170336.121706-1-marc.zyngier@arm.com>
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
+	id 1hakEh-0004LO-Km; Tue, 11 Jun 2019 17:07:03 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hakCy-0002ya-Ci; Tue, 11 Jun 2019 17:05:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=7Yq617plFowJ6SPqfSlFnXKBCkZMDSV9shNeKC4mMEY=; b=K0CsPURbcVID3VZgvAW0iTm3wR
+ a4w5JgdjFouiUq0BWdslkyoBdxaVdGLJePyibi1Mog+r1AuYwR/+jqWtSVGIrgf6yzUg0z1U28CyG
+ ZhJdIclAT572+X/UXggsJ8f8SVJMT/MisC//pgJXvXzFsvm9J+X3u1iSiUKWNx87KYuHGB3heK7cb
+ r1U6atgMP9cSs7F68WdhTtVFB7a/r7PPkSHtsAXTs+U5GV1KWlGhJYzDFXrGHhlV1xt/wYfmrvWud
+ Gs8cNb0zXmzCs1nXi+2dGANfmt3c8nyUKVKzyntwvyexURPTWIVP8gQmd/HhZ+q8RGBPy2CreqY6B
+ yzJmGK5g==;
+Received: from 177.41.119.178.dynamic.adsl.gvt.net.br ([177.41.119.178]
+ helo=coco.lan)
+ by casper.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hakCs-0002PQ-Bo; Tue, 11 Jun 2019 17:05:10 +0000
+Date: Tue, 11 Jun 2019 14:05:01 -0300
+From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Subject: Re: [PATCH v3 06/20] docs: mark orphan documents as such
+Message-ID: <20190611140501.11ba091b@coco.lan>
+In-Reply-To: <CAHp75VfTNJOGZx-PoUXLRvzghqf6bVUdJ+yFjE9hNtDLCQ1=UA@mail.gmail.com>
+References: <ff457774d46d96e8fe56b45409aba39d87a8672a.1559933665.git.mchehab+samsung@kernel.org>
+ <0bea1c7c4fc06c7edabbf3185c0cbbc6e85eafd0.1559933665.git.mchehab+samsung@kernel.org>
+ <CAHp75VfTNJOGZx-PoUXLRvzghqf6bVUdJ+yFjE9hNtDLCQ1=UA@mail.gmail.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_100403_539737_6A91219B 
-X-CRM114-Status: GOOD (  11.38  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,93 +60,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Julien Thierry <julien.thierry@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>,
- Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, "Saidi, Ali" <alisaidi@amazon.com>
+Cc: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ dri-devel@lists.freedesktop.org,
+ Platform Driver <platform-driver-x86@vger.kernel.org>,
+ Paul Mackerras <paulus@samba.org>, linux-stm32@st-md-mailman.stormreply.com,
+ Alexandre Torgue <alexandre.torgue@st.com>, Jonathan Corbet <corbet@lwn.net>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Andrew Donnellan <ajd@linux.ibm.com>, Linux PM <linux-pm@vger.kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Matan Ziv-Av <matan@svgalib.org>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Sean Paul <sean@poorly.run>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Frederic Barrat <fbarrat@linux.ibm.com>, "open list:LINUX
+ FOR POWERPC PA SEMI PWRFICIENT" <linuxppc-dev@lists.ozlabs.org>,
+ Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have a cache of MSI->LPI translations, it is pretty
-easy to implement kvm_arch_set_irq_inatomic (this cache can be
-parsed without sleeping).
+Em Tue, 11 Jun 2019 19:52:04 +0300
+Andy Shevchenko <andy.shevchenko@gmail.com> escreveu:
 
-Hopefully, this will improve some LPI-heavy workloads.
+> On Fri, Jun 7, 2019 at 10:04 PM Mauro Carvalho Chehab
+> <mchehab+samsung@kernel.org> wrote:
+> > Sphinx doesn't like orphan documents:  
+> 
+> >     Documentation/laptops/lg-laptop.rst: WARNING: document isn't included in any toctree  
+> 
+> >  Documentation/laptops/lg-laptop.rst             | 2 ++  
+> 
+> > diff --git a/Documentation/laptops/lg-laptop.rst b/Documentation/laptops/lg-laptop.rst
+> > index aa503ee9b3bc..f2c2ffe31101 100644
+> > --- a/Documentation/laptops/lg-laptop.rst
+> > +++ b/Documentation/laptops/lg-laptop.rst
+> > @@ -1,5 +1,7 @@
+> >  .. SPDX-License-Identifier: GPL-2.0+
+> >
+> > +:orphan:
+> > +
+> >  LG Gram laptop extra features
+> >  =============================
+> >  
+> 
+> Can we rather create a toc tree there?
+> It was a first document in reST format in that folder.
 
-Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
----
- virt/kvm/arm/vgic/vgic-irqfd.c | 36 ++++++++++++++++++++++++++++------
- 1 file changed, 30 insertions(+), 6 deletions(-)
+Sure, but:
 
-diff --git a/virt/kvm/arm/vgic/vgic-irqfd.c b/virt/kvm/arm/vgic/vgic-irqfd.c
-index 99e026d2dade..9f203ed8c8f3 100644
---- a/virt/kvm/arm/vgic/vgic-irqfd.c
-+++ b/virt/kvm/arm/vgic/vgic-irqfd.c
-@@ -77,6 +77,15 @@ int kvm_set_routing_entry(struct kvm *kvm,
- 	return r;
- }
- 
-+static void kvm_populate_msi(struct kvm_kernel_irq_routing_entry *e,
-+			     struct kvm_msi *msi)
-+{
-+	msi->address_lo = e->msi.address_lo;
-+	msi->address_hi = e->msi.address_hi;
-+	msi->data = e->msi.data;
-+	msi->flags = e->msi.flags;
-+	msi->devid = e->msi.devid;
-+}
- /**
-  * kvm_set_msi: inject the MSI corresponding to the
-  * MSI routing entry
-@@ -90,21 +99,36 @@ int kvm_set_msi(struct kvm_kernel_irq_routing_entry *e,
- {
- 	struct kvm_msi msi;
- 
--	msi.address_lo = e->msi.address_lo;
--	msi.address_hi = e->msi.address_hi;
--	msi.data = e->msi.data;
--	msi.flags = e->msi.flags;
--	msi.devid = e->msi.devid;
--
- 	if (!vgic_has_its(kvm))
- 		return -ENODEV;
- 
- 	if (!level)
- 		return -1;
- 
-+	kvm_populate_msi(e, &msi);
- 	return vgic_its_inject_msi(kvm, &msi);
- }
- 
-+/**
-+ * kvm_arch_set_irq_inatomic: fast-path for irqfd injection
-+ *
-+ * Currently only direct MSI injecton is supported.
-+ */
-+int kvm_arch_set_irq_inatomic(struct kvm_kernel_irq_routing_entry *e,
-+			      struct kvm *kvm, int irq_source_id, int level,
-+			      bool line_status)
-+{
-+	if (e->type == KVM_IRQ_ROUTING_MSI && vgic_has_its(kvm) && level) {
-+		struct kvm_msi msi;
-+
-+		kvm_populate_msi(e, &msi);
-+		if (!vgic_its_inject_cached_translation(kvm, &msi))
-+			return 0;
-+	}
-+
-+	return -EWOULDBLOCK;
-+}
-+
- int kvm_vgic_setup_default_irq_routing(struct kvm *kvm)
- {
- 	struct kvm_irq_routing_entry *entries;
--- 
-2.20.1
+1) I have a patch converting the other files on this dir to rst:
 
+	https://git.linuxtv.org/mchehab/experimental.git/commit/?h=convert_rst_renames_v4.1&id=abc13233035fdfdbc5ef2f2fbd3d127a1ab15530
+
+2) It probably makes sense to move the entire dir to
+Documentation/admin-guide.
+
+So, I would prefer to have the :orphan: here while (1) is not merged.
+
+Thanks,
+Mauro
 
 _______________________________________________
 linux-arm-kernel mailing list
