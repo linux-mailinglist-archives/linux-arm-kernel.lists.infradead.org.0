@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C8663D327
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:00:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B149C3D32D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:01:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hm54Vzi7IaBR5FW21+jvkf8DUyXm1mltmkZnOIKEGjE=; b=aInrpa685FB2au
-	ZyTrMG5YQ4D6LiUQ0ADg9P05Lry1unsRNI4SsQUrHq053wdGhbFmFWGmQMBN8DzXQDw/Z0Lvssllg
-	APvjJvCkboEIoPOfOHdKha2yfREHd48HY1wDONgDStNreDmhoAcp6gSy2cl31PeVfCoZtbv60a8O3
-	1zCCHg8WQK4k8ZyLUVxL2QoBkVpeHP9BVKO1kg4b/NZmSvVFUO//vpdOrSs0n82nqOHgwvNZY8WvN
-	XcuiiE0iUNgYHxqbG/4ey47hzdu8pZFWdcGlnqunEfwjhdIpQOVllsChjkpU8wnZr0XFzO/tpH9l3
-	LXCBffv8qj44AbhfP3ug==;
+	List-Owner; bh=7o4UoTi+2u9JR/ProAuaO7nFg01ptWAPSAEMWTXG5XE=; b=c0f56dSKBKTAdy
+	U1+2Moc5+fxUzuo9EV2SVbTqWkXTbsuYZdAeWrKk8wjPUj9Q27IJEChan6sLbyQKgl7UjzuiTVp9n
+	PfxoQ5W79FUNeVDf1X39uafdYOHdM2a72YzKVOnUUIkVW6WI/O+tAJBfwn+OExR1jAFNnBNKKB9KP
+	apwN+E+5CMc4HbSs72x4uwYEUs1PJfCARZ+8OnZrfjlw645A5ctqcoouFmaNAzH4/GTh72o9QKNGD
+	614W29yaDf0d77aT5Hppcf78BeoctoY3scfQfIq0eBgFVhBcFlGxtscT9G5MuU0FZy/v9XcLQUyp4
+	zEMSkoUhCNfSy5mza4Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hak87-0007RJ-Ld; Tue, 11 Jun 2019 17:00:15 +0000
+	id 1hak9W-00005l-Oe; Tue, 11 Jun 2019 17:01:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hak7y-000776-6p
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:00:07 +0000
+ id 1hak9L-0008WM-D8
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:01:32 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 88112337;
- Tue, 11 Jun 2019 10:00:05 -0700 (PDT)
-Received: from redmoon (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F5633F73C;
- Tue, 11 Jun 2019 10:00:03 -0700 (PDT)
-Date: Tue, 11 Jun 2019 17:59:43 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
-Subject: Re: [PATCHv5 04/20] PCI: mobiveil: Remove the flag
- MSI_FLAG_MULTI_PCI_MSI
-Message-ID: <20190611165935.GA22836@redmoon>
-References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
- <20190412083635.33626-5-Zhiqiang.Hou@nxp.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3EE85337;
+ Tue, 11 Jun 2019 10:01:30 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 20C3D3F73C;
+ Tue, 11 Jun 2019 10:01:29 -0700 (PDT)
+Date: Tue, 11 Jun 2019 18:01:27 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+Subject: Re: [PATCH 1/7] perf: arm64: Compile tests unconditionally
+Message-ID: <20190611170126.GH29008@lakrids.cambridge.arm.com>
+References: <20190611125315.18736-1-raphael.gault@arm.com>
+ <20190611125315.18736-2-raphael.gault@arm.com>
+ <20190611140907.GF29008@lakrids.cambridge.arm.com>
+ <20190611142356.GA28689@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190412083635.33626-5-Zhiqiang.Hou@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190611142356.GA28689@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_100006_303760_AC7F3EEF 
-X-CRM114-Status: GOOD (  15.96  )
+X-CRM114-CacheID: sfid-20190611_100131_492726_84E36BB5 
+X-CRM114-Status: GOOD (  14.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,62 +64,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: peterz@infradead.org, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, Raphael Gault <raphael.gault@arm.com>,
+ mingo@redhat.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 12, 2019 at 08:35:36AM +0000, Z.q. Hou wrote:
-> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+On Tue, Jun 11, 2019 at 11:23:56AM -0300, Arnaldo Carvalho de Melo wrote:
+> Em Tue, Jun 11, 2019 at 03:09:07PM +0100, Mark Rutland escreveu:
+> > On Tue, Jun 11, 2019 at 01:53:09PM +0100, Raphael Gault wrote:
+> > > In order to subsequently add more tests for the arm64 architecture
+> > > we compile the tests target for arm64 systematically.
+> > 
+> > Given prior questions regarding this commit, it's probably worth
+> > spelling things out more explicitly, e.g.
+> > 
+> >   Currently we only build the arm64/tests directory if
+> >   CONFIG_DWARF_UNWIND is selected, which is fine as the only test we
+> >   have is arm64/tests/dwarf-unwind.o.
+> > 
+> >   So that we can add more tests to the test directory, let's
+> >   unconditionally build the directory, but conditionally build
+> >   dwarf-unwind.o depending on CONFIG_DWARF_UNWIND.
+> > 
+> >   There should be no functional change as a result of this patch.
+> > 
+> > > 
+> > > Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+> > 
+> > Either way, the patch looks good to me:
+> > 
+> > Acked-by: Mark Rutland <mark.rutland@arm.com>
 > 
-> The current code does not support multiple MSIs, so remove
-> the corresponding flag from the msi_domain_info structure.
+> I'll update the comment, collect your Acked-by and apply the patch.
 
-Please explain me what's the problem before removing multi MSI
-support.
+That's great, thanks!
 
-Thanks,
-Lorenzo
+As a heads-up, there are still open ABI discussions to be had on the
+rest of the series, so while review would be appreciated, it would be
+best to hold off applying the remaining userspace bits for now.
 
-> Fixes: 1e913e58335f ("PCI: mobiveil: Add MSI support")
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
-> ---
-> V5:
->  - Corrected the subject.
-> 
->  drivers/pci/controller/pcie-mobiveil.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-> index 563210e731d3..a0dd337c6214 100644
-> --- a/drivers/pci/controller/pcie-mobiveil.c
-> +++ b/drivers/pci/controller/pcie-mobiveil.c
-> @@ -703,7 +703,7 @@ static struct irq_chip mobiveil_msi_irq_chip = {
->  
->  static struct msi_domain_info mobiveil_msi_domain_info = {
->  	.flags	= (MSI_FLAG_USE_DEF_DOM_OPS | MSI_FLAG_USE_DEF_CHIP_OPS |
-> -		   MSI_FLAG_MULTI_PCI_MSI | MSI_FLAG_PCI_MSIX),
-> +		   MSI_FLAG_PCI_MSIX),
->  	.chip	= &mobiveil_msi_irq_chip,
->  };
->  
-> -- 
-> 2.17.1
-> 
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
