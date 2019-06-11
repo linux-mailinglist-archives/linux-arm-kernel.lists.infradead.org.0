@@ -2,88 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B876C3D46D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:41:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 165773D471
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:42:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1EBiuS0s2CMzZ7uATbhjreWpQObXx1AovXqiGCRGEXw=; b=f3xC6mHRP0IyyH
-	b+PYP0w13MJr0K/YCFOuJnrrnBQDC+VXjqZkYd2lqs65M4gMBr3gkyyW+VHJBFfcvvBjv3Z2PjZiQ
-	HlLDNgGYZ01JXg+IAAO7vXSX/7M2EuR9ZkEttUEMii99M5sOXHgMiVUjJLvXx9XOCWK+77ZTqRGAx
-	r/qnlclyh1O9ZURX7jMew98ZaXuQL6DrZTZrC2M7g0p8AveOMb9/GERFbIh2kVwdCFXFcSRyHqsTN
-	9GETErqXAJcMr66oT3exBdVVvdy4Tn83qOBaAHob0b0K3WZ3pXTRyd9EAk8fHM02B41PwJX/G5YLB
-	9whOGLB6pFeHf5oWKGkw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=8ZTpOaExCSNpB0TybR4Ysh2ujPdR29Rg5ITHQFNbxoY=; b=tbmeyzhzLxKexTjuCovM7YBDDa
+	eCByNJh0sauGx5LC5xqaON+0NqUtfJkrEU6OOJlh8u12CADwnPydfuxPXk/3c2CmMs8g+e+UgNYcv
+	p6ZPyEIglh/BJCSGBqM5W4enMOt1WumcQVEIlq5zG0peYkTZA1wtWFYmptFrL8EM2TpZk/wGzMbno
+	0a2uiedMleOrG0Ob+Yj7L6FLB87ezDhGJCosgknd/fMAIeYU1C7lzmCeB/CwucotV/sVfIPxL0Kgt
+	O1+Y9LsGMUxkrYHSvHArxKJp4VETxqmHXTajBRWGHjs4GPYerfcnp58CVy8P/fIvJHu7ApYA+Jno9
+	qA+t6PBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakle-00087v-KI; Tue, 11 Jun 2019 17:41:06 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1hakn7-0008Tn-3c; Tue, 11 Jun 2019 17:42:37 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haklT-00087M-LM
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:40:56 +0000
-Received: by mail-oi1-f195.google.com with SMTP id g7so6420633oia.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 10:40:55 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=E6Szud1QEL0uh5kFNy/KSdJS6Ul+00nLiWCBMgcVJGg=;
- b=a30DHznLcvv08crkRIHb4VBg/MzAfdZwjVGie+yfhJxU/wqFl3+zQhF9EtgM3SBKHA
- hNp5WVPl7IILtLqJWVX5krMrr6qxGbiygV4187FmuDCUOp1f0iQVq15UglZUjZ34DSOl
- g6YbqKdMb+Sx0NSywAq3qPlSHlmZ1VGVTUrsUiAhoDWsmz1Z0olMaL54Dfq3CF4DKVSD
- erqx118AxDvw62xydTEXKcKrUnDz+ILpzDmnkcG2leKGJjoYOZrY7pcBoROP/mmoTslj
- 5vBJy+Xv2mYDddaqCmQJmUlO6AXi6+kti8D4a5Yqorj4pBsgEDW6o6LddUjPq0xWhE5x
- eoWw==
-X-Gm-Message-State: APjAAAWqfH7vdvsWx+BvNWNw0OAlOalKzOhVrt7/GG9fE9k5nYdfbAk8
- 3V5J1QJIpNE+FG+ABsVmbihRzY4Q
-X-Google-Smtp-Source: APXvYqwUiq4qsRwbdCFg1nDEY3ya8FuSMfWjiid0W8c/2dBySprjTijDhsYoNQ0hubjNQrYLxk9JJg==
-X-Received: by 2002:aca:5346:: with SMTP id h67mr15533847oib.55.1560274854045; 
- Tue, 11 Jun 2019 10:40:54 -0700 (PDT)
-Received: from mail-ot1-f52.google.com (mail-ot1-f52.google.com.
- [209.85.210.52])
- by smtp.gmail.com with ESMTPSA id w140sm1703700oie.32.2019.06.11.10.40.53
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 10:40:53 -0700 (PDT)
-Received: by mail-ot1-f52.google.com with SMTP id b7so12686824otl.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 10:40:53 -0700 (PDT)
-X-Received: by 2002:a05:6830:1192:: with SMTP id
- u18mr30452660otq.74.1560274853474; 
- Tue, 11 Jun 2019 10:40:53 -0700 (PDT)
+ id 1hakmw-0008TG-7c
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:42:27 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5BHgOgt082636;
+ Tue, 11 Jun 2019 12:42:24 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1560274944;
+ bh=L1ZI6V+eme81Ysy5VzFHN3z3CDSlappQ/iw4DCP1eAc=;
+ h=To:CC:From:Subject:Date;
+ b=qytAhdCaWAhqN9ic60l76ZqhxWvUYDM9f/wQLFZsX5vTImrJi90rgzu/oqJuKgicG
+ ib6HsdVMbyq2jVyBVCYcgj4Z2U9oEl/A5ArWa7Wd2aimJE9BWZTM6k+GZUScps6SQU
+ 4sp6vKxCjXcF1wtGzhKsa/AzVXlz03GiVWMhRNU0=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5BHgOMr091811
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 11 Jun 2019 12:42:24 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 11
+ Jun 2019 12:42:24 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 11 Jun 2019 12:42:24 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5BHgMip098421;
+ Tue, 11 Jun 2019 12:42:22 -0500
+To: Santosh Shilimkar <ssantosh@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+From: Tero Kristo <t-kristo@ti.com>
+Subject: [GIT PULL] firmware: ti-sci: changes for v5.3
+Message-ID: <5cfc0d85-a3f7-b96a-7bc6-c7b0250ed54c@ti.com>
+Date: Tue, 11 Jun 2019 20:42:21 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190517045753.3709-1-ran.wang_1@nxp.com>
- <20190523085104.GP9261@dragon>
-In-Reply-To: <20190523085104.GP9261@dragon>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Tue, 11 Jun 2019 12:40:42 -0500
-X-Gmail-Original-Message-ID: <CADRPPNRa11z98Rw5cgApn-2ZFMSTGj-h73wZThmgp9w8dQD4iw@mail.gmail.com>
-Message-ID: <CADRPPNRa11z98Rw5cgApn-2ZFMSTGj-h73wZThmgp9w8dQD4iw@mail.gmail.com>
-Subject: Re: [PATCH v2] arm64: dts: ls1028a: Fix CPU idle fail.
-To: Shawn Guo <shawnguo@kernel.org>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_104055_698922_4C5F9E74 
-X-CRM114-Status: GOOD (  16.04  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190611_104226_360388_8ACCB4C8 
+X-CRM114-Status: GOOD (  14.02  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,94 +90,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Bhaskar Upadhaya <bhaskar.upadhaya@nxp.com>,
- lkml <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Ran Wang <ran.wang_1@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Nishanth Menon <nm@ti.com>, "Ujfalusi, Peter" <peter.ujfalusi@ti.com>,
+ "Andrew F. Davis" <afd@ti.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 23, 2019 at 3:52 AM Shawn Guo <shawnguo@kernel.org> wrote:
->
-> On Fri, May 17, 2019 at 12:57:53PM +0800, Ran Wang wrote:
-> > PSCI spec define 1st parameter's bit 16 of function CPU_SUSPEND to
-> > indicate CPU State Type: 0 for standby, 1 for power down. In this
-> > case, we want to select standby for CPU idle feature. But current
-> > setting wrongly select power down and cause CPU SUSPEND fail every
-> > time. Need this fix.
-> >
-> > Fixes: 8897f3255c9c ("arm64: dts: Add support for NXP LS1028A SoC")
-> > Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
->
-> Leo, Bhaskar,
->
-> Do you guys agree with it?
+Hi Santosh,
 
-Sorry that I missed this email previously.  I agree with this change.
-CPU idle should use a low power state that could be waked up by
-interrupts and that should be PW20. And Ran is right that both PW20
-and PH20 are actually not power down state.
+Here's the collection of the TI SCI firmware changes for 5.3.
 
-- Leo
+This is based on the keystone clock driver pull request [1], which you 
+may want to wait until Stephen has picked it up.
 
->
-> Shawn
->
-> > ---
-> >  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi |   18 +++++++++---------
-> >  1 files changed, 9 insertions(+), 9 deletions(-)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > index b045812..bf7f845 100644
-> > --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > @@ -28,7 +28,7 @@
-> >                       enable-method = "psci";
-> >                       clocks = <&clockgen 1 0>;
-> >                       next-level-cache = <&l2>;
-> > -                     cpu-idle-states = <&CPU_PH20>;
-> > +                     cpu-idle-states = <&CPU_PW20>;
-> >               };
-> >
-> >               cpu1: cpu@1 {
-> > @@ -38,7 +38,7 @@
-> >                       enable-method = "psci";
-> >                       clocks = <&clockgen 1 0>;
-> >                       next-level-cache = <&l2>;
-> > -                     cpu-idle-states = <&CPU_PH20>;
-> > +                     cpu-idle-states = <&CPU_PW20>;
-> >               };
-> >
-> >               l2: l2-cache {
-> > @@ -53,13 +53,13 @@
-> >                */
-> >               entry-method = "arm,psci";
-> >
-> > -             CPU_PH20: cpu-ph20 {
-> > -                     compatible = "arm,idle-state";
-> > -                     idle-state-name = "PH20";
-> > -                     arm,psci-suspend-param = <0x00010000>;
-> > -                     entry-latency-us = <1000>;
-> > -                     exit-latency-us = <1000>;
-> > -                     min-residency-us = <3000>;
-> > +             CPU_PW20: cpu-pw20 {
-> > +                       compatible = "arm,idle-state";
-> > +                       idle-state-name = "PW20";
-> > +                       arm,psci-suspend-param = <0x0>;
-> > +                       entry-latency-us = <2000>;
-> > +                       exit-latency-us = <2000>;
-> > +                       min-residency-us = <6000>;
-> >               };
-> >       };
-> >
-> > --
-> > 1.7.1
-> >
+-Tero
+
+[1]: https://www.spinics.net/lists/arm-kernel/msg733157.html
+
+---
+
+The following changes since commit 3f1f22d8009035a641a359a09239bcc6ffac7bb9:
+
+   clk: keystone: sci-clk: extend clock IDs to 32 bits (2019-06-07 
+12:11:41 +0300)
+
+are available in the git repository at:
+
+   git://git.kernel.org/pub/scm/linux/kernel/git/kristo/linux 
+tags/ti-sci-for-5.3
+
+for you to fetch changes up to f9ff858a26cf36c01d16a1ea560280164465c7cd:
+
+   firmware: ti_sci: Parse all resource ranges even if some is not 
+available (2019-06-11 15:47:42 +0300)
+
+----------------------------------------------------------------
+Firmware - TI SCI changes for 5.3.
+
+- Couple of fixes to handle resource ranges and requesting response
+   always from firmware; these are only critical for upcoming j721e and
+   DMA support
+- Add processor control
+- Add support APIs for DMA
+- Add support for 32bit clock identifiers
+
+----------------------------------------------------------------
+Andrew F. Davis (1):
+       firmware: ti_sci: Always request response from firmware
+
+Peter Ujfalusi (2):
+       firmware: ti_sci: Add resource management APIs for ringacc, psi-l 
+and udma
+       firmware: ti_sci: Parse all resource ranges even if some is not 
+available
+
+Suman Anna (1):
+       firmware: ti_sci: Add support for processor control
+
+Tero Kristo (1):
+       firmware: ti_sci: extend clock identifiers from u8 to u32
+
+  drivers/firmware/ti_sci.c              | 1228 
++++++++++++++++++++++++++++-----
+  drivers/firmware/ti_sci.h              |  873 ++++++++++++++++++++++-
+  include/linux/soc/ti/ti_sci_protocol.h |  274 ++++++-
+  3 files changed, 2185 insertions(+), 190 deletions(-)
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
