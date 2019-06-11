@@ -2,61 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B0BA3C698
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 10:53:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A12643C69E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 10:54:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I6VkaVWqoREzV8T8UhybzPAnvOFMOm7cUylVN+4CXUs=; b=WUQxye6Pg3zgpx
-	TgXqEzK8FlmozZ1AR/cmB/QvmAI5wOG5Kp0o0Be/JNABLUmNKjlntcfFnr1l1kYeTLjZj2u9djN9a
-	mBXLpLHrZGgSV4w930pxelsv1zEY9uk+nVR366NjZ4mp8+uoqtguEe6+zve4DobwkYCTr2BDr7iLt
-	pBDeTaLd4gobikwytqBC/hpRGMuiZnYwgE8twMJc6xVavOvaSHBKr1n5lgF7jJfKLGP156ljV8emP
-	0Onp6+qFnOcq9wy/dQUXbNo84+xqN7jUBsLiPDzslHM+qSH5S2jaTjngFfTc/weCfFU51uMJXE+tu
-	VJgrJ4EuX6bau9ebZjGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bNKGznQNXxg/Zg2qGrvIVyzN1qHlw/pxqw7ijYeMphs=; b=lCo2+Lb3wvazMY
+	VVEdBx/BVZPdQsb4Ov1PbOxsSuLoJMtqlL2fEQSB55IZJ8NNcp9gAcBEKjYc8rg/RKFjuzOLW0Eww
+	+ttRMY4mc1xk89flbz5KscVjNgvpwkwKWEFmFZyl16mppwEEV+CIckWb7Hn9iHu/2lMLoW1tjCXGb
+	MyHcZt1s9+tCEzpgCGqFb2XQqSprkjVk6oOeoBTgEnG7YBKm7GLTVBnWG9vC4v1QPlwhZBuPQxB3r
+	qKmOJ2fb91sNXJD3lG/5CFMZPZ7R2XIjTT53rGqlLXpR2+iXGbjyGIU6RKHxo/ADFtLqldMqzFhx8
+	p277Syup3Wa5I+LZPp4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hacXB-0000u0-B6; Tue, 11 Jun 2019 08:53:37 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1hacXo-0001Op-4s; Tue, 11 Jun 2019 08:54:16 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hacVt-0000FP-DW
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 08:52:19 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.89)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1hacVl-0000Hr-C9; Tue, 11 Jun 2019 10:52:09 +0200
-Message-ID: <1560243127.13886.3.camel@pengutronix.de>
-Subject: Re: [PATCH v7 2/4] media: videodev2: add
- V4L2_FMT_FLAG_FIXED_RESOLUTION
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Hans Verkuil <hverkuil@xs4all.nl>, Maxime Jourdan
- <mjourdan@baylibre.com>,  Mauro Carvalho Chehab <mchehab@kernel.org>, Hans
- Verkuil <hans.verkuil@cisco.com>
-Date: Tue, 11 Jun 2019 10:52:07 +0200
-In-Reply-To: <9731b2db-efd4-87d0-c48d-87adec433747@xs4all.nl>
-References: <20190531093126.26956-1-mjourdan@baylibre.com>
- <20190531093126.26956-3-mjourdan@baylibre.com>
- <9731b2db-efd4-87d0-c48d-87adec433747@xs4all.nl>
-X-Mailer: Evolution 3.22.6-1+deb9u2 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1hacXZ-0001NN-Us; Tue, 11 Jun 2019 08:54:03 +0000
+Received: from p508fd648.dip0.t-ipconnect.de ([80.143.214.72]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1hacXV-00017y-P8; Tue, 11 Jun 2019 10:53:57 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: arm@kernel.org
+Subject: [GIT PULL 1/3] Rockchip dts32 updates for 5.3 round 1
+Date: Tue, 11 Jun 2019 10:53:57 +0200
+Message-ID: <3004130.oi6ZuZy1Zf@phil>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_015217_855020_FDF0C793 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20190611_015402_139169_81CD0C3F 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,43 +54,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-06-05 at 15:39 +0200, Hans Verkuil wrote:
-> Hi Maxime,
-> 
-> I am wondering if this flag shouldn't be inverted: you set
-> V4L2_FMT_FLAG_DYN_RESOLUTION if dynamic resolution is supported,
-> otherwise it isn't.
-> 
-> Can all the existing mainlined codec drivers handle midstream
-> resolution changes?
-> 
-> s5p-mfc, venus and mediatek can, but I see no SOURCE_CHANGE event in
-> the coda drivers, so I suspect that that can't handle this.
-> 
-> Philipp, what is the status of the coda driver for dynamic resolution
-> changes?
+Hi Arnd, Kevin, Olof,
 
-FTR, to my knowledge there is no dynamic resolution change support in
-the firmware, as there is no signal (interrupt nor picture run return
-value) to indicate that different headers were parsed.
+please find below and in the replies round1 of Rockchip updates for armsoc.
 
-I am planning to add the initial source change event required by the
-current decoder API documentation, but I am afraid there will be no
-support for source changes due to mid-stream resolution changes due to
-firmware limitations.
+As the tag implies this includes a lot of attention to the older rk3288-
+based Veyron line of ChromeOS devices.
 
-regards
-Philipp
+Please pull.
+
+Thanks
+Heiko
+
+The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
+
+  Linux 5.2-rc1 (2019-05-19 15:47:09 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.3-rockchip-dts32-1
+
+for you to fetch changes up to b8925b7c2f867df6ce3e20deb4b3e2b9b32b20ff:
+
+  ARM: dts: rockchip: Split GPIO keys for veyron into multiple devices (2019-06-06 12:41:04 +0200)
+
+----------------------------------------------------------------
+A lot more love for rk3288 in general and veyron specially with changes
+all over the place.
+
+----------------------------------------------------------------
+Caesar Wang (1):
+      ARM: dts: rockchip: fix PWM clock found on RK3288 Socs
+
+Douglas Anderson (10):
+      ARM: dts: rockchip: Remove bogus 'i2s_clk_out' from rk3288-veyron-mickey
+      ARM: dts: rockchip: Make rk3288-veyron-mickey's emmc work again
+      ARM: dts: rockchip: Make rk3288-veyron-minnie run at hs200
+      ARM: dts: rockchip: Add pin names for rk3288-veyron-minnie
+      ARM: dts: rockchip: Add pin names for rk3288-veyron-jerry
+      ARM: dts: rockchip: Mark that the rk3288 timer might stop in suspend
+      ARM: dts: rockchip: Add pin names for rk3288-veyron jaq, mickey, speedy
+      ARM: dts: rockchip: Switch to builtin HDMI DDC bus on rk3288-veyron
+      ARM: dts: rockchip: Add unwedge pinctrl entries for dw_hdmi on rk3288
+      ARM: dts: rockchip: Add HDMI i2c unwedging for rk3288-veyron
+
+John Keeping (1):
+      ARM: dts: rockchip: fix pwm-cells for rk3288's pwm3
+
+Matthias Kaehlcke (9):
+      ARM: dts: rockchip: raise CPU trip point temperature for veyron to 100 degC
+      ARM: dts: rockchip: raise GPU trip point temperatures for veyron
+      ARM: dts: raise GPU trip point temperature for speedy to 80 degC
+      ARM: dts: rockchip: Add #cooling-cells entry for rk3288 GPU
+      ARM: dts: rockchip: Use GPU as cooling device for the GPU thermal zone of the rk3288
+      ARM: dts: rockchip: remove GPU 500 MHz OPP on rk3288
+      ARM: dts: rockchip: Use the GPU to cool CPU thermal zone of veyron mickey
+      ARM: dts: rockchip: Configure the GPU thermal zone for mickey
+      ARM: dts: rockchip: Split GPIO keys for veyron into multiple devices
+
+ arch/arm/boot/dts/rk3288-veyron-chromebook.dtsi |  27 +--
+ arch/arm/boot/dts/rk3288-veyron-jaq.dts         | 207 +++++++++++++++++++
+ arch/arm/boot/dts/rk3288-veyron-jerry.dts       | 207 +++++++++++++++++++
+ arch/arm/boot/dts/rk3288-veyron-mickey.dts      | 234 +++++++++++++++++++++-
+ arch/arm/boot/dts/rk3288-veyron-minnie.dts      | 254 ++++++++++++++++++++++--
+ arch/arm/boot/dts/rk3288-veyron-pinky.dts       |   2 +-
+ arch/arm/boot/dts/rk3288-veyron-speedy.dts      | 219 ++++++++++++++++++++
+ arch/arm/boot/dts/rk3288-veyron.dtsi            |  29 ++-
+ arch/arm/boot/dts/rk3288.dtsi                   |  30 +--
+ 9 files changed, 1143 insertions(+), 66 deletions(-)
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
