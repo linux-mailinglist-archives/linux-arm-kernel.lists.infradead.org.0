@@ -2,88 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF8193C1F9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 06:05:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC96C3C20D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 06:22:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B5hF4GQfMmnKAM3M8VFDpPaDv3SnDxz9YPMubYs4Wm4=; b=tD3cPikg8cb4f9
-	MaijQQffJnKnkZGeLkdE1wri9DmFlE6641ghs8TPc0tMc88ZxIoXIu3cfEsP04zo/oCZHYKzCSQo6
-	8ECy0HFl3zuNDrcdAokxsPQ1fA2h6e98QZNEsy/vg5ZTJEyaMn/5eMhjcbqQP5KOZ99ef0cWSB6tB
-	qQpNAOklhTtApZG8Uy+3oLh1kCRViR5EUUdzAuKNFBiMVMnIfQQWqpx6a0t5dg7zHXBifWWcdsiVX
-	VzIIhp6Cc95ge4MELRlL3nhz/I6lDaCxjUcc3Kz620AutgV5Lj3oZzFEEXo1HBwLVNP+kXU4iHkxO
-	UDoek3q9eXTegoISKN+A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5EKm6pht0u+8Hlv///hkFrWL3xOw1a2v6AOCp6QpDAI=; b=U0rYN9qSpzWiNp
+	mwdIV1PLmQWk3sJ9jwMh1j6l0ofFIXcf/Ctj3P0cJpPVcuoHM9JhBNrrbY0bGroMUP/V/VzToD0jM
+	09CEoY2vcv0BJq7cZp8AF0X2hjXQyHzkZUn1U/83VPYALk3OUcYFraHjW7Dasm2sqqefzOVFrXiPb
+	3wh6wpbcSAXHN++dkyyp+jZU+ACqtsesuNHj/O0iosLm354BRxbomkMUI9bXJVixIFkC2NciL0cH0
+	NNpWMGQk/E4UNJjZ75tji6aS1nYY4puDfIH4VpgahjhzRyyw+LmEfD+pNfL/7CIPoC5KKYyxsb4mZ
+	DopXy3P1i9xAqi/zSsoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haY2d-00088G-A5; Tue, 11 Jun 2019 04:05:47 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1haYJA-0004tN-BI; Tue, 11 Jun 2019 04:22:52 +0000
+Received: from szxga01-in.huawei.com ([45.249.212.187] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haY0w-0005lP-Ad
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 04:04:04 +0000
-Received: by mail-pg1-x541.google.com with SMTP id l19so3556008pgh.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Jun 2019 21:04:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=M8dK47yPhynvSehskkuhR0uoKpp2uUP0x/D6+OPbrUg=;
- b=CcUYJwRYFPcbjY4eu0n/t203Kb6yWjUPmTkt3aooyO0UUZofpy4cpboC6TwF076Ios
- ZWILIMTCOWl4KnH2TWGccw1JJqig6+YYtxMUTrG3nlZqucwadYAgNXi6pGreSG31TIXb
- RJFX+AUwh7s4gdYWU+Ew7z54dQtjsrzL7NH6c=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=M8dK47yPhynvSehskkuhR0uoKpp2uUP0x/D6+OPbrUg=;
- b=HpxHfr/Ood8HnSB6SduREexAXSHREHFQY/5kv4ilTKXz2BVbUnbxbnrJmYh6+puq30
- BSUQFpFU2Frwbk3t5RRzI0t9A6z6TZDyKM/1vnFb/Njjqpuls2Dzk7cKx5RVmmKUyo8+
- mUW/36GOGl9Quf4bjjQPY+lDhYmzJ0/vOl/DXxlNXFgtn3ZjOSPD4o6FHMD8lgmFfU+I
- f+4zx+hKuoZO7ZOjVo82mGbCw+1nmyHicywEoaYgKoY6OOLyKzHOSHESvHSko+pF18bz
- X4EKkFhBRIuFJy8VaJyuX6VHSx+CnKvTP7J+I5KpjUdICVMkA8o7f/6DrN9OPV2GDa7+
- +LrQ==
-X-Gm-Message-State: APjAAAXDsXgvjwrnwRHdvx/EHbsFTglw6cNOQlcj+ccuLVasN4YbIGxh
- ZhxAnTwidPbRWuYy8KosiMpw/w==
-X-Google-Smtp-Source: APXvYqzfYIuckJzyOvuDvYV3JLxaoW5r0AK9O0deBBd8fMs6LODhYT7Aj2K7vKmQFzwpcjHKS1s46A==
-X-Received: by 2002:aa7:804c:: with SMTP id y12mr76278547pfm.94.1560225841344; 
- Mon, 10 Jun 2019 21:04:01 -0700 (PDT)
-Received: from exogeni.mtv.corp.google.com
- ([2620:15c:202:1:5be8:f2a6:fd7b:7459])
- by smtp.gmail.com with ESMTPSA id y133sm13301185pfb.28.2019.06.10.21.04.00
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 10 Jun 2019 21:04:00 -0700 (PDT)
-From: Derek Basehore <dbasehore@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5/5] drm/mtk: add panel orientation property
-Date: Mon, 10 Jun 2019 21:03:50 -0700
-Message-Id: <20190611040350.90064-6-dbasehore@chromium.org>
-X-Mailer: git-send-email 2.22.0.rc2.383.gf4fbbf30c2-goog
-In-Reply-To: <20190611040350.90064-1-dbasehore@chromium.org>
-References: <20190611040350.90064-1-dbasehore@chromium.org>
+ id 1haYIu-0004sD-Pt
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 04:22:38 +0000
+Received: from DGGEMM406-HUB.china.huawei.com (unknown [172.30.72.54])
+ by Forcepoint Email with ESMTP id 2B09EFC6017021BD9648;
+ Tue, 11 Jun 2019 12:22:26 +0800 (CST)
+Received: from dggeme754-chm.china.huawei.com (10.3.19.100) by
+ DGGEMM406-HUB.china.huawei.com (10.3.20.214) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Tue, 11 Jun 2019 12:22:25 +0800
+Received: from [127.0.0.1] (10.184.212.80) by dggeme754-chm.china.huawei.com
+ (10.3.19.100) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1591.10; Tue, 11
+ Jun 2019 12:22:24 +0800
+Subject: Re: [PATCH v2 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>, <linux@armlinux.org.uk>,
+ <peterz@infradead.org>, <mingo@redhat.com>, <will.deacon@arm.com>,
+ <arnd@arndb.de>, <longman@redhat.com>, <linux-arch@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <tglx@linutronix.de>, <bp@alien8.de>, <hpa@zytor.com>, <x86@kernel.org>
+References: <20190329152006.110370-1-alex.kogan@oracle.com>
+ <20190329152006.110370-4-alex.kogan@oracle.com>
+From: "liwei (GF)" <liwei391@huawei.com>
+Message-ID: <cc3eee8c-5212-7af5-c932-897ab8f3f8bf@huawei.com>
+Date: Tue, 11 Jun 2019 12:22:05 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
+In-Reply-To: <20190329152006.110370-4-alex.kogan@oracle.com>
+X-Originating-IP: [10.184.212.80]
+X-ClientProxiedBy: dggeme714-chm.china.huawei.com (10.1.199.110) To
+ dggeme754-chm.china.huawei.com (10.3.19.100)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_210402_496350_1B4A48D5 
-X-CRM114-Status: GOOD (  12.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_212237_074020_195FE11F 
+X-CRM114-Status: GOOD (  18.63  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,58 +76,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Derek Basehore <dbasehore@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- Sean Paul <sean@poorly.run>, intel-gfx@lists.freedesktop.org,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, Rob Herring <robh+dt@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
- Sam Ravnborg <sam@ravnborg.org>, linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>
+Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
+ daniel.m.jordan@oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This inits the panel orientation property for the mediatek dsi driver
-if the panel orientation (connector.display_info.panel_orientation) is
-not DRM_MODE_PANEL_ORIENTATION_UNKNOWN.
+Hi Alex,
 
-Signed-off-by: Derek Basehore <dbasehore@chromium.org>
----
- drivers/gpu/drm/mediatek/mtk_dsi.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+On 2019/3/29 23:20, Alex Kogan wrote:
+> In CNA, spinning threads are organized in two queues, a main queue for
+> threads running on the same node as the current lock holder, and a
+> secondary queue for threads running on other nodes. At the unlock time,
+> the lock holder scans the main queue looking for a thread running on
+> the same node. If found (call it thread T), all threads in the main queue
+> between the current lock holder and T are moved to the end of the
+> secondary queue, and the lock is passed to T. If such T is not found, the
+> lock is passed to the first node in the secondary queue. Finally, if the
+> secondary queue is empty, the lock is passed to the next thread in the
+> main queue. For more details, see https://arxiv.org/abs/1810.05600.
+> 
+> Note that this variant of CNA may introduce starvation by continuously
+> passing the lock to threads running on the same node. This issue
+> will be addressed later in the series.
+> 
+> Enabling CNA is controlled via a new configuration option
+> (NUMA_AWARE_SPINLOCKS), which is enabled by default if NUMA is enabled.
+> 
+> Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
+> Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
+> ---
+>  arch/x86/Kconfig                      |  14 +++
+>  include/asm-generic/qspinlock_types.h |  13 +++
+>  kernel/locking/mcs_spinlock.h         |  10 ++
+>  kernel/locking/qspinlock.c            |  29 +++++-
+>  kernel/locking/qspinlock_cna.h        | 173 ++++++++++++++++++++++++++++++++++
+>  5 files changed, 236 insertions(+), 3 deletions(-)
+>  create mode 100644 kernel/locking/qspinlock_cna.h
+> 
+(SNIP)
+> +
+> +static __always_inline int get_node_index(struct mcs_spinlock *node)
+> +{
+> +	return decode_count(node->node_and_count++);
+When nesting level is > 4, it won't return a index >= 4 here and the numa node number
+is changed by mistake. It will go into a wrong way instead of the following branch.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-index 4a0b9150a7bb..08ffdc7526dd 100644
---- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-@@ -782,10 +782,18 @@ static int mtk_dsi_create_connector(struct drm_device *drm, struct mtk_dsi *dsi)
- 			DRM_ERROR("Failed to attach panel to drm\n");
- 			goto err_connector_cleanup;
- 		}
-+
-+		ret = drm_connector_init_panel_orientation_property(&dsi->conn);
-+		if (ret) {
-+			DRM_ERROR("Failed to init panel orientation\n");
-+			goto err_panel_detach;
-+		}
- 	}
- 
- 	return 0;
- 
-+err_panel_detach:
-+	drm_panel_detach(dsi->panel);
- err_connector_cleanup:
- 	drm_connector_cleanup(&dsi->conn);
- 	return ret;
--- 
-2.22.0.rc2.383.gf4fbbf30c2-goog
+
+	/*
+	 * 4 nodes are allocated based on the assumption that there will
+	 * not be nested NMIs taking spinlocks. That may not be true in
+	 * some architectures even though the chance of needing more than
+	 * 4 nodes will still be extremely unlikely. When that happens,
+	 * we fall back to spinning on the lock directly without using
+	 * any MCS node. This is not the most elegant solution, but is
+	 * simple enough.
+	 */
+	if (unlikely(idx >= MAX_NODES)) {
+		while (!queued_spin_trylock(lock))
+			cpu_relax();
+		goto release;
+	}
+
+> +}
+> +
+> +static __always_inline void release_mcs_node(struct mcs_spinlock *node)
+> +{
+> +	__this_cpu_dec(node->node_and_count);
+> +}
+> +
+> +static __always_inline void cna_init_node(struct mcs_spinlock *node, int cpuid,
+> +					  u32 tail)
+> +{
+
+Thanks,
+Wei
 
 
 _______________________________________________
