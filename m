@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5E52418E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 01:29:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24EA5418F0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 01:32:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1E9njzifUbviYrVT2kAEsLNOBooOEOd2+fwzvgzKmts=; b=GlqobaqxhVCMxR
-	cFzrmESYf3uLiTNm4zQo8oLSFPa8jggDESbKPGnL7hpzEAXFBnRbjrVIgHvB/Nks/II9XQWXj/Luf
-	1zAkK32exqX8/AAFkzCos+QURyzQ4X04TV9gYDbt1k/gYiL1SRK8Kg+5CQFK626ppfgGEe8wCct8m
-	cf3/p5oztYQQme/wGOJjP+xArfpNRLIwU534+yjak69BZwjMQ/lrWtnyDhnlFwqOwpLDErSxRaEk+
-	LOmnYKqVvJs9n6FICQQd67oF16d4elB9AOPAAQWVdkCqoCdJSSfr9RbHTl+hRZTPQvuSyU3/HM1jd
-	Ov5i2BYhzl5zB6aRYxCw==;
+	List-Owner; bh=MmNbViuJo9G+960b6sMAr+GWg8cvOdNI7lCw9z1er4E=; b=MLZrAitpRGBV7u
+	qUcJ++K+Cn9wNEgLxhg0o+inthdCfKqE75HlGrwBTHEZSCv80pFYcfX+9HA8KzoYEKh502JsM82OA
+	VowUb8SZJPcxWsrZozchMhNuxrkwlVONrBvJASeCF2Z2FMWBHmAkHSBK98bMfr7sFWcSvG2CiGK+n
+	B8KbawaNCvAdOBNFfv/fVI9LsHU7sPv3up64I7SaHYBL5B9KjNSWgg5GCHlDkQc/aQ/qAHtxtCpIC
+	14KKWT75oNpM7Tgg70YGol48I8DTRK7zpCXeBJOBfVX8B1ErvSTo/YYLibqo7T7h5ewkb32kthwcy
+	A5yhkqYEIob2/KVdYIcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haqCQ-0000cX-Tq; Tue, 11 Jun 2019 23:29:06 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1haqFZ-0002wc-Ot; Tue, 11 Jun 2019 23:32:21 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haqCD-0000af-MW
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 23:28:54 +0000
-Received: by mail-pf1-x442.google.com with SMTP id a186so8397359pfa.5
+ id 1haqFQ-0002v4-4Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 23:32:13 +0000
+Received: by mail-pf1-x443.google.com with SMTP id r7so2521957pfl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 16:28:53 -0700 (PDT)
+ Tue, 11 Jun 2019 16:32:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=+oMmkCfixuI/MqPYHub3W35V/q9CnrMMpoLjwoXjlsg=;
- b=heQKtZwm9AYpXp4xFj2WNqLeBV6TSqS+fbbwm3nUiGF0ueyGWMc5iH8uau3G+73CkY
- KJiIn0dJUCjTA1gUeYJv6Tao99oW/4d+ObEIOA+7kczKgDDaIccrv2xK51zkyjOKwlk4
- lyCeKfNvBqg9DctrZzfhfbAjN5WUeZtJjp3OmqUqf0CRhqHjFBFwmnJTp+GeRkc/inhZ
- 3Mcm6Wp7bO17hqFK0m7LBS6GgOHYymrU01Sqbp7JriYcorZ/fp8vWhYcvPkz27Dut+lZ
- Dzm06Gd4m6aYSWzrZudV8U3FR0/iZUzyewsMF4yifXMvHHx9ym+jtX0ZdZsk8Cqk13as
- MVLA==
+ :mime-version; bh=n4utO1qIjYj4MGuS7hIfGXs+tpiAYsWzBnQD5g4fpBU=;
+ b=OWHL9uXMvXBp4WyP6XbYf8ngdd9BOGYtfKlznowe2eZXC8BTT87VlB0/rYBBnjrDKD
+ pvCvc3dKtXEt2ccEl+5tO3LuvjVUteL52BK0k4m/G6hGBfSyL8JdLtXGCfGhVgHD5/hZ
+ zXTEVipfe5LP1ChUjH+6SDLz2sScHI72x/NfbZmtV1mznhwunG7ogeC3xqpQwsRHsAud
+ Lr6bHi0YxzMX7vIUYMvbbg/Bvcxz7PYvRK3hGd0DnhD285skUhCFS+YNvY6WycsnwuwC
+ SLC69nfTolSPUMIXbkdaINLayG9V2CC1rDYPMC2S1/r0245/ibabd9IxaQCT86cP1u2D
+ irpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=+oMmkCfixuI/MqPYHub3W35V/q9CnrMMpoLjwoXjlsg=;
- b=s4QL+fNd96ONyyPeYQUpYcpNiv8tkd+06I/keOWasURoDmscLno9dvBCQ+HADbWmxS
- xa9CWrbpZKTkwm3HyewhLbIXtLoxE9IVD4LiroaiIv9drwbK8vR3FY+SUB+NsEknbqo4
- lg39qOjeKDpoeNbyKyFIoeODidtNj2+at9HqvWsPLBtIQUtJH2nGZvgLWnKYeXPUWjE8
- ROavmBLs7Tvo9D2BlL9zdL5Jotu/xXc+dyPzlanqMe53MGIp8CHNXnMAe6luLbSUc0yy
- gCckf2VtZOGdnH7GN5VQyyxsfi+HXPbr5/Ygia98qkJYQhu8Hpe1Ggr3mzfvqhf6i5ou
- k37A==
-X-Gm-Message-State: APjAAAXLWe8t0heoa/scfxMVWJEKy5m5qyzxYsY4Dtp85rkBnugkjZ79
- tT/xb2nrKZSk7tDzaAgj/RMXzOSCImg=
-X-Google-Smtp-Source: APXvYqyypyOI2ab62NriV/Ikw2ubSujEH42W7AEpYKg52+a33UKb21IRMffBKdbn2eKlFyi34SuhAg==
-X-Received: by 2002:a62:58c4:: with SMTP id
- m187mr25340442pfb.147.1560295732812; 
- Tue, 11 Jun 2019 16:28:52 -0700 (PDT)
+ bh=n4utO1qIjYj4MGuS7hIfGXs+tpiAYsWzBnQD5g4fpBU=;
+ b=B0E5qBKQQKcDv01O5OiYmNP3NLZyNghwqVWcEnQyb8kUcIQeIvaWtwZSK1kC51K2eD
+ X77YeGBvhA8bGoGrdP0rqRuJhd9CGA+4eBReRGoK9bO2O6TudVyeZmXpI/NnUsMUmdio
+ 9cUfe2Y3tAce479R1/93x7jIJfS6ZwAeUAwc//MnMpS/kzJMiJVM3UjrSCq1y9gNfcrw
+ z61fVcgl7ZF/wq0iGIYhg6CM601tjrwpZwolJAtMkYhFKf7Bvk3uZSPDcVUJjwgLlUEX
+ XN4X2t4EaDe4FNBpO/hhklqsk8ANrVJRvC07Iy+i9xRUez6hP0eEEGyekrOUtD48loQt
+ kAkQ==
+X-Gm-Message-State: APjAAAUbSxoeWlNwlryiA453BVCgsrDo4yQOgODoB2KGMItZI6HCNbmp
+ tjeGaaSBXLRmRObmpuYXpfhqwQ==
+X-Google-Smtp-Source: APXvYqwWX/bN3QMS+ZSVHnHRL4KnDn8A/IIaaCNAM7jGCzy6OnJYRwGBmJaNVgi34cIXq1tip8qnTw==
+X-Received: by 2002:a62:d0:: with SMTP id 199mr51540334pfa.253.1560295931319; 
+ Tue, 11 Jun 2019 16:32:11 -0700 (PDT)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
  [71.197.186.152])
- by smtp.googlemail.com with ESMTPSA id f11sm217738pjg.1.2019.06.11.16.28.51
+ by smtp.googlemail.com with ESMTPSA id w36sm14250463pgl.62.2019.06.11.16.32.10
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 11 Jun 2019 16:28:51 -0700 (PDT)
+ Tue, 11 Jun 2019 16:32:10 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 1/2] arm64: defconfig: enable Lima driver
-In-Reply-To: <d3275b3d-7b1a-369c-11c5-e62553a383cf@baylibre.com>
-References: <20190606085645.31642-1-narmstrong@baylibre.com>
- <d3275b3d-7b1a-369c-11c5-e62553a383cf@baylibre.com>
-Date: Tue, 11 Jun 2019 16:28:51 -0700
-Message-ID: <7hy3273dn0.fsf@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH 0/4] ARM: dts: meson8b: add VDDEE / mali-supply
+In-Reply-To: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
+References: <20190525190204.7897-1-martin.blumenstingl@googlemail.com>
+Date: Tue, 11 Jun 2019 16:32:10 -0700
+Message-ID: <7htvcv3dhh.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_162853_731816_EBEF2B46 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20190611_163212_181218_178B9375 
+X-CRM114-Status: GOOD (  12.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -94,49 +93,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arnd@arndb.de, linux-kernel@vger.kernel.org, arm@kernel.org, olof@lixom.net,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
 
-> On 06/06/2019 10:56, Neil Armstrong wrote:
->> A bunch of arm64 boards can now use the Lima driver, let's enable it
->> in defconfig, it will be useful to have it enabled for KernelCI
->> boot and runtime testing.
->> 
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> ---
->>  arch/arm64/configs/defconfig | 1 +
->>  1 file changed, 1 insertion(+)
->> 
->> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
->> index d588ceb9aa3c..7e9d684332be 100644
->> --- a/arch/arm64/configs/defconfig
->> +++ b/arch/arm64/configs/defconfig
->> @@ -505,6 +505,7 @@ CONFIG_DRM_HISI_HIBMC=m
->>  CONFIG_DRM_HISI_KIRIN=m
->>  CONFIG_DRM_MESON=m
->>  CONFIG_DRM_PL111=m
->> +CONFIG_DRM_LIMA=m
->>  CONFIG_DRM_PANFROST=m
->>  CONFIG_FB=y
->>  CONFIG_FB_MODE_HELPERS=y
->> 
+> EC-100 and Odroid-C1 use a "copy" of the VCCK regulator as "VDDEE"
+> regulator. VDDEE supplies the Mali GPU and various other bits within
+> the SoC.
 >
-> Hi Kevin,
+> The VDDEE regulator is not exclusive to the Mali GPU so it must not
+> change it's voltage. The GPU OPP table has a fixed voltage for all
+> frequencies of 1.10V. This matches with what u-boot sets on my EC-100
+> and Odroid-C1.
 >
-> Could you apply this changeset on the linux-amlogic tree ?
->
+> Dependencies:
+> - compile time: patch #4 depends on my other patch "ARM: meson8b-mxq:
+>   better support for the TRONFY MXQ" from [0]
+> - runtime: we don't want the kernel to change the output of the VDDEE
+>   regulator to the maximum value. Thus the PWM driver has to be able
+>   to read the PWM period and duty cycle from u-boot. This is supported
+>   with my series called "pwm-meson: cleanups and improvements" from [1]
 
-No, this should go through arm-soc (already cc'd)
+Just FYI... unless I hear otherwise, I'll wait for the PWM cleanups to
+land before queuing this series.
 
 Kevin
-
 
 _______________________________________________
 linux-arm-kernel mailing list
