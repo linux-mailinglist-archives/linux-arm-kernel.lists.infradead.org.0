@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2157C41851
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:41:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5843F41863
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 00:49:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yc0taYP1vVAv78UBkQ+sUvaYbQkg7k7VWllqrjk3Jo8=; b=qws9nzNSqkA0b1
-	3ZQqf2CnKgLuOsXqCkdCZGo5YktNgR47jqY7IbtHnnFS+WzG/vuheK39GBu2F/lCVZZhEpDk/FZdq
-	sQt66+H0I1mHq6fUNC8oDxR/CQyo87JuW5Tel0Jx5GnU2o4ZHA8GJqrRGKWiQSDg6G+wUKaF4Zmw+
-	myeRNsUVkIwFDhjbILSL3YOROsvLPfxW5KoS9ALa2wbhL++5a8cU9n9HPg1LBjPeu7BP3ineG6Kcw
-	RvJbu3IT7mGN9B2X29vcuLFx9hIHf8YUSMjPqm0+FpEXY1Ylu7D8eMIhwZhR1Y5Vrel0kIQW9einq
-	nLmhjl1gee+v3wcA+AWA==;
+	List-Owner; bh=UkM16Nueu7n32rDufVN5X9YnIUZZKvGfmTM4eu5QQF0=; b=SQBWktxvuc97xD
+	CUj8Qnh9K7VoP8xl9Odr66S4KNtewd1BV5A6x40AYS2HtZe8rCyPxftZu5rKMmojwwihd1C3YsPWh
+	aVm2lRUtnfj2AaVMG5NwW8gD/G7CuojBsNuKJKJnZQIAsR8w8fv9N+P8QbdpYxDyOy9wEuRkhtxK7
+	d4Zc8WIvwxB2RIeEzvEZleSlOqnM4uHTX5KYqaTaZBFwRJCrLLT4WI728M3K7oPou2ggc6hDzOj8C
+	JxBUshNLoFhDGYRe3Pm59ppfMLLQQnc6Nyuk6CNUJKKjGJS3zhvRDxUjXonu314KpjDUCU/C5FDLx
+	drjaKmqSsB2tYjJ7sDEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hapS4-0005wr-MS; Tue, 11 Jun 2019 22:41:12 +0000
-Received: from mail-it1-f193.google.com ([209.85.166.193])
+	id 1hapaQ-0008Pp-CD; Tue, 11 Jun 2019 22:49:50 +0000
+Received: from mail-it1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hapRe-0005nM-Te; Tue, 11 Jun 2019 22:40:48 +0000
-Received: by mail-it1-f193.google.com with SMTP id x22so7529667itl.2;
- Tue, 11 Jun 2019 15:40:46 -0700 (PDT)
+ id 1hapaF-0008PR-Ga
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 22:49:41 +0000
+Received: by mail-it1-f194.google.com with SMTP id j204so7519988ite.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Jun 2019 15:49:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HI3rHUK26/S2B0LA3WlM09q3Q/jcQRPOrltE5Dys4vg=;
- b=SubqXtmy5xBdt95Eqnsu5NFkjrylz3sRlabPHuSnSnXpnMO/czwfAGPXhTyYI67dOf
- BpDswP+WUVPyQLbEcIEMaQhUnSNn3gqai52L8Sfj5Cr0sHomr1tUaAfvJnsFW/NoIlws
- pjawxanXcB8O0NNo1vJi36hRFyRMP7R1ZpE4e3FnPQJUmorcO3//SLlUzRmIPebqSw2Y
- OZLu59WQn1fxBSQO/aZgJ6TzRFX8oyd/AbbazgT+g5clubuGDMAmR4fXFRlnfgdTi4+R
- O+qLfZ1Bbu1YtEoU3i2RKmBUc8/HiHS+Wm55KMHzVR4FxmSMlb90w8PFZ8llrRUTLvpX
- 2KdQ==
-X-Gm-Message-State: APjAAAWTcXgDrFmYk96keHVP1eWO5DA7S2f36mpeH6z4sZ+zSh/SM0nL
- x6Bb0LXIxOUrNC6KPAw2Ow==
-X-Google-Smtp-Source: APXvYqyYN7ZbEDoYi00MhHLqHL7FwPdCa2uF9Kv/WyYmja0MIBn3v9bIz1f2IeqAvvSfdbDWHNDRAg==
-X-Received: by 2002:a24:b303:: with SMTP id e3mr18466988itf.170.1560292845706; 
- Tue, 11 Jun 2019 15:40:45 -0700 (PDT)
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=HkF898wZHCzno2ojSJAmMX3GvOSzIz/fM8o6cCEwLdI=;
+ b=K3DWtrD5kRd06HfooqKvFnhmXO1h2k2vxFS+ABNUSXTlzCBoxwAHuoA+wpyCyMvLTR
+ rW2TBiOO25bxKIodzY9XdfWGcsNR7/2pzhq6MJys3VQHLmxOSySsrsokGbEWSA/gFdl0
+ kWBZtz05cMwD1zXJZbt7OLva5GE4cxqBvIA97WjTU+U0YY5dBhaacNiLXZ/X4F3Rrvad
+ /NEBd89aAp0xzNAqb89IHDjhPiDwWHL+4pEnlWQjDV5SZR2XO7HA5G2fmu+iK9hYqKfl
+ X42cIaDhE17hksCbfNgB46tyN892Hlcg6cfU8P1DgAMQlEKsixPCY034czVZrNuWWoh3
+ k/Ng==
+X-Gm-Message-State: APjAAAVU8xbgerEb1Cg5OSnjerfLBUxGZdEktCZCgihNp8NgGg0uwsjh
+ YAKbWFBp7ouwgGwV+yIErQ==
+X-Google-Smtp-Source: APXvYqyTb9wqkl6RDKvaXUUZpQ/RweIaT0vnNcURHeZ0x1GwjwZVJDARDy8ByqA9bPKBIVmR8U7GuA==
+X-Received: by 2002:a02:7087:: with SMTP id f129mr42451004jac.38.1560293378434; 
+ Tue, 11 Jun 2019 15:49:38 -0700 (PDT)
 Received: from localhost (ip-174-149-252-64.englco.spcsdns.net.
  [174.149.252.64])
- by smtp.gmail.com with ESMTPSA id p10sm5553716iob.54.2019.06.11.15.40.44
+ by smtp.gmail.com with ESMTPSA id r69sm1877671itc.11.2019.06.11.15.49.35
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 11 Jun 2019 15:40:45 -0700 (PDT)
-Date: Tue, 11 Jun 2019 16:40:41 -0600
+ Tue, 11 Jun 2019 15:49:37 -0700 (PDT)
+Date: Tue, 11 Jun 2019 16:49:33 -0600
 From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [1/2] dt-bindngs: display: panel: Add BOE tv101wum-nl6 panel
- bindings
-Message-ID: <20190611224041.GA407@bogus>
-References: <20190608070230.55381-1-jitao.shi@mediatek.com>
+To: Peter Robinson <pbrobinson@gmail.com>
+Subject: Re: [PATCH 1/3] arm: imx6sx: udoo: Use the correct style for SPDX
+ License Identifier
+Message-ID: <20190611224933.GA8624@bogus>
+References: <20190601070718.26971-1-pbrobinson@gmail.com>
+ <20190601070718.26971-2-pbrobinson@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190608070230.55381-1-jitao.shi@mediatek.com>
+In-Reply-To: <20190601070718.26971-2-pbrobinson@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_154047_024691_B95CD850 
-X-CRM114-Status: GOOD (  14.45  )
+X-CRM114-CacheID: sfid-20190611_154939_552242_7BDD65CE 
+X-CRM114-Status: GOOD (  21.35  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -76,6 +76,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.194 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,78 +93,244 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, stonea168@163.com,
- dri-devel@lists.freedesktop.org, Ajay Kumar <ajaykumar.rs@samsung.com>,
- Vincent Palatin <vpalatin@chromium.org>, cawa.cheng@mediatek.com,
- yingjoe.chen@mediatek.com, Thierry Reding <treding@nvidia.com>,
- Sean Paul <seanpaul@chromium.org>, linux-pwm@vger.kernel.org,
- Pawel Moll <pawel.moll@arm.com>, Ian Campbell <ijc+devicetree@hellion.org.uk>,
- linux-mediatek@lists.infradead.org, Russell King <rmk+kernel@arm.linux.org.uk>,
- Matthias Brugger <matthias.bgg@gmail.com>, eddie.huang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, Rahul Sharma <rahul.sharma@samsung.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Andy Yan <andy.yan@rock-chips.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Jun 08, 2019 at 03:02:29PM +0800, Jitao Shi wrote:
-> Add documentation for boe tv101wum-n16 panel.
+On Sat, Jun 01, 2019 at 08:07:16AM +0100, Peter Robinson wrote:
+> Use the SPDX License Identifier for GPL-2.0+ OR X11
+> =
 
-Typo in the subject and checkpatch complains about trailing whitespace.
-
-> 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Signed-off-by: Peter Robinson <pbrobinson@gmail.com>
 > ---
->  .../display/panel/boe,tv101wum-nl6.txt        | 34 +++++++++++++++++++
->  1 file changed, 34 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt b/Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt
-> new file mode 100644
-> index 000000000000..2a84735d742d
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/panel/boe,tv101wum-nl6.txt
-> @@ -0,0 +1,34 @@
-> +Boe Corporation 10.1" WUXGA TFT LCD panel
-> +
-> +Required properties:
-> +- compatible: should be "boe,tv101wum"
-> +- reg: the virtual channel number of a DSI peripheral
-> +- enable-gpios: a GPIO spec for the enable pin
-> +- pp1800-supply: core voltage supply
-> +- avdd-supply: 
-> +- avee-supply: 
-> +- backlight: phandle of the backlight device attached to the panel
-> +
-> +The device node can contain one 'port' child node with one child
-> +'endpoint' node, according to the bindings defined in
-> +media/video-interfaces.txt. This node should describe panel's video bus.
-> +
-> +Example:
-> +&dsi {
-> +	...
-> +	panel@0 {
-> +		compatible = "boe,tv101wum-nl6";
-> +		reg = <0>;
-> +		enable-gpios = <&pio 45 0>;
-> +		avdd-supply = <&ppvarn_lcd>;
-> +		avee-supply = <&ppvarp_lcd>;
-> +		pp1800-supply = <&pp1800_lcd>;
-> +		backlight = <&backlight_lcd0>;
-> +		status = "okay";
-> +		port {
-> +			panel_in: endpoint {
-> +				remote-endpoint = <&dsi_out>;
-> +			};
-> +		};
-> +	};
-> +};
-> \ No newline at end of file
+>  arch/arm/boot/dts/imx6sx-udoo-neo-basic.dts   | 39 +------------------
+>  .../arm/boot/dts/imx6sx-udoo-neo-extended.dts | 39 +------------------
+>  arch/arm/boot/dts/imx6sx-udoo-neo-full.dts    | 39 +------------------
+>  arch/arm/boot/dts/imx6sx-udoo-neo.dtsi        | 39 +------------------
+>  4 files changed, 4 insertions(+), 152 deletions(-)
+> =
 
-Fix this.
+> diff --git a/arch/arm/boot/dts/imx6sx-udoo-neo-basic.dts b/arch/arm/boot/=
+dts/imx6sx-udoo-neo-basic.dts
+> index db0feb9b9f5d..b6fbceaf6889 100644
+> --- a/arch/arm/boot/dts/imx6sx-udoo-neo-basic.dts
+> +++ b/arch/arm/boot/dts/imx6sx-udoo-neo-basic.dts
+> @@ -1,43 +1,6 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+
+This should actually be MIT, not X11. If you look at X11 SPDX =
+
+definition, it is for a specifc X Consortium copyright and adds a no =
+
+advertising clause on top of MIT.
+
+>  /*
+>   * Copyright (c) 2016 Andreas F=E4rber
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This library is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License as
+> - *     published by the Free Software Foundation; either version 2 of the
+> - *     License, or (at your option) any later version.
+> - *
+> - *     This library is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>  =
+
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/imx6sx-udoo-neo-extended.dts b/arch/arm/bo=
+ot/dts/imx6sx-udoo-neo-extended.dts
+> index 5c7a2bb9141c..c6005cd284be 100644
+> --- a/arch/arm/boot/dts/imx6sx-udoo-neo-extended.dts
+> +++ b/arch/arm/boot/dts/imx6sx-udoo-neo-extended.dts
+> @@ -1,43 +1,6 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+>  /*
+>   * Copyright (c) 2016 Andreas F=E4rber
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This library is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License as
+> - *     published by the Free Software Foundation; either version 2 of the
+> - *     License, or (at your option) any later version.
+> - *
+> - *     This library is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>  =
+
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/imx6sx-udoo-neo-full.dts b/arch/arm/boot/d=
+ts/imx6sx-udoo-neo-full.dts
+> index 13dfe2afaba5..ad8b8a663a70 100644
+> --- a/arch/arm/boot/dts/imx6sx-udoo-neo-full.dts
+> +++ b/arch/arm/boot/dts/imx6sx-udoo-neo-full.dts
+> @@ -1,43 +1,6 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+>  /*
+>   * Copyright (c) 2016 Andreas F=E4rber
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This library is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License as
+> - *     published by the Free Software Foundation; either version 2 of the
+> - *     License, or (at your option) any later version.
+> - *
+> - *     This library is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>  =
+
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/imx6sx-udoo-neo.dtsi b/arch/arm/boot/dts/i=
+mx6sx-udoo-neo.dtsi
+> index 53b3eac94f0d..386707c1bfe0 100644
+> --- a/arch/arm/boot/dts/imx6sx-udoo-neo.dtsi
+> +++ b/arch/arm/boot/dts/imx6sx-udoo-neo.dtsi
+> @@ -1,43 +1,6 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+>  /*
+>   * Copyright (c) 2016 Andreas F=E4rber
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This library is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License as
+> - *     published by the Free Software Foundation; either version 2 of the
+> - *     License, or (at your option) any later version.
+> - *
+> - *     This library is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>  =
+
+>  #include "imx6sx.dtsi"
+> -- =
+
+> 2.21.0
+> =
+
 
 _______________________________________________
 linux-arm-kernel mailing list
