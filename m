@@ -2,57 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1B6A3C80A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:04:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25E3C3C813
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 12:07:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T+aik3Mij5MHaqPcwR4Gfjuw63dAscE+gQo2QxP12us=; b=iXtNYGbNDZrkge
-	Ob1Vdw93xTfX94b14jGak+8XdxJ8EMiFfmdzzfnKq2U8d31vXJ9S/1kXz4ax+4LQrhBU2HIbRp+Ev
-	LnMP4xlOItOIl5KICQdNibEQXrQVBWusgUIooy+rGYAD2ZJ61eLfTDybe9xrGaE14v5Fxyz9iRPUZ
-	PK0CR5IOIhoSgvtpA5Ihk1j3GAOT2/zgapZLJ8SxwirXU6MmhAUvytdWlIu0oevb5HvpmWA3qg0OU
-	u7E/+Ntg850ddgzRhnjZBiI8f6Cqun8grE80417YkP5plKRPGCoLYC2jo7Yv/eI+jt1uuexHtf5sE
-	aZHy3Gq1kuYs1UiOhe0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3ldkshInfFwYw8ukUuNxORMb240Mv/S74nK5oaNcPcc=; b=W6EBHdAmjvIJSC
+	KiKjMu+akwijRD0CK37gemNuN2PgSmsfs/gw6chBpzMQILMU05fFGr/s2hd5W5zuEiI5TL1wcIw0U
+	CAJszxBUCvAE/0UG2hsN6E+QvQc3LDUHfZZ39YfSe1EUK1ge0ZTSQ8vs9iSncvUA5xM+rKa87Z6pe
+	Io79/Qekv3vsp2vs3vell3IckBm2y0yPZctfV/tPISlq3YPE1v4bhkt+PW+/UDUDWqj7U43TVT0QB
+	cRwK6oxt++a7CTq9CwawnFNVyJnCZC1pyhzRM2dTH6WjXpsb5nVJFVV8Nc9gnp6RPYSwSjJzHw/5y
+	ET9nne6GcVCn0sFbp84A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haddd-0001Ne-D2; Tue, 11 Jun 2019 10:04:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haddB-0001Hq-VK
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:03:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3292A337;
- Tue, 11 Jun 2019 03:03:53 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F1B7C3F73C;
- Tue, 11 Jun 2019 03:05:33 -0700 (PDT)
-Date: Tue, 11 Jun 2019 11:03:49 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Qian Cai <cai@lca.pw>, rppt@linux.ibm.com
-Subject: Re: [PATCH -next] arm64/mm: fix a bogus GFP flag in pgd_alloc()
-Message-ID: <20190611100348.GB26409@lakrids.cambridge.arm.com>
-References: <1559656836-24940-1-git-send-email-cai@lca.pw>
- <20190604142338.GC24467@lakrids.cambridge.arm.com>
- <20190610114326.GF15979@fuggles.cambridge.arm.com>
- <1560187575.6132.70.camel@lca.pw>
+	id 1hadgx-00035s-IK; Tue, 11 Jun 2019 10:07:47 +0000
+Received: from mail-eopbgr780077.outbound.protection.outlook.com
+ ([40.107.78.77] helo=NAM03-BY2-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hadgl-00035J-Gf
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 10:07:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector1-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ZawdMzp8XdCQtc2qbhzmbLCvc/4EHpvHDS6IQHZqEVA=;
+ b=sS3tX6tQyDlC9T751u9XXnlwO/t/77D/IMUTcPeYn50wmT/zpc83FCLx6PU58AIHqFM4LLDC+VB/5cNgckumRIznEH53EIUS2DK5WpeOmDX/XEFQXkpcewlQ/BzY9UletjWU4Feu5nLt/Ob7rcWaf/oYpQUJyjuLe8/d3qhV6lA=
+Received: from MWHPR0201CA0018.namprd02.prod.outlook.com
+ (2603:10b6:301:74::31) by BL0PR02MB4932.namprd02.prod.outlook.com
+ (2603:10b6:208:53::29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1965.17; Tue, 11 Jun
+ 2019 10:07:32 +0000
+Received: from BL2NAM02FT013.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::204) by MWHPR0201CA0018.outlook.office365.com
+ (2603:10b6:301:74::31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1965.14 via Frontend
+ Transport; Tue, 11 Jun 2019 10:07:32 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; arm.com; dkim=none (message not signed)
+ header.d=none;arm.com; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ BL2NAM02FT013.mail.protection.outlook.com (10.152.77.19) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.1965.12
+ via Frontend Transport; Tue, 11 Jun 2019 10:07:31 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <manish.narani@xilinx.com>)
+ id 1hadgg-0005Qf-Uc; Tue, 11 Jun 2019 03:07:30 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <manish.narani@xilinx.com>)
+ id 1hadgb-0000TD-Qt; Tue, 11 Jun 2019 03:07:25 -0700
+Received: from [172.23.64.106] (helo=xhdvnc125.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <mnarani@xilinx.com>)
+ id 1hadgU-0000RI-2r; Tue, 11 Jun 2019 03:07:18 -0700
+Received: by xhdvnc125.xilinx.com (Postfix, from userid 16987)
+ id 421C6121745; Tue, 11 Jun 2019 15:37:17 +0530 (IST)
+From: Manish Narani <manish.narani@xilinx.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, michal.simek@xilinx.com,
+ manish.narani@xilinx.com, chanho.min@lge.com, rrichter@cavium.com,
+ leoyang.li@nxp.com, amit.kucheria@linaro.org
+Subject: [PATCH] arm64: zynqmp: Add ZynqMP SDHCI compatible string
+Date: Tue, 11 Jun 2019 15:37:15 +0530
+Message-Id: <1560247635-29281-1-git-send-email-manish.narani@xilinx.com>
+X-Mailer: git-send-email 2.1.1
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(376002)(136003)(39860400002)(346002)(396003)(2980300002)(189003)(199004)(26005)(36386004)(51416003)(50466002)(47776003)(186003)(2906002)(72206003)(48376002)(478600001)(4326008)(966005)(14444005)(5660300002)(356004)(103686004)(336012)(8676002)(2616005)(50226002)(6306002)(44832011)(8936002)(63266004)(70206006)(70586007)(426003)(486006)(476003)(81156014)(126002)(81166006)(305945005)(6266002)(52956003)(36756003)(106002)(42186006)(16586007)(316002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4932; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1560187575.6132.70.camel@lca.pw>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 95326752-72f8-442d-f54c-08d6ee549e1d
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(4709080)(1401327)(2017052603328);
+ SRVR:BL0PR02MB4932; 
+X-MS-TrafficTypeDiagnostic: BL0PR02MB4932:
+X-MS-Exchange-PUrlCount: 1
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-Microsoft-Antispam-PRVS: <BL0PR02MB4932F9B04CC4457FC53CD5C9C1ED0@BL0PR02MB4932.namprd02.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3826;
+X-Forefront-PRVS: 006546F32A
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: i2NGJO1/uEDDchyyoqO8/trSl4RtuZ8ikQ0V3PxG3liqRG6EG/WKnHLM5nEqeNM2ihoYogPI+BiWnMrtjvPzG0QlwXTBct7hEeXPPBh/Vr3+CGrvyH7hWFmAtPrWXg1D+8yLU5sFomnaR9P2QiFCVBps8kTycl0U2W0sR83YDNZLxtVSn+/7OAlQyncVPZltg/SVbPpv7CSqp2cwf1vTK1vi4rgBfD9guXlOBMH9jf5EFhnSbQZ65mW3Q4Nxu/ohZw2RuIBGJfPpdIxrZBpTHNyPKVYW8Mkb0DpJpD1j0hqEMVmGdQcJJ5sfR3sDtxVcx1Jy7ssQ8oroqtlQkLsm27y8cC4Zt/NzLAMtxGLk5tLHuF8TtaxAioE47anlHyKAFNV+ex0VgQIyfKvnrU1wYuy3ofett5/qoXCcp93oJY8=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2019 10:07:31.5229 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 95326752-72f8-442d-f54c-08d6ee549e1d
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4932
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_030354_137558_7059C73A 
-X-CRM114-Status: GOOD (  22.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_030735_558628_3150B8F3 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.78.77 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,63 +129,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, mhocko@kernel.org, linux-mm@kvack.org,
- vdavydov.dev@gmail.com, hannes@cmpxchg.org, cgroups@vger.kernel.org,
- akpm@linux-foundation.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBKdW4gMTAsIDIwMTkgYXQgMDE6MjY6MTVQTSAtMDQwMCwgUWlhbiBDYWkgd3JvdGU6
-Cj4gT24gTW9uLCAyMDE5LTA2LTEwIGF0IDEyOjQzICswMTAwLCBXaWxsIERlYWNvbiB3cm90ZToK
-PiA+IE9uIFR1ZSwgSnVuIDA0LCAyMDE5IGF0IDAzOjIzOjM4UE0gKzAxMDAsIE1hcmsgUnV0bGFu
-ZCB3cm90ZToKPiA+ID4gT24gVHVlLCBKdW4gMDQsIDIwMTkgYXQgMTA6MDA6MzZBTSAtMDQwMCwg
-UWlhbiBDYWkgd3JvdGU6Cj4gPiA+ID4gVGhlIGNvbW1pdCAiYXJtNjQ6IHN3aXRjaCB0byBnZW5l
-cmljIHZlcnNpb24gb2YgcHRlIGFsbG9jYXRpb24iCj4gPiA+ID4gaW50cm9kdWNlZCBlbmRsZXNz
-IGZhaWx1cmVzIGR1cmluZyBib290IGxpa2UsCj4gPiA+ID4gCj4gPiA+ID4ga29iamVjdF9hZGRf
-aW50ZXJuYWwgZmFpbGVkIGZvciBwZ2RfY2FjaGUoMjg1OmNocm9ueWQuc2VydmljZSkgKGVycm9y
-Ogo+ID4gPiA+IC0yIHBhcmVudDogY2dyb3VwKQo+ID4gPiA+IAo+ID4gPiA+IEl0IHR1cm5zIG91
-dCBfX0dGUF9BQ0NPVU5UIGlzIHBhc3NlZCB0byBrZXJuZWwgcGFnZSB0YWJsZSBhbGxvY2F0aW9u
-cwo+ID4gPiA+IGFuZCB0aGVuIGxhdGVyIG1lbWNnIGZpbmRzIG91dCB0aG9zZSBkb24ndCBiZWxv
-bmcgdG8gYW55IGNncm91cC4KPiA+ID4gCj4gPiA+IE1pa2UsIEkgdW5kZXJzdG9vZCBmcm9tIFsx
-XSB0aGF0IHRoaXMgd2Fzbid0IGV4cGVjdGVkIHRvIGJlIGEgcHJvYmxlbSwKPiA+ID4gYXMgdGhl
-IGFjY291bnRpbmcgc2hvdWxkIGJ5cGFzcyBrZXJuZWwgdGhyZWFkcy4KPiA+ID4gCj4gPiA+IFdh
-cyB0aGF0IGFzc3VtcHRpb24gd3JvbmcsIG9yIGlzIHNvbWV0aGluZyBkaWZmZXJlbnQgaGFwcGVu
-aW5nIGhlcmU/Cj4gPiA+IAo+ID4gPiA+IAo+ID4gPiA+IGJhY2t0cmFjZToKPiA+ID4gPiDCoCBr
-b2JqZWN0X2FkZF9pbnRlcm5hbAo+ID4gPiA+IMKgIGtvYmplY3RfaW5pdF9hbmRfYWRkCj4gPiA+
-ID4gwqAgc3lzZnNfc2xhYl9hZGQrMHgxYTgKPiA+ID4gPiDCoCBfX2ttZW1fY2FjaGVfY3JlYXRl
-Cj4gPiA+ID4gwqAgY3JlYXRlX2NhY2hlCj4gPiA+ID4gwqAgbWVtY2dfY3JlYXRlX2ttZW1fY2Fj
-aGUKPiA+ID4gPiDCoCBtZW1jZ19rbWVtX2NhY2hlX2NyZWF0ZV9mdW5jCj4gPiA+ID4gwqAgcHJv
-Y2Vzc19vbmVfd29yawo+ID4gPiA+IMKgIHdvcmtlcl90aHJlYWQKPiA+ID4gPiDCoCBrdGhyZWFk
-Cj4gPiA+ID4gCj4gPiA+ID4gU2lnbmVkLW9mZi1ieTogUWlhbiBDYWkgPGNhaUBsY2EucHc+Cj4g
-PiA+ID4gLS0tCj4gPiA+ID4gwqBhcmNoL2FybTY0L21tL3BnZC5jIHwgMiArLQo+ID4gPiA+IMKg
-MSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4gPiA+ID4gCj4g
-PiA+ID4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvbW0vcGdkLmMgYi9hcmNoL2FybTY0L21tL3Bn
-ZC5jCj4gPiA+ID4gaW5kZXggNzY5NTE2Y2I2Njc3Li41M2M0OGY1Yzg3NjUgMTAwNjQ0Cj4gPiA+
-ID4gLS0tIGEvYXJjaC9hcm02NC9tbS9wZ2QuYwo+ID4gPiA+ICsrKyBiL2FyY2gvYXJtNjQvbW0v
-cGdkLmMKPiA+ID4gPiBAQCAtMzgsNyArMzgsNyBAQCBwZ2RfdCAqcGdkX2FsbG9jKHN0cnVjdCBt
-bV9zdHJ1Y3QgKm1tKQo+ID4gPiA+IMKgCWlmIChQR0RfU0laRSA9PSBQQUdFX1NJWkUpCj4gPiA+
-ID4gwqAJCXJldHVybiAocGdkX3QgKilfX2dldF9mcmVlX3BhZ2UoZ2ZwKTsKPiA+ID4gPiDCoAll
-bHNlCj4gPiA+ID4gLQkJcmV0dXJuIGttZW1fY2FjaGVfYWxsb2MocGdkX2NhY2hlLCBnZnApOwo+
-ID4gPiA+ICsJCXJldHVybiBrbWVtX2NhY2hlX2FsbG9jKHBnZF9jYWNoZSwgR0ZQX1BHVEFCTEVf
-S0VSTkVMKTsKPiA+ID4gCj4gPiA+IFRoaXMgaXMgdXNlZCB0byBhbGxvY2F0ZSBQR0RzIGZvciBi
-b3RoIHVzZXIgYW5kIGtlcm5lbCBwYWdldGFibGVzIChlLmcuCj4gPiA+IGZvciB0aGUgZWZpIHJ1
-bnRpbWUgc2VydmljZXMpLCBzbyB3aGlsZSB0aGlzIG1heSBmaXggdGhlIHJlZ3Jlc3Npb24sIEkn
-bQo+ID4gPiBub3Qgc3VyZSBpdCdzIHRoZSByaWdodCBmaXguCj4gPiA+IAo+ID4gPiBEbyB3ZSBu
-ZWVkIGEgc2VwYXJhdGUgcGdkX2FsbG9jX2tlcm5lbCgpPwo+ID4gCj4gPiBTbyBjYW4gSSB0YWtl
-IHRoZSBhYm92ZSBmb3IgLXJjNSwgb3IgaXMgc29tZWJvZHkgZWxzZSB3b3JraW5nIG9uIGEgZGlm
-ZmVyZW50Cj4gPiBmaXggdG8gaW1wbGVtZW50IHBnZF9hbGxvY19rZXJuZWwoKT8KPiAKPiBUaGUg
-b2ZmZW5zaXZlIGNvbW1pdCAiYXJtNjQ6IHN3aXRjaCB0byBnZW5lcmljIHZlcnNpb24gb2YgcHRl
-IGFsbG9jYXRpb24iIGlzIG5vdAo+IHlldCBpbiB0aGUgbWFpbmxpbmUsIGJ1dCBvbmx5IGluIHRo
-ZSBBbmRyZXcncyB0cmVlIGFuZCBsaW51eC1uZXh0LCBhbmQgSSBkb3VidAo+IEFuZHJldyB3aWxs
-IHB1c2ggdGhpcyBvdXQgYW55IHRpbWUgc29vbmVyIGdpdmVuIGl0IGlzIGJyb2tlbi4KCkknZCBh
-c3N1bWVkIHRoYXQgTWlrZSB3b3VsZCByZXNwaW4gdGhlc2UgcGF0Y2hlcyB0byBpbXBsZW1lbnQg
-YW5kIHVzZQpwZ2RfYWxsb2Nfa2VybmVsKCkgKG9yIHRha2UgZ2ZwIGZsYWdzKSBhbmQgdGhlIHVw
-ZGF0ZWQgcGF0Y2hlcyB3b3VsZApyZXBsYWNlIHRoZXNlIGluIGFrcG0ncyB0cmVlLgoKTWlrZSwg
-Y291bGQgeW91IGNvbmZpcm0gd2hhdCB5b3VyIHBsYW4gaXM/IEknbSBoYXBweSB0byByZXZpZXcv
-dGVzdAp1cGRhdGVkIHBhdGNoZXMgZm9yIGFybTY0LgoKVGhhbmtzLApNYXJrLgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Add the new compatible string for ZynqMP SD Host Controller for its use
+in the Arasan SDHCI driver for some of the ZynqMP specific operations.
+Add required properties for the same.
+
+Signed-off-by: Manish Narani <manish.narani@xilinx.com>
+---
+This patch depends on the below series of patches:
+https://lkml.org/lkml/2019/6/11/286
+---
+ arch/arm64/boot/dts/xilinx/zynqmp.dtsi | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi b/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
+index 9aa6734..6da5b82 100644
+--- a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
++++ b/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
+@@ -493,21 +493,25 @@
+ 		};
+ 
+ 		sdhci0: mmc@ff160000 {
+-			compatible = "arasan,sdhci-8.9a";
++			compatible = "xlnx,zynqmp-8.9a", "arasan,sdhci-8.9a";
+ 			status = "disabled";
+ 			interrupt-parent = <&gic>;
+ 			interrupts = <0 48 4>;
+ 			reg = <0x0 0xff160000 0x0 0x1000>;
+ 			clock-names = "clk_xin", "clk_ahb";
++			clock-output-names = "clk_sd0";
++			#clock-cells = <0>;
+ 		};
+ 
+ 		sdhci1: mmc@ff170000 {
+-			compatible = "arasan,sdhci-8.9a";
++			compatible = "xlnx,zynqmp-8.9a", "arasan,sdhci-8.9a";
+ 			status = "disabled";
+ 			interrupt-parent = <&gic>;
+ 			interrupts = <0 49 4>;
+ 			reg = <0x0 0xff170000 0x0 0x1000>;
+ 			clock-names = "clk_xin", "clk_ahb";
++			clock-output-names = "clk_sd1";
++			#clock-cells = <0>;
+ 		};
+ 
+ 		smmu: smmu@fd800000 {
+-- 
+2.1.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
