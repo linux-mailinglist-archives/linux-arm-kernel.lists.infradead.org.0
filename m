@@ -2,72 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F3323D687
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:12:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CF833D6C5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 21:25:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cxJg0kzGcLy8TZZI+pM3uI2H/TE2fpFcNQj/K5z94RE=; b=qDwsqtzjlwPLOk
-	vlmxp1y005XUG+8+sTYGx3dPOOMTWu7eer1R/1SDjGmwvFDGw1YrIGm57K0vsf2B8P3PGOfZQl9b3
-	MLbP0ssEkyZyMQ0t+soR19WbiHzh9o2tbORuUnIbXgr1eh9KHHRXi5Dm14tLTmWJHSCg0iPHhURRY
-	UZV3DvlTpR+oNGzxTMDAlFHyb32JOnYdWmI5A1PJKqbHIfrb5sFbRwq5W8krTNs1h1HGYicBEe8YB
-	3ESauGMWK+/0SVDeCHNEV+ZlGaYl83Pc0Zz47J6fvE/wvqXjsngFIYUxj34zqe8gbOlzLftDxV2Ny
-	5z/clTgdWIfICvCiWrSw==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:
+	Subject:To:From:Date:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lpW/S/01uGfLee62wa+MoJ6MiBVDqSy7/ee9bx9bN0g=; b=i+IjHMJlSTKaM2
+	hCau+YRJ3gYtOTTrgWVO4Jaun2YGo0XG1Ll6ZmzzqxlaqgHmMw8LJzPe+XoQz6JHO2qkcIqHwVo88
+	FByX4oJZQt0a2TgUCj+O8oiH9ZYdOsSLsCUr2WN1StcgxL8NPkaJlBUvnLfroUhkBjVAjuGk6ro9w
+	qOwakJEPIi+Z9ApVKtg2BPYq5D2HFn1twuukqPXl1uPW90kDXNwgSG0deFof+HnYgSu+tj43KeQAc
+	3KiqxRafmlJ/ZUN0GMeWwuktnDDWkmJnUKY3eB39XTtKG3If3HaePWwouQOfPi4xctoL1iBJHEY7C
+	3aA1ktTAM3wsAhTkIDkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hamC6-0005iE-7o; Tue, 11 Jun 2019 19:12:30 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hamP1-0002v0-IT; Tue, 11 Jun 2019 19:25:51 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hamBy-0005i1-1i
- for linux-arm-kernel@bombadil.infradead.org; Tue, 11 Jun 2019 19:12:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=On0FXoglDCYeMiyYbGbfBXovyGdAWe4sy2A1Qt1FTJ4=; b=UmqfmKoIu1ffXTVYOZgNMGmbq
- VDLeM1J12lgOUoCnNylBJ1eSjsYBSes7wQIl7lS6lAhYa9qUG6EJl5ParYd6TkYr538xe6EMdJ+6z
- Z6vaeAfNnxkVRHEra04FObo/SDeKnhQvcMjt7h9PYvOZ08yHaM2rfbt4elS1JzQxBxm4nDzsIUcFF
- +HGcF3XZpqbH+hLTXbQh6spE6zIclpaBbz8Il8dk8PIMARaL6XGcNilHGq0SXWx2MuH1PgtjLjK2G
- +zt6OTyxDP/mIETsaCcnXMve5awO2Zl1dWDbFMxhU3aglPjA2vgowbYNZuAo8VsSRYp2+J3zzx8AN
- MrDTn5SDg==;
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hamBu-0006wj-Hm
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:12:20 +0000
-X-Originating-IP: 37.205.120.66
-Received: from localhost (unknown [37.205.120.66])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 94AF6C0005;
- Tue, 11 Jun 2019 19:11:32 +0000 (UTC)
-Date: Tue, 11 Jun 2019 21:11:28 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>
-Subject: Re: [PATCH 2/3] rtc: imx-sc: Make compatible string more generic
-Message-ID: <20190611191128.GK25472@piout.net>
-References: <20190611063333.48501-1-Anson.Huang@nxp.com>
- <20190611063333.48501-2-Anson.Huang@nxp.com>
- <AM0PR04MB4211DC4725A5FEBDC995560680ED0@AM0PR04MB4211.eurprd04.prod.outlook.com>
+ id 1hamOt-0002uU-Bl
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 19:25:44 +0000
+Received: from pps.filterd (m0098396.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5BJMPJh107440
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 11 Jun 2019 15:25:39 -0400
+Received: from e14.ny.us.ibm.com (e14.ny.us.ibm.com [129.33.205.204])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2t2faw0p44-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 11 Jun 2019 15:24:37 -0400
+Received: from localhost
+ by e14.ny.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <paulmck@linux.vnet.ibm.com>; 
+ Tue, 11 Jun 2019 20:24:14 +0100
+Received: from b01cxnp23033.gho.pok.ibm.com (9.57.198.28)
+ by e14.ny.us.ibm.com (146.89.104.201) with IBM ESMTP SMTP Gateway: Authorized
+ Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Tue, 11 Jun 2019 20:24:11 +0100
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp23033.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x5BJOAhN30802374
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 11 Jun 2019 19:24:10 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 4CAABB2096;
+ Tue, 11 Jun 2019 19:24:10 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 40495B2097;
+ Tue, 11 Jun 2019 19:24:10 +0000 (GMT)
+Received: from paulmck-ThinkPad-W541 (unknown [9.85.136.117])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Tue, 11 Jun 2019 19:24:10 +0000 (GMT)
+Received: by paulmck-ThinkPad-W541 (Postfix, from userid 1000)
+ id 2E51016C5DA1; Tue, 11 Jun 2019 12:24:10 -0700 (PDT)
+Date: Tue, 11 Jun 2019 12:24:10 -0700
+From: "Paul E. McKenney" <paulmck@linux.ibm.com>
+To: linux@arm.linux.org.uk, mark.rutland@arm.com, dietmar.eggemann@arm.com
+Subject: [PATCH arm] Use common outgoing-CPU-notification code
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <AM0PR04MB4211DC4725A5FEBDC995560680ED0@AM0PR04MB4211.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
-X-Spam-Note: CRM114 invocation failed
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-TM-AS-GCONF: 00
+x-cbid: 19061119-0052-0000-0000-000003CE9AB4
+X-IBM-SpamModules-Scores: 
+X-IBM-SpamModules-Versions: BY=3.00011247; HX=3.00000242; KW=3.00000007;
+ PH=3.00000004; SC=3.00000286; SDB=6.01216561; UDB=6.00639663; IPR=6.00997660; 
+ MB=3.00027267; MTD=3.00000008; XFM=3.00000015; UTC=2019-06-11 19:24:12
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19061119-0053-0000-0000-0000614938FF
+Message-Id: <20190611192410.GA27930@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-11_09:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1906110124
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190611_122543_514262_5C8C1CF8 
+X-CRM114-Status: GOOD (  22.42  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,68 +104,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "a.zummo@towertech.it" <a.zummo@towertech.it>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
- Anson Huang <anson.huang@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Peng Fan <peng.fan@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>
+Reply-To: paulmck@linux.ibm.com
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/06/2019 10:57:17+0000, Aisheng Dong wrote:
-> > From: Anson.Huang@nxp.com [mailto:Anson.Huang@nxp.com]
-> > Sent: Tuesday, June 11, 2019 2:34 PM
-> > 
-> > i.MX system controller RTC driver can support all i.MX SoCs with system
-> > controller inside, this patch makes the compatible string more generic to
-> > support other i.MX SoCs with system controller inside, such as i.MX8QM etc..
-> > 
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> 
-> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-> 
-> Regards
-> Dong Aisheng
-> 
-> > ---
-> >  drivers/rtc/rtc-imx-sc.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/rtc/rtc-imx-sc.c b/drivers/rtc/rtc-imx-sc.c index
-> > c933045..38ef3ca 100644
-> > --- a/drivers/rtc/rtc-imx-sc.c
-> > +++ b/drivers/rtc/rtc-imx-sc.c
-> > @@ -178,7 +178,7 @@ static int imx_sc_rtc_probe(struct platform_device
-> > *pdev)  }
-> > 
-> >  static const struct of_device_id imx_sc_dt_ids[] = {
-> > -	{ .compatible = "fsl,imx8qxp-sc-rtc", },
+This commit removes the open-coded CPU-offline notification with new
+common code.  In particular, this change avoids calling scheduler code
+using RCU from an offline CPU that RCU is ignoring.  This is a minimal
+change.  A more intrusive change might invoke the cpu_check_up_prepare()
+and cpu_set_state_online() functions at CPU-online time, which would
+allow onlining throw an error if the CPU did not go offline properly.
 
-Don't you want to keep that compatible for backward compatibility?
+Signed-off-by: Paul E. McKenney <paulmck@linux.vnet.ibm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: Russell King <linux@arm.linux.org.uk>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Tested-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
 
-> > +	{ .compatible = "fsl,imx-sc-rtc", },
-> >  	{}
-> >  };
-> >  MODULE_DEVICE_TABLE(of, imx_sc_dt_ids);
-> > --
-> > 2.7.4
-> 
+diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+index ebc53804d57b..8687d619260f 100644
+--- a/arch/arm/kernel/smp.c
++++ b/arch/arm/kernel/smp.c
+@@ -267,15 +267,13 @@ int __cpu_disable(void)
+ 	return 0;
+ }
+ 
+-static DECLARE_COMPLETION(cpu_died);
+-
+ /*
+  * called on the thread which is asking for a CPU to be shutdown -
+  * waits until shutdown has completed, or it is timed out.
+  */
+ void __cpu_die(unsigned int cpu)
+ {
+-	if (!wait_for_completion_timeout(&cpu_died, msecs_to_jiffies(5000))) {
++	if (!cpu_wait_death(cpu, 5)) {
+ 		pr_err("CPU%u: cpu didn't die\n", cpu);
+ 		return;
+ 	}
+@@ -322,7 +320,7 @@ void arch_cpu_idle_dead(void)
+ 	 * this returns, power and/or clocks can be removed at any point
+ 	 * from this CPU and its cache by platform_cpu_kill().
+ 	 */
+-	complete(&cpu_died);
++	(void)cpu_report_death();
+ 
+ 	/*
+ 	 * Ensure that the cache lines associated with that completion are
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
