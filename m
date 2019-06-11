@@ -2,57 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B5723C777
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:42:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6CA03C778
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 11:43:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/NOpIiGQel4DIOSpnEQKwxfoa1GakMvGZfLsOMLX3Ro=; b=lb8fdWvAtnsqZ1
-	Epa2m18QEv1REoJQfJymMvpBMdbm0I8Ec1wzebBTUEGI1eFTyGcCa7cnkEIPyC3+cj9QsjpTzJq8+
-	sRJ/I3Yk9obsdoLrlHsgmdIGd+YO52Q4w0gwM0jkOmcru12e8fYIVBWIvsWIAutKW7y8UYo2IldkU
-	z1wUUh/ga7bkJvmmM+bfcF9H6sYmlJzIw5ZTRNZ9otzuDMmoP1A2s5h81o9kOv4YhuREFJpLnwack
-	jyEIaxP0HyLb571HkfscSsfzlA5abQadaDZXAj9bwCdr59QS3pZ4xuYGt5A17nPPZKV2zxtlllKi3
-	dm1JPG/vvXJv4xE/cdsw==;
+	List-Owner; bh=Z4LN/FGEc1BQPMOMlrea0sJnljWpqVetlyuK3rdIIPY=; b=NlDS6UjbBpPOKM
+	Fxbj+7/iR+8A8t1cKRkeanMO/k5i4FGeYC1fLOC5JKSN5PH/pritsYS1TaQRyNzuAGIjmWqmiaH7S
+	QfnUhwHMMdisANKaju9H6A81nTNYA4OlYj5em5N6zjOhr6Z8ivKJdGu0+Dim7uoMinOOahdwvYJaR
+	X5/ZJHsk7VXEZaFulCOXPjFNPlQealtoQ1v/GAk6QQt8jnXFoGMlcQuJBxDgeX/+Pi8+s7Hv0JAEw
+	3IaIqq2x6HrEzezOfmI8wPaXazOIkpZL/mb+K+PuykTfZ8ISG9v/VfqQOuKaD7q7go5lh4xUrXRIe
+	RAExaiMx+fxCX0qFSMDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadIl-0003aE-Kq; Tue, 11 Jun 2019 09:42:47 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadIW-0003Z0-EI
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 09:42:33 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id DE189CF4700FAD13C19D;
- Tue, 11 Jun 2019 17:42:27 +0800 (CST)
-Received: from localhost (10.202.226.61) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Tue, 11 Jun 2019
- 17:42:26 +0800
-Date: Tue, 11 Jun 2019 10:42:14 +0100
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
+	id 1hadJ5-0003pS-SE; Tue, 11 Jun 2019 09:43:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hadIk-0003k2-3K
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 09:42:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A8A5337;
+ Tue, 11 Jun 2019 02:42:45 -0700 (PDT)
+Received: from e107155-lin (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A31DE3F73C;
+ Tue, 11 Jun 2019 02:44:26 -0700 (PDT)
+Date: Tue, 11 Jun 2019 10:42:29 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
 To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Subject: Re: [PATCH 3/8] iommu/arm-smmu-v3: Support platform SSID
-Message-ID: <20190611104214.00001f2c@huawei.com>
-In-Reply-To: <20190610184714.6786-4-jean-philippe.brucker@arm.com>
-References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-4-jean-philippe.brucker@arm.com>
-Organization: Huawei
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
+Subject: Re: [PATCH v2] firmware/psci: psci_checker: Park kthreads before
+ stopping them
+Message-ID: <20190611094229.GA6235@e107155-lin>
+References: <20190610173829.4741-1-jean-philippe.brucker@arm.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.61]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190610173829.4741-1-jean-philippe.brucker@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_024232_699816_2E32D9ED 
-X-CRM114-Status: GOOD (  17.40  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190611_024246_238694_3B14BEBC 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,99 +61,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- robh+dt@kernel.org, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Jun 2019 19:47:09 +0100
-Jean-Philippe Brucker <jean-philippe.brucker@arm.com> wrote:
-
-> For platform devices that support SubstreamID (SSID), firmware provides
-> the number of supported SSID bits. Restrict it to what the SMMU supports
-> and cache it into master->ssid_bits.
+On Mon, Jun 10, 2019 at 06:38:29PM +0100, Jean-Philippe Brucker wrote:
+> Since commit 85f1abe0019f ("kthread, sched/wait: Fix kthread_parkme()
+> completion issue"), kthreads that are bound to a CPU must be parked
+> before being stopped. At the moment the PSCI checker calls
+> kthread_stop() directly on the suspend kthread, which triggers the
+> following warning:
 > 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-
-Missing kernel-doc.
-
-Thanks,
-
-Jonathan
-
-> ---
->  drivers/iommu/arm-smmu-v3.c | 11 +++++++++++
->  drivers/iommu/of_iommu.c    |  6 +++++-
->  include/linux/iommu.h       |  1 +
->  3 files changed, 17 insertions(+), 1 deletion(-)
+> [    6.068288] WARNING: CPU: 1 PID: 1 at kernel/kthread.c:398 __kthread_bind_mask+0x20/0x78
+>                ...
+> [    6.190151] Call trace:
+> [    6.192566]  __kthread_bind_mask+0x20/0x78
+> [    6.196615]  kthread_unpark+0x74/0x80
+> [    6.200235]  kthread_stop+0x44/0x1d8
+> [    6.203769]  psci_checker+0x3bc/0x484
+> [    6.207389]  do_one_initcall+0x48/0x260
+> [    6.211180]  kernel_init_freeable+0x2c8/0x368
+> [    6.215488]  kernel_init+0x10/0x100
+> [    6.218935]  ret_from_fork+0x10/0x1c
+> [    6.222467] ---[ end trace e05e22863d043cd3 ]---
 > 
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index 4d5a694f02c2..3254f473e681 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -604,6 +604,7 @@ struct arm_smmu_master {
->  	struct list_head		domain_head;
->  	u32				*sids;
->  	unsigned int			num_sids;
-> +	unsigned int			ssid_bits;
->  	bool				ats_enabled		:1;
->  };
->  
-> @@ -2097,6 +2098,16 @@ static int arm_smmu_add_device(struct device *dev)
->  		}
->  	}
->  
-> +	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
-> +
-> +	/*
-> +	 * If the SMMU doesn't support 2-stage CD, limit the linear
-> +	 * tables to a reasonable number of contexts, let's say
-> +	 * 64kB / sizeof(ctx_desc) = 1024 = 2^10
-> +	 */
-> +	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB))
-> +		master->ssid_bits = min(master->ssid_bits, 10U);
-> +
->  	group = iommu_group_get_for_dev(dev);
->  	if (!IS_ERR(group)) {
->  		iommu_group_put(group);
-> diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
-> index f04a6df65eb8..04f4f6b95d82 100644
-> --- a/drivers/iommu/of_iommu.c
-> +++ b/drivers/iommu/of_iommu.c
-> @@ -206,8 +206,12 @@ const struct iommu_ops *of_iommu_configure(struct device *dev,
->  			if (err)
->  				break;
->  		}
-> -	}
->  
-> +		fwspec = dev_iommu_fwspec_get(dev);
-> +		if (!err && fwspec)
-> +			of_property_read_u32(master_np, "pasid-num-bits",
-> +					     &fwspec->num_pasid_bits);
-> +	}
->  
->  	/*
->  	 * Two success conditions can be represented by non-negative err here:
-> diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-> index 519e40fb23ce..b91df613385f 100644
-> --- a/include/linux/iommu.h
-> +++ b/include/linux/iommu.h
-> @@ -536,6 +536,7 @@ struct iommu_fwspec {
->  	struct fwnode_handle	*iommu_fwnode;
->  	void			*iommu_priv;
->  	u32			flags;
-> +	u32			num_pasid_bits;
+> kthread_unpark() tries to bind the thread to its CPU and aborts with a
+> WARN() if the thread wasn't in TASK_PARKED state. Park the kthreads
+> before stopping them.
+> 
 
-This structure has kernel doc so you need to add something for this.
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
->  	unsigned int		num_ids;
->  	u32			ids[1];
->  };
-
-
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
