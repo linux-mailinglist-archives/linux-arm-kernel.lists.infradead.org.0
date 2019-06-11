@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3589F3CEE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:37:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D09613CEE8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 16:38:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kZ99w0ib/AVTnQBrEYu5PQCcDgL2MPXAhPbCfXfbJHk=; b=BsCbNxrxSll0NZ
-	920c+pstuoBD3dF3mdym07g+k510bOjpQ1U5EUUHNNNqeXv3HOZTxyRz+CmtiDSUm0ondSjyqDqqQ
-	5w6B62xnxfMWhNrlVsOaiV1PH1dH+PmOT+zGWqUrCCu8CTagYum+cgfo4F3yccvSeZcNj5kK35p18
-	/NJM3W6DvYAmRlnO7W8Xx0smh4x5/S+ErwX+MhEUEV0yN4czA6tGmSK5EPcXf4zcYLhqsNkCyeMXo
-	aI5yr8h2no+vg6QZuto0uJ9ZauvL8SNicxcRZQxmQ+kJ+U1t5+0JZvo9J8ucY/C+E9uhVqrqCVIpz
-	qOUztdIiNjntyK9wZEiA==;
+	List-Owner; bh=VmYXVoW96scbLOasNELWri83oWWumn1wox9vNACknxQ=; b=bg/6YP3Sc18i58
+	Po1X7dF5Bf/xHdGdgkws/bvLeRGVGvCtKDkE6lEXzYm7x8nq4JzttuX8rTDgHYJ5HZi9PaR9nhFHG
+	TiRkdfy+K+arl7fwSOitrzpllDj9RhQfgjUTqroGV2G8dHfSUHl037DW5w8f24hBgK5C7kAASAkTn
+	KIXDUXYDMo8XzXF7WA2KmifcScPBNiLk3rlrhgGzJ+cT8gFM0GZooz3Pjl7xKl8U6dNwWo4nhHZYH
+	XsomNr8SOXi6JMlxFe83nolA6ENSkxrIpJOI47mhLpZ1sMw5XNf+omOfk/RU8UVOdRfI2YFiGezj2
+	c+jA96u1AdCrI8Ono+zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hahtY-0002Wt-IO; Tue, 11 Jun 2019 14:37:04 +0000
+	id 1hahup-0002xF-Og; Tue, 11 Jun 2019 14:38:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hahsZ-0001uD-9e
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:36:04 +0000
+ id 1hahuc-0002w7-9H
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 14:38:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B1C1F337;
- Tue, 11 Jun 2019 07:36:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 35FBD337;
+ Tue, 11 Jun 2019 07:38:09 -0700 (PDT)
 Received: from [10.1.196.129] (ostrya.cambridge.arm.com [10.1.196.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8B72D3F557;
- Tue, 11 Jun 2019 07:36:01 -0700 (PDT)
-Subject: Re: [PATCH 8/8] iommu/arm-smmu-v3: Add support for PCI PASID
-To: Jonathan Cameron <jonathan.cameron@huawei.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0C1583F557;
+ Tue, 11 Jun 2019 07:38:07 -0700 (PDT)
+Subject: Re: [PATCH 1/8] iommu: Add I/O ASID allocator
+To: Jacob Pan <jacob.jun.pan@linux.intel.com>
 References: <20190610184714.6786-1-jean-philippe.brucker@arm.com>
- <20190610184714.6786-9-jean-philippe.brucker@arm.com>
- <20190611114542.000021f1@huawei.com>
+ <20190610184714.6786-2-jean-philippe.brucker@arm.com>
+ <20190611052626.20bed59a@jacob-builder>
 From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-Message-ID: <3994ac33-e3e5-ba34-a669-c70a76a97e6e@arm.com>
-Date: Tue, 11 Jun 2019 15:35:35 +0100
+Message-ID: <95292b47-4cf4-5fd9-b096-1cb016e2264f@arm.com>
+Date: Tue, 11 Jun 2019 15:37:42 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190611114542.000021f1@huawei.com>
+In-Reply-To: <20190611052626.20bed59a@jacob-builder>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_073603_567926_95A4CCB7 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20190611_073810_371870_E99D4D1F 
+X-CRM114-Status: GOOD (  13.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,15 +71,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/06/2019 11:45, Jonathan Cameron wrote:
->> +	pci_disable_pasid(pdev);
->> +	master->ssid_bits = 0;
-> 
-> If we are being really fussy about ordering, why have this set of
-> ssid_bits after pci_disable_pasid rather than before (to reverse order
-> of .._enable_pasid)?
+On 11/06/2019 13:26, Jacob Pan wrote:
+>> +/**
+>> + * ioasid_set_data - Set private data for an allocated ioasid
+>> + * @ioasid: the ID to set data
+>> + * @data:   the private data
+>> + *
+>> + * For IOASID that is already allocated, private data can be set
+>> + * via this API. Future lookup can be done via ioasid_find.
+>> + */
+>> +int ioasid_set_data(ioasid_t ioasid, void *data)
+>> +{
+>> +	struct ioasid_data *ioasid_data;
+>> +	int ret = 0;
+>> +
+>> +	xa_lock(&ioasid_xa);
+> Just wondering if this is necessary, since xa_load is under
+> rcu_read_lock and we are not changing anything internal to xa. For
+> custom allocator I still need to have the mutex against allocator
+> removal.
 
-Sure, I'll change that
+I think we do need this because of a possible race with ioasid_free():
+
+         CPU1                      CPU2
+  ioasid_free(ioasid)     ioasid_set_data(ioasid, foo)
+                            data = xa_load(...)
+    xa_erase(...)
+    kfree_rcu(data)           (no RCU lock held)
+    ...free(data)
+                            data->private = foo;
+
+The issue is theoretical at the moment because no users do this, but I'd
+be more comfortable taking the xa_lock, which prevents a concurrent
+xa_erase()+free(). (I commented on your v3 but you might have missed it)
+
+>> +	ioasid_data = xa_load(&ioasid_xa, ioasid);
+>> +	if (ioasid_data)
+>> +		rcu_assign_pointer(ioasid_data->private, data);
+> it is good to publish and have barrier here. But I just wonder even for
+> weakly ordered machine, this pointer update is quite far away from its
+> data update.
+
+I don't know, it could be right before calling ioasid_set_data():
+
+	mydata = kzalloc(sizeof(*mydata));
+	mydata->ops = &my_ops;			(1)
+	ioasid_set_data(ioasid, mydata);
+		... /* no write barrier here */
+		data->private = mydata;		(2)
+
+And then another thread calls ioasid_find():
+
+	mydata = ioasid_find(ioasid);
+	if (mydata)
+		mydata->ops->do_something();
+
+On a weakly ordered machine, this thread could observe the pointer
+assignment (2) before the ops assignment (1), and dereference NULL.
+Using rcu_assign_pointer() should fix that
 
 Thanks,
 Jean
