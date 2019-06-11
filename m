@@ -2,71 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 182AD3C99D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:01:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01C9E3C9B3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 13:06:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:From:To:References:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U0Epr9nn3lgonywHfjG8E5O0OExUrse3c/+/Hgmn9c0=; b=DLPkj8pl5I++Fp
-	Fc7+E31N8T7QssMLB+qygfvf6w83Wh4QYMglT3dxeWOsjXk2GWQKRKPv2whznwNUmacLKIEeVe7Nd
-	2oTzXeJykx5qF9XzPcZLP+TRiLfjlvCeEr9oXidQNNS0loMrr2D++23OknuPHNrKkQcXEf//Vt8Cc
-	XFc5pt9VGrz4j25oithraH1eBJndNw+nOM/cfL3t8p8gWEnMqfCwP6wHt5tCUu+UFj1AU7ORzbUHJ
-	TwscqbQtoJpIOpSQ35tGl0xsXrRfLimK4Lcmfg2yTsoWx4FBNTTc3nq5HT3rFyZZwJHdZ1rmcylHA
-	dwYSu/igpGFGdFuzwS2g==;
+	List-Owner; bh=k9XlP5ra+bpJa6Q6hDS2X4tdOKmMik1drbW4/USrl4Y=; b=ViEsbR5yp8lSKj
+	THGAxJOXltxl4qhtFCzzSDcSG2/UQARvLCogyI8RWGiVY1jFZ+eCAclAk4NB6TfGYOyXKjc+VeBwH
+	FwlGOnG4EDdCe0PR7D7s1eC0VBWppd1FQC/aw/QWhvpHDCv0YDzmu2LUfxr0sSPr/dAZBe/E9k7zG
+	c5UUPJLGk9cH7RZWCYKLI/p12UYb0XHnimjiedYkZOjjkox3SCJimkA6CwIWXIZ1DS++q1lipGbty
+	aO93zVYH7XY+iUNr+JMlOkt3U46xekSDFibpKmApBeE8QDzvt7I/dB1gwM4RuyCBu3Iroq0ZruWDW
+	tbWsQPT3a9UFULc8oxZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haeXF-0005Yy-AD; Tue, 11 Jun 2019 11:01:49 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1haebd-0007Sz-IB; Tue, 11 Jun 2019 11:06:21 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haeX4-0005YC-Mx
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:01:40 +0000
-Received: by mail-wm1-x344.google.com with SMTP id g135so2445707wme.4
+ id 1haebV-0007SA-4C
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 11:06:14 +0000
+Received: by mail-wr1-x442.google.com with SMTP id x17so12499169wrl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 04:01:38 -0700 (PDT)
+ Tue, 11 Jun 2019 04:06:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ h=subject:cc:references:to:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=HGCftkSHpKLWELmSFAK/o0qPA0nwcHk8AkL38CX0UA8=;
- b=KkrrTS1Clu1/ToalKbEGPTeGgoETAQ3joz8xJqvsmRl/kyhvR7hP8TWT+G7kdNygHG
- cmqq3qdoUmYU1oRmb1P+LCMc0+Fal0R+NzaMrjCUAun6Wud2V36w2hRwbywGU/GRw7vB
- EUpME2yr6RVyYgroFW9ziBVW+qNJfgQvIO9E0gTtSJukvJQcqw2W++2cpLo9hkL6f0xC
- PWAFeT8YO0mUj6eWDEIEjVkh+NgzHSLctCDs14JxKyWfeKHRdfc0cq5Rh+1VbnqvBCkX
- o1tJ21iM6xnmIzZ1oBgULEjaBI/adlliZQv458VEaaaVSWfcX1xenW7weqn+fqx5TY2X
- Bz6A==
+ bh=8qn6FZXDPZHM+Ar1uIfaXQRlD6cr5tI5sGrJOoA+okc=;
+ b=WWyf83ouQ9CZ9+bhhtgZipowgDbs2RUlwJNIAv1AlOLbvzjmS0sygtArrFSkSqcf1u
+ VRuvHxhbdClW33hMJ8U9icSq2I2ZtkrB2gNwENMKYGFmjwWYy2lOf1boQ58/Wn+BqvA1
+ f7Hnvz0Oi8Ww9NKurAvbylLetopuNfy9YHp+n7EaWmrCts0cBA3We6UZiCN6IU+aDn16
+ e0nf6O009aDU+yv2iDvjkC58oROlk7Ajl1gjln4VcBeimBnObqG27yOlrRQsGxDrZoCL
+ dXlfkHH7/Nd49+piccPuvxD4YlIWGbHaCiZfw2inQGt0MH6q48n8I2HlxfoksTG8hK5D
+ vFVg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ h=x-gm-message-state:subject:cc:references:to:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=HGCftkSHpKLWELmSFAK/o0qPA0nwcHk8AkL38CX0UA8=;
- b=o2HVtFfshGjaFPtr4ZIOC+WfJbYXUtJcUiCRNfVs0AeFtO9wWH4wJe08Y8ZGGnDyBM
- jyc5ImnAgEPD41+ObqpuJkvyTJpacvDJYygvNRrEkLnNpS+B8vKSzB9qIvaggM9kqOAh
- Uln5VqFnZfyslbD2wqCkdGC0LMsBlWmFGKq9rbkr3u9+cOjY7vg8lnHv4v6pCX5qvHWW
- ZlM1L42UXdIbRJRCRCwD2NuR/GSWuYvh5eCsGGju0NsyPbv/63/8jMn4zwNw+0Am5BB7
- 3Hl6BBhDdiwdxipeAP0mqZPvoEo1UaJfBaeg9S3lqkBQ+Xho6iAL5AI8dKem2o9/5enW
- QbCQ==
-X-Gm-Message-State: APjAAAUHznHKBTISmmmDsMb6YAFuv+PXauw7Luxt+RfljaU81b0vvdoR
- HQLZivmEI+hGhbFxyGFcVj7fBNUXwIMJUQ==
-X-Google-Smtp-Source: APXvYqyPiVk7Saf5lzMmnLLvD5VpZ3bXVkhTXya27VP/rsiz2+NET+l11ahDPVnTAcen3/TtwdPGWA==
-X-Received: by 2002:a1c:ddd6:: with SMTP id u205mr16651562wmg.54.1560250896605; 
- Tue, 11 Jun 2019 04:01:36 -0700 (PDT)
+ bh=8qn6FZXDPZHM+Ar1uIfaXQRlD6cr5tI5sGrJOoA+okc=;
+ b=dF/c3/r1mETG/NCQyt5XSULgR78dEXSFtP4s+RW7RcHKHGLbO6Gz3agMv+gHK0PWvd
+ j7jM180dWti2rFy5yvXuvmalKiQ9LpoICvDoBmea1TO6LpfNS+aO9XdGsh9ymcZq3uZD
+ +4eYotDezzxso4zu4oS9mEmC1+S1zTdytSygO1oH7i9TThFRNPzzXBvS1Hf7ZTk2Y15k
+ R6KVf/xosCyQFCvpjOHDioE0r2bVm8/0PgpCjhuYkkyhIBCgPonAm/kdfJlbNRmqcPwU
+ hZWuDu1migAgKopgW+NXti5+7DRLI5nBOWCpNKJLRKy7CjtxKvmj1XqoT+uB+IF6Z0mV
+ Ar5g==
+X-Gm-Message-State: APjAAAX/0SCzOgtVQjlJQ3W0tjr273f/NKz9wRHGSONsdMW9/l+S425l
+ aZj5bnGRhxHnsrgVQams2Pbovw==
+X-Google-Smtp-Source: APXvYqyEQuJ51hKpjdLCGHQ0eCQs26Wxh78vE5WdRz9G656LI4ld1z4bIgGk6yCPoHJSrIwDqGp2pA==
+X-Received: by 2002:adf:9003:: with SMTP id h3mr27493718wrh.172.1560251171208; 
+ Tue, 11 Jun 2019 04:06:11 -0700 (PDT)
 Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id u1sm2360393wml.14.2019.06.11.04.01.35
+ by smtp.gmail.com with ESMTPSA id o6sm2437708wmc.15.2019.06.11.04.06.09
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 11 Jun 2019 04:01:35 -0700 (PDT)
-Subject: Re: [PATCH 1/3] Documentation: dt-bindings: add the Amlogic Meson
- Temperature Sensor
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Guillaume La Roque <glaroque@baylibre.com>
-References: <20190604144714.2009-1-glaroque@baylibre.com>
- <20190604144714.2009-2-glaroque@baylibre.com>
- <CAFBinCBN4QC2tPDEQmTW_c+PP5yu2qoK5M1eSye=SmvpieKWQg@mail.gmail.com>
+ Tue, 11 Jun 2019 04:06:10 -0700 (PDT)
+Subject: Re: [PATCH 1/2] ARM: multi_v7_defconfig: add Panfrost driver
+References: <20190604112003.31813-1-tomeu.vizoso@collabora.com>
+To: Kevin Hilman <khilman@baylibre.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -119,23 +115,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <d68aae23-f877-1f65-94a4-79e909ae111a@baylibre.com>
-Date: Tue, 11 Jun 2019 13:01:35 +0200
+Message-ID: <71c929a0-d42e-7519-df43-100a474a63d4@baylibre.com>
+Date: Tue, 11 Jun 2019 13:06:09 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCBN4QC2tPDEQmTW_c+PP5yu2qoK5M1eSye=SmvpieKWQg@mail.gmail.com>
+In-Reply-To: <20190604112003.31813-1-tomeu.vizoso@collabora.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_040138_757431_7DB5E832 
-X-CRM114-Status: GOOD (  24.32  )
+X-CRM114-CacheID: sfid-20190611_040613_173840_FAA10524 
+X-CRM114-Status: GOOD (  18.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -153,98 +149,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-iio@vger.kernel.org, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, jic23@kernel.org
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, Tony Lindgren <tony@atomide.com>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ =?UTF-8?Q?Yannick_Fertr=c3=a9?= <yannick.fertre@st.com>, arm@kernel.org,
+ Arnd Bergmann <arnd@arndb.de>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Olof Johansson <olof@lixom.net>, Simon Horman <horms+renesas@verge.net.au>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/06/2019 21:16, Martin Blumenstingl wrote:
-> Hi Guillaume,
+On 04/06/2019 13:20, Tomeu Vizoso wrote:
+> With the goal of making it easier for CI services such as KernelCI to
+> run tests for it.
 > 
-> thank you for working on this!
+> Signed-off-by: Tomeu Vizoso <tomeu.vizoso@collabora.com>
+> ---
+>  arch/arm/configs/multi_v7_defconfig | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> On Tue, Jun 4, 2019 at 4:47 PM Guillaume La Roque <glaroque@baylibre.com> wrote:
->>
->> This adds the devicetree binding documentation for the Temperature
->> Sensor found in the Amlogic Meson G12 SoCs.
->> Currently only the G12A SoCs are supported.
-> so G12B is not supported (yet)?
-
-G12B is 95% similar as G12A, it will certainly use slighly different values.
-
-> 
->> Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
->> ---
->>  .../iio/temperature/amlogic,meson-tsensor.txt | 31 +++++++++++++++++++
->>  1 file changed, 31 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
->>
->> diff --git a/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
->> new file mode 100644
->> index 000000000000..d064db0e9cac
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/iio/temperature/amlogic,meson-tsensor.txt
->> @@ -0,0 +1,31 @@
->> +* Amlogic Meson Temperature Sensor
->> +
->> +Required properties:
->> +- compatible:  depending on the SoC and the position of the sensor,
->> +               this should be one of:
->> +               - "amlogic,meson-g12a-cpu-tsensor" for the CPU G12A SoC sensor
->> +               - "amlogic,meson-g12a-ddr-tsensor" for the DDR G12A SoC sensor
->> +               followed by the common :
->> +               - "amlogic,meson-g12a-tsensor" for G12A SoC family
->> +- reg:         the physical base address and length of the registers
->> +- interrupts:  the interrupt indicating end of sampling
->> +- clocks:      phandle identifier for the reference clock of temperature sensor
->> +- #io-channel-cells: must be 1, see ../iio-bindings.txt
-> have you considered using the thermal framework [0] instead of the iio
-> framework (see below)?
-
-Question: why thermal, and not hwmon ? what's the main difference ?
-
-> 
->> +- amlogic,ao-secure: phandle to the ao-secure syscon
-> the driver has some "u_efuse_off" access. do we need to get some
-> calibration values from the AO syscon or can we also fetch it from the
-> eFuse? you can look at arch/arm/boot/dts/meson8.dtsi where I'm passing
-> the temperature sensor calibration data to the SAR ADC (there's no
-> dedicated temperature sensor IP block prior to G12A) while reading the
-> data from the eFuse
-> 
->> +Optional properties:
->> +- amlogic,critical-temperature: temperature value in milli degrees Celsius
->> +       to set automatic reboot on too high temperature
-> as far as I can tell the thermal framework supports multiple trip
-> points. I'm seeing this as a benefit because the hardware can raise
-> interrupts at four different temperatures (defined by the driver)
-
-Theoretically, but the implementation code differs a lot from the datasheet.
-
-> 
->> +Example:
->> +       cpu_temp: temperature-sensor@ff634800 {
->> +               compatible = "amlogic,meson-g12a-cpu-tsensor",
->> +                            "amlogic,meson-g12a-tsensor";
->> +               reg = <0x0 0xff634800 0x0 0x50>;
->> +               interrupts = <GIC_SPI 35 IRQ_TYPE_EDGE_RISING>;
->> +               clocks = <&clkc CLKID_TS>;
->> +               status = "okay";
-> as far as I know the dt-bindings should not have a status property in
-> the examples
-> 
-> 
-> Martin
-> 
-> _______________________________________________
-> linux-amlogic mailing list
-> linux-amlogic@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-amlogic
+> diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+> index 6b748f214eae..952dff9d39f2 100644
+> --- a/arch/arm/configs/multi_v7_defconfig
+> +++ b/arch/arm/configs/multi_v7_defconfig
+> @@ -656,6 +656,7 @@ CONFIG_DRM_VC4=m
+>  CONFIG_DRM_ETNAVIV=m
+>  CONFIG_DRM_MXSFB=m
+>  CONFIG_DRM_PL111=m
+> +CONFIG_DRM_PANFROST=m
+>  CONFIG_FB_EFI=y
+>  CONFIG_FB_WM8505=y
+>  CONFIG_FB_SH_MOBILE_LCDC=y
 > 
 
+Hi Kevin,
+
+Could you apply this changeset on the linux-amlogic tree ?
+
+Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
