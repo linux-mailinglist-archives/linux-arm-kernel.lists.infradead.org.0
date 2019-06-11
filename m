@@ -2,50 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8E6F3C49A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 08:59:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 319643C4AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 09:07:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ZucKY8L23PgOTpEnU6Ddqfx9sm59+2AyMBahqOSgmY=; b=NlPDZDPdx3W48q
-	Lpw4d7zoVEjUE7p3EV1X/yj44wKRFeFngevUagqbjpxULPyb1So2Omeb2iVJ47mfj2DJozzpjnaGl
-	zuYdyzimoeia8O1KXNkZC8p7tE5pZtIIXh/H8LJZpy8DnH2SBuwqol2CqMHCiKzYmcg6O68tFY4Js
-	ZrtA3UgWu8kQfKbgr7sGjFcONR0V9f3OQNiLbMgzo/E3tuSBmpqczf9zriHc3ch+/LH6PcX3lPCKP
-	0HqMqfJFhC4mIKo/SxG/S76WiatfJVEXZ1IyK9AvYZdzQLvqurRlSM1x8zcnRHTZLwhMTFWmbm4Rb
-	AzuaWUlAwmNiKJjtRC0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P4Aq1rmQ7NRc+IYRi5kVc8v4N2yU1g8X4PKylKUCsXc=; b=aTyAWbbbX5sE0I
+	M9rUnBp4hzVEy5dPk3NLoFpbOMubcUWJwJmeM2+3byINnnv2wSzoQqoo61c9TGqfjlmCfZJ/ubP6a
+	BEhHQ+U+Srf5TcY4KflRUyPtVlasRZ62kLMaxu7zD7VmHGTaQ8/nwbPpcDgtHG6dzqQDuP6wqlvfO
+	U+WxLTGH/fxhS/U5zW8uhvAQZmjneGjZ06B9SoXaT1aMVhHYu8dcMqy9oP1TAEU7oacVl4jlD3Dl4
+	0fkdZC0nZebT9Qe09xcpGuA0xTl4C/WcUYiq6KweZwrdeHKM587uuHxfCCudCg41V1uSnBufu/v2U
+	QnIlV8li5GHGarahLrxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haakp-0006Vu-0f; Tue, 11 Jun 2019 06:59:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1haakV-0006VT-CO
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 06:59:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 95920346;
- Mon, 10 Jun 2019 23:59:13 -0700 (PDT)
-Received: from [10.162.43.135] (p8cg001049571a15.blr.arm.com [10.162.43.135])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 99F453F73C; Mon, 10 Jun 2019 23:59:11 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH 4/4] mm/vmalloc: Hugepage vmalloc mappings
-To: Nicholas Piggin <npiggin@gmail.com>, linux-mm@kvack.org
-References: <20190610043838.27916-1-npiggin@gmail.com>
- <20190610043838.27916-4-npiggin@gmail.com>
- <a3b2dcb1-148e-b2f1-e181-92c16d868bc9@arm.com>
- <1560210095.fpemv3ultp.astroid@bobo.none>
-Message-ID: <2bd573d5-84ab-4b27-2126-863681ca3ef4@arm.com>
-Date: Tue, 11 Jun 2019 12:29:30 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1haarr-0001i8-Mf; Tue, 11 Jun 2019 07:06:51 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haaqx-0001fK-8U; Tue, 11 Jun 2019 07:05:58 +0000
+X-UUID: db9b00d2c13c40c7819c185cd5122eff-20190610
+X-UUID: db9b00d2c13c40c7819c185cd5122eff-20190610
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 747875108; Mon, 10 Jun 2019 23:05:45 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 00:05:44 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 15:05:42 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 11 Jun 2019 15:05:42 +0800
+Message-ID: <1560236742.4832.34.camel@mtksdccf07>
+Subject: Re: [PATCH v2] kasan: add memory corruption identification for
+ software tag-based mode
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Tue, 11 Jun 2019 15:05:42 +0800
+In-Reply-To: <CACT4Y+aetKEM9UkfSoVf8EaDNTD40mEF0xyaRiuw=DPEaGpTkQ@mail.gmail.com>
+References: <1559651172-28989-1-git-send-email-walter-zh.wu@mediatek.com>
+ <CACT4Y+Y9_85YB8CCwmKerDWc45Z00hMd6Pc-STEbr0cmYSqnoA@mail.gmail.com>
+ <1560151690.20384.3.camel@mtksdccf07>
+ <CACT4Y+aetKEM9UkfSoVf8EaDNTD40mEF0xyaRiuw=DPEaGpTkQ@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <1560210095.fpemv3ultp.astroid@bobo.none>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_235915_518027_E00948C7 
-X-CRM114-Status: GOOD (  36.72  )
+X-CRM114-CacheID: sfid-20190611_000555_425248_F24532F8 
+X-CRM114-Status: GOOD (  36.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -53,6 +61,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,475 +74,728 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev@lists.ozlabs.org, Ard Biesheuvel <Ard.Biesheuvel@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, "Jason
+ A. Donenfeld" <Jason@zx2c4.com>, Vasily
+ Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Linux-MM <linux-mm@kvack.org>, Andrey Konovalov <andreyknvl@google.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ Pekka Enberg <penberg@kernel.org>, Martin
+ Schwidefsky <schwidefsky@de.ibm.com>,
+ Miles Chen =?UTF-8?Q?=28=E9=99=B3=E6=B0=91=E6=A8=BA=29?=
+ <Miles.Chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Christoph Lameter <cl@linux.com>,
+ Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/11/2019 05:46 AM, Nicholas Piggin wrote:
-> Anshuman Khandual's on June 10, 2019 6:53 pm:
->> On 06/10/2019 10:08 AM, Nicholas Piggin wrote:
->>> For platforms that define HAVE_ARCH_HUGE_VMAP, have vmap allow vmalloc to
->>> allocate huge pages and map them.
->>
->> IIUC that extends HAVE_ARCH_HUGE_VMAP from iormap to vmalloc. 
->>
->>>
->>> This brings dTLB misses for linux kernel tree `git diff` from 45,000 to
->>> 8,000 on a Kaby Lake KVM guest with 8MB dentry hash and mitigations=off
->>> (performance is in the noise, under 1% difference, page tables are likely
->>> to be well cached for this workload). Similar numbers are seen on POWER9.
->>
->> Sure will try this on arm64.
->>
->>>
->>> Signed-off-by: Nicholas Piggin <npiggin@gmail.com>
->>> ---
->>>  include/asm-generic/4level-fixup.h |   1 +
->>>  include/asm-generic/5level-fixup.h |   1 +
->>>  include/linux/vmalloc.h            |   1 +
->>>  mm/vmalloc.c                       | 132 +++++++++++++++++++++++------
->>>  4 files changed, 107 insertions(+), 28 deletions(-)
->>>
->>> diff --git a/include/asm-generic/4level-fixup.h b/include/asm-generic/4level-fixup.h
->>> index e3667c9a33a5..3cc65a4dd093 100644
->>> --- a/include/asm-generic/4level-fixup.h
->>> +++ b/include/asm-generic/4level-fixup.h
->>> @@ -20,6 +20,7 @@
->>>  #define pud_none(pud)			0
->>>  #define pud_bad(pud)			0
->>>  #define pud_present(pud)		1
->>> +#define pud_large(pud)			0
->>>  #define pud_ERROR(pud)			do { } while (0)
->>>  #define pud_clear(pud)			pgd_clear(pud)
->>>  #define pud_val(pud)			pgd_val(pud)
->>> diff --git a/include/asm-generic/5level-fixup.h b/include/asm-generic/5level-fixup.h
->>> index bb6cb347018c..c4377db09a4f 100644
->>> --- a/include/asm-generic/5level-fixup.h
->>> +++ b/include/asm-generic/5level-fixup.h
->>> @@ -22,6 +22,7 @@
->>>  #define p4d_none(p4d)			0
->>>  #define p4d_bad(p4d)			0
->>>  #define p4d_present(p4d)		1
->>> +#define p4d_large(p4d)			0
->>>  #define p4d_ERROR(p4d)			do { } while (0)
->>>  #define p4d_clear(p4d)			pgd_clear(p4d)
->>>  #define p4d_val(p4d)			pgd_val(p4d)
->>
->> Both of these are required from vmalloc_to_page() which as per a later comment
->> should be part of a prerequisite patch before this series.
+On Mon, 2019-06-10 at 13:46 +0200, Dmitry Vyukov wrote:
+> On Mon, Jun 10, 2019 at 9:28 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> >
+> > On Fri, 2019-06-07 at 21:18 +0800, Dmitry Vyukov wrote:
+> > > > diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> > > > index b40ea104dd36..be0667225b58 100644
+> > > > --- a/include/linux/kasan.h
+> > > > +++ b/include/linux/kasan.h
+> > > > @@ -164,7 +164,11 @@ void kasan_cache_shutdown(struct kmem_cache *cache);
+> > > >
+> > > >  #else /* CONFIG_KASAN_GENERIC */
+> > > >
+> > > > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > +void kasan_cache_shrink(struct kmem_cache *cache);
+> > > > +#else
+> > >
+> > > Please restructure the code so that we don't duplicate this function
+> > > name 3 times in this header.
+> > >
+> > We have fixed it, Thank you for your reminder.
+> >
+> >
+> > > >  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
+> > > > +#endif
+> > > >  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
+> > > >
+> > > >  #endif /* CONFIG_KASAN_GENERIC */
+> > > > diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+> > > > index 9950b660e62d..17a4952c5eee 100644
+> > > > --- a/lib/Kconfig.kasan
+> > > > +++ b/lib/Kconfig.kasan
+> > > > @@ -134,6 +134,15 @@ config KASAN_S390_4_LEVEL_PAGING
+> > > >           to 3TB of RAM with KASan enabled). This options allows to force
+> > > >           4-level paging instead.
+> > > >
+> > > > +config KASAN_SW_TAGS_IDENTIFY
+> > > > +       bool "Enable memory corruption idenitfication"
+> > >
+> > > s/idenitfication/identification/
+> > >
+> > I should replace my glasses.
+> >
+> >
+> > > > +       depends on KASAN_SW_TAGS
+> > > > +       help
+> > > > +         Now tag-based KASAN bug report always shows invalid-access error, This
+> > > > +         options can identify it whether it is use-after-free or out-of-bound.
+> > > > +         This will make it easier for programmers to see the memory corruption
+> > > > +         problem.
+> > >
+> > > This description looks like a change description, i.e. it describes
+> > > the current behavior and how it changes. I think code comments should
+> > > not have such, they should describe the current state of the things.
+> > > It should also mention the trade-off, otherwise it raises reasonable
+> > > questions like "why it's not enabled by default?" and "why do I ever
+> > > want to not enable it?".
+> > > I would do something like:
+> > >
+> > > This option enables best-effort identification of bug type
+> > > (use-after-free or out-of-bounds)
+> > > at the cost of increased memory consumption for object quarantine.
+> > >
+> > I totally agree with your comments. Would you think we should try to add the cost?
+> > It may be that it consumes about 1/128th of available memory at full quarantine usage rate.
 > 
-> I'm not sure what you mean. This patch is where they get used.
+> Hi,
+> 
+> I don't understand the question. We should not add costs if not
+> necessary. Or you mean why we should add _docs_ regarding the cost? Or
+> what?
+> 
+I mean the description of option. Should it add the description for
+memory costs. I see KASAN_SW_TAGS and KASAN_GENERIC options to show the
+memory costs. So We originally think it is possible to add the
+description, if users want to enable it, maybe they want to know its
+memory costs.
 
-In case you move out vmalloc_to_page() changes to a separate patch.
+If you think it is not necessary, we will not add it.
 
+> > > > +
+> > > >  config TEST_KASAN
+> > > >         tristate "Module for testing KASAN for bug detection"
+> > > >         depends on m && KASAN
+> > > > diff --git a/mm/kasan/Makefile b/mm/kasan/Makefile
+> > > > index 5d1065efbd47..d8540e5070cb 100644
+> > > > --- a/mm/kasan/Makefile
+> > > > +++ b/mm/kasan/Makefile
+> > > > @@ -19,3 +19,4 @@ CFLAGS_tags.o := $(call cc-option, -fno-conserve-stack -fno-stack-protector)
+> > > >  obj-$(CONFIG_KASAN) := common.o init.o report.o
+> > > >  obj-$(CONFIG_KASAN_GENERIC) += generic.o generic_report.o quarantine.o
+> > > >  obj-$(CONFIG_KASAN_SW_TAGS) += tags.o tags_report.o
+> > > > +obj-$(CONFIG_KASAN_SW_TAGS_IDENTIFY) += quarantine.o
+> > > > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > > > index 80bbe62b16cd..e309fbbee831 100644
+> > > > --- a/mm/kasan/common.c
+> > > > +++ b/mm/kasan/common.c
+> > > > @@ -81,7 +81,7 @@ static inline depot_stack_handle_t save_stack(gfp_t flags)
+> > > >         return depot_save_stack(&trace, flags);
+> > > >  }
+> > > >
+> > > > -static inline void set_track(struct kasan_track *track, gfp_t flags)
+> > > > +void set_track(struct kasan_track *track, gfp_t flags)
+> > >
+> > > If you make it non-static, it should get kasan_ prefix. The name is too generic.
+> > >
+> > Ok, We will add it into next version.
+> >
+> >
+> > >
+> > > >  {
+> > > >         track->pid = current->pid;
+> > > >         track->stack = save_stack(flags);
+> > > > @@ -457,7 +457,7 @@ static bool __kasan_slab_free(struct kmem_cache *cache, void *object,
+> > > >                 return false;
+> > > >
+> > > >         set_track(&get_alloc_info(cache, object)->free_track, GFP_NOWAIT);
+> > > > -       quarantine_put(get_free_info(cache, object), cache);
+> > > > +       quarantine_put(get_free_info(cache, tagged_object), cache);
+> > > >
+> > > >         return IS_ENABLED(CONFIG_KASAN_GENERIC);
+> > > >  }
+> > > > diff --git a/mm/kasan/kasan.h b/mm/kasan/kasan.h
+> > > > index 3e0c11f7d7a1..1be04abe2e0d 100644
+> > > > --- a/mm/kasan/kasan.h
+> > > > +++ b/mm/kasan/kasan.h
+> > > > @@ -98,6 +98,12 @@ struct kasan_alloc_meta {
+> > > >  struct qlist_node {
+> > > >         struct qlist_node *next;
+> > > >  };
+> > > > +struct qlist_object {
+> > > > +       unsigned long addr;
+> > > > +       unsigned int size;
+> > > > +       struct kasan_track free_track;
+> > > > +       struct qlist_node qnode;
+> > > > +};
+> > > >  struct kasan_free_meta {
+> > > >         /* This field is used while the object is in the quarantine.
+> > > >          * Otherwise it might be used for the allocator freelist.
+> > > > @@ -133,11 +139,12 @@ void kasan_report(unsigned long addr, size_t size,
+> > > >                 bool is_write, unsigned long ip);
+> > > >  void kasan_report_invalid_free(void *object, unsigned long ip);
+> > > >
+> > > > -#if defined(CONFIG_KASAN_GENERIC) && \
+> > > > -       (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
+> > > > +#if (defined(CONFIG_KASAN_GENERIC) || defined(CONFIG_KASAN_SW_TAGS_IDENTIFY)) \
+> > > > +       && (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
+> > > >  void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache);
+> > > >  void quarantine_reduce(void);
+> > > >  void quarantine_remove_cache(struct kmem_cache *cache);
+> > > > +void set_track(struct kasan_track *track, gfp_t flags);
+> > > >  #else
+> > > >  static inline void quarantine_put(struct kasan_free_meta *info,
+> > > >                                 struct kmem_cache *cache) { }
+> > > > @@ -151,6 +158,31 @@ void print_tags(u8 addr_tag, const void *addr);
+> > > >
+> > > >  u8 random_tag(void);
+> > > >
+> > > > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > +bool quarantine_find_object(void *object,
+> > > > +               struct kasan_track *free_track);
+> > > > +
+> > > > +struct qlist_object *qobject_create(struct kasan_free_meta *info,
+> > > > +               struct kmem_cache *cache);
+> > > > +
+> > > > +void qobject_free(struct qlist_node *qlink, struct kmem_cache *cache);
+> > > > +#else
+> > > > +static inline bool quarantine_find_object(void *object,
+> > > > +               struct kasan_track *free_track)
+> > > > +{
+> > > > +       return false;
+> > > > +}
+> > > > +
+> > > > +static inline struct qlist_object *qobject_create(struct kasan_free_meta *info,
+> > > > +               struct kmem_cache *cache)
+> > > > +{
+> > > > +       return NULL;
+> > > > +}
+> > > > +
+> > > > +static inline void qobject_free(struct qlist_node *qlink,
+> > > > +               struct kmem_cache *cache) {}
+> > > > +#endif
+> > > > +
+> > > >  #else
+> > > >
+> > > >  static inline void print_tags(u8 addr_tag, const void *addr) { }
+> > > > @@ -160,6 +192,20 @@ static inline u8 random_tag(void)
+> > > >         return 0;
+> > > >  }
+> > > >
+> > > > +static inline bool quarantine_find_object(void *object,
+> > >
+> > >
+> > > Please restructure the code so that we don't duplicate this function
+> > > name 3 times in this header.
+> > >
+> > We have fixed it.
+> >
+> >
+> > > > +               struct kasan_track *free_track)
+> > > > +{
+> > > > +       return false;
+> > > > +}
+> > > > +
+> > > > +static inline struct qlist_object *qobject_create(struct kasan_free_meta *info,
+> > > > +               struct kmem_cache *cache)
+> > > > +{
+> > > > +       return NULL;
+> > > > +}
+> > > > +
+> > > > +static inline void qobject_free(struct qlist_node *qlink,
+> > > > +               struct kmem_cache *cache) {}
+> > > >  #endif
+> > > >
+> > > >  #ifndef arch_kasan_set_tag
+> > > > diff --git a/mm/kasan/quarantine.c b/mm/kasan/quarantine.c
+> > > > index 978bc4a3eb51..43b009659d80 100644
+> > > > --- a/mm/kasan/quarantine.c
+> > > > +++ b/mm/kasan/quarantine.c
+> > > > @@ -61,12 +61,16 @@ static void qlist_init(struct qlist_head *q)
+> > > >  static void qlist_put(struct qlist_head *q, struct qlist_node *qlink,
+> > > >                 size_t size)
+> > > >  {
+> > > > -       if (unlikely(qlist_empty(q)))
+> > > > +       struct qlist_node *prev_qlink = q->head;
+> > > > +
+> > > > +       if (unlikely(qlist_empty(q))) {
+> > > >                 q->head = qlink;
+> > > > -       else
+> > > > -               q->tail->next = qlink;
+> > > > -       q->tail = qlink;
+> > > > -       qlink->next = NULL;
+> > > > +               q->tail = qlink;
+> > > > +               qlink->next = NULL;
+> > > > +       } else {
+> > > > +               q->head = qlink;
+> > > > +               qlink->next = prev_qlink;
+> > > > +       }
+> > > >         q->bytes += size;
+> > > >  }
+> > > >
+> > > > @@ -121,7 +125,11 @@ static unsigned long quarantine_batch_size;
+> > > >   * Quarantine doesn't support memory shrinker with SLAB allocator, so we keep
+> > > >   * the ratio low to avoid OOM.
+> > > >   */
+> > > > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > +#define QUARANTINE_FRACTION 128
+> > >
+> > > Explain in a comment why we use lower value for sw tags mode.
+> > >
+> > The comment is below.
+> > "Tag-based KASAN only stores freed object information rather than the
+> > object itself. The quarantine in tag-based KASAN only needs less usage
+> > to achieve the same effect as generic KASAN. So We reduce the
+> > QUARANTINE_FRACTION value to slim the quarantine"
+> >
+> >
+> > > > +#else
+> > > >  #define QUARANTINE_FRACTION 32
+> > > > +#endif
+> > > >
+> > > >  static struct kmem_cache *qlink_to_cache(struct qlist_node *qlink)
+> > > >  {
+> > > > @@ -139,16 +147,24 @@ static void *qlink_to_object(struct qlist_node *qlink, struct kmem_cache *cache)
+> > > >
+> > > >  static void qlink_free(struct qlist_node *qlink, struct kmem_cache *cache)
+> > > >  {
+> > > > -       void *object = qlink_to_object(qlink, cache);
+> > > >         unsigned long flags;
+> > > > +       struct kmem_cache *obj_cache;
+> > > > +       void *object;
+> > > >
+> > > > -       if (IS_ENABLED(CONFIG_SLAB))
+> > > > -               local_irq_save(flags);
+> > > > +       if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY)) {
+> > > > +               qobject_free(qlink, cache);
+> > > > +       } else {
+> > > > +               obj_cache = cache ? cache :     qlink_to_cache(qlink);
+> > > > +               object = qlink_to_object(qlink, obj_cache);
+> > > >
+> > > > -       ___cache_free(cache, object, _THIS_IP_);
+> > > > +               if (IS_ENABLED(CONFIG_SLAB))
+> > > > +                       local_irq_save(flags);
+> > > >
+> > > > -       if (IS_ENABLED(CONFIG_SLAB))
+> > > > -               local_irq_restore(flags);
+> > > > +               ___cache_free(obj_cache, object, _THIS_IP_);
+> > > > +
+> > > > +               if (IS_ENABLED(CONFIG_SLAB))
+> > > > +                       local_irq_restore(flags);
+> > > > +       }
+> > > >  }
+> > > >
+> > > >  static void qlist_free_all(struct qlist_head *q, struct kmem_cache *cache)
+> > > > @@ -160,11 +176,9 @@ static void qlist_free_all(struct qlist_head *q, struct kmem_cache *cache)
+> > > >
+> > > >         qlink = q->head;
+> > > >         while (qlink) {
+> > > > -               struct kmem_cache *obj_cache =
+> > > > -                       cache ? cache : qlink_to_cache(qlink);
+> > > >                 struct qlist_node *next = qlink->next;
+> > > >
+> > > > -               qlink_free(qlink, obj_cache);
+> > > > +               qlink_free(qlink, cache);
+> > > >                 qlink = next;
+> > > >         }
+> > > >         qlist_init(q);
+> > > > @@ -175,6 +189,8 @@ void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache)
+> > > >         unsigned long flags;
+> > > >         struct qlist_head *q;
+> > > >         struct qlist_head temp = QLIST_INIT;
+> > > > +       struct kmem_cache *qobject_cache;
+> > > > +       struct qlist_object *free_obj_info;
+> > > >
+> > > >         /*
+> > > >          * Note: irq must be disabled until after we move the batch to the
+> > > > @@ -187,7 +203,19 @@ void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache)
+> > > >         local_irq_save(flags);
+> > > >
+> > > >         q = this_cpu_ptr(&cpu_quarantine);
+> > > > -       qlist_put(q, &info->quarantine_link, cache->size);
+> > > > +       if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY)) {
+> > > > +               free_obj_info = qobject_create(info, cache);
+> > > > +               if (!free_obj_info) {
+> > > > +                       local_irq_restore(flags);
+> > > > +                       return;
+> > > > +               }
+> > > > +
+> > > > +               qobject_cache = qlink_to_cache(&free_obj_info->qnode);
+> > > > +               qlist_put(q, &free_obj_info->qnode, qobject_cache->size);
+> > >
+> > > We could use sizeof(*free_obj_info), which looks simpler. Any reason
+> > > to do another hop through the cache?
+> > >
+> > We originally thought we should store the whole slab usage(including metadata)
+> > instead of qobject size.
+> > If we use sizeof(*free_obj_info), then below calculation is incorrect.
+> > total quarantine size = (totalram_pages() << PAGE_SHIFT) / QUARANTINE_FRACTION
+> > - QUARANTINE_PERCPU_SIZE*num_online_cpus()
 > 
-> Possibly I could split this and the vmalloc_to_page change out. I'll
-> consider it.
+> So this is total size which is more precise. I see.
 > 
->>> diff --git a/include/linux/vmalloc.h b/include/linux/vmalloc.h
->>> index 812bea5866d6..4c92dc608928 100644
->>> --- a/include/linux/vmalloc.h
->>> +++ b/include/linux/vmalloc.h
->>> @@ -42,6 +42,7 @@ struct vm_struct {
->>>  	unsigned long		size;
->>>  	unsigned long		flags;
->>>  	struct page		**pages;
->>> +	unsigned int		page_shift;
->>
->> So the entire vm_struct will be mapped with a single page_shift. It cannot have
->> mix and match mappings with PAGE_SIZE, PMD_SIZE, PUD_SIZE etc in case the
->> allocation fails for larger ones, falling back etc what over other reasons.
 > 
-> For now, yes. I have a bit of follow up work to improve that and make
-> it able to fall back, but it's a bit more churn and not a significant
-> benefit just yet because there are not a lot of very large vmallocs
-> (except the early hashes which can be satisfied with large allocs).
+> > > > +       } else {
+> > > > +               qlist_put(q, &info->quarantine_link, cache->size);
+> > > > +       }
+> > > > +
+> > > >         if (unlikely(q->bytes > QUARANTINE_PERCPU_SIZE)) {
+> > > >                 qlist_move_all(q, &temp);
+> > > >
+> > > > @@ -220,7 +248,6 @@ void quarantine_reduce(void)
+> > > >         if (likely(READ_ONCE(quarantine_size) <=
+> > > >                    READ_ONCE(quarantine_max_size)))
+> > > >                 return;
+> > > > -
+> > > >         /*
+> > > >          * srcu critical section ensures that quarantine_remove_cache()
+> > > >          * will not miss objects belonging to the cache while they are in our
+> > > > @@ -327,3 +354,90 @@ void quarantine_remove_cache(struct kmem_cache *cache)
+> > > >
+> > > >         synchronize_srcu(&remove_cache_srcu);
+> > > >  }
+> > > > +
+> > > > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > +static noinline bool qlist_find_object(struct qlist_head *from, void *arg)
+> > > > +{
+> > > > +       struct qlist_node *curr;
+> > > > +       struct qlist_object *curr_obj;
+> > > > +       struct qlist_object *target = (struct qlist_object *)arg;
+> > > > +
+> > > > +       if (unlikely(qlist_empty(from)))
+> > > > +               return false;
+> > > > +
+> > > > +       curr = from->head;
+> > > > +       while (curr) {
+> > > > +               struct qlist_node *next = curr->next;
+> > > > +
+> > > > +               curr_obj = container_of(curr, struct qlist_object, qnode);
+> > > > +               if (unlikely((target->addr >= curr_obj->addr) &&
+> > > > +                       (target->addr < (curr_obj->addr + curr_obj->size)))) {
+> > > > +                       target->free_track = curr_obj->free_track;
+> > > > +                       return true;
+> > > > +               }
+> > > > +
+> > > > +               curr = next;
+> > > > +       }
+> > > > +       return false;
+> > > > +}
+> > > > +
+> > > > +static noinline int per_cpu_find_object(void *arg)
+> > > > +{
+> > > > +       struct qlist_head *q;
+> > > > +
+> > > > +       q = this_cpu_ptr(&cpu_quarantine);
+> > > > +       return qlist_find_object(q, arg);
+> > > > +}
+> > > > +
+> > > > +struct cpumask cpu_allowed_mask __read_mostly;
+> > > > +
+> > > > +bool quarantine_find_object(void *addr, struct kasan_track *free_track)
+> > > > +{
+> > > > +       unsigned long flags;
+> > > > +       bool find = false;
+> > > > +       int cpu, i;
+> > > > +       struct qlist_object target;
+> > > > +
+> > > > +       target.addr = (unsigned long)addr;
+> > > > +
+> > > > +       cpumask_copy(&cpu_allowed_mask, cpu_online_mask);
+> > > > +       for_each_cpu(cpu, &cpu_allowed_mask) {
+> > > > +               find = smp_call_on_cpu(cpu, per_cpu_find_object,
+> > > > +                               (void *)&target, true);
+> > > > +               if (find) {
+> > > > +                       if (free_track)
+> > > > +                               *free_track = target.free_track;
+> > > > +                       return true;
+> > > > +               }
+> > > > +       }
+> > > > +
+> > > > +       raw_spin_lock_irqsave(&quarantine_lock, flags);
+> > > > +       for (i = quarantine_tail; i >= 0; i--) {
+> > > > +               if (qlist_empty(&global_quarantine[i]))
+> > > > +                       continue;
+> > > > +               find = qlist_find_object(&global_quarantine[i],
+> > > > +                               (void *)&target);
+> > > > +               if (find) {
+> > > > +                       if (free_track)
+> > > > +                               *free_track = target.free_track;
+> > > > +                       raw_spin_unlock_irqrestore(&quarantine_lock, flags);
+> > > > +                       return true;
+> > > > +               }
+> > > > +       }
+> > > > +       for (i = QUARANTINE_BATCHES-1; i > quarantine_tail; i--) {
+> > >
+> > > Find a way to calculate the right index using a single loop, rather
+> > > that copy-paste the whole loop body to do a small adjustment to index.
+> > >
+> > single loop:
+> >
+> >     for (i = quarantine_tail, j = 1; i != quarantine_tail || j != 2;
+> > i--) {
+> 
+> I would find the classic loop form easier to follow and then compute
+> the actual index as necessary.
+> Something along the following lines:
+> 
+> for (i = 0; i < QUARANTINE_BATCHES; i++) {
+>     idx = quarantine_tail - i;
+>     if (idx < 0)
+>         idx += QUARANTINE_BATCHES;
+>     ...
+> 
+Thanks your helps. It is smart code.
+I am too persistent to treat 'i' as the index rather than calculate new
+index.
 
-Right but it will make this new feature complete like ioremap which logically
-supports till P4D (though AFAICT not used). If there are no actual vmalloc
-requests that large it is fine. Allocation attempts will start from the page
-table level depending on the requested size. It is better to have PUD/P4D
-considerations now rather than trying to after fit it later.
+> >         if (i < 0) {
+> >             i = QUARANTINE_BATCHES;
+> >             j = 2;
+> >             continue;
+> >         }
+> >         if (qlist_empty(&global_quarantine[i]))
+> >             continue;
+> >         find = qlist_find_object(&global_quarantine[i],
+> >                 (void *)&target);
+> >         if (find) {
+> >             if (free_track)
+> >                 *free_track = target.free_track;
+> >             raw_spin_unlock_irqrestore(&quarantine_lock, flags);
+> >             return true;
+> >         }
+> >     }
+> >
+> >
+> > > > +               if (qlist_empty(&global_quarantine[i]))
+> > > > +                       continue;
+> > > > +               find = qlist_find_object(&global_quarantine[i],
+> > > > +                               (void *)&target);
+> > > > +               if (find) {
+> > > > +                       if (free_track)
+> > > > +                               *free_track = target.free_track;
+> > > > +                       raw_spin_unlock_irqrestore(&quarantine_lock, flags);
+> > > > +                       return true;
+> > > > +               }
+> > > > +       }
+> > > > +       raw_spin_unlock_irqrestore(&quarantine_lock, flags);
+> > > > +
+> > > > +       return false;
+> > > > +}
+> > > > +#endif
+> > > > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+> > > > index ca9418fe9232..3cbc24cd3d43 100644
+> > > > --- a/mm/kasan/report.c
+> > > > +++ b/mm/kasan/report.c
+> > > > @@ -150,18 +150,27 @@ static void describe_object_addr(struct kmem_cache *cache, void *object,
+> > > >  }
+> > > >
+> > > >  static void describe_object(struct kmem_cache *cache, void *object,
+> > > > -                               const void *addr)
+> > > > +                               const void *tagged_addr)
+> > > >  {
+> > > > +       void *untagged_addr = reset_tag(tagged_addr);
+> > > >         struct kasan_alloc_meta *alloc_info = get_alloc_info(cache, object);
+> > > > +       struct kasan_track free_track;
+> > > >
+> > > >         if (cache->flags & SLAB_KASAN) {
+> > > > -               print_track(&alloc_info->alloc_track, "Allocated");
+> > > > -               pr_err("\n");
+> > > > -               print_track(&alloc_info->free_track, "Freed");
+> > > > -               pr_err("\n");
+> > > > +               if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY) &&
+> > > > +                       quarantine_find_object((void *)tagged_addr,
+> > > > +                               &free_track)) {
+> > > > +                       print_track(&free_track, "Freed");
+> > > > +                       pr_err("\n");
+> > > > +               } else {
+> > > > +                       print_track(&alloc_info->alloc_track, "Allocated");
+> > > > +                       pr_err("\n");
+> > > > +                       print_track(&alloc_info->free_track, "Freed");
+> > > > +                       pr_err("\n");
+> > > > +               }
+> > > >         }
+> > > >
+> > > > -       describe_object_addr(cache, object, addr);
+> > > > +       describe_object_addr(cache, object, untagged_addr);
+> > > >  }
+> > > >
+> > > >  static inline bool kernel_or_module_addr(const void *addr)
+> > > > @@ -180,23 +189,25 @@ static inline bool init_task_stack_addr(const void *addr)
+> > > >                         sizeof(init_thread_union.stack));
+> > > >  }
+> > > >
+> > > > -static void print_address_description(void *addr)
+> > > > +static void print_address_description(void *tagged_addr)
+> > > >  {
+> > > > -       struct page *page = addr_to_page(addr);
+> > > > +       void *untagged_addr = reset_tag(tagged_addr);
+> > > > +       struct page *page = addr_to_page(untagged_addr);
+> > > >
+> > > >         dump_stack();
+> > > >         pr_err("\n");
+> > > >
+> > > >         if (page && PageSlab(page)) {
+> > > >                 struct kmem_cache *cache = page->slab_cache;
+> > > > -               void *object = nearest_obj(cache, page, addr);
+> > > > +               void *object = nearest_obj(cache, page, untagged_addr);
+> > > >
+> > > > -               describe_object(cache, object, addr);
+> > > > +               describe_object(cache, object, tagged_addr);
+> > > >         }
+> > > >
+> > > > -       if (kernel_or_module_addr(addr) && !init_task_stack_addr(addr)) {
+> > > > +       if (kernel_or_module_addr(untagged_addr) &&
+> > > > +                       !init_task_stack_addr(untagged_addr)) {
+> > > >                 pr_err("The buggy address belongs to the variable:\n");
+> > > > -               pr_err(" %pS\n", addr);
+> > > > +               pr_err(" %pS\n", untagged_addr);
+> > > >         }
+> > > >
+> > > >         if (page) {
+> > > > @@ -314,7 +325,7 @@ void kasan_report(unsigned long addr, size_t size,
+> > > >         pr_err("\n");
+> > > >
+> > > >         if (addr_has_shadow(untagged_addr)) {
+> > > > -               print_address_description(untagged_addr);
+> > > > +               print_address_description(tagged_addr);
+> > > >                 pr_err("\n");
+> > > >                 print_shadow_for_address(info.first_bad_addr);
+> > > >         } else {
+> > > > diff --git a/mm/kasan/tags.c b/mm/kasan/tags.c
+> > > > index 63fca3172659..7804b48f760e 100644
+> > > > --- a/mm/kasan/tags.c
+> > > > +++ b/mm/kasan/tags.c
+> > > > @@ -124,6 +124,53 @@ void check_memory_region(unsigned long addr, size_t size, bool write,
+> > > >         }
+> > > >  }
+> > > >
+> > > > +#ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > +void kasan_cache_shrink(struct kmem_cache *cache)
+> > > > +{
+> > > > +       quarantine_remove_cache(cache);
+> > >
+> > > This does not look to be necessary. There are no objects from that
+> > > cache in the quarantine in general. Let's not over-complicate this.
+> > >
+> > Ok, we will remove it.
+> >
+> > >
+> > >
+> > > > +}
+> > > > +
+> > > > +struct qlist_object *qobject_create(struct kasan_free_meta *info,
+> > > > +                                               struct kmem_cache *cache)
+> > > > +{
+> > > > +       struct qlist_object *qobject_info;
+> > > > +       void *object;
+> > > > +
+> > > > +       object = ((void *)info) - cache->kasan_info.free_meta_offset;
+> > > > +       qobject_info = kmalloc(sizeof(struct qlist_object), GFP_NOWAIT);
+> > > > +       if (!qobject_info)
+> > > > +               return NULL;
+> > > > +       qobject_info->addr = (unsigned long) object;
+> > > > +       qobject_info->size = cache->object_size;
+> > > > +       set_track(&qobject_info->free_track, GFP_NOWAIT);
+> > > > +
+> > > > +       return qobject_info;
+> > > > +}
+> > > > +
+> > > > +static struct kmem_cache *qobject_to_cache(struct qlist_object *qobject)
+> > > > +{
+> > > > +       return virt_to_head_page(qobject)->slab_cache;
+> > >
+> > > This looks identical to the existing qlink_to_cache, please use the
+> > > existing function.
+> > >
+> > > > +}
+> > > > +
+> > > > +void qobject_free(struct qlist_node *qlink, struct kmem_cache *cache)
+> > > > +{
+> > > > +       struct qlist_object *qobject = container_of(qlink,
+> > > > +                       struct qlist_object, qnode);
+> > > > +       unsigned long flags;
+> > > > +
+> > > > +       struct kmem_cache *qobject_cache =
+> > > > +                       cache ? cache : qobject_to_cache(qobject);
+> > >
+> > > I don't understand this part.
+> > > Will caller ever pass us the right cache? Or cache is always NULL? If
+> > > it's always NULL, why do we accept it at all?
+> > 2 call flow at v2.
+> > a). kmalloc() -> quarantine_reduce() -> qlist_free_all(&to_free, NULL)
+> > -> qlink_free(qlink, NULL) -> qobject_free(qlink, NULL)
+> > b). kmem_cache_shrink() -> kasan_cache_shrink(cache) ->
+> > quarantine_remove_cache() -> qlist_free_all(&to_free, cache); ->
+> > qlink_free(qlink, cache) -> qobject_free(qlink, cache)
+> >
+> > It passes the NULL parameter at flow a.
+> > It passes the cache of slab at flow b.
+> >
+> > We always need calculate the slab cache to If we remove flow b.
+> 
+> Good. Let's do it. The simpler, the better.
+> 
+> > > We also allocate qobjects with kmalloc always, so we must use kfree,
+> > > why do we even mess with caches?
+> > >
+> > We call ___cache_free() to free the qobject instead of kfree(), because
+> > it should be out of quarantine.
+> 
+> I see. Probably this mismatch worth a comment.
+> 
+Yes, we will add the comment at qobject_free() in order to avoid letting
+others misunderstand.
 
-> 
->>
->>>  	unsigned int		nr_pages;
->>>  	phys_addr_t		phys_addr;
->>>  	const void		*caller;
->>> diff --git a/mm/vmalloc.c b/mm/vmalloc.c
->>> index dd27cfb29b10..0cf8e861caeb 100644
->>> --- a/mm/vmalloc.c
->>> +++ b/mm/vmalloc.c
->>> @@ -36,6 +36,7 @@
->>>  #include <linux/rbtree_augmented.h>
->>>  
->>>  #include <linux/uaccess.h>
->>> +#include <asm/pgtable.h>
->>>  #include <asm/tlbflush.h>
->>>  #include <asm/shmparam.h>
->>>  
->>> @@ -440,6 +441,41 @@ static int vmap_pages_range(unsigned long start, unsigned long end,
->>>  	return ret;
->>>  }
->>>  
->>> +#ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
->>> +static int vmap_hpages_range(unsigned long start, unsigned long end,
->>
->> A small nit (if you agree) s/hpages/huge_pages/
-> 
-> Hmm. It's not actually a good function name because it can do small
-> pages as well. vmap_pages_size_range or something may be better.
 
-Right.
+> > > > +
+> > > > +       if (IS_ENABLED(CONFIG_SLAB))
+> > > > +               local_irq_save(flags);
+> > > > +
+> > > > +       ___cache_free(qobject_cache, (void *)qobject, _THIS_IP_);
+> > > > +
+> > > > +       if (IS_ENABLED(CONFIG_SLAB))
+> > > > +               local_irq_restore(flags);
+> > > > +}
+> > > > +#endif
+> > > > +
+> > > >  #define DEFINE_HWASAN_LOAD_STORE(size)                                 \
+> > > >         void __hwasan_load##size##_noabort(unsigned long addr)          \
+> > > >         {                                                               \
+> > > > diff --git a/mm/kasan/tags_report.c b/mm/kasan/tags_report.c
+> > > > index 8eaf5f722271..63b0b1f381ff 100644
+> > > > --- a/mm/kasan/tags_report.c
+> > > > +++ b/mm/kasan/tags_report.c
+> > > > @@ -36,7 +36,13 @@
+> > > >
+> > > >  const char *get_bug_type(struct kasan_access_info *info)
+> > > >  {
+> > > > -       return "invalid-access";
+> > > > +       if (IS_ENABLED(CONFIG_KASAN_SW_TAGS_IDENTIFY)) {
+> > > > +               if (quarantine_find_object((void *)info->access_addr, NULL))
+> > > > +                       return "use-after-free";
+> > > > +               else
+> > > > +                       return "out-of-bounds";
+> > > > +       } else
+> > > > +               return "invalid-access";
+> > > >  }
+> > > >
+> > > >  void *find_first_bad_addr(void *addr, size_t size)
+> > > > diff --git a/mm/slub.c b/mm/slub.c
+> > > > index 1b08fbcb7e61..751429d02846 100644
+> > > > --- a/mm/slub.c
+> > > > +++ b/mm/slub.c
+> > > > @@ -3004,7 +3004,7 @@ static __always_inline void slab_free(struct kmem_cache *s, struct page *page,
+> > > >                 do_slab_free(s, page, head, tail, cnt, addr);
+> > > >  }
+> > > >
+> > > > -#ifdef CONFIG_KASAN_GENERIC
+> > > > +#if defined(CONFIG_KASAN_GENERIC) || defined(CONFIG_KASAN_SW_TAGS_IDENTIFY)
+> > > >  void ___cache_free(struct kmem_cache *cache, void *x, unsigned long addr)
+> > > >  {
+> > > >         do_slab_free(cache, virt_to_head_page(x), x, NULL, 1, addr);
 
-> 
->>
->>> +				   pgprot_t prot, struct page **pages,
->>
->> Re-order (prot <---> pages) just to follow the standard like before.
-> 
-> Will do.
-> 
->>> +				   unsigned int page_shift)
->>> +{
->>> +	unsigned long addr = start;
->>> +	unsigned int i, nr = (end - start) >> (PAGE_SHIFT + page_shift);
->>
->> s/nr/nr_huge_pages ?
-> 
-> Sure.
-> 
->> Also should not we check for the alignment of the range [start...end] with
->> respect to (1UL << [PAGE_SHIFT + page_shift]).
-> 
-> The caller should if it specifies large page. Could check and -EINVAL
-> for incorrect alignment.
 
-That might be a good check here.
-
-> 
->>> +
->>> +	for (i = 0; i < nr; i++) {
->>> +		int err;
->>> +
->>> +		err = vmap_range_noflush(addr,
->>> +					addr + (PAGE_SIZE << page_shift),
->>> +					__pa(page_address(pages[i])), prot,
->>> +					PAGE_SHIFT + page_shift);
->>> +		if (err)
->>> +			return err;
->>> +
->>> +		addr += PAGE_SIZE << page_shift;
->>> +	}
->>> +	flush_cache_vmap(start, end);
->>> +
->>> +	return nr;
->>> +}
->>> +#else
->>> +static int vmap_hpages_range(unsigned long start, unsigned long end,
->>> +			   pgprot_t prot, struct page **pages,
->>> +			   unsigned int page_shift)
->>> +{
->>> +	BUG_ON(page_shift != PAGE_SIZE);
->>> +	return vmap_pages_range(start, end, prot, pages);
->>> +}
->>> +#endif
->>> +
->>> +
->>>  int is_vmalloc_or_module_addr(const void *x)
->>>  {
->>>  	/*
->>> @@ -462,7 +498,7 @@ struct page *vmalloc_to_page(const void *vmalloc_addr)
->>>  {
->>>  	unsigned long addr = (unsigned long) vmalloc_addr;
->>>  	struct page *page = NULL;
->>> -	pgd_t *pgd = pgd_offset_k(addr);
->>> +	pgd_t *pgd;
->>>  	p4d_t *p4d;
->>>  	pud_t *pud;
->>>  	pmd_t *pmd;
->>> @@ -474,27 +510,38 @@ struct page *vmalloc_to_page(const void *vmalloc_addr)
->>>  	 */
->>>  	VIRTUAL_BUG_ON(!is_vmalloc_or_module_addr(vmalloc_addr));
->>>  
->>> +	pgd = pgd_offset_k(addr);
->>>  	if (pgd_none(*pgd))
->>>  		return NULL;
->>> +
->>
->> Small nit. Stray line here.
->>
->> 'pgd' related changes here seem to be just cleanups and should not part of this patch.
-> 
-> Yeah I figure it doesn't matter to make small changes close by, but
-> maybe that's more frowned upon now for git blame?
-
-Right. But I guess it should be okay if you can make vmalloc_to_page()
-changes as a separate patch. This patch which adds a new feature should
-not have any clean ups IMHO.
-
-> 
->>>  	p4d = p4d_offset(pgd, addr);
->>>  	if (p4d_none(*p4d))
->>>  		return NULL;
->>> -	pud = pud_offset(p4d, addr);
->>> +#ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
->>> +	if (p4d_large(*p4d))
->>> +		return p4d_page(*p4d) + ((addr & ~P4D_MASK) >> PAGE_SHIFT);
->>> +#endif
->>> +	if (WARN_ON_ONCE(p4d_bad(*p4d)))
->>> +		return NULL;
->>>  
->>> -	/*
->>> -	 * Don't dereference bad PUD or PMD (below) entries. This will also
->>> -	 * identify huge mappings, which we may encounter on architectures
->>> -	 * that define CONFIG_HAVE_ARCH_HUGE_VMAP=y. Such regions will be
->>> -	 * identified as vmalloc addresses by is_vmalloc_addr(), but are
->>> -	 * not [unambiguously] associated with a struct page, so there is
->>> -	 * no correct value to return for them.
->>> -	 */
->>
->> What changed the situation so that we could return struct page for a huge
->> mapping now ?
-> 
-> For the PUD case? Nothing changed, per se, we I just calculate the
-> correct struct page now, so I may return it.
-
-I was just curious what prevented this earlier (before this series). The
-comment here and commit message which added this change making me wonder
-what was the reason for not doing this earlier.  
-
-> 
->> AFAICT even after this patch, PUD/P4D level huge pages can only
->> be created with ioremap_page_range() not with vmalloc() which creates PMD
->> sized mappings only. Hence if it's okay to dereference struct page of a huge
->> mapping (not withstanding the comment here) it should be part of an earlier
->> patch fixing it first for existing ioremap_page_range() huge mappings.
-> 
-> Possibly yes, we can consider 029c54b095995 to be a band-aid for huge
-> vmaps which is fixed properly by this change, in which case it could
-> make sense to break this into its own patch.
-
-On arm64 [pud|pmd]_bad() calls out huge mappings at PUD or PMD. I still wonder what
-Ard (copied him now) meant by "not [unambiguously] associated with a struct page".
-He also mentioned about compound pages in the commit message. Anyways these makes
-sense (fetching the struct page) unless I am missing something. But should be part
-of a separate patch.
-
-pXd_page(*pXd) + ((addr & ~PXD_MASK) >> PAGE_SHIFT)
-
-> 
->>
->>> -	WARN_ON_ONCE(pud_bad(*pud));
->>> -	if (pud_none(*pud) || pud_bad(*pud))
->>> +	pud = pud_offset(p4d, addr);
->>> +	if (pud_none(*pud))
->>> +		return NULL;
->>> +#ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
->>> +	if (pud_large(*pud))
->>> +		return pud_page(*pud) + ((addr & ~PUD_MASK) >> PAGE_SHIFT);
->>> +#endif
->>> +	if (WARN_ON_ONCE(pud_bad(*pud)))
->>>  		return NULL;
->>> +
->>>  	pmd = pmd_offset(pud, addr);
->>> -	WARN_ON_ONCE(pmd_bad(*pmd));
->>> -	if (pmd_none(*pmd) || pmd_bad(*pmd))
->>> +	if (pmd_none(*pmd))
->>> +		return NULL;
->>> +#ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
->>> +	if (pmd_large(*pmd))
->>> +		return pmd_page(*pmd) + ((addr & ~PMD_MASK) >> PAGE_SHIFT);
->>> +#endif
->>> +	if (WARN_ON_ONCE(pmd_bad(*pmd)))
->>>  		return NULL;
->>
->> At each page table level, we are checking in this order
->>
->> pXX_none() --> pXX_large() --> pXX_bad()
->>
->> Are not these alternative orders bit better
->>
->> pXX_bad() --> pXX_none() --> pXX_large()
->>
->> Or
->>
->> pXX_none() --> pXX_bad() --> pXX_large()
->>
->> Checking for pXX_bad() at the end does not make much sense.
-> 
-> Yeah the order tends to go none->bad. It's not 100% clear we can
-> test bad before none (at least it goes against convention). But good
-> point should be changed to your last sequence I think.
-
-Sure.
-
-> 
->>
->>>  
->>>  	ptep = pte_offset_map(pmd, addr);
->>> @@ -502,6 +549,7 @@ struct page *vmalloc_to_page(const void *vmalloc_addr)
->>>  	if (pte_present(pte))
->>>  		page = pte_page(pte);
->>>  	pte_unmap(ptep);
->>> +
->>
->> Small nit. Stray line here.
-> 
-> I don't mind adding some lines here and there, like here. It is an
-> unrelated (alleged-)cleanup though.
-> 
->>
->>>  	return page;
->>>  }
->>>  EXPORT_SYMBOL(vmalloc_to_page);
->>> @@ -2185,8 +2233,9 @@ static struct vm_struct *__get_vm_area_node(unsigned long size,
->>>  		return NULL;
->>>  
->>>  	if (flags & VM_IOREMAP)
->>> -		align = 1ul << clamp_t(int, get_count_order_long(size),
->>> -				       PAGE_SHIFT, IOREMAP_MAX_ORDER);
->>> +		align = max(align,
->>> +				1ul << clamp_t(int, get_count_order_long(size),
->>> +				       PAGE_SHIFT, IOREMAP_MAX_ORDER));
->>>  
->>>  	area = kzalloc_node(sizeof(*area), gfp_mask & GFP_RECLAIM_MASK, node);
->>>  	if (unlikely(!area))
->>> @@ -2398,7 +2447,7 @@ static void __vunmap(const void *addr, int deallocate_pages)
->>>  			struct page *page = area->pages[i];
->>>  
->>>  			BUG_ON(!page);
->>> -			__free_pages(page, 0);
->>> +			__free_pages(page, area->page_shift);
->>
->> area->page_shift' turns out to be effective page order. I think the name here is bit
->> misleading. s/page_shift/page_order or nr_pages should be better IMHO. page_shift is
->> not actual shift (1UL << area->shift to get size) nor does it sound like page 'order'.
-> 
-> Yeah good point.
-> 
->>>  		}
->>>  
->>>  		kvfree(area->pages);
->>> @@ -2541,14 +2590,17 @@ static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
->>>  				 pgprot_t prot, int node)
->>>  {
->>>  	struct page **pages;
->>> +	unsigned long addr = (unsigned long)area->addr;
->>> +	unsigned long size = get_vm_area_size(area);
->>> +	unsigned int page_shift = area->page_shift;
->>> +	unsigned int shift = page_shift + PAGE_SHIFT;
->>>  	unsigned int nr_pages, array_size, i;
->>>  	const gfp_t nested_gfp = (gfp_mask & GFP_RECLAIM_MASK) | __GFP_ZERO;
->>>  	const gfp_t alloc_mask = gfp_mask | __GFP_NOWARN;
->>>  	const gfp_t highmem_mask = (gfp_mask & (GFP_DMA | GFP_DMA32)) ?
->>> -					0 :
->>> -					__GFP_HIGHMEM;
->>> +					0 : __GFP_HIGHMEM;
->>>  
->>> -	nr_pages = get_vm_area_size(area) >> PAGE_SHIFT;
->>> +	nr_pages = size >> shift;
->>>  	array_size = (nr_pages * sizeof(struct page *));
->>>  
->>>  	area->nr_pages = nr_pages;
->>> @@ -2569,10 +2621,8 @@ static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
->>>  	for (i = 0; i < area->nr_pages; i++) {
->>>  		struct page *page;
->>>  
->>> -		if (node == NUMA_NO_NODE)
->>> -			page = alloc_page(alloc_mask|highmem_mask);
->>> -		else
->>> -			page = alloc_pages_node(node, alloc_mask|highmem_mask, 0);
->>> +		page = alloc_pages_node(node,
->>> +				alloc_mask|highmem_mask, page_shift);
->>
->> alloc_mask remains the exact same like before even for these high order pages.
-> 
-> Is there a problem there? I don't see.
-
-There is no problem. I justed noted it.
-
-> 
->>>  
->>>  		if (unlikely(!page)) {
->>>  			/* Successfully allocated i pages, free them in __vunmap() */
->>> @@ -2584,8 +2634,9 @@ static void *__vmalloc_area_node(struct vm_struct *area, gfp_t gfp_mask,
->>>  			cond_resched();
->>>  	}
->>>  
->>> -	if (map_vm_area(area, prot, pages))
->>> +	if (vmap_hpages_range(addr, addr + size, prot, pages, page_shift) < 0)
->>>  		goto fail;
->>> +
->>>  	return area->addr;
->>>  
->>>  fail:
->>> @@ -2619,22 +2670,39 @@ void *__vmalloc_node_range(unsigned long size, unsigned long align,
->>>  			pgprot_t prot, unsigned long vm_flags, int node,
->>>  			const void *caller)
->>>  {
->>> -	struct vm_struct *area;
->>> +	struct vm_struct *area = NULL;
->>>  	void *addr;
->>>  	unsigned long real_size = size;
->>> +	unsigned long real_align = align;
->>> +	unsigned int shift = PAGE_SHIFT;
->>>  
->>>  	size = PAGE_ALIGN(size);
->>>  	if (!size || (size >> PAGE_SHIFT) > totalram_pages())
->>>  		goto fail;
->>>  
->>> +	if (IS_ENABLED(CONFIG_HAVE_ARCH_HUGE_VMAP)) {
->>> +		unsigned long size_per_node;
->>> +
->>> +		size_per_node = size;
->>> +		if (node == NUMA_NO_NODE)
->>> +			size_per_node /= num_online_nodes();
->>> +		if (size_per_node >= PMD_SIZE)
->>> +			shift = PMD_SHIFT;
->>
->> There are two problems here.
->>
->> 1. Should not size_per_node be aligned with PMD_SIZE to avoid wasting memory later
->>    because of alignment upwards (making it worse for NUMA_NO_NODE)
-> 
-> I'm not sure what you mean, it's just a heuristic to check for node
-> interleaving, and use small pages if large can not interleave well.
-> 
->> 2. What about PUD_SIZE which is not considered here at all
-> 
-> Yeah, not doing PUD pages at all. It would be pretty trivial to add 
-> after PMD is working, but would it actually get used anywhere?
-
-But it should make this feature logically complete. Allocation attempts can start
-at right pgtable level depending on the requested size. I dont think it will have
-any performance impact or something.
-
-> 
->> 3. We should have similar knobs like ioremap controlling different size huge mappings
->>
->> static int __read_mostly ioremap_p4d_capable;
->> static int __read_mostly ioremap_pud_capable;
->> static int __read_mostly ioremap_pmd_capable;
->> static int __read_mostly ioremap_huge_disabled;
->>
->> while also giving arch a chance to weigh in through similar overrides like these.
->>
->> arch_ioremap_[pud|pmd]_supported() ---> probably unifying it for vmalloc() 
-> 
-> I'm not sure if that makes sense. IO mappings I could see maybe having
-> some quirks or bugs or support issues. Cacheable mappings should be the
-> "base" for supporting larger pages, if the platform has trouble with
-> those then it should just avoid the feature I think.
-> 
-> Or is there a good reason to add the option? I don't mind, I just want
-> to avoid proliferation.
-
-We might need atleast for the potential problem on arm64 as discussed on the
-other thread.
 
 _______________________________________________
 linux-arm-kernel mailing list
