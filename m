@@ -2,101 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DE4B3D420
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:30:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 677223D44F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Jun 2019 19:35:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ig3MWAwOtJy3GNV5pCk3ofXm8v+7OqW+Uz7qST9ouA0=; b=L6R4nULnApNrl9
-	Ljg6uGbhSh3f2x66ZFrVonTV/s8wJo496pk3TFMv3OFmTKiyi6gvCC7K6n85LICOo8Str6nf9nZuk
-	TVuwq5BQUbKTueujlHwQos9WQ9cUS32pTjsjXlb/HlGm2kv+KlgAj5yx6kBF4eJcb7MQTW3mLqGSu
-	3HRRsgna4XBTnQdR9KWpW5azfnx806aR94/LGQZgVdfrXHTmrfsEIb8F1jepeYCneCOn4SySft6p4
-	gn5h+zFF/8OwLiuuFwjAjint3u77/ut1qcIz2LeOUATdEnrJ0kD85hUGWzBEA2qXqgDpXYpFEA0Qw
-	3SAir6WarEyaFW0YvIEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Message-Id:MIME-Version:References:In-Reply-To:Date:To:From:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=XWlejw8mFAf6kBOKo6NZA4AwxRhXCF/drtruVpQVN4c=; b=ssTeq2XOIroyQRTnnQRqR6FDd
+	sxCuSodD6quMi7rFQIS2u55Gz3AjmnjCFttQC8FcUYoO6gPXJjs4BKw/KJsrphwMurHmz3vDryaW9
+	5rSTN027crzdrANuTTvcRmCiGnhqK2MTDpTOzr6edOxBXCCwsT64I6YFtwqbWOZgyYuPKIMiXEA7/
+	eESoXeE7XsDO6ldLptO/d066uXfLSpWVawEFcwHcdrGkcPgGwE8D42dB5CU1VtW+Y8+nivebJ2WU2
+	R7IDftUrAAKP1KOKRljLBNscv39MtDynBAwxynGZOdrgEFSdjvubFibhQqF7w5pjWrjE5lKMMEn/X
+	x5F78hCHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hakbF-0006iR-P4; Tue, 11 Jun 2019 17:30:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hakao-0006gT-4k
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:29:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE6E8337;
- Tue, 11 Jun 2019 10:29:52 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 7AFF93F73C; Tue, 11 Jun 2019 10:29:50 -0700 (PDT)
-Subject: Re: [PATCHv5 04/20] PCI: mobiveil: Remove the flag
- MSI_FLAG_MULTI_PCI_MSI
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "Z.q. Hou" <zhiqiang.hou@nxp.com>
-References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
- <20190412083635.33626-5-Zhiqiang.Hou@nxp.com>
- <20190611165935.GA22836@redmoon>
-From: Marc Zyngier <marc.zyngier@arm.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=marc.zyngier@arm.com; prefer-encrypt=mutual; keydata=
- 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
- Z46HaNmN2hZS/oJ69c1DI5Rcww==
-Organization: ARM Ltd
-Message-ID: <3b883516-1d63-1504-bdc9-22ac9c6f2d46@arm.com>
-Date: Tue, 11 Jun 2019 18:29:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+	id 1hakg1-0003UN-2g; Tue, 11 Jun 2019 17:35:17 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hakcW-0000it-Ba
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Jun 2019 17:31:44 +0000
+Received: from pps.filterd (m0098419.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5BHJx9j109506
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 11 Jun 2019 13:31:36 -0400
+Received: from e13.ny.us.ibm.com (e13.ny.us.ibm.com [129.33.205.203])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2t2emjem83-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 11 Jun 2019 13:31:36 -0400
+Received: from localhost
+ by e13.ny.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <leonardo@linux.ibm.com>;
+ Tue, 11 Jun 2019 18:31:35 +0100
+Received: from b01cxnp22035.gho.pok.ibm.com (9.57.198.25)
+ by e13.ny.us.ibm.com (146.89.104.200) with IBM ESMTP SMTP Gateway: Authorized
+ Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Tue, 11 Jun 2019 18:31:27 +0100
+Received: from b01ledav004.gho.pok.ibm.com (b01ledav004.gho.pok.ibm.com
+ [9.57.199.109])
+ by b01cxnp22035.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x5BHVPUl15401272
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 11 Jun 2019 17:31:25 GMT
+Received: from b01ledav004.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 5393F112061;
+ Tue, 11 Jun 2019 17:31:25 +0000 (GMT)
+Received: from b01ledav004.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 89B10112065;
+ Tue, 11 Jun 2019 17:31:18 +0000 (GMT)
+Received: from leobras.br.ibm.com (unknown [9.86.24.233])
+ by b01ledav004.gho.pok.ibm.com (Postfix) with ESMTP;
+ Tue, 11 Jun 2019 17:31:18 +0000 (GMT)
+Subject: Re: [RFC V3] mm: Generalize and rename notify_page_fault() as
+ kprobe_page_fault()
+From: Leonardo Bras <leonardo@linux.ibm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>, Christophe Leroy
+ <christophe.leroy@c-s.fr>, linux-kernel@vger.kernel.org, linux-mm@kvack.org
+Date: Tue, 11 Jun 2019 14:31:12 -0300
+In-Reply-To: <7b0a7afd-2776-0d95-19c5-3e15959744eb@arm.com>
+References: <1559903655-5609-1-git-send-email-anshuman.khandual@arm.com>
+ <ec764ff4-f68a-fce5-ac1e-a4664e1123c7@c-s.fr>
+ <97e9c9b3-89c8-d378-4730-841a900e6800@arm.com>
+ <8dd6168592437378ff4a7c204e0f2962d002b44f.camel@linux.ibm.com>
+ <7b0a7afd-2776-0d95-19c5-3e15959744eb@arm.com>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
-In-Reply-To: <20190611165935.GA22836@redmoon>
-Content-Language: en-US
+X-TM-AS-GCONF: 00
+x-cbid: 19061117-0064-0000-0000-000003ECE701
+X-IBM-SpamModules-Scores: 
+X-IBM-SpamModules-Versions: BY=3.00011247; HX=3.00000242; KW=3.00000007;
+ PH=3.00000004; SC=3.00000286; SDB=6.01216523; UDB=6.00639641; IPR=6.00997622; 
+ MB=3.00027266; MTD=3.00000008; XFM=3.00000015; UTC=2019-06-11 17:31:34
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19061117-0065-0000-0000-00003DDA7110
+Message-Id: <bec5983d50e37953b3962a6e53fca0a243c7158b.camel@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-11_08:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=667 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1906110111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_102954_279407_B23EAC4B 
-X-CRM114-Status: GOOD (  12.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190611_103140_733104_15A53456 
+X-CRM114-Status: GOOD (  25.26  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -110,57 +111,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, linux-s390@vger.kernel.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
+ Ingo Molnar <mingo@redhat.com>, Andrey Konovalov <andreyknvl@google.com>,
+ Fenghua Yu <fenghua.yu@intel.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Will Deacon <will.deacon@arm.com>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Tony Luck <tony.luck@intel.com>, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: multipart/mixed; boundary="===============6837732580358446525=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/06/2019 17:59, Lorenzo Pieralisi wrote:
-> On Fri, Apr 12, 2019 at 08:35:36AM +0000, Z.q. Hou wrote:
->> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
->>
->> The current code does not support multiple MSIs, so remove
->> the corresponding flag from the msi_domain_info structure.
-> 
-> Please explain me what's the problem before removing multi MSI
-> support.
 
-The reason seems to be the following code in the allocator:
+--===============6837732580358446525==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-+TvBOjv046XEorglXBMQ"
 
-        WARN_ON(nr_irqs != 1);
-        mutex_lock(&msi->lock);
 
-        bit = find_first_zero_bit(msi->msi_irq_in_use, msi->num_of_vectors);
-        if (bit >= msi->num_of_vectors) {
-                mutex_unlock(&msi->lock);
-                return -ENOSPC;
-        }
+--=-+TvBOjv046XEorglXBMQ
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-        set_bit(bit, msi->msi_irq_in_use);
+On Tue, 2019-06-11 at 10:44 +0530, Anshuman Khandual wrote:
+>=20
+> On 06/10/2019 08:57 PM, Leonardo Bras wrote:
+> > On Mon, 2019-06-10 at 08:09 +0530, Anshuman Khandual wrote:
+> > > > > +    /*
+> > > > > +     * To be potentially processing a kprobe fault and to be all=
+owed
+> > > > > +     * to call kprobe_running(), we have to be non-preemptible.
+> > > > > +     */
+> > > > > +    if (kprobes_built_in() && !preemptible() && !user_mode(regs)=
+) {
+> > > > > +        if (kprobe_running() && kprobe_fault_handler(regs, trap)=
+)
+> > > >=20
+> > > > don't need an 'if A if B', can do 'if A && B'
+> > >=20
+> > > Which will make it a very lengthy condition check.
+> >=20
+> > Well, is there any problem line-breaking the if condition?
+> >=20
+> > if (A && B && C &&
+> >     D && E )
+> >=20
+> > Also, if it's used only to decide the return value, maybe would be fine
+> > to do somethink like that:
+> >=20
+> > return (A && B && C &&
+> >         D && E );=20
+>=20
+> Got it. But as Dave and Matthew had pointed out earlier, the current x86
+> implementation has better readability. Hence will probably stick with it.
+>=20
+Sure, I agree with them. It's way more readable.
 
-So instead of fixing the allocator, the author prefers disabling
-the feature. I'm not sure whether that is an acceptable outcome...
+--=-+TvBOjv046XEorglXBMQ
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
 
-Thanks,
+-----BEGIN PGP SIGNATURE-----
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+iQIzBAABCAAdFiEEMdeUgIzgjf6YmUyOlQYWtz9SttQFAlz/5WAACgkQlQYWtz9S
+ttSg4A/6A45T2BOxIm5qp+PJ+LwF0fbX0ZI762cE3X6nXDk5fJuRrjyQifBfrD0V
+IVWSUrnOXqarYOmPT3CxT33rW05vGtDWObX+OI6J/QW6qU7jSOD1Db1ZUHL0W3WL
+7B27RA3gNmEMugnjmM+JvtMkf5SwTdk3ZLr2IA22revoOBxOF5b8iICzA0HfaXg6
+8lFSegTY8C2nNQipkeSS4d3KiObNEA1TVJUFqhwJ/VA6qYMnOpKD6WR58QCOxFaF
+NIP4ln+HJccwleioGnQ+Q7jFGRD8Hb9zqLKNccpN1MfuZdE9OXcbFB5MXVuPyE/h
+JVYbITwMXbIxpZe8o6/Yoc875Tz1phA2GeprZlEF3FDbw/tH0tyb6U5o+8UNpOXp
+YdrNxy1oJRK6ZzhW0+FqgMJVo/BBh/8OV3r9ECwYxR3o8ELPVFAcyqrx2XEU7E6p
+fBWN/cYXuZFizM0/b2yKd3kO/JIemEdz58/aPOTgJevEb996p7JohS8H8/3lm4gu
+VcnlAsH9ivKDmkoFzz6JuXWJB19OSohPW8j2p9fqP5LA5snz8o+ehsewTjaVQsPJ
+eNlp1HQzVumviM07wrZmXzVc0zoUb3YhWHrUL26xcfvtfDZVQ+gIOCH9baNsgcoe
+U0uI1HQuuUreC4L10sgC2qrlYqbWMUmK5uj6T8fjTRaHlzP1UX8=
+=i2hD
+-----END PGP SIGNATURE-----
+
+--=-+TvBOjv046XEorglXBMQ--
+
+
+
+--===============6837732580358446525==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6837732580358446525==--
+
+
