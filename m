@@ -2,77 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAD3B423C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:15:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 914FF423C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:15:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=q0lb0vobm28hidcI4MqWQu3L/ErfBURfqoatD5wXZeU=; b=FDv
-	xgQ7ZgbO4rLTIEBRGQmMmxpxMumRkkdLurIWS988TMAUaDPvpTVQLgKgG/GzyJKyvKYnca1BwwLdo
-	amlbSkEe//vjmikmnWujRUDU/M5cmWR3UrYuH6pAVBHKVOKVW08IOllG6Hh3dIlk4Us0S3FXJA1DT
-	RsTuCXs0X3RvSQDPAfG9GOVTcQAmSTe5L0RuhzLpxB2BQdkcs74HvPNhS0U5dt5SFjp8sMQkq3xbZ
-	tBuIhOptl1+9KDvIzKveiQxOAWHAPuX97Rb7EM49MrH+7IOSs2Gh15x3HY0P+sddGWwtpdAhTll62
-	NQbEC0Yul/4m2xUkBMaaxlmVlaw3oYg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=aeXMfBe3DHz1Y+HGnERUkQ3n5I2Y/jUom9QH2jPcGlY=; b=l79UAj1qYloL7fftb3ajQ3UCq4
+	wsn5xsyTu0ynaDZcDw8uRxn9MypZwrAP8qYRtWEbl02QvbwzcpF16B5kKd/VFFPla18VMGxK6ZrJT
+	rtfAWnB8AXHtBA66Yf8kb4nBm05HTaAGtvCxQmP7H+q53ZZEMQz1alDt9biO+TMgWHuwgQCOLOrNY
+	gki8YE4HPTlP4nRv2Kwb8TSowpmUI4RmmB/ZzL3aXurTKRW4EKW8ZF/W5T7uTvTQob+u5Fu1VUdNw
+	iUQAXPfwbIxi0ZQ4CqJFhyXUJC0Uk5o6ZvJ5ELhw8wa0OjVGTbYBDthedaBHhxoW5HoHf7F/GYYGf
+	JMJ3FN7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1EE-0007uT-47; Wed, 12 Jun 2019 11:15:42 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hb1Dw-0006Xb-AE; Wed, 12 Jun 2019 11:15:24 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1DO-00064g-SY
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:14:52 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c6so6118785wml.0
+ id 1hb1DP-00066r-Km
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:14:53 +0000
+Received: by mail-wr1-x443.google.com with SMTP id d18so16434811wrs.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:14:49 -0700 (PDT)
+ Wed, 12 Jun 2019 04:14:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=sender:from:to:cc:subject:date:message-id;
- bh=ty2XijTo8qzlvWIRg0ZCeFPnQ4bNV/bDxc1SRgb6iN0=;
- b=kyP/eNBTAZVl7AnnqwObvvrM3tqayRsKb073Bm/hcEIyx7Ex2NgEMqajny0Y81CoDw
- 2ppIdkgB2jVGEdaggnB0DncQVLUlO59WMGp3pC/at+0e7ohsNLEJg1pdKtvtAXo3rj8n
- tG+QbHxkmoiYkkNPI8RDGfkzOWwEm5phagzIQ4nslDn8D0RZU/gCt02Hl2/5eTdkeA68
- ftTEchRVAKEVQKWNV7/NlonObf4V++ZFDwbP31kq1d+jieUGmrrwKESqrLh0PkHD46Jk
- bFjWEU7K4Rrv+ud3KyGChSkal6qvGFhN3fcV/iD9k/K++QiN2D4dzmjP+73dO/zr49+4
- sSmw==
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :in-reply-to:references;
+ bh=NnFm9RoxHS8m0lojdUsIdKlkIcGlKRsn/Qls2kl7Du4=;
+ b=vJ8MWs3xCAP10O+/tw+ajXf/Z9z0zjuN6S/iODK4BARmr0JqC7ItWkKbW+uJ99UCvA
+ YeOQ5IezMKgR3fuYHyKHzHAUyDZ8HrCWG3+xIgNk/7FYSdLJoxPhJ7a0m9j5pTqD27gH
+ nkNVzQVSGJ0vdDrjuSEgM7HrFL8BnqGggijp3gJkg3s372J38utK69Oeiu+1DllfJLYJ
+ npIAWwBXk4lCJ5w+q779GctHtwfgbB2t/J3Nkugp3d4XClKjZZsVQ1lEhQe5PTWs1vL6
+ iCjoBvtzcD9ZV9EBGi4SyeTOFWqf+++Ixxi8tv7xdA671+urlkeYGAwbMxru+s26Vgoi
+ OACw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id;
- bh=ty2XijTo8qzlvWIRg0ZCeFPnQ4bNV/bDxc1SRgb6iN0=;
- b=VjaCl9pzMb4cYbNZNb2Lar+ZCfeoR5S0mNNcAxSQwp+uacHrOr/4utD2wvE24ny4lf
- WC/vb8sagB35b2Mv5/tFdcwZASrscw7KtV3fRDuKolBgZTwnbmHVZ+J4Ztq6UD6XCHZ4
- OIhYs6QRxC2Oj1agu6z6dxdXbyHtruRIgLkDREPXLfUw2Gp9zrFKSnwyjrQJU+937WWo
- mQIO88gGAnEx9yVmog8GipoM2OpQMreCBmcvLHYQ7JvdBc5kU5DXPumPqtKEVVVWqH6V
- eazHntIhCHdgallh8IrNSPuHGYDrHFGqezLCEF5ZU9tzf8KxftbNWWgKm8UlFn34bRtv
- TWfw==
-X-Gm-Message-State: APjAAAVQrEd3Xf06/5eGKkCJRUtV2IVYEPyx5OGW3IZKZtwLfQ7Y/6SX
- yxIjPGNwE0p+iHPhU2J5HpXbnw==
-X-Google-Smtp-Source: APXvYqwZOCKItFssqrJwKk7MTTd0XJLNuRWwgIPMocmAo9N/2avS/g7Rf/iVxuLALuach9gSgPQ3nA==
-X-Received: by 2002:a7b:cf27:: with SMTP id m7mr22159144wmg.7.1560338088311;
- Wed, 12 Jun 2019 04:14:48 -0700 (PDT)
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :in-reply-to:references:in-reply-to:references;
+ bh=NnFm9RoxHS8m0lojdUsIdKlkIcGlKRsn/Qls2kl7Du4=;
+ b=eEfg1L0ZB3pl/qsT6FrbSTwB5DQ92V/gjnScVfMXkv5oClE30JgrklX+iLTWGiRWCI
+ iMeGGL2i01xLxTaU4EsqWK6VvtPRGc6NabkolQ2j30Q9YRifPnRI4jvxznC7/LBUxo6a
+ nwFJ+qQIYveGmyEyRcr6cvl1Ux5l19ZvcOUur489gyhs/s8w4yCsmShJrFX6M54HhZIu
+ CWlcXJMlKBulLfovNghs0+3ue/CacZl3tJK1PqtKJdQQacQeoVZml8aCUrakA8MCEAv1
+ 3U23HBIVLmVjgwUgPyc48F3EU87GlMSICzlEjBJdLFrzZVEPqVOkOnymjehWCb2K2zVD
+ q1+Q==
+X-Gm-Message-State: APjAAAWwrMUni7PVuCzjOAWWXFRQtsCJYMV90wYeeZ2PIFYm1fCzxK8n
+ Ty7+tRGfi1xCpk+z9aa6okWDUw==
+X-Google-Smtp-Source: APXvYqwbi8W/UYkCzMJLaCklKQBfeHAQMEcDaMqD7GdpzWuZQ8QpJkYincPYnwzm8UpBd5aiyruS6A==
+X-Received: by 2002:adf:fb8a:: with SMTP id a10mr18835589wrr.235.1560338089973; 
+ Wed, 12 Jun 2019 04:14:49 -0700 (PDT)
 Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id y16sm14843742wru.28.2019.06.12.04.14.47
+ by smtp.gmail.com with ESMTPSA id r6sm10675891wrp.85.2019.06.12.04.14.49
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 12 Jun 2019 04:14:47 -0700 (PDT)
+ Wed, 12 Jun 2019 04:14:49 -0700 (PDT)
 From: Michal Simek <michal.simek@xilinx.com>
 To: johan@kernel.org, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
  monstr@monstr.eu, michal.simek@xilinx.com
-Subject: [PATCH v2 0/6] serial: uartps:
-Date: Wed, 12 Jun 2019 13:14:37 +0200
-Message-Id: <cover.1560338079.git.michal.simek@xilinx.com>
+Subject: [PATCH v2 1/6] serial: uartps: Use the same dynamic major number for
+ all ports
+Date: Wed, 12 Jun 2019 13:14:38 +0200
+Message-Id: <6bacab58ca88dd08c766b571f19d0b26378099fb.1560338079.git.michal.simek@xilinx.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <cover.1560338079.git.michal.simek@xilinx.com>
+References: <cover.1560338079.git.michal.simek@xilinx.com>
+In-Reply-To: <cover.1560338079.git.michal.simek@xilinx.com>
+References: <cover.1560338079.git.michal.simek@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_041451_016993_F14DBB94 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190612_041451_696001_60C4B5FE 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -92,7 +99,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+Cc: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
  Jiri Slaby <jslaby@suse.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -100,56 +108,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+From: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
 
-This patchset is fixing several issues reported by checkpatch but also
-major number handling for multiple allocated ports. For more information
-please look at the first patch which describes more details.
+Let kernel to find out major number dynamically for the first device and
+then reuse it for other instances.
+This fixes the issue that each uart is registered with a
+different major number.
 
-When this patchset is applied driver only reports one checkpatch warning
-which should be fixed via console.h first.
-include/linux/console.h:147:    void    (*write)(struct console *, const char *, unsigned);
+After the patch:
+crw-------    1 root     root      253,   0 Jun 10 08:31 /dev/ttyPS0
+crw--w----    1 root     root      253,   1 Jan  1  1970 /dev/ttyPS1
 
-WARNING: Prefer 'unsigned int' to bare use of 'unsigned'
-+				    unsigned n)
-
-Thanks,
-Michal
-
-v1
- https://lkml.org/lkml/2019/6/10/186
- https://lkml.org/lkml/2019/6/10/187
-
+Fixes: 024ca329bfb9 ("serial: uartps: Register own uart console and driver structures")
+Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
+Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+---
 
 Changes in v2:
 - Fix typo in subject line
 - Swap patches compare to previous series
 - Add Fixes tag
-- Split patch from v1
-- Fixes second S_IRUGO usage
-- Add Fixes tag
-- Split patch from v1
-- Add Fixes tag
-- Split patch from v1
-- Add Fixes tag
-- Split patch from v1
-- Add Fixes tag
-- Split patch from v1
-- Add Fixes tag
 
-Nava kishore Manne (5):
-  serial: uartps: Use octal permission for module_param()
-  serial: uartps: Fix multiple line dereference
-  serial: uartps: Fix long line over 80 chars
-  serial: uartps: Do not add a trailing semicolon to macro
-  serial: uartps: Remove useless return from cdns_uart_poll_put_char
+ drivers/tty/serial/xilinx_uartps.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-Shubhrajyoti Datta (1):
-  serial: uartps: Use the same dynamic major number for all ports
-
- drivers/tty/serial/xilinx_uartps.c | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
-
+diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
+index 605354fd60b1..9dcc4d855ddd 100644
+--- a/drivers/tty/serial/xilinx_uartps.c
++++ b/drivers/tty/serial/xilinx_uartps.c
+@@ -29,12 +29,12 @@
+ 
+ #define CDNS_UART_TTY_NAME	"ttyPS"
+ #define CDNS_UART_NAME		"xuartps"
+-#define CDNS_UART_MAJOR		0	/* use dynamic node allocation */
+ #define CDNS_UART_FIFO_SIZE	64	/* FIFO size */
+ #define CDNS_UART_REGISTER_SPACE	0x1000
+ 
+ /* Rx Trigger level */
+ static int rx_trigger_level = 56;
++static int uartps_major;
+ module_param(rx_trigger_level, uint, S_IRUGO);
+ MODULE_PARM_DESC(rx_trigger_level, "Rx trigger level, 1-63 bytes");
+ 
+@@ -1517,7 +1517,7 @@ static int cdns_uart_probe(struct platform_device *pdev)
+ 	cdns_uart_uart_driver->owner = THIS_MODULE;
+ 	cdns_uart_uart_driver->driver_name = driver_name;
+ 	cdns_uart_uart_driver->dev_name	= CDNS_UART_TTY_NAME;
+-	cdns_uart_uart_driver->major = CDNS_UART_MAJOR;
++	cdns_uart_uart_driver->major = uartps_major;
+ 	cdns_uart_uart_driver->minor = cdns_uart_data->id;
+ 	cdns_uart_uart_driver->nr = 1;
+ 
+@@ -1546,6 +1546,7 @@ static int cdns_uart_probe(struct platform_device *pdev)
+ 		goto err_out_id;
+ 	}
+ 
++	uartps_major = cdns_uart_uart_driver->tty_driver->major;
+ 	cdns_uart_data->cdns_uart_driver = cdns_uart_uart_driver;
+ 
+ 	/*
 -- 
 2.17.1
 
