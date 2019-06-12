@@ -2,85 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5790341DB3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 09:27:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DF8641DDC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 09:36:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gz2cgGY2HHw/g8eJ4C2AGawh0sAe5lRLjRguXsoqCYI=; b=sfIWLvrcSBLUiV
-	UPfTWEZjVPB+hODdS2T8vL4iaisabJ3z4EcD7YIFz504cKN0cXPBV7imc+JkSS4O846/bXPQMUCSc
-	NOjsRUzfkjWZM8xKYYgdT4RvyTDc24nOtOLR1HgOsOnyaxm8/VAiAlO5/Rv9EHuFG6JwPLtiL4Kkf
-	wAKO98Gk28M+7alQ2ozdZwcifrcZnw+6gCKWsADWwiMMfXJ2Rtym8JSrhVCl4nD3t6dZXb/xF7A1A
-	yJ8XrZUJGaULBSOl+mHMCELYOrT4JyU/xvaRxnMf9F60SlX4DqESmEMyOMb+PDI9JeFb+F5VnNKjt
-	RcoFvIeFfTSRlUW/xrPA==;
+	List-Owner; bh=qYqUVpmYCTFJBLq/beuDhNEtyvDNVD/huo39CBFknNQ=; b=qU5uQvcf0U5IPk
+	5pQfaGokgA1SAXnkGVaU9IALTxPdLbh+GM2BZQUNFSgB68L9wM5twjOmKhI+3aJGBrvcz0Uq2nl0G
+	wyagIImXMFlPn2ZGEjKIyWMu4eoD1b0+Bi1m6ZFQdTZgG2PTfkVl6H7SEASb6XUmbIKFFSPnxNlxY
+	R8lCkmmxxCwwWFzs/THLf7tvincNeJu93spowxxqBW9rrocMO//JYM+8pGEUYMRmKzNES9u3ijXhi
+	DakmytnCU6glwwIXoOwvOqGdy5cNSZFs+IxpR7H53WEO7VG3Yd3qm1okUp98H4PXP1iCKPcX/nXR5
+	ZmQNDHpZ7kFrCpY9ui2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haxev-00006u-MF; Wed, 12 Jun 2019 07:27:01 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haxdw-0007yE-Ka
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 07:26:02 +0000
-Received: by mail-lj1-x241.google.com with SMTP id v18so14148336ljh.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 00:26:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=msM4dgHT7OChSN8YMEnC/hlz7O4CQA3Qt/8x5kRoeWA=;
- b=b/xNVmBGr774Ie44vkdUYzW5g96u3La3k0A9SkL3ZCvZkJF98mYXDQ6oP9LRZh7Wp/
- 2vvQhSHA3r4OQBrQ7F92Mofp94Op3kqIQEKS8O+hSDMP2fnYaKO61aP1PbwJcYdaNkud
- Uyg/uruiDUcv2DAYwC7O9pg8remPu1Uh3BpmwKar4uCP4Sp2HYDx1JVC3VEx1wjMqJNo
- bRXEiIeSR30mKPOoa8C77KYigxq3DHc3oCTvWo7Qzb1rVN30/VnNJ2zgp/VN1Is2rgqC
- Y+sDCDqKg9uQcSI7N022tg6lqvie69RffAY9o34iLiLGyXRl91cmjVEhOhil7iISNP/k
- aFrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=msM4dgHT7OChSN8YMEnC/hlz7O4CQA3Qt/8x5kRoeWA=;
- b=Yw5FSyVgb+N3VxD8vpknMOn9EUcrI63CHx6HcJ4u6zRTgJmgS3WekSjo6CFImB+mfe
- FIYHChtX0liiMM6SJM2fnBCfsf08wZn3yTUiY7CsmAWijBeRnep7LtSGbY9tQbEnh1JE
- 7RND3al2hOssCBDIl5hJxhLs9xZXunCGuu1dF9xP57EHendltZKu6NDN0deJyICJbuyg
- W+gbYNCR5bmLH9xlhp9d6NirsfANfN9fNEcDL8RCd6cNR83jEuNbyXJFBzNTDttyAatF
- K0KfsDY6ANsW9RXxzkLYil6e/6L6ePSMC76/bD65mkCMAnlYwptJWX4SJQINkhYWH7hh
- 8OfA==
-X-Gm-Message-State: APjAAAV81bn7+o7BAtxLgHp+DTVJoGn5NbyVbgf6QcMrEd/XTrORJ7LS
- YdstHzZWc/Y+w+Bc7dt9YNbTIZ2W/zLHrySTWglzxw==
-X-Google-Smtp-Source: APXvYqx5YwbEg0avWvoTtMnv22p8ShuveFC0J0UpmFk2uYfKnJ2tkg9tfFI9Py8uT6FyJuuL+H4KmQND6QpZjMGZBTE=
-X-Received: by 2002:a2e:7508:: with SMTP id q8mr26602026ljc.165.1560324358738; 
- Wed, 12 Jun 2019 00:25:58 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190610084213.1052-1-lee.jones@linaro.org>
- <20190610084213.1052-3-lee.jones@linaro.org>
-In-Reply-To: <20190610084213.1052-3-lee.jones@linaro.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 12 Jun 2019 09:25:47 +0200
-Message-ID: <CACRpkdaXHC6dfOMMOj-a8o1zCzqqZoeQLEEAZ=XpPWKN_nf=9w@mail.gmail.com>
-Subject: Re: [PATCH v3 3/8] pinctrl: msm: Add ability for drivers to supply a
- reserved GPIO list
-To: Lee Jones <lee.jones@linaro.org>
+	id 1haxnf-000585-4P; Wed, 12 Jun 2019 07:36:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1haxnR-00057U-Kc
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 07:35:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 741552B;
+ Wed, 12 Jun 2019 00:35:47 -0700 (PDT)
+Received: from big-swifty.misterjones.org (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B636F3F246;
+ Wed, 12 Jun 2019 00:35:42 -0700 (PDT)
+Date: Wed, 12 Jun 2019 08:35:41 +0100
+Message-ID: <86ftofgss2.wl-marc.zyngier@arm.com>
+From: Marc Zyngier <marc.zyngier@arm.com>
+To: Thomas Gleixner <tglx@linutronix.de>
+Subject: Re: [RFC 0/2] Add workaround for core wake-up on IPI for i.MX8MQ
+In-Reply-To: <alpine.DEB.2.21.1906120913090.2214@nanos.tec.linutronix.de>
+References: <20190610121346.15779-1-abel.vesa@nxp.com>
+ <20190610131921.GB14647@lakrids.cambridge.arm.com>
+ <20190610132910.srd4j2gtidjeppdx@fsr-ub1664-175>
+ <6f1052ea-623a-b2e8-9aa8-22aef5fab4ca@arm.com>
+ <20190610135514.xd5myavjsloos2y3@fsr-ub1664-175>
+ <7b86aa90-6d64-589c-f11e-d2ee6ab3fd54@arm.com>
+ <VI1PR04MB5055A808A08A1C47784E4332EE130@VI1PR04MB5055.eurprd04.prod.outlook.com>
+ <alpine.DEB.2.21.1906120913090.2214@nanos.tec.linutronix.de>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: ARM Ltd
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_002601_026950_215EE50F 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190612_003549_722845_9D675354 
+X-CRM114-Status: GOOD (  15.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,46 +69,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>, linux-usb <linux-usb@vger.kernel.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Greg KH <gregkh@linuxfoundation.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Carlo Caione <ccaione@baylibre.com>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- David Brown <david.brown@linaro.org>, alokc@codeaurora.org,
- linux-i2c <linux-i2c@vger.kernel.org>, MSM <linux-arm-msm@vger.kernel.org>,
- Andy Gross <andy.gross@linaro.org>, Jeffrey Hugo <jlhugo@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Rob Herring <robh+dt@kernel.org>, Jacky Bai <ping.bai@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Abel Vesa <abelvesa@gmail.com>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 10:42 AM Lee Jones <lee.jones@linaro.org> wrote:
+On Wed, 12 Jun 2019 08:14:16 +0100,
+Thomas Gleixner <tglx@linutronix.de> wrote:
+> On Mon, 10 Jun 2019, Leonard Crestez wrote:
+> > On 6/10/2019 5:08 PM, Marc Zyngier wrote:
+> > > Nobody is talking about performance here. It is strictly about
+> > > correctness, and what I read about this system is that it cannot
+> > > reliably use cpuidle.
+> > My argument was that it's fine if PPIs and LPIs are broken as long as 
+> > they're not used:
+> > 
+> >   * PPIs are only used for local timer which is not used for wakeup.
+> 
+> Huch? The timer has to bring the CPU out of idle as any other
+> interrupt.
 
-> When booting MSM based platforms with Device Tree or some ACPI
-> implementations, it is possible to provide a list of reserved pins
-> via the 'gpio-reserved-ranges' and 'gpios' properties respectively.
-> However some ACPI tables are not populated with this information,
-> thus it has to come from a knowledgable device driver instead.
->
-> Here we provide the MSM common driver with additional support to
-> parse this informtion and correctly populate the widely used
-> 'valid_mask'.
->
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+They use a separate hack for that, pretending that the timer is
+stopped during idle (it isn't), and setup a broadcast timer when
+entering idle. That timer uses an interrupt that can wake-up the
+target CPU, and all is well in the world. Sort of.
 
-I have queued patches 3 and 4 in the pin control tree on an
-immutable branch with Bjorn's ACKs:
-git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-pinctrl.git
-ib-qcom-acpi
+Of course, this breaks as PPIs are not only used by the timer, but
+also by a number of other HW bits (PMU, GIC, guest and hypervisor
+timers), and they don't have corresponding hacks to back them up.
 
-I have also merge this to pinctrl's devel branch for next.
+Thanks,
 
-Yours,
-Linus Walleij
+	M.
+
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
