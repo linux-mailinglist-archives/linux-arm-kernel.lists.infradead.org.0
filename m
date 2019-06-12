@@ -2,84 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48E5043036
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 21:31:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0807743069
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 21:47:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Jc+vzkMzpIFd6FbbCI+zw9qQAUHHgNkHZEmtNc94f8=; b=WkwX8pUFWx5LTC
-	F9SFni5KWTyGjuRHQ2VD6d+o4mG5ajQuhNmbUes4f7nBHk7DdSuFdIPVZqCZMlZIyyaoiYGF1JoSL
-	1pRnVGO4nvRVNH2aouMYgcEoU5NJxMZkdvblz4a44celVHbmRrCtGB8h1zDdaxkA+kdpYmEYMm5cN
-	iOlyaE8yvYoxrUJWMKxL21TfzHCyqAk65ONCOoWFOjAB9z60XW7HD/QjIIkZC6fAkCvRf3+0B2wvj
-	WEqm+pgvyGLE051MmlH8gr5wlVWAL+56tjOsgBqR0rdIkh84xA4AVWmvrX/wgWOUIcDVXWz4TDa+a
-	4FvSkw9gJ9vcsSfLDIJA==;
+	List-Owner; bh=dgE5mNV5eiRHSpNPjyt8SViM6ufeNwTYZ0pP/kBkJvY=; b=bLWNRWYkK0MqzU
+	7+hLxsKn/RSlqCXinSEJq1ZDJ8gpl2sRr1PSwACG11xTMCBOn4+LSZFZyHbxa4JJostgfel0bL8yV
+	q8B0IR1WiaJjYejbcvdCmlYQuz0hhDW7LaT00U69HNxCgzZZW6pze1IzirpR1m7hQtx0Byf+g3oyl
+	HDGobnPLmaIB+RIO41ZLHiFWNPIB84vyHvKbrwIGv+qLEr5/MZuSpB2ka2vzPM7eTu5q78+7sLUEJ
+	nGa/iqWO+cAQM+nr3haOqLhVRyPEKM8Yhjpy/6uTjp0wGRiTTqicNjyFTH+O2rqWUGpqtJJJBQzZ8
+	djfEqWE+kIKrMNWMzJMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb8yO-0004cZ-Lo; Wed, 12 Jun 2019 19:31:52 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hb9Da-00020N-UA; Wed, 12 Jun 2019 19:47:34 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb8yC-0004VN-4C
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 19:31:41 +0000
-Received: by mail-wm1-x342.google.com with SMTP id c66so7727607wmf.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 12:31:36 -0700 (PDT)
+ id 1hb9DM-0001ya-Bf; Wed, 12 Jun 2019 19:47:21 +0000
+Received: by mail-oi1-x244.google.com with SMTP id e189so12591517oib.11;
+ Wed, 12 Jun 2019 12:47:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=GRfoFY5xQdWZ+zyZrF8x4tIZrgk1L2WHamAGKM9+HbI=;
- b=cW8ArLx8R6N5xr2r4LBArrHMDLSr4xhtVhXTwo3cyH0pZ/Ul6OiDLvY2QJnAMERvEa
- 9GrVEbOvQJLUAuXBKGRrL8k65d+/0f9Cjja/chMLJZhUR0raNc2wwZ47FKlQlN6Nbx/D
- ejpOw4FfY3PrAM3/7MbYX81LqOGrDuDgiBOb/dwgC+53qCoR1xA1PNqMkd5YUX34sCoN
- q49RuefrUfE/Onr+8uxvEZPe0Az08fWHcsYGxEKx1v6UfnZEeoMx2hg+uI/Png6MHmPd
- us7w/AZSrYIVyB7zLRaZ1nX/1Hdx7saB9BgGgjZIZ2AAPqhn6lDoAVz5GoKKWx6ghSbE
- a3NA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=EwdJu4okQ0L+2u52FXeBDXEGzF/ps8ei03aC+UR7txM=;
+ b=jCItuHIqjcFP/izwsSFnf5iZ4EN8OEZMF4/+XoTAcFGTIvjn8FEFSDtrZZEXarIJht
+ XFvZdFpsTYx2UKP8PreoZMEQCIurJCAtxHYRQnD1cDiUz4rMk9IZ5jwLjsMkH6YwbfV8
+ JK7juYY/NCn4SQ+bolXDhhhULZdOmNaiTFX6lctDPTgbJ6gXu4x0ppbCc25UIyEGVQtp
+ oUF9u4OeEsxLsGYmWkYR/KK1cMA1rXxJ0a5UKjCDFAyN28VcUBpUKp09Cc2KrkGEUmwm
+ uhHb8XCubFuUi3Xf0TqPGnVSzGzpC6kjENt0cAfNwGqVy32ibiYbhHmkyb1DMkDKOBAr
+ C6pw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=GRfoFY5xQdWZ+zyZrF8x4tIZrgk1L2WHamAGKM9+HbI=;
- b=kH8Wf0sxtIR+DmTaXbA2ajSYGR4bHYpUtCPQCkoqHHEz+c+Cmi4r/eKn+y4HDLL6Hh
- ZEp5PxjnsFX73XfoJQsCzyPOjfWM9K/JopMjDx7UAtz40zSDj34dUqPbCtur9giqgRXW
- eTLeZR+7DcOr+kPj9TPCGJoLZtdpjsDP1VxpNGOIeTMg34PaR+SmYrqg3N9wzBMgHObj
- TC/8DMyKYyBR45iIOdkMrcKD+IBtjwpv6ZMHcZ17ErJR7LsZ33GdkXusIq1JyhJLqQAh
- McSKd0tea9nNTbtS6LIrLJ+l0B4E1wO6LJjwcegFLHHUuHGX5qmNJ3dVCah0cNWGf0a+
- ZR9A==
-X-Gm-Message-State: APjAAAVdizkuIr37CZbwBgeAVXWZY6blmwyaTqsMbgaq2VTzXZBFgHiu
- eq9rYk8wizk5UOtGT60n9hU=
-X-Google-Smtp-Source: APXvYqzJTIuqNtlPTGYXYCdx+JjK4QSoXYxNTFy2H98HO1zZ/AhRoqP4/zsWF3ehw7sYe6DLw8k+1Q==
-X-Received: by 2002:a1c:f515:: with SMTP id t21mr573668wmh.39.1560367895665;
- Wed, 12 Jun 2019 12:31:35 -0700 (PDT)
-Received: from blackbox.darklights.net
- (p200300F133DDA400428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:33dd:a400:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id q15sm379054wrr.19.2019.06.12.12.31.34
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 12 Jun 2019 12:31:35 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: netdev@vger.kernel.org, peppe.cavallaro@st.com, alexandre.torgue@st.com,
- joabreu@synopsys.com, davem@davemloft.net, andrew@lunn.ch
-Subject: [PATCH net-next v2 1/1] net: stmmac: use GPIO descriptors in
- stmmac_mdio_reset
-Date: Wed, 12 Jun 2019 21:31:15 +0200
-Message-Id: <20190612193115.6751-2-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190612193115.6751-1-martin.blumenstingl@googlemail.com>
-References: <20190612193115.6751-1-martin.blumenstingl@googlemail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=EwdJu4okQ0L+2u52FXeBDXEGzF/ps8ei03aC+UR7txM=;
+ b=taJvDTFfvKRbtzEFunRDesywXcVcmmlcyPkNbc1FIt5BWl2CyfBbaP92I8ANf44Ofn
+ RG6OduFnu3ZnlMTmX3rYAbWTuDW595lP6SU6D8jjalgwf14nyIB+l3wWraZLlKGW5b9z
+ vwwePG/dGwQj4ZqTvfenhC0jU+XqEsvwzjLFv18crQnHn9hiVLeJVY55QGD7jJ3fVNzl
+ 5N1bjuanZ4fpvaxDuRJAslzvd7Q58QaBDNiJXv+K19rdM+dBwpde2QpOOrjOnmsRC2Bv
+ TBkV7BqW4wkrhqYhQDSMbQM+1cFppZijtBeSPJ4qIt71x9WR5cyvWW3czZWQXfg/7V5P
+ SzKw==
+X-Gm-Message-State: APjAAAVGTrvqzQZmDiOE4qY/TtjIXOzlIBpFgU6Xem8sNe+02tCbcM+p
+ ZMfEK1MM86av+SkQwYCFfG0GI7QkmJrwOxkoyyz1o6Rb
+X-Google-Smtp-Source: APXvYqxI6uMKFy/wojvtvvvIYK/SGmxdGD9fTWk5+T6YyUI+oS3PdPTdR1rtH6s0f//6So6WdhsACfIUlxQ2vDXFdDk=
+X-Received: by 2002:aca:f144:: with SMTP id p65mr598979oih.47.1560368838921;
+ Wed, 12 Jun 2019 12:47:18 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190608180626.30589-1-martin.blumenstingl@googlemail.com>
+ <20190608180626.30589-5-martin.blumenstingl@googlemail.com>
+ <20190611163318.tfb5c4jbekjybj76@pengutronix.de>
+In-Reply-To: <20190611163318.tfb5c4jbekjybj76@pengutronix.de>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Wed, 12 Jun 2019 21:47:07 +0200
+Message-ID: <CAFBinCA1SVXVPJdLQr4S99qEoowqXsNqP5tr64xn46xjaKLqeA@mail.gmail.com>
+Subject: Re: [PATCH v2 04/14] pwm: meson: change MISC_CLK_SEL_WIDTH to
+ MISC_CLK_SEL_MASK
+To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_123140_165117_7649387E 
-X-CRM114-Status: GOOD (  16.07  )
+X-CRM114-CacheID: sfid-20190612_124720_420889_65223860 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,119 +95,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maxime.ripard@bootlin.com, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+Cc: linux-pwm@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, thierry.reding@gmail.com,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Switch stmmac_mdio_reset to use GPIO descriptors. GPIO core handles the
-"snps,reset-gpio" for GPIO descriptors so we don't need to take care of
-it inside the driver anymore.
-
-The advantage of this is that we now preserve the GPIO flags which are
-passed via devicetree. This is required on some newer Amlogic boards
-which use an Open Drain pin for the reset GPIO. This pin can only output
-a LOW signal or switch to input mode but it cannot output a HIGH signal.
-There are already devicetree bindings for these special cases and GPIO
-core already takes care of them but only if we use GPIO descriptors
-instead of GPIO numbers.
-
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
----
- .../net/ethernet/stmicro/stmmac/stmmac_mdio.c | 27 +++++++++----------
- include/linux/stmmac.h                        |  2 +-
- 2 files changed, 14 insertions(+), 15 deletions(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-index 093a223fe408..f1c39dd048e7 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c
-@@ -20,11 +20,11 @@
-   Maintainer: Giuseppe Cavallaro <peppe.cavallaro@st.com>
- *******************************************************************************/
- 
-+#include <linux/gpio/consumer.h>
- #include <linux/io.h>
- #include <linux/iopoll.h>
- #include <linux/mii.h>
- #include <linux/of.h>
--#include <linux/of_gpio.h>
- #include <linux/of_mdio.h>
- #include <linux/phy.h>
- #include <linux/slab.h>
-@@ -251,37 +251,36 @@ int stmmac_mdio_reset(struct mii_bus *bus)
- 
- #ifdef CONFIG_OF
- 	if (priv->device->of_node) {
-+		struct gpio_desc *reset_gpio;
-+
- 		if (data->reset_gpio < 0) {
- 			struct device_node *np = priv->device->of_node;
- 
- 			if (!np)
- 				return 0;
- 
--			data->reset_gpio = of_get_named_gpio(np,
--						"snps,reset-gpio", 0);
--			if (data->reset_gpio < 0)
--				return 0;
-+			reset_gpio = devm_gpiod_get_optional(priv->device,
-+							     "snps,reset",
-+							     GPIOD_OUT_LOW);
-+			if (IS_ERR(reset_gpio))
-+				return PTR_ERR(reset_gpio);
- 
--			data->active_low = of_property_read_bool(np,
--						"snps,reset-active-low");
- 			of_property_read_u32_array(np,
- 				"snps,reset-delays-us", data->delays, 3);
-+		} else {
-+			reset_gpio = gpio_to_desc(data->reset_gpio);
- 
--			if (devm_gpio_request(priv->device, data->reset_gpio,
--					      "mdio-reset"))
--				return 0;
-+			gpiod_direction_output(reset_gpio, 0);
- 		}
- 
--		gpio_direction_output(data->reset_gpio,
--				      data->active_low ? 1 : 0);
- 		if (data->delays[0])
- 			msleep(DIV_ROUND_UP(data->delays[0], 1000));
- 
--		gpio_set_value(data->reset_gpio, data->active_low ? 0 : 1);
-+		gpiod_set_value_cansleep(reset_gpio, 1);
- 		if (data->delays[1])
- 			msleep(DIV_ROUND_UP(data->delays[1], 1000));
- 
--		gpio_set_value(data->reset_gpio, data->active_low ? 1 : 0);
-+		gpiod_set_value_cansleep(reset_gpio, 0);
- 		if (data->delays[2])
- 			msleep(DIV_ROUND_UP(data->delays[2], 1000));
- 	}
-diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
-index 4335bd771ce5..816edb545592 100644
---- a/include/linux/stmmac.h
-+++ b/include/linux/stmmac.h
-@@ -97,7 +97,7 @@ struct stmmac_mdio_bus_data {
- 	int *irqs;
- 	int probed_phy_irq;
- #ifdef CONFIG_OF
--	int reset_gpio, active_low;
-+	int reset_gpio;
- 	u32 delays[3];
- #endif
- };
--- 
-2.22.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgVXdlLAoKT24gVHVlLCBKdW4gMTEsIDIwMTkgYXQgNjozMyBQTSBVd2UgS2xlaW5lLUvDtm5p
+Zwo8dS5rbGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKWy4uLl0KPiA+IEBAIC00
+NjMsNyArNDYzLDcgQEAgc3RhdGljIGludCBtZXNvbl9wd21faW5pdF9jaGFubmVscyhzdHJ1Y3Qg
+bWVzb25fcHdtICptZXNvbiwKPiA+Cj4gPiAgICAgICAgICAgICAgIGNoYW5uZWwtPm11eC5yZWcg
+PSBtZXNvbi0+YmFzZSArIFJFR19NSVNDX0FCOwo+ID4gICAgICAgICAgICAgICBjaGFubmVsLT5t
+dXguc2hpZnQgPSBtdXhfcmVnX3NoaWZ0c1tpXTsKPiA+IC0gICAgICAgICAgICAgY2hhbm5lbC0+
+bXV4Lm1hc2sgPSBCSVQoTUlTQ19DTEtfU0VMX1dJRFRIKSAtIDE7Cj4gPiArICAgICAgICAgICAg
+IGNoYW5uZWwtPm11eC5tYXNrID0gTUlTQ19DTEtfU0VMX01BU0s7Cj4gPiAgICAgICAgICAgICAg
+IGNoYW5uZWwtPm11eC5mbGFncyA9IDA7Cj4gPiAgICAgICAgICAgICAgIGNoYW5uZWwtPm11eC5s
+b2NrID0gJm1lc29uLT5sb2NrOwo+ID4gICAgICAgICAgICAgICBjaGFubmVsLT5tdXgudGFibGUg
+PSBOVUxMOwo+Cj4gSU1ITyBjbGtfbXV4IGlzIHVnbHkgaGVyZS4gSXQgY291bGQgZWFzaWx5IGp1
+c3QgdGFrZQo+Cj4gICAgICAgICAubWFzayA9IDMgPDwgbXV4X3JlZ19zaGlmdHNbaV0sCmluIG1v
+c3QgY2FzZXMgdGhhdCB3b3VsZCBiZSBldmVuIG5pY2VyIHRvIHJlYWQgYmVjYXVzZSBpdCBjb3Vs
+ZCBiZSBleHByZXNzZWQgYXM6CiAgLm1hc2sgPSBHRU5NQVNLKDUsIDQpCgpzbyBJIGxpa2UgeW91
+ciBpZGVhIGluIGdlbmVyYWwKdGhvdWdoIEkgdGhpbmsgaXQgc2hvdWxkIG5vdCBibG9jayB0aGlz
+IHBhdGNoCgpbLi4uXQo+IEFwYXJ0IGZyb20gdGhhdCwgSSB3b25kZXIgaWYgdGhlIHB3bS1tZXNv
+biBkcml2ZXIgc2hvdWxkIGJldHRlciB1c2UKPiBjbGtfcmVnaXN0ZXJfbXV4IGluc3RlYWQgb2Yg
+b3BlbiBjb2RpbmcgaXQuIChUaG91Z2ggdGhlcmUgZG9lc24ndCBzZWVtCj4gdG8gZXhpc3RzIGEg
+ZGV2bV8gdmFyaWFudCBvZiBpdC4pCkkgdHJpZWQgdG8gdXNlIGNsa19yZWdpc3Rlcl9tdXggaW4g
+dGhlIHBhc3QuIGl0IHdvcmtzIGJ1dCBpdCdzIG5vdCBhcwpuaWNlIHRvIHJlYWQgYXMgdGhlIG9w
+ZW4tY29kZWQgdmFyaWFudCBiZWNhdXNlIGl0IHRha2VzIDEwIHBhcmFtZXRlcnMuCkkgZmluZCBp
+dCBlYXNpZXIgdG8gcmVhZCAxMyBzZXBhcmF0ZSBsaW5lcyBjb21wYXJlZCB0byByZWFkaW5nIGEK
+ZnVuY3Rpb24gY2FsbCB3aXRoIDEwIHBhcmFtZXRlcnMKCgpNYXJ0aW4KCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
