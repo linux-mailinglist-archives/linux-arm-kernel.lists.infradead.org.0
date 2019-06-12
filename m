@@ -2,90 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A95542753
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 15:18:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 048EE4275B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 15:21:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=x6Ci4C07fgeyFpoG3DnGD8fMM3lQ4Rh/P8OqwffPSAM=; b=BHesl/V6M/c6ibX/MdcR1eJkw3
-	jQMiNsC1A1WfvGM1+Hx8pOkO9asoY2HnOHcKyYGtmYgwFnFuHARSKWHjxA9dKWf+gdf9E6TZ90CcN
-	g/ijXfr3Yz3Nc0ArZ+q0zaloWFc5bM6PfCvHmrW6Hgeb24+SIZ98ynMLgHB07KA0JbA8Se92WaPF5
-	ZTzAMeCgRtH+6xoDwLFYmToAnh90Kd63azmBsH3W0CcK0Ojsmcxjner+39Pw1sBA9QAmAsMmBGglI
-	nRQP+7zs+Qgo+LaSW8IsnGQpZFEcrPw/MQUmVPLHZfYmcqEWFWJyplVqNxhRaIfRuuZ4ZBGXriquS
-	2verkHTQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SWdlGesDcNxVqaJl/KqX4DU7LXpBCbW8srOz2xcbcVE=; b=OYGynjp6dIlXUs
+	L9Nd4qJc3wwfDKXfpVP/3Ddi1xmnSYND0PJXGKv0XUzc5WmqK3YIMj06Vz0Zpt7uq0o/ObOCyW1pD
+	QJd2EpEy9oBa9wWDTkFGO+ZYtQMOZ9M/SYO50sdqVRgQrLg3cZAjHfNGww87IF/9bAzGJ+DTa5t0H
+	MeCAdRubHFCLBZzN5jZDJMV4T/zIDra1RLcnZB78Emj0/D3ec9fZlY0TowhsgrWYDm+AXEo3dhwCJ
+	JKtp/pk6kxubK4AyF49fZWt4Nqt51IkYe/42Ni5LGdm+Od+cMvfu8bL4tXWsI0CAO2IpRSXW5/xl2
+	ph1F5BQHyibUrQUMNbJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb39G-00010v-2w; Wed, 12 Jun 2019 13:18:42 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hb3C7-0002gV-Ez; Wed, 12 Jun 2019 13:21:39 +0000
+Received: from smtp.domeneshop.no ([2a01:5b40:0:3005::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb396-00010S-Uq
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 13:18:34 +0000
-Received: by mail-wr1-x444.google.com with SMTP id x17so1598686wrl.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 06:18:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version:content-transfer-encoding;
- bh=1fX4EtJtvN4zU4wq5BVv4qlv5K+6diDbCy8hF8AgIZE=;
- b=HQUQbZAFv8L8V+qh817uj8P7sjG5MrjyhVL6L3Glgc2NWMxo7h3cXWj/kykhA44P2W
- 6Z9akG4az+F0zxzveJGXwLqRqdjoFHZk5efmr6ZOpybhUvAUR8zVZQDJMpWrWYhwwL+p
- G5/4h8h4rIUHApMQgb9V3VhPp+AkesvZz8kQC6tB5Ezq5Esx/ujJqSpBLTmEQcNvOcjo
- LhpGbChOScDg0XryNdKs/o1WmO9UU5FP/oBXlnfep+nH4vXGpypf8l56GYbSJjNBi2vL
- 98wXiuu+JYk5R2gt2x42ZFDSYJOLxnopvCgw+6hR1Ffz3hZ63P1BeZeRMWduVGVvzWTW
- iKgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version:content-transfer-encoding;
- bh=1fX4EtJtvN4zU4wq5BVv4qlv5K+6diDbCy8hF8AgIZE=;
- b=jUDQbeS0/4KpkrPBPSFPxK6Jfr6uGmOtlzH8eO6y31vN2iyzGP2RtZAiezAJznreeT
- 5nSMG6VC7vusakZzUAUGwwIK3cr4/kK1f0L1u8K40LBZD1UWhWkyzgkVAhuvcYoMWPBy
- JiOrv5kX9pwMiSmo6i7rqz2X8/0v87Hm/m8qRqebO7nxVXs+NPqE4yqLYBjG1rM9Spof
- 8QnBn2RPU7DybslVpzwP3LVXn6oLNg4qbJHo6+EUu9C5feND/JI0NwGZc7PC4OUYdnqh
- WW9KPq7NH+aTKYQ+FJdTzJp0hIepyJHIloQte98p3A130g7E4VZYA3qDhLg4RxHRBeBD
- qbMg==
-X-Gm-Message-State: APjAAAUdz7nwbGwK6LSG9snmagFet9NgoQnjS4tI1tND5vS3tKYmSh4a
- qIk4KmEA9OZkyygBpmfbxx1pGqqDLYs=
-X-Google-Smtp-Source: APXvYqzgYkm1fDFOst46uhoCAgIxFgode8AWEa7hhoVUC866ybvSTS6Fy5u9DtEYJatFYJpSpAtNAw==
-X-Received: by 2002:adf:9dcc:: with SMTP id q12mr4613615wre.93.1560345510744; 
- Wed, 12 Jun 2019 06:18:30 -0700 (PDT)
-Received: from zen.linaroharston ([81.128.185.34])
- by smtp.gmail.com with ESMTPSA id t14sm15474792wrr.33.2019.06.12.06.18.30
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 12 Jun 2019 06:18:30 -0700 (PDT)
-Received: from zen (localhost [127.0.0.1])
- by zen.linaroharston (Postfix) with ESMTP id C2AAA1FF87;
- Wed, 12 Jun 2019 14:18:29 +0100 (BST)
-References: <1559839495-22315-1-git-send-email-Dave.Martin@arm.com>
- <20190607093858.GA21378@fuggles.cambridge.arm.com>
- <20190607154832.GH28398@e103592.cambridge.arm.com>
- <207E140D-AC57-4B0D-B838-94B92BE2B0A0@arm.com>
- <87v9xbdr3o.fsf@zen.linaroharston>
- <20190612124712.GR28398@e103592.cambridge.arm.com>
-User-agent: mu4e 1.3.2; emacs 26.1
-From: Alex =?utf-8?Q?Benn=C3=A9e?= <alex.bennee@linaro.org>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH 0/2] arm64/sve: Fix mutating register endianness on
- big-endian
-In-reply-to: <20190612124712.GR28398@e103592.cambridge.arm.com>
-Date: Wed, 12 Jun 2019 14:18:29 +0100
-Message-ID: <87sgsfdjru.fsf@zen.linaroharston>
+ id 1hb3Bx-0002fe-2X
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 13:21:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=tronnes.org;
+ s=ds201810; 
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
+ bh=rmB2gQi3s3opzUffl1KHx2cHFWv05BYL6x89OxfX2Jk=; 
+ b=AcjuivWHdk7Suia2budC0VKW4fvAEKPqK5PVdnZdGp5NC6wFQqv23NLf876f1lbqZy6ZhisgABtYHuPKq99Xq1LBexsU8bSuSForu+kjUyBZDAVjKJudi4KYHKZW/nCsrK7utRgBZH6idH/RiiRTGhukjAunTvTfOrrCW8JGQWEqySAtCse4IbxbBtF6b/ec+mVHoa+qO+WlUhMzLHhanZckmzzKseV6Wu6WPzYoBOhzdHQkeiUam7nQpVT3e28jdcpWJjpARYQkY77fqfZrhU68iFzjQj6xU57AWV2OXo3EzxOHB7xZ+7vDiR7+61z6/XAD3pql4uOzK9wTbckynA==;
+Received: from 211.81-166-168.customer.lyse.net ([81.166.168.211]:63827
+ helo=[192.168.10.173])
+ by smtp.domeneshop.no with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.84_2) (envelope-from <noralf@tronnes.org>)
+ id 1hb3Bu-0007B8-96; Wed, 12 Jun 2019 15:21:26 +0200
+Subject: Re: [PATCH v3 3/6] drm/modes: Allow to specify rotation and
+ reflection on the commandline
+To: Maxime Ripard <maxime.ripard@bootlin.com>
+References: <cover.87b91639451f23d4ab68a7c9812f2dd158869025.1555591281.git-series.maxime.ripard@bootlin.com>
+ <ba320b3a13c4444102b77c4d00f7c1dc810adc3c.1555591281.git-series.maxime.ripard@bootlin.com>
+ <9ccb7573-d46e-4b90-7caa-7b8cd7b8e7a2@tronnes.org>
+ <e2edb1dc-f719-93f0-5205-ecb7b44b057e@tronnes.org>
+ <20190611132049.njlrgbtobzgyzyzh@flea>
+From: =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>
+Message-ID: <c73e9c29-e20b-65e0-553c-67b9c2cd349a@tronnes.org>
+Date: Wed, 12 Jun 2019 15:21:19 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190611132049.njlrgbtobzgyzyzh@flea>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_061832_999017_9DF757B7 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190612_062129_298338_4F7EA9E4 
+X-CRM114-Status: GOOD (  20.79  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:5b40:0:3005:0:0:0:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,90 +78,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- "gdb@sourceware.org" <gdb@sourceware.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
- Zhang Lei <zhang.lei@jp.fujitsu.com>, Julien Grall <Julien.Grall@arm.com>,
- "richard.henderson@linaro.org" <richard.henderson@linaro.org>,
- Alan Hayward <Alan.Hayward@arm.com>, nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel@lists.freedesktop.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Sean Paul <seanpaul@chromium.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CkRhdmUgTWFydGluIDxEYXZlLk1hcnRpbkBhcm0uY29tPiB3cml0ZXM6Cgo+IE9uIFdlZCwgSnVu
-IDEyLCAyMDE5IGF0IDExOjQwOjExQU0gKzAxMDAsIEFsZXggQmVubsOpZSB3cm90ZToKPj4KPj4g
-QWxhbiBIYXl3YXJkIDxBbGFuLkhheXdhcmRAYXJtLmNvbT4gd3JpdGVzOgo+Pgo+PiA+PiBPbiA3
-IEp1biAyMDE5LCBhdCAxNjo0OCwgRGF2ZSBNYXJ0aW4gPERhdmUuTWFydGluQGFybS5jb20+IHdy
-b3RlOgo+PiA+Pgo+PiA+PiBPbiBGcmksIEp1biAwNywgMjAxOSBhdCAxMDozODo1OEFNICswMTAw
-LCBXaWxsIERlYWNvbiB3cm90ZToKPj4gPj4+IE9uIFRodSwgSnVuIDA2LCAyMDE5IGF0IDA1OjQ0
-OjUzUE0gKzAxMDAsIERhdmUgTWFydGluIHdyb3RlOgo+PiA+Pj4+IEJ5IGluc3BlY3Rpb24gd2hp
-bGUgZGVidWdnaW5nIHNvbWV0aGluZyBlbHNlLCBJIG5vdGljZWQgdGhhdCB0aGUgYnl0ZQo+PiA+
-Pj4+IG9yZGVyIG9mIEZQU0lNRCBWLXJlZ2lzdGVyIHN0b3JlcyBhbmQgU1ZFIFotcmVnaXN0ZXIg
-c3RvcmVzIGlzIG5vdCB0aGUKPj4gPj4+PiBzYW1lIHdoZW4gcnVubmluZyBvbiBiaWctZW5kaWFu
-Lgo+PiA+Pj4+Cj4+ID4+Pj4gVGhpcyBpcyBub3QgcHJvcGVybHkgdGFrZW4gaW50byBhY2NvdW50
-IHdoZW4gbW92aW5nIGJldHdlZW4gdGhlIEZQU0lNRAo+PiA+Pj4+IGFuZCBTVkUgcmVnaXN0ZXIg
-dmlld3MgaW5zaWRlIHRoZSBrZXJuZWwsIHJlc3VsdGluZyBpbiB0aGUgYnl0ZXMgb2YgYQo+PiA+
-Pj4+IFYtcmVnaXN0ZXIgZ2V0dGluZyBzcG9udGFuZW91c2x5IHJldmVyc2VkIGluIHNvbWUgc2l0
-dWF0aW9ucywgZnJvbQo+PiA+Pj4+IHVzZXJzcGFjZSdzIHBvaW50IG9mIHZpZXcuICBUaGUgc2ln
-bmFsIGZyYW1lIGFuZCBwdHJhY2UgaW50ZXJmYWNlIGFyZQo+PiA+Pj4+IGFsc28gYWZmZWN0ZWQu
-ICBUaGUgS1ZNIEFCSSBmb3JiaWRzIG1peGluZyB0aGUgdHdvIHZpZXdzIGFuZCBzbyBzaG91bGQK
-Pj4gPj4+PiBub3QgYmUgYWZmZWN0ZWQuCjxzbmlwPgo+PiA+Pj4KPj4gPj4+IFdvdWxkbid0IHRo
-aXMgYmUgZWFzeSBlbm91Z2ggdG8gdGVzdD8KPj4gPj4KPj4gPj4gU28sIGdkYiB3b3JrcyBPSyBv
-biBiaWctZW5kaWFuIGJ1dCB3ZWlyZCBzdHVmZiBoYXBwZW5pbmcgb24gYm90aCB3aXRoCj4+ID4+
-IGFuZCB3aXRob3V0IHRoZSBmaXguCj4+ID4+Cj4+ID4+IFRoZXJlIGFyZSBwbGFjZXMgaW4gdGhl
-IGdkYiBjb2RlIGl0c2VsZiB3aGVyZSBpdCBpcyBsaWtlbHkgbWlzc2luZwo+PiA+PiBlbmRpYW5u
-ZXNzIGNvbnZlcnNpb25zLCBidXQgSSBuZWVkIHRvIGZvbGxvdyB1cCB3aXRoIHRoZSBnZGIgZm9s
-a3MgdG8KPj4gPj4gY2xhcmlmeSB3aGV0aGVyIG15IHBhdGNoIGlzIG1pc3Npbmcgc29tZXRoaW5n
-4oCmCj4+ID4KPj4gPiAoSSBhZGRlZCB0aGUgU1ZFIHN1cHBvcnQgZm9yIEdEQikuCj4+ID4KPj4g
-PiBJ4oCZdmUgdHJpZWQgdGhlc2UgY2hhbmdlcyBvdXQgbXlzZWxmIHVzaW5nIEdEQi4KPj4gPiBX
-aXRoIHlvdXIgY2hhbmdlcyBldmVyeXRoaW5nIGxvb2tzIGdvb2QsIGFwYXJ0IGZyb206Cj4+ID4g
-KiBHREIgZ2V0cyBpdCB3cm9uZyB3aGVuIHRoZSBwdHJhY2Ugc3ZlIHN0cnVjdHVyZSBjb250YWlu
-cyBhIGZwc2ltZC4KPj4gPiAqIEkgbmVlZCB0byBkbyBzb21lIHRlc3RpbmcgYXJvdW5kIHNpZ2Nv
-bnRleHRzLCBidXQgYWdhaW4gSSB0aGluayBHREIKPj4gPiAgIHdpbGwgbmVlZCBhIHNsaWdodCBj
-aGFuZ2UuCj4+ID4gSeKAmWxsIGdldCBzb21lIHBhdGNoZXMgdG9nZXRoZXIgZm9yIEdEQi4KPj4K
-Pj4gV2hlcmUgaXMgdGhlIGxhdGVzdCBzdGF0ZSBvZiBTVkUgc3VwcG9ydCBmb3IgR0RCPyBJIHJl
-YWxseSBzaG91bGQgY2hlY2sKPj4gdGhlIFFFTVUgZ2Ric3R1YiBkb2VzIHRoZSBjb3JyZWN0IHRo
-aW5ncyBmb3IgU1ZFIHJlZ2lzdGVycyBidXQgSSB3YXMKPj4gd2FpdGluZyBmb3IgdXBzdHJlYW0g
-Z2RiIHN1cHBvcnQuCj4KPiBEb2VzIHRoaXMgaXNzdWUgbmVlZCBsb29raW5nIGF0IGZvciB0aGUg
-UUVNVSB1c2Vyc3BhY2UgZW11bGF0aW9uIHRvbz8KCkhtbSBJIHRoaW5rIHdlIGFyZSBPSy4gRm9y
-IHRoZSBTVkUgZnJhbWUgaXRzZWxmIHdlIGV4cGxpY2l0bHkgc3RvcmUgaW4KTEUgb3JkZXI6Cgog
-IHN0YXRpYyB2b2lkIHRhcmdldF9zZXR1cF9zdmVfcmVjb3JkKHN0cnVjdCB0YXJnZXRfc3ZlX2Nv
-bnRleHQgKnN2ZSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBDUFVBUk1T
-dGF0ZSAqZW52LCBpbnQgdnEsIGludCBzaXplKQogIHsKICAgICAgaW50IGksIGo7CgogICAgICBf
-X3B1dF91c2VyKFRBUkdFVF9TVkVfTUFHSUMsICZzdmUtPmhlYWQubWFnaWMpOwogICAgICBfX3B1
-dF91c2VyKHNpemUsICZzdmUtPmhlYWQuc2l6ZSk7CiAgICAgIF9fcHV0X3VzZXIodnEgKiBUQVJH
-RVRfU1ZFX1ZRX0JZVEVTLCAmc3ZlLT52bCk7CgogICAgICAvKiBOb3RlIHRoYXQgU1ZFIHJlZ3Mg
-YXJlIHN0b3JlZCBhcyBhIGJ5dGUgc3RyZWFtLCB3aXRoIGVhY2ggYnl0ZSBlbGVtZW50CiAgICAg
-ICAqIGF0IGEgc3Vic2VxdWVudCBhZGRyZXNzLiAgVGhpcyBjb3JyZXNwb25kcyB0byBhIGxpdHRs
-ZS1lbmRpYW4gc3RvcmUKICAgICAgICogb2Ygb3VyIDY0LWJpdCBodW5rcy4KICAgICAgICovCiAg
-ICAgIGZvciAoaSA9IDA7IGkgPCAzMjsgKytpKSB7CiAgICAgICAgICB1aW50NjRfdCAqeiA9ICh2
-b2lkICopc3ZlICsgVEFSR0VUX1NWRV9TSUdfWlJFR19PRkZTRVQodnEsIGkpOwogICAgICAgICAg
-Zm9yIChqID0gMDsgaiA8IHZxICogMjsgKytqKSB7CiAgICAgICAgICAgICAgX19wdXRfdXNlcl9l
-KGVudi0+dmZwLnpyZWdzW2ldLmRbal0sIHogKyBqLCBsZSk7CiAgICAgICAgICB9CiAgICAgIH0K
-ICAgICAgZm9yIChpID0gMDsgaSA8PSAxNjsgKytpKSB7CiAgICAgICAgICB1aW50MTZfdCAqcCA9
-ICh2b2lkICopc3ZlICsgVEFSR0VUX1NWRV9TSUdfUFJFR19PRkZTRVQodnEsIGkpOwogICAgICAg
-ICAgZm9yIChqID0gMDsgaiA8IHZxOyArK2opIHsKICAgICAgICAgICAgICB1aW50NjRfdCByID0g
-ZW52LT52ZnAucHJlZ3NbaV0ucFtqID4+IDJdOwogICAgICAgICAgICAgIF9fcHV0X3VzZXJfZShy
-ID4+ICgoaiAmIDMpICogMTYpLCBwICsgaiwgbGUpOwogICAgICAgICAgfQogICAgICB9CiAgfQoK
-Rm9yIHRoZSBhbGlhc2VkIGZwc2ltZCByZWdpc3RlcnMgd2Ugc3RvcmUgaW4gdGhlIHRhcmdldCBl
-bmRpYW4gZm9ybWF0OgoKICBzdGF0aWMgdm9pZCB0YXJnZXRfc2V0dXBfZnBzaW1kX3JlY29yZChz
-dHJ1Y3QgdGFyZ2V0X2Zwc2ltZF9jb250ZXh0ICpmcHNpbWQsCiAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgQ1BVQVJNU3RhdGUgKmVudikKICB7CiAgICAgIGludCBpOwoK
-ICAgICAgX19wdXRfdXNlcihUQVJHRVRfRlBTSU1EX01BR0lDLCAmZnBzaW1kLT5oZWFkLm1hZ2lj
-KTsKICAgICAgX19wdXRfdXNlcihzaXplb2Yoc3RydWN0IHRhcmdldF9mcHNpbWRfY29udGV4dCks
-ICZmcHNpbWQtPmhlYWQuc2l6ZSk7CiAgICAgIF9fcHV0X3VzZXIodmZwX2dldF9mcHNyKGVudiks
-ICZmcHNpbWQtPmZwc3IpOwogICAgICBfX3B1dF91c2VyKHZmcF9nZXRfZnBjcihlbnYpLCAmZnBz
-aW1kLT5mcGNyKTsKCiAgICAgIGZvciAoaSA9IDA7IGkgPCAzMjsgaSsrKSB7CiAgICAgICAgICB1
-aW50NjRfdCAqcSA9IGFhNjRfdmZwX3FyZWcoZW52LCBpKTsKICAjaWZkZWYgVEFSR0VUX1dPUkRT
-X0JJR0VORElBTgogICAgICAgICAgX19wdXRfdXNlcihxWzBdLCAmZnBzaW1kLT52cmVnc1tpICog
-MiArIDFdKTsKICAgICAgICAgIF9fcHV0X3VzZXIocVsxXSwgJmZwc2ltZC0+dnJlZ3NbaSAqIDJd
-KTsKICAjZWxzZQogICAgICAgICAgX19wdXRfdXNlcihxWzBdLCAmZnBzaW1kLT52cmVnc1tpICog
-Ml0pOwogICAgICAgICAgX19wdXRfdXNlcihxWzFdLCAmZnBzaW1kLT52cmVnc1tpICogMiArIDFd
-KTsKICAjZW5kaWYKICAgICAgfQogIH0KCldoZXJlIG91ciBsYXlvdXQgZm9yIHRoZSBxdWFkcyBp
-cyBhbHdheXM6CgogIFFuID0gcmVnc1tuXS5kWzFdOnJlZ3Nbbl0uZFswXQoKCgotLQpBbGV4IEJl
-bm7DqWUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+
+
+Den 11.06.2019 15.20, skrev Maxime Ripard:
+> Hi Noralf,
+> =
+
+> On Fri, Apr 19, 2019 at 10:53:28AM +0200, Noralf Tr=F8nnes wrote:
+>> Den 18.04.2019 18.40, skrev Noralf Tr=F8nnes:
+>>>
+>>>
+>>> Den 18.04.2019 14.41, skrev Maxime Ripard:
+>>>> Rotations and reflections setup are needed in some scenarios to initia=
+lise
+>>>> properly the initial framebuffer. Some drivers already had a bunch of
+>>>> quirks to deal with this, such as either a private kernel command line
+>>>> parameter (omapdss) or on the device tree (various panels).
+>>>>
+>>>> In order to accomodate this, let's create a video mode parameter to de=
+al
+>>>> with the rotation and reflexion.
+>>>>
+>>>> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+>>>> ---
+>>>>  drivers/gpu/drm/drm_client_modeset.c |  10 +++-
+>>>>  drivers/gpu/drm/drm_modes.c          | 110 ++++++++++++++++++++++----=
+--
+>>>>  include/drm/drm_connector.h          |   9 ++-
+>>>>  3 files changed, 109 insertions(+), 20 deletions(-)
+>>>>
+>>>> diff --git a/drivers/gpu/drm/drm_client_modeset.c b/drivers/gpu/drm/dr=
+m_client_modeset.c
+>>>> index f2869c82510c..15145d2c86d5 100644
+>>>> --- a/drivers/gpu/drm/drm_client_modeset.c
+>>>> +++ b/drivers/gpu/drm/drm_client_modeset.c
+>>>> @@ -823,6 +823,7 @@ EXPORT_SYMBOL(drm_client_modeset_probe);
+>>>>  bool drm_client_panel_rotation(struct drm_mode_set *modeset, unsigned=
+ int *rotation)
+>>>>  {
+>>>>  	struct drm_connector *connector =3D modeset->connectors[0];
+>>>> +	struct drm_cmdline_mode *cmdline;
+>>>>  	struct drm_plane *plane =3D modeset->crtc->primary;
+>>>>  	u64 valid_mask =3D 0;
+>>>>  	unsigned int i;
+>>>> @@ -844,6 +845,15 @@ bool drm_client_panel_rotation(struct drm_mode_se=
+t *modeset, unsigned int *rotat
+>>>>  		*rotation =3D DRM_MODE_ROTATE_0;
+>>>>  	}
+>>>>
+>>>> +	/**
+>>>> +	 * We want the rotation on the command line to overwrite
+>>>> +	 * whatever comes from the panel.
+>>>> +	 */
+>>>> +	cmdline =3D &connector->cmdline_mode;
+>>>> +	if (cmdline->specified &&
+>>>> +	    cmdline->rotation !=3D DRM_MODE_ROTATE_0)
+>>>
+>>> I believe you need to drop that second check, otherwise rotate=3D0 will
+>>> not overwrite panel rotation.
+>>>
+>>>> +		*rotation =3D cmdline->rotation;
+>>
+>> I remembered that you wanted this to propagate to DRM userspace. That's
+>> not happening here.
+> =
+
+> It's propated to the userspace through the plane's rotation property,
+> I just checked.
+> =
+
+
+Oh, so the rotation property stores its value in plane_state->rotation.
+And this is set in: drm_client_modeset_commit_atomic() ->
+drm_client_panel_rotation(): plane_state->rotation =3D rotation;
+
+>> The only way I see for that to happen, is to set
+>> ->panel_orientation. And to repeat myself, imo that makes
+>> 'orientation' a better name for this video=3D option.
+> =
+
+> orientation and rotation are two different things to me. The
+> orientation of a panel for example is absolute, while the rotation is
+> a transformation. In this particular case, I think that both the
+> orientation and the rotation should be taken into account, with the
+> orientation being the default state, and the hardware / panel will
+> tell us that, while the rotation would be a transformation from that
+> default to whatever the user wants.
+> =
+
+> More importantly, the orientation is a property of the hardware (ie,
+> how the display has been assembled), while the rotation is a software
+> construct.
+> =
+
+> And if the property being used to expose that is the rotation, I guess
+> it would make sense to just use the same name and remain consistent.
+> =
+
+
+Ok, I see. Based on this, I would assume that rotation would be relative
+to the orientation, but I see that in this patch rotation doesn't take
+orintation into account, it just overwrites it. I don't how userspace
+deals with rotation on top of orientation.
+
+Noralf.
+
+> Maxime
+> =
+
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
+> =
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
