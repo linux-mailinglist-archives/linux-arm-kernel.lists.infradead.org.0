@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03896423CF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:16:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 977B0423D1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:16:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HDVu+4gn4MTKBeqjWYjVRkAW3ZI7pJJFrpPtEunwM8A=; b=HLnOBIUZY/MJaqCu9PnezYM++2
-	7nVQHdst3vR6fsS3L3AvwcS7WrJ4FWize/UrWC5JND/hmUamnmON/qjpvNFG9qt+8S2/o8hPDGvCy
-	UCvixQNX3tge6E516DC+B3a7KtUIOgJamtvWqUz2AwkDco/eNVjA8gC8GjCu6BGuD/wmPESyay2md
-	ORNUIQZg7V5cFEwhSS+IF5qiM8tuPUD8qWXVPYmunaQ0mJZ7vNvVB86/JQn3qlzZ/RdNZ6gDLlt4e
-	khIKN8HAdGSNqGDMPHdm3yVHPHQtmvAAnPz5ImGVJxL/NOW7YnwtqkRs3ydz5O6LZqHaiFm+oHKqf
-	BAuU7U3g==;
+	bh=339CYgs/GB54ZA5noSRLmi/hWSGKOf2TxuEIf7ODFmY=; b=qnqcKcxWlDoVJVj6fnwW2egFFr
+	KpsZP/iFBKTLO3flN32w46uSVWUZpsvoJMoRMsUrZpuYVHpPfNIICv+9/zQqiNC3qIFIlvfvgjt8J
+	xAdV0rSkNeLcirCLHcZuzroTDilwiFW7Oyz8MGyEKxse6AOUgBQ74JYcPWkzDQtM3ppymPpcTEoxQ
+	tEarbYXHDGmnHb0B99h5xQY4fGY53wlvdq8Z5gyv1ySSLPR7EVXbI2clMEpYWYaZLdPCXBY4HOAog
+	WD0eeMc2F22VHspph1sbOBNgh/bb/sWCHPZFv/5TYb41v3E8nyDh/EIpXkRbpjW23K5Q3l0/SAog5
+	wCGYl6Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1FA-0000b3-AW; Wed, 12 Jun 2019 11:16:40 +0000
+	id 1hb1FQ-0000mP-GI; Wed, 12 Jun 2019 11:16:56 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1DX-0006EH-30
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:15:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id z23so6091714wma.4
+ id 1hb1DY-0006Fg-Bg
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:15:02 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a15so6118180wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:14:58 -0700 (PDT)
+ Wed, 12 Jun 2019 04:14:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=JC6Q8CjmGdxzS1r/l1ugJJUHGuJAio4YE7r12Sbrm1Q=;
- b=dfHnZnm/KeAKx0Y53W8U+Gve09GK0RsLcHKGzBp8skf8dieoVp+3rfiL2YnQayFHcb
- Lkfz1A+SwK7w+BUs52YV74L3fZLP3J9loLnVg+o9gWVgFH0oSAU6JzR3FOXHo2SkklyO
- s1WZEV1YfCDAmEPtAm3S/PpyLCfDN8f+/eiUzFsjKKNirIBLFta9bZocKUHJW3iuYWXk
- Kvz+A4Ujf8PryyBkA08Z4eCmgbflrI4pyjgutp3y8C0zfcrFW2FNAaPnpCkrMY3Tw/ly
- enYA/42NpbShVA/yMX21VKyJWtjCP4rreyRiWs0ec1wfiByCbkYA970s8PpE6ujeb/pq
- wq5g==
+ bh=N7TfMirow0WLkJ8Qk5sTGDNuiXjkVvo5PhKfS+WN4/0=;
+ b=TvHkcos3aVvBmtDnRVLiF8pREYuprtIOehZYrLYdAyjZP7EdbPz6anRT6UL2bn+1lt
+ iRSNcVbOmYQ+kkQ3JbVs1+N1QXgzSkLX7YOg4L2t2XY70f8q+rjIVRsJ4twJwhJN5UVZ
+ 5vJXv8Lim0Z9xob8xQk0ZvGfB+Z70kXkXVtj9Vo9sPNZX6nj6jRDgEYn1CZRGWviaBdS
+ 8d2kZlRPWm/+iACF30dR/3uZm/5FVD9NxZ0mvNShAZQiO33Rxhr5EDslpWhYAWS2n20q
+ sZ86aP63QHnIW66uQRUQxsSNaaLrpUhja+T3uqyEQLfK6EbRGrP9SJ6Yvc6TpIiuxChN
+ 7asQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:in-reply-to:references;
- bh=JC6Q8CjmGdxzS1r/l1ugJJUHGuJAio4YE7r12Sbrm1Q=;
- b=Gq9wGxFYo+mmtBsex5LNMmgYainvA9SXR6WzKkYUGrn2fK7yYjpWlDRX50omYJRfl7
- 9Tl3QHEZ10Fztqqil34/gtN7S7fZmKZ0KxVQP1joG2DxjIcHE+VZlfSIP5QBXM0NypOT
- fn5ZYD5qh30S6fFeN+o6NXbakp6u9uACr/Pb9kcdX/XzjOCbcBIa279ydJRzPN3ZTwDd
- z4d2haNxCY4DpAohYnym0yhMfHiH1Z6u96hgBcgP/yyrM7vSlIGG07TwYfBzxSOVa7QM
- PYAprF2/jEXSeaq8ScsBe5mhi5TFxIyGA1Hak1TSQ7SkSnCsFB0b77xDzmuzl3HDWoPv
- U6Kg==
-X-Gm-Message-State: APjAAAVXZjW9CEJeykYtsXIBKtpQiykBKCzBTx25YuL1sEy3JjO7bll7
- lS9kZ8nvtpipknfTqPR1BXKUNQ==
-X-Google-Smtp-Source: APXvYqxhsrtt2KXOawEWbugdsCleP2uygG0LIu+9qXaDXVByC4OzGpQkIVhgSA12n1EyQRy68HBOsw==
-X-Received: by 2002:a1c:3d41:: with SMTP id k62mr19765359wma.61.1560338096902; 
- Wed, 12 Jun 2019 04:14:56 -0700 (PDT)
+ bh=N7TfMirow0WLkJ8Qk5sTGDNuiXjkVvo5PhKfS+WN4/0=;
+ b=pMiIYfQ296067pumwetXYVbAbEOQ1Lb/u0ReP9ms3sdyLaqd6B9+d9sdO520QfwQ2K
+ vtkP77Djix9r1xOTZiHRoSFX+QbfFUyYlfycL46vXvGkdIWofncGLqAjjjkcycaRzJ2E
+ se0vAYuPgUsQGfhmWvaYf7JCBHZQNgky5h0BIb06lIW3nPAMf+u87iBSAwj76k/qIPjF
+ AmRboH3RfT1kNAW/L0PrugwJ9jS6Rs8yRYDlM6wlTaSgdf+Vg3SCB4r2m6OV11wJgbQx
+ BMGSvtVKzpv1852BPvg4IEP44y2kjtX2lqovV9By1GBQWdJyqQH2wjcPI5PI1yJY2vXY
+ bh5A==
+X-Gm-Message-State: APjAAAXiqT29rTiabRltw9xaj/d9TT1x6nykVKQaI75xNX6sl/XjABfZ
+ Hlds9+9H5e4Jb6VtR8fYw0jamg==
+X-Google-Smtp-Source: APXvYqxDqteBduXIGovJOsGxQCU7BEXqUQmBQgzI25tvhIXaofsgXxbwQoEvBU7rTYV1bD0qZFpatw==
+X-Received: by 2002:a1c:1b81:: with SMTP id
+ b123mr21041986wmb.144.1560338098580; 
+ Wed, 12 Jun 2019 04:14:58 -0700 (PDT)
 Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id j16sm38159921wre.94.2019.06.12.04.14.56
+ by smtp.gmail.com with ESMTPSA id g19sm6514083wmg.10.2019.06.12.04.14.57
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 12 Jun 2019 04:14:56 -0700 (PDT)
+ Wed, 12 Jun 2019 04:14:58 -0700 (PDT)
 From: Michal Simek <michal.simek@xilinx.com>
 To: johan@kernel.org, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
  monstr@monstr.eu, michal.simek@xilinx.com
-Subject: [PATCH v2 5/6] serial: uartps: Do not add a trailing semicolon to
- macro
-Date: Wed, 12 Jun 2019 13:14:42 +0200
-Message-Id: <5d938d34c3c4710577df898dbf4b70c74d2e6730.1560338079.git.michal.simek@xilinx.com>
+Subject: [PATCH v2 6/6] serial: uartps: Remove useless return from
+ cdns_uart_poll_put_char
+Date: Wed, 12 Jun 2019 13:14:43 +0200
+Message-Id: <19a9f67770e1896dde57d94b093273b503610eef.1560338079.git.michal.simek@xilinx.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1560338079.git.michal.simek@xilinx.com>
 References: <cover.1560338079.git.michal.simek@xilinx.com>
 In-Reply-To: <cover.1560338079.git.michal.simek@xilinx.com>
 References: <cover.1560338079.git.michal.simek@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_041459_258938_962C14D5 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20190612_041500_582413_99974FF0 
+X-CRM114-Status: GOOD (  10.69  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
@@ -110,12 +111,15 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Nava kishore Manne <nava.manne@xilinx.com>
 
-This patch fixes this checkpatch warning:
-WARNING: macros should not use a trailing semicolon
-+#define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
-+		clk_rate_change_nb);
+There is no reason to call return at the end of function which should
+return void.
 
-Fixes: d9bb3fb12685 ("tty: xuartps: Rebrand driver as Cadence UART")
+The patch is also remove one checkpatch warning:
+WARNING: void function return statements are not generally useful
++	return;
++}
+
+Fixes: 6ee04c6c5488 ("tty: xuartps: Add polled mode support for xuartps")
 Signed-off-by: Nava kishore Manne <nava.manne@xilinx.com>
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 ---
@@ -124,26 +128,22 @@ Changes in v2:
 - Split patch from v1
 - Add Fixes tag
 
-Origin patch which introduce this semicolon was
-c4b0510cc1571ff44e1 ("tty: xuartps: Dynamically adjust to input frequency
-changes")
----
- drivers/tty/serial/xilinx_uartps.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/tty/serial/xilinx_uartps.c | 2 --
+ 1 file changed, 2 deletions(-)
 
 diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
-index c3949a323815..d4c1ae2ffca6 100644
+index d4c1ae2ffca6..bcef254fa03c 100644
 --- a/drivers/tty/serial/xilinx_uartps.c
 +++ b/drivers/tty/serial/xilinx_uartps.c
-@@ -199,7 +199,7 @@ struct cdns_platform_data {
- 	u32 quirks;
- };
- #define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
--		clk_rate_change_nb);
-+		clk_rate_change_nb)
+@@ -1074,8 +1074,6 @@ static void cdns_uart_poll_put_char(struct uart_port *port, unsigned char c)
+ 		cpu_relax();
  
- /**
-  * cdns_uart_handle_rx - Handle the received bytes along with Rx errors.
+ 	spin_unlock_irqrestore(&port->lock, flags);
+-
+-	return;
+ }
+ #endif
+ 
 -- 
 2.17.1
 
