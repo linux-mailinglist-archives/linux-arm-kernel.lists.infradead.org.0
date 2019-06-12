@@ -2,95 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EEC64235F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:03:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ED054236B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:05:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MOJ2dYgYJyBvrcnYcdfOCMmjzs/dOdcAa64rRg4Urss=; b=M/tzBAAvT9Mnqz
-	ooArSqRy/iWNZauVSt7Nw0zoIQgCgFvaa/sU5+Cpe1Gt2ud66bVPoqDSYINaW9qdNIoCHZghwrPKo
-	89Q40pFZ+RR5cTAtXPnsqhmJIwbRPvRMHpLNFxz0LTkPuiYDnmSgiXXvzrevIhsDY5yJDdVw61wQU
-	IGfKIF5K8yXXs1nYgqbl6RYQtzDT+Oa1J8eXYcgbdvw0BtCantCiIfJRt7bY8M3a5VsJnAQ5VfR8p
-	4RGpvgJradFCVT0TpJBqya9A/knjID7t1rbRMIuFH15LO1qrzes34tcb95iG/c6WhQuhDbSapANvj
-	CHiALcSmZMtdjdp1fTFA==;
+	List-Owner; bh=XBpv8nGbJqiZRDG7BFNI+wq8KU+2UtvgeqCbsbA0bq4=; b=C6DrTPF7YHS5nV
+	S+r6sBP6LolWpCeeOA6l7A2berUrzTwHnkXdsz+ZgtDF8OJHLCa7qh4Q5D7o6NKGTWfNhV4YuNuER
+	g4eRqwgDNaeXjDJY9QuVB4dqAtZr/Rh/IcuPjtk7WWrk88aczvNFRx9BPQgHsKWgbeEd6iqp8sEnF
+	gNiaLccckBgmy4FNd1LB/PHLUFrGRG7iK/1zfM04QwO8rYEQkZd2RLzJAV1Pn5mVPkybnh9NnCj/b
+	6vlryGEt3d3nMjhbNuKQZkuE6jBiPddVU+8Do6myIwaIPzrft/23VfXYwJ4JjAHPgeYTH6DonpB+J
+	oE/Hal8xyg1t97ccY1AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb12a-0001HK-OO; Wed, 12 Jun 2019 11:03:40 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb12K-0001EF-6I
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:03:29 +0000
-Received: by mail-pf1-x441.google.com with SMTP id t16so9445853pfe.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:03:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=U+WRAXF2ARmkxSGAjp/c6etYCd0hTSbOs0DZi8MzR6Q=;
- b=Au7VJqK1ojAhcfG23jRBnNIRm8KjejR34yLBYxx+tHyOH3UOEnqAeA+8NqPGB0xERC
- iEkWFkgDGC2bVn5/OIaA4Iaj0a8vwuQDB61IL+0H9Fwkx9OFXo7fvyXQ9pDMhbYVG+Nt
- NAfcfgs6HTAivxcJGzmU1GQcMJKjdgGsV4PVoEwVpmDo71FYYp7iRopdo3JqiipS6Pbm
- g0FK+P1R3xn5BU9DYN7tw7p2D7DXBRHK9wtsmdaKDKErjouHvoT1Xsa2liBK45bWDlUw
- nn9WdHLDyGhILUMAD8+oKvlF/Link+W8NA8UTm3/U+VTclr5XHE7a99we7HZ74tOwnVu
- i1TQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=U+WRAXF2ARmkxSGAjp/c6etYCd0hTSbOs0DZi8MzR6Q=;
- b=Q/94w0if21+QCdctNeNAJo0M21KEdnIkdHXzpTadPA+axXEG8ecV1voF3lmggWzPVo
- 8GhcoAQFI5rEjxJtZ01GLbxDUhNSoMdL1CQ7Yuuo/mZU+2CvFI48T4Gszm35sqR4JsRk
- 3HOFZBktCQPd3JOr6m+evk6L0OamSyPtcwIlZ6Rv5WPUfI7EECTGoLEA29+SRBj5GWp0
- F/NJUVC24ftj274XVWov23/EkXkL1DQa7NqKmVvjgJ4ZCMHVvUm/jIA8eQKNu7xt3WHu
- 7aEKopjuG+BCtfbhPuMlpQIWY4KII0Ga7Q1eg7hw4epZS6QFoMuiUlFFe5qEcJWhc1Il
- z6og==
-X-Gm-Message-State: APjAAAVopxfSB1RgxSIXL03RTSeh/K7V1d2os8OqQSzMa+rOrGlleSuQ
- 14orPuAVSQRpIt4ysaZF69EZW44Blj6h0ECWGj6vAg==
-X-Google-Smtp-Source: APXvYqzWmxUbLyuGmwxZVdNOTNeaNzhhuMrhwfH+eyIre2cUwA02gvKzU0bgN3Cy01oTn1PiBJVwgb5PwMcG3EUFGXg=
-X-Received: by 2002:a65:64d9:: with SMTP id t25mr24706277pgv.130.1560337402181; 
- Wed, 12 Jun 2019 04:03:22 -0700 (PDT)
-MIME-Version: 1.0
+	id 1hb14M-0002pD-JA; Wed, 12 Jun 2019 11:05:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb148-0002oP-Az
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:05:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67D1428;
+ Wed, 12 Jun 2019 04:05:15 -0700 (PDT)
+Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 74A1E3F246;
+ Wed, 12 Jun 2019 04:06:34 -0700 (PDT)
+Date: Wed, 12 Jun 2019 12:04:44 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
+ __uaccess_mask_ptr
+Message-ID: <20190612110443.GD28951@C02TF0J2HF1T.local>
 References: <cover.1559580831.git.andreyknvl@google.com>
  <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
  <20190610175326.GC25803@arrakis.emea.arm.com>
  <20190611145720.GA63588@arrakis.emea.arm.com>
  <CAAeHK+z5nSOOaGfehETzznNcMq5E5U+Eb1rZE16UVsT8FWT0Vg@mail.gmail.com>
  <20190611173903.4icrfmoyfvms35cy@mbp>
-In-Reply-To: <20190611173903.4icrfmoyfvms35cy@mbp>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Wed, 12 Jun 2019 13:03:10 +0200
-Message-ID: <CAAeHK+ysoiCSiCNrrvXqffK53WwBMHbc3bk69uU0vY0+R4_JvQ@mail.gmail.com>
-Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
- __uaccess_mask_ptr
-To: Catalin Marinas <catalin.marinas@arm.com>
+ <CAAeHK+ysoiCSiCNrrvXqffK53WwBMHbc3bk69uU0vY0+R4_JvQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAAeHK+ysoiCSiCNrrvXqffK53WwBMHbc3bk69uU0vY0+R4_JvQ@mail.gmail.com>
+User-Agent: Mutt/1.11.2 (2019-01-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_040328_318574_3372D16F 
-X-CRM114-Status: GOOD (  22.33  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190612_040517_193948_97327876 
+X-CRM114-Status: GOOD (  11.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match 0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -134,57 +99,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 7:39 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
->
-> On Tue, Jun 11, 2019 at 07:09:46PM +0200, Andrey Konovalov wrote:
-> > On Tue, Jun 11, 2019 at 4:57 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > >
-> > > On Mon, Jun 10, 2019 at 06:53:27PM +0100, Catalin Marinas wrote:
-> > > > On Mon, Jun 03, 2019 at 06:55:04PM +0200, Andrey Konovalov wrote:
-> > > > > diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-> > > > > index e5d5f31c6d36..9164ecb5feca 100644
-> > > > > --- a/arch/arm64/include/asm/uaccess.h
-> > > > > +++ b/arch/arm64/include/asm/uaccess.h
-> > > > > @@ -94,7 +94,7 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
-> > > > >     return ret;
-> > > > >  }
-> > > > >
-> > > > > -#define access_ok(addr, size)      __range_ok(addr, size)
-> > > > > +#define access_ok(addr, size)      __range_ok(untagged_addr(addr), size)
-> > > >
-> > > > I'm going to propose an opt-in method here (RFC for now). We can't have
-> > > > a check in untagged_addr() since this is already used throughout the
-> > > > kernel for both user and kernel addresses (khwasan) but we can add one
-> > > > in __range_ok(). The same prctl() option will be used for controlling
-> > > > the precise/imprecise mode of MTE later on. We can use a TIF_ flag here
-> > > > assuming that this will be called early on and any cloned thread will
-> > > > inherit this.
-> > >
-> > > Updated patch, inlining it below. Once we agreed on the approach, I
-> > > think Andrey can insert in in this series, probably after patch 2. The
-> > > differences from the one I posted yesterday:
-> > >
-> > > - renamed PR_* macros together with get/set variants and the possibility
-> > >   to disable the relaxed ABI
-> > >
-> > > - sysctl option - /proc/sys/abi/tagged_addr to disable the ABI globally
-> > >   (just the prctl() opt-in, tasks already using it won't be affected)
-> > >
-> > > And, of course, it needs more testing.
+On Wed, Jun 12, 2019 at 01:03:10PM +0200, Andrey Konovalov wrote:
+> On Tue, Jun 11, 2019 at 7:39 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > On Tue, Jun 11, 2019 at 07:09:46PM +0200, Andrey Konovalov wrote:
+> > > Should I drop access_ok() change from my patch, since yours just reverts it?
 > >
-> > Sure, I'll add it to the series.
-> >
-> > Should I drop access_ok() change from my patch, since yours just reverts it?
->
-> Not necessary, your patch just relaxes the ABI for all apps, mine
-> tightens it. You could instead move the untagging to __range_ok() and
-> rebase my patch accordingly.
+> > Not necessary, your patch just relaxes the ABI for all apps, mine
+> > tightens it. You could instead move the untagging to __range_ok() and
+> > rebase my patch accordingly.
+> 
+> OK, will do. I'll also add a comment next to TIF_TAGGED_ADDR as Vincenzo asked.
 
-OK, will do. I'll also add a comment next to TIF_TAGGED_ADDR as Vincenzo asked.
+Thanks.
 
->
-> --
-> Catalin
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
