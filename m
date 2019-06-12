@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 136D8423AD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:13:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01C51423BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:15:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HYWhMp9ZvcOai5rYIOxEA6vCSzQHJZLxDD1wNnqUgmo=; b=YQ9GxcIaJEbn4N
-	4+n8pcZpRoBxhmUHSeiogqLP0bEBU4AvoS64ga3vLg80wwBiJddM5+QxBfsxkBgVnQxuvw0pO66Aw
-	1m6NU1ixN/d1EVMD506MiHJol75GC4B04+kU+HKSO/HImsd2Fk8x+Vi1HVVFw7Mw08CclGpn5MIpj
-	FApQbLwIDs7h3vB8eYu0eJxk1dWaucUtZJmgZLwuKhDLHJEJ91Wjpodq3UqEoPCo7R8C6UhCxABTZ
-	jNiRJRaSf5t1B2uXUL1HZH9f+ZcChHdPXAIvJb/u/y3jnBYNOqC5OHFC2zWTZR7nZOdLOvfSYutWF
-	gkKu0x9qW6N8rQEf8njw==;
+	List-Owner; bh=+Ay3Mzl/o171fQxDTMZ+x+swZB2n6ntFYOWnX0E+wPg=; b=Nj7E5cU9OHA5/i
+	zOohaK79pj15KjFgq83NsQvQCmh/3kUNu0w7KeOYngH9a1ASHAuCsAkjb1Qd0HJFJ8/9/plloQhpU
+	436v7j7G4sfxDQO0yO95jGbMfcmzs0J+klt1kl4ieyg6v4k5FjfNLi9wb9ayvU8GR/wIKZ4QE2W92
+	gLlVqdNNjnOkTEFuf0pW+LORk3vGTrXPNxsnmNSvqtr0WkfMvjbYXJNZ4Nu51KgicTknlQJIe/I80
+	xbzkCy6RI0ToDIw9lAJ9ghQU96F2ydTDtWiff9i3th173T0NeRDmfOE5lb2KU8QdBmQGnAg0ceF3v
+	msbT0CeeV8oMvI709Wnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1C6-0005cj-HB; Wed, 12 Jun 2019 11:13:30 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hb1DW-00060s-HP; Wed, 12 Jun 2019 11:14:58 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1Bw-0005be-Fm
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:13:21 +0000
-Received: by mail-pg1-x543.google.com with SMTP id 83so8753182pgg.8
+ id 1hb1DG-0005zl-SN
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:14:44 +0000
+Received: by mail-pl1-x643.google.com with SMTP id bi6so6107464plb.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:13:20 -0700 (PDT)
+ Wed, 12 Jun 2019 04:14:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CPH48pl3zgEAvx1ZV8NCaa+NrirZ7d55m0K/3ZW0DB4=;
- b=Wa+GrRiixuq08ZJy7YLBy/hw4N6KCGD4D0JGPHXeAhrhP7aYFGu2wrFVi/4U57v07h
- gabUfJpQMd/ZxixypJh6LG438zDMAFuaLmx1zNosW/bNS5e9DE+bfIpQfyXphO/5R37q
- J4BK+9faydCecf+zFNicytUzZ+34IwX2nZrUTbQwSG0d5Mwjsh+M/iy5iKaSTm2HU1Vc
- APJmA3gO7zhEVXs30R27Red8E5MuIvjfWVaZNPU7/jpeOCWo81HFfgpvxUE+snFq9nK5
- AQ9h1nAmh3KAeta7IGYJp8hdQcsOoF6BnZ35/+mA9Y0+45iTzl1SsN8NtN8M46KVCGVs
- tN2Q==
+ :cc; bh=ICAcqmNM80YqXGU9u0yKcUq/onm/SsQo2SDs/l3f+hY=;
+ b=QkhZMvI8xgho9eMFZ7w6J/3duhWcdGLEkVVUAU2qSaxNfXU+GXLc+PdiUdCpUn61iY
+ 0xCUxQ9wiA1Jj7ZnvEwSzmljdVe71a10tK0t/VIk6vJ6KuoIESh9plrNP00oJ9EUV9CE
+ 7ZXKJL/NmCDrLh5D1fRV3U/5XcSqnaFIYrJ7IhnmnWDC1y2ZQhZMwMFDrVZ4wkPjj2PR
+ KjnNxVxOeNHsZ1yb6hgnM2H6TbZTzWPz9Cffq6e0f9rEpBuiI2bynmdfsgpQFhae4y5r
+ LLRsk0MnIrY8OwbkGOOGkhYBEu+P7mFEBBswTcH9Mhn9r0qq9AEF/SsRyiNTxER5NtY3
+ eTUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=CPH48pl3zgEAvx1ZV8NCaa+NrirZ7d55m0K/3ZW0DB4=;
- b=XQVwZSowGxJliTmu9qmM2qnt+tDBIw43WDNPlZYvbaScTwLZDXdR4nXin7+iCpmSY+
- 26IFM52GCCZv6437oJM81wvTplz8ZS+uAw6TkuxFhDRTIihakmFi5FbXh35Q2gwUeT/k
- H+NAPSlwpvSOgkT+l2Cfc+YEUS7W+S9c7INKrvREE+ounCZ+5Zzia4I8Lj6wHuN9bOlF
- QO9ZFxzoFmN4ivtSPey071lg9DB2xNugVLOQZaVkUVOcnZv1WPVrlMtXyernhzLDErDY
- sa7bZEFoZk5vnr5eXBEhOeFpbNKFXeZMMMrSpiKiJWEYz4xx4uYRE+gI34hCQoND1Crn
- UgKQ==
-X-Gm-Message-State: APjAAAVF0Mp3v/1iNvuFT/JLXrDcWqGmKhlSWopPnmVsK93j0YxNTV+2
- BKRa9Z5WcIJok8zNi7zHwXHDxAmWQQ6NVkEbd+QUVg==
-X-Google-Smtp-Source: APXvYqwzlagi41UpMXh0yb3QZZS2gyEag7Dm2eoj6v2jESPsCD8f1MNuoUw/t7+/hDiqSvkq5q/rQO7JKsp+xiDho38=
-X-Received: by 2002:a65:5845:: with SMTP id s5mr25017064pgr.286.1560337999517; 
- Wed, 12 Jun 2019 04:13:19 -0700 (PDT)
+ bh=ICAcqmNM80YqXGU9u0yKcUq/onm/SsQo2SDs/l3f+hY=;
+ b=NihHxGylI23qm0GlE0OPP19KOhAB+RUxU9QarJ1OytxXD+kF/rixda7M1WX8f1bojc
+ +X5903zaIESJEA/+8RN+Lueqw81ASchIxR1d+9BMhD76YwGuSisWWiKh/CQ5KC+71owQ
+ dn3NmLKGW0roM7Cg5Q3zqlyZtbmLkItVBXntTlfGLAyzJ4Et6KaA160e0RjxoPXwwfd6
+ I879yzjjubT/JjkjJ1tDwm9XiuZIz7xR3LyMDWuLLmp6krD2OOj3d1yR8+Ugc3Ojoelc
+ hbyD1wh7FD9HYIqcL33WfcHISPFc5Cze6fqFDeoM8Hy/wsFVPo/Fy5TTM1z7kk7D0ZzN
+ UTsA==
+X-Gm-Message-State: APjAAAUEHcayx9XF/kceX9WspwnVPA6J4ABSTXbhgr/7ApPEZwdNFW0l
+ hwMew0elcRBA9Xc/XcaqpIx8iYLKW5bXrlGDWxGP8w==
+X-Google-Smtp-Source: APXvYqygEZ27HGfNqszCpdSgojAf7S6ru14/DaT8Or0Syv3FL9sWDfZ+9LXBU0/5Hxbzx8tkSmaHaZjTcL+f/jghf7s=
+X-Received: by 2002:a17:902:8609:: with SMTP id
+ f9mr75570344plo.252.1560338081704; 
+ Wed, 12 Jun 2019 04:14:41 -0700 (PDT)
 MIME-Version: 1.0
 References: <cover.1559580831.git.andreyknvl@google.com>
- <045a94326401693e015bf80c444a4d946a5c68ed.1559580831.git.andreyknvl@google.com>
- <20190610142824.GB10165@c02tf0j2hf1t.cambridge.arm.com>
- <CAAeHK+zBDB6i+iEw+TJY14gZeccvWeOBEaU+otn1F+jzDLaRpA@mail.gmail.com>
- <20190611174448.exg2zycfqf4a2vea@mbp>
-In-Reply-To: <20190611174448.exg2zycfqf4a2vea@mbp>
+ <9e1b5998a28f82b16076fc85ab4f88af5381cf74.1559580831.git.andreyknvl@google.com>
+ <20190611150122.GB63588@arrakis.emea.arm.com>
+ <CAAeHK+wZrVXxAnDXBjoUy8JK9iG553G2Bp8uPWQ0u1u5gts0vQ@mail.gmail.com>
+ <20190611175037.pflr6q6ob67zjj25@mbp>
+In-Reply-To: <20190611175037.pflr6q6ob67zjj25@mbp>
 From: Andrey Konovalov <andreyknvl@google.com>
-Date: Wed, 12 Jun 2019 13:13:08 +0200
-Message-ID: <CAAeHK+wkA8PskRrdfJ7MMr+je+x71WW3yDgWajxPRPwPBRNVfA@mail.gmail.com>
-Subject: Re: [PATCH v16 05/16] arm64: untag user pointers passed to memory
- syscalls
+Date: Wed, 12 Jun 2019 13:14:30 +0200
+Message-ID: <CAAeHK+x4sHKfQx31uQ9zSO48oRs3XLATfymY=vgEHQ1FLNmeig@mail.gmail.com>
+Subject: Re: [PATCH v16 16/16] selftests, arm64: add a selftest for passing
+ tagged pointers to kernel
 To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_041320_550882_C21233AA 
-X-CRM114-Status: GOOD (  17.84  )
+X-CRM114-CacheID: sfid-20190612_041442_946181_727EA385 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -134,34 +135,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 7:45 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+On Tue, Jun 11, 2019 at 7:50 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
 >
-> On Tue, Jun 11, 2019 at 05:35:31PM +0200, Andrey Konovalov wrote:
-> > On Mon, Jun 10, 2019 at 4:28 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > > On Mon, Jun 03, 2019 at 06:55:07PM +0200, Andrey Konovalov wrote:
-> > > > This patch is a part of a series that extends arm64 kernel ABI to allow to
-> > > > pass tagged user pointers (with the top byte set to something else other
-> > > > than 0x00) as syscall arguments.
-> > > >
-> > > > This patch allows tagged pointers to be passed to the following memory
-> > > > syscalls: get_mempolicy, madvise, mbind, mincore, mlock, mlock2, mprotect,
-> > > > mremap, msync, munlock.
-> > > >
-> > > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> On Tue, Jun 11, 2019 at 07:18:04PM +0200, Andrey Konovalov wrote:
+> > On Tue, Jun 11, 2019 at 5:01 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > > static void *tag_ptr(void *ptr)
+> > > {
+> > >         static int tagged_addr_err = 1;
+> > >         unsigned long tag = 0;
 > > >
-> > > I would add in the commit log (and possibly in the code with a comment)
-> > > that mremap() and mmap() do not currently accept tagged hint addresses.
-> > > Architectures may interpret the hint tag as a background colour for the
-> > > corresponding vma. With this:
+> > >         if (tagged_addr_err == 1)
+> > >                 tagged_addr_err = prctl(PR_SET_TAGGED_ADDR_CTRL,
+> > >                                         PR_TAGGED_ADDR_ENABLE, 0, 0, 0);
 > >
-> > I'll change the commit log. Where do you you think I should put this
-> > comment? Before mmap and mremap definitions in mm/?
+> > I think this requires atomics. malloc() can be called from multiple threads.
 >
-> On arm64 we use our own sys_mmap(). I'd say just add a comment on the
-> generic mremap() just before the untagged_addr() along the lines that
-> new_address is not untagged for preserving similar behaviour to mmap().
+> It's slightly racy but I assume in a real libc it can be initialised
+> earlier than the hook calls while still in single-threaded mode (I had
+> a quick attempt with __attribute__((constructor)) but didn't get far).
+>
+> Even with the race, under normal circumstances calling the prctl() twice
+> is not a problem. I think the risk here is that someone disables the ABI
+> via sysctl and the ABI is enabled for some of the threads only.
 
-Will do in v17, thanks!
+OK, I'll keep the code racy, but add a comment pointing it out. Thanks!
 
 >
 > --
