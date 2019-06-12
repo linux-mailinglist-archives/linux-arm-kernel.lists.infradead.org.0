@@ -2,66 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99A8942854
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBEBA4288F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:15:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iLWKTWTJS0csB2x14sdTpWz/3tX8TcjBY3aDknD2tQE=; b=fotgZVLBlEx0Md
-	6BFfEZggRycu9WSNWR3ShXMsyZwApA1JZ61pfCLv0H6BvHSxPznlPowhOM2mInnIjciQ/9fU+L3yk
-	WUOtdVV+eXrfzeO2PGGEb8KOt55griEWmFRcKvZ97m+EhWE4Jk6URaH8Zik0BTUz+6BGaCQKW+5U+
-	HHNl+yC6dFa/6pVXBHubO80cj+3rmEDLpjUvVto/RsR7q1s/d561bvYB1IwlwmZDA99YTi11EFE61
-	gcpsPz4UJuhmcju0wKs1r6hzacrbVJY5kxYjiBieoFeZFZc3IGL8NypOB38z2AvG3wi2B5tjpTWCd
-	5+angHoEK5KHG5zO/VXg==;
+	List-Owner; bh=lBtgxPb+asuRZ16xuvwWXTbR96htUSyFPvbaeGX244M=; b=V/FkFqH6bpN9cL
+	bgE+Oq/uJxLUBRiHklms/7+S/o8mJykJdKQ+RVPyPALPKRo7A1NjtpnyDs/ega+XHzmD+XYX6Jf5v
+	R7G3hQKFMDIAetBmbI3y/GwhmkuLRaYvi+FsoVdoOgHrREnGQDroDyijoScGQw5CS9Ld7hL0fqJpk
+	6tAIflrlNNnEY2YV4QudvW7y5W9mLI6RbBXWXYx979Hi6fZdqkGG334OXNVNWi5asXY67X/stzLtu
+	yRmOzsm55xF9eFLIOgjBDtrjPXrx3h08E4QnJbmgttxG9qFoDl4VBcP0ycfb0zxWFQsw5mzSXMCg0
+	vtPgIqMHjEcJJN6QI42g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb3qn-0002xz-QS; Wed, 12 Jun 2019 14:03:41 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1hb426-0000pO-B1; Wed, 12 Jun 2019 14:15:22 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb3qe-0002xN-Pt; Wed, 12 Jun 2019 14:03:34 +0000
-X-UUID: 19beb02eebb84110a5974c7c91e29bd6-20190612
-X-UUID: 19beb02eebb84110a5974c7c91e29bd6-20190612
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1517432226; Wed, 12 Jun 2019 06:03:27 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Jun 2019 07:03:26 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Jun 2019 22:03:24 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 12 Jun 2019 22:03:23 +0800
-Message-ID: <1560348204.19782.6.camel@mtkswgap22>
-Subject: RE: [PATCH v1] scsi: ufs: Avoid runtime suspend possibly being
- blocked forever
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Avri Altman <Avri.Altman@wdc.com>
-Date: Wed, 12 Jun 2019 22:03:24 +0800
-In-Reply-To: <SN6PR04MB492546256F8F8635E7EE60C2FCEC0@SN6PR04MB4925.namprd04.prod.outlook.com>
-References: <1560325326-1598-1-git-send-email-stanley.chu@mediatek.com>
- <SN6PR04MB492546256F8F8635E7EE60C2FCEC0@SN6PR04MB4925.namprd04.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hb41v-0000oT-OZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:15:13 +0000
+Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa4.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa4.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.63,366,1557212400"; d="scan'208";a="36650836"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 12 Jun 2019 07:15:09 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
+ chn-vm-ex01.mchp-main.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 12 Jun 2019 07:14:56 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Wed, 12 Jun 2019 07:14:56 -0700
+Date: Wed, 12 Jun 2019 16:13:56 +0200
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>
+Subject: Re: [PATCH][next] video: fbdev: atmel_lcdfb: remove redundant
+ initialization to variable ret
+Message-ID: <20190612141356.riiesqub4zvxafh3@M43218.corp.atmel.com>
+Mail-Followup-To: Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>,
+ Colin King <colin.king@canonical.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
+ "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+References: <20190611170913.20913-1-colin.king@canonical.com>
+ <37ac8530-6601-a1a0-37e0-8c6d5d1702cd@microchip.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 4018B39517CC99ADF846BD09B0727C651F76F30778E15F902E6C0D2819EA72F62000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <37ac8530-6601-a1a0-37e0-8c6d5d1702cd@microchip.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_070332_848047_3FDE6372 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_071511_835577_9E622237 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,75 +101,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "evgreen@chromium.org" <evgreen@chromium.org>,
- "subhashj@codeaurora.org" <subhashj@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "ygardi@codeaurora.org" <ygardi@codeaurora.org>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "stable@vger.kernel.org" <stable@vger.kernel.org>, stanley.chu@mediatek.com,
- "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+ "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Colin King <colin.king@canonical.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri,
-
-On Wed, 2019-06-12 at 11:10 +0000, Avri Altman wrote:
-> Hi,
+On Wed, Jun 12, 2019 at 09:55:30AM +0200, Nicolas Ferre - M43238 wrote:
+> On 11/06/2019 at 19:09, Colin King wrote:
+> > External E-Mail
+> > 
+> > 
+> > From: Colin Ian King <colin.king@canonical.com>
+> > 
+> > Currently variable ret is being initialized with -ENOENT however that
+> > value is never read and ret is being re-assigned later on. Hence this
+> > assignment is redundant and can be removed.
+> > 
+> > Addresses-Coverity: ("Unused value")
+> > Signed-off-by: Colin Ian King <colin.king@canonical.com>
 > 
-> > 
-> > UFS runtime suspend can be triggered after pm_runtime_enable()
-> > is invoked in ufshcd_pltfrm_init(). However if the first runtime
-> > suspend is triggered before binding ufs_hba structure to ufs
-> > device structure via platform_set_drvdata(), then UFS runtime
-> > suspend will be no longer triggered in the future because its
-> > dev->power.runtime_error was set in the first triggering and does
-> > not have any chance to be cleared.
-> > 
-> > To be more clear, dev->power.runtime_error is set if hba is NULL
-> > in ufshcd_runtime_suspend() which returns -EINVAL to rpm_callback()
-> > where dev->power.runtime_error is set as -EINVAL. In this case, any
-> > future rpm_suspend() for UFS device fails because
-> > rpm_check_suspend_allowed() fails due to non-zero
-> > dev->power.runtime_error.
-> > 
-> > To resolve this issue, make sure the first UFS runtime suspend
-> > get valid "hba" in ufshcd_runtime_suspend(): Enable UFS runtime PM
-> > only after hba is successfully bound to UFS device structure.
-> > 
-> > Fixes: e3ce73d (scsi: ufs: fix bugs related to null pointer access and array size)
-> This code was inserted before platform_set_drvdata  in
-> 6269473 [SCSI] ufs: Add runtime PM support for UFS host controller driver.
-> Why do you point to e3ce73d?
+> Indeed:
+> Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
 
-e3ce73d (scsi: ufs: fix bugs related to null pointer access and array
-size) changed the returned value from 0 to -EINVAL in case of NULL "hba"
-in ufshcd_runtime_suspend().
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com> 
 
-But you are right, above patch may do the right thing, and the real root
-cause is the incorrect timing of pm_runtime_enable().
-
-I will fix commit message in next version.
+Thanks
 
 > 
-> Thanks,
-> Avri
-
-Thanks.
-Stanley
-
-
+> Thanks, best regards,
+>    Nicolas
+> 
+> 
+> > ---
+> >   drivers/video/fbdev/atmel_lcdfb.c | 2 +-
+> >   1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/video/fbdev/atmel_lcdfb.c b/drivers/video/fbdev/atmel_lcdfb.c
+> > index fb117ccbeab3..930cc3f92e01 100644
+> > --- a/drivers/video/fbdev/atmel_lcdfb.c
+> > +++ b/drivers/video/fbdev/atmel_lcdfb.c
+> > @@ -950,7 +950,7 @@ static int atmel_lcdfb_of_init(struct atmel_lcdfb_info *sinfo)
+> >   	struct fb_videomode fb_vm;
+> >   	struct gpio_desc *gpiod;
+> >   	struct videomode vm;
+> > -	int ret = -ENOENT;
+> > +	int ret;
+> >   	int i;
+> >   
+> >   	sinfo->config = (struct atmel_lcdfb_config*)
+> > 
+> 
+> 
+> -- 
+> Nicolas Ferre
 
 _______________________________________________
 linux-arm-kernel mailing list
