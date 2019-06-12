@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAEA142E8D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 20:25:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FF3C42EA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 20:26:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JBxeYqgN8HAfaJ3QhtY1Cc+9L9398iN6MhWrT+QKMFI=; b=IRuZGyNxXwGMef
-	ltCwcZuwhSJ1W6TZxQxPEMHCH6LTJWlWTjEAV9X77Pz5B32RnQxZHC5DcBvRcqYNr2IBts1FyZxnB
-	lw+7xZ8uffqZmMAN/23Cra9EirVvg9A7ejTfaOqyYzFwMLge6BAaBudJ4hjfP2Y0v0ivJGwzK7LSt
-	slglhc4xifhZZpSJ6UbmnEVckWfTzZy1DUkLJWzUYU39E/UxeQOppSy0BpAAtwS0X+0u0K9+T67uC
-	+P/x9a877UmaoQc1prg9UdA5WeR6mAh5UwKhEl8BLFgb6xbydpOWzSGG7FISPFz5iz/a8fDrTVj3W
-	4ZSQRpSoH1sBGFbMdVMw==;
+	List-Owner; bh=J+hazdMaGIz9uIISn+7KF75QMSaNZaHHBh79PNfDaPA=; b=UjGmVCXBuezKtK
+	uyYkjA4nWoVzA9Hdqw0i5LYG4sNLPuHVcb9TEBdQ4m/irc3B8vTHn/L/UuL8xi7zg+F2oHK0QGVcK
+	kqC1W67C3DA+kEMo1OveEipE2vuU6o0GdeZgBS1eXmuW0Kghdel8TaNqTFR2mBqUnc4qbJ2KCpyc7
+	qsgLLbLhtJyYy7Hqg350OBor7YjLwdkKetWbq46q8UnperLoQDGo0qmwTcLhXtnE99cbzmCA+rG4C
+	IM/K6CbtAbEFUpdFoQ4VMUmIJ20Hefa6tCe3F/TpCxPJ0c8an/pGrCBQeRoTFiWt4woDtVDfyi9Lr
+	RVNBoMCIBQ7H9VPfqPKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb7wF-0008FL-4P; Wed, 12 Jun 2019 18:25:35 +0000
+	id 1hb7xE-0000aJ-Pj; Wed, 12 Jun 2019 18:26:36 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb7vy-0008DK-IE; Wed, 12 Jun 2019 18:25:19 +0000
+ id 1hb7vy-0008DN-Md; Wed, 12 Jun 2019 18:25:22 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id AC8BAB00A;
- Wed, 12 Jun 2019 18:25:15 +0000 (UTC)
+ by mx1.suse.de (Postfix) with ESMTP id 42F1DB00B;
+ Wed, 12 Jun 2019 18:25:17 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: stefan.wahren@i2se.com, Eric Anholt <eric@anholt.net>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com
-Subject: [PATCH v4 1/7] clk: bcm2835: remove pllb
-Date: Wed, 12 Jun 2019 20:24:53 +0200
-Message-Id: <20190612182500.4097-2-nsaenzjulienne@suse.de>
+To: stefan.wahren@i2se.com,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v4 2/7] clk: bcm283x: add driver interfacing with Raspberry
+ Pi's firmware
+Date: Wed, 12 Jun 2019 20:24:54 +0200
+Message-Id: <20190612182500.4097-3-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190612182500.4097-1-nsaenzjulienne@suse.de>
 References: <20190612182500.4097-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_112518_745874_6E1CDE66 
-X-CRM114-Status: GOOD (  12.91  )
+X-CRM114-CacheID: sfid-20190612_112519_033841_111D7D98 
+X-CRM114-Status: GOOD (  21.15  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -61,69 +60,385 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, ptesarik@suse.com, sboyd@kernel.org,
- viresh.kumar@linaro.org, mturquette@baylibre.com, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
+ ptesarik@suse.com, sboyd@kernel.org, viresh.kumar@linaro.org,
+ mturquette@baylibre.com, linux-pm@vger.kernel.org, rjw@rjwysocki.net,
+ eric@anholt.net, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
  mbrugger@suse.de, ssuloev@orpaltech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Raspberry Pi's firmware controls this pll, we should use the firmware
-interface to access it.
+Raspberry Pi's firmware offers an interface though which update it's
+clock's frequencies. This is specially useful in order to change the CPU
+clock (pllb_arm) which is 'owned' by the firmware and we're unable to
+scale using the register interface provided by clk-bcm2835.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Acked-by: Eric Anholt <eric@anholt.net>
 ---
 
+Changes since v3:
+  - Fix sparse warnings, use le32_to_cpu to interface with firmware
+  - Correct extra 0 in RPI_FIRMWARE_ARM_CLK_ID
+
+Changes since v2:
+  - Remove redundant error message
+  - Rebase to linux next
+  - Fix spelling
+  - Fix checkpatch.pl errors
+
 Changes since v1:
-  - Add comment to explain why pllb isn't there anymore
+  - Use BIT()
+  - Add Kconfig entry, with compile test
+  - remove prepare/unprepare
+  - Fix uninitialized init.name in pllb registration
+  - Add MODULE_ALIAS()
+  - Use determine_rate() instead of round_rate()
+  - Add small introduction explaining need for driver
 
- drivers/clk/bcm/clk-bcm2835.c | 28 ++++------------------------
- 1 file changed, 4 insertions(+), 24 deletions(-)
+ drivers/clk/bcm/Kconfig           |   7 +
+ drivers/clk/bcm/Makefile          |   1 +
+ drivers/clk/bcm/clk-raspberrypi.c | 300 ++++++++++++++++++++++++++++++
+ 3 files changed, 308 insertions(+)
+ create mode 100644 drivers/clk/bcm/clk-raspberrypi.c
 
-diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
-index 770bb01f523e..867ae3c20041 100644
---- a/drivers/clk/bcm/clk-bcm2835.c
-+++ b/drivers/clk/bcm/clk-bcm2835.c
-@@ -1651,30 +1651,10 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
- 		.fixed_divider = 1,
- 		.flags = CLK_SET_RATE_PARENT),
- 
--	/* PLLB is used for the ARM's clock. */
--	[BCM2835_PLLB]		= REGISTER_PLL(
--		.name = "pllb",
--		.cm_ctrl_reg = CM_PLLB,
--		.a2w_ctrl_reg = A2W_PLLB_CTRL,
--		.frac_reg = A2W_PLLB_FRAC,
--		.ana_reg_base = A2W_PLLB_ANA0,
--		.reference_enable_mask = A2W_XOSC_CTRL_PLLB_ENABLE,
--		.lock_mask = CM_LOCK_FLOCKB,
--
--		.ana = &bcm2835_ana_default,
--
--		.min_rate = 600000000u,
--		.max_rate = 3000000000u,
--		.max_fb_rate = BCM2835_MAX_FB_RATE),
--	[BCM2835_PLLB_ARM]	= REGISTER_PLL_DIV(
--		.name = "pllb_arm",
--		.source_pll = "pllb",
--		.cm_reg = CM_PLLB,
--		.a2w_reg = A2W_PLLB_ARM,
--		.load_mask = CM_PLLB_LOADARM,
--		.hold_mask = CM_PLLB_HOLDARM,
--		.fixed_divider = 1,
--		.flags = CLK_SET_RATE_PARENT),
-+	/*
-+	 * PLLB is used for the ARM's clock. Controlled by firmware, see
-+	 * clk-raspberrypi.c.
-+	 */
- 
- 	/*
- 	 * PLLC is the core PLL, used to drive the core VPU clock.
+diff --git a/drivers/clk/bcm/Kconfig b/drivers/clk/bcm/Kconfig
+index 766a838ad9af..16e508eba6e5 100644
+--- a/drivers/clk/bcm/Kconfig
++++ b/drivers/clk/bcm/Kconfig
+@@ -74,3 +74,10 @@ config CLK_BCM_SR
+ 	default ARCH_BCM_IPROC
+ 	help
+ 	  Enable common clock framework support for the Broadcom Stingray SoC
++
++config CLK_RASPBERRYPI
++	tristate "Raspberry Pi firmware based clock support"
++	depends on RASPBERRYPI_FIRMWARE || (COMPILE_TEST && !RASPBERRYPI_FIRMWARE)
++	help
++	  Enable common clock framework support for Raspberry Pi's firmware
++	  dependent clocks
+diff --git a/drivers/clk/bcm/Makefile b/drivers/clk/bcm/Makefile
+index e924f25bc6c8..004e9526d6f6 100644
+--- a/drivers/clk/bcm/Makefile
++++ b/drivers/clk/bcm/Makefile
+@@ -7,6 +7,7 @@ obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm21664.o
+ obj-$(CONFIG_COMMON_CLK_IPROC)	+= clk-iproc-armpll.o clk-iproc-pll.o clk-iproc-asiu.o
+ obj-$(CONFIG_CLK_BCM2835)	+= clk-bcm2835.o
+ obj-$(CONFIG_CLK_BCM2835)	+= clk-bcm2835-aux.o
++obj-$(CONFIG_CLK_RASPBERRYPI)	+= clk-raspberrypi.o
+ obj-$(CONFIG_ARCH_BCM_53573)	+= clk-bcm53573-ilp.o
+ obj-$(CONFIG_CLK_BCM_CYGNUS)	+= clk-cygnus.o
+ obj-$(CONFIG_CLK_BCM_HR2)	+= clk-hr2.o
+diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
+new file mode 100644
+index 000000000000..fef1f7caee4f
+--- /dev/null
++++ b/drivers/clk/bcm/clk-raspberrypi.c
+@@ -0,0 +1,300 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Raspberry Pi driver for firmware controlled clocks
++ *
++ * Even though clk-bcm2835 provides an interface to the hardware registers for
++ * the system clocks we've had to factor out 'pllb' as the firmware 'owns' it.
++ * We're not allowed to change it directly as we might race with the
++ * over-temperature and under-voltage protections provided by the firmware.
++ *
++ * Copyright (C) 2019 Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
++ */
++
++#include <linux/clkdev.h>
++#include <linux/clk-provider.h>
++#include <linux/io.h>
++#include <linux/module.h>
++#include <linux/platform_device.h>
++
++#include <soc/bcm2835/raspberrypi-firmware.h>
++
++#define RPI_FIRMWARE_ARM_CLK_ID		0x00000003
++
++#define RPI_FIRMWARE_STATE_ENABLE_BIT	BIT(0)
++#define RPI_FIRMWARE_STATE_WAIT_BIT	BIT(1)
++
++/*
++ * Even though the firmware interface alters 'pllb' the frequencies are
++ * provided as per 'pllb_arm'. We need to scale before passing them trough.
++ */
++#define RPI_FIRMWARE_PLLB_ARM_DIV_RATE	2
++
++#define A2W_PLL_FRAC_BITS		20
++
++struct raspberrypi_clk {
++	struct device *dev;
++	struct rpi_firmware *firmware;
++
++	unsigned long min_rate;
++	unsigned long max_rate;
++
++	struct clk_hw pllb;
++	struct clk_hw *pllb_arm;
++	struct clk_lookup *pllb_arm_lookup;
++};
++
++/*
++ * Structure of the message passed to Raspberry Pi's firmware in order to
++ * change clock rates. The 'disable_turbo' option is only available to the ARM
++ * clock (pllb) which we enable by default as turbo mode will alter multiple
++ * clocks at once.
++ *
++ * Even though we're able to access the clock registers directly we're bound to
++ * use the firmware interface as the firmware ultimately takes care of
++ * mitigating overheating/undervoltage situations and we would be changing
++ * frequencies behind his back.
++ *
++ * For more information on the firmware interface check:
++ * https://github.com/raspberrypi/firmware/wiki/Mailbox-property-interface
++ */
++struct raspberrypi_firmware_prop {
++	__le32 id;
++	__le32 val;
++	__le32 disable_turbo;
++} __packed;
++
++static int raspberrypi_clock_property(struct rpi_firmware *firmware, u32 tag,
++				      u32 clk, u32 *val)
++{
++	struct raspberrypi_firmware_prop msg = {
++		.id = cpu_to_le32(clk),
++		.val = cpu_to_le32(*val),
++		.disable_turbo = cpu_to_le32(1),
++	};
++	int ret;
++
++	ret = rpi_firmware_property(firmware, tag, &msg, sizeof(msg));
++	if (ret)
++		return ret;
++
++	*val = le32_to_cpu(msg.val);
++
++	return 0;
++}
++
++static int raspberrypi_fw_pll_is_on(struct clk_hw *hw)
++{
++	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
++						   pllb);
++	u32 val = 0;
++	int ret;
++
++	ret = raspberrypi_clock_property(rpi->firmware,
++					 RPI_FIRMWARE_GET_CLOCK_STATE,
++					 RPI_FIRMWARE_ARM_CLK_ID, &val);
++	if (ret)
++		return 0;
++
++	return !!(val & RPI_FIRMWARE_STATE_ENABLE_BIT);
++}
++
++
++static unsigned long raspberrypi_fw_pll_get_rate(struct clk_hw *hw,
++						 unsigned long parent_rate)
++{
++	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
++						   pllb);
++	u32 val = 0;
++	int ret;
++
++	ret = raspberrypi_clock_property(rpi->firmware,
++					 RPI_FIRMWARE_GET_CLOCK_RATE,
++					 RPI_FIRMWARE_ARM_CLK_ID,
++					 &val);
++	if (ret)
++		return ret;
++
++	return val * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++}
++
++static int raspberrypi_fw_pll_set_rate(struct clk_hw *hw, unsigned long rate,
++				       unsigned long parent_rate)
++{
++	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
++						   pllb);
++	u32 new_rate = rate / RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++	int ret;
++
++	ret = raspberrypi_clock_property(rpi->firmware,
++					 RPI_FIRMWARE_SET_CLOCK_RATE,
++					 RPI_FIRMWARE_ARM_CLK_ID,
++					 &new_rate);
++	if (ret)
++		dev_err_ratelimited(rpi->dev, "Failed to change %s frequency: %d",
++				    clk_hw_get_name(hw), ret);
++
++	return ret;
++}
++
++/*
++ * Sadly there is no firmware rate rounding interface. We borrowed it from
++ * clk-bcm2835.
++ */
++static int raspberrypi_pll_determine_rate(struct clk_hw *hw,
++					  struct clk_rate_request *req)
++{
++	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
++						   pllb);
++	u64 div, final_rate;
++	u32 ndiv, fdiv;
++
++	/* We can't use req->rate directly as it would overflow */
++	final_rate = clamp(req->rate, rpi->min_rate, rpi->max_rate);
++
++	div = (u64)final_rate << A2W_PLL_FRAC_BITS;
++	do_div(div, req->best_parent_rate);
++
++	ndiv = div >> A2W_PLL_FRAC_BITS;
++	fdiv = div & ((1 << A2W_PLL_FRAC_BITS) - 1);
++
++	final_rate = ((u64)req->best_parent_rate *
++					((ndiv << A2W_PLL_FRAC_BITS) + fdiv));
++
++	req->rate = final_rate >> A2W_PLL_FRAC_BITS;
++
++	return 0;
++}
++
++static const struct clk_ops raspberrypi_firmware_pll_clk_ops = {
++	.is_prepared = raspberrypi_fw_pll_is_on,
++	.recalc_rate = raspberrypi_fw_pll_get_rate,
++	.set_rate = raspberrypi_fw_pll_set_rate,
++	.determine_rate = raspberrypi_pll_determine_rate,
++};
++
++static int raspberrypi_register_pllb(struct raspberrypi_clk *rpi)
++{
++	u32 min_rate = 0, max_rate = 0;
++	struct clk_init_data init;
++	int ret;
++
++	memset(&init, 0, sizeof(init));
++
++	/* All of the PLLs derive from the external oscillator. */
++	init.parent_names = (const char *[]){ "osc" };
++	init.num_parents = 1;
++	init.name = "pllb";
++	init.ops = &raspberrypi_firmware_pll_clk_ops;
++	init.flags = CLK_GET_RATE_NOCACHE | CLK_IGNORE_UNUSED;
++
++	/* Get min & max rates set by the firmware */
++	ret = raspberrypi_clock_property(rpi->firmware,
++					 RPI_FIRMWARE_GET_MIN_CLOCK_RATE,
++					 RPI_FIRMWARE_ARM_CLK_ID,
++					 &min_rate);
++	if (ret) {
++		dev_err(rpi->dev, "Failed to get %s min freq: %d\n",
++			init.name, ret);
++		return ret;
++	}
++
++	ret = raspberrypi_clock_property(rpi->firmware,
++					 RPI_FIRMWARE_GET_MAX_CLOCK_RATE,
++					 RPI_FIRMWARE_ARM_CLK_ID,
++					 &max_rate);
++	if (ret) {
++		dev_err(rpi->dev, "Failed to get %s max freq: %d\n",
++			init.name, ret);
++		return ret;
++	}
++
++	if (!min_rate || !max_rate) {
++		dev_err(rpi->dev, "Unexpected frequency range: min %u, max %u\n",
++			min_rate, max_rate);
++		return -EINVAL;
++	}
++
++	dev_info(rpi->dev, "CPU frequency range: min %u, max %u\n",
++		 min_rate, max_rate);
++
++	rpi->min_rate = min_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++	rpi->max_rate = max_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
++
++	rpi->pllb.init = &init;
++
++	return devm_clk_hw_register(rpi->dev, &rpi->pllb);
++}
++
++static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
++{
++	rpi->pllb_arm = clk_hw_register_fixed_factor(rpi->dev,
++				"pllb_arm", "pllb",
++				CLK_SET_RATE_PARENT | CLK_GET_RATE_NOCACHE,
++				1, 2);
++	if (IS_ERR(rpi->pllb_arm)) {
++		dev_err(rpi->dev, "Failed to initialize pllb_arm\n");
++		return PTR_ERR(rpi->pllb_arm);
++	}
++
++	rpi->pllb_arm_lookup = clkdev_hw_create(rpi->pllb_arm, NULL, "cpu0");
++	if (!rpi->pllb_arm_lookup) {
++		dev_err(rpi->dev, "Failed to initialize pllb_arm_lookup\n");
++		clk_hw_unregister_fixed_factor(rpi->pllb_arm);
++		return -ENOMEM;
++	}
++
++	return 0;
++}
++
++static int raspberrypi_clk_probe(struct platform_device *pdev)
++{
++	struct device_node *firmware_node;
++	struct device *dev = &pdev->dev;
++	struct rpi_firmware *firmware;
++	struct raspberrypi_clk *rpi;
++	int ret;
++
++	firmware_node = of_find_compatible_node(NULL, NULL,
++					"raspberrypi,bcm2835-firmware");
++	if (!firmware_node) {
++		dev_err(dev, "Missing firmware node\n");
++		return -ENOENT;
++	}
++
++	firmware = rpi_firmware_get(firmware_node);
++	of_node_put(firmware_node);
++	if (!firmware)
++		return -EPROBE_DEFER;
++
++	rpi = devm_kzalloc(dev, sizeof(*rpi), GFP_KERNEL);
++	if (!rpi)
++		return -ENOMEM;
++
++	rpi->dev = dev;
++	rpi->firmware = firmware;
++
++	ret = raspberrypi_register_pllb(rpi);
++	if (ret) {
++		dev_err(dev, "Failed to initialize pllb, %d\n", ret);
++		return ret;
++	}
++
++	ret = raspberrypi_register_pllb_arm(rpi);
++	if (ret)
++		return ret;
++
++	return 0;
++}
++
++static struct platform_driver raspberrypi_clk_driver = {
++	.driver = {
++		.name = "raspberrypi-clk",
++	},
++	.probe          = raspberrypi_clk_probe,
++};
++module_platform_driver(raspberrypi_clk_driver);
++
++MODULE_AUTHOR("Nicolas Saenz Julienne <nsaenzjulienne@suse.de>");
++MODULE_DESCRIPTION("Raspberry Pi firmware clock driver");
++MODULE_LICENSE("GPL");
++MODULE_ALIAS("platform:raspberrypi-clk");
 -- 
 2.21.0
 
