@@ -2,112 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F09541AB5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 05:24:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF32F41ABC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 05:34:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gVaQoJmjBT1+jJxkOGbEzaO3t+N54TksiFL/MqC78Nc=; b=hyPRy4rm6+0w4q
-	2vyYBwAaqtd8oQyzqzAOrtRZwN8sU6cuewVSMIrgZC5+X2yJJrKKi38Y80sAq+KmUTO9bdddQkggO
-	XYRa3cmVkylGHhCJoXuwmSH6JP06WCUgzdESfKTeHUHNpIr83xBv/xsarNrp2NXhbPVBsFTPeq7ui
-	ND0PeYG58Mg/JIblesRrWOYne9rdmqr1MpXYiPUgq1Wjd7M3VAcktTpRnkOcTs8HiZF4S7TBJQLAV
-	76Xba01E1eWaO2KoMWExBP4GQzGDPZrIwfRsogLn9Ut7tITkZH8VTfWcgVskLh62U8Czs3YWf61tF
-	ElP3J2+tYzZ+tM9p/t4A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Bi+V2Ev1Zv4kYBZLnM88EH7bFWErVAMr20/y7SzN+Us=; b=Iyi
+	OrQFgaoiJcc1sE09Znhn5UM5YwHwgyl7b5JnMZxRe4f05sZeL7EcyE5t17Am4s3scvAj63dAQBMIC
+	XHiSN8JmB1fv9xbFHO6eNwP6K86b3OhW7QQ35fmMThQV7jC1UPyAM1cuMYB16qEstvDFteyWuVTsq
+	cw3WGk9uniqEemsAY4PgJG2+UtgUduDrfInua2BwhvroTyz+lNNiY+W9dwPUN/4QAnb5U56qIOEqt
+	88wKDPp/Q3om9+IJdBq/3q6B8fj8YnLY2Ty/uuyLrL0AYoh7fmnvYLvAMYpHOGshxWPaXu9hz+l3d
+	UO3cK+fb9BPiRr+amLL4rFYBG0hSW+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hatsW-0001lW-7i; Wed, 12 Jun 2019 03:24:48 +0000
-Received: from mail-eopbgr80071.outbound.protection.outlook.com ([40.107.8.71]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1hau2B-0006nl-4z; Wed, 12 Jun 2019 03:34:47 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hatsJ-0001kj-53
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 03:24:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Caa3M+/uF1dl0Usl7UriQHP+kB7I/sio9ovB+ZBdpr0=;
- b=re7vPdymKw3hMCyv5esum7eYs+jtpNtRgkx+Xj8nv3C0wzHhPV1djEeYwLrwv2cdCWyN5YPvWjFkc72vKtVSaaLLReXDo4lwrH7xQOGrapAm/ng4diCNJr6Rx4gpeKm0xVYnnD6+XOXKdLw1P1CMP3dXldeAuzkhLw1HX/k0ur0=
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com (52.134.92.158) by
- AM0PR04MB4146.eurprd04.prod.outlook.com (52.134.93.22) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.12; Wed, 12 Jun 2019 03:24:31 +0000
-Received: from AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::11e1:3bb9:156b:a3e4]) by AM0PR04MB4211.eurprd04.prod.outlook.com
- ([fe80::11e1:3bb9:156b:a3e4%3]) with mapi id 15.20.1965.017; Wed, 12 Jun 2019
- 03:24:31 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: "edubezval@gmail.com" <edubezval@gmail.com>, "rui.zhang@intel.com"
- <rui.zhang@intel.com>, "daniel.lezcano@linaro.org"
- <daniel.lezcano@linaro.org>
-Subject: RE: [PATCH V14 2/5] thermal: of-thermal: add API for getting sensor
- ID from DT
-Thread-Topic: [PATCH V14 2/5] thermal: of-thermal: add API for getting sensor
- ID from DT
-Thread-Index: AQHVHzduVJLnDucTi0KXitmpZJYpcaaWS8pggAAaiACAAPYSUA==
-Date: Wed, 12 Jun 2019 03:24:30 +0000
-Message-ID: <AM0PR04MB421147B34C711FA1AB9F399080EC0@AM0PR04MB4211.eurprd04.prod.outlook.com>
-References: <20190610025254.23940-1-Anson.Huang@nxp.com>
- <20190610025254.23940-2-Anson.Huang@nxp.com>
- <AM0PR04MB42118F3F8E87A72758D4A7B780ED0@AM0PR04MB4211.eurprd04.prod.outlook.com>
- <DB3PR0402MB39169A1897B33DC6C3522E08F5ED0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-In-Reply-To: <DB3PR0402MB39169A1897B33DC6C3522E08F5ED0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=aisheng.dong@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c0fa226b-f3c5-49c3-8944-08d6eee57bd1
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB4146; 
-x-ms-traffictypediagnostic: AM0PR04MB4146:
-x-microsoft-antispam-prvs: <AM0PR04MB4146C6BFBDDC28A01AB9B3EF80EC0@AM0PR04MB4146.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0066D63CE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(136003)(39860400002)(376002)(366004)(346002)(199004)(189003)(6246003)(446003)(102836004)(76116006)(9686003)(486006)(44832011)(66476007)(476003)(66066001)(14454004)(11346002)(316002)(54906003)(99286004)(81156014)(305945005)(66556008)(26005)(64756008)(229853002)(53936002)(8676002)(14444005)(66946007)(52536014)(74316002)(256004)(68736007)(25786009)(2906002)(2501003)(66446008)(110136005)(81166006)(76176011)(186003)(86362001)(7696005)(8936002)(5660300002)(7736002)(71190400001)(71200400001)(3846002)(6506007)(73956011)(55016002)(33656002)(4326008)(7416002)(6116002)(478600001)(2201001)(6436002)(53546011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4146;
- H:AM0PR04MB4211.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 3ElaX+dd5gW8k1x3/x1Ia6WDhTZpdHSpu7iQ5VghmOr7rumDQ5KHcC/Qoql7eftKHpDE7nyQaYWcgPFLDSxGu8OmmWrKim5RHVNBqqC5D7wOBczEPXAdTAI6XN550HDljWG2aQWJkCIoQzTYavPc2BlHOqGXWGyl8VjvCx0iNLtlZRzP8y1PecHURLj0ZcvewwNSpowFSanUK4mS5F7rYbg9kHZvsbrSKuz1WgVCFQvBv4iuJnavZcHid7nod0mV25PQOygYsNKfQbhue11T75QhJVSXqpKkbwC3eN8L8MCC5TpFCUEQ1+qX5W0zHOo/YxGQ/ZfiVyBAJO31WOY3sJ1ZtjHtJ6dHtxnKLp3G7i8usIA8trKsgE3kEw0bIcBDdcAv/b30/eq0WnOHzC7QYmWhgiK0QmBDPYo7BKpNfzY=
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0fa226b-f3c5-49c3-8944-08d6eee57bd1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Jun 2019 03:24:30.9596 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: aisheng.dong@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4146
+ id 1hau21-0006n3-S7
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 03:34:39 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A77731A0C2D;
+ Wed, 12 Jun 2019 05:34:35 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 26B1E1A0C1D;
+ Wed, 12 Jun 2019 05:34:31 +0200 (CEST)
+Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4B33F402CA;
+ Wed, 12 Jun 2019 11:34:25 +0800 (SGT)
+From: Anson.Huang@nxp.com
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, leonard.crestez@nxp.com, viresh.kumar@linaro.org,
+ abel.vesa@nxp.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] soc: imx8: Fix potential kernel dump in error path
+Date: Wed, 12 Jun 2019 11:36:19 +0800
+Message-Id: <20190612033620.3556-1-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_202435_356045_CB63A08C 
-X-CRM114-Status: GOOD (  30.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190611_203438_052336_A296CD0D 
+X-CRM114-Status: GOOD (  10.02  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.71 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.8.71 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,280 +66,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "maxime.ripard@bootlin.com" <maxime.ripard@bootlin.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>, Peng Fan <peng.fan@nxp.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "mchehab+samsung@kernel.org" <mchehab+samsung@kernel.org>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>, Anson Huang <anson.huang@nxp.com>,
- "corbet@lwn.net" <corbet@lwn.net>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- dl-linux-imx <linux-imx@nxp.com>, "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "edubezval@gmail.com" <edubezval@gmail.com>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>, "shawnguo@kernel.org" <shawnguo@kernel.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Eduardo & Rui,
+From: Anson Huang <Anson.Huang@nxp.com>
 
-> From: Anson Huang
-> Sent: Tuesday, June 11, 2019 8:37 PM
->
-> > From: Aisheng Dong
-> > Sent: Tuesday, June 11, 2019 7:47 PM
-> > Subject: RE: [PATCH V14 2/5] thermal: of-thermal: add API for getting
-> > sensor ID from DT
-> >
-> > Hi Anson,
-> >
-> > The implementation looks good to me.
-> > A few minor comments on the doc:
-> 
-> This patch is pending for so long and even till now I am NOT sure if everyone is
-> OK for this change, so I will wait for some comments if there is any, and will
-> improve the doc together in next version.
-> 
+When SoC's revision value is 0, SoC driver will print out
+"unknown" in sysfs's revision node, this "unknown" is a
+static string which can NOT be freed, this will caused below
+kernel dump in later error path which calls kfree:
 
-The API change seems good to me. 
-But since this is a core changes, we need your inputs to confirm whether this approach
-is ok to you.
+kernel BUG at mm/slub.c:3942!
+Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+Modules linked in:
+CPU: 2 PID: 1 Comm: swapper/0 Not tainted 5.2.0-rc4-next-20190611-00023-g705146c-dirty #2197
+Hardware name: NXP i.MX8MQ EVK (DT)
+pstate: 60000005 (nZCv daif -PAN -UAO)
+pc : kfree+0x170/0x1b0
+lr : imx8_soc_init+0xc0/0xe4
+sp : ffff00001003bd10
+x29: ffff00001003bd10 x28: ffff00001121e0a0
+x27: ffff000011482000 x26: ffff00001117068c
+x25: ffff00001121e100 x24: ffff000011482000
+x23: ffff000010fe2b58 x22: ffff0000111b9ab0
+x21: ffff8000bd9dfba0 x20: ffff0000111b9b70
+x19: ffff7e000043f880 x18: 0000000000001000
+x17: ffff000010d05fa0 x16: ffff0000122e0000
+x15: 0140000000000000 x14: 0000000030360000
+x13: ffff8000b94b5bb0 x12: 0000000000000038
+x11: ffffffffffffffff x10: ffffffffffffffff
+x9 : 0000000000000003 x8 : ffff8000b9488147
+x7 : ffff00001003bc00 x6 : 0000000000000000
+x5 : 0000000000000003 x4 : 0000000000000003
+x3 : 0000000000000003 x2 : b8793acd604edf00
+x1 : ffff7e000043f880 x0 : ffff7e000043f888
+Call trace:
+ kfree+0x170/0x1b0
+ imx8_soc_init+0xc0/0xe4
+ do_one_initcall+0x58/0x1b8
+ kernel_init_freeable+0x1cc/0x288
+ kernel_init+0x10/0x100
+ ret_from_fork+0x10/0x18
 
-So please tell us whether you're fine with this approach.
+This patch fixes this potential kernel dump when a chip's
+revision is "unknown", it is done by always printing out
+the revision value.
 
-Regards
-Dong Aisheng
+Fixes: a7e26f356ca1 ("soc: imx: Add generic i.MX8 SoC driver")
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/soc/imx/soc-imx8.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
 
-> Thanks,
-> Anson
-> 
-> >
-> > > From: Anson.Huang@nxp.com [mailto:Anson.Huang@nxp.com]
-> > > Sent: Monday, June 10, 2019 10:53 AM
-> > >
-> > > On some platforms like i.MX8QXP, the thermal driver needs a real HW
-> > > sensor ID from DT thermal zone, the HW sensor ID is used to get
-> > > temperature from SCU firmware, and the virtual sensor ID starting
-> > > from
-> > > 0 to N is NOT used at all,
-> >
-> > This API is unware of HW ID or Virtual ID. So we probably no need to
-> > mention It here.
-> >
-> > > this patch adds new API thermal_zone_of_get_sensor_id() to provide
-> > > the feature of getting sensor ID from DT thermal zone's node.
-> > >
-> >
-> > "It's useful for thermal driver to register the specific thermal zone
-> > devices from DT in a common way."
-> >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > ---
-> > > Changes since V13:
-> > > 	- add new API into the thermal API doc.
-> > > ---
-> > >  Documentation/thermal/sysfs-api.txt |  8 +++++
-> > >  drivers/thermal/of-thermal.c        | 66
-> > > ++++++++++++++++++++++++++++---------
-> > >  include/linux/thermal.h             | 10 ++++++
-> > >  3 files changed, 68 insertions(+), 16 deletions(-)
-> > >
-> > > diff --git a/Documentation/thermal/sysfs-api.txt
-> > > b/Documentation/thermal/sysfs-api.txt
-> > > index c3fa500..8d7f1b1 100644
-> > > --- a/Documentation/thermal/sysfs-api.txt
-> > > +++ b/Documentation/thermal/sysfs-api.txt
-> > > @@ -159,6 +159,14 @@ temperature) and throttle appropriate devices.
-> > >  	for the thermal zone device, which might be useful for platform
-> > >  	drivers for temperature calculations.
-> > >
-> > > +1.1.9 int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > > +		struct device_node *sensor_np,
-> > > +		u32 *id)
-> > > +
-> > > +	This interface is used to get the sensor id from thermal sensor's
-> > > +	phandle argument, it might be necessary for some platforms which
-> > > +	have specific sensor ID rather than virtual ID from 0 - N.
-> >
-> > Does below one look better?
-> >
-> > "This interface is used to get the sensor id from the given thermal
-> > zone in DT, which might be useful for thermal drivers to register
-> > specific thermal zone device in a common way."
-> >
-> > > +
-> > >  1.2 thermal cooling device interface
-> > >  1.2.1 struct thermal_cooling_device
-> > > *thermal_cooling_device_register(char
-> > > *name,
-> > >  		void *devdata, struct thermal_cooling_device_ops *) diff --git
-> > > a/drivers/thermal/of-thermal.c b/drivers/thermal/of-thermal.c index
-> > > dc5093b..a53792b 100644
-> > > --- a/drivers/thermal/of-thermal.c
-> > > +++ b/drivers/thermal/of-thermal.c
-> > > @@ -449,6 +449,54 @@ thermal_zone_of_add_sensor(struct device_node
-> > > *zone,  }
-> > >
-> > >  /**
-> > > + * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal
-> > > + zone
-> > > + * @tz_np: a valid thermal zone device node.
-> > > + * @sensor_np: a sensor node of a valid sensor device.
-> > > + * @id: a sensor ID pointer will be passed back.
-> >
-> > the sensor ID returned if success
-> >
-> > > + *
-> > > + * This function will get sensor ID from a given thermal zone node,
-> > > + use
-> > > + * "thermal-sensors" as list name, and get sensor ID from first
-> > > + phandle's
-> > > + * argument.
-> >
-> > "This function will get sensor ID from a given thermal zone node and
-> > the sensor get must match the temperature providers @sensor_np."
-> >
-> > Regards
-> > Dong Aisheng
-> >
-> > > + *
-> > > + * Return: 0 on success, proper error code otherwise.
-> > > + */
-> > > +
-> > > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > > +				  struct device_node *sensor_np,
-> > > +				  u32 *id)
-> > > +{
-> > > +	struct of_phandle_args sensor_specs;
-> > > +	int ret;
-> > > +
-> > > +	ret = of_parse_phandle_with_args(tz_np,
-> > > +					 "thermal-sensors",
-> > > +					 "#thermal-sensor-cells",
-> > > +					 0,
-> > > +					 &sensor_specs);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	if (sensor_specs.np != sensor_np) {
-> > > +		of_node_put(sensor_specs.np);
-> > > +		return -ENODEV;
-> > > +	}
-> > > +
-> > > +	if (sensor_specs.args_count >= 1) {
-> > > +		*id = sensor_specs.args[0];
-> > > +		WARN(sensor_specs.args_count > 1,
-> > > +		     "%pOFn: too many cells in sensor specifier %d\n",
-> > > +		     sensor_specs.np, sensor_specs.args_count);
-> > > +	} else {
-> > > +		*id = 0;
-> > > +	}
-> > > +
-> > > +	of_node_put(sensor_specs.np);
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
-> > > +
-> > > +/**
-> > >   * thermal_zone_of_sensor_register - registers a sensor to a DT
-> > > thermal
-> > zone
-> > >   * @dev: a valid struct device pointer of a sensor device. Must contain
-> > >   *       a valid .of_node, for the sensor node.
-> > > @@ -499,36 +547,22 @@ thermal_zone_of_sensor_register(struct device
-> > > *dev, int sensor_id, void *data,
-> > >  	sensor_np = of_node_get(dev->of_node);
-> > >
-> > >  	for_each_available_child_of_node(np, child) {
-> > > -		struct of_phandle_args sensor_specs;
-> > >  		int ret, id;
-> > >
-> > >  		/* For now, thermal framework supports only 1 sensor per
-> > zone */
-> > > -		ret = of_parse_phandle_with_args(child, "thermal-sensors",
-> > > -						 "#thermal-sensor-cells",
-> > > -						 0, &sensor_specs);
-> > > +		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
-> > >  		if (ret)
-> > >  			continue;
-> > >
-> > > -		if (sensor_specs.args_count >= 1) {
-> > > -			id = sensor_specs.args[0];
-> > > -			WARN(sensor_specs.args_count > 1,
-> > > -			     "%pOFn: too many cells in sensor specifier %d\n",
-> > > -			     sensor_specs.np, sensor_specs.args_count);
-> > > -		} else {
-> > > -			id = 0;
-> > > -		}
-> > > -
-> > > -		if (sensor_specs.np == sensor_np && id == sensor_id) {
-> > > +		if (id == sensor_id) {
-> > >  			tzd = thermal_zone_of_add_sensor(child, sensor_np,
-> > >  							 data, ops);
-> > >  			if (!IS_ERR(tzd))
-> > >  				tzd->ops->set_mode(tzd,
-> > THERMAL_DEVICE_ENABLED);
-> > >
-> > > -			of_node_put(sensor_specs.np);
-> > >  			of_node_put(child);
-> > >  			goto exit;
-> > >  		}
-> > > -		of_node_put(sensor_specs.np);
-> > >  	}
-> > >  exit:
-> > >  	of_node_put(sensor_np);
-> > > diff --git a/include/linux/thermal.h b/include/linux/thermal.h index
-> > > 15a4ca5..5edffe6 100644
-> > > --- a/include/linux/thermal.h
-> > > +++ b/include/linux/thermal.h
-> > > @@ -375,6 +375,9 @@ struct thermal_trip {
-> > >
-> > >  /* Function declarations */
-> > >  #ifdef CONFIG_THERMAL_OF
-> > > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > > +				  struct device_node *sensor_np,
-> > > +				  u32 *id);
-> > >  struct thermal_zone_device *
-> > >  thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
-> > >  				const struct thermal_zone_of_device_ops
-> > *ops); @@
-> > > -386,6 +389,13 @@ struct thermal_zone_device
-> > > *devm_thermal_zone_of_sensor_register(
-> > >  void devm_thermal_zone_of_sensor_unregister(struct device *dev,
-> > >  					    struct thermal_zone_device *tz);
-> > #else
-> > > +
-> > > +static int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > > +					 struct device_node *sensor_np,
-> > > +					 u32 *id)
-> > > +{
-> > > +	return -ENOENT;
-> > > +}
-> > >  static inline struct thermal_zone_device *
-> > > thermal_zone_of_sensor_register(struct device *dev, int id, void *data,
-> > >  				const struct thermal_zone_of_device_ops
-> > *ops)
-> > > --
-> > > 2.7.4
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+index 02309a2..86b925a 100644
+--- a/drivers/soc/imx/soc-imx8.c
++++ b/drivers/soc/imx/soc-imx8.c
+@@ -96,11 +96,6 @@ static const struct of_device_id imx8_soc_match[] = {
+ 	{ }
+ };
+ 
+-#define imx8_revision(soc_rev) \
+-	soc_rev ? \
+-	kasprintf(GFP_KERNEL, "%d.%d", (soc_rev >> 4) & 0xf,  soc_rev & 0xf) : \
+-	"unknown"
+-
+ static int __init imx8_soc_init(void)
+ {
+ 	struct soc_device_attribute *soc_dev_attr;
+@@ -135,7 +130,10 @@ static int __init imx8_soc_init(void)
+ 			soc_rev = data->soc_revision();
+ 	}
+ 
+-	soc_dev_attr->revision = imx8_revision(soc_rev);
++	soc_dev_attr->revision = kasprintf(GFP_KERNEL,
++					   "%d.%d",
++					   (soc_rev >> 4) & 0xf,
++					   soc_rev & 0xf);
+ 	if (!soc_dev_attr->revision) {
+ 		ret = -ENOMEM;
+ 		goto free_soc;
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
