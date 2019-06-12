@@ -2,118 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD46F42C4F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:30:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 526C142C55
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:31:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cw4f+SisaO+QjqxbIEHtcIVzJGvtZdFP/aktouOWh9I=; b=ZttLRt+UHBCRJ0
-	i+QIj8LkmCMSplDx/Z4ZiUjgi+Ayl4joOB9C7AhziAfcUoFEJck+vSVOCAaTxzCPVJRHOnQ/h/x5m
-	fP9zjzl+R0GWBOwS6QplPPWRgZGjLFQtR0mT2j7wGRhpBfu0wQHJX481yd9NZHfgi/Bn2jhVXqRrG
-	/qPsMpdPnFzTbWhV4sCGn5Pp1xmQog9CmzATfyR5q5xyWO9Vu3UaIM+AspuHvUNyz68+GARQd63B1
-	O2xbCkZPyeFuZ5IA9IW+NP5f6SebTOzCz+lqyIucg3ybSbBzmthUUiuVnZjjOW/r0lzGEhLwrjuDM
-	avGvhbwTZnIl2xLKSDHA==;
+	List-Owner; bh=A8680AeAfKC08eHynTxnu6MpCgohCOCv1fEmEAoBbSg=; b=JkZ9KPiVWJKkx9
+	O+hLqh+RGy4gjEd2AX2VTtpqPcP99jnscdGEmo/FVQOhqsb5cQkc75CMWIKdiHUjk3oGobQhaBh34
+	yrZjRk4E+3clliu3Qu0j9V0ocPNCzgDGZGymUXfIdUIW0x7w40lXbXnA78XVqmO0bYArnl3IVGEeL
+	OVbFydAOgPIOc4OlRMUBefMhLoZgVgk+U2mDTfAq5GPB79G1f0imkkjOpEjf1NoeRInYaJUt0Ldyx
+	xcig7jRvsWV4cfoc8/iPsoBDBhfYbQYKqC1ZBuIRJJlFE62E+ezhl9VEu9d+pKd+7Ii2zzcTU2zlC
+	/TpYlc4gnMajxVyFNEyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb69H-0004h9-P4; Wed, 12 Jun 2019 16:30:55 +0000
-Received: from mail-eopbgr50060.outbound.protection.outlook.com ([40.107.5.60]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb691-0004fQ-Ia
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:30:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ncffr8ucm/9RwM9/2pyUDUeJp+BVq2pphMnhUfpcM6Y=;
- b=pRLRf+XNxm3uE8xmMwk8Dg4e1gzmD6Gr8/88mloKrvMiadmeIySIsS3MZZuygzx9bKgCEAfpXsMyLl0aNSuGB2uDx8/RucAsdHNCq0h6NI/TU0gMpUiYXxRKfi000i52lpHb+JeEmTwocQISME98RmqD0cBvmXeJjg3nP7AY/Vc=
-Received: from VE1PR08MB4637.eurprd08.prod.outlook.com (10.255.27.14) by
- VE1PR08MB4799.eurprd08.prod.outlook.com (10.255.112.203) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.15; Wed, 12 Jun 2019 16:30:35 +0000
-Received: from VE1PR08MB4637.eurprd08.prod.outlook.com
- ([fe80::6574:1efb:6972:2b37]) by VE1PR08MB4637.eurprd08.prod.outlook.com
- ([fe80::6574:1efb:6972:2b37%6]) with mapi id 15.20.1965.017; Wed, 12 Jun 2019
- 16:30:35 +0000
-From: Szabolcs Nagy <Szabolcs.Nagy@arm.com>
-To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-doc@vger.kernel.org"
- <linux-doc@vger.kernel.org>, "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v4 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.txt
-Thread-Topic: [PATCH v4 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.txt
-Thread-Index: AQHVIS/jNTMPiNHftkW5Mto9lMl3oKaYNfCA
-Date: Wed, 12 Jun 2019 16:30:34 +0000
-Message-ID: <a90da586-8ff6-4bed-d940-9306d517a18c@arm.com>
-References: <cover.1560339705.git.andreyknvl@google.com>
- <20190612142111.28161-1-vincenzo.frascino@arm.com>
- <20190612142111.28161-2-vincenzo.frascino@arm.com>
-In-Reply-To: <20190612142111.28161-2-vincenzo.frascino@arm.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-x-originating-ip: [217.140.106.51]
-x-clientproxiedby: LO2P265CA0447.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:e::27) To VE1PR08MB4637.eurprd08.prod.outlook.com
- (2603:10a6:802:b1::14)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Szabolcs.Nagy@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: dbf6d76f-efbe-4260-e688-08d6ef534b80
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VE1PR08MB4799; 
-x-ms-traffictypediagnostic: VE1PR08MB4799:
-nodisclaimer: True
-x-microsoft-antispam-prvs: <VE1PR08MB47998090B67B43085F32CBD3EDEC0@VE1PR08MB4799.eurprd08.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0066D63CE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(39860400002)(396003)(366004)(346002)(376002)(199004)(189003)(386003)(64126003)(66066001)(229853002)(25786009)(65806001)(6512007)(66476007)(66446008)(81166006)(26005)(66946007)(58126008)(73956011)(64756008)(8936002)(256004)(3846002)(66556008)(6116002)(102836004)(31686004)(81156014)(4326008)(6246003)(99286004)(6486002)(2906002)(53936002)(71200400001)(71190400001)(36756003)(76176011)(6506007)(53546011)(52116002)(6436002)(14454004)(305945005)(486006)(8676002)(476003)(14444005)(478600001)(44832011)(68736007)(31696002)(316002)(110136005)(186003)(446003)(7736002)(54906003)(86362001)(2616005)(11346002)(72206003)(2201001)(65826007)(2501003)(5660300002)(65956001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR08MB4799;
- H:VE1PR08MB4637.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: qGopdaSsNzczqizDbqa+McsMu1mGevfKHFAMAie4WTruLkO+bO4oncXDpHeQ+sM+9Of9VZVu65MKii52lL4zgWYktkrPTIFAovR5S0PVSXVbAvSzpS3bZXZdbWR+4A1pRYno4fKM4aj1RsHUme6Tsyyf/W7SZQfioQthg9c5ZtgN1XoDHIx/p8EOAK8KaCWUAXTj2y4JbVpzKX7bn/iSMVrVoXMjL683NORtOGtmMNbOUizWQjbb+H8cUsgx8AC64CDMs1gqcyI8+v8x4AEjfA5YRqJxTcgrASdtRhlMTKKeBFa9Jyv7t4M9H1yBOwGBL7nAZb0b0H63SSGD+8wxJdbbc6nf8USdl/DnB/GkPKHAMN2HipUlPnZgs3rZxFGI3b60/f+NpF20Xp+f0hsFn5G9NjtWb4qWbPFUMzPb3Yk=
-Content-ID: <17BB69DB38AF7C4FA55AEAE05410EF68@eurprd08.prod.outlook.com>
+	id 1hb69z-0005A3-PG; Wed, 12 Jun 2019 16:31:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb69k-00058X-Jz
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:31:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62D892B;
+ Wed, 12 Jun 2019 09:31:23 -0700 (PDT)
+Received: from redmoon (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 603CE3F73C;
+ Wed, 12 Jun 2019 09:31:22 -0700 (PDT)
+Date: Wed, 12 Jun 2019 17:31:20 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Marc Zyngier <marc.zyngier@arm.com>
+Subject: Re: [PATCH v4] PCI: xilinx-nwl: Fix Multi MSI data programming
+Message-ID: <20190612163120.GG15747@redmoon>
+References: <1560334679-9206-1-git-send-email-bharat.kumar.gogada@xilinx.com>
+ <86r27zarej.wl-marc.zyngier@arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dbf6d76f-efbe-4260-e688-08d6ef534b80
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Jun 2019 16:30:35.0095 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Szabolcs.Nagy@arm.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB4799
+Content-Disposition: inline
+In-Reply-To: <86r27zarej.wl-marc.zyngier@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_093039_627092_1E562C71 
-X-CRM114-Status: GOOD (  34.33  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190612_093124_747010_2113D9DC 
+X-CRM114-Status: GOOD (  23.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.60 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,197 +61,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <Catalin.Marinas@arm.com>, nd <nd@arm.com>,
- Will Deacon <Will.Deacon@arm.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Andrey Konovalov <andreyknvl@google.com>
+Cc: Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, rgummal@xilinx.com,
+ bhelgaas@google.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/06/2019 15:21, Vincenzo Frascino wrote:
-> On arm64 the TCR_EL1.TBI0 bit has been always enabled hence
-> the userspace (EL0) is allowed to set a non-zero value in the
-> top byte but the resulting pointers are not allowed at the
-> user-kernel syscall ABI boundary.
+On Wed, Jun 12, 2019 at 02:01:56PM +0100, Marc Zyngier wrote:
+> On Wed, 12 Jun 2019 11:17:59 +0100,
+> Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com> wrote:
+> > 
+> > The current Multi MSI data programming fails if multiple end points
+> > requesting MSI and multi MSI are connected with switch, i.e the current
+> > multi MSI data being given is not considering the number of vectors
+> > being requested in case of multi MSI.
+> > Ex: Two EP's connected via switch, EP1 requesting single MSI first,
+> > EP2 requesting Multi MSI of count four. The current code gives
+> > MSI data 0x0 to EP1 and 0x1 to EP2, but EP2 can modify lower two bits
+> > due to which EP2 also sends interrupt with MSI data 0x0 which results
+> > in always invoking virq of EP1 due to which EP2 MSI interrupt never
+> > gets handled.
 > 
-> With the relaxed ABI proposed through this document, it is now possible
-> to pass tagged pointers to the syscalls, when these pointers are in
-> memory ranges obtained by an anonymous (MAP_ANONYMOUS) mmap().
+> I think there is a much simpler explanation for this: Multi-MSI
+> mandates that the base interrupt number is naturally aligned to its
+> size. Having switches in the middle is just a way to expose the issue,
+> but you could see it failing with a single end-point and two MSIs that
+> are assigned on an odd boundary.
+
+Agreed, I will rewrite the commit log with a link to the specs,
+a switch has no role to play in this bug.
+
+Lorenzo
+
+> > Fix Multi MSI data programming with required alignment by
+> > using number of vectors being requested.
+> > 
+> > Fixes: ab597d35ef11 ("PCI: xilinx-nwl: Add support for Xilinx NWL PCIe
+> > Host Controller")
+> > 
+> > Signed-off-by: Bharat Kumar Gogada <bharat.kumar.gogada@xilinx.com>
+> > ---
+> > V4:
+> >  - Using a different bitmap registration API whcih serves single and multi
+> >    MSI requests.
+> > ---
+> >  drivers/pci/controller/pcie-xilinx-nwl.c | 11 +++++------
+> >  1 file changed, 5 insertions(+), 6 deletions(-)
+> > 
+> > diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c b/drivers/pci/controller/pcie-xilinx-nwl.c
+> > index 81538d7..a9e07b8 100644
+> > --- a/drivers/pci/controller/pcie-xilinx-nwl.c
+> > +++ b/drivers/pci/controller/pcie-xilinx-nwl.c
+> > @@ -483,15 +483,13 @@ static int nwl_irq_domain_alloc(struct irq_domain *domain, unsigned int virq,
+> >  	int i;
+> >  
+> >  	mutex_lock(&msi->lock);
+> > -	bit = bitmap_find_next_zero_area(msi->bitmap, INT_PCI_MSI_NR, 0,
+> > -					 nr_irqs, 0);
+> > -	if (bit >= INT_PCI_MSI_NR) {
+> > +	bit = bitmap_find_free_region(msi->bitmap, INT_PCI_MSI_NR,
+> > +				      get_count_order(nr_irqs));
+> > +	if (bit < 0) {
+> >  		mutex_unlock(&msi->lock);
+> >  		return -ENOSPC;
+> >  	}
+> >  
+> > -	bitmap_set(msi->bitmap, bit, nr_irqs);
+> > -
+> >  	for (i = 0; i < nr_irqs; i++) {
+> >  		irq_domain_set_info(domain, virq + i, bit + i, &nwl_irq_chip,
+> >  				domain->host_data, handle_simple_irq,
+> > @@ -509,7 +507,8 @@ static void nwl_irq_domain_free(struct irq_domain *domain, unsigned int virq,
+> >  	struct nwl_msi *msi = &pcie->msi;
+> >  
+> >  	mutex_lock(&msi->lock);
+> > -	bitmap_clear(msi->bitmap, data->hwirq, nr_irqs);
+> > +	bitmap_release_region(msi->bitmap, data->hwirq,
+> > +			      get_count_order(nr_irqs));
+> >  	mutex_unlock(&msi->lock);
+> >  }
+> >  
+> > -- 
+> > 2.7.4
+> > 
 > 
-> This change in the ABI requires a mechanism to requires the userspace
-> to opt-in to such an option.
+> As for the body of the patch:
 > 
-> Specify and document the way in which sysctl and prctl() can be used
-> in combination to allow the userspace to opt-in this feature.
+> Suggested-by: Marc Zyngier <marc.zyngier@arm.com>
+> Acked-by: Marc Zyngier <marc.zyngier@arm.com>
 > 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will.deacon@arm.com>
-> CC: Andrey Konovalov <andreyknvl@google.com>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> ---
->  Documentation/arm64/tagged-address-abi.txt | 111 +++++++++++++++++++++
->  1 file changed, 111 insertions(+)
->  create mode 100644 Documentation/arm64/tagged-address-abi.txt
+> Thanks,
 > 
-> diff --git a/Documentation/arm64/tagged-address-abi.txt b/Documentation/arm64/tagged-address-abi.txt
-> new file mode 100644
-> index 000000000000..96e149e2c55c
-> --- /dev/null
-> +++ b/Documentation/arm64/tagged-address-abi.txt
-> @@ -0,0 +1,111 @@
-> +ARM64 TAGGED ADDRESS ABI
-> +========================
-> +
-> +This document describes the usage and semantics of the Tagged Address
-> +ABI on arm64.
-> +
-> +1. Introduction
-> +---------------
-> +
-> +On arm64 the TCR_EL1.TBI0 bit has been always enabled on the arm64 kernel,
-> +hence the userspace (EL0) is allowed to set a non-zero value in the top
-> +byte but the resulting pointers are not allowed at the user-kernel syscall
-> +ABI boundary.
-> +
-> +This document describes a relaxation of the ABI with which it is possible
-> +to pass tagged tagged pointers to the syscalls, when these pointers are in
-           ^^^^^^^^^^^^^
-typo.
-
-> +memory ranges obtained as described in paragraph 2.
-> +
-> +Since it is not desirable to relax the ABI to allow tagged user addresses
-> +into the kernel indiscriminately, arm64 provides a new sysctl interface
-> +(/proc/sys/abi/tagged_addr) that is used to prevent the applications from
-> +enabling the relaxed ABI and a new prctl() interface that can be used to
-> +enable or disable the relaxed ABI.
-> +
-> +The sysctl is meant also for testing purposes in order to provide a simple
-> +way for the userspace to verify the return error checking of the prctl()
-> +command without having to reconfigure the kernel.
-> +
-> +The ABI properties are inherited by threads of the same application and
-> +fork()'ed children but cleared when a new process is spawn (execve()).
-
-OK.
-
-> +
-> +2. ARM64 Tagged Address ABI
-> +---------------------------
-> +
-> +From the kernel syscall interface prospective, we define, for the purposes
-                                     ^^^^^^^^^^^
-perspective
-
-> +of this document, a "valid tagged pointer" as a pointer that either it has
-> +a zero value set in the top byte or it has a non-zero value, it is in memory
-> +ranges privately owned by a userspace process and it is obtained in one of
-> +the following ways:
-> +  - mmap() done by the process itself, where either:
-> +    * flags = MAP_PRIVATE | MAP_ANONYMOUS
-> +    * flags = MAP_PRIVATE and the file descriptor refers to a regular
-> +      file or "/dev/zero"
-
-this does not make it clear if MAP_FIXED or other
-flags are valid (there are many map flags i don't
-know, but at least fixed should work and stack/growsdown.
-i'd expect anything that's not incompatible with
-private|anon to work).
-
-> +  - a mapping below sbrk(0) done by the process itself
-
-doesn't the mmap rule cover this?
-
-> +  - any memory mapped by the kernel in the process's address space during
-> +    creation and following the restrictions presented above (i.e. data, bss,
-> +    stack).
-
-OK.
-
-Can a null pointer have a tag?
-(in case NULL is valid to pass to a syscall)
-
-> +
-> +The ARM64 Tagged Address ABI is an opt-in feature, and an application can
-> +control it using the following prctl()s:
-> +  - PR_SET_TAGGED_ADDR_CTRL: can be used to enable the Tagged Address ABI.
-> +  - PR_GET_TAGGED_ADDR_CTRL: can be used to check the status of the Tagged
-> +                             Address ABI.
-> +
-> +As a consequence of invoking PR_SET_TAGGED_ADDR_CTRL prctl() by an applications,
-> +the ABI guarantees the following behaviours:
-> +
-> +  - Every current or newly introduced syscall can accept any valid tagged
-> +    pointers.
-> +
-> +  - If a non valid tagged pointer is passed to a syscall then the behaviour
-> +    is undefined.
-> +
-> +  - Every valid tagged pointer is expected to work as an untagged one.
-> +
-> +  - The kernel preserves any valid tagged pointers and returns them to the
-> +    userspace unchanged in all the cases except the ones documented in the
-> +    "Preserving tags" paragraph of tagged-pointers.txt.
-
-OK.
-
-i guess pointers of another process are not "valid tagged
-pointers" for the current one, so e.g. in ptrace the
-ptracer has to clear the tags before PEEK etc.
-
-> +
-> +A definition of the meaning of tagged pointers on arm64 can be found in:
-> +Documentation/arm64/tagged-pointers.txt.
-> +
-> +3. ARM64 Tagged Address ABI Exceptions
-> +--------------------------------------
-> +
-> +The behaviours described in paragraph 2, with particular reference to the
-> +acceptance by the syscalls of any valid tagged pointer are not applicable
-> +to the following cases:
-> +  - mmap() addr parameter.
-> +  - mremap() new_address parameter.
-> +  - prctl_set_mm() struct prctl_map fields.
-> +  - prctl_set_mm_map() struct prctl_map fields.
-
-i don't understand the exception: does it mean
-that passing a tagged address to these syscalls
-is undefined?
-
-> +
-> +4. Example of correct usage
-> +---------------------------
-> +
-> +void main(void)
-> +{
-> +	static int tbi_enabled = 0;
-> +	unsigned long tag = 0;
-> +
-> +	char *ptr = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE,
-> +			 MAP_ANONYMOUS, -1, 0);
-> +
-> +	if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE,
-> +		  0, 0, 0) == 0)
-> +		tbi_enabled = 1;
-> +
-> +	if (!ptr)
-> +		return -1;
-
-mmap returns MAP_FAILED on failure.
-
-> +
-> +	if (tbi_enabled)
-> +		tag = rand() & 0xff;
-> +
-> +	ptr = (char *)((unsigned long)ptr | (tag << TAG_SHIFT));
-> +
-> +	*ptr = 'a';
-> +
-> +	...
-> +}
-> +
+> 	M.
 > 
+> -- 
+> Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
