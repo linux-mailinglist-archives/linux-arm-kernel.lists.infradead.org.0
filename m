@@ -2,67 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B67842A43
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:05:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4117742A46
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:06:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CNALAsy4NW3965ywnrQsngHYnT2AWW4hnid/imgBQAA=; b=qgiQbsmnLdIifp
-	UlcjpRbMbQwrcQ8cpP8R6YqXPZkwcoueEp0iMGKXwIuzubxRh3rzsXRIAYDj1vdqrlWT9AzOAKX0F
-	wIAOsSicru9qnog5siFdm6DZGJYY4dgrkAuws37jxtMJ4fR3+3R3jPEGUnUR6Y+a1QL8ZmTqyxKqx
-	bV4TwEe/qvE126cS+Dmql9dbxu3A0JBzFvKQcZv311S2eRIMzs+0LiBBd8LnHNYl2Ul6Gy/QdiBeG
-	/5N0o8Seqf+oLfs04KTdhjKO7l0GzJMLKV6qpn9Y/nb3scQ6XdVTkrTcx+jh42cuJwi9Hj5oHiSSh
-	CG8M/FRMPlGmFTV5QNXQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jdChZR3sqpJPPn/YeaqJcsBMWyA2QVIQmVOjmAH4/bo=; b=aurfyaSXn+WpDF
+	B06RrRSBp+sTQEIX1eOoaHLbJ7GYzq0vpMaY18OLRSaGmZBYVFwkpHmgOSOWWzA6edSz35fXR3ZbK
+	Im/K8r9zScBjS88w31GHBejpFfzgg7hUnYQ5HC+vxyzyyyqcMnvHWmrxsY2waSZKOg6e9rGL7vAWQ
+	SqPbZA7BXGgGDcNfmDRB+rFnX4jvdUkEQTF3bWNjkA//iEwDMfJba5t8nZN0XBsNByr7uKFHvUYZ2
+	o5cWBPE1zmkQK0W/c2/eghyUq6ZFENj+6w6Zbjao9QjKYSYxCtUToG8gY+kEQxjEmaLlWftQmXvtr
+	4GvY7zfGNOpBBJkisUTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb4p3-0003wR-9p; Wed, 12 Jun 2019 15:05:57 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hb4pt-0005CW-Md; Wed, 12 Jun 2019 15:06:49 +0000
+Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb4oY-0003vH-LV
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:05:28 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 49BFFC1EB1F5;
- Wed, 12 Jun 2019 15:05:22 +0000 (UTC)
-Received: from llong.remote.csb (dhcp-17-85.bos.redhat.com [10.18.17.85])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 8E70E377B;
- Wed, 12 Jun 2019 15:05:17 +0000 (UTC)
-Subject: Re: [PATCH v2 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-To: Alex Kogan <alex.kogan@oracle.com>, "liwei (GF)" <liwei391@huawei.com>
-References: <20190329152006.110370-1-alex.kogan@oracle.com>
- <20190329152006.110370-4-alex.kogan@oracle.com>
- <cc3eee8c-5212-7af5-c932-897ab8f3f8bf@huawei.com>
- <54241445-458C-4AE2-840B-6DFCCD410399@oracle.com>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <a52a5e25-2b71-b6d9-3fa1-fb43bae1cbc1@redhat.com>
-Date: Wed, 12 Jun 2019 11:05:17 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hb4pg-0005C5-IU
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:06:37 +0000
+Received: by mail-qt1-f193.google.com with SMTP id x2so17972403qtr.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 08:06:35 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1g7s/UPWJzJeB4LrTKmbsG4ivrcvy+TUBuxC551yLEY=;
+ b=q+/LZAn2jzxhaC40NhAY4Jz8Za68Dw4NahNjErgVy2qQyHMzrCxMhJcoc5Donp87lG
+ NmPWZKnbsi9ghFvdAapSRRb9NC+WJ1eQ2jkiduw9BIDZhthWmUgwGroOFWPc3dF15FHo
+ TThlPmtCk+L7StE6YC++J6OZMoluI2r4qKtNiOyKNFE9cuJaS+IJjxQNPxzXmYlttgBA
+ mlWss4dunue6t56/aSaqP4kzHBS8mKapYEMZA9emf8aBYJlQaXSwQIvja/uy1khJBl+S
+ xo3/jXAL6SG0ZqzAjOQlwoXSQ0KOA+S9DfB+/4xqgFEF9hEr5vQB40pgSL9MOz/aXq2q
+ g6Zg==
+X-Gm-Message-State: APjAAAUGSpHtonp3/+lnYHrFCZJRuEFZTooTRCuq3/Y4sh4EiOiWphef
+ 2CHy/Kk37wUyqJeM8QHfoW63anuL3EDwjrVAWCg=
+X-Google-Smtp-Source: APXvYqzOMpjxx8OTt1LYucvtT3ec0rHQVDXxOvYnWwFFLgDetKQQiEnhNqtCjwvLI9BT1ZM6g2S2uumX596TBUy4Jug=
+X-Received: by 2002:ac8:8dd:: with SMTP id y29mr5832711qth.304.1560351994976; 
+ Wed, 12 Jun 2019 08:06:34 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <54241445-458C-4AE2-840B-6DFCCD410399@oracle.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.32]); Wed, 12 Jun 2019 15:05:26 +0000 (UTC)
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+ <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+ <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+In-Reply-To: <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 12 Jun 2019 17:06:17 +0200
+Message-ID: <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Dan Williams <dcbw@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_080526_744769_AEC14B07 
-X-CRM114-Status: GOOD (  20.88  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190612_080636_613728_04BD7DC9 
+X-CRM114-Status: GOOD (  22.52  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.193 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,85 +89,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, arnd@arndb.de,
- Peter Zijlstra <peterz@infradead.org>, dave.dice@oracle.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- Rahul Yadav <rahul.x.yadav@oracle.com>, mingo@redhat.com, bp@alien8.de,
- hpa@zytor.com, Steven Sistare <steven.sistare@oracle.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Daniel Jordan <daniel.m.jordan@oracle.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ linux-arm-msm@vger.kernel.org, Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Networking <netdev@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gNi8xMi8xOSAxMjozOCBBTSwgQWxleCBLb2dhbiB3cm90ZToKPiBIaSwgV2VpLgo+Cj4+IE9u
-IEp1biAxMSwgMjAxOSwgYXQgMTI6MjIgQU0sIGxpd2VpIChHRikgPGxpd2VpMzkxQGh1YXdlaS5j
-b20+IHdyb3RlOgo+Pgo+PiBIaSBBbGV4LAo+Pgo+PiBPbiAyMDE5LzMvMjkgMjM6MjAsIEFsZXgg
-S29nYW4gd3JvdGU6Cj4+PiBJbiBDTkEsIHNwaW5uaW5nIHRocmVhZHMgYXJlIG9yZ2FuaXplZCBp
-biB0d28gcXVldWVzLCBhIG1haW4gcXVldWUgZm9yCj4+PiB0aHJlYWRzIHJ1bm5pbmcgb24gdGhl
-IHNhbWUgbm9kZSBhcyB0aGUgY3VycmVudCBsb2NrIGhvbGRlciwgYW5kIGEKPj4+IHNlY29uZGFy
-eSBxdWV1ZSBmb3IgdGhyZWFkcyBydW5uaW5nIG9uIG90aGVyIG5vZGVzLiBBdCB0aGUgdW5sb2Nr
-IHRpbWUsCj4+PiB0aGUgbG9jayBob2xkZXIgc2NhbnMgdGhlIG1haW4gcXVldWUgbG9va2luZyBm
-b3IgYSB0aHJlYWQgcnVubmluZyBvbgo+Pj4gdGhlIHNhbWUgbm9kZS4gSWYgZm91bmQgKGNhbGwg
-aXQgdGhyZWFkIFQpLCBhbGwgdGhyZWFkcyBpbiB0aGUgbWFpbiBxdWV1ZQo+Pj4gYmV0d2VlbiB0
-aGUgY3VycmVudCBsb2NrIGhvbGRlciBhbmQgVCBhcmUgbW92ZWQgdG8gdGhlIGVuZCBvZiB0aGUK
-Pj4+IHNlY29uZGFyeSBxdWV1ZSwgYW5kIHRoZSBsb2NrIGlzIHBhc3NlZCB0byBULiBJZiBzdWNo
-IFQgaXMgbm90IGZvdW5kLCB0aGUKPj4+IGxvY2sgaXMgcGFzc2VkIHRvIHRoZSBmaXJzdCBub2Rl
-IGluIHRoZSBzZWNvbmRhcnkgcXVldWUuIEZpbmFsbHksIGlmIHRoZQo+Pj4gc2Vjb25kYXJ5IHF1
-ZXVlIGlzIGVtcHR5LCB0aGUgbG9jayBpcyBwYXNzZWQgdG8gdGhlIG5leHQgdGhyZWFkIGluIHRo
-ZQo+Pj4gbWFpbiBxdWV1ZS4gRm9yIG1vcmUgZGV0YWlscywgc2VlIGh0dHBzOi8vdXJsZGVmZW5z
-ZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRwcy0zQV9fYXJ4aXYub3JnX2Fic18xODEwLjA1
-NjAwJmQ9RHdJQ2JnJmM9Um9QMVl1bUNYQ2dhV0h2bFpZUjhQWmg4QnY3cUlyTVVCNjVlYXBJX0pu
-RSZyPUh2aGszRjRvbWRDay1HRTFQVE9tM0tuMEE3QXBXT1oyYVpMVHVWeEZLNGsmbT1VN21mVGJZ
-ajFyMlRlMkJCVVVOYlZyUlB1VGFfdWpscFI0R1pmVXNyR1RNJnM9RHc0TzFFbmlGLW5kZTRmcDZS
-QTlJU2xTTU9qV3VxZVI5T1MxRzBpYXVqMCZlPS4KPj4+Cj4+PiBOb3RlIHRoYXQgdGhpcyB2YXJp
-YW50IG9mIENOQSBtYXkgaW50cm9kdWNlIHN0YXJ2YXRpb24gYnkgY29udGludW91c2x5Cj4+PiBw
-YXNzaW5nIHRoZSBsb2NrIHRvIHRocmVhZHMgcnVubmluZyBvbiB0aGUgc2FtZSBub2RlLiBUaGlz
-IGlzc3VlCj4+PiB3aWxsIGJlIGFkZHJlc3NlZCBsYXRlciBpbiB0aGUgc2VyaWVzLgo+Pj4KPj4+
-IEVuYWJsaW5nIENOQSBpcyBjb250cm9sbGVkIHZpYSBhIG5ldyBjb25maWd1cmF0aW9uIG9wdGlv
-bgo+Pj4gKE5VTUFfQVdBUkVfU1BJTkxPQ0tTKSwgd2hpY2ggaXMgZW5hYmxlZCBieSBkZWZhdWx0
-IGlmIE5VTUEgaXMgZW5hYmxlZC4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBBbGV4IEtvZ2FuIDxh
-bGV4LmtvZ2FuQG9yYWNsZS5jb20+Cj4+PiBSZXZpZXdlZC1ieTogU3RldmUgU2lzdGFyZSA8c3Rl
-dmVuLnNpc3RhcmVAb3JhY2xlLmNvbT4KPj4+IC0tLQo+Pj4gYXJjaC94ODYvS2NvbmZpZyAgICAg
-ICAgICAgICAgICAgICAgICB8ICAxNCArKysKPj4+IGluY2x1ZGUvYXNtLWdlbmVyaWMvcXNwaW5s
-b2NrX3R5cGVzLmggfCAgMTMgKysrCj4+PiBrZXJuZWwvbG9ja2luZy9tY3Nfc3BpbmxvY2suaCAg
-ICAgICAgIHwgIDEwICsrCj4+PiBrZXJuZWwvbG9ja2luZy9xc3BpbmxvY2suYyAgICAgICAgICAg
-IHwgIDI5ICsrKysrLQo+Pj4ga2VybmVsL2xvY2tpbmcvcXNwaW5sb2NrX2NuYS5oICAgICAgICB8
-IDE3MyArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4+PiA1IGZpbGVzIGNoYW5n
-ZWQsIDIzNiBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQo+Pj4gY3JlYXRlIG1vZGUgMTAw
-NjQ0IGtlcm5lbC9sb2NraW5nL3FzcGlubG9ja19jbmEuaAo+Pj4KPj4gKFNOSVApCj4+PiArCj4+
-PiArc3RhdGljIF9fYWx3YXlzX2lubGluZSBpbnQgZ2V0X25vZGVfaW5kZXgoc3RydWN0IG1jc19z
-cGlubG9jayAqbm9kZSkKPj4+ICt7Cj4+PiArCXJldHVybiBkZWNvZGVfY291bnQobm9kZS0+bm9k
-ZV9hbmRfY291bnQrKyk7Cj4+IFdoZW4gbmVzdGluZyBsZXZlbCBpcyA+IDQsIGl0IHdvbid0IHJl
-dHVybiBhIGluZGV4ID49IDQgaGVyZSBhbmQgdGhlIG51bWEgbm9kZSBudW1iZXIKPj4gaXMgY2hh
-bmdlZCBieSBtaXN0YWtlLiBJdCB3aWxsIGdvIGludG8gYSB3cm9uZyB3YXkgaW5zdGVhZCBvZiB0
-aGUgZm9sbG93aW5nIGJyYW5jaC4KPj4KPj4KPj4gCS8qCj4+IAkgKiA0IG5vZGVzIGFyZSBhbGxv
-Y2F0ZWQgYmFzZWQgb24gdGhlIGFzc3VtcHRpb24gdGhhdCB0aGVyZSB3aWxsCj4+IAkgKiBub3Qg
-YmUgbmVzdGVkIE5NSXMgdGFraW5nIHNwaW5sb2Nrcy4gVGhhdCBtYXkgbm90IGJlIHRydWUgaW4K
-Pj4gCSAqIHNvbWUgYXJjaGl0ZWN0dXJlcyBldmVuIHRob3VnaCB0aGUgY2hhbmNlIG9mIG5lZWRp
-bmcgbW9yZSB0aGFuCj4+IAkgKiA0IG5vZGVzIHdpbGwgc3RpbGwgYmUgZXh0cmVtZWx5IHVubGlr
-ZWx5LiBXaGVuIHRoYXQgaGFwcGVucywKPj4gCSAqIHdlIGZhbGwgYmFjayB0byBzcGlubmluZyBv
-biB0aGUgbG9jayBkaXJlY3RseSB3aXRob3V0IHVzaW5nCj4+IAkgKiBhbnkgTUNTIG5vZGUuIFRo
-aXMgaXMgbm90IHRoZSBtb3N0IGVsZWdhbnQgc29sdXRpb24sIGJ1dCBpcwo+PiAJICogc2ltcGxl
-IGVub3VnaC4KPj4gCSAqLwo+PiAJaWYgKHVubGlrZWx5KGlkeCA+PSBNQVhfTk9ERVMpKSB7Cj4+
-IAkJd2hpbGUgKCFxdWV1ZWRfc3Bpbl90cnlsb2NrKGxvY2spKQo+PiAJCQljcHVfcmVsYXgoKTsK
-Pj4gCQlnb3RvIHJlbGVhc2U7Cj4+IAl9Cj4gR29vZCBwb2ludC4KPiBUaGlzIHBhdGNoIGRvZXMg
-bm90IGhhbmRsZSBjb3VudCBvdmVyZmxvd3MgZ3JhY2VmdWxseS4KPiBJdCBjYW4gYmUgZWFzaWx5
-IGZpeGVkIGJ5IGFsbG9jYXRpbmcgbW9yZSBiaXRzIGZvciB0aGUgY291bnQg4oCUIHdlIGRvbuKA
-mXQgcmVhbGx5IG5lZWQgMzAgYml0cyBmb3IgI05VTUEgbm9kZXMuCgpBY3R1YWxseSwgdGhlIGRl
-ZmF1bHQgc2V0dGluZyB1c2VzIDIgYml0cyBmb3IgNC1sZXZlbCBuZXN0aW5nIGFuZCAxNApiaXRz
-IGZvciBjcHUgbnVtYmVycy4gVGhhdCBtZWFucyBpdCBjYW4gc3VwcG9ydCB1cCB0byAxNmstMSBj
-cHVzLiBJdCBpcwphIGxpbWl0IHRoYXQgaXMgbGlrZWx5IHRvIGJlIGV4Y2VlZGVkIGluIHRoZSBm
-b3Jlc2VlYWJsZSBmdXR1cmUuCnFzcGlubG9jayBhbHNvIHN1cHBvcnRzIGFuIGFkZGl0aW9uYWwg
-bW9kZSB3aXRoIDIxIGJpdHMgdXNlZCBmb3IgY3B1Cm51bWJlcnMuIFRoYXQgY2FuIHN1cHBvcnQg
-dXAgdG8gMk0tMSBjcHVzLiBIb3dldmVyLCB0aGlzIG1vZGUgd2lsbCBiZSBhCmxpdHRsZSBiaXQg
-c2xvd2VyLiBUaGF0IGlzIHdoeSB3ZSBkb24ndCB3YW50IHRvIHVzZSBtb3JlIHRoYW4gMiBiaXRz
-IGZvcgpuZXN0aW5nIGFzIEkgaGF2ZSBuZXZlciBzZWUgbW9yZSB0aGFuIDIgbGV2ZWwgb2YgbmVz
-dGluZyB1c2VkIGluIG15CnRlc3RpbmcuIFNvIGl0IGlzIGhpZ2hseSB1bmxpa2VseSB3ZSB3aWxs
-IGV2ZXIgaGl0IG1vcmUgdGhhbiA0IGxldmVscy4gSQphbSBub3Qgc2F5aW5nIHRoYXQgaXQgaXMg
-aW1wb3NzaWJsZSwgdGhvdWdoLgoKQ2hlZXJzLApMb25nbWFuCgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Jun 12, 2019 at 4:28 PM Dan Williams <dcbw@redhat.com> wrote:
+> On Wed, 2019-06-12 at 10:31 +0200, Arnd Bergmann wrote:
+> > On Tue, Jun 11, 2019 at 7:23 PM Dan Williams <dcbw@redhat.com> wrote:
+> I was trying to make the point that rmnet doesn't need to care about
+> how the QMAP packets get to the device itself; it can be pretty generic
+> so that it can be used by IPA/qmi_wwan/rmnet_smd/etc.
+
+rmnet at the moment is completely generic in that regard already,
+however it is implemented as a tunnel driver talking to another
+device rather than an abstraction layer below that driver.
+
+> > The current rmnet model is different in that by design the upper
+> > layer
+> > (rmnet) and the lower layer (qmi_wwan, ipa, ...) are kept independent
+> > in
+> > both directions, i.e. ipa has (almost) no knowledge of rmnet, and
+> > just
+> > has pointers to the other net_device:
+> >
+> >        ipa_device
+> >            net_device
+> >
+> >        rmnet_port
+> >            net_device
+> >
+> > I understand that the rmnet model was intended to provide a cleaner
+> > abstraction, but it's not how we normally structure subsystems in
+> > Linux, and moving to a model more like how wireless_dev works
+> > would improve both readability and performance, as you describe
+> > it, it would be more like (ignoring for now the need for multiple
+> > connections):
+> >
+> >    ipa_dev
+> >         rmnet_dev
+> >                wwan_dev
+> >                       net_device
+>
+> Perhaps I'm assuming too much from this diagram but this shows a 1:1
+> between wwan_dev and "lower" devices.
+>
+> What Johannes is proposing (IIRC) is something a bit looser where a
+> wwan_dev does not necessarily provide netdev itself, but is instead the
+> central point that various channels (control, data, gps, sim card, etc)
+> register with. That way the wwan_dev can provide an overall view of the
+> WWAN device to userspace, and userspace can talk to the wwan_dev to ask
+> the lower drivers (ipa, rmnet, etc) to create new channels (netdev,
+> tty, otherwise) when the control channel has told the modem firmware to
+> expect one.
+
+Right, as I noted above, I simplified it a bit. We probably want to
+have multiple net_device instances for an ipa_dev, so there has
+to be a 1:n relationship instead of 1:1 at one of the intermediate
+levels, but it's not obvious which level that should be.
+
+In theory we could even have a single net_device instance correspond
+to the ipa_dev, but then have multiple IP addresses bound to it,
+so each IP address corresponds to a channel/queue/napi_struct,
+but the user visible object remains a single device.
+
+I trust that you and Johannes are more qualified than me to make
+the call on that point.
+
+       Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
