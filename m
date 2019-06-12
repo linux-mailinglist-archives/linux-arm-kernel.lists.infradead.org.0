@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB5D442A01
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:56:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D041842A20
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:00:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SR+azhcvHKzIOIXlY72prGQpwGmSlAe11//PM3yPVX4=; b=CMtPERUqi+qtPg
-	Wcc4TPz3L4BHDAS+stk2J+lkwHqiN6rA2HjC/TtkysdVQggjifWW157VGSjew5ksYAqcbUxYzcZ1A
-	e9yxkA28nPU51+4dNmyBS6kb+ioz5aKwlZLOvL8zMUaOpdDzR1T9BBm4vXTVmOAlMQa7FgJkBGhiZ
-	odQZbOZzUpQmSxghV3KtI1DeliqK/Jl3JaBY3nYOrge1rI1GUyk3DTNWo/XhL6N7qQzMkOAkZX3Y8
-	ILBqnNF1pJjo0TvrcY7yplG/ZQkwAFy4GJYbXGy21T/JTtBpJer7qfoecz7JuYgC9FPGBhLjOmO/X
-	o8fnJW8YrOiJt0wCCrhg==;
+	List-Owner; bh=/lKd/AmVh5Ix5MyKhoiCLrRF3Ul1EB9Q0ssRryLaMEY=; b=WKcIaaCV+I+S/a
+	QmJDllxD07MhEden/K2+obL0uM+EdsnBC5lqX68W7RIVXgIXprtkt4Thw2aL/Em8JsRDtJB9a9VEh
+	HrhYKXA0ObIScXqPkteBbubXIp+L3dc1rFrKNseA9WVA38upXr8D/2fup8AQwO5nAqG23DfvBovrL
+	cBPW95lNBn7EYAX6kTHDYMsJVD2zX3S0T4ZrYRrtHqI6AnPvs5j/3e0AzbSv5vNHT/Ocg1lIbGAn9
+	GI/K7J7UqrKR38hAO29Z7bxwywX1h2J8+jlQ7As+JTXTEkve2SqKxiGuU9TOPUiRj4VQrSRsdcrX6
+	tosEReJr1D9gRl5R7WSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb4ff-00060V-JR; Wed, 12 Jun 2019 14:56:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb4fS-0005zg-Mj
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:56:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE3052B;
- Wed, 12 Jun 2019 07:56:01 -0700 (PDT)
-Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5860F3F557;
- Wed, 12 Jun 2019 07:55:42 -0700 (PDT)
-Date: Wed, 12 Jun 2019 15:55:38 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control
- the tagged user addresses ABI
-Message-ID: <20190612145537.GG28951@C02TF0J2HF1T.local>
-References: <cover.1560339705.git.andreyknvl@google.com>
- <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
+	id 1hb4jb-0008Cv-0G; Wed, 12 Jun 2019 15:00:19 +0000
+Received: from verein.lst.de ([213.95.11.211] helo=newverein.lst.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb4jH-0007nS-Vr
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:00:03 +0000
+Received: by newverein.lst.de (Postfix, from userid 2005)
+ id 1205768B02; Wed, 12 Jun 2019 16:59:27 +0200 (CEST)
+Date: Wed, 12 Jun 2019 16:59:26 +0200
+From: Torsten Duwe <duwe@lst.de>
+To: Andrzej Hajda <a.hajda@samsung.com>
+Subject: Re: [PATCH v2 6/7] dt-bindings: Add ANX6345 DP/eDP transmitter binding
+Message-ID: <20190612145926.GA28426@lst.de>
+References: <20190604122150.29D6468B05@newverein.lst.de>
+ <CGME20190604122333epcas2p2f2c750e19a363901c83abb83354f55d4@epcas2p2.samsung.com>
+ <20190604122305.07B9068B05@newverein.lst.de>
+ <354de37d-57bb-6b06-c81a-a2081ea4f222@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
-User-Agent: Mutt/1.11.2 (2019-01-07)
+In-Reply-To: <354de37d-57bb-6b06-c81a-a2081ea4f222@samsung.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_075602_784290_17C76BC6 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20190612_080001_536014_D2168060 
+X-CRM114-Status: GOOD (  15.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,57 +61,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
+ Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
-> From: Catalin Marinas <catalin.marinas@arm.com>
+On Wed, Jun 12, 2019 at 10:16:37AM +0200, Andrzej Hajda wrote:
+> > +The ANX6345 is an ultra-low power Full-HD eDP transmitter designed for
+> > +portable devices.
+> > +
+> > +Required properties:
+> > +
+> > + - compatible		: "analogix,anx6345"
+> > + - reg			: I2C address of the device
+> > + - reset-gpios		: Which GPIO to use for reset
 > 
-> It is not desirable to relax the ABI to allow tagged user addresses into
-> the kernel indiscriminately. This patch introduces a prctl() interface
-> for enabling or disabling the tagged ABI with a global sysctl control
-> for preventing applications from enabling the relaxed ABI (meant for
-> testing user-space prctl() return error checking without reconfiguring
-> the kernel). The ABI properties are inherited by threads of the same
-> application and fork()'ed children but cleared on execve().
 > 
-> The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
-> MTE-specific settings like imprecise vs precise exceptions.
-> 
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> You have not specified it's active state, since in driver's code you
+> named it RESETN I guess it should be active low.
 
-You need your signed-off-by here since you are contributing it. And
-thanks for adding the comment to the TIF definition.
+Yes. The chip's reset is active low.
+> 
+> > + - dvdd12-supply	: Regulator for 1.2V digital core power.
+> > + - dvdd25-supply	: Regulator for 2.5V digital core power.
+> > + - Video port for LVTTL input, using the DT bindings defined in [1].
+> 
+> 
+> Please assign port number for input (I guess 0).
 
--- 
-Catalin
+True.
+
+> 
+> > +
+> > +Optional properties:
+> > +
+> > + - Video port for eDP output (panel or connector) using the DT bindings
+> > +   defined in [1].
+> 
+> 
+> Shouldn't it be also required?
+
+See previous discussion. Surely there should be _something_ connected to
+the output side, but that something might not be relevant for the software
+side, so it might be omitted from the device tree.
+
+In fact, I'll submit v3 with the SPDX changes and without exactly this
+output port spec which had caused the heated discussion.
+
+	Torsten
+
 
 _______________________________________________
 linux-arm-kernel mailing list
