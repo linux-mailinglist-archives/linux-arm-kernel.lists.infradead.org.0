@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08B0242F86
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 21:06:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BFAF42F88
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 21:06:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KOEtnqVYK3PFBFSRntYxK9QFoTRk9G0y+OzR4Jan+MM=; b=DpuIeF9Wq+ieAr
-	t2jAgyrBIN0Fd0vVcTRMCNmvrGmBupIf0bIhTdSEFmdct8gkCqCBDEtpiNY2flQn6xHI8l7V5WSdE
-	bsfDxPPpelXk1CjOV/SkFOErDebaA9xoyqZ6lpJJhJa8T/7SOOVp8a4/e+4bJvOTYGq5MxArlWKfY
-	N/Wza350YOS85OJWtgOFiRi2XsGN3RM8OQQyxF4vkvJ3BlU+eFK17gqhFSNBt+XnfxDc4Mmayd1qN
-	vuhMSYCDdumHBiRBkBtBpUX592QAl5obQ63uDf2Zn0aVC9oWZ2qhn2m016z12zX1z7fBQTWF0efg/
-	vj6ucyLiv6AJpMyiQpRg==;
+	List-Owner; bh=WuU4uxab7zDEKMKQUcWaS0G+9WOkPrkfka63jVeGxZI=; b=QT42Y7k9WQYbNP
+	zYZdkCOY71lEGIK7m2J6tK3ASQatyWBFQys3U73bkNiWQe1RunWurVO1jVvuINwbZrVKLREbBv8gn
+	dyg8I2XTatY4SrYW/31/w8djtbZx6YJhjffNKaCykLrhFuXzTY5ZKmDTtsQorhFukZDq4iFEmbqUq
+	zJZtCtx/hp5gEG/3IAqQpGpQToZPi/XCrcRwLUY0VqH7fOkm2NNjgRxGoabE8VzFKpK8yKCgAvx1Q
+	YIXr8p5jXheduJrBXk0rK5v7imexqbNMA9XT+r6DRvnXcAkIiLwbipvuOnGUA7pGoM5GnFka5Yo19
+	mCY7S6ovHEv8jEfut5iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb8Zq-0002Ql-66; Wed, 12 Jun 2019 19:06:30 +0000
+	id 1hb8a8-0002f0-0r; Wed, 12 Jun 2019 19:06:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb8YU-0000T6-TZ
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 19:05:08 +0000
+ id 1hb8YZ-0001Hp-30
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 19:05:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64C3228;
- Wed, 12 Jun 2019 12:05:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C62CA5E;
+ Wed, 12 Jun 2019 12:05:08 -0700 (PDT)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 075693F246;
- Wed, 12 Jun 2019 12:05:04 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ADD923F246;
+ Wed, 12 Jun 2019 12:05:06 -0700 (PDT)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Christoffer Dall <christoffer.dall@arm.com>,
  Marc Zyngier <marc.zyngier@arm.com>
-Subject: [PATCH v9 4/5] KVM: arm/arm64: remove pmc->bitmask
-Date: Wed, 12 Jun 2019 20:04:49 +0100
-Message-Id: <20190612190450.7085-5-andrew.murray@arm.com>
+Subject: [PATCH v9 5/5] KVM: arm/arm64: support chained PMU counters
+Date: Wed, 12 Jun 2019 20:04:50 +0100
+Message-Id: <20190612190450.7085-6-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190612190450.7085-1-andrew.murray@arm.com>
 References: <20190612190450.7085-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_120507_097530_0FDF95FC 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20190612_120511_295013_0CFE7AD1 
+X-CRM114-Status: GOOD (  20.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,89 +68,415 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We currently use pmc->bitmask to determine the width of the pmc - however
-it's superfluous as the pmc index already describes if the pmc is a cycle
-counter or event counter. The architecture clearly describes the widths of
-these counters.
+ARMv8 provides support for chained PMU counters, where an event type
+of 0x001E is set for odd-numbered counters, the event counter will
+increment by one for each overflow of the preceding even-numbered
+counter. Let's emulate this in KVM by creating a 64 bit perf counter
+when a user chains two emulated counters together.
 
-Let's remove the bitmask to simplify the code.
+For chained events we only support generating an overflow interrupt
+on the high counter. We use the attributes of the low counter to
+determine the attributes of the perf event.
 
+Suggested-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Reviewed-by: Julien Thierry <julien.thierry@arm.com>
 ---
- include/kvm/arm_pmu.h |  1 -
- virt/kvm/arm/pmu.c    | 19 +++++++++----------
- 2 files changed, 9 insertions(+), 11 deletions(-)
+ include/kvm/arm_pmu.h |   2 +
+ virt/kvm/arm/pmu.c    | 255 +++++++++++++++++++++++++++++++++++-------
+ 2 files changed, 219 insertions(+), 38 deletions(-)
 
 diff --git a/include/kvm/arm_pmu.h b/include/kvm/arm_pmu.h
-index b73f31baca52..2f0e28dc5a9e 100644
+index 2f0e28dc5a9e..589f49ed8cf8 100644
 --- a/include/kvm/arm_pmu.h
 +++ b/include/kvm/arm_pmu.h
-@@ -28,7 +28,6 @@
- struct kvm_pmc {
- 	u8 idx;	/* index into the pmu->pmc array */
- 	struct perf_event *perf_event;
--	u64 bitmask;
- };
+@@ -22,6 +22,7 @@
+ #include <asm/perf_event.h>
  
+ #define ARMV8_PMU_CYCLE_IDX		(ARMV8_PMU_MAX_COUNTERS - 1)
++#define ARMV8_PMU_MAX_COUNTER_PAIRS	((ARMV8_PMU_MAX_COUNTERS + 1) >> 1)
+ 
+ #ifdef CONFIG_KVM_ARM_PMU
+ 
+@@ -33,6 +34,7 @@ struct kvm_pmc {
  struct kvm_pmu {
+ 	int irq_num;
+ 	struct kvm_pmc pmc[ARMV8_PMU_MAX_COUNTERS];
++	DECLARE_BITMAP(chained, ARMV8_PMU_MAX_COUNTER_PAIRS);
+ 	bool ready;
+ 	bool created;
+ 	bool irq_level;
 diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
-index ae1e886d4a1a..88ce24ae0b45 100644
+index 88ce24ae0b45..d35a2ed3f24b 100644
 --- a/virt/kvm/arm/pmu.c
 +++ b/virt/kvm/arm/pmu.c
-@@ -47,7 +47,10 @@ u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
+@@ -25,29 +25,129 @@
+ #include <kvm/arm_vgic.h>
+ 
+ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
++
++#define PERF_ATTR_CFG1_KVM_PMU_CHAINED 0x1
++
++static struct kvm_vcpu *kvm_pmc_to_vcpu(struct kvm_pmc *pmc)
++{
++	struct kvm_pmu *pmu;
++	struct kvm_vcpu_arch *vcpu_arch;
++
++	pmc -= pmc->idx;
++	pmu = container_of(pmc, struct kvm_pmu, pmc[0]);
++	vcpu_arch = container_of(pmu, struct kvm_vcpu_arch, pmu);
++	return container_of(vcpu_arch, struct kvm_vcpu, arch);
++}
++
+ /**
+- * kvm_pmu_get_counter_value - get PMU counter value
++ * kvm_pmu_pmc_is_chained - determine if the pmc is chained
++ * @pmc: The PMU counter pointer
++ */
++static bool kvm_pmu_pmc_is_chained(struct kvm_pmc *pmc)
++{
++	struct kvm_vcpu *vcpu = kvm_pmc_to_vcpu(pmc);
++
++	return test_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
++}
++
++/**
++ * kvm_pmu_pmc_is_high_counter - determine if select_idx is a high/low counter
++ * @select_idx: The counter index
++ */
++static bool kvm_pmu_pmc_is_high_counter(u64 select_idx)
++{
++	return select_idx & 0x1;
++}
++
++/**
++ * kvm_pmu_get_canonical_pmc - obtain the canonical pmc
++ * @pmc: The PMU counter pointer
++ *
++ * When a pair of PMCs are chained together we use the low counter (canonical)
++ * to hold the underlying perf event.
++ */
++static struct kvm_pmc *kvm_pmu_get_canonical_pmc(struct kvm_pmc *pmc)
++{
++	if (kvm_pmu_pmc_is_chained(pmc) &&
++	    kvm_pmu_pmc_is_high_counter(pmc->idx))
++		return pmc - 1;
++
++	return pmc;
++}
++
++/**
++ * kvm_pmu_idx_has_chain_evtype - determine if the event type is chain
+  * @vcpu: The vcpu pointer
+  * @select_idx: The counter index
+  */
+-u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
++static bool kvm_pmu_idx_has_chain_evtype(struct kvm_vcpu *vcpu, u64 select_idx)
+ {
+-	u64 counter, reg, enabled, running;
+-	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+-	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
++	u64 eventsel, reg;
+ 
+-	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
+-	      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + select_idx;
+-	counter = __vcpu_sys_reg(vcpu, reg);
++	select_idx |= 0x1;
++
++	if (select_idx == ARMV8_PMU_CYCLE_IDX)
++		return false;
+ 
+-	/* The real counter value is equal to the value of counter register plus
++	reg = PMEVTYPER0_EL0 + select_idx;
++	eventsel = __vcpu_sys_reg(vcpu, reg) & ARMV8_PMU_EVTYPE_EVENT;
++
++	return eventsel == ARMV8_PMUV3_PERFCTR_CHAIN;
++}
++
++/**
++ * kvm_pmu_get_pair_counter_value - get PMU counter value
++ * @vcpu: The vcpu pointer
++ * @pmc: The PMU counter pointer
++ */
++static u64 kvm_pmu_get_pair_counter_value(struct kvm_vcpu *vcpu,
++					  struct kvm_pmc *pmc)
++{
++	u64 counter, counter_high, reg, enabled, running;
++
++	if (kvm_pmu_pmc_is_chained(pmc)) {
++		pmc = kvm_pmu_get_canonical_pmc(pmc);
++		reg = PMEVCNTR0_EL0 + pmc->idx;
++
++		counter = __vcpu_sys_reg(vcpu, reg);
++		counter_high = __vcpu_sys_reg(vcpu, reg + 1);
++
++		counter = lower_32_bits(counter) | (counter_high << 32);
++	} else {
++		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
++		      ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
++		counter = __vcpu_sys_reg(vcpu, reg);
++	}
++
++	/*
++	 * The real counter value is equal to the value of counter register plus
+ 	 * the value perf event counts.
+ 	 */
+ 	if (pmc->perf_event)
  		counter += perf_event_read_value(pmc->perf_event, &enabled,
  						 &running);
  
--	return counter & pmc->bitmask;
-+	if (select_idx != ARMV8_PMU_CYCLE_IDX)
-+		counter = lower_32_bits(counter);
-+
+-	if (select_idx != ARMV8_PMU_CYCLE_IDX)
 +	return counter;
++}
++
++/**
++ * kvm_pmu_get_counter_value - get PMU counter value
++ * @vcpu: The vcpu pointer
++ * @select_idx: The counter index
++ */
++u64 kvm_pmu_get_counter_value(struct kvm_vcpu *vcpu, u64 select_idx)
++{
++	u64 counter;
++	struct kvm_pmu *pmu = &vcpu->arch.pmu;
++	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
++
++	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
++
++	if (kvm_pmu_pmc_is_chained(pmc) &&
++	    kvm_pmu_pmc_is_high_counter(select_idx))
++		counter = upper_32_bits(counter);
++
++	else if (select_idx != ARMV8_PMU_CYCLE_IDX)
+ 		counter = lower_32_bits(counter);
+ 
+ 	return counter;
+@@ -77,6 +177,7 @@ void kvm_pmu_set_counter_value(struct kvm_vcpu *vcpu, u64 select_idx, u64 val)
+  */
+ static void kvm_pmu_release_perf_event(struct kvm_pmc *pmc)
+ {
++	pmc = kvm_pmu_get_canonical_pmc(pmc);
+ 	if (pmc->perf_event) {
+ 		perf_event_disable(pmc->perf_event);
+ 		perf_event_release_kernel(pmc->perf_event);
+@@ -94,13 +195,23 @@ static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc)
+ {
+ 	u64 counter, reg;
+ 
+-	if (pmc->perf_event) {
+-		counter = kvm_pmu_get_counter_value(vcpu, pmc->idx);
++	pmc = kvm_pmu_get_canonical_pmc(pmc);
++	if (!pmc->perf_event)
++		return;
++
++	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
++
++	if (kvm_pmu_pmc_is_chained(pmc)) {
++		reg = PMEVCNTR0_EL0 + pmc->idx;
++		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
++		__vcpu_sys_reg(vcpu, reg + 1) = upper_32_bits(counter);
++	} else {
+ 		reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
+ 		       ? PMCCNTR_EL0 : PMEVCNTR0_EL0 + pmc->idx;
+-		__vcpu_sys_reg(vcpu, reg) = counter;
+-		kvm_pmu_release_perf_event(pmc);
++		__vcpu_sys_reg(vcpu, reg) = lower_32_bits(counter);
+ 	}
++
++	kvm_pmu_release_perf_event(pmc);
  }
  
  /**
-@@ -113,7 +116,6 @@ void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu)
- 	for (i = 0; i < ARMV8_PMU_MAX_COUNTERS; i++) {
+@@ -117,6 +228,8 @@ void kvm_pmu_vcpu_reset(struct kvm_vcpu *vcpu)
  		kvm_pmu_stop_counter(vcpu, &pmu->pmc[i]);
  		pmu->pmc[i].idx = i;
--		pmu->pmc[i].bitmask = 0xffffffffUL;
  	}
++
++	bitmap_zero(vcpu->arch.pmu.chained, ARMV8_PMU_MAX_COUNTER_PAIRS);
  }
  
-@@ -348,8 +350,6 @@ void kvm_pmu_software_increment(struct kvm_vcpu *vcpu, u64 val)
-  */
- void kvm_pmu_handle_pmcr(struct kvm_vcpu *vcpu, u64 val)
- {
--	struct kvm_pmu *pmu = &vcpu->arch.pmu;
--	struct kvm_pmc *pmc;
- 	u64 mask;
- 	int i;
+ /**
+@@ -165,6 +278,18 @@ void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+ 			continue;
  
-@@ -368,11 +368,6 @@ void kvm_pmu_handle_pmcr(struct kvm_vcpu *vcpu, u64 val)
- 		for (i = 0; i < ARMV8_PMU_CYCLE_IDX; i++)
- 			kvm_pmu_set_counter_value(vcpu, i, 0);
+ 		pmc = &pmu->pmc[i];
++
++		/*
++		 * For high counters of chained events we must recreate the
++		 * perf event with the long (64bit) attribute set.
++		 */
++		if (kvm_pmu_pmc_is_chained(pmc) &&
++		    kvm_pmu_pmc_is_high_counter(i)) {
++			kvm_pmu_create_perf_event(vcpu, i);
++			continue;
++		}
++
++		/* At this point, pmc must be the canonical */
+ 		if (pmc->perf_event) {
+ 			perf_event_enable(pmc->perf_event);
+ 			if (pmc->perf_event->state != PERF_EVENT_STATE_ACTIVE)
+@@ -194,6 +319,18 @@ void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+ 			continue;
+ 
+ 		pmc = &pmu->pmc[i];
++
++		/*
++		 * For high counters of chained events we must recreate the
++		 * perf event with the long (64bit) attribute unset.
++		 */
++		if (kvm_pmu_pmc_is_chained(pmc) &&
++		    kvm_pmu_pmc_is_high_counter(i)) {
++			kvm_pmu_create_perf_event(vcpu, i);
++			continue;
++		}
++
++		/* At this point, pmc must be the canonical */
+ 		if (pmc->perf_event)
+ 			perf_event_disable(pmc->perf_event);
  	}
+@@ -283,17 +420,6 @@ void kvm_pmu_sync_hwstate(struct kvm_vcpu *vcpu)
+ 	kvm_pmu_update_state(vcpu);
+ }
+ 
+-static inline struct kvm_vcpu *kvm_pmc_to_vcpu(struct kvm_pmc *pmc)
+-{
+-	struct kvm_pmu *pmu;
+-	struct kvm_vcpu_arch *vcpu_arch;
 -
--	if (val & ARMV8_PMU_PMCR_LC) {
--		pmc = &pmu->pmc[ARMV8_PMU_CYCLE_IDX];
--		pmc->bitmask = 0xffffffffffffffffUL;
--	}
+-	pmc -= pmc->idx;
+-	pmu = container_of(pmc, struct kvm_pmu, pmc[0]);
+-	vcpu_arch = container_of(pmu, struct kvm_vcpu_arch, pmu);
+-	return container_of(vcpu_arch, struct kvm_vcpu, arch);
+-}
+-
+ /**
+  * When the perf event overflows, set the overflow status and inform the vcpu.
+  */
+@@ -384,13 +510,20 @@ static bool kvm_pmu_counter_is_enabled(struct kvm_vcpu *vcpu, u64 select_idx)
+ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+ {
+ 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+-	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
++	struct kvm_pmc *pmc;
+ 	struct perf_event *event;
+ 	struct perf_event_attr attr;
+ 	u64 eventsel, counter, reg, data;
+ 
+-	reg = (select_idx == ARMV8_PMU_CYCLE_IDX)
+-	      ? PMCCFILTR_EL0 : PMEVTYPER0_EL0 + select_idx;
++	/*
++	 * For chained counters the event type and filtering attributes are
++	 * obtained from the low/even counter. We also use this counter to
++	 * determine if the event is enabled/disabled.
++	 */
++	pmc = kvm_pmu_get_canonical_pmc(&pmu->pmc[select_idx]);
++
++	reg = (pmc->idx == ARMV8_PMU_CYCLE_IDX)
++	      ? PMCCFILTR_EL0 : PMEVTYPER0_EL0 + pmc->idx;
+ 	data = __vcpu_sys_reg(vcpu, reg);
+ 
+ 	kvm_pmu_stop_counter(vcpu, pmc);
+@@ -398,31 +531,48 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+ 
+ 	/* Software increment event does't need to be backed by a perf event */
+ 	if (eventsel == ARMV8_PMUV3_PERFCTR_SW_INCR &&
+-	    select_idx != ARMV8_PMU_CYCLE_IDX)
++	    pmc->idx != ARMV8_PMU_CYCLE_IDX)
+ 		return;
+ 
+ 	memset(&attr, 0, sizeof(struct perf_event_attr));
+ 	attr.type = PERF_TYPE_RAW;
+ 	attr.size = sizeof(attr);
+ 	attr.pinned = 1;
+-	attr.disabled = !kvm_pmu_counter_is_enabled(vcpu, select_idx);
++	attr.disabled = !kvm_pmu_counter_is_enabled(vcpu, pmc->idx);
+ 	attr.exclude_user = data & ARMV8_PMU_EXCLUDE_EL0 ? 1 : 0;
+ 	attr.exclude_kernel = data & ARMV8_PMU_EXCLUDE_EL1 ? 1 : 0;
+ 	attr.exclude_hv = 1; /* Don't count EL2 events */
+ 	attr.exclude_host = 1; /* Don't count host events */
+-	attr.config = (select_idx == ARMV8_PMU_CYCLE_IDX) ?
++	attr.config = (pmc->idx == ARMV8_PMU_CYCLE_IDX) ?
+ 		ARMV8_PMUV3_PERFCTR_CPU_CYCLES : eventsel;
+ 
+-	counter = kvm_pmu_get_counter_value(vcpu, select_idx);
+-	/* The initial sample period (overflow count) of an event. */
+-	if (pmc->idx == ARMV8_PMU_CYCLE_IDX &&
+-	    __vcpu_sys_reg(vcpu, PMCR_EL0) & ARMV8_PMU_PMCR_LC)
++	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
++
++	if (kvm_pmu_idx_has_chain_evtype(vcpu, pmc->idx)) {
++		/**
++		 * The initial sample period (overflow count) of an event. For
++		 * chained counters we only support overflow interrupts on the
++		 * high counter.
++		 */
+ 		attr.sample_period = (-counter) & GENMASK(63, 0);
+-	else
+-		attr.sample_period = (-counter) & GENMASK(31, 0);
++		event = perf_event_create_kernel_counter(&attr, -1, current,
++							 kvm_pmu_perf_overflow,
++							 pmc + 1);
+ 
+-	event = perf_event_create_kernel_counter(&attr, -1, current,
++		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
++			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
++	} else {
++		/* The initial sample period (overflow count) of an event. */
++		if (pmc->idx == ARMV8_PMU_CYCLE_IDX &&
++		    __vcpu_sys_reg(vcpu, PMCR_EL0) & ARMV8_PMU_PMCR_LC)
++			attr.sample_period = (-counter) & GENMASK(63, 0);
++		else
++			attr.sample_period = (-counter) & GENMASK(31, 0);
++
++		event = perf_event_create_kernel_counter(&attr, -1, current,
+ 						 kvm_pmu_perf_overflow, pmc);
++	}
++
+ 	if (IS_ERR(event)) {
+ 		pr_err_once("kvm: pmu event creation failed %ld\n",
+ 			    PTR_ERR(event));
+@@ -432,6 +582,33 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+ 	pmc->perf_event = event;
  }
  
- static bool kvm_pmu_counter_is_enabled(struct kvm_vcpu *vcpu, u64 select_idx)
-@@ -420,7 +415,11 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
++/**
++ * kvm_pmu_update_pmc_chained - update chained bitmap
++ * @vcpu: The vcpu pointer
++ * @select_idx: The number of selected counter
++ *
++ * Update the chained bitmap based on the event type written in the
++ * typer register.
++ */
++static void kvm_pmu_update_pmc_chained(struct kvm_vcpu *vcpu, u64 select_idx)
++{
++	struct kvm_pmu *pmu = &vcpu->arch.pmu;
++	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
++
++	if (kvm_pmu_idx_has_chain_evtype(vcpu, pmc->idx)) {
++		/*
++		 * During promotion from !chained to chained we must ensure
++		 * the adjacent counter is stopped and its event destroyed
++		 */
++		if (!kvm_pmu_pmc_is_chained(pmc))
++			kvm_pmu_stop_counter(vcpu, pmc);
++
++		set_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
++	} else {
++		clear_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
++	}
++}
++
+ /**
+  * kvm_pmu_set_counter_event_type - set selected counter to monitor some event
+  * @vcpu: The vcpu pointer
+@@ -451,6 +628,8 @@ void kvm_pmu_set_counter_event_type(struct kvm_vcpu *vcpu, u64 data,
+ 	      ? PMCCFILTR_EL0 : PMEVTYPER0_EL0 + select_idx;
  
- 	counter = kvm_pmu_get_counter_value(vcpu, select_idx);
- 	/* The initial sample period (overflow count) of an event. */
--	attr.sample_period = (-counter) & pmc->bitmask;
-+	if (pmc->idx == ARMV8_PMU_CYCLE_IDX &&
-+	    __vcpu_sys_reg(vcpu, PMCR_EL0) & ARMV8_PMU_PMCR_LC)
-+		attr.sample_period = (-counter) & GENMASK(63, 0);
-+	else
-+		attr.sample_period = (-counter) & GENMASK(31, 0);
+ 	__vcpu_sys_reg(vcpu, reg) = event_type;
++
++	kvm_pmu_update_pmc_chained(vcpu, select_idx);
+ 	kvm_pmu_create_perf_event(vcpu, select_idx);
+ }
  
- 	event = perf_event_create_kernel_counter(&attr, -1, current,
- 						 kvm_pmu_perf_overflow, pmc);
 -- 
 2.21.0
 
