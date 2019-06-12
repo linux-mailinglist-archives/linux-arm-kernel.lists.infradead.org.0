@@ -2,80 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E07B41F1C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 10:31:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 454D741F83
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 10:44:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZlhC2Zv4D+e7FQkWqZuHZDM1foyiSkFhyFezxLknSwc=; b=j3d5eMp+eAbvQH
-	8HJQV3oRwEPm49hooxIws0ETELm0Ajh2Nof1bKXQPwQGkh+np2celxGBX+uMarHEr2r4UdCAqB54Y
-	v9qvogFPhsxRSKlkT7wbkZMxybkIbeZKD0S5Wiw/nARlRS+NGcoBYrP1SV2hd3gchYGfjTvSWrfca
-	Aw+pYTfr4WpzczJmUeJNm85wDRNSZP+xfiQ4g/aKoERpIn2HdDrfDnQxsFm17k3S0VKd+/WhM+GcZ
-	0BfGSZsWRrNQB7WuKaxdH0j2Ow81wFvQW8AejtR+zqbDwiZjBcl7bQbw/uZDWP0Jy6kxhQaKIvIXV
-	tVG8RBcKTjk6vybJkWEw==;
+	List-Owner; bh=8vux2EidERzGOUsCqViRBGsRm5idN4daRJ7f91/R2Q0=; b=Tt/z6SAhYCrHJ0
+	KnnLISlDnW1uoFu/FyQo5S6PTJ3JY1i1mBCgSS49XurccoEupHOh3xGxPcaQM1l1aFpZMwNNpfTiX
+	4GGkIXAE8kRGCYrEcP8zd3OllcgYpna2qoTfpWnvaimaa7U34bajAXmpcK7Ih3w6U5fPhwGU5LWRP
+	uatnu5V8GRraoEYB8JfhSXQUvYuI+fmW+YnWZseFug0eCfJQOjsgLW8P8YonF+V0+Gy3Kt+EPLET9
+	bVhNI985xER5AuyyCGS/qPkgm7gVuWXDqwBlpBMAwyelH+wzr97tpaD69NSTy4KCnX2NqLLYBtnTZ
+	a2JZYaq4t4xniOP7fFZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hayfS-0005ba-Og; Wed, 12 Jun 2019 08:31:38 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
+	id 1hayrv-0000md-HN; Wed, 12 Jun 2019 08:44:31 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hayfC-0005at-Qp
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 08:31:24 +0000
-Received: by mail-qk1-f196.google.com with SMTP id i125so9535913qkd.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 01:31:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=amZ8LRkQPQSX4K2c2VzVofPEOqqTn0oph48teP/8EWw=;
- b=WeIrRZURAHI2cj91mm25cPdq2RF4a8VDF2gxukTj6EQz+ifCU2cVaqY1Q5jYI2Q/Bk
- usGFTwKHct9fJ5PMF0MEL1ouDAqcPzUhlIqzOaa0+dT62oAO8EcL/DpjcGcTGhHo+n8Z
- gUEXR3OSmkGt1DlQNmq5fVgQ+/ErnEkbo0HA5eqWq6eCqtgbW6Bvxs5ko1bWW8/bVg0N
- L9+lK80s2sOdeesGCdZ4CMLOy9IIChLzYFeaczjHsVV32TDMw71AbGC1+LbY+hutZ5wo
- UYdKS2trSVREwjr+YCySlh6P4ADaktVptZFl/rj1WY99RCDBzlVdTwRaShZER0vTzu3K
- ktgw==
-X-Gm-Message-State: APjAAAWsRZ3zIj6s/8CBhgXY/9S/fd4NkwX6cywGpTlPlXmHys2EGU0A
- J1cocLfhB7J/ZYfDJpBNMyoKDlW1Cs/JepTa2QI=
-X-Google-Smtp-Source: APXvYqw8M9NVS5FWEo9c/CfCQavp0lk2HRFD2/V+fVHJmBJioytq8q6qxeJpvv/aHiDmMVt0v3DO6nTZszcSwl8ZWJY=
-X-Received: by 2002:a05:620a:35e:: with SMTP id
- t30mr64863407qkm.14.1560328281195; 
- Wed, 12 Jun 2019 01:31:21 -0700 (PDT)
+ id 1hayri-0000lv-4F
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 08:44:19 +0000
+Received: from localhost (unknown [131.228.32.190])
+ (Authenticated sender: gregory.clement@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id E27C6200006;
+ Wed, 12 Jun 2019 08:44:06 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Jan =?utf-8?Q?Kundr=C3=A1t?= <jan.kundrat@cesnet.cz>, Russell King - ARM
+ Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH] ARM: mvebu_v7_defconfig: fix Ethernet on Clearfog
+In-Reply-To: <44a6f83c-f59a-4a6a-b38f-a204b38946c0@cesnet.cz>
+References: <8f2f4c517f1664f362badc2a0f9af8e3531cba87.1558105715.git.jan.kundrat@cesnet.cz>
+ <87pnogzxmy.fsf@FE-laptop> <871fc85b-5f0a-40a4-ade2-0701796bcd9a@cesnet.cz>
+ <87mujkzwkr.fsf@FE-laptop> <0609d750-de5e-49cb-97b5-43772c5bbe0d@cesnet.cz>
+ <0f5e7886-f722-44ac-b64f-1f372a52938d@cesnet.cz> <87wohspdi7.fsf@FE-laptop>
+ <20190611143239.3v2cpg5o4u5gxzzw@shell.armlinux.org.uk>
+ <87pnnkp3i1.fsf@FE-laptop> <537260c6-184e-421e-8d29-414da62a747d@cesnet.cz>
+ <20190611153147.djcbzgeea2chn7ic@shell.armlinux.org.uk>
+ <44a6f83c-f59a-4a6a-b38f-a204b38946c0@cesnet.cz>
+Date: Wed, 12 Jun 2019 10:44:04 +0200
+Message-ID: <87muinp50r.fsf@FE-laptop>
 MIME-Version: 1.0
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
- <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
- <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
-In-Reply-To: <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 12 Jun 2019 10:31:04 +0200
-Message-ID: <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-To: Dan Williams <dcbw@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_013122_873539_E55252DD 
-X-CRM114-Status: GOOD (  15.80  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190612_014418_333188_A265EE6A 
+X-CRM114-Status: UNSURE (   9.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,97 +67,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
- linux-arm-msm@vger.kernel.org, Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Networking <netdev@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alex Elder <elder@linaro.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
- abhishek.esse@gmail.com, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Baruch Siach <baruch@tkos.co.il>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 7:23 PM Dan Williams <dcbw@redhat.com> wrote:
-> On Tue, 2019-06-11 at 10:52 -0600, Subash Abhinov Kasiviswanathan wrote:
->
-> rmnet should handle muxing the QMAP, QoS, and aggregation and pass the
-> resulting packet to the lower layer. That lower layer could be IPA or
-> qmi_wwan, which in turn passes that QMAP packet to USB or GSI or
-> whatever. This is typically how Linux handles clean abstractions
-> between different protocol layers in drivers.
->
-> Similar to some WiFi drivers (drivers/net/wireless/marvell/libertas for
-> example) where the same firmware interface can be accessed via PCI,
-> SDIO, USB, SPI, etc. The bus-specific code is self-contained and does
-> not creep into the upper more generic parts.
-
-Yes, I think that is a good model. In case of libertas, we have multiple
-layers inheritence from the basic device (slightly different in the
-implementation,
-but that is how it should be):
-
-struct if_cs_card { /* pcmcia specific */
-     struct lbs_private {  /* libertas specific */
-           struct wireless_dev { /* 802.11 specific */
-                  struct net_device {
-                        struct device {
-                              ...
-                        };
-                        ...
-                  };
-                  ...
-           };
-           ...
-      };
-      ...
-};
-
-The outer structure gets allocated when probing the hardware specific
-driver, and everything below it is implemented as direct function calls
-into the more generic code, or as function pointers into the more specific
-code.
-
-The current rmnet model is different in that by design the upper layer
-(rmnet) and the lower layer (qmi_wwan, ipa, ...) are kept independent in
-both directions, i.e. ipa has (almost) no knowledge of rmnet, and just
-has pointers to the other net_device:
-
-       ipa_device
-           net_device
-
-       rmnet_port
-           net_device
-
-I understand that the rmnet model was intended to provide a cleaner
-abstraction, but it's not how we normally structure subsystems in
-Linux, and moving to a model more like how wireless_dev works
-would improve both readability and performance, as you describe
-it, it would be more like (ignoring for now the need for multiple
-connections):
-
-   ipa_dev
-        rmnet_dev
-               wwan_dev
-                      net_device
-
-Where each layer is a specialization of the next. Note: this is a
-common change when moving from proprietary code to upstream
-code. If a driver module is designed to live out of tree, there
-is a strong incentive to limit the number of interfaces it uses,
-but when it gets merged, it becomes much more flexible, as
-an internal interface between wwan_dev and the hardware driver(s)
-can be easily changed by modifying all drivers at once.
-
-       Arnd
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SmFuIEt1bmRyw6F0IDxqYW4ua3VuZHJhdEBjZXNuZXQuY3o+IHdyaXRlczoKCj4+PiBJIGhhdmUg
+bm90IGJpc2VjdGVkLCBidXQgSSB0aGluayB0aGF0IGl0IGlzIGR1ZSB0byAKPj4+IGh0dHBzOi8v
+Z2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4Lmdp
+dC9jb21taXQvP2lkPWExMGMxYzgxOTFlMDRjMjE3Njk2NTZjMmNhOGUxYzY5YTYyMTg5NTQKPj4+
+IAo+Pj4gTm8gZ3VhcmFudGVlcyB0aGVyZSwgdGhvdWdoLgo+Pgo+PiBDb3JyZWN0LCB3aGljaCBt
+ZWFucyBpdCBkb2VzIG5lZWQgYmFja3BvcnRpbmcgdG8gNS4xLCBzaW5jZSB0aGF0IHdhcwo+PiBp
+bnRyb2R1Y2VkIGluIHRoZSA1LjEgbWVyZ2Ugd2luZG93Lgo+Cj4gLi4ud2hpY2ggbWVhbnMgdGhh
+dCBJIG1hZGUgYSBtaXN0YWtlIGR1cmluZyBteSBpbml0aWFsIHJlcG9ydC4gSWYgaXQncyBpbiAK
+PiA1LjEgYWxyZWFkeSwgdGhlbiA1LjEgY291bGQgbm90IGhhdmUgd29ya2VkIGZvciBtZS4gU29y
+cnkgZm9yIGNvbmZ1c2lvbiwgCj4gaXQncyBxdWl0ZSBwb3NzaWJsZSB0aGF0IEkgY29tcGFyZWQg
+NS4yLXJjWCB3aXRoIDUuMC55LgoKU28gSSBhZGRlZCB0aGUgRml4ZXMgdGFnIGFuZCBjb3JyZWN0
+IHRoZSBjb21taXQgbG9nLCBtZW50aW9uaW5nIDUuMQppbnN0ZWFkIG9mIDUuMi4KClRoZSBjb21t
+aXQgaXMgaW4gbXZlYnUvZml4ZXMgYW5kIGZvci1uZXh0IG9uCmdpdDovL2dpdC5pbmZyYWRlYWQu
+b3JnL2xpbnV4LW12ZWJ1LmdpdCBhbmQgd2lsbCBiZSBwYXJ0IG9mIHRoZSBGaXhlcwpwdWxsIHJl
+cXVlc3QgSSB3aWxsIGRvIGF0IHRoZSBlbmQgb2YgdGhlIHdlZWsuCgpHcmVnb3J5Cgo+Cj4gSmFu
+Cj4KPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IGxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCgotLSAKR3JlZ29yeSBDbGVtZW50LCBCb290bGluCkVtYmVkZGVkIExp
+bnV4IGFuZCBLZXJuZWwgZW5naW5lZXJpbmcKaHR0cDovL2Jvb3RsaW4uY29tCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
