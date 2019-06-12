@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7527842A7F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:13:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BCD242AA5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:18:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0fwvsfdoZpV0UjJzrAMPYjb5haTNG9PP6pegIOlY1sg=; b=NpsDORpw+8mFIK
-	QPBNOqifp0HQVVctgNAYTTIPAtRhL5g8uhLr/Ue2i0AMxAxA4t1V9JnOYk3rJdJfkErcsvjqvihvn
-	eQ+OKHSIvEmgdQsrmqnNLX7BVzlNjluO8xTbVCUzOzA6hwnhQKR7wVDWt8ZESDeUKGbohr1h+yNST
-	clpzoV00xn5c8YqjJ3f69iLRb11n2ytkFEijqaxG2rRlCBquZ8SLsO2c+NABmBAm+vtiyKfEENmMX
-	6aulstsS0LCZa2nWS3VCcba4gXffxf/mRiNFnTSs4SuA5/yu1Eq4L1GyNGcZ4nAOp3/AHTQMivEC0
-	+AFIfxvvG9hmBUQ6QaTw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HnW6vJlwMkyptPPT2k9MBhQKx+jq2V7z76JYzYiOL/Q=; b=LsTkKkHwIh67xt
+	f+6gnw3LTsWuJEXHI/duMgdO2FT0d2klF0E+x6ssmQ5vikrEjkA6KjHRy7dV4TjKsgPx0HEyjtaEr
+	DlivbxK6s8+ZbVqHzRQ1tEqkgoDI3RxxN31tzFHbp7VEoaVVOSS3Bf9CFLYVLFp6qh+8JCrzRPIw3
+	KmGeEmoN18d2Z9OF4fKl96aUBWwJWbRVD/ISqhlG4ZXsGkaHy9SXBjN7wnuK+z3R/v1AGZK9EWuMh
+	h/hy1bmkeXwc5LxwUvYuTRcVbXxNqHdmNXNj2GOKyAhMaR3CZyhbdnqjRUwhGmFEjvggCCswwNrJd
+	KP6n7QNGY84OA4aw//8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb4wa-0008A8-TT; Wed, 12 Jun 2019 15:13:44 +0000
+	id 1hb51P-000226-T3; Wed, 12 Jun 2019 15:18:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb4wS-00088Q-7H
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:13:38 +0000
+ id 1hb51H-00021e-Rc
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:18:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE1ED337;
- Wed, 12 Jun 2019 08:13:35 -0700 (PDT)
-Received: from redmoon (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BBD033F557;
- Wed, 12 Jun 2019 08:13:33 -0700 (PDT)
-Date: Wed, 12 Jun 2019 16:13:31 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
-Subject: Re: [PATCHv5 07/20] PCI: mobiveil: Use WIN_NUM_0 explicitly for CFG
- outbound window
-Message-ID: <20190612151331.GE15747@redmoon>
-References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
- <20190412083635.33626-8-Zhiqiang.Hou@nxp.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE7702B;
+ Wed, 12 Jun 2019 08:18:34 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 030E43F73C;
+ Wed, 12 Jun 2019 08:18:33 -0700 (PDT)
+Subject: Re: [PATCH 2/2] arm64: Implement panic_smp_self_stop()
+To: Aaro Koskinen <aaro.koskinen@iki.fi>
+References: <20190611181050.9647-1-aaro.koskinen@iki.fi>
+ <20190611181050.9647-2-aaro.koskinen@iki.fi>
+From: James Morse <james.morse@arm.com>
+Message-ID: <a91a65a9-5b49-130d-a824-f719071b4263@arm.com>
+Date: Wed, 12 Jun 2019 16:18:32 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190412083635.33626-8-Zhiqiang.Hou@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190611181050.9647-2-aaro.koskinen@iki.fi>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_081336_331935_105237F2 
-X-CRM114-Status: GOOD (  14.69  )
+X-CRM114-CacheID: sfid-20190612_081835_941650_A4612F5D 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,65 +62,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
+ Will Deacon <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Aaro Koskinen <aaro.koskinen@nokia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 12, 2019 at 08:35:54AM +0000, Z.q. Hou wrote:
-> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> 
-> As the .map_bus() use the WIN_NUM_0 for CFG transactions,
-> it's better passing WIN_NUM_0 explicitly when initialize
-> the CFG outbound window.
-> 
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
-> Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
-> ---
-> V5:
->  - Corrected the subject.
-> 
->  drivers/pci/controller/pcie-mobiveil.c | 5 ++---
->  1 file changed, 2 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-> index b2cc9c097fc9..df71c11b4810 100644
-> --- a/drivers/pci/controller/pcie-mobiveil.c
-> +++ b/drivers/pci/controller/pcie-mobiveil.c
-> @@ -612,9 +612,8 @@ static int mobiveil_host_init(struct mobiveil_pcie *pcie)
->  	 */
->  
->  	/* config outbound translation window */
-> -	program_ob_windows(pcie, pcie->ob_wins_configured,
-> -			   pcie->ob_io_res->start, 0, CFG_WINDOW_TYPE,
-> -			   resource_size(pcie->ob_io_res));
-> +	program_ob_windows(pcie, WIN_NUM_0, pcie->ob_io_res->start, 0,
-> +			   CFG_WINDOW_TYPE, resource_size(pcie->ob_io_res));
+Hi Aaro,
 
-This makes sense - current code is quite obscure and prone to
-bugs.
-
-Lorenzo
-
->  	/* memory inbound translation window */
->  	program_ib_windows(pcie, WIN_NUM_1, 0, MEM_WINDOW_TYPE, IB_WIN_SIZE);
-> -- 
-> 2.17.1
+On 11/06/2019 19:10, Aaro Koskinen wrote:
+> From: Aaro Koskinen <aaro.koskinen@nokia.com>
 > 
+> Currently arm64 uses the default implementation of panic_smp_self_stop()
+> that is simply a cpu_relax() loop. As a result, when two CPUs panic()
+> simultaneously we get "SMP: failed to stop secondary CPUs" warnings and
+> extra delays before a reset.
+
+> Provide an implementation of panic_smp_self_stop() that offlines the
+> CPU properly.
+
+This had me looking to the PSCI call that would take the CPU offline, but its just
+conflicting terminology. Its the:
+| set_cpu_online(cpu, false);
+you're referring to here.
+
+Would 'marks the CPU offline' be clearer?
+
+
+Regardless,
+Reviewed-by: James Morse <james.morse@arm.com>
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
