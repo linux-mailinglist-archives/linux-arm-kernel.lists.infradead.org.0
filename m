@@ -2,67 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D2DE425A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:27:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9EE4425BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:28:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nvpMjgZzFiG3MabCgdBeAgDx8LzktFlCcHUgfnhRw+Q=; b=c3vcaKnZXBNy0y
-	7lkNr91Zhf5gYaAl/PN2a8re5VlTz9fZcQJg0vh02i2NqI1NKl9KaJoxqhsSy3PSn9cpu/8nS+G4S
-	aoZYLhcVolA55Agl8530ItPRVH3MymEV+X2TncmKUJj+MwkaUOBu5NFDdU9cqm0NinUcXrPIXpmJE
-	lSfk72kBFO5I+vpeWj9QbSiPmyZlYch2bGY2v9iHhMC04i0HUTg5xiYAVyiyLGMaLFEdujQ5h3A5V
-	GqSu44zWp74TBqR3K3oz9PM7ZB3EH453FL7UH5d+uNw7FuDKeqYkQnX2VJv6wuSUvUiQfatubGdxM
-	ZivZe8zZ1PrcRS9hpnEw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ED5og7Gs9k93dvs7Mo/sZ9VrsRvN06/JdSBR1A0I+JY=; b=GCzsl6ZeFILtc8
+	BRkNMkrWsGtKKFnEUojids0URYEIruZjgjrSGvtSsbCaJ4Zs2Tl4Fujbpp/LmjmKwmPYlsmdIDQlO
+	K6HUFRdR5Y3yLir/hmC518CHmcnY0S+ahcNvmizra6p99aGDN7EKl3sO/D0cVPeuVmH6tfiLM6eLN
+	5gkQpmtaB6Hd9vC4XHAG754eyWOIaGVrQ73g3npz7npj54DLCrgbYmEpiWil1GLtPSeXfkp+PtJrU
+	WM+mS8cr2liigr9dQ/oRDGuTgUX1iJTtXeWZoR28lgcvpVsiZ/u13RiTTv6zOTN3szMn7WAPZ5J8R
+	cplfKdlaP/SrJx30dN8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb2LK-0007w5-0a; Wed, 12 Jun 2019 12:27:06 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb2Kc-0007W4-EY
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:26:24 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C30CE20874;
- Wed, 12 Jun 2019 12:26:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560342381;
- bh=Q4DR0ZfiZ07BcC65F0iVrnB89qNKvjsdzyOF+UzlnSQ=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=aPC3w47Vx4ftoEzC0SsDE+HJwteGfxPGeFUoMw9bN6/EEl0kVTPxjAemiNyEmzRgG
- aJHK/b3tZIB/D2HWMXXdc9igxJLIPPdKuaW4ZOMyoThY2zXQED00PVpLu8FQAbD6U6
- J2DdHQWrJ2eiiigK2Cuk6+JI48CDDkiEaPlnG7WY=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: dan.j.williams@intel.com,
-	vkoul@kernel.org
-Subject: [PATCH 6/6] dma: qcom: hidma: no need to check return value of
- debugfs_create functions
-Date: Wed, 12 Jun 2019 14:25:57 +0200
-Message-Id: <20190612122557.24158-6-gregkh@linuxfoundation.org>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190612122557.24158-1-gregkh@linuxfoundation.org>
-References: <20190612122557.24158-1-gregkh@linuxfoundation.org>
+	id 1hb2Mn-00008h-MQ; Wed, 12 Jun 2019 12:28:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb2Mf-00007q-2E
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:28:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E37B928;
+ Wed, 12 Jun 2019 05:28:25 -0700 (PDT)
+Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F03F13F246;
+ Wed, 12 Jun 2019 05:30:07 -0700 (PDT)
+Subject: Re: [PATCH v2 1/9] KVM: arm/arm64: vgic: Add LPI translation cache
+ definition
+From: Julien Thierry <julien.thierry@arm.com>
+To: Marc Zyngier <marc.zyngier@arm.com>
+References: <20190611170336.121706-1-marc.zyngier@arm.com>
+ <20190611170336.121706-2-marc.zyngier@arm.com>
+ <54c8547a-51fb-8ae5-975f-261d3934221a@arm.com>
+ <86ef3zgmg6.wl-marc.zyngier@arm.com>
+ <13655730-165b-d67b-a1da-11c8869c7053@arm.com>
+Message-ID: <29cdb9f5-86c6-e86f-3827-4426a4fa8ac1@arm.com>
+Date: Wed, 12 Jun 2019 13:28:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.2.1
 MIME-Version: 1.0
+In-Reply-To: <13655730-165b-d67b-a1da-11c8869c7053@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_052622_544056_57B51D53 
-X-CRM114-Status: GOOD (  15.15  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190612_052829_205523_3516F88B 
+X-CRM114-Status: GOOD (  32.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,133 +66,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sinan Kaya <okaya@kernel.org>, linux-kernel@vger.kernel.org,
- David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
- linux-arm-msm@vger.kernel.org, dmaengine@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "Raslan, KarimAllah" <karahmed@amazon.de>,
+ linux-arm-kernel@lists.infradead.org, "Saidi, Ali" <alisaidi@amazon.com>,
+ kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When calling debugfs functions, there is no need to ever check the
-return value.  The function can work or not, but the code logic should
-never do something different based on this.
 
-Also, because there is no need to save the file dentry, remove the
-variables that were saving them as they were never even being used once
-set.
 
-Cc: Sinan Kaya <okaya@kernel.org>
-Cc: Andy Gross <agross@kernel.org>
-Cc: David Brown <david.brown@linaro.org>
-Cc: Dan Williams <dan.j.williams@intel.com>
-Cc: Vinod Koul <vkoul@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-arm-msm@vger.kernel.org
-Cc: dmaengine@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- drivers/dma/qcom/hidma.h     |  5 +----
- drivers/dma/qcom/hidma_dbg.c | 37 +++++++-----------------------------
- 2 files changed, 8 insertions(+), 34 deletions(-)
+On 12/06/2019 11:58, Julien Thierry wrote:
+> 
+> 
+> On 12/06/2019 10:52, Marc Zyngier wrote:
+>> Hi Julien,
+>>
+>> On Wed, 12 Jun 2019 09:16:21 +0100,
+>> Julien Thierry <julien.thierry@arm.com> wrote:
+>>>
+>>> Hi Marc,
+>>>
+>>> On 11/06/2019 18:03, Marc Zyngier wrote:
+>>>> Add the basic data structure that expresses an MSI to LPI
+>>>> translation as well as the allocation/release hooks.
+>>>>
+>>>> THe size of the cache is arbitrarily defined as 4*nr_vcpus.
+>>>>
+>>>
+>>> The size has been arbitrarily changed to 16*nr_vcpus :) .
+>>
+>> Well spotted! ;-)
+>>
+>>>
+>>> Nit: The*
+>>
+>> Ah, usual lazy finger on the Shift key... One day I'll learn to type.
+>>
+>>>
+>>>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
+>>>> ---
+>>>>  include/kvm/arm_vgic.h        |  3 +++
+>>>>  virt/kvm/arm/vgic/vgic-init.c |  5 ++++
+>>>>  virt/kvm/arm/vgic/vgic-its.c  | 49 +++++++++++++++++++++++++++++++++++
+>>>>  virt/kvm/arm/vgic/vgic.h      |  2 ++
+>>>>  4 files changed, 59 insertions(+)
+>>>>
+> 
+> [...]
+> 
+>>>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
+>>>> index 44ceaccb18cf..ce9bcddeb7f1 100644
+>>>> --- a/virt/kvm/arm/vgic/vgic-its.c
+>>>> +++ b/virt/kvm/arm/vgic/vgic-its.c
+>>>> @@ -149,6 +149,14 @@ struct its_ite {
+>>>>  	u32 event_id;
+>>>>  };
+>>>>  
+>>>> +struct vgic_translation_cache_entry {
+>>>> +	struct list_head	entry;
+>>>> +	phys_addr_t		db;
+>>>> +	u32			devid;
+>>>> +	u32			eventid;
+>>>> +	struct vgic_irq		*irq;
+>>>> +};
+>>>> +
+>>>>  /**
+>>>>   * struct vgic_its_abi - ITS abi ops and settings
+>>>>   * @cte_esz: collection table entry size
+>>>> @@ -1668,6 +1676,45 @@ static int vgic_register_its_iodev(struct kvm *kvm, struct vgic_its *its,
+>>>>  	return ret;
+>>>>  }
+>>>>  
+>>>> +/* Default is 16 cached LPIs per vcpu */
+>>>> +#define LPI_DEFAULT_PCPU_CACHE_SIZE	16
+>>>> +
+>>>> +void vgic_lpi_translation_cache_init(struct kvm *kvm)
+>>>> +{
+>>>> +	struct vgic_dist *dist = &kvm->arch.vgic;
+>>>> +	unsigned int sz;
+>>>> +	int i;
+>>>> +
+>>>> +	if (!list_empty(&dist->lpi_translation_cache))
+>>>> +		return;
+>>>> +
+>>>> +	sz = atomic_read(&kvm->online_vcpus) * LPI_DEFAULT_PCPU_CACHE_SIZE;
+>>>> +
+>>>> +	for (i = 0; i < sz; i++) {
+>>>> +		struct vgic_translation_cache_entry *cte;
+>>>> +
+>>>> +		/* An allocation failure is not fatal */
+>>>> +		cte = kzalloc(sizeof(*cte), GFP_KERNEL);
+>>>> +		if (WARN_ON(!cte))
+>>>> +			break;
+>>>> +
+>>>> +		INIT_LIST_HEAD(&cte->entry);
+>>>> +		list_add(&cte->entry, &dist->lpi_translation_cache);
+>>>
+>>> Going through the series, it looks like this list is either empty
+>>> (before the cache init) or has a fixed number
+>>> (LPI_DEFAULT_PCPU_CACHE_SIZE * nr_cpus) of entries.
+>>
+>> Well, it could also fail when allocating one of the entry, meaning we
+>> can have an allocation ranging from 0 to (LPI_DEFAULT_PCPU_CACHE_SIZE
+>> * nr_cpus) entries.
+>>
+>>> And the list never grows nor shrinks throughout the series, so it
+>>> seems odd to be using a list here.
+>>>
+>>> Is there a reason for not using a dynamically allocated array instead of
+>>> the list? (does list_move() provide a big perf advantage over swapping
+>>> the data from one array entry to another? Or is there some other
+>>> facility I am missing?
+>>
+>> The idea was to make the LRU policy cheap, on the assumption that
+>> list_move (which is only a couple of pointer updates) is cheaper than
+>> a memmove if you want to keep the array ordered. If we exclude the
+>> list head, we end-up with 24 bytes per entry to move down to make room
+>> for the new entry at the head of the array. For large caches that miss
+>> very often, this will hurt badly. But is that really a problem? I
+>> don't know.
+>>
+> 
+> Yes, I realized afterwards that the LRU uses the fact you can easily
+> move list entries without modifying the rest of the list.
+> 
+>> We could allocate an array as you suggest, and use a linked list
+>> inside the array. Or something else. I'm definitely open to
+>> suggestion!
+> 
+> If it there turns out to be some benefit to just you a fixed array, we
+> could use a simple ring buffer. Have one pointer on the most recently
+> inserted entry (and we know the next insertion will take place on the
+> entry "just before" it) and one pointer on the least recently used entry
+> (which gets moved when the most recently inserted catches up to it) so
+> we know where to stop when looping. We don't really have to worry about
+> the "ring buffer" full case since that means we just overwrite the LRU
+> and move the pointer.
+> 
+> This might prove a bit more efficient when looping over the cache
+> entries compared to the list. However, I have no certainty of actual
+> performance gain from that and the current implementation has the
+> benefit of being simple.
+> 
+> Let me know if you decide to give the ring buffer approach a try.
+> 
+> Otherwise there's always the option to add even more complex structure
+> with a hashtable + linked list using hashes and tags to lookup the
+> entries. But keeping things simple for now seems reasonable (also, it
+> avoids having to think about what to use as hash and tag :D ).
+> 
 
-diff --git a/drivers/dma/qcom/hidma.h b/drivers/dma/qcom/hidma.h
-index 5f9966e82c0b..36357d02333a 100644
---- a/drivers/dma/qcom/hidma.h
-+++ b/drivers/dma/qcom/hidma.h
-@@ -101,8 +101,6 @@ struct hidma_chan {
- 	 * It is used by the DMA complete notification to
- 	 * locate the descriptor that initiated the transfer.
- 	 */
--	struct dentry			*debugfs;
--	struct dentry			*stats;
- 	struct hidma_dev		*dmadev;
- 	struct hidma_desc		*running;
- 
-@@ -134,7 +132,6 @@ struct hidma_dev {
- 	struct dma_device		ddev;
- 
- 	struct dentry			*debugfs;
--	struct dentry			*stats;
- 
- 	/* sysfs entry for the channel id */
- 	struct device_attribute		*chid_attrs;
-@@ -166,6 +163,6 @@ irqreturn_t hidma_ll_inthandler(int irq, void *arg);
- irqreturn_t hidma_ll_inthandler_msi(int irq, void *arg, int cause);
- void hidma_cleanup_pending_tre(struct hidma_lldev *llhndl, u8 err_info,
- 				u8 err_code);
--int hidma_debug_init(struct hidma_dev *dmadev);
-+void hidma_debug_init(struct hidma_dev *dmadev);
- void hidma_debug_uninit(struct hidma_dev *dmadev);
- #endif
-diff --git a/drivers/dma/qcom/hidma_dbg.c b/drivers/dma/qcom/hidma_dbg.c
-index 9523faf7acdc..994f448b64d8 100644
---- a/drivers/dma/qcom/hidma_dbg.c
-+++ b/drivers/dma/qcom/hidma_dbg.c
-@@ -146,17 +146,13 @@ void hidma_debug_uninit(struct hidma_dev *dmadev)
- 	debugfs_remove_recursive(dmadev->debugfs);
- }
- 
--int hidma_debug_init(struct hidma_dev *dmadev)
-+void hidma_debug_init(struct hidma_dev *dmadev)
- {
--	int rc = 0;
- 	int chidx = 0;
- 	struct list_head *position = NULL;
-+	struct dentry *dir;
- 
- 	dmadev->debugfs = debugfs_create_dir(dev_name(dmadev->ddev.dev), NULL);
--	if (!dmadev->debugfs) {
--		rc = -ENODEV;
--		return rc;
--	}
- 
- 	/* walk through the virtual channel list */
- 	list_for_each(position, &dmadev->ddev.channels) {
-@@ -165,32 +161,13 @@ int hidma_debug_init(struct hidma_dev *dmadev)
- 		chan = list_entry(position, struct hidma_chan,
- 				  chan.device_node);
- 		sprintf(chan->dbg_name, "chan%d", chidx);
--		chan->debugfs = debugfs_create_dir(chan->dbg_name,
-+		dir = debugfs_create_dir(chan->dbg_name,
- 						   dmadev->debugfs);
--		if (!chan->debugfs) {
--			rc = -ENOMEM;
--			goto cleanup;
--		}
--		chan->stats = debugfs_create_file("stats", S_IRUGO,
--						  chan->debugfs, chan,
--						  &hidma_chan_fops);
--		if (!chan->stats) {
--			rc = -ENOMEM;
--			goto cleanup;
--		}
-+		debugfs_create_file("stats", S_IRUGO, dir, chan,
-+				    &hidma_chan_fops);
- 		chidx++;
- 	}
- 
--	dmadev->stats = debugfs_create_file("stats", S_IRUGO,
--					    dmadev->debugfs, dmadev,
--					    &hidma_dma_fops);
--	if (!dmadev->stats) {
--		rc = -ENOMEM;
--		goto cleanup;
--	}
--
--	return 0;
--cleanup:
--	hidma_debug_uninit(dmadev);
--	return rc;
-+	debugfs_create_file("stats", S_IRUGO, dmadev->debugfs, dmadev,
-+			    &hidma_dma_fops);
- }
+Acutally, still not a good approach for when there is a cache hit and we
+want to move a entry to the most recently used position.
+
+List seems like the best approach in terms of keeping it simple.
+
+Sorry for the noise.
+
 -- 
-2.22.0
-
+Julien Thierry
 
 _______________________________________________
 linux-arm-kernel mailing list
