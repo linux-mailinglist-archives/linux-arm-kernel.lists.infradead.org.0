@@ -2,60 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85C034232A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:59:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CFB442329
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:59:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KrQ6FagTQJPJE8bvjyWXPXesn1NPj4kJOvA7qsVKiUA=; b=FfycCxHbqs8vGT
-	gMAcMRo1SQmf8Nd0H80OQ1SWFKHWT+tGXGnpbEHSj/dHt2RQoQTwmsJPk+B0aF59S3Q7VKnXDRHPG
-	lNM1LaJR8roJAYJh1yHuy9HPM5IwLBCNFyrSCBDEScqL3nlxOQc8s5JZ9XDv7noypeWI/KZQx2v5+
-	k3NPz3STPkNOUOaxbq1A5ogeSxQvmR1lZlgEmBYnSkIBV/+8SRJ5GMWXOgqIky6XepFh2EvELo+MB
-	yuayM3cRDSCHsuIp7b9wgXboqN0fRXjiDSFIt9cRGjbY1V2Cojn7fFfRMX1rLZANex73l8YkBHCnU
-	h5kMUBSJMQQzuSG9vT8g==;
+	List-Owner; bh=hSDeFf7vmOaAUqhyNY6k/4Ic0ZuAhfSLEYP8gDZM9UE=; b=c+ee9vXeLHiQVA
+	/9w8CJ51gvMXSWVMUYeJpH3268rwbWHs6ye/JARb/StT0J2Jx263FUyMQYdVyC2FgrJ8JMZCz5j1w
+	mwL3A6fGqm+y3lqWLKYM9W0i1bYS21htI4wV9yAwe1s7SqK1jrZ2NojvkGAe1hzIcl0AGx0S2f84s
+	+uFfbWhThCgWK1oqhQzyOZhcbbVdlwTQhKCxMl9dz7sER4q1ZIEyY6pxzk5Qb0QkImcdGrAFGjkEY
+	bnuKjSN/AaNc2/v/URylq8pkOHfbg12q7X798zxf/ZjEwpnzh0t8J6wMUGcxZHsSNfbIAfWZDDcCu
+	48kUHXYOhbnCV3hNKXKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb0yY-0005wx-MR; Wed, 12 Jun 2019 10:59:30 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1hb0yG-0005m0-WA; Wed, 12 Jun 2019 10:59:13 +0000
+Received: from mail-eopbgr140048.outbound.protection.outlook.com
+ ([40.107.14.48] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb0y2-0005jG-Oo
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:59:02 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5CAwfco015991;
- Wed, 12 Jun 2019 05:58:43 -0500
-Message-ID: <79e751a0f3bb05d0cbb97591e26040a6f45d98f6.camel@kernel.crashing.org>
-Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
- firmware PCI setup
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Date: Wed, 12 Jun 2019 20:58:41 +1000
-In-Reply-To: <20190612100826.GB6506@redmoon>
-References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
- <20190604014945.GE189360@google.com>
- <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
- <20190604124959.GF189360@google.com>
- <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
- <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
- <20190611145832.GB11736@redmoon>
- <5b5199b008d6c8831175018975f09599081dc5e4.camel@kernel.crashing.org>
- <20190612100826.GB6506@redmoon>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1hb0y1-0005hz-Aa
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:58:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Xcp+cCzrvr1L1Y3g/ZOjI4rjJKJnTitnnFBsYnd4tTc=;
+ b=5D2vjrT7ELZ4PSO1CIC+gb6xItFFrgxUGjg7j8qv0In9NeKeCOP+p6foCRqJ5EmFmZ3kVF2pNXIHHw8tDnK9HemsnX4+Y2Z7RdY/VmBB5ENLaNATTZYIJBCyQ2IrviygPoXlSx7JtbDUqbSRb+lwsd3sikdwVo+zxUyyaAf2n14=
+Received: from DB8PR08MB4105.eurprd08.prod.outlook.com (20.179.12.12) by
+ DB8PR08MB3963.eurprd08.prod.outlook.com (20.179.10.24) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.14; Wed, 12 Jun 2019 10:58:52 +0000
+Received: from DB8PR08MB4105.eurprd08.prod.outlook.com
+ ([fe80::b4db:b3ed:75ff:167]) by DB8PR08MB4105.eurprd08.prod.outlook.com
+ ([fe80::b4db:b3ed:75ff:167%3]) with mapi id 15.20.1965.017; Wed, 12 Jun 2019
+ 10:58:52 +0000
+From: Steve Capper <Steve.Capper@arm.com>
+To: Catalin Marinas <Catalin.Marinas@arm.com>
+Subject: Re: [PATCH v2 08/12] arm64: mm: Logic to make offset_ttbr1 conditional
+Thread-Topic: [PATCH v2 08/12] arm64: mm: Logic to make offset_ttbr1
+ conditional
+Thread-Index: AQHVFXAfaxebuXEqpEyNVdQ5jZ056aaVA8yAgALs6oA=
+Date: Wed, 12 Jun 2019 10:58:52 +0000
+Message-ID: <20190612105841.GA1763@capper-debian.cambridge.arm.com>
+References: <20190528161026.13193-1-steve.capper@arm.com>
+ <20190528161026.13193-9-steve.capper@arm.com>
+ <20190610141813.GA10165@c02tf0j2hf1t.cambridge.arm.com>
+In-Reply-To: <20190610141813.GA10165@c02tf0j2hf1t.cambridge.arm.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mutt/1.10.1 (2018-07-13)
+x-originating-ip: [217.140.106.32]
+x-clientproxiedby: DM5PR18CA0065.namprd18.prod.outlook.com
+ (2603:10b6:3:22::27) To DB8PR08MB4105.eurprd08.prod.outlook.com
+ (2603:10a6:10:b0::12)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Steve.Capper@arm.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1a0b794d-0d6c-4be2-19dc-08d6ef24f4b7
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB8PR08MB3963; 
+x-ms-traffictypediagnostic: DB8PR08MB3963:
+nodisclaimer: True
+x-microsoft-antispam-prvs: <DB8PR08MB3963C137FB97E71DFCBDEA0381EC0@DB8PR08MB3963.eurprd08.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0066D63CE6
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(136003)(366004)(39860400002)(376002)(52314003)(199004)(189003)(7736002)(256004)(81166006)(8676002)(81156014)(8936002)(5660300002)(68736007)(71190400001)(71200400001)(186003)(6436002)(4326008)(54906003)(6862004)(14454004)(6246003)(53936002)(6486002)(25786009)(316002)(52116002)(1076003)(3846002)(72206003)(6116002)(6636002)(11346002)(66066001)(6506007)(6512007)(76176011)(229853002)(386003)(478600001)(99286004)(486006)(44832011)(476003)(66476007)(64756008)(66446008)(102836004)(66556008)(58126008)(305945005)(33656002)(73956011)(66946007)(446003)(26005)(86362001)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR08MB3963;
+ H:DB8PR08MB4105.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: arm.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: +OEudA56wAemrt7QgLMln9mlsXI0E+rA0mh8W+WJxwLZetvjE4gT6whmlbGPudlxTESgtm71E2Ff8wvuAXtBMpVcYouBWUIzj5a03wKru56zK7ovmeRfEsftVUZ2DTDsSwg97qLyq2fJL3N25pdF2d9suPGQ+kzOhM6nOQTNDfBLi9PI2d2KfiW+abDxHPZuaem3R/x2sk5EXCotVu042hvjh5TfN+/3U9SFYVigShGOJnodL2niSshiSYU8pz/hXWHCLHrefoedavsqOq20Qd3B2rEZuwgBILQzCvu4lXeq8b6gX+zjQqX3gWHdBRWKPUINuBoZnQCDEdfNulO5lhuSjfc36KC/zOO6Wh4EuN+M5UgXXdn97QHzlzoMG+w88QUNzpXLCxDq8NuN4TtcxZu2n0mhKoaittS6JYBxEcE=
+Content-ID: <95E897001FA79049B2F55EF37ED0ED8F@eurprd08.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1a0b794d-0d6c-4be2-19dc-08d6ef24f4b7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Jun 2019 10:58:52.6943 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Steve.Capper@arm.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB3963
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_035858_977832_9F171F92 
-X-CRM114-Status: GOOD (  29.44  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_035857_385449_22DBAF15 
+X-CRM114-Status: GOOD (  13.06  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ no trust [40.107.14.48 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.14.48 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,152 +119,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
- Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
- Ali" <alisaidi@amazon.com>, Bjorn Helgaas <helgaas@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "crecklin@redhat.com" <crecklin@redhat.com>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ Marc Zyngier <Marc.Zyngier@arm.com>,
+ "bhsharma@redhat.com" <bhsharma@redhat.com>, Will Deacon <Will.Deacon@arm.com>,
+ nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-06-12 at 11:08 +0100, Lorenzo Pieralisi wrote:
+On Mon, Jun 10, 2019 at 03:18:13PM +0100, Catalin Marinas wrote:
+> Hi Steve,
 > 
-> Nothing wrong, we have not understood each others. What I am asking
-> is to write it like this:
-> 
-> if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
-> 	/* preserve existing resource assignment */
-> 	pci_bus_claim_resources(bus);
-> }
-> 
-> /* this code path should be common, indipendent of _DSM #5
-> pci_assign_unassigned_root_bus_resources(bus);
-> 
-> There is no reason to have two distinct code paths, current code
-> can call:
-> 
-> pci_assign_unassigned_root_bus_resources(bus);
-> 
-> instead of
-> 
-> pci_bus_size_bridges(bus);
-> pci_bus_assign_resources(bus);
-> 
-> Actually, current code is *questionable* given that AFAICS it
-> does not account for hotplug bridges additional memory window
-> size.
 
-Ah yes, I see, ok, I'll play with that in qemu a bit tomorrow
-make sure we aren't missing something obvious & update the patch.
+Hi Catalin,
 
-> > > That's how it should be I think:
-> > > 
-> > > 1) we do not want pci_assign_unassigned_root_bus_resources(bus) to
-> > >    reallocate resources already claimed (see realloc parameter), do we ?
-> > 
-> > Well, realloc is useful to handle SR_IOV when the BIOS doesn't do it
-> > right (common case). That said, at this point, we should be able to
-> > honor IORESOURCE_PCI_FIXED for things that have _DSM #5 since they have
-> > been claimed. I don't see that realloc logic being a problem for us,
-> > and I want to avoid gratuitous differences with x86, but maybe I'm
-> > missing something here...
+> On Tue, May 28, 2019 at 05:10:22PM +0100, Steve Capper wrote:
+> > diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+> > index 039fbd822ec6..a42c392ed1e1 100644
+> > --- a/arch/arm64/include/asm/assembler.h
+> > +++ b/arch/arm64/include/asm/assembler.h
+> > @@ -548,6 +548,14 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+> >  	.macro	offset_ttbr1, ttbr
+> >  #ifdef CONFIG_ARM64_USER_VA_BITS_52
+> >  	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
+> > +#endif
+> > +
+> > +#ifdef CONFIG_ARM64_USER_KERNEL_VA_BITS_52
+> > +alternative_if_not ARM64_HAS_52BIT_VA
+> > +	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
+> > +alternative_else
+> > +	nop
+> > +alternative_endif
+> >  #endif
+> >  	.endm
 > 
-> See above. The conditions that make IORESOURCE_PCI_FIXED work are
-> still unclear to me.
-
-I more/less convinced myself it doesn't in the full-reassignment case
-:-) As for the more traditional survey + assign, it can work if the
-original survey led to reasonable values, mostly by preventing (I
-*think*, I still need to convince myself) the realloc path for kicking
-in, but this is all very fishy... At least x86 does use that flag at
-least in one place from my grepping around...
-
-> > > 2) pci_bus_size_bridges(bus) and pci_bus_assign_resources(bus) should
-> > >    not interfere with resources already claimed so it *should* be safe
-> > >    to call them anyway
-> > 
-> > Sure, *should* and here we introduce yet another way of doing things
-> > though... Any reason we don't want to do what x86 does here ?
+> As a nitpick, you could write alternative_else_not_endif instead of the
+> last three lines.
 > 
-> No, see above, keeping in mind that what x86 does is still not
-> very well defined AFAICS.
 
-It's not defined, it's grown through an evolutionary process :-) It's
-still by far the most tested with the widest range of crazy PCI devices
-and BIOSes I would think.
+Thanks yeah that makes it easier to read.
 
-> > > Most importantly: I want everyone to agree that claiming is equivalent
-> > > to making a resource immutable (except for realloc, see (1) above)
-> > > because that's what we are doing by claiming on _DSM #5 == 0.
-> > 
-> > I think the combination of claiming *and* IORESOURCE_PCI_FIXED is what
-> > makes it *really* immutable. I'm a bit confused by the realloc logic
-> > right now, I'll need more quality time looking at it after ingesting
-> > more caffeing but I'm under the impression that it will honor the flag.
+> Anyway, we use offset_ttbr1 in a few early cases via
+> idmap_cpu_replace_ttbr1 where the alternative framework hasn't got the
+> chance to patch the instructions. I suggest you open-code the feature
+> check in here, I don't think we use this on any fast path.
 > 
-> Likewise, this requires some fuzzing because it is really hard to
-> understand by perusing the code.
 
-Yup.
-
-> > > There are too many ways to make a resource immutable in the kernel
-> > > and this is confusing and prone to bugs.
-> > 
-> > It is, but I don't want to create new ways of doing things, and what
-> > you seem to propose is a new way imho :-)
-> 
-> No, see above. What I am saying is that we have IORESOURCE_PCI_FIXED,
-> res->parent != NULL and Enhanced allocation to make a BAR immutable and
-> before going any further it would be great if we understand their
-> interaction given that we are starting from a pseudo clean slate.
-
-> If we fail to do that it is quirks later (and I would rather avoid
-> seeing x86 command line parameters to work around them).
-
-Well.. while I would hate to have to *use* the x86 command line
-parameters, I also don't like them not existing on all archs, as they
-can actually be useful to help diagnose issues if anything (with of
-course the intention of fixing things so they aren't needed in the long
-run of course).
+Apologies for not spotting that, okay, I'll query the vabits_actual
+inside idmap_cpu_replace_ttbr1.
 
 Cheers,
-Ben.
-
-> Cheers,
-> Lorenzo
-> 
-> > Cheers,
-> > Ben.
-> > 
-> > > Thanks,
-> > > Lorenzo
-> > > 
-> > > > +	ACPI_FREE(obj);
-> > > >  
-> > > >  	list_for_each_entry(child, &bus->children, node)
-> > > >  		pcie_bus_configure_settings(child);
-> > > > diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
-> > > > index 8082b612f561..62b7fdcc661c 100644
-> > > > --- a/include/linux/pci-acpi.h
-> > > > +++ b/include/linux/pci-acpi.h
-> > > > @@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
-> > > >  #endif
-> > > >  
-> > > >  extern const guid_t pci_acpi_dsm_guid;
-> > > > -#define DEVICE_LABEL_DSM	0x07
-> > > > -#define RESET_DELAY_DSM		0x08
-> > > > -#define FUNCTION_DELAY_DSM	0x09
-> > > > +#define IGNORE_PCI_BOOT_CONFIG_DSM	0x05
-> > > > +#define DEVICE_LABEL_DSM		0x07
-> > > > +#define RESET_DELAY_DSM			0x08
-> > > > +#define FUNCTION_DELAY_DSM		0x09
-> > > >  
-> > > >  #else	/* CONFIG_ACPI */
-> > > >  static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
-> > > > 
-> > > > 
-
+-- 
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
