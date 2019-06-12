@@ -2,56 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BDA5428AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:22:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C234D428C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:25:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wijWyeYJWbkpaaHR8xSROWR7NxCee3AUB0RArZ9pVN8=; b=Zg9lfNj8RJOTVx
-	1DjEmptfu6T2y+Oc8bkBHZOsMkpKrNg93JiseW6Wkmuts7+v5frTUvr9Gw7Wk7Hyv942XjNmX52RQ
-	Mp8EKQ5hWeMrhzRSYVjjNNrzK9+Oj7G8lkqAt+YnjjYcUI4kYZpLWWo2zpTzGpEmlhgb25BGj0MlS
-	XvDn0Trm4dqz9bF87WTl1kKJE0odgt4S+0q+T5jNZz68BoBQgZNEJIdXtO9jvgv9zC02t71Z+KPD2
-	KTj3jVT1QktCWeoMgF8EJUL99UNdAK1/+lDgQnsTcttdZ2p0sWCWnY8FYCjgeTuYutx4ADldQEDcB
-	Pu8s0l3ifSHPX6rgWX2w==;
+	List-Owner; bh=bjsP7K8ycIyBLpPqURBlsuVsuM7+jrsY/hg9pSMMSxc=; b=mtKIo/7FpT/vW1
+	YS9Bi+h2E2niwdjUz0sA7rRBk0+2WfIlxRfyZVG+v/3uKrikxgEfPdn7RFYgkUHvA6IhpVfiiQyTA
+	gA4V3qIxLScwFAMg/LM1Az5/T2PPcjrIEXqRCedMlMyG3XfZho2wnidc0o0oXIrOi6Mmbipwjqv5l
+	SIURnErqlhNsbqAwZKYi+DazTtHigj7/LeWyCKqTmRGJCKEKTyelc75kFmgG9p8zNIU6P4PN9Y5lN
+	l8+A/cyt3K1Mb+03C13zbVO8rKwRq/kIfTnYHB9FgAjPDXVg/F1iZI8MNQ1wPnw3adTLjoemnNw1l
+	wkBU51e9W1PSYnpP3D+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb48i-00039Z-7v; Wed, 12 Jun 2019 14:22:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb481-0002h7-D3
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:21:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 03225A78;
- Wed, 12 Jun 2019 07:21:29 -0700 (PDT)
-Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
- [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A12863F557;
- Wed, 12 Jun 2019 07:21:27 -0700 (PDT)
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-To: linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
- linux-mm@kvack.org, linux-arch@vger.kernel.org,
- linux-kselftest@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v4 2/2] arm64: Relax Documentation/arm64/tagged-pointers.txt
-Date: Wed, 12 Jun 2019 15:21:11 +0100
-Message-Id: <20190612142111.28161-3-vincenzo.frascino@arm.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190612142111.28161-1-vincenzo.frascino@arm.com>
-References: <cover.1560339705.git.andreyknvl@google.com>
- <20190612142111.28161-1-vincenzo.frascino@arm.com>
+	id 1hb4C3-0004rV-Gs; Wed, 12 Jun 2019 14:25:39 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb4Bu-0004qv-Jr
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:25:32 +0000
+Received: by mail-pg1-x544.google.com with SMTP id k187so8521986pga.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 07:25:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=CG5iVPWcjFplF7lR6y3XE62eHLD9eYji1o8inBAtJJY=;
+ b=DkNlW945kuLZQ3RMFEaZhtAt/vvk0BfAkLbeAKizzc+dO/m7G5UF9lRQm6NNq+DUQh
+ OLjx98iEFsYqoENabN8XQzrRfB0Q9IoWk/uhCskW75d1RLTar/8kKDcJRAxWV50LaX24
+ m1lvDmGvJ92HaqHz9OUmZKcjabh54tm4K4IahU9DPDC0JuzJUCJNlET6Y8v5CG9MuDNs
+ 7inxq7/Pu7rKUo9WkPtzByceY8kkmQdTna1PRVg//7iHjmNAlshnrhZtb5VaiPBqNjFT
+ WdX2mmSdhZMr5Iybo/COmIzTsuYbvIaFlP3cddhl+HBvAIaRf7CN1gYZkVTahmdsPgeM
+ vHvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=CG5iVPWcjFplF7lR6y3XE62eHLD9eYji1o8inBAtJJY=;
+ b=kjnzuJOT2EeDc43f4r+4ZKoRBgOV4oHvpOWFr+VJWVcS1HuHzdW+/YPqKCFsJvfROq
+ 0yhBYN95vt7GuwJvPeE7TiYYxkuvG/a/MCmooPDCvgI2ITC7+Z5UmcvRM5d5Bk1fqihm
+ zkrsXQsJWeQEEDcheK7nnapqmvXmUlwA46ybykRyTCBMtK/5Kb16YjZWyepgn6yjMncE
+ SmM9mcRRRjTiqV4sOZrsls/E4D+I0pcCOubXhy0E9EbFvBkNycg2Ev/jlbwS4UTlpwr7
+ 37N6s+o+A6vWRto+8mw0u1wMwPpQxdAMV9CIm8z4EZqABftnm4TT+5PJ/vT33Ka7BS9N
+ 5hLA==
+X-Gm-Message-State: APjAAAX3nwL+tcmbUCnGbQJAoCzzgDyXRQIwStGm5OakpUrYJAiavQPt
+ VpswlRGY3e+anKS20yrcxusSqA==
+X-Google-Smtp-Source: APXvYqzFJUGgeRa9mS5//wWFpkOuEjJAUvNZgOI1pyCzeAI1Y14G2xwuNekpf+1k+vZZVrtDqAnWDA==
+X-Received: by 2002:a63:af44:: with SMTP id s4mr25363352pgo.411.1560349529636; 
+ Wed, 12 Jun 2019 07:25:29 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.googlemail.com with ESMTPSA id y14sm121972pjr.13.2019.06.12.07.25.27
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 12 Jun 2019 07:25:27 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v5 0/3] arm64: Add initial support for Odroid-N2
+In-Reply-To: <20190603091008.2382-1-narmstrong@baylibre.com>
+References: <20190603091008.2382-1-narmstrong@baylibre.com>
+Date: Wed, 12 Jun 2019 07:25:27 -0700
+Message-ID: <7hr27y3mp4.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_072129_526035_D0097371 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20190612_072530_682313_85095977 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,91 +92,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Andrey Konovalov <andreyknvl@google.com>
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On arm64 the TCR_EL1.TBI0 bit has been always enabled hence
-the userspace (EL0) is allowed to set a non-zero value in the
-top byte but the resulting pointers are not allowed at the
-user-kernel syscall ABI boundary.
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-With the relaxed ABI proposed in this set, it is now possible to pass
-tagged pointers to the syscalls, when these pointers are in memory
-ranges obtained by an anonymous (MAP_ANONYMOUS) mmap().
+> This patchset adds basic support for :
+> - Amlogic G12B, which is very similar to G12A
+> - The HardKernel Odroid-N2 based on the S922X SoC
+>
+> The Amlogic G12B SoC is very similar with the G12A SoC, sharing
+> most of the features and architecture, but with these differences :
+> - The first CPU cluster only has 2xCortex-A53 instead of 4
+> - G12B has a second cluster of 4xCortex-A73
+> - Both cluster can achieve 2GHz instead of 1,8GHz for G12A
+> - CPU Clock architecture is difference, thus needing a different
+>   compatible to handle this slight difference
+> - Supports a MIPI CSI input
+> - Embeds a Mali-G52 instead of a Mali-G31, but integration is the same
+>
+> Actual support is done in the same way as for the GXM support, including
+> the G12A dtsi and redefining the CPU clusters.
+> Unlike GXM, the first cluster is different, thus needing to remove
+> the last 2 cpu nodes of the first cluster.
 
-Relax the requirements described in tagged-pointers.txt to be compliant
-with the behaviours guaranteed by the ARM64 Tagged Address ABI.
+Tested-by: Kevin Hilman <khilman@baylibre.com>
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-CC: Andrey Konovalov <andreyknvl@google.com>
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
----
- Documentation/arm64/tagged-pointers.txt | 23 ++++++++++++++++-------
- 1 file changed, 16 insertions(+), 7 deletions(-)
+Queued for v5.3,
 
-diff --git a/Documentation/arm64/tagged-pointers.txt b/Documentation/arm64/tagged-pointers.txt
-index a25a99e82bb1..db58a7e95805 100644
---- a/Documentation/arm64/tagged-pointers.txt
-+++ b/Documentation/arm64/tagged-pointers.txt
-@@ -18,7 +18,8 @@ Passing tagged addresses to the kernel
- --------------------------------------
- 
- All interpretation of userspace memory addresses by the kernel assumes
--an address tag of 0x00.
-+an address tag of 0x00, unless the userspace opts-in the ARM64 Tagged
-+Address ABI via the PR_SET_TAGGED_ADDR_CTRL prctl().
- 
- This includes, but is not limited to, addresses found in:
- 
-@@ -31,18 +32,23 @@ This includes, but is not limited to, addresses found in:
-  - the frame pointer (x29) and frame records, e.g. when interpreting
-    them to generate a backtrace or call graph.
- 
--Using non-zero address tags in any of these locations may result in an
--error code being returned, a (fatal) signal being raised, or other modes
--of failure.
-+Using non-zero address tags in any of these locations when the
-+userspace application did not opt-in to the ARM64 Tagged Address ABI,
-+may result in an error code being returned, a (fatal) signal being raised,
-+or other modes of failure.
- 
--For these reasons, passing non-zero address tags to the kernel via
--system calls is forbidden, and using a non-zero address tag for sp is
--strongly discouraged.
-+For these reasons, when the userspace application did not opt-in, passing
-+non-zero address tags to the kernel via system calls is forbidden, and using
-+a non-zero address tag for sp is strongly discouraged.
- 
- Programs maintaining a frame pointer and frame records that use non-zero
- address tags may suffer impaired or inaccurate debug and profiling
- visibility.
- 
-+A definition of the meaning of ARM64 Tagged Address ABI and of the
-+guarantees that the ABI provides when the userspace opts-in via prctl()
-+can be found in: Documentation/arm64/tagged-address-abi.txt.
-+
- 
- Preserving tags
- ---------------
-@@ -57,6 +63,9 @@ be preserved.
- The architecture prevents the use of a tagged PC, so the upper byte will
- be set to a sign-extension of bit 55 on exception return.
- 
-+This behaviours are preserved even when the the userspace opts-in the ARM64
-+Tagged Address ABI via the PR_SET_TAGGED_ADDR_CTRL prctl().
-+
- 
- Other considerations
- --------------------
--- 
-2.21.0
-
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
