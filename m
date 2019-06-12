@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEA4542D7A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:29:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD49742D7C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:29:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uj1GbLAx6qgSFAUd7auxegO8Zqt6LHN2V7atlwlhAq0=; b=oKL6XzuK1Hgsf+
-	j6yu0PoexJdOg78Z9M2/danCMmEugmdipzzmKDzQbe2UeZqsJkp94cLBdUhEPXUe5AsEj4Wcz0AU3
-	l6BEZRhH1Dm0asWc6QpEYueaePiYY9XISDEIRi0dZw/CokqZNGTiiLGMY40PM7YK+AU+2qa+D3EST
-	XHWMb52xRVEEP6cqSk6x6TX4tNdGGBnnzT+VodbxS0zC7KW3AExC45gGhSELQCtqaFhrrvUF9t16+
-	f7P2AU6dR46EuRys7b4Avj6OWDDtQvJ5O6dCbkneDGHKbOKDj43QEJfJjxjwNwlNXe/HgLc8QfCV0
-	i7jKsjjGe0niZbTsDx5w==;
+	List-Owner; bh=OlkSfMYXjRSc2b3j3NhNSBAS5ozm+YmWZ3x42/U509Y=; b=DIUHg5B6+RTUEf
+	TaHCouCTp12cRNnHtiOc8TIvqQOWcAESHY1DBOZvg6yHiQuHZ9fvnwFIvVj+kHOKiHj3vlSnQyKK2
+	Y0muGOYu809fOebP9NtaFkl0G/eZlpf+B9wtqZ6cZ84IaQMONj/clhcbsIsrLf3Hl5Tw5ZOPAqBDS
+	WW8co6xenOV/v7+fVCrSFTwQlL7ovBZcSdGNfaPTpAs0fuCoNhvB47HCnLBiFWoKMHeEfGLHXY7ZA
+	aVDw8SEowwVajOM7Wa3X1uN2uLK/ORR+rNs0TXtpF52p131LA9zr9yF43TBuf4E8A5cOIEj0ZL4yL
+	s+MgccnDqyJrvlK9UKPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb73h-0007ML-Na; Wed, 12 Jun 2019 17:29:13 +0000
+	id 1hb740-0007dj-1Z; Wed, 12 Jun 2019 17:29:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb71u-00061c-DK
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:27:24 +0000
+ id 1hb71w-00068e-BV
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:27:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0EA97C15;
- Wed, 12 Jun 2019 10:27:22 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0BBB7C28;
+ Wed, 12 Jun 2019 10:27:24 -0700 (PDT)
 Received: from capper-debian.arm.com (unknown [10.37.13.15])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9EC0D3F246;
- Wed, 12 Jun 2019 10:27:20 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7778A3F246;
+ Wed, 12 Jun 2019 10:27:22 -0700 (PDT)
 From: Steve Capper <steve.capper@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 05/10] arm64: mm: Introduce VA_BITS_ACTUAL
-Date: Wed, 12 Jun 2019 18:26:53 +0100
-Message-Id: <20190612172658.28522-6-steve.capper@arm.com>
+Subject: [PATCH v3 06/10] arm64: mm: Logic to make offset_ttbr1 conditional
+Date: Wed, 12 Jun 2019 18:26:54 +0100
+Message-Id: <20190612172658.28522-7-steve.capper@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190612172658.28522-1-steve.capper@arm.com>
 References: <20190612172658.28522-1-steve.capper@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_102722_621958_C71929E1 
-X-CRM114-Status: GOOD (  16.29  )
+X-CRM114-CacheID: sfid-20190612_102724_769636_70022CE5 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,225 +66,153 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to support 52-bit kernel addresses detectable at boot time, one
-needs to know the actual VA_BITS detected. A new variable VA_BITS_ACTUAL
-is introduced in this commit and employed for the KVM hypervisor layout,
-KASAN, fault handling and phys-to/from-virt translation where there
-would normally be compile time constants.
+When running with a 52-bit userspace VA and a 48-bit kernel VA we offset
+ttbr1_el1 to allow the kernel pagetables with a 52-bit PTRS_PER_PGD to
+be used for both userspace and kernel.
 
-In order to maintain performance in phys_to_virt, another variable
-physvirt_offset is introduced.
+Moving on to a 52-bit kernel VA we no longer require this offset to
+ttbr1_el1 should we be running on a system with HW support for 52-bit
+VAs.
+
+This patch introduces conditional logic to offset_ttbr1 to query
+SYS_ID_AA64MMFR2_EL1 whenever 52-bit VAs are selected. If there is HW
+support for 52-bit VAs then the ttbr1 offset is skipped.
+
+We choose to read a system register rather than vabits_actual because
+offset_ttbr1 can be called in places where the kernel data is not
+actually mapped.
+
+Calls to offset_ttbr1 appear to be made from rarely called code paths so
+this extra logic is not expected to adversely affect performance.
 
 Signed-off-by: Steve Capper <steve.capper@arm.com>
 ---
- arch/arm64/include/asm/kasan.h       |  2 +-
- arch/arm64/include/asm/memory.h      | 12 +++++++-----
- arch/arm64/include/asm/mmu_context.h |  2 +-
- arch/arm64/kernel/head.S             |  5 +++++
- arch/arm64/kvm/va_layout.c           | 14 +++++++-------
- arch/arm64/mm/fault.c                |  4 ++--
- arch/arm64/mm/init.c                 |  7 ++++++-
- arch/arm64/mm/mmu.c                  |  3 +++
- 8 files changed, 32 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kasan.h b/arch/arm64/include/asm/kasan.h
-index 10d2add842da..ff991dc86ae1 100644
---- a/arch/arm64/include/asm/kasan.h
-+++ b/arch/arm64/include/asm/kasan.h
-@@ -31,7 +31,7 @@
-  *				(1ULL << (64 - KASAN_SHADOW_SCALE_SHIFT))
+Changed in V3, move away from alternative framework as offset_ttbr1 can
+be called in places before the alternative framework has been
+initialised.
+---
+ arch/arm64/include/asm/assembler.h | 12 ++++++++++--
+ arch/arm64/kernel/head.S           |  2 +-
+ arch/arm64/kernel/hibernate-asm.S  |  8 ++++----
+ arch/arm64/mm/proc.S               |  6 +++---
+ 4 files changed, 18 insertions(+), 10 deletions(-)
+
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index 92b6b7cf67dd..5b6e82eb2588 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -545,9 +545,17 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+  * In future this may be nop'ed out when dealing with 52-bit kernel VAs.
+  * 	ttbr: Value of ttbr to set, modified.
   */
- #define _KASAN_SHADOW_START(va)	(KASAN_SHADOW_END - (1UL << ((va) - KASAN_SHADOW_SCALE_SHIFT)))
--#define KASAN_SHADOW_START      _KASAN_SHADOW_START(VA_BITS)
-+#define KASAN_SHADOW_START      _KASAN_SHADOW_START(VA_BITS_ACTUAL)
- 
- void kasan_init(void);
- void kasan_copy_shadow(pgd_t *pgdir);
-diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index 4814c8e77daf..1c37b2620bb4 100644
---- a/arch/arm64/include/asm/memory.h
-+++ b/arch/arm64/include/asm/memory.h
-@@ -48,8 +48,6 @@
-  * VA_START - the first kernel virtual address.
-  */
- #define VA_BITS			(CONFIG_ARM64_VA_BITS)
--#define VA_START		(UL(0xffffffffffffffff) - \
--	(UL(1) << (VA_BITS - 1)) + 1)
- #define PAGE_OFFSET		(UL(0xffffffffffffffff) - \
- 	(UL(1) << VA_BITS) + 1)
- #define KIMAGE_VADDR		(MODULES_END)
-@@ -177,10 +175,14 @@
+-	.macro	offset_ttbr1, ttbr
++	.macro	offset_ttbr1, ttbr, tmp
+ #ifdef CONFIG_ARM64_USER_VA_BITS_52
+ 	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
++#endif
++
++#ifdef CONFIG_ARM64_VA_BITS_52
++	mrs_s	\tmp, SYS_ID_AA64MMFR2_EL1
++	and	\tmp, \tmp, #(0xf << ID_AA64MMFR2_LVA_SHIFT)
++	cbnz	\tmp, .Lskipoffs_\@
++	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
++.Lskipoffs_\@ :
  #endif
+ 	.endm
  
- #ifndef __ASSEMBLY__
-+extern u64			vabits_actual;
-+#define VA_BITS_ACTUAL		({vabits_actual;})
-+#define VA_START		(_VA_START(VA_BITS_ACTUAL))
- 
- #include <linux/bitops.h>
- #include <linux/mmdebug.h>
- 
-+extern s64			physvirt_offset;
- extern s64			memstart_addr;
- /* PHYS_OFFSET - the physical address of the start of memory. */
- #define PHYS_OFFSET		({ VM_BUG_ON(memstart_addr & 1); memstart_addr; })
-@@ -247,9 +249,9 @@ extern u64			vabits_user;
-  * space. Testing the top bit for the start of the region is a
-  * sufficient check.
+@@ -557,7 +565,7 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+  * to be nop'ed out when dealing with 52-bit kernel VAs.
   */
--#define __is_lm_address(addr)	(!((addr) & BIT(VA_BITS - 1)))
-+#define __is_lm_address(addr)	(!((addr) & BIT(VA_BITS_ACTUAL - 1)))
- 
--#define __lm_to_phys(addr)	(((addr) & ~PAGE_OFFSET) + PHYS_OFFSET)
-+#define __lm_to_phys(addr)	(((addr) + physvirt_offset))
- #define __kimg_to_phys(addr)	((addr) - kimage_voffset)
- 
- #define __virt_to_phys_nodebug(x) ({					\
-@@ -268,7 +270,7 @@ extern phys_addr_t __phys_addr_symbol(unsigned long x);
- #define __phys_addr_symbol(x)	__pa_symbol_nodebug(x)
+ 	.macro	restore_ttbr1, ttbr
+-#ifdef CONFIG_ARM64_USER_VA_BITS_52
++#if defined(CONFIG_ARM64_USER_VA_BITS_52) || defined(CONFIG_ARM64_VA_BITS_52)
+ 	bic	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
  #endif
- 
--#define __phys_to_virt(x)	((unsigned long)((x) - PHYS_OFFSET) | PAGE_OFFSET)
-+#define __phys_to_virt(x)	((unsigned long)((x) - physvirt_offset))
- #define __phys_to_kimg(x)	((unsigned long)((x) + kimage_voffset))
- 
- /*
-diff --git a/arch/arm64/include/asm/mmu_context.h b/arch/arm64/include/asm/mmu_context.h
-index 2da3e478fd8f..133ecb65b602 100644
---- a/arch/arm64/include/asm/mmu_context.h
-+++ b/arch/arm64/include/asm/mmu_context.h
-@@ -106,7 +106,7 @@ static inline void __cpu_set_tcr_t0sz(unsigned long t0sz)
- 	isb();
- }
- 
--#define cpu_set_default_tcr_t0sz()	__cpu_set_tcr_t0sz(TCR_T0SZ(VA_BITS))
-+#define cpu_set_default_tcr_t0sz()	__cpu_set_tcr_t0sz(TCR_T0SZ(VA_BITS_ACTUAL))
- #define cpu_set_idmap_tcr_t0sz()	__cpu_set_tcr_t0sz(idmap_t0sz)
- 
- /*
+ 	.endm
 diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index ab68c3fe7a19..b3335e639b6d 100644
+index b3335e639b6d..5b8e38503ce1 100644
 --- a/arch/arm64/kernel/head.S
 +++ b/arch/arm64/kernel/head.S
-@@ -332,6 +332,11 @@ __create_page_tables:
- 	dmb	sy
- 	dc	ivac, x6		// Invalidate potentially stale cache line
+@@ -788,7 +788,7 @@ ENTRY(__enable_mmu)
+ 	phys_to_ttbr x1, x1
+ 	phys_to_ttbr x2, x2
+ 	msr	ttbr0_el1, x2			// load TTBR0
+-	offset_ttbr1 x1
++	offset_ttbr1 x1, x3
+ 	msr	ttbr1_el1, x1			// load TTBR1
+ 	isb
+ 	msr	sctlr_el1, x0
+diff --git a/arch/arm64/kernel/hibernate-asm.S b/arch/arm64/kernel/hibernate-asm.S
+index fe36d85c60bd..f2dd592761fa 100644
+--- a/arch/arm64/kernel/hibernate-asm.S
++++ b/arch/arm64/kernel/hibernate-asm.S
+@@ -33,14 +33,14 @@
+  * Even switching to our copied tables will cause a changed output address at
+  * each stage of the walk.
+  */
+-.macro break_before_make_ttbr_switch zero_page, page_table, tmp
++.macro break_before_make_ttbr_switch zero_page, page_table, tmp, tmp2
+ 	phys_to_ttbr \tmp, \zero_page
+ 	msr	ttbr1_el1, \tmp
+ 	isb
+ 	tlbi	vmalle1
+ 	dsb	nsh
+ 	phys_to_ttbr \tmp, \page_table
+-	offset_ttbr1 \tmp
++	offset_ttbr1 \tmp, \tmp2
+ 	msr	ttbr1_el1, \tmp
+ 	isb
+ .endm
+@@ -81,7 +81,7 @@ ENTRY(swsusp_arch_suspend_exit)
+ 	 * We execute from ttbr0, change ttbr1 to our copied linear map tables
+ 	 * with a break-before-make via the zero page
+ 	 */
+-	break_before_make_ttbr_switch	x5, x0, x6
++	break_before_make_ttbr_switch	x5, x0, x6, x8
  
-+	adr_l	x6, vabits_actual
-+	str	x5, [x6]
-+	dmb	sy
-+	dc	ivac, x6		// Invalidate potentially stale cache line
-+
- 	/*
- 	 * VA_BITS may be too small to allow for an ID mapping to be created
- 	 * that covers system RAM if that is located sufficiently high in the
-diff --git a/arch/arm64/kvm/va_layout.c b/arch/arm64/kvm/va_layout.c
-index c712a7376bc1..c9a1debb45bd 100644
---- a/arch/arm64/kvm/va_layout.c
-+++ b/arch/arm64/kvm/va_layout.c
-@@ -40,25 +40,25 @@ static void compute_layout(void)
- 	int kva_msb;
+ 	mov	x21, x1
+ 	mov	x30, x2
+@@ -112,7 +112,7 @@ ENTRY(swsusp_arch_suspend_exit)
+ 	dsb	ish		/* wait for PoU cleaning to finish */
  
- 	/* Where is my RAM region? */
--	hyp_va_msb  = idmap_addr & BIT(VA_BITS - 1);
--	hyp_va_msb ^= BIT(VA_BITS - 1);
-+	hyp_va_msb  = idmap_addr & BIT(VA_BITS_ACTUAL - 1);
-+	hyp_va_msb ^= BIT(VA_BITS_ACTUAL - 1);
+ 	/* switch to the restored kernels page tables */
+-	break_before_make_ttbr_switch	x25, x21, x6
++	break_before_make_ttbr_switch	x25, x21, x6, x8
  
- 	kva_msb = fls64((u64)phys_to_virt(memblock_start_of_DRAM()) ^
- 			(u64)(high_memory - 1));
+ 	ic	ialluis
+ 	dsb	ish
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index fdd626d34274..9f64283e0f89 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -179,7 +179,7 @@ ENDPROC(cpu_do_switch_mm)
+ .macro	__idmap_cpu_set_reserved_ttbr1, tmp1, tmp2
+ 	adrp	\tmp1, empty_zero_page
+ 	phys_to_ttbr \tmp2, \tmp1
+-	offset_ttbr1 \tmp2
++	offset_ttbr1 \tmp2, \tmp1
+ 	msr	ttbr1_el1, \tmp2
+ 	isb
+ 	tlbi	vmalle1
+@@ -198,7 +198,7 @@ ENTRY(idmap_cpu_replace_ttbr1)
  
--	if (kva_msb == (VA_BITS - 1)) {
-+	if (kva_msb == (VA_BITS_ACTUAL - 1)) {
- 		/*
- 		 * No space in the address, let's compute the mask so
--		 * that it covers (VA_BITS - 1) bits, and the region
-+		 * that it covers (VA_BITS_ACTUAL - 1) bits, and the region
- 		 * bit. The tag stays set to zero.
- 		 */
--		va_mask  = BIT(VA_BITS - 1) - 1;
-+		va_mask  = BIT(VA_BITS_ACTUAL - 1) - 1;
- 		va_mask |= hyp_va_msb;
- 	} else {
- 		/*
- 		 * We do have some free bits to insert a random tag.
- 		 * Hyp VAs are now created from kernel linear map VAs
--		 * using the following formula (with V == VA_BITS):
-+		 * using the following formula (with V == VA_BITS_ACTUAL):
- 		 *
- 		 *  63 ... V |     V-1    | V-2 .. tag_lsb | tag_lsb - 1 .. 0
- 		 *  ---------------------------------------------------------
-@@ -66,7 +66,7 @@ static void compute_layout(void)
- 		 */
- 		tag_lsb = kva_msb;
- 		va_mask = GENMASK_ULL(tag_lsb - 1, 0);
--		tag_val = get_random_long() & GENMASK_ULL(VA_BITS - 2, tag_lsb);
-+		tag_val = get_random_long() & GENMASK_ULL(VA_BITS_ACTUAL - 2, tag_lsb);
- 		tag_val |= hyp_va_msb;
- 		tag_val >>= tag_lsb;
- 	}
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index a30818ed9c60..a17aa822a81c 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -171,9 +171,9 @@ static void show_pte(unsigned long addr)
- 		return;
- 	}
+ 	__idmap_cpu_set_reserved_ttbr1 x1, x3
  
--	pr_alert("%s pgtable: %luk pages, %u-bit VAs, pgdp=%016lx\n",
-+	pr_alert("%s pgtable: %luk pages, %llu-bit VAs, pgdp=%016lx\n",
- 		 mm == &init_mm ? "swapper" : "user", PAGE_SIZE / SZ_1K,
--		 mm == &init_mm ? VA_BITS : (int)vabits_user,
-+		 mm == &init_mm ? VA_BITS_ACTUAL : (int)vabits_user,
- 		 (unsigned long)virt_to_phys(mm->pgd));
- 	pgdp = pgd_offset(mm, addr);
- 	pgd = READ_ONCE(*pgdp);
-diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-index 574ed1d4be19..d89341df2d0e 100644
---- a/arch/arm64/mm/init.c
-+++ b/arch/arm64/mm/init.c
-@@ -61,6 +61,9 @@
- s64 memstart_addr __ro_after_init = -1;
- EXPORT_SYMBOL(memstart_addr);
+-	offset_ttbr1 x0
++	offset_ttbr1 x0, x3
+ 	msr	ttbr1_el1, x0
+ 	isb
  
-+s64 physvirt_offset __ro_after_init;
-+EXPORT_SYMBOL(physvirt_offset);
-+
- phys_addr_t arm64_dma_phys_limit __ro_after_init;
+@@ -373,7 +373,7 @@ __idmap_kpti_secondary:
+ 	cbnz	w18, 1b
  
- #ifdef CONFIG_KEXEC_CORE
-@@ -311,7 +314,7 @@ static void __init fdt_enforce_memory_region(void)
- 
- void __init arm64_memblock_init(void)
- {
--	const s64 linear_region_size = BIT(VA_BITS - 1);
-+	const s64 linear_region_size = BIT(VA_BITS_ACTUAL - 1);
- 
- 	/* Handle linux,usable-memory-range property */
- 	fdt_enforce_memory_region();
-@@ -325,6 +328,8 @@ void __init arm64_memblock_init(void)
- 	memstart_addr = round_down(memblock_start_of_DRAM(),
- 				   ARM64_MEMSTART_ALIGN);
- 
-+	physvirt_offset = PHYS_OFFSET - PAGE_OFFSET;
-+
- 	/*
- 	 * Remove the memory that we will not be able to cover with the
- 	 * linear mapping. Take care not to clip the kernel which may be
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 16063ff10c6d..dcbb6593dd90 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -54,6 +54,9 @@ u64 idmap_ptrs_per_pgd = PTRS_PER_PGD;
- u64 vabits_user __ro_after_init;
- EXPORT_SYMBOL(vabits_user);
- 
-+u64 __section(".mmuoff.data.write") vabits_actual;
-+EXPORT_SYMBOL(vabits_actual);
-+
- u64 kimage_voffset __ro_after_init;
- EXPORT_SYMBOL(kimage_voffset);
- 
+ 	/* All done, act like nothing happened */
+-	offset_ttbr1 swapper_ttb
++	offset_ttbr1 swapper_ttb, x18
+ 	msr	ttbr1_el1, swapper_ttb
+ 	isb
+ 	ret
 -- 
 2.20.1
 
