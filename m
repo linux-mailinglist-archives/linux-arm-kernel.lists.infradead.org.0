@@ -2,127 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C8A542BEA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:17:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F358C42C11
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:21:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XN9NQKLqlGJ6mwGItZ13viXGjeAvQuXbHjFtikAVW6o=; b=usirKgf4JXyjNY
-	Dh8tZIw2g9DknDlDXxHP0yRTfOiqQy7QmjDm6FGI6x13zAWUFKxvN4hNOUUbhPL6rhCJonMO9/kcE
-	ZStFC7K7DjxsrtHCG7aqyguXeaDygaY0hBQ5P0KsMSmiIklOmGkwLzuNLtRWs8daF9+uYnePpKpYO
-	nBxcWhbyC/0gjZ/KehxHP3x7CTpgD1slAi/B+3M8wkyKQ2J2FKcZ5SgNhmtwJZXx5UBcnzwTMQndl
-	N3GeWdd9EDgnIHVxODVQ5eVxrpWiEoJAh6/1h/4GnMck2kjLnYL1SfLFsWvzQBFKUfBRjBtDfFleg
-	mEpm+S3L4GHDMXbgYe3A==;
+	List-Owner; bh=gCyXIoB/dEryaSSX9aMOPea/tLCUv4vvECqOvBve9dM=; b=XE8LrvMzCAvHVR
+	iahncnDZdIEKHCyMzZQUJcmp0ioRDZXJE7d5OAuCf4wkwVTnr6m7iH3+X5sTth560fbGldSl/B9Aw
+	dFgjMBpFVpgLZu1EAFX0ob0QJak/SZgXbhbI8bGzE2goV//fQ1VTm8ndFBI1ndDXNNUoaBjILvJaD
+	l3go9+o5qBZ9bW583vVEnAEkD6Jc2LoEM25NKFlOYmOpKZ7RLZdA8O0gzUPkOkwE+bJ8QyjdRXfPV
+	geoGwTVxi/rk/m44QM+nEwb8DMla0EK9/Xy1ILhWMWoFPvUs3UhcZ3jFiYZWwNSww+yqY4IrTGHPP
+	fXgKQWzOA3x8kRL7nNgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb5wa-0006NN-0u; Wed, 12 Jun 2019 16:17:48 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb5wN-0006Mf-BF
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:17:36 +0000
-Received: by mail-qt1-x842.google.com with SMTP id z24so5899264qtj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 09:17:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:subject:to:cc:references:openpgp:autocrypt:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=U2vYqaPYdWtpzfrzovO9feBjUjZjzjyP3l5hohlZ2Qw=;
- b=D9u7HA9acjMxG5IDmmk52QrmRvl60xY0S/bA+fJ34Ie35XIKGzY6OZbUdNy24KUCLn
- v0k5PGGDhJJgsyTqYBiiIENrszMhPVIwWIZMJc/dqo5GOCau43SF6mKGAE5ODH5y1H13
- U57jobrMEWYOn66qKQvvfFa4ja97bbNE9Tx1iBlqV2aFM0WA0Lq+G/DmW8CHWvISaq41
- RGl1t9orYPpMJ3yC8uKY6EIXm1djVIRawvm5q3HOQbZWe6/wdZeCgq/AD9jliSdbJp9L
- K8thiwuO7coFPOPDzo9o7IdUv3SZ3asi0RWidz41BJ1xgitsFXuoSyX9F5rR5kNX04Ls
- KkNw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:subject:to:cc:references:openpgp
- :autocrypt:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=U2vYqaPYdWtpzfrzovO9feBjUjZjzjyP3l5hohlZ2Qw=;
- b=ZpnEWI2NRugIBAeBobRUGyS8hEhpnecOb0KRfjoK1+UafWJzduzvp7x7iGf0wSkyt5
- Ngs0sKi3bFyMlP7ULO1W4FyZq+/RGRdeiZlGZjdPtjOeuqhnjjpQENy8Aii9O/EFdT6H
- 8mm+vYpg94KKwrXdQTVqrEbQnDJDd3HE0HjUFjxzVb7UP5BeOBlIWtMwCSgwiKjuKLFJ
- bnUVoB2WLWpHhhX1OFy1xapl8VZIoepVgKJlDIxbTQcVYarznHquLI55dWR+udCBeYyQ
- rwVIBfpO2Tm7P1ghL1WYeCcMGLWo4XMD5stesOnQ6SS/h9kfQCMYzo4qGpxrdyKZNL94
- kjUA==
-X-Gm-Message-State: APjAAAVRg5MSqNpsd5JkiZX7YtxrQujDb792GgFr3GGsEAi12Ad8JpTM
- fAsjWamsLeLB9LjZLySXmpU=
-X-Google-Smtp-Source: APXvYqwNdJ0Fb29xxjQiS/MFAVscn9cJ6eF2PqS8LVs89NTOxmhErJbcoeaTaWjZzxjqt76lwlO+AA==
-X-Received: by 2002:ac8:1016:: with SMTP id z22mr6334107qti.287.1560356253656; 
- Wed, 12 Jun 2019 09:17:33 -0700 (PDT)
-Received: from [10.84.150.66] ([167.220.149.66])
- by smtp.gmail.com with ESMTPSA id n10sm36819qke.72.2019.06.12.09.17.32
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 12 Jun 2019 09:17:32 -0700 (PDT)
-From: Sinan Kaya <Okaya@kernel.org>
-X-Google-Original-From: Sinan Kaya <okaya@kernel.org>
-Subject: Re: [PATCH 6/6] dma: qcom: hidma: no need to check return value of
- debugfs_create functions
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <20190612122557.24158-1-gregkh@linuxfoundation.org>
- <20190612122557.24158-6-gregkh@linuxfoundation.org>
- <8185a8b8-a0ce-4a86-84a2-b51391356052@kernel.org>
- <20190612153948.GA21828@kroah.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=okaya@kernel.org; keydata=
- mQENBFrnOrUBCADGOL0kF21B6ogpOkuYvz6bUjO7NU99PKhXx1MfK/AzK+SFgxJF7dMluoF6
- uT47bU7zb7HqACH6itTgSSiJeSoq86jYoq5s4JOyaj0/18Hf3/YBah7AOuwk6LtV3EftQIhw
- 9vXqCnBwP/nID6PQ685zl3vH68yzF6FVNwbDagxUz/gMiQh7scHvVCjiqkJ+qu/36JgtTYYw
- 8lGWRcto6gr0eTF8Wd8f81wspmUHGsFdN/xPsZPKMw6/on9oOj3AidcR3P9EdLY4qQyjvcNC
- V9cL9b5I/Ud9ghPwW4QkM7uhYqQDyh3SwgEFudc+/RsDuxjVlg9CFnGhS0nPXR89SaQZABEB
- AAG0HVNpbmFuIEtheWEgPG9rYXlhQGtlcm5lbC5vcmc+iQFOBBMBCAA4FiEEYdOlMSE+a7/c
- ckrQvGF4I+4LAFcFAlztcAoCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQvGF4I+4L
- AFfidAf/VKHInxep0Z96iYkIq42432HTZUrxNzG9IWk4HN7c3vTJKv2W+b9pgvBF1SmkyQSy
- 8SJ3Zd98CO6FOHA1FigFyZahVsme+T0GsS3/OF1kjrtMktoREr8t0rK0yKpCTYVdlkHadxmR
- Qs5xLzW1RqKlrNigKHI2yhgpMwrpzS+67F1biT41227sqFzW9urEl/jqGJXaB6GV+SRKSHN+
- ubWXgE1NkmfAMeyJPKojNT7ReL6eh3BNB/Xh1vQJew+AE50EP7o36UXghoUktnx6cTkge0ZS
- qgxuhN33cCOU36pWQhPqVSlLTZQJVxuCmlaHbYWvye7bBOhmiuNKhOzb3FcgT7kBDQRa5zq1
- AQgAyRq/7JZKOyB8wRx6fHE0nb31P75kCnL3oE+smKW/sOcIQDV3C7mZKLf472MWB1xdr4Tm
- eXeL/wT0QHapLn5M5wWghC80YvjjdolHnlq9QlYVtvl1ocAC28y43tKJfklhHiwMNDJfdZbw
- 9lQ2h+7nccFWASNUu9cqZOABLvJcgLnfdDpnSzOye09VVlKr3NHgRyRZa7me/oFJCxrJlKAl
- 2hllRLt0yV08o7i14+qmvxI2EKLX9zJfJ2rGWLTVe3EJBnCsQPDzAUVYSnTtqELu2AGzvDiM
- gatRaosnzhvvEK+kCuXuCuZlRWP7pWSHqFFuYq596RRG5hNGLbmVFZrCxQARAQABiQEfBBgB
- CAAJBQJa5zq1AhsMAAoJELxheCPuCwBX2UYH/2kkMC4mImvoClrmcMsNGijcZHdDlz8NFfCI
- gSb3NHkarnA7uAg8KJuaHUwBMk3kBhv2BGPLcmAknzBIehbZ284W7u3DT9o1Y5g+LDyx8RIi
- e7pnMcC+bE2IJExCVf2p3PB1tDBBdLEYJoyFz/XpdDjZ8aVls/pIyrq+mqo5LuuhWfZzPPec
- 9EiM2eXpJw+Rz+vKjSt1YIhg46YbdZrDM2FGrt9ve3YaM5H0lzJgq/JQPKFdbd5MB0X37Qc+
- 2m/A9u9SFnOovA42DgXUyC2cSbIJdPWOK9PnzfXqF3sX9Aol2eLUmQuLpThJtq5EHu6FzJ7Y
- L+s0nPaNMKwv/Xhhm6Y=
-Message-ID: <78da53a1-1363-fad8-16fa-4dfc6555f4e4@kernel.org>
-Date: Wed, 12 Jun 2019 12:17:31 -0400
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+	id 1hb60O-00089m-CO; Wed, 12 Jun 2019 16:21:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb605-00089N-7P
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:21:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E60B02B;
+ Wed, 12 Jun 2019 09:21:22 -0700 (PDT)
+Received: from [10.1.197.21] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ ABAB03F73C; Wed, 12 Jun 2019 09:21:21 -0700 (PDT)
+From: Kristina Martsenko <kristina.martsenko@arm.com>
+Subject: Re: [RFC v2 5/7] arm64: initialize and switch ptrauth kernel keys
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20190529190332.29753-1-kristina.martsenko@arm.com>
+ <20190529190332.29753-6-kristina.martsenko@arm.com>
+ <20190606164430.GH56860@arrakis.emea.arm.com>
+Message-ID: <3c56d20a-de6f-5a1e-98ff-34687de72268@arm.com>
+Date: Wed, 12 Jun 2019 17:21:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190612153948.GA21828@kroah.com>
+In-Reply-To: <20190606164430.GH56860@arrakis.emea.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_091735_410397_977F3855 
-X-CRM114-Status: GOOD (  11.54  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190612_092125_307176_06234164 
+X-CRM114-Status: GOOD (  16.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (franksinankaya[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -134,38 +63,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- David Brown <david.brown@linaro.org>, vkoul@kernel.org,
- Andy Gross <agross@kernel.org>, dmaengine@vger.kernel.org,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Kachhap <Amit.Kachhap@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/12/2019 11:39 AM, Greg Kroah-Hartman wrote:
->> Interesting. Wouldn't debugfs_create_file() blow up if dir is NULL
->> for some reason?
-> It will create a file in the root of debugfs.  But how will that happen?
-> debugfs_create_dir() can not return NULL.
-
-I see.
-
+On 06/06/2019 17:44, Catalin Marinas wrote:
+> On Wed, May 29, 2019 at 08:03:30PM +0100, Kristina Martsenko wrote:
 > 
->> +		debugfs_create_file("stats", S_IRUGO, dir, chan,
->> +				    &hidma_chan_fops);
->>
->> Note that code ignores the return value of hidma_debug_init();
->> It was just trying to do clean up on debugfs failure by calling
->>
->> 	debugfs_remove_recursive(dmadev->debugfs);
-> Is that a problem?
+>>  - Added ISB after key install in kernel_exit, in case in the future C function
+>>    calls are added after the macro
+> [...]
+>> diff --git a/arch/arm64/include/asm/asm_pointer_auth.h b/arch/arm64/include/asm/asm_pointer_auth.h
+>> index e3bfddfe80b6..f595da9661a4 100644
+>> --- a/arch/arm64/include/asm/asm_pointer_auth.h
+>> +++ b/arch/arm64/include/asm/asm_pointer_auth.h
+>> @@ -25,11 +25,24 @@ alternative_if ARM64_HAS_ADDRESS_AUTH
+>>  	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APDB]
+>>  	msr_s	SYS_APDBKEYLO_EL1, \tmp2
+>>  	msr_s	SYS_APDBKEYHI_EL1, \tmp3
+>> +	isb
+>>  alternative_else_nop_endif
+>>  alternative_if ARM64_HAS_GENERIC_AUTH
+>>  	ldp	\tmp2, \tmp3, [\tmp1, #PTRAUTH_KEY_APGA]
+>>  	msr_s	SYS_APGAKEYLO_EL1, \tmp2
+>>  	msr_s	SYS_APGAKEYHI_EL1, \tmp3
+>> +	isb
+>> +alternative_else_nop_endif
+> 
+> I couldn't find the previous discussions, so why are the ISBs needed
+> here? Is this macro not invoked only on the kernel_exit path?
 
-I just wanted to double check. You probably want to remove the return
-value on debugfs_create_file() to prevent others from doing the same
-thing.
+It is invoked only in kernel_exit. There weren't any previous
+discussions, I just started thinking that in the future someone could
+add a call to a C function in kernel_exit after this macro (there are a
+few C calls in kernel_exit already). If the function is compiled with
+ptrauth instructions, and the above key system register writes take
+effect in the middle of the function, then authentication would fail,
+because we would enter the function with one key but exit with another.
 
-Acked-by: Sinan Kaya <okaya@kernel.org>
+This is probably overly cautious, so I'd be happy to remove the ISBs if
+you prefer. Could also add a comment in kernel_exit. Also, thinking
+about it now, we only use APIA key in the kernel, so the ISB after APGA
+key is actually unnecessary, so I'll go ahead and remove that one.
+
+Thanks,
+Kristina
 
 _______________________________________________
 linux-arm-kernel mailing list
