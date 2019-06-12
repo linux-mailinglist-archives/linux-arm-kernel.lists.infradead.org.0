@@ -2,51 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E4B543685
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:28:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E9DD4368C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:29:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XOq+06Q4Xq7lWmYaX38mFDO8UO667KFFfFrMjnN//Z8=; b=DkSg5pdy0OzcJ2OVTKqXPlYt3
-	uovzTh/80XMWHquJ40+MVpIxDGfGpNWRVHQ+xNAs6J5hWFDdjGurHkBHSRzeKZJREqcDfbcHltPBg
-	0C193HRDGZYqfXwk9TnKz0fF060kGosqySScXxs3nDiMpDrArEOVJGL+FoFIgnKQPMjdizWgejlrH
-	8N5GBmBLr9TdrfDlAqahmE57WwstHyR/uJ7vJyjKES/oR0PuRqOpajkc3lMYBGkbcPeS6TeZVO2gL
-	onCGaNGY9bGicKtmiOXzza412aUKsPuzMh7z2gBKi6v7GcG9SVS5RllvNZvXTweomFS02Vo7EWhm2
-	ZL7j4Mjqg==;
+	 bh=1wUeXDZ4mTaTt2Wep0bI2dp8Q9U7H24WYRywOkvVg5g=; b=dJw/ADP3Wjv4fnv1GDNoK12Bj
+	pGCCZdgDO6x+r0jND/zlEXeCDUPO3UVxu/iKmIinsFUpz04NKTPDPOaFwwDQGrF+yz0MvfT02T8Aq
+	F3T445ikYTFc4/m6OEVDsUVvus4ovLGroSVPZfbj+BPsipAL3/22bGZWUIBxppEhijjNGTD8BtOrt
+	giSySIm2cSJW+aueMO/Iht9wGdSh2/IUgVTNO08dD+XyApF1s9eWv9wqODJiWry/+allF5kj2d3KA
+	8f1evJpXon8YSBwiFzIpZ9X7zVZlxKXEE3GtYsGfDbjvkUNw9qF66U3rNe9EvaEqBO1qdunZ2MEX6
+	SkGhTb1LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbPlu-0004rg-AL; Thu, 13 Jun 2019 13:28:06 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1hbPmo-0005lH-Pw; Thu, 13 Jun 2019 13:29:02 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbPk7-0003OJ-SA
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:26:20 +0000
+ id 1hbPkJ-0003X2-5n
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:26:30 +0000
 Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
  [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id C73C020000C;
- Thu, 13 Jun 2019 13:26:08 +0000 (UTC)
-Date: Wed, 12 Jun 2019 17:48:27 +0200
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 88D46240015;
+ Thu, 13 Jun 2019 13:26:09 +0000 (UTC)
+Date: Wed, 12 Jun 2019 17:54:06 +0200
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH 1/5] dt-bindings: vendor: Escape single quote
-Message-ID: <20190612154827.ykrxtuv2q7uxmwoj@flea>
-References: <20190525134140.6220-1-maxime.ripard@bootlin.com>
- <CAL_JsqK829bfc4VX1hmYRuLYWQXaixAgSwU2N7veA41vfxLXvw@mail.gmail.com>
+To: Noralf =?utf-8?Q?Tr=C3=B8nnes?= <noralf@tronnes.org>
+Subject: Re: [PATCH v3 3/6] drm/modes: Allow to specify rotation and
+ reflection on the commandline
+Message-ID: <20190612155406.kjv6z7jk74bblfts@flea>
+References: <cover.87b91639451f23d4ab68a7c9812f2dd158869025.1555591281.git-series.maxime.ripard@bootlin.com>
+ <ba320b3a13c4444102b77c4d00f7c1dc810adc3c.1555591281.git-series.maxime.ripard@bootlin.com>
+ <9ccb7573-d46e-4b90-7caa-7b8cd7b8e7a2@tronnes.org>
+ <20190611124933.2g6l3d7nx6lqft6k@flea>
+ <1d0d6259-54cb-9a26-003d-2a35b8a40f3f@tronnes.org>
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqK829bfc4VX1hmYRuLYWQXaixAgSwU2N7veA41vfxLXvw@mail.gmail.com>
+In-Reply-To: <1d0d6259-54cb-9a26-003d-2a35b8a40f3f@tronnes.org>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_062616_462225_B98C6D2D 
-X-CRM114-Status: GOOD (  16.05  )
+X-CRM114-CacheID: sfid-20190613_062627_475612_F1FD832B 
+X-CRM114-Status: GOOD (  15.23  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ low trust [217.70.178.230 listed in list.dnswl.org]
  0.8 DATE_IN_PAST_12_24     Date: is 12 to 24 hours before Received: date
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -61,58 +65,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============3434485603240582558=="
+Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel@lists.freedesktop.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Eric Anholt <eric@anholt.net>, Sean Paul <seanpaul@chromium.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7099746419947884823=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3434485603240582558==
+--===============7099746419947884823==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ojdig4ufr3fvpwhg"
+	protocol="application/pgp-signature"; boundary="3wxmvvtbskp5zcmd"
 Content-Disposition: inline
 
 
---ojdig4ufr3fvpwhg
-Content-Type: text/plain; charset=us-ascii
+--3wxmvvtbskp5zcmd
+Content-Type: text/plain; charset=iso-8859-1
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-On Tue, Jun 11, 2019 at 03:18:51PM -0600, Rob Herring wrote:
-> On Sat, May 25, 2019 at 7:41 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+On Wed, Jun 12, 2019 at 02:43:44PM +0200, Noralf Tr=F8nnes wrote:
+> Den 11.06.2019 14.49, skrev Maxime Ripard:
+> >>> +		} else if (!strncmp(option, "reflect_x", delim - option)) {
+> >>> +			rotation |=3D DRM_MODE_REFLECT_X;
+> >>> +			sep =3D delim;
+> >>> +		} else if (!strncmp(option, "reflect_y", delim - option)) {
+> >>
+> >> I think you should drop reflect_x and _y for now since they're not
+> >> supported. People like me that only reads code and not documentation
+> >> (ahem..) will get the impression that this should work.
 > >
-> > Single quotes need to be escaped in YAML, make sure it's the case.
+> > I'm not sure what you mean here, this is definitely supposed to
+> > work. Is there a limitation you're thinking of?
 > >
-> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> > ---
-> >  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> > index 19cc3240a445..ec53162e900d 100644
-> > --- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> > +++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> > @@ -672,7 +672,7 @@ patternProperties:
-> >    "^plantower,.*":
-> >      description: Plantower Co., Ltd
-> >    "^plathome,.*":
-> > -    description: Plat'Home Co., Ltd.
-> > +    description: Plat\'Home Co., Ltd.
 >
-> Actually, I think this isn't necessary. Where was this causing a
-> problem? Only in single quoted strings do you have to escape a single
-> quote and it is done with 2 single quotes rather than a backslash.
+> It's this one in drm_client_panel_rotation() which limits rotation to
+> DRM_MODE_ROTATE_180:
+>
+> 	/*
+> 	 * TODO: support 90 / 270 degree hardware rotation,
+> 	 * depending on the hardware this may require the framebuffer
+> 	 * to be in a specific tiling format.
+> 	 */
+> 	if (*rotation !=3D DRM_MODE_ROTATE_180 || !plane->rotation_property)
+> 		return false;
 
-I guess I misread the YAML spec though... Sorry.
-
-> However, to maintain a json compatible subset of yaml, maybe we do
-> need it.
-
-If you don't want it anymore, I guess we can drop or revert it.
+Indeed, it doesn't work anymore since I rebased on your work. I'll fix
+this, thanks!
 
 Maxime
 
@@ -121,21 +126,21 @@ Maxime Ripard, Bootlin
 Embedded Linux and Kernel engineering
 https://bootlin.com
 
---ojdig4ufr3fvpwhg
+--3wxmvvtbskp5zcmd
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXQEeywAKCRDj7w1vZxhR
-xbQTAP9aeBEzFtsrAUI/WlTsmFq1tfkJJNyS0XOvprvVnIF4vwEA/8L4kV9E7v0K
-/oXbZNPQojz/la/iqD91nAmsPXcDtQg=
-=Y1ER
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXQEgHgAKCRDj7w1vZxhR
+xVtoAP4s4HFc5+Xz+AXPD/wlio4qU+eBrbfl4+JEmTmEajYFegD/ZE7kOWnv9p2h
+CSwUuDXLN0UExixZ6eKQuhZLzV4pdAg=
+=axG9
 -----END PGP SIGNATURE-----
 
---ojdig4ufr3fvpwhg--
+--3wxmvvtbskp5zcmd--
 
 
---===============3434485603240582558==
+--===============7099746419947884823==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -146,5 +151,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3434485603240582558==--
+--===============7099746419947884823==--
 
