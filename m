@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD49742D7C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:29:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5FE042D7E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:29:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OlkSfMYXjRSc2b3j3NhNSBAS5ozm+YmWZ3x42/U509Y=; b=DIUHg5B6+RTUEf
-	TaHCouCTp12cRNnHtiOc8TIvqQOWcAESHY1DBOZvg6yHiQuHZ9fvnwFIvVj+kHOKiHj3vlSnQyKK2
-	Y0muGOYu809fOebP9NtaFkl0G/eZlpf+B9wtqZ6cZ84IaQMONj/clhcbsIsrLf3Hl5Tw5ZOPAqBDS
-	WW8co6xenOV/v7+fVCrSFTwQlL7ovBZcSdGNfaPTpAs0fuCoNhvB47HCnLBiFWoKMHeEfGLHXY7ZA
-	aVDw8SEowwVajOM7Wa3X1uN2uLK/ORR+rNs0TXtpF52p131LA9zr9yF43TBuf4E8A5cOIEj0ZL4yL
-	s+MgccnDqyJrvlK9UKPQ==;
+	List-Owner; bh=8+oIrE1BL/Z5nPpq9ow3/CPzsn0nLXVchKBk6pMNCE8=; b=ntwk0A/UPPTYJ8
+	90lm55ZtSBbHEYsBU1Nz0sfCQlkKhLEalF4jB3aqdRvy9w0VXzyUk8o5rnax3s+O+GDO9IBYiMshg
+	I/GOfM611f09W+PEEprN2x+hCz4um9P3HYcstPAL+hUuzblZXcohAUY152IAYh5uDEe6Q36ey3K6w
+	/VL+JCtycvH6UuhBtPGQAxJhRq0oz13FxphVB+rKQl1DEBXDmqNvqAr13Pf8LS5+qdyK/os1GqKm/
+	wJaEk823Z5BkHy3k0qzuH0Mo4iVUnWnXzF5HDiyzVteFnB6JWDB/D1lbe4b/SzDtpsQt6njTNI5Av
+	AfwDhrALv9+v/SrBVM2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb740-0007dj-1Z; Wed, 12 Jun 2019 17:29:32 +0000
+	id 1hb74H-0007t5-AO; Wed, 12 Jun 2019 17:29:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb71w-00068e-BV
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:27:26 +0000
+ id 1hb71x-00061c-PX
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:27:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0BBB7C28;
- Wed, 12 Jun 2019 10:27:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 98EADC7A;
+ Wed, 12 Jun 2019 10:27:25 -0700 (PDT)
 Received: from capper-debian.arm.com (unknown [10.37.13.15])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7778A3F246;
- Wed, 12 Jun 2019 10:27:22 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 521903F246;
+ Wed, 12 Jun 2019 10:27:24 -0700 (PDT)
 From: Steve Capper <steve.capper@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 06/10] arm64: mm: Logic to make offset_ttbr1 conditional
-Date: Wed, 12 Jun 2019 18:26:54 +0100
-Message-Id: <20190612172658.28522-7-steve.capper@arm.com>
+Subject: [PATCH v3 07/10] arm64: mm: Separate out vmemmap
+Date: Wed, 12 Jun 2019 18:26:55 +0100
+Message-Id: <20190612172658.28522-8-steve.capper@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190612172658.28522-1-steve.capper@arm.com>
 References: <20190612172658.28522-1-steve.capper@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_102724_769636_70022CE5 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20190612_102725_904952_8E2B1EDD 
+X-CRM114-Status: GOOD (  13.55  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,153 +66,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When running with a 52-bit userspace VA and a 48-bit kernel VA we offset
-ttbr1_el1 to allow the kernel pagetables with a 52-bit PTRS_PER_PGD to
-be used for both userspace and kernel.
+vmemmap is a preprocessor definition that depends on a variable,
+memstart_addr. In a later patch we will need to expand the size of
+the VMEMMAP region and optionally modify vmemmap depending upon
+whether or not hardware support is available for 52-bit virtual
+addresses.
 
-Moving on to a 52-bit kernel VA we no longer require this offset to
-ttbr1_el1 should we be running on a system with HW support for 52-bit
-VAs.
-
-This patch introduces conditional logic to offset_ttbr1 to query
-SYS_ID_AA64MMFR2_EL1 whenever 52-bit VAs are selected. If there is HW
-support for 52-bit VAs then the ttbr1 offset is skipped.
-
-We choose to read a system register rather than vabits_actual because
-offset_ttbr1 can be called in places where the kernel data is not
-actually mapped.
-
-Calls to offset_ttbr1 appear to be made from rarely called code paths so
-this extra logic is not expected to adversely affect performance.
+This patch changes vmemmap to be a variable. As the old definition
+depended on a variable load, this should not affect performance
+noticeably.
 
 Signed-off-by: Steve Capper <steve.capper@arm.com>
 ---
+ arch/arm64/include/asm/pgtable.h | 4 ++--
+ arch/arm64/mm/init.c             | 5 +++++
+ 2 files changed, 7 insertions(+), 2 deletions(-)
 
-Changed in V3, move away from alternative framework as offset_ttbr1 can
-be called in places before the alternative framework has been
-initialised.
----
- arch/arm64/include/asm/assembler.h | 12 ++++++++++--
- arch/arm64/kernel/head.S           |  2 +-
- arch/arm64/kernel/hibernate-asm.S  |  8 ++++----
- arch/arm64/mm/proc.S               |  6 +++---
- 4 files changed, 18 insertions(+), 10 deletions(-)
-
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index 92b6b7cf67dd..5b6e82eb2588 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -545,9 +545,17 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
-  * In future this may be nop'ed out when dealing with 52-bit kernel VAs.
-  * 	ttbr: Value of ttbr to set, modified.
-  */
--	.macro	offset_ttbr1, ttbr
-+	.macro	offset_ttbr1, ttbr, tmp
- #ifdef CONFIG_ARM64_USER_VA_BITS_52
- 	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
-+#endif
+diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+index d0ab784304e9..60c52c1da61a 100644
+--- a/arch/arm64/include/asm/pgtable.h
++++ b/arch/arm64/include/asm/pgtable.h
+@@ -34,8 +34,6 @@
+ #define VMALLOC_START		(MODULES_END)
+ #define VMALLOC_END		(- PUD_SIZE - VMEMMAP_SIZE - SZ_64K)
+ 
+-#define vmemmap			((struct page *)VMEMMAP_START - (memstart_addr >> PAGE_SHIFT))
+-
+ #define FIRST_USER_ADDRESS	0UL
+ 
+ #ifndef __ASSEMBLY__
+@@ -46,6 +44,8 @@
+ #include <linux/mm_types.h>
+ #include <linux/sched.h>
+ 
++extern struct page *vmemmap;
 +
-+#ifdef CONFIG_ARM64_VA_BITS_52
-+	mrs_s	\tmp, SYS_ID_AA64MMFR2_EL1
-+	and	\tmp, \tmp, #(0xf << ID_AA64MMFR2_LVA_SHIFT)
-+	cbnz	\tmp, .Lskipoffs_\@
-+	orr	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
-+.Lskipoffs_\@ :
- #endif
- 	.endm
+ extern void __pte_error(const char *file, int line, unsigned long val);
+ extern void __pmd_error(const char *file, int line, unsigned long val);
+ extern void __pud_error(const char *file, int line, unsigned long val);
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index d89341df2d0e..6844365c0a51 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -64,6 +64,9 @@ EXPORT_SYMBOL(memstart_addr);
+ s64 physvirt_offset __ro_after_init;
+ EXPORT_SYMBOL(physvirt_offset);
  
-@@ -557,7 +565,7 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
-  * to be nop'ed out when dealing with 52-bit kernel VAs.
-  */
- 	.macro	restore_ttbr1, ttbr
--#ifdef CONFIG_ARM64_USER_VA_BITS_52
-+#if defined(CONFIG_ARM64_USER_VA_BITS_52) || defined(CONFIG_ARM64_VA_BITS_52)
- 	bic	\ttbr, \ttbr, #TTBR1_BADDR_4852_OFFSET
- #endif
- 	.endm
-diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index b3335e639b6d..5b8e38503ce1 100644
---- a/arch/arm64/kernel/head.S
-+++ b/arch/arm64/kernel/head.S
-@@ -788,7 +788,7 @@ ENTRY(__enable_mmu)
- 	phys_to_ttbr x1, x1
- 	phys_to_ttbr x2, x2
- 	msr	ttbr0_el1, x2			// load TTBR0
--	offset_ttbr1 x1
-+	offset_ttbr1 x1, x3
- 	msr	ttbr1_el1, x1			// load TTBR1
- 	isb
- 	msr	sctlr_el1, x0
-diff --git a/arch/arm64/kernel/hibernate-asm.S b/arch/arm64/kernel/hibernate-asm.S
-index fe36d85c60bd..f2dd592761fa 100644
---- a/arch/arm64/kernel/hibernate-asm.S
-+++ b/arch/arm64/kernel/hibernate-asm.S
-@@ -33,14 +33,14 @@
-  * Even switching to our copied tables will cause a changed output address at
-  * each stage of the walk.
-  */
--.macro break_before_make_ttbr_switch zero_page, page_table, tmp
-+.macro break_before_make_ttbr_switch zero_page, page_table, tmp, tmp2
- 	phys_to_ttbr \tmp, \zero_page
- 	msr	ttbr1_el1, \tmp
- 	isb
- 	tlbi	vmalle1
- 	dsb	nsh
- 	phys_to_ttbr \tmp, \page_table
--	offset_ttbr1 \tmp
-+	offset_ttbr1 \tmp, \tmp2
- 	msr	ttbr1_el1, \tmp
- 	isb
- .endm
-@@ -81,7 +81,7 @@ ENTRY(swsusp_arch_suspend_exit)
- 	 * We execute from ttbr0, change ttbr1 to our copied linear map tables
- 	 * with a break-before-make via the zero page
- 	 */
--	break_before_make_ttbr_switch	x5, x0, x6
-+	break_before_make_ttbr_switch	x5, x0, x6, x8
++struct page *vmemmap __ro_after_init;
++EXPORT_SYMBOL(vmemmap);
++
+ phys_addr_t arm64_dma_phys_limit __ro_after_init;
  
- 	mov	x21, x1
- 	mov	x30, x2
-@@ -112,7 +112,7 @@ ENTRY(swsusp_arch_suspend_exit)
- 	dsb	ish		/* wait for PoU cleaning to finish */
+ #ifdef CONFIG_KEXEC_CORE
+@@ -330,6 +333,8 @@ void __init arm64_memblock_init(void)
  
- 	/* switch to the restored kernels page tables */
--	break_before_make_ttbr_switch	x25, x21, x6
-+	break_before_make_ttbr_switch	x25, x21, x6, x8
+ 	physvirt_offset = PHYS_OFFSET - PAGE_OFFSET;
  
- 	ic	ialluis
- 	dsb	ish
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index fdd626d34274..9f64283e0f89 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -179,7 +179,7 @@ ENDPROC(cpu_do_switch_mm)
- .macro	__idmap_cpu_set_reserved_ttbr1, tmp1, tmp2
- 	adrp	\tmp1, empty_zero_page
- 	phys_to_ttbr \tmp2, \tmp1
--	offset_ttbr1 \tmp2
-+	offset_ttbr1 \tmp2, \tmp1
- 	msr	ttbr1_el1, \tmp2
- 	isb
- 	tlbi	vmalle1
-@@ -198,7 +198,7 @@ ENTRY(idmap_cpu_replace_ttbr1)
- 
- 	__idmap_cpu_set_reserved_ttbr1 x1, x3
- 
--	offset_ttbr1 x0
-+	offset_ttbr1 x0, x3
- 	msr	ttbr1_el1, x0
- 	isb
- 
-@@ -373,7 +373,7 @@ __idmap_kpti_secondary:
- 	cbnz	w18, 1b
- 
- 	/* All done, act like nothing happened */
--	offset_ttbr1 swapper_ttb
-+	offset_ttbr1 swapper_ttb, x18
- 	msr	ttbr1_el1, swapper_ttb
- 	isb
- 	ret
++	vmemmap = ((struct page *)VMEMMAP_START - (memstart_addr >> PAGE_SHIFT));
++
+ 	/*
+ 	 * Remove the memory that we will not be able to cover with the
+ 	 * linear mapping. Take care not to clip the kernel which may be
 -- 
 2.20.1
 
