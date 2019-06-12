@@ -2,86 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2961B42628
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:43:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE9B44262A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:43:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=evTGGpVV5TKvatNJpCPP9PY6kKjtKBJ3BPoMaHjNiGk=; b=txZw4nSd0ogX8X
-	mKUutsfrLj8TQVGBFMZ9LPPr08xqfqkb++0PUjuIdfleZ/KnV6QlP6b394UYlfNVgVIucc6z05AeZ
-	Y4QAZDqcs62z8cuq7pViK8luAXfHMGLj15JyrUJleLap2fx0lP8wcq5ULgLOM7ou4AOoqKcjeTgNJ
-	MwNlYI95MS1MS9X5fQ3jt8OnX6jTbNMyQm1+YoIu6aT+uriW2dDeHE/eOFMVkgOysJ7C1SbyMM6hD
-	H3BMkZyetx9csAD6LmCNLQIJW6yFlt4Qk+LPRVYQOYzv6iqNAvFQppO5l2vZ0evhVd6/KmIIUfpbR
-	ZEHnOJamVOrYns155muQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U0Tg5py/jL5iOgqFoA2cw36mAuyIWDU60V1rPTUMRqk=; b=Ym114Z2unj/y86
+	bDKG1+j4ejsolr7sD/fscsc6aWlrR3V/siVJBOul4EJXnT/tKV9dTf3Yym7JaWJYhpdLPQotgLDGq
+	NyKVdQku3SS+ZRK+Mba+JPbkH/RYjsnyk1xAs1Km87Ils6Uqj9NxQSLHyNewxSqgVAvVqfNZYfhAE
+	V44Gmq3agDT9fM3mNCCBGCzkGJHwBNEwclMJgmYB0MmbaFNdjRVbLJ1dbF9YIvGHjhMf1DxoX95/6
+	L1NWVMqsPWd+dXa5HYyQeGeSv9lv3KuwqX352xgPi0z2q7VH5bEU98UhE09KYYw5VGILxXtKzeoMM
+	5lSHNXmXQyBy5du9MR9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb2ay-0007Xl-FY; Wed, 12 Jun 2019 12:43:16 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hb2bb-0007oN-Aq; Wed, 12 Jun 2019 12:43:55 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb2aq-0007XB-81
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:43:09 +0000
-Received: by mail-lf1-x142.google.com with SMTP id z15so9287386lfh.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 05:43:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=V6vkS5UR633RrFItkYoPggOLkHWdZUqhLnRcNcB2XtY=;
- b=DWxwBLkLxa7JT3I+1DgXWyreCPEz8X0Ha8jOv9NGq44hFVhu69D4kduMd/7uGxdh2B
- cIWRCPCq9jJl98wMSvk7YGohrJKFaa4PjW4Fvp5KM5MDKt+1PdvXIPoI1h4fZ95dVbD5
- TaGctVbxlPdhfCs4/YfxV6Yh9vakovpMQRAO+ShReg9Ik42y2oFyjfGBQwD8ecB8Mx9e
- KsV3DGPXKQnRi3XO26tvGXvahStPbVMpkwSPPBVvPQeeQqaFZ4WA11sLI2Sgc4bbOkal
- 7zKsFLYwaJ1Odl/F1Puf5twxvAEC0IhjHtX4SrQulhoxhfrJpiA1XP+ZGVCT+3bexZAM
- SnOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=V6vkS5UR633RrFItkYoPggOLkHWdZUqhLnRcNcB2XtY=;
- b=RrcggVdASpwJLb2NPZC38qSEnAQSA5R2cB9TIkZ5ZtbhpwPMt551Pi27lShWDKlzhq
- 1fvKE0GzaUjMI3HefrgbkzUmed8H6TVmYwlKSV0TmwEO3BWpaeccauPnM6lndhW/rYW7
- aggcJlx4x0cSfcA3LPkDBlYggPjItSgW9hzJgV1/GKKrWd9OIu9eJiD8AF+w6VCz5hGw
- AVY+twZJgBRloWw2Vr9XqCc5G4Sjgm0qxEbY0IP6Phyz68rbSraXgiTJXRSqQC3xkfIf
- EZWAJsJWWyG7zeTIyVc82m9y16DwibfI6Qlv+3eJOdvbuSxyRXVZsKvbmD6RAMxmsOYS
- pqfw==
-X-Gm-Message-State: APjAAAWlACNiQ+H8WEQ9ZLz9q9HKChn4bRiZ6m8riqJjDwLuE475Qm+O
- mEZN6DmL0cjmbz7MNQmK7zk+GvqXOkN8ArRrY33ffA==
-X-Google-Smtp-Source: APXvYqzdmDZbWcjzXKF4+qJgAd8KclcnVSdd+i4vFNoSgCTrLDHUk6WwujykW+79sxKgM6urEsZlcpEXfTd0l81tX9Q=
-X-Received: by 2002:ac2:50c4:: with SMTP id h4mr28043288lfm.61.1560343386199; 
- Wed, 12 Jun 2019 05:43:06 -0700 (PDT)
+ id 1hb2bP-0007nQ-6h
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:43:46 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id BDF4F40B2B569458F45B;
+ Wed, 12 Jun 2019 20:43:36 +0800 (CST)
+Received: from [127.0.0.1] (10.177.223.23) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Wed, 12 Jun 2019
+ 20:43:35 +0800
+Subject: Re: [PATCH] arm64: tlbflush: Ensure start/end of address range are
+ aligned to stride
+From: Hanjun Guo <guohanjun@huawei.com>
+To: Will Deacon <will.deacon@arm.com>, <linux-arm-kernel@lists.infradead.org>
+References: <20190611121928.19253-1-will.deacon@arm.com>
+ <ef079778-2111-2672-129d-b2876496a9d8@huawei.com>
+Message-ID: <a393343f-8bf0-0367-3239-c6368f5c1233@huawei.com>
+Date: Wed, 12 Jun 2019 20:43:28 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.5.0
 MIME-Version: 1.0
-References: <20190612122557.24158-1-gregkh@linuxfoundation.org>
- <20190612122557.24158-3-gregkh@linuxfoundation.org>
-In-Reply-To: <20190612122557.24158-3-gregkh@linuxfoundation.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 12 Jun 2019 14:42:54 +0200
-Message-ID: <CACRpkdYC0DJkasyLawUvLWuM4_hE7OWLxaXwwus11Ga8-2+Fdg@mail.gmail.com>
-Subject: Re: [PATCH 3/6] dma: coh901318: no need to cast away call to
- debugfs_create_file()
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+In-Reply-To: <ef079778-2111-2672-129d-b2876496a9d8@huawei.com>
+Content-Language: en-US
+X-Originating-IP: [10.177.223.23]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_054308_345438_D59641C1 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190612_054345_439828_78DF3514 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,35 +67,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
- Vinod Koul <vkoul@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 2:26 PM Greg Kroah-Hartman
-<gregkh@linuxfoundation.org> wrote:
-
-> No need to check the return value of debugfs_create_file(), so no need
-> to provide a fake "cast away" of the return value either.
->
-> Cc: Linus Walleij <linus.walleij@linaro.org>
-> Cc: Vinod Koul <vkoul@kernel.org>
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: dmaengine@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-
-Yours,
-Linus Walleij
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAxOS82LzExIDIzOjIzLCBIYW5qdW4gR3VvIHdyb3RlOgo+IEhpIFdpbGwsCj4gCj4gT24g
+MjAxOS82LzExIDIwOjE5LCBXaWxsIERlYWNvbiB3cm90ZToKPj4gU2luY2UgY29tbWl0IDNkNjVi
+NmJiYzAxZSAoImFybTY0OiB0bGJpOiBTZXQgTUFYX1RMQklfT1BTIHRvCj4+IFBUUlNfUEVSX1BU
+RSIpLCB3ZSByZXNvcnQgdG8gcGVyLUFTSUQgaW52YWxpZGF0aW9uIHdoZW4gYXR0ZW1wdGluZyB0
+bwo+PiBwZXJmb3JtIG1vcmUgdGhhbiBQVFJTX1BFUl9QVEUgaW52YWxpZGF0aW9uIGluc3RydWN0
+aW9ucyBpbiBhIHNpbmdsZQo+PiBjYWxsIHRvIF9fZmx1c2hfdGxiX3JhbmdlKCkuIFdoaWxzdCB0
+aGlzIGlzIGJlbmVmaWNpYWwsIHRoZSBtbXVfZ2F0aGVyCj4+IGNvZGUgZG9lcyBub3QgZW5zdXJl
+IHRoYXQgdGhlIGVuZCBhZGRyZXNzIG9mIHRoZSByYW5nZSBpcyByb3VuZGVkLXVwCj4+IHRvIHRo
+ZSBzdHJpZGUgd2hlbiBmcmVlaW5nIGludGVybWVkaWF0ZSBwYWdlIHRhYmxlcyBpbiBwWFhfZnJl
+ZV90bGIoKSwKPj4gd2hpY2ggZGVmZWF0cyBvdXIgcmFuZ2UgY2hlY2tpbmcuCj4+Cj4+IEFsaWdu
+IHRoZSBib3VuZHMgcGFzc2VkIGludG8gX19mbHVzaF90bGJfcmFuZ2UoKS4KPj4KPj4gQ2M6IENh
+dGFsaW4gTWFyaW5hcyA8Y2F0YWxpbi5tYXJpbmFzQGFybS5jb20+Cj4+IENjOiBQZXRlciBaaWps
+c3RyYSA8cGV0ZXJ6QGluZnJhZGVhZC5vcmc+Cj4+IFJlcG9ydGVkLWJ5OiBIYW5qdW4gR3VvIDxn
+dW9oYW5qdW5AaHVhd2VpLmNvbT4KPiAKPiBUaGFua3MgZm9yIHRoZSBwYXRjaO+8jEkgd2lsbCB0
+ZXN0IHRoZSBwYXRjaCB0b21vcnJvdyBteSBsb2NhbCB0aW1lCj4gYXMgaXQncyBsYXRlIGhlcmUs
+IGFuZCB3aWxsIHVwZGF0ZSB5b3Ugd2hlbiBJIGdldCB0aGUgcmVzdWx0cy4KCkkgdGVzdGVkIHRo
+aXMgcGF0Y2ggb24gdG9wIG9mIDUuMi1yYzEsIGFuZCBvbiB0aGUgS3VucGVuZzkyMCBBUk02NApz
+ZXJ2ZXIgcGxhdGZvcm0sIHdpdGggdGVzdCBjYXNlIEkgcmVwb3J0ZWQgYmVmb3JlLCBJIGNhbiBz
+ZWUgYWJvdXQKMTAwJSBzcGVlZHVwIGZvciBtdW5tYXAoKSAoZnJvbSBhYm91dCA0N3VzIHRvIDI1
+dXMpLCB0aGF0J3MgZ3JlYXQhCgpUZXN0ZWQtYnk6IEhhbmp1biBHdW8gPGd1b2hhbmp1bkBodWF3
+ZWkuY29tPgpSZXZpZXdlZC1ieTogSGFuanVuIEd1byA8Z3VvaGFuanVuQGh1YXdlaS5jb20+CgpU
+aGFua3MKSGFuanVuCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
