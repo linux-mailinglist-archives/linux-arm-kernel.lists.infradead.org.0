@@ -2,51 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EAC5421FD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:08:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B048421FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:08:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wAlCWVbLeb2Z2VhgcuzHrs7IrXLhGbKajqUOs375FE0=; b=O06I1DIQM9+W/+VbsJP2cvWpg
-	dq3pzVRI+2Eo9evgPqd63M0VS3FVXWrnx9eTPFfgNbmjAJvmpwxOB6LuDVlXYtLsqyRrvNkkddDZv
-	tOj8idbXboWqtRQPFVW4H8G8zRYwBvSadje/g1oUyHneAsRHAAUYbRR+E+k5obWOMqRKRdsE+pYy0
-	M9TKTw1EEh+ihvHtwozVpMW6NR8n9/shGju9GIWWOPPka3zpWqH+0Q3/THPP/fMILDELpETRIP4i7
-	ZlF+bkSBp7nKHOZSKkxHLLfbA+JJonV1JY4AucbCfbajsArx59ruaUpAYdhxgX7LITf5a02AIV4cM
-	P2mC4mHAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k72V/MjwfyYKZ3QO7lIvJlR0YPM8QCCGVjgTtiUtKTA=; b=NUsKVDYPmKc2rc
+	nfFMhWncNl1D36seqMd45tJ1M1fXu36ZMVlSEChpGnqWLHlWUHO/vJkqcOf4YFyK/sE+y0URS+VR8
+	SXJyKu8KZW9fdZkIyz3Lu15rQszINTJbU8JEV+T5ZKfE/n9R7pdgWySNUGonKjhKtGdJPHzMBTLyH
+	tkKz6p/QqT01fi2PMFbeqhQR2nSHSPUmVD5kaAt5gTbHXqebpmT2mOWFZjwP5luKjfAI5GYY7CyA7
+	eWa+7MltCpthHL+1BTLXRn8iLeQGz+ZYLLcDfsp5uoVcvTLsT3Cmq6x6bhLgLg0zaCoOISg7e8sOm
+	QRrLhV+Kb7PQZi67qUdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb0B2-0005GU-1D; Wed, 12 Jun 2019 10:08:20 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb0Aq-0005Fk-Gx; Wed, 12 Jun 2019 10:08:10 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 431AFAF81;
- Wed, 12 Jun 2019 10:08:06 +0000 (UTC)
-Message-ID: <0722a6e21b17b1c54c81fb71e3237e60ae4819b6.camel@suse.de>
-Subject: Re: [PATCH v3 4/7] cpufreq: add driver for Raspbery Pi
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: stefan.wahren@i2se.com, "Rafael J. Wysocki" <rjw@rjwysocki.net>, Viresh
- Kumar <viresh.kumar@linaro.org>
-Date: Wed, 12 Jun 2019 12:08:03 +0200
-In-Reply-To: <20190611175839.28351-5-nsaenzjulienne@suse.de>
-References: <20190611175839.28351-1-nsaenzjulienne@suse.de>
- <20190611175839.28351-5-nsaenzjulienne@suse.de>
-User-Agent: Evolution 3.32.2 
+	id 1hb0BR-0005WY-U7; Wed, 12 Jun 2019 10:08:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb0BC-0005VV-3Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:08:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A2D928;
+ Wed, 12 Jun 2019 03:08:29 -0700 (PDT)
+Received: from redmoon (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 36B453F246;
+ Wed, 12 Jun 2019 03:10:11 -0700 (PDT)
+Date: Wed, 12 Jun 2019 11:08:26 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+Message-ID: <20190612100826.GB6506@redmoon>
+References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
+ <20190604014945.GE189360@google.com>
+ <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
+ <20190604124959.GF189360@google.com>
+ <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+ <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+ <20190611145832.GB11736@redmoon>
+ <5b5199b008d6c8831175018975f09599081dc5e4.camel@kernel.crashing.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <5b5199b008d6c8831175018975f09599081dc5e4.camel@kernel.crashing.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_030808_860470_C0FD7E60 
-X-CRM114-Status: GOOD (  22.26  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190612_030830_235582_70FD2FCD 
+X-CRM114-Status: GOOD (  27.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,234 +68,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- ptesarik@suse.com, sboyd@kernel.org, mturquette@baylibre.com,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, eric@anholt.net,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, mbrugger@suse.de, ssuloev@orpaltech.com
-Content-Type: multipart/mixed; boundary="===============4035150333691300343=="
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
+ Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
+ Ali" <alisaidi@amazon.com>, Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jun 12, 2019 at 08:19:40AM +1000, Benjamin Herrenschmidt wrote:
+> On Tue, 2019-06-11 at 15:58 +0100, Lorenzo Pieralisi wrote:
+> > 
+> > 
+> > 	if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
+> > 		/* preserve existing resource assignment */
+> > 		pci_bus_claim_resources(bus);
+> > 	}
+> > 
+> > 	pci_bus_size_bridges(bus);
+> > 	pci_bus_assign_resources(bus);
+> 
+> So that makes me nervous... my understanding is that the pair
+> 
+> 	pci_bus_size_bridges(bus);
+>  	pci_bus_assign_resources(bus);
+> 
+> Is intended for full reassignment. Now they will try to skip resources
+> that already have a parent, but that's yet another code path. What's
+> wrong with pci_unassigned_* ? That's what it's meant for...
 
---===============4035150333691300343==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-NucUMhJDBaNTXXV5xvf1"
+Nothing wrong, we have not understood each others. What I am asking
+is to write it like this:
 
+if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
+	/* preserve existing resource assignment */
+	pci_bus_claim_resources(bus);
+}
 
---=-NucUMhJDBaNTXXV5xvf1
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+/* this code path should be common, indipendent of _DSM #5
+pci_assign_unassigned_root_bus_resources(bus);
 
-On Tue, 2019-06-11 at 19:58 +0200, Nicolas Saenz Julienne wrote:
-> Raspberry Pi's firmware offers and interface though which update it's
-> performance requirements. It allows us to request for specific runtime
-> frequencies, which the firmware might or might not respect, depending on
-> the firmware configuration and thermals.
->=20
-> As the maximum and minimum frequencies are configurable in the firmware
-> there is no way to know in advance their values. So the Raspberry Pi
-> cpufreq driver queries them, builds an opp frequency table to then
-> launch cpufreq-dt.
->=20
-> Also, as the firmware interface might be configured as a module, making
-> the cpu clock unavailable during init, this implements a full fledged
-> driver, as opposed to most drivers registering cpufreq-dt, which only
-> make use of an init routine.
->=20
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Acked-by: Eric Anholt <eric@anholt.net>
-> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
-> ---
+There is no reason to have two distinct code paths, current code
+can call:
 
-Changes since v2:
-  - Round OPP rates
+pci_assign_unassigned_root_bus_resources(bus);
 
-> Changes since v1:
->   - Remove compatible checks
->   - Add module support, now full fledged driver
->   - Use NULL in clk_get()
->=20
->  drivers/cpufreq/Kconfig.arm           |  8 +++
->  drivers/cpufreq/Makefile              |  1 +
->  drivers/cpufreq/raspberrypi-cpufreq.c | 97 +++++++++++++++++++++++++++
->  3 files changed, 106 insertions(+)
->  create mode 100644 drivers/cpufreq/raspberrypi-cpufreq.c
->=20
-> diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
-> index 6f65b7f05496..56c31a78c692 100644
-> --- a/drivers/cpufreq/Kconfig.arm
-> +++ b/drivers/cpufreq/Kconfig.arm
-> @@ -142,6 +142,14 @@ config ARM_QCOM_CPUFREQ_HW
->  	  The driver implements the cpufreq interface for this HW engine.
->  	  Say Y if you want to support CPUFreq HW.
-> =20
-> +config ARM_RASPBERRYPI_CPUFREQ
-> +	tristate "Raspberry Pi cpufreq support"
-> +	depends on CLK_RASPBERRYPI || COMPILE_TEST
-> +	help
-> +	  This adds the CPUFreq driver for Raspberry Pi
-> +
-> +	  If in doubt, say N.
-> +
->  config ARM_S3C_CPUFREQ
->  	bool
->  	help
-> diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
-> index 7bcda2273d0c..5a6c70d26c98 100644
-> --- a/drivers/cpufreq/Makefile
-> +++ b/drivers/cpufreq/Makefile
-> @@ -65,6 +65,7 @@ obj-$(CONFIG_ARM_PXA2xx_CPUFREQ)	+=3D pxa2xx-cpufreq.o
->  obj-$(CONFIG_PXA3xx)			+=3D pxa3xx-cpufreq.o
->  obj-$(CONFIG_ARM_QCOM_CPUFREQ_HW)	+=3D qcom-cpufreq-hw.o
->  obj-$(CONFIG_ARM_QCOM_CPUFREQ_KRYO)	+=3D qcom-cpufreq-kryo.o
-> +obj-$(CONFIG_ARM_RASPBERRYPI_CPUFREQ) 	+=3D raspberrypi-cpufreq.o
->  obj-$(CONFIG_ARM_S3C2410_CPUFREQ)	+=3D s3c2410-cpufreq.o
->  obj-$(CONFIG_ARM_S3C2412_CPUFREQ)	+=3D s3c2412-cpufreq.o
->  obj-$(CONFIG_ARM_S3C2416_CPUFREQ)	+=3D s3c2416-cpufreq.o
-> diff --git a/drivers/cpufreq/raspberrypi-cpufreq.c
-> b/drivers/cpufreq/raspberrypi-cpufreq.c
-> new file mode 100644
-> index 000000000000..2bc7d9734272
-> --- /dev/null
-> +++ b/drivers/cpufreq/raspberrypi-cpufreq.c
-> @@ -0,0 +1,97 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Raspberry Pi cpufreq driver
-> + *
-> + * Copyright (C) 2019, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/cpu.h>
-> +#include <linux/cpufreq.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/pm_opp.h>
-> +
-> +#define RASPBERRYPI_FREQ_INTERVAL	100000000
-> +
-> +static struct platform_device *cpufreq_dt;
-> +
-> +static int raspberrypi_cpufreq_probe(struct platform_device *pdev)
-> +{
-> +	struct device *cpu_dev;
-> +	unsigned long min, max;
-> +	unsigned long rate;
-> +	struct clk *clk;
-> +	int ret;
-> +
-> +	cpu_dev =3D get_cpu_device(0);
-> +	if (!cpu_dev) {
-> +		pr_err("Cannot get CPU for cpufreq driver\n");
-> +		return -ENODEV;
-> +	}
-> +
-> +	clk =3D clk_get(cpu_dev, NULL);
-> +	if (IS_ERR(clk)) {
-> +		dev_err(cpu_dev, "Cannot get clock for CPU0\n");
-> +		return PTR_ERR(clk);
-> +	}
-> +
-> +	/*
-> +	 * The max and min frequencies are configurable in the Raspberry Pi
-> +	 * firmware, so we query them at runtime.
-> +	 */
-> +	min =3D roundup(clk_round_rate(clk, 0), RASPBERRYPI_FREQ_INTERVAL);
-> +	max =3D roundup(clk_round_rate(clk, ULONG_MAX),
-> RASPBERRYPI_FREQ_INTERVAL);
-> +	clk_put(clk);
-> +
-> +	for (rate =3D min; rate <=3D max; rate +=3D RASPBERRYPI_FREQ_INTERVAL) =
-{
-> +		ret =3D dev_pm_opp_add(cpu_dev, rate, 0);
-> +		if (ret)
-> +			goto remove_opp;
-> +	}
-> +
-> +	cpufreq_dt =3D platform_device_register_simple("cpufreq-dt", -1, NULL, =
-0);
-> +	ret =3D PTR_ERR_OR_ZERO(cpufreq_dt);
-> +	if (ret) {
-> +		dev_err(cpu_dev, "Failed to create platform device, %d\n", ret);
-> +		goto remove_opp;
-> +	}
-> +
-> +	return 0;
-> +
-> +remove_opp:
-> +	dev_pm_opp_remove_all_dynamic(cpu_dev);
-> +
-> +	return ret;
-> +}
-> +
-> +static int raspberrypi_cpufreq_remove(struct platform_device *pdev)
-> +{
-> +	struct device *cpu_dev;
-> +
-> +	cpu_dev =3D get_cpu_device(0);
-> +	if (cpu_dev)
-> +		dev_pm_opp_remove_all_dynamic(cpu_dev);
-> +
-> +	platform_device_unregister(cpufreq_dt);
-> +
-> +	return 0;
-> +}
-> +
-> +/*
-> + * Since the driver depends on clk-raspberrypi, which may return
-> EPROBE_DEFER,
-> + * all the activity is performed in the probe, which may be defered as w=
-ell.
-> + */
-> +static struct platform_driver raspberrypi_cpufreq_driver =3D {
-> +	.driver =3D {
-> +		.name =3D "raspberrypi-cpufreq",
-> +	},
-> +	.probe          =3D raspberrypi_cpufreq_probe,
-> +	.remove		=3D raspberrypi_cpufreq_remove,
-> +};
-> +module_platform_driver(raspberrypi_cpufreq_driver);
-> +
-> +MODULE_AUTHOR("Nicolas Saenz Julienne <nsaenzjulienne@suse.de");
-> +MODULE_DESCRIPTION("Raspberry Pi cpufreq driver");
-> +MODULE_LICENSE("GPL");
-> +MODULE_ALIAS("platform:raspberrypi-cpufreq");
+instead of
 
+pci_bus_size_bridges(bus);
+pci_bus_assign_resources(bus);
 
---=-NucUMhJDBaNTXXV5xvf1
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+Actually, current code is *questionable* given that AFAICS it
+does not account for hotplug bridges additional memory window
+size.
 
------BEGIN PGP SIGNATURE-----
+> > That's how it should be I think:
+> > 
+> > 1) we do not want pci_assign_unassigned_root_bus_resources(bus) to
+> >    reallocate resources already claimed (see realloc parameter), do we ?
+> 
+> Well, realloc is useful to handle SR_IOV when the BIOS doesn't do it
+> right (common case). That said, at this point, we should be able to
+> honor IORESOURCE_PCI_FIXED for things that have _DSM #5 since they have
+> been claimed. I don't see that realloc logic being a problem for us,
+> and I want to avoid gratuitous differences with x86, but maybe I'm
+> missing something here...
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl0AzwMACgkQlfZmHno8
-x/7XDwf6AmOp4z2If+9JyAnF9u7fjckQxW95msPdhyTenwMrGgbDfyVj1e/ll9jI
-rMRHVydv8Gi6mLQGb+GfY8z1awOkFZRHILG+cH82iyGCabWQKH/V9tFqvG4lLM/C
-lsTtGHKqW0yGn+dmw0A/Yj8CWPluaXEqqCVR3fWZEPwngqLPOuJOupRs2HkggRPa
-izeC8yLovNBlFT4DjQx7wnjDfoSYJfxDwGRwhiDVh8VCujVb6nqG+1d4nuKfIkCb
-J/SjEzmAMsGsoFtHKMEFbhXegEDPUU1eAIwTzckWPc/XxuzMvtseqfYYYzKoBuzo
-JfWawUIVoLH7JtMssfg8ViI4fOkoFw==
-=oVAV
------END PGP SIGNATURE-----
+See above. The conditions that make IORESOURCE_PCI_FIXED work are
+still unclear to me.
 
---=-NucUMhJDBaNTXXV5xvf1--
+> > 2) pci_bus_size_bridges(bus) and pci_bus_assign_resources(bus) should
+> >    not interfere with resources already claimed so it *should* be safe
+> >    to call them anyway
+> 
+> Sure, *should* and here we introduce yet another way of doing things
+> though... Any reason we don't want to do what x86 does here ?
 
+No, see above, keeping in mind that what x86 does is still not
+very well defined AFAICS.
 
+> > Most importantly: I want everyone to agree that claiming is equivalent
+> > to making a resource immutable (except for realloc, see (1) above)
+> > because that's what we are doing by claiming on _DSM #5 == 0.
+> 
+> I think the combination of claiming *and* IORESOURCE_PCI_FIXED is what
+> makes it *really* immutable. I'm a bit confused by the realloc logic
+> right now, I'll need more quality time looking at it after ingesting
+> more caffeing but I'm under the impression that it will honor the flag.
 
---===============4035150333691300343==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Likewise, this requires some fuzzing because it is really hard to
+understand by perusing the code.
+
+> > There are too many ways to make a resource immutable in the kernel
+> > and this is confusing and prone to bugs.
+> 
+> It is, but I don't want to create new ways of doing things, and what
+> you seem to propose is a new way imho :-)
+
+No, see above. What I am saying is that we have IORESOURCE_PCI_FIXED,
+res->parent != NULL and Enhanced allocation to make a BAR immutable and
+before going any further it would be great if we understand their
+interaction given that we are starting from a pseudo clean slate.
+
+If we fail to do that it is quirks later (and I would rather avoid
+seeing x86 command line parameters to work around them).
+
+Cheers,
+Lorenzo
+
+> Cheers,
+> Ben.
+> 
+> > Thanks,
+> > Lorenzo
+> > 
+> > > +	ACPI_FREE(obj);
+> > >  
+> > >  	list_for_each_entry(child, &bus->children, node)
+> > >  		pcie_bus_configure_settings(child);
+> > > diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
+> > > index 8082b612f561..62b7fdcc661c 100644
+> > > --- a/include/linux/pci-acpi.h
+> > > +++ b/include/linux/pci-acpi.h
+> > > @@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
+> > >  #endif
+> > >  
+> > >  extern const guid_t pci_acpi_dsm_guid;
+> > > -#define DEVICE_LABEL_DSM	0x07
+> > > -#define RESET_DELAY_DSM		0x08
+> > > -#define FUNCTION_DELAY_DSM	0x09
+> > > +#define IGNORE_PCI_BOOT_CONFIG_DSM	0x05
+> > > +#define DEVICE_LABEL_DSM		0x07
+> > > +#define RESET_DELAY_DSM			0x08
+> > > +#define FUNCTION_DELAY_DSM		0x09
+> > >  
+> > >  #else	/* CONFIG_ACPI */
+> > >  static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
+> > > 
+> > > 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4035150333691300343==--
-
-
