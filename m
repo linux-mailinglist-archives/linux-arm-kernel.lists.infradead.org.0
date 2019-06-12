@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28CB042BA6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:02:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 316C242BAB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:02:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EV1krLCx/OFkwNCzv++mqpCw/j/xnsZtiykw73ToV2w=; b=UFI0qnqzL/+y+L0LN3kEsnqCH8
-	R822T6/aYFlAkt/CSjxNQXl/CU22KD4HeZyhFMPs7uzS/ptQ8sfms9aMl/J20DwHcYkOtxbmGJBeT
-	ZqZjZgCKhqNEisgVQFTgw4/4939qMV1misqs2ryQFz2KLUsE2KXaYzDZRVJ93Uzxr7Z7VVO8ENTWG
-	ynEgmlhhb0FHYquabLH6amViQ5DNwhWxIO984QfLUIgJFyaD9hqn/m/trVPMLK+lkM0ZH5odzGU8a
-	bqmM/u8mykgHYJRJMwF5mBoWyBhoShod1Z0QEiqpcsgPTKHXJL1iWvHRh/OoNOnxUepfrDT7UKLfX
-	YZOrkCtA==;
+	bh=vbzP07ohX9NUgdciwzXnUN0ulaemGsYkNVi1tUC6OFY=; b=di3ReMXp3lmA1jYriy7wH3oug8
+	YdNlWViVR/rx6YWSFT0uVvePo1bfIPePJpV+PswQDMlRQKR3JAaPPmuuFMUwx9CR8WcXsSSHQ56PP
+	jgNAC7CCm9C/W4FH8ng6HXug7y0kEwjHtuooWpmzJlNV6vIHtg0nC9b7YZ+Zqc5rsqIzNSl5zJIJL
+	u8saHaukCsbVpugz3VXySNDBdtipZBzB00uIcEd1IjNfaZXVJrYSZGgwIUjJ1zA9t1cbh7eyAwLzE
+	BQRcJCuWgbSQlt/tigW7I9+4WQJa8s00DNQDQEQWjMdrHqCjT7VLja2r9gUh+apfjCBRhw7BY3NH1
+	lKSK7lGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb5hJ-0007yA-Gx; Wed, 12 Jun 2019 16:02:01 +0000
+	id 1hb5hc-0008E5-CR; Wed, 12 Jun 2019 16:02:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb5gi-0007gC-ED
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:01:25 +0000
+ id 1hb5gj-0007hy-W9
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:01:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F269EA5E;
- Wed, 12 Jun 2019 09:01:23 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6EE98337;
+ Wed, 12 Jun 2019 09:01:25 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D2E693F73C;
- Wed, 12 Jun 2019 09:01:22 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 33E763F73C;
+ Wed, 12 Jun 2019 09:01:24 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/3] arm64/sve: Factor out FPSIMD to SVE state conversion
-Date: Wed, 12 Jun 2019 17:00:33 +0100
-Message-Id: <1560355234-25516-3-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH v2 3/3] arm64/sve: Fix a couple of magic numbers for the Z-reg
+ count
+Date: Wed, 12 Jun 2019 17:00:34 +0100
+Message-Id: <1560355234-25516-4-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
 References: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_090124_532325_E2C81A0A 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20190612_090126_088771_500220CC 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,80 +72,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently we convert from FPSIMD to SVE register state in memory in
-two places.
+There are some hand-written instances of "32" to express the number
+of SVE Z-registers.
 
-To ease future maintenance, let's consolidate this in one place.
+Since this code was written a #define was added for this, so
+convert trivial instances of this magic number as appropriate.
+
+No functional change.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 ---
- arch/arm64/kernel/fpsimd.c | 27 ++++++++++++++-------------
- 1 file changed, 14 insertions(+), 13 deletions(-)
+ arch/arm64/kernel/fpsimd.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/kernel/fpsimd.c b/arch/arm64/kernel/fpsimd.c
-index bb42cd0..d2f7544 100644
+index d2f7544..a5702c3 100644
 --- a/arch/arm64/kernel/fpsimd.c
 +++ b/arch/arm64/kernel/fpsimd.c
-@@ -370,6 +370,18 @@ static __uint128_t arm64_cpu_to_le128(__uint128_t x)
+@@ -376,7 +376,7 @@ static void __fpsimd_to_sve(void *sst, struct user_fpsimd_state const *fst,
+ 	unsigned int i;
+ 	__uint128_t *p;
  
- #define arm64_le128_to_cpu(x) arm64_cpu_to_le128(x)
- 
-+static void __fpsimd_to_sve(void *sst, struct user_fpsimd_state const *fst,
-+			    unsigned int vq)
-+{
-+	unsigned int i;
-+	__uint128_t *p;
-+
-+	for (i = 0; i < 32; ++i) {
-+		p = (__uint128_t *)ZREG(sst, vq, i);
-+		*p = arm64_cpu_to_le128(fst->vregs[i]);
-+	}
-+}
-+
- /*
-  * Transfer the FPSIMD state in task->thread.uw.fpsimd_state to
-  * task->thread.sve_state.
-@@ -386,17 +398,12 @@ static void fpsimd_to_sve(struct task_struct *task)
- 	unsigned int vq;
- 	void *sst = task->thread.sve_state;
- 	struct user_fpsimd_state const *fst = &task->thread.uw.fpsimd_state;
--	unsigned int i;
--	__uint128_t *p;
- 
- 	if (!system_supports_sve())
+-	for (i = 0; i < 32; ++i) {
++	for (i = 0; i < SVE_NUM_ZREGS; ++i) {
+ 		p = (__uint128_t *)ZREG(sst, vq, i);
+ 		*p = arm64_cpu_to_le128(fst->vregs[i]);
+ 	}
+@@ -428,7 +428,7 @@ static void sve_to_fpsimd(struct task_struct *task)
  		return;
  
  	vq = sve_vq_from_vl(task->thread.sve_vl);
 -	for (i = 0; i < 32; ++i) {
--		p = (__uint128_t *)ZREG(sst, vq, i);
--		*p = arm64_cpu_to_le128(fst->vregs[i]);
--	}
-+	__fpsimd_to_sve(sst, fst, vq);
- }
- 
- /*
-@@ -512,8 +519,6 @@ void sve_sync_from_fpsimd_zeropad(struct task_struct *task)
- 	unsigned int vq;
- 	void *sst = task->thread.sve_state;
- 	struct user_fpsimd_state const *fst = &task->thread.uw.fpsimd_state;
--	unsigned int i;
--	__uint128_t *p;
- 
- 	if (!test_tsk_thread_flag(task, TIF_SVE))
- 		return;
-@@ -521,11 +526,7 @@ void sve_sync_from_fpsimd_zeropad(struct task_struct *task)
- 	vq = sve_vq_from_vl(task->thread.sve_vl);
- 
- 	memset(sst, 0, SVE_SIG_REGS_SIZE(vq));
--
--	for (i = 0; i < 32; ++i) {
--		p = (__uint128_t *)ZREG(sst, vq, i);
--		*p = arm64_cpu_to_le128(fst->vregs[i]);
--	}
-+	__fpsimd_to_sve(sst, fst, vq);
- }
- 
- int sve_set_vector_length(struct task_struct *task,
++	for (i = 0; i < SVE_NUM_ZREGS; ++i) {
+ 		p = (__uint128_t const *)ZREG(sst, vq, i);
+ 		fst->vregs[i] = arm64_le128_to_cpu(*p);
+ 	}
 -- 
 2.1.4
 
