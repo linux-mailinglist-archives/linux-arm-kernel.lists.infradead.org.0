@@ -2,91 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 937914241D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:36:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6C894241E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:37:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4UfPxhTMZDhpwpqrideQ5l4XV//tUY0+5rwhESLcOLI=; b=Vxfr7XzWUwmgYc
-	P+FM0V061Up8UoK0N2HvOVoqy07LavP6H602Tt+jRu4J1kKJKyeP7nFIzdhgH7h22x3KcfKTyd+oo
-	2e2LILgMmHF4VUtrbW6qXyY7RVLRCPyEP1OQQ+PixasdZZehCXUGx1BBRv3MG4GznOTQ4Ha0wUYPZ
-	SWP7rktv+QGud7cKsxg629g+W09oTCvefvKUzHqY62mfaZe9uONtUv7RK/4VMi/UyzlEZsx9MI+47
-	J3bDFw9it3/Cb/urHBBSZUfd1EGROxpw+GMJwKn1Od+WHlvJGF5lkqDrJgdULOkEhLGhczMARl8dg
-	mmKpnatmbD8/3Rz6JK+Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zCDzM3Wch2nEgmWBcJvQeuEpaKwx6v/EPVBdhKD51QQ=; b=AonCRgH7dSG0ui
+	Yru0mcOAsIei2quG+ib0GzESr8gNcBnXooFbelPria6StbOcyt3EpH/oidCwm5dzPj+od7QPT/shp
+	XRIzrHgN7Ml1KSpJL0vxXr4kql1vzMBY7+eThQhN+D15tpCOk8A4v1TQ4PoqK5aHsuFmTxftXLguI
+	lIkE44diyTktJlLHCTKibGwpkGFipOakP58W1gVKC4jFlFugo+tY2VzKE7x8revXm8sNFnhwicEFY
+	XprMI88c+12eQMd8hzyUmtOYFirjZeR94gwbCwGAPFfi6t/RKKfW/VTSs/uKUcSm2ccDf2+aU6XMN
+	ptwlWMx5Xt4q5vD4Ei3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1Ye-0002ay-Vj; Wed, 12 Jun 2019 11:36:49 +0000
-Received: from aserp2130.oracle.com ([141.146.126.79])
+	id 1hb1Yy-0002pl-AP; Wed, 12 Jun 2019 11:37:08 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1YR-0002Zt-A3
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:36:37 +0000
-Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
- by aserp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5CBSi1w095710;
- Wed, 12 Jun 2019 11:36:32 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : mime-version : content-type; s=corp-2018-07-02;
- bh=SdZpTIwnjOS7aueCoW6tmHDHwEBzUG1YgGyEAoHCo8Q=;
- b=peErrbpkDxYO8knWnVJkN+t+KlTEF6AMSxMZAl89VkVvdFTuFuxKIfG9eSXKi/hKKhND
- 4AQtob2B60urgGq7Me+OX/HKUUpUbx7sWp4zY0TLPw/kke7cd6cQ62zUYUG2KzomSuNH
- UYNbHuFzZJlTknuJ5M1gKVP6H0VASS6RRK9LBc6QHHWQ1B2unrPqYBUPqSMS9ndGOnQ5
- VroRIuErRnH8z5OCWw1mvfqcfqTipkyi+jQKw+6LFKnh2+Tp000aFwnk1RAflt76EUXX
- K2sRD6VDwVFEZHGXVMZEOxhRkTRKkCNGAA4wSgthqhOpRBaSBjGDpfE8HEgx1UzA++NC Cg== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2130.oracle.com with ESMTP id 2t02hetxab-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 12 Jun 2019 11:36:32 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5CBZ48c095515;
- Wed, 12 Jun 2019 11:36:32 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2t04hyvkgg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 12 Jun 2019 11:36:32 +0000
-Received: from abhmp0002.oracle.com (abhmp0002.oracle.com [141.146.116.8])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x5CBaUoL007561;
- Wed, 12 Jun 2019 11:36:30 GMT
-Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 12 Jun 2019 04:36:29 -0700
-Date: Wed, 12 Jun 2019 14:36:23 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: j-keerthy@ti.com, Dave Gerlach <d-gerlach@ti.com>
-Subject: [bug report] soc: ti: pm33xx: AM437X: Add rtc_only with ddr in
- self-refresh support
-Message-ID: <20190612113623.GA24020@mwanda>
+ id 1hb1Ye-0002lC-LJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:36:50 +0000
+Received: by mail-pf1-x444.google.com with SMTP id j2so9510379pfe.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 04:36:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MhkB743oojqt0jCijE6DsOt5IqaBpxqgWof9mFxCLr0=;
+ b=GDzbgDhOafy14R/X43UkUN/+wf8bZdqGlFyPynLyOoG20vlQgN7zE9jZaanLyn3zx5
+ qQhhso2gb34OxP/u3xHSg6zS8JjJRY1rM9k4rX+82IiHVqiDxz7X2a893Yf4graw7TMN
+ nSUF/2Gtu0ZiA9FjJgluVZwCMm/sY7nIvA/8cwZyNRO0pWttZ9rn4SJm4NDG5Og1LJ7q
+ 69ebVQ9hxBQQPUib1nigJuccodsU3NmYrSrnehuErfe4YWQQvRoySvoE3IbFgIm+u5mm
+ oszynkP2bKoPt4/Zv/VgvQYlSIXKjNdvA3RFAgK5OHTEZyvWErx96s2gVUjdKfd7KRLc
+ uonQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MhkB743oojqt0jCijE6DsOt5IqaBpxqgWof9mFxCLr0=;
+ b=WMDfGQq6svyclabf0gx/OcbyBd+PS8KcVad/udsY8sQ9Jlxd8Rll7EQ+s2imC4VDqq
+ BTU0qsOL8ZC6qxk85fKKIuDEuKEL1NWcyyJZ29VvBCofRv/ji7VyPhDNdZw+GJ2+J1BI
+ ncO46Jy4MNvJ+U3kAITtifLFJOdWVOtixRDRmwClynVoZ5p2cn7nluCWF00mePZp0Gz1
+ BNzzOLcUlUA+3sVYU4Z1at17VoLW3A7CkW1IZ96pjxagpHZHx2Zw0thYlB7fnUNmgGOU
+ a4ba9aTXyNNxRssH1Gx5Theuzg2LHb7sV0x1iGIiburWOscGzhltnJHbqLYbmtCSh3AX
+ KPJw==
+X-Gm-Message-State: APjAAAVqPMfUD9O+DFcfR0LBtm4tzGDAaZGDerRbScM+0PltBhTzNdoQ
+ 0mxqXdRu2ntH8AYGVTyemW3yo/7vT5qxS9NcCrsOpfKxQ4o=
+X-Google-Smtp-Source: APXvYqzGzjPmF8qGtciCMiJ8cvvmFlnWp+2d9nBudQ86r37IgxuDA/rPCLSSJ3M+cA0egqf1SPnYkN9tXts/BubXkpo=
+X-Received: by 2002:aa7:97bb:: with SMTP id d27mr18575219pfq.93.1560339407628; 
+ Wed, 12 Jun 2019 04:36:47 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9285
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=402
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1906120080
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9285
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=444 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1906120080
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <51f44a12c4e81c9edea8dcd268f820f5d1fad87c.1559580831.git.andreyknvl@google.com>
+ <201906072101.58C919E@keescook>
+ <CAAeHK+y8CH4P3vheUDCEnPAuO-2L6mc-sz6wMA_hT=wC1Cy3KQ@mail.gmail.com>
+In-Reply-To: <CAAeHK+y8CH4P3vheUDCEnPAuO-2L6mc-sz6wMA_hT=wC1Cy3KQ@mail.gmail.com>
+From: Andrey Konovalov <andreyknvl@google.com>
+Date: Wed, 12 Jun 2019 13:36:36 +0200
+Message-ID: <CAAeHK+xCmc-x=Mvs8RC+xJOCw6AnEUgUzXXjjS3NJXeLwJkyqg@mail.gmail.com>
+Subject: Re: [PATCH v16 08/16] fs,
+ arm64: untag user pointers in copy_mount_options
+To: Kees Cook <keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_043635_443039_F1E6614F 
-X-CRM114-Status: GOOD (  11.44  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190612_043648_734156_145CED72 
+X-CRM114-Status: GOOD (  25.36  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.79 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,9 +87,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match 0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,129 +100,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Khalid Aziz <khalid.aziz@oracle.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Keerthy,
+On Tue, Jun 11, 2019 at 4:38 PM Andrey Konovalov <andreyknvl@google.com> wrote:
+>
+> On Sat, Jun 8, 2019 at 6:02 AM Kees Cook <keescook@chromium.org> wrote:
+> >
+> > On Mon, Jun 03, 2019 at 06:55:10PM +0200, Andrey Konovalov wrote:
+> > > This patch is a part of a series that extends arm64 kernel ABI to allow to
+> > > pass tagged user pointers (with the top byte set to something else other
+> > > than 0x00) as syscall arguments.
+> > >
+> > > In copy_mount_options a user address is being subtracted from TASK_SIZE.
+> > > If the address is lower than TASK_SIZE, the size is calculated to not
+> > > allow the exact_copy_from_user() call to cross TASK_SIZE boundary.
+> > > However if the address is tagged, then the size will be calculated
+> > > incorrectly.
+> > >
+> > > Untag the address before subtracting.
+> > >
+> > > Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+> > > Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> >
+> > One thing I just noticed in the commit titles... "arm64" is in the
+> > prefix, but these are arch-indep areas. Should the ", arm64" be left
+> > out?
+> >
+> > I would expect, instead:
+> >
+> >         fs/namespace: untag user pointers in copy_mount_options
+>
+> Hm, I've added the arm64 tag in all of the patches because they are
+> related to changes in arm64 kernel ABI. I can remove it from all the
+> patches that only touch common code if you think that it makes sense.
 
-The patch 5a99ae0092fe: "soc: ti: pm33xx: AM437X: Add rtc_only with
-ddr in self-refresh support" from Apr 3, 2019, leads to the following
-static checker warnings:
+I'll keep the arm64 tags in commit titles for v17. Please reply
+explicitly if you think I should remove them. Thanks! :)
 
-drivers/soc/ti/pm33xx.c:254 am33xx_pm_begin() warn: 'nvmem' is an error pointer or valid
-drivers/soc/ti/pm33xx.c:293 am33xx_pm_end() warn: curly braces intended?
-drivers/soc/ti/pm33xx.c:417 am33xx_pm_rtc_setup() warn: 'nvmem' is an error pointer or valid
-
-drivers/soc/ti/pm33xx.c
-   247  static int am33xx_pm_begin(suspend_state_t state)
-   248  {
-   249          int ret = -EINVAL;
-   250          struct nvmem_device *nvmem;
-   251  
-   252          if (state == PM_SUSPEND_MEM && pm_ops->check_off_mode_enable()) {
-   253                  nvmem = devm_nvmem_device_get(&omap_rtc->dev,
-   254                                                "omap_rtc_scratch0");
-   255                  if (nvmem)
-                            ^^^^^
-This should be if (!IS_ERR(nvmem)).
-
-   256                          nvmem_device_write(nvmem, RTC_SCRATCH_MAGIC_REG * 4, 4,
-   257                                             (void *)&rtc_magic_val);
-   258                  rtc_only_idle = 1;
-   259          } else {
-   260                  rtc_only_idle = 0;
-   261          }
-   262  
-   263          switch (state) {
-   264          case PM_SUSPEND_MEM:
-   265                  ret = m3_ipc->ops->prepare_low_power(m3_ipc, WKUP_M3_DEEPSLEEP);
-   266                  break;
-   267          case PM_SUSPEND_STANDBY:
-   268                  ret = m3_ipc->ops->prepare_low_power(m3_ipc, WKUP_M3_STANDBY);
-   269                  break;
-   270          }
-   271  
-   272          return ret;
-   273  }
-   274  
-   275  static void am33xx_pm_end(void)
-   276  {
-   277          u32 val = 0;
-   278          struct nvmem_device *nvmem;
-   279  
-   280          nvmem = devm_nvmem_device_get(&omap_rtc->dev, "omap_rtc_scratch0");
-
-Does this need error handling?
-
-   281          m3_ipc->ops->finish_low_power(m3_ipc);
-   282          if (rtc_only_idle) {
-   283                  if (retrigger_irq)
-
-We need curly braces for this if statement.
-
-   284                          /*
-   285                           * 32 bits of Interrupt Set-Pending correspond to 32
-   286                           * 32 interrupts. Compute the bit offset of the
-   287                           * Interrupt and set that particular bit
-   288                           * Compute the register offset by dividing interrupt
-   289                           * number by 32 and mutiplying by 4
-   290                           */
-   291                          writel_relaxed(1 << (retrigger_irq & 31),
-   292                                         gic_dist_base + GIC_INT_SET_PENDING_BASE
-   293                                         + retrigger_irq / 32 * 4);
-   294                          nvmem_device_write(nvmem, RTC_SCRATCH_MAGIC_REG * 4, 4,
-   295                                             (void *)&val);
-   296          }
-   297  
-   298          rtc_only_idle = 0;
-   299  }
-
-[ snip ]
-
-   401  static int am33xx_pm_rtc_setup(void)
-   402  {
-   403          struct device_node *np;
-   404          unsigned long val = 0;
-   405          struct nvmem_device *nvmem;
-   406  
-   407          np = of_find_node_by_name(NULL, "rtc");
-   408  
-   409          if (of_device_is_available(np)) {
-   410                  omap_rtc = rtc_class_open("rtc0");
-   411                  if (!omap_rtc) {
-   412                          pr_warn("PM: rtc0 not available");
-   413                          return -EPROBE_DEFER;
-   414                  }
-   415  
-   416                  nvmem = devm_nvmem_device_get(&omap_rtc->dev,
-   417                                                "omap_rtc_scratch0");
-   418                  if (nvmem) {
-
-if (!IS_ERR(nvmem)) {
-
-   419                          nvmem_device_read(nvmem, RTC_SCRATCH_MAGIC_REG * 4,
-   420                                            4, (void *)&rtc_magic_val);
-   421                          if ((rtc_magic_val & 0xffff) != RTC_REG_BOOT_MAGIC)
-   422                                  pr_warn("PM: bootloader does not support rtc-only!\n");
-   423  
-   424                          nvmem_device_write(nvmem, RTC_SCRATCH_MAGIC_REG * 4,
-   425                                             4, (void *)&val);
-   426                          val = pm_sram->resume_address;
-   427                          nvmem_device_write(nvmem, RTC_SCRATCH_RESUME_REG * 4,
-   428                                             4, (void *)&val);
-   429                  }
-   430          } else {
-   431                  pr_warn("PM: no-rtc available, rtc-only mode disabled.\n");
-   432          }
-   433  
-   434          return 0;
-   435  }
-
-regards,
-dan carpenter
+>
+> Thanks!
+>
+> >
+> > Reviewed-by: Kees Cook <keescook@chromium.org>
+> >
+> > -Kees
+> >
+> > > ---
+> > >  fs/namespace.c | 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > >
+> > > diff --git a/fs/namespace.c b/fs/namespace.c
+> > > index b26778bdc236..2e85712a19ed 100644
+> > > --- a/fs/namespace.c
+> > > +++ b/fs/namespace.c
+> > > @@ -2993,7 +2993,7 @@ void *copy_mount_options(const void __user * data)
+> > >        * the remainder of the page.
+> > >        */
+> > >       /* copy_from_user cannot cross TASK_SIZE ! */
+> > > -     size = TASK_SIZE - (unsigned long)data;
+> > > +     size = TASK_SIZE - (unsigned long)untagged_addr(data);
+> > >       if (size > PAGE_SIZE)
+> > >               size = PAGE_SIZE;
+> > >
+> > > --
+> > > 2.22.0.rc1.311.g5d7573a151-goog
+> > >
+> >
+> > --
+> > Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
