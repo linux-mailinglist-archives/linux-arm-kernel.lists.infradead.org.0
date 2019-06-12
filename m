@@ -2,93 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1476D430C7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 22:05:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 307ED430C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 22:05:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wa6G/kRnct3jvxbiXVnmt9NlPfsaNmzYcq8sA9R9HXw=; b=WWF5jgNuEf9XQ5
-	DgsF/B9vGXIRmnkb3X64XM7YnKzbYZIktkhWcG+y0+EwoS9gEh73vc6B8YJTKZdhLWB+V7kZb6YOO
-	4be8kiK+xMR8rulKrLz3FyPPT1ThpOIfPTYfrYWCeJc6IrM6HmLUZkbI7nJf4EN6W+b3NtgNb59ml
-	mL/vxh9+j+q7MhPX86VnQ8W5/9WVy19TfxdHxczl1mgA6FFE+a3yiyz13B6J9VrlX1WBYEYGCvdmf
-	ngMFeeq6jWMw1WnLAzLfRr33a76wDse9tyifCduy2LAwAhm27Ft3jqYmFj3U3hmfC+SUzIqHVOSl1
-	ffQpvmaLXYNlWY/goJMA==;
+	List-Owner; bh=t/+cQIrZA6xe1bCVH3lmy2nOszJv7bK3RF6px3a+aTw=; b=caS0VJwZneLDQp
+	w3WHD1iOdPjVzc6lH8D/ASwbUQqjRbY+tkpbxNxAO9d4ORB07Y4ZLO+yaqqil6bT4jaC5S4JfjCiL
+	2zXX6gEf2M/xUAFnUBdZbA1g0djkYi1PIOYvMSn+180Myoz/+iULc2Hmtxio4BKnShTGlMja9IQmd
+	lMdPOrns6OZEZEMdy1f9y/1ARiedQ07fz8WJAAO0D4ZJIRec4llU2uEpcWnT8uokRXsOGipj2aDO5
+	SCfBoWkp/xoR4HqRnEjF1Mg7fnfhnDh/Sag3gTq++CaBOQHiAGns8aqJtsK4ZBZRDbai/okKjpopx
+	RH2KK3WgUQI2SkhfyE0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb9Ui-000397-5h; Wed, 12 Jun 2019 20:05:16 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1hb9Uv-0004bG-Ce; Wed, 12 Jun 2019 20:05:29 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb9PP-0005QO-RA; Wed, 12 Jun 2019 19:59:49 +0000
-Received: by mail-wr1-x442.google.com with SMTP id c2so18220991wrm.8;
- Wed, 12 Jun 2019 12:59:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=PXhKgHiRKTDbq5+IaKGfsR6BmgG7q4N1qI/aWdYB6Q8=;
- b=hsWXPbeCUxn3AeVTaPkpWpYSU2rkvwPwmfSQhu5TejlCTxIevBFbCaEhNMeVV3Eadv
- iMEl6v4r1YDJGL+0c92HnsZAUK8z8U8zq9cd1BHn8Wjc0+q7JLDqkjYpVnQJR1NyUNmf
- lD+O+U7pAXvs3nKGVevnBnGsdqiV1HavIGsHSVU+ekgZxBBmLmwYfZGrLHH7SqvjgUDe
- 7elnq0Keg1BIVERCnF7K2WnYAhfvHByXXd4k1xBS/JrA4FQmPERQyS4Qr5z358KOE/dH
- hqPQjLV5c/km5q7eVFSYRaiCxgMEAVLjM99fuQEjERJrVxg15VUSB1dw14m7kB6e5I1i
- n+9g==
+ id 1hb9RH-00086i-Kc
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 20:01:45 +0000
+Received: by mail-ot1-f66.google.com with SMTP id z23so16652046ote.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 13:01:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=PXhKgHiRKTDbq5+IaKGfsR6BmgG7q4N1qI/aWdYB6Q8=;
- b=iG5yJ9J/1JeIekBt2+liYwEEPhlpVZkUecA8iuDLTk1GWSDZ688Sxq79duM8Ugpxtb
- jR/SyudF3E97D2o/aqoo2lx0LjBNjlJJYbsV640vmsTUb//GuoptLTYbIJZoq3k4tP9z
- 5ACV8fKCN9/slPqHHh3L8pz8aS1icf5NcKTlflfGDuijnxMC9rVabKRAaYqL0ZqeFN4v
- wtpjie/zHmr86JqSyis3Ee3yQtD7Ya8lk5RmUvid2fh8DEM9c6B2A7Yag9hfNdmryVH/
- vdKE27z1i5wWL7AHw2CFqO3UK1fX5uxxp5ihkjTo7uyOO9gyduYD6BtM+IWrZ5SKQ9Mv
- fgnQ==
-X-Gm-Message-State: APjAAAUBS1scio2PA97XlzEuL/+MYgKQVztAzcHcuq+Cai9K0WsbgQ3K
- goG8ba8mhWO1CZSgySe5kx7iSoSV
-X-Google-Smtp-Source: APXvYqx8IAmX+s+7TK5qnozIRIA6bDm97DsRI8ndxcRI4R7vbPriPYONQXPZ8+lE0Itz0xkzmnsqoQ==
-X-Received: by 2002:adf:f68f:: with SMTP id v15mr5871100wrp.4.1560369586066;
- Wed, 12 Jun 2019 12:59:46 -0700 (PDT)
-Received: from blackbox.darklights.net
- (p200300F133DDA400428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:33dd:a400:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id f10sm1026745wrg.24.2019.06.12.12.59.45
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 12 Jun 2019 12:59:45 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: linux-amlogic@lists.infradead.org, linux-pwm@vger.kernel.org,
- thierry.reding@gmail.com
-Subject: [PATCH v3 14/14] pwm: meson: add documentation to the driver
-Date: Wed, 12 Jun 2019 21:59:11 +0200
-Message-Id: <20190612195911.4442-15-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190612195911.4442-1-martin.blumenstingl@googlemail.com>
-References: <20190612195911.4442-1-martin.blumenstingl@googlemail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0O8kud1OZKkvtHeAHVJbfPeAphq/Q2FLAtf0UYYJ3/U=;
+ b=CuTYyz1tv3GkkpP/JIm+7eyZRfhliCPTgi6/jA5NOoATxulP8E2zepMh267OvWU7z/
+ tXGUafJIuPN7/qdNP7p7Xajf/BRWlb+NoD/vYLxphFbAn5MCdQDJXGKSJ/ATrwmj0Bc3
+ X82+ghMiUgI0sdU8U8RqWUh0cEqjpdCSNCkHpYob95AA/MtGIxy4JpTl2QpTnq4gxZN3
+ Sd12+WE+Zr5HPro0YlwqHgFF5IhlqVewxkuAYHfdWS5gpzMGjhlvTNTHh3BBCpEocA/C
+ zCi4Y1qbNZlhSo+2O9R3DVKvw8IkGr7EMLOz8Ud10UXhmA0IMWx6GfnJ6wUDATggCC0W
+ czkA==
+X-Gm-Message-State: APjAAAUK/npEC56DpwTvqp4y2asvr6tZ+bTE6NK93vqlZFdp1voQqdwL
+ Rh2fVgEN2hK0euiw/yiCYrgJpq/T
+X-Google-Smtp-Source: APXvYqyJopF/Mwue13Wkv18GOSojXzZm8OWM+7GCB+URpFFXDZawqhJsUY2T+P5s2PlOUvNR8jIEAA==
+X-Received: by 2002:a9d:d22:: with SMTP id 31mr23700396oti.304.1560369701739; 
+ Wed, 12 Jun 2019 13:01:41 -0700 (PDT)
+Received: from mail-ot1-f53.google.com (mail-ot1-f53.google.com.
+ [209.85.210.53])
+ by smtp.gmail.com with ESMTPSA id z91sm204483ota.38.2019.06.12.13.01.40
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Wed, 12 Jun 2019 13:01:41 -0700 (PDT)
+Received: by mail-ot1-f53.google.com with SMTP id l15so16647448otn.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 13:01:40 -0700 (PDT)
+X-Received: by 2002:a05:6830:1192:: with SMTP id
+ u18mr35659756otq.74.1560369700348; 
+ Wed, 12 Jun 2019 13:01:40 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190422183056.16375-1-leoyang.li@nxp.com>
+ <20190510030525.GC15856@dragon>
+In-Reply-To: <20190510030525.GC15856@dragon>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Wed, 12 Jun 2019 15:01:29 -0500
+X-Gmail-Original-Message-ID: <CADRPPNT2G20j2pvSEyqX=_WNDPrcNR+xCR_XZukbnSW19wFLNA@mail.gmail.com>
+Message-ID: <CADRPPNT2G20j2pvSEyqX=_WNDPrcNR+xCR_XZukbnSW19wFLNA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: defconfig: Enable FSL_EDMA driver
+To: Shawn Guo <shawnguo@kernel.org>, madalin.bucur@nxp.com, 
+ Rob Herring <robh+dt@kernel.org>, aisheng.dong@nxp.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_125947_909138_20FBCCB0 
-X-CRM114-Status: GOOD (  13.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190612_130143_810678_948C8ACB 
+X-CRM114-Status: GOOD (  15.75  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ provider (pku.leo[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,52 +97,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- narmstrong@baylibre.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, u.kleine-koenig@pengutronix.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Vinod Koul <vkoul@kernel.org>, Grant Likely <grant.likely@arm.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIGxpbmtzIHRvIHRoZSBkYXRhc2hlZXQgYW5kIGEgc2hvcnQgc3VtbWFyeSBob3cgdGhlIGhh
-cmR3YXJlIHdvcmtzLgpUaGUgZ29hbCBpcyB0byBtYWtlIGl0IGVhc2llciBmb3Igb3RoZXIgZGV2
-ZWxvcGVycyB0byB1bmRlcnN0YW5kIHdoeSB0aGUKcHdtLW1lc29uIGRyaXZlciBpcyBpbXBsZW1l
-bnRlZCB0aGUgd2F5IGl0IGlzLgoKU3VnZ2VzdGVkLWJ5OiBVd2UgS2xlaW5lLUvDtm5pZyA8dS5r
-bGVpbmUta29lbmlnQHBlbmd1dHJvbml4LmRlPgpDby1hdXRob3JlZC1ieTogTmVpbCBBcm1zdHJv
-bmcgPG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgpSZXZpZXdlZC1ieTogTmVpbCBBcm1zdHJvbmcg
-PG5hcm1zdHJvbmdAYmF5bGlicmUuY29tPgpTaWduZWQtb2ZmLWJ5OiBNYXJ0aW4gQmx1bWVuc3Rp
-bmdsIDxtYXJ0aW4uYmx1bWVuc3RpbmdsQGdvb2dsZW1haWwuY29tPgotLS0KIGRyaXZlcnMvcHdt
-L3B3bS1tZXNvbi5jIHwgMjIgKysrKysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQs
-IDIyIGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3B3bS9wd20tbWVzb24uYyBi
-L2RyaXZlcnMvcHdtL3B3bS1tZXNvbi5jCmluZGV4IGJiNDhiYTg1Zjc1Ni4uMzEyNTkwMjY0ODRj
-IDEwMDY0NAotLS0gYS9kcml2ZXJzL3B3bS9wd20tbWVzb24uYworKysgYi9kcml2ZXJzL3B3bS9w
-d20tbWVzb24uYwpAQCAtMSw1ICsxLDI3IEBACiAvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjog
-R1BMLTIuMCBPUiBCU0QtMy1DbGF1c2UKIC8qCisgKiBQV00gY29udHJvbGxlciBkcml2ZXIgZm9y
-IEFtbG9naWMgTWVzb24gU29Dcy4KKyAqCisgKiBUaGlzIFBXTSBpcyBvbmx5IGEgc2V0IG9mIEdh
-dGVzLCBEaXZpZGVycyBhbmQgQ291bnRlcnM6CisgKiBQV00gb3V0cHV0IGlzIGFjaGlldmVkIGJ5
-IGNhbGN1bGF0aW5nIGEgY2xvY2sgdGhhdCBwZXJtaXRzIGNhbGN1bGF0aW5nCisgKiB0d28gcGVy
-aW9kcyAobG93IGFuZCBoaWdoKS4gVGhlIGNvdW50ZXIgdGhlbiBoYXMgdG8gYmUgc2V0IHRvIHN3
-aXRjaCBhZnRlcgorICogTiBjeWNsZXMgZm9yIHRoZSBmaXJzdCBoYWxmIHBlcmlvZC4KKyAqIFRo
-ZSBoYXJkd2FyZSBoYXMgbm8gInBvbGFyaXR5IiBzZXR0aW5nLiBUaGlzIGRyaXZlciByZXZlcnNl
-cyB0aGUgcGVyaW9kCisgKiBjeWNsZXMgKHRoZSBsb3cgbGVuZ3RoIGlzIGludmVydGVkIHdpdGgg
-dGhlIGhpZ2ggbGVuZ3RoKSBmb3IKKyAqIFBXTV9QT0xBUklUWV9JTlZFUlNFRC4gVGhpcyBtZWFu
-cyB0aGF0IC5nZXRfc3RhdGUgY2Fubm90IHJlYWQgdGhlIHBvbGFyaXR5CisgKiBmcm9tIHRoZSBo
-YXJkd2FyZS4KKyAqIFNldHRpbmcgdGhlIGR1dHkgY3ljbGUgd2lsbCBkaXNhYmxlIGFuZCByZS1l
-bmFibGUgdGhlIFBXTSBvdXRwdXQuCisgKiBEaXNhYmxpbmcgdGhlIFBXTSBzdG9wcyB0aGUgb3V0
-cHV0IGltbWVkaWF0ZWx5ICh3aXRob3V0IHdhaXRpbmcgZm9yIHRoZQorICogY3VycmVudCBwZXJp
-b2QgdG8gY29tcGxldGUgZmlyc3QpLgorICoKKyAqIFRoZSBwdWJsaWMgUzkxMiAoR1hNKSBkYXRh
-c2hlZXQgY29udGFpbnMgc29tZSBkb2N1bWVudGF0aW9uIGZvciB0aGlzIFBXTQorICogY29udHJv
-bGxlciBzdGFydGluZyBvbiBwYWdlIDU0MzoKKyAqIGh0dHBzOi8vZGwua2hhZGFzLmNvbS9IYXJk
-d2FyZS9WSU0yL0RhdGFzaGVldC9TOTEyX0RhdGFzaGVldF9WMC4yMjAxNzAzMTRwdWJsaWN2ZXJz
-aW9uLVdlc2lvbi5wZGYKKyAqIEFuIHVwZGF0ZWQgdmVyc2lvbiBvZiB0aGlzIElQIGJsb2NrIGlz
-IGZvdW5kIGluIFM5MjJYIChHMTJCKSBTb0NzLiBUaGUKKyAqIGRhdGFzaGVldCBjb250YWlucyB0
-aGUgZGVzY3JpcHRpb24gZm9yIHRoaXMgSVAgYmxvY2sgcmV2aXNpb24gc3RhcnRpbmcgYXQKKyAq
-IHBhZ2UgMTA4NDoKKyAqIGh0dHBzOi8vZG4ub2Ryb2lkLmNvbS9TOTIyWC9PRFJPSUQtTjIvRGF0
-YXNoZWV0L1M5MjJYX1B1YmxpY19EYXRhc2hlZXRfVjAuMi5wZGYKKyAqCiAgKiBDb3B5cmlnaHQg
-KGMpIDIwMTYgQmF5TGlicmUsIFNBUy4KICAqIEF1dGhvcjogTmVpbCBBcm1zdHJvbmcgPG5hcm1z
-dHJvbmdAYmF5bGlicmUuY29tPgogICogQ29weXJpZ2h0IChDKSAyMDE0IEFtbG9naWMsIEluYy4K
-LS0gCjIuMjIuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+On Thu, May 9, 2019 at 10:15 PM Shawn Guo <shawnguo@kernel.org> wrote:
+>
+> On Mon, Apr 22, 2019 at 01:30:56PM -0500, Li Yang wrote:
+> > Enables the FSL EDMA driver by default.  This also works around an issue
+> > that imx-i2c driver keeps deferring the probe because of the DMA is not
+> > ready.  And currently the DMA engine framework can not correctly tell
+> > if the DMA channels will truly become available later (it will never be
+> > available if the DMA driver is not enabled).
+> >
+> > This will cause indefinite messages like below:
+> > [    3.335829] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+> > [    3.344455] ina2xx 0-0040: power monitor ina220 (Rshunt = 1000 uOhm)
+> > [    3.350917] lm90 0-004c: 0-004c supply vcc not found, using dummy regulator
+> > [    3.362089] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+> > [    3.370741] ina2xx 0-0040: power monitor ina220 (Rshunt = 1000 uOhm)
+> > [    3.377205] lm90 0-004c: 0-004c supply vcc not found, using dummy regulator
+> > [    3.388455] imx-i2c 2180000.i2c: can't get pinctrl, bus recovery not supported
+> > .....
+> >
+> > Signed-off-by: Li Yang <leoyang.li@nxp.com>
+>
+> Applied, thanks.
+
+Hi Shawn,
+
+Is it possible to move this patch to the -fix series so that it can
+reach the mainline earlier?  It is having a boot failure in mainline
+for platforms using this device without this workaround.
+
+I see Rob added a new API driver_deferred_probe_check_state() last
+year.  Probably we should update the imx-i2c driver to use the new API
+for optional dependencies to avoid this kind of situation completely?
+
+Regards,
+Leo
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
