@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE42E42449
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:45:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F02EB4247A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:45:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19eUZU/Td8qPn6p9wlB3oDuhJNoaZbo7b1w3fwsAtGU=; b=u7IuZbhaI8gs5D
-	QOLDsHX8bhvQjMy1kEJG91Cj99VyUEEAAZqQoQ0Y944GkkI/AavzZ0+ljfYQYjngSWxKA/OZAbTdK
-	nn3xHwB8z2bEcW/bW+j+kbta53LQZt7JrPg39Lb8cLUCNWlgrp9CsQVVhN8fGqWjuMZ2wxMD6Por/
-	+BY/iDWlhYYtRScVOjVaHB+JEksgimp5/lNnA7K13rykBBCP8tHFyPrKKQVu9TTE1py+X33SzO5po
-	KekrZMhJoQQsYGJTg0ZGmgDMbLPlZof8WJjLA2lA7TG1j/UrhXqj/ZgPvBCr0WBKZmjwPvP3qyNZw
-	u3+5Kw5NtfSt5q9n38zg==;
+	List-Owner; bh=iaUKSepnmnhd/p+6r6+EeLi3rhMerRPxAllK+Xz/U7U=; b=YzNRUjidccFqV1
+	I8WVSNgDAuqCbmXJLpSTIUK3obKAICmek81zlkMV1z8dBxAv5uswECu6RDpprdShHJQiiDltBCW4J
+	Vz6xfpBhryLcge2XhrC7KPyURJ21Vkqj0vbt29k3ysngk/+cqByBj/6RWLSKtfNuxKcBfpsiCtKSQ
+	XQR9R3vWCXmd5kAIDpOLXwAEL/gzrxfIKLuOelF1NjfJf3SP4GWaIInmmwsAZDDz+uwKfF8QlST0u
+	vKgedV4ySa2kzTfOTw0d2Z9yj5vEaiPxidA1kKfFpCM/UhHR4KzjCqfAbLpsqFrjrU2PBbivpYuj7
+	RqugBqYWDncOW655ixxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1h0-0000Rw-O8; Wed, 12 Jun 2019 11:45:26 +0000
-Received: from mail-yb1-xb49.google.com ([2607:f8b0:4864:20::b49])
+	id 1hb1hP-0001Ej-2j; Wed, 12 Jun 2019 11:45:51 +0000
+Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1fQ-0006lb-91
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:43:50 +0000
-Received: by mail-yb1-xb49.google.com with SMTP id u3so8871378ybu.7
+ id 1hb1fU-0006o8-8A
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:43:54 +0000
+Received: by mail-yb1-xb4a.google.com with SMTP id u3so8871458ybu.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:43:47 -0700 (PDT)
+ Wed, 12 Jun 2019 04:43:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=6M/Xbdq/GEdg1U6KS1Q2G6Oz7M7u1wX9lFNSbOIs0eE=;
- b=ACVZLE8qVD2m+0cgtxpWQhGhPGG/Ln68kdWb/oTLWTvjnKjV3OEd+czJBWQA90rzG9
- k8pT1WDCWs7sRvQ+L+JDsoJ9EPlF9djBkn8ZvPuT3pIBz18V1FwWApJ56GicLlKJCvSZ
- l8TgnBTFOKgBUdKjzXAR3WAhJXBBkdOHq+Mn4a5V+670dcUoWBJEFoKWGr/qKzn4y4ZD
- gjnslGXnEt1rG5J59WQkLbftJMrXLwUl2590vidXXmp5/WyRAn6J6aq6ly4KEqdvnx0u
- 6w6xsTCBCkTePQK1NsH0i++YzOU+WcrP9IejUTPvS9ZoW0C5f84IOWgLFPwWGXrzJgOj
- gFOA==
+ :cc; bh=9yc1Yq7FenUh0AO3dUlc6AUSMFMskh2/7LbKPot9xGI=;
+ b=jG6r3qKXi5/zKGkjzMFvbQ4XcPl+/QmcSKvFp3utSJtxAUleazRXkJRGwBNNuJ7i7E
+ W7vyyFyjCHej12ys6727AQE+zBEoRn7fuGQ0zPXkT7W8rJNSD33sWm4M+L2uLQ9Yr38G
+ Tk/yJfeEOxvIPA7bqvovIzoag6j0IkNGtc29ARK/7GdZnbkyHKT1QM3wgM9+VOErwGhl
+ DOZEsTVUoN8+b79rOajf7KnGDkH2u/eCR/G6bd5zo2eRqtSAit8bn6BlCrH2lRN5NzMd
+ //lJnKytaH0FthsUWMOhqc1e/AQcdKwVvubR2bol5kkiAS3ABJ/10iV11C/N1mocmKiy
+ lcUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=6M/Xbdq/GEdg1U6KS1Q2G6Oz7M7u1wX9lFNSbOIs0eE=;
- b=o93+bgkj82w+GCcDASNYVqIT18gR4/A42EFnk0QV5MbbXPpCQZHekx68eLLTFys9ou
- C2PAD6xvO1+6KJgvma7nyW75CsLW2Uny8qnRWx+B38PPN/Td+WuFGj1ytkMocpTjtmoZ
- eQ/0xlQyG7Zf8m0DROqussGdqHvePR+CpMBB+QdGhGPYjiceSEWoC59/n1rwaSsOHP0r
- CSLoym4PUuy3VkdsrGvorsMUJAb8lRLcjYz/qAWocxL5fXu6AvhR8WztJf/F9dksfIav
- ll7x6HhFDK7HjI0xLHSRXC3GMf0qSdewheG44dqNkP8Fiw8NaUk/s+VklPN1zcgsYGR+
- I6TA==
-X-Gm-Message-State: APjAAAXB6R82K/uekEHocVwXKIULAh6oq2qAWIXA34Rp4TKfrSMuXqwD
- JfU1ohJmkyWM1TPLLnRgMCZncYwCp3OW6ydQ9fnt/Ym4xk95njc1LcVAHqGlic3XT5LTcWdvnXo
- Pn+bXhpiOEYa+tIvsOuaucxt7v+eatVYguV3U1unTX6l2ma1uz1gH09PL2vuVkkYkVly516pWh9
- g5KOaLC9TaLzKgpNM=
-X-Google-Smtp-Source: APXvYqytOU+n01l3ivjYwD2cpTD0/nhGfCxB5SZGN1Rdh+wHFGv3wu5KqIwv58r4//qfgSYCsX+M2/Nb4vcejc3q
-X-Received: by 2002:a81:a491:: with SMTP id
- b139mr20168814ywh.148.1560339826354; 
- Wed, 12 Jun 2019 04:43:46 -0700 (PDT)
-Date: Wed, 12 Jun 2019 13:43:20 +0200
+ bh=9yc1Yq7FenUh0AO3dUlc6AUSMFMskh2/7LbKPot9xGI=;
+ b=FmifEyAYdj/k5Eqp7rd5xJpllg5pj0tP3zCqh3mOwmrFJwfcU/0c5efuw+1KwzAk9z
+ aRzb2W157YkeAc3itE2PDkpGR5ndFNJepLX6zvtU7r0MRH7B2t3d3a1F6/dgIMTm4jx4
+ /ks3A73pJ9O7ZzJgqx6QEm8/ouGZXIrdH5AHtkC48WE9CNKFbGgxHeE8jZZpy956mJ9C
+ jDOiCv/+vouE6ADkVO4aBWuNopTrvf223RL74GazOkQEPJBwzuv3T2PiVjTUhtXbXzQx
+ nYxSuhziowo2CzpZnEOuCecrIDZOaxGmX6n8odY7KdVdC5HIrgimsdHEIydhmLM4cJsG
+ pnmw==
+X-Gm-Message-State: APjAAAUtqa31pw642LZDHeaqLy0I/37LjbqJcLWWxhwzNZK3B7O27/cm
+ y6jzJ+t7rtJOWb9QifARlV0qmNuvBahnMY4mCOHTuuKzvQxkFnWAU2fpkiNj103ufwNqlh+ki4v
+ jt8vhd3WD2gurarZeY+XBeP1zUOpa1nNZcNXVB8bm5IyxyCTnwX63JOqL1pyFxp8FVKc8F0aEOp
+ ChXpbGMnqpg1SQw0g=
+X-Google-Smtp-Source: APXvYqzWkT0P+p3RG6pP2xT18iDm8BLgmUWrizOHYeFPCBqdgbB+Dc65X4gpAkgZlAg9PVOXah90gk97CBM2CYKI
+X-Received: by 2002:a81:2545:: with SMTP id l66mr16760176ywl.489.1560339829646; 
+ Wed, 12 Jun 2019 04:43:49 -0700 (PDT)
+Date: Wed, 12 Jun 2019 13:43:21 +0200
 In-Reply-To: <cover.1560339705.git.andreyknvl@google.com>
-Message-Id: <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
+Message-Id: <f9b50767d639b7116aa986dc67f158131b8d4169.1560339705.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1560339705.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.22.0.rc2.383.gf4fbbf30c2-goog
-Subject: [PATCH v17 03/15] arm64: Introduce prctl() options to control the
- tagged user addresses ABI
+Subject: [PATCH v17 04/15] mm,
+ arm64: untag user pointers passed to memory syscalls
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -69,15 +68,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_044348_327324_D75CAECF 
-X-CRM114-Status: GOOD (  19.89  )
+X-CRM114-CacheID: sfid-20190612_044352_413853_21A12772 
+X-CRM114-Status: GOOD (  15.89  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -112,6 +111,7 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
  Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
  Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
  Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
  Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
  Alex Williamson <alex.williamson@redhat.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
@@ -128,209 +128,158 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Catalin Marinas <catalin.marinas@arm.com>
+This patch is a part of a series that extends arm64 kernel ABI to allow to
+pass tagged user pointers (with the top byte set to something else other
+than 0x00) as syscall arguments.
 
-It is not desirable to relax the ABI to allow tagged user addresses into
-the kernel indiscriminately. This patch introduces a prctl() interface
-for enabling or disabling the tagged ABI with a global sysctl control
-for preventing applications from enabling the relaxed ABI (meant for
-testing user-space prctl() return error checking without reconfiguring
-the kernel). The ABI properties are inherited by threads of the same
-application and fork()'ed children but cleared on execve().
+This patch allows tagged pointers to be passed to the following memory
+syscalls: get_mempolicy, madvise, mbind, mincore, mlock, mlock2, mprotect,
+mremap, msync, munlock, move_pages.
 
-The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
-MTE-specific settings like imprecise vs precise exceptions.
+The mmap and mremap syscalls do not currently accept tagged addresses.
+Architectures may interpret the tag as a background colour for the
+corresponding vma.
 
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- arch/arm64/include/asm/processor.h   |  6 +++
- arch/arm64/include/asm/thread_info.h |  1 +
- arch/arm64/include/asm/uaccess.h     |  3 +-
- arch/arm64/kernel/process.c          | 67 ++++++++++++++++++++++++++++
- include/uapi/linux/prctl.h           |  5 +++
- kernel/sys.c                         | 16 +++++++
- 6 files changed, 97 insertions(+), 1 deletion(-)
+ mm/madvise.c   | 2 ++
+ mm/mempolicy.c | 3 +++
+ mm/migrate.c   | 2 +-
+ mm/mincore.c   | 2 ++
+ mm/mlock.c     | 4 ++++
+ mm/mprotect.c  | 2 ++
+ mm/mremap.c    | 7 +++++++
+ mm/msync.c     | 2 ++
+ 8 files changed, 23 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-index fcd0e691b1ea..fee457456aa8 100644
---- a/arch/arm64/include/asm/processor.h
-+++ b/arch/arm64/include/asm/processor.h
-@@ -307,6 +307,12 @@ extern void __init minsigstksz_setup(void);
- /* PR_PAC_RESET_KEYS prctl */
- #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
+diff --git a/mm/madvise.c b/mm/madvise.c
+index 628022e674a7..39b82f8a698f 100644
+--- a/mm/madvise.c
++++ b/mm/madvise.c
+@@ -810,6 +810,8 @@ SYSCALL_DEFINE3(madvise, unsigned long, start, size_t, len_in, int, behavior)
+ 	size_t len;
+ 	struct blk_plug plug;
  
-+/* PR_TAGGED_ADDR prctl */
-+long set_tagged_addr_ctrl(unsigned long arg);
-+long get_tagged_addr_ctrl(void);
-+#define SET_TAGGED_ADDR_CTRL(arg)	set_tagged_addr_ctrl(arg)
-+#define GET_TAGGED_ADDR_CTRL()		get_tagged_addr_ctrl()
++	start = untagged_addr(start);
 +
- /*
-  * For CONFIG_GCC_PLUGIN_STACKLEAK
-  *
-diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-index f1d032be628a..354a31d2b737 100644
---- a/arch/arm64/include/asm/thread_info.h
-+++ b/arch/arm64/include/asm/thread_info.h
-@@ -99,6 +99,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define TIF_SVE			23	/* Scalable Vector Extension in use */
- #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
- #define TIF_SSBD		25	/* Wants SSB mitigation */
-+#define TIF_TAGGED_ADDR		26	/* Allow tagged user addresses */
+ 	if (!madvise_behavior_valid(behavior))
+ 		return error;
  
- #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
- #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index df729afca0ba..995b9ea11a89 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -73,7 +73,8 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
+diff --git a/mm/mempolicy.c b/mm/mempolicy.c
+index 01600d80ae01..78e0a88b2680 100644
+--- a/mm/mempolicy.c
++++ b/mm/mempolicy.c
+@@ -1360,6 +1360,7 @@ static long kernel_mbind(unsigned long start, unsigned long len,
+ 	int err;
+ 	unsigned short mode_flags;
+ 
++	start = untagged_addr(start);
+ 	mode_flags = mode & MPOL_MODE_FLAGS;
+ 	mode &= ~MPOL_MODE_FLAGS;
+ 	if (mode >= MPOL_MAX)
+@@ -1517,6 +1518,8 @@ static int kernel_get_mempolicy(int __user *policy,
+ 	int uninitialized_var(pval);
+ 	nodemask_t nodes;
+ 
++	addr = untagged_addr(addr);
++
+ 	if (nmask != NULL && maxnode < nr_node_ids)
+ 		return -EINVAL;
+ 
+diff --git a/mm/migrate.c b/mm/migrate.c
+index f2ecc2855a12..d22c45cf36b2 100644
+--- a/mm/migrate.c
++++ b/mm/migrate.c
+@@ -1616,7 +1616,7 @@ static int do_pages_move(struct mm_struct *mm, nodemask_t task_nodes,
+ 			goto out_flush;
+ 		if (get_user(node, nodes + i))
+ 			goto out_flush;
+-		addr = (unsigned long)p;
++		addr = (unsigned long)untagged_addr(p);
+ 
+ 		err = -ENODEV;
+ 		if (node < 0 || node >= MAX_NUMNODES)
+diff --git a/mm/mincore.c b/mm/mincore.c
+index c3f058bd0faf..64c322ed845c 100644
+--- a/mm/mincore.c
++++ b/mm/mincore.c
+@@ -249,6 +249,8 @@ SYSCALL_DEFINE3(mincore, unsigned long, start, size_t, len,
+ 	unsigned long pages;
+ 	unsigned char *tmp;
+ 
++	start = untagged_addr(start);
++
+ 	/* Check the start address: needs to be page-aligned.. */
+ 	if (start & ~PAGE_MASK)
+ 		return -EINVAL;
+diff --git a/mm/mlock.c b/mm/mlock.c
+index 080f3b36415b..e82609eaa428 100644
+--- a/mm/mlock.c
++++ b/mm/mlock.c
+@@ -674,6 +674,8 @@ static __must_check int do_mlock(unsigned long start, size_t len, vm_flags_t fla
+ 	unsigned long lock_limit;
+ 	int error = -ENOMEM;
+ 
++	start = untagged_addr(start);
++
+ 	if (!can_do_mlock())
+ 		return -EPERM;
+ 
+@@ -735,6 +737,8 @@ SYSCALL_DEFINE2(munlock, unsigned long, start, size_t, len)
  {
- 	unsigned long ret, limit = current_thread_info()->addr_limit;
+ 	int ret;
  
--	addr = untagged_addr(addr);
-+	if (test_thread_flag(TIF_TAGGED_ADDR))
-+		addr = untagged_addr(addr);
++	start = untagged_addr(start);
++
+ 	len = PAGE_ALIGN(len + (offset_in_page(start)));
+ 	start &= PAGE_MASK;
  
- 	__chk_user_ptr(addr);
- 	asm volatile(
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 3767fb21a5b8..69d0be1fc708 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -30,6 +30,7 @@
- #include <linux/kernel.h>
- #include <linux/mm.h>
- #include <linux/stddef.h>
-+#include <linux/sysctl.h>
- #include <linux/unistd.h>
- #include <linux/user.h>
- #include <linux/delay.h>
-@@ -323,6 +324,7 @@ void flush_thread(void)
- 	fpsimd_flush_thread();
- 	tls_thread_flush();
- 	flush_ptrace_hw_breakpoint(current);
-+	clear_thread_flag(TIF_TAGGED_ADDR);
- }
+diff --git a/mm/mprotect.c b/mm/mprotect.c
+index bf38dfbbb4b4..19f981b733bc 100644
+--- a/mm/mprotect.c
++++ b/mm/mprotect.c
+@@ -465,6 +465,8 @@ static int do_mprotect_pkey(unsigned long start, size_t len,
+ 	const bool rier = (current->personality & READ_IMPLIES_EXEC) &&
+ 				(prot & PROT_READ);
  
- void release_thread(struct task_struct *dead_task)
-@@ -552,3 +554,68 @@ void arch_setup_new_exec(void)
++	start = untagged_addr(start);
++
+ 	prot &= ~(PROT_GROWSDOWN|PROT_GROWSUP);
+ 	if (grows == (PROT_GROWSDOWN|PROT_GROWSUP)) /* can't be both */
+ 		return -EINVAL;
+diff --git a/mm/mremap.c b/mm/mremap.c
+index fc241d23cd97..64c9a3b8be0a 100644
+--- a/mm/mremap.c
++++ b/mm/mremap.c
+@@ -606,6 +606,13 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
+ 	LIST_HEAD(uf_unmap_early);
+ 	LIST_HEAD(uf_unmap);
  
- 	ptrauth_thread_init_user(current);
- }
++	/*
++	 * Architectures may interpret the tag passed to mmap as a background
++	 * colour for the corresponding vma. For mremap we don't allow tagged
++	 * new_addr to preserve similar behaviour to mmap.
++	 */
++	addr = untagged_addr(addr);
 +
-+/*
-+ * Control the relaxed ABI allowing tagged user addresses into the kernel.
-+ */
-+static unsigned int tagged_addr_prctl_allowed = 1;
-+
-+long set_tagged_addr_ctrl(unsigned long arg)
-+{
-+	if (!tagged_addr_prctl_allowed)
-+		return -EINVAL;
-+	if (is_compat_task())
-+		return -EINVAL;
-+	if (arg & ~PR_TAGGED_ADDR_ENABLE)
-+		return -EINVAL;
-+
-+	if (arg & PR_TAGGED_ADDR_ENABLE)
-+		set_thread_flag(TIF_TAGGED_ADDR);
-+	else
-+		clear_thread_flag(TIF_TAGGED_ADDR);
-+
-+	return 0;
-+}
-+
-+long get_tagged_addr_ctrl(void)
-+{
-+	if (!tagged_addr_prctl_allowed)
-+		return -EINVAL;
-+	if (is_compat_task())
-+		return -EINVAL;
-+
-+	if (test_thread_flag(TIF_TAGGED_ADDR))
-+		return PR_TAGGED_ADDR_ENABLE;
-+
-+	return 0;
-+}
-+
-+/*
-+ * Global sysctl to disable the tagged user addresses support. This control
-+ * only prevents the tagged address ABI enabling via prctl() and does not
-+ * disable it for tasks that already opted in to the relaxed ABI.
-+ */
-+static int zero;
-+static int one = 1;
-+
-+static struct ctl_table tagged_addr_sysctl_table[] = {
-+	{
-+		.procname	= "tagged_addr",
-+		.mode		= 0644,
-+		.data		= &tagged_addr_prctl_allowed,
-+		.maxlen		= sizeof(int),
-+		.proc_handler	= proc_dointvec_minmax,
-+		.extra1		= &zero,
-+		.extra2		= &one,
-+	},
-+	{ }
-+};
-+
-+static int __init tagged_addr_init(void)
-+{
-+	if (!register_sysctl("abi", tagged_addr_sysctl_table))
-+		return -EINVAL;
-+	return 0;
-+}
-+
-+core_initcall(tagged_addr_init);
-diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
-index 094bb03b9cc2..2e927b3e9d6c 100644
---- a/include/uapi/linux/prctl.h
-+++ b/include/uapi/linux/prctl.h
-@@ -229,4 +229,9 @@ struct prctl_mm_map {
- # define PR_PAC_APDBKEY			(1UL << 3)
- # define PR_PAC_APGAKEY			(1UL << 4)
+ 	if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
+ 		return ret;
  
-+/* Tagged user address controls for arm64 */
-+#define PR_SET_TAGGED_ADDR_CTRL		55
-+#define PR_GET_TAGGED_ADDR_CTRL		56
-+# define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
-+
- #endif /* _LINUX_PRCTL_H */
-diff --git a/kernel/sys.c b/kernel/sys.c
-index 2969304c29fe..ec48396b4943 100644
---- a/kernel/sys.c
-+++ b/kernel/sys.c
-@@ -124,6 +124,12 @@
- #ifndef PAC_RESET_KEYS
- # define PAC_RESET_KEYS(a, b)	(-EINVAL)
- #endif
-+#ifndef SET_TAGGED_ADDR_CTRL
-+# define SET_TAGGED_ADDR_CTRL(a)	(-EINVAL)
-+#endif
-+#ifndef GET_TAGGED_ADDR_CTRL
-+# define GET_TAGGED_ADDR_CTRL()		(-EINVAL)
-+#endif
+diff --git a/mm/msync.c b/mm/msync.c
+index ef30a429623a..c3bd3e75f687 100644
+--- a/mm/msync.c
++++ b/mm/msync.c
+@@ -37,6 +37,8 @@ SYSCALL_DEFINE3(msync, unsigned long, start, size_t, len, int, flags)
+ 	int unmapped_error = 0;
+ 	int error = -EINVAL;
  
- /*
-  * this is where the system-wide overflow UID and GID are defined, for
-@@ -2492,6 +2498,16 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
- 			return -EINVAL;
- 		error = PAC_RESET_KEYS(me, arg2);
- 		break;
-+	case PR_SET_TAGGED_ADDR_CTRL:
-+		if (arg3 || arg4 || arg5)
-+			return -EINVAL;
-+		error = SET_TAGGED_ADDR_CTRL(arg2);
-+		break;
-+	case PR_GET_TAGGED_ADDR_CTRL:
-+		if (arg2 || arg3 || arg4 || arg5)
-+			return -EINVAL;
-+		error = GET_TAGGED_ADDR_CTRL();
-+		break;
- 	default:
- 		error = -EINVAL;
- 		break;
++	start = untagged_addr(start);
++
+ 	if (flags & ~(MS_ASYNC | MS_INVALIDATE | MS_SYNC))
+ 		goto out;
+ 	if (offset_in_page(start))
 -- 
 2.22.0.rc2.383.gf4fbbf30c2-goog
 
