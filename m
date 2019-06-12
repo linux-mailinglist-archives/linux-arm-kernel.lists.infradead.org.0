@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64661424AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:47:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 348B7424AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:48:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=357ASgs6XByHbRqiJ3xVdIPHaAVCDTu32scDRZhmN7c=; b=ctdxo7gVywOaul
-	Hoy9NR5xLzEoAss2FYffupYemUXZlSRkJ0mboQEoYHYUXMg1NtnncXZ9Y27sxZKOX8wkhLDnl8Dai
-	k3WiuTdPOrgZGaygYsM1HhLwdpj7idrJrrlBp9fkka8svltXpcF2mEQ7qxF7SDx/YEwt6nUOM+6Xa
-	LZuJQ5l6Of9nklb/St4MLuYJosBTrDtSbjyJ5xDm43YTfpD5qXjKIKXCQy1LcIVy9PdzQVdTmqhvI
-	tMA7682thhRPtDp+Md/jLbWRYeeuSXz7ge7YZnfOwSlpysLGZZDMzIoGaayHoGVOmy2suGEGxSIJS
-	00+6CAeLoBvmzsRD/FMw==;
+	List-Owner; bh=Of8FxxgOJrz50Z8lIRovUKo78fOcyMX6FoiYnz8HtCk=; b=i/CdVh7bRTRNmc
+	mLGzjGH41tuZr8rDy/Vuw157j8nIz6cxhPpfil285ia9ENaz2WLyBTuhAauiZGfdtMqnioXIOQ0eQ
+	9FlobHBJwdLAA5Ulz8vGoAFYW85iQOZM6itHtfU44VtuoIbT8rYesW0SVBaDlAyeaFAmuei7Bpn3X
+	c7E4LjAg5r6EOeDjYgS4mrqIHcd2a68HKhhdRmHOj3YwDElXpIKOjpafjjaztaW2Xl0ziF62e+nyA
+	KusTb02sKkvIUHnF4KdzUYbgM2Zwz6/leBgaWKWR5Aap9uxVtpoHOurk2R0N90wDfWy+7ItOKbVA1
+	XzC/fV1KoEMY5YtjZz0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1j2-000375-DP; Wed, 12 Jun 2019 11:47:32 +0000
-Received: from mail-ot1-x34a.google.com ([2607:f8b0:4864:20::34a])
+	id 1hb1jQ-0003hD-OK; Wed, 12 Jun 2019 11:47:56 +0000
+Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1fm-00078a-Ig
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:44:12 +0000
-Received: by mail-ot1-x34a.google.com with SMTP id l7so7611238otj.16
+ id 1hb1fp-0007Bl-KJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:44:15 +0000
+Received: by mail-qt1-x84a.google.com with SMTP id g56so14449879qte.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:44:09 -0700 (PDT)
+ Wed, 12 Jun 2019 04:44:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=9qcG2BgTwk3XlX0RcWVeDPHI8lhK5DjmwRDy1FE/sPA=;
- b=NtLJcSSFMHHu317AevzAQ/30ZKEUOStp0YqobtwksbYseFWqgtaBTFdiHMGyyyf7At
- YDJhLaCkyHoSzl2vKPQ0kqczt1dgoIP6M4Ipn73b/OGJITm9/nwiI3El0EdSAptKyxy3
- b89x7f/UmAMLYhahbGWtvHAEQvqe/KEbHnD9FTBIwA/5CD9mYyTGMXM5MGTE55QAL6sy
- I3ZLX4P7OcoVJPIKw9PZDhGTJmKOWHMHOrsjABMEwlErwDLgIe9+iGkSdgcah0pP/nqE
- b30uAgSnuW/RhTjVNWI3Kw8grpBZAvIwRQ2tzxM9A7fFKVadA2sdBJN3nJtOltKf1dPe
- uUMA==
+ :cc; bh=eb4SnUCHaoFPTU0EqMrx7H6L5ANcvzM3zwsiyq0FV40=;
+ b=UD79Ay48r+Qt/fUB4eQQS+u7jB3BFWRYtdLCt6Qa95VfLfmvvw7Hya/RkyTUwkhx0D
+ +1vmB8M4RBQZbJNIhwkYxv5AEL21ErrNvQCQ8+lOs4BCA4LMOTjJTuV8BlTNIfNEsvvi
+ S8RTYx74gNWKftQMTjEJ+kHo6ZnD8masl8ZG8ezS9xy8uaiMn8te593VaiscKSGKojp2
+ e5Cc4FqtUoN3q8YTe+OydLtjYtDNOm5Wm5t/bbuGQhbg9sf44AZgifS6zPiIE4WlbsCF
+ 2CX+HbBHE4vO/HCGylKIpSsIsXiK8frsZe8Lb15lkTfFpYP5OsKznhL91S0FrbJQy23X
+ yoqw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=9qcG2BgTwk3XlX0RcWVeDPHI8lhK5DjmwRDy1FE/sPA=;
- b=b3vzYsfBCVzPI8le/BW9NQ7tIBrXlPXOcAhVMBC/HhHPLwyRiYcHNIQVljsBUeuBIJ
- JwQSw4Bk69n2NLF/KQwre7WIDdiKdpMjjK7cntS0upd2chk9Ss0LFfG7/nn8XSTIgHLd
- u2L6a6+dl83cbQdiPYCBzoXS18ZkXPSyfYAnIHihbqWv1jrq1fNUvz2ILlCSMGXh4DZq
- GKbYw7rONtj7TG01c8MZntx1i2a4oVLAqIxUSA6bhwp7yJQTZKeuw0Py7djk/wypxUKo
- 0NLBa/qaykoLZ+a3+9vCo3AXugYck7OJfIYoEbZ2MO72rZkC0y+iCQyW8ZgUT0xi4mp6
- UbUg==
-X-Gm-Message-State: APjAAAVDOu0THsk/eitgbk3Uire2comMQ/vKwC1gBXYeFcqPi4aUnq3D
- MSjwNGmSahXvVM85JtrJBukyb6UaEMp6vipMHzC6tH4v2ZtV2fcdtN+UCfYUbVRBiCHeC2Ujzxb
- O318rrdv4Y8WjrKM9ry774TJLKEyLUAcMvg9sKr77k9yFk8/En5n23iOc3FE6/tB8hZs/IJyCb7
- 51bdhRtXGE09YZpLE=
-X-Google-Smtp-Source: APXvYqwmn5LtjaTY+f4hsmtZfAoqdCdKYyyJ3TA1JpFnaOV6Nu/BG+R38vnyWSwcum180MP3Ic/YmQmm8bwHU1r3
-X-Received: by 2002:a05:6830:119:: with SMTP id
- i25mr175410otp.288.1560339848209; 
- Wed, 12 Jun 2019 04:44:08 -0700 (PDT)
-Date: Wed, 12 Jun 2019 13:43:27 +0200
+ bh=eb4SnUCHaoFPTU0EqMrx7H6L5ANcvzM3zwsiyq0FV40=;
+ b=YL0HosIgES7HjUtE6p0ukw5Bb3apfXg10QpqR5aQULbC3xX99NQaqMHXBsd2YU3S2J
+ WsdSGNM9H0gf9zuT4e0RxobvywbGBkr2BMN4q2DlAehoVAae7e2LgL18thQ6pQ+BjLk9
+ ZNuH9A0/iwsDSNVrMRltteynQPNugGY0oFL6YdbQz7oljowTCy2P1XWgnoDSwsUu58Dz
+ rhWQbbYfDr8FtT61b5CSKqpWDQspxAvTf7bsSDslt9rPnk67nvsJY2HOOt9gaS+2ph5k
+ mv8bSIfpgWEDaJ+MWy/dEgdOzWW7hwIUpcFG82WSjfTFIE2z0yFooWiuz+TM16wflJFo
+ T1Eg==
+X-Gm-Message-State: APjAAAWTiHMYjhnu+jb2p7UOvvhFn9DiKkeSTPO4Xe1/sqPAH1FResRc
+ Fy8IpFY95GB2G3bezol7bPTzeb4UgPmlpxUg56JMQp44EoeZCQBO3zY7mnMiktAQz2Y84Nl1TnQ
+ vQS0RS1H+lJi8809MJa05vdKj9rkfVt6D/lONTv/BcZRWfjcgSVBlzC0anVF01UQsK/ZbivTjH1
+ 2vWNByuOLkL0Baoig=
+X-Google-Smtp-Source: APXvYqziQbsGJB+s1a1ziaRcl+e8Gmo6MzSM6gFLtwRxsTnl2K0xyr2RS7DkrrH2w0nPz/f56zeYNt9ix1U3jsHZ
+X-Received: by 2002:ae9:f107:: with SMTP id k7mr2472892qkg.215.1560339851579; 
+ Wed, 12 Jun 2019 04:44:11 -0700 (PDT)
+Date: Wed, 12 Jun 2019 13:43:28 +0200
 In-Reply-To: <cover.1560339705.git.andreyknvl@google.com>
-Message-Id: <9ba6199f01b8e941404b18bf8f7079ff384fb60b.1560339705.git.andreyknvl@google.com>
+Message-Id: <50293fea168d5252f79ee0bf160c64c72edbf270.1560339705.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1560339705.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.22.0.rc2.383.gf4fbbf30c2-goog
-Subject: [PATCH v17 10/15] drm/radeon,
- arm64: untag user pointers in radeon_gem_userptr_ioctl
+Subject: [PATCH v17 11/15] IB/mlx4,
+ arm64: untag user pointers in mlx4_get_umem_mr
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -69,15 +68,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_044410_643414_C2A131FD 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20190612_044413_684854_8444620A 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:34a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -133,35 +132,41 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-In radeon_gem_userptr_ioctl() an MMU notifier is set up with a (tagged)
-userspace pointer. The untagged address should be used so that MMU
-notifiers for the untagged address get correctly matched up with the right
-BO. This funcation also calls radeon_ttm_tt_pin_userptr(), which uses
-provided user pointers for vma lookups, which can only by done with
-untagged pointers.
+mlx4_get_umem_mr() uses provided user pointers for vma lookups, which can
+only by done with untagged pointers.
 
-This patch untags user pointers in radeon_gem_userptr_ioctl().
+Untag user pointers in this function.
 
-Suggested-by: Felix Kuehling <Felix.Kuehling@amd.com>
-Acked-by: Felix Kuehling <Felix.Kuehling@amd.com>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- drivers/gpu/drm/radeon/radeon_gem.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/infiniband/hw/mlx4/mr.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/radeon/radeon_gem.c b/drivers/gpu/drm/radeon/radeon_gem.c
-index 44617dec8183..90eb78fb5eb2 100644
---- a/drivers/gpu/drm/radeon/radeon_gem.c
-+++ b/drivers/gpu/drm/radeon/radeon_gem.c
-@@ -291,6 +291,8 @@ int radeon_gem_userptr_ioctl(struct drm_device *dev, void *data,
- 	uint32_t handle;
- 	int r;
+diff --git a/drivers/infiniband/hw/mlx4/mr.c b/drivers/infiniband/hw/mlx4/mr.c
+index 355205a28544..13d9f917f249 100644
+--- a/drivers/infiniband/hw/mlx4/mr.c
++++ b/drivers/infiniband/hw/mlx4/mr.c
+@@ -378,6 +378,7 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+ 	 * again
+ 	 */
+ 	if (!ib_access_writable(access_flags)) {
++		unsigned long untagged_start = untagged_addr(start);
+ 		struct vm_area_struct *vma;
  
-+	args->addr = untagged_addr(args->addr);
-+
- 	if (offset_in_page(args->addr | args->size))
- 		return -EINVAL;
- 
+ 		down_read(&current->mm->mmap_sem);
+@@ -386,9 +387,9 @@ static struct ib_umem *mlx4_get_umem_mr(struct ib_udata *udata, u64 start,
+ 		 * cover the memory, but for now it requires a single vma to
+ 		 * entirely cover the MR to support RO mappings.
+ 		 */
+-		vma = find_vma(current->mm, start);
+-		if (vma && vma->vm_end >= start + length &&
+-		    vma->vm_start <= start) {
++		vma = find_vma(current->mm, untagged_start);
++		if (vma && vma->vm_end >= untagged_start + length &&
++		    vma->vm_start <= untagged_start) {
+ 			if (vma->vm_flags & VM_WRITE)
+ 				access_flags |= IB_ACCESS_LOCAL_WRITE;
+ 		} else {
 -- 
 2.22.0.rc2.383.gf4fbbf30c2-goog
 
