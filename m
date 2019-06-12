@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A0042CFA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:07:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBA4642D53
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:18:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BT0+rp4JixtoDvxeU7jRYI7HnB6bNRmKB379FLfj5KI=; b=PoR0oWjK0IVlma
-	eyhSA40pZ1Ft1/Lwdth1gx+4VVU+hZASS/5i828S1MbGIiqQWs5BtqIvMsQJKEhkVPXy/KgHGZ60U
-	7CjSil5RVawnkjYpyHx8KX6GlLMZ8bMs1xHqDuvQgmK2zIEBOM3R2QrjBQWFpCVrpO0r6nQQTYuzA
-	3GpbNFHvwmF817FQtAd63Xwch6UGLg/lX36Z2QSxBWXJfmAYvQQ6CU+Nmr+P1A0qaWk89HMhU9cHP
-	znxtN7xGAEgNUs2Unu+Hh5eiyZUg6//r+2U0z2q6NlZWgqJW+3FzQqIkvCoYWjKnsFWYJ23Soc+dK
-	Rnvpdjd2D8pBOLZcuwcw==;
+	List-Owner; bh=cU9BJw0bi1dgfOX36hotMjFCxXdgm3SxwV750ZyIMD8=; b=TLGReW1wVr+8/p
+	4D3Tsyu5AGWG8A0P6euOaWGjcACSr7e1zm6jcNy77bshYyUi4Q0chukMVPTSbXuuTXbIB+jiIMGiW
+	NZsYfavfNd7z6EcfjN3OYoCxh58QrOu8T4bXktGd7+5Ai27YgdwXiJBXuQpabDznpkatjNk4otsVf
+	HjYRqOh27neIUDGqanTOJCuIFyxOW9woM3vx9xAqy/uTLKMLbJ9GTcnvhXWwVzAIytK4NsyuiQlwD
+	+wtyFKcGpM5Xg/p8d7lQFXYes1pbI5ZHuwPGmZmOwRApyshlXEIFrVMUwjl+UsI6ZaDJq+rkwnGF5
+	P4kciX1aZ9PYAJ8SraNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb6it-0005ay-C4; Wed, 12 Jun 2019 17:07:43 +0000
-Received: from smtprelay0168.hostedemail.com ([216.40.44.168]
- helo=smtprelay.hostedemail.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb6if-0005a3-VM
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:07:31 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay02.hostedemail.com (Postfix) with ESMTP id 1C359C1DC85;
- Wed, 12 Jun 2019 17:07:28 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, :::::::::::::::::,
- RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1542:1593:1594:1711:1730:1747:1777:1792:2194:2199:2393:2559:2562:2729:2828:2896:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3868:3870:3871:3872:4225:4321:5007:7576:7875:10004:10400:10848:11026:11232:11658:11914:12043:12048:12296:12438:12555:12679:12740:12760:12895:13439:14181:14659:14721:21080:21451:21627:30054:30091,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:27,
- LUA_SUMMARY:none
-X-HE-Tag: road25_23dc3a3c72a17
-X-Filterd-Recvd-Size: 3267
-Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
- [23.242.196.136]) (Authenticated sender: joe@perches.com)
- by omf06.hostedemail.com (Postfix) with ESMTPA;
- Wed, 12 Jun 2019 17:07:26 +0000 (UTC)
-Message-ID: <fc69912c14ead80f371e2136d43db4af1f4b72aa.camel@perches.com>
-Subject: Re: [PATCH v2 5/6] serial: uartps: Do not add a trailing semicolon
- to macro
-From: Joe Perches <joe@perches.com>
-To: Michal Simek <michal.simek@xilinx.com>, johan@kernel.org, 
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, monstr@monstr.eu
-Date: Wed, 12 Jun 2019 10:07:25 -0700
-In-Reply-To: <5d938d34c3c4710577df898dbf4b70c74d2e6730.1560338079.git.michal.simek@xilinx.com>
-References: <cover.1560338079.git.michal.simek@xilinx.com>
- <5d938d34c3c4710577df898dbf4b70c74d2e6730.1560338079.git.michal.simek@xilinx.com>
-User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
+	id 1hb6tK-0001p0-H4; Wed, 12 Jun 2019 17:18:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb6t3-0001jJ-3v
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:18:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0BFEE28;
+ Wed, 12 Jun 2019 10:18:10 -0700 (PDT)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3DB5C3F246;
+ Wed, 12 Jun 2019 10:18:08 -0700 (PDT)
+Date: Wed, 12 Jun 2019 18:18:05 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
+Message-ID: <20190612181805.470f59d1@donnerap.cambridge.arm.com>
+In-Reply-To: <AM0PR04MB4481617CD1DFA9C01470B38E88EC0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <20190603083005.4304-1-peng.fan@nxp.com>
+ <20190603083005.4304-3-peng.fan@nxp.com>
+ <866db682-785a-e0a6-b394-bb65c7a694c6@gmail.com>
+ <20190606142056.68272dc0@donnerap.cambridge.arm.com>
+ <AM0PR04MB448168C72F1D40C1B9BEB1F788130@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <AM0PR04MB4481617CD1DFA9C01470B38E88EC0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_100730_150914_A0F63E05 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20190612_101813_249679_591CEDE6 
+X-CRM114-Status: GOOD (  38.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.168 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,81 +66,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nava kishore Manne <nava.manne@xilinx.com>,
- linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "van.freenix@gmail.com" <van.freenix@gmail.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-06-12 at 13:14 +0200, Michal Simek wrote:
-> From: Nava kishore Manne <nava.manne@xilinx.com>
+On Wed, 12 Jun 2019 12:59:04 +0000
+Peng Fan <peng.fan@nxp.com> wrote:
+
+Hi,
+
+> > Subject: RE: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
+> > 
+> > Hi Andre,  
+> > > Subject: Re: [PATCH V2 2/2] mailbox: introduce ARM SMC based mailbox
+> > >
+> > > On Mon, 3 Jun 2019 09:32:42 -0700
+> > > Florian Fainelli <f.fainelli@gmail.com> wrote:
+> > >
+> > > Hi,
+> > >  
+> > > > On 6/3/19 1:30 AM, peng.fan@nxp.com wrote:  
+> > > > > From: Peng Fan <peng.fan@nxp.com>
+> > > > >
+> > > > > This mailbox driver implements a mailbox which signals transmitted
+> > > > > data via an ARM smc (secure monitor call) instruction. The mailbox
+> > > > > receiver is implemented in firmware and can synchronously return
+> > > > > data when it returns execution to the non-secure world again.
+> > > > > An asynchronous receive path is not implemented.
+> > > > > This allows the usage of a mailbox to trigger firmware actions on
+> > > > > SoCs which either don't have a separate management processor or on
+> > > > > which such a core is not available. A user of this mailbox could
+> > > > > be the SCP interface.
+> > > > >
+> > > > > Modified from Andre Przywara's v2 patch
+> > > > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2F
+> > > > > lo
+> > > > >  
+> > >  
+> > re.kernel.org%2Fpatchwork%2Fpatch%2F812999%2F&amp;data=02%7C01%  
+> > > 7Cpen  
+> > > > >  
+> > >  
+> > g.fan%40nxp.com%7C15c4180b8fe5405d3de808d6ea81d5f1%7C686ea1d3bc  
+> > > 2b4c6  
+> > > > >  
+> > > fa92cd99c5c301635%7C0%7C0%7C636954240720601454&amp;sdata=1Cp
+> > > WSgTH7lF  
+> > > > > cBKxJnLeIDw%2FDAQJJO%2FVypV1LUU1BRQA%3D&amp;reserved=0
+> > > > >
+> > > > > Cc: Andre Przywara <andre.przywara@arm.com>
+> > > > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > > > > ---  
+> > > >
+> > > > [snip]
+> > > >
+> > > > +#define ARM_SMC_MBOX_USB_IRQ	BIT(1)
+> > > >
+> > > > That flag appears unused.
+> > > >  
+> > > > > +static int arm_smc_mbox_probe(struct platform_device *pdev) {
+> > > > > +	struct device *dev = &pdev->dev;
+> > > > > +	struct mbox_controller *mbox;
+> > > > > +	struct arm_smc_chan_data *chan_data;
+> > > > > +	const char *method;
+> > > > > +	bool use_hvc = false;
+> > > > > +	int ret, irq_count, i;
+> > > > > +	u32 val;
+> > > > > +
+> > > > > +	if (!of_property_read_u32(dev->of_node, "arm,num-chans", &val)) {
+> > > > > +		if (val < 1 || val > INT_MAX) {
+> > > > > +			dev_err(dev, "invalid arm,num-chans value %u  
+> > > of %pOFn\n", val,  
+> > > > > +pdev->dev.of_node);  
+> > >
+> > > Isn't the of_node parameter redundant, because dev_err() already takes
+> > > care of that?  
+> > 
+> > I'll remove that.
+> >   
+> > >  
+> > > > > +			return -EINVAL;
+> > > > > +		}
+> > > > > +	}  
+> > > >
+> > > > Should not the upper bound check be done against UINT_MAX since val
+> > > > is an unsigned int?  
+> > >
+> > > But wouldn't that be somewhat pointless, given that val is a u32? So I
+> > > guess we could just condense this down to:
+> > > ...
+> > > 		if (!val) {
+> > > ...  
+> > 
+> > make sense.
+> >   
+> > >  
+> > > > > +
+> > > > > +	irq_count = platform_irq_count(pdev);
+> > > > > +	if (irq_count == -EPROBE_DEFER)
+> > > > > +		return irq_count;
+> > > > > +
+> > > > > +	if (irq_count && irq_count != val) {
+> > > > > +		dev_err(dev, "Interrupts not match num-chans\n");  
+> > > >
+> > > > Interrupts property does not match \"arm,num-chans\" would be more  
+> > > correct.
+> > >
+> > > Given that interrupts are optional, do we have to rely on this?  
+> > 
+> > If there is interrupt property, the interrupts should match channel counts.
+> > 
+> > Do we actually  
+> > > need one interrupt per channel?  
+> > 
+> > I thought about this, provide one interrupt for all channels.
+> > But there is no good way to let interrupt handlers know which channel
+> > triggers the interrupt. So I use one interrupt per channel.
+> >   
+> > >  
+> > > > > +		return -EINVAL;
+> > > > > +	}
+> > > > > +
+> > > > > +	if (!of_property_read_string(dev->of_node, "method", &method)) {
+> > > > > +		if (!strcmp("hvc", method)) {
+> > > > > +			use_hvc = true;
+> > > > > +		} else if (!strcmp("smc", method)) {
+> > > > > +			use_hvc = false;
+> > > > > +		} else {
+> > > > > +			dev_warn(dev, "invalid \"method\" property: %s\n",
+> > > > > +				 method);
+> > > > > +
+> > > > > +			return -EINVAL;
+> > > > > +		}  
+> > > >
+> > > > Having at least one method specified does not seem to be checked
+> > > > later on in the code, so if I omitted to specify that property, we
+> > > > would still register the mailbox and default to use "smc" since the
+> > > > ARM_SMC_MBOX_USE_HVC flag would not be set, would not we want to  
+> > > make  
+> > > > sure that we do have in fact a valid method specified given the
+> > > > binding documents that property as mandatory?
+> > > >
+> > > > [snip]
+> > > >  
+> > > > > +	mbox->txdone_poll = false;
+> > > > > +	mbox->txdone_irq = false;
+> > > > > +	mbox->ops = &arm_smc_mbox_chan_ops;
+> > > > > +	mbox->dev = dev;
+> > > > > +
+> > > > > +	ret = mbox_controller_register(mbox);
+> > > > > +	if (ret)
+> > > > > +		return ret;
+> > > > > +
+> > > > > +	platform_set_drvdata(pdev, mbox);  
+> > > >
+> > > > I would move this above mbox_controller_register() that way there is
+> > > > no room for race conditions in case another part of the driver
+> > > > expects to have pdev->dev.drvdata set before the mbox controller is  
+> > registered.  
+> > > > Since you use devm_* functions for everything, you may even remove
+> > > > that call.
+> > > >
+> > > > [snip]
+> > > >  
+> > > > > +#ifndef _LINUX_ARM_SMC_MAILBOX_H_ #define
+> > > > > +_LINUX_ARM_SMC_MAILBOX_H_
+> > > > > +
+> > > > > +struct arm_smccc_mbox_cmd {
+> > > > > +	unsigned long a0, a1, a2, a3, a4, a5, a6, a7; };  
+> > > >
+> > > > Do you expect this to be used by other in-kernel users? If so, it
+> > > > might be good to document how a0 can have a special meaning and be
+> > > > used as a substitute for the function_id?  
+> > >
+> > > I don't think we should really expose this outside of the driver. From
+> > > a mailbox point of view this is just the payload, transported according to the  
+> > SMCCC.  
+> > > Also using "long" here sounds somewhat troublesome.  
 > 
-> This patch fixes this checkpatch warning:
-> WARNING: macros should not use a trailing semicolon
-> +#define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
-> +		clk_rate_change_nb);
-> diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
-[]
-> @@ -199,7 +199,7 @@ struct cdns_platform_data {
->  	u32 quirks;
->  };
->  #define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
-> -		clk_rate_change_nb);
-> +		clk_rate_change_nb)
->  
->  /**
->   * cdns_uart_handle_rx - Handle the received bytes along with Rx errors.
+> Long on ARM64 is 64bit, and 32bit on ARM32, so I use long.
+> Do you forsee any issues?
 
-trivia:
+Yes, because having different sizes depending on the underlying instruction set asks for trouble when talking about protocols. If I compile a kernel with this driver once for arm(32) and once for arm64 and run it on the same machine with the same firmware, does that behave differently? Not saying it's impossible to handle, but we should make sure there is no ambiguity.
 
-Perhaps this is easier for humans to read with the macro
-on two lines like:
+> > > Also, looking at the SMCCC, I only see six parameters in addition to
+> > > the function identifier. Shall we reflect this here?  
+> 
+> a0 is used as function id, not no arm,func-ids provided in dts. a1-a7 are
+> also passed to smc.
 
-#define to_cdns_uart(_nb) \
-	container_of(_nb, struct cdns_uart, clk_rate_change_nb)
+Yes, so those are *7* parameters on top of the function IDs, whereas the SMCCC only speaks of 6:
+"When the SMC64/HVC64 convention is used, the SMC or HVC instruction takes up to six 64-bit arguments in
+registers ..."
+"When the SMC32/HVC32 convention is used, an SMC or HVC instruction takes a Function Identifier and up to six
+32-bit register values as arguments, ..."
 
-or just ignore the 80 column limit
+> If arm,func-ids is provided, a0 will be omitted just for consistency as above.
+> 
+> You mean write comments in the code for it?
 
-#define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, clk_rate_change_nb)
+I think we should prevent people expecting anything useful to happen with the seventh argument.
 
-or because the macro is only used in one place,
-just get rid of it and use container_of directly.
----
- drivers/tty/serial/xilinx_uartps.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
-index 605354fd60b1..ca5cec2b83ce 100644
---- a/drivers/tty/serial/xilinx_uartps.c
-+++ b/drivers/tty/serial/xilinx_uartps.c
-@@ -195,11 +195,10 @@ struct cdns_uart {
- 	u32			quirks;
- 	bool cts_override;
- };
-+
- struct cdns_platform_data {
- 	u32 quirks;
- };
--#define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
--		clk_rate_change_nb);
- 
- /**
-  * cdns_uart_handle_rx - Handle the received bytes along with Rx errors.
-@@ -489,8 +488,9 @@ static int cdns_uart_clk_notifier_cb(struct notifier_block *nb,
- 	int locked = 0;
- 	struct clk_notifier_data *ndata = data;
- 	unsigned long flags = 0;
--	struct cdns_uart *cdns_uart = to_cdns_uart(nb);
-+	struct cdns_uart *cdns_uart;
- 
-+	cdns_uart = container_of(nb, struct cdns_uart, clk_rate_change_nb);
- 	port = cdns_uart->port;
- 	if (port->suspended)
- 		return NOTIFY_OK;
-
-
+Cheers,
+Andre
 
 _______________________________________________
 linux-arm-kernel mailing list
