@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9E042296
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:35:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73DA2422B2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:39:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Vbpj5Sepho4EdrNW0YFsYeD5ssf8zMWsVe6+RJOfsQM=; b=meKgszwA/VGQAYhIcrpJilEQm
-	TBrF6ZsxdDNnW2PYQz0y1fEIGdcAc2VJzyOt8FRk3M1eOXn5NWqA8FBV1fZAixufzHRizWzrp5cxq
-	oBC/4MMXIL/Rr4CMDoAR0iuiqC18HPkgxX6LeUFMcCPVMjtUYLNLSipc3pqxkEHIRVcAKOvEoIiep
-	PJPsDDqRgkoblRhvbqgvnu6kxOUXBTeniwZTnhAiNp77VMp68YuCqUSByN4M2yuU/PNhAR0PD9Hni
-	Yp3zNMqW3Hy3nLK3chYqe2ximMTDCu6kth9t6Zt6PYLMrjvvGuwvWWV/71Kzz54OyWVjzLucrKGSz
-	Q9BJplHPA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c1+mh0COuP6l08kSLeye/rfBvvNcyFOd8BlaTTERd8c=; b=OBdXz7DH+vVqix
+	oGnWMqHreaH/qmjZFODMBdP3wt2HTl9e3Ws+6vL2SHPOGNPbfw4jKpmPmeXa2lRn5nCHQMJZPAXGD
+	XcwNMrwStiozPPqKt6qeOAGm2DgksYKkO5PDFv3mkmPU5ch1/6KFDLQxyPK7uIY9oq1/V6mVKvxpH
+	MBCWo3sT/9Q+CdhpNKOnoXPoy3bdcQnIyQOKUJ2/gsfTaevfQQVNSgx0tKpjoqG7uE3yCzJYNg9xX
+	dzV7hv+WPJiV1phoLdCyKPJp8fBmNmykHNqA0FHgmD1wiluoZSy1qTTs2njqYHAqRVfWAq1ljkrJH
+	v39+KNMB6wezVbAiL5Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb0az-0000ns-7r; Wed, 12 Jun 2019 10:35:09 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+	id 1hb0fD-00038R-Fc; Wed, 12 Jun 2019 10:39:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb0ak-0000nK-Md
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:34:56 +0000
-Received: from localhost (p5486CACA.dip0.t-ipconnect.de [84.134.202.202])
- by pokefinder.org (Postfix) with ESMTPSA id D42842C54BC;
- Wed, 12 Jun 2019 12:34:53 +0200 (CEST)
-Date: Wed, 12 Jun 2019 12:34:53 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 1/8] i2c: i2c-qcom-geni: Provide support for ACPI
-Message-ID: <20190612103453.ccet2pneairnlpcc@ninjato>
-References: <20190610084213.1052-1-lee.jones@linaro.org>
+ id 1hb0f2-00037O-IL
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:39:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 29FDA28;
+ Wed, 12 Jun 2019 03:39:19 -0700 (PDT)
+Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0039F3F246;
+ Wed, 12 Jun 2019 03:40:38 -0700 (PDT)
+Date: Wed, 12 Jun 2019 11:38:49 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v16 15/16] vfio/type1, arm64: untag user pointers in
+ vaddr_get_pfn
+Message-ID: <20190612103848.GA28951@C02TF0J2HF1T.local>
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <c529e1eeea7700beff197c4456da6a882ce2efb7.1559580831.git.andreyknvl@google.com>
 MIME-Version: 1.0
-In-Reply-To: <20190610084213.1052-1-lee.jones@linaro.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
+Content-Disposition: inline
+In-Reply-To: <c529e1eeea7700beff197c4456da6a882ce2efb7.1559580831.git.andreyknvl@google.com>
+User-Agent: Mutt/1.11.2 (2019-01-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_033454_889587_82CAA28E 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190612_033920_655453_5D8BCE01 
+X-CRM114-Status: GOOD (  11.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -59,85 +62,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, linux-usb@vger.kernel.org,
- wsa+renesas@sang-engineering.com, gregkh@linuxfoundation.org,
- linus.walleij@linaro.org, ard.biesheuvel@linaro.org,
- linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org,
- david.brown@linaro.org, alokc@codeaurora.org, linux-i2c@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- andy.gross@linaro.org, jlhugo@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5829541328941561870=="
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, linux-kselftest@vger.kernel.org,
+ Felix Kuehling <Felix.Kuehling@amd.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
+ Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yishai Hadas <yishaih@mellanox.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Jun 03, 2019 at 06:55:17PM +0200, Andrey Konovalov wrote:
+> This patch is a part of a series that extends arm64 kernel ABI to allow to
+> pass tagged user pointers (with the top byte set to something else other
+> than 0x00) as syscall arguments.
+> 
+> vaddr_get_pfn() uses provided user pointers for vma lookups, which can
+> only by done with untagged pointers.
+> 
+> Untag user pointers in this function.
+> 
+> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 
---===============5829541328941561870==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="o2p7l3jstr6cxok3"
-Content-Disposition: inline
-
-
---o2p7l3jstr6cxok3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Jun 10, 2019 at 09:42:06AM +0100, Lee Jones wrote:
-> Add a match table to allow automatic probing of ACPI device
-> QCOM0220.  Ignore clock attainment errors.  Set default clock
-> frequency value.
->=20
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
-
-Sadly, there is no cover-letter describing if there is a dependency or
-not. I assume there is, otherwise I would get the I2C patches only? But
-what is the suggested way upstream then?
-
-Also, the current maintainer entry for this driver looks like:
-
-drivers/i2c/busses/i2c-qcom-geni.c:
-        Andy Gross <agross@kernel.org> (maintainer:ARM/QUALCOMM SUPPORT)
-        David Brown <david.brown@linaro.org> (maintainer:ARM/QUALCOMM SUPPO=
-RT)
-        Alok Chauhan <alokc@codeaurora.org> (supporter:QUALCOMM GENERIC INT=
-ERFACE I2C DRIVER)
-
-I didn't hear from those people yet, would be great to have their acks.
-
-
---o2p7l3jstr6cxok3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl0A1U0ACgkQFA3kzBSg
-KbaoxBAAhggdoyYJ7Ory41uJZnpyS7E81TmUKsmVqsSij9MOr2pAO6ksoixVcsKJ
-o+uoFROtUHSJfi/0ZzdMkt9qn50fRBn525tiT+IirJnXotAS8f9eTtzZwl14wBCS
-+yVDItXLHA5jJqBwgGQeGAzn+/PuGOdp4NxsATnAOEh9QJyVjHppT7nUQGBv6yrH
-qEgQCLKuywZbsg/GSwwyZ0TfWFbVgenGRiVCWyYNEMQeGntZWG9/JF6ad0C+x7+P
-GYPM83p0krqDMIfWCh/P1M02Tu++P+IB68u4cHwZvDDpKFTqgthSENVPdZYJ4RB4
-irJUfrFJPOV+JNit85YZfAqV8gkt4bPWXm6+h/sOD2LyK2P5A7+X9+l5pyb7EJl6
-t6YPDfHl1Z7dP8rgKzbBkyhPS0KJS0XoC5JyPm7YsYWYywMAOIqd4GDP869ZQGD8
-FTbgmw9hsU9KA+j78B7DmgasSRUutFQLoSAKZLK+HTXPg8Zsa/XWA4m6zN1xH1Dp
-KEo+IF0ioEhbhSNqN8PzfKr1OJcaW07Fw61syO497VS5d2JXml4mseeUGRBSXOwG
-hD4R3Jv30x/U9HzyYVmjV5qS+P9hIcwrIKKWNIND0+kXwGsWYBD/pl4BQZfcufA8
-qvL2wQs5sTFynh8ZgAvv6vczs7Nlsb/08XrEJjRm8hYpXu+8s9U=
-=xlPb
------END PGP SIGNATURE-----
-
---o2p7l3jstr6cxok3--
-
-
---===============5829541328941561870==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5829541328941561870==--
-
