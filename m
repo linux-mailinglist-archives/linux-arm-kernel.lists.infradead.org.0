@@ -2,43 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1050242D70
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:27:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A5DD42D71
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:27:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=z6IXN4SniZrpspU2uWUUB5oofr90qHCsVef9uzFmlMg=; b=ETwBa2hDGzeBUE
-	iLHe7j4LsDCqQdtC35d3/wke+KATCI/4mx3cBiAAamu+Q0uhyyYNSkxQI88iwrQXnVFyJxB35A3ls
-	i1hN9O+wotB/R+/7+OrSrEgHuaOsLScxbwfldHFgbH0KNM/upeXLqxe5bezqaqeR6Lvl0MXhu5GQg
-	Ly8bF4kWmyBY7M2mQX+djpFh712qebqBWL0XM1xN3VtJ+0ai+vdOtDhFn2s20jB/Y+Ay2Z5jGgdec
-	pA/OoC04LPe3jPeBJ8W/CeP62xBynJw56vX2iG+PIwqa43ZYvDnrjxyOsdYBqfJCN0VfZgpX417aV
-	LVbZQwhSQT0GZs0sqiXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=b/XjyQZXZLA+kuQ80/ekmfnyY0fg4V6aB5J3gba15S8=; b=SDq2FU0EvnmBWj
+	QmxQ7rc14fx4aQHGkbwXh47J03zTgZKtqE9cRk5V1hrv9Oi5qv2FERcfVW//E/BF8Vw1vigP3+Kqm
+	3itDx7al8VRJjKO2ba1WLVHTfdFmPInyRS5EValSQ83++Csiutvy6um70RVYwvlJBcR0D94u23VHM
+	kQV4IJSsskoxTpY88bs/FsHXpVyuss0muGTe4e2XfNlLzcv9b9tWmOyoyuiVkAyJMK0K0ctFnl6y9
+	1xFaDIvIFCdi6oKdDkuRXectwHd5hXbwbMk4nOnp8GfgWnA+9j4ZIUG7m/QX+UXbixBqEz86FtTXM
+	wIhbS454MscuHTEfmd5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb725-0005tv-2k; Wed, 12 Jun 2019 17:27:33 +0000
+	id 1hb72R-0006H0-AK; Wed, 12 Jun 2019 17:27:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb71l-0005qK-OO
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:27:15 +0000
+ id 1hb71n-0005qn-5B
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:27:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 95FE128;
- Wed, 12 Jun 2019 10:27:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA23B337;
+ Wed, 12 Jun 2019 10:27:12 -0700 (PDT)
 Received: from capper-debian.arm.com (unknown [10.37.13.15])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2C2C23F246;
- Wed, 12 Jun 2019 10:27:08 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 057FE3F246;
+ Wed, 12 Jun 2019 10:27:10 -0700 (PDT)
 From: Steve Capper <steve.capper@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 00/10] 52-bit kernel + user VAs
-Date: Wed, 12 Jun 2019 18:26:48 +0100
-Message-Id: <20190612172658.28522-1-steve.capper@arm.com>
+Subject: [PATCH v3 01/10] arm64: mm: Flip kernel VA space
+Date: Wed, 12 Jun 2019 18:26:49 +0100
+Message-Id: <20190612172658.28522-2-steve.capper@arm.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190612172658.28522-1-steve.capper@arm.com>
+References: <20190612172658.28522-1-steve.capper@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_102713_887722_F01B4624 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20190612_102715_328948_BBAE906F 
+X-CRM114-Status: GOOD (  14.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,85 +66,210 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds support for 52-bit kernel VAs using some of the
-machinery already introduced by the 52-bit userspace VA code in 5.0.
+Put the direct linear map in the lower addresses of the kernel VA range
+and everything else in the higher ranges.
 
-As 52-bit virtual address support is an optional hardware feature,
-software support for 52-bit kernel VAs needs to be deduced at early boot
-time. If HW support is not available, the kernel falls back to 48-bit.
+This allows us to make room for an inline KASAN shadow that operates
+under both 48 and 52 bit kernel VA sizes. For example with a 52-bit VA,
+if KASAN_SHADOW_END < 0xFFF8000000000000 (it is in the lower addresses
+of the kernel VA range), this will be below the start of the minimum
+48-bit kernel VA address of 0xFFFF000000000000.
 
-A significant proportion of this series focuses on "de-constifying"
-VA_BITS related constants.
+We need to adjust:
+ *) KASAN shadow region placement logic,
+ *) KASAN_SHADOW_OFFSET computation logic,
+ *) virt_to_phys, phys_to_virt checks,
+ *) page table dumper.
 
-In order to allow for a KASAN shadow that changes size at boot time, one
-must fix the KASAN_SHADOW_END for both 48 & 52-bit VAs and "grow" the
-start address. Also, it is highly desirable to maintain the same
-function addresses in the kernel .text between VA sizes. Both of these
-requirements necessitate us to flip the kernel address space halves s.t.
-the direct linear map occupies the lower addresses.
+These are all small changes, that need to take place atomically, so they
+are bundled into this commit.
 
-In V3 of this series, the 52-bit user/48-bit kernel option is removed
-and we are left with a single 52-bit VA option instead. The offset_ttbr1
-conditional logic has been re-worked to directly read a system register
-rather than rely on the alternative framework (I couldn't actually see a
-hotpath calling offset_ttbr1 and some parts of the early boot relied on
-offset_ttbr1 before the alternatives framework was called). Also some
-spurious de-constifying changes have been removed.
+Signed-off-by: Steve Capper <steve.capper@arm.com>
+---
+ arch/arm64/Makefile              | 2 +-
+ arch/arm64/include/asm/memory.h  | 8 ++++----
+ arch/arm64/include/asm/pgtable.h | 2 +-
+ arch/arm64/kernel/hibernate.c    | 2 +-
+ arch/arm64/mm/dump.c             | 8 ++++----
+ arch/arm64/mm/init.c             | 9 +--------
+ arch/arm64/mm/kasan_init.c       | 6 +++---
+ arch/arm64/mm/mmu.c              | 4 ++--
+ 8 files changed, 17 insertions(+), 24 deletions(-)
 
-In V2 of this series (apologies for the long delay from V1), the major
-change is that PAGE_OFFSET is retained as a constant. This allows for
-much faster virt_to_page computations. This is achieved by expanding the
-size of the VMEMMAP region to accommodate a disjoint 52-bit/48-bit
-direct linear map. This has been found to work well in my testing, but I
-would appreciate any feedback on this if it needs changing. To aid with
-git bisect, this logic is broken down into a few smaller patches.
-
-I am happy to add an extra set of patches to this series to document the
-52-bit logic and export the relevant vmcoreinfo information (is
-something like "vmcoreinfo_append_str(VA_BITS_ACTUAL)" enough?) or
-post a separate series in future with this information in.
-
-Cheers,
---
-Steve
-
-Steve Capper (10):
-  arm64: mm: Flip kernel VA space
-  arm64: kasan: Switch to using KASAN_SHADOW_OFFSET
-  arm64: dump: De-constify VA_START and KASAN_SHADOW_START
-  arm64: mm: Introduce VA_BITS_MIN
-  arm64: mm: Introduce VA_BITS_ACTUAL
-  arm64: mm: Logic to make offset_ttbr1 conditional
-  arm64: mm: Separate out vmemmap
-  arm64: mm: Modify calculation of VMEMMAP_SIZE
-  arm64: mm: Tweak PAGE_OFFSET logic
-  arm64: mm: Introduce 52-bit Kernel VAs
-
- Documentation/arm64/kasan-offsets.sh   | 27 ++++++++++++++++
- arch/arm64/Kconfig                     | 36 +++++++++++++++++----
- arch/arm64/Makefile                    |  8 -----
- arch/arm64/include/asm/assembler.h     | 17 ++++++++--
- arch/arm64/include/asm/efi.h           |  4 +--
- arch/arm64/include/asm/kasan.h         | 11 +++----
- arch/arm64/include/asm/memory.h        | 45 ++++++++++++++++++--------
- arch/arm64/include/asm/mmu_context.h   |  4 +--
- arch/arm64/include/asm/pgtable-hwdef.h |  2 +-
- arch/arm64/include/asm/pgtable.h       |  6 ++--
- arch/arm64/include/asm/processor.h     |  2 +-
- arch/arm64/kernel/head.S               | 13 +++++---
- arch/arm64/kernel/hibernate-asm.S      |  8 ++---
- arch/arm64/kernel/hibernate.c          |  2 +-
- arch/arm64/kernel/kaslr.c              |  6 ++--
- arch/arm64/kvm/va_layout.c             | 14 ++++----
- arch/arm64/mm/dump.c                   | 25 ++++++++++----
- arch/arm64/mm/fault.c                  |  4 +--
- arch/arm64/mm/init.c                   | 29 ++++++++++++-----
- arch/arm64/mm/kasan_init.c             | 11 +++----
- arch/arm64/mm/mmu.c                    |  7 ++--
- arch/arm64/mm/proc.S                   |  9 +++---
- 22 files changed, 196 insertions(+), 94 deletions(-)
- create mode 100644 Documentation/arm64/kasan-offsets.sh
-
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index b025304bde46..2dad2ae6b181 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -115,7 +115,7 @@ KBUILD_AFLAGS += -DKASAN_SHADOW_SCALE_SHIFT=$(KASAN_SHADOW_SCALE_SHIFT)
+ #				 - (1 << (64 - KASAN_SHADOW_SCALE_SHIFT))
+ # in 32-bit arithmetic
+ KASAN_SHADOW_OFFSET := $(shell printf "0x%08x00000000\n" $$(( \
+-	(0xffffffff & (-1 << ($(CONFIG_ARM64_VA_BITS) - 32))) \
++	(0xffffffff & (-1 << ($(CONFIG_ARM64_VA_BITS) - 1 - 32))) \
+ 	+ (1 << ($(CONFIG_ARM64_VA_BITS) - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) \
+ 	- (1 << (64 - 32 - $(KASAN_SHADOW_SCALE_SHIFT))) )) )
+ 
+diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+index 8ffcf5a512bb..5cd2eb8cb424 100644
+--- a/arch/arm64/include/asm/memory.h
++++ b/arch/arm64/include/asm/memory.h
+@@ -49,9 +49,9 @@
+  */
+ #define VA_BITS			(CONFIG_ARM64_VA_BITS)
+ #define VA_START		(UL(0xffffffffffffffff) - \
+-	(UL(1) << VA_BITS) + 1)
+-#define PAGE_OFFSET		(UL(0xffffffffffffffff) - \
+ 	(UL(1) << (VA_BITS - 1)) + 1)
++#define PAGE_OFFSET		(UL(0xffffffffffffffff) - \
++	(UL(1) << VA_BITS) + 1)
+ #define KIMAGE_VADDR		(MODULES_END)
+ #define BPF_JIT_REGION_START	(VA_START + KASAN_SHADOW_SIZE)
+ #define BPF_JIT_REGION_SIZE	(SZ_128M)
+@@ -59,7 +59,7 @@
+ #define MODULES_END		(MODULES_VADDR + MODULES_VSIZE)
+ #define MODULES_VADDR		(BPF_JIT_REGION_END)
+ #define MODULES_VSIZE		(SZ_128M)
+-#define VMEMMAP_START		(PAGE_OFFSET - VMEMMAP_SIZE)
++#define VMEMMAP_START		(-VMEMMAP_SIZE)
+ #define PCI_IO_END		(VMEMMAP_START - SZ_2M)
+ #define PCI_IO_START		(PCI_IO_END - PCI_IO_SIZE)
+ #define FIXADDR_TOP		(PCI_IO_START - SZ_2M)
+@@ -238,7 +238,7 @@ extern u64			vabits_user;
+  * space. Testing the top bit for the start of the region is a
+  * sufficient check.
+  */
+-#define __is_lm_address(addr)	(!!((addr) & BIT(VA_BITS - 1)))
++#define __is_lm_address(addr)	(!((addr) & BIT(VA_BITS - 1)))
+ 
+ #define __lm_to_phys(addr)	(((addr) & ~PAGE_OFFSET) + PHYS_OFFSET)
+ #define __kimg_to_phys(addr)	((addr) - kimage_voffset)
+diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+index 2c41b04708fe..d0ab784304e9 100644
+--- a/arch/arm64/include/asm/pgtable.h
++++ b/arch/arm64/include/asm/pgtable.h
+@@ -32,7 +32,7 @@
+  *	and fixed mappings
+  */
+ #define VMALLOC_START		(MODULES_END)
+-#define VMALLOC_END		(PAGE_OFFSET - PUD_SIZE - VMEMMAP_SIZE - SZ_64K)
++#define VMALLOC_END		(- PUD_SIZE - VMEMMAP_SIZE - SZ_64K)
+ 
+ #define vmemmap			((struct page *)VMEMMAP_START - (memstart_addr >> PAGE_SHIFT))
+ 
+diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+index 9859e1178e6b..6ffcc32f35dd 100644
+--- a/arch/arm64/kernel/hibernate.c
++++ b/arch/arm64/kernel/hibernate.c
+@@ -497,7 +497,7 @@ int swsusp_arch_resume(void)
+ 		rc = -ENOMEM;
+ 		goto out;
+ 	}
+-	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, 0);
++	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, VA_START);
+ 	if (rc)
+ 		goto out;
+ 
+diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
+index 14fe23cd5932..ee4e5bea8944 100644
+--- a/arch/arm64/mm/dump.c
++++ b/arch/arm64/mm/dump.c
+@@ -30,6 +30,8 @@
+ #include <asm/ptdump.h>
+ 
+ static const struct addr_marker address_markers[] = {
++	{ PAGE_OFFSET,			"Linear Mapping start" },
++	{ VA_START,			"Linear Mapping end" },
+ #ifdef CONFIG_KASAN
+ 	{ KASAN_SHADOW_START,		"Kasan shadow start" },
+ 	{ KASAN_SHADOW_END,		"Kasan shadow end" },
+@@ -43,10 +45,8 @@ static const struct addr_marker address_markers[] = {
+ 	{ PCI_IO_START,			"PCI I/O start" },
+ 	{ PCI_IO_END,			"PCI I/O end" },
+ #ifdef CONFIG_SPARSEMEM_VMEMMAP
+-	{ VMEMMAP_START,		"vmemmap start" },
+-	{ VMEMMAP_START + VMEMMAP_SIZE,	"vmemmap end" },
++	{ VMEMMAP_START,		"vmemmap" },
+ #endif
+-	{ PAGE_OFFSET,			"Linear mapping" },
+ 	{ -1,				NULL },
+ };
+ 
+@@ -380,7 +380,7 @@ static void ptdump_initialize(void)
+ static struct ptdump_info kernel_ptdump_info = {
+ 	.mm		= &init_mm,
+ 	.markers	= address_markers,
+-	.base_addr	= VA_START,
++	.base_addr	= PAGE_OFFSET,
+ };
+ 
+ void ptdump_check_wx(void)
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index d2adffb81b5d..574ed1d4be19 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -311,7 +311,7 @@ static void __init fdt_enforce_memory_region(void)
+ 
+ void __init arm64_memblock_init(void)
+ {
+-	const s64 linear_region_size = -(s64)PAGE_OFFSET;
++	const s64 linear_region_size = BIT(VA_BITS - 1);
+ 
+ 	/* Handle linux,usable-memory-range property */
+ 	fdt_enforce_memory_region();
+@@ -319,13 +319,6 @@ void __init arm64_memblock_init(void)
+ 	/* Remove memory above our supported physical address size */
+ 	memblock_remove(1ULL << PHYS_MASK_SHIFT, ULLONG_MAX);
+ 
+-	/*
+-	 * Ensure that the linear region takes up exactly half of the kernel
+-	 * virtual address space. This way, we can distinguish a linear address
+-	 * from a kernel/module/vmalloc address by testing a single bit.
+-	 */
+-	BUILD_BUG_ON(linear_region_size != BIT(VA_BITS - 1));
+-
+ 	/*
+ 	 * Select a suitable value for the base of physical memory.
+ 	 */
+diff --git a/arch/arm64/mm/kasan_init.c b/arch/arm64/mm/kasan_init.c
+index 296de39ddee5..8066621052db 100644
+--- a/arch/arm64/mm/kasan_init.c
++++ b/arch/arm64/mm/kasan_init.c
+@@ -229,10 +229,10 @@ void __init kasan_init(void)
+ 	kasan_map_populate(kimg_shadow_start, kimg_shadow_end,
+ 			   early_pfn_to_nid(virt_to_pfn(lm_alias(_text))));
+ 
+-	kasan_populate_early_shadow((void *)KASAN_SHADOW_START,
+-				    (void *)mod_shadow_start);
++	kasan_populate_early_shadow(kasan_mem_to_shadow((void *) VA_START),
++				   (void *)mod_shadow_start);
+ 	kasan_populate_early_shadow((void *)kimg_shadow_end,
+-				    kasan_mem_to_shadow((void *)PAGE_OFFSET));
++				   (void *)KASAN_SHADOW_END);
+ 
+ 	if (kimg_shadow_start > mod_shadow_end)
+ 		kasan_populate_early_shadow((void *)mod_shadow_end,
+diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+index a1bfc4413982..16063ff10c6d 100644
+--- a/arch/arm64/mm/mmu.c
++++ b/arch/arm64/mm/mmu.c
+@@ -409,7 +409,7 @@ static phys_addr_t pgd_pgtable_alloc(int shift)
+ static void __init create_mapping_noalloc(phys_addr_t phys, unsigned long virt,
+ 				  phys_addr_t size, pgprot_t prot)
+ {
+-	if (virt < VMALLOC_START) {
++	if ((virt >= VA_START) && (virt < VMALLOC_START)) {
+ 		pr_warn("BUG: not creating mapping for %pa at 0x%016lx - outside kernel range\n",
+ 			&phys, virt);
+ 		return;
+@@ -436,7 +436,7 @@ void __init create_pgd_mapping(struct mm_struct *mm, phys_addr_t phys,
+ static void update_mapping_prot(phys_addr_t phys, unsigned long virt,
+ 				phys_addr_t size, pgprot_t prot)
+ {
+-	if (virt < VMALLOC_START) {
++	if ((virt >= VA_START) && (virt < VMALLOC_START)) {
+ 		pr_warn("BUG: not updating mapping for %pa at 0x%016lx - outside kernel range\n",
+ 			&phys, virt);
+ 		return;
 -- 
 2.20.1
 
