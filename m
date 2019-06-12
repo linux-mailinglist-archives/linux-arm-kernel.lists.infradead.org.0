@@ -2,82 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4117742A46
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:06:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37D0842A59
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:08:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jdChZR3sqpJPPn/YeaqJcsBMWyA2QVIQmVOjmAH4/bo=; b=aurfyaSXn+WpDF
-	B06RrRSBp+sTQEIX1eOoaHLbJ7GYzq0vpMaY18OLRSaGmZBYVFwkpHmgOSOWWzA6edSz35fXR3ZbK
-	Im/K8r9zScBjS88w31GHBejpFfzgg7hUnYQ5HC+vxyzyyyqcMnvHWmrxsY2waSZKOg6e9rGL7vAWQ
-	SqPbZA7BXGgGDcNfmDRB+rFnX4jvdUkEQTF3bWNjkA//iEwDMfJba5t8nZN0XBsNByr7uKFHvUYZ2
-	o5cWBPE1zmkQK0W/c2/eghyUq6ZFENj+6w6Zbjao9QjKYSYxCtUToG8gY+kEQxjEmaLlWftQmXvtr
-	4GvY7zfGNOpBBJkisUTw==;
+	List-Owner; bh=p3CZqb50TeZ3UgJ61R+H+mvrkgakdfxkFVHYVGOaqxM=; b=E1zjUFkGr6byAW
+	TgL+REZsAL2XZ4Y1VcybKfOoY6UIOx7qzrntmeaIW0P3iKdQ8GBb09zf8UEcL0F5n64WqfGhoROSU
+	wVNbudqIPEtOXAjes+F6wkPtT1CRAmXXI1RqQCqhYH7CZKTQvScemUG90kx6kDzM8TJnbK4nstt7T
+	FpfxpYTfmBmGEv+gmJFlGQfWZmPFdQaSBkkmcEEPQBq3Nt0kmIrovq/feKeasswsostEsGU5U43TG
+	I+kRL5wx0Kuk9OfAKiWXls7C+hEAiiTUEzXer0jGkoondj3sjF0ksCTUfby55PajFxfKI8Jr9l1vT
+	y1P0QUl2a1G4EoxETymQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb4pt-0005CW-Md; Wed, 12 Jun 2019 15:06:49 +0000
-Received: from mail-qt1-f193.google.com ([209.85.160.193])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb4pg-0005C5-IU
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:06:37 +0000
-Received: by mail-qt1-f193.google.com with SMTP id x2so17972403qtr.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 08:06:35 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1g7s/UPWJzJeB4LrTKmbsG4ivrcvy+TUBuxC551yLEY=;
- b=q+/LZAn2jzxhaC40NhAY4Jz8Za68Dw4NahNjErgVy2qQyHMzrCxMhJcoc5Donp87lG
- NmPWZKnbsi9ghFvdAapSRRb9NC+WJ1eQ2jkiduw9BIDZhthWmUgwGroOFWPc3dF15FHo
- TThlPmtCk+L7StE6YC++J6OZMoluI2r4qKtNiOyKNFE9cuJaS+IJjxQNPxzXmYlttgBA
- mlWss4dunue6t56/aSaqP4kzHBS8mKapYEMZA9emf8aBYJlQaXSwQIvja/uy1khJBl+S
- xo3/jXAL6SG0ZqzAjOQlwoXSQ0KOA+S9DfB+/4xqgFEF9hEr5vQB40pgSL9MOz/aXq2q
- g6Zg==
-X-Gm-Message-State: APjAAAUGSpHtonp3/+lnYHrFCZJRuEFZTooTRCuq3/Y4sh4EiOiWphef
- 2CHy/Kk37wUyqJeM8QHfoW63anuL3EDwjrVAWCg=
-X-Google-Smtp-Source: APXvYqzOMpjxx8OTt1LYucvtT3ec0rHQVDXxOvYnWwFFLgDetKQQiEnhNqtCjwvLI9BT1ZM6g2S2uumX596TBUy4Jug=
-X-Received: by 2002:ac8:8dd:: with SMTP id y29mr5832711qth.304.1560351994976; 
- Wed, 12 Jun 2019 08:06:34 -0700 (PDT)
+	id 1hb4rZ-0005qw-Da; Wed, 12 Jun 2019 15:08:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb4rR-0005q7-4i
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:08:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 79E1A2B;
+ Wed, 12 Jun 2019 08:08:24 -0700 (PDT)
+Received: from redmoon (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B4443F557;
+ Wed, 12 Jun 2019 08:08:22 -0700 (PDT)
+Date: Wed, 12 Jun 2019 16:08:20 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: "Z.q. Hou" <zhiqiang.hou@nxp.com>,
+ Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>
+Subject: Re: [PATCHv5 10/20] PCI: mobiveil: Fix the INTx process errors
+Message-ID: <20190612150819.GD15747@redmoon>
+References: <20190412083635.33626-1-Zhiqiang.Hou@nxp.com>
+ <20190412083635.33626-11-Zhiqiang.Hou@nxp.com>
 MIME-Version: 1.0
-References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
- <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
- <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
- <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
- <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
- <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
- <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
- <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
-In-Reply-To: <f4249aa5f5acdd90275eda35aa16f3cfb29d29be.camel@redhat.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 12 Jun 2019 17:06:17 +0200
-Message-ID: <CAK8P3a2nzZKtshYfomOOSYkqx5HdU15Wr9b+3va0B1euNhFOAg@mail.gmail.com>
-Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
-To: Dan Williams <dcbw@redhat.com>
+Content-Disposition: inline
+In-Reply-To: <20190412083635.33626-11-Zhiqiang.Hou@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_080636_613728_04BD7DC9 
-X-CRM114-Status: GOOD (  22.52  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190612_080825_277737_0D4B659D 
+X-CRM114-Status: GOOD (  17.76  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,86 +62,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
- Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
- linux-arm-msm@vger.kernel.org, Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Networking <netdev@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alex Elder <elder@linaro.org>,
- Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
- Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
- abhishek.esse@gmail.com, cpratapa@codeaurora.org,
- Ben Chan <benchan@google.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 4:28 PM Dan Williams <dcbw@redhat.com> wrote:
-> On Wed, 2019-06-12 at 10:31 +0200, Arnd Bergmann wrote:
-> > On Tue, Jun 11, 2019 at 7:23 PM Dan Williams <dcbw@redhat.com> wrote:
-> I was trying to make the point that rmnet doesn't need to care about
-> how the QMAP packets get to the device itself; it can be pretty generic
-> so that it can be used by IPA/qmi_wwan/rmnet_smd/etc.
+On Fri, Apr 12, 2019 at 08:36:12AM +0000, Z.q. Hou wrote:
+> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> 
+> In the loop block, there is not code to update the loop key,
+> this patch updates the loop key by re-read the INTx status
+> register.
+> 
+> This patch also add the clearing of the handled INTx status.
+> 
+> Note: Need MV to test this fix.
 
-rmnet at the moment is completely generic in that regard already,
-however it is implemented as a tunnel driver talking to another
-device rather than an abstraction layer below that driver.
+This means INTX were never tested and current code handling them is,
+AFAICS, an infinite loop which is very very bad.
 
-> > The current rmnet model is different in that by design the upper
-> > layer
-> > (rmnet) and the lower layer (qmi_wwan, ipa, ...) are kept independent
-> > in
-> > both directions, i.e. ipa has (almost) no knowledge of rmnet, and
-> > just
-> > has pointers to the other net_device:
-> >
-> >        ipa_device
-> >            net_device
-> >
-> >        rmnet_port
-> >            net_device
-> >
-> > I understand that the rmnet model was intended to provide a cleaner
-> > abstraction, but it's not how we normally structure subsystems in
-> > Linux, and moving to a model more like how wireless_dev works
-> > would improve both readability and performance, as you describe
-> > it, it would be more like (ignoring for now the need for multiple
-> > connections):
-> >
-> >    ipa_dev
-> >         rmnet_dev
-> >                wwan_dev
-> >                       net_device
->
-> Perhaps I'm assuming too much from this diagram but this shows a 1:1
-> between wwan_dev and "lower" devices.
->
-> What Johannes is proposing (IIRC) is something a bit looser where a
-> wwan_dev does not necessarily provide netdev itself, but is instead the
-> central point that various channels (control, data, gps, sim card, etc)
-> register with. That way the wwan_dev can provide an overall view of the
-> WWAN device to userspace, and userspace can talk to the wwan_dev to ask
-> the lower drivers (ipa, rmnet, etc) to create new channels (netdev,
-> tty, otherwise) when the control channel has told the modem firmware to
-> expect one.
+This is a gross bug and must be fixed as soon as possible.
 
-Right, as I noted above, I simplified it a bit. We probably want to
-have multiple net_device instances for an ipa_dev, so there has
-to be a 1:n relationship instead of 1:1 at one of the intermediate
-levels, but it's not obvious which level that should be.
+I want Karthikeyan ACK and Tested-by on this patch.
 
-In theory we could even have a single net_device instance correspond
-to the ipa_dev, but then have multiple IP addresses bound to it,
-so each IP address corresponds to a channel/queue/napi_struct,
-but the user visible object remains a single device.
+Lorenzo
 
-I trust that you and Johannes are more qualified than me to make
-the call on that point.
-
-       Arnd
+> Fixes: 9af6bcb11e12 ("PCI: mobiveil: Add Mobiveil PCIe Host Bridge IP driver")
+> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Reviewed-by: Minghuan Lian <Minghuan.Lian@nxp.com>
+> Reviewed-by: Subrahmanya Lingappa <l.subrahmanya@mobiveil.co.in>
+> ---
+> V5:
+>  - Corrected and retouched the subject and changelog.
+> 
+>  drivers/pci/controller/pcie-mobiveil.c | 13 +++++++++----
+>  1 file changed, 9 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
+> index 4ba458474e42..78e575e71f4d 100644
+> --- a/drivers/pci/controller/pcie-mobiveil.c
+> +++ b/drivers/pci/controller/pcie-mobiveil.c
+> @@ -361,6 +361,7 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
+>  	/* Handle INTx */
+>  	if (intr_status & PAB_INTP_INTX_MASK) {
+>  		shifted_status = csr_readl(pcie, PAB_INTP_AMBA_MISC_STAT);
+> +		shifted_status &= PAB_INTP_INTX_MASK;
+>  		shifted_status >>= PAB_INTX_START;
+>  		do {
+>  			for_each_set_bit(bit, &shifted_status, PCI_NUM_INTX) {
+> @@ -372,12 +373,16 @@ static void mobiveil_pcie_isr(struct irq_desc *desc)
+>  					dev_err_ratelimited(dev, "unexpected IRQ, INT%d\n",
+>  							    bit);
+>  
+> -				/* clear interrupt */
+> -				csr_writel(pcie,
+> -					   shifted_status << PAB_INTX_START,
+> +				/* clear interrupt handled */
+> +				csr_writel(pcie, 1 << (PAB_INTX_START + bit),
+>  					   PAB_INTP_AMBA_MISC_STAT);
+>  			}
+> -		} while ((shifted_status >> PAB_INTX_START) != 0);
+> +
+> +			shifted_status = csr_readl(pcie,
+> +						   PAB_INTP_AMBA_MISC_STAT);
+> +			shifted_status &= PAB_INTP_INTX_MASK;
+> +			shifted_status >>= PAB_INTX_START;
+> +		} while (shifted_status != 0);
+>  	}
+>  
+>  	/* read extra MSI status register */
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
