@@ -2,104 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE822424B8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:49:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FCE7424CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:53:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=3YPx82vyrcw2KwIKRgaw1tbRySoca6Jvbwm5H5gV3I0=; b=UHVEDt8oXtMXt3
-	0M7AHBncCcGWE+PrOewgl/nZcx1n+qFb5Ih6TGaQhyjftiTw4Q5zfbcdZ4OSQLii5LPBIUEAsxnyh
-	NRil00eDxZS93MDV3RFZvwo1Iw4wODlfmFu/i5MknWl7+K/iLWBDEHI+r6c44N/krzAi8JzuzuGiE
-	Z38qQ8TROUVPw8TLxmmjdEPXeC2ovSjUvcfRk5e/BHMglnttyPz4+Ij1DXT/oAceijLwcbRzDa6BI
-	C1GVs2+lCx3a3ScYY6QazlYbfa8E1yetyGR4N9vtHgpuD3YexwPJCERdgokqksEhrQnwTCZiJ/S/J
-	FQdFqBe3YIF2V3XbQt2g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8Rae+Xw4cY/Dm5lhhDRHU7IRhmhQdi6wtXxFFoq7aIw=; b=pUMTKQrGFL1O42
+	o1/BTY1Czp7UZCzox/jYaVBywn3SRnsrMjmT3Vz+ehbLf4BuGEUd+ZuE6mv4q1EILkXyiVGoORA9J
+	7E3JesCNa2aKbt7h00Q6TidmwUo+cqUX7Tl0JiJggoJNLpAg2I5nuzDc8VeTHo6H+sg1DcqLfZyQf
+	GX1n3Og9gOmbrXrPWT3Am/QksHRSnoFwXs7Kk6IqH6znIrHoCnap8L7fZMGfQAVxHkHGukgCtsC8C
+	eeB5Yh4wmauBgMl15JlVWDfxqZvY45es8LslmSHAGBfyXWi+lbmgY+6POqEvgCxVqaqjDjwHM71t0
+	xQD2kMk52SAYzRs3Jimw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1kv-0005QT-7e; Wed, 12 Jun 2019 11:49:29 +0000
-Received: from mail-eopbgr30068.outbound.protection.outlook.com ([40.107.3.68]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1gz-00012V-8I
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:45:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jTGv+xX4LM3gIAgfgklMFQRdQrCyRfepe2LtoLcwn10=;
- b=VXwy9h0aJ8IQ5+l8RJIWDbJDMUvbadL6M4qHwr37YCLQOC7zAOVSWOP+ttixFfs2toP30t499aenkyWZg4PTCeCGuoyfqlTwpXQVRIkOKVrE/4niPufzdORCf7yL68BnMSdfOhD0JwRPYYUJhMCbuJcp8hTEzH2XXpeHjBW03ks=
-Received: from VI1PR0402MB3485.eurprd04.prod.outlook.com (52.134.3.153) by
- VI1PR0402MB3615.eurprd04.prod.outlook.com (52.134.7.18) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.14; Wed, 12 Jun 2019 11:45:18 +0000
-Received: from VI1PR0402MB3485.eurprd04.prod.outlook.com
- ([fe80::ccaf:f4a1:704a:e745]) by VI1PR0402MB3485.eurprd04.prod.outlook.com
- ([fe80::ccaf:f4a1:704a:e745%4]) with mapi id 15.20.1987.012; Wed, 12 Jun 2019
- 11:45:18 +0000
-From: Horia Geanta <horia.geanta@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [PATCH] ARM: dts: imx7ulp: add crypto support
-Thread-Topic: [PATCH] ARM: dts: imx7ulp: add crypto support
-Thread-Index: AQHVHD5HxT1VnrKm20mxf/1ryD4CPA==
-Date: Wed, 12 Jun 2019 11:45:18 +0000
-Message-ID: <VI1PR0402MB3485A573518D60A573BA55C298EC0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
-References: <20190606080255.25504-1-horia.geanta@nxp.com>
- <20190612103926.GE11086@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=horia.geanta@nxp.com; 
-x-originating-ip: [212.146.100.6]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 29aeb5b6-26bc-4d3f-d758-08d6ef2b7152
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR0402MB3615; 
-x-ms-traffictypediagnostic: VI1PR0402MB3615:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <VI1PR0402MB361523311C68FD2707C44CEB98EC0@VI1PR0402MB3615.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 0066D63CE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(396003)(346002)(366004)(136003)(39860400002)(199004)(189003)(5660300002)(14454004)(478600001)(66476007)(8936002)(4326008)(66556008)(81166006)(966005)(8676002)(66946007)(81156014)(9686003)(2906002)(55016002)(71190400001)(76116006)(6116002)(305945005)(6436002)(3846002)(53936002)(86362001)(26005)(25786009)(66446008)(73956011)(6306002)(186003)(6916009)(6246003)(7736002)(52536014)(102836004)(14444005)(7696005)(476003)(446003)(68736007)(71200400001)(33656002)(44832011)(64756008)(486006)(53546011)(54906003)(99286004)(256004)(229853002)(66066001)(74316002)(6506007)(76176011)(316002)(7416002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3615;
- H:VI1PR0402MB3485.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: N6JF9H3tcPI6lNnadyCcfvFpql5wVS+TjQXIWCw/rnZ1Qg0t8EbyhoawVfzb9TXdPUITfWr9b6vmT0josa/AFsoYWwZ6kX3bGjUOgYv8o01ILstK/yOcyN3LLC5L6ldLe+IgSpcxH/627I+8iXoWHlyhtADoKvjFSXvMvEDiQn3Bs8+JRcpnhlFuu21BqzeZO0ri1VMktKj9KFUWtuHjC6FkkCL5i6TcegpSH/Ve8sG/KzfIZfqk6RJQmnrcypOO0O2jPZ6qH/SoNVXikTPKbJjytsOfE5bYPymgvtE9PGhURPT4pnOA7pxB9Sv6USUgeDEGaXeA8BsHFL/OLWa+4tV3qIYNX0eClNRZb9c6/VMtStHOoPxf4D7WzlYF1iCHOzwcTFRRuyhIuGYQkNp3FYdqgIhLXXlV+IhKad7b01A=
+	id 1hb1oW-0007Sj-06; Wed, 12 Jun 2019 11:53:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb1oH-0007SF-8y
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:52:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 78BEC28;
+ Wed, 12 Jun 2019 04:52:55 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E9883F246;
+ Wed, 12 Jun 2019 04:54:33 -0700 (PDT)
+Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
+ __uaccess_mask_ptr
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <cover.1559580831.git.andreyknvl@google.com>
+ <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
+ <20190610175326.GC25803@arrakis.emea.arm.com>
+ <20190611145720.GA63588@arrakis.emea.arm.com>
+ <d3dc2b1f-e8c9-c60d-f648-0bc9b08f20e4@arm.com>
+ <20190612093158.GG10165@c02tf0j2hf1t.cambridge.arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <c760f34a-1b99-17bb-8cc8-ea8b0d63fe90@arm.com>
+Date: Wed, 12 Jun 2019 12:52:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 29aeb5b6-26bc-4d3f-d758-08d6ef2b7152
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Jun 2019 11:45:18.1981 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: horia.geanta@nxp.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3615
+In-Reply-To: <20190612093158.GG10165@c02tf0j2hf1t.cambridge.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_044525_337399_FD2591AE 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190612_045257_410174_32EA0E09 
+X-CRM114-Status: GOOD (  20.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.68 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,56 +67,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Iuliana Prodan <iuliana.prodan@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Franck Lenormand <franck.lenormand@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ linux-kselftest@vger.kernel.org, Jacob Bramley <Jacob.Bramley@arm.com>,
+ Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Kostya Serebryany <kcc@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/12/2019 1:40 PM, Shawn Guo wrote:
-> On Thu, Jun 06, 2019 at 11:02:55AM +0300, Horia Geant=E3 wrote:
->> From: Iuliana Prodan <iuliana.prodan@nxp.com>
->>
->> Add crypto node in device tree for CAAM support.
->>
->> Noteworthy is that on 7ulp the interrupt line is shared
->> between the two job rings.
->>
->> Signed-off-by: Iuliana Prodan <iuliana.prodan@nxp.com>
->> Signed-off-by: Franck LENORMAND <franck.lenormand@nxp.com>
->> Signed-off-by: Horia Geant=E3 <horia.geanta@nxp.com>
->> ---
->>
->> I've just realized that this patch should be merged through the crypto t=
-ree,
->> else bisectability could be affected due to cryptodev-2.6
->> commit 385cfc84a5a8 ("crypto: caam - disable some clock checks for iMX7U=
-LP")
->> ( https://patchwork.kernel.org/patch/10970017/ )
->> which should come first.
-> =
+Hi Catalin,
 
-> I'm not sure I follow it.  This is a new device added to imx7ulp DT.
-> It's never worked before on imx7ulp.  How would it affect git bisect?
-> =
+On 12/06/2019 10:32, Catalin Marinas wrote:
+> Hi Vincenzo,
+> 
+> On Tue, Jun 11, 2019 at 06:09:10PM +0100, Vincenzo Frascino wrote:
+>>> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+>>> index 3767fb21a5b8..69d0be1fc708 100644
+>>> --- a/arch/arm64/kernel/process.c
+>>> +++ b/arch/arm64/kernel/process.c
+>>> @@ -30,6 +30,7 @@
+>>>  #include <linux/kernel.h>
+>>>  #include <linux/mm.h>
+>>>  #include <linux/stddef.h>
+>>> +#include <linux/sysctl.h>
+>>>  #include <linux/unistd.h>
+>>>  #include <linux/user.h>
+>>>  #include <linux/delay.h>
+>>> @@ -323,6 +324,7 @@ void flush_thread(void)
+>>>  	fpsimd_flush_thread();
+>>>  	tls_thread_flush();
+>>>  	flush_ptrace_hw_breakpoint(current);
+>>> +	clear_thread_flag(TIF_TAGGED_ADDR);
+>>
+>> Nit: in line we the other functions in thread_flush we could have something like
+>> "tagged_addr_thread_flush", maybe inlined.
+> 
+> The other functions do a lot more than clearing a TIF flag, so they
+> deserved their own place. We could do this when adding MTE support. I
+> think we also need to check what other TIF flags we may inadvertently
+> pass on execve(), maybe have a mask clearing.
+> 
 
-Driver corresponding to this device (drivers/crypto/caam) has to be updated
-before adding the node in DT.
-Is there any guarantee wrt. merge order of the crypto and DT trees?
+Agreed. All the comments I provided are meant to simplify the addition of MTE
+support.
 
-Thanks,
-Horia
+>>> diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+>>> index 094bb03b9cc2..2e927b3e9d6c 100644
+>>> --- a/include/uapi/linux/prctl.h
+>>> +++ b/include/uapi/linux/prctl.h
+>>> @@ -229,4 +229,9 @@ struct prctl_mm_map {
+>>>  # define PR_PAC_APDBKEY			(1UL << 3)
+>>>  # define PR_PAC_APGAKEY			(1UL << 4)
+>>>  
+>>> +/* Tagged user address controls for arm64 */
+>>> +#define PR_SET_TAGGED_ADDR_CTRL		55
+>>> +#define PR_GET_TAGGED_ADDR_CTRL		56
+>>> +# define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
+>>> +
+>>>  #endif /* _LINUX_PRCTL_H */
+>>> diff --git a/kernel/sys.c b/kernel/sys.c
+>>> index 2969304c29fe..ec48396b4943 100644
+>>> --- a/kernel/sys.c
+>>> +++ b/kernel/sys.c
+>>> @@ -124,6 +124,12 @@
+>>>  #ifndef PAC_RESET_KEYS
+>>>  # define PAC_RESET_KEYS(a, b)	(-EINVAL)
+>>>  #endif
+>>> +#ifndef SET_TAGGED_ADDR_CTRL
+>>> +# define SET_TAGGED_ADDR_CTRL(a)	(-EINVAL)
+>>> +#endif
+>>> +#ifndef GET_TAGGED_ADDR_CTRL
+>>> +# define GET_TAGGED_ADDR_CTRL()		(-EINVAL)
+>>> +#endif
+>>>  
+>>>  /*
+>>>   * this is where the system-wide overflow UID and GID are defined, for
+>>> @@ -2492,6 +2498,16 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
+>>>  			return -EINVAL;
+>>>  		error = PAC_RESET_KEYS(me, arg2);
+>>>  		break;
+>>> +	case PR_SET_TAGGED_ADDR_CTRL:
+>>> +		if (arg3 || arg4 || arg5)
+>>> +			return -EINVAL;
+>>> +		error = SET_TAGGED_ADDR_CTRL(arg2);
+>>> +		break;
+>>> +	case PR_GET_TAGGED_ADDR_CTRL:
+>>> +		if (arg2 || arg3 || arg4 || arg5)
+>>> +			return -EINVAL;
+>>> +		error = GET_TAGGED_ADDR_CTRL();
+>>> +		break;
+>>
+>> Why do we need two prctl here? We could have only one and use arg2 as set/get
+>> and arg3 as a parameter. What do you think?
+> 
+> This follows the other PR_* options, e.g. PR_SET_VL/GET_VL,
+> PR_*_FP_MODE. We will use other bits in arg2, for example to set the
+> precise vs imprecise MTE trapping.
+> 
+
+Indeed. I was not questioning the pre-existing interface definition, but trying
+more to reduce the changes to the ABI to the minimum since:
+ - prctl does not mandate how to use the arg[2-5]
+ - prctl interface is flexible enough for the problem to be solved with only one
+   PR_ command.
+
+I agree on reusing the interface for MTE for the purposes you specified.
+
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
