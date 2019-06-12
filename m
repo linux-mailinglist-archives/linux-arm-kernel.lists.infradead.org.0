@@ -2,84 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97F7542EB3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 20:29:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF20642EC5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 20:36:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rb9YZRZwM2kR0a1AeO7pqdlheNXlGN/9YALv5ohCYIs=; b=txZtxWwE+TcMIG
-	uGSoaiTEOJZdvHFeIoKHnOENA33078xulyxiD3h7Z+fP6AuQWbxw5a4hs5nRoLE18YMVUiBtIcfh+
-	0AtbStGGpbGXxSbpxRrBoFaq6tyIl8bS9vRl3Ye6eGCJFwbCdTTCHAGUVXXG0IY/oAuxeOm+I6bMZ
-	/PEvq30u+rpiuuHgdouu2Khj3Lu4quv+523QXkgFrMOlylOaOjCEbLWA74Iv+M3/A3A8OHLiIGxgY
-	qhKyYyDtMORoXbD2Mz6xatcyGXK0dyxLTYx4/o6914cS3J/lQslvYKb1mGJ9svCFpts/KsNXblmNr
-	ebKZP89O4dWjZr2IFjzw==;
+	List-Owner; bh=rerpirGtjzwwv1XOf8ttiEUyH3mnahPipS2ONGlxIpc=; b=MxAm8dLSEPZ+8T
+	PMST3SGuxFB2C/lYl/yuo6FRnPGypH16btNuv+PfQVHwV2HlIA9kbOhrkm29hCuLao6w4ipAtKgcu
+	1zNQ38bFpabYO6Y3uCXvKVspYRVvs77jRxHu3UvYsZO1ePdRxnGI6yt7FmEeadW7GTJzujx98ZZj4
+	opYbiZnV0/ECYfEwSRdvl5T5aTonR9SoAScs0qv8+HL6mvvfP8SIpB1FyxTvKHQDsrpYfh5iLYqIj
+	4zBrckXydVmk87Gysp85TKcjlbHWjI8kZL1Z6KJtiF4dFgf1W07PMYFAyVDRWsvJ54FXBxwMsxoXl
+	AH6AXGrkFW3WcRPduGhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb7zx-0002It-0f; Wed, 12 Jun 2019 18:29:25 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hb86X-000672-Pd; Wed, 12 Jun 2019 18:36:13 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb7zV-00028l-K1
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 18:28:59 +0000
-Received: by mail-pg1-x543.google.com with SMTP id 196so9386743pgc.6
+ id 1hb86L-00066O-82
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 18:36:02 +0000
+Received: by mail-qt1-x843.google.com with SMTP id i34so19577007qta.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 11:28:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=+79M0qC52KBqcZi+aAUpykO9qkYyBvSKoD8+NYjzNgM=;
- b=UMBN/yACkW2pNaFWRj1LqT4MeRqs6jVBZFDrKU77NJNGt1VVfDJJhryte4q7uKq3Ib
- fn1OfIpyKXGCm7/wU587tEChAQygjDEwkz/IvzS4nUjtKgzz1jngIK+x1Owt2Eia+HVu
- /H3V5yPWRDxfYXA9Zhsb+5mKKfM9WZcjmkQ0aUy0DC6BZQF9QdY+AKqLMUnXcuBjUYUQ
- cjyNOX/IaQ9GipKJj+d2B3ic/GXtZiogNyyhysUgWqMt1PnGnLNvJbhM01n4sMR9wSzK
- Jod4ubMgCZ1RKt2iHUw+WaJtNpBjESm5rnza2DmyPbXAeLFJLpY+m13EdM+fbV/wan6J
- WYUQ==
+ Wed, 12 Jun 2019 11:36:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Ccd2Dl/s5BEnRCE+LL0hkZ64UWDD7pEB/PZyv8yO8ZY=;
+ b=IcABX1nM51p2QrQVsut+vh/j10d5dr6geQ+a/RrmE6DOHq7udCPilWtmRYD99j0boR
+ ov5Ysub7+GqF4lbZDxDthsXnWeXk+ES3UVFuSCse5kakCEymFY4P7BJeaa1eqMTm9m4J
+ a+/2xER8DdWKm0/0yHAUhnmEJWAiez71uz/DfX4C+ZMkDAyMe9n6LHO40E10deKj4zJN
+ Wel0wmmIihoR/AvHw5HUgRWq+VZtm2o2vy9xdx+v9Lo1iXmV5/ZbXP3K7XF07He5wGRh
+ eTLt9p7wJXVFha1pn5wg6b5vpyG2Z/ZLgk4Y4y0kGDJ+N6XDcakHacAueyHQQONRObHL
+ LFHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+79M0qC52KBqcZi+aAUpykO9qkYyBvSKoD8+NYjzNgM=;
- b=k3BR8l0g5aDV3UeV+y6Nd/mghawmSNmPbtfiQ/oHePOa8yalQ6rY9X+Zrv0NSNLd9h
- U8TqnGX4mDaoqauKlaJdyYmlftzuxL1cNiZ4mIpqYniCmrh8jH/uYH4opu295dz3DsBF
- ITfN7iT613sSddg/oaZHM1aihZ2Lj7KvtnnjeKdhF/2P4raUSTAKCtjGzq2sAS/yB94Y
- s2xYC1FYADumIwLmeENu3ULtytEyySDaiVaPFVaNDItSUEh1w/JyPEhuO3aa5YrmoUFG
- kx8X0GXKlQdWD1rsrtESEfFlmfUM8+wCgbQVVdWZdSBIVTpd4fkWQ/8WUAfomEVFuJ/A
- 0m0g==
-X-Gm-Message-State: APjAAAX6qRhHlYIMIFEiNQ4It90t1oAob42+GlnxLUAK3oW6u9UeNnar
- 9iMr/5IieRtbprIzD0+yLGuy/w==
-X-Google-Smtp-Source: APXvYqxcLb0CPq068YSlGSvzRAqyu+g9y/Z69rYUysAsAXumU30uGmd1vWH79G+P3Vh9Thbj9PPDXQ==
-X-Received: by 2002:a63:a08:: with SMTP id 8mr26483042pgk.46.1560364135521;
- Wed, 12 Jun 2019 11:28:55 -0700 (PDT)
-Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id q198sm252178pfq.155.2019.06.12.11.28.53
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 12 Jun 2019 11:28:54 -0700 (PDT)
-Date: Wed, 12 Jun 2019 11:28:52 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-Subject: Re: [RFC 2/2] iommu: arm-smmu: Don't blindly use first SMR to
- calculate mask
-Message-ID: <20190612182852.GA4814@minitux>
-References: <20190605210856.20677-1-bjorn.andersson@linaro.org>
- <20190605210856.20677-3-bjorn.andersson@linaro.org>
- <CAOCk7Nocb7VO5xCcuK1FAPVdPr9U-7z8qOL4yt3ig=05e7brgg@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOCk7Nocb7VO5xCcuK1FAPVdPr9U-7z8qOL4yt3ig=05e7brgg@mail.gmail.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Ccd2Dl/s5BEnRCE+LL0hkZ64UWDD7pEB/PZyv8yO8ZY=;
+ b=sVrNiQWbPAEITyWaczBWKic/CPlGSe5an1ely/sOP6G8RC0FW5ubQgjosiAW80EQiP
+ HH5gxQrw4CR3xKwirfONnLPfIB6aEsmPa+8a/UZWObsOzBPHn43Q0yTPAxK6w3oDKxy7
+ cSYz6fK30fYQAqysISy//lWJtudd9PNcaDuVwVCz01eg1x8oGCwHyzLrHRTguxpBiWvy
+ RrkstPQKxudAiESBDXsheDTBsEomQNRCXJ/Q6uwXJN95PnZQB3EHOiq8D91x1J+ZPdMJ
+ TixQCVwaOdpYq52N9LXF7ZzFtkKoQYWDMM4VsKcmrJWgVSdM/T/CwIUcFFgapE5j8RVf
+ j9QA==
+X-Gm-Message-State: APjAAAUpqXJt9Gl409VNiBNzEs/dglZ39ZlyrRcuNamyE7t7fzmaky47
+ q0KdIZR5Q+Bjdl3QFr7yXKeUxA==
+X-Google-Smtp-Source: APXvYqxVhJgr9VMk6UTsEjd7fGkQxdE+ShlHGLoBskD9CcIJfDIiuN/yiHxzbH4RhCcTZeh0Ja2AHg==
+X-Received: by 2002:a0c:fde3:: with SMTP id m3mr136658qvu.205.1560364559359;
+ Wed, 12 Jun 2019 11:35:59 -0700 (PDT)
+Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id t67sm224679qkf.34.2019.06.12.11.35.57
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 12 Jun 2019 11:35:58 -0700 (PDT)
+Message-ID: <1560364557.5154.2.camel@lca.pw>
+Subject: Re: [PATCH -next] arm64/mm: fix a bogus GFP flag in pgd_alloc()
+From: Qian Cai <cai@lca.pw>
+To: Mike Rapoport <rppt@linux.ibm.com>
+Date: Wed, 12 Jun 2019 14:35:57 -0400
+In-Reply-To: <20190612065728.GB4761@rapoport-lnx>
+References: <1559656836-24940-1-git-send-email-cai@lca.pw>
+ <20190604142338.GC24467@lakrids.cambridge.arm.com>
+ <20190610114326.GF15979@fuggles.cambridge.arm.com>
+ <1560187575.6132.70.camel@lca.pw>
+ <20190611100348.GB26409@lakrids.cambridge.arm.com>
+ <20190611124118.GA4761@rapoport-lnx>
+ <3F6E1B9F-3789-4648-B95C-C4243B57DA02@lca.pw>
+ <20190612065728.GB4761@rapoport-lnx>
+X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_112857_911425_D0A44422 
-X-CRM114-Status: GOOD (  24.51  )
+X-CRM114-CacheID: sfid-20190612_113601_315207_0061E219 
+X-CRM114-Status: GOOD (  15.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,106 +104,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Patrick Daly <pdaly@codeaurora.org>, Jeffrey Hugo <jhugo@codeaurora.org>,
- MSM <linux-arm-msm@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, lkml <linux-kernel@vger.kernel.org>,
- iommu@lists.linux-foundation.org, Vivek Gautam <vivek.gautam@codeaurora.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, mhocko@kernel.org,
+ linux-mm@kvack.org, vdavydov.dev@gmail.com, hannes@cmpxchg.org,
+ cgroups@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 12 Jun 10:58 PDT 2019, Jeffrey Hugo wrote:
-
-> On Wed, Jun 5, 2019 at 3:09 PM Bjorn Andersson
-> <bjorn.andersson@linaro.org> wrote:
-> >
-> > With the SMRs inherited from the bootloader the first SMR might actually
-> > be valid and in use. As such probing the SMR mask using the first SMR
-> > might break a stream in use. Search for an unused stream and use this to
-> > probe the SMR mask.
-> >
-> > Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> 
-> Reviewed-by: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>
-> 
-> I don't quite like the situation where the is no SMR to compute the mask, but I
-> think the way you've handled it is the best option/
-> 
-
-Right, if this happens we would end up using the smr_mask that was
-previously calculated. We just won't update it based on the hardware.
-
-> I'm curious, why is this not included in patch #1?  Seems like patch
-> #1 introduces
-> the issue, yet doesn't also fix it.
-> 
-
-You're right, didn't think about that. This needs to either predate that
-patch or be included in it.
-
-Thanks,
-Bjorn
-
-> > ---
-> >  drivers/iommu/arm-smmu.c | 20 ++++++++++++++++----
-> >  1 file changed, 16 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> > index c8629a656b42..0c6f5fe6f382 100644
-> > --- a/drivers/iommu/arm-smmu.c
-> > +++ b/drivers/iommu/arm-smmu.c
-> > @@ -1084,23 +1084,35 @@ static void arm_smmu_test_smr_masks(struct arm_smmu_device *smmu)
-> >  {
-> >         void __iomem *gr0_base = ARM_SMMU_GR0(smmu);
-> >         u32 smr;
-> > +       int idx;
-> >
-> >         if (!smmu->smrs)
-> >                 return;
-> >
-> > +       for (idx = 0; idx < smmu->num_mapping_groups; idx++) {
-> > +               smr = readl_relaxed(gr0_base + ARM_SMMU_GR0_SMR(idx));
-> > +               if (!(smr & SMR_VALID))
-> > +                       break;
-> > +       }
-> > +
-> > +       if (idx == smmu->num_mapping_groups) {
-> > +               dev_err(smmu->dev, "Unable to compute streamid_mask\n");
-> > +               return;
-> > +       }
-> > +
-> >         /*
-> >          * SMR.ID bits may not be preserved if the corresponding MASK
-> >          * bits are set, so check each one separately. We can reject
-> >          * masters later if they try to claim IDs outside these masks.
-> >          */
-> >         smr = smmu->streamid_mask << SMR_ID_SHIFT;
-> > -       writel_relaxed(smr, gr0_base + ARM_SMMU_GR0_SMR(0));
-> > -       smr = readl_relaxed(gr0_base + ARM_SMMU_GR0_SMR(0));
-> > +       writel_relaxed(smr, gr0_base + ARM_SMMU_GR0_SMR(idx));
-> > +       smr = readl_relaxed(gr0_base + ARM_SMMU_GR0_SMR(idx));
-> >         smmu->streamid_mask = smr >> SMR_ID_SHIFT;
-> >
-> >         smr = smmu->streamid_mask << SMR_MASK_SHIFT;
-> > -       writel_relaxed(smr, gr0_base + ARM_SMMU_GR0_SMR(0));
-> > -       smr = readl_relaxed(gr0_base + ARM_SMMU_GR0_SMR(0));
-> > +       writel_relaxed(smr, gr0_base + ARM_SMMU_GR0_SMR(idx));
-> > +       smr = readl_relaxed(gr0_base + ARM_SMMU_GR0_SMR(idx));
-> >         smmu->smr_mask_mask = smr >> SMR_MASK_SHIFT;
-> >  }
-> >
-> > --
-> > 2.18.0
-> >
-> >
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAyMDE5LTA2LTEyIGF0IDA5OjU3ICswMzAwLCBNaWtlIFJhcG9wb3J0IHdyb3RlOgo+
+IEhpLAo+IAo+IE9uIFR1ZSwgSnVuIDExLCAyMDE5IGF0IDA4OjQ2OjQ1QU0gLTA0MDAsIFFpYW4g
+Q2FpIHdyb3RlOgo+ID4gCj4gPiA+IE9uIEp1biAxMSwgMjAxOSwgYXQgODo0MSBBTSwgTWlrZSBS
+YXBvcG9ydCA8cnBwdEBsaW51eC5pYm0uY29tPiB3cm90ZToKPiA+ID4gCj4gPiA+IFNvcnJ5IGZv
+ciB0aGUgZGVsYXksIEknbSBtb3N0bHkgb2ZmbGluZSB0aGVzZSBkYXlzLgo+ID4gPiAKPiA+ID4g
+SSB3YW50ZWQgdG8gdW5kZXJzdGFuZCBmaXJzdCB3aGF0IGlzIHRoZSByZWFzb24gZm9yIHRoZSBm
+YWlsdXJlLiBJJ3ZlCj4gPiA+IHRyaWVkCj4gPiA+IHRvIHJlcHJvZHVjZSBpdCB3aXRoIHFlbXUs
+IGJ1dCBJIGZhaWxlZCB0byBmaW5kIGEgYm9vdGFibGUgY29uZmlndXJhdGlvbgo+ID4gPiB0aGF0
+IHdpbGwgaGF2ZSBQR0RfU0laRSAhPSBQQUdFX1NJWkUgOigKPiA+ID4gCj4gPiA+IFFpYW4gQ2Fp
+LCBjYW4geW91IHNoYXJlIHdoYXQgaXMgeW91ciBlbnZpcm9ubWVudCBhbmQgdGhlIGtlcm5lbCBj
+b25maWc/Cj4gPiAKPiA+IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9jYWlsY2Ev
+bGludXgtbW0vbWFzdGVyL2FybTY0LmNvbmZpZwo+ID4gCj4gPiAjIGxzY3B1Cj4gPiBBcmNoaXRl
+Y3R1cmU6wqDCoMKgwqDCoMKgwqDCoGFhcmNoNjQKPiA+IEJ5dGUgT3JkZXI6wqDCoMKgwqDCoMKg
+wqDCoMKgwqBMaXR0bGUgRW5kaWFuCj4gPiBDUFUocyk6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoDI1Ngo+ID4gT24tbGluZSBDUFUocykgbGlzdDogMC0yNTUKPiA+IFRocmVhZChzKSBwZXIg
+Y29yZTrCoMKgNAo+ID4gQ29yZShzKSBwZXIgc29ja2V0OsKgwqAzMgo+ID4gU29ja2V0KHMpOsKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAyCj4gPiBOVU1BIG5vZGUocyk6wqDCoMKgwqDCoMKgwqDCoDIK
+PiA+IFZlbmRvciBJRDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgQ2F2aXVtCj4gPiBNb2RlbDrCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAxCj4gPiBNb2RlbCBuYW1lOsKgwqDCoMKgwqDCoMKg
+wqDCoMKgVGh1bmRlclgyIDk5eHgKPiA+IFN0ZXBwaW5nOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oDB4MQo+ID4gQm9nb01JUFM6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgNDAwLjAwCj4gPiBMMWQg
+Y2FjaGU6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoDMySwo+ID4gTDFpIGNhY2hlOsKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAzMksKPiA+IEwyIGNhY2hlOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoDI1NksK
+PiA+IEwzIGNhY2hlOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoDMyNzY4Swo+ID4gTlVNQSBub2Rl
+MCBDUFUocyk6wqDCoMKgMC0xMjcKPiA+IE5VTUEgbm9kZTEgQ1BVKHMpOsKgwqDCoDEyOC0yNTUK
+PiA+IEZsYWdzOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoGZwIGFzaW1kIGV2dHN0cm0g
+YWVzIHBtdWxsIHNoYTEgc2hhMiBjcmMzMiBhdG9taWNzCj4gPiBjcHVpZCBhc2ltZHJkbQo+ID4g
+Cj4gPiAjIGRtaWRlY29kZQo+ID4gSGFuZGxlIDB4MDAwMSwgRE1JIHR5cGUgMSwgMjcgYnl0ZXMK
+PiA+IFN5c3RlbSBJbmZvcm1hdGlvbgo+ID4gwqDCoMKgwqDCoMKgwqDCoE1hbnVmYWN0dXJlcjog
+SFBFCj4gPiDCoMKgwqDCoMKgwqDCoMKgUHJvZHVjdCBOYW1lOiBBcG9sbG8gNzDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoAo+ID4gwqDCoMKgwqDCoMKgwqDCoFZlcnNpb246IFgxCj4gPiDCoMKg
+wqDCoMKgwqDCoMKgV2FrZS11cCBUeXBlOiBQb3dlciBTd2l0Y2gKPiA+IMKgwqDCoMKgwqDCoMKg
+wqBGYW1pbHk6IENOOTlYWAo+ID4gCj4gCj4gQ2FuIHlvdSBwbGVhc2UgYWxzbyBzZW5kIHRoZSBl
+bnRpcmUgbG9nIHdoZW4gdGhlIGZhaWx1cmUgaGFwcGVucz8KCmh0dHBzOi8vY2FpbGNhLmdpdGh1
+Yi5pby9maWxlcy9kbWVzZy50eHQKCj4gQW5vdGhlciBxdWVzdGlvbiwgaXMgdGhlIHByb2JsZW0g
+ZXhpc3Qgd2l0aCBQR0RfU0laRSA9PSBQQUdFX1NJWkU/CgpOby4KCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
