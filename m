@@ -2,48 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B6D6420D2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 11:31:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D88FE420D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 11:32:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=280pEBsLB+u8vlDorou0COhCm+wu84zPpbyuc7ANVhs=; b=C+TISWVAc+bCi7
-	VlRr/v256IgWT97KjCbB3hRISG+8Tu2i6gf5diafVeIKJe7DSlfkCBK2MixGc9/WCDR8hpSBHolAn
-	yMQNC+xpNd4nKjOL08ke3xOTz6jOwkWLjiJDH460Kqz3WDfPXcFosLbHNPglvcmIGFw3U6Vqzs2Xw
-	qD2U3fXsqTLPod0vTQ/H2UznrwMht9oC+GAB76fH5qKM4GMz0EuJXhUK0I2WfM1+vg9Ck2+27b7yE
-	P7Mink3UGt+SovKpWDBiaHp4t5Aq7LW8lREIklSZFFCjTRXShiXcy9X1K5j5YfXnhyNv5GeMIFbVt
-	GuqFzoX/vKMwHaP5pVBQ==;
+	List-Owner; bh=g90JLcG3vqM6Pk+7EHUraYoqXum96JqL0NmtSBjfA9w=; b=ME3szar7mFAs2i
+	pcJTqc/tt/gb2PlF1BhDkWtIRZDlzRVYxreK+b/9JDfzSrkV65G3kt3+EtbUQpPJSFerwBsbyI/8Q
+	8WwMdStIUITnwHMbo6UKwUVskK/Zxosg7l6cWXAuF/mELBZ/5OhiaP9uNCdBmKGEndi6vFN8o0JAH
+	jEUNb00hg1xNw7F+FGPkjB4FGeV+5zm++MDiwCd3l20pLZfFbpWwI1jk14PELGPuEpS9FhqZk3pvZ
+	moxEGHc54H1aXb9lV0QUa7G6gBMm2ZZkan0rJlIG3k83Z6ttqilVZwvdZVXYxVun1Bso36uvdfvLX
+	FTNfDxWJ5YL84TAtItAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hazbD-0002k4-H9; Wed, 12 Jun 2019 09:31:19 +0000
+	id 1hazc9-00033D-KA; Wed, 12 Jun 2019 09:32:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hazb1-0002jc-Fr
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 09:31:08 +0000
+ id 1hazbu-00032H-8g
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 09:32:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1EF2628;
- Wed, 12 Jun 2019 02:31:06 -0700 (PDT)
-Received: from queper01-lin (queper01-lin.cambridge.arm.com [10.1.195.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 35B5D3F246;
- Wed, 12 Jun 2019 02:31:04 -0700 (PDT)
-Date: Wed, 12 Jun 2019 10:31:03 +0100
-From: Quentin Perret <quentin.perret@arm.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: Re: [PATCH v5 0/3] Make IPA use PM_EM
-Message-ID: <20190612093100.cuigeni3ixjw5ywi@queper01-lin>
-References: <20190530092038.12020-1-quentin.perret@arm.com>
- <20190612091351.jet5sew5dnirsapz@queper01-lin>
- <e9b57e71-81eb-2ac8-cd4a-76b57eee63df@linaro.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A427028;
+ Wed, 12 Jun 2019 02:32:01 -0700 (PDT)
+Received: from brain-police (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C6C563F246;
+ Wed, 12 Jun 2019 02:31:59 -0700 (PDT)
+Date: Wed, 12 Jun 2019 10:31:53 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Jayachandran Chandrasekharan Nair <jnair@marvell.com>
+Subject: Re: [RFC] Disable lockref on arm64
+Message-ID: <20190612093151.GA11554@brain-police>
+References: <20190502082741.GE13955@hc>
+ <CAHk-=wjmtMrxC1nSEHarBn8bW+hNXGv=2YeAWmTw1o54V8GKWA@mail.gmail.com>
+ <20190502231858.GB13168@dc5-eodlnx05.marvell.com>
+ <CAHk-=wiEahkwDXpoy=-SzJHNMRXKVSjPa870+eKKenufhO_Hgw@mail.gmail.com>
+ <20190506061100.GA8465@dc5-eodlnx05.marvell.com>
+ <20190506181039.GA2875@brain-police>
+ <20190518042424.GA28517@dc5-eodlnx05.marvell.com>
+ <CAKv+Gu9U9z3iAuz4V1c5zTHuz1As8FSNGY-TJon4OLErB8ts8Q@mail.gmail.com>
+ <20190522160417.GF7876@fuggles.cambridge.arm.com>
+ <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e9b57e71-81eb-2ac8-cd4a-76b57eee63df@linaro.org>
-User-Agent: NeoMutt/20171215
+In-Reply-To: <20190612040933.GA18848@dc5-eodlnx05.marvell.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_023107_574534_4157879C 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20190612_023205_598355_DD929E0D 
+X-CRM114-Status: GOOD (  21.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,37 +69,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, viresh.kumar@linaro.org, amit.kachhap@gmail.com,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, will.deacon@arm.com,
- edubezval@gmail.com, mka@chromium.org, catalin.marinas@arm.com,
- rui.zhang@intel.com, javi.merino@kernel.org, ionela.voinescu@arm.com,
- dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Jan Glauber <jglauber@marvell.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wednesday 12 Jun 2019 at 11:27:31 (+0200), Daniel Lezcano wrote:
-> On 12/06/2019 11:13, Quentin Perret wrote:
-> > Hi,
+Hi JC,
+
+On Wed, Jun 12, 2019 at 04:10:20AM +0000, Jayachandran Chandrasekharan Nair wrote:
+> On Wed, May 22, 2019 at 05:04:17PM +0100, Will Deacon wrote:
+> > On Sat, May 18, 2019 at 12:00:34PM +0200, Ard Biesheuvel wrote:
+> > > On Sat, 18 May 2019 at 06:25, Jayachandran Chandrasekharan Nair
+> > > <jnair@marvell.com> wrote:
+> > > > Looking thru the perf output of this case (open/close of a file from
+> > > > multiple CPUs), I see that refcount is a significant factor in most
+> > > > kernel configurations - and that too uses cmpxchg (without yield).
+> > > > x86 has an optimized inline version of refcount that helps
+> > > > significantly. Do you think this is worth looking at for arm64?
+> > > >
+> > > 
+> > > I looked into this a while ago [0], but at the time, we decided to
+> > > stick with the generic implementation until we encountered a use case
+> > > that benefits from it. Worth a try, I suppose ...
+> > > 
+> > > [0] https://lore.kernel.org/linux-arm-kernel/20170903101622.12093-1-ard.biesheuvel@linaro.org/
 > > 
-> > On Thursday 30 May 2019 at 10:20:35 (+0100), Quentin Perret wrote:
-> >> Changes in v5:
-> >> **************
-> >>  - Changed patch 02 to guard IPA-specific code in cpu_cooling.c with
-> >>    appropriate ifdefery (Daniel)
-> >>  - Rebased on 5.2-rc2
-> > 
-> > Is there anything else I can do on this series ? Should I send a v6 with
-> > Viresh's and Daniel's Acked-by ?
+> > If JC can show that we benefit from this, it would be interesting to see if
+> > we can implement the refcount-full saturating arithmetic using the
+> > LDMIN/LDMAX instructions instead of the current cmpxchg() loops.
 > 
-> No need to send a V6 if there are no changes in the patches. The
-> maintainer will take care of collecting the tags (which is usually
-> automatic when using the patchwork tools).
+> Now that the lockref change is mainline, I think we need to take another
+> look at this patch.
 
-OK that's good to know, thanks !
+Before we get too involved with this, I really don't want to start a trend of
+"let's try to rewrite all code using cmpxchg() in Linux because of TX2". At
+some point, the hardware needs to play ball. However...
 
-Quentin
+Ard's refcount patch was about moving the overflow check out-of-line. A
+side-effect of this, is that we avoid the cmpxchg() operation from many of
+the operations (atomic_add_unless() disappears), and it's /this/ which helps
+you. So there may well be a middle ground where we avoid the complexity of
+the out-of-line {over,under}flow handling but do the saturation post-atomic
+inline.
+
+I was hoping we could use LDMIN/LDMAX to maintain the semantics of
+REFCOUNT_FULL, but now that I think about it I can't see how we could keep
+the arithmetic atomic in that case. Hmm.
+
+Whatever we do, I prefer to keep REFCOUNT_FULL the default option for arm64,
+so if we can't keep the semantics when we remove the cmpxchg, you'll need to
+opt into this at config time.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
