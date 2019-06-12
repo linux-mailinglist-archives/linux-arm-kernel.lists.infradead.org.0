@@ -2,80 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CB2F42CEA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2A0042CFA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 19:07:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RvvP/YbuvldljYjpnb2QKrgkjWOVUbYp3oqE1cGxlUU=; b=VX/rQzazeo/awe
-	Wle+FnzpTE2o5Fgt81am7jMZ97O+CEUHWy2sellUGbQpI1bgLB5DfVWMpOQyqqv60tzCieKD9Pb5p
-	7ejN31opL92PwPx90AXGvi6I5xlJxFne7+APZAzoWQptlurw74F3csSX+QVRLlipjQc2PR35DI6Xb
-	YMdGSX5YbmPCESNOsDhVEHZnP0FmZT7aShyDnxQ4CR8YNYuQFO2YyPcTjNUjB4l11XbSAMqyGytLJ
-	zyp3egMmB2Azpc1nSJuf7WpZQEdBrY+h/Jxlx4tgviIsGBMWzbyQZcCczuNto+qATdqVQvkfY2J4p
-	DsHVrHFx7qMBGNk6+N5Q==;
+	List-Owner; bh=BT0+rp4JixtoDvxeU7jRYI7HnB6bNRmKB379FLfj5KI=; b=PoR0oWjK0IVlma
+	eyhSA40pZ1Ft1/Lwdth1gx+4VVU+hZASS/5i828S1MbGIiqQWs5BtqIvMsQJKEhkVPXy/KgHGZ60U
+	7CjSil5RVawnkjYpyHx8KX6GlLMZ8bMs1xHqDuvQgmK2zIEBOM3R2QrjBQWFpCVrpO0r6nQQTYuzA
+	3GpbNFHvwmF817FQtAd63Xwch6UGLg/lX36Z2QSxBWXJfmAYvQQ6CU+Nmr+P1A0qaWk89HMhU9cHP
+	znxtN7xGAEgNUs2Unu+Hh5eiyZUg6//r+2U0z2q6NlZWgqJW+3FzQqIkvCoYWjKnsFWYJ23Soc+dK
+	Rnvpdjd2D8pBOLZcuwcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb6eO-0003q4-OC; Wed, 12 Jun 2019 17:03:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hb6it-0005ay-C4; Wed, 12 Jun 2019 17:07:43 +0000
+Received: from smtprelay0168.hostedemail.com ([216.40.44.168]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb6eB-0003pS-Md
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:02:52 +0000
-Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
- [209.85.222.169])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 509462173C
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 17:02:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560358971;
- bh=wm+5WcQRfJbnz//CCyMX9+vekrFgXyfxfNrI9oF65uE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=17E6SyeNw6ZnKarS0veB9PZx5/4zF4Yp4MRLZD+59Nj1gd70dPyRErF2J1VkfrNkT
- ncoeqQbdZCODxKeI4zkQ7HKfCc8xS/O//l6oRddEVCxPJPoGrwo/n3KDaNdRqa2pdd
- VYUl7NuxxUiDHf0nG1gJxHdqJruLyPXhP4Q6KUzI=
-Received: by mail-qk1-f169.google.com with SMTP id d15so10831775qkl.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 10:02:51 -0700 (PDT)
-X-Gm-Message-State: APjAAAWjF8gJnZe91kaM1zQafaiJ64lSbrxuLzeTcNVN9WtJoOY4GxZO
- iQUs0p53hYjnh4G7UtJX9ZC4Sfraflu7yaEEww==
-X-Google-Smtp-Source: APXvYqxn/t5SpdMAOZKVGkLfsgJbeVeWbNLaVCgN9g2E8d6YQWTmTBKgNCoQ/G6XvynII/wN2xt4CKVsW+/qwPEnzAA=
-X-Received: by 2002:a05:620a:16c1:: with SMTP id
- a1mr24460916qkn.269.1560358970567; 
- Wed, 12 Jun 2019 10:02:50 -0700 (PDT)
+ id 1hb6if-0005a3-VM
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 17:07:31 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay02.hostedemail.com (Postfix) with ESMTP id 1C359C1DC85;
+ Wed, 12 Jun 2019 17:07:28 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, :::::::::::::::::,
+ RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1542:1593:1594:1711:1730:1747:1777:1792:2194:2199:2393:2559:2562:2729:2828:2896:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3868:3870:3871:3872:4225:4321:5007:7576:7875:10004:10400:10848:11026:11232:11658:11914:12043:12048:12296:12438:12555:12679:12740:12760:12895:13439:14181:14659:14721:21080:21451:21627:30054:30091,
+ 0,
+ RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
+ CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
+ MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:27,
+ LUA_SUMMARY:none
+X-HE-Tag: road25_23dc3a3c72a17
+X-Filterd-Recvd-Size: 3267
+Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
+ [23.242.196.136]) (Authenticated sender: joe@perches.com)
+ by omf06.hostedemail.com (Postfix) with ESMTPA;
+ Wed, 12 Jun 2019 17:07:26 +0000 (UTC)
+Message-ID: <fc69912c14ead80f371e2136d43db4af1f4b72aa.camel@perches.com>
+Subject: Re: [PATCH v2 5/6] serial: uartps: Do not add a trailing semicolon
+ to macro
+From: Joe Perches <joe@perches.com>
+To: Michal Simek <michal.simek@xilinx.com>, johan@kernel.org, 
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, monstr@monstr.eu
+Date: Wed, 12 Jun 2019 10:07:25 -0700
+In-Reply-To: <5d938d34c3c4710577df898dbf4b70c74d2e6730.1560338079.git.michal.simek@xilinx.com>
+References: <cover.1560338079.git.michal.simek@xilinx.com>
+ <5d938d34c3c4710577df898dbf4b70c74d2e6730.1560338079.git.michal.simek@xilinx.com>
+User-Agent: Evolution 3.30.5-0ubuntu0.18.10.1 
 MIME-Version: 1.0
-References: <20190612043258.166048-1-hsinyi@chromium.org>
- <20190612043258.166048-3-hsinyi@chromium.org>
-In-Reply-To: <20190612043258.166048-3-hsinyi@chromium.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 12 Jun 2019 11:02:39 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+RTpRkn22RDTQe9De9se3suoM1ZrYH=Nk8aOKZuJLdGg@mail.gmail.com>
-Message-ID: <CAL_Jsq+RTpRkn22RDTQe9De9se3suoM1ZrYH=Nk8aOKZuJLdGg@mail.gmail.com>
-Subject: Re: [PATCH v6 2/3] fdt: add support for rng-seed
-To: Hsin-Yi Wang <hsinyi@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_100251_760790_BFEF5BDC 
-X-CRM114-Status: GOOD (  14.24  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190612_100730_150914_A0F63E05 
+X-CRM114-Status: GOOD (  14.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.168 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,43 +77,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yu Zhao <yuzhao@google.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Stephen Boyd <swboyd@chromium.org>,
- Will Deacon <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Jun Yao <yaojun8558363@gmail.com>,
- Miles Chen <miles.chen@mediatek.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Robin Murphy <robin.murphy@arm.com>
+Cc: Nava kishore Manne <nava.manne@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ Jiri Slaby <jslaby@suse.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 10:34 PM Hsin-Yi Wang <hsinyi@chromium.org> wrote:
->
-> Introducing a chosen node, rng-seed, which is an entropy that can be
-> passed to kernel called very early to increase initial device
-> randomness. Bootloader should provide this entropy and the value is
-> read from /chosen/rng-seed in DT.
->
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> Reviewed-by: Stephen Boyd <swboyd@chromium.org>
-> ---
-> change log v5->v6:
-> * remove Documentation change
-> ---
->  drivers/of/fdt.c | 10 ++++++++++
->  1 file changed, 10 insertions(+)
+On Wed, 2019-06-12 at 13:14 +0200, Michal Simek wrote:
+> From: Nava kishore Manne <nava.manne@xilinx.com>
+> 
+> This patch fixes this checkpatch warning:
+> WARNING: macros should not use a trailing semicolon
+> +#define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
+> +		clk_rate_change_nb);
+> diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
+[]
+> @@ -199,7 +199,7 @@ struct cdns_platform_data {
+>  	u32 quirks;
+>  };
+>  #define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
+> -		clk_rate_change_nb);
+> +		clk_rate_change_nb)
+>  
+>  /**
+>   * cdns_uart_handle_rx - Handle the received bytes along with Rx errors.
 
-I assume this will go thru the arm64 tree.
+trivia:
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Perhaps this is easier for humans to read with the macro
+on two lines like:
+
+#define to_cdns_uart(_nb) \
+	container_of(_nb, struct cdns_uart, clk_rate_change_nb)
+
+or just ignore the 80 column limit
+
+#define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, clk_rate_change_nb)
+
+or because the macro is only used in one place,
+just get rid of it and use container_of directly.
+---
+ drivers/tty/serial/xilinx_uartps.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
+index 605354fd60b1..ca5cec2b83ce 100644
+--- a/drivers/tty/serial/xilinx_uartps.c
++++ b/drivers/tty/serial/xilinx_uartps.c
+@@ -195,11 +195,10 @@ struct cdns_uart {
+ 	u32			quirks;
+ 	bool cts_override;
+ };
++
+ struct cdns_platform_data {
+ 	u32 quirks;
+ };
+-#define to_cdns_uart(_nb) container_of(_nb, struct cdns_uart, \
+-		clk_rate_change_nb);
+ 
+ /**
+  * cdns_uart_handle_rx - Handle the received bytes along with Rx errors.
+@@ -489,8 +488,9 @@ static int cdns_uart_clk_notifier_cb(struct notifier_block *nb,
+ 	int locked = 0;
+ 	struct clk_notifier_data *ndata = data;
+ 	unsigned long flags = 0;
+-	struct cdns_uart *cdns_uart = to_cdns_uart(nb);
++	struct cdns_uart *cdns_uart;
+ 
++	cdns_uart = container_of(nb, struct cdns_uart, clk_rate_change_nb);
+ 	port = cdns_uart->port;
+ 	if (port->suspended)
+ 		return NOTIFY_OK;
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
