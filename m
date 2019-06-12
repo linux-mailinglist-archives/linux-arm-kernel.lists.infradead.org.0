@@ -2,92 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBEBA4288F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:15:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91C87428A9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:21:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lBtgxPb+asuRZ16xuvwWXTbR96htUSyFPvbaeGX244M=; b=V/FkFqH6bpN9cL
-	bgE+Oq/uJxLUBRiHklms/7+S/o8mJykJdKQ+RVPyPALPKRo7A1NjtpnyDs/ega+XHzmD+XYX6Jf5v
-	R7G3hQKFMDIAetBmbI3y/GwhmkuLRaYvi+FsoVdoOgHrREnGQDroDyijoScGQw5CS9Ld7hL0fqJpk
-	6tAIflrlNNnEY2YV4QudvW7y5W9mLI6RbBXWXYx979Hi6fZdqkGG334OXNVNWi5asXY67X/stzLtu
-	yRmOzsm55xF9eFLIOgjBDtrjPXrx3h08E4QnJbmgttxG9qFoDl4VBcP0ycfb0zxWFQsw5mzSXMCg0
-	vtPgIqMHjEcJJN6QI42g==;
+	List-Owner; bh=HSrrgc/NudQpuaelF/hARSvYZBpnRrCvxwxFMPUuZqI=; b=OpboBCc71v6+El
+	+eW4zNL481CvrH1cuxVe0F8bW5PXZYvPtr4pCnVeOiLfCj1Bl63J0Xnp36OfB1X9hkZxRwW0fbqKP
+	Vd9LKEuegEpfCS6E84fWibKhDQ+TW/XXPZ3YyhbGweZE+agbNPJBc2hWaH+S+vVDFTTgFbbboOAdo
+	5DGsyED4+t0LruMKpF6fBGxNbd+hdhzK2sTy5HB5hGRq1XigK1rxPaY7965VaXz29UTULVjFQbJPL
+	ykxDx+wskQeiLYG5+YWSFp8Us2QyPeN5aEtf7LsfH5GDrTx6qx1CK+Io+3F3Lkq6/fCMGGfrnVEnQ
+	VfBCoNpH+8S0LIAX0LVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb426-0000pO-B1; Wed, 12 Jun 2019 14:15:22 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb41v-0000oT-OZ
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:15:13 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.63,366,1557212400"; d="scan'208";a="36650836"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 12 Jun 2019 07:15:09 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
- chn-vm-ex01.mchp-main.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 12 Jun 2019 07:14:56 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
- (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Wed, 12 Jun 2019 07:14:56 -0700
-Date: Wed, 12 Jun 2019 16:13:56 +0200
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>
-Subject: Re: [PATCH][next] video: fbdev: atmel_lcdfb: remove redundant
- initialization to variable ret
-Message-ID: <20190612141356.riiesqub4zvxafh3@M43218.corp.atmel.com>
-Mail-Followup-To: Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>,
- Colin King <colin.king@canonical.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-References: <20190611170913.20913-1-colin.king@canonical.com>
- <37ac8530-6601-a1a0-37e0-8c6d5d1702cd@microchip.com>
+	id 1hb48E-0002hk-QX; Wed, 12 Jun 2019 14:21:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb47z-0002gU-TS
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:21:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D86152B;
+ Wed, 12 Jun 2019 07:21:25 -0700 (PDT)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7D4B33F557;
+ Wed, 12 Jun 2019 07:21:24 -0700 (PDT)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org,
+ linux-mm@kvack.org, linux-arch@vger.kernel.org,
+ linux-kselftest@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/2] arm64 relaxed ABI
+Date: Wed, 12 Jun 2019 15:21:09 +0100
+Message-Id: <20190612142111.28161-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <cover.1560339705.git.andreyknvl@google.com>
+References: <cover.1560339705.git.andreyknvl@google.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <37ac8530-6601-a1a0-37e0-8c6d5d1702cd@microchip.com>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_071511_835577_9E622237 
-X-CRM114-Status: GOOD (  13.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190612_072127_998902_7B84CE3F 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -101,67 +62,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
- "linux-fbdev@vger.kernel.org" <linux-fbdev@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Colin King <colin.king@canonical.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
+ Andrey Konovalov <andreyknvl@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 09:55:30AM +0200, Nicolas Ferre - M43238 wrote:
-> On 11/06/2019 at 19:09, Colin King wrote:
-> > External E-Mail
-> > 
-> > 
-> > From: Colin Ian King <colin.king@canonical.com>
-> > 
-> > Currently variable ret is being initialized with -ENOENT however that
-> > value is never read and ret is being re-assigned later on. Hence this
-> > assignment is redundant and can be removed.
-> > 
-> > Addresses-Coverity: ("Unused value")
-> > Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> 
-> Indeed:
-> Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+On arm64 the TCR_EL1.TBI0 bit has been always enabled on the arm64 kernel,
+hence the userspace (EL0) is allowed to set a non-zero value in the top
+byte but the resulting pointers are not allowed at the user-kernel syscall
+ABI boundary.
 
-Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com> 
+This patchset proposes a relaxation of the ABI with which it is possible
+to pass tagged tagged pointers to the syscalls, when these pointers are in
+memory ranges obtained as described in tagged-address-abi.txt contained in
+this patch series.
 
-Thanks
+Since it is not desirable to relax the ABI to allow tagged user addresses
+into the kernel indiscriminately, this patchset documents a new sysctl
+interface (/proc/sys/abi/tagged_addr) that is used to prevent the applications
+from enabling the relaxed ABI and a new prctl() interface that can be used to
+enable or disable the relaxed ABI.
 
-> 
-> Thanks, best regards,
->    Nicolas
-> 
-> 
-> > ---
-> >   drivers/video/fbdev/atmel_lcdfb.c | 2 +-
-> >   1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/video/fbdev/atmel_lcdfb.c b/drivers/video/fbdev/atmel_lcdfb.c
-> > index fb117ccbeab3..930cc3f92e01 100644
-> > --- a/drivers/video/fbdev/atmel_lcdfb.c
-> > +++ b/drivers/video/fbdev/atmel_lcdfb.c
-> > @@ -950,7 +950,7 @@ static int atmel_lcdfb_of_init(struct atmel_lcdfb_info *sinfo)
-> >   	struct fb_videomode fb_vm;
-> >   	struct gpio_desc *gpiod;
-> >   	struct videomode vm;
-> > -	int ret = -ENOENT;
-> > +	int ret;
-> >   	int i;
-> >   
-> >   	sinfo->config = (struct atmel_lcdfb_config*)
-> > 
-> 
-> 
-> -- 
-> Nicolas Ferre
+This patchset should be merged together with [1].
+
+[1] https://patchwork.kernel.org/cover/10674351/
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
+CC: Andrey Konovalov <andreyknvl@google.com>
+CC: Alexander Viro <viro@zeniv.linux.org.uk>
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+
+
+Vincenzo Frascino (2):
+  arm64: Define Documentation/arm64/tagged-address-abi.txt
+  arm64: Relax Documentation/arm64/tagged-pointers.txt
+
+ Documentation/arm64/tagged-address-abi.txt | 111 +++++++++++++++++++++
+ Documentation/arm64/tagged-pointers.txt    |  23 +++--
+ 2 files changed, 127 insertions(+), 7 deletions(-)
+ create mode 100644 Documentation/arm64/tagged-address-abi.txt
+
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
