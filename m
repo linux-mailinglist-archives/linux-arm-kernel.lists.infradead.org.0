@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0045441D99
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 09:25:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5790341DB3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 09:27:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uV99SXfvnTRLlk38LtejdXSJPCr4q91vochHyRhieBg=; b=SyuVzPgqeDt8Nr
-	0YYuHeXjtzZMHLlRYIbahA4vRYgV9ydRafqXDvnEmEK1aj5acRV43nUuVGhJe4FGSrP13yXyX2v8K
-	M8uXfXcWdW8EXWm1wevV4BErV+QTYkazL8E+KuhEYYy8M74ZGhDXs/IO8nKIqK95BSS0Hmg1JgdRq
-	3AJpwkUC1ZHQoR/Z/dPl1qQXIIwFEJ5l8P6bZIq+w3yBCM1kZZVPD7NYGEg1y46yqgcPCxGJ0OWeQ
-	Ybx2oS/zwaCTfDKO/BPY3UpMOGgMBmG1J8f7oaR+IV3Rxy5mywXfukGoFGvlYV/Fn3I9vkmQExeZM
-	+I01ogxPrzgFugLCR89g==;
+	List-Owner; bh=Gz2cgGY2HHw/g8eJ4C2AGawh0sAe5lRLjRguXsoqCYI=; b=sfIWLvrcSBLUiV
+	UPfTWEZjVPB+hODdS2T8vL4iaisabJ3z4EcD7YIFz504cKN0cXPBV7imc+JkSS4O846/bXPQMUCSc
+	NOjsRUzfkjWZM8xKYYgdT4RvyTDc24nOtOLR1HgOsOnyaxm8/VAiAlO5/Rv9EHuFG6JwPLtiL4Kkf
+	wAKO98Gk28M+7alQ2ozdZwcifrcZnw+6gCKWsADWwiMMfXJ2Rtym8JSrhVCl4nD3t6dZXb/xF7A1A
+	yJ8XrZUJGaULBSOl+mHMCELYOrT4JyU/xvaRxnMf9F60SlX4DqESmEMyOMb+PDI9JeFb+F5VnNKjt
+	RcoFvIeFfTSRlUW/xrPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haxdZ-0007Q3-Lv; Wed, 12 Jun 2019 07:25:37 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1haxev-00006u-MF; Wed, 12 Jun 2019 07:27:01 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haxdC-0007Oe-GC
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 07:25:16 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x5C7LXNM032480; Wed, 12 Jun 2019 09:25:04 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=mscPIPZ3FaNG1fi5inSmP9H7jFv8oBUHJnCQ3UPmBlE=;
- b=acMmyrCwj6N46GmEph6JwKd35yXOV71CZZlDPjJ3TYyG1LfBriKSz6H3Xg4mT0QTNJIc
- apRV1Lq8OdtXeYqfkWxEb0HF8pMi5+OWtd+bQdEPw73+D9J/ni1zFRFdkDEpRiDebMcv
- O9Mfsqf6ut9ZcQ4w3iXhazPoTKSNjqFxHQSRPAaoApScRlWo/3yPL+oV0cfO6J8okujh
- sEivAA8CaZggmlbBfIBKOuenOH/yIvQAZBpfKPF6kCT9yJF+d6q4kmPSadddkKynUEHr
- joqgQCjfL2Rtz5LdK9DtnS6JP8bhipdawayoBuvgDipL1leC18zifKehN5GiZJkr1SV2 1w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2t2f8bukdj-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 12 Jun 2019 09:25:04 +0200
-Received: from zeta.dmz-eu.st.com (zeta.dmz-eu.st.com [164.129.230.9])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 798D63D;
- Wed, 12 Jun 2019 07:25:03 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by zeta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0C0C7164B;
- Wed, 12 Jun 2019 07:25:03 +0000 (GMT)
-Received: from localhost (10.75.127.48) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 12 Jun 2019 09:25:02 +0200
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <jic23@kernel.org>, <robh+dt@kernel.org>, <alexandre.torgue@st.com>
-Subject: [PATCH 3/3] ARM: dts: stm32: add ADC analog switches syscfg on
- stm32mp157c
-Date: Wed, 12 Jun 2019 09:24:36 +0200
-Message-ID: <1560324276-681-4-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1560324276-681-1-git-send-email-fabrice.gasnier@st.com>
-References: <1560324276-681-1-git-send-email-fabrice.gasnier@st.com>
+ id 1haxdw-0007yE-Ka
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 07:26:02 +0000
+Received: by mail-lj1-x241.google.com with SMTP id v18so14148336ljh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 00:26:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=msM4dgHT7OChSN8YMEnC/hlz7O4CQA3Qt/8x5kRoeWA=;
+ b=b/xNVmBGr774Ie44vkdUYzW5g96u3La3k0A9SkL3ZCvZkJF98mYXDQ6oP9LRZh7Wp/
+ 2vvQhSHA3r4OQBrQ7F92Mofp94Op3kqIQEKS8O+hSDMP2fnYaKO61aP1PbwJcYdaNkud
+ Uyg/uruiDUcv2DAYwC7O9pg8remPu1Uh3BpmwKar4uCP4Sp2HYDx1JVC3VEx1wjMqJNo
+ bRXEiIeSR30mKPOoa8C77KYigxq3DHc3oCTvWo7Qzb1rVN30/VnNJ2zgp/VN1Is2rgqC
+ Y+sDCDqKg9uQcSI7N022tg6lqvie69RffAY9o34iLiLGyXRl91cmjVEhOhil7iISNP/k
+ aFrA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=msM4dgHT7OChSN8YMEnC/hlz7O4CQA3Qt/8x5kRoeWA=;
+ b=Yw5FSyVgb+N3VxD8vpknMOn9EUcrI63CHx6HcJ4u6zRTgJmgS3WekSjo6CFImB+mfe
+ FIYHChtX0liiMM6SJM2fnBCfsf08wZn3yTUiY7CsmAWijBeRnep7LtSGbY9tQbEnh1JE
+ 7RND3al2hOssCBDIl5hJxhLs9xZXunCGuu1dF9xP57EHendltZKu6NDN0deJyICJbuyg
+ W+gbYNCR5bmLH9xlhp9d6NirsfANfN9fNEcDL8RCd6cNR83jEuNbyXJFBzNTDttyAatF
+ K0KfsDY6ANsW9RXxzkLYil6e/6L6ePSMC76/bD65mkCMAnlYwptJWX4SJQINkhYWH7hh
+ 8OfA==
+X-Gm-Message-State: APjAAAV81bn7+o7BAtxLgHp+DTVJoGn5NbyVbgf6QcMrEd/XTrORJ7LS
+ YdstHzZWc/Y+w+Bc7dt9YNbTIZ2W/zLHrySTWglzxw==
+X-Google-Smtp-Source: APXvYqx5YwbEg0avWvoTtMnv22p8ShuveFC0J0UpmFk2uYfKnJ2tkg9tfFI9Py8uT6FyJuuL+H4KmQND6QpZjMGZBTE=
+X-Received: by 2002:a2e:7508:: with SMTP id q8mr26602026ljc.165.1560324358738; 
+ Wed, 12 Jun 2019 00:25:58 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG6NODE3.st.com (10.75.127.18) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-06-12_04:, , signatures=0
+References: <20190610084213.1052-1-lee.jones@linaro.org>
+ <20190610084213.1052-3-lee.jones@linaro.org>
+In-Reply-To: <20190610084213.1052-3-lee.jones@linaro.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 12 Jun 2019 09:25:47 +0200
+Message-ID: <CACRpkdaXHC6dfOMMOj-a8o1zCzqqZoeQLEEAZ=XpPWKN_nf=9w@mail.gmail.com>
+Subject: Re: [PATCH v3 3/8] pinctrl: msm: Add ability for drivers to supply a
+ reserved GPIO list
+To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_002514_920071_4FD51144 
-X-CRM114-Status: GOOD (  13.50  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190612_002601_026950_215EE50F 
+X-CRM114-Status: GOOD (  10.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,42 +92,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
- mcoquelin.stm32@gmail.com, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, pmeerw@pmeerw.net, knaack.h@gmx.de,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Felipe Balbi <balbi@kernel.org>, linux-usb <linux-usb@vger.kernel.org>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Greg KH <gregkh@linuxfoundation.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ David Brown <david.brown@linaro.org>, alokc@codeaurora.org,
+ linux-i2c <linux-i2c@vger.kernel.org>, MSM <linux-arm-msm@vger.kernel.org>,
+ Andy Gross <andy.gross@linaro.org>, Jeffrey Hugo <jlhugo@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On stm32mp157c, the ADC inputs are multiplexed with analog switches which
-have reduced performances when their supply is below 2.7V (vdda by
-default).
-Add syscfg registers that can be used on stm32mp157c, to get full ADC
-analog performances.
+On Mon, Jun 10, 2019 at 10:42 AM Lee Jones <lee.jones@linaro.org> wrote:
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- arch/arm/boot/dts/stm32mp157c.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+> When booting MSM based platforms with Device Tree or some ACPI
+> implementations, it is possible to provide a list of reserved pins
+> via the 'gpio-reserved-ranges' and 'gpios' properties respectively.
+> However some ACPI tables are not populated with this information,
+> thus it has to come from a knowledgable device driver instead.
+>
+> Here we provide the MSM common driver with additional support to
+> parse this informtion and correctly populate the widely used
+> 'valid_mask'.
+>
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
-index 2afeee6..64d71c9 100644
---- a/arch/arm/boot/dts/stm32mp157c.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157c.dtsi
-@@ -856,6 +856,7 @@
- 			clocks = <&rcc ADC12>, <&rcc ADC12_K>;
- 			clock-names = "bus", "adc";
- 			interrupt-controller;
-+			st,syscfg = <&syscfg>;
- 			#interrupt-cells = <1>;
- 			#address-cells = <1>;
- 			#size-cells = <0>;
--- 
-2.7.4
+I have queued patches 3 and 4 in the pin control tree on an
+immutable branch with Bjorn's ACKs:
+git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-pinctrl.git
+ib-qcom-acpi
 
+I have also merge this to pinctrl's devel branch for next.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
