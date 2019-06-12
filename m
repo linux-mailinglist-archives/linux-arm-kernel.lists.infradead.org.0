@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE5FF41BB9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 07:56:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 161C641BC8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 07:56:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QPyDXmaEt2rz3Hr5ihgUBtUxqoaltqrwmZpbU3XLgos=; b=p27sHOwc8DGEdd
-	zzyvjzLX5L+QclodGbrxw5PiM/NVL/PNQ/yi2Xum082dejDsYgqD8+57GuYsRXO3l761ffcLXiuF8
-	/g6tk20HFDjrxTp05iF6C09R/t/VSnxNMQVOiSZfvqoRZehYBhkluFNoaIyFcA+lQYEKmKgBwvPdv
-	M8JhtEGf4SOrxDfy3dlbDoj1Jf4ldPg75ooiVQbK1W1EGawEUaW3gw2okpoey1KqGkDBn0ZC7hEil
-	fniRYziAKbAe1P4XTs7yTCjVD5cBvbLZx4yFx40W5Az07b8xL1UbR2XTHUpEEoVVrueKovE96jWO5
-	zLNepJTZkMYS6TP4GvVg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K2srTFj7d8apnmQeFhP+ZKxqOa5vZPpSgB0JOss6ybU=; b=pcguAg7RtqFkc0
+	BqQc0n4zV95VdynZflVTa6pUBMfDLFq1sSPZpQePm0ISQq5gZOxwmDCwCIm1k+nxE1IJzFB8cKwdx
+	+/mbcBG23ZTTUPtOXzlgiGvhXQBd+osyUTl5DNOXFxunhnmpue1swEMox+NEgqLxbJ6gm9A/qomC0
+	i1ku1n5YvAO+VQwCi3cke95N64O6HSZSrOAjHl8dP7Q/HFcvN9LPGoDPFRoH0rQtRSldvhYPAaqjm
+	9QKLC6hCgwTpXfo7QzbtJCahX47x9jCl+dpgr3qypC7kjwE3/vJ4uXynB8z1tO+kSysoBOBJimq8r
+	lQwYIsDhWlfOtzfuYR7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hawEl-0003Mz-Go; Wed, 12 Jun 2019 05:55:55 +0000
+	id 1hawFG-0003hv-J7; Wed, 12 Jun 2019 05:56:26 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hawEb-0003LH-TK; Wed, 12 Jun 2019 05:55:47 +0000
-X-UUID: f0b85d32d35e49ea8e1c0018403b8152-20190611
-X-UUID: f0b85d32d35e49ea8e1c0018403b8152-20190611
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1hawEy-0003ez-B7; Wed, 12 Jun 2019 05:56:09 +0000
+X-UUID: a0b9efa17c544b5eba7bd9f1c0b07acb-20190611
+X-UUID: a0b9efa17c544b5eba7bd9f1c0b07acb-20190611
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1368809534; Tue, 11 Jun 2019 21:55:43 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 11 Jun 2019 22:55:42 -0700
+ with ESMTP id 1331865235; Tue, 11 Jun 2019 21:55:47 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Jun 2019 22:55:46 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Jun 2019 13:55:37 +0800
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 12 Jun 2019 13:55:41 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 12 Jun 2019 13:55:31 +0800
+ Transport; Wed, 12 Jun 2019 13:55:39 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
  <robh+dt@kernel.org>
-Subject: [PATCH 1/5] dt-bindings: usb: mtu3: fix typo of DMA clock name
-Date: Wed, 12 Jun 2019 13:55:17 +0800
-Message-ID: <5e06482a0be15476c7b5825f155accf98275afa8.1560246390.git.chunfeng.yun@mediatek.com>
+Subject: [PATCH 2/5] dt-bindings: usb: mtu3: support force_vbus mode
+Date: Wed, 12 Jun 2019 13:55:18 +0800
+Message-ID: <65f025186332b2b44f7b27f58af893217df1adb5.1560246390.git.chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <5e06482a0be15476c7b5825f155accf98275afa8.1560246390.git.chunfeng.yun@mediatek.com>
+References: <5e06482a0be15476c7b5825f155accf98275afa8.1560246390.git.chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_225545_952132_F3618BDA 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20190611_225608_383442_9536CC98 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,26 +82,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix typo of dma_ck
+Add a new property to indicate that the controller doesn't support Vbus
+detection due to non-exist Vbus PIN, and the driver should set force_vbus
+state for device mode
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
- Documentation/devicetree/bindings/usb/mediatek,mtu3.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ Documentation/devicetree/bindings/usb/mediatek,mtu3.txt | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-index 3382b5cb471d..5d740e9d4525 100644
+index 5d740e9d4525..c13cc8642154 100644
 --- a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
 +++ b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-@@ -16,7 +16,7 @@ Required properties:
- 	entry in clock-names
-  - clock-names : must contain "sys_ck" for clock of controller,
- 	the following clocks are optional:
--	"ref_ck", "mcu_ck" and "dam_ck";
-+	"ref_ck", "mcu_ck" and "dma_ck";
-  - phys : see usb-hcd.txt in the current directory
-  - dr_mode : should be one of "host", "peripheral" or "otg",
- 	refer to usb/generic.txt
+@@ -52,6 +52,8 @@ Optional properties:
+ 		- 2 : used by mt2712 etc
+  - mediatek,u3p-dis-msk : mask to disable u3ports, bit0 for u3port0,
+ 	bit1 for u3port1, ... etc;
++ - mediatek,force-vbus : boolean, indicates that the controller doesn't support
++	Vbus detection due to non-exist Vbus PIN.
+ 
+ additionally the properties from usb-hcd.txt (in the current directory) are
+ supported.
 -- 
 2.21.0
 
