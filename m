@@ -2,66 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE81341F06
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 10:26:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E07B41F1C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 10:31:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ayO3nu99KV3QRENig/p190uOpRnjbpxIesW1JVsl8MY=; b=Nb+8Fz+ChuRR65
-	kG9tXdLRtU5+wzWKPll7vB3kd6aASaZUmmyCQ4f4higMZ1pSdxfUaZfb89Km1AhfWcxrxBS4Hx/BS
-	8ZHw33KOiGfB3QaOtxqRx5rzFMMD2DEH5eENZYZ+Ug9t9Cb/RfCI6c3oTU8smDLIFjGhOL3Wnsyli
-	aB73vcX9MtUT90AzE6wc0nTxiSzwaOwoDBrsZUZAAQA2kMNpfJoRt588fQx54O+2F7Z3C2j7jKzux
-	k4rNtXXm2yeXf49f25coSxluUkCFCbA/3mWEK6fHq12TzFUNI/1jffc9l4sHOZDE1/Tb++WJE7baB
-	X1FCIBx+QJ+cQ2LTC7UQ==;
+	List-Owner; bh=ZlhC2Zv4D+e7FQkWqZuHZDM1foyiSkFhyFezxLknSwc=; b=j3d5eMp+eAbvQH
+	8HJQV3oRwEPm49hooxIws0ETELm0Ajh2Nof1bKXQPwQGkh+np2celxGBX+uMarHEr2r4UdCAqB54Y
+	v9qvogFPhsxRSKlkT7wbkZMxybkIbeZKD0S5Wiw/nARlRS+NGcoBYrP1SV2hd3gchYGfjTvSWrfca
+	Aw+pYTfr4WpzczJmUeJNm85wDRNSZP+xfiQ4g/aKoERpIn2HdDrfDnQxsFm17k3S0VKd+/WhM+GcZ
+	0BfGSZsWRrNQB7WuKaxdH0j2Ow81wFvQW8AejtR+zqbDwiZjBcl7bQbw/uZDWP0Jy6kxhQaKIvIXV
+	tVG8RBcKTjk6vybJkWEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hayaa-0002yW-KC; Wed, 12 Jun 2019 08:26:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hayfS-0005ba-Og; Wed, 12 Jun 2019 08:31:38 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hayaM-0002xl-TB
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 08:26:24 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D233C2086A;
- Wed, 12 Jun 2019 08:26:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560327981;
- bh=e/8e/8Gzd//NDFDedJ/uuRg9TDsLNr2Z7h2IAkdkegA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=nintNae3fY4I64ITCx2WHXAsOB73QxU1NznWAEhAl88YxjHYqmsWO9+J9FMnijeHn
- NqMfpJXJ9/fjkP/ip+4oYSqsgcwauf19hbOK66AzfhwMI8aNgZ+sckUEbhK5oIVyDT
- Il/B3nR9rztzuHi9/zbCygdPS7wZLbXWP/99y224=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: [PATCH 4/4] mmc: host: s3cmci: no need to check return value of
- debugfs_create functions
-Date: Wed, 12 Jun 2019 10:25:31 +0200
-Message-Id: <20190612082531.2652-4-gregkh@linuxfoundation.org>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190612082531.2652-1-gregkh@linuxfoundation.org>
-References: <20190612082531.2652-1-gregkh@linuxfoundation.org>
+ id 1hayfC-0005at-Qp
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 08:31:24 +0000
+Received: by mail-qk1-f196.google.com with SMTP id i125so9535913qkd.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 01:31:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=amZ8LRkQPQSX4K2c2VzVofPEOqqTn0oph48teP/8EWw=;
+ b=WeIrRZURAHI2cj91mm25cPdq2RF4a8VDF2gxukTj6EQz+ifCU2cVaqY1Q5jYI2Q/Bk
+ usGFTwKHct9fJ5PMF0MEL1ouDAqcPzUhlIqzOaa0+dT62oAO8EcL/DpjcGcTGhHo+n8Z
+ gUEXR3OSmkGt1DlQNmq5fVgQ+/ErnEkbo0HA5eqWq6eCqtgbW6Bvxs5ko1bWW8/bVg0N
+ L9+lK80s2sOdeesGCdZ4CMLOy9IIChLzYFeaczjHsVV32TDMw71AbGC1+LbY+hutZ5wo
+ UYdKS2trSVREwjr+YCySlh6P4ADaktVptZFl/rj1WY99RCDBzlVdTwRaShZER0vTzu3K
+ ktgw==
+X-Gm-Message-State: APjAAAWsRZ3zIj6s/8CBhgXY/9S/fd4NkwX6cywGpTlPlXmHys2EGU0A
+ J1cocLfhB7J/ZYfDJpBNMyoKDlW1Cs/JepTa2QI=
+X-Google-Smtp-Source: APXvYqw8M9NVS5FWEo9c/CfCQavp0lk2HRFD2/V+fVHJmBJioytq8q6qxeJpvv/aHiDmMVt0v3DO6nTZszcSwl8ZWJY=
+X-Received: by 2002:a05:620a:35e:: with SMTP id
+ t30mr64863407qkm.14.1560328281195; 
+ Wed, 12 Jun 2019 01:31:21 -0700 (PDT)
 MIME-Version: 1.0
+References: <380a6185-7ad1-6be0-060b-e6e5d4126917@linaro.org>
+ <a94676381a5ca662c848f7a725562f721c43ce76.camel@sipsolutions.net>
+ <CAK8P3a0kV-i7BJJ2X6C=5n65rSGfo8fUiC4J_G-+M8EctYKbkg@mail.gmail.com>
+ <fc0d08912bc10ad089eb74034726308375279130.camel@redhat.com>
+ <36bca57c999f611353fd9741c55bb2a7@codeaurora.org>
+ <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+In-Reply-To: <153fafb91267147cf22e2bf102dd822933ec823a.camel@redhat.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 12 Jun 2019 10:31:04 +0200
+Message-ID: <CAK8P3a2Y+tcL1-V57dtypWHndNT3eDJdcKj29c_v+k8o1HHQig@mail.gmail.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver
+To: Dan Williams <dcbw@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_012622_961760_A70A4980 
-X-CRM114-Status: GOOD (  13.01  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190612_013122_873539_E55252DD 
+X-CRM114-Status: GOOD (  15.80  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.196 listed in list.dnswl.org]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,91 +87,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mmc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Ben Dooks <ben-linux@fluff.org>
+Cc: DTML <devicetree@vger.kernel.org>, syadagir@codeaurora.org,
+ Eric Caruso <ejcaruso@google.com>, David Miller <davem@davemloft.net>,
+ linux-arm-msm@vger.kernel.org, Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, evgreen@chromium.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Networking <netdev@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Alex Elder <elder@linaro.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ abhishek.esse@gmail.com, cpratapa@codeaurora.org,
+ Ben Chan <benchan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When calling debugfs functions, there is no need to ever check the
-return value.  The function can work or not, but the code logic should
-never do something different based on this.
+On Tue, Jun 11, 2019 at 7:23 PM Dan Williams <dcbw@redhat.com> wrote:
+> On Tue, 2019-06-11 at 10:52 -0600, Subash Abhinov Kasiviswanathan wrote:
+>
+> rmnet should handle muxing the QMAP, QoS, and aggregation and pass the
+> resulting packet to the lower layer. That lower layer could be IPA or
+> qmi_wwan, which in turn passes that QMAP packet to USB or GSI or
+> whatever. This is typically how Linux handles clean abstractions
+> between different protocol layers in drivers.
+>
+> Similar to some WiFi drivers (drivers/net/wireless/marvell/libertas for
+> example) where the same firmware interface can be accessed via PCI,
+> SDIO, USB, SPI, etc. The bus-specific code is self-contained and does
+> not creep into the upper more generic parts.
 
-Also, because there is no need to save the file dentries, remove them
-from the host-specific structure and just recursively delete the
-directory that the driver created, when shutting down.
+Yes, I think that is a good model. In case of libertas, we have multiple
+layers inheritence from the basic device (slightly different in the
+implementation,
+but that is how it should be):
 
-Cc: Ben Dooks <ben-linux@fluff.org>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>
-Cc: <linux-arm-kernel@lists.infradead.org>
-Cc: <linux-mmc@vger.kernel.org>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
----
- drivers/mmc/host/s3cmci.c | 27 ++++++---------------------
- drivers/mmc/host/s3cmci.h |  2 --
- 2 files changed, 6 insertions(+), 23 deletions(-)
+struct if_cs_card { /* pcmcia specific */
+     struct lbs_private {  /* libertas specific */
+           struct wireless_dev { /* 802.11 specific */
+                  struct net_device {
+                        struct device {
+                              ...
+                        };
+                        ...
+                  };
+                  ...
+           };
+           ...
+      };
+      ...
+};
 
-diff --git a/drivers/mmc/host/s3cmci.c b/drivers/mmc/host/s3cmci.c
-index f31333e831a7..6a91db7ca5f1 100644
---- a/drivers/mmc/host/s3cmci.c
-+++ b/drivers/mmc/host/s3cmci.c
-@@ -1452,33 +1452,18 @@ DEFINE_SHOW_ATTRIBUTE(s3cmci_regs);
- static void s3cmci_debugfs_attach(struct s3cmci_host *host)
- {
- 	struct device *dev = &host->pdev->dev;
-+	struct dentry *root;
- 
--	host->debug_root = debugfs_create_dir(dev_name(dev), NULL);
--	if (IS_ERR(host->debug_root)) {
--		dev_err(dev, "failed to create debugfs root\n");
--		return;
--	}
--
--	host->debug_state = debugfs_create_file("state", 0444,
--						host->debug_root, host,
--						&s3cmci_state_fops);
--
--	if (IS_ERR(host->debug_state))
--		dev_err(dev, "failed to create debug state file\n");
--
--	host->debug_regs = debugfs_create_file("regs", 0444,
--					       host->debug_root, host,
--					       &s3cmci_regs_fops);
-+	root = debugfs_create_dir(dev_name(dev), NULL);
-+	host->debug_root = root;
- 
--	if (IS_ERR(host->debug_regs))
--		dev_err(dev, "failed to create debug regs file\n");
-+	debugfs_create_file("state", 0444, root, host, &s3cmci_state_fops);
-+	debugfs_create_file("regs", 0444, root, host, &s3cmci_regs_fops);
- }
- 
- static void s3cmci_debugfs_remove(struct s3cmci_host *host)
- {
--	debugfs_remove(host->debug_regs);
--	debugfs_remove(host->debug_state);
--	debugfs_remove(host->debug_root);
-+	debugfs_remove_recursive(host->debug_root);
- }
- 
- #else
-diff --git a/drivers/mmc/host/s3cmci.h b/drivers/mmc/host/s3cmci.h
-index 30c2c0dd1bc8..62cae53b4271 100644
---- a/drivers/mmc/host/s3cmci.h
-+++ b/drivers/mmc/host/s3cmci.h
-@@ -70,8 +70,6 @@ struct s3cmci_host {
- 
- #ifdef CONFIG_DEBUG_FS
- 	struct dentry		*debug_root;
--	struct dentry		*debug_state;
--	struct dentry		*debug_regs;
- #endif
- 
- #ifdef CONFIG_ARM_S3C24XX_CPUFREQ
--- 
-2.22.0
+The outer structure gets allocated when probing the hardware specific
+driver, and everything below it is implemented as direct function calls
+into the more generic code, or as function pointers into the more specific
+code.
 
+The current rmnet model is different in that by design the upper layer
+(rmnet) and the lower layer (qmi_wwan, ipa, ...) are kept independent in
+both directions, i.e. ipa has (almost) no knowledge of rmnet, and just
+has pointers to the other net_device:
+
+       ipa_device
+           net_device
+
+       rmnet_port
+           net_device
+
+I understand that the rmnet model was intended to provide a cleaner
+abstraction, but it's not how we normally structure subsystems in
+Linux, and moving to a model more like how wireless_dev works
+would improve both readability and performance, as you describe
+it, it would be more like (ignoring for now the need for multiple
+connections):
+
+   ipa_dev
+        rmnet_dev
+               wwan_dev
+                      net_device
+
+Where each layer is a specialization of the next. Note: this is a
+common change when moving from proprietary code to upstream
+code. If a driver module is designed to live out of tree, there
+is a strong incentive to limit the number of interfaces it uses,
+but when it gets merged, it becomes much more flexible, as
+an internal interface between wwan_dev and the hardware driver(s)
+can be easily changed by modifying all drivers at once.
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
