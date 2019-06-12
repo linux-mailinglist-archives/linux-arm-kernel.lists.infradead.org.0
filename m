@@ -2,119 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E16B5425D3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:30:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C81F425D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:33:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UcAR/GgUheO8vRvsJp87M4G44MjKHW35iNZiBj6mmCE=; b=LOOubwj7brJAZz
-	tuKQ6CWK4sn/PcuKGs/wMVCgYdtSiFRRntJeyVFLRpyMOy8M/p2CU7b2kUvlsLZFYLvZBKg+a/GBR
-	w6nlvNyMMi3fDrO+PrlaTKkUwHm3MxC4PFOPeh+nXEjj5rigQlJM02xMw67LjGCVlYUI01jB8bFFH
-	B9en5zbRJvoXW/EIi2Fmpgq38it/d+bPBDbE6nBIDTmncki17Hwxmr0hfn3ljxjcZrNqcubVuVOR8
-	pVIdD4X2/LiRufydO2RxnOLUJ+pcgEavPKRI8rKB632HfgqjMmDge4+WbmaYnrFYUUe4rmYVCC1B/
-	4l3UMSL3KkZkFxBm1JMg==;
+	List-Owner; bh=N7htfD0GlF3zrUinxW1LRDHQlDaaytsBZr+xKTnNtiI=; b=DNaE6keMFmGF6g
+	94iz0WLL/UpNhgLH4tgyMN9aXEXsJsxEpy0z4+/FHB+asjXTNLMGEWHbk8leu9UgLd6Tv243buRxC
+	L92mUEwgXlAdC+FlK0Fb8mIKTGGlga2xey0o/uNvvRO7bNk/eWSWgDSeWSeLKnRXDeUonXdTDV8ru
+	lrzH0j+Eb9Mkrt/8SRjhnNk8wS7WeV/Ovlj7dE8lx2509G+lH0an+04IHuuL0DYjpo8AwbDZTEElI
+	t8AIuLlvGNko1fjgje3uzgo9aw54b+UuOnAYNDsVfnTvln6fu1Ga3/4uPYMj6NrkhY/eR7FzkJBVs
+	ZC2nGNIJ8Woq1qVrh6QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb2Oz-0002XF-5X; Wed, 12 Jun 2019 12:30:53 +0000
-Received: from mail-eopbgr140052.outbound.protection.outlook.com
- ([40.107.14.52] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1hb2R7-0003EB-7H; Wed, 12 Jun 2019 12:33:05 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb2Oq-0002WF-KL
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:30:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JzsvQupAN+gcQeJKOQ2o7kyCHqxsW5uqpl6ZC5jXWRk=;
- b=lyyV+knAeziQlFW3VAseHnfQhMeAPOBow4sOExqkD8yABODe6h2ys+HaOKmmRD7k0RGvgQFtdmUr94ZzBTLNwpUr8yUWvXC4eDca9cYEcy4Wv9u2GhxYaD28QvlVs1Z2FPXYNvyTf5L5+PGLYMR+e6AVV0HQdQBoCWncF+7qt3U=
-Received: from VE1PR08MB4637.eurprd08.prod.outlook.com (10.255.27.14) by
- VE1PR08MB4735.eurprd08.prod.outlook.com (10.255.112.74) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1965.13; Wed, 12 Jun 2019 12:30:36 +0000
-Received: from VE1PR08MB4637.eurprd08.prod.outlook.com
- ([fe80::6574:1efb:6972:2b37]) by VE1PR08MB4637.eurprd08.prod.outlook.com
- ([fe80::6574:1efb:6972:2b37%6]) with mapi id 15.20.1965.017; Wed, 12 Jun 2019
- 12:30:36 +0000
-From: Szabolcs Nagy <Szabolcs.Nagy@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-mm@kvack.org"
- <linux-mm@kvack.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "amd-gfx@lists.freedesktop.org"
- <amd-gfx@lists.freedesktop.org>, "dri-devel@lists.freedesktop.org"
- <dri-devel@lists.freedesktop.org>, "linux-rdma@vger.kernel.org"
- <linux-rdma@vger.kernel.org>, "linux-media@vger.kernel.org"
- <linux-media@vger.kernel.org>, "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>
-Subject: Re: [PATCH v17 15/15] selftests, arm64: add a selftest for passing
- tagged pointers to kernel
-Thread-Topic: [PATCH v17 15/15] selftests, arm64: add a selftest for passing
- tagged pointers to kernel
-Thread-Index: AQHVIRQxA9mqrEC18UGUWJeO7iZYdKaX8xmA
-Date: Wed, 12 Jun 2019 12:30:36 +0000
-Message-ID: <7cd942c0-d4c1-0cf4-623a-bce6ef14d992@arm.com>
-References: <cover.1560339705.git.andreyknvl@google.com>
- <e024234e652f23be4d76d63227de114e7def5dff.1560339705.git.andreyknvl@google.com>
-In-Reply-To: <e024234e652f23be4d76d63227de114e7def5dff.1560339705.git.andreyknvl@google.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-x-originating-ip: [217.140.106.51]
-x-clientproxiedby: LO2P265CA0242.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:8a::14) To VE1PR08MB4637.eurprd08.prod.outlook.com
- (2603:10a6:802:b1::14)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Szabolcs.Nagy@arm.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 99aee353-e532-4d6e-08cc-08d6ef31c543
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VE1PR08MB4735; 
-x-ms-traffictypediagnostic: VE1PR08MB4735:
-nodisclaimer: True
-x-microsoft-antispam-prvs: <VE1PR08MB47350D33F85267298368A6C2EDEC0@VE1PR08MB4735.eurprd08.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 0066D63CE6
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(39860400002)(136003)(376002)(366004)(346002)(189003)(199004)(316002)(4326008)(31696002)(86362001)(7416002)(2201001)(6436002)(2501003)(36756003)(58126008)(65826007)(2906002)(6116002)(8936002)(6246003)(5660300002)(6486002)(3846002)(64126003)(81166006)(52116002)(72206003)(6506007)(54906003)(478600001)(7736002)(68736007)(81156014)(8676002)(99286004)(14454004)(53546011)(102836004)(446003)(66446008)(25786009)(229853002)(11346002)(110136005)(64756008)(65956001)(6512007)(44832011)(66946007)(71200400001)(65806001)(73956011)(53936002)(66556008)(486006)(66066001)(76176011)(256004)(2616005)(31686004)(71190400001)(66476007)(186003)(476003)(386003)(305945005)(26005)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR08MB4735;
- H:VE1PR08MB4637.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: arm.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: rJ7Myflk/nypTg5f/73dOS7TRRDm+ghZMw88lkc6ZS3BTX3mf2YWXxdJzopWcQoL+pAtHst4LESGB/sFDMU+kDQCtDQ+N+Upw9oABmGwY3Jy1gBzj7BSNJp1sURm642fb5Pkq7vtCJgFYckY+lBpldYk8jnSQbto+SdV3gcndh4C0LoM49y2iwNfmuoKloc2y92N8CyhF511nLoJpEz/xiIcVGmKuwLZyB7L25ujm5gBnome5V0sIaDqhG0ksFSH0LDlVbPwP6o+x3QrNzJQNOKIyCDmikUF4ih2Nhjycxg4HponMHE7rOEo8kqCuaen/dv/NTUk+5qsdMeZHR3GpdeK0+GyDmLONCcLE3PYhZiy5U2URnQY+8ThUrKJeBBHOfWlb6Hbv3WyXRxWifzYMdF3ZI9EvU+z8dvP99lbyvY=
-Content-ID: <2FA45C6A3FFA994DA2213028275DFA44@eurprd08.prod.outlook.com>
+ id 1hb2Qy-0003D5-QZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:32:58 +0000
+Received: by mail-lf1-x141.google.com with SMTP id q26so11967926lfc.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 05:32:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RY94QzNQiSIY9OS6+U4U7Y5OtGWNMofbaKCtbejPZUo=;
+ b=Gv4E4rBN3zXJMLR8rQaTB6Aq7wKMK+v30MeCaaYbUhvKZKSNXbISiVB1bxMqmXJHC6
+ 2xvdtmuC6gHizZEBoF/ZQ7Z089ktc4qL2tfqceiki04D0m8ek46ye21HR3nDMcoZy92b
+ H+a5kSMnMZxv4D1gZ1us+OYM1zJPD6vlnkS0MGuWicXNrymcaHKEQOsLWfHnoq52H8I9
+ +iBEheJo9VOdgvPF45EOBBsjWxiLYHC+N+qbPDLy4DOFxuf2KM6+yYtuunfrqNLcLgCU
+ 5l+KFD1tXu6y9BjDPLhTvOMwwXWY90YscmemdlcBztcTEctNvDIHlMaVoAG25CMDys/9
+ lZ5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RY94QzNQiSIY9OS6+U4U7Y5OtGWNMofbaKCtbejPZUo=;
+ b=jHRp3X+KT186ebNuy1I1Ol8PITp2R0fGB4LpfFbhbWYyrD5v8YqADjNxI8HzNDUo6P
+ WmC8+/ueJmROCbUtfeDWEWzHCNn+4CKPai976qrMScCn4kFueNilDs3mk9H8xbtsOE7B
+ q8C3N9KSHPuXLRGoWxkLXkHbI26stvCyiA8kiuOzRkVvIey3E/1Cf4+TYM3TbnivcJsI
+ /sZK/R3dsFH6/TzDrfyYFqA9doc1qPvOWwTSG0FqYQYDoDKCK2EpJg8rKqsgYOo1zwSJ
+ pKU0aZ9eptgaKtcxEpidYM0lqIeHk/fGYxzCVgBP+xS9h8JRkvqHEom38iJBWpsbItiG
+ hGgA==
+X-Gm-Message-State: APjAAAU7YchWkdKGoabYmzAsf29bnESQftOs+OyU+NpHe13j818UNjGB
+ C8Xc+DNJuhT2nIyt927QBudtHyEdnwnOJkkmSeMrYZRt
+X-Google-Smtp-Source: APXvYqziASDeIuDoNfT01AzUpb/Ihc11W5Iyq6Kl+XFlWwVNcjQGPwFkVZ5ya615zk2hSyIw7lfpZQ5Rn3VQtdnXGfs=
+X-Received: by 2002:a19:6a01:: with SMTP id u1mr39417835lfu.141.1560342775269; 
+ Wed, 12 Jun 2019 05:32:55 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 99aee353-e532-4d6e-08cc-08d6ef31c543
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Jun 2019 12:30:36.6121 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Szabolcs.Nagy@arm.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR08MB4735
+References: <20190612063352.5760-1-tony@atomide.com>
+In-Reply-To: <20190612063352.5760-1-tony@atomide.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 12 Jun 2019 14:32:43 +0200
+Message-ID: <CACRpkdam8pMztF9=yL2rWGFqjUnURf5x=v40x7UKVEwXwZ5anA@mail.gmail.com>
+Subject: Re: [PATCHv3] gpio: gpio-omap: Fix lost edge wake-up interrupts
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_053044_671347_46A4F0AF 
-X-CRM114-Status: GOOD (  15.91  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190612_053256_870254_17EF5C28 
+X-CRM114-Status: GOOD (  13.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.52 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -127,100 +90,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>, Will Deacon <Will.Deacon@arm.com>,
- Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, nd <nd@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dave P Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- Kevin Brodsky <Kevin.Brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <Robin.Murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Tero Kristo <t-kristo@ti.com>, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Keerthy <j-keerthy@ti.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Ladislav Michl <ladis@linux-mips.org>, Linux-OMAP <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/06/2019 12:43, Andrey Konovalov wrote:
-> --- /dev/null
-> +++ b/tools/testing/selftests/arm64/tags_lib.c
-> @@ -0,0 +1,62 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +
-> +#include <stdlib.h>
-> +#include <sys/prctl.h>
-> +
-> +#define TAG_SHIFT	(56)
-> +#define TAG_MASK	(0xffUL << TAG_SHIFT)
-> +
-> +#define PR_SET_TAGGED_ADDR_CTRL	55
-> +#define PR_GET_TAGGED_ADDR_CTRL	56
-> +#define PR_TAGGED_ADDR_ENABLE	(1UL << 0)
-> +
-> +void *__libc_malloc(size_t size);
-> +void __libc_free(void *ptr);
-> +void *__libc_realloc(void *ptr, size_t size);
-> +void *__libc_calloc(size_t nmemb, size_t size);
+On Wed, Jun 12, 2019 at 8:34 AM Tony Lindgren <tony@atomide.com> wrote:
 
-this does not work on at least musl.
+> If an edge interrupt triggers while entering idle just before we save
+> GPIO datain register to saved_datain, the triggered GPIO will not be
+> noticed on wake-up. This is because the saved_datain and GPIO datain
+> are the same on wake-up in omap_gpio_unidle(). Let's fix this by
+> ignoring any pending edge interrupts for saved_datain.
+>
+> This issue affects only idle states where the GPIO module internal
+> wake-up path is operational. For deeper idle states where the GPIO
+> module gets powered off, Linux generic wakeirqs must be used for
+> the padconf wake-up events with pinctrl-single driver. For examples,
+> please see "interrupts-extended" dts usage in many drivers.
+>
+> This issue can be somewhat easily reproduced by pinging an idle system
+> with smsc911x Ethernet interface configured IRQ_TYPE_EDGE_FALLING. At
+> some point the smsc911x interrupts will just stop triggering. Also if
+> WLCORE WLAN is used with EDGE interrupt like it's documentation specifies,
+> we can see lost interrupts without this patch.
+>
+> Note that in the long run we may be able to cancel entering idle by
+> returning an error in gpio_omap_cpu_notifier() on pending interrupts.
+> But let's fix the bug first.
+>
+> Also note that because of the recent clean-up efforts this patch does
+> not apply directly to older kernels. This does fix a long term issue
+> though, and can be backported as needed.
+>
+> Cc: Aaro Koskinen <aaro.koskinen@iki.fi>
+> Cc: Grygorii Strashko <grygorii.strashko@ti.com>
+> Cc: Keerthy <j-keerthy@ti.com>
+> Cc: Ladislav Michl <ladis@linux-mips.org>
+> Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> Cc: Russell King <rmk+kernel@armlinux.org.uk>
+> Cc: Tero Kristo <t-kristo@ti.com>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
 
-the most robust solution would be to implement
-the malloc apis with mmap/munmap/mremap, if that's
-too cumbersome then use dlsym RTLD_NEXT (although
-that has the slight wart that in glibc it may call
-calloc so wrapping calloc that way is tricky).
+Patch applied.
 
-in simple linux tests i'd just use static or
-stack allocations or mmap.
+Let's see if this nails it.
 
-if a generic preloadable lib solution is needed
-then do it properly with pthread_once to avoid
-races etc.
+Yours,
+Linus Walleij
 
-> +
-> +static void *tag_ptr(void *ptr)
-> +{
-> +	static int tagged_addr_err = 1;
-> +	unsigned long tag = 0;
-> +
-> +	/*
-> +	 * Note that this code is racy. We only use it as a part of a single
-> +	 * threaded test application. Beware of using in multithreaded ones.
-> +	 */
-> +	if (tagged_addr_err == 1)
-> +		tagged_addr_err = prctl(PR_SET_TAGGED_ADDR_CTRL,
-> +				PR_TAGGED_ADDR_ENABLE, 0, 0, 0);
-> +
-> +	if (!ptr)
-> +		return ptr;
-> +	if (!tagged_addr_err)
-> +		tag = rand() & 0xff;
-> +
-> +	return (void *)((unsigned long)ptr | (tag << TAG_SHIFT));
-> +}
-> +
-> +static void *untag_ptr(void *ptr)
-> +{
-> +	return (void *)((unsigned long)ptr & ~TAG_MASK);
-> +}
-> +
-> +void *malloc(size_t size)
-> +{
-> +	return tag_ptr(__libc_malloc(size));
-> +}
-...
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
