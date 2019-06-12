@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A21D42325
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:58:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85C034232A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:59:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ykj1zKW/x1potrtVJJ6TkavboBV2fZV//4xFZe9ozZo=; b=A8E04c5BdQh2vy
-	c6EXRvIjMHmJrjDfJrjCOZy2/2rJJ0QHmtGsZ5f9C/2ZgK/jTZRMlFiPWTX2bney4qGZTcFet/NkP
-	5Sm9maFWKW/0wHqHurQbRSSTqIFQ5Y1YQqDHYxg1ZBrtDq3OU9MOMj7USl8pxCoFnGgNlIxgaKNul
-	z+NJUOpGhbiS9sXewr6eIUkNjk2tHnRx19eh053FOUpGtl0AO6dOkhvqJfPWRpWEVOgmFB2xDzoF9
-	7LbmUUVE7AupSwvpwBA/M9J7Ax4s10QWok7gxdOXcbXPe626RQdchP7b/4WHGkDMXV9fUBs1H/0yX
-	+QcxgbHG9ufP575ELBXw==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KrQ6FagTQJPJE8bvjyWXPXesn1NPj4kJOvA7qsVKiUA=; b=FfycCxHbqs8vGT
+	gMAcMRo1SQmf8Nd0H80OQ1SWFKHWT+tGXGnpbEHSj/dHt2RQoQTwmsJPk+B0aF59S3Q7VKnXDRHPG
+	lNM1LaJR8roJAYJh1yHuy9HPM5IwLBCNFyrSCBDEScqL3nlxOQc8s5JZ9XDv7noypeWI/KZQx2v5+
+	k3NPz3STPkNOUOaxbq1A5ogeSxQvmR1lZlgEmBYnSkIBV/+8SRJ5GMWXOgqIky6XepFh2EvELo+MB
+	yuayM3cRDSCHsuIp7b9wgXboqN0fRXjiDSFIt9cRGjbY1V2Cojn7fFfRMX1rLZANex73l8YkBHCnU
+	h5kMUBSJMQQzuSG9vT8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb0xt-0005Vz-B7; Wed, 12 Jun 2019 10:58:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb0xj-0005VB-5H
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:58:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 173C828;
- Wed, 12 Jun 2019 03:58:37 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 54C143F246;
- Wed, 12 Jun 2019 04:00:14 -0700 (PDT)
-Subject: Re: [PATCH v2 1/9] KVM: arm/arm64: vgic: Add LPI translation cache
- definition
-To: Marc Zyngier <marc.zyngier@arm.com>
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-2-marc.zyngier@arm.com>
- <54c8547a-51fb-8ae5-975f-261d3934221a@arm.com>
- <86ef3zgmg6.wl-marc.zyngier@arm.com>
-From: Julien Thierry <julien.thierry@arm.com>
-Message-ID: <13655730-165b-d67b-a1da-11c8869c7053@arm.com>
-Date: Wed, 12 Jun 2019 11:58:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
-MIME-Version: 1.0
-In-Reply-To: <86ef3zgmg6.wl-marc.zyngier@arm.com>
-Content-Language: en-US
+	id 1hb0yY-0005wx-MR; Wed, 12 Jun 2019 10:59:30 +0000
+Received: from gate.crashing.org ([63.228.1.57])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb0y2-0005jG-Oo
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:59:02 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5CAwfco015991;
+ Wed, 12 Jun 2019 05:58:43 -0500
+Message-ID: <79e751a0f3bb05d0cbb97591e26040a6f45d98f6.camel@kernel.crashing.org>
+Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Date: Wed, 12 Jun 2019 20:58:41 +1000
+In-Reply-To: <20190612100826.GB6506@redmoon>
+References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
+ <20190604014945.GE189360@google.com>
+ <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
+ <20190604124959.GF189360@google.com>
+ <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+ <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+ <20190611145832.GB11736@redmoon>
+ <5b5199b008d6c8831175018975f09599081dc5e4.camel@kernel.crashing.org>
+ <20190612100826.GB6506@redmoon>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_035839_293836_DC9118FC 
-X-CRM114-Status: GOOD (  30.76  )
+X-CRM114-CacheID: sfid-20190612_035858_977832_9F171F92 
+X-CRM114-Status: GOOD (  29.44  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,159 +67,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>, "Raslan,
- KarimAllah" <karahmed@amazon.de>, Christoffer Dall <christoffer.dall@arm.com>,
- Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>, "Saidi,
- Ali" <alisaidi@amazon.com>, Zenghui Yu <yuzenghui@huawei.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-pci@vger.kernel.org,
+ Sinan Kaya <okaya@kernel.org>, "Zilberman, Zeev" <zeev@amazon.com>, "Saidi,
+ Ali" <alisaidi@amazon.com>, Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 12/06/2019 10:52, Marc Zyngier wrote:
-> Hi Julien,
+On Wed, 2019-06-12 at 11:08 +0100, Lorenzo Pieralisi wrote:
 > 
-> On Wed, 12 Jun 2019 09:16:21 +0100,
-> Julien Thierry <julien.thierry@arm.com> wrote:
->>
->> Hi Marc,
->>
->> On 11/06/2019 18:03, Marc Zyngier wrote:
->>> Add the basic data structure that expresses an MSI to LPI
->>> translation as well as the allocation/release hooks.
->>>
->>> THe size of the cache is arbitrarily defined as 4*nr_vcpus.
->>>
->>
->> The size has been arbitrarily changed to 16*nr_vcpus :) .
+> Nothing wrong, we have not understood each others. What I am asking
+> is to write it like this:
 > 
-> Well spotted! ;-)
+> if (obj && obj->type == ACPI_TYPE_INTEGER && obj->integer.value == 0) {
+> 	/* preserve existing resource assignment */
+> 	pci_bus_claim_resources(bus);
+> }
 > 
->>
->> Nit: The*
+> /* this code path should be common, indipendent of _DSM #5
+> pci_assign_unassigned_root_bus_resources(bus);
 > 
-> Ah, usual lazy finger on the Shift key... One day I'll learn to type.
+> There is no reason to have two distinct code paths, current code
+> can call:
 > 
->>
->>> Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
->>> ---
->>>  include/kvm/arm_vgic.h        |  3 +++
->>>  virt/kvm/arm/vgic/vgic-init.c |  5 ++++
->>>  virt/kvm/arm/vgic/vgic-its.c  | 49 +++++++++++++++++++++++++++++++++++
->>>  virt/kvm/arm/vgic/vgic.h      |  2 ++
->>>  4 files changed, 59 insertions(+)
->>>
-
-[...]
-
->>> diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
->>> index 44ceaccb18cf..ce9bcddeb7f1 100644
->>> --- a/virt/kvm/arm/vgic/vgic-its.c
->>> +++ b/virt/kvm/arm/vgic/vgic-its.c
->>> @@ -149,6 +149,14 @@ struct its_ite {
->>>  	u32 event_id;
->>>  };
->>>  
->>> +struct vgic_translation_cache_entry {
->>> +	struct list_head	entry;
->>> +	phys_addr_t		db;
->>> +	u32			devid;
->>> +	u32			eventid;
->>> +	struct vgic_irq		*irq;
->>> +};
->>> +
->>>  /**
->>>   * struct vgic_its_abi - ITS abi ops and settings
->>>   * @cte_esz: collection table entry size
->>> @@ -1668,6 +1676,45 @@ static int vgic_register_its_iodev(struct kvm *kvm, struct vgic_its *its,
->>>  	return ret;
->>>  }
->>>  
->>> +/* Default is 16 cached LPIs per vcpu */
->>> +#define LPI_DEFAULT_PCPU_CACHE_SIZE	16
->>> +
->>> +void vgic_lpi_translation_cache_init(struct kvm *kvm)
->>> +{
->>> +	struct vgic_dist *dist = &kvm->arch.vgic;
->>> +	unsigned int sz;
->>> +	int i;
->>> +
->>> +	if (!list_empty(&dist->lpi_translation_cache))
->>> +		return;
->>> +
->>> +	sz = atomic_read(&kvm->online_vcpus) * LPI_DEFAULT_PCPU_CACHE_SIZE;
->>> +
->>> +	for (i = 0; i < sz; i++) {
->>> +		struct vgic_translation_cache_entry *cte;
->>> +
->>> +		/* An allocation failure is not fatal */
->>> +		cte = kzalloc(sizeof(*cte), GFP_KERNEL);
->>> +		if (WARN_ON(!cte))
->>> +			break;
->>> +
->>> +		INIT_LIST_HEAD(&cte->entry);
->>> +		list_add(&cte->entry, &dist->lpi_translation_cache);
->>
->> Going through the series, it looks like this list is either empty
->> (before the cache init) or has a fixed number
->> (LPI_DEFAULT_PCPU_CACHE_SIZE * nr_cpus) of entries.
+> pci_assign_unassigned_root_bus_resources(bus);
 > 
-> Well, it could also fail when allocating one of the entry, meaning we
-> can have an allocation ranging from 0 to (LPI_DEFAULT_PCPU_CACHE_SIZE
-> * nr_cpus) entries.
+> instead of
 > 
->> And the list never grows nor shrinks throughout the series, so it
->> seems odd to be using a list here.
->>
->> Is there a reason for not using a dynamically allocated array instead of
->> the list? (does list_move() provide a big perf advantage over swapping
->> the data from one array entry to another? Or is there some other
->> facility I am missing?
+> pci_bus_size_bridges(bus);
+> pci_bus_assign_resources(bus);
 > 
-> The idea was to make the LRU policy cheap, on the assumption that
-> list_move (which is only a couple of pointer updates) is cheaper than
-> a memmove if you want to keep the array ordered. If we exclude the
-> list head, we end-up with 24 bytes per entry to move down to make room
-> for the new entry at the head of the array. For large caches that miss
-> very often, this will hurt badly. But is that really a problem? I
-> don't know.
+> Actually, current code is *questionable* given that AFAICS it
+> does not account for hotplug bridges additional memory window
+> size.
+
+Ah yes, I see, ok, I'll play with that in qemu a bit tomorrow
+make sure we aren't missing something obvious & update the patch.
+
+> > > That's how it should be I think:
+> > > 
+> > > 1) we do not want pci_assign_unassigned_root_bus_resources(bus) to
+> > >    reallocate resources already claimed (see realloc parameter), do we ?
+> > 
+> > Well, realloc is useful to handle SR_IOV when the BIOS doesn't do it
+> > right (common case). That said, at this point, we should be able to
+> > honor IORESOURCE_PCI_FIXED for things that have _DSM #5 since they have
+> > been claimed. I don't see that realloc logic being a problem for us,
+> > and I want to avoid gratuitous differences with x86, but maybe I'm
+> > missing something here...
 > 
+> See above. The conditions that make IORESOURCE_PCI_FIXED work are
+> still unclear to me.
 
-Yes, I realized afterwards that the LRU uses the fact you can easily
-move list entries without modifying the rest of the list.
+I more/less convinced myself it doesn't in the full-reassignment case
+:-) As for the more traditional survey + assign, it can work if the
+original survey led to reasonable values, mostly by preventing (I
+*think*, I still need to convince myself) the realloc path for kicking
+in, but this is all very fishy... At least x86 does use that flag at
+least in one place from my grepping around...
 
-> We could allocate an array as you suggest, and use a linked list
-> inside the array. Or something else. I'm definitely open to
-> suggestion!
+> > > 2) pci_bus_size_bridges(bus) and pci_bus_assign_resources(bus) should
+> > >    not interfere with resources already claimed so it *should* be safe
+> > >    to call them anyway
+> > 
+> > Sure, *should* and here we introduce yet another way of doing things
+> > though... Any reason we don't want to do what x86 does here ?
+> 
+> No, see above, keeping in mind that what x86 does is still not
+> very well defined AFAICS.
 
-If it there turns out to be some benefit to just you a fixed array, we
-could use a simple ring buffer. Have one pointer on the most recently
-inserted entry (and we know the next insertion will take place on the
-entry "just before" it) and one pointer on the least recently used entry
-(which gets moved when the most recently inserted catches up to it) so
-we know where to stop when looping. We don't really have to worry about
-the "ring buffer" full case since that means we just overwrite the LRU
-and move the pointer.
+It's not defined, it's grown through an evolutionary process :-) It's
+still by far the most tested with the widest range of crazy PCI devices
+and BIOSes I would think.
 
-This might prove a bit more efficient when looping over the cache
-entries compared to the list. However, I have no certainty of actual
-performance gain from that and the current implementation has the
-benefit of being simple.
+> > > Most importantly: I want everyone to agree that claiming is equivalent
+> > > to making a resource immutable (except for realloc, see (1) above)
+> > > because that's what we are doing by claiming on _DSM #5 == 0.
+> > 
+> > I think the combination of claiming *and* IORESOURCE_PCI_FIXED is what
+> > makes it *really* immutable. I'm a bit confused by the realloc logic
+> > right now, I'll need more quality time looking at it after ingesting
+> > more caffeing but I'm under the impression that it will honor the flag.
+> 
+> Likewise, this requires some fuzzing because it is really hard to
+> understand by perusing the code.
 
-Let me know if you decide to give the ring buffer approach a try.
+Yup.
 
-Otherwise there's always the option to add even more complex structure
-with a hashtable + linked list using hashes and tags to lookup the
-entries. But keeping things simple for now seems reasonable (also, it
-avoids having to think about what to use as hash and tag :D ).
+> > > There are too many ways to make a resource immutable in the kernel
+> > > and this is confusing and prone to bugs.
+> > 
+> > It is, but I don't want to create new ways of doing things, and what
+> > you seem to propose is a new way imho :-)
+> 
+> No, see above. What I am saying is that we have IORESOURCE_PCI_FIXED,
+> res->parent != NULL and Enhanced allocation to make a BAR immutable and
+> before going any further it would be great if we understand their
+> interaction given that we are starting from a pseudo clean slate.
+
+> If we fail to do that it is quirks later (and I would rather avoid
+> seeing x86 command line parameters to work around them).
+
+Well.. while I would hate to have to *use* the x86 command line
+parameters, I also don't like them not existing on all archs, as they
+can actually be useful to help diagnose issues if anything (with of
+course the intention of fixing things so they aren't needed in the long
+run of course).
 
 Cheers,
+Ben.
 
--- 
-Julien Thierry
+> Cheers,
+> Lorenzo
+> 
+> > Cheers,
+> > Ben.
+> > 
+> > > Thanks,
+> > > Lorenzo
+> > > 
+> > > > +	ACPI_FREE(obj);
+> > > >  
+> > > >  	list_for_each_entry(child, &bus->children, node)
+> > > >  		pcie_bus_configure_settings(child);
+> > > > diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
+> > > > index 8082b612f561..62b7fdcc661c 100644
+> > > > --- a/include/linux/pci-acpi.h
+> > > > +++ b/include/linux/pci-acpi.h
+> > > > @@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
+> > > >  #endif
+> > > >  
+> > > >  extern const guid_t pci_acpi_dsm_guid;
+> > > > -#define DEVICE_LABEL_DSM	0x07
+> > > > -#define RESET_DELAY_DSM		0x08
+> > > > -#define FUNCTION_DELAY_DSM	0x09
+> > > > +#define IGNORE_PCI_BOOT_CONFIG_DSM	0x05
+> > > > +#define DEVICE_LABEL_DSM		0x07
+> > > > +#define RESET_DELAY_DSM			0x08
+> > > > +#define FUNCTION_DELAY_DSM		0x09
+> > > >  
+> > > >  #else	/* CONFIG_ACPI */
+> > > >  static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
+> > > > 
+> > > > 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
