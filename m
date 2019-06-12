@@ -2,95 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01C51423BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:15:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAD3B423C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:15:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Ay3Mzl/o171fQxDTMZ+x+swZB2n6ntFYOWnX0E+wPg=; b=Nj7E5cU9OHA5/i
-	zOohaK79pj15KjFgq83NsQvQCmh/3kUNu0w7KeOYngH9a1ASHAuCsAkjb1Qd0HJFJ8/9/plloQhpU
-	436v7j7G4sfxDQO0yO95jGbMfcmzs0J+klt1kl4ieyg6v4k5FjfNLi9wb9ayvU8GR/wIKZ4QE2W92
-	gLlVqdNNjnOkTEFuf0pW+LORk3vGTrXPNxsnmNSvqtr0WkfMvjbYXJNZ4Nu51KgicTknlQJIe/I80
-	xbzkCy6RI0ToDIw9lAJ9ghQU96F2ydTDtWiff9i3th173T0NeRDmfOE5lb2KU8QdBmQGnAg0ceF3v
-	msbT0CeeV8oMvI709Wnw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=q0lb0vobm28hidcI4MqWQu3L/ErfBURfqoatD5wXZeU=; b=FDv
+	xgQ7ZgbO4rLTIEBRGQmMmxpxMumRkkdLurIWS988TMAUaDPvpTVQLgKgG/GzyJKyvKYnca1BwwLdo
+	amlbSkEe//vjmikmnWujRUDU/M5cmWR3UrYuH6pAVBHKVOKVW08IOllG6Hh3dIlk4Us0S3FXJA1DT
+	RsTuCXs0X3RvSQDPAfG9GOVTcQAmSTe5L0RuhzLpxB2BQdkcs74HvPNhS0U5dt5SFjp8sMQkq3xbZ
+	tBuIhOptl1+9KDvIzKveiQxOAWHAPuX97Rb7EM49MrH+7IOSs2Gh15x3HY0P+sddGWwtpdAhTll62
+	NQbEC0Yul/4m2xUkBMaaxlmVlaw3oYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1DW-00060s-HP; Wed, 12 Jun 2019 11:14:58 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hb1EE-0007uT-47; Wed, 12 Jun 2019 11:15:42 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1DG-0005zl-SN
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:14:44 +0000
-Received: by mail-pl1-x643.google.com with SMTP id bi6so6107464plb.12
+ id 1hb1DO-00064g-SY
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:14:52 +0000
+Received: by mail-wm1-x344.google.com with SMTP id c6so6118785wml.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:14:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ICAcqmNM80YqXGU9u0yKcUq/onm/SsQo2SDs/l3f+hY=;
- b=QkhZMvI8xgho9eMFZ7w6J/3duhWcdGLEkVVUAU2qSaxNfXU+GXLc+PdiUdCpUn61iY
- 0xCUxQ9wiA1Jj7ZnvEwSzmljdVe71a10tK0t/VIk6vJ6KuoIESh9plrNP00oJ9EUV9CE
- 7ZXKJL/NmCDrLh5D1fRV3U/5XcSqnaFIYrJ7IhnmnWDC1y2ZQhZMwMFDrVZ4wkPjj2PR
- KjnNxVxOeNHsZ1yb6hgnM2H6TbZTzWPz9Cffq6e0f9rEpBuiI2bynmdfsgpQFhae4y5r
- LLRsk0MnIrY8OwbkGOOGkhYBEu+P7mFEBBswTcH9Mhn9r0qq9AEF/SsRyiNTxER5NtY3
- eTUQ==
+ Wed, 12 Jun 2019 04:14:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=monstr-eu.20150623.gappssmtp.com; s=20150623;
+ h=sender:from:to:cc:subject:date:message-id;
+ bh=ty2XijTo8qzlvWIRg0ZCeFPnQ4bNV/bDxc1SRgb6iN0=;
+ b=kyP/eNBTAZVl7AnnqwObvvrM3tqayRsKb073Bm/hcEIyx7Ex2NgEMqajny0Y81CoDw
+ 2ppIdkgB2jVGEdaggnB0DncQVLUlO59WMGp3pC/at+0e7ohsNLEJg1pdKtvtAXo3rj8n
+ tG+QbHxkmoiYkkNPI8RDGfkzOWwEm5phagzIQ4nslDn8D0RZU/gCt02Hl2/5eTdkeA68
+ ftTEchRVAKEVQKWNV7/NlonObf4V++ZFDwbP31kq1d+jieUGmrrwKESqrLh0PkHD46Jk
+ bFjWEU7K4Rrv+ud3KyGChSkal6qvGFhN3fcV/iD9k/K++QiN2D4dzmjP+73dO/zr49+4
+ sSmw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ICAcqmNM80YqXGU9u0yKcUq/onm/SsQo2SDs/l3f+hY=;
- b=NihHxGylI23qm0GlE0OPP19KOhAB+RUxU9QarJ1OytxXD+kF/rixda7M1WX8f1bojc
- +X5903zaIESJEA/+8RN+Lueqw81ASchIxR1d+9BMhD76YwGuSisWWiKh/CQ5KC+71owQ
- dn3NmLKGW0roM7Cg5Q3zqlyZtbmLkItVBXntTlfGLAyzJ4Et6KaA160e0RjxoPXwwfd6
- I879yzjjubT/JjkjJ1tDwm9XiuZIz7xR3LyMDWuLLmp6krD2OOj3d1yR8+Ugc3Ojoelc
- hbyD1wh7FD9HYIqcL33WfcHISPFc5Cze6fqFDeoM8Hy/wsFVPo/Fy5TTM1z7kk7D0ZzN
- UTsA==
-X-Gm-Message-State: APjAAAUEHcayx9XF/kceX9WspwnVPA6J4ABSTXbhgr/7ApPEZwdNFW0l
- hwMew0elcRBA9Xc/XcaqpIx8iYLKW5bXrlGDWxGP8w==
-X-Google-Smtp-Source: APXvYqygEZ27HGfNqszCpdSgojAf7S6ru14/DaT8Or0Syv3FL9sWDfZ+9LXBU0/5Hxbzx8tkSmaHaZjTcL+f/jghf7s=
-X-Received: by 2002:a17:902:8609:: with SMTP id
- f9mr75570344plo.252.1560338081704; 
- Wed, 12 Jun 2019 04:14:41 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1559580831.git.andreyknvl@google.com>
- <9e1b5998a28f82b16076fc85ab4f88af5381cf74.1559580831.git.andreyknvl@google.com>
- <20190611150122.GB63588@arrakis.emea.arm.com>
- <CAAeHK+wZrVXxAnDXBjoUy8JK9iG553G2Bp8uPWQ0u1u5gts0vQ@mail.gmail.com>
- <20190611175037.pflr6q6ob67zjj25@mbp>
-In-Reply-To: <20190611175037.pflr6q6ob67zjj25@mbp>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Wed, 12 Jun 2019 13:14:30 +0200
-Message-ID: <CAAeHK+x4sHKfQx31uQ9zSO48oRs3XLATfymY=vgEHQ1FLNmeig@mail.gmail.com>
-Subject: Re: [PATCH v16 16/16] selftests, arm64: add a selftest for passing
- tagged pointers to kernel
-To: Catalin Marinas <catalin.marinas@arm.com>
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id;
+ bh=ty2XijTo8qzlvWIRg0ZCeFPnQ4bNV/bDxc1SRgb6iN0=;
+ b=VjaCl9pzMb4cYbNZNb2Lar+ZCfeoR5S0mNNcAxSQwp+uacHrOr/4utD2wvE24ny4lf
+ WC/vb8sagB35b2Mv5/tFdcwZASrscw7KtV3fRDuKolBgZTwnbmHVZ+J4Ztq6UD6XCHZ4
+ OIhYs6QRxC2Oj1agu6z6dxdXbyHtruRIgLkDREPXLfUw2Gp9zrFKSnwyjrQJU+937WWo
+ mQIO88gGAnEx9yVmog8GipoM2OpQMreCBmcvLHYQ7JvdBc5kU5DXPumPqtKEVVVWqH6V
+ eazHntIhCHdgallh8IrNSPuHGYDrHFGqezLCEF5ZU9tzf8KxftbNWWgKm8UlFn34bRtv
+ TWfw==
+X-Gm-Message-State: APjAAAVQrEd3Xf06/5eGKkCJRUtV2IVYEPyx5OGW3IZKZtwLfQ7Y/6SX
+ yxIjPGNwE0p+iHPhU2J5HpXbnw==
+X-Google-Smtp-Source: APXvYqwZOCKItFssqrJwKk7MTTd0XJLNuRWwgIPMocmAo9N/2avS/g7Rf/iVxuLALuach9gSgPQ3nA==
+X-Received: by 2002:a7b:cf27:: with SMTP id m7mr22159144wmg.7.1560338088311;
+ Wed, 12 Jun 2019 04:14:48 -0700 (PDT)
+Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
+ by smtp.gmail.com with ESMTPSA id y16sm14843742wru.28.2019.06.12.04.14.47
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 12 Jun 2019 04:14:47 -0700 (PDT)
+From: Michal Simek <michal.simek@xilinx.com>
+To: johan@kernel.org, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ monstr@monstr.eu, michal.simek@xilinx.com
+Subject: [PATCH v2 0/6] serial: uartps:
+Date: Wed, 12 Jun 2019 13:14:37 +0200
+Message-Id: <cover.1560338079.git.michal.simek@xilinx.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_041442_946181_727EA385 
-X-CRM114-Status: GOOD (  14.07  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190612_041451_016993_F14DBB94 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match 0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,67 +92,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org,
- Linux Memory Management List <linux-mm@kvack.org>,
- Khalid Aziz <khalid.aziz@oracle.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>, LKML <linux-kernel@vger.kernel.org>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ Jiri Slaby <jslaby@suse.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 11, 2019 at 7:50 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
->
-> On Tue, Jun 11, 2019 at 07:18:04PM +0200, Andrey Konovalov wrote:
-> > On Tue, Jun 11, 2019 at 5:01 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > > static void *tag_ptr(void *ptr)
-> > > {
-> > >         static int tagged_addr_err = 1;
-> > >         unsigned long tag = 0;
-> > >
-> > >         if (tagged_addr_err == 1)
-> > >                 tagged_addr_err = prctl(PR_SET_TAGGED_ADDR_CTRL,
-> > >                                         PR_TAGGED_ADDR_ENABLE, 0, 0, 0);
-> >
-> > I think this requires atomics. malloc() can be called from multiple threads.
->
-> It's slightly racy but I assume in a real libc it can be initialised
-> earlier than the hook calls while still in single-threaded mode (I had
-> a quick attempt with __attribute__((constructor)) but didn't get far).
->
-> Even with the race, under normal circumstances calling the prctl() twice
-> is not a problem. I think the risk here is that someone disables the ABI
-> via sysctl and the ABI is enabled for some of the threads only.
+Hi,
 
-OK, I'll keep the code racy, but add a comment pointing it out. Thanks!
+This patchset is fixing several issues reported by checkpatch but also
+major number handling for multiple allocated ports. For more information
+please look at the first patch which describes more details.
 
->
-> --
-> Catalin
+When this patchset is applied driver only reports one checkpatch warning
+which should be fixed via console.h first.
+include/linux/console.h:147:    void    (*write)(struct console *, const char *, unsigned);
+
+WARNING: Prefer 'unsigned int' to bare use of 'unsigned'
++				    unsigned n)
+
+Thanks,
+Michal
+
+v1
+ https://lkml.org/lkml/2019/6/10/186
+ https://lkml.org/lkml/2019/6/10/187
+
+
+Changes in v2:
+- Fix typo in subject line
+- Swap patches compare to previous series
+- Add Fixes tag
+- Split patch from v1
+- Fixes second S_IRUGO usage
+- Add Fixes tag
+- Split patch from v1
+- Add Fixes tag
+- Split patch from v1
+- Add Fixes tag
+- Split patch from v1
+- Add Fixes tag
+- Split patch from v1
+- Add Fixes tag
+
+Nava kishore Manne (5):
+  serial: uartps: Use octal permission for module_param()
+  serial: uartps: Fix multiple line dereference
+  serial: uartps: Fix long line over 80 chars
+  serial: uartps: Do not add a trailing semicolon to macro
+  serial: uartps: Remove useless return from cdns_uart_poll_put_char
+
+Shubhrajyoti Datta (1):
+  serial: uartps: Use the same dynamic major number for all ports
+
+ drivers/tty/serial/xilinx_uartps.c | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
