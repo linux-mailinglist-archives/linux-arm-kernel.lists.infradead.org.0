@@ -2,34 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24A314298D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:40:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 370A242991
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:42:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wms5a3p87HkRFkZyCnV3cTppHg5RpYUhbbgeisZgOyU=; b=PjNHgt75LvbjMQ
-	aDZpUtVJzxHSoeVCiCoKdisUVIXxYi1W9qHPyeg72WaNu4TApoT5iSdF/4RHAQzOV5DR2dyEE0RI1
-	3kbZzUi/bgSw0Twwf9vfGyp1EsZ/wtLq7lvIZhyQYWnWwnWotUJAsUXOMQpfv80lVL34dKlh+CI6B
-	Sp6FX3sN07H6tTEoGZUxDhqKcs8/LdPk8vILkrtN1JYegAcOrVB9W72chBoIaTeCF+YBUTKlLRI0g
-	wT+PQHrBTCgJC7cUG5cLD8g96+j6NSkLUTLMehG6CWJh/Xed4RCknNcOq4rjcE8DDDI0zBe4/wGNu
-	mydtv7DnXoiWdX9Hrinw==;
+	List-Owner; bh=93jfrgCwL5z/njfkdfDaDKFmGGiLMMdl6vtOW6YUTpk=; b=eKx+J5UnIDqrI+
+	i5Ul9yFXb59CaMZim6i2yoYS6KXVB95dfmX//jIa/ZGmYsy6eG0XB2EsYS7EyKX5s0YPZckKGD5EX
+	u4Y8qhVA9KyajVJ1JbL3bOyqt/0eiPRl2PvW1eIn+iYw7HXZE+y5uOrIBa1RZdLUrsbhZ+FkcAVll
+	JhCPIXtBrLzl9GinSK9ATSmbCV4IJLemSgyVZiUryindt0Jpsu7J3Ky8th34iEg5uzQHW0eCONehF
+	HK4DoO06wCQZ7rUpqljwMrO/Dz3SRf0pBNieTwKotsDuD8TjARgNDlUcKUJVSVcBLqsjzHtpz5AO/
+	1RWIQHm7Ud9JCP8LMQRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb4QW-0007sZ-Kw; Wed, 12 Jun 2019 14:40:36 +0000
+	id 1hb4S5-0008OF-58; Wed, 12 Jun 2019 14:42:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb4QJ-0007rm-VY
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:40:25 +0000
+ id 1hb4Rx-0008Nn-1h
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:42:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 373762B;
- Wed, 12 Jun 2019 07:40:22 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6763C2B;
+ Wed, 12 Jun 2019 07:42:04 -0700 (PDT)
 Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9DE913F557;
- Wed, 12 Jun 2019 07:40:17 -0700 (PDT)
-Subject: Re: [PATCH v17 08/15] userfaultfd, arm64: untag user pointers
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EF8A33F557;
+ Wed, 12 Jun 2019 07:41:58 -0700 (PDT)
+Subject: Re: [PATCH v17 14/15] vfio/type1, arm64: untag user pointers in
+ vaddr_get_pfn
 To: Andrey Konovalov <andreyknvl@google.com>,
  linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
@@ -37,18 +38,18 @@ To: Andrey Konovalov <andreyknvl@google.com>,
  linux-media@vger.kernel.org, kvm@vger.kernel.org,
  linux-kselftest@vger.kernel.org
 References: <cover.1560339705.git.andreyknvl@google.com>
- <e2f35a0400150594a39d9c3f4b3088601fd5dc30.1560339705.git.andreyknvl@google.com>
+ <e86d8cd6bd0ade9cce6304594bcaf0c8e7f788b0.1560339705.git.andreyknvl@google.com>
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <48893efc-039a-f7e8-19f0-1bd7b188b2c1@arm.com>
-Date: Wed, 12 Jun 2019 15:40:16 +0100
+Message-ID: <b7408e72-aa18-21ef-aa80-76b65cbac7cb@arm.com>
+Date: Wed, 12 Jun 2019 15:41:57 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <e2f35a0400150594a39d9c3f4b3088601fd5dc30.1560339705.git.andreyknvl@google.com>
+In-Reply-To: <e86d8cd6bd0ade9cce6304594bcaf0c8e7f788b0.1560339705.git.andreyknvl@google.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_074024_109210_44DBCC53 
-X-CRM114-Status: GOOD (  20.79  )
+X-CRM114-CacheID: sfid-20190612_074205_140477_93C8ADD6 
+X-CRM114-Status: GOOD (  18.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -96,10 +97,10 @@ On 12/06/2019 12:43, Andrey Konovalov wrote:
 > pass tagged user pointers (with the top byte set to something else other
 > than 0x00) as syscall arguments.
 > 
-> userfaultfd code use provided user pointers for vma lookups, which can
+> vaddr_get_pfn() uses provided user pointers for vma lookups, which can
 > only by done with untagged pointers.
 > 
-> Untag user pointers in validate_range().
+> Untag user pointers in this function.
 > 
 > Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 > Reviewed-by: Kees Cook <keescook@chromium.org>
@@ -108,87 +109,22 @@ On 12/06/2019 12:43, Andrey Konovalov wrote:
 Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 
 > ---
->  fs/userfaultfd.c | 22 ++++++++++++----------
->  1 file changed, 12 insertions(+), 10 deletions(-)
+>  drivers/vfio/vfio_iommu_type1.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/fs/userfaultfd.c b/fs/userfaultfd.c
-> index 3b30301c90ec..24d68c3b5ee2 100644
-> --- a/fs/userfaultfd.c
-> +++ b/fs/userfaultfd.c
-> @@ -1263,21 +1263,23 @@ static __always_inline void wake_userfault(struct userfaultfd_ctx *ctx,
->  }
+> diff --git a/drivers/vfio/vfio_iommu_type1.c b/drivers/vfio/vfio_iommu_type1.c
+> index 3ddc375e7063..528e39a1c2dd 100644
+> --- a/drivers/vfio/vfio_iommu_type1.c
+> +++ b/drivers/vfio/vfio_iommu_type1.c
+> @@ -384,6 +384,8 @@ static int vaddr_get_pfn(struct mm_struct *mm, unsigned long vaddr,
 >  
->  static __always_inline int validate_range(struct mm_struct *mm,
-> -					  __u64 start, __u64 len)
-> +					  __u64 *start, __u64 len)
->  {
->  	__u64 task_size = mm->task_size;
+>  	down_read(&mm->mmap_sem);
 >  
-> -	if (start & ~PAGE_MASK)
-> +	*start = untagged_addr(*start);
+> +	vaddr = untagged_addr(vaddr);
 > +
-> +	if (*start & ~PAGE_MASK)
->  		return -EINVAL;
->  	if (len & ~PAGE_MASK)
->  		return -EINVAL;
->  	if (!len)
->  		return -EINVAL;
-> -	if (start < mmap_min_addr)
-> +	if (*start < mmap_min_addr)
->  		return -EINVAL;
-> -	if (start >= task_size)
-> +	if (*start >= task_size)
->  		return -EINVAL;
-> -	if (len > task_size - start)
-> +	if (len > task_size - *start)
->  		return -EINVAL;
->  	return 0;
->  }
-> @@ -1327,7 +1329,7 @@ static int userfaultfd_register(struct userfaultfd_ctx *ctx,
->  		goto out;
->  	}
+>  	vma = find_vma_intersection(mm, vaddr, vaddr + 1);
 >  
-> -	ret = validate_range(mm, uffdio_register.range.start,
-> +	ret = validate_range(mm, &uffdio_register.range.start,
->  			     uffdio_register.range.len);
->  	if (ret)
->  		goto out;
-> @@ -1516,7 +1518,7 @@ static int userfaultfd_unregister(struct userfaultfd_ctx *ctx,
->  	if (copy_from_user(&uffdio_unregister, buf, sizeof(uffdio_unregister)))
->  		goto out;
->  
-> -	ret = validate_range(mm, uffdio_unregister.start,
-> +	ret = validate_range(mm, &uffdio_unregister.start,
->  			     uffdio_unregister.len);
->  	if (ret)
->  		goto out;
-> @@ -1667,7 +1669,7 @@ static int userfaultfd_wake(struct userfaultfd_ctx *ctx,
->  	if (copy_from_user(&uffdio_wake, buf, sizeof(uffdio_wake)))
->  		goto out;
->  
-> -	ret = validate_range(ctx->mm, uffdio_wake.start, uffdio_wake.len);
-> +	ret = validate_range(ctx->mm, &uffdio_wake.start, uffdio_wake.len);
->  	if (ret)
->  		goto out;
->  
-> @@ -1707,7 +1709,7 @@ static int userfaultfd_copy(struct userfaultfd_ctx *ctx,
->  			   sizeof(uffdio_copy)-sizeof(__s64)))
->  		goto out;
->  
-> -	ret = validate_range(ctx->mm, uffdio_copy.dst, uffdio_copy.len);
-> +	ret = validate_range(ctx->mm, &uffdio_copy.dst, uffdio_copy.len);
->  	if (ret)
->  		goto out;
->  	/*
-> @@ -1763,7 +1765,7 @@ static int userfaultfd_zeropage(struct userfaultfd_ctx *ctx,
->  			   sizeof(uffdio_zeropage)-sizeof(__s64)))
->  		goto out;
->  
-> -	ret = validate_range(ctx->mm, uffdio_zeropage.range.start,
-> +	ret = validate_range(ctx->mm, &uffdio_zeropage.range.start,
->  			     uffdio_zeropage.range.len);
->  	if (ret)
->  		goto out;
+>  	if (vma && vma->vm_flags & VM_PFNMAP) {
 > 
 
 -- 
