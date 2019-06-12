@@ -2,67 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 429F541C36
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 08:28:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CAEB41C48
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 08:34:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TuIYP4WVsNDoDrGAAEPFXpF4A8d14kGjxUZeRm9V/G4=; b=BewrI3STOo049F
-	yJJFdDmFSshB9dx4xLN/LiGP3olL/3J9QbqIXoevifLb3mec46Erd6E8y4MoYz6UcNGqNcr5wn9/+
-	hT4SodtNF0+uv8ZjrVYVAiQ0jp31LY9HmWxpQ9QtsZF1xxbqYItJxpMJ928hyyvNOebCu5Pi50leB
-	L8lWKapnB1dED0A6hxjCl3nYFTGwyah32yhTTjTZhTrfC0EBbH1/6LHXn1uYXxRuXf881+lT7bti9
-	hQ0xUin66/P567jM7IPX2b1Saq9h6DLiMiIvnGV4O44q5+HR6M2bqfVojjVyM6TT6DBoKG5mXB7mg
-	DkTaWABHG+3KHEAiB0QA==;
+	List-Owner; bh=nTYxeVpX6yZXEcSmkYRvxvH5NXJCThac1R7UfCHy2eY=; b=Mv6y2z5zraB4B+
+	DaKHfKh5/a43UhQuZwCQD+mQSTbUx7fd3JF3vxoUUW0geFeQvdAfAA3fglkNvK5v7ufvc7b2gy8nG
+	TTcmEtk3MWVvWu4dhu5K/JclHQmx6ZinPxuBQHLb6GKLyYuVhDgGnuKWMD+fACb8nHYufc9wuUl98
+	Mmm/77r1hKHG3tdwxZ4ANJXklS652olS/mK0knWo75eortrKtn2+iFPHm2fnSPl5r6+xRhen+23A2
+	zs8B01ZlMKDfjuBxX8bY25eIGRHo8Tc+NhIdlFKBOBxSuuTrZub1nIdSUjBkGLbDTOf7HcnrCpOPV
+	iXKt+lch0BYIi53A2UUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hawkN-000852-PK; Wed, 12 Jun 2019 06:28:35 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hawkC-000841-Qd; Wed, 12 Jun 2019 06:28:26 +0000
-X-UUID: 219f8b9a6c3c442d803eb539877a6f00-20190611
-X-UUID: 219f8b9a6c3c442d803eb539877a6f00-20190611
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1338957400; Tue, 11 Jun 2019 22:28:18 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 11 Jun 2019 23:28:17 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Jun 2019 14:28:14 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 12 Jun 2019 14:28:15 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Macpaul Lin <macpaul.lin@mediatek.com>, <linux-usb@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] mtu3: fix setup packet response for HNP and SRP request
-Date: Wed, 12 Jun 2019 14:28:07 +0800
-Message-ID: <1560320892-30551-1-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
+	id 1hawpn-0002ja-MP; Wed, 12 Jun 2019 06:34:11 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hawpf-0002j1-H6
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 06:34:05 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id 4568780E2;
+ Wed, 12 Jun 2019 06:34:22 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCHv3] gpio: gpio-omap: Fix lost edge wake-up interrupts
+Date: Tue, 11 Jun 2019 23:33:52 -0700
+Message-Id: <20190612063352.5760-1-tony@atomide.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: CE1AD9F9C4AB7DD47709BB3955B3B7E2FF4BB35A299C25F5C5745B5492155FC12000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_232825_036814_A73B6D0A 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_233403_612725_D3773A49 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,95 +57,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com
+Cc: Tero Kristo <t-kristo@ti.com>, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Keerthy <j-keerthy@ti.com>,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, linux-gpio@vger.kernel.org,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Ladislav Michl <ladis@linux-mips.org>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-1. Add OTG_HNP_REQD and OTG_SRP_REQD definitions in ch9.h.
-2. When OTG_HNP_REQD and OTG_SRP_REQD has been received,
-usb hardware must not enter TEST mode but need to response setup packet.
-3. Add otg_srp_reqd and otg_hnp_reqd in struct ssusb_mtk for futher
-implementation.
+If an edge interrupt triggers while entering idle just before we save
+GPIO datain register to saved_datain, the triggered GPIO will not be
+noticed on wake-up. This is because the saved_datain and GPIO datain
+are the same on wake-up in omap_gpio_unidle(). Let's fix this by
+ignoring any pending edge interrupts for saved_datain.
 
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+This issue affects only idle states where the GPIO module internal
+wake-up path is operational. For deeper idle states where the GPIO
+module gets powered off, Linux generic wakeirqs must be used for
+the padconf wake-up events with pinctrl-single driver. For examples,
+please see "interrupts-extended" dts usage in many drivers.
+
+This issue can be somewhat easily reproduced by pinging an idle system
+with smsc911x Ethernet interface configured IRQ_TYPE_EDGE_FALLING. At
+some point the smsc911x interrupts will just stop triggering. Also if
+WLCORE WLAN is used with EDGE interrupt like it's documentation specifies,
+we can see lost interrupts without this patch.
+
+Note that in the long run we may be able to cancel entering idle by
+returning an error in gpio_omap_cpu_notifier() on pending interrupts.
+But let's fix the bug first.
+
+Also note that because of the recent clean-up efforts this patch does
+not apply directly to older kernels. This does fix a long term issue
+though, and can be backported as needed.
+
+Cc: Aaro Koskinen <aaro.koskinen@iki.fi>
+Cc: Grygorii Strashko <grygorii.strashko@ti.com>
+Cc: Keerthy <j-keerthy@ti.com>
+Cc: Ladislav Michl <ladis@linux-mips.org>
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Cc: Russell King <rmk+kernel@armlinux.org.uk>
+Cc: Tero Kristo <t-kristo@ti.com>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/usb/mtu3/mtu3.h            |  4 ++++
- drivers/usb/mtu3/mtu3_gadget_ep0.c | 13 +++++++++++++
- include/uapi/linux/usb/ch9.h       |  5 +++++
- 3 files changed, 22 insertions(+)
 
-diff --git a/drivers/usb/mtu3/mtu3.h b/drivers/usb/mtu3/mtu3.h
-index 76ecf12fdf62..bb8a31bc6e4d 100644
---- a/drivers/usb/mtu3/mtu3.h
-+++ b/drivers/usb/mtu3/mtu3.h
-@@ -226,6 +226,8 @@ struct otg_switch_mtk {
-  * @dma_clk: dma_bus_ck clock for AXI bus etc
-  * @dr_mode: works in which mode:
-  *		host only, device only or dual-role mode
-+ * @otg_srp_reqd: used for SRP request handling.
-+ * @otg_hnp_reqd: used for HNP request handling.
-  * @u2_ports: number of usb2.0 host ports
-  * @u3_ports: number of usb3.0 host ports
-  * @u3p_dis_msk: mask of disabling usb3 ports, for example, bit0==1 to
-@@ -252,6 +254,8 @@ struct ssusb_mtk {
- 	/* otg */
- 	struct otg_switch_mtk otg_switch;
- 	enum usb_dr_mode dr_mode;
-+	bool otg_srp_reqd;
-+	bool otg_hnp_reqd;
- 	bool is_host;
- 	int u2_ports;
- 	int u3_ports;
-diff --git a/drivers/usb/mtu3/mtu3_gadget_ep0.c b/drivers/usb/mtu3/mtu3_gadget_ep0.c
-index 4da216c99726..1247c43a63e6 100644
---- a/drivers/usb/mtu3/mtu3_gadget_ep0.c
-+++ b/drivers/usb/mtu3/mtu3_gadget_ep0.c
-@@ -285,11 +285,24 @@ static int handle_test_mode(struct mtu3 *mtu, struct usb_ctrlrequest *setup)
- 		dev_dbg(mtu->dev, "TEST_PACKET\n");
- 		mtu->test_mode_nr = TEST_PACKET_MODE;
- 		break;
-+	case OTG_SRP_REQD:
-+		dev_dbg(mtu->dev, "OTG_SRP_REQD\n");
-+		mtu->ssusb->otg_srp_reqd = 1;
-+		break;
-+	case OTG_HNP_REQD:
-+		dev_dbg(mtu->dev, "OTG_HNP_REQD\n");
-+		mtu->ssusb->otg_hnp_reqd = 1;
-+		break;
- 	default:
- 		handled = -EINVAL;
- 		goto out;
- 	}
+This patch is against v5.2-rc series. FYI, it does not conflict with
+the fixes (or the clean-up) in Russell's patch series.
+
+Changes since v2:
+- Add comments for what we're checking, drop comments for saved_datain
+
+Changes since v1:
+- Add handling to ignore EDGE_BOTH
+
+---
+ drivers/gpio/gpio-omap.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/gpio/gpio-omap.c b/drivers/gpio/gpio-omap.c
+--- a/drivers/gpio/gpio-omap.c
++++ b/drivers/gpio/gpio-omap.c
+@@ -1277,13 +1277,23 @@ static void omap_gpio_idle(struct gpio_bank *bank, bool may_lose_context)
+ {
+ 	struct device *dev = bank->chip.parent;
+ 	void __iomem *base = bank->base;
+-	u32 nowake;
++	u32 mask, nowake;
  
-+	if (mtu->ssusb->otg_srp_reqd || mtu->ssusb->otg_hnp_reqd) {
-+		mtu->ep0_state = MU3D_EP0_STATE_SETUP;
-+		goto out;
-+	}
+ 	bank->saved_datain = readl_relaxed(base + bank->regs->datain);
+ 
+ 	if (!bank->enabled_non_wakeup_gpios)
+ 		goto update_gpio_context_count;
+ 
++	/* Check for pending EDGE_FALLING, ignore EDGE_BOTH */
++	mask = bank->enabled_non_wakeup_gpios & bank->context.fallingdetect;
++	mask &= ~bank->context.risingdetect;
++	bank->saved_datain |= mask;
 +
- 	mtu->test_mode = true;
++	/* Check for pending EDGE_RISING, ignore EDGE_BOTH */
++	mask = bank->enabled_non_wakeup_gpios & bank->context.risingdetect;
++	mask &= ~bank->context.fallingdetect;
++	bank->saved_datain &= ~mask;
++
+ 	if (!may_lose_context)
+ 		goto update_gpio_context_count;
  
- 	/* no TX completion interrupt, and need restart platform after test */
-diff --git a/include/uapi/linux/usb/ch9.h b/include/uapi/linux/usb/ch9.h
-index d5a5caec8fbc..545918c83fd1 100644
---- a/include/uapi/linux/usb/ch9.h
-+++ b/include/uapi/linux/usb/ch9.h
-@@ -143,6 +143,11 @@
- #define	TEST_SE0_NAK	3
- #define	TEST_PACKET	4
- #define	TEST_FORCE_EN	5
-+/*
-+ * OTG HNP and SRP REQD
-+ */
-+#define	OTG_SRP_REQD	6
-+#define	OTG_HNP_REQD	7
- 
- /* Status Type */
- #define USB_STATUS_TYPE_STANDARD	0
 -- 
-2.18.0
-
+2.21.0
 
 _______________________________________________
 linux-arm-kernel mailing list
