@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4F65425DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:33:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2961B42628
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 14:43:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UOnUKGn2t8VeZxZNpRJc2mJSEPMlOHgoZc6EGwMeKF8=; b=JLWgNL32k6PiBkTtZytCNDfPo
-	hsgeXnrnGlJz8NtJWVXTrlOzHX4TlftloAq5rtqONOD3Gg61/J9Fb9URg5pVsLh77ypAvaurYPeBA
-	ioz0SxxztmbvYUz14CMG+2KiSGT2xslaQJN9JAxlqWzOJPcuwRfe19zJyCWhrn0f4PHfQrKCS+PCw
-	0kj+Xgr5Aou2w5s8lnYJ/XTTskRdj8PblIeu9zj0Tx9oPgky3D66WGq1OTQXXboj4r8teUeikMUBN
-	Xilh8QpqvHWIWat45d0TPoDlbIldKf013HIdR1MYcRb+mtBglatZ+RAXXeH8h30g1zvL7qrj2oCuO
-	nbwOlhxnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=evTGGpVV5TKvatNJpCPP9PY6kKjtKBJ3BPoMaHjNiGk=; b=txZw4nSd0ogX8X
+	mKUutsfrLj8TQVGBFMZ9LPPr08xqfqkb++0PUjuIdfleZ/KnV6QlP6b394UYlfNVgVIucc6z05AeZ
+	Y4QAZDqcs62z8cuq7pViK8luAXfHMGLj15JyrUJleLap2fx0lP8wcq5ULgLOM7ou4AOoqKcjeTgNJ
+	MwNlYI95MS1MS9X5fQ3jt8OnX6jTbNMyQm1+YoIu6aT+uriW2dDeHE/eOFMVkgOysJ7C1SbyMM6hD
+	H3BMkZyetx9csAD6LmCNLQIJW6yFlt4Qk+LPRVYQOYzv6iqNAvFQppO5l2vZ0evhVd6/KmIIUfpbR
+	ZEHnOJamVOrYns155muQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb2RT-0003Z8-0H; Wed, 12 Jun 2019 12:33:27 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1hb2ay-0007Xl-FY; Wed, 12 Jun 2019 12:43:16 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb2RB-0003Qj-Uo
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:33:14 +0000
-Received: by mail-ed1-f68.google.com with SMTP id w13so25530135eds.4
+ id 1hb2aq-0007XB-81
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 12:43:09 +0000
+Received: by mail-lf1-x142.google.com with SMTP id z15so9287386lfh.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 05:33:09 -0700 (PDT)
+ Wed, 12 Jun 2019 05:43:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=V6vkS5UR633RrFItkYoPggOLkHWdZUqhLnRcNcB2XtY=;
+ b=DWxwBLkLxa7JT3I+1DgXWyreCPEz8X0Ha8jOv9NGq44hFVhu69D4kduMd/7uGxdh2B
+ cIWRCPCq9jJl98wMSvk7YGohrJKFaa4PjW4Fvp5KM5MDKt+1PdvXIPoI1h4fZ95dVbD5
+ TaGctVbxlPdhfCs4/YfxV6Yh9vakovpMQRAO+ShReg9Ik42y2oFyjfGBQwD8ecB8Mx9e
+ KsV3DGPXKQnRi3XO26tvGXvahStPbVMpkwSPPBVvPQeeQqaFZ4WA11sLI2Sgc4bbOkal
+ 7zKsFLYwaJ1Odl/F1Puf5twxvAEC0IhjHtX4SrQulhoxhfrJpiA1XP+ZGVCT+3bexZAM
+ SnOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=/9+BscyBSG8LtxRtL3bsLVsuCvjxfppgNJUSn3pi0BA=;
- b=ZbTuEAocErNhBEI3gAJT6Yfw5pAaBOeYsjX1LWdVVNs1c6NEx6hNcX0C1PizrvqFOY
- rY2+Srn6n8qGrCrzVU7iY3SKRP0otoNLYt8KCTrN8cLrxG0MQJXjwEEovmYjdBHEDTlh
- VO9FNlGS3N9ETk8MR4FiVMGUllPcBeHgM4dIuzzJaLtGq8w1c50HzEChHTZcFy0TRXya
- jyPBxp9n49LoxA8Vr71f8Cj45H1ii0qLlH7LNzUWslyf9nUklDGH1RuGFzhXpa6JnQLP
- qskx0qpqpoYkd6b/yA1Moh+n33iZOqmneXTak/P+41rCFy4anYDkDqrkrfENpLDM9oBT
- 9z2g==
-X-Gm-Message-State: APjAAAV+bNSdD5iJEF2J8nwfYtmWaxM19xfptgpv+zlYgyHMX0uVQlZg
- 0WzQ07n8I+UPtysAXC7+nDo1Xg==
-X-Google-Smtp-Source: APXvYqwH+EIsTHqwWN3f9HxFMK99PgTbuqj4T1Pw/EUS2brCmPFSeeUdToS6/AutI5NLtTDk9/MaKw==
-X-Received: by 2002:a50:b561:: with SMTP id z30mr32633599edd.87.1560342787019; 
- Wed, 12 Jun 2019 05:33:07 -0700 (PDT)
-Received: from shalem.localdomain (84-106-84-65.cable.dynamic.v4.ziggo.nl.
- [84.106.84.65])
- by smtp.gmail.com with ESMTPSA id c21sm2784931ejk.79.2019.06.12.05.33.05
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Wed, 12 Jun 2019 05:33:06 -0700 (PDT)
-Subject: Re: [PATCH 4/5] drm/connector: Split out orientation quirk detection
-To: "dbasehore ." <dbasehore@chromium.org>
-References: <20190611040350.90064-1-dbasehore@chromium.org>
- <20190611040350.90064-5-dbasehore@chromium.org> <87zhmoy270.fsf@intel.com>
- <01636500-0be5-acf8-5f93-a57383bf4b20@redhat.com>
- <CAGAzgsoxpsft-vmVOuKSAbLJqR-EZvcceLpMeWkz6ikJEKGJHg@mail.gmail.com>
-From: Hans de Goede <hdegoede@redhat.com>
-Message-ID: <fe774952-6fd5-b4ec-56c9-32fd30546313@redhat.com>
-Date: Wed, 12 Jun 2019 14:33:05 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=V6vkS5UR633RrFItkYoPggOLkHWdZUqhLnRcNcB2XtY=;
+ b=RrcggVdASpwJLb2NPZC38qSEnAQSA5R2cB9TIkZ5ZtbhpwPMt551Pi27lShWDKlzhq
+ 1fvKE0GzaUjMI3HefrgbkzUmed8H6TVmYwlKSV0TmwEO3BWpaeccauPnM6lndhW/rYW7
+ aggcJlx4x0cSfcA3LPkDBlYggPjItSgW9hzJgV1/GKKrWd9OIu9eJiD8AF+w6VCz5hGw
+ AVY+twZJgBRloWw2Vr9XqCc5G4Sjgm0qxEbY0IP6Phyz68rbSraXgiTJXRSqQC3xkfIf
+ EZWAJsJWWyG7zeTIyVc82m9y16DwibfI6Qlv+3eJOdvbuSxyRXVZsKvbmD6RAMxmsOYS
+ pqfw==
+X-Gm-Message-State: APjAAAWlACNiQ+H8WEQ9ZLz9q9HKChn4bRiZ6m8riqJjDwLuE475Qm+O
+ mEZN6DmL0cjmbz7MNQmK7zk+GvqXOkN8ArRrY33ffA==
+X-Google-Smtp-Source: APXvYqzdmDZbWcjzXKF4+qJgAd8KclcnVSdd+i4vFNoSgCTrLDHUk6WwujykW+79sxKgM6urEsZlcpEXfTd0l81tX9Q=
+X-Received: by 2002:ac2:50c4:: with SMTP id h4mr28043288lfm.61.1560343386199; 
+ Wed, 12 Jun 2019 05:43:06 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAGAzgsoxpsft-vmVOuKSAbLJqR-EZvcceLpMeWkz6ikJEKGJHg@mail.gmail.com>
-Content-Language: en-US
+References: <20190612122557.24158-1-gregkh@linuxfoundation.org>
+ <20190612122557.24158-3-gregkh@linuxfoundation.org>
+In-Reply-To: <20190612122557.24158-3-gregkh@linuxfoundation.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 12 Jun 2019 14:42:54 +0200
+Message-ID: <CACRpkdYC0DJkasyLawUvLWuM4_hE7OWLxaXwwus11Ga8-2+Fdg@mail.gmail.com>
+Subject: Re: [PATCH 3/6] dma: coh901318: no need to cast away call to
+ debugfs_create_file()
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_053310_045925_DC0C53E4 
-X-CRM114-Status: GOOD (  25.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_054308_345438_D59641C1 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,100 +93,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
- =?UTF-8?B?VmlsbGUgU3lyasOkbMOk?= <ville.syrjala@linux.intel.com>,
- David Airlie <airlied@linux.ie>, CK Hu <ck.hu@mediatek.com>,
- devicetree@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- Intel Graphics <intel-gfx@lists.freedesktop.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Jani Nikula <jani.nikula@linux.intel.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Sean Paul <sean@poorly.run>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>
+Cc: dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, Jun 12, 2019 at 2:26 PM Greg Kroah-Hartman
+<gregkh@linuxfoundation.org> wrote:
 
-On 12-06-19 02:16, dbasehore . wrote:
-> On Tue, Jun 11, 2019 at 1:54 AM Hans de Goede <hdegoede@redhat.com> wrote:
->>
->> Hi,
->>
->> On 11-06-19 10:08, Jani Nikula wrote:
->>> On Mon, 10 Jun 2019, Derek Basehore <dbasehore@chromium.org> wrote:
->>>> This removes the orientation quirk detection from the code to add
->>>> an orientation property to a panel. This is used only for legacy x86
->>>> systems, yet we'd like to start using this on devicetree systems where
->>>> quirk detection like this is not needed.
->>>
->>> Not needed, but no harm done either, right?
->>>
->>> I guess I'll defer judgement on this to Hans and Ville (Cc'd).
->>
->> Hmm, I'm not big fan of this change. It adds code duplication and as
->> other models with the same issue using a different driver or panel-type
->> show up we will get more code duplication.
->>
->> Also I'm not convinced that devicetree based platforms will not need
->> this. The whole devicetree as an ABI thing, which means that all
->> devicetree bindings need to be set in stone before things are merged
->> into the mainline, is done solely so that we can get vendors to ship
->> hardware with the dtb files included in the firmware.
-> 
-> We've posted fixes to the devicetree well after the initial merge into
-> mainline before, so I don't see what you mean about the bindings being
-> set in stone.
+> No need to check the return value of debugfs_create_file(), so no need
+> to provide a fake "cast away" of the return value either.
+>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Vinod Koul <vkoul@kernel.org>
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: dmaengine@vger.kernel.org
+> Cc: linux-kernel@vger.kernel.org
+> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
-That was just me repeating the official party line about devicetree.
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-> I also don't really see the point. The devicetree is in
-> the kernel. If there's some setting in the devicetree that we want to
-> change, it's effectively the same to make the change in the devicetree
-> versus some quirk setting. The only difference seems to be that making
-> the change in the devicetree is cleaner.
-
-I agree with you that devicetree in practice is easy to update after
-shipping. But at least whenever I tried to get new bindings reviewed
-I was always told that I was not allowed to count on that.
-
->> I'm 100% sure that there is e.g. ARM hardware out there which uses
->> non upright mounted LCD panels (I used to have a few Allwinner
->> tablets which did this). And given my experience with the quality
->> of firmware bundled tables like ACPI tables I'm quite sure that
->> if we ever move to firmware included dtb files that we will need
->> quirks for those too.
-> 
-> Is there a timeline to start using firmware bundled tables?
-
-Nope, as I said "if we ever move to ...".
-
-> Since the
-> quirk code only uses DMI, it will need to be changed anyways for
-> firmware bundled devicetree files anyways.
-> 
-> We could consolidate the duplicated code into another function that
-> calls drm_get_panel_orientation_quirks too. The only reason it's like
-> it is is because I initially only had the call to
-> drm_get_panel_orientation_quirk once in the code.
-
-Yes if you can add a new helper for the current callers, then
-I'm fine with dropping the quirk handling from
-drm_connector_init_panel_orientation_property()
-
-Regards,
-
-Hans
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
