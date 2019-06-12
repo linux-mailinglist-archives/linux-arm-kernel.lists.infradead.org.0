@@ -2,71 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DBB942C9B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:47:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA35142CAD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 18:50:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4793J+HwEhFcL6cUs16D4kjwWa2tFJS/448p34rLlp8=; b=tp8d64BeRxtBvS
-	D1qJbY5fJy9bqTMHa+13BcxVtStsHCB+c1TfiZM0PW7BQdyhU+nrN99RLzz71rWEFpxjNm9mt8gvF
-	AskLkKwgByOcABP+/pMNF4TWZ/wFWidOlGOPuNnI8qx2efbqRJ2aYqblu1Kg487BgNZZOlEhVbIs/
-	ECNOIEnyn0jAL6C8GDxJQ1DoOLmzfSSkWrS0tVK5zlLZaxS1dSAh7dNqBpWOBog8PJzd80vVlkQBE
-	96VDO/PsW+UFD2vIXYArGGh9gRe42zsr7LbKAe6wslFVEctDfA9l98eI1fd9iW/2/VYzfWjtgZ0vA
-	gpUXNp6yyYBb2TKXmSOw==;
+	List-Owner; bh=7auDdHW5jHIqkwJiDapqQG6/Yz/98pOa9UAVULyTGks=; b=fNH0w2qmWgi/UD
+	/CydblGJnL2GvqIMhJ0MPf3X0sc/B7HgZkJQUEnSCWxPx4ZkmXJW2UkRZwEZlxKAyz5s3HKDR9Svb
+	0aOQePK3apwgDl7axnkomIRM0fqFkVtzK1bV7/Az14hzR9Xo2DR0YD/lI50C6udtqB6WSgzRuxrg9
+	LhmEo5wZYVkumtlib/ZVJHgs3OQVNQ04QyYLZraXOqiZZMDytX3GwLRXoZPQRVHXA20bfuXqjc0sS
+	6sue3gvRe+5e7R1db6aTvkIFmZT6PCKcWbsdxrYQngDcFBjqXD/LuUpWQjf/WSo0BpN+gBtIssfLp
+	dcwWPDf0IzBdC8tBSW8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb6PJ-0004qG-Gi; Wed, 12 Jun 2019 16:47:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hb6S3-0005wd-Jz; Wed, 12 Jun 2019 16:50:19 +0000
+Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb6P3-0004oY-2x
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:47:14 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E1377208C2;
- Wed, 12 Jun 2019 16:47:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560358032;
- bh=kfR8kNGOlTLzBEPDr9tom15y+byntqVAq6C+crySxUc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=LBAJ9MxxtREFIMi+AFW1jouZWiS7hRdNIJgHmr7g+MAL3t5bzE5nb4Hez4x8nOeKM
- lwDFpewKxDJ8oNAXN5b8DfsqhjcvvzX2vymp6hgid31KOw93OkAMExDDWkj+aMG8Jw
- QsFWDLFObaERIw/mf24nSS/Obzokel2lt1mxtnLc=
-Date: Wed, 12 Jun 2019 18:47:09 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Sinan Kaya <Okaya@kernel.org>
-Subject: Re: [PATCH 6/6] dma: qcom: hidma: no need to check return value of
- debugfs_create functions
-Message-ID: <20190612164709.GA31124@kroah.com>
-References: <20190612122557.24158-1-gregkh@linuxfoundation.org>
- <20190612122557.24158-6-gregkh@linuxfoundation.org>
- <8185a8b8-a0ce-4a86-84a2-b51391356052@kernel.org>
- <20190612153948.GA21828@kroah.com>
- <78da53a1-1363-fad8-16fa-4dfc6555f4e4@kernel.org>
+ id 1hb6Rn-0005Mz-BE
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 16:50:04 +0000
+Received: by mail-it1-x141.google.com with SMTP id m187so11918184ite.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Jun 2019 09:50:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JO7k/ClhjVdqToWeoJoYGo3bEt8L7eZPdlH/fBFJuKE=;
+ b=TAKqqn0G/vV3fPY4tZ83gwm2Hw9HhcFNuTbZWx8ZEVBV+cWYI7notKlmymqifBVg2K
+ UxJ+8RwVo6Rfh1vtL1PeTyo1G2+CGMZtjWqMD3+uc4ptB6DaLirqv4mHTZ4+lTG8ZTJR
+ I5kiYgNFvY/BM5i0ScMOqJZcTYeHW0V8yED/t+ZjGMSx9UNTZv6ctv7hNJYwUQg3bNQk
+ xFy57BhPJk5djKA90xszJx6puysAkve14K0hmshn6HRpzXFiqydO4+tAAY8l3haT0TDc
+ +xNDCUiviVVzv02/Pry2QOdhYSk7jzMs/+76pAzdzeK7Lj8k47qc9C7EYRdlVPRjmzOx
+ jK7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JO7k/ClhjVdqToWeoJoYGo3bEt8L7eZPdlH/fBFJuKE=;
+ b=GRVeAVS0rVF4CH8/N0b3Sc2gN4rAOtiTIYAgYGKSJz0pT/Bbq/UsGFbr5KL0LO8u4f
+ WX/x6RwFZq15ziGfj2e5WW3EmJxpR3+LwnRN7S2+eGLa7cvdysmpshYUbuYCj4J0IHqM
+ qytbKqtTFZyAQagrspoz8MXUHLggmaeT5Tm+/HcPO8y4eyAPpJ85/ra1yf6crkwjUFjs
+ p6RnJXq6Dewk8mDGnz5XrPqQlFVkV/UIEPTVI1ntceJlxk4+z1LLLYjigHwExZTlqkMS
+ 6eVPXffZ9lPIzzR7RG4wWOYybZxNISaKwCUiykHbbl5UqhrM/3ZuQkegM09xJMdY5E0i
+ ohQQ==
+X-Gm-Message-State: APjAAAVy3OebzSqCnbKdK9vxXN+RkVd2/lJvbLmtpOGX+YXR7zfFWeUH
+ +eVrlLvSiVABGFmHKgqxC9B3q8O4zpT3jSEtOBw=
+X-Google-Smtp-Source: APXvYqzmcfhx2XovBMaT4tzSeJzeAp9gWzVe5Ka/LFGHFQ3luDfFcddrL85N1pCbOWHmvK/gBAL8MuEcLAeoFSfQ9EQ=
+X-Received: by 2002:a05:660c:8c5:: with SMTP id g5mr64709itl.40.1560358202002; 
+ Wed, 12 Jun 2019 09:50:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <78da53a1-1363-fad8-16fa-4dfc6555f4e4@kernel.org>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+References: <20190525181329.18657-1-tiny.windzz@gmail.com>
+ <20190525181329.18657-2-tiny.windzz@gmail.com>
+ <CA+E=qVdh1E8Y7dZO0JSS4DJE2bo=98MuSKRt7nmeFg-td7Ua9Q@mail.gmail.com>
+ <CAEExFWtjNridLsMXOnBe2mJOPhUOYJ6G3wGF3gx=0oQoQROOGg@mail.gmail.com>
+ <CA+E=qVeOSw=_z4OiQ4++z8g-KN29UYVXGicNd3PtHobg4xaG+w@mail.gmail.com>
+In-Reply-To: <CA+E=qVeOSw=_z4OiQ4++z8g-KN29UYVXGicNd3PtHobg4xaG+w@mail.gmail.com>
+From: Frank Lee <tiny.windzz@gmail.com>
+Date: Thu, 13 Jun 2019 00:49:50 +0800
+Message-ID: <CAEExFWs58UNcVcQNnwK3dk5cpmfQRnjdRWAmYs5M1t_ONr1Bpw@mail.gmail.com>
+Subject: Re: [PATCH v3 1/3] thermal: sun8i: add thermal driver for h6
+To: Vasily Khoruzhick <anarsoul@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_094713_166243_4C19A565 
-X-CRM114-Status: GOOD (  13.94  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190612_095003_406613_B422BBD0 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,45 +97,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- David Brown <david.brown@linaro.org>, vkoul@kernel.org,
- Andy Gross <agross@kernel.org>, dmaengine@vger.kernel.org,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, rui.zhang@intel.com,
+ paulmck@linux.ibm.com, "David S. Miller" <davem@davemloft.net>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 12:17:31PM -0400, Sinan Kaya wrote:
-> On 6/12/2019 11:39 AM, Greg Kroah-Hartman wrote:
-> >> Interesting. Wouldn't debugfs_create_file() blow up if dir is NULL
-> >> for some reason?
-> > It will create a file in the root of debugfs.  But how will that happen?
-> > debugfs_create_dir() can not return NULL.
-> 
-> I see.
-> 
-> > 
-> >> +		debugfs_create_file("stats", S_IRUGO, dir, chan,
-> >> +				    &hidma_chan_fops);
-> >>
-> >> Note that code ignores the return value of hidma_debug_init();
-> >> It was just trying to do clean up on debugfs failure by calling
-> >>
-> >> 	debugfs_remove_recursive(dmadev->debugfs);
-> > Is that a problem?
-> 
-> I just wanted to double check. You probably want to remove the return
-> value on debugfs_create_file() to prevent others from doing the same
-> thing.
+> If you have a git tree I'll be happy to contribute A64 support. IIRC
+> it was quite similar to H3.
 
-That is my long-term goal, I have a ways to go still :)
+I built a ths branch and I will do some work later.
 
-> Acked-by: Sinan Kaya <okaya@kernel.org>
-
-Great, thanks for the review.
-
-greg k-h
+https://github.com/TinyWindzz/linux/tree/ths
 
 _______________________________________________
 linux-arm-kernel mailing list
