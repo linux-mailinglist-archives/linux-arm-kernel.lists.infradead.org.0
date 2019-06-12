@@ -2,51 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4FB9420DA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 11:32:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43C57420E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 11:33:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LDHaj1p5ReVZIdzenBvdiOP8ke+8gXY5dR4qNffPFfw=; b=H1yzyNIc5Hcrzs
-	9yvfKQpD6gfdO0MhiLh+2054wpsdl/30FuHGjHLgtS7tkbiIeUXYAfmw6ftCvJWLo1KsEN5idrV62
-	/zFv3dvrlerHPcHjx/MRnciPFBRZcZrL1CrVJpoJkji3F/LcWsrW4VONUSHyVoLEZPhfriFvt8IXU
-	xhP+8XDoMskGSXj+9dmrmbChtNpRgaQYU9q4jua2k6Gpp2XTsfFnMdJW++83NnuHHihbRHTmELFvS
-	n5iKGjJ1h5VR0xpQawoqGYgRK7uZAv0807aE55oxbphazedtQRd/3Y29Gal1xtHbCjZzFoG5pVh70
-	EPtR4yIl/wlRGA2Oam/A==;
+	List-Owner; bh=E2btdNtLR1SpiZNld0+qP8ova5zk1hr6ryK9afiBwDA=; b=L7DTrWj0GDw8E7
+	+/dInLaLwxf7SGPF5mUwD0XszhT/G6MkpqdRolm0aB46VVO9D8bqyrBOv9fiwp3R9WFtaCYRZ5X7F
+	DFl8OwM4cfpfOW0wsGPkC6zz7TLLXYmQ816nUcBbQNwvyo0vJsHcWBoU1HnJSF/FUQxwUeyophOI1
+	5M2cTw8HtT3DTMQIOQdyLBNZlYXuTR7iH3ddHjJB1gjKfq+/ENhvZnZ0n61X+9KxmwRvzRhJZDFK0
+	RKN/OkVl7h4gYt22zqTzwmD8ZBBi5AoVXERInCyzt/KgVD/84RTU4Skc2PfonpNYLD0NCFGjAnHWB
+	UIFCy8nv4MDa7kCi9K9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hazcb-0003Fv-4Z; Wed, 12 Jun 2019 09:32:45 +0000
+	id 1hazdc-0003oG-Tp; Wed, 12 Jun 2019 09:33:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hazcA-0003D2-Du
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 09:32:20 +0000
+ id 1hazdQ-0003nv-VR
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 09:33:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C99828;
- Wed, 12 Jun 2019 02:32:18 -0700 (PDT)
-Received: from c02tf0j2hf1t.cambridge.arm.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C6AAD3F246;
- Wed, 12 Jun 2019 02:32:04 -0700 (PDT)
-Date: Wed, 12 Jun 2019 10:32:00 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v16 02/16] arm64: untag user pointers in access_ok and
- __uaccess_mask_ptr
-Message-ID: <20190612093158.GG10165@c02tf0j2hf1t.cambridge.arm.com>
-References: <cover.1559580831.git.andreyknvl@google.com>
- <4327b260fb17c4776a1e3c844f388e4948cfb747.1559580831.git.andreyknvl@google.com>
- <20190610175326.GC25803@arrakis.emea.arm.com>
- <20190611145720.GA63588@arrakis.emea.arm.com>
- <d3dc2b1f-e8c9-c60d-f648-0bc9b08f20e4@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9275228;
+ Wed, 12 Jun 2019 02:33:36 -0700 (PDT)
+Received: from brain-police (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 82CCF3F246;
+ Wed, 12 Jun 2019 02:33:34 -0700 (PDT)
+Date: Wed, 12 Jun 2019 10:33:31 +0100
+From: Will Deacon <will.deacon@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v2] arm64: Don't unconditionally add -Wno-psabi to
+ KBUILD_CFLAGS
+Message-ID: <20190612093331.GB11554@brain-police>
+References: <20190607161201.73430-1-natechancellor@gmail.com>
+ <20190611171931.99705-1-natechancellor@gmail.com>
+ <20190612092519.GP28398@e103592.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d3dc2b1f-e8c9-c60d-f648-0bc9b08f20e4@arm.com>
-User-Agent: Mutt/1.11.2 (2019-01-07)
+In-Reply-To: <20190612092519.GP28398@e103592.cambridge.arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_023218_594749_565BFA2A 
-X-CRM114-Status: GOOD (  17.83  )
+X-CRM114-CacheID: sfid-20190612_023337_056339_ACBB54D4 
+X-CRM114-Status: GOOD (  14.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,120 +63,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, linux-mm@kvack.org,
- Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
- linux-kselftest@vger.kernel.org, Jacob Bramley <Jacob.Bramley@arm.com>,
- Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
- Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Kostya Serebryany <kcc@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, Qian Cai <cai@lca.pw>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vincenzo,
-
-On Tue, Jun 11, 2019 at 06:09:10PM +0100, Vincenzo Frascino wrote:
-> > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> > index 3767fb21a5b8..69d0be1fc708 100644
-> > --- a/arch/arm64/kernel/process.c
-> > +++ b/arch/arm64/kernel/process.c
-> > @@ -30,6 +30,7 @@
-> >  #include <linux/kernel.h>
-> >  #include <linux/mm.h>
-> >  #include <linux/stddef.h>
-> > +#include <linux/sysctl.h>
-> >  #include <linux/unistd.h>
-> >  #include <linux/user.h>
-> >  #include <linux/delay.h>
-> > @@ -323,6 +324,7 @@ void flush_thread(void)
-> >  	fpsimd_flush_thread();
-> >  	tls_thread_flush();
-> >  	flush_ptrace_hw_breakpoint(current);
-> > +	clear_thread_flag(TIF_TAGGED_ADDR);
-> 
-> Nit: in line we the other functions in thread_flush we could have something like
-> "tagged_addr_thread_flush", maybe inlined.
-
-The other functions do a lot more than clearing a TIF flag, so they
-deserved their own place. We could do this when adding MTE support. I
-think we also need to check what other TIF flags we may inadvertently
-pass on execve(), maybe have a mask clearing.
-
-> > diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
-> > index 094bb03b9cc2..2e927b3e9d6c 100644
-> > --- a/include/uapi/linux/prctl.h
-> > +++ b/include/uapi/linux/prctl.h
-> > @@ -229,4 +229,9 @@ struct prctl_mm_map {
-> >  # define PR_PAC_APDBKEY			(1UL << 3)
-> >  # define PR_PAC_APGAKEY			(1UL << 4)
+On Wed, Jun 12, 2019 at 10:25:20AM +0100, Dave Martin wrote:
+> On Tue, Jun 11, 2019 at 10:19:32AM -0700, Nathan Chancellor wrote:
+> > v1 -> v2:
+> > 
+> > * Improve commit message explanation, I wasn't entirely happy with the
+> >   first one; let me know if there are any issues/questions.
+> > 
+> > * Carry forward Dave's ack and Nick's review (let me know if you
+> >   disagree with the commit messasge rewording).
+> > 
+> >  arch/arm64/Makefile | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> > index 8fbd583b18e1..e9d2e578cbe6 100644
+> > --- a/arch/arm64/Makefile
+> > +++ b/arch/arm64/Makefile
+> > @@ -51,7 +51,7 @@ endif
 > >  
-> > +/* Tagged user address controls for arm64 */
-> > +#define PR_SET_TAGGED_ADDR_CTRL		55
-> > +#define PR_GET_TAGGED_ADDR_CTRL		56
-> > +# define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
-> > +
-> >  #endif /* _LINUX_PRCTL_H */
-> > diff --git a/kernel/sys.c b/kernel/sys.c
-> > index 2969304c29fe..ec48396b4943 100644
-> > --- a/kernel/sys.c
-> > +++ b/kernel/sys.c
-> > @@ -124,6 +124,12 @@
-> >  #ifndef PAC_RESET_KEYS
-> >  # define PAC_RESET_KEYS(a, b)	(-EINVAL)
-> >  #endif
-> > +#ifndef SET_TAGGED_ADDR_CTRL
-> > +# define SET_TAGGED_ADDR_CTRL(a)	(-EINVAL)
-> > +#endif
-> > +#ifndef GET_TAGGED_ADDR_CTRL
-> > +# define GET_TAGGED_ADDR_CTRL()		(-EINVAL)
-> > +#endif
+> >  KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)
+> >  KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
+> > -KBUILD_CFLAGS	+= -Wno-psabi
+> > +KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
+> >  KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst)
 > >  
-> >  /*
-> >   * this is where the system-wide overflow UID and GID are defined, for
-> > @@ -2492,6 +2498,16 @@ SYSCALL_DEFINE5(prctl, int, option, unsigned long, arg2, unsigned long, arg3,
-> >  			return -EINVAL;
-> >  		error = PAC_RESET_KEYS(me, arg2);
-> >  		break;
-> > +	case PR_SET_TAGGED_ADDR_CTRL:
-> > +		if (arg3 || arg4 || arg5)
-> > +			return -EINVAL;
-> > +		error = SET_TAGGED_ADDR_CTRL(arg2);
-> > +		break;
-> > +	case PR_GET_TAGGED_ADDR_CTRL:
-> > +		if (arg2 || arg3 || arg4 || arg5)
-> > +			return -EINVAL;
-> > +		error = GET_TAGGED_ADDR_CTRL();
-> > +		break;
+> >  KBUILD_CFLAGS	+= $(call cc-option,-mabi=lp64)
 > 
-> Why do we need two prctl here? We could have only one and use arg2 as set/get
-> and arg3 as a parameter. What do you think?
+> Looks OK to me.  Thanks for the additional explanation.
 
-This follows the other PR_* options, e.g. PR_SET_VL/GET_VL,
-PR_*_FP_MODE. We will use other bits in arg2, for example to set the
-precise vs imprecise MTE trapping.
+I'd already queued the previous version, but somehow forgotten to push it
+out. I'll push this one out instead later today.
 
--- 
-Catalin
+Cheers,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
