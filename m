@@ -2,60 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FD174367D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:26:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6231042AFE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 17:36:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=paXubJQ4PYCIag+vbygZanmBRlQY90XWCi5oDfyDiQo=; b=rXGQsFokQ6aRXAycxke03nPFG
-	6aEWbd6HACHP+23wIrLVinJG4pH5fLhzSOxuQAaDDxBhLKg5XXfY1DSofYwTzG6CBvYjqkMZ9hfUf
-	26PRQPovtuntJoybKizxZph1vsO1Qj4fCsyIQ+VasxUuxRz3KEZz7CMml6ElTzhtGzABTSy84r5tL
-	eUB2BYAjBQ4wWnbvaox8n4ufBd9h/w5yYLlH68JfFd9KScKuUtlEtA1eG0+FUUlRN5W5mFZmxtnAB
-	1BQX+aOxVxGLr0qcz421L3qQQ1BIvRSVy78qA/zadszKxU1hCRHE1lTad8RxOLFzj4ZRpoa/Z5dE/
-	ty+XPEmuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WvQFWC0hGHEpH8iPdNTwwkcDXJHjOth+8N99JpfoJp4=; b=ojJLbNs6xHYT8v
+	nOlgkVLGN07CyCQj8iDQiqHlED9FWEuvXCS5JuR2/sC0kykBnXFYBozpmQYJjMdYZZoVD5YSkOVV2
+	nUtOK4J3zLH93CXxN1CxJhUJkUDsh0s5hER2WMmBg6WdWl+hhvUHJu8NOFW+6gU0Y8PWexLT1tLs3
+	SqY9DaogX/woG7NtoLRlg5Klmi7qBn44bV/3wrXiAFwh4LQLHIprCLZkewrY7e8wtItfZD9BASztC
+	zdvtpcBaaYKc8Q6gbhiK2zmtdr+iPNYArDXUn5OWI/lKDgr+f+zZO7x5iiuBVOpngAPvzDjpF31sN
+	+aKp16vRdwlfIfn1MLnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbPki-0003Wc-0v; Thu, 13 Jun 2019 13:26:52 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbPjv-0003FW-9k
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:26:05 +0000
-X-Originating-IP: 90.88.159.246
-Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
- [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id B10E040003;
- Thu, 13 Jun 2019 13:25:51 +0000 (UTC)
-Date: Wed, 12 Jun 2019 17:34:23 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Torsten Duwe <duwe@lst.de>
-Subject: Re: [PATCH v2 7/7] arm64: dts: allwinner: a64: enable ANX6345 bridge
- on Teres-I
-Message-ID: <20190612153423.jjcxsturjip3pn56@flea>
-References: <20190604122150.29D6468B05@newverein.lst.de>
- <20190604122308.98D4868B20@newverein.lst.de>
- <CA+E=qVckHLqRngsfK=AcvstrD0ymEfRkYyhS_kBtZ3YWdE3L=g@mail.gmail.com>
- <20190605101317.GA9345@lst.de>
- <20190605120237.ekmytfxcwbjaqy3x@flea>
- <E1hYsvP-0000PY-Pz@stardust.g4.wien.funkfeuer.at>
- <20190607062802.m5wslx3imiqooq5a@flea>
- <20190607094030.GA12373@lst.de>
+	id 1hb5I5-0003yd-JQ; Wed, 12 Jun 2019 15:35:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb5Hy-0003yC-Gr
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 15:35:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DFFE7337;
+ Wed, 12 Jun 2019 08:35:49 -0700 (PDT)
+Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C44B63F73C;
+ Wed, 12 Jun 2019 08:35:46 -0700 (PDT)
+Date: Wed, 12 Jun 2019 16:35:39 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v4 1/2] arm64: Define
+ Documentation/arm64/tagged-address-abi.txt
+Message-ID: <20190612153538.GL28951@C02TF0J2HF1T.local>
+References: <cover.1560339705.git.andreyknvl@google.com>
+ <20190612142111.28161-1-vincenzo.frascino@arm.com>
+ <20190612142111.28161-2-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190607094030.GA12373@lst.de>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190612142111.28161-2-vincenzo.frascino@arm.com>
+User-Agent: Mutt/1.11.2 (2019-01-07)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_062603_704807_47DA970D 
-X-CRM114-Status: GOOD (  23.72  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190612_083550_649027_C203BC1F 
+X-CRM114-Status: GOOD (  31.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
- 0.8 DATE_IN_PAST_12_24     Date: is 12 to 24 hours before Received: date
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,124 +63,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Harald Geyer <harald@ccbib.org>,
- Sean Paul <seanpaul@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- arm-linux <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============5838902495977200929=="
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>, linux-kselftest@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Vincenzo,
 
---===============5838902495977200929==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="l4e2w5m2mlsciqb7"
-Content-Disposition: inline
+Some minor comments below but it looks fine to me overall. Cc'ing
+Szabolcs as well since I'd like a view from the libc people.
 
+On Wed, Jun 12, 2019 at 03:21:10PM +0100, Vincenzo Frascino wrote:
+> diff --git a/Documentation/arm64/tagged-address-abi.txt b/Documentation/arm64/tagged-address-abi.txt
+> new file mode 100644
+> index 000000000000..96e149e2c55c
+> --- /dev/null
+> +++ b/Documentation/arm64/tagged-address-abi.txt
+> @@ -0,0 +1,111 @@
+> +ARM64 TAGGED ADDRESS ABI
+> +========================
+> +
+> +This document describes the usage and semantics of the Tagged Address
+> +ABI on arm64.
+> +
+> +1. Introduction
+> +---------------
+> +
+> +On arm64 the TCR_EL1.TBI0 bit has been always enabled on the arm64 kernel,
+> +hence the userspace (EL0) is allowed to set a non-zero value in the top
 
---l4e2w5m2mlsciqb7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+I'd be clearer here: "userspace (EL0) is allowed to perform a user
+memory access through a 64-bit pointer with a non-zero top byte" (or
+something along the lines). Otherwise setting a non-zero top byte is
+allowed on any architecture, dereferencing it is a problem.
 
-On Fri, Jun 07, 2019 at 11:40:30AM +0200, Torsten Duwe wrote:
-> On Fri, Jun 07, 2019 at 08:28:02AM +0200, Maxime Ripard wrote:
-> > On Thu, Jun 06, 2019 at 03:59:27PM +0200, Harald Geyer wrote:
-> > >
-> > > If think valid compatible properties would be:
-> > > compatible = "innolux,n116bge", "simple-panel";
-> > > compatible = "edp-connector", "simple-panel";
-> >
-> > A connector isn't a panel.
-> >
-> > > compatible = "innolux,n116bge", "edp-connector", "simple-panel";
-> >
-> > And the innolux,n116bge is certainly not a connector either.
-> >
-> > > compatible = "edp-connector", "innolux,n116bge", "simple-panel";
-> > >
-> > > I can't make up my mind which one I prefere. However neither of these
-> > > variants requires actually implmenting an edp-connector driver.
-> >
-> > No-one asked to do an edp-connector driver. You should use it in your
-> > DT, but if you want to have some code in your driver that parses the
-> > DT directly, I'm totally fine with that.
->
-> I must admit I fail to understand what that extra node would be good for.
-> Logically, the eDP far side is connected to the well-known n116bge.
-> Inside the laptop case it might as well be a flat ribbon cable or
-> soldered directly.
-> In good intention, that's all I wanted to express in the DT. I don't
-> know whether the relevant mechanical dimensions of the panel and the
-> connector are standardised, so whether one could in theory assemble it
-> with a different panel than the one it came with.
+> +byte but the resulting pointers are not allowed at the user-kernel syscall
+> +ABI boundary.
+> +
+> +This document describes a relaxation of the ABI with which it is possible
 
-Because the panel that comes with the Teres-I is always the
-same. However, that's not true for all the devices out there using the
-bridge, starting with the pinebook.
+"relaxation of the ABI that makes it possible to..."
 
-> OTOH, as I checked during the discussion with anarsoul, the panel's
-> supply voltage is permanently connected to the main 3.3V rail.
+> +to pass tagged tagged pointers to the syscalls, when these pointers are in
+> +memory ranges obtained as described in paragraph 2.
 
-Again, that may be the case on the Teres-I, but not necessarily on
-other boards.
+"section 2" is better. There are a lot more paragraphs.
 
-> We already agreed that the eDP output port must not neccessarily be
-> specified, this setup is a good example why: because the panel is
-> always powered, the anx6345 can always pull valid EDID data from it
-> so at this stage there's no need for any OS driver to reach beyond
-> the bridge. IIRC even the backlight got switched off for the blank
-> screen without.
+> +
+> +Since it is not desirable to relax the ABI to allow tagged user addresses
+> +into the kernel indiscriminately, arm64 provides a new sysctl interface
+> +(/proc/sys/abi/tagged_addr) that is used to prevent the applications from
+> +enabling the relaxed ABI and a new prctl() interface that can be used to
+> +enable or disable the relaxed ABI.
+> +
+> +The sysctl is meant also for testing purposes in order to provide a simple
+> +way for the userspace to verify the return error checking of the prctl()
+> +command without having to reconfigure the kernel.
+> +
+> +The ABI properties are inherited by threads of the same application and
+> +fork()'ed children but cleared when a new process is spawn (execve()).
 
-That's not really the outcome of the discussion we had here though:
-https://patchwork.freedesktop.org/patch/305035/
+"spawned".
 
-> All I wanted to say is that "there's usually an n116bge behind it";
-> but this is mostly redundant.
->
-> So, shall we just drop the output port specification (along with the
-> panel node) in order to get one step further?
+I guess you could drop these three paragraphs here and mention the
+inheritance properties when introducing the prctl() below. You can also
+mention the global sysctl switch after the prctl() was introduced.
 
-Depending on the outcome of the discussion above, yes or no :)
+> +
+> +2. ARM64 Tagged Address ABI
+> +---------------------------
+> +
+> +From the kernel syscall interface prospective, we define, for the purposes
+> +of this document, a "valid tagged pointer" as a pointer that either it has
 
-Maxime
+"either has" (no 'it') sounds slightly better but I'm not a native
+English speaker either.
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+> +a zero value set in the top byte or it has a non-zero value, it is in memory
+> +ranges privately owned by a userspace process and it is obtained in one of
+> +the following ways:
+> +  - mmap() done by the process itself, where either:
+> +    * flags = MAP_PRIVATE | MAP_ANONYMOUS
+> +    * flags = MAP_PRIVATE and the file descriptor refers to a regular
+> +      file or "/dev/zero"
+> +  - a mapping below sbrk(0) done by the process itself
+> +  - any memory mapped by the kernel in the process's address space during
+> +    creation and following the restrictions presented above (i.e. data, bss,
+> +    stack).
+> +
+> +The ARM64 Tagged Address ABI is an opt-in feature, and an application can
+> +control it using the following prctl()s:
+> +  - PR_SET_TAGGED_ADDR_CTRL: can be used to enable the Tagged Address ABI.
 
---l4e2w5m2mlsciqb7
-Content-Type: application/pgp-signature; name="signature.asc"
+enable or disable (not sure we need the latter but it doesn't heart).
 
------BEGIN PGP SIGNATURE-----
+I'd add the arg2 description here as well.
 
-iHQEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXQEbfwAKCRDj7w1vZxhR
-xXboAP9taP8cVAug0AmgG1n+5b7orZtPN+yeWqkQV/4rx6fcdgD3Tma8ZrLudyMc
-SNeQDRS8FMpPCWr42VcLCNdIMRk6CA==
-=j/Ze
------END PGP SIGNATURE-----
+> +  - PR_GET_TAGGED_ADDR_CTRL: can be used to check the status of the Tagged
+> +                             Address ABI.
+> +
+> +As a consequence of invoking PR_SET_TAGGED_ADDR_CTRL prctl() by an applications,
+> +the ABI guarantees the following behaviours:
+> +
+> +  - Every current or newly introduced syscall can accept any valid tagged
+> +    pointers.
+> +
+> +  - If a non valid tagged pointer is passed to a syscall then the behaviour
+> +    is undefined.
+> +
+> +  - Every valid tagged pointer is expected to work as an untagged one.
+> +
+> +  - The kernel preserves any valid tagged pointers and returns them to the
+> +    userspace unchanged in all the cases except the ones documented in the
+> +    "Preserving tags" paragraph of tagged-pointers.txt.
 
---l4e2w5m2mlsciqb7--
+I'd think we need to qualify the context here in which the kernel
+preserves the tagged pointers. Did you mean on the syscall return?
 
+> +
+> +A definition of the meaning of tagged pointers on arm64 can be found in:
+> +Documentation/arm64/tagged-pointers.txt.
+> +
+> +3. ARM64 Tagged Address ABI Exceptions
+> +--------------------------------------
+> +
+> +The behaviours described in paragraph 2, with particular reference to the
 
---===============5838902495977200929==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+"section 2"
+
+> +acceptance by the syscalls of any valid tagged pointer are not applicable
+> +to the following cases:
+> +  - mmap() addr parameter.
+> +  - mremap() new_address parameter.
+> +  - prctl_set_mm() struct prctl_map fields.
+> +  - prctl_set_mm_map() struct prctl_map fields.
+> +
+> +4. Example of correct usage
+> +---------------------------
+> +
+> +void main(void)
+> +{
+> +	static int tbi_enabled = 0;
+> +	unsigned long tag = 0;
+> +
+> +	char *ptr = mmap(NULL, PAGE_SIZE, PROT_READ | PROT_WRITE,
+> +			 MAP_ANONYMOUS, -1, 0);
+> +
+> +	if (prctl(PR_SET_TAGGED_ADDR_CTRL, PR_TAGGED_ADDR_ENABLE,
+> +		  0, 0, 0) == 0)
+> +		tbi_enabled = 1;
+> +
+> +	if (!ptr)
+> +		return -1;
+> +
+> +	if (tbi_enabled)
+> +		tag = rand() & 0xff;
+> +
+> +	ptr = (char *)((unsigned long)ptr | (tag << TAG_SHIFT));
+> +
+> +	*ptr = 'a';
+> +
+> +	...
+> +}
+> +
+> -- 
+> 2.21.0
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5838902495977200929==--
-
