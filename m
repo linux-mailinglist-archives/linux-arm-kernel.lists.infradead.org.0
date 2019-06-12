@@ -2,58 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BC4842927
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:30:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B8E14293F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 16:31:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ER8D55KarRy/irByLw0wMTiCA9brmAcK5m6AgJRoVPc=; b=gXRNgHssr0/+yY
-	YnTbjykfRMN5U4Iy75rlUR+Jg4etoYQCWyNGB1R/dr91ynqbEyw65rClnWrhRlAN+dJQ02rdmJSRl
-	2inetJDgh8qEYV4IynI8rUW2D0Q2o4HOYa3RyoCjolWiAZaRk0Z/YJtdH7QOo1Xq/MQZth9KzBZkX
-	mDURkCnibHOAsfU2wMzHmEzuOQidO9bKGjge+Vm2/xm5vQvUiju4ceAYmlopCRw2lFi+oxURqP1QA
-	yk9XLc0b1x3pXrCpNrXtLeyUZ1epGb8l8b1NHgQu9ihWTX57zXKsd8wd7j94iBScX3ui0NEv3j6qJ
-	OVRupLyK3Lx/flbKvIkg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FIto5EGPtLz4rzghpUj1I2P6PmhWjOOG7dRN0191HMQ=; b=UShu4x7GeZ435M
+	pxuGL69dNpSagvvpTyM+hzZJ8ov/QLNqPbJz4YvKbB08960/juuMc2BOykIEaTAPCb5OFQDEx+thg
+	H07Q2NIK2/pDALggDs7SjB9PWYP2NsazMGvAaZCWSXgxg8AzVMiZ6JUJd/5jvaVC7QTfmFzyMi+xX
+	oFUZGOEQs8wFMpK5FfotJtga1RcUWgMzyP+/0L+vDubyFZL4edIc7yX57yRYAJ6BQGY3Qylq5BaWQ
+	8vkZXT2grwhNLKMx48DkR2zN+3qOs7AWL692/vdtK5AGQsyoqg72oHudDB/7uAv9p12cyT9jipzNu
+	khazr8Rw7/haTlMNDDOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb4GU-0007kO-Tl; Wed, 12 Jun 2019 14:30:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hb4Eg-0006Gm-T7
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:28:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EFE382B;
- Wed, 12 Jun 2019 07:28:21 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E45733F557;
- Wed, 12 Jun 2019 07:28:16 -0700 (PDT)
-Subject: Re: [PATCH v17 02/15] lib, arm64: untag user pointers in strn*_user
-To: Andrey Konovalov <andreyknvl@google.com>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, linux-rdma@vger.kernel.org,
- linux-media@vger.kernel.org, kvm@vger.kernel.org,
- linux-kselftest@vger.kernel.org
-References: <cover.1560339705.git.andreyknvl@google.com>
- <a76c014f9b12a082d31ef1459907cabdab78491e.1560339705.git.andreyknvl@google.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <0bbc5f4f-9812-463c-48c1-4929bef801da@arm.com>
-Date: Wed, 12 Jun 2019 15:28:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1hb4Hv-000291-QC; Wed, 12 Jun 2019 14:31:43 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb4HL-0001q3-48
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 14:31:09 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.63,366,1557212400"; d="scan'208";a="37046409"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 12 Jun 2019 07:30:17 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex01.mchp-main.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 12 Jun 2019 07:30:17 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex02.mchp-main.com
+ (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Wed, 12 Jun 2019 07:30:16 -0700
+Date: Wed, 12 Jun 2019 16:29:17 +0200
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>
+Subject: Re: [PATCH] clk: at91: generated: Truncate divisor to
+ GENERATED_MAX_DIV + 1
+Message-ID: <20190612142917.sbpks6nhf7fy6rk6@M43218.corp.atmel.com>
+Mail-Followup-To: Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>,
+ Codrin Ciubotariu - M19940 <Codrin.Ciubotariu@microchip.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+References: <20190610151712.16572-1-codrin.ciubotariu@microchip.com>
+ <7306f2c5-e035-31d1-194e-6b4afb6a61c1@microchip.com>
 MIME-Version: 1.0
-In-Reply-To: <a76c014f9b12a082d31ef1459907cabdab78491e.1560339705.git.andreyknvl@google.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <7306f2c5-e035-31d1-194e-6b4afb6a61c1@microchip.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_072823_077724_9277EE9C 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_073107_225782_7AD71FA6 
+X-CRM114-Status: GOOD (  15.55  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,103 +99,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Kostya Serebryany <kcc@google.com>, Khalid Aziz <khalid.aziz@oracle.com>,
- Felix Kuehling <Felix.Kuehling@amd.com>, Jacob Bramley <Jacob.Bramley@arm.com>,
- Leon Romanovsky <leon@kernel.org>, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, Dave Martin <Dave.Martin@arm.com>,
- Evgeniy Stepanov <eugenis@google.com>, Kevin Brodsky <kevin.brodsky@arm.com>,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Dmitry Vyukov <dvyukov@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yishai Hadas <yishaih@mellanox.com>,
- Jens Wiklander <jens.wiklander@linaro.org>, Lee Smith <Lee.Smith@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Christian Koenig <Christian.Koenig@amd.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Codrin Ciubotariu - M19940 <Codrin.Ciubotariu@microchip.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/06/2019 12:43, Andrey Konovalov wrote:
-> This patch is a part of a series that extends arm64 kernel ABI to allow to
-> pass tagged user pointers (with the top byte set to something else other
-> than 0x00) as syscall arguments.
+On Wed, Jun 12, 2019 at 03:54:00PM +0200, Nicolas Ferre - M43238 wrote:
+> On 10/06/2019 at 17:20, Codrin Ciubotariu - M19940 wrote:
+> > From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> > 
+> > In clk_generated_determine_rate(), if the divisor is greater than
+> > GENERATED_MAX_DIV + 1, then the wrong best_rate will be returned.
+> > If clk_generated_set_rate() will be called later with this wrong
+> > rate, it will return -EINVAL, so the generated clock won't change
+> > its value. Do no let the divisor be greater than GENERATED_MAX_DIV + 1.
+> > 
+> > Fixes: 8c7aa6328947 ("clk: at91: clk-generated: remove useless divisor loop")
+> > Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 > 
-> strncpy_from_user and strnlen_user accept user addresses as arguments, and
-> do not go through the same path as copy_from_user and others, so here we
-> need to handle the case of tagged user addresses separately.
-> 
-> Untag user pointers passed to these functions.
-> 
-> Note, that this patch only temporarily untags the pointers to perform
-> validity checks, but then uses them as is to perform user memory accesses.
-> 
-> Reviewed-by: Khalid Aziz <khalid.aziz@oracle.com>
-> Acked-by: Kees Cook <keescook@chromium.org>
-> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
+> Yes:
+> Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
 
-Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 
-> ---
->  lib/strncpy_from_user.c | 3 ++-
->  lib/strnlen_user.c      | 3 ++-
->  2 files changed, 4 insertions(+), 2 deletions(-)
-> 
-> diff --git a/lib/strncpy_from_user.c b/lib/strncpy_from_user.c
-> index 023ba9f3b99f..dccb95af6003 100644
-> --- a/lib/strncpy_from_user.c
-> +++ b/lib/strncpy_from_user.c
-> @@ -6,6 +6,7 @@
->  #include <linux/uaccess.h>
->  #include <linux/kernel.h>
->  #include <linux/errno.h>
-> +#include <linux/mm.h>
->  
->  #include <asm/byteorder.h>
->  #include <asm/word-at-a-time.h>
-> @@ -108,7 +109,7 @@ long strncpy_from_user(char *dst, const char __user *src, long count)
->  		return 0;
->  
->  	max_addr = user_addr_max();
-> -	src_addr = (unsigned long)src;
-> +	src_addr = (unsigned long)untagged_addr(src);
->  	if (likely(src_addr < max_addr)) {
->  		unsigned long max = max_addr - src_addr;
->  		long retval;
-> diff --git a/lib/strnlen_user.c b/lib/strnlen_user.c
-> index 7f2db3fe311f..28ff554a1be8 100644
-> --- a/lib/strnlen_user.c
-> +++ b/lib/strnlen_user.c
-> @@ -2,6 +2,7 @@
->  #include <linux/kernel.h>
->  #include <linux/export.h>
->  #include <linux/uaccess.h>
-> +#include <linux/mm.h>
->  
->  #include <asm/word-at-a-time.h>
->  
-> @@ -109,7 +110,7 @@ long strnlen_user(const char __user *str, long count)
->  		return 0;
->  
->  	max_addr = user_addr_max();
-> -	src_addr = (unsigned long)str;
-> +	src_addr = (unsigned long)untagged_addr(str);
->  	if (likely(src_addr < max_addr)) {
->  		unsigned long max = max_addr - src_addr;
->  		long retval;
-> 
+Thanks
 
--- 
-Regards,
-Vincenzo
+Ludovic
+
+> 
+> Thanks for having fixed this Codrin. Best regards,
+>    Nicolas
+> 
+> > ---
+> >   drivers/clk/at91/clk-generated.c | 2 ++
+> >   1 file changed, 2 insertions(+)
+> > 
+> > diff --git a/drivers/clk/at91/clk-generated.c b/drivers/clk/at91/clk-generated.c
+> > index 5f18847965c1..290cffe35deb 100644
+> > --- a/drivers/clk/at91/clk-generated.c
+> > +++ b/drivers/clk/at91/clk-generated.c
+> > @@ -146,6 +146,8 @@ static int clk_generated_determine_rate(struct clk_hw *hw,
+> >   			continue;
+> >   
+> >   		div = DIV_ROUND_CLOSEST(parent_rate, req->rate);
+> > +		if (div > GENERATED_MAX_DIV + 1)
+> > +			div = GENERATED_MAX_DIV + 1;
+> >   
+> >   		clk_generated_best_diff(req, parent, parent_rate, div,
+> >   					&best_diff, &best_rate);
+> > 
+> 
+> 
+> -- 
+> Nicolas Ferre
 
 _______________________________________________
 linux-arm-kernel mailing list
