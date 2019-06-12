@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 119A9423CA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:16:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1309423CB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:16:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,75 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YXHyRE7LlsFCiaW4Rel+M2MUP1+qMYBzFZpb8Fy3mu0=; b=bgDsG70/HbzSClbtZwRJ8UkRNM
-	4pYjHSe1itrKXkbl3AVEi01Pvkuq6ynqzBWbr3y5f21Sfmz5gPp1SH7xFaX20r2MHIBmDfiKRmUTK
-	WXLzCTv1GxKMNqNF9kcuGDWaQd8KE1sgHZSsiL485he8tyRH8p23+5pcaJ/YEXr7ooYqI02P8GmQq
-	Hs7eCbONQ7/KX1wiOtW/Y9qxkaWDTuE211F/mfxY/eq0K3BcIRcPfVSpcVmo3ccs1LSJ9Gh89jHwG
-	TqUGssdnYB/ZxFW8BJUjx2AwaSTBIqdJ4vP4Q/mXZ01NKRFI/Vw6fbJH7gii7GY1VjcTgBOZpnKT0
-	HFmZwgVg==;
+	bh=4U8esPvKfCfUD3Rx7MzlPHELDrWtSJ+EEk8+XtkqogU=; b=e+/uVEZyw9cLwmvbxaxQDW1hmw
+	zJLmk13nJrDtSSquv1R99iNwqNZzjnPqgVhbCdPr/+GZHTL9rXkDrgUUzMAtrjK0pf3Kv4F8xkmg6
+	+FNGyVIqYZYHA9LaCpdgwPgJoUeHHmiJsY/fVICN+ISqznAyCHWu5vadRrXgtT8Qb9MvZmZX/kpeI
+	ESskFoELsztCqz/0YGz1lUG6vG/mTM+rUbkEzYKelwfpnLneKWsYfwctkEwrw4bW3x5QnU+JLDGuu
+	d3QIqep6cBO0gPena5gcZfo+cNNz1S/RmFaG2m+K/DJrR2FzCYKmisU0tb/6k5yy0wPz0doWbHXHI
+	wOsmt57Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1ES-0008DW-C0; Wed, 12 Jun 2019 11:15:56 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hb1Ef-0008SV-Gk; Wed, 12 Jun 2019 11:16:09 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1DR-000699-NG
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:14:55 +0000
-Received: by mail-wr1-x441.google.com with SMTP id n9so16498856wru.0
+ id 1hb1DT-0006BA-4w
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:14:57 +0000
+Received: by mail-wm1-x343.google.com with SMTP id c6so6119054wml.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:14:52 -0700 (PDT)
+ Wed, 12 Jun 2019 04:14:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=monstr-eu.20150623.gappssmtp.com; s=20150623;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=pL4z/swoTMwbTbMm+CZTE8PZN5IahPwWK1oKgA44Jw8=;
- b=P6xquQrececmcvLrvYX6swykHVbte7Nk4tMjJVlxC/IGkE5po85UR/FmEjTmBnjHBN
- 7UXsptqBv4hijV+N6F7edAiOxTf+ZQZme0r0cEUHESbi9S7GOm+OyYpIq+HZMZ7IMpaq
- 6ch1uIpSIvD6d0ZiSPH22yyqoPcWc7c9wkfkEyGcRJ60ehHz5PhiMhayyoZbvOGsBrxQ
- bZ2LzFT48JTUjjm41S5ZNe7RbvRK+iVQuVV4NibXS0K6W/FVhfanPVOkDruhGfEIqS47
- 1jK4ZdVTE3QhZyH/G2nPRAGWdjbcedgLKigKS00FyWB3fRstKP6kgEUlfiNPaDWDxIQB
- SlCg==
+ bh=RX9kf328gim4qTbNApKo0P/QFvgZZ5niZju8LY4fMbw=;
+ b=RlNbC4v8AQPmlZyHhHsjf3AqOF0nCui8MGbGfB153yQHQOxseZbCxE0QMP/j/ohMQx
+ ubuXlfJE9JC6bcuD7MXezh0pcQ9Vxvbse8B6PBLdLZeik3ydqmdEVYWByfIegFIug0JI
+ 2rytqyr3HAgqTNiaQSFhmbVXFtGd22lz/fONwnA+eHCGfIiuyqEqvDSVy7e+kJ9asdDf
+ /OkIFO7eGS9K6+12vteUCFt3vOWn1M003QCmhSkU4icWAQXTY3ntEVUrviQ3UVLencga
+ yXXSpsfU13FjIDGHaTwCcvTsWo06MtZqUXWmyFM2XPRxdL0wub+wZXIWCVaWWlBQo9yc
+ /img==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:in-reply-to:references;
- bh=pL4z/swoTMwbTbMm+CZTE8PZN5IahPwWK1oKgA44Jw8=;
- b=Dw8y7FrQFX540fNN2TRRFla/vsFEe/uL8hBLUWrL37yjvNwYpPI12eeHewjQPnsjWH
- Nm4TWqqFhrJG4zVLrn8M4OhnxwGmv5MD9AzMutc3AG28UzIEzwzhgOxq83ObCn1Cyg2s
- tREuUoTLCZAgVKW89n641/11d2DsYx4VqdpumzmqfICDGjmRxnnCErpOkNWFiItEhbXR
- bd4qGUYZ0MqihBchXjWYzS+V+M5//ns4wUSspHC+JbTAgvjD6uUO6N7un0jLILboWtXI
- OFcMf7ye+pAzNqhl8ykKRCZ4x2K+Py7IvxjLoSqkb4e6ZxULOomD1vHaOJxVDI15i6wJ
- twJA==
-X-Gm-Message-State: APjAAAVK6F/ZIa7mOdi1W744uQXQdQOaDNv6qtvvUfbTY4niQJehYJ2v
- LtwaDaSPpMuTQp6htwEYY+MfLg==
-X-Google-Smtp-Source: APXvYqwF+qopOc/h+NW4uHI2iFfpMRXvQ05mIybiixrrOldDG1ljO4J1jrhB5kuhJ/jptlEuRoQ9rg==
-X-Received: by 2002:a5d:4ac1:: with SMTP id y1mr1818664wrs.183.1560338091629; 
- Wed, 12 Jun 2019 04:14:51 -0700 (PDT)
+ bh=RX9kf328gim4qTbNApKo0P/QFvgZZ5niZju8LY4fMbw=;
+ b=Mz++5VBZbePlAHfNacqe0T9UdxK+4gEmscP+LpK6NokYd5FWz1ZrYhADAy+QuhqhX8
+ Lb6NSRL8ev9PdVRUAmq4l0M5n+pJwasz0bhkQxAxrujyWCejF/Ry7OFacyS11nd22SbX
+ m1KjvY38WKfsGvGHbC/hmbTdJQGzFC/lNKax122jaI3U3OvZDgISYMnYetE7viG7rxUr
+ xn/L0w+h9fJ4k7Ik2l6Bqb2nEOK41HWWT2YqTIH5VSeXbS8puhsIZYHQvKZy+Os116Fx
+ TeG5WbqVXzPF7PiTa+TLCaq+aB2MyAN6ZfLtcYMhzmsbKnD48CacXS8bAwM8PQQjvXEj
+ IRPA==
+X-Gm-Message-State: APjAAAWKPEcHsBl0zieFcNEJMkNpw/f6TAG7h5Y9/O0V//o8cV/7ktWZ
+ SqaJtosp4OmyDunDdFzGqmSzXw==
+X-Google-Smtp-Source: APXvYqxfSaq6CTixvYxa76VBxtjwsDr/CJ8DUniRUVH+idG29OzBqKzhBE3pa8Y9Mws4pqelMSUz8A==
+X-Received: by 2002:a1c:e0c4:: with SMTP id
+ x187mr20735822wmg.177.1560338093505; 
+ Wed, 12 Jun 2019 04:14:53 -0700 (PDT)
 Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id y2sm17676131wrl.4.2019.06.12.04.14.50
+ by smtp.gmail.com with ESMTPSA id u23sm5055140wmj.33.2019.06.12.04.14.52
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 12 Jun 2019 04:14:51 -0700 (PDT)
+ Wed, 12 Jun 2019 04:14:52 -0700 (PDT)
 From: Michal Simek <michal.simek@xilinx.com>
 To: johan@kernel.org, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
  monstr@monstr.eu, michal.simek@xilinx.com
-Subject: [PATCH v2 2/6] serial: uartps: Use octal permission for module_param()
-Date: Wed, 12 Jun 2019 13:14:39 +0200
-Message-Id: <159139864be4ab81e75f20f7fdad604ce270f8cf.1560338079.git.michal.simek@xilinx.com>
+Subject: [PATCH v2 3/6] serial: uartps: Fix multiple line dereference
+Date: Wed, 12 Jun 2019 13:14:40 +0200
+Message-Id: <3a5b27987c5b4fc5ec7dc7f58485db63057edbfe.1560338079.git.michal.simek@xilinx.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1560338079.git.michal.simek@xilinx.com>
 References: <cover.1560338079.git.michal.simek@xilinx.com>
 In-Reply-To: <cover.1560338079.git.michal.simek@xilinx.com>
 References: <cover.1560338079.git.michal.simek@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_041453_763148_FE539BCB 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20190612_041455_883582_AC2ACB16 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -109,44 +110,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Nava kishore Manne <nava.manne@xilinx.com>
 
-Octal permission is preffered compare to symbolic one.
+Trivial patch which fixes this checkpatch warning:
+WARNING: Avoid multiple line dereference - prefer 'port->state->xmit.tail'
++				port->state->xmit.buf[port->state->xmit.
++				tail], port->membase + CDNS_UART_FIFO);
 
-This patch fixes checkpatch warnings:
-Symbolic permissions 'S_IRUGO' are not preferred. Consider using octal
-permissions '0444'.
-
-Fixes: 85baf542d54e ("tty: xuartps: support 64 byte FIFO size")
+Fixes: c8dbdc842d30 ("serial: xuartps: Rewrite the interrupt handling logic")
 Signed-off-by: Nava kishore Manne <nava.manne@xilinx.com>
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 ---
 
 Changes in v2:
 - Split patch from v1
-- Fixes second S_IRUGO usage
 - Add Fixes tag
 
  drivers/tty/serial/xilinx_uartps.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
-index 9dcc4d855ddd..c84db82bdaab 100644
+index c84db82bdaab..4cd20c036750 100644
 --- a/drivers/tty/serial/xilinx_uartps.c
 +++ b/drivers/tty/serial/xilinx_uartps.c
-@@ -35,12 +35,12 @@
- /* Rx Trigger level */
- static int rx_trigger_level = 56;
- static int uartps_major;
--module_param(rx_trigger_level, uint, S_IRUGO);
-+module_param(rx_trigger_level, uint, 0444);
- MODULE_PARM_DESC(rx_trigger_level, "Rx trigger level, 1-63 bytes");
+@@ -319,8 +319,8 @@ static void cdns_uart_handle_tx(void *dev_id)
+ 			 * register.
+ 			 */
+ 			writel(
+-				port->state->xmit.buf[port->state->xmit.
+-				tail], port->membase + CDNS_UART_FIFO);
++				port->state->xmit.buf[port->state->xmit.tail],
++					port->membase + CDNS_UART_FIFO);
  
- /* Rx Timeout */
- static int rx_timeout = 10;
--module_param(rx_timeout, uint, S_IRUGO);
-+module_param(rx_timeout, uint, 0444);
- MODULE_PARM_DESC(rx_timeout, "Rx timeout, 1-255");
+ 			port->icount.tx++;
  
- /* Register offsets for the UART. */
 -- 
 2.17.1
 
