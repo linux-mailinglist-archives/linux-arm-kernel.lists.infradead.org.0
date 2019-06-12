@@ -2,113 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57A2E430E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 22:17:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4DF943132
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 22:56:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AI1sZr9LXG8EJczu8Xsgw002Ckd2FfVnVMIBfALREJc=; b=ediRSQY8eQ8snp
-	+GfdQnblljJKEr6qzKbKAJ6/r2/OguvbG+dR2fbOeJGr/K+koIXi97UamxwXyGEuqPKRBnzejHQn5
-	mNXrNGjfgz6mYg8xuvfU+bxkpjXoNenamKoApv1NA7TVNECSQMxQtnT65BCZTCxVdlZczdxF9gd/y
-	YvhhueVmozTeRXVmMCzKtzWGH+FKYaYnl71nEbhkRqIAzLsRsxNkaRr6YkrMQH1xLhxJASMdLAlpu
-	Qi2lBRSAg6U72KkVgMC/JxoDSaljQYy/J+Bcff79xZRF+L+PxzuR/KASAZ5oYbl9g0ty3SdoukGUx
-	/BcUWvSx1v+B3zbVEkTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dZK2U3DuXwtbU5X0YmY78zAyj3MBs9KNlxwz+4nUfHU=; b=jYVvctzfCsm9nh
+	aLmspwYczjQ3p6EyS7OTJUbBeWsmru5aUm1iLgBUNT7nFIq7awOQCnQlsgSXREQXwxiWoVbc+E0zU
+	F2va9S9UNImYXaAAhxeB7M1RSxh32AWEztAGkbzwPHIjCWKfAjzLLIcT7WLog4LMYHliOcMZ2G6xt
+	hVV5zgincdrU1HP/owDzbP4Z/MDyIP3cvHF8T8PeOCRd6+bJAznLqq2T6ouMUkRreqdKKLW0pqDQb
+	25ItV4IHvY5g3BawhmkYflXbuWXvjPdo24C8Zq2dBasqWc4159NJJUODWbFaf8wKi6mZH8U4g08in
+	ocvC2QvVJuBY/PAddlkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb9gl-0008S2-4b; Wed, 12 Jun 2019 20:17:43 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1hbAHs-0005QD-Qq; Wed, 12 Jun 2019 20:56:04 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb9gZ-0008RZ-HM; Wed, 12 Jun 2019 20:17:33 +0000
-Received: from [192.168.1.162] ([37.4.249.160]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1N9d4t-1ig3WZ04n7-015Y6k; Wed, 12 Jun 2019 22:17:14 +0200
-Subject: Re: [PATCH v4 0/7] cpufreq support for Raspberry Pi
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-kernel@vger.kernel.org
-References: <20190612182500.4097-1-nsaenzjulienne@suse.de>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- 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 AQ==
-Message-ID: <e39a7bed-195b-579a-fd7c-18645d407645@i2se.com>
-Date: Wed, 12 Jun 2019 22:17:11 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hbAHb-0005O2-CA; Wed, 12 Jun 2019 20:55:48 +0000
+Received: by mail-wr1-x441.google.com with SMTP id f9so18336312wre.12;
+ Wed, 12 Jun 2019 13:55:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lZ7Q02f4JEf34T5luLcOREHyEm4npQ5trSJ/nqzq8KI=;
+ b=mg3vmtbO7GQE8XVffQtxwJcZF/oIwU11kK+Acbjymrr2vinDGw7IyBsL9IgNyBZY9n
+ JLZ1XMsuYOhdNuxjBwTsptARffVdoBVduDOSs2kjL+wL4qr0Cn69+PcfWtsYo2lPTdKD
+ qdZDu8w4Ept3hxTEEOvo7hmqhqvgbFNm1rGKbUXi0HrzXU9wTGDdix1/vZmZhsbf52/U
+ WshRL/dw4YLGTk2yPYQTPDe32v753sbqy3j1Oc+Qh1oLxit5GuF6kl1u2b41+PmFmsWU
+ jvFVIRWqhMTU+LglW3YXP38+DkPHcVWHoKnl4DyBQXl/Ftbq9KZ110zaZjuQBKV5+kLJ
+ Ld2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lZ7Q02f4JEf34T5luLcOREHyEm4npQ5trSJ/nqzq8KI=;
+ b=NppQp5c0hjCekxr+PvIhf3CNVfxp4bum98tHBJGOUMtOt/cbJZxCaX4b6vvPdEOL+5
+ UeiUoK09NheaHq4Y7KonlFmWZusg4E65MpkClznuhAQp0PFREZlkbNGVR4gsEbPnq8KY
+ /rjeA1vk88BdpebLEH16HCI4CnIY5qg0/Jfo7XhmtmDmiSM7KCX3KMxBXBlaXQXvDsPQ
+ 3EVez/OF4ToVYt6DjqOEG1CTWE/6GRgrMk9xXvkIn3LUOOPcIU4kmJrfAXUaikIbRxBK
+ ihvRQRvW6M8109EoWDjkHDKLOnI5HrPbioAW+yGA32P2JHAymWLnKfMGXX/ZRMjvUvMN
+ nmRA==
+X-Gm-Message-State: APjAAAXQ5lA/VhEcUpyZKlX+fe028xH+q82vQDOpk27NIBnL1cq522LS
+ uQ7MVhHsQJnWk51/T4Xu+6iMSKQk
+X-Google-Smtp-Source: APXvYqzPwLw3bVyQPoGki1H86cxQv/CaJAP/waZtaKCPgu6NSjHMKfqFNAFW/GHXnLzN8dcf/35BJQ==
+X-Received: by 2002:a5d:6212:: with SMTP id y18mr8369049wru.178.1560372945219; 
+ Wed, 12 Jun 2019 13:55:45 -0700 (PDT)
+Received: from blackbox.darklights.net
+ (p200300F133DDA400428D5CFFFEB99DB8.dip0.t-ipconnect.de.
+ [2003:f1:33dd:a400:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id s7sm3445793wmc.2.2019.06.12.13.55.42
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 12 Jun 2019 13:55:44 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: linux-amlogic@lists.infradead.org,
+	khilman@baylibre.com
+Subject: [PATCH v2 0/4] Ethernet PHY reset GPIO updates for Amlogic SoCs
+Date: Wed, 12 Jun 2019 22:55:25 +0200
+Message-Id: <20190612205529.19834-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <20190612182500.4097-1-nsaenzjulienne@suse.de>
-Content-Language: en-US
-X-Provags-ID: V03:K1:mHnhFM8n40BdQnhNB4NEsxmJXlVxzEsKc7/qclnWMB0BSuXsmfQ
- +iUZKoqU3FU7L9wzy7TSoV7w/AirTUQaf6zFQ6fITy1C7X53F6YQo0wgEq1fPx2TNxXc0JW
- Va3CJermzQQQVWK2KaAITnxk1k/7ccHy/tGC6zSQM3EJ1mkXcrWOQ/Y60wJYiO429mwnVlH
- 41XfGR966Ulcw1qe/3wgQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:mS9THgj+n0I=:9DX2CrJR3tFLetUM0t2Akl
- eMqUP0Jc/jRS2ElekmyS2fCDFol7zg8dkCira1kknwLgLcQZ3mw+uQ1vae6DKcmO/j6+793PG
- 8H59cxVO2vHrslKZDjxWL44G+NVF+ZWqMx1Mr2XkHqyKnSY2rgUZuxPIal4nrQe58U4wyvumx
- 2hZwVPfeZzSH98QRubw4l55GQ6N1AOL1B5Jkhgn6A8AGf7Vyqxuz3UvKGXKn6lsCboD/S9qck
- J4JvF161nGXdZVRNOOdL6H9jA2vSAq+ZKIN0/mvAjdFfMiGocNp71/ybhtFKIgaf0fUvceMQw
- TWSZQ/HXIYQoqyyAH4RPceFI9qPuaLzVzP9l3WgHTnizu56lM6ejkFGSrvLb+RGj2YrQbCPDP
- rXIjQ/wuJ5BSdXaiq3IpsZNpPIxAlpl4iohEfp9Ll3qtzPndKvvgXUpK3QG/r7W4PmtTbD1nD
- 9f2FjR7WJdgfzUYQX8lfMgQW2skMdl3niFZZPdVEVgkJq5ZgPBfUF/hP1D0n2kbGq1zLBrc6v
- vSBWaJtf8kOZJp5RbhK+SelppNQMSMDmpK33pPblZHD3qqBh0m0KXdTXGJn3Fwzf+VJPI+PuV
- B9prTtq+4XP8D+UUYyXGq+NayMUpyRDdSw3I8tyGtWbm4eFSpM3crJ533Hxmw/iN7SlKxnJOs
- DREJ2bcdcFmWttO/CAUdEsS4UVbD6os8cW7uoimPz0DSPaW4OTZzqnS5P/WPtjcxXEKHHyTao
- JHENRw70Qo3s+eAx75RmDbwu/lrw95EBOtgPPs8zosbhjEsqdHXjz7QS4Gg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_131731_871846_72DD7905 
-X-CRM114-Status: GOOD (  13.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_135547_443434_BE23C6F5 
+X-CRM114-Status: GOOD (  12.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (martin.blumenstingl[at]googlemail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,42 +98,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- ptesarik@suse.com, sboyd@kernel.org, viresh.kumar@linaro.org,
- mturquette@baylibre.com, linux-pm@vger.kernel.org, rjw@rjwysocki.net,
- eric@anholt.net, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- mbrugger@suse.de, ssuloev@orpaltech.com
+Cc: andrew@lunn.ch, Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ netdev@vger.kernel.org, linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nicolas,
+While trying to add the Ethernet PHY interrupt on the X96 Max I found
+that the current reset line definition is incorrect. Patch #1 fixes
+this.
 
-Am 12.06.19 um 20:24 schrieb Nicolas Saenz Julienne:
-> Hi all,
-> this aims at adding cpufreq support to the Raspberry Pi family of
-> boards.
->
-> The series first factors out 'pllb' from clk-bcm2385 and creates a new
-> clk driver that operates it over RPi's firmware interface[1]. We are
-> forced to do so as the firmware 'owns' the pll and we're not allowed to
-> change through the register interface directly as we might race with the
-> over-temperature and under-voltage protections provided by the firmware.
->
-> Next it creates a minimal cpufreq driver that populates the CPU's opp
-> table, and registers cpufreq-dt. Which is needed as the firmware
-> controls the max and min frequencies available.
->
-> This was tested on a RPi3b+ and RPI2b, both using multi_v7_defconfig and
-> arm64's defconfig.
->
-this whole series is:
+Since the fix requires moving from the deprecated "snps,reset-gpio"
+property to the generic Ethernet PHY reset bindings I decided to move
+all Amlogic boards over to the non-deprecated bindings. That's what
+patches #2 and #3 do.
 
-Acked-by: Stefan Wahren <stefan.wahren@i2se.com>
+Finally I found that Odroid-N2 doesn't define the Ethernet PHY's reset
+GPIO yet. I don't have that board so I can't test whether it really
+works but based on the schematics it should. 
 
-Thanks
+This series is a partial successor to "stmmac: honor the GPIO flags
+for the PHY reset GPIO" from [0]. I decided not to take Linus W.'s
+Reviewed-by from patch #4 of that series because I had to change the
+wording and I want to be sure that he's happy with that now.
+
+One quick note regarding patches #1 and #4: I decided to violate the
+"max 80 characters per line" (by 4 characters) limit because I find
+that the result is easier to read then it would be if I split the
+line.
+
+
+Changes since v1 at [1]:
+- fixed the reset deassert delay for RTL8211F PHYs - spotted by Robin
+  Murphy (thank you). according to the public RTL8211E datasheet the
+  correct values seem to be: 10ms assert, 30ms deassert
+- fixed the reset assert and deassert delays for IP101GR PHYs. There
+  are two values given in the public datasheet, use the higher one
+  (10ms instead of 2.5)
+- update the patch descriptions to quote the datasheets (the RTL8211F
+  quotes are taken from the public RTL8211E datasheet because as far
+  as I can tell the reset sequence is identical on both PHYs)
+
+
+[0] https://patchwork.kernel.org/cover/10983801/
+[1] https://patchwork.kernel.org/cover/10985155/
+
+
+Martin Blumenstingl (4):
+  arm64: dts: meson: g12a: x96-max: fix the Ethernet PHY reset line
+  ARM: dts: meson: switch to the generic Ethernet PHY reset bindings
+  arm64: dts: meson: use the generic Ethernet PHY reset GPIO bindings
+  arm64: dts: meson: g12b: odroid-n2: add the Ethernet PHY reset line
+
+ arch/arm/boot/dts/meson8b-ec100.dts                   |  9 +++++----
+ arch/arm/boot/dts/meson8b-mxq.dts                     |  9 +++++----
+ arch/arm/boot/dts/meson8b-odroidc1.dts                |  9 +++++----
+ arch/arm/boot/dts/meson8m2-mxiii-plus.dts             |  8 ++++----
+ arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts    |  7 ++++---
+ arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts  |  4 ++++
+ arch/arm64/boot/dts/amlogic/meson-gxbb-nanopi-k2.dts  |  9 +++++----
+ .../arm64/boot/dts/amlogic/meson-gxbb-nexbox-a95x.dts |  8 ++++----
+ arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts   |  9 +++++----
+ arch/arm64/boot/dts/amlogic/meson-gxbb-p200.dts       |  9 +++++----
+ arch/arm64/boot/dts/amlogic/meson-gxbb-vega-s95.dtsi  |  9 +++++----
+ arch/arm64/boot/dts/amlogic/meson-gxbb-wetek.dtsi     |  8 ++++----
+ arch/arm64/boot/dts/amlogic/meson-gxl-s905d-p230.dts  | 11 ++++++-----
+ arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts | 10 +++++-----
+ arch/arm64/boot/dts/amlogic/meson-gxm-nexbox-a1.dts   |  8 ++++----
+ arch/arm64/boot/dts/amlogic/meson-gxm-q200.dts        | 11 ++++++-----
+ arch/arm64/boot/dts/amlogic/meson-gxm-rbox-pro.dts    |  8 ++++----
+ 17 files changed, 80 insertions(+), 66 deletions(-)
+
+-- 
+2.22.0
 
 
 _______________________________________________
