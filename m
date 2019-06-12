@@ -2,80 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A5AB4223F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:22:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A59B4223D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 12:22:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DXgzNGNw34/IHydxQpVbVlE54X6ZxUzFZBqyDtNCMYM=; b=XZdiLpSUsd/GbV
-	hMOQhazVlLzTmHEoMA1n80BwchkT504rsodS8XWpkkhMykX/EjaxEBlmBb2jHxdxIGzakId5l9iPr
-	v3z9YfV3dimNrBWM5CfJWHxxzb1OjS61jBwEc7guRuzfKZENnJ98Q400I8sC27mr+WIGYYs3bNTUN
-	s+LdaFWoNIBSaNVNmmaNtKzzfvPipGwuYmbEcWGvvJnqjth1A0Pmsmm+BQqlR+eHacDfVloqkdGLP
-	+Opc7CytDFmkt0nTNc6v7bysEkkYKiCRndIQS0WEigbRLX7TSECyjNekxU/2fWvyEqb5Ff7y5/m1R
-	dgxHTYmhzqWrJJLtaTtg==;
+	List-Owner; bh=aJjFPBwmYXW5+U6tqupQ6+3VPRotxZK8x5PyF1/9t5I=; b=DLQZuJhCGuW4mi
+	J+G5Jl5E08W/Zu6uZOCokBeRKccy5yjzrPKykI1QYqgT3152xgiZHPMFt5kAKlmOJsf1UfvvuCOks
+	0KK6c06Rdy1wXKtqMrryM17NYxpgW2GLwplNfgEwl66mMNxO5rx6UQU/rXKwn6qmO+zQ0/75S3HMB
+	S3TziDEaqMtE7HPToVZssij8TqFsnhnfLRKte0MwvJxzL+f0BUbYWSuaBgmZkKJw2dE5rGmoSjUwc
+	K9QWJIWLKgk7AnC5tJ3Y0u4xGtNPV7jdxZTb8YkiaF5SJfTSVZFnFyFLAfVLaW9rKyoxLcfjI0NcL
+	JxHI4J/tLPv860G1bMXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb0Om-00030z-5D; Wed, 12 Jun 2019 10:22:32 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb0OG-0002f2-1Q
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:22:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id s15so5940254wmj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 03:21:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AFoHMSEj9tVrWcEUPH5FAzB19SGdLo79LhrgprT3fB0=;
- b=rulL1S3rudmYvANWuk91UMefuzuee5m+1kiBg/S4z4W6rohQIQJvVef0Ga8/kNwqJP
- kQbz+GWJXFvKOlUq8wHsIOsVwPqBI6yU4JVUxy8FcXHzelpiTu0d9AnpLnqKnk6brVeP
- 0fI7UN+JLLjazssXG03F2xYy4RGi8lRQZddXYhMMtpv3pOhX4qKtG2S8uhFGlc+GLnT6
- pvwprNWkUYEuVh6VpDMyqPFBM3B4d4BM96DCh7LGjxch5bvcQL2oQCAMKcd+OcUFDS/9
- lerJBd9pWHPVwxh6CPJHbt3h+bxG3bzij0XlNY2uclYVY1/q+J8iyOw8VXcY4XYFT3kO
- 9meA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AFoHMSEj9tVrWcEUPH5FAzB19SGdLo79LhrgprT3fB0=;
- b=GEusumpuplVwClGmcmoa7P+N/Chijhs/3jgpjFtSyfjtpQn+BeKcvv0bY6K41TzZ0n
- uFeMVA6OLY6xcTPqcFbxWw/5kUEeaLGxCx/i3s1rhqc/cwKe5RPcKwXd9wjlwjPXTxn1
- OKdD6SnWCchVWmmr62NSG1lH6B6GQmJAzEaZqq6vHQ641ocXCKU3BFgHWxI7/n2FxKcV
- 4exqEDmEcl6QgymRhEO0HgkvCJcmgwmVoNAmSx1ozQCoM04ZKFS7A3KdEd3QdfRYAU2d
- V8YsvNFFVvd+ST/hB/zExy9ztvHVi0/RgXKvTDk3wQt3KtSqidIYvKQ6k+I3oXuuerfF
- q4/w==
-X-Gm-Message-State: APjAAAUscY7omUyiOKuC8ebJExXi78iTKT+oNwemoB1sgg2k/AXMcwyr
- kD5Y2fc0V/4PLYRzHQPJEvQT8bWk119823cD6BtuCQ==
-X-Google-Smtp-Source: APXvYqz6AjVcZoYHA6CdaGJpxS+2mtUzECSit9/BS1GTOdIOLeI2k4WuyT2w1sPbw2Vab/weDhNLTVi2+YFEotGwynw=
-X-Received: by 2002:a1c:ed07:: with SMTP id l7mr19968400wmh.148.1560334917880; 
- Wed, 12 Jun 2019 03:21:57 -0700 (PDT)
+	id 1hb0OL-0002dk-S6; Wed, 12 Jun 2019 10:22:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hb0OA-0002cu-5S
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 10:21:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 70A84337;
+ Wed, 12 Jun 2019 03:21:53 -0700 (PDT)
+Received: from redmoon (unknown [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2D60F3F246;
+ Wed, 12 Jun 2019 03:23:35 -0700 (PDT)
+Date: Wed, 12 Jun 2019 11:21:49 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH/RESEND] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+Message-ID: <20190612102149.GC6506@redmoon>
+References: <56715377f941f1953be43b488c2203ec090079a1.camel@kernel.crashing.org>
+ <20190604014945.GE189360@google.com>
+ <960c94eb151ba1d066090774621cf6ca6566d135.camel@kernel.crashing.org>
+ <20190604124959.GF189360@google.com>
+ <e520a4269224ac54798314798a80c080832e68b1.camel@kernel.crashing.org>
+ <d53fc77e1e754ddbd9af555ed5b344c5fa523154.camel@kernel.crashing.org>
+ <CAKv+Gu_3Nb5mPZgRfx+wQSz+eWM+FSbw_14fHm+u=v2EbuYoGQ@mail.gmail.com>
+ <4b956e0679b4b4f4d0f0967522590324d15593fb.camel@kernel.crashing.org>
+ <20190611143111.GA11736@redmoon>
+ <f1d610d79fbb3a98c9cc80210c64cb21679daf33.camel@kernel.crashing.org>
 MIME-Version: 1.0
-References: <20190612100536.22368-1-yuehaibing@huawei.com>
-In-Reply-To: <20190612100536.22368-1-yuehaibing@huawei.com>
-From: Maxime Jourdan <mjourdan@baylibre.com>
-Date: Wed, 12 Jun 2019 12:21:47 +0200
-Message-ID: <CAMO6nayiXiOkHSxgZU+oyPdSo5ugcV6XaCdy7P1Riutv+c7XRQ@mail.gmail.com>
-Subject: Re: [PATCH -next] media: meson: vdec: Add missing kthread.h
-To: YueHaibing <yuehaibing@huawei.com>
+Content-Disposition: inline
+In-Reply-To: <f1d610d79fbb3a98c9cc80210c64cb21679daf33.camel@kernel.crashing.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_032200_141411_7F5B0C16 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20190612_032154_300984_C6EB5EE7 
+X-CRM114-Status: GOOD (  35.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,53 +70,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, linux-media@lists.freedesktop.org,
- Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ linux-pci <linux-pci@vger.kernel.org>, Sinan Kaya <okaya@kernel.org>,
+ "Zilberman, Zeev" <zeev@amazon.com>, "Saidi, Ali" <alisaidi@amazon.com>,
+ Bjorn Helgaas <helgaas@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 12:05 PM YueHaibing <yuehaibing@huawei.com> wrote:
->
-> Fix building error:
->
-> drivers/staging/media/meson/vdec/vdec.c: In function vdec_recycle_thread:
-> drivers/staging/media/meson/vdec/vdec.c:59:10: error: implicit declaration
->  of function kthread_should_stop;
->  did you mean thread_saved_sp? [-Werror=implicit-function-declaration]
->
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Fixes: 3e7f51bd9607 ("media: meson: add v4l2 m2m video decoder driver")
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->  drivers/staging/media/meson/vdec/vdec.c | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/drivers/staging/media/meson/vdec/vdec.c b/drivers/staging/media/meson/vdec/vdec.c
-> index 4e4f9d6..0a1a04f 100644
-> --- a/drivers/staging/media/meson/vdec/vdec.c
-> +++ b/drivers/staging/media/meson/vdec/vdec.c
-> @@ -12,6 +12,7 @@
->  #include <linux/mfd/syscon.h>
->  #include <linux/slab.h>
->  #include <linux/interrupt.h>
-> +#include <linux/kthread.h>
->  #include <media/v4l2-ioctl.h>
->  #include <media/v4l2-event.h>
->  #include <media/v4l2-ctrls.h>
-> --
-> 2.7.4
->
->
+On Wed, Jun 12, 2019 at 08:09:01AM +1000, Benjamin Herrenschmidt wrote:
+> On Tue, 2019-06-11 at 15:31 +0100, Lorenzo Pieralisi wrote:
+> > 
+> > True, minus specs update schedule, I can't change that and merging
+> > this patch (and firmware thereof) relies on specifications that
+> > are intent changes till they become an ECN (~another merge window,
+> > so this patch could land at v5.4).
+> 
+> Hrm... annoying for us but I understand your reasoning.
 
-Thanks for the patch, sorry that this one slipped through.
+If we can wait it is better, also because it gives us time to
+bring this discussion to completion.
 
-Acked-by: Maxime Jourdan <mjourdan@baylibre.com>
+> > The other option is doing what this patch does *without* relying
+> > on _DSM #5, we may have regressions unfortunately though.
+> 
+> We could work around regressions with quirks I suppose. It does make
+> sense to assume that if you have ACPI and UEFI, you have a decent PCI
+> BAR assignment at boot in the "general case". That said, we need to
+> double check first that pci_bus_claim_resources() will not do horrible
+> things on partially assigned setups, since there's a real interest in
+> doing that in the field.
+> 
+> > It is kind of orthogonal (but not really), bus numbers assignment
+> > is _not_ in line with resource assignment at the moment and I want
+> > to change it.
+> 
+> Hrm. We should probably reassign bus numbers if we reassign resources
+> yes, but then I'd like us to not reassign resources unless we have to
+> :-)
+
+But for that we can use _DSM #5 returning 0, at least we would
+be consistent.
+
+Current situation is inconsistent and that bothers me I can put
+together a separate patch and send it as an RFT, there are not
+that many ARM64 PCI ACPI platforms to test it on.
+
+> > a stab at patching the kernel so that it reassigns bus numbers by
+> > default and toggle that behaviour on _DSM #5 == 0 detection.
+> > 
+> > I doubt that reassigning bus numbers by default can trigger
+> > regressions on existing platforms but the only way to figure
+> > it out is by testing it.
+> >
+> > > My thinking is if we converge everybody toward the x86 method of
+> > > doing
+> > > a 2 pass survey of existing resources followed by
+> > > assign_unassigned,
+> > 
+> > I am not entirely sure we need a 2-pass survey,
+> >
+> > pci_bus_claim_resources()
+> > 
+> > should be enough; if it is not we update it.
+> 
+> So it's not so much about the 2 passes per-se, though they have value,
+> it's more about consolidating archs to do the same thing. Chances that
+> we change x86 are nil. But we can change powerpc and arm64 to do like
+> x86 and move that code to generic.
+
+Agree on that.
+
+> pci_bus_claim_resources() seems to be a "lightweight" variant of the
+> survey done by x86. The main differences I can see are:
+> 
+>  - The 2 passes thing which we may or may not care about, its main
+> purpose is to favor resources that are already enabled by the BIOS in
+> case of conflicts as far as I understand.
+
+Yes.
+
+>  - pci_read_bridge_bases() is done by pci_bus_claim_resources(), while
+> x86 (and powerpc and others) do it in their pcibios_fixup_bus. That one
+> is interesting... Any reason why we shouldn't unconditionally read the
+> bridges while probing ? Bjorn ?
+
+I tried and failed miserably:
+
+https://lore.kernel.org/linux-pci/20150916085850.GA17510@red-moon/
+
+>  - When allocating bridge resources, there are interesting differences:
+> 
+>   * x86 (and powerpc to some extent): If one has a 0 start or we fail
+> to claim it, x86 will wipe out the resource struct (including flags). I
+> assume that pci_assign_unassign_* will restore bridges when needed but
+> I haven't verified. 
+> 
+>   * pci_bus_claim_resources() is dumber in that regard. It will call
+> pci_claim_bridge_resources() blindly try to claim whatever is there
+> even if res->start is 0. This could be a problem with partially
+> assigned trees. It also doesn't wipe the resource in case of failure to
+> claim which could be a problem going down the tree and letting children
+> attach to the non-claimed resource, thus potentially causing the
+> reassign pass to fail.
+> 
+> The r->start == 0 test is interesting ... the generic claim code will
+> honor IORESOURCE_UNSET but we don't seem to set that generically unless
+> we hit some of the specific pass for explicit resource alignment, or
+> during the reassignment phases.
+> 
+>  - When allocating device resources, the main difference other than the
+> 2 passes is that x86 will "0 base" the resource (r->end -= r->start; r-
+> >start = 0) for later reassignment. The claim path we use won't do
+> that. Note: none sets IORESOURCE_UNSET... Additionally x86 has some
+> oddball code to save the original FW values and restore them if
+> assignment later fails, which is somewhat odd since there's a conflict
+> but probably helps really broken setups.
+> 
+>  - x86 will not claim ROMs in that pass, it does a 3rd pass just for
+> them (it's common I think to not have room for all the ROMs). It also
+> disables them in config space during the survey.
+> pci_bus_claim_resources() will claim everything and leave ROMs enabled.
+> 
+> So as a somewhat temprary conclusion, I think the main difference here
+> is what happens when claim fails (also the res->start = 0 case which we
+> need to look at more closely) and whether we should make the generic
+> code also "0-base" the resource.
+
+Oh my, res->start == 0, another can of worms. Honestly I do not know
+what to do on that one mostly because we need to figure out how it
+plays with resource assignment code (and legacy stuff, you know the
+drill).
+
+> 
+> The question for me really is, do we want to just "upgrade" (if
+> necessary) pci_bus_claim_resources() and continue having x86 do its own
+> thing for ever, or do we want to consolidate around what is probably
+> the most tested platform when it comes to PCI :-)
+
+Consolidating is the right thing to do, with the caveats above, there
+are many but you have all my support.
+
+> And if we consolidate, I think that won't be by changing what x86 does,
+> that code is the result of decades of fiddling to get things right with
+> all sorts of broken BIOSes...
+
+There is 0 chance to change x86 code (and there is 0 chance to change
+core PCI code with x86 assumptions in it).
+
+Cheers,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
