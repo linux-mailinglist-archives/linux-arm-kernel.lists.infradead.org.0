@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6BC041FA5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 10:50:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2D8F42019
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 10:57:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hCXItUJIzmAnwS5iUVkC2G+w4kv0Yw3+dLn5TKR6+Es=; b=QxJiyg+sRWguOH
-	da4pafsjkGa3GlPQnVrZODoQKxPo54HL76Bgcx3Gs0XrfGvGUUMjnJS8n2xhjhFzqFycNco6Stmqe
-	8SxCF6/2Dwxu83eGwJI4V7PU2TOzFU43oIck3kwAI5LAYrURkljEakzNVGE4IeFt8j7zKUXH1vqcl
-	LpzmrW1gx7TZQVXMLoG+PEoOOSmKhk2FByvZ4PXHFh4tODeWJ/q/+lIg2bmKW9CHtMoreySb6/i71
-	Tz8xfCtxVD4c/icwqz0gH++Xg4t1dUNZv/RGTK4G1Jy8327kyjSFfvAge2Qos1XPEKDVFL1mOQhEZ
-	s+muxapLOcgXY5Z19xzQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nxD5rcilaSFjyvn3C5CR3ZrLj9VNcAvubEuBeOkMLFI=; b=t1Iuqz1Fytdcoa
+	MSqkiQ16Vt9uT9YRYNOaow9UuW2+TNLk5PXZGURbUtIMDNWsh5Ep0YwrWURznFoMr+wg/EcLJr/zd
+	rNwgBAXL0vVDgLbiv5T+XyqsqVneilP89CAKdoZtw1e2UY7ToZlkakUhnnUpXl6zA5T/3AohK4paH
+	dWCu9rcuADIVVcGw2Kp/pequVpZxMOjOp+ETcYGilGAtL7NpNvz4TNa08cBZlErH5eSGhnjfX8mwI
+	YHJefwws2gqik8lGGIrPUFwdGPmaPKQzvdSX5IfXIcnWYyM/BCv2k8vU7EfxO57Cdz0eh01XWLvik
+	/fkFkvPJA2TbncmA6+PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hayxT-0003CL-3q; Wed, 12 Jun 2019 08:50:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hayxB-0003Bj-Ta
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 08:49:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE6E82B;
- Wed, 12 Jun 2019 01:49:55 -0700 (PDT)
-Received: from [10.1.197.45] (e112298-lin.cambridge.arm.com [10.1.197.45])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8BC543F246;
- Wed, 12 Jun 2019 01:49:54 -0700 (PDT)
-Subject: Re: [PATCH v2 1/9] KVM: arm/arm64: vgic: Add LPI translation cache
- definition
-From: Julien Thierry <julien.thierry@arm.com>
-To: Marc Zyngier <marc.zyngier@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-References: <20190611170336.121706-1-marc.zyngier@arm.com>
- <20190611170336.121706-2-marc.zyngier@arm.com>
- <54c8547a-51fb-8ae5-975f-261d3934221a@arm.com>
-Message-ID: <37a7411c-e7e0-e601-b88b-c12e8ebf9861@arm.com>
-Date: Wed, 12 Jun 2019 09:49:53 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+	id 1haz4G-0000wR-0P; Wed, 12 Jun 2019 08:57:16 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1haz23-0006EX-Ic; Wed, 12 Jun 2019 08:55:03 +0000
+X-UUID: 60382855c0c643aa9c28f5a2fcb2207e-20190612
+X-UUID: 60382855c0c643aa9c28f5a2fcb2207e-20190612
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <bibby.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 595523390; Wed, 12 Jun 2019 00:54:00 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 12 Jun 2019 01:53:59 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 12 Jun 2019 16:53:51 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 12 Jun 2019 16:53:51 +0800
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+To: Jassi Brar <jassisinghbrar@gmail.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>, CK HU
+ <ck.hu@mediatek.com>
+Subject: [PATCH v8 00/12] support gce on mt8183 platform
+Date: Wed, 12 Jun 2019 16:53:37 +0800
+Message-ID: <20190612085349.21243-1-bibby.hsieh@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <54c8547a-51fb-8ae5-975f-261d3934221a@arm.com>
-Content-Language: en-US
+X-TM-SNTS-SMTP: 5F8B0ECF69CEA55EA82F3D3B70EC29698DE69E9F0BD920E148622851DF828DE02000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_014958_003229_342C8AD1 
-X-CRM114-Status: GOOD (  16.84  )
+X-CRM114-CacheID: sfid-20190612_015459_682497_3FD81774 
+X-CRM114-Status: GOOD (  13.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -55,6 +58,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,62 +71,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Raslan, KarimAllah" <karahmed@amazon.de>, "Saidi,
- Ali" <alisaidi@amazon.com>
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ Daoyuan Huang <daoyuan.huang@mediatek.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Daniel Kurtz <djkurtz@chromium.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Sascha Hauer <kernel@pengutronix.de>, YT Shen <yt.shen@mediatek.com>,
+ Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ ginny.chen@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Changes since v7:
+ - remove the memory allocation out of cmdq_dev_get_client_reg()
+ - rebase onto 5.2-rc1
 
+Changes since v6:
+ - remove cmdq_dev_get_event function and gce event property
+ - separate some changes to indepentent patch
+ - change the binding document related to gce-client-reg property
 
-On 12/06/2019 09:16, Julien Thierry wrote:
-> Hi Marc,
-> 
-> On 11/06/2019 18:03, Marc Zyngier wrote:
+Changes since v5:
+ - fix typo
+ - remove gce-event-name form the dt-binding
+ - add reasons in commit message
 
-[...]
+Changes since v4:
+ - refine the architecture of the packet encoder function
+ - refine the gce enevt property
+ - change the patch's title
 
->> +
->> +void vgic_lpi_translation_cache_init(struct kvm *kvm)
->> +{
->> +	struct vgic_dist *dist = &kvm->arch.vgic;
->> +	unsigned int sz;
->> +	int i;
->> +
->> +	if (!list_empty(&dist->lpi_translation_cache))
->> +		return;
->> +
->> +	sz = atomic_read(&kvm->online_vcpus) * LPI_DEFAULT_PCPU_CACHE_SIZE;
->> +
->> +	for (i = 0; i < sz; i++) {
->> +		struct vgic_translation_cache_entry *cte;
->> +
->> +		/* An allocation failure is not fatal */
->> +		cte = kzalloc(sizeof(*cte), GFP_KERNEL);
->> +		if (WARN_ON(!cte))
->> +			break;
->> +
->> +		INIT_LIST_HEAD(&cte->entry);
->> +		list_add(&cte->entry, &dist->lpi_translation_cache);
-> 
-> Going through the series, it looks like this list is either empty
-> (before the cache init) or has a fixed number
-> (LPI_DEFAULT_PCPU_CACHE_SIZE * nr_cpus) of entries. And the list never
-> grows nor shrinks throughout the series, so it seems odd to be using a
-> list here.
-> 
-> Is there a reason for not using a dynamically allocated array instead of
-> the list? (does list_move() provide a big perf advantage over swapping
-> the data from one array entry to another? Or is there some other
-> facility I am missing?
-> 
+Changes since v3:
+ - fix a typo in dt-binding and dtsi
+ - cast the return value to right format
 
-Scratch that, I realized having the list makes it easier to implement
-the LRU policy later in the series.
+Changes since v2:
+ - according to CK's review comment, change the property name and
+   refine the parameter
+ - change the patch's title
+ - remove unused property from dt-binding and dts
+
+Changes since v1:
+ - add prefix "cmdq" in the commit subject
+ - add dt-binding document for get event and subsys function
+ - add fix up tag in fixup patch
+ - fix up some coding style (alignment)
+
+MTK will support gce function on mt8183 platform.
+  dt-binding: gce: add gce header file for mt8183
+  mailbox: mediatek: cmdq: support mt8183 gce function
+  arm64: dts: add gce node for mt8183
+
+Besides above patches, we refine gce driver on those patches.
+  soc: mediatek: cmdq: reorder the parameter
+  soc: mediatek: cmdq: change the type of input parameter
+  mailbox: mediatek: cmdq: move the CMDQ_IRQ_MASK into cmdq driver data
+  soc: mediatek: cmdq: clear the event in cmdq initial flow
+
+In order to enhance the convenience of gce usage, we add new helper functions and refine the method of instruction combining.
+  dt-binding: gce: remove thread-num property
+  dt-binding: gce: add binding for gce client reg property
+  soc: mediatek: cmdq: define the instruction struct
+  soc: mediatek: cmdq: add polling function
+  soc: mediatek: cmdq: add cmdq_dev_get_client_reg function
+
+Bibby Hsieh (12):
+  dt-binding: gce: remove thread-num property
+  dt-binding: gce: add gce header file for mt8183
+  dt-binding: gce: add binding for gce client reg property
+  mailbox: mediatek: cmdq: move the CMDQ_IRQ_MASK into cmdq driver data
+  mailbox: mediatek: cmdq: support mt8183 gce function
+  soc: mediatek: cmdq: clear the event in cmdq initial flow
+  soc: mediatek: cmdq: reorder the parameter
+  soc: mediatek: cmdq: change the type of input parameter
+  soc: mediatek: cmdq: define the instruction struct
+  soc: mediatek: cmdq: add polling function
+  soc: mediatek: cmdq: add cmdq_dev_get_client_reg function
+  arm64: dts: add gce node for mt8183
+
+ .../devicetree/bindings/mailbox/mtk-gce.txt   |  25 ++-
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      |  11 ++
+ drivers/mailbox/mtk-cmdq-mailbox.c            |  18 +-
+ drivers/soc/mediatek/mtk-cmdq-helper.c        | 165 ++++++++++++----
+ include/dt-bindings/gce/mt8183-gce.h          | 177 ++++++++++++++++++
+ include/linux/mailbox/mtk-cmdq-mailbox.h      |   5 +
+ include/linux/soc/mediatek/mtk-cmdq.h         |  52 ++++-
+ 7 files changed, 392 insertions(+), 61 deletions(-)
+ create mode 100644 include/dt-bindings/gce/mt8183-gce.h
 
 -- 
-Julien Thierry
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
