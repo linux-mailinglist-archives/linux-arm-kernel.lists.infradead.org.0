@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2D2A41A85
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 04:52:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B060441A86
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 04:52:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=/sOWmaqtNf2ZK4QRdSqa56pamZ5S3xcwp72HB031OhU=; b=DsfhjajjDHONJWKotAHQ9OvuzM
-	nnQAaTAOzNwtRh8qqFQuEYsCikgjqokj7eRETJ6SXeXQh3zxSzS+wENvv3zwViMCF4G5GWByvH4S2
-	DM7bBtsJt/HFgY3CW7m8Is+FxILHedIUqg4K0oD0uihJLh6lD4hogK5hj6btQv5PZGe+lDTwtyW2c
-	63Pq/8Ig6Gzp5QktfvtCq6I0bet0ly1bvcF/FKPNX7Od5772EIc4x/7E/45aEc6bsaGwFYG68Zl0G
-	eJLUKEdGbEV99rp119te5v27MsAIt4v2Gnj81/Yx2VqeFxEcWTWJ6qtVy4j98vcVBzyk5GPWVARnd
-	YI26RebA==;
+	bh=ZeO0gYAaEHn3Efn2cOIsdNBNVejZi6q2h4MxLHnxvkw=; b=qDJ7egHj8cLcm7ANu85p37yUPc
+	reSF+o+l8V7He9EjGxuwt362bpj4zTQpggs1QuHM3ztA+mHhGSlJjlqGvuYTw9iQ/8Jgrc72yZVwF
+	x5/FGYvjiCkBp+RdHqvs6mzBB1FfGMFBZyyak0JtsNqcl3AB4EIBP+y4iDu+I28vypdbhv9uIkBEU
+	dB2Lios3hLz00uEAyTvkdNltWHz3JqEMSLneocphWNS1lCbTWr6jKZHpRJ1z5awscWqjiDaAPSMey
+	VQiNbQaT79Ppv8iXW4rSzTr6qQo1D5Q7JqBh2Ow3wRMUpJ9g9eqnWokSMdahGJiuqf2lenmTy0iBf
+	ggqOrQ7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hatMq-0003yq-S4; Wed, 12 Jun 2019 02:52:04 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hatN9-0004BV-6x; Wed, 12 Jun 2019 02:52:23 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hatLj-00036M-Pf
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 02:50:57 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f9so15092376wre.12
+ id 1hatLm-00038R-Gp
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 02:51:00 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g135so4892668wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Jun 2019 19:50:55 -0700 (PDT)
+ Tue, 11 Jun 2019 19:50:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ZYOlLTboZIRXWZw6S6TQeVuhAbGmdEdSutoUzSCOLps=;
- b=GCDvTBABTOKUVgipDQtZOMx6whSGb276wciJPY+7DxRYk49lxT8P8rGhlztBPPG5mE
- 33mkUdsapqPrh157t57f8bruOxWlToxSDy8lmuh/0CEvEjRmvtwF+QSqh2uRtqiKh6L0
- +spTZ8SXeqden9ogBIQ3JOoMvVxTuWt3i3wRuShEXuiQ1SCGsl8YSKc1JO7nSKWosov3
- gNSEV077gYlGn+gvAz/s77D3/bBGB2Ouy1bxNaSG9MSa/4ebc8yedO+DvNr/9aO1h5uL
- bB4EmI9t0i/cxEXaGBV5WFLhUzZZF6+VdLUelqATHZiTJ0pIWmZfG+4r63H4c/AqRjN2
- 9tWw==
+ bh=PZ8IxQLBbhZIUayf02pjL/v8CjcGWE8cXb2wOMcTc+s=;
+ b=agfwfoQxYRo9JZDmNhxnwRTm86L0f/ervRuR8GJyaYH8GK+EYzkD7SssLpDf5W22fz
+ OJr21iMb2rKBLIQmq8j4wSkNdNnIUvDofP/YvpacroCkCkkTGvDPaKl0rUVjbZ98ex5Z
+ itRhOz1HuCkEOcumWoQqnfM/2BkO1fT8XHNAEeHUdSyxMON8eQY5XrBQ8mnliLD7V54o
+ JzKo0nbtGKSuvTV5SCHZ4JKmNlQFJ8txPlNZKs3dbx79rMKwGTE+j4vyL6yw9Kn1PYdJ
+ /NqbHmb44Nu/CoOAM7aVJ6Bu39BUW2imfRb4LVlusFIg+GE3y1LfDwRi9+dRNtR2wONS
+ Y+1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ZYOlLTboZIRXWZw6S6TQeVuhAbGmdEdSutoUzSCOLps=;
- b=qoQ/2Z1hYOzi341/IGPJMGhCkv/HWWdAiBTmANE1+c1xPlh9luF+Gg+2KMvHluFWcP
- rWEdy9STD/FyXLZTsxLjw1U9VntLvlYxJ49qBFKjUz0bQrUlGvlvcVcBcHc/c52BEGrE
- 4DN/ocf+FmAugo2Mrf0ZbSkpzlynqF30yEfr4bh8eVGgyLWf51ihO0VmM4jaDwfUdDbp
- zH/XaIQI7BmBhRT9D94K0Ptlh3HPeilKfyC4P5uwDOJrxm7r83dmEJ1RWRWBurO+O53D
- 7znJ0rtzjb1kPR4m5c8gyMf4SWUVVhVrU9YLZju6N2ZY+XlsQYpbGgcIuXitU1YWLfHi
- Ib9Q==
-X-Gm-Message-State: APjAAAV76x4um/OJyVgOdkT1NZWzkR6TStcXIsq9jslecamWPJYp/gZ1
- w0h2kfMSaNOKd7lK8MF9VMI=
-X-Google-Smtp-Source: APXvYqzGlfqZKQkwITfgFWt6NPY2a4l1rWS4jBLvCiq9QM/5IkXvG4u0FfgOJjBPmsBMdEnItc1/HQ==
-X-Received: by 2002:adf:fbc7:: with SMTP id d7mr48920878wrs.224.1560307854503; 
- Tue, 11 Jun 2019 19:50:54 -0700 (PDT)
+ bh=PZ8IxQLBbhZIUayf02pjL/v8CjcGWE8cXb2wOMcTc+s=;
+ b=S/9/lRk3m4+FfxUtdmW/De+khVZ5XqGYVVJBg1v2Uv4hxxN5DMnNM9KurwYcQo36dQ
+ wsDHsp69Zxyp65TSizMBZn2vhN2ASY5zinHBMHhLRkuEkh8QCOMBbAG0J/xF/HXvlN77
+ ia1VqmUhbv4XPDY8b/RiRSflYH7oFTwZCnfIzdUiUXE+4L9DdzJfNe/oSBrHCvdXEnle
+ h42SJbTUKlMsetjcT3sRNhwNQSRUSRTg5WosAJTP8tL/Ph1j8zB1yTs2jjSV629GfQis
+ k7E8ZVynhH3/HQ2NKpsa0o3nRXZN4az4Nyo6xZcLm4ilfHR1GI1QyjlF5rFFkY9Nkx9U
+ P2hg==
+X-Gm-Message-State: APjAAAXX7MiQ51rTNMPoIQLve+1Rs9x3zKKjhQ0Ew2+N4F2uG1ObDjIB
+ mNRMgMkg1Zu+PKJpW/PUDXo=
+X-Google-Smtp-Source: APXvYqzU9n4GxvHFaB5sucmyNQDy3VdZGOO62pq+AjWPrujPHa+xf03v5rx/0c9sRndpj/TscJ3J7g==
+X-Received: by 2002:a1c:a483:: with SMTP id n125mr943615wme.3.1560307856983;
+ Tue, 11 Jun 2019 19:50:56 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id s10sm4374100wmf.8.2019.06.11.19.50.51
+ by smtp.gmail.com with ESMTPSA id s10sm4374100wmf.8.2019.06.11.19.50.54
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 11 Jun 2019 19:50:54 -0700 (PDT)
+ Tue, 11 Jun 2019 19:50:56 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: arm@kernel.org
-Subject: [GIT PULL 5/6] Broadcom soc changes for 5.3
-Date: Tue, 11 Jun 2019 19:50:27 -0700
-Message-Id: <20190612025028.13118-5-f.fainelli@gmail.com>
+Subject: [GIT PULL 6/6] Broadcom soc-arm64 changes for 5.3
+Date: Tue, 11 Jun 2019 19:50:28 -0700
+Message-Id: <20190612025028.13118-6-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190612025028.13118-1-f.fainelli@gmail.com>
 References: <20190612025028.13118-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_195055_853133_7554A4E8 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20190611_195058_631968_FD9D9B0F 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,9 +99,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
- Jim Quinlan <jim2101024@gmail.com>, Ray Jui <ray.jui@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, olof@lixom.net,
- Doug Berger <opendmb@gmail.com>, Wen Yang <wen.yang99@zte.com.cn>,
+ Jim Quinlan <jim2101024@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ olof@lixom.net, Doug Berger <opendmb@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -114,38 +114,35 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.3/soc
+  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.3/soc-arm64
 
-for you to fetch changes up to 885895a8eae60bfcb9fbc6b91b35c5b930834011:
+for you to fetch changes up to 724cf0aecb0d839b0b5865901b02a742dcfa6ea4:
 
-  ARM: bcm: Enable PINCTRL for ARCH_BRCMSTB (2019-06-11 14:59:50 -0700)
+  arm64: Enable PINCTRL for ARCH_BRCMSTB (2019-05-31 10:34:38 -0700)
 
 ----------------------------------------------------------------
-This pull request contains Broadcom ARM-based SoC Kconfig/machine
+This pull request contains Broadcom ARM64-based SoCs Kconfig.platform
 changes for 5.3, please pull the following:
-
-- Wen fixes a missing referenc count on the CPU device_node object
-  throughout mach-bcm/
 
 - Jim adds the ability for ARCH_BRCMSTB to use reset controllers
 
 - Doug adds the ability for ARCH_BRCMSTB to use the PINCTRL framework
 
+- Florian enables the use of the BCM7038 Level 1 interrupt controller
+  for ARCH_BRCMSTB
+
 ----------------------------------------------------------------
 Doug Berger (1):
-      ARM: bcm: Enable PINCTRL for ARCH_BRCMSTB
+      arm64: Enable PINCTRL for ARCH_BRCMSTB
+
+Florian Fainelli (1):
+      arm64: Enable BCM7038_L1_IRQ for ARCH_BRCMSTB
 
 Jim Quinlan (1):
-      ARM: bcm: Enable ARCH_HAS_RESET_CONTROLLER for ARCH_BRCMSTB
+      arm64: Enable ARCH_HAS_RESET_CONTROLLER for ARCH_BRCMSTB
 
-Wen Yang (1):
-      ARM: bcm: fix a leaked reference by adding missing of_node_put
-
- arch/arm/mach-bcm/Kconfig           | 2 ++
- arch/arm/mach-bcm/bcm63xx_smp.c     | 1 +
- arch/arm/mach-bcm/board_bcm281xx.c  | 1 +
- arch/arm/mach-bcm/platsmp-brcmstb.c | 7 +++++--
- 4 files changed, 9 insertions(+), 2 deletions(-)
+ arch/arm64/Kconfig.platforms | 3 +++
+ 1 file changed, 3 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
