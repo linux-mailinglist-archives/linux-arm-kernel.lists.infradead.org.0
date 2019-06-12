@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFEF542498
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:46:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF2084249C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Jun 2019 13:46:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ig8xZzdZzlkA0JpSE97egYCXexeyiNWT9KByEZmWFco=; b=B6ajmyLaeQvvB2
-	fMPCtzQCUEaX9G/m2PnEASVKtLq9B29oOWZZ2EioFX7cjKyUYt7YnAjI0oboWlYbsjCnqd4lr6v6A
-	/O3FEGzuwDg/+4OjKHVEu/bTyOk4FEIMDTri4CHxsAf5UIaOI4h9KyEQORxhT0xOrEetoaXkvhVp3
-	dn9no2WQ+mWC5j079UtQieJ6Ex/YEUSwwb9QyWRc1Tb6HbOj2SjhJjuh1B5VqRN9rGpLjRn7Wq4wI
-	KvfGRrUHEylCxwF+VNojH3tbu7d/QApXpYF5oEz21fXnzfntnZ5AJ1Ho5u+2GG3eGyUNQ0ffGqVRc
-	lZX18VQ7wxsIx4ByR+jA==;
+	List-Owner; bh=sUkMOGrd0nq9FcmR84apMTkkSxOIpZe58sD88P5UDgw=; b=q5Wt1Rf8HVeYIC
+	c2CcyKjq+wTAXXKnLSF+nFJxztEmYUm1morLGm4hkIr7WCvpI0pxKn6lBSUC4wjJP4DjAs7eqqwJE
+	yIl0gKl6edMXhHj8JTyv0JasA0FsbKbnbsv/nan5Yk9WZCSxJWcGj+0OjKcXFPqM+/lSgnFrNg1sz
+	o0AUoA7rhwV2gAhRgYSNSYtY6gKK3R5+0X4NTAG9T6tpXHB7L3EukpQ8vtn6+iQVifMnCB6gqEIU/
+	ive1iGDO8u15oshpyaFT4EPX8PBdNhOTbobb3XChS4uUJcD6tZrRNNtjLV7bLk5IWcSvyMVzXvL+w
+	MljS2ezOtBL36VSzMtTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hb1hc-0001Yc-Kh; Wed, 12 Jun 2019 11:46:04 +0000
-Received: from mail-qk1-x749.google.com ([2607:f8b0:4864:20::749])
+	id 1hb1hx-0001rS-Ii; Wed, 12 Jun 2019 11:46:25 +0000
+Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hb1fX-0006rw-3G
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:43:56 +0000
-Received: by mail-qk1-x749.google.com with SMTP id d62so3034911qke.21
+ id 1hb1fZ-0006wG-V5
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Jun 2019 11:43:59 +0000
+Received: by mail-yb1-xb4a.google.com with SMTP id v67so15172956yba.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Jun 2019 04:43:53 -0700 (PDT)
+ Wed, 12 Jun 2019 04:43:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=lneYlz8LHaEiU1JdbWuWSlmR06MpCpkboyQbci6TbSY=;
- b=ZYQEd649LLsr0eo67tg5mBkc6yqoxRRkUvXmz72kCnd/9DceAYIH632RHTy/L9FYgN
- XB0cqiUT3202g16B44AOr6KGjUuUQCuOjjfhX/1rdyfTYvOLIoAOYVJQEyUECaYKw2EI
- wRT/I+bn5+fj2NWK1Uq2bsCtdk4XPg+CFAKbAVJ1PN2JQI+rUil/RmfEGI1P+fH7HVvB
- bi61I1IZdPLHbF9O0x6GFnVgN1H+PpiOuX7A6ltMyEW2b4fJxpc44OPAWrBW3bGwUHZL
- UOaZyEvgJIbhkL4J+WjiYsF7XS5CEf84amjDEh8dkaorHVY5qClgPk6YQHyQ5aqjEpT+
- PVjA==
+ :cc; bh=YVD/WVehggR5Wc73HNU/6Lbl/J+rO7t+BXcE3PMRRDE=;
+ b=hBGTTVG6ghhZ3+0guLELKJ8wGbky2Qh0tZY2BONpI+zCvbTSjhlIF7W0/JokOx5TzR
+ VO5Rbf4FBD1McYuvKbubXsd/VFsD/O7BipMIP18RAMdpnsTMlCRbLlZbiP7oKXwSNsh/
+ 7N4rlsaJS9M2NXxtFUlEJJPsr6p+or/nlT4Zv12ZmDZup6gUVLdgoPgHeFDcpmGNRrjd
+ 3ALIrSuYojaH/pslqsc0jXMozZhljZkCeYnT4XFg9eFUPMSJzEQdr0RcX9d6uIudOkk2
+ t4M2C4U//NS1sNKKoHlt+ReZpRZW4iLnE+17ISBaStJwmRniOrfV+Za5ClmC/tGhrMxn
+ H1LA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=lneYlz8LHaEiU1JdbWuWSlmR06MpCpkboyQbci6TbSY=;
- b=Jqq39u1ny85srx9kNcBQ1sFZYLrdLXxCY+DAkNEpTMYz2oIzrEAi4fFqrC6/CJnr6x
- zj/hIZVebOW+ZXa0gy6mrV5PMvHjWXZWRTpT43LmKuVNAXDmAavEC09fWUxkfIYmjU+b
- SoFYvfqnAKfLa0rdEgze7TB4zZDHPsS70do5b406VjTQzk2k1PdGjiZHsTqpLbrqOY+2
- H2rcqvoeBa21ftx1yJNa0Yr6F9dK3lzcBANyl1O+MQsGstMpMC19GVZ8M6ksoRM2JsQK
- oYS+lpsg2mXo4qVufZm6CE95gHwzlzG4dz/5ZxAPNk/nZI7e+XmNhfgmF5ns3uytEoXq
- ZsKw==
-X-Gm-Message-State: APjAAAXpJDF30Dy2ayI1XW+CcjElUHXLVOrQDbnR/tP7y7CQ4wVjq87Q
- L46qVQda11cbNxAtyBf91brDZy4mBIWXR+yZSfzcMlgnKI4dzJhJwtv6lVS0WGtJYXY4Y0SimGC
- TU1VxfFE5W+ydjqXAOErWl3/nqHqLphn0Wq/ybd6RUEfHdLuj/dCCBpuXs1XYMJl29GtS24qzaw
- l9CqMJ5KzkIELdJLA=
-X-Google-Smtp-Source: APXvYqycBZ/jgN95w1hvszVcRcdW7P9Dg7ub2DyBfBHGpLBHXa9MwJ+9kmDh7H9YZkcwArOGpwiZYJEXckCXcJ6D
-X-Received: by 2002:a37:a5d5:: with SMTP id
- o204mr25506301qke.155.1560339832693; 
- Wed, 12 Jun 2019 04:43:52 -0700 (PDT)
-Date: Wed, 12 Jun 2019 13:43:22 +0200
+ bh=YVD/WVehggR5Wc73HNU/6Lbl/J+rO7t+BXcE3PMRRDE=;
+ b=FMOxiEwrERG/Qul81j5zsMyK7DOvpMFVQbHRaUBdRbT8WxjvLH9YuAekXmPn9qLxIB
+ eLorXHczeRSzwDXV5mjSHMIEUpaEInivDIX5kGYpWrqVvpowQXt2QBsqGLdBvWwRy45w
+ uvQA4YEc4Z1krloZD7S7M/q0KxfvDF9bzTlhyrgAaK2kemICGkmJyAHRgF8zhYWJmcUQ
+ TSZAy3jym2hXWe0a3rdyBAyIk8Wa35blAbqw9E6eACNOVNj6xJRkzYctKLsxo6IVMJC+
+ U32pzSyNRMjoNITryp41fVihJSIrHNVmkcV2cQ6O0S4w+IvjsJXjG7/oVD/QtzzfkE8W
+ KGkA==
+X-Gm-Message-State: APjAAAVlEOgD2o9PoIZFaTw9+TbbRDKdzBhw2k/b9QBCIKNLfT4qjghU
+ DLaJfiw1oSY0pTTHRKVeVgEoUq0vEk40MYdagxzKGSwh3e2IqKKvGODgQnPxYw0h81n8X8cCS3J
+ XNVI/+EFMTycNd+nPZ6OiEcZMDxz0gSJnIozx44ennCdKkiMCvr7dhMiUJ2U4ijntnqzR4afvJo
+ 53pD+xAr3pc4SI2e4=
+X-Google-Smtp-Source: APXvYqzC8DIDqxpBDUE3Cs2MqoYPwBYxauFh78Yi9sE2QOVumKFBSV5WM5ycdrw0GZ9JIDvcxx34zgkY7MRSX6GJ
+X-Received: by 2002:a81:9947:: with SMTP id q68mr46506819ywg.197.1560339835908; 
+ Wed, 12 Jun 2019 04:43:55 -0700 (PDT)
+Date: Wed, 12 Jun 2019 13:43:23 +0200
 In-Reply-To: <cover.1560339705.git.andreyknvl@google.com>
-Message-Id: <8f65548bef8544d49980a92d221b74440d544c1e.1560339705.git.andreyknvl@google.com>
+Message-Id: <4c0b9a258e794437a1c6cec97585b4b5bd2d3bba.1560339705.git.andreyknvl@google.com>
 Mime-Version: 1.0
 References: <cover.1560339705.git.andreyknvl@google.com>
 X-Mailer: git-send-email 2.22.0.rc2.383.gf4fbbf30c2-goog
-Subject: [PATCH v17 05/15] mm, arm64: untag user pointers in mm/gup.c
+Subject: [PATCH v17 06/15] mm, arm64: untag user pointers in get_vaddr_frames
 From: Andrey Konovalov <andreyknvl@google.com>
 To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org, 
  linux-kernel@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
@@ -68,15 +67,15 @@ To: linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
  linux-media@vger.kernel.org, kvm@vger.kernel.org, 
  linux-kselftest@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_044355_285505_7058C771 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20190612_044358_030091_548AE17B 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:749 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -132,42 +131,30 @@ This patch is a part of a series that extends arm64 kernel ABI to allow to
 pass tagged user pointers (with the top byte set to something else other
 than 0x00) as syscall arguments.
 
-mm/gup.c provides a kernel interface that accepts user addresses and
-manipulates user pages directly (for example get_user_pages, that is used
-by the futex syscall). Since a user can provided tagged addresses, we need
-to handle this case.
+get_vaddr_frames uses provided user pointers for vma lookups, which can
+only by done with untagged pointers. Instead of locating and changing
+all callers of this function, perform untagging in it.
 
-Add untagging to gup.c functions that use user addresses for vma lookups.
-
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Andrey Konovalov <andreyknvl@google.com>
 ---
- mm/gup.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ mm/frame_vector.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/mm/gup.c b/mm/gup.c
-index ddde097cf9e4..c37df3d455a2 100644
---- a/mm/gup.c
-+++ b/mm/gup.c
-@@ -802,6 +802,8 @@ static long __get_user_pages(struct task_struct *tsk, struct mm_struct *mm,
- 	if (!nr_pages)
- 		return 0;
+diff --git a/mm/frame_vector.c b/mm/frame_vector.c
+index c64dca6e27c2..c431ca81dad5 100644
+--- a/mm/frame_vector.c
++++ b/mm/frame_vector.c
+@@ -46,6 +46,8 @@ int get_vaddr_frames(unsigned long start, unsigned int nr_frames,
+ 	if (WARN_ON_ONCE(nr_frames > vec->nr_allocated))
+ 		nr_frames = vec->nr_allocated;
  
 +	start = untagged_addr(start);
 +
- 	VM_BUG_ON(!!pages != !!(gup_flags & FOLL_GET));
- 
- 	/*
-@@ -964,6 +966,8 @@ int fixup_user_fault(struct task_struct *tsk, struct mm_struct *mm,
- 	struct vm_area_struct *vma;
- 	vm_fault_t ret, major = 0;
- 
-+	address = untagged_addr(address);
-+
- 	if (unlocked)
- 		fault_flags |= FAULT_FLAG_ALLOW_RETRY;
- 
+ 	down_read(&mm->mmap_sem);
+ 	locked = 1;
+ 	vma = find_vma_intersection(mm, start, start + 1);
 -- 
 2.22.0.rc2.383.gf4fbbf30c2-goog
 
