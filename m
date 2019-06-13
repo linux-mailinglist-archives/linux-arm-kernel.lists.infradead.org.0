@@ -2,84 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C483C4438F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:30:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4628E44392
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:31:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kA+uqWuEXsEk931PwQvq2vfqz/x7WrGfB9GwWd7dkUk=; b=KcFhU+SvcNcWwUuU0Y/DhU/Lcs
-	+MKTHwRAQAth3iJka+yX2VXdbmHDvzmoDl08QimkmEOCUX8h3FUu9SIHpoCEfRhDpXBnDBluEVT3n
-	O8vDu3QTQWKDcDzgLoaqEsg4ZuOtvBjxJhA3rqzJm28z8R6yW1zGPn8EOErkgvGOEfWJWvCWP/vmc
-	3/5Cb+M1uxssd3pX4bQpj0/4SEm/u12t+G7P+JQhR2E4CZPIjgImiFdWOHM35lLv5LJO0EXCkehQK
-	A/aYwNM5GAPHIH4VFgFm6JRHA/YnsfRfgqnTMLl+hbfj0vM6mkhld0+bXIoZNE8XPlBd//Srb4hcK
-	Jm7VZLSg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O14SMQbiCc5n0IlXf1PNR3DSOOPyW3gskCLDDQmk/N8=; b=ADOnbTOhGbfJ/8
+	KAgpY1Zecq64dW83GG6yhXteU/PAbA+rtjtX1eyYzhIVSi3YkhjtNKv1Cx1hMZoedeScffb6Zyx88
+	S/DaglBoBWt0Uy4yf01GQ5sgJ4jmWnQmY8P4n3UMvnJcbnwyI9cN0sTfu3iw7eOWFXcgB6y0JDdUQ
+	nWl1hIECQCXZja9fIE62N0MM3IT/ka3OLS1qaJG45bEhppQm96iQ1vQC3x/jgRlIEnIKfQTOWqe64
+	T8D8//1m2TDf4RJse42dqEww1rbTz6O0jT+hTmrOa+CDWSF33lWVProAkhibE50PVvhocoskMLie9
+	i465LhVw7fN5ooXazoAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbScp-000770-D2; Thu, 13 Jun 2019 16:30:55 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hbSdG-0007bm-5D; Thu, 13 Jun 2019 16:31:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZg-0002uT-IS; Thu, 13 Jun 2019 16:27:42 +0000
-Received: by mail-pf1-x443.google.com with SMTP id j2so12166388pfe.6;
- Thu, 13 Jun 2019 09:27:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/p2hCYDhKAJ230l1zBzHnYZFs3VHjVr39XvOIKP4Pys=;
- b=VEgX2ZhFSzG3BImEi4GH9MUQbh4LnQqPx0JppfXi7XYfJJvmRAB0Db/QKVQQl8qM10
- SoKlDlc0SaxSrTEDHUtMYjOT11a0Lj5yq8ULKEndaWGWOkhNMNutP6XCaT2Ffliy6EBJ
- 5jQ1g8Pajofj88UF7QvL1nK1FAEH7NLyg8e9QWEleD0lUPmjBavBQJY0q78qlAGQNurb
- 9dqruWp+dSmlVS3sT1CIfM6Oi8H7XanvMOQZ6mbabOL0lGwx8q36/3mrMkLEV/gxHbiY
- un+NlmZxMI15zJRk9HnXmJzI1lKBdlQNldk07QrTBkVVnjybOiiPxyeHYi4kTRL37lCi
- W8Fw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=/p2hCYDhKAJ230l1zBzHnYZFs3VHjVr39XvOIKP4Pys=;
- b=MdPC6YYD/FoSk0nFWWm+lXH+cSLVwF3DR5a/reOOnif2dLWea9SQLIiSJSjwaa4DhT
- Ys+PXY6TXefTe4L0fxuWvsJCAnRB9qs7Ry2Jc8jt6K30tLVWIi0O+zFPqJnH40GRd9h5
- /vOR9+cjVw+A+Sb9ng9r1KVXsmwQLFG6to4P0gGQ5HeEMrH3TTlSvp1E1v6fa0zXff1S
- 83jftkoDd+8Q8TfGRwSGgdNMv8l4eBzR5ZpwJ1mheOLORwAIwqAwrNIeAPxGACUwNjBp
- mBx9OSWkP2Bfe7BTEfuGOcmTTpYzTT8NmoeEoHeXgvEduvB4bdkwE/8bjt1SfdHxWZ90
- WLfA==
-X-Gm-Message-State: APjAAAUYAvWx/IBzoG1I/EX9wo1tCHJD4Uue77BBCOH7kNYQK5r3RsJC
- cChLlYAlDu6gL4AZkwDxPDM=
-X-Google-Smtp-Source: APXvYqwn2Bb5s9dHHXGu4kP/PrmweWqq9r8gaJuQTaAylLqdC9JMoO2D+zXiDQevAsqwN3NWgk6q+A==
-X-Received: by 2002:a65:60d2:: with SMTP id r18mr31309788pgv.217.1560443259298; 
- Thu, 13 Jun 2019 09:27:39 -0700 (PDT)
-Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id j2sm310930pgq.13.2019.06.13.09.27.38
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:38 -0700 (PDT)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
- krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
- agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
- heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 10/10] iommu/tegra-smmu: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:27:03 -0400
-Message-Id: <20190613162703.986-10-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.0
-In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
-References: <20190613162703.986-1-tiny.windzz@gmail.com>
+ id 1hbSZo-000315-5L
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 16:27:50 +0000
+Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
+ [209.85.222.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 31418217D6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 16:27:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560443267;
+ bh=oV2s9OvDzFbumuIeb7Lf7dWw56Ci8qRJMtz31+CbcR8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=0g20sUa6gG5Ghso7T4zlKrrud19bAEapVbAqMvlvYsP36YDy/Ffp0lewXWfThNo+7
+ XZ2olPF/QgB0KqosjYiWyjWC7j2Kr20Q0dGdc0yH3Tv3Cq7SJ0GgEcxhefmNKRHSI+
+ 31AY78M+FjZKoLTsbUUNvBEXgXIuIlvToGBcFAJE=
+Received: by mail-qk1-f169.google.com with SMTP id t8so9470354qkt.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 09:27:47 -0700 (PDT)
+X-Gm-Message-State: APjAAAVySu390mqhTLaIQgfKxq12qwTu+msricJKtUpn8czmweW1YL5u
+ scCJNPVtdARRNzuYkvU9C6FzAn/l2T8ulCX/IA==
+X-Google-Smtp-Source: APXvYqyv5Q4f2sdZ2jMIg1qfLyRT+puBlW4iPdzSH/fycI/GGkkXhyCnnFEILrmwTIUcYvdReWn2zPq7W89rs+2d8Ls=
+X-Received: by 2002:a37:a6c9:: with SMTP id
+ p192mr74021946qke.184.1560443266367; 
+ Thu, 13 Jun 2019 09:27:46 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190613132012.14202-1-maxime.ripard@bootlin.com>
+In-Reply-To: <20190613132012.14202-1-maxime.ripard@bootlin.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 13 Jun 2019 10:27:24 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJWGxf+gSZtXpDDjL0Na5hzpPe+rY6f7NLQYD5NHU=FYQ@mail.gmail.com>
+Message-ID: <CAL_JsqJWGxf+gSZtXpDDjL0Na5hzpPe+rY6f7NLQYD5NHU=FYQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: nvmem: Add YAML schemas for the generic
+ NVMEM bindings
+To: Maxime Ripard <maxime.ripard@bootlin.com>, 
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092740_634760_D314E6EF 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190613_092748_292884_1CEFAB96 
+X-CRM114-Status: GOOD (  28.87  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +76,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,41 +90,283 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Yangtao Li <tiny.windzz@gmail.com>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
- linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Updates license to use SPDX-License-Identifier.
+On Thu, Jun 13, 2019 at 7:26 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
+>
+> The nvmem providers and consumers have a bunch of generic properties that
+> are needed in a device tree. Add a YAML schemas for those.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> ---
+>  .../bindings/nvmem/nvmem-consumer.yaml        | 45 +++++++++
+>  .../devicetree/bindings/nvmem/nvmem.txt       | 81 +---------------
+>  .../devicetree/bindings/nvmem/nvmem.yaml      | 93 +++++++++++++++++++
+>  3 files changed, 139 insertions(+), 80 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml
+>  create mode 100644 Documentation/devicetree/bindings/nvmem/nvmem.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml b/Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml
+> new file mode 100644
+> index 000000000000..c48b74733b68
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml
+> @@ -0,0 +1,45 @@
+> +# SPDX-License-Identifier: GPL-2.0
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
- drivers/iommu/tegra-smmu.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+Looks like Srinivas is the sole author of nvmem.txt. Srinivas, okay if
+we license this dual GPL2/BSD-2-Clause? Really, that's a decision for
+Linaro.
 
-diff --git a/drivers/iommu/tegra-smmu.c b/drivers/iommu/tegra-smmu.c
-index 463ee08f7d3a..9a50ca4ec65c 100644
---- a/drivers/iommu/tegra-smmu.c
-+++ b/drivers/iommu/tegra-smmu.c
-@@ -1,9 +1,6 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-  * Copyright (C) 2011-2014 NVIDIA CORPORATION.  All rights reserved.
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
-  */
- 
- #include <linux/bitops.h>
--- 
-2.17.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/nvmem/nvmem-consumer.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NVMEM (Non Volatile Memory) Consumer Device Tree Bindings
+> +
+> +maintainers:
+> +  - Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+> +
+> +select: true
+> +
+> +properties:
+> +  nvmem:
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    description:
+> +      List of phandle to the nvmem providers.
+> +
+> +  nvmem-cells:
+> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> +    description:
+> +      List of phandle to the nvmem data cells.
+> +
+> +  nvmem-names:
+> +    $ref: /schemas/types.yaml#/definitions/string-array
+> +    description:
+> +      Names for the each nvmem provider.
+> +
+> +  nvmem-cell-names:
+> +    $ref: /schemas/types.yaml#/definitions/string-array
+> +    description:
+> +      Names for each nvmem-cells specified.
+> +
+> +dependencies:
+> +  nvmem-names: [ nvmem ]
+> +  nvmem-cell-names: [ nvmem-cells ]
+> +
+> +examples:
+> +  - |
+> +    tsens {
+> +        /* ... */
+> +        nvmem-cells = <&tsens_calibration>;
+> +        nvmem-cell-names = "calibration";
+> +    };
+> diff --git a/Documentation/devicetree/bindings/nvmem/nvmem.txt b/Documentation/devicetree/bindings/nvmem/nvmem.txt
+> index fd06c09b822b..46a7ef485e24 100644
+> --- a/Documentation/devicetree/bindings/nvmem/nvmem.txt
+> +++ b/Documentation/devicetree/bindings/nvmem/nvmem.txt
+> @@ -1,80 +1 @@
+> -= NVMEM(Non Volatile Memory) Data Device Tree Bindings =
+> -
+> -This binding is intended to represent the location of hardware
+> -configuration data stored in NVMEMs like eeprom, efuses and so on.
+> -
+> -On a significant proportion of boards, the manufacturer has stored
+> -some data on NVMEM, for the OS to be able to retrieve these information
+> -and act upon it. Obviously, the OS has to know about where to retrieve
+> -these data from, and where they are stored on the storage device.
+> -
+> -This document is here to document this.
+> -
+> -= Data providers =
+> -Contains bindings specific to provider drivers and data cells as children
+> -of this node.
+> -
+> -Optional properties:
+> - read-only: Mark the provider as read only.
+> -
+> -= Data cells =
+> -These are the child nodes of the provider which contain data cell
+> -information like offset and size in nvmem provider.
+> -
+> -Required properties:
+> -reg:   specifies the offset in byte within the storage device.
+> -
+> -Optional properties:
+> -
+> -bits:  Is pair of bit location and number of bits, which specifies offset
+> -       in bit and number of bits within the address range specified by reg property.
+> -       Offset takes values from 0-7.
+> -
+> -For example:
+> -
+> -       /* Provider */
+> -       qfprom: qfprom@700000 {
+> -               ...
+> -
+> -               /* Data cells */
+> -               tsens_calibration: calib@404 {
+> -                       reg = <0x404 0x10>;
+> -               };
+> -
+> -               tsens_calibration_bckp: calib_bckp@504 {
+> -                       reg = <0x504 0x11>;
+> -                       bits = <6 128>
+> -               };
+> -
+> -               pvs_version: pvs-version@6 {
+> -                       reg = <0x6 0x2>
+> -                       bits = <7 2>
+> -               };
+> -
+> -               speed_bin: speed-bin@c{
+> -                       reg = <0xc 0x1>;
+> -                       bits = <2 3>;
+> -
+> -               };
+> -               ...
+> -       };
+> -
+> -= Data consumers =
+> -Are device nodes which consume nvmem data cells/providers.
+> -
+> -Required-properties:
+> -nvmem-cells: list of phandle to the nvmem data cells.
+> -nvmem-cell-names: names for the each nvmem-cells specified. Required if
+> -       nvmem-cells is used.
+> -
+> -Optional-properties:
+> -nvmem  : list of phandles to nvmem providers.
+> -nvmem-names: names for the each nvmem provider. required if nvmem is used.
+> -
+> -For example:
+> -
+> -       tsens {
+> -               ...
+> -               nvmem-cells = <&tsens_calibration>;
+> -               nvmem-cell-names = "calibration";
+> -       };
+> +This file has been moved to nvmem.yaml and nvmem-consumer.yaml.
+> diff --git a/Documentation/devicetree/bindings/nvmem/nvmem.yaml b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
+> new file mode 100644
+> index 000000000000..65ef2dbbb2a9
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
+> @@ -0,0 +1,93 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/nvmem/nvmem.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NVMEM (Non Volatile Memory) Device Tree Bindings
+> +
+> +maintainers:
+> +  - Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+> +
+> +description: |
+> +  This binding is intended to represent the location of hardware
+> +  configuration data stored in NVMEMs like eeprom, efuses and so on.
+> +
+> +  On a significant proportion of boards, the manufacturer has stored
+> +  some data on NVMEM, for the OS to be able to retrieve these
+> +  information and act upon it. Obviously, the OS has to know about
+> +  where to retrieve these data from, and where they are stored on the
+> +  storage device.
+> +
+> +properties:
+> +  $nodename:
+> +    pattern: "^(eeprom|efuse|nvram)(@.*|-[0-9a-f])*$"
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 1
+> +
+> +  read-only:
+> +    $ref: /schemas/types.yaml#/definitions/flag
+> +    description:
+> +      Mark the provider as read only.
+> +
+> +patternProperties:
+> +  "^.*@[0-9a-f]+$":
+> +    type: object
+> +
+> +    properties:
+> +      reg:
+> +        maxItems: 1
+> +        description:
+> +          Offset and size in bytes within the storage device.
+> +
+> +      bits:
+> +        maxItems: 1
+> +        items:
+> +          items:
+> +            - minimum: 0
+> +              maximum: 7
+> +              description:
+> +                Offset in bit within the address range specified by reg.
+> +            - minimum: 1
+> +              description:
+> +                Size in bit within the address range specified by reg.
+> +
+> +    required:
+> +      - reg
+> +
+> +    additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +      qfprom: qfprom@700000 {
 
+The node name doesn't match what you specified above. Unfortunately,
+the schema checking of examples added won't catch this or anything
+that causes select to fail to match. I'd really like to fix that, but
+don't have any ideas yet.
+
+Otherwise, with that and any license change:
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+
+> +          #address-cells = <1>;
+> +          #size-cells = <1>;
+> +
+> +          /* ... */
+> +
+> +          /* Data cells */
+> +          tsens_calibration: calib@404 {
+> +              reg = <0x404 0x10>;
+> +          };
+> +
+> +          tsens_calibration_bckp: calib_bckp@504 {
+> +              reg = <0x504 0x11>;
+> +              bits = <6 128>;
+> +          };
+> +
+> +          pvs_version: pvs-version@6 {
+> +              reg = <0x6 0x2>;
+> +              bits = <7 2>;
+> +          };
+> +
+> +          speed_bin: speed-bin@c{
+> +              reg = <0xc 0x1>;
+> +              bits = <2 3>;
+> +          };
+> +      };
+> +
+> +...
+> --
+> 2.21.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
