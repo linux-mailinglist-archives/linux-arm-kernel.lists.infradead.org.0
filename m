@@ -2,88 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D21444DFD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 23:00:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C32344E5C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 23:25:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8koqx+/KXXtIRCPerLZmH8VqWg8soIRfLcfIt0XAf7I=; b=NtK6Sg/7hb2v3p
-	ELanRcTC3X1eLSS5pPxQ84aAwArFw/XC7xRQYSMAF10b91cfX7BEiasIsHE6CKXnZAtnq+vU3mjub
-	B0t4i4tMHjiBNjuKCIhMRICbLUFZJ92mynw3RCoMVDQlfCTAi1pPVqBnwe2MuFN38h6UHc9Le3Kbj
-	h05fWMHrzteT07Xc5Y79Hb0Ls/RcxIYXjbNVpQrnFloNN7qkdo92oL4+YP9GKYBbteBcnC3NM9jFu
-	MH7pbLp7D1wRfryjHNk6IYJ+8ZdG6QBkUAhzQVKr1l2YPzmyZEJOnlfof7sNMstmxmmKZHPb6+juo
-	lsZtAB5LsecfQjS6FjCA==;
+	List-Owner; bh=3ETnyc/KzeLgqEOY/4r5OxSmJ7FbEvBD8Vk+cT3LtxI=; b=ukJv81IThnB7eO
+	qGtgx6wQxARarZZUvJSLsPLvqIpuEnGTGecMmIkweQDw36+5SoRJXY3toh26p+Cp2G1dXTZrEi7H6
+	MtdnoSeBHVdWbrtQzraC/j5J7TnkYAcJDcG8pF3eSIfGfuO2d47b+9t2+A+ScVE/3b5Z4mEDYjbxB
+	xs+UeyK//66FbcXtKDd7tWrg7+yRG+qkT89WDcSujIjHFILnWbSKqJXG/dNIVmUTva8nypwiMCMEK
+	JzFcxGj/M1FarVf1cpkJzH9zdbKE/HiL5yYnjtggtZeNXv1/tHPosQpcIhHD44tMo+hpJfB+LgjpL
+	waJBdZ29vnGEAOzhx9Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbWq6-0006YQ-4d; Thu, 13 Jun 2019 21:00:54 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1hbXEE-0007dR-GW; Thu, 13 Jun 2019 21:25:50 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbWpt-0006XH-KW
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 21:00:43 +0000
-Received: by mail-ua1-x944.google.com with SMTP id 8so80070uaz.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 14:00:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ANvjNrcE6QQq73dnlL+mZyHS0xmMxjzetcJMdK2W1jQ=;
- b=CXaGzb143DooLWuwJbQV6crBWgqXBWrbK4+440tGPl1wKAyG8snXREUHW1cU4JZmsm
- FByj4Hbh/N7MYr7J1mbnB5t09OsVMCB1N4NOkq7QEs9SD5IFkvvlk2kM4aqXonR4pgZ7
- 0hbbny8wK43pD9gCj8eWhwnzsqv2xTicEtM7Y=
+ id 1hbXDt-0007bi-V7; Thu, 13 Jun 2019 21:25:31 +0000
+Received: by mail-qt1-f194.google.com with SMTP id n11so137159qtl.5;
+ Thu, 13 Jun 2019 14:25:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ANvjNrcE6QQq73dnlL+mZyHS0xmMxjzetcJMdK2W1jQ=;
- b=KAOwBaO1z8RiLZi634ttHooxG8vEVyf9lT3nWwW9/3nAa0R+ifHRpsqiblVXCMFbAC
- debrDixcIc382fdYp3qA0wzYujLwK+s7n3L37wOXXzK6YMX8/lt25MTuZn/zXXQC7z2o
- CdveN1xTT5xD9e/aMJsaG988c5noxpjVBM1TQMIeS4i8tbMELLApqeRRAzfrG0YrRc/5
- PDRV5vgOHdyPl1jVTxTL/ZIj0PajDOgxlOGSNky9w488D9mO4hIXpsy2ay/a7VbtRZcG
- P9Su32k1zg1EgLMxYunJaqREFyn2KG4A+/T3JYNc7hIW+O0gbLkn5lIDopVwrB3vey8N
- zG1g==
-X-Gm-Message-State: APjAAAUYwRmQVILvNtzhQggimb9clNuyqbaDL3csqhnPAI3p3QvdcZVB
- Raz5Hp2LRJ/TqExJ7wRpWIiAH2I4v2GFk3P+3w8MxQ==
-X-Google-Smtp-Source: APXvYqzlG0QFlUSsjLJYtq2bSsXOqJPxL2qmav8y+XGpEorpyChcZ6aWL5jxAoS7c6ipQTO+UOtbuYWiPAgZ4BuXj/Q=
-X-Received: by 2002:ab0:3d2:: with SMTP id 76mr17494821uau.12.1560459637540;
- Thu, 13 Jun 2019 14:00:37 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=pwPeTWWoYFYFIhYmi6aZL5cgp0+9f5aFv7IECLWMUt0=;
+ b=ZKwC9WWg/MyCqP0C/pjMidAutVxoayU6jjR1AKoX57TiUbGz/xqVCf4FNlpLuvI+jw
+ O9nuLm2ECLY2qsNIpmGExIQQVUvq3xoxcMW/8kBm8qd8/pDoo1pgIOJTxisRisJoYDhF
+ aMQWaBdxxzxRP7HcFH8rf1cPdjcGQ5ksG8QKMiVLszv0rZDrDPRv9FSfS8LEJrLRZnbX
+ xf/SM8v8hk4kMzmTszzckhf6IidZRtXNDNGMbN6WqcLEUD5wOPJmCWDbyy1lM1Ed3gW6
+ zQHMDpD0/uuheHZJYRmUtVdNJ4mbSqX3CTy0j5zPU0wTCaLbNTkxwmt7JZrN/eefoeVO
+ 8e/Q==
+X-Gm-Message-State: APjAAAUk1OMAPkPPBC6ORuDwOXd6skOPmOhfsxhfCwvt70sg0aG8Oq+c
+ FvB2qG+tu1jg1lqAU1vkvrly++M=
+X-Google-Smtp-Source: APXvYqym+4r9cTrTMVSWS00ZJWIUja2MNF8G5k+B4Zqzp4a7yrEhwGp41zWVhrP3vxtOGKU5I9ZF2w==
+X-Received: by 2002:ac8:28bc:: with SMTP id i57mr45628479qti.288.1560461128360; 
+ Thu, 13 Jun 2019 14:25:28 -0700 (PDT)
+Received: from localhost ([64.188.179.243])
+ by smtp.gmail.com with ESMTPSA id g53sm436943qtk.65.2019.06.13.14.25.27
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 13 Jun 2019 14:25:27 -0700 (PDT)
+Date: Thu, 13 Jun 2019 15:25:25 -0600
+From: Rob Herring <robh@kernel.org>
+To: Daoyuan Huang <daoyuan.huang@mediatek.com>
+Subject: Re: [RFC v2 1/4] dt-binding: mt8183: Add Mediatek MDP3 dt-bindings
+Message-ID: <20190613212525.GA6235@bogus>
+References: <20190516032332.56844-1-daoyuan.huang@mediatek.com>
+ <20190516032332.56844-2-daoyuan.huang@mediatek.com>
 MIME-Version: 1.0
-References: <20190611040350.90064-1-dbasehore@chromium.org>
- <20190611040350.90064-3-dbasehore@chromium.org>
- <CAL_JsqLM1CikZ8+NPjLk2CEW-z9vPynZpVG20x0jsa7hVq0LvA@mail.gmail.com>
- <CAGAzgsoWGqf0JQPNyRFnv2xZTMxje6idce7Dy5FZzuxj30mQyw@mail.gmail.com>
- <CAL_Jsq+9K764hFT6GG=4paumGaxOUbnts4VJvTZ9a8Y-YPWdhg@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+9K764hFT6GG=4paumGaxOUbnts4VJvTZ9a8Y-YPWdhg@mail.gmail.com>
-From: "dbasehore ." <dbasehore@chromium.org>
-Date: Thu, 13 Jun 2019 14:00:26 -0700
-Message-ID: <CAGAzgsrNhumP2DEOff34cZ3UY=CV-EG1RM06Uf_tX3gdUMeSQg@mail.gmail.com>
-Subject: Re: [PATCH 2/5] dt-bindings: display/panel: Expand rotation
- documentation
-To: Rob Herring <robh+dt@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190516032332.56844-2-daoyuan.huang@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_140041_672880_6D708147 
-X-CRM114-Status: GOOD (  26.76  )
-X-Spam-Score: -7.3 (-------)
+X-CRM114-CacheID: sfid-20190613_142530_010157_FD8D795E 
+X-CRM114-Status: GOOD (  17.90  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.3 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,117 +89,274 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- Sean Paul <sean@poorly.run>, Intel Graphics <intel-gfx@lists.freedesktop.org>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jani Nikula <jani.nikula@linux.intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, CK Hu <ck.hu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sam Ravnborg <sam@ravnborg.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com,
+ laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
+ christie.yu@mediatek.com, srv_heupstream@mediatek.com,
+ holmes.chiou@mediatek.com, Jerry-ch.Chen@mediatek.com, tfiga@chromium.org,
+ jungo.lin@mediatek.com, sj.huang@mediatek.com, yuzhao@chromium.org,
+ hans.verkuil@cisco.com, Ping-Hsun Wu <ping-hsun.wu@mediatek.com>,
+ zwisler@chromium.org, frederic.chen@mediatek.com, matthias.bgg@gmail.com,
+ linux-mediatek@lists.infradead.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 5:52 AM Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Tue, Jun 11, 2019 at 4:02 PM dbasehore . <dbasehore@chromium.org> wrote:
-> >
-> > On Tue, Jun 11, 2019 at 8:25 AM Rob Herring <robh+dt@kernel.org> wrote:
-> > >
-> > > On Mon, Jun 10, 2019 at 10:03 PM Derek Basehore <dbasehore@chromium.org> wrote:
-> > > >
-> > > > This adds to the rotation documentation to explain how drivers should
-> > > > use the property and gives an example of the property in a devicetree
-> > > > node.
-> > > >
-> > > > Signed-off-by: Derek Basehore <dbasehore@chromium.org>
-> > > > ---
-> > > >  .../bindings/display/panel/panel.txt          | 32 +++++++++++++++++++
-> > > >  1 file changed, 32 insertions(+)
-> > > >
-> > > > diff --git a/Documentation/devicetree/bindings/display/panel/panel.txt b/Documentation/devicetree/bindings/display/panel/panel.txt
-> > > > index e2e6867852b8..f35d62d933fc 100644
-> > > > --- a/Documentation/devicetree/bindings/display/panel/panel.txt
-> > > > +++ b/Documentation/devicetree/bindings/display/panel/panel.txt
-> > > > @@ -2,3 +2,35 @@ Common display properties
-> > > >  -------------------------
-> > > >
-> > > >  - rotation:    Display rotation in degrees counter clockwise (0,90,180,270)
-> > > > +
-> > > > +Property read from the device tree using of of_drm_get_panel_orientation
-> > >
-> > > Don't put kernel specifics into bindings.
-> >
-> > Will remove that. I'll clean up the documentation to indicate that
-> > this binding creates a panel orientation property unless the rotation
-> > is handled in the Timing Controller on the panel if that sounds fine.
->
-> Even if the timing ctrlr handles it, don't you still need to know what
-> the native orientation is?
+On Thu, May 16, 2019 at 11:23:29AM +0800, Daoyuan Huang wrote:
+> From: daoyuan huang <daoyuan.huang@mediatek.com>
+> 
+> This patch adds DT binding document for Media Data Path 3 (MDP3)
+> a unit in multimedia system used for scaling and color format convert.
+> 
+> Signed-off-by: Ping-Hsun Wu <ping-hsun.wu@mediatek.com>
+> Signed-off-by: daoyuan huang <daoyuan.huang@mediatek.com>
+> ---
+>  .../bindings/media/mediatek,mt8183-mdp3.txt   | 217 ++++++++++++++++++
+>  1 file changed, 217 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt b/Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+> new file mode 100644
+> index 000000000000..cf3e808b7146
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+> @@ -0,0 +1,217 @@
+> +* Mediatek Media Data Path 3
+> +
+> +Media Data Path 3 (MDP3) is used for scaling and color space conversion.
+> +
+> +Required properties (controller node):
+> +- compatible: "mediatek,mt8183-mdp"
+> +- mediatek,scp: the node of system control processor (SCP), using the
+> +  remoteproc & rpmsg framework, see
+> +  Documentation/devicetree/bindings/remoteproc/mtk,scp.txt for details.
+> +- mediatek,mmsys: the node of mux(multiplexer) controller for HW connections.
+> +- mediatek,mm-mutex: the node of sof(start of frame) signal controller.
+> +- mediatek,mailbox-gce: the node of global command engine (GCE), used to
+> +  read/write registers with critical time limitation, see
+> +  Documentation/devicetree/bindings/mailbox/mtk-gce.txt for details.
+> +- mboxes: mailbox number used to communicate with GCE.
+> +- gce-subsys: sub-system id corresponding to the register address.
+> +- gce-event-names: in use event name list, used to correspond to event IDs.
+> +- gce-events: in use event IDs list, all IDs are defined in
+> +  'dt-bindings/gce/mt8183-gce.h'.
+> +
+> +Required properties (all function blocks, child node):
+> +- compatible: Should be one of
+> +        "mediatek,mt8183-mdp-rdma"  - read DMA
+> +        "mediatek,mt8183-mdp-rsz"   - resizer
+> +        "mediatek,mt8183-mdp-wdma"  - write DMA
+> +        "mediatek,mt8183-mdp-wrot"  - write DMA with rotation
+> +        "mediatek,mt8183-mdp-ccorr" - color correction with 3X3 matrix
+> +- reg: Physical base address and length of the function block register space
+> +- clocks: device clocks, see
+> +  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
+> +- power-domains: a phandle to the power domain, see
+> +  Documentation/devicetree/bindings/power/power_domain.txt for details.
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
+> +
+> +Required properties (DMA function blocks, child node):
+> +- compatible: Should be one of
+> +        "mediatek,mt8183-mdp-rdma"
+> +        "mediatek,mt8183-mdp-wdma"
+> +        "mediatek,mt8183-mdp-wrot"
+> +- iommus: should point to the respective IOMMU block with master port as
+> +  argument, see Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
+> +  for details.
+> +- mediatek,larb: must contain the local arbiters in the current Socs, see
+> +  Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.txt
+> +  for details.
+> +
+> +Required properties (input path selection node):
+> +- compatible:
+> +        "mediatek,mt8183-mdp-dl"    - MDP direct link input source selection
+> +- reg: Physical base address and length of the function block register space
+> +- clocks: device clocks, see
+> +  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
+> +
+> +Required properties (ISP PASS2 (DIP) module path selection node):
+> +- compatible:
+> +        "mediatek,mt8183-mdp-imgi"  - input DMA of ISP PASS2 (DIP) module for raw image input
+> +- reg: Physical base address and length of the function block register space
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
+> +
+> +Required properties (SW node):
+> +- compatible: Should be one of
+> +        "mediatek,mt8183-mdp-exto"  - output DMA of ISP PASS2 (DIP) module for yuv image output
+> +        "mediatek,mt8183-mdp-path"  - MDP output path selection
+> +- mediatek,mdp-id: HW index to distinguish same functionality modules.
+> +
+> +Example:
+> +		mdp_camin@14000000 {
 
-Not really. For all intents and purposes, the orientation of the panel
-has changed.
+s/_/-/ in node names
 
->
-> > > > +
-> > > > +The panel driver may apply the rotation at the TCON level, which will
-> > >
-> > > What's TCON? Something Mediatek specific IIRC.
-> >
-> > The TCON is the Timing controller, which is on the panel. Every panel
-> > has one. I'll add to the doc that the TCON is in the panel, etc.
-> >
-> > >
-> > > > +make the panel look like it isn't rotated to the kernel and any other
-> > > > +software.
-> > > > +
-> > > > +If not, a panel orientation property should be added through the SoC
-> > > > +vendor DRM code using the drm_connector_init_panel_orientation_property
-> > > > +function.
-> > >
-> > > The 'rotation' property should be defined purely based on how the
-> > > panel is mounted relative to a device's orientation. If the display
-> > > pipeline has some ability to handle rotation, that's a feature of the
-> > > display pipeline and not the panel.
-> >
-> > This is how the panel orientation property is already handled in the
-> > kernel. See drivers/gpu/drm/i915/vlv_dsi.c for more details.
->
-> The point is your description is all about the kernel. This is a
-> binding which is not kernel specific.
+> +			compatible = "mediatek,mt8183-mdp-dl";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14000000 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_DL_TXCK>,
+> +				<&mmsys CLK_MM_MDP_DL_RX>;
+> +		};
+> +
+> +		mdp_camin2@14000000 {
+> +			compatible = "mediatek,mt8183-mdp-dl";
+> +			mediatek,mdp-id = <1>;
+> +			reg = <0 0x14000000 0 0x1000>;
 
-Ah, I see. I thought you were saying what the implementation should be.
+You've got 2 nodes at the same address. You can't do that.
 
->
-> > > > +
-> > > > +Example:
-> > >
-> > > This file is a collection of common properties. It shouldn't have an
-> > > example especially as this example is mostly non-common properties.
-> >
-> > Just copied one of our DTS entries that uses the property. I'll remove
-> > everything under compatible except for rotation and status.
->
-> Just remove the example or add what you want to the "boe,himax8279d8p"
-> binding doc. We are moving towards examples being compiled and
-> validated, so incomplete ones won't work.
+Build your dtb with W=1 and dtc will warn on this. And fix any other 
+warnings you get.
 
-Ok, will do.
+> +			clocks = <&mmsys CLK_MM_IPU_DL_TXCK>,
+> +				<&mmsys CLK_MM_IPU_DL_RX>;
+> +		};
+> +
+> +		mdp_rdma0: mdp_rdma0@14001000 {
+> +			compatible = "mediatek,mt8183-mdp-rdma", "mediatek,mt8183-mdp3";
+> +			mediatek,scp = <&scp>;
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14001000 0 0x1000>;
+> +			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
+> +			clocks = <&mmsys CLK_MM_MDP_RDMA0>,
+> +				<&mmsys CLK_MM_MDP_RSZ1>;
+> +			iommus = <&iommu M4U_PORT_MDP_RDMA0>;
+> +			mediatek,larb = <&larb0>;
+> +			mediatek,mmsys = <&mmsys>;
+> +			mediatek,mm-mutex = <&mutex>;
+> +			mediatek,mailbox-gce = <&gce>;
+> +			mboxes = <&gce 20 0 CMDQ_THR_PRIO_LOWEST>,
+> +				<&gce 21 0 CMDQ_THR_PRIO_LOWEST>,
+> +				<&gce 22 0 CMDQ_THR_PRIO_LOWEST>,
+> +				<&gce 23 0 CMDQ_THR_PRIO_LOWEST>;
+> +			gce-subsys = <&gce 0x14000000 SUBSYS_1400XXXX>,
+> +				<&gce 0x14010000 SUBSYS_1401XXXX>,
+> +				<&gce 0x14020000 SUBSYS_1402XXXX>,
+> +				<&gce 0x15020000 SUBSYS_1502XXXX>;
+> +			gce-event-names = "rdma0_sof",
+> +				"rsz0_sof",
+> +				"rsz1_sof",
+> +				"tdshp0_sof",
+> +				"wrot0_sof",
+> +				"wdma0_sof",
+> +				"rdma0_done",
+> +				"wrot0_done",
+> +				"wdma0_done",
+> +				"isp_p2_0_done",
+> +				"isp_p2_1_done",
+> +				"isp_p2_2_done",
+> +				"isp_p2_3_done",
+> +				"isp_p2_4_done",
+> +				"isp_p2_5_done",
+> +				"isp_p2_6_done",
+> +				"isp_p2_7_done",
+> +				"isp_p2_8_done",
+> +				"isp_p2_9_done",
+> +				"isp_p2_10_done",
+> +				"isp_p2_11_done",
+> +				"isp_p2_12_done",
+> +				"isp_p2_13_done",
+> +				"isp_p2_14_done",
+> +				"wpe_done",
+> +				"wpe_b_done";
+> +			gce-events = <&gce CMDQ_EVENT_MDP_RDMA0_SOF>,
+> +				<&gce CMDQ_EVENT_MDP_RSZ0_SOF>,
+> +				<&gce CMDQ_EVENT_MDP_RSZ1_SOF>,
+> +				<&gce CMDQ_EVENT_MDP_TDSHP_SOF>,
+> +				<&gce CMDQ_EVENT_MDP_WROT0_SOF>,
+> +				<&gce CMDQ_EVENT_MDP_WDMA0_SOF>,
+> +				<&gce CMDQ_EVENT_MDP_RDMA0_EOF>,
+> +				<&gce CMDQ_EVENT_MDP_WROT0_EOF>,
+> +				<&gce CMDQ_EVENT_MDP_WDMA0_EOF>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_0>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_1>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_2>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_3>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_4>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_5>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_6>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_7>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_8>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_9>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_10>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_11>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_12>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_13>,
+> +				<&gce CMDQ_EVENT_ISP_FRAME_DONE_P2_14>,
+> +				<&gce CMDQ_EVENT_WPE_A_DONE>,
+> +				<&gce CMDQ_EVENT_SPE_B_DONE>;
+> +		};
+> +
+> +		mdp_imgi@15020000 {
+> +			compatible = "mediatek,mt8183-mdp-imgi";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x15020000 0 0x1000>;
+> +		};
+> +
+> +		mdp_img2o@15020000 {
+> +			compatible = "mediatek,mt8183-mdp-exto";
+> +			mediatek,mdp-id = <1>;
 
->
-> Rob
+Missing reg? Again, looks like 2 nodes at the same address.
 
-Thanks for the quick reviews.
+> +		};
+> +
+> +		mdp_rsz0: mdp_rsz0@14003000 {
+> +			compatible = "mediatek,mt8183-mdp-rsz";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14003000 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_RSZ0>;
+> +		};
+> +
+> +		mdp_rsz1: mdp_rsz1@14004000 {
+> +			compatible = "mediatek,mt8183-mdp-rsz";
+> +			mediatek,mdp-id = <1>;
+> +			reg = <0 0x14004000 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_RSZ1>;
+> +		};
+> +
+> +		mdp_wrot0: mdp_wrot0@14005000 {
+> +			compatible = "mediatek,mt8183-mdp-wrot";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14005000 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_WROT0>;
+> +			iommus = <&iommu M4U_PORT_MDP_WROT0>;
+> +			mediatek,larb = <&larb0>;
+> +		};
+> +
+> +		mdp_path0_sout@14005000 {
+> +			compatible = "mediatek,mt8183-mdp-path";
+> +			mediatek,mdp-id = <0>;
+
+Missing reg? Again, looks like 2 nodes at the same address.
+
+> +		};
+> +
+> +		mdp_wdma: mdp_wdma@14006000 {
+> +			compatible = "mediatek,mt8183-mdp-wdma";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x14006000 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_WDMA0>;
+> +			iommus = <&iommu M4U_PORT_MDP_WDMA0>;
+> +			mediatek,larb = <&larb0>;
+> +		};
+> +
+> +		mdp_path1_sout@14006000 {
+> +			compatible = "mediatek,mt8183-mdp-path";
+> +			mediatek,mdp-id = <1>;
+> +		};
+> +
+> +		mdp_ccorr: mdp_ccorr@1401c000 {
+> +			compatible = "mediatek,mt8183-mdp-ccorr";
+> +			mediatek,mdp-id = <0>;
+> +			reg = <0 0x1401c000 0 0x1000>;
+> +			clocks = <&mmsys CLK_MM_MDP_CCORR>;
+> +		};
+> -- 
+> 2.18.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
