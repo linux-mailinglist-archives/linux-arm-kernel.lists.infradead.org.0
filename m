@@ -2,85 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA0AE435A1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:45:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DF77435C1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 14:11:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iLezxXLdqeNJcD7SmKyJP6/6sSM57U8X92vfZ4O53jQ=; b=o6TxitKK47mzAkLNUS+7DNaZC
-	lnImlMZe3XblAV/jq7TZ84tP2yv466jOPZvCeJYsR818+odf+VIiEoRokcIn4NGph6Iw3zOKLI3Dm
-	V3notugm73KB6dQHe3dZtM11L+W9XZxBmt5oZIDTRmP7KSj7uwpns8kunYh8hzZb4kKQsWYkRBaga
-	jF8KH7W6mEy4euOGQHXl2hKEm3NvykFip8sq62ucAAzVNMNgGKuC3L9OPZRVFAv6ptmhUYeTR82cL
-	EBAswKQLQ9Kibs7zoH4NrsRQlq54hWFWTvItXndL3f42KI4DdnRY3aI4ZEyx3FQfTPE+Y6TFKtij5
-	x/CvvSm7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tr7pmhfluxBRJT3TYBEHVw1hFIE5h2qPGrTObry/IrM=; b=MxJ44idg0uje+y
+	8JFJAI4GR2psqUMNMtBjYXPhjr3afAIWsTBluJQxkw8bAO8Sujeh3O7boQIq5RJ0MsqTk1Vw/Lhwp
+	VJf6S1Xw0Scoi3M1fz97lQa2LmbueMqEGpRmpl9v/1M2gvPAaBQAFAW8o0wtGYFYezxXOzbwCsTyg
+	ClGhcv6f9m0+13nflz9u0iebiWcPEcVPgFcJzTOmKYZeovB2TnwQLwphl8qIaGYRw7kQSPKqJkVKA
+	0zGB1oS0GPfc9hTyrhFEBraKqkJTFhOTTWGUJ9EqmGszSdz0LlHNnVkhQKiIoSiLTviUg8PTeEZih
+	ZvNB8mE6GoNAJXTmYHtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbOA7-0000PR-15; Thu, 13 Jun 2019 11:44:59 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1hbOZn-0003lW-0B; Thu, 13 Jun 2019 12:11:31 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbO9r-0000LI-PO
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:44:45 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x5DBicC6024758;
- Thu, 13 Jun 2019 06:44:38 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1560426278;
- bh=psE2nLKFZ7+ZSmRi6W3Pe5WwZKhIgktMnMPfPYYhhDk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=pB9SNiMmPebb5nLUAZhoW7drbf6Ts7NdExHKZiRDKDJe3s0urT1mcH57a9GQ23TSR
- bYv3zpY1Vjubt/ABjr30Fr0RTx7ybow+e8SAbyzbLEMeBsWKApvNLCGfvo+41DImRD
- Pk6VcbA3DZBBymCPijBE+ILE94CU+WSpHx82leDY=
-Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x5DBicce021345
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 13 Jun 2019 06:44:38 -0500
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 13
- Jun 2019 06:44:38 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 13 Jun 2019 06:44:38 -0500
-Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x5DBiaQM021417;
- Thu, 13 Jun 2019 06:44:37 -0500
-Subject: Re: [bug report] soc: ti: pm33xx: AM437X: Add rtc_only with ddr in
- self-refresh support
-To: Dan Carpenter <dan.carpenter@oracle.com>, Dave Gerlach <d-gerlach@ti.com>
-References: <20190612113623.GA24020@mwanda>
-From: Keerthy <j-keerthy@ti.com>
-Message-ID: <627167de-1d28-7d7e-dbf2-9f9c02641b22@ti.com>
-Date: Thu, 13 Jun 2019 17:15:23 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hbOZY-0003kv-7w
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 12:11:18 +0000
+Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x5DC3HuT106149
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 13 Jun 2019 08:11:12 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2t3p590dvf-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 13 Jun 2019 08:11:12 -0400
+Received: from localhost
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Thu, 13 Jun 2019 13:11:10 +0100
+Received: from b06cxnps4076.portsmouth.uk.ibm.com (9.149.109.198)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 13 Jun 2019 13:11:05 +0100
+Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
+ [9.149.105.59])
+ by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x5DCB4pl49152030
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 13 Jun 2019 12:11:04 GMT
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 43EDFA4040;
+ Thu, 13 Jun 2019 12:11:04 +0000 (GMT)
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 063E1A4055;
+ Thu, 13 Jun 2019 12:11:03 +0000 (GMT)
+Received: from rapoport-lnx (unknown [9.148.204.162])
+ by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Thu, 13 Jun 2019 12:11:02 +0000 (GMT)
+Date: Thu, 13 Jun 2019 15:11:01 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH -next] arm64/mm: fix a bogus GFP flag in pgd_alloc()
+References: <1559656836-24940-1-git-send-email-cai@lca.pw>
+ <20190604142338.GC24467@lakrids.cambridge.arm.com>
+ <20190610114326.GF15979@fuggles.cambridge.arm.com>
+ <1560187575.6132.70.camel@lca.pw>
+ <20190611100348.GB26409@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190612113623.GA24020@mwanda>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190611100348.GB26409@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-AS-GCONF: 00
+x-cbid: 19061312-0028-0000-0000-00000379FAD3
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19061312-0029-0000-0000-00002439F36A
+Message-Id: <20190613121100.GB25164@rapoport-lnx>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-06-13_08:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=7 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1906130095
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_044443_956850_7EF27E0D 
-X-CRM114-Status: GOOD (  15.90  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190613_051116_412038_2BA187CA 
+X-CRM114-Status: GOOD (  39.26  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,136 +106,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: catalin.marinas@arm.com, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, mhocko@kernel.org, linux-mm@kvack.org,
+ Qian Cai <cai@lca.pw>, vdavydov.dev@gmail.com, hannes@cmpxchg.org,
+ cgroups@vger.kernel.org, akpm@linux-foundation.org,
+ Roman Gushchin <guro@fb.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+(added Roman)
+
+On Tue, Jun 11, 2019 at 11:03:49AM +0100, Mark Rutland wrote:
+> On Mon, Jun 10, 2019 at 01:26:15PM -0400, Qian Cai wrote:
+> > On Mon, 2019-06-10 at 12:43 +0100, Will Deacon wrote:
+> > > On Tue, Jun 04, 2019 at 03:23:38PM +0100, Mark Rutland wrote:
+> > > > On Tue, Jun 04, 2019 at 10:00:36AM -0400, Qian Cai wrote:
+> > > > > The commit "arm64: switch to generic version of pte allocation"
+> > > > > introduced endless failures during boot like,
+> > > > > =
+
+> > > > > kobject_add_internal failed for pgd_cache(285:chronyd.service) (e=
+rror:
+> > > > > -2 parent: cgroup)
+> > > > > =
+
+> > > > > It turns out __GFP_ACCOUNT is passed to kernel page table allocat=
+ions
+> > > > > and then later memcg finds out those don't belong to any cgroup.
+> > > > =
+
+> > > > Mike, I understood from [1] that this wasn't expected to be a probl=
+em,
+> > > > as the accounting should bypass kernel threads.
+> > > > =
+
+> > > > Was that assumption wrong, or is something different happening here?
+> > > > =
+
+> > > > > =
+
+> > > > > backtrace:
+> > > > > =A0 kobject_add_internal
+> > > > > =A0 kobject_init_and_add
+> > > > > =A0 sysfs_slab_add+0x1a8
+> > > > > =A0 __kmem_cache_create
+> > > > > =A0 create_cache
+> > > > > =A0 memcg_create_kmem_cache
+> > > > > =A0 memcg_kmem_cache_create_func
+> > > > > =A0 process_one_work
+> > > > > =A0 worker_thread
+> > > > > =A0 kthread
+> > > > > =
+
+> > > > > Signed-off-by: Qian Cai <cai@lca.pw>
+> > > > > ---
+> > > > > =A0arch/arm64/mm/pgd.c | 2 +-
+> > > > > =A01 file changed, 1 insertion(+), 1 deletion(-)
+> > > > > =
+
+> > > > > diff --git a/arch/arm64/mm/pgd.c b/arch/arm64/mm/pgd.c
+> > > > > index 769516cb6677..53c48f5c8765 100644
+> > > > > --- a/arch/arm64/mm/pgd.c
+> > > > > +++ b/arch/arm64/mm/pgd.c
+> > > > > @@ -38,7 +38,7 @@ pgd_t *pgd_alloc(struct mm_struct *mm)
+> > > > > =A0	if (PGD_SIZE =3D=3D PAGE_SIZE)
+> > > > > =A0		return (pgd_t *)__get_free_page(gfp);
+> > > > > =A0	else
+> > > > > -		return kmem_cache_alloc(pgd_cache, gfp);
+> > > > > +		return kmem_cache_alloc(pgd_cache, GFP_PGTABLE_KERNEL);
+> > > > =
+
+> > > > This is used to allocate PGDs for both user and kernel pagetables (=
+e.g.
+> > > > for the efi runtime services), so while this may fix the regression=
+, I'm
+> > > > not sure it's the right fix.
+> > > > =
+
+> > > > Do we need a separate pgd_alloc_kernel()?
+> > > =
+
+> > > So can I take the above for -rc5, or is somebody else working on a di=
+fferent
+> > > fix to implement pgd_alloc_kernel()?
+> > =
+
+> > The offensive commit "arm64: switch to generic version of pte allocatio=
+n" is not
+> > yet in the mainline, but only in the Andrew's tree and linux-next, and =
+I doubt
+> > Andrew will push this out any time sooner given it is broken.
+> =
+
+> I'd assumed that Mike would respin these patches to implement and use
+> pgd_alloc_kernel() (or take gfp flags) and the updated patches would
+> replace these in akpm's tree.
+> =
+
+> Mike, could you confirm what your plan is? I'm happy to review/test
+> updated patches for arm64.
+
+The log Qian Cai posted at [1] and partially cited below confirms that the
+failure happens when *user* PGDs are allocated and the addition of
+__GFP_ACCOUNT to gfp flags used by pgd_alloc() only uncovered another
+issue.
+
+I'm still failing to reproduce it with qemu and I'm not really familiar
+with slub/memcg code to say anything smart about it. Will keep looking.
+
+Note, that as failures start way after efi_virtmap_init() that allocates a
+PGD for efi_mm, there are no real fixes required for the original series,
+except that the check for mm =3D=3D &init_mm I copied for some reason from
+powerpc is bogus and can be removed.
+
+I surely can add pgd_alloc_kernel() to be used by the EFI code to make sure
+we won't run into issues with memcg in the future.
+
+[   82.125966] Freeing unused kernel memory: 28672K
+[   87.940365] Checked W+X mappings: passed, no W+X pages found
+[   87.946769] Run /init as init process
+[   88.040040] systemd[1]: System time before build time, advancing clock.
+[   88.054593] systemd[1]: Failed to insert module 'autofs4': No such file =
+or directory
+[   88.374129] modprobe (1726) used greatest stack depth: 28464 bytes left
+[   88.470108] systemd[1]: systemd 239 running in system mode. (+PAM +AUDIT
++SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT
++GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2
+default-hierarchy=3Dlegacy)
+[   88.498398] systemd[1]: Detected architecture arm64.
+[   88.506517] systemd[1]: Running in initial RAM disk.
+[   89.621995] mkdir (1730) used greatest stack depth: 27872 bytes left
+[   90.222658] random: systemd: uninitialized urandom read (16 bytes read)
+[   90.230072] systemd[1]: Reached target Swap.
+[   90.240205] random: systemd: uninitialized urandom read (16 bytes read)
+[   90.251088] systemd[1]: Reached target Timers.
+[   90.261303] random: systemd: uninitialized urandom read (16 bytes read)
+[   90.271209] systemd[1]: Listening on udev Control Socket.
+[   90.283238] systemd[1]: Reached target Local File Systems.
+[   90.296232] systemd[1]: Reached target Slices.
+[   90.307239] systemd[1]: Listening on udev Kernel Socket.
+[   90.608597] kobject_add_internal failed for pgd_cache(13:init.scope) (er=
+ror: -2 parent: cgroup)
+[   90.678007] kobject_add_internal failed for pgd_cache(13:init.scope)(err=
+or: -2 parent: cgroup)
+[   90.713260] kobject_add_internal failed for pgd_cache(21:systemd-tmpfile=
+s-setup.service) (error: -2 parent: cgroup)
+[   90.820012] systemd-tmpfile (1759) used greatest stack depth: 27184 byte=
+s left
+[   90.861942] kobject_add_internal failed for pgd_cache(13:init.scope) err=
+or: -2 parent: cgroup)
+ =
+
+> Thanks,
+> Mark.
+> =
 
 
-On 12/06/19 5:06 PM, Dan Carpenter wrote:
-> Hello Keerthy,
-> 
-> The patch 5a99ae0092fe: "soc: ti: pm33xx: AM437X: Add rtc_only with
-> ddr in self-refresh support" from Apr 3, 2019, leads to the following
-> static checker warnings:
+[1] https://cailca.github.io/files/dmesg.txt
 
-Thanks Dan. I will post a patch to fix these.
+-- =
 
-> 
-> drivers/soc/ti/pm33xx.c:254 am33xx_pm_begin() warn: 'nvmem' is an error pointer or valid
-> drivers/soc/ti/pm33xx.c:293 am33xx_pm_end() warn: curly braces intended?
-> drivers/soc/ti/pm33xx.c:417 am33xx_pm_rtc_setup() warn: 'nvmem' is an error pointer or valid
-> 
-> drivers/soc/ti/pm33xx.c
->     247  static int am33xx_pm_begin(suspend_state_t state)
->     248  {
->     249          int ret = -EINVAL;
->     250          struct nvmem_device *nvmem;
->     251
->     252          if (state == PM_SUSPEND_MEM && pm_ops->check_off_mode_enable()) {
->     253                  nvmem = devm_nvmem_device_get(&omap_rtc->dev,
->     254                                                "omap_rtc_scratch0");
->     255                  if (nvmem)
->                              ^^^^^
-> This should be if (!IS_ERR(nvmem)).
-> 
->     256                          nvmem_device_write(nvmem, RTC_SCRATCH_MAGIC_REG * 4, 4,
->     257                                             (void *)&rtc_magic_val);
->     258                  rtc_only_idle = 1;
->     259          } else {
->     260                  rtc_only_idle = 0;
->     261          }
->     262
->     263          switch (state) {
->     264          case PM_SUSPEND_MEM:
->     265                  ret = m3_ipc->ops->prepare_low_power(m3_ipc, WKUP_M3_DEEPSLEEP);
->     266                  break;
->     267          case PM_SUSPEND_STANDBY:
->     268                  ret = m3_ipc->ops->prepare_low_power(m3_ipc, WKUP_M3_STANDBY);
->     269                  break;
->     270          }
->     271
->     272          return ret;
->     273  }
->     274
->     275  static void am33xx_pm_end(void)
->     276  {
->     277          u32 val = 0;
->     278          struct nvmem_device *nvmem;
->     279
->     280          nvmem = devm_nvmem_device_get(&omap_rtc->dev, "omap_rtc_scratch0");
-> 
-> Does this need error handling?
-> 
->     281          m3_ipc->ops->finish_low_power(m3_ipc);
->     282          if (rtc_only_idle) {
->     283                  if (retrigger_irq)
-> 
-> We need curly braces for this if statement.
-> 
->     284                          /*
->     285                           * 32 bits of Interrupt Set-Pending correspond to 32
->     286                           * 32 interrupts. Compute the bit offset of the
->     287                           * Interrupt and set that particular bit
->     288                           * Compute the register offset by dividing interrupt
->     289                           * number by 32 and mutiplying by 4
->     290                           */
->     291                          writel_relaxed(1 << (retrigger_irq & 31),
->     292                                         gic_dist_base + GIC_INT_SET_PENDING_BASE
->     293                                         + retrigger_irq / 32 * 4);
->     294                          nvmem_device_write(nvmem, RTC_SCRATCH_MAGIC_REG * 4, 4,
->     295                                             (void *)&val);
->     296          }
->     297
->     298          rtc_only_idle = 0;
->     299  }
-> 
-> [ snip ]
-> 
->     401  static int am33xx_pm_rtc_setup(void)
->     402  {
->     403          struct device_node *np;
->     404          unsigned long val = 0;
->     405          struct nvmem_device *nvmem;
->     406
->     407          np = of_find_node_by_name(NULL, "rtc");
->     408
->     409          if (of_device_is_available(np)) {
->     410                  omap_rtc = rtc_class_open("rtc0");
->     411                  if (!omap_rtc) {
->     412                          pr_warn("PM: rtc0 not available");
->     413                          return -EPROBE_DEFER;
->     414                  }
->     415
->     416                  nvmem = devm_nvmem_device_get(&omap_rtc->dev,
->     417                                                "omap_rtc_scratch0");
->     418                  if (nvmem) {
-> 
-> if (!IS_ERR(nvmem)) {
-> 
->     419                          nvmem_device_read(nvmem, RTC_SCRATCH_MAGIC_REG * 4,
->     420                                            4, (void *)&rtc_magic_val);
->     421                          if ((rtc_magic_val & 0xffff) != RTC_REG_BOOT_MAGIC)
->     422                                  pr_warn("PM: bootloader does not support rtc-only!\n");
->     423
->     424                          nvmem_device_write(nvmem, RTC_SCRATCH_MAGIC_REG * 4,
->     425                                             4, (void *)&val);
->     426                          val = pm_sram->resume_address;
->     427                          nvmem_device_write(nvmem, RTC_SCRATCH_RESUME_REG * 4,
->     428                                             4, (void *)&val);
->     429                  }
->     430          } else {
->     431                  pr_warn("PM: no-rtc available, rtc-only mode disabled.\n");
->     432          }
->     433
->     434          return 0;
->     435  }
-> 
-> regards,
-> dan carpenter
-> 
+Sincerely yours,
+Mike.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
