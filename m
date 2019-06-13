@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 433B6437D8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:01:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24372437EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:02:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fREefLuxHIUs0x0d4kshgqXgiLwRECYOpUmK27E28cw=; b=U/b3pmwR74DIt8
-	ZTUdaeDbp4wA62Cvypzl44G4/rzj5Bhxi3XnAjvzK9lIMebybAMSGeSl3sqdxVio/6cfNcp78lcTu
-	7vWPurIQaA7ODjt8PLV3v8zQoew3u8ztYJfpcavLs6DLP/yWwUAMdIlvHPr4EosBHU7eOXiFzPCxE
-	L4AR73K0t293NFAM64eqgoG8HXwTep8gUsNSiAr6AcFI1gp1oSx6NsPWmTMTevz4VUdtUIkCYZbBE
-	JP10Tf0vL+E+tbrJ8n6GOLfMW3rXl3peKlD0ZDVZbeWhz1aYo4SGobi1EFOv2DVSgoFKNpkd5DTMy
-	Bqvt0GRKiDCCtAtnmw/w==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wMx4vWwfe/BOWDq8xMjEAJQyr8lBsHQnX2D8IUC8yz8=; b=EuYvClfMu0xTBN
+	KSGZJ+dZn0v5m6TxUKrCMz3z1F6rc1wndEYXICEwnqoghSltZNhN2kG0fuVcfKTdEVJ6qCAje2B8z
+	455QPI9246pWwccvJb6zrMxALFl3PVAyKGHRfUZuue8QZs+9TiHvO4NW4/apU+iNRBfiFLcTWYE7y
+	Dz5ylaSZBd3/3nCKOmh/bm2MFrL5zAOCop62rjqgKs37SmLqlHL91mt8iqeKak5fv3fPMROakbmVs
+	T7oVjaWYIMC53UclRGbjuNoWbVvJPP2mp2hdrdTXpZyYA5m06kDYhoA1FYCcHxtc2ZcC3K4dL11/F
+	Y5ec/2WxGvo3UTpRb36g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRET-0001Ra-Ai; Thu, 13 Jun 2019 15:01:41 +0000
+	id 1hbRF3-0001oo-As; Thu, 13 Jun 2019 15:02:17 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbRED-0001Ok-Lh
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:01:27 +0000
+ id 1hbREm-0001jt-5K
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:02:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
- Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mmB6+EcRyCm7veyBlsY9CCysvQL/Xu6GOodFV4+BnY4=; b=egsfOa3W2bTawkMJ6aJLwWF1s
- tTMljS6tzi1+fI1wIjxcnNrw0R5VZKNqnSlELHWyTCCdi/0nI5jGwDWdGDHeg7mzXeIIOQLXiGTw1
- 0iM06FOxa7fHkvpnoDDl66CFW3jyrzs0ettchPGV6ZLLP3W+EHI8uP8ymBEaGvbogo6H3bKTNrSCu
- TIqUHTtRP4VsE9TTDeNHmLAAwsgWoilSeTA3uZq48vGnWykHL5mJfJzgKMc7aFqFZ3+rxqei9L5bv
- IkaLd/L+u/Yn+t8vXBfFlN8xz/JiB/FHgDreDBD576keIRLfyCDINtPz9TReQ+aTTEWWCeLdt8X7H
- 8E0rYcqGw==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:56364)
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
+ In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=YZe73em0KXNvF4FCfbKTyLNP8J30nCWSEC9qrAb+TqI=; b=QHEva45DLznnK1fKvVBMEF8cWU
+ yieZlrzOOtJBIXbRR/BJvUFSApwgQZQz+6/2V7aAZ3G7u8neM6KGj8oqXUC8quyJ0xBgxumHJ0W5C
+ gJxLzmOSFGdezOIh9joRt9TtCO9Y8U9F/jhfyWNsiwDb0Cg4rCy9nT5oVvJDNCDS8ZNpbqCAsmS4G
+ 21uKDM9sziUl7E3p1FAc1X9EPxRco7wFRjIJHwlJ/UfOdwbCmTapAIZ79NFJDUzNC880nbmB8cRDo
+ TMB1C5LwTY5pc3OHdlsFIlASXknBMs8wHCVv8JNtlbkherkNxuScg7OfgyY2jKHyEcI6qUhYiAIh1
+ FsGmoxyg==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:45336 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hbRE4-0003iq-6V; Thu, 13 Jun 2019 16:01:16 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hbRE2-0001Jo-NW; Thu, 13 Jun 2019 16:01:14 +0100
-Date: Thu, 13 Jun 2019 16:01:14 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1hbREZ-0003j4-NI; Thu, 13 Jun 2019 16:01:47 +0100
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
+ 4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
+ id 1hbREY-00006f-FR; Thu, 13 Jun 2019 16:01:46 +0100
+In-Reply-To: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
+References: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 To: dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 00/18] Armada DRM updates
-Message-ID: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
+Subject: [PATCH 01/18] drm/armada: fix crtc interlace
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
+Message-Id: <E1hbREY-00006f-FR@rmk-PC.armlinux.org.uk>
+Date: Thu, 13 Jun 2019 16:01:46 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_080125_713460_C462B4B6 
-X-CRM114-Status: GOOD (  11.69  )
+X-CRM114-CacheID: sfid-20190613_080200_199393_A7EE0AAF 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -90,49 +91,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+We support interlace, but this was broken when we could no longer get
+a ref on the vblank interrupt.  Arrange to get the ref on the vblank
+interrupt after we've re-enabled vblank, and put it before we disable
+the vblank.
 
-This series updates Armada DRM:
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ drivers/gpu/drm/armada/armada_crtc.c | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
 
-- Fix interlace support.
-- use __drm_atomic_helper_plane_reset in overlay reset.
-- since the overlay and video planes use essentially the same format
-  registers, precompute their values while validating.
-- fix a long-standing deficiency with overlay planes and interlace modes
-- calculate plane starting address at atomic_check stage rather than
-  when we're programming the registers.
-- add gamma support.
-- ensure mode adjustments made by other components are properly handled
-  in the driver and applied to the CRTC-programmed mode.
-- add and use register definitions for the "REG4F" register.
-- use drm_atomic_helper_shutdown() when tearing down to ensure that the
-  hardware is properly shutdown.
-- add CRTC-level mode validation to ensure that we don't allow a mode
-  that the CRTC-level hardware can not support.
-- improve the clocking selection for Armada 510 support.
-- move CRTC debugfs files into the crtc-specific directory, using the
-  DRM helper to create these files.
-- patch from Lubomir Rintel to replace a simple framebuffer.
-- use the OF graph walker rather than open-coding this.
-- eliminate a useless check for the availability of the remote's parent
-  which isn't required.
-
- drivers/gpu/drm/armada/armada_510.c     | 130 ++++++++++++++------
- drivers/gpu/drm/armada/armada_crtc.c    | 212 ++++++++++++++++++++++++++++++--
- drivers/gpu/drm/armada/armada_crtc.h    |  21 +++-
- drivers/gpu/drm/armada/armada_debugfs.c |  98 ++++++---------
- drivers/gpu/drm/armada/armada_drm.h     |   1 +
- drivers/gpu/drm/armada/armada_drv.c     |  38 +++---
- drivers/gpu/drm/armada/armada_hw.h      |  29 +++--
- drivers/gpu/drm/armada/armada_overlay.c |  56 ++++-----
- drivers/gpu/drm/armada/armada_plane.c   | 124 +++++++++++++------
- drivers/gpu/drm/armada/armada_plane.h   |  23 ++++
- 10 files changed, 520 insertions(+), 212 deletions(-)
-
+diff --git a/drivers/gpu/drm/armada/armada_crtc.c b/drivers/gpu/drm/armada/armada_crtc.c
+index ba4a3fab7745..09bade15f51c 100644
+--- a/drivers/gpu/drm/armada/armada_crtc.c
++++ b/drivers/gpu/drm/armada/armada_crtc.c
+@@ -278,16 +278,9 @@ static void armada_drm_crtc_mode_set_nofb(struct drm_crtc *crtc)
+ 
+ 	armada_reg_queue_set(regs, i, sclk, LCD_CFG_SCLK_DIV);
+ 
+-	if (interlaced ^ dcrtc->interlaced) {
+-		if (adj->flags & DRM_MODE_FLAG_INTERLACE)
+-			drm_crtc_vblank_get(&dcrtc->crtc);
+-		else
+-			drm_crtc_vblank_put(&dcrtc->crtc);
+-		dcrtc->interlaced = interlaced;
+-	}
+-
+ 	spin_lock_irqsave(&dcrtc->irq_lock, flags);
+ 
++	dcrtc->interlaced = interlaced;
+ 	/* Even interlaced/progressive frame */
+ 	dcrtc->v[1].spu_v_h_total = adj->crtc_vtotal << 16 |
+ 				    adj->crtc_htotal;
+@@ -390,6 +383,9 @@ static void armada_drm_crtc_atomic_disable(struct drm_crtc *crtc,
+ 
+ 	DRM_DEBUG_KMS("[CRTC:%d:%s]\n", crtc->base.id, crtc->name);
+ 
++	if (old_state->adjusted_mode.flags & DRM_MODE_FLAG_INTERLACE)
++		drm_crtc_vblank_put(crtc);
++
+ 	drm_crtc_vblank_off(crtc);
+ 	armada_drm_crtc_update(dcrtc, false);
+ 
+@@ -434,6 +430,9 @@ static void armada_drm_crtc_atomic_enable(struct drm_crtc *crtc,
+ 	armada_drm_crtc_update(dcrtc, true);
+ 	drm_crtc_vblank_on(crtc);
+ 
++	if (crtc->state->adjusted_mode.flags & DRM_MODE_FLAG_INTERLACE)
++		WARN_ON(drm_crtc_vblank_get(crtc));
++
+ 	armada_drm_crtc_queue_state_event(crtc);
+ }
+ 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
