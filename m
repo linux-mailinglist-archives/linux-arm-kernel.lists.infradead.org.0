@@ -2,44 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF7D2435D2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 14:22:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D90E435E3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 14:27:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=7EVn3PyFJqVyiOFjCIpBNI6FfSa2sVh5v17yHDJX41Q=; b=GmZ
-	px5dIPqaR1yCktBgKdVwCr3WF9skt0N44wNZWyhrnA7p9oJ9fnC1R47DgbgrKB9qypsGqrxHPokZE
-	dOY+aVitZ1QN6TVky9hipnhe7A/L6xubu1yvCb8cORL14r/N8y0Er1n1wi/jNmugfI+3H6U8nLXeG
-	0wFIo3LXRZTXH2lqexp6dTkDXEs1H3bfXKP/YZivgC25ANyHkrN28WMjn5M0YZZZlXZ5O8UJox9t2
-	jIZ8Y6XhgfAwqKedKv00kQZBXDZ0IELioke7aNshxFVakDSjNCmjA76H+pvPBCLdBFOItniEzpTnE
-	Ic3DGoyy5rc3QAySq9QVZB/AlDPg+ZA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2pvtyaRN1LmvKvFvcaOGcvc5xe9VqIcFfCZIhOcKJjo=; b=pjJaieRc8T8llY
+	67YIIqFEBqZsS3mdGqs6euxhDEeOO8Dn1nLz0YkLA2UlqX6u3QSnDshNeHZyfGFkMBTq9/9idk5uI
+	YxRqrMV8MMb/v1dXlXfPoR6cwEOEovkeA3HBa9psRNdY62F2BfBMPPLWnexMr/4yz1hCC0pL7JTOy
+	S/whipMuXbkqO5syqEovAotCD3ytIrZL1yhaEP974/ZvHDOC11TKx4Ghe1Mn6DVz0NRIwFIqqaQog
+	oo1TycTDrc72Tpdm9T+UlQduCjilZVPO9MQKF90OFo5GBIn+mq+vQoHbtTOj0GOwDcp9z2mZieaSr
+	7q5ngF1CBDMG8AnYeAAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbOkK-0007ej-LW; Thu, 13 Jun 2019 12:22:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbOk6-0007eK-Rr
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 12:22:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F2282B;
- Thu, 13 Jun 2019 05:22:06 -0700 (PDT)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE6433F694;
- Thu, 13 Jun 2019 05:22:05 -0700 (PDT)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
- will.deacon@arm.com
-Subject: [PATCH] arm64: smp: fix smp_send_stop() behaviour
-Date: Thu, 13 Jun 2019 13:21:46 +0100
-Message-Id: <20190613122146.45459-1-cristian.marussi@arm.com>
-X-Mailer: git-send-email 2.17.1
+	id 1hbOpF-0001Rt-5W; Thu, 13 Jun 2019 12:27:29 +0000
+Received: from relay.sw.ru ([185.231.240.75])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbOox-0001QH-5x; Thu, 13 Jun 2019 12:27:13 +0000
+Received: from [172.16.25.12] by relay.sw.ru with esmtp (Exim 4.92)
+ (envelope-from <aryabinin@virtuozzo.com>)
+ id 1hbOol-000152-4t; Thu, 13 Jun 2019 15:26:59 +0300
+Subject: Re: [PATCH v3] kasan: add memory corruption identification for
+ software tag-based mode
+To: Walter Wu <walter-zh.wu@mediatek.com>,
+ Alexander Potapenko <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>,
+ Christoph Lameter <cl@linux.com>, Pekka Enberg <penberg@kernel.org>,
+ David Rientjes <rientjes@google.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Vasily Gorbik <gor@linux.ibm.com>, Andrey Konovalov <andreyknvl@google.com>,
+ "Jason A . Donenfeld" <Jason@zx2c4.com>, Miles Chen <miles.chen@mediatek.com>
+References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Message-ID: <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
+Date: Thu, 13 Jun 2019 15:27:09 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_052210_949954_0766F095 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20190613_052711_224726_C3C91FA4 
+X-CRM114-Status: GOOD (  10.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,73 +65,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, dave.martin@arm.com
-MIME-Version: 1.0
+Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On a 2-CPUs system, when one CPU is already online if the other
-panics while starting-up, smp_send_stop() will fail to send any
-STOP message to the other already online core, resulting in a
-system still responsive and alive at the end of the panic procedure.
-This patch makes smp_send_stop() account also for the online status
-of the calling CPU while evaluating how many CPUs are effectively
-online: this way, an adequate number of STOPs is sent, so enforcing
-a proper freeze of the system at the end of panic even under the
-above conditions.
 
-Reported-by: Dave Martin <Dave.Martin@arm.com>
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
 
-This peculiar panic-procedure behaviour was exposed hitting a BUG()
-while running a KSFT cpu-hotplug test on a 2-core ARMv8 model.
-Such trigger-BUG() was fixed by a distinct commit already included
-in Linux 5.2-rc4 [0]
+On 6/13/19 11:13 AM, Walter Wu wrote:
+> This patch adds memory corruption identification at bug report for
+> software tag-based mode, the report show whether it is "use-after-free"
+> or "out-of-bound" error instead of "invalid-access" error.This will make
+> it easier for programmers to see the memory corruption problem.
+> 
+> Now we extend the quarantine to support both generic and tag-based kasan.
+> For tag-based kasan, the quarantine stores only freed object information
+> to check if an object is freed recently. When tag-based kasan reports an
+> error, we can check if the tagged addr is in the quarantine and make a
+> good guess if the object is more like "use-after-free" or "out-of-bound".
+> 
 
-[0] https://lore.kernel.org/linux-arm-kernel/1559576102-12156-1-git-send-email-Dave.Martin@arm.com/
----
- arch/arm64/kernel/smp.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index bb4b3f07761a..c7d604427883 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -971,8 +971,14 @@ void tick_broadcast(const struct cpumask *mask)
- void smp_send_stop(void)
- {
- 	unsigned long timeout;
-+	unsigned int this_cpu_online = cpu_online(smp_processor_id());
- 
--	if (num_online_cpus() > 1) {
-+	/*
-+	 * If this CPU isn't fully online, it will not be counted in
-+	 * num_online_cpus(): on a 2-CPU system this situation will
-+	 * result in no message being sent to the other already online CPU.
-+	 */
-+	if (num_online_cpus() > this_cpu_online) {
- 		cpumask_t mask;
- 
- 		cpumask_copy(&mask, cpu_online_mask);
-@@ -985,10 +991,10 @@ void smp_send_stop(void)
- 
- 	/* Wait up to one second for other CPUs to stop */
- 	timeout = USEC_PER_SEC;
--	while (num_online_cpus() > 1 && timeout--)
-+	while (num_online_cpus() > this_cpu_online && timeout--)
- 		udelay(1);
- 
--	if (num_online_cpus() > 1)
-+	if (num_online_cpus() > this_cpu_online)
- 		pr_warning("SMP: failed to stop secondary CPUs %*pbl\n",
- 			   cpumask_pr_args(cpu_online_mask));
- 
--- 
-2.17.1
+We already have all the information and don't need the quarantine to make such guess.
+Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
+otherwise it's use-after-free.
 
+In pseudo-code it's something like this:
+
+u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
+
+if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
+	// out-of-bounds
+else
+	// use-after-free
 
 _______________________________________________
 linux-arm-kernel mailing list
