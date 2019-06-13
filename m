@@ -2,41 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 480274333D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 09:18:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB38343340
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 09:19:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Jq1n+fK3QtWysix5ypCW4meS/g7py8UBFAR9F5JHQ1s=; b=lnDlq6mrR6vg29
-	zxNS19TqK2Iwd4kuHArIdb19JEHCw9usD6bep0UtXsaXybPs4MLf2MzzeIHZkR2a9vPiStp0B0tM1
-	GOKJdKM6I3yg3zzYE2UweGXhYPdgDjKLtScn2PhyQNKtAs/K7yYaxut0AFo46ZsRn7MmxLbYAPuXf
-	Is/9v8dSpYg/yZ1xh5fG3Mh/MGEio+0TqhpW8YqGODwf7zstui4t7PUGqIRGFh3FPwa34zgsQyiuO
-	nFLPVwSVPfZ0W6HhHW/YUkb1//CqG04zG6MZnt1hD49QXFRmRC1sxBMkhokBicHKixKQ6FJEQ1rZ5
-	v58g9WpxWfmo8wDcdwuw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WvfKfu1QldRWwcJ3d9Sdk0dU0SkVixiCH3BkpQX7lTY=; b=fh2ghR5HKZCi18
+	13zJ1l4rTciajOQobEi/Sp6bBN7sRvG9Do5hIpTRblkfftfQQXNnKA4zRTP0JmAUVravksdCr2jiP
+	gVGYwQxz6YLRBdLSW7/tJ0NcRowTZLNTrWj/I/Wn7g1MMAZZp8ATT9LJCFsSjYe4rR9fgb61ZpD0i
+	2uJnAXJu54PqfiilKTYb6Jfi7RPf6DOiBBqyroPmFRDzxwATPE1MVD2CzjFa4rdk2Kg0Jp+Um5vpO
+	vLolKLeoPVmYyGogaq5uwqMCLbFen4JysART+t5y466VRVhy1O5Ayi1nX8KTeW8G6J69NWDa/E5cy
+	5zm5TvWU5zlDZMv98XOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbJzr-0004yC-Nj; Thu, 13 Jun 2019 07:18:07 +0000
+	id 1hbK0f-0005Vj-Lk; Thu, 13 Jun 2019 07:18:57 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbJt0-0006Qm-Gu
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 07:11:04 +0000
+ id 1hbJt0-0006RR-Eg
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 07:11:06 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 2E960811B;
- Thu, 13 Jun 2019 07:11:21 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 210398160;
+ Thu, 13 Jun 2019 07:11:22 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: arm@kernel.org
-Subject: [GIT PULL 1/4] soc changes for omap variants for v5.3
-Date: Thu, 13 Jun 2019 00:10:50 -0700
-Message-Id: <pull-1560399818-512977@atomide.com>
+Subject: [GIT PULL 2/4] dts changes for omap variants for v5.3
+Date: Thu, 13 Jun 2019 00:10:51 -0700
+Message-Id: <pull-1560399818-512977@atomide.com-2>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <pull-1560399818-512977@atomide.com>
+References: <pull-1560399818-512977@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_001102_809266_86EC9324 
-X-CRM114-Status: UNSURE (   8.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190613_001102_799626_9467FEA0 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,30 +73,61 @@ The following changes since commit a188339ca5a396acc588e5851ed7e19f66b0ebd9:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.3/soc-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.3/dt-signed
 
-for you to fetch changes up to 45450f36e569e5162957df488b0174c9a952e1b0:
+for you to fetch changes up to 8f62581f820d32eec9698e477ddff21ebfbe0541:
 
-  soc: ti: pm33xx: Add a print while entering RTC only mode with DDR in self-refresh (2019-06-10 05:19:26 -0700)
-
-----------------------------------------------------------------
-ti-sysc soc changes for v5.3
-
-Just two changes to make few platform data functions static, and to
-call dev_info() if am437x is suspending to RTC-only mode. We want to
-see this in case of issues as it depends on the board wiring for things
-like DDR memory.
+  Merge branch 'baltos' into omap-for-v5.3/dt (2019-06-12 00:57:27 -0700)
 
 ----------------------------------------------------------------
-Keerthy (1):
-      soc: ti: pm33xx: Add a print while entering RTC only mode with DDR in self-refresh
+dts changes for omap variants for v5.3
 
-YueHaibing (1):
-      ARM: OMAP2+: Make some variables static
+This series of changes improves support for few boards:
 
- arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c | 8 ++++----
- drivers/soc/ti/pm33xx.c                                 | 1 +
- 2 files changed, 5 insertions(+), 4 deletions(-)
+- configure another lcd type for logicpd torpedo devkit
+
+- a series of updates for am335x phytec boards
+
+- configure mmc card detect pin for am335x-baltos
+
+----------------------------------------------------------------
+Adam Ford (1):
+      ARM: dts: Add LCD type 28 support to LogicPD Torpedo DM3730 devkit
+
+Daniel Schultz (1):
+      ARM: dts: am335x-phycore-som: Add emmc node
+
+Teresa Remmet (5):
+      ARM: dts: am335x phytec boards: Remove regulator node
+      ARM: dts: am335x-phycore-som: Enable gpmc node in dts files
+      ARM: dts: am335x-pcm-953: Update user led names
+      ARM: dts: am335x-pcm-953: Remove eth phy delay
+      ARM: dts: Add support for phyBOARD-REGOR-AM335x
+
+Tony Lindgren (1):
+      Merge branch 'baltos' into omap-for-v5.3/dt
+
+Yegor Yefremov (2):
+      ARM: dts: am335x-baltos: Fix PHY mode for ethernet
+      ARM: dts: am335x-baltos: add support for MMC1 CD pin
+
+ .../devicetree/bindings/arm/omap/omap.txt          |   3 +
+ arch/arm/boot/dts/Makefile                         |   1 +
+ arch/arm/boot/dts/am335x-baltos-ir2110.dts         |  14 +-
+ arch/arm/boot/dts/am335x-baltos-ir3220.dts         |  14 +-
+ arch/arm/boot/dts/am335x-baltos-ir5221.dts         |  13 +-
+ arch/arm/boot/dts/am335x-pcm-953.dtsi              |  22 +-
+ arch/arm/boot/dts/am335x-phycore-rdk.dts           |   4 +
+ arch/arm/boot/dts/am335x-phycore-som.dtsi          |  47 +++--
+ arch/arm/boot/dts/am335x-regor-rdk.dts             |  24 +++
+ arch/arm/boot/dts/am335x-regor.dtsi                | 223 +++++++++++++++++++++
+ arch/arm/boot/dts/am335x-wega-rdk.dts              |   4 +
+ arch/arm/boot/dts/am335x-wega.dtsi                 |  16 +-
+ .../boot/dts/logicpd-torpedo-37xx-devkit-28.dts    |  32 +++
+ 13 files changed, 372 insertions(+), 45 deletions(-)
+ create mode 100644 arch/arm/boot/dts/am335x-regor-rdk.dts
+ create mode 100644 arch/arm/boot/dts/am335x-regor.dtsi
+ create mode 100644 arch/arm/boot/dts/logicpd-torpedo-37xx-devkit-28.dts
 
 _______________________________________________
 linux-arm-kernel mailing list
