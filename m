@@ -2,56 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CFC14368E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 15:29:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 260A84360F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 14:51:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HkmvVtHbYHfk6dPjLSKRKcCtSeNgSULBPFbz6KwZVHA=; b=qLUfLOfeE9yarmlYrD2jBYQjd
-	IzeVCmmK8F9I+Vgpz/HVcNCTW+9UfHzB6SXejJZHSruR7raJy/vsLlO48jFWfMUPiYmvP+PEvmooM
-	vOV9yoQt2Ht2r7sTfXYk8Gl0UNsZniew4f1z0y4pmEjfqKwzp+8QwtoY11lxGw/rtrpAYklQyKYdG
-	tNKCKaZDPnpgUPGe4biuad2cqmFeVvt0phd3L/3yHj5zlMDJ3bPNlwwmAHRvmH4JU3rt9pT3Dl109
-	xVkcpfesWpLcBCHFD9RF/gNlO78TJae/UcjuC4ZF+wLaq4CNMKpBG8lXSkhd+8abNHirlZ9OSXve/
-	7hIRmGkVw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Xn2SqKCNuwK2vz8CPhIDIJDHWyor7HwnjsFCB2twju0=; b=bx5BRlh/I+xetr
+	OBKDBv5n7MVblW1/8jeI08nSfHD30IdKEne/44eBwu3KhuMl/YUZqAd6iBgujzIlmv508wdhC3wOu
+	rYDl6ZphrGrO/kN2c67Z+DWaq9fx18SGqo6l3Tj2LV3ZJXSEAdMw+VW8dgH3HZRlWDNbKNPGGOFir
+	j0jRmq5dW1Tc/sIpsef+y7cpB2WHbyoNRA458+WEqHDOnqCa/duanCdGmaLWON9C2eyghqCzgyeSd
+	Wn6ZyGskfl5b9hQZVRyxUBVLcV+Da9XBXvd41hJnxuh02eaJaEBdCZ8HTs6ULOtZBrjKw317xPKBi
+	aDzhu4q8nDDcfXTFkajQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbPnO-0006Ee-Cz; Thu, 13 Jun 2019 13:29:38 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbPkJ-0003Xv-Ql
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 13:26:32 +0000
-Received: from localhost (aaubervilliers-681-1-40-246.w90-88.abo.wanadoo.fr
- [90.88.159.246]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 465A424000D;
- Thu, 13 Jun 2019 13:26:24 +0000 (UTC)
-Date: Thu, 13 Jun 2019 14:50:24 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Noralf =?utf-8?Q?Tr=C3=B8nnes?= <noralf@tronnes.org>
-Subject: Re: [PATCH v3 3/6] drm/modes: Allow to specify rotation and
- reflection on the commandline
-Message-ID: <20190613125024.46yiiy6zrrqojajy@flea>
-References: <cover.87b91639451f23d4ab68a7c9812f2dd158869025.1555591281.git-series.maxime.ripard@bootlin.com>
- <ba320b3a13c4444102b77c4d00f7c1dc810adc3c.1555591281.git-series.maxime.ripard@bootlin.com>
- <9ccb7573-d46e-4b90-7caa-7b8cd7b8e7a2@tronnes.org>
- <e2edb1dc-f719-93f0-5205-ecb7b44b057e@tronnes.org>
- <20190611132049.njlrgbtobzgyzyzh@flea>
- <c73e9c29-e20b-65e0-553c-67b9c2cd349a@tronnes.org>
+	id 1hbPCQ-0004gq-RK; Thu, 13 Jun 2019 12:51:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbPCD-0004gX-Eo
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 12:51:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7BF2C2B;
+ Thu, 13 Jun 2019 05:51:12 -0700 (PDT)
+Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 432713F694;
+ Thu, 13 Jun 2019 05:51:11 -0700 (PDT)
+From: Andrew Murray <andrew.murray@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>
+Subject: [PATCH v2] clocksource/arm_arch_timer: extract elf_hwcap use to
+ arch-helper
+Date: Thu, 13 Jun 2019 13:51:02 +0100
+Message-Id: <20190613125102.23879-1-andrew.murray@arm.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <c73e9c29-e20b-65e0-553c-67b9c2cd349a@tronnes.org>
-User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_062628_067627_E5EF86DD 
-X-CRM114-Status: GOOD (  17.31  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190613_055113_590225_A57D0A85 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,94 +60,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: eben@raspberrypi.org, David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Sean Paul <seanpaul@chromium.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2784148724339146124=="
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Different mechanisms are used to test and set elf_hwcaps between ARM
+and ARM64, this results in the use of ifdeferry in this file when
+setting/testing for the EVTSTRM hwcap.
 
---===============2784148724339146124==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ydwumpiccsdbmew2"
-Content-Disposition: inline
+Let's improve readability by extracting this to an arch helper.
 
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+Acked-by: Will Deacon <will.deacon@arm.com>
+---
+ arch/arm/include/asm/arch_timer.h    | 10 ++++++++++
+ arch/arm64/include/asm/arch_timer.h  | 13 +++++++++++++
+ drivers/clocksource/arm_arch_timer.c | 15 ++-------------
+ 3 files changed, 25 insertions(+), 13 deletions(-)
 
---ydwumpiccsdbmew2
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/arch/arm/include/asm/arch_timer.h b/arch/arm/include/asm/arch_timer.h
+index 4b66ecd6be99..ae533caec1e9 100644
+--- a/arch/arm/include/asm/arch_timer.h
++++ b/arch/arm/include/asm/arch_timer.h
+@@ -4,6 +4,7 @@
+ 
+ #include <asm/barrier.h>
+ #include <asm/errno.h>
++#include <asm/hwcap.h>
+ #include <linux/clocksource.h>
+ #include <linux/init.h>
+ #include <linux/types.h>
+@@ -124,6 +125,15 @@ static inline void arch_timer_set_cntkctl(u32 cntkctl)
+ 	isb();
+ }
+ 
++static inline bool arch_timer_set_evtstrm_feature(void)
++{
++	elf_hwcap |= HWCAP_EVTSTRM;
++}
++
++static inline bool arch_timer_have_evtstrm_feature(void)
++{
++	return elf_hwcap & HWCAP_EVTSTRM;
++}
+ #endif
+ 
+ #endif
+diff --git a/arch/arm64/include/asm/arch_timer.h b/arch/arm64/include/asm/arch_timer.h
+index 50b3ab7ded4f..a847a3ee6cab 100644
+--- a/arch/arm64/include/asm/arch_timer.h
++++ b/arch/arm64/include/asm/arch_timer.h
+@@ -20,6 +20,7 @@
+ #define __ASM_ARCH_TIMER_H
+ 
+ #include <asm/barrier.h>
++#include <asm/hwcap.h>
+ #include <asm/sysreg.h>
+ 
+ #include <linux/bug.h>
+@@ -240,4 +241,16 @@ static inline int arch_timer_arch_init(void)
+ 	return 0;
+ }
+ 
++static inline void arch_timer_set_evtstrm_feature(void)
++{
++	cpu_set_named_feature(EVTSTRM);
++#ifdef CONFIG_COMPAT
++	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
++#endif
++}
++
++static inline bool arch_timer_have_evtstrm_feature(void)
++{
++	return cpu_have_named_feature(EVTSTRM);
++}
+ #endif
+diff --git a/drivers/clocksource/arm_arch_timer.c b/drivers/clocksource/arm_arch_timer.c
+index b2a951a798e2..3583a92ad960 100644
+--- a/drivers/clocksource/arm_arch_timer.c
++++ b/drivers/clocksource/arm_arch_timer.c
+@@ -804,14 +804,7 @@ static void arch_timer_evtstrm_enable(int divider)
+ 	cntkctl |= (divider << ARCH_TIMER_EVT_TRIGGER_SHIFT)
+ 			| ARCH_TIMER_VIRT_EVT_EN;
+ 	arch_timer_set_cntkctl(cntkctl);
+-#ifdef CONFIG_ARM64
+-	cpu_set_named_feature(EVTSTRM);
+-#else
+-	elf_hwcap |= HWCAP_EVTSTRM;
+-#endif
+-#ifdef CONFIG_COMPAT
+-	compat_elf_hwcap |= COMPAT_HWCAP_EVTSTRM;
+-#endif
++	arch_timer_set_evtstrm_feature();
+ 	cpumask_set_cpu(smp_processor_id(), &evtstrm_available);
+ }
+ 
+@@ -1040,11 +1033,7 @@ static int arch_timer_cpu_pm_notify(struct notifier_block *self,
+ 	} else if (action == CPU_PM_ENTER_FAILED || action == CPU_PM_EXIT) {
+ 		arch_timer_set_cntkctl(__this_cpu_read(saved_cntkctl));
+ 
+-#ifdef CONFIG_ARM64
+-		if (cpu_have_named_feature(EVTSTRM))
+-#else
+-		if (elf_hwcap & HWCAP_EVTSTRM)
+-#endif
++		if (arch_timer_have_evtstrm_feature())
+ 			cpumask_set_cpu(smp_processor_id(), &evtstrm_available);
+ 	}
+ 	return NOTIFY_OK;
+-- 
+2.21.0
 
-Hi,
-
-On Wed, Jun 12, 2019 at 03:21:19PM +0200, Noralf Tr=F8nnes wrote:
-> >> The only way I see for that to happen, is to set
-> >> ->panel_orientation. And to repeat myself, imo that makes
-> >> 'orientation' a better name for this video=3D option.
-> >
-> > orientation and rotation are two different things to me. The
-> > orientation of a panel for example is absolute, while the rotation is
-> > a transformation. In this particular case, I think that both the
-> > orientation and the rotation should be taken into account, with the
-> > orientation being the default state, and the hardware / panel will
-> > tell us that, while the rotation would be a transformation from that
-> > default to whatever the user wants.
-> >
-> > More importantly, the orientation is a property of the hardware (ie,
-> > how the display has been assembled), while the rotation is a software
-> > construct.
-> >
-> > And if the property being used to expose that is the rotation, I guess
-> > it would make sense to just use the same name and remain consistent.
->
-> Ok, I see. Based on this, I would assume that rotation would be relative
-> to the orientation, but I see that in this patch rotation doesn't take
-> orintation into account, it just overwrites it.
-
-Yeah, that's a good point. I've updated the next version to add the
-rotation on the command line to the orientation.
-
-> I don't how userspace deals with rotation on top of orientation.
-
-The orientation is exposed through the property, and the result is
-available through the plane's rotation, so I guess that it's enough?
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---ydwumpiccsdbmew2
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXQJGkAAKCRDj7w1vZxhR
-xSzYAP461yNEAGBB4hTUD6C0V9uVqt4QG/X4SknIL59OkTehOgD+I38CsWEUTkXK
-TCnMtoCnqwx3576oXEw162ikosk6ow4=
-=MGnC
------END PGP SIGNATURE-----
-
---ydwumpiccsdbmew2--
-
-
---===============2784148724339146124==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2784148724339146124==--
-
