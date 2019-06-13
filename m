@@ -2,84 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0671A44EF8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 00:07:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B44C244EFB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 00:11:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2uPefAMy5nP60FOHYeuO3wcfOZCX/RjjkLmS0pKAb4c=; b=eCpNg4XUdT8+2G
-	GhwyO3vWDFXCFzh91TUgbSXNKbC578VdWxN2v3yeJCPlHgyNFoVvlDaiKQyBs3l0oHO5q6amYmwep
-	gDhFfzj4sUY219cgfl0NTNVdbgYu7NcOZ/OVXTICiGpcWoGUlH0TcnO6LgtZHsQmD898/1B4I9Kf6
-	PyzkIlUbdHQjXLjrUcg2QYArfzeJFfrjeclgB7YMZnoLx9CbBZLEUXjHVIUzpErlG9UQOaW3utSps
-	h5ahjVDCx9tY7t6np6ZHDi/TfqU8Dbi6kmAhR2VQahi+O1gOYCVZ8efGmWIMJ5heGfBjID0rL/gQh
-	aoVdosDKOE96FpX+Ik+Q==;
+	List-Owner; bh=ugJMx4E3i1nSHLsmj6wGHtDzxU+LA9ObTRFMfDoVocw=; b=L+X2pN0G+jzveQ
+	PbZYrRlXS3+QkNJhPasFPKKr1Hm0sUnt+82mToK7kGahc4jEbvj65moaGEurGPB803g3xSbUIN5Io
+	z6YeHr3ws23tY0qSVzbFQTyW9Cw78AD4iOa7//5XI2cVT9tAzY9vnbH3/nUS1/2wgJmo/NI9UCeNS
+	7lLj8bPJge7h03rnfLUccVLX5hDwpaCzfcnUXX0aMsSjXQ1IouE4j3AugrEnWlxs5SH8xEeApY07j
+	Ii8jQxGfqb0NaaKDrTmoW2k3n1bSzDw6rQKNYpjXWMIl2XuoD3ZpoEWvwynot69CuwC/59UNXNl4A
+	d9ppoCyJNUO8ogv0qz0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbXso-00067j-4Z; Thu, 13 Jun 2019 22:07:46 +0000
-Received: from mail-qk1-f193.google.com ([209.85.222.193])
+	id 1hbXwJ-0007gK-OS; Thu, 13 Jun 2019 22:11:23 +0000
+Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbXsa-00067D-6H
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 22:07:33 +0000
-Received: by mail-qk1-f193.google.com with SMTP id p144so406297qke.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 15:07:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BhWdQ+n9lb5V8igkIdjlDGkO+bOshDClHntzHo4xkx4=;
- b=M53E5QTfv/KDhoLEGZIejJiBDVdqOhBfVl784goGo1bNY4izTXWNTKtxAcGCYGmAlI
- K8P94qaUGPononGnzbjBu6/dVUnNsXNZTwZOgK6GZmvKNlPxxcQY+6K0Od/I6XIBQJz4
- aMbSVKSBQ27wv4hlxrh5Wf/6HJQxXDHDVebDO/PnMdG7m/UK/+Mg+h67w322NfcCdf5i
- D5r4OtfBLTgssJ/VjRH73PfS2hl4yHe777GFDzgdYrtgS4Ruw9QQDNgSjEaNJuhamAel
- JG+41KuXUPUzf2+MHaDq8TLAfTnPEYFzgY4Hxq7X0HE/5tb+jlO7LdMBwuTC60P/UWHR
- Vxeg==
-X-Gm-Message-State: APjAAAVbaHD4bKF7sfGSODPtteR5xSpLgYdulUmKfD8vaqDH8JniSnn+
- fELu7yWL6w9ZZNpoJIUlNA==
-X-Google-Smtp-Source: APXvYqzlg3l0HADoNTIkv5SXk7nuuzVo6Jw7oSlbsAolVM+MxEBgZazQrw5oWThYP2sbSY8L9PzBsg==
-X-Received: by 2002:a37:6512:: with SMTP id z18mr73992402qkb.158.1560463650992; 
- Thu, 13 Jun 2019 15:07:30 -0700 (PDT)
-Received: from localhost ([64.188.179.243])
- by smtp.gmail.com with ESMTPSA id t8sm708240qtc.80.2019.06.13.15.07.30
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 13 Jun 2019 15:07:30 -0700 (PDT)
-Date: Thu, 13 Jun 2019 16:07:29 -0600
-From: Rob Herring <robh@kernel.org>
-To: Ran Wang <ran.wang_1@nxp.com>
-Subject: Re: [PATCH 2/3] Documentation: dt: binding: fsl: Add 'little-endian'
- and update Chassis define
-Message-ID: <20190613220729.GA29761@bogus>
-References: <20190517024748.15534-1-ran.wang_1@nxp.com>
- <20190517024748.15534-2-ran.wang_1@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190517024748.15534-2-ran.wang_1@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hbXw9-0007fv-Ne
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 22:11:15 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5DMAuZM012681;
+ Thu, 13 Jun 2019 17:10:57 -0500
+Message-ID: <39980dcbcc30293c0ee370ff49e0ababd3f68863.camel@kernel.crashing.org>
+Subject: Re: Why check for PCI_PROBE_ONLY in pci_common_init_dev()
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Date: Fri, 14 Jun 2019 08:10:56 +1000
+In-Reply-To: <20190613220642.pdiifl7lc3ea43vi@shell.armlinux.org.uk>
+References: <4e734c3aab8802b340e06b56803954b3e550157d.camel@kernel.crashing.org>
+ <20190613220642.pdiifl7lc3ea43vi@shell.armlinux.org.uk>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_150732_233946_B0A9872C 
-X-CRM114-Status: GOOD (  10.59  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190613_151113_920857_35DA2625 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.193 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,32 +59,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Len Brown <len.brown@intel.com>,
- devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-pm@vger.kernel.org, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Pavel Machek <pavel@ucw.cz>, Ran Wang <ran.wang_1@nxp.com>,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 May 2019 10:47:47 +0800, Ran Wang wrote:
-> By default, QorIQ SoC's RCPM register block is Big Endian. But
-> there are some exceptions, such as LS1088A and LS2088A, are Little
-> Endian. So add this optional property to help identify them.
+On Thu, 2019-06-13 at 23:06 +0100, Russell King - ARM Linux admin wrote:
+> On Thu, Jun 13, 2019 at 01:52:34PM +1000, Benjamin Herrenschmidt wrote:
+> > Hi !
+> > 
+> > So while trying to sort out & cleanup the business with PCI resource
+> > allocation (and do the ground work to be able to revive 
+> > https://lore.kernel.org/linux-pci/20150916085850.GA17510@red-moon/) I
+> > stumbled upon this one:
+> > 
+> > arch/arm/kernel/bios32.c:pci_common_init_dev() checks for
+> > PCI_PROBE_ONLY to decide whether to claim existing resources or
+> > reallocate.
+> > 
+> > However, I can't see any code path leading to that function that would
+> > have set that flag.
 > 
-> Actually LS2021A and other Layerscapes won't totally follow Chassis
-> 2.1, so separate them from powerpc SoC.
-> 
-> Signed-off-by: Ran Wang <ran.wang_1@nxp.com>
-> ---
->  Documentation/devicetree/bindings/soc/fsl/rcpm.txt |    8 +++++++-
->  1 files changed, 7 insertions(+), 1 deletions(-)
-> 
+> Someone probably wanted it at some point but either that's been removed
+> or the code was never merged.  Either way, if no one is using it on
+> 32-bit ARM, it can be killed.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+It's not used by code path using that function. "New style" stuff using
+drivers/pci/controller/* can still use the flag, but at least I can
+simplify that code.
+
+Thanks !
+
+Cheers,
+Ben.
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
