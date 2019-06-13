@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D69844B85
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 21:03:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BF8E44BAB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 21:06:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mh1G2QCsPwkaJzoAxNUH1jw7R+DbazycWHYMv/TN7xc=; b=VwFTlSvispmB+z
-	5qcvCxmHlBBlyNUYdSphbLE/4vJBNVUmlMVzPgLJ9fOZP70KQUgES7zvRgFDfwNQfLgEb30kYuluV
-	M4cSteDC5u3IChx3XDOI6XTvxQOH+fVWA4QMuzvAefcbAcHrq1Tq1WOsTuvBws/fbD7bhbVnnlsCi
-	zH25yxOe22CKwcmdHLFIhuNGqCMFTNknoh49dzTPpdoKiVWYuJu2SoS6BYEsyhsfGi0EdmDjpjRJL
-	LxpzQnSpVMiT+3T9PrxO6UVkDd+z5k8eNC9YxIzrV24JQB1yXQ0Kn1r0Sx1sotJCui7wjKQtL2irH
-	p6nHw/w0NA1zeZXp3QHA==;
+	References:List-Owner; bh=QKdnrauHbYxjEGl6x8l3PRYP8Vjrr37wtQu0uU0BZF0=; b=uXA
+	0e8F077UTpS51FlwZYk2oBz4XlH60jZ6lByS6V6YOYL/vJxWkoQA5t44Qafzbwl0hjuMIV2XUtTOZ
+	RgFk3UTsyBXyA833Wg79hG/07H7biuCf1IkZ2Rsa1rL2ffQCmt+aTJZWyaWvtYjxzhIbIiKgoUb8v
+	75b0aE20fP1NIKFaldYzaHD6ULoxFZpkSwUZTqC/KRN4icxi/vS7eZNYTFEMO9R6/wI2XULQuDoj5
+	KMZlWk/qPHiBYbPPYQRkYOcQoiZ4mNGfuXgByTOKCJLApGwovucwszB2LGmXBP01PJyZGWwGoCOvR
+	J4IQNbS77HOZ/LIldixsHrrb6WzSofQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbV02-0004c8-Vi; Thu, 13 Jun 2019 19:03:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbV3T-0007DB-VQ; Thu, 13 Jun 2019 19:06:36 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbUzs-0004bM-E6
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 19:02:54 +0000
-Received: from localhost (unknown [69.71.4.100])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 464E020B7C;
- Thu, 13 Jun 2019 19:02:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560452570;
- bh=E9qshPeU0DrWf0BKzElLpC7lnCoLhlxr4VBNHdi9leU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fPy6zb2F0f8e9hHr0uEBkV9sBOMaGf3yERb1w7O8jHaSlQFgcFTHIfFP7YncRw09f
- cl/8hO2/v2eGBHqRptWz9mfkGyTZZR80ALcVvIJaJISq0BCngGVuFWLG7c27VtmVYA
- o247zxQSmAOte2nJgaQlZa2NOHOv0u69RDCSwxH4=
-Date: Thu, 13 Jun 2019 14:02:48 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: [RFC PATCH v2] arm64: acpi/pci: invoke _DSM whether to preserve
- firmware PCI setup
-Message-ID: <20190613190248.GH13533@google.com>
-References: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hbV3H-00078m-PY
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 19:06:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=Q3TVYpdt0eiuf1PGrAaOp5u7RwxgOBcLcLQtSas8cK4=; b=ALffCc5hw4iK
+ rTocfcAo4ob0JrHgzj/rhFo9/EkU/zJsw2DsJ6HV3+vHYCOHkTJ7g/z5DOpnhTEH86wcL4VZ8ilNv
+ 3QGNvNakWhRd7F8LiyzT8C+PfMXrr1PwkQTrhcQYnbAVSnrDQaWeptDXXOPcJ1DhxO6WRzbsbllFl
+ SNvLY=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hbV3E-0005TQ-Bu; Thu, 13 Jun 2019 19:06:20 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id DF3C2440046; Thu, 13 Jun 2019 20:06:19 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Applied "spi/acpi: enumerate all SPI slaves in the namespace" to the
+ spi tree
+In-Reply-To: <20190530111634.32209-1-ard.biesheuvel@linaro.org>
+X-Patchwork-Hint: ignore
+Message-Id: <20190613190619.DF3C2440046@finisterre.sirena.org.uk>
+Date: Thu, 13 Jun 2019 20:06:19 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_120252_512145_D1699268 
-X-CRM114-Status: GOOD (  40.67  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190613_120623_990118_E95B4224 
+X-CRM114-Status: GOOD (  21.43  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,243 +78,290 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Sinan Kaya <okaya@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Lukas Wunner <lukas@wunner.de>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-spi@vger.kernel.org, linux-acpi@vger.kernel.org,
+ andy.shevchenko@gmail.com, Mark Brown <broonie@kernel.org>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>, masahisa.kojima@linaro.org,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 05:54:56PM +1000, Benjamin Herrenschmidt wrote:
-> The current arm64 PCI code for ACPI platforms will unconditionally
-> reassign all resources.
-> 
-> This is not only suboptimal, it's also wrong for a number of cases, for
-> example, this could invalidate a UEFI framebuffer address, or a runtime
-> firmware could be using some of the devices in their original location.
-> 
-> There is an ACPI method defined today for P2P bridges (_DSM #5) that
-> can indicate that a bridge resources set by firmware. There is current
-> discussions to extend that method to cover host bridges, and define
-> a value of "0" as meaning that the resources must be preserved.
+The patch
 
-The ECR does extend the r3.2 spec so the _DSM can apply to host
-bridges.  Apart from that change, the ECR clarifies the language
-without changing the sense.  The meaning of "0" doesn't change.
+   spi/acpi: enumerate all SPI slaves in the namespace
 
-> This patch adds the resource assignment policy to struct
-> pci_host_bridge and sets it based on the presence of that method and if
-> present the value returned, and honors it on arm64.
-> 
-> No other architectures are currently affected, and the default is kept
-> to "reassign everything" on arm64 for now via an #ifdef, though we do
-> plan to get rid of that in a separate patch.
-> 
-> The setting in pci_host_bridge "looks" generic because I intend in
-> subsquent work to consolidate the resource allocation policy accross
-> architectures and I intend for that setting to be the canonical
-> location used by the generic code to decide what to do.
-> 
-> This is based on some earlier work by
-> Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> 
-> Signed-off-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> ---
-> 
->  arch/arm64/kernel/pci.c  | 12 ++++++++++--
->  drivers/acpi/pci_root.c  | 42 ++++++++++++++++++++++++++++++++++++++++
->  include/linux/pci-acpi.h |  7 ++++---
->  include/linux/pci.h      | 10 ++++++++++
->  4 files changed, 66 insertions(+), 5 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/pci.c b/arch/arm64/kernel/pci.c
-> index bb85e2f4603f..b209a506f390 100644
-> --- a/arch/arm64/kernel/pci.c
-> +++ b/arch/arm64/kernel/pci.c
-> @@ -168,6 +168,7 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
->  	struct acpi_pci_generic_root_info *ri;
->  	struct pci_bus *bus, *child;
->  	struct acpi_pci_root_ops *root_ops;
-> +	struct pci_host_bridge *hb;
+has been applied to the spi tree at
 
-The only other use of "struct pci_host_bridge *" in this file uses
-"bridge" as the variable, so I'd follow suit.
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.3
 
->  	ri = kzalloc(sizeof(*ri), GFP_KERNEL);
->  	if (!ri)
-> @@ -193,8 +194,15 @@ struct pci_bus *pci_acpi_scan_root(struct acpi_pci_root *root)
->  	if (!bus)
->  		return NULL;
->  
-> -	pci_bus_size_bridges(bus);
-> -	pci_bus_assign_resources(bus);
-> +	hb = pci_find_host_bridge(bus);
-> +
-> +	/* If the policy is normal or probe only, claim existing resources */
-> +	if (hb->rsrc_policy != pci_rsrc_reassign)
-> +		pci_bus_claim_resources(bus);
-> +
-> +	/* If the policy is not probe only, assign what's left unassigned */
-> +	if (hb->rsrc_policy != pci_rsrc_probe_only)
-> +		pci_assign_unassigned_root_bus_resources(bus);
->  
->  	list_for_each_entry(child, &bus->children, node)
->  		pcie_bus_configure_settings(child);
-> diff --git a/drivers/acpi/pci_root.c b/drivers/acpi/pci_root.c
-> index 39f5d172e84f..410f7f2b2587 100644
-> --- a/drivers/acpi/pci_root.c
-> +++ b/drivers/acpi/pci_root.c
-> @@ -881,6 +881,7 @@ struct pci_bus *acpi_pci_root_create(struct acpi_pci_root *root,
->  	int node = acpi_get_node(device->handle);
->  	struct pci_bus *bus;
->  	struct pci_host_bridge *host_bridge;
-> +	union acpi_object *obj;
->  
->  	info->root = root;
->  	info->bridge = device;
-> @@ -917,6 +918,47 @@ struct pci_bus *acpi_pci_root_create(struct acpi_pci_root *root,
->  	if (!(root->osc_control_set & OSC_PCI_EXPRESS_LTR_CONTROL))
->  		host_bridge->native_ltr = 0;
->  
-> +	/*
-> +	 * Invoke the PCI device specific method (_DSM) #5 'Ignore PCI Boot
-> +	 * Configuration', on the host bridge. This tells us whether the
-> +	 * firmware wants us to preserve or reassign the configuration of
-> +	 * the PCI resource tree for this root bridge.
-> +	 *
-> +	 * There are three possible outcomes here:
-> +	 *
-> +	 *  - _DSM #5 is absent. This is the default. Currently it will be
-> +	 *    architecture specific in order to maintain existing behaviours
-> +	 *    but the plan is to move arm64 into the fold: x86 and ia64 will
-> +	 *    claim the existing config, and reassign if needed. arm64 will
-> +	 *    always reassign.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-The spec (PCI FW r3.2) says a _DSM that returns 0 means "OS must not
-ignore config done by firmware".  The ECR in the works changes the
-wording to something like "OS must preserve config done by firmware",
-which is equivalent but clearer.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-The r3.2 spec goes on to suggest that a missing _DSM means the same
-thing ("OS must not ignore firmware config").  I think that part is
-crap, and the ECR removes that wording.
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-I don't accept the _DSM #5 section in the PCI FW spec as being
-normative about what a missing _DSM #5 means.  This section didn't
-even exist until r3.2, and all it says is "this situation is the same
-as the legacy situation where this _DSM is not provided".  That's just
-hand-waving; it's not a requirement.
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-I'm not aware of any spec that says the OS can't change PCI resources
-(if there is such a spec, please cite it).
+Thanks,
+Mark
 
-So my opinion is that a missing _DSM means nothing, and the default
-situation is that the OS can change PCI resources as necessary.
+From 4c3c59544f33e97cf8557f27e05a9904ead16363 Mon Sep 17 00:00:00 2001
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 30 May 2019 13:16:34 +0200
+Subject: [PATCH] spi/acpi: enumerate all SPI slaves in the namespace
 
-The ECR input from Windows was that in the absence of a _DSM #5, they
-keep the boot configuration unless a FW bug causes an overlap, a
-hot-add requires rebalancing, or the system includes external (e.g.,
-Thunderbolt) devices.  That's what I think Linux should do, too: keep
-the config from firmware unless we have a reason to change it.
+Currently, the ACPI enumeration that takes place when registering a
+SPI master only considers immediate child devices in the ACPI namespace,
+rather than checking the ResourceSource field in the SpiSerialBus()
+resource descriptor.
 
-> +	 *  - _DSM #5 exists and is 1. This is the FW telling us to ignore
-> +	 *    the configuration it performed. This is currently only supported
-> +	 *    on arm64.
+This is incorrect: SPI slaves could reside anywhere in the ACPI
+namespace, and so we should enumerate the entire namespace and look for
+any device that refers to the newly registered SPI master in its
+resource descriptor.
 
-The r3.2 spec actually says "the OS *may* ignore config done by
-firmware".  There's no *requirement* that the OS change anything.
+So refactor the existing code and use a lookup structure so that
+allocating the SPI device structure is deferred until we have identified
+the device as an actual child of the controller. This approach is
+loosely based on the way the I2C subsystem handles ACPI enumeration.
 
-IMHO *this* is the same as the case where there's no _DSM at all.
+Note that Apple x86 hardware does not rely on SpiSerialBus() resources
+in _CRS but uses nested devices below the controller's device node in
+the ACPI namespace, with a special set of device properties. This means
+we have to take care to only parse those properties for device nodes
+that are direct children of the controller node.
 
-> +	 *  - _DSM #5 exists and is 0. This should be the same as the default
-> +	 *    (_DSM #5 absent). However there are some assumptions flying around
-> +	 *    that this means we must keep the FW configuration intact. So we
-> +	 *    treat that as "probe only" for the time being. This is currently
-> +	 *    only supported on arm64.
+Cc: Mika Westerberg <mika.westerberg@linux.intel.com>
+Cc: linux-spi@vger.kernel.org
+Cc: broonie@kernel.org
+Cc: andy.shevchenko@gmail.com
+Cc: masahisa.kojima@linaro.org
+Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Cc: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Cc: linux-acpi@vger.kernel.org
+Cc: Lukas Wunner <lukas@wunner.de>
 
-PCI FW r3.2 says 0 means "the OS must not ignore config done by
-firmware."  That means we must keep the FW configuration intact.
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi.c | 103 ++++++++++++++++++++++++++++++++--------------
+ 1 file changed, 72 insertions(+), 31 deletions(-)
 
-> +	obj = acpi_evaluate_dsm(ACPI_HANDLE(bus->bridge), &pci_acpi_dsm_guid, 1,
-> +	                        IGNORE_PCI_BOOT_CONFIG_DSM, NULL);
-> +	if (obj && obj->type == ACPI_TYPE_INTEGER) {
-> +		if (obj->integer.value == 1)
-> +			host_bridge->rsrc_policy = pci_rsrc_reassign;
-> +		else
-> +			host_bridge->rsrc_policy = pci_rsrc_probe_only;
-> +	} else {
-> +		/* Default is arch specific ... for now */
-> +#ifdef CONFIG_ARM64
-> +		host_bridge->rsrc_policy = pci_rsrc_reassign;
-> +#else
-> +		host_bridge->rsrc_policy = pci_rsrc_normal;
-> +#endif
-> +	}
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index bced6876de79..498f9b7419a4 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -1852,9 +1852,18 @@ static void of_register_spi_devices(struct spi_controller *ctlr) { }
+ #endif
+ 
+ #ifdef CONFIG_ACPI
+-static void acpi_spi_parse_apple_properties(struct spi_device *spi)
++struct acpi_spi_lookup {
++	struct spi_controller 	*ctlr;
++	u32			max_speed_hz;
++	u32			mode;
++	int			irq;
++	u8			bits_per_word;
++	u8			chip_select;
++};
++
++static void acpi_spi_parse_apple_properties(struct acpi_device *dev,
++					    struct acpi_spi_lookup *lookup)
+ {
+-	struct acpi_device *dev = ACPI_COMPANION(&spi->dev);
+ 	const union acpi_object *obj;
+ 
+ 	if (!x86_apple_machine)
+@@ -1862,35 +1871,46 @@ static void acpi_spi_parse_apple_properties(struct spi_device *spi)
+ 
+ 	if (!acpi_dev_get_property(dev, "spiSclkPeriod", ACPI_TYPE_BUFFER, &obj)
+ 	    && obj->buffer.length >= 4)
+-		spi->max_speed_hz  = NSEC_PER_SEC / *(u32 *)obj->buffer.pointer;
++		lookup->max_speed_hz  = NSEC_PER_SEC / *(u32 *)obj->buffer.pointer;
+ 
+ 	if (!acpi_dev_get_property(dev, "spiWordSize", ACPI_TYPE_BUFFER, &obj)
+ 	    && obj->buffer.length == 8)
+-		spi->bits_per_word = *(u64 *)obj->buffer.pointer;
++		lookup->bits_per_word = *(u64 *)obj->buffer.pointer;
+ 
+ 	if (!acpi_dev_get_property(dev, "spiBitOrder", ACPI_TYPE_BUFFER, &obj)
+ 	    && obj->buffer.length == 8 && !*(u64 *)obj->buffer.pointer)
+-		spi->mode |= SPI_LSB_FIRST;
++		lookup->mode |= SPI_LSB_FIRST;
+ 
+ 	if (!acpi_dev_get_property(dev, "spiSPO", ACPI_TYPE_BUFFER, &obj)
+ 	    && obj->buffer.length == 8 &&  *(u64 *)obj->buffer.pointer)
+-		spi->mode |= SPI_CPOL;
++		lookup->mode |= SPI_CPOL;
+ 
+ 	if (!acpi_dev_get_property(dev, "spiSPH", ACPI_TYPE_BUFFER, &obj)
+ 	    && obj->buffer.length == 8 &&  *(u64 *)obj->buffer.pointer)
+-		spi->mode |= SPI_CPHA;
++		lookup->mode |= SPI_CPHA;
+ }
+ 
+ static int acpi_spi_add_resource(struct acpi_resource *ares, void *data)
+ {
+-	struct spi_device *spi = data;
+-	struct spi_controller *ctlr = spi->controller;
++	struct acpi_spi_lookup *lookup = data;
++	struct spi_controller *ctlr = lookup->ctlr;
+ 
+ 	if (ares->type == ACPI_RESOURCE_TYPE_SERIAL_BUS) {
+ 		struct acpi_resource_spi_serialbus *sb;
++		acpi_handle parent_handle;
++		acpi_status status;
+ 
+ 		sb = &ares->data.spi_serial_bus;
+ 		if (sb->type == ACPI_RESOURCE_SERIAL_TYPE_SPI) {
++
++			status = acpi_get_handle(NULL,
++						 sb->resource_source.string_ptr,
++						 &parent_handle);
++
++			if (!status ||
++			    ACPI_HANDLE(ctlr->dev.parent) != parent_handle)
++				return -ENODEV;
++
+ 			/*
+ 			 * ACPI DeviceSelection numbering is handled by the
+ 			 * host controller driver in Windows and can vary
+@@ -1903,25 +1923,25 @@ static int acpi_spi_add_resource(struct acpi_resource *ares, void *data)
+ 						sb->device_selection);
+ 				if (cs < 0)
+ 					return cs;
+-				spi->chip_select = cs;
++				lookup->chip_select = cs;
+ 			} else {
+-				spi->chip_select = sb->device_selection;
++				lookup->chip_select = sb->device_selection;
+ 			}
+ 
+-			spi->max_speed_hz = sb->connection_speed;
++			lookup->max_speed_hz = sb->connection_speed;
+ 
+ 			if (sb->clock_phase == ACPI_SPI_SECOND_PHASE)
+-				spi->mode |= SPI_CPHA;
++				lookup->mode |= SPI_CPHA;
+ 			if (sb->clock_polarity == ACPI_SPI_START_HIGH)
+-				spi->mode |= SPI_CPOL;
++				lookup->mode |= SPI_CPOL;
+ 			if (sb->device_polarity == ACPI_SPI_ACTIVE_HIGH)
+-				spi->mode |= SPI_CS_HIGH;
++				lookup->mode |= SPI_CS_HIGH;
+ 		}
+-	} else if (spi->irq < 0) {
++	} else if (lookup->irq < 0) {
+ 		struct resource r;
+ 
+ 		if (acpi_dev_resource_interrupt(ares, 0, &r))
+-			spi->irq = r.start;
++			lookup->irq = r.start;
+ 	}
+ 
+ 	/* Always tell the ACPI core to skip this resource */
+@@ -1931,7 +1951,9 @@ static int acpi_spi_add_resource(struct acpi_resource *ares, void *data)
+ static acpi_status acpi_register_spi_device(struct spi_controller *ctlr,
+ 					    struct acpi_device *adev)
+ {
++	acpi_handle parent_handle = NULL;
+ 	struct list_head resource_list;
++	struct acpi_spi_lookup lookup;
+ 	struct spi_device *spi;
+ 	int ret;
+ 
+@@ -1939,28 +1961,44 @@ static acpi_status acpi_register_spi_device(struct spi_controller *ctlr,
+ 	    acpi_device_enumerated(adev))
+ 		return AE_OK;
+ 
+-	spi = spi_alloc_device(ctlr);
+-	if (!spi) {
+-		dev_err(&ctlr->dev, "failed to allocate SPI device for %s\n",
+-			dev_name(&adev->dev));
+-		return AE_NO_MEMORY;
+-	}
+-
+-	ACPI_COMPANION_SET(&spi->dev, adev);
+-	spi->irq = -1;
++	lookup.ctlr		= ctlr;
++	lookup.mode		= 0;
++	lookup.bits_per_word	= 0;
++	lookup.irq		= -1;
+ 
+ 	INIT_LIST_HEAD(&resource_list);
+ 	ret = acpi_dev_get_resources(adev, &resource_list,
+-				     acpi_spi_add_resource, spi);
++				     acpi_spi_add_resource, &lookup);
+ 	acpi_dev_free_resource_list(&resource_list);
+ 
+-	acpi_spi_parse_apple_properties(spi);
++	if (ret < 0)
++		/* found SPI in _CRS but it points to another controller */
++		return AE_OK;
+ 
+-	if (ret < 0 || !spi->max_speed_hz) {
+-		spi_dev_put(spi);
++	if (!lookup.max_speed_hz &&
++	    !ACPI_FAILURE(acpi_get_parent(adev->handle, &parent_handle)) &&
++	    ACPI_HANDLE(ctlr->dev.parent) == parent_handle) {
++		/* Apple does not use _CRS but nested devices for SPI slaves */
++		acpi_spi_parse_apple_properties(adev, &lookup);
++	}
++
++	if (!lookup.max_speed_hz)
+ 		return AE_OK;
++
++	spi = spi_alloc_device(ctlr);
++	if (!spi) {
++		dev_err(&ctlr->dev, "failed to allocate SPI device for %s\n",
++			dev_name(&adev->dev));
++		return AE_NO_MEMORY;
+ 	}
+ 
++	ACPI_COMPANION_SET(&spi->dev, adev);
++	spi->max_speed_hz	= lookup.max_speed_hz;
++	spi->mode		= lookup.mode;
++	spi->irq		= lookup.irq;
++	spi->bits_per_word	= lookup.bits_per_word;
++	spi->chip_select	= lookup.chip_select;
++
+ 	acpi_set_modalias(adev, acpi_device_hid(adev), spi->modalias,
+ 			  sizeof(spi->modalias));
+ 
+@@ -1992,6 +2030,8 @@ static acpi_status acpi_spi_add_device(acpi_handle handle, u32 level,
+ 	return acpi_register_spi_device(ctlr, adev);
+ }
+ 
++#define SPI_ACPI_ENUMERATE_MAX_DEPTH		32
++
+ static void acpi_register_spi_devices(struct spi_controller *ctlr)
+ {
+ 	acpi_status status;
+@@ -2001,7 +2041,8 @@ static void acpi_register_spi_devices(struct spi_controller *ctlr)
+ 	if (!handle)
+ 		return;
+ 
+-	status = acpi_walk_namespace(ACPI_TYPE_DEVICE, handle, 1,
++	status = acpi_walk_namespace(ACPI_TYPE_DEVICE, ACPI_ROOT_OBJECT,
++				     SPI_ACPI_ENUMERATE_MAX_DEPTH,
+ 				     acpi_spi_add_device, NULL, ctlr, NULL);
+ 	if (ACPI_FAILURE(status))
+ 		dev_warn(&ctlr->dev, "failed to enumerate SPI slaves\n");
+-- 
+2.20.1
 
-I think this needs to be a single bit, not a 3-choice thing.  I don't
-think it's possible to clearly explain how pci_rsrc_normal is
-different from pci_rsrc_reassign.  We either need to preserve the
-config or we don't.
-
-A middle ground of "we don't need to preserve the config and in fact
-we *must* reassign resources" is pointless because we don't know *why*
-we have to reassign things, and we don't know what sort of change
-would be correct.
-
-> +	ACPI_FREE(obj);
-> +
->  	pci_scan_child_bus(bus);
->  	pci_set_host_bridge_release(host_bridge, acpi_pci_root_release_info,
->  				    info);
-> diff --git a/include/linux/pci-acpi.h b/include/linux/pci-acpi.h
-> index 8082b612f561..62b7fdcc661c 100644
-> --- a/include/linux/pci-acpi.h
-> +++ b/include/linux/pci-acpi.h
-> @@ -107,9 +107,10 @@ static inline void acpiphp_check_host_bridge(struct acpi_device *adev) { }
->  #endif
->  
->  extern const guid_t pci_acpi_dsm_guid;
-> -#define DEVICE_LABEL_DSM	0x07
-> -#define RESET_DELAY_DSM		0x08
-> -#define FUNCTION_DELAY_DSM	0x09
-> +#define IGNORE_PCI_BOOT_CONFIG_DSM	0x05
-> +#define DEVICE_LABEL_DSM		0x07
-> +#define RESET_DELAY_DSM			0x08
-> +#define FUNCTION_DELAY_DSM		0x09
->  
->  #else	/* CONFIG_ACPI */
->  static inline void acpi_pci_add_bus(struct pci_bus *bus) { }
-> diff --git a/include/linux/pci.h b/include/linux/pci.h
-> index dd436da7eccc..7ff5cedb30cf 100644
-> --- a/include/linux/pci.h
-> +++ b/include/linux/pci.h
-> @@ -486,6 +486,12 @@ static inline int pci_channel_offline(struct pci_dev *pdev)
->  	return (pdev->error_state != pci_channel_io_normal);
->  }
->  
-> +enum pci_host_rsrc_policy {
-> +	pci_rsrc_normal,	/* Probe and (re)assign what's missing/broken */
-> +	pci_rsrc_probe_only,	/* Probe only */
-> +	pci_rsrc_reassign,	/* Reassign resources */
-> +};
-> +
->  struct pci_host_bridge {
->  	struct device	dev;
->  	struct pci_bus	*bus;		/* Root bus */
-> @@ -506,6 +512,10 @@ struct pci_host_bridge {
->  	unsigned int	native_shpc_hotplug:1;	/* OS may use SHPC hotplug */
->  	unsigned int	native_pme:1;		/* OS may use PCIe PME */
->  	unsigned int	native_ltr:1;		/* OS may use PCIe LTR */
-> +
-> +	/* Resource assignment/allocation policy */
-> +	enum pci_host_rsrc_policy rsrc_policy;
-> +
->  	/* Resource alignment requirements */
->  	resource_size_t (*align_resource)(struct pci_dev *dev,
->  			const struct resource *res,
-> 
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
