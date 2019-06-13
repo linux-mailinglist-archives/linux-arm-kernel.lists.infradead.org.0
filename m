@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82EEA44300
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:28:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7151B44303
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:29:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZbajFCoz2tudeF+/fS8emH/tew2fdim4XvuuE1V4Avo=; b=L7kppdwhCg9rDdHB6NT/HVccBU
-	lZV8342P0TK2dtFEOGlQjIGlNkYBCmwIlix7Py3n+LxJtEf4wAckSyYfC/SoER16uFGhl75na/rP2
-	c/XV0Os3vmeo1xMZFQuUuya/qei0luuOSR1ty1sfRffxT2uF0GPUOP0HaCCICXVAmeIO7QG373US0
-	QgN26blwXmSEjHBOlTOuCFOgFgYLmU4mjYgME9nmSXE1tY5bLCuN+2YFr79q6ko4oFq172Ssow3lr
-	ndMzDJvhh+lg3l1LXKfYUdJC2q8PJp7CMknvNCN5ZfNpk8BPPXF21Dbb8A2eg9MANbOD+6neZWUMr
-	Eb11IGkA==;
+	bh=Ily7sim1MjcAnVzNqKsKxDAXMhaYMn2C+UHMnLc+BiA=; b=lc+7UWaDPdT9JJIXAEkhFam9JE
+	mqiQ7P/1ggxMtStbDB8uvGvVgKMwBnIuOYWCQ9dtmVFbwE6gAuu3NtuBENt2o74rRsxKkXLSbc+BT
+	JCsHBSC9TJodnyAzGlGT2vSgFl5s2Z0/nKGCvLG35qNakIjA9HI26dilXlbip/LGh9bKzH9SpbCGl
+	g0IaAnmu2nW7jZEbKh94fN8S+npnOQgdhig6hvDuK71ZVepXSwVScmyXURtQNsmyhxeOH0GWkVLzQ
+	TSQtw5rS6uCu6dQJs7RESkNNMEthvyECUxP5tg4iinHnMciXogDsruw1KWkCr17ajNohPecU8HoB6
+	a11RNIag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSad-0003WY-0B; Thu, 13 Jun 2019 16:28:39 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hbSax-0003qm-Hi; Thu, 13 Jun 2019 16:28:59 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZN-0002eQ-WA; Thu, 13 Jun 2019 16:27:25 +0000
-Received: by mail-pf1-x441.google.com with SMTP id j2so12165837pfe.6;
- Thu, 13 Jun 2019 09:27:20 -0700 (PDT)
+ id 1hbSZS-0002hT-Vw; Thu, 13 Jun 2019 16:27:29 +0000
+Received: by mail-pl1-x641.google.com with SMTP id b7so3329889pls.6;
+ Thu, 13 Jun 2019 09:27:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=JsgCC/BMGBMjxmW7o9BryeGGLOEsGyP+ouOS5p6QwrY=;
- b=JcwiPxgjLgV6N4VCuG8y04JytNqGA3wjUEQKXd/8c9NKoASVZrzY9YqxjRgcnxpj/m
- xYimd6aF0FM3qGzIYEie1Obu9Fv9hNkPj5fOH/k1Cq8DDcTXGvzHfbdZZhCf2rHYdqoK
- irX41RQFqAFcvftuCdOl2TIoHJ7GuhiI3Lp4/3pYT1WHUTlWCSo2uZS0xVBoOWxaygH0
- Qhyde+t2vasIdzZ+OUXv4OvvVQwY7REx9a6hOOv/nwJg0o08wp2sRXgZY/BCBEUe5dt5
- QSiS7Bi23/N6707zjA7xU7gvDKFjyL8fi7H0FXAHjINXJuoR7QtNv2s6u2JezgqDFeA7
- CcCQ==
+ bh=+uAxJSSMcJzrTyyAujU7IWsabWssr7wxWhZR9Nz/dEI=;
+ b=mjcoCpLnewM+pZoDokMZAPSV/jh4geTMwUOmHG9y9n54CNHb+seQlWHkRh0LfXU2kG
+ M1bsOCW/Q8ZWGhyjhg1kB3VBXcLp+4k4lw277HOODN6TQANWjdBZitLqtft7IXpYjzWU
+ tW4N8VKEUAmCfU8OH+FofeI05RRXIbdjpYotmNG0fBWxgmI6hlFoXiDqqGgsDf5B0RDP
+ rYQDO2dXDZuenFNvBQyAgl+nk/uhYYstKsah2kuVTFsx/opMo45b4su+X1i9d8e2MWUR
+ oZZCcvQjSr6X6cHRWBCXBWMcPUS1VRdRpS2vkFXSSrPAnO/WpIvBScWt/ygIZ2ar4x+I
+ pgcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=JsgCC/BMGBMjxmW7o9BryeGGLOEsGyP+ouOS5p6QwrY=;
- b=oV87xBYzd4/it0czC4QF2Lj+Rh+fuTs1DoGLbeTTJzEzVStK5VoFlDoByea0RDdaU3
- j0ms4nqH97Ytok56ZgD2aEUIvOnmel5I+xD1N9cZlHhPVIr+HQp1IyyubJSI1S4ELJHy
- 6LZGc51tXB6OHI2NvwSN+DlTxzHiPAEl9zc/9gTtdOJBvuiQrVhyM+lWe5dIxJgG2MWm
- U4zbydTEJghRMyANRZ7EQjTUpZPC2NJKpKc2zQqLeIaI6ydfPCaIR/Uw479Wu1hZHYyP
- TpXSXo8VH0ZvEO9PTFByKDzd0mBIsLVy8CEXH77EEk29OricGKFbLWGF3gaGvyiI7GKw
- AFEQ==
-X-Gm-Message-State: APjAAAVji2P9hqq1C11Id/EVci1BH4KOtLFt1FZsQsalJ3GFBeUU7+LU
- 5pKAycEAA8XTZL5B4gjfXso=
-X-Google-Smtp-Source: APXvYqzz/wBg2hFMk5AN2wVrdkk/+d5jQkSOOjBN2BUU2pkNiSLnjcEV8rg9DLZ1/j1U47rn0NUi1g==
-X-Received: by 2002:a62:1bd1:: with SMTP id
- b200mr69156992pfb.210.1560443239837; 
- Thu, 13 Jun 2019 09:27:19 -0700 (PDT)
+ bh=+uAxJSSMcJzrTyyAujU7IWsabWssr7wxWhZR9Nz/dEI=;
+ b=b9hh6cMXap+tzw1tKoSzmbpPrs0T+zYX5xtLW6z7ojxmNJ6A9sHupz2yhNx9DaNKjo
+ nwhhEz4id8HDZrH8vE6LuzxZSLXDhlydfva5zfh8ddZEgK7LaHDlRn1D6Nj62T2snMMH
+ LHIa78VekMwgbHJnMSo8t9Yiy9zTU+2CLmmn+U5rfmyo9AAEwk4kuksl+zWmCd1KD4U8
+ 8D1brhjERwjkg7TN57nYNOOS04D5+cRsCDBAit8wWHdUYjBfH4eTHPBQc/Eqw6QOvyKw
+ HYmYWnEIinzFlzMUeWI2Z3xtjWlJRYSZUqOSuwofgcwSrTOE/N/+bGtjLzafx4KL1Z6D
+ zLMA==
+X-Gm-Message-State: APjAAAWCmBcg9jxp722aQ+FCnAHLX4Q6NAJocNxuye0sz0AmGJyWFDpT
+ u37tVPxFvBwKBCLxnrWV0Xk=
+X-Google-Smtp-Source: APXvYqxkQlemuxcSLQHtMtBC5Ri9a3BRMGjgpcVRFo4X60vYKhFABWujvq+0K3YJ88vz/VdAg59zEw==
+X-Received: by 2002:a17:902:860c:: with SMTP id
+ f12mr89128629plo.127.1560443244418; 
+ Thu, 13 Jun 2019 09:27:24 -0700 (PDT)
 Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id l8sm265407pgb.76.2019.06.13.09.27.19
+ by smtp.gmail.com with ESMTPSA id 128sm170411pfd.66.2019.06.13.09.27.23
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:19 -0700 (PDT)
+ Thu, 13 Jun 2019 09:27:23 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
  krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
  agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
  heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 04/10] iommu/qcom: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:26:57 -0400
-Message-Id: <20190613162703.986-4-tiny.windzz@gmail.com>
+Subject: [PATCH 05/10] iommu/dma-iommu: convert to SPDX license tags
+Date: Thu, 13 Jun 2019 12:26:58 -0400
+Message-Id: <20190613162703.986-5-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.0
 In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
 References: <20190613162703.986-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092722_108808_28D3E24F 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20190613_092727_099018_51177A53 
+X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,18 +113,23 @@ Updates license to use SPDX-License-Identifier.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/iommu/qcom_iommu.c | 13 +------------
+ drivers/iommu/dma-iommu.c | 13 +------------
  1 file changed, 1 insertion(+), 12 deletions(-)
 
-diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
-index 8cdd3f059513..ad913720d7dd 100644
---- a/drivers/iommu/qcom_iommu.c
-+++ b/drivers/iommu/qcom_iommu.c
-@@ -1,18 +1,7 @@
+diff --git a/drivers/iommu/dma-iommu.c b/drivers/iommu/dma-iommu.c
+index 129c4badf9ae..2d76bac43b82 100644
+--- a/drivers/iommu/dma-iommu.c
++++ b/drivers/iommu/dma-iommu.c
+@@ -1,3 +1,4 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
-  * IOMMU API for QCOM secure IOMMUs.  Somewhat based on arm-smmu.c
+  * A fairly generic DMA-API to IOMMU-API glue layer.
   *
+@@ -5,18 +6,6 @@
+  *
+  * based in part on arch/arm/mm/dma-mapping.c:
+  * Copyright (C) 2000-2004 Russell King
+- *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
 - * published by the Free Software Foundation.
@@ -136,10 +141,9 @@ index 8cdd3f059513..ad913720d7dd 100644
 - *
 - * You should have received a copy of the GNU General Public License
 - * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-- *
-  * Copyright (C) 2013 ARM Limited
-  * Copyright (C) 2017 Red Hat
   */
+ 
+ #include <linux/acpi_iort.h>
 -- 
 2.17.0
 
