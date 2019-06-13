@@ -2,50 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42651432E9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 08:20:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0A443303
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 08:54:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=SKFmMycs/akaYWMStDCTwJGyULDpnKbgkn/JmSc8gPs=; b=rax
-	Z9tGfpbkPuUo1/jW0fruVLhK/K1PEgme6hUgj7pRGUnOICN6we4UxJOzytQbPUsfGueD37AhHvgFq
-	bsR4NCMYJWuIx4/EDF+C7krSx/gCqTPzkoeT2+JczTlNvhcwnzkz+6Q+a0ecy1BbdevwPW+aM+UkN
-	9SsvX9o1ArvOF8sFQPS69zBCMcjW2y+7kUJm8SKEDva8Poz0iqK7mn3lKvGHDrtML2BnNvLien+qo
-	PIuyf3WabZUU9oEZ32Qxa1N66AkqBmNueE2N9rtOeesagMHuNT29lEvjUuiIHvd7xXtYr4fdgZRMG
-	Sw6b51iJtsd1qv1cBo2R6B+hY5n6ySg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ECYj9BmGps+BJ0aQMAN5GZrHfXnDuAKjuFYcBmMmCjI=; b=cegDUbXcKcp73W
+	CdK0ba7xQ+6ZBOz5V4pfaJcbliDvrBi6css44PzRABHJG7xI//HH4EpU7xrp17i6+7aN2a6fwFxdY
+	93JYoFHzGCZ/vykCjUx2IgTucCOWrqRxWVGaPAh9CeVmKhZnM1/T6byAClYk2Dvni1g00DXszYIys
+	YcAQ9P261tuhGywFNnWoZvQWlwon+bW/5ntsXt3L2GUEwZAvUH2YgLl1DzG0LzNyJQ43/W7K4/VOd
+	xValFf2ICjOf3yxI6MoaydosxcAjcsHiAVvBw1/u/rs1rfOjYHlXs7tR5Nkha44llaCPX4mk8Vco4
+	TE5bkwa7cFW5mDbh0zRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbJ5k-0007P9-Q4; Thu, 13 Jun 2019 06:20:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbJ5U-0007Ol-TR
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 06:19:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3F15028;
- Wed, 12 Jun 2019 23:19:50 -0700 (PDT)
-Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
- [10.162.40.191])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3CB5A3F73C;
- Wed, 12 Jun 2019 23:19:46 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org, linux-kernel@vger.kernel.org, akpm@linux-foundation.org
-Subject: [PATCH] mm/ioremap: Probe platform for p4d huge map support
-Date: Thu, 13 Jun 2019 11:49:41 +0530
-Message-Id: <1560406781-14253-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
+	id 1hbJd8-00047M-T5; Thu, 13 Jun 2019 06:54:38 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbJcx-00046s-Fc
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 06:54:28 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5D6sNAx011711;
+ Thu, 13 Jun 2019 06:54:23 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : mime-version : content-type; s=corp-2018-07-02;
+ bh=+p9bNSHm2Ncbv+ASm69GCpznMFNiwtbpe0dw2hqUkkA=;
+ b=yHWMPWdZv/XtUu9DlTm5CxgFfps6bAs4TkRabP82B6j8j89SvriCL99WkWUw5S5VKCRX
+ LJwfH2REQSETyo6FuM16gyjV2Bj/tFXcOA4XzmZWpRNHjvFpdsMx7+l0wnrazVQkIz5y
+ i/ZEAXpiviIIzZKzF4ZRhi9ODUjtRi1PR3T6NPe2bspKL3MbRJ3DrLRDUXeGHJpEGkXc
+ +xvSln+ZhEuZBmdAO6E1b5AX9AQ/ZMwTMOWuds2DNFDqPLmWhzn3n+jb/Acw0kF4H090
+ ytrFMfyqIoGUpi/rklBewd6MyKcCiIHaOryRExSBnKQsgEZhJqLLDc3GzqNVEWt+mSCW vQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2t04etymwr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 13 Jun 2019 06:54:23 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5D6qqht075123;
+ Thu, 13 Jun 2019 06:54:22 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3020.oracle.com with ESMTP id 2t1jpjcyut-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 13 Jun 2019 06:54:22 +0000
+Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x5D6sHww011651;
+ Thu, 13 Jun 2019 06:54:21 GMT
+Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 12 Jun 2019 23:54:17 -0700
+Date: Thu, 13 Jun 2019 09:54:10 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: tn@semihalf.com
+Subject: [bug report] ACPI: Add new IORT functions to support MSI domain
+ handling
+Message-ID: <20190613065410.GB16334@mwanda>
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9286
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=1
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=934
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1810050000 definitions=main-1906130055
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9286
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=1 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=976 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906130055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_231953_041971_45164C41 
-X-CRM114-Status: GOOD (  12.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_235427_674904_116FB27E 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,118 +108,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, Anshuman Khandual <anshuman.khandual@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Will Deacon <will.deacon@arm.com>,
- Michal Hocko <mhocko@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- "Kirill A . Shutemov" <kirill.shutemov@linux.intel.com>
-MIME-Version: 1.0
+Cc: linux-acpi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Finishing up what the commit c2febafc67734a ("mm: convert generic code to
-5-level paging") started out while levelling up P4D huge mapping support
-at par with PUD and PMD. A new arch call back arch_ioremap_p4d_supported()
-is being added which just maintains status quo (P4D huge map not supported)
-on x86 and arm64.
+Hello Tomasz Nowicki,
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Kirill A. Shutemov <kirill.shutemov@linux.intel.com>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: Michal Hocko <mhocko@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: x86@kernel.org
+The patch 4bf2efd26d76: "ACPI: Add new IORT functions to support MSI
+domain handling" from Sep 12, 2016, leads to the following static
+checker warning:
 
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
-- Detected this from code audit while reviewing Nicholas Piggin's proposed
-  ioremap changes https://patchwork.kernel.org/project/linux-mm/list/?series=129479
-- Build and boot tested on x86 and arm64 platforms
-- Build tested on some others
+	drivers/acpi/arm64/iort.c:628 iort_dev_find_its_id()
+	warn: array off by one? 'its->identifiers[idx]'
 
-Changes in V1:
+drivers/acpi/arm64/iort.c
+   589  /**
+   590   * iort_dev_find_its_id() - Find the ITS identifier for a device
+   591   * @dev: The device.
+   592   * @req_id: Device's requester ID
+   593   * @idx: Index of the ITS identifier list.
+   594   * @its_id: ITS identifier.
+   595   *
+   596   * Returns: 0 on success, appropriate error value otherwise
+   597   */
+   598  static int iort_dev_find_its_id(struct device *dev, u32 req_id,
+   599                                  unsigned int idx, int *its_id)
+   600  {
+   601          struct acpi_iort_its_group *its;
+   602          struct acpi_iort_node *node;
+   603  
+   604          node = iort_find_dev_node(dev);
+   605          if (!node)
+   606                  return -ENXIO;
+   607  
+   608          node = iort_node_map_id(node, req_id, NULL, IORT_MSI_TYPE);
+   609          if (!node)
+   610                  return -ENXIO;
+   611  
+   612          /* Move to ITS specific data */
+   613          its = (struct acpi_iort_its_group *)node->node_data;
+   614          if (idx > its->its_count) {
+                    ^^^^^^^^^^^^^^^^^^^^
+I wasn't able to find any information about how its->its_count is set
+but it looks to me that is off by one.
 
-- No changes
+   615                  dev_err(dev, "requested ITS ID index [%d] is greater than available [%d]\n",
+   616                          idx, its->its_count);
+   617                  return -ENXIO;
+   618          }
+   619  
+   620          *its_id = its->identifiers[idx];
+   621          return 0;
+   622  }
 
-Original RFC (https://patchwork.kernel.org/patch/10985009/)
-
- arch/arm64/mm/mmu.c   | 5 +++++
- arch/x86/mm/ioremap.c | 5 +++++
- include/linux/io.h    | 1 +
- lib/ioremap.c         | 2 ++
- 4 files changed, 13 insertions(+)
-
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index a1bfc44..646c829 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -953,6 +953,11 @@ void *__init fixmap_remap_fdt(phys_addr_t dt_phys)
- 	return dt_virt;
- }
- 
-+int __init arch_ioremap_p4d_supported(void)
-+{
-+	return 0;
-+}
-+
- int __init arch_ioremap_pud_supported(void)
- {
- 	/*
-diff --git a/arch/x86/mm/ioremap.c b/arch/x86/mm/ioremap.c
-index 4b6423e..6cbbec8 100644
---- a/arch/x86/mm/ioremap.c
-+++ b/arch/x86/mm/ioremap.c
-@@ -440,6 +440,11 @@ void iounmap(volatile void __iomem *addr)
- }
- EXPORT_SYMBOL(iounmap);
- 
-+int __init arch_ioremap_p4d_supported(void)
-+{
-+	return 0;
-+}
-+
- int __init arch_ioremap_pud_supported(void)
- {
- #ifdef CONFIG_X86_64
-diff --git a/include/linux/io.h b/include/linux/io.h
-index 32e30e8..58514ce 100644
---- a/include/linux/io.h
-+++ b/include/linux/io.h
-@@ -45,6 +45,7 @@ static inline int ioremap_page_range(unsigned long addr, unsigned long end,
- 
- #ifdef CONFIG_HAVE_ARCH_HUGE_VMAP
- void __init ioremap_huge_init(void);
-+int arch_ioremap_p4d_supported(void);
- int arch_ioremap_pud_supported(void);
- int arch_ioremap_pmd_supported(void);
- #else
-diff --git a/lib/ioremap.c b/lib/ioremap.c
-index 0632136..c3dc213 100644
---- a/lib/ioremap.c
-+++ b/lib/ioremap.c
-@@ -30,6 +30,8 @@ early_param("nohugeiomap", set_nohugeiomap);
- void __init ioremap_huge_init(void)
- {
- 	if (!ioremap_huge_disabled) {
-+		if (arch_ioremap_p4d_supported())
-+			ioremap_p4d_capable = 1;
- 		if (arch_ioremap_pud_supported())
- 			ioremap_pud_capable = 1;
- 		if (arch_ioremap_pmd_supported())
--- 
-2.7.4
-
+regards,
+dan carpenter
 
 _______________________________________________
 linux-arm-kernel mailing list
