@@ -2,79 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF31444EF4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 00:07:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19E7A44ECF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 23:57:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y4xl1twryVFTf/ZjHW/ZD0YgkVDQae/a6o6/i/Skcb8=; b=XpcdK42kCWtNAV
-	/5+cY/gr13YAZBVfpsMgBTf5ogLbcvPReVZJW/BspvsqgEpyR+yC99ZaTFor7aIPHUZshWOuLJP/C
-	ZYVeTOlJiZC0J/5lsZyOD6Jgti82zYx/nqIeYfx3J+nDfTiP76UBJQ3EOw/HL/So8cGfNNnryWTeO
-	DyD6QLY22BBXgzTT8NtdoJhDsax8nccAtmXFtipOieW3N8glIVHnzeLqMMcexc8e7ZGo1jbWNaERy
-	TNc7K8s4SdQ5GQNj/bKzTgEQu9YC1IH8BmL4of13HUgYAdHsw30rOTZC1WiyKNIyF7pwdtJ2enirH
-	pFbzKtxVUx3ZUPsLiG6A==;
+	List-Owner; bh=eMO8sGXAR+ezcArqiinRPDmYln78U8B+/XSm2nJvhb0=; b=m9Ewu45aKt/gDK
+	ijM63Br553gt5UMoF1TyKNd1GMEWXrElG+k7Uiu+LfyG0ovZi/syYIPFUViFyzeBM+fMgP1ElsjRs
+	7Onwdby+sh0cP6k0f7tKsQbH4bq/uwTt9kAjiFstG353aWePgH9jAQoN9M99Lb7mxDUlZStliTkCj
+	YC8jbeFXMF4IQIBmgUUO/RW/CVDxeyy4P5m/o7P/UqyKeMupG2S6bSTmELFUgd5OXPDg55MokfHaL
+	j8/IvfrsiczrcqOIarbzOwRaAfjwyzKgQAgGwG10toGOifcZ5ECO21HjwmL1Y0Rz/iH7UglewTDPC
+	dN3DvMHbAhpFqbzU+oPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbXs6-0005rJ-6b; Thu, 13 Jun 2019 22:07:02 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1hbXjF-0001mz-Mt; Thu, 13 Jun 2019 21:57:53 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbXrw-0005qq-J8
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 22:06:54 +0000
+ id 1hbXj9-0001mq-ER
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 13 Jun 2019 21:57:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Jx/qvzjMz0t794bxLBJ02R6No0Hxfy6v8PXcGz+EAEc=; b=AUTLbKssZdp7Ib0U0+Up2dW/o
- iVzbBC4miAQrY2vgP57v+coL+/zEt1Fu+w0PxrZS7qYPtAr7QwrmMZK5wA+TxydSVz7xt5TnMEDKh
- BPwwLKCyIRTpV8jZ9qgQPX5m5ZaxxxeAmKHVO5OKThioO74RiDAgVlTfew/4zI/e76ut0/biV6ho6
- 32TQszp9VSWaLUiDMctGsZfEW4YLWFCM+2PCPm9qfXT6Yei9ZdcFwlHEwS4+HDSi8TZs6La7F6qg5
- n+npz3REdDJg8lUBvzPgZKs8zL8Nrt5Ne42Z/g6k8pTQSCJVbqZuiDSZoZAjw8H7UmKOrhWfhkg6G
- rdPmTeI8Q==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:38678)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1hbXro-0005mE-SB; Thu, 13 Jun 2019 23:06:44 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.89)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1hbXrm-0001Y4-HI; Thu, 13 Jun 2019 23:06:42 +0100
-Date: Thu, 13 Jun 2019 23:06:42 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: Why check for PCI_PROBE_ONLY in pci_common_init_dev()
-Message-ID: <20190613220642.pdiifl7lc3ea43vi@shell.armlinux.org.uk>
-References: <4e734c3aab8802b340e06b56803954b3e550157d.camel@kernel.crashing.org>
+ bh=eSfGJqOciOrlZTffR40iw8/Y+MZHoDP7Kn2h+s5mm4E=; b=qMayn7eOsNEwKAUi+ecMf2+Qj
+ 9o32FSqo/PR7z/BlxulChF9wQdiD4vzYXZOQNXfcSoRPuOn1oEGNaFJceq3m7CgCH9qHJtcXGAoFF
+ i0e+u3/yNd5WXohzBy45i4vbR5tCSFAEeBL1/AOVn+0wQqQkVj72qheS03IjQzkVSYifaSl+T9QrZ
+ fXIko7cbiqm3/Q6R3GTWQdV+SXT7qjK2xOblTN5107+u3dlc/5PW38fJm2ApAcyuv5SzqLLbig5p4
+ UpoAWyWp9DlIu7zf7rfJThSV+SiNDdmV2LP1ERqlJjJGxa+0pYkOZjRB2XRz8RGMNtKPREH7TjN0f
+ e4Hz3yXQA==;
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbXj5-0002Lh-DN
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 21:57:44 +0000
+X-Originating-IP: 88.190.179.123
+Received: from localhost (unknown [88.190.179.123])
+ (Authenticated sender: repk@triplefau.lt)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id E8A4A240005;
+ Thu, 13 Jun 2019 21:57:06 +0000 (UTC)
+Date: Fri, 14 Jun 2019 00:06:54 +0200
+From: Remi Pommarel <repk@triplefau.lt>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: Re: [PATCH] PCI: aardvark: Fix PCI_EXP_RTCTL conf register writing
+Message-ID: <20190613220653.GB12859@voidbox.localdomain>
+References: <20190522213351.21366-1-repk@triplefau.lt>
+ <20190613161441.GA2247@e121166-lin.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4e734c3aab8802b340e06b56803954b3e550157d.camel@kernel.crashing.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_150652_788726_7E870F34 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+In-Reply-To: <20190613161441.GA2247@e121166-lin.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,37 +76,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Ellie Reeves <ellierevves@gmail.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Helgaas <helgaas@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 01:52:34PM +1000, Benjamin Herrenschmidt wrote:
-> Hi !
+On Thu, Jun 13, 2019 at 05:14:41PM +0100, Lorenzo Pieralisi wrote:
+> On Wed, May 22, 2019 at 11:33:49PM +0200, Remi Pommarel wrote:
+> > PCI_EXP_RTCTL is used to activate PME interrupt only, so writing into it
+> > should not modify other interrupts' mask (such as ISR0).
+> > 
+> > Fixes: 6302bf3ef78d ("PCI: Init PCIe feature bits for managed host bridge alloc")
+> > Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+> > ---
+> > Please note that I will unlikely be able to answer any comments from May
+> > 24th to June 10th.
+> > ---
+> >  drivers/pci/controller/pci-aardvark.c | 10 +++++++---
+> >  1 file changed, 7 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+> > index 134e0306ff00..27102d3b4f9c 100644
+> > --- a/drivers/pci/controller/pci-aardvark.c
+> > +++ b/drivers/pci/controller/pci-aardvark.c
+> > @@ -451,10 +451,14 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
+> >  		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
+> >  		break;
+> >  
+> > -	case PCI_EXP_RTCTL:
+> > -		new = (new & PCI_EXP_RTCTL_PMEIE) << 3;
+> > -		advk_writel(pcie, new, PCIE_ISR0_MASK_REG);
+> > +	case PCI_EXP_RTCTL: {
+> > +		/* Only mask/unmask PME interrupt */
+> > +		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
+> > +			~PCIE_MSG_PM_PME_MASK;
+> > +		val |= (new & PCI_EXP_RTCTL_PMEIE) << 3;
 > 
-> So while trying to sort out & cleanup the business with PCI resource
-> allocation (and do the ground work to be able to revive 
-> https://lore.kernel.org/linux-pci/20150916085850.GA17510@red-moon/) I
-> stumbled upon this one:
+> I know you have not introduced this code but maybe we can
+> take an opportunity to clarify it (that << 3 shift obfuscates
+> a bit):
 > 
-> arch/arm/kernel/bios32.c:pci_common_init_dev() checks for
-> PCI_PROBE_ONLY to decide whether to claim existing resources or
-> reallocate.
+> 	u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
+> 			~PCIE_MSG_PM_PME_MASK;
 > 
-> However, I can't see any code path leading to that function that would
-> have set that flag.
+> 	if (new & PCI_EXP_RTCTL_PMEIE)
+> 		val |= PCIE_MSG_PM_PME_MASK;
+> 
+> 	advk_writel(pcie, val, PCIE_ISR0_MASK_REG);
+> 	break;
+> 
+> Or I am not reading the code correctly ?
 
-Someone probably wanted it at some point but either that's been removed
-or the code was never merged.  Either way, if no one is using it on
-32-bit ARM, it can be killed.
+Sure, that clarifies the code at the point where I realize that the
+"<< 3" from the original code was off by one and the mask polarity was
+inverted. So I'll fix all that in the v2.
+
+Thanks.
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Remi
 
 _______________________________________________
 linux-arm-kernel mailing list
