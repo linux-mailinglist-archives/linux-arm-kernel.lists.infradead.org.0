@@ -2,83 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4628E44392
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:31:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DE5C44393
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:31:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O14SMQbiCc5n0IlXf1PNR3DSOOPyW3gskCLDDQmk/N8=; b=ADOnbTOhGbfJ/8
-	KAgpY1Zecq64dW83GG6yhXteU/PAbA+rtjtX1eyYzhIVSi3YkhjtNKv1Cx1hMZoedeScffb6Zyx88
-	S/DaglBoBWt0Uy4yf01GQ5sgJ4jmWnQmY8P4n3UMvnJcbnwyI9cN0sTfu3iw7eOWFXcgB6y0JDdUQ
-	nWl1hIECQCXZja9fIE62N0MM3IT/ka3OLS1qaJG45bEhppQm96iQ1vQC3x/jgRlIEnIKfQTOWqe64
-	T8D8//1m2TDf4RJse42dqEww1rbTz6O0jT+hTmrOa+CDWSF33lWVProAkhibE50PVvhocoskMLie9
-	i465LhVw7fN5ooXazoAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DvpejaNT4eBhDns4FxJHLSG+zmWCjPWj3DUJGU1HA+0=; b=U5HR+BVOuAC/E8
+	nFHo3NNnf/apQ+ctinRwRfb2KfTsAUb7ZUpIl54fuCw/9GaxhMVGPvViCELEYZSqU3In+Fo3+hP3s
+	kMyQxkFXCOuAawwfHbC5O/B5rW4mu3/wtmY6WU8/7j0+z295Xf6bcbL61ViJl004E6RRiw+o3AvsX
+	k5tb581Re61dLl+MWGJETzSUGZZl9OzPmwJiQ2MrQltCsHWXJM4Q+PjSa/figIf9yD8w3MUbDmtfX
+	Cj28FmfT2DfWi2kNlitMG7EqEvpPnc51G2u3JVUOnj1/C2UkRjWqMkbyLlzDAnqntyXFKePRDd2Uq
+	I2tA62mw1OY4IxFiP+Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSdG-0007bm-5D; Thu, 13 Jun 2019 16:31:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hbSdY-00080h-Bn; Thu, 13 Jun 2019 16:31:40 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZo-000315-5L
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 16:27:50 +0000
-Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
- [209.85.222.169])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 31418217D6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 16:27:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1560443267;
- bh=oV2s9OvDzFbumuIeb7Lf7dWw56Ci8qRJMtz31+CbcR8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=0g20sUa6gG5Ghso7T4zlKrrud19bAEapVbAqMvlvYsP36YDy/Ffp0lewXWfThNo+7
- XZ2olPF/QgB0KqosjYiWyjWC7j2Kr20Q0dGdc0yH3Tv3Cq7SJ0GgEcxhefmNKRHSI+
- 31AY78M+FjZKoLTsbUUNvBEXgXIuIlvToGBcFAJE=
-Received: by mail-qk1-f169.google.com with SMTP id t8so9470354qkt.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 09:27:47 -0700 (PDT)
-X-Gm-Message-State: APjAAAVySu390mqhTLaIQgfKxq12qwTu+msricJKtUpn8czmweW1YL5u
- scCJNPVtdARRNzuYkvU9C6FzAn/l2T8ulCX/IA==
-X-Google-Smtp-Source: APXvYqyv5Q4f2sdZ2jMIg1qfLyRT+puBlW4iPdzSH/fycI/GGkkXhyCnnFEILrmwTIUcYvdReWn2zPq7W89rs+2d8Ls=
-X-Received: by 2002:a37:a6c9:: with SMTP id
- p192mr74021946qke.184.1560443266367; 
- Thu, 13 Jun 2019 09:27:46 -0700 (PDT)
+ id 1hbSZw-00036Y-Gr; Thu, 13 Jun 2019 16:27:58 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 2E34F27D7A1
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: rockchip: Update DWC3 modules on RK3399 SoCs
+Date: Thu, 13 Jun 2019 18:27:45 +0200
+Message-Id: <20190613162745.12195-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190613132012.14202-1-maxime.ripard@bootlin.com>
-In-Reply-To: <20190613132012.14202-1-maxime.ripard@bootlin.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 13 Jun 2019 10:27:24 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJWGxf+gSZtXpDDjL0Na5hzpPe+rY6f7NLQYD5NHU=FYQ@mail.gmail.com>
-Message-ID: <CAL_JsqJWGxf+gSZtXpDDjL0Na5hzpPe+rY6f7NLQYD5NHU=FYQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: nvmem: Add YAML schemas for the generic
- NVMEM bindings
-To: Maxime Ripard <maxime.ripard@bootlin.com>, 
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092748_292884_1CEFAB96 
-X-CRM114-Status: GOOD (  28.87  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190613_092756_843034_D5C41B2D 
+X-CRM114-Status: GOOD (  10.09  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,283 +56,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Felipe Balbi <felipe.balbi@linux.intel.com>,
+ linux-rockchip@lists.infradead.org, Tony Xie <tony.xie@rock-chips.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Randy Li <ayaka@soulik.info>,
+ linux-kernel@vger.kernel.org, Vicente Bergas <vicencb@gmail.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Klaus Goger <klaus.goger@theobroma-systems.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Christoph Muellner <christoph.muellner@theobroma-systems.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 7:26 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> The nvmem providers and consumers have a bunch of generic properties that
-> are needed in a device tree. Add a YAML schemas for those.
->
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->  .../bindings/nvmem/nvmem-consumer.yaml        | 45 +++++++++
->  .../devicetree/bindings/nvmem/nvmem.txt       | 81 +---------------
->  .../devicetree/bindings/nvmem/nvmem.yaml      | 93 +++++++++++++++++++
->  3 files changed, 139 insertions(+), 80 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml
->  create mode 100644 Documentation/devicetree/bindings/nvmem/nvmem.yaml
->
-> diff --git a/Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml b/Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml
-> new file mode 100644
-> index 000000000000..c48b74733b68
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/nvmem/nvmem-consumer.yaml
-> @@ -0,0 +1,45 @@
-> +# SPDX-License-Identifier: GPL-2.0
+As per binding documentation [1], the DWC3 core should have the "ref",
+"bus_early" and "suspend" clocks. As explained in the binding, those
+clocks are required for new platforms but not for existing platforms
+before commit fe8abf332b8f ("usb: dwc3: support clocks and resets for
+DWC3 core").
 
-Looks like Srinivas is the sole author of nvmem.txt. Srinivas, okay if
-we license this dual GPL2/BSD-2-Clause? Really, that's a decision for
-Linaro.
+However, as those clocks are really treated as required, this ends with
+having some annoying messages when the "rockchip,rk3399-dwc3" is used:
 
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/nvmem/nvmem-consumer.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NVMEM (Non Volatile Memory) Consumer Device Tree Bindings
-> +
-> +maintainers:
-> +  - Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-> +
-> +select: true
-> +
-> +properties:
-> +  nvmem:
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    description:
-> +      List of phandle to the nvmem providers.
-> +
-> +  nvmem-cells:
-> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    description:
-> +      List of phandle to the nvmem data cells.
-> +
-> +  nvmem-names:
-> +    $ref: /schemas/types.yaml#/definitions/string-array
-> +    description:
-> +      Names for the each nvmem provider.
-> +
-> +  nvmem-cell-names:
-> +    $ref: /schemas/types.yaml#/definitions/string-array
-> +    description:
-> +      Names for each nvmem-cells specified.
-> +
-> +dependencies:
-> +  nvmem-names: [ nvmem ]
-> +  nvmem-cell-names: [ nvmem-cells ]
-> +
-> +examples:
-> +  - |
-> +    tsens {
-> +        /* ... */
-> +        nvmem-cells = <&tsens_calibration>;
-> +        nvmem-cell-names = "calibration";
-> +    };
-> diff --git a/Documentation/devicetree/bindings/nvmem/nvmem.txt b/Documentation/devicetree/bindings/nvmem/nvmem.txt
-> index fd06c09b822b..46a7ef485e24 100644
-> --- a/Documentation/devicetree/bindings/nvmem/nvmem.txt
-> +++ b/Documentation/devicetree/bindings/nvmem/nvmem.txt
-> @@ -1,80 +1 @@
-> -= NVMEM(Non Volatile Memory) Data Device Tree Bindings =
-> -
-> -This binding is intended to represent the location of hardware
-> -configuration data stored in NVMEMs like eeprom, efuses and so on.
-> -
-> -On a significant proportion of boards, the manufacturer has stored
-> -some data on NVMEM, for the OS to be able to retrieve these information
-> -and act upon it. Obviously, the OS has to know about where to retrieve
-> -these data from, and where they are stored on the storage device.
-> -
-> -This document is here to document this.
-> -
-> -= Data providers =
-> -Contains bindings specific to provider drivers and data cells as children
-> -of this node.
-> -
-> -Optional properties:
-> - read-only: Mark the provider as read only.
-> -
-> -= Data cells =
-> -These are the child nodes of the provider which contain data cell
-> -information like offset and size in nvmem provider.
-> -
-> -Required properties:
-> -reg:   specifies the offset in byte within the storage device.
-> -
-> -Optional properties:
-> -
-> -bits:  Is pair of bit location and number of bits, which specifies offset
-> -       in bit and number of bits within the address range specified by reg property.
-> -       Offset takes values from 0-7.
-> -
-> -For example:
-> -
-> -       /* Provider */
-> -       qfprom: qfprom@700000 {
-> -               ...
-> -
-> -               /* Data cells */
-> -               tsens_calibration: calib@404 {
-> -                       reg = <0x404 0x10>;
-> -               };
-> -
-> -               tsens_calibration_bckp: calib_bckp@504 {
-> -                       reg = <0x504 0x11>;
-> -                       bits = <6 128>
-> -               };
-> -
-> -               pvs_version: pvs-version@6 {
-> -                       reg = <0x6 0x2>
-> -                       bits = <7 2>
-> -               };
-> -
-> -               speed_bin: speed-bin@c{
-> -                       reg = <0xc 0x1>;
-> -                       bits = <2 3>;
-> -
-> -               };
-> -               ...
-> -       };
-> -
-> -= Data consumers =
-> -Are device nodes which consume nvmem data cells/providers.
-> -
-> -Required-properties:
-> -nvmem-cells: list of phandle to the nvmem data cells.
-> -nvmem-cell-names: names for the each nvmem-cells specified. Required if
-> -       nvmem-cells is used.
-> -
-> -Optional-properties:
-> -nvmem  : list of phandles to nvmem providers.
-> -nvmem-names: names for the each nvmem provider. required if nvmem is used.
-> -
-> -For example:
-> -
-> -       tsens {
-> -               ...
-> -               nvmem-cells = <&tsens_calibration>;
-> -               nvmem-cell-names = "calibration";
-> -       };
-> +This file has been moved to nvmem.yaml and nvmem-consumer.yaml.
-> diff --git a/Documentation/devicetree/bindings/nvmem/nvmem.yaml b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
-> new file mode 100644
-> index 000000000000..65ef2dbbb2a9
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
-> @@ -0,0 +1,93 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/nvmem/nvmem.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NVMEM (Non Volatile Memory) Device Tree Bindings
-> +
-> +maintainers:
-> +  - Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-> +
-> +description: |
-> +  This binding is intended to represent the location of hardware
-> +  configuration data stored in NVMEMs like eeprom, efuses and so on.
-> +
-> +  On a significant proportion of boards, the manufacturer has stored
-> +  some data on NVMEM, for the OS to be able to retrieve these
-> +  information and act upon it. Obviously, the OS has to know about
-> +  where to retrieve these data from, and where they are stored on the
-> +  storage device.
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^(eeprom|efuse|nvram)(@.*|-[0-9a-f])*$"
-> +
-> +  "#address-cells":
-> +    const: 1
-> +
-> +  "#size-cells":
-> +    const: 1
-> +
-> +  read-only:
-> +    $ref: /schemas/types.yaml#/definitions/flag
-> +    description:
-> +      Mark the provider as read only.
-> +
-> +patternProperties:
-> +  "^.*@[0-9a-f]+$":
-> +    type: object
-> +
-> +    properties:
-> +      reg:
-> +        maxItems: 1
-> +        description:
-> +          Offset and size in bytes within the storage device.
-> +
-> +      bits:
-> +        maxItems: 1
-> +        items:
-> +          items:
-> +            - minimum: 0
-> +              maximum: 7
-> +              description:
-> +                Offset in bit within the address range specified by reg.
-> +            - minimum: 1
-> +              description:
-> +                Size in bit within the address range specified by reg.
-> +
-> +    required:
-> +      - reg
-> +
-> +    additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +      qfprom: qfprom@700000 {
+[    1.724107] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
+[    1.731893] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
+[    2.495937] dwc3 fe800000.dwc3: Failed to get clk 'ref': -2
+[    2.647239] dwc3 fe900000.dwc3: Failed to get clk 'ref': -2
 
-The node name doesn't match what you specified above. Unfortunately,
-the schema checking of examples added won't catch this or anything
-that causes select to fail to match. I'd really like to fix that, but
-don't have any ideas yet.
+In order to remove those annoying messages, update the DWC3 hardware
+module node and add all the required clocks. With this change, both, the
+glue node and the DWC3 core node, have the clocks defined, but that's
+not really a problem and there isn't a side effect on do this. So, we
+can get rid of the annoying get clk error messages.
 
-Otherwise, with that and any license change:
+[1] Documentation/devicetree/bindings/usb/dwc3.txt
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+---
 
-> +          #address-cells = <1>;
-> +          #size-cells = <1>;
-> +
-> +          /* ... */
-> +
-> +          /* Data cells */
-> +          tsens_calibration: calib@404 {
-> +              reg = <0x404 0x10>;
-> +          };
-> +
-> +          tsens_calibration_bckp: calib_bckp@504 {
-> +              reg = <0x504 0x11>;
-> +              bits = <6 128>;
-> +          };
-> +
-> +          pvs_version: pvs-version@6 {
-> +              reg = <0x6 0x2>;
-> +              bits = <7 2>;
-> +          };
-> +
-> +          speed_bin: speed-bin@c{
-> +              reg = <0xc 0x1>;
-> +              bits = <2 3>;
-> +          };
-> +      };
-> +
-> +...
-> --
-> 2.21.0
->
+ arch/arm64/boot/dts/rockchip/rk3399.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+index 196ac9b78076..a15348d185ce 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+@@ -414,6 +414,9 @@
+ 			compatible = "snps,dwc3";
+ 			reg = <0x0 0xfe800000 0x0 0x100000>;
+ 			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH 0>;
++			clocks = <&cru SCLK_USB3OTG0_REF>, <&cru ACLK_USB3OTG0>,
++				 <&cru SCLK_USB3OTG0_SUSPEND>;
++			clock-names = "ref", "bus_early", "suspend";
+ 			dr_mode = "otg";
+ 			phys = <&u2phy0_otg>, <&tcphy0_usb3>;
+ 			phy-names = "usb2-phy", "usb3-phy";
+@@ -447,6 +450,9 @@
+ 			compatible = "snps,dwc3";
+ 			reg = <0x0 0xfe900000 0x0 0x100000>;
+ 			interrupts = <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH 0>;
++			clocks = <&cru SCLK_USB3OTG1_REF>, <&cru ACLK_USB3OTG1>,
++				 <&cru SCLK_USB3OTG1_SUSPEND>;
++			clock-names = "ref", "bus_early", "suspend";
+ 			dr_mode = "otg";
+ 			phys = <&u2phy1_otg>, <&tcphy1_usb3>;
+ 			phy-names = "usb2-phy", "usb3-phy";
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
