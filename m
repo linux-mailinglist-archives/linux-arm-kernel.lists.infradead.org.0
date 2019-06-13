@@ -2,54 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C8B643571
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:18:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6202343572
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:19:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W0Hh0tg2pJs9W7IKVinTv/R87V+3QJP4FSPC3fBYM18=; b=r/uyVlprz9FJWs
-	gSOdm6SUEVQm4J+aT2gkqtnSzA7ihQxzRk3sjCBYDRkPYmwtjmFq3MytJ/VVEtn9i93InYLgxzjOw
-	eXp5qiYnvjght+kOXT03XcigiwBDNprg/FEzacBm2Jx6qXvd2OGCrcRXV4MQhrV65UVfCfpk89xn9
-	6t6CyDkzsaEC6xzktgMxBRiLiCdS7U3yV7rS0uJwkciVV97cfBwQeN6fLdJh7C0E/krUX42I6jWVX
-	bINpAI9zuwKCCscHFUh/8BXaRrl0euEzd0n5KDcy1tF+FwoW7JfcKFqRzdDfHh73eFN42z7bRIFnD
-	A3WRzOyeQPX+rOwSIu4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WoeTd4lNMX2r5S6lcxxWZoh32WxSLc3+M7LOcUpbN1M=; b=kRd/NURZ6x+nS9
+	3rtYtMyOL+BhqNvDl1DoVq+FTA8cJ0aRG3bxAj7+sL7oz9sXsVKljKXmJ9uqG18Rxv+hxhpt60Sbj
+	I0twB3jPbkdrI0Upr9mB/8Gpb0Kt4Z0Fpd8PWgchDctT+zRogogiBmzjz8Rx0fckjXqUeTV0d1I4O
+	PSQY/0ZsaSVqKEZgXlypsOjaO0HKnJ4oLI9utKvLPJMzwEY10YYBlP8irT1PjSzeyESWxJsdZWvih
+	AHYbzx/bJqCenI3EuqvCUzQ/gkiE37X6lUPXQ4gnaD/uhWl23yIi3ezpO9hKX6cJmOjet1QvmRoyU
+	M8mjN+DcYRvEskfC8YbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbNkk-0004pp-BG; Thu, 13 Jun 2019 11:18:46 +0000
+	id 1hbNl0-000559-Ja; Thu, 13 Jun 2019 11:19:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbNiW-0002d4-Ab
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:16:31 +0000
+ id 1hbNj9-0003Hb-Bw
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:17:09 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A9840367;
- Thu, 13 Jun 2019 04:16:27 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 152F93F694;
- Thu, 13 Jun 2019 04:18:08 -0700 (PDT)
-Subject: Re: [PATCH v4 1/2] arm64: Define
- Documentation/arm64/tagged-address-abi.txt
-To: Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 68C33367;
+ Thu, 13 Jun 2019 04:17:06 -0700 (PDT)
+Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 11EDF3F694;
+ Thu, 13 Jun 2019 04:18:44 -0700 (PDT)
+Date: Thu, 13 Jun 2019 12:16:59 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control
+ the tagged user addresses ABI
+Message-ID: <20190613111659.GX28398@e103592.cambridge.arm.com>
 References: <cover.1560339705.git.andreyknvl@google.com>
- <20190612142111.28161-1-vincenzo.frascino@arm.com>
- <20190612142111.28161-2-vincenzo.frascino@arm.com>
- <a90da586-8ff6-4bed-d940-9306d517a18c@arm.com>
- <20190613092054.GO28951@C02TF0J2HF1T.local>
- <dee7f192-d0f0-558e-3007-eba805c6f2da@arm.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <6ebbda37-5dd9-d0d5-d9cb-286c7a5b7f8e@arm.com>
-Date: Thu, 13 Jun 2019 12:16:24 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
 MIME-Version: 1.0
-In-Reply-To: <dee7f192-d0f0-558e-3007-eba805c6f2da@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_041628_985942_F33321BF 
-X-CRM114-Status: GOOD (  30.81  )
+X-CRM114-CacheID: sfid-20190613_041707_532568_427FFAF6 
+X-CRM114-Status: GOOD (  25.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,175 +63,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Andrey Konovalov <andreyknvl@google.com>, Will Deacon <Will.Deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mm@kvack.org" <linux-mm@kvack.org>,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
- nd <nd@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ linux-kselftest@vger.kernel.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
+ linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Dmitry Vyukov <dvyukov@google.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Szabolcs,
+On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
+> From: Catalin Marinas <catalin.marinas@arm.com>
+> 
+> It is not desirable to relax the ABI to allow tagged user addresses into
+> the kernel indiscriminately. This patch introduces a prctl() interface
+> for enabling or disabling the tagged ABI with a global sysctl control
+> for preventing applications from enabling the relaxed ABI (meant for
+> testing user-space prctl() return error checking without reconfiguring
+> the kernel). The ABI properties are inherited by threads of the same
+> application and fork()'ed children but cleared on execve().
+> 
+> The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
+> MTE-specific settings like imprecise vs precise exceptions.
+> 
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  arch/arm64/include/asm/processor.h   |  6 +++
+>  arch/arm64/include/asm/thread_info.h |  1 +
+>  arch/arm64/include/asm/uaccess.h     |  3 +-
+>  arch/arm64/kernel/process.c          | 67 ++++++++++++++++++++++++++++
+>  include/uapi/linux/prctl.h           |  5 +++
+>  kernel/sys.c                         | 16 +++++++
+>  6 files changed, 97 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index fcd0e691b1ea..fee457456aa8 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -307,6 +307,12 @@ extern void __init minsigstksz_setup(void);
+>  /* PR_PAC_RESET_KEYS prctl */
+>  #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
+>  
+> +/* PR_TAGGED_ADDR prctl */
 
-thank you for your review.
+(A couple of comments I missed in my last reply:)
 
-On 13/06/2019 11:14, Szabolcs Nagy wrote:
-> On 13/06/2019 10:20, Catalin Marinas wrote:
->> Hi Szabolcs,
->>
->> On Wed, Jun 12, 2019 at 05:30:34PM +0100, Szabolcs Nagy wrote:
->>> On 12/06/2019 15:21, Vincenzo Frascino wrote:
->>>> +2. ARM64 Tagged Address ABI
->>>> +---------------------------
->>>> +
->>>> +From the kernel syscall interface prospective, we define, for the purposes
->>>                                      ^^^^^^^^^^^
->>> perspective
->>>
->>>> +of this document, a "valid tagged pointer" as a pointer that either it has
->>>> +a zero value set in the top byte or it has a non-zero value, it is in memory
->>>> +ranges privately owned by a userspace process and it is obtained in one of
->>>> +the following ways:
->>>> +  - mmap() done by the process itself, where either:
->>>> +    * flags = MAP_PRIVATE | MAP_ANONYMOUS
->>>> +    * flags = MAP_PRIVATE and the file descriptor refers to a regular
->>>> +      file or "/dev/zero"
->>>
->>> this does not make it clear if MAP_FIXED or other flags are valid
->>> (there are many map flags i don't know, but at least fixed should work
->>> and stack/growsdown. i'd expect anything that's not incompatible with
->>> private|anon to work).
->>
->> Just to clarify, this document tries to define the memory ranges from
->> where tagged addresses can be passed into the kernel in the context
->> of TBI only (not MTE); that is for hwasan support. FIXED or GROWSDOWN
->> should not affect this.
-> 
-> yes, so either the text should list MAP_* flags that don't affect
-> the pointer tagging semantics or specify private|anon mapping
-> with different wording.
-> 
+Name mismatch?
 
-Good point. Could you please propose a wording that would be suitable for this case?
+> +long set_tagged_addr_ctrl(unsigned long arg);
+> +long get_tagged_addr_ctrl(void);
+> +#define SET_TAGGED_ADDR_CTRL(arg)	set_tagged_addr_ctrl(arg)
+> +#define GET_TAGGED_ADDR_CTRL()		get_tagged_addr_ctrl()
+> +
 
->>>> +  - a mapping below sbrk(0) done by the process itself
->>>
->>> doesn't the mmap rule cover this?
->>
->> IIUC it doesn't cover it as that's memory mapped by the kernel
->> automatically on access vs a pointer returned by mmap(). The statement
->> above talks about how the address is obtained by the user.
-> 
-> ok i read 'mapping below sbrk' as an mmap (possibly MAP_FIXED)
-> that happens to be below the heap area.
-> 
-> i think "below sbrk(0)" is not the best term to use: there
-> may be address range below the heap area that can be mmapped
-> and thus below sbrk(0) and sbrk is a posix api not a linux
-> syscall, the libc can implement it with mmap or whatever.
-> 
-> i'm not sure what the right term for 'heap area' is
-> (the address range between syscall(__NR_brk,0) at
-> program startup and its current value?)
-> 
+[...]
 
-I used sbrk(0) with the meaning of "end of the process's data segment" not
-implying that this is a syscall, but just as a useful way to identify the mapping.
-I agree that it is a posix function implemented by libc but when it is used with
-0 finds the current location of the program break, which can be changed by brk()
-and depending on the new address passed to this syscall can have the effect of
-allocating or deallocating memory.
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 3767fb21a5b8..69d0be1fc708 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -30,6 +30,7 @@
+>  #include <linux/kernel.h>
+>  #include <linux/mm.h>
+>  #include <linux/stddef.h>
+> +#include <linux/sysctl.h>
+>  #include <linux/unistd.h>
+>  #include <linux/user.h>
+>  #include <linux/delay.h>
+> @@ -323,6 +324,7 @@ void flush_thread(void)
+>  	fpsimd_flush_thread();
+>  	tls_thread_flush();
+>  	flush_ptrace_hw_breakpoint(current);
+> +	clear_thread_flag(TIF_TAGGED_ADDR);
+>  }
+>  
+>  void release_thread(struct task_struct *dead_task)
+> @@ -552,3 +554,68 @@ void arch_setup_new_exec(void)
+>  
+>  	ptrauth_thread_init_user(current);
+>  }
+> +
+> +/*
+> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
+> + */
+> +static unsigned int tagged_addr_prctl_allowed = 1;
+> +
+> +long set_tagged_addr_ctrl(unsigned long arg)
+> +{
+> +	if (!tagged_addr_prctl_allowed)
+> +		return -EINVAL;
 
-Will changing sbrk(0) with "end of the process's data segment" make it more clear?
+So, tagging can actually be locked on by having a process enable it and
+then some possibly unrelated process clearing tagged_addr_prctl_allowed.
+That feels a bit weird.
 
-I will add what you are suggesting about the heap area.
+Do we want to allow a process that has tagging on to be able to turn
+it off at all?  Possibly things like CRIU might want to do that.
 
->>>> +  - any memory mapped by the kernel in the process's address space during
->>>> +    creation and following the restrictions presented above (i.e. data, bss,
->>>> +    stack).
->>>
->>> OK.
->>>
->>> Can a null pointer have a tag?
->>> (in case NULL is valid to pass to a syscall)
->>
->> Good point. I don't think it can. We may change this for MTE where we
->> give a hint tag but no hint address, however, this document only covers
->> TBI for now.
-> 
-> OK.
-> 
->>>> +The ARM64 Tagged Address ABI is an opt-in feature, and an application can
->>>> +control it using the following prctl()s:
->>>> +  - PR_SET_TAGGED_ADDR_CTRL: can be used to enable the Tagged Address ABI.
->>>> +  - PR_GET_TAGGED_ADDR_CTRL: can be used to check the status of the Tagged
->>>> +                             Address ABI.
->>>> +
->>>> +As a consequence of invoking PR_SET_TAGGED_ADDR_CTRL prctl() by an applications,
->>>> +the ABI guarantees the following behaviours:
->>>> +
->>>> +  - Every current or newly introduced syscall can accept any valid tagged
->>>> +    pointers.
->>>> +
->>>> +  - If a non valid tagged pointer is passed to a syscall then the behaviour
->>>> +    is undefined.
->>>> +
->>>> +  - Every valid tagged pointer is expected to work as an untagged one.
->>>> +
->>>> +  - The kernel preserves any valid tagged pointers and returns them to the
->>>> +    userspace unchanged in all the cases except the ones documented in the
->>>> +    "Preserving tags" paragraph of tagged-pointers.txt.
->>>
->>> OK.
->>>
->>> i guess pointers of another process are not "valid tagged pointers"
->>> for the current one, so e.g. in ptrace the ptracer has to clear the
->>> tags before PEEK etc.
->>
->> Another good point. Are there any pros/cons here or use-cases? When we
->> add MTE support, should we handle this differently?
-> 
-> i'm not sure what gdb does currently, but it has
-> an 'address_significant' hook used at a few places
-> that drops the tag on aarch64, so it probably
-> avoids passing tagged pointer to ptrace.
-> 
-> i was worried about strace which tries to print
-> structs passed to syscalls and follow pointers in
-> them which currently would work, but if we allow
-> tags in syscalls then it needs some update.
-> (i haven't checked the strace code though)
->>>>> +A definition of the meaning of tagged pointers on arm64 can be found in:
->>>> +Documentation/arm64/tagged-pointers.txt.
->>>> +
->>>> +3. ARM64 Tagged Address ABI Exceptions
->>>> +--------------------------------------
->>>> +
->>>> +The behaviours described in paragraph 2, with particular reference to the
->>>> +acceptance by the syscalls of any valid tagged pointer are not applicable
->>>> +to the following cases:
->>>> +  - mmap() addr parameter.
->>>> +  - mremap() new_address parameter.
->>>> +  - prctl_set_mm() struct prctl_map fields.
->>>> +  - prctl_set_mm_map() struct prctl_map fields.
->>>
->>> i don't understand the exception: does it mean that passing a tagged
->>> address to these syscalls is undefined?
->>
->> I'd say it's as undefined as it is right now without these patches. We
->> may be able to explain this better in the document.
->>
-> 
+> +	if (is_compat_task())
+> +		return -EINVAL;
+> +	if (arg & ~PR_TAGGED_ADDR_ENABLE)
+> +		return -EINVAL;
 
--- 
-Regards,
-Vincenzo
+How do we expect this argument to be extended in the future?
+
+I'm wondering whether this is really a bitmask or an enum, or a mixture
+of the two.  Maybe it doesn't matter.
+
+> +
+> +	if (arg & PR_TAGGED_ADDR_ENABLE)
+> +		set_thread_flag(TIF_TAGGED_ADDR);
+> +	else
+> +		clear_thread_flag(TIF_TAGGED_ADDR);
+
+I think update_thread_flag() could be used here.
+
+[...]
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
