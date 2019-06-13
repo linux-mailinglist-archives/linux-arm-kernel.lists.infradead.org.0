@@ -2,83 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92B8644FCD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 01:04:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BC0844FD8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Jun 2019 01:07:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uj3hioG1BjqrmwxGt9MeoIjliTH1VAHf9+i7nZAw8LM=; b=Favh9QHLaNgyAR
-	t6pIPxcdiULgeuxOjkaoNikqBj+oxpfMproavm8NJ8u5RI4LqKwD7kD4Q8Ov0FGoRH9c+5Api5ktd
-	DD4eLuugBfcBhxovlfHP5UGgotCzMuaYI3i/fpcxXjHnBhpaFSfw8/0Bbv+5pKpP83dUbThJE0UhI
-	PiyugSgVQ+b2/xAXTBiOx0fLdJjgeE/wR581UiZqQYzFlU+F0nMrjzhiraqBGqOs8mREfUVzOFsk5
-	192n5ZJKZnEHDlthFG+IUu6jcSM6VC8DV3RlmY6A0h5YYjXKn+dfS23IIWUIkQHnecGWhnDM2c7eM
-	iHycq9i6mfElBUBDGyig==;
+	List-Owner; bh=gQ80jmLuk2TiHRJe4Pkudmiwa/0/mj89PudCeAIlyzQ=; b=iZr894OHrXxVgq
+	D4Ru2Ia0RF/2ZNG4ZHva44GSv9ENTck/C9TyAb9wKutS27ceLSXbkyn57kEbl1D+xdPo0K3JrPxyE
+	vXK59aPByZBBJPEWiRw++5UW4d8Ty5DPhtggPGYkrkUtOu3xPFDBmYZ5uuAkvI9Uluu1BFCF/rKoZ
+	L2yjTY5kmGnEtvZe5djR8+h3Yw+vvTom3VBiQEtr/y9O7XWg8cWcuHfHUUHiCFVhBpIUjnE5Us3EP
+	orDcWrwWhooLYtYzMlI/IDeIzWxf2lDNLEkmrGiwzD7c6TvThENioEyDo1Qoq4iyiXl/Hs/irX1aZ
+	A2rVg9QT+hPzcsLaSWdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbYm6-00070F-3s; Thu, 13 Jun 2019 23:04:54 +0000
-Received: from mail-qk1-f195.google.com ([209.85.222.195])
+	id 1hbYp1-0000CO-S1; Thu, 13 Jun 2019 23:07:55 +0000
+Received: from gate.crashing.org ([63.228.1.57])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbYlx-0006zm-EN
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 23:04:46 +0000
-Received: by mail-qk1-f195.google.com with SMTP id m14so490053qka.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 16:04:45 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WvdSBZS6GY1RJhEJtYBVxaPueBDOjU15Kwk1F3xhAKw=;
- b=U5p9CSfMFFYJPaJ8iX/bgpuiihN7H9NNeTMCmMg3PvPvJwZPngVOCJjTJDbBloyerq
- 6kHLfIxlTdWKAktXV0jHR6w2EMM6ciJchRuniZVnsNKIhRQRmH3X4fhP2++pApc/o5Cb
- BCAPOWVAckmZlsNa2kXpkqrX4BIG/V7+3SEOh8QOhTOo5EvlIUwkvyyYQg8NIMxiWP1p
- PTfmnTRn1YlFE/IV2mKqhNmw04gt+LTzf+qb7R6ur40LU0vJpf3OkJ7EON8kH8jCC/kT
- VjDlh1UUmjcZIUME9NUdHmd1GqAOZvwe3V0ip/k6J/ZCJMQ55aWNRzIMVaRdreOHCwYy
- MXKQ==
-X-Gm-Message-State: APjAAAXfhuK8/jz9vnRDPb4Y6YKNLQDH/D8c28XvNw90siuZWbCHo1g3
- zTVZ2frjAhz/zYfSO3hqkA==
-X-Google-Smtp-Source: APXvYqzScKZ4qE7itNJAlKiopqo9SW2cEVK0YP4JF71kRJYGkwf5iKWWerwdZXEFYIG+JjdrDheMmw==
-X-Received: by 2002:a37:aa8e:: with SMTP id t136mr6599276qke.222.1560467084536; 
- Thu, 13 Jun 2019 16:04:44 -0700 (PDT)
-Received: from localhost ([64.188.179.243])
- by smtp.gmail.com with ESMTPSA id y20sm736495qka.14.2019.06.13.16.04.43
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 13 Jun 2019 16:04:43 -0700 (PDT)
-Date: Thu, 13 Jun 2019 17:04:42 -0600
-From: Rob Herring <robh@kernel.org>
-To: Gerald BAEZA <gerald.baeza@st.com>
-Subject: Re: [PATCH v2 2/5] dt-bindings: perf: stm32: ddrperfm support
-Message-ID: <20190613230442.GA7783@bogus>
-References: <1558366019-24214-1-git-send-email-gerald.baeza@st.com>
- <1558366019-24214-3-git-send-email-gerald.baeza@st.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1558366019-24214-3-git-send-email-gerald.baeza@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hbYos-0000BH-M2
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 23:07:48 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by gate.crashing.org (8.14.1/8.14.1) with ESMTP id x5DN7ZDZ014484;
+ Thu, 13 Jun 2019 18:07:36 -0500
+Message-ID: <e6c7854ae360be513f6f43729ed6d4052e289376.camel@kernel.crashing.org>
+Subject: Re: [RFC PATCH v2] arm64: acpi/pci: invoke _DSM whether to preserve
+ firmware PCI setup
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Date: Fri, 14 Jun 2019 09:07:35 +1000
+In-Reply-To: <20190613190248.GH13533@google.com>
+References: <5783e36561bb77a1deb6ba67e5a9824488cc69c6.camel@kernel.crashing.org>
+ <20190613190248.GH13533@google.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_160445_480591_D5B15E86 
-X-CRM114-Status: GOOD (  10.53  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190613_160746_867180_DA9138E0 
+X-CRM114-Status: GOOD (  14.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.195 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.195 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ no trust [63.228.1.57 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,40 +60,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>, "arnd@arndb.de" <arnd@arndb.de>,
- "corbet@lwn.net" <corbet@lwn.net>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Gerald BAEZA <gerald.baeza@st.com>, "olof@lixom.net" <olof@lixom.net>,
- "horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-pci@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Sinan Kaya <okaya@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 20 May 2019 15:27:16 +0000, Gerald BAEZA wrote:
-> The DDRPERFM is the DDR Performance Monitor embedded in STM32MP1 SOC.
+On Thu, 2019-06-13 at 14:02 -0500, Bjorn Helgaas wrote:
 > 
-> This documentation indicates how to enable stm32-ddr-pmu driver on
-> DDRPERFM peripheral, via the device tree.
-> 
-> Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
-> ---
->  .../devicetree/bindings/perf/stm32-ddr-pmu.txt       | 20 ++++++++++++++++++++
->  1 file changed, 20 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt
-> 
+> PCI FW r3.2 says 0 means "the OS must not ignore config done by
+> firmware."  That means we must keep the FW configuration intact.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+So I tried implementing what you seem to want and it doesn't make sense
+imho.
+
+I think the wording of the spec is terrible and doesn't convey the
+intent here.
+
+What is it that _DSM #5 is about ? Is it about telling us that the FW
+config shall not be trusted ? That seem to be its original intent based
+on the existing wording and the fact that "1" says "may ignore".
+
+Or was it always intended to be some kind of inverted logic with 0
+meaning that we *must* preserve what FW did ?
+
+But preserving what FW did was always the default for x86 and
+Windows... It's just that we happen to do something wrong today on
+Linux/ARM64 which is to always reassign everything.
+
+The way Linux resource assignment works accross platforms has generally
+been based on one of these 3 methods:
+
+ - The standard x86 method, which is to claim what's there when it
+doesn't look completely busted and has been assigned, then assign
+what's left. This allows for FW doing partial assignment, and allows to
+work around a number of BIOS bugs.
+
+ - The "probe only" method. This was created independently on powerpc
+and some other archs afaik. At least for powerpc, the reason for that
+is some interesting virtualization cases where we just cannot touch or
+change or move anything. The effect is to not reassign even what we
+dont like, and not call pci_assign_unassign_resources().
+
+ - The "reassign everything" method. This is used by almost all
+embedded patforms accross archs. All arm32, all arm64 today (but we
+agree that's wrong), all embedded powerpc etc... This is basically
+meant for us not trusting whatever random uboot or other embedded FW,
+if any, and do a full from-scratch assignment. There are issues in how
+that is implemented accross the various platforms/archs, some for
+example still honor existing bus numbers and some don't, but I doubt
+it's intentional etc... but that method is there to stay.
+
+Now, the questions are two fold
+
+  - How do we map _DSM #5 to these, at least on arm64, maybe in the
+long run we can also look at affecting x86, but that's less urgent.
+
+  - How do I ensure the above fixes my Amazon platform ? :-)
+
+There's one obvious thing here. If we don't want to break existing
+things, then the absence of _DSM #5 must not change our existing
+behaviour. I think we can all agree on this.
+
+We might explore changing arm64 default behaviour as a second step
+since we all agree it's not doing what it should, but we also know that
+it will probably break some things so we need to be careful, understand
+the issues and work around them. This isn't the scope of the initial
+_DSM #5 patch.
+
+That leaves us with the _DSM #5 present cases.
+
+Now we have two values. What do they mean ? As I already said before,
+the wording with "must not ignore" and "may ignore" is completely
+useless and doesn't tell us a thing about the intention here. We don't
+know why the FW folks may have put a given value here, and what they
+expect us to do about it.
+
+What we do know is that Seattle returns 1 and needs reassignment, and
+we do know that the Amazon platforms return 0 and will want us to not
+touch the existing setup.
+
+However, does 1 means "business as usual" or does it mean "reassign
+everything" ?
+
+Does 0 means "probe only" ? Or do we still do an assignment pass for
+things that the FW may have left unassigned ?
+
+Today in Linux, the "probe only" logic tends to not call
+pci_assign_unassigned_resources for example.
+
+From a pure reading of the spec, there's an argument to be made that
+both 0 and 1 values can lead to the same code that reads what's there
+and reassign what's missing.
+
+So this is a mess, a usual when it comes to specs written by
+committees, but at this stage I'm at a loss as to what you want me to
+do.
+
+Cheers,
+Ben.
+ 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
