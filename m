@@ -2,50 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D4594349F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 11:23:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC742434AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 11:31:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x438AbKjN0AIqq6N41nVXybNXieOCD3FWAan6Fe/gYE=; b=jueeQVJ0uAhT54
-	tYNL+vWgq0PYRBkn0oU1xvRWyQ7zqiyR/IcrTYMTBpdis/q4GeJkYGcGkCI1WlDgaKlRe4RSFA5fl
-	qNtlPVXjqbz5zHK2T8RPDWzf9cCNgRYonCRpoM1hKMtwjXQEozLxD5LEM4u4qTrThqvzcP62C7Iq9
-	8c4aB5OjYDwNRMRq7NDnRuqqE1umOr4Pry2yllCbrl9yr8M5bISy3oj5RNTxOFMeXMqTH+8XbiAI0
-	kaoXk0QmeyBPlSQvd+MyCfyENQs2pR0jUftbITL+t+YrElrwGh896NFRAOuQNqGrWsDOmWPLm/5FZ
-	QqkTfHPk42GDYI5cld8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HgMSPl2PJ4++xXodgf4dBRt5+8Ha/Pr50czkUHFWaz4=; b=YnZKR9aTXEOdmj26nS0huBmjK
+	XU9/aMlMoPLad5FcoA1ZXbXjAvosf0c1/8Kvet5P3hiF7Y9AYu+H92x+aVmrJ3d+Sj9GC93QjBC9D
+	Q7rtNv6o3djbZmPE6vdzO3H8C+jkPhOttIYiEBDrF7rTgUYbyYomI6tBi1w1oJIoypVLKz9o93qxn
+	GCNYrK8MavKAJoq0jzhUexSv5cmTjsTBjfFb9KBlVqCSscrEq+0ZOAGfleU2JKHet6pRZ+vHDY7B+
+	FpsEZrIZhUGXNlZiXLDWU2BOL9slEs+2tIh1z1e0va0Bh7t8B7ywoubuZ7R0uUUImc4qM3AzQUSle
+	6OX8C4SCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbLwm-00019E-Q9; Thu, 13 Jun 2019 09:23:04 +0000
+	id 1hbM4Z-0004sV-OE; Thu, 13 Jun 2019 09:31:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbLwY-00013W-SH
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 09:22:54 +0000
+ id 1hbM4Q-0004s9-9G
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 09:30:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CDDE367;
- Thu, 13 Jun 2019 02:22:50 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 336CD3F694;
- Thu, 13 Jun 2019 02:22:49 -0700 (PDT)
-Date: Thu, 13 Jun 2019 10:22:47 +0100
-From: Will Deacon <will.deacon@arm.com>
-To: Julien Grall <julien.grall@arm.com>
-Subject: Re: [PATCH v2 1/3] arm64/sve: Fix missing SVE/FPSIMD endianness
- conversions
-Message-ID: <20190613092247.GD17331@fuggles.cambridge.arm.com>
-References: <1560355234-25516-1-git-send-email-Dave.Martin@arm.com>
- <1560355234-25516-2-git-send-email-Dave.Martin@arm.com>
- <771b0099-9217-4e55-b73a-b03434c61655@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CC43C367;
+ Thu, 13 Jun 2019 02:30:55 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3FF5A3F694;
+ Thu, 13 Jun 2019 02:30:55 -0700 (PDT)
+Subject: Re: [bug report] ACPI: Add new IORT functions to support MSI domain
+ handling
+To: Dan Carpenter <dan.carpenter@oracle.com>, tn@semihalf.com
+References: <20190613065410.GB16334@mwanda>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <425b5d78-b38f-270b-94e2-7ece1e5498e5@arm.com>
+Date: Thu, 13 Jun 2019 10:30:35 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <771b0099-9217-4e55-b73a-b03434c61655@arm.com>
-User-Agent: Mutt/1.11.1+86 (6f28e57d73f2) ()
+In-Reply-To: <20190613065410.GB16334@mwanda>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_022250_956789_EFC8B51F 
-X-CRM114-Status: GOOD (  15.78  )
+X-CRM114-CacheID: sfid-20190613_023058_366625_CAF990D0 
+X-CRM114-Status: GOOD (  19.30  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,50 +62,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>, gdb@sourceware.org,
- Alan Hayward <alan.hayward@arm.com>, Zhang Lei <zhang.lei@jp.fujitsu.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Alex =?iso-8859-1?Q?Benn=E9e?= <alex.bennee@linaro.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-acpi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 06:46:04PM +0100, Julien Grall wrote:
-> On 12/06/2019 17:00, Dave Martin wrote:
-> > The in-memory representation of SVE and FPSIMD registers is
-> > different: the FPSIMD V-registers are stored as single 128-bit
-> > host-endian values, whereas SVE registers are stored in an
-> > endianness-invariant byte order.
-> > 
-> > This means that the two representations differ when running on a
-> > big-endian host.  But we blindly copy data from one representation
-> > to another when converting between the two, resulting in the
-> > register contents being unintentionally byteswapped in certain
-> > situations.  Currently this can be triggered by the first SVE
-> > instruction after a syscall, for example (though the potential
-> > trigger points may vary in future).
-> > 
-> > So, fix the conversion functions fpsimd_to_sve(), sve_to_fpsimd()
-> > and sve_sync_from_fpsimd_zeropad() to swab where appropriate.
-> > 
-> > There is no common swahl128() or swab128() that we could use here.
-> > Maybe it would be worth making this generic, but for now add a
-> > simple local hack.
-> > 
-> > Since the byte order differences are exposed in ABI, also clarify
-> > the docuentation.
+On 13/06/2019 07:54, Dan Carpenter wrote:
+> Hello Tomasz Nowicki,
 > 
-> NIT: s/docuentation/documentation/
+> The patch 4bf2efd26d76: "ACPI: Add new IORT functions to support MSI
+> domain handling" from Sep 12, 2016, leads to the following static
+> checker warning:
 > 
-> Although, it is probably too late to fix this one as Will already took the patch.
+> 	drivers/acpi/arm64/iort.c:628 iort_dev_find_its_id()
+> 	warn: array off by one? 'its->identifiers[idx]'
+> 
+> drivers/acpi/arm64/iort.c
+>     589  /**
+>     590   * iort_dev_find_its_id() - Find the ITS identifier for a device
+>     591   * @dev: The device.
+>     592   * @req_id: Device's requester ID
+>     593   * @idx: Index of the ITS identifier list.
+>     594   * @its_id: ITS identifier.
+>     595   *
+>     596   * Returns: 0 on success, appropriate error value otherwise
+>     597   */
+>     598  static int iort_dev_find_its_id(struct device *dev, u32 req_id,
+>     599                                  unsigned int idx, int *its_id)
+>     600  {
+>     601          struct acpi_iort_its_group *its;
+>     602          struct acpi_iort_node *node;
+>     603
+>     604          node = iort_find_dev_node(dev);
+>     605          if (!node)
+>     606                  return -ENXIO;
+>     607
+>     608          node = iort_node_map_id(node, req_id, NULL, IORT_MSI_TYPE);
+>     609          if (!node)
+>     610                  return -ENXIO;
+>     611
+>     612          /* Move to ITS specific data */
+>     613          its = (struct acpi_iort_its_group *)node->node_data;
+>     614          if (idx > its->its_count) {
+>                      ^^^^^^^^^^^^^^^^^^^^
+> I wasn't able to find any information about how its->its_count is set
+> but it looks to me that is off by one.
 
-I actually spotted (and fixed) that one when I committed the patch, but I
-missed the others. Given that this is top of the fixes branch, I can
-probably just fold these in.
+its->count is read directly from the firmware table. Currently it seems 
+this condition can never be hit anyway, since this is only ever called 
+with idx == 0. TBH I can't really see how the code could evolve such 
+that this check should ever be necessary (i.e. it makes no sense for 
+callers to pull idx values out if thin air, so they'd presumably end up 
+being derived from its->count in the first place), but if we are going 
+to have it then I agree it should be ">=".
 
-Will
+Robin.
+
+> 
+>     615                  dev_err(dev, "requested ITS ID index [%d] is greater than available [%d]\n",
+>     616                          idx, its->its_count);
+>     617                  return -ENXIO;
+>     618          }
+>     619
+>     620          *its_id = its->identifiers[idx];
+>     621          return 0;
+>     622  }
+> 
+> regards,
+> dan carpenter
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
