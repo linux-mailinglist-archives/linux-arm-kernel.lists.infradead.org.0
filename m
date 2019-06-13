@@ -2,55 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6202343572
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:19:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 860A04357B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 13:24:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WoeTd4lNMX2r5S6lcxxWZoh32WxSLc3+M7LOcUpbN1M=; b=kRd/NURZ6x+nS9
-	3rtYtMyOL+BhqNvDl1DoVq+FTA8cJ0aRG3bxAj7+sL7oz9sXsVKljKXmJ9uqG18Rxv+hxhpt60Sbj
-	I0twB3jPbkdrI0Upr9mB/8Gpb0Kt4Z0Fpd8PWgchDctT+zRogogiBmzjz8Rx0fckjXqUeTV0d1I4O
-	PSQY/0ZsaSVqKEZgXlypsOjaO0HKnJ4oLI9utKvLPJMzwEY10YYBlP8irT1PjSzeyESWxJsdZWvih
-	AHYbzx/bJqCenI3EuqvCUzQ/gkiE37X6lUPXQ4gnaD/uhWl23yIi3ezpO9hKX6cJmOjet1QvmRoyU
-	M8mjN+DcYRvEskfC8YbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qV3075lElyOVFaY/C8PbqA5lZQnMQVBCkwWROe0y+cs=; b=Af51NW2Ulg+6+2DmAMIAfar4+
+	oV1IhS/aXaNUBIQXd5jOCPW1DSiNhfRQCKCUwbaHMhIN2gIj4mKbyFzqlfKz6ilqvANjImGmEVVf8
+	HxGYq4daBtYQpORcmTj2QvYrklay2S3FTuUMyiS8vFfOaPxZJLveKFuaq8Ig7gE3ZHXOxHb08Agqc
+	sMwZGV9X7FuTicdMGVCs2ZRt5fG/AlrVMTwHkL8hGkeATjB1+7uRnJ3dpx2uwpxGpJoq1GXzFatKB
+	JyHNZKMmNtOm/5tbCp0y3SjuTsxaza680G+M2xIVTnzrzNtsVdsIwYT4I9IWpb0x26mRBttzxqmg9
+	ypTIuFTsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbNl0-000559-Ja; Thu, 13 Jun 2019 11:19:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbNj9-0003Hb-Bw
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:17:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 68C33367;
- Thu, 13 Jun 2019 04:17:06 -0700 (PDT)
-Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 11EDF3F694;
- Thu, 13 Jun 2019 04:18:44 -0700 (PDT)
-Date: Thu, 13 Jun 2019 12:16:59 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Andrey Konovalov <andreyknvl@google.com>
-Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control
- the tagged user addresses ABI
-Message-ID: <20190613111659.GX28398@e103592.cambridge.arm.com>
-References: <cover.1560339705.git.andreyknvl@google.com>
- <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
+	id 1hbNqI-0007Jj-Gu; Thu, 13 Jun 2019 11:24:30 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbNpL-0006yo-6B
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 11:23:34 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id A7DBEF7C1BDB2B979504;
+ Thu, 13 Jun 2019 19:23:24 +0800 (CST)
+Received: from [127.0.0.1] (10.184.12.158) by DGGEMS414-HUB.china.huawei.com
+ (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Thu, 13 Jun 2019
+ 19:23:16 +0800
+Subject: Re: [PATCH v1 1/5] KVM: arm/arm64: Remove kvm_mmio_emulate tracepoint
+To: James Morse <james.morse@arm.com>
+References: <1560330526-15468-1-git-send-email-yuzenghui@huawei.com>
+ <1560330526-15468-2-git-send-email-yuzenghui@huawei.com>
+ <e915c19a-51df-be88-ea3a-7c9a211f4518@arm.com>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <5885c607-1314-ff53-38f1-9f48b1c16de4@huawei.com>
+Date: Thu, 13 Jun 2019 19:20:19 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
+ Thunderbird/64.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <e915c19a-51df-be88-ea3a-7c9a211f4518@arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.184.12.158]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_041707_532568_427FFAF6 
-X-CRM114-Status: GOOD (  25.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_042331_559998_4AF900B6 
+X-CRM114-Status: GOOD (  10.40  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,146 +67,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
- Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
- linux-kselftest@vger.kernel.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jacob Bramley <Jacob.Bramley@arm.com>, Leon Romanovsky <leon@kernel.org>,
- linux-rdma@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- Christoph Hellwig <hch@infradead.org>, Jason Gunthorpe <jgg@ziepe.ca>,
- Dmitry Vyukov <dvyukov@google.com>, Evgeniy Stepanov <eugenis@google.com>,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: acme@redhat.com, "Wanghaibin \(D\)" <wanghaibin.wang@huawei.com>,
+ kvm@vger.kernel.org, marc.zyngier@arm.com, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, acme@kernel.org,
+ linuxarm@huawei.com, linux-perf-users@vger.kernel.org, peterz@infradead.org,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, xiexiangyou@huawei.com,
+ ganapatrao.kulkarni@cavium.com, namhyung@kernel.org, jolsa@redhat.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
-> From: Catalin Marinas <catalin.marinas@arm.com>
+Hi James,
+
+On 2019/6/12 20:48, James Morse wrote:
+> Hi,
 > 
-> It is not desirable to relax the ABI to allow tagged user addresses into
-> the kernel indiscriminately. This patch introduces a prctl() interface
-> for enabling or disabling the tagged ABI with a global sysctl control
-> for preventing applications from enabling the relaxed ABI (meant for
-> testing user-space prctl() return error checking without reconfiguring
-> the kernel). The ABI properties are inherited by threads of the same
-> application and fork()'ed children but cleared on execve().
+> On 12/06/2019 10:08, Zenghui Yu wrote:
+>> In current KVM/ARM code, no one will invoke trace_kvm_mmio_emulate().
+>> Remove this TRACE_EVENT definition.
 > 
-> The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
-> MTE-specific settings like imprecise vs precise exceptions.
+> Oooer. We can't just go removing these things, they are visible to user-space.
 > 
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> ---
->  arch/arm64/include/asm/processor.h   |  6 +++
->  arch/arm64/include/asm/thread_info.h |  1 +
->  arch/arm64/include/asm/uaccess.h     |  3 +-
->  arch/arm64/kernel/process.c          | 67 ++++++++++++++++++++++++++++
->  include/uapi/linux/prctl.h           |  5 +++
->  kernel/sys.c                         | 16 +++++++
->  6 files changed, 97 insertions(+), 1 deletion(-)
+> I recall an article on this: https://lwn.net/Articles/737530/
+> "Another attempt to address the tracepoint ABI problem"
 > 
-> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-> index fcd0e691b1ea..fee457456aa8 100644
-> --- a/arch/arm64/include/asm/processor.h
-> +++ b/arch/arm64/include/asm/processor.h
-> @@ -307,6 +307,12 @@ extern void __init minsigstksz_setup(void);
->  /* PR_PAC_RESET_KEYS prctl */
->  #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
->  
-> +/* PR_TAGGED_ADDR prctl */
+> I agree this is orphaned, it was added by commit 45e96ea6b369 ("KVM: ARM: Handle I/O
+> aborts"), but there never was a caller.
+> 
+> The problem with removing it is /sys/kernel/debug/tracing/events/kvm/kvm_mmio_emulate
+> disappears. Any program relying on that being present (but useless) is now broken.
+Thanks for the reminder.
 
-(A couple of comments I missed in my last reply:)
+It turned out that I knew little about the tracepoint ABI :( .
+I'm OK to just drop this patch in next version.
 
-Name mismatch?
 
-> +long set_tagged_addr_ctrl(unsigned long arg);
-> +long get_tagged_addr_ctrl(void);
-> +#define SET_TAGGED_ADDR_CTRL(arg)	set_tagged_addr_ctrl(arg)
-> +#define GET_TAGGED_ADDR_CTRL()		get_tagged_addr_ctrl()
-> +
+Thanks,
+zenghui
 
-[...]
 
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index 3767fb21a5b8..69d0be1fc708 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -30,6 +30,7 @@
->  #include <linux/kernel.h>
->  #include <linux/mm.h>
->  #include <linux/stddef.h>
-> +#include <linux/sysctl.h>
->  #include <linux/unistd.h>
->  #include <linux/user.h>
->  #include <linux/delay.h>
-> @@ -323,6 +324,7 @@ void flush_thread(void)
->  	fpsimd_flush_thread();
->  	tls_thread_flush();
->  	flush_ptrace_hw_breakpoint(current);
-> +	clear_thread_flag(TIF_TAGGED_ADDR);
->  }
->  
->  void release_thread(struct task_struct *dead_task)
-> @@ -552,3 +554,68 @@ void arch_setup_new_exec(void)
->  
->  	ptrauth_thread_init_user(current);
->  }
-> +
-> +/*
-> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
-> + */
-> +static unsigned int tagged_addr_prctl_allowed = 1;
-> +
-> +long set_tagged_addr_ctrl(unsigned long arg)
-> +{
-> +	if (!tagged_addr_prctl_allowed)
-> +		return -EINVAL;
+.
 
-So, tagging can actually be locked on by having a process enable it and
-then some possibly unrelated process clearing tagged_addr_prctl_allowed.
-That feels a bit weird.
 
-Do we want to allow a process that has tagging on to be able to turn
-it off at all?  Possibly things like CRIU might want to do that.
-
-> +	if (is_compat_task())
-> +		return -EINVAL;
-> +	if (arg & ~PR_TAGGED_ADDR_ENABLE)
-> +		return -EINVAL;
-
-How do we expect this argument to be extended in the future?
-
-I'm wondering whether this is really a bitmask or an enum, or a mixture
-of the two.  Maybe it doesn't matter.
-
-> +
-> +	if (arg & PR_TAGGED_ADDR_ENABLE)
-> +		set_thread_flag(TIF_TAGGED_ADDR);
-> +	else
-> +		clear_thread_flag(TIF_TAGGED_ADDR);
-
-I think update_thread_flag() could be used here.
-
-[...]
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
