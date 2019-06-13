@@ -2,88 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CA15447FF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 19:05:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1351944878
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 19:10:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7nYCYnmRY+YcB5v0W0DGAd8erunJ3/30Q2fLJf8Z+6U=; b=o8l2UADkfEvjLd
-	guzZm4q6mj40mWZECWy9YlxkZRXrRQCyWBMfINTPcZbk/zSOIlW1s/wyTg/MK213ErIRWS4jIxkc+
-	lbhLQRsxo3AU/KgqQgDO6hQFMWcqKWc5NjSH/Gb6fufabSgG5JfgndUkorM9PllDSawCOKfa5B1JC
-	dkYGsQ6oQ2byseV21SYg2WtCESjWGbyFFKUxn2inWD0op1yECSNEn/DDFl/K559sZpJsmweilZ8t8
-	H1NHD0up9vJMnAZvd5utLddCRLxtDcv4ZejnCsvTgRphN7fy9F1PR4k5vH7nuMJuy/SE3IRoAuPn7
-	s9f3eY5LuqzbEaDOpEhA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mZCSfQ5d4BMMJ4cmOGQ+4nvx12wNgSzi0SGHjOS3u+k=; b=iSE8Z0dE19VlmSV7CiW91tYYm
+	+vOdzmGBN+n7OjpHy/UpZSatsf/yZ75xSNgUDlRyu/tHNJTnwuNYaj64BCjAEIv8+QW+ouED3/Tt8
+	WvvH9JUmX4HFOMAh88Kb2y7/4O06PNPk0vciiRI7kKNOPYCuPuFvui8t4TkZLXXTNuiOMHmNu8hDu
+	UHMflPdmm1whr6AAcxVfa7FF0F5q8+DEmthG/JuKkKKx+/rYB+Uw3RGri6kuYzMf/toSE0bXLVY1y
+	y/60EOyg6Zi90FDMDr+rKWHP+m8LLatkiN1RIfZ8tctnViXQPD4hw7YCh+l//GGMb+/774u/7D6b2
+	qC8/QJxSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbT9s-0003D9-2a; Thu, 13 Jun 2019 17:05:04 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbT9e-0003Bt-3c
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 17:04:51 +0000
-Received: by mail-pf1-x442.google.com with SMTP id m30so11706755pff.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Jun 2019 10:04:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=EnPkPuY0upC8b7jCW297iBQZhVtXmFo88c6fyE9w1Gc=;
- b=h2WsuVwVp36pqc7BZuctAOn63cTvP51Hw5w3oBdwJeES1hkGgRdqnS1YcuZ9P6YTA6
- fql65HAXNTeXWN/IB5NZAanRhhSXXwsapVsfFEZSfBcTFjPiLTlKYxZaHQxK19qDxyG3
- BhxVvxEucyUVpsqCwKw2P5XM3VM2gap37ZMYMnrGGSrxaSF3DE2CZSL374Gl4xDUFwhn
- 37Ckn0WqGBuSFv+XOeqwbZjPy2lVp/nEzM1f8s8zr42ZUemBl7XcEfwbWdf6xtatu0kj
- h4OI3FyHV6L39toMChIwFos8XNcAu7LekDrbld3atSp0grnI9lm6Ztoq4HR9aHcEzzVB
- +jIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=EnPkPuY0upC8b7jCW297iBQZhVtXmFo88c6fyE9w1Gc=;
- b=DfDzdz4ei9JsTxLpgIQm52byn5xwanW1CmehuiXiflKHfeEi9HFjJ3mDcKE/xvVMky
- ERo0RLkZslBplINSPQjV33Qw7Bf8xgmTJ6OHUICLHf8s6IUm/C0kv3Hzok0gP7NkTpde
- dsFtMfnuAqA4USs0PHYULm/vKat8M7rVthwk6wGd5+sgg8UHjXCqbtHPEx4uxX07sVci
- rssUQcvsv0Gjrw7jIs+nosM+cn9LpDBVMaOn8u90iZ1RNsKLEvCeQZlbwsxj4y4ED2XJ
- IkSSjQmM1blEsaYcM9gMU3Eya5Y1zPQ0KsQTxx3O9HD74is4WlkjeTQMHxi9FJI1t6Ma
- iLeQ==
-X-Gm-Message-State: APjAAAWaMovvhU4MfQZzt9BiheMD0wHpaX8nhZ5gwbnvMKEeHfqGYOL/
- E0qcuhfH8Tg2d9EH/QzadjHLekieQ1FSvH+2wQQ=
-X-Google-Smtp-Source: APXvYqxcMn+Xp7KK1rDTtjbiF/s9/qMAS0Od0rblM/JIyaXggdbRc5s5/qqZIPwozR39yiq+kN0sCF0Q4lr+B/T1BU4=
-X-Received: by 2002:a63:158:: with SMTP id 85mr32252700pgb.101.1560445489065; 
- Thu, 13 Jun 2019 10:04:49 -0700 (PDT)
+	id 1hbTFA-0006aw-R3; Thu, 13 Jun 2019 17:10:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbTEz-0006a5-H8
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 17:10:22 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAB03367;
+ Thu, 13 Jun 2019 10:10:19 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D59783F694;
+ Thu, 13 Jun 2019 10:10:18 -0700 (PDT)
+Subject: Re: [PATCH 1/2] arm64/mm: check cpu cache line size with non-coherent
+ device
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Masayoshi Mizuma <msys.mizuma@gmail.com>
+References: <20190611151731.6135-1-msys.mizuma@gmail.com>
+ <20190611151731.6135-2-msys.mizuma@gmail.com>
+ <20190611180007.him7md7gdcjs5cg6@mbp>
+ <20190611220246.lyhcqahsxyxuhqjk@gabell>
+ <20190613155434.GW28951@C02TF0J2HF1T.local>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <d832009b-93b5-8ac3-03eb-8e6e92a5b206@arm.com>
+Date: Thu, 13 Jun 2019 18:10:17 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <1556736193-29411-1-git-send-email-Frank.Li@nxp.com>
- <1556736193-29411-2-git-send-email-Frank.Li@nxp.com>
- <20190613112320.GA18966@fuggles.cambridge.arm.com>
-In-Reply-To: <20190613112320.GA18966@fuggles.cambridge.arm.com>
-From: Zhi Li <lznuaa@gmail.com>
-Date: Thu, 13 Jun 2019 12:04:37 -0500
-Message-ID: <CAHrpEqRZ0YL9SFk6o7iebJ+diJVMTtyba_9GtujL7H7e4G8qQA@mail.gmail.com>
-Subject: Re: [PATCH V12 2/4] drivers/perf: imx_ddr: Add ddr performance
- counter support
-To: Will Deacon <will.deacon@arm.com>
+In-Reply-To: <20190613155434.GW28951@C02TF0J2HF1T.local>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_100450_155449_C87FAB62 
-X-CRM114-Status: GOOD (  12.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190613_101021_662229_B8DBCB0E 
+X-CRM114-Status: GOOD (  21.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (lznuaa[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,58 +67,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Frank Li <frank.li@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Zhang Lei <zhang.lei@jp.fujitsu.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 13, 2019 at 6:23 AM Will Deacon <will.deacon@arm.com> wrote:
->
-> On Wed, May 01, 2019 at 06:43:29PM +0000, Frank Li wrote:
-> > Add ddr performance monitor support for iMX8QXP
-> >
-> > There are 4 counters for ddr perfomance events.
-> > counter 0 is dedicated for cycles.
-> > you choose any up to 3 no cycles events.
-> >
-> > for example:
-> >
-> > perf stat -a -e imx8_ddr0/read-cycles/,imx8_ddr0/write-cycles/,imx8_ddr0/precharge/ ls
-> > perf stat -a -e imx8_ddr0/cycles/,imx8_ddr0/read-access/,imx8_ddr0/write-access/ ls
->
-> I've pushed patches 1, 2 and 4 out with some minor tweaks to:
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=for-next/perf
->
-> I'll leave the actual .dts change to go via the soc tree, since last time
-> I took one of those it just resulted in conflicts.
->
-> Frank, Andrey: Please could you try to run the perf fuzzer on this before
-> it lands in mainline? It has a good track record of finding nasty PMU driver
-> bugs, but it obviously requires access to hardware which implements the PMU:
->
-> http://web.eece.maine.edu/~vweaver/projects/perf_events/fuzzer/
+On 13/06/2019 16:54, Catalin Marinas wrote:
+> On Tue, Jun 11, 2019 at 06:02:47PM -0400, Masayoshi Mizuma wrote:
+>> On Tue, Jun 11, 2019 at 07:00:07PM +0100, Catalin Marinas wrote:
+>>> On Tue, Jun 11, 2019 at 11:17:30AM -0400, Masayoshi Mizuma wrote:
+>>>> --- a/arch/arm64/mm/dma-mapping.c
+>>>> +++ b/arch/arm64/mm/dma-mapping.c
+>>>> @@ -91,10 +91,6 @@ static int __swiotlb_mmap_pfn(struct vm_area_struct *vma,
+>>>>   
+>>>>   static int __init arm64_dma_init(void)
+>>>>   {
+>>>> -	WARN_TAINT(ARCH_DMA_MINALIGN < cache_line_size(),
+>>>> -		   TAINT_CPU_OUT_OF_SPEC,
+>>>> -		   "ARCH_DMA_MINALIGN smaller than CTR_EL0.CWG (%d < %d)",
+>>>> -		   ARCH_DMA_MINALIGN, cache_line_size());
+>>>>   	return dma_atomic_pool_init(GFP_DMA32, __pgprot(PROT_NORMAL_NC));
+>>>>   }
+>>>>   arch_initcall(arm64_dma_init);
+>>>> @@ -473,6 +469,11 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+>>>>   			const struct iommu_ops *iommu, bool coherent)
+>>>>   {
+>>>>   	dev->dma_coherent = coherent;
+>>>> +
+>>>> +	if (!coherent && (cache_line_size() > ARCH_DMA_MINALIGN))
+>>>> +		dev_WARN(dev, "ARCH_DMA_MINALIGN smaller than CTR_EL0.CWG (%d < %d)",
+>>>> +				ARCH_DMA_MINALIGN, cache_line_size());
+>>>
+>>> I'm ok in principle with this patch, with the minor issue that since
+>>> commit 7b8c87b297a7 ("arm64: cacheinfo: Update cache_line_size detected
+>>> from DT or PPTT") queued for 5.3 cache_line_size() gets the information
+>>> from DT or ACPI. The reason for this change is that the information is
+>>> used for performance tuning rather than DMA coherency.
+>>>
+>>> You can go for a direct cache_type_cwg() check in here, unless Robin
+>>> (cc'ed) has a better idea.
+>>
+>> Got it, thanks.
+>> I believe coherency_max_size is zero in case of coherent is false,
+>> so I'll modify the patch as following. Does it make sense?
+> 
+> The coherency_max_size gives you the largest cache line in the system,
+> independent of whether a device is coherent or not. You may have a
+> device that does not snoop L1/L2 but there is a transparent L3 (system
+> cache) with a larger cache line that the device may be able to snoop.
+> The coherency_max_size and therefore cache_line_size() would give you
+> this L3 value but the device would work fine since CWG <=
+> ARCH_DMA_MINALIGN.
+> 
+>>
+>> @@ -57,6 +53,11 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+>>                          const struct iommu_ops *iommu, bool coherent)
+>>   {
+>>          dev->dma_coherent = coherent;
+>> +
+>> +       if (!coherent && (cache_line_size() > ARCH_DMA_MINALIGN))
+>> +               dev_WARN(dev, "ARCH_DMA_MINALIGN smaller than CTR_EL0.CWG (%d < %d)",
+>> +                               ARCH_DMA_MINALIGN, (4 << cache_type_cwg()));
+>> +
+>>          if (iommu)
+>>                  iommu_setup_dma_ops(dev, dma_base, size);
+> 
+> I think the easiest here is to add a local variable:
+> 
+> 	int cls = 4 << cache_type_cwg();
+> 
+> and check it against ARCH_DMA_MINALIGN.
+> 
 
-Okay, how long should be run generally?
-I need make sure it can pass without my patches at our platform.
+Agreed, and I'd say we should keep the taint too, since if this 
+situation ever was hit the potential crashes would be weird and random 
+and not obviously DMA-related.
 
-Best regards
-Frank Li
-
->
-> Cheers,
->
-> Will
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
