@@ -2,46 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9BA444184
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:15:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 435194419B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:16:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9KxNn+lUeAFtecNYoUzmGKnhuomnRhW2EJc7Mxx1rys=; b=k7qTelil+Sb91U
-	tZt5Kr5A04n1SyWkVMiWIqx4YvmRgjOK0YApz6KfV76fPnLxZwdtynqPLr7+/YCdDsTLFIMZQgNML
-	BLej8N9+MEeTlo/yeSe6IQMI5lDEwH18NBFxzulQhaQONa/2GV69Y4Oa7x2cG6hO+XERkmqDJVeTw
-	1KbB3kF0yLMk2+ajJpH0Vgdg+OxpMlZuKEZ/bGK/h1Vwd3Xs+L1Uox/qbeXn3xD/wL5j+gGfXsTmB
-	rS8L4HacCmTXd0mGaF9HIrwC+VBgx2ismYkwMeTd4qsihevETwDzNFeZJVtNTU24wEKXXQ2AjJY6e
-	aNn99OjjVZplu86s6Twg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=od9WLy4XC0QsbrcaXeP3KkudSANzVBReHryRAJBaPC0=; b=kxOKhMne6kZCIg
+	uVxeXapB0+lgZOjzHxBOwcT6BUquHT4R2KuKXJpqaxJxzRDaHQuE0BAZYO86R/0GD+ga0DTVrMZFS
+	LDifUHxU4wlGaNguxBl18wTli4m6eNOP7kzXBJVPHvFoe5ezPYjbNOpzp4RnJoT0+o98HJESwBV2e
+	bpWazNHPf0lCkK/TG9SvzBiRUEZ+OAT7/8QyE0iOfLsRL7+tIDzzJ4yCren52RFGZTMbozOYwQuqX
+	MFSnVnFwL5V55ONaiUDUgrAaAl2Q9IzUBONtqPRAfr5Qq/V/ZwzOXLchabv82W4RSz28RwDXrd9mE
+	MJ7IKdjTrKx4FVnUd0kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSNR-0001oA-Fd; Thu, 13 Jun 2019 16:15:01 +0000
+	id 1hbSOf-0003ei-HQ; Thu, 13 Jun 2019 16:16:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSNF-0001Sl-KD
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 16:14:50 +0000
+ id 1hbSOS-0003eJ-Nl
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 16:16:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4CDAF367;
- Thu, 13 Jun 2019 09:14:47 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (unknown [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4A57A3F694;
- Thu, 13 Jun 2019 09:14:46 -0700 (PDT)
-Date: Thu, 13 Jun 2019 17:14:41 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Remi Pommarel <repk@triplefau.lt>
-Subject: Re: [PATCH] PCI: aardvark: Fix PCI_EXP_RTCTL conf register writing
-Message-ID: <20190613161441.GA2247@e121166-lin.cambridge.arm.com>
-References: <20190522213351.21366-1-repk@triplefau.lt>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12AAE367;
+ Thu, 13 Jun 2019 09:16:04 -0700 (PDT)
+Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB5643F694;
+ Thu, 13 Jun 2019 09:15:58 -0700 (PDT)
+Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control the
+ tagged user addresses ABI
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <cover.1560339705.git.andreyknvl@google.com>
+ <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
+ <20190613111659.GX28398@e103592.cambridge.arm.com>
+ <20190613153505.GU28951@C02TF0J2HF1T.local>
+ <99cc257d-5e99-922a-fbe7-3bbaf3621e38@arm.com>
+ <20190613155754.GX28951@C02TF0J2HF1T.local>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <e481dbf9-880e-c77e-5200-1dbc35be7a48@arm.com>
+Date: Thu, 13 Jun 2019 17:15:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190522213351.21366-1-repk@triplefau.lt>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190613155754.GX28951@C02TF0J2HF1T.local>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_091449_722744_55A7078C 
-X-CRM114-Status: GOOD (  17.08  )
+X-CRM114-CacheID: sfid-20190613_091604_868946_EE69C24C 
+X-CRM114-Status: GOOD (  20.62  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,73 +67,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ellie Reeves <ellierevves@gmail.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Helgaas <helgaas@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Christian Koenig <Christian.Koenig@amd.com>,
+ Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
+ dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
+ Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
+ linux-kselftest@vger.kernel.org, Jacob Bramley <Jacob.Bramley@arm.com>,
+ Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
+ amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Dmitry Vyukov <dvyukov@google.com>,
+ Dave Martin <Dave.Martin@arm.com>, Evgeniy Stepanov <eugenis@google.com>,
+ linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
+ Alexander Deucher <Alexander.Deucher@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
+ Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 11:33:49PM +0200, Remi Pommarel wrote:
-> PCI_EXP_RTCTL is used to activate PME interrupt only, so writing into it
-> should not modify other interrupts' mask (such as ISR0).
+
+On 13/06/2019 16:57, Catalin Marinas wrote:
+> On Thu, Jun 13, 2019 at 04:45:54PM +0100, Vincenzo Frascino wrote:
+>> On 13/06/2019 16:35, Catalin Marinas wrote:
+>>> On Thu, Jun 13, 2019 at 12:16:59PM +0100, Dave P Martin wrote:
+>>>> On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
+>>>>> +
+>>>>> +/*
+>>>>> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
+>>>>> + */
+>>>>> +static unsigned int tagged_addr_prctl_allowed = 1;
+>>>>> +
+>>>>> +long set_tagged_addr_ctrl(unsigned long arg)
+>>>>> +{
+>>>>> +	if (!tagged_addr_prctl_allowed)
+>>>>> +		return -EINVAL;
+>>>>
+>>>> So, tagging can actually be locked on by having a process enable it and
+>>>> then some possibly unrelated process clearing tagged_addr_prctl_allowed.
+>>>> That feels a bit weird.
+>>>
+>>> The problem is that if you disable the ABI globally, lots of
+>>> applications would crash. This sysctl is meant as a way to disable the
+>>> opt-in to the TBI ABI. Another option would be a kernel command line
+>>> option (I'm not keen on a Kconfig option).
+>>
+>> Why you are not keen on a Kconfig option?
 > 
-> Fixes: 6302bf3ef78d ("PCI: Init PCIe feature bits for managed host bridge alloc")
-> Signed-off-by: Remi Pommarel <repk@triplefau.lt>
-> ---
-> Please note that I will unlikely be able to answer any comments from May
-> 24th to June 10th.
-> ---
->  drivers/pci/controller/pci-aardvark.c | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
+> Because I don't want to rebuild the kernel/reboot just to be able to
+> test how user space handles the ABI opt-in. I'm ok with a Kconfig option
+> to disable this globally in addition to a run-time option (if actually
+> needed, I'm not sure).
 > 
-> diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-> index 134e0306ff00..27102d3b4f9c 100644
-> --- a/drivers/pci/controller/pci-aardvark.c
-> +++ b/drivers/pci/controller/pci-aardvark.c
-> @@ -451,10 +451,14 @@ advk_pci_bridge_emul_pcie_conf_write(struct pci_bridge_emul *bridge,
->  		advk_writel(pcie, new, PCIE_CORE_PCIEXP_CAP + reg);
->  		break;
->  
-> -	case PCI_EXP_RTCTL:
-> -		new = (new & PCI_EXP_RTCTL_PMEIE) << 3;
-> -		advk_writel(pcie, new, PCIE_ISR0_MASK_REG);
-> +	case PCI_EXP_RTCTL: {
-> +		/* Only mask/unmask PME interrupt */
-> +		u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
-> +			~PCIE_MSG_PM_PME_MASK;
-> +		val |= (new & PCI_EXP_RTCTL_PMEIE) << 3;
+There might be scenarios (i.e. embedded) in which this is not needed, hence
+having a config option (maybe Y by default) that removes from the kernel the
+whole feature would be good, obviously in conjunction with the run-time option.
 
-I know you have not introduced this code but maybe we can
-take an opportunity to clarify it (that << 3 shift obfuscates
-a bit):
+Based on my previous review, if we move out the code from process.c in its own
+independent file when the Kconfig option is turned off we could remove the
+entire object from the kernel (this would remove the sysctl and let still the
+prctl return -EINVAL).
 
-	u32 val = advk_readl(pcie, PCIE_ISR0_MASK_REG) &
-			~PCIE_MSG_PM_PME_MASK;
+These changes though could be done successively with a separate patch set, if
+the Kconfig is meant to be Y by default.
 
-	if (new & PCI_EXP_RTCTL_PMEIE)
-		val |= PCIE_MSG_PM_PME_MASK;
-
-	advk_writel(pcie, val, PCIE_ISR0_MASK_REG);
-	break;
-
-Or I am not reading the code correctly ?
-
-Regardless, I need Thomas' ACK to proceed.
-
-Lorenzo
-
-> +		advk_writel(pcie, val, PCIE_ISR0_MASK_REG);
->  		break;
-> +	}
->  
->  	case PCI_EXP_RTSTA:
->  		new = (new & PCI_EXP_RTSTA_PME) >> 9;
-> -- 
-> 2.20.1
-> 
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
