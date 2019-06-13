@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B233B438BE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:08:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F8E4438A2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:07:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
 	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bwlSrCqSsukMuJ63NGub0lvf+q17160cVm/wBdO/4Hw=; b=mu/ZYcFxWJX2BN
-	bquf1EHraIA94JlLQoMl7glNQwEzVXJI2kooBd7VpUy5A+/QtFWl5D+nh05KTeSgqnyGBbNjRE5T4
-	U2/q8WyISG/C652fX3g8fw+H6P3KoZKX01fHl0zEfDRrqhZ87FTdZ6x/4aXmwa6U7lGrF8qBugnFk
-	hjYKo8pjalnwjrnV6u4w8U1NGrg0X+R6oP7cWrgP+bqtTLe4nG/sadJuaDjd6BqWny5tzIyyk5ojg
-	UpifvLWpZ6GqB2MHgg+bz1qsQDi9az/L/CeAAlSwUCjpF3c9VRTZQ864j3eWL9YAEH3A2a384fWL2
-	k4xH1kL0/iYG87cqwd2w==;
+	List-Owner; bh=6VK9iDPGuu62KblCszeDffmXV5v2g2xmJxnX3tsI8AY=; b=pY8cJmoHBKImEo
+	zwBfAEzc0hLszO3mg1HZi3VNh7z+FKi/9C5gnFeIFtV3MbL0KmqaJIXAXEu517B4hwWb/VFHozdlD
+	gqho1neF/e6wkv0mKfMPm64QHJle/v45Wy6hfUXhd9Hbdzuhq8EKV/zGL/eyUjw586thH7rZMmxUb
+	O9RLT5iPGcIvC0Aa4s/FZqKwY7eErDcTvoWjjGYRqafJfcOWb3PM87fdrjoutZZDx6Ej86NooAnA+
+	mE9c90t8hlxXxWtuOddZJVnVRyo/OlHVY6xHDuaSzsfXciCJZd2GyBQ/iYZOhK6dwJ5GG0G/HFoK+
+	AKLGGn8Mnw6RS0IGJqxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRKp-0008I1-Uq; Thu, 13 Jun 2019 15:08:16 +0000
+	id 1hbRKD-0007kd-8K; Thu, 13 Jun 2019 15:07:37 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbRHc-0004L3-2A
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:04:58 +0000
+ id 1hbRHM-00045O-Oj
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:04:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
  Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
  In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=V7uQGsBSps5OtehC7jKDCOj7ey/BkwQGUrMcyiu617U=; b=FCaczxjel13UF0wFfzCKw7xyhk
- W9SLab/jiRYInWHnNL3eOJfEarknD57h1Uu9MjJ/f0RqoENXe7ubKW+frGHIg/qBAWRCGO7O2/zdY
- V3dsX7fCxlldV2fTUDyTHxi1ympF+NeJWp3/voGca6xR/3i2nMOs91i8m5Yk7YZotMOGoIkgZxPOI
- AvqP6BMwc/cpNb1BKisYmXyN0XXmGmLH1YoPrdjOy0l2V/peDlk6DBsld25AHb+Dx03KB/p+dbvkc
- GkxwPRm2Iyw9rNRY1x09HCFIiF/dOQKlldgGU9VCrPWghwNT41wrrwnk88Nb/MB4iA2M9Pddn0Bs9
- ybz4qMVw==;
+ bh=h+zQfoXGEdU88esHi4R2Nu34yF6Qen433V86RQonshc=; b=lsaeHZmsZOJVfBU/UYleDvTYH7
+ X17A4x2Z+4DdrY4Fu0ssyiOliUIZV2IqPblHYIyDyz1mp8Mi3JMJ0ElnMqeyGDT9JJ2XEm+rGatU+
+ yZLbZuUMk45XAU/S4G2GuG2kC0sY/EBPxSd3HhCWKomYap080BGCTvh9ffjtc0lpkQCLOfEzcptSv
+ K/G6i77HN6MZoYReUJzptf+chnOLPWECZGeLTbND1vu1mKHQTw7s8/Dxdq6YhQ9Mnh3lb1H90jBam
+ HvGusaEM0qpVNRu2i425665o53o8S+9p/STx9ckEbsW9MsYdan5SEouBDwnlJgXArloiyJW9oZiZ7
+ eehYY3pw==;
 Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:45382 helo=rmk-PC.armlinux.org.uk)
+ ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:35450 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1hbRFv-0003lH-RY; Thu, 13 Jun 2019 16:03:12 +0100
+ id 1hbRFz-0003lL-Ts; Thu, 13 Jun 2019 16:03:16 +0100
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim
  4.82_1-5b7a7c0-XX) (envelope-from <rmk@armlinux.org.uk>)
- id 1hbRFo-00008p-F9; Thu, 13 Jun 2019 16:03:04 +0100
+ id 1hbRFt-00008w-Qe; Thu, 13 Jun 2019 16:03:09 +0100
 In-Reply-To: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 References: <20190613150114.xqkyb7j7w4ve4yvr@shell.armlinux.org.uk>
 From: Russell King <rmk+kernel@armlinux.org.uk>
 To: dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 16/18] drm/armada: replace the simple-framebuffer
+Subject: [PATCH 17/18] drm/armada: use for_each_endpoint_of_node() to walk
+ crtc endpoints
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1hbRFo-00008p-F9@rmk-PC.armlinux.org.uk>
-Date: Thu, 13 Jun 2019 16:03:04 +0100
+Message-Id: <E1hbRFt-00008w-Qe@rmk-PC.armlinux.org.uk>
+Date: Thu, 13 Jun 2019 16:03:09 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_080456_177347_338EA137 
-X-CRM114-Status: GOOD (  10.88  )
+X-CRM114-CacheID: sfid-20190613_080440_922870_EC69F494 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -91,40 +92,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lubomir Rintel <lkundrak@v3.sk>
+Rather than having a nested set of for_each_child_of_node() walkers,
+use the graph walker to iterate through the endpoints for CRTCs.
 
-If there's a simple-framebuffer carried over from boot firmware, it's going
-to stop working once we setup the LCDC for use via DRM. Kick it off from
-the hardware.
-
-Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- drivers/gpu/drm/armada/armada_drv.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ drivers/gpu/drm/armada/armada_drv.c | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/gpu/drm/armada/armada_drv.c b/drivers/gpu/drm/armada/armada_drv.c
-index e524bfff1c49..05fab5cb5c2d 100644
+index 05fab5cb5c2d..1cfabcd6a629 100644
 --- a/drivers/gpu/drm/armada/armada_drv.c
 +++ b/drivers/gpu/drm/armada/armada_drv.c
-@@ -100,6 +100,17 @@ static int armada_drm_bind(struct device *dev)
- 		return ret;
+@@ -204,11 +204,11 @@ static int compare_dev_name(struct device *dev, void *data)
+ }
+ 
+ static void armada_add_endpoints(struct device *dev,
+-	struct component_match **match, struct device_node *port)
++	struct component_match **match, struct device_node *dev_node)
+ {
+ 	struct device_node *ep, *remote;
+ 
+-	for_each_child_of_node(port, ep) {
++	for_each_endpoint_of_node(dev_node, ep) {
+ 		remote = of_graph_get_remote_port_parent(ep);
+ 		if (!remote || !of_device_is_available(remote)) {
+ 			of_node_put(remote);
+@@ -242,7 +242,6 @@ static int armada_drm_probe(struct platform_device *pdev)
+ 
+ 	if (dev->platform_data) {
+ 		char **devices = dev->platform_data;
+-		struct device_node *port;
+ 		struct device *d;
+ 		int i;
+ 
+@@ -258,10 +257,8 @@ static int armada_drm_probe(struct platform_device *pdev)
+ 		for (i = 0; devices[i]; i++) {
+ 			d = bus_find_device_by_name(&platform_bus_type, NULL,
+ 						    devices[i]);
+-			if (d && d->of_node) {
+-				for_each_child_of_node(d->of_node, port)
+-					armada_add_endpoints(dev, &match, port);
+-			}
++			if (d && d->of_node)
++				armada_add_endpoints(dev, &match, d->of_node);
+ 			put_device(d);
+ 		}
  	}
- 
-+	/* Remove early framebuffers */
-+	ret = drm_fb_helper_remove_conflicting_framebuffers(NULL,
-+							    "armada-drm-fb",
-+							    false);
-+	if (ret) {
-+		dev_err(dev, "[" DRM_NAME ":%s] can't kick out simple-fb: %d\n",
-+			__func__, ret);
-+		kfree(priv);
-+		return ret;
-+	}
-+
- 	priv->drm.dev_private = priv;
- 
- 	dev_set_drvdata(dev, &priv->drm);
 -- 
 2.7.4
 
