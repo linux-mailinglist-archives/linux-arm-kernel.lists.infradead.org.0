@@ -2,54 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A0C1432C8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 07:30:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8C00432CA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 07:37:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=z2id53uXn2AQq6PtC+qtO7ktNtIUesitrOvZOB/asvU=; b=GiWHBeC2xk6iWW++ljIIBc33c
-	Zc2OO8v3klg08kNZAgBLCvvf3IdzP4mAj7eep/6fdGNNyGvbhfM5yPQukd0HnIZJX34v8S2Myocuc
-	lAR4//GZ6l6vrMRHLiVhGUcRjx/XpBdw0KkGTL5I2MDqtaSdSFo1tBZl/PeOieny/JkSSKJnLz2RF
-	8cZpBj6HhL22fmkpF+ygGDMw3t57sedcxjVJsLnxp4H1A5iJu6C8k5aAUsKgVE8K3OFbFCv3EaI64
-	/M39yOaySUEyXDxfYxseeDTzajFA6gSJB0IuUzo5xEo6hJXxamEaDMe20RN8aHpccWWWFGO363tyN
-	AEYHjztSg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1RrD91U2pNNTX8ueC7toVch7OK0b09q79MNiZF87wdY=; b=ZvqmRRvf56qmMx
+	Q+ADmXrWxf5GtEMzLdyueevWH7Ofq+BaUXhBww5mg+viiiYYLXk14ku0fVwUeBxt2txAK3Pct2EsW
+	EI0dR3JKv0wFTIJHNdzEfuzL3iRhXVmWvFqnmi9T78EAsV34plQNbSfjfEdK7YVXZWfQY5RaykFq/
+	09m4Hdund4XXuUwk5ryh43NLtuMg6rLhOuoytis55ucY/6m+iTy0qegqWOuEM61JsjNPdXbcZAMl5
+	nWfuGLp7lVJCZWKw9SPHOVnOYETM+NKSF84cAf+QZPxgCBVTPeOukt3SiGmUrjCbJWcphvrS0FYFz
+	EYWU4w4z1dedOlKF68fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbIJA-0004sH-GR; Thu, 13 Jun 2019 05:29:56 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbIIx-0004pE-H5; Thu, 13 Jun 2019 05:29:45 +0000
-X-Originating-IP: 79.86.19.127
-Received: from [192.168.0.12] (127.19.86.79.rev.sfr.net [79.86.19.127])
- (Authenticated sender: alex@ghiti.fr)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 30F5620007;
- Thu, 13 Jun 2019 05:29:26 +0000 (UTC)
-Subject: Re: [PATCH v4 00/14] Provide generic top-down mmap layout functions
-To: Paul Burton <paul.burton@mips.com>
-References: <20190526134746.9315-1-alex@ghiti.fr>
-From: Alex Ghiti <alex@ghiti.fr>
-Message-ID: <bfb1565d-0468-8ea8-19f9-b862faa4f1d4@ghiti.fr>
-Date: Thu, 13 Jun 2019 01:29:26 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+	id 1hbIQZ-0000ET-KI; Thu, 13 Jun 2019 05:37:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbIQH-0000E1-Vg
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 05:37:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3C1A428;
+ Wed, 12 Jun 2019 22:37:15 -0700 (PDT)
+Received: from [10.162.40.191] (p8cg001049571a15.blr.arm.com [10.162.40.191])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ AB5673F73C; Wed, 12 Jun 2019 22:37:11 -0700 (PDT)
+Subject: Re: [PATCH V5 - Rebased] mm/hotplug: Reorder memblock_[free|remove]()
+ calls in try_remove_memory()
+To: Andrew Morton <akpm@linux-foundation.org>,
+ David Hildenbrand <david@redhat.com>
+References: <36e0126f-e2d1-239c-71f3-91125a49e019@redhat.com>
+ <1560252373-3230-1-git-send-email-anshuman.khandual@arm.com>
+ <20190611151908.cdd6b73fd17fda09b1b3b65b@linux-foundation.org>
+ <5b4f1f19-2f8d-9b8f-4240-7b728952b6fe@arm.com>
+ <67f5c5ad-d753-77d8-8746-96cf4746b3e0@redhat.com>
+ <20190612185450.73841b9f5af3a4189de6f910@linux-foundation.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <92ce901d-42dc-6872-1ff0-0ca13d5cefbe@arm.com>
+Date: Thu, 13 Jun 2019 11:07:30 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <20190526134746.9315-1-alex@ghiti.fr>
-Content-Language: sv-FI
+In-Reply-To: <20190612185450.73841b9f5af3a4189de6f910@linux-foundation.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_222943_929796_1F834194 
-X-CRM114-Status: GOOD (  23.95  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190612_223718_067615_9DB197F1 
+X-CRM114-Status: GOOD (  12.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,124 +68,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Albert Ou <aou@eecs.berkeley.edu>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Palmer Dabbelt <palmer@sifive.com>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Luis Chamberlain <mcgrof@kernel.org>,
- linux-riscv@lists.infradead.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- James Hogan <jhogan@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linux-mips@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, mhocko@suse.com, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ ard.biesheuvel@arm.com, linux-arm-kernel@lists.infradead.org,
+ osalvador@suse.de
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/26/19 9:47 AM, Alexandre Ghiti wrote:
-> This series introduces generic functions to make top-down mmap layout
-> easily accessible to architectures, in particular riscv which was
-> the initial goal of this series.
-> The generic implementation was taken from arm64 and used successively
-> by arm, mips and finally riscv.
->
-> Note that in addition the series fixes 2 issues:
-> - stack randomization was taken into account even if not necessary.
-> - [1] fixed an issue with mmap base which did not take into account
->    randomization but did not report it to arm and mips, so by moving
->    arm64 into a generic library, this problem is now fixed for both
->    architectures.
->
-> This work is an effort to factorize architecture functions to avoid
-> code duplication and oversights as in [1].
->
-> [1]: https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1429066.html
->
-> Changes in v4:
->    - Make ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT select ARCH_HAS_ELF_RANDOMIZE
->      by default as suggested by Kees,
->    - ARCH_WANT_DEFAULT_TOPDOWN_MMAP_LAYOUT depends on MMU and defines the
->      functions needed by ARCH_HAS_ELF_RANDOMIZE => architectures that use
->      the generic mmap topdown functions cannot have ARCH_HAS_ELF_RANDOMIZE
->      selected without MMU, but I think it's ok since randomization without
->      MMU does not add much security anyway.
->    - There is no common API to determine if a process is 32b, so I came up with
->      !IS_ENABLED(CONFIG_64BIT) || is_compat_task() in [PATCH v4 12/14].
->    - Mention in the change log that x86 already takes care of not offseting mmap
->      base address if the task does not want randomization.
->    - Re-introduce a comment that should not have been removed.
->    - Add Reviewed/Acked-By from Paul, Christoph and Kees, thank you for that.
->    - I tried to minimize the changes from the commits in v3 in order to make
->      easier the review of the v4, the commits changed or added are:
->      - [PATCH v4 5/14]
->      - [PATCH v4 8/14]
->      - [PATCH v4 11/14]
->      - [PATCH v4 12/14]
->      - [PATCH v4 13/14]
-
-Hi Paul,
-
-Compared to the previous version you already acked, patches 11, 12 and 13
-would need your feedback, do you have time to take a look at them ?
-
-Hope I don't bother you,
-
-Thanks,
-
-Alex
 
 
->
-> Changes in v3:
->    - Split into small patches to ease review as suggested by Christoph
->      Hellwig and Kees Cook
->    - Move help text of new config as a comment, as suggested by Christoph
->    - Make new config depend on MMU, as suggested by Christoph
->
-> Changes in v2 as suggested by Christoph Hellwig:
->    - Preparatory patch that moves randomize_stack_top
->    - Fix duplicate config in riscv
->    - Align #if defined on next line => this gives rise to a checkpatch
->      warning. I found this pattern all around the tree, in the same proportion
->      as the previous pattern which was less pretty:
->      git grep -C 1 -n -P "^#if defined.+\|\|.*\\\\$"
->
-> Alexandre Ghiti (14):
->    mm, fs: Move randomize_stack_top from fs to mm
->    arm64: Make use of is_compat_task instead of hardcoding this test
->    arm64: Consider stack randomization for mmap base only when necessary
->    arm64, mm: Move generic mmap layout functions to mm
->    arm64, mm: Make randomization selected by generic topdown mmap layout
->    arm: Properly account for stack randomization and stack guard gap
->    arm: Use STACK_TOP when computing mmap base address
->    arm: Use generic mmap top-down layout and brk randomization
->    mips: Properly account for stack randomization and stack guard gap
->    mips: Use STACK_TOP when computing mmap base address
->    mips: Adjust brk randomization offset to fit generic version
->    mips: Replace arch specific way to determine 32bit task with generic
->      version
->    mips: Use generic mmap top-down layout and brk randomization
->    riscv: Make mmap allocation top-down by default
->
->   arch/Kconfig                       |  11 +++
->   arch/arm/Kconfig                   |   2 +-
->   arch/arm/include/asm/processor.h   |   2 -
->   arch/arm/kernel/process.c          |   5 --
->   arch/arm/mm/mmap.c                 |  52 --------------
->   arch/arm64/Kconfig                 |   2 +-
->   arch/arm64/include/asm/processor.h |   2 -
->   arch/arm64/kernel/process.c        |   8 ---
->   arch/arm64/mm/mmap.c               |  72 -------------------
->   arch/mips/Kconfig                  |   2 +-
->   arch/mips/include/asm/processor.h  |   5 --
->   arch/mips/mm/mmap.c                |  84 ----------------------
->   arch/riscv/Kconfig                 |  11 +++
->   fs/binfmt_elf.c                    |  20 ------
->   include/linux/mm.h                 |   2 +
->   kernel/sysctl.c                    |   6 +-
->   mm/util.c                          | 107 ++++++++++++++++++++++++++++-
->   17 files changed, 137 insertions(+), 256 deletions(-)
->
+On 06/13/2019 07:24 AM, Andrew Morton wrote:
+> On Wed, 12 Jun 2019 08:53:33 +0200 David Hildenbrand <david@redhat.com> wrote:
+> 
+>>>>> ...
+>>>>>
+>>>>>
+>>>>> - Rebased on linux-next (next-20190611)
+>>>>
+>>>> Yet the patch you've prepared is designed for 5.3.  Was that
+>>>> deliberate, or should we be targeting earlier kernels?
+>>>
+>>> It was deliberate for 5.3 as a preparation for upcoming reworked arm64 hot-remove.
+>>>
+>>
+>> We should probably add to the patch description something like "This is
+>> a preparation for arm64 memory hotremove. The described issue is not
+>> relevant on other architectures."
+> 
+> Please.  And is there any reason to merge it separately?  Can it be
+> [patch 1/3] in the "arm64/mm: Enable memory hot remove" series?
+
+Sure it can be. I will make this [patch 1/3] in the next version for
+"arm64/mm: Enable memory hot remove". Apologies for the noise here.
 
 _______________________________________________
 linux-arm-kernel mailing list
