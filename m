@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 930B344306
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:29:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B12F44309
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 18:29:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4GdMfYMe1as7YHlHDllyjoc5A6MXpi21V4B25fqPmjM=; b=PwL5rfaScM0EccO0d1xBqOhSFy
-	h2JaTWDKw+nYHhY1v/iidiq7b1PtnEIEaKLR0/flATQNrd3B8XOuMV9WHcfZm7ubALYmAmxlVZWCg
-	Wl+YWINwqRpvkzpGESAwB1e66K8Wv9X/swExR737VBZThmYwpNhxLwklGcbqJ3hTV4BwRkZ3jIzv1
-	sM1HN6tgwnW1/r7WGpB+nreusWFzhVy7aeLss6gquXCdOR+6Zb/RY7fxAmNS1dhqYc4oEyrb3z9cU
-	yQ+kBfXU/JySmIm4ZtzyrRk1bT1MGeZHvGlvc+hhMwLh8i2CSfc9l3LBfEhrTxz1t5fHlfr1ZrUcf
-	61ZQKz/w==;
+	bh=+fMsk8DmLivtN1c6YxZc7gc3HXsJAj4YKZnyluKySK8=; b=nOtmA3Ji0pMOQ8ET8ANUY43zso
+	6Dvp/3tgp4IAfWJ/FnoMVnvqfjKQHLW/uLbEOTRvtH1IG+lkGfDmZ4Pf5FQ8TzSg0OY6BJAH5+n+n
+	Uj/phdu+7O98OVBhG+j3njwxXLfLVICYAkavVoua29RDa5VjBLSLxQCbgL1/96MtScKKtAdz82mE2
+	iwgEseafIkUSqznXw4oYYZei5CjcESpS+PlYidk/xxZ48GEMcdoGEtSzmImn5E/TPG5B38lZ2fKKB
+	7khkmqjF1znsdn9/8JazoU7FSTMWScd1K8EYMWHTp//5H3qKwEC6PgK2XzLQdn7v8PUOF6gw7iXmO
+	rzdigo/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSbP-0004IH-Aw; Thu, 13 Jun 2019 16:29:27 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hbSbj-0004ah-O9; Thu, 13 Jun 2019 16:29:47 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSZV-0002k4-4c; Thu, 13 Jun 2019 16:27:32 +0000
-Received: by mail-pl1-x642.google.com with SMTP id s24so8351862plr.8;
- Thu, 13 Jun 2019 09:27:28 -0700 (PDT)
+ id 1hbSZY-0002ma-AN; Thu, 13 Jun 2019 16:27:34 +0000
+Received: by mail-pf1-x442.google.com with SMTP id i189so12151245pfg.10;
+ Thu, 13 Jun 2019 09:27:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=jzRIWp8sjvta+E1GyPP4P8N5byAmizxIfWuhxK6cbfw=;
- b=Hu385w6EtH5CYuRhgbP11gNSmmeNm2mqhecXis7zbgcdfqeJgxUK2+mvXCRVvaGiNz
- Z7j2bS5kQHHqOpwmcjBC/t4hjw1Pz0VPYlDDRwL4k24b03dOHX89NXThVUV4wZB0LX9I
- TlT1LPFkT+Kix2FJQVJXSStbnFVm6Y6TAgpTQEzoA1YrP2hkSxgTxJUbVXz2ojngVaEt
- +lsGxMtUQO8XxgYNwBAd6NNqiECPxDt0h2jaRoMlmXdrMA/EJipXhCA9b+Q5dktea4dx
- s8qHZQu3bov7P+YH8mhwdO0kdFM5f51VyKWG4lZOkXqRnZst+OrCWDHWzbD441dKvF3Z
- 0Zdg==
+ bh=IszorbYpZ8EP1Tp+nYz4SokI6QENBhp1O9rNXrNQTYg=;
+ b=CQ18UcaJLPYS/u6Oo5otSFFQ7Ecriq4cKTb+yUFrnQ8mDlkdVFjdraR/sG7mwrbfzt
+ w8430KSMbyef/tMS+IkO5hME1L9flVDQFWFPD8neeaCMQkgB6f4nEziS8Xg9752KnHa0
+ 36/X+0NI440Psui6njrXRDPWczTwak5kRpJmMazWysWKXZLfiJ+UiHLYDBEh6y4h3kZQ
+ 9PpUKF/2rjgq+5r1CeBnwisBRwrOUdvCztqfJxXrLoPHuyh2U5A/ah80mky6jnOWXDtg
+ ev/u/kfEiqAyPZd9EOCcPyI8E4hYpcmIACwxYluSmBqoDA3N8UebR87b38ShqeI7uV1e
+ 9G5w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=jzRIWp8sjvta+E1GyPP4P8N5byAmizxIfWuhxK6cbfw=;
- b=jpokBem16YE0VuYyK4/rnwfuMycE9e+ydB2bTYLa6iB9FnLRA0z6iUQ9AbAzKxJ2Rm
- 0k/B5nDNzf0og26kSQncM43q8xofU4lWOIuqD0JuBJmO70PkNHR5HS+Epttb/H1W5K1L
- 1G6eaxmU/f5D+P0/5qCCsqECdOqerXkqJKQ6ogVs6OSlSlRgNgYJZUghKquBZp5bpE1g
- sTO+GFw/PgKnl+86cWietQG8zk8EFjakOzmPUnQGH7QVjH7xOXwxWvsDVA8MNOTpHjOX
- 8vG/oa4b0sxzfdQHpZ/gmx1H7PWCyCLPSSUnrFbnb8EOlP2svCXHV7ZApb1qiDaTd/9F
- BiuQ==
-X-Gm-Message-State: APjAAAUvz0Cp5Hy0OcYkupDIHsWyYMLx5vRJA9ahVOOJ7GQMAN9RL/wx
- 2vUoqQfZ0Dbuwctd7szCUwc=
-X-Google-Smtp-Source: APXvYqyWo/fan+upwuWjeJEQ+9bFsdtSKc6ZRW1lB3ZdlcdwZgQYZ6AcEoo3rKRnpeNvJsgWS9Wpww==
-X-Received: by 2002:a17:902:54d:: with SMTP id
- 71mr86570437plf.140.1560443247944; 
- Thu, 13 Jun 2019 09:27:27 -0700 (PDT)
+ bh=IszorbYpZ8EP1Tp+nYz4SokI6QENBhp1O9rNXrNQTYg=;
+ b=YndlAml6Ua08v5gKkgGQsNORT8Hi8luVHpAOwiwodeRF3RoXaqntgeOBaDN11mWFis
+ hk48OF1DqQd3Q+HK5Wk9jucXH8y5pIkQITxhyhF3XkStDDyke6LiY44+3ETmqh74l9VV
+ 3D6qQjsKA7O/pf4WTGCDob0wB4gqpJFCIWhPzIBFArXn0IHtZ7qEbja3VIM/bndHOpPD
+ 2xXYY23DBubAlhmkJJ3cbnHijNv+0gafF6a5CaPGCD8dtUjJE34UowrIBBVjAdwEpyZ5
+ iUN7DtmWALHthOqxZn/eeHvnVL8nPxsJF1zrBDrnraOU5X0vCnYxELWrDqfNkiEk+MbZ
+ LsAA==
+X-Gm-Message-State: APjAAAU6Msr7SxDXCbWCJxSUpUOmauJYdoyqWcmFwxeFh+gv6qogy5Sk
+ LerYlwDcVN7ekc00VGsYgCY=
+X-Google-Smtp-Source: APXvYqxufy0T2XKD0lth4cHLWERwXJoOmg14CS0iBJUyYk6CLpJnRVrFofyyxkm03jlk+bd+w9w2OA==
+X-Received: by 2002:a63:1516:: with SMTP id v22mr32253463pgl.204.1560443251259; 
+ Thu, 13 Jun 2019 09:27:31 -0700 (PDT)
 Received: from localhost (68.168.130.77.16clouds.com. [68.168.130.77])
- by smtp.gmail.com with ESMTPSA id w1sm177958pfg.51.2019.06.13.09.27.27
+ by smtp.gmail.com with ESMTPSA id t26sm289990pgu.43.2019.06.13.09.27.30
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Jun 2019 09:27:27 -0700 (PDT)
+ Thu, 13 Jun 2019 09:27:30 -0700 (PDT)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: joro@8bytes.org, m.szyprowski@samsung.com, kgene@kernel.org,
  krzk@kernel.org, will.deacon@arm.com, robin.murphy@arm.com,
  agross@kernel.org, david.brown@linaro.org, robdclark@gmail.com,
  heiko@sntech.de, thierry.reding@gmail.com, jonathanh@nvidia.com
-Subject: [PATCH 06/10] iommu/io-pgtable-arm-v7s: convert to SPDX license tags
-Date: Thu, 13 Jun 2019 12:26:59 -0400
-Message-Id: <20190613162703.986-6-tiny.windzz@gmail.com>
+Subject: [PATCH 07/10] iommu/io-pgtable-arm: convert to SPDX license tags
+Date: Thu, 13 Jun 2019 12:27:00 -0400
+Message-Id: <20190613162703.986-7-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.0
 In-Reply-To: <20190613162703.986-1-tiny.windzz@gmail.com>
 References: <20190613162703.986-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_092729_298446_BF061C22 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20190613_092732_443960_621F3B9D 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,21 +112,17 @@ Updates license to use SPDX-License-Identifier.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/iommu/io-pgtable-arm-v7s.c | 13 +------------
+ drivers/iommu/io-pgtable-arm.c | 13 +------------
  1 file changed, 1 insertion(+), 12 deletions(-)
 
-diff --git a/drivers/iommu/io-pgtable-arm-v7s.c b/drivers/iommu/io-pgtable-arm-v7s.c
-index 9a8a8870e267..fd0c8f2def45 100644
---- a/drivers/iommu/io-pgtable-arm-v7s.c
-+++ b/drivers/iommu/io-pgtable-arm-v7s.c
-@@ -1,3 +1,4 @@
+diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+index 4e21efbc4459..6282c45eefaa 100644
+--- a/drivers/iommu/io-pgtable-arm.c
++++ b/drivers/iommu/io-pgtable-arm.c
+@@ -1,18 +1,7 @@
 +// SPDX-License-Identifier: GPL-2.0
  /*
   * CPU-agnostic ARM page table allocator.
-  *
-@@ -14,18 +15,6 @@
-  * - PXN
-  * - Domains
   *
 - * This program is free software; you can redistribute it and/or modify
 - * it under the terms of the GNU General Public License version 2 as
@@ -141,9 +136,9 @@ index 9a8a8870e267..fd0c8f2def45 100644
 - * You should have received a copy of the GNU General Public License
 - * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 - *
-  * Copyright (C) 2014-2015 ARM Limited
-  * Copyright (c) 2014-2015 MediaTek Inc.
-  */
+  * Copyright (C) 2014 ARM Limited
+  *
+  * Author: Will Deacon <will.deacon@arm.com>
 -- 
 2.17.0
 
