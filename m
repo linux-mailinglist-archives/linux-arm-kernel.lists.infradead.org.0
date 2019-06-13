@@ -2,52 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5757943DDA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:46:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AF9443E77
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 17:50:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eKV4L9tNsFilQLTRdUETM63wYjI17k07GFuJOSUCXJA=; b=JwY+0SI9wuvtn2
-	72YFYsXpRxv6cFqbLePW1+ATuAFo9ztE0LyIA+jrOEkuq7cgGsC+p5YQA7vo937MHvfh0txrNHhxd
-	OzMR29etoR35wG7Ut//WbwXuiy8emqOD2L/nVHpUT0NOjtUbD/XxfpbPNcOmkEm4Vn4VhxHT34Az8
-	5aFBgbyhGuySHG9sPvsrWpTbiRRCESN4sejXqrtHFuJqo2HU2DRRhfpnghoivQE8RDbVSrCUwPD+9
-	mz3xAqonBpAf1pOysZG7borafQZxDzeJn2bd09dx4VVMdPlqeFYfQ0FT3o8hCxO99VvGak/oxLQrC
-	hHtkxCQyOtL3MStd257Q==;
+	List-Owner; bh=SLSbx+0zF6IST8qsY9P9oyc8xpXPCoLLEhFxYJe/xCo=; b=Uc17y0tC4Y0033
+	jO196wlIulMz/HjKXxdmVr7OaMNUfBpQP1aUaMZ6I7QuRQuOjiu+ZURvaKzRKiMGzbLiZbmbMxIuI
+	Q8nckG1ItXp0pvGV2Zdrlp9vfdypYAnfh9SeYrPBXjFBwzlWkxpL6QF05c3TkzNFwBqKtcd5OhfEF
+	la9akHWFMJMTenjuocD2/KZ8uRRAUD48VOP2LyNitaKxRjFrpWe1qSiTyFJkn6bm5/J5YG0Mfn6Pn
+	Q4IC1GuoUaEOSi2f61U9RHjESsVa0FJS3D8Oxo9JxC8DBOMDGlkdDmizSa9+Nvq6HsSJsRr5tF8Q7
+	c3BFXb28887BxKONYAMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbRvc-0007Hd-5l; Thu, 13 Jun 2019 15:46:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hbRvN-0007Gu-VG
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 15:46:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 35647367;
- Thu, 13 Jun 2019 08:46:01 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EA3A53F246;
- Thu, 13 Jun 2019 08:45:55 -0700 (PDT)
-Subject: Re: [PATCH v17 03/15] arm64: Introduce prctl() options to control the
- tagged user addresses ABI
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Dave Martin <Dave.Martin@arm.com>
-References: <cover.1560339705.git.andreyknvl@google.com>
- <a7a2933bea5fe57e504891b7eec7e9432e5e1c1a.1560339705.git.andreyknvl@google.com>
- <20190613111659.GX28398@e103592.cambridge.arm.com>
- <20190613153505.GU28951@C02TF0J2HF1T.local>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <99cc257d-5e99-922a-fbe7-3bbaf3621e38@arm.com>
-Date: Thu, 13 Jun 2019 16:45:54 +0100
+	id 1hbRzr-0000wP-QA; Thu, 13 Jun 2019 15:50:39 +0000
+Received: from relay.sw.ru ([185.231.240.75])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbRzb-0000t1-7L; Thu, 13 Jun 2019 15:50:25 +0000
+Received: from [172.16.25.12] by relay.sw.ru with esmtp (Exim 4.92)
+ (envelope-from <aryabinin@virtuozzo.com>)
+ id 1hbRzR-0002en-B5; Thu, 13 Jun 2019 18:50:13 +0300
+Subject: Re: [PATCH v3] kasan: add memory corruption identification for
+ software tag-based mode
+To: Dmitry Vyukov <dvyukov@google.com>
+References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
+ <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
+ <CACT4Y+ZGEmGE2LFmRfPGgtUGwBqyL+s_CSp5DCpWGanTJCRcXw@mail.gmail.com>
+From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Message-ID: <278bd641-7d74-b9ac-1549-1e630ef3d38c@virtuozzo.com>
+Date: Thu, 13 Jun 2019 18:50:25 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190613153505.GU28951@C02TF0J2HF1T.local>
+In-Reply-To: <CACT4Y+ZGEmGE2LFmRfPGgtUGwBqyL+s_CSp5DCpWGanTJCRcXw@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_084602_103725_798D10CA 
-X-CRM114-Status: GOOD (  27.07  )
+X-CRM114-CacheID: sfid-20190613_085023_265592_72F267E0 
+X-CRM114-Status: GOOD (  15.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,30 +60,18 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Christian Koenig <Christian.Koenig@amd.com>,
- Szabolcs Nagy <Szabolcs.Nagy@arm.com>, Will Deacon <will.deacon@arm.com>,
- dri-devel@lists.freedesktop.org, Kostya Serebryany <kcc@google.com>,
- Khalid Aziz <khalid.aziz@oracle.com>, Lee Smith <Lee.Smith@arm.com>,
- linux-kselftest@vger.kernel.org, Jacob Bramley <Jacob.Bramley@arm.com>,
- Leon Romanovsky <leon@kernel.org>, linux-rdma@vger.kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, Dmitry Vyukov <dvyukov@google.com>,
- Evgeniy Stepanov <eugenis@google.com>, linux-media@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Ruben Ayrapetyan <Ruben.Ayrapetyan@arm.com>,
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ Walter Wu <walter-zh.wu@mediatek.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Linux-MM <linux-mm@kvack.org>,
  Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felix Kuehling <Felix.Kuehling@amd.com>, linux-kernel@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Ramana Radhakrishnan <Ramana.Radhakrishnan@arm.com>,
- Alexander Deucher <Alexander.Deucher@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, enh <enh@google.com>,
- Robin Murphy <robin.murphy@arm.com>, Yishai Hadas <yishaih@mellanox.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+ "Jason A . Donenfeld" <Jason@zx2c4.com>,
+ kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
+ Pekka Enberg <penberg@kernel.org>, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Miles Chen <miles.chen@mediatek.com>, Alexander Potapenko <glider@google.com>,
+ David Rientjes <rientjes@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Joonsoo Kim <iamjoonsoo.kim@lge.com>, Christoph Lameter <cl@linux.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -97,138 +79,51 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 13/06/2019 16:35, Catalin Marinas wrote:
-> On Thu, Jun 13, 2019 at 12:16:59PM +0100, Dave P Martin wrote:
->> On Wed, Jun 12, 2019 at 01:43:20PM +0200, Andrey Konovalov wrote:
->>> From: Catalin Marinas <catalin.marinas@arm.com>
+On 6/13/19 4:05 PM, Dmitry Vyukov wrote:
+> On Thu, Jun 13, 2019 at 2:27 PM Andrey Ryabinin <aryabinin@virtuozzo.com> wrote:
+>> On 6/13/19 11:13 AM, Walter Wu wrote:
+>>> This patch adds memory corruption identification at bug report for
+>>> software tag-based mode, the report show whether it is "use-after-free"
+>>> or "out-of-bound" error instead of "invalid-access" error.This will make
+>>> it easier for programmers to see the memory corruption problem.
 >>>
->>> It is not desirable to relax the ABI to allow tagged user addresses into
->>> the kernel indiscriminately. This patch introduces a prctl() interface
->>> for enabling or disabling the tagged ABI with a global sysctl control
->>> for preventing applications from enabling the relaxed ABI (meant for
->>> testing user-space prctl() return error checking without reconfiguring
->>> the kernel). The ABI properties are inherited by threads of the same
->>> application and fork()'ed children but cleared on execve().
+>>> Now we extend the quarantine to support both generic and tag-based kasan.
+>>> For tag-based kasan, the quarantine stores only freed object information
+>>> to check if an object is freed recently. When tag-based kasan reports an
+>>> error, we can check if the tagged addr is in the quarantine and make a
+>>> good guess if the object is more like "use-after-free" or "out-of-bound".
 >>>
->>> The PR_SET_TAGGED_ADDR_CTRL will be expanded in the future to handle
->>> MTE-specific settings like imprecise vs precise exceptions.
->>>
->>> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
->>> ---
->>>  arch/arm64/include/asm/processor.h   |  6 +++
->>>  arch/arm64/include/asm/thread_info.h |  1 +
->>>  arch/arm64/include/asm/uaccess.h     |  3 +-
->>>  arch/arm64/kernel/process.c          | 67 ++++++++++++++++++++++++++++
->>>  include/uapi/linux/prctl.h           |  5 +++
->>>  kernel/sys.c                         | 16 +++++++
->>>  6 files changed, 97 insertions(+), 1 deletion(-)
->>>
->>> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
->>> index fcd0e691b1ea..fee457456aa8 100644
->>> --- a/arch/arm64/include/asm/processor.h
->>> +++ b/arch/arm64/include/asm/processor.h
->>> @@ -307,6 +307,12 @@ extern void __init minsigstksz_setup(void);
->>>  /* PR_PAC_RESET_KEYS prctl */
->>>  #define PAC_RESET_KEYS(tsk, arg)	ptrauth_prctl_reset_keys(tsk, arg)
->>>  
->>> +/* PR_TAGGED_ADDR prctl */
 >>
->> (A couple of comments I missed in my last reply:)
 >>
->> Name mismatch?
+>> We already have all the information and don't need the quarantine to make such guess.
+>> Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
+>> otherwise it's use-after-free.
+>>
+>> In pseudo-code it's something like this:
+>>
+>> u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
+>>
+>> if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
+>>         // out-of-bounds
+>> else
+>>         // use-after-free
 > 
-> Yeah, it went through several names but it seems that I didn't update
-> all places.
-> 
->>> +long set_tagged_addr_ctrl(unsigned long arg);
->>> +long get_tagged_addr_ctrl(void);
->>> +#define SET_TAGGED_ADDR_CTRL(arg)	set_tagged_addr_ctrl(arg)
->>> +#define GET_TAGGED_ADDR_CTRL()		get_tagged_addr_ctrl()
->>> +
->>
->> [...]
->>
->>> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
->>> index 3767fb21a5b8..69d0be1fc708 100644
->>> --- a/arch/arm64/kernel/process.c
->>> +++ b/arch/arm64/kernel/process.c
->>> @@ -30,6 +30,7 @@
->>>  #include <linux/kernel.h>
->>>  #include <linux/mm.h>
->>>  #include <linux/stddef.h>
->>> +#include <linux/sysctl.h>
->>>  #include <linux/unistd.h>
->>>  #include <linux/user.h>
->>>  #include <linux/delay.h>
->>> @@ -323,6 +324,7 @@ void flush_thread(void)
->>>  	fpsimd_flush_thread();
->>>  	tls_thread_flush();
->>>  	flush_ptrace_hw_breakpoint(current);
->>> +	clear_thread_flag(TIF_TAGGED_ADDR);
->>>  }
->>>  
->>>  void release_thread(struct task_struct *dead_task)
->>> @@ -552,3 +554,68 @@ void arch_setup_new_exec(void)
->>>  
->>>  	ptrauth_thread_init_user(current);
->>>  }
->>> +
->>> +/*
->>> + * Control the relaxed ABI allowing tagged user addresses into the kernel.
->>> + */
->>> +static unsigned int tagged_addr_prctl_allowed = 1;
->>> +
->>> +long set_tagged_addr_ctrl(unsigned long arg)
->>> +{
->>> +	if (!tagged_addr_prctl_allowed)
->>> +		return -EINVAL;
->>
->> So, tagging can actually be locked on by having a process enable it and
->> then some possibly unrelated process clearing tagged_addr_prctl_allowed.
->> That feels a bit weird.
-> 
-> The problem is that if you disable the ABI globally, lots of
-> applications would crash. This sysctl is meant as a way to disable the
-> opt-in to the TBI ABI. Another option would be a kernel command line
-> option (I'm not keen on a Kconfig option).
->
+> But we don't have redzones in tag mode (intentionally), so unless I am
+> missing something we don't have the necessary info. Both cases look
+> the same -- we hit a different tag.
 
-Why you are not keen on a Kconfig option?
+We always have some redzone. We need a place to store 'struct kasan_alloc_meta',
+and sometimes also kasan_free_meta plus alignment to the next object.
 
->> Do we want to allow a process that has tagging on to be able to turn
->> it off at all?  Possibly things like CRIU might want to do that.
-> 
-> I left it in for symmetry but I don't expect it to be used. A potential
-> use-case is doing it per subsequent threads in an application.
-> 
->>> +	if (is_compat_task())
->>> +		return -EINVAL;
->>> +	if (arg & ~PR_TAGGED_ADDR_ENABLE)
->>> +		return -EINVAL;
->>
->> How do we expect this argument to be extended in the future?
-> 
-> Yes, for MTE. That's why I wouldn't allow random bits here.
-> 
->> I'm wondering whether this is really a bitmask or an enum, or a mixture
->> of the two.  Maybe it doesn't matter.
-> 
-> User may want to set PR_TAGGED_ADDR_ENABLE | PR_MTE_PRECISE in a single
-> call.
-> 
->>> +	if (arg & PR_TAGGED_ADDR_ENABLE)
->>> +		set_thread_flag(TIF_TAGGED_ADDR);
->>> +	else
->>> +		clear_thread_flag(TIF_TAGGED_ADDR);
->>
->> I think update_thread_flag() could be used here.
-> 
-> Yes. I forgot you added this.
+
+> There may only be a small trailer for kmalloc-allocated objects that
+> is painted with a different tag. I don't remember if we actually use a
+> different tag for the trailer. Since tag mode granularity is 16 bytes,
+> for smaller objects the trailer is impossible at all.
 > 
 
--- 
-Regards,
-Vincenzo
+Smaller that 16-bytes objects have 16 bytes of kasan_alloc_meta.
+Redzones and freed objects always painted with KASAN_TAG_INVALID.
 
 _______________________________________________
 linux-arm-kernel mailing list
