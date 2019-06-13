@@ -2,66 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7FC8449E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 19:47:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A92CD44A4D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 20:07:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXhcLKIcHXI0VYEFTTVY8UKjaRa2UWdoqjangzRS0e0=; b=nAv1e5LMJHLPW0
-	pv0DGZQmLgW3kfn8sehdro8p+VlkEnqbIgA6ioSl0Q4NiXVl06M9FAcuh16Lu9vMyxOk5YDerYe+t
-	yQBhZNKxMHwoID3OIA7y10koV6rfeGzY6OpjeG4tZWbBeFPxtPqwY+hqjPnmEqdV/STqctmhqbZOo
-	Hxt3TudFWNgALbVlxwrPOUMpWuyywQsMwso0DRrl8AkHwMb8N+VeJo8C8mXHJnNWImVlgD2Md+u1P
-	90KIh0K8Ye9BFrNYpQ6SyJSyDcc7NOQAgzDkWEM45MZ5AwSYSJT+S1Brh3K7PJJB82lSgOgV5/Qbl
-	QSk7ZhxCZYOzsTxkdZww==;
+	List-Owner; bh=xgx8P2ie9AZzDphZmyUGsff9Y7KOAymYZ/jmp89+/Uo=; b=WeFrlNlWrsIldM
+	j5jL/4N47eVpFsc2z0gzfQ20pOF/a57oHpaNg6AhlT9qsFtpp8tKaohjwD4VJuraOrDHlh3+JjkPd
+	LtjrLruzvKJFmqHEwDrrVCsyFQaswWe7QYp+q82TzNbCjD6CYF3J78usp5wD2MYGhZF7c+g+sZW/x
+	K34R4JTbZvYvt6uivIwzGtcDV9LhN7YE2E3vyvs5XQcjBf1kjVdQGTxL2XD6quHwPB6Ru3XLqKfmN
+	Xyg8JfWs3rA1iI9vJo0482dMm+KRhrxeZnPyxStlcLubAYnz7+ngeImPsVUvN3xBXP7n4joQaJkpK
+	0glOEMAlEXfcvA023sqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbToa-0004NQ-VS; Thu, 13 Jun 2019 17:47:08 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hbU8Z-0004Mp-Et; Thu, 13 Jun 2019 18:07:47 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbToR-0004Lu-JR; Thu, 13 Jun 2019 17:47:00 +0000
-X-UUID: 5161a3908e914fadaee305eea5777c55-20190613
-X-UUID: 5161a3908e914fadaee305eea5777c55-20190613
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 342591265; Thu, 13 Jun 2019 09:46:55 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Jun 2019 10:46:54 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 14 Jun 2019 01:46:39 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 14 Jun 2019 01:46:39 +0800
-Message-ID: <1560447999.15814.15.camel@mtksdccf07>
-Subject: Re: [PATCH v3] kasan: add memory corruption identification for
- software tag-based mode
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Date: Fri, 14 Jun 2019 01:46:39 +0800
-In-Reply-To: <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
-References: <20190613081357.1360-1-walter-zh.wu@mediatek.com>
- <da7591c9-660d-d380-d59e-6d70b39eaa6b@virtuozzo.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1hbU8R-0004M3-Eh
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 18:07:40 +0000
+Received: by mail-qt1-f196.google.com with SMTP id m29so23648513qtu.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Jun 2019 11:07:36 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Oj9KR+T1fOqKQ4FESSVm1jnPwC60Lm44k4F4XEoSR9o=;
+ b=o92/yQq38Ff0Q3c92WLFf9xfpPVVGPXUaByxjbOlw57+mj1mzD+gT0QzH8HiJOWjKp
+ CWsj6tKnrqWfzh+LTFhQz+8Mx6r0hYbTVf4rfsGDHUGWC14KK4mzyk4eAuRdm3jLLd+6
+ H+M2QacQriB5qby/NOhJgTDqtjRtpFrIeZNOjvGvM0IQlLxqpPhHXiIrxJNK+Qnsc3iG
+ rivq5c6pMeqYOeNIim7jUu6m7QQrV40tS9NIOtOGTJvbrA1ISI6ZEX/yd9IV1Oau9qeN
+ 6lQxGrpS9QS//GPAmLBonyRCRt0ZqDLigL9JlOgjnW9F+b/9qJV+KuGSr1BTTj2fPkjF
+ dnHQ==
+X-Gm-Message-State: APjAAAWnBPwmNt5QQzlq/sFZi3QGV0tMfL0RaQdZO2PRA+9zES8AJi9s
+ tRjzBsDkRuUAu/30kGlJgA==
+X-Google-Smtp-Source: APXvYqyUp5hOsDZfLIs3lS90BPkWO4yBBGNdYOYbR9C7XHV9gSGJlFFkMIKIt+hKrpXob3c5vDNzQQ==
+X-Received: by 2002:a0c:d1f0:: with SMTP id k45mr4787080qvh.69.1560449255707; 
+ Thu, 13 Jun 2019 11:07:35 -0700 (PDT)
+Received: from localhost ([64.188.179.243])
+ by smtp.gmail.com with ESMTPSA id x10sm264965qtc.34.2019.06.13.11.07.34
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 13 Jun 2019 11:07:35 -0700 (PDT)
+Date: Thu, 13 Jun 2019 12:07:34 -0600
+From: Rob Herring <robh@kernel.org>
+To: Peng Ma <peng.ma@nxp.com>
+Subject: Re: [PATCH 4/4] dt-bindings: fsl-qdma: Add LS1028A qDMA bindings
+Message-ID: <20190613180734.GA3178@bogus>
+References: <20190506090344.37784-1-peng.ma@nxp.com>
+ <20190506090344.37784-4-peng.ma@nxp.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 73E573334F60FA682523A92B528AE4E79ADB9EB515874F36690B616CC9E25A672000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20190506090344.37784-4-peng.ma@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_104659_644257_F0418732 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190613_110739_493486_61EB1BFD 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.196 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,83 +92,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, "Jason A . Donenfeld" <Jason@zx2c4.com>, Vasily
- Gorbik <gor@linux.ibm.com>, Arnd Bergmann <arnd@arndb.de>, linux-mm@kvack.org,
- Andrey Konovalov <andreyknvl@google.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, Pekka Enberg <penberg@kernel.org>, Martin
- Schwidefsky <schwidefsky@de.ibm.com>, Miles Chen <miles.chen@mediatek.com>,
- Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
- David Rientjes <rientjes@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Christoph Lameter <cl@linux.com>, Joonsoo Kim <iamjoonsoo.kim@lge.com>,
- Dmitry Vyukov <dvyukov@google.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, Peng Ma <peng.ma@nxp.com>,
+ linux-kernel@vger.kernel.org, leoyang.li@nxp.com, vkoul@kernel.org,
+ robh+dt@kernel.org, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-06-13 at 15:27 +0300, Andrey Ryabinin wrote:
+On Mon,  6 May 2019 09:03:44 +0000, Peng Ma wrote:
+> Add LS1028A qDMA controller bindings to fsl-qdma bindings.
 > 
-> On 6/13/19 11:13 AM, Walter Wu wrote:
-> > This patch adds memory corruption identification at bug report for
-> > software tag-based mode, the report show whether it is "use-after-free"
-> > or "out-of-bound" error instead of "invalid-access" error.This will make
-> > it easier for programmers to see the memory corruption problem.
-> > 
-> > Now we extend the quarantine to support both generic and tag-based kasan.
-> > For tag-based kasan, the quarantine stores only freed object information
-> > to check if an object is freed recently. When tag-based kasan reports an
-> > error, we can check if the tagged addr is in the quarantine and make a
-> > good guess if the object is more like "use-after-free" or "out-of-bound".
-> > 
+> Signed-off-by: Peng Ma <peng.ma@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/dma/fsl-qdma.txt |    1 +
+>  1 files changed, 1 insertions(+), 0 deletions(-)
 > 
-> 
-> We already have all the information and don't need the quarantine to make such guess.
-> Basically if shadow of the first byte of object has the same tag as tag in pointer than it's out-of-bounds,
-> otherwise it's use-after-free.
-> 
-> In pseudo-code it's something like this:
-> 
-> u8 object_tag = *(u8 *)kasan_mem_to_shadow(nearest_object(cacche, page, access_addr));
-> 
-> if (access_addr_tag == object_tag && object_tag != KASAN_TAG_INVALID)
-> 	// out-of-bounds
-> else
-> 	// use-after-free
 
-Thanks your explanation.
-I see, we can use it to decide corruption type.
-But some use-after-free issues, it may not have accurate free-backtrace.
-Unfortunately in that situation, free-backtrace is the most important.
-please see below example
-
-In generic KASAN, it gets accurate free-backrace(ptr1).
-In tag-based KASAN, it gets wrong free-backtrace(ptr2). It will make
-programmer misjudge, so they may not believe tag-based KASAN.
-So We provide this patch, we hope tag-based KASAN bug report is the same
-accurate with generic KASAN.
-
----
-    ptr1 = kmalloc(size, GFP_KERNEL);
-    ptr1_free(ptr1);
-
-    ptr2 = kmalloc(size, GFP_KERNEL);
-    ptr2_free(ptr2);
-
-    ptr1[size] = 'x';  //corruption here
-
-
-static noinline void ptr1_free(char* ptr)
-{
-    kfree(ptr);
-}
-static noinline void ptr2_free(char* ptr)
-{
-    kfree(ptr);
-}
----
-
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
