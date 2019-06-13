@@ -2,67 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A01143236
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 04:30:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5573243238
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Jun 2019 04:33:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uaqLnUPACktq0k4tY+771gn1OOmPDR2snMBHIp+uK6U=; b=PE4keMw0oO2xYi
-	s9nBvLgP4wZ8Jk/I66zy6T1Xh7/IOs1h4kysP5MMx2XbCAqDAkvsPXv73m7hQTpNT4gBpmSLUmlHN
-	NL92WjwZuK/Yvb14iqpnljN0FpnUkzlvkzilggLEKQrXPmWvfdbhDSQD/eNnI8+qx9vDzG4ERUZKc
-	qjxN+TWOYgBS/CCs2VrIAB/sBsoHNg2C5nDWLBEf4Vkt5RR8PfJWHYxk6BmSy7ZL6qB8Mlje/5Bt+
-	JPCufFrTz3Htox38KYqsnwgGYBq2KyMAby3C2KOXV+wu0E3N1R6WLt+sEDdHXKcZYT2/EPOV0oJ0h
-	5znYYIiLOPm2ryCCo1JA==;
+	List-Owner; bh=kSWJS7Puo7fB65E8X/cfq5cA/9b81A62ywLdIqJj6Ow=; b=ZEEmC+HE9FQnpe
+	4AtyYfODDpDMz8qwxKZy5ce35Pe0xdOM1ggYqbsv+GiPsW45XXbBM9oUrs7l9q4R831LPLPbgGCC1
+	X89Jk1vzbfApuw+CtjDoXR3s5El7MO7vx9FaaFgjH6itc2WYqgmByw56VKNrLEWZXnvDhpoDxXFPM
+	Waskw7+cNRCJUX6TSrhxcVe64+UFd0UF8wpszcKmbqLwMzmM/HtorAASrYKQVgnkZP+GH+K/l2N8G
+	37Q9Te1pz1oW28h4bdpJY8qxGIgLrmHUAxk5I6KqHAvM3CzIwQCejQiiFI+MHj2xDYLCZEPIh1SB0
+	YeNtNNksWax6ZRXFHW1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbFV1-0005xr-1a; Thu, 13 Jun 2019 02:29:59 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hbFY5-0008Hg-FA; Thu, 13 Jun 2019 02:33:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbFUh-0005uj-UX; Thu, 13 Jun 2019 02:29:43 +0000
-X-UUID: 4cee5152e24e4304a66589aa8fbea6bc-20190612
-X-UUID: 4cee5152e24e4304a66589aa8fbea6bc-20190612
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <qii.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1341577592; Wed, 12 Jun 2019 18:29:25 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Jun 2019 19:29:24 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 13 Jun 2019 10:29:22 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 13 Jun 2019 10:29:21 +0800
-Message-ID: <1560392961.12217.7.camel@mhfsdcap03>
-Subject: Re: [PATCH 2/2] i3c: master: Add driver for MediaTek IP
-From: Qii Wang <qii.wang@mediatek.com>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Date: Thu, 13 Jun 2019 10:29:21 +0800
-In-Reply-To: <20190611142849.43f6d1e4@collabora.com>
-References: <1559533863-10292-1-git-send-email-qii.wang@mediatek.com>
- <1559533863-10292-3-git-send-email-qii.wang@mediatek.com>
- <20190604095858.38ed9a28@collabora.com>
- <1559651200.5871.2.camel@mhfsdcap03> <1560255922.12217.3.camel@mhfsdcap03>
- <20190611142849.43f6d1e4@collabora.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hbFXp-0008HF-Fo
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Jun 2019 02:32:55 +0000
+Received: from dragon (li1322-146.members.linode.com [45.79.223.146])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4FAEB20B7C;
+ Thu, 13 Jun 2019 02:32:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560393173;
+ bh=LnrX3QbNG16Vax5M8OMl2q8+jnztx7pr7pXC+2mnaZI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BkL5smRT+h3GoqgDWmluADRt99F7Fl0wrw6zjCw6urH6/AoBRpCRzdp9k7AwcBbRh
+ PYW5oWl2uwPkuz64lENGfVt6+dBFbUe03pVSrOqRfiq78oak7qtr8UA/9zIiwyMTvY
+ UzyklPgJSCvK8Zk/m+4zLUx5t03xbTYIdSMH8nPM=
+Date: Thu, 13 Jun 2019 10:32:16 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Oliver Graute <oliver.graute@gmail.com>
+Subject: Re: [PATCHv3 2/2] ARM: dts: Add support for i.MX6 UltraLite DART
+ Variscite Customboard
+Message-ID: <20190613023210.GE20747@dragon>
+References: <1559839624-12286-1-git-send-email-oliver.graute@gmail.com>
+ <1559839624-12286-3-git-send-email-oliver.graute@gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1559839624-12286-3-git-send-email-oliver.graute@gmail.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_192939_993390_5B9A48AC 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_193253_563634_33867AA1 
+X-CRM114-Status: GOOD (  20.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,83 +78,293 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- bbrezillon@kernel.org, leilk.liu@mediatek.com, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
- xinping.qian@mediatek.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ narmstrong@baylibre.com, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-06-11 at 14:28 +0200, Boris Brezillon wrote:
-> On Tue, 11 Jun 2019 20:25:22 +0800
-> Qii Wang <qii.wang@mediatek.com> wrote:
+On Thu, Jun 06, 2019 at 06:47:02PM +0200, Oliver Graute wrote:
+> This patch adds DeviceTree Bindings for the i.MX6 UltraLite DART NAND/WIFI
+
+It's device tree source, not bindings.
+
 > 
-> > On Tue, 2019-06-04 at 20:26 +0800, Qii Wang wrote:
-> > > On Tue, 2019-06-04 at 09:58 +0200, Boris Brezillon wrote:  
-> > > > On Mon, 3 Jun 2019 11:51:03 +0800
-> > > > Qii Wang <qii.wang@mediatek.com> wrote:
-> > > > 
-> > > >   
-> > > > > +static int mtk_i3c_master_probe(struct platform_device *pdev)
-> > > > > +{
-> > > > > +	struct device *dev = &pdev->dev;
-> > > > > +	struct mtk_i3c_master *master;
-> > > > > +	struct resource *res;
-> > > > > +	int ret, irqnr;
-> > > > > +
-> > > > > +	master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
-> > > > > +	if (!master)
-> > > > > +		return -ENOMEM;
-> > > > > +
-> > > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "main");
-> > > > > +	master->regs = devm_ioremap_resource(dev, res);
-> > > > > +	if (IS_ERR(master->regs))
-> > > > > +		return PTR_ERR(master->regs);
-> > > > > +
-> > > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dma");
-> > > > > +	master->dma_regs = devm_ioremap_resource(dev, res);
-> > > > > +	if (IS_ERR(master->dma_regs))
-> > > > > +		return PTR_ERR(master->dma_regs);
-> > > > > +
-> > > > > +	irqnr = platform_get_irq(pdev, 0);
-> > > > > +	if (irqnr < 0)
-> > > > > +		return irqnr;
-> > > > > +
-> > > > > +	ret = devm_request_irq(dev, irqnr, mtk_i3c_master_irq,
-> > > > > +			       IRQF_TRIGGER_NONE, DRV_NAME, master);
-> > > > > +	if (ret < 0) {
-> > > > > +		dev_err(dev, "Request I3C IRQ %d fail\n", irqnr);
-> > > > > +		return ret;
-> > > > > +	}
-> > > > > +
-> > > > > +	ret = of_property_read_u32(pdev->dev.of_node, "clock-div",
-> > > > > +				   &master->clk_src_div);  
-> > > > 
-> > > > You say in one comment that this clock divider is fixed in HW but might
-> > > > change on a per-SoC basis. If that's the case, you should get rid of
-> > > > this clock-div prop and attach the divider to the compatible (using an
-> > > > mtk_i3c_master_variant struct that contains a divider field).
-> > > >   
-> > > 
-> > > ok, I will attach the divider to the compatible.
-> > >   
-> > I have rechecked your comment, maybe I have misunderstood what you mean.
-> > "clock-div" changes according to i2c source clock, different project may
-> > change i2c source clock, The previous dt-binding may be misleading, I
-> > will modify it.
+> Signed-off-by: Oliver Graute <oliver.graute@gmail.com>
+> ---
+>  arch/arm/boot/dts/Makefile                      |   1 +
+>  arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts | 209 ++++++++++++++++++++++++
+>  2 files changed, 210 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
 > 
-> Is it fixed or configurable? Maybe it should be modeled as a clk
-> driver. What's for sure is that we shouldn't have this divider defined
-> in the DT.
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 5559028..7f03ab5 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -577,6 +577,7 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+>  	imx6ul-tx6ul-0010.dtb \
+>  	imx6ul-tx6ul-0011.dtb \
+>  	imx6ul-tx6ul-mainboard.dtb \
+> +	imx6ul-var-6ulcustomboard.dtb \
+>  	imx6ull-14x14-evk.dtb \
+>  	imx6ull-colibri-eval-v3.dtb \
+>  	imx6ull-colibri-wifi-eval-v3.dtb \
+> diff --git a/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts b/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
+> new file mode 100644
+> index 0000000..80b860a
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/imx6ul-var-6ulcustomboard.dts
+> @@ -0,0 +1,209 @@
+> +// SPDX-License-Identifier: (GPL-2.0)
+> +/*
+> + * Support for Variscite DART-6UL Module
+> + *
+> + * Copyright (C) 2015 Freescale Semiconductor, Inc.
+> + * Copyright (C) 2015-2016 Variscite Ltd. - http://www.variscite.com
+> + * Copyright (C) 2018-2019 Oliver Graute <oliver.graute@gmail.com>
+> + */
+> +
+> +/dts-v1/;
+> +
+> +#include <dt-bindings/input/input.h>
+> +#include "imx6ul-imx6ull-var-dart-common.dtsi"
+> +
+> +/ {
+> +	model = "Variscite i.MX6 UltraLite Carrier-board";
+> +	compatible = "fsl,6ulcustomboard", "fsl,imx6ul";
 
-ok, I have let the clk driver handle it, and remove it in DT and i3c
-driver. Thanks!
+The compatible should be documented.
 
+> +
+> +	backlight {
+> +		compatible = "pwm-backlight";
+> +		pwms = <&pwm1 0 20000>;
+> +		brightness-levels = <0 4 8 16 32 64 128 255>;
+> +		default-brightness-level = <6>;
+> +		status = "okay";
 
+Unnecessary 'status'.
+
+> +	};
+> +
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +
+> +		user {
+> +			gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
+> +			linux,code = <KEY_BACK>;
+> +			gpio-key,wakeup;
+> +		};
+> +	};
+> +
+> +	gpio-leds {
+> +		compatible = "gpio-leds";
+> +
+> +		d16_led {
+
+We prefer to use hyphen than underscore in node name.
+
+> +			gpios = <&gpio4 20 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "heartbeat";
+> +		};
+> +	};
+> +
+> +	sound {
+> +		compatible = "simple-audio-card";
+> +		simple-audio-card,name = "wm8731audio";
+> +		simple-audio-card,widgets =
+> +			"Headphone", "Headphone Jack",
+> +			"Line", "Line Jack",
+> +			"Microphone", "Mic Jack";
+> +		simple-audio-card,routing =
+> +			"Headphone Jack", "RHPOUT",
+> +			"Headphone Jack", "LHPOUT",
+> +			"LLINEIN", "Line Jack",
+> +			"RLINEIN", "Line Jack",
+> +			"MICIN", "Mic Bias",
+> +			"Mic Bias", "Mic Jack";
+> +		simple-audio-card,format = "i2s";
+> +		simple-audio-card,bitclock-master = <&sound_master>;
+> +		simple-audio-card,frame-master = <&sound_master>;
+> +
+> +		sound_master: simple-audio-card,cpu {
+> +				sound-dai = <&sai2>;
+> +		};
+> +	};
+> +};
+> +
+> +&can1 {
+> +	status = "okay";
+> +};
+> +
+> +&can2 {
+> +	status = "okay";
+> +};
+> +
+> +&gpc {
+> +	fsl,cpu_pupscr_sw2iso = <0x2>;
+> +	fsl,cpu_pupscr_sw = <0x1>;
+> +	fsl,cpu_pdnscr_iso2sw = <0x1>;
+> +	fsl,cpu_pdnscr_iso = <0x1>;
+> +	fsl,ldo-bypass = <0>; /* DCDC, ldo-enable */
+
+All these are bindings from vendor tree?
+
+> +};
+> +
+> +&fec1 {
+> +	status = "okay";
+
+We prefer to put 'status' at the end of property list.
+
+> +	phy-mode = "rgmii";
+> +	phy-reset-gpios = <&gpio5 0 GPIO_ACTIVE_LOW>;
+> +	phy-handle = <&ethphy0>;
+> +};
+> +
+> +&fec2 {
+> +	status = "okay";
+> +	phy-mode = "rgmii";
+> +	phy-reset-gpios = <&gpio1 10 GPIO_ACTIVE_LOW>;
+> +	phy-handle = <&ethphy1>;
+> +};
+> +
+> +&i2c1 {
+> +	clock-frequency = <400000>;
+> +	status = "okay";
+> +};
+> +
+> +&i2c2 {
+> +	clock_frequency = <100000>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_i2c2>;
+> +	status = "okay";
+> +
+> +	wm8731: codec@1a {
+
+audio-codec for node name.
+
+> +		#sound-dai-cells = <0>;
+> +		compatible = "wlf,wm8731";
+> +		reg = <0x1a>;
+> +		clocks = <&clks IMX6UL_CLK_SAI2>;
+> +		clock-names = "mclk";
+> +	};
+> +
+> +	touchscreen@38 {
+> +		compatible = "edt,edt-ft5x06";
+> +		reg = <0x38>;
+> +		interrupt-parent = <&gpio3>;
+> +		interrupts = <4 0>;
+> +		touchscreen-size-x = <800>;
+> +		touchscreen-size-y = <480>;
+> +		touchscreen-inverted-x;
+> +		touchscreen-inverted-y;
+> +	};
+> +
+> +	rtc@68 {
+> +		compatible = "dallas,ds1337";
+> +		reg = <0x68>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_rtc>;
+> +		interrupt-parent = <&gpio5>;
+> +		interrupts = <7 IRQ_TYPE_EDGE_FALLING>;
+> +	};
+> +};
+> +
+> +&lcdif {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_lcdif_dat
+> +		     &pinctrl_lcdif_ctrl>;
+> +	display = <&display0>;
+> +	status = "okay";
+> +
+> +	display0: display {
+
+Have a look at:
+
+https://www.spinics.net/lists/arm-kernel/msg727550.html
+
+Also, can we use new bindings documented in bindings/display/mxsfb.txt?
+
+> +		bits-per-pixel = <16>;
+> +		bus-width = <24>;
+> +
+> +		display-timings {
+> +			native-mode = <&timing0>;
+> +			timing0: timing0 {
+> +				clock-frequency =<35000000>;
+> +				hactive = <800>;
+> +				vactive = <480>;
+> +				hfront-porch = <40>;
+> +				hback-porch = <40>;
+> +				hsync-len = <48>;
+> +				vback-porch = <29>;
+> +				vfront-porch = <13>;
+> +				vsync-len = <3>;
+> +				hsync-active = <0>;
+> +				vsync-active = <0>;
+> +				de-active = <1>;
+> +				pixelclk-active = <0>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&pwm1 {
+> +	status = "okay";
+> +};
+> +
+> +&uart1 {
+> +	status = "okay";
+> +};
+> +
+> +&uart2 {
+> +	status = "okay";
+> +};
+> +
+> +&uart3 {
+> +	status = "okay";
+> +};
+> +
+> +&usbotg1 {
+> +	dr_mode = "host";
+> +	status = "okay";
+> +};
+> +
+> +&usbotg2 {
+> +	dr_mode = "host";
+> +	status = "okay";
+> +};
+> +
+> +&iomuxc {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_hog_1>;
+
+Isn't imx6ul-imx6ull-var-dart-common.dtsi already having these them?
+
+> +	imx6ul-evk {
+> +
+
+This container node shouldn't be needed.
+
+Shawn
+
+> +		pinctrl_rtc: rtcgrp {
+> +			fsl,pins = <
+> +				MX6UL_PAD_SNVS_TAMPER7__GPIO5_IO07	0x1b0b0
+> +			>;
+> +		};
+> +	};
+> +};
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
